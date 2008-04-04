@@ -1,10 +1,10 @@
---- ./lib/Tools/findlogics.orig	Sun Sep  2 15:11:55 2007
-+++ ./lib/Tools/findlogics	Sun Sep  2 15:48:27 2007
+--- lib/Tools/findlogics.orig	Sat Jan 12 16:57:07 2008
++++ lib/Tools/findlogics	Sat Jan 12 17:00:42 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  #
- # $Id: findlogics,v 1.8 2004/06/21 08:25:57 kleing Exp $
+ # $Id: findlogics,v 1.9 2005/10/08 18:15:31 wenzelm Exp $
  # Author: Markus Wenzel, TU Muenchen
 @@ -8,7 +8,7 @@
  

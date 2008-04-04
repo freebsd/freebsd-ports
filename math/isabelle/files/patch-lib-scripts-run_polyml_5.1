@@ -1,12 +1,17 @@
---- lib/scripts/run-polyml.orig	Sun Oct 21 04:31:50 2007
-+++ lib/scripts/run-polyml	Sat Jan 12 18:01:17 2008
-@@ -5,18 +5,15 @@
+--- lib/scripts/run-polyml-5.1.orig	Tue Nov 20 21:42:15 2007
++++ lib/scripts/run-polyml-5.1	Sat Jan 12 18:01:39 2008
+@@ -1,22 +1,20 @@
+-#!/usr/bin/env bash
++#!/bin/sh
  #
- # Poly/ML startup script.
+ # $Id: run-polyml-5.1,v 1.7 2007/11/20 10:42:15 wenzelm Exp $
+ # Author: Makarius
+ #
+ # Poly/ML startup script (for 5.1)
  
 -export -n INFILE OUTFILE COPYDB COMPRESS MLTEXT TERMINATE NOWRITE
 -
--
+ 
  ## diagnostics
  
 -function fail_out()
@@ -21,7 +26,7 @@
  {
    if [ ! -f "$1" ]; then
      echo "Unable to locate $1" >&2
-@@ -25,6 +22,21 @@
+@@ -25,6 +23,21 @@
    fi
  }
  
@@ -41,5 +46,5 @@
 +TERMINATE="$SAVE_TERMINATE"
 +NOWRITE="$SAVE_NOWRITE"
  
- ## Poly/ML executable and database
+ ## compiler executables and libraries
  

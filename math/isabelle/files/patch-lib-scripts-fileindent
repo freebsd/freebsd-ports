@@ -1,0 +1,8 @@
+--- lib/scripts/fileident.orig	Sat Jan 12 17:20:26 2008
++++ lib/scripts/fileident	Sat Jan 12 17:20:38 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: fileident,v 1.1 2007/07/17 20:51:27 wenzelm Exp $
+ #

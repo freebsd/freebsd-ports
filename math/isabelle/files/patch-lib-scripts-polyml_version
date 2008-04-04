@@ -1,8 +1,8 @@
---- ./lib/scripts/polyml-version.orig	Sun Sep  2 15:13:40 2007
-+++ ./lib/scripts/polyml-version	Sun Sep  2 15:54:22 2007
+--- lib/scripts/polyml-version.orig	Sat Jan 12 17:09:13 2008
++++ lib/scripts/polyml-version	Sat Jan 12 17:15:41 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  #
- # $Id: polyml-version,v 1.2 2005/09/15 15:18:57 wenzelm Exp $
+ # $Id: polyml-version,v 1.5 2006/12/05 17:32:54 wenzelm Exp $
  #

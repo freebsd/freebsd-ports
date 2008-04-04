@@ -1,12 +1,17 @@
---- lib/scripts/run-polyml.orig	Sun Oct 21 04:31:50 2007
-+++ lib/scripts/run-polyml	Sat Jan 12 18:01:17 2008
-@@ -5,18 +5,15 @@
+--- lib/scripts/run-poplogml.orig	Tue Oct 11 21:28:04 2005
++++ lib/scripts/run-poplogml	Sat Jan 12 18:01:54 2008
+@@ -1,22 +1,20 @@
+-#!/usr/bin/env bash
++#!/bin/sh
  #
- # Poly/ML startup script.
+ # $Id: run-poplogml,v 1.5 2005/10/11 11:28:04 wenzelm Exp $
+ # Author: Makarius
+ #
+ # Poplog/PML startup script (version 15.6/2.1).
  
 -export -n INFILE OUTFILE COPYDB COMPRESS MLTEXT TERMINATE NOWRITE
 -
--
+ 
  ## diagnostics
  
 -function fail_out()
@@ -16,12 +21,21 @@
    exit 2
  }
  
--function check_file()
-+check_file()
+-function check_mlhome_file()
++check_mlhome_file()
  {
    if [ ! -f "$1" ]; then
      echo "Unable to locate $1" >&2
-@@ -25,6 +22,21 @@
+@@ -25,7 +23,7 @@
+   fi
+ }
+ 
+-function check_heap_file()
++check_heap_file()
+ {
+   if [ ! -f "$1" ]; then
+     echo "Expected to find ML heap file $1" >&2
+@@ -35,6 +33,21 @@
    fi
  }
  
@@ -41,5 +55,5 @@
 +TERMINATE="$SAVE_TERMINATE"
 +NOWRITE="$SAVE_NOWRITE"
  
- ## Poly/ML executable and database
+ ## prepare databases
  

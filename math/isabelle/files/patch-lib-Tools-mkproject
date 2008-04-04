@@ -1,0 +1,17 @@
+--- lib/Tools/mkproject.orig	Sat Jan 12 17:18:15 2008
++++ lib/Tools/mkproject	Sat Jan 12 17:18:41 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: mkproject,v 1.2 2007/08/09 17:19:23 wenzelm Exp $
+ # Author: David Aspinall and Makarius Wenzel
+@@ -7,7 +7,7 @@
+ 
+ PRG="$(basename "$0")"
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG NAME"

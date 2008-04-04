@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	isabelle
-PORTVERSION=	2005
-PORTREVISION=	2
+PORTVERSION=	2007
 CATEGORIES=	math
 MASTER_SITES=	http://isabelle.in.tum.de/dist/ \
 		http://www.cl.cam.ac.uk/Research/HVG/Isabelle/dist/ \
 		http://mirror.cse.unsw.edu.au/pub/isabelle/dist/
-DISTNAME=	Isabelle2005
+DISTNAME=	Isabelle2007
 .if !defined(NOPORTDOCS)
-DISTFILES=	Isabelle2005.tar.gz \
-		Isabelle2005_library.tar.gz \
-		Isabelle2005_pdf.tar.gz
+DISTFILES=	Isabelle2007.tar.gz \
+		Isabelle2007_library.tar.gz \
+		Isabelle2007_pdf.tar.gz
 .endif
 
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	A generic proof assistant
 
-OPTIONS=	SMLNJ "Use SML/NJ (devel) instead of the faster Poly/ML" Off
+OPTIONS=	SMLNJ "Use SML/NJ (devel) instead of the faster Poly/ML" off
 
 USE_PERL5=	yes
 RUN_DEPENDS+=	proofgeneral:${PORTSDIR}/math/proofgeneral
@@ -35,21 +34,19 @@ DOCFILES=	Contents *.pdf *.eps *.ps *.dvi
 ML_SYSTEM=	smlnj-110
 ML_HOME=	${LOCALBASE}/bin
 ML_OPTIONS=	@SMLdebug=/dev/null
-ML_PLATFORM=	x86-bsd
 .else
-ML_SYSTEM=	polyml-5.0
+ML_SYSTEM=	polyml-5.1
 ML_HOME=	${LOCALBASE}/bin
 ML_OPTIONS=	-H 500
 ML_DBASE=	""
-ML_PLATFORM=	""
 .endif
+ML_PLATFORM=	x86-bsd
 
-.if defined(WITH_SMLNJ)
 PLIST_SUB=	HEAPSUBDIR=${ML_SYSTEM}_${ML_PLATFORM}
+.if defined(WITH_SMLNJ)
 BUILD_DEPENDS+=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel
 MAKE_ENV+=	SMLNJ_DEVEL=yes
 .else
-PLIST_SUB=	HEAPSUBDIR=${ML_SYSTEM}
 BUILD_DEPENDS+=	poly:${PORTSDIR}/lang/polyml
 RUN_DEPENDS+=	poly:${PORTSDIR}/lang/polyml
 .endif
@@ -58,12 +55,6 @@ NO_INSTALL_MANPAGES=yes
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-	@${CP} ${FILESDIR}/run-polyml-5.0 ${WRKSRC}/lib/scripts/
-	@${CHMOD} ugo+x ${WRKSRC}/lib/scripts/run-polyml-5.0
-	@${CP} ${FILESDIR}/polyml-5.0.ML ${WRKSRC}/src/Pure/ML-Systems/
-.if !defined(WITH_SMLNJ)
-	@${CP} ${FILESDIR}/proofgeneral-settings.el ${WRKSRC}/etc/
-.endif
 
 post-patch:
 	@${MV} ${WRKSRC}/etc/settings ${WRKSRC}/etc/settings.presed

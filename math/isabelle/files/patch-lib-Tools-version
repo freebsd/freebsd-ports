@@ -1,5 +1,5 @@
---- ./lib/Tools/version.orig	Sun Sep  2 15:11:55 2007
-+++ ./lib/Tools/version	Sun Sep  2 15:49:33 2007
+--- lib/Tools/version.orig	Sat Jan 12 16:57:34 2008
++++ lib/Tools/version	Sat Jan 12 17:03:48 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh

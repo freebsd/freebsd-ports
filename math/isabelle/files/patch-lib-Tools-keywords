@@ -1,0 +1,17 @@
+--- lib/Tools/keywords.orig	Sat Jan 12 17:16:34 2008
++++ lib/Tools/keywords	Sat Jan 12 17:17:21 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: keywords,v 1.3 2007/10/07 11:32:15 wenzelm Exp $
+ # Author: Makarius
+@@ -10,7 +10,7 @@
+ 
+ PRG="$(basename "$0")"
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG [OPTIONS] [LOGS ...]"
