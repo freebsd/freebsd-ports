@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hachoir-metadata
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP CENKES
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Extract metadata from files
@@ -17,5 +17,11 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/h
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "To make hachoir-metadata-gtk work you need to have"
+	@${ECHO_MSG} "py-gtk (x11-toolkits/py-gtk2) installed."
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

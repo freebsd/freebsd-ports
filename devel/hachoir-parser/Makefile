@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hachoir-parser
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP CENKES
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Parsers of most common file formats

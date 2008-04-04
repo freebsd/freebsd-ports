@@ -124,6 +124,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_core/stream/output.py
 %%PYTHON_SITELIBDIR%%/hachoir_core/stream/output.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_core/stream/output.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_core/stream/stream.py
+%%PYTHON_SITELIBDIR%%/hachoir_core/stream/stream.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_core/stream/stream.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_core/text_handler.py
 %%PYTHON_SITELIBDIR%%/hachoir_core/text_handler.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_core/text_handler.pyo
