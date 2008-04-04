@@ -13189,6 +13189,7 @@ ppptraf		ports/net/ppptraf
 ppracer		ports/games/ppracer
 pptpclient	ports/net/pptpclient
 ppunpack	ports/archivers/ppunpack
+pqiv		ports/graphics/pqiv
 praat		ports/audio/praat
 prado		ports/www/prado
 prayer		ports/mail/prayer
