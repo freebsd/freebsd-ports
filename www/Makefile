@@ -505,6 +505,7 @@
     SUBDIR += oops
     SUBDIR += openacs
     SUBDIR += openacs-dotlrn
+    SUBDIR += opencart
     SUBDIR += openvrml
     SUBDIR += openx
     SUBDIR += openxmldir
