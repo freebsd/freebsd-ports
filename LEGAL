@@ -114,11 +114,6 @@ cosmo/*			games/cosmo		Possible copyright infringement
 cpml_*.alpha.rpm	lang/compaq-cc		Distribution not allowed
 Crypt-*			security/p5-Crypt-*	Crypto; export-controlled
 cryptix-jce-*		java/cryptix-jce	Testing purpose only
-csound/*		audio/csound		Distribution prohibited; may be
-						used for making commercial
-						music but other commercial use
-						is prohibited
-csound/*		audio/csound-manual	audio/same as csound
 cyberbit/*		x11-fonts/cyberbit-ttfonts Not free for commercial use
 dansguardian-2.[678]*	www/dansguardian	Not free for installation by
 						3rd parties charging for
