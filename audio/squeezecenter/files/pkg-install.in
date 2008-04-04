@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/audio/squeezecenter/files/Attic/pkg-install.in,v 1.4 2008-04-02 17:30:27 brooks Exp $
+# $FreeBSD: /tmp/pcvs/ports/audio/squeezecenter/files/Attic/pkg-install.in,v 1.5 2008-04-04 15:48:14 brooks Exp $
 
 name=slimserver
 u=%%SLIMUSER%%
@@ -15,9 +15,11 @@ conffile=${statedir}/squeezecenter.conf
 playlistdir=${statedir}/playlists
 pidfile=/var/run/${name}.pid
 newsyslogfile=/etc/newsyslog.conf
-logfile=/var/log/squeezecenter.log
 logcomment="# added by audio/squeezecenter port"
-logline="${logfile}	${u}:${g} 644 3	   100	*     J     ${pidfile}"
+serverlogfile=/var/log/squeezecenter/server.log
+scannerlogfile=/var/log/squeezecenter/scanner.log
+serverlogline="${serverlogfile}	${u}:${g} 644 3	   100	*     J     ${pidfile}"
+scannerlogline="${scannerlogfile}	${u}:${g} 644 3	   100	*     J     ${pidfile}"
 
 case $2 in
 PRE-INSTALL)
@@ -44,27 +46,13 @@ PRE-INSTALL)
 	fi
 	;;
 POST-INSTALL)
-	if [ -d ${statedir} ]; then
-		chown -R ${u}:${g} ${statedir}
-	fi
-	if [ -d ${cachedir} ]; then
-		chown -R ${u}:${g} ${cachedir}
-	fi
-	if [ -d ${playlistdir} ]; then
-		chown -R ${u}:${g} ${playlistdir}
-	fi
-        if [ -f ${conffile} ]; then
-                chown ${u}:${g} ${conffile}
-        fi
-        if [ -f ${logfile} ]; then
-                chown ${u}:${g} ${logfile}
-        fi
-	if egrep -q "^${logfile}\>" ${newsyslogfile}; then
+	if egrep -q "^${serverlogfile}\>" ${newsyslogfile}; then
 		echo "Using existing ${newsyslogfile} entry."
 	else
 		echo "Adding squeezecenter log entry to ${newsyslogfile}."
 		echo "$logcomment" >> ${newsyslogfile}
-		echo "$logline" >> ${newsyslogfile}
+		echo "$serverlogline" >> ${newsyslogfile}
+		echo "$scannerlogline" >> ${newsyslogfile}
 	fi
 	for file in %%CONFFILES%%; do
 		path="${slimdir}/${file}"

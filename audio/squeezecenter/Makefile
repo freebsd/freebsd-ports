@@ -7,7 +7,7 @@
 
 PORTNAME=	squeezecenter
 PORTVERSION=	7.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SqueezeCenter_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-7.0-noCPAN
@@ -183,9 +183,9 @@ pre-install:
 do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/${SLIMDIR}
 	@${LN} -s ${SLIMDBDIR}/cache ${PREFIX}/${SLIMDIR}/Cache
-	@cd ${TMP_SLIMDIR} && \
-	    ${FIND} . | \
-	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${PREFIX}/${SLIMDIR}
+	@cd ${TMP_SLIMDIR} && ${COPYTREE_SHARE} . ${PREFIX}/${SLIMDIR}
+	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/slimserver.pl 
+	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/scanner.pl 
 	@${LN} -s ${LOCALBASE}/share/mysql/errmsg.txt \
 	    ${PREFIX}/${SLIMDIR}/MySQL/
 	@${LN} -s ${LOCALBASE}/share/mysql/english/errmsg.sys \
@@ -193,9 +193,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${PREFIX}/bin/softsqueeze
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${TMP_DOCSDIR} && \
-	    ${FIND} . | \
-	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${DOCSDIR}
+	@cd ${TMP_DOCSDIR} && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 post-install:
