@@ -100,7 +100,6 @@
     SUBDIR += crip
     SUBDIR += cripple
     SUBDIR += csound
-    SUBDIR += csound-manual
     SUBDIR += cue2toc
     SUBDIR += cuetools
     SUBDIR += cymbaline
