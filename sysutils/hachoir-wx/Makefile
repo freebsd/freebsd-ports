@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	hachoir-wx
-PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP CENKES
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Hachoir GUI
@@ -17,7 +16,7 @@ COMMENT=	Hachoir GUI
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/hachoir_parser/__init__.py:${PORTSDIR}/devel/hachoir-parser
 
 USE_PYTHON=	yes
-USE_WX=		yes
+USE_WX=		2.6+
 WX_COMPS=	python
 WX_UNICODE=	yes
 USE_PYDISTUTILS=yes
