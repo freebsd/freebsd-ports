@@ -1,7 +1,9 @@
-include/ffi.h
-include/ffitarget.h
+lib/libffi-%%PORTVERSION%%/include/ffi.h
+lib/libffi-%%PORTVERSION%%/include/ffitarget.h
 lib/libffi.a
 lib/libffi.la
 lib/libffi.so
 lib/libffi.so.5
 libdata/pkgconfig/libffi.pc
+@dirrm lib/libffi-%%PORTVERSION%%/include
+@dirrm lib/libffi-%%PORTVERSION%%
