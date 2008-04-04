@@ -8,7 +8,7 @@
 PORTNAME=	hachoir-urwid
 PORTVERSION=	1.0.1
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP CENKES
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Binary file explorer

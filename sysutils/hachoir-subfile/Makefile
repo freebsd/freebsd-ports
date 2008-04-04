@@ -8,7 +8,7 @@
 PORTNAME=	hachoir-subfile
 PORTVERSION=	0.5.3
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP CENKES
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Find subfiles in any binary stream
