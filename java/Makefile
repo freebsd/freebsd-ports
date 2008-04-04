@@ -80,6 +80,7 @@
     SUBDIR += jakarta-oro
     SUBDIR += jakarta-regexp
     SUBDIR += jakarta-struts
+    SUBDIR += jamvm
     SUBDIR += jasmin
     SUBDIR += java-checkstyle
     SUBDIR += java-cup

@@ -1,0 +1,35 @@
+bin/jamvm
+include/jni.h
+lib/libjvm.la
+lib/libjvm.a
+%%WITH_ZIP%%lib/rt.jar
+%%WITH_ZIP%%share/jamvm/classes.zip
+%%WITHOUT_ZIP%%share/jamvm/classes/jamvm/java/lang/VMClassLoaderData.class
+%%WITHOUT_ZIP%%share/jamvm/classes/jamvm/java/lang/JarLauncher.class
+%%WITHOUT_ZIP%%share/jamvm/classes/jamvm/java/lang/VMClassLoaderData$Unloader.class
+%%WITHOUT_ZIP%%share/jamvm/classes/sun/reflect/annotation/AnnotationInvocationHandler.class
+%%WITHOUT_ZIP%%share/jamvm/classes/java/security/VMAccessController.class
+%%WITHOUT_ZIP%%share/jamvm/classes/java/lang/reflect/Field.class
+%%WITHOUT_ZIP%%share/jamvm/classes/java/lang/reflect/Constructor.class
+%%WITHOUT_ZIP%%share/jamvm/classes/java/lang/reflect/Method.class
+%%WITHOUT_ZIP%%share/jamvm/classes/java/lang/VMClassLoader.class
+%%WITHOUT_ZIP%%share/jamvm/classes/java/lang/VMThrowable.class
+%%WITHOUT_ZIP%%share/jamvm/classes/java/lang/VMString.class
+%%WITHOUT_ZIP%%share/jamvm/classes/java/lang/VMThread.class
+%%WITHOUT_ZIP%%share/jamvm/classes/java/lang/VMRuntime.class
+%%WITHOUT_ZIP%%share/jamvm/classes/gnu/classpath/VMSystemProperties.class
+%%WITHOUT_ZIP%%share/jamvm/classes/gnu/classpath/VMStackWalker.class
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/gnu/classpath
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/gnu
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/java/lang/reflect
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/java/lang
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/java/security
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/java
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/sun/reflect/annotation
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/sun/reflect
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/sun
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/jamvm/java/lang
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/jamvm/java
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes/jamvm
+%%WITHOUT_ZIP%%@dirrm share/jamvm/classes
+@dirrm share/jamvm
