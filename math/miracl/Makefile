@@ -7,6 +7,7 @@
 
 PORTNAME=	miracl
 PORTVERSION=	5.3.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/ \
 		${MASTER_SITE_LOCAL}
@@ -38,11 +39,18 @@ IGNORE=		Builds on x86 and amd64 only
 post-patch:
 # C{C,XX} safeness
 # CFLAGS safeness
+.if ${ARCH} == "i386"
+	@${REINPLACE_CMD} -E \
+		-e 's|gcc|${CC}|' \
+		-e 's|g\+\+|${CXX}|' \
+		-e 's|-O2|${CFLAGS}|' \
+.else
 	@${REINPLACE_CMD} -E \
 		-e 's|gcc|${CC}|' \
 		-e 's|g\+\+|${CXX}|' \
 		-e 's|-O2|${CFLAGS} -fPIC|' \
 		${WRKSRC}/${BUILDCMD}
+.endif
 
 do-build:
 	@cd ${WRKSRC} && ${SH} ./${BUILDCMD}
