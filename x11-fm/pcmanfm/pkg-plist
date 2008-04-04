@@ -1,0 +1,40 @@
+bin/pcmanfm
+%%NLS%%share/locale/ca/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/da/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/no/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/sv_SE/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/pcmanfm.mo
+share/pixmaps/pcmanfm.png
+share/applications/pcmanfm.desktop
+%%DATADIR%%/icons/file.png
+%%DATADIR%%/icons/folder.png
+%%DATADIR%%/mount.rules
+%%DATADIR%%/ui/prefdlg.glade
+%%DATADIR%%/ui/appchooserdlg.glade
+%%DATADIR%%/ui/file_properties.glade
+%%DATADIR%%/ui/about-dlg.glade
+share/mime/packages/libmimetype.xml
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv_SE

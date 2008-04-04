@@ -1,0 +1,20 @@
+An extremly fast and lightweight file manager which features tabbed browsing
+and user-friendly interface.
+
+Features:
+o Extremely fast and lightweight
+o Can be started in one second on normal machine
+o Tabbed browsing (Similar to Firefox)
+o Built-in volume management (mount/umount/eject through HAL)
+o Drag & Drop support
+o Files can be dragged among tabs
+o Load large directories in reasonable time
+o File association support (Default application)
+o Thumbnail for image files
+o Bookmarks support
+o Handles non-UTF-8 encoded filenames correctly
+o Provide icon view and detailed list view
+o Standard compliant (Follows FreeDesktop.org)
+o Clean and user-friendly interface (GTK+ 2)
+
+WWW: http://pcmanfm.sourceforge.net/
