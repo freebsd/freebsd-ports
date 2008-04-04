@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	2.1.53
+PORTVERSION=	3.0.26
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -25,15 +25,12 @@ CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
 USE_LDCONFIG=	yes
 
 MAN1=		yaz-asncomp.1 yaz-client.1 yaz-iconv.1 yaz-marcdump.1 \
-		ziffy.1 zoomsh.1
+		zoomsh.1 yaz-icu.1 yaz-illclient.1
 MAN7=		yaz-log.7 yaz.7
 MAN8=		yaz-config.8 yaz-ztest.8
 
 pre-install:
 	cd ${WRKSRC}/doc && \
-		${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
-		Makefile
-	cd ${WRKSRC}/ziffy && \
 		${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
 		Makefile
 
