@@ -5692,6 +5692,7 @@ jama		ports/math/jama
 james		ports/mail/james
 jamin		ports/audio/jamin
 jamlib		ports/mail/jamlib
+jamvm		ports/java/jamvm
 jargon		ports/misc/jargon
 jarl		ports/net-im/jarl
 jasmin		ports/java/jasmin
