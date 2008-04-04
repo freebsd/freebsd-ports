@@ -8,7 +8,8 @@
 PORTNAME=	tclmidi
 PORTVERSION=	3.1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.cs.ruu.nl/pub/MIDI/PROGRAMS/
+MASTER_SITES=	ftp://ftp.cs.ruu.nl/pub/MIDI/PROGRAMS/ \
+		http://ringtail.its.monash.edu.au/pub/midi/PROGRAMS/
 # despite references on the homepage to ftp.xor.com, that server
 # doesn't work - edwin 20021227
 
@@ -32,16 +33,12 @@ MANN=		midiconf.n midievnt.n midifree.n midiget.n midigrep.n \
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "ia64" || ${MACHINE_ARCH} == "sparc64"
-IGNORE=		"ignored due to cast from pointer to integer of different size"
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+IGNORE=		ignored due to cast from pointer to integer of different size
 .endif
 
-.if ${OSVERSION} >= 502000
-EXTRA_PATCHES=	${PATCHDIR}/smf.patch ${PATCHDIR}/song.patch
-
-post-extract:
+post-patch:
 	@${CP} -f ${FILESDIR}/strstream.h ${WRKSRC}
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
