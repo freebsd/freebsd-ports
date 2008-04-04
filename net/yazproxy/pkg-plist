@@ -6,7 +6,7 @@ include/yazproxy/proxy.h
 lib/libyazproxy.a
 lib/libyazproxy.la
 lib/libyazproxy.so
-lib/libyazproxy.so.1
+lib/libyazproxy.so.2
 lib/yazproxy/mod_proxy_helsinki.a
 lib/yazproxy/mod_proxy_helsinki.la
 lib/yazproxy/mod_proxy_helsinki.so
@@ -16,6 +16,7 @@ lib/yazproxy/mod_proxy_sample.so
 %%DOCSDIR%%/common/id.png
 %%DOCSDIR%%/common/style1.css
 %%DOCSDIR%%/installation.html
+%%DOCSDIR%%/index.html
 %%DOCSDIR%%/introduction.html
 %%DOCSDIR%%/license.html
 %%DOCSDIR%%/other-optimizations.html
@@ -34,8 +35,6 @@ lib/yazproxy/mod_proxy_sample.so
 %%DOCSDIR%%/windows.html
 %%DOCSDIR%%/yazproxy-man.html
 %%DOCSDIR%%/yazproxy-schema.html
-%%DOCSDIR%%/yazproxy.html
-%%DOCSDIR%%/yazproxy.pdf
 %%DATADIR%%/MARC21slim2DC.xsl
 %%DATADIR%%/MARC21slim2MODS.xsl
 %%DATADIR%%/MARC21slim2MODS3.xsl
@@ -46,6 +45,7 @@ lib/yazproxy/mod_proxy_sample.so
 %%DATADIR%%/config-modules.xml
 %%DATADIR%%/config.xml
 %%DATADIR%%/explain.xml
+%%DATADIR%%/exslttest.xsl
 %%DATADIR%%/pqf.properties
 %%DATADIR%%/voyager.xml
 %%DATADIR%%/yazproxy.xsd
