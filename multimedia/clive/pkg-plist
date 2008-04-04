@@ -1,4 +1,4 @@
-$FreeBSD$
+@comment $FreeBSD$
 bin/clive
 %%PYTHON_SITELIBDIR%%/clive/__init__.py
 %%PYTHON_SITELIBDIR%%/clive/__init__.pyc
