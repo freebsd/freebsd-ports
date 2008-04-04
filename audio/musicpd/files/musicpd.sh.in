@@ -2,8 +2,7 @@
 #
 
 # PROVIDE: musicpd
-# REQUIRE:
-# BEFORE:
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable mpd:
@@ -19,11 +18,10 @@ config=%%PREFIX%%/etc/mpd.conf
 command=%%PREFIX%%/bin/mpd
 required_files=$config
 
-musicpd_flags="$musicpd_flags $config"
-
-[ -z "$musicpd_enable" ] && musicpd_enable="NO"
-[ -z "$musicpd_flags" ]  && musicpd_flags=
-
 load_rc_config $name
+
+: ${musicpd_enable="NO"}
+
+command_args="$config"
 
 run_rc_command "$1"

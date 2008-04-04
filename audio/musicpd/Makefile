@@ -7,6 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://musicpd.org/uploads/files/ \
 		http://redundancy.redundancy.org/mirror/
