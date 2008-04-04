@@ -214,6 +214,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/file_3ds.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/file_3ds.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/file_3ds.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/hlp.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/hlp.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/hlp.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/lnk.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/lnk.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/lnk.pyo
@@ -232,6 +235,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pdf.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pdf.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pdf.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pifv.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pifv.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pifv.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/torrent.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/torrent.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/torrent.pyo

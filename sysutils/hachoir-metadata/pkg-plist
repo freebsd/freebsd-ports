@@ -1,4 +1,5 @@
 bin/hachoir-metadata
+bin/hachoir-metadata-gtk
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/__init__.py
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/__init__.pyo
@@ -47,4 +48,10 @@ bin/hachoir-metadata
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/video.py
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/video.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_metadata/video.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_metadata/setter.py
+%%PYTHON_SITELIBDIR%%/hachoir_metadata/setter.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_metadata/setter.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_metadata/timezone.py
+%%PYTHON_SITELIBDIR%%/hachoir_metadata/timezone.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_metadata/timezone.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/hachoir_metadata
