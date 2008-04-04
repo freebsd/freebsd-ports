@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	homebank
-PORTVERSION=	3.6
-PORTREVISION=	2
+PORTVERSION=	3.8
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -16,7 +15,6 @@ COMMENT=	Manage your personal accounts at home
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtk20 desktopfileutils
-WANT_GNOME=	yes
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
@@ -24,6 +22,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README
+
+.if !defined(WITHOUT_OFX)
+LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
+CONFIGURE_ARGS+=--with-ofx
+.else
+CONFIGURE_ARGS+=--without-ofx
+.endif
 
 post-install:
 .ifndef (NOPORTDOCS)
@@ -33,5 +38,6 @@ post-install:
 .endfor
 .endif
 	@-update-desktop-database
+	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.mk>
