@@ -1,9 +1,10 @@
 bin/crimson
-share/applications/crimson.desktop
-%%DATADIR%%/Bepa-Roman.ttf
+share/pixmaps/crimson.png
 %%DATADIR%%/cf.dat
 %%DATADIR%%/default.tiles
 %%DATADIR%%/default.units
+%%DATADIR%%/title.bmp
+%%DATADIR%%/Bepa-Roman.ttf
 %%DATADIR%%/levels/Anthill.lev
 %%DATADIR%%/levels/ArmsRace.lev
 %%DATADIR%%/levels/Baptism.lev
@@ -41,11 +42,10 @@ share/applications/crimson.desktop
 %%DATADIR%%/sound/menu.wav
 %%DATADIR%%/sound/repair.wav
 %%DATADIR%%/sound/select.wav
-%%DATADIR%%/title.bmp
-share/pixmaps/crimson.png
-@dirrmtry share/applications
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/music
+share/applications/crimson.desktop
 @dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
