@@ -12,6 +12,7 @@ print "bzip2 log.en\n";
 print "make deinstall clean\n";
 
 print "/usr/bin/time -h make ALL_LOCALIZED_LANGS=yes >& log.all\n";
+print "bzip2 log.all\n";
 
 open ( FILE,  "< Makefile.localized") ;
 while(<FILE>){
