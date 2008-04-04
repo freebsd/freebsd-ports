@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	heyu2
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.heyu.org/download/
 DISTNAME=	heyu-${PORTVERSION}
@@ -26,7 +26,31 @@ CONFIGURE_ARGS=	freebsd
 MAN1=		heyu.1
 MAN5=		x10config.5 \
 		x10sched.5 \
-		x10scripts.5
+		x10scripts.5 \
+		x10rfxmeters.5
+
+OPTIONS=	CM17A		"X10 CM17A \"Firecracker\" Support"		on \
+		EXTENDED	"Extended Type 0 (Shutter/Shade) Support"	on \
+		RFXSENS		"RFXSensors (RF) Support"			on \
+		RFXMETER	"RFXMeter (RF) Support"				on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_CM17A)
+CONFIGURE_ARGS+=	nocm17a
+.endif
+
+.if !defined(WITH_EXTENDED)
+CONFIGURE_ARGS+=	noext0
+.endif
+
+.if !defined(WITH_RFXSENS)
+CONFIGURE_ARGS+=	norfxs
+.endif
+
+.if !defined(WITH_RFXMETER)
+CONFIGURE_ARGS+=	norfxm
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E 's|/usr/local|${PREFIX}|g; \
@@ -45,7 +69,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/x10config.5 ${MAN5PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/x10sched.5 ${MAN5PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/x10scripts.5 ${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/x10rfxmeters.5 ${MAN5PREFIX}/man/man5
 	${INSTALL_DATA} ${WRKSRC}/x10config.sample ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/x10.sched.sample ${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
