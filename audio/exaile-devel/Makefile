@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exaile
-DISTVERSION=	0.2.10
+DISTVERSION=	0.2.13
 CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ GENTOO/distfiles
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -27,17 +27,12 @@ USE_GNOME=	pygtk2 pygnomeextras
 USE_GSTREAMER=	python gnomevfs
 USE_PYTHON=	yes
 MAN1=	${PORTNAME}.1
-MAKE_ENV+=	FIREFOX=${LOCALBASE}/lib/firefox
-ALL_TARGET=	compile
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^PREFIX/d;/LIBDIR/d;/^FIREFOX/d;/install/s|-D||;\
-		/createpot/d;s|/bin/echo|echo|;s|$$[(]PREFIX[)]/share/exaile|${DATADIR}|;\
-		/install.*mmkeys/d;s|$$[(]PREFIX[)]/share/man/man1|${MAN1PREFIX}/man/man1|'\
-			${WRKSRC}/Makefile
-
-#pre-install:
-#	@for i in ca cs es_AR he_IL it_IT nn pl ro tr_TR zh_CN zh_TW;do\
-#		${INSTALL} -d ${PREFIX}/share/locale/$$i/LC_MESSAGES/;done
+	@${REINPLACE_CMD} -e '/createpot/d;s|/bin/echo|echo|;\
+	s|$$[(]PREFIX[)]/share/exaile|${DATADIR}|;/install.*mmkeys/d;\
+	s|$$[(]PREFIX[)]$$[(]LIBDIR[)]/exaile|${DATADIR}|;/mkdir.*LIBDIR/d;\
+	s|$$[(]PREFIX[)]/share/man/man1|${MAN1PREFIX}/man/man1|'\
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
