@@ -29,7 +29,7 @@ System/Library/Fonts/Helvetica.nfont/n019063l.pfm
 System/Library/Fonts/Helvetica.nfont/n019064l.afm
 System/Library/Fonts/Helvetica.nfont/n019064l.pfb
 System/Library/Fonts/Helvetica.nfont/n019064l.pfm
-%%USE_XLIB%%System/Tools/font_cacher
+%%WITH_XLIB%%System/Tools/font_cacher
 System/Tools/gpbs
 @dirrm System/Library/Fonts/Helvetica.nfont
 @dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Swedish.lproj

@@ -48,7 +48,7 @@ LIB_DEPENDS+=		dpstk:${PORTSDIR}/${GNUSTEP_DGS_PORT}
 CONFIGURE_ARGS+=	--enable-graphics=xdps --with-name=xdps
 CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=xdps-${BACKVERSION}
-PLIST_SUB+=		USE_XLIB="@comment "
+PLIST_SUB+=		WITH_XLIB="@comment "
 BACK_SUFFIX?=		-xdps
 CONFLICTS?=		gunstep-back-0.* gunstep-back-art-0.* gunstep-back-cairo-0.*
 ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include
@@ -58,7 +58,7 @@ LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
 CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=art-${BACKVERSION}
-PLIST_SUB+=		USE_XLIB="@comment "
+PLIST_SUB+=		WITH_XLIB="@comment "
 BACK_SUFFIX?=		-art
 CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.* gunstep-back-cairo-0.*
 .elif defined(WITH_GNUSTEP_CAIRO)
@@ -68,14 +68,14 @@ LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=	--enable-graphics=cairo --with-name=cairo
 CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=cairo-${BACKVERSION}
-PLIST_SUB+=		USE_XLIB="@comment "
+PLIST_SUB+=		WITH_XLIB="@comment "
 BACK_SUFFIX?=		-cairo
 CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.* gunstep-back-art-0.*
 .else
 CONFIGURE_ARGS+=	--enable-graphics=xlib --with-name=back
 CONFIGURE_ARGS+=	--disable-glitz
 PLIST_SUB+=		BACK=back-${BACKVERSION}
-PLIST_SUB+=		USE_XLIB=""
+PLIST_SUB+=		WITH_XLIB=""
 CONFLICTS?=		gunstep-back-xdps-0.* gunstep-back-art-0.* gunstep-back-cairo-0.*
 .endif
 
