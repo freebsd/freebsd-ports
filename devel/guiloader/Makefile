@@ -6,22 +6,18 @@
 #
 
 PORTNAME=	guiloader
-PORTVERSION=	2.10.0
+PORTVERSION=	2.10.1
 CATEGORIES=	devel gnome
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	crow-designer
+MASTER_SITES=	SF/crow-designer
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C++ binding to the GuiLoader library
+COMMENT=	A high-performance and compact GuiXml loader library
 
 USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnometarget gtk20
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
-USE_GNOME=	atk glib20 gtk20 pango
 USE_GMAKE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/${PORTNAME}/Makefile.in
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
