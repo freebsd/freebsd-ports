@@ -7,6 +7,7 @@
 
 PORTNAME=	tora
 DISTVERSION=	1-3-end-of-life
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -34,6 +35,7 @@ RUN_DEPENDS+=	${X11BASE}/lib/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/datab
 ORACLE_HOME?=	${LOCALBASE}/oracle8-client
 ORACLE_VER=	8i	# Client version
 
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:261 autoheader:261 libtool:15
 USE_QT_VER=	3
 USE_PERL5_BUILD=yes
