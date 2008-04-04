@@ -7,7 +7,7 @@
 
 PORTNAME=	spamass-milter
 PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	spamass-milt
@@ -34,6 +34,15 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-addauth
 .endif
 
+.if defined(WITH_REJECTTEXT_PATCH)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rejecttext1
+.if defined(WITH_ADDAUTH_PATCH)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rejecttext2a
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rejecttext2
+.endif
+.endif
+
 .if exists(${LOCALBASE}/lib/libldap.so)
 WITH_LDAP=yes
 .endif
@@ -53,7 +62,7 @@ WITH_SENDMAIL_BASE=yes
 .if exists(/usr/lib/libmilter.a)
 MILTERBASE=	/usr
 .else
-IGNORE=	Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
+IGNORE=	base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
 .endif
 .endif
 
@@ -95,6 +104,13 @@ pre-patch:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "You may set environment variable WITH_ADDAUTH_PATCH to bypass"
 	@${ECHO_CMD} "checks if a connection authenticated via SMTP."
+	@${ECHO_CMD} ""
+.endif
+
+.if !defined(WITH_REJECTTEXT_PATCH)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "You may set environment variable WITH_REJECTTEXT_PATCH to be"
+	@${ECHO_CMD} "able to customize the SMTP reject message."
 	@${ECHO_CMD} ""
 .endif
 

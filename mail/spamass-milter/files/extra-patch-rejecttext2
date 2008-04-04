@@ -1,0 +1,11 @@
+--- spamass-milter.cpp.ORIG	2006-06-17 11:06:30.000000000 +0200
++++ spamass-milter.cpp	2006-06-17 11:10:11.000000000 +0200
+@@ -181,7 +182,7 @@
+ main(int argc, char* argv[])
+ {
+    int c, err = 0;
+-   const char *args = "fd:mMp:P:r:u:D:i:b:B:e:x";
++   const char *args = "fd:mMp:P:r:R:u:D:i:b:B:e:x";
+    char *sock = NULL;
+    bool dofork = false;
+    char *pidfilename = NULL;
