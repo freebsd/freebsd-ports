@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hachoir-regex
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP CENKES
+MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Regular expression manipulation library
