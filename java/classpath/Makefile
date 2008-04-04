@@ -7,31 +7,74 @@
 #
 
 PORTNAME=	classpath
-PORTVERSION=	0.92
-PORTREVISION=	2
+PORTVERSION=	0.93
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	A GNU project to create a free Java class library
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		jikes:${PORTSDIR}/java/jikes
 
 USE_LDCONFIG=	yes
-USE_JAVA=	yes
-USE_JIKES=	yes
-USE_GNOME=	gtk20 gdkpixbuf pkgconfig gconf2
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} `${PKG_CONFIG} gtk+-2.0 --cflags`" \
-		LDFLAGS="`${PKG_CONFIG} gtk+-2.0 --libs`"
-CONFIGURE_ARGS=	--enable-jni --with-jikes --disable-gtk-peer --disable-plugin
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ARGS=	--enable-jni --with-jikes --disable-alsa --disable-dssi --disable-plugin
 USE_GMAKE=	yes
 
 INFO=		hacking tools vmintegration
 
 CONFLICTS=	sablevm-classpath-*
 
-.include <bsd.port.mk>
+OPTIONS=	GCONF "Use GConf based preferences backend" OFF \
+		GTK2 "Enable Gtk+ AWT peer" ON \
+		CAIRO "Use Gtk+ Cairo based Graphics2D" OFF \
+		QT4 "Enable Qt AWT peer" OFF
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GCONF)
+USE_GNOME+=		gconf2
+CONFIGURE_ARGS+=	--enable-default-preferences-peer=gconf
+PLIST_SUB+=		GCONF=""
+.else
+CONFIGURE_ARGS+=	--enable-default-preferences-peer=file --disable-gconf-peer
+PLIST_SUB+=		GCONF="@comment "
+.endif
+
+.if defined(WITHOUT_GTK2)
+CONFIGURE_ARGS+=	--disable-gtk-peer
+PLIST_SUB+=		GTK2="@comment "
+.if defined(WITH_CAIRO)
+IGNORE=you need to enable the Gtk+ AWT peer in order to use Cairo based Graphics2D.
+.endif
+.else
+USE_GNOME+=		gtk20
+PLIST_SUB+=		GTK2=""
+.if defined(WITH_CAIRO)
+CONFIGURE_ARGS+=	--enable-gtk-cairo
+.endif
+.endif
+
+.if defined(WITH_QT4)
+CONFIGURE_ARGS+=	--enable-qt-peer
+.if defined(WITHOUT_GTK2)
+CONFIGURE_ARGS+=	--enable-default-toolkit=gnu.java.awt.peer.qt.QtToolkit
+.endif
+CONFIGURE_ENV+=		MOC="${LOCALBASE}/bin/moc-qt4"
+USE_QT_VER=		4
+QT_COMPONENTS=		moc_build corelib gui
+PLIST_SUB+=		QT4=""
+.else
+PLIST_SUB+=		QT4="@comment "
+.endif
+
+post-extract:
+	@${REINPLACE_CMD} -e 's,^\(include_HEADERS = \)jni.h jni_md.h \(.*\),\1\2,' \
+		${WRKSRC}/include/Makefile.in
+
+.include <bsd.port.post.mk>
