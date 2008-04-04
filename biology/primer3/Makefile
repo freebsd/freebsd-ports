@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	primer3
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.3
 CATEGORIES=	biology
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Primer3 helps to choose primers for PCR reactions
 
+USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-DOCUMENTS=	README.${PORTNAME}_${PORTVERSION}.txt example
+DOCUMENTS=	README.txt example
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -29,7 +29,7 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/primer3_core ${PREFIX}/bin/primer3
 	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/Copyright.txt ${DATADIR}
+	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/COPYING.txt ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCUMENTS}
@@ -42,6 +42,6 @@ do-install:
 .endif
 
 post-install:
-	@${CAT} ${DATADIR}/Copyright.txt
+	@${CAT} ${DATADIR}/COPYING.txt
 
 .include <bsd.port.mk>
