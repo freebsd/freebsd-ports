@@ -6,3 +6,4 @@
 %%DATADIR%%/bcpg-src.zip
 %%DATADIR%%/bcprov-src.zip
 %%DATADIR%%/bctsp-src.zip
+@dirrm %%DATADIR%%
