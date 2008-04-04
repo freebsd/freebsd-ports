@@ -15,9 +15,13 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A perl interface to the Z39.50 information retrieval protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event
-LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	yaz.3:${PORTSDIR}/net/yaz
 RUN_DEPENDS=	${SITE_PERL}/MARC/Record.pm:${PORTSDIR}/textproc/p5-MARC-Record \
 		${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event
+
+BROKEN=		does not compile with yaz 3.x, deprecated in favor of ZOOM-Perl (net/p5-Net-Z3950-ZOOM)
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2008-05-04
 
 PERL_CONFIGURE=	yes
 
