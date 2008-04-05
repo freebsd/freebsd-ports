@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	belooted
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4.1
 CATEGORIES=	games
 MASTER_SITES=	http://boby.joe.free.fr/dev/belooted/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A popular 32-card trick-taking game played in France
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 desktopfileutils
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -28,6 +28,7 @@ post-install:
 .for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
+	@-update-desktop-database
 .endif
 
 .include <bsd.port.mk>
