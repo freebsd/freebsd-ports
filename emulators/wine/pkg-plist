@@ -34,6 +34,8 @@ include/wine/exception.h
 include/wine/itss.h
 include/wine/itss.idl
 include/wine/library.h
+include/wine/svcctl.h
+include/wine/svcctl.idl
 include/wine/unicode.h
 include/wine/msvcrt/conio.h
 include/wine/msvcrt/crtdbg.h
@@ -75,6 +77,8 @@ include/wine/windows/accctrl.h
 include/wine/windows/aclapi.h
 include/wine/windows/activaut.h
 include/wine/windows/activaut.idl
+include/wine/windows/activdbg.h
+include/wine/windows/activdbg.idl
 include/wine/windows/activscp.h
 include/wine/windows/activscp.idl
 include/wine/windows/adshlp.h
@@ -111,6 +115,7 @@ include/wine/windows/compobj.h
 include/wine/windows/control.h
 include/wine/windows/control.idl
 include/wine/windows/cor.h
+include/wine/windows/corerror.h
 include/wine/windows/cpl.h
 include/wine/windows/custcntl.h
 include/wine/windows/cvconst.h
@@ -210,6 +215,8 @@ include/wine/windows/exdisp.idl
 include/wine/windows/exdispid.h
 include/wine/windows/fci.h
 include/wine/windows/fdi.h
+include/wine/windows/fusion.h
+include/wine/windows/fusion.idl
 include/wine/windows/gdiplus.h
 include/wine/windows/gdipluscolormatrix.h
 include/wine/windows/gdiplusenums.h
@@ -580,6 +587,7 @@ lib/wine/d3dx9_33.dll.so
 lib/wine/d3dx9_34.dll.so
 lib/wine/d3dx9_35.dll.so
 lib/wine/d3dx9_36.dll.so
+lib/wine/d3dx9_37.dll.so
 lib/wine/d3dxof.dll.so
 lib/wine/dbghelp.dll.so
 lib/wine/dciman32.dll.so
@@ -902,6 +910,7 @@ lib/wine/secur32.dll.so
 lib/wine/security.dll.so
 lib/wine/sensapi.dll.so
 lib/wine/serialui.dll.so
+lib/wine/services.exe.so
 lib/wine/setupapi.dll.so
 lib/wine/setupx.dll16
 lib/wine/sfc.dll.so
