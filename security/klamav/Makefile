@@ -7,6 +7,7 @@
 
 PORTNAME=	klamav
 PORTVERSION=	0.42
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	klamav
@@ -15,8 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	A KDE 3 front-end to Clam Anti-Virus
 
-LIB_DEPENDS=	clamav:${PORTSDIR}/security/clamav \
-		sqlite3:${PORTSDIR}/databases/sqlite3-threads
+LIB_DEPENDS=	clamav:${PORTSDIR}/security/clamav
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -25,6 +25,7 @@ DOCSDIR=	${PREFIX}/share/doc/HTML/en/klamav02
 
 USE_GZIP=	yes
 USE_GMAKE=	yes
+USE_SQLITE=	3
 USE_GNOME=	pkgconfig
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes

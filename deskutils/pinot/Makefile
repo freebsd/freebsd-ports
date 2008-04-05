@@ -7,6 +7,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	0.84
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -16,8 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Personal search and metasearch for the Free Desktop
 
-BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils	\
-		${SQ3THOL}:${PORTSDIR}/databases/sqlite3-threads
+BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 LIB_DEPENDS=	xapian.19:${PORTSDIR}/databases/xapian-core	\
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24	\
 		textcat.0:${PORTSDIR}/textproc/libtextcat	\
@@ -28,7 +28,6 @@ LIB_DEPENDS=	xapian.19:${PORTSDIR}/databases/xapian-core	\
 		tag.5:${PORTSDIR}/audio/taglib			\
 		curl.4:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
-		${SQ3THOL}:${PORTSDIR}/databases/sqlite3-threads	\
 		antiword:${PORTSDIR}/textproc/antiword			\
 		xdg-open:${PORTSDIR}/devel/xdg-utils			\
 		pdftotext:${PORTSDIR}/graphics/xpdf			\
@@ -45,7 +44,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" MKDIR_P="${MKDIR}"
 
 USE_XORG=	pixman
 USE_GETTEXT=	yes
-#USE_SQLITE=	3	# Replaced by sqlite3-threads
+USE_SQLITE=	3
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
@@ -58,8 +57,6 @@ CONFIGURE_ARGS+=	--enable-soap=yes
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=yes
 .endif
-
-SQ3THOL=	${LOCALBASE}/share/sqlite3/sqlite3_with_threads-override-locks
 
 INSTALLS_ICONS=	yes
 
