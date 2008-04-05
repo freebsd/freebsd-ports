@@ -144,6 +144,7 @@
     SUBDIR += mylibrary
     SUBDIR += mysql++
     SUBDIR += mysql++1
+    SUBDIR += mysql++3
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-connector-java50
     SUBDIR += mysql-connector-odbc
