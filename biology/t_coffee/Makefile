@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	t_coffee
-PORTVERSION=	4.96
+PORTVERSION=	5.68
 CATEGORIES=	biology
 MASTER_SITES=	http://www.tcoffee.org/Packages/
 DISTNAME=	T-COFFEE_distribution_Version_${PORTVERSION}
@@ -23,7 +23,6 @@ MAKE_ENV=	MV=${MV} USER_BIN=${PREFIX}/bin \
 		CLUSTALW_4_TCOFFEE=${LOCALBASE}/bin/clustalw
 
 MAKEFILE=	makefile
-USE_GCC=	3.3
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/t_coffee ${PREFIX}/bin
