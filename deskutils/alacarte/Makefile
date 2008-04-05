@@ -23,16 +23,14 @@ USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		GMSGFMT="${LOCALBASE}/bin/msgfmt"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|applications.menu|gnome-applications.menu|' \
 		${WRKSRC}/Alacarte/MenuEditor.py
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 	    ${WRKSRC}/Alacarte/util.py
-	@${REINPLACE_CMD} -e 's|gmsgfmt|msgfmt|g ; \
-	    	s|python2.4|${PYTHON_VERSION}|g' \
+	@${REINPLACE_CMD} -e 's|python2.4|${PYTHON_VERSION}|g' \
 	    	${WRKSRC}/configure
 
 .include <bsd.port.mk>
