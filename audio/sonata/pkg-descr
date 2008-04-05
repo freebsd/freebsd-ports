@@ -6,13 +6,13 @@ FEATURES:
 
 	+ Expanded and collapsed views
 	+ Automatic remote or local album art
+	+ User-configurable columns
 	+ Automatic fetching of lyrics
 	+ Playlist and stream support
 	+ Support for editing song tags
-	+ System tray icon with tooltip
 	+ Popup notification
 	+ Library searching and playlist filtering
-	+ Audioscrobbler (last.fm) support
+	+ Audioscrobbler (last.fm) 1.2 support
 	+ Multiple MPD profiles
 	+ Keyboard friendly
 	+ Support for multimedia keys
