@@ -7,6 +7,22 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20080405:
+  AFFECTS: users of sysutils/tracker
+  AUTHOR: ahze@FreeBSD.org
+  
+  The sysutils/tracker port is now a meta port and tracker is now split into
+  separate ports to allow non-GNOME users to install tracker without pulling
+  in GNOME components. To upgrade please use the directions below.
+
+  portmaster users:
+  portmaster -o sysutils/tracker-client tracker
+  portmaster -u sysutils/tracker
+
+  portupgrade users:
+  portupgrade -o sysutils/tracker-client tacker
+  portupgrade -u sysutils/tracker
+
+20080405:
   AFFECTS: users and maintainers of ports that depends of databases/sqlite3
   AUTHOR: mnag@FreeBSD.org
 

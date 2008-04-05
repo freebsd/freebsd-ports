@@ -3,11 +3,12 @@
 # Whom:                 		ade, archie
 #
 # $FreeBSD$
-#   $MCom: ports/x11-fm/nautilus/Makefile,v 1.154 2008/03/15 19:29:34 ahze Exp $
+#   $MCom: ports-stable/x11-fm/nautilus/Makefile,v 1.2 2008/03/31 00:51:45 ahze Exp $
 #
 
 PORTNAME=	nautilus
 PORTVERSION=	2.22.1
+PORTREVISION=	2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -42,7 +43,9 @@ GCONF_SCHEMAS=	apps_nautilus_preferences.schemas
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TRACKER)
-LIB_DEPENDS+=	trackerclient.0:${PORTSDIR}/sysutils/tracker
+RUN_DEPENDS+=	tracker-applet:${PORTSDIR}/sysutils/tracker-gnome		
+LIB_DEPENDS+=	trackerclient.0:${PORTSDIR}/sysutils/tracker-client \
+		tracker-gtk.0:${PORTSDIR}/sysutils/tracker-libtrackergtk
 .else
 CONFIGURE_ARGS+=--disable-tracker
 .endif

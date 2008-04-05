@@ -2,32 +2,59 @@ bin/o3totxt
 bin/tracker-extract
 bin/tracker-files
 bin/tracker-meta-folder
-bin/tracker-preferences
 bin/tracker-query
 bin/tracker-search
-bin/tracker-search-tool
 bin/tracker-stats
 bin/tracker-status
 bin/tracker-tag
 bin/tracker-thumbnailer
 bin/trackerd
 etc/xdg/autostart/trackerd.desktop
-include/libtracker-gtk/tracker-gtk.h
-include/libtracker-gtk/tracker-keyword-store.h
-include/libtracker-gtk/tracker-metadata-tile.h
-include/libtracker-gtk/tracker-tag-bar.h
-include/libtracker-gtk/tracker-ui.h
-include/libtracker-gtk/tracker-utils.h
 include/tracker-client.h
 include/tracker.h
-lib/libtracker-gtk.a
-lib/libtracker-gtk.la
-lib/libtracker-gtk.so
-lib/libtracker-gtk.so.0
 lib/libtrackerclient.a
 lib/libtrackerclient.la
 lib/libtrackerclient.so
 lib/libtrackerclient.so.0
+lib/tracker/extract-modules/libextract-abw.a
+lib/tracker/extract-modules/libextract-abw.la
+lib/tracker/extract-modules/libextract-abw.so
+lib/tracker/extract-modules/libextract-exif.a
+lib/tracker/extract-modules/libextract-exif.la
+lib/tracker/extract-modules/libextract-exif.so
+lib/tracker/extract-modules/libextract-gstreamer.a
+lib/tracker/extract-modules/libextract-gstreamer.la
+lib/tracker/extract-modules/libextract-gstreamer.so
+lib/tracker/extract-modules/libextract-html.a
+lib/tracker/extract-modules/libextract-html.la
+lib/tracker/extract-modules/libextract-html.so
+lib/tracker/extract-modules/libextract-imagemagick.a
+lib/tracker/extract-modules/libextract-imagemagick.la
+lib/tracker/extract-modules/libextract-imagemagick.so
+lib/tracker/extract-modules/libextract-mp3.a
+lib/tracker/extract-modules/libextract-mp3.la
+lib/tracker/extract-modules/libextract-mp3.so
+lib/tracker/extract-modules/libextract-mplayer.a
+lib/tracker/extract-modules/libextract-mplayer.la
+lib/tracker/extract-modules/libextract-mplayer.so
+lib/tracker/extract-modules/libextract-oasis.a
+lib/tracker/extract-modules/libextract-oasis.la
+lib/tracker/extract-modules/libextract-oasis.so
+lib/tracker/extract-modules/libextract-pdf.a
+lib/tracker/extract-modules/libextract-pdf.la
+lib/tracker/extract-modules/libextract-pdf.so
+lib/tracker/extract-modules/libextract-png.a
+lib/tracker/extract-modules/libextract-png.la
+lib/tracker/extract-modules/libextract-png.so
+lib/tracker/extract-modules/libextract-ps.a
+lib/tracker/extract-modules/libextract-ps.la
+lib/tracker/extract-modules/libextract-ps.so
+lib/tracker/extract-modules/libextract-totem.a
+lib/tracker/extract-modules/libextract-totem.la
+lib/tracker/extract-modules/libextract-totem.so
+lib/tracker/extract-modules/libextract-xmp.a
+lib/tracker/extract-modules/libextract-xmp.la
+lib/tracker/extract-modules/libextract-xmp.so
 lib/tracker/filters/application/csv_filter
 lib/tracker/filters/application/msword_filter
 lib/tracker/filters/application/pdf_filter
@@ -62,13 +89,11 @@ lib/tracker/thumbnailers/application/vnd.oasis.opendocument.graphics_thumbnailer
 lib/tracker/thumbnailers/application/vnd.oasis.opendocument.presentation_thumbnailer
 lib/tracker/thumbnailers/application/vnd.oasis.opendocument.spreadsheet_thumbnailer
 lib/tracker/thumbnailers/application/vnd.oasis.opendocument.text_thumbnailer
+lib/tracker/thumbnailers/image/gif_thumbnailer
 lib/tracker/thumbnailers/image/jpeg_thumbnailer
 lib/tracker/thumbnailers/image/png_thumbnailer
-libdata/pkgconfig/libtracker-gtk.pc
+lib/tracker/thumbnailers/image/tiff_thumbnailer
 libdata/pkgconfig/tracker.pc
-share/applications/tracker-preferences.desktop
-share/applications/tracker-search-tool.desktop
-share/dbus-1/services/tracker.service
 share/icons/hicolor/16x16/apps/tracker.png
 share/icons/hicolor/22x22/apps/tracker.png
 share/icons/hicolor/24x24/apps/tracker.png
@@ -76,6 +101,7 @@ share/icons/hicolor/32x32/apps/tracker.png
 share/icons/hicolor/48x48/apps/tracker.png
 share/icons/hicolor/scalable/apps/tracker.svg
 share/locale/ar/LC_MESSAGES/tracker.mo
+share/locale/be@latin/LC_MESSAGES/tracker.mo
 share/locale/ca/LC_MESSAGES/tracker.mo
 share/locale/de/LC_MESSAGES/tracker.mo
 share/locale/dz/LC_MESSAGES/tracker.mo
@@ -85,7 +111,9 @@ share/locale/et/LC_MESSAGES/tracker.mo
 share/locale/fi/LC_MESSAGES/tracker.mo
 share/locale/fr/LC_MESSAGES/tracker.mo
 share/locale/gl/LC_MESSAGES/tracker.mo
+share/locale/hu/LC_MESSAGES/tracker.mo
 share/locale/it/LC_MESSAGES/tracker.mo
+share/locale/ko/LC_MESSAGES/tracker.mo
 share/locale/lt/LC_MESSAGES/tracker.mo
 share/locale/mk/LC_MESSAGES/tracker.mo
 share/locale/nb/LC_MESSAGES/tracker.mo
@@ -93,10 +121,12 @@ share/locale/nl/LC_MESSAGES/tracker.mo
 share/locale/oc/LC_MESSAGES/tracker.mo
 share/locale/pl/LC_MESSAGES/tracker.mo
 share/locale/pt/LC_MESSAGES/tracker.mo
+share/locale/pt_BR/LC_MESSAGES/tracker.mo
 share/locale/ru/LC_MESSAGES/tracker.mo
+share/locale/sk/LC_MESSAGES/tracker.mo
 share/locale/sl/LC_MESSAGES/tracker.mo
 share/locale/sv/LC_MESSAGES/tracker.mo
-%%DATADIR%%/icons/thumbnail_frame.png
+share/locale/zh_CN/LC_MESSAGES/tracker.mo
 %%DATADIR%%/languages/stopwords.da
 %%DATADIR%%/languages/stopwords.de
 %%DATADIR%%/languages/stopwords.en
@@ -130,23 +160,22 @@ share/locale/sv/LC_MESSAGES/tracker.mo
 %%DATADIR%%/sqlite-tracker.sql
 %%DATADIR%%/sqlite-user-data.sql
 %%DATADIR%%/tracker-introspect.xml
-%%DATADIR%%/tracker-preferences.glade
 @dirrm %%DATADIR%%/services
 @dirrm %%DATADIR%%/languages
-@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrm lib/tracker/thumbnailers/image
 @dirrm lib/tracker/thumbnailers/application
 @dirrm lib/tracker/thumbnailers
 @dirrm lib/tracker/filters/text
 @dirrm lib/tracker/filters/application
 @dirrm lib/tracker/filters
+@dirrm lib/tracker/extract-modules
 @dirrm lib/tracker
-@dirrm include/libtracker-gtk
 @dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/applications
