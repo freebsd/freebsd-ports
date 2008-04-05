@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080405:
+  AFFECTS: users and maintainers of ports that depends of databases/sqlite3
+  AUTHOR: mnag@FreeBSD.org
+
+  Port databases/sqlite3 are updated to 3.5.6 and enabled threads
+  by default. If you see any problem you can recompile sqlite3
+  without threads and test or change Makefile of affected port
+  with this:
+
+  sed -i.bak -E -e "s|USE_SQLITE=.*|USE_SQLITE=34|g" \
+    -e "s|databases/sqlite3|databases/sqlite34|g" Makefile
+
+  Report success or fail to port maintainer and to me.
+
 20080403:
   AFFECTS: users of emulators/qemu and emulators/qemu-devel
   AUTHOR: nox@FreeBSD.org
