@@ -11,6 +11,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_404.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_api.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_app.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_appmod_cgi.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_cgi.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_compile.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_config.beam
@@ -56,6 +57,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_404.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_api.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_app.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_appmod_cgi.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_cgi.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_compile.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_config.erl
@@ -95,6 +97,8 @@ etc/yaws.conf.sample
 %%WWWDIR%%/arg.yaws
 %%WWWDIR%%/arg2.yaws
 %%WWWDIR%%/bindings.yaws
+%%WWWDIR%%/cgi-bin/foo.py
+%%WWWDIR%%/cgi.yaws
 %%WWWDIR%%/code.yaws
 %%WWWDIR%%/code/Makefile
 %%WWWDIR%%/code/myappmod.beam
@@ -307,6 +311,7 @@ etc/yaws.conf.sample
 @dirrm %%WWWDIR%%/icons/small
 @dirrm %%WWWDIR%%/icons
 @dirrm %%WWWDIR%%/code
+@dirrm %%WWWDIR%%/cgi-bin
 @dirrm %%WWWDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src
