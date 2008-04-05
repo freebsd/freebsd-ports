@@ -7,6 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.1.23
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -83,7 +84,7 @@ PLIST_SUB+=	SUB_PGSQL="@comment "
 
 .if defined(WITH_SQLITE)
 CONFIGURE_ARGS+=--enable-sqlite
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3-threads
+LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 CFLAGS+=	${PTHREAD_CFLAGS}
 PLIST_SUB+=	SUB_SQLITE=""
 .else
