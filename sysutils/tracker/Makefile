@@ -3,52 +3,36 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/tracker/Makefile,v 1.8 2007/10/05 16:55:59 mezz Exp $
+#   $MCom: ports-stable/sysutils/tracker/Makefile,v 1.2 2008/03/31 00:28:58 ahze Exp $
 #
 
 PORTNAME=	tracker
-PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTVERSION=	0.6.6
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://www.gnome.org/~jamiemcc/tracker/
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Object database, tag/metadata database, search tool and indexer
+COMMENT=	Tracker search tool and indexer metaport
 
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		poppler-glib.2:${PORTSDIR}/graphics/poppler-gtk \
-		exif.12:${PORTSDIR}/graphics/libexif \
-		wv-1.2.3:${PORTSDIR}/textproc/wv \
-		gmime-2.0.4:${PORTSDIR}/mail/gmime2 \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3
-#RUN_DEPENDS=	${LOCALBASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet
+RUN_DEPENDS=	trackerd:${PORTSDIR}/sysutils/tracker-client
 
-USE_BZIP2=	yes
-USE_FAM=	yes
-WANT_FAM_SYSTEM=gamin
-USE_GNOME=	gnomedesktop gnomehack gnomeprefix libgsf
-USE_GMAKE=	yes
-USE_GETTEXT=	yes
-USE_LDCONFIG=	yes
-USE_GSTREAMER=	core
-INSTALLS_ICONS=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--enable-video-extractor=gstreamer \
-		--enable-file-monitoring=fam \
-		--with-session-bus-services-dir=${LOCALBASE}/share/dbus-1/services \
-		--enable-deskbar-applet \
-		--with-deskbar-applet-handler-dir=${LOCALBASE}/lib/deskbar-applet/handlers
+NO_BUILD=	yes
+OPTIONS=	GNOME "Gnome preferences, panel applet, and search tool" Off \
+		MSOFFICE "Enable search for Microsoft Office Docs (uses gtk)" Off
 
-MAN1=	tracker-extract.1 tracker-files.1 tracker-meta-folder.1 \
-	tracker-preferences.1 tracker-query.1 tracker-search.1 \
-	tracker-search-tool.1 tracker-stats.1 tracker-status.1 \
-	tracker-tag.1 tracker-thumbnailer.1 trackerd.1
-MAN5=	tracker.cfg.5
-MAN7=	tracker-services.7
+.include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
+.if defined(WITH_GNOME)
+RUN_DEPENDS+=	tracker-applet:${PORTSDIR}/sysutils/tracker-gnome
+.endif
 
-.include <bsd.port.mk>
+.if defined(WITH_MSOFFICE)
+RUN_DEPENDS+=	${LOCALBASE}/lib/tracker/extract-modules/libextract-msoffice.so:${PORTSDIR}/sysutils/tracker-libtrackergtk
+.endif
+
+do-install:
+
+.include <bsd.port.post.mk>

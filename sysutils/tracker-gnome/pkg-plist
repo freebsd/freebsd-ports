@@ -1,0 +1,18 @@
+bin/tracker-applet
+bin/tracker-preferences
+bin/tracker-search-tool
+etc/xdg/autostart/tracker-applet.desktop
+share/applications/tracker-preferences.desktop
+share/applications/tracker-search-tool.desktop
+%%DATADIR%%/icons/thumbnail_frame.png
+%%DATADIR%%/icons/tracker-applet-default.png
+%%DATADIR%%/icons/tracker-applet-indexing1.png
+%%DATADIR%%/icons/tracker-applet-indexing2.png
+%%DATADIR%%/icons/tracker-applet-paused.png
+%%DATADIR%%/tracker-applet-prefs.glade
+%%DATADIR%%/tracker-preferences.glade
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg

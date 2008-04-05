@@ -677,6 +677,9 @@
     SUBDIR += torsmo
     SUBDIR += toshctl
     SUBDIR += tracker
+    SUBDIR += tracker-client
+    SUBDIR += tracker-gnome
+    SUBDIR += tracker-libtrackergtk
     SUBDIR += tree
     SUBDIR += ts
     SUBDIR += tss

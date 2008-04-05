@@ -1,13 +1,19 @@
---- src/libtracker-gtk/Makefile.in.orig	2007-08-25 14:42:37.000000000 -0500
-+++ src/libtracker-gtk/Makefile.in	2007-08-25 14:42:59.000000000 -0500
-@@ -324,8 +324,8 @@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
- INCLUDES = \
--	$(LIBTRACKERGTK_CFLAGS) \
--	-I$(top_srcdir)/src/libtracker
-+	-I$(top_srcdir)/src/libtracker \
-+	$(LIBTRACKERGTK_CFLAGS)
+--- src/libtracker-gtk/Makefile.in.orig	2008-03-30 15:48:54.539689924 -0400
++++ src/libtracker-gtk/Makefile.in	2008-03-30 15:50:09.289800343 -0400
+@@ -56,7 +56,6 @@
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+ libtracker_gtk_la_DEPENDENCIES =  \
+-	$(top_builddir)/src/libtracker/libtrackerclient.la \
+ 	$(am__DEPENDENCIES_1)
+ am_libtracker_gtk_la_OBJECTS = tracker-utils.lo tracker-ui.lo \
+ 	tracker-metadata-tile.lo tracker-tag-bar.lo \
+@@ -316,7 +315,7 @@
+ 	tracker-keyword-store.c
  
- libtracker_gtkincdir = $(includedir)/libtracker-gtk
- lib_LTLIBRARIES = libtracker-gtk.la
+ libtracker_gtk_la_LIBADD = \
+-	$(top_builddir)/src/libtracker/libtrackerclient.la \
++	-ltrackerclient \
+ 	$(LIBTRACKERGTK_LIBS) 
+ 
+ libtracker_gtk_la_LDFLAGS = -version-info 0:0:0

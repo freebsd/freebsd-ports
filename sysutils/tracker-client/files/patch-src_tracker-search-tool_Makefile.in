@@ -1,20 +1,23 @@
---- src/tracker-search-tool/Makefile.in.orig	2007-08-26 16:14:33.000000000 -0500
-+++ src/tracker-search-tool/Makefile.in	2007-08-26 16:15:09.000000000 -0500
-@@ -333,6 +333,7 @@
- desktopdir = $(datadir)/applications
- icondir = $(datadir)/tracker/icons
- INCLUDES = \
-+	-I$(top_srcdir)/src/libtracker				\
- 	$(GLIB2_CFLAGS)						\
- 	$(GNOME_UTILS_CFLAGS)					\
- 	$(GNOMEVFS_CFLAGS)					\
-@@ -342,8 +343,7 @@
- 	-DTRACKER_LOCALEDIR=\""$(localedir)"\" 			\
- 	-DTRACKER_DATADIR=\""$(datadir)"\"				\
- 	-DGREP_COMMAND=\""$(GREP_COMMAND)"\"			\
--	$(LIBTRACKERGTK_CFLAGS)					\
--	-I$(top_srcdir)/src/libtracker
-+	$(LIBTRACKERGTK_CFLAGS)
+--- src/tracker-search-tool/Makefile.in.orig	2008-03-30 16:33:18.729811374 -0400
++++ src/tracker-search-tool/Makefile.in	2008-03-30 16:33:36.248603008 -0400
+@@ -57,9 +57,7 @@
+ am__DEPENDENCIES_1 =
+ tracker_search_tool_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+-	$(top_builddir)/src/libtracker-gtk/libtracker-gtk.la \
+-	$(top_builddir)/src/libtracker/libtrackerclient.la
++	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(top_builddir)@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -327,8 +325,7 @@
+ 	$(GNOMEVFS_LIBS)    \
+ 	$(GNOMEDESKTOP_LIBS) \
+ 	$(DBUS_LIBS)	\
+-        $(top_builddir)/src/libtracker-gtk/libtracker-gtk.la \
+-	$(top_builddir)/src/libtracker/libtrackerclient.la 
++	-ltracker-gtk -ltrackerclient
  
- tracker_search_tool_SOURCES = \
- 	tracker-search-tool-support.c   \
+ desktop_in_files = tracker-search-tool.desktop.in
+ desktop_files = $(desktop_in_files:.desktop.in=.desktop)

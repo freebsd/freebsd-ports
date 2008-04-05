@@ -1,0 +1,19 @@
+--- src/tracker-applet/Makefile.in.orig	2008-03-30 16:20:32.345933535 -0400
++++ src/tracker-applet/Makefile.in	2008-03-30 16:20:52.759690870 -0400
+@@ -55,7 +55,6 @@
+ tracker_applet_OBJECTS = $(am_tracker_applet_OBJECTS)
+ am__DEPENDENCIES_1 =
+ tracker_applet_DEPENDENCIES =  \
+-	$(top_builddir)/src/libtracker/libtrackerclient.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(top_builddir)@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+@@ -312,7 +311,7 @@
+ 	tracker-applet-marshallers.h
+ 
+ tracker_applet_LDADD = \
+-	$(top_builddir)/src/libtracker/libtrackerclient.la \
++	-ltrackerclient \
+ 	$(LIBGLADE_LIBS) \
+ 	$(TRACKERAPPLET_LIBS)
+ 
