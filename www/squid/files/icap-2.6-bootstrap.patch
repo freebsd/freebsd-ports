@@ -7,10 +7,10 @@ ICAP patchset.
 
 Please see icap-2.6-core.patch for further information.
 
-Patch last updated: 2008-01-11
+Patch last updated: 2008-04-02
 
---- configure.orig	Thu Jan 10 13:34:23 2008
-+++ configure	Fri Jan 11 14:21:16 2008
+--- configure.orig	2008-04-02 22:26:33.000000000 +0200
++++ configure	2008-04-02 22:26:34.000000000 +0200
 @@ -728,6 +728,8 @@
  ENABLE_PINGER_FALSE
  USE_DELAY_POOLS_TRUE
@@ -43,8 +43,8 @@ Patch last updated: 2008-01-11
  
  # Define the identity of the package.
   PACKAGE='squid'
-- VERSION='2.6.STABLE18'
-+ VERSION='2.6.STABLE18+ICAP'
+- VERSION='2.6.STABLE19'
++ VERSION='2.6.STABLE19+ICAP'
  
  
  cat >>confdefs.h <<_ACEOF

@@ -75,7 +75,7 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.18
+PORTVERSION=	2.6.19
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -94,7 +94,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/Versions/v2/2.6/ \
 		http://www2.tw.squid-cache.org/Versions/v2/2.6/
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE18
+DISTNAME=	squid-2.6.STABLE19
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -109,7 +109,7 @@ PATCH_SITE_SUBDIR=	Versions/v2/2.6/changesets
 PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	tmseck@netcologne.de
+MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
 
 CONFLICTS=	squid-2.[^6]*
@@ -383,7 +383,8 @@ SQUID_LANGUAGES?=	Armenian Azerbaijani Bulgarian Catalan Czech Danish \
 			Hebrew Hungarian Italian Japanese Korean Lithuanian \
 			Polish Portuguese Romanian Russian-1251 Russian-koi8-r \
 			Serbian Simplify_Chinese Slovak Spanish Swedish \
-			Traditional_Chinese Turkish
+			Traditional_Chinese Turkish Ukrainian-1251 \
+			Ukrainian-koi8-u Ukrainian-utf8
 SQUID_DEFAULT_LANG?=	English
 CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 			--enable-default-err-language=${SQUID_DEFAULT_LANG}
