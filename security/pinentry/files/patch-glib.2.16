@@ -1,0 +1,58 @@
+--- gtk+-2/gtksecentry.c-	2008-03-26 17:28:13.000000000 +0200
++++ gtk+-2/gtksecentry.c	2008-03-26 17:32:51.000000000 +0200
+@@ -270,7 +270,7 @@ gboolean g_use_secure_mem = FALSE;
+ 
+ 
+ gpointer
+-g_malloc(gulong size)
++g_malloc(gsize size)
+ {
+     gpointer p;
+ 
+@@ -282,13 +282,13 @@ g_malloc(gulong size)
+     else
+ 	p = (gpointer) malloc(size);
+     if (!p)
+-	g_error("could not allocate %ld bytes", size);
++	g_error("could not allocate %zd bytes", size);
+ 
+     return p;
+ }
+ 
+ gpointer
+-g_malloc0(gulong size)
++g_malloc0(gsize size)
+ {
+     gpointer p;
+ 
+@@ -302,13 +302,13 @@ g_malloc0(gulong size)
+     } else
+ 	p = (gpointer) calloc(size, 1);
+     if (!p)
+-	g_error("could not allocate %ld bytes", size);
++	g_error("could not allocate %zd bytes", size);
+ 
+     return p;
+ }
+ 
+ gpointer
+-g_realloc(gpointer mem, gulong size)
++g_realloc(gpointer mem, gsize size)
+ {
+     gpointer p;
+ 
+@@ -3210,11 +3210,11 @@ static gint
+ get_cursor_time(GtkSecureEntry * entry)
+ {
+     GtkSettings *settings = gtk_widget_get_settings(GTK_WIDGET(entry));
+-    gint time;
++    gint _time;
+ 
+-    g_object_get(settings, "gtk-cursor-blink-time", &time, NULL);
++    g_object_get(settings, "gtk-cursor-blink-time", &_time, NULL);
+ 
+-    return time;
++    return _time;
+ }
+ 
+ static void
