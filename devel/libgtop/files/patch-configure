@@ -1,0 +1,11 @@
+--- configure.orig	2008-04-05 01:45:43.000000000 -0400
++++ configure	2008-04-05 01:45:50.000000000 -0400
+@@ -21523,6 +21523,8 @@ echo $ECHO_N "checking for libgtop sysde
+ 	  libgtop_sysdeps_dir=freebsd
+ 	  libgtop_use_machine_h=yes
+ 	  libgtop_need_server=yes
++	  libgtop_sysdeps_private_mountlist=yes
++	  libgtop_sysdeps_private_fsusage=yes
+ 	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2755 $(bindir)/libgtop_server2'
+ 	  ;;
+ 	solaris*)
