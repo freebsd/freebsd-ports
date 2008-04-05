@@ -13,6 +13,7 @@
     SUBDIR += fhourstones
     SUBDIR += flops
     SUBDIR += forkbomb
+    SUBDIR += geekbench
     SUBDIR += gsbench
     SUBDIR += gtkperf
     SUBDIR += himenobench

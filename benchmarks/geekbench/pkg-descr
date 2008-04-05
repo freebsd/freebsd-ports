@@ -1,0 +1,11 @@
+Geekbench is a cross-platform benchmark suite for Mac OS X, Windows,
+Solaris, and Linux. Geekbench is designed to measure the performance
+an average application can expect from both the processor and the
+memory subsystem.
+
+Geekbench's benchmarks are written in platform-neutral C++, and have
+no platform-specific optimizations. Geekbench is compiled with what we
+consider the de-facto standard compiler for each platform, with the
+compiler switches suggested by the compiler vendor for release code.
+
+WWW:	http://www.geekpatrol.ca/geekbench/
