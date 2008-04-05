@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ad4a00fa-0157-11dd-8bd3-001372ae3ab9">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<range><lt>9.27.20080331</lt></range>
+      </package>
+      <package>
+	<name>linux-opera</name>
+	<range><lt>9.27.20080331</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera Software reports of multiple security issues in Opera.
+	  All of them can lead to arbitrary code execution.  Details are 
+	  as the following:</p>
+	<ul>
+	  <li><a href="http://www.opera.com/support/search/view/881/">Newsfeed
+	    prompt can cause Opera to execute arbitrary code</a></li>
+	  <li><a href="http://www.opera.com/support/search/view/882/">Resized
+	    canvas patterns can cause Opera to execute arbitrary code</a></li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <bid>28585</bid>
+      <url>http://www.opera.com/support/search/view/881/</url>
+      <url>http://www.opera.com/support/search/view/882/</url>
+    </references>
+    <dates>
+      <discovery>2008-04-03</discovery>
+      <entry>2008-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12b336c6-fe36-11dc-b09c-001c2514716c">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
