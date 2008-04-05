@@ -1,16 +1,16 @@
 --- Makefile.in.orig	2007-06-28 09:46:18.000000000 -0300
-+++ Makefile.in	2007-08-10 08:47:35.000000000 -0300
++++ Makefile.in	2008-03-05 22:07:49.000000000 -0300
 @@ -128,7 +128,8 @@
           select.lo table.lo tokenize.lo trigger.lo update.lo \
           util.lo vacuum.lo \
           vdbe.lo vdbeapi.lo vdbeaux.lo vdbeblob.lo vdbefifo.lo vdbemem.lo \
 -         where.lo utf.lo legacy.lo vtab.lo
 +         where.lo utf.lo legacy.lo vtab.lo \
-+         fts2.lo fts2_hash.lo fts2_porter.lo fts2_tokenizer.lo fts2_tokenizer1.lo
++         fts2.lo fts2_hash.lo fts2_porter.lo fts2_icu.lo fts2_tokenizer.lo fts2_tokenizer1.lo
  
  # All of the source code files.
  #
-@@ -198,6 +199,15 @@
+@@ -198,6 +199,16 @@
    $(TOP)/ext/fts1/fts1_tokenizer.h \
    $(TOP)/ext/fts1/fts1_tokenizer1.c
  
@@ -20,13 +20,14 @@
 +  $(TOP)/ext/fts2/fts2_hash.c \
 +  $(TOP)/ext/fts2/fts2_hash.h \
 +  $(TOP)/ext/fts2/fts2_porter.c \
++  $(TOP)/ext/fts2/fts2_icu.c \
 +  $(TOP)/ext/fts2/fts2_tokenizer.c \
 +  $(TOP)/ext/fts2/fts2_tokenizer.h \
 +  $(TOP)/ext/fts2/fts2_tokenizer1.c
  
  # Source code to the test files.
  #
-@@ -261,6 +271,11 @@
+@@ -261,6 +272,11 @@
    $(TOP)/ext/fts1/fts1_hash.h \
    $(TOP)/ext/fts1/fts1_tokenizer.h
  
@@ -38,7 +39,7 @@
  # Header files used by the VDBE submodule
  #
  VDBEHDR = \
-@@ -482,6 +497,21 @@
+@@ -482,6 +498,24 @@
  where.lo:	$(TOP)/src/where.c $(HDR)
  	$(LTCOMPILE) -c $(TOP)/src/where.c
  
@@ -50,6 +51,9 @@
 +
 +fts2_porter.lo:	$(TOP)/ext/fts2/fts2_porter.c $(HDR)
 +	$(LTCOMPILE) -c $(TOP)/ext/fts2/fts2_porter.c
++
++fts2_icu.lo:	$(TOP)/ext/fts2/fts2_icu.c $(HDR)
++	$(LTCOMPILE) -c $(TOP)/ext/fts2/fts2_icu.c
 +
 +fts2_tokenizer.lo:	$(TOP)/ext/fts2/fts2_tokenizer.c $(HDR)
 +	$(LTCOMPILE) -c $(TOP)/ext/fts2/fts2_tokenizer.c
