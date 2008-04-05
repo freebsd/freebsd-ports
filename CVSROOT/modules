@@ -8207,6 +8207,7 @@ myphpmoney	ports/finance/myphpmoney
 mysar		ports/www/mysar
 mysql++		ports/databases/mysql++
 mysql++1	ports/databases/mysql++1
+mysql++3	ports/databases/mysql++3
 mysql-connector-java	ports/databases/mysql-connector-java
 mysql-connector-java50	ports/databases/mysql-connector-java50
 mysql-connector-odbc	ports/databases/mysql-connector-odbc
