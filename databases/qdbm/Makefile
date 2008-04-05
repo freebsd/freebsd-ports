@@ -3,10 +3,11 @@
 # Whom:					Kimura Fuyuki <fuyuki@nigredo.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/databases/qdbm/Makefile,v 1.4 2006/03/04 21:25:54 ahze Exp $
+#    $MCom: ports-stable/databases/qdbm/Makefile,v 1.6 2008/03/29 20:07:25 ahze Exp $
 
 PORTNAME=	qdbm
 PORTVERSION=	1.8.77
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://qdbm.sourceforge.net/
@@ -21,7 +22,9 @@ USE_LDCONFIG=	yes
 .if !defined(SLAVEPORT)
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--enable-zlib \
-		--enable-iconv
+		--enable-iconv \
+		--enable-pthread
+CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 MAKE_ARGS=	RELCFLAGS="${CFLAGS}" \
@@ -37,9 +40,6 @@ MAN1=	cbcodec.1 cbtest.1 crmgr.1 crtest.1 crtsv.1 dpmgr.1 dptest.1 \
 MAN3=	cabin.3 curia.3 depot.3 hovel.3 odeum.3 qdbm.3 relic.3 villa.3
 MLINKS=	curia.3 cropen.3 depot.3 dpopen.3 \
 		odeum.3 odopen.3 villa.3 vlopen.3 villa.3 vista.3
-
-OPTIONS=	PTHREAD "Enable pthread support" Off \
-		DEBUG "Enable debug" Off
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
@@ -70,15 +70,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if !defined(SLAVEPORT)
-.if defined(WITH_DEBUG)
+.if !defined(SLAVEPORT) && defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if defined(WITH_PTHREAD)
-CONFIGURE_ARGS+=	--enable-pthread
-CFLAGS+=		${PTHREAD_CFLAGS}
-.endif
 .endif
 
 .include <bsd.port.post.mk>
