@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uniutils
-PORTVERSION=	2.25
+PORTVERSION=	2.26
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
@@ -27,7 +27,8 @@ TESTFILES=	Test1.ann Test1.u Test2.ann Test2.u Test3.ann Test3.u	\
 		Test4.ann Test4.u
 PORTDOCS=	AUTHORS NEWS README
 
-MAN1=		ExplicateUTF8.1 unidesc.1 unihist.1 uniname.1 unirev.1
+MAN1=		ExplicateUTF8.1 unidesc.1 unifuzz.1 unihist.1 uniname.1	\
+		unireverse.1
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile.in
