@@ -5,19 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sqlite3
-PORTVERSION=	3.4.1
+PORTNAME=	sqlite34
+PORTVERSION=	3.4.2
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sqlite.org/
-.if defined(USE_THOL)
-PKGNAMESUFFIX=	-threads
-.endif
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
 DISTNAME=	sqlite-${PORTVERSION}
 
 MAINTAINER=	mnag@FreeBSD.org
-COMMENT?=	An SQL database engine in a C library w/ Tcl wrapper
+COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
 
-SLAVEDIRS=	databases/sqlite3-threads
+CONFLICTS=	sqlite3-[0-9]*
 
 USE_GMAKE=	YES
 USE_GNOME=	pkgconfig
@@ -32,22 +30,13 @@ OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		DOCS		"Building docs (depends on TCL)"	on \
 		FTS1		"Enable FTS1 (Full Text Search) module"	off \
 		FTS2		"Enable FTS2 (Full Text Search) module"	off \
-		TCLWRAPPER	"TCL wrapper for SQLITE"		off
+		TCLWRAPPER	"TCL wrapper for SQLITE"		off \
+		THREADS		"Enable threads support"		off
 
 # Defaults, for building the docs:
 TCL_V?=		8.4
 MAKE_ARGS+=	TCLSH=tclsh${TCL_V}
 MAKE_ENV+=	TCL_VER=${TCL_V}
-
-.if !defined(USE_THOL)
-OPTIONS+=	THREADS		"Enable threads support"		off
-PLIST_SUB+=	THOL="@comment "
-CONFLICTS=	sqlite-threads-3*
-.else
-CONFIGURE_ARGS+=	--enable-threadsafe --enable-threads-override-locks
-PLIST_SUB+=	THOL=""
-CONFLICTS=	sqlite-3*
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -62,13 +51,13 @@ PORTDOCS=		*
 .endif
 
 .if defined(WITH_FTS1) && defined(WITH_FTS2)
-CFLAGS+=		-DSQLITE_ENABLE_FTS1 -DSQLITE_ENABLE_FTS2
+CFLAGS+=		-DSQLITE_CORE -DSQLITE_ENABLE_FTS1 -DSQLITE_ENABLE_FTS2
 EXTRA_PATCHES+=		${FILESDIR}/fts12_patch-Makefile.in
 .elif defined(WITH_FTS1) && !defined(WITH_FTS2)
-CFLAGS+=		-DSQLITE_ENABLE_FTS1
+CFLAGS+=		-DSQLITE_CORE -DSQLITE_ENABLE_FTS1
 EXTRA_PATCHES+=		${FILESDIR}/fts1_patch-Makefile.in
 .elif defined(WITH_FTS2) && !defined(WITH_FTS1)
-CFLAGS+=		-DSQLITE_ENABLE_FTS2
+CFLAGS+=		-DSQLITE_CORE -DSQLITE_ENABLE_FTS2
 EXTRA_PATCHES+=		${FILESDIR}/fts2_patch-Makefile.in
 .endif
 
@@ -83,7 +72,7 @@ PLIST_SUB+=		WITH_TCLWRAPPER="@comment "
 .endif
 
 .if defined(WITH_THREADS)
-CONFIGURE_ARGS+=	--enable-threadsafe
+CONFIGURE_ARGS+=	--enable-threadsafe --enable-threads-override-locks
 .endif
 
 post-patch:
@@ -100,7 +89,7 @@ post-patch:
 		>> ${WRKSRC}/freebsd.hints
 
 pre-configure:
-.if defined(WITH_THREADS) || defined(USE_THOL)
+.if defined(WITH_THREADS)
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e "s|(Libs:.*)|\1 ${PTHREAD_LIBS}|" \
@@ -121,10 +110,6 @@ post-install:
 .if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
-.if defined(USE_THOL)
-	@${MKDIR} ${DATADIR}
-	@${TOUCH} ${DATADIR}/sqlite3_with_threads-override-locks
 .endif
 
 .include <bsd.port.post.mk>
