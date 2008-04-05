@@ -44,6 +44,7 @@ post-patch:
 		-e 's|gcc|${CC}|' \
 		-e 's|g\+\+|${CXX}|' \
 		-e 's|-O2|${CFLAGS}|' \
+		${WRKSRC}/${BUILDCMD}
 .else
 	@${REINPLACE_CMD} -E \
 		-e 's|gcc|${CC}|' \
