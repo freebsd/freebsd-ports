@@ -9,9 +9,9 @@ PORTNAME=	linpack
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/linpack/ \
-		ftp://ftp.mirrorservice.org/sites/netlib.bell-labs.com/netlib/linpack/
-DISTFILES=	${SRCS:.f=.f.gz}
+MASTER_SITES=	http://www.netlib.org/linpack/ \
+		http://netlib.amss.ac.cn/linpack/
+DISTFILES=	${SRCS}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linear Algebra package
@@ -53,7 +53,7 @@ SRCS =	cchdc.f cchdd.f cchex.f cchud.f cgbco.f cgbdi.f cgbfa.f cgbsl.f \
 do-extract:
 	@${MKDIR} ${WRKDIR}
 .for file in ${SRCS}
-	@${GZCAT} ${_DISTDIR}/${file:.f=.f.gz} > ${WRKSRC}/${file}
+	@${CP} ${_DISTDIR}/${file} ${WRKSRC}/${file}
 .endfor
 
 do-build:
