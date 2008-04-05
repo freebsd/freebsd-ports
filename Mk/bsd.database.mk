@@ -391,7 +391,7 @@ IGNORE=	${_IGNORE_MSG}
 
 .if ${USE_SQLITE:L} == "yes"
 _SQLITE_VER=	3
-.fi
+.endfi
 
 # USE_SQLITE is specified incorrectly, so mark this as IGNORE
 .if ${_SQLITE_VER} == "3"
