@@ -1,5 +1,5 @@
---- config.mk.orig	2008-03-13 17:55:43.000000000 +0100
-+++ config.mk	2008-03-13 21:43:27.000000000 +0100
+--- config.mk.orig	2008-04-03 22:57:01.000000000 +0200
++++ config.mk	2008-04-04 12:05:19.000000000 +0200
 @@ -4,19 +4,19 @@
  # Customize below to fit your system
  
@@ -23,11 +23,11 @@
 -LDFLAGS = -s ${LIBS}
 +CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
 +LDFLAGS+= ${LIBS}
- #CFLAGS = -g -std=c99 -pedantic -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\" -DWORK
+ #CFLAGS = -g -std=c99 -pedantic -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
  #LDFLAGS = -g ${LIBS}
  
-@@ -26,4 +26,4 @@
- #CFLAGS += -xtarget=ultra
+@@ -25,4 +25,4 @@
+ #LDFLAGS = ${LIBS}
  
  # compiler and linker
 -CC = cc
