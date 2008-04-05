@@ -1,7 +1,6 @@
 OPTIONS=	APPLIX "Import/Export Applix Word files" on \
 		BABELFISH "Translate selected text" on \
 		BMP "View Bitmap Images" on \
-		BZ2ABW "Import/Export BZ2 compressed AbiWord files" on \
 		COMMAND "Allows command line control of AbiWord" on \
 		FREETRANSLATION "Translate selected text" on \
 		GOOGLE "Search Google for your selected text" on \
@@ -20,9 +19,11 @@ OPTIONS=	APPLIX "Import/Export Applix Word files" on \
 		HRTEXT "Export text with \"newsgroup\" markup" off \
 		JPEG "View JPEG Images" off \
 		LATEX "LaTeX export" off \
+		MATHVIEW "Enables AbiWord to embed some maths" off \
 		NROFF "Nroff/Man file format" off \
 		OPENDOCUMENT "Iport/export OpenDocument files" off \
 		OPENWRITER "Import/export OpenOffice files" off \
+		OPENXML "Allow AbiWord to read OpenXML .docx files" off \
 		PDB "Import/export Palm Database files" off \
 		PSION "Import/export Psion files" off \
 		SDW "Import StarOffice 5.x files" off \

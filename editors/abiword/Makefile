@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.4.6
-PORTREVISION=	3
+PORTVERSION=	2.6.0
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -22,61 +21,57 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		png.5:${PORTSDIR}/graphics/png \
 		wv-1.2:${PORTSDIR}/textproc/wv \
-		fribidi.0:${PORTSDIR}/converters/fribidi
+		fribidi.0:${PORTSDIR}/converters/fribidi \
+		goffice-0.4:${PORTSDIR}/devel/goffice04
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GNOME=	libglade2 libxml2 libgnomeprintui desktopfileutils
+USE_GNOME=	gnomehack libglade2 libxml2 libgnomeprintui desktopfileutils
 WANT_GNOME=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-xft \
-		--with-sys-wv \
-		--with-popt=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-popt=${LOCALBASE} \
 		--with-zlib=${LOCALBASE} \
 		--with-libpng=${LOCALBASE} \
 		--with-libiconv=${LOCALBASE} \
 		--with-libjpeg-prefix=${LOCALBASE} \
 		--disable-peer-config
 MAKEFILE=	GNUmakefile
+GNOME_MAKEFILEIN=GNUmakefile.in
 
-ABIVERSION=	2.4
+ABIVERSION=	2.6
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}
-WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
-
-EXTERNALS=	MSVC* abipbx abiword-docs abiword-plugins expat fribidi \
-		libiconv libpng pbx popt wv zlib
-EXTRACT_AFTER_ARGS=| ${TAR} -xpf - ${EXTERNALS:C,^,--exclude ${DISTNAME}/,}
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug \
 			--enable-symbols
-CFLAGS+=		-g
-STRIP=
 .endif
 
 .ifndef(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=		enchant.1:${PORTSDIR}/textproc/enchant
-PLIST_SUB+=		DICT:="@comment "
-.else
-CONFIGURE_ARGS+=	--disable-enchant
+CONFIGURE_ARGS+=	--enable-spellcheck
 PLIST_SUB+=		DICT:=""
+.else
+CONFIGURE_ARGS+=	--disable-spellcheck
+PLIST_SUB+=		DICT:="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_GNOME+=		libgnomeui
-CONFIGURE_ARGS+=	--enable-gnome
-PKGNAMESUFFIX:=		-gnome
-GNOME_ENABLED=		yes
-.endif
+#.if ${HAVE_GNOME:Mlibgnomeui}!=""
+#USE_GNOME+=		libgnomeui
+#CONFIGURE_ARGS+=	--enable-gnomeui
+#PKGNAMESUFFIX:=		-gnome
+#.else
+#CONFIGURE_ARGS+=	--disable-gnomeui
+#.endif
 
-.if defined(WITH_GUCHARMAP) || exists(${LOCALBASE}/libdata/pkgconfig/gucharmap.pc)
+.if (defined(WITH_GUCHARMAP) || \
+	exists(${LOCALBASE}/libdata/pkgconfig/gucharmap.pc)) && \
+	!defined(WITHOUT_GUCHARMAP)
 LIB_DEPENDS+=		gucharmap.6:${PORTSDIR}/deskutils/gucharmap
+CONFIGURE_ARGS+=	--enable-gucharmap
 .else
-CONFIGURE_ARGS+=	--enable-cmap=no
+CONFIGURE_ARGS+=	--disable-gucharmap
 .endif
 
 pre-everything::
@@ -88,32 +83,17 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-ansi||g ; s|-pedantic||g' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-ansi||g ; s|-pedantic||g ; \
+		s|/usr/X11R6|${LOCALBASE}|g' \
+			${WRKSRC}/configure
 	@${FIND} ${WRKSRC}/src/config/platforms -name "*.mk" | ${XARGS} \
 		${REINPLACE_CMD} 's|-ansi||g ; s|-pedantic||g'
 	@${FIND} ${WRKSRC} -name GNUmakefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|@.*PEER.*@||g ; \
-		 s|WV_INCLUDES = |#WV_INCLUDES = |g ; \
-		 s|[(]libdir[)]/@PACKAGE@|(datadir)/@PACKAGE@|g ; \
-		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
+		's|[(]libdir[)]/@PACKAGE@|(datadir)/@PACKAGE@|g ; \
+		s|[(]datadir[)]/icons|(datadir)/pixmaps|g'
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/AbiWord-${ABIVERSION}/plugins
-	@${MKDIR} ${LOCALBASE}/share/applications
-	@${INSTALL_DATA} ${WRKSRC}/abiword.desktop \
-		${LOCALBASE}/share/applications/abiword.desktop
-	@${MKDIR} ${LOCALBASE}/share/pixmaps
-	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/icons/abiword_48.png \
-		${LOCALBASE}/share/pixmaps/abiword_48.png
-.if defined(GNOME_ENABLED)
-	@${MKDIR} ${LOCALBASE}/libdata/bonobo/servers
-	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server \
-		${LOCALBASE}/libdata/bonobo/servers/
-	@${MKDIR} ${LOCALBASE}/share/gnome-2.0/ui
-	@${INSTALL_DATA} ${WRKDIR}/abiword-${PORTVERSION}/abidistfiles/abi-nautilus-view-file.xml \
-		${LOCALBASE}/share/gnome-2.0/ui/
-.endif
+	@${MKDIR} ${PREFIX}/lib/${PORTNAME}-${ABIVERSION}/plugins
 	@-update-desktop-database
 
 .include <bsd.port.post.mk>

@@ -1,9 +1,9 @@
---- src/Makefile.orig	Mon Dec 22 13:06:12 2003
-+++ src/Makefile	Sun Mar 28 15:29:40 2004
+--- src/Makefile.orig	2008-04-01 15:43:32.000000000 -0500
++++ src/Makefile	2008-04-01 15:45:09.000000000 -0500
 @@ -52,6 +52,7 @@
  
  ## Set the following to a list of pathnames to be copied to $(CANONDIR)
- CANON_TOPLEVELFILES=	$(ABI_ROOT)/COPYING $(ABI_ROOT)/user/wp/readme.txt
+ CANON_TOPLEVELFILES=	$(ABI_ROOT)/COPYING $(ABI_ROOT)/user/wp/readme.txt $(ABI_ROOT)/user/wp/readme.abw
 +CANON_TLF_NOTDIR=	$(notdir $(CANON_TOPLEVELFILES))
  
  ## Set the following to a list of directories (probably a subset of DIRS)
