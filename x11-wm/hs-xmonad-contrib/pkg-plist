@@ -1,7 +1,8 @@
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/HSxmonad-contrib-0.6.o
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/HSxmonad-contrib-%%PORTVERSION%%.o
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/Commands.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/ConstrainedResize.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/CopyWindow.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/CycleSelectedLayouts.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/CycleWS.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/DeManage.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/DwmPromote.hi
@@ -12,18 +13,21 @@
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/FloatKeys.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/FocusNth.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/MouseGestures.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/MouseResize.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/NoBorders.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/PerWorkspaceKeys.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/Promote.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/RotSlaves.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/RotView.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/Search.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/SimpleDate.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/SinkAll.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/Submap.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/SwapWorkspaces.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/TagWindows.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/UpdatePointer.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/Warp.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/WindowBringer.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/WmiiActions.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions/WindowGo.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Config/Arossato.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Config/Dons.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Config/Droundy.hi
@@ -33,19 +37,25 @@
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Doc/Developing.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Doc/Extending.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Hooks/DynamicLog.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Hooks/EventHook.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Hooks/EwmhDesktops.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Hooks/ManageDocks.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Hooks/ManageHelpers.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Hooks/ServerMode.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Hooks/SetWMName.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Hooks/UrgencyHook.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Hooks/XPropManage.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Accordion.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Circle.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Combo.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Decoration.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/DecorationMadness.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Dishes.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/DragPane.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/DwmStyle.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Grid.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/HintedTile.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/IM.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/LayoutCombinators.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/LayoutHints.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/LayoutModifier.hi
@@ -53,7 +63,6 @@
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/MagicFocus.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Magnifier.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Maximize.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Mosaic.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/MosaicAlt.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/MultiToggle.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Named.hi
@@ -61,45 +70,58 @@
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/PerWorkspace.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Reflect.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/ResizableTile.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/ResizeScreen.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Roledex.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/ScratchWorkspace.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/ShowWName.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/SimpleDecoration.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/SimpleFloat.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Simplest.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Spiral.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Square.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/TabBarDecoration.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/Tabbed.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/ThreeColumns.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/ToggleLayouts.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/TwoPane.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/WindowArranger.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/WindowNavigation.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout/WorkspaceDir.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/AppendFile.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/DirExec.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/Directory.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/Email.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/Input.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/Layout.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/Man.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/RunOrRaise.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/Shell.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/Ssh.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/Theme.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/Window.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/Workspace.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt/XMonad.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/Anneal.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/CustomKeys.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/Dmenu.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/Dzen.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/EZConfig.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/Font.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/Invisible.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/Loggers.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/NamedWindows.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/Run.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/Scratchpad.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/Themes.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/Timer.hi
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/WindowProperties.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/WorkspaceCompare.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/XSelection.hi
 %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util/XUtils.hi
-%%SUBDIR%%/ghc-%%GHC_VERSION%%/libHSxmonad-contrib-0.6.a
+%%SUBDIR%%/ghc-%%GHC_VERSION%%/libHSxmonad-contrib-%%PORTVERSION%%.a
 %%SUBDIR%%/register.sh
-share/doc/xmonad-contrib-0.6/LICENSE
-@dirrm share/doc/xmonad-contrib-0.6
+share/doc/xmonad-contrib-%%PORTVERSION%%/LICENSE
+@dirrm share/doc/xmonad-contrib-%%PORTVERSION%%
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Util
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Prompt
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Layout
@@ -109,7 +131,7 @@ share/doc/xmonad-contrib-0.6/LICENSE
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad/Actions
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%/XMonad
 @dirrm %%SUBDIR%%/ghc-%%GHC_VERSION%%
-@dirrm lib/xmonad-contrib-0.6
+@dirrm lib/xmonad-contrib-%%PORTVERSION%%
 @exec /bin/sh %D/%%SUBDIR%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister xmonad-contrib
