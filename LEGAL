@@ -23,9 +23,9 @@ Such ports are listed below:
 
 Dist			Port			Why
 ------------------------------------------------------------------------------
-ventrilo_srv-*		audio/ventrilo-server	May not be redistributed. 
-						Crypto; export-controlled. 
-						For personal use only. 
+ventrilo_srv-*		audio/ventrilo-server	May not be redistributed.
+						Crypto; export-controlled.
+						For personal use only.
 						Must accept license to download.
 112887-04.tar		editors/staroffice60	Must be bought and downloaded
 						directly from Sun via WWW
@@ -469,6 +469,8 @@ opera-*			www/linux-opera		No redistribution, commercial
 						software
 OptimFROG*		audio/optimfrog		No commercial use
 oracle/*		databases/jdbc-oracle*	This software is under license
+						and export controls
+oracle/sqldeveloper*	databases/sqldeveloper	This software is under license
 						and export controls
 otojiro*		japanese/otojiro-fpw	The original dictionary is not
 						free
