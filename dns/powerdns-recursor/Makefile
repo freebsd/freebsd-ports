@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	powerdns-recursor
-PORTVERSION=	3.1.4
-PORTREVISION=	6
+PORTVERSION=	3.1.5
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/

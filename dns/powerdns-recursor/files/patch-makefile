@@ -1,14 +1,14 @@
---- Makefile.orig	Tue Nov 14 13:26:24 2006
-+++ Makefile	Tue Nov 14 13:26:51 2006
+--- Makefile.orig	2008-03-30 22:41:25.000000000 +0200
++++ Makefile	2008-04-02 00:13:01.000000000 +0200
 @@ -2,7 +2,6 @@
  SBINDIR=/usr/sbin/
  BINDIR=/usr/bin/
  CONFIGDIR="/etc/powerdns/"
 -OPTFLAGS?=-O3
- CXXFLAGS:= $(CXXFLAGS) -Wall $(OPTFLAGS) $(PROFILEFLAGS)
+ CXXFLAGS:= $(CXXFLAGS) -Wall -DBOOST_SP_DISABLE_THREADS $(OPTFLAGS) $(PROFILEFLAGS)
  CFLAGS:=$(CFLAGS) -Wall $(OPTFLAGS) $(PROFILEFLAGS)
  LINKCC=$(CXX)
-@@ -52,16 +52,14 @@
+@@ -54,16 +53,14 @@
  	 fi
  
  install: all
