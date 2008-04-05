@@ -120,7 +120,7 @@ CONFIGURE_ARGS+=	--disable-debug --enable-optimized
 .endif
 
 post-patch:
-	${REINPLACE_CMD} "s+8\.5a6+8.5.1+" ${WRKSRC}/src/other/tcl/library/init.tcl
+	${REINPLACE_CMD} "s+-exact Tcl 8\.5a6+Tcl 8.5+" ${WRKSRC}/src/other/tcl/library/init.tcl
 
 pre-install:
 	${CP} ${FILESDIR}/mged.sh ${WRKSRC}
