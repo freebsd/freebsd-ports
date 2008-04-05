@@ -3651,6 +3651,7 @@ geda-symcheck	ports/cad/geda-symcheck
 geda-utils	ports/cad/geda-utils
 gedit		ports/editors/gedit
 gedit-plugins	ports/editors/gedit-plugins
+geekbench	ports/benchmarks/geekbench
 geekcode	ports/misc/geekcode
 geeklog		ports/www/geeklog
 geg		ports/math/geg
