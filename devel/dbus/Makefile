@@ -42,6 +42,8 @@ MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
+.else
+CONFIGURE_ARGS+=--without-x
 .endif
 .endif
 
