@@ -41,7 +41,8 @@ CONFIGURE_ARGS=	--disable-software-x11 \
 		--disable-image-loader-edb \
 		--disable-image-loader-tiff \
 		--disable-image-loader-xpm \
-		--disable-image-loader-svg
+		--disable-image-loader-svg \
+		--disable-pthreads
 
 OPTIONS=	FONTCONFIG	"Enable fontconfig support" on \
 		EET		"Enable EET font loader" on
