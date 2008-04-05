@@ -15560,6 +15560,7 @@ spserver	ports/net/spserver
 sql-ledger	ports/finance/sql-ledger
 sqlcached	ports/databases/sqlcached
 sqlclient	ports/databases/sqlclient
+sqldeveloper	ports/databases/sqldeveloper
 sqldjbdns	ports/dns/sqldjbdns
 sqlgrey		ports/mail/sqlgrey
 sqlite2		ports/databases/sqlite2
