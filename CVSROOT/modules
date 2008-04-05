@@ -15562,7 +15562,7 @@ sqldjbdns	ports/dns/sqldjbdns
 sqlgrey		ports/mail/sqlgrey
 sqlite2		ports/databases/sqlite2
 sqlite3		ports/databases/sqlite3
-sqlite3-threads		ports/databases/sqlite3-threads
+sqlite34	ports/databases/sqlite34
 sqlitemanager	ports/databases/sqlitemanager
 sqlninja	ports/security/sqlninja
 sqlrelay	ports/databases/sqlrelay
