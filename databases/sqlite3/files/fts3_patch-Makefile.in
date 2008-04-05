@@ -1,0 +1,79 @@
+--- Makefile.in.orig	2008-01-22 16:42:50.000000000 -0200
++++ Makefile.in	2008-03-04 23:43:03.000000000 -0300
+@@ -116,7 +116,7 @@
+ 
+ # You should not have to change anything below this line
+ ###############################################################################
+-TCC += -DSQLITE_OMIT_LOAD_EXTENSION=1
++#TCC += -DSQLITE_OMIT_LOAD_EXTENSION=1
+ 
+ # Object files for the SQLite library.
+ #
+@@ -133,6 +133,8 @@
+          vdbe.lo vdbeapi.lo vdbeaux.lo vdbeblob.lo vdbefifo.lo vdbemem.lo \
+          where.lo utf.lo legacy.lo vtab.lo
+ 
++LIBOBJ += fts3.lo fts3_hash.lo fts3_porter.lo fts3_tokenizer.lo fts3_tokenizer1.lo
++
+ # All of the source code files.
+ #
+ SRC = \
+@@ -204,13 +206,15 @@
+ # Source code for extensions
+ #
+ SRC += \
+-  $(TOP)/ext/fts1/fts1.c \
+-  $(TOP)/ext/fts1/fts1.h \
+-  $(TOP)/ext/fts1/fts1_hash.c \
+-  $(TOP)/ext/fts1/fts1_hash.h \
+-  $(TOP)/ext/fts1/fts1_porter.c \
+-  $(TOP)/ext/fts1/fts1_tokenizer.h \
+-  $(TOP)/ext/fts1/fts1_tokenizer1.c
++  $(TOP)/ext/fts3/fts3.c \
++  $(TOP)/ext/fts3/fts3.h \
++  $(TOP)/ext/fts3/fts3_hash.c \
++  $(TOP)/ext/fts3/fts3_hash.h \
++  $(TOP)/ext/fts3/fts3_icu.c \
++  $(TOP)/ext/fts3/fts3_porter.c \
++  $(TOP)/ext/fts3/fts3_tokenizer.h \
++  $(TOP)/ext/fts3/fts3_tokenizer.c \
++  $(TOP)/ext/fts3/fts3_tokenizer1.c
+ 
+ 
+ # Source code to the test files.
+@@ -286,9 +290,9 @@
+ # Header files used by extensions
+ #
+ HDR += \
+-  $(TOP)/ext/fts1/fts1.h \
+-  $(TOP)/ext/fts1/fts1_hash.h \
+-  $(TOP)/ext/fts1/fts1_tokenizer.h
++  $(TOP)/ext/fts3/fts3.h \
++  $(TOP)/ext/fts3/fts3_hash.h \
++  $(TOP)/ext/fts3/fts3_tokenizer.h
+ 
+ # Header files used by the VDBE submodule
+ #
+@@ -561,6 +565,22 @@
+ 		libsqlite3.la $(LIBTCL)
+ 
+ 
++fts3.lo:	$(TOP)/ext/fts3/fts3.c $(HDR)
++	$(LTCOMPILE) -c $(TOP)/ext/fts3/fts3.c
++
++fts3_hash.lo:	$(TOP)/ext/fts3/fts3_hash.c $(HDR)
++	$(LTCOMPILE) -c $(TOP)/ext/fts3/fts3_hash.c
++
++fts3_porter.lo:	$(TOP)/ext/fts3/fts3_porter.c $(HDR)
++	$(LTCOMPILE) -c $(TOP)/ext/fts3/fts3_porter.c
++
++fts3_tokenizer.lo:	$(TOP)/ext/fts3/fts3_tokenizer.c $(HDR)
++	$(LTCOMPILE) -c $(TOP)/ext/fts3/fts3_tokenizer.c
++
++fts3_tokenizer1.lo:	$(TOP)/ext/fts3/fts3_tokenizer1.c $(HDR)
++	$(LTCOMPILE) -c $(TOP)/ext/fts3/fts3_tokenizer1.c
++
++
+ fulltest:	testfixture$(TEXE) sqlite3$(TEXE)
+ 	./testfixture $(TOP)/test/all.test
+ 
