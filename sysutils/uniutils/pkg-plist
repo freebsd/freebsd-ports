@@ -1,8 +1,9 @@
 bin/ExplicateUTF8
 bin/unidesc
+bin/unifuzz
 bin/unihist
 bin/uniname
-bin/unirev
+bin/unireverse
 bin/utf8lookup
 %%PORTDOCS%%%%EXAMPLESDIR%%/Test1.ann
 %%PORTDOCS%%%%EXAMPLESDIR%%/Test1.u
