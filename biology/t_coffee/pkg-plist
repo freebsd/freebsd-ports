@@ -2,7 +2,6 @@ bin/t_coffee
 %%PORTDOCS%%%%DOCSDIR%%/README4T-COFFEE
 %%PORTDOCS%%%%DOCSDIR%%/aln_compare.doc.txt
 %%PORTDOCS%%%%DOCSDIR%%/seq_reformat.doc.txt
-%%PORTDOCS%%%%DOCSDIR%%/t_coffee.pdf
 %%PORTDOCS%%%%DOCSDIR%%/t_coffee_technical.doc
 %%PORTDOCS%%%%DOCSDIR%%/t_coffee_technical.htm
 %%PORTDOCS%%%%DOCSDIR%%/t_coffee_technical.txt
@@ -33,6 +32,7 @@ bin/t_coffee
 %%EXAMPLESDIR%%/g10.aln
 %%EXAMPLESDIR%%/g15.aln
 %%EXAMPLESDIR%%/g5.aln
+%%EXAMPLESDIR%%/kinases.aln
 %%EXAMPLESDIR%%/marna.tc_lib
 %%EXAMPLESDIR%%/new_profile1_pdb1.aln
 %%EXAMPLESDIR%%/new_profile1_pdb1.html
@@ -52,6 +52,7 @@ bin/t_coffee
 %%EXAMPLESDIR%%/profile1_pdb1.aln
 %%EXAMPLESDIR%%/profile1_pdb1.fasta
 %%EXAMPLESDIR%%/profile1_pdb1.html
+%%EXAMPLESDIR%%/seq.fas
 %%EXAMPLESDIR%%/profile1_pdb1_1.aln
 %%EXAMPLESDIR%%/profile1_pdb1_1.html
 %%EXAMPLESDIR%%/profile2_pdb2.aln
@@ -86,10 +87,11 @@ bin/t_coffee
 %%EXAMPLESDIR%%/sample_param_file.param
 %%EXAMPLESDIR%%/sample_profile1.aln
 %%EXAMPLESDIR%%/sample_profile2.aln
+%%EXAMPLESDIR%%/sample_rnaseq1.fasta
 %%EXAMPLESDIR%%/sample_seq1.aln
+%%EXAMPLESDIR%%/sv.aln
 %%EXAMPLESDIR%%/sample_seq1.fasta
 %%EXAMPLESDIR%%/sample_seq2.fasta
-%%EXAMPLESDIR%%/seq.fas
 %%EXAMPLESDIR%%/sample_seq3.fasta
 %%EXAMPLESDIR%%/sample_seq4.fasta
 %%EXAMPLESDIR%%/sample_seq5.fasta
@@ -133,13 +135,12 @@ bin/t_coffee
 %%EXAMPLESDIR%%/sproteases_small.g10.html
 %%EXAMPLESDIR%%/sproteases_small.g10.score_ascii
 %%EXAMPLESDIR%%/sproteases_small.g15.cw_aln
+%%EXAMPLESDIR%%/sproteases_small.ph
 %%EXAMPLESDIR%%/sproteases_small.g15.html
 %%EXAMPLESDIR%%/sproteases_small.html
-%%EXAMPLESDIR%%/struc1.pdb
 %%EXAMPLESDIR%%/sproteases_small.mafft
 %%EXAMPLESDIR%%/sproteases_small.mcoffee
 %%EXAMPLESDIR%%/sproteases_small.muscle
-%%EXAMPLESDIR%%/sproteases_small.ph
 %%EXAMPLESDIR%%/sproteases_small.probcons
 %%EXAMPLESDIR%%/sproteases_small.score_ascii
 %%EXAMPLESDIR%%/sproteases_small.score_html
@@ -148,6 +149,7 @@ bin/t_coffee
 %%EXAMPLESDIR%%/sproteases_small.tc_aln.html
 %%EXAMPLESDIR%%/sproteases_small.template_file
 %%EXAMPLESDIR%%/sproteases_small_dna.fasta
+%%EXAMPLESDIR%%/struc1.pdb
 %%EXAMPLESDIR%%/struc2.pdb
 %%EXAMPLESDIR%%/struc3.pdb
 %%EXAMPLESDIR%%/struc4.pdb
@@ -155,7 +157,6 @@ bin/t_coffee
 %%EXAMPLESDIR%%/struc6.pdb
 %%EXAMPLESDIR%%/struc7.pdb
 %%EXAMPLESDIR%%/struc8.pdb
-%%EXAMPLESDIR%%/sv.aln
 %%EXAMPLESDIR%%/sv.dnd
 %%EXAMPLESDIR%%/sv.fasta
 %%EXAMPLESDIR%%/sv.html
