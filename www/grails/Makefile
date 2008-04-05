@@ -7,6 +7,7 @@
 
 PORTNAME=	grails
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/grails/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
@@ -20,7 +21,8 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-DATAFILES=	LICENSE conf dist media lib scripts
+DATAFILES=	LICENSE build.properties build.xml ant conf dist media lib \
+		scripts src
 SCRIPTFILES=	grails grails-debug startGrails
 
 .if !defined(NOPORTDOCS)
