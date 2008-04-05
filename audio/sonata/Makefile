@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sonata
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5
 #PORTREVISION=	0
 CATEGORIES=	audio python
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
@@ -16,7 +16,8 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	An elegant music player for MPD
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
+		${PYTHON_SITELIBDIR}/mpd.py:${PORTSDIR}/audio/py-mpd
 
 USE_GETTEXT=	yes
 USE_PYTHON=	yes

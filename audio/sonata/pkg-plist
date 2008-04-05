@@ -1,15 +1,30 @@
 @comment $FreeBSD$
 bin/sonata
-%%PYTHON_SITELIBDIR%%/audioscrobbler.py
-%%PYTHON_SITELIBDIR%%/audioscrobbler.pyc
-%%PYTHON_SITELIBDIR%%/audioscrobbler.pyo
 %%PYTHON_SITELIBDIR%%/mmkeys.so
-%%PYTHON_SITELIBDIR%%/mpdclient3.py
-%%PYTHON_SITELIBDIR%%/mpdclient3.pyc
-%%PYTHON_SITELIBDIR%%/mpdclient3.pyo
-%%PYTHON_SITELIBDIR%%/sonata.py
-%%PYTHON_SITELIBDIR%%/sonata.pyc
-%%PYTHON_SITELIBDIR%%/sonata.pyo
+%%PYTHON_SITELIBDIR%%/sonata/__init__.py
+%%PYTHON_SITELIBDIR%%/sonata/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sonata/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sonata/audioscrobbler.py
+%%PYTHON_SITELIBDIR%%/sonata/audioscrobbler.pyc
+%%PYTHON_SITELIBDIR%%/sonata/audioscrobbler.pyo
+%%PYTHON_SITELIBDIR%%/sonata/img.py
+%%PYTHON_SITELIBDIR%%/sonata/img.pyc
+%%PYTHON_SITELIBDIR%%/sonata/img.pyo
+%%PYTHON_SITELIBDIR%%/sonata/main.py
+%%PYTHON_SITELIBDIR%%/sonata/main.pyc
+%%PYTHON_SITELIBDIR%%/sonata/main.pyo
+%%PYTHON_SITELIBDIR%%/sonata/misc.py
+%%PYTHON_SITELIBDIR%%/sonata/misc.pyc
+%%PYTHON_SITELIBDIR%%/sonata/misc.pyo
+%%PYTHON_SITELIBDIR%%/sonata/mpdhelper.py
+%%PYTHON_SITELIBDIR%%/sonata/mpdhelper.pyc
+%%PYTHON_SITELIBDIR%%/sonata/mpdhelper.pyo
+%%PYTHON_SITELIBDIR%%/sonata/tray.py
+%%PYTHON_SITELIBDIR%%/sonata/tray.pyc
+%%PYTHON_SITELIBDIR%%/sonata/tray.pyo
+%%PYTHON_SITELIBDIR%%/sonata/ui.py
+%%PYTHON_SITELIBDIR%%/sonata/ui.pyc
+%%PYTHON_SITELIBDIR%%/sonata/ui.pyo
 share/applications/sonata.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/be@latin/LC_MESSAGES/sonata.mo
@@ -17,6 +32,7 @@ share/locale/cs/LC_MESSAGES/sonata.mo
 share/locale/da/LC_MESSAGES/sonata.mo
 share/locale/de/LC_MESSAGES/sonata.mo
 share/locale/es/LC_MESSAGES/sonata.mo
+share/locale/et/LC_MESSAGES/sonata.mo
 share/locale/fi/LC_MESSAGES/sonata.mo
 share/locale/fr/LC_MESSAGES/sonata.mo
 share/locale/it/LC_MESSAGES/sonata.mo
@@ -29,6 +45,7 @@ share/locale/uk/LC_MESSAGES/sonata.mo
 share/locale/zh_CN/LC_MESSAGES/sonata.mo
 share/pixmaps/sonata-album.png
 share/pixmaps/sonata-artist.png
+share/pixmaps/sonata-case.png
 share/pixmaps/sonata-stock_volume-max.png
 share/pixmaps/sonata-stock_volume-med.png
 share/pixmaps/sonata-stock_volume-min.png
@@ -40,5 +57,6 @@ share/pixmaps/sonata_pause.png
 share/pixmaps/sonata_play.png
 share/pixmaps/sonatacd.png
 share/pixmaps/sonatacd_large.png
-@dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/sonata
