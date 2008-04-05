@@ -1,10 +1,14 @@
-include/spdict/sparrayimpl.hpp
-include/spdict/spbstreeimpl.hpp
-include/spdict/spbtreeimpl.hpp
-include/spdict/spcache.hpp
+include/spdict/spdictarray.hpp
+include/spdict/spdictbstree.hpp
+include/spdict/spdictbtree.hpp
+include/spdict/spdictcache.hpp
 include/spdict/spdictionary.hpp
-include/spdict/sprbtreeimpl.hpp
-include/spdict/spslistimpl.hpp
+include/spdict/spdictmmap.hpp
+include/spdict/spdictrbtree.hpp
+include/spdict/spdictshm.hpp
+include/spdict/spdictshmcache.hpp
+include/spdict/spdictshmhashmap.hpp
+include/spdict/spdictslist.hpp
 lib/libspdict.so
 lib/libspdict.so.1
 @dirrm include/spdict
