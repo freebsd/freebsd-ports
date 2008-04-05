@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmonad
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	x11-wm haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad/${PORTVERSION}/
 
@@ -23,6 +23,7 @@ CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs
 GHC_VERSION=	6.8.2
 SUBDIR=		lib/${PORTNAME}-${PORTVERSION}
 PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
+		PORTVERSION=${PORTVERSION} \
 		SUBDIR=${SUBDIR}
 
 MAN1=		xmonad.1
