@@ -68,10 +68,16 @@ share/locale/zh_CN/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 %%DATADIR%%/applet.glade
 %%DATADIR%%/applet.py
+%%DATADIR%%/authconn.py
 %%DATADIR%%/config.py
+%%DATADIR%%/contextmenu.py
 %%DATADIR%%/cupshelpers.py
+%%DATADIR%%/debug.py
 %%DATADIR%%/gtk_label_autowrap.py
 %%DATADIR%%/gtk_treeviewtooltips.py
+%%DATADIR%%/icons/i-network-printer.png
+%%DATADIR%%/jobviewer.py
+%%DATADIR%%/monitor.py
 %%DATADIR%%/my-default-printer.py
 %%DATADIR%%/openprinting.py
 %%DATADIR%%/options.py
@@ -79,13 +85,17 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 %%DATADIR%%/ppds.py
 %%DATADIR%%/probe_printer.py
 %%DATADIR%%/pysmb.py
+%%DATADIR%%/smburi.py
 %%DATADIR%%/statereason.py
 %%DATADIR%%/system-config-printer.glade
 %%DATADIR%%/system-config-printer.py
+%%DATADIR%%/troubleshoot/CheckLocalServerPublishing.py
 %%DATADIR%%/troubleshoot/CheckNetworkServerSanity.py
+%%DATADIR%%/troubleshoot/CheckPPDSanity.py
 %%DATADIR%%/troubleshoot/CheckPrinterSanity.py
 %%DATADIR%%/troubleshoot/ChooseNetworkPrinter.py
 %%DATADIR%%/troubleshoot/ChoosePrinter.py
+%%DATADIR%%/troubleshoot/DeviceListed.py
 %%DATADIR%%/troubleshoot/ErrorLogCheckpoint.py
 %%DATADIR%%/troubleshoot/ErrorLogFetch.py
 %%DATADIR%%/troubleshoot/ErrorLogParse.py
@@ -103,6 +113,7 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 %%DATADIR%%/troubleshoot/__init__.py
 %%DATADIR%%/troubleshoot/base.py
 @dirrm %%DATADIR%%/troubleshoot
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
