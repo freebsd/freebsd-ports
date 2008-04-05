@@ -1,0 +1,30 @@
+--- sqlcli.orig	Wed Jan 16 09:44:47 2008
++++ sqlcli	Wed Jan 16 09:45:32 2008
+@@ -1,15 +1,15 @@
+ #!/bin/bash
+-CP=jdbc/lib/ojdbc14.jar
+-CP=${CP}:jlib/orai18n-collation.jar
+-CP=${CP}:jlib/orai18n-mapping.jar
+-CP=${CP}:jlib/orai18n-servlet.jar
+-CP=${CP}:jlib/orai18n-utility.jar
+-CP=${CP}:jlib/orai18n.jar
+-CP=${CP}:sqldeveloper/extensions/oracle.sqldeveloper.jar
+-CP=${CP}:sqldeveloper/lib/jline-0.9.9.jar
+-CP=${CP}:ide/lib/javatools.jar
+-CP=${CP}:ide/extensions/oracle.ide.jar
+-CP=${CP}:jlib/jdev-cm.jar
+-CP=${CP}:ide/lib/dbapi.jar
++CP=%DATADIR%/jdbc/lib/ojdbc14.jar
++CP=${CP}:%DATADIR%/jlib/orai18n-collation.jar
++CP=${CP}:%DATADIR%/jlib/orai18n-mapping.jar
++CP=${CP}:%DATADIR%/jlib/orai18n-servlet.jar
++CP=${CP}:%DATADIR%/jlib/orai18n-utility.jar
++CP=${CP}:%DATADIR%/jlib/orai18n.jar
++CP=${CP}:%DATADIR%/sqldeveloper/extensions/oracle.sqldeveloper.jar
++CP=${CP}:%DATADIR%/sqldeveloper/lib/jline-0.9.9.jar
++CP=${CP}:%DATADIR%/ide/lib/javatools.jar
++CP=${CP}:%DATADIR%/ide/extensions/oracle.ide.jar
++CP=${CP}:%DATADIR%/jlib/jdev-cm.jar
++CP=${CP}:%DATADIR%/ide/lib/dbapi.jar
+ 
+ java -cp ${CP} oracle.dbtools.raptor.scriptrunner.utils.SqlCli $*

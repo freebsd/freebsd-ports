@@ -1,0 +1,199 @@
+@comment $FreeBSD$
+bin/sqlcli
+bin/sqldeveloper
+%%DATADIR%%/icon.png
+%%DATADIR%%/ide/bin/edt.properties
+%%DATADIR%%/ide/bin/encodings.xml
+%%DATADIR%%/ide/bin/launcher.dll
+%%DATADIR%%/ide/bin/launcher.sh
+%%DATADIR%%/ide/bin/product-launcher.template
+%%DATADIR%%/ide/doc/extension/bundle.xsd
+%%DATADIR%%/ide/doc/extension/bundle10.xsd
+%%DATADIR%%/ide/doc/extension/center.xsd
+%%DATADIR%%/ide/doc/extension/idehook.xsd
+%%DATADIR%%/ide/doc/extension/update.xsd
+%%DATADIR%%/ide/extensions/oracle.ide.ceditor.jar
+%%DATADIR%%/ide/extensions/oracle.ide.db.jar
+%%DATADIR%%/ide/extensions/oracle.ide.externaltools.jar
+%%DATADIR%%/ide/extensions/oracle.ide.files.jar
+%%DATADIR%%/ide/extensions/oracle.ide.gallery.jar
+%%DATADIR%%/ide/extensions/oracle.ide.help.jar
+%%DATADIR%%/ide/extensions/oracle.ide.importexport.jar
+%%DATADIR%%/ide/extensions/oracle.ide.indexing.jar
+%%DATADIR%%/ide/extensions/oracle.ide.jar
+%%DATADIR%%/ide/extensions/oracle.ide.log.jar
+%%DATADIR%%/ide/extensions/oracle.ide.navigator.jar
+%%DATADIR%%/ide/extensions/oracle.ide.replace.jar
+%%DATADIR%%/ide/extensions/oracle.ide.runner.jar
+%%DATADIR%%/ide/extensions/oracle.ide.webbrowser.jar
+%%DATADIR%%/ide/extensions/oracle.ide.webupdate.jar
+%%DATADIR%%/ide/extensions/oracle.ideimpl.apple.jar
+%%DATADIR%%/ide/lib/audit-boot.jar
+%%DATADIR%%/ide/lib/dafjava.jar
+%%DATADIR%%/ide/lib/dafrt.jar
+%%DATADIR%%/ide/lib/dbapi.jar
+%%DATADIR%%/ide/lib/dbtransfer.jar
+%%DATADIR%%/ide/lib/expression-builder.jar
+%%DATADIR%%/ide/lib/ide-boot.jar
+%%DATADIR%%/ide/lib/ide.jar
+%%DATADIR%%/ide/lib/ideimpl.jar
+%%DATADIR%%/ide/lib/idenative.dll
+%%DATADIR%%/ide/lib/idert.jar
+%%DATADIR%%/ide/lib/indexing-migrator-boot.jar
+%%DATADIR%%/ide/lib/indexing-rt-boot.jar
+%%DATADIR%%/ide/lib/javatools.jar
+%%DATADIR%%/ide/lib/javax-ide.jar
+%%DATADIR%%/ide/lib/oicons.jar
+%%DATADIR%%/ide/lib/oj-compiler-boot.jar
+%%DATADIR%%/ide/lib/patches/idert-patch.jar
+%%DATADIR%%/ide/lib/resourcebundle.jar
+%%DATADIR%%/ide/lib/uic.jar
+%%DATADIR%%/ide/processor-plugins/oracle.jdbc-driver-locator.jar
+%%DATADIR%%/ide/src/javax-ide-src.zip
+%%DATADIR%%/j2ee/home/lib/pcl.jar
+%%DATADIR%%/jdbc/lib/ojdbc14.jar
+%%DATADIR%%/jdbc/lib/ojdbc14dms.jar
+%%DATADIR%%/jdev/bin/ide.boot
+%%DATADIR%%/jdev/bin/ide.conf
+%%DATADIR%%/jdev/bin/jdk.conf
+%%DATADIR%%/jdev/bin/version.properties
+%%DATADIR%%/jdev/doc/extension/extension.xsd
+%%DATADIR%%/jdev/extensions/oracle.ide.audit.jar
+%%DATADIR%%/jdev/extensions/oracle.ide.db.explorer.jar
+%%DATADIR%%/jdev/extensions/oracle.ide.feedback.jar
+%%DATADIR%%/jdev/extensions/oracle.ide.xmlef.jar
+%%DATADIR%%/jdev/extensions/oracle.javacore.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.db.connection.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.db.sqlplus.jar
+%%DATADIR%%/jdev/extensions/oracle.onlinedb.jar
+%%DATADIR%%/jdev/lib/jdev-rt.jar
+%%DATADIR%%/jdev/lib/jdev.jar
+%%DATADIR%%/jdev/lib/jdkver.jar
+%%DATADIR%%/jdev/lib/jprof.jar
+%%DATADIR%%/jdev/lib/ojc.jar
+%%DATADIR%%/jdev/lib/xmleditor.jar
+%%DATADIR%%/jlib/help4.jar
+%%DATADIR%%/jlib/inspect4.jar
+%%DATADIR%%/jlib/jdev-cm.jar
+%%DATADIR%%/jlib/jewt4.jar
+%%DATADIR%%/jlib/ojmisc.jar
+%%DATADIR%%/jlib/oracle_ice.jar
+%%DATADIR%%/jlib/orai18n-collation.jar
+%%DATADIR%%/jlib/orai18n-mapping.jar
+%%DATADIR%%/jlib/orai18n-servlet.jar
+%%DATADIR%%/jlib/orai18n-utility.jar
+%%DATADIR%%/jlib/orai18n.jar
+%%DATADIR%%/jlib/regexp.jar
+%%DATADIR%%/jlib/share.jar
+%%DATADIR%%/jlib/xmlef.jar
+%%DATADIR%%/lib/classgen.jar
+%%DATADIR%%/lib/java/shared/oracle.javatools/11.1.1.0.0/javamodel-rt.jar
+%%DATADIR%%/lib/java/shared/oracle.javatools/11.1.1.0.0/javatools-nodeps.jar
+%%DATADIR%%/lib/mfcdao.dll
+%%DATADIR%%/lib/oraclexsql.jar
+%%DATADIR%%/lib/registry.dll
+%%DATADIR%%/lib/xml.jar
+%%DATADIR%%/lib/xmlcomp.jar
+%%DATADIR%%/lib/xmlcomp2.jar
+%%DATADIR%%/lib/xmlparserv2.jar
+%%DATADIR%%/lib/xquery.jar
+%%DATADIR%%/lib/xschema.jar
+%%DATADIR%%/lib/xsqlserializers.jar
+%%DATADIR%%/lib/xsu12.jar
+%%DATADIR%%/rdbms/jlib/ojdi.jar
+%%DATADIR%%/sqldeveloper/bin/jdk.conf
+%%DATADIR%%/sqldeveloper/bin/logging-debug.conf
+%%DATADIR%%/sqldeveloper/bin/logging.conf
+%%DATADIR%%/sqldeveloper/bin/splash.gif
+%%DATADIR%%/sqldeveloper/bin/splash.png
+%%DATADIR%%/sqldeveloper/bin/sqldeveloper
+%%DATADIR%%/sqldeveloper/bin/sqldeveloper-Darwin.conf
+%%DATADIR%%/sqldeveloper/bin/sqldeveloper-debug.conf
+%%DATADIR%%/sqldeveloper/bin/sqldeveloper-nondebug.conf
+%%DATADIR%%/sqldeveloper/bin/sqldeveloper.boot
+%%DATADIR%%/sqldeveloper/bin/sqldeveloper.conf
+%%DATADIR%%/sqldeveloper/bin/version.properties
+%%DATADIR%%/sqldeveloper/doc/sqldeveloper_help.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dbdev.oviewer.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dbdev.snippet.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.migration.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.migration.msaccess.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.migration.mysql5.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.migration.sqlserver2005.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.sqlformatter.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.sqlworksheet.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.thirdparty.access.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.thirdparty.mysql.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.thirdparty.sqlserver.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.extras.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.core.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.gui.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.msaccess.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.mysql.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.sqlserver.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.report.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.searchbar.jar
+%%DATADIR%%/sqldeveloper/lib/TimingFramework.jar
+%%DATADIR%%/sqldeveloper/lib/antlr.jar
+%%DATADIR%%/sqldeveloper/lib/bigraphbean-nls.zip
+%%DATADIR%%/sqldeveloper/lib/bigraphbean.jar
+%%DATADIR%%/sqldeveloper/lib/dbui4.jar
+%%DATADIR%%/sqldeveloper/lib/jdevnative.dll
+%%DATADIR%%/sqldeveloper/lib/jle2.jar
+%%DATADIR%%/sqldeveloper/lib/jline-0.9.9.jar
+%%DATADIR%%/sqldeveloper/lib/oracle.dbtools.logging.jar
+%%DATADIR%%/sqldeveloper/lib/poi-2.5.1-final-20040804.jar
+%%DATADIR%%/sqldeveloper/lib/stringtemplate.jar
+%%DATADIR%%/sqldeveloper/lib/xdb.jar
+%%DATADIR%%/sqldeveloper/searchengines/SQLDevForum.png
+%%DATADIR%%/sqldeveloper/searchengines/SQLDevForum.src
+%%DATADIR%%/sqldeveloper/searchengines/asktom.png
+%%DATADIR%%/sqldeveloper/searchengines/asktom.src
+%%DATADIR%%/sqldeveloper/searchengines/google.gif
+%%DATADIR%%/sqldeveloper/searchengines/google.src
+%%DATADIR%%/sqldeveloper/searchengines/metalink.png
+%%DATADIR%%/sqldeveloper/searchengines/metalink.src
+%%DATADIR%%/sqldeveloper/searchengines/oradocs.png
+%%DATADIR%%/sqldeveloper/searchengines/oradocs.src
+%%DATADIR%%/sqldeveloper/searchengines/oradocs102vbook.png
+%%DATADIR%%/sqldeveloper/searchengines/oradocs102vbook.src
+%%DATADIR%%/sqldeveloper/searchengines/oradocs92vbook.png
+%%DATADIR%%/sqldeveloper/searchengines/oradocs92vbook.src
+%%DATADIR%%/sqldeveloper/searchengines/searchoraclecom.png
+%%DATADIR%%/sqldeveloper/searchengines/searchoraclecom.src
+@dirrm %%DATADIR%%/sqldeveloper/searchengines
+@dirrm %%DATADIR%%/sqldeveloper/lib
+@dirrm %%DATADIR%%/sqldeveloper/extensions
+@dirrm %%DATADIR%%/sqldeveloper/doc
+@dirrm %%DATADIR%%/sqldeveloper/bin
+@dirrm %%DATADIR%%/sqldeveloper
+@dirrm %%DATADIR%%/rdbms/jlib
+@dirrm %%DATADIR%%/rdbms
+@dirrm %%DATADIR%%/lib/java/shared/oracle.javatools/11.1.1.0.0
+@dirrm %%DATADIR%%/lib/java/shared/oracle.javatools
+@dirrm %%DATADIR%%/lib/java/shared
+@dirrm %%DATADIR%%/lib/java
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/jlib
+@dirrm %%DATADIR%%/jdev/lib
+@dirrm %%DATADIR%%/jdev/extensions
+@dirrm %%DATADIR%%/jdev/doc/extension
+@dirrm %%DATADIR%%/jdev/doc
+@dirrm %%DATADIR%%/jdev/bin
+@dirrm %%DATADIR%%/jdev
+@dirrm %%DATADIR%%/jdbc/lib
+@dirrm %%DATADIR%%/jdbc
+@dirrm %%DATADIR%%/j2ee/home/lib
+@dirrm %%DATADIR%%/j2ee/home
+@dirrm %%DATADIR%%/j2ee
+@dirrm %%DATADIR%%/ide/src
+@dirrm %%DATADIR%%/ide/processor-plugins
+@dirrm %%DATADIR%%/ide/lib/patches
+@dirrm %%DATADIR%%/ide/lib
+@dirrm %%DATADIR%%/ide/extensions
+@dirrm %%DATADIR%%/ide/doc/extension
+@dirrm %%DATADIR%%/ide/doc
+@dirrm %%DATADIR%%/ide/bin
+@dirrm %%DATADIR%%/ide
+@dirrm %%DATADIR%%
