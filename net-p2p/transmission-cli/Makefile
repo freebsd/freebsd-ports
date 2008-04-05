@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
@@ -22,7 +22,7 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}"
-LDFLAGS=	-L${LOCALBASE}/lib -lintl
+LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS?=${GCONFIGURE} \
 		--enable-cli \
 		--disable-daemon \
@@ -40,8 +40,7 @@ general-patch:
 	@${REINPLACE_CMD} -e \
 		's|CFLAGS="-g -Wall.*"|CFLAGS="${CFLAGS} -Wall -W"|g ; \
 		s|CXXFLAGS="-g -Wall.*"|CXXFLAGS="${CXXFLAGS} -Wall -W"|g ; \
-		s|_pthread_flags=".*"|_pthread_flags="${PTHREAD_LIBS}"|g ; \
-		s|[$$]GMSGFMT[$$]|$$INTLTOOL_MSGFMT$$|g' \
+		s|_pthread_flags=".*"|_pthread_flags="${PTHREAD_LIBS}"|g' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|bin_PROGRAMS = benc2php.*|bin_PROGRAMS = |g' \
 		${WRKSRC}/libtransmission/Makefile.in
