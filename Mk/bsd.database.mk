@@ -391,12 +391,13 @@ IGNORE=	${_IGNORE_MSG}
 
 .if ${USE_SQLITE:L} == "yes"
 _SQLITE_VER=	3
-.else
-_SQLITE_VER=	${USE_SQLITE}
-.endif
+.fi
 
 # USE_SQLITE is specified incorrectly, so mark this as IGNORE
 .if ${_SQLITE_VER} == "3"
+LIB_DEPENDS+=	sqlite${_SQLITE_VER}:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
+SQLITE_VER=	${_SQLITE_VER}
+.elif ${_SQLITE_VER} == "34"
 LIB_DEPENDS+=	sqlite${_SQLITE_VER}:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
 SQLITE_VER=	${_SQLITE_VER}
 .elif ${_SQLITE_VER} == "2"
