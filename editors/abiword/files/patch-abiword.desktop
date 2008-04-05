@@ -1,5 +1,5 @@
---- abiword.desktop.orig	Fri Apr 14 12:43:24 2006
-+++ abiword.desktop	Fri Apr 14 12:45:03 2006
+--- abiword.desktop.orig	2008-04-01 15:30:19.000000000 -0500
++++ abiword.desktop	2008-04-01 15:31:19.000000000 -0500
 @@ -3,11 +3,11 @@
  Icon=abiword_48.png
  Terminal=false
@@ -9,8 +9,8 @@
  StartupNotify=true
  Encoding=UTF-8
  X-Desktop-File-Install-Version=0.9
--MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;text/plain;application/msword;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;
-+MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;application/msword;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;
+-MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;text/plain;application/msword;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;application/x-crossmark;application/docbook+xml;application/x-t602;application/vnd.oasis.opendocument.text;application/vnd.sun.xml.writer;application/vnd.stardivision.writer;text/vnd.wap.wml;application/wordperfect6;application/wordperfect5.1;
++MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;application/msword;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;application/x-crossmark;application/docbook+xml;application/x-t602;application/vnd.oasis.opendocument.text;application/vnd.sun.xml.writer;application/vnd.stardivision.writer;text/vnd.wap.wml;application/wordperfect6;application/wordperfect5.1;
  Name=AbiWord
  GenericName=Word Processor
  Comment=AbiWord Word Processor
