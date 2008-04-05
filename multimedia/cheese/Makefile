@@ -31,10 +31,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 DOCS=		AUTHORS COPYING ChangeLog NEWS README
 GCONF_SCHEMAS=	cheese.schemas
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|[$$]GMSGFMT[$$]|$$MSGFMT$$|g' \
-		${WRKSRC}/configure
-
 .ifndef (NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
