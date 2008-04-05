@@ -7,7 +7,7 @@
 
 PORTNAME=	brasero
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -34,5 +34,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		brasero.1
 GCONF_SCHEMAS=	brasero.schemas
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|blank-cd:|blank-cd;|g' \
+		${WRKSRC}/data/brasero.desktop.in.in
 
 .include <bsd.port.mk>
