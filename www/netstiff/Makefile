@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netstiff
-PORTVERSION=	20070621
+PORTVERSION=	20080331
 CATEGORIES=	www
 MASTER_SITES=	http://pkqs.net/~sbeyer/tools/netstiff/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -16,9 +16,9 @@ COMMENT=	A powerful web page update checker
 
 NO_BUILD=	yes
 USE_RUBY=	yes
-RUBY_NO_BUILD_DEPENDS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+PORTDOCS=	ChangeLog LICENSE THANKSTO
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
@@ -28,5 +28,11 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} -p ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
