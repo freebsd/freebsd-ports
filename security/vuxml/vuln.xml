@@ -34,6 +34,58 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b21790a5-02fb-11dd-bd06-0017319806e7">
+    <topic>powerdns-recursor -- DNS cache poisoning</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>3.1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>If the system random number generator can be predicted by its
+	  past output, then an attacker may spoof Recursor to accept mallicious
+	  data.  This leads to DNS cache poisoning and client redirection.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://doc.powerdns.com/security-policy.html</url>
+    </references>
+    <dates>
+      <discovery>2008-03-31</discovery>
+      <entry>2008-04-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fb672330-02db-11dd-bd06-0017319806e7">
+    <topic>suphp -- multiple local privilege escalation vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>suphp</name>
+	<range><lt>0.6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Multiple local privilege escalation are found in the symlink
+	  verification code.  An attacker may use it to run a PHP script with
+	  the victim's privilege.  This attack is a little harder when suphp
+	  operates in paranoid mode.  For suphp that runs in owner mode
+	  which is the default in ports, immediate upgrade to latest
+	  version is advised.</p>
+      </body>
+    </description>
+    <references>
+      <bid>28568</bid>
+      <url>http://lists.marsching.biz/pipermail/suphp/2008-March/001750.html</url>
+    </references>
+    <dates>
+      <discovery>2008-03-30</discovery>
+      <entry>2008-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ad4a00fa-0157-11dd-8bd3-001372ae3ab9">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
