@@ -16335,6 +16335,9 @@ trac-wysiwyg	ports/www/trac-wysiwyg
 trac-xmlrpc	ports/www/trac-xmlrpc
 trackballs	ports/games/trackballs
 tracker		ports/sysutils/tracker
+tracker-client	ports/sysutils/tracker-client
+tracker-gnome	ports/sysutils/tracker-gnome
+tracker-libtrackergtk	ports/sysutils/tracker-libtrackergtk
 trackerbt	ports/net-p2p/trackerbt
 tractorgen	ports/games/tractorgen
 trafd		ports/net-mgmt/trafd
