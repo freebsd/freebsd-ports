@@ -824,6 +824,8 @@
 %%DOCSDIR%%/figs/plugoutexec.png
 %%DOCSDIR%%/figs/plugoutupgrade.png
 %%DOCSDIR%%/figs/pomme.png
+%%DOCSDIR%%/figs/profile1.png
+%%DOCSDIR%%/figs/profile2.png
 %%DOCSDIR%%/figs/project_menu.png
 %%DOCSDIR%%/figs/projectcontrol1.png
 %%DOCSDIR%%/figs/projectcontrol2.png
@@ -1069,6 +1071,7 @@
 %%DOCSDIR%%/phpreverse.html
 %%DOCSDIR%%/plugout.html
 %%DOCSDIR%%/plugoutupgrade.html
+%%DOCSDIR%%/profile.html
 %%DOCSDIR%%/projectcontrol.html
 %%DOCSDIR%%/projectfiles.html
 %%DOCSDIR%%/projectsynchro.html
