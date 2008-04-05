@@ -1,0 +1,22 @@
+--- sqldeveloper/bin/sqldeveloper.orig	Tue Jan 15 21:35:20 2008
++++ sqldeveloper/bin/sqldeveloper	Tue Jan 15 21:44:22 2008
+@@ -19,7 +19,7 @@
+     local rawAbsPath
+ 
+     #  Test if $arg starts with '/'.
+-    if [ "X`expr \"${pathname}\" : '\(/\).*'`" = "X/" ]
++    if [ "X`expr -- \"${pathname}\" : '\(/\).*'`" = "X/" ]
+     then
+     rawAbsPath="${pathname}"
+     else
+@@ -49,8 +49,8 @@
+     local pathname="$1"
+     while [ -h "$pathname" ] ; do
+         local ls=`ls -ld "$pathname"`
+-        local link=`expr "$ls" : '.*-> \(.*\)$'`
+-        if expr "$link" : '.*/.*' > /dev/null
++        local link=`expr -- "$ls" : '.*-> \(.*\)$'`
++        if expr -- "$link" : '.*/.*' > /dev/null
+         then
+             pathname="$link"
+         else

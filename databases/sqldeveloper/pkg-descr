@@ -1,0 +1,10 @@
+Oracle SQL Developer is a free graphical tool for database development. With
+SQL Developer, you can browse database objects, run SQL statements and SQL
+scripts, and edit and debug PL/SQL statements. You can also run any number of
+provided reports, as well as create and save your own. SQL Developer enhances
+productivity and simplifies your database development tasks.
+
+SQL Developer can connect to any Oracle Database version >= 9.2.0.1 and MySQL
+database version >= 3.0.
+
+WWW: http://www.oracle.com/technology/software/products/sql/index.html

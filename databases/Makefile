@@ -534,6 +534,7 @@
     SUBDIR += slony1
     SUBDIR += sqlcached
     SUBDIR += sqlclient
+    SUBDIR += sqldeveloper
     SUBDIR += sqlite2
     SUBDIR += sqlite3
     SUBDIR += sqlite34

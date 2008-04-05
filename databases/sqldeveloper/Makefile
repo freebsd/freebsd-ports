@@ -1,0 +1,88 @@
+# New ports collection makefile for:	sqldeveloper
+# Date created:	       			16 January 2008
+# Whom:		       			jjuanino@gmail.com
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sqldeveloper
+PORTVERSION=	1.2.1.3213
+CATEGORIES=	databases java
+MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
+PKGNAMESUFFIX=	-no-jre
+DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
+DIST_SUBDIR=	oracle
+
+MAINTAINER=	jjuanino@gmail.com
+COMMENT=	Graphical tool for database development
+
+RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
+
+USE_ZIP=	yes
+USE_JAVA=	yes
+
+JAVA_VERSION=	1.5+
+
+NO_BUILD=	yes
+
+RESTRICTED=	Packaging prohibited by Oracle license
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
+SUB_FILES=	pkg-message
+
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
+ECHO_MSG=		${PRINTF} %b
+
+IGNORE+=		\n\n-=< MARKED AS IGNORED: >=-\n
+IGNORE+=		\n
+IGNORE+=		Due to Oracle license restrictions, you must fetch the source \n
+IGNORE+=		distribution manually.  Please access  \n
+IGNORE+=		http://www.oracle.com/technology/software/products/sql/index.html \n
+IGNORE+=		with a web browser and follow the link for the \n
+IGNORE+=		\"${DISTFILES}\".  \n
+IGNORE+=		You will be required to register and log in, \n
+IGNORE+=		but you can create an account on that page.  \n
+IGNORE+=		After registration and accepting the Oracle License, \n
+IGNORE+=		download the distribution file, \n ${DISTFILES}, \n
+IGNORE+=		into ${DISTDIR}/${DIST_SUBDIR}/ \n
+IGNORE+=		and then restart this installation\n\n
+.endif
+
+do-install:
+	@${REINPLACE_CMD} -e 's|%DATADIR%|${DATADIR}|' \
+	    ${WRKSRC}/sqldeveloper.sh \
+	    ${WRKSRC}/sqlcli
+	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' \
+	    ${WRKSRC}/sqldeveloper.sh \
+	    ${WRKSRC}/sqlcli \
+	    ${WRKSRC}/ide/bin/launcher.sh \
+	    ${WRKSRC}/ide/bin/product-launcher.template \
+	    ${WRKSRC}/sqldeveloper/bin/sqldeveloper
+	@${ECHO_MSG} -n ">> Installing scripts..."
+	@${INSTALL_SCRIPT} ${WRKSRC}/sqldeveloper.sh ${PREFIX}/bin/sqldeveloper
+	@${INSTALL_SCRIPT} ${WRKSRC}/sqlcli ${PREFIX}/bin/sqlcli
+	@${ECHO_MSG} " [ DONE ]"
+
+.for d in ide j2ee jdbc jdev jlib lib rdbms sqldeveloper
+	@${ECHO_MSG} -n ">> Installing data directory '${d}'..."
+	@cd ${WRKSRC} && ${FIND} ${d} -type d -exec ${MKDIR} ${DATADIR}/\{} \;
+	@cd ${WRKSRC} && ${FIND} ${d} -type f \
+	    	-not -name "*.orig" \
+	    	-not -name "*.exe" \
+	    	-not -name "*.bat" \
+	    	-not -name "*.bak" \
+		-exec ${INSTALL_DATA} \{} ${DATADIR}/\{} \;
+	@${ECHO_MSG} " [ DONE ]"
+.endfor
+
+	@${ECHO_MSG} -n ">> Installing icon ..."
+	@${INSTALL_DATA} ${WRKSRC}/icon.png ${DATADIR}/icon.png
+	@${ECHO_MSG} " [ DONE ]"
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
