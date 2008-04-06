@@ -53,11 +53,11 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>28480</bid>
-      <url>http://article.gmane.org/gmane.mail.postfix.policyd-weight/815</url>
-      <url>http://article.gmane.org/gmane.mail.postfix.policyd-weight/823</url>
+      <mlist>http://article.gmane.org/gmane.mail.postfix.policyd-weight/815</mlist>
+      <mlist>http://article.gmane.org/gmane.mail.postfix.policyd-weight/823</mlist>
     </references>
     <dates>
-      <discovery>2008-03-27</discovery>
+      <discovery>2008-03-24</discovery>
       <entry>2008-04-06</entry>
     </dates>
   </vuln>
