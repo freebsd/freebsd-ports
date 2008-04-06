@@ -1,5 +1,5 @@
---- ./ocamldoc/Makefile.orig	Thu Nov 10 17:44:36 2005
-+++ ./ocamldoc/Makefile	Sun May 21 14:02:41 2006
+--- ocamldoc/Makefile.orig	2007-12-21 00:32:44.000000000 +0300
++++ ocamldoc/Makefile	2007-12-21 00:33:26.000000000 +0300
 @@ -40,7 +40,7 @@
  INSTALL_LIBDIR=$(OCAMLLIB)/ocamldoc
  INSTALL_CUSTOMDIR=$(INSTALL_LIBDIR)/custom
@@ -9,14 +9,16 @@
  
  INSTALL_MLIS=odoc_info.mli
  INSTALL_CMIS=$(INSTALL_MLIS:.mli=.cmi)
-@@ -261,7 +261,9 @@
+@@ -265,7 +265,11 @@
  	$(CP) ocamldoc.hva *.cmi $(OCAMLDOC_LIBCMA) $(INSTALL_LIBDIR)
  	$(CP) $(INSTALL_MLIS) $(INSTALL_CMIS) $(INSTALL_LIBDIR)
  	if test -d $(INSTALL_MANODIR); then : ; else $(MKDIR) $(INSTALL_MANODIR); fi
--	$(CP) stdlib_man/* $(INSTALL_MANODIR)
-+	for f in stdlib_man/*; do \
-+		$(CP) $$f $(INSTALL_MANODIR)/`basename $$f .3o`.n; \
-+	done
+-	if test -d stdlib_man; then $(CP) stdlib_man/* $(INSTALL_MANODIR); else : ; fi
++	if test -d stdlib_man; then \
++		for f in stdlib_man/*; do \
++			$(BSD_INSTALL_MAN) $$f $(INSTALL_MANODIR)/`basename $$f .3o`.n; \
++		done; \
++	fi
  
  installopt:
  	if test -f $(OCAMLDOC_OPT) ; then $(MAKE) installopt_really ; fi

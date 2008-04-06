@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.09.3
-PORTREVISION=	1
+PORTVERSION=	3.10.2
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
@@ -89,7 +89,7 @@ post-configure:
 	@${REINPLACE_CMD} -E \
 		-e 's|(BYTECCCOMPOPTS[ \t]*=.*)|\1 ${CFLAGS} ${THR_CPP}|' \
 		-e 's|(NATIVECCCOMPOPTS[ \t]*=.*)|\1 ${CFLAGS} ${THR_CPP}|' \
-		-e 's|(PTHREAD_LINK[ \t]*=).*|\1 ${THR_LD}|' \
+		-e '/^PTHREAD_LINK/s,-pthread,${THR_LD},g' \
 		-e 's|gcc|${CC}|g'	\
 		${WRKSRC}/config/Makefile
 
@@ -114,9 +114,9 @@ post-install:
 		"! -name .cvsignore")
 .endif
 
-.for prog in camlp4o.opt camlp4r.opt ocamlc.opt ocamldep.opt ocamldoc.opt \
+.for PROG in camlp4o.opt camlp4r.opt ocamlc.opt ocamldep.opt ocamldoc.opt \
 		ocamllex.opt ocamlopt.opt ocamlrun ocamlyacc
-	@${STRIP_CMD} ${PREFIX}/bin/${prog}
+	@${STRIP_CMD} ${PREFIX}/bin/${PROG}
 .endfor
 
 # Fix permissions for ld.conf
