@@ -6,7 +6,7 @@
 #
 
 DISTVERSION=	71.86.04
-PORTREVISION=	0
+PORTREVISION=	1
 
 # XXX Should be set in master port XXX
 NVVERSION=	${DISTVERSION:S/.//g}
