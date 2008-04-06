@@ -152,7 +152,6 @@ include/ruby-1.9/rubysig.h
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/freq.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/from.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fullpath.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/goodfriday.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/less.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/list.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/list2.rb
@@ -188,6 +187,8 @@ include/ruby-1.9/rubysig.h
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rcs.awk
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rcs.dat
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rcs.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rdoc/markup/rdoc2latex.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rdoc/markup/sample.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ripper/ruby2html.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ripper/strip-comment.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rss/blend.rb
@@ -220,6 +221,8 @@ include/ruby-1.9/rubysig.h
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/testunit
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rss
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ripper
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rdoc/markup
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rdoc
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/optparse
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl
@@ -298,6 +301,14 @@ include/ruby-1.9/rubysig.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/sha2.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/dl.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/big5.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/cp949.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/euc_jp.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/euc_kr.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/euc_tw.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/gb18030.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/gb2312.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/gbk.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/iso_8859_1.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/iso_8859_10.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/iso_8859_11.so
@@ -313,9 +324,18 @@ include/ruby-1.9/rubysig.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/iso_8859_7.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/iso_8859_8.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/iso_8859_9.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/koi8_r.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/koi8_u.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/shift_jis.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/trans/japanese.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/trans/korean.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/trans/single_byte.so
-%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/us_ascii.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/trans/utf_16_32.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/utf_16be.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/utf_16le.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/utf_32be.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/utf_32le.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/enc/windows_1251.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/etc.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/fcntl.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/fiber.so
@@ -432,7 +452,6 @@ include/ruby-1.9/rubysig.h
 %%RUBY_LIBDIR%%/rake/packagetask.rb
 %%RUBY_LIBDIR%%/rake/rake_test_loader.rb
 %%RUBY_LIBDIR%%/rake/rdoctask.rb
-%%RUBY_LIBDIR%%/rake/ruby182_test_unit_fix.rb
 %%RUBY_LIBDIR%%/rake/runtest.rb
 %%RUBY_LIBDIR%%/rake/tasklib.rb
 %%RUBY_LIBDIR%%/rake/testtask.rb
@@ -441,32 +460,30 @@ include/ruby-1.9/rubysig.h
 %%RUBY_LIBDIR%%/rbconfig/datadir.rb
 %%RUBY_LIBDIR%%/rdoc/code_objects.rb
 %%RUBY_LIBDIR%%/rdoc/diagram.rb
-%%RUBY_LIBDIR%%/rdoc/dot/dot.rb
-%%RUBY_LIBDIR%%/rdoc/generators/chm_generator.rb
-%%RUBY_LIBDIR%%/rdoc/generators/html_generator.rb
-%%RUBY_LIBDIR%%/rdoc/generators/ri_generator.rb
-%%RUBY_LIBDIR%%/rdoc/generators/template/chm/chm.rb
-%%RUBY_LIBDIR%%/rdoc/generators/template/html/hefss.rb
-%%RUBY_LIBDIR%%/rdoc/generators/template/html/html.rb
-%%RUBY_LIBDIR%%/rdoc/generators/template/html/kilmer.rb
-%%RUBY_LIBDIR%%/rdoc/generators/template/html/old_html.rb
-%%RUBY_LIBDIR%%/rdoc/generators/template/html/one_page_html.rb
-%%RUBY_LIBDIR%%/rdoc/generators/template/xml/rdf.rb
-%%RUBY_LIBDIR%%/rdoc/generators/template/xml/xml.rb
-%%RUBY_LIBDIR%%/rdoc/generators/xml_generator.rb
-%%RUBY_LIBDIR%%/rdoc/markup/sample/rdoc2latex.rb
-%%RUBY_LIBDIR%%/rdoc/markup/sample/sample.rb
-%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/fragments.rb
-%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/inline.rb
-%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/lines.rb
-%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/preprocess.rb
-%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_flow.rb
-%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_html.rb
-%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_latex.rb
-%%RUBY_LIBDIR%%/rdoc/markup/simple_markup.rb
-%%RUBY_LIBDIR%%/rdoc/markup/test/AllTests.rb
-%%RUBY_LIBDIR%%/rdoc/markup/test/TestInline.rb
-%%RUBY_LIBDIR%%/rdoc/markup/test/TestParse.rb
+%%RUBY_LIBDIR%%/rdoc/dot.rb
+%%RUBY_LIBDIR%%/rdoc/generator/chm/chm.rb
+%%RUBY_LIBDIR%%/rdoc/generator/chm.rb
+%%RUBY_LIBDIR%%/rdoc/generator/html/hefss.rb
+%%RUBY_LIBDIR%%/rdoc/generator/html/html.rb
+%%RUBY_LIBDIR%%/rdoc/generator/html/kilmer.rb
+%%RUBY_LIBDIR%%/rdoc/generator/html/one_page_html.rb
+%%RUBY_LIBDIR%%/rdoc/generator/html.rb
+%%RUBY_LIBDIR%%/rdoc/generator/ri.rb
+%%RUBY_LIBDIR%%/rdoc/generator/xml/rdf.rb
+%%RUBY_LIBDIR%%/rdoc/generator/xml/xml.rb
+%%RUBY_LIBDIR%%/rdoc/generator/xml.rb
+%%RUBY_LIBDIR%%/rdoc/generator.rb
+%%RUBY_LIBDIR%%/rdoc/markup/formatter.rb
+%%RUBY_LIBDIR%%/rdoc/markup/fragments.rb
+%%RUBY_LIBDIR%%/rdoc/markup/inline.rb
+%%RUBY_LIBDIR%%/rdoc/markup/lines.rb
+%%RUBY_LIBDIR%%/rdoc/markup/preprocess.rb
+%%RUBY_LIBDIR%%/rdoc/markup/to_flow.rb
+%%RUBY_LIBDIR%%/rdoc/markup/to_html.rb
+%%RUBY_LIBDIR%%/rdoc/markup/to_html_crossref.rb
+%%RUBY_LIBDIR%%/rdoc/markup/to_latex.rb
+%%RUBY_LIBDIR%%/rdoc/markup/to_test.rb
+%%RUBY_LIBDIR%%/rdoc/markup.rb
 %%RUBY_LIBDIR%%/rdoc/options.rb
 %%RUBY_LIBDIR%%/rdoc/parsers/parse_c.rb
 %%RUBY_LIBDIR%%/rdoc/parsers/parse_f95.rb
@@ -474,19 +491,21 @@ include/ruby-1.9/rubysig.h
 %%RUBY_LIBDIR%%/rdoc/parsers/parse_simple.rb
 %%RUBY_LIBDIR%%/rdoc/parsers/parserfactory.rb
 %%RUBY_LIBDIR%%/rdoc/rdoc.rb
-%%RUBY_LIBDIR%%/rdoc/ri/ri_cache.rb
-%%RUBY_LIBDIR%%/rdoc/ri/ri_descriptions.rb
-%%RUBY_LIBDIR%%/rdoc/ri/ri_display.rb
-%%RUBY_LIBDIR%%/rdoc/ri/ri_driver.rb
-%%RUBY_LIBDIR%%/rdoc/ri/ri_formatter.rb
-%%RUBY_LIBDIR%%/rdoc/ri/ri_options.rb
-%%RUBY_LIBDIR%%/rdoc/ri/ri_paths.rb
-%%RUBY_LIBDIR%%/rdoc/ri/ri_reader.rb
-%%RUBY_LIBDIR%%/rdoc/ri/ri_util.rb
-%%RUBY_LIBDIR%%/rdoc/ri/ri_writer.rb
+%%RUBY_LIBDIR%%/rdoc/ri/cache.rb
+%%RUBY_LIBDIR%%/rdoc/ri/descriptions.rb
+%%RUBY_LIBDIR%%/rdoc/ri/display.rb
+%%RUBY_LIBDIR%%/rdoc/ri/driver.rb
+%%RUBY_LIBDIR%%/rdoc/ri/formatter.rb
+%%RUBY_LIBDIR%%/rdoc/ri/paths.rb
+%%RUBY_LIBDIR%%/rdoc/ri/reader.rb
+%%RUBY_LIBDIR%%/rdoc/ri/util.rb
+%%RUBY_LIBDIR%%/rdoc/ri/writer.rb
+%%RUBY_LIBDIR%%/rdoc/ri.rb
+%%RUBY_LIBDIR%%/rdoc/stats.rb
 %%RUBY_LIBDIR%%/rdoc/template.rb
 %%RUBY_LIBDIR%%/rdoc/tokenstream.rb
-%%RUBY_LIBDIR%%/rdoc/usage.rb
+%%RUBY_LIBDIR%%/rdoc.rb
+%%RUBY_LIBDIR%%/require_relative.rb
 %%RUBY_LIBDIR%%/resolv-replace.rb
 %%RUBY_LIBDIR%%/resolv.rb
 %%RUBY_LIBDIR%%/rexml/attlistdecl.rb
@@ -835,16 +854,11 @@ include/ruby-1.9/rubysig.h
 @dirrm %%RUBY_LIBDIR%%/rexml
 @dirrm %%RUBY_LIBDIR%%/rdoc/ri
 @dirrm %%RUBY_LIBDIR%%/rdoc/parsers
-@dirrm %%RUBY_LIBDIR%%/rdoc/markup/test
-@dirrm %%RUBY_LIBDIR%%/rdoc/markup/simple_markup
-@dirrm %%RUBY_LIBDIR%%/rdoc/markup/sample
 @dirrm %%RUBY_LIBDIR%%/rdoc/markup
-@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/xml
-@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/html
-@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template/chm
-@dirrm %%RUBY_LIBDIR%%/rdoc/generators/template
-@dirrm %%RUBY_LIBDIR%%/rdoc/generators
-@dirrm %%RUBY_LIBDIR%%/rdoc/dot
+@dirrm %%RUBY_LIBDIR%%/rdoc/generator/xml
+@dirrm %%RUBY_LIBDIR%%/rdoc/generator/html
+@dirrm %%RUBY_LIBDIR%%/rdoc/generator/chm
+@dirrm %%RUBY_LIBDIR%%/rdoc/generator
 @dirrm %%RUBY_LIBDIR%%/rdoc
 @dirrm %%RUBY_LIBDIR%%/rbconfig
 @dirrm %%RUBY_LIBDIR%%/rake/loaders
