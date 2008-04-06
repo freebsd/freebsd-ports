@@ -19,4 +19,10 @@ MAKE_ENV+=	MKDIR="${MKDIR}"
 MAN1=		tree.1
 PLIST_FILES=	bin/tree
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 800000
+IGNORE=	garbage output under 8.X
+.endif
+
+.include <bsd.port.post.mk>
