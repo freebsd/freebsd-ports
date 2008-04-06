@@ -7515,6 +7515,7 @@ manued.el	ports/textproc/manued.el
 mapagi		ports/print/mapagi
 mapchan		ports/sysutils/mapchan
 maplay		ports/audio/maplay
+mapm3		ports/biology/mapm3
 mapserver	ports/graphics/mapserver
 mapyrus		ports/graphics/mapyrus
 mar		ports/archivers/mar
