@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	afsp
-PORTVERSION=	8.1
+PORTVERSION=	8.2
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.tsp.ece.mcgill.ca/pub/AFsp/
-DISTNAME=	AFsp-v8r1
+MASTER_SITES=	http://www-mmsp.ece.mcgill.ca/Documents/Downloads/AFsp/
+DISTNAME=	AFsp-v8r2
 
 MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	Audio file conversion utilities and library
