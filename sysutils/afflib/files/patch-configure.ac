@@ -1,10 +1,10 @@
---- configure.ac.orig	Sat Feb 16 16:13:31 2008
-+++ configure.ac	Sat Feb 16 16:14:48 2008
-@@ -95,6 +95,7 @@
- # For AFF tools
- AC_CHECK_HEADERS([readline/readline.h])
- AC_CHECK_LIB([readline],[readline],, AC_MSG_RESULT([readline not installed]))
-+AC_CHECK_LIB([iconv],[iconv],, AC_MSG_RESULT([iconv not installed]))
- AC_CHECK_HEADERS([curses.h termcap.h])
- AC_CHECK_LIB([ncurses],[initscr],, AC_MSG_RESULT([ncurses not installed; aimage will not have a GUI]))
+--- configure.ac.orig	2008-03-10 00:41:33.000000000 +0000
++++ configure.ac	2008-03-28 22:03:25.000000000 +0000
+@@ -99,6 +99,7 @@
  AC_CHECK_FUNCS(tputs tgoto tgetstr tgetnum gotorc beep endwin setupterm printw)
+ AC_CHECK_HEADERS([readline/readline.h])
+ AC_CHECK_HEADERS([curses.h termcap.h])
++AC_CHECK_LIB([iconv],[iconv],, AC_MSG_RESULT([iconv not installed]))
+ AC_CHECK_LIB([readline],[readline],, AC_MSG_RESULT([readline not installed]))
+ AC_CHECK_LIB([ncurses],[initscr],, AC_MSG_RESULT([ncurses not installed]))
+ AC_CHECK_LIB([z],[uncompress],, AC_MSG_ERROR([zlib not installed; cannot continue.]))
