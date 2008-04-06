@@ -2,7 +2,7 @@
 # Date created:				27 March 2008
 # Whom:					Martin Tournoij <carpetsmoker@xs4all.nl>
 #
-# $Carpetsmoker: ports/x11-fm/pcmanfm/Makefile,v 1.1 2008/03/27 22:02:27 carpetsmoker Exp $
+# $Carpetsmoker: ports/x11-fm/pcmanfm/Makefile,v 1.2 2008/04/06 20:25:05 carpetsmoker Exp $
 # $FreeBSD$
 #
 
@@ -31,6 +31,10 @@ OPTIONS=	NLS "Native Language Support (devel/gettext)" on
 # Disable HAL for now, it doesn't seem to work very well in this version
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		FreeBSD < 6 does not have blkcnt_t in stat.h
+.endif
 
 #.if !defined(WITHOUT_HAL)
 #LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal \
