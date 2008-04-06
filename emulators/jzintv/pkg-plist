@@ -1,0 +1,280 @@
+bin/jzintv
+share/jzintv/rom/emu_ver.rom
+share/jzintv/rom/event_diag.rom
+share/jzintv/rom/joy_diag.rom
+@dirrm share/jzintv/rom
+@dirrm share/jzintv
+%%PL_TOOLS%%bin/jzintv-as1600
+%%PL_TOOLS%%bin/jzintv-crc32
+%%PL_TOOLS%%bin/jzintv-dasm1600
+%%PL_TOOLS%%bin/jzintv-dis1600
+%%PL_TOOLS%%bin/jzintv-frombit_r
+%%PL_TOOLS%%bin/jzintv-gms2rom
+%%PL_TOOLS%%bin/jzintv-imvtoppm
+%%PL_TOOLS%%bin/jzintv-rom2bin
+%%PL_TOOLS%%bin/jzintv-show_grom
+%%PL_TOOLS%%bin/jzintv-tobit
+%%PL_TOOLS%%bin/jzintv-tobit_r
+%%PL_TOOLS%%bin/jzintv-bin2rom
+%%PL_TOOLS%%bin/jzintv-dasm0256
+%%PL_TOOLS%%bin/jzintv-dasm1600o
+%%PL_TOOLS%%bin/jzintv-frombit
+%%PL_TOOLS%%bin/jzintv-fromhex
+%%PL_TOOLS%%bin/jzintv-imvtogif
+%%PL_TOOLS%%bin/jzintv-rom_merge
+%%PL_TOOLS%%bin/jzintv-split_rom
+%%PL_TOOLS%%bin/jzintv-tobit_f
+%%PL_TOOLS%%bin/jzintv-tohex
+%%PORTDOCS%%%%DOCSDIR%%/doc/De_Re_Intellivision/dri_2.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/De_Re_Intellivision/dri_1.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/De_Re_Intellivision/dri_6.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/De_Re_Intellivision/dri_9.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/color/intellivision_color_matrix.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/color/colors_new.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/color/color.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/historic/bsr/voicefaq.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/historic/intvpc/res_file.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/historic/intellicart/.exrc
+%%PORTDOCS%%%%DOCSDIR%%/doc/historic/intellicart/banksw.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/historic/intellicart/banksw.asm
+%%PORTDOCS%%%%DOCSDIR%%/doc/historic/intellicart/simple.asm
+%%PORTDOCS%%%%DOCSDIR%%/doc/historic/jzintv/cp_1610.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/historic/jzintv/README.mac
+%%PORTDOCS%%%%DOCSDIR%%/doc/jzintv/retrobox.kbd
+%%PORTDOCS%%%%DOCSDIR%%/doc/jzintv/tn4fig1.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/jzintv/good_deal_games_interview.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/jzintv/stic.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/jzintv/kbdhackfile.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/jzintv/cp_1610.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/jzintv/source.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/jzintv/jzintv.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/jzintv/joystick.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/jzintv/Known-Issues.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/jzintv/.exrc
+%%PORTDOCS%%%%DOCSDIR%%/doc/programming/cp1600_ref.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/programming/stic.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/programming/psg.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/programming/memory_map.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/programming/graphics_mem.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/programming/interrupts.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/programming/cp1600_summary.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/programming/intellicart.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/programming/intro_to_cp1600.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/rom_fmt/IntellicartManual.booklet.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/rom_fmt/id_tag.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/rom_fmt/authors
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/keyboard.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/state_flow_diag.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/hardware.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/ivoice.c
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/easter.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/thumb/t_cart_bot.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/thumb/t_schematic.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/thumb/t_intrm_busrq.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/thumb/t_cart_top.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/thumb/t_state_flow_diag.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/thumb/t_block.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/ecs.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/fig/sp0256_cpu.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/fig/state_flow_diag.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/fig/cart_bot.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/fig/sp0256_block.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/fig/intrm_busrq.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/fig/filtstage.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/fig/cart_top.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/fig/block_diagram.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/master.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/.exrc
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/ivoice.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/images/sp0256_block.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/images/cart_top.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/images/block.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/images/sp0256_cpu.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/images/schematic.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/images/cart_bot.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/images/filtstage.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/images/state_flow_diag.gif
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/images/intrm_busrq.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/sp0256_instr_set.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/tech/ivoice.h
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/test_hcif.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/dasm0256.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/frombit.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/gms2rom.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/fromhex.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/as1600.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/dasm1600.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/tohex.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/show_grom.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/macros.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/tobit.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/as1600.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/utilities/test_cart.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/voice/filtstage.fig
+%%PORTDOCS%%%%DOCSDIR%%/doc/voice/instr_set.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/Release-Notes.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/De_Re_Intellivision
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/color
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/historic/bsr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/historic/intellicart
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/historic/intvpc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/historic/jzintv
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/historic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/jzintv
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/programming
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/rom_fmt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/tech/fig
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/tech/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/tech/thumb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/tech
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/utilities
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/voice
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/miscfont
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/4_tris_game_over.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/chindnce.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/behappy3.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/font.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/4_tris_sound_test.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/pm16.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/nut1mrch.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/digits
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/mkfont16.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/4-tris.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/4_tris_title_screen.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/behappy.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/trisfont
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/nut1mrch.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/COPYING.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/SOURCE.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/_
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/facefont
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/chindnce.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/4_tris_in_game.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4-tris/4_tris_easter_egg.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/GOOD_ROM_NAMES.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/balls1/balls1.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/balls1/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/balls2/balls2.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/balls2/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bankdemo/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bankdemo/bankdemo.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/banktest/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/banktest/banktest.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bankworld/bankworld.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bncpix/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bncpix/bncpix.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csumexec/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csumexec/csumexec.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecscable/ec_mon2.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecscable/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geese/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geese/geese.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gram_scroll/gram_scroll.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gram_scroll/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gram_scroll2/gram_scroll2.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gram_scroll2/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/handdemo/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/handdemo/handdemo.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello/hello.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kbd_test/kbd_test.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/memcmp.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/dec16only.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/memcpy.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/fastdivu.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/dec16dec32.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/hexdisp.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/rand.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/resrom.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/gimini.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/colorsq_clip.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/memunpk.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/memset.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/fillmem.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/colorsq_sv.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/ivoice.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/colorsq.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/dist_fast.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/saynum16.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/sqrt.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/prnum32.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/print.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/hex16.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/prnum16.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/dividivu.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/library/ic_banksw.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/life/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/life/life.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro/stic.mac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro/gfx.mac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro/default.mac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro/util.mac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro/psg.mac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macro/print.mac
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mazedemo/mazedemo.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mazedemo/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mem_test/mem_test.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mem_test/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mob_test/mob_test.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mob_test/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sky/sky.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tagalong/tagalong.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tagalong/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tagalong2/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tagalong2/tagalong2b.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tagalong2/tagalong2.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tank/tank.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tank/profile.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tank/atr_data.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tank/objects.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tank/status.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tank/util.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tank/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tank/mob_data.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tank/mob_ll.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tank/gfx_data.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/task/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/task/sleep.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/task/timer.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/task/taskq.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/task/scanhand.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/world/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/world/world.asm
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/4-tris
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/balls1
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/balls2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bankdemo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/banktest
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bankworld
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bncpix
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csumexec
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ecscable
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/geese
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gram_scroll
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gram_scroll2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/handdemo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hello
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kbd_test
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/library
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/life
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/macro
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mazedemo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mem_test
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mob_test
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sky
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tagalong
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tagalong2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tank
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/task
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/world
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
