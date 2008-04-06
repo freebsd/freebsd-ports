@@ -518,6 +518,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rexml/streamlistener.rb
 %%RUBY_LIBDIR%%/rexml/syncenumerator.rb
 %%RUBY_LIBDIR%%/rexml/text.rb
+%%RUBY_LIBDIR%%/rexml/undefinednamespaceexception.rb
 %%RUBY_LIBDIR%%/rexml/validation/relaxng.rb
 %%RUBY_LIBDIR%%/rexml/validation/validation.rb
 %%RUBY_LIBDIR%%/rexml/validation/validationexception.rb

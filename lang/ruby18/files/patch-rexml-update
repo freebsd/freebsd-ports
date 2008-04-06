@@ -1,0 +1,345 @@
+diff -ruN ruby-1.8.6-p111/lib/rexml/attribute.rb ruby-1.8.6-p114/lib/rexml/attribute.rb
+--- lib/rexml/attribute.rb	2007-07-28 06:46:08.000000000 +0400
++++ lib/rexml/attribute.rb	2007-11-04 07:50:15.000000000 +0300
+@@ -50,7 +50,7 @@
+ 					@element = first.element
+ 				end
+ 			elsif first.kind_of? String
+-				@element = parent if parent.kind_of? Element
++				@element = parent
+ 				self.name = first
+ 				@normalized = second.to_s
+ 			else
+diff -ruN ruby-1.8.6-p111/lib/rexml/document.rb ruby-1.8.6-p114/lib/rexml/document.rb
+--- lib/rexml/document.rb	2007-07-28 06:46:08.000000000 +0400
++++ lib/rexml/document.rb	2007-11-04 07:50:15.000000000 +0300
+@@ -66,6 +66,7 @@
+ 		def add( child )
+ 			if child.kind_of? XMLDecl
+ 				@children.unshift child
++        child.parent = self
+ 			elsif child.kind_of? DocType
+         # Find first Element or DocType node and insert the decl right 
+         # before it.  If there is no such node, just insert the child at the
+@@ -183,7 +184,7 @@
+         output = Output.new( output, xml_decl.encoding )
+       end
+       formatter = if indent > -1
+-          if transitive
++          if trans
+             REXML::Formatters::Transitive.new( indent, ie_hack )
+           else
+             REXML::Formatters::Pretty.new( indent, ie_hack )
+diff -ruN ruby-1.8.6-p111/lib/rexml/element.rb ruby-1.8.6-p114/lib/rexml/element.rb
+--- lib/rexml/element.rb	2007-07-28 06:46:08.000000000 +0400
++++ lib/rexml/element.rb	2007-11-04 07:50:15.000000000 +0300
+@@ -553,6 +553,7 @@
+     def attribute( name, namespace=nil )
+       prefix = nil
+       prefix = namespaces.index(namespace) if namespace
++      prefix = nil if prefix == 'xmlns'
+       attributes.get_attribute( "#{prefix ? prefix + ':' : ''}#{name}" )
+     end
+ 
+@@ -854,15 +855,15 @@
+     #   Source (see Element.initialize).  If not supplied or nil, a
+     #   new, default Element will be constructed
+     # Returns:: the added Element
+-    #  a = Element.new 'a'
+-    #  a.elements.add Element.new 'b'  #-> <a><b/></a>
+-    #  a.elements.add 'c'              #-> <a><b/><c/></a>
++    #  a = Element.new('a')
++    #  a.elements.add(Element.new('b'))  #-> <a><b/></a>
++    #  a.elements.add('c')               #-> <a><b/><c/></a>
+     def add element=nil
+       rv = nil
+       if element.nil?
+-        Element.new "", self, @element.context
++        Element.new("", self, @element.context)
+       elsif not element.kind_of?(Element)
+-        Element.new element, self, @element.context
++        Element.new(element, self, @element.context)
+       else
+         @element << element
+         element.context = @element.context
+diff -ruN ruby-1.8.6-p111/lib/rexml/encoding.rb ruby-1.8.6-p114/lib/rexml/encoding.rb
+--- lib/rexml/encoding.rb	2007-07-28 06:46:08.000000000 +0400
++++ lib/rexml/encoding.rb	2007-11-04 07:50:15.000000000 +0300
+@@ -56,8 +56,13 @@
+ 
+     def check_encoding str
+       # We have to recognize UTF-16, LSB UTF-16, and UTF-8
+-      return UTF_16 if /\A\xfe\xff/n =~ str
+-      return UNILE if /\A\xff\xfe/n =~ str
++      if str[0] == 0xfe && str[1] == 0xff
++        str[0,2] = ""
++        return UTF_16
++      elsif str[0] == 0xff && str[1] == 0xfe
++        str[0,2] = ""
++        return UNILE
++      end
+       str =~ /^\s*<\?xml\s+version\s*=\s*(['"]).*?\1\s+encoding\s*=\s*(["'])(.*?)\2/um
+       return $3.upcase if $3
+       return UTF_8
+diff -ruN ruby-1.8.6-p111/lib/rexml/parsers/baseparser.rb ruby-1.8.6-p114/lib/rexml/parsers/baseparser.rb
+--- lib/rexml/parsers/baseparser.rb	2007-07-28 06:46:08.000000000 +0400
++++ lib/rexml/parsers/baseparser.rb	2007-11-04 07:50:15.000000000 +0300
+@@ -1,5 +1,7 @@
+ require 'rexml/parseexception'
++require 'rexml/undefinednamespaceexception'
+ require 'rexml/source'
++require 'set'
+ 
+ module REXML
+   module Parsers
+@@ -24,7 +26,8 @@
+     # Nat Price gave me some good ideas for the API.
+     class BaseParser
+       NCNAME_STR= '[\w:][\-\w\d.]*'
+-      NAME_STR= "(?:#{NCNAME_STR}:)?#{NCNAME_STR}"
++      NAME_STR= "(?:(#{NCNAME_STR}):)?(#{NCNAME_STR})"
++      UNAME_STR= "(?:#{NCNAME_STR}:)?#{NCNAME_STR}"
+ 
+       NAMECHAR = '[\-\w\d\.:]'
+       NAME = "([\\w:]#{NAMECHAR}*)"
+@@ -35,7 +38,7 @@
+ 
+       DOCTYPE_START = /\A\s*<!DOCTYPE\s/um
+       DOCTYPE_PATTERN = /\s*<!DOCTYPE\s+(.*?)(\[|>)/um
+-      ATTRIBUTE_PATTERN = /\s*(#{NAME_STR})\s*=\s*(["'])(.*?)\2/um
++      ATTRIBUTE_PATTERN = /\s*(#{NAME_STR})\s*=\s*(["'])(.*?)\4/um
+       COMMENT_START = /\A<!--/u
+       COMMENT_PATTERN = /<!--(.*?)-->/um
+       CDATA_START = /\A<!\[CDATA\[/u
+@@ -45,7 +48,7 @@
+       XMLDECL_PATTERN = /<\?xml\s+(.*?)\?>/um
+       INSTRUCTION_START = /\A<\?/u
+       INSTRUCTION_PATTERN = /<\?(.*?)(\s+.*?)?\?>/um
+-      TAG_MATCH = /^<((?>#{NAME_STR}))\s*((?>\s+#{NAME_STR}\s*=\s*(["']).*?\3)*)\s*(\/)?>/um
++      TAG_MATCH = /^<((?>#{NAME_STR}))\s*((?>\s+#{UNAME_STR}\s*=\s*(["']).*?\5)*)\s*(\/)?>/um
+       CLOSE_MATCH = /^\s*<\/(#{NAME_STR})\s*>/um
+ 
+       VERSION = /\bversion\s*=\s*["'](.*?)['"]/um
+@@ -133,6 +136,7 @@
+         @tags = []
+         @stack = []
+         @entities = []
++        @nsstack = []
+       end
+ 
+       def position
+@@ -188,6 +192,7 @@
+         end
+         return [ :end_document ] if empty?
+         return @stack.shift if @stack.size > 0
++        #STDERR.puts @source.encoding
+         @source.read if @source.buffer.size<2
+         #STDERR.puts "BUFFER = #{@source.buffer.inspect}"
+         if @document_status == nil
+@@ -213,6 +218,7 @@
+             return [ :processing_instruction, *@source.match(INSTRUCTION_PATTERN, true)[1,2] ]
+           when DOCTYPE_START
+             md = @source.match( DOCTYPE_PATTERN, true )
++            @nsstack.unshift(curr_ns=Set.new)
+             identity = md[1]
+             close = md[2]
+             identity =~ IDENTITY
+@@ -288,6 +294,9 @@
+                 val = attdef[3]
+                 val = attdef[4] if val == "#FIXED "
+                 pairs[attdef[0]] = val
++                if attdef[0] =~ /^xmlns:(.*)/
++                  @nsstack[0] << $1
++                end
+               end
+             end
+             return [ :attlistdecl, element, pairs, contents ]
+@@ -312,6 +321,7 @@
+         begin
+           if @source.buffer[0] == ?<
+             if @source.buffer[1] == ?/
++              @nsstack.shift
+               last_tag = @tags.pop
+               #md = @source.match_to_consume( '>', CLOSE_MATCH)
+               md = @source.match( CLOSE_MATCH, true )
+@@ -345,19 +355,47 @@
+                 raise REXML::ParseException.new("missing attribute quote", @source) if @source.match(MISSING_ATTRIBUTE_QUOTES )
+                 raise REXML::ParseException.new("malformed XML: missing tag start", @source) 
+               end
+-              attrs = []
+-              if md[2].size > 0
+-                attrs = md[2].scan( ATTRIBUTE_PATTERN )
++              attributes = {}
++              prefixes = Set.new
++              prefixes << md[2] if md[2]
++              @nsstack.unshift(curr_ns=Set.new)
++              if md[4].size > 0
++                attrs = md[4].scan( ATTRIBUTE_PATTERN )
+                 raise REXML::ParseException.new( "error parsing attributes: [#{attrs.join ', '}], excess = \"#$'\"", @source) if $' and $'.strip.size > 0
++                attrs.each { |a,b,c,d,e| 
++                  if b == "xmlns"
++                    if c == "xml"
++                      if d != "http://www.w3.org/XML/1998/namespace"
++                        msg = "The 'xml' prefix must not be bound to any other namespace "+
++                        "(http://www.w3.org/TR/REC-xml-names/#ns-decl)"
++                        raise REXML::ParseException.new( msg, @source, self )
++                      end
++                    elsif c == "xmlns"
++                      msg = "The 'xmlns' prefix must not be declared "+
++                      "(http://www.w3.org/TR/REC-xml-names/#ns-decl)"
++                      raise REXML::ParseException.new( msg, @source, self)
++                    end
++                    curr_ns << c
++                  elsif b
++                    prefixes << b unless b == "xml"
++                  end
++                  attributes[a] = e 
++                }
+               end
+         
+-              if md[4]
++              # Verify that all of the prefixes have been defined
++              for prefix in prefixes
++                unless @nsstack.find{|k| k.member?(prefix)}
++                  raise UndefinedNamespaceException.new(prefix,@source,self)
++                end
++              end
++
++              if md[6]
+                 @closed = md[1]
++                @nsstack.shift
+               else
+                 @tags.push( md[1] )
+               end
+-              attributes = {}
+-              attrs.each { |a,b,c| attributes[a] = c }
+               return [ :start_element, md[1], attributes ]
+             end
+           else
+@@ -371,6 +409,8 @@
+             # return PullEvent.new( :text, md[1], unnormalized )
+             return [ :text, md[1] ]
+           end
++        rescue REXML::UndefinedNamespaceException
++          raise
+         rescue REXML::ParseException
+           raise
+         rescue Exception, NameError => error
+diff -ruN ruby-1.8.6-p111/lib/rexml/parsers/treeparser.rb ruby-1.8.6-p114/lib/rexml/parsers/treeparser.rb
+--- lib/rexml/parsers/treeparser.rb	2007-02-13 02:01:19.000000000 +0300
++++ lib/rexml/parsers/treeparser.rb	2007-11-04 07:50:15.000000000 +0300
+@@ -1,4 +1,5 @@
+ require 'rexml/validation/validationexception'
++require 'rexml/undefinednamespaceexception'
+ 
+ module REXML
+   module Parsers
+@@ -29,8 +30,7 @@
+               return
+             when :start_element
+               tag_stack.push(event[1])
+-              # find the observers for namespaces
+-              @build_context = @build_context.add_element( event[1], event[2] )
++              el = @build_context = @build_context.add_element( event[1], event[2] )
+             when :end_element
+               tag_stack.pop
+               @build_context = @build_context.parent
+@@ -86,6 +86,8 @@
+           end
+         rescue REXML::Validation::ValidationException
+           raise
++        rescue REXML::UndefinedNamespaceException
++          raise
+         rescue
+           raise ParseException.new( $!.message, @parser.source, @parser, $! )
+         end
+diff -ruN ruby-1.8.6-p111/lib/rexml/rexml.rb ruby-1.8.6-p114/lib/rexml/rexml.rb
+--- lib/rexml/rexml.rb	2007-07-28 17:24:46.000000000 +0400
++++ lib/rexml/rexml.rb	2007-11-04 07:50:15.000000000 +0300
+@@ -1,3 +1,4 @@
++# -*- encoding: utf-8 -*-
+ # REXML is an XML toolkit for Ruby[http://www.ruby-lang.org], in Ruby.
+ #
+ # REXML is a _pure_ Ruby, XML 1.0 conforming,
+@@ -10,8 +11,9 @@
+ #
+ # Main page:: http://www.germane-software.com/software/rexml
+ # Author:: Sean Russell <serATgermaneHYPHENsoftwareDOTcom>
+-# Version:: 3.1.7.1
+-# Date:: 2007/209
++# Version:: 3.1.7.2
++# Date:: 2007/275
++# Revision:: $Revision: 13815 $
+ # 
+ # This API documentation can be downloaded from the REXML home page, or can
+ # be accessed online[http://www.germane-software.com/software/rexml_doc]
+@@ -20,10 +22,10 @@
+ # or can be accessed 
+ # online[http://www.germane-software.com/software/rexml/docs/tutorial.html]
+ module REXML
+-  COPYRIGHT = "Copyright © 2001-2007 Sean Russell <ser@germane-software.com>"
+-  DATE = "2007/209"
+-  VERSION = "3.1.7.1"
+-  REVISION = "$Revision: 1270$".gsub(/\$Revision:|\$/,'').strip
++  COPYRIGHT = "Copyright \xC2\xA9 2001-2006 Sean Russell <ser@germane-software.com>"
++  VERSION = "3.1.7.2"
++  DATE = "2007/275"
++  REVISION = "$Revision: 13815 $".gsub(/\$Revision:|\$/,'').strip
+ 
+   Copyright = COPYRIGHT
+   Version = VERSION
+diff -ruN ruby-1.8.6-p111/lib/rexml/source.rb ruby-1.8.6-p114/lib/rexml/source.rb
+--- lib/rexml/source.rb	2007-07-28 06:46:08.000000000 +0400
++++ lib/rexml/source.rb	2007-11-04 07:50:15.000000000 +0300
+@@ -17,8 +17,8 @@
+       elsif arg.kind_of? Source
+         arg
+       else
+-        raise "#{source.class} is not a valid input stream.  It must walk \n"+
+-        "like either a String, IO, or Source."
++        raise "#{arg.class} is not a valid input stream.  It must walk \n"+
++          "like either a String, an IO, or a Source."
+       end
+     end
+   end
+@@ -134,6 +134,7 @@
+     def initialize(arg, block_size=500, encoding=nil)
+       @er_source = @source = arg
+       @to_utf = false
++
+       # Determining the encoding is a deceptively difficult issue to resolve.
+       # First, we check the first two bytes for UTF-16.  Then we
+       # assume that the encoding is at least ASCII enough for the '>', and
+@@ -145,13 +146,16 @@
+       str = @source.read( 2 )
+       if encoding
+         self.encoding = encoding
+-      elsif /\A(?:\xfe\xff|\xff\xfe)/n =~ str
+-        self.encoding = check_encoding( str )
+-      elsif (0xef == str[0] && 0xbb == str[1])
++      elsif 0xfe == str[0] && 0xff == str[1]
++        @line_break = "\000>"
++      elsif 0xff == str[0] && 0xfe == str[1]
++        @line_break = ">\000"
++      elsif 0xef == str[0] && 0xbb == str[1]
+         str += @source.read(1)
+         str = '' if (0xbf == str[2])
++        @line_break = ">"
+       else
+-        @line_break = '>'
++        @line_break = ">"
+       end
+       super str+@source.readline( @line_break )
+     end
+diff -ruN ruby-1.8.6-p111/lib/rexml/undefinednamespaceexception.rb ruby-1.8.6-p114/lib/rexml/undefinednamespaceexception.rb
+--- lib/rexml/undefinednamespaceexception.rb	1970-01-01 03:00:00.000000000 +0300
++++ lib/rexml/undefinednamespaceexception.rb	2007-11-04 07:50:15.000000000 +0300
+@@ -0,0 +1,8 @@
++require 'rexml/parseexception'
++module REXML
++  class UndefinedNamespaceException < ParseException
++    def initialize( prefix, source, parser )
++      super( "Undefined prefix #{prefix} found" )
++    end
++  end
++end
