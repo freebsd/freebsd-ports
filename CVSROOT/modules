@@ -5869,6 +5869,7 @@ jwhois		ports/net/jwhois
 jwm		ports/x11-wm/jwm
 jxm		ports/audio/jxm
 jython		ports/lang/jython
+jzintv		ports/emulators/jzintv
 jzip		ports/games/jzip
 jzip.org	ports/archivers/jzip.org
 jzlib		ports/archivers/jzlib
