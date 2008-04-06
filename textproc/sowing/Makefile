@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sowing
-PORTVERSION=	1.1.11
-PORTREVISION=	1
+PORTVERSION=	1.1.12
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://info.mcs.anl.gov/pub/sowing/
 
