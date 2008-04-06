@@ -1,6 +1,6 @@
---- gzip.cpp.orig	1970-01-01 05:00:00.000000000 +0500
-+++ gzip.cpp		2008-03-10 14:15:19.000000000 +0500
-@@ -0,0 +1,59 @@
+--- ./gzip.cpp.orig	2008-04-06 15:43:16.000000000 +0300
++++ ./gzip.cpp	2008-04-06 15:43:48.000000000 +0300
+@@ -0,0 +1,63 @@
 +/* Copyright (C) 2007  John Whitney
 + *
 + * This program is free software; you can redistribute it and/or modify
@@ -29,7 +29,7 @@
 +
 +void find_gzip_compressor() {
 +  string tempfile = getTmpFilename();
-+  string command = "find `echo $PATH | tr \":\" \" \"` -iname \"gzip\" -exec sh -c 'echo {};{} -V 2>&1|grep \"^gzip\"' \\; 2> /dev/null > "
++  string command = "find `echo $PATH | tr ':' ' '` -iname 'gzip' -exec sh -c 'echo {};{} -V 2>&1|grep ^gzip' \\; 2> /dev/null > "
 +     + tempfile;
 +
 +  system(command.c_str());
@@ -56,7 +56,11 @@
 +      fname = line;
 +  }
 +  if (verbose) {
-+    printf("found gnu gzip compressor/decompressor:\n");
-+    if (gzip_name!=NULL) printf("  %s\n", gzip_name);
++    if (gzip_name!=NULL)
++    {
++      printf("found GNU gzip compressor/decompressor:\n");
++      printf("  %s\n", gzip_name);
++    } 
++    else printf("GNU gzip compressor/decompressor NOT found!\n");
 +  }
 +}
