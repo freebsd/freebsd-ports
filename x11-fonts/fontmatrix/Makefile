@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontmatrix
-DISTVERSION=	0.3.1
+DISTVERSION=	0.4.1
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontmatrix.net/archives/
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${CMAKE}:${PORTSDIR}/devel/cmake
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml moc_build uic_build rcc_build qmake_build
+QT_COMPONENTS=	gui svg network moc_build uic_build rcc_build qmake_build linguist_build
 INSTALLS_ICONS=	yes
 MAKE_ENV+=	VERBOSE=1
 
@@ -40,18 +40,14 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/fontforge:${PORTSDIR}/print/fontforge
 
 post-patch:
 	cd ${WRKSRC}/src && \
-	    ${REINPLACE_CMD} -e 's:/usr/bin/fontforge:${LOCALBASE}/bin/fontforge:g' \
-	    prefs_panel.ui \
-	    typotek.cpp \
-	    messages/fontmatrix_no.ts \
-	    messages/fontmatrix_en.ts \
-	    messages/fontmatrix_nl.ts \
-	    messages/fontmatrix_fr.ts \
-	    messages/fontmatrix_sr.ts \
-	    messages/fontmatrix_sv.ts \
-	    messages/fontmatrix_fi.ts \
-	    messages/fontmatrix_de.ts \
-	    messages/fontmatrix_da.ts
+		${REINPLACE_CMD} -e 's:/usr/bin/fontforge:${LOCALBASE}/bin/fontforge:g' \
+		prefs_panel.ui \
+		typotek.cpp
+
+pre-configure:
+	cd ${WRKSRC}/src/messages && \
+		${LOCALBASE}/bin/lupdate-qt4 -noobsolete ../ -ts *.ts && \
+		${LOCALBASE}/bin/lrelease-qt4 *.ts
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${CMAKE} ${CMAKE_ARGS}
