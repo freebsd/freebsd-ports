@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qstardict
-PORTVERSION=	0.12
+PORTVERSION=	0.12.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
