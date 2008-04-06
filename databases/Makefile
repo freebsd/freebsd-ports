@@ -171,6 +171,7 @@
     SUBDIR += mysql51-server
     SUBDIR += mysql_last_value
     SUBDIR += mysqlard
+    SUBDIR += mysqlbigram
     SUBDIR += mysqlcc
     SUBDIR += mysqlcppapi
     SUBDIR += mysqlman
