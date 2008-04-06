@@ -70,8 +70,8 @@
 -      printf("here %c\n", *lev);
        gzip_without_header(file2.uname, gzip_temp, *lev);
 +      if (gzip_found == 0) { break; 
-+      } else {
-+         printf("here %c\n", *lev);
++//      } else {
++//         printf("here %c\n", *lev);
 +      }
        makeDelta(use_bdelta, gzip_temp, file2.fullname(), pristineName);
        ++lev;
