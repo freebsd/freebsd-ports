@@ -1,31 +1,64 @@
 bin/glabels
 bin/glabels-batch
+include/libglabels/category.h
+include/libglabels/db.h
+include/libglabels/enums.h
 include/libglabels/libglabels.h
 include/libglabels/paper.h
+include/libglabels/str.h
 include/libglabels/template.h
+include/libglabels/xml-category.h
 include/libglabels/xml-paper.h
 include/libglabels/xml-template.h
 include/libglabels/xml.h
 lib/libglabels.a
 lib/libglabels.la
 lib/libglabels.so
-lib/libglabels.so.1
+lib/libglabels.so.5
+libdata/pkgconfig/libglabels.pc
 share/application-registry/glabels.applications
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/applications/glabels.desktop
-share/glabels/dtd/glabels-2.0.dtd
+share/doc/libglabels/ch01.html
+share/doc/libglabels/ch02.html
+share/doc/libglabels/ch03.html
+share/doc/libglabels/home.png
+share/doc/libglabels/index.html
+share/doc/libglabels/index.sgml
+share/doc/libglabels/left.png
+share/doc/libglabels/libglabels-category.html
+share/doc/libglabels/libglabels-db.html
+share/doc/libglabels/libglabels-enums.html
+share/doc/libglabels/libglabels-paper.html
+share/doc/libglabels/libglabels-str.html
+share/doc/libglabels/libglabels-template.html
+share/doc/libglabels/libglabels-xml-category.html
+share/doc/libglabels/libglabels-xml-paper.html
+share/doc/libglabels/libglabels-xml-template.html
+share/doc/libglabels/libglabels-xml.html
+share/doc/libglabels/libglabels.devhelp
+share/doc/libglabels/libglabels.devhelp2
+share/doc/libglabels/right.png
+share/doc/libglabels/style.css
+share/doc/libglabels/up.png
+share/glabels/dtd/glabels-2.2.dtd
+share/glabels/glade/merge-properties-dialog.glade
+share/glabels/glade/new-label-dialog.glade
 share/glabels/glade/object-editor.glade
 share/glabels/glade/prefs-dialog.glade
+share/glabels/glade/print-custom-widget.glade
+share/glabels/glade/property-bar.glade
 share/glabels/glade/template-designer.glade
+share/glabels/glade/wdgt-media-select.glade
+share/glabels/glade/wdgt-rotate-label.glade
 share/glabels/templates/avery-iso-templates.xml
 share/glabels/templates/avery-other-templates.xml
 share/glabels/templates/avery-us-templates.xml
+share/glabels/templates/categories.xml
 share/glabels/templates/misc-iso-templates.xml
 share/glabels/templates/misc-other-templates.xml
 share/glabels/templates/misc-us-templates.xml
 share/glabels/templates/paper-sizes.xml
 share/glabels/templates/zweckform-iso-templates.xml
-share/glabels/ui/glabels-ui.xml
 share/gnome/help/glabels/C/figures/glabels-template-cd.png
 share/gnome/help/glabels/C/figures/glabels-template-label.png
 share/gnome/help/glabels/C/figures/glabels-template-layout.png
@@ -43,20 +76,9 @@ share/gnome/help/glabels/C/figures/print-copies.png
 share/gnome/help/glabels/C/figures/print-merge.png
 share/gnome/help/glabels/C/glabels.xml
 share/gnome/help/glabels/C/legal.xml
-share/mime-info/glabels.keys
-share/mime-info/glabels.mime
-share/omf/glabels/glabels-C.omf
-share/pixmaps/glabels/ex-1layout.png
-share/pixmaps/glabels/ex-2layouts.png
-share/pixmaps/glabels/ex-cd-size.png
-share/pixmaps/glabels/ex-rect-size.png
-share/pixmaps/glabels/ex-round-size.png
-share/pixmaps/glabels/glabels-about-logo.png
-share/pixmaps/glabels/glabels-splash.png
-share/pixmaps/glabels-application-x-glabels.png
-share/pixmaps/glabels.png
 share/locale/cs/LC_MESSAGES/glabels.mo
 share/locale/de/LC_MESSAGES/glabels.mo
+share/locale/eo/LC_MESSAGES/glabels.mo
 share/locale/es/LC_MESSAGES/glabels.mo
 share/locale/fr/LC_MESSAGES/glabels.mo
 share/locale/it/LC_MESSAGES/glabels.mo
@@ -65,20 +87,33 @@ share/locale/pl/LC_MESSAGES/glabels.mo
 share/locale/pt_BR/LC_MESSAGES/glabels.mo
 share/locale/ru/LC_MESSAGES/glabels.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/glabels.mo
+share/mime-info/glabels.keys
+share/mime-info/glabels.mime
 share/mime/application/x-glabels.xml
 share/mime/packages/glabels.xml
+share/omf/glabels/glabels-C.omf
+share/pixmaps/glabels-application-x-glabels.png
+share/pixmaps/glabels.png
+share/pixmaps/glabels/ex-1layout.png
+share/pixmaps/glabels/ex-2layouts.png
+share/pixmaps/glabels/ex-cd-size.png
+share/pixmaps/glabels/ex-rect-size.png
+share/pixmaps/glabels/ex-round-size.png
+share/pixmaps/glabels/glabels-about-logo.png
+share/pixmaps/glabels/glabels-splash.png
 @dirrm share/pixmaps/glabels
 @dirrm share/omf/glabels
 @dirrm share/gnome/help/glabels/C/figures
 @dirrm share/gnome/help/glabels/C
 @dirrm share/gnome/help/glabels
-@dirrm share/glabels/ui
 @dirrm share/glabels/templates
 @dirrm share/glabels/glade
 @dirrm share/glabels/dtd
 @dirrm share/glabels
+@dirrm share/doc/libglabels
+@dirrmtry share/applications
 @dirrm include/libglabels
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/applications
