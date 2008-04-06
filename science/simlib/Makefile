@@ -6,20 +6,24 @@
 #
 
 PORTNAME=	simlib
-PORTVERSION=	2.18.20061212
+PORTVERSION=	3.0.20071212
 CATEGORIES=	science
 MASTER_SITES=	http://www.fit.vutbr.cz/~peringer/SIMLIB/source/
-DISTNAME=	SIMLIB-${PORTVERSION:S/.200/-200/}
+DISTNAME=	${PORTNAME}3-${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	SIMulation LIBrary for C++ programming language
 
-NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKEFILE=	Makefile.FreeBSD
+WRKSRC=		${WRKDIR}/${PORTNAME}-3
 
-# not 64bit ready
-ONLY_FOR_ARCHS=	i386
+CXXFLAGS+=	-fPIC
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|make|gmake|g' ${WRKSRC}/Makefile
+	@${MV} ${WRKSRC}/src/Makefile.FreeBSD-i386 ${WRKSRC}/src/Makefile
+	@${MV} ${WRKSRC}/examples/Makefile.FreeBSD-i386 ${WRKSRC}/examples/Makefile
+	@${MV} ${WRKSRC}/tests/Makefile.FreeBSD-i386 ${WRKSRC}/tests/Makefile
 
 .include <bsd.port.mk>

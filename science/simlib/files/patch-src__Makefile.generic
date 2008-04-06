@@ -1,0 +1,15 @@
+--- src/Makefile.generic.orig	2008-04-06 14:25:38.000000000 +0800
++++ src/Makefile.generic	2008-04-06 14:26:50.000000000 +0800
+@@ -225,9 +225,9 @@
+ #TODO: add version and symlink
+ install: all
+ 	install -d $(PREFIX)/include $(PREFIX)/lib
+-	install -m0644 $(SIMLIB_HEADERS) $(PREFIX)/include
+-	install -m0644 $(LIBNAME).a      $(PREFIX)/lib/lib$(LIBNAME).a
+-	install -m0644 $(LIBNAME).so     $(PREFIX)/lib/lib$(LIBNAME).so
++	$(BSD_INSTALL_DATA) $(SIMLIB_HEADERS) $(PREFIX)/include
++	$(BSD_INSTALL_PROGRAM) $(LIBNAME).a      $(PREFIX)/lib/lib$(LIBNAME).a
++	$(BSD_INSTALL_PROGRAM) $(LIBNAME).so     $(PREFIX)/lib/lib$(LIBNAME).so
+ 	@if ! grep '^'$(PREFIX)/lib'$$' /etc/ld.so.conf >/dev/null; then \
+ 	  echo "Add $(PREFIX)/lib to /etc/ld.so.conf ";  \
+ 	fi
