@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="072a53e0-0397-11dd-bd06-0017319806e7">
+    <topic>postfix-policyd-weight -- working directory symlink vulnerability</topic>
+    <affects>
+      <package>
+	<name>postfix-policyd-weight</name>
+	<range><lt>0.1.14.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>postfix-policyd-weight does not check for symlink for its working
+	  directory.  If the working directory is not already setup by the
+	  super root, an unprivileged user can link it to another directories
+	  in the system.  This results in ownership/permission changes on the
+	  target directory.</p>
+      </body>
+    </description>
+    <references>
+      <bid>28480</bid>
+      <url>http://article.gmane.org/gmane.mail.postfix.policyd-weight/815</url>
+      <url>http://article.gmane.org/gmane.mail.postfix.policyd-weight/823</url>
+    </references>
+    <dates>
+      <discovery>2008-03-27</discovery>
+      <entry>2008-04-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b21790a5-02fb-11dd-bd06-0017319806e7">
     <topic>powerdns-recursor -- DNS cache poisoning</topic>
     <affects>
