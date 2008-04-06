@@ -7,27 +7,38 @@
 #
 
 PORTNAME=	glabels
-PORTVERSION=	2.0.4
-PORTREVISION=	3
+PORTVERSION=	2.2.2
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program to create labels and business cards
 
-USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui libgnomeprintui \
-		desktopfileutils intlhack
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui \
+		desktopfileutils intlhack ltverhack
+WANT_GNOME=	yes
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
 
 MAN1=		glabels.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mevolutiondataserver}!=""
+USE_GNOME+=		evolutiondataserver
+CONFIGURE_ARGS+=	--with-libebook
+.else
+CONFIGURE_ARGS+=	--without-libebook
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib\.h|g' \
+		${WRKSRC}/iec16022-0.2.1/*.c
+
+.include <bsd.port.post.mk>
