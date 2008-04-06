@@ -18,6 +18,7 @@
     SUBDIR += afio
     SUBDIR += agef
     SUBDIR += ah-tty
+    SUBDIR += aimage
     SUBDIR += am-utils
     SUBDIR += amrstat
     SUBDIR += anacron
