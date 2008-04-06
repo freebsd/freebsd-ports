@@ -1,6 +1,7 @@
 bin/emp_client
 bin/emp_server
 lib/wolfpack/emp_server
+lib/wolfpack/empdump
 lib/wolfpack/empire
 lib/wolfpack/empsched
 lib/wolfpack/pconfig
