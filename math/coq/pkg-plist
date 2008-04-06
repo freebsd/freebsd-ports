@@ -75,6 +75,7 @@ lib/coq/contrib/subtac/Utils.vo
 @dirrm lib/coq/contrib
 lib/coq/contrib.cma
 lib/coq/contrib.cmxa
+lib/coq/grammar.cma
 lib/coq/highparsing.cma
 lib/coq/highparsing.cmxa
 lib/coq/hightactics.cma

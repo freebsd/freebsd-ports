@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	coq
-PORTVERSION=	8.1.1
+PORTVERSION=	8.1.3
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V${COQVERSION}/ \
+MASTER_SITES=	http://coq.inria.fr/V${COQVERSION}/files/ \
 		ftp://ftp.stack.nl/pub/users/johans/coq/
 DISTNAME=	${PORTNAME}-${COQVERSION}
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	Theorem prover based on lambda-C
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-
+USE_OCAML=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	world
 WITH_IDE=	yes
