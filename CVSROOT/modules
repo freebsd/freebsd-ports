@@ -14795,6 +14795,7 @@ ruby-xtemplate	ports/textproc/ruby-xtemplate
 ruby-zip	ports/archivers/ruby-zip
 ruby-zoom	ports/devel/ruby-zoom
 ruby18		ports/lang/ruby18
+ruby19		ports/lang/ruby19
 rubygem-actionmailer	ports/mail/rubygem-actionmailer
 rubygem-actionpack	ports/www/rubygem-actionpack
 rubygem-actionwebservice	ports/www/rubygem-actionwebservice
