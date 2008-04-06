@@ -14,7 +14,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast 2D tank arcade game with multiplayer and split-screen modes
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
-		openal.0:${PORTSDIR}/audio/openal
+		openal.0:${PORTSDIR}/audio/openal \
+		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
