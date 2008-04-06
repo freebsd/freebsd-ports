@@ -13,11 +13,12 @@ bin/afstats
 bin/aftest
 bin/afverify
 bin/afxml
-bin/aimage
 bin/s3
 include/afflib/afflib.h
 include/afflib/afflib_i.h
 include/afflib/afflib_sha256.h
+include/afflib/aftimer.h
+include/afflib/utils.h
 lib/libafflib.a
 lib/libafflib.la
 lib/libafflib.so
