@@ -8238,6 +8238,7 @@ mysql51-scripts	ports/databases/mysql51-scripts
 mysql51-server	ports/databases/mysql51-server
 mysql_last_value	ports/databases/mysql_last_value
 mysqlard	ports/databases/mysqlard
+mysqlbigram	ports/databases/mysqlbigram
 mysqlcc		ports/databases/mysqlcc
 mysqlcppapi	ports/databases/mysqlcppapi
 mysqlman	ports/databases/mysqlman
