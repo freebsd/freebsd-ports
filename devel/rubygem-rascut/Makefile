@@ -14,11 +14,12 @@ MASTER_SITE_SUBDIR=	hotchpotch
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Ruby ActionSCript UTility
 
-BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
-		mongrel_rails:${PORTSDIR}/www/rubygem-mongrel \
+BUILD_DEPENDS=	mongrel_rails:${PORTSDIR}/www/rubygem-mongrel \
 		rackup:${PORTSDIR}/www/rubygem-rack \
 		fcsh:${PORTSDIR}/devel/flex_compiler_shell
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RAKE=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

@@ -16,6 +16,7 @@ COMMENT=	Manage static websites using Haml and Sass
 RUN_DEPENDS=	rubygem-haml>=1.7.0:${PORTSDIR}/www/rubygem-haml \
 		rubygem-mongrel>=1.0.1:${PORTSDIR}/www/rubygem-mongrel
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

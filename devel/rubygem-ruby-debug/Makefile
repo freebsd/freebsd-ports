@@ -15,6 +15,7 @@ COMMENT=	A generic command line interface for ruby-debug
 
 RUN_DEPENDS=	rubygem-ruby-debug-base>=0.10.0:${PORTSDIR}/devel/rubygem-ruby-debug-base
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

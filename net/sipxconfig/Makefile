@@ -16,8 +16,6 @@ COMMENT=	sipX server for configuring sipX via a web interface
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
-		gem:${PORTSDIR}/devel/ruby-gems \
-		rake:${PORTSDIR}/devel/rubygem-rake \
 		zip:${PORTSDIR}/archivers/zip \
 		ginstall:${PORTSDIR}/sysutils/coreutils
 LIB_DEPENDS=	sipXport:${PORTSDIR}/net/sipxportlib \
@@ -33,6 +31,7 @@ USE_AUTOTOOLS=	autoconf:261:env automake:19:env
 USE_JAVA=	1.4+
 USE_APACHE=	2.0+
 USE_RUBY=	yes
+USE_RAKE=	yes
 GNU_CONFIGURE=	yes
 LOCALSTATEDIR=	/var
 CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME} \
@@ -48,6 +47,12 @@ SUB_FILES=	pkg-install pkg-deinstall
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.8
+BUILD_DEPENDS+=	gem:${PORTSDIR}/devel/ruby-gems
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/bash,${PREFIX}/bin/bash," ${WRKSRC}/web/bin/sipxconfig.sh.in
 	@${REINPLACE_CMD} -e "s,@PREFIX@,${PREFIX}," ${WRKSRC}/web/bin/sipxconfig.sh.in
@@ -58,4 +63,4 @@ pre-install:
 post-install:
 	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

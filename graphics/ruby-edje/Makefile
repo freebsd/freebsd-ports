@@ -16,11 +16,11 @@ DISTNAME=	ruby-edje-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ruby bindings for Edje library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake \
-		${RUBY_SA}/evas/rb_evas.h:${PORTSDIR}/graphics/ruby-evas
+BUILD_DEPENDS=	${RUBY_SA}/evas/rb_evas.h:${PORTSDIR}/graphics/ruby-evas
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
+USE_RAKE=	yes
 USE_EFL=	edje
 
 RUBY_SA=	${RUBY_SITEARCHLIBDIR}
@@ -28,11 +28,10 @@ RUBY_SA=	${RUBY_SITEARCHLIBDIR}
 .include <bsd.port.pre.mk>
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} EDJE_PREFIX=${LOCALBASE} \
-		${LOCALBASE}/bin/rake)
+	@(cd ${WRKSRC}; ${SETENV} EDJE_PREFIX=${LOCALBASE} ${RAKE_BIN})
 
 do-install:
 	@(cd ${WRKSRC}; ${SETENV} EDJE_PREFIX=${LOCALBASE} \
-		${LOCALBASE}/bin/rake install)
+		${RAKE_BIN} install)
 
 .include <bsd.port.post.mk>

@@ -16,8 +16,7 @@ BUILD_DEPENDS=	rubygem-syntax>=1.0.0:${PORTSDIR}/textproc/rubygem-syntax
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 USE_RUBY_FEATURES=	iconv
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

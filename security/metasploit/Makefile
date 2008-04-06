@@ -15,7 +15,6 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	Exploit-Framework for Penetration-Testing
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
-		${LOCALBASE}/bin/gem:${PORTSDIR}/devel/ruby-gems \
 		${LOCALBASE}/lib/ruby/gems/1.8/specifications/activerecord-1.15.6.gemspec:${PORTSDIR}/databases/rubygem-activerecord
 
 SCRIPTS=	msfcli msfconsole msfd msfencode msflicense msfopcode \
@@ -27,6 +26,10 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+RUN_DEPENDS+=	${LOCALBASE}/bin/gem:${PORTSDIR}/devel/ruby-gems
+.endif
 
 .if defined(WITH_MSFGUI)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/wxruby.so:${PORTSDIR}/x11-toolkits/ruby-wx

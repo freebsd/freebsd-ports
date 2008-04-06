@@ -18,6 +18,9 @@ BUILD_DEPENDS=	rubygem-parsetree>=0.0:${PORTSDIR}/devel/rubygem-parsetree \
 		rubygem-hoe>=1.4.0:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
 x-generate-plist:
 	${ECHO} bin/r2r_show > pkg-plist.new
 	${ECHO} %%GEM_CACHE%% >> pkg-plist.new
@@ -27,6 +30,4 @@ x-generate-plist:
 	${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm %%GEM_LIB_DIR%%,' >> pkg-plist.new
 	${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm %%GEM_DOC_DIR%%,' >> pkg-plist.new
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

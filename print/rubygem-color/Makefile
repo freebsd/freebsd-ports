@@ -18,6 +18,7 @@ BUILD_DEPENDS=	rubygem-archive-tar-minitar>=0.5.1:${PORTSDIR}/archivers/rubygem-
 		rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

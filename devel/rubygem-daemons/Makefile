@@ -12,6 +12,9 @@ MASTER_SITES=	RF
 MAINTAINER=	ports@logvinov.com
 COMMENT=	A toolkit to convert your script to a controllable daemon
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
@@ -25,6 +28,4 @@ x-generate-plist:
 		;s,^@dirrm (${SPEC_DIR}|${GEMS_DIR}|lib/ruby).*$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

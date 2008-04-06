@@ -21,6 +21,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 # to get RUBY_SITEARCHLIBDIR
 USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -28,5 +29,4 @@ USE_RUBY=	yes
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/termios.so:${PORTSDIR}/comms/ruby-termios
 .endif
 
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>

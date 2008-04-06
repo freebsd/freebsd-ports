@@ -17,6 +17,7 @@ BUILD_DEPENDS=	rackup:${PORTSDIR}/www/rubygem-rack \
 		rubygem-daemons>=1.0.9:${PORTSDIR}/devel/rubygem-daemons
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	ruby-debug
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Fast implementation of the standard Ruby debugger
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

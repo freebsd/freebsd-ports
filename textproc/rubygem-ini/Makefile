@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}file
 MAINTAINER=	yds@CoolRat.org
 COMMENT=	Ruby INI File Parser and Writer
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

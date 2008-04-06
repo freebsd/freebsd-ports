@@ -14,6 +14,7 @@ COMMENT=	Ruby implementation of Markdown, a text-to-HTML conversion tool
 
 GEM_NAME=	${DISTNAME}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

@@ -13,6 +13,7 @@ MASTER_SITES=	RF
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Parse JSON texts and generate them from ruby data structures
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

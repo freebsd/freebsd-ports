@@ -274,6 +274,7 @@
     SUBDIR += ruby-reference
     SUBDIR += ruby-usersguide
     SUBDIR += ruby18
+    SUBDIR += ruby19
     SUBDIR += sather-specification
     SUBDIR += sather-tutorial
     SUBDIR += sbcl

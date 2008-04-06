@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	rack
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Rack, a Ruby Webserver Interface
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

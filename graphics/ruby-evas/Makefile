@@ -16,20 +16,19 @@ DISTNAME=	ruby-evas-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ruby bindings for Evas library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
-
 USE_BZIP2=	yes
 USE_RUBY=	yes
+USE_RAKE=	yes
 USE_EFL=	evas
 
 .include <bsd.port.pre.mk>
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} EVAS_PREFIX=${LOCALBASE} \
-		${LOCALBASE}/bin/rake)
+		${RAKE_BIN})
 
 do-install:
 	@(cd ${WRKSRC}; ${SETENV} EVAS_PREFIX=${LOCALBASE} \
-		${LOCALBASE}/bin/rake install)
+		${RAKE_BIN} install)
 
 .include <bsd.port.post.mk>

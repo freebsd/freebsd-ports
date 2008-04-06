@@ -16,6 +16,7 @@ COMMENT=	Easy to use and customize/extend implementation of captcha
 BUILD_DEPENDS=	rubygem-gd2>=1.0.0:${PORTSDIR}/graphics/rubygem-gd2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

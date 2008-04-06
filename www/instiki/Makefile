@@ -16,10 +16,9 @@ MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Easy to set up wiki clone implemented in ruby
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
-BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake
 
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	1.8
+USE_RAKE=	yes
 USE_LDCONFIG=	yes
 
 INSTIKIPORT?=	2500
@@ -38,7 +37,7 @@ RUBY_SHEBANG_FILES=instiki
 # can't include this because it redefines do-install.
 # .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 # For now, copy and paste the definition of SPEC_DIR from the above
-REV=		1.8
+REV=		${RUBY_VER}
 GEMS_BASE_DIR=	lib/ruby/gems/${REV}
 SPEC_DIR=	${GEMS_BASE_DIR}/specifications
 BUILD_DEPENDS+=	${LOCALBASE}/${SPEC_DIR}/BlueCloth-1.0.0.gemspec:${PORTSDIR}/www/rubygem-bluecloth
@@ -53,7 +52,7 @@ post-patch:
 
 do-build:
 	( cd ${WRKSRC}/db/ && \
-	  rake environment RAILS_ENV=production db:migrate )
+	  ${RAKE_BIN} environment RAILS_ENV=production db:migrate )
 
 do-install:
 	@${FIND} -E ${WRKSRC} -type f -iregex ".*\._.+" -exec ${RM} "{}" \;

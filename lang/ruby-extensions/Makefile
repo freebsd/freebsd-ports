@@ -18,20 +18,20 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	boumenot@gmail.com
 COMMENT=	Useful extensions for Ruby's standard classes
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
-.endif
-
 RUBY_SETUP=	install.rb
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 USE_RUBY_RDOC=	yes
 
+.if !defined(NOPORTDOCS)
+USE_RAKE=	yes
+.endif
+
 DOCS_EN=	README README.1st build/rdoc/*
 
 post-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && rake rerdoc
+	cd ${WRKSRC} && ${RAKE_BIN} rerdoc
 .endif
 
 post-install:

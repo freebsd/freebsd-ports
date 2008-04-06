@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	 spreadsheet
 MAINTAINER=	ports@logvinov.com
 COMMENT=	A Ruby module to generate Microsoft Excel compatible files
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

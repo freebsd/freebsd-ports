@@ -18,8 +18,8 @@ BUILD_DEPENDS=	rubygem-color>=1.4.0:${PORTSDIR}/print/rubygem-color \
 		rubygem-transactionsimple>=1.4.0:${PORTSDIR}/devel/rubygem-transactionsimple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -28,9 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} >= 1.7
 MAKE_ARGS=	sitelibdir='$$(rubylibdir)'
-.endif
 
 do-extract:
 	${MKDIR} ${WRKDIR}

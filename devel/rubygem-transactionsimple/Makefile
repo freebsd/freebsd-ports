@@ -17,8 +17,8 @@ COMMENT=	Simple object transaction support
 BUILD_DEPENDS=	rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

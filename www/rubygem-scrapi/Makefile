@@ -17,6 +17,8 @@ COMMENT=	A scrAPI toolkit for Ruby
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/tidy-1.1.2.gemspec:${PORTSDIR}/textproc/rubygem-tidy \
 		tidy:${PORTSDIR}/www/tidy-lib
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
@@ -26,5 +28,4 @@ post-install:
 	${RM} -f ${LOCALBASE}/${GEM_LIB_DIR}/lib/tidy/libtidy.so
 	${LN} -sf ${LOCALBASE}/lib/libtidy.so ${LOCALBASE}/${GEM_LIB_DIR}/lib/tidy/
 
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>

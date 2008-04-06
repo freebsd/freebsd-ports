@@ -16,14 +16,13 @@ DISTNAME=	ruby-esmart-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ruby bindings for Esmart library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake \
-		${RUBY_SA}/evas/rb_evas.h:${PORTSDIR}/graphics/ruby-evas \
+BUILD_DEPENDS=	${RUBY_SA}/evas/rb_evas.h:${PORTSDIR}/graphics/ruby-evas \
 		${RUBY_SA}/ecore/rb_window.h:${PORTSDIR}/devel/ruby-ecore
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
+USE_RAKE=	yes
 USE_EFL_ESMART=	trans_x11 container draggies
-
 CFLAGS+=	-I"${LOCALBASE}/include" -fPIC
 
 RUBY_SA=	${RUBY_SITEARCHLIBDIR}
@@ -32,10 +31,10 @@ RUBY_SA=	${RUBY_SITEARCHLIBDIR}
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ESMART_PREFIX=${LOCALBASE} \
-		${LOCALBASE}/bin/rake)
+		${RAKE_BIN})
 
 do-install:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ESMART_PREFIX=${LOCALBASE} \
-		${LOCALBASE}/bin/rake install)
+		${RAKE_BIN} install)
 
 .include <bsd.port.post.mk>

@@ -14,8 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	r.s.a.vandomburg@nedforce.nl
 COMMENT=	Dependency-injection/inversion-of-control container
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
 FETCH_CMD=	/usr/bin/fetch -Rr
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

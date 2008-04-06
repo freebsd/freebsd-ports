@@ -17,6 +17,7 @@ BUILD_DEPENDS=	rubygem-hpricot>=0:${PORTSDIR}/www/rubygem-hpricot \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 
 post-install:
 	@${ECHO} ${GEM_CACHE} > ${TMPPLIST}
@@ -26,6 +27,4 @@ post-install:
 	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm ${GEM_LIB_DIR},' >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -17,6 +17,7 @@ COMMENT=	Twitter client API in pure Ruby
 BUILD_DEPENDS=	rubygem-json>=0.4.3:${PORTSDIR}/devel/rubygem-json
 RUN_DEPENDS=	rubygem-json>=0.4.3:${PORTSDIR}/devel/rubygem-json
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>
