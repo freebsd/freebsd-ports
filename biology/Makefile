@@ -43,6 +43,7 @@
     SUBDIR += linux-foldingathome
     SUBDIR += lsysexp
     SUBDIR += mafft
+    SUBDIR += mapm3
     SUBDIR += migrate
     SUBDIR += molden
     SUBDIR += mopac
