@@ -38,7 +38,7 @@ policyd_weight_start() {
 
 policyd_weight_stop() {
     echo "Stopping $name"
-    /usr/local/bin/policyd-weight stop
+    /usr/local/bin/policyd-weight -k stop
 }
 
 run_rc_command "$1"
