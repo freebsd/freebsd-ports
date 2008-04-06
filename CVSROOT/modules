@@ -293,6 +293,7 @@ aifad		ports/devel/aifad
 aiksaurus	ports/textproc/aiksaurus
 aiksaurus-gtk	ports/textproc/aiksaurus-gtk
 aim		ports/net-im/aim
+aimage		ports/sysutils/aimage
 aimsniff	ports/security/aimsniff
 aircrack-ng	ports/net-mgmt/aircrack-ng
 airoflash	ports/misc/airoflash
