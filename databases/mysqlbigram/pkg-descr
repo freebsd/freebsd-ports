@@ -1,0 +1,14 @@
+MySQL has fulltext index search ability for text field. but it is word
+based index, it cannot be used for no word delimiter laungage like
+Japanese or Chinese. and it also can't search charactors in middle of
+a words. (cf. searching 'in' will not match word 'ping'.)
+
+Starts from MySQL 5.1, MySQL supports a plugin that allows to change
+server components (fulltext search parser) without restarting /
+recompiling the server.
+
+This n-gram parser uses this plugin interface to implement a simple
+n-gram (bi-gram) fulltext index parser which can be index no word
+delimiter laungage.
+
+WWW:	http://mysqlbigram.googlepages.com/
