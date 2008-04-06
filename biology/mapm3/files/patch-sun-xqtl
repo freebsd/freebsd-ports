@@ -1,0 +1,9 @@
+--- sun/xqtl.orig	2008-04-04 20:05:29.000000000 +0000
++++ sun/xqtl	2008-04-04 19:59:41.000000000 +0000
+@@ -10,5 +10,5 @@
+ else if (-e /usr/openwin/demo/xterm) then
+ 	exec /usr/openwin/demo/xterm $xoptions $fontsize -e $program $*
+ else
+-	exec xterm $options $fontsize -e $program
++	exec xterm $xoptions $fontsize -e $program
+ endif
