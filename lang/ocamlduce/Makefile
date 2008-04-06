@@ -23,7 +23,6 @@ USE_OCAML_FINDLIB=yes
 ALL_TARGET=	all opt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 post-extract:
 # For nonstandard prefixes
