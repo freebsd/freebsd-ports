@@ -397,10 +397,9 @@ BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "all"
+.if ${LOCALIZED_LANG} == "alllangs"
 ALL_LOCALIZED_LANGS=yes
 PKGNAMESUFFIX=	-alllangs
 .endif
 ################################################################
 .endif
-	

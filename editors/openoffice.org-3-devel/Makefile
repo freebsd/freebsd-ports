@@ -201,12 +201,12 @@ do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAXMODULES} --all --html --dontgraboutput -- -P${MAXPROCESSES}"
 
-.if ${LOCALIZED_LANG} == "all"
+.if ${LOCALIZED_LANG} == "alllangs"
 	@${MAKE} languagepack
 .endif
 
 do-install:
-.if ${LOCALIZED_LANG} == "all"
+.if ${LOCALIZED_LANG} == "alllangs"
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd-*/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/bsd/install/ ; ${LS} */freebsd*/*.t?z > ${WRKDIR}/LANGPACKFILES
 	@${RM} -Rf ${WRKDIR}/tmp
@@ -220,7 +220,7 @@ do-install:
 		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/bsd/install/$$i ;\
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
-	@cd ${WRKDIR}/tmp/opt/openoffice* ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
+	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 .else
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
 	@${RM} -Rf ${WRKDIR}/tmp
