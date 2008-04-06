@@ -5,8 +5,7 @@
 # $FreeBSD$
 #
 # If possible, please consider updating the simple ports/x11-clocks/rclock
-# (and maybe ports/chinese/rxvt) when you upgrade rxvt.  These ports all use
-# the same distfile.
+# when you upgrade rxvt.  These ports all use the same distfile.
 
 PORTNAME=	rxvt
 PORTVERSION=	2.7.10
@@ -98,6 +97,11 @@ CONFIGURE_ARGS+=	--enable-xterm-scroll
 .if defined(WITH_LINESPACE)
 CONFIGURE_ARGS+=	--enable-linespace
 .endif # WITH_LINESPACE
+#
+# enable 256 color
+.if defined(WITH_256_COLOR)
+CONFIGURE_ARGS+=	--enable-256-color
+.endif # WITH_256_COLOR
 
 CONFIGURE_ENV+=		LIBS="-lutil"
 
