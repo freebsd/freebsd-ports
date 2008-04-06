@@ -13,6 +13,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Ruby Make
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
 MANCOMPRESSED=	yes
 MAN1=		rake.1
 
@@ -26,7 +29,10 @@ x-generate-plist:
 	${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm %%GEM_DOC_DIR%%,' >> pkg-plist.new
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
+
+.if ${RUBY_VER} == 1.9
+IGNORE=	already included in ruby distribution
+.endif
 
 post-install:
 	${MV} ${PREFIX}/${GEM_LIB_DIR}/doc/rake.1.gz \

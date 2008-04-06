@@ -21,8 +21,6 @@ LIB_DEPENDS=	sipXport:${PORTSDIR}/net/sipxportlib \
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		psql:${PORTSDIR}/databases/postgresql81-client
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		gem:${PORTSDIR}/devel/ruby-gems \
-		rake:${PORTSDIR}/devel/rubygem-rake \
 		ginstall:${PORTSDIR}/sysutils/coreutils \
 		cppunit-config:${PORTSDIR}/devel/cppunit
 
@@ -43,6 +41,12 @@ SUB_FILES=	pkg-install pkg-deinstall
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.8
+BUILD_DEPENDS+= gem:${PORTSDIR}/devel/ruby-gems
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/bash,${PREFIX}/bin/bash," ${WRKSRC}/bin/sipxcallresolver.sh.in
 	@${REINPLACE_CMD} -e "s,/bin/bash,${PREFIX}/bin/bash," ${WRKSRC}/bin/sipproxy.sh.in
@@ -55,4 +59,4 @@ pre-install:
 post-install:
 	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/GD.so:${PORTSDIR}/graphics/ruby-gd
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

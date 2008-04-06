@@ -13,12 +13,12 @@ MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	A last.fm submission client for XMMS2
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient_ext.so:${PORTSDIR}/audio/ruby-xmms2 \
-		${RUBY_SITELIBDIR}/event-loop.rb:${PORTSDIR}/devel/ruby-event-loop \
-		${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
+		${RUBY_SITELIBDIR}/event-loop.rb:${PORTSDIR}/devel/ruby-event-loop
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient_ext.so:${PORTSDIR}/audio/ruby-xmms2 \
 		${RUBY_SITELIBDIR}/event-loop.rb:${PORTSDIR}/devel/ruby-event-loop
 
 USE_RUBY=	yes
+USE_RAKE=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/xmms2-scrobbler \
@@ -29,7 +29,7 @@ PLIST_DIRS=	%%DATADIR%%/filters %%DATADIR%%
 SUB_FILES=	pkg-message
 
 do-install:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake PREFIX=${PREFIX}/ ${INSTALL_TARGET}
+	@cd ${WRKSRC} && ${RAKE_BIN} PREFIX=${PREFIX}/ ${INSTALL_TARGET}
 
 post-install:
 	@${ECHO_MSG}

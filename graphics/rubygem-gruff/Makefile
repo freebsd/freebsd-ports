@@ -19,7 +19,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/RMagick.so:${PORTSDIR}/graphics/ruby-rmagick
 		sow:${PORTSDIR}/devel/rubygem-hoe
 
 USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

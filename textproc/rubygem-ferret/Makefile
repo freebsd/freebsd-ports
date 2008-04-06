@@ -13,9 +13,9 @@ MASTER_SITES=	RF
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ferret is a ruby port of Lucene
 
-BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake
-
 USE_RUBY=	yes
+USE_RAKE=	yes
+USE_RUBYGEMS=	yes
 
 post-install:
 	@${FIND} ${PREFIX}/${GEM_LIB_DIR} ! -type d | \
@@ -27,6 +27,4 @@ post-install:
 	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d | ${SORT} -r | \
 		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

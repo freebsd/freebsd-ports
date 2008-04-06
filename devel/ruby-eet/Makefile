@@ -14,17 +14,17 @@ DISTNAME=	ruby-eet-${PORTVERSION}
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Ruby support for reading and writing EET files
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
 LIB_DEPENDS=	eet.9:${PORTSDIR}/devel/eet
 
 USE_RUBY=	yes
+USE_RAKE=	yes
 
 .include <bsd.port.pre.mk>
 
 do-build:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake PREFIX=${PREFIX}/
+	@cd ${WRKSRC} && ${RAKE_BIN} PREFIX=${PREFIX}/
 
 do-install:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake PREFIX=${PREFIX}/ install
+	@cd ${WRKSRC} && ${RAKE_BIN} PREFIX=${PREFIX}/ install
 
 .include <bsd.port.post.mk>

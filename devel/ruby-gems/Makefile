@@ -27,10 +27,16 @@ NO_BUILD=	yes
 
 PLIST_SUB+=	DISTNAME="${DISTNAME}"
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+IGNORE=	already included in this ruby distribution
+.endif
+
 do-install:
 	cd ${WRKSRC}; ${RUBY} ${RUBY_SETUP}
 
 post-install:
 	@${LN} -sf ${PREFIX}/bin/gem18 ${PREFIX}/bin/gem
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,0 +1,11 @@
+--- configure.orig	Thu Jan 17 15:14:30 2008
++++ configure	Thu Jan 17 15:15:00 2008
+@@ -18065,7 +18065,7 @@
+ 
+ 
+ if test x"$enable_pthread" = xyes; then
+-    for pthread_lib in thr pthread pthreads c c_r; do
++    for pthread_lib in pthread thr pthreads c c_r; do
+  	as_ac_Lib=`echo "ac_cv_lib_$pthread_lib''_pthread_kill" | $as_tr_sh`
+ { echo "$as_me:$LINENO: checking for pthread_kill in -l$pthread_lib" >&5
+ echo $ECHO_N "checking for pthread_kill in -l$pthread_lib... $ECHO_C" >&6; }

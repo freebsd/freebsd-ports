@@ -13,9 +13,12 @@ MASTER_SITE_SUBDIR=	seattlerb
 MAINTAINER=	jw@innerewut.de
 COMMENT=	A simple rake/rubygems helper for project Rakefiles
 
-BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
-		rubyforge:${PORTSDIR}/devel/rubygem-rubyforge
+BUILD_DEPENDS=	rubyforge:${PORTSDIR}/devel/rubygem-rubyforge
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_RUBY=	yes
+USE_RAKE=	yes
+USE_RUBYGEMS=	yes
 
 post-install:
 	@${ECHO} bin/sow > ${TMPPLIST}
@@ -26,6 +29,4 @@ post-install:
 	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm ${GEM_LIB_DIR},' >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

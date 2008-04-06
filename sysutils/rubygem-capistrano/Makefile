@@ -13,9 +13,12 @@ MASTER_SITES=	RF
 MAINTAINER=	r.s.a.vandomburg@nedforce.nl
 COMMENT=	A utility for executing commands in parallel on multiple machines
 
-RUN_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
-		${LOCALBASE}/${SPEC_DIR}/net-sftp-1.1.0.gemspec:${PORTSDIR}/security/rubygem-net-sftp \
+RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/net-sftp-1.1.0.gemspec:${PORTSDIR}/security/rubygem-net-sftp \
 		rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline
+
+USE_RUBY=	yes
+USE_RAKE=	yes
+USE_RUBYGEMS=	yes
 
 post-install:
 	@${ECHO_MSG} "======================================================================"
@@ -27,6 +30,4 @@ post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "======================================================================"
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

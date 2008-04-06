@@ -15,16 +15,16 @@ MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	An edje compiler written in ruby
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/imlib2.so:${PORTSDIR}/graphics/ruby-imlib2 \
-		${RUBY_SITELIBDIR}/eet.rb:${PORTSDIR}/devel/ruby-eet \
-		${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
+		${RUBY_SITELIBDIR}/eet.rb:${PORTSDIR}/devel/ruby-eet
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
+USE_RAKE=	yes
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake PREFIX=${PREFIX}/ install
+	@cd ${WRKSRC} && ${RAKE_BIN} PREFIX=${PREFIX}/ install
 
 .include <bsd.port.post.mk>

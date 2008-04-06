@@ -16,6 +16,9 @@ COMMENT=	Scripts designed for benchmarking of Rails applications
 BUILD_DEPENDS=	rubygem-hoe>=1.2.0:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
 OPTIONS=	GRUFF	"Plotting of perf data support using gruff"	off
 OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
@@ -25,5 +28,4 @@ OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 RUN_DEPENDS+=	rubygem-gruff>=0.2.8:${PORTSDIR}/graphics/rubygem-gruff
 .endif
 
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>

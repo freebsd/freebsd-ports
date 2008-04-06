@@ -20,6 +20,9 @@ BUILD_DEPENDS=	sow:${PORTSDIR}/devel/rubygem-hoe
 GEM_NAME=	RubyRRDtool-0.6.0
 GEM_ENV=	MAKEFLAGS="CPPFLAGS=-I${LOCALBASE}/include"
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
@@ -33,6 +36,4 @@ x-generate-plist:
 		;s,^@dirrm (${SPEC_DIR}|${GEMS_DIR}|lib/ruby).*$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

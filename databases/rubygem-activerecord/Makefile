@@ -23,6 +23,7 @@ OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 # to get RUBY_SITEARCHLIBDIR
 USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
@@ -51,5 +52,4 @@ RUN_DEPENDS+=	rubygem-postgres>=0:${PORTSDIR}/databases/rubygem-postgres
 RUN_DEPENDS+=	rubygem-sqlite3>=1.2.1:${PORTSDIR}/databases/rubygem-sqlite3
 .endif
 
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>

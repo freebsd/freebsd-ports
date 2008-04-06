@@ -15,8 +15,7 @@ MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	XMMS2 GUI frontend written with Enlightenment e17 libraries
 
-BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
-		edje_cc:${PORTSDIR}/graphics/edje
+BUILD_DEPENDS=	edje_cc:${PORTSDIR}/graphics/edje
 RUN_DEPENDS=	${SADIR}/edje.so:${PORTSDIR}/graphics/ruby-edje \
 		${SADIR}/esmart.so:${PORTSDIR}/graphics/ruby-esmart \
 		${SADIR}/evas.so:${PORTSDIR}/graphics/ruby-evas \
@@ -27,6 +26,7 @@ SADIR=		${RUBY_SITEARCHLIBDIR}
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
+USE_RAKE=	yes
 RUBY_SHEBANG_FILES=	${WRKSRC}/bin/euphoria
 
 IGNORE=	Not updated to the DrJekyll clientlib API
@@ -37,10 +37,10 @@ BROKEN=		edje is broken on ia64
 .endif
 
 do-build:
-	@(cd ${WRKSRC}; ${LOCALBASE}/bin/rake)
+	@(cd ${WRKSRC}; ${RAKE_BIN})
 
 do-install:
-	@(cd ${WRKSRC}; ${LOCALBASE}/bin/rake install)
+	@(cd ${WRKSRC}; ${RAKE_BIN} install)
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

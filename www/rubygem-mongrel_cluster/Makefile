@@ -18,6 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RC_SUBR=	mongrel_cluster
 USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 REINPLACE_ARGS=	-i ""
 
 # This target is only meant to be used by the port maintainer.
@@ -42,6 +43,4 @@ post-install:
 	@${REINPLACE_CMD} -e 's|\"mongrel_rails\"|\"${PREFIX}/bin/mongrel_rails\"|g' \
 		${PREFIX}/${GEM_LIB_DIR}/lib/${PORTNAME}/init.rb
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -12,6 +12,7 @@ MASTER_SITES=	RF
 MAINTAINER=	ports@logvinov.com
 COMMENT=	A fast, simple event-processing library for Ruby programs
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

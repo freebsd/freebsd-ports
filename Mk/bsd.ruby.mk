@@ -157,33 +157,68 @@ RUBY_NAME!=		${_RUBY_CONFIG} 'puts C["ruby_install_name"]'
 
 _RUBY_SYSLIBDIR!=	${_RUBY_CONFIG} 'puts C["libdir"]'
 _RUBY_SITEDIR!=		${_RUBY_CONFIG} 'puts C["sitedir"]'
+_RUBY_VENDORDIR!=	${_RUBY_CONFIG} 'puts C["vendordir"]'
 .else
 RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 
-.if defined(RUBY_VER) && ${RUBY_VER} == 1.8
+.if defined(RUBY_VER)
+. if ${RUBY_VER} == 1.8
+#
+# Ruby 1.8
+#
 RUBY_RELVERSION=	1.8.6
 RUBY_PORTREVISION=	1
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	111
 
-.if ${RUBY_PATCHLEVEL} == 0
+.  if ${RUBY_PATCHLEVEL} == 0
 RUBY_VERSION?=		${RUBY_RELVERSION}
 RUBY_DISTVERSION?=	${RUBY_RELVERSION}
-.else
+.  else
 RUBY_VERSION?=		${RUBY_RELVERSION}.${RUBY_PATCHLEVEL}
 RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
-.endif
+.  endif
 
 # Security patch
 RUBY_PATCHFILES?=	${RUBY_VERSION}-patch1.gz
 
-#RUBY_PORTVERSION?=	${RUBY_VERSION}
 RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
-#MASTER_SITE_SUBDIR_RUBY=	snapshots
-.else
-IGNORE=	Only ruby 1.8 supported
-.endif
-#      defined(RUBY_VER) && ${RUBY_VER} == 1.8
+
+#
+# PLIST_SUB helpers
+#
+RUBY18=			""
+RUBY19=			"@comment "
+
+. elif ${RUBY_VER} == 1.9
+#
+# Ruby 1.9
+#
+RUBY_RELVERSION=	1.9.0
+RUBY_PORTREVISION=	0
+RUBY_PORTEPOCH=		1
+RUBY_PATCHLEVEL=	0
+
+RUBY_VERSION?=		${RUBY_RELVERSION}.${RUBY_PATCHLEVEL}
+RUBY_DISTVERSION?=	${RUBY_RELVERSION}-${RUBY_PATCHLEVEL}
+
+RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
+
+RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-1.9/"
+
+#
+# PLIST_SUB helpers
+#
+RUBY18=			"@comment "
+RUBY19=			""
+
+. else
+#
+# Other versions
+#
+IGNORE=	Only ruby 1.8 and 1.9 are supported
+. endif
+.endif # defined(RUBY_VER)
 
 CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL:C/\..*//}
 
@@ -192,6 +227,7 @@ RUBY_NAME?=		ruby${RUBY_SUFFIX}
 
 _RUBY_SYSLIBDIR?=	${PREFIX}/lib
 _RUBY_SITEDIR?=		${_RUBY_SYSLIBDIR}/ruby/site_ruby
+_RUBY_VENDORDIR?=	${_RUBY_SYSLIBDIR}/ruby/vendor_ruby
 .endif
 #      defined(RUBY)
 
@@ -246,6 +282,8 @@ RUBY_LIBDIR?=		${_RUBY_SYSLIBDIR}/ruby/${RUBY_VER}
 RUBY_ARCHLIBDIR?=	${RUBY_LIBDIR}/${RUBY_ARCH}
 RUBY_SITELIBDIR?=	${_RUBY_SITEDIR}/${RUBY_VER}
 RUBY_SITEARCHLIBDIR?=	${RUBY_SITELIBDIR}/${RUBY_ARCH}
+RUBY_VENDORLIBDIR?=	${_RUBY_VENDORDIR}/${RUBY_VER}
+RUBY_VENDORARCHLIBDIR?=	${RUBY_VENDORLIBDIR}/${RUBY_ARCH}
 RUBY_DOCDIR?=		${PREFIX}/share/doc/${RUBY_NAME}
 RUBY_EXAMPLESDIR?=	${PREFIX}/share/examples/${RUBY_NAME}
 RUBY_RIDIR?=		${PREFIX}/share/ri/${RUBY_VER}/system
@@ -259,6 +297,8 @@ PLIST_RUBY_DIRS=	RUBY_LIBDIR="${RUBY_LIBDIR}" \
 			RUBY_ARCHLIBDIR="${RUBY_ARCHLIBDIR}" \
 			RUBY_SITELIBDIR="${RUBY_SITELIBDIR}" \
 			RUBY_SITEARCHLIBDIR="${RUBY_SITEARCHLIBDIR}" \
+			RUBY_VENDORLIBDIR="${RUBY_VENDORLIBDIR}" \
+			RUBY_VENDORARCHLIBDIR="${RUBY_VENDORARCHLIBDIR}" \
 			RUBY_MODDOCDIR="${RUBY_MODDOCDIR}" \
 			RUBY_MODEXAMPLESDIR="${RUBY_MODEXAMPLESDIR}" \
 			RUBY_DOCDIR="${RUBY_DOCDIR}" \
@@ -267,20 +307,16 @@ PLIST_RUBY_DIRS=	RUBY_LIBDIR="${RUBY_LIBDIR}" \
 			RUBY_SITERIDIR="${RUBY_SITERIDIR}" \
 			RUBY_ELISPDIR="${RUBY_ELISPDIR}"
 
-PLIST_SUB+=	${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
+PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_VERSION="${RUBY_VERSION}" \
 			RUBY_VER="${RUBY_VER}" \
 			RUBY_SHLIBVER="${RUBY_SHLIBVER}" \
 			RUBY_ARCH="${RUBY_ARCH}" \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
 			RUBY_NAME="${RUBY_NAME}" \
-			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}"
-
-RUBY18_ONLY=		""
-RUBY16_ONLY=		"@comment "
-
-PLIST_SUB+=		RUBY16_ONLY=${RUBY16_ONLY} \
-			RUBY18_ONLY=${RUBY18_ONLY}
+			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
+			RUBY18=${RUBY18} \
+			RUBY19=${RUBY19}
 
 # require check
 .if defined(RUBY_REQUIRE)
@@ -308,15 +344,25 @@ post-patch:	ruby-shebang-patch
 ruby-shebang-patch:
 	@cd ${WRKSRC}; for f in ${RUBY_SHEBANG_FILES}; do \
 	${ECHO_MSG} "===>  Fixing the #! line of $$f"; \
-	${RUBY} ${RUBY_FLAGS} -i -p \
-			-e 'if $$. == 1; ' \
-			-e ' if /^#!/; ' \
-			-e '  sub /^#!\s*\S*(\benv\s+)?\bruby/, "#!${RUBY}";' \
-			-e ' else;' \
-			-e '  $$_ = "#!${RUBY}\n" + $$_;' \
-			-e ' end;' \
-			-e 'end' \
-			$$f; \
+	TMPFILE=`mktemp -t rubyshebang`; \
+	cp $$f $$TMPFILE; \
+	${AWK} 'BEGIN {flag = 0;}								\
+		{										\
+			if (flag == 0) {							\
+				if ($$0 ~ /^#!/) {						\
+					sub(/#!(.*\/)?(env[[:space:]]+)?ruby/, "#!${RUBY}", $$0);\
+					print $$0;						\
+				}								\
+				else {								\
+					print "#!${RUBY}";					\
+					print $$0;						\
+				}								\
+				flag = 1;							\
+			} else {								\
+				print $$0;							\
+			}									\
+		}' $$TMPFILE > $$f; \
+	rm -f $$TMPFILE; \
 	done
 .endif
 
@@ -324,7 +370,67 @@ ruby-shebang-patch:
 RUBY_FLAGS+=	-d
 .endif
 
-# extconf.rb
+#
+# RubyGems support
+#
+.if defined(USE_RUBYGEMS)
+
+. if ${RUBY_VER} == 1.8
+BUILD_DEPENDS+=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+. endif
+
+PKGNAMEPREFIX?=	rubygem-
+EXTRACT_SUFX=	.gem
+EXTRACT_ONLY=
+DIST_SUBDIR=	rubygem
+
+NO_BUILD=	yes
+
+GEMS_BASE_DIR=	lib/ruby/gems/${RUBY_VER}
+GEMS_DIR=	${GEMS_BASE_DIR}/gems
+DOC_DIR=	${GEMS_BASE_DIR}/doc
+CACHE_DIR=	${GEMS_BASE_DIR}/cache
+SPEC_DIR=	${GEMS_BASE_DIR}/specifications
+GEM_NAME?=	${PORTNAME}-${PORTVERSION}
+GEM_LIB_DIR=	${GEMS_DIR}/${GEM_NAME}
+GEM_DOC_DIR=	${DOC_DIR}/${GEM_NAME}
+GEM_SPEC=	${SPEC_DIR}/${GEM_NAME}.gemspec
+GEM_CACHE=	${CACHE_DIR}/${GEM_NAME}.gem
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
+		REV="${RUBY_GEM}" \
+		GEMS_BASE_DIR="lib/ruby/gems/${RUBY_VER}" \
+		GEMS_DIR="${GEMS_DIR}" \
+		DOC_DIR="${DOC_DIR}" \
+		CACHE_DIR="${CACHE_DIR}" \
+		SPEC_DIR="${SPEC_DIR}" \
+		PORT="${PORTNAME}-${PORTVERSION}" \
+		GEM_NAME="${GEM_NAME}" \
+		GEM_LIB_DIR="${GEM_LIB_DIR}" \
+		GEM_DOC_DIR="${GEM_DOC_DIR}" \
+		GEM_SPEC="${GEM_SPEC}" \
+		GEM_CACHE="${GEM_CACHE}" \
+		EXTRACT_SUFX="${EXTRACT_SUFX}"
+
+RUBYGEMBIN=	${LOCALBASE}/bin/gem${RUBY_VER:S/.//}
+
+. if defined(DISTFILES)
+GEMFILES=	${DISTFILES:C/:[^:]+$//}
+. else
+GEMFILES=	${DISTNAME}${EXTRACT_SUFX}
+. endif
+
+do-install:
+.for _D in ${GEMFILES}
+	${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install --no-update-sources --no-ri --install-dir ${PREFIX}/lib/ruby/gems/${RUBY_VER} ${DISTDIR}/${DIST_SUBDIR}/${_D} -- --build-args ${CONFIGURE_ARGS}
+.endfor
+
+.endif # USE_RUBYGEMS
+
+#
+# extconf.rb support
+#
 .if defined(USE_RUBY_EXTCONF)
 USE_RUBY=		yes
 
@@ -347,7 +453,9 @@ ruby-extconf-configure:
 .endif
 .endif
 
-# setup.rb
+#
+# setup.rb support
+#
 .if defined(USE_RUBY_SETUP)
 RUBY_SETUP?=		setup.rb
 
@@ -397,6 +505,15 @@ RUN_DEPENDS+=		${DEPEND_RUBY_ICONV}
 .endif
 
 .undef _use
+.endif
+
+.if defined(USE_RAKE)
+. if ${RUBY_VER} == 1.8
+BUILD_DEPENDS+=		${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
+RAKE_BIN=	 ${LOCALBASE}/bin/rake
+. else
+RAKE_BIN=	 ${LOCALBASE}/bin/${RUBY_VER:S/.//}
+. endif
 .endif
 
 .if defined(USE_RUBY_AMSTD)

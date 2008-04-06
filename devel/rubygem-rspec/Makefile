@@ -13,9 +13,10 @@ MASTER_SITE_SUBDIR=	rspec
 MAINTAINER=	romanbsd@yahoo.com
 COMMENT=	Behaviour Driven Development in Ruby
 
-BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RAKE=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

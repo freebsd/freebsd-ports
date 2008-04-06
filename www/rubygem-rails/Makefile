@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jw@innerewut.de
 COMMENT=	MVC web application framework
 
-BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
-		${LOCALBASE}/${SPEC_DIR}/activesupport-1.4.4.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
+BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-1.4.4.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
 		${LOCALBASE}/${SPEC_DIR}/activerecord-1.15.6.gemspec:${PORTSDIR}/databases/rubygem-activerecord \
 		${LOCALBASE}/${SPEC_DIR}/actionpack-1.13.6.gemspec:${PORTSDIR}/www/rubygem-actionpack \
 		${LOCALBASE}/${SPEC_DIR}/actionmailer-1.3.6.gemspec:${PORTSDIR}/mail/rubygem-actionmailer \
@@ -27,6 +26,8 @@ OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 # to get RUBY_SITEARCHLIBDIR
 USE_RUBY=	yes
+USE_RAKE=	yes
+USE_RUBYGEMS=	yes
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
@@ -51,5 +52,4 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
 RUN_DEPENDS+=	rubygem-memcache-client>=1.2.0:${PORTSDIR}/databases/rubygem-memcache-client
 .endif
 
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>

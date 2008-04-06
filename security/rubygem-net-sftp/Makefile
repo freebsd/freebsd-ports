@@ -17,6 +17,7 @@ COMMENT=	Implementation of the SFTP client protocol
 
 RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/net-ssh-1.1.2.gemspec:${PORTSDIR}/security/rubygem-net-ssh
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

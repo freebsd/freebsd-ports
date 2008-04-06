@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	fenner
 MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Interface for external iterators
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

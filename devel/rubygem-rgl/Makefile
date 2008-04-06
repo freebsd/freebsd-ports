@@ -17,6 +17,7 @@ COMMENT=	Framework for graph datastructures and algorithms implemented in Ruby
 
 RUN_DEPENDS=	${LOCALBASE}/lib/ruby/gems/1.8/specifications/stream-0.5.gemspec:${PORTSDIR}/devel/rubygem-stream
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

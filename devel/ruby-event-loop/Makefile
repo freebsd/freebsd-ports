@@ -14,9 +14,8 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	An Event loop for Ruby
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
-
 USE_RUBY=	yes
+USE_RAKE=	yes
 
 do-configure:
 	@cd ${WRKSRC} && ${RUBY} setup.rb config --prefix=${PREFIX}

@@ -14,15 +14,15 @@ MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	A simple XMMS2 client inspired by strange-quark
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient.so:${PORTSDIR}/audio/ruby-xmms2 \
-		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
-		${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
+		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
+USE_RAKE=	yes
 NO_BUILD=	yes
 
 BROKEN=	Not updated to the DrJekyll clientlib API
 do-install:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake PREFIX=${PREFIX}/ ${INSTALL_TARGET}
+	@cd ${WRKSRC} && ${RAKE_BIN} PREFIX=${PREFIX}/ ${INSTALL_TARGET}
 
 .include <bsd.port.mk>

@@ -14,7 +14,6 @@ MAINTAINER=	ports@logvinov.com
 COMMENT=	Simple processing of russian strings
 
 USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

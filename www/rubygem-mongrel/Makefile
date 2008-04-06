@@ -18,6 +18,9 @@ BUILD_DEPENDS=	gpgen:${PORTSDIR}/devel/rubygem-gem_plugin \
 		rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
 PATCHNAME=	cgi_multipart_eof_fix-2.5.0
 PLIST_SUB=	CGIFIX="${PATCHNAME}"
 
@@ -37,6 +40,4 @@ x-generate-plist:
 		;s,^@dirrm (${SPEC_DIR}|${GEMS_DIR}|lib/ruby).*$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

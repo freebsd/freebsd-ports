@@ -16,6 +16,9 @@ COMMENT=	Action Controller and Action View of Rails MVC Framework
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-1.4.4.gemspec:${PORTSDIR}/devel/rubygem-activesupport
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
@@ -29,6 +32,4 @@ x-generate-plist:
 		;s,^@dirrm (${SPEC_DIR}|${GEMS_DIR}|lib/ruby).*$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -16,6 +16,7 @@ COMMENT=	A fast, flexible, easy to use logging service for Ruby
 BUILD_DEPENDS=	rubygem-eventmachine>=0.7.0:${PORTSDIR}/devel/rubygem-eventmachine
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

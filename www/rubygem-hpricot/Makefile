@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	gems
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Fast, Enjoyable HTML Parser for Ruby
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

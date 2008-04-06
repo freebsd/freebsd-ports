@@ -14,14 +14,18 @@ PKGNAMEPREFIX=	rubygem-
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A module for using Systax highlighting in Ruby
 
+USE_RUBY=	yes
+
 .include <bsd.port.pre.mk>
 #.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 # syntax.gem has invalid content, we need to buuild the gem ourself
 
+.if ${RUBY_VER} == 1.8
 BUILD_DEPENDS+=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
 RUN_DEPENDS+=	${BUILD_DEPENDS}
+.endif
 
-REV=		1.8
+REV=		${RUBY_VER}
 GEMS_BASE_DIR=	lib/ruby/gems/${REV}
 GEMS_DIR=	${GEMS_BASE_DIR}/gems
 DOC_DIR=	${GEMS_BASE_DIR}/doc
@@ -48,7 +52,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 		GEM_CACHE="${GEM_CACHE}" \
 		EXTRACT_SUFX="${EXTRACT_SUFX}"
 
-RUBYGEMBIN=	${LOCALBASE}/bin/gem18
+RUBYGEMBIN=	${LOCALBASE}/bin/gem${RUBY_VER:S/.//}
 
 do-build:
 	cd ${WRKSRC} && ${RUBYGEMBIN} build syntax.gemspec

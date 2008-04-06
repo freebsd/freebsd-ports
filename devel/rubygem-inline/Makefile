@@ -20,6 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GEM_NAME=	${DISTNAME}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

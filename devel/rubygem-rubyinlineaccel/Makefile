@@ -20,6 +20,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GEM_NAME=	${DISTNAME}
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
 x-generate-plist:
 	${ECHO} %%GEM_CACHE%% > pkg-plist.new
 	${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},%%GEM_DOC_DIR%%,' >> pkg-plist.new
@@ -28,6 +31,4 @@ x-generate-plist:
 	${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm %%GEM_LIB_DIR%%,' >> pkg-plist.new
 	${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm %%GEM_DOC_DIR%%,' >> pkg-plist.new
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

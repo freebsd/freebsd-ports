@@ -48,9 +48,7 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 CONFIGURE_ARGS+=--with-tcllib=tcl${TK_VERSION:S/.//} --with-tklib=tk${TK_VERSION:S/.//}
 .endif
 
-.if ${RUBY_VER} >= 1.7
 MAKE_ARGS=	sitelibdir='$$(rubylibdir)'
-.endif
 
 .if defined(PKGNAMEPREFIX)
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
@@ -70,12 +68,10 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
-.if ${RUBY_VER} >= 1.8
 	${MKDIR} ${RUBY_MODDOCDIR}
-.for d in MANUAL_tcltklib.eng MANUAL_tcltklib.eucj README.fork README.1st README.ActiveTcl README.tcltklib
+. for d in MANUAL_tcltklib.eng MANUAL_tcltklib.eucj README.fork README.1st README.ActiveTcl README.tcltklib
 	${INSTALL_DATA} ${WRKSRC}/${d} ${RUBY_MODDOCDIR}/
-.endfor
-.endif
+. endfor
 .endif
 
 .include <bsd.port.post.mk>

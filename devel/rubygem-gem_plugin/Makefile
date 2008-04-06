@@ -13,8 +13,11 @@ MASTER_SITE_SUBDIR=     mongrel
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Gem Based Plugin System
 
-BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_RUBY=	yes
+USE_RAKE=	yes
+USE_RUBYGEMS=	yes
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
@@ -29,6 +32,4 @@ x-generate-plist:
 		;s,^@dirrm (${SPEC_DIR}|${GEMS_DIR}|lib/ruby).*$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -17,9 +17,10 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 REINPLACE_ARGS=	-i ""
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
 post-install:
 	@${REINPLACE_CMD} 's|so.2|so.4|' ${PREFIX}/${GEM_LIB_DIR}/lib/gd2.rb
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -14,6 +14,7 @@ DISTNAME=	archive-tar-minitar-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	library and command-line utility for tar archives
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>

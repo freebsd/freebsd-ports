@@ -14,8 +14,8 @@ DISTNAME=	color-tools-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Provides colour space definition and manpiulation
 
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

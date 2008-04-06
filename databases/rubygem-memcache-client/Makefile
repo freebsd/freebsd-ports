@@ -13,11 +13,12 @@ MASTER_SITE_SUBDIR=	seattlerb
 MAINTAINER=	jw@innerewut.de
 COMMENT=	Ruby bindings for MemCached
 
-BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-zentest>=3.4.2:${PORTSDIR}/devel/rubygem-zentest \
+BUILD_DEPENDS=	rubygem-zentest>=3.4.2:${PORTSDIR}/devel/rubygem-zentest \
 		rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
-.include <bsd.port.post.mk>
+USE_RUBY=	yes
+USE_RAKE=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>
