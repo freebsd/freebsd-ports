@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liblinear
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/liblinear/ \
 		http://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/
