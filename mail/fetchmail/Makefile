@@ -136,7 +136,7 @@ pre-configure:
 
 	@${ECHO_CMD} ""
 
-pre-install:
+pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
