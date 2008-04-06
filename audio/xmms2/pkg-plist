@@ -95,7 +95,7 @@ lib/xmms2/libxmms_mad.so
 lib/xmms2/libxmms_normalize.so
 lib/xmms2/libxmms_null.so
 lib/xmms2/libxmms_nulstripper.so
-%%OFA&&lib/xmms2/libxmms_ofa.so
+%%OFA%%lib/xmms2/libxmms_ofa.so
 lib/xmms2/libxmms_oss.so
 lib/xmms2/libxmms_pls.so
 lib/xmms2/libxmms_replaygain.so
@@ -121,11 +121,10 @@ share/pixmaps/xmms2.svg
 %%DATADIR%%/scripts/startup.d/xmms2-et-launcher.sh
 %%MDNS_AVAHI%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
 %%MDNS_APPLE%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
-share/xmms2/scripts/startup.d/xmms2-mlib-updater.sh
+%%FAM%%share/xmms2/scripts/startup.d/xmms2-mlib-updater.sh
 @dirrm share/xmms2/scripts/startup.d
 @dirrm share/xmms2/scripts
 @dirrm share/xmms2
-@dirrm share/pixmaps
 @dirrm lib/xmms2
 @dirrm include/xmms2/xmmsclient/xmmsclient++
 @dirrm include/xmms2/xmmsclient
