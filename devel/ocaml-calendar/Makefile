@@ -20,6 +20,4 @@ USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

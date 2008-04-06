@@ -50,7 +50,6 @@ INSTALL_TARGET+=	docinstall
 MAN1=		ocsigen.1
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 .if defined(WITHOUT_OCAMLDUCE)
 CONFIGURE_ARGS+=	--disable-ocamlduce

@@ -73,7 +73,6 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 .if defined(WITHOUT_MUC_LOG)
 EXTRA_PATCHES+=	${FILESDIR}/without-muc-log.patch

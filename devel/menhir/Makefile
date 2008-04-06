@@ -22,6 +22,4 @@ MAKE_ENV+=	DOCSDIR="${DOCSDIR}" OCAML_SITELIBDIR="${PREFIX}/${OCAML_SITELIBDIR}"
 
 MAN1=		menhir.1
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
