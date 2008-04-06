@@ -7,6 +7,7 @@
 
 PORTNAME=	deltup
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://deltup.org/e107_files/downloads/ \
 		LOCAL/rafan \
@@ -21,7 +22,7 @@ COMMENT=	Source delta update program
 
 RUN_DEPENDS=	bdelta:${PORTSDIR}/misc/bdelta \
 		xdelta:${PORTSDIR}/misc/xdelta \
-		gzip:${PORTSDIR}/archivers/gzip
+		gzip>=1:${PORTSDIR}/archivers/gzip
 
 BZIP2_102_SOURCE=	bzip2-${BZIP2_102}.tar.gz
 BZIP2_103_SOURCE=	bzip2-${BZIP2_103}.tar.gz
