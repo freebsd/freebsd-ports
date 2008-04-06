@@ -80,13 +80,18 @@ HTMLFILES3 =	html/libtsp/AF/AFclose.html \
 		html/libtsp/AF/AFsetInfo.html \
 		html/libtsp/AF/AFsetNHpar.html \
 		html/libtsp/AF/AFsetSpeaker.html
-FILTERFILES =	filters/STL_BPF5k_FIR_16k.cof \
+FILTERFILES =	filters/STL_BPF100x5k_FIR_16k.cof \
+		filters/STL_BPF50x14k_FIR_32k.cof \
+		filters/STL_BPF50x5k_FIR_16k.cof \
 		filters/STL_BPF_FIR_16k.cof \
 		filters/STL_G712_IIR_16k.cof \
 		filters/STL_G712_IIR_8k.cof \
 		filters/STL_IRS_FIR_16k.cof \
 		filters/STL_IRS_FIR_8k.cof \
 		filters/STL_IRS_IIR_8k.cof \
+		filters/STL_LP10k_FIR_48k.cof \
+		filters/STL_LP3p5k_FIR_48k.cof \
+		filters/STL_LP7k_FIR_48k.cof \
 		filters/STL_LPx2_FIR.cof \
 		filters/STL_LPx3_FIR.cof \
 		filters/STL_LPx3_IIR.cof \
