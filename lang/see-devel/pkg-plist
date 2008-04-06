@@ -23,11 +23,12 @@ include/see/version.h
 lib/libsee.a
 lib/libsee.la
 lib/libsee.so
-lib/libsee.so.1
+lib/libsee.so.2
 lib/see/libFile.a
 lib/see/libFile.la
 lib/see/libFile.so
 lib/see/libFile.so.0
+libdata/pkgconfig/see.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
