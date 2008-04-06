@@ -8,7 +8,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	0.6.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.gnome.org/~jamiemcc/tracker/
 PKGNAMESUFFIX?=	-client
@@ -32,7 +32,7 @@ USE_BZIP2=	yes
 USE_FAM=	yes
 WANT_FAM_SYSTEM=gamin
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomehack gnomeprefix ltasneededhack
+USE_GNOME=	gnomehack gnomeprefix ltasneededhack intltool
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
