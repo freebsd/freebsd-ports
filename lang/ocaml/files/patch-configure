@@ -1,6 +1,6 @@
---- configure.orig	Thu Mar 30 16:00:19 2006
-+++ configure	Sat Aug 19 10:34:48 2006
-@@ -78,6 +78,8 @@
+--- configure.orig	2008-01-04 16:26:38.000000000 +0300
++++ configure	2008-04-06 23:16:20.000000000 +0400
+@@ -79,6 +79,8 @@
          withcurses=no;;
      -no-shared-libs)
          withsharedlibs=no;;
@@ -9,15 +9,15 @@
      -x11include*|--x11include*)
          x11_include_dir=$2; shift;;
      -x11lib*|--x11lib*)
-@@ -667,6 +669,7 @@
-   i386,*,linux_elf) profiling='prof';;
+@@ -686,6 +688,7 @@
    i386,*,gnu) profiling='prof';;
    i386,*,bsd_elf) profiling='prof';;
+   i386,*,macosx) profiling='prof';;
 +  *,*,freebsd) profiling='prof';;
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -1107,122 +1110,24 @@
+@@ -1132,124 +1135,24 @@
  x11_include="not found"
  x11_link="not found"
  
@@ -109,6 +109,7 @@
 -    /usr/x386/lib         \
 -    /usr/XFree86/lib/X11  \
 -                          \
+-    /usr/lib64            \
 -    /usr/lib              \
 -    /usr/local/lib        \
 -    /usr/unsupported/lib  \
@@ -123,6 +124,7 @@
 -  if test -f $dir/libX11.a || \
 -     test -f $dir/libX11.so || \
 -     test -f $dir/libX11.dll.a || \
+-     test -f $dir/libX11.dylib || \
 -     test -f $dir/libX11.sa; then
 -    if test $dir = /usr/lib; then
 -      x11_link="-lX11"
