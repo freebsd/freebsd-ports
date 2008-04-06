@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	see
-DISTVERSION=	2.1.1293
+PORTVERSION=	3.0.1376
 CATEGORIES=	lang devel
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	vanilla
+MASTER_SITES=	http://www.evolane.com/download/mirror/etcl/ \
+		http://www.evolane.fr/download/mirror/etcl/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${DISTVERSION}_snapshot
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Simple ECMAScript Engine (SEE)
@@ -22,6 +21,7 @@ OPTIONS=	GC "Use Boehm-Weiser garbage collection package" on \
 
 CONFLICTS=	see-[0-9]*
 
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
