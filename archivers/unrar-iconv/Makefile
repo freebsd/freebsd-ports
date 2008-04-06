@@ -18,5 +18,7 @@ CONFLICTS=	unrar-[0-9]* zh-unrar-[0-9]*
 post-install:
 	@${ECHO_MSG} "===> Added iconv support, see new switches:"
 	@${ECHO_MSG} "     la, ll and lo at \"unrar -?\""
+	@${ECHO_MSG} "===> REMEMBER!!!: Windows rar archives using old DOS encodings as internal encoding."
+	@${ECHO_MSG} "     CP866 for russian lang for exmaple."
 
 .include "${MASTERDIR}/Makefile"
