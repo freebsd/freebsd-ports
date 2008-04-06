@@ -57,6 +57,7 @@
     SUBDIR += ia64sim
     SUBDIR += ines
     SUBDIR += its
+    SUBDIR += jzintv
     SUBDIR += klh10
     SUBDIR += kqemu-kmod
     SUBDIR += lib765
