@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wolfpack
-PORTVERSION=	4.3.11
+PORTVERSION=	4.3.12
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	empserver
@@ -25,7 +25,8 @@ CONFIGURE_ARGS+=	--bindir=${BINDIR} --sbindir=${BINDIR}
 USE_RC_SUBR=	wolfpack
 SUB_FILES+=	pkg-message
 
-MAN6=		empire.6 emp_server.6 empsched.6 fairland.6 files.6 pconfig.6
+MAN6=		empire.6 emp_server.6 empdump.6 empsched.6 \
+		fairland.6 files.6 pconfig.6
 
 .include <bsd.port.pre.mk>
 
