@@ -1,6 +1,6 @@
 # New ports collection Makefile for: nab
 # Date created:         Sept. 10, 2000
-# Whom:                 M. L. Dodson <mldodson@houston.rr.com>
+# Whom:                 M. L. Dodson <mldodson@comcast.net>
 #
 # $FreeBSD$
 #
@@ -9,13 +9,15 @@ PORTNAME=	nab
 PORTVERSION=	5.1.2
 PORTREVISION=	1
 CATEGORIES=	biology
-MASTER_SITES=	http://www.scripps.edu/mb/case/
+MASTER_SITES=	http://www.activesitedynamics.com/mldodson/
 
-MAINTAINER=	mldodson@houston.rr.com
+MAINTAINER=	mldodson@comcast.net
 COMMENT=	A language for macromolecules
 
 BUILD_DEPENDS=	ucpp:${PORTSDIR}/devel/ucpp
 RUN_DEPENDS=	ucpp:${PORTSDIR}/devel/ucpp
+
+DEPRECATED=	superseded by AmberTools (by same development group)
 
 MAKE_ENV+=	NABHOME=${WRKSRC} ARCH= PATH=${WRKSRC}/bin:${PATH} \
 		CFLAGS="${CFLAGS}" OCFLAGS="${CFLAGS}" FFLAGS="${FFLAGS}"
