@@ -7,25 +7,22 @@
 #
 
 PORTNAME=	ulex
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cduce.org/download/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	A lexer generator for Unicode and OCaml
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
-RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
+USE_OCAML=	true
+USE_OCAML_FINDLIB=	true
+USE_OCAML_LDCONFIG=	true
+OCAMLC_DEPEND=	ocaml>=3.10:${OCAMLC_PORT}
 
 ALL_TARGET=	all all.opt
 
 USE_GMAKE=	yes
-
-MAKE_ENV=	OCAMLFIND_DESTDIR="${PREFIX}/lib/ocaml/site-lib"
 
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	doc
@@ -35,11 +32,8 @@ PORTDOCS=	*
 PKGDEINSTALL=	${PKGINSTALL}
 
 post-install:
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/${PORTNAME} -type f | \
+	@${FIND} ${PREFIX}/${OCAML_SITELIBDIR}/${PORTNAME} -type f | \
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/${PORTNAME}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ocamlfind remove ${PORTNAME} 2>/dev/null || true" >> ${TMPPLIST}
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.css ${DOCSDIR}
