@@ -19,7 +19,7 @@ upgrades.
   portmaster -u sysutils/tracker
 
   portupgrade users:
-  portupgrade -o sysutils/tracker-client tacker
+  portupgrade -o sysutils/tracker-client tracker
   portupgrade -u sysutils/tracker
 
 20080405:
