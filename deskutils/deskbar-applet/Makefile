@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	deskbar-applet
-PORTVERSION=	2.22.0.1
+PORTVERSION=	2.22.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
