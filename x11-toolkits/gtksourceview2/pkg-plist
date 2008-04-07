@@ -131,6 +131,7 @@ share/locale/ms/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/nb/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/ne/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/nl/LC_MESSAGES/gtksourceview-2.0.mo
+share/locale/nn/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/oc/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/or/LC_MESSAGES/gtksourceview-2.0.mo
 share/locale/pa/LC_MESSAGES/gtksourceview-2.0.mo
@@ -171,6 +172,8 @@ share/locale/zh_TW/LC_MESSAGES/gtksourceview-2.0.mo
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES

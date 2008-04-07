@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gtksourceview2
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -18,7 +18,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A text widget that adds syntax highlighting to the GtkTextView widget
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
