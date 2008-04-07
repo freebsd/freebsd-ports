@@ -1,0 +1,29 @@
+--- configure.orig	2008-04-06 23:15:13.000000000 -0300
++++ configure	2008-04-06 23:16:55.000000000 -0300
+@@ -5101,7 +5101,7 @@
+   cat >>confdefs.h <<_ACEOF
+ #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
+- SQLITE_LIBS=-lsqlite3
++ SQLITE_LIBS=`pkg-config --static --libs sqlite3`
+ else
+   { { echo "$as_me:$LINENO: error: \"sqlite3 required\"" >&5
+ echo "$as_me: error: \"sqlite3 required\"" >&2;}
+@@ -5117,7 +5117,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lsqlite3  $LIBS"
++LIBS="`pkg-config --static --libs sqlite3`  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -5171,7 +5171,7 @@
+ #define HAVE_LIBSQLITE3 1
+ _ACEOF
+ 
+-  LIBS="-lsqlite3 $LIBS"
++  LIBS="`pkg-config --static --libs sqlite3` $LIBS"
+ 
+ else
+   { { echo "$as_me:$LINENO: error: \"Linking against sqlite3 failed.\"" >&5
