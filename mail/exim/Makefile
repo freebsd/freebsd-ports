@@ -471,8 +471,9 @@ SEDLIST+=	-e 's,^\# (LOOKUP_PASSWD=),\1,'
 
 .if defined(WITH_SQLITE)
 USE_SQLITE=	yes
-SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,-L${LOCALBASE}/lib -lsqlite3,' \
-		-e 's,XX_SQLITE_FLAGS_XX,-I${LOCALBASE}/include,' \
+USE_GNOME=	pkgconfig
+SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,`pkg-config --static --libs sqlite3`,' \
+		-e 's,XX_SQLITE_FLAGS_XX,`pkg-config --cflags sqlite3`,' \
 		-e 's,^\# (LOOKUP_SQLITE=),\1,'
 .else
 SEDLIST+=	-e 's,XX_SQLITE_LIBS_XX,,' \
