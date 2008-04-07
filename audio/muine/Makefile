@@ -8,6 +8,7 @@
 
 PORTNAME=	muine
 PORTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine-player.org/releases/ \
 		${MASTER_SITE_LOCAL}
@@ -16,7 +17,7 @@ MASTER_SITE_SUBDIR=	tmclaugh/muine
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono based Gnome audio player
 
-LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
+LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		gdbm:${PORTSDIR}/databases/gdbm \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \

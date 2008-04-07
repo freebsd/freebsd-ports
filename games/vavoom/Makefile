@@ -7,7 +7,7 @@
 
 PORTNAME=	vavoom
 PORTVERSION=	1.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -67,7 +67,7 @@ PLIST_SUB+=	EDITING="@comment "
 .endif
 
 .if defined(WITH_FLAC)
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--with-flac
 .else
 CONFIGURE_ARGS+=--without-flac

@@ -7,6 +7,7 @@
 
 PORTNAME=	sox
 PORTVERSION=	14.0.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -122,7 +123,7 @@ CONFIGURE_ARGS+=	--without-lame
 
 .if defined(WITH_FLAC)
 CONFIGURE_ARGS+=	--with-flac
-LIB_DEPENDS+=		FLAC.7:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=		FLAC.10:${PORTSDIR}/audio/flac
 PLIST_SUB+=		PLIST_FLAC=""
 .else
 CONFIGURE_ARGS+=	--without-flac

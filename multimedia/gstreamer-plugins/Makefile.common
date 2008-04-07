@@ -208,7 +208,7 @@ gst_faad_LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 gst_faad_DIST=	bad
 
 # flac
-gst_flac_LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+gst_flac_LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 
 # gconf
 gst_gconf_USE_GNOME+=	gnomeprefix gconf2

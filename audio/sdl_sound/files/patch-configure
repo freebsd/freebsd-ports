@@ -1,5 +1,5 @@
---- configure.orig	Mon Oct 13 03:54:57 2003
-+++ configure	Mon Oct 13 07:44:41 2003
+--- configure.orig	2003-10-12 20:54:57.000000000 +0200
++++ configure	2008-03-27 21:35:53.000000000 +0100
 @@ -6684,6 +6684,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -8,3 +8,12 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7089,7 +7090,7 @@
+ 
+ fi
+ 
+-x="C__seekable_stream_decoder_process_single"
++x="C__stream_decoder_process_single"
+ flcsym="FLA$x"
+ # Check whether --enable-flac or --disable-flac was given.
+ if test "${enable_flac+set}" = set; then

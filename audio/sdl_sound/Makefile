@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl_sound
 PORTVERSION=	1.0.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	audio
 MASTER_SITES=	http://www.icculus.org/SDL_sound/downloads/
 DISTNAME=	SDL_sound-${PORTVERSION}
@@ -32,7 +32,7 @@ OPTIONS=	FLAC "Enable flac support" on \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_FLAC)
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=--disable-flac
 .endif

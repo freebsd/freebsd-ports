@@ -7,6 +7,7 @@
 
 PORTNAME=	aqualung
 DISTVERSION=	0.9beta9
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -16,7 +17,7 @@ COMMENT=	Music player with rich features
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		FLAC.7:${PORTSDIR}/audio/flac \
+		FLAC.10:${PORTSDIR}/audio/flac \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		oggz.3:${PORTSDIR}/audio/liboggz \
 		speex.1:${PORTSDIR}/audio/speex \
