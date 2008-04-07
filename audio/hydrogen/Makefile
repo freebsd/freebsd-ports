@@ -7,7 +7,7 @@
 
 PORTNAME=	hydrogen
 PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,6 +42,8 @@ OPTIONS=	JACK "JACK support" off \
 		LRDF "LRDF support" off \
 		FLAC "FLAC support" on
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 CPPFLAGS+=	${PTHREAD_CFLAGS}
@@ -66,7 +68,7 @@ CONFIGURE_ARGS+=--disable-lrdf-support
 .endif
 
 .if defined(WITH_FLAC)
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=--disable-flac-support
 .endif
@@ -110,4 +112,4 @@ do-install:
 	${MKDIR} ${MAN1PREFIX}/man/ru.KOI8-R/man1
 	${INSTALL_MAN} ${WRKSRC}/man/ru/hydrogen.1 ${MAN1PREFIX}/man/ru.KOI8-R/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

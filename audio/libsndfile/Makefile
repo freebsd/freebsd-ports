@@ -7,7 +7,7 @@
 
 PORTNAME=	libsndfile
 PORTVERSION=	1.0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/
 
@@ -30,7 +30,7 @@ OPTIONS=	FLAC "Enable flac support" On
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_FLAC)
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--enable-flac
 .else
 CONFIGURE_ARGS+=--disable-flac

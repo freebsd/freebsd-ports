@@ -7,7 +7,7 @@
 
 PORTNAME=	flac
 PORTVERSION=	20040316
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://ccm.sherry.jp/tmp/
 PKGNAMEPREFIX=	bmp-
@@ -17,7 +17,7 @@ MAINTAINER=	nork@FreeBSD.org
 COMMENT=	FLAC input plugin for beep-media-player
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
-		FLAC.7:${PORTSDIR}/audio/flac
+		FLAC.10:${PORTSDIR}/audio/flac
 
 PLIST_FILES=	lib/bmp/Input/libbmp-flac.so
 
@@ -33,8 +33,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 # "obj" is magic to our make(1)
+# make sure we get the new includes from ${LOCALBASE}/include/FLAC
 post-configure:
 	@${RM} -rf ${WRKSRC}/obj
+	@${RM} -rf ${WRKSRC}/include/FLAC
 
 # This is to avoid libtool running ldconfig -m ${X11BASE}/lib/bmp/Input
 do-install:

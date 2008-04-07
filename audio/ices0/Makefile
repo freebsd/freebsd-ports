@@ -7,7 +7,7 @@
 
 PORTNAME=	ices
 PORTVERSION=	0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio net
 MASTER_SITES=	http://svn.xiph.org/releases/ices/
 
@@ -45,7 +45,7 @@ MAN1=		ices0.1
 .if !defined(WITH_FLAC)
 CONFIGURE_ARGS+=--without-flac
 .else
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac \
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac \
 		mp3lame:${PORTSDIR}/audio/lame
 .endif
 

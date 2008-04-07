@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6f
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -271,7 +271,7 @@ CONFIGURE_ARGS+=--disable-faad
 .endif
 
 .if (defined(WITH_FLAC) || exists(${LOCALBASE}/lib/libFLAC.a)) && !defined(WITHOUT_FLAC)
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--enable-flac
 .else
 CONFLGIRE_ARGS+=--disable-flac

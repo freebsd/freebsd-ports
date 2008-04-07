@@ -3,15 +3,12 @@ $FreeBSD$
 
 --- configure.orig
 +++ configure
-@@ -10541,9 +10541,9 @@
- if test x$debug = xtrue; then
- 	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -g -O0 -DDEBUG"
- else
--	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O2 -DNDEBUG"
-+	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -DNDEBUG"
- 	if test x$GCC = xyes; then
--		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O3 -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
-+		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -Wall -W -DFLaC__INLINE=__inline__"
+@@ -23490,7 +23490,7 @@
+ 	CPPFLAGS="-DNDEBUG $CPPFLAGS"
+ 	if test "x$GCC" = xyes; then
+ 		CPPFLAGS="-DFLaC__INLINE=__inline__ $CPPFLAGS"
+-		CFLAGS="-O3 -funroll-loops -finline-functions -Wall -W -Winline $CFLAGS"
++		CFLAGS="-Wall -W $CFLAGS"
  	fi
  fi
- CFLAGS="$OUR_CFLAGS_HEAD $CFLAGS"
+ 

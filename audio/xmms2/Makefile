@@ -8,6 +8,7 @@
 PORTNAME?=	xmms2
 PORTVERSION=	0.4.d.0
 DISTVERSION=	0.4DrKosmos
+PORTREVISION=	1
 CATEGORIES?=	audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}
@@ -112,7 +113,7 @@ PLIST_SUB+=	SID="@comment "
 .endif
 
 .if !defined(WITHOUT_FLAC)
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
 EXCLUDE+=	--without-plugins="flac"

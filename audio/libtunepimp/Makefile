@@ -7,7 +7,7 @@
 
 PORTNAME=	libtunepimp
 PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \

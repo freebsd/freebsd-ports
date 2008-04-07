@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.9.0.20080223
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/trunk-${DISTVERSION:S/0.9.0.//}-0024/
@@ -288,7 +288,7 @@ CONFIGURE_ARGS+=--disable-faad
 .endif
 
 .if (defined(WITH_FLAC) || exists(${LOCALBASE}/lib/libFLAC.a)) && !defined(WITHOUT_FLAC)
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--enable-flac
 .else
 CONFLGIRE_ARGS+=--disable-flac

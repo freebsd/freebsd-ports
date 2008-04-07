@@ -7,6 +7,7 @@
 
 PORTNAME=	scummvm
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 
@@ -67,7 +68,7 @@ CONFIGURE_ARGS+=--disable-mpeg2
 .endif
 
 .if defined(WITH_FLAC)
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--with-flac-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-flac

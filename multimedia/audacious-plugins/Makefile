@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -184,7 +185,7 @@ PLIST_SUB+=	VORBISPLUGIN="@comment "
 .endif
 
 .if defined(WITH_FLAC)
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--enable-flacng --enable-filewriter_flac
 PLIST_SUB+=	FLACPLUGIN=""
 .else
