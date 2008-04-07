@@ -20,6 +20,8 @@ share/gnome/help/vinagre/oc/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/oc/vinagre.xml
 share/gnome/help/vinagre/pt/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/pt/vinagre.xml
+share/gnome/help/vinagre/sq/figures/vinagre-screenshot.png
+share/gnome/help/vinagre/sq/vinagre.xml
 share/gnome/help/vinagre/sv/figures/vinagre-screenshot.png
 share/gnome/help/vinagre/sv/vinagre.xml
 share/icons/hicolor/16x16/apps/vinagre.png
@@ -68,18 +70,22 @@ share/locale/ml/LC_MESSAGES/vinagre.mo
 share/locale/mr/LC_MESSAGES/vinagre.mo
 share/locale/nb/LC_MESSAGES/vinagre.mo
 share/locale/nl/LC_MESSAGES/vinagre.mo
+share/locale/nn/LC_MESSAGES/vinagre.mo
 share/locale/oc/LC_MESSAGES/vinagre.mo
+share/locale/pa/LC_MESSAGES/vinagre.mo
 share/locale/pl/LC_MESSAGES/vinagre.mo
 share/locale/pt/LC_MESSAGES/vinagre.mo
 share/locale/pt_BR/LC_MESSAGES/vinagre.mo
 share/locale/ru/LC_MESSAGES/vinagre.mo
 share/locale/si/LC_MESSAGES/vinagre.mo
 share/locale/sl/LC_MESSAGES/vinagre.mo
+share/locale/sq/LC_MESSAGES/vinagre.mo
 share/locale/sv/LC_MESSAGES/vinagre.mo
 share/locale/ta/LC_MESSAGES/vinagre.mo
 share/locale/th/LC_MESSAGES/vinagre.mo
 share/locale/tr/LC_MESSAGES/vinagre.mo
 share/locale/uk/LC_MESSAGES/vinagre.mo
+share/locale/vi/LC_MESSAGES/vinagre.mo
 share/locale/zh_CN/LC_MESSAGES/vinagre.mo
 share/locale/zh_HK/LC_MESSAGES/vinagre.mo
 share/locale/zh_TW/LC_MESSAGES/vinagre.mo
@@ -92,13 +98,28 @@ share/omf/vinagre/vinagre-fr.omf
 share/omf/vinagre/vinagre-it.omf
 share/omf/vinagre/vinagre-oc.omf
 share/omf/vinagre/vinagre-pt.omf
+share/omf/vinagre/vinagre-sq.omf
 share/omf/vinagre/vinagre-sv.omf
 %%DATADIR%%/vinagre-ui.xml
 %%DATADIR%%/vinagre.glade
 @dirrm %%DATADIR%%
 @dirrm share/omf/vinagre
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrm share/gnome/help/vinagre/sv/figures
 @dirrm share/gnome/help/vinagre/sv
+@dirrm share/gnome/help/vinagre/sq/figures
+@dirrm share/gnome/help/vinagre/sq
 @dirrm share/gnome/help/vinagre/pt/figures
 @dirrm share/gnome/help/vinagre/pt
 @dirrm share/gnome/help/vinagre/oc/figures
@@ -112,21 +133,9 @@ share/omf/vinagre/vinagre-sv.omf
 @dirrm share/gnome/help/vinagre/C/figures
 @dirrm share/gnome/help/vinagre/C
 @dirrm share/gnome/help/vinagre
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
