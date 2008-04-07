@@ -221,6 +221,7 @@
     SUBDIR += fsbackup
     SUBDIR += ftrace
     SUBDIR += ftwin
+    SUBDIR += fusefs-chironfs
     SUBDIR += fusefs-curlftpfs
     SUBDIR += fusefs-encfs
     SUBDIR += fusefs-funionfs
