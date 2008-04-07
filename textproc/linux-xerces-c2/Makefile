@@ -7,12 +7,13 @@
 
 PORTNAME=	xerces
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 MASTER_SITES=	http://ftp.belnet.be/packages/dries.ulyssis.org/fedora/fc4/i386/RPMS.dries/ \
 		ftp://ftp.freshrpms.net/pub/dag/dries/fedora/fc4/i386/RPMS.dries/ \
-		http://mirrors.ircam.fr/pub/dag/dries/packages/xerces-c/fc4-i386/
+		http://mirrors.ircam.fr/pub/dag/dries/packages/xerces-c/xerces-c/fc4-i386/
 PKGNAMESUFFIX=	-c2
-DISTNAME=	${PORTNAME}-c-${PORTVERSION}-1.2.fc4.rf
+DISTNAME=	${PORTNAME}-c-${PORTVERSION}-1.fc4.rf
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Validating XML parser from the Apache XML Project (linux version)
