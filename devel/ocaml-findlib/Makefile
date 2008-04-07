@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	findlib
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ocaml-programming.de/packages/
+MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,39 +23,32 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	all opt
 
-PLIST_FILES=	bin/ocamlfind etc/findlib.conf
+CONFIGURE_ARGS=	-bindir "${PREFIX}/bin" -mandir "${PREFIX}/man" \
+		-sitelib "${PREFIX}/lib/ocaml/site-lib" \
+		-config "${PREFIX}/etc/findlib.conf"
+
+DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
+
+PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 
 MAN1=	ocamlfind.1
 MAN5=	META.5 findlib.conf.5 site-lib.5
 
-# this list comes from the findlib configure script
-OCAML_DIRS=	dbm dynlink graphics num num-top str threads unix stdlib bigarray camlp4
-
-.if !defined(WITHOUT_X11)
-OCAML_DIRS+=	labltk
-.endif
+post-patch:
+	@${REINPLACE_CMD} -E \
+		-e 's,(${PATTERN}+.*INSTALLDIR),\1\$${BSD_INSTALL_DATA} \3,' \
+		-e 's,(${PATTERN}+.*FIND_BIN),\1\$${BSD_INSTALL_SCRIPT} \3,' \
+		-e 's,(${PATTERN}+.*LIBBIN),\1\$${BSD_INSTALL_SCRIPT} \3,' \
+		-e 's,(${PATTERN}+.*FIND_CONF),\1\$${BSD_INSTALL_DATA} \3,' \
+		-e 's,(${PATTERN}+.*SITELIB),\1\$${BSD_INSTALL_DATA} \3,' \
+		${WRKSRC}/Makefile ${WRKSRC}/src/findlib/Makefile \
+		${WRKSRC}/src/findlib-toolbox/Makefile
 
 post-install:
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/findlib -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-
-.for D in ${OCAML_DIRS}
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/$D -type f -name META | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-.endfor
-
-	${ECHO_CMD} 'lib/ocaml/site-lib/num-top/num_top.cma' >> ${TMPPLIST}
-	${ECHO_CMD} 'lib/ocaml/site-lib/num-top/num_top.cmi' >> ${TMPPLIST}
-	${ECHO_CMD} 'lib/ocaml/site-lib/num-top/num_top_printers.cmi' >> ${TMPPLIST}
-	${ECHO_CMD} 'lib/ocaml/topfind' >> ${TMPPLIST}
-
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/findlib -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-
-.for D in ${OCAML_DIRS}
-	${ECHO_CMD} "@dirrm lib/ocaml/site-lib/$D" >> ${TMPPLIST}
-.endfor
-
-	${ECHO_CMD} '@dirrm lib/ocaml/site-lib' >> ${TMPPLIST}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR} \
+	"! -regex .*ref-man.*")
+.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,116 @@
+bin/ocamlfind
+bin/safe_camlp4
+etc/findlib.conf
+lib/ocaml/site-lib/bigarray/META
+lib/ocaml/site-lib/camlp4/META
+lib/ocaml/site-lib/dbm/META
+lib/ocaml/site-lib/dynlink/META
+lib/ocaml/site-lib/findlib/META
+lib/ocaml/site-lib/findlib/Makefile.config
+lib/ocaml/site-lib/findlib/findlib.a
+lib/ocaml/site-lib/findlib/findlib.cma
+lib/ocaml/site-lib/findlib/findlib.cmi
+lib/ocaml/site-lib/findlib/findlib.cmxa
+lib/ocaml/site-lib/findlib/findlib.mli
+lib/ocaml/site-lib/findlib/findlib_top.cma
+lib/ocaml/site-lib/findlib/fl_metascanner.cmi
+lib/ocaml/site-lib/findlib/fl_metascanner.mli
+lib/ocaml/site-lib/findlib/fl_package_base.cmi
+lib/ocaml/site-lib/findlib/fl_package_base.mli
+lib/ocaml/site-lib/findlib/topfind.cmi
+lib/ocaml/site-lib/findlib/topfind.mli
+lib/ocaml/site-lib/graphics/META
+lib/ocaml/site-lib/labltk/META
+lib/ocaml/site-lib/num-top/META
+lib/ocaml/site-lib/num-top/num_top.cma
+lib/ocaml/site-lib/num-top/num_top.cmi
+lib/ocaml/site-lib/num-top/num_top_printers.cmi
+lib/ocaml/site-lib/num/META
+lib/ocaml/site-lib/stdlib/META
+lib/ocaml/site-lib/str/META
+lib/ocaml/site-lib/threads/META
+lib/ocaml/site-lib/unix/META
+lib/ocaml/topfind
+%%PORTDOCS%%%%DOCSDIR%%/DOCINFO
+%%PORTDOCS%%%%DOCSDIR%%/QUICKSTART
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/TIMESTAMP
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/c157.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/c188.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/c274.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/c348.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/c37.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/c380.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/c74.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/p35.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x104.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x115.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x131.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x145.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x176.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x227.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x261.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x270.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x307.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x322.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x334.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x341.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x355.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x372.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x394.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x400.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x412.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x464.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x468.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x81.html
+%%PORTDOCS%%%%DOCSDIR%%/guide-html/x89.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/TIMESTAMP
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/c990.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Findlib.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Fl_metascanner.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Fl_package_base.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/Topfind.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_attributes.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_class_types.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_classes.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_methods.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_module_types.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_modules.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_types.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/index_values.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/style.css
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Findlib.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Fl_metascanner.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Fl_package_base.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/lib/type_Topfind.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/p15.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/p645.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/p988.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/r17.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/r647.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/r741.html
+%%PORTDOCS%%%%DOCSDIR%%/ref-html/r930.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ref-html/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ref-html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide-html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry share/doc/ocaml
+@dirrm lib/ocaml/site-lib/unix
+@dirrm lib/ocaml/site-lib/threads
+@dirrm lib/ocaml/site-lib/str
+@dirrm lib/ocaml/site-lib/stdlib
+@dirrm lib/ocaml/site-lib/num-top
+@dirrm lib/ocaml/site-lib/num
+@dirrm lib/ocaml/site-lib/labltk
+@dirrm lib/ocaml/site-lib/graphics
+@dirrm lib/ocaml/site-lib/findlib
+@dirrm lib/ocaml/site-lib/dynlink
+@dirrm lib/ocaml/site-lib/dbm
+@dirrm lib/ocaml/site-lib/camlp4
+@dirrm lib/ocaml/site-lib/bigarray
+@dirrmtry lib/ocaml/site-lib
