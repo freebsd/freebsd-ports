@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	anki
-PORTVERSION=	0.4.3
+PORTVERSION=	0.9.5.7
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	CENKES http://ichi2.net/anki/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
@@ -17,6 +17,9 @@ COMMENT=	Spaced-repetition memory training library
 
 BUILD_DEPENDS=	py*-numpy>=0:${PORTSDIR}/math/py-numpy \
 		py*-game>=0:${PORTSDIR}/devel/py-game \
+		py*-simplejson>=0:${PORTSDIR}/devel/py-simplejson \
+		py*-sqlalchemy>=0:${PORTSDIR}/databases/py-sqlalchemy \
+		py*-pysqlite>=0:${PORTSDIR}/databases/py-pysqlite23 \
 		py*-matplotlib>=0.90.0:${PORTSDIR}/math/py-matplotlib
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		kakasi:${PORTSDIR}/japanese/kakasi
@@ -25,9 +28,5 @@ USE_GETTEXT=	yes
 USE_PYDISTUTILS=easy_install
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/lib${PORTNAME}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|0.4.2|${PORTVERSION}|g'\
-		${WRKSRC}/anki/__init__.py
 
 .include <bsd.port.mk>
