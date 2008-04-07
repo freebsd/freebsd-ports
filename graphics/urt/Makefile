@@ -7,7 +7,7 @@
 
 PORTNAME=	urt
 PORTVERSION=	3.1b1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.iastate.edu/pub/utah-raster/
 DISTNAME=	urt
@@ -24,7 +24,7 @@ LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 NO_WRKSUBDIR=	yes
 
-USE_XLIB=	yes
+USE_XORG=	x11 xext
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	config/urt
