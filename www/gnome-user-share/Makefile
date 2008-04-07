@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-user-share
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
