@@ -460,7 +460,6 @@ share/doc/libanjuta/index.sgml
 share/doc/libanjuta/left.png
 share/doc/libanjuta/libanjuta-AnjutaCellRendererCaptionedImage.html
 share/doc/libanjuta/libanjuta-ESplash.html
-share/doc/libanjuta/libanjuta-IAnjutaVariableDebugger.html
 share/doc/libanjuta/libanjuta-anjuta-c-module.html
 share/doc/libanjuta/libanjuta-anjuta-c-plugin-factory.html
 share/doc/libanjuta/libanjuta-anjuta-debug.html
