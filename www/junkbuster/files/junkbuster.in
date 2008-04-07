@@ -28,34 +28,3 @@ ijb_start()
 
 load_rc_config $name
 run_rc_command "$1"
-
-#case $1 in
-#start)
-#	if [ -d %%JDIR%% \
-#	     -a -x %%PREFIX%%/sbin/junkbuster \
-#	     -a -f %%JDIR%%/configfile ]; then
-#		: seems OK
-#	else
-#		echo >&2 "$0: missing files!"
-#		exit 1
-#	fi
-#	cd %%JDIR%%
-#	su -m nobody -c "%%PREFIX%%/sbin/junkbuster configfile &" \
-#	    >/dev/null \
-#	&& echo -n " junkbuster" \
-#	|| echo " junkbuster FAILED TO START"
-#	;;
-#stop)
-#	killall junkbuster && echo -n " junkbuster"
-#	;;
-#restart)
-#	$0 stop
-#	$0 start
-#	;;
-#*)
-#	echo "Usage: `basename $0` {start|stop}" >&2
-#	exit 64
-#	;;
-#esac
-#
-#exit 0
