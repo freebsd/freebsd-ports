@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	anki
-PORTVERSION=	0.4.3
+PORTVERSION=	0.9.5.7
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	CENKES http://ichi2.net/anki/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -35,7 +35,5 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/req/d' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e 's|0.4.2|${PORTVERSION}|g'\
-		${WRKSRC}/ankiqt/__init__.py
 
 .include <bsd.port.mk>
