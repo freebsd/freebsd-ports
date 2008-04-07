@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Nov 21 18:19:11 2006
-+++ Makefile.in	Fri Dec  1 21:41:18 2006
+--- Makefile.in.old	2008-04-03 00:51:55.000000000 -0300
++++ Makefile.in	2008-04-03 00:52:21.000000000 -0300
 @@ -38,8 +38,8 @@
  host_triplet = @host@
  DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
@@ -11,7 +11,7 @@
  	build-aux/compile build-aux/config.guess build-aux/config.sub \
  	build-aux/depcomp build-aux/install-sh build-aux/ltmain.sh \
  	build-aux/mdate-sh build-aux/missing build-aux/texinfo.tex
-@@ -203,8 +203,8 @@
+@@ -203,11 +203,11 @@
  	ChangeLog.bak
  
  EXTRA_DIST = SVNChangeLog ChangeLogOld check.pc.in $(m4data_DATA)
@@ -21,4 +21,8 @@
 +doc_DATA = SVNChangeLog ChangeLog ChangeLogOld NEWS README
  m4datadir = $(datadir)/aclocal
  m4data_DATA = check.m4
- pcdatadir = $(libdir)/pkgconfig
+-pcdatadir = $(libdir)/pkgconfig
++pcdatadir = $(prefix)/libdata/pkgconfig
+ pcdata_DATA = check.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
