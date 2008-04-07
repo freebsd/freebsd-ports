@@ -1,3 +1,3 @@
-MD5 (syntax-1.0.0.tar.gz) = bfba585cd8d1511dad3daff910a9cc8e
-SHA256 (syntax-1.0.0.tar.gz) = 93dd44920adac57e454419497e8188479b053fe089828ecd1d02185b99fa49f6
-SIZE (syntax-1.0.0.tar.gz) = 54191
+MD5 (rubygem/syntax-1.0.0.gem) = d9d2eabc03bc937adfa00e35f228f9a8
+SHA256 (rubygem/syntax-1.0.0.gem) = 605e2f62770bad04e849b3a1a2234e45b2904a8592f2f4dcc0bb14dce09c23fd
+SIZE (rubygem/syntax-1.0.0.gem) = 15360

@@ -9,13 +9,14 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Convertors/HTML.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Convertors/HTML.src/M000003.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Default.html
-%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Default.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Default.src/M000018.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Ruby.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Ruby.src/M000008.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Ruby.src/M000009.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Token.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Token.src/M000020.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000010.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000011.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000012.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000013.html
@@ -23,7 +24,6 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000015.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000016.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000017.html
-%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000018.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Version.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/XML.html
 %%GEM_DOC_DIR%%/rdoc/classes/Syntax/XML.src/M000006.html
@@ -44,38 +44,9 @@
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
-%%GEM_DOC_DIR%%/ri/Syntax/Convertors/Abstract/cdesc-Abstract.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Convertors/Abstract/for_syntax-c.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Convertors/Abstract/new-c.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Convertors/HTML/cdesc-HTML.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Convertors/HTML/convert-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Convertors/cdesc-Convertors.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Default/cdesc-Default.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Default/tokenize-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Ruby/cdesc-Ruby.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Ruby/setup-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Ruby/step-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Token/cdesc-Token.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Token/new-c.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/cdesc-Tokenizer.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/finish-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/option-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/set-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/setup-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/start-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/step-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/teardown-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/tokenize-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/Version/cdesc-Version.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/XML/cdesc-XML.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/XML/setup-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/XML/step-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/YAML/cdesc-YAML.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/YAML/step-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/all-i.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/cdesc-Syntax.yaml
-%%GEM_DOC_DIR%%/ri/Syntax/load-i.yaml
-%%GEM_DOC_DIR%%/ri/created.rid
+%%GEM_LIB_DIR%%/data/ruby.css
+%%GEM_LIB_DIR%%/data/xml.css
+%%GEM_LIB_DIR%%/data/yaml.css
 %%GEM_LIB_DIR%%/lib/syntax.rb
 %%GEM_LIB_DIR%%/lib/syntax/common.rb
 %%GEM_LIB_DIR%%/lib/syntax/convertors/abstract.rb
@@ -97,19 +68,8 @@
 @dirrm %%GEM_LIB_DIR%%/lib/syntax/convertors
 @dirrm %%GEM_LIB_DIR%%/lib/syntax
 @dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/data
 @dirrm %%GEM_LIB_DIR%%
-@dirrm %%GEM_DOC_DIR%%/ri/Syntax/YAML
-@dirrm %%GEM_DOC_DIR%%/ri/Syntax/XML
-@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Version
-@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Tokenizer
-@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Token
-@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Ruby
-@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Default
-@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Convertors/HTML
-@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Convertors/Abstract
-@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Convertors
-@dirrm %%GEM_DOC_DIR%%/ri/Syntax
-@dirrm %%GEM_DOC_DIR%%/ri
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/syntax/lang
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/syntax/convertors
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/syntax
