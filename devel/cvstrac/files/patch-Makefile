@@ -25,7 +25,7 @@
 +
 +#### Extra arguments for linking against SQLite
 +#
-+LIBSQLITE = -L$(LOCALBASE)/lib -lsqlite3 -lcrypt
++LIBSQLITE = -L$(LOCALBASE)/lib `pkg-config --static --libs sqlite3` -lcrypt
 +
 +#### Installation directory
 +#
