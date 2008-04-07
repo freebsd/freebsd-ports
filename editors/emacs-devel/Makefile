@@ -10,14 +10,18 @@ PORTVERSION=	${EMACS_VER}.${SNAPSHOT}
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	keramida
-DISTNAME=	${PORTNAME}-cvs-snapshot-2008.01.01.21.19.17
+DISTNAME=       ${PORTNAME}-cvs-2008.03.08.07.56.12
+USE_BZIP2=	yes
 
 MAINTAINER=	keramida@ceid.upatras.gr
 COMMENT=	GNU editing macros
 
 .if !defined(WITHOUT_X11)
+USE_XORG=	x11
 .if defined(WITHOUT_GTK)
-LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+USE_XORG+=	xaw xft xpm
+.else
+USE_GNOME=	gtk20
 .endif
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -29,19 +33,11 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
-EMACS_VER=	23.0.50
-SNAPSHOT=	20080101
+EMACS_VER=	23.0.60
+SNAPSHOT=	20080308
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	bootfast
-.if !defined(WITHOUT_X11)
-.if !defined(WITHOUT_GTK)
-USE_GNOME=	gtk20
-.else
-USE_XLIB=	yes
-.endif
-USE_XPM=	yes
-.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -52,6 +48,10 @@ CONFIGURE_ARGS=		--with-x=no
 .if !defined(WITHOUT_GTK)
 CONFIGURE_ARGS=		--with-gtk
 .endif
+CONFIGURE_ARGS=		--enable-font-backend
+LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2 \
+			m17n.3:${PORTSDIR}/devel/m17n-lib
+# also libotf, which is pulled in by m17n
 .endif
 
 .if defined(WITHOUT_XIM)
@@ -64,7 +64,7 @@ PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
 MAKE_ENV=	LC_ALL=C
 
 INFO=		ada-mode autotype calc ccmode cl dbus dired-x ebrowse ediff \
-		efaq eintr elisp emacs-mime emacs erc eshell eudc \
+		efaq eintr elisp emacs-mime emacs epa erc eshell eudc \
 		flymake forms gnus idlwave info message mh-e newsticker \
 		nxml-mode org pcl-cvs pgg rcirc reftex remember sc ses sieve smtpmail speedbar \
 		tramp url vip viper widget woman
