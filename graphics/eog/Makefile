@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	eog
-PORTVERSION=	2.22.0
+PORTVERSION=	2.22.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The Eye Of Gnome image viewer
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack librsvg2 desktopfileutils \
 		gnomedesktop
