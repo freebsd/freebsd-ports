@@ -148,7 +148,6 @@
     SUBDIR += cgilib
     SUBDIR += cgprof
     SUBDIR += charva
-    SUBDIR += check
     SUBDIR += cil
     SUBDIR += cl-asdf
     SUBDIR += cl-asdf-clisp
