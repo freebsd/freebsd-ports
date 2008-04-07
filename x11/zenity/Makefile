@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	zenity
-PORTVERSION=	2.22.0
+PORTVERSION=	2.22.1
 CATEGORIES=	x11 gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,9 +18,8 @@ COMMENT=	Display GNOME dialogs from the command line
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomecanvas gconf2 gnomedocutils
+USE_GNOME=	gnomeprefix gnomehack libgnomecanvas gnomedocutils intlhack
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -33,4 +31,15 @@ MAN1=		zenity.1
 
 CONFLICTS=	gtkada-1.2.*
 
-.include <bsd.port.mk>
+OPTIONS=	NOTIFY "Enable libnotify support" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NOTIFY)
+LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+CONFIGURE_ARGS+=	--enable-libnotify
+.else
+CONFIGURE_ARGS+=	--disable-libnotify
+.endif
+
+.include <bsd.port.post.mk>
