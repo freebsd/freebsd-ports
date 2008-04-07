@@ -67,7 +67,7 @@ pre-patch:
 .if !defined(WITHOUT_BONUSPACKS)
 	@${SED} -e '1,/exit \$$res/d' ${_DISTDIR}/${BONUSFILE} | \
 		${GUNZIP_CMD} -q | ${TAR} xf - -C ${WRKDIR} -X ${FILESDIR}/excludefiles
-.for file in "bp1.tar.bz2 bp2.tar.bz2 bp3.tar.bz2 bp4.tar.bz2"
+.for file in bp1.tar.bz2 bp2.tar.bz2 bp3.tar.bz2 bp4.tar.bz2
 	@${TAR} jx -C ${WRKSRC} -f ${WRKDIR}/${file}
 .endfor
 	@${MV} ${WRKDIR}/README.bonus.pack.collection ${WRKSRC}/Help
