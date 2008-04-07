@@ -635,6 +635,9 @@ share/gnome/help/blackjack/C/legal.xml
 share/gnome/help/blackjack/ca/blackjack.xml
 share/gnome/help/blackjack/ca/figures/blackjack_start_window.png
 share/gnome/help/blackjack/ca/figures/blackjack_win_window.png
+share/gnome/help/blackjack/el/blackjack.xml
+share/gnome/help/blackjack/el/figures/blackjack_start_window.png
+share/gnome/help/blackjack/el/figures/blackjack_win_window.png
 share/gnome/help/blackjack/es/blackjack.xml
 share/gnome/help/blackjack/es/figures/blackjack_start_window.png
 share/gnome/help/blackjack/es/figures/blackjack_win_window.png
@@ -1396,6 +1399,7 @@ share/omf/aisleriot/aisleriot-oc.omf
 share/omf/aisleriot/aisleriot-sv.omf
 share/omf/blackjack/blackjack-C.omf
 share/omf/blackjack/blackjack-ca.omf
+share/omf/blackjack/blackjack-el.omf
 share/omf/blackjack/blackjack-es.omf
 share/omf/blackjack/blackjack-fr.omf
 share/omf/blackjack/blackjack-oc.omf
@@ -1848,6 +1852,8 @@ share/pixmaps/mahjongg/smooth.png
 @dirrm share/gnome/help/blackjack/fr
 @dirrm share/gnome/help/blackjack/es/figures
 @dirrm share/gnome/help/blackjack/es
+@dirrm share/gnome/help/blackjack/el/figures
+@dirrm share/gnome/help/blackjack/el
 @dirrm share/gnome/help/blackjack/ca/figures
 @dirrm share/gnome/help/blackjack/ca
 @dirrm share/gnome/help/blackjack/C/figures
