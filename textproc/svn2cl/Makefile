@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svn2cl
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	textproc
 MASTER_SITES=	http://ch.tudelft.nl/~arthur/svn2cl/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
 NO_BUILD=	yes
 MAN1=		${PORTNAME}.1
 PORTDOCS=	ChangeLog NEWS README TODO
-DATAFILES=	authors.xml svn2cl.xsl svn2cl.xsl svn2html.css svn2html.xsl
+DATAFILES=	authors.xml svn2cl.xsl svn2html.css svn2html.xsl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|XSL="$$dir|XSL="${DATADIR}|' ${WRKSRC}/${PORTNAME}.sh
