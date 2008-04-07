@@ -72,7 +72,7 @@ share/dbus-1/services/org.gnome.Epiphany.service
 %%DATADIR%%/about.ini
 %%DATADIR%%/chrome/branding/brand.dtd
 %%DATADIR%%/chrome/branding/brand.properties
-%%DATADIR%%/chrome/epiphany.manifest
+%%DATADIR%%/chrome/app-chrome.manifest
 %%DATADIR%%/chrome/global/about.xhtml
 %%DATADIR%%/default-prefs.js
 %%DATADIR%%/ephy-xml2ini.xsl
