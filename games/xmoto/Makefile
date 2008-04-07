@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	pkgconfig
 USE_LUA=	5.1
 USE_SQLITE=	yes
 USE_SDL=	sdl mixer ttf
