@@ -1,6 +1,6 @@
---- configure.orig	2007-08-27 23:27:26.000000000 -0400
-+++ configure	2007-08-27 23:29:35.000000000 -0400
-@@ -25411,7 +25411,7 @@ fi
+--- configure.orig	2008-04-07 14:16:28.661972413 -0400
++++ configure	2008-04-07 14:52:51.263707127 -0400
+@@ -25726,7 +25726,7 @@
  
  
  
@@ -8,9 +8,20 @@
 +for ac_header in #
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -26204,7 +26204,7 @@ else
- echo "${ECHO_T}yes" >&6
+ if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
+@@ -26312,8 +26312,8 @@
+ 
+ 	    LIBS=$evince_save_LIBS
+ 
+-	    POPPLER_MAJOR_VERSION=`$PKG_CONFIG --modversion poppler-glib | sed 's/0\.\([0-9]*\)\(\.\([0-9]*\)\)\?/\1/'`
+-	    POPPLER_MINOR_VERSION=`$PKG_CONFIG --modversion poppler-glib | sed 's/0\.\([0-9]*\)\(\.\([0-9]*\)\)\?/\3/'`
++	    POPPLER_MAJOR_VERSION=`$PKG_CONFIG --modversion poppler-glib | sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\).*/\2 /'`
++	    POPPLER_MINOR_VERSION=`$PKG_CONFIG --modversion poppler-glib | sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\).*/\3 /'`
+ 	    if test -z "$POPPLER_MINOR_VERSION"; then
+ 	      POPPLER_MINOR_VERSION=0
+ 	    fi
+@@ -26400,7 +26400,7 @@
+ echo "${ECHO_T}yes" >&6; }
  	enable_cairo_pdf=yes
  fi
 -	    if test x$enable_cairo_pdf == xyes; then
@@ -18,8 +29,8 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_CAIRO_PDF 1
-@@ -26283,7 +26283,7 @@ else
- echo "${ECHO_T}yes" >&6
+@@ -26479,7 +26479,7 @@
+ echo "${ECHO_T}yes" >&6; }
  	enable_cairo_ps=yes
  fi
 -	    if test x$enable_cairo_ps == xyes; then

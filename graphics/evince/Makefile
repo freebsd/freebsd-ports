@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	evince
-PORTVERSION=	2.22.0
-PORTREVISION=	3
+PORTVERSION=	2.22.1
+PORTREVISION=	0
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -79,8 +79,10 @@ PLIST_SUB+=		NAUTILUS="@comment "
 
 .if defined(WITH_IMPRESS)
 CONFIGURE_ARGS+=	--enable-impress
+PLIST_SUB+=		IMPRESS=""
 .else
 CONFIGURE_ARGS+=	--disable-impress
+PLIST_SUB+=		IMPRESS="@comment "
 .endif
 
 .if exists(${LOCALBASE}/bin/djview)
