@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	2.22.1
+PORTVERSION=	2.22.1.1
 PORTREVISION?=	0
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
@@ -40,7 +40,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} ${EXTRA_CFLAGS
 GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas \
 		epiphany-fonts.schemas epiphany-pango.schemas
 
-PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/\.[0-9]+$//}"
+PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}"
 
 MAN1=		epiphany.1
 
