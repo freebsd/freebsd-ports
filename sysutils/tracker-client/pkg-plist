@@ -94,6 +94,7 @@ lib/tracker/thumbnailers/image/jpeg_thumbnailer
 lib/tracker/thumbnailers/image/png_thumbnailer
 lib/tracker/thumbnailers/image/tiff_thumbnailer
 libdata/pkgconfig/tracker.pc
+share/dbus-1/services/tracker.service
 share/icons/hicolor/16x16/apps/tracker.png
 share/icons/hicolor/22x22/apps/tracker.png
 share/icons/hicolor/24x24/apps/tracker.png
