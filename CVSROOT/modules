@@ -14721,6 +14721,7 @@ ruby-pdflib	ports/print/ruby-pdflib
 ruby-perl	ports/lang/ruby-perl
 ruby-pgplot	ports/graphics/ruby-pgplot
 ruby-poll	ports/devel/ruby-poll
+ruby-postgres	ports/databases/ruby-postgres
 ruby-programmingruby	ports/lang/ruby-programmingruby
 ruby-property	ports/devel/ruby-property
 ruby-qdbm	ports/databases/ruby-qdbm
