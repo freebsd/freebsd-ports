@@ -1,8 +1,8 @@
 bin/hunspell
-lib/libhunspell-1.1.a
+lib/libhunspell-1.2.a
 lib/libhunspell-1.1.la
-lib/libhunspell-1.1.so.0
-lib/libhunspell-1.1.so
+lib/libhunspell-1.2.so.0
+lib/libhunspell-1.2.so
 share/myspell/hu_HU.aff
 share/myspell/hu_HU.dic
 share/myspell/hungarian.aff
