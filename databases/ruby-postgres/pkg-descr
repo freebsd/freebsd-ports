@@ -1,0 +1,7 @@
+This is an extention module to access PostgreSQL database from Ruby.
+This library works with PostgreSQL 6.4/6.5 and 7.0/7.1.
+
+Authors: Yukihiro Matsumoto <matz@ruby-lang.org>
+	Eiji Matsumoto <usagi@ruby.club.or.jp>
+	Noboru Saitou <noborus@zetabits.com> (current maintainer)
+WWW:	http://www.postgresql.jp/interfaces/ruby/archive/
