@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	20
+PORTREVISION?=	21
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		http://distfiles.opendarwin.org/
@@ -95,10 +95,10 @@ EXTRA_DICT+=	${BRDISTFILE}:br
 EXTRACT_ONLY+=	${BRDISTFILE}
 .endif
 .if defined(ISPELL_DENEU)
-BROKEN=		igerman98-20071211/Makefile must be patched
 DENEUDISTFILE=	igerman98-20071211.tar.bz2
 MASTER_SITES+=	http://www.j3e.de/ispell/igerman98/dict/:denu
 EXTRA_DICT+=	${DENEUDISTFILE}:denu
+USE_GMAKE=	yes
 .endif
 .if defined(ISPELL_DEALT)
 DEALTDISTFILE=	hk-deutsch.tar.gz
@@ -215,6 +215,8 @@ post-patch:
 .endif
 .if defined(ISPELL_DENEU)
 	@cd ${WRKDIR}/${DENEUDISTFILE:S=.tar.bz2$==} && ${PATCH} < ${FILESDIR}/DENEU.patch 2>/dev/null
+	@cd ${WRKDIR}/${DENEUDISTFILE:S=.tar.bz2$==} && ${MV} Makefile GNUmakefile
+	@${CP} ${FILESDIR}/DENEU.makefile ${WRKDIR}/${DENEUDISTFILE:S=.tar.bz2$==}/Makefile
 .endif
 .if defined(ISPELL_SE)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/SE.patch 2>/dev/null
