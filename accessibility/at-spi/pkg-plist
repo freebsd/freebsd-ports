@@ -103,6 +103,7 @@ share/idl/at-spi-1.0/Accessibility_Value.idl
 share/locale/ar/LC_MESSAGES/at-spi.mo
 share/locale/az/LC_MESSAGES/at-spi.mo
 share/locale/be/LC_MESSAGES/at-spi.mo
+share/locale/be@latin/LC_MESSAGES/at-spi.mo
 share/locale/bg/LC_MESSAGES/at-spi.mo
 share/locale/bn/LC_MESSAGES/at-spi.mo
 share/locale/bs/LC_MESSAGES/at-spi.mo
@@ -190,3 +191,5 @@ share/locale/zh_TW/LC_MESSAGES/at-spi.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
