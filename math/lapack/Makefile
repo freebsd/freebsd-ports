@@ -48,9 +48,7 @@ pre-fetch:
 	@${ECHO} "Set ENABLE_TESTING to YES to enable testing and timing."
 .endif
 
-.if !defined(NOPORTDOCS)
 .include "${FILESDIR}/manpages"
-.endif
 
 post-patch:
 	@${CP} ${WRKSRC}/INSTALL/make.inc.gfortran ${WRKSRC}/make.inc
