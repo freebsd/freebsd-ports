@@ -20,9 +20,9 @@ USE_PGSQL=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}/ext
 CONFIGURE_ARGS=	--with-pgsql-include-dir="${LOCALBASE}/include"
 INSTALL_TARGET=	site-install
-WRKSRC=		${WRKDIR}/${PORTNAME}/ext
 
 DOCS_EN=	ChangeLog README doc/postgres.html
 DOCS_JA=	README.ja doc/postgres.jp.html
