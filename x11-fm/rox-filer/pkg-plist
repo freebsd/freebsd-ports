@@ -127,6 +127,7 @@ apps/ROX-Filer/ROX/MIME/mime-video.png
 apps/ROX-Filer/ROX/MIME/mime-video:mpeg.png
 apps/ROX-Filer/ROX/MIME/mime-video:quicktime.png
 apps/ROX-Filer/ROX/index.theme
+apps/ROX-Filer/Templates.glade
 apps/ROX-Filer/images/application.png
 apps/ROX-Filer/images/dirs.png
 apps/ROX-Filer/images/iconified.png
@@ -139,6 +140,7 @@ apps/ROX-Filer/images/rox-symlink.png
 apps/ROX-Filer/images/rox-xattr.png
 apps/ROX-Filer/images/symlink.png
 apps/ROX-Filer/style.css
+apps/ROX-Filer/subclasses
 bin/rox
 share/Choices/MIME-types/application_postscript
 share/Choices/MIME-types/text
