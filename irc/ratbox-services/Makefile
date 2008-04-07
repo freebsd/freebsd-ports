@@ -30,6 +30,7 @@ LOGDIR?=	/var/log
 RUNDIR?=	/var/run
 DBDIR?=		/var/db/${PORTNAME}
 PERL?=		${LOCALBASE}/bin/perl
+USE_GNOME=	pkgconfig
 SUB_FILES=	pkg-message pkg-install
 PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
 SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
@@ -155,6 +156,9 @@ pre-configure:
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#-O[02]##g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -E -e "s|(LIBS=.*)-lsqlite3(.*)|\1\`pkg-config --static --libs sqlite3\`\2|" \
+		-e "s|(.*DB_LIBS=.*)-lsqlite3(.*)|\1\`pkg-config --static --libs sqlite3\`\2|" \
+		${WRKSRC}/configure
 
 	@${REINPLACE_CMD} -e "s#%%DBDIR%%#${DBDIR}#g" ${WRKSRC}/include/config.h
 	@${REINPLACE_CMD} -e "s#%%PREFIX%%#${PREFIX}#g"		\
