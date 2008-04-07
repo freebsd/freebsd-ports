@@ -15,7 +15,4 @@ from different classes. This is a very powerful feature, because
 it simplifies the structure of programs processing XML documents.
 
 
-WWW: http://www.ocaml-programming.de/programming/pxp.html
-
-- Stephane Legrand
-  <stephane@freebsd.org>
+WWW: http://projects.camlcity.org/projects/pxp.html
