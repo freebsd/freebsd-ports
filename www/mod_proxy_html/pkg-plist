@@ -1,3 +1,0 @@
-libexec/apache22/mod_proxy_html.so
-@exec %D/sbin/apxs -e -A -n proxy_html %D/%F
-@unexec %D/sbin/apxs -e -A -n proxy_html %D/%F
