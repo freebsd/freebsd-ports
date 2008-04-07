@@ -42,8 +42,8 @@ share/locale/lt/LC_MESSAGES/bakery.mo
 share/locale/mk/LC_MESSAGES/bakery.mo
 share/locale/nb/LC_MESSAGES/bakery.mo
 share/locale/ne/LC_MESSAGES/bakery.mo
-share/locale/oc/LC_MESSAGES/bakery.mo
 share/locale/nl/LC_MESSAGES/bakery.mo
+share/locale/oc/LC_MESSAGES/bakery.mo
 share/locale/pl/LC_MESSAGES/bakery.mo
 share/locale/pt_BR/LC_MESSAGES/bakery.mo
 share/locale/ru/LC_MESSAGES/bakery.mo
@@ -52,8 +52,8 @@ share/locale/sk/LC_MESSAGES/bakery.mo
 share/locale/sl/LC_MESSAGES/bakery.mo
 share/locale/sq/LC_MESSAGES/bakery.mo
 share/locale/sv/LC_MESSAGES/bakery.mo
-share/locale/vi/LC_MESSAGES/bakery.mo
 share/locale/uk/LC_MESSAGES/bakery.mo
+share/locale/vi/LC_MESSAGES/bakery.mo
 share/locale/zh_CN/LC_MESSAGES/bakery.mo
 share/locale/zh_TW/LC_MESSAGES/bakery.mo
 @dirrm include/bakery-%%API_VERSION%%/bakery/View
