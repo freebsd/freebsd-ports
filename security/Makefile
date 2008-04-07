@@ -483,6 +483,7 @@
     SUBDIR += p5-Net-Daemon-SSL
     SUBDIR += p5-Net-OpenID-JanRain
     SUBDIR += p5-Net-OpenID-Server
+    SUBDIR += p5-Net-SAML
     SUBDIR += p5-Net-SSLeay
     SUBDIR += p5-Net-Server-Mail-ESMTP-AUTH
     SUBDIR += p5-Net-SinFP

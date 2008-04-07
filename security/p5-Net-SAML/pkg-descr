@@ -1,0 +1,4 @@
+A Perl module wrapping libzxid. Also zxid.pl, that implements SP in
+mod_perl environment, is supplied.
+
+WWW:	http://zxid.org/
