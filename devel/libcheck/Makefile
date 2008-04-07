@@ -7,8 +7,10 @@
 
 PORTNAME=	libcheck
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/check
+DISTNAME=	check-${PORTVERSION}
 
 MAINTAINER=	mikeh@FreeBSD.org
 COMMENT=	A unit test framework for C
