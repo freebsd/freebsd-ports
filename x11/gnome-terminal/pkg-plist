@@ -128,6 +128,7 @@ share/locale/sr/LC_MESSAGES/gnome-terminal.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-terminal.mo
 share/locale/sv/LC_MESSAGES/gnome-terminal.mo
 share/locale/ta/LC_MESSAGES/gnome-terminal.mo
+share/locale/te/LC_MESSAGES/gnome-terminal.mo
 share/locale/th/LC_MESSAGES/gnome-terminal.mo
 share/locale/tr/LC_MESSAGES/gnome-terminal.mo
 share/locale/uk/LC_MESSAGES/gnome-terminal.mo
@@ -198,6 +199,8 @@ share/pixmaps/gnome-terminal.png
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
