@@ -26,6 +26,7 @@ include/evince-2.20/evince/ev-transition-effect.h
 %%COMICS%%lib/evince/backends/comicsdocument.evince-backend
 %%DJVU%%lib/evince/backends/djvudocument.evince-backend
 %%DVI%%lib/evince/backends/dvidocument.evince-backend
+%%IMPRESS%%lib/evince/backends/impressdocument.evince-backend
 %%COMICS%%lib/evince/backends/libcomicsdocument.a
 %%COMICS%%lib/evince/backends/libcomicsdocument.la
 %%COMICS%%lib/evince/backends/libcomicsdocument.so
@@ -35,6 +36,9 @@ include/evince-2.20/evince/ev-transition-effect.h
 %%DVI%%lib/evince/backends/libdvidocument.a
 %%DVI%%lib/evince/backends/libdvidocument.la
 %%DVI%%lib/evince/backends/libdvidocument.so
+%%IMPRESS%%lib/evince/backends/libimpressdocument.a
+%%IMPRESS%%lib/evince/backends/libimpressdocument.la
+%%IMPRESS%%lib/evince/backends/libimpressdocument.so
 lib/evince/backends/libpdfdocument.a
 lib/evince/backends/libpdfdocument.la
 lib/evince/backends/libpdfdocument.so
