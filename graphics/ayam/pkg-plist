@@ -11,6 +11,7 @@ lib/ayam/mfio.tcl
 lib/ayam/mfio.so
 lib/ayam/tcl/about.tcl
 lib/ayam/tcl/action.tcl
+lib/ayam/tcl/acurve.tcl
 lib/ayam/tcl/ai.tcl
 lib/ayam/tcl/ayam.tcl
 lib/ayam/tcl/balloon.tcl
@@ -31,6 +32,7 @@ lib/ayam/tcl/control.tcl
 lib/ayam/tcl/cylinder.tcl
 lib/ayam/tcl/disk.tcl
 lib/ayam/tcl/extrnc.tcl
+lib/ayam/tcl/extrnp.tcl
 lib/ayam/tcl/extrude.tcl
 lib/ayam/tcl/gordon.tcl
 lib/ayam/tcl/hyperb.tcl
@@ -48,6 +50,7 @@ lib/ayam/tcl/ncurve.tcl
 lib/ayam/tcl/npatch.tcl
 lib/ayam/tcl/objbar.tcl
 lib/ayam/tcl/objsel.tcl
+lib/ayam/tcl/offnc.tcl
 lib/ayam/tcl/olb.tcl
 lib/ayam/tcl/pamesh.tcl
 lib/ayam/tcl/pane.tcl
@@ -68,12 +71,14 @@ lib/ayam/tcl/root.tcl
 lib/ayam/tcl/run.tcl
 lib/ayam/tcl/script.tcl
 lib/ayam/tcl/sdmesh.tcl
+lib/ayam/tcl/select.tcl
 lib/ayam/tcl/shader.tcl
 lib/ayam/tcl/shortcut.tcl
 lib/ayam/tcl/skin.tcl
 lib/ayam/tcl/sphere.tcl
 lib/ayam/tcl/splash.tcl
 lib/ayam/tcl/sweep.tcl
+lib/ayam/tcl/swing.tcl
 lib/ayam/tcl/tc.tcl
 lib/ayam/tcl/text.tcl
 lib/ayam/tcl/tgui.tcl
@@ -203,6 +208,7 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/meta.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/multip.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/ncircle.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/offnc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/plotcur.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/prefs.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/primitives.gif
@@ -216,6 +222,8 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/splitnc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/ssweep.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/sweep.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/swin.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/swing.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/tce.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/text-ayam.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/tgui.gif

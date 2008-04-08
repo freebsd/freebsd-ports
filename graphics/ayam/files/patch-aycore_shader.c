@@ -9,30 +9,6 @@
  #else
    /* change all ; to : in shader search path */
    Tcl_DStringInit(&ds);
-@@ -415,7 +415,11 @@
- 	}
- 
-       /* XXXX temporarily discard array arguments   */
-+#ifdef AYAQSIS10
-       if(symbol->svd_arraylen < 1)
-+#else
-+      if(symbol->svd_arraylen < 2)
-+#endif
- 	{
- 
-       Tcl_DStringAppend(&ds, "{ ", -1);
-@@ -450,7 +454,10 @@
- 	  break;
- 	}
- 
--      arraylen = symbol->svd_arraylen;
-+      arraylen = symbol->svd_arraylen-1;
-+#ifdef AYAQSIS10
-+      arraylen++;
-+#endif
-       sprintf(buffer, "%d ", arraylen);
-       Tcl_DStringAppend(&ds, buffer, -1);
-
 @@ -1094,7 +1094,8 @@
   ay_mat_object *material = NULL;
   ay_shader *newshader = NULL, **shader = NULL;
