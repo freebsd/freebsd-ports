@@ -1,75 +1,94 @@
---- ./system.mk.orig	Thu Jul 29 00:10:32 2004
-+++ ./system.mk	Mon Jul 17 21:53:01 2006
-@@ -7,7 +7,7 @@
- ## Installation paths
- ##
+--- system.mk.orig	2008-02-05 12:42:06.000000000 -0500
++++ system.mk	2008-04-08 00:14:27.000000000 -0400
+@@ -8,7 +8,7 @@
  
+ # Installation path prefix. Unless you know what you're doing, the default
+ # of /usr/local is likely the correct choice.
 -PREFIX=/usr/local
 +#PREFIX=/usr/local
  
  # Unless you are creating a package conforming to some OS's standards, you
  # probably do not want to modify the following directories:
-@@ -19,7 +19,7 @@
+@@ -20,7 +20,7 @@
  # Some .lua files and ion-* shell scripts
- SHAREDIR=$(PREFIX)/share/ion
+ SHAREDIR=$(PREFIX)/share/ion3
  # Manual pages
 -MANDIR=$(PREFIX)/share/man
 +MANDIR=$(PREFIX)/man
  # Some documents
- DOCDIR=$(PREFIX)/share/doc/ion
+ DOCDIR=$(PREFIX)/share/doc/ion3
  # Nothing at the moment
-@@ -42,11 +42,11 @@
- # libtool because even more-recent-than-libtool-1.4.3 releases of those
- # OSes only have an _ancient_ 1.3.x libtool that _will_ _not_ _work even
- # though a lot of libltdl-using apps require 1.4.3.
--LIBTOOL=libtool
-+LIBTOOL=$(LOCALBASE)/bin/libtool --tag=CC
+@@ -53,7 +53,7 @@
  
- # Settings for compiling and linking to ltdl
--LTDL_INCLUDES=
--LTDL_LIBS=-lltdl
-+LTDL_INCLUDES=-I$(LOCALBASE)/include
-+LTDL_LIBS=-L$(LOCALBASE)/lib -lltdl
+ # Flags to link with libdl. Even if PRELOAD_MODULES=1, you may need this
+ # setting (for e.g. Lua, when not instructed by pkg-config).
+-DL_LIBS=-ldl
++#DL_LIBS=-ldl
  
- # The following should do it if you have manually installed libtool 1.5 in
- # $(LIBTOOLDIR).
-@@ -72,11 +72,11 @@
  
- # If you have installed Lua 5.0 from the official tarball without changing
+ ##
+@@ -62,11 +62,11 @@
+ 
+ # If you have installed Lua 5.1 from the official tarball without changing
  # paths, this should do it.
 -LUA_DIR=/usr/local
--LUA_LIBS = -L$(LUA_DIR)/lib -R$(LUA_DIR)/lib -llua -llualib
+-LUA_LIBS = -L$(LUA_DIR)/lib -llua
 -LUA_INCLUDES = -I$(LUA_DIR)/include
 -LUA=$(LUA_DIR)/bin/lua
 -LUAC=$(LUA_DIR)/bin/luac
 +LUA_DIR=$(LOCALBASE)
-+LUA_LIBS = -L$(LUA_LIBDIR) -R$(LUA_LIBDIR) -llua -llualib
++LUA_LIBS = -L$(LUA_LIBDIR) -llua
 +LUA_INCLUDES = -I$(LUA_INCDIR)
 +LUA=$(LUA_BINDIR)/lua
 +LUAC=$(LUA_BINDIR)/luac
  
  # If you are using the Debian packages, the following settings should be
  # what you want.
-@@ -90,7 +90,7 @@
- ## X libraries, includes and options
+@@ -81,7 +81,7 @@
  ##
  
+ # Paths
 -X11_PREFIX=/usr/X11R6
 +X11_PREFIX=$(X11BASE)
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
  
-@@ -119,7 +119,7 @@
- # asprintf and vasprintf in the c library. (gnu libc has.)
- # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
- # in sprintf_2.2/ is used.
+@@ -90,7 +90,7 @@
+ 
+ # XFree86 libraries up to 4.3.0 have a bug that can cause a segfault.
+ # The following setting  should  work around that situation.
+-DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
++#DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
+ 
+ # Use the Xutf8 routines (XFree86 extension) instead of the Xmb routines
+ # in an UTF-8 locale. (No, you don't need this in UTF-8 locales, and 
+@@ -113,12 +113,14 @@
+ #DEFINES += -DCF_NO_LOCALE -DCF_NO_GETTEXT
+ 
+ # On some other systems you may need to explicitly link against libintl.
+-#EXTRA_LIBS += -lintl
++EXTRA_LIBS += -lintl
+ # You may also need to give the location of its headers. The following
+ # should work on Mac OS X (which needs the above option as well) with
+ # macports.
+ #EXTRA_INCLUDES += -I/opt/local/include
+ 
++EXTRA_INCLUDES+=	-I$(LOCALBASE)/include $(PORT_CFLAGS)
++EXTRA_LIBS+=	-L$(LOCALBASE)/lib
+ 
+ ##
+ ## libc
+@@ -127,7 +129,7 @@
+ # You may uncomment this if you know that your system C libary provides
+ # asprintf and  vasprintf. (GNU libc does.) If HAS_SYSTEM_ASPRINTF is not
+ # defined, an implementation provided in libtu/sprintf_2.2/ is used. 
 -#HAS_SYSTEM_ASPRINTF=1
 +HAS_SYSTEM_ASPRINTF=1
  
- 
- # If you're on an archaic system (such as relatively recent *BSD releases)
-@@ -132,16 +132,16 @@
- ## C compiler
+ # The following setting is needed with GNU libc for clock_gettime and the
+ # monotonic clock. Other systems may not need it, or may not provide a
+@@ -149,15 +151,15 @@
+ ## C compiler. 
  ##
  
 -CC=gcc
@@ -80,17 +99,15 @@
  WARN=	-W -Wimplicit -Wreturn-type -Wswitch -Wcomment \
  	-Wtrigraphs -Wformat -Wchar-subscripts \
 -	-Wparentheses -pedantic -Wuninitialized
-+	-Wparentheses -Wuninitialized
++	-Wparentheses
  
--CFLAGS=-g -Os $(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
--LDFLAGS=-g -Os $(EXTRA_LIBS) $(LIBS)
-+CFLAGS+= $(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
-+LDFLAGS= $(EXTRA_LIBS) $(LIBS)
+-CFLAGS=-Os $(WARN) $(DEFINES) $(INCLUDES) $(EXTRA_INCLUDES)
++CFLAGS= $(WARN) $(DEFINES) $(INCLUDES) $(EXTRA_INCLUDES)
+ LDFLAGS=$(LIBS) $(EXTRA_LIBS)
+ EXPORT_DYNAMIC=-Xlinker --export-dynamic
  
- # The following options are mainly for development use and can be used
- # to check that the code seems to conform to some standards. Depending
-@@ -154,7 +154,7 @@
- #POSIX_SOURCE=-D_POSIX_SOURCE
+@@ -172,7 +174,7 @@
+ #POSIX_SOURCE=-D_POSIX_C_SOURCE=200112L
  
  # Most systems
 -#XOPEN_SOURCE=-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED
