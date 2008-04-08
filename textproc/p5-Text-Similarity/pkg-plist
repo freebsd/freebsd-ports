@@ -1,4 +1,4 @@
-bin/text_compare.pl
+bin/text_similarity.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Similarity/.packlist
 %%SITE_PERL%%/Text/OverlapFinder.pm
 %%SITE_PERL%%/Text/Similarity.pm
