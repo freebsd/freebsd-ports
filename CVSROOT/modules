@@ -8684,6 +8684,7 @@ ocaml-sem	ports/devel/ocaml-sem
 ocaml-sexplib	ports/devel/ocaml-sexplib
 ocaml-sqlite3	ports/databases/ocaml-sqlite3
 ocaml-ssl	ports/security/ocaml-ssl
+ocaml-typeconv	ports/devel/ocaml-typeconv
 ocaml-ulex	ports/devel/ocaml-ulex
 ocaml-wdialog	ports/www/ocaml-wdialog
 ocaml-xstr	ports/devel/ocaml-xstr
