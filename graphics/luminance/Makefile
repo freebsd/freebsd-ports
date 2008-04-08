@@ -7,6 +7,7 @@
 
 PORTNAME=	qtpfsgui
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -26,7 +27,7 @@ BUILD_DEPENDS=	qmake-qt4:${PORTSDIR}/devel/qmake4 \
 		${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui
+QT_COMPONENTS=	corelib gui imageformats
 
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 
