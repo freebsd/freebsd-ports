@@ -31,7 +31,12 @@ stop_cmd="cruisecontrolrb_cmd stop"
 restart_cmd="cruisecontrolrb_restart"
 
 cruisecontrolrb_cmd() {
+    if [ ${command} = "start" ]; then
+        command_args="${command_args} -d"
+    fi
+
     ${command} $1 ${command_args}
+
 }
 
 cruisecontrolrb_restart() {

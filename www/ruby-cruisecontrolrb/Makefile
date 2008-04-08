@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	cruisecontrolrb
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	www devel ruby
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
@@ -16,7 +15,7 @@ MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Continuous Integration Server For Rails Applications
 
 RUN_DEPENDS=	rubygem-mongrel>=1.0.1:${PORTSDIR}/www/rubygem-mongrel \
-	svn:${PORTSDIR}/devel/subversion
+		svn:${PORTSDIR}/devel/subversion
 
 USE_RC_SUBR=	cruisecontrolrb
 
