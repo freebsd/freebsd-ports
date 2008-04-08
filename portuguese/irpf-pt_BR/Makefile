@@ -16,6 +16,8 @@ DISTNAME=	irpf2008v1.0
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2007 versao Java
 
+BROKEN=		Checksum mismatch
+
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2008
 
