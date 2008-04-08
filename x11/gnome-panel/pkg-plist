@@ -42,7 +42,6 @@ share/gnome-2.0/ui/GNOME_WorkspaceSwitcherApplet.xml
 %%DATADIR%%/glade/panel-properties-dialog.glade
 %%DATADIR%%/glade/panel-run-dialog.glade
 %%DATADIR%%/glade/panel-test-applets.glade
-%%DATADIR%%/glade/timezone.glade
 %%DATADIR%%/glade/window-list.glade
 %%DATADIR%%/glade/workspace-switcher.glade
 %%DATADIR%%/iso3166.tab
@@ -311,6 +310,7 @@ share/locale/eu/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/fur/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gu/LC_MESSAGES/gnome-panel-2.0.mo
@@ -607,6 +607,8 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

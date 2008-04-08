@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gnome-panel
-PORTVERSION=	2.22.0
-PORTREVISION?=	3
+PORTVERSION=	2.22.1
+PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-panel/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	gweather.0:${PORTSDIR}/net/libgweather \
+LIB_DEPENDS=	gweather.1:${PORTSDIR}/net/libgweather \
     		polkit-gnome.0:${PORTSDIR}/sysutils/policykit-gnome
 
 USE_GETTEXT=	yes
@@ -69,8 +69,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -e \
 		's|"applications.menu"|"gnome-applications.menu"|'
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
-	    	${WRKSRC}/applets/clock/gweather-xml.c
 .if ( ${OSVERSION} > 600000 && ${OSVERSION} < 600006 ) || \
 	( ${OSVERSION} < 503101 )
 .for po in da.po it.po zh_CN.po zh_TW.po

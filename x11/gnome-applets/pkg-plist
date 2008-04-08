@@ -168,6 +168,18 @@ share/gnome/help/accessx-status/es/figures/accessx_sticky-keys.png
 share/gnome/help/accessx-status/es/figures/accessx_sticky-meta-key.png
 share/gnome/help/accessx-status/es/figures/accessx_sticky-shift-key.png
 share/gnome/help/accessx-status/es/figures/accessx_sticky-windows-key.png
+share/gnome/help/accessx-status/fi/accessx-status.xml
+share/gnome/help/accessx-status/fi/figures/accessx-status-applet.png
+share/gnome/help/accessx-status/fi/figures/accessx-status-disabled.png
+share/gnome/help/accessx-status/fi/figures/accessx_bounce-keys.png
+share/gnome/help/accessx-status/fi/figures/accessx_mouse-keys.png
+share/gnome/help/accessx-status/fi/figures/accessx_slow-keys.png
+share/gnome/help/accessx-status/fi/figures/accessx_sticky-altGr-key.png
+share/gnome/help/accessx-status/fi/figures/accessx_sticky-ctrl-key.png
+share/gnome/help/accessx-status/fi/figures/accessx_sticky-keys.png
+share/gnome/help/accessx-status/fi/figures/accessx_sticky-meta-key.png
+share/gnome/help/accessx-status/fi/figures/accessx_sticky-shift-key.png
+share/gnome/help/accessx-status/fi/figures/accessx_sticky-windows-key.png
 share/gnome/help/accessx-status/fr/accessx-status.xml
 share/gnome/help/accessx-status/fr/figures/accessx-status-applet.png
 share/gnome/help/accessx-status/fr/figures/accessx-status-disabled.png
@@ -253,6 +265,12 @@ share/gnome/help/accessx-status/uk/figures/accessx_sticky-windows-key.png
 %%BATTERY%%share/gnome/help/battstat/bg/figures/battstat-credits-hal.png
 %%BATTERY%%share/gnome/help/battstat/bg/figures/battstat-preferences.png
 %%BATTERY%%share/gnome/help/battstat/bg/figures/context-menu.png
+%%BATTERY%%share/gnome/help/battstat/el/battstat.xml
+%%BATTERY%%share/gnome/help/battstat/el/figures/battstat-applet-expanded.png
+%%BATTERY%%share/gnome/help/battstat/el/figures/battstat-applet.png
+%%BATTERY%%share/gnome/help/battstat/el/figures/battstat-credits-hal.png
+%%BATTERY%%share/gnome/help/battstat/el/figures/battstat-preferences.png
+%%BATTERY%%share/gnome/help/battstat/el/figures/context-menu.png
 %%BATTERY%%share/gnome/help/battstat/en_GB/battstat.xml
 %%BATTERY%%share/gnome/help/battstat/en_GB/figures/battstat-applet-expanded.png
 %%BATTERY%%share/gnome/help/battstat/en_GB/figures/battstat-applet.png
@@ -265,6 +283,12 @@ share/gnome/help/accessx-status/uk/figures/accessx_sticky-windows-key.png
 %%BATTERY%%share/gnome/help/battstat/es/figures/battstat-credits-hal.png
 %%BATTERY%%share/gnome/help/battstat/es/figures/battstat-preferences.png
 %%BATTERY%%share/gnome/help/battstat/es/figures/context-menu.png
+%%BATTERY%%share/gnome/help/battstat/fi/battstat.xml
+%%BATTERY%%share/gnome/help/battstat/fi/figures/battstat-applet-expanded.png
+%%BATTERY%%share/gnome/help/battstat/fi/figures/battstat-applet.png
+%%BATTERY%%share/gnome/help/battstat/fi/figures/battstat-credits-hal.png
+%%BATTERY%%share/gnome/help/battstat/fi/figures/battstat-preferences.png
+%%BATTERY%%share/gnome/help/battstat/fi/figures/context-menu.png
 %%BATTERY%%share/gnome/help/battstat/fr/battstat.xml
 %%BATTERY%%share/gnome/help/battstat/fr/figures/battstat-applet-expanded.png
 %%BATTERY%%share/gnome/help/battstat/fr/figures/battstat-applet.png
@@ -333,6 +357,11 @@ share/gnome/help/char-palette/es/figures/charpalette_applet.png
 share/gnome/help/char-palette/es/figures/charpalette_chargroup.png
 share/gnome/help/char-palette/es/figures/charpick-preferences.png
 share/gnome/help/char-palette/es/figures/charpick_characters.png
+share/gnome/help/char-palette/fi/char-palette.xml
+share/gnome/help/char-palette/fi/figures/charpalette_applet.png
+share/gnome/help/char-palette/fi/figures/charpalette_chargroup.png
+share/gnome/help/char-palette/fi/figures/charpick-preferences.png
+share/gnome/help/char-palette/fi/figures/charpick_characters.png
 share/gnome/help/char-palette/fr/char-palette.xml
 share/gnome/help/char-palette/fr/figures/charpalette_applet.png
 share/gnome/help/char-palette/fr/figures/charpalette_chargroup.png
@@ -456,6 +485,16 @@ share/gnome/help/char-palette/uk/figures/charpick_characters.png
 %%CPUFREQ%%share/gnome/help/cpufreq-applet/es/figures/cpufreq-applet-selector-both.png
 %%CPUFREQ%%share/gnome/help/cpufreq-applet/es/figures/cpufreq-applet-selector.png
 %%CPUFREQ%%share/gnome/help/cpufreq-applet/es/figures/cpufreq-applet.png
+%%CPUFREQ%%share/gnome/help/cpufreq-applet/fi/cpufreq-applet.xml
+%%CPUFREQ%%share/gnome/help/cpufreq-applet/fi/figures/cpufreq-100.png
+%%CPUFREQ%%share/gnome/help/cpufreq-applet/fi/figures/cpufreq-25.png
+%%CPUFREQ%%share/gnome/help/cpufreq-applet/fi/figures/cpufreq-50.png
+%%CPUFREQ%%share/gnome/help/cpufreq-applet/fi/figures/cpufreq-75.png
+%%CPUFREQ%%share/gnome/help/cpufreq-applet/fi/figures/cpufreq-applet-preferences-smp.png
+%%CPUFREQ%%share/gnome/help/cpufreq-applet/fi/figures/cpufreq-applet-preferences.png
+%%CPUFREQ%%share/gnome/help/cpufreq-applet/fi/figures/cpufreq-applet-selector-both.png
+%%CPUFREQ%%share/gnome/help/cpufreq-applet/fi/figures/cpufreq-applet-selector.png
+%%CPUFREQ%%share/gnome/help/cpufreq-applet/fi/figures/cpufreq-applet.png
 %%CPUFREQ%%share/gnome/help/cpufreq-applet/fr/cpufreq-applet.xml
 %%CPUFREQ%%share/gnome/help/cpufreq-applet/fr/figures/cpufreq-100.png
 %%CPUFREQ%%share/gnome/help/cpufreq-applet/fr/figures/cpufreq-25.png
@@ -555,6 +594,12 @@ share/gnome/help/drivemount/es/figures/drivemount-applet_example.png
 share/gnome/help/drivemount/es/figures/drivemount-applet_mount.png
 share/gnome/help/drivemount/es/figures/drivemount-applet_open.png
 share/gnome/help/drivemount/es/figures/drivemount-applet_status.png
+share/gnome/help/drivemount/fi/drivemount.xml
+share/gnome/help/drivemount/fi/figures/drivemount-applet_eject.png
+share/gnome/help/drivemount/fi/figures/drivemount-applet_example.png
+share/gnome/help/drivemount/fi/figures/drivemount-applet_mount.png
+share/gnome/help/drivemount/fi/figures/drivemount-applet_open.png
+share/gnome/help/drivemount/fi/figures/drivemount-applet_status.png
 share/gnome/help/drivemount/fr/drivemount.xml
 share/gnome/help/drivemount/fr/figures/drivemount-applet_eject.png
 share/gnome/help/drivemount/fr/figures/drivemount-applet_example.png
@@ -622,6 +667,8 @@ share/gnome/help/geyes/en_GB/figures/geyes_applet.png
 share/gnome/help/geyes/en_GB/geyes.xml
 share/gnome/help/geyes/es/figures/geyes_applet.png
 share/gnome/help/geyes/es/geyes.xml
+share/gnome/help/geyes/fi/figures/geyes_applet.png
+share/gnome/help/geyes/fi/geyes.xml
 share/gnome/help/geyes/fr/figures/geyes_applet.png
 share/gnome/help/geyes/fr/geyes.xml
 share/gnome/help/geyes/it/figures/geyes_applet.png
@@ -642,6 +689,7 @@ share/gnome/help/gswitchit/ca/gswitchit.xml
 share/gnome/help/gswitchit/el/gswitchit.xml
 share/gnome/help/gswitchit/en_GB/gswitchit.xml
 share/gnome/help/gswitchit/es/gswitchit.xml
+share/gnome/help/gswitchit/fi/gswitchit.xml
 share/gnome/help/gswitchit/fr/gswitchit.xml
 share/gnome/help/gswitchit/oc/gswitchit.xml
 share/gnome/help/gswitchit/ru/gswitchit.xml
@@ -978,6 +1026,8 @@ share/gnome/help/trashapplet/C/legal.xml
 share/gnome/help/trashapplet/C/trashapplet.xml
 share/gnome/help/trashapplet/ca/figures/trash-applet.png
 share/gnome/help/trashapplet/ca/trashapplet.xml
+share/gnome/help/trashapplet/da/figures/trash-applet.png
+share/gnome/help/trashapplet/da/trashapplet.xml
 share/gnome/help/trashapplet/de/figures/trash-applet.png
 share/gnome/help/trashapplet/de/trashapplet.xml
 share/gnome/help/trashapplet/en_GB/figures/trash-applet.png
@@ -1128,6 +1178,7 @@ share/omf/accessx-status/accessx-status-bg.omf
 share/omf/accessx-status/accessx-status-ca.omf
 share/omf/accessx-status/accessx-status-en_GB.omf
 share/omf/accessx-status/accessx-status-es.omf
+share/omf/accessx-status/accessx-status-fi.omf
 share/omf/accessx-status/accessx-status-fr.omf
 share/omf/accessx-status/accessx-status-it.omf
 share/omf/accessx-status/accessx-status-nl.omf
@@ -1136,8 +1187,10 @@ share/omf/accessx-status/accessx-status-sv.omf
 share/omf/accessx-status/accessx-status-uk.omf
 %%BATTERY%%share/omf/battstat/battstat-C.omf
 %%BATTERY%%share/omf/battstat/battstat-bg.omf
+%%BATTERY%%share/omf/battstat/battstat-el.omf
 %%BATTERY%%share/omf/battstat/battstat-en_GB.omf
 %%BATTERY%%share/omf/battstat/battstat-es.omf
+%%BATTERY%%share/omf/battstat/battstat-fi.omf
 %%BATTERY%%share/omf/battstat/battstat-fr.omf
 %%BATTERY%%share/omf/battstat/battstat-ko.omf
 %%BATTERY%%share/omf/battstat/battstat-oc.omf
@@ -1150,6 +1203,7 @@ share/omf/char-palette/char-palette-bg.omf
 share/omf/char-palette/char-palette-ca.omf
 share/omf/char-palette/char-palette-en_GB.omf
 share/omf/char-palette/char-palette-es.omf
+share/omf/char-palette/char-palette-fi.omf
 share/omf/char-palette/char-palette-fr.omf
 share/omf/char-palette/char-palette-it.omf
 share/omf/char-palette/char-palette-ko.omf
@@ -1172,6 +1226,7 @@ share/omf/char-palette/char-palette-uk.omf
 %%CPUFREQ%%share/omf/cpufreq-applet/cpufreq-applet-ca.omf
 %%CPUFREQ%%share/omf/cpufreq-applet/cpufreq-applet-en_GB.omf
 %%CPUFREQ%%share/omf/cpufreq-applet/cpufreq-applet-es.omf
+%%CPUFREQ%%share/omf/cpufreq-applet/cpufreq-applet-fi.omf
 %%CPUFREQ%%share/omf/cpufreq-applet/cpufreq-applet-fr.omf
 %%CPUFREQ%%share/omf/cpufreq-applet/cpufreq-applet-nl.omf
 %%CPUFREQ%%share/omf/cpufreq-applet/cpufreq-applet-oc.omf
@@ -1183,6 +1238,7 @@ share/omf/char-palette/char-palette-uk.omf
 share/omf/drivemount/drivemount-C.omf
 share/omf/drivemount/drivemount-en_GB.omf
 share/omf/drivemount/drivemount-es.omf
+share/omf/drivemount/drivemount-fi.omf
 share/omf/drivemount/drivemount-fr.omf
 share/omf/drivemount/drivemount-it.omf
 share/omf/drivemount/drivemount-ko.omf
@@ -1198,6 +1254,7 @@ share/omf/geyes/geyes-ca.omf
 share/omf/geyes/geyes-de.omf
 share/omf/geyes/geyes-en_GB.omf
 share/omf/geyes/geyes-es.omf
+share/omf/geyes/geyes-fi.omf
 share/omf/geyes/geyes-fr.omf
 share/omf/geyes/geyes-it.omf
 share/omf/geyes/geyes-ko.omf
@@ -1210,6 +1267,7 @@ share/omf/gswitchit/gswitchit-ca.omf
 share/omf/gswitchit/gswitchit-el.omf
 share/omf/gswitchit/gswitchit-en_GB.omf
 share/omf/gswitchit/gswitchit-es.omf
+share/omf/gswitchit/gswitchit-fi.omf
 share/omf/gswitchit/gswitchit-fr.omf
 share/omf/gswitchit/gswitchit-oc.omf
 share/omf/gswitchit/gswitchit-ru.omf
@@ -1265,6 +1323,7 @@ share/omf/stickynotes_applet/stickynotes_applet-sv.omf
 share/omf/stickynotes_applet/stickynotes_applet-uk.omf
 share/omf/trashapplet/trashapplet-C.omf
 share/omf/trashapplet/trashapplet-ca.omf
+share/omf/trashapplet/trashapplet-da.omf
 share/omf/trashapplet/trashapplet-de.omf
 share/omf/trashapplet/trashapplet-en_GB.omf
 share/omf/trashapplet/trashapplet-es.omf
@@ -1447,6 +1506,8 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/trashapplet/en_GB
 @dirrm share/gnome/help/trashapplet/de/figures
 @dirrm share/gnome/help/trashapplet/de
+@dirrm share/gnome/help/trashapplet/da/figures
+@dirrm share/gnome/help/trashapplet/da
 @dirrm share/gnome/help/trashapplet/ca/figures
 @dirrm share/gnome/help/trashapplet/ca
 @dirrm share/gnome/help/trashapplet/C/figures
@@ -1557,6 +1618,7 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/gswitchit/ru
 @dirrm share/gnome/help/gswitchit/oc
 @dirrm share/gnome/help/gswitchit/fr
+@dirrm share/gnome/help/gswitchit/fi
 @dirrm share/gnome/help/gswitchit/es
 @dirrm share/gnome/help/gswitchit/en_GB
 @dirrm share/gnome/help/gswitchit/el
@@ -1577,6 +1639,8 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/geyes/it
 @dirrm share/gnome/help/geyes/fr/figures
 @dirrm share/gnome/help/geyes/fr
+@dirrm share/gnome/help/geyes/fi/figures
+@dirrm share/gnome/help/geyes/fi
 @dirrm share/gnome/help/geyes/es/figures
 @dirrm share/gnome/help/geyes/es
 @dirrm share/gnome/help/geyes/en_GB/figures
@@ -1608,6 +1672,8 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/drivemount/it
 @dirrm share/gnome/help/drivemount/fr/figures
 @dirrm share/gnome/help/drivemount/fr
+@dirrm share/gnome/help/drivemount/fi/figures
+@dirrm share/gnome/help/drivemount/fi
 @dirrm share/gnome/help/drivemount/es/figures
 @dirrm share/gnome/help/drivemount/es
 @dirrm share/gnome/help/drivemount/en_GB/figures
@@ -1631,6 +1697,8 @@ share/xmodmap/xmodmap.yu
 %%CPUFREQ%%@dirrm share/gnome/help/cpufreq-applet/nl
 %%CPUFREQ%%@dirrm share/gnome/help/cpufreq-applet/fr/figures
 %%CPUFREQ%%@dirrm share/gnome/help/cpufreq-applet/fr
+%%CPUFREQ%%@dirrm share/gnome/help/cpufreq-applet/fi/figures
+%%CPUFREQ%%@dirrm share/gnome/help/cpufreq-applet/fi
 %%CPUFREQ%%@dirrm share/gnome/help/cpufreq-applet/es/figures
 %%CPUFREQ%%@dirrm share/gnome/help/cpufreq-applet/es
 %%CPUFREQ%%@dirrm share/gnome/help/cpufreq-applet/en_GB/figures
@@ -1677,6 +1745,8 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/char-palette/it
 @dirrm share/gnome/help/char-palette/fr/figures
 @dirrm share/gnome/help/char-palette/fr
+@dirrm share/gnome/help/char-palette/fi/figures
+@dirrm share/gnome/help/char-palette/fi
 @dirrm share/gnome/help/char-palette/es/figures
 @dirrm share/gnome/help/char-palette/es
 @dirrm share/gnome/help/char-palette/en_GB/figures
@@ -1702,10 +1772,14 @@ share/xmodmap/xmodmap.yu
 %%BATTERY%%@dirrm share/gnome/help/battstat/ko
 %%BATTERY%%@dirrm share/gnome/help/battstat/fr/figures
 %%BATTERY%%@dirrm share/gnome/help/battstat/fr
+%%BATTERY%%@dirrm share/gnome/help/battstat/fi/figures
+%%BATTERY%%@dirrm share/gnome/help/battstat/fi
 %%BATTERY%%@dirrm share/gnome/help/battstat/es/figures
 %%BATTERY%%@dirrm share/gnome/help/battstat/es
 %%BATTERY%%@dirrm share/gnome/help/battstat/en_GB/figures
 %%BATTERY%%@dirrm share/gnome/help/battstat/en_GB
+%%BATTERY%%@dirrm share/gnome/help/battstat/el/figures
+%%BATTERY%%@dirrm share/gnome/help/battstat/el
 %%BATTERY%%@dirrm share/gnome/help/battstat/bg/figures
 %%BATTERY%%@dirrm share/gnome/help/battstat/bg
 %%BATTERY%%@dirrm share/gnome/help/battstat/C/figures
@@ -1723,6 +1797,8 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/accessx-status/it
 @dirrm share/gnome/help/accessx-status/fr/figures
 @dirrm share/gnome/help/accessx-status/fr
+@dirrm share/gnome/help/accessx-status/fi/figures
+@dirrm share/gnome/help/accessx-status/fi
 @dirrm share/gnome/help/accessx-status/es/figures
 @dirrm share/gnome/help/accessx-status/es
 @dirrm share/gnome/help/accessx-status/en_GB/figures
