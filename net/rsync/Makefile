@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -53,6 +53,8 @@ USE_ICONV=	yes
 CONFIGUREDCFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CONFIGUREDCFLAGS="${CONFIGUREDCFLAGS}"
+.else
+CONFIGURE_ARGS+=	--disable-iconv
 .endif
 
 .if defined(WITH_FLAGS)
@@ -88,6 +90,11 @@ pre-configure:
 		${WRKSRC}/rsync.h ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${WRKSRC}/rsync.h ${WRKSRC}/zlib/zutil.h
+
+.if defined(WITHOUT_ICONV)
+post-configure:
+	@${REINPLACE_CMD} -e 's|-liconv||' ${WRKSRC}/Makefile
+.endif
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/rsync
