@@ -8,6 +8,7 @@
 
 PORTNAME=	nautilus
 PORTVERSION=	2.22.2
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -35,19 +36,19 @@ CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
 		--enable-static
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
-#OPTIONS=	TRACKER "Enable Tracker Search (sysutils/tracker)" Off
+OPTIONS=	TRACKER "Enable Tracker Search (sysutils/tracker)" Off
 
 GCONF_SCHEMAS=	apps_nautilus_preferences.schemas
 
 .include <bsd.port.pre.mk>
 
-#.if defined(WITH_TRACKER)
+.if defined(WITH_TRACKER)
 #RUN_DEPENDS+=	tracker-applet:${PORTSDIR}/sysutils/tracker-gnome		
-#LIB_DEPENDS+=	trackerclient.0:${PORTSDIR}/sysutils/tracker-client \
-#		tracker-gtk.0:${PORTSDIR}/sysutils/tracker-libtrackergtk
-#.else
+LIB_DEPENDS+=	trackerclient.0:${PORTSDIR}/sysutils/tracker-client \
+		tracker-gtk.0:${PORTSDIR}/sysutils/tracker-libtrackergtk
+.else
 CONFIGURE_ARGS+=--disable-tracker
-#.endif
+.endif
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/nautilus/extensions-2.0
