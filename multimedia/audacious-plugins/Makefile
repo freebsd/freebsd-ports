@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -73,7 +73,7 @@ OPTIONS=	AUDIOCD		"Enable audiocd plugin"			off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_AUDIOCD)
-LIB_DEPENDS+=   cdio.7:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=   cdio.8:${PORTSDIR}/sysutils/libcdio
 CONFIGURE_ARGS+=--enable-cdaudio
 PLIST_SUB+=     AUDIOCDPLUGIN=""
 .else
