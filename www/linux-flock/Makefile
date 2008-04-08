@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flock
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 DISTVERSIONSUFFIX=	.en-US.linux-i686
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/%SUBDIR%/ \
