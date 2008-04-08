@@ -1,0 +1,7 @@
+Fire Eagle is a site that stores information about your location. With your
+permission, other services and devices can either update that information or
+access it.
+
+Net::FireEagle provides access to Yahoo's FireEagle location service.
+
+WWW: http://fireeagle.yahoo.net/
