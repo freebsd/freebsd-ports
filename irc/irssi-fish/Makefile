@@ -11,7 +11,7 @@ CATEGORIES=	irc security
 MASTER_SITES=	http://fish.sekure.us/irssi/
 DISTNAME=	FiSH-irssi.v${DISTVERSION}-source
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An encryption plugin for irssi
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glib-2.0/glib.h:${PORTSDIR}/devel/glib20 \
@@ -30,6 +30,10 @@ IRSSI_WRKSRC!=	cd ${.CURDIR}/../irssi && ${MAKE} -V WRKSRC
 
 .if ${ARCH} == "amd64"
 ALL_TARGET=	amd64
+
+.if ${OSVERSION} >= 700042
+BROKEN=		does not compile
+.endif
 .endif
 
 post-patch:
