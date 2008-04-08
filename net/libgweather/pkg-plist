@@ -1,10 +1,11 @@
 include/libgweather/gweather-gconf.h
 include/libgweather/gweather-prefs.h
+include/libgweather/gweather-xml.h
 include/libgweather/weather.h
 lib/libgweather.a
 lib/libgweather.la
 lib/libgweather.so
-lib/libgweather.so.0
+lib/libgweather.so.1
 libdata/pkgconfig/gweather.pc
 %%DATADIR%%/Locations.xml
 %%DATADIR%%/locations.dtd
