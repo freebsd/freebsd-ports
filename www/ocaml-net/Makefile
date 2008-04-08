@@ -6,79 +6,57 @@
 #
 
 PORTNAME=	net
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocamlnet
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocaml${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	manfred.lotz@yahoo.de
 COMMENT=	OCaml modules for Internet applications
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
-		${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
-RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+RUN_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 
-.if !defined(WITHOUT_NETHTTPD)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/equeue/equeue.a:${PORTSDIR}/devel/ocaml-equeue
-RUN_DEPENDS+=	${LOCALBASE}/lib/ocaml/site-lib/equeue/equeue.a:${PORTSDIR}/devel/ocaml-equeue
-.endif
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+CONFLICTS=	ocaml-equeue-2* ocaml-netclient-0*
 
 USE_GMAKE=	yes
-
+USE_OCAML=	yes
+USE_OCAML_FINDLIB=	yes
 HAS_CONFIGURE=	yes
-# seems required to build www/ocaml-wdialog:
-CONFIGURE_ARGS+=	-enable-compatcgi
 
 ALL_TARGET=	all opt
 
-.if !defined(NOPORTDOCS)
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+PLIST_FILES=	bin/netplex-admin \
+		bin/ocamlrpcgen
 
+DOCSDIR=	${PREFIX}/share/doc/ocaml/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PKGNAMEPREFIX}${PORTNAME}
+SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
+
+.if !defined(NOPORTDOCS)
 PORTDOCS=	*
+PORTEXAMPLES=	*
 .endif
+
+OCAML_PKGDIRS=	netsys netshm equeue shell netstring rpc-generator \
+		rpc pop smtp netclient netcgi1 netcgi2 cgi netplex \
+		netcgi2-plex
 
 post-install:
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/cgi -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/cgi" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ocamlfind remove cgi 2>/dev/null || true" >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/netstring -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/netstring" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ocamlfind remove netstring 2>/dev/null || true" >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/pop -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/pop" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ocamlfind remove pop 2>/dev/null || true" >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/smtp -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/smtp" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ocamlfind remove smtp 2>/dev/null || true" >> ${TMPPLIST}
-.if !defined(WITHOUT_NETHTTPD)
-	@${FIND} ${PREFIX}/lib/ocaml/site-lib/nethttpd -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/nethttpd" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ocamlfind remove nethttpd 2>/dev/null || true" >> ${TMPPLIST}
-.endif
+
+.for pkg in ${OCAMLNET_PACKAGES}
+	@${FIND} ${PREFIX}/lib/ocaml/site-lib/${pkg} -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+.endfor
 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/../doc/ ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/../examples/ ${EXAMPLESDIR}
-	@${CHMOD} -R +r ${EXAMPLESDIR}
-	@${FIND} ${EXAMPLESDIR} -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${MKDIR} ${DOCSDIR}/
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/)
+
+	@${MKDIR} ${EXAMPLESDIR}/
+	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
 .endif
 
 .include <bsd.port.mk>
