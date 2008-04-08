@@ -19,7 +19,6 @@ COMMENT=	A Jabber bot
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/cryptokit.cma:${PORTSDIR}/security/ocaml-cryptokit \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
-		${LOCALBASE}/${OCAML_SITELIBDIR}/netclient/netclient.a:${PORTSDIR}/net/ocaml-netclient \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2 \
 		pcre.0:${PORTSDIR}/devel/pcre
@@ -38,6 +37,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 OPTIONS=	MUC_LOG "with muc_log plugin" on
+
+BROKEN=		don't work with ocaml 3.10
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/${PORTNAME} ${PREFIX}/sbin
