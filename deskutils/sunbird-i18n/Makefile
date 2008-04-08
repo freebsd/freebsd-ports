@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sunbird-i18n
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	deskutils
 MASTER_SITES=	MOZILLA_EXTENDED/calendar/sunbird/releases/${DISTVERSION}/langpacks
 PKGNAMEPREFIX=
@@ -17,14 +17,15 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Localized interface for Sunbird
 
 .ifndef WITHOUT_SWITCHER
-RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
+RUN_DEPENDS+=	xpi-quick-locale-switcher>=1.6.5.1:${PORTSDIR}/www/xpi-quick-locale-switcher
 .endif
 
 NO_BUILD=	yes
 USE_XPI=	*sunbird
 
-SUNBIRD_I18N_ALL=	ca cs da de es-AR es-ES eu fr ga-IE hu it ka lt mk \
-			nb-NO nl pa-IN pl pt-BR pt-PT ru sk sl sv-SE tr zh-CN
+SUNBIRD_I18N_ALL=	ca cs da de es-AR es-ES eu fr ga-IE hu it ja ka ko \
+			lt mk nb-NO nl pl pt-BR pt-PT ru sk sl sv-SE tr uk \
+			zh-CN
 SUNBIRD_I18N?=	all
 
 .if ${SUNBIRD_I18N} == all
@@ -67,6 +68,10 @@ do-install:
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
 		${XARGS} -0L1 ${REINPLACE_CMD} -i '' '/<?xml/,$$!d'
+
+list-langs:
+	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/calendar/sunbird/releases/${PORTVERSION}/langpacks"|\
+		perl -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1 "}'
 
 .include "${.CURDIR}/../../www/xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
