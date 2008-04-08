@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6f
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -202,7 +202,7 @@ CONFIGUE_ARGS+=		--disable-bonjour
 
 .if !defined(WITHOUT_CDROM)
 LIB_DEPENDS+=	vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
-		cdio.7:${PORTSDIR}/sysutils/libcdio
+		cdio.8:${PORTSDIR}/sysutils/libcdio
 CONFIGURE_ARGS+=--enable-vcd \
 		--enable-libcddb \
 		--disable-cddax

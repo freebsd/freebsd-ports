@@ -7,14 +7,14 @@
 
 PORTNAME=	unieject
 DISTVERSION=	5.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF BERLIOS
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Eject(1) replacement
 
-LIB_DEPENDS=	cdio.7:${PORTSDIR}/sysutils/libcdio \
+LIB_DEPENDS=	cdio.8:${PORTSDIR}/sysutils/libcdio \
 		confuse.0:${PORTSDIR}/devel/libconfuse \
 		popt.0:${PORTSDIR}/devel/popt
 
