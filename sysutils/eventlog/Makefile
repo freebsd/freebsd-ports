@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	eventlog
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/2.0/src/
+MASTER_SITES= http://www.balabit.com/downloads/files/syslog-ng/sources/2.0/src/
 
 MAINTAINER=	ivan.lago@ifom-ieo-campus.it
 COMMENT=	Replacement of the simple syslog() API providing structure to messages.
