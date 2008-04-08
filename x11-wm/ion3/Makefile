@@ -6,32 +6,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ion-2
-PORTVERSION=	20040729
-PORTREVISION=	2
+PORTNAME=	ion3
+PORTVERSION=	20080207
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
+DISTNAME=	${PORTNAME:C/([0-9])/-\1/}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	A tiling tabbed window manager
 
-CONFLICTS=	ion-2002* ion-devel-* pwm-*
-
-USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	libtool:15 libltdl:15
-USE_LUA=	5.0
+USE_XORG=	x11 xext
+USE_LUA=	5.1
 USE_GMAKE=	yes
-MAKE_ENV=	DEFINES="${IONDEFINES}"
-GNU_CONFIGURE=	yes
+USE_GETTEXT=yes
+# ion3 clobbers $CFLAGS because it hates puppies
+MAKE_ENV=	PORT_CFLAGS="${CFLAGS}"
 
-.if !defined(WITH_MULTIBYTE)
-IONDEFINES+=	-DCF_NO_MB_SUPPORT
-.endif
-
-MAN1=		ion.1 pwm.1
-DOCSDIR=	share/doc/ion
-
-# NO, I don't want to use configure but ion's author system.mk
-do-configure:
+MANLANG=	"" cs fi
+MAN1=		ion3.1 pwm3.1
 
 .include <bsd.port.mk>
