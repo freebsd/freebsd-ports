@@ -1,42 +1,6 @@
---- configure.orig	Tue Oct 30 21:17:11 2007
-+++ configure	Mon Nov  5 11:01:30 2007
-@@ -3927,7 +3927,7 @@
- fi
- 
- MPI_DEFAULT_COPTS="-O2"
--if test "$compiler_optimizations" == "yes"; then
-+if test "$compiler_optimizations" = "yes"; then
-    echo "$as_me:$LINENO: checking whether $CC accepts default optimizations" >&5
- echo $ECHO_N "checking whether $CC accepts default optimizations... $ECHO_C" >&6
-    rm -f conftest.c
-@@ -5227,7 +5227,7 @@
- 
- MPI_DEFAULT_FOPTS="-O2"
- if test "$enable_f77" = yes ; then
--    if test "$compiler_optimizations" == "yes"; then
-+    if test "$compiler_optimizations" = "yes"; then
-         echo "$as_me:$LINENO: checking whether $F77 accepts default optimizations" >&5
- echo $ECHO_N "checking whether $F77 accepts default optimizations... $ECHO_C" >&6
-             rm -f conftest.f
-@@ -7592,7 +7592,7 @@
- 
- MPI_DEFAULT_F90OPTS="-O2"
- if test "$enable_f90" = yes ; then
--    if test "$compiler_optimizations" == "yes"; then
-+    if test "$compiler_optimizations" = "yes"; then
-         echo "$as_me:$LINENO: checking whether $F90 accepts default optimizations" >&5
- echo $ECHO_N "checking whether $F90 accepts default optimizations... $ECHO_C" >&6
-             rm -f conftest.f
-@@ -10340,7 +10340,7 @@
- 
- MPI_DEFAULT_CXXOPTS="-O2"
- if test "$enable_cxx" = yes; then
--    if test "$compiler_optimizations" == "yes"; then
-+    if test "$compiler_optimizations" = "yes"; then
-         echo "$as_me:$LINENO: checking whether $CXX accepts default optimizations" >&5
- echo $ECHO_N "checking whether $CXX accepts default optimizations... $ECHO_C" >&6
-             rm -f conftest.cpp
-@@ -30355,8 +30355,8 @@
+--- configure.orig	2008-04-05 00:04:44.000000000 +0200
++++ configure	2008-04-07 19:06:49.000000000 +0200
+@@ -31340,8 +31340,8 @@
  rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
  if test "$ac_cv_search_pthread_key_create" = no; then
@@ -47,7 +11,7 @@
      cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -30400,7 +30400,7 @@
+@@ -31385,7 +31385,7 @@
    ac_status=$?
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then

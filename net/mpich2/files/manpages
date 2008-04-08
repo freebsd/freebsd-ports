@@ -325,8 +325,8 @@ MPE_Line_thickness.4 \
 MPE_Log_bare_event.4 \
 MPE_Log_comm_event.4 \
 MPE_Log_comm_receive.4 \
-MPE_Log_event.4 \
 MPE_Log_comm_send.4 \
+MPE_Log_event.4 \
 MPE_Log_get_event_number.4 \
 MPE_Log_get_solo_eventID.4 \
 MPE_Log_get_state_eventIDs.4 \
@@ -342,8 +342,8 @@ MPE_Open_graphics.4 \
 MPE_ReturnTags.4 \
 MPE_Seq_begin.4 \
 MPE_Seq_end.4 \
-MPE_Start_log.4 \
 MPE_Signals_call_debugger.4 \
+MPE_Start_log.4 \
 MPE_Stop_log.4 \
 MPE_TagsEnd.4 \
 MPE_Update.4
