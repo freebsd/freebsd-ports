@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	jcifs
-PORTVERSION=	1.2.18
-PORTEPOCH=	1
+PORTVERSION=	1.2.19
 CATEGORIES=	net java
 MASTER_SITES=	http://jcifs.samba.org/src/
 EXTRACT_SUFX=	.tgz
