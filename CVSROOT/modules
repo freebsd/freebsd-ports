@@ -5075,6 +5075,7 @@ iog		ports/net-mgmt/iog
 iograph		ports/sysutils/iograph
 ion		ports/x11-wm/ion
 ion-2		ports/x11-wm/ion-2
+ion3		ports/x11-wm/ion3
 ioquake3	ports/games/ioquake3
 iourbanterror	ports/games/iourbanterror
 iozone		ports/benchmarks/iozone
