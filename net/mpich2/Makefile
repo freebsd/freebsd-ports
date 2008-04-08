@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	mpich2
-DISTVERSION=	1.0.6p1
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 PORTEPOCH=	2
 CATEGORIES=	net parallel
-MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/	\
-		http://www-unix.mcs.anl.gov/mpi/mpich/downloads/
+MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/
 DIST_SUBDIR=	mpich
 #PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/mpich2-patch/
 #PATCHFILES=
@@ -55,18 +53,19 @@ CONFIGURE_ARGS+=	--disable-graphics
 WITHOUT_JAVA=	yes
 PLIST_SUB+=	X11="@comment "
 .else
-USE_X11=	x11
-PLIST_SUB+=	X11=""
+PLIST_SUB+=	X11=${PLX11}
 .endif
 .if defined(WITHOUT_JAVA)
 CONFIGURE_ARGS+=	--without-java
 PLIST_SUB+=	JAVA="@comment "
+PLX11=		"@comment "
 .else
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 BUILD_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 PLIST_SUB+=	JAVA=""
+PLX11=		""
 .endif
 
 .if defined(WITH_SMPD)
@@ -88,12 +87,16 @@ LIBSSO=		fmpich mpich mpichcxx
 THREAD2FIX=	configure test/mpi/threads/comm/Makefile.in	\
 		test/mpi/threads/pt2pt/Makefile.in
 LOCALBASE2FIX=	src/mpe2/src/slog2sdk/trace_rlog/configure	\
-		src/mpe2/src/slog2sdk/trace_sample/configure
-X11BASE2FIX=	src/mpe2/src/graphics/configure
+		src/mpe2/src/slog2sdk/trace_sample/configure	\
+		src/mpe2/src/graphics/configure
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700000 && defined(PACKAGE_BUILDING)
+WITHOUT_JAVA=	yo	# No package for Java ATM
+.endif
+
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 WITHOUT_JAVA=	yo	# No package for Java ATM
 .endif
 
@@ -125,7 +128,6 @@ pre-everything::
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${THREAD2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${LOCALBASE2FIX:S|^|${WRKSRC}/|}
-	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${X11BASE2FIX:S|^|${WRKSRC}/|}
 
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/confdb/libtool-2.13.m4
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/confdb/libtool.m4
@@ -133,11 +135,6 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/src/mpe2/src/slog2sdk/trace_sample/libtool.m4
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${THREAD2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${LOCALBASE2FIX:S|^|${WRKSRC}/|}
-	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${X11BASE2FIX:S|^|${WRKSRC}/|}
-.for mp in ${MAN4}
-	${MV} ${WRKSRC}/src/mpe2/man/man4/${mp:S/4$/3/}	\
-		${WRKSRC}/src/mpe2/man/man4/${mp}
-.endfor
 
 post-configure:
 	${REINPLACE_CMD} -e 's|$${exec_prefix}|${PREFIX}|g;	\

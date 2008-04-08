@@ -186,6 +186,7 @@ sbin/mpetestexec
 sbin/mpetestexeclog
 sbin/mpetestlink
 sbin/mpeuninstall
+%%JAVA%%share/barrier.rlog
 %%PORTDOCS%%%%DOCSDIR%%/index.htm
 %%PORTDOCS%%%%DOCSDIR%%/install.pdf
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/About24.png
@@ -718,15 +719,14 @@ share/examples_logging/fpilog.f
 share/examples_logging/fpilog_pack.F
 share/examples_logging/iotest.c
 share/examples_logging/log_cost.c
+share/examples_logging/openmp_mpilog.F
 share/examples_logging/openmp_sendrecv.c
 share/examples_logging/pthread_allreduce.c
 share/examples_logging/pthread_sendrecv.c
 share/examples_logging/pthread_sendrecv_user.c
 share/examples_logging/srtest.c
-%%JAVA%%share/logfiles/barrier.rlog
-%%JAVA%%share/logfiles/fpilog.clog
-%%JAVA%%share/logfiles/fpilog.slog2
-%%JAVA%%@dirrm share/logfiles
+%%JAVA%%share/fpilog.clog
+%%JAVA%%share/fpilog.slog2
 @dirrm share/examples_logging
 %%X11%%@dirrm share/examples_graphics
 @dirrm share/examples_collchk
