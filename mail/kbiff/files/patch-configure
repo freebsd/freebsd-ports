@@ -1,0 +1,20 @@
+--- configure.orig	2008-04-08 21:45:31.000000000 +0200
++++ configure	2008-04-08 21:45:50.000000000 +0200
+@@ -25477,7 +25477,7 @@
+   use_ssl=yes
+ fi;
+ 
+-if test "$use_ssl" == "yes"; then
++if test "$use_ssl" = "yes"; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define USE_SSL
+@@ -25494,7 +25494,7 @@
+   use_ssl=yes
+ fi;
+ 
+-if test "$use_ssl" == "yes"; then
++if test "$use_ssl" = "yes"; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define USE_SSL
