@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	linux-kmod-compat
-PORTVERSION=	20070326
+PORTVERSION=	20080408
 CATEGORIES=	devel emulators linux multimedia
 MASTER_SITES=	http://info.iet.unipi.it/~luigi/FreeBSD/
 EXTRACT_SUFX=	.tgz
