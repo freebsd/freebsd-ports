@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_security2
-PORTVERSION=	2.1.6
+PORTVERSION=	2.1.7
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
@@ -15,6 +15,7 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
 
 USE_APACHE=	2.0+
+USE_GNOME=	libxml2
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 MODULENAME=	mod_security2
@@ -51,13 +52,6 @@ PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_40_generic_attacks.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_55_marketing.conf
 
-.endif
-
-.if defined(WITH_LIBXML2)
-AP_EXTRAS+=	-DWITH_LIBXML2
-AP_INC=		${LOCALBASE}/include/libxml2
-AP_LIB=		${LOCALBASE}/lib
-USE_GNOME=	libxml2
 .endif
 
 REINPLACE_ARGS=	-i ""
