@@ -7,7 +7,7 @@
 
 PORTNAME=	asymptote
 PORTVERSION=	1.42
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -51,7 +51,7 @@ ALL_TARGET=	asy
 INSTALL_TARGET=	install-asy
 
 .if defined(WITH_GSL)
-LIB_DEPENDS+=	gsl.10:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.12:${PORTSDIR}/math/gsl
 .endif
 
 # Documentation

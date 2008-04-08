@@ -6,6 +6,7 @@
 
 PORTNAME=	kst
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/scientific
@@ -14,7 +15,7 @@ MAINTAINER=	makc@issp.ac.ru
 COMMENT=	Data viewing program for KDE
 
 LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
-		gsl.10:${PORTSDIR}/math/gsl
+		gsl.12:${PORTSDIR}/math/gsl
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
