@@ -4,6 +4,4 @@ and are meant to present a modern Applications Programming Interface (API)
 for C programmers, while allowing wrappers to be written for very high level
 languages. 
 
-Example programs are available at http://www.silbsd.org/projects/GSL.tar.gz
-
 WWW: http://www.gnu.org/software/gsl
