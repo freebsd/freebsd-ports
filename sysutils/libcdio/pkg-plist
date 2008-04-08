@@ -5,6 +5,7 @@ bin/cd-read
 bin/cdda-player
 bin/iso-info
 bin/iso-read
+bin/mmc-tool
 include/cdio/audio.h
 include/cdio/bytesex.h
 include/cdio/bytesex_asm.h
@@ -31,6 +32,7 @@ include/cdio/types.h
 include/cdio/udf.h
 include/cdio/udf_file.h
 include/cdio/udf_time.h
+include/cdio/utf8.h
 include/cdio/util.h
 include/cdio/version.h
 include/cdio/xa.h
@@ -47,7 +49,7 @@ include/cdio++/track.hpp
 lib/libcdio.a
 lib/libcdio.la
 lib/libcdio.so
-lib/libcdio.so.7
+lib/libcdio.so.8
 lib/libcdio++.a
 lib/libcdio++.la
 lib/libcdio++.so
