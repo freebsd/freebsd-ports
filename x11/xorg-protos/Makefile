@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-protos
 PORTVERSION=	7.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -46,6 +47,7 @@ BUILD_DEPENDS=	${PREFIX}/include/X11/extensions/bigreqstr.h:${PORTSDIR}/x11/bigr
 		${PREFIX}/include/X11/extensions/panoramiXproto.h:${PORTSDIR}/x11/xineramaproto \
 		${PREFIX}/include/X11/DECkeysym.h:${PORTSDIR}/x11/xproto \
 		${PREFIX}/include/X11/PM/PM.h:${PORTSDIR}/x11/xproxymanagementprotocol
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 
