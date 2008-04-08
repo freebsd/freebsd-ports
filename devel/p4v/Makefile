@@ -8,7 +8,8 @@
 PORTNAME=	p4v
 PORTVERSION=	2007.3.149519
 CATEGORIES=	devel
-MASTER_SITES=	http://filehost.perforce.com/perforce/r07.3/bin.freebsd60x86/
+MASTER_SITES=	\
+	http://filehost.perforce.com/perforce/r07.3/bin.freebsd60x86${MACHINE_ARCH:Mamd64:S/^amd/_/}/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
@@ -19,7 +20,7 @@ COMMENT=	Visual client for Perforce SCM
 NO_CDROM=	Binary redistribution restrictions in effect
 RESTRICTED=	${NO_CDROM}
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	amd64 i386
 NO_BUILD=	yes
 USE_LDCONFIG=	yes
 
