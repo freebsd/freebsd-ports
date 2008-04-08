@@ -64,6 +64,9 @@
 %%PYTHON_SITELIBDIR%%/gdata/spreadsheet/service.py
 %%PYTHON_SITELIBDIR%%/gdata/spreadsheet/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/spreadsheet/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/spreadsheet/text_db.py
+%%PYTHON_SITELIBDIR%%/gdata/spreadsheet/text_db.pyc
+%%PYTHON_SITELIBDIR%%/gdata/spreadsheet/text_db.pyo
 %%PYTHON_SITELIBDIR%%/gdata/test_data.py
 %%PYTHON_SITELIBDIR%%/gdata/test_data.pyc
 %%PYTHON_SITELIBDIR%%/gdata/test_data.pyo
