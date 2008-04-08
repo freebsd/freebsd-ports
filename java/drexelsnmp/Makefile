@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drexelsnmp
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	java devel net-mgmt
 MASTER_SITES=	http://gicl.cs.drexel.edu/people/sevy/snmp/
 DISTNAME=	source_${PORTVERSION}
@@ -20,6 +19,8 @@ USE_ZIP=	yes
 
 CLASSDIR=	${PREFIX}/share/java/classes
 NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	share/java/classes/snmp.jar
 
 do-build:
 	${MKDIR} ${WRKSRC}/build_library
