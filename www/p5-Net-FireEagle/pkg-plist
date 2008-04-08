@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+bin/fireeagle
+%%SITE_PERL%%/Net/FireEagle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FireEagle/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FireEagle

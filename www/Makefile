@@ -860,6 +860,7 @@
     SUBDIR += p5-MediaWiki
     SUBDIR += p5-Net-Akismet
     SUBDIR += p5-Net-Amazon-AWIS
+    SUBDIR += p5-Net-FireEagle
     SUBDIR += p5-Net-Flickr-API
     SUBDIR += p5-Net-Flickr-Backup
     SUBDIR += p5-Net-Flickr-RDF
