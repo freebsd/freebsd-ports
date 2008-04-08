@@ -1,13 +1,15 @@
---- docs/reference/Makefile.in.orig	2007-12-21 11:30:30.000000000 +0100
-+++ docs/reference/Makefile.in	2007-12-21 11:55:58.000000000 +0100
-@@ -690,8 +690,8 @@
+--- docs/reference/Makefile.in.orig	2008-04-08 10:08:30.587820059 -0400
++++ docs/reference/Makefile.in	2008-04-08 10:13:22.461209941 -0400
+@@ -639,9 +639,9 @@
  	  done; \
  	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
  	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR) || :; \
--	  which gtkdoc-rebase >/dev/null && \
--	    gtkdoc-rebase --relative --dest-dir=$(DESTDIR) --html-dir=$(DESTDIR)$(TARGET_DIR) ; \
-+#	  which gtkdoc-rebase >/dev/null && \
-+#	    gtkdoc-rebase --relative --dest-dir=$(DESTDIR) --html-dir=$(DESTDIR)$(TARGET_DIR) ; \
+-	  if test `which gtkdoc-rebase` != ""; then \
+-        gtkdoc-rebase --relative --dest-dir=$(DESTDIR) --html-dir=$(DESTDIR)$(TARGET_DIR) ; \
+-	  fi \
++#	  if test `which gtkdoc-rebase` != ""; then \
++#        gtkdoc-rebase --relative --dest-dir=$(DESTDIR) --html-dir=$(DESTDIR)$(TARGET_DIR) ; \
++#	  fi \
  	fi
  
  uninstall-local:
