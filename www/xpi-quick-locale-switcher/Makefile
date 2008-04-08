@@ -6,8 +6,9 @@
 #
 
 PORTNAME=	quick-locale-switcher
-PORTVERSION=	1.6.3.7
-DISTVERSIONSUFFIX=	-fx+mz+tb+sb+nvu+ns+sm+fl
+PORTVERSION=	1.6.5.1
+#DISTVERSIONSUFFIX=	-fx+mz+tb+sb+nvu+ns+sm+fl
+DISTVERSIONSUFFIX=	-
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
