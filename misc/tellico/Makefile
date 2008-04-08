@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tellico
-PORTVERSION=	1.2.14
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/tellico/download/
 
@@ -15,7 +14,9 @@ MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Collection manager for KDE
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
-		yaz.3:${PORTSDIR}/net/yaz
+		poppler-qt:${PORTSDIR}/graphics/poppler-qt \
+		yaz.3:${PORTSDIR}/net/yaz \
+		exempi:${PORTSDIR}/textproc/exempi
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
