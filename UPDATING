@@ -141,7 +141,7 @@ upgrades.
   5. Install emulators/linux_base-fc6
   6  Remount linprocfs (mount /compat/linux/proc)
   7. Add compat.linux.osrelease=2.6.16 to etc/sysctl.conf
-  8. Add OVERRIDE_LINUX_BASE_PORT=f6 to /etc/make.conf
+  8. Add OVERRIDE_LINUX_BASE_PORT=fc6 to /etc/make.conf
 
   Note: These instructions also apply to linux_base-f8, please use the same
   osrelease.
