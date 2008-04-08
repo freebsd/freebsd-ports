@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	noscript
-PORTVERSION=	1.5.6
-#DISTVERSIONSUFFIX=	-fx+mz+sm+fl
+PORTVERSION=	1.5.8
+DISTVERSIONSUFFIX=	-fx+mz+sm
 CATEGORIES=	www
-MASTER_SITES=	http://software.informaction.com/data/releases/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A security-enhancing Java/JS filtering extension
