@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grep
-PORTVERSION=	20070612
+PORTVERSION=	20080406
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	bsd-
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	BSD-licensed version of grep from OpenBSD
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+MANCOMPRESSED=	yes
 MAN1=		grep.1
 MLINKS=		grep.1 egrep.1 \
 		grep.1 fgrep.1 \
