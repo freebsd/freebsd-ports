@@ -7,7 +7,7 @@
 
 PORTNAME=	kbiff
 PORTVERSION=	3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,9 +23,19 @@ CONFIGURE_ARGS=	--disable-fast-perl
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 MAN1=		kbiff.1
 
+OPTIONS=	SSL	"SSL support" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SSL)
+CONFIGURE_ARGS+=--enable-ssl
+.else
+CONFIGURE_ARGS+=--disable-ssl
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
