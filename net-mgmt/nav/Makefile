@@ -81,6 +81,10 @@ PKGDEINSTALL=	${PKGDIR}/pkg-install
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@(${FIND} ${WRKSRC} -name '*.py' -print0 | \
 		${ENV} PYTHON_CMD=${PYTHON_CMD} \
