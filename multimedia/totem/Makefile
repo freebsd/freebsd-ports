@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	2.22.0
-PORTREVISION?=	1
+PORTVERSION=	2.22.1
+PORTREVISION?=	0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,8 +20,10 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 LIB_DEPENDS=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
 		totem-plparser.10:${PORTSDIR}/multimedia/totem-pl-parser
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
+		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
+		${PYTHON_SITELIBDIR}/atom/__init__.py:${PORTSDIR}/devel/py-gdata
 
+USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
@@ -46,11 +48,33 @@ CONFLICTS?=	totem-gstreamer-[0-9]* totem-xine-[0-9]*
 
 OPTIONS=	LIRC "Enable lirc support" off \
 		GALAGO "Enable Galago support" off \
-		GECKO_PLUGINS "Enable install plugins for gecko browser" on
+		GECKO_PLUGINS "Enable install plugins for gecko browser" on \
+		PUBLISH "Enable Publish (network playlist) plugin" off \
+		TRACKER "Enable tracker local search plugin" off
 
-TOTEM_PLUGINS=	screensaver ontop gromit media-player-keys properties sidebar-test skipto
+# check configure script for allowed_plugins="..." for new plugins
+TOTEM_PLUGINS=	thumbnail screensaver ontop gromit media-player-keys \
+		properties skipto youtube
+# Not using:
+# TOTEM_PLUGINS= mythtv bemused
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_PUBLISH)
+LIB_DEPENDS+=	epc-1.0.1:${PORTSDIR}/www/libepc
+PLIST_SUB+=	PUBLISH=""
+TOTEM_PLUGINS:=	${TOTEM_PLUGINS} publish
+.else
+PLIST_SUB+=	PUBLISH="@comment "
+.endif
+
+.if defined(WITH_TRACKER)
+LIB_DEPENDS+=	tracker-gtk.0:${PORTSDIR}/sysutils/tracker-libtrackergtk
+TOTEM_PLUGINS:=	${TOTEM_PLUGINS} tracker
+PLIST_SUB+=	TRACKER=""
+.else
+PLIST_SUB+=	TRACKER="@comment "
+.endif
 
 .if defined(WITH_LIRC)
 LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
@@ -90,7 +114,7 @@ PLIST_SUB+=	GECKO_PLUGINS="@comment "
 
 .if !defined(WITH_TOTEM_XINE) || ${SLAVE_PORT}=="no"
 CONFIGURE_ARGS+=--enable-gstreamer=yes
-USE_GSTREAMER+=	gnomevfs core gconf hal good mpeg2dec ugly
+USE_GSTREAMER+=	core gconf hal good mpeg2dec soup ugly python gio
 WITHOUT_DVDNAV=	yes
 PLIST_SUB+=	GSTREAMER=""
 .else
