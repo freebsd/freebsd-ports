@@ -32,6 +32,12 @@ CONFIGURE_ARGS=	--disable-versioned-doc --enable-pdf
 MAN1=		simulavr.1 simulavr-disp.1
 INFO=		simulavr
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700042
+BROKEN=		Does not compile
+.endif
+
 do-install:
 		${RM} -f ${TMPPLIST}
 		(cd ${BUILD_WRKSRC}/doc/internals_html && \
@@ -45,4 +51,4 @@ do-install:
 		done
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
