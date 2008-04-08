@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	xstrp4
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.7
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ocaml-programming.de/packages/
+MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	stas@FreeBSD.org
@@ -19,6 +19,7 @@ COMMENT=	An OCaml extension to expands brace expansions
 USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
+HAS_CONFIGURE=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 
