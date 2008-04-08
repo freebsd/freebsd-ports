@@ -7,20 +7,25 @@
 #
 
 PORTNAME=	sexplib
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	3.0.0
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.janestcapital.com/ocaml/
 PKGNAMEPREFIX=	ocaml-
+DISTNAME=	${PORTNAME}310-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An OCaml library for working with S-expressions
+
+BUILD_DEPENDS=	${SA_DIR}/type-conv/pa_type_conv.cmi:${PORTSDIR}/devel/ocaml-typeconv
+RUN_DEPENDS=	${SA_DIR}/type-conv/pa_type_conv.cmi:${PORTSDIR}/devel/ocaml-typeconv
 
 USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
+SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 
 .include <bsd.port.pre.mk>
 
