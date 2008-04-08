@@ -13,7 +13,7 @@ CFLAGS+= -DUSB_DEBUG
 
 #--- Here are the driver-specific variables
 
-VERSION    = 01.00.12
+VERSION    = 01.00.20
 
 ###
 # The following flags enable experimental features.
