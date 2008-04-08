@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	beediff
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.beesoft.org/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
