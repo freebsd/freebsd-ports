@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	code2000
-PORTVERSION=	1.16
-PORTREVISION=	2
+PORTVERSION=	1.17
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://code2000.net/
 DISTFILES=	${PORTNAME:U}${EXTRACT_SUFX:U}
@@ -16,7 +15,9 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}_${PORTREVISION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Shareware demo Unicode TrueType font
 
-BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
+BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir	\
+		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 RESTRICTED=	Only unmodified original package can be distributed
 
@@ -31,9 +32,10 @@ SUB_LIST=	FONTSDIR=${FONTSDIR}
 
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-TTFONTSDIR?=	${X11BASE}/lib/X11/fonts/TrueType
 
-TTMKFDIR_CMD?=	${X11BASE}/bin/ttmkfdir
+MKFONTSCL_CMD=	${X11BASE}/bin/mkfontscale
+MKFONTDIR_CMD=	${X11BASE}/bin/mkfontdir
+FCCACHE_CMD=	${X11BASE}/bin/fc-cache -f -v
 
 post-extract: move-fonts rename-license
 
@@ -44,24 +46,17 @@ move-fonts:
 rename-license:
 	${MV} ${WRKDIR}/CODE2000.HTM ${WRKSRC}/${FONTNAME}.html
 
-do-build: make-fonts.scale make-fonts.dir
-
-make-fonts.scale:
-	cd ${WRKSRC} && ${TTMKFDIR_CMD} -c -f JJK -d .
-	${CAT} -n ${WRKSRC}/fonts.scale | ${SED} -e ' \
-		s,^     1,100000,; \
-		s,JJK,${FONTNAME},; \
-	' | ${SORT} -r | ${CUT} -c 8- > ${WRKSRC}/fonts.scale.new
-	${MV} ${WRKSRC}/fonts.scale.new ${WRKSRC}/fonts.scale
-
-make-fonts.dir:
-	${CP} ${WRKSRC}/fonts.scale ${WRKSRC}/fonts.dir
+do-build:
+	cd ${WRKSRC} &&	${MKFONTSCL_CMD}
+	cd ${WRKSRC} &&	${MKFONTDIR_CMD}
 
 do-install:
 	${MKDIR} ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/* ${FONTSDIR}
 
 post-install:
+	@${ECHO_MSG} "===> Running fc-cache"
+	-${FCCACHE_CMD} ${FONTSDIR}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
