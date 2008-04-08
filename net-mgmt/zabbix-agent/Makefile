@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-agent
 
-MAINTAINER=	sq@tvfaq.ru
+MAINTAINER=	d.lohansky@zsupport.ru
 COMMENT=	Application and network monitoring solution
 
 USE_GMAKE=	yes
