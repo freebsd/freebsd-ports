@@ -283,6 +283,7 @@ share/gnome/help/dasher/sv/figures/prefs5.png
 share/icons/hicolor/48x48/apps/dasher.png
 share/icons/hicolor/scalable/apps/dasher.svg
 share/locale/ar/LC_MESSAGES/dasher.mo
+share/locale/as/LC_MESSAGES/dasher.mo
 share/locale/az/LC_MESSAGES/dasher.mo
 share/locale/be/LC_MESSAGES/dasher.mo
 share/locale/be@latin/LC_MESSAGES/dasher.mo
@@ -316,6 +317,7 @@ share/locale/id/LC_MESSAGES/dasher.mo
 share/locale/it/LC_MESSAGES/dasher.mo
 share/locale/ja/LC_MESSAGES/dasher.mo
 share/locale/ka/LC_MESSAGES/dasher.mo
+share/locale/kn/LC_MESSAGES/dasher.mo
 share/locale/ko/LC_MESSAGES/dasher.mo
 share/locale/ku/LC_MESSAGES/dasher.mo
 share/locale/ky/LC_MESSAGES/dasher.mo
@@ -406,3 +408,5 @@ share/omf/dasher/dasher-sv.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
