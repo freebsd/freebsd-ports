@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	Apache-Test
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Apache
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Test.pm wrapper with helpers for testing Apache
 
+## XXX: Need to fix this, www/mod_perl2 currently @2.0.3 contains A-T 1.29,
+## XXX: but
+## XXX: A-T has released 1.30
 .if defined(WITH_MODPERL2)
 IGNORE=		is already included in mod_perl2
-.else
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
-BUILD_DEPENDS=	${RUN_DEPENDS}
 .endif
+
+USE_APACHE=1.3+
 
 PERL_CONFIGURE=	yes
 
@@ -31,20 +31,4 @@ MAN3=		Apache::Test.3 Apache::TestConfig.3 Apache::TestConfigData.3 \
 		Apache::TestRunPerl.3 Apache::TestSmoke.3 Apache::TestTrace.3 \
 		Apache::TestUtil.3 Bundle::ApacheTest.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-EXTRA_PATCHES=	${PATCHDIR}/500503-Makefile.PL
-.endif
-
-post-patch:
-	@${PERL} -pi.bak -e 's/^/#/ if $$.==26;' ${WRKSRC}/Makefile.PL
-	@${PERL} -pi -e '$$_="" if $$.==11;' ${WRKSRC}/lib/Apache/Test5005compat.pm
-.if ${PERL_LEVEL} < 500800
-	@${PERL} -pi.bak -e 's/PERLRUN/PERL/;' ${WRKSRC}/install-pl
-.endif
-
-post-configure:
-	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

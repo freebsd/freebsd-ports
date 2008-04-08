@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080408:
+  AFFECTS: users of www/p5-Apache-Test
+  AUTHOR: pgollucci@p6m7g8.com
+
+  www/p5-Apache-Test doesn't actually need www/mod_perl{1,2}. If you would
+  like to test a mod_perl, than please install www/mod_perl2 or www/mod_perl
+  as well. The ports infra structure doesn't support this(yet) but you can
+  use this to test both www/apache13, www/apache20 and/or www/apache22
+  without chaining www/p5-Apache-Test.
+
 20080405:
   AFFECTS: users of sysutils/tracker
   AUTHOR: ahze@FreeBSD.org
