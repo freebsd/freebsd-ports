@@ -75,7 +75,6 @@
     SUBDIR += icewm
     SUBDIR += ion
     SUBDIR += ion-2
-    SUBDIR += ion3
     SUBDIR += jewel
     SUBDIR += jwm
     SUBDIR += kahakai
