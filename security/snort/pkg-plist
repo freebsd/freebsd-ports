@@ -6,15 +6,9 @@ etc/snort/classification.config-sample
 @unexec if cmp  -s %D/etc/snort/gen-msg.map-sample %D/etc/snort/gen-msg.map; then rm -f %D/etc/snort/gen-msg.map; fi
 etc/snort/gen-msg.map-sample
 @exec if [ ! -f %D/etc/snort/gen-msg.map ] ; then cp -p %D/%F %B/gen-msg.map; fi
-@unexec if cmp  -s %D/etc/snort/generators-sample %D/etc/snort/generators; then rm -f %D/etc/snort/generators; fi
-etc/snort/generators-sample
-@exec if [ ! -f %D/etc/snort/generators ] ; then cp -p %D/%F %B/generators; fi
 @unexec if cmp  -s %D/etc/snort/reference.config-sample %D/etc/snort/reference.config; then rm -f %D/etc/snort/reference.config; fi
 etc/snort/reference.config-sample
 @exec if [ ! -f %D/etc/snort/reference.config ] ; then cp -p %D/%F %B/reference.config; fi
-@unexec if cmp -s %D/etc/snort/sid-sample %D/etc/snort/sid; then rm -f %D/etc/snort/sid; fi
-etc/snort/sid-sample
-@exec if [ ! -f %D/etc/snort/sid ] ; then cp -p %D/%F %B/sid; fi
 @unexec if cmp  -s %D/etc/snort/sid-msg.map-sample %D/etc/snort/sid-msg.map; then rm -f %D/etc/snort/sid-msg.map; fi
 etc/snort/sid-msg.map-sample
 @exec if [ ! -f %D/etc/snort/sid-msg.map ] ; then cp -p %D/%F %B/sid-msg.map; fi
@@ -30,23 +24,23 @@ etc/snort/unicode.map-sample
 @dirrmtry etc/snort/rules
 @dirrmtry etc/snort
 %%DYNAMIC%%src/snort_dynamicsrc/bitop.h
+%%DYNAMIC%%src/snort_dynamicsrc/debug.h
+%%DYNAMIC%%src/snort_dynamicsrc/pcap_pkthdr32.h
+%%DYNAMIC%%src/snort_dynamicsrc/preprocids.h
+%%DYNAMIC%%src/snort_dynamicsrc/profiler.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_common.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_meta.h
-%%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preprocessor.h
-%%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preproc_lib.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preproc_lib.c
+%%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preproc_lib.h
+%%DYNAMIC%%src/snort_dynamicsrc/sf_dynamic_preprocessor.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_snort_packet.h
 %%DYNAMIC%%src/snort_dynamicsrc/sf_snort_plugin_api.h
 %%DYNAMIC%%src/snort_dynamicsrc/sfghash.h
 %%DYNAMIC%%src/snort_dynamicsrc/sfhashfcn.h
-%%DYNAMIC%%src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.h
 %%DYNAMIC%%src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.c
-%%DYNAMIC%%src/snort_dynamicsrc/snort_packet_header.h
+%%DYNAMIC%%src/snort_dynamicsrc/sfsnort_dynamic_detection_lib.h
 %%DYNAMIC%%src/snort_dynamicsrc/str_search.h
 %%DYNAMIC%%src/snort_dynamicsrc/stream_api.h
-%%DYNAMIC%%src/snort_dynamicsrc/debug.h
-%%DYNAMIC%%src/snort_dynamicsrc/profiler.h
-%%DYNAMIC%%src/snort_dynamicsrc/preprocids.h
 %%DYNAMIC%%@dirrmtry src/snort_dynamicsrc
 %%DYNAMIC%%@dirrmtry src
 %%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.so
@@ -54,26 +48,35 @@ etc/snort/unicode.map-sample
 %%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.la
 %%DYNAMIC%%lib/snort/dynamicengine/libsf_engine.a
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicengine
+%%DYNAMIC%%lib/snort/dynamicrules/lib_sfdynamic_example_rule.so
+%%DYNAMIC%%lib/snort/dynamicrules/lib_sfdynamic_example_rule.so.0
+%%DYNAMIC%%lib/snort/dynamicrules/lib_sfdynamic_example_rule.la
+%%DYNAMIC%%lib/snort/dynamicrules/lib_sfdynamic_example_rule.a
+%%DYNAMIC%%@dirrmtry lib/snort/dynamicrules
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/lib_sfdynamic_preprocessor_example.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/lib_sfdynamic_preprocessor_example.la
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/lib_sfdynamic_preprocessor_example.so
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/lib_sfdynamic_preprocessor_example.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.so.0
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.la
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dcerpc_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.so.0
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.la
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_dns_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.so.0
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.la
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ftptelnet_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.so.0
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.la
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_smtp_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.so.0
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.la
-%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.a
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicpreprocessor
 %%DYNAMIC%%@dirrmtry lib/snort
 %%EXAMPLESDIR%%/classification.config-sample
@@ -83,10 +86,8 @@ etc/snort/unicode.map-sample
 %%EXAMPLESDIR%%/create_oracle.sql
 %%EXAMPLESDIR%%/create_postgresql
 %%EXAMPLESDIR%%/gen-msg.map-sample
-%%EXAMPLESDIR%%/generators-sample
 %%EXAMPLESDIR%%/reference.config-sample
 %%EXAMPLESDIR%%/sid-msg.map-sample
-%%EXAMPLESDIR%%/sid-sample
 %%EXAMPLESDIR%%/snort.conf-sample
 %%EXAMPLESDIR%%/threshold.conf-sample
 %%EXAMPLESDIR%%/unicode.map-sample
@@ -94,6 +95,9 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.ARUBA
 %%PORTDOCS%%%%DOCSDIR%%/README.FLEXRESP
@@ -109,23 +113,31 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.csv
 %%PORTDOCS%%%%DOCSDIR%%/README.database
 %%PORTDOCS%%%%DOCSDIR%%/README.dcerpc
+%%PORTDOCS%%%%DOCSDIR%%/README.decode
 %%PORTDOCS%%%%DOCSDIR%%/README.dns
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
 %%PORTDOCS%%%%DOCSDIR%%/README.flow
-%%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.flow-portscan
+%%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.frag3
 %%PORTDOCS%%%%DOCSDIR%%/README.ftptelnet
 %%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
+%%PORTDOCS%%%%DOCSDIR%%/README.ipv6
+%%PORTDOCS%%%%DOCSDIR%%/README.ppm
 %%PORTDOCS%%%%DOCSDIR%%/README.sfportscan
 %%PORTDOCS%%%%DOCSDIR%%/README.ssh
 %%PORTDOCS%%%%DOCSDIR%%/README.stream4
 %%PORTDOCS%%%%DOCSDIR%%/README.stream5
+%%PORTDOCS%%%%DOCSDIR%%/README.tag
 %%PORTDOCS%%%%DOCSDIR%%/README.thresholding
+%%PORTDOCS%%%%DOCSDIR%%/README.variables
 %%PORTDOCS%%%%DOCSDIR%%/README.wireless
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/USAGE
+%%PORTDOCS%%%%DOCSDIR%%/WISHLIST
 %%PORTDOCS%%%%DOCSDIR%%/faq.pdf
+%%PORTDOCS%%%%DOCSDIR%%/generators
 %%PORTDOCS%%%%DOCSDIR%%/snort_manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/snort_schema_v106.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

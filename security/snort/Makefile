@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.7.0.1
-PORTREVISION=	1
+PORTVERSION=	2.8.0.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
@@ -16,8 +15,7 @@ COMMENT=	Lightweight network intrusion detection system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-CONFLICTS?=	snort-1.* snort-2.0.* snort-2.1.* snort-2.2.* snort-2.3.* \
-		snort-2.4.*
+CONFLICTS?=	snort-1.* snort-2.[0-7].*
 
 OPTIONS=	DYNAMIC "Enable dynamic plugin support" on \
 		FLEXRESP "Flexible response to events" off \
@@ -34,8 +32,8 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFIG_DIR?=	${PREFIX}/etc/snort
-CONFIG_FILES=	classification.config gen-msg.map generators reference.config \
-		sid sid-msg.map snort.conf threshold.conf unicode.map
+CONFIG_FILES=	classification.config gen-msg.map reference.config \
+		sid-msg.map snort.conf threshold.conf unicode.map
 RULES_DIR=	${PREFIX}/etc/snort/rules
 LOGS_DIR=	/var/log/snort
 
