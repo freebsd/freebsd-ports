@@ -1,18 +1,21 @@
 A collection of modules for the Objective Caml language which focus
 on application-level Internet protocols and conventions.
 
-The current distribution contains:
+Ocamlnet consists of a number of libraries:
 
-- a mature implementation of the CGI protocol
-
-- an implementation of the JSERV protocol (AJP-1.2)
-
-- an experimental POP3 client
-
-- a library of string processing functions related to Internet
-  protocols
+    * netstring is about processing strings that occur in network context
+    * netcgi1 and netcgi2 focus on portable web applications
+    * nethttpd is a web server component (HTTP server implementation)
+    * netplex is a generic server framework
+    * rpc implements OncRPC
+    * netclient implements clients for HTTP, FTP, and Telnet
+    * equeue is an event queue used for many protocol implementations
+    * shell is about calling external commands
+    * netshm provides shared memory for IPC purposes
+    * netsys contains bindings for system functions
+    * smtp and pop are two further client implementations
 
 WWW: http://sourceforge.net/projects/ocamlnet
 
-- Stephane Legrand
-  <stephane@freebsd.org>
+- Manfred  Lotz
+  <manfred.lotz@yahoo.de>
