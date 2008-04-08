@@ -7,7 +7,7 @@
 
 PORTNAME=	adun
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology gnustep
 MASTER_SITES=	http://download.gna.org/adun/
 DISTNAME=	Adun${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	Adun${PORTVERSION}
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	Molecular Simulator for GNUstep
 
-LIB_DEPENDS+=	gsl.10:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.12:${PORTSDIR}/math/gsl
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes

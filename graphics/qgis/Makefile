@@ -7,7 +7,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	0.7.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics geography
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ COMMENT=	Geographical Information System (GIS) data viewer
 
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		proj:${PORTSDIR}/graphics/proj \
-		gsl.10:${PORTSDIR}/math/gsl \
+		gsl.12:${PORTSDIR}/math/gsl \
 		gdal:${PORTSDIR}/graphics/gdal
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 

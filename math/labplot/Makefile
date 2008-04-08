@@ -7,7 +7,7 @@
 
 PORTNAME=	LabPlot
 PORTVERSION=	1.5.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=labplot
@@ -18,7 +18,7 @@ COMMENT=	LabPlot : Data analysis and visualisation
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		Magick.10:${PORTSDIR}/graphics/ImageMagick \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		gsl.10:${PORTSDIR}/math/gsl \
+		gsl.12:${PORTSDIR}/math/gsl \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		fftw3.4:${PORTSDIR}/math/fftw3 \
 		netcdf:${PORTSDIR}/science/netcdf \
