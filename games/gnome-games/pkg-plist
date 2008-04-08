@@ -755,6 +755,11 @@ share/gnome/help/gnect/fr/figures/mainwindow.png
 share/gnome/help/gnect/fr/figures/tables.png
 share/gnome/help/gnect/fr/figures/tileset.png
 share/gnome/help/gnect/fr/gnect.xml
+share/gnome/help/gnect/it/figures/connect.png
+share/gnome/help/gnect/it/figures/mainwindow.png
+share/gnome/help/gnect/it/figures/tables.png
+share/gnome/help/gnect/it/figures/tileset.png
+share/gnome/help/gnect/it/gnect.xml
 share/gnome/help/gnect/oc/figures/connect.png
 share/gnome/help/gnect/oc/figures/mainwindow.png
 share/gnome/help/gnect/oc/figures/tables.png
@@ -899,6 +904,7 @@ share/gnome/help/gnometris/ca/gnometris.xml
 share/gnome/help/gnometris/el/gnometris.xml
 share/gnome/help/gnometris/es/gnometris.xml
 share/gnome/help/gnometris/fr/gnometris.xml
+share/gnome/help/gnometris/it/gnometris.xml
 share/gnome/help/gnometris/oc/gnometris.xml
 share/gnome/help/gnometris/sv/gnometris.xml
 share/gnome/help/gnomine/C/figures/easy-hints-1.png
@@ -1426,6 +1432,7 @@ share/omf/gnect/gnect-ca.omf
 share/omf/gnect/gnect-en_GB.omf
 share/omf/gnect/gnect-es.omf
 share/omf/gnect/gnect-fr.omf
+share/omf/gnect/gnect-it.omf
 share/omf/gnect/gnect-oc.omf
 share/omf/gnect/gnect-sv.omf
 share/omf/gnibbles/gnibbles-C.omf
@@ -1457,6 +1464,7 @@ share/omf/gnometris/gnometris-ca.omf
 share/omf/gnometris/gnometris-el.omf
 share/omf/gnometris/gnometris-es.omf
 share/omf/gnometris/gnometris-fr.omf
+share/omf/gnometris/gnometris-it.omf
 share/omf/gnometris/gnometris-oc.omf
 share/omf/gnometris/gnometris-sv.omf
 share/omf/gnomine/gnomine-C.omf
@@ -1739,6 +1747,7 @@ share/pixmaps/mahjongg/smooth.png
 @dirrm share/gnome/help/gnomine
 @dirrm share/gnome/help/gnometris/sv
 @dirrm share/gnome/help/gnometris/oc
+@dirrm share/gnome/help/gnometris/it
 @dirrm share/gnome/help/gnometris/fr
 @dirrm share/gnome/help/gnometris/es
 @dirrm share/gnome/help/gnometris/el
@@ -1797,6 +1806,8 @@ share/pixmaps/mahjongg/smooth.png
 @dirrm share/gnome/help/gnect/sv
 @dirrm share/gnome/help/gnect/oc/figures
 @dirrm share/gnome/help/gnect/oc
+@dirrm share/gnome/help/gnect/it/figures
+@dirrm share/gnome/help/gnect/it
 @dirrm share/gnome/help/gnect/fr/figures
 @dirrm share/gnome/help/gnect/fr
 @dirrm share/gnome/help/gnect/es/figures
