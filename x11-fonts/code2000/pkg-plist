@@ -3,5 +3,7 @@
 %%FONTSDIR%%/code2000.ttf
 %%FONTSDIR%%/fonts.dir
 %%FONTSDIR%%/fonts.scale
+@exec %%X11BASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || true
 @unexec rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || true
 @dirrm %%FONTSDIR%%
+@unexec %%X11BASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || true
