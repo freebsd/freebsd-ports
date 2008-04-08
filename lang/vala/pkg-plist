@@ -84,11 +84,11 @@ include/vala-1.0/gobject/valaclassregisterfunction.h
 include/vala-1.0/gobject/valadbusbindingprovider.h
 include/vala-1.0/gobject/valadbusmethod.h
 include/vala-1.0/gobject/valadbussignal.h
+include/vala-1.0/gobject/valagidlwriter.h
 include/vala-1.0/gobject/valainterfaceregisterfunction.h
 include/vala-1.0/gobject/valatyperegisterfunction.h
 include/vala-1.0/vala/vala.h
 include/vala-1.0/vala/valaaddressofexpression.h
-include/vala-1.0/vala/valaarray.h
 include/vala-1.0/vala/valaarraytype.h
 include/vala-1.0/vala/valaarraycreationexpression.h
 include/vala-1.0/vala/valaarraylengthfield.h
@@ -152,7 +152,6 @@ include/vala-1.0/vala/valainvalidtype.h
 include/vala-1.0/vala/valainvocationexpression.h
 include/vala-1.0/vala/valalambdaexpression.h
 include/vala-1.0/vala/valaliteral.h
-include/vala-1.0/vala/valaliteralexpression.h
 include/vala-1.0/vala/valalocalvariabledeclaration.h
 include/vala-1.0/vala/valalockable.h
 include/vala-1.0/vala/valalockstatement.h
@@ -201,6 +200,7 @@ include/vala-1.0/vala/valatrystatement.h
 include/vala-1.0/vala/valatypecheck.h
 include/vala-1.0/vala/valatypeofexpression.h
 include/vala-1.0/vala/valatypeparameter.h
+include/vala-1.0/vala/valatypeparametertype.h
 include/vala-1.0/vala/valatypesymbol.h
 include/vala-1.0/vala/valaunaryexpression.h
 include/vala-1.0/vala/valaunresolvedsymbol.h
@@ -247,6 +247,7 @@ share/devhelp/books/vala/vala.devhelp2
 %%DATADIR%%/vapi/glib-2.0.vapi
 %%DATADIR%%/vapi/gnome-desktop-2.0.deps
 %%DATADIR%%/vapi/gnome-desktop-2.0.vapi
+%%DATADIR%%/vapi/gnome-keyring-1.vapi
 %%DATADIR%%/vapi/gnome-vfs-2.0.vapi
 %%DATADIR%%/vapi/goocanvas.deps
 %%DATADIR%%/vapi/goocanvas.vapi
@@ -297,6 +298,8 @@ share/devhelp/books/vala/vala.devhelp2
 %%DATADIR%%/vapi/hildon-fm-2.vapi
 %%DATADIR%%/vapi/json-glib-1.0.vapi
 %%DATADIR%%/vapi/libbonoboui-2.0.vapi
+%%DATADIR%%/vapi/libftdi.deps
+%%DATADIR%%/vapi/libftdi.vapi
 %%DATADIR%%/vapi/libglade-2.0.deps
 %%DATADIR%%/vapi/libglade-2.0.vapi
 %%DATADIR%%/vapi/libgnome-2.0.vapi
@@ -321,6 +324,11 @@ share/devhelp/books/vala/vala.devhelp2
 %%DATADIR%%/vapi/pangocairo.vapi
 %%DATADIR%%/vapi/poppler-glib.deps
 %%DATADIR%%/vapi/poppler-glib.vapi
+%%DATADIR%%/vapi/sdl-gfx.vapi
+%%DATADIR%%/vapi/sdl-image.vapi
+%%DATADIR%%/vapi/sdl-mixer.vapi
+%%DATADIR%%/vapi/sdl-ttf.vapi
+%%DATADIR%%/vapi/sdl.vapi
 %%DATADIR%%/vapi/sqlite3.vapi
 %%DATADIR%%/vapi/taglib_c.vapi
 %%DATADIR%%/vapi/vala-1.0.vapi
