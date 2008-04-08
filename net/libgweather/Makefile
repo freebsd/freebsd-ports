@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libgweather
-PORTVERSION=	2.22.0
+PORTVERSION=	2.22.1.1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
@@ -17,9 +17,9 @@ COMMENT=	Library to accessing online weather informations
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gnomevfs2
+USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gnomevfs2 ltverhack
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
