@@ -140,7 +140,7 @@ do-install:
 		"! -name guiserver.lsp ! -name newlisp-edit.lsp")
 	${INSTALL_DATA} ${WRKSRC}/guiserver/guiserver.jar ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/guiserver/guiserver.lsp ${DATADIR}/
-	${INSTALL_PROGRAM} ${WRKSRC}/guiserver/newlisp-edit.lsp \
+	${INSTALL_SCRIPT} ${WRKSRC}/guiserver/newlisp-edit.lsp \
 		${PREFIX}/bin/newlisp-edit
 .endif
 
