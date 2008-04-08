@@ -14,13 +14,15 @@ share/penguintv/pixmaps/ev_online.png
 share/penguintv/pixmaps/throbber.gif
 share/pixmaps/penguintvicon.png
 
-%%PYTHON_SITELIBDIR%%/PenguinTV-3.4-py2.5.egg-info
+%%PYTHON_SITELIBDIR%%/PenguinTV-3.60-py2.5.egg-info
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedDialog.py
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedDialog.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedUtils.py
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedUtils.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/AddSearchTagDialog.py
 %%PYTHON_SITELIBDIR%%/penguintv/AddSearchTagDialog.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/ArticleSync.py
+%%PYTHON_SITELIBDIR%%/penguintv/ArticleSync.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/BTDownloader.py
 %%PYTHON_SITELIBDIR%%/penguintv/BTDownloader.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/DownloadView.py
@@ -45,6 +47,8 @@ share/pixmaps/penguintvicon.png
 %%PYTHON_SITELIBDIR%%/penguintv/FeedPropertiesDialog.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/FilterSelectorDialog.py
 %%PYTHON_SITELIBDIR%%/penguintv/FilterSelectorDialog.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/FtpSyncClient.py
+%%PYTHON_SITELIBDIR%%/penguintv/FtpSyncClient.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/GStreamerPlayer.py
 %%PYTHON_SITELIBDIR%%/penguintv/GStreamerPlayer.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/HTTPDownloader.py
@@ -69,12 +73,18 @@ share/pixmaps/penguintvicon.png
 %%PYTHON_SITELIBDIR%%/penguintv/PlanetView.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/Player.py
 %%PYTHON_SITELIBDIR%%/penguintv/Player.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/Poller.py
+%%PYTHON_SITELIBDIR%%/penguintv/Poller.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/PreferencesDialog.py
 %%PYTHON_SITELIBDIR%%/penguintv/PreferencesDialog.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/PtvTrayIcon.py
 %%PYTHON_SITELIBDIR%%/penguintv/PtvTrayIcon.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/S3SyncClient.py
+%%PYTHON_SITELIBDIR%%/penguintv/S3SyncClient.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/SimpleImageCache.py
 %%PYTHON_SITELIBDIR%%/penguintv/SimpleImageCache.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/SqliteSyncClient.py
+%%PYTHON_SITELIBDIR%%/penguintv/SqliteSyncClient.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/SynchronizeDialog.py
 %%PYTHON_SITELIBDIR%%/penguintv/SynchronizeDialog.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/TagEditorNG.py
@@ -91,6 +101,10 @@ share/pixmaps/penguintvicon.png
 %%PYTHON_SITELIBDIR%%/penguintv/ajax/MyTCPServer.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/ajax/__init__.py
 %%PYTHON_SITELIBDIR%%/penguintv/ajax/__init__.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/amazon/S3.py
+%%PYTHON_SITELIBDIR%%/penguintv/amazon/S3.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/amazon/__init__.py
+%%PYTHON_SITELIBDIR%%/penguintv/amazon/__init__.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/feedparser.py
 %%PYTHON_SITELIBDIR%%/penguintv/feedparser.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/itunes.py
@@ -174,6 +188,7 @@ share/pixmaps/penguintvicon.png
 
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/ajax
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/ptvbittorrent
+@dirrm %%PYTHON_SITELIBDIR%%/penguintv/amazon
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/trayicon
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv
 @dirrm share/penguintv/pixmaps
