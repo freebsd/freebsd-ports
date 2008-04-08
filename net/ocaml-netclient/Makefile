@@ -34,6 +34,10 @@ SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 PORTDOCS=	*
 .endif
 
+DEPRECATED=	is part of ocaml-net
+EXPIRATION_DATE=	2008-04-22
+BROKEN=		conflicts with dependency
+
 .include <bsd.port.pre.mk>
 
 post-extract:
