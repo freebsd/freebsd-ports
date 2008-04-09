@@ -82,15 +82,6 @@
      compression_level=*(lev-1)-'0';
      doneTmpFile(gzip_temp);
    } else if (file2.type==BZIP2) {
-@@ -315,7 +325,7 @@
-   }
-   }
-   switch (patch_compression_type) {
--    case GZIP: deflate("gzip", finalName, patchfname, patch_compression, false); break;
-+    case GZIP:         deflate("gzip", finalName, patchfname, patch_compression, false); break;
-     case BZIP2: deflate("bzip2", finalName, patchfname, patch_compression, false); break;
-     case UNKNOWN_FMT: cat(finalName, patchfname, false); break;
-   }
 @@ -365,7 +375,10 @@
                             bzip2_name[i]);
        } else fprintf(stderr, "Error: Deltup cannot find the proper bzip2 to rebuild the package\n");
