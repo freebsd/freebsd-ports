@@ -101,6 +101,9 @@ post-patch:
 		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
 		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g' ${WRKSRC}/${i}
 .endfor
+.for i in include/schily.h libschily/fexec.c
+	@${REINPLACE_CMD} -e 's|fexecve|js_fexecve|g' ${WRKSRC}/${i}
+.endfor
 #	@${REINPLACE_CMD} -E -e \
 #		's|#define.+INSERT_YOUR_EMAIL_ADDRESS_HERE|& "${MAINTAINER}"|' \
 #		${WRKSRC}/cdrecord/cdrecord.c

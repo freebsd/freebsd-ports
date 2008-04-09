@@ -45,6 +45,9 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's:%%DATADIR%%:${DATADIR}:g;' \
 		${WRKSRC}/sformat/${i}
 .endfor
+.for i in include/schily.h libschily/fexec.c libschily/libschily-mapvers
+	@${REINPLACE_CMD} -e 's|fexecve|js_fexecve|g' ${WRKSRC}/${i}
+.endfor
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/sformat/OBJ/${SFMTTARGET}/sformat \
