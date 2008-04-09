@@ -115,6 +115,7 @@
     SUBDIR += openoffice.org-2
     SUBDIR += openoffice.org-2-RC
     SUBDIR += openoffice.org-2-devel
+    SUBDIR += openoffice.org-3-devel
     SUBDIR += pdfedit
     SUBDIR += pico
     SUBDIR += pico-alpine
