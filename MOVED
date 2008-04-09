@@ -2376,7 +2376,6 @@ net/opengk||2006-07-04|Has expired: Latest version is from 2003-02-03. Use net/g
 textproc/sed_inplace||2006-07-04|Has expired: This port is not required anymore
 textproc/xml4j||2006-07-04|Has expired: it has been replaced by textproc/xerces-j 8 years ago
 www/sitemapgen|www/google-sitemapgen|2006-07-05|Duplicate port
-security/gnutls-devel||2006-07-06|Development version is not active so far
 www/otrs|devel/otrs|2006-07-07|Duplicate port
 math/UFsparse|math/ufsparse|2006-07-09|port name should not have capital letters
 sysutils/lineak_defaultplugin|sysutils/lineak-defaultplugin|2006-07-09|port name changed to match upstream
