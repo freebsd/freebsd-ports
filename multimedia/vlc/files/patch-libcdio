@@ -1,0 +1,55 @@
+--- modules/access/cdda/cdda.h.orig	2008-04-09 08:08:07.801650907 -0400
++++ modules/access/cdda/cdda.h	2008-04-09 08:09:00.648021466 -0400
+@@ -71,12 +71,13 @@
+ #define CdIo_t CdIo
+ #endif    
+ 
++#if LIBCDIO_VERSION_NUM < 78
+ typedef enum {
+   paranoia_none    = 0, /* Note: We make use of 0 as being the same as false */
+   paranoia_overlap = 1, 
+   paranoia_full    = 2
+ } paranoia_mode_t;
+-
++#endif
+   
+ /*****************************************************************************
+  * cdda_data_t: CD audio information
+--- modules/access/cdda/access.c.orig	2008-04-09 08:05:14.289716290 -0400
++++ modules/access/cdda/access.c	2008-04-09 08:07:57.944769027 -0400
+@@ -737,14 +737,14 @@
+    
+       char *psz_paranoia = config_GetPsz( p_access, 
+ 					  MODULE_STRING "-paranoia" );
+-      p_cdda->e_paranoia = paranoia_none;
++      p_cdda->e_paranoia = PARANOIA_MODE_DISABLE;
+       if( psz_paranoia && *psz_paranoia )
+       {
+ 
+ 	if( !strncmp( psz_paranoia, "full", strlen("full") )  )
+-	  p_cdda->e_paranoia = paranoia_full;
++	  p_cdda->e_paranoia = PARANOIA_MODE_FULL;
+ 	else if( !strncmp( psz_paranoia, "overlap", strlen("overlap") )  )
+-	  p_cdda->e_paranoia = paranoia_overlap;
++	  p_cdda->e_paranoia = PARANOIA_MODE_OVERLAP;
+ 	
+ 	/* Use CD Paranoia? */
+ 	if ( p_cdda->e_paranoia ) {
+@@ -755,7 +755,7 @@
+ 	  if ( 0 != cdio_cddap_open(p_cdda->paranoia_cd) ) {
+ 	    msg_Warn( p_cdda_input, "unable to get paranoia support - "
+ 		      "continuing without it." );
+-	    p_cdda->e_paranoia = paranoia_none;
++	    p_cdda->e_paranoia = PARANOIA_MODE_DISABLE;
+ 	  } else {
+ 	    p_cdda->paranoia = cdio_paranoia_init(p_cdda->paranoia_cd);
+ 	    cdio_paranoia_seek(p_cdda->paranoia, p_cdda->i_lsn, SEEK_SET);
+@@ -763,7 +763,7 @@
+ 	    /* Set reading mode for full or overlap paranoia, 
+ 	       but allow skipping sectors. */
+ 	    cdio_paranoia_modeset(p_cdda->paranoia,
+-				  paranoia_full == p_cdda->e_paranoia ?
++				  PARANOIA_MODE_FULL == p_cdda->e_paranoia ?
+ 				  PARANOIA_MODE_FULL^PARANOIA_MODE_NEVERSKIP :
+ 				  PARANOIA_MODE_OVERLAP^PARANOIA_MODE_NEVERSKIP
+ 				  );
