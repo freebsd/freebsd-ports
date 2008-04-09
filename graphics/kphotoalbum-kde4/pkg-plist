@@ -41,7 +41,6 @@ share/apps/kphotoalbum/demo/spiff.jpg
 share/apps/kphotoalbum/demo/spiff_2.jpg
 share/apps/kphotoalbum/demo/sunset.jpg
 share/apps/kphotoalbum/demo/wayne.jpg
-share/apps/kphotoalbum/exif-sqlite.db
 share/apps/kphotoalbum/icons/hicolor/16x16/actions/ellipsetool.png
 share/apps/kphotoalbum/icons/hicolor/16x16/actions/linetool.png
 share/apps/kphotoalbum/icons/hicolor/16x16/actions/recttool.png
@@ -152,19 +151,49 @@ share/doc/HTML/en/kphotoalbum/viewer-contextmenu.png
 share/doc/HTML/en/kphotoalbum/viewer.docbook
 share/doc/HTML/en/kphotoalbum/viewer.png
 share/doc/HTML/en/kphotoalbum/zoomed-view.png
+share/doc/HTML/es/kphotoalbum/browser-for-jesper.png
+share/doc/HTML/es/kphotoalbum/browser-for-persons.png
+share/doc/HTML/es/kphotoalbum/browser-with-images.png
 share/doc/HTML/es/kphotoalbum/browsing.docbook
+share/doc/HTML/es/kphotoalbum/categoryEditor.png
 share/doc/HTML/es/kphotoalbum/common
+share/doc/HTML/es/kphotoalbum/datebar-for-minutes.png
 share/doc/HTML/es/kphotoalbum/datebar.docbook
+share/doc/HTML/es/kphotoalbum/datebar.png
+share/doc/HTML/es/kphotoalbum/delete-images.png
+share/doc/HTML/es/kphotoalbum/draw-on-image.png
+share/doc/HTML/es/kphotoalbum/edit-properies-menu.png
+share/doc/HTML/es/kphotoalbum/empty-browser-window.png
 share/doc/HTML/es/kphotoalbum/generating-html.docbook
+share/doc/HTML/es/kphotoalbum/image-config-window.png
+share/doc/HTML/es/kphotoalbum/images-with-tokens.png
+share/doc/HTML/es/kphotoalbum/imagesForPersons.png
+share/doc/HTML/es/kphotoalbum/import-dialog.png
 share/doc/HTML/es/kphotoalbum/importexport.docbook
 share/doc/HTML/es/kphotoalbum/index.cache.bz2
 share/doc/HTML/es/kphotoalbum/index.docbook
 share/doc/HTML/es/kphotoalbum/introduction.docbook
+share/doc/HTML/es/kphotoalbum/marking-zoom-rectangle.png
+share/doc/HTML/es/kphotoalbum/member-group-setting.png
+share/doc/HTML/es/kphotoalbum/offline-mode.png
+share/doc/HTML/es/kphotoalbum/options-general.png
+share/doc/HTML/es/kphotoalbum/options-groups.png
+share/doc/HTML/es/kphotoalbum/options-member.png
+share/doc/HTML/es/kphotoalbum/options-thumbnailview.png
+share/doc/HTML/es/kphotoalbum/options-viewer.png
 share/doc/HTML/es/kphotoalbum/options.docbook
 share/doc/HTML/es/kphotoalbum/plugins.docbook
+share/doc/HTML/es/kphotoalbum/redisplay-frames.png
+share/doc/HTML/es/kphotoalbum/search.png
 share/doc/HTML/es/kphotoalbum/setting-properties.docbook
 share/doc/HTML/es/kphotoalbum/thumbnail-view.docbook
+share/doc/HTML/es/kphotoalbum/thumbnailview.png
+share/doc/HTML/es/kphotoalbum/tokens-in-browser.png
+share/doc/HTML/es/kphotoalbum/usa-as-a-member.png
+share/doc/HTML/es/kphotoalbum/viewer-contextmenu.png
 share/doc/HTML/es/kphotoalbum/viewer.docbook
+share/doc/HTML/es/kphotoalbum/viewer.png
+share/doc/HTML/es/kphotoalbum/zoomed-view.png
 share/doc/HTML/et/kphotoalbum/browsing.docbook
 share/doc/HTML/et/kphotoalbum/common
 share/doc/HTML/et/kphotoalbum/datebar.docbook
@@ -323,8 +352,10 @@ share/locale/it/LC_MESSAGES/kphotoalbum.mo
 share/locale/ja/LC_MESSAGES/kphotoalbum.mo
 share/locale/ka/LC_MESSAGES/kphotoalbum.mo
 share/locale/lt/LC_MESSAGES/kphotoalbum.mo
+share/locale/ms/LC_MESSAGES/kphotoalbum.mo
 share/locale/mt/LC_MESSAGES/kphotoalbum.mo
 share/locale/nb/LC_MESSAGES/kphotoalbum.mo
+share/locale/nds/LC_MESSAGES/kphotoalbum.mo
 share/locale/nl/LC_MESSAGES/kphotoalbum.mo
 share/locale/pa/LC_MESSAGES/kphotoalbum.mo
 share/locale/pl/LC_MESSAGES/kphotoalbum.mo
@@ -335,6 +366,7 @@ share/locale/ru/LC_MESSAGES/kphotoalbum.mo
 share/locale/rw/LC_MESSAGES/kphotoalbum.mo
 share/locale/sk/LC_MESSAGES/kphotoalbum.mo
 share/locale/sr/LC_MESSAGES/kphotoalbum.mo
+share/locale/sr@Latn/LC_MESSAGES/kphotoalbum.mo
 share/locale/sv/LC_MESSAGES/kphotoalbum.mo
 share/locale/ta/LC_MESSAGES/kphotoalbum.mo
 share/locale/tr/LC_MESSAGES/kphotoalbum.mo
@@ -344,6 +376,8 @@ share/locale/zh_CN/LC_MESSAGES/kphotoalbum.mo
 share/mimelnk/application/x-vnd.kde.kphotoalbum-import.desktop
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrm share/doc/HTML/sv/kphotoalbum
 @dirrm share/doc/HTML/pt/kphotoalbum
 @dirrm share/doc/HTML/nl/kphotoalbum
@@ -354,7 +388,6 @@ share/mimelnk/application/x-vnd.kde.kphotoalbum-import.desktop
 @dirrm share/doc/HTML/en/kphotoalbum
 @dirrm share/doc/HTML/de/kphotoalbum
 @dirrm share/doc/HTML/da/kphotoalbum
-@dirrmtry share/config
 @dirrm share/apps/kphotoalbum/themes/rounded
 @dirrm share/apps/kphotoalbum/themes/grey
 @dirrm share/apps/kphotoalbum/themes/blue
@@ -369,4 +402,3 @@ share/mimelnk/application/x-vnd.kde.kphotoalbum-import.desktop
 @dirrm share/apps/kphotoalbum/demo/CategoryImages
 @dirrm share/apps/kphotoalbum/demo
 @dirrm share/apps/kphotoalbum
-@dirrmtry share/applications/kde
