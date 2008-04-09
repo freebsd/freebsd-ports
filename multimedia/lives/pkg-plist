@@ -15,6 +15,7 @@ bin/ogm_encoder.py
 bin/sendOSC
 bin/smogrify
 bin/theora_encoder.py
+share/applications/LiVES.desktop
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/BUGS
 %%DOCSDIR%%/ChangeLog
@@ -57,6 +58,10 @@ bin/theora_encoder.py
 %%DATADIR%%/plugins/effects/RFXscripts/flop.script
 %%DATADIR%%/plugins/effects/RFXscripts/frame_calculator.script
 %%DATADIR%%/plugins/effects/RFXscripts/gamma_change.script
+%%DATADIR%%/plugins/effects/RFXscripts/gen_blank_frames.script
+%%DATADIR%%/plugins/effects/RFXscripts/gen_clip_from_image.script
+%%DATADIR%%/plugins/effects/RFXscripts/gen_coloured_frames.script
+%%DATADIR%%/plugins/effects/RFXscripts/gen_text.script
 %%DATADIR%%/plugins/effects/RFXscripts/hue_change.script
 %%DATADIR%%/plugins/effects/RFXscripts/jumble.script
 %%DATADIR%%/plugins/effects/RFXscripts/modulate.script
@@ -104,6 +109,10 @@ bin/theora_encoder.py
 %%DATADIR%%/plugins/effects/rendered/flop
 %%DATADIR%%/plugins/effects/rendered/frame_calculator
 %%DATADIR%%/plugins/effects/rendered/gamma_change
+%%DATADIR%%/plugins/effects/rendered/gen_blank_frames
+%%DATADIR%%/plugins/effects/rendered/gen_clip_from_image
+%%DATADIR%%/plugins/effects/rendered/gen_coloured_frames
+%%DATADIR%%/plugins/effects/rendered/gen_text
 %%DATADIR%%/plugins/effects/rendered/hue_change
 %%DATADIR%%/plugins/effects/rendered/jumble
 %%DATADIR%%/plugins/effects/rendered/modulate
@@ -158,10 +167,10 @@ bin/theora_encoder.py
 %%DATADIR%%/themes/pinks/main.jpg
 %%DATADIR%%/themes/sunburst/frame.jpg
 %%DATADIR%%/themes/sunburst/main.jpg
-share/applications/LiVES.desktop
 share/locale/cs/LC_MESSAGES/lives.mo
 share/locale/de_DE/LC_MESSAGES/lives.mo
 share/locale/fr/LC_MESSAGES/lives.mo
+share/locale/hu/LC_MESSAGES/lives.mo
 share/locale/ja/LC_MESSAGES/lives.mo
 share/locale/nl_NL/LC_MESSAGES/lives.mo
 share/locale/pt_BR/LC_MESSAGES/lives.mo
@@ -185,8 +194,6 @@ share/pixmaps/lives.xpm
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
 @dirrmtry share/locale/nl_NL/LC_MESSAGES
