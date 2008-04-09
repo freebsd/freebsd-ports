@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numpy
-PORTVERSION=	1.0.3.1
+PORTVERSION=	1.0.4
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
@@ -54,7 +54,7 @@ post-extract:
 
 FC=		gfortran42
 F77=		gfortran42
-GCCLIBDIR=	`${FC} -print-file-name=`
+GCCLIBDIR=	`${FC} -print-file-name=libgfortran.so|${SED} -e s/libgfortran.so//`
 post-patch:
 .ifdef WITH_ATLAS
 	@${CP} ${FILESDIR}/site.cfg ${WRKSRC}/site.cfg

@@ -1,6 +1,15 @@
---- numpy/distutils/fcompiler/gnu.py.orig	2007-08-20 21:00:55.000000000 -0500
-+++ numpy/distutils/fcompiler/gnu.py	2007-08-27 15:12:10.000000000 -0500
-@@ -67,12 +67,12 @@
+--- numpy/distutils/fcompiler/gnu.py.orig	2007-11-07 16:05:14.000000000 -0600
++++ numpy/distutils/fcompiler/gnu.py	2008-04-07 13:54:56.000000000 -0500
+@@ -48,7 +48,7 @@
+     # Redhat: GNU Fortran (GCC 3.2.2 20030222 (Red Hat Linux 3.2.2-5)) 3.2.2 20030222 (Red Hat Linux 3.2.2-5)
+     # GNU Fortran (GCC) 3.4.2 (mingw-special)
+ 
+-    possible_executables = ['g77', 'f77']
++    possible_executables = ['gfortran', 'gfortran42', 'g77', 'f77']
+     executables = {
+         'version_cmd'  : [None, "--version"],
+         'compiler_f77' : [None, "-g", "-Wall", "-fno-second-underscore"],
+@@ -72,7 +72,7 @@
          for key in ['version_cmd', 'compiler_f77', 'linker_so', 'linker_exe']:
              executables[key].append('-mno-cygwin')
  
@@ -9,18 +18,12 @@
  
      suggested_f90_compiler = 'gnu95'
  
-     def find_executables(self):
--        for fc_exe in [find_executable(c) for c in ['g77','f77']]:
-+        for fc_exe in [find_executable(c) for c in ['gfortran', 'gfortran42', 'g77','f77']]:
-             if os.path.isfile(fc_exe):
-                 break
-         for key in ['version_cmd', 'compiler_f77', 'linker_so', 'linker_exe']:
-@@ -318,7 +318,7 @@
-     g2c = 'gfortran'
+@@ -295,7 +295,7 @@
+     #       GNU Fortran 95 (GCC) 4.2.0 20060218 (experimental)
+     #       GNU Fortran (GCC) 4.3.0 20070316 (experimental)
  
-     def find_executables(self):
--        for fc_exe in [find_executable(c) for c in ['gfortran','f95']]:
-+        for fc_exe in [find_executable(c) for c in ['gfortran', 'gfortran42', 'f95']]:
-             if os.path.isfile(fc_exe):
-                 break
-         for key in ['version_cmd', 'compiler_f77', 'compiler_f90',
+-    possible_executables = ['gfortran', 'f95']
++    possible_executables = ['gfortran', 'gfortran42', 'f95']
+     executables = {
+         'version_cmd'  : ["<F90>", "--version"],
+         'compiler_f77' : [None, "-Wall", "-ffixed-form",

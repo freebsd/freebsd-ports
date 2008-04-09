@@ -160,6 +160,9 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/cpuinfo.py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/cpuinfo.pyc
 %%PYTHON_SITELIBDIR%%/numpy/distutils/cpuinfo.pyo
+%%PYTHON_SITELIBDIR%%/numpy/distutils/environment.py
+%%PYTHON_SITELIBDIR%%/numpy/distutils/environment.pyc
+%%PYTHON_SITELIBDIR%%/numpy/distutils/environment.pyo
 %%PYTHON_SITELIBDIR%%/numpy/distutils/exec_command.py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/exec_command.pyc
 %%PYTHON_SITELIBDIR%%/numpy/distutils/exec_command.pyo
@@ -281,6 +284,22 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/doc/DISTUTILS.txt
 %%PYTHON_SITELIBDIR%%/numpy/doc/HOWTO_DOCUMENT.txt
 %%PYTHON_SITELIBDIR%%/numpy/doc/README.txt
+%%PYTHON_SITELIBDIR%%/numpy/doc/example.py
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/api-objects.txt
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/crarr.png
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/epydoc.css
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/epydoc.js
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/example-module.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/example-pysrc.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/frames.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/help.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/identifier-index.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/index.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/module-tree.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/redirect.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/toc-everything.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/toc-example-module.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/html/toc.html
 %%PYTHON_SITELIBDIR%%/numpy/doc/pep_buffer.txt
 %%PYTHON_SITELIBDIR%%/numpy/doc/pyrex/MANIFEST
 %%PYTHON_SITELIBDIR%%/numpy/doc/pyrex/Makefile
@@ -293,27 +312,29 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/doc/pyrex/setup.py
 %%PYTHON_SITELIBDIR%%/numpy/doc/records.txt
 %%PYTHON_SITELIBDIR%%/numpy/doc/swig/Makefile
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/Matrix.cxx
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/Matrix.h
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/Matrix.i
 %%PYTHON_SITELIBDIR%%/numpy/doc/swig/README
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/Tensor.cxx
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/Tensor.h
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/Tensor.i
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/Vector.cxx
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/Vector.h
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/Vector.i
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/doc/Makefile
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/doc/numpy_swig.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/doc/numpy_swig.pdf
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/doc/numpy_swig.txt
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/doc/testing.html
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/doc/testing.pdf
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/doc/testing.txt
 %%PYTHON_SITELIBDIR%%/numpy/doc/swig/numpy.i
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/numpy_swig.html
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/numpy_swig.pdf
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/numpy_swig.txt
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/setup.py
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/testMatrix.py
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/testTensor.py
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/testVector.py
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/testing.html
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/testing.pdf
-%%PYTHON_SITELIBDIR%%/numpy/doc/swig/testing.txt
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/Makefile
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/Matrix.cxx
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/Matrix.h
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/Matrix.i
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/Tensor.cxx
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/Tensor.h
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/Tensor.i
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/Vector.cxx
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/Vector.h
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/Vector.i
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/setup.py
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/testMatrix.py
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/testTensor.py
+%%PYTHON_SITELIBDIR%%/numpy/doc/swig/test/testVector.py
 %%PYTHON_SITELIBDIR%%/numpy/doc/ufuncs.txt
 %%PYTHON_SITELIBDIR%%/numpy/dual.py
 %%PYTHON_SITELIBDIR%%/numpy/dual.pyc
@@ -411,16 +432,31 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/info.py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/info.pyc
 %%PYTHON_SITELIBDIR%%/numpy/f2py/info.pyo
-%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/DEV_README.txt
-%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/LICENSE.txt
-%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/README.txt
-%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/THANKS.txt
 %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/__init__.pyo
 %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/api.py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/api.pyc
 %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/api.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/doc.txt
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/__init__.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/__init__.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/__init__.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/base.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/base.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/base.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/c_support.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/c_support.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/c_support.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/py_support.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/py_support.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/py_support.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/setup_py.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/setup_py.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/setup_py.pyo
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/utils.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/utils.pyc
+%%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen/utils.pyo
 %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/main.py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/main.pyc
 %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/main.pyo
@@ -738,10 +774,11 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/random/setup.py
 %%PYTHON_SITELIBDIR%%/numpy/random/setup.pyc
 %%PYTHON_SITELIBDIR%%/numpy/random/setup.pyo
-%%PYTHON_SITELIBDIR%%/numpy/scipy_compatibility
+%%PYTHON_SITELIBDIR%%/numpy/random/tests/test_random.py
 %%PYTHON_SITELIBDIR%%/numpy/setup.py
 %%PYTHON_SITELIBDIR%%/numpy/setup.pyc
 %%PYTHON_SITELIBDIR%%/numpy/setup.pyo
+%%PYTHON_SITELIBDIR%%/numpy/site.cfg.example
 %%PYTHON_SITELIBDIR%%/numpy/testing/__init__.py
 %%PYTHON_SITELIBDIR%%/numpy/testing/__init__.pyc
 %%PYTHON_SITELIBDIR%%/numpy/testing/__init__.pyo
@@ -751,6 +788,9 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/testing/numpytest.py
 %%PYTHON_SITELIBDIR%%/numpy/testing/numpytest.pyc
 %%PYTHON_SITELIBDIR%%/numpy/testing/numpytest.pyo
+%%PYTHON_SITELIBDIR%%/numpy/testing/parametric.py
+%%PYTHON_SITELIBDIR%%/numpy/testing/parametric.pyc
+%%PYTHON_SITELIBDIR%%/numpy/testing/parametric.pyo
 %%PYTHON_SITELIBDIR%%/numpy/testing/setup.py
 %%PYTHON_SITELIBDIR%%/numpy/testing/setup.pyc
 %%PYTHON_SITELIBDIR%%/numpy/testing/setup.pyo
@@ -761,10 +801,11 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/version.py
 %%PYTHON_SITELIBDIR%%/numpy/version.pyc
 %%PYTHON_SITELIBDIR%%/numpy/version.pyo
-%%DOCSDIR%%/numpy.pdf
+%%PORTDOCS%%%%DOCSDIR%%/numpy.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/testing
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/random/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/random
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/oldnumeric
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/numarray/numpy
@@ -778,12 +819,16 @@ bin/f2py
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/src
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/src
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/parser
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/lib/extgen
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/lib
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/docs/usersguide
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/docs
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/doc/swig/test
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/doc/swig/doc
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/doc/swig
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/doc/pyrex
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/doc/html
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/doc
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/distutils/tests/swig_ext/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/distutils/tests/swig_ext/src
