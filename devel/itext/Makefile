@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	itext
-PORTVERSION=	2.0.8
+PORTVERSION=	2.1.0
 PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -22,23 +22,24 @@ RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle
 
 WRKSRC=		${WRKDIR}/src
 EXTRACT_AFTER_ARGS=	| (${MKDIR} ${WRKSRC} && ${TAR} -xf - -C ${WRKSRC})
-USE_DOS2UNIX=	yes
-DOS2UNIX_REGEX=	.*\.xml
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
-ALL_TARGET=	jar
+ALL_TARGET=	jar jar.rtf
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	javadoc
 PORTDOCS=	*
 .endif
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
+		%%JAVAJARDIR%%/${PORTNAME}-rtf.jar
 
 do-install:
 	@${INSTALL_DATA} ${WRKDIR}/lib/iText.jar \
 		${JAVAJARDIR}/${PORTNAME}.jar
+	@${INSTALL_DATA} ${WRKDIR}/lib/iText-rtf.jar \
+		${JAVAJARDIR}/${PORTNAME}-rtf.jar
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/apidocs
 	@${CP} -R ${WRKDIR}/build/docs/* ${DOCSDIR}/apidocs
