@@ -1,0 +1,11 @@
+--- scripts/xdg-email.orig	2008-04-08 21:21:25.156668001 -0400
++++ scripts/xdg-email	2008-04-08 21:22:20.347011466 -0400
+@@ -480,7 +480,7 @@
+ 
+ options=
+ mailto=
+-utf8="iconv -t utf8"
++utf8="iconv -t UTF-8"
+ while [ $# -gt 0 ] ; do
+     parm="$1"
+     shift
