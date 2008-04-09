@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Jifty-DBI
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,6 +31,8 @@ BUILD_DEPENDS=	\
 		p5-DateTime-Format-Strptime>0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		p5-DBIx-DBSchema>=0.34:${PORTSDIR}/databases/p5-DBIx-DBSchema \
 		p5-Test-Simple>=0.52:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Time-Duration>=0:${PORTSDIR}/devel/p5-Time-Duration \
+		p5-Time-Duration-Parse>=0:${PORTSDIR}/devel/p5-Time-Duration-Parse \
 		p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Hash-Merge>0:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-Object-Declare>=0.22:${PORTSDIR}/devel/p5-Object-Declare \
@@ -48,12 +50,15 @@ MAN3=	Jifty::DBI.3 \
 	Jifty::DBI::Collection::Unique.3 \
 	Jifty::DBI::Column.3 \
 	Jifty::DBI::Filter.3 \
+	Jifty::DBI::Filter::Boolean.3 \
 	Jifty::DBI::Filter::Date.3 \
 	Jifty::DBI::Filter::DateTime.3 \
+	Jifty::DBI::Filter::Duration.3 \
 	Jifty::DBI::Filter::SaltHash.3 \
 	Jifty::DBI::Filter::Storable.3 \
 	Jifty::DBI::Filter::Time.3 \
 	Jifty::DBI::Filter::Truncate.3 \
+	Jifty::DBI::Filter::URI.3 \
 	Jifty::DBI::Filter::YAML.3 \
 	Jifty::DBI::Filter::base64.3 \
 	Jifty::DBI::Filter::utf8.3 \
