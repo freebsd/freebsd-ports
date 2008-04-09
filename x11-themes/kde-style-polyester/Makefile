@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polyester
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.notmart.org/files/ \
 		${MASTER_SITE_LOCAL}
