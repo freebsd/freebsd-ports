@@ -4180,6 +4180,7 @@ gonvert		ports/misc/gonvert
 gonzui		ports/devel/gonzui
 goobox		ports/audio/goobox
 goocanvas	ports/graphics/goocanvas
+google-appengine	ports/www/google-appengine
 google-ctemplate	ports/textproc/google-ctemplate
 google-earth	ports/astro/google-earth
 google-perftools	ports/devel/google-perftools
