@@ -59,6 +59,7 @@ OS_VER=	5
 . elif ${OSVERSION} >= 600000 && ${OSVERSION} < 700000
 OS_VER=	6
 . elif ${OSVERSION} >= 700000
+ARCH_PORTVERSION=	0.8
 OS_VER=	7
 . endif
 .else
