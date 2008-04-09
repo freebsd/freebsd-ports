@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-caption
-PORTVERSION=	3.1.20080320
+PORTVERSION=	3.1.20080401
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -41,7 +41,8 @@ CLASS_FILES=	caption.sty caption2.sty caption3.sty \
 PORTDOCS=	README caption.pdf caption2.pdf \
 		ltcaption.pdf subcaption.pdf \
 		caption-eng.pdf caption-deu.pdf caption-rus.pdf \
-		caption-eng.tex caption-deu.tex caption-rus.tex
+		caption-eng.tex caption-deu.tex caption-rus.tex \
+		cat.eps elephant.eps
 
 do-extract:
 	${MKDIR} ${WRKSRC}
