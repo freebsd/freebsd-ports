@@ -3447,3 +3447,6 @@ x11-toolkits/qwt-devel|x11-toolkits/qwt5|2008-04-02|Renamed for better naming
 audio/csound-manual||2008-04-04|Merged with main port
 security/acid||2008-04-04|Has expired: development has ceased, use security/base
 devel/check|devel/libcheck|2008-04-07|Removed in favour to devel/libcheck
+archivers/deepforest||2008-04-09|Has expired: development stalled for years, outdated, unmaintained
+graphics/libimg-tkstep80||2008-04-09|Has expired: tkstep80 scheduled for expiration
+x11-toolkits/tkstep80||2008-04-09|Has expired: development stalled for years, outdated, unmaintained

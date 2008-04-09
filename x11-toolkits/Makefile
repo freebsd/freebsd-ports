@@ -257,7 +257,6 @@
     SUBDIR += tk85-thread
     SUBDIR += tkdnd
     SUBDIR += tkshape
-    SUBDIR += tkstep80
     SUBDIR += tktable
     SUBDIR += tktray
     SUBDIR += tktreectrl
