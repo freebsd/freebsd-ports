@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	SciPy
 # Date created:			Jun 8, 2004
 # Whom:				ijliao
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	scipy
-PORTVERSION=	0.5.2.1
+PORTVERSION=	0.6.0
 CATEGORIES=	science python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scipy
