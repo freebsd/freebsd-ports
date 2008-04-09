@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	qmc2
-PORTVERSION=	0.1.b11
+PORTVERSION=	0.2.b1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	alepulver@FreeBSD.org
-COMMENT=	Qt 4 based UNIX MAME frontend supporting both XMAME and SDLMAME
+COMMENT=	Qt 4 based UNIX MAME frontend supporting SDLMAME
+
+RUN_DEPENDS=	sdlmame:${PORTSDIR}/emulators/sdlmame
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -19,20 +21,9 @@ USE_QT_VER=	4
 MAKE_ENV=	QTDIR="${QTDIR}" QMAKE="${QMAKE}" SYSCONFDIR="${PREFIX}/etc"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	XMAME "Use XMAME (old) instead of SDLMAME (new) as emulator" off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_XMAME)
-MAKE_ENV+=	SDLMAME=0
-RUN_DEPENDS+=	xmame:${PORTSDIR}/emulators/xmame
-.else
-RUN_DEPENDS+=	sdlmame:${PORTSDIR}/emulators/sdlmame
-.endif
-
 post-install:
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

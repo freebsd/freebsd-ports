@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Dec 21 14:43:29 2007
-+++ Makefile	Thu Jan  3 20:55:16 2008
+--- ./Makefile.orig	2008-03-26 07:34:12.000000000 -0300
++++ ./Makefile	2008-04-07 22:51:41.000000000 -0300
 @@ -36,9 +36,6 @@
  # you want to compile a specific OS's code branch or if the "uname"
  # command doesn't tell the correct OS name of your system (see also OSREL and
@@ -23,13 +23,12 @@
  endif
  endif
  ifeq '$(DISTCFG)' '1'
-@@ -211,16 +208,17 @@
+@@ -188,15 +185,16 @@
  
- install: bin lang
+ install: bin
  	@echo "Installing QMC2 v$(VERSION)"
 -	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(PREFIX)/share/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)
 -	@$(RSYNC) --exclude '*svn*' ./$(PROJECT) $(DESTDIR)/$(PREFIX)/bin
--	@$(RSYNC) --exclude '*svn*' ./scripts/romalyzer.pl $(DESTDIR)/$(PREFIX)/bin
 -	@$(RSYNC) --exclude '*svn*' ./data/lng/*.qm $(DESTDIR)/$(DATADIR)/$(PROJECT)/lng/
 -	@$(RSYNC) --exclude '*svn*' ./data/opt $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 -	@$(RSYNC) --exclude '*svn*' ./data/img $(DESTDIR)/$(DATADIR)/$(PROJECT)/
@@ -37,13 +36,12 @@
 -	@$(RSYNC) --exclude '*svn*' ./data/prv $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 -	@$(RSYNC) --exclude '*svn*' ./data/fly $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 -	@$(SED) -e "s_DATADIR_$(DATADIR)_g" < ./inst/$(PROJECT).ini.template > $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini
-+	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(PREFIX)/share/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT) $(DESTDIR)/$(PREFIX)/share/$(PROJECT)/lng
++	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(PREFIX)/share/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT) $(DESTDIR)/$(PREFIX)/share/$(PROJECT)/lng $(DESTDIR)/$(PREFIX)/share/doc/$(PROJECT)
 +	@$(CP) -r ./$(PROJECT) $(DESTDIR)/$(PREFIX)/bin
-+	@$(CP) -r ./scripts/romalyzer.pl $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 +	@$(CP) -r ./data/lng/*.qm $(DESTDIR)/$(DATADIR)/$(PROJECT)/lng/
 +	@$(CP) -r ./data/opt $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 +	@$(CP) -r ./data/img $(DESTDIR)/$(DATADIR)/$(PROJECT)/
-+	@$(CP) -r ./data/doc $(DESTDIR)/$(DATADIR)/$(PROJECT)/
++	@$(CP) -r ./data/doc/* $(DESTDIR)/$(PREFIX)/share/doc/$(PROJECT)/
 +	@$(CP) -r ./data/prv $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 +	@$(CP) -r ./data/fly $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 +	@$(SED) -e "s_DATADIR_$(DATADIR)_" < ./inst/$(PROJECT).ini.template > $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini.sample
