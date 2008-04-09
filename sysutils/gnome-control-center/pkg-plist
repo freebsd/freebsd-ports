@@ -94,7 +94,6 @@ share/desktop-directories/theme-method.directory
 %%DATADIR%%/pixmaps/mouse-cursor-white-large.png
 %%DATADIR%%/pixmaps/mouse-cursor-white.png
 %%DATADIR%%/pixmaps/ocean-stripes.png
-%%DATADIR%%/pixmaps/stop.png
 %%DATADIR%%/pixmaps/subpixel-bgr.png
 %%DATADIR%%/pixmaps/subpixel-rgb.png
 %%DATADIR%%/pixmaps/subpixel-vbgr.png
