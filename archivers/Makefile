@@ -15,7 +15,6 @@
     SUBDIR += cabextract
     SUBDIR += dact
     SUBDIR += deb2targz
-    SUBDIR += deepforest
     SUBDIR += deutex
     SUBDIR += dpkg
     SUBDIR += dynamite

@@ -20,15 +20,7 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff
 
-.if defined(USE_TKSTEP80)
-PKGNAMESUFFIX=	-tkstep80
-MAKEFILE=	${FILESDIR}/Makefile.tkstep80
-MAKE_ENV+=	TCL_VER=8.0
-EXTRA_PATCHES=	${FILESDIR}/pre-tk84-warnings
-BUILD_DEPENDS+=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-CONFLICTS=	libimg-1.* libimg-tk83-1.*
-.elif defined(USE_TK) && ${USE_TK} == 83
+.if defined(USE_TK) && ${USE_TK} == 83
 PKGNAMESUFFIX=	-tk83
 USE_TK=		83
 USE_TK_BUILD=	83
