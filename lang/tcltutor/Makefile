@@ -8,7 +8,7 @@
 PORTNAME=	tcltutor
 PORTVERSION=	2.b.4
 PORTREVISION=	5
-CATEGORIES=	lang tk84 tcl84
+CATEGORIES=	lang tcl tk
 MASTER_SITES=	http://www.msen.com/~clif/
 DISTNAME=	Tutor2b4
 

@@ -9,7 +9,7 @@
 PORTNAME=	icb
 PORTVERSION=	5.1.0
 PORTREVISION=	3
-CATEGORIES=	net-im tcl84
+CATEGORIES=	net-im tcl
 MASTER_SITES=	http://www.obfuscation.org/icb/
 DISTNAME=	c${PORTNAME}-${PORTVERSION}
 

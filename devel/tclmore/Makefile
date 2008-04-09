@@ -7,7 +7,7 @@
 
 PORTNAME=	tclmore
 PORTVERSION=	0.7b1
-CATEGORIES=	devel tcl84
+CATEGORIES=	devel tcl
 MASTER_SITES=	http://download.gna.org/tclmore/0.7/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 

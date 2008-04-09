@@ -8,7 +8,7 @@
 PORTNAME=	zircon
 PORTVERSION=	1.18.256
 PORTREVISION=	2
-CATEGORIES=	irc tk84
+CATEGORIES=	irc tk
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex

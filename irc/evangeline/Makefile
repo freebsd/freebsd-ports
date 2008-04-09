@@ -7,7 +7,7 @@
 
 PORTNAME=	evangeline
 PORTVERSION=	1.1.4
-CATEGORIES=	irc tcl84
+CATEGORIES=	irc tcl
 MASTER_SITES=	http://www.averse.piasta.pl/_data/evangeline/${PORTVERSION}/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-b1.tar.gz
 

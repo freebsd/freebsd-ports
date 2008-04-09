@@ -8,7 +8,7 @@
 PORTNAME=	swig
 PORTVERSION=	${VER}p5
 PORTREVISION=	9
-CATEGORIES=	devel perl5 python tcl84
+CATEGORIES=	devel perl5 python tcl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mcc.ac.uk/pub/mvc/swig/
 MASTER_SITE_SUBDIR=	${PORTNAME}

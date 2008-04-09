@@ -8,7 +8,7 @@
 PORTNAME=	postilion
 PORTVERSION=	0.9.3c
 PORTREVISION=	3
-CATEGORIES=	mail tk83
+CATEGORIES=	mail tk
 MASTER_SITES=	http://www.postilion.org/software/Postilion/
 DISTNAME=	${PORTNAME}-current
 

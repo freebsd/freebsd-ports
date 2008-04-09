@@ -7,7 +7,7 @@
 
 PORTNAME=	wrapper
 PORTVERSION=	1.1
-CATEGORIES=	lang tcl84
+CATEGORIES=	lang tcl
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	${TX_PORT}-
 DISTFILES=	# none
@@ -34,7 +34,7 @@ TX_PORT=	tk
 TX_PORT_U=	Tk
 TX_CAT=		x11-toolkits
 USE_TK_RUN=	yes
-CATEGORIES=	x11-toolkits tk84
+CATEGORIES=	x11-toolkits tk
 .else
 USE_TCL_RUN=	yes
 .endif

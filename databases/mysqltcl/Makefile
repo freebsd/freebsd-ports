@@ -7,7 +7,7 @@
 
 PORTNAME=	mysqltcl
 PORTVERSION=	3.05
-CATEGORIES=	databases tcl82 tcl83 tcl84
+CATEGORIES=	databases tcl
 MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 
 MAINTAINER=	bkoenig@alpha-tierchen.de

@@ -8,7 +8,7 @@
 PORTNAME=	expect
 PORTVERSION=	5.30
 PORTREVISION=	1
-CATEGORIES=	japanese lang tk80
+CATEGORIES=	japanese lang tk
 MASTER_SITES=	ftp://ftp.nist.gov/mel/div826/subject/expect/old/
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp

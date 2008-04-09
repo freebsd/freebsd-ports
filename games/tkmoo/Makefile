@@ -8,7 +8,7 @@
 PORTNAME=	tkmoo
 PORTVERSION=	0.3.32
 PORTREVISION=	2
-CATEGORIES=	games tk84
+CATEGORIES=	games tk
 MASTER_SITES=	http://www.awns.com/tkMOO-light/Source/
 DISTNAME=	tkMOO-light-${PORTVERSION}
 

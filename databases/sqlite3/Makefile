@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--enable-tempstore=yes
 TCL_V?=			8.4
 MAKE_ARGS+=		TCLSH=tclsh${TCL_V}
 MAKE_ENV+=		TCL_VER=${TCL_V}
-CATEGORIES+=		lang tcl${TCL_V:S/.//}
+CATEGORIES+=		lang tcl
 LIB_DEPENDS+=		tcl${TCL_V:S/.//}:${PORTSDIR}/lang/tcl${TCL_V:S/.//}
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_V}
 PLIST_SUB+=		WITH_TCLWRAPPER=""

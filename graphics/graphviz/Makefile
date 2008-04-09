@@ -8,7 +8,7 @@
 PORTNAME=	graphviz
 PORTVERSION=	2.18
 PORTREVISION=	1
-CATEGORIES=	graphics tk84
+CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 

@@ -9,7 +9,7 @@
 PORTNAME=	hanzim
 PORTVERSION=	1.3
 PORTREVISION=	3
-CATEGORIES=	chinese tk84
+CATEGORIES=	chinese tk
 MASTER_SITES=	http://kamares.ucsd.edu/~arobert/Files/Chinese/ \
 		http://www.525183.com/freebsd/hanzim/ \
 		http://www.chinatinco.com/freebsd/hanzim/ \

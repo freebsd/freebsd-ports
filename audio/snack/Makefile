@@ -9,7 +9,7 @@
 PORTNAME=	snack
 PORTVERSION=	2.2.10
 PORTREVISION=	2
-CATEGORIES=	audio tcl84 tk84
+CATEGORIES=	audio tcl tk
 MASTER_SITES=	http://www.speech.kth.se/snack/dist/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 

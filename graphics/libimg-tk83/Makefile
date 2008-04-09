@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libimg-tk83
-CATEGORIES=	graphics tk83
+CATEGORIES=	graphics tk
 
 MAINTAINER=	martin@matuska.org
 

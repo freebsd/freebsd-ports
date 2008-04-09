@@ -9,7 +9,7 @@ PORTNAME=	tkscanfax
 PORTVERSION=	1.1.4
 PORTREVISION=	1
 PORTEPOCH=	1
-CATEGORIES=	comms tk84
+CATEGORIES=	comms tk
 MASTER_SITES=	http://shino.pos.to/linux/tkscanfax/
 
 MAINTAINER=	mita@FreeBSD.org

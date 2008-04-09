@@ -8,7 +8,7 @@
 PORTNAME=	dirdiff
 PORTVERSION=	2.1
 PORTREVISION=	3
-CATEGORIES=	sysutils tcl84 tk84
+CATEGORIES=	sysutils tcl tk
 MASTER_SITES=	ftp://ftp.samba.org/pub/paulus/
 
 MAINTAINER=	grog@FreeBSD.Org

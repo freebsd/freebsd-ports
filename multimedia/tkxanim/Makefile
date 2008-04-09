@@ -8,7 +8,7 @@
 PORTNAME=	tkxanim
 PORTVERSION=	0.43
 PORTREVISION=	2
-CATEGORIES=	multimedia tk84
+CATEGORIES=	multimedia tk
 MASTER_SITES=	http://freshmeat.net/redir/tkxanim/10652/url_tgz/ \
 		http://freebsd.unixfreunde.de/sources/
 

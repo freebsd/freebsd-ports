@@ -7,7 +7,7 @@
 
 PORTNAME=	redet
 PORTVERSION=	8.24
-CATEGORIES=	textproc tk84
+CATEGORIES=	textproc tk
 MASTER_SITES=	http://www.billposer.org/Software/Downloads/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org

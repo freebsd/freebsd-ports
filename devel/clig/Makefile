@@ -7,7 +7,7 @@
 
 PORTNAME=	clig
 PORTVERSION=	1.9.11.1
-CATEGORIES=	devel tcl84
+CATEGORIES=	devel tcl
 MASTER_SITES=	http://wsd.iitb.fhg.de/~geg/clighome/ \
   		http://www.carpetsmoker.net/distfiles/ \
 		http://www.xs4all.nl/~tournoij/distfiles/

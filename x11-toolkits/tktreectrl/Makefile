@@ -8,7 +8,7 @@
 PORTNAME=	tktreectrl
 PORTVERSION=	2.2.3
 PORTREVISION=	1
-CATEGORIES=	x11-toolkits tk84
+CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF
 
 MAINTAINER=	infofarmer@FreeBSD.org

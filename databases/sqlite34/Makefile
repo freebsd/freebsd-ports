@@ -62,7 +62,7 @@ EXTRA_PATCHES+=		${FILESDIR}/fts2_patch-Makefile.in
 .endif
 
 .if defined(WITH_TCLWRAPPER)
-CATEGORIES+=		lang tcl${TCL_V:S/.//}
+CATEGORIES+=		lang tcl
 LIB_DEPENDS+=		tcl${TCL_V:S/.//}:${PORTSDIR}/lang/tcl${TCL_V:S/.//}
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_V}
 PLIST_SUB+=		WITH_TCLWRAPPER=""

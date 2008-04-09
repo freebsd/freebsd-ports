@@ -8,7 +8,7 @@
 PORTNAME=	tkmerge
 PORTVERSION=	0.85
 PORTREVISION=	1
-CATEGORIES=	devel tk84
+CATEGORIES=	devel tk
 MASTER_SITES=	http://immure.com/~bob/ports/tkmerge/
 
 MAINTAINER=	bob@immure.com

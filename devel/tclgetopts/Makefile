@@ -7,7 +7,7 @@
 
 PORTNAME=	tclGetOpts
 PORTVERSION=	1.0
-CATEGORIES=	devel tcl80 tcl82 tcl83 tcl84
+CATEGORIES=	devel tcl
 MASTER_SITES=	http://www.waxandwane.com/toolbox/tclGetOpts/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	${PORTVERSION}.tar.gz

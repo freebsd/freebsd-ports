@@ -8,7 +8,7 @@
 PORTNAME=	sonytv
 PORTVERSION=	1.0
 PORTREVISION=	1
-CATEGORIES=	misc tk83
+CATEGORIES=	misc tk
 MASTER_SITES=	http://tools.ana.com/demos/
 
 MAINTAINER=	ports@FreeBSD.org
