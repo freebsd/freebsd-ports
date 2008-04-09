@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wahcade
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.anti-particle.com/projects/wahcade/
 
@@ -15,28 +15,34 @@ COMMENT=	A frontend for almost any emulator (MameWAH clone)
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree \
-		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
+		${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet
 
 USE_PYTHON=	2.4+
+WANT_GSTREAMER=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	MPLAYER "Install mplayer for movie playback" off \
-		PSYCHO "Enable psycho optimization" on
+OPTIONS=	GSTREAMER "Install gstreamer for video & music playback" on \
+		PSYCHO "Enable psycho optimization" on \
+		PYGAME "Install pygame for joystick support" off
 
 WRAPPERS=	wahcade wahcade-layout-editor wahcade-setup
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MPLAYER)
-RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
+.if !defined(WITHOUT_GSTREAMER)
+USE_GSTREAMER=	python
 .endif
 
 .if !defined(WITHOUT_PSYCHO) && ${ARCH} == "i386"
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 .endif
 
+.if defined(WITH_PYGAME)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
+.endif
+
 post-extract:
-	@cd ${WRKSRC} && ${RM} install && ${MV} wahcade.desktop ..
+	@cd ${WRKSRC} && ${RM} install && ${MV} *.desktop ..
 
 do-build:
 	@${MKDIR} ${WRKDIR}/bin
@@ -60,7 +66,7 @@ do-install:
 	${LN} -sf ${DATADIR}/doc ${DOCSDIR}
 .endif
 	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKDIR}/wahcade.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/*.desktop ${PREFIX}/share/applications
 	${LN} -sf ${DATADIR}/pixmaps/wahcade.png ${PREFIX}/share/pixmaps
 
 .include <bsd.port.post.mk>
