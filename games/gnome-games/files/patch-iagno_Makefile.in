@@ -1,0 +1,17 @@
+--- iagno/Makefile.in.orig	2008-04-09 13:33:03.000000000 -0500
++++ iagno/Makefile.in	2008-04-09 13:33:26.000000000 -0500
+@@ -416,11 +416,11 @@
+ INCLUDES = \
+ 	-I$(top_srcdir)/libgames-support		\
+ 	$(WARN_CFLAGS)					\
+-	$(GNOME_GAMES_CFLAGS)				\
+ 	-DDATADIR=\""$(datadir)"\"		   	\
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
+-	$(GGZMOD_INCLUDES) $(GGZ_GTK_INCLUDES) $(GGZCORE_INCLUDES)\
+-	$(LIBGGZ_INCLUDES) $(GGZCORE_INCLUDES) $(GGZDMOD_INCLUDES)
++	$(GGZ_GTK_INCLUDES) $(GGZMOD_INCLUDES) $(GGZCORE_INCLUDES)\
++	$(LIBGGZ_INCLUDES) $(GGZCORE_INCLUDES) $(GGZDMOD_INCLUDES) \
++	$(GNOME_GAMES_CFLAGS)
+ 
+ @GGZ_SERVER_TRUE@iagnod_SOURCES = server.h   \
+ @GGZ_SERVER_TRUE@		 server.c   
