@@ -8,7 +8,7 @@
 PORTNAME=	ttt
 PORTVERSION=	1.8.2
 PORTREVISION=	1
-CATEGORIES=	net tk84 ipv6
+CATEGORIES=	net tk ipv6
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 
 MAINTAINER=	ports@FreeBSD.org

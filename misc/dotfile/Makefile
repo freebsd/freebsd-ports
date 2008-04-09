@@ -8,7 +8,7 @@
 PORTNAME=	dotfile
 PORTVERSION=	2.4.1
 PORTREVISION=	2
-CATEGORIES=	misc tk82
+CATEGORIES=	misc tk
 MASTER_SITES=	http://www.blackie.dk/dotfile/download/
 
 MAINTAINER=	ports@FreeBSD.org

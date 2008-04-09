@@ -7,7 +7,7 @@
 
 PORTNAME=	tclgeomap
 PORTVERSION=	2.11.4
-CATEGORIES=	astro tcl84
+CATEGORIES=	astro tcl
 MASTER_SITES=	SF/tkgeomap
 
 MAINTAINER=	infofarmer@FreeBSD.org

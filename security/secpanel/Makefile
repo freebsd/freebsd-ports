@@ -8,7 +8,7 @@
 PORTNAME=	secpanel
 PORTVERSION=	0.5.3
 PORTEPOCH=	1
-CATEGORIES=	security tcl84 tk84
+CATEGORIES=	security tcl tk
 MASTER_SITES=	http://themediahost.de/secpanel/data/ CENKES
 EXTRACT_SUFX=	.tgz
 

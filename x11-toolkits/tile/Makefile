@@ -8,7 +8,7 @@
 PORTNAME=	tile
 PORTVERSION=	0.7.8
 PORTREVISION=	1
-CATEGORIES=	x11-toolkits tk84
+CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/tktable
 
 MAINTAINER=	infofarmer@FreeBSD.org

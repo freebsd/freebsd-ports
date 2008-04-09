@@ -7,7 +7,7 @@
 
 PORTNAME=	postgresql
 PORTREVISION=	1
-CATEGORIES=	japanese databases tcl${TCLVERSION:C/[^0-9]//g}
+CATEGORIES=	japanese databases tcl
 PKGNAMESUFFIX=	-tcltk
 
 MAINTAINER=	saito@a2z.co.jp

@@ -7,7 +7,7 @@
 
 PORTNAME=	postgresql
 PORTREVISION=	0
-CATEGORIES=	databases tcl${TCLVERSION:S/.//}
+CATEGORIES=	databases tcl
 PKGNAMESUFFIX=	-pltcl
 
 MAINTAINER=	girgen@FreeBSD.org

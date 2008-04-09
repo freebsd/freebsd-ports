@@ -7,7 +7,7 @@
 
 PORTNAME=	ifm
 PORTVERSION=	5.2
-CATEGORIES=	games tk84
+CATEGORIES=	games tk
 MASTER_SITES=	http://www.ifarchive.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	if-archive/mapping-tools
 

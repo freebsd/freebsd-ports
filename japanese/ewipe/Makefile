@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	japanese tk82
+CATEGORIES=	japanese tk
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/tk-based presentation tool with Japanese support

@@ -8,7 +8,7 @@
 PORTNAME=	tkinfo
 PORTVERSION=	2.8
 PORTREVISION=	1
-CATEGORIES=	misc tk84
+CATEGORIES=	misc tk
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 
 MAINTAINER=	ports@FreeBSD.org

@@ -52,7 +52,7 @@ WITH_TCL84=	yes
 .if defined(WITH_TCL84)
 BROKEN=		please, select only one TCL wrapper
 .endif
-CATEGORIES+=	tcl83
+CATEGORIES+=	tcl
 TCL_VERSION=	8.3
 WITH_TCL=	YES
 .endif
@@ -61,7 +61,7 @@ WITH_TCL=	YES
 .if defined(WITH_TCL83)
 BROKEN=		please, select only one TCL wrapper
 .endif
-CATEGORIES+=	tcl84
+CATEGORIES+=	tcl
 TCL_VERSION=	8.4
 WITH_TCL=	YES
 .endif

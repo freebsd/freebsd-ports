@@ -7,7 +7,7 @@
 
 PORTNAME=	pgtcl
 PORTVERSION=	1.6.0
-CATEGORIES=	databases tcl84
+CATEGORIES=	databases tcl
 DISTNAME=	${PORTNAME}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1229/:src

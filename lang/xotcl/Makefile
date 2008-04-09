@@ -7,7 +7,7 @@
 
 PORTNAME=	xotcl
 PORTVERSION=	1.6.0
-CATEGORIES?=	lang tcl84
+CATEGORIES?=	lang tcl
 MASTER_SITES=	SF
 
 MAINTAINER=	mm@FreeBSD.org

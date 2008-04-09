@@ -7,7 +7,7 @@
 PORTNAME=	expect
 PORTVERSION=	5.43.0
 PORTREVISION=	3
-CATEGORIES=	lang tcl84 tk84
+CATEGORIES=	lang tcl tk
 MASTER_SITES=	http://expect.nist.gov/src/
 
 MAINTAINER=	shaun@FreeBSD.org

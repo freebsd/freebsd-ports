@@ -8,7 +8,7 @@
 PORTNAME=	tkp4
 PORTVERSION=	1.12
 PORTREVISION=	1
-CATEGORIES=	devel tk83 tk84
+CATEGORIES=	devel tk
 MASTER_SITES=	http://www.timshel.ca/tkp4/
 
 MAINTAINER=	mi@aldan.algebra.com

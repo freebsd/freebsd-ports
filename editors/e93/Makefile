@@ -8,7 +8,7 @@
 PORTNAME=	e93
 PORTVERSION=	1.3.4
 PORTREVISION=	2
-CATEGORIES=	editors tcl84 tk84
+CATEGORIES=	editors tcl tk
 MASTER_SITES=	ftp://ftp.e93.org/pub/ \
   		http://www.crpetsmoker.net/distfiles/ \
 		http://www.xs4all.nl/~tournoij/distfiles/

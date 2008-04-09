@@ -8,7 +8,7 @@
 PORTNAME=	dontspace
 PORTVERSION=	1.2
 PORTREVISION=	2
-CATEGORIES=	games tk84
+CATEGORIES=	games tk
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JACOBY/
 
 MAINTAINER=	ports@FreeBSD.org

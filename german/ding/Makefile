@@ -8,7 +8,7 @@
 PORTNAME=	ding
 PORTVERSION=	1.5
 PORTREVISION=	2
-CATEGORIES=	german tk84
+CATEGORIES=	german tk
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/
 
 MAINTAINER=	beat@chruetertee.ch

@@ -43,13 +43,13 @@ PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
 .if defined(METAKIT_WITH_TCL83)
-CATEGORIES+=	tcl83
+CATEGORIES+=	tcl
 TCL_V=		8.3
 TCL_SHORT_V=	83
 .endif
 
 .if defined(METAKIT_WITH_TCL84)
-CATEGORIES+=	tcl84
+CATEGORIES+=	tcl
 TCL_V=		8.4
 TCL_SHORT_V=	84
 .endif

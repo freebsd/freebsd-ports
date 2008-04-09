@@ -8,7 +8,7 @@
 PORTNAME=	TclExpat
 PORTVERSION=	1.1
 PORTREVISION=	5
-CATEGORIES=	textproc tcl84
+CATEGORIES=	textproc tcl
 MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
 
 MAINTAINER=	mi@aldan.algebra.com

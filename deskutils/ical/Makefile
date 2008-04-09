@@ -9,7 +9,7 @@
 PORTNAME=	ical
 PORTVERSION=	2.2
 PORTREVISION=	3
-CATEGORIES=	deskutils tk84
+CATEGORIES=	deskutils tk
 MASTER_SITES=	ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/
 
 MAINTAINER=	obrien@FreeBSD.org

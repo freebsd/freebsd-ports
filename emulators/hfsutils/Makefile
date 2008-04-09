@@ -8,7 +8,7 @@
 PORTNAME=	hfsutils
 PORTVERSION=	3.2.6
 PORTREVISION=	2
-CATEGORIES=	emulators tk84
+CATEGORIES=	emulators tk
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 
 MAINTAINER=	ports@FreeBSD.org

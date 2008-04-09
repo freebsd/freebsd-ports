@@ -8,7 +8,7 @@
 PORTNAME=	cost
 PORTVERSION=	2.2p1
 PORTREVISION=	1
-CATEGORIES=	textproc tcl84
+CATEGORIES=	textproc tcl
 MASTER_SITES=	http://www.flightlab.com/~joe/cost/
 
 MAINTAINER=	carpetsmoker@xs4all.nl

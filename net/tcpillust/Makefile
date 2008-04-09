@@ -8,7 +8,7 @@
 PORTNAME=	tcpillust
 PORTVERSION=	1.0a
 PORTREVISION=	2
-CATEGORIES=	net tk84 tcl84
+CATEGORIES=	net tcl tk
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/CSL/nishida/
 
 MAINTAINER=	nishida@csl.sony.co.jp

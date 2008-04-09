@@ -8,7 +8,7 @@
 PORTNAME=	Gdtclft
 PORTVERSION=	2.2.5
 PORTREVISION=	7
-CATEGORIES=	graphics tcl${TCL_DVER}
+CATEGORIES=	graphics tcl
 MASTER_SITES=	http://www.graphviz.org/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 

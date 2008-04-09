@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES+=	tcl84 tk84
+CATEGORIES+=	tcl tk
 PKGNAMESUFFIX=	-tcl
 
 COMMENT=	The Visualization Toolkit Tcl libs

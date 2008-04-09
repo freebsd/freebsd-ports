@@ -9,7 +9,7 @@ PORTNAME=	tkdnd
 PORTVERSION=	1.0
 DISTVERSION=	1.0.20040304
 PORTREVISION=	2
-CATEGORIES=	x11-toolkits tk84
+CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	CENKES
 # Distfile prepared from SourceForge CVS
 

@@ -8,7 +8,7 @@
 PORTNAME=	mod_dtcl
 PORTVERSION=	0.12.0
 PORTREVISION=	1
-CATEGORIES=	www tcl84
+CATEGORIES=	www tcl
 MASTER_SITES=	http://tcl.apache.org/mod_dtcl/download/
 
 MAINTAINER=	mi@aldan.algebra.com

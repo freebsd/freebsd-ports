@@ -7,7 +7,7 @@
 
 PORTNAME=	ztcl
 DISTVERSION=	1.0b4
-CATEGORIES=	devel tcl84
+CATEGORIES=	devel tcl
 MASTER_SITES=	http://download.gna.org/ztcl/1.0/
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src
 

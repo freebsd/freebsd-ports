@@ -8,7 +8,7 @@
 PORTNAME=	polypuzzle
 PORTVERSION=	1.6
 PORTREVISION=	1
-CATEGORIES=	games tcl84 tk84
+CATEGORIES=	games tcl tk
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/games/
 EXTRACT_SUFX=	.tgz
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	brag
 PORTVERSION=	1.4.1
-CATEGORIES=	news tcl84
+CATEGORIES=	news tcl
 MASTER_SITES=	http://brag.sourceforge.net/ \
 		CRITICAL
 

@@ -10,7 +10,7 @@
 PORTNAME=	cnet
 PORTVERSION=	2.0.10
 PORTREVISION=	2
-CATEGORIES=	net tcl84 tk84
+CATEGORIES=	net tcl tk
 MASTER_SITES=	http://www.csse.uwa.edu.au/cnet/ \
 		ftp://ftp.giga.net.tw/OS/FreeBSD/distfiles/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/

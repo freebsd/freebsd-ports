@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	www tcl84
+CATEGORIES=	www tcl
 PKGNAMEPREFIX=	aolserver-
 
 AOLSERVER_XOTCL=	yes
