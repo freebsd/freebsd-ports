@@ -36,8 +36,7 @@ PORTDOCS=	AUTHORS
 #		COREAUDIO	"Enable CoreAudio output plugin"	off \
 #		PROJECTM	"Enable projectM vis plugin"		off \
 
-OPTIONS=	AUDIOCD		"Enable audiocd plugin"			off \
-		DBUS		"Enable dbus support"			on  \
+OPTIONS=	DBUS		"Enable dbus support"			on  \
 		ESOUND		"Enable Esound output output"		off \
 		MP3		"Enable mp3 plugin"			on  \
 		ROCKLIGHT	"Enable Rocklight vis plugin"		on  \
@@ -71,15 +70,6 @@ OPTIONS=	AUDIOCD		"Enable audiocd plugin"			off \
 		NLS		"Native Language Support"		on
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_AUDIOCD)
-LIB_DEPENDS+=   cdio.8:${PORTSDIR}/sysutils/libcdio
-CONFIGURE_ARGS+=--enable-cdaudio
-PLIST_SUB+=     AUDIOCDPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-cdaudio
-PLIST_SUB+=     AUDIOCDPLUGIN="@comment "
-.endif
 
 .if !defined(WITHOUT_DBUS)
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
@@ -292,7 +282,7 @@ PLIST_SUB+=	TIMIDITYPLUGIN="@comment "
 .endif
 
 .if defined(WITH_CDAUDIO)
-LIB_DEPENDS+=	cdio.7:${PORTSDIR}/sysutils/libcdio \
+LIB_DEPENDS+=	cdio.8:${PORTSDIR}/sysutils/libcdio \
 		cddb.4:${PORTSDIR}/audio/libcddb
 CONFIGURE_ARGS+=--enable-cdaudio
 PLIST_SUB+=	CDAUDIOPLUGIN=""
