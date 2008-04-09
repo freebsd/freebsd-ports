@@ -1,20 +1,20 @@
 bin/inkscape
 bin/inkview
 share/applications/inkscape.desktop
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 %%DATADIR%%/clipart/README
-%%DATADIR%%/clipart/README-ribbon.txt
+%%DATADIR%%/clipart/draw-freely.ru.svg
+%%DATADIR%%/clipart/draw-freely.svg
 %%DATADIR%%/clipart/inkscape.logo.svg
 %%DATADIR%%/clipart/orav.svg
-%%DATADIR%%/clipart/ribbon.svg
-%%DATADIR%%/clipart/tux.png
 %%DATADIR%%/clipart/tux.svg
 %%DATADIR%%/examples/README
 %%DATADIR%%/examples/animated-clock.svg
 %%DATADIR%%/examples/art-nouveau-P3.svg
+%%DATADIR%%/examples/blend_modes.svg
 %%DATADIR%%/examples/car.svgz
 %%DATADIR%%/examples/data_uri.svg
 %%DATADIR%%/examples/eastern-motive-P4G.svg
+%%DATADIR%%/examples/flow-go.svg
 %%DATADIR%%/examples/flowsample.svg
 %%DATADIR%%/examples/gallardo.svgz
 %%DATADIR%%/examples/glass.svg
@@ -23,12 +23,28 @@ share/applications/inkscape.desktop
 %%DATADIR%%/examples/i18n.svg
 %%DATADIR%%/examples/istest.pov
 %%DATADIR%%/examples/l-systems.svgz
+%%DATADIR%%/examples/lighting_effects.svg
+%%DATADIR%%/examples/live-path-effects-curvestitch.svg
+%%DATADIR%%/examples/live-path-effects-gears.svg
+%%DATADIR%%/examples/live-path-effects-pathalongpath.svg
 %%DATADIR%%/examples/markers.svg
 %%DATADIR%%/examples/rope-3D.svg
 %%DATADIR%%/examples/stars.svgz
 %%DATADIR%%/examples/tesselation-P3.svg
 %%DATADIR%%/examples/text-on-path.svg
 %%DATADIR%%/examples/tiger.svgz
+%%DATADIR%%/examples/turbulence_effects.svg
+%%DATADIR%%/extensions/Barcode/Base.py
+%%DATADIR%%/extensions/Barcode/Code128.py
+%%DATADIR%%/extensions/Barcode/Code39.py
+%%DATADIR%%/extensions/Barcode/Code39Ext.py
+%%DATADIR%%/extensions/Barcode/Code93.py
+%%DATADIR%%/extensions/Barcode/EAN13.py
+%%DATADIR%%/extensions/Barcode/EAN8.py
+%%DATADIR%%/extensions/Barcode/RM4CC.py
+%%DATADIR%%/extensions/Barcode/UPCA.py
+%%DATADIR%%/extensions/Barcode/UPCE.py
+%%DATADIR%%/extensions/Barcode/__init__.py
 %%DATADIR%%/extensions/SpSVG.pm
 %%DATADIR%%/extensions/addnodes.inx
 %%DATADIR%%/extensions/addnodes.py
@@ -37,6 +53,9 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/aisvg.inx
 %%DATADIR%%/extensions/aisvg.xslt
 %%DATADIR%%/extensions/bezmisc.py
+%%DATADIR%%/extensions/cdr2svg.sh
+%%DATADIR%%/extensions/cdr_input.inx
+%%DATADIR%%/extensions/chardataeffect.py
 %%DATADIR%%/extensions/color_brighter.inx
 %%DATADIR%%/extensions/color_brighter.py
 %%DATADIR%%/extensions/color_custom.inx
@@ -61,25 +80,34 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/color_moresaturation.py
 %%DATADIR%%/extensions/color_negative.inx
 %%DATADIR%%/extensions/color_negative.py
+%%DATADIR%%/extensions/color_randomize.inx
+%%DATADIR%%/extensions/color_randomize.py
 %%DATADIR%%/extensions/color_removeblue.inx
 %%DATADIR%%/extensions/color_removeblue.py
 %%DATADIR%%/extensions/color_removegreen.inx
 %%DATADIR%%/extensions/color_removegreen.py
 %%DATADIR%%/extensions/color_removered.inx
 %%DATADIR%%/extensions/color_removered.py
+%%DATADIR%%/extensions/color_replace.inx
+%%DATADIR%%/extensions/color_replace.py
 %%DATADIR%%/extensions/color_rgbbarrel.inx
 %%DATADIR%%/extensions/color_rgbbarrel.py
 %%DATADIR%%/extensions/coloreffect.py
+%%DATADIR%%/extensions/colors.xml
 %%DATADIR%%/extensions/cspsubdiv.py
 %%DATADIR%%/extensions/cubicsuperpath.py
 %%DATADIR%%/extensions/dia.inx
 %%DATADIR%%/extensions/dia2svg.sh
+%%DATADIR%%/extensions/dimension.inx
+%%DATADIR%%/extensions/dimension.py
 %%DATADIR%%/extensions/dots.inx
 %%DATADIR%%/extensions/dots.py
 %%DATADIR%%/extensions/dxf_input.inx
 %%DATADIR%%/extensions/dxf_outlines.inx
 %%DATADIR%%/extensions/dxf_outlines.py
 %%DATADIR%%/extensions/dxf_output.inx
+%%DATADIR%%/extensions/edge3d.inx
+%%DATADIR%%/extensions/edge3d.py
 %%DATADIR%%/extensions/embed_raster_in_svg.pl
 %%DATADIR%%/extensions/embedimage.inx
 %%DATADIR%%/extensions/embedimage.py
@@ -100,8 +128,8 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/fractalize.py
 %%DATADIR%%/extensions/funcplot.inx
 %%DATADIR%%/extensions/funcplot.py
-%%DATADIR%%/extensions/g2pngs.inx
-%%DATADIR%%/extensions/g2pngs.py
+%%DATADIR%%/extensions/gears.inx
+%%DATADIR%%/extensions/gears.py
 %%DATADIR%%/extensions/gimp_xcf.inx
 %%DATADIR%%/extensions/gimp_xcf.py
 %%DATADIR%%/extensions/handles.inx
@@ -110,8 +138,10 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/inkex.py
 %%DATADIR%%/extensions/inkscape-shadow-white.sh
 %%DATADIR%%/extensions/inkscape-shadow.sh
+%%DATADIR%%/extensions/inkscape_help_askaquestion.inx
 %%DATADIR%%/extensions/inkscape_help_commandline.inx
 %%DATADIR%%/extensions/inkscape_help_faq.inx
+%%DATADIR%%/extensions/inkscape_help_keys.inx
 %%DATADIR%%/extensions/inkscape_help_manual.inx
 %%DATADIR%%/extensions/inkscape_help_relnotes.inx
 %%DATADIR%%/extensions/inkscape_help_reportabug.inx
@@ -135,6 +165,8 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/pathmodifier.py
 %%DATADIR%%/extensions/pdf_output.inx.txt
 %%DATADIR%%/extensions/pdf_output_via_gs_on_win32.inx.txt
+%%DATADIR%%/extensions/perfectboundcover.inx
+%%DATADIR%%/extensions/perfectboundcover.py
 %%DATADIR%%/extensions/perspective.inx
 %%DATADIR%%/extensions/perspective.py
 %%DATADIR%%/extensions/ps2dxf.sh
@@ -147,28 +179,50 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/radiusrand.py
 %%DATADIR%%/extensions/randompnt.inx
 %%DATADIR%%/extensions/randompos.inx
+%%DATADIR%%/extensions/render_barcode.inx
+%%DATADIR%%/extensions/render_barcode.py
 %%DATADIR%%/extensions/rtree.inx
 %%DATADIR%%/extensions/rtree.py
+%%DATADIR%%/extensions/rubberstretch.inx
 %%DATADIR%%/extensions/rubberstretch.py
 %%DATADIR%%/extensions/simplepath.py
 %%DATADIR%%/extensions/simplepath.rb
 %%DATADIR%%/extensions/simplestyle.py
+%%DATADIR%%/extensions/simpletransform.py
 %%DATADIR%%/extensions/sk2svg.sh
 %%DATADIR%%/extensions/sk_input.inx
+%%DATADIR%%/extensions/spirograph.inx
+%%DATADIR%%/extensions/spirograph.py
 %%DATADIR%%/extensions/straightseg.inx
 %%DATADIR%%/extensions/straightseg.py
 %%DATADIR%%/extensions/summersnight.inx
 %%DATADIR%%/extensions/summersnight.py
+%%DATADIR%%/extensions/svg2xaml.inx
+%%DATADIR%%/extensions/svg2xaml.xsl
 %%DATADIR%%/extensions/svg_and_media_zip_output.inx
 %%DATADIR%%/extensions/svg_and_media_zip_output.py
-%%DATADIR%%/extensions/svg_dropshadow
-%%DATADIR%%/extensions/svg_dropshadow.inx
 %%DATADIR%%/extensions/svgz_input.inx
 %%DATADIR%%/extensions/svgz_output.inx
+%%DATADIR%%/extensions/text_flipcase.inx
+%%DATADIR%%/extensions/text_flipcase.py
+%%DATADIR%%/extensions/text_lowercase.inx
+%%DATADIR%%/extensions/text_lowercase.py
+%%DATADIR%%/extensions/text_randomcase.inx
+%%DATADIR%%/extensions/text_randomcase.py
+%%DATADIR%%/extensions/text_replace.inx
+%%DATADIR%%/extensions/text_replace.py
+%%DATADIR%%/extensions/text_sentencecase.inx
+%%DATADIR%%/extensions/text_sentencecase.py
+%%DATADIR%%/extensions/text_titlecase.inx
+%%DATADIR%%/extensions/text_titlecase.py
+%%DATADIR%%/extensions/text_uppercase.inx
+%%DATADIR%%/extensions/text_uppercase.py
 %%DATADIR%%/extensions/txt2svg.inx
 %%DATADIR%%/extensions/txt2svg.pl
+%%DATADIR%%/extensions/webbrowser_askaquestion.py
 %%DATADIR%%/extensions/webbrowser_commandline.py
 %%DATADIR%%/extensions/webbrowser_faq.py
+%%DATADIR%%/extensions/webbrowser_keys.py
 %%DATADIR%%/extensions/webbrowser_manual.py
 %%DATADIR%%/extensions/webbrowser_relnotes.py
 %%DATADIR%%/extensions/webbrowser_reportabug.py
@@ -176,23 +230,64 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/whirl.inx
 %%DATADIR%%/extensions/whirl.py
 %%DATADIR%%/extensions/wmf_input.inx
+%%DATADIR%%/extensions/xaml2svg.inx
+%%DATADIR%%/extensions/xaml2svg.xsl
+%%DATADIR%%/extensions/xaml2svg/Makefile.am
+%%DATADIR%%/extensions/xaml2svg/animation.xsl
+%%DATADIR%%/extensions/xaml2svg/brushes.xsl
+%%DATADIR%%/extensions/xaml2svg/canvas.xsl
+%%DATADIR%%/extensions/xaml2svg/geometry.xsl
+%%DATADIR%%/extensions/xaml2svg/properties.xsl
+%%DATADIR%%/extensions/xaml2svg/shapes.xsl
+%%DATADIR%%/extensions/xaml2svg/transform.xsl
 %%DATADIR%%/fonts/README
 %%DATADIR%%/gradients/README
-%%DATADIR%%/icons/David_icons.svg
-%%DATADIR%%/icons/README.David_icons
 %%DATADIR%%/icons/README.icon_themes
 %%DATADIR%%/icons/README.legacy_icons
+%%DATADIR%%/icons/feBlend-icon.png
+%%DATADIR%%/icons/feBlend-icon.svg
+%%DATADIR%%/icons/feColorMatrix-icon.png
+%%DATADIR%%/icons/feColorMatrix-icon.svg
+%%DATADIR%%/icons/feComposite-icon.png
+%%DATADIR%%/icons/feComposite-icon.svg
+%%DATADIR%%/icons/feConvolveMatrix-icon.png
+%%DATADIR%%/icons/feConvolveMatrix-icon.svg
+%%DATADIR%%/icons/feDiffuseLighting-icon.png
+%%DATADIR%%/icons/feDiffuseLighting-icon.svg
+%%DATADIR%%/icons/feDisplacementMap-icon.png
+%%DATADIR%%/icons/feDisplacementMap-icon.svg
+%%DATADIR%%/icons/feFlood-icon.png
+%%DATADIR%%/icons/feFlood-icon.svg
+%%DATADIR%%/icons/feGaussianBlur-icon.png
+%%DATADIR%%/icons/feGaussianBlur-icon.svg
+%%DATADIR%%/icons/feImage-icon.png
+%%DATADIR%%/icons/feImage-icon.svg
+%%DATADIR%%/icons/feMerge-icon.png
+%%DATADIR%%/icons/feMerge-icon.svg
+%%DATADIR%%/icons/feMorphology-icon.png
+%%DATADIR%%/icons/feMorphology-icon.svg
+%%DATADIR%%/icons/feOffset-icon.png
+%%DATADIR%%/icons/feOffset-icon.svg
+%%DATADIR%%/icons/feSpecularLighting-icon.png
+%%DATADIR%%/icons/feSpecularLighting-icon.svg
+%%DATADIR%%/icons/feTurbulence-icon.png
+%%DATADIR%%/icons/feTurbulence-icon.svg
 %%DATADIR%%/icons/icons.svg
 %%DATADIR%%/icons/inkscape.file.png
 %%DATADIR%%/icons/inkscape.file.svg
 %%DATADIR%%/icons/inkscape.svg
 %%DATADIR%%/icons/legacy_icons.svg
+%%DATADIR%%/icons/tango_icons.svg
+%%DATADIR%%/icons/ticotico.jpg
+%%DATADIR%%/keys/acd-canvas.xml
 %%DATADIR%%/keys/adobe-illustrator-cs2.xml
+%%DATADIR%%/keys/corel-draw-x4.xml
 %%DATADIR%%/keys/default.xml
 %%DATADIR%%/keys/inkscape.xml
 %%DATADIR%%/keys/macromedia-freehand-mx.xml
 %%DATADIR%%/keys/right-handed-illustration.xml
 %%DATADIR%%/keys/xara.xml
+%%DATADIR%%/keys/zoner-draw.xml
 %%DATADIR%%/markers/markers.svg
 %%DATADIR%%/palettes/Blues.gpl
 %%DATADIR%%/palettes/Gold.gpl
@@ -200,6 +295,7 @@ share/applications/inkscape.desktop
 %%DATADIR%%/palettes/Greens.gpl
 %%DATADIR%%/palettes/Hilite.gpl
 %%DATADIR%%/palettes/Khaki.gpl
+%%DATADIR%%/palettes/LaTeX-Beamer.gpl
 %%DATADIR%%/palettes/README
 %%DATADIR%%/palettes/Reds.gpl
 %%DATADIR%%/palettes/Royal.gpl
@@ -210,14 +306,20 @@ share/applications/inkscape.desktop
 %%DATADIR%%/palettes/svg.gpl
 %%DATADIR%%/palettes/webhex.gpl
 %%DATADIR%%/palettes/websafe22.gpl
-%%DATADIR%%/palettes/windows.gpl
+%%DATADIR%%/palettes/windowsXP.gpl
 %%DATADIR%%/patterns/README
+%%DATADIR%%/patterns/patterns.svg
 %%DATADIR%%/screens/about.bg.svg
+%%DATADIR%%/screens/about.br.svg
+%%DATADIR%%/screens/about.gl.svg
+%%DATADIR%%/screens/about.it.svg
+%%DATADIR%%/screens/about.pt_BR.svg
+%%DATADIR%%/screens/about.ru.svg
+%%DATADIR%%/screens/about.sk.svg
+%%DATADIR%%/screens/about.sl.svg
+%%DATADIR%%/screens/about.sr.svg
+%%DATADIR%%/screens/about.sr@latin.svg
 %%DATADIR%%/screens/about.svg
-%%DATADIR%%/screens/keys.de.svg
-%%DATADIR%%/screens/keys.fr.svg
-%%DATADIR%%/screens/keys.sl.svg
-%%DATADIR%%/screens/keys.svg
 %%DATADIR%%/templates/A4.svg
 %%DATADIR%%/templates/A4_landscape.svg
 %%DATADIR%%/templates/CD_cover_300dpi.svg
@@ -225,6 +327,7 @@ share/applications/inkscape.desktop
 %%DATADIR%%/templates/DVD_cover_slim_300dpi.svg
 %%DATADIR%%/templates/DVD_cover_superslim_300dpi.svg
 %%DATADIR%%/templates/DVD_cover_ultraslim_300dpi.svg
+%%DATADIR%%/templates/LaTeX_Beamer.svg
 %%DATADIR%%/templates/Letter.svg
 %%DATADIR%%/templates/Letter_landscape.svg
 %%DATADIR%%/templates/README
@@ -236,6 +339,7 @@ share/applications/inkscape.desktop
 %%DATADIR%%/templates/default.de.svg
 %%DATADIR%%/templates/default.eo.svg
 %%DATADIR%%/templates/default.es.svg
+%%DATADIR%%/templates/default.eu.svg
 %%DATADIR%%/templates/default.fi.svg
 %%DATADIR%%/templates/default.fr.svg
 %%DATADIR%%/templates/default.hu.svg
@@ -251,15 +355,16 @@ share/applications/inkscape.desktop
 %%DATADIR%%/templates/desktop_1600x1200.svg
 %%DATADIR%%/templates/desktop_640x480.svg
 %%DATADIR%%/templates/desktop_800x600.svg
+%%DATADIR%%/templates/fontforge_glyph.svg
 %%DATADIR%%/templates/icon_16x16.svg
 %%DATADIR%%/templates/icon_32x32.svg
 %%DATADIR%%/templates/icon_48x48.svg
 %%DATADIR%%/templates/icon_64x64.svg
 %%DATADIR%%/templates/no_borders.svg
 %%DATADIR%%/templates/no_layers.svg
-%%DATADIR%%/templates/video_HDTV_1920_1080.svg
-%%DATADIR%%/templates/video_NTSC_720_486.svg
-%%DATADIR%%/templates/video_PAL_720_576.svg
+%%DATADIR%%/templates/video_HDTV_1920x1080.svg
+%%DATADIR%%/templates/video_NTSC_720x486.svg
+%%DATADIR%%/templates/video_PAL_720x576.svg
 %%DATADIR%%/templates/web_banner_468x60.svg
 %%DATADIR%%/templates/web_banner_728x90.svg
 %%DATADIR%%/templates/white_opaque.svg
@@ -269,7 +374,6 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/oldguitar.jpg
 %%DATADIR%%/tutorials/potrace-de.png
 %%DATADIR%%/tutorials/potrace-fr.png
-%%DATADIR%%/tutorials/potrace-pt_BR.png
 %%DATADIR%%/tutorials/potrace-ru.png
 %%DATADIR%%/tutorials/potrace.png
 %%DATADIR%%/tutorials/tutorial-advanced.ca.svg
@@ -277,11 +381,15 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-advanced.de.svg
 %%DATADIR%%/tutorials/tutorial-advanced.es.svg
 %%DATADIR%%/tutorials/tutorial-advanced.fr.svg
+%%DATADIR%%/tutorials/tutorial-advanced.it.svg
 %%DATADIR%%/tutorials/tutorial-advanced.ja.svg
 %%DATADIR%%/tutorials/tutorial-advanced.pt_BR.svg
 %%DATADIR%%/tutorials/tutorial-advanced.ru.svg
+%%DATADIR%%/tutorials/tutorial-advanced.sk.svg
 %%DATADIR%%/tutorials/tutorial-advanced.sl.svg
 %%DATADIR%%/tutorials/tutorial-advanced.svg
+%%DATADIR%%/tutorials/tutorial-advanced.vi.svg
+%%DATADIR%%/tutorials/tutorial-advanced.zh_CN.svg
 %%DATADIR%%/tutorials/tutorial-basic.bg.svg
 %%DATADIR%%/tutorials/tutorial-basic.ca.svg
 %%DATADIR%%/tutorials/tutorial-basic.cs.svg
@@ -294,8 +402,12 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-basic.nn.svg
 %%DATADIR%%/tutorials/tutorial-basic.pt_BR.svg
 %%DATADIR%%/tutorials/tutorial-basic.ru.svg
+%%DATADIR%%/tutorials/tutorial-basic.sk.svg
 %%DATADIR%%/tutorials/tutorial-basic.sl.svg
 %%DATADIR%%/tutorials/tutorial-basic.svg
+%%DATADIR%%/tutorials/tutorial-basic.tr.svg
+%%DATADIR%%/tutorials/tutorial-basic.vi.svg
+%%DATADIR%%/tutorials/tutorial-basic.zh_CN.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.ca.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.cs.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.de.svg
@@ -305,6 +417,7 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-calligraphy.ru.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.sl.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.svg
+%%DATADIR%%/tutorials/tutorial-calligraphy.vi.svg
 %%DATADIR%%/tutorials/tutorial-elements.ca.svg
 %%DATADIR%%/tutorials/tutorial-elements.de.svg
 %%DATADIR%%/tutorials/tutorial-elements.es.svg
@@ -322,14 +435,19 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-shapes.ja.svg
 %%DATADIR%%/tutorials/tutorial-shapes.pt_BR.svg
 %%DATADIR%%/tutorials/tutorial-shapes.ru.svg
+%%DATADIR%%/tutorials/tutorial-shapes.sk.svg
 %%DATADIR%%/tutorials/tutorial-shapes.sl.svg
 %%DATADIR%%/tutorials/tutorial-shapes.svg
+%%DATADIR%%/tutorials/tutorial-shapes.vi.svg
+%%DATADIR%%/tutorials/tutorial-shapes.zh_CN.svg
 %%DATADIR%%/tutorials/tutorial-tips.ca.svg
 %%DATADIR%%/tutorials/tutorial-tips.de.svg
 %%DATADIR%%/tutorials/tutorial-tips.es.svg
 %%DATADIR%%/tutorials/tutorial-tips.fr.svg
+%%DATADIR%%/tutorials/tutorial-tips.it.svg
 %%DATADIR%%/tutorials/tutorial-tips.pt_BR.svg
 %%DATADIR%%/tutorials/tutorial-tips.ru.svg
+%%DATADIR%%/tutorials/tutorial-tips.sk.svg
 %%DATADIR%%/tutorials/tutorial-tips.sl.svg
 %%DATADIR%%/tutorials/tutorial-tips.svg
 %%DATADIR%%/tutorials/tutorial-tracing.ca.svg
@@ -340,6 +458,7 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-tracing.ru.svg
 %%DATADIR%%/tutorials/tutorial-tracing.sl.svg
 %%DATADIR%%/tutorials/tutorial-tracing.svg
+%%DATADIR%%/tutorials/tutorial-tracing.vi.svg
 %%DATADIR%%/tutorials/tux.png
 %%DATADIR%%/ui/keybindings.rc
 %%DATADIR%%/ui/menus-bars.xml
@@ -347,15 +466,20 @@ share/applications/inkscape.desktop
 %%DATADIR%%/ui/units.txt
 %%DATADIR%%/ui/units.xml
 share/locale/am/LC_MESSAGES/inkscape.mo
+share/locale/ar/LC_MESSAGES/inkscape.mo
 share/locale/az/LC_MESSAGES/inkscape.mo
 share/locale/be/LC_MESSAGES/inkscape.mo
 share/locale/bg/LC_MESSAGES/inkscape.mo
+share/locale/bn/LC_MESSAGES/inkscape.mo
+share/locale/br/LC_MESSAGES/inkscape.mo
 share/locale/ca/LC_MESSAGES/inkscape.mo
+share/locale/ca@valencia/LC_MESSAGES/inkscape.mo
 share/locale/cs/LC_MESSAGES/inkscape.mo
 share/locale/da/LC_MESSAGES/inkscape.mo
 share/locale/de/LC_MESSAGES/inkscape.mo
 share/locale/dz/LC_MESSAGES/inkscape.mo
 share/locale/el/LC_MESSAGES/inkscape.mo
+share/locale/en_AU/LC_MESSAGES/inkscape.mo
 share/locale/en_CA/LC_MESSAGES/inkscape.mo
 share/locale/en_GB/LC_MESSAGES/inkscape.mo
 share/locale/en_US@piglatin/LC_MESSAGES/inkscape.mo
@@ -363,12 +487,15 @@ share/locale/eo/LC_MESSAGES/inkscape.mo
 share/locale/es/LC_MESSAGES/inkscape.mo
 share/locale/es_MX/LC_MESSAGES/inkscape.mo
 share/locale/et/LC_MESSAGES/inkscape.mo
+share/locale/eu/LC_MESSAGES/inkscape.mo
 share/locale/fi/LC_MESSAGES/inkscape.mo
 share/locale/fr/LC_MESSAGES/inkscape.mo
 share/locale/ga/LC_MESSAGES/inkscape.mo
 share/locale/gl/LC_MESSAGES/inkscape.mo
+share/locale/he/LC_MESSAGES/inkscape.mo
 share/locale/hr/LC_MESSAGES/inkscape.mo
 share/locale/hu/LC_MESSAGES/inkscape.mo
+share/locale/id/LC_MESSAGES/inkscape.mo
 share/locale/it/LC_MESSAGES/inkscape.mo
 share/locale/ja/LC_MESSAGES/inkscape.mo
 share/locale/km/LC_MESSAGES/inkscape.mo
@@ -384,13 +511,14 @@ share/locale/pa/LC_MESSAGES/inkscape.mo
 share/locale/pl/LC_MESSAGES/inkscape.mo
 share/locale/pt/LC_MESSAGES/inkscape.mo
 share/locale/pt_BR/LC_MESSAGES/inkscape.mo
+share/locale/ro/LC_MESSAGES/inkscape.mo
 share/locale/ru/LC_MESSAGES/inkscape.mo
 share/locale/rw/LC_MESSAGES/inkscape.mo
 share/locale/sk/LC_MESSAGES/inkscape.mo
 share/locale/sl/LC_MESSAGES/inkscape.mo
 share/locale/sq/LC_MESSAGES/inkscape.mo
 share/locale/sr/LC_MESSAGES/inkscape.mo
-share/locale/sr@Latn/LC_MESSAGES/inkscape.mo
+share/locale/sr@latin/LC_MESSAGES/inkscape.mo
 share/locale/sv/LC_MESSAGES/inkscape.mo
 share/locale/th/LC_MESSAGES/inkscape.mo
 share/locale/tr/LC_MESSAGES/inkscape.mo
@@ -410,12 +538,19 @@ share/pixmaps/inkscape.png
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/gradients
 @dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/extensions/xaml2svg
+@dirrm %%DATADIR%%/extensions/Barcode
 @dirrm %%DATADIR%%/extensions
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/clipart
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/km/LC_MESSAGES
@@ -424,3 +559,5 @@ share/pixmaps/inkscape.png
 @dirrmtry share/locale/en_US@piglatin
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
