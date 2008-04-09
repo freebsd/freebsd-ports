@@ -30,6 +30,7 @@ lib/libgvfscommon.so.0
 libexec/gvfsd
 %%ARCHIVE%%libexec/gvfsd-archive
 libexec/gvfsd-burn
+%%CDDA%%libexec/gvfsd-cdda
 libexec/gvfsd-computer
 libexec/gvfsd-dav
 libexec/gvfsd-dnssd
@@ -45,6 +46,7 @@ libexec/gvfsd-trash
 share/dbus-1/services/gvfs-daemon.service
 %%ARCHIVE%%share/gvfs/mounts/archive.mount
 share/gvfs/mounts/burn.mount
+%%CDDA%%share/gvfs/mounts/cdda.mount
 share/gvfs/mounts/computer.mount
 share/gvfs/mounts/dav.mount
 share/gvfs/mounts/dns-sd.mount
