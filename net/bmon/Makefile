@@ -7,11 +7,14 @@
 
 PORTNAME=	bmon
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://people.suug.ch/~tgr/bmon/files/
 
 MAINTAINER=	nistor@snickers.org
 COMMENT=	Portable bandwidth monitor and rate estimator
+
+LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
