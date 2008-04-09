@@ -1,0 +1,5119 @@
+diff -Naur mc-4.6.1-old/edit/edit.c mc-4.6.1/edit/edit.c
+--- mc-4.6.1-old/edit/edit.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/edit/edit.c	2005-10-28 10:08:07.736247264 +0200
+@@ -93,7 +93,7 @@
+ 
+ #ifndef NO_INLINE_GETBYTE
+ 
+-int edit_get_byte (WEdit * edit, long byte_index)
++mc_wchar_t edit_get_byte (WEdit * edit, long byte_index)
+ {
+     unsigned long p;
+     if (byte_index >= (edit->curs1 + edit->curs2) || byte_index < 0)
+@@ -125,7 +125,7 @@
+ 
+     edit->curs1 = 0;
+     edit->curs2 = 0;
+-    edit->buffers2[0] = g_malloc (EDIT_BUF_SIZE);
++    edit->buffers2[0] = g_malloc (EDIT_BUF_SIZE * sizeof(mc_wchar_t));
+ }
+ 
+ /*
+@@ -152,7 +152,7 @@
+     }
+ 
+     if (!edit->buffers2[buf2])
+-	edit->buffers2[buf2] = g_malloc (EDIT_BUF_SIZE);
++	edit->buffers2[buf2] = g_malloc (EDIT_BUF_SIZE  * sizeof(mc_wchar_t));
+ 
+     mc_read (file,
+ 	     (char *) edit->buffers2[buf2] + EDIT_BUF_SIZE -
+@@ -162,7 +162,7 @@
+     for (buf = buf2 - 1; buf >= 0; buf--) {
+ 	/* edit->buffers2[0] is already allocated */
+ 	if (!edit->buffers2[buf])
+-	    edit->buffers2[buf] = g_malloc (EDIT_BUF_SIZE);
++	    edit->buffers2[buf] = g_malloc (EDIT_BUF_SIZE * sizeof(mc_wchar_t));
+ 	mc_read (file, (char *) edit->buffers2[buf], EDIT_BUF_SIZE);
+     }
+ 
+@@ -242,9 +242,44 @@
+ {
+     int c;
+     long i = 0;
+-    while ((c = fgetc (f)) >= 0) {
++#ifndef UTF8
++    while ((c = fgetc (f)) != EOF) {
+ 	edit_insert (edit, c);
+ 	i++;
++#else /* UTF8 */
++    unsigned char buf[MB_LEN_MAX];
++    int charpos = 0;
++    mbstate_t mbs;
++
++    while ((c = fgetc (f)) != EOF) {
++	mc_wchar_t wc;
++	int size;
++	int j;
++
++	buf[charpos++] = c;
++
++        memset (&mbs, 0, sizeof (mbs));
++	size = mbrtowc(&wc, (char *)buf, charpos, &mbs);
++
++	if (size == -2) 
++	    continue; /* incomplete */
++
++	else if (size >= 0) {
++	    edit_insert (edit, wc);
++	    i++;
++	    charpos = 0;
++	    continue;
++	}
++	else {
++
++		/* invalid  */
++#ifdef __STDC_ISO_10646__
++		for (j=0; j<charpos; j++)
++		    edit_insert (edit, BINARY_CHAR_OFFSET + (mc_wchar_t)buf[j]);
++#endif
++		charpos = 0;
++	}
++#endif /* UTF8 */
+     }
+     return i;
+ }
+@@ -252,9 +287,32 @@
+ long edit_write_stream (WEdit * edit, FILE * f)
+ {
+     long i;
++#ifndef UTF8
+     for (i = 0; i < edit->last_byte; i++)
+ 	if (fputc (edit_get_byte (edit, i), f) < 0)
+ 	    break;
++#else /* UTF8 */
++    for (i = 0; i < edit->last_byte; i++) {
++	mc_wchar_t wc = edit_get_byte (edit, i);
++	int res;
++	char tmpbuf[MB_LEN_MAX];
++        mbstate_t mbs;
++
++        memset (&mbs, 0, sizeof (mbs));
++
++#ifdef __STDC_ISO_10646__ 
++	if (wc >= BINARY_CHAR_OFFSET && wc < (BINARY_CHAR_OFFSET + 256)) {
++	    res = 1;
++	    tmpbuf[0] = (char) (wc - BINARY_CHAR_OFFSET);
++	} else
++#endif
++	res = wcrtomb(tmpbuf, wc, &mbs);
++	if (res > 0) {
++	    if (fwrite(tmpbuf, res, 1, f) != 1)
++		break;
++	}
++    }
++#endif /* UTF8 */
+     return i;
+ }
+ 
+@@ -294,12 +352,46 @@
+ 	int i, file, blocklen;
+ 	long current = edit->curs1;
+ 	unsigned char *buf;
++#ifdef UTF8
++	mbstate_t mbs;
++	int bufstart = 0;
++
++	memset (&mbs, 0, sizeof (mbs));
++#endif /* UTF8 */
+ 	if ((file = mc_open (filename, O_RDONLY | O_BINARY)) == -1)
+ 	    return 0;
+ 	buf = g_malloc (TEMP_BUF_LEN);
++#ifndef UTF8
+ 	while ((blocklen = mc_read (file, (char *) buf, TEMP_BUF_LEN)) > 0) {
+ 	    for (i = 0; i < blocklen; i++)
+ 		edit_insert (edit, buf[i]);
++#else /* UTF8 */
++	while ((blocklen = mc_read (file, (char *) buf + bufstart, TEMP_BUF_LEN - bufstart)) > 0) {
++	    blocklen += bufstart;
++	    bufstart = 0;
++	    for (i = 0; i < blocklen; ) {
++		mc_wchar_t wc;
++		int j;
++	        int size = mbrtowc(&wc, (char *)buf + i, blocklen - i, &mbs);
++		if (size == -2) { /*incomplete char*/
++		    bufstart = blocklen - i;
++		    memcpy(buf, buf+i, bufstart);
++		    i = blocklen;
++		    memset (&mbs, 0, sizeof (mbs));
++		}
++		else if (size <= 0) {
++#ifdef __STDC_ISO_10646__
++		    edit_insert (edit, BINARY_CHAR_OFFSET + (mc_wchar_t)buf[i]);
++#endif
++		    memset (&mbs, 0, sizeof (mbs));
++		    i++; /* skip broken char */
++		}
++		else {
++		    edit_insert (edit, wc);
++		    i+=size;
++		}
++	    }
++#endif /* UTF8 */
+ 	}
+ 	edit_cursor_move (edit, current - edit->curs1);
+ 	g_free (buf);
+@@ -393,7 +485,11 @@
+ static int
+ edit_load_file (WEdit *edit)
+ {
++#ifndef UTF8
+     int fast_load = 1;
++#else /* UTF8 */
++    int fast_load = 0; /* can't be used with multibyte characters */
++#endif /* UTF8 */
+ 
+     /* Cannot do fast load if a filter is used */
+     if (edit_find_filter (edit->filename) >= 0)
+@@ -540,7 +636,7 @@
+     edit_set_filename (edit, filename);
+     edit->stack_size = START_STACK_SIZE;
+     edit->stack_size_mask = START_STACK_SIZE - 1;
+-    edit->undo_stack = g_malloc ((edit->stack_size + 10) * sizeof (long));
++    edit->undo_stack = g_malloc ((edit->stack_size + 10) * sizeof (struct action));
+     if (edit_load_file (edit)) {
+ 	/* edit_load_file already gives an error message */
+ 	if (to_free)
+@@ -565,7 +661,9 @@
+ 	edit_move_display (edit, line - 1);
+ 	edit_move_to_line (edit, line - 1);
+     }
+-
++#ifdef UTF8
++    edit->charpoint = 0;
++#endif
+     return edit;
+ }
+ 
+@@ -693,13 +789,23 @@
+ {
+     unsigned long sp = edit->stack_pointer;
+     unsigned long spm1;
+-    long *t;
++  
++    struct action *t; 
++    mc_wchar_t ch = 0; 
++
++    if (c == CHAR_INSERT || c == CHAR_INSERT_AHEAD) { 
++      va_list ap; 
++      va_start (ap, c); 
++      ch = va_arg (ap, mc_wint_t); 
++      va_end (ap); 
++    } 
++
+ /* first enlarge the stack if necessary */
+     if (sp > edit->stack_size - 10) {	/* say */
+ 	if (option_max_undo < 256)
+ 	    option_max_undo = 256;
+ 	if (edit->stack_size < (unsigned long) option_max_undo) {
+-	    t = g_realloc (edit->undo_stack, (edit->stack_size * 2 + 10) * sizeof (long));
++	    t = g_realloc (edit->undo_stack, (edit->stack_size * 2 + 10) * sizeof (struct action));
+ 	    if (t) {
+ 		edit->undo_stack = t;
+ 		edit->stack_size <<= 1;
+@@ -714,7 +820,7 @@
+ #ifdef FAST_MOVE_CURSOR
+     if (c == CURS_LEFT_LOTS || c == CURS_RIGHT_LOTS) {
+ 	va_list ap;
+-	edit->undo_stack[sp] = c == CURS_LEFT_LOTS ? CURS_LEFT : CURS_RIGHT;
++	edit->undo_stack[sp].flags = c == CURS_LEFT_LOTS ? CURS_LEFT : CURS_RIGHT;
+ 	edit->stack_pointer = (edit->stack_pointer + 1) & edit->stack_size_mask;
+ 	va_start (ap, c);
+ 	c = -(va_arg (ap, int));
+@@ -725,12 +831,14 @@
+ 	&& spm1 != edit->stack_bottom
+ 	&& ((sp - 2) & edit->stack_size_mask) != edit->stack_bottom) {
+ 	int d;
+-	if (edit->undo_stack[spm1] < 0) {
+-	    d = edit->undo_stack[(sp - 2) & edit->stack_size_mask];
+-	    if (d == c) {
+-		if (edit->undo_stack[spm1] > -1000000000) {
++	mc_wchar_t d_ch;
++	if (edit->undo_stack[spm1].flags < 0) {
++	    d    = edit->undo_stack[(sp - 2) & edit->stack_size_mask].flags;
++	    d_ch = edit->undo_stack[(sp - 2) & edit->stack_size_mask].ch;
++	    if (d == c && d_ch == ch) {
++		if (edit->undo_stack[spm1].flags > -1000000000) {
+ 		    if (c < KEY_PRESS)	/* --> no need to push multiple do-nothings */
+-			edit->undo_stack[spm1]--;
++			edit->undo_stack[spm1].flags--;
+ 		    return;
+ 		}
+ 	    }
+@@ -738,19 +846,20 @@
+ #ifndef NO_STACK_CURSMOVE_ANIHILATION
+ 	    else if ((c == CURS_LEFT && d == CURS_RIGHT)
+ 		     || (c == CURS_RIGHT && d == CURS_LEFT)) {	/* a left then a right anihilate each other */
+-		if (edit->undo_stack[spm1] == -2)
++		if (edit->undo_stack[spm1].flags == -2)
+ 		    edit->stack_pointer = spm1;
+ 		else
+-		    edit->undo_stack[spm1]++;
++		    edit->undo_stack[spm1].flags++;
+ 		return;
+ 	    }
+ #endif
+ 	} else {
+-	    d = edit->undo_stack[spm1];
+-	    if (d == c) {
++	    d    = edit->undo_stack[spm1].flags;
++	    d_ch = edit->undo_stack[spm1].ch;
++	    if (d == c && d_ch == ch) {
+ 		if (c >= KEY_PRESS)
+ 		    return;	/* --> no need to push multiple do-nothings */
+-		edit->undo_stack[sp] = -2;
++		edit->undo_stack[sp].flags = -2;
+ 		goto check_bottom;
+ 	    }
+ #ifndef NO_STACK_CURSMOVE_ANIHILATION
+@@ -762,7 +871,9 @@
+ #endif
+ 	}
+     }
+-    edit->undo_stack[sp] = c;
++    edit->undo_stack[sp].flags = c;
++    edit->undo_stack[sp].ch = ch;
++
+   check_bottom:
+ 
+     edit->stack_pointer = (edit->stack_pointer + 1) & edit->stack_size_mask;
+@@ -775,10 +886,10 @@
+        (((unsigned long) c + 1) & edit->stack_size_mask) == edit->stack_bottom)
+ 	do {
+ 	    edit->stack_bottom = (edit->stack_bottom + 1) & edit->stack_size_mask;
+-	} while (edit->undo_stack[edit->stack_bottom] < KEY_PRESS && edit->stack_bottom != edit->stack_pointer);
++	} while (edit->undo_stack[edit->stack_bottom].flags < KEY_PRESS && edit->stack_bottom != edit->stack_pointer);
+ 
+ /*If a single key produced enough pushes to wrap all the way round then we would notice that the [stack_bottom] does not contain KEY_PRESS. The stack is then initialised: */
+-    if (edit->stack_pointer != edit->stack_bottom && edit->undo_stack[edit->stack_bottom] < KEY_PRESS)
++    if (edit->stack_pointer != edit->stack_bottom && edit->undo_stack[edit->stack_bottom].flags < KEY_PRESS)
+ 	edit->stack_bottom = edit->stack_pointer = 0;
+ }
+ 
+@@ -787,30 +898,30 @@
+    then the file should be as it was when he loaded up. Then set edit->modified to 0.
+  */
+ static long
+-pop_action (WEdit * edit)
++pop_action (WEdit * edit, struct action *c)
+ {
+-    long c;
+     unsigned long sp = edit->stack_pointer;
+     if (sp == edit->stack_bottom) {
+-	return STACK_BOTTOM;
++	c->flags = STACK_BOTTOM;
++	return c->flags;
+     }
+     sp = (sp - 1) & edit->stack_size_mask;
+-    if ((c = edit->undo_stack[sp]) >= 0) {
+-/*	edit->undo_stack[sp] = '@'; */
++    *c = edit->undo_stack[sp];
++    if (edit->undo_stack[sp].flags >= 0) {
+ 	edit->stack_pointer = (edit->stack_pointer - 1) & edit->stack_size_mask;
+-	return c;
++	return c->flags;
+     }
+     if (sp == edit->stack_bottom) {
+ 	return STACK_BOTTOM;
+     }
+-    c = edit->undo_stack[(sp - 1) & edit->stack_size_mask];
+-    if (edit->undo_stack[sp] == -2) {
+-/*      edit->undo_stack[sp] = '@'; */
++    *c = edit->undo_stack[(sp - 1) & edit->stack_size_mask];
++
++    if (edit->undo_stack[sp].flags == -2) {
+ 	edit->stack_pointer = sp;
+     } else
+-	edit->undo_stack[sp]++;
++	edit->undo_stack[sp].flags++;
+ 
+-    return c;
++    return c->flags;
+ }
+ 
+ /* is called whenever a modification is made by one of the four routines below */
+@@ -831,7 +942,7 @@
+  */
+ 
+ void
+-edit_insert (WEdit *edit, int c)
++edit_insert (WEdit *edit, mc_wchar_t c)
+ {
+     /* check if file has grown to large */
+     if (edit->last_byte >= SIZE_LIMIT)
+@@ -869,12 +980,11 @@
+     /* add a new buffer if we've reached the end of the last one */
+     if (!(edit->curs1 & M_EDIT_BUF_SIZE))
+ 	edit->buffers1[edit->curs1 >> S_EDIT_BUF_SIZE] =
+-	    g_malloc (EDIT_BUF_SIZE);
++	    g_malloc (EDIT_BUF_SIZE * sizeof(mc_wchar_t));
+ 
+     /* perform the insertion */
+-    edit->buffers1[edit->curs1 >> S_EDIT_BUF_SIZE][edit->
+-						   curs1 & M_EDIT_BUF_SIZE]
+-	= (unsigned char) c;
++    edit->buffers1[edit->curs1 >> S_EDIT_BUF_SIZE]
++		    [edit->curs1 & M_EDIT_BUF_SIZE] = c;
+ 
+     /* update file length */
+     edit->last_byte++;
+@@ -885,7 +995,7 @@
+ 
+ 
+ /* same as edit_insert and move left */
+-void edit_insert_ahead (WEdit * edit, int c)
++void edit_insert_ahead (WEdit * edit, mc_wchar_t c)
+ {
+     if (edit->last_byte >= SIZE_LIMIT)
+ 	return;
+@@ -908,7 +1018,7 @@
+     edit->last_get_rule += (edit->last_get_rule >= edit->curs1);
+ 
+     if (!((edit->curs2 + 1) & M_EDIT_BUF_SIZE))
+-	edit->buffers2[(edit->curs2 + 1) >> S_EDIT_BUF_SIZE] = g_malloc (EDIT_BUF_SIZE);
++	edit->buffers2[(edit->curs2 + 1) >> S_EDIT_BUF_SIZE] = g_malloc (EDIT_BUF_SIZE * sizeof(mc_wchar_t));
+     edit->buffers2[edit->curs2 >> S_EDIT_BUF_SIZE][EDIT_BUF_SIZE - (edit->curs2 & M_EDIT_BUF_SIZE) - 1] = c;
+ 
+     edit->last_byte++;
+@@ -918,7 +1028,7 @@
+ 
+ int edit_delete (WEdit * edit)
+ {
+-    int p;
++    mc_wint_t p;
+     if (!edit->curs2)
+ 	return 0;
+ 
+@@ -942,7 +1052,7 @@
+ 	edit->total_lines--;
+ 	edit->force |= REDRAW_AFTER_CURSOR;
+     }
+-    edit_push_action (edit, p + 256);
++    edit_push_action (edit, CHAR_INSERT_AHEAD, p);
+     if (edit->curs1 < edit->start_display) {
+ 	edit->start_display--;
+ 	if (p == '\n')
+@@ -956,7 +1066,7 @@
+ static int
+ edit_backspace (WEdit * edit)
+ {
+-    int p;
++    mc_wint_t p;
+     if (!edit->curs1)
+ 	return 0;
+ 
+@@ -980,7 +1090,7 @@
+ 	edit->total_lines--;
+ 	edit->force |= REDRAW_AFTER_CURSOR;
+     }
+-    edit_push_action (edit, p);
++    edit_push_action (edit, CHAR_INSERT, p);
+ 
+     if (edit->curs1 < edit->start_display) {
+ 	edit->start_display--;
+@@ -993,10 +1103,18 @@
+ 
+ #ifdef FAST_MOVE_CURSOR
+ 
+-static void memqcpy (WEdit * edit, unsigned char *dest, unsigned char *src, int n)
++static void memqcpy (WEdit * edit, mc_wchar_t *dest, mc_wchar_t *src, int n)
+ {
+     unsigned long next;
++#ifndef UTF8
+     while ((next = (unsigned long) memccpy (dest, src, '\n', n))) {
++#else /* UTF8 */
++    while (n) {
++	next = 0;
++	while (next < n && src[next]!='\n') next++;
++	if (next < n) next++;
++        wmemcpy (dest, src, next)
++#endif /* UTF8 */
+ 	edit->curs_line--;
+ 	next -= (unsigned long) dest;
+ 	n -= next;
+@@ -1009,7 +1127,7 @@
+ edit_move_backward_lots (WEdit *edit, long increment)
+ {
+     int r, s, t;
+-    unsigned char *p;
++    mc_wchar_t *p;
+ 
+     if (increment > edit->curs1)
+ 	increment = edit->curs1;
+@@ -1049,7 +1167,7 @@
+ 	    edit->buffers2[edit->curs2 >> S_EDIT_BUF_SIZE] = p;
+ 	else
+ 	    edit->buffers2[edit->curs2 >> S_EDIT_BUF_SIZE] =
+-		g_malloc (EDIT_BUF_SIZE);
++		g_malloc (EDIT_BUF_SIZE * sizeof(mc_wchar_t));
+     } else {
+ 	g_free (p);
+     }
+@@ -1087,7 +1205,7 @@
+ 		edit->buffers2[edit->curs2 >> S_EDIT_BUF_SIZE] = p;
+ 	    else
+ 		edit->buffers2[edit->curs2 >> S_EDIT_BUF_SIZE] =
+-		    g_malloc (EDIT_BUF_SIZE);
++		    g_malloc (EDIT_BUF_SIZE * sizeof(mc_wchar_t));
+ 	} else {
+ 	    g_free (p);
+ 	}
+@@ -1119,7 +1237,7 @@
+ 
+ 	    c = edit_get_byte (edit, edit->curs1 - 1);
+ 	    if (!((edit->curs2 + 1) & M_EDIT_BUF_SIZE))
+-		edit->buffers2[(edit->curs2 + 1) >> S_EDIT_BUF_SIZE] = g_malloc (EDIT_BUF_SIZE);
++		edit->buffers2[(edit->curs2 + 1) >> S_EDIT_BUF_SIZE] = g_malloc (EDIT_BUF_SIZE * sizeof(mc_wchar_t));
+ 	    edit->buffers2[edit->curs2 >> S_EDIT_BUF_SIZE][EDIT_BUF_SIZE - (edit->curs2 & M_EDIT_BUF_SIZE) - 1] = c;
+ 	    edit->curs2++;
+ 	    c = edit->buffers1[(edit->curs1 - 1) >> S_EDIT_BUF_SIZE][(edit->curs1 - 1) & M_EDIT_BUF_SIZE];
+@@ -1144,7 +1262,7 @@
+ 
+ 	    c = edit_get_byte (edit, edit->curs1);
+ 	    if (!(edit->curs1 & M_EDIT_BUF_SIZE))
+-		edit->buffers1[edit->curs1 >> S_EDIT_BUF_SIZE] = g_malloc (EDIT_BUF_SIZE);
++		edit->buffers1[edit->curs1 >> S_EDIT_BUF_SIZE] = g_malloc (EDIT_BUF_SIZE * sizeof(mc_wchar_t));
+ 	    edit->buffers1[edit->curs1 >> S_EDIT_BUF_SIZE][edit->curs1 & M_EDIT_BUF_SIZE] = c;
+ 	    edit->curs1++;
+ 	    c = edit->buffers2[(edit->curs2 - 1) >> S_EDIT_BUF_SIZE][EDIT_BUF_SIZE - ((edit->curs2 - 1) & M_EDIT_BUF_SIZE) - 1];
+@@ -1251,7 +1369,7 @@
+ 	q = edit->last_byte + 2;
+ 
+     for (col = 0, p = current; p < q; p++) {
+-	int c;
++	mc_wchar_t c;
+ 	if (cols != -10) {
+ 	    if (col == cols)
+ 		return p;
+@@ -1269,7 +1387,7 @@
+ 	} else if (c < 32 || c == 127)
+ 	    col += 2; /* Caret notation for control characters */
+ 	else
+-	    col++;
++	    col += wcwidth(c);
+     }
+     return col;
+ }
+@@ -1402,7 +1520,7 @@
+ is_blank (WEdit *edit, long offset)
+ {
+     long s, f;
+-    int c;
++    mc_wchar_t c;
+     s = edit_bol (edit, offset);
+     f = edit_eol (edit, offset) - 1;
+     while (s <= f) {
+@@ -1774,13 +1892,13 @@
+ static void
+ edit_do_undo (WEdit * edit)
+ {
+-    long ac;
++    struct action ac;
+     long count = 0;
+ 
+     edit->stack_disable = 1;	/* don't record undo's onto undo stack! */
+ 
+-    while ((ac = pop_action (edit)) < KEY_PRESS) {
+-	switch ((int) ac) {
++    while (pop_action (edit, &ac) < KEY_PRESS) {
++	switch ((int) ac.flags) {
+ 	case STACK_BOTTOM:
+ 	    goto done_undo;
+ 	case CURS_RIGHT:
+@@ -1801,31 +1919,33 @@
+ 	case COLUMN_OFF:
+ 	    column_highlighting = 0;
+ 	    break;
++	case CHAR_INSERT:
++	    edit_insert (edit, ac.ch);
++	    break;
++	case CHAR_INSERT_AHEAD:
++	    edit_insert_ahead (edit, ac.ch);
++	    break;
+ 	}
+-	if (ac >= 256 && ac < 512)
+-	    edit_insert_ahead (edit, ac - 256);
+-	if (ac >= 0 && ac < 256)
+-	    edit_insert (edit, ac);
+ 
+-	if (ac >= MARK_1 - 2 && ac < MARK_2 - 2) {
+-	    edit->mark1 = ac - MARK_1;
++	if (ac.flags >= MARK_1 - 2 && ac.flags < MARK_2 - 2) {
++	    edit->mark1 = ac.flags - MARK_1;
+ 	    edit->column1 = edit_move_forward3 (edit, edit_bol (edit, edit->mark1), 0, edit->mark1);
+-	} else if (ac >= MARK_2 - 2 && ac < KEY_PRESS) {
+-	    edit->mark2 = ac - MARK_2;
++	} else if (ac.flags >= MARK_2 - 2 && ac.flags < KEY_PRESS) {
++	    edit->mark2 = ac.flags - MARK_2;
+ 	    edit->column2 = edit_move_forward3 (edit, edit_bol (edit, edit->mark2), 0, edit->mark2);
+ 	}
+ 	if (count++)
+ 	    edit->force |= REDRAW_PAGE;		/* more than one pop usually means something big */
+     }
+ 
+-    if (edit->start_display > ac - KEY_PRESS) {
+-	edit->start_line -= edit_count_lines (edit, ac - KEY_PRESS, edit->start_display);
++    if (edit->start_display > ac.flags - KEY_PRESS) {
++	edit->start_line -= edit_count_lines (edit, ac.flags - KEY_PRESS, edit->start_display);
+ 	edit->force |= REDRAW_PAGE;
+-    } else if (edit->start_display < ac - KEY_PRESS) {
+-	edit->start_line += edit_count_lines (edit, edit->start_display, ac - KEY_PRESS);
++    } else if (edit->start_display < ac.flags - KEY_PRESS) {
++	edit->start_line += edit_count_lines (edit, edit->start_display, ac.flags - KEY_PRESS);
+ 	edit->force |= REDRAW_PAGE;
+     }
+-    edit->start_display = ac - KEY_PRESS;	/* see push and pop above */
++    edit->start_display = ac.flags - KEY_PRESS;	/* see push and pop above */
+     edit_update_curs_row (edit);
+ 
+   done_undo:;
+@@ -2102,7 +2222,7 @@
+  * passed as -1.  Commands are executed, and char_for_insertion is
+  * inserted at the cursor.
+  */
+-void edit_execute_key_command (WEdit *edit, int command, int char_for_insertion)
++void edit_execute_key_command (WEdit *edit, int command, mc_wint_t char_for_insertion)
+ {
+     if (command == CK_Begin_Record_Macro) {
+ 	edit->macro_i = 0;
+@@ -2137,7 +2257,7 @@
+    all of them. It also does not check for the Undo command.
+  */
+ void
+-edit_execute_cmd (WEdit *edit, int command, int char_for_insertion)
++edit_execute_cmd (WEdit *edit, int command, mc_wint_t char_for_insertion)
+ {
+     edit->force |= REDRAW_LINE;
+ 
+@@ -2170,7 +2290,7 @@
+     }
+ 
+     /* An ordinary key press */
+-    if (char_for_insertion >= 0) {
++    if (char_for_insertion != (mc_wint_t) -1) {
+ 	if (edit->overwrite) {
+ 	    if (edit_get_byte (edit, edit->curs1) != '\n')
+ 		edit_delete (edit);
+diff -Naur mc-4.6.1-old/edit/editcmd.c mc-4.6.1/edit/editcmd.c
+--- mc-4.6.1-old/edit/editcmd.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/edit/editcmd.c	2005-10-28 10:08:07.687254712 +0200
+@@ -46,7 +46,7 @@
+ #define edit_get_save_file(f,h) input_expand_dialog (h, _(" Enter file name: "), f)
+ 
+ struct selection {
+-   unsigned char * text;
++   mc_wchar_t *text;
+    int len;
+ };
+ 
+@@ -69,12 +69,16 @@
+ #define MAX_REPL_LEN 1024
+ 
+ static int edit_save_cmd (WEdit *edit);
+-static unsigned char *edit_get_block (WEdit *edit, long start,
++static mc_wchar_t *edit_get_block (WEdit *edit, long start,
+ 				      long finish, int *l);
+ 
+-static inline int my_lower_case (int c)
++static inline mc_wchar_t my_lower_case (mc_wchar_t c)
+ {
++#ifndef UTF8
+     return tolower(c & 0xFF);
++#else
++    return towlower(c);
++#endif    
+ }
+ 
+ static const char *strcasechr (const unsigned char *s, int c)
+@@ -108,11 +112,11 @@
+ #endif /* !HAVE_MEMMOVE */
+ 
+ /* #define itoa MY_itoa  <---- this line is now in edit.h */
+-static char *
++static mc_wchar_t *
+ MY_itoa (int i)
+ {
+-    static char t[14];
+-    char *s = t + 13;
++    static mc_wchar_t t[14];
++    mc_wchar_t *s = t + 13;
+     int j = i;
+     *s-- = 0;
+     do {
+@@ -196,6 +200,48 @@
+     doupdate();
+ }
+ 
++#ifdef UTF8
++
++static size_t
++wchar_write(int fd, mc_wchar_t *buf, size_t len)
++{
++    char *tmpbuf = g_malloc(len + MB_LEN_MAX);
++    mbstate_t mbs;
++    size_t i;
++    size_t outlen = 0;
++    size_t res;
++
++    for (i = 0; i < len; i++) {
++	if (outlen >= len) {
++	    if ((res = mc_write(fd, tmpbuf, outlen)) != outlen) {
++		g_free(tmpbuf);
++		return -1;
++	    }
++	    outlen = 0;
++	}
++	memset (&mbs, 0, sizeof (mbs));
++#ifdef __STDC_ISO_10646__ 
++	if (buf[i] >= BINARY_CHAR_OFFSET && buf[i] < (BINARY_CHAR_OFFSET + 256)) {
++	    res = 1;
++	    tmpbuf[outlen] = (char) (buf[i] - BINARY_CHAR_OFFSET);
++
++	} else
++#endif
++	res = wcrtomb(tmpbuf + outlen, buf[i], &mbs);
++	if (res > 0) {
++	    outlen += res;
++	}
++    }
++    if ((res = mc_write(fd, tmpbuf, outlen)) != outlen) {
++	g_free(tmpbuf);
++	return -1;
++    }
++    g_free(tmpbuf);
++    return len;
++}
++
++#endif /* UTF8 */
++
+ /*  If 0 (quick save) then  a) create/truncate <filename> file,
+ 			    b) save to <filename>;
+     if 1 (safe save) then   a) save to <tempnam>,
+@@ -303,32 +349,48 @@
+ 	buf = 0;
+ 	filelen = edit->last_byte;
+ 	while (buf <= (edit->curs1 >> S_EDIT_BUF_SIZE) - 1) {
++#ifndef UTF8
+ 	    if (mc_write (fd, (char *) edit->buffers1[buf], EDIT_BUF_SIZE)
++#else /* UTF8 */
++	    if (wchar_write (fd, edit->buffers1[buf], EDIT_BUF_SIZE)
++#endif /* UTF8 */
+ 		!= EDIT_BUF_SIZE) {
+ 		mc_close (fd);
+ 		goto error_save;
+ 	    }
+ 	    buf++;
+ 	}
++#ifndef UTF8
+ 	if (mc_write
+ 	    (fd, (char *) edit->buffers1[buf],
++#else /* UTF8 */
++	if (wchar_write
++	    (fd, edit->buffers1[buf],
++#endif /* UTF8 */
+ 	     edit->curs1 & M_EDIT_BUF_SIZE) !=
+ 	    (edit->curs1 & M_EDIT_BUF_SIZE)) {
+ 	    filelen = -1;
+ 	} else if (edit->curs2) {
+ 	    edit->curs2--;
+ 	    buf = (edit->curs2 >> S_EDIT_BUF_SIZE);
+-	    if (mc_write
+-		(fd,
+-		 (char *) edit->buffers2[buf] + EDIT_BUF_SIZE -
++#ifndef UTF8
++	    if (mc_write(fd, (char *) edit->buffers2[buf] + EDIT_BUF_SIZE -
++#else /* UTF8 */
++	    if (wchar_write(fd, edit->buffers2[buf] + EDIT_BUF_SIZE -
++#endif /* UTF8 */
+ 		 (edit->curs2 & M_EDIT_BUF_SIZE) - 1,
+ 		 1 + (edit->curs2 & M_EDIT_BUF_SIZE)) !=
+ 		1 + (edit->curs2 & M_EDIT_BUF_SIZE)) {
+ 		filelen = -1;
+ 	    } else {
+ 		while (--buf >= 0) {
++#ifndef UTF8
+ 		    if (mc_write
+ 			(fd, (char *) edit->buffers2[buf],
++#else /* UTF8 */
++		    if (wchar_write
++			(fd, edit->buffers2[buf],
++#endif /* UTF8 */
+ 			 EDIT_BUF_SIZE) != EDIT_BUF_SIZE) {
+ 			filelen = -1;
+ 			break;
+@@ -643,13 +705,21 @@
+ 	if (!n || n == EOF)
+ 	    break;
+ 	n = 0;
++#ifndef UTF8
+ 	while (fscanf (f, "%hd %hd, ", &macro[n].command, &macro[n].ch))
++#else /* UTF8 */
++	while (fscanf (f, "%hd %lu, ", &macro[n].command, &macro[n].ch))
++#endif /* UTF8 */
+ 	    n++;
+ 	fscanf (f, ";\n");
+ 	if (s != k) {
+ 	    fprintf (g, ("key '%d 0': "), s);
+ 	    for (i = 0; i < n; i++)
++#ifndef UTF8
+ 		fprintf (g, "%hd %hd, ", macro[i].command, macro[i].ch);
++#else /* UTF8 */
++		fprintf (g, "%hd %lu, ", macro[i].command, macro[i].ch);
++#endif /* UTF8 */
+ 	    fprintf (g, ";\n");
+ 	}
+     }
+@@ -685,7 +755,11 @@
+ 	if (f) {
+ 	    fprintf (f, ("key '%d 0': "), s);
+ 	    for (i = 0; i < n; i++)
++#ifndef UTF8
+ 		fprintf (f, "%hd %hd, ", macro[i].command, macro[i].ch);
++#else /* UTF8 */
++		fprintf (f, "%hd %lu, ", macro[i].command, macro[i].ch);
++#endif /* UTF8 */
+ 	    fprintf (f, ";\n");
+ 	    fclose (f);
+ 	    if (saved_macros_loaded) {
+@@ -734,10 +808,18 @@
+ 		saved_macro[i++] = s;
+ 	    if (!found) {
+ 		*n = 0;
++#ifndef UTF8
+ 		while (*n < MAX_MACRO_LENGTH && 2 == fscanf (f, "%hd %hd, ", &macro[*n].command, &macro[*n].ch))
++#else /* UTF8 */
++		while (*n < MAX_MACRO_LENGTH && 2 == fscanf (f, "%hd %lu, ", &macro[*n].command, &macro[*n].ch))
++#endif /* UTF8 */
+ 		    (*n)++;
+ 	    } else {
++#ifndef UTF8
+ 		while (2 == fscanf (f, "%hd %hd, ", &dummy.command, &dummy.ch));
++#else /* UTF8 */
++		while (2 == fscanf (f, "%hd %lu, ", &dummy.command, &dummy.ch));
++#endif /* UTF8 */
+ 	    }
+ 	    fscanf (f, ";\n");
+ 	    if (s == k)
+@@ -886,7 +968,7 @@
+ #define space_width 1
+ 
+ static void
+-edit_insert_column_of_text (WEdit * edit, unsigned char *data, int size, int width)
++edit_insert_column_of_text (WEdit * edit, mc_wchar_t *data, int size, int width)
+ {
+     long cursor;
+     int i, col;
+@@ -934,7 +1016,7 @@
+ {
+     long start_mark, end_mark, current = edit->curs1;
+     int size, x;
+-    unsigned char *copy_buf;
++    mc_wchar_t *copy_buf;
+ 
+     edit_update_curs_col (edit);
+     x = edit->curs_col;
+@@ -979,7 +1061,7 @@
+ {
+     long count;
+     long current;
+-    unsigned char *copy_buf;
++    mc_wchar_t *copy_buf;
+     long start_mark, end_mark;
+     int deleted = 0;
+     int x = 0;
+@@ -1040,7 +1122,7 @@
+ 	edit_push_action (edit, COLUMN_ON);
+ 	column_highlighting = 0;
+     } else {
+-	copy_buf = g_malloc (end_mark - start_mark);
++	copy_buf = g_malloc ((end_mark - start_mark) * sizeof(mc_wchar_t));
+ 	edit_cursor_move (edit, start_mark - edit->curs1);
+ 	edit_scroll_screen_over_cursor (edit);
+ 	count = start_mark;
+@@ -1371,7 +1453,11 @@
+ /* This function is a modification of mc-3.2.10/src/view.c:regexp_view_search() */
+ /* returns -3 on error in pattern, -1 on not found, found_len = 0 if either */
+ static int
++#ifndef UTF8
+ string_regexp_search (char *pattern, char *string, int len, int match_type,
++#else /* UTF8 */
++string_regexp_search (char *pattern, mc_wchar_t *wstring, int match_type,
++#endif /* UTF8 */
+ 		      int match_bol, int icase, int *found_len, void *d)
+ {
+     static regex_t r;
+@@ -1380,6 +1466,11 @@
+     regmatch_t *pmatch;
+     static regmatch_t s[1];
+ 
++#ifdef UTF8
++    char *string;
++    int i;
++#endif /* UTF8 */
++
+     pmatch = (regmatch_t *) d;
+     if (!pmatch)
+ 	pmatch = s;
+@@ -1399,13 +1490,51 @@
+ 	old_type = match_type;
+ 	old_icase = icase;
+     }
++
++#ifdef UTF8
++    string = wchar_to_mbstr(wstring);
++    if (string == NULL)
++	return -1;
++#endif /* UTF8 */
++
+     if (regexec
+ 	(&r, string, d ? NUM_REPL_ARGS : 1, pmatch,
+ 	 ((match_bol
+ 	   || match_type != match_normal) ? 0 : REG_NOTBOL)) != 0) {
+ 	*found_len = 0;
++
++#ifdef UTF8
++	g_free(string);
++#endif /* UTF8 */
++
+ 	return -1;
+     }
++
++#ifdef UTF8
++    for (i = 0; i < (d ? NUM_REPL_ARGS : 1); i++) {
++	char tmp;
++	int new_o;
++
++	if (pmatch[i].rm_so < 0)
++	    continue;
++	tmp = string[pmatch[i].rm_so];
++	string[pmatch[i].rm_so] = 0;
++	new_o = mbstrlen(string);
++	string[pmatch[i].rm_so] = tmp;
++	pmatch[i].rm_so = new_o; 
++
++	if (pmatch[i].rm_eo < 0)
++	    continue;
++	tmp = string[pmatch[i].rm_eo];
++	string[pmatch[i].rm_eo] = 0;
++	new_o = mbstrlen(string);
++	string[pmatch[i].rm_eo] = tmp;
++	pmatch[i].rm_eo = new_o; 
++    }
++
++    g_free(string);
++#endif /* UTF8 */
++
+     *found_len = pmatch[0].rm_eo - pmatch[0].rm_so;
+     return (pmatch[0].rm_so);
+ }
+@@ -1413,13 +1542,29 @@
+ /* thanks to  Liviu Daia <daia@stoilow.imar.ro>  for getting this
+    (and the above) routines to work properly - paul */
+ 
++#ifndef UTF8
+ typedef int (*edit_getbyte_fn) (WEdit *, long);
++#else /* UTF8 */
++typedef mc_wchar_t (*edit_getbyte_fn) (WEdit *, long);
++#endif /* UTF8 */
+ 
+ static long
++#ifndef UTF8
+ edit_find_string (long start, unsigned char *exp, int *len, long last_byte, edit_getbyte_fn get_byte, void *data, int once_only, void *d)
++#else /* UTF8 */
++edit_find_string (long start, unsigned char *exp_mb, int *len, long last_byte, edit_getbyte_fn get_byte, void *data, int once_only, void *d)
++#endif /* UTF8 */
+ {
+     long p, q = 0;
+-    long l = strlen ((char *) exp), f = 0;
++    long f = 0;
++
++#ifndef UTF8
++    long l = strlen ((char *) exp);
++#else /* UTF8 */
++    mc_wchar_t *exp = mbstr_to_wchar((char *)exp_mb);
++    mc_wchar_t *exp_backup = exp;
++    long l = wcslen(exp);
++#endif /* UTF8 */
+     int n = 0;
+ 
+     for (p = 0; p < l; p++)	/* count conversions... */
+@@ -1428,19 +1573,22 @@
+ 		n++;
+ 
+     if (replace_scanf || replace_regexp) {
+-	int c;
+-	unsigned char *buf;
+-	unsigned char mbuf[MAX_REPL_LEN * 2 + 3];
++	mc_wint_t c;
++	mc_wchar_t *buf;
++	mc_wchar_t mbuf[MAX_REPL_LEN * 2 + 3];
+ 
+ 	replace_scanf = (!replace_regexp);	/* can't have both */
+ 
+ 	buf = mbuf;
+ 
+ 	if (replace_scanf) {
+-	    unsigned char e[MAX_REPL_LEN];
+-	    if (n >= NUM_REPL_ARGS)
+-		return -3;
+-
++	    mc_wchar_t e[MAX_REPL_LEN];
++	    if (n >= NUM_REPL_ARGS) {
++#ifdef UTF8
++                g_free(exp_backup);
++#endif /* UTF8 */
++                return -3;
++	    }
+ 	    if (replace_case) {
+ 		for (p = start; p < last_byte && p < start + MAX_REPL_LEN; p++)
+ 		    buf[p - start] = (*get_byte) (data, p);
+@@ -1454,20 +1602,36 @@
+ 	    }
+ 
+ 	    buf[(q = p - start)] = 0;
++#ifndef UTF8
+ 	    strcpy ((char *) e, (char *) exp);
+ 	    strcat ((char *) e, "%n");
++#else /* UTF8 */
++	    wcscpy (e, exp);
++	    wcscat (e, L"%n");
++#endif /* UTF8 */
+ 	    exp = e;
+ 
+ 	    while (q) {
+ 		*((int *) sargs[n]) = 0;	/* --> here was the problem - now fixed: good */
++#ifndef UTF8
+ 		if (n == sscanf ((char *) buf, (char *) exp, SCANF_ARGS)) {
++#else /* UTF8 */
++		if (n == swscanf (buf, exp, SCANF_ARGS)) {
++#endif /* UTF8 */
+ 		    if (*((int *) sargs[n])) {
+ 			*len = *((int *) sargs[n]);
++#ifdef UTF8
++			g_free(exp_backup);
++#endif /* UTF8 */
+ 			return start;
+ 		    }
+ 		}
+-		if (once_only)
++		if (once_only) {
++#ifdef UTF8
++		    g_free(exp_backup);
++#endif /* UTF8 */
+ 		    return -2;
++		}
+ 		if (q + start < last_byte) {
+ 		    if (replace_case) {
+ 			buf[q] = (*get_byte) (data, q + start);
+@@ -1481,7 +1645,11 @@
+ 		start++;
+ 		buf++;		/* move the window along */
+ 		if (buf == mbuf + MAX_REPL_LEN) {	/* the window is about to go past the end of array, so... */
++#ifndef UTF8
+ 		    memmove (mbuf, buf, strlen ((char *) buf) + 1);	/* reset it */
++#else /* UTF8 */
++		    wmemmove (mbuf, buf, (wcslen (buf) + 1));	/* reset it */
++#endif /* UTF8 */
+ 		    buf = mbuf;
+ 		}
+ 		q--;
+@@ -1507,10 +1675,17 @@
+ 
+ 		buf = mbuf;
+ 		while (q) {
++#ifndef UTF8
+ 		    found_start = string_regexp_search ((char *) exp, (char *) buf, q, match_normal, match_bol, !replace_case, len, d);
++#else /* UTF8 */
++                    found_start = string_regexp_search ((char *) exp_mb, buf, match_normal, match_bol, !replace_case, len, d);
++#endif /* UTF8 */
+ 
+ 		    if (found_start <= -2) {	/* regcomp/regexec error */
+ 			*len = 0;
++#ifdef UTF8
++                        g_free (exp_backup);
++#endif /* UTF8 */
+ 			return -3;
+ 		    }
+ 		    else if (found_start == -1)	/* not found: try next line */
+@@ -1521,15 +1696,27 @@
+ 			match_bol = 0;
+ 			continue;
+ 		    }
+-		    else	/* found */
++		    else {	/* found */
++#ifdef UTF8
++			g_free(exp_backup);
++#endif /* UTF8 */
+ 			return (start + offset - q + found_start);
++		    }
+ 		}
+-		if (once_only)
++		if (once_only) {
++#ifdef UTF8
++		    g_free(exp_backup);
++#endif /* UTF8 */
+ 		    return -2;
++		}
+ 
+ 		if (buf[q - 1] != '\n') { /* incomplete line: try to recover */
+ 		    buf = mbuf + MAX_REPL_LEN / 2;
++#ifndef UTF8
+ 		    q = strlen ((const char *) buf);
++#else /* UTF8 */
++		    q = wcslen (buf);
++#endif /* UTF8 */
+ 		    memmove (mbuf, buf, q);
+ 		    p = start + q;
+ 		    move_win = 1;
+@@ -1539,36 +1726,59 @@
+ 	    }
+ 	}
+     } else {
++#ifndef UTF8
+  	*len = strlen ((const char *) exp);
++#else /* UTF8 */
++        *len = wcslen (exp);
++#endif /* UTF8 */
+ 	if (replace_case) {
+ 	    for (p = start; p <= last_byte - l; p++) {
+- 		if ((*get_byte) (data, p) == (unsigned char)exp[0]) {	/* check if first char matches */
++                if ((*get_byte) (data, p) == exp[0]) {  /* check if first char matches */
+ 		    for (f = 0, q = 0; q < l && f < 1; q++)
+- 			if ((*get_byte) (data, q + p) != (unsigned char)exp[q])
++                        if ((*get_byte) (data, q + p) != exp[q])
+ 			    f = 1;
+-		    if (f == 0)
++                    if (f == 0) {
++#ifdef UTF8
++                        g_free (exp_backup);
++#endif /* UTF8 */
+ 			return p;
++		    }
+ 		}
+-		if (once_only)
++                if (once_only) {
++#ifdef UTF8
++                    g_free(exp_backup);
++#endif /* UTF8 */
+ 		    return -2;
++		}
+ 	    }
+ 	} else {
+ 	    for (p = 0; exp[p] != 0; p++)
+ 		exp[p] = my_lower_case (exp[p]);
+ 
+ 	    for (p = start; p <= last_byte - l; p++) {
+-		if (my_lower_case ((*get_byte) (data, p)) == (unsigned char)exp[0]) {
++                if (my_lower_case ((*get_byte) (data, p)) == exp[0]) {
+ 		    for (f = 0, q = 0; q < l && f < 1; q++)
+-			if (my_lower_case ((*get_byte) (data, q + p)) != (unsigned char)exp[q])
++                        if (my_lower_case ((*get_byte) (data, q + p)) != exp[q])
+ 			    f = 1;
+-		    if (f == 0)
++		    if (f == 0) {
++#ifdef UTF8
++                        g_free (exp_backup);
++#endif /* UTF8 */
+ 			return p;
++		    }
+ 		}
+-		if (once_only)
++		if (once_only) {
++#ifdef UTF8
++                    g_free (exp_backup);
++#endif /* UTF8 */
+ 		    return -2;
++		}
+ 	    }
+ 	}
+     }
++#ifdef UTF8
++    g_free (exp_backup);
++#endif /* UTF8 */
+     return -2;
+ }
+ 
+@@ -1582,9 +1792,14 @@
+ 
+     while ((p = edit_find_string (p, exp, len, last_byte, get_byte, data, once_only, d)) >= 0) {
+ 	if (replace_whole) {
++#ifndef UTF8
+ /*If the bordering chars are not in option_whole_chars_search then word is whole */
+ 	    if (!strcasechr (option_whole_chars_search, (*get_byte) (data, p - 1))
+ 		&& !strcasechr (option_whole_chars_search, (*get_byte) (data, p + *len)))
++#else /* UTF8 */
++	    if (!iswalnum((*get_byte) (data, p - 1))
++		&& !iswalnum((*get_byte) (data, p + *len)))
++#endif /* UTF8 */
+ 		return p;
+ 	    if (once_only)
+ 		return -2;
+@@ -1616,6 +1831,7 @@
+ 
+ #define is_digit(x) ((x) >= '0' && (x) <= '9')
+ 
++#ifndef UTF8
+ #define snprint(v) { \
+ 		*p1++ = *p++; \
+ 		*p1 = '\0'; \
+@@ -1623,33 +1839,48 @@
+ 		if (n >= (size_t) (e - s)) goto nospc; \
+ 		s += n; \
+ 	    }
++#else /* UTF8 */
++#define snprint(v) { \
++		*p1++ = *p++; \
++		*p1 = '\0'; \
++		n = swprintf(s, e-s, q1,v); \
++		if (n >= (size_t) (e - s)) goto nospc; \
++		s += n; \
++	    }
++#endif /* UTF8 */
+ 
+ /* this function uses the sprintf command to do a vprintf */
+ /* it takes pointers to arguments instead of the arguments themselves */
+ /* The return value is the number of bytes written excluding '\0'
+    if successfull, -1 if the resulting string would be too long and
+    -2 if the format string is errorneous.  */
+-static int snprintf_p (char *str, size_t size, const char *fmt,...)
+-    __attribute__ ((format (printf, 3, 4)));
+-
+-static int snprintf_p (char *str, size_t size, const char *fmt,...)
++static int snprintf_p (mc_wchar_t *str, size_t size, const mc_wchar_t *fmt,...)
+ {
+     va_list ap;
+     size_t n;
+-    const char *q, *p;
+-    char *s = str, *e = str + size;
+-    char q1[40];
+-    char *p1;
++    const mc_wchar_t *q, *p;
++    mc_wchar_t *s = str, *e = str + size;
++    mc_wchar_t q1[40];
++
++    mc_wchar_t *p1;
+     int nargs = 0;
+ 
+     va_start (ap, fmt);
+     p = q = fmt;
+ 
++#ifndef UTF8
+     while ((p = strchr (p, '%'))) {
++#else /* UTF8 */
++    while ((p = wcschr (p, L'%'))) {
++#endif /* UTF8 */
+ 	n = p - q;
+ 	if (n >= (size_t) (e - s))
+ 	  goto nospc;
++#ifndef UTF8
+ 	memcpy (s, q, n);	/* copy stuff between format specifiers */
++#else /* UTF8 */
++	wmemcpy (s, q, n);	/* copy stuff between format specifiers */
++#endif /* UTF8 */
+ 	s += n;
+ 	q = p;
+ 	p1 = q1;
+@@ -1677,45 +1908,78 @@
+ 	    *p1++ = *p++;
+ 	if (*p == '*') {
+ 	    p++;
++#ifndef UTF8
+ 	    strcpy (p1, MY_itoa (*va_arg (ap, int *)));	/* replace field width with a number */
+ 	    p1 += strlen (p1);
++#else /* UTF8 */
++	    wcscpy (p1, MY_itoa (*va_arg (ap, int *)));	/* replace field width with a number */
++	    p1 += wcslen (p1);
++#endif /* UTF8 */
+ 	} else {
+-	    while (is_digit (*p) && p1 < q1 + 20)
++#ifndef UTF8
++	    while (is_digit (*p)
++#else /* UTF8 */
++	    while (iswdigit (*p)
++#endif /* UTF8 */
++		    && p1 < q1 + 20)
+ 		*p1++ = *p++;
+-	    if (is_digit (*p))
++#ifndef UTF8
++	    if (is_digit (*p)) 
++#else /* UTF8 */
++	    if (iswdigit (*p))
++#endif /* UTF8 */
+ 		goto err;
+ 	}
+ 	if (*p == '.')
+ 	    *p1++ = *p++;
+ 	if (*p == '*') {
+ 	    p++;
++#ifndef UTF8
+ 	    strcpy (p1, MY_itoa (*va_arg (ap, int *)));	/* replace precision with a number */
+ 	    p1 += strlen (p1);
++#else /* UTF8 */
++	    wcscpy (p1, MY_itoa (*va_arg (ap, int *)));	/* replace precision with a number */
++	    p1 += wcslen (p1);
++#endif /* UTF8 */
+ 	} else {
+-	    while (is_digit (*p) && p1 < q1 + 32)
++#ifndef UTF8
++	    while (is_digit (*p)
++#else /* UTF8 */
++	    while (iswdigit (*p)
++#endif /* UTF8 */
++		&& p1 < q1 + 32)
+ 		*p1++ = *p++;
+-	    if (is_digit (*p))
++#ifndef UTF8
++	    if (is_digit (*p)) 
++#else /* UTF8 */
++	    if (iswdigit (*p))
++#endif /* UTF8 */
+ 		goto err;
+ 	}
+ /* flags done, now get argument */
+ 	if (*p == 's') {
++#ifndef UTF8
+ 	    snprint (va_arg (ap, char *));
++#else /* UTF8 */
++	    *p1++ = 'l';
++	    snprint (va_arg (ap, mc_wchar_t *));
++#endif /* UTF8 */
+ 	} else if (*p == 'h') {
+-	    if (strchr ("diouxX", *p))
++	    if (*p < 128 && strchr ("diouxX", *p))
+ 		snprint (*va_arg (ap, short *));
+ 	} else if (*p == 'l') {
+ 	    *p1++ = *p++;
+-	    if (strchr ("diouxX", *p))
++	    if (*p < 128 && strchr ("diouxX", *p))
+ 		snprint (*va_arg (ap, long *));
+-	} else if (strchr ("cdiouxX", *p)) {
++	} else if (*p < 128 && strchr ("cdiouxX", *p)) {
+ 	    snprint (*va_arg (ap, int *));
+ 	} else if (*p == 'L') {
+ 	    *p1++ = *p++;
+-	    if (strchr ("EefgG", *p))
++	    if (*p < 128 && strchr ("EefgG", *p))
+ 		snprint (*va_arg (ap, double *));	/* should be long double */
+-	} else if (strchr ("EefgG", *p)) {
++	} else if (*p < 128 && strchr ("EefgG", *p)) {
+ 	    snprint (*va_arg (ap, double *));
+-	} else if (strchr ("DOU", *p)) {
++	} else if (*p < 128 && strchr ("DOU", *p)) {
+ 	    snprint (*va_arg (ap, long *));
+ 	} else if (*p == 'p') {
+ 	    snprint (*va_arg (ap, void **));
+@@ -1724,10 +1988,17 @@
+ 	q = p;
+     }
+     va_end (ap);
++#ifndef UTF8
+     n = strlen (q);
+     if (n >= (size_t) (e - s))
+ 	return -1;
+     memcpy (s, q, n + 1);
++#else /* UTF8 */
++    n = wcslen (q);
++    if (n >= (size_t) (e - s))
++	return -1;
++    wmemcpy (s, q, n + 1);
++#endif /* UTF8 */
+     return s + n - str;
+ nospc:
+     va_end (ap);
+@@ -1902,8 +2173,11 @@
+ 		}
+ 	    }
+ 	    if (replace_yes) {	/* delete then insert new */
++#ifdef UTF8
++		mc_wchar_t *winput2 = mbstr_to_wchar(exp2);
++#endif /* UTF8 */
+ 		if (replace_scanf || replace_regexp) {
+-		    char repl_str[MAX_REPL_LEN + 2];
++		    mc_wchar_t repl_str[MAX_REPL_LEN + 2];
+ 		    int ret = 0;
+ 
+ 		    /* we need to fill in sargs just like with scanf */
+@@ -1912,17 +2186,25 @@
+ 			for (k = 1;
+ 			     k < NUM_REPL_ARGS && pmatch[k].rm_eo >= 0;
+ 			     k++) {
++#ifndef UTF8
+ 			    unsigned char *t;
++#else /* UTF8 */
++			    mc_wchar_t *t;
++#endif
+ 
+ 			    if (pmatch[k].rm_eo - pmatch[k].rm_so > 255) {
+ 				ret = -1;
+ 				break;
+ 			    }
++#ifndef UTF8
+ 			    t = (unsigned char *) &sargs[k - 1][0];
++#else /* UTF8 */
++			    t = (mc_wchar_t *) &sargs[k - 1][0];
++#endif /* UTF8 */
+ 			    for (j = 0;
+ 				 j < pmatch[k].rm_eo - pmatch[k].rm_so
+ 				 && j < 255; j++, t++)
+-				*t = (unsigned char) edit_get_byte (edit,
++				*t = edit_get_byte (edit,
+ 								    edit->
+ 								    search_start
+ 								    -
+@@ -1939,13 +2221,22 @@
+ 			    sargs[k - 1][0] = 0;
+ 		    }
+ 		    if (!ret)
++#ifndef UTF8
+ 			ret = snprintf_p (repl_str, MAX_REPL_LEN + 2, exp2, PRINTF_ARGS);
++#else /* UTF8 */
++                        ret = snprintf_p (repl_str, MAX_REPL_LEN + 2, winput2, PRINTF_ARGS);
++#endif /* UTF8 */
+ 		    if (ret >= 0) {
+ 			times_replaced++;
+ 			while (i--)
+ 			    edit_delete (edit);
++#ifndef UTF8
+ 			while (repl_str[++i])
+ 			    edit_insert (edit, repl_str[i]);
++#else /* UTF8 */
++                        while (winput2[++i])
++                            edit_insert (edit, winput2[i]);
++#endif /* UTF8 */
+ 		    } else {
+ 			edit_error_dialog (_(" Replace "),
+ 					   ret == -2
+@@ -1957,10 +2248,18 @@
+ 		    times_replaced++;
+ 		    while (i--)
+ 			edit_delete (edit);
++#ifndef UTF8
+ 		    while (exp2[++i])
+ 			edit_insert (edit, exp2[i]);
++#else /* UTF8 */
++                    while (winput2[++i])
++                        edit_insert (edit, winput2[i]);
++#endif
+ 		}
+ 		edit->found_len = i;
++#ifdef UTF8
++                g_free (winput2);
++#endif /* UTF8 */
+ 	    }
+ 	    /* so that we don't find the same string again */
+ 	    if (replace_backwards) {
+@@ -2132,16 +2431,17 @@
+ #define TEMP_BUF_LEN 1024
+ 
+ /* Return a null terminated length of text. Result must be g_free'd */
+-static unsigned char *
++static mc_wchar_t *
+ edit_get_block (WEdit *edit, long start, long finish, int *l)
+ {
+-    unsigned char *s, *r;
+-    r = s = g_malloc (finish - start + 1);
++    mc_wchar_t *s, *r;
++    r = s = g_malloc ((finish - start + 1) * sizeof(mc_wchar_t));
+     if (column_highlighting) {
+ 	*l = 0;
+ 	/* copy from buffer, excluding chars that are out of the column 'margins' */
+ 	while (start < finish) {
+-	    int c, x;
++	    mc_wchar_t c;
++	    int x;
+ 	    x = edit_move_forward3 (edit, edit_bol (edit, start), 0,
+ 				    start);
+ 	    c = edit_get_byte (edit, start);
+@@ -2174,11 +2474,15 @@
+ 	return 0;
+ 
+     if (column_highlighting) {
+-	unsigned char *block, *p;
++	mc_wchar_t *block, *p;
+ 	int r;
+ 	p = block = edit_get_block (edit, start, finish, &len);
+ 	while (len) {
++#ifndef UTF8
+ 	    r = mc_write (file, p, len);
++#else /* UTF8 */
++	    r = wchar_write (file, p, len);
++#endif /* UTF8 */
+ 	    if (r < 0)
+ 		break;
+ 	    p += r;
+@@ -2186,15 +2490,19 @@
+ 	}
+ 	g_free (block);
+     } else {
+-	unsigned char *buf;
++	mc_wchar_t *buf;
+ 	int i = start, end;
+ 	len = finish - start;
+-	buf = g_malloc (TEMP_BUF_LEN);
++	buf = g_malloc (TEMP_BUF_LEN * sizeof(mc_wchar_t));
+ 	while (start != finish) {
+ 	    end = min (finish, start + TEMP_BUF_LEN);
+ 	    for (; i < end; i++)
+ 		buf[i - start] = edit_get_byte (edit, i);
++#ifndef UTF8
+ 	    len -= mc_write (file, (char *) buf, end - start);
++#else /* UTF8 */
++	    len -= wchar_write (file, buf, end - start);
++#endif /* UTF8 */
+ 	    start = end;
+ 	}
+ 	g_free (buf);
+@@ -2531,17 +2839,20 @@
+ 
+ /* prints at the cursor */
+ /* returns the number of chars printed */
++#ifndef UTF8
+ int edit_print_string (WEdit * e, const char *s)
++#else /* UTF8 */
++int edit_print_wstring (WEdit * e, mc_wchar_t *s)
++#endif /* UTF8 */
+ {
+     int i = 0;
+     while (s[i])
+-	edit_execute_cmd (e, -1, (unsigned char) s[i++]);
++	edit_execute_cmd (e, -1, s[i++]);
+     e->force |= REDRAW_COMPLETELY;
+     edit_update_screen (e);
+     return i;
+ }
+ 
+-
+ static void pipe_mail (WEdit *edit, char *to, char *subject, char *cc)
+ {
+     FILE *p = 0;
+@@ -2635,15 +2946,20 @@
+ /* find first character of current word */
+ static int edit_find_word_start (WEdit *edit, long *word_start, int *word_len)
+ {
+-    int i, c, last;
++    int i;
++    mc_wint_t c, last;
+     
+ /* return if at begin of file */
+     if (edit->curs1 <= 0)
+ 	return 0;
+ 
+-    c = (unsigned char) edit_get_byte (edit, edit->curs1 - 1);
++    c = edit_get_byte (edit, edit->curs1 - 1);
+ /* return if not at end or in word */
++#ifndef UTF8
+     if (isspace (c) || !(isalnum (c) || c == '_'))
++#else /* UTF8 */
++    if (iswspace (c) || !(iswalnum (c) || c == '_'))
++#endif /* UTF8 */
+ 	return 0; 
+ 
+ /* search start of word to be completed */
+@@ -2653,11 +2969,19 @@
+ 	    return 0;
+ 	    
+ 	last = c;
+-	c = (unsigned char) edit_get_byte (edit, edit->curs1 - i);
++	c = edit_get_byte (edit, edit->curs1 - i);
+ 
++#ifndef UTF8
+ 	if (!(isalnum (c) || c == '_')) {
++#else /* UTF8 */
++	if (!(iswalnum (c) || c == '_')) {
++#endif /* UTF8 */
+ /* return if word starts with digit */
++#ifndef UTF8
+ 	    if (isdigit (last))
++#else /* UTF8 */
++	    if (iswdigit (last))
++#endif /* UTF8 */
+ 		return 0;
+ 
+ 	    *word_start = edit->curs1 - (i - 1); /* start found */
+@@ -2690,7 +3014,7 @@
+ 			  int *num)
+ {
+     int len, max_len = 0, i, skip;
+-    char *bufpos;
++    mc_wchar_t *bufpos;
+ 
+     /* collect max MAX_WORD_COMPLETIONS completions */
+     while (*num < MAX_WORD_COMPLETIONS) {
+@@ -2711,9 +3035,16 @@
+ 	    buffers1[start >> S_EDIT_BUF_SIZE][start & M_EDIT_BUF_SIZE];
+ 	skip = 0;
+ 	for (i = 0; i < *num; i++) {
++#ifndef UTF8
+ 	    if (strncmp
+ 		(&compl[i].text[word_len], &bufpos[word_len],
+-		 max (len, compl[i].len) - word_len) == 0) {
++		 max (len,
++#else /* UTF8 */
++            if (wcsncmp
++                ((wchar_t *) &compl[i].text[word_len],
++                 (wchar_t *) &bufpos[word_len], max (len,
++#endif /* UTF8 */
++                 compl[i].len) - word_len) == 0) {
+ 		skip = 1;
+ 		break;		/* skip it, already added */
+ 	    }
+@@ -2721,7 +3052,7 @@
+ 	if (skip)
+ 	    continue;
+ 
+-	compl[*num].text = g_malloc (len + 1);
++	compl[*num].text = g_malloc ((len + 1) * sizeof(mc_wchar_t));
+ 	compl[*num].len = len;
+ 	for (i = 0; i < len; i++)
+ 	    compl[*num].text[i] = *(bufpos + i);
+@@ -2735,6 +3066,18 @@
+     return max_len;
+ }
+ 
++#ifdef UTF8
++int edit_print_string (WEdit * e, const char *s)
++{
++    int i;
++    mc_wchar_t *ws = mbstr_to_wchar(s);
++    i = edit_print_wstring (e, ws);
++    g_free(ws);
++    return i;
++}
++
++#endif /* UTF8 */
++
+ 
+ /* let the user select its preferred completion */
+ static void
+@@ -2747,6 +3090,10 @@
+     WListbox *compl_list;
+     int compl_dlg_h;	/* completion dialog height */
+     int compl_dlg_w;	/* completion dialog width */
++#ifdef UTF8
++    char *mbtext;
++#endif /* UTF8 */
++
+ 
+     /* calculate the dialog metrics */
+     compl_dlg_h = num_compl + 2;
+@@ -2782,8 +3129,16 @@
+     add_widget (compl_dlg, compl_list);
+ 
+     /* fill the listbox with the completions */
++#ifndef UTF8
+     for (i = 0; i < num_compl; i++)
+ 	listbox_add_item (compl_list, 0, 0, compl[i].text, NULL);
++#else /* UTF8 */
++    for (i = 0; i < num_compl; i++) {
++        mbtext = wchar_to_mbstr(compl[i].text);
++        listbox_add_item (compl_list, 0, 0, mbtext, NULL);
++        g_free(mbtext);
++    }
++#endif /* UTF8 */
+ 
+     /* pop up the dialog */
+     run_dlg (compl_dlg);
+@@ -2791,9 +3146,17 @@
+     /* apply the choosen completion */
+     if (compl_dlg->ret_value == B_ENTER) {
+ 	listbox_get_current (compl_list, &curr, NULL);
+-	if (curr)
++	if (curr){
++#ifndef UTF8
+ 	    for (curr += word_len; *curr; curr++)
+ 		edit_insert (edit, *curr);
++#else /* UTF8 */
++	    mc_wchar_t *wc, *wccurr = mbstr_to_wchar(curr);
++	    for (wc = wccurr + word_len; *wc; wc++)
++		edit_insert (edit, *wc);
++	    g_free(wccurr);
++#endif /* UTF8 */
++	}
+     }
+ 
+     /* destroy dialog before return */
+@@ -2810,8 +3173,9 @@
+ {
+     int word_len = 0, i, num_compl = 0, max_len;
+     long word_start = 0;
+-    char *bufpos;
+-    char *match_expr;
++    mc_wchar_t *bufpos;
++    mc_wchar_t *match_expr;
++    char *mbmatch_expr;
+     struct selection compl[MAX_WORD_COMPLETIONS];	/* completions */
+ 
+     /* don't want to disturb another search */
+@@ -2828,16 +3192,32 @@
+     /* prepare match expression */
+     bufpos = &edit->buffers1[word_start >> S_EDIT_BUF_SIZE]
+ 	[word_start & M_EDIT_BUF_SIZE];
++
++    match_expr = g_malloc((word_len + 14) * sizeof(mc_wchar_t));
++#ifndef UTF8
+     match_expr = g_strdup_printf ("%.*s[a-zA-Z_0-9]+", word_len, bufpos);
++#else /* UTF8 */
++    wcsncpy (match_expr, bufpos, word_len);
++    match_expr[word_len] = '\0';
++    wcscat (match_expr, L"[a-zA-Z_0-9]+");
++#endif /* UTF8 */
+ 
+     /* init search: backward, regexp, whole word, case sensitive */
+     edit_set_search_parameters (0, 1, 1, 1, 1);
+ 
+     /* collect the possible completions              */
+     /* start search from curs1 down to begin of file */
++#ifndef UTF8
+     max_len =
+ 	edit_collect_completions (edit, word_start, word_len, match_expr,
+ 				  (struct selection *) &compl, &num_compl);
++#else /* UTF8 */
++    mbmatch_expr = wchar_to_mbstr(match_expr);
++    max_len =
++	edit_collect_completions (edit, word_start, word_len, mbmatch_expr,
++				  (struct selection *) &compl, &num_compl);
++    g_free(mbmatch_expr);
++#endif /* UTF8 */
+ 
+     if (num_compl > 0) {
+ 	/* insert completed word if there is only one match */
+diff -Naur mc-4.6.1-old/edit/editdraw.c mc-4.6.1/edit/editdraw.c
+--- mc-4.6.1-old/edit/editdraw.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/edit/editdraw.c	2005-10-28 10:08:07.657259272 +0200
+@@ -48,7 +48,7 @@
+ 
+ static void status_string (WEdit * edit, char *s, int w)
+ {
+-    char byte_str[16];
++    char byte_str[32];
+ 
+     /*
+      * If we are at the end of file, print <EOF>,
+@@ -56,11 +56,16 @@
+      * as decimal and as hex.
+      */
+     if (edit->curs1 < edit->last_byte) {
+-	unsigned char cur_byte = edit_get_byte (edit, edit->curs1);
++        mc_wchar_t cur_byte = edit_get_byte (edit, edit->curs1);
++#ifndef UTF8
+ 	g_snprintf (byte_str, sizeof (byte_str), "%c %3d 0x%02X",
+ 		    is_printable (cur_byte) ? cur_byte : '.',
+-		    (int) cur_byte,
+-		    (unsigned) cur_byte);
++#else /* UTF8 */
++        g_snprintf (byte_str, sizeof(byte_str), "%lc %3d 0x%02X",
++                    iswprint(cur_byte) ? cur_byte : '.',
++#endif /* UTF8 */
++                    (int) cur_byte,
++                    (unsigned) cur_byte);
+     } else {
+ 	strcpy (byte_str, "<EOF>");
+     }
+@@ -183,11 +188,16 @@
+ #define lowlevel_set_color(x) attrset(MY_COLOR_PAIR(color))
+ #endif
+ 
++struct line_s {
++    mc_wchar_t ch;
++    unsigned int style;
++};
++
+ static void
+ print_to_widget (WEdit *edit, long row, int start_col, int start_col_real,
+-		 long end_col, unsigned int line[])
++		 long end_col, struct line_s line[])
+ {
+-    unsigned int *p;
++    struct line_s *p;
+ 
+     int x = start_col_real + EDIT_TEXT_HORIZONTAL_OFFSET;
+     int x1 = start_col + EDIT_TEXT_HORIZONTAL_OFFSET;
+@@ -201,9 +211,9 @@
+     edit_move (x1 + FONT_OFFSET_X, y + FONT_OFFSET_Y);
+     p = line;
+ 
+-    while (*p) {
++    while (p->ch) {
+ 	int style;
+-	int textchar;
++	mc_wchar_t textchar;
+ 	int color;
+ 
+ 	if (cols_to_skip) {
+@@ -212,9 +222,9 @@
+ 	    continue;
+ 	}
+ 
+-	style = *p & 0xFF00;
+-	textchar = *p & 0xFF;
+-	color = *p >> 16;
++	style = p->style & 0xFF00;
++	textchar = p->ch;
++	color = p->style >> 16;
+ 
+ 	if (style & MOD_ABNORMAL) {
+ 	    /* Non-printable - use black background */
+@@ -228,8 +238,11 @@
+ 	} else {
+ 	    lowlevel_set_color (color);
+ 	}
+-
++#ifdef UTF8
++	SLsmg_write_char(textchar);
++#else
+ 	addch (textchar);
++#endif
+ 	p++;
+     }
+ }
+@@ -239,11 +252,11 @@
+ edit_draw_this_line (WEdit *edit, long b, long row, long start_col,
+ 		     long end_col)
+ {
+-    static unsigned int line[MAX_LINE_LEN];
+-    unsigned int *p = line;
++    struct line_s line[MAX_LINE_LEN];
++    struct line_s *p = line;
+     long m1 = 0, m2 = 0, q, c1, c2;
+     int col, start_col_real;
+-    unsigned int c;
++    mc_wint_t c;
+     int color;
+     int i, book_mark = -1;
+ 
+@@ -265,66 +278,96 @@
+ 
+ 	if (row <= edit->total_lines - edit->start_line) {
+ 	    while (col <= end_col - edit->start_col) {
+-		*p = 0;
++		p->ch = 0;
++		p->style = 0;
+ 		if (q == edit->curs1)
+-		    *p |= MOD_CURSOR;
++		    p->style |= MOD_CURSOR;
+ 		if (q >= m1 && q < m2) {
+ 		    if (column_highlighting) {
+ 			int x;
+ 			x = edit_move_forward3 (edit, b, 0, q);
+ 			if (x >= c1 && x < c2)
+-			    *p |= MOD_MARKED;
++			    p->style |= MOD_MARKED;
+ 		    } else
+-			*p |= MOD_MARKED;
++			p->style |= MOD_MARKED;
+ 		}
+ 		if (q == edit->bracket)
+-		    *p |= MOD_BOLD;
++		    p->style |= MOD_BOLD;
+ 		if (q >= edit->found_start
+ 		    && q < edit->found_start + edit->found_len)
+-		    *p |= MOD_BOLD;
++		    p->style |= MOD_BOLD;
+ 		c = edit_get_byte (edit, q);
+ /* we don't use bg for mc - fg contains both */
+ 		if (book_mark == -1) {
+ 		    edit_get_syntax_color (edit, q, &color);
+-		    *p |= color << 16;
++		    p->style |= color << 16;
+ 		} else {
+-		    *p |= book_mark << 16;
++		    p->style |= book_mark << 16;
+ 		}
+ 		q++;
+ 		switch (c) {
+ 		case '\n':
+ 		    col = end_col - edit->start_col + 1;	/* quit */
+-		    *(p++) |= ' ';
++		    p->ch = ' ';
++		    p++;
+ 		    break;
+ 		case '\t':
+ 		    i = TAB_SIZE - ((int) col % TAB_SIZE);
+-		    *p |= ' ';
+-		    c = *(p++) & ~MOD_CURSOR;
++		    p->ch = ' ';
++		    c = p->style & ~MOD_CURSOR;
++		    p++;
+ 		    col += i;
+-		    while (--i)
+-			*(p++) = c;
++		    while (--i) {
++			p->ch = ' '; p->style = c;
++			p++;
++		    }
+ 		    break;
+ 		default:
+ 		    c = convert_to_display_c (c);
+ 
+ 		    /* Caret notation for control characters */
+ 		    if (c < 32) {
+-			*(p++) = '^' | MOD_ABNORMAL;
+-			*(p++) = (c + 0x40) | MOD_ABNORMAL;
++		        p->ch = '^';
++			p->style = MOD_ABNORMAL;
++			p++;
++		        p->ch = c + 0x40;
++			p->style = MOD_ABNORMAL;
+ 			col += 2;
+ 			break;
+ 		    }
+ 		    if (c == 127) {
+-			*(p++) = '^' | MOD_ABNORMAL;
+-			*(p++) = '?' | MOD_ABNORMAL;
++		        p->ch = '^';
++			p->style = MOD_ABNORMAL;
++			p++;
++		        p->ch = '?';
++			p->style = MOD_ABNORMAL;
++			p++;
+ 			col += 2;
+ 			break;
+ 		    }
+ 
+-		    if (is_printable (c)) {
+-			*(p++) |= c;
++#ifndef UTF8
++		    if (is_printable (c)
++#else /* UTF8 */
++		    if (iswprint (c)
++#ifdef __STDC_ISO_10646__ 
++			&& (c < BINARY_CHAR_OFFSET || c >= (BINARY_CHAR_OFFSET + 256))
++#endif
++#endif /* UTF8 */
++			) {
++			p->ch = c;
++			p++;
++			
++#ifdef UTF8
++			i = wcwidth(c);
++			if (i > 1) {
++			    col += i - 1;
++			}
++#endif /* UTF8 */
+ 		    } else {
+-			*(p++) = '.' | MOD_ABNORMAL;
++		        p->ch = '.';
++			p->style = MOD_ABNORMAL;
++			p++;
+ 		    }
+ 		    col++;
+ 		    break;
+@@ -334,7 +377,7 @@
+     } else {
+ 	start_col_real = start_col = 0;
+     }
+-    *p = 0;
++    p->ch = 0;
+ 
+     print_to_widget (edit, row, start_col, start_col_real, end_col, line);
+ }
+diff -Naur mc-4.6.1-old/edit/edit.h mc-4.6.1/edit/edit.h
+--- mc-4.6.1-old/edit/edit.h	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/edit/edit.h	2005-10-28 10:08:07.768242400 +0200
+@@ -39,6 +39,27 @@
+ 
+ #include "../src/global.h"
+ 
++#include "src/tty.h"
++
++#ifdef UTF8
++#include <wchar.h>
++#include <wctype.h>
++
++#define mc_wchar_t wchar_t
++#define mc_wint_t wint_t
++
++#else
++
++#define mc_wchar_t unsigned char
++#define mc_wint_t int
++
++#endif
++
++
++/* unicode private use area */
++#define BINARY_CHAR_OFFSET 0xFFE00
++
++
+ #define N_menus 5
+ 
+ #define SEARCH_DIALOG_OPTION_NO_SCANF	1
+@@ -99,6 +120,8 @@
+ #define START_STACK_SIZE 32
+ 
+ /* Some codes that may be pushed onto or returned from the undo stack */
++#define CHAR_INSERT 65
++#define CHAR_INSERT_AHEAD 66
+ #define CURS_LEFT 601
+ #define CURS_RIGHT 602
+ #define DELCHAR 603
+@@ -118,7 +141,7 @@
+ 
+ struct macro {
+     short command;
+-    short ch;
++    mc_wchar_t ch;
+ };
+ 
+ struct WEdit;
+@@ -132,26 +155,8 @@
+ void menu_save_mode_cmd (void);
+ int edit_raw_key_query (const char *heading, const char *query, int cancel);
+ int edit_file (const char *_file, int line);
+-int edit_translate_key (WEdit *edit, long x_key, int *cmd, int *ch);
+-
+-#ifndef NO_INLINE_GETBYTE
+-int edit_get_byte (WEdit * edit, long byte_index);
+-#else
+-static inline int edit_get_byte (WEdit * edit, long byte_index)
+-{
+-    unsigned long p;
+-    if (byte_index >= (edit->curs1 + edit->curs2) || byte_index < 0)
+-	return '\n';
+-
+-    if (byte_index >= edit->curs1) {
+-	p = edit->curs1 + edit->curs2 - byte_index - 1;
+-	return edit->buffers2[p >> S_EDIT_BUF_SIZE][EDIT_BUF_SIZE - (p & M_EDIT_BUF_SIZE) - 1];
+-    } else {
+-	return edit->buffers1[byte_index >> S_EDIT_BUF_SIZE][byte_index & M_EDIT_BUF_SIZE];
+-    }
+-}
+-#endif
+-
++int edit_translate_key (WEdit *edit, long x_key, int *cmd, mc_wint_t *ch);
++mc_wchar_t edit_get_byte (WEdit * edit, long byte_index);
+ int edit_count_lines (WEdit * edit, long current, int upto);
+ long edit_move_forward (WEdit * edit, long current, int lines, long upto);
+ long edit_move_forward3 (WEdit * edit, long current, int cols, long upto);
+@@ -176,11 +181,11 @@
+ void edit_delete_line (WEdit * edit);
+ 
+ int edit_delete (WEdit * edit);
+-void edit_insert (WEdit * edit, int c);
++void edit_insert (WEdit * edit, mc_wchar_t c);
+ int edit_cursor_move (WEdit * edit, long increment);
+ void edit_push_action (WEdit * edit, long c, ...);
+ void edit_push_key_press (WEdit * edit);
+-void edit_insert_ahead (WEdit * edit, int c);
++void edit_insert_ahead (WEdit * edit, mc_wchar_t c);
+ long edit_write_stream (WEdit * edit, FILE * f);
+ char *edit_get_write_filter (const char *writename, const char *filename);
+ int edit_save_confirm_cmd (WEdit * edit);
+@@ -212,7 +217,7 @@
+ int eval_marks (WEdit * edit, long *start_mark, long *end_mark);
+ void edit_status (WEdit * edit);
+ void edit_execute_key_command (WEdit *edit, int command,
+-			       int char_for_insertion);
++			       mc_wint_t char_for_insertion);
+ void edit_update_screen (WEdit * edit);
+ int edit_print_string (WEdit * e, const char *s);
+ void edit_move_to_line (WEdit * e, long line);
+@@ -256,7 +261,7 @@
+ void format_paragraph (WEdit *edit, int force);
+ 
+ /* either command or char_for_insertion must be passed as -1 */
+-void edit_execute_cmd (WEdit *edit, int command, int char_for_insertion);
++void edit_execute_cmd (WEdit *edit, int command, mc_wint_t char_for_insertion);
+ 
+ #define get_sys_error(s) (s)
+ 
+diff -Naur mc-4.6.1-old/edit/editkeys.c mc-4.6.1/edit/editkeys.c
+--- mc-4.6.1-old/edit/editkeys.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/edit/editkeys.c	2005-10-28 10:08:07.659258968 +0200
+@@ -162,10 +162,10 @@
+  * 'command' is one of the editor commands from editcmddef.h.
+  */
+ int
+-edit_translate_key (WEdit *edit, long x_key, int *cmd, int *ch)
++edit_translate_key (WEdit *edit, long x_key, int *cmd, mc_wint_t *ch)
+ {
+     int command = CK_Insert_Char;
+-    int char_for_insertion = -1;
++    mc_wint_t char_for_insertion = -1;
+     int i = 0;
+     static const long *key_map;
+ 
+@@ -242,9 +242,30 @@
+     /* an ordinary insertable character */
+     if (x_key < 256) {
+ 	int c = convert_from_input_c (x_key);
+-
++#ifdef UTF8
++	mbstate_t mbs;
++	int res;
++	mc_wchar_t wc;
++    
++	memset (&mbs, 0, sizeof (mbs));
++
++	if (edit->charpoint >= MB_CUR_MAX) edit->charpoint = 0;
++
++	edit->charbuf[edit->charpoint++] = c;
++
++	res = mbrtowc(&wc, (char *)edit->charbuf, edit->charpoint, &mbs);
++	if (res < 0) {
++	    if (res != -2) edit->charpoint = 0; /* broken multibyte char, skip */
++    	    return 0;
++        }
++	edit->charpoint = 0;
++
++	if (iswprint (wc)) {
++	    char_for_insertion = wc;
++#else 
+ 	if (is_printable (c)) {
+ 	    char_for_insertion = c;
++#endif /* UTF8 */
+ 	    goto fin;
+ 	}
+     }
+@@ -285,7 +306,7 @@
+     *cmd = command;
+     *ch = char_for_insertion;
+ 
+-    if (command == CK_Insert_Char && char_for_insertion == -1) {
++    if (command == CK_Insert_Char && char_for_insertion == (mc_wint_t)-1) {
+ 	/* unchanged, key has no function here */
+ 	return 0;
+     }
+diff -Naur mc-4.6.1-old/edit/editwidget.c mc-4.6.1/edit/editwidget.c
+--- mc-4.6.1-old/edit/editwidget.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/edit/editwidget.c	2005-10-28 10:08:07.664258208 +0200
+@@ -337,7 +337,8 @@
+ 
+     case WIDGET_KEY:
+ 	{
+-	    int cmd, ch;
++	    int cmd;
++	    mc_wint_t ch;
+ 
+ 	    /* first check alt-f, alt-e, alt-s, etc for drop menus */
+ 	    if (edit_drop_hotkey_menu (e, parm))
+diff -Naur mc-4.6.1-old/edit/edit-widget.h mc-4.6.1/edit/edit-widget.h
+--- mc-4.6.1-old/edit/edit-widget.h	2003-10-29 09:54:47.000000000 +0100
++++ mc-4.6.1/edit/edit-widget.h	2005-10-28 10:08:07.750245136 +0200
+@@ -24,6 +24,11 @@
+     unsigned char border;
+ };
+ 
++struct action {
++    mc_wchar_t ch;
++    long flags;
++};
++
+ struct WEdit {
+     Widget widget;
+ 
+@@ -36,8 +41,17 @@
+     /* dynamic buffers and cursor position for editor: */
+     long curs1;			/* position of the cursor from the beginning of the file. */
+     long curs2;			/* position from the end of the file */
++#ifndef UTF8
+     unsigned char *buffers1[MAXBUFF + 1];	/* all data up to curs1 */
+     unsigned char *buffers2[MAXBUFF + 1];	/* all data from end of file down to curs2 */
++#else /* UTF8 */
++    mc_wchar_t *buffers1[MAXBUFF + 1];        /* all data up to curs1 */
++    mc_wchar_t *buffers2[MAXBUFF + 1];        /* all data from end of file down to curs2 */
++
++    unsigned char charbuf[MB_LEN_MAX];
++    int charpoint;
++#endif /* UTF8 */
++
+ 
+     /* search variables */
+     long search_start;		/* First character to start searching from */
+@@ -81,7 +95,7 @@
+ 
+     /* undo stack and pointers */
+     unsigned long stack_pointer;
+-    long *undo_stack;
++    struct action *undo_stack;
+     unsigned long stack_size;
+     unsigned long stack_size_mask;
+     unsigned long stack_bottom;
+diff -Naur mc-4.6.1-old/edit/wordproc.c mc-4.6.1/edit/wordproc.c
+--- mc-4.6.1-old/edit/wordproc.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/edit/wordproc.c	2005-10-28 10:08:07.668257600 +0200
+@@ -24,7 +24,12 @@
+ 
+ #define tab_width option_tab_spacing
+ 
++#ifndef UTF8
+ #define NO_FORMAT_CHARS_START "-+*\\,.;:&>"
++#else /* UTF8 */
++#define NO_FORMAT_CHARS_START L"-+*\\,.;:&>"
++#endif /* UTF8 */
++
+ #define FONT_MEAN_WIDTH 1
+ 
+ static long
+@@ -41,14 +46,21 @@
+ 	p = edit_move_forward (edit, p, line - l, 0);
+ 
+     p = edit_bol (edit, p);
++
++#ifndef UTF8
+     while (strchr ("\t ", edit_get_byte (edit, p)))
++#else /* UTF8 */
++    while (wcschr (L"\t ", edit_get_byte (edit, p)))
++#endif /* UTF8 */
++
+ 	p++;
+     return p;
+ }
+ 
+ static int bad_line_start (WEdit * edit, long p)
+ {
+-    int c;
++    mc_wint_t c;
++
+     c = edit_get_byte (edit, p);
+     if (c == '.') {		/* `...' is acceptable */
+ 	if (edit_get_byte (edit, p + 1) == '.')
+@@ -62,7 +74,13 @@
+ 		return 0;	/* `---' is acceptable */
+ 	return 1;
+     }
++    
++#ifndef UTF8
+     if (strchr (NO_FORMAT_CHARS_START, c))
++#else /* UTF8 */
++    if (wcschr (NO_FORMAT_CHARS_START, c))
++#endif /* UTF8 */
++
+ 	return 1;
+     return 0;
+ }
+@@ -115,33 +133,37 @@
+ 					i - edit->curs_line, 0));
+ }
+ 
+-static unsigned char *
++static mc_wchar_t *
+ get_paragraph (WEdit *edit, long p, long q, int indent, int *size)
+ {
+-    unsigned char *s, *t;
++    mc_wchar_t *s, *t;
+ #if 0
+-    t = g_malloc ((q - p) + 2 * (q - p) / option_word_wrap_line_length +
+-		  10);
++    t = g_malloc (((q - p) + 2 * (q - p) / option_word_wrap_line_length +
++		  10) * sizeof(mc_wchar_t));
+ #else
+-    t = g_malloc (2 * (q - p) + 100);
++    t = g_malloc ((2 * (q - p) + 100) * sizeof(mc_wchar_t));
+ #endif
+     if (!t)
+ 	return 0;
+     for (s = t; p < q; p++, s++) {
+ 	if (indent)
+ 	    if (edit_get_byte (edit, p - 1) == '\n')
++#ifndef UTF8
+ 		while (strchr ("\t ", edit_get_byte (edit, p)))
++#else /* UTF8 */
++		while (wcschr (L"\t ", edit_get_byte (edit, p)))
++#endif /* UTF8 */
+ 		    p++;
+ 	*s = edit_get_byte (edit, p);
+     }
+-    *size = (unsigned long) s - (unsigned long) t;
++    *size = s - t;
+     t[*size] = '\n';
+     return t;
+ }
+ 
+-static void strip_newlines (unsigned char *t, int size)
++static void strip_newlines (mc_wchar_t *t, int size)
+ {
+-    unsigned char *p = t;
++    mc_wchar_t *p = t;
+     while (size--) {
+ 	*p = *p == '\n' ? ' ' : *p;
+ 	p++;
+@@ -158,7 +180,7 @@
+ {
+     return x += tab_width - x % tab_width;
+ }
+-static int line_pixel_length (unsigned char *t, long b, int l)
++static int line_pixel_length (mc_wchar_t *t, long b, int l)
+ {
+     int x = 0, c, xn = 0;
+     for (;;) {
+@@ -182,7 +204,7 @@
+ }
+ 
+ /* find the start of a word */
+-static int next_word_start (unsigned char *t, int q, int size)
++static int next_word_start (mc_wchar_t *t, int q, int size)
+ {
+     int i;
+     for (i = q;; i++) {
+@@ -203,7 +225,7 @@
+ }
+ 
+ /* find the start of a word */
+-static int word_start (unsigned char *t, int q, int size)
++static int word_start (mc_wchar_t *t, int q, int size)
+ {
+     int i = q;
+     if (t[q] == ' ' || t[q] == '\t')
+@@ -222,7 +244,7 @@
+ }
+ 
+ /* replaces ' ' with '\n' to properly format a paragraph */
+-static void format_this (unsigned char *t, int size, int indent)
++static void format_this (mc_wchar_t *t, int size, int indent)
+ {
+     int q = 0, ww;
+     strip_newlines (t, size);
+@@ -250,7 +272,7 @@
+     }
+ }
+ 
+-static void replace_at (WEdit * edit, long q, int c)
++static void replace_at (WEdit * edit, long q, mc_wint_t c)
+ {
+     edit_cursor_move (edit, q - edit->curs1);
+     edit_delete (edit);
+@@ -258,18 +280,27 @@
+ }
+ 
+ /* replaces a block of text */
+-static void put_paragraph (WEdit * edit, unsigned char *t, long p, long q, int indent, int size)
++static void put_paragraph (WEdit * edit, mc_wchar_t *t, long p, long q, int indent, int size)
+ {
+     long cursor;
+-    int i, c = 0;
++    int i;
++    mc_wchar_t c = 0;
+     cursor = edit->curs1;
+     if (indent)
++#ifndef UTF8
+ 	while (strchr ("\t ", edit_get_byte (edit, p)))
++#else /* UTF8 */
++        while (wcschr (L"\t ", edit_get_byte (edit, p)))
++#endif /* UTF8 */
+ 	    p++;
+     for (i = 0; i < size; i++, p++) {
+ 	if (i && indent) {
+ 	    if (t[i - 1] == '\n' && c == '\n') {
++#ifndef UTF8
+ 		while (strchr ("\t ", edit_get_byte (edit, p)))
++#else /* UTF8 */
++                while (wcschr (L"\t ", edit_get_byte (edit, p)))
++#endif /* UTF8 */
+ 		    p++;
+ 	    } else if (t[i - 1] == '\n') {
+ 		long curs;
+@@ -281,7 +312,11 @@
+ 		p = edit->curs1;
+ 	    } else if (c == '\n') {
+ 		edit_cursor_move (edit, p - edit->curs1);
++#ifndef UTF8
+ 		while (strchr ("\t ", edit_get_byte (edit, p))) {
++#else /* UTF8 */
++		while (wcschr (L"\t ", edit_get_byte (edit, p))) {
++#endif /* UTF8 */
+ 		    edit_delete (edit);
+ 		    if (cursor > edit->curs1)
+ 			cursor--;
+@@ -314,7 +349,7 @@
+ {
+     long p, q;
+     int size;
+-    unsigned char *t;
++    mc_wchar_t *t;
+     int indent = 0;
+     if (option_word_wrap_line_length < 2)
+ 	return;
+@@ -324,17 +359,25 @@
+     q = end_paragraph (edit, force);
+     indent = test_indent (edit, p, q);
+     t = get_paragraph (edit, p, q, indent, &size);
+-    if (!t)
++    if (!t) 
+ 	return;
+     if (!force) {
+ 	int i;
++#ifndef UTF8
+ 	if (strchr (NO_FORMAT_CHARS_START, *t)) {
++#else /* UTF8 */
++	if (wcschr (NO_FORMAT_CHARS_START, *t)) {
++#endif /* UTF8 */
+ 	    g_free (t);
+ 	    return;
+ 	}
+ 	for (i = 0; i < size - 1; i++) {
+ 	    if (t[i] == '\n') {
++#ifndef UTF8
+ 		if (strchr (NO_FORMAT_CHARS_START "\t ", t[i + 1])) {
++#else /* UTF8 */
++		if (wcschr (NO_FORMAT_CHARS_START "\t", t[i + 1])) {
++#endif /* UTF8 */
+ 		    g_free (t);
+ 		    return;
+ 		}
+diff -Naur mc-4.6.1-old/src/achown.c mc-4.6.1/src/achown.c
+--- mc-4.6.1-old/src/achown.c	2005-07-23 18:52:02.000000000 +0200
++++ mc-4.6.1/src/achown.c	2005-10-28 10:08:08.094192848 +0200
+@@ -583,6 +583,12 @@
+     b_att[2] = button_new (XTRACT (6));
+     b_user = button_new (XTRACT (5));
+     b_group = button_new (XTRACT (4));
++#ifdef UTF8
++    if (SLsmg_Is_Unicode) {
++	b_user->text = g_realloc (b_user->text, MB_CUR_MAX * 15 + 1);
++	b_group->text = g_realloc (b_group->text, MB_CUR_MAX * 15 + 1);
++    }
++#endif
+ 
+     add_widget (ch_dlg, b_group);
+     add_widget (ch_dlg, b_user);
+diff -Naur mc-4.6.1-old/src/boxes.c mc-4.6.1/src/boxes.c
+--- mc-4.6.1-old/src/boxes.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/boxes.c	2005-10-28 10:08:08.079195128 +0200
+@@ -150,23 +150,23 @@
+ 	display_title = _(display_title);
+ 	for (i = 0; i < LIST_TYPES; i++) {
+ 	    displays[i] = _(displays[i]);
+-	    if ((l = strlen (displays[i])) > maxlen)
++	    if ((l = mbstrlen (displays[i])) > maxlen)
+ 		maxlen = l;
+ 	}
+ 
+-	i = strlen (ok_button) + 5;
+-	l = strlen (cancel_button) + 3;
++	i = mbstrlen (ok_button) + 5;
++	l = mbstrlen (cancel_button) + 3;
+ 	l = max (i, l);
+ 
+ 	i = maxlen + l + 16;
+ 	if (i > DISPLAY_X)
+ 	    DISPLAY_X = i;
+ 
+-	i = strlen (user_mini_status) + 13;
++	i = mbstrlen (user_mini_status) + 13;
+ 	if (i > DISPLAY_X)
+ 	    DISPLAY_X = i;
+ 
+-	i = strlen (display_title) + 10;
++	i = mbstrlen (display_title) + 10;
+ 	if (i > DISPLAY_X)
+ 	    DISPLAY_X = i;
+ 
+@@ -285,20 +285,20 @@
+ 	int maxlen = 0;
+ 	for (i = SORT_TYPES - 1; i >= 0; i--) {
+ 	    sort_orders_names[i] = _(sort_orders[i].sort_name);
+-	    r = strlen (sort_orders_names[i]);
++	    r = mbstrlen (sort_orders_names[i]);
+ 	    if (r > maxlen)
+ 		maxlen = r;
+ 	}
+ 
+ 	check_pos = maxlen + 9;
+ 
+-	r = strlen (reverse_label) + 4;
+-	i = strlen (case_label) + 4;
++	r = mbstrlen (reverse_label) + 4;
++	i = mbstrlen (case_label) + 4;
+ 	if (i > r)
+ 	    r = i;
+ 
+-	l = strlen (ok_button) + 6;
+-	i = strlen (cancel_button) + 4;
++	l = mbstrlen (ok_button) + 6;
++	i = mbstrlen (cancel_button) + 4;
+ 	if (i > l)
+ 	    l = i;
+ 
+@@ -307,7 +307,7 @@
+ 	if (i > SORT_X)
+ 	    SORT_X = i;
+ 
+-	i = strlen (sort_title) + 6;
++	i = mbstrlen (sort_title) + 6;
+ 	if (i > SORT_X)
+ 	    SORT_X = i;
+ 
+@@ -402,7 +402,7 @@
+ 		while (i--)
+ 		{
+ 			conf_widgets [i].text = _(conf_widgets [i].text);
+-			l1 = strlen (conf_widgets [i].text) + 3;
++			l1 = mbstrlen (conf_widgets [i].text) + 3;
+ 			if (l1 > maxlen)
+ 				maxlen = l1;
+ 		}
+@@ -417,8 +417,8 @@
+ 		 * And this for the case when buttons with some space to the right
+ 		 * do not fit within 2/6
+ 		 */
+-		l1 = strlen (conf_widgets [0].text) + 3;
+-		i = strlen (conf_widgets [1].text) + 5;
++		l1 = mbstrlen (conf_widgets [0].text) + 3;
++		i = mbstrlen (conf_widgets [1].text) + 5;
+ 		if (i > l1)
+ 			l1 = i;
+ 
+@@ -489,11 +489,11 @@
+ 		{
+ 			display_widgets [i].text = _(display_widgets[i].text);
+ 			display_bits_str [i] = _(display_bits_str [i]);
+-			l1 = strlen (display_bits_str [i]);
++			l1 = mbstrlen (display_bits_str [i]);
+ 			if (l1 > maxlen)
+ 				maxlen = l1;
+ 		}
+-		l1 = strlen (display_widgets [2].text);
++		l1 = mbstrlen (display_widgets [2].text);
+ 		if (l1 > maxlen)
+ 			maxlen = l1;
+ 		
+@@ -501,8 +501,8 @@
+ 		display_bits.xlen = (maxlen + 5) * 6 / 4;
+ 
+ 		/* See above confirm_box */
+-		l1 = strlen (display_widgets [0].text) + 3;
+-		i = strlen (display_widgets [1].text) + 5;
++		l1 = mbstrlen (display_widgets [0].text) + 3;
++		i = mbstrlen (display_widgets [1].text) + 5;
+ 		if (i > l1)
+ 			l1 = i;
+ 
+@@ -597,7 +597,7 @@
+ 
+     cpname = _("&Select");
+     add_widget (dbits_dlg,
+-		button_new (4, DISPX - 8 - strlen (cpname), B_USER,
++		button_new (4, DISPX - 8 - mbstrlen (cpname), B_USER,
+ 			    NORMAL_BUTTON, cpname, sel_charset_button));
+ 
+     return dbits_dlg;
+@@ -803,7 +803,7 @@
+     quick_widgets [1].y_divisions =
+ 	quick_widgets [0].y_divisions = Quick_input.ylen = 5;
+ 
+-    len = strlen (quick_widgets [1].text);
++    len = mbstrlen (quick_widgets [1].text);
+ 
+     quick_widgets [0].relative_x =
+ 	quick_widgets [1].relative_x + len + 1;
+@@ -962,7 +962,7 @@
+ 		{
+ 			job_buttons [i].name = _(job_buttons [i].name);
+ 
+-			len = strlen (job_buttons [i].name) + 4;
++			len = mbstrlen (job_buttons [i].name) + 4;
+ 			JOBS_X = max (JOBS_X, startx + len + 3);
+ 
+ 			job_buttons [i].xpos = startx;
+@@ -971,7 +971,7 @@
+ 
+ 		/* Last button - Ok a.k.a. Cancel :) */
+ 		job_buttons [n_buttons - 1].xpos =
+-			JOBS_X - strlen (job_buttons [n_buttons - 1].name) - 7;
++			JOBS_X - mbstrlen (job_buttons [n_buttons - 1].name) - 7;
+ 
+ 		i18n_flag = 1;
+ 	}
+@@ -1029,7 +1029,7 @@
+         
+         while (i--)
+         {
+-            l1 = strlen (labs [i] = _(labs [i]));
++            l1 = mbstrlen (labs [i] = _(labs [i]));
+             if (l1 > maxlen)
+                 maxlen = l1;
+         }
+@@ -1039,7 +1039,7 @@
+         
+         for (i = sizeof(buts)/sizeof(buts[0]), l1 = 0; i--; )
+         {
+-            l1 += strlen (buts [i] = _(buts [i]));
++            l1 += mbstrlen (buts [i] = _(buts [i]));
+         }
+         l1 += 15;
+         if (l1 > dialog_x)
+@@ -1048,7 +1048,7 @@
+         ilen = dialog_x - 7 - maxlen; /* for the case of very long buttons :) */
+         istart = dialog_x - 3 - ilen;
+         
+-        b2 = dialog_x - (strlen(buts[1]) + 6);
++        b2 = dialog_x - (mbstrlen(buts[1]) + 6);
+         
+         i18n_flag = 1;
+     }
+diff -Naur mc-4.6.1-old/src/dialog.c mc-4.6.1/src/dialog.c
+--- mc-4.6.1-old/src/dialog.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/dialog.c	2005-10-28 10:08:07.891223704 +0200
+@@ -162,7 +162,7 @@
+ 
+     if (h->title) {
+ 	attrset (HOT_NORMALC);
+-	dlg_move (h, space, (h->cols - strlen (h->title)) / 2);
++	dlg_move (h, space, (h->cols - mbstrlen (h->title)) / 2);
+ 	addstr (h->title);
+     }
+ }
+diff -Naur mc-4.6.1-old/src/file.c mc-4.6.1/src/file.c
+--- mc-4.6.1-old/src/file.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/file.c	2005-10-28 10:08:08.002206832 +0200
+@@ -165,15 +165,20 @@
+ do_transform_source (FileOpContext *ctx, const unsigned char *source)
+ {
+     size_t j, k, l, len;
+-    unsigned const char *fnsource = x_basename (source);
++    unsigned const char *fnsource = g_strdup (x_basename (source));
+     int next_reg;
+     enum CaseConvs case_conv = NO_CONV;
+     static unsigned char fntarget[MC_MAXPATHLEN];
+ 
++#ifdef UTF8
++    fix_utf8(fnsource);
++#endif
++
+     len = strlen (fnsource);
+     j = re_match (&ctx->rx, fnsource, len, 0, &ctx->regs);
+     if (j != len) {
+ 	transform_error = FILE_SKIP;
++	g_free(fnsource);
+ 	return NULL;
+     }
+     for (next_reg = 1, j = 0, k = 0; j < strlen (ctx->dest_mask); j++) {
+@@ -217,6 +222,7 @@
+ 		|| ctx->regs.start[next_reg] < 0) {
+ 		message (1, MSG_ERROR, _(" Invalid target mask "));
+ 		transform_error = FILE_ABORT;
++		g_free(fnsource);
+ 		return NULL;
+ 	    }
+ 	    for (l = (size_t) ctx->regs.start[next_reg];
+@@ -231,6 +237,7 @@
+ 	}
+     }
+     fntarget[k] = 0;
++    g_free(fnsource);
+     return fntarget;
+ }
+ 
+diff -Naur mc-4.6.1-old/src/filegui.c mc-4.6.1/src/filegui.c
+--- mc-4.6.1-old/src/filegui.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/filegui.c	2005-10-28 10:08:08.140185856 +0200
+@@ -69,6 +69,7 @@
+ #include "filegui.h"
+ #include "key.h"		/* get_event */
+ #include "util.h"               /* strip_password() */
++#include "tty.h"
+ 
+ /* }}} */
+ 
+@@ -564,8 +565,8 @@
+ 	 * longest of "Overwrite..." labels 
+ 	 * (assume "Target date..." are short enough)
+ 	 */
+-	l1 = max (strlen (rd_widgets[6].text),
+-		  strlen (rd_widgets[11].text));
++	l1 = max (mbstrlen (rd_widgets[6].text),
++		  mbstrlen (rd_widgets[11].text));
+ 
+ 	/* longest of button rows */
+ 	i = sizeof (rd_widgets) / sizeof (rd_widgets[0]);
+@@ -576,7 +577,7 @@
+ 		    l2 = max (l2, l);
+ 		    l = 0;
+ 		}
+-		l += strlen (rd_widgets[i].text) + 4;
++		l += mbstrlen (rd_widgets[i].text) + 4;
+ 	    }
+ 	}
+ 	l2 = max (l2, l);	/* last row */
+@@ -594,12 +595,12 @@
+ 		    l = l1;
+ 		}
+ 		rd_widgets[i].xpos = l;
+-		l += strlen (rd_widgets[i].text) + 4;
++		l += mbstrlen (rd_widgets[i].text) + 4;
+ 	    }
+ 	}
+ 	/* Abort button is centered */
+ 	rd_widgets[1].xpos =
+-	    (rd_xlen - strlen (rd_widgets[1].text) - 3) / 2;
++	    (rd_xlen - mbstrlen (rd_widgets[1].text) - 3) / 2;
+     }
+ #endif				/* ENABLE_NLS */
+ 
+@@ -618,7 +619,7 @@
+ 
+     ADD_RD_LABEL (ui, 0,
+ 		  name_trunc (ui->replace_filename,
+-			      rd_trunc - strlen (rd_widgets[0].text)), 0);
++			      rd_trunc - mbstrlen (rd_widgets[0].text)), 0);
+     ADD_RD_BUTTON (1);
+ 
+     ADD_RD_BUTTON (2);
+@@ -805,36 +806,36 @@
+ 	if (fmd_widgets[i].text[0] != '\0')
+ 	    fmd_widgets[i].text = _(fmd_widgets[i].text);
+ 
+-    len = strlen (fmd_widgets[FMCB11].text)
+-	+ strlen (fmd_widgets[FMCB21].text) + 15;
++    len = mbstrlen (fmd_widgets[FMCB11].text)
++	+ mbstrlen (fmd_widgets[FMCB21].text) + 15;
+     fmd_xlen = max (fmd_xlen, len);
+ 
+-    len = strlen (fmd_widgets[FMCB12].text)
+-	+ strlen (fmd_widgets[FMCB22].text) + 15;
++    len = mbstrlen (fmd_widgets[FMCB12].text)
++	+ mbstrlen (fmd_widgets[FMCB22].text) + 15;
+     fmd_xlen = max (fmd_xlen, len);
+ 
+-    len = strlen (fmd_widgets[FMBRGT].text)
+-	+ strlen (fmd_widgets[FMBLFT].text) + 11;
++    len = mbstrlen (fmd_widgets[FMBRGT].text)
++	+ mbstrlen (fmd_widgets[FMBLFT].text) + 11;
+ 
+ #ifdef FMBMID
+-    len += strlen (fmd_widgets[FMBMID].text) + 6;
++    len += mbstrlen (fmd_widgets[FMBMID].text) + 6;
+ #endif
+ 
+     fmd_xlen = max (fmd_xlen, len + 4);
+ 
+     len = (fmd_xlen - (len + 6)) / 2;
+     i = fmd_widgets[FMBLFT].relative_x = len + 3;
+-    i += strlen (fmd_widgets[FMBLFT].text) + 8;
++    i += mbstrlen (fmd_widgets[FMBLFT].text) + 8;
+ 
+ #ifdef FMBMID
+     fmd_widgets[FMBMID].relative_x = i;
+-    i += strlen (fmd_widgets[FMBMID].text) + 6;
++    i += mbstrlen (fmd_widgets[FMBMID].text) + 6;
+ #endif
+ 
+     fmd_widgets[FMBRGT].relative_x = i;
+ 
+ #define	chkbox_xpos(i) \
+-	fmd_widgets [i].relative_x = fmd_xlen - strlen (fmd_widgets [i].text) - 6
++	fmd_widgets [i].relative_x = fmd_xlen - mbstrlen (fmd_widgets [i].text) - 6
+ 
+     chkbox_xpos (FMCB0);
+     chkbox_xpos (FMCB21);
+@@ -856,7 +857,7 @@
+ 
+ char *
+ file_mask_dialog (FileOpContext *ctx, FileOperation operation, const char *text,
+-		  const char *def_text, int only_one, int *do_background)
++		  const char *def_text_orig, int only_one, int *do_background)
+ {
+     int source_easy_patterns = easy_patterns;
+     char *source_mask, *orig_mask, *dest_dir, *tmpdest;
+@@ -865,12 +866,20 @@
+     struct stat buf;
+     int val;
+     QuickDialog Quick_input;
+-
++    char *def_text;
+     g_return_val_if_fail (ctx != NULL, NULL);
++
++    def_text = g_strdup(def_text_orig);
++
+ #if 0
+     message (1, __FUNCTION__, "text = `%s' \n def_text = `%s'", text,
+ 		def_text);
+ #endif
++
++#ifdef UTF8
++	fix_utf8(def_text);
++#endif
++
+     fmd_init_i18n (FALSE);
+ 
+     /* Set up the result pointers */
+@@ -929,6 +938,7 @@
+     orig_mask = source_mask;
+     if (!dest_dir || !*dest_dir) {
+ 	g_free (source_mask);
++        g_free(def_text);
+ 	return dest_dir;
+     }
+     if (source_easy_patterns) {
+@@ -982,5 +992,6 @@
+     }
+     if (val == B_USER)
+ 	*do_background = 1;
++    g_free(def_text);
+     return dest_dir;
+ }
+diff -Naur mc-4.6.1-old/src/find.c mc-4.6.1/src/find.c
+--- mc-4.6.1-old/src/find.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/find.c	2005-10-28 10:08:08.049199688 +0200
+@@ -205,7 +205,7 @@
+ 	int l1, maxlen = 0;
+ 
+ 	while (i--) {
+-	    l1 = strlen (labs[i] = _(labs[i]));
++	    l1 = mbstrlen (labs[i] = _(labs[i]));
+ 	    if (l1 > maxlen)
+ 		maxlen = l1;
+ 	}
+@@ -214,7 +214,7 @@
+ 	    FIND_X = i;
+ 
+ 	for (i = sizeof (buts) / sizeof (buts[0]), l1 = 0; i--;) {
+-	    l1 += strlen (buts[i] = _(buts[i]));
++	    l1 += mbstrlen (buts[i] = _(buts[i]));
+ 	}
+ 	l1 += 21;
+ 	if (l1 > FIND_X)
+@@ -223,8 +223,8 @@
+ 	ilen = FIND_X - 7 - maxlen;	/* for the case of very long buttons :) */
+ 	istart = FIND_X - 3 - ilen;
+ 
+-	b1 = b0 + strlen (buts[0]) + 7;
+-	b2 = FIND_X - (strlen (buts[2]) + 6);
++	b1 = b0 + mbstrlen (buts[0]) + 7;
++	b2 = FIND_X - (mbstrlen (buts[2]) + 6);
+ 
+ 	i18n_flag = 1;
+ 	case_label = _(case_label);
+@@ -813,7 +813,7 @@
+     if (!i18n_flag) {
+ 	register int i = sizeof (fbuts) / sizeof (fbuts[0]);
+ 	while (i--)
+-	    fbuts[i].len = strlen (fbuts[i].text = _(fbuts[i].text)) + 3;
++	    fbuts[i].len = mbstrlen (fbuts[i].text = _(fbuts[i].text)) + 3;
+ 	fbuts[2].len += 2;	/* DEFPUSH_BUTTON */
+ 	i18n_flag = 1;
+     }
+diff -Naur mc-4.6.1-old/src/global.h mc-4.6.1/src/global.h
+--- mc-4.6.1-old/src/global.h	2004-09-25 15:46:23.000000000 +0200
++++ mc-4.6.1/src/global.h	2005-10-28 10:11:08.071832088 +0200
+@@ -146,6 +146,13 @@
+ #   define N_(String) (String)
+ #endif /* !ENABLE_NLS */
+ 
++#include <slang.h>
++#if SLANG_VERSION >= 20000
++#define UTF8 1
++#define SLsmg_Is_Unicode SLsmg_is_utf8_mode()
++void SLsmg_write_nwchars(wchar_t *s, size_t n);
++#endif
++
+ #include "fs.h"
+ #include "util.h"
+ 
+diff -Naur mc-4.6.1-old/src/help.c mc-4.6.1/src/help.c
+--- mc-4.6.1-old/src/help.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/help.c	2005-10-28 10:09:53.961098632 +0200
+@@ -445,10 +445,28 @@
+ #ifndef HAVE_SLANG
+ 			addch (acs_map [c]);
+ #else
++#if defined(UTF8) && SLANG_VERSION < 20000
++			SLsmg_draw_object (h->y + line + 2, h->x + col + 2, acs_map [c]);
++#else
+ 			SLsmg_draw_object (h->y + line + 2, h->x + col + 2, c);
++#endif /* UTF8 */
+ #endif
++		} else {
++#ifdef UTF8
++		if (SLsmg_Is_Unicode) {
++		    int len;
++		    mbstate_t mbs;
++                   wchar_t wc;
++		    memset (&mbs, 0, sizeof (mbs));
++		    len = mbrtowc(&wc, p, MB_CUR_MAX, &mbs);
++		    if (len <= 0) len = 1; /* skip broken multibyte chars */
++
++            	    SLsmg_write_char(wc);
++		    p += len - 1;
+ 		} else
++#endif
+ 		    addch (c);
++		}
+ 		col++;
+ 		break;
+ 	    }
+@@ -771,6 +789,12 @@
+ 	message (1, MSG_ERROR, _(" Cannot open file %s \n %s "), filename ? filename : hlpfile,
+ 		 unix_error_string (errno));
+     }
++    else
++    {
++	char *conv = utf8_to_local(data);
++	g_free(data);
++	data = conv;
++    }
+ 
+     if (!filename)
+ 	g_free (hlpfile);
+diff -Naur mc-4.6.1-old/src/hotlist.c mc-4.6.1/src/hotlist.c
+--- mc-4.6.1-old/src/hotlist.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/hotlist.c	2005-10-28 10:08:07.918219600 +0200
+@@ -555,7 +555,7 @@
+ 
+ 			row = hotlist_but [i].y;
+ 			++count [row];
+-			len [row] += strlen (hotlist_but [i].text) + 5;
++			len [row] += mbstrlen (hotlist_but [i].text) + 5;
+ 			if (hotlist_but [i].flags == DEFPUSH_BUTTON)
+ 				len [row] += 2;
+ 		}
+@@ -580,12 +580,12 @@
+ 				/* not first int the row */
+ 				if (!strcmp (hotlist_but [i].text, cancel_but))
+ 					hotlist_but [i].x = 
+-						cols - strlen (hotlist_but [i].text) - 13;
++						cols - mbstrlen (hotlist_but [i].text) - 13;
+ 				else
+ 					hotlist_but [i].x = cur_x [row];
+ 			}
+ 
+-			cur_x [row] += strlen (hotlist_but [i].text) + 2
++			cur_x [row] += mbstrlen (hotlist_but [i].text) + 2
+ 				+ (hotlist_but [i].flags == DEFPUSH_BUTTON ? 5 : 3);
+ 		}
+ 	}
+@@ -814,7 +814,7 @@
+ 	for (i = 0; i < 3; i++)
+ 	{
+ 		qw [i].text = _(qw [i].text);
+-		l[i] = strlen (qw [i].text) + 3;
++		l[i] = mbstrlen (qw [i].text) + 3;
+ 	}
+ 	space = (len - 4 - l[0] - l[1] - l[2]) / 4;
+ 
+@@ -860,7 +860,7 @@
+ 	static int i18n_flag = 0;
+ #endif /* ENABLE_NLS */
+ 
+-    len = max (strlen (header), (size_t) msglen (text1, &lines1));
++    len = max ((int) mbstrlen (header), (size_t) msglen (text1, &lines1));
+     len = max (len, (size_t) msglen (text2, &lines2)) + 4;
+     len = max (len, 64);
+ 
+@@ -955,7 +955,7 @@
+ 	static int i18n_flag = 0;
+ #endif /* ENABLE_NLS */
+     
+-    len = max (strlen (header), (size_t) msglen (label, &lines)) + 4;
++    len = max ((int) mbstrlen (header), (size_t) msglen (label, &lines)) + 4;
+     len = max (len, 64);
+ 
+ #ifdef ENABLE_NLS
+@@ -1011,7 +1011,7 @@
+ {
+     char *prompt, *label;
+     const char *cp = _("Label for \"%s\":");
+-    int l = strlen (cp);
++    int l = mbstrlen (cp);
+     char *label_string = g_strdup (current_panel->cwd);
+ 
+     strip_password (label_string, 1);
+diff -Naur mc-4.6.1-old/src/layout.c mc-4.6.1/src/layout.c
+--- mc-4.6.1-old/src/layout.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/layout.c	2005-10-28 10:08:07.947215192 +0200
+@@ -362,36 +362,36 @@
+ 
+ 	while (i--) {
+ 	    s_split_direction[i] = _(s_split_direction[i]);
+-	    l1 = strlen (s_split_direction[i]) + 7;
++	    l1 = mbstrlen (s_split_direction[i]) + 7;
+ 	    if (l1 > first_width)
+ 		first_width = l1;
+ 	}
+ 
+ 	for (i = 0; i <= 8; i++) {
+ 	    check_options[i].text = _(check_options[i].text);
+-	    l1 = strlen (check_options[i].text) + 7;
++	    l1 = mbstrlen (check_options[i].text) + 7;
+ 	    if (l1 > first_width)
+ 		first_width = l1;
+ 	}
+ 
+-	l1 = strlen (title1) + 1;
++	l1 = mbstrlen (title1) + 1;
+ 	if (l1 > first_width)
+ 	    first_width = l1;
+ 
+-	l1 = strlen (title2) + 1;
++	l1 = mbstrlen (title2) + 1;
+ 	if (l1 > first_width)
+ 	    first_width = l1;
+ 
+ 
+-	second_width = strlen (title3) + 1;
++	second_width = mbstrlen (title3) + 1;
+ 	for (i = 0; i < 6; i++) {
+ 	    check_options[i].text = _(check_options[i].text);
+-	    l1 = strlen (check_options[i].text) + 7;
++	    l1 = mbstrlen (check_options[i].text) + 7;
+ 	    if (l1 > second_width)
+ 		second_width = l1;
+ 	}
+ 	if (console_flag) {
+-	    l1 = strlen (output_lines_label) + 13;
++	    l1 = mbstrlen (output_lines_label) + 13;
+ 	    if (l1 > second_width)
+ 		second_width = l1;
+ 	}
+@@ -405,14 +405,14 @@
+ 	 *
+ 	 * Now the last thing to do - properly space buttons...
+ 	 */
+-	l1 = 11 + strlen (ok_button)	/* 14 - all brackets and inner space */
+-	    +strlen (save_button)	/* notice: it is 3 char less because */
+-	    +strlen (cancel_button);	/* of '&' char in button text */
++	l1 = 11 + mbstrlen (ok_button)	/* 14 - all brackets and inner space */
++	    +mbstrlen (save_button)	/* notice: it is 3 char less because */
++	    +mbstrlen (cancel_button);	/* of '&' char in button text */
+ 
+ 	i = (first_width + second_width - l1) / 4;
+ 	b1 = 5 + i;
+-	b2 = b1 + strlen (ok_button) + i + 6;
+-	b3 = b2 + strlen (save_button) + i + 4;
++	b2 = b1 + mbstrlen (ok_button) + i + 6;
++	b3 = b2 + mbstrlen (save_button) + i + 4;
+ 
+ 	i18n_layt_flag = 1;
+     }
+@@ -684,7 +684,7 @@
+     panel_do_cols (0);
+     panel_do_cols (1);
+ 
+-    promptl = strlen (prompt);
++    promptl = mbstrlen (prompt);
+ 
+     widget_set_size (&the_menubar->widget, 0, 0, 1, COLS);
+ 
+diff -Naur mc-4.6.1-old/src/learn.c mc-4.6.1/src/learn.c
+--- mc-4.6.1-old/src/learn.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/learn.c	2005-10-28 10:08:07.787239512 +0200
+@@ -236,7 +236,7 @@
+ 	learn_but[0].x = 78 / 2 + 4;
+ 
+ 	learn_but[1].text = _(learn_but[1].text);
+-	learn_but[1].x = 78 / 2 - (strlen (learn_but[1].text) + 9);
++	learn_but[1].x = 78 / 2 - (mbstrlen (learn_but[1].text) + 9);
+ 
+ 	learn_title = _(learn_title);
+ 	i18n_flag = 1;
+diff -Naur mc-4.6.1-old/src/main.c mc-4.6.1/src/main.c
+--- mc-4.6.1-old/src/main.c	2005-07-23 18:52:02.000000000 +0200
++++ mc-4.6.1/src/main.c	2005-10-28 10:08:07.816235104 +0200
+@@ -1609,7 +1609,11 @@
+     if (xterm_flag && xterm_title) {
+ 	p = s = g_strdup (strip_home_and_password (current_panel->cwd));
+ 	do {
++#ifndef UTF8
+ 	    if (!is_printable (*s))
++#else /* UTF8 */
++            if (*s < ' ')
++#endif /* UTF8 */
+ 		*s = '?';
+ 	} while (*++s);
+ 	fprintf (stdout, "\33]0;mc - %s\7", p);
+diff -Naur mc-4.6.1-old/src/menu.c mc-4.6.1/src/menu.c
+--- mc-4.6.1-old/src/menu.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/menu.c	2005-10-28 10:08:08.110190416 +0200
+@@ -20,6 +20,8 @@
+ #include <stdarg.h>
+ #include <sys/types.h>
+ #include <ctype.h>
++#include <wchar.h>
++
+ #include "global.h"
+ #include "tty.h"
+ #include "menu.h"
+@@ -50,33 +52,96 @@
+ {
+     Menu *menu;
+     const char *cp;
++    int wlen = 0;
++    mbstate_t s;
+ 
+     menu = (Menu *) g_malloc (sizeof (*menu));
+     menu->count = count;
+     menu->max_entry_len = 20;
+     menu->entries = entries;
++    menu->name = g_strdup (name);
++    menu_scan_hotkey (menu);
++#ifdef UTF8
++    menu->wentries = NULL;
++    menu->wname = NULL;
++    if (SLsmg_Is_Unicode) {
++      const char *str = menu->name;
++      memset (&s, 0, sizeof (s));
++      wlen = mbsrtowcs (NULL, &str, -1, &s);
++      if (wlen > 0)
++        ++wlen;
++      else {
++        wlen = 0;
++        memset (&s, 0, sizeof (s));
++      }
++    }
++#endif
+ 
+     if (entries != (menu_entry*) NULL) {
+ 	register menu_entry* mp;
+ 	for (mp = entries; count--; mp++) {
+ 	    if (mp->text[0] != '\0') {
++		int len;
+ #ifdef ENABLE_NLS
+ 	        mp->text = _(mp->text);
+ #endif /* ENABLE_NLS */
+ 	        cp = strchr (mp->text,'&');
+ 
++#ifdef UTF8
++		if (SLsmg_Is_Unicode) {
++                    len = mbstrlen(mp->text) + 1;
++                    wlen += len;
++                    menu->max_entry_len = max (len - 1, menu->max_entry_len);
++                } else
++#endif
++                    len = strlen (mp->text);
++
+ 		if (cp != NULL && *(cp+1) != '\0') {
+ 		    mp->hot_key = tolower (*(cp+1));
+-		    menu->max_entry_len = max ((int) (strlen (mp->text) - 1),
+-			menu->max_entry_len);
++		    menu->max_entry_len = max (len - 1, menu->max_entry_len);
+ 		} else {
+-		    menu->max_entry_len = max ((int) strlen (mp->text),
+-			menu->max_entry_len);
++		    menu->max_entry_len = max (len, menu->max_entry_len);
+ 		}
+ 	    }
+ 	}
+     }
+ 
++#ifdef UTF8
++    if (wlen) {
++      wchar_t *wp;
++      const char *str;
++      int len;
++
++      menu->wentries = (wchar_t **)
++                       g_malloc (sizeof (wchar_t *) * menu->count
++                                 + wlen * sizeof (wchar_t));
++      wp = (wchar_t *) (menu->wentries + menu->count);
++      str = menu->name;
++      len = mbsrtowcs (wp, &str, wlen, &s);
++      if (len > 0) {
++          menu->wname = wp;
++          wlen -= len + 1;
++          wp += len + 1;
++      } else
++          memset (&s, 0, sizeof (s));
++      if (menu->entries != NULL)
++          for (count = 0; count < menu->count; ++count)
++              if (menu->entries[count].text[0] != '\0') {
++                  str = menu->entries[count].text;
++                  menu->wentries[count] = wp;
++                  len = mbsrtowcs (wp, &str, wlen, &s);
++                  if (len > 0) {
++                      wlen -= len + 1;
++                      wp += len + 1;
++                  } else {
++                      memset (&s, 0, sizeof (s));
++                      *wp++ = L'\0';
++                      --wlen;
++                  }
++              }
++    }
++#endif
++
+     menu->name = g_strdup (name);
+     menu_scan_hotkey(menu);
+     menu->start_x = 0;
+@@ -109,8 +174,26 @@
+ 	const unsigned char *text;
+ 
+ 	addch((unsigned char)menu->entries [idx].first_letter);
+-	for (text = menu->entries [idx].text; *text; text++)
+-	{
++#ifdef UTF8
++	if (menu->wentries) {
++	    wchar_t *wtext, *wp;
++
++	    for (wtext = wp = menu->wentries [idx]; *wtext; wtext++) {
++		if (*wtext == L'&') {
++		    if (wtext > wp)
++			SLsmg_write_nwchars (wp, wtext - wp);
++		    attrset (color == MENU_SELECTED_COLOR ?
++			MENU_HOTSEL_COLOR : MENU_HOT_COLOR);
++		    SLsmg_write_nwchars (++wtext, 1);
++		    attrset (color);
++		    wp = wtext + 1;
++		}
++	    }
++	    if (wtext > wp)
++		SLsmg_write_nwchars (wp, wtext - wp);
++	} else
++#endif
++	    for (text = menu->entries [idx].text; *text; text++) {
+ 		if (*text != '&')
+ 		    addch(*text);
+ 		else {
+@@ -119,7 +202,7 @@
+ 		    addch(*(++text));
+ 		    attrset(color);
+ 		}
+-	}
++	    }
+     }
+     widget_move (&menubar->widget, y, x + 1);
+ }
+@@ -167,7 +250,13 @@
+ 	if (menubar->active)
+ 	    attrset(i == menubar->selected?MENU_SELECTED_COLOR:SELECTED_COLOR);
+ 	widget_move (&menubar->widget, 0, menubar->menu [i]->start_x);
+-	printw ("%s", menubar->menu [i]->name);
++#ifdef UTF8
++	if (menubar->menu [i]->wname)
++	    SLsmg_write_nwchars (menubar->menu [i]->wname,
++				 wcslen (menubar->menu [i]->wname));
++	else
++#endif
++	    printw ("%s", menubar->menu [i]->name);
+     }
+ 
+     if (menubar->dropped)
+@@ -489,7 +578,13 @@
+ 
+ 	for (i = 0; i < items; i++)
+ 	{
+-		int len = strlen(menubar->menu[i]->name);
++		int len;
++#ifdef UTF8
++		if (menubar->menu[i]->wname)
++		    len = wcslen (menubar->menu[i]->wname);
++		else
++#endif		
++		    len = strlen(menubar->menu[i]->name);
+ 		menubar->menu[i]->start_x = start_x;
+ 		start_x += len + gap;
+ 	}
+@@ -502,7 +597,13 @@
+ 	for (i = 0; i < items; i++)
+ 	{
+ 		/* preserve length here, to be used below */
+-		gap -= (menubar->menu[i]->start_x = strlen(menubar->menu[i]->name));
++#ifdef UTF8
++		if (menubar->menu[i]->wname)
++		    menubar->menu[i]->start_x = wcslen (menubar->menu[i]->wname);
++		else
++#endif
++		    menubar->menu[i]->start_x = strlen (menubar->menu[i]->name);
++		gap -= menubar->menu[i]->start_x;
+ 	}
+ 
+ 	gap /= (items - 1);
+@@ -526,6 +627,9 @@
+ void
+ destroy_menu (Menu *menu)
+ {
++#ifdef UTF8
++    g_free (menu->wentries);
++#endif
+     g_free (menu->name);
+     g_free (menu->help_node);
+     g_free (menu);
+diff -Naur mc-4.6.1-old/src/menu.h mc-4.6.1/src/menu.h
+--- mc-4.6.1-old/src/menu.h	2004-09-18 16:30:59.000000000 +0200
++++ mc-4.6.1/src/menu.h	2005-10-28 10:08:07.949214888 +0200
+@@ -21,6 +21,8 @@
+     menu_entry *entries;
+     int    start_x;		/* position relative to menubar start */
+     char   *help_node;
++    wchar_t **wentries;
++    wchar_t *wname;
+ } Menu;
+ 
+ extern int menubar_visible;
+diff -Naur mc-4.6.1-old/src/myslang.h mc-4.6.1/src/myslang.h
+--- mc-4.6.1-old/src/myslang.h	2004-10-12 06:32:04.000000000 +0200
++++ mc-4.6.1/src/myslang.h	2005-10-28 10:08:07.831232824 +0200
+@@ -11,6 +11,10 @@
+ #endif	/* HAVE_SLANG_SLANG_H */
+ #endif
+ 
++#ifdef UTF8
++#    include <wchar.h>
++#endif
++
+ enum {
+     KEY_BACKSPACE = 400,
+     KEY_END, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT,
+diff -Naur mc-4.6.1-old/src/option.c mc-4.6.1/src/option.c
+--- mc-4.6.1-old/src/option.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/option.c	2005-10-28 10:08:08.121188744 +0200
+@@ -124,12 +124,12 @@
+ 	title2 = _(" Pause after run... ");
+ 	title3 = _(" Other options ");
+ 
+-	first_width = strlen (title1) + 1;
+-	second_width = strlen (title3) + 1;
++	first_width = mbstrlen (title1) + 1;
++	second_width = mbstrlen (title3) + 1;
+ 
+ 	for (i = 0; check_options[i].text; i++) {
+ 	    check_options[i].text = _(check_options[i].text);
+-	    l1 = strlen (check_options[i].text) + 7;
++	    l1 = mbstrlen (check_options[i].text) + 7;
+ 	    if (i >= OTHER_OPTIONS) {
+ 		if (l1 > first_width)
+ 		    first_width = l1;
+@@ -142,23 +142,23 @@
+ 	i = PAUSE_OPTIONS;
+ 	while (i--) {
+ 	    pause_options[i] = _(pause_options[i]);
+-	    l1 = strlen (pause_options[i]) + 7;
++	    l1 = mbstrlen (pause_options[i]) + 7;
+ 	    if (l1 > first_width)
+ 		first_width = l1;
+ 	}
+ 
+-	l1 = strlen (title2) + 1;
++	l1 = mbstrlen (title2) + 1;
+ 	if (l1 > first_width)
+ 	    first_width = l1;
+ 
+-	l1 = 11 + strlen (ok_button)
+-	    + strlen (save_button)
+-	    + strlen (cancel_button);
++	l1 = 11 + mbstrlen (ok_button)
++	    + mbstrlen (save_button)
++	    + mbstrlen (cancel_button);
+ 
+ 	i = (first_width + second_width - l1) / 4;
+ 	b1 = 5 + i;
+-	b2 = b1 + strlen (ok_button) + i + 6;
+-	b3 = b2 + strlen (save_button) + i + 4;
++	b2 = b1 + mbstrlen (ok_button) + i + 6;
++	b3 = b2 + mbstrlen (save_button) + i + 4;
+ 
+ 	i18n_config_flag = 1;
+     }
+diff -Naur mc-4.6.1-old/src/panelize.c mc-4.6.1/src/panelize.c
+--- mc-4.6.1-old/src/panelize.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/panelize.c	2005-10-28 10:08:07.933217320 +0200
+@@ -127,7 +127,7 @@
+ 	i = sizeof (panelize_but) / sizeof (panelize_but[0]);
+ 	while (i--) {
+ 	    panelize_but[i].text = _(panelize_but[i].text);
+-	    maxlen += strlen (panelize_but[i].text) + 5;
++	    maxlen += mbstrlen (panelize_but[i].text) + 5;
+ 	}
+ 	maxlen += 10;
+ 
+@@ -136,11 +136,11 @@
+     panelize_cols = max (panelize_cols, maxlen);
+ 
+     panelize_but[2].x =
+-	panelize_but[3].x + strlen (panelize_but[3].text) + 7;
++	panelize_but[3].x + mbstrlen (panelize_but[3].text) + 7;
+     panelize_but[1].x =
+-	panelize_but[2].x + strlen (panelize_but[2].text) + 5;
++	panelize_but[2].x + mbstrlen (panelize_but[2].text) + 5;
+     panelize_but[0].x =
+-	panelize_cols - strlen (panelize_but[0].text) - 8 - BX;
++	panelize_cols - mbstrlen (panelize_but[0].text) - 8 - BX;
+ 
+ #endif				/* ENABLE_NLS */
+ 
+diff -Naur mc-4.6.1-old/src/screen.c mc-4.6.1/src/screen.c
+--- mc-4.6.1-old/src/screen.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/screen.c	2005-10-28 10:08:07.987209112 +0200
+@@ -169,22 +169,59 @@
+ static const char *
+ string_file_name (file_entry *fe, int len)
+ {
+-    static char buffer [BUF_SMALL];
+     size_t i;
++#ifdef UTF8
++    static char buffer [BUF_SMALL * 4];
++    mbstate_t s;
++    int mbmax = MB_CUR_MAX;
++    const char *str = fe->fname;
+ 
+-    for (i = 0; i < sizeof(buffer) - 1; i++) {
+-	char c;
++    memset (&s, 0, sizeof (s));
++#else
++    static char buffer [BUF_SMALL];
++#endif
+ 
+-	c = fe->fname[i];
++#ifdef UTF8
++    if (SLsmg_Is_Unicode)
++	for (i = 0; i < sizeof (buffer) - 1; i++) {
++	    wchar_t wc;
++	    int len;
+ 
+-	if (!c)
+-	    break;
++	    len = mbrtowc (&wc, str, mbmax, &s);
++	    if (!len)
++		break;
++	    if (len < 0) {
++		memset (&s, 0, sizeof (s));
++		buffer[i] = '?';
++		str++;
++		continue;
++	    }
++	    if (!is_printable (wc)) {
++		buffer[i] = '?';
++		str++;
++		continue;
++	    }
++	    if (i >= sizeof (buffer) - len)
++		break;
++	    memcpy (buffer + i, str, len);
++	    i += len - 1;
++	    str += len;
++	}
++    else
++#endif
++      for (i = 0; i < sizeof(buffer) - 1; i++) {
++	  char c;
+ 
+-	if (!is_printable(c))
+-	    c = '?';
++	  c = fe->fname[i];
+ 
+-	buffer[i] = c;
+-    }
++	  if (!c)
++	      break;
++
++	  if (!is_printable(c))
++	      c = '?';
++
++	  buffer[i] = c;
++      }
+ 
+     buffer[i] = 0;
+     return buffer;
+@@ -425,42 +462,6 @@
+ { "dot",   1,  0, J_RIGHT,	" ",		0, string_dot,		   NULL },
+ };
+ 
+-static char *
+-to_buffer (char *dest, int just_mode, int len, const char *txt)
+-{
+-    int txtlen = strlen (txt);
+-    int still, over;
+-
+-    /* Fill buffer with spaces */
+-    memset (dest, ' ', len);
+-
+-    still = (over=(txtlen > len)) ? (txtlen - len) : (len - txtlen);
+-
+-    switch (HIDE_FIT(just_mode)){
+-        case J_LEFT:
+-	    still = 0;
+-	    break;
+-	case J_CENTER:
+-	    still /= 2;
+-	    break;
+-	case J_RIGHT:
+-	default:
+-	    break;
+-    }
+-
+-    if (over){
+-	if (IS_FIT(just_mode))
+-	    strcpy (dest, name_trunc(txt, len));
+-	else
+-	    strncpy (dest, txt+still, len);
+-    } else
+-	strncpy (dest+still, txt, txtlen);
+-
+-    dest[len] = '\0';
+-
+-    return (dest + len);
+-}
+-
+ static int
+ file_compute_color (int attr, file_entry *fe)
+ {
+@@ -514,14 +515,18 @@
+ 
+ /* Formats the file number file_index of panel in the buffer dest */
+ static void
+-format_file (char *dest, int limit, WPanel *panel, int file_index, int width, int attr, int isstatus)
++format_file (WPanel *panel, int file_index, int width, int attr, int isstatus)
+ {
+     int      color, length, empty_line;
+     const char *txt;
+-    char     *old_pos;
+-    char     *cdest = dest;
+     format_e *format, *home;
+     file_entry *fe;
++#ifdef UTF8
++    char     buffer[BUF_MEDIUM * sizeof (wchar_t)];
++#else
++    char     buffer[BUF_MEDIUM];
++#endif
++    int txtwidth;
+ 
+     length     = 0;
+     empty_line = (file_index >= panel->count);
+@@ -539,34 +544,137 @@
+ 	    break;
+ 
+ 	if (format->string_fn){
+-	    int len;
++	    int len, still, over, perm, txtlen, wide;
+ 
+ 	    if (empty_line)
+ 		txt = " ";
+ 	    else
+ 		txt = (*format->string_fn)(fe, format->field_len);
+ 
+-	    old_pos = cdest;
+-
+ 	    len = format->field_len;
+ 	    if (len + length > width)
+ 		len = width - length;
+-	    if (len + (cdest - dest) > limit)
+-		len = limit - (cdest - dest);
++	    if (len >= BUF_MEDIUM)
++		len = BUF_MEDIUM - 1;
+ 	    if (len <= 0)
+ 		break;
+-	    cdest = to_buffer (cdest, format->just_mode, len, txt);
+-	    length += len;
+ 
+-            attrset (color);
++	    perm = 0;
++            if (permission_mode) {
++		if (!strcmp(format->id, "perm"))
++		    perm = 1;
++		else if (!strcmp(format->id, "mode"))
++		    perm = 2;
++	    }
++
++	    wide = 0;
++#ifdef UTF8
++	    if (SLsmg_Is_Unicode && !empty_line && !perm) {
++		mbstate_t s;
++		const char *str = txt;
++
++		memset (&s, 0, sizeof (s));
++		txtlen = mbsrtowcs ((wchar_t *) buffer, &str,
++				    sizeof (buffer) / sizeof (wchar_t), &s);
++		if (txtlen < 0) {
++		    txt = " ";
++		    txtlen = 1;
++		} else {
++		    wide = 1;
++		    txtwidth = wcswidth((wchar_t*)buffer, txtlen);
++		}
++	    } else
++#endif
++	    {
++		txtlen = strlen (txt);
++		txtwidth = txtlen;
++	    }
++
++	    over = txtwidth > len;
++	    still = over ? txtlen - len : len - txtlen;
+ 
+-            if (permission_mode && !strcmp(format->id, "perm"))
+-                add_permission_string (old_pos, format->field_len, fe, attr, color, 0);
+-            else if (permission_mode && !strcmp(format->id, "mode"))
+-                add_permission_string (old_pos, format->field_len, fe, attr, color, 1);
+-            else
+-		addstr (old_pos);
++	    switch (HIDE_FIT(format->just_mode)) {
++	    case J_LEFT:
++		still = 0;
++		break;
++	    case J_CENTER:
++		still /= 2;
++		break;
++	    case J_RIGHT:
++	    default:
++		break;
++	    }
++
++	    attrset (color);
++
++	    if (wide) {
++#ifdef UTF8
++		if (over) {
++		    if (IS_FIT (format->just_mode)) {
++			int n1 = 0;
++			int width1 = 0;
++			int n2 = 0;
++			int width2 = 0;
++			int len1 = len / 2;
++			int len2;
++			
++			while (1) {
++			    int w = wcwidth(((wchar_t *) buffer)[n1]);
++			    if (width1 + w <= len1) {
++				width1 += w;
++				n1++;
++			    }
++			    else
++				break;
++			}
++			len2 = len - width1 - 1;
++
++			while (1) {
++			    int w = wcwidth(((wchar_t *) buffer)[txtlen - n2 - 1]);
++			    if (width2 + w <= len2) {
++				width2 += w;
++				n2++;
++			    }
++			    else
++				break;
++			}
++			
++
++			SLsmg_write_nwchars ((wchar_t *) buffer, n1);
++			SLsmg_write_nwchars (L"~", 1);
++			printw ("%*s", len - width1 - width2 - 1, "");
++			SLsmg_write_nwchars (((wchar_t *) buffer)
++					     + txtlen - n2, n2);
++		    } else
++			SLsmg_write_nwchars ((wchar_t *) buffer, len);
++		} else {
++		    printw ("%*s", still, "");
++		    SLsmg_write_nwchars ((wchar_t *) buffer, txtlen);
++		    printw ("%*s", len - txtwidth - still, "");
++		}
++#endif
++	    } else {
++		if (over) {
++		    if (IS_FIT (format->just_mode))
++			strcpy (buffer, name_trunc(txt, len));
++		    else
++			memcpy (buffer, txt + still, len);
++		} else {
++		    memset (buffer, ' ', still);
++		    memcpy (buffer + still, txt, txtlen);
++		    memset (buffer + still + txtlen, ' ',
++			    len - txtlen - still);
++		}
++		buffer[len] = '\0';
+ 
++		if (perm)
++		    add_permission_string (buffer, format->field_len, fe,
++					   attr, color, perm - 1);
++		else
++		    addstr (buffer);
++	    }
++
++	    length += len;
+ 	} else {
+             if (attr == SELECTED || attr == MARKED_SELECTED)
+                 attrset (SELECTED_COLOR);
+@@ -589,7 +697,6 @@
+ {
+     int    second_column = 0;
+     int	   width, offset;
+-    char   buffer [BUF_MEDIUM];
+ 
+     offset = 0;
+     if (!isstatus && panel->split){
+@@ -618,7 +725,7 @@
+ 	    widget_move (&panel->widget, file_index - panel->top_file + 2, 1);
+     }
+ 
+-    format_file (buffer, sizeof(buffer), panel, file_index, width, attr, isstatus);
++    format_file (panel, file_index, width, attr, isstatus);
+ 
+     if (!isstatus && panel->split){
+ 	if (second_column)
+@@ -1068,6 +1175,12 @@
+     int  side, width;
+ 
+     const char *txt;
++#ifdef UTF8
++    char buffer[30 * sizeof (wchar_t)];
++    mbstate_t s;
++
++    memset (&s, 0, sizeof (s));
++#endif
+     if (!panel->split)
+ 	adjust_top_file (panel);
+ 
+@@ -1092,16 +1205,37 @@
+             if (format->string_fn){
+                 txt = format->title;
+ 
++		attrset (MARKED_COLOR);
++		width -= format->field_len;
++#ifdef UTF8
++		if (SLsmg_Is_Unicode) {
++		    const char *str = txt;
++		    header_len = mbsrtowcs ((wchar_t *) buffer, &str,
++					    sizeof (buffer) / sizeof (wchar_t),
++					    &s);
++		    if (header_len < 0) {
++			memset (&s, 0, sizeof (s));
++			printw ("%*s", format->field_len, "");
++			continue;
++		    }
++		    if (header_len > format->field_len)
++			header_len = format->field_len;
++		    spaces = (format->field_len - header_len) / 2;
++		    extra  = (format->field_len - header_len) % 2;
++		    printw ("%*s", spaces, "");
++		    SLsmg_write_nwchars ((wchar_t *) buffer, header_len);
++		    printw ("%*s", spaces + extra, "");
++		    continue;
++		}
++#endif
+ 		header_len = strlen (txt);
+ 		if (header_len > format->field_len)
+ 		    header_len = format->field_len;
+ 
+-                attrset (MARKED_COLOR);
+                 spaces = (format->field_len - header_len) / 2;
+                 extra  = (format->field_len - header_len) % 2;
+ 		printw ("%*s%.*s%*s", spaces, "",
+ 			 header_len, txt, spaces+extra, "");
+-		width -= 2 * spaces + extra + header_len;
+ 	    } else {
+ 		attrset (NORMAL_COLOR);
+ 		one_vline ();
+diff -Naur mc-4.6.1-old/src/slint.c mc-4.6.1/src/slint.c
+--- mc-4.6.1-old/src/slint.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/slint.c	2005-10-28 10:08:35.422038384 +0200
+@@ -180,6 +180,9 @@
+     struct sigaction act, oact;
+     
+     SLtt_get_terminfo ();
++#if SLANG_VERSION >= 20000
++    SLutf8_enable (-1);
++#endif
+ 
+    /*
+     * If the terminal in not in terminfo but begins with a well-known
+diff -Naur mc-4.6.1-old/src/util.c mc-4.6.1/src/util.c
+--- mc-4.6.1-old/src/util.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/util.c	2005-10-28 10:19:11.683311968 +0200
+@@ -32,7 +32,11 @@
+ #include <stdarg.h>
+ #include <string.h>
+ #include <ctype.h>
++#include <iconv.h>
++#include <langinfo.h>
++#include <errno.h>
+ 
++#include "tty.h"
+ #include "global.h"
+ #include "profile.h"
+ #include "main.h"		/* mc_home */
+@@ -44,9 +48,22 @@
+ #include "charsets.h"
+ #endif
+ 
++#ifdef UTF8
++#include <wctype.h>
++#include <wchar.h>
++#endif
++
+ static const char app_text [] = "Midnight-Commander";
+ int easy_patterns = 1;
+ 
++#if SLANG_VERSION >= 20000
++void SLsmg_write_nwchars(wchar_t *s, size_t n)
++{
++ while(n--)
++    SLsmg_write_char(*s++);
++}
++#endif
++
+ extern void str_replace(char *s, char from, char to)
+ {
+     for (; *s != '\0'; s++) {
+@@ -77,9 +94,106 @@
+     return (c > 31 && c != 127 && c != 155);
+ }
+ 
++size_t
++mbstrlen (const char *str)
++{
++#ifdef UTF8
++    if (SLsmg_Is_Unicode) {
++        size_t width = 0;
++
++        for (; *str; str++) {
++            wchar_t c;
++            size_t len;
++
++            len = mbrtowc (&c, str, MB_CUR_MAX, NULL);
++	    
++            if (len == (size_t)(-1) || len == (size_t)(-2)) break;
++	    
++            if (len > 0) {
++                int wcsize = wcwidth(c);
++                width += wcsize > 0 ? wcsize : 0;
++                str += len-1;
++            }
++        }
++
++        return width;
++    } else
++#endif
++	return strlen (str);
++}
++
++#ifdef UTF8
++
++void 
++fix_utf8(char *str)
++{
++    mbstate_t mbs;
++
++    char *p = str;
++
++    while (*p) {
++	int len;
++        memset (&mbs, 0, sizeof (mbs));
++	len = mbrlen(p, MB_CUR_MAX, &mbs);
++	if (len == -1) {
++	    *p = '?';
++	    p++;
++	} else if (len > 0) {
++	    p += len;
++	} else {
++	    p++;
++	}
++    }
++}
++#endif
++
++
++
++#ifdef UTF8
++wchar_t *
++mbstr_to_wchar (const char *str)
++{
++    int len = mbstrlen(str);
++    wchar_t *buf = g_malloc((len+1) * sizeof(wchar_t));
++    mbstate_t mbs;
++    memset (&mbs, 0, sizeof (mbs));
++    mbsrtowcs (buf, &str, len, &mbs);
++    buf[len] = 0;
++    return buf;
++}
++
++char *
++wchar_to_mbstr (const wchar_t *wstr)
++{
++    mbstate_t mbs;
++    const wchar_t *wstr2;
++    char * string;
++    int len;
++
++    memset (&mbs, 0, sizeof (mbs));
++    wstr2 = wstr;
++    len = wcsrtombs(NULL, &wstr2, 0, &mbs);
++    if (len <= 0) 
++	return NULL;
++
++    string = g_malloc(len + 1);
++
++    wstr2 = wstr;
++    wcsrtombs(string, &wstr2, len, &mbs);
++    string[len] = 0;
++    return string;
++}
++#endif
++
++
++
+ int
+ is_printable (int c)
+ {
++#ifdef UTF8
++    if (SLsmg_Is_Unicode)
++	return iswprint (c);
++#endif
+     c &= 0xff;
+ 
+ #ifdef HAVE_CHARSET
+@@ -97,7 +211,7 @@
+ #endif				/* !HAVE_CHARSET */
+ }
+ 
+-/* Returns the message dimensions (lines and columns) */
++/* Returns the message dimensions columns */
+ int msglen (const char *text, int *lines)
+ {
+     int max = 0;
+@@ -108,8 +222,18 @@
+ 	    line_len = 0;
+ 	    (*lines)++;
+ 	} else {
+-	    line_len++;
+-	    if (line_len > max)
++#ifdef UTF8
++            size_t len;
++            wchar_t c;
++
++            len = mbrtowc (&c, text, MB_CUR_MAX, NULL);
++            if (len > 0 && len != (size_t)(-1) && len != (size_t)(-2)) {
++                int wcsize = wcwidth(c);
++                line_len += wcsize > 0 ? wcsize-1 : -1;
++                text += len-1;
++            }
++#endif
++            if (++line_len > max)
+ 		max = line_len;
+ 	}
+     }
+@@ -201,7 +325,24 @@
+ 		*d++ = '\\';
+ 	    break;
+ 	}
++#ifndef UTF8
+ 	*d = *s;
++#else /* UTF8 */
++	{
++	    mbstate_t mbs;
++           int len;
++           memset (&mbs, 0, sizeof (mbs));
++           len = mbrlen(s, MB_CUR_MAX, &mbs);
++	    if (len > 0) {
++        	while (len-- > 1)
++            	    *d++ = *s++;
++		*d = *s;
++	    } else {
++                *d = '?';
++	    }
++
++	}
++#endif /* UTF8 */
+     }
+     *d = '\0';
+     return ret;
+@@ -222,25 +363,90 @@
+ name_trunc (const char *txt, int trunc_len)
+ {
+     static char x[MC_MAXPATHLEN + MC_MAXPATHLEN];
+-    int txt_len;
++    int txt_len, first, skip;
+     char *p;
++    const char *str;
+ 
+     if ((size_t) trunc_len > sizeof (x) - 1) {
+ 	trunc_len = sizeof (x) - 1;
+     }
+-    txt_len = strlen (txt);
+-    if (txt_len <= trunc_len) {
+-	strcpy (x, txt);
+-    } else {
+-	int y = (trunc_len / 2) + (trunc_len % 2);
+-	strncpy (x, txt, y);
+-	strncpy (x + y, txt + txt_len - (trunc_len / 2), trunc_len / 2);
+-	x[y] = '~';
+-    }
+-    x[trunc_len] = 0;
+-    for (p = x; *p; p++)
+-	if (!is_printable (*p))
+-	    *p = '?';
++    txt_len = mbstrlen (txt);
++    first = 0;
++    skip = 0;
++    if (txt_len > trunc_len) {
++      first = trunc_len / 2;
++      skip = txt_len - trunc_len + 1;
++    }
++
++#ifdef UTF8
++    if (SLsmg_Is_Unicode) {
++      mbstate_t s;
++      int mbmax;
++
++      str = txt;
++      memset (&s, 0, sizeof (s));
++      mbmax = MB_CUR_MAX;
++      p = x;
++      while (p < x + sizeof (x) - 1 && trunc_len) {
++	  wchar_t wc;
++	  int len;
++
++	  len = mbrtowc (&wc, str, mbmax, &s);
++	  if (!len)
++	      break;
++	  if (len < 0) {
++	      memset (&s, 0, sizeof (s));
++	      *p = '?';
++	      len = 1;
++	      str++;
++	  } else if (!is_printable (wc)) {
++	      *p = '?';
++	      str += len;
++	      len = 1;
++	  } else if (p >= x + sizeof (x) - len)
++	      break;
++	  else {
++	      memcpy (p, str, len);
++	      str += len;
++	  }
++	  if (first) {
++	      --trunc_len;
++	      --first;
++	      p += len;
++	      if (!first && p < x + sizeof (x) - 1 && trunc_len) {
++		  *p++ = '~';
++		  --trunc_len;
++	      }
++	  } else if (skip)
++	      --skip;
++	  else {
++	      --trunc_len;
++	      p += len;
++	  }
++      }
++    } else
++#endif
++    {
++      str = txt;
++      p = x;
++      while (p < x + sizeof (x) - 1) {
++	  if (*str == '\0')
++	      break;
++	  else if (!is_printable (*str))
++	      *p++ = '?';
++	  else
++	      *p++ = *str;
++	  ++str;
++	  if (first) {
++	      --first;
++	      if (!first) {
++		  *p++ = '~';
++		  str += skip;
++	      }
++	  }
++      }
++    }
++    *p = '\0';
+     return x;
+ }
+ 
+@@ -650,11 +856,66 @@
+ }
+ 
+ char *
++utf8_to_local(char *str)
++{
++   iconv_t cd;
++   size_t buflen;
++   char *output;
++   int retry = 1;
++
++   if (str == NULL)
++	   return NULL;
++   else
++	   buflen = strlen(str);
++        
++   cd = iconv_open (nl_langinfo(CODESET), "UTF-8");
++   if (cd == (iconv_t) -1) {
++	return g_strdup(str);
++   }
++
++   output = g_malloc(buflen + 1);
++     
++   while (retry)
++   {
++	char *wrptr = output;
++	char *inptr = str;
++	size_t insize = buflen;
++	size_t avail = buflen;
++        size_t nconv;
++     
++        nconv = iconv (cd, &inptr, &insize, &wrptr, &avail);
++        if (nconv == (size_t) -1)
++        {
++    	    if (errno == E2BIG)
++	    {
++		buflen *= 2;
++		g_free(output);
++		output = g_malloc(buflen + 1);
++	    }
++	    else
++	    {
++		g_free(output);
++		return g_strdup(str);
++	    }
++	}
++	else {
++	    retry = 0;
++	    *wrptr = 0;
++	}
++    }
++     
++    iconv_close (cd);
++    
++    return output;
++}
++
++char *
+ load_mc_home_file (const char *filename, char **allocated_filename)
+ {
+     char *hintfile_base, *hintfile;
+     char *lang;
+     char *data;
++    char *conv_data;
+ 
+     hintfile_base = concat_dir_and_file (mc_home, filename);
+     lang = guess_message_value ();
+@@ -687,7 +948,10 @@
+     else
+ 	g_free (hintfile);
+ 
+-    return data;
++    conv_data = utf8_to_local(data);
++    g_free(data);
++    
++    return conv_data;
+ }
+ 
+ /* Check strftime() results. Some systems (i.e. Solaris) have different
+@@ -695,12 +959,14 @@
+ size_t i18n_checktimelength (void)
+ {
+     size_t length, a, b;
+-    char buf [MAX_I18NTIMELENGTH + 1];
++    char buf [4 * MAX_I18NTIMELENGTH + 1];
+     time_t testtime = time (NULL);
+     
+-    a = strftime (buf, sizeof(buf)-1, _("%b %e %H:%M"), localtime(&testtime));
+-    b = strftime (buf, sizeof(buf)-1, _("%b %e  %Y"), localtime(&testtime));
+-    
++    strftime (buf, sizeof(buf)-1, _("%b %e %H:%M"), localtime(&testtime));
++    a = mbstrlen (buf);
++    strftime (buf, sizeof(buf)-1, _("%b %e  %Y"), localtime(&testtime));
++    b = mbstrlen (buf);
++
+     length = max (a, b);
+     
+     /* Don't handle big differences. Use standard value (email bug, please) */
+@@ -712,15 +978,12 @@
+ 
+ const char *file_date (time_t when)
+ {
+-    static char timebuf [MAX_I18NTIMELENGTH + 1];
++    static char timebuf [4 * MAX_I18NTIMELENGTH + 1];
+     time_t current_time = time ((time_t) 0);
+-    static size_t i18n_timelength = 0;
+     static const char *fmtyear, *fmttime;
+     const char *fmt;
+ 
+-    if (i18n_timelength == 0){
+-	i18n_timelength = i18n_checktimelength() + 1;
+-	
++    if (fmtyear == NULL) {
+ 	/* strftime() format string for old dates */
+ 	fmtyear = _("%b %e  %Y");
+ 	/* strftime() format string for recent dates */
+@@ -743,7 +1007,7 @@
+     else
+ 	fmt = fmttime;
+     
+-    strftime (timebuf, i18n_timelength, fmt, localtime(&when));
++    strftime (timebuf, sizeof (timebuf) - 1, fmt, localtime(&when));
+     return timebuf;
+ }
+ 
+@@ -868,10 +1131,27 @@
+ 		r++;
+ 	    continue;
+ 	}
+-
++#ifndef UTF8
+ 	if (is_printable(*r))
+ 	    *w++ = *r;
+ 	++r;
++#else /* UTF8 */
++	{
++	    mbstate_t mbs;
++           int len;
++	    memset (&mbs, 0, sizeof (mbs));
++	    len = mbrlen(r, MB_CUR_MAX, &mbs);
++		
++	    if (len > 0 && (unsigned char)*r >= ' ') 
++		while (len--)
++		    *w++ = *r++;
++	    else {
++		if (len == -1)
++		    *w++ = '?';
++		r++;
++	    }
++	}
++#endif /* UTF8 */
+     }
+     *w = 0;
+     return s;
+diff -Naur mc-4.6.1-old/src/util.h mc-4.6.1/src/util.h
+--- mc-4.6.1-old/src/util.h	2005-01-13 20:20:47.000000000 +0100
++++ mc-4.6.1/src/util.h	2005-10-28 10:08:07.852229632 +0200
+@@ -93,6 +93,13 @@
+ char *get_group (int);
+ char *get_owner (int);
+ 
++void fix_utf8(char *str);
++size_t mbstrlen (const char *);
++wchar_t *mbstr_to_wchar (const char *);
++char *wchar_to_mbstr (const wchar_t *);
++char *utf8_to_local(char *str);
++
++
+ #define MAX_I18NTIMELENGTH 14
+ #define MIN_I18NTIMELENGTH 10
+ #define STD_I18NTIMELENGTH 12
+diff -Naur mc-4.6.1-old/src/view.c mc-4.6.1/src/view.c
+--- mc-4.6.1-old/src/view.c	2005-05-27 16:19:18.000000000 +0200
++++ mc-4.6.1/src/view.c	2005-10-28 10:08:08.023203640 +0200
+@@ -36,6 +36,10 @@
+ #include <errno.h>
+ #include <limits.h>
+ 
++#ifdef UTF8
++#include <wctype.h>
++#endif /* UTF8 */
++
+ #include "global.h"
+ #include "tty.h"
+ #include "cmd.h"		/* For view_other_cmd */
+@@ -793,7 +797,7 @@
+ 
+     if (!i18n_adjust) {
+ 	file_label = _("File: %s");
+-	i18n_adjust = strlen (file_label) - 2;
++	i18n_adjust = mbstrlen (file_label) - 2;
+     }
+ 
+     if (w < i18n_adjust + 6)
+@@ -849,7 +853,11 @@
+ 	widget_erase ((Widget *) view);
+ }
+ 
++#ifndef UTF8
+ #define view_add_character(view,c) addch (c)
++#else /* UTF8 */
++#define view_add_character(view,c) SLsmg_write_char(c)
++#endif /* UTF8 */
+ #define view_add_one_vline()       one_vline()
+ #define view_add_string(view,s)    addstr (s)
+ #define view_gotoyx(v,r,c)    widget_move (v,r,c)
+@@ -1071,6 +1079,12 @@
+ 	if (view->growing_buffer && from == view->last_byte)
+ 	    get_byte (view, from);
+ 	for (; row < height && from < view->last_byte; from++) {
++#ifdef UTF8
++            mbstate_t mbs;
++            char mbbuf[MB_LEN_MAX];
++            int mblen;
++            wchar_t wc;
++#endif /* UTF8 */
+ 	    c = get_byte (view, from);
+ 	    if ((c == '\n') || (col >= width && view->wrap_mode)) {
+ 		col = frame_shift;
+@@ -1084,7 +1098,37 @@
+ 		col = ((col - frame_shift) / 8) * 8 + 8 + frame_shift;
+ 		continue;
+ 	    }
++#ifndef UTF8
+ 	    if (view->viewer_nroff_flag && c == '\b') {
++#else /* UTF8 */
++                mblen = 1;
++                mbbuf[0] = convert_to_display_c (c);
++
++                while (mblen < MB_LEN_MAX) {
++                    int res;
++                    memset (&mbs, 0, sizeof (mbs));
++                    res = mbrtowc (&wc, mbbuf, mblen, &mbs);
++                    if (res <= 0 && res != -2) {
++                        wc = '.';
++                        mblen = 1;
++                        break;
++                    }
++                    if (res == mblen)
++                        break;
++
++                    mbbuf[mblen] = convert_to_display_c (get_byte (view, from + mblen));
++                    mblen++;
++                }
++
++                if (mblen == MB_LEN_MAX) {
++                    wc = '.';
++                    mblen = 1;
++                }
++
++                from += mblen - 1;
++
++            if (view->viewer_nroff_flag && wc == '\b') {
++#endif /* UTF8 */
+ 		int c_prev;
+ 		int c_next;
+ 
+@@ -1122,12 +1166,23 @@
+ 		&& col < width - view->start_col) {
+ 		view_gotoyx (view, row, col + view->start_col);
+ 
++#ifndef UTF8
+ 		c = convert_to_display_c (c);
+-
+ 		if (!is_printable (c))
+ 		    c = '.';
+-
+ 		view_add_character (view, c);
++#else /* UTF8 */
++		if (!iswprint (wc))
++		    wc = '.';
++		view_add_character (view, wc);
++
++		{
++		    int cw = wcwidth(wc);
++		    if (cw > 1)
++			col+= cw - 1;
++		}
++#endif /* UTF8 */
++
+ 	    }
+ 	    col++;
+ 	    if (boldflag != MARK_NORMAL) {
+diff -Naur mc-4.6.1-old/src/widget.c mc-4.6.1/src/widget.c
+--- mc-4.6.1-old/src/widget.c	2005-05-27 16:19:19.000000000 +0200
++++ mc-4.6.1/src/widget.c	2005-10-28 10:08:07.888224160 +0200
+@@ -33,6 +33,9 @@
+ #include <ctype.h>
+ #include "global.h"
+ #include "tty.h"
++#ifdef UTF8
++#include <wctype.h>
++#endif /* UTF8 */
+ #include "color.h"
+ #include "mouse.h"
+ #include "dialog.h"
+@@ -148,6 +151,11 @@
+ 	if (b->hotpos >= 0) {
+ 	    attrset ((b->selected) ? HOT_FOCUSC : HOT_NORMALC);
+ 	    widget_move (&b->widget, 0, b->hotpos + off);
++#ifdef UTF8
++	    if (SLsmg_Is_Unicode) 
++		SLsmg_write_nwchars (&b->hotwc, 1);
++	    else
++#endif
+ 	    addch ((unsigned char) b->text[b->hotpos]);
+ 	}
+ 	return MSG_HANDLED;
+@@ -179,7 +187,7 @@
+ static int
+ button_len (const char *text, unsigned int flags)
+ {
+-    int ret = strlen (text);
++    int ret = mbstrlen (text);
+     switch (flags){
+ 	case DEFPUSH_BUTTON:
+ 	    ret += 6;
+@@ -202,14 +210,36 @@
+  * the button text is g_malloc()ed, we can safely change and shorten it.
+  */
+ static void
+-button_scan_hotkey (WButton *b)
++scan_hotkey (char *text, int *hotposp, int *hotkeyp, wchar_t *hotwcp)
+ {
+-    char *cp = strchr (b->text, '&');
++    char *cp = strchr (text, '&');
+ 
+     if (cp != NULL && cp[1] != '\0') {
+-	g_strlcpy (cp, cp + 1, strlen (cp));
+-	b->hotkey = tolower (*cp);
+-	b->hotpos = cp - b->text;
++#ifdef UTF8
++    if (SLsmg_Is_Unicode) {
++        mbstate_t s;
++        int len;
++
++        *cp = '\0';
++        memset (&s, 0, sizeof (s));
++        len = mbrtowc (hotwcp, cp + 1, MB_CUR_MAX, &s);
++        if (len > 0) {
++            *hotposp = mbstrlen (text);
++            if (*hotposp < 0) {
++                *hotposp = -1;
++            } else {
++                /* FIXME */
++                *hotkeyp = tolower (*hotwcp);
++            }
++        }
++      } else
++#endif
++      {
++        *hotkeyp = tolower (cp[1]);
++        *hotposp = cp - text;
++      }
++
++      memmove (cp, cp + 1, strlen (cp + 1) + 1);
+     }
+ }
+ 
+@@ -231,22 +261,23 @@
+     widget_want_hotkey (b->widget, 1);
+     b->hotkey = 0;
+     b->hotpos = -1;
++    b->hotwc = L'\0';
+ 
+-    button_scan_hotkey(b);
++    scan_hotkey(b->text, &b->hotpos, &b->hotkey, &b->hotwc);
+     return b;
+ }
+ 
+ void
+ button_set_text (WButton *b, const char *text)
+ {
+-   g_free (b->text);
++    g_free (b->text);
+     b->text = g_strdup (text);
+     b->widget.cols = button_len (text, b->flags);
+-    button_scan_hotkey(b);
++    scan_hotkey(b->text, &b->hotpos, &b->hotkey, &b->hotwc);
+     dlg_redraw (b->widget.parent);
+ }
+ 
+-
++
+ /* Radio button widget */
+ static int radio_event (Gpm_Event *event, WRadio *r);
+ 
+@@ -320,16 +351,37 @@
+ 	    widget_move (&r->widget, i, 0);
+ 
+ 	    printw ("(%c) ", (r->sel == i) ? '*' : ' ');
+-	    for (cp = r->texts[i]; *cp; cp++) {
+-		if (*cp == '&') {
+-		    attrset ((i == r->pos && msg == WIDGET_FOCUS)
+-			     ? HOT_FOCUSC : HOT_NORMALC);
+-		    addch (*++cp);
+-		    attrset ((i == r->pos
+-			      && msg == WIDGET_FOCUS) ? FOCUSC : NORMALC);
++	    cp = strchr (r->texts[i], '&');
++	    if (cp != NULL) {
++#ifdef UTF8
++		mbstate_t s;
++		wchar_t wc;
++		int len;
++#endif
++		printw ("%.*s", (int) ((char *) cp - r->texts[i]),
++			r->texts[i]);
++		attrset ((i == r->pos && msg == WIDGET_FOCUS)
++			 ? HOT_FOCUSC : HOT_NORMALC);
++#ifdef UTF8
++		if (SLsmg_Is_Unicode) {
++		    memset (&s, 0, sizeof (s));
++		    len = mbrtowc (&wc, cp + 1, MB_CUR_MAX, &s);
++		    ++cp;
++		    if (len > 0) {
++			printw ("%.*s", len, cp);
++			cp += len;
++		    }
+ 		} else
+-		    addch (*cp);
+-	    }
++#endif
++		{
++		    addch (*++cp);
++		    ++cp;
++		}
++		attrset ((i == r->pos && msg == WIDGET_FOCUS)
++			 ? FOCUSC : NORMALC);
++	    } else
++		cp = r->texts[i];
++	    addstr ((char *) cp);
+ 	}
+ 	return MSG_HANDLED;
+ 
+@@ -365,7 +417,7 @@
+     /* Compute the longest string */
+     max = 0;
+     for (i = 0; i < count; i++){
+-	m = strlen (texts [i]);
++	m = mbstrlen (texts [i]);
+ 	if (m > max)
+ 	    max = m;
+     }
+@@ -426,6 +478,11 @@
+ 	if (c->hotpos >= 0) {
+ 	    attrset ((msg == WIDGET_FOCUS) ? HOT_FOCUSC : HOT_NORMALC);
+ 	    widget_move (&c->widget, 0, +c->hotpos + 4);
++#ifdef UTF8
++	    if (SLsmg_Is_Unicode)
++		SLsmg_write_nwchars (&c->hotwc, 1);
++	    else
++#endif
+ 	    addch ((unsigned char) c->text[c->hotpos]);
+ 	}
+ 	return MSG_HANDLED;
+@@ -460,32 +517,18 @@
+ check_new (int y, int x, int state, const char *text)
+ {
+     WCheck *c =  g_new (WCheck, 1);
+-    const char *s;
+-    char *t;
+     
+-    init_widget (&c->widget, y, x, 1, strlen (text),
++    init_widget (&c->widget, y, x, 1, mbstrlen (text),
+ 		 (callback_fn)check_callback,
+ 		 (mouse_h) check_event);
+     c->state = state ? C_BOOL : 0;
+     c->text = g_strdup (text);
+     c->hotkey = 0;
+     c->hotpos = -1;
++    c->hotwc = L'\0';
+     widget_want_hotkey (c->widget, 1);
+ 
+-    /* Scan for the hotkey */
+-    for (s = text, t = c->text; *s; s++, t++){
+-	if (*s != '&'){
+-	    *t = *s;
+-	    continue;
+-	}
+-	s++;
+-	if (*s){
+-	    c->hotkey = tolower (*s);
+-	    c->hotpos = t - c->text;
+-	}
+-	*t = *s;
+-    }
+-    *t = 0;
++    scan_hotkey (c->text, &c->hotpos, &c->hotkey, &c->hotwc);
+     return c;
+ }
+ 
+@@ -527,7 +570,7 @@
+ 		}
+ 		widget_move (&l->widget, y, 0);
+ 		printw ("%s", p);
+-		xlen = l->widget.cols - strlen (p);
++		xlen = l->widget.cols - mbstrlen (p);
+ 		if (xlen > 0)
+ 		    printw ("%*s", xlen, " ");
+ 		if (!q)
+@@ -561,7 +604,7 @@
+     if (text){
+ 	label->text = g_strdup (text);
+ 	if (label->auto_adjust_cols) {
+-	    newcols = strlen (text);
++	    newcols = mbstrlen (text);
+ 	    if (newcols > label->widget.cols)
+ 	    label->widget.cols = newcols;
+ 	}
+@@ -585,7 +628,7 @@
+     if (!text || strchr(text, '\n'))
+ 	width = 1;
+     else
+-	width = strlen (text);
++	width = mbstrlen (text);
+ 
+     l = g_new (WLabel, 1);
+     init_widget (&l->widget, y, x, 1, width,
+@@ -734,13 +777,69 @@
+ /* Pointer to killed data */
+ static char *kill_buffer = 0;
+ 
++#ifdef UTF8
++static int
++charpos(WInput *in, int idx)
++{
++    int i, pos, l, len;
++    mbstate_t mbs;
++    memset (&mbs, 0, sizeof (mbs));
++    i = 0;
++    pos = 0;
++    len = strlen(in->buffer);
++
++    while (in->buffer[pos]) {
++	if (i == idx)
++	    return pos;
++	l = mbrlen(in->buffer + pos, len - pos, &mbs);
++	if (l <= 0)
++	    return pos;
++	pos+=l;
++	i++;
++    };
++    return pos;
++}
++
++static int
++charcolumn(WInput *in, int idx)
++{
++    int i, pos, l, width, len;
++    mbstate_t mbs;
++    memset (&mbs, 0, sizeof (mbs));
++    i = 0;
++    pos = 0; width = 0;
++    len = strlen(in->buffer);
++
++    while (in->buffer[pos]) {
++	wchar_t wc;
++	if (i == idx)
++	    return width;
++	l = mbrtowc(&wc, in->buffer + pos, len - pos, &mbs);
++	if (l <= 0)
++	    return width;
++	pos += l; width += wcwidth(wc);
++	i++;
++    };
++    return width;
++}
++#else
++#define charpos(in, idx) (idx)
++#define charcolumn(in, idx) (idx)
++#endif /* UTF8 */
++
+ void
+ update_input (WInput *in, int clear_first)
+ {
+     int has_history = 0;
+     int    i, j;
+-    unsigned char   c;
+-    int    buf_len = strlen (in->buffer);
++    int    buf_len = mbstrlen (in->buffer);
++#ifndef UTF8
++    unsigned char c;
++#else /* UTF8 */
++    wchar_t c;
++    mbstate_t mbs;
++    memset (&mbs, 0, sizeof (mbs));
++#endif /* UTF8 */
+ 
+     if (should_show_history_button (in))
+ 	has_history = HISTORY_BUTTON_WIDTH;
+@@ -750,7 +849,7 @@
+ 
+     /* Make the point visible */
+     if ((in->point < in->first_shown) ||
+-	(in->point >= in->first_shown+in->field_len - has_history)){
++	(charcolumn(in, in->point) >= charcolumn(in, in->first_shown) + in->field_len - has_history)){
+ 	in->first_shown = in->point - (in->field_len / 3);
+ 	if (in->first_shown < 0)
+ 	    in->first_shown = 0;
+@@ -770,14 +869,29 @@
+ 	addch (' ');
+     widget_move (&in->widget, 0, 0);
+     
++#ifndef UTF8
+     for (i = 0, j = in->first_shown; i < in->field_len - has_history && in->buffer [j]; i++){
+ 	c = in->buffer [j++];
+ 	c = is_printable (c) ? c : '.';
+-	if (in->is_password)
++#else /* UTF8 */
++    for (i = 0, j = in->first_shown; (i < in->field_len - has_history) && (j < buf_len); i++,j++){
++	char * chp = in->buffer + charpos(in,j);
++	size_t res = mbrtowc(&c, chp, strlen(chp), &mbs);
++	c = (res && iswprint (c)) ? 0 : '.';
++#endif /* UTF8 */
++	if (in->is_password) 
+ 	    c = '*';
++#ifndef UTF8
+ 	addch (c);
++#else /* UTF8 */
++	if (c) {
++	    addch (c); 
++	}
++	else
++	    SLsmg_write_nchars (chp, res);
++#endif /* UTF8 */
+     }
+-    widget_move (&in->widget, 0, in->point - in->first_shown);
++    widget_move (&in->widget, 0, charcolumn(in, in->point) - charcolumn(in, in->first_shown));
+ 
+     if (clear_first)
+ 	    in->first = 0;
+@@ -919,7 +1033,7 @@
+ show_hist (GList *history, int widget_x, int widget_y)
+ {
+     GList *hi, *z;
+-    size_t maxlen = strlen (i18n_htitle ()), i, count = 0;
++    size_t maxlen = mbstrlen (i18n_htitle ()), i, count = 0;
+     int x, y, w, h;
+     char *q, *r = 0;
+     Dlg_head *query_dlg;
+@@ -932,7 +1046,7 @@
+     z = g_list_first (history);
+     hi = z;
+     while (hi) {
+-	if ((i = strlen ((char *) hi->data)) > maxlen)
++	if ((i = mbstrlen ((char *) hi->data)) > maxlen)
+ 	    maxlen = i;
+ 	count++;
+ 	hi = g_list_next (hi);
+@@ -1104,35 +1218,83 @@
+     in->need_push = 1;
+     in->buffer [0] = 0;
+     in->point = 0;
++    in->charpoint = 0;
+     in->mark = 0;
+     free_completions (in);
+     update_input (in, 0);
+ }
+ 
++static void
++move_buffer_backward (WInput *in, int point)
++{
++    int i, pos, len;
++    int str_len = mbstrlen (in->buffer);
++    if (point >= str_len) return;
++
++    pos = charpos(in,point);
++    len = charpos(in,point + 1) - pos;
++
++    for (i = pos; in->buffer [i + len - 1]; i++)
++	in->buffer [i] = in->buffer [i + len];
++}
++
+ static cb_ret_t
+ insert_char (WInput *in, int c_code)
+ {
+     size_t i;
++#ifdef UTF8
++    mbstate_t mbs;
++    int res;
++
++    memset (&mbs, 0, sizeof (mbs));
++#else
++    in->charpoint = 0;
++#endif /* UTF8 */
+ 
+     if (c_code == -1)
+ 	return MSG_NOT_HANDLED;
+     
++#ifdef UTF8
++    if (in->charpoint >= MB_CUR_MAX) return 1;
++
++    in->charbuf[in->charpoint++] = c_code;
++
++    res = mbrlen((char *)in->charbuf, in->charpoint, &mbs);
++    if (res < 0) {
++	if (res != -2) in->charpoint = 0; /* broken multibyte char, skip */
++        return 1;
++    }
++
++#endif /* UTF8 */
+     in->need_push = 1;
+-    if (strlen (in->buffer)+1 == (size_t) in->current_max_len){
++    if (strlen (in->buffer) + 1 + in->charpoint >= (size_t) in->current_max_len){
+ 	/* Expand the buffer */
+-	char *narea = g_realloc (in->buffer, in->current_max_len + in->field_len);
++	char *narea = g_realloc (in->buffer, in->current_max_len + in->field_len + in->charpoint);
+ 	if (narea){
+ 	    in->buffer = narea;
+-	    in->current_max_len += in->field_len;
++	    in->current_max_len += in->field_len + in->charpoint;
+ 	}
+     }
++#ifndef UTF8
+     if (strlen (in->buffer)+1 < (size_t) in->current_max_len){
+ 	size_t l = strlen (&in->buffer [in->point]);
+ 	for (i = l+1; i > 0; i--)
+ 	    in->buffer [in->point+i] = in->buffer [in->point+i-1];
+ 	in->buffer [in->point] = c_code;
++#else /* UTF8 */
++    if (strlen (in->buffer) + in->charpoint < in->current_max_len){
++        size_t ins_point = charpos(in,in->point); /* bytes from begin */
++	/* move chars */
++	size_t rest_bytes = strlen (in->buffer + ins_point);
++
++	for (i = rest_bytes + 1; i > 0; i--) 
++	    in->buffer [ins_point + i + in->charpoint - 1] = in->buffer [ins_point + i - 1];
++
++	memcpy(in->buffer + ins_point, in->charbuf, in->charpoint); 
++#endif /* UTF8 */
+ 	in->point++;
+     }
++    in->charpoint = 0;
+     return MSG_HANDLED;
+ }
+ 
+@@ -1140,12 +1302,14 @@
+ beginning_of_line (WInput *in)
+ {
+     in->point = 0;
++    in->charpoint = 0;
+ }
+ 
+ static void
+ end_of_line (WInput *in)
+ {
+-    in->point = strlen (in->buffer);
++    in->point = mbstrlen (in->buffer);
++    in->charpoint = 0;
+ }
+ 
+ static void
+@@ -1153,18 +1317,21 @@
+ {
+     if (in->point)
+ 	in->point--;
++    in->charpoint = 0;
+ }
+ 
+ static void
+ forward_char (WInput *in)
+ {
+-    if (in->buffer [in->point])
++    if (in->buffer [charpos(in,in->point)])
+ 	in->point++;
++    in->charpoint = 0;
+ }
+ 
+ static void
+ forward_word (WInput *in)
+ {
++#ifndef UTF8
+     unsigned char *p = in->buffer+in->point;
+ 
+     while (*p && (isspace (*p) || ispunct (*p)))
+@@ -1172,11 +1339,39 @@
+     while (*p && isalnum (*p))
+ 	p++;
+     in->point = p - in->buffer;
++#else /* UTF8 */
++    mbstate_t mbs;
++    int len = mbstrlen (in->buffer);
++    memset (&mbs, 0, sizeof (mbs));
++
++    while (in->point < len) {
++        wchar_t c;
++        char *p = in->buffer + charpos(in,in->point);
++        size_t res = mbrtowc(&c, p, strlen(p), &mbs);
++        if (res <= 0 || !(iswspace (c) || iswpunct (c)))
++            break;
++        in->point++;
++    }
++
++    memset (&mbs, 0, sizeof (mbs));
++
++    while (in->point < len) {
++        wchar_t c;
++        char *p = in->buffer + charpos(in,in->point);
++        size_t res = mbrtowc(&c, p, strlen(p), &mbs);
++        if (res <= 0 || !iswalnum (c))
++            break;
++        in->point++;
++    }
++
++    in->charpoint = 0;
++#endif /* UTF8 */
+ }
+ 
+ static void
+ backward_word (WInput *in)
+ {
++#ifndef UTF8
+     unsigned char *p = in->buffer+in->point;
+ 
+     while (p-1 > in->buffer-1 && (isspace (*(p-1)) || ispunct (*(p-1))))
+@@ -1184,6 +1379,32 @@
+     while (p-1 > in->buffer-1 && isalnum (*(p-1)))
+ 	p--;
+     in->point = p - in->buffer;
++#else /* UTF8 */
++    mbstate_t mbs;
++
++    memset (&mbs, 0, sizeof (mbs));
++    while (in->point > 0) {
++      wchar_t c;
++      char *p = in->buffer + charpos(in,in->point);
++      size_t res = mbrtowc(&c, p, strlen(p), &mbs);
++      if (*p && (res <= 0 || !(iswspace (c) || iswpunct (c))))
++          break;
++      in->point--;
++    }
++
++    memset (&mbs, 0, sizeof (mbs));
++
++    while (in->point > 0) {
++      wchar_t c;
++      char *p = in->buffer + charpos(in,in->point);
++      size_t res = mbrtowc(&c, p, strlen(p), &mbs);
++      if (*p && (res <= 0 || !iswalnum (c)))
++          break;
++      in->point--;
++    }
++
++    in->charpoint = 0;
++#endif /* UTF8 */
+ }
+ 
+ static void
+@@ -1216,8 +1437,9 @@
+     
+     if (!in->point)
+ 	return;
+-    for (i = in->point; in->buffer [i-1]; i++)
+-	in->buffer [i-1] = in->buffer [i];
++
++    move_buffer_backward(in, in->point - 1);    
++    in->charpoint = 0;
+     in->need_push = 1;
+     in->point--;
+ }
+@@ -1225,10 +1447,8 @@
+ static void
+ delete_char (WInput *in)
+ {
+-    int i;
+-
+-    for (i = in->point; in->buffer [i]; i++)
+-	in->buffer [i] = in->buffer [i+1];
++    move_buffer_backward(in, in->point);    
++    in->charpoint = 0;
+     in->need_push = 1;
+ }
+ 
+@@ -1243,6 +1463,9 @@
+     
+     g_free (kill_buffer);
+ 
++    first=charpos(in,first);
++    last=charpos(in,last);
++    
+     kill_buffer = g_strndup(in->buffer+first,last-first);
+ }
+ 
+@@ -1251,11 +1474,13 @@
+ {
+    int first = min (x_first, x_last);
+    int last  = max (x_first, x_last);
+-   size_t len = strlen (&in->buffer [last]) + 1;
++   size_t len;
+ 
+    in->point = first;
+    in->mark  = first;
+-   memmove (&in->buffer [first], &in->buffer [last], len);
++   len = strlen (&in->buffer [charpos(in,last)]) + 1;
++   memmove (&in->buffer [charpos(in,first)], &in->buffer [charpos(in,last)], len);
++   in->charpoint = 0;
+    in->need_push = 1;
+ }
+ 
+@@ -1272,6 +1497,8 @@
+     copy_region (in, old_point, new_point);
+     delete_region (in, old_point, new_point);
+     in->need_push = 1;
++    in->charpoint = 0;
++    in->charpoint = 0;
+ }
+ 
+ static void
+@@ -1315,16 +1542,20 @@
+     
+     if (!kill_buffer)
+         return;
++    in->charpoint = 0;
+     for (p = kill_buffer; *p; p++)
+ 	insert_char (in, *p);
++    in->charpoint = 0;
+ }
+ 
+ static void
+ kill_line (WInput *in)
+ {
++    int chp = charpos(in,in->point);
+     g_free (kill_buffer);
+-    kill_buffer = g_strdup (&in->buffer [in->point]);
+-    in->buffer [in->point] = 0;
++    kill_buffer = g_strdup (&in->buffer [chp]);
++    in->buffer [chp] = 0;
++    in->charpoint = 0;
+ }
+ 
+ void
+@@ -1334,9 +1565,10 @@
+     g_free (in->buffer);
+     in->buffer = g_strdup (text);	/* was in->buffer->text */
+     in->current_max_len = strlen (in->buffer) + 1;
+-    in->point = strlen (in->buffer);
++    in->point = mbstrlen (in->buffer);
+     in->mark = 0;
+     in->need_push = 1;
++    in->charpoint = 0;
+ }
+ 
+ static void
+@@ -1461,6 +1693,7 @@
+     *in->buffer = 0;
+     in->point = 0;
+     in->first = 0;
++    in->charpoint = 0;
+ }
+ 
+ cb_ret_t
+@@ -1489,7 +1722,11 @@
+ 	}
+     }
+     if (!input_map [i].fn){
++#ifndef UTF8
+ 	if (c_code > 255 || !is_printable (c_code))
++#else /* UTF8 */
++	if (c_code > 255)
++#endif /* UTF8 */
+ 	    return MSG_NOT_HANDLED;
+ 	if (in->first){
+ 	    port_region_marked_for_delete (in);
+@@ -1523,6 +1760,9 @@
+     if (pos != in->point)
+     	free_completions (in);
+     in->point = pos;
++#ifdef UTF8
++    in->charpoint = 0;
++#endif /* UTF8 */
+     update_input (in, 1);
+ }
+ 
+@@ -1562,7 +1802,7 @@
+ 	return MSG_HANDLED;
+ 
+     case WIDGET_CURSOR:
+-	widget_move (&in->widget, 0, in->point - in->first_shown);
++        widget_move (&in->widget, 0, charcolumn(in, in->point) - charcolumn(in, in->first_shown));
+ 	return MSG_HANDLED;
+ 
+     case WIDGET_DESTROY:
+@@ -1584,7 +1824,7 @@
+ 	    && should_show_history_button (in)) {
+ 	    do_show_hist (in);
+ 	} else {
+-	    in->point = strlen (in->buffer);
++	    in->point = mbstrlen (in->buffer);
+ 	    if (event->x - in->first_shown - 1 < in->point)
+ 		in->point = event->x - in->first_shown - 1;
+ 	    if (in->point < 0)
+@@ -1642,7 +1882,8 @@
+     in->is_password = 0;
+ 
+     strcpy (in->buffer, def_text);
+-    in->point = strlen (in->buffer);
++    in->point = mbstrlen (in->buffer);
++    in->charpoint = 0;
+     return in;
+ }
+ 
+diff -Naur mc-4.6.1-old/src/widget.h mc-4.6.1/src/widget.h
+--- mc-4.6.1-old/src/widget.h	2004-08-29 20:46:16.000000000 +0200
++++ mc-4.6.1/src/widget.h	2005-10-28 10:08:08.064197408 +0200
+@@ -25,6 +25,7 @@
+     char *text;			/* text of button */
+     int hotkey;			/* hot KEY */
+     int hotpos;			/* offset hot KEY char in text */
++    wchar_t hotwc;
+     bcback callback;		/* Callback function */
+ } WButton;
+ 
+@@ -43,6 +44,7 @@
+     char *text;			/* text of check button */
+     int hotkey;                 /* hot KEY */                    
+     int hotpos;			/* offset hot KEY char in text */
++    wchar_t hotwc;
+ } WCheck;
+ 
+ typedef struct WGauge {
+@@ -58,16 +60,20 @@
+ 
+ typedef struct {
+     Widget widget;
+-    int  point;			/* cursor position in the input line */
+-    int  mark;			/* The mark position */
+-    int  first_shown;		/* Index of the first shown character */
+-    int  current_max_len;	/* Maximum length of input line */
+-    int  field_len;		/* Length of the editing field */
++    int  point;			/* cursor position in the input line (mb chars) */
++    int  mark;			/* The mark position (mb chars) */
++    int  first_shown;		/* Index of the first shown character (mb chars) */
++    int  current_max_len;	/* Maximum length of input line (bytes) */
++    int  field_len;		/* Length of the editing field (mb chars) */
+     int  color;			/* color used */
+     int  first;			/* Is first keystroke? */
+     int  disable_update;	/* Do we want to skip updates? */
+     int  is_password;		/* Is this a password input line? */
+     unsigned char *buffer;	/* pointer to editing buffer */
++#ifdef UTF8
++    unsigned char charbuf[MB_LEN_MAX];
++#endif /* UTF8 */
++    int charpoint;
+     GList *history;		/* The history */
+     int  need_push;		/* need to push the current Input on hist? */
+     char **completions;		/* Possible completions array */
+diff -Naur mc-4.6.1-old/src/wtools.c mc-4.6.1/src/wtools.c
+--- mc-4.6.1-old/src/wtools.c	2005-05-27 16:19:19.000000000 +0200
++++ mc-4.6.1/src/wtools.c	2005-10-28 10:08:08.036201664 +0200
+@@ -48,11 +48,11 @@
+     /* Adjust sizes */
+     lines = (lines > LINES - 6) ? LINES - 6 : lines;
+ 
+-    if (title && (cols < (len = strlen (title) + 2)))
++    if (title && (cols < (len = mbstrlen (title) + 2)))
+ 	cols = len;
+ 
+     /* no &, but 4 spaces around button for brackets and such */
+-    if (cols < (len = strlen (cancel_string) + 3))
++    if (cols < (len = mbstrlen (cancel_string) + 3))
+ 	cols = len;
+ 
+     cols = cols > COLS - 6 ? COLS - 6 : cols;
+@@ -123,7 +123,7 @@
+ 	va_start (ap, count);
+ 	for (i = 0; i < count; i++) {
+ 	    char *cp = va_arg (ap, char *);
+-	    win_len += strlen (cp) + 6;
++	    win_len += mbstrlen (cp) + 6;
+ 	    if (strchr (cp, '&') != NULL)
+ 		win_len--;
+ 	}
+@@ -131,7 +131,7 @@
+     }
+ 
+     /* count coordinates */
+-    cols = 6 + max (win_len, max ((int) strlen (header), msglen (text, &lines)));
++    cols = 6 + max (win_len, max ((int) mbstrlen (header), msglen (text, &lines)));
+     lines += 4 + (count > 0 ? 2 : 0);
+     xpos = COLS / 2 - cols / 2;
+     ypos = LINES / 3 - (lines - 3) / 2;
+@@ -146,7 +146,7 @@
+ 	va_start (ap, count);
+ 	for (i = 0; i < count; i++) {
+ 	    cur_name = va_arg (ap, char *);
+-	    xpos = strlen (cur_name) + 6;
++	    xpos = mbstrlen (cur_name) + 6;
+ 	    if (strchr (cur_name, '&') != NULL)
+ 		xpos--;
+ 
+@@ -457,7 +457,7 @@
+     g_strlcpy (histname + 3, header, 61);
+     quick_widgets[2].histname = histname;
+ 
+-    len = max ((int) strlen (header), msglen (text, &lines)) + 4;
++    len = max ((int) mbstrlen (header), msglen (text, &lines)) + 4;
+     len = max (len, 64);
+ 
+     /* The special value of def_text is used to identify password boxes
+@@ -477,7 +477,7 @@
+      */
+     quick_widgets[0].relative_x = len / 2 + 4;
+     quick_widgets[1].relative_x =
+-	len / 2 - (strlen (_(quick_widgets[1].text)) + 9);
++	len / 2 - (mbstrlen (_(quick_widgets[1].text)) + 9);
+     quick_widgets[0].x_divisions = quick_widgets[1].x_divisions = len;
+ #endif				/* ENABLE_NLS */
+ 

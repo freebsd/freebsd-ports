@@ -7,7 +7,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.6.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc shells
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc/
@@ -22,11 +22,16 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
+.if defined(WITH_GLIB12) || defined(MINIMAL)
+USE_GNOME=	glib12
+.else
 USE_GNOME=	glib20
+.endif
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS=	SLANG		"Build with SLang library" on \
+OPTIONS=	UTF8		"Build with UTF8 support" on \
+		SLANG		"Build with SLang library" on \
 		ICONV		"Build with iconv recoding" on \
 		NLS		"Build with NLS support" on \
 		EDIT		"Build with internal editor" on \
@@ -76,7 +81,11 @@ PLIST_SUB+=	EDITOR=""
 WITHOUT_SLANG=	yes
 .endif
 
-.if !defined(WITH_SLANG) && (defined(WITHOUT_SLANG) || defined(MINIMAL))
+.if defined(WITH_UTF8)
+LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
+CONFIGURE_ARGS+=--with-screen-slang
+CONFIGURE_ENV+=	LDFLAGS=-L${PREFIX}/lib
+.elif !defined(WITH_SLANG) && (defined(WITHOUT_SLANG) || defined(MINIMAL))
 CONFIGURE_ARGS+=--with-screen=ncurses
 .else
 CONFIGURE_ARGS+=--with-screen=mcslang
@@ -106,6 +115,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/zip|${LOCALBASE}/bin/zip|' \
 		-e 's|/usr/bin/unzip|${LOCALBASE}/bin/unzip|' \
 		${WRKSRC}/configure
+.if defined(WITH_UTF8)
+	cat ${PATCHDIR}/mc-4.6.1-utf8-r2.patch | patch -p1 --silent -d ${WRKSRC}
+.endif
 
 post-install:
 	@${LN} -sf mc ${PREFIX}/bin/midc
