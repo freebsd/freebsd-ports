@@ -3,6 +3,7 @@
 %%SITE_PERL%%/AnyEvent.pm
 %%SITE_PERL%%/AnyEvent/Impl/Coro.pm
 %%SITE_PERL%%/AnyEvent/Impl/CoroEV.pm
+%%SITE_PERL%%/AnyEvent/Impl/CoroEvent.pm
 %%SITE_PERL%%/AnyEvent/Impl/EV.pm
 %%SITE_PERL%%/AnyEvent/Impl/Event.pm
 %%SITE_PERL%%/AnyEvent/Impl/Glib.pm
