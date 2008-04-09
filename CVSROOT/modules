@@ -1934,7 +1934,6 @@ decomment	ports/sysutils/decomment
 decss		ports/www/decss
 decurs		ports/x11/decurs
 dedit		ports/editors/dedit
-deepforest	ports/archivers/deepforest
 defendguin	ports/games/defendguin
 dejagnu		ports/misc/dejagnu
 dejavu		ports/x11-fonts/dejavu
@@ -6758,7 +6757,6 @@ libieee1284	ports/sysutils/libieee1284
 libijs		ports/print/libijs
 libimg		ports/graphics/libimg
 libimg-tk83	ports/graphics/libimg-tk83
-libimg-tkstep80	ports/graphics/libimg-tkstep80
 libint		ports/science/libint
 libiodbc	ports/databases/libiodbc
 libiptcdata	ports/graphics/libiptcdata
@@ -16217,7 +16215,6 @@ tkrunit		ports/misc/tkrunit
 tkscanfax	ports/comms/tkscanfax
 tkshape		ports/x11-toolkits/tkshape
 tksol		ports/games/tksol
-tkstep80	ports/x11-toolkits/tkstep80
 tktable		ports/x11-toolkits/tktable
 tktray		ports/x11-toolkits/tktray
 tktreectrl	ports/x11-toolkits/tktreectrl
