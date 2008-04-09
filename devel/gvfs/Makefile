@@ -8,7 +8,7 @@
 
 PORTNAME=	gvfs
 PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--disable-obexftp
 OPTIONS=	FUSE "Enable fuse" on \
 		SAMBA "Enable Samba" on \
 		GPHOTO2 "Enable Gphoto 2 camera support" on \
-		CDDA "Enable CDDA" on
+		CDDA "Enable CDDA" off
 
 .include <bsd.port.pre.mk>
 
