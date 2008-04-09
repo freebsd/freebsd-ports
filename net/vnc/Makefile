@@ -20,7 +20,6 @@ COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 GNU_CONFIGURE=	yes
 # The vnc supplied zlib seg. faults if compiled with -O
 CONFIGURE_ARGS=	--with-installed-zlib
-USE_GCC=	3.4
 USE_XLIB=	yes
 USE_XPM=	yes
 WANT_PERL=	yes
