@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.08.0
+PORTVERSION=	1.08.2
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,10 +32,8 @@ MAN1=	perlcritic.1
 MAN3=	Perl::Critic.3 \
 	Perl::Critic::Config.3 \
 	Perl::Critic::DEVELOPER.3 \
-	Perl::Critic::ConfigErrors.3 \
 	Perl::Critic::Defaults.3 \
 	Perl::Critic::Document.3 \
-	Perl::Critic::Policy.3 \
 	Perl::Critic::Exception.3 \
 	Perl::Critic::Exception::AggregateConfiguration.3 \
 	Perl::Critic::Exception::Configuration.3 \
@@ -51,6 +49,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Exception::Fatal::Generic.3 \
 	Perl::Critic::Exception::Fatal::Internal.3 \
 	Perl::Critic::Exception::Fatal::PolicyDefinition.3 \
+	Perl::Critic::Policy.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitBooleanGrep.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitComplexMappings.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr.3 \
@@ -113,6 +112,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Modules::RequireEndWithOne.3 \
 	Perl::Critic::Policy::Modules::RequireExplicitPackage.3 \
 	Perl::Critic::Policy::Modules::RequireFilenameMatchesPackage.3 \
+	Perl::Critic::Policy::Modules::RequireNoMatchVarsWithUseEnglish.3 \
 	Perl::Critic::Policy::Modules::RequireVersionVar.3 \
 	Perl::Critic::Policy::NamingConventions::ProhibitAmbiguousNames.3 \
 	Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseSubs.3 \
@@ -175,16 +175,24 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Variables::RequireNegativeIndices.3 \
 	Perl::Critic::PolicyFactory.3 \
 	Perl::Critic::PolicyListing.3 \
+	Perl::Critic::PolicyParameter.3 \
+	Perl::Critic::PolicyParameter::Behavior.3 \
+	Perl::Critic::PolicyParameter::Behavior::Boolean.3 \
+	Perl::Critic::PolicyParameter::Behavior::Enumeration.3 \
+	Perl::Critic::PolicyParameter::Behavior::Integer.3 \
+	Perl::Critic::PolicyParameter::Behavior::String.3 \
+	Perl::Critic::PolicyParameter::Behavior::StringList.3 \
 	Perl::Critic::PolicySummary.3 \
 	Perl::Critic::ProfilePrototype.3 \
 	Perl::Critic::Statistics.3 \
 	Perl::Critic::TestUtils.3 \
 	Perl::Critic::Theme.3 \
-	Perl::Critic::Utils::PPIRegexp.3 \
 	Perl::Critic::UserProfile.3 \
 	Perl::Critic::Utils.3 \
 	Perl::Critic::Utils::Constants.3 \
+	Perl::Critic::Utils::DataConversion.3 \
 	Perl::Critic::Utils::McCabe.3 \
+	Perl::Critic::Utils::PPIRegexp.3 \
 	Perl::Critic::Utils::PPI.3 \
 	Perl::Critic::Violation.3
 

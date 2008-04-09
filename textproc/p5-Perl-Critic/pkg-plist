@@ -1,7 +1,6 @@
 bin/perlcritic
 %%SITE_PERL%%/Perl/Critic.pm
 %%SITE_PERL%%/Perl/Critic/Config.pm
-%%SITE_PERL%%/Perl/Critic/ConfigErrors.pm
 %%SITE_PERL%%/Perl/Critic/DEVELOPER.pod
 %%SITE_PERL%%/Perl/Critic/Defaults.pm
 %%SITE_PERL%%/Perl/Critic/Document.pm
@@ -83,6 +82,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireEndWithOne.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireExplicitPackage.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireFilenameMatchesPackage.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireNoMatchVarsWithUseEnglish.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Modules/RequireVersionVar.pm
 %%SITE_PERL%%/Perl/Critic/Policy/NamingConventions/ProhibitAmbiguousNames.pm
 %%SITE_PERL%%/Perl/Critic/Policy/NamingConventions/ProhibitMixedCaseSubs.pm
@@ -145,6 +145,13 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/RequireNegativeIndices.pm
 %%SITE_PERL%%/Perl/Critic/PolicyFactory.pm
 %%SITE_PERL%%/Perl/Critic/PolicyListing.pm
+%%SITE_PERL%%/Perl/Critic/PolicyParameter.pm
+%%SITE_PERL%%/Perl/Critic/PolicyParameter/Behavior.pm
+%%SITE_PERL%%/Perl/Critic/PolicyParameter/Behavior/Boolean.pm
+%%SITE_PERL%%/Perl/Critic/PolicyParameter/Behavior/Enumeration.pm
+%%SITE_PERL%%/Perl/Critic/PolicyParameter/Behavior/Integer.pm
+%%SITE_PERL%%/Perl/Critic/PolicyParameter/Behavior/String.pm
+%%SITE_PERL%%/Perl/Critic/PolicyParameter/Behavior/StringList.pm
 %%SITE_PERL%%/Perl/Critic/PolicySummary.pod
 %%SITE_PERL%%/Perl/Critic/ProfilePrototype.pm
 %%SITE_PERL%%/Perl/Critic/Statistics.pm
@@ -153,11 +160,14 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/UserProfile.pm
 %%SITE_PERL%%/Perl/Critic/Utils.pm
 %%SITE_PERL%%/Perl/Critic/Utils/Constants.pm
+%%SITE_PERL%%/Perl/Critic/Utils/DataConversion.pm
 %%SITE_PERL%%/Perl/Critic/Utils/McCabe.pm
 %%SITE_PERL%%/Perl/Critic/Utils/PPI.pm
 %%SITE_PERL%%/Perl/Critic/Utils/PPIRegexp.pm
 %%SITE_PERL%%/Perl/Critic/Violation.pm
 @dirrm %%SITE_PERL%%/Perl/Critic/Utils
+@dirrm %%SITE_PERL%%/Perl/Critic/PolicyParameter/Behavior
+@dirrm %%SITE_PERL%%/Perl/Critic/PolicyParameter
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/Variables
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging
