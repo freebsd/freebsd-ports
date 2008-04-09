@@ -1,27 +1,18 @@
---- numpy/distutils/system_info.py.orig	Tue Oct  3 00:35:22 2006
-+++ numpy/distutils/system_info.py	Sun Feb  4 19:46:15 2007
-@@ -860,6 +860,8 @@
-         atlas_1 = None
-         for d in lib_dirs:
+--- numpy/distutils/system_info.py.orig	2007-11-07 16:05:15.000000000 -0600
++++ numpy/distutils/system_info.py	2008-04-07 11:39:05.000000000 -0500
+@@ -883,6 +883,7 @@
              atlas = self.check_libs2(d,atlas_libs,[])
-+            if atlas is not None:
-+                atlas['libraries'].extend(['gfortran', 'm', 'pthread'])
              lapack_atlas = self.check_libs2(d,['lapack_atlas'],[])
              if atlas is not None:
++                atlas['libraries'].extend(['gfortran', 'm', 'pthread'])
                  lib_dirs2 = [d] + self.combine_paths(d,['atlas*','ATLAS*'])
-@@ -935,6 +937,7 @@
-             else:
-                 info['language'] = 'f77'
- 
-+        info['language'] = 'f77'
-         self.set_info(**info)
- 
- class atlas_blas_info(atlas_info):
-@@ -1188,8 +1191,9 @@
+                 for d2 in lib_dirs2:
+                     lapack = self.check_libs2(d2,lapack_libs,[])
+@@ -1324,8 +1325,9 @@
+             atlas_info = get_info('atlas_blas')
          atlas_version = None
-         need_lapack = 0
          need_blas = 0
-+	lapack_type = self.cp.get(self.section, 'lapack_type').strip()
++        lapack_type = self.cp.get(self.section, 'lapack_type').strip()
          info = {}
 -        if atlas_info:
 +        if lapack_type == 'atlas' and atlas_info:

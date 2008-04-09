@@ -1,6 +1,6 @@
---- numpy/core/include/numpy/ufuncobject.h.orig	2007-08-20 21:00:58.000000000 -0500
-+++ numpy/core/include/numpy/ufuncobject.h	2007-08-27 15:08:11.000000000 -0500
-@@ -262,7 +262,10 @@
+--- numpy/core/include/numpy/ufuncobject.h.orig	2008-04-06 22:57:59.000000000 +0900
++++ numpy/core/include/numpy/ufuncobject.h	2008-04-06 23:02:05.000000000 +0900
+@@ -267,7 +267,10 @@
  /* Solaris --------------------------------------------------------*/
  /* --------ignoring SunOS ieee_flags approach, someone else can
  **         deal with that! */
@@ -12,7 +12,7 @@
  #include <ieeefp.h>
  
  #define UFUNC_CHECK_STATUS(ret) {				\
-@@ -276,9 +279,9 @@
+@@ -281,9 +284,9 @@
  	(void) fpsetsticky(0);						\
  	}
  
