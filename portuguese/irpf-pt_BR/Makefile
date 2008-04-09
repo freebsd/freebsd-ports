@@ -7,7 +7,7 @@
 
 PORTNAME=	irpf
 PORTVERSION=	2008.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	portuguese finance java
 MASTER_SITES=	http://www.receita.fazenda.gov.br/Publico/programas/irpf/2008/PGDIrpf2008/Java/ZIP/
 PKGNAMEPREFIX?=	pt_BR-
@@ -15,8 +15,6 @@ DISTNAME=	irpf2008v1.0
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2007 versao Java
-
-BROKEN=		Checksum mismatch
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2008
