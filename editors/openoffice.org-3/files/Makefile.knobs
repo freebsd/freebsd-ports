@@ -50,6 +50,8 @@ CONFIGURE_ARGS+=	--with-lang=${LOCALIZED_LANG}
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug --enable-symbols=TRUE --enable-dbgutil
+.else
+CONFIGURE_ARGS+=	--enable-symbols=SMALL
 .endif
 
 pre-fetch:
