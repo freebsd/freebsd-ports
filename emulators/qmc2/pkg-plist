@@ -2,46 +2,66 @@ bin/qmc2
 @unexec cmp -s %D/etc/qmc2/qmc2.ini %D/etc/qmc2/qmc2.ini.sample && rm -f %D/etc/qmc2/qmc2.ini
 etc/qmc2/qmc2.ini.sample
 @exec test -f %D/etc/qmc2/qmc2.ini || cp %D/etc/qmc2/qmc2.ini.sample %D/etc/qmc2/qmc2.ini
-%%DATADIR%%/doc/html/de/changes.html
-%%DATADIR%%/doc/html/de/copying.html
-%%DATADIR%%/doc/html/de/credits.html
-%%DATADIR%%/doc/html/de/faq.html
-%%DATADIR%%/doc/html/de/img/ballou.png
-%%DATADIR%%/doc/html/de/img/jonas.png
-%%DATADIR%%/doc/html/de/img/rene.png
-%%DATADIR%%/doc/html/de/img/robert.png
-%%DATADIR%%/doc/html/de/img/sammy.png
-%%DATADIR%%/doc/html/de/img/sphere_blue.png
-%%DATADIR%%/doc/html/de/img/sphere_green.png
-%%DATADIR%%/doc/html/de/img/sphere_grey.png
-%%DATADIR%%/doc/html/de/img/sphere_red.png
-%%DATADIR%%/doc/html/de/img/sphere_yellowgreen.png
-%%DATADIR%%/doc/html/de/img/teddy.png
-%%DATADIR%%/doc/html/de/index.html
-%%DATADIR%%/doc/html/de/readme.html
-%%DATADIR%%/doc/html/de/todo.html
-%%DATADIR%%/doc/html/us/changes.html
-%%DATADIR%%/doc/html/us/copying.html
-%%DATADIR%%/doc/html/us/credits.html
-%%DATADIR%%/doc/html/us/faq.html
-%%DATADIR%%/doc/html/us/img/ballou.png
-%%DATADIR%%/doc/html/us/img/jonas.png
-%%DATADIR%%/doc/html/us/img/rene.png
-%%DATADIR%%/doc/html/us/img/robert.png
-%%DATADIR%%/doc/html/us/img/sammy.png
-%%DATADIR%%/doc/html/us/img/sphere_blue.png
-%%DATADIR%%/doc/html/us/img/sphere_green.png
-%%DATADIR%%/doc/html/us/img/sphere_grey.png
-%%DATADIR%%/doc/html/us/img/sphere_red.png
-%%DATADIR%%/doc/html/us/img/sphere_yellowgreen.png
-%%DATADIR%%/doc/html/us/img/teddy.png
-%%DATADIR%%/doc/html/us/index.html
-%%DATADIR%%/doc/html/us/readme.html
-%%DATADIR%%/doc/html/us/todo.html
+%%DOCSDIR%%/html/de/changes.html
+%%DOCSDIR%%/html/de/copying.html
+%%DOCSDIR%%/html/de/credits.html
+%%DOCSDIR%%/html/de/faq.html
+%%DOCSDIR%%/html/de/img/ballou.png
+%%DOCSDIR%%/html/de/img/jonas.png
+%%DOCSDIR%%/html/de/img/rene.png
+%%DOCSDIR%%/html/de/img/robert.png
+%%DOCSDIR%%/html/de/img/sammy.png
+%%DOCSDIR%%/html/de/img/sphere_blue.png
+%%DOCSDIR%%/html/de/img/sphere_green.png
+%%DOCSDIR%%/html/de/img/sphere_grey.png
+%%DOCSDIR%%/html/de/img/sphere_red.png
+%%DOCSDIR%%/html/de/img/sphere_yellowgreen.png
+%%DOCSDIR%%/html/de/img/teddy.png
+%%DOCSDIR%%/html/de/index.html
+%%DOCSDIR%%/html/de/readme.html
+%%DOCSDIR%%/html/de/todo.html
+%%DOCSDIR%%/html/pl/changes.html
+%%DOCSDIR%%/html/pl/copying.html
+%%DOCSDIR%%/html/pl/credits.html
+%%DOCSDIR%%/html/pl/faq.html
+%%DOCSDIR%%/html/pl/img/ballou.png
+%%DOCSDIR%%/html/pl/img/jonas.png
+%%DOCSDIR%%/html/pl/img/rene.png
+%%DOCSDIR%%/html/pl/img/robert.png
+%%DOCSDIR%%/html/pl/img/sammy.png
+%%DOCSDIR%%/html/pl/img/sphere_blue.png
+%%DOCSDIR%%/html/pl/img/sphere_green.png
+%%DOCSDIR%%/html/pl/img/sphere_grey.png
+%%DOCSDIR%%/html/pl/img/sphere_red.png
+%%DOCSDIR%%/html/pl/img/sphere_yellowgreen.png
+%%DOCSDIR%%/html/pl/img/teddy.png
+%%DOCSDIR%%/html/pl/index.html
+%%DOCSDIR%%/html/pl/readme.html
+%%DOCSDIR%%/html/pl/todo.html
+%%DOCSDIR%%/html/us/changes.html
+%%DOCSDIR%%/html/us/copying.html
+%%DOCSDIR%%/html/us/credits.html
+%%DOCSDIR%%/html/us/faq.html
+%%DOCSDIR%%/html/us/img/ballou.png
+%%DOCSDIR%%/html/us/img/jonas.png
+%%DOCSDIR%%/html/us/img/rene.png
+%%DOCSDIR%%/html/us/img/robert.png
+%%DOCSDIR%%/html/us/img/sammy.png
+%%DOCSDIR%%/html/us/img/sphere_blue.png
+%%DOCSDIR%%/html/us/img/sphere_green.png
+%%DOCSDIR%%/html/us/img/sphere_grey.png
+%%DOCSDIR%%/html/us/img/sphere_red.png
+%%DOCSDIR%%/html/us/img/sphere_yellowgreen.png
+%%DOCSDIR%%/html/us/img/teddy.png
+%%DOCSDIR%%/html/us/index.html
+%%DOCSDIR%%/html/us/readme.html
+%%DOCSDIR%%/html/us/todo.html
 %%DATADIR%%/img/back.png
+%%DATADIR%%/img/calculator.png
 %%DATADIR%%/img/camera.png
 %%DATADIR%%/img/cd.png
 %%DATADIR%%/img/classic/back.png
+%%DATADIR%%/img/classic/calculator.png
 %%DATADIR%%/img/classic/camera.png
 %%DATADIR%%/img/classic/cd.png
 %%DATADIR%%/img/classic/clock.png
@@ -86,6 +106,8 @@ etc/qmc2/qmc2.ini.sample
 %%DATADIR%%/img/classic/pencils.png
 %%DATADIR%%/img/classic/previous-sail.png
 %%DATADIR%%/img/classic/previous.png
+%%DATADIR%%/img/classic/qmc2_logo_big.png
+%%DATADIR%%/img/classic/qmc2_logo_small.png
 %%DATADIR%%/img/classic/qt-logo.png
 %%DATADIR%%/img/classic/redo.png
 %%DATADIR%%/img/classic/reload.png
@@ -109,16 +131,20 @@ etc/qmc2/qmc2.ini.sample
 %%DATADIR%%/img/classic/undo.png
 %%DATADIR%%/img/classic/unlock.png
 %%DATADIR%%/img/classic/up.png
+%%DATADIR%%/img/classic/view_detail.png
+%%DATADIR%%/img/classic/view_tree.png
 %%DATADIR%%/img/classic/viewmag+.png
 %%DATADIR%%/img/classic/viewmag-.png
 %%DATADIR%%/img/classic/viewmagfit.png
 %%DATADIR%%/img/classic/work.png
 %%DATADIR%%/img/classic/yes.png
+%%DATADIR%%/img/classic/zip.png
 %%DATADIR%%/img/clock.png
 %%DATADIR%%/img/colors.png
 %%DATADIR%%/img/configure.png
 %%DATADIR%%/img/controller.png
 %%DATADIR%%/img/crazy-black/back.png
+%%DATADIR%%/img/crazy-black/calculator.png
 %%DATADIR%%/img/crazy-black/camera.png
 %%DATADIR%%/img/crazy-black/cd.png
 %%DATADIR%%/img/crazy-black/clock.png
@@ -163,6 +189,8 @@ etc/qmc2/qmc2.ini.sample
 %%DATADIR%%/img/crazy-black/pencils.png
 %%DATADIR%%/img/crazy-black/previous-sail.png
 %%DATADIR%%/img/crazy-black/previous.png
+%%DATADIR%%/img/crazy-black/qmc2_logo_big.png
+%%DATADIR%%/img/crazy-black/qmc2_logo_small.png
 %%DATADIR%%/img/crazy-black/qt-logo.png
 %%DATADIR%%/img/crazy-black/redo.png
 %%DATADIR%%/img/crazy-black/reload.png
@@ -186,12 +214,16 @@ etc/qmc2/qmc2.ini.sample
 %%DATADIR%%/img/crazy-black/undo.png
 %%DATADIR%%/img/crazy-black/unlock.png
 %%DATADIR%%/img/crazy-black/up.png
+%%DATADIR%%/img/crazy-black/view_detail.png
+%%DATADIR%%/img/crazy-black/view_tree.png
 %%DATADIR%%/img/crazy-black/viewmag+.png
 %%DATADIR%%/img/crazy-black/viewmag-.png
 %%DATADIR%%/img/crazy-black/viewmagfit.png
 %%DATADIR%%/img/crazy-black/work.png
 %%DATADIR%%/img/crazy-black/yes.png
+%%DATADIR%%/img/crazy-black/zip.png
 %%DATADIR%%/img/crazy/back.png
+%%DATADIR%%/img/crazy/calculator.png
 %%DATADIR%%/img/crazy/camera.png
 %%DATADIR%%/img/crazy/cd.png
 %%DATADIR%%/img/crazy/clock.png
@@ -236,6 +268,8 @@ etc/qmc2/qmc2.ini.sample
 %%DATADIR%%/img/crazy/pencils.png
 %%DATADIR%%/img/crazy/previous-sail.png
 %%DATADIR%%/img/crazy/previous.png
+%%DATADIR%%/img/crazy/qmc2_logo_big.png
+%%DATADIR%%/img/crazy/qmc2_logo_small.png
 %%DATADIR%%/img/crazy/qt-logo.png
 %%DATADIR%%/img/crazy/redo.png
 %%DATADIR%%/img/crazy/reload.png
@@ -259,11 +293,14 @@ etc/qmc2/qmc2.ini.sample
 %%DATADIR%%/img/crazy/undo.png
 %%DATADIR%%/img/crazy/unlock.png
 %%DATADIR%%/img/crazy/up.png
+%%DATADIR%%/img/crazy/view_detail.png
+%%DATADIR%%/img/crazy/view_tree.png
 %%DATADIR%%/img/crazy/viewmag+.png
 %%DATADIR%%/img/crazy/viewmag-.png
 %%DATADIR%%/img/crazy/viewmagfit.png
 %%DATADIR%%/img/crazy/work.png
 %%DATADIR%%/img/crazy/yes.png
+%%DATADIR%%/img/crazy/zip.png
 %%DATADIR%%/img/down.png
 %%DATADIR%%/img/edit.png
 %%DATADIR%%/img/editcopy.png
@@ -302,6 +339,8 @@ etc/qmc2/qmc2.ini.sample
 %%DATADIR%%/img/pencils.png
 %%DATADIR%%/img/previous-sail.png
 %%DATADIR%%/img/previous.png
+%%DATADIR%%/img/qmc2_logo_big.png
+%%DATADIR%%/img/qmc2_logo_small.png
 %%DATADIR%%/img/qt-logo.png
 %%DATADIR%%/img/redo.png
 %%DATADIR%%/img/reload.png
@@ -325,22 +364,22 @@ etc/qmc2/qmc2.ini.sample
 %%DATADIR%%/img/undo.png
 %%DATADIR%%/img/unlock.png
 %%DATADIR%%/img/up.png
+%%DATADIR%%/img/view_detail.png
+%%DATADIR%%/img/view_tree.png
 %%DATADIR%%/img/viewmag+.png
 %%DATADIR%%/img/viewmag-.png
 %%DATADIR%%/img/viewmagfit.png
 %%DATADIR%%/img/work.png
 %%DATADIR%%/img/yes.png
+%%DATADIR%%/img/zip.png
 %%DATADIR%%/lng/qmc2_de.qm
+%%DATADIR%%/lng/qmc2_pl.qm
+%%DATADIR%%/lng/qmc2_us.qm
 %%DATADIR%%/lng/qt_de.qm
+%%DATADIR%%/lng/qt_pl.qm
 %%DATADIR%%/opt/SDLMAME/template.xml
-%%DATADIR%%/opt/XMAME/template-SDL.xml
-%%DATADIR%%/opt/XMAME/template-X11-XV-OpenGL.xml
-%%DATADIR%%/opt/XMAME/template-all.xml
-%%DATADIR%%/opt/XMAME/template.xml
 %%DATADIR%%/opt/template.xml
-%%DATADIR%%/romalyzer.pl
 @dirrm %%DATADIR%%/prv
-@dirrm %%DATADIR%%/opt/XMAME
 @dirrm %%DATADIR%%/opt/SDLMAME
 @dirrm %%DATADIR%%/opt
 @dirrm %%DATADIR%%/lng
@@ -349,11 +388,13 @@ etc/qmc2/qmc2.ini.sample
 @dirrm %%DATADIR%%/img/classic
 @dirrm %%DATADIR%%/img
 @dirrm %%DATADIR%%/fly
-@dirrm %%DATADIR%%/doc/html/us/img
-@dirrm %%DATADIR%%/doc/html/us
-@dirrm %%DATADIR%%/doc/html/de/img
-@dirrm %%DATADIR%%/doc/html/de
-@dirrm %%DATADIR%%/doc/html
-@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/html/us/img
+@dirrm %%DOCSDIR%%/html/us
+@dirrm %%DOCSDIR%%/html/pl/img
+@dirrm %%DOCSDIR%%/html/pl
+@dirrm %%DOCSDIR%%/html/de/img
+@dirrm %%DOCSDIR%%/html/de
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
 @dirrmtry etc/qmc2
