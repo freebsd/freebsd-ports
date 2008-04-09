@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	Module-CPANTS-Analyse
-PORTVERSION=	0.77
+PORTVERSION=	0.79
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Module
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
@@ -41,7 +40,9 @@ MAN3=		Module::CPANTS::Analyse.3 \
 		Module::CPANTS::Kwalitee::NeedsCompiler.3 \
 		Module::CPANTS::Kwalitee::Pod.3 \
 		Module::CPANTS::Kwalitee::Prereq.3 \
-		Module::CPANTS::Kwalitee::Uses.3
+		Module::CPANTS::Kwalitee::Repackageable.3 \
+		Module::CPANTS::Kwalitee::Uses.3 \
+		Module::CPANTS::Kwalitee::Version.3
 
 .include <bsd.port.pre.mk>
 
