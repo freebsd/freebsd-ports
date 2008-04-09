@@ -8,6 +8,7 @@
 
 PORTNAME=	gvfs
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -32,8 +33,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--disable-obexftp
 OPTIONS=	FUSE "Enable fuse" on \
 		SAMBA "Enable Samba" on \
-		GPHOTO2 "Enable Gphoto 2 camera support" on
-#		CDDA "Enable CDDA" on
+		GPHOTO2 "Enable Gphoto 2 camera support" on \
+		CDDA "Enable CDDA" on
 
 .include <bsd.port.pre.mk>
 
@@ -54,13 +55,13 @@ CONFIGURE_ARGS+=	--disable-samba
 PLIST_SUB+=	SMB="@comment "
 .endif
 
-#.if defined(WITH_CDDA)
-#LIB_DEPENDS+=	cdio_paranoia.0:${PORTSDIR}/sysutils/libcdio
-#PLIST_SUB+=	CDDA=""
-#.else
+.if defined(WITH_CDDA)
+LIB_DEPENDS+=	cdio_paranoia.0:${PORTSDIR}/sysutils/libcdio
+PLIST_SUB+=	CDDA=""
+.else
 CONFIGURE_ARGS+=	--disable-cdda
 PLIST_SUB+=	CDDA="@comment "
-#.endif
+.endif
 
 .if defined(WITH_GPHOTO2)
 LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
