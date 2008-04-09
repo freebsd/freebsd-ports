@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	raknet
-PORTVERSION=	3.08
+PORTVERSION=	3.10
 CATEGORIES=	devel net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	raknetjenkinsso
+DISTNAME=	${PORTNAME}-3.1
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Networking API that provides reliable UDP primarily for online games
@@ -54,6 +55,10 @@ post-install:
 	${MKDIR} ${DOCSDIR}/Help
 	(cd ${WRKSRC}/Help/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/Help)
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}/
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/Samples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.post.mk>
