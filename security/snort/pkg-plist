@@ -77,6 +77,10 @@ etc/snort/unicode.map-sample
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.la
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.so
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssh_preproc.so.0
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssl_preproc.a
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssl_preproc.la
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssl_preproc.so
+%%DYNAMIC%%lib/snort/dynamicpreprocessor/libsf_ssl_preproc.so.0
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicpreprocessor
 %%DYNAMIC%%@dirrmtry lib/snort
 %%EXAMPLESDIR%%/classification.config-sample
@@ -121,11 +125,15 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.frag3
 %%PORTDOCS%%%%DOCSDIR%%/README.ftptelnet
+%%PORTDOCS%%%%DOCSDIR%%/README.gre
 %%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
+%%PORTDOCS%%%%DOCSDIR%%/README.ipip
 %%PORTDOCS%%%%DOCSDIR%%/README.ipv6
+%%PORTDOCS%%%%DOCSDIR%%/README.pcap_readmode
 %%PORTDOCS%%%%DOCSDIR%%/README.ppm
 %%PORTDOCS%%%%DOCSDIR%%/README.sfportscan
 %%PORTDOCS%%%%DOCSDIR%%/README.ssh
+%%PORTDOCS%%%%DOCSDIR%%/README.ssl
 %%PORTDOCS%%%%DOCSDIR%%/README.stream4
 %%PORTDOCS%%%%DOCSDIR%%/README.stream5
 %%PORTDOCS%%%%DOCSDIR%%/README.tag
