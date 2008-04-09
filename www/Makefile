@@ -218,6 +218,7 @@
     SUBDIR += gnome-user-share
     SUBDIR += gnome-web-photo
     SUBDIR += gnustep-ticker
+    SUBDIR += google-appengine
     SUBDIR += google-sitemapgen
     SUBDIR += goose
     SUBDIR += grails
