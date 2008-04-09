@@ -2,13 +2,18 @@
 # Date created:		25 December 1998
 # Whom:			Bill Fumerola <billf@chc-chimes.com>
 #
+# $Carpetsmoker: ports/graphics/qiv/Makefile,v 1.2 2008/01/26 15:24:30 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	qiv
 PORTVERSION=	2.1.p12
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.klografx.net/qiv/download/
+MASTER_SITES=	http://www.klografx.net/qiv/download/ \
+		http://www.carpetsmoker.net/distfiles/ \
+		http://www.xs4all.nl/~tournoij/distfiles/ \
+		http://www.rwxrwxrwx.net/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.p12/-pre12/}
 EXTRACT_SUFX=	.tgz
 
@@ -38,6 +43,8 @@ do-configure:
 		s|-O2|${CFLAGS}|; \
 		s|libs-gdk`|libs-gdk` ${LDFLAGS}|;' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|\|GDK_WA_WMCLASS||' \
+		${WRKSRC}/image.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qiv ${PREFIX}/bin/
