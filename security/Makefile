@@ -157,7 +157,6 @@
     SUBDIR += gcipher
     SUBDIR += gnome-gpg
     SUBDIR += gnome-keyring
-    SUBDIR += gnome-keyring-manager
     SUBDIR += gnome-password-generator
     SUBDIR += gnome-ssh-askpass
     SUBDIR += gnupg
