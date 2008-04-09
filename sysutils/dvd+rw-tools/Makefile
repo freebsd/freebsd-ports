@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvd+rw-tools
-PORTVERSION=	7.0
+PORTVERSION=	7.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
 		http://fy.chalmers.se/~appro/linux/DVD+RW/tools/
