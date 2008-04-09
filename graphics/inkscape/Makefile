@@ -6,46 +6,40 @@
 #
 
 PORTNAME=	inkscape
-PORTVERSION=	0.45.1
-PORTREVISION=	1
+PORTVERSION=	0.46
 CATEGORIES=	graphics gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program seeks to become a full featured open source SVG editor
 
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gc.1:${PORTSDIR}/devel/boehm-gc \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
-		lcms.1:${PORTSDIR}/graphics/lcms
+		lcms.1:${PORTSDIR}/graphics/lcms \
+		Magick++.10:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack desktopfileutils intlhack libxslt
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 USE_PERL5=	yes
-CONFIGURE_ARGS=	--with-popt
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		inkscape.1
 MAN1_EN=	inkview.1
 MANLANG=	"" fr
 
+OPTIONS=	POPPLER	"Enable libpoppler-cairo for rendering PDF preview" off
+
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mlibgnomeprintui} != ""
-USE_GNOME+=		libgnomeprintui
-CONFIGURE_ARGS+=	--with-gnome-print
-.else
-CONFIGURE_ARGS+=	--without-gnome-print
-.endif
 .if ${HAVE_GNOME:Mgnomevfs2} != ""
 USE_GNOME+=		gnomevfs2
 CONFIGURE_ARGS+=	--with-gnome-vfs
@@ -53,15 +47,24 @@ CONFIGURE_ARGS+=	--with-gnome-vfs
 CONFIGURE_ARGS+=	--without-gnome-vfs
 .endif
 
+.if defined(WITH_POPPLER)
+LIB_DEPENDS+=		poppler-glib.2:${PORTSDIR}/graphics/poppler-gtk
+CONFIGURE_ARGS+=	--enable-poppler-cairo
+.else
+CONFIGURE_ARGS+=	--disable-poppler-cairo
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|ieefp.h|ieeefp.h|' \
-		${WRKSRC}/src/display/bezier-utils.cpp
+		${WRKSRC}/src/2geom/bezier-utils.cpp
 	@${REINPLACE_CMD} -e 's|libpng >= 1.2|libpng12 >= 1.2|g' \
 	    	${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "*.h" -o -name "*.cpp" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|glib/gmessages.h|glib/gtestutils.h|g'
-	@${REINPLACE_CMD} -e 's|SigC::Connection|sigc::connection|g' \
-	    	${WRKSRC}/src/seltrans.h
+.if !defined(WITH_POPPLER)
+	@${REINPLACE_CMD} -e 's|poppler|pdisable|g' \
+		${WRKSRC}/configure
+.endif
 
 post-install:
 	@-update-desktop-database
