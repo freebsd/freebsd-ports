@@ -1,30 +1,35 @@
 @comment $FreeBSD$
-%%PYTHON_SITELIBDIR%%/dateutil/__init__.py
-%%PYTHON_SITELIBDIR%%/dateutil/__init__.pyc
-%%PYTHON_SITELIBDIR%%/dateutil/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dateutil/easter.py
-%%PYTHON_SITELIBDIR%%/dateutil/easter.pyc
-%%PYTHON_SITELIBDIR%%/dateutil/easter.pyo
-%%PYTHON_SITELIBDIR%%/dateutil/parser.py
-%%PYTHON_SITELIBDIR%%/dateutil/parser.pyc
-%%PYTHON_SITELIBDIR%%/dateutil/parser.pyo
-%%PYTHON_SITELIBDIR%%/dateutil/relativedelta.py
-%%PYTHON_SITELIBDIR%%/dateutil/relativedelta.pyc
-%%PYTHON_SITELIBDIR%%/dateutil/relativedelta.pyo
-%%PYTHON_SITELIBDIR%%/dateutil/rrule.py
-%%PYTHON_SITELIBDIR%%/dateutil/rrule.pyc
-%%PYTHON_SITELIBDIR%%/dateutil/rrule.pyo
-%%PYTHON_SITELIBDIR%%/dateutil/tz.py
-%%PYTHON_SITELIBDIR%%/dateutil/tz.pyc
-%%PYTHON_SITELIBDIR%%/dateutil/tz.pyo
-%%PYTHON_SITELIBDIR%%/dateutil/tzwin.py
-%%PYTHON_SITELIBDIR%%/dateutil/tzwin.pyc
-%%PYTHON_SITELIBDIR%%/dateutil/tzwin.pyo
-%%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.py
-%%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.pyc
-%%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/zoneinfo-2007i.tar.gz
-@dirrm %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo
-@dirrm %%PYTHON_SITELIBDIR%%/dateutil
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/__init__.py
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/__init__.pyc
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/__init__.pyo
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/easter.py
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/easter.pyc
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/easter.pyo
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/parser.py
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/parser.pyc
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/parser.pyo
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/relativedelta.py
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/relativedelta.pyc
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/relativedelta.pyo
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/rrule.py
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/rrule.pyc
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/rrule.pyo
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tz.py
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tz.pyc
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tz.pyo
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tzwin.py
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tzwin.pyc
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tzwin.pyo
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/zoneinfo/__init__.py
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/zoneinfo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/zoneinfo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/zoneinfo/zoneinfo-2007k.tar.gz
+@dirrm %%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/zoneinfo
+@dirrm %%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil
+@dirrm %%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg
