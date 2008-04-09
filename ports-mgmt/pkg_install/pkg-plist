@@ -2,4 +2,5 @@ sbin/pkg_add
 sbin/pkg_create
 sbin/pkg_delete
 sbin/pkg_info
+sbin/pkg_updating
 sbin/pkg_version

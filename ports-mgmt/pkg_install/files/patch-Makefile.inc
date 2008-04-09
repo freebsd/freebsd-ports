@@ -1,15 +1,18 @@
---- Makefile.inc.orig	Tue Dec 21 05:16:03 2004
-+++ Makefile.inc	Sat Feb 26 17:02:17 2005
-@@ -7,9 +7,11 @@
- .endif
+--- Makefile.inc.orig	2008-04-09 16:15:05.000000000 +0100
++++ Makefile.inc	2008-04-09 16:15:21.000000000 +0100
+@@ -4,11 +4,13 @@
  
- .if !defined(NO_CRYPT) && !defined(NO_OPENSSL) && \
+ LIBINSTALL=	${.OBJDIR}/../lib/libinstall.a
+ 
+-.if ${MK_OPENSSL} != "no" && \
 -    defined(LDADD) && ${LDADD:M-lfetch} != ""
++.if !defined(NO_CRYPT) && !defined(NO_OPENSSL) && \
 +	defined(LDADD)
 +.if  ${LDADD:M-lfetch} != ""
  DPADD+=		${LIBSSL} ${LIBCRYPTO}
  LDADD+=		-lssl -lcrypto
-+.endif
  .endif
++.endif
  
  # Inherit BINDIR from one level up.
+ .include "../Makefile.inc"
