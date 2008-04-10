@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	fonttools-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source library for manipulating fonts, written in Python
 
 BUILD_DEPENDS=	xmlproc_val:${PORTSDIR}/textproc/py-xml \

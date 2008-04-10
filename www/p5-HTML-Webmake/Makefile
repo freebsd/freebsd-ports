@@ -12,7 +12,7 @@ MASTER_SITES=	http://webmake.sourceforge.net/released/ \
 		http://webmake.taint.org/released/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jkoshy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple perl based website content management system
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \

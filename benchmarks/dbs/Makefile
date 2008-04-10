@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.kusa.ac.jp/~yukio-m/dbs/software1.1.5/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkoshy
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A distributed network benchmarking system
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot

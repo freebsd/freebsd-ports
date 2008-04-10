@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.jimbrooks.org/pypersrc/ \
 MASTER_SITE_SUBDIR=	jkoshy
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	jkoshy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python/Tkinter based source browser
 
 BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \

@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
 	http://wwwfun.kurims.kyoto-u.ac.jp/soft/caml-light/
 DISTNAME=	cl75unix
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A strongly typed functional language belonging to the ML family
 
 USE_XORG=	x11

@@ -13,7 +13,7 @@ MASTER_SITES=	http://gavare.se/gxemul/src/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkoshy
 
-MAINTAINER=	jkoshy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instruction-level machine emulator
 
 HAS_CONFIGURE=	yes
