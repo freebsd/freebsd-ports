@@ -152,6 +152,7 @@
     SUBDIR += mysql-navigator
     SUBDIR += mysql-proxy
     SUBDIR += mysql-query-browser
+    SUBDIR += mysql-udf
     SUBDIR += mysql2odbc
     SUBDIR += mysql2pgsql
     SUBDIR += mysql323-client
