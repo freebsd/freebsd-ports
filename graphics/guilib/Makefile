@@ -14,6 +14,8 @@ DISTNAME=	GUIlib-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A very simple GUI framework for use with SDL
 
+BROKEN=		Checksum mismatch
+
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
