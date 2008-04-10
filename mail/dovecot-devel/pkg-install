@@ -85,7 +85,7 @@ create_account() {
 case $2 in
 
 PRE-INSTALL)
-	create_account Dovecot dovecot:${DOVECOT_UID:-143} dovecot:${DOVECOT_GID:-143} "Dovecot User" /var/empty /sbin/nologin
+	create_account Dovecot dovecot:${DOVECOT_UID:-143} dovecot:${DOVECOT_GID:-143} "Dovecot User" /var/empty /usr/sbin/nologin
 	;;
 
 POST-INSTALL)
