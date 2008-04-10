@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	orpie
-PORTVERSION=	1.4.3
-PORTREVISION=	3
+PORTVERSION=	1.5.1
 CATEGORIES+=	math
-MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/orpie/
+MASTER_SITES=	http://pessimization.com/software/orpie/
 
 MAINTAINER=	dylan@dylex.net
 COMMENT=	A fullscreen RPN calculator for the console
