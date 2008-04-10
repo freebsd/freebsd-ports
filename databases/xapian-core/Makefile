@@ -8,9 +8,7 @@
 PORTNAME=	xapian-core
 PORTVERSION=	1.0.5
 CATEGORIES=	databases
-MASTER_SITES=	http://www.oligarchy.co.uk/xapian/${PORTVERSION}/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	miwi
+MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
 
 MAINTAINER=	jean-francois.dockes@wanadoo.fr
 COMMENT=	A probabilistic text search database engine
