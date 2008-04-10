@@ -1,6 +1,6 @@
 # New ports collection makefile for:    cynthiune
 # Date created:         4 Sep 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/c/cynthiune.app
 DISTNAME=	cynthiune.app_${PORTVERSION}.orig
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Romantic music player for GNUstep
 
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac

@@ -1,6 +1,6 @@
 # New ports collection makefile for:    zipper.app
 # Date created:         31 Aug 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://xanthippe.dyndns.org/Zipper/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Zipper-${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Tool for inspecting the contents of a compressed archive
 
 USE_GNUSTEP=	yes

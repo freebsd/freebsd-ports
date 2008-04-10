@@ -1,6 +1,6 @@
 # New ports collection makefile for:	junicode
 # Date created:		28 August 2006
-# Whom:			Guerkan Senguen <gurkan@linuks.mine.nu>
+# Whom:			Guerkan Senguen <gurkan@phys.ethz.ch>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Unicode font for medievalists (Latin, IPA and Runic)
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

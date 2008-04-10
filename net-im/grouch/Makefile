@@ -1,6 +1,6 @@
 # New ports collection makefile for:    grouch
 # Date created:         09 Sep 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://mail.rochester.edu/~asveikau/grouch/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	AOL and ICQ Instant Messenger client for GNUstep
 
 USE_GNUSTEP=	yes

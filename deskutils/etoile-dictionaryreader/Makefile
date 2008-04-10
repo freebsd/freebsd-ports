@@ -1,6 +1,6 @@
 # New ports collection makefile for:    etoile-dictionaryreader
 # Date created:         4 Sep 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	dinoex
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	Etoile-${SNAPSHOT}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Dict client for GNUstep
 
 USE_BZIP2=	yes

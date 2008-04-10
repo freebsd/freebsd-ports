@@ -1,6 +1,6 @@
 # New ports collection makefile for:    gtamsanalyzer
 # Date created:         26 Sep 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tamsys
 DISTNAME=	GTAMSAnalyzer.src.${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Qualitative Research Software for the Free World for GNUstep
 
 USE_GNUSTEP=	yes

@@ -1,6 +1,6 @@
 # New ports collection makefile for:    gridlock.app
 # Date created:         31 Aug 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.dozingcatsoftware.com/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Gridlock-gnustep-${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	A collection of grid-based board games for GNUstep
 
 USE_GNUSTEP=	yes

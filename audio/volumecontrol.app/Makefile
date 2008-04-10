@@ -1,6 +1,6 @@
 # New ports collection makefile for:    volumecontrol.app
 # Date created:         28 Aug 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	audio gnustep
 MASTER_SITES=	http://www.linuks.mine.nu/volumecontrol/ \
 		${MASTER_SITE_GNUSTEP_CH}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Audio mixer for GNUstep
 
 USE_GNUSTEP=	yes

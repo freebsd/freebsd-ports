@@ -1,6 +1,6 @@
 # New ports collection makefile for:    renaissance
 # Date created:         07 Sep 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gnustep.it/Renaissance/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Renaissance-${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	GNUstep GUI Development Framework
 
 USE_GNUSTEP=	yes

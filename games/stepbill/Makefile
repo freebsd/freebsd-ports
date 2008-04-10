@@ -1,6 +1,6 @@
 # New ports collection makefile for:    stepbill
 # Date created:         28 Aug 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.linuks.mine.nu/stepbill/ \
 		${MASTER_SITE_GNUSTEP_CH}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Get rid of those nasty Wingdows viruses
 
 USE_GNUSTEP=	yes

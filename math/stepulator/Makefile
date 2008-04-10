@@ -1,6 +1,6 @@
 # New ports collection makefile for:    stepulator.app
 # Date created:         30 Aug 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.linuks.mine.nu/stepulator/ \
 DISTNAME=	${PORTNAME}-gs-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Scientific calculator implementing RPN notation for GNUstep
 
 USE_GNUSTEP=	yes

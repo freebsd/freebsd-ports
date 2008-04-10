@@ -1,6 +1,6 @@
 # New ports collection makefile for:    textedit.app
 # Date created:         28 Aug 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	editors gnustep
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Basic text editor for GNUstep
 
 USE_GNUSTEP=	yes
