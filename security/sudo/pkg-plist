@@ -4,7 +4,6 @@ bin/sudo
 bin/sudoedit
 etc/pam.d/sudo.default
 etc/sudoers.default
-libexec/sudo_noexec.la
 libexec/sudo_noexec.so
 sbin/visudo
 %%PORTDOCS%%%%DOCSDIR%%/BUGS

@@ -7,6 +7,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.6.9.15
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://obsd.isc.org/pub/sudo/ \
