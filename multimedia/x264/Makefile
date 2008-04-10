@@ -6,7 +6,7 @@
 #      $Id: Makefile 30 2006-10-30 22:15:26Z buhnux $
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20070913
+PORTVERSION=	0.0.20080409
 PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
@@ -86,6 +86,7 @@ post-patch:
 		${WRKSRC}/*/Makefile
 
 .if ${SLAVE_PORT:L}=="no"
+.if 0 # BROKEN
 post-build:
 	cd ${WRKSRC}/tools && ${MAKE} avc2avi
 
@@ -95,6 +96,7 @@ pre-install:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/avc2avi ${PREFIX}/bin
+.endif # BROKEN
 .endif
 
 .include <bsd.port.post.mk>
