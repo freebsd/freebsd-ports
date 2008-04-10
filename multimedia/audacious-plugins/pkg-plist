@@ -18,7 +18,7 @@ lib/audacious/General/statusicon.so
 %%AACPLUGIN%%lib/audacious/Input/aac.so
 %%ADPLUGPLUGIN%%lib/audacious/Input/adplug.so
 lib/audacious/Input/alac.so
-%%AUDIOCDPLUGIN%%lib/audacious/Input/cdaudio-ng.so
+%%CDAUDIOPLUGIN%%lib/audacious/Input/cdaudio-ng.so
 lib/audacious/Input/console.so
 lib/audacious/Input/cuesheet.so
 lib/audacious/Input/demac.so
