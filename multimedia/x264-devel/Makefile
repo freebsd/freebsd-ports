@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	Multimedia library and tool for encoding H.264/AVC video streams
 
+BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
+
 WANT_GNOME=	yes
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
@@ -47,12 +49,7 @@ OPTIONS+=	GPAC "Enable MPEG-4 Output" On \
 .endif
 
 .if ${ARCH}=="i386"
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 MAKE_ENV+=	ARCH_X86="1"
-.endif
-
-.if ${ARCH}=="amd64" || ${ARCH}=="sparc64"
-BUILD_DEPENDS+=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
 .endif
 
 MAKE_ENV+=	ARCH=${ARCH}
