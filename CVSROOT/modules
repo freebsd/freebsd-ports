@@ -11043,6 +11043,7 @@ p5-Penguin	ports/devel/p5-Penguin
 p5-Penguin-Easy	ports/devel/p5-Penguin-Easy
 p5-Perl-Critic	ports/textproc/p5-Perl-Critic
 p5-Perl-MinimumVersion	ports/textproc/p5-Perl-MinimumVersion
+p5-Perl-Version	ports/devel/p5-Perl-Version
 p5-Perl6-Builtins	ports/devel/p5-Perl6-Builtins
 p5-Perl6-Export	ports/devel/p5-Perl6-Export
 p5-Perl6-Export-Attrs	ports/devel/p5-Perl6-Export-Attrs
