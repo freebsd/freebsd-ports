@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	xdelta
-PORTVERSION=	3.0q
+PORTVERSION=	3.0t
 CATEGORIES=	misc devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//g}
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Open-source binary diff, VCDIFF/RFC 3284 delta compression
 
 ALL_TARGET=	xdelta3
-
+USE_GMAKE=	yes
 PLIST_FILES=	bin/xdelta3
 
 do-install:
