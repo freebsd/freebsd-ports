@@ -1,0 +1,11 @@
+--- nxserver.orig	Mon Jan 22 19:22:50 2007
++++ nxserver
+@@ -1444,7 +1444,7 @@
+ 	
+ 	[ ${#CMD_CHUSER} -ge 32 ] && cmd_abort "Error: User $CMD_CHUSER must be shorter than 32 characters."
+ 	egrep -q "^$CMD_CHUSER:" $NX_ETC_DIR/passwords && cmd_abort "Error: User $CMD_CHUSER already in database."
+-	getent passwd "$CMD_CHUSER" >/dev/null || cmd_abort "Error: User $CMD_CHUSER not existing on local system. Can't add."
++	egrep -q "^$CMD_CHUSER:" /etc/passwd >/dev/null || cmd_abort "Error: User $CMD_CHUSER not existing on local system. Can't add."
+ 	passdb_add_user "$CMD_CHUSER"
+ }
+ 

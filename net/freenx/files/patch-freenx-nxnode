@@ -1,8 +1,18 @@
---- freenx-0.4.4/nxnode.orig	Tue Aug  2 11:20:18 2005
-+++ freenx-0.4.4/nxnode	Tue Aug  9 15:08:43 2005
+--- nxnode.orig	Mon Jan 22 19:22:50 2007
++++ nxnode
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
  
  # Free implementation of nxserver components
  #
+@@ -252,6 +252,9 @@
+ 	#
+ 
+ 	NODE_APPLICATION=$(node_find_application "$type")
++
++	# For rdesktop/VNC, there is no application to start
++	[ -n "$NODE_APPLICATION" ] || return
+ 
+ 	#
+ 	# Check if we want to use a mediahelper

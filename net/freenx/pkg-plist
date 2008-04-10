@@ -3,6 +3,7 @@ NX/bin/nxnode
 NX/bin/nxnode-login
 NX/bin/nxprint
 NX/bin/nxserver
+NX/bin/nxserver-helper
 NX/bin/nxsetup
 NX/bin/nxkeygen
 NX/bin/nxloadconfig
