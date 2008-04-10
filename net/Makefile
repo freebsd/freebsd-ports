@@ -862,6 +862,7 @@
     SUBDIR += spoofer
     SUBDIR += spread
     SUBDIR += spread-j
+    SUBDIR += sprinkle
     SUBDIR += spserver
     SUBDIR += ss5
     SUBDIR += ssldump
