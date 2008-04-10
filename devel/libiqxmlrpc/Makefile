@@ -7,6 +7,7 @@
 
 PORTNAME=	libiqxmlrpc
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -20,7 +21,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's,libxml++-1.0,libxml++-2.6,g' ${WRKSRC}/configure 
+	@${REINPLACE_CMD} 's,{libdir}/pkgconfig,{prefix}/libdata/pkgconfig,' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
