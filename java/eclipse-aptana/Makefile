@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	aptana
-PORTVERSION=	1.1.3.007983
+PORTVERSION=	1.1.6.009905
 PORTEPOCH=	1
 CATEGORIES=	java devel
-MASTER_SITES=	http://update.aptana.com/install/${ECLIPSE_VER}/
+MASTER_SITES=	http://update.aptana.com/install/studio/${ECLIPSE_VER}/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	aptana_update_${PORTVERSION:E}
 
