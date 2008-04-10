@@ -277,6 +277,7 @@ usr/bin/lddlibc4
 usr/bin/locale
 usr/bin/localedef
 usr/bin/logname
+usr/bin/lp
 usr/bin/lsattr
 usr/bin/md5sum
 usr/bin/mkfifo
@@ -9099,6 +9100,8 @@ var/mail
 @dirrm usr/share/locale/et/LC_TIME
 @dirrm usr/share/locale/et/LC_MESSAGES
 @dirrm usr/share/locale/et
+@dirrm usr/share/locale/es_ES/LC_MESSAGES
+@dirrm usr/share/locale/es_ES
 @dirrm usr/share/locale/es/LC_TIME
 @dirrm usr/share/locale/es/LC_MESSAGES
 @dirrm usr/share/locale/es
@@ -9160,6 +9163,7 @@ var/mail
 @dirrm usr/share/i18n/locales
 @dirrm usr/share/i18n/charmaps
 @dirrm usr/share/i18n
+@dirrm usr/share/icons
 @dirrm usr/share/games
 @dirrm usr/share/firstboot/modules
 @dirrm usr/share/firstboot

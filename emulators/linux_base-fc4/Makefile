@@ -8,7 +8,7 @@
 
 PORTNAME=		fc
 PORTVERSION=		4
-PORTREVISION=		10
+PORTREVISION=		11
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -98,7 +98,7 @@ ALWAYS_KEEP_DISTFILES=	yes
 LATEST_LINK=		linux_base
 CONFLICTS=		linux_base-7* linux_base-deb* linux_base-gentoo* \
 			linux_base-rh-9* linux_base-suse-9* linux_base-8* \
-			linux_base-fc6 linux_locale*
+			linux_base-f8 linux_base-f7 linux_base-fc6 linux_locale*
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 USE_LINUX_PREFIX=	yes
@@ -193,6 +193,10 @@ do-install:
 	@${LN} -sf /var/tmp ${PREFIX}/usr/tmp
 	@${CHOWN} root:wheel ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
 	@${CHMOD} 755 ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
+#
+# Let some linux applications (e.g. print/acroread7) print with default settings
+#
+	@${INSTALL_SCRIPT} ${FILESDIR}/lp ${PREFIX}/usr/bin
 
 post-install:
 #

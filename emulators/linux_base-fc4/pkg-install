@@ -108,6 +108,7 @@ POST-INSTALL)
 	mkdir -p ${PKG_PREFIX}/usr/share/locale/gu/LC_MESSAGES
 	mkdir -p ${PKG_PREFIX}/usr/share/locale/fa/LC_MESSAGES
 	mkdir -p ${PKG_PREFIX}/usr/share/locale/eu/LC_MESSAGES
+	mkdir -p ${PKG_PREFIX}/usr/share/locale/es_ES/LC_MESSAGES
 	mkdir -p ${PKG_PREFIX}/usr/share/locale/en_CA/LC_MESSAGES
 	mkdir -p ${PKG_PREFIX}/usr/share/locale/en/LC_MESSAGES
 	mkdir -p ${PKG_PREFIX}/usr/share/locale/cy/LC_MESSAGES
@@ -121,6 +122,7 @@ POST-INSTALL)
 	mkdir -p ${PKG_PREFIX}/usr/share/locale/ar/LC_MESSAGES
 	mkdir -p ${PKG_PREFIX}/usr/share/locale/am/LC_MESSAGES
 	mkdir -p ${PKG_PREFIX}/usr/share/games
+	mkdir -p ${PKG_PREFIX}/usr/share/icons
 	mkdir -p ${PKG_PREFIX}/usr/share/empty
 	mkdir -p ${PKG_PREFIX}/usr/share/dict
 	mkdir -p ${PKG_PREFIX}/usr/share/applications
