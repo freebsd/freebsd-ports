@@ -14,7 +14,7 @@ MASTER_SITES=	http://pantransit.reptiles.org/prog/xli/ \
 MASTER_SITE_SUBDIR=	applications
 DISTNAME=	xli-${XLI_SNAPVER}
 
-MAINTAINER=	jkoshy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xli, xsetbg, xview, xlito - utilities to display images on X11
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

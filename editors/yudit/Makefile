@@ -14,7 +14,7 @@ MASTER_SITES=	http://yudit.org/download/ \
 MASTER_SITE_SUBDIR=	apps/editors/X
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-lingual unicode text editor with TTF support
 
 USE_GETTEXT=	yes

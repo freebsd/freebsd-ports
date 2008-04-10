@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
 
-MAINTAINER=	jkoshy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIPS32 Simulator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

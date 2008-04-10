@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= jkoshy
 DISTNAME=	siod
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jkoshy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small footprint implementation of the Scheme programming language
 
 INSTALLS_SHLIB=	yes

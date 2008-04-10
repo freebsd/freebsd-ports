@@ -12,7 +12,7 @@ CATEGORIES=	devel tk
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front end for cscope and cscope clones
 
 USE_TK_RUN=	yes

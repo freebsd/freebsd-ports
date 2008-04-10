@@ -10,7 +10,7 @@ PORTVERSION=	0.7.6
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
-MAINTAINER=	jkoshy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated system from compile/test cycle to validate code changes
 
 USE_PYTHON=	yes

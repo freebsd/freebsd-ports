@@ -17,7 +17,7 @@ DISTFILES=		${PORTNAME}${PORTVERSION}-unsup.src.tgz
 DIST_SUBDIR=		tet/${PORTVERSION}
 EXTRACT_ONLY=		${PORTNAME}${PORTVERSION}-unsup.src.tgz
 
-MAINTAINER=		jkoshy@freebsd.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An test execution framework from the Open Group
 
 NO_PACKAGE=		$${TET_ROOT} needs to be set at compile time.
