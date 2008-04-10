@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.scl.ameslab.gov/Projects/Netpipe/code/ \
 MASTER_SITE_SUBDIR=	jkoshy
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A self-scaling network benchmark
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
