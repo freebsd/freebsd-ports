@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ghex
-PORTVERSION=	2.21.92
+PORTVERSION=	2.22.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +16,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 hex editor
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gail libgnomeprintui libgnomeui \
 		gnomedocutils
