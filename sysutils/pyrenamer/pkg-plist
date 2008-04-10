@@ -32,10 +32,12 @@ share/applications/pyrenamer.desktop
 %%EXAMPLESDIR%%/treefilebrowser_example.py
 share/locale/en/LC_MESSAGES/pyrenamer.mo
 share/locale/es/LC_MESSAGES/pyrenamer.mo
+share/locale/fr/LC_MESSAGES/pyrenamer.mo
 share/pixmaps/pyrenamer.png
 %%DATADIR%%/pyrenamer.glade
 %%DATADIR%%/pyrenamer.png
 %%DATADIR%%/pyrenamer.svg
+%%DATADIR%%/stop.png
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

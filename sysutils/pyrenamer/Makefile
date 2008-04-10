@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pyrenamer
-DISTVERSION=	0.4.1
-PORTREVISION=	2
+DISTVERSION=	0.5.0
 CATEGORIES=	sysutils python gnome
 MASTER_SITES=	http://www.infinicode.org/code/${PORTNAME}/
 
