@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-BigRat
-PORTVERSION=	0.20
+PORTVERSION=	0.22
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -18,7 +18,7 @@ COMMENT=	Arbitrary big rational numbers
 BUILD_DEPENDS=	p5-Math-BigInt>=1.79:${PORTSDIR}/math/p5-Math-BigInt
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Math::BigRat.3
 
