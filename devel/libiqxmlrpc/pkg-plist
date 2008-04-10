@@ -51,7 +51,7 @@ lib/libiqxmlrpc.a
 lib/libiqxmlrpc.la
 lib/libiqxmlrpc.so
 lib/libiqxmlrpc.so.0
-lib/pkgconfig/libiqxmlrpc-client.pc
-lib/pkgconfig/libiqxmlrpc-server.pc
-lib/pkgconfig/libiqxmlrpc.pc
+libdata/pkgconfig/libiqxmlrpc-client.pc
+libdata/pkgconfig/libiqxmlrpc-server.pc
+libdata/pkgconfig/libiqxmlrpc.pc
 @dirrm include/libiqxmlrpc
