@@ -108,7 +108,6 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/foxmarks.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/setup.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/foxmarks.css
-%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/Thumbs.db
 %%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/dirty.png
 %%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/error.png
 %%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/foxmarks-active.png
