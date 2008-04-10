@@ -20,7 +20,7 @@ DISTFILES=	plt-${PORTVERSION}-src-unix.tgz ${PLTPATCHES}
 DIST_SUBDIR=	drscheme/${PORTVERSION}
 EXTRACT_ONLY=	plt-${PORTVERSION}-src-unix.tgz
 
-MAINTAINER=	jkoshy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft	\
