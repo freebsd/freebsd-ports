@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/hackers.html
+%%PORTDOCS%%%%DOCSDIR%%/hackers.txt
+%%PORTDOCS%%%%DOCSDIR%%/users.html
+%%PORTDOCS%%%%DOCSDIR%%/users.txt
+sbin/sprinkle.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
