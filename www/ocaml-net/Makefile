@@ -7,6 +7,7 @@
 
 PORTNAME=	net
 PORTVERSION=	2.2.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocamlnet
@@ -46,7 +47,7 @@ OCAML_PKGDIRS=	netsys netshm equeue shell netstring rpc-generator \
 
 post-install:
 
-.for pkg in ${OCAMLNET_PACKAGES}
+.for pkg in ${OCAML_PKGDIRS}
 	@${FIND} ${PREFIX}/lib/ocaml/site-lib/${pkg} -type f | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 .endfor
