@@ -1,0 +1,6 @@
+%%PERLREVERSION%%bin/perl-reversion
+%%SITE_PERL%%/Perl/Version.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Version/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/Version
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl
+@dirrmtry %%SITE_PERL%%/Perl
