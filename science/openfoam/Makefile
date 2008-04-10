@@ -104,8 +104,8 @@ DOCS=		README doc/Guides-a4 doc/Guides-usletter
 BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/lam
 RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/lam
 MAKE_ENV+=	WM_MPLIB=LAM LAM_ARCH_PATH=${LOCALBASE}
-OMPI_VER=	1.2.2
-MPICH_VER=	1.0.5
+OMPI_VER=	1.2.5
+MPICH_VER=	1.0.7
 LAM_VER=	`${LOCALBASE}/bin/laminfo -version lam full | ${AWK} '{print $$2}'`
 MPI_LIB=	LAM
 PLIST_SUB+=	MPI="lam" MPI_VER=${LAM_VERSION}
@@ -114,17 +114,17 @@ BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
 MAKE_ENV+=	WM_MPLIB=MPICH MPICH_ARCH_PATH=${LOCALBASE}/mpich2
 MPI_LIBPATH=	${LOCALBASE}/mpich2/lib
-OMPI_VER=	1.2.2
+OMPI_VER=	1.2.5
 MPICH_VER=	`${LOCALBASE}/mpich2/bin/mpich2version --version`
-LAM_VER=	7.1.2
+LAM_VER=	7.1.4
 MPI_LIB=	MPICH
 PLIST_SUB+=	MPI="mpich" MPI_VER=${MPICH_VERSION}
 .else
 LIB_DEPENDS=	mpi.0:${PORTSDIR}/net/openmpi
 MAKE_ENV+=	WM_MPLIB=OPENMPI OPENMPI_ARCH_PATH=${LOCALBASE}/mpi/openmpi
 OMPI_VER=	`${LOCALBASE}/mpi/openmpi/bin/ompi_info --version ompi full --parsable | ${GREP} ompi:version:full | ${CUT} -d: -f4-`
-LAM_VER=	7.1.2
-MPICH_VER=	1.0.5
+LAM_VER=	7.1.4
+MPICH_VER=	1.0.7
 MPI_LIBPATH=	${LOCALBASE}/mpi/openmpi/lib
 MPI_LIB=	OPENMPI
 PLIST_SUB+=	MPI="openmpi" MPI_VER=${OMPI_VERSION}
@@ -170,7 +170,7 @@ MPICH_VERSION=	${MPICH_VER}
 . if exists(${LOCALBASE}/mpi/openmpi/bin/ompi_info)
 OMPI_VERSION!=	${LOCALBASE}/mpi/openmpi/bin/ompi_info --version ompi full --parsable | ${GREP} ompi:version:full | ${CUT} -d: -f4-
 . else
-OMPI_VERSION=	1.2.2
+OMPI_VERSION=	1.2.5
 . endif
 .endif
 
