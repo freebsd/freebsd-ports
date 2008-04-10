@@ -2054,6 +2054,7 @@
     SUBDIR += py-px
     SUBDIR += py-pycallgraph
     SUBDIR += py-pydasm
+    SUBDIR += py-pyshapelib
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
     SUBDIR += py-qt4-assistant
