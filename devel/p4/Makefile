@@ -33,6 +33,7 @@ ARCH?=	i386
 
 .if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == sparc64
 VERSION=	07.3
+REVISION=	1
 BIN_FILES=	p4
 SBIN_FILES=	p4d p4ftpd p4p p4web
 REL_NOTES=	http://www.perforce.com/perforce/doc.073/user/relnotes.txt
