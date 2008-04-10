@@ -17,6 +17,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplified Wrapper and Interface Generator
 
+DEPRECATED=	use devel/swig13 instead, last release of 1.1 was 8 years ago
+EXPIRATION_DATE=2008-05-10
+
 BUILD_DEPENDS=	${PYTHON_CMD}:${PYTHON_PORTSDIR} \
 		${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 
