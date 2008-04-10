@@ -1,35 +1,35 @@
 @comment $FreeBSD$
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/__init__.py
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/__init__.pyc
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/__init__.pyo
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/easter.py
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/easter.pyc
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/easter.pyo
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/parser.py
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/parser.pyc
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/parser.pyo
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/relativedelta.py
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/relativedelta.pyc
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/relativedelta.pyo
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/rrule.py
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/rrule.pyc
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/rrule.pyo
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tz.py
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tz.pyc
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tz.pyo
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tzwin.py
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tzwin.pyc
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/tzwin.pyo
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/zoneinfo/__init__.py
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/zoneinfo/__init__.pyc
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/zoneinfo/__init__.pyo
-%%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/zoneinfo/zoneinfo-2007k.tar.gz
-@dirrm %%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil/zoneinfo
-@dirrm %%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg/dateutil
-@dirrm %%PYTHON_SITELIBDIR%%/python_dateutil-1.4-py2.5.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/easter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/easter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/easter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/parser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/parser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/relativedelta.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/relativedelta.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/relativedelta.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/rrule.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/rrule.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/rrule.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/tz.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/tz.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/tz.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/tzwin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/tzwin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/tzwin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/zoneinfo/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/zoneinfo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/zoneinfo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/zoneinfo/zoneinfo-2007k.tar.gz
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil/zoneinfo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dateutil
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
