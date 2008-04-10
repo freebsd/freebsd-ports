@@ -27,6 +27,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
+		LIBS="${PTHREAD_LIBS}"
 
 MAN8=		telepathy-salut.8
 
