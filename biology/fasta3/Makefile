@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	fasta3
-PORTVERSION=	35.3.5
+PORTVERSION=	35.3.6
 CATEGORIES=	biology
-MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/
+MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/fasta3/
 DISTNAME=	fasta-${PORTVERSION}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
