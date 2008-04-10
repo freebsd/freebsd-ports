@@ -1,5 +1,4 @@
 bin/x264
-bin/avc2avi
 include/x264.h
 lib/libx264.a
 lib/libx264.so

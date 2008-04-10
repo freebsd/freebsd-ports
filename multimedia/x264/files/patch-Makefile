@@ -1,20 +1,20 @@
---- Makefile.orig	2007-07-09 10:11:24.000000000 -0400
-+++ Makefile	2007-07-09 10:11:49.000000000 -0400
-@@ -18,7 +18,7 @@
- endif
+--- Makefile.orig	2008-04-09 16:45:06.000000000 -0400
++++ Makefile	2008-04-09 20:47:32.490510083 -0400
+@@ -26,7 +26,7 @@
+           cpu-32.asm dct-32.asm
+ X86SRC = $(X86SRC0:%=common/x86/%)
  
- # MMX/SSE optims
 -ifeq ($(ARCH),X86)
 +ifeq ($(ARCH),i386)
- ifneq ($(AS),)
- SRCS   += common/i386/mc-c.c common/i386/predict-c.c
- ASMSRC  = common/i386/dct-a.asm common/i386/cpu-a.asm \
-@@ -32,7 +32,7 @@
+ SRCS   += common/x86/mc-c.c common/x86/predict-c.c
+ ASMSRC  = $(X86SRC) common/x86/pixel-32.asm
+ OBJASM  = $(ASMSRC:%.asm=%.o)
+@@ -35,7 +35,7 @@
+ checkasm: tools/checkasm-32.o
  endif
  
- # MMX/SSE optims
 -ifeq ($(ARCH),X86_64)
 +ifeq ($(ARCH),amd64)
- ifneq ($(AS),)
- SRCS   += common/i386/mc-c.c common/i386/predict-c.c
- ASMSRC  = common/amd64/dct-a.asm common/amd64/cpu-a.asm \
+ SRCS   += common/x86/mc-c.c common/x86/predict-c.c
+ ASMSRC  = $(X86SRC:-32.asm=-64.asm)
+ OBJASM  = $(ASMSRC:%.asm=%.o)
