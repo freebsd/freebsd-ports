@@ -13698,6 +13698,7 @@ py-pypcap	ports/net/py-pypcap
 py-pyproj	ports/graphics/py-pyproj
 py-pyscript	ports/print/py-pyscript
 py-pysearch	ports/www/py-pysearch
+py-pyshapelib	ports/devel/py-pyshapelib
 py-pysqlite20	ports/databases/py-pysqlite20
 py-pysqlite21	ports/databases/py-pysqlite21
 py-pysqlite22	ports/databases/py-pysqlite22
