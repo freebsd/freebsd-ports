@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	foxmarks
-PORTVERSION=	2.0.36
-#DISTVERSIONSUFFIX=	-fx
+PORTVERSION=	2.0.45
+DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
-MASTER_SITES=	http://jezebel.foxmarks.com/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Bookmark synchronizer
 
-#XPI_DISTNAME=	foxmarks_bookmark_synchronizer
+XPI_DISTNAME=	foxmarks_bookmark_synchronizer
 XPI_ID=		foxmarks@kei.com
 XPI_NUM=	2410
 
