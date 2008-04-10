@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.jumpbump.mine.nu/port/ \
 	http://www.vlaadworld.net/jumpnbump/ \
 	http://jumpnbump.linuxsys.de/
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	A fun multiplayer game with cute fluffy bunnies and bloody explosions
 
 USE_SDL=	mixer sdl

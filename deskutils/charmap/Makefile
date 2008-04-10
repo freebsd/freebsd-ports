@@ -1,6 +1,6 @@
 # New ports collection makefile for:    charmap
 # Date created:         28 Aug 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.nongnu.org/charmap/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Character map for GNUstep
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -1,6 +1,6 @@
 # New ports collection makefile for:    paje
 # Date created:         26 Sep 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	http://download.fr2.forge.objectweb.org/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Paje_${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Generic visualization tool for GNUstep (Gantt chart and more)
 
 USE_GNUSTEP=	yes

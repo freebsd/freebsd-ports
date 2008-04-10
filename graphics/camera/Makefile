@@ -1,6 +1,6 @@
 # New ports collection makefile for:    camera
 # Date created:         11 Sep 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://home.gna.org/gsimageapps/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Camera-${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	GNUstep application for digital still cameras
 
 LIB_DEPENDS+=	gphoto2_port:${PORTSDIR}/graphics/libgphoto2

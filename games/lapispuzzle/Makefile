@@ -1,6 +1,6 @@
 # New ports collection makefile for:    lapispuzzle
 # Date created:         13 Oct 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	LapisPuzzle-${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Tetris-like game for GNUstep
 
 USE_GNUSTEP=	yes

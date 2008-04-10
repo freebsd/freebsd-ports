@@ -1,6 +1,6 @@
 # New ports collection makefile for:    photoclip
 # Date created:         6 Oct 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.vaisburd.net/PhotoClip/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	PhotoClip-${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Simple image viewer and editor for GNUstep
 
 USE_GNUSTEP=	yes

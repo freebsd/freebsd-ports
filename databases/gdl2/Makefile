@@ -1,6 +1,6 @@
 # New ports collection makefile for:    gdl2
 # Date created:         12 Sep 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
 DISTNAME=	gnustep-dl2-${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	GNUstep Database Library 2 (Enterprise Objects Framework)
 
 USE_GNUSTEP=	yes

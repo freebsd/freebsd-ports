@@ -1,6 +1,6 @@
 # New ports collection makefile for:    terminal.app
 # Date created:         28 Aug 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ CATEGORIES=	x11 gnustep
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Terminal Emulator for GNUstep
 
 USE_GNUSTEP=	yes

@@ -1,6 +1,6 @@
 # New ports collection makefile for:    timemon.app
 # Date created:         28 Aug 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gap
 DISTNAME=	TimeMon-gnustep
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	CPU time usage monitor for GNUstep
 
 USE_GNUSTEP=	yes

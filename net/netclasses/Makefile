@@ -1,6 +1,6 @@
 # New ports collection makefile for:    netclasses
 # Date created:         07 Sep 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	net gnustep
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Objective-C framework for socket programming with GNUstep
 
 USE_GNUSTEP=	yes

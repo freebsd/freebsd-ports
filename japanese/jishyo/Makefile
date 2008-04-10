@@ -1,6 +1,6 @@
 # New ports collection makefile for:    jishyo
 # Date created:         30 Oct 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Jishyo-${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	English to Japanese dictionary for GNUstep
 
 USE_GNUSTEP=	yes

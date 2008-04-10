@@ -1,6 +1,6 @@
 # New ports collection makefile for:    ladder
 # Date created:         11 Sep 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/ \
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Ladder-${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	GNU Go frontend for GNUstep
 
 RUN_DEPENDS=	gnugo:${PORTSDIR}/games/gnugo

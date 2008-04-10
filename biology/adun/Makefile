@@ -1,6 +1,6 @@
 # New ports collection makefile for:    adun
 # Date created:         4 Sep 2006
-# Whom:                 gurkan@linuks.mine.nu
+# Whom:                 gurkan@phys.ethz.ch
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	biology gnustep
 MASTER_SITES=	http://download.gna.org/adun/
 DISTNAME=	Adun${PORTVERSION}
 
-MAINTAINER=	gurkan@linuks.mine.nu
+MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Molecular Simulator for GNUstep
 
 LIB_DEPENDS+=	gsl.12:${PORTSDIR}/math/gsl
