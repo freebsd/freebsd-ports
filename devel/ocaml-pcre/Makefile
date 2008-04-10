@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	5.11.2
-PORTREVISION=	2
+PORTVERSION=	5.14.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	pcre-ocaml-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Perl compatible regular expressions for Objective Caml
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
