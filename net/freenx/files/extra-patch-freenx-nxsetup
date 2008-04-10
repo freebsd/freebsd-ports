@@ -1,0 +1,20 @@
+--- nxsetup.orig	Mon Jan 22 19:22:50 2007
++++ nxsetup	
+@@ -135,7 +135,7 @@
+ 	then
+ 		egrep "^nx:" /etc/passwd >/dev/null
+ 	else
+-		getent passwd nx >/dev/null
++		egrep -q "^nx:" /etc/passwd >/dev/null
+ 	fi
+ }	
+ nx_group_exists()
+@@ -145,7 +145,7 @@
+ 	then
+ 		egrep "^nx:" /etc/group >/dev/null
+ 	else
+-		getent group nx >/dev/null
++		egrep -q "^nx:" /etc/group >/dev/null
+ 	fi
+ }	
+ 

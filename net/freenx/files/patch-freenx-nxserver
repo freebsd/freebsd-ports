@@ -1,17 +1,20 @@
---- freenx-0.4.4/nxserver.orig	Fri Aug  5 12:38:44 2005
-+++ freenx-0.4.4/nxserver	Tue Aug  9 15:24:19 2005
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/local/bin/bash
- 
- # Free implementation of nxserver components
- #
-@@ -1133,7 +1133,7 @@
- 	
- 	[ ${#CMD_CHUSER} -ge 32 ] && cmd_abort "Error: User $CMD_CHUSER must be shorter than 32 characters."
- 	egrep -q "^$CMD_CHUSER:" $NX_ETC_DIR/passwords && cmd_abort "Error: User $CMD_CHUSER already in database."
--	getent passwd "$CMD_CHUSER" >/dev/null || cmd_abort "Error: User $CMD_CHUSER not existing on local system. Can't add."
-+	cat /etc/passwd | egrep -q "^$CMD_CHUSER:" || cmd_abort "Error: User $CMD_CHUSER not existing on local system. Can't add."
- 	passdb_add_user "$CMD_CHUSER"
+--- nxserver.orig	Mon Jan 22 19:22:50 2007
++++ nxserver
+@@ -294,7 +294,7 @@
+ 	echo
+ 	echo "Display Username        Remote IP       Session ID                       Date                Status"
+ 	echo "------- --------------- --------------- -------------------------------- ------------------- -----------"
+-	for j in $(ls --time-style +%s -la "$NX_SESS_DIR"/{closed,failed,running} | awk '/sessionId/ { print $6 " " $7 }' | sort -n | cut -d" " -f2)
++	for j in $(gls --time-style +%s -la "$NX_SESS_DIR"/{closed,failed,running} | awk '/sessionId/ { print $6 " " $7 }' | sort -n | cut -d" " -f2)
+ 	do
+ 		if [ -n "$sessionId" ]
+ 		then
+@@ -307,7 +307,7 @@
+ 		then
+ 			[ "$userName" = "$(getparam userName)" ] || continue
+ 		fi
+-		echo -e "$(getparam display)\t$(getparam userName)\t$(getparam foreignAddress)\t$(getparam sessionId)\t$(ls --time-style="+%F %X" -l $i | awk '/sessionId/ { print $6 " " $7 }')\t$(getparam status)"
++		echo -e "$(getparam display)\t$(getparam userName)\t$(getparam foreignAddress)\t$(getparam sessionId)\t$(gls --time-style="+%F %X" -l $i | awk '/sessionId/ { print $6 " " $7 }')\t$(getparam status)"
+ 	done
  }
  
