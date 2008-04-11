@@ -4,7 +4,7 @@ lib/ardour2/libsndfile-ardour.so
 lib/ardour2/libpbd.so
 lib/ardour2/libmidi++.so
 lib/ardour2/libardour.so
-%%NO_VST%%lib/ardour2/ardour-2.3
+%%NO_VST%%lib/ardour2/ardour-%%DISTVERSION%%
 %%VST%%lib/ardour2/ardour_vst.exe.so
 %%VST%%lib/ardour2/libardourgtk.so
 lib/ardour2/libgtkmm2ext.so
@@ -23,14 +23,14 @@ lib/ardour2/vamp/libardourvampplugins.so
 @dirrm lib/ardour2/vamp
 @dirrm lib/ardour2
 etc/ardour2/ardour.menus
-etc/ardour2/ardour.bindings
 etc/ardour2/ardour_system.rc
 etc/ardour2/ardour2_ui_dark.rc
 etc/ardour2/ardour2_ui_light.rc
 etc/ardour2/ardour2_ui_default.conf
 etc/ardour2/ardour-sae.menus
-etc/ardour2/ardour-sae-ansi.bindings
-etc/ardour2/ardour-sae-de.bindings
+etc/ardour2/ergonomic-us.bindings
+etc/ardour2/mnemonic-us.bindings
+etc/ardour2/SAE-de.bindings
 @dirrmtry etc/ardour2
 share/ardour2/splash.png
 share/ardour2/pixmaps/hslider00.xpm
@@ -112,12 +112,14 @@ share/ardour2/icons/ardour_icon_48px.png
 share/ardour2/icons/ardour_icon_32px.png
 share/ardour2/icons/ardour_icon_16px.png
 share/ardour2/icons/saelogo.png
-share/ardour2/icons/saebig.png
-share/ardour2/icons/saelogo2.png
-share/ardour2/icons/saeoldlogo.png
 share/ardour2/icons/sae.png
-share/ardour2/icons/ferret_01.png
 share/ardour2/icons/ferret_02.png
+share/ardour2/icons/grabber_edit_point.png
+share/ardour2/icons/application-x-ardour_22px.png
+share/ardour2/icons/fader_belt_h.png
+share/ardour2/icons/application-x-ardour_32px.png
+share/ardour2/icons/application-x-ardour_48px.png
+share/ardour2/icons/application-x-ardour_16px.png
 @dirrm share/ardour2/icons
 share/ardour2/templates/16 Tracks.template
 share/ardour2/templates/2 Track.template
@@ -132,6 +134,7 @@ share/locale/el_GR/LC_MESSAGES/gtk2_ardour.mo
 share/locale/ru_RU/LC_MESSAGES/libgtkmm2ext.mo
 share/locale/ru_RU/LC_MESSAGES/libardour2.mo
 share/locale/ru_RU/LC_MESSAGES/gtk2_ardour.mo
+share/locale/po_PO/LC_MESSAGES/gtk2_ardour.mo
 share/locale/pt_BR/LC_MESSAGES/libgtkmm2ext.mo
 share/locale/pt_BR/LC_MESSAGES/gtk2_ardour.mo
 share/locale/pt_PT/LC_MESSAGES/gtk2_ardour.mo
@@ -143,7 +146,6 @@ share/locale/it_IT/LC_MESSAGES/gtk2_ardour.mo
 share/locale/sv_SE/LC_MESSAGES/libardour2.mo
 share/locale/sv_SE/LC_MESSAGES/gtk2_ardour.mo
 share/locale/de_DE/LC_MESSAGES/gtk2_ardour.mo
-share/locale/de_DE/LC_MESSAGES/libardour2.mo
 @dirrmtry share/locale/it_IT/LC_MESSAGES
 @dirrmtry share/locale/it_IT
 @dirrmtry share/locale/sv_SE/LC_MESSAGES
@@ -154,3 +156,5 @@ share/locale/de_DE/LC_MESSAGES/libardour2.mo
 @dirrmtry share/locale/ru_RU
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
+@dirrmtry share/locale/po_PO/LC_MESSAGES
+@dirrmtry share/locale/po_PO
