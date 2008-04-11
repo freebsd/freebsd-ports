@@ -9,7 +9,7 @@
 #
 # puppetmasterd_enable="YES"
 # puppetmasterd_confdir:	Set to %%PREFIX%%/etc/puppet by default
-# puppetmasterd_flags:		Set to --confdir $puppetmasterd_confdir --rundir /var/run" by default
+# puppetmasterd_flags:		Set to "--pidfile ${puppetmasterd_pid}" by default
 #
 
 . %%RC_SUBR%%
@@ -38,8 +38,8 @@ puppetmasterd_checkconfig() {
 load_rc_config "$name"
 : ${puppetmasterd_enable="NO"}
 : ${puppetmasterd_confdir="%%PREFIX%%/etc/puppet"}
-: ${puppetmasterd_pid="/var/run/${name}.pid"}
-: ${puppetmasterd_flags="--confdir $puppetmasterd_confdir --rundir /var/run"}
+: ${puppetmasterd_pid="%%PUPPET_RUNDIR%%/${name}.pid"}
+: ${puppetmasterd_flags="--pidfile ${puppetmasterd_pid}"}
 pidfile="$puppetmasterd_pid"
 
 run_rc_command "$1"

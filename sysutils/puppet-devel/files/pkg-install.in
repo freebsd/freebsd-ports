@@ -1,0 +1,42 @@
+#!/bin/sh
+# $FreeBSD$
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+
+PUPPET_USER=%%PUPPET_USER%%
+PUPPET_GROUP=%%PUPPET_GROUP%%
+UID=814
+GID=$UID
+
+RUNDIR=%%PUPPET_RUNDIR%%
+
+PW="pw"
+CHOWN="chown"
+INSTALL_DIR="install -d -o ${PUPPET_USER} -g ${PUPPET_GROUP} -m 0755"
+
+if [ "$2" = "PRE-INSTALL" ]; then
+
+	if ! ${PW} groupshow ${PUPPET_GROUP} 2>/dev/null 1>&2; then
+		if ${PW} groupadd ${PUPPET_GROUP} -g $GID; then
+			echo "=> Added group \"${PUPPET_GROUP}\"."
+		else
+			echo "=> Adding group \"${PUPPET_GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ! ${PW} usershow ${PUPPET_USER} 2>/dev/null 1>&2; then
+		if ${PW} useradd ${PUPPET_USER} -u $UID -g ${PUPPET_GROUP} -h - \
+			-s "/sbin/nologin" -d "/nonexistent" \
+            -c "Puppet Daemon"; then
+			echo "=> Added user \"${PUPPET_USER}\"."
+		else
+			echo "=> Adding user \"${PUPPET_USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+elif [ "$2" = "POST-INSTALL" ]; then
+	${INSTALL_DIR} ${RUNDIR}
+fi
+
+exit 0
