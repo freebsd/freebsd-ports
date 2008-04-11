@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geoserver
-PORTVERSION=	1.6.2a
+PORTVERSION=	1.6.3
 CATEGORIES=	graphics geography java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
