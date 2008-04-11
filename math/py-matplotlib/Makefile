@@ -18,7 +18,7 @@ MAINTAINER=	mainland@apeiron.net
 COMMENT=	A plotting library uses a syntax familiar to matlab users
 
 BUILD_DEPENDS=	${PYNUMERIC} \
-		${PYTHON_SITELIBDIR}/dateutil/__init__.py:${PORTSDIR}/devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_SITELIBDIR}/${PYPYTZ_EGG}:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${LOCALBASE}/lib/libagg.a:${PORTSDIR}/graphics/agg
