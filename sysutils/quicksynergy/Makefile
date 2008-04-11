@@ -18,10 +18,11 @@ BUILD_DEPENDS=	synergys:${PORTSDIR}/sysutils/synergy
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 libglade
 
+BROKEN=		does not build
+
 PLIST_FILES=	bin/quicksynergy
 
 pre-configure:
 	@${REINPLACE_CMD} 's|ac_default_prefix=/usr/local|ac_default_prefix=${PREFIX}|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} 's|static GtkActionEntry|const \1|' ${WRKSRC}/src/callbacks.c
 
 .include <bsd.port.mk>
