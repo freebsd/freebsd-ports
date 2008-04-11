@@ -6,13 +6,14 @@
 
 PORTNAME=	phpSysInfo
 DISTVERSION=	3.0-RC4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A php script that displays info about the host being accessed
 
-USE_PHP=	pcre xml
+USE_PHP=	pcre xml simplexml
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:L}
