@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nero
-PORTVERSION=	3.0.0.0
+PORTVERSION=	3.5.0.1
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://ftp6.usw.nero.com/software/NeroLINUX/ \
 		ftp://ftp6.usw.nero.com/software/NeroLINUX/
@@ -21,8 +21,9 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/l
 
 RESTRICTED=	Get a serial number at http://www.nero.com/eng/NeroLINUX.html
 
+ONLY_FOR_ARCH=	i386 amd64
 USE_LINUX_RPM=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin
 SRC_DISTFILES=
 
