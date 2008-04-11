@@ -2141,6 +2141,7 @@ docbook-xsd	ports/textproc/docbook-xsd
 docbook-xsl	ports/textproc/docbook-xsl
 docbookide.el	ports/textproc/docbookide.el
 docdiff		ports/textproc/docdiff
+docebo		ports/www/docebo
 docker		ports/x11/docker
 doclifter	ports/textproc/doclifter
 docproj		ports/textproc/docproj
