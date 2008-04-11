@@ -15,6 +15,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby module for SWIG 1.1
 
+DEPRECATED=	use devel/swig13 instead, last release was 8 years ago
+EXPIRATION_DATE=2008-05-10
+
 BUILD_DEPENDS=	swig1.1:${PORTSDIR}/devel/swig11
 RUN_DEPENDS=	swig1.1:${PORTSDIR}/devel/swig11
 
