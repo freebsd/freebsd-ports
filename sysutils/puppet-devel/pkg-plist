@@ -7,54 +7,8 @@ bin/puppetdoc
 bin/puppetrun
 bin/puppetmasterd
 bin/ralsh
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/puppet/tagmail.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/puppet/puppetmasterd.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/puppet/puppetd.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/puppet/namespaceauth.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/puppet/fileserver.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/otherfile
-%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/init.d/sleeper
-%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/debian-syslog.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/debian-passwd
-%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/configfile
-%%PORTDOCS%%%%EXAMPLESDIR%%/root/bin/sleeper
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/svncommit
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/simpletests
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/selectors
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/relationships
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/one
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/nodes
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/mac_pkgdmg.pp
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/mac_netinfo.pp
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/mac_dscl_revert.pp
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/mac_dscl.pp
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/mac_automount.pp
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/importing
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/head
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/groups
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/functions
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/filerecursion
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/fileparsing
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/filedefaults
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/file.bl
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/execs
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/components
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/assignments
-%%PORTDOCS%%%%EXAMPLESDIR%%/code/allatonce
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/root/bin
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/root/etc/init.d
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/root/etc/puppet
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/root/etc
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/root
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/code/modules
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/code
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
 etc/puppet/puppet.conf-dist
 @dirrmtry etc/puppet/ssl
 @dirrmtry etc/puppet/manifests
 @dirrmtry etc/puppet
+@dirrmtry /var/run/puppet
