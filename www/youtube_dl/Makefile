@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2008.03.22
+PORTVERSION=	2008.04.07
 CATEGORIES=	www
 MASTER_SITES=	http://www.arrakis.es/~rggi3/youtube-dl/
 DISTNAME=	youtube-dl-${PORTVERSION}
@@ -37,10 +37,10 @@ EXTRA_PATCHES+=	${PATCHDIR}/conv2avi.patch
 IGNORE=	cannot use WITH_FFMPEG and WITH_FLV2MPEG4 simultaneously
 .endif
 CONV2AVI_CMD=	${PREFIX}/bin/ffmpeg -y -i
-RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 .elif defined (WITH_FLV2MPEG4)
 CONV2AVI_CMD=	${PREFIX}/bin/flv2mpeg4
-RUN_DEPENDS=	flv2mpeg4:${PORTSDIR}/multimedia/flv2mpeg4
+RUN_DEPENDS+=	flv2mpeg4:${PORTSDIR}/multimedia/flv2mpeg4
 .endif
 
 post-extract:
