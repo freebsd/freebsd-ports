@@ -41,12 +41,13 @@ pb=/var/portbuild
 arch=$(cat /etc/arch)
 
 . ${pb}/${arch}/portbuild.conf
+. ${pb}/${arch}/portbuild.$(hostname)
 
 if [ "${use_zfs}" = "1" ]; then
   old=$(find ${scratchdir}/*/* -prune -mmin +20 2> /dev/null)
 else 
   old=$(find ${scratchdir}/*/chroot/* -prune -mmin +20 2> /dev/null)
-endif
+fi
 
 if [ -z "${old}" ]; then
 	exit 0
@@ -78,7 +79,7 @@ for i in ${old2}; do
 	  done
 	  umount ${i}/compat/linux/proc || cleanup_mount ${i}/compat/linux/proc
 	fi
-	if [ "${use_md_swap}" = "1" ]; then
+	if [ "${use_zfs}" != "1" -a "${use_md_swap}" = "1" ]; then
 		chrootnum=$(basename $i)
 		umount -f /dev/md${i}
 		mdconfig -d -u ${chrootnum}
