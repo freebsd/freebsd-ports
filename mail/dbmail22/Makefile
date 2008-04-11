@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.10
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 
@@ -25,7 +25,6 @@ OPTIONS=	MYSQL		"Build with MySQL support" on \
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	YES
-USE_GCC=	3.2+
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh dbmail-timsieved.sh
 USE_GNOME=	glib20 pkgconfig
