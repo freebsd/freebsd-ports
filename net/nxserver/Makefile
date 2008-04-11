@@ -55,6 +55,8 @@ post-patch:
 		${WRKSRC}/nxdesktop/Makefile
 	@${REINPLACE_CMD} -e "s|/usr/local/|${PREFIX}/|" \
 		${WRKSRC}/nxviewer/nxviewer/Imakefile
+	@${REINPLACE_CMD} -e "s|objformat=.*|objformat=elf|" \
+		 ${WRKSRC}/nxesd/configure
 
 do-configure:
 .if defined(TEMPLATES) && exists(${TEMPLATES}/config.guess) && exists(${TEMPLATES}/config.sub)
