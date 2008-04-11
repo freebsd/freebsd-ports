@@ -1765,6 +1765,7 @@ cvsync		ports/net/cvsync
 cw		ports/sysutils/cw
 cwdaemon	ports/comms/cwdaemon
 cweb		ports/devel/cweb
+cwirc		ports/irc/cwirc
 cwish		ports/misc/cwish
 cwtext		ports/textproc/cwtext
 cxmon		ports/devel/cxmon
