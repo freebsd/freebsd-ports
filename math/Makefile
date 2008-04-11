@@ -352,6 +352,7 @@
     SUBDIR += scilab-toolbox-sivp
     SUBDIR += scilab-toolbox-swt
     SUBDIR += sdpa
+    SUBDIR += sdpa-gmp
     SUBDIR += sdpara
     SUBDIR += ses
     SUBDIR += simd-viterbi
