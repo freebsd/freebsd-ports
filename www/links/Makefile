@@ -6,61 +6,65 @@
 #
 
 PORTNAME=	links
-PORTVERSION=	2.1.p28
+DISTVERSION=	2.1pre33
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
-DISTNAME=	${PORTNAME}-2.1pre28
 
 MAINTAINER?=	demon@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser
 
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+CONFLICTS=	links-0*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-javascript --with-ssl
-CONFIGURE_ENV+=	CPPFLAGS='-I${LOCALBASE}/include'
+CONFIGURE_ARGS+=	--with-ssl --without-pmshell --without-atheos \
+			--without-gpm --without-fb
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
 
 OPTIONS=	SVGALIB "non-X11 graphics support" off \
+		DIRECTFB "directfb driver support" off \
 		X11 "X11 graphics support" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SVGALIB)
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib \
-		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
-CONFIGURE_ARGS+=	--enable-graphics
-OPTIONS_MESG=	"non-X11 graphics support enabled, "
-.else
-CONFIGURE_ARGS+=	--without-svgalib
-OPTIONS_MESG=	"non-X11 graphics support disabled, "
-.endif
-
-.if !defined(WITHOUT_X11)
+.ifdef(WITH_SVGALIB) || defined(WITH_X11) || defined(WITH_DIRECTFB)
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
-USE_XORG=	x11
-CONFIGURE_ARGS+=	--enable-graphics --with-x
-OPTIONS_MESG+=	"X11 graphics support enabled."
+CONFIGURE_ARGS+=	--enable-graphics
+.else
+CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff
+.endif
+
+.ifdef(WITH_SVGALIB)
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+CONFIGURE_ARGS+=	--with-svgalib
+.else
+CONFIGURE_ARGS+=	--without-svgalib
+.endif
+
+.ifdef(WITH_DIRECTFB)
+LIB_DEPENDS+=		libdirectfb:${PORTSDIR}/devel/directfb
+CONFIGURE_ARGS+=	--with-directfb
+.else
+CONFIGURE_ARGS+=	--without-directfb
+.endif
+
+.if !defined(WITHOUT_X11)
+USE_XORG=	x11 xproto
+CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x
-OPTIONS_MESG+=	"X11 graphics support disabled."
 .endif
 
 MAN1=		links.1
 PLIST_FILES=	bin/links
 
-pre-everything::
-		@${ECHO_MSG} ${OPTIONS_MESG}
-
 post-patch:
-	@${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/default.c
+	@${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/os_dep.h
 
 .include <bsd.port.post.mk>
