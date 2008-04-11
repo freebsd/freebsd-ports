@@ -19,7 +19,7 @@ CONFLICTS=	star-1.5*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	MAKEPROG=${GMAKE} CCOM=${CC}
+MAKE_ENV=	LANG=C MAKEPROG=gmake CCOM=${CC}
 MAN1=		star.1
 MLINKS=		star.1 ustar.1
 
