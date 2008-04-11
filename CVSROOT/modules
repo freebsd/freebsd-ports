@@ -12187,6 +12187,7 @@ pear-HTML_TreeMenu	ports/devel/pear-HTML_TreeMenu
 pear-HTTP	ports/www/pear-HTTP
 pear-HTTP_Client	ports/www/pear-HTTP_Client
 pear-HTTP_Download	ports/www/pear-HTTP_Download
+pear-HTTP_FloodControl	ports/www/pear-HTTP_FloodControl
 pear-HTTP_Header	ports/www/pear-HTTP_Header
 pear-HTTP_Request	ports/www/pear-HTTP_Request
 pear-HTTP_Server	ports/www/pear-HTTP_Server
