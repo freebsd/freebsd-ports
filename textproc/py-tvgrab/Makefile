@@ -17,7 +17,7 @@ DISTNAME=	${MASTER_SITE_SUBDIR}-lib-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A xmltv python library to write grabbers of tv scheduling collections
 
-EXTRACT_DEPENDS=	${PYTHON_SITELIBDIR}/dateutil/__init__.py:${PORTSDIR}/devel/py-dateutil:extract
+EXTRACT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil:extract
 
 USE_BZIP2=		yes
 USE_PYTHON=		yes
