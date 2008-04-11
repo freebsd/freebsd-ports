@@ -47,6 +47,8 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 # IGNORE_WITH_PGSQL
 #				- This variable can be defined if the ports doesn't support
 #				  one or more versions of PostgreSQL.
+# WITH_PGSQL_VER
+#				- User defined variable to set PostgreSQL version.
 # PGSQL_VER
 #				- Detected PostgreSQL version.
 ##
@@ -160,16 +162,23 @@ PGSQL83_LIBVER=		5
 _PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)[^0-9].*/\1\2/p'
 .endif
 
-.if defined(WANT_PGSQL_VER) && defined(_PGSQL_VER) && ${WANT_PGSQL_VER} != ${_PGSQL_VER}
-IGNORE=		cannot install: the port wants postgresql${WANT_PGSQL_VER}-client but you have postgresql${_PGSQL_VER}-client installed
+.if defined(WANT_PGSQL_VER)
+.if defined(WITH_PGSQL_VER) && ${WITH_PGSQL_VER} != ${WANT_PGSQL_VER}
+IGNORE=		cannot install: the port wants postgresql${WANT_PGSQL_VER}-client and you try to install postgresql${WITH_PGSQL_VER}-client.
 .endif
-
+PGSQL_VER=	${WANT_PGSQL_VER}
+.elif defined(WITH_PGSQL_VER)
+PGSQL_VER=	${WITH_PGSQL_VER}
+.else
 .if defined(_PGSQL_VER)
 PGSQL_VER=	${_PGSQL_VER}
-.elif defined(WANT_PGSQL_VER)
-PGSQL_VER=	${WANT_PGSQL_VER}
 .else
 PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.endif
+.endif # WANT_PGSQL_VER
+
+.if defined(_PGSQL_VER) && ${PGSQL_VER} != ${_PGSQL_VER}
+IGNORE=		cannot install: the port wants postgresql${PGSQL_VER}-client but you have postgresql${_PGSQL_VER}-client installed
 .endif
 
 # And now we are checking if we can use it
