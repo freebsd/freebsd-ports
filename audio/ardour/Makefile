@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ardour
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.1
 CATEGORIES=	audio
 MASTER_SITES=	http://ardour.org/files/releases/
 DISTFILES=	ardour-${DISTVERSION}.tar.bz2
@@ -40,7 +40,6 @@ TEMPLATESDIR=	${PREFIX}/share/ardour2/templates
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 OPTIONS=	OPTIMIZED_CFLAGS "Builds with compiler optimizations" on \
 		VST "Enable VST plugins support" off
-WRKSRC=		${WRKDIR}/ardour-2.3
 
 .include <bsd.port.pre.mk>
 

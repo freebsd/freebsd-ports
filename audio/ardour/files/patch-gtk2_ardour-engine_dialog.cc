@@ -1,5 +1,5 @@
---- gtk2_ardour/engine_dialog.cc.orig	2008-01-15 03:58:38.000000000 +0100
-+++ gtk2_ardour/engine_dialog.cc	2008-01-15 22:30:06.000000000 +0100
+--- gtk2_ardour/engine_dialog.cc.orig	2008-04-09 23:17:02.000000000 +0200
++++ gtk2_ardour/engine_dialog.cc	2008-04-10 18:53:32.000000000 +0200
 @@ -12,7 +12,7 @@
  #include <CoreFoundation/CFString.h>
  #include <sys/param.h>
@@ -64,7 +64,7 @@
  	label = manage (new Label (_("Input device")));
  	label->set_alignment (1.0, 0.5);
  	device_packer.attach (*label, 0, 1, row, row+1, FILL|EXPAND, (AttachOptions) 0);
-@@ -568,7 +570,7 @@
+@@ -570,7 +572,7 @@
  void
  EngineControl::realtime_changed ()
  {
@@ -73,7 +73,7 @@
  	priority_spinner.set_sensitive (realtime_button.get_active());
  #endif
  }
-@@ -584,8 +586,10 @@
+@@ -586,8 +588,10 @@
  #endif
  
  #ifndef __APPLE__
@@ -84,7 +84,7 @@
  	} else if (driver == "FFADO") {
  		devices[driver] = enumerate_ffado_devices ();
  	} else if (driver == "OSS") {
-@@ -712,6 +716,7 @@
+@@ -714,6 +718,7 @@
  	return devs;
  }
  #else
@@ -92,7 +92,7 @@
  vector<string>
  EngineControl::enumerate_alsa_devices ()
  {
-@@ -772,6 +777,7 @@
+@@ -774,6 +779,7 @@
  
  	return devs;
  }
@@ -100,7 +100,17 @@
  
  vector<string>
  EngineControl::enumerate_ffado_devices ()
-@@ -860,7 +866,7 @@
+@@ -816,7 +822,9 @@
+ 	vector<string>& strings = devices[driver];
+ 
+ 	if (strings.empty() && driver != "FFADO" && driver != "Dummy") {
++#if 0
+ 		error << string_compose (_("No devices found for driver \"%1\""), driver) << endmsg;
++#endif
+ 		return;
+ 	}
+ 	
+@@ -862,7 +870,7 @@
  EngineControl::redisplay_latency ()
  {
  	uint32_t rate = get_rate();
