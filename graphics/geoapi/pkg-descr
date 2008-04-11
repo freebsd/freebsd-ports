@@ -1,0 +1,6 @@
+GeoAPI provides a set of interfaces from OpenGIS specifications.The development
+community in building GIS solutions is sustaining an enormous level of effort.
+The GeoAPI project aims to reduce duplication and increase interoperability by
+providing neutral, interface-only APIs derived from OGC/ISO Standards.
+
+WWW:  http://geoapi.sf.net
