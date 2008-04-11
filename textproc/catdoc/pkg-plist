@@ -1,6 +1,6 @@
 bin/catdoc
 bin/catppt
-bin/wordview
+%%WORDVIEW%%bin/wordview
 bin/xls2csv
 %%DATADIR%%/8859-1.txt
 %%DATADIR%%/8859-10.txt

@@ -7,6 +7,7 @@
 
 PORTNAME=	catdoc
 PORTVERSION=	0.94.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
@@ -19,7 +20,9 @@ COMMENT=	MS Word/Excel converter to plain ASCII or TeX. TK viewer included
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAN1=		catdoc.1 wordview.1 xls2csv.1 catppt.1
+MAN1=		catdoc.1 xls2csv.1 catppt.1
+
+OPTIONS=	WORDVIEW	"Build Tcl/Tk document viewer" On
 
 .if !defined(LANG) || ${LANG} != ru_RU.KOI8-R
 # Remove the below line to get Cyrillic code page support instead
@@ -31,11 +34,15 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.for i in 0 1 2 3 4
-.if exists(${LOCALBASE}/bin/wish8.${i})
-CONFIGURE_ARGS=	--with-wish=${LOCALBASE}/bin/wish8.${i}
-RUN_DEPENDS+=	${LOCALBASE}/bin/wish8.${i}:${PORTSDIR}/x11-toolkits/tk8${i}
+.if defined(WITH_WORDVIEW)
+USE_TK=			80+
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+CONFIGURE_ARGS+=	--with-wish=${WISH}
+PLIST_SUB+=		WORDVIEW=""
+MAN1+=			wordview.1
+.else
+CONFIGURE_ARGS+=	--disable-wordview
+PLIST_SUB+=		WORDVIEW="@comment "
 .endif
-.endfor
 
 .include <bsd.port.post.mk>
