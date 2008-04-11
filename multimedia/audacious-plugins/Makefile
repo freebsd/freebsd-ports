@@ -319,7 +319,7 @@ PLIST_SUB+=	MMSPLUGIN="@comment "
 .endif
 
 .if defined(WITH_MTP)
-LIB_DEPENDS+=	mtp.6:${PORTSDIR}/audio/libmtp
+LIB_DEPENDS+=	mtp.8:${PORTSDIR}/audio/libmtp
 CONFIGURE_ARGS+=--enable-mtp_up
 PLIST_SUB+=	MTPPLUGIN=""
 .else
