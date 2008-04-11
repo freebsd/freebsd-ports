@@ -7,7 +7,7 @@
 
 PORTNAME=	cups
 PORTVERSION=	1.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
@@ -19,7 +19,6 @@ COMMENT=	Common UNIX Printing System
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 CONFLICTS=	LPRng-[0-9]*
 
@@ -52,7 +51,8 @@ OPTIONS=	GNUTLS		"Build with GNUTLS library" on \
 		DNSSD		"Build with DNS_SD (avahi) support" off \
 		PAM		"Build with PAM support" off \
 		LDAP		"Build with LDAP support" off \
-		DBUS		"Build with DBUS support" off
+		DBUS		"Build with DBUS support" off \
+		XDG_OPEN	"Build with XDG_OPEN support" off
 
 CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_SPOOLDIR=	/var/spool/cups
@@ -132,6 +132,10 @@ CONFIGURE_ARGS+=	--enable-dbus
 CONFIGURE_ARGS+=	--disable-dbus
 .endif
 
+.if defined(WITH_XDG_OPEN)
+RUN_DEPENDS=		xdg-open:${PORTSDIR}/devel/xdg-utils
+.endif
+
 MAN1EXT=	1
 MAN5EXT=	5
 MAN7EXT=	7
@@ -187,7 +191,9 @@ post-configure:
 .endif
 
 post-patch:
+.if defined(WITH_XDG_OPEN)
 	@${REINPLACE_CMD} -e 's|htmlview|xdg-open|' ${WRKSRC}/desktop/cups.desktop
+.endif
 	@${REINPLACE_CMD} -e '/SILENT/d' ${WRKSRC}/Makedefs.in
 	@${REINPLACE_CMD} -e '/share/s|/usr/share|${PREFIX}/share|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/cups|/usr/local/etc/cups|g' ${WRKSRC}/man/*.man*
