@@ -1,0 +1,17 @@
+The HTTP_FloodControl package can be used to detect and protect a
+Web site from attempts to flood it with too many requests. It also allows to
+protect the site from automatic downloading many pages or files from the same
+IP address, session ID or other unique identifier.
+
+The detection of flood is determine according to a set of parameters indicating
+the maximal allowed number of requests for the certain time interval. It is
+possible to set several parameters at once in order to perform more effective
+protection.
+
+The package uses various storage containers (regular files, DB, MDB, MDB2) to
+handle counter logs.
+
+WWW: http://pear.php.net/package/HTTP_FloodControl/
+
+- Ditesh Shashikant Gathani
+ditesh@gathani.org
