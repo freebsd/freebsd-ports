@@ -1978,6 +1978,7 @@
     SUBDIR += py-bison
     SUBDIR += py-boto
     SUBDIR += py-celementtree
+    SUBDIR += py-cfgparse
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon
     SUBDIR += py-cjson
