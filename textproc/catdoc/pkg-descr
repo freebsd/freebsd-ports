@@ -1,19 +1,10 @@
-This is a program for viewing MS Word documents.  It produces plain
-text output and can optionally convert non-standard characters into 
-TeX control sequences.  It works with MS Word 97 documents.
+This is a program for viewing RTF and MS Word 97 documents.  It produces
+plain text output and can optionally convert some non-standard characters
+into TeX control sequences.  It has rudimentary table handling in TeX
+mode.  Also included are:
+- wordview, a small GUI frontend to catdoc that works with Tcl/Tk 7.6 and up;
+- xls2csv, which converts Excel spreadsheets to plain text files with CSV
+  (comma-separated value) lines; and
+- catppt, which extracts text from PowerPoint files.
 
-There is also a cute little Tcl/Tk program included called wordview, which
-is basically a small GUI frontend to catdoc for viewing word documents.
-The wordview program works with Tcl 7.6 and up, but uses Tk 8.0 by default.
-
-There are two more utilities, xls2csv and xlsview, for dealing with
-MS Excel spreadsheets.  xls2csv converts an Excel spreadsheet to a plain
-text file with CSV (comma-separated values) lines.
-
-WWW: http://www.45.free.net/~vitus/software/catdoc/
-
-- Brion
-brion@queeg.com
-
-- Steve
-steve@farrell.org
+WWW: http://wagner.pp.ru/~vitus/software/catdoc/
