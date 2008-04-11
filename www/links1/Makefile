@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 
 USE_OPENSSL=	yes
 NO_LATEST_LINK=	yes
+CONFLICTS=	links-2*
 
 MAN1=		links.1
 
