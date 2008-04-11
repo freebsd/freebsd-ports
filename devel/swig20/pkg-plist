@@ -30,6 +30,7 @@ bin/swig%%VER%%
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Modules.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Mzscheme.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Ocaml.html
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Octave.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Perl5.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Php.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Pike.html
@@ -447,6 +448,10 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/java/variables/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/java/variables/index.html
 %%EXAMPLESDIR%%/%%PORTVERSION%%/java/variables/main.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/arrays/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/arrays/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/arrays/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/arrays/runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/check.list
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/class/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/class/example.cxx
@@ -465,6 +470,15 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed/runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed2/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed2/embed2.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed2/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed2/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed2/runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/exception/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/exception/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/exception/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/exception/runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/funcptr3/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/funcptr3/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/funcptr3/example.h
@@ -490,6 +504,11 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/spam.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/spam.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/lua.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/owner/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/owner/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/owner/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/owner/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/owner/runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer/example.i
@@ -1441,6 +1460,241 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/pp_misplaced_else.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/pp_missing_enddef.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/pp_missing_endif.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_boost_shared_ptr_bits.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/pointer_reference_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/Makefile.in
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/abstract_access_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/abstract_typedef2_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/abstract_typedef_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/abstract_virtual_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/argcargvtest_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/array_member_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/arrays_global_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/callback_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/class_ignore_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/class_scope_weird_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/compactdefaultargs_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/complextest_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/constover_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/constructor_copy_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/contract_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/cpp_enum_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/cpp_namespace_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/default_args_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/default_constructor_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_abstract_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_basic_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_classic_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_default_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_detect_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_enum_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_exception_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_extend_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_finalizer_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_frob_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_nested_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_stl_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_string_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_unroll_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/director_wstring_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/dynamic_cast_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/empty_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/enum_template_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/enums_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/exception_order_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/extend_placement_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/extend_template_ns_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/extend_template_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/extend_variable_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/file_test_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/friends_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/fvirtual_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/global_ns_arg_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/grouping_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/iadd_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/implicittest.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/import_nomodule_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/imports_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/inctest_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/inherit_missing_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/inout_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/inplaceadd_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/input_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_attribute_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_boost_shared_ptr_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_carrays_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_cmalloc_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_cpointer_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_cstring_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_cwstring_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_factory_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_implicit_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_std_carray_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_std_map_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_std_pair.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_std_pair_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_std_set_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_std_stream_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_std_string.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_std_string_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_std_vector_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_std_wstream_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/li_std_wstring_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/member_pointer_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/minherit_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/mod_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/multi_import_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/namespace_class_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/namespace_typemap_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/namespace_virtual_method_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/naturalvar_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/nondynamic_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/overload_complicated_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/overload_copy_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/overload_extend_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/overload_extendc_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/overload_rename_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/overload_simple_cast_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/overload_simple_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/overload_subtype_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/overload_template_fast_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/overload_template_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/preproc_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/primitive_ref_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/primitive_types_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/profiletest_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/refcount_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/reference_global_vars_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/rename_scope_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/ret_by_value_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/return_const_value_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/smart_pointer_extend_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/smart_pointer_member_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/smart_pointer_multi_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/smart_pointer_multi_typedef_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/smart_pointer_not_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/smart_pointer_overload_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/smart_pointer_rename_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/smart_pointer_simple_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/smart_pointer_templatevariables_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/smart_pointer_typedef_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/sneaky1_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/static_const_member_2_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/std_containers_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/struct_rename_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/struct_value_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/swigobject_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_construct_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_default_arg_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_extend1_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_extend2_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_inherit_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_matrix_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_ns4_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_ns_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_opaque_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_ref_type_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_rename_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_static_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_tbase_template_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_type_namespace_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_typedef_cplx2_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_typedef_cplx3_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_typedef_cplx4_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_typedef_cplx_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_typedef_import_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/template_typedef_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/typedef_class_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/typedef_inherit_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/typedef_scope_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/typemap_namespace_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/typemap_ns_using_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/typename_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/types_directive_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/unions_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/using1_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/using2_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/using_composition_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/using_extend_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/using_inherit_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/using_private_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/using_protected_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/varargs_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/virtual_derivation_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/virtual_poly_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/voidtest_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave/wrapmacro_runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/operator_overload_break.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/operator_overload_break_runme.pl
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_boost_shared_ptr_bits_runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/callback/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/callback/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/callback/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/callback/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/callback/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/check.list
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/class/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/class/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/class/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/class/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/class/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/constants/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/constants/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/constants/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/contract/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/contract/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/contract/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/contract/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/enum/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/enum/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/enum/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/enum/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/enum/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/extend/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/extend/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/extend/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/extend/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/extend/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr2/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr2/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr2/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr2/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr2/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/functor/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/functor/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/functor/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/operator/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/operator/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/operator/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/operator/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/pointer/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/pointer/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/pointer/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/pointer/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/reference/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/reference/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/reference/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/reference/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/reference/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/simple/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/simple/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/simple/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/simple/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/template/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/template/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/template/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/template/runme.m
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/variables/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/variables/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/variables/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/variables/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/octave/variables/runme.m
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/pp_missing_file.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/pp_missing_rblock.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/pp_unterm_char.i
@@ -2607,6 +2861,42 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/ocaml/typecheck.i
 %%DATADIR%%/%%PORTVERSION%%/ocaml/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/ocaml/typeregister.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/attribute.i
+%%DATADIR%%/%%PORTVERSION%%/octave/boost_shared_ptr.i
+%%DATADIR%%/%%PORTVERSION%%/octave/carrays.i
+%%DATADIR%%/%%PORTVERSION%%/octave/cdata.i
+%%DATADIR%%/%%PORTVERSION%%/octave/cmalloc.i
+%%DATADIR%%/%%PORTVERSION%%/octave/director.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/exception.i
+%%DATADIR%%/%%PORTVERSION%%/octave/factory.i
+%%DATADIR%%/%%PORTVERSION%%/octave/implicit.i
+%%DATADIR%%/%%PORTVERSION%%/octave/octave.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/octcomplex.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/octcontainer.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/octfragments.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/octiterators.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/octopers.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/octprimtypes.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/octrun.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/octruntime.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/octstdcommon.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/octtypemaps.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/octuserdir.swg
+%%DATADIR%%/%%PORTVERSION%%/octave/std_alloc.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_basic_string.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_carray.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_char_traits.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_common.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_complex.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_container.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_deque.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_except.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_map.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_pair.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_string.i
+%%DATADIR%%/%%PORTVERSION%%/octave/std_vector.i
+%%DATADIR%%/%%PORTVERSION%%/octave/stl.i
+%%DATADIR%%/%%PORTVERSION%%/octave/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/perl5/Makefile.pl
 %%DATADIR%%/%%PORTVERSION%%/perl5/attribute.i
 %%DATADIR%%/%%PORTVERSION%%/perl5/carrays.i
@@ -2962,6 +3252,7 @@ bin/swig%%VER%%
 @dirrm %%DATADIR%%/%%PORTVERSION%%/pike
 @dirrm %%DATADIR%%/%%PORTVERSION%%/php4
 @dirrm %%DATADIR%%/%%PORTVERSION%%/perl5
+@dirrm %%DATADIR%%/%%PORTVERSION%%/octave
 @dirrm %%DATADIR%%/%%PORTVERSION%%/ocaml
 @dirrm %%DATADIR%%/%%PORTVERSION%%/mzscheme
 @dirrm %%DATADIR%%/%%PORTVERSION%%/modula3
@@ -2990,6 +3281,7 @@ bin/swig%%VER%%
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/php4
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/Test
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/octave
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ocaml
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mzscheme
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua
@@ -3117,6 +3409,22 @@ bin/swig%%VER%%
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/constants
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/class
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/variables
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/template
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/simple
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/reference
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/pointer
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/operator
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/functor
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr2
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/funcptr
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/extend
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/enum
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/contract
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/constants
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/class
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave/callback
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/octave
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ocaml/strings_test
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ocaml/string_from_ptr
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ocaml/stl
@@ -3142,14 +3450,18 @@ bin/swig%%VER%%
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/variables
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/simple
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/owner
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functor
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functest
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/funcptr3
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/exception
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed2
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/dual
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/constants
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/class
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/arrays
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/java/variables
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/java/typemap
