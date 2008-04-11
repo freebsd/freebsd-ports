@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	expat
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	expat
@@ -18,19 +17,18 @@ COMMENT=	XML 1.0 parser written in C
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	default
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAN1=		xmlwf.1
 
 SHLIB_MAJOR=	6
 
-MAKE_ENV=	LIBCURRENT="${SHLIB_MAJOR}" \
-		SHELL="/bin/sh"
+MAKE_ENV=	LIBCURRENT="${SHLIB_MAJOR}"
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 list-depend-ports:
 	cd ${PORTSDIR}; \
-	find . -mindepth 3 -maxdepth 3 -name Makefile -execdir sh -c \
-		'find . -type f | grep -v CVS | xargs grep -q expat.5' \; \
+	${FIND} . -mindepth 3 -maxdepth 3 -name Makefile -execdir ${SH} -c \
+		'${FIND} . -type f | ${GREP} -v CVS | ${XARGS} ${GREP} -q expat.5' \; \
 		-print
 
 .include <bsd.port.mk>

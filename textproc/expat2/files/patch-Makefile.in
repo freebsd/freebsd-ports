@@ -1,14 +1,11 @@
---- Makefile.in.orig	Thu Jan 12 00:28:02 2006
-+++ Makefile.in	Thu Jan 12 00:28:10 2006
-@@ -44,9 +44,9 @@
+--- Makefile.in.orig	Sun Jun 10 21:10:33 2007
++++ Makefile.in	Sun Jun 10 21:11:18 2007
+@@ -44,8 +44,6 @@
  APIHEADER = $(srcdir)/lib/expat.h $(srcdir)/lib/expat_external.h
  LIBRARY = libexpat.la
  
--ifndef INSTALL_ROOT
-+#ifndef INSTALL_ROOT
- INSTALL_ROOT=$(DESTDIR)
--endif
-+#endif
- 
+-DESTDIR = $(INSTALL_ROOT)
+-
  default:  buildlib xmlwf/xmlwf
  
+ buildlib: $(LIBRARY)
