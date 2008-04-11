@@ -796,6 +796,7 @@ bdftopcf	ports/x11-fonts/bdftopcf
 be-aspell	ports/textproc/be-aspell
 be_agent	ports/sysutils/be_agent
 beacon		ports/net/beacon
+beanstalkd	ports/net/beanstalkd
 beast		ports/audio/beast
 beastie		ports/x11-themes/beastie
 beautifyphp	ports/devel/beautifyphp
