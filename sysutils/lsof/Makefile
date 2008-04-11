@@ -14,6 +14,7 @@ MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/NEW/ \
 		ftp://ftp.ayamura.org/pub/lsof/ \
 		ftp://ftp.ayamura.org/pub/lsof/NEW/ \
+		http://www.lerctr.org/lsof/ \
 		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/NEW/ \
 		ftp://gd.tuwien.ac.at/utils/admin-tools/lsof/ \
