@@ -1,0 +1,24 @@
+=========================================
+Congratulations!  You have installed Docebo.  First, you should add a database
+to mysql which should be used by Docebo.
+
+Then Add the following text to your Apache configuration, and  restart the
+server:
+
+### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
+	Alias /docebo %%WWWDIR%%/
+	AcceptPathInfo On
+	<Directory %%WWWDIR%%/>
+	AllowOverride None
+	Order Allow,Deny
+	Allow from all
+	</Directory>
+
+Then visit your Docebo site with a browser (i.e.,
+http://your.server.com/docebo), and you should be lead through creating a
+config file and then setting up Docebo, creating an admin account, etc.
+
+More information about the installation, please visit:
+
+http://www.docebo.org
+===========================================

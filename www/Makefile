@@ -113,6 +113,7 @@
     SUBDIR += diamanda
     SUBDIR += dillo
     SUBDIR += dillo-i18n
+    SUBDIR += docebo
     SUBDIR += dojo
     SUBDIR += dokeos
     SUBDIR += dokuwiki
