@@ -37,10 +37,6 @@ PATCH_SITES+=	http://net.doit.wisc.edu/~plonka/cflowd/
 PATCHFILES+=	cflowd-${PORTVERSION:S|.|-|g}-djp.patch
 .endif
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile
-.endif
-
 post-extract:
 	${CHMOD} -R u+w ${WRKSRC}
 

@@ -1,24 +1,17 @@
---- ./classes/include/CflowdAsMatrix.hh.orig	Mon Sep 21 18:31:43 1998
-+++ ./classes/include/CflowdAsMatrix.hh	Mon Apr  9 14:02:43 2007
-@@ -55,7 +55,7 @@
+--- classes/include/CflowdAsMatrix.hh.orig	2008-04-08 21:29:31.000000000 +0200
++++ classes/include/CflowdAsMatrix.hh	2008-04-08 21:31:22.000000000 +0200
+@@ -55,7 +55,9 @@
  #include "CflowdAsMatrixTrafficCounter.hh"
  #include "CflowdRawFlow.hh"
  
 -typedef  map<CflowdAsMatrixKey, CflowdAsMatrixTrafficCounter, less<CflowdAsMatrixKey> >   CflowdAsMatrixMap_t;
++class iterator;
++
 +typedef  std::map<CflowdAsMatrixKey, CflowdAsMatrixTrafficCounter, std::less<CflowdAsMatrixKey> >   CflowdAsMatrixMap_t;
  
  //---------------------------------------------------------------------------
  //  class CflowdAsMatrix : public CflowdAsMatrixMap_t
-@@ -70,7 +70,7 @@
- class CflowdAsMatrix : public CflowdAsMatrixMap_t
- {
- public:
--  typedef CflowdAsMatrixMap_t::iterator        iterator;
-+  typedef CflowdAsMatrixMap_t::iterator        std::iterator;
-   typedef CflowdAsMatrixMap_t::const_iterator  const_iterator;
- 
-   //-------------------------------------------------------------------------
-@@ -87,7 +87,7 @@
+@@ -87,7 +89,7 @@
    //  Reads the contents of a CflowdAsMatrix from an istream.  Returns
    //  the istream.
    //-------------------------------------------------------------------------
@@ -27,7 +20,7 @@
    
    //-------------------------------------------------------------------------
    //                            int read(int fd)
-@@ -103,7 +103,7 @@
+@@ -103,7 +105,7 @@
    //  Writes the contents of a CflowdAsMatrix to an ostream.  Returns
    //  the ostream.
    //-------------------------------------------------------------------------
