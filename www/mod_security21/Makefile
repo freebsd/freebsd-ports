@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_security2
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
@@ -15,9 +16,12 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
 
 USE_APACHE=	2.0+
-USE_GNOME=	libxml2
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
+AP_EXTRAS+=	-DWITH_LIBXML2
+AP_INC=	${LOCALBASE}/include/libxml2
+AP_LIB=	${LOCALBASE}/lib
+USE_GNOME=	libxml2
 MODULENAME=	mod_security2
 WRKSRCTOP=	${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKSRCTOP}/apache2
