@@ -22,6 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 
 USE_MOTIF=	yes
+USE_XORG=	xpm xp xmu xt xext sm ice x11
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
