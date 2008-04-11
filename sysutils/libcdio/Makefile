@@ -6,6 +6,7 @@
 
 PORTNAME=	libcdio
 PORTVERSION=	0.78.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libcdio
@@ -28,7 +29,7 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS
 
 INFO=		libcdio
 
-OPTIONS=	PARANOIA "Support for accessing audio via CD Paranoia" off
+OPTIONS=	PARANOIA "Support for accessing audio via CD Paranoia" on
 
 .include <bsd.port.pre.mk>
 
