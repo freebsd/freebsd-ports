@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: beanstalkd
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run beanstalkd:
+#
+# beanstalkd_enable (bool):	Set it to "YES" to enable beanstalkd.
+#				Default is "NO".
+# beanstalkd_flags (flags):	Set extra flags here. More options in beanstalkd(1)
+#				Default is empty "".
+# beanstalkd_user (user):	Set user to run beanstalkd.
+#				Default is "nobody".
+#
+
+. %%RC_SUBR%%
+
+name="beanstalkd"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${beanstalkd_enable="NO"}
+: ${beanstalkd_user="nobody"}
+
+command=%%PREFIX%%/bin/beanstalkd
+command_args="-d -u ${beanstalkd_user}"
+
+unset beanstalkd_user
+
+run_rc_command "$1"

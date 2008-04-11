@@ -1,0 +1,11 @@
+--- Makefile.orig	2008-04-11 16:41:58.835397096 +0400
++++ Makefile	2008-04-11 16:42:36.908051673 +0400
+@@ -1,6 +1,6 @@
+ program := beanstalkd
+-export CFLAGS := $(CFLAGS) -Wall -Werror
+-export LDFLAGS := $(LDFLAGS) -levent
++export CFLAGS := $(CFLAGS) -Wall -Werror $(EVENT_CFLAGS)
++export LDFLAGS := $(LDFLAGS) $(EVENT_LDFLAGS) -levent
+ 
+ sources := $(shell ls *.c | fgrep -v $(program))
+ objects := $(sources:.c=.o)

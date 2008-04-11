@@ -1,0 +1,6 @@
+Beanstalkd is a fast, distributed, in-memory workqueue service. Its interface
+is generic, but is intended for use in reducing the latency of page views in
+high-volume web applications by running most time-consuming tasks
+asynchronously.
+
+WWW: http://xph.us/software/beanstalkd/
