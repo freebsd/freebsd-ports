@@ -11,7 +11,7 @@ shift
 . ${pb}/scripts/buildenv
 
 # -j# to make duds
-DUDSJOBS=1
+DUDSJOBS=4
 
 usage () {
   echo "usage: makeduds branch"
