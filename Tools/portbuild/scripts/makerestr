@@ -28,7 +28,7 @@ unset DISPLAY
 
 export PACKAGE_BUILDING=1
 cd ${PORTSDIR}
-make ECHO_MSG=/usr/bin/true clean-restricted-list \
+make -j4 ECHO_MSG=/usr/bin/true clean-restricted-list \
   | sed -e "s./usr/ports/packages/.${pb}/${arch}/${branch}/packages/.g" \
   -e "s./usr/ports/.${pb}/${arch}/${branch}/ports/.g" \
   > ${pb}/${arch}/${branch}/restricted.sh
