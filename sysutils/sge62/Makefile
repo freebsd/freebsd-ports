@@ -7,9 +7,8 @@
 
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/161/:src \
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/169/:src \
 		http://gridengine.sunsource.net/download/SGE61/:bin \
 		${MASTER_SITE_LOCAL}:src,bin
 MASTER_SITE_SUBDIR=	brooks
@@ -47,7 +46,7 @@ SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
 SGE_BUILD_ARCH=	FREEBSD_${ARCH:U}
-SGE_RELEASE=	6.1u3
+SGE_RELEASE=	6.1u4
 SGE_VERSION=	${SGE_RELEASE:S/u/./}
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
@@ -157,6 +156,7 @@ post-patch:
 	    ${WRKSRC}/3rdparty/qmake/FREEBSD_*/glob/Makefile \
 	    ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH}/Makefile
 	@${RM} ${WRKSRC}/dist/util/arch_variables.orig
+	@${RM} ${WRKSRC}/dist/util/create_settings.sh.orig
 	@${RM} ${WRKSRC}/dist/util/install_modules/inst_common.sh.orig
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 	    ${REINPLACE_CMD} "s|-g -O2|${CFLAGS}|"
@@ -218,9 +218,9 @@ release-tar: build
 
 # Build a pkg-plist and Makefile.man
 build-plist: build
-#.if defined(WITHOUT_BDB) || defined(WITHOUT_JAVA) || defined(WITHOUT_X11)
-#	@echo "ERROR: All OPTIONS must be enabled to build plist!" && ${FALSE}
-#.endif
+.if defined(WITHOUT_BDB) || defined(WITHOUT_JAVA) || defined(WITHOUT_X11)
+	@echo "ERROR: All OPTIONS must be enabled to build plist!" && ${FALSE}
+.endif
 	@${FIND} ${TMP_SGE_ROOT}/* -name man -prune -o \
 	    \( -type f -o -type l \) -print | \
 	    ${SORT} | \

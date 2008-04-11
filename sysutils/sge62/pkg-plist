@@ -489,7 +489,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/README-DRMAA-Java.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-DRMAA.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-Update-60u2.txt
-%%PORTDOCS%%%%DOCSDIR%%/README-Upgrade-61.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-Upgrade.txt
 %%PORTDOCS%%%%DOCSDIR%%/compatibility_test.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/adoc.html
