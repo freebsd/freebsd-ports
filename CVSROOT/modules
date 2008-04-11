@@ -15087,6 +15087,7 @@ sdlsand		ports/games/sdlsand
 sdocbook-xml	ports/textproc/sdocbook-xml
 sdom		ports/textproc/sdom
 sdpa		ports/math/sdpa
+sdpa-gmp	ports/math/sdpa-gmp
 sdpara		ports/math/sdpara
 sdr		ports/mbone/sdr
 sdts++		ports/devel/sdts++
