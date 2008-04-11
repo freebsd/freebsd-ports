@@ -18,8 +18,8 @@ COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 
 .include <bsd.port.pre.mk>
 
-SRCDATE=	20080329
-MANDATE=	20080329
+SRCDATE=	20080410
+MANDATE=	20080410
 SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
 MANUALFILE=	${PORTNAME}.${PORTVERSION}.manual.${MANDATE}.pdf
 USE_FORTRAN=	yes
