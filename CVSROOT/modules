@@ -3679,6 +3679,7 @@ gens		ports/emulators/gens
 gensig		ports/mail/gensig
 gentium		ports/x11-fonts/gentium
 gentoo		ports/x11-fm/gentoo
+geoapi		ports/graphics/geoapi
 geogebra-i18n	ports/math/geogebra-i18n
 geoid		ports/comms/geoid
 geolizer	ports/www/geolizer
