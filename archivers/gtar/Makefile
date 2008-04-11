@@ -25,6 +25,9 @@ CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib ${LDSTATIC}' \
 		DEFAULT_ARCHIVE=/dev/sa0 \
 		DEFAULT_RMT_COMMAND=/etc/rmt
+# GNU assumes that openat() implies the existence of fdopendir(),
+# which does not hold true on FreeBSD 8.
+CONFIGURE_ENV+=	ac_cv_func_openat=no
 
 .if defined(WANT_STATIC)
 LDSTATIC=	-static
