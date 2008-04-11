@@ -1404,7 +1404,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 # XXX to remain undefined until all ports that require Perl are fixed
 # to set one of the conditionals that force the inclusion of bsd.perl.mk
-_PERL_REFACTORING_COMPLETE=	BEING_TESTED
 .if !defined(_PERL_REFACTORING_COMPLETE)
 
 PERL_VERSION?=	5.8.8
@@ -1474,13 +1473,13 @@ PERL=		${LOCALBASE}/bin/perl
 .endif
 .endif
 
-.if defined(WANT_PERL) || defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
+#.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.perl.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.perl.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.perl.mk"
 .endif
-.endif
+#.endif
 
 .if defined(USE_PHP)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.php.mk)
@@ -2155,13 +2154,13 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .endif
 .endif
 
-.if defined(WANT_PERL) || defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
+#.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.perl.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.perl.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.perl.mk"
 .endif
-.endif
+#.endif
 
 .if defined(USE_PHP)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.php.mk)
@@ -2469,7 +2468,7 @@ INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 MAKE_ENV+=	${INSTALL_MACROS}
 SCRIPTS_ENV+=	${INSTALL_MACROS}
 
-# Macro for copying entire directory tree with correct permissions
+# Macro for coping entire directory tree with correct permissions
 .if ${UID} == 0
 COPYTREE_BIN=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 					2>&1) && \
