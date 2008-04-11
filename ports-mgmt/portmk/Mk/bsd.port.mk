@@ -474,9 +474,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  RPM ports.
 #				  Implies inclusion of bsd.linux-rpm.mk.
 #
-# USE_XORG			- Set to a list of X.org module dependencies.
-#				  Implies inclusion of bsd.xorg.mk.
-#
 # AUTOMATIC_PLIST
 #				- Set to yes to enable automatic packing list generation.
 #				  Currently has no effect unless USE_LINUX_RPM is set.
@@ -491,6 +488,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- This is a read-only variable, it gets set to a value which is
 #				  usable in *_DEPENDS (e.g. BUILD_DEPENDS=${LINUX_BASE_PORT}).
 #				  It honors USE_LINUX=foo and OVERRIDE_LINUX_BASE_PORT.
+##
+# USE_XORG			- Set to a list of X.org module dependencies.
+#				  Implies inclusion of bsd.xorg.mk.
+##
 # USE_RC_SUBR	- If set, the ports startup/shutdown script uses the common
 #				  routines found in etc/rc.subr and may need to
 #				  depend on the sysutils/rc_subr port.
@@ -581,7 +582,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- A command to install binary executables.  (By
 #				  default, also strips them, unless ${STRIP} is
 #				  overridden to be the empty string).
-# INSTALL_KLD	- As INSTALL_PROGRAM, but without the STRIP.
+# INSTALL_KLD	- As INSTALL_KLD, but without the STRIP.
 # INSTALL_SCRIPT
 #				- A command to install executable scripts.
 # INSTALL_DATA	- A command to install sharable data.
@@ -961,6 +962,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  used by the ldconfig startup script.
 #				  This mechanism replaces ldconfig scripts installed by some
 #				  ports, often under such names as 000.${UNQUENAME}.sh.
+#				  If USE_LINUX_PREFIX is defined, the Linux version of
+#				  ldconfig will be used instead of the native FreeBSD
+#				  version, and the directory list given will be ignored.
 # USE_LDCONFIG32
 # 				- Same as USE_LDCONFIG but the target file is
 # 				  ${PREFIX}/libdata/ldconfig32/${UNIQUENAME} instead.
@@ -1175,9 +1179,9 @@ OSREL!=	${UNAME} -r | ${SED} -e 's/[-(].*//'
 # Get __FreeBSD_version
 .if !defined(OSVERSION)
 .if exists(/usr/include/sys/param.h)
-OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/include/sys/param.h
+OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < /usr/include/sys/param.h
 .elif exists(/usr/src/sys/sys/param.h)
-OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/src/sys/sys/param.h
+OSVERSION!=	${AWK} '/^\#define[[:blank::]]__FreeBSD_version/ {print $$3}' < /usr/src/sys/sys/param.h
 .else
 OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
@@ -1330,10 +1334,8 @@ ETCDIR?=		${PREFIX}/etc/${PORTNAME}
 .endif
 .endif
 
-.if ${OSVERSION} >= 502123
-X_WINDOW_SYSTEM ?= xorg
-.else
-X_WINDOW_SYSTEM ?= xfree86-4
+.if defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} != "xorg"
+IGNORE=		cannot be installed: bad X_WINDOW_SYSTEM setting; valid value is 'xorg'
 .endif
 
 .if ${OSVERSION} < 602000
@@ -1346,13 +1348,11 @@ X_WINDOW_SYSTEM ?= xfree86-4
 .endif
 
 .if defined(USE_XORG) || defined(XORG_CAT)
-. if ${X_WINDOW_SYSTEM} == "xorg"
-.  if exists(${DEVELPORTSDIR}/Mk/bsd.xorg.mk)
-.   include "${DEVELPORTSDIR}/Mk/bsd.xorg.mk"
-.  else
-.   include "${PORTSDIR}/Mk/bsd.xorg.mk"
-.  endif
-. endif
+.if exists(${DEVELPORTSDIR}/Mk/bsd.xorg.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.xorg.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.xorg.mk"
+.endif
 .endif
 
 .if defined(USE_BZIP2)
@@ -1628,8 +1628,6 @@ PERL=		${LOCALBASE}/bin/perl
 .endif
 .endif
 
-X_WINDOW_SYSTEM ?= xorg
-
 # Location of mounted CDROM(s) to search for files
 CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
 
@@ -1889,7 +1887,7 @@ LIB_DEPENDS+=	intl.${USE_GETTEXT}:${PORTSDIR}/devel/gettext
 .	endif
 .endif
 
-.if defined(USE_LINUX_PREFIX) && defined(INSTALLS_SHLIB)
+.if defined(USE_LINUX_PREFIX) && (defined(INSTALLS_SHLIB) || defined(USE_LDCONFIG))
 # we need ${LINUXBASE}/sbin/ldconfig
 USE_LINUX?=	yes
 .endif
@@ -1942,7 +1940,6 @@ LIB_DEPENDS+=		Xm.3:${PORTSDIR}/x11-toolkits/open-motif
 LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
 .endif
 
-.if defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} == xorg
 X_IMAKE_PORT=		${PORTSDIR}/devel/imake
 X_LIBRARIES_PORT=	${PORTSDIR}/x11/xorg-libraries
 X_CLIENTS_PORT=		${PORTSDIR}/x11/xorg-apps
@@ -1959,25 +1956,6 @@ X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-cyrillic
 X_FONTS_TTF_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-truetype
 X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-type1
 X_FONTS_ALIAS_PORT=	${PORTSDIR}/x11-fonts/font-alias
-.elif defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} == xfree86-4
-X_IMAKE_PORT=		${PORTSDIR}/devel/imake-4
-X_LIBRARIES_PORT=	${PORTSDIR}/x11/XFree86-4-libraries
-X_CLIENTS_PORT=		${PORTSDIR}/x11/XFree86-4-clients
-X_SERVER_PORT=		${PORTSDIR}/x11-servers/XFree86-4-Server
-X_FONTSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-FontServer
-X_PRINTSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-PrintServer
-X_VFBSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
-X_NESTSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-NestServer
-X_FONTS_ENCODINGS_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
-X_FONTS_MISC_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
-X_FONTS_100DPI_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-font100dpi
-X_FONTS_75DPI_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-font75dpi
-X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontCyrillic
-X_FONTS_TTF_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
-X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
-.else
-IGNORE=		cannot be installed: bad X_WINDOW_SYSTEM setting; valid values are 'xfree86-4' and 'xorg'
-.endif
 
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${X_IMAKE_PORT}
@@ -1989,29 +1967,12 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 	${X11BASE}/lib/X11/fonts/misc/fonts.alias:${X_FONTS_ALIAS_PORT}
 .endif
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-4
-
 .if defined(USE_XPM)
-USE_XLIB=			yes
-.endif
-
-XAWVER=				7
-PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
-
-.else
-
-.if defined(USE_XPM)
-LIB_DEPENDS+=			Xpm.4:${PORTSDIR}/x11/libXpm
-# XXX - At some point we'll have to fix ports to use USE_XORG to
-# the right value and remove both USE_XPM and USE_XLIB. Hopefully
-# XFree86-4 will be gone in the meantime.
-USE_XLIB=			yes
+USE_XORG+=			xpm
 .endif
 
 XAWVER=				8
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
-
-.endif
 
 PLIST_SUB+=			XAWVER=${XAWVER}
 
@@ -2022,22 +1983,18 @@ _GL_glut_LIB_DEPENDS=		glut.4:${PORTSDIR}/graphics/libglut
 _GL_linux_RUN_DEPENDS=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
 
 .if defined(USE_GL)
-. if ${X_WINDOW_SYSTEM:L} == xfree86-4
-USE_XLIB=	yes
-. else
-.  if ${USE_GL:L} == "yes"
+. if ${USE_GL:L} == "yes"
 USE_GL=		glu
-.  endif
-.  for _component in ${USE_GL}
-.   if !defined(_GL_${_component}_LIB_DEPENDS) && \
+. endif
+. for _component in ${USE_GL}
+.  if !defined(_GL_${_component}_LIB_DEPENDS) && \
 		!defined(_GL_${_component}_RUN_DEPENDS)
 IGNORE=		uses unknown GL component
-.   else
+.  else
 LIB_DEPENDS+=	${_GL_${_component}_LIB_DEPENDS}
 RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
-.   endif
-.  endfor
-. endif
+.  endif
+. endfor
 .endif
 
 .if defined(USE_BISON)
@@ -2079,13 +2036,11 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .endif
 
 .if defined(USE_XORG) || defined(XORG_CAT)
-. if ${X_WINDOW_SYSTEM} == "xorg"
-.  if exists(${DEVELPORTSDIR}/Mk/bsd.xorg.mk)
-.   include "${DEVELPORTSDIR}/Mk/bsd.xorg.mk"
-.  else
-.   include "${PORTSDIR}/Mk/bsd.xorg.mk"
-.  endif
-. endif
+.if exists(${DEVELPORTSDIR}/Mk/bsd.xorg.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.xorg.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.xorg.mk"
+.endif
 .endif
 
 .if defined(USE_MYSQL) || defined(WANT_MYSQL_VER) || \
@@ -2243,12 +2198,8 @@ USE_SUBMAKE=	yes
 .	if defined(USE_LINUX)
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-xorg-libs
 .	else
-.      if ${X_WINDOW_SYSTEM:L} == xorg
 BUILD_DEPENDS+=	${X11BASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
 RUN_DEPENDS+=	${X11BASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
-.      else
-LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
-.      endif
 .	endif
 .endif
 
@@ -2340,6 +2291,17 @@ MAKE_ENV+=		PREFIX=${PREFIX} \
 			MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS}" MANPREFIX="${MANPREFIX}"
 
+# Add -fno-strict-aliasing to CFLAGS with optimization level -O2 or higher.
+# gcc 4.x enable strict aliasing optimization with -O2 which is known to break
+# a lot of ports.
+.if !defined(WITHOUT_NO_STRICT_ALIASING)
+.if ${CC} != "icc"
+.if !empty(CFLAGS:M-O[23s]) && empty(CFLAGS:M-fno-strict-aliasing)
+CFLAGS+=       -fno-strict-aliasing
+.endif
+.endif
+.endif
+
 PTHREAD_CFLAGS?=
 PTHREAD_LIBS?=		-pthread
 
@@ -2413,9 +2375,9 @@ EXTRACT_AFTER_ARGS?=
 .else
 EXTRACT_BEFORE_ARGS?=	-dc
 .if defined(EXTRACT_PRESERVE_OWNERSHIP)
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --no-same-owner
-.else
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
+.else
+EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --no-same-owner
 .endif
 .if defined(USE_BZIP2)
 EXTRACT_CMD?=			${BZIP2_CMD}
@@ -4065,6 +4027,10 @@ install-mtree:
 install-ldconfig-file:
 .if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32) || defined(INSTALLS_SHLIB)
 .if defined(USE_LDCONFIG)
+.if defined(USE_LINUX_PREFIX)
+	@${ECHO_MSG} "===>   Running linux ldconfig"
+	${LDCONFIG_CMD}
+.else
 .if !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Running ldconfig"
 	${LDCONFIG} -m ${USE_LDCONFIG}
@@ -4083,6 +4049,7 @@ install-ldconfig-file:
 	@${ECHO_CMD} ${LDCONFIG_DIR}/${UNIQUENAME} >> ${TMPPLIST}
 .if defined(NO_LDCONFIG_MTREE)
 	@${ECHO_CMD} "@unexec rmdir ${LDCONFIG_DIR} >/dev/null 2>&1 || true" >> ${TMPPLIST}
+.endif
 .endif
 .endif
 .endif
@@ -5607,7 +5574,7 @@ ${.CURDIR}/README.html:
 					$${__softMAKEFLAGS} pretty-print-run-depends-list)"'|' \
 			-e 's|%%TOP%%|'"$$(${ECHO_CMD} ${CATEGORIES} | \
 							   ${SED} -e 's| .*||' -e 's|[^/]*|..|g')"'/..|' \
-		${TEMPLATES}/README.port >> $@
+		${TEMPLATES}/README.port >> ${.TARGET}
 
 # The following two targets require an up-to-date INDEX in ${PORTSDIR}
 
@@ -5709,6 +5676,12 @@ generate-plist:
 	@${ECHO_CMD} "@exec ${LDCONFIG_PLIST_EXEC_CMD} || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LDCONFIG_PLIST_UNEXEC_CMD} || ${TRUE}" >> ${TMPPLIST}
 .endif
+.if defined(USE_LINUX_PREFIX)
+.if defined(USE_LDCONFIG)
+	@${ECHO_CMD} "@exec ${LDCONFIG_CMD}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LDCONFIG_CMD}" >> ${TMPPLIST}
+.endif
+.else
 .if defined(USE_LDCONFIG)
 .if !defined(INSTALL_AS_USER)
 	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${USE_LDCONFIG}" >> ${TMPPLIST}
@@ -5725,6 +5698,7 @@ generate-plist:
 .else
 	@${ECHO_CMD} "@exec ${LDCONFIG} -32 -m ${USE_LDCONFIG32} || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LDCONFIG} -32 -R || ${TRUE}" >> ${TMPPLIST}
+.endif
 .endif
 .endif
 .endif
