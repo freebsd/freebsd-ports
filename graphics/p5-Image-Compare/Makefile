@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	Image-Compare
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	graphics perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Image
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
@@ -23,6 +21,12 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Image::Compare.3
+MAN3=		Image::Compare.3 \
+		Image::Compare::AVG_THRESHOLD.3 \
+		Image::Compare::Comparator.3 \
+		Image::Compare::EXACT.3 \
+		Image::Compare::IMAGE.3 \
+		Image::Compare::THRESHOLD.3 \
+		Image::Compare::THRESHOLD_COUNT.3
 
 .include <bsd.port.mk>
