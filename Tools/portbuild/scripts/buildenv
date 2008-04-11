@@ -7,6 +7,15 @@ buildenv () {
     arch=$2
     branch=$3
 
+    # Have to use realpath because 'make index' doesn't deal with symlinks in PORTSDIR
+    # - kk 020311
+    export PORTSDIR=$(realpath ${pb}/${arch}/${branch}/ports)
+    export SRCBASE=$(realpath ${pb}/${arch}/${branch}/src)
+
+    export OSVERSION=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCBASE}/sys/sys/param.h)
+    export OSREL=$(awk 'BEGIN {FS="\""}; /^REVISION/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
+    export BRANCH=$(awk 'BEGIN {FS="\""}; /^BRANCH/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
+
     case "x$branch" in
 	x5)
 	export INDEXFILE=INDEX-5
@@ -53,18 +62,9 @@ buildenv () {
     export PKGSUFFIX=.tbz
     export PKGZIPCMD=bzip2
     export X_WINDOW_SYSTEM=xorg
-
     #export USA_RESIDENT=yes
 
-    # Have to use realpath because 'make index' doesn't deal with symlinks in PORTSDIR
-    # - kk 020311
-    export PORTSDIR=$(realpath ${pb}/${arch}/${branch}/ports)
-    export SRCBASE=$(realpath ${pb}/${arch}/${branch}/src)
     export SRCPREFIX=${SRCBASE} #XXX Which one is canonical?
-
-    export OSVERSION=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCBASE}/sys/sys/param.h)
-    export OSREL=$(awk 'BEGIN {FS="\""}; /^REVISION/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
-    export BRANCH=$(awk 'BEGIN {FS="\""}; /^BRANCH/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
 
     export __MAKE_CONF=${pb}/${arch}/make.conf
 
