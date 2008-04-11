@@ -1,7 +1,4 @@
 bin/wmcube
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/2planes-solid.wmc
 %%DATADIR%%/4d.wmc
 %%DATADIR%%/8star-small.wmc
@@ -37,4 +34,3 @@ bin/wmcube
 %%DATADIR%%/starcube.wmc
 %%DATADIR%%/wmlogo.wmc
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
