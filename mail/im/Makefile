@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	im
-PORTVERSION=	148
+PORTVERSION=	149
 CATEGORIES=	mail
 MASTER_SITES=	http://tats.haun.org/im/ \
 		${MASTER_SITE_PORTS_JP}
