@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	libecc
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	C++ Elliptic Curve Library
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
@@ -24,15 +24,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include"
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} 's@endian\.h@sys/&@' ${WRKSRC}/include/libecc/bitset.h
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
-
-.if ${OSVERSION} < 501103
-# Work around bsd.port.mk bug: Does not currently set up MAKE_ENV for gcc 3.2 and 3.3
-MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

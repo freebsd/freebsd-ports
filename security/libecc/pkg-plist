@@ -7,6 +7,6 @@ include/libecc/rds.h
 include/libecc/sha.h
 include/libecc/square.hcc
 lib/libecc.so
-lib/libecc.so.11
-
+lib/libecc.so.1
+lib/libecc.la
 @dirrm include/libecc
