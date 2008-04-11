@@ -11,11 +11,11 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
 PKGNAMEPREFIX=	bsd-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	BSD-licensed version of sort from OpenBSD
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MANCOMPRESSED=	yes
 MAN1=		sort.1
 PLIST_FILES=	bin/sort
@@ -24,4 +24,10 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
 		CATDIR="${MANPREFIX}/man/man"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		is not supported on 5.X
+.endif
+
+.include <bsd.port.post.mk>
