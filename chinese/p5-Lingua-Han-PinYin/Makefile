@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	Lingua-Han-PinYin
-PORTVERSION=	0.07
+PORTVERSION=	0.10
 CATEGORIES=	chinese perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/F/FA/FAYLAND/
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Retrieve the Mandarin(PinYin) of Chinese character(HanZi)
 
-RUN_DEPENDS=	${SITE_PERL}/Lingua/Han/Utils.pm:${PORTSDIR}/chinese/p5-Lingua-Han-Utils
+RUN_DEPENDS=	p5-Lingua-Han-Utils>=0.08:${PORTSDIR}/chinese/p5-Lingua-Han-Utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
