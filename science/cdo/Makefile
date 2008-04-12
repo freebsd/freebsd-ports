@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdo
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	science
 MASTER_SITES=	http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 		http://sunpoet.net/distfiles/
