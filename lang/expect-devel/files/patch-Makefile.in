@@ -1,11 +1,11 @@
---- Makefile.in.orig	2007-10-17 12:55:10.000000000 +0200
-+++ Makefile.in	2007-10-17 12:56:07.000000000 +0200
+--- Makefile.in.orig	2008-04-03 21:07:14.000000000 +0200
++++ Makefile.in	2008-04-12 11:33:33.000000000 +0200
 @@ -241,7 +241,7 @@
- 	@mkdir -p $(INSTALL_ROOT)$(prefix)/bin
+ 	@mkdir -p $(DESTDIR)$(prefix)/bin
  	-for i in $(SCRIPT_LIST) ; do \
  	  if [ -f $$i ] ; then \
--	    $(INSTALL_PROGRAM) $$i $(INSTALL_ROOT)$(prefix)/bin/$$i ; \
-+	    $(INSTALL_SCRIPT) $$i $(INSTALL_ROOT)$(prefix)/bin/$$i ; \
+-	    $(INSTALL_PROGRAM) $$i $(DESTDIR)$(prefix)/bin/$$i ; \
++	    $(INSTALL_SCRIPT) $$i $(DESTDIR)$(prefix)/bin/$$i ; \
  	    rm -f $$i ; \
  	  else true; fi ; \
  	done
