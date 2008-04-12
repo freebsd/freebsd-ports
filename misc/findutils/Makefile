@@ -20,6 +20,10 @@ SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+# GNU assumes that openat() implies the existence of fdopendir(),
+# which does not hold true on FreeBSD 8.
+CONFIGURE_ENV+= ac_cv_func_openat=no
+
 USE_GMAKE=	yes
 USE_GCC=	3.4+
 
