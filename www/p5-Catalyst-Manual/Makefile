@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Manual
-PORTVERSION=	5.701003
+PORTVERSION=	5.701004
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	The Catalyst developer's manual
 
 PERL_CONFIGURE=	5.8.1+
 
-MAN3=	Catalyst::ManualPlaceholder.3 \
+MAN3=	Catalyst::Manual.3 \
 	Catalyst::Manual::About.3 \
 	Catalyst::Manual::Actions.3 \
 	Catalyst::Manual::Cookbook.3 \
