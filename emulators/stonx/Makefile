@@ -17,13 +17,19 @@ COMMENT=	AtariST emulator
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		gccmakedep:${PORTSDIR}/devel/gccmakedep \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 RESTRICTED=	tos.img is copyrighted
 
 TOSIMG?=	tos.img
-#USE_XLIB=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 sm ice xext xextproto
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include \
+		--x-libraries=${LOCALBASE}/lib
 
 pre-build:
 	${CP} ${DISTDIR}/${TOSIMG} ${WRKSRC}/tos.img
@@ -89,6 +95,6 @@ IGNORE="Please get a ROM dump from your AtariST and save it as"\
 "\"${TOSIMG}\" in \"${DISTDIR}\" manually, and then make install again"
 .endif
 
-BUILD_DEPENDS+=		${X11BASE}/lib/X11/fonts/misc/10x20-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc
+BUILD_DEPENDS+=		${LOCALBASE}/lib/X11/fonts/misc/10x20-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc
 
 .include <bsd.port.post.mk>
