@@ -1,0 +1,18 @@
+Index: binfilter/bf_sw/source/filter/w4w/makefile.mk
+===================================================================
+RCS file: /cvs/framework/binfilter/bf_sw/source/filter/w4w/makefile.mk,v
+retrieving revision 1.9
+diff -u -r1.9 makefile.mk
+--- binfilter/bf_sw/source/filter/w4w/makefile.mk	20 Nov 2006 12:38:59 -0000	1.9
++++ binfilter/bf_sw/source/filter/w4w/makefile.mk	12 Apr 2008 00:02:49 -0000
+@@ -58,6 +58,10 @@
+ CDEFS=$(CDEFS) -Dmydebug
+ .ENDIF
+ 
++.IF "$(OSL_DEBUG_LEVEL)" > 0
++CDEFS += -DENABLE_BYTESTRING_STREAM_OPERATORS
++.ENDIF
++
+ # --- Files --------------------------------------------------------
+ 
+ CXXFILES = \
