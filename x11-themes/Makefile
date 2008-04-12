@@ -193,6 +193,7 @@
     SUBDIR += rezlooks
     SUBDIR += sapphire-themes
     SUBDIR += sawfish-themes
+    SUBDIR += thewidgetfactory
     SUBDIR += thinice
     SUBDIR += ubuntulooks
     SUBDIR += whistlerk
