@@ -7,10 +7,10 @@
 
 PORTNAME=	smbldap-tools
 PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.gna.org/smbldap-tools/packages/ \
-		http://download.gna.org/smbldap-tools/packages/old-release/
+		http://download.gna.org/smbldap-tools/packages/old-Idealx-release/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mm@FreeBSD.org

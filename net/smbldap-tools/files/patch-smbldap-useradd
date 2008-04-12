@@ -1,0 +1,11 @@
+--- smbldap-useradd.orig	2007-09-17 18:05:48.000000000 +0700
++++ smbldap-useradd	2008-02-07 17:48:23.000000000 +0600
+@@ -373,7 +373,7 @@
+     unless ( $userName =~ /\$$/ ) {
+ 	if ( !(-e $userHomeDirectory) ) {
+ 	    system "mkdir $userHomeDirectory 2>/dev/null";
+-	    system "cp -a $config{skeletonDir}/.[a-z,A-Z]* $config{skeletonDir}/* $userHomeDirectory 2>/dev/null";
++	    system "cp -pRP $config{skeletonDir}/.[a-z,A-Z]* $config{skeletonDir}/* $userHomeDirectory 2>/dev/null";
+ 	    system "chown -R $userName:$userGidNumber $userHomeDirectory 2>/dev/null";
+ 	    if (defined $config{userHomeDirectoryMode}) {
+ 		system "chmod $config{userHomeDirectoryMode} $userHomeDirectory 2>/dev/null"; 
