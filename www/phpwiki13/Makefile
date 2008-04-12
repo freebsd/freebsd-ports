@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpwiki
-PORTVERSION=	1.3.12p2
+PORTVERSION=	1.3.14
 PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,6 +19,7 @@ CONFLICTS+=	phpwiki-1.2*
 LATEST_LINK=	phpwiki13
 
 USE_PHP=	ctype gettext pcre posix session tokenizer xml zlib
+USE_ZIP=	yes
 
 NO_BUILD=	YES
 PHPWIKI?=	www/phpwiki
