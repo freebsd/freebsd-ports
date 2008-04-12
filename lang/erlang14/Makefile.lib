@@ -1,53 +1,53 @@
 # $FreeBSD$
 
-ERTS_VSN=	5.6.1
+ERTS_VSN=	5.6.2
 TOOLS_VSN=	2.6.1
 OTP_LIBS=	appmon-2.1.9 \
-		asn1-1.5 \
+		asn1-1.5.1 \
 		common_test-1.3.1 \
-		compiler-4.5.1 \
-		cosEvent-2.1.2 \
-		cosEventDomain-1.1.2 \
-		cosFileTransfer-1.1.4 \
-		cosNotification-1.1.6 \
-		cosProperty-1.1.5 \
-		cosTime-1.1.2 \
-		cosTransactions-1.2.3 \
+		compiler-4.5.2 \
+		cosEvent-2.1.3 \
+		cosEventDomain-1.1.3 \
+		cosFileTransfer-1.1.5 \
+		cosNotification-1.1.7 \
+		cosProperty-1.1.6 \
+		cosTime-1.1.3 \
+		cosTransactions-1.2.4 \
 		crypto-1.5.1.1 \
 		debugger-3.1.1.2 \
-		dialyzer-1.7.2 \
-		docbuilder-0.9.8 \
-		edoc-0.7.4 \
-		erl_interface-3.5.5.4 \
+		dialyzer-1.8.0 \
+		docbuilder-0.9.8.4 \
+		edoc-0.7.5 \
+		erl_interface-3.5.6 \
 		et-1.3 \
-		gs-1.5.8 \
-		hipe-3.6.5 \
-		ic-4.2.16 \
-		inets-5.0.2 \
+		gs-1.5.9 \
+		hipe-3.6.6 \
+		ic-4.2.17 \
+		inets-5.0.5 \
 		inviso-0.6 \
 		jinterface-1.4 \
-		kernel-2.12.1 \
-		megaco-3.7.1 \
-		mnesia-4.4 \
+		kernel-2.12.2 \
+		megaco-3.7.4 \
+		mnesia-4.4.2 \
 		observer-0.9.7.4 \
 		odbc-2.10 \
-		orber-3.6.8 \
+		orber-3.6.9 \
 		os_mon-2.1.5 \
 		otp_mibs-1.0.4.1 \
-		parsetools-1.4.3 \
-		percept-0.6.2 \
+		parsetools-1.4.4 \
+		percept-0.7.1 \
 		pman-2.6 \
-		runtime_tools-1.7.1 \
+		runtime_tools-1.7.2 \
 		sasl-2.1.5.2 \
-		snmp-4.10.1 \
-		ssh-0.9.9.5 \
+		snmp-4.10.3 \
+		ssh-0.9.9.6 \
 		ssl-3.9 \
-		stdlib-1.15.1 \
-		syntax_tools-1.5.3 \
-		test_server-3.2.1 \
+		stdlib-1.15.2 \
+		syntax_tools-1.5.4 \
+		test_server-3.2.2 \
 		toolbar-1.3.0.1 \
 		tools-2.6.1 \
-		tv-2.1.4.1 \
-		typer-0.1.1 \
+		tv-2.1.4.2 \
+		typer-0.1.2 \
 		webtool-0.8.3.2 \
-		xmerl-1.1.6
+		xmerl-1.1.8
