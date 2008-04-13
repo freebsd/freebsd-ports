@@ -2341,6 +2341,7 @@ dzip		ports/archivers/dzip
 e		ports/math/e
 e-uae		ports/emulators/e-uae
 e16utils	ports/x11-wm/e16utils
+e17-module-bling	ports/x11/e17-module-bling
 e17-module-calendar	ports/x11/e17-module-calendar
 e17-module-cpu	ports/x11/e17-module-cpu
 e17-module-deskshow	ports/x11/e17-module-deskshow
