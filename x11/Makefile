@@ -37,6 +37,7 @@
     SUBDIR += docker
     SUBDIR += dxpc
     SUBDIR += dynamag
+    SUBDIR += e17-module-bling
     SUBDIR += e17-module-calendar
     SUBDIR += e17-module-cpu
     SUBDIR += e17-module-deskshow
