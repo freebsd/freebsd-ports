@@ -1,12 +1,15 @@
 bin/gspiceui
+%%MODELS%%%%DATADIR%%/lib/audio/spkr-25w-g12m.mod
 %%MODELS%%%%DATADIR%%/lib/diode/1n914.mod
 %%MODELS%%%%DATADIR%%/lib/diode/led.mod
 %%MODELS%%%%DATADIR%%/lib/npn/bc548.mod
 %%MODELS%%%%DATADIR%%/lib/npn/bc550.mod
 %%MODELS%%%%DATADIR%%/lib/npn/tip41.mod
+%%MODELS%%%%DATADIR%%/lib/opamp/lf411.mod
 %%MODELS%%%%DATADIR%%/lib/opamp/lm324.mod
 %%MODELS%%%%DATADIR%%/lib/opamp/lm358.mod
 %%MODELS%%%%DATADIR%%/lib/opamp/lm741.mod
+%%MODELS%%%%DATADIR%%/lib/opamp/lm747.mod
 %%MODELS%%%%DATADIR%%/lib/opamp/lmx358.mod
 %%MODELS%%%%DATADIR%%/lib/opamp/tl071.mod
 %%MODELS%%%%DATADIR%%/lib/opamp/ua741.mod
@@ -14,8 +17,8 @@ bin/gspiceui
 %%MODELS%%%%DATADIR%%/lib/pnp/bc558.mod
 %%MODELS%%%%DATADIR%%/lib/pnp/tip42.mod
 %%MODELS%%%%DATADIR%%/lib/reg/lm317.mod
+%%MODELS%%%%DATADIR%%/lib/rf/atf-34143.mod
 %%MODELS%%%%DATADIR%%/sch/amp-tce-1.sch
-%%MODELS%%%%DATADIR%%/sch/anemtr-intfc.sch
 %%MODELS%%%%DATADIR%%/sch/astable-npn.sch
 %%MODELS%%%%DATADIR%%/sch/astable-pnp.sch
 %%MODELS%%%%DATADIR%%/sch/filter-bp-1.sch
@@ -29,10 +32,12 @@ bin/gspiceui
 %%MODELS%%%%DATADIR%%/sch/opamp-lmx358-2.sch
 %%MODELS%%%%DATADIR%%/sch/opamp-ua741.sch
 %%MODELS%%@dirrm %%DATADIR%%/sch
+%%MODELS%%@dirrm %%DATADIR%%/lib/audio
 %%MODELS%%@dirrm %%DATADIR%%/lib/diode
 %%MODELS%%@dirrm %%DATADIR%%/lib/npn
 %%MODELS%%@dirrm %%DATADIR%%/lib/opamp
 %%MODELS%%@dirrm %%DATADIR%%/lib/pnp
 %%MODELS%%@dirrm %%DATADIR%%/lib/reg
+%%MODELS%%@dirrm %%DATADIR%%/lib/rf
 %%MODELS%%@dirrm %%DATADIR%%/lib
 %%MODELS%%@dirrm %%DATADIR%%
