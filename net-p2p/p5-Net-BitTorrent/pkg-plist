@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Net/BitTorrent.pm
+%%SITE_PERL%%/Net/BitTorrent/FAQ.pod
+%%SITE_PERL%%/Net/BitTorrent/PeerID.pod
+%%SITE_PERL%%/Net/BitTorrent/Session.pm
+%%SITE_PERL%%/Net/BitTorrent/Session/File.pm
+%%SITE_PERL%%/Net/BitTorrent/Session/Peer.pm
+%%SITE_PERL%%/Net/BitTorrent/Session/Peer/Request.pm
+%%SITE_PERL%%/Net/BitTorrent/Session/Piece.pm
+%%SITE_PERL%%/Net/BitTorrent/Session/Piece/Block.pm
+%%SITE_PERL%%/Net/BitTorrent/Session/Tracker.pm
+%%SITE_PERL%%/Net/BitTorrent/Util.pm
+bin/client.pl
+@dirrmtry %%SITE_PERL%%/Net/BitTorrent/Session/Piece
+@dirrmtry %%SITE_PERL%%/Net/BitTorrent/Session/Peer
+@dirrmtry %%SITE_PERL%%/Net/BitTorrent/Session
+@dirrmtry %%SITE_PERL%%/Net/BitTorrent
+@dirrmtry %%SITE_PERL%%/Net
