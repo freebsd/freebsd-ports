@@ -1,6 +1,6 @@
 bin/gmime-config
-bin/uudecode
-bin/uuencode
+bin/gmime-uudecode
+bin/gmime-uuencode
 include/gmime-2.0/gmime/gmime-charset.h
 include/gmime-2.0/gmime/gmime-cipher-context.h
 include/gmime-2.0/gmime/gmime-content-type.h
