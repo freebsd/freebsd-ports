@@ -24,6 +24,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+# GNU assumes that openat() implies the existence of fdopendir(),
+# which does not hold true on FreeBSD 8.
+CONFIGURE_ENV+=	ac_cv_func_openat=no
 
 USE_GMAKE=	yes
 
