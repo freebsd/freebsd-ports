@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A customizable program to run programs, with tab-completion
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
@@ -30,10 +30,6 @@ PLIST_FILES=	bin/gmrun %%DATADIR%%/gmrunrc
 PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=	Doesn't run, segmentation fault
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
