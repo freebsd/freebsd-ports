@@ -291,6 +291,7 @@
     SUBDIR += linux-expat
     SUBDIR += linux-libxml
     SUBDIR += linux-libxml2
+    SUBDIR += linux-scim-libs
     SUBDIR += linux-xerces-c2
     SUBDIR += linuxdoc
     SUBDIR += localize
