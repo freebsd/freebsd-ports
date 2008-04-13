@@ -7,7 +7,7 @@
 
 PORTNAME=	isakmpd
 PORTVERSION=	20041207
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	simon
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD IKE daemon
 
 # this is not compatible with cross build - there's no other way
-.if !exists(/usr/include/netinet6/ipsec.h)
+.if !exists(/usr/include/netipsec/ipsec.h) && !exists(/usr/include/netinet6/ipsec.h)
 BROKEN=		requires IPsec support
 .endif
 
@@ -35,17 +35,17 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700019
-BROKEN=		is not buildable with OpenSSL 0.9.8b
-.else
 OPENSSLINC?=	/usr/include
 OPENSSLLIB?=	/usr/lib
 MAKE_ENV+=	OPENSSLINC="${OPENSSLINC}" OPENSSLLIB="${OPENSSLLIB}"
-.endif
 
 post-patch:
 .for f in conf.h ike_auth.c isakmpd.8 isakmpd.conf.5 isakmpd.policy.5 policy.h
 	${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/${f}
 .endfor
+.if ${OSVERSION} > 700050
+	@${REINPLACE_CMD} -e "s!netinet6/ipsec.h!netipsec/ipsec.h!" \
+		${WRKSRC}/sysdep/freebsd/sysdep-os.h
+.endif
 
 .include <bsd.port.post.mk>
