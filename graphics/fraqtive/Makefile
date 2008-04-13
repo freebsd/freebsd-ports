@@ -6,21 +6,35 @@
 #
 
 PORTNAME=	fraqtive
-PORTVERSION=	0.3.1
-PORTREVISION=	2
-CATEGORIES=	graphics kde
-MASTER_SITES=	http://fraqtive.mimec.org/files/
+PORTVERSION=	0.4.0
+CATEGORIES=	graphics
+MASTER_SITES=	SF
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Draws Mandelbrot and Julia fractals
 
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-USE_GL=		yes
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_QT_VER=	4
+QT_COMPONENTS=	gui opengl qmake_build uic_build moc_build rcc_build
+QT_NONSTANDARD=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" \
+		QMAKE_CFLAGS="${CFLAGS}"
+CONFIGURE_ARGS=	-prefix ${PREFIX} -qmake ${QMAKE}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+OPTIONS=	SSE2 "Enable SSE2 optimization" off
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_SSE2)
+CONFIGURE_ARGS+=-no-sse2
+.endif
+
+post-configure:
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|' \
+		-e 's|^LINK .*|LINK=${CXX}|' \
+		-e 's|^CFLAGS .*|CFLAGS=${CFLAGS} -Wall -W $$\(DEFINES\)|' \
+		-e 's|^CXXFLAGS .*|CXXFLAGS=${CXXFLAGS} -Wall -W $$\(DEFINES\)|'
+
+.include <bsd.port.post.mk>
