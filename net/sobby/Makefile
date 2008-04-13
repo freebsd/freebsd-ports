@@ -17,7 +17,7 @@ COMMENT=	A standalone obby server
 LIB_DEPENDS=	net6:${PORTSDIR}/net/net6 \
 		obby:${PORTSDIR}/devel/obby \
 		xml++:${PORTSDIR}/textproc/libxml++26 \
-		sigc++-2.0:${PORTSDIR}/devel/libsigc++20 \
+		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		glibmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 
 MAN1=	sobby.1
