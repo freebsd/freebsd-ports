@@ -7707,6 +7707,7 @@ midori		ports/www/midori
 mifluz		ports/textproc/mifluz
 migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
+milkytracker	ports/audio/milkytracker
 milter-bogom	ports/mail/milter-bogom
 milter-greylist	ports/mail/milter-greylist
 milter-greylist-devel	ports/mail/milter-greylist-devel
