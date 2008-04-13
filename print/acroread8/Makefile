@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	acroread8
-PORTVERSION?=	8.1.1
-PORTREVISION=	1
+PORTVERSION?=	8.1.2
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/
@@ -17,15 +16,17 @@ DIST_SUBDIR=	acroread
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Adobe Reader for view, print, and search PDF documents (${ADOBE_LANG})
 
-RUN_DEPENDS=	acroreadwrapper>=0.0.20071020:${PORTSDIR}/print/acroreadwrapper \
+RUN_DEPENDS=	acroreadwrapper>=0.0.20080110:${PORTSDIR}/print/acroreadwrapper \
 		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2 \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango \
-		${LOCALBASE}/lib/linux-nvu/libgtkembedmoz.so:${PORTSDIR}/www/linux-nvu
+		${LOCALBASE}/lib/linux-nvu/libgtkembedmoz.so:${PORTSDIR}/www/linux-nvu \
+		${LINUXBASE}/usr/lib/gtk-2.0/immodules/im-scim.so:${PORTSDIR}/textproc/linux-scim-libs
 
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 #USE_GNOME=	desktopfileutils
 NO_BUILD=	yes
 PLIST_SUB=	ACRODIR=${ACRODIR} \
