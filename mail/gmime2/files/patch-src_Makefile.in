@@ -1,0 +1,33 @@
+#
+# http://www.freebsd.org/cgi/query-pr.cgi?pr=118092
+#
+# Rename uudecode e uuencode to gmime-* to not conflict with userland
+#
+--- src/Makefile.in.orig	Thu Dec  6 14:46:22 2007
++++ src/Makefile.in	Thu Dec  6 14:43:34 2007
+@@ -30,6 +30,7 @@
+ install_sh_SCRIPT = $(install_sh) -c
+ INSTALL_HEADER = $(INSTALL_DATA)
+ transform = $(program_transform_name)
++add_gmime = s/^/gmime-/
+ NORMAL_INSTALL = :
+ PRE_INSTALL = :
+ POST_INSTALL = :
+@@ -298,7 +299,7 @@
+ 	  if test -f $$p \
+ 	     || test -f $$p1 \
+ 	  ; then \
+-	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
++	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/;$(add_gmime)'`; \
+ 	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(bindir)/$$f'"; \
+ 	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
+ 	  else :; fi; \
+@@ -307,7 +308,7 @@
+ uninstall-binPROGRAMS:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+-	  f=`echo "$$p" | sed 's,^.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/'`; \
++	  f=`echo "$$p" | sed 's,^.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/;$(add_gmime)'`; \
+ 	  echo " rm -f '$(DESTDIR)$(bindir)/$$f'"; \
+ 	  rm -f "$(DESTDIR)$(bindir)/$$f"; \
+ 	done
