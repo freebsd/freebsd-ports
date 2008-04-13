@@ -394,6 +394,7 @@
     SUBDIR += mhwaveedit
     SUBDIR += midimountain
     SUBDIR += mikmod
+    SUBDIR += milkytracker
     SUBDIR += mixer.app
     SUBDIR += mixmos
     SUBDIR += mixxx
