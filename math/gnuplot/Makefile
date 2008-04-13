@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnuplot
-PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTVERSION=	4.2.3
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -107,10 +106,12 @@ post-build:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/lasergnu ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/demo && ${FIND} . \
 		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+.endif
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/psdoc
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} gnuplot.txt gnuplot.dvi \
 		gnuplot.ps ${DOCSDIR}
