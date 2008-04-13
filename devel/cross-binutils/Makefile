@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.17
+PORTVERSION=	2.18
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stas@FreeBSD.org
-COMMENT=	FSF binutils port for cross-target development
+COMMENT=	GNU binutils port for cross-target development
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -66,12 +66,12 @@ PLIST_FILES=	bin/${OURTARGET}-addr2line \
 		bin/${OURTARGET}-strip
 
 .if defined(WITH_RTEMS_PATCHES)
-PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.8-20061021.diff
+PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.8-20071104.diff
 .endif
 
 .if !defined(TGTARCH) || !defined(TGTABI)
 PKGNAMEPREFIX=	cross-
-IGNORE=		you should select ARCH and ABI to build port
+IGNORE=		you should define TGRARCH and TGTABI to build port
 .endif
 
 #
@@ -85,15 +85,9 @@ FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 .include <bsd.port.pre.mk>
 
 .if defined(TGTARCH)
-.if ${TGTARCH} == "sparc"
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not link
-.endif
-.endif
-
-.if ${TGTARCH} == "m68k" && ${ARCH} == "amd64" && ${OSVERSION} < 600000
+. if ${TGTARCH} == "m68k" && ${ARCH} == "amd64" && ${OSVERSION} < 600000
 BROKEN=		Does not compile
-.endif
+. endif
 .endif
 
 post-patch:
