@@ -1,42 +1,17 @@
 bin/fraqtive
-share/applnk/Utilities/fraqtive.desktop
-share/apps/fraqtive/fraqtiveui.rc
-share/apps/fraqtive/icons/hicolor/16x16/actions/frdisplay.png
-share/apps/fraqtive/icons/hicolor/16x16/actions/frgradedit.png
-share/apps/fraqtive/icons/hicolor/16x16/actions/frgradinv.png
-share/apps/fraqtive/icons/hicolor/16x16/actions/frparams.png
-share/apps/fraqtive/icons/hicolor/16x16/actions/frtab2d.png
-share/apps/fraqtive/icons/hicolor/16x16/actions/frtab3d.png
-share/apps/fraqtive/icons/hicolor/22x22/actions/frgradedit.png
-share/apps/fraqtive/icons/hicolor/22x22/actions/frgradinv.png
-share/config/fraqtiverc
-share/doc/HTML/de/fraqtive/common
-share/doc/HTML/de/fraqtive/index.cache.bz2
-share/doc/HTML/de/fraqtive/index.docbook
-share/doc/HTML/en/fraqtive/common
-share/doc/HTML/en/fraqtive/index.cache.bz2
-share/doc/HTML/en/fraqtive/index.docbook
+share/applications/fraqtive.desktop
 share/icons/hicolor/16x16/apps/fraqtive.png
+share/icons/hicolor/22x22/apps/fraqtive.png
 share/icons/hicolor/32x32/apps/fraqtive.png
 share/icons/hicolor/48x48/apps/fraqtive.png
-share/locale/de/LC_MESSAGES/fraqtive.mo
-share/locale/et/LC_MESSAGES/fraqtive.mo
-share/locale/fr/LC_MESSAGES/fraqtive.mo
-share/locale/it/LC_MESSAGES/fraqtive.mo
-share/locale/nl/LC_MESSAGES/fraqtive.mo
-share/locale/pl/LC_MESSAGES/fraqtive.mo
-share/locale/pt/LC_MESSAGES/fraqtive.mo
-share/locale/ru/LC_MESSAGES/fraqtive.mo
-share/locale/sr/LC_MESSAGES/fraqtive.mo
-share/locale/sv/LC_MESSAGES/fraqtive.mo
-share/locale/vi/LC_MESSAGES/fraqtive.mo
-@dirrm share/doc/HTML/en/fraqtive
-@dirrm share/doc/HTML/de/fraqtive
-@dirrmtry share/config
-@dirrm share/apps/fraqtive/icons/hicolor/22x22/actions
-@dirrm share/apps/fraqtive/icons/hicolor/22x22
-@dirrm share/apps/fraqtive/icons/hicolor/16x16/actions
-@dirrm share/apps/fraqtive/icons/hicolor/16x16
-@dirrm share/apps/fraqtive/icons/hicolor
-@dirrm share/apps/fraqtive/icons
-@dirrm share/apps/fraqtive
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
