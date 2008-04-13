@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uuagc
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -15,11 +15,10 @@ MAINTAINER=	jacula@gmail.com
 COMMENT=	Attribute Grammar System of Universiteit Utrecht
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
-		hs-uulib>=${PORTVERSION}:${PORTSDIR}/devel/hs-uulib
+		hs-uulib>=0.9.5:${PORTSDIR}/devel/hs-uulib
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 
 GHC_VERSION=	6.8.2
-UUAG_VERSION=	${PORTVERSION}
 
 GHC_CMD=	${LOCALBASE}/bin/ghc
 SETUP_CMD=	./setup
@@ -37,5 +36,9 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ${SETUP_CMD} install
+
+post-install:
+	${STRIP_CMD} ${PREFIX}/bin/uuagc
+	${CHMOD} ${BINMODE} ${PREFIX}/bin/uuagc
 
 .include <bsd.port.mk>
