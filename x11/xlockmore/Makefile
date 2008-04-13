@@ -7,7 +7,7 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.25
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/X11/screensavers/
 
@@ -16,7 +16,7 @@ COMMENT=	Like XLock session locker/screen saver, but just more
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-gl --without-motif --without-sx \
+CONFIGURE_ARGS=	--without-gl --without-motif --without-sx --without-ttf \
 		--without-editres --without-dtsaver --without-rplay \
 		--without-nas --without-gtk --without-esound
 .if defined(MAKE_KERBEROS4)
