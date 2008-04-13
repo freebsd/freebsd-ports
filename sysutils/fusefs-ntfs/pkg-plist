@@ -34,7 +34,7 @@ include/ntfs-3g/volume.h
 lib/libntfs-3g.a
 lib/libntfs-3g.la
 lib/libntfs-3g.so
-lib/libntfs-3g.so.24
+lib/libntfs-3g.so.26
 libdata/pkgconfig/libntfs-3g.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
