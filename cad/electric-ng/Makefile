@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	electric-ng
-PORTVERSION=	8.05
+PORTVERSION=	8.06
 PORTREVISION=	0
 CATEGORIES=	cad java
 MASTER_SITES=	${MASTER_SITE_GNU} \
@@ -53,13 +53,13 @@ LIBFILES+=	${JAVALIBDIR}/bsh.jar
 
 .if defined(WITH_AXIS)
 WITH_3D=	yes
-PLUGINS+=	electricJava3D-8.05
+PLUGINS+=	electricJava3D-8.06
 .endif
 
 .if defined(WITH_ANIM)
 WITH_3D=	yes
 RUN_DEPENDS+=	${JAVALIBDIR}/jmf.jar:${PORTSDIR}/java/jmf
-PLUGINS+=	electricJMF-8.05
+PLUGINS+=	electricJMF-8.06
 .endif
 
 .if exists(${J3DLIB})
@@ -70,15 +70,15 @@ RUN_DEPENDS+=	${J3DLIB}:${PORTSDIR}/java/java3d
 .endif
 
 .if defined(WITH_IRSIM)
-PLUGINS+=	electricIRSIM-8.05
+PLUGINS+=	electricIRSIM-8.06
 .endif
 
 .if defined(WITH_PIE)
-PLUGINS+=	electricPIE-8.05
+PLUGINS+=	electricPIE-8.06
 .endif
 
 .if defined(WITH_RUSSIAN)
-PLUGINS+=	electricRussianManual-8.05
+PLUGINS+=	electricRussianManual-8.06
 .endif
 
 .if defined(PLUGINS)
