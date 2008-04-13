@@ -7,19 +7,16 @@
 #
 
 PORTNAME=	embassy
-PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTVERSION=	5.0.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/ \
-		ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
-		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/ \
 		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/
 DIST_SUBDIR=	emboss
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A collection of contributed EMBOSS applications
 
-LIB_DEPENDS=	nucleus.3:${PORTSDIR}/biology/emboss
+LIB_DEPENDS=	nucleus.5:${PORTSDIR}/biology/emboss
 
 PREFIX?=	${LOCALBASE}/emboss
 NO_MTREE=	yes
@@ -27,7 +24,9 @@ USE_SUBMAKE=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_XORG=	x11
 USE_MOTIF=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	DOMAINATRIX	"Protein domain apps" on \
 		DOMALIGN	"Protein domain apps" on \
@@ -41,7 +40,8 @@ OPTIONS=	DOMAINATRIX	"Protein domain apps" on \
 		MSE		"A multiple sequence screen editor" on \
 		MYEMBOSS	"Examples for developers of EMBOSS apps" on \
 		PHYLIP		"Phylogeny inference" on \
-		TOPO		"Transmembrane display" on
+		TOPO		"Transmembrane display" on \
+		VIENNA		"RNA folding" on
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
@@ -50,8 +50,8 @@ EMBASSY_WRKDIR=		${WRKSRC}/EMBASSY
 DOMAINATRIX_VERSION=	0.1.0
 EMNU_VERSION=		1.05
 ESIM4_VERSION=		1.0.0
-HMMER_VERSION=		2.1.1
-MEME_VERSION=		2.3.1
+HMMER_VERSION=		2.3.2
+MEME_VERSION=		0.1.0
 MSE_VERSION=		1.0.0
 TOPO_VERSION=		1.0.0
 PHYLIP_VERSION=		3.6b
@@ -60,8 +60,10 @@ DOMSEARCH_VERSION=	0.1.0
 SIGNATURE_VERSION=	0.1.0
 STRUCTURE_VERSION=	0.1.0
 MYEMBOSS_VERSION=	3.0.0
-EMBASSY_APPS=		DOMAINATRIX EMNU ESIM4 HMMER MEME MSE PHYLIP TOPO \
-			DOMALIGN DOMSEARCH SIGNATURE STRUCTURE MYEMBOSS
+VIENNA_VERSION=		1.6
+EMBASSY_APPS=		DOMAINATRIX EMNU ESIM4 HMMER MEME MSE PHYLIP \
+			TOPO DOMALIGN DOMSEARCH SIGNATURE STRUCTURE MYEMBOSS \
+			VIENNA
 
 .include <bsd.port.pre.mk>
 

@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	emboss
-PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTVERSION=	5.0.0
+RELEASE=	${PORTNAME:U}-${PORTVERSION}
 CATEGORIES=	biology
-MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/ \
-		ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
-		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/ \
-		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/
-DISTNAME=	${PORTNAME:U}-${PORTVERSION}
-DISTFILES=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	SF
+DISTNAME=	${RELEASE}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
@@ -33,25 +29,27 @@ USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_MOTIF=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX=${PREFIX} DATADIR=${DATADIR}
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:U}
+DOCSDIR=	${PREFIX}/share/${PORTNAME:U}/doc
 DATADIR=	${PREFIX}/share/${PORTNAME:U}
+
+CONFIGURE_ARGS+= --with-docroot=${DOCSDIR}
+
+.if !defined(WITHOUT_X11)
+USE_XORG=	x11
+USE_MOTIF=	yes
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd \
+		png.5:${PORTSDIR}/graphics/png
+.else
+CONFIGURE_ARGS+= --without-x
+.endif
 
 DOC_DIRS=	doc/manuals doc/tutorials doc/programs/text doc/programs/html
 CONFIG_FILE=	${WRKSRC}/emboss/emboss.default.template
-
-post-patch:
-.if !defined(NOPORTDOCS)
-.for DIR in ${DOC_DIRS}
-	@ ${REINPLACE_CMD} -e \
-	  's#$$(prefix)/share/$$(PACKAGE)/doc#$$(datadir)/doc/$$(PACKAGE)#' \
-	  ${WRKSRC}/${DIR}/Makefile.in
-.endfor
-.endif
 
 pre-install:
 	@ ${REINPLACE_CMD} -e 's#%%DATADIR%%#${DATADIR}#' ${CONFIG_FILE}
