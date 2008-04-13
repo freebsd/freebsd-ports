@@ -181,7 +181,7 @@ ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE})#{
-IGNORE += Please open http://download.java.net/tiger/\n\
+IGNORE += Please open http://download.java.net/tiger/archive/tiger_u14/\n\
 in a web browser.  Download the\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE})#{
 IGNORE += Update ${JDK_UPDATE_VERSION} Source, ${JRL_SRCFILE}
