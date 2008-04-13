@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smf
-PORTVERSION=	0.15.7
+PORTVERSION=	0.15.8
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www.funaba.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
