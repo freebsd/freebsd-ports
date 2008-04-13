@@ -37,7 +37,7 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		GDBM		"Enable gdbm storage support" off \
 		IPV6		"Enable IPV6 support" on \
 		MAGNET		"Enable magnet support" off \
-		MEMCACHE	"Enable memcached storage support" off \
+		MEMCACHE	"Enable memory caching support" off \
 		MYSQL		"Enable MYSQL support" off \
 		OPENLDAP	"Enable LDAP support" off \
 		OPENSSL		"Enable SSL support" on \
