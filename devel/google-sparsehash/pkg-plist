@@ -13,6 +13,7 @@ include/google/type_traits.h
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.windows
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/dense_hash_map.html
 %%PORTDOCS%%%%DOCSDIR%%/dense_hash_set.html
