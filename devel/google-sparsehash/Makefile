@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-sparsehash
-PORTVERSION=	0.8
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	vd/${PORTNAME}
 DISTNAME=	sparsehash-${PORTVERSION}
 
 MAINTAINER=	vd@FreeBSD.org
-COMMENT=	Google's hashtable implementations optimized for space or speed
+COMMENT=	An extremely memory-efficient hash_map implementation
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
