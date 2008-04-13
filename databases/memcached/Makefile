@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	databases
 MASTER_SITES=	http://www.danga.com/memcached/dist/ \
 		${MASTER_SITE_GENTOO}
@@ -22,12 +22,26 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--with-libevent=${LOCALBASE} --program-prefix=
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+OPTIONS=	REPCACHED	"Enable data replication feature"	off
+
 MAN1=		memcached.1
 
 PLIST_FILES=	bin/memcached \
 		bin/memcached-debug
 
 PORTDOCS=	memory_management.txt protocol.txt
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_REPCACHED)
+# WWW: http://repcached.lab.klab.org/
+PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE}
+PATCH_SITE_SUBDIR=	repcached
+PATCH_DIST_STRIP+=	-p1
+REPCACHED_VERSION=	2.0
+PATCHFILES+=		repcached-${REPCACHED_VERSION}-${PORTVERSION}.patch.gz
+CONFIGURE_ARGS+=	--enable-replication --disable-threads
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's#doc/memcached.1##' ${WRKSRC}/Makefile
@@ -45,4 +59,4 @@ post-install:
 test:
 	${MAKE} -C ${WRKSRC} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
