@@ -1,0 +1,9 @@
+bin/spf.py
+bin/spfquery.py
+bin/type99.py
+%%PYTHON_SITELIBDIR%%/spf.py
+%%PYTHON_SITELIBDIR%%/spf.pyc
+%%PYTHON_SITELIBDIR%%/spf.pyo
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
