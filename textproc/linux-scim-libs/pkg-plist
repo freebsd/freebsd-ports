@@ -1,0 +1,30 @@
+@comment $FreeBSD$
+usr/lib/gtk-2.0/immodules/im-scim.so
+usr/lib/libscim-1.0.so.8
+usr/lib/libscim-1.0.so.8.1.0
+usr/lib/libscim-gtkutils-1.0.so.8
+usr/lib/libscim-gtkutils-1.0.so.8.1.0
+usr/lib/libscim-x11utils-1.0.so.8
+usr/lib/libscim-x11utils-1.0.so.8.1.0
+usr/lib/scim-1.0/1.4.0/Config/simple.so
+usr/lib/scim-1.0/1.4.0/Config/socket.so
+usr/lib/scim-1.0/1.4.0/Filter/sctc.so
+usr/lib/scim-1.0/1.4.0/FrontEnd/socket.so
+usr/lib/scim-1.0/1.4.0/FrontEnd/x11.so
+usr/lib/scim-1.0/1.4.0/Helper/setup.so
+usr/lib/scim-1.0/1.4.0/IMEngine/rawcode.so
+usr/lib/scim-1.0/1.4.0/IMEngine/socket.so
+usr/lib/scim-1.0/1.4.0/SetupUI/aaa-frontend-setup.so
+usr/lib/scim-1.0/1.4.0/SetupUI/aaa-imengine-setup.so
+usr/lib/scim-1.0/1.4.0/SetupUI/panel-gtk-setup.so
+@dirrmtry usr/lib/gtk-2.0/immodules
+@dirrm usr/lib/scim-1.0/1.4.0/Config
+@dirrm usr/lib/scim-1.0/1.4.0/Filter
+@dirrm usr/lib/scim-1.0/1.4.0/FrontEnd
+@dirrm usr/lib/scim-1.0/1.4.0/Helper
+@dirrm usr/lib/scim-1.0/1.4.0/IMEngine
+@dirrm usr/lib/scim-1.0/1.4.0/SetupUI
+@dirrm usr/lib/scim-1.0/1.4.0
+@dirrm usr/lib/scim-1.0
+@exec chroot %D /usr/bin/gtk-query-immodules-2.0-32 > %D/etc/gtk-2.0/%%LINUX_RPM_ARCH%%-redhat-linux-gnu/gtk.immodules
+@unexec chroot %D /usr/bin/gtk-query-immodules-2.0-32 > %D/etc/gtk-2.0/%%LINUX_RPM_ARCH%%-redhat-linux-gnu/gtk.immodules
