@@ -6,37 +6,30 @@
 #
 
 PORTNAME=	spf
-PORTVERSION=	1.6
+PORTVERSION=	2.0.4
 CATEGORIES=	mail python
-MASTER_SITES=	http://www.wayforward.net/spf/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pymilter
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mnag@FreeBSD.org
-COMMENT=	Python implementation of SPF
+COMMENT=	Python implementation of the RFC 4408 SPF protocol
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/DNS/__init__.py:${PORTSDIR}/dns/py-dns
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyspf
 
 DOCSDIR?=	${PREFIX}/share/doc/py-${PORTNAME}
-
-PLIST_FILES=	bin/spf.py \
-		%%PYTHON_SITELIBDIR%%/spf.py \
-		%%PYTHON_SITELIBDIR%%/spf.pyc \
-		%%PYTHON_SITELIBDIR%%/spf.pyo
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
 .endif
 	@${CHMOD} 755 ${PYTHONPREFIX_SITELIBDIR}/spf.py
 	@${LN} -s ${PYTHONPREFIX_SITELIBDIR}/spf.py ${PREFIX}/bin
