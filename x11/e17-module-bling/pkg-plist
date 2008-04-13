@@ -1,0 +1,9 @@
+lib/enlightenment/modules/bling/e-module-bling.edj
+lib/enlightenment/modules/bling/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/bling/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/bling/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/bling/module.desktop
+@dirrm lib/enlightenment/modules/bling/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/bling
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment
