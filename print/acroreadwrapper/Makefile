@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acroreadwrapper
-PORTVERSION=	0.0.20071020
+PORTVERSION=	0.0.20080110
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -29,7 +29,7 @@ SUB_LIST=	ACROBASE7=${ACROBASE7} \
 ADOBEBASE=	Adobe
 ACROBASE7=	${ADOBEBASE}/Acrobat7.0
 ACROBASE8=	${ADOBEBASE}/Reader8
-PLUGINDIR=	lib/browser_linux_plugins
+PLUGINDIR=	lib/npapi/linux-acroread
 
 do-fetch:
 	@${DO_NADA}
