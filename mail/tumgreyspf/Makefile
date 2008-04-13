@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	tumgreyspf
-PORTVERSION=	1.24
+PORTVERSION=	1.32
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/ \
 		ftp://ftp.tummy.com/pub/tummy/tumgreyspf/old-releases/
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	External policy checker for the postfix mail server
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf
 
 USE_PYTHON=	2.1+
 NO_BUILD=	yes
@@ -33,23 +35,6 @@ SUB_LIST=	TUMGREYSPF_DIR=${TUMGREYSPF_DIR} \
 
 PORTDOCS=	*
 
-OPTIONS=	PYSPF	"Use mail/py-spf to resolve spf entries"	on \
-		LIBSPF2	"Use mail/libspf2 (spfquery) to resolve spf entries"	off
-
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_PYSPF)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf
-.endif
-
-.if defined(WITH_LIBSPF2)
-RUN_DEPENDS+=	spfquery:${PORTSDIR}/mail/libspf2
-.endif
-
-.if (!defined(WITHOUT_PYSPF) || defined(WITH_PYSPF)) && defined(WITH_LIBSPF2)
-BROKEN=		Select only one spf resolver
-.endif
-
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may set following options:"
@@ -65,10 +50,6 @@ post-patch:
 		${WRKSRC}/tumgreyspf.conf
 	@${GREP} -r "env python" ${WRKSRC} | ${CUT} -d: -f1 | \
 		${XARGS} ${REINPLACE_CMD} -e "s|env python|env ${PYTHON_CMD}|"
-.if defined(WITH_LIBSPF2)
-	@${REINPLACE_CMD} -e "s|import spf|import spfXXX # Added XXX to disable py-spf if mail/py-spf are installed|" \
-		${WRKSRC}/tumgreyspf
-.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tumgreyspfsupp.py ${PYTHONPREFIX_SITELIBDIR}
@@ -94,4 +75,4 @@ post-install:
 	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
