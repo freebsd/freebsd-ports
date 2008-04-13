@@ -40,4 +40,4 @@ Tokenizer::MeCab uses UTF-8 encoding.  You may have to manually
 (re)install the following ports with the build options for UTF-8:
 	japanese/mecab		WITH_CHARSET=utf-8
 	japanese/mecab-ipadic	WITH_CHARSET=utf-8
-	japanese/p5-Text-MeCab	ENCODING=utf8
+	japanese/p5-Text-MeCab	ENCODING=utf-8
