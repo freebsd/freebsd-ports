@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ziproxy
-PORTVERSION=		2.5.1
+PORTVERSION=		2.5.2
 CATEGORIES=		www
 MASTER_SITES=		SF
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=		ungif.5:${PORTSDIR}/graphics/libungif \
 			jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=		yes
-USE_GCC=		3.2+
 
 CFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
