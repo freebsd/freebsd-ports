@@ -10720,6 +10720,7 @@ p5-Net-Amazon-Signature	ports/net/p5-Net-Amazon-Signature
 p5-Net-Amazon-Thumbnail	ports/net/p5-Net-Amazon-Thumbnail
 p5-Net-Analysis	ports/net/p5-Net-Analysis
 p5-Net-BGP	ports/net/p5-Net-BGP
+p5-Net-BitTorrent	ports/net-p2p/p5-Net-BitTorrent
 p5-Net-BitTorrent-File	ports/net-p2p/p5-Net-BitTorrent-File
 p5-Net-BitTorrent-PeerPacket	ports/net-p2p/p5-Net-BitTorrent-PeerPacket
 p5-Net-Blogger	ports/net/p5-Net-Blogger
