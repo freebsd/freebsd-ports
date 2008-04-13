@@ -2247,6 +2247,7 @@
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-parsetree
+    SUBDIR += rubygem-platform
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rapt
