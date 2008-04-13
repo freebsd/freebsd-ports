@@ -1,13 +1,9 @@
 bin/admsCheck
 bin/admsXml
-lib/libadmsFile.a
-lib/libadmsFile.la
-lib/libadmsFile.so
-lib/libadmsFile.so.0
-lib/libadmsObject.a
-lib/libadmsObject.la
-lib/libadmsObject.so
-lib/libadmsObject.so.0
+lib/libadmsElement.a
+lib/libadmsElement.la
+lib/libadmsElement.so
+lib/libadmsElement.so.0
 lib/libadmsPreprocessor.a
 lib/libadmsPreprocessor.la
 lib/libadmsPreprocessor.so
