@@ -14862,6 +14862,7 @@ rubygem-open4	ports/devel/rubygem-open4
 rubygem-openid	ports/net/rubygem-openid
 rubygem-parsetree	ports/devel/rubygem-parsetree
 rubygem-pdfwriter	ports/print/rubygem-pdfwriter
+rubygem-platform	ports/devel/rubygem-platform
 rubygem-postgres	ports/databases/rubygem-postgres
 rubygem-ptreloaded	ports/devel/rubygem-ptreloaded
 rubygem-rack	ports/www/rubygem-rack
