@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.79J
+PORTVERSION=	4.79K
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/NEW/ \
+		http://www.lerctr.org/lsof/ \
 		ftp://ftp.ayamura.org/pub/lsof/ \
 		ftp://ftp.ayamura.org/pub/lsof/NEW/ \
-		http://www.lerctr.org/lsof/ \
 		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/NEW/ \
 		ftp://gd.tuwien.ac.at/utils/admin-tools/lsof/ \
@@ -23,9 +23,7 @@ MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/ \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/NEW/ \
-		ftp://ftp.tau.ac.il/pub/unix/admin/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	wxs
+		ftp://ftp.tau.ac.il/pub/unix/admin/ 
 
 MAINTAINER=	ler@lerctr.org
 COMMENT=	Lists information about open files (similar to fstat(1))
