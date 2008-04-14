@@ -7,7 +7,7 @@
 
 PORTNAME=	libusb
 PORTVERSION=	0.1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,9 +22,8 @@ OPTIONS=	SGML "Install developer guide from SGML" off
 .if defined(WITH_SGML)
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/jade/catalog:${PORTSDIR}/textproc/jade \
 		${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		docbook<2:${PORTSDIR}/textproc/docbook \
 		${LOCALBASE}/share/sgml/docbook/4.2/catalog:${PORTSDIR}/textproc/docbook-420
-MAKE_ENV+=	SGML_CATALOG_FILES=${LOCALBASE}/share/sgml/jade/catalog:${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${LOCALBASE}/share/sgml/docbook/catalog:${LOCALBASE}/share/sgml/docbook/4.2/catalog
+MAKE_ENV+=	SGML_CATALOG_FILES=${LOCALBASE}/share/sgml/iso8879/catalog:${LOCALBASE}/share/sgml/docbook/4.2/catalog:${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${LOCALBASE}/share/sgml/jade/catalog
 PLIST_SUB=	SGML=""
 .else
 CONFIGURE_ARGS=	--disable-build-docs
