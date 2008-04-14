@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	lacaml
-PORTVERSION=	3.0.20
-PORTREVISION=	1
+PORTVERSION=	4.3.0
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
@@ -34,10 +34,6 @@ DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not install with GCC 4.2
-.endif
 
 post-extract:
 #
