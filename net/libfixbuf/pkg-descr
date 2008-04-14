@@ -1,0 +1,6 @@
+libfixbuf provides an implementation of the IP Flow Information Export
+lib(IPFIX) Protocol as a C rary, for building IPFIX Collecting and
+libExporting Processes.
+
+
+WWW:	http://tools.netsa.cert.org/fixbuf/
