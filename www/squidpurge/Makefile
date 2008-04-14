@@ -7,7 +7,7 @@
 
 PORTNAME=	squidpurge
 PORTVERSION=	1.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/ \
@@ -16,8 +16,6 @@ DISTNAME=	purge-20040201-src
 
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Powerful object purging utility for the Squid web proxy cache
-
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/purge
