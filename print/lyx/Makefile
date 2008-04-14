@@ -8,14 +8,12 @@
 PORTNAME=	lyx
 PORTVERSION=	1.4.5.1
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
-		ftp://ftp.planetmirror.com/pub/lyx/stable/ \
-		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/ \
-		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/ \
-		ftp://ftp.ntua.gr/pub/X11/LyX/stable/ \
-		http://sunsite.icm.edu.pl/pub/unix/editors/lyx/stable/ \
-		ftp://ftp.chg.ru/pub/X11/lyx/stable/ \
-		http://lyx.mirror.fr/stable/
+MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/1.4.x/ \
+		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/1.4.x/ \
+		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/1.4.x/ \
+		ftp://ftp.ntua.gr/pub/X11/LyX/stable/1.4.x/ \
+		http://sunsite.icm.edu.pl/pub/unix/editors/lyx/stable/1.4.x/ \
+		ftp://ftp.chg.ru/pub/X11/lyx/stable/1.4.x/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
