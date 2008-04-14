@@ -6,33 +6,33 @@
 #
 
 PORTNAME=	hevea
-PORTVERSION=	1.09
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	textproc
 MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 		ftp://ftp.inria.fr/INRIA/moscova/hevea/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
-		${PORTNAME}-${PORTVERSION}-manual-dvi.tar.gz \
 		${PORTNAME}-${PORTVERSION}-manual.pdf \
 		${PORTNAME}-${PORTVERSION}-manual.ps.gz \
 		${PORTNAME}-${PORTVERSION}-manual.tar.gz
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Convert LaTeX to HTML
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 PLIST_SUB=	HEVEAVERSION=${PORTVERSION}
-
-TEX_DIR=	${PREFIX}/share/texmf/tex/latex
-TEXHASH=	${PREFIX}/bin/texhash
+MAKE_ENV=	PREFIX=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 IGNORE=		infinite loop during build on amd64
 .endif
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+	    ${WRKSRC}/Makefile
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/hevea
@@ -42,7 +42,7 @@ post-install:
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-manual.pdf ${PREFIX}/share/doc/hevea
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-manual.ps.gz ${PREFIX}/share/doc/hevea
 	(cd ${PREFIX}/share/doc/hevea; ${TAR} xvfz ${DISTDIR}/${PORTNAME}-${PORTVERSION}-manual.tar.gz)
-	(cd ${PREFIX}/share/doc/hevea; ${TAR} xvfz ${DISTDIR}/${PORTNAME}-${PORTVERSION}-manual-dvi.tar.gz)
+	(cd ${PREFIX}/share/doc/hevea; ${GUNZIP_CMD} ${PORTNAME}-${PORTVERSION}-manual.ps.gz)
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/hevea
 .endif
 	@${CAT} ${PKGMESSAGE}
