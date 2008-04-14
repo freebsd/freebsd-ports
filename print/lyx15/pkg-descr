@@ -7,4 +7,7 @@ generated. Speeds up learning LaTeX and makes complicated layouts
 easy and intuitive. New features include spell-checking, international
 character support, WYSIWYG graphics, tables, and equations.
 
+Although LyX-1.5 is the most recent version, LyX-1.4.x remains the
+default "lyx", because LyX-1.5 requries Qt4.
+
 WWW: http://www.lyx.org/
