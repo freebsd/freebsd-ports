@@ -18,7 +18,7 @@
  	server->sysdeps.proc_open_files = _glibtop_sysdeps_proc_open_files;
  }
  
-+#if __FreeBSD_version > 800018
++#if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
 +static char *
 +addr_to_string(struct sockaddr_storage *ss)
 +{
@@ -87,7 +87,7 @@
  glibtop_open_files_entry *
  glibtop_get_proc_open_files_s (glibtop *server, glibtop_proc_open_files *buf,	pid_t pid)
  {
-+#if __FreeBSD_version > 800018
++#if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
 +	struct kinfo_file *freep, *kif;
 +	int name[4];
 +	size_t len;
@@ -99,7 +99,7 @@
  
  	memset(buf, 0, sizeof (glibtop_proc_open_files));
  
-+#if __FreeBSD_version > 800018
++#if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
 +	name[0] = CTL_KERN;
 +	name[1] = KERN_PROC;
 +	name[2] = KERN_PROC_FILEDESC;

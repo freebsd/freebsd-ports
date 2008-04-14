@@ -8,6 +8,7 @@
 
 PORTNAME=	libgtop
 PORTVERSION=	2.22.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -31,7 +32,8 @@ INFO=		libgtop2
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800019
+.if ( ${OSVERSION} >= 800000 && ${OSVERSION} < 800019 ) || \
+	${OSVERSION} < 700104
 RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
