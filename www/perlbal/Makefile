@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Perlbal
-PORTVERSION=	1.60
+PORTVERSION=	1.70
 CATEGORIES=	www
 MASTER_SITES=	http://www.danga.com/dist/Perlbal/ \
 		http://www.powertrip.co.za/distfiles/danga/
@@ -24,7 +24,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		perlbal.1
-MAN3=		Perlbal.3 Perlbal::Plugin::Palimg.3
+MAN3=		Perlbal.3 Perlbal::Plugin::Palimg.3 \
+		Perlbal::Plugin::Cgilike.3 \
+		Perlbal::Plugin::Include.3
 
 .include <bsd.port.pre.mk>
 

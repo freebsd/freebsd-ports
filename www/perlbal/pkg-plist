@@ -20,8 +20,10 @@
 %%SITE_PERL%%/Perlbal/ManageCommand.pm
 %%SITE_PERL%%/Perlbal/Plugin/AccessControl.pm
 %%SITE_PERL%%/Perlbal/Plugin/AutoRemoveLeadingDir.pm
+%%SITE_PERL%%/Perlbal/Plugin/Cgilike.pm
 %%SITE_PERL%%/Perlbal/Plugin/EchoService.pm
 %%SITE_PERL%%/Perlbal/Plugin/Highpri.pm
+%%SITE_PERL%%/Perlbal/Plugin/Include.pm
 %%SITE_PERL%%/Perlbal/Plugin/LazyCDN.pm
 %%SITE_PERL%%/Perlbal/Plugin/NotModified.pm
 %%SITE_PERL%%/Perlbal/Plugin/Palimg.pm
