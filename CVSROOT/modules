@@ -6654,6 +6654,7 @@ libfame		ports/multimedia/libfame
 libfec		ports/comms/libfec
 libffi		ports/devel/libffi
 libffi-devel	ports/devel/libffi-devel
+libfixbuf	ports/net/libfixbuf
 libflash	ports/graphics/libflash
 libfontenc	ports/x11-fonts/libfontenc
 libfov		ports/games/libfov
