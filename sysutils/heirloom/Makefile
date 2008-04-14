@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	heirloom
-PORTVERSION=	070227
+PORTVERSION=	070715
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The Heirloom Toolchest is a collection of standard Unix utilities
 
 BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
