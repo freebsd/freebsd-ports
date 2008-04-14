@@ -1,5 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Watch/.packlist
-%%SITE_PERL%%/Tie/Watch.pm
-@dirrmtry %%SITE_PERL%%/Tie
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Watch
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
