@@ -1,15 +1,15 @@
---- configure.orig	Thu Nov 29 10:36:33 2007
-+++ configure	Sat Jan 12 16:57:04 2008
-@@ -1488,7 +1488,7 @@
- if test -z "$ac_cv_prog_CC"; then
-   ac_ct_CC=$CC
-   # Extract the first word of "gcc", so it can be a program name with args.
--set dummy gcc; ac_word=$2
-+set dummy $CXX; ac_word=$2
- echo "$as_me:$LINENO: checking for $ac_word" >&5
- echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
- if test "${ac_cv_prog_ac_ct_CC+set}" = set; then
-@@ -6781,9 +6781,10 @@
+--- configure.orig	2008-03-15 02:21:22.000000000 +0100
++++ configure	2008-04-13 17:16:35.000000000 +0200
+@@ -1929,7 +1929,7 @@
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}gcc", so it can be a program name with args.
+-set dummy ${ac_tool_prefix}gcc; ac_word=$2
++set dummy ${ac_tool_prefix}$CXX; ac_word=$2
+ { echo "$as_me:$LINENO: checking for $ac_word" >&5
+ echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
+ if test "${ac_cv_prog_CC+set}" = set; then
+@@ -7174,9 +7174,10 @@
      no_lua="yes"
    ;;
    *)

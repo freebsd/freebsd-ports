@@ -44,8 +44,10 @@ libexec/nmap/nselib-bin/bit.so
 %%DATADIR%%/scripts/HTTPpasswd.nse
 %%DATADIR%%/scripts/HTTP_open_proxy.nse
 %%DATADIR%%/scripts/HTTPAuth.nse
+%%DATADIR%%/scripts/UPnP-info.nse
 %%DATADIR%%/scripts/zoneTrans.nse
 @dirrm %%DATADIR%%/scripts
+%%DATADIR%%/nselib/http.lua
 %%DATADIR%%/nselib/ipOps.lua
 %%DATADIR%%/nselib/strbuf.lua
 %%DATADIR%%/nselib/stdnse.lua
@@ -54,6 +56,7 @@ libexec/nmap/nselib-bin/bit.so
 %%DATADIR%%/nselib/match.lua
 %%DATADIR%%/nselib/listop.lua
 %%DATADIR%%/nselib/url.lua
+%%DATADIR%%/nselib/tab.lua
 @dirrm %%DATADIR%%/nselib
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db

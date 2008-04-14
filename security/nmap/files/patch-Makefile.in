@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Dec  1 01:21:28 2007
-+++ Makefile.in	Fri Jan  4 17:05:28 2008
+--- Makefile.in.orig	2008-01-24 02:36:01.000000000 +0100
++++ Makefile.in	2008-04-13 16:48:40.000000000 +0200
 @@ -11,7 +11,7 @@
  srcdir = @srcdir@
  nmaplibexecdir = @libexecdir@/nmap
@@ -9,3 +9,12 @@
  NMAPDEVDIR=~/nmap-dev
  
  export NBASEDIR=@NBASEDIR@
+@@ -178,7 +178,7 @@
+ # Use strip -x to avoid stripping dynamically loaded NSE functions. See
+ # http://seclists.org/nmap-dev/2007/q4/0272.html.
+ 	$(STRIP) -x $(DESTDIR)$(bindir)/nmap
+-	$(INSTALL) -c -m 644 docs/$(TARGET).1 docs/zenmap.1 $(DESTDIR)$(mandir)/man1/
++	$(INSTALL) -c -m 644 docs/$(TARGET).1 $(DESTDIR)$(mandir)/man1/
+ 	$(INSTALL) -c -m 644 docs/nmap.xsl $(DESTDIR)$(nmapdatadir)/
+ 	$(INSTALL) -c -m 644 docs/nmap.dtd $(DESTDIR)$(nmapdatadir)/
+ 	$(INSTALL) -c -m 644 nmap-services $(DESTDIR)$(nmapdatadir)/
