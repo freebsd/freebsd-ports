@@ -106,7 +106,7 @@ pre-install:
 	@ ${ECHO} @unexec if cmp -hsz %D/%%EXAMPLESDIR%%/config.tcl %D/${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl \; then ${RM} %D/${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl \; fi >> ${PLIST}
 	@ ${FIND} ${WRKSRC}/etc ! -type d | \
 		${SED} 's|${WRKSRC}/etc|%%EXAMPLESDIR%%|' >> ${PLIST}
-	@ ${ECHO} @exec if ! [ -f ${OPENACSBASE:S/%D\///}/etc/${PORTNAME}-config.tcl ] \; then ${CP} %D/%%EXAMPLESDIR%%/config.tcl %D/${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl \; fi >> ${PLIST}
+	@ ${ECHO} @exec if ! [ -f ${OPENACSBASE:S/%D\///}/etc/${PORTNAME}-config.tcl ] \; then ${MKDIR} %D/${OPENACSBASE:S/${PREFIX}\///}/etc \; ${CP} %D/%%EXAMPLESDIR%%/config.tcl %D/${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl \; fi >> ${PLIST}
 	@ ${ECHO} @dirrmtry ${OPENACSBASE:S/${PREFIX}\///}/etc >> ${PLIST}
 	@ ${FIND} ${WRKSRC} -type d ! -path '${WRKSRC}/etc*' | \
 		${SORT} -r | \
