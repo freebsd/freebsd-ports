@@ -6,7 +6,7 @@ fingerprinting (remote host OS or device identification). Nmap also
 offers flexible target and port specification, decoy/stealth scanning,
 sunRPC scanning, and much more.
 
-WWW: http://www.insecure.org/nmap/
+WWW: http://nmap.org/
 
 See the web page and the Phrack Magazine article (Volume 7, Issue 51
-September 01, 1997, article 11 of 17) http://www.insecure.org/nmap/p51-11.txt
+September 01, 1997, article 11 of 17) http://nmap.org/p51-11.html
