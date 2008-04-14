@@ -10,8 +10,7 @@ PORTVERSION=	0.90.80
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.milkytracker.net/files/ \
-		CRITICAL
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}/${PORTREVISION}
+		CRITICAL/${PORTNAME}/${PORTVERSION}/${PORTREVISION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A free music creation tool inspired by Fast Tracker 2
