@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	buildbot
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Automated system from compile/test cycle to validate code changes
 
 USE_PYTHON=	yes

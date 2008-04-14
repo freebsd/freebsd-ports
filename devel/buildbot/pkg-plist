@@ -27,9 +27,6 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/changes/freshcvs.py
 %%PYTHON_SITELIBDIR%%/buildbot/changes/freshcvs.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/changes/freshcvs.pyo
-%%PYTHON_SITELIBDIR%%/buildbot/changes/freshcvsmail.py
-%%PYTHON_SITELIBDIR%%/buildbot/changes/freshcvsmail.pyc
-%%PYTHON_SITELIBDIR%%/buildbot/changes/freshcvsmail.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/changes/hgbuildbot.py
 %%PYTHON_SITELIBDIR%%/buildbot/changes/hgbuildbot.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/changes/hgbuildbot.pyo
@@ -112,6 +109,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/__init__.py
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/checkconfig.py
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/checkconfig.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/checkconfig.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/logwatcher.py
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/logwatcher.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/logwatcher.pyo
@@ -242,6 +242,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/steps/transfer.py
 %%PYTHON_SITELIBDIR%%/buildbot/steps/transfer.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/steps/transfer.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/steps/trigger.py
+%%PYTHON_SITELIBDIR%%/buildbot/steps/trigger.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/steps/trigger.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/__init__.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/__init__.pyo
@@ -283,6 +286,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_buildreq.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_buildreq.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_buildreq.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_buildstep.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_buildstep.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_buildstep.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_changes.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_changes.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_changes.pyo
