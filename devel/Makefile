@@ -974,6 +974,7 @@
     SUBDIR += p5-Class-C3-XS
     SUBDIR += p5-Class-Closure
     SUBDIR += p5-Class-CodeStyler
+    SUBDIR += p5-Class-Component
     SUBDIR += p5-Class-Constant
     SUBDIR += p5-Class-Container
     SUBDIR += p5-Class-Contract
