@@ -54,11 +54,11 @@ CONFIGURE_ARGS+=	--enable-xft
 CONFIGURE_ARGS+=	--disable-xft
 .endif
 
-.if !defined(WITHOUT_OWN_WINDOW)
-CONFIGURE_ARGS+=	--enable-own-window
-.else
-CONFIGURE_ARGS+=	--disable-own-window
-.endif
+#.if !defined(WITHOUT_OWN_WINDOW)
+#CONFIGURE_ARGS+=	--enable-own-window
+#.else
+#CONFIGURE_ARGS+=	--disable-own-window
+#.endif
 
 .if defined(WITH_MPD)
 CONFIGURE_ARGS+=	--enable-mpd
