@@ -7,6 +7,7 @@
 
 PORTNAME=	listmanager
 PORTVERSION=	2.109
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.listmanager.org/v${PORTVERSION}/ \
 		http://www.listmanager.org/
@@ -30,6 +31,7 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 MAN8=		listmanager.8
 
 LISTMANAGER_HOME?=/var/listmanager
+MTAGRP?=	mailnull
 
 pre-patch:
 	(cd ${WRKSRC} && ${TAR} xfz help.tar.gz)
@@ -50,7 +52,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/help/* ${PREFIX}/share/listmanager/help
 	${INSTALL_SCRIPT} ${WRKSRC}/setup ${PREFIX}/share/listmanager
 	${INSTALL_MAN} ${WRKSRC}/listmanager.8 ${PREFIX}/man/man8
-	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME}${EXTRACT_SUFX} ${PREFIX}/sbin/listmanager
+	${INSTALL_PROGRAM} -g ${MTAGRP} ${WRKSRC}/${DISTNAME}${EXTRACT_SUFX} ${PREFIX}/sbin/listmanager
 	${CHMOD} 4510 ${PREFIX}/sbin/listmanager
 
 post-install:
