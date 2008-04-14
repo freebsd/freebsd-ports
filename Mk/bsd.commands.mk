@@ -42,6 +42,7 @@ FALSE?=		false				# Shell builtin
 FILE?=		/usr/bin/file
 FIND?=		/usr/bin/find
 FMT?=		/usr/bin/fmt
+GMAKE?=		gmake
 GREP?=		/usr/bin/grep
 GUNZIP_CMD?=	/usr/bin/gunzip -f
 GZCAT?=		/usr/bin/gzcat
@@ -67,6 +68,7 @@ OBJDUMP?=	/usr/bin/objdump
 PASTE?=		/usr/bin/paste
 PAX?=		/bin/pax
 PRINTF?=	/usr/bin/printf
+PW?=		/usr/sbin/pw
 REALPATH?=	/bin/realpath
 RM?=		/bin/rm
 RMDIR?=		/bin/rmdir
@@ -87,7 +89,21 @@ UNMAKESELF_CMD?=	${LOCALBASE}/bin/unmakeself
 UNZIP_CMD?=	${LOCALBASE}/bin/unzip
 WHICH?=		/usr/bin/which
 XARGS?=		/usr/bin/xargs
+XMKMF?=		${LOCALBASE}/bin/xmkmf -a
 YACC?=		/usr/bin/yacc
+
+.if exists(/sbin/md5)
+MD5?=		/sbin/md5
+.else
+MD5?=		md5
+.endif
+.if exists(/sbin/sha256)
+SHA256?=	/sbin/sha256
+.elif exists(${LOCALBASE}/sbin/sha256)
+SHA256?=	${LOCALBASE}/sbin/sha256
+.else
+SHA256?=	NO
+.endif
 
 # ECHO is defined in /usr/share/mk/sys.mk, which can either be "echo",
 # or "true" if the make flag -s is given.  Use ECHO_CMD where you mean

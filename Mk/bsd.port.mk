@@ -373,6 +373,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_X_PREFIX	- If set, this port installs in ${X11BASE}.  Implies USE_XLIB.
 # USE_XLIB		- If set, this port uses the X libraries. In the USE_LINUX
 #				  case the linux X libraries are referenced.
+# USE_DISPLAY	- If set, this ports requires a (virtual) X11 environment
+#				  setup. If the environment variable DISPLAY Is not set,
+#				  then an extra build dependency on Xvfb is added. Further,
+#				  if PACKAGE_BUILDING is not set, then CONFIGURE_ENV and
+#				  MAKE_ENV are extended with a DISPLAY variable.
 #
 # USE_FREETYPE	- If set, this port uses the freetype print libraries.
 # USE_GL		- A list of Mesa or GL related dependencies needed by the port.
@@ -1563,8 +1568,9 @@ SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 		DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
 		WWWDIR=${WWWDIR} ETCDIR=${ETCDIR}
 
-PLIST_REINPLACE+=	dirrmtry stopdaemon
+PLIST_REINPLACE+=	dirrmtry stopdaemon rmtry
 PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir %D/\1 2>/dev/null || true!
+PLIST_REINPLACE_RMTRY=s!^@rmtry \(.*\)!@unexec rm -f %D/\1 2>/dev/null || true!
 PLIST_REINPLACE_STOPDAEMON=s!^@stopdaemon \(.*\)!@unexec %D/etc/rc.d/\1${RC_SUBR_SUFFIX} forcestop 2>/dev/null || true!
 
 .if defined(WITHOUT_CPU_CFLAGS)
@@ -1849,10 +1855,14 @@ X_FONTS_ALIAS_PORT=	${PORTSDIR}/x11-fonts/font-alias
 BUILD_DEPENDS+=			imake:${X_IMAKE_PORT}
 .endif
 
-.if defined(PACKAGE_BUILDING) && defined(USE_DISPLAY)
+.if defined(USE_DISPLAY) && !defined(DISPLAY)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 	${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT} \
 	${X11BASE}/lib/X11/fonts/misc/fonts.alias:${X_FONTS_ALIAS_PORT}
+.if !defined(PACKAGE_BUILDING)
+CONFIGURE_ENV+=	DISPLAY="localhost:1001"
+MAKE_ENV+=		DISPLAY="localhost:1001"
+.endif
 .endif
 
 .if defined(USE_XPM)
@@ -2072,22 +2082,6 @@ DO_NADA?=		${TRUE}
 # Use this as the first operand to always build dependency.
 NONEXISTENT?=	/nonexistent
 
-# Miscellaneous overridable commands:
-GMAKE?=			gmake
-XMKMF?=			xmkmf -a
-.if exists(/sbin/md5)
-MD5?=			/sbin/md5
-.else
-MD5?=			md5
-.endif
-.if exists(/sbin/sha256)
-SHA256?=		/sbin/sha256
-.elif exists(${LOCALBASE}/sbin/sha256)
-SHA256?=		${LOCALBASE}/sbin/sha256
-.else
-SHA256?=		NO
-.endif
-
 CHECKSUM_ALGORITHMS?= md5 sha256
 
 MD5_FILE?=		${MASTERDIR}/distinfo
@@ -2201,9 +2195,12 @@ MTREE_FILE=	/etc/mtree/BSD.usr.dist
 .else
 MTREE_FILE=	${PORTSDIR}/Templates/BSD.local.dist
 .endif
+MTREE_FILE_DEFAULT=yes
 .endif
 MTREE_CMD?=	/usr/sbin/mtree
 MTREE_ARGS?=	-U ${MTREE_FOLLOWS_SYMLINKS} -f ${MTREE_FILE} -d -e -p
+
+READLINK_CMD?=	/usr/bin/readlink
 
 # Determine whether or not we can use rootly owner/group functions.
 .if !defined(UID)
@@ -2760,8 +2757,7 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	palm parallel pear perl5 plan9 polish portuguese ports-mgmt \
 	print python ruby rubygems russian \
 	scheme science security shells spanish sysutils \
-	tcl tcl80 tcl82 tcl83 tcl84 textproc \
-	tk tk80 tk82 tk83 tk84 tkstep80 \
+	tcl textproc tk \
 	ukrainian vietnamese windowmaker www \
 	x11 x11-clocks x11-drivers x11-fm x11-fonts x11-servers x11-themes \
 	x11-toolkits x11-wm xfce zope
@@ -3814,10 +3810,15 @@ install-mtree:
 			exit 1; \
 		else \
 			${MTREE_CMD} ${MTREE_ARGS} ${PREFIX}/ >/dev/null; \
-			if [ ${PREFIX} = ${LOCALBASE} ]; then \
+			if [ ${PREFIX} = ${LOCALBASE} -a "${MTREE_FILE_DEFAULT}" = "yes" ]; then \
 				cd ${PREFIX}/share/nls; \
-				${LN} -shf C POSIX; \
-				${LN} -shf C en_US.US-ASCII; \
+				for link in POSIX en_US.US-ASCII; \
+				do \
+					if [ x"`${READLINK_CMD} $${link}`" != x"C" ]; \
+					then \
+						${LN} -shf C $${link}; \
+					fi; \
+				done; \
 			fi; \
 		fi; \
 	else \
@@ -3900,6 +3901,7 @@ install-ldconfig-file:
 .endif
 .endif
 
+.if !defined(DISABLE_SECURITY_CHECK)
 .if !target(security-check)
 .if !defined(OLD_SECURITY_CHECK)
 
@@ -4034,6 +4036,10 @@ security-check:
 	fi
 .endif # !defined(OLD_SECURITY_CHECK)
 .endif
+.else # i.e. defined(DISABLE_SECURITY_CHECK)
+security-check:
+	@${ECHO_MSG} "      WARNING: Security check has been disabled."
+.endif # !defined(DISABLE_SECURITY_CHECK)
 
 ################################################################
 # Skeleton targets start here
@@ -4872,11 +4878,7 @@ lib-depends:
 .if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
 	@for i in ${LIB_DEPENDS}; do \
 		lib=$${i%%:*}; \
-		case $$lib in \
-			*.*.*)	pattern="`${ECHO_CMD} $$lib | ${SED} -e 's/\./\\\\./g'`" ;;\
-			*.*)	pattern="$${lib%%.*}\.$${lib#*.}" ;;\
-			*)	pattern="$$lib" ;;\
-		esac; \
+		pattern="`${ECHO_CMD} $$lib | ${SED} -E -e 's/\./\\\\./g' -e 's/(\\\\)?\+/\\\\+/g'`"\
 		dir=$${i#*:}; \
 		target=$${i##*:}; \
 		if ${TEST} $$dir = $$target; then \
