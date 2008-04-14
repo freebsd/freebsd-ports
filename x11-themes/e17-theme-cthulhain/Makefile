@@ -6,8 +6,9 @@
 #
 
 PORTNAME=	cthulhain
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.1
 PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_GET_E} \
 		ftp://ftp.springdaemons.com/pub/snapshots/e17/
