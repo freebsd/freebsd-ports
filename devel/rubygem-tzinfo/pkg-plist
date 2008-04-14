@@ -209,6 +209,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Argentina/Mendoza.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Argentina/Rio_Gallegos.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Argentina/San_Juan.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Argentina/San_Luis.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Argentina/Tucuman.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Argentina/Ushuaia.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Aruba.rb
@@ -385,6 +386,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Dushanbe.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Gaza.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Harbin.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Ho_Chi_Minh.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Hong_Kong.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Hovd.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Irkutsk.rb
@@ -397,6 +399,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Karachi.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Kashgar.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Katmandu.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Kolkata.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Krasnoyarsk.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Kuala_Lumpur.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Asia/Kuching.rb
