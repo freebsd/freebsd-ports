@@ -1,6 +1,6 @@
 %%GEM_SPEC%%
 %%GEM_CACHE%%
-%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/History.txt
 %%GEM_LIB_DIR%%/MIT-LICENSE
 %%GEM_LIB_DIR%%/Manifest.txt
 %%GEM_LIB_DIR%%/README.txt
@@ -59,6 +59,7 @@
 %%GEM_LIB_DIR%%/test/test_area.rb
 %%GEM_LIB_DIR%%/test/test_bar.rb
 %%GEM_LIB_DIR%%/test/test_base.rb
+%%GEM_LIB_DIR%%/test/test_bullet.rb
 %%GEM_LIB_DIR%%/test/test_legend.rb
 %%GEM_LIB_DIR%%/test/test_line.rb
 %%GEM_LIB_DIR%%/test/test_mini_bar.rb
@@ -206,6 +207,7 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Magick/Draw.html
 %%GEM_DOC_DIR%%/rdoc/classes/Magick/Draw.src/M000090.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/History_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/Manifest_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/README_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/gruff/accumulator_bar_rb.html
