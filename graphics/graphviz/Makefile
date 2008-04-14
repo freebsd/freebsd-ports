@@ -187,7 +187,6 @@ PLIST_SUB+=		WITH_GTK="@comment "
 .if defined(WITH_GDK_PIXBUF)
 CONFIGURE_ARGS+=	--with-gdk-pixbuf=yes
 PLIST_SUB+=		WITH_PIXBUF=""
-USE_GNOME+=		gdkpixbuf
 .if !defined(WITH_GTK)
 IGNORE=			option WITH_GTK is required for option WITH_GDK_PIXBUF
 .endif
