@@ -5,7 +5,7 @@ you may have to follow this steps to make it work correctly:
 1. Create the MySQL database:
 # mysqladmin --user=root create cacti
 2. Create a mysql user/password for cacti:
-   (change user and/or password if requered)
+   (change user and/or password if required)
 # echo "GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY 'cactiuser'; FLUSH PRIVILEGES;" | mysql
 3. Import the default cacti database:
 # mysql cacti < %%PREFIX%%/%%CACTIDIR%%/cacti.sql
