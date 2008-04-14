@@ -7,13 +7,15 @@
 
 PORTNAME=	docdiff
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Compare text word by word
 
-RUN_DEPENDS=	*ruby*-uconv>=0:${PORTSDIR}/japanese/ruby-uconv
+RUN_DEPENDS=	*ruby*-uconv>=0:${PORTSDIR}/japanese/ruby-uconv \
+		*ruby*-iconv>=0:${PORTSDIR}/converters/ruby-iconv
 
 USE_RUBY=	yes
 NO_BUILD=	yes
