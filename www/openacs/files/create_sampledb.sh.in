@@ -32,7 +32,7 @@ fi
 echo "Creating PostgreSQL user ${OPENACS_USER} ..."
 ${SU} -l ${PGUSER} -c "${LOCALBASE}/bin/createuser ${CREATEUSERFLAGS} ${OPENACS_USER}" 
 echo "Creating PostgreSQL database ${OPENACS_DB} ..."
-${SU} -l ${OPENACS_USER} -c "${LOCALBASE}/bin/createdb -E UNICODE ${OPENACS_DB}"
+${SU} -m ${OPENACS_USER} -c "${LOCALBASE}/bin/createdb -E UNICODE ${OPENACS_DB}"
 echo "Registering language plpgsql for database ${OPENACS_DB} ..."
 ${SU} -l ${PGUSER} -c "${LOCALBASE}/bin/createlang plpgsql ${OPENACS_DB}"
 

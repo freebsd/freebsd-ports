@@ -7,6 +7,7 @@
 
 PORTNAME?=	openacs
 DISTVERSION?=	5.4.1
+PORTREVISION?=	1
 CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
 EXTRACT_SUFX=	.tgz?revision_id=${DIST_REV_ID}
@@ -49,8 +50,7 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 PORTDOCS=	*
 
-OPTIONS=	EXAMPLES "Install various example files" on \
-		TCLTHREAD "Depend on tclthread" on \
+OPTIONS=	TCLTHREAD "Depend on tclthread" on \
 		TCLWEBTEST "Depend on tclwebteset" on
 
 .include <bsd.port.pre.mk>
@@ -103,30 +103,26 @@ pre-install:
 		! -path '${WRKSRC}/readme.txt' ! -path '${WRKSRC}/license.txt' \
 		! -path '${WRKSRC}/ChangeLog' | \
 		${SED} 's|${WRKSRC}|${OPENACSBASE:S/${PREFIX}\///}|' > ${PLIST}
-	@ ${ECHO} @exec if ! [ -f ${OPENACSBASE:S/%D\///}/etc/${PORTNAME}-config.tcl ] \; then ${CP} %D/%%EXAMPLESDIR%%/config.tcl %D/${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl \; fi >> ${PLIST}
 	@ ${ECHO} @unexec if cmp -hsz %D/%%EXAMPLESDIR%%/config.tcl %D/${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl \; then ${RM} %D/${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl \; fi >> ${PLIST}
+	@ ${FIND} ${WRKSRC}/etc ! -type d | \
+		${SED} 's|${WRKSRC}/etc|%%EXAMPLESDIR%%|' >> ${PLIST}
+	@ ${ECHO} @exec if ! [ -f ${OPENACSBASE:S/%D\///}/etc/${PORTNAME}-config.tcl ] \; then ${CP} %D/%%EXAMPLESDIR%%/config.tcl %D/${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl \; fi >> ${PLIST}
 	@ ${ECHO} @dirrmtry ${OPENACSBASE:S/${PREFIX}\///}/etc >> ${PLIST}
 	@ ${FIND} ${WRKSRC} -type d ! -path '${WRKSRC}/etc*' | \
 		${SORT} -r | \
 		${SED} 's|${WRKSRC}|@dirrmtry ${OPENACSBASE:S/${PREFIX}\///}|' >> ${PLIST}
-.if defined(WITH_EXAMPLES)
-	@ ${FIND} ${WRKSRC}/etc ! -type d | \
-		${SED} 's|${WRKSRC}/etc|%%EXAMPLESDIR%%|' >> ${PLIST}
 	@ ${FIND} ${WRKSRC}/etc -type d | \
 		${SED} 's|${WRKSRC}/etc|@dirrm %%EXAMPLESDIR%%|' | \
 		${SORT} -r >> ${PLIST}
-.endif
 
 do-install:
 	@ ${ECHO} "Installing base files"
 	@ ${MKDIR} ${OPENACSBASE}/etc
 	@ ${TAR} -c -C ${WRKSRC} -f - ${BASE_INSTALL} | \
 		${TAR} -x -C ${OPENACSBASE} -f -
-.if defined(WITH_EXAMPLES)
 	@ ${ECHO} "Installing examples"
 	@ ${MKDIR} ${EXAMPLESDIR}
 	@ ${TAR} -c -C ${WRKSRC}/etc -f - . | ${TAR} -x -C ${EXAMPLESDIR} -f -
-.endif
 	@ ${ECHO} "Installing sample configuration file"
 	@ ${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-config.tcl ${EXAMPLESDIR}/config.tcl
 	@ if ! [ -f ${OPENACSBASE}/etc/${PORTNAME}-config.tcl ]; then \
