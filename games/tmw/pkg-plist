@@ -1,7 +1,6 @@
 bin/tmw
 share/applications/tmw.desktop
 share/pixmaps/tmw.png
-%%DATADIR%%/data/graphics/gui/attack_target.png
 %%DATADIR%%/data/graphics/gui/bg_quad_dis.png
 %%DATADIR%%/data/graphics/gui/browserfont.png
 %%DATADIR%%/data/graphics/gui/button.png
@@ -53,30 +52,6 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/vscroll_up_pressed.png
 %%DATADIR%%/data/graphics/images/error.png
 %%DATADIR%%/data/graphics/images/login_wallpaper.png
-%%DATADIR%%/data/graphics/images/ambient/clouds.png
-%%DATADIR%%/data/graphics/images/ambient/night.png
-%%DATADIR%%/data/graphics/images/ambient/sandstorm.png
-%%DATADIR%%/data/graphics/images/ambient/spotlight.png
-%%DATADIR%%/data/graphics/tiles/Woodland_ground.png
-%%DATADIR%%/data/graphics/tiles/Woodland_village.png
-%%DATADIR%%/data/graphics/tiles/Woodland_village_x2.png
-%%DATADIR%%/data/graphics/tiles/Woodland_x2.png
-%%DATADIR%%/data/graphics/tiles/Woodland_x3.png
-%%DATADIR%%/data/graphics/tiles/arena.png
-%%DATADIR%%/data/graphics/tiles/cave.png
-%%DATADIR%%/data/graphics/tiles/collision.png
-%%DATADIR%%/data/graphics/tiles/desert1.png
-%%DATADIR%%/data/graphics/tiles/desert2.png
-%%DATADIR%%/data/graphics/tiles/desert_x2.png
-%%DATADIR%%/data/graphics/tiles/desert_x3.png
-%%DATADIR%%/data/graphics/tiles/icecave.png
-%%DATADIR%%/data/graphics/tiles/inn.png
-%%DATADIR%%/data/graphics/tiles/mountain.png
-%%DATADIR%%/data/graphics/tiles/snow_building.png
-%%DATADIR%%/data/graphics/tiles/snow_x2.png
-%%DATADIR%%/data/graphics/tiles/snow_x3.png
-%%DATADIR%%/data/graphics/tiles/snowset.png
-%%DATADIR%%/data/graphics/tiles/trans_woodland-desert.png
 %%DATADIR%%/data/help/about.txt
 %%DATADIR%%/data/help/changes.txt
 %%DATADIR%%/data/help/commands.txt
@@ -95,8 +70,6 @@ share/pixmaps/tmw.png
 %%MUSICADDON%%@dirrm %%DATADIR%%/data/music
 @dirrm %%DATADIR%%/data/icons
 @dirrm %%DATADIR%%/data/help
-@dirrm %%DATADIR%%/data/graphics/tiles
-@dirrm %%DATADIR%%/data/graphics/images/ambient
 @dirrm %%DATADIR%%/data/graphics/images
 @dirrm %%DATADIR%%/data/graphics/gui
 @dirrm %%DATADIR%%/data/graphics
