@@ -32,7 +32,8 @@ post-patch:
 	@${ECHO_CMD} "" > ${WRKSRC}/lib/SDLAudio/configure
 	@${REINPLACE_CMD} \
 		-e 's|>&/|>/|; s|-Wmissing-declarations||; \
-			s|-Wmissing-prototypes||' \
+			s|-Wmissing-prototypes||; \
+			s|nasm -r|nasm -v|' \
 			${WRKSRC}/configure
 do-build:
 .for dir in lib/gnu lib/mp4av lib/mp4v2
