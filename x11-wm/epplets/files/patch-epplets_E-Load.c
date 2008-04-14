@@ -1,5 +1,5 @@
 --- epplets/E-Load.c.orig	2006-04-16 00:32:42.000000000 +0200
-+++ epplets/E-Load.c	2008-01-24 00:20:59.000000000 +0100
++++ epplets/E-Load.c	2008-04-14 13:14:29.000000000 +0200
 @@ -8,6 +8,12 @@
  #include "proc.h"
  #endif
@@ -42,7 +42,7 @@
 +   long cp_time[cpus][CPUSTATES]; 
 +   size_t len = sizeof(cp_time);
 +
-+   sysctlbyname("kern.cp_times", cp_time, &len, NULL, 0);
++   sysctlbyname((cpus > 1) ? "kern.cp_times" : "kern.cp_time", cp_time, &len, NULL, 0);
 +
 +   for(i=0; i<cpus; i++)
 +   {

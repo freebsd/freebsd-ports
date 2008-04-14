@@ -1,5 +1,5 @@
 --- epplets/E-Cpu.c.orig	2007-03-16 20:52:25.000000000 +0100
-+++ epplets/E-Cpu.c	2008-01-24 13:40:28.000000000 +0100
++++ epplets/E-Cpu.c	2008-04-14 13:14:07.000000000 +0200
 @@ -1,3 +1,7 @@
 +/*
 + * Copyright (C) 2008, Pietro Cerutti <gahr@FreeBSD.org> (FreeBSD adaptation)
@@ -98,7 +98,7 @@
 +
 +   len = sizeof(cp_time);
 +
-+   if(sysctlbyname("kern.cp_times", &cp_time, &len, NULL, 0)) {
++   if(sysctlbyname((cpus > 1) ? "kern.cp_times" : "kern.cp_time", &cp_time, &len, NULL, 0)) {
 +      perror("Couldn't retrieve CPU states");
 +      exit(EXIT_FAILURE);
 +   }
