@@ -1,0 +1,10 @@
+include/dyncall.h
+include/dyncall_callf.h
+include/dyncall_config.h
+include/dyncall_macros.h
+include/dyncall_signature.h
+include/dyncall_types.h
+include/dyncall_value.h
+include/dynload.h
+lib/libdyncall_s.a
+lib/libdynload_s.a
