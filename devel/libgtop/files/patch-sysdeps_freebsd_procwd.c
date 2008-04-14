@@ -14,7 +14,7 @@
  	server->sysdeps.proc_wd = _glibtop_sysdeps_proc_wd;
  }
  
-+#if __FreeBSD_version < 800019
++#if (__FreeBSD_version >= 800000 && __FreeBSD_version < 800019) || _FreeBSD_version < 700104
  static GPtrArray *
  parse_output(const char *output, glibtop_proc_wd *buf)
  {
@@ -28,7 +28,7 @@
  glibtop_get_proc_wd_s(glibtop *server, glibtop_proc_wd *buf, pid_t pid)
  {
  	char path[MAXPATHLEN];
-+#if __FreeBSD_version > 800018
++#if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
 +	struct kinfo_file *freep, *kif;
 +	GPtrArray *dirs;
 +	size_t len;
@@ -44,7 +44,7 @@
  	if (safe_readlink(path, buf->exe, sizeof(buf->exe)))
  		buf->flags |= (1 << GLIBTOP_PROC_WD_EXE);
  
-+#if __FreeBSD_version > 800018
++#if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
 +	name[0] = CTL_KERN;
 +	name[1] = KERN_PROC;
 +	name[2] = KERN_PROC_FILEDESC;
