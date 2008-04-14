@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdb
-PORTVERSION=	6.6
+PORTVERSION=	6.7.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gdb/releases
@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stas@FreeBSD.org
-COMMENT=	FSF gdb port for cross-target development
+COMMENT=	GNU gdb port for cross-target development
 
 #
 # Temporary hack to dial with dependencies during package builds for
@@ -52,13 +52,13 @@ INFO=		${OURTARGET}-annotate \
 EPRFX=		${PREFIX}/libexec/${OURTARGET}-gdb
 
 .if defined(WITH_RTEMS_PATCHES)
-PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.8-20070306.diff
+PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.8-20071216.diff
 .endif
 
 .if !defined(TGTARCH) || !defined(TGTABI)
 PKGNAMEPREFIX=	cross-
 OURTARGET=	cross	# to generate correct dependency list
-IGNORE=		you should select ARCH and ABI to build port
+IGNORE=		you should define TGTARCH and TGTABI to build port
 .endif
 
 #
