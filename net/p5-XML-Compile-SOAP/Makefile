@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Compile-SOAP
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Base-class for SOAP implementations
 
 RUN_DEPENDS=	p5-XML-Compile>=0.73:${PORTSDIR}/textproc/p5-XML-Compile \
 		p5-Log-Report>=0.11:${PORTSDIR}/devel/p5-Log-Report \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+		p5-libwww>=5.803:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
 
@@ -31,4 +31,10 @@ MAN3=		XML::Compile::SOAP.3 \
 		XML::Compile::Transport::SOAPHTTP.3 XML::Compile::WSDL11.3 \
 		XML::Compile::WSDL11::Operation.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500702
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+.endif
+
+.include <bsd.port.post.mk>
