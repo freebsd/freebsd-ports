@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kshowmail
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.9.1
 CATEGORIES=	mail kde
 MASTER_SITES=	SF
 
@@ -19,9 +19,23 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+PLIST_SUB=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB=	NLS=""
+.endif
+
+post-patch:
+.if defined(WITHOUT_NLS)
+	${REINPLACE_CMD} -e 's|po||g' ${WRKSRC}/Makefile.am
+.endif
+
 pre-configure:
 	@cd ${WRKSRC}/admin && ${RM} -f ltmain.sh && ${CP} -f ${LTMAIN} .
 	@cd ${WRKSRC}/admin && ${RM} -f libtool.m4.in && ${CP} -f ${LIBTOOL_M4} libtool.m4.in
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -f admin/Makefile.common
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

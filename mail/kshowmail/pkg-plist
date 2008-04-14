@@ -5,6 +5,8 @@ lib/kde3/kcm_kshowmailconfigactions.la
 lib/kde3/kcm_kshowmailconfigactions.so
 lib/kde3/kcm_kshowmailconfigdisplay.la
 lib/kde3/kcm_kshowmailconfigdisplay.so
+lib/kde3/kcm_kshowmailconfigfilter.so
+lib/kde3/kcm_kshowmailconfigfilter.la
 lib/kde3/kcm_kshowmailconfiggeneral.la
 lib/kde3/kcm_kshowmailconfiggeneral.so
 share/applnk/Internet/kshowmail.desktop
@@ -42,17 +44,18 @@ share/doc/HTML/ru/kshowmail/index.docbook
 share/doc/HTML/sv/kshowmail/common
 share/doc/HTML/sv/kshowmail/index.cache.bz2
 share/doc/HTML/sv/kshowmail/index.docbook
-share/locale/cs/LC_MESSAGES/kshowmail.mo
-share/locale/de/LC_MESSAGES/kshowmail.mo
-share/locale/es/LC_MESSAGES/kshowmail.mo
-share/locale/fr/LC_MESSAGES/kshowmail.mo
-share/locale/hu/LC_MESSAGES/kshowmail.mo
-share/locale/it/LC_MESSAGES/kshowmail.mo
-share/locale/ru/LC_MESSAGES/kshowmail.mo
-share/locale/sv/LC_MESSAGES/kshowmail.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/kshowmail.mo
+%%NLS%%share/locale/de/LC_MESSAGES/kshowmail.mo
+%%NLS%%share/locale/es/LC_MESSAGES/kshowmail.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/kshowmail.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/kshowmail.mo
+%%NLS%%share/locale/it/LC_MESSAGES/kshowmail.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/kshowmail.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/kshowmail.mo
 share/services/kshowmailconfigaccounts.desktop
 share/services/kshowmailconfigactions.desktop
 share/services/kshowmailconfigdisplay.desktop
+share/services/kshowmailconfigfilter.desktop
 share/services/kshowmailconfiggeneral.desktop
 @dirrmtry share/services
 @dirrm share/doc/HTML/sv/kshowmail
