@@ -27,7 +27,8 @@ FETCH_CMD=	wget -c
 
 OPTIONS=	BDB "Use DB based spooler" on \
 		JAVA "Support Java DRMAA API" on \
-		X11 "Qmon X11 GUI" on
+		X11 "Qmon X11 GUI" on \
+		QSH "Enable qsh (requires xterm on exec hosts)" on
 
 CONFLICTS=	sge-6.[1-9]* sge-5* sgeee-[0-9]* sge-0.*
 
@@ -174,6 +175,9 @@ do-build:
 	@${MKDIR} ${TMP_SGE_ROOT}
 	@cd ${WRKSRC} && ${SETENV} SGE_ROOT=${TMP_SGE_ROOT} \
 	    ./scripts/distinst -local -libs ${SGE_ARCH} -- ${INST_PROGS}
+.if defined(WITHOUT_QSH)
+	${INSTALL_SCRIPT} ${FILESDIR}/qsh-disabled.sh ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qsh
+.endif
 .if !defined(WITH_X11)
 	@${RM} ${TMP_SGE_ROOT}/catman/cat/cat1/qmon.1
 	@${RM} -r ${TMP_SGE_ROOT}/3rd_party/qmon
