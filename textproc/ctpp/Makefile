@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctpp
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.6
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.reki.ru/products/ctpp/download/ \
 		${MASTER_SITE_LOCAL}
@@ -28,10 +28,5 @@ do-install:
 	@${MKDIR} ${PREFIX}/include/ctpp
 	cd ${WRKSRC}/include && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/include/ctpp
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
