@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zenmap
-PORTVERSION=	4.52
+PORTVERSION=	4.60
 CATEGORIES=	security ipv6
-MASTER_SITES=	http://download.insecure.org/nmap/dist/ \
+MASTER_SITES=	http://nmap.org/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/ \
 		http://www.mirrorservice.org/sites/ftp.wiretapped.net/pub/security/network-mapping/nmap/ \
 		http://mirror.sg.depaul.edu/pub/security/nmap/
@@ -25,6 +25,9 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 INSTALLS_EGGINFO=	yes
+
+MAN1=		zenmap.1
+MLINKS=		zenmap.1 xnmap.1
 
 .include <bsd.port.pre.mk>
 
@@ -48,5 +51,7 @@ do-build:
 do-install:
 	cd ${WRKSRC}/${PORTNAME} && \
 		${PYTHON_CMD} setup.py install --prefix ${PREFIX}
+	@${RM} ${PREFIX}/bin/uninstall_zenmap
+	${INSTALL_MAN} ${WRKSRC}/docs/zenmap.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
