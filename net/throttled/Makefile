@@ -7,6 +7,7 @@
 
 PORTNAME=	throttled
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.intrarts.com/Files/
 EXTRACT_SUFX=	.tgz
