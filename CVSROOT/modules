@@ -2337,6 +2337,7 @@ dynamechs	ports/graphics/dynamechs
 dynamips	ports/emulators/dynamips
 dynamips-devel	ports/emulators/dynamips-devel
 dynamite	ports/archivers/dynamite
+dyncall		ports/devel/dyncall
 dzip		ports/archivers/dzip
 e		ports/math/e
 e-uae		ports/emulators/e-uae
