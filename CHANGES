@@ -10,6 +10,18 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20080414:
+AUTHOR: pav@FreeBSD.org
+
+  * @rmtry is now supported in pkg-plist.
+
+  * USE_DISPLAY made more powerful, see comments in bsd.port.mk for details.
+
+  * ${PW} is now defined.
+
+  * LIB_DEPENDS can now be used with libraries with + sign in their name
+    without the need for escaping.
+
 20080312:
 AUTHOR: pav@FreeBSD.org
 
