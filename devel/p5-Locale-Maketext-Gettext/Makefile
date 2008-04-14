@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext-Gettext
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,7 @@ MAN3=		Locale::Maketext::Gettext.3 \
 		Locale::Maketext::Gettext::Functions.3
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	BUGS Changes README
+PORTDOCS=	BUGS Changes README THANKS
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
