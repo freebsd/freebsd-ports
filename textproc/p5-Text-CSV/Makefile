@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Text-CSV
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Composition and decomposition of comma-separated values
 
 PERL_CONFIGURE=	yes
