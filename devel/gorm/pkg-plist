@@ -139,6 +139,9 @@ System/Applications/Gorm.app/Resources/English.lproj/GormHelpInspector.gorm/obje
 System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm/data.classes
+System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm/data.info
+System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/data.classes
 System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/data.info
 System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/objects.gorm
@@ -344,6 +347,7 @@ System/Library/Headers/InterfaceBuilder/IBInspectorMode.h
 System/Library/Headers/InterfaceBuilder/IBObjectAdditions.h
 System/Library/Headers/InterfaceBuilder/IBObjectProtocol.h
 System/Library/Headers/InterfaceBuilder/IBPalette.h
+System/Library/Headers/InterfaceBuilder/IBPlugin.h
 System/Library/Headers/InterfaceBuilder/IBProjectFiles.h
 System/Library/Headers/InterfaceBuilder/IBProjects.h
 System/Library/Headers/InterfaceBuilder/IBResourceManager.h
@@ -383,6 +387,7 @@ System/Tools/Gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm
+@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormHelpInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm
