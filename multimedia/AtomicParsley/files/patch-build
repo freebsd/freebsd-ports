@@ -1,0 +1,21 @@
+--- ./build.orig	2006-09-10 17:02:58.000000000 +0200
++++ ./build	2008-04-08 14:30:11.000000000 +0200
+@@ -26,7 +26,8 @@
+   else
+     EXTRA_CPP_FLAGS=""
+   fi
+-
++elif (test $OS = FreeBSD) ;then
++    EXTRA_CPP_FLAGS="$CFLAGS"
+ else
+   ## Windows (cygwin & mingw) fall here ##
+   EXTRA_CPP_FLAGS=""
+@@ -93,6 +94,8 @@
+ elif test $OS = CYGWIN ; then
+   g++ -g -O2 -Wall -o AtomicParsley.exe obj_files/APar_sha1.o obj_files/APar_uuid.o  obj_files/AP_commons.o obj_files/AtomicParsley_genres.o obj_files/AP_iconv.o obj_files/AP_AtomExtracts.o obj_files/AtomicParsley.o obj_files/main.o -lgcc 
+ 
++elif test $OS = FreeBSD; then
++  g++ -O2 -Wall -o AtomicParsley obj_files/APar_sha1.o obj_files/APar_uuid.o obj_files/AP_commons.o obj_files/AtomicParsley_genres.o obj_files/AP_iconv.o obj_files/AP_AtomExtracts.o obj_files/AtomicParsley.o obj_files/main.o
+ else
+   g++ -g -O2 -Wall -o AtomicParsley.exe obj_files/APar_sha1.o obj_files/APar_uuid.o obj_files/AP_commons.o obj_files/AtomicParsley_genres.o obj_files/AP_iconv.o obj_files/AP_AtomExtracts.o obj_files/AtomicParsley.o obj_files/main.o
+ fi
