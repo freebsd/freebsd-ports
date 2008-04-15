@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arts++
-PORTVERSION=	1.1.a12
+PORTVERSION=	1.1.a13
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.caida.org/tools/utilities/arts/download/
