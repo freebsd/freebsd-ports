@@ -712,6 +712,7 @@ azureus2	ports/net-p2p/azureus2
 b2bua		ports/net/b2bua
 b2evolution	ports/www/b2evolution
 babel		ports/biology/babel
+babl		ports/x11/babl
 babytrans	ports/deskutils/babytrans
 backfract	ports/graphics/backfract
 bacula-bat	ports/sysutils/bacula-bat
