@@ -738,6 +738,7 @@ share/locale/eu/LC_MESSAGES/deluge.mo
 share/locale/fa/LC_MESSAGES/deluge.mo
 share/locale/fi/LC_MESSAGES/deluge.mo
 share/locale/fr/LC_MESSAGES/deluge.mo
+share/locale/fy/LC_MESSAGES/deluge.mo
 share/locale/gl/LC_MESSAGES/deluge.mo
 share/locale/he/LC_MESSAGES/deluge.mo
 share/locale/hi/LC_MESSAGES/deluge.mo
@@ -790,6 +791,8 @@ share/pixmaps/deluge.png
 @dirrmtry share/locale/la
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/fy/LC_MESSAGES
+@dirrmtry share/locale/fy
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
 @dirrmtry share/icons/hicolor/256x256/apps
