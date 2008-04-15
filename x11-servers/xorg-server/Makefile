@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-server
 PORTVERSION=	1.4
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/:fdo \

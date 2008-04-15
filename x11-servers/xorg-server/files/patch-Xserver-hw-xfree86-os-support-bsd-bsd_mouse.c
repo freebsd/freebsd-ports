@@ -1,5 +1,5 @@
 --- hw/xfree86/os-support/bsd/bsd_mouse.c.orig	2007-08-23 15:05:48.000000000 -0400
-+++ hw/xfree86/os-support/bsd/bsd_mouse.c	2008-03-28 13:49:17.000000000 -0400
++++ hw/xfree86/os-support/bsd/bsd_mouse.c	2008-04-08 15:41:42.000000000 -0400
 @@ -1,4 +1,3 @@
 -
  /*
@@ -21,57 +21,97 @@
  	NULL
  };
  #elif defined(__OpenBSD__) && defined(WSCONS_SUPPORT)
-@@ -184,6 +187,7 @@
+@@ -101,7 +104,11 @@
+ #if defined(__NetBSD__)
+     return MSE_SERIAL | MSE_BUS | MSE_PS2 | MSE_AUTO;
+ #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
+-    return MSE_SERIAL | MSE_BUS | MSE_PS2 | MSE_AUTO | MSE_MISC;
++    return MSE_SERIAL | MSE_BUS | MSE_PS2 |
++#ifdef XPS2_SUPPORT
++	MSE_XPS2 |
++#endif
++	MSE_AUTO | MSE_MISC;
+ #else
+     return MSE_SERIAL | MSE_BUS | MSE_PS2 | MSE_XPS2 | MSE_AUTO;
+ #endif
+@@ -180,10 +187,31 @@
+ 	{ MOUSE_PROTO_THINK,		"ThinkingMouse" },
+ 	{ MOUSE_PROTO_SYSMOUSE,		"SysMouse" }
+ };
+-	
++
++#ifdef XPS2_SUPPORT
++static struct {
++	int dmodel;
++	char *name;
++} ps2proto[] = {
++	{ MOUSE_MODEL_NETSCROLL,	"NetScrollPS/2" },
++	{ MOUSE_MODEL_NET,		"NetMousePS/2" },
++	{ MOUSE_MODEL_GLIDEPOINT,	"GlidePointPS/2" },
++	{ MOUSE_MODEL_THINK,		"ThinkingMousePS/2" },
++	{ MOUSE_MODEL_INTELLI,		"IMPS/2" },
++	{ MOUSE_MODEL_MOUSEMANPLUS,	"MouseManPlusPS/2" },
++	{ MOUSE_MODEL_EXPLORER,		"ExplorerPS/2" },
++	{ MOUSE_MODEL_4D,		"IMPS/2" },
++	{ MOUSE_MODEL_4DPLUS,		"IMPS/2" },
++};
++#endif
++
  static const char *
  SetupAuto(InputInfoPtr pInfo, int *protoPara)
  {
++#ifdef XPS2_SUPPORT
 +    char *dev;
++#endif
++    const char *proto;
      int i;
      mousehw_t hw;
      mousemode_t mode;
-@@ -192,9 +196,12 @@
+@@ -191,10 +219,20 @@
+     if (pInfo->fd == -1)
  	return NULL;
  
++#ifdef XPS2_SUPPORT
      /* set the driver operation level, if applicable */
--    i = 1;
--    ioctl(pInfo->fd, MOUSE_SETLEVEL, &i);
--    
-+    if ((dev = xf86FindOptionValue(pInfo->options, "Device")) &&
-+	!strcmp(dev, DEFAULT_SYSMOUSE_DEV)) {
-+	i = 1;
++    if ((dev = xf86FindOptionValue(pInfo->options, "Device"))) {
++	if (!strncmp(dev, DEFAULT_PS2_DEV, 8))
++	    i = 2;
++	else
++	    i = 1;
 +	ioctl(pInfo->fd, MOUSE_SETLEVEL, &i);
 +    }
++#else
+     i = 1;
+     ioctl(pInfo->fd, MOUSE_SETLEVEL, &i);
+-    
++#endif
 +
      /* interrogate the driver and get some intelligence on the device. */
      hw.iftype = MOUSE_IF_UNKNOWN;
      hw.model = MOUSE_MODEL_GENERIC;
-@@ -210,8 +217,8 @@
+@@ -210,9 +248,18 @@
  		    protoPara[0] = mode.syncmask[0];
  		    protoPara[1] = mode.syncmask[1];
  		}
--		xf86MsgVerb(X_INFO, 3, "%s: SetupAuto: protocol is %s\n",
++		proto = devproto[i].name;
++#ifdef XPS2_SUPPORT
++		if (mode.protocol == MOUSE_PROTO_PS2)
++		    for (i = 0; i < sizeof(ps2proto)/sizeof(ps2proto[0]); ++i)
++			if (hw.model == ps2proto[i].dmodel) {
++			    proto = ps2proto[i].name;
++			    break;
++			}
++#endif
+ 		xf86MsgVerb(X_INFO, 3, "%s: SetupAuto: protocol is %s\n",
 -			    pInfo->name, devproto[i].name);
-+		xf86MsgVerb(X_INFO, 3, "%s: SetupAuto: protocol is %s, level is %d\n",
-+			    pInfo->name, devproto[i].name, mode.level);
- 		return devproto[i].name;
+-		return devproto[i].name;
++			    pInfo->name, proto);
++		return proto;
  	    }
  	}
-@@ -222,6 +229,7 @@
- static void
- SetSysMouseRes(InputInfoPtr pInfo, const char *protocol, int rate, int res)
- {
-+    char *dev;
-     mousemode_t mode;
-     MouseDevPtr pMse;
- 
-@@ -231,11 +239,11 @@
-     mode.resolution = res > 0 ? res : -1;
-     mode.accelfactor = -1;
- #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
--    if (pMse->autoProbe ||
--	(protocol && xf86NameCmp(protocol, "SysMouse") == 0)) {
-+    if ((dev = xf86FindOptionValue(pInfo->options, "Device")) &&
-+	!strcmp(dev, DEFAULT_SYSMOUSE_DEV)) {
+     }
+@@ -235,41 +282,41 @@
+ 	(protocol && xf86NameCmp(protocol, "SysMouse") == 0)) {
  	/*
  	 * As the FreeBSD sysmouse driver defaults to protocol level 0
 -	 * everytime it is opened we enforce protocol level 1 again at
@@ -79,7 +119,14 @@
  	 * this point.
  	 */
  	mode.level = 1;
-@@ -249,27 +257,29 @@
+     } else
+-	mode.level = -1;
+-#else
+-    mode.level = -1;
+ #endif
++    mode.level = -1;
+     ioctl(pInfo->fd, MOUSE_SETMODE, &mode);
+ }
  #endif
  
  #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
@@ -122,7 +169,7 @@
      }
      return FALSE;
  }
-@@ -309,15 +319,12 @@
+@@ -309,15 +356,12 @@
  		    devMouse = FALSE;
  		}
  		close(fd);
@@ -141,3 +188,13 @@
  		break;
  	    }
  	}
+@@ -775,7 +819,9 @@
+     p->CheckProtocol = CheckProtocol;
+ #if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)) && defined(MOUSE_PROTO_SYSMOUSE)
+     p->SetupAuto = SetupAuto;
++#ifndef XPS2_SUPPORT
+     p->SetPS2Res = SetSysMouseRes;
++#endif
+     p->SetBMRes = SetSysMouseRes;
+     p->SetMiscRes = SetSysMouseRes;
+ #endif
