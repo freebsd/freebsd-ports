@@ -1,3 +1,4 @@
+%%ARCH%%lib/libvisual.a
 include/libvisual/libvisual.h
 include/libvisual/lv_actor.h
 include/libvisual/lv_audio.h
@@ -30,7 +31,6 @@ include/libvisual/lv_types.h
 include/libvisual/lv_ui.h
 include/libvisual/lv_video.h
 include/libvisual/lvconfig.h
-lib/libvisual.a
 lib/libvisual.la
 lib/libvisual.so
 lib/libvisual.so.0
