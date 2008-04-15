@@ -28,6 +28,7 @@
 %%WWWDIR%%/dijit/_base/window.js
 %%WWWDIR%%/dijit/_editor/RichText.js
 %%WWWDIR%%/dijit/_editor/_Plugin.js
+%%WWWDIR%%/dijit/_editor/html.js
 %%WWWDIR%%/dijit/_editor/nls/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/commands.js
@@ -39,6 +40,9 @@
 %%WWWDIR%%/dijit/_editor/nls/es/commands.js
 %%WWWDIR%%/dijit/_editor/nls/fr/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/fr/commands.js
+%%WWWDIR%%/dijit/_editor/nls/gr/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/gr/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/gr/commands.js
 %%WWWDIR%%/dijit/_editor/nls/hu/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/hu/commands.js
 %%WWWDIR%%/dijit/_editor/nls/it/LinkDialog.js
@@ -62,6 +66,7 @@
 %%WWWDIR%%/dijit/_editor/plugins/FontChoice.js
 %%WWWDIR%%/dijit/_editor/plugins/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/plugins/TextColor.js
+%%WWWDIR%%/dijit/_editor/plugins/ToggleDir.js
 %%WWWDIR%%/dijit/_editor/range.js
 %%WWWDIR%%/dijit/_editor/selection.js
 %%WWWDIR%%/dijit/_tree/Node.html
@@ -69,6 +74,7 @@
 %%WWWDIR%%/dijit/_tree/dndContainer.js
 %%WWWDIR%%/dijit/_tree/dndSelector.js
 %%WWWDIR%%/dijit/_tree/dndSource.js
+%%WWWDIR%%/dijit/_tree/model.js
 %%WWWDIR%%/dijit/bench/benchReceive.php
 %%WWWDIR%%/dijit/bench/benchTool.html
 %%WWWDIR%%/dijit/bench/create_widgets.html
@@ -78,6 +84,7 @@
 %%WWWDIR%%/dijit/changes.txt
 %%WWWDIR%%/dijit/demos/chat.html
 %%WWWDIR%%/dijit/demos/chat/chat.css
+%%WWWDIR%%/dijit/demos/chat/chat.css.commented.css
 %%WWWDIR%%/dijit/demos/chat/client.html
 %%WWWDIR%%/dijit/demos/chat/community.html
 %%WWWDIR%%/dijit/demos/chat/operator.html
@@ -87,6 +94,7 @@
 %%WWWDIR%%/dijit/demos/i18n/continents.json
 %%WWWDIR%%/dijit/demos/i18n/data.json
 %%WWWDIR%%/dijit/demos/i18n/flags.css
+%%WWWDIR%%/dijit/demos/i18n/flags.css.commented.css
 %%WWWDIR%%/dijit/demos/i18n/flags.png
 %%WWWDIR%%/dijit/demos/i18n/generate.html
 %%WWWDIR%%/dijit/demos/i18n/langCountryMap.json
@@ -97,6 +105,7 @@
 %%WWWDIR%%/dijit/demos/mail/icons.gif
 %%WWWDIR%%/dijit/demos/mail/icons.png
 %%WWWDIR%%/dijit/demos/mail/mail.css
+%%WWWDIR%%/dijit/demos/mail/mail.css.commented.css
 %%WWWDIR%%/dijit/demos/mail/mail.json
 %%WWWDIR%%/dijit/demos/mail/newMail.html
 %%WWWDIR%%/dijit/demos/nihao.html
@@ -115,14 +124,16 @@
 %%WWWDIR%%/dijit/form/DateTextBox.js
 %%WWWDIR%%/dijit/form/FilteringSelect.js
 %%WWWDIR%%/dijit/form/Form.js
-%%WWWDIR%%/dijit/form/InlineEditBox.js
+%%WWWDIR%%/dijit/form/MultiSelect.js
 %%WWWDIR%%/dijit/form/NumberSpinner.js
 %%WWWDIR%%/dijit/form/NumberTextBox.js
+%%WWWDIR%%/dijit/form/SimpleTextarea.js
 %%WWWDIR%%/dijit/form/Slider.js
 %%WWWDIR%%/dijit/form/TextBox.js
 %%WWWDIR%%/dijit/form/Textarea.js
 %%WWWDIR%%/dijit/form/TimeTextBox.js
 %%WWWDIR%%/dijit/form/ValidationTextBox.js
+%%WWWDIR%%/dijit/form/_DateTimeTextBox.js
 %%WWWDIR%%/dijit/form/_FormWidget.js
 %%WWWDIR%%/dijit/form/_Spinner.js
 %%WWWDIR%%/dijit/form/nls/ComboBox.js
@@ -139,6 +150,9 @@
 %%WWWDIR%%/dijit/form/nls/fr/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/fr/Textarea.js
 %%WWWDIR%%/dijit/form/nls/fr/validate.js
+%%WWWDIR%%/dijit/form/nls/gr/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/gr/Textarea.js
+%%WWWDIR%%/dijit/form/nls/gr/validate.js
 %%WWWDIR%%/dijit/form/nls/hu/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/hu/Textarea.js
 %%WWWDIR%%/dijit/form/nls/hu/validate.js
@@ -180,8 +194,8 @@
 %%WWWDIR%%/dijit/form/templates/TimePicker.html
 %%WWWDIR%%/dijit/form/templates/ValidationTextBox.html
 %%WWWDIR%%/dijit/form/templates/VerticalSlider.html
-%%WWWDIR%%/dijit/form/templates/blank.gif
 %%WWWDIR%%/dijit/layout/AccordionContainer.js
+%%WWWDIR%%/dijit/layout/BorderContainer.js
 %%WWWDIR%%/dijit/layout/ContentPane.js
 %%WWWDIR%%/dijit/layout/LayoutContainer.js
 %%WWWDIR%%/dijit/layout/LinkPane.js
@@ -229,6 +243,8 @@
 %%WWWDIR%%/dijit/nls/es/loading.js
 %%WWWDIR%%/dijit/nls/fr/common.js
 %%WWWDIR%%/dijit/nls/fr/loading.js
+%%WWWDIR%%/dijit/nls/gr/common.js
+%%WWWDIR%%/dijit/nls/gr/loading.js
 %%WWWDIR%%/dijit/nls/hu/common.js
 %%WWWDIR%%/dijit/nls/hu/loading.js
 %%WWWDIR%%/dijit/nls/it/common.js
@@ -244,10 +260,13 @@
 %%WWWDIR%%/dijit/nls/pt/loading.js
 %%WWWDIR%%/dijit/nls/ru/common.js
 %%WWWDIR%%/dijit/nls/ru/loading.js
+%%WWWDIR%%/dijit/nls/sv/common.js
+%%WWWDIR%%/dijit/nls/sv/loading.js
 %%WWWDIR%%/dijit/nls/zh-tw/common.js
 %%WWWDIR%%/dijit/nls/zh-tw/loading.js
 %%WWWDIR%%/dijit/nls/zh/common.js
 %%WWWDIR%%/dijit/nls/zh/loading.js
+%%WWWDIR%%/dijit/resources/_modules.js
 %%WWWDIR%%/dijit/templates/Calendar.html
 %%WWWDIR%%/dijit/templates/ColorPalette.html
 %%WWWDIR%%/dijit/templates/Dialog.html
@@ -255,7 +274,6 @@
 %%WWWDIR%%/dijit/templates/ProgressBar.html
 %%WWWDIR%%/dijit/templates/TitlePane.html
 %%WWWDIR%%/dijit/templates/Tooltip.html
-%%WWWDIR%%/dijit/templates/blank.gif
 %%WWWDIR%%/dijit/templates/buttons/bg-fade.png
 %%WWWDIR%%/dijit/templates/colors3x4.png
 %%WWWDIR%%/dijit/templates/colors7x10.png
@@ -263,6 +281,7 @@
 %%WWWDIR%%/dijit/tests/Container.js
 %%WWWDIR%%/dijit/tests/_Templated.html
 %%WWWDIR%%/dijit/tests/_Templated.js
+%%WWWDIR%%/dijit/tests/_altCalendar.html
 %%WWWDIR%%/dijit/tests/_base/manager.html
 %%WWWDIR%%/dijit/tests/_base/manager.js
 %%WWWDIR%%/dijit/tests/_base/test_FocusManager.html
@@ -275,16 +294,21 @@
 %%WWWDIR%%/dijit/tests/_base/wai.html
 %%WWWDIR%%/dijit/tests/_base/wai.js
 %%WWWDIR%%/dijit/tests/_data/categories.json
+%%WWWDIR%%/dijit/tests/_data/categoriesNested.json
 %%WWWDIR%%/dijit/tests/_data/countries.json
 %%WWWDIR%%/dijit/tests/_data/dijits.json
 %%WWWDIR%%/dijit/tests/_data/states.json
 %%WWWDIR%%/dijit/tests/_data/treeTest.json
+%%WWWDIR%%/dijit/tests/_editor/test_6112.html
+%%WWWDIR%%/dijit/tests/_editor/test_CustomPlugin.html
 %%WWWDIR%%/dijit/tests/_editor/test_RichText.html
+%%WWWDIR%%/dijit/tests/_editor/test_ToggleDir.html
 %%WWWDIR%%/dijit/tests/_editor/test_richtext.css
-%%WWWDIR%%/dijit/tests/_inspector.html
+%%WWWDIR%%/dijit/tests/_editor/test_richtext.css.commented.css
 %%WWWDIR%%/dijit/tests/_programaticTest.html
 %%WWWDIR%%/dijit/tests/_testCommon.js
 %%WWWDIR%%/dijit/tests/css/dijitTests.css
+%%WWWDIR%%/dijit/tests/css/dijitTests.css.commented.css
 %%WWWDIR%%/dijit/tests/form/Form.html
 %%WWWDIR%%/dijit/tests/form/Form.js
 %%WWWDIR%%/dijit/tests/form/images/Alabama.jpg
@@ -294,7 +318,9 @@
 %%WWWDIR%%/dijit/tests/form/test_ComboBox_destroy.html
 %%WWWDIR%%/dijit/tests/form/test_DateTextBox.html
 %%WWWDIR%%/dijit/tests/form/test_FilteringSelect.html
-%%WWWDIR%%/dijit/tests/form/test_InlineEditBox.html
+%%WWWDIR%%/dijit/tests/form/test_Form_onsubmit.html
+%%WWWDIR%%/dijit/tests/form/test_MultiSelect.html
+%%WWWDIR%%/dijit/tests/form/test_SimpleTextarea.html
 %%WWWDIR%%/dijit/tests/form/test_Slider.html
 %%WWWDIR%%/dijit/tests/form/test_Spinner.html
 %%WWWDIR%%/dijit/tests/form/test_Textarea.html
@@ -303,6 +329,7 @@
 %%WWWDIR%%/dijit/tests/i18n/README
 %%WWWDIR%%/dijit/tests/i18n/currency.html
 %%WWWDIR%%/dijit/tests/i18n/date.html
+%%WWWDIR%%/dijit/tests/i18n/digit.html
 %%WWWDIR%%/dijit/tests/i18n/module.js
 %%WWWDIR%%/dijit/tests/i18n/number.html
 %%WWWDIR%%/dijit/tests/i18n/test_i18n.js
@@ -330,14 +357,23 @@
 %%WWWDIR%%/dijit/tests/layout/tab3.html
 %%WWWDIR%%/dijit/tests/layout/tab4.html
 %%WWWDIR%%/dijit/tests/layout/test_AccordionContainer.html
+%%WWWDIR%%/dijit/tests/layout/test_BorderContainer.html
+%%WWWDIR%%/dijit/tests/layout/test_BorderContainer_complex.html
+%%WWWDIR%%/dijit/tests/layout/test_BorderContainer_experimental.html
+%%WWWDIR%%/dijit/tests/layout/test_BorderContainer_full.html
+%%WWWDIR%%/dijit/tests/layout/test_BorderContainer_nested.html
 %%WWWDIR%%/dijit/tests/layout/test_ContentPane.html
-%%WWWDIR%%/dijit/tests/layout/test_Layout.html
 %%WWWDIR%%/dijit/tests/layout/test_LayoutCode.html
 %%WWWDIR%%/dijit/tests/layout/test_LayoutContainer.html
 %%WWWDIR%%/dijit/tests/layout/test_SplitContainer.html
 %%WWWDIR%%/dijit/tests/layout/test_StackContainer.html
+%%WWWDIR%%/dijit/tests/layout/test_StackContainer_code.html
 %%WWWDIR%%/dijit/tests/layout/test_TabContainer.html
+%%WWWDIR%%/dijit/tests/layout/test_TabContainerTitlePane.html
+%%WWWDIR%%/dijit/tests/layout/test_TabContainer_noLayout.html
 %%WWWDIR%%/dijit/tests/layout/test_TabContainer_remote.html
+%%WWWDIR%%/dijit/tests/manualTests.html
+%%WWWDIR%%/dijit/tests/manualTests.js
 %%WWWDIR%%/dijit/tests/module.js
 %%WWWDIR%%/dijit/tests/ondijitclick.html
 %%WWWDIR%%/dijit/tests/ondijitclick.js
@@ -347,48 +383,377 @@
 %%WWWDIR%%/dijit/tests/test_ColorPalette.html
 %%WWWDIR%%/dijit/tests/test_Declaration.html
 %%WWWDIR%%/dijit/tests/test_Dialog.html
+%%WWWDIR%%/dijit/tests/test_Dialog_focusDestroy.html
 %%WWWDIR%%/dijit/tests/test_Editor.html
 %%WWWDIR%%/dijit/tests/test_InlineEditBox.html
 %%WWWDIR%%/dijit/tests/test_Menu.html
 %%WWWDIR%%/dijit/tests/test_ProgressBar.html
-%%WWWDIR%%/dijit/tests/test_Table.html
 %%WWWDIR%%/dijit/tests/test_TitlePane.html
 %%WWWDIR%%/dijit/tests/test_Toolbar.html
 %%WWWDIR%%/dijit/tests/test_Tooltip.html
+%%WWWDIR%%/dijit/tests/test_TooltipDialog.html
 %%WWWDIR%%/dijit/tests/test_Tree.html
 %%WWWDIR%%/dijit/tests/test_Tree_Notification_API_Support.html
+%%WWWDIR%%/dijit/tests/test_instantiate.html
 %%WWWDIR%%/dijit/tests/tree/test_Tree_DnD.html
+%%WWWDIR%%/dijit/tests/tree/test_Tree_Programmatic.html
+%%WWWDIR%%/dijit/tests/tree/test_Tree_v1.html
 %%WWWDIR%%/dijit/tests/widgetsInTemplate.html
 %%WWWDIR%%/dijit/tests/widgetsInTemplate.js
 %%WWWDIR%%/dijit/themes/a11y/README.txt
 %%WWWDIR%%/dijit/themes/a11y/indeterminate_progress.gif
 %%WWWDIR%%/dijit/themes/dijit.css
+%%WWWDIR%%/dijit/themes/dijit.css.commented.css
 %%WWWDIR%%/dijit/themes/dijit_rtl.css
-%%WWWDIR%%/dijit/themes/soria/images/arrows.png
+%%WWWDIR%%/dijit/themes/dijit_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Calendar.css
+%%WWWDIR%%/dijit/themes/nihilo/Calendar.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Calendar_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/Calendar_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/ColorPalette.css
+%%WWWDIR%%/dijit/themes/nihilo/ColorPalette.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Common.css
+%%WWWDIR%%/dijit/themes/nihilo/Common.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Dialog.css
+%%WWWDIR%%/dijit/themes/nihilo/Dialog.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Dialog_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/Dialog_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Editor.css
+%%WWWDIR%%/dijit/themes/nihilo/Editor.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Editor_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/Editor_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Menu.css
+%%WWWDIR%%/dijit/themes/nihilo/Menu.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Menu_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/Menu_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/ProgressBar.css
+%%WWWDIR%%/dijit/themes/nihilo/ProgressBar.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/TitlePane.css
+%%WWWDIR%%/dijit/themes/nihilo/TitlePane.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/TitlePane_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/TitlePane_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Toolbar.css
+%%WWWDIR%%/dijit/themes/nihilo/Toolbar.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Tree.css
+%%WWWDIR%%/dijit/themes/nihilo/Tree.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/Tree_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/Tree_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Button.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Button.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Button_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Button_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Checkbox.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Checkbox.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/form/ComboBox.css
+%%WWWDIR%%/dijit/themes/nihilo/form/ComboBox.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Common.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Common.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Common_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Common_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/form/RadioButton.css
+%%WWWDIR%%/dijit/themes/nihilo/form/RadioButton.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Slider.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Slider.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Slider_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Slider_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Textarea.css
+%%WWWDIR%%/dijit/themes/nihilo/form/Textarea.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/form/TimeTextBox.css
+%%WWWDIR%%/dijit/themes/nihilo/form/TimeTextBox.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/images/accordionItemActive.png
+%%WWWDIR%%/dijit/themes/nihilo/images/buttonActive.png
+%%WWWDIR%%/dijit/themes/nihilo/images/buttonDisabled.png
+%%WWWDIR%%/dijit/themes/nihilo/images/buttonEnabled.png
+%%WWWDIR%%/dijit/themes/nihilo/images/buttonHover.png
+%%WWWDIR%%/dijit/themes/nihilo/images/dndCopy.png
+%%WWWDIR%%/dijit/themes/nihilo/images/dndMove.png
+%%WWWDIR%%/dijit/themes/nihilo/images/dndNoCopy.png
+%%WWWDIR%%/dijit/themes/nihilo/images/dndNoMove.png
+%%WWWDIR%%/dijit/themes/nihilo/images/editor.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/editor_rtl.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/no.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/preciseSliderThumb.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/preciseSliderThumb.png
+%%WWWDIR%%/dijit/themes/nihilo/images/preciseSliderThumbFocus.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/preciseSliderThumbFocus.png
+%%WWWDIR%%/dijit/themes/nihilo/images/progressBarAnim.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/progressBarEmpty.png
+%%WWWDIR%%/dijit/themes/nihilo/images/progressBarFull.png
+%%WWWDIR%%/dijit/themes/nihilo/images/sliderEmpty.png
+%%WWWDIR%%/dijit/themes/nihilo/images/sliderEmptyVertical.png
+%%WWWDIR%%/dijit/themes/nihilo/images/sliderFull.png
+%%WWWDIR%%/dijit/themes/nihilo/images/sliderFullFocus.png
+%%WWWDIR%%/dijit/themes/nihilo/images/sliderFullVertical.png
+%%WWWDIR%%/dijit/themes/nihilo/images/sliderFullVerticalFocus.png
+%%WWWDIR%%/dijit/themes/nihilo/images/sliderThumb.png
+%%WWWDIR%%/dijit/themes/nihilo/images/sliderThumbFocus.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/sliderThumbFocus.png
+%%WWWDIR%%/dijit/themes/nihilo/images/splitContainerSizerH-thumb.png
+%%WWWDIR%%/dijit/themes/nihilo/images/splitContainerSizerH.png
+%%WWWDIR%%/dijit/themes/nihilo/images/splitContainerSizerV-thumb.png
+%%WWWDIR%%/dijit/themes/nihilo/images/splitContainerSizerV.png
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteArrows.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteArrows.png
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteCheckbox.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteCheckbox.png
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteDivIcons.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteDivIcons.png
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteRadio.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteRadio.png
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteRoundedIconsSmall.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteRoundedIconsSmall.png
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteTree.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteTree.png
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteTree_rtl.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/spriteTree_rtl.png
+%%WWWDIR%%/dijit/themes/nihilo/images/tabBottomActiveC.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabBottomActiveSpriteLR.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabBottomEnabledC.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabBottomEnabledSpriteLR.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabBottomHoverC.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabBottomHoverSpriteLR.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabContainerSprite.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabLeftChecked.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabRightChecked.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabStripe.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabStripeBottom.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabStripeLeft.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tabStripeRight.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/titleBar.png
+%%WWWDIR%%/dijit/themes/nihilo/images/titleBarActive.png
+%%WWWDIR%%/dijit/themes/nihilo/images/tooltipConnectorDown.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tooltipConnectorDown.png
+%%WWWDIR%%/dijit/themes/nihilo/images/tooltipConnectorLeft.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tooltipConnectorLeft.png
+%%WWWDIR%%/dijit/themes/nihilo/images/tooltipConnectorRight.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tooltipConnectorRight.png
+%%WWWDIR%%/dijit/themes/nihilo/images/tooltipConnectorUp.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/tooltipConnectorUp.png
+%%WWWDIR%%/dijit/themes/nihilo/images/treeExpand_loading.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/treeI.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/treeI_half.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/treeI_half_rtl.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/treeI_rtl.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/validationInputBg.gif
+%%WWWDIR%%/dijit/themes/nihilo/images/validationInputBg.png
+%%WWWDIR%%/dijit/themes/nihilo/images/warning.png
+%%WWWDIR%%/dijit/themes/nihilo/layout/AccordionContainer.css
+%%WWWDIR%%/dijit/themes/nihilo/layout/AccordionContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/layout/AccordionContainer_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/layout/AccordionContainer_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/layout/BorderContainer.css
+%%WWWDIR%%/dijit/themes/nihilo/layout/BorderContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/layout/SplitContainer.css
+%%WWWDIR%%/dijit/themes/nihilo/layout/SplitContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/layout/TabContainer.css
+%%WWWDIR%%/dijit/themes/nihilo/layout/TabContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/layout/TabContainer_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/layout/TabContainer_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/nihilo.css
+%%WWWDIR%%/dijit/themes/nihilo/nihilo.css.commented.css
+%%WWWDIR%%/dijit/themes/nihilo/nihilo_rtl.css
+%%WWWDIR%%/dijit/themes/nihilo/nihilo_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Calendar.css
+%%WWWDIR%%/dijit/themes/soria/Calendar.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Calendar_rtl.css
+%%WWWDIR%%/dijit/themes/soria/Calendar_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/ColorPalette.css
+%%WWWDIR%%/dijit/themes/soria/ColorPalette.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Common.css
+%%WWWDIR%%/dijit/themes/soria/Common.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Dialog.css
+%%WWWDIR%%/dijit/themes/soria/Dialog.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Dialog_rtl.css
+%%WWWDIR%%/dijit/themes/soria/Dialog_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Editor.css
+%%WWWDIR%%/dijit/themes/soria/Editor.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Editor_rtl.css
+%%WWWDIR%%/dijit/themes/soria/Editor_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Menu.css
+%%WWWDIR%%/dijit/themes/soria/Menu.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Menu_rtl.css
+%%WWWDIR%%/dijit/themes/soria/Menu_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/ProgressBar.css
+%%WWWDIR%%/dijit/themes/soria/ProgressBar.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/TitlePane.css
+%%WWWDIR%%/dijit/themes/soria/TitlePane.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/TitlePane_rtl.css
+%%WWWDIR%%/dijit/themes/soria/TitlePane_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Toolbar.css
+%%WWWDIR%%/dijit/themes/soria/Toolbar.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Tree.css
+%%WWWDIR%%/dijit/themes/soria/Tree.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/Tree_rtl.css
+%%WWWDIR%%/dijit/themes/soria/Tree_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/form/Button.css
+%%WWWDIR%%/dijit/themes/soria/form/Button.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/form/Button_rtl.css
+%%WWWDIR%%/dijit/themes/soria/form/Button_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/form/Checkbox.css
+%%WWWDIR%%/dijit/themes/soria/form/Checkbox.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/form/ComboBox.css
+%%WWWDIR%%/dijit/themes/soria/form/ComboBox.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/form/Common.css
+%%WWWDIR%%/dijit/themes/soria/form/Common.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/form/Common_rtl.css
+%%WWWDIR%%/dijit/themes/soria/form/Common_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/form/RadioButton.css
+%%WWWDIR%%/dijit/themes/soria/form/RadioButton.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/form/Slider.css
+%%WWWDIR%%/dijit/themes/soria/form/Slider.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/form/Slider_rtl.css
+%%WWWDIR%%/dijit/themes/soria/form/Slider_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/form/Textarea.css
+%%WWWDIR%%/dijit/themes/soria/form/Textarea.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/form/TimeTextBox.css
+%%WWWDIR%%/dijit/themes/soria/form/TimeTextBox.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/images/accordionItemActive.gif
+%%WWWDIR%%/dijit/themes/soria/images/accordionItemActive.png
+%%WWWDIR%%/dijit/themes/soria/images/buttonActive.png
+%%WWWDIR%%/dijit/themes/soria/images/buttonDisabled.png
+%%WWWDIR%%/dijit/themes/soria/images/buttonEnabled.png
+%%WWWDIR%%/dijit/themes/soria/images/buttonHover.png
+%%WWWDIR%%/dijit/themes/soria/images/dndCopy.png
+%%WWWDIR%%/dijit/themes/soria/images/dndMove.png
+%%WWWDIR%%/dijit/themes/soria/images/dndNoCopy.png
+%%WWWDIR%%/dijit/themes/soria/images/dndNoMove.png
 %%WWWDIR%%/dijit/themes/soria/images/editor.gif
-%%WWWDIR%%/dijit/themes/soria/images/gradientBottomBg.png
-%%WWWDIR%%/dijit/themes/soria/images/gradientInverseBottomBg.png
-%%WWWDIR%%/dijit/themes/soria/images/gradientInverseTopBg.png
-%%WWWDIR%%/dijit/themes/soria/images/gradientLeftBg.png
-%%WWWDIR%%/dijit/themes/soria/images/gradientRightBg.png
-%%WWWDIR%%/dijit/themes/soria/images/gradientTopBg.png
-%%WWWDIR%%/dijit/themes/soria/images/gradientTopBg2.png
-%%WWWDIR%%/dijit/themes/soria/images/no.gif
+%%WWWDIR%%/dijit/themes/soria/images/editor_rtl.gif
+%%WWWDIR%%/dijit/themes/soria/images/preciseSliderThumb.gif
+%%WWWDIR%%/dijit/themes/soria/images/preciseSliderThumb.png
+%%WWWDIR%%/dijit/themes/soria/images/preciseSliderThumbFocus.gif
+%%WWWDIR%%/dijit/themes/soria/images/preciseSliderThumbFocus.png
 %%WWWDIR%%/dijit/themes/soria/images/progressBarAnim.gif
+%%WWWDIR%%/dijit/themes/soria/images/progressBarEmpty.png
+%%WWWDIR%%/dijit/themes/soria/images/progressBarFull.png
+%%WWWDIR%%/dijit/themes/soria/images/sliderEmpty.png
+%%WWWDIR%%/dijit/themes/soria/images/sliderEmptyVertical.png
+%%WWWDIR%%/dijit/themes/soria/images/sliderFull.png
+%%WWWDIR%%/dijit/themes/soria/images/sliderFullFocus.png
+%%WWWDIR%%/dijit/themes/soria/images/sliderFullVertical.png
+%%WWWDIR%%/dijit/themes/soria/images/sliderFullVerticalFocus.png
+%%WWWDIR%%/dijit/themes/soria/images/sliderThumb.png
+%%WWWDIR%%/dijit/themes/soria/images/sliderThumbFocus.gif
+%%WWWDIR%%/dijit/themes/soria/images/sliderThumbFocus.png
+%%WWWDIR%%/dijit/themes/soria/images/splitContainerSizerH-thumb.png
+%%WWWDIR%%/dijit/themes/soria/images/splitContainerSizerH.png
+%%WWWDIR%%/dijit/themes/soria/images/splitContainerSizerV-thumb.png
+%%WWWDIR%%/dijit/themes/soria/images/splitContainerSizerV.png
+%%WWWDIR%%/dijit/themes/soria/images/spriteArrows.gif
+%%WWWDIR%%/dijit/themes/soria/images/spriteArrows.png
+%%WWWDIR%%/dijit/themes/soria/images/spriteCheckbox.gif
+%%WWWDIR%%/dijit/themes/soria/images/spriteCheckbox.png
+%%WWWDIR%%/dijit/themes/soria/images/spriteDivIcons.gif
+%%WWWDIR%%/dijit/themes/soria/images/spriteDivIcons.png
+%%WWWDIR%%/dijit/themes/soria/images/spriteRadio.gif
+%%WWWDIR%%/dijit/themes/soria/images/spriteRadio.png
+%%WWWDIR%%/dijit/themes/soria/images/spriteRoundedIconsSmall.gif
+%%WWWDIR%%/dijit/themes/soria/images/spriteRoundedIconsSmall.png
+%%WWWDIR%%/dijit/themes/soria/images/spriteRoundedIconsSmallBl.gif
+%%WWWDIR%%/dijit/themes/soria/images/spriteRoundedIconsSmallBl.png
+%%WWWDIR%%/dijit/themes/soria/images/spriteTree.gif
+%%WWWDIR%%/dijit/themes/soria/images/spriteTree.png
+%%WWWDIR%%/dijit/themes/soria/images/spriteTree_rtl.gif
+%%WWWDIR%%/dijit/themes/soria/images/spriteTree_rtl.png
+%%WWWDIR%%/dijit/themes/soria/images/tabBottomActiveC.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabBottomActiveSpriteLR.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabBottomEnabledC.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabBottomEnabledSpriteLR.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabBottomHoverC.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabBottomHoverSpriteLR.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabContainerSprite.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabLeftChecked.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabRightChecked.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabStripe.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabStripeBottom.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabStripeLeft.gif
+%%WWWDIR%%/dijit/themes/soria/images/tabStripeRight.gif
+%%WWWDIR%%/dijit/themes/soria/images/titleBar.png
+%%WWWDIR%%/dijit/themes/soria/images/titleBarActive.png
+%%WWWDIR%%/dijit/themes/soria/images/tooltipConnectorDown.gif
+%%WWWDIR%%/dijit/themes/soria/images/tooltipConnectorDown.png
+%%WWWDIR%%/dijit/themes/soria/images/tooltipConnectorLeft.gif
+%%WWWDIR%%/dijit/themes/soria/images/tooltipConnectorLeft.png
+%%WWWDIR%%/dijit/themes/soria/images/tooltipConnectorRight.gif
+%%WWWDIR%%/dijit/themes/soria/images/tooltipConnectorRight.png
+%%WWWDIR%%/dijit/themes/soria/images/tooltipConnectorUp.gif
+%%WWWDIR%%/dijit/themes/soria/images/tooltipConnectorUp.png
 %%WWWDIR%%/dijit/themes/soria/images/treeExpand_loading.gif
-%%WWWDIR%%/dijit/themes/soria/images/treeExpand_minus.gif
-%%WWWDIR%%/dijit/themes/soria/images/treeExpand_minus_rtl.gif
-%%WWWDIR%%/dijit/themes/soria/images/treeExpand_plus.gif
-%%WWWDIR%%/dijit/themes/soria/images/treeExpand_plus_rtl.gif
-%%WWWDIR%%/dijit/themes/soria/rounded.css
+%%WWWDIR%%/dijit/themes/soria/images/treeI.gif
+%%WWWDIR%%/dijit/themes/soria/images/treeI_half.gif
+%%WWWDIR%%/dijit/themes/soria/images/treeI_half_rtl.gif
+%%WWWDIR%%/dijit/themes/soria/images/treeI_rtl.gif
+%%WWWDIR%%/dijit/themes/soria/images/validationInputBg.gif
+%%WWWDIR%%/dijit/themes/soria/images/validationInputBg.png
+%%WWWDIR%%/dijit/themes/soria/images/warning.png
+%%WWWDIR%%/dijit/themes/soria/layout/AccordionContainer.css
+%%WWWDIR%%/dijit/themes/soria/layout/AccordionContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/layout/AccordionContainer_rtl.css
+%%WWWDIR%%/dijit/themes/soria/layout/AccordionContainer_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/layout/BorderContainer.css
+%%WWWDIR%%/dijit/themes/soria/layout/BorderContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/layout/SplitContainer.css
+%%WWWDIR%%/dijit/themes/soria/layout/SplitContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/layout/TabContainer.css
+%%WWWDIR%%/dijit/themes/soria/layout/TabContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/soria/layout/TabContainer_rtl.css
+%%WWWDIR%%/dijit/themes/soria/layout/TabContainer_rtl.css.commented.css
 %%WWWDIR%%/dijit/themes/soria/soria.css
-%%WWWDIR%%/dijit/themes/soria/soria.js
+%%WWWDIR%%/dijit/themes/soria/soria.css.commented.css
 %%WWWDIR%%/dijit/themes/soria/soria_rtl.css
+%%WWWDIR%%/dijit/themes/soria/soria_rtl.css.commented.css
 %%WWWDIR%%/dijit/themes/templateThemeTest.html
 %%WWWDIR%%/dijit/themes/themeTester.html
-%%WWWDIR%%/dijit/themes/tundra/dojoTundraGradientBg.gif
-%%WWWDIR%%/dijit/themes/tundra/dojoTundraGradientBg.png
-%%WWWDIR%%/dijit/themes/tundra/dojoUITundra06.psd
+%%WWWDIR%%/dijit/themes/themeTesterImages/blackButtonEnabled.gif
+%%WWWDIR%%/dijit/themes/themeTesterImages/blackButtonHover.gif
+%%WWWDIR%%/dijit/themes/themeTesterQuirk.html
+%%WWWDIR%%/dijit/themes/tundra/Calendar.css
+%%WWWDIR%%/dijit/themes/tundra/Calendar.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/Calendar_rtl.css
+%%WWWDIR%%/dijit/themes/tundra/Calendar_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/ColorPalette.css
+%%WWWDIR%%/dijit/themes/tundra/ColorPalette.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/Common.css
+%%WWWDIR%%/dijit/themes/tundra/Common.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/Dialog.css
+%%WWWDIR%%/dijit/themes/tundra/Dialog.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/Dialog_rtl.css
+%%WWWDIR%%/dijit/themes/tundra/Dialog_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/Editor.css
+%%WWWDIR%%/dijit/themes/tundra/Editor.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/Editor_rtl.css
+%%WWWDIR%%/dijit/themes/tundra/Editor_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/Menu.css
+%%WWWDIR%%/dijit/themes/tundra/Menu.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/Menu_rtl.css
+%%WWWDIR%%/dijit/themes/tundra/Menu_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/ProgressBar.css
+%%WWWDIR%%/dijit/themes/tundra/ProgressBar.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/TitlePane.css
+%%WWWDIR%%/dijit/themes/tundra/TitlePane.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/TitlePane_rtl.css
+%%WWWDIR%%/dijit/themes/tundra/TitlePane_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/Toolbar.css
+%%WWWDIR%%/dijit/themes/tundra/Toolbar.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/Tree.css
+%%WWWDIR%%/dijit/themes/tundra/Tree.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/Tree_rtl.css
+%%WWWDIR%%/dijit/themes/tundra/Tree_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/form/Button.css
+%%WWWDIR%%/dijit/themes/tundra/form/Button.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/form/Checkbox.css
+%%WWWDIR%%/dijit/themes/tundra/form/Checkbox.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/form/Common.css
+%%WWWDIR%%/dijit/themes/tundra/form/Common.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/form/RadioButton.css
+%%WWWDIR%%/dijit/themes/tundra/form/RadioButton.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/form/Slider.css
+%%WWWDIR%%/dijit/themes/tundra/form/Slider.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/form/Slider_rtl.css
+%%WWWDIR%%/dijit/themes/tundra/form/Slider_rtl.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/form/TextArea.css
+%%WWWDIR%%/dijit/themes/tundra/form/TextArea.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/images/accordionItemActive.gif
 %%WWWDIR%%/dijit/themes/tundra/images/arrowDown.gif
 %%WWWDIR%%/dijit/themes/tundra/images/arrowDown.png
 %%WWWDIR%%/dijit/themes/tundra/images/arrowLeft.gif
@@ -414,23 +779,32 @@
 %%WWWDIR%%/dijit/themes/tundra/images/checkmarkNoBorder.png
 %%WWWDIR%%/dijit/themes/tundra/images/circleIcon.gif
 %%WWWDIR%%/dijit/themes/tundra/images/circleIcon.png
+%%WWWDIR%%/dijit/themes/tundra/images/comboArrowDown.gif
 %%WWWDIR%%/dijit/themes/tundra/images/dijitProgressBarAnim.gif
 %%WWWDIR%%/dijit/themes/tundra/images/dijitProgressBarAnim.psd
 %%WWWDIR%%/dijit/themes/tundra/images/dndCopy.png
 %%WWWDIR%%/dijit/themes/tundra/images/dndMove.png
 %%WWWDIR%%/dijit/themes/tundra/images/dndNoCopy.png
 %%WWWDIR%%/dijit/themes/tundra/images/dndNoMove.png
+%%WWWDIR%%/dijit/themes/tundra/images/dojoTundraGradientBg.gif
+%%WWWDIR%%/dijit/themes/tundra/images/dojoTundraGradientBg.png
 %%WWWDIR%%/dijit/themes/tundra/images/doubleArrowDown.png
 %%WWWDIR%%/dijit/themes/tundra/images/doubleArrowUp.png
 %%WWWDIR%%/dijit/themes/tundra/images/editor.gif
+%%WWWDIR%%/dijit/themes/tundra/images/editor_rtl.gif
+%%WWWDIR%%/dijit/themes/tundra/images/folderClosed.gif
+%%WWWDIR%%/dijit/themes/tundra/images/folderOpened.gif
 %%WWWDIR%%/dijit/themes/tundra/images/i.gif
 %%WWWDIR%%/dijit/themes/tundra/images/i_half.gif
 %%WWWDIR%%/dijit/themes/tundra/images/i_half_rtl.gif
 %%WWWDIR%%/dijit/themes/tundra/images/i_rtl.gif
+%%WWWDIR%%/dijit/themes/tundra/images/leaf.gif
 %%WWWDIR%%/dijit/themes/tundra/images/loading.gif
 %%WWWDIR%%/dijit/themes/tundra/images/menu.png
+%%WWWDIR%%/dijit/themes/tundra/images/minusButton.gif
 %%WWWDIR%%/dijit/themes/tundra/images/no.gif
 %%WWWDIR%%/dijit/themes/tundra/images/noX.gif
+%%WWWDIR%%/dijit/themes/tundra/images/plusButton.gif
 %%WWWDIR%%/dijit/themes/tundra/images/popupMenuBg.gif
 %%WWWDIR%%/dijit/themes/tundra/images/preciseSliderThumb.gif
 %%WWWDIR%%/dijit/themes/tundra/images/preciseSliderThumb.png
@@ -445,6 +819,7 @@
 %%WWWDIR%%/dijit/themes/tundra/images/progressBarAnim-7.png
 %%WWWDIR%%/dijit/themes/tundra/images/progressBarAnim-8.png
 %%WWWDIR%%/dijit/themes/tundra/images/progressBarAnim-9.png
+%%WWWDIR%%/dijit/themes/tundra/images/progressBarAnim.gif
 %%WWWDIR%%/dijit/themes/tundra/images/progressBarAnim.psd
 %%WWWDIR%%/dijit/themes/tundra/images/progressBarEmpty.png
 %%WWWDIR%%/dijit/themes/tundra/images/progressBarFull.png
@@ -469,6 +844,8 @@
 %%WWWDIR%%/dijit/themes/tundra/images/splitContainerSizerH.png
 %%WWWDIR%%/dijit/themes/tundra/images/splitContainerSizerV-thumb.png
 %%WWWDIR%%/dijit/themes/tundra/images/splitContainerSizerV.png
+%%WWWDIR%%/dijit/themes/tundra/images/spriteRoundedIconsSmall.gif
+%%WWWDIR%%/dijit/themes/tundra/images/spriteRoundedIconsSmall.png
 %%WWWDIR%%/dijit/themes/tundra/images/tabActive.png
 %%WWWDIR%%/dijit/themes/tundra/images/tabClose.gif
 %%WWWDIR%%/dijit/themes/tundra/images/tabClose.png
@@ -493,13 +870,26 @@
 %%WWWDIR%%/dijit/themes/tundra/images/treeExpand_loading.gif
 %%WWWDIR%%/dijit/themes/tundra/images/treeExpand_minus.gif
 %%WWWDIR%%/dijit/themes/tundra/images/treeExpand_minus_rtl.gif
+%%WWWDIR%%/dijit/themes/tundra/images/treeExpand_mius.gif
 %%WWWDIR%%/dijit/themes/tundra/images/treeExpand_plus.gif
 %%WWWDIR%%/dijit/themes/tundra/images/treeExpand_plus_rtl.gif
 %%WWWDIR%%/dijit/themes/tundra/images/validationInputBg.gif
 %%WWWDIR%%/dijit/themes/tundra/images/validationInputBg.png
 %%WWWDIR%%/dijit/themes/tundra/images/warning.png
+%%WWWDIR%%/dijit/themes/tundra/layout/AccordionContainer.css
+%%WWWDIR%%/dijit/themes/tundra/layout/AccordionContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/layout/BorderContainer.css
+%%WWWDIR%%/dijit/themes/tundra/layout/BorderContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/layout/SplitContainer.css
+%%WWWDIR%%/dijit/themes/tundra/layout/SplitContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/layout/TabContainer.css
+%%WWWDIR%%/dijit/themes/tundra/layout/TabContainer.css.commented.css
+%%WWWDIR%%/dijit/themes/tundra/layout/TabContainer_rtl.css
+%%WWWDIR%%/dijit/themes/tundra/layout/TabContainer_rtl.css.commented.css
 %%WWWDIR%%/dijit/themes/tundra/tundra.css
+%%WWWDIR%%/dijit/themes/tundra/tundra.css.commented.css
 %%WWWDIR%%/dijit/themes/tundra/tundra_rtl.css
+%%WWWDIR%%/dijit/themes/tundra/tundra_rtl.css.commented.css
 %%WWWDIR%%/dojo/AdapterRegistry.js
 %%WWWDIR%%/dojo/DeferredList.js
 %%WWWDIR%%/dojo/LICENSE
@@ -517,6 +907,7 @@
 %%WWWDIR%%/dojo/_base/_loader/loader_debug.js
 %%WWWDIR%%/dojo/_base/_loader/loader_xd.js
 %%WWWDIR%%/dojo/_base/array.js
+%%WWWDIR%%/dojo/_base/browser.js
 %%WWWDIR%%/dojo/_base/connect.js
 %%WWWDIR%%/dojo/_base/declare.js
 %%WWWDIR%%/dojo/_base/event.js
@@ -530,6 +921,7 @@
 %%WWWDIR%%/dojo/_firebug/LICENSE
 %%WWWDIR%%/dojo/_firebug/errorIcon.png
 %%WWWDIR%%/dojo/_firebug/firebug.css
+%%WWWDIR%%/dojo/_firebug/firebug.css.commented.css
 %%WWWDIR%%/dojo/_firebug/firebug.js
 %%WWWDIR%%/dojo/_firebug/infoIcon.png
 %%WWWDIR%%/dojo/_firebug/warningIcon.png
@@ -546,10 +938,11 @@
 %%WWWDIR%%/dojo/cldr/nls/de/number.js
 %%WWWDIR%%/dojo/cldr/nls/en-au/currency.js
 %%WWWDIR%%/dojo/cldr/nls/en-au/gregorian.js
+%%WWWDIR%%/dojo/cldr/nls/en-au/number.js
 %%WWWDIR%%/dojo/cldr/nls/en-ca/currency.js
 %%WWWDIR%%/dojo/cldr/nls/en-ca/gregorian.js
-%%WWWDIR%%/dojo/cldr/nls/en-ca/number.js
 %%WWWDIR%%/dojo/cldr/nls/en-gb/gregorian.js
+%%WWWDIR%%/dojo/cldr/nls/en-gb/number.js
 %%WWWDIR%%/dojo/cldr/nls/en-us/currency.js
 %%WWWDIR%%/dojo/cldr/nls/en-us/number.js
 %%WWWDIR%%/dojo/cldr/nls/en/currency.js
@@ -571,10 +964,12 @@
 %%WWWDIR%%/dojo/cldr/nls/ja-jp/number.js
 %%WWWDIR%%/dojo/cldr/nls/ja/currency.js
 %%WWWDIR%%/dojo/cldr/nls/ja/gregorian.js
+%%WWWDIR%%/dojo/cldr/nls/ja/number.js
 %%WWWDIR%%/dojo/cldr/nls/ko-kr/gregorian.js
 %%WWWDIR%%/dojo/cldr/nls/ko-kr/number.js
 %%WWWDIR%%/dojo/cldr/nls/ko/currency.js
 %%WWWDIR%%/dojo/cldr/nls/ko/gregorian.js
+%%WWWDIR%%/dojo/cldr/nls/ko/number.js
 %%WWWDIR%%/dojo/cldr/nls/number.js
 %%WWWDIR%%/dojo/cldr/nls/pt-br/gregorian.js
 %%WWWDIR%%/dojo/cldr/nls/pt/currency.js
@@ -582,9 +977,12 @@
 %%WWWDIR%%/dojo/cldr/nls/pt/number.js
 %%WWWDIR%%/dojo/cldr/nls/zh-cn/gregorian.js
 %%WWWDIR%%/dojo/cldr/nls/zh-cn/number.js
+%%WWWDIR%%/dojo/cldr/nls/zh-tw/currency.js
+%%WWWDIR%%/dojo/cldr/nls/zh-tw/gregorian.js
 %%WWWDIR%%/dojo/cldr/nls/zh-tw/number.js
 %%WWWDIR%%/dojo/cldr/nls/zh/currency.js
 %%WWWDIR%%/dojo/cldr/nls/zh/gregorian.js
+%%WWWDIR%%/dojo/cldr/nls/zh/number.js
 %%WWWDIR%%/dojo/cldr/supplemental.js
 %%WWWDIR%%/dojo/colors.js
 %%WWWDIR%%/dojo/cookie.js
@@ -609,6 +1007,7 @@
 %%WWWDIR%%/dojo/dnd/Mover.js
 %%WWWDIR%%/dojo/dnd/Selector.js
 %%WWWDIR%%/dojo/dnd/Source.js
+%%WWWDIR%%/dojo/dnd/TimedMoveable.js
 %%WWWDIR%%/dojo/dnd/autoscroll.js
 %%WWWDIR%%/dojo/dnd/common.js
 %%WWWDIR%%/dojo/dnd/move.js
@@ -618,11 +1017,13 @@
 %%WWWDIR%%/dojo/i18n.js
 %%WWWDIR%%/dojo/io/iframe.js
 %%WWWDIR%%/dojo/io/script.js
+%%WWWDIR%%/dojo/jaxer.js
 %%WWWDIR%%/dojo/nls/colors.js
 %%WWWDIR%%/dojo/nls/cs/colors.js
 %%WWWDIR%%/dojo/nls/de/colors.js
 %%WWWDIR%%/dojo/nls/es/colors.js
 %%WWWDIR%%/dojo/nls/fr/colors.js
+%%WWWDIR%%/dojo/nls/gr/colors.js
 %%WWWDIR%%/dojo/nls/hu/colors.js
 %%WWWDIR%%/dojo/nls/it/colors.js
 %%WWWDIR%%/dojo/nls/ja/colors.js
@@ -636,9 +1037,13 @@
 %%WWWDIR%%/dojo/parser.js
 %%WWWDIR%%/dojo/regexp.js
 %%WWWDIR%%/dojo/resources/LICENSE
+%%WWWDIR%%/dojo/resources/_modules.js
+%%WWWDIR%%/dojo/resources/blank.gif
 %%WWWDIR%%/dojo/resources/blank.html
 %%WWWDIR%%/dojo/resources/dnd.css
+%%WWWDIR%%/dojo/resources/dnd.css.commented.css
 %%WWWDIR%%/dojo/resources/dojo.css
+%%WWWDIR%%/dojo/resources/dojo.css.commented.css
 %%WWWDIR%%/dojo/resources/iframe_history.html
 %%WWWDIR%%/dojo/resources/images/dndCopy.png
 %%WWWDIR%%/dojo/resources/images/dndMove.png
@@ -650,20 +1055,27 @@
 %%WWWDIR%%/dojo/string.js
 %%WWWDIR%%/dojo/tests.js
 %%WWWDIR%%/dojo/tests/AdapterRegistry.js
+%%WWWDIR%%/dojo/tests/DeferredList.js
+%%WWWDIR%%/dojo/tests/NodeList-fx.html
 %%WWWDIR%%/dojo/tests/TODO
 %%WWWDIR%%/dojo/tests/_base.js
 %%WWWDIR%%/dojo/tests/_base/Color.js
 %%WWWDIR%%/dojo/tests/_base/Deferred.js
 %%WWWDIR%%/dojo/tests/_base/NodeList.html
-%%WWWDIR%%/dojo/tests/_base/_loader/744/foo/bar.js
-%%WWWDIR%%/dojo/tests/_base/_loader/744/testEval.html
 %%WWWDIR%%/dojo/tests/_base/_loader/addLoadEvents.html
+%%WWWDIR%%/dojo/tests/_base/_loader/afterOnLoad.html
 %%WWWDIR%%/dojo/tests/_base/_loader/bootstrap.js
 %%WWWDIR%%/dojo/tests/_base/_loader/getText.txt
 %%WWWDIR%%/dojo/tests/_base/_loader/hostenv_browser.js
 %%WWWDIR%%/dojo/tests/_base/_loader/hostenv_rhino.js
 %%WWWDIR%%/dojo/tests/_base/_loader/hostenv_spidermonkey.js
 %%WWWDIR%%/dojo/tests/_base/_loader/loader.js
+%%WWWDIR%%/dojo/tests/_base/_loader/scope/scope04.html
+%%WWWDIR%%/dojo/tests/_base/_loader/scope/scopeContained.html
+%%WWWDIR%%/dojo/tests/_base/_loader/scope/scopeContainedXd.html
+%%WWWDIR%%/dojo/tests/_base/_loader/scope/scopeDjConfig.html
+%%WWWDIR%%/dojo/tests/_base/_loader/scope/scopeSingle.html
+%%WWWDIR%%/dojo/tests/_base/_loader/scope/scopeSingleDaac.html
 %%WWWDIR%%/dojo/tests/_base/array.js
 %%WWWDIR%%/dojo/tests/_base/connect.js
 %%WWWDIR%%/dojo/tests/_base/declare.js
@@ -684,7 +1096,6 @@
 %%WWWDIR%%/dojo/tests/_base/xhr.html
 %%WWWDIR%%/dojo/tests/_base/xhr.js
 %%WWWDIR%%/dojo/tests/_base/xhrDummyMethod.php
-%%WWWDIR%%/dojo/tests/back-bookmark.html
 %%WWWDIR%%/dojo/tests/back-hash.js
 %%WWWDIR%%/dojo/tests/back.html
 %%WWWDIR%%/dojo/tests/back.js
@@ -692,7 +1103,6 @@
 %%WWWDIR%%/dojo/tests/behavior.js
 %%WWWDIR%%/dojo/tests/cldr.js
 %%WWWDIR%%/dojo/tests/colors.js
-%%WWWDIR%%/dojo/tests/connect.html
 %%WWWDIR%%/dojo/tests/cookie.html
 %%WWWDIR%%/dojo/tests/cookie.js
 %%WWWDIR%%/dojo/tests/currency.js
@@ -702,6 +1112,7 @@
 %%WWWDIR%%/dojo/tests/data/countries.json
 %%WWWDIR%%/dojo/tests/data/countries_commentFiltered.json
 %%WWWDIR%%/dojo/tests/data/countries_idcollision.json
+%%WWWDIR%%/dojo/tests/data/countries_references.json
 %%WWWDIR%%/dojo/tests/data/countries_withBoolean.json
 %%WWWDIR%%/dojo/tests/data/countries_withDates.json
 %%WWWDIR%%/dojo/tests/data/countries_withNull.json
@@ -710,12 +1121,14 @@
 %%WWWDIR%%/dojo/tests/data/geography_hierarchy_large.json
 %%WWWDIR%%/dojo/tests/data/geography_hierarchy_small.json
 %%WWWDIR%%/dojo/tests/data/readOnlyItemFileTestTemplates.js
+%%WWWDIR%%/dojo/tests/data/reference_integrity.json
 %%WWWDIR%%/dojo/tests/data/runTests.html
 %%WWWDIR%%/dojo/tests/data/utils.js
 %%WWWDIR%%/dojo/tests/date.js
 %%WWWDIR%%/dojo/tests/date/locale.js
 %%WWWDIR%%/dojo/tests/date/stamp.js
 %%WWWDIR%%/dojo/tests/dnd/dndDefault.css
+%%WWWDIR%%/dojo/tests/dnd/dndDefault.css.commented.css
 %%WWWDIR%%/dojo/tests/dnd/flickr_viewer.html
 %%WWWDIR%%/dojo/tests/dnd/test_box_constraints.html
 %%WWWDIR%%/dojo/tests/dnd/test_container.html
@@ -731,6 +1144,7 @@
 %%WWWDIR%%/dojo/tests/dnd/test_parent_constraints_margins.html
 %%WWWDIR%%/dojo/tests/dnd/test_selector.html
 %%WWWDIR%%/dojo/tests/dnd/test_selector_markup.html
+%%WWWDIR%%/dojo/tests/dnd/test_timed_moveable.html
 %%WWWDIR%%/dojo/tests/fx.html
 %%WWWDIR%%/dojo/tests/fx.js
 %%WWWDIR%%/dojo/tests/i18n.js
@@ -747,6 +1161,8 @@
 %%WWWDIR%%/dojo/tests/io/scriptSimple.js
 %%WWWDIR%%/dojo/tests/io/scriptTimeout.html
 %%WWWDIR%%/dojo/tests/io/upload.cgi
+%%WWWDIR%%/dojo/tests/manualTests.html
+%%WWWDIR%%/dojo/tests/manualTests.js
 %%WWWDIR%%/dojo/tests/module.js
 %%WWWDIR%%/dojo/tests/nls/ar/salutations.js
 %%WWWDIR%%/dojo/tests/nls/cs/salutations.js
@@ -783,17 +1199,42 @@
 %%WWWDIR%%/dojo/tests/resources/testClass.smd
 %%WWWDIR%%/dojo/tests/resources/test_JsonRPCMediator.php
 %%WWWDIR%%/dojo/tests/resources/test_css.html
+%%WWWDIR%%/dojo/tests/resources/yahoo_smd_v1.smd
 %%WWWDIR%%/dojo/tests/rpc.js
 %%WWWDIR%%/dojo/tests/runTests.html
 %%WWWDIR%%/dojo/tests/string.js
 %%WWWDIR%%/dojo/tests/test_FirebugLite.html
+%%WWWDIR%%/dojo/tests/test_FirebugLitePopup.html
+%%WWWDIR%%/dojo/tests/test_fx.html
 %%WWWDIR%%/dojox/LICENSE
-%%WWWDIR%%/dojox/_cometd/README
-%%WWWDIR%%/dojox/_cometd/cometd.js
 %%WWWDIR%%/dojox/_sql/LICENSE
 %%WWWDIR%%/dojox/_sql/_crypto.js
 %%WWWDIR%%/dojox/_sql/common.js
 %%WWWDIR%%/dojox/_sql/demos/customers/customers.html
+%%WWWDIR%%/dojox/analytics.js
+%%WWWDIR%%/dojox/analytics/README
+%%WWWDIR%%/dojox/analytics/_base.js
+%%WWWDIR%%/dojox/analytics/logger/JSON.php
+%%WWWDIR%%/dojox/analytics/logger/dojoxAnalytics.php
+%%WWWDIR%%/dojox/analytics/plugins/consoleMessages.js
+%%WWWDIR%%/dojox/analytics/plugins/dojo.js
+%%WWWDIR%%/dojox/analytics/plugins/idle.js
+%%WWWDIR%%/dojox/analytics/plugins/mouseClick.js
+%%WWWDIR%%/dojox/analytics/plugins/mouseOver.js
+%%WWWDIR%%/dojox/analytics/plugins/window.js
+%%WWWDIR%%/dojox/analytics/profiles/analytics.profile.js
+%%WWWDIR%%/dojox/analytics/profiles/analyticsInBase.profile.js
+%%WWWDIR%%/dojox/analytics/tests/test_analytics.html
+%%WWWDIR%%/dojox/av.js
+%%WWWDIR%%/dojox/av/README
+%%WWWDIR%%/dojox/av/_base.js
+%%WWWDIR%%/dojox/av/_base/_ieFlash.js
+%%WWWDIR%%/dojox/av/_base/flash.js
+%%WWWDIR%%/dojox/av/_base/quicktime.js
+%%WWWDIR%%/dojox/av/resources/version.mov
+%%WWWDIR%%/dojox/av/tests/flash.html
+%%WWWDIR%%/dojox/av/tests/quicktime.html
+%%WWWDIR%%/dojox/av/tests/resources/hfp.swf
 %%WWWDIR%%/dojox/charting/Chart2D.js
 %%WWWDIR%%/dojox/charting/Chart3D.js
 %%WWWDIR%%/dojox/charting/Element.js
@@ -830,6 +1271,9 @@
 %%WWWDIR%%/dojox/charting/tests/Theme.js
 %%WWWDIR%%/dojox/charting/tests/_color.js
 %%WWWDIR%%/dojox/charting/tests/charting.js
+%%WWWDIR%%/dojox/charting/tests/data/goog_prices.csv
+%%WWWDIR%%/dojox/charting/tests/data/msft_prices.csv
+%%WWWDIR%%/dojox/charting/tests/data/yahoo_prices.csv
 %%WWWDIR%%/dojox/charting/tests/runTests.html
 %%WWWDIR%%/dojox/charting/tests/test_bars.html
 %%WWWDIR%%/dojox/charting/tests/test_chart2d.html
@@ -838,7 +1282,9 @@
 %%WWWDIR%%/dojox/charting/tests/test_labels2d.html
 %%WWWDIR%%/dojox/charting/tests/test_pie2d.html
 %%WWWDIR%%/dojox/charting/tests/test_scaler.html
+%%WWWDIR%%/dojox/charting/tests/test_sparklines.html
 %%WWWDIR%%/dojox/charting/tests/test_widget2d.html
+%%WWWDIR%%/dojox/charting/themes/ET/greys.js
 %%WWWDIR%%/dojox/charting/themes/GreySkies.js
 %%WWWDIR%%/dojox/charting/themes/PlotKit/README
 %%WWWDIR%%/dojox/charting/themes/PlotKit/blue.js
@@ -878,24 +1324,27 @@
 %%WWWDIR%%/dojox/color/tests/color.js
 %%WWWDIR%%/dojox/color/tests/runTests.html
 %%WWWDIR%%/dojox/cometd.js
+%%WWWDIR%%/dojox/cometd/README
+%%WWWDIR%%/dojox/cometd/_base.js
+%%WWWDIR%%/dojox/cometd/timestamp.js
+%%WWWDIR%%/dojox/cometd/timesync.js
 %%WWWDIR%%/dojox/crypto.js
 %%WWWDIR%%/dojox/crypto/Blowfish.js
-%%WWWDIR%%/dojox/crypto/LICENSE
 %%WWWDIR%%/dojox/crypto/MD5.js
 %%WWWDIR%%/dojox/crypto/README
 %%WWWDIR%%/dojox/crypto/_base.js
-%%WWWDIR%%/dojox/crypto/tests/Blowfish.js
-%%WWWDIR%%/dojox/crypto/tests/MD5.js
-%%WWWDIR%%/dojox/crypto/tests/crypto.js
-%%WWWDIR%%/dojox/crypto/tests/runTests.html
+%%WWWDIR%%/dojox/data/AtomReadStore.js
 %%WWWDIR%%/dojox/data/CsvStore.js
 %%WWWDIR%%/dojox/data/FlickrRestStore.js
 %%WWWDIR%%/dojox/data/FlickrStore.js
+%%WWWDIR%%/dojox/data/HtmlStore.js
 %%WWWDIR%%/dojox/data/HtmlTableStore.js
+%%WWWDIR%%/dojox/data/KeyValueStore.js
 %%WWWDIR%%/dojox/data/OpmlStore.js
 %%WWWDIR%%/dojox/data/PicasaStore.js
 %%WWWDIR%%/dojox/data/QueryReadStore.js
 %%WWWDIR%%/dojox/data/README
+%%WWWDIR%%/dojox/data/SnapLogicStore.js
 %%WWWDIR%%/dojox/data/XmlStore.js
 %%WWWDIR%%/dojox/data/demos/demo_DataDemoTable.html
 %%WWWDIR%%/dojox/data/demos/demo_FlickrRestStore.html
@@ -903,7 +1352,11 @@
 %%WWWDIR%%/dojox/data/demos/demo_LazyLoad.html
 %%WWWDIR%%/dojox/data/demos/demo_MultiStores.html
 %%WWWDIR%%/dojox/data/demos/demo_PicasaStore.html
+%%WWWDIR%%/dojox/data/demos/demo_QueryReadStore_ComboBox.html
+%%WWWDIR%%/dojox/data/demos/demo_QueryReadStore_FilteringSelect.html
+%%WWWDIR%%/dojox/data/demos/demo_QueryReadStore_grid.html
 %%WWWDIR%%/dojox/data/demos/flickrDemo.css
+%%WWWDIR%%/dojox/data/demos/flickrDemo.css.commented.css
 %%WWWDIR%%/dojox/data/demos/geography.json
 %%WWWDIR%%/dojox/data/demos/geography.xml
 %%WWWDIR%%/dojox/data/demos/geography/Argentina/data.json
@@ -932,6 +1385,7 @@
 %%WWWDIR%%/dojox/data/demos/geography/United States of America/data.json
 %%WWWDIR%%/dojox/data/demos/geography/root.json
 %%WWWDIR%%/dojox/data/demos/picasaDemo.css
+%%WWWDIR%%/dojox/data/demos/picasaDemo.css.commented.css
 %%WWWDIR%%/dojox/data/demos/stores/LazyLoadJSIStore.js
 %%WWWDIR%%/dojox/data/demos/widgets/FlickrView.js
 %%WWWDIR%%/dojox/data/demos/widgets/FlickrViewList.js
@@ -942,31 +1396,49 @@
 %%WWWDIR%%/dojox/data/demos/widgets/templates/PicasaView.html
 %%WWWDIR%%/dojox/data/demos/widgets/templates/PicasaViewList.html
 %%WWWDIR%%/dojox/data/dom.js
+%%WWWDIR%%/dojox/data/jsonPathStore.js
 %%WWWDIR%%/dojox/data/tests/QueryReadStore.html
 %%WWWDIR%%/dojox/data/tests/dom.js
+%%WWWDIR%%/dojox/data/tests/ml/divList.html
+%%WWWDIR%%/dojox/data/tests/ml/orderedList.html
+%%WWWDIR%%/dojox/data/tests/ml/table.html
+%%WWWDIR%%/dojox/data/tests/ml/test_HtmlStore_declaratively.html
+%%WWWDIR%%/dojox/data/tests/ml/test_HtmlStore_remote.html
 %%WWWDIR%%/dojox/data/tests/ml/test_HtmlTableStore_declaratively.html
+%%WWWDIR%%/dojox/data/tests/ml/unorderedList.html
 %%WWWDIR%%/dojox/data/tests/module.js
 %%WWWDIR%%/dojox/data/tests/runTests.html
+%%WWWDIR%%/dojox/data/tests/stores/AtomReadStore.js
 %%WWWDIR%%/dojox/data/tests/stores/CsvStore.js
 %%WWWDIR%%/dojox/data/tests/stores/FlickrRestStore.js
 %%WWWDIR%%/dojox/data/tests/stores/FlickrStore.js
+%%WWWDIR%%/dojox/data/tests/stores/HtmlStore.js
 %%WWWDIR%%/dojox/data/tests/stores/HtmlTableStore.js
+%%WWWDIR%%/dojox/data/tests/stores/KeyValueStore.js
 %%WWWDIR%%/dojox/data/tests/stores/OpmlStore.js
 %%WWWDIR%%/dojox/data/tests/stores/QueryReadStore.js
 %%WWWDIR%%/dojox/data/tests/stores/QueryReadStore.php
+%%WWWDIR%%/dojox/data/tests/stores/SnapLogicStore.js
 %%WWWDIR%%/dojox/data/tests/stores/XmlStore.js
+%%WWWDIR%%/dojox/data/tests/stores/atom1.xml
 %%WWWDIR%%/dojox/data/tests/stores/books.html
 %%WWWDIR%%/dojox/data/tests/stores/books.xml
 %%WWWDIR%%/dojox/data/tests/stores/books2.html
 %%WWWDIR%%/dojox/data/tests/stores/books2.xml
+%%WWWDIR%%/dojox/data/tests/stores/books3.html
 %%WWWDIR%%/dojox/data/tests/stores/books3.xml
 %%WWWDIR%%/dojox/data/tests/stores/books_isbnAttr.xml
 %%WWWDIR%%/dojox/data/tests/stores/books_isbnAttr2.xml
 %%WWWDIR%%/dojox/data/tests/stores/geography.xml
 %%WWWDIR%%/dojox/data/tests/stores/geography_withspeciallabel.xml
+%%WWWDIR%%/dojox/data/tests/stores/jsonPathStore.js
 %%WWWDIR%%/dojox/data/tests/stores/movies.csv
 %%WWWDIR%%/dojox/data/tests/stores/movies2.csv
 %%WWWDIR%%/dojox/data/tests/stores/patterns.csv
+%%WWWDIR%%/dojox/data/tests/stores/properties.js
+%%WWWDIR%%/dojox/data/tests/stores/snap_pipeline.php
+%%WWWDIR%%/dojox/data/tests/test_Tree_vs_jsonPathStore.html
+%%WWWDIR%%/dojox/data/tests/treeTest.json
 %%WWWDIR%%/dojox/date/README
 %%WWWDIR%%/dojox/date/php.js
 %%WWWDIR%%/dojox/date/posix.js
@@ -974,19 +1446,41 @@
 %%WWWDIR%%/dojox/date/tests/posix.js
 %%WWWDIR%%/dojox/date/tests/runTests.html
 %%WWWDIR%%/dojox/dtl.js
+%%WWWDIR%%/dojox/dtl/Context.js
 %%WWWDIR%%/dojox/dtl/README
+%%WWWDIR%%/dojox/dtl/_HtmlTemplated.js
+%%WWWDIR%%/dojox/dtl/_Templated.js
 %%WWWDIR%%/dojox/dtl/_base.js
+%%WWWDIR%%/dojox/dtl/contrib/data.js
+%%WWWDIR%%/dojox/dtl/contrib/dijit.js
+%%WWWDIR%%/dojox/dtl/contrib/html.js
+%%WWWDIR%%/dojox/dtl/contrib/objects.js
 %%WWWDIR%%/dojox/dtl/demos/demo_Animation.html
 %%WWWDIR%%/dojox/dtl/demos/demo_Blog.html
+%%WWWDIR%%/dojox/dtl/demos/demo_Data.html
+%%WWWDIR%%/dojox/dtl/demos/demo_Dijitless.html
+%%WWWDIR%%/dojox/dtl/demos/demo_Events.html
+%%WWWDIR%%/dojox/dtl/demos/demo_HtmlTemplated.html
+%%WWWDIR%%/dojox/dtl/demos/demo_Inline.html
+%%WWWDIR%%/dojox/dtl/demos/demo_NodeList.html
+%%WWWDIR%%/dojox/dtl/demos/demo_Table.html
+%%WWWDIR%%/dojox/dtl/demos/demo_Templated.html
+%%WWWDIR%%/dojox/dtl/demos/demo_Tree.html
 %%WWWDIR%%/dojox/dtl/demos/json/blog/get_blog_1.json
 %%WWWDIR%%/dojox/dtl/demos/json/blog/get_blog_3.json
 %%WWWDIR%%/dojox/dtl/demos/json/blog/get_blog_list.json
 %%WWWDIR%%/dojox/dtl/demos/json/blog/get_page_about.json
+%%WWWDIR%%/dojox/dtl/demos/json/fruit.json
+%%WWWDIR%%/dojox/dtl/demos/json/morefruit.json
 %%WWWDIR%%/dojox/dtl/demos/templates/animation.html
 %%WWWDIR%%/dojox/dtl/demos/templates/blog_base.html
 %%WWWDIR%%/dojox/dtl/demos/templates/blog_detail.html
 %%WWWDIR%%/dojox/dtl/demos/templates/blog_list.html
 %%WWWDIR%%/dojox/dtl/demos/templates/blog_page.html
+%%WWWDIR%%/dojox/dtl/demos/templates/countrychildren.html
+%%WWWDIR%%/dojox/dtl/demos/templates/gallery.html
+%%WWWDIR%%/dojox/dtl/demos/templates/nodelist.html
+%%WWWDIR%%/dojox/dtl/ext-dojo/NodeList.js
 %%WWWDIR%%/dojox/dtl/filter/dates.js
 %%WWWDIR%%/dojox/dtl/filter/htmlstrings.js
 %%WWWDIR%%/dojox/dtl/filter/integers.js
@@ -996,57 +1490,114 @@
 %%WWWDIR%%/dojox/dtl/filter/strings.js
 %%WWWDIR%%/dojox/dtl/html.js
 %%WWWDIR%%/dojox/dtl/render/html.js
-%%WWWDIR%%/dojox/dtl/tag/event.js
-%%WWWDIR%%/dojox/dtl/tag/html.js
+%%WWWDIR%%/dojox/dtl/tag/date.js
 %%WWWDIR%%/dojox/dtl/tag/loader.js
 %%WWWDIR%%/dojox/dtl/tag/logic.js
 %%WWWDIR%%/dojox/dtl/tag/loop.js
 %%WWWDIR%%/dojox/dtl/tag/misc.js
 %%WWWDIR%%/dojox/dtl/tests/context.js
+%%WWWDIR%%/dojox/dtl/tests/demo_Templated_Jaxer.html
+%%WWWDIR%%/dojox/dtl/tests/html/buffer.js
+%%WWWDIR%%/dojox/dtl/tests/html/tag.js
+%%WWWDIR%%/dojox/dtl/tests/html/util.js
 %%WWWDIR%%/dojox/dtl/tests/module.js
 %%WWWDIR%%/dojox/dtl/tests/runTests.html
+%%WWWDIR%%/dojox/dtl/tests/templates/hello.html
+%%WWWDIR%%/dojox/dtl/tests/templates/pocket.html
+%%WWWDIR%%/dojox/dtl/tests/templates/pocket2.html
 %%WWWDIR%%/dojox/dtl/tests/text/filter.js
+%%WWWDIR%%/dojox/dtl/tests/text/load.js
 %%WWWDIR%%/dojox/dtl/tests/text/tag.js
-%%WWWDIR%%/dojox/dtl/tests/text/templates/pocket.html
 %%WWWDIR%%/dojox/dtl/utils/date.js
-%%WWWDIR%%/dojox/dtl/widget.js
+%%WWWDIR%%/dojox/encoding/LICENSE
 %%WWWDIR%%/dojox/encoding/README
+%%WWWDIR%%/dojox/encoding/_base.js
 %%WWWDIR%%/dojox/encoding/ascii85.js
+%%WWWDIR%%/dojox/encoding/base64.js
 %%WWWDIR%%/dojox/encoding/bits.js
+%%WWWDIR%%/dojox/encoding/compression/lzw.js
+%%WWWDIR%%/dojox/encoding/compression/splay.js
+%%WWWDIR%%/dojox/encoding/crypto/Blowfish.js
+%%WWWDIR%%/dojox/encoding/crypto/_base.js
+%%WWWDIR%%/dojox/encoding/digests/MD5.js
+%%WWWDIR%%/dojox/encoding/digests/_base.js
 %%WWWDIR%%/dojox/encoding/easy64.js
-%%WWWDIR%%/dojox/encoding/lzw.js
-%%WWWDIR%%/dojox/encoding/splay.js
 %%WWWDIR%%/dojox/encoding/tests/ascii85.js
 %%WWWDIR%%/dojox/encoding/tests/bits.js
-%%WWWDIR%%/dojox/encoding/tests/colors.js
-%%WWWDIR%%/dojox/encoding/tests/colors2.html
-%%WWWDIR%%/dojox/encoding/tests/colors2.js
-%%WWWDIR%%/dojox/encoding/tests/colors3.html
-%%WWWDIR%%/dojox/encoding/tests/colors3.js
+%%WWWDIR%%/dojox/encoding/tests/compression/_base.js
+%%WWWDIR%%/dojox/encoding/tests/compression/colors.js
+%%WWWDIR%%/dojox/encoding/tests/compression/colors2.html
+%%WWWDIR%%/dojox/encoding/tests/compression/colors2.js
+%%WWWDIR%%/dojox/encoding/tests/compression/colors3.html
+%%WWWDIR%%/dojox/encoding/tests/compression/colors3.js
+%%WWWDIR%%/dojox/encoding/tests/compression/lzw.js
+%%WWWDIR%%/dojox/encoding/tests/compression/runTests.html
+%%WWWDIR%%/dojox/encoding/tests/compression/splay.js
+%%WWWDIR%%/dojox/encoding/tests/compression/test.html
+%%WWWDIR%%/dojox/encoding/tests/compression/vq.html
+%%WWWDIR%%/dojox/encoding/tests/crypto/Blowfish.js
+%%WWWDIR%%/dojox/encoding/tests/crypto/_base.js
+%%WWWDIR%%/dojox/encoding/tests/crypto/runTests.html
+%%WWWDIR%%/dojox/encoding/tests/digests/MD5.js
+%%WWWDIR%%/dojox/encoding/tests/digests/_base.js
+%%WWWDIR%%/dojox/encoding/tests/digests/runTests.html
 %%WWWDIR%%/dojox/encoding/tests/easy64.js
 %%WWWDIR%%/dojox/encoding/tests/encoding.js
-%%WWWDIR%%/dojox/encoding/tests/lzw.js
 %%WWWDIR%%/dojox/encoding/tests/runTests.html
-%%WWWDIR%%/dojox/encoding/tests/splay.js
-%%WWWDIR%%/dojox/encoding/tests/test.html
-%%WWWDIR%%/dojox/encoding/tests/vq.html
 %%WWWDIR%%/dojox/flash.js
+%%WWWDIR%%/dojox/flash/DojoExternalInterface.as
+%%WWWDIR%%/dojox/flash/ExpressInstall.as
 %%WWWDIR%%/dojox/flash/README
-%%WWWDIR%%/dojox/flash/_common.js
-%%WWWDIR%%/dojox/flash/flash6/DojoExternalInterface.as
-%%WWWDIR%%/dojox/flash/flash6/flash6_gateway.fla
-%%WWWDIR%%/dojox/flash/flash8/DojoExternalInterface.as
-%%WWWDIR%%/dojox/flash/flash8/ExpressInstall.as
+%%WWWDIR%%/dojox/flash/_base.js
+%%WWWDIR%%/dojox/flash/tests/TestFlash.as
+%%WWWDIR%%/dojox/flash/tests/TestFlash.swf
+%%WWWDIR%%/dojox/flash/tests/buildFlashTest.sh
+%%WWWDIR%%/dojox/flash/tests/test_flash.html
+%%WWWDIR%%/dojox/flash/tests/test_flash.js
+%%WWWDIR%%/dojox/form/CheckedMultiSelect.js
+%%WWWDIR%%/dojox/form/DropDownSelect.js
+%%WWWDIR%%/dojox/form/PasswordValidator.js
+%%WWWDIR%%/dojox/form/README
+%%WWWDIR%%/dojox/form/nls/PasswordValidator.js
+%%WWWDIR%%/dojox/form/resources/CheckedMultiSelect.css
+%%WWWDIR%%/dojox/form/resources/CheckedMultiSelect.css.commented.css
+%%WWWDIR%%/dojox/form/resources/CheckedMultiSelect.html
+%%WWWDIR%%/dojox/form/resources/DropDownSelect.css
+%%WWWDIR%%/dojox/form/resources/DropDownSelect.css.commented.css
+%%WWWDIR%%/dojox/form/resources/PasswordValidator.html
+%%WWWDIR%%/dojox/form/resources/_CheckedMultiSelectItem.html
+%%WWWDIR%%/dojox/form/tests/test_CheckedMultiSelect.html
+%%WWWDIR%%/dojox/form/tests/test_DropDownSelect.html
+%%WWWDIR%%/dojox/form/tests/test_PasswordValidator.html
 %%WWWDIR%%/dojox/fx.js
 %%WWWDIR%%/dojox/fx/README
+%%WWWDIR%%/dojox/fx/Shadow.js
 %%WWWDIR%%/dojox/fx/_arg.js
 %%WWWDIR%%/dojox/fx/_base.js
 %%WWWDIR%%/dojox/fx/_core.js
 %%WWWDIR%%/dojox/fx/easing.js
+%%WWWDIR%%/dojox/fx/ext-dojo/NodeList.js
+%%WWWDIR%%/dojox/fx/resources/shadowB.png
+%%WWWDIR%%/dojox/fx/resources/shadowBL.png
+%%WWWDIR%%/dojox/fx/resources/shadowBR.png
+%%WWWDIR%%/dojox/fx/resources/shadowL.png
+%%WWWDIR%%/dojox/fx/resources/shadowR.png
+%%WWWDIR%%/dojox/fx/resources/shadowT.png
+%%WWWDIR%%/dojox/fx/resources/shadowTL.png
+%%WWWDIR%%/dojox/fx/resources/shadowTR.png
 %%WWWDIR%%/dojox/fx/scroll.js
 %%WWWDIR%%/dojox/fx/style.js
 %%WWWDIR%%/dojox/fx/tests/_animation.css
+%%WWWDIR%%/dojox/fx/tests/_animation.css.commented.css
 %%WWWDIR%%/dojox/fx/tests/example_Line.html
+%%WWWDIR%%/dojox/fx/tests/example_backgroundPosition.html
+%%WWWDIR%%/dojox/fx/tests/example_dojoAnimations.html
+%%WWWDIR%%/dojox/fx/tests/example_easingChart2D.html
+%%WWWDIR%%/dojox/fx/tests/images/averycutedog.jpg
+%%WWWDIR%%/dojox/fx/tests/images/dot.png
+%%WWWDIR%%/dojox/fx/tests/images/longBg.png
+%%WWWDIR%%/dojox/fx/tests/test_Nodelist-fx.html
+%%WWWDIR%%/dojox/fx/tests/test_Shadow.html
 %%WWWDIR%%/dojox/fx/tests/test_animateClass.html
 %%WWWDIR%%/dojox/fx/tests/test_crossFade.html
 %%WWWDIR%%/dojox/fx/tests/test_easing.html
@@ -1054,7 +1605,10 @@
 %%WWWDIR%%/dojox/fx/tests/test_scroll.html
 %%WWWDIR%%/dojox/fx/tests/test_sizeTo.html
 %%WWWDIR%%/dojox/fx/tests/test_slideBy.html
+%%WWWDIR%%/dojox/fx/tests/test_wipeTo.html
 %%WWWDIR%%/dojox/gfx.js
+%%WWWDIR%%/dojox/gfx/Moveable.js
+%%WWWDIR%%/dojox/gfx/Mover.js
 %%WWWDIR%%/dojox/gfx/README
 %%WWWDIR%%/dojox/gfx/_base.js
 %%WWWDIR%%/dojox/gfx/arc.js
@@ -1064,8 +1618,10 @@
 %%WWWDIR%%/dojox/gfx/decompose.js
 %%WWWDIR%%/dojox/gfx/demos/beautify.html
 %%WWWDIR%%/dojox/gfx/demos/butterfly.html
+%%WWWDIR%%/dojox/gfx/demos/career_test.html
 %%WWWDIR%%/dojox/gfx/demos/circles.html
 %%WWWDIR%%/dojox/gfx/demos/clock.html
+%%WWWDIR%%/dojox/gfx/demos/clockWidget.html
 %%WWWDIR%%/dojox/gfx/demos/clock_black.html
 %%WWWDIR%%/dojox/gfx/demos/creator.html
 %%WWWDIR%%/dojox/gfx/demos/data/Lars.json
@@ -1092,7 +1648,10 @@
 %%WWWDIR%%/dojox/gfx/demos/images/clock_face_black.jpg
 %%WWWDIR%%/dojox/gfx/demos/inspector.html
 %%WWWDIR%%/dojox/gfx/demos/lion.html
+%%WWWDIR%%/dojox/gfx/demos/roundedPane.html
 %%WWWDIR%%/dojox/gfx/demos/tiger.html
+%%WWWDIR%%/dojox/gfx/demos/tooltip.html
+%%WWWDIR%%/dojox/gfx/fx.js
 %%WWWDIR%%/dojox/gfx/matrix.js
 %%WWWDIR%%/dojox/gfx/move.js
 %%WWWDIR%%/dojox/gfx/path.js
@@ -1109,6 +1668,7 @@
 %%WWWDIR%%/dojox/gfx/tests/test_bezier.html
 %%WWWDIR%%/dojox/gfx/tests/test_decompose.html
 %%WWWDIR%%/dojox/gfx/tests/test_fill.html
+%%WWWDIR%%/dojox/gfx/tests/test_fx.html
 %%WWWDIR%%/dojox/gfx/tests/test_gfx.html
 %%WWWDIR%%/dojox/gfx/tests/test_gradient.html
 %%WWWDIR%%/dojox/gfx/tests/test_group.html
@@ -1159,6 +1719,9 @@
 %%WWWDIR%%/dojox/grid/_data/fields.js
 %%WWWDIR%%/dojox/grid/_data/model.js
 %%WWWDIR%%/dojox/grid/_grid/Grid.css
+%%WWWDIR%%/dojox/grid/_grid/Grid.css.commented.css
+%%WWWDIR%%/dojox/grid/_grid/Grid_rtl.css
+%%WWWDIR%%/dojox/grid/_grid/Grid_rtl.css.commented.css
 %%WWWDIR%%/dojox/grid/_grid/builder.js
 %%WWWDIR%%/dojox/grid/_grid/cell.js
 %%WWWDIR%%/dojox/grid/_grid/drag.js
@@ -1171,69 +1734,163 @@
 %%WWWDIR%%/dojox/grid/_grid/images/tabHover_rotated.png
 %%WWWDIR%%/dojox/grid/_grid/layout.js
 %%WWWDIR%%/dojox/grid/_grid/lib.js
+%%WWWDIR%%/dojox/grid/_grid/nihiloGrid.css
+%%WWWDIR%%/dojox/grid/_grid/nihiloGrid.css.commented.css
 %%WWWDIR%%/dojox/grid/_grid/publicEvents.js
 %%WWWDIR%%/dojox/grid/_grid/rowbar.js
 %%WWWDIR%%/dojox/grid/_grid/rows.js
 %%WWWDIR%%/dojox/grid/_grid/scroller.js
 %%WWWDIR%%/dojox/grid/_grid/selection.js
+%%WWWDIR%%/dojox/grid/_grid/soriaGrid.css
+%%WWWDIR%%/dojox/grid/_grid/soriaGrid.css.commented.css
 %%WWWDIR%%/dojox/grid/_grid/tundraGrid.css
+%%WWWDIR%%/dojox/grid/_grid/tundraGrid.css.commented.css
 %%WWWDIR%%/dojox/grid/_grid/view.js
 %%WWWDIR%%/dojox/grid/_grid/views.js
+%%WWWDIR%%/dojox/grid/resources/GridView.html
+%%WWWDIR%%/dojox/grid/resources/VirtualGrid.html
 %%WWWDIR%%/dojox/grid/tests/databaseModel.js
 %%WWWDIR%%/dojox/grid/tests/images/closed.gif
 %%WWWDIR%%/dojox/grid/tests/images/flatScreen.gif
 %%WWWDIR%%/dojox/grid/tests/images/open.gif
+%%WWWDIR%%/dojox/grid/tests/support/books.xml
 %%WWWDIR%%/dojox/grid/tests/support/data.php
+%%WWWDIR%%/dojox/grid/tests/support/geography.xml
 %%WWWDIR%%/dojox/grid/tests/support/json.php
 %%WWWDIR%%/dojox/grid/tests/support/movies.csv
-%%WWWDIR%%/dojox/grid/tests/support/proxy.php
 %%WWWDIR%%/dojox/grid/tests/support/test_data.js
+%%WWWDIR%%/dojox/grid/tests/support/test_data_objects.js
 %%WWWDIR%%/dojox/grid/tests/support/testtbl.sql
 %%WWWDIR%%/dojox/grid/tests/support/yahoo_search.js
 %%WWWDIR%%/dojox/grid/tests/test_change_structure.html
-%%WWWDIR%%/dojox/grid/tests/test_dojo_data.html
+%%WWWDIR%%/dojox/grid/tests/test_custom_sort.html
+%%WWWDIR%%/dojox/grid/tests/test_dojo_data_edit.html
+%%WWWDIR%%/dojox/grid/tests/test_dojo_data_empty.html
 %%WWWDIR%%/dojox/grid/tests/test_dojo_data_model.html
+%%WWWDIR%%/dojox/grid/tests/test_dojo_data_model_EmptyResultSet.html
+%%WWWDIR%%/dojox/grid/tests/test_dojo_data_model_multiStores.html
+%%WWWDIR%%/dojox/grid/tests/test_dojo_data_model_processError.html
 %%WWWDIR%%/dojox/grid/tests/test_dojo_data_notification.html
 %%WWWDIR%%/dojox/grid/tests/test_edit.html
+%%WWWDIR%%/dojox/grid/tests/test_edit_canEdit.html
 %%WWWDIR%%/dojox/grid/tests/test_edit_dijit.html
 %%WWWDIR%%/dojox/grid/tests/test_events.html
 %%WWWDIR%%/dojox/grid/tests/test_expand.html
 %%WWWDIR%%/dojox/grid/tests/test_grid.html
+%%WWWDIR%%/dojox/grid/tests/test_grid_dlg.html
+%%WWWDIR%%/dojox/grid/tests/test_grid_headerHeight.html
 %%WWWDIR%%/dojox/grid/tests/test_grid_layout.html
+%%WWWDIR%%/dojox/grid/tests/test_grid_layout_LayoutContainer.html
+%%WWWDIR%%/dojox/grid/tests/test_grid_layout_borderContainer.html
+%%WWWDIR%%/dojox/grid/tests/test_grid_object_model_change.html
 %%WWWDIR%%/dojox/grid/tests/test_grid_programmatic.html
 %%WWWDIR%%/dojox/grid/tests/test_grid_programmatic_layout.html
+%%WWWDIR%%/dojox/grid/tests/test_grid_rtl.html
+%%WWWDIR%%/dojox/grid/tests/test_grid_themes.html
 %%WWWDIR%%/dojox/grid/tests/test_grid_tooltip_menu.html
 %%WWWDIR%%/dojox/grid/tests/test_keyboard.html
+%%WWWDIR%%/dojox/grid/tests/test_markup.html
 %%WWWDIR%%/dojox/grid/tests/test_mysql_edit.html
 %%WWWDIR%%/dojox/grid/tests/test_sizing.html
+%%WWWDIR%%/dojox/grid/tests/test_sizing_100rows.html
+%%WWWDIR%%/dojox/grid/tests/test_sizing_ResizeHandle.html
 %%WWWDIR%%/dojox/grid/tests/test_styling.html
 %%WWWDIR%%/dojox/grid/tests/test_subgrid.html
 %%WWWDIR%%/dojox/grid/tests/test_tundra_edit.html
 %%WWWDIR%%/dojox/grid/tests/test_yahoo_images.html
 %%WWWDIR%%/dojox/grid/tests/test_yahoo_search.html
 %%WWWDIR%%/dojox/grid/tests/yahooSearch.js
+%%WWWDIR%%/dojox/help/README
+%%WWWDIR%%/dojox/help/_base.js
+%%WWWDIR%%/dojox/help/console.js
+%%WWWDIR%%/dojox/help/demos/demo_Console.html
+%%WWWDIR%%/dojox/highlight.js
+%%WWWDIR%%/dojox/highlight/README
+%%WWWDIR%%/dojox/highlight/_base.js
+%%WWWDIR%%/dojox/highlight/languages/_all.js
+%%WWWDIR%%/dojox/highlight/languages/_dynamic.js
+%%WWWDIR%%/dojox/highlight/languages/_static.js
+%%WWWDIR%%/dojox/highlight/languages/_www.js
+%%WWWDIR%%/dojox/highlight/languages/cpp.js
+%%WWWDIR%%/dojox/highlight/languages/css.js
+%%WWWDIR%%/dojox/highlight/languages/delphi.js
+%%WWWDIR%%/dojox/highlight/languages/django.js
+%%WWWDIR%%/dojox/highlight/languages/html.js
+%%WWWDIR%%/dojox/highlight/languages/javascript.js
+%%WWWDIR%%/dojox/highlight/languages/pygments/_html.js
+%%WWWDIR%%/dojox/highlight/languages/pygments/_www.js
+%%WWWDIR%%/dojox/highlight/languages/pygments/css.js
+%%WWWDIR%%/dojox/highlight/languages/pygments/html.js
+%%WWWDIR%%/dojox/highlight/languages/pygments/javascript.js
+%%WWWDIR%%/dojox/highlight/languages/pygments/xml.js
+%%WWWDIR%%/dojox/highlight/languages/python.js
+%%WWWDIR%%/dojox/highlight/languages/sql.js
+%%WWWDIR%%/dojox/highlight/languages/xml.js
+%%WWWDIR%%/dojox/highlight/resources/highlight.css
+%%WWWDIR%%/dojox/highlight/resources/highlight.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/autumn.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/autumn.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/borland.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/borland.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/colorful.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/colorful.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/default.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/default.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/emacs.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/emacs.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/friendly.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/friendly.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/fruity.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/fruity.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/manni.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/manni.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/murphy.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/murphy.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/native.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/native.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/pastie.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/pastie.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/perldoc.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/perldoc.css.commented.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/trac.css
+%%WWWDIR%%/dojox/highlight/resources/pygments/trac.css.commented.css
+%%WWWDIR%%/dojox/highlight/tests/test_highlight.html
+%%WWWDIR%%/dojox/highlight/tests/test_pygments.html
 %%WWWDIR%%/dojox/image/Gallery.js
 %%WWWDIR%%/dojox/image/Lightbox.js
+%%WWWDIR%%/dojox/image/Magnifier.js
+%%WWWDIR%%/dojox/image/MagnifierLite.js
 %%WWWDIR%%/dojox/image/README
 %%WWWDIR%%/dojox/image/SlideShow.js
 %%WWWDIR%%/dojox/image/ThumbnailPicker.js
 %%WWWDIR%%/dojox/image/resources/Gallery.html
 %%WWWDIR%%/dojox/image/resources/Lightbox.html
+%%WWWDIR%%/dojox/image/resources/Magnifier.css
+%%WWWDIR%%/dojox/image/resources/Magnifier.css.commented.css
 %%WWWDIR%%/dojox/image/resources/SlideShow.html
 %%WWWDIR%%/dojox/image/resources/ThumbnailPicker.html
 %%WWWDIR%%/dojox/image/resources/image.css
-%%WWWDIR%%/dojox/image/resources/images/1pixel.gif
+%%WWWDIR%%/dojox/image/resources/image.css.commented.css
 %%WWWDIR%%/dojox/image/resources/images/buttons.gif
 %%WWWDIR%%/dojox/image/resources/images/buttons.png
+%%WWWDIR%%/dojox/image/resources/images/close.png
+%%WWWDIR%%/dojox/image/resources/images/close_dark.png
+%%WWWDIR%%/dojox/image/resources/images/left.png
 %%WWWDIR%%/dojox/image/resources/images/loading.gif
+%%WWWDIR%%/dojox/image/resources/images/right.png
+%%WWWDIR%%/dojox/image/resources/images/warning.png
 %%WWWDIR%%/dojox/image/tests/images.json
 %%WWWDIR%%/dojox/image/tests/images/extraWide.jpg
+%%WWWDIR%%/dojox/image/tests/images/huuuge.png
 %%WWWDIR%%/dojox/image/tests/images/imageHoriz.jpg
 %%WWWDIR%%/dojox/image/tests/images/imageHoriz2.jpg
 %%WWWDIR%%/dojox/image/tests/images/imageVert.jpg
+%%WWWDIR%%/dojox/image/tests/images/spanke.jpg
 %%WWWDIR%%/dojox/image/tests/images/square.jpg
 %%WWWDIR%%/dojox/image/tests/test_Gallery.html
 %%WWWDIR%%/dojox/image/tests/test_Lightbox.html
+%%WWWDIR%%/dojox/image/tests/test_Magnifier.html
+%%WWWDIR%%/dojox/image/tests/test_MagnifierLite.html
 %%WWWDIR%%/dojox/image/tests/test_SlideShow.html
 %%WWWDIR%%/dojox/image/tests/test_ThumbnailPicker.html
 %%WWWDIR%%/dojox/io/README
@@ -1244,9 +1901,26 @@
 %%WWWDIR%%/dojox/io/proxy/xip_client.html
 %%WWWDIR%%/dojox/io/proxy/xip_server.html
 %%WWWDIR%%/dojox/io/xhrMultiPart.js
+%%WWWDIR%%/dojox/jsonPath.js
+%%WWWDIR%%/dojox/jsonPath/README
+%%WWWDIR%%/dojox/jsonPath/query.js
+%%WWWDIR%%/dojox/jsonPath/tests/jsonPath.js
+%%WWWDIR%%/dojox/jsonPath/tests/module.js
+%%WWWDIR%%/dojox/jsonPath/tests/runTests.html
 %%WWWDIR%%/dojox/lang/LICENSE
 %%WWWDIR%%/dojox/lang/README
 %%WWWDIR%%/dojox/lang/functional.js
+%%WWWDIR%%/dojox/lang/functional/array.js
+%%WWWDIR%%/dojox/lang/functional/curry.js
+%%WWWDIR%%/dojox/lang/functional/fold.js
+%%WWWDIR%%/dojox/lang/functional/lambda.js
+%%WWWDIR%%/dojox/lang/functional/listcomp.js
+%%WWWDIR%%/dojox/lang/functional/object.js
+%%WWWDIR%%/dojox/lang/functional/reversed.js
+%%WWWDIR%%/dojox/lang/functional/scan.js
+%%WWWDIR%%/dojox/lang/functional/sequence.js
+%%WWWDIR%%/dojox/lang/functional/zip.js
+%%WWWDIR%%/dojox/lang/tests/array.js
 %%WWWDIR%%/dojox/lang/tests/curry.js
 %%WWWDIR%%/dojox/lang/tests/fold.js
 %%WWWDIR%%/dojox/lang/tests/fun_perf.html
@@ -1255,30 +1929,52 @@
 %%WWWDIR%%/dojox/lang/tests/main.js
 %%WWWDIR%%/dojox/lang/tests/misc.js
 %%WWWDIR%%/dojox/lang/tests/runTests.html
-%%WWWDIR%%/dojox/lang/tests/std.js
 %%WWWDIR%%/dojox/lang/utils.js
 %%WWWDIR%%/dojox/layout/BorderContainer.js
 %%WWWDIR%%/dojox/layout/ContentPane.js
+%%WWWDIR%%/dojox/layout/DragPane.js
+%%WWWDIR%%/dojox/layout/ExpandoPane.js
 %%WWWDIR%%/dojox/layout/FloatingPane.js
 %%WWWDIR%%/dojox/layout/README
 %%WWWDIR%%/dojox/layout/RadioGroup.js
 %%WWWDIR%%/dojox/layout/ResizeHandle.js
+%%WWWDIR%%/dojox/layout/ScrollPane.js
+%%WWWDIR%%/dojox/layout/resources/ExpandoPane.css
+%%WWWDIR%%/dojox/layout/resources/ExpandoPane.css.commented.css
+%%WWWDIR%%/dojox/layout/resources/ExpandoPane.html
 %%WWWDIR%%/dojox/layout/resources/FloatingPane.css
+%%WWWDIR%%/dojox/layout/resources/FloatingPane.css.commented.css
 %%WWWDIR%%/dojox/layout/resources/FloatingPane.html
 %%WWWDIR%%/dojox/layout/resources/RadioGroup.css
+%%WWWDIR%%/dojox/layout/resources/RadioGroup.css.commented.css
 %%WWWDIR%%/dojox/layout/resources/ResizeHandle.css
+%%WWWDIR%%/dojox/layout/resources/ResizeHandle.css.commented.css
+%%WWWDIR%%/dojox/layout/resources/ScrollPane.css
+%%WWWDIR%%/dojox/layout/resources/ScrollPane.css.commented.css
+%%WWWDIR%%/dojox/layout/resources/ScrollPane.html
 %%WWWDIR%%/dojox/layout/resources/icons/resize.png
 %%WWWDIR%%/dojox/layout/tests/ContentPane.html
+%%WWWDIR%%/dojox/layout/tests/_bottomPane.html
+%%WWWDIR%%/dojox/layout/tests/_expando.css
+%%WWWDIR%%/dojox/layout/tests/_expando.css.commented.css
+%%WWWDIR%%/dojox/layout/tests/_floating.html
+%%WWWDIR%%/dojox/layout/tests/_lorem.html
 %%WWWDIR%%/dojox/layout/tests/_script.html
+%%WWWDIR%%/dojox/layout/tests/doc0.html
 %%WWWDIR%%/dojox/layout/tests/images/blank.gif
 %%WWWDIR%%/dojox/layout/tests/images/dojoLogo.png
 %%WWWDIR%%/dojox/layout/tests/images/gridUnderlay.png
 %%WWWDIR%%/dojox/layout/tests/images/testImage.gif
 %%WWWDIR%%/dojox/layout/tests/remote/getResponse.php
-%%WWWDIR%%/dojox/layout/tests/test_BorderContainer.html
+%%WWWDIR%%/dojox/layout/tests/test_DragPane.html
+%%WWWDIR%%/dojox/layout/tests/test_ExpandoPane.html
+%%WWWDIR%%/dojox/layout/tests/test_ExpandoPane_code.html
+%%WWWDIR%%/dojox/layout/tests/test_ExpandoPane_more.html
 %%WWWDIR%%/dojox/layout/tests/test_FloatingPane.html
 %%WWWDIR%%/dojox/layout/tests/test_RadioGroup.html
 %%WWWDIR%%/dojox/layout/tests/test_ResizeHandle.html
+%%WWWDIR%%/dojox/layout/tests/test_ScrollPane.html
+%%WWWDIR%%/dojox/layout/tests/test_ScrollPaneSingle.html
 %%WWWDIR%%/dojox/layout/tests/test_SizingPane.html
 %%WWWDIR%%/dojox/math.js
 %%WWWDIR%%/dojox/math/README
@@ -1298,6 +1994,7 @@
 %%WWWDIR%%/dojox/off/resources/learnhow.html
 %%WWWDIR%%/dojox/off/resources/learnhow.js
 %%WWWDIR%%/dojox/off/resources/offline-widget.css
+%%WWWDIR%%/dojox/off/resources/offline-widget.css.commented.css
 %%WWWDIR%%/dojox/off/resources/offline-widget.html
 %%WWWDIR%%/dojox/off/resources/redball.png
 %%WWWDIR%%/dojox/off/resources/roller.gif
@@ -1307,6 +2004,7 @@
 %%WWWDIR%%/dojox/presentation/README
 %%WWWDIR%%/dojox/presentation/_base.js
 %%WWWDIR%%/dojox/presentation/resources/Show.css
+%%WWWDIR%%/dojox/presentation/resources/Show.css.commented.css
 %%WWWDIR%%/dojox/presentation/resources/Show.html
 %%WWWDIR%%/dojox/presentation/resources/Slide.html
 %%WWWDIR%%/dojox/presentation/resources/icons/down.png
@@ -1316,20 +2014,93 @@
 %%WWWDIR%%/dojox/presentation/tests/_ext1.html
 %%WWWDIR%%/dojox/presentation/tests/test_presentation.html
 %%WWWDIR%%/dojox/resources/README.template
+%%WWWDIR%%/dojox/resources/_modules.js
+%%WWWDIR%%/dojox/resources/manualTests.html
+%%WWWDIR%%/dojox/resources/manualTests.js
+%%WWWDIR%%/dojox/rpc/CouchDBRestStore.js
+%%WWWDIR%%/dojox/rpc/JsonRPC.js
+%%WWWDIR%%/dojox/rpc/JsonReferencing.js
+%%WWWDIR%%/dojox/rpc/JsonRestStore.js
+%%WWWDIR%%/dojox/rpc/PersevereRestStore.js
 %%WWWDIR%%/dojox/rpc/README
-%%WWWDIR%%/dojox/rpc/yahoo.smd
+%%WWWDIR%%/dojox/rpc/Rest.js
+%%WWWDIR%%/dojox/rpc/SMDLibrary/yahoo.smd
+%%WWWDIR%%/dojox/rpc/Service.js
+%%WWWDIR%%/dojox/rpc/demos/demo_JsonRestStore_CouchDB.html
+%%WWWDIR%%/dojox/rpc/demos/demo_JsonRestStore_Persevere.html
+%%WWWDIR%%/dojox/rpc/demos/documentation.html
+%%WWWDIR%%/dojox/rpc/demos/templates/documentation.html
+%%WWWDIR%%/dojox/rpc/demos/templates/yahoo.html
+%%WWWDIR%%/dojox/rpc/demos/yahoo.html
+%%WWWDIR%%/dojox/rpc/documentation.smd
+%%WWWDIR%%/dojox/rpc/test.txt
+%%WWWDIR%%/dojox/rpc/tests/JsonReferencing.js
+%%WWWDIR%%/dojox/rpc/tests/Service.js
+%%WWWDIR%%/dojox/rpc/tests/Yahoo.js
+%%WWWDIR%%/dojox/rpc/tests/libraryTests.js
+%%WWWDIR%%/dojox/rpc/tests/module.js
+%%WWWDIR%%/dojox/rpc/tests/resources/JSON.php
+%%WWWDIR%%/dojox/rpc/tests/resources/bigQuery
+%%WWWDIR%%/dojox/rpc/tests/resources/bigQuery5
+%%WWWDIR%%/dojox/rpc/tests/resources/echo.php
+%%WWWDIR%%/dojox/rpc/tests/resources/echoJson.php
+%%WWWDIR%%/dojox/rpc/tests/resources/fakestore.php
+%%WWWDIR%%/dojox/rpc/tests/resources/jsonRpc10.php
+%%WWWDIR%%/dojox/rpc/tests/resources/jsonRpc11.php
+%%WWWDIR%%/dojox/rpc/tests/resources/jsonRpc12.php
+%%WWWDIR%%/dojox/rpc/tests/resources/jsonRpcPostGetEcho.php
+%%WWWDIR%%/dojox/rpc/tests/resources/jsonpEcho.php
+%%WWWDIR%%/dojox/rpc/tests/resources/jsonpEcho.phps
+%%WWWDIR%%/dojox/rpc/tests/resources/jsonpJsonRpcEcho.php
+%%WWWDIR%%/dojox/rpc/tests/resources/obj1
+%%WWWDIR%%/dojox/rpc/tests/resources/obj1testArray
+%%WWWDIR%%/dojox/rpc/tests/resources/obj3
+%%WWWDIR%%/dojox/rpc/tests/resources/obj4
+%%WWWDIR%%/dojox/rpc/tests/resources/query
+%%WWWDIR%%/dojox/rpc/tests/resources/rawEcho.php
+%%WWWDIR%%/dojox/rpc/tests/resources/res
+%%WWWDIR%%/dojox/rpc/tests/resources/store.php
+%%WWWDIR%%/dojox/rpc/tests/resources/test.smd
+%%WWWDIR%%/dojox/rpc/tests/runLibraryTests.html
+%%WWWDIR%%/dojox/rpc/tests/runTests.html
+%%WWWDIR%%/dojox/rpc/tests/stores/JsonRestStore.js
+%%WWWDIR%%/dojox/rpc/tests/test_dojo_data_model_persevere.html
+%%WWWDIR%%/dojox/sketch.js
+%%WWWDIR%%/dojox/sketch/Anchor.js
+%%WWWDIR%%/dojox/sketch/Annotation.js
+%%WWWDIR%%/dojox/sketch/DoubleArrowAnnotation.js
+%%WWWDIR%%/dojox/sketch/Figure.js
+%%WWWDIR%%/dojox/sketch/LeadAnnotation.js
+%%WWWDIR%%/dojox/sketch/PreexistingAnnotation.js
+%%WWWDIR%%/dojox/sketch/README
+%%WWWDIR%%/dojox/sketch/SingleArrowAnnotation.js
+%%WWWDIR%%/dojox/sketch/Slider.js
+%%WWWDIR%%/dojox/sketch/Toolbar.js
+%%WWWDIR%%/dojox/sketch/UnderlineAnnotation.js
+%%WWWDIR%%/dojox/sketch/UndoStack.js
+%%WWWDIR%%/dojox/sketch/_Plugin.js
+%%WWWDIR%%/dojox/sketch/resources/images/icons.gif
+%%WWWDIR%%/dojox/sketch/resources/sketch.css
+%%WWWDIR%%/dojox/sketch/resources/sketch.css.commented.css
+%%WWWDIR%%/dojox/sketch/tests/annotation.svg
+%%WWWDIR%%/dojox/sketch/tests/images/figure2.gif
+%%WWWDIR%%/dojox/sketch/tests/images/testsBodyBg.gif
+%%WWWDIR%%/dojox/sketch/tests/test_full.html
 %%WWWDIR%%/dojox/sql.js
 %%WWWDIR%%/dojox/storage.js
+%%WWWDIR%%/dojox/storage/AirDBStorageProvider.js
+%%WWWDIR%%/dojox/storage/AirEncryptedLocalStorageProvider.js
+%%WWWDIR%%/dojox/storage/AirFileStorageProvider.js
 %%WWWDIR%%/dojox/storage/FlashStorageProvider.js
 %%WWWDIR%%/dojox/storage/GearsStorageProvider.js
 %%WWWDIR%%/dojox/storage/Provider.js
 %%WWWDIR%%/dojox/storage/README
 %%WWWDIR%%/dojox/storage/Storage.as
-%%WWWDIR%%/dojox/storage/Storage_version6.swf
-%%WWWDIR%%/dojox/storage/Storage_version8.swf
+%%WWWDIR%%/dojox/storage/Storage.swf
 %%WWWDIR%%/dojox/storage/WhatWGStorageProvider.js
 %%WWWDIR%%/dojox/storage/_common.js
-%%WWWDIR%%/dojox/storage/build.sh
+%%WWWDIR%%/dojox/storage/buildFlashStorage.sh
+%%WWWDIR%%/dojox/storage/demos/helloworld.html
 %%WWWDIR%%/dojox/storage/manager.js
 %%WWWDIR%%/dojox/storage/storage_dialog.fla
 %%WWWDIR%%/dojox/storage/tests/resources/testBook.txt
@@ -1381,6 +2152,7 @@
 %%WWWDIR%%/dojox/validate/web.js
 %%WWWDIR%%/dojox/widget/ColorPicker.js
 %%WWWDIR%%/dojox/widget/ColorPicker/ColorPicker.css
+%%WWWDIR%%/dojox/widget/ColorPicker/ColorPicker.css.commented.css
 %%WWWDIR%%/dojox/widget/ColorPicker/ColorPicker.html
 %%WWWDIR%%/dojox/widget/ColorPicker/images/hue.png
 %%WWWDIR%%/dojox/widget/ColorPicker/images/hueHandle.png
@@ -1388,27 +2160,50 @@
 %%WWWDIR%%/dojox/widget/ColorPicker/images/underlay.png
 %%WWWDIR%%/dojox/widget/FileInput.js
 %%WWWDIR%%/dojox/widget/FileInput/FileInput.css
+%%WWWDIR%%/dojox/widget/FileInput/FileInput.css.commented.css
 %%WWWDIR%%/dojox/widget/FileInput/FileInput.html
 %%WWWDIR%%/dojox/widget/FileInput/FileInputAuto.html
 %%WWWDIR%%/dojox/widget/FileInput/ReceiveFile.php
 %%WWWDIR%%/dojox/widget/FileInputAuto.js
 %%WWWDIR%%/dojox/widget/FisheyeList.js
 %%WWWDIR%%/dojox/widget/FisheyeList/FisheyeList.css
-%%WWWDIR%%/dojox/widget/FisheyeList/blank.gif
+%%WWWDIR%%/dojox/widget/FisheyeList/FisheyeList.css.commented.css
+%%WWWDIR%%/dojox/widget/FisheyeLite.js
 %%WWWDIR%%/dojox/widget/Iterator.js
 %%WWWDIR%%/dojox/widget/Loader.js
 %%WWWDIR%%/dojox/widget/Loader/Loader.css
+%%WWWDIR%%/dojox/widget/Loader/Loader.css.commented.css
 %%WWWDIR%%/dojox/widget/Loader/README
 %%WWWDIR%%/dojox/widget/Loader/honey.php
 %%WWWDIR%%/dojox/widget/Loader/icons/loading.gif
+%%WWWDIR%%/dojox/widget/MultiComboBox.js
 %%WWWDIR%%/dojox/widget/README
+%%WWWDIR%%/dojox/widget/Rating.js
+%%WWWDIR%%/dojox/widget/Rating/Rating.css
+%%WWWDIR%%/dojox/widget/Rating/Rating.css.commented.css
+%%WWWDIR%%/dojox/widget/Rating/rating_empty.gif
+%%WWWDIR%%/dojox/widget/Rating/rating_empty.png
+%%WWWDIR%%/dojox/widget/Rating/rating_full.gif
+%%WWWDIR%%/dojox/widget/Rating/rating_full.png
+%%WWWDIR%%/dojox/widget/Rating/rating_half.png
 %%WWWDIR%%/dojox/widget/SortList.js
 %%WWWDIR%%/dojox/widget/SortList/SortList.css
+%%WWWDIR%%/dojox/widget/SortList/SortList.css.commented.css
 %%WWWDIR%%/dojox/widget/SortList/SortList.html
 %%WWWDIR%%/dojox/widget/TimeSpinner.js
 %%WWWDIR%%/dojox/widget/Toaster.js
 %%WWWDIR%%/dojox/widget/Toaster/Toaster.css
+%%WWWDIR%%/dojox/widget/Toaster/Toaster.css.commented.css
+%%WWWDIR%%/dojox/widget/Wizard.js
+%%WWWDIR%%/dojox/widget/Wizard/Wizard.css
+%%WWWDIR%%/dojox/widget/Wizard/Wizard.css.commented.css
+%%WWWDIR%%/dojox/widget/Wizard/Wizard.html
+%%WWWDIR%%/dojox/widget/nls/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/sv/Wizard.js
+%%WWWDIR%%/dojox/widget/tests/_tags.json
+%%WWWDIR%%/dojox/widget/tests/demo_FisheyeList-orig.html
 %%WWWDIR%%/dojox/widget/tests/demo_FisheyeList.html
+%%WWWDIR%%/dojox/widget/tests/demo_FisheyeLite.html
 %%WWWDIR%%/dojox/widget/tests/images/fisheye_1.png
 %%WWWDIR%%/dojox/widget/tests/images/fisheye_2.png
 %%WWWDIR%%/dojox/widget/tests/images/fisheye_3.png
@@ -1419,14 +2214,22 @@
 %%WWWDIR%%/dojox/widget/tests/images/icon_texteditor.png
 %%WWWDIR%%/dojox/widget/tests/images/icon_update.png
 %%WWWDIR%%/dojox/widget/tests/images/icon_users.png
+%%WWWDIR%%/dojox/widget/tests/images/rating_empty.gif
+%%WWWDIR%%/dojox/widget/tests/images/rating_empty.png
+%%WWWDIR%%/dojox/widget/tests/images/rating_full.gif
+%%WWWDIR%%/dojox/widget/tests/images/rating_full.png
 %%WWWDIR%%/dojox/widget/tests/test_ColorPicker.html
 %%WWWDIR%%/dojox/widget/tests/test_FileInput.html
 %%WWWDIR%%/dojox/widget/tests/test_FisheyeList.html
+%%WWWDIR%%/dojox/widget/tests/test_FisheyeLite.html
 %%WWWDIR%%/dojox/widget/tests/test_Iterator.html
 %%WWWDIR%%/dojox/widget/tests/test_Loader.html
+%%WWWDIR%%/dojox/widget/tests/test_MultiComboBox.html
+%%WWWDIR%%/dojox/widget/tests/test_Rating.html
 %%WWWDIR%%/dojox/widget/tests/test_SortList.html
 %%WWWDIR%%/dojox/widget/tests/test_TimeSpinner.html
 %%WWWDIR%%/dojox/widget/tests/test_Toaster.html
+%%WWWDIR%%/dojox/widget/tests/test_Wizard.html
 %%WWWDIR%%/dojox/wire.js
 %%WWWDIR%%/dojox/wire/CompositeWire.js
 %%WWWDIR%%/dojox/wire/DataWire.js
@@ -1438,6 +2241,7 @@
 %%WWWDIR%%/dojox/wire/XmlWire.js
 %%WWWDIR%%/dojox/wire/_base.js
 %%WWWDIR%%/dojox/wire/demos/TableContainer.css
+%%WWWDIR%%/dojox/wire/demos/TableContainer.css.commented.css
 %%WWWDIR%%/dojox/wire/demos/TableContainer.js
 %%WWWDIR%%/dojox/wire/demos/WidgetRepeater.js
 %%WWWDIR%%/dojox/wire/demos/markup/countries.json
@@ -1449,6 +2253,7 @@
 %%WWWDIR%%/dojox/wire/demos/markup/demo_FlickrStoreWire.html
 %%WWWDIR%%/dojox/wire/demos/markup/demo_TopicWiring.html
 %%WWWDIR%%/dojox/wire/demos/markup/flickrDemo.css
+%%WWWDIR%%/dojox/wire/demos/markup/flickrDemo.css.commented.css
 %%WWWDIR%%/dojox/wire/demos/markup/states.json
 %%WWWDIR%%/dojox/wire/ml/Action.js
 %%WWWDIR%%/dojox/wire/ml/Data.js
@@ -1484,6 +2289,7 @@
 %%WWWDIR%%/dojox/xml/DomParser.js
 %%WWWDIR%%/dojox/xml/README
 %%WWWDIR%%/util/doh/LICENSE
+%%WWWDIR%%/util/doh/README
 %%WWWDIR%%/util/doh/_browserRunner.js
 %%WWWDIR%%/util/doh/_rhinoRunner.js
 %%WWWDIR%%/util/doh/_sounds/LICENSE
@@ -1492,6 +2298,7 @@
 %%WWWDIR%%/util/doh/_sounds/woohoo.wav
 %%WWWDIR%%/util/doh/runner.html
 %%WWWDIR%%/util/doh/runner.js
+%%WWWDIR%%/util/doh/runner.sh
 %%WWWDIR%%/util/doh/small_logo.png
 %%NOAPACHE%%%%CONFDIR%%/dojo.conf
 @dirrm %%WWWDIR%%/util/doh/_sounds
@@ -1508,8 +2315,12 @@
 @dirrm %%WWWDIR%%/dojox/wire
 @dirrm %%WWWDIR%%/dojox/widget/tests/images
 @dirrm %%WWWDIR%%/dojox/widget/tests
+@dirrm %%WWWDIR%%/dojox/widget/nls/sv
+@dirrm %%WWWDIR%%/dojox/widget/nls
+@dirrm %%WWWDIR%%/dojox/widget/Wizard
 @dirrm %%WWWDIR%%/dojox/widget/Toaster
 @dirrm %%WWWDIR%%/dojox/widget/SortList
+@dirrm %%WWWDIR%%/dojox/widget/Rating
 @dirrm %%WWWDIR%%/dojox/widget/Loader/icons
 @dirrm %%WWWDIR%%/dojox/widget/Loader
 @dirrm %%WWWDIR%%/dojox/widget/FisheyeList
@@ -1527,7 +2338,19 @@
 @dirrm %%WWWDIR%%/dojox/string
 @dirrm %%WWWDIR%%/dojox/storage/tests/resources
 @dirrm %%WWWDIR%%/dojox/storage/tests
+@dirrm %%WWWDIR%%/dojox/storage/demos
 @dirrm %%WWWDIR%%/dojox/storage
+@dirrm %%WWWDIR%%/dojox/sketch/tests/images
+@dirrm %%WWWDIR%%/dojox/sketch/tests
+@dirrm %%WWWDIR%%/dojox/sketch/resources/images
+@dirrm %%WWWDIR%%/dojox/sketch/resources
+@dirrm %%WWWDIR%%/dojox/sketch
+@dirrm %%WWWDIR%%/dojox/rpc/tests/stores
+@dirrm %%WWWDIR%%/dojox/rpc/tests/resources
+@dirrm %%WWWDIR%%/dojox/rpc/tests
+@dirrm %%WWWDIR%%/dojox/rpc/demos/templates
+@dirrm %%WWWDIR%%/dojox/rpc/demos
+@dirrm %%WWWDIR%%/dojox/rpc/SMDLibrary
 @dirrm %%WWWDIR%%/dojox/rpc
 @dirrm %%WWWDIR%%/dojox/resources
 @dirrm %%WWWDIR%%/dojox/presentation/tests
@@ -1545,7 +2368,10 @@
 @dirrm %%WWWDIR%%/dojox/layout/resources
 @dirrm %%WWWDIR%%/dojox/layout
 @dirrm %%WWWDIR%%/dojox/lang/tests
+@dirrm %%WWWDIR%%/dojox/lang/functional
 @dirrm %%WWWDIR%%/dojox/lang
+@dirrm %%WWWDIR%%/dojox/jsonPath/tests
+@dirrm %%WWWDIR%%/dojox/jsonPath
 @dirrm %%WWWDIR%%/dojox/io/proxy/tests
 @dirrm %%WWWDIR%%/dojox/io/proxy
 @dirrm %%WWWDIR%%/dojox/io
@@ -1554,9 +2380,18 @@
 @dirrm %%WWWDIR%%/dojox/image/resources/images
 @dirrm %%WWWDIR%%/dojox/image/resources
 @dirrm %%WWWDIR%%/dojox/image
+@dirrm %%WWWDIR%%/dojox/highlight/tests
+@dirrm %%WWWDIR%%/dojox/highlight/resources/pygments
+@dirrm %%WWWDIR%%/dojox/highlight/resources
+@dirrm %%WWWDIR%%/dojox/highlight/languages/pygments
+@dirrm %%WWWDIR%%/dojox/highlight/languages
+@dirrm %%WWWDIR%%/dojox/highlight
+@dirrm %%WWWDIR%%/dojox/help/demos
+@dirrm %%WWWDIR%%/dojox/help
 @dirrm %%WWWDIR%%/dojox/grid/tests/support
 @dirrm %%WWWDIR%%/dojox/grid/tests/images
 @dirrm %%WWWDIR%%/dojox/grid/tests
+@dirrm %%WWWDIR%%/dojox/grid/resources
 @dirrm %%WWWDIR%%/dojox/grid/_grid/images
 @dirrm %%WWWDIR%%/dojox/grid/_grid
 @dirrm %%WWWDIR%%/dojox/grid/_data
@@ -1568,24 +2403,39 @@
 @dirrm %%WWWDIR%%/dojox/gfx/demos/data
 @dirrm %%WWWDIR%%/dojox/gfx/demos
 @dirrm %%WWWDIR%%/dojox/gfx
+@dirrm %%WWWDIR%%/dojox/fx/tests/images
 @dirrm %%WWWDIR%%/dojox/fx/tests
+@dirrm %%WWWDIR%%/dojox/fx/resources
+@dirrm %%WWWDIR%%/dojox/fx/ext-dojo
 @dirrm %%WWWDIR%%/dojox/fx
-@dirrm %%WWWDIR%%/dojox/flash/flash8
-@dirrm %%WWWDIR%%/dojox/flash/flash6
+@dirrm %%WWWDIR%%/dojox/form/tests
+@dirrm %%WWWDIR%%/dojox/form/resources
+@dirrm %%WWWDIR%%/dojox/form/nls
+@dirrm %%WWWDIR%%/dojox/form
+@dirrm %%WWWDIR%%/dojox/flash/tests
 @dirrm %%WWWDIR%%/dojox/flash
+@dirrm %%WWWDIR%%/dojox/encoding/tests/digests
+@dirrm %%WWWDIR%%/dojox/encoding/tests/crypto
+@dirrm %%WWWDIR%%/dojox/encoding/tests/compression
 @dirrm %%WWWDIR%%/dojox/encoding/tests
+@dirrm %%WWWDIR%%/dojox/encoding/digests
+@dirrm %%WWWDIR%%/dojox/encoding/crypto
+@dirrm %%WWWDIR%%/dojox/encoding/compression
 @dirrm %%WWWDIR%%/dojox/encoding
 @dirrm %%WWWDIR%%/dojox/dtl/utils
-@dirrm %%WWWDIR%%/dojox/dtl/tests/text/templates
 @dirrm %%WWWDIR%%/dojox/dtl/tests/text
+@dirrm %%WWWDIR%%/dojox/dtl/tests/templates
+@dirrm %%WWWDIR%%/dojox/dtl/tests/html
 @dirrm %%WWWDIR%%/dojox/dtl/tests
 @dirrm %%WWWDIR%%/dojox/dtl/tag
 @dirrm %%WWWDIR%%/dojox/dtl/render
 @dirrm %%WWWDIR%%/dojox/dtl/filter
+@dirrm %%WWWDIR%%/dojox/dtl/ext-dojo
 @dirrm %%WWWDIR%%/dojox/dtl/demos/templates
 @dirrm %%WWWDIR%%/dojox/dtl/demos/json/blog
 @dirrm %%WWWDIR%%/dojox/dtl/demos/json
 @dirrm %%WWWDIR%%/dojox/dtl/demos
+@dirrm %%WWWDIR%%/dojox/dtl/contrib
 @dirrm %%WWWDIR%%/dojox/dtl
 @dirrm %%WWWDIR%%/dojox/date/tests
 @dirrm %%WWWDIR%%/dojox/date
@@ -1622,24 +2472,35 @@
 @dirrm %%WWWDIR%%/dojox/data/demos/geography
 @dirrm %%WWWDIR%%/dojox/data/demos
 @dirrm %%WWWDIR%%/dojox/data
-@dirrm %%WWWDIR%%/dojox/crypto/tests
 @dirrm %%WWWDIR%%/dojox/crypto
+@dirrm %%WWWDIR%%/dojox/cometd
 @dirrm %%WWWDIR%%/dojox/color/tests
 @dirrm %%WWWDIR%%/dojox/color
 @dirrm %%WWWDIR%%/dojox/collections/tests
 @dirrm %%WWWDIR%%/dojox/collections
 @dirrm %%WWWDIR%%/dojox/charting/widget
 @dirrm %%WWWDIR%%/dojox/charting/themes/PlotKit
+@dirrm %%WWWDIR%%/dojox/charting/themes/ET
 @dirrm %%WWWDIR%%/dojox/charting/themes
+@dirrm %%WWWDIR%%/dojox/charting/tests/data
 @dirrm %%WWWDIR%%/dojox/charting/tests
 @dirrm %%WWWDIR%%/dojox/charting/plot3d
 @dirrm %%WWWDIR%%/dojox/charting/plot2d
 @dirrm %%WWWDIR%%/dojox/charting/axis2d
 @dirrm %%WWWDIR%%/dojox/charting
+@dirrm %%WWWDIR%%/dojox/av/tests/resources
+@dirrm %%WWWDIR%%/dojox/av/tests
+@dirrm %%WWWDIR%%/dojox/av/resources
+@dirrm %%WWWDIR%%/dojox/av/_base
+@dirrm %%WWWDIR%%/dojox/av
+@dirrm %%WWWDIR%%/dojox/analytics/tests
+@dirrm %%WWWDIR%%/dojox/analytics/profiles
+@dirrm %%WWWDIR%%/dojox/analytics/plugins
+@dirrm %%WWWDIR%%/dojox/analytics/logger
+@dirrm %%WWWDIR%%/dojox/analytics
 @dirrm %%WWWDIR%%/dojox/_sql/demos/customers
 @dirrm %%WWWDIR%%/dojox/_sql/demos
 @dirrm %%WWWDIR%%/dojox/_sql
-@dirrm %%WWWDIR%%/dojox/_cometd
 @dirrm %%WWWDIR%%/dojox
 @dirrm %%WWWDIR%%/dojo/tests/resources
 @dirrm %%WWWDIR%%/dojo/tests/nls/zh-tw
@@ -1672,8 +2533,7 @@
 @dirrm %%WWWDIR%%/dojo/tests/dnd
 @dirrm %%WWWDIR%%/dojo/tests/date
 @dirrm %%WWWDIR%%/dojo/tests/data
-@dirrm %%WWWDIR%%/dojo/tests/_base/_loader/744/foo
-@dirrm %%WWWDIR%%/dojo/tests/_base/_loader/744
+@dirrm %%WWWDIR%%/dojo/tests/_base/_loader/scope
 @dirrm %%WWWDIR%%/dojo/tests/_base/_loader
 @dirrm %%WWWDIR%%/dojo/tests/_base
 @dirrm %%WWWDIR%%/dojo/tests
@@ -1689,6 +2549,7 @@
 @dirrm %%WWWDIR%%/dojo/nls/ja
 @dirrm %%WWWDIR%%/dojo/nls/it
 @dirrm %%WWWDIR%%/dojo/nls/hu
+@dirrm %%WWWDIR%%/dojo/nls/gr
 @dirrm %%WWWDIR%%/dojo/nls/fr
 @dirrm %%WWWDIR%%/dojo/nls/es
 @dirrm %%WWWDIR%%/dojo/nls/de
@@ -1727,10 +2588,19 @@
 @dirrm %%WWWDIR%%/dojo/_base/_loader
 @dirrm %%WWWDIR%%/dojo/_base
 @dirrm %%WWWDIR%%/dojo
+@dirrm %%WWWDIR%%/dijit/themes/tundra/layout
 @dirrm %%WWWDIR%%/dijit/themes/tundra/images
+@dirrm %%WWWDIR%%/dijit/themes/tundra/form
 @dirrm %%WWWDIR%%/dijit/themes/tundra
+@dirrm %%WWWDIR%%/dijit/themes/themeTesterImages
+@dirrm %%WWWDIR%%/dijit/themes/soria/layout
 @dirrm %%WWWDIR%%/dijit/themes/soria/images
+@dirrm %%WWWDIR%%/dijit/themes/soria/form
 @dirrm %%WWWDIR%%/dijit/themes/soria
+@dirrm %%WWWDIR%%/dijit/themes/nihilo/layout
+@dirrm %%WWWDIR%%/dijit/themes/nihilo/images
+@dirrm %%WWWDIR%%/dijit/themes/nihilo/form
+@dirrm %%WWWDIR%%/dijit/themes/nihilo
 @dirrm %%WWWDIR%%/dijit/themes/a11y
 @dirrm %%WWWDIR%%/dijit/themes
 @dirrm %%WWWDIR%%/dijit/tests/tree
@@ -1746,8 +2616,10 @@
 @dirrm %%WWWDIR%%/dijit/tests
 @dirrm %%WWWDIR%%/dijit/templates/buttons
 @dirrm %%WWWDIR%%/dijit/templates
+@dirrm %%WWWDIR%%/dijit/resources
 @dirrm %%WWWDIR%%/dijit/nls/zh-tw
 @dirrm %%WWWDIR%%/dijit/nls/zh
+@dirrm %%WWWDIR%%/dijit/nls/sv
 @dirrm %%WWWDIR%%/dijit/nls/ru
 @dirrm %%WWWDIR%%/dijit/nls/pt
 @dirrm %%WWWDIR%%/dijit/nls/pl
@@ -1755,6 +2627,7 @@
 @dirrm %%WWWDIR%%/dijit/nls/ja
 @dirrm %%WWWDIR%%/dijit/nls/it
 @dirrm %%WWWDIR%%/dijit/nls/hu
+@dirrm %%WWWDIR%%/dijit/nls/gr
 @dirrm %%WWWDIR%%/dijit/nls/fr
 @dirrm %%WWWDIR%%/dijit/nls/es
 @dirrm %%WWWDIR%%/dijit/nls/de
@@ -1773,6 +2646,7 @@
 @dirrm %%WWWDIR%%/dijit/form/nls/ja
 @dirrm %%WWWDIR%%/dijit/form/nls/it
 @dirrm %%WWWDIR%%/dijit/form/nls/hu
+@dirrm %%WWWDIR%%/dijit/form/nls/gr
 @dirrm %%WWWDIR%%/dijit/form/nls/fr
 @dirrm %%WWWDIR%%/dijit/form/nls/es
 @dirrm %%WWWDIR%%/dijit/form/nls/de
@@ -1800,6 +2674,7 @@
 @dirrm %%WWWDIR%%/dijit/_editor/nls/ja
 @dirrm %%WWWDIR%%/dijit/_editor/nls/it
 @dirrm %%WWWDIR%%/dijit/_editor/nls/hu
+@dirrm %%WWWDIR%%/dijit/_editor/nls/gr
 @dirrm %%WWWDIR%%/dijit/_editor/nls/fr
 @dirrm %%WWWDIR%%/dijit/_editor/nls/es
 @dirrm %%WWWDIR%%/dijit/_editor/nls/de
