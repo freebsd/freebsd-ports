@@ -23,11 +23,6 @@ WRKSRC=		${WRKDIR}/vdccm-${PORTVERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE} \
 			--with-libsynce=${LOCALBASE}
+USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
