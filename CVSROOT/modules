@@ -3283,6 +3283,7 @@ fping+ipv6	ports/net/fping+ipv6
 fpkg		ports/sysutils/fpkg
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
+fprint_demo	ports/security/fprint_demo
 fprobe		ports/net-mgmt/fprobe
 fr-acroread8	ports/french/acroread8
 fr-aspell	ports/french/aspell
