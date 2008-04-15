@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	2007-11-19 20:15:11.000000000 +0100
++++ src/Makefile.in	2008-04-12 18:44:55.000000000 +0200
+@@ -30,7 +30,7 @@
+ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+-noinst_PROGRAMS = pamtest$(EXEEXT)
++noinst_PROGRAMS =
+ bin_PROGRAMS = pam_fprint_enroll$(EXEEXT)
+ pammod_PROGRAMS = pam_fprint.so$(EXEEXT)
+ subdir = src
+@@ -163,7 +163,7 @@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-pammoddir = /lib/security
++pammoddir = ${PREFIX}/lib
+ pam_fprint_so_SOURCES = pam_fprint.c
+ pam_fprint_so_CFLAGS = -fPIC $(FPRINT_CFLAGS)
+ pam_fprint_so_LDFLAGS = -shared
