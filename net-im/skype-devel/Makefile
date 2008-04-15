@@ -7,8 +7,9 @@
 
 PORTNAME=	skype
 PORTVERSION=	2.0.0.68
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	LOCAL/beech
+MASTER_SITES=	http://download.skype.com/linux/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	skype_static-${DISTVERSION}-oss
 
