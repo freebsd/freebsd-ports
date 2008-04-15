@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%DATADIR%%/session_handler.php
+%%DATADIR%%/sharedance.php
+%%DATADIR%%/test_session.php
+%%DATADIR%%/test_sharedance.php
+sbin/sharedanced
+@dirrmtry %%DATADIR%%
