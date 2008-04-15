@@ -8,7 +8,7 @@
 
 PORTNAME=	seahorse
 PORTVERSION=	2.22.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +19,8 @@ COMMENT=	GNOME application for managing encryption keys (PGP, SSH)
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme \
-    		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+    		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		gnome-keyring:${PORTSDIR}/security/gnome-keyring
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
@@ -42,7 +43,6 @@ OPTIONS=	LDAP "Enable LDAP support" on \
 		HKP "Enable HKP keyserver interface" on \
 		NOTIFY "Enable libnotify support" on \
 		APPLET "Enable clipboard encryption applet" on \
-		KEYRING "Enable GNOME Keyring support" on \
 		MDNS "Enable mDNS key sharing" on \
 		GEDIT "Enable GEdit plug-in support" on \
 		NAUTILUS "Enable the Nautilus component" on \
@@ -104,12 +104,6 @@ PLIST_SUB+=	APPLET=""
 .else
 CONFIGURE_ARGS+=--disable-applet
 PLIST_SUB+=	APPLET="@comment "
-.endif
-
-.if !defined(WITHOUT_KEYRING)
-LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/gnome-keyring
-.else
-CONFIGURE_ARGS+=--disable-gnome-keyring
 .endif
 
 .if !defined(WITHOUT_MDNS)
