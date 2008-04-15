@@ -437,6 +437,7 @@ www/data-dist/index.html.zh-tw.big5
 %%PORTDOCS%%%%DOCSDIR%%/windows.html.html
 %%PORTDOCS%%%%DOCSDIR%%/windows.html.ja.jis
 www/icons/README
+www/icons/README.html
 www/icons/a.gif
 www/icons/a.png
 www/icons/alert.black.gif
@@ -561,7 +562,6 @@ www/icons/screw2.gif
 www/icons/screw2.png
 www/icons/script.gif
 www/icons/script.png
-www/icons/small/README.txt
 www/icons/small/back.gif
 www/icons/small/back.png
 www/icons/small/binary.gif

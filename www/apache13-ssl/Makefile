@@ -31,8 +31,8 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.*
 
-APACHE_VERSION=		1.3.37
-APACHE_SSL_VERSION=	1.57
+APACHE_VERSION=		1.3.41
+APACHE_SSL_VERSION=	1.59
 USE_OPENSSL=		yes
 USE_PERL5=		yes
 HAS_CONFIGURE=		yes
@@ -102,6 +102,9 @@ post-patch:
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/post-patch-conf:httpd.conf-dist
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache.sh
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
+		${WRKSRC}/src/Configure
+
 post-install:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "SSL is disabled by default"
