@@ -29,6 +29,7 @@ lib/webmin/virtual-server/createvirtualminmodule.sh
 lib/webmin/virtual-server/csr.cgi
 lib/webmin/virtual-server/defaultacl
 lib/webmin/virtual-server/delete-domain.pl
+lib/webmin/virtual-server/delete-user.pl
 lib/webmin/virtual-server/delete_admins.cgi
 lib/webmin/virtual-server/delete_aliases.cgi
 lib/webmin/virtual-server/delete_databases.cgi
@@ -263,6 +264,7 @@ lib/webmin/virtual-server/local-template
 lib/webmin/virtual-server/log_parser.pl
 lib/webmin/virtual-server/mass_aedit.cgi
 lib/webmin/virtual-server/mass_aedit_form.cgi
+lib/webmin/virtual-server/migrate-domain.pl
 lib/webmin/virtual-server/migrate.cgi
 lib/webmin/virtual-server/migrate_form.cgi
 lib/webmin/virtual-server/migration-cpanel.pl
@@ -270,6 +272,8 @@ lib/webmin/virtual-server/migration-ensim.pl
 lib/webmin/virtual-server/migration-plesk.pl
 lib/webmin/virtual-server/modify-domain.pl
 lib/webmin/virtual-server/module.info
+lib/webmin/virtual-server/move.cgi
+lib/webmin/virtual-server/move_form.cgi
 lib/webmin/virtual-server/newchain.cgi
 lib/webmin/virtual-server/newfeatures-all/3.52/1-restore
 lib/webmin/virtual-server/newfeatures-all/3.52/3-active-ip
@@ -279,7 +283,13 @@ lib/webmin/virtual-server/newfeatures-all/3.53/2-sslshared
 lib/webmin/virtual-server/newfeatures-all/3.53/4-disabledns
 lib/webmin/virtual-server/newfeatures-all/3.54/1-plesk
 lib/webmin/virtual-server/newfeatures-all/3.54/5-restoreips
+lib/webmin/virtual-server/newfeatures-all/3.55/1-migrationftp
+lib/webmin/virtual-server/newfeatures-all/3.55/2-migrationdomain
+lib/webmin/virtual-server/newfeatures-all/3.55/3-plesksubdoms
+lib/webmin/virtual-server/newfeatures-all/3.55/4-collectinfo
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
+lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
+lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
