@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdbi-drivers
-DISTVERSION=	0.8.2-1
+DISTVERSION=	0.8.3-1
 CATEGORIES=	databases devel
 MASTER_SITES=	SF
 
@@ -19,6 +19,7 @@ USE_GNOME=	gnometarget lthack
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-static \
 		--with-dbi-incdir=${LOCALBASE}/include/dbi
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
 OPTIONS=	MYSQL		"With MySQL Driver" 		on  \
 		MSQL		"With MSQL Driver" 		off \
@@ -33,7 +34,7 @@ OPTIONS=	MYSQL		"With MySQL Driver" 		on  \
 .if defined(WITHOUT_MYSQL) && defined(WITHOUT_MSQL) && defined(WITHOUT_PGSQL) \
 	&& defined(WITHOUT_SQLITE2) && defined(WITHOUT_SQLITE3) \
 	&& defined(WITHOUT_FIREBIRD) && defined(WITHOUT_FREETDS)
-#IGNORE=		choose at least one driver
+IGNORE=		choose at least one driver
 .endif
 
 .if !defined(WITHOUT_MYSQL)
@@ -92,7 +93,11 @@ PLIST_SUB+=	FREETDS=""
 PLIST_SUB+=	FREETDS="@comment "
 .endif
 
+PLIST_SUB+=	INGRES="@comment "
+PLIST_SUB+=	ORACLE="@comment "
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O20|${CFLAGS}|g' ${WRKSRC}/configure
+	@${TOUCH} ${WRKSRC}/drivers/*/dbd_*/*
 
 .include <bsd.port.post.mk>
