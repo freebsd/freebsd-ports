@@ -1,0 +1,36 @@
+%%SITE_PERL%%/HTTP/MobileAttribute/Agent/DoCoMo.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Agent/AirHPhone.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Agent/EZweb.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Agent/Base.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Agent/ThirdForce.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Agent/NonMobile.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Attribute/CarrierMethod.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/IS/DoCoMo.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/IS/ThirdForce.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/IS/EZweb.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/Encoding.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/CIDR.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/Core.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/CarrierLetter.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/IS.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/XHTMLCompliant.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/UserID.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/GPS.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin/Display.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Request/HTTPHeaders.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Request/Apache.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Request/Env.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/CarrierDetector.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Plugin.pm
+%%SITE_PERL%%/HTTP/MobileAttribute/Request.pm
+%%SITE_PERL%%/HTTP/MobileAttribute.pm
+%%SITE_PERL%%/mach/auto/HTTP/MobileAttribute/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/HTTP/MobileAttribute
+@dirrmtry %%SITE_PERL%%/mach/auto/HTTP
+@dirrmtry %%SITE_PERL%%/HTTP/MobileAttribute/Request
+@dirrmtry %%SITE_PERL%%/HTTP/MobileAttribute/Plugin/IS
+@dirrmtry %%SITE_PERL%%/HTTP/MobileAttribute/Plugin
+@dirrmtry %%SITE_PERL%%/HTTP/MobileAttribute/Attribute
+@dirrmtry %%SITE_PERL%%/HTTP/MobileAttribute/Agent
+@dirrmtry %%SITE_PERL%%/HTTP/MobileAttribute
+@dirrmtry %%SITE_PERL%%/HTTP
