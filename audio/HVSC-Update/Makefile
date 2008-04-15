@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	HVSC-Update
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 CATEGORIES=	audio emulators
-MASTER_SITES=	http://sidplay2.sourceforge.net/ \
+MASTER_SITES=	http://www.hvsc.c64.org/Downloads/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
-DISTNAME=	${PORTNAME}-Tool-${PORTVERSION}-Source
+DISTNAME=	${PORTNAME:S/-/_/}_Tool_source_${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
@@ -18,7 +18,7 @@ COMMENT=	Update program for the HVSC C= 64 SID tune collection
 
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-Tool-${PORTVERSION}-Source
+WRKSRC=	${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
