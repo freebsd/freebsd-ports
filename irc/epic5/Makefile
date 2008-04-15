@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epic5
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.8
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
 		http://tehran.lain.pl/epic-mirror/EPIC5-BETA/ \
@@ -22,11 +22,16 @@ SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 MAN1=		epic5.1
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--without-ruby
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+USE_BZIP2=	yes
+CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 
 OPTIONS=	IPV6	"IPv6 support"		on \
 		TCL	"TCL support"		on \
-		PERL	"Perl scripting support" off
+		PERL	"Perl scripting support" on \
+		RUBY	"Ruby scripting support" on \
+		TERMCAP	"Refure to use terminfo/ncurses" off \
+		ICONV	"Enable experimental iconv support" off
 
 .include <bsd.port.pre.mk>
 
@@ -55,8 +60,34 @@ CONFIGURE_ARGS+=	--without-tcl
 .if defined(WITH_PERL)
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VER}/mach/CORE
+.else
+CONFIGURE_ARGS+=	--without-perl
 .endif
 
+## WITH_RUBY:	enable ruby scripting support
+#
+.if defined(WITH_RUBY)
+USE_RUBY=	yes
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+CONFIGURE_ARGS+=	--with-ruby
+.else
+CONFIGURE_ARGS+=	--without-ruby
+.endif
+
+## WITH_TERMCAP	forecably refuse to use terminfo/ncurses
+#
+.if defined(WITH_TERMCAP)
+CONFIGURE_ARGS+=	--with-termcap
+.endif
+
+## WITH_ICON	experimental iconv support
+#
+.if defined(WITH_ICONV)
+LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv
+CONFIGURE_ARGS+=	--with-iconv
+.else
+CONFIGURE_ARGS+=	--without-iconv
+.endif
 post-extract:
 	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -rf
 
