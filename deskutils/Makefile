@@ -154,6 +154,7 @@
     SUBDIR += notecase
     SUBDIR += notification-daemon
     SUBDIR += ontv
+    SUBDIR += openproj
     SUBDIR += orage
     SUBDIR += org-mode.el
     SUBDIR += p5-Data-ICal
