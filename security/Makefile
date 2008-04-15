@@ -236,6 +236,7 @@
     SUBDIR += libassuan
     SUBDIR += libbf
     SUBDIR += libecc
+    SUBDIR += libfprint
     SUBDIR += libfwbuilder
     SUBDIR += libgcrypt
     SUBDIR += libgnomesu
