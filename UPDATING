@@ -131,7 +131,7 @@ upgrades.
   AUTHOR: beech@FreeBSD.org
 
   For FreeBSD versions 7.0 and above:
-  It is now recommended (and will be required in future versions) to
+  It is recommended (and is now required for skype-devel) to
   update to linux_base-fc6. Please do the following:
 
   1. Make sure there are no running linux applications.
