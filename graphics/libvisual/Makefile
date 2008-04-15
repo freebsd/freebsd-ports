@@ -10,24 +10,32 @@
 
 PORTNAME=	libvisual
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
 
-USE_XLIBS=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CONFIGURE_ENV= CFLAGS="${CFLAGS} -mmmx -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+CFLAGS+=	-mmmx
+PLIST_SUB+=	ARCH=""
+.else
+PLIST_SUB+=	ARCH="@comment"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wno-unused-variable||g' \
 		-e 's|-O3|${CFLAGS}|g' \
 		${WRKSRC}/libvisual/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
