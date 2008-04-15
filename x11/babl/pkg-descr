@@ -1,0 +1,6 @@
+Babl is a dynamic, any to any, pixel format conversion library. It
+provides conversions between the myriad of buffer types images can be
+stored in. Babl doesn't only help with existing pixel formats, but also
+facilitates creation of new and uncommon ones.
+
+WWW: http://www.gegl.org/babl/

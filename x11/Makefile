@@ -13,6 +13,7 @@
     SUBDIR += appres
     SUBDIR += apwal
     SUBDIR += aterm
+    SUBDIR += babl
     SUBDIR += bbappconf
     SUBDIR += bbdock
     SUBDIR += bbrun

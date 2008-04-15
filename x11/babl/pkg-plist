@@ -1,0 +1,16 @@
+include/babl-0.0/babl/babl-classes.h
+include/babl-0.0/babl/babl.h
+lib/babl-0.0/CIE-Lab.so
+lib/babl-0.0/gegl-fixups.so
+lib/babl-0.0/gggl-lies.so
+lib/babl-0.0/gggl.so
+lib/babl-0.0/gimp-8bit.so
+lib/babl-0.0/naive-CMYK.so
+lib/libbabl-0.0.a
+lib/libbabl-0.0.la
+lib/libbabl-0.0.so
+lib/libbabl-0.0.so.0
+libdata/pkgconfig/babl.pc
+@dirrm lib/babl-0.0
+@dirrm include/babl-0.0/babl
+@dirrm include/babl-0.0
