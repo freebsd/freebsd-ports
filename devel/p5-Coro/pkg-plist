@@ -1,7 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/AIO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/BDB.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Channel.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/CoroAPI.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Coro/Debug.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Event.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/Handle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Coro/LWP.pm

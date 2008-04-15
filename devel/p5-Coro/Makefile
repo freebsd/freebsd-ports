@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	Coro
-PORTVERSION=	3.6.3
+PORTVERSION=	4.5.1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Coro
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
@@ -25,6 +24,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Coro.3 Coro::AIO.3 Coro::Channel.3 Coro::Handle.3 \
+		Coro::BDB.3 Coro::Debug.3 \
 		Coro::LWP.3 Coro::MakeMaker.3 Coro::RWLock.3 Coro::Select.3 \
 		Coro::Semaphore.3 Coro::SemaphoreSet.3 Coro::Signal.3 \
 		Coro::Socket.3 Coro::Specific.3 Coro::State.3 Coro::Storable.3 \
