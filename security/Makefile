@@ -139,6 +139,7 @@
     SUBDIR += fpc-hash
     SUBDIR += fpc-openssl
     SUBDIR += fpm
+    SUBDIR += fprint_demo
     SUBDIR += fragroute
     SUBDIR += fragrouter
     SUBDIR += freebsd-update
