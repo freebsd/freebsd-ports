@@ -8659,6 +8659,7 @@ ocaml-annexlib	ports/devel/ocaml-annexlib
 ocaml-calendar	ports/devel/ocaml-calendar
 ocaml-camlidl	ports/lang/ocaml-camlidl
 ocaml-camljava	ports/devel/ocaml-camljava
+ocaml-camlp5	ports/devel/ocaml-camlp5
 ocaml-camomile	ports/devel/ocaml-camomile
 ocaml-camomile-examples	ports/devel/ocaml-camomile-examples
 ocaml-cfg	ports/devel/ocaml-cfg
