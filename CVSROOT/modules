@@ -8840,6 +8840,7 @@ openospfd	ports/net/openospfd
 openospfd-devel	ports/net/openospfd-devel
 openpbx.org	ports/net/openpbx.org
 openproducer	ports/graphics/openproducer
+openproj	ports/deskutils/openproj
 openquicktime	ports/multimedia/openquicktime
 openradius	ports/net/openradius
 openresolv	ports/dns/openresolv
