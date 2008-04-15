@@ -6661,6 +6661,7 @@ libfixbuf	ports/net/libfixbuf
 libflash	ports/graphics/libflash
 libfontenc	ports/x11-fonts/libfontenc
 libfov		ports/games/libfov
+libfprint	ports/security/libfprint
 libfpx		ports/graphics/libfpx
 libfs++		ports/devel/libfs++
 libftdi		ports/devel/libftdi
