@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/
@@ -24,7 +24,7 @@ OTHERGRAPHICS=	jasper jpeg lcms png tiff
 LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
 OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off
 
-OPTIONS+=	TESTS "Run bundled self-tests after build" off
+OPTIONS+=	TESTS "Run bundled self-tests after build" on
 
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool:15
