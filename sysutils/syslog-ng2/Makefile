@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.9
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/stable/src/
+MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/2.0/src/
 
 MAINTAINER=	ivan.lago@ifom-ieo-campus.it
 COMMENT=	A powerful syslogd replacement
