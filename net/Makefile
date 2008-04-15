@@ -619,6 +619,7 @@
     SUBDIR += p5-What
     SUBDIR += p5-X500-DN
     SUBDIR += p5-XML-Compile-SOAP
+    SUBDIR += p5-XML-Compile-SOAP-Daemon
     SUBDIR += p5-XPC
     SUBDIR += p5-perl-ldap
     SUBDIR += p54u
