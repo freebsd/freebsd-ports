@@ -626,6 +626,7 @@ audacious-plugins	ports/multimedia/audacious-plugins
 audacious-skins	ports/x11-themes/audacious-skins
 audacity	ports/audio/audacity
 audacity-devel	ports/audio/audacity-devel
+audiotag	ports/audio/audiotag
 audit		ports/security/audit
 august		ports/www/august
 aumix		ports/audio/aumix
