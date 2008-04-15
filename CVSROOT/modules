@@ -12011,6 +12011,7 @@ pam_af		ports/security/pam_af
 pam_alreadyloggedin	ports/security/pam_alreadyloggedin
 pam_authsrv	ports/security/pam_authsrv
 pam_bsdbioapi	ports/security/pam_bsdbioapi
+pam_fprint	ports/security/pam_fprint
 pam_ldap	ports/security/pam_ldap
 pam_mkhomedir	ports/security/pam_mkhomedir
 pam_p11		ports/security/pam_p11
