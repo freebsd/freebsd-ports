@@ -23,7 +23,7 @@ MASTER_SITES=	http://grass.itc.it/grass62/source/ \
 		http://gulus.usherbrooke.ca/pub/appl/grass/grass62/source/\
 		http://ludique.u-bourgogne.fr/grass/grass62/source/
 
-MAINTAINER=	lrntct@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Geographical Information System (GIS)
 
 BUILD_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
