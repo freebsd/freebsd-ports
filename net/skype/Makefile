@@ -10,7 +10,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	1.4.0.118
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
@@ -21,7 +21,8 @@ COMMENT=	P2P VoIP software
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
 		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat \
-		${LINUXBASE}/usr/lib/libsigc-2.0.so.0:${PORTSDIR}/devel/linux-libsigc++20
+		${LINUXBASE}/usr/lib/libsigc-2.0.so.0:${PORTSDIR}/devel/linux-libsigc++20 \
+		${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib
 
 .ifdef WITH_NVIDIA_GL
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
