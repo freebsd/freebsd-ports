@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fraqtive
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	Draws Mandelbrot and Julia fractals
 
 USE_BZIP2=	yes
