@@ -9,7 +9,7 @@ PORTVERSION=	1.3.4
 CATEGORIES=	astro geography
 MASTER_SITES=	SFE
 
-MAINTAINER=	lrntct@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gps file translating tool
 
 LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb \
