@@ -533,6 +533,7 @@
     SUBDIR += rubygem-postgres
     SUBDIR += rubygem-rrdtool
     SUBDIR += rubygem-sqlite3
+    SUBDIR += sharedance
     SUBDIR += skytools
     SUBDIR += slony1
     SUBDIR += sqlcached
