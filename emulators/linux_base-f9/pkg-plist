@@ -5008,7 +5008,6 @@ var/cache/ldconfig/aux-cache
 @exec /bin/mkdir -p %D/etc/sysconfig
 @exec /bin/mkdir -p %D/etc/popt.d
 @exec /bin/mkdir -p %D/etc/opt
-@exec /bin/mkdir -p %D/etc/fonts/conf.d
 @exec /bin/mkdir -p %D/etc/ld.so.conf.d
 @exec /bin/mkdir -p %D/etc/blkid
 @exec /bin/mkdir -p %D/etc/X11/fontpath.d
@@ -6369,8 +6368,6 @@ var/cache/ldconfig/aux-cache
 @dirrm etc/pki
 @dirrm etc/popt.d
 @dirrm etc/pam.d
-@dirrm etc/fonts/conf.d
-@dirrm etc/fonts
 @dirrm etc/default
 @dirrm etc/X11/fontpath.d
 @dirrm etc/X11
