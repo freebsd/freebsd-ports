@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	ocamlduce
-PORTVERSION=	3.09.3
-PORTREVISION=	1
+PORTVERSION=	3.10.0.1
 CATEGORIES=	lang
 MASTER_SITES=	http://gallium.inria.fr/~frisch/ocamlcduce/download/
-PKGNAMESUFFIX=	pl1
 DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
 MAINTAINER=	jaapb@kerguelen.org
@@ -18,7 +16,10 @@ COMMENT=	Library to integrate XML features into OCaml
 
 USE_GMAKE=	yes
 USE_OCAML=	yes
-USE_OCAML_FINDLIB=yes
+OCAMLC_DEPEND=	ocaml>=3.10.0:${OCAMLC_PORT}
+USE_OCAML_FINDLIB=	yes
+USE_OCAML_LDCONFIG=	yes
+USE_OCAML_PLIST=	yes
 
 ALL_TARGET=	all opt
 
