@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embedding Mozilla in wxWidgets
 
+BROKEN=		does not compile
+
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_GECKO=	mozilla
