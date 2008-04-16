@@ -475,6 +475,7 @@
     SUBDIR += p5-Pod-Parser
     SUBDIR += p5-Pod-ProjectDocs
     SUBDIR += p5-Pod-Simple
+    SUBDIR += p5-Pod-Spell
     SUBDIR += p5-Pod-Strip
     SUBDIR += p5-Pod-Stripper
     SUBDIR += p5-Pod-Tree
