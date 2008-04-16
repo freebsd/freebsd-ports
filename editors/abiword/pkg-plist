@@ -46,6 +46,7 @@ share/abiword-%%ABIVERSION%%/strings/ast-ES.strings
 share/abiword-%%ABIVERSION%%/strings/ayc-BO.strings
 share/abiword-%%ABIVERSION%%/strings/aym-BO.strings
 share/abiword-%%ABIVERSION%%/strings/be-BY.strings
+share/abiword-%%ABIVERSION%%/strings/be@latin.strings
 share/abiword-%%ABIVERSION%%/strings/bg-BG.strings
 share/abiword-%%ABIVERSION%%/strings/br-FR.strings
 share/abiword-%%ABIVERSION%%/strings/ca-ES.strings
