@@ -56,6 +56,7 @@ include/fxt/bits/bitblock.h
 include/fxt/bits/bitbutterfly.h
 include/fxt/bits/bitcombcolex.h
 include/fxt/bits/bitcombminchange.h
+include/fxt/bits/bitcombshifts.h
 include/fxt/bits/bitcopy.h
 include/fxt/bits/bitcount.h
 include/fxt/bits/bitcyclic-dist.h
@@ -85,6 +86,7 @@ include/fxt/bits/bittest.h
 include/fxt/bits/bittransforms.h
 include/fxt/bits/bitxtransforms.h
 include/fxt/bits/bitzip.h
+include/fxt/bits/bitzip0.h
 include/fxt/bits/blue-fixed-points.h
 include/fxt/bits/branchless.h
 include/fxt/bits/colormix-fl.h
@@ -302,15 +304,6 @@ include/fxt/haar/transposedhaarnn.h
 include/fxt/haar/transposedhaarrevnn.h
 include/fxt/jjassert.h
 include/fxt/matrix-all.h
-include/fxt/matrix/cholesky.h
-include/fxt/matrix/matrix.h
-include/fxt/matrix/matrixsymmetryq.h
-include/fxt/matrix/mmult.h
-include/fxt/matrix/reorth.h
-include/fxt/matrix/symmetricpart.h
-include/fxt/matrix/testmatrix.h
-include/fxt/matrix/toeplitz.h
-include/fxt/matrix/vector.h
 include/fxt/mod-all.h
 include/fxt/mod/binarygcd.h
 include/fxt/mod/chebyshev.h
@@ -472,6 +465,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitcomblex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitcombminchange-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitcombminchange-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitcombshifts-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitcombshifts-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitcount-v-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitcount-v-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitdemos.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitfibgray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bitfibgray-out.txt
@@ -767,6 +764,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-trotter-lg-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-trotter-lg-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-trotter-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm2fact-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm2fact-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-binomial-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-binomial-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-fincr-demo.cc
@@ -1019,7 +1018,6 @@ lib/libfxt.a
 @dirrm include/fxt/ntt
 @dirrm include/fxt/mult
 @dirrm include/fxt/mod
-@dirrm include/fxt/matrix
 @dirrm include/fxt/haar
 @dirrm include/fxt/graph
 @dirrm include/fxt/fht
