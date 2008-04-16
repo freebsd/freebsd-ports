@@ -55,6 +55,8 @@ EXTRACT_ONLY=	${GS_SRCS}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Postscript interpreter
 
+CONFLICTS=	gambc-* ghostscript-gpl-*
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
