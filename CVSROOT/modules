@@ -11104,6 +11104,7 @@ p5-Pod-POM-View-HTML-Filter	ports/textproc/p5-Pod-POM-View-HTML-Filter
 p5-Pod-Parser	ports/textproc/p5-Pod-Parser
 p5-Pod-ProjectDocs	ports/textproc/p5-Pod-ProjectDocs
 p5-Pod-Simple	ports/textproc/p5-Pod-Simple
+p5-Pod-Spell	ports/textproc/p5-Pod-Spell
 p5-Pod-Strip	ports/textproc/p5-Pod-Strip
 p5-Pod-Stripper	ports/textproc/p5-Pod-Stripper
 p5-Pod-Tests	ports/devel/p5-Pod-Tests
