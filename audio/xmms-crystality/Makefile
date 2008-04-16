@@ -9,8 +9,8 @@ PORTNAME=	crystality
 PORTVERSION=	0.92
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/others_ports/xmms-crystality/sources/ \
-		http://ftp.ussg.iu.edu/FreeBSD/distfiles/
+MASTER_SITES=	http://ftp.ussg.iu.edu/FreeBSD/distfiles/ \
+		http://T32.TecNik93.com/FreeBSD/others_ports/xmms-crystality/sources/ \
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-plugin-${PORTVERSION}
 
