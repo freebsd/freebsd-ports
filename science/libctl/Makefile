@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libctl
-PORTVERSION=	3.0.2
-PORTREVISION=	2
+PORTVERSION=	3.0.3
 CATEGORIES=	science math
 MASTER_SITES=	http://ab-initio.mit.edu/libctl/
 
@@ -17,9 +16,10 @@ COMMENT=	Control Language Library
 
 LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV+=	 FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 USE_FORTRAN=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		gen-ctl-io.1
 
