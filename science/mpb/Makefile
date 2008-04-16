@@ -8,17 +8,17 @@
 
 PORTNAME=	mpb
 PORTVERSION=	1.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/mpb/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIT Photonic-Bands
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libctl.a:${PORTSDIR}/science/libctl \
-		bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		hdf5.0:${PORTSDIR}/science/hdf5 \
+		ctl.3:${PORTSDIR}/science/libctl \
 		guile.18:${PORTSDIR}/lang/guile
 
 USE_FORTRAN=	yes
@@ -30,14 +30,14 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=     yes
+WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+=	--with-lapack=-lalapack
 .else
-LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=   lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 CONFIGURE_ARGS+=	--with-lapack=-llapack
 .endif
 
