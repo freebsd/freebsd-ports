@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aspell
-PORTVERSION=	0.60.5
-PORTREVISION=	2
+PORTVERSION=	0.60.6
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	aspell
@@ -24,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--enable-dict-dir=${DATADIR}	\
 			--enable-docdir=${DOCSDIR}	\
+			--enable-curses=ncursesw	\
 			--enable-static
 PTHREAD_CFLAGS=		# Disable threading
 PTHREAD_LIBS=		# libaspell may be used by unthreaded apps.

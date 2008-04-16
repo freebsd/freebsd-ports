@@ -1,6 +1,6 @@
---- configure.orig	Wed Oct 19 10:36:26 2005
-+++ configure	Wed Oct 19 18:13:12 2005
-@@ -2916,7 +2916,7 @@
+--- configure.orig	2008-04-07 06:31:31.000000000 +0200
++++ configure	2008-04-16 20:55:32.000000000 +0200
+@@ -3505,7 +3505,7 @@
  fi
  
  
@@ -9,24 +9,10 @@
  then
    CXXFLAGS="$CXXFLAGS -fno-exceptions"
  fi
-@@ -9975,13 +9975,6 @@
- 	;;
-     esac
- 
--    if grep "^# ### BEGIN LIBTOOL TAG CONFIG: $tagname$" < "${ofile}" > /dev/null
--    then
--      { { echo "$as_me:$LINENO: error: tag name \"$tagname\" already exists" >&5
--echo "$as_me: error: tag name \"$tagname\" already exists" >&2;}
--   { (exit 1); exit 1; }; }
--    fi
--
-     # Update the list of available tags.
-     if test -n "$tagname"; then
-       echo appending configuration tag \"$tagname\" to $ofile
-@@ -19872,6 +19865,10 @@
+@@ -8101,6 +8101,10 @@
  
  # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
+ LIBTOOL_DEPS="$ltmain"
 +save_CC="$CC"
 +CC="$CXX"
 +$ac_aux_dir/ltconfig $LIBTOOL_DEPS
@@ -34,7 +20,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -23160,7 +23157,7 @@
+@@ -18179,7 +18183,7 @@
    CURSES_LIB=-lncurses
  
  cat >>confdefs.h <<\_ACEOF
@@ -43,12 +29,14 @@
  _ACEOF
  
  else
-@@ -23341,7 +23338,7 @@
+@@ -18366,8 +18370,8 @@
+      if test "$enable_wide_curses" != "no"
+      then
  
- 
- cat >>confdefs.h <<\_ACEOF
--#define CURSES_HEADER <curses.h>
-+#define CURSES_HEADER <ncurses/ncurses.h>
- _ACEOF
- 
- 
+-       { echo "$as_me:$LINENO: checking for wide character support in curses libraray" >&5
+-echo $ECHO_N "checking for wide character support in curses libraray... $ECHO_C" >&6; }
++       { echo "$as_me:$LINENO: checking for wide character support in curses library" >&5
++echo $ECHO_N "checking for wide character support in curses library... $ECHO_C" >&6; }
+        if test -n "$have_mblen"
+        then
+          cat >conftest.$ac_ext <<_ACEOF

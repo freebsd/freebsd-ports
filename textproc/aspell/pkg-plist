@@ -104,6 +104,7 @@ lib/libpspell.so.16
 %%NLS%%share/locale/ro/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/aspell.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/aspell.mo
