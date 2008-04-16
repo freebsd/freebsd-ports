@@ -1,6 +1,246 @@
 bin/thin
 %%GEM_CACHE%%
+%%GEM_DOC_DIR%%/rdoc/classes/Process.html
+%%GEM_DOC_DIR%%/rdoc/classes/Process.src/M000174.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails/CGIWrapper.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails/CGIWrapper.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails/CGIWrapper.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails/CGIWrapper.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails/CGIWrapper.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails/CGIWrapper.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails/CGIWrapper.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails/CGIWrapper.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails/CGIWrapper.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails/CGIWrapper.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/AdapterNotFound.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Handler.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Handler/Thin.html
+%%GEM_DOC_DIR%%/rdoc/classes/Rack/Handler/Thin.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/SwiftiplyClient.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/SwiftiplyClient.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/SwiftiplyClient.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/SwiftiplyClient.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/SwiftiplyClient.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/TcpServer.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/TcpServer.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/TcpServer.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/TcpServer.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/TcpServer.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/UnixServer.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/UnixServer.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/UnixServer.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/UnixServer.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/UnixServer.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/UnixServer.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/UnixServer.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/UnixServer.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Command.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Command.src/M000107.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Command.src/M000108.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Command.src/M000109.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Command.src/M000110.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000154.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000155.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000156.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000157.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000158.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000159.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000160.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000161.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000162.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000163.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000164.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000165.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000166.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Controller.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Controller.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Controller.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Controller.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Controller.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Controller.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Controller.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Controller.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Controller.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Service.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Service.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Service.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Service.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Service.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Service.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Service.src/M000093.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable/ClassMethods.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable/ClassMethods.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable/ClassMethods.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Headers.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Headers.src/M000128.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Headers.src/M000129.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Headers.src/M000130.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Headers.src/M000131.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/InvalidOption.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/InvalidRequest.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src/M000103.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src/M000104.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src/M000105.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src/M000106.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/OptionRequired.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/OptionRequired.src/M000167.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/PidFileExist.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/PlatformNotSupported.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.src/M000145.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.src/M000146.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.src/M000147.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.src/M000148.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.src/M000149.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.src/M000150.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.src/M000151.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.src/M000152.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.src/M000153.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Response.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Response.src/M000119.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Response.src/M000120.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Response.src/M000121.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Response.src/M000122.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Response.src/M000123.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Response.src/M000124.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Response.src/M000125.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Response.src/M000126.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Response.src/M000127.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Runner.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Runner.src/M000111.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Runner.src/M000112.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Runner.src/M000113.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Runner.src/M000114.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Runner.src/M000115.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Runner.src/M000116.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Runner.src/M000117.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Runner.src/M000118.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/RunnerError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src/M000132.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src/M000133.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src/M000134.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src/M000136.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src/M000137.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src/M000138.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src/M000139.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src/M000141.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src/M000142.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src/M000143.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src/M000144.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Stats.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Stats/Adapter.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Stats/Adapter.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Stats/Adapter.src/M000095.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Stats/Adapter.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Stats/Adapter.src/M000097.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src/M000168.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src/M000169.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src/M000170.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src/M000171.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src/M000172.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/UnixConnection.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/UnixConnection.src/M000173.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/lib/rack/adapter/loader_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/rack/adapter/rails_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/rack/handler/thin_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/backends/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/backends/swiftiply_client_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/backends/tcp_server_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/backends/unix_server_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/command_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/connection_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/controllers/cluster_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/controllers/controller_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/controllers/service_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/daemonizing_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/headers_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/logging_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/request_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/response_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/runner_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/server_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/stats_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/statuses_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/thin_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/COMMITTERS
 %%GEM_LIB_DIR%%/COPYING
 %%GEM_LIB_DIR%%/README
 %%GEM_LIB_DIR%%/Rakefile
@@ -8,14 +248,14 @@ bin/thin
 %%GEM_LIB_DIR%%/benchmark/benchmarker.rb
 %%GEM_LIB_DIR%%/benchmark/runner
 %%GEM_LIB_DIR%%/bin/thin
-%%GEM_LIB_DIR%%/doc/benchmarks.txt
-%%GEM_LIB_DIR%%/example
 %%GEM_LIB_DIR%%/example/adapter.rb
 %%GEM_LIB_DIR%%/example/config.ru
 %%GEM_LIB_DIR%%/example/monit_sockets
 %%GEM_LIB_DIR%%/example/monit_unixsock
 %%GEM_LIB_DIR%%/example/ramaze.ru
 %%GEM_LIB_DIR%%/example/thin.god
+%%GEM_LIB_DIR%%/example/thin_solaris_smf.erb
+%%GEM_LIB_DIR%%/example/thin_solaris_smf.readme.txt
 %%GEM_LIB_DIR%%/example/vlad.rake
 %%GEM_LIB_DIR%%/ext/thin_parser/Makefile
 %%GEM_LIB_DIR%%/ext/thin_parser/common.rl
@@ -29,15 +269,16 @@ bin/thin
 %%GEM_LIB_DIR%%/ext/thin_parser/thin.c
 %%GEM_LIB_DIR%%/ext/thin_parser/thin.o
 %%GEM_LIB_DIR%%/ext/thin_parser/thin_parser.so
+%%GEM_LIB_DIR%%/lib/rack/adapter/loader.rb
 %%GEM_LIB_DIR%%/lib/rack/adapter/rails.rb
 %%GEM_LIB_DIR%%/lib/rack/handler/thin.rb
 %%GEM_LIB_DIR%%/lib/thin.rb
+%%GEM_LIB_DIR%%/lib/thin/backends/base.rb
+%%GEM_LIB_DIR%%/lib/thin/backends/swiftiply_client.rb
+%%GEM_LIB_DIR%%/lib/thin/backends/tcp_server.rb
+%%GEM_LIB_DIR%%/lib/thin/backends/unix_server.rb
 %%GEM_LIB_DIR%%/lib/thin/command.rb
 %%GEM_LIB_DIR%%/lib/thin/connection.rb
-%%GEM_LIB_DIR%%/lib/thin/connectors/connector.rb
-%%GEM_LIB_DIR%%/lib/thin/connectors/swiftiply_client.rb
-%%GEM_LIB_DIR%%/lib/thin/connectors/tcp_server.rb
-%%GEM_LIB_DIR%%/lib/thin/connectors/unix_server.rb
 %%GEM_LIB_DIR%%/lib/thin/controllers/cluster.rb
 %%GEM_LIB_DIR%%/lib/thin/controllers/controller.rb
 %%GEM_LIB_DIR%%/lib/thin/controllers/service.rb
@@ -53,21 +294,27 @@ bin/thin
 %%GEM_LIB_DIR%%/lib/thin/stats.rb
 %%GEM_LIB_DIR%%/lib/thin/statuses.rb
 %%GEM_LIB_DIR%%/lib/thin/version.rb
+%%GEM_LIB_DIR%%/lib/thin_backend.bundle
+%%GEM_LIB_DIR%%/lib/thin_parser.bundle
 %%GEM_LIB_DIR%%/lib/thin_parser.so
+%%GEM_LIB_DIR%%/spec/backends/swiftiply_client_spec.rb
+%%GEM_LIB_DIR%%/spec/backends/tcp_server_spec.rb
+%%GEM_LIB_DIR%%/spec/backends/unix_server_spec.rb
 %%GEM_LIB_DIR%%/spec/command_spec.rb
 %%GEM_LIB_DIR%%/spec/configs/cluster.yml
 %%GEM_LIB_DIR%%/spec/configs/single.yml
 %%GEM_LIB_DIR%%/spec/connection_spec.rb
-%%GEM_LIB_DIR%%/spec/connectors/swiftiply_client_spec.rb
-%%GEM_LIB_DIR%%/spec/connectors/tcp_server_spec.rb
-%%GEM_LIB_DIR%%/spec/connectors/unix_server_spec.rb
 %%GEM_LIB_DIR%%/spec/controllers/cluster_spec.rb
 %%GEM_LIB_DIR%%/spec/controllers/controller_spec.rb
 %%GEM_LIB_DIR%%/spec/controllers/service_spec.rb
 %%GEM_LIB_DIR%%/spec/daemonizing_spec.rb
 %%GEM_LIB_DIR%%/spec/headers_spec.rb
 %%GEM_LIB_DIR%%/spec/logging_spec.rb
-%%GEM_LIB_DIR%%/spec/rack_rails_spec.rb
+%%GEM_LIB_DIR%%/spec/perf/request_perf_spec.rb
+%%GEM_LIB_DIR%%/spec/perf/response_perf_spec.rb
+%%GEM_LIB_DIR%%/spec/perf/server_perf_spec.rb
+%%GEM_LIB_DIR%%/spec/rack/loader_spec.rb
+%%GEM_LIB_DIR%%/spec/rack/rails_adapter_spec.rb
 %%GEM_LIB_DIR%%/spec/rails_app/app/controllers/application.rb
 %%GEM_LIB_DIR%%/spec/rails_app/app/controllers/simple_controller.rb
 %%GEM_LIB_DIR%%/spec/rails_app/app/helpers/application_helper.rb
@@ -110,17 +357,18 @@ bin/thin
 %%GEM_LIB_DIR%%/spec/rails_app/script/server
 %%GEM_LIB_DIR%%/spec/request/mongrel_spec.rb
 %%GEM_LIB_DIR%%/spec/request/parser_spec.rb
-%%GEM_LIB_DIR%%/spec/request/perf_spec.rb
 %%GEM_LIB_DIR%%/spec/request/persistent_spec.rb
 %%GEM_LIB_DIR%%/spec/request/processing_spec.rb
 %%GEM_LIB_DIR%%/spec/response_spec.rb
 %%GEM_LIB_DIR%%/spec/runner_spec.rb
 %%GEM_LIB_DIR%%/spec/server/builder_spec.rb
 %%GEM_LIB_DIR%%/spec/server/pipelining_spec.rb
+%%GEM_LIB_DIR%%/spec/server/robustness_spec.rb
 %%GEM_LIB_DIR%%/spec/server/stopping_spec.rb
 %%GEM_LIB_DIR%%/spec/server/swiftiply.yml
 %%GEM_LIB_DIR%%/spec/server/swiftiply_spec.rb
 %%GEM_LIB_DIR%%/spec/server/tcp_spec.rb
+%%GEM_LIB_DIR%%/spec/server/threaded_spec.rb
 %%GEM_LIB_DIR%%/spec/server/unix_socket_spec.rb
 %%GEM_LIB_DIR%%/spec/server_spec.rb
 %%GEM_LIB_DIR%%/spec/spec_helper.rb
@@ -152,12 +400,14 @@ bin/thin
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app/app/controllers
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app/app
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app
+@dirrm %%GEM_LIB_DIR%%/spec/rack
+@dirrm %%GEM_LIB_DIR%%/spec/perf
 @dirrm %%GEM_LIB_DIR%%/spec/controllers
-@dirrm %%GEM_LIB_DIR%%/spec/connectors
 @dirrm %%GEM_LIB_DIR%%/spec/configs
+@dirrm %%GEM_LIB_DIR%%/spec/backends
 @dirrm %%GEM_LIB_DIR%%/spec
 @dirrm %%GEM_LIB_DIR%%/lib/thin/controllers
-@dirrm %%GEM_LIB_DIR%%/lib/thin/connectors
+@dirrm %%GEM_LIB_DIR%%/lib/thin/backends
 @dirrm %%GEM_LIB_DIR%%/lib/thin
 @dirrm %%GEM_LIB_DIR%%/lib/rack/handler
 @dirrm %%GEM_LIB_DIR%%/lib/rack/adapter
@@ -166,8 +416,53 @@ bin/thin
 @dirrm %%GEM_LIB_DIR%%/ext/thin_parser
 @dirrm %%GEM_LIB_DIR%%/ext
 @dirrm %%GEM_LIB_DIR%%/example
-@dirrm %%GEM_LIB_DIR%%/doc
-@dirrm %%GEM_LIB_DIR%%/bin
 @dirrm %%GEM_LIB_DIR%%/benchmark
+@dirrm %%GEM_LIB_DIR%%/bin
 @dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/thin/controllers
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/thin/backends
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/thin
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/rack/handler
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/rack/adapter
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/rack
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/UnixConnection.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Stats/Adapter.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Stats
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Server.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Runner.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Response.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/OptionRequired.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Headers.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Daemonizable
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Service.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Controller.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Command.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/UnixServer.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/TcpServer.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/SwiftiplyClient.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends/Base.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin/Backends
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Thin
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Rack/Handler/Thin.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Rack/Handler
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails/CGIWrapper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter/Rails
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Rack
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Process.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
