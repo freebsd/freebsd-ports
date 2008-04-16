@@ -11,6 +11,7 @@
 %%SITE_PERL%%/Text/Trac/LinkResolver.pm
 %%SITE_PERL%%/Text/Trac/LinkResolver/Attachment.pm
 %%SITE_PERL%%/Text/Trac/LinkResolver/Changeset.pm
+%%SITE_PERL%%/Text/Trac/LinkResolver/Comment.pm
 %%SITE_PERL%%/Text/Trac/LinkResolver/Log.pm
 %%SITE_PERL%%/Text/Trac/LinkResolver/Milestone.pm
 %%SITE_PERL%%/Text/Trac/LinkResolver/Report.pm
