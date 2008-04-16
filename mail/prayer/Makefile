@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prayer
-PORTVERSION=	1.0.19
+PORTVERSION=	1.1.0
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 
@@ -22,10 +22,14 @@ USE_OPENLDAP=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_PERL5_BUILD=	yes
+USE_ICONV=	yes
 MAKE_ENV+=	PORTCFLAGS="${CFLAGS}"
 
 PORTDOCS=	ACCOUNTD CMD_LINE DESIGN DONE DONE-OLD FEATURES ICONLIST \
 		INSTALL LOGS NOTICE README ROADMAP SECURITY TODO URL_OPTIONS
+
+post-extract:
+	@${FIND} ${WRKSRC} -depth -type d -name CVS -exec ${RM} -rf {} \;
 
 pre-patch:
 	${CP} ${WRKSRC}/defaults/Config ${WRKSRC}/Config
