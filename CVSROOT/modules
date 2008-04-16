@@ -11006,6 +11006,7 @@ p5-POE-Component-SSLify	ports/security/p5-POE-Component-SSLify
 p5-POE-Component-Server-DNS	ports/dns/p5-POE-Component-Server-DNS
 p5-POE-Component-Server-HTTP	ports/www/p5-POE-Component-Server-HTTP
 p5-POE-Component-Server-HTTPServer	ports/www/p5-POE-Component-Server-HTTPServer
+p5-POE-Component-Server-IRC	ports/irc/p5-POE-Component-Server-IRC
 p5-POE-Component-Server-NNTP	ports/news/p5-POE-Component-Server-NNTP
 p5-POE-Component-Server-SOAP	ports/www/p5-POE-Component-Server-SOAP
 p5-POE-Component-Server-SimpleHTTP	ports/www/p5-POE-Component-Server-SimpleHTTP
