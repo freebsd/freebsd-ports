@@ -1,0 +1,19 @@
+bin/wps2html
+bin/wps2raw
+bin/wps2text
+include/libwps-0.1/libwps/WPSDocument.h
+include/libwps-0.1/libwps/WPSStream.h
+include/libwps-0.1/libwps/WPSStreamImplementation.h
+include/libwps-0.1/libwps/libwps.h
+lib/libwps-0.1.a
+lib/libwps-0.1.la
+lib/libwps-0.1.so
+lib/libwps-0.1.so.1
+lib/libwps-stream-0.1.a
+lib/libwps-stream-0.1.la
+lib/libwps-stream-0.1.so
+lib/libwps-stream-0.1.so.1
+libdata/pkgconfig/libwps-0.1.pc
+libdata/pkgconfig/libwps-stream-0.1.pc
+@dirrm include/libwps-0.1/libwps
+@dirrm include/libwps-0.1
