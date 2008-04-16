@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	${DICT}-aspell
-DISTVERSION=	-es-0.50-2
+DISTVERSION=	6-es-1.9a-1
 PORTEPOCH=	1
 CATEGORIES=	textproc spanish
 
