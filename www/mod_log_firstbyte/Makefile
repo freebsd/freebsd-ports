@@ -8,7 +8,7 @@
 PORTNAME=	mod_log_firstbyte
 PORTVERSION=	1.01
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://mod-log-firstbyte.googlecode.com/svn/trunk/
 DISTFILES=	${PORTNAME}.c readme.txt
 
 MAINTAINER=	leeym@FreeBSD.org
