@@ -8,7 +8,7 @@ PORTNAME=	komodo-edit
 PORTVERSION=	4.2.1
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://downloads.activestate.com/Komodo/Linux/4.2/
+MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${PORTVERSION}/
 DISTNAME=	Komodo-Edit-4.2.1-283000-linux-libcpp6-x86
 
 MAINTAINER=	arved@FreeBSD.org
