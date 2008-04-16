@@ -6,6 +6,7 @@
 
 PORTNAME=	coda
 PORTVERSION=	6.9.1
+PORTREVISION=	1
 CATEGORIES=	net
 # as of 5 Oct 2006 the archive is not present on ftp.wu-wien.ac.at
 # but maybe it'll appear there soon
@@ -19,7 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server programs for a replicated high-performance network file system
 
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp \
-		rpc2.8:${PORTSDIR}/devel/rpc2 \
+		rpc2.9:${PORTSDIR}/devel/rpc2 \
 		rvm.3:${PORTSDIR}/devel/rvm
 
 USE_GMAKE=	yes
