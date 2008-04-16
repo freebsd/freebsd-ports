@@ -1,4 +1,7 @@
-lib/aspell-%%VER%%/gl_phonet.dat
 lib/aspell-%%VER%%/gl.dat
+lib/aspell-%%VER%%/gl_affix.dat
+lib/aspell-%%VER%%/gl_phonet.dat
+share/aspell/galician.alias
+share/aspell/gl-minimos.alias
 share/aspell/gl.multi
 share/aspell/gl.rws

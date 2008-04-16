@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aspell-pt_BR
-DISTVERSION=	6-pt_BR-20080221-0
+DISTVERSION=	6-pt_BR-20080221-1
 CATEGORIES=	portuguese textproc
 
 MAINTAINER=	ports@FreeBSD.org

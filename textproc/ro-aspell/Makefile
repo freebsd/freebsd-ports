@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	${DICT}-aspell
-DISTVERSION=	-ro-0.50-2
+DISTVERSION=	5-ro-3.1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
