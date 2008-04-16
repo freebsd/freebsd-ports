@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	devel
 MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
@@ -33,6 +33,12 @@ PLIST_FILES=	bin/mtn share/zsh/site-functions/_mtn \
 INFO=		monotone
 PORTDOCS=	NEWS UPGRADE monotone.html
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+USE_GCC=	4.2+
+.endif
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 .else
@@ -57,11 +63,5 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-USE_GCC=	4.2+
-.endif
 
 .include <bsd.port.post.mk>
