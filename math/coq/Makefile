@@ -7,6 +7,7 @@
 
 PORTNAME=	coq
 PORTVERSION=	8.1.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/V${COQVERSION}/files/ \
 		ftp://ftp.stack.nl/pub/users/johans/coq/
@@ -14,6 +15,8 @@ DISTNAME=	${PORTNAME}-${COQVERSION}
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	Theorem prover based on lambda-C
+
+BUILD_DEPENDS=	camlp5:${PORTSDIR}/devel/ocaml-camlp5
 
 USE_OCAML=	yes
 USE_GMAKE=	yes
