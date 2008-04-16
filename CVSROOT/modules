@@ -7038,6 +7038,7 @@ libwnck-reference	ports/x11-toolkits/libwnck-reference
 libworkman	ports/audio/libworkman
 libwpcg		ports/graphics/libwpcg
 libwpd		ports/textproc/libwpd
+libwps		ports/textproc/libwps
 libwww		ports/www/libwww
 libx3dtk	ports/graphics/libx3dtk
 libxalloc	ports/devel/libxalloc
