@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/ \
 		https://launchpad.net/bzr/1.3/${PORTVERSION}/+download/
@@ -35,7 +35,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/paramiko/__init__.py:${PORTSDIR}/security/py-
 .endif
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/bzr.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/bzr.1 ${MAN1PREFIX}/man/man1/
 
 test:	build
 	cd ${WRKSRC} && ./bzr selftest
