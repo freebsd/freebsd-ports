@@ -28,6 +28,9 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+# freetype version included does not compile on 64bit
+ONLY_FOR_ARCHS=	i386
+
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
