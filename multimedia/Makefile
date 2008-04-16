@@ -3,8 +3,8 @@
 
     COMMENT = Multimedia software
 
-    SUBDIR += AtomicParsley
     SUBDIR += acidrip
+    SUBDIR += atomicparsley
     SUBDIR += audacious
     SUBDIR += audacious-plugins
     SUBDIR += avidemux2

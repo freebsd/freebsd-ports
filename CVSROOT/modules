@@ -84,7 +84,6 @@ ADMsmb		ports/security/ADMsmb
 ADMsnmp		ports/security/ADMsnmp
 AquaGatekeeper	ports/net/AquaGatekeeper
 AquaGatekeeper2	ports/net/AquaGatekeeper2
-AtomicParsley	ports/multimedia/AtomicParsley
 BillardGL	ports/games/BillardGL
 CaribbeanStud	ports/games/CaribbeanStud
 Cgraph		ports/graphics/Cgraph
@@ -607,6 +606,7 @@ atlas-devel	ports/math/atlas-devel
 atlast		ports/lang/atlast
 atlc		ports/cad/atlc
 atmsupport	ports/net/atmsupport
+atomicparsley	ports/multimedia/atomicparsley
 atomix		ports/games/atomix
 atp		ports/news/atp
 atr3d		ports/games/atr3d
