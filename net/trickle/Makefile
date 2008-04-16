@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	trickle
-PORTVERSION=	1.06
-PORTREVISION=	8
+PORTVERSION=	1.07
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/trickle/
 
