@@ -21,11 +21,11 @@ include/dclib/core/cconnection.h
 include/dclib/core/cdir.h
 include/dclib/core/cfile.h
 include/dclib/core/che3.h
+include/dclib/core/ciconv.h
 include/dclib/core/clist.h
 include/dclib/core/clisten.h
 include/dclib/core/clogfile.h
 include/dclib/core/cmanager.h
-include/dclib/core/cmd4.h
 include/dclib/core/cmd5.h
 include/dclib/core/cobject.h
 include/dclib/core/cplugin.h
