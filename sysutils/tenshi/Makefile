@@ -8,8 +8,7 @@
 PORTNAME=		tenshi
 PORTVERSION=		0.9.1
 CATEGORIES=		sysutils
-MASTER_SITES=		http://dev.gentoo.org/~lcars/%SUBDIR%/
-MASTER_SITE_SUBDIR=	tenshi
+MASTER_SITES=		http://dev.inversepath.com/tenshi/
 
 MAINTAINER=		jadawin@FreeBSD.org
 COMMENT=		Tenshi is a log monitoring program, designed to watch multiple logs
