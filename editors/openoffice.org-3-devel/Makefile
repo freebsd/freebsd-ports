@@ -267,7 +267,7 @@ post-install:
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop.bak
 	@${RM} -f ${DESKTOPDIR}/${EXECBASE}
 	@${MKDIR} ${DESKTOPDIR}
-	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
+	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg \
 			${DESKTOPDIR}/${EXECBASE}
 	@${ECHO_CMD} "share/applications/${EXECBASE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
