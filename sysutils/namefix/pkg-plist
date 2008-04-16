@@ -1,20 +1,26 @@
 bin/namefix.pl
-%%SITE_PERL%%/namefix/about.pm
-%%SITE_PERL%%/namefix/blockrename.pm
-%%SITE_PERL%%/namefix/bookmarks.pm
-%%SITE_PERL%%/namefix/changelog.pm
 %%SITE_PERL%%/namefix/config.pm
 %%SITE_PERL%%/namefix/dir.pm
-%%SITE_PERL%%/namefix/edit_lists.pm
 %%SITE_PERL%%/namefix/filter.pm
 %%SITE_PERL%%/namefix/fixname.pm
 %%SITE_PERL%%/namefix/global_variables.pm
-%%SITE_PERL%%/namefix/links.pm
-%%SITE_PERL%%/namefix/manual.pm
-%%SITE_PERL%%/namefix/menu.pm
+%%SITE_PERL%%/namefix/gui/about.pm
+%%SITE_PERL%%/namefix/gui/blockrename.pm
+%%SITE_PERL%%/namefix/gui/bookmarks.pm
+%%SITE_PERL%%/namefix/gui/br_preview.pm
+%%SITE_PERL%%/namefix/gui/changelog.pm
+%%SITE_PERL%%/namefix/gui/dialog.pm
+%%SITE_PERL%%/namefix/gui/edit_lists.pm
+%%SITE_PERL%%/namefix/gui/links.pm
+%%SITE_PERL%%/namefix/gui/manual.pm
+%%SITE_PERL%%/namefix/gui/menu.pm
+%%SITE_PERL%%/namefix/gui/misc.pm
+%%SITE_PERL%%/namefix/gui/thanks.pm
+%%SITE_PERL%%/namefix/gui/todo.pm
+%%SITE_PERL%%/namefix/gui/undo.pm
 %%SITE_PERL%%/namefix/misc.pm
 %%SITE_PERL%%/namefix/mp3.pm
+%%SITE_PERL%%/namefix/nf_print.pm
 %%SITE_PERL%%/namefix/run_namefix.pm
-%%SITE_PERL%%/namefix/thanks.pm
-%%SITE_PERL%%/namefix/todo.pm
+@dirrm %%SITE_PERL%%/namefix/gui
 @dirrm %%SITE_PERL%%/namefix
