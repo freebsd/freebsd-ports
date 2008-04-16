@@ -1644,6 +1644,7 @@
     SUBDIR += p5-Test-Assertions
     SUBDIR += p5-Test-Base
     SUBDIR += p5-Test-Benchmark
+    SUBDIR += p5-Test-Block
     SUBDIR += p5-Test-Class
     SUBDIR += p5-Test-ClassAPI
     SUBDIR += p5-Test-Cmd
