@@ -1,0 +1,169 @@
+%%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/rakefile
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/README_ACTIVE_CRYPTO
+%%GEM_LIB_DIR%%/MIT-LICENSE
+%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/init.rb
+%%GEM_LIB_DIR%%/lib/active_crypto.rb
+%%GEM_LIB_DIR%%/lib/ezcrypto.rb
+%%GEM_LIB_DIR%%/lib/ezsig.rb
+%%GEM_LIB_DIR%%/lib/trusted.pem
+%%GEM_LIB_DIR%%/test/active_crypto_test.rb
+%%GEM_LIB_DIR%%/test/association_key_holder_test.rb
+%%GEM_LIB_DIR%%/test/database.yml
+%%GEM_LIB_DIR%%/test/debug.log
+%%GEM_LIB_DIR%%/test/dsakey.pem
+%%GEM_LIB_DIR%%/test/dsapubkey.pem
+%%GEM_LIB_DIR%%/test/dsig_test.rb
+%%GEM_LIB_DIR%%/test/encrypt_test.rb
+%%GEM_LIB_DIR%%/test/ezcrypto_test.rb
+%%GEM_LIB_DIR%%/test/key_holder_test.rb
+%%GEM_LIB_DIR%%/test/protectedsigner.pem
+%%GEM_LIB_DIR%%/test/sf_issuing.crt
+%%GEM_LIB_DIR%%/test/test_helper.rb
+%%GEM_LIB_DIR%%/test/testchild.pem
+%%GEM_LIB_DIR%%/test/testchild.req
+%%GEM_LIB_DIR%%/test/testpub.pem
+%%GEM_LIB_DIR%%/test/testsigner.cert
+%%GEM_LIB_DIR%%/test/testsigner.pem
+%%GEM_LIB_DIR%%/test/wideword.net.cert
+%%GEM_LIB_DIR%%/test/valicert_class2_root.crt
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/files/lib/active_crypto_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ezcrypto_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ezsig_rb.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Digester.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Digester.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Digester.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Digester.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Digester.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/TrustStore.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/TrustStore.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/TrustStore.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/TrustStore.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/TrustStore.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Digester.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/TrustStore.html
+%%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/AssociationKeyHolder.src/M000093.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/AssociationKeyHolder.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/AssociationKeyHolder.src/M000095.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/AssociationKeyHolder.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/Encrypted/ClassAccessors.src/M000097.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/Encrypted/ClassAccessors.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/Encrypted/ClassAccessors.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/KeyHolder.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/KeyHolder.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/KeyHolder.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/KeyHolder.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/ClassMethods.src/M000103.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/ClassMethods.src/M000104.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/AssociationKeyHolder.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/KeyHolder.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/MissingKeyError.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/ClassMethods.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/KeyHolder.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/Encrypted/ClassAccessors.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/Encrypted
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto/AssociationKeyHolder.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ActiveCrypto
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Key.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/TrustStore.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Digester.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Verifier.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Signer.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Certificate.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EzCrypto/Name.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EzCrypto
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
