@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spread
-PORTVERSION=	3.17.2
-PORTREVISION=	1
+PORTVERSION=	3.17.3
 CATEGORIES=	net java
 MASTER_SITES=	http://www.cnds.jhu.edu/download/noformdown/
 PKGNAMESUFFIX=	-j
@@ -31,7 +30,7 @@ PORTDOCS+=	java
 .endif
 ANT_PARAMS+=	-Dlib.dir=${JAVAJARDIR} -Djavadoc.destdir=docs -Dversion=${PORTVERSION}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_src-${PORTVERSION}/java
+WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}/java
 PLIST_SUB+=	PORTNAME="${PORTNAME}" PORTVERSION="${PORTVERSION}"
 
 do-build:
