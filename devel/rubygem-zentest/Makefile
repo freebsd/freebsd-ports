@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zentest
-PORTVERSION=	3.7.2
+PORTVERSION=	3.9.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 DISTNAME=	ZenTest-${PORTVERSION}
@@ -14,7 +14,7 @@ DISTNAME=	ZenTest-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ruby Unit Testing Utility
 
-BUILD_DEPENDS=	rubygem-hoe>=1.2.0:${PORTSDIR}/devel/rubygem-hoe
+BUILD_DEPENDS=	rubygem-hoe>=1.5.0:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=    ${BUILD_DEPENDS}
 
 GEM_NAME=	${DISTNAME}
