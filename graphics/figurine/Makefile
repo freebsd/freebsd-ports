@@ -26,7 +26,7 @@ MAN1=		figurine.1
 
 # Optimizations produce bad assembly code on sparc64
 .if ${ARCH} == "sparc64"
-CFLAGS+=	-=O0
+CFLAGS+=	-O0
 .endif
 
 post-patch:
