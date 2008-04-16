@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xaos
 DISTNAME=	XaoS-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	A real-time fractal browser for X11 and ASCII terminals
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
