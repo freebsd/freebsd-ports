@@ -7,7 +7,7 @@
 
 PORTNAME=	qsheff-II
 PORTVERSION=	2.1.r3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/qsheff/ \
 		SF/qsheff

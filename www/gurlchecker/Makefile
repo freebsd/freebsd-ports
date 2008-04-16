@@ -7,7 +7,7 @@
 
 PORTNAME=	gurlchecker
 PORTVERSION=	0.10.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/%SUBDIR%/
 MASTER_SITE_SUBDIR=	547
@@ -28,6 +28,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+BROKEN=	Doesn't build with clamav-0.93
 
 .include <bsd.port.pre.mk>
 
@@ -51,7 +53,7 @@ CONFIGURE_ARGS+=	--disable-tidy
 .endif
 
 .if defined(WITH_CLAMAV)
-LIB_DEPENDS+=	clamav.3:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.4:${PORTSDIR}/security/clamav
 .else
 CONFIGURE_ARGS+=	--disable-clamav
 .endif

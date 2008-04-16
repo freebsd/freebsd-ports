@@ -7,7 +7,7 @@
 
 PORTNAME=	dansguardian
 PORTVERSION=	2.9.9.3
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -75,7 +75,7 @@ PLIST_SUB+=		CLISCANCONF="@comment "
 
 .if defined(WITH_DG_CLAMAV)
 CONFIGURE_ARGS+=	--enable-clamav
-LIB_DEPENDS+=		clamav.3:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=		clamav.4:${PORTSDIR}/security/clamav
 PLIST_SUB+=		CLAMAVCONF=""
 .else
 PLIST_SUB+=		CLAMAVCONF="@comment "

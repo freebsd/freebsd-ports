@@ -7,7 +7,7 @@
 
 PORTNAME=	c-icap
 PORTVERSION=	030606
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -32,6 +32,8 @@ OPTIONS=	CLAMAV "Build with srv_clamav service" on \
 			IPV6 "Enable IPv6 support" off
 #		PERL "With Perl support" off
 
+BROKEN=	Doesn't build with clamav-0.93
+
 .include <bsd.port.pre.mk>
 
 # Perl support not ready yet. Try to contact author or hack it by yourself.
@@ -55,7 +57,7 @@ CONFIGURE_ARGS+=	--without-perl
 .endif
 
 .if !defined(WITHOUT_CLAMAV)
-LIB_DEPENDS+=	clamav.3:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.4:${PORTSDIR}/security/clamav
 PLIST_SUB+=	CLAMAV=""
 CONFIGURE_ARGS+=	--with-clamav
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \

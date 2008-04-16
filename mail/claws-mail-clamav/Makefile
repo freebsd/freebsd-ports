@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -17,7 +17,7 @@ COMMENT=	Clamav plugin for claws-mail
 
 BUILD_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
-LIB_DEPENDS=	clamav.3:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	clamav.4:${PORTSDIR}/security/clamav
 
 USE_GMAKE=	yes
 USE_XORG=	x11
@@ -29,5 +29,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 PLIST_FILES=	lib/claws-mail/plugins/clamav.a \
 		lib/claws-mail/plugins/clamav.la \
 		lib/claws-mail/plugins/clamav.so
+
+BROKEN=	Doesn't build with clamav-0.93
 
 .include <bsd.port.mk>
