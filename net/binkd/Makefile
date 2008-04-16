@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	binkd
-PORTVERSION=	0.9.8
-PORTREVISION=	2
+PORTVERSION=	0.9.9
 CATEGORIES=	net
 MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/ \
 		ftp://ftp.rsu.ru/pub/FreeBSD/ports/distfiles/
-DISTNAME=	binkd098
+DISTNAME=	binkd${PORTVERSION:S/.//g}
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Fidonet TCP/IP mailer
@@ -33,6 +32,7 @@ CONFIGURE_ARGS+=	--with-https
 .endif
 
 pre-configure:
+	@${RM} -rf ${WRKSRC}/mkfls/unix/CVS
 	@${CP} ${WRKSRC}/mkfls/unix/* ${WRKSRC}/
 	@${CHMOD} a+x ${WRKSRC}/configure
 
