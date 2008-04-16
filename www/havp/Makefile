@@ -7,6 +7,7 @@
 
 PORTNAME=	havp
 PORTVERSION=	0.87
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.server-side.de/download/ \
 				http://bio3k.softboard.ru/uploads/arch/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://www.server-side.de/download/ \
 MAINTAINER=	b3k@mail.ru
 COMMENT=	HTTP Antivirus Proxy
 
-LIB_DEPENDS=	clamav.3:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	clamav.4:${PORTSDIR}/security/clamav
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -34,6 +35,8 @@ SUB_LIST=	LOG_DIR=${LOG_DIR} TMP_DIR=${TMP_DIR} RUN_DIR=${RUN_DIR}
 OPTIONS=	SSL "Enable SSL proxying (not scanned, only forwarded!)" on \
 			CLAMAV "Enable libclamav support" on \
 			TROPHIE "Enable Trend Micro (Trophie) support" off
+
+BROKEN=	Doesn't build with clamav-0.93
 
 .include <bsd.port.pre.mk>
 

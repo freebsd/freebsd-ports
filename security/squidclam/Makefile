@@ -7,7 +7,7 @@
 
 PORTNAME=	squidclam
 PORTVERSION=	0.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,6 +30,8 @@ SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/squidclam %%EXAMPLESDIR%%/squidclam.conf
 PLIST_DIRS=	%%EXAMPLESDIR%%
+
+BROKEN=	Doesn't build with clamav-0.93
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

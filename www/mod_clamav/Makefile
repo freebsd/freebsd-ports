@@ -7,14 +7,14 @@
 
 PORTNAME=	mod_clamav
 PORTVERSION=	0.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www security
 MASTER_SITES=	http://software.othello.ch/mod_clamav/
 
 MAINTAINER=	tmueko@kommunity.net
 COMMENT=	Scans content delivered by the Apache2 proxy module for viruses
 
-LIB_DEPENDS+=	clamav.3:${PORTSDIR}/${CLAMAV_PORT}
+LIB_DEPENDS+=	clamav.4:${PORTSDIR}/${CLAMAV_PORT}
 
 USE_AUTOTOOLS=	libtool:15
 USE_APACHE=	YES
