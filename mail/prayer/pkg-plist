@@ -1,13 +1,6 @@
 @exec if ! pw groupshow prayer; then pw groupadd prayer; fi
 @exec if ! pw usershow prayer; then pw useradd prayer -g prayer -h - -d /nonexistent -s /nonexistent -c "Prayer Webmail"; fi
 etc/rc.d/prayer.sh.sample
-prayer/help/CVS/Root
-prayer/help/CVS/Repository
-prayer/help/CVS/Entries
-prayer/help/CVS/Entries.Log
-prayer/help/compose/CVS/Root
-prayer/help/compose/CVS/Repository
-prayer/help/compose/CVS/Entries
 prayer/help/compose/large.html
 prayer/help/compose/normal.html
 prayer/help/compose/postponed.html
@@ -48,26 +41,22 @@ prayer/help/upload_select.html
 prayer/help/vacation.html
 prayer/help/vaclog.html
 prayer/help/welcome.html
-prayer/help/prefs/CVS/Root
-prayer/help/prefs/CVS/Repository
-prayer/help/prefs/CVS/Entries
 prayer/help/prefs/compose1.html
 prayer/help/prefs/compose2.html
 prayer/help/prefs/display1.html
 prayer/help/prefs/folder.html
 prayer/help/prefs/general.html
-prayer/icons/CVS/Root
-prayer/icons/CVS/Repository
-prayer/icons/CVS/Entries
 prayer/icons/addressbook-inactive.gif
 prayer/icons/addressbook.gif
 prayer/icons/back.gif
+prayer/icons/blank.gif
 prayer/icons/compose-inactive.gif
 prayer/icons/compose.gif
 prayer/icons/cross.gif
 prayer/icons/dir.gif
 prayer/icons/display-inactive.gif
 prayer/icons/display.gif
+prayer/icons/down.gif
 prayer/icons/folders-inactive.gif
 prayer/icons/folders.gif
 prayer/icons/help-inactive.gif
@@ -105,13 +94,9 @@ prayer/sbin/prayer-ssl-prune
 prayer/sbin/prayer-sem-prune
 prayer/sbin/prayer-cyclog
 prayer/sbin/prayer-chroot
-@dirrm prayer/help/CVS
-@dirrm prayer/help/compose/CVS
 @dirrm prayer/help/compose
-@dirrm prayer/help/prefs/CVS
 @dirrm prayer/help/prefs
 @dirrm prayer/help
-@dirrm prayer/icons/CVS
 @dirrm prayer/icons
 @dirrm prayer/etc
 @exec mkdir -p %D/prayer/certs

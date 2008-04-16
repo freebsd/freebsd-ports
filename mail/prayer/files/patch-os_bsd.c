@@ -1,10 +1,18 @@
---- ../p/prayer/os_bsd.c	2008-01-15 17:04:47.000000000 +0000
-+++ prayer/os_bsd.c	2008-02-04 20:56:55.000000000 +0000
-@@ -573,5 +573,7 @@
+--- prayer/os_bsd.c.orig	2008-04-09 12:58:30.000000000 -0800
++++ prayer/os_bsd.c	2008-04-16 00:23:36.000000000 -0800
+@@ -576,14 +576,7 @@
  void
- os_prctl_set_dumpable()
+ os_limit_vm(unsigned long x)
  {
-+#if 0
-     prctl(PR_SET_DUMPABLE, 1);
-+#endif
+-    struct rlimit rl;
+-    rlim_t y = (rlim_t)x;
+-
+-    rl.rlim_cur = y;
+-    rl.rlim_max = y;
+-    if (setrlimit(RLIMIT_DATA, &rl) < 0) {
+-	log_misc("setrlimit: Unable to set vm limit to %ld: %m", x);
+-    }
++  /* Linux specific */
  }
+ 
+ void

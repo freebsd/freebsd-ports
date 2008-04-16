@@ -1,5 +1,5 @@
---- Config.orig	2006-04-05 13:35:35.000000000 +0100
-+++ Config	2008-01-09 16:25:14.000000000 +0000
+--- Config.orig	2008-04-16 00:43:56.000000000 -0800
++++ Config	2008-04-16 00:44:36.000000000 -0800
 @@ -28,7 +28,7 @@
  
  ############################################################################
@@ -9,7 +9,7 @@
  # Location of make program (GNU make required)
  MAKE         = gmake
  # Location of install program (GNU install or compatible required)
-@@ -37,7 +37,8 @@
+@@ -37,9 +37,10 @@
  # Base Compiler options for GCC.
  #BASECFLAGS   = -Wall -g
  #BASELDFLAGS  = -g
@@ -17,8 +17,11 @@
 +#BASECFLAGS   = -Wall -g -O2
 +BASECFLAGS   = -Wall -g ${PORTCFLAGS}
  BASELDFLAGS  = -g -O2
- BASE_LIBS    = -lcrypt
+-BASE_LIBS    = -lcrypt
++BASE_LIBS    = -lcrypt -liconv
  
+ # Base Compiler options for Sun SUNWspro compiler
+ #CC          = /opt/SUNWspro/bin/cc
 @@ -58,9 +59,9 @@
  # which points to ../../imap/c-client. This just reduces the amount of
  # noise output on each line when building the package.
