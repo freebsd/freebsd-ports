@@ -82,6 +82,7 @@
     SUBDIR += p5-IRC-Bot-Hangman
     SUBDIR += p5-POE-Component-IRC
     SUBDIR += p5-POE-Component-IRC-Object
+    SUBDIR += p5-POE-Component-Server-IRC
     SUBDIR += p5-POE-Filter-IRCD
     SUBDIR += party
     SUBDIR += pear-Net_SmartIRC
