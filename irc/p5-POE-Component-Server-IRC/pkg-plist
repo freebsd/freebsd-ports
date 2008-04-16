@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+bin/pmkpasswd
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/IRC/.packlist
+%%SITE_PERL%%/POE/Component/Server/IRC.pm
+%%SITE_PERL%%/POE/Component/Server/IRC/Common.pm
+%%SITE_PERL%%/POE/Component/Server/IRC/OperServ.pm
+%%SITE_PERL%%/POE/Component/Server/IRC/Pipeline.pm
+%%SITE_PERL%%/POE/Component/Server/IRC/Plugin.pm
+%%SITE_PERL%%/POE/Component/Server/IRC/Backend.pm
+%%SITE_PERL%%/POE/Component/Server/IRC/Test/Plugin.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/IRC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrmtry %%SITE_PERL%%/POE/Component/Server/IRC/Test
+@dirrmtry %%SITE_PERL%%/POE/Component/Server/IRC
+@dirrmtry %%SITE_PERL%%/POE/Component/Server
+@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE
