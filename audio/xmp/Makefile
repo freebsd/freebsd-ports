@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmp
-PORTVERSION=	2.0.4
-PORTREVISION=	5
+PORTVERSION=	2.5.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,32 +14,45 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A player for many different Amiga and PC module formats
 
-USE_BZIP2=	yes
-USE_GNOME=	esound
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:213
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-alsa --disable-oss --enable-esd
+CONFIGURE_ARGS=	--disable-alsa --enable-oss \
+		--sysconfdir=${PREFIX}/etc
 
 MAN1=		xmp.1
 MLINKS=		xmp.1 xxmp.1
 
+OPTIONS=	XMMS	"Build XMMS plugin" off \
+		ESOUND	"EsounD support" off
+
 CFLAGS+=	-fPIC
-
-.if !defined(WITHOUT_XMMS)
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
-.else
-CONFIGURE_ARGS+=--disable-xmms
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/docs/xmp.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
+.if defined(WITH_ESOUND)
+USE_GNOME+=	esound
+.else
+CONFIGURE_ARGS+=	--disable-esd
 .endif
+
+.if defined(WITH_XMMS)
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+CONFIGURE_ARGS+=	--enable-xmms-plugin
+.else
+CONFIGURE_ARGS+=	--disable-xmms
+.endif
+
+post-patch:
+.for f in docs/xmp.1 etc/xmp.conf etc/xmp-modules.conf
+	@${REINPLACE_CMD} -e "s|/etc/xmp|${PREFIX}/etc/xmp|g" ${WRKSRC}/${f}
+.endfor
+	@${REINPLACE_CMD} -E -e 's|(^DDIRS.*)etc|\1|' ${WRKSRC}/Makefile
+
+post-install:
+	@${MKDIR} ${PREFIX}/etc/xmp
+	@${INSTALL_DATA} ${WRKSRC}/etc/xmp.conf ${PREFIX}/etc/xmp/xmp.conf.default
+	@${INSTALL_DATA} ${WRKSRC}/etc/xmp-modules.conf ${PREFIX}/etc/xmp/xmp-modules.conf.default
 
 .include <bsd.port.post.mk>
