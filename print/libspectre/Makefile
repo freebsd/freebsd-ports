@@ -22,7 +22,7 @@ USE_GHOSTSCRIPT=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_GHOSTSCRIPT_GNU)
-IGNORE=	Port will not work with ghostscript-gpl, please do not define WITH_GHOSTSCRIPT_GNU
+IGNORE=	Port will not work with ghostscript-gnu, please do not define WITH_GHOSTSCRIPT_GNU
 .endif
 
 pre-configure:
