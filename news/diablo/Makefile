@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diablo
-PORTVERSION=	5.0
+PORTVERSION=	5.1
 CATEGORIES=	news
 MASTER_SITES=	http://www.openusenet.org/diablo/download/
 DISTNAME=	${PKGNAME}-REL
