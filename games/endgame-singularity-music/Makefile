@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Music pack for endgame-singularity
 
-PROJECTHOST=	http://endgame-singularity
+PROJECTHOST=	endgame-singularity
 NO_BUILD=	yes
 USE_ZIP=	yes
 DATADIR=	${PREFIX}/share/singularity
