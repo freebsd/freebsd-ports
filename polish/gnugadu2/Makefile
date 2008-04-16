@@ -19,6 +19,8 @@ COMMENT=	GTK2 based Gadu-Gadu client for X11
 LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile
 
+BROKEN=		Does not configure
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GETTEXT=	yes
