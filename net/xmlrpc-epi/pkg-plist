@@ -14,7 +14,7 @@ include/xml_to_xmlrpc.h
 include/xmlparse.h
 include/xmlrpc.h
 include/xmlrpc_introspection.h
-lib/libxmlrpc.a
-lib/libxmlrpc.la
-lib/libxmlrpc.so
-lib/libxmlrpc.so.0
+lib/libxmlrpc-epi.a
+lib/libxmlrpc-epi.la
+lib/libxmlrpc-epi.so
+lib/libxmlrpc-epi.so.0

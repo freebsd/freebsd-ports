@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xmlrpc-epi
-PORTVERSION=	0.51
+PORTVERSION=	0.53
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose implementation of the xmlrpc specification in C
