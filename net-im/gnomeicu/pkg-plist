@@ -125,8 +125,10 @@ share/gnomeicu/emoticons/Yahoo/wonder.gif
 share/gnomeicu/glade/addcontact.glade
 share/gnomeicu/glade/auth.glade
 share/gnomeicu/glade/auto_respond.glade
+share/gnomeicu/glade/filexfer.glade
 share/gnomeicu/glade/grpmgr.glade
 share/gnomeicu/glade/history.glade
+share/gnomeicu/glade/listwindow.glade
 share/gnomeicu/glade/main.glade
 share/gnomeicu/glade/message.glade
 share/gnomeicu/glade/prefs.glade
@@ -230,6 +232,7 @@ share/sounds/gnomeicu/URL.wav
 share/sounds/gnomeicu/contlist.wav
 share/sounds/gnomeicu/message.wav
 share/locale/am/LC_MESSAGES/gnomeicu.mo
+share/locale/ar/LC_MESSAGES/gnomeicu.mo
 share/locale/az/LC_MESSAGES/gnomeicu.mo
 share/locale/be/LC_MESSAGES/gnomeicu.mo
 share/locale/bg/LC_MESSAGES/gnomeicu.mo
@@ -237,6 +240,7 @@ share/locale/ca/LC_MESSAGES/gnomeicu.mo
 share/locale/cs/LC_MESSAGES/gnomeicu.mo
 share/locale/da/LC_MESSAGES/gnomeicu.mo
 share/locale/de/LC_MESSAGES/gnomeicu.mo
+share/locale/dz/LC_MESSAGES/gnomeicu.mo
 share/locale/el/LC_MESSAGES/gnomeicu.mo
 share/locale/en_CA/LC_MESSAGES/gnomeicu.mo
 share/locale/en_GB/LC_MESSAGES/gnomeicu.mo
@@ -261,6 +265,7 @@ share/locale/nb/LC_MESSAGES/gnomeicu.mo
 share/locale/ne/LC_MESSAGES/gnomeicu.mo
 share/locale/nl/LC_MESSAGES/gnomeicu.mo
 share/locale/nn/LC_MESSAGES/gnomeicu.mo
+share/locale/oc/LC_MESSAGES/gnomeicu.mo
 share/locale/pa/LC_MESSAGES/gnomeicu.mo
 share/locale/pl/LC_MESSAGES/gnomeicu.mo
 share/locale/pt/LC_MESSAGES/gnomeicu.mo

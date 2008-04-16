@@ -6,8 +6,7 @@
 #    $MCom: ports/net-im/gnomeicu/Makefile,v 1.2 2007/05/19 21:36:18 marcus Exp $
 
 PORTNAME=	gnomeicu
-PORTVERSION=	0.99.12
-PORTREVISION=	2
+PORTVERSION=	0.99.14
 CATEGORIES=	net-im gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomeicu
