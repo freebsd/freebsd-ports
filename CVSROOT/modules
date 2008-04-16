@@ -16295,6 +16295,7 @@ tomcat6		ports/www/tomcat6
 tome		ports/games/tome
 tomsfastmath	ports/math/tomsfastmath
 tonicpoint-viewer	ports/graphics/tonicpoint-viewer
+toofpy		ports/www/toofpy
 toolame		ports/audio/toolame
 toolbox		ports/deskutils/toolbox
 toolboxkit	ports/deskutils/toolboxkit
