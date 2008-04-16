@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	napshare
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	1.3
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	napshare
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK based Gnutella client
@@ -18,8 +16,5 @@ COMMENT=	A GTK based Gnutella client
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-
-post-extract:
-	@${RM} ${WRKSRC}/config.cache
 
 .include <bsd.port.mk>
