@@ -1,14 +1,11 @@
---- malsync/mal/client/unix/MAL31DBConfig.c.orig	Sun Nov 10 12:44:33 2002
-+++ malsync/mal/client/unix/MAL31DBConfig.c	Sun Nov 10 12:45:52 2002
-@@ -20,11 +20,7 @@
+--- malsync/mal/client/unix/MAL31DBConfig.c.orig	2008-04-15 19:49:54.000000000 +0200
++++ malsync/mal/client/unix/MAL31DBConfig.c	2008-04-15 19:50:04.000000000 +0200
+@@ -20,7 +20,7 @@
   */
  
  #include <MAL31DBConfig.h>
--#ifdef DARWIN
+-#if defined(DARWIN) || defined(__OpenBSD__)
++#if defined(DARWIN) || defined(__OpenBSD__) || defined(__FreeBSD__)
  #include <stdlib.h>
--#else
--#include <malloc.h>
--#endif
- 
- /*---------------------------------------------------------------------------*/
- void
+ #else
+ #include <malloc.h>
