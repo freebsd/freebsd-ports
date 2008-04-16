@@ -4,8 +4,12 @@ include/ctlgeom-types.h
 include/ctlgeom.h
 lib/libctl.a
 lib/libctl.la
+lib/libctl.so
+lib/libctl.so.3
 lib/libctlgeom.a
 lib/libctlgeom.la
+lib/libctlgeom.so
+lib/libctlgeom.so.3
 %%DOCSDIR%%/advanced-user.html
 %%DOCSDIR%%/basic-user.html
 %%DOCSDIR%%/developer.html
@@ -18,6 +22,7 @@ lib/libctlgeom.la
 %%EXAMPLESDIR%%/.deps/example-example.Po
 %%EXAMPLESDIR%%/.deps/example-geom.Po
 %%EXAMPLESDIR%%/.deps/example-main.Po
+%%EXAMPLESDIR%%/.libs/example
 %%EXAMPLESDIR%%/Makefile
 %%EXAMPLESDIR%%/Makefile.am
 %%EXAMPLESDIR%%/Makefile.in
