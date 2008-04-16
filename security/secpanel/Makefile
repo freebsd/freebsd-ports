@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	secpanel
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 PORTEPOCH=	1
 CATEGORIES=	security tcl tk
 MASTER_SITES=	http://themediahost.de/secpanel/data/ CENKES
