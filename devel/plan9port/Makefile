@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20071208
+PORTVERSION=	20080409
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
