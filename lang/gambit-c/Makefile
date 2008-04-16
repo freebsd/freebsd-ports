@@ -7,6 +7,7 @@
 
 PORTNAME=	gambc
 DISTVERSION=	4.0b20
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/4.0/source/
 
