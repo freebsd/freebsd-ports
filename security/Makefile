@@ -664,6 +664,7 @@
     SUBDIR += ruby-pam
     SUBDIR += ruby-password
     SUBDIR += ruby-tcpwrap
+    SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-net-sftp
     SUBDIR += rubygem-net-ssh
     SUBDIR += saferpay

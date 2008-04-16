@@ -1,0 +1,11 @@
+EzCrypto is an easy to use wrapper around the poorly documented OpenSSL ruby
+library.
+
+Features
+    * Defaults to AES 128 CBC
+    * Will use the systems OpenSSL library for transparent hardware crypto
+      support
+    * Single class object oriented access to most commonly used features
+    * Ruby like
+
+WWW:  http://ezcrypto.rubyforge.org/
