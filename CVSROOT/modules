@@ -14846,6 +14846,7 @@ rubygem-color	ports/print/rubygem-color
 rubygem-colortools	ports/print/rubygem-colortools
 rubygem-daemons	ports/devel/rubygem-daemons
 rubygem-eventmachine	ports/devel/rubygem-eventmachine
+rubygem-ezcrypto	ports/security/rubygem-ezcrypto
 rubygem-facets	ports/devel/rubygem-facets
 rubygem-fastercsv	ports/devel/rubygem-fastercsv
 rubygem-fastthread	ports/devel/rubygem-fastthread
