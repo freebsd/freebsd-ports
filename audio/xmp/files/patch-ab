@@ -1,9 +1,0 @@
---- etc/Makefile.old	Mon Jan  1 16:49:34 2001
-+++ etc/Makefile	Mon Jan  1 16:50:29 2001
-@@ -20,5 +20,5 @@
- 	@if [ -f $(DEST_DIR)/etc/xmp-modules.conf ]; then \
- 	    mv -f $(DEST_DIR)/etc/xmp-modules.conf $(DEST_DIR)/etc/xmp-modules.conf.old; \
- 	fi
--	$(INSTALL) -m644 xmp.conf xmp-modules.conf $(DEST_DIR)/etc
-+	$(INSTALL_DATA) xmp.conf xmp-modules.conf $(ETC_DIR)
- 
