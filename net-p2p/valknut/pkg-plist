@@ -20,6 +20,13 @@ bin/valknut
 %%DATADIR%%/icons/appl/default/exit.xpm
 %%DATADIR%%/icons/appl/default/fileclose.xpm
 %%DATADIR%%/icons/appl/default/filefind.xpm
+%%DATADIR%%/icons/appl/default/filetype-application.xpm
+%%DATADIR%%/icons/appl/default/filetype-archive.xpm
+%%DATADIR%%/icons/appl/default/filetype-audio.xpm
+%%DATADIR%%/icons/appl/default/filetype-document.xpm
+%%DATADIR%%/icons/appl/default/filetype-picture.xpm
+%%DATADIR%%/icons/appl/default/filetype-unknown.xpm
+%%DATADIR%%/icons/appl/default/filetype-video.xpm
 %%DATADIR%%/icons/appl/default/find.xpm
 %%DATADIR%%/icons/appl/default/find_22x22.xpm
 %%DATADIR%%/icons/appl/default/flag_bosnian.xpm
@@ -80,6 +87,8 @@ bin/valknut
 %%DATADIR%%/icons/appl/default/translate.xpm
 %%DATADIR%%/icons/appl/default/up.xpm
 %%DATADIR%%/icons/appl/default/view_sidetree.xpm
+%%DATADIR%%/icons/emot/simple/emoticons.xml
+%%DATADIR%%/icons/emot/simple/simple-tango.xpm
 %%DATADIR%%/icons/emot/default/emoticons.xml
 %%DATADIR%%/icons/emot/default/emoticons.xpm
 %%DATADIR%%/icons/user/default/usericons.xml
@@ -111,6 +120,7 @@ bin/valknut
 @dirrm %%DATADIR%%/icons/user/default
 @dirrm %%DATADIR%%/icons/user
 @dirrm %%DATADIR%%/icons/emot/default
+@dirrm %%DATADIR%%/icons/emot/simple
 @dirrm %%DATADIR%%/icons/emot
 @dirrm %%DATADIR%%/icons/appl/default
 @dirrm %%DATADIR%%/icons/appl
