@@ -9,9 +9,8 @@ PORTNAME=	crystality
 PORTVERSION=	0.92
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_GENTOO} \
-		http://jkp-se.lunar-linux.org/lunar/cache/
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/others_ports/xmms-crystality/sources/ \
+		http://ftp.ussg.iu.edu/FreeBSD/distfiles/
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	${PORTNAME}-plugin-${PORTVERSION}
 
@@ -20,9 +19,6 @@ COMMENT=	Realtime XMMS plugin for remastering mp3 sound
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-BROKEN=	Does not fetch
-
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 USE_LDCONFIG=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
