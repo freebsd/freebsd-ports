@@ -1,0 +1,68 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/www/toofpy/files/Attic/toolserver.in,v 1.1 2008-04-16 06:23:43 beech Exp $
+
+# PROVIDE: toolserver
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+# Define these toolserver_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/toolserver
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+toolserver_enable=${toolserver_enable-"NO"}
+toolserver_pidfile=${toolserver_pidfile-"/usr/home/toolserver/.Toolserver/var/toolserver.pid"}
+
+. %%RC_SUBR%%
+
+name="toolserver"
+toolserver_user=toolserver
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/tsctl"
+
+load_rc_config $name
+
+pidfile="${toolserver_pidfile}"
+
+extra_commands="init keygen"
+
+start_cmd="toolserver_command start"
+stop_cmd="toolserver_stop_command"
+init_cmd="toolserver_command init"
+keygen_cmd="toolserver_command keygen"
+start_precmd="toolserver_start_check"
+stop_precmd="toolserver_stop_check"
+
+toolserver_command()
+{
+    su -f -l ${toolserver_user} -c "exec ${command} ${command_args} ${rc_arg}"
+}
+
+PYTHON_CMD=$(head -n1 `which tsctl`|tr "#! " " " | awk '{ print $1 }')
+
+toolserver_start_check()
+{
+    if [ "0$(check_pidfile ${pidfile} ${command} ${PYTHON_CMD})" -gt 1 ]; then
+        echo "${name} is already running."
+        exit 1
+    fi
+}
+
+toolserver_stop_check()
+{
+    if [ ! "0$(check_pidfile ${pidfile} ${command} ${PYTHON_CMD})" -gt 1 ]; then
+        echo "${name} is not running."
+        exit 1
+    fi
+}
+
+toolserver_stop_command()
+{
+    tspid=$(check_pidfile ${pidfile} ${command} ${PYTHON_CMD})
+    toolserver_command stop
+    wait_for_pids $tspid
+}
+
+run_rc_command "$1"
