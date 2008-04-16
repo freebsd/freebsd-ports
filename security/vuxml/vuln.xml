@@ -34,6 +34,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="589d8053-0b03-11dd-b4ef-00e07dc4ec84">
+    <topic>clamav -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.93</lt></range>
+      </package>
+      <package>
+	<name>clamav-devel</name>
+	<range><lt>20080415</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/29000">
+	  <p>Some vulnerabilities have been reported in ClamAV, which can be
+	    exploited by malicious people to cause a DoS (Denial of Service)
+	    or to compromise a vulnerable system.</p>
+	  <p>1) A boundary error exists within the "cli_scanpe()" function in
+	    libclamav/pe.c. This can be exploited to cause a heap-based buffer
+	    overflow via a specially crafted "Upack" executable.</p>
+	  <p>Successful exploitation allows execution of arbitrary code.</p>
+	  <p>2) A boundary error within the processing of PeSpin packed
+	    executables in libclamav/spin.c can be exploited to cause a
+	    heap-based buffer overflow.</p>
+	  <p>Successful exploitation may allow execution of arbitrary code.</p>
+	  <p>3) An unspecified error in the processing of ARJ files can be
+	    exploited to hang ClamAV.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1100</cvename>
+      <cvename>CVE-2008-1387</cvename>
+      <url>http://secunia.com/advisories/29000</url>
+    </references>
+    <dates>
+      <discovery>2008-04-15</discovery>
+      <entry>2008-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ac77649-0908-11dd-974d-000fea2763ce">
     <topic>lighttpd -- OpenSSL Error Queue Denial of Service Vulnerability</topic>
     <affects>
