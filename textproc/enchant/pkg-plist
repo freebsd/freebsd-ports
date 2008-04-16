@@ -12,6 +12,9 @@ lib/enchant/libenchant_ispell.so
 lib/enchant/libenchant_myspell.a
 lib/enchant/libenchant_myspell.la
 lib/enchant/libenchant_myspell.so
+lib/enchant/libenchant_zemberek.a
+lib/enchant/libenchant_zemberek.la
+lib/enchant/libenchant_zemberek.so
 lib/libenchant.a
 lib/libenchant.la
 lib/libenchant.so
