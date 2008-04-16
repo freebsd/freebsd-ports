@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	abiword-plugins
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -295,7 +295,7 @@ PLIST_SUB+=		WMF:="@comment "
 .endif
 
 .if defined(WITH_WORDPERFECT) || defined(PACKAGE_BUILDING)
-LIB_DEPENDS+=		wpd-0.8.8:${PORTSDIR}/textproc/libwpd
+LIB_DEPENDS+=		wps-0.1.1:${PORTSDIR}/textproc/libwps
 CONFIGURE_ARGS+=	--enable-wordperfect
 PLIST_SUB+=		WORDPERFECT:=""
 .else
