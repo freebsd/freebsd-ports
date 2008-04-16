@@ -1,0 +1,29 @@
+Index: setup_native/source/packinfo/packinfo_office.txt
+===================================================================
+RCS file: /cvs/installation/setup_native/source/packinfo/packinfo_office.txt,v
+retrieving revision 1.5
+retrieving revision 1.7
+diff -u -r1.5 -r1.7
+--- setup_native/source/packinfo/packinfo_office.txt	18 Mar 2008 12:51:12 -0000	1.5
++++ setup_native/source/packinfo/packinfo_office.txt	31 Mar 2008 14:39:50 -0000	1.7
+@@ -321,6 +321,20 @@
+ End
+ 
+ Start
++module = "gid_Module_Oo_Linguistic"
++solarispackagename = "openofficeorg-ooolinguistic"
++solarisrequires = "openofficeorg-core01"
++packagename = "openoffice.org-ooolinguistic"
++freebsdrequires = "openoffice.org-core01"
++requires = "openoffice.org-core01"
++copyright = "1999-2007 by OpenOffice.org"
++solariscopyright = "solariscopyrightfile"
++vendor = "OpenOffice.org"
++description = "Linguistic module for OpenOffice.org %OOOBASEVERSION"
++destpath = "/opt"
++End
++
++Start
+ module = "gid_Module_Root_Files_2"
+ script = "shellscripts_module.txt"
+ solarispackagename = "openofficeorg-core02"
