@@ -7,6 +7,7 @@
 
 PORTNAME=	audiotag
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	audio multimedia
 MASTER_SITES=	http://www.tempestgames.com/ryan/downloads/
 
@@ -33,7 +34,7 @@ RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	id3tag:${PORTSDIR}/audio/id3lib
 .endif
 .if defined(WITH_MP4)
-RUN_DEPENDS+=	AtomicParsley:${PORTSDIR}/multimedia/AtomicParsley
+RUN_DEPENDS+=	AtomicParsley:${PORTSDIR}/multimedia/atomicparsley
 .endif
 
 PORTDOCS=	COPYING ChangeLog README
