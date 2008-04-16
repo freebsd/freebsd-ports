@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080416:
+  AFFECTS: users of security/clamav
+  AUTHOR: garga@FreeBSD.org
+
+  Clamav 0.93 does not support the daily.inc and main.inc directories format
+  for virus databases.  You need to remove these directories manually and
+  force freshclam get new cvd format files before starting clamd.
+
+  portupgrade clamav
+  /usr/local/etc/rc.d/clamav-clamd stop
+  /usr/local/etc/rc.d/clamav-freshclam stop
+  rm -rf /var/db/clamav/main.inc /var/db/clamav/daily.inc
+  freshclam
+  /usr/local/etc/rc.d/clamav-freshclam start
+  /usr/local/etc/rc.d/clamav-clamd start
+
 20080408:
   AFFECTS: users of www/p5-Apache-Test
   AUTHOR: pgollucci@p6m7g8.com
