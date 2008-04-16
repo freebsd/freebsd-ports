@@ -168,6 +168,7 @@ abe		ports/games/abe
 abills		ports/net/abills
 abinit		ports/science/abinit
 abiword		ports/editors/abiword
+abiword-docs	ports/editors/abiword-docs
 abiword-extras	ports/editors/abiword-extras
 abiword-plugins	ports/editors/abiword-plugins
 abntex		ports/print/abntex
