@@ -1,4 +1,4 @@
 bin/axel
 etc/axelrc
-share/locale/de/LC_MESSAGES/axel.mo
-share/locale/nl/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/de/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/axel.mo
