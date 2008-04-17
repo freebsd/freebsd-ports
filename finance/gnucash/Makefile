@@ -85,20 +85,20 @@ PLIST_SUB+=	AQBANKING="@comment "
 .if defined(WITH_OFX)
 CONFIGURE_ARGS+=--enable-ofx
 LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
-PLIST_SUB+=     OFX=""
+PLIST_SUB+=	OFX=""
 .else
 CONFIGURE_ARGS+=--disable-ofx
-PLIST_SUB+=     OFX="@comment "
+PLIST_SUB+=	OFX="@comment "
 .endif
 
 .if defined(WITH_POSTGRESQL)
 CONFIGURE_ARGS+=--enable-sql
-PLIST_SUB+=     PGBACKEND=""
+PLIST_SUB+=	PGBACKEND=""
 USE_PGSQL+=	yes
 GC_LIBS+=	-lpq
 .else
 CONFIGURE_ARGS+=--disable-sql
-PLIST_SUB+=     PGBACKEND="@comment "
+PLIST_SUB+=	PGBACKEND="@comment "
 .endif
 
 CONFIGURE_ENV+=	LIBS="${GC_LIBS}"
