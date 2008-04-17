@@ -752,7 +752,6 @@
     SUBDIR += taxipilot
     SUBDIR += tbclock
     SUBDIR += tecnoballz
-    SUBDIR += teewars
     SUBDIR += teeworlds
     SUBDIR += teg
     SUBDIR += tenebrae
