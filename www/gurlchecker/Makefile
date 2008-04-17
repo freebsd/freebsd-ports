@@ -7,7 +7,7 @@
 
 PORTNAME=	gurlchecker
 PORTVERSION=	0.10.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/%SUBDIR%/
 MASTER_SITE_SUBDIR=	547
@@ -28,8 +28,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-BROKEN=	Doesn't build with clamav-0.93
 
 .include <bsd.port.pre.mk>
 
@@ -65,6 +63,8 @@ LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		'/maxratio/s|^.*||' ${WRKSRC}/src/ucclam.c
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|doc ui man|ui|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
