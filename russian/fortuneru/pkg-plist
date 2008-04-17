@@ -41,14 +41,12 @@ share/games/fortune/rus/pavlenka
 share/games/fortune/rus/pavlenka.dat
 share/games/fortune/rus/police
 share/games/fortune/rus/police.dat
-share/games/fortune/rus/rules
-share/games/fortune/rus/rules.dat
 share/games/fortune/rus/religion
 share/games/fortune/rus/religion.dat
+share/games/fortune/rus/rules
+share/games/fortune/rus/rules.dat
 share/games/fortune/rus/school
 share/games/fortune/rus/school.dat
-share/games/fortune/rus/stishki
-share/games/fortune/rus/stishki.dat
 share/games/fortune/rus/speed-info
 share/games/fortune/rus/speed-info.dat
 share/games/fortune/rus/speed-info_f
@@ -63,10 +61,10 @@ share/games/fortune/rus/vishevsky
 share/games/fortune/rus/vishevsky.dat
 share/games/fortune/rus/voronezj
 share/games/fortune/rus/voronezj.dat
-share/games/fortune/rus/work
-share/games/fortune/rus/work.dat
 share/games/fortune/rus/windows_errors
 share/games/fortune/rus/windows_errors.dat
+share/games/fortune/rus/work
+share/games/fortune/rus/work.dat
 share/games/fortune/rus/guberman
 share/games/fortune/rus/guberman.dat
 share/games/fortune/rus/strug
@@ -75,6 +73,8 @@ share/games/fortune/rus/usenet
 share/games/fortune/rus/usenet.dat
 share/games/fortune/rus/verse
 share/games/fortune/rus/verse.dat
+share/games/fortune/rus/stishki
+share/games/fortune/rus/stishki.dat
 @dirrm share/games/fortune/rus
 @dirrmtry share/games/fortune
 @dirrmtry share/games
