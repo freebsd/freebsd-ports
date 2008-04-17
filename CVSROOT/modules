@@ -15999,6 +15999,7 @@ tclock		ports/x11-clocks/tclock
 tclreadline	ports/devel/tclreadline
 tclsasl		ports/security/tclsasl
 tclspice	ports/cad/tclspice
+tclsyslog	ports/sysutils/tclsyslog
 tclthread	ports/devel/tclthread
 tcltls		ports/devel/tcltls
 tcltutor	ports/lang/tcltutor
