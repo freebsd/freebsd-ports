@@ -4,14 +4,22 @@ bin/runscript
 bin/ascii-xfr
 etc/minicom/minicom.users
 %%NLS%%share/locale/cs/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/da/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/de/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/es/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/minicom.mo
 @exec /usr/sbin/chown uucp %D/etc/minicom
 @dirrmtry etc/minicom
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -28,7 +36,6 @@ etc/minicom/minicom.users
 %%PORTDOCS%%%%DOCSDIR%%/doc/Macros
 %%PORTDOCS%%%%DOCSDIR%%/doc/QuickStart.modemu
 %%PORTDOCS%%%%DOCSDIR%%/doc/README.lrzsz
-%%PORTDOCS%%%%DOCSDIR%%/doc/RedHat
 %%PORTDOCS%%%%DOCSDIR%%/doc/TODO.lrzsz
 %%PORTDOCS%%%%DOCSDIR%%/doc/Todo
 %%PORTDOCS%%%%DOCSDIR%%/doc/Todo.175

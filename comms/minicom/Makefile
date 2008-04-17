@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	minicom
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/2332/ \
+		ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org

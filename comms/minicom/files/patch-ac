@@ -1,11 +1,11 @@
---- src/updown.c.orig	Sun Jan 27 18:45:22 2002
-+++ src/updown.c	Sun Jan 27 18:45:58 2002
-@@ -245,7 +245,7 @@
+--- src/updown.c.orig	2008-04-17 19:52:52.000000000 +0200
++++ src/updown.c	2008-04-17 19:53:27.000000000 +0200
+@@ -244,7 +244,7 @@
      do_log("%s", cmdline);   /* jl 22.06.97 */
  
    if (P_PFULL(g) == 'N') {
--    win = wopen(10, 7, 70, 13, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
-+    win = wopen(5, 5, 74, 11, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
+-    win = mc_wopen(10, 7, 70, 13, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
++    win = mc_wopen(5, 5, 74, 11, BSINGLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
      snprintf(title, sizeof(title), _("%.30s %s - Press CTRL-C to quit"), P_PNAME(g),
- 	    what == 'U' ? _("upload") : _("download"));
-     wtitle(win, TMID, title);
+              what == 'U' ? _("upload") : _("download"));
+     mc_wtitle(win, TMID, title);

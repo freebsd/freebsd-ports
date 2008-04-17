@@ -1,35 +1,25 @@
---- src/window.c.orig	2003-05-17 04:06:26.000000000 +0800
-+++ src/window.c	2007-06-22 11:33:39.000000000 +0800
-@@ -62,7 +62,7 @@
- static char *CS, *SF, *SR, *VB, *BL;
- static char *VE, *VI, *KS, *KE;
- static char *CD, *CL, *IC, *DC;
--static char *BC, *CR, *NL;
-+static char *mcBC, *CR, *NL;
- #if ST_LINE
- static char *TS, *FS, *DS;
+--- src/window.c.orig	2008-02-06 22:49:55.000000000 +0100
++++ src/window.c	2008-04-17 20:08:10.000000000 +0200
+@@ -70,6 +70,7 @@
+ static const char *CS, *SF, *SR, *VB, *BL;
+ static const char *VE, *VI, *KS, *KE;
+ static const char *CD, *CL, *IC, *DC;
++static char *mcBC;
+ static const char *CR, *NL;
+ #ifdef ST_LINE
+ static const char *TS, *FS, *DS;
+@@ -342,8 +343,8 @@
+   else if (NL != NULL && x == 0 && x == curx && y == cury + 1)
+     outstr(NL);
  #endif
-@@ -110,7 +110,7 @@
- 
- int useattr = 1;
- int dirflush = 1;
--extern int LINES, COLS;
-+int LINES, COLS;
- int usecolor = 0;
- WIN *stdwin;
- char *_tptr = CNULL;
-@@ -322,8 +322,8 @@
-   else if (NL != CNULL && x == 0 && x == curx && y == cury + 1)
- 	outstr(NL);
- #endif
--  else if (BC != CNULL && y == cury && x == curx - 1)
--  	outstr(BC);
-+  else if (mcBC != CNULL && y == cury && x == curx - 1)
-+  	outstr(mcBC);
-   else	
-   	outstr(tgoto(CM, x, y));
+-  else if (BC != NULL && y == cury && x == curx - 1)
+-    outstr(BC);
++  else if (mcBC != NULL && y == cury && x == curx - 1)
++    outstr(mcBC);
+   else
+     outstr(tgoto(CM, x, y));
    curx = x;
-@@ -1918,7 +1918,7 @@
+@@ -2007,7 +2008,7 @@
    CL = tgetstr("cl", &_tptr);
    IC = tgetstr("ic", &_tptr);
    DC = tgetstr("dc", &_tptr);
@@ -38,16 +28,18 @@
    CR = tgetstr("cr", &_tptr);
    NL = tgetstr("nl", &_tptr);
    AC = tgetstr("ac", &_tptr);
-@@ -1967,10 +1967,10 @@
+@@ -2066,11 +2067,11 @@
    _has_am = tgetflag("am");
    _mv_standout = tgetflag("ms");
    if (tgetflag("bs")) {
--    if (BC == CNULL) BC = "\b";
-+    if (mcBC == CNULL) mcBC = "\b";
-   } 
+-    if (BC == NULL)
+-      BC = "\b";
++    if (mcBC == NULL)
++      mcBC = "\b";
+   }
    else
--    BC = CNULL;	
-+    mcBC = CNULL;	
+-    BC = NULL;
++    mcBC = NULL;
  
    /* Special IBM box-drawing characters */
    D_UL  = 201;

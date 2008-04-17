@@ -1,6 +1,6 @@
---- src/sysdep1.c.orig	Wed Jul 23 04:06:53 2003
-+++ src/sysdep1.c	Wed Jul 23 04:10:29 2003
-@@ -82,13 +82,13 @@
+--- src/sysdep1.c.orig	2007-10-10 22:18:20.000000000 +0200
++++ src/sysdep1.c	2008-04-17 19:48:58.000000000 +0200
+@@ -84,13 +84,13 @@
    if (portfd_is_socket)
      return;
  #endif
@@ -17,21 +17,21 @@
    }
  #endif
  #ifdef _COHERENT
-@@ -215,11 +215,11 @@
+@@ -213,11 +213,11 @@
      return portfd_is_connected;
    }
  #endif
 -#ifdef TIOCMODG
-+#ifdef TIOCMGET
++#ifdef TIOCMODGET
    {
-     int mcs=0;
-      
--    ioctl(fd, TIOCMODG, &mcs);
-+    ioctl(fd, TIOCMGET, &mcs);
-     return(mcs & TIOCM_CAR ? 1 : 0);
+     int mcs = 0;
+ 
+-    if (ioctl(fd, TIOCMODG, &mcs) < 0)
++    if (ioctl(fd, TIOCMODGET, &mcs) < 0)
+       return -1;
+     return mcs & TIOCM_CAR ? 1 : 0;
    }
- #else
-@@ -262,8 +262,8 @@
+@@ -260,8 +260,8 @@
    ioctl(fd, TIOCLGET, &lsw);
  #  endif
  #endif
@@ -42,7 +42,7 @@
  #endif
  }
  
-@@ -288,8 +288,8 @@
+@@ -285,8 +285,8 @@
    ioctl(fd, TIOCLSET, &lsw);
  #  endif
  #endif
