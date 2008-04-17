@@ -884,6 +884,7 @@
     SUBDIR += tac_plus4
     SUBDIR += tacshell
     SUBDIR += tapidbus
+    SUBDIR += tcludp
     SUBDIR += tcpcat
     SUBDIR += tcpdstat
     SUBDIR += tcpdump
