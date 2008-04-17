@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.4.14
+PORTVERSION=	1.4.15
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -75,6 +75,9 @@ LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 .endif
 
 post-patch:
+	@${MV} ${WRKSRC}/po/cz.po ${WRKSRC}/po/cs.po
+	@${REINPLACE_CMD} -e 's|cz|cs|' ${WRKSRC}/po/LINGUAS
+
 .ifdef WITH_MOZILLA
 	@${REINPLACE_CMD} -e 's,firefox-,$$gecko_provider-,g' \
 		-e 's,\(gecko_provider=\).*$$,\1${GECKO},' \
