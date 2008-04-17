@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fortuneru
-PORTVERSION=	20080115
+PORTVERSION=	20080411
 CATEGORIES=	russian
-MASTER_SITES=	ftp://hosting.cvu.kiev.ua/pub/files/
+MASTER_SITES=	ftp://hosting.cvu.kiev.ua/pub/files/ ftp://frux.de22.kiev.ua/pub/files/
 DISTNAME=	fortune.ru-${PORTVERSION}
 
 MAINTAINER=	obezpalko@gmail.com
