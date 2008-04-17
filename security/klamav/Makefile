@@ -7,7 +7,7 @@
 
 PORTNAME=	klamav
 PORTVERSION=	0.42
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	klamav
@@ -38,8 +38,6 @@ CONFIGURE_ARGS+=--with-qt-dir=${QT_PREFIX} \
 		--without-included-sqlite
 
 USE_KDELIBS_VER=	3
-
-BROKEN=	Doesn't build with clamav-0.93
 
 .include <bsd.port.pre.mk>
 

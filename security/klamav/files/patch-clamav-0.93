@@ -1,0 +1,91 @@
+diff -ur src/klammail/cfgparser.c klamav-0.42-clamav093/src/klammail/cfgparser.c
+--- src/klammail/cfgparser.c	2008-01-06 17:00:35.000000000 +0100
++++ klamav-0.42-clamav093/src/klammail/cfgparser.c	2008-03-28 07:00:26.000000000 +0100
+@@ -63,10 +63,10 @@
+ 	    {"ScanOLE2", OPT_NOARG},
+ 	    {"ScanArchive", OPT_NOARG},
+ 	    {"ScanRAR", OPT_NOARG},
+-	    {"ArchiveMaxFileSize", OPT_COMPSIZE},
+-	    {"ArchiveMaxRecursion", OPT_NUM},
+-	    {"ArchiveMaxFiles", OPT_NUM},
+-	    {"ArchiveMaxCompressionRatio", OPT_NUM},
++	    {"MaxScanSize", OPT_COMPSIZE},
++	    {"MaxFileSize", OPT_COMPSIZE},
++	    {"MaxRecursion", OPT_NUM},
++	    {"MaxFiles", OPT_NUM},
+ 	    {"ArchiveLimitMemoryUsage", OPT_NOARG},
+ 	    {"ArchiveBlockEncrypted", OPT_NOARG},
+ 	    {"DataDirectory", OPT_STR}, /* obsolete */
+diff -ur src/klammail/clamdmail.c klamav-0.42-clamav093/src/klammail/clamdmail.c
+--- src/klammail/clamdmail.c	2008-01-06 17:00:35.000000000 +0100
++++ klamav-0.42-clamav093/src/klammail/clamdmail.c	2008-03-28 07:10:31.000000000 +0100
+@@ -151,14 +151,14 @@
+                 while((bytes = read(0, buff, BUFFSIZE)) > 0) {
+ 
+                         if(write(fd, buff, bytes) != bytes) {
+-                                cli_dbgmsg("clamdmail -> Can't write() file.\n");
++                                printf("clamdmail -> Can't write() file.\n");
+                                 close(fd);
+                                 return CL_EMEM;
+                         }
+                 }
+ 
+                 if(fsync(fd) == -1) {
+-                        cli_dbgmsg("fsync() failed for descriptor %d\n", fd);
++                        printf("fsync() failed for descriptor %d\n", fd);
+                         close(fd);
+                         return CL_EFSYNC;
+                 }
+@@ -202,13 +202,12 @@
+                         /* set up archive limits */
+                         memset(&limits, 0, sizeof(struct cl_limits));
+                         limits.maxfiles = 1000; /* max files */
+-                        limits.maxfilesize = 10 * 1048576; /* maximum size of archived/compressed
++                        limits.maxfilesize = 10 * 1048576; /* maximum size of
+                                                             * file (files exceeding this limit
+                                                             * will be ignored)
+                                                             */
+-                        limits.maxreclevel = 5; /* maximum recursion level for archives */
+-                        limits.maxmailrec = 64; /* maximum recursion level for mail files */
+-                        limits.maxratio = 200; /* maximum compression ratio */
++                        limits.maxreclevel = 5; /* maximum recursion level for archives and mail files */
++                        limits.maxscansize = 200 * limits.maxfilesize; /* maximum compression ratio */
+ 
+                         ret = cl_scandesc(fd, &virname, &size, engine, &limits, CL_SCAN_STDOPT | CL_ARCHIVE | CL_MAIL | CL_OLE2 | CL_SCAN_HTML);
+ 
+@@ -368,7 +367,7 @@
+                                 while((bytes = read(fd, buff, BUFFSIZE)) > 0) {
+         
+                                         if(write(1, buff, bytes) != bytes) {
+-                                        cli_dbgmsg("clamdmail -> Can't write() file.\n");
++                                        printf("clamdmail -> Can't write() file.\n");
+                                                 close(fd);
+                                                 return CL_EMEM;
+                                         }
+diff -ur src/scanviewer.cpp klamav-0.42-clamav093/src/scanviewer.cpp
+--- src/scanviewer.cpp	2008-01-06 17:00:35.000000000 +0100
++++ klamav-0.42-clamav093/src/scanviewer.cpp	2008-03-28 07:00:26.000000000 +0100
+@@ -393,18 +393,18 @@
+         options += "--max-files=" + QString("%1").arg(KlamavConfig::noFilesToExtract()) + " ";
+ 
+     if (KlamavConfig::mBsToExtract() > 0)
+-        options += "--max-space=" + QString("%1").arg(KlamavConfig::mBsToExtract()) + " ";
++        options += "--max-filesize=" + QString("%1").arg(KlamavConfig::mBsToExtract()) + " ";
+         
+-    if (KlamavConfig::compressionRatio() > 0)
+-        options += "--max-ratio=" + QString("%1").arg(KlamavConfig::compressionRatio()) + " ";
++    if (KlamavConfig::mBsToExtract() > 0 && KlamavConfig::compressionRatio() > 0)
++        options += "--max-scansize=" + QString("%1").arg(KlamavConfig::mBsToExtract() * KlamavConfig::compressionRatio()) + " ";
+ 
+     if (KlamavConfig::recursionLevel() > 0)
+         options += "--max-recursion=" + QString("%1").arg(KlamavConfig::recursionLevel()) + " ";
+ 
+ 
+     //config->setGroup("Klamscan");
+-    if (KlamavConfig::virusLimitsExceeded())
+-        options += "--block-max ";
++//    if (KlamavConfig::virusLimitsExceeded())
++//        options += "--block-max ";
+ 
+     if (KlamavConfig::virusEncrypted())
+         options += "--block-encrypted ";
