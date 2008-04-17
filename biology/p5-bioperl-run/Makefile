@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	biology perl5
 MASTER_SITES=	http://bioperl.org/DIST/ \
-		${MASTER_SITE_PERL_CPAN}
+		CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mauricio@arareko.net

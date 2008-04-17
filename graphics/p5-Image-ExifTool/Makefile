@@ -9,8 +9,7 @@ PORTNAME=	Image-ExifTool
 PORTVERSION=	7.00
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
-		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=Image
+		CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	devin@spamcop.net

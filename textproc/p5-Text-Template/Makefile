@@ -9,8 +9,7 @@ PORTNAME=	Text-Template
 PORTVERSION=	1.44
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://perl.plover.com/Template/ \
-		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Text
+		CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@FreeBSD.org

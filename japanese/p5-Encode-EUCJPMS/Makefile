@@ -9,8 +9,7 @@ PORTNAME=	Encode-EUCJPMS
 PORTVERSION=	0.07
 PORTREVISION=	1
 CATEGORIES=	japanese converters perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/N/NA/NARUSE
+MASTER_SITES=	CPAN
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Perl5 module defining Microsoft compatible encodings for Japanese

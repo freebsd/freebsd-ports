@@ -8,8 +8,8 @@
 PORTNAME=	savelogs
 PORTVERSION=	1.81
 CATEGORIES=	sysutils perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/S/SC/SCOTTW/
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/S/SC/SCOTTW
 
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Save log files in a nice way

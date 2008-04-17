@@ -9,7 +9,7 @@ PORTNAME=	Cstools
 PORTVERSION=	3.42
 CATEGORIES=	converters perl5
 MASTER_SITES=	http://www.fi.muni.cz/~adelton/perl/ \
-		${MASTER_SITE_PERL_CPAN}
+		CPAN
 MASTER_SITE_SUBDIR=	Cz
 PKGNAMEPREFIX=	p5-
 

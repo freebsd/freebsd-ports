@@ -8,8 +8,7 @@
 PORTNAME=		Text-MeCab
 PORTVERSION=		0.20007
 CATEGORIES=		japanese textproc perl5
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Text
+MASTER_SITES=		CPAN
 
 MAINTAINER=		fmysh@iijmio-mail.jp
 COMMENT=		Alternate Interface To libmecab

@@ -8,8 +8,7 @@
 PORTNAME=	FormValidator-Simple-Plugin-Number-Phone-JP
 PORTVERSION=	0.02
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIZZY
+MASTER_SITES=	CPAN
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for Japanese phone number validation

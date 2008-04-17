@@ -9,8 +9,7 @@ PORTNAME=	Bio-Das
 PORTVERSION=	1.07
 CATEGORIES=	biology
 MASTER_SITES=	http://www.biodas.org/download/Bio::Das/ \
-		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Bio
+		CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org

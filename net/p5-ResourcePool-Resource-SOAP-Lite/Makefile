@@ -8,7 +8,7 @@
 PORTNAME=	ResourcePool-Resource-SOAP-Lite
 PORTVERSION=	1.0101
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+MASTER_SITES=	CPAN \
 		http://www.fatalmind.com/projects/ResourcePool/
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MW/MWS
 PKGNAMEPREFIX=	p5-

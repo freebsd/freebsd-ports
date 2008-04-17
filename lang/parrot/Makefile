@@ -8,8 +8,7 @@
 PORTNAME=	parrot
 PORTVERSION=	0.6.0
 CATEGORIES=	lang perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/B/BS/BSCHMAL/
+MASTER_SITES=	CPAN
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages

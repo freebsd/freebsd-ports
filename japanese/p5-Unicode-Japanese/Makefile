@@ -8,8 +8,7 @@
 PORTNAME=	Unicode-Japanese
 PORTVERSION=	0.37
 CATEGORIES=	japanese converters perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/H/HI/HIO
+MASTER_SITES=	CPAN
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Perl5 module to handle Japanese character encodings

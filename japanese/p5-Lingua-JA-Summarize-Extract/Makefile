@@ -8,8 +8,7 @@
 PORTNAME=	Lingua-JA-Summarize-Extract
 PORTVERSION=	0.01
 CATEGORIES=	japanese textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/Y/YA/YAPPO
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	ja-p5-
 
 MAINTAINER=	markun@onohara.to

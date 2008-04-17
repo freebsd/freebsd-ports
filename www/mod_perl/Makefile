@@ -8,8 +8,7 @@
 PORTNAME=	mod_perl
 PORTVERSION=	1.30
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Apache
+MASTER_SITES=	CPAN
 
 MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Embeds a Perl interpreter in the Apache server

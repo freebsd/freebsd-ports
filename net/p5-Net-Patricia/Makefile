@@ -8,9 +8,8 @@
 PORTNAME=	Net-Patricia
 PORTVERSION=	1.014
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+MASTER_SITES=	CPAN \
 		http://net.doit.wisc.edu/~plonka/Net-Patricia/
-MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org

@@ -8,8 +8,7 @@
 PORTNAME=	XML-LibXML-Common
 PORTVERSION=	0.13
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	XML
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 # Feel free to update this port when the CPAN module is updated

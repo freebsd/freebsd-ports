@@ -8,9 +8,7 @@
 PORTNAME=	Text-Original
 PORTVERSION=	1.4
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-# if this is wrong, fix it by hand
-MASTER_SITE_SUBDIR=	Text
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org

@@ -8,8 +8,7 @@
 PORTNAME=	Date-Japanese-Era
 PORTVERSION=	0.06
 CATEGORIES=	japanese perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Date
+MASTER_SITES=	CPAN
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Conversion between Japanese Era / Gregorian calendar

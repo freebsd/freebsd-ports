@@ -8,9 +8,8 @@
 PORTNAME=	Cache-Memcached
 PORTVERSION=	1.24
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+MASTER_SITES=	CPAN \
 		http://www.danga.com/memcached/dist/
-MASTER_SITE_SUBDIR=	Cache
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org

@@ -8,7 +8,7 @@
 PORTNAME=	Net-Services
 PORTVERSION=	1.3
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+MASTER_SITES=	CPAN \
 		http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
 PKGNAMEPREFIX=	p5-

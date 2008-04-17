@@ -8,8 +8,7 @@
 PORTNAME=	Jcode
 PORTVERSION=	2.06
 CATEGORIES=	japanese perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/D/DA/DANKOGAI
+MASTER_SITES=	CPAN
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension interface to convert Japanese text

@@ -8,7 +8,7 @@
 PORTNAME=	activitymail
 PORTVERSION=	1.24
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DW/DWHEELER/activitymail
 
 MAINTAINER=	joseph@randomnetworks.com
