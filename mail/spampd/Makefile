@@ -7,7 +7,7 @@
 
 PORTNAME=	spampd
 PORTVERSION=	2.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.worlddesign.com/Content/rd/mta/spampd/
 

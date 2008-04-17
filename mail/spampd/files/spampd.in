@@ -1,6 +1,9 @@
 #!/bin/sh
 #
 # PROVIDE: spampd
+# REQUIRE: login
+# BEFORE: mail
+# KEYWORD: shutdown
 #
 # Add the fellowing line to /etc/rc.conf to enable spampd:
 #
