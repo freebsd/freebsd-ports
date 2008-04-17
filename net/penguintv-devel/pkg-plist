@@ -13,6 +13,7 @@ share/penguintv/pixmaps/ev_offline.png
 share/penguintv/pixmaps/ev_online.png
 share/penguintv/pixmaps/throbber.gif
 share/pixmaps/penguintvicon.png
+share/dbus-1/services/penguintv.service
 
 %%PYTHON_SITELIBDIR%%/PenguinTV-3.60-py2.5.egg-info
 %%PYTHON_SITELIBDIR%%/penguintv/AddFeedDialog.py
@@ -185,6 +186,7 @@ share/pixmaps/penguintvicon.png
 %%PYTHON_SITELIBDIR%%/penguintv/trayicon/__init__.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/utils.py
 %%PYTHON_SITELIBDIR%%/penguintv/utils.pyc
+%%PYTHON_SITELIBDIR%%/PyLucene.pyc
 
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/ajax
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/ptvbittorrent
