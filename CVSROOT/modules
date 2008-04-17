@@ -16003,6 +16003,7 @@ tclsyslog	ports/sysutils/tclsyslog
 tclthread	ports/devel/tclthread
 tcltls		ports/devel/tcltls
 tcltutor	ports/lang/tcltutor
+tcludp		ports/net/tcludp
 tclwebtest	ports/www/tclwebtest
 tclxml		ports/devel/tclxml
 tcm		ports/graphics/tcm
