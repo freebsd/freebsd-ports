@@ -8,7 +8,7 @@
 PORTNAME=	endgame-singularity-music
 PORTVERSION=	005
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Music pack for endgame-singularity
