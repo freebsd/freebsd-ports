@@ -10,7 +10,7 @@ PORTVERSION=	5.0.0
 RELEASE=	${PORTNAME:U}-${PORTVERSION}
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/ \
-		SF
+		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/
 DISTNAME=	${RELEASE}
 DIST_SUBDIR=	${PORTNAME}
 
