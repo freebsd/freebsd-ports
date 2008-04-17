@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	1.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -58,6 +58,7 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		ARTS		"Enable arts output plugin"		off \
 		SID		"Enable sid input plugin"		off \
 		OSS		"Enable OSS output plugin"		on  \
+		OSS4		"Enable OSS4 output plugin"		off \
 		TIMIDITY	"Enable timidity plugin"		off \
 		CDAUDIO		"Enable cdaudio-ng input plugin"        on  \
 		NEON		"Enable neon support (experimental)"    on  \
@@ -261,6 +262,14 @@ CONFIGURE_ARGS+=--enable-oss
 .else
 PLIST_SUB+=	OSSPLUGIN="@comment "
 CONFIGURE_ARGS+=--disable-oss
+.endif
+
+.if !defined(WITHOUT_OSS4)
+PLIST_SUB+=	OSS4PLUGIN=""
+CONFIGURE_ARGS+=--enable-oss4
+.else
+PLIST_SUB+=	OSS4PLUGIN="@comment "
+CONFIGURE_ARGS+=--disable-oss4
 .endif
 
 .if defined(WITH_SID)

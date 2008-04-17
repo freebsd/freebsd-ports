@@ -38,6 +38,7 @@ lib/audacious/Input/vtx.so
 %%WAVPACKPLUGIN%%lib/audacious/Input/wavpack.so
 %%WMAPLUGIN%%lib/audacious/Input/wma.so
 %%OSSPLUGIN%%lib/audacious/Output/OSS.so
+%%OSS4PLUGIN%%lib/audacious/Output/OSS4.so
 %%ESDPLUGIN%%lib/audacious/Output/ESD.so
 %%ARTSPLUGIN%%lib/audacious/Output/arts.so
 lib/audacious/Output/filewriter.so
