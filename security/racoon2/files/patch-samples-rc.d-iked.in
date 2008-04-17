@@ -1,7 +1,11 @@
---- samples/rc.d-iked.in.orig	Fri Oct 28 15:33:16 2005
-+++ samples/rc.d-iked.in	Wed Jun  7 16:03:18 2006
-@@ -17,7 +17,7 @@
- rcvar=$name
+--- samples/rc.d-iked.in.orig	2005-10-28 15:33:16.000000000 +0900
++++ samples/rc.d-iked.in	2008-04-17 15:11:55.000000000 +0900
+@@ -14,10 +14,10 @@
+ exec_prefix=@exec_prefix@
+ 
+ name="iked"
+-rcvar=$name
++rcvar=`set_rcvar`
  command="@sbindir@/${name}"
  extra_commands="reload"
 -required_vars="spmd"

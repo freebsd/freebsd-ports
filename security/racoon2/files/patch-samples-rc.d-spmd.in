@@ -1,0 +1,11 @@
+--- samples/rc.d-spmd.in.orig	2007-07-11 09:59:30.000000000 +0900
++++ samples/rc.d-spmd.in	2008-04-17 15:11:55.000000000 +0900
+@@ -13,7 +13,7 @@
+ exec_prefix=@exec_prefix@
+ 
+ name="spmd"
+-rcvar=$name
++rcvar=`set_rcvar`
+ command="@sbindir@/${name}"
+ extra_commands="reload"
+ pidfile="/var/run/${name}.pid"

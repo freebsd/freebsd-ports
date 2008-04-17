@@ -1,18 +1,29 @@
---- samples/Makefile.in.orig	Tue Nov  8 05:53:50 2005
-+++ samples/Makefile.in	Sat Jul 15 17:50:25 2006
-@@ -18,10 +18,11 @@
+--- samples/Makefile.in.orig	2007-12-27 10:08:52.000000000 +0900
++++ samples/Makefile.in	2008-04-17 15:19:17.000000000 +0900
+@@ -2,7 +2,7 @@
+ 
+ srcdir=@srcdir@
+ prefix=@prefix@
+-sysconfdir=@sysconfdir@/racoon2
++sysconfdir=@sysconfdir@
+ INSTALL =@INSTALL@ @INSTALL_OPTS@
+ INSTALL_PROGRAM=@INSTALL_PROGRAM@
+ INSTALL_DATA=@INSTALL_DATA@
+@@ -29,11 +29,12 @@
+ 	$(INSTALL) -d -m 700 $(sysconfdir)/cert
  
  install-startup-rc-d:
- 	$(INSTALL) -d $(sysconfdir)/rc.d
+-	$(INSTALL) -d $(sysconfdir)/rc.d
 -	$(INSTALL_SCRIPT) rc.d-iked $(sysconfdir)/rc.d/iked
 -	$(INSTALL_SCRIPT) rc.d-kinkd $(sysconfdir)/rc.d/kinkd
 -	$(INSTALL_SCRIPT) rc.d-spmd $(sysconfdir)/rc.d/spmd
 -	$(INSTALL_SCRIPT) rc.d-racoon2 $(sysconfdir)/rc.d/racoon2
-+	$(INSTALL_SCRIPT) rc.d-iked $(sysconfdir)/rc.d/iked.sh
++	$(INSTALL) -d $(startupdir)/rc.d
++	$(INSTALL_SCRIPT) rc.d-iked $(prefix)/etc/rc.d/iked
 +.if defined (WITH_KINK)
-+	$(INSTALL_SCRIPT) rc.d-kinkd $(sysconfdir)/rc.d/kinkd.sh
++	$(INSTALL_SCRIPT) rc.d-kinkd $(prefix)/etc/rc.d/kinkd
 +.endif
-+	$(INSTALL_SCRIPT) rc.d-spmd $(sysconfdir)/rc.d/spmd.sh
++	$(INSTALL_SCRIPT) rc.d-spmd $(prefix)/etc/rc.d/spmd
  
  install-startup-init-d:
  	$(INSTALL) -d $(sysconfdir)/init.d

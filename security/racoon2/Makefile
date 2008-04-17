@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	racoon2
-PORTVERSION=	20070720a
-PORTREVISION=	3
+PORTVERSION=	20071227e
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
 EXTRACT_SUFX=	.tgz
@@ -21,7 +20,7 @@ USE_OPENSSL=	YES
 USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_TARGET=
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--sysconfdir=${LOCALBASE}/etc
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/racoon2
 
 OPTIONS=	KINK "enable KINK support" off
 
