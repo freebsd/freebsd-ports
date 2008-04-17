@@ -72,9 +72,9 @@ post-patch:
 		${WRKSRC}/install-sh
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -E -e "s|-Wunsafe-loop-optimizations ||g" \
-			-e "s|no-missing-field-initializers ||g" \
-			-e "s|no-attributes ||g" \
-				${WRKSRC}/configure
+		-e "s|-Wno-missing-field-initializers ||g" \
+		-e "s|-Wno-attributes ||g" \
+			${WRKSRC}/configure
 .endif
 
 .include <bsd.port.post.mk>
