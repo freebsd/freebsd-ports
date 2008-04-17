@@ -658,6 +658,7 @@
     SUBDIR += syslog-ng2
     SUBDIR += system-tools-backends
     SUBDIR += sysupdate
+    SUBDIR += tclsyslog
     SUBDIR += tcplist
     SUBDIR += tdir
     SUBDIR += tenshi
