@@ -70,7 +70,6 @@ include/irssi/src/core/special-vars.h
 include/irssi/src/core/window-item-def.h
 include/irssi/src/core/window-item-rec.h
 include/irssi/src/core/write-buffer.h
-include/irssi/src/fe-common/core/autorun.h
 include/irssi/src/fe-common/core/chat-completion.h
 include/irssi/src/fe-common/core/command-history.h
 include/irssi/src/fe-common/core/completion.h
