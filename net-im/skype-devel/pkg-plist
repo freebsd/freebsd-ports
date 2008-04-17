@@ -1,4 +1,5 @@
 bin/skype_devel
+share/pixmaps/skype.png
 share/applications/skype-devel.desktop
 %%SKYPEDIR%%/avatars/Angel Skype.png
 %%SKYPEDIR%%/avatars/Architect Skype.png
@@ -130,4 +131,5 @@ share/applications/skype-devel.desktop
 @dirrm %%SKYPEDIR%%/icons
 @dirrm %%SKYPEDIR%%/avatars
 @dirrm %%SKYPEDIR%%
+@dirrmtry share/pixmaps
 @dirrmtry share/applications
