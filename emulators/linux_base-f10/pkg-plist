@@ -625,10 +625,16 @@ usr/lib/libfreetype.so.6
 usr/lib/libfreetype.so.6.3.16
 usr/lib/libgdbm.so.2
 usr/lib/libgdbm.so.2.0.0
+usr/lib/libglib-1.2.so.0
+usr/lib/libglib-1.2.so.0.0.10
+usr/lib/libgmodule-1.2.so.0
+usr/lib/libgmodule-1.2.so.0.0.10
 usr/lib/libgssapi_krb5.so.2
 usr/lib/libgssapi_krb5.so.2.2
 usr/lib/libgssrpc.so.4
 usr/lib/libgssrpc.so.4.0
+usr/lib/libgthread-1.2.so.0
+usr/lib/libgthread-1.2.so.0.0.10
 usr/lib/libhistory.so.5
 usr/lib/libhistory.so.5.2
 usr/lib/libk5crypto.so.3
@@ -898,6 +904,11 @@ usr/share/doc/freetype-2.3.5/README
 usr/share/doc/gdbm-1.8.0/COPYING
 usr/share/doc/gdbm-1.8.0/NEWS
 usr/share/doc/gdbm-1.8.0/README
+usr/share/doc/glib-1.2.10/AUTHORS
+usr/share/doc/glib-1.2.10/COPYING
+usr/share/doc/glib-1.2.10/ChangeLog
+usr/share/doc/glib-1.2.10/NEWS
+usr/share/doc/glib-1.2.10/README
 usr/share/doc/glib2-2.14.6/AUTHORS
 usr/share/doc/glib2-2.14.6/COPYING
 usr/share/doc/glib2-2.14.6/NEWS
@@ -6294,6 +6305,7 @@ var/cache/ldconfig/aux-cache
 @dirrm usr/share/doc/glibc-common-2.7
 @dirrm usr/share/doc/glibc-2.7
 @dirrm usr/share/doc/glib2-2.14.6
+@dirrm usr/share/doc/glib-1.2.10
 @dirrm usr/share/doc/gdbm-1.8.0
 @dirrm usr/share/doc/freetype-2.3.5
 @dirrm usr/share/doc/fedora-release-8

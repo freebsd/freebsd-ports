@@ -7,7 +7,7 @@
 
 PORTNAME=		f8
 PORTVERSION=		8
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages \
@@ -35,6 +35,7 @@ BIN_DISTFILES=	basesystem-8.1-1.noarch.rpm \
 		filesystem-2.4.11-1.fc8.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.3.5-3.fc8.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-27.fc7.${LINUX_RPM_ARCH}.rpm \
+		glib-1.2.10-28.fc8.${LINUX_RPM_ARCH}.rpm \
 		glib2-2.14.6-1.fc8.${LINUX_RPM_ARCH}.rpm \
 		glibc-2.7-2.${LINUX_RPM_ARCH}.rpm \
 		glibc-common-2.7-2.${LINUX_RPM_ARCH}.rpm \
@@ -78,6 +79,7 @@ SRC_DISTFILES+=	acl-2.2.39-13.fc8.src.rpm \
 		freetype-2.3.5-3.fc8.src.rpm \
 		gcc-4.1.2-33.src.rpm \
 		gdbm-1.8.0-27.fc7.src.rpm \
+		glib-1.2.10-28.fc8.src.rpm \
 		glib2-2.14.6-1.fc8.src.rpm \
 		glibc-2.7-2.src.rpm \
 		grep-2.5.1-57.fc7.src.rpm \
