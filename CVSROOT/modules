@@ -12169,6 +12169,7 @@ pear-DB_QueryTool	ports/databases/pear-DB_QueryTool
 pear-DB_Sqlite_Tools	ports/databases/pear-DB_Sqlite_Tools
 pear-DB_Table	ports/databases/pear-DB_Table
 pear-DB_ldap	ports/databases/pear-DB_ldap
+pear-DB_ldap2	ports/databases/pear-DB_ldap2
 pear-Date	ports/devel/pear-Date
 pear-Date_Holidays	ports/devel/pear-Date_Holidays
 pear-Event_Dispatcher	ports/devel/pear-Event_Dispatcher

@@ -344,6 +344,7 @@
     SUBDIR += pear-DB_Sqlite_Tools
     SUBDIR += pear-DB_Table
     SUBDIR += pear-DB_ldap
+    SUBDIR += pear-DB_ldap2
     SUBDIR += pear-MDB
     SUBDIR += pear-MDB2
     SUBDIR += pear-MDB2_Driver_ibase
