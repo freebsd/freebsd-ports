@@ -1,7 +1,11 @@
---- samples/rc.d-kinkd.in~	Sun Jul 16 00:23:47 2006
-+++ samples/rc.d-kinkd.in	Tue Jul 18 01:20:34 2006
-@@ -17,7 +17,7 @@
- rcvar=`set_rcvar`
+--- samples/rc.d-kinkd.in.orig	2005-10-28 15:33:16.000000000 +0900
++++ samples/rc.d-kinkd.in	2008-04-17 15:11:55.000000000 +0900
+@@ -14,10 +14,10 @@
+ exec_prefix=@exec_prefix@
+ 
+ name="kinkd"
+-rcvar=$name
++rcvar=`set_rcvar`
  command="@sbindir@/${name}"
  extra_commands="reload"
 -required_vars="spmd"

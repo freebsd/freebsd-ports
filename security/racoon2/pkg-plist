@@ -3,19 +3,44 @@ sbin/iked
 sbin/spmd
 sbin/spmdctl
 sbin/pskgen
-etc/spmd.pwd
-etc/default.conf.sample
-etc/local-test.conf.sample
-etc/racoon2.conf.sample
-etc/transport_ike.conf.sample
-etc/transport_kink.conf.sample
-etc/tunnel_ike.conf.sample
-etc/tunnel_ike_natt.conf.sample
-etc/tunnel_kink.conf.sample
-etc/vals.conf.sample
-etc/rc.d/iked.sh
-etc/rc.d/spmd.sh
+etc/racoon2/spmd.pwd
+etc/racoon2/default.conf.sample
+etc/racoon2/local-test.conf.sample
+etc/racoon2/racoon2.conf.sample
+etc/racoon2/transport_ike.conf.sample
+etc/racoon2/transport_kink.conf.sample
+etc/racoon2/tunnel_ike.conf.sample
+etc/racoon2/tunnel_ike_natt.conf.sample
+etc/racoon2/tunnel_kink.conf.sample
+etc/racoon2/vals.conf.sample
+etc/racoon2/hook/functions
+etc/racoon2/hook/ikesa-up.d/00ikesaup_sample
+etc/racoon2/hook/ikesa-up
+etc/racoon2/hook/ikesa-down
+etc/racoon2/hook/ikesa-rekey
+etc/racoon2/hook/child-up.d/00childup_sample
+etc/racoon2/hook/child-up
+etc/racoon2/hook/child-down
+etc/racoon2/hook/child-rekey
+etc/racoon2/hook/migration
+etc/racoon2/hook/ph1-up
+etc/racoon2/hook/ph1-down
+etc/rc.d/iked
+etc/rc.d/spmd
 %%KINK%%etc/rc.d/kinkd.sh
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.jp
 %%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm etc/racoon2/cert
+@dirrm etc/racoon2/hook/ph1-up.d
+@dirrm etc/racoon2/hook/ph1-down.d
+@dirrm etc/racoon2/hook/migration.d
+@dirrm etc/racoon2/hook/ikesa-up.d
+@dirrm etc/racoon2/hook/ikesa-rekey.d
+@dirrm etc/racoon2/hook/ikesa-down.d
+@dirrm etc/racoon2/hook/child-up.d
+@dirrm etc/racoon2/hook/child-rekey.d
+@dirrm etc/racoon2/hook/child-down.d
+@dirrm etc/racoon2/hook
+@dirrm etc/racoon2/psk
+@dirrm etc/racoon2
