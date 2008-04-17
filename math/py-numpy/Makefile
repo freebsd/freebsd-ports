@@ -7,6 +7,7 @@
 
 PORTNAME=	numpy
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://numpy.scipy.org/:doc \
@@ -19,6 +20,8 @@ EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	The New Numeric Extension to Python
+
+RUN_DEPENDS=	gcc42:${PORTSDIR}/lang/gcc42
 
 OPTIONS=	ATLAS "Use optimized blas library" Off
 
@@ -42,18 +45,9 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
 		blas.2:${PORTSDIR}/math/blas
 .endif
 
-pre-fetch:
-.if ${PYTHON_REL} < 200
-	@${ECHO} "Py-numpy doesn't work with Python versions < 2.0."
-	@${ECHO} "Please use the py-numeric17 port for these."
-	@${FALSE}
-.endif
-
 post-extract:
 	@${CP} ${DISTDIR}/numpy.pdf ${WRKDIR}
 
-FC=		gfortran42
-F77=		gfortran42
 GCCLIBDIR=	`${FC} -print-file-name=libgfortran.so|${SED} -e s/libgfortran.so//`
 post-patch:
 .ifdef WITH_ATLAS
