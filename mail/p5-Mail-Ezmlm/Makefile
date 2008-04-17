@@ -8,9 +8,8 @@
 PORTNAME=	Mail-Ezmlm
 PORTVERSION=	0.07.2
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+MASTER_SITES=	CPAN \
 		ftp://ftp.rucus.ru.ac.za/users/guy/ezmlm/
-MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Ezmlm-${PORTVERSION}
 

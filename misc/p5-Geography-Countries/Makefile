@@ -8,8 +8,7 @@
 PORTNAME=	Geography-Countries
 PORTVERSION=	1.4
 CATEGORIES=	misc perl5 geography
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Geography
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dikshie@lapi.itb.ac.id

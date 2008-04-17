@@ -9,9 +9,8 @@
 PORTNAME=	zoidberg
 PORTVERSION=	0.96
 CATEGORIES=	shells perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+MASTER_SITES=	CPAN \
 		http://zoidberg.student.utwente.nl/downloads/Zoidberg/
-MASTER_SITE_SUBDIR=	Bundle
 DISTNAME=	Zoidberg-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

@@ -8,8 +8,7 @@
 PORTNAME=	Finance-Currency-Convert-WebserviceX
 PORTVERSION=	0.06002
 CATEGORIES=	finance perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Finance
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hideo@lastamericanempire.com

@@ -9,8 +9,7 @@ PORTNAME=	Net-Server
 PORTVERSION=	0.97
 CATEGORIES=	net perl5
 MASTER_SITES=	http://seamons.com/projects/perl/net_server/ \
-		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+		CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org

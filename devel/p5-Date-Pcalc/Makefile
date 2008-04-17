@@ -10,8 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	ftp://catcode.com/pub/date/ \
 		http://www.engelschall.com/u/sb/download/pkg/ \
-		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Date
+		CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org

@@ -8,7 +8,7 @@
 PORTNAME=	Syntax-Highlight-Perl-Improved
 PORTVERSION=	1.01
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DA/DAVIDCYL/Syntax-Highlight-Perl-Improved-101
 PKGNAMEPREFIX=	p5-
 

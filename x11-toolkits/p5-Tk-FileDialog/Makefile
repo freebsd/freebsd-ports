@@ -8,8 +8,7 @@ PORTNAME=	Tk-FileDialog
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Tk
+MASTER_SITES=	CPAN
 
 MAINTAINER=	minter@lunenburg.org
 COMMENT=	Tk::FileDialog - A file selector dialog for perl/Tk

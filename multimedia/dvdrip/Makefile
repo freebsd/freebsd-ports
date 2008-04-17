@@ -9,8 +9,7 @@ PORTNAME=	dvdrip
 PORTVERSION=	0.98.8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/ \
-		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Video/JRED
+		CPAN
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl Gtk+ based dvd-ripper

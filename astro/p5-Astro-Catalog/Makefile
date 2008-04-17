@@ -9,9 +9,8 @@
 PORTNAME=	Astro-Catalog
 PORTVERSION=	4.1.0
 CATEGORIES=	astro perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+MASTER_SITES=	CPAN \
 		http://www.estar.org.uk/software/
-MASTER_SITE_SUBDIR=	Astro
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org

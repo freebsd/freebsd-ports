@@ -8,8 +8,7 @@
 PORTNAME=	Catalyst-Plugin-Session-Store-Delegate
 PORTVERSION=	0.02
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Catalyst
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fernan@iib.unsam.edu.ar

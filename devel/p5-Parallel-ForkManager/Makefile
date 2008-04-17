@@ -7,9 +7,8 @@
 PORTNAME=	Parallel-ForkManager
 PORTVERSION=	0.7.5
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+MASTER_SITES=	CPAN \
 		http://hacks.dlux.hu/Parallel-ForkManager/download/
-MASTER_SITE_SUBDIR=	Parallel
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org

@@ -8,8 +8,7 @@
 PORTNAME=	Date-Japanese-Holiday
 PORTVERSION=	0.05
 CATEGORIES=	japanese perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Date
+MASTER_SITES=	CPAN
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for Calculate Japanese Holiday

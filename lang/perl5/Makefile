@@ -9,7 +9,7 @@ PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
 PORTREVISION=	2
 CATEGORIES=	lang devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
 		http://www.tobez.org/download/port-mirrors/lang/perl56/:local
 MASTER_SITE_SUBDIR=	../../src \

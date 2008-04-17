@@ -8,8 +8,8 @@
 PORTNAME=	cpan-upload
 PORTVERSION=	2.2
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/N/NE/NEILB/scripts/
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../by-authors/id/N/NE/NEILB/scripts
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Script for uploading distributions to CPAN

@@ -8,8 +8,7 @@
 PORTNAME=	Business-OnlinePayment-PayflowPro
 PORTVERSION=	0.03
 CATEGORIES=	finance perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Business
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	never@nevermind.kiev.ua
