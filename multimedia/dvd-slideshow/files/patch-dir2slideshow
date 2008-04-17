@@ -1,0 +1,16 @@
+--- dir2slideshow.orig	2006-12-21 00:43:48.000000000 -0600
++++ dir2slideshow	2007-09-02 20:20:34.000000000 -0500
+@@ -633,8 +633,11 @@
+ 	check_rm "$output_dir"/filelist_date.txt
+ 	for (( i=1 ; i<=pictures ; i++ )) ; do
+ 		file=`sed -n "$i"p "$output_dir"/imagelist.txt`
+-		modified_day=`ls -l --full-time "$file" | awk '{print $6}'`
+-		modified_time=`ls -l --full-time "$file" | awk '{print $7}'`
++		modified_day=`ls -lT "$file" | awk '{print $9"-"$6"-"$7}'`
++		modified_day=`date -j -f "%Y-%b-%d" "$modified_day" "+%Y-%m-%d"`
++		modified_time=`ls -lT "$file" | awk '{print $8}'`
++##		modified_day=`ls -l --full-time "$file" | awk '{print $6}'`
++##		modified_time=`ls -l --full-time "$file" | awk '{print $7}'`
+ #		echo "modified_day=$modified_day"
+ #		echo "modified_time=$modified_time"
+ 		echo "$file: $modified_day $modified_time" >> "$output_dir"/filelist_date.txt

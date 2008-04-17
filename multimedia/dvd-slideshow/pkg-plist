@@ -1,0 +1,69 @@
+bin/dvd-slideshow
+bin/dvd-menu
+bin/dir2slideshow
+bin/gallery1-to-slideshow
+bin/jigl2slideshow
+%%NOPORTDOCS%%%%DOCSDIR%%/changelog.html
+%%NOPORTDOCS%%%%DOCSDIR%%/gallery1-to-slideshow.html
+%%NOPORTDOCS%%%%DOCSDIR%%/dir2slideshow.html
+%%NOPORTDOCS%%%%DOCSDIR%%/jigl2slideshow.html
+%%NOPORTDOCS%%%%DOCSDIR%%/dvd-menu.html
+%%NOPORTDOCS%%%%DOCSDIR%%/dvd-slideshow.html
+%%NOPORTDOCS%%%%DOCSDIR%%/dvd-slideshowrc
+%%NOTHEMES%%%%DATADIR%%/themes/themes.readme.txt
+%%NOTHEMES%%%%DATADIR%%/themes/babyblue/thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/babyblue/bip.ttf
+%%NOTHEMES%%%%DATADIR%%/themes/babyblue/slide_thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/babyblue/bip.license.txt
+%%NOTHEMES%%%%DATADIR%%/themes/babyblue/babyblue.dvd-slideshow.theme
+%%NOTHEMES%%%%DATADIR%%/themes/babyblue/title_thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/babypink/thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/babypink/bip.ttf
+%%NOTHEMES%%%%DATADIR%%/themes/babypink/slide_thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/babypink/bip.license.txt
+%%NOTHEMES%%%%DATADIR%%/themes/babypink/title_thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/babypink/babypink.dvd-slideshow.theme
+%%NOTHEMES%%%%DATADIR%%/themes/default/thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/default/slide_thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/default/title_thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/default/default.dvd-slideshow.theme
+%%NOTHEMES%%%%DATADIR%%/themes/dinner/thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/dinner/journal.ttf
+%%NOTHEMES%%%%DATADIR%%/themes/dinner/slide_thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/dinner/journal.ttf.license.txt
+%%NOTHEMES%%%%DATADIR%%/themes/dinner/title_thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/dinner/dinner.readme.txt
+%%NOTHEMES%%%%DATADIR%%/themes/dinner/dinner_plate_menu.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/dinner/dinner_plate_menu.jpg.license.txt
+%%NOTHEMES%%%%DATADIR%%/themes/dinner/tablecloth.jpg.license.txt
+%%NOTHEMES%%%%DATADIR%%/themes/dinner/dinner.dvd-slideshow.theme
+%%NOTHEMES%%%%DATADIR%%/themes/dinner/tablecloth.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/travel/thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/travel/journal.ttf
+%%NOTHEMES%%%%DATADIR%%/themes/travel/america_map.jpg.license.txt
+%%NOTHEMES%%%%DATADIR%%/themes/travel/travel.readme.txt
+%%NOTHEMES%%%%DATADIR%%/themes/travel/parchment.jpg.license.txt
+%%NOTHEMES%%%%DATADIR%%/themes/travel/america_map.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/travel/slide_thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/travel/journal.ttf.license.txt
+%%NOTHEMES%%%%DATADIR%%/themes/travel/title_thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/travel/travel.dvd-slideshow.theme
+%%NOTHEMES%%%%DATADIR%%/themes/travel/parchment.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/wedding/thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/wedding/journal.ttf
+%%NOTHEMES%%%%DATADIR%%/themes/wedding/wedding_table_sepia.jpg.license.txt
+%%NOTHEMES%%%%DATADIR%%/themes/wedding/wedding_table_sepia.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/wedding/wedding.dvd-slideshow.theme
+%%NOTHEMES%%%%DATADIR%%/themes/wedding/slide_thumbnail.jpg
+%%NOTHEMES%%%%DATADIR%%/themes/wedding/journal.ttf.license.txt
+%%NOTHEMES%%%%DATADIR%%/themes/wedding/title_thumbnail.jpg
+%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/wedding
+%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/travel
+%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/dinner
+%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/default
+%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/babypink
+%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes/babyblue
+%%NOTHEMES%%@dirrmtry %%DATADIR%%/themes
+%%NOTHEMES%%@dirrmtry %%DATADIR%%
+%%NOTHEMES%%@dirrmtry share/apps
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%

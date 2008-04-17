@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dvd-slideshow
-PORTVERSION=	0.7.5
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
+DISTFILES=	${PORTNAME}-${PORTVERSION}-1${EXTRACT_SUFX}
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	Script that creates a slideshow-style DVD with some simple menus
@@ -21,21 +20,20 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		sox:${PORTSDIR}/audio/sox \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		seq2:${PORTSDIR}/misc/seq2 \
+		jhead:${PORTSDIR}/graphics/jhead \
+		flvtool2:${PORTSDIR}/multimedia/ruby-flvtool2 \
 		${X11BASE}/lib/X11/fonts/urwfonts-ttf/README:${PORTSDIR}/x11-fonts/urwfonts-ttf
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
 
 NO_BUILD=	yes
 USE_CDRTOOLS=	yes
+DATADIR=	${PREFIX}/share/apps/${PORTNAME}
 
-OPTIONS=	DVDRWTOOLS "Needed to record/burn DVD" off \
-		LAME "Optional support for audio" off \
-		VORBISTOOLS "Optional audio support" off
-
-PLIST_FILES=	bin/dvd-slideshow \
-		bin/dvd-menu \
-		bin/dir2slideshow \
-		bin/gallery1-to-slideshow \
-		bin/jigl2slideshow
+OPTIONS=	LAME "Optional mp3 audio support" off \
+		THEMES "Optional themes" off \
+		TOOLAME "Faster Optional mp3 audio support" off \
+		VORBISTOOLS "Optional ogg vorbis audio support" off
 
 MAN1=		dvd-slideshow.1 \
 		dvd-menu.1 \
@@ -43,31 +41,38 @@ MAN1=		dvd-slideshow.1 \
 		gallery1-to-slideshow.1 \
 		jigl2slideshow.1
 
-DOC_FILES=	changelog.html gallery1-to-slideshow.html \
-		dir2slideshow.html jigl2slideshow.html \
-		dvd-menu.html dvd-slideshow.html
-PORTDOCS=	${DOC_FILES} dvd-slideshowrc
-
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/growisofs)
-WITH_DVDRWTOOLS=yes
-.endif
 .if exists(${LOCALBASE}/bin/lame)
 WITH_LAME=yes
 .endif
 .if exists(${LOCALBASE}/bin/oggdec)
 WITH_VORBISTOOLS=yes
 .endif
-
-.if defined(WITH_DVDRWTOOLS)
-RUN_DEPENDS+=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
+.if exists(${LOCALBASE}/bin/toolame)
+WITH_TOOLAME=yes
 .endif
+
 .if defined(WITH_LAME)
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 .if defined(WITH_VORBISTOOLS)
 RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
+.endif
+.if defined(WITH_TOOLAME)
+RUN_DEPENDS+=	toolame:${PORTSDIR}/audio/toolame
+.endif
+.if defined(WITH_THEMES)
+DISTFILES+=	${PORTNAME}-themes-${PORTVERSION}-1${EXTRACT_SUFX}
+WRKSRC2=	${WRKDIR}/${PORTNAME}-themes-${PORTVERSION}-1
+PLIST_SUB+=	NOTHEMES=""
+.else
+PLIST_SUB+=	NOTHEMES="@comment "
+.endif
+.if defined(NOPORTDOCS)
+PLIST_SUB+=	NOPORTDOCS="@comment "
+.else
+PLIST_SUB+=	NOPORTDOCS=""
 .endif
 
 post-patch:
@@ -76,23 +81,33 @@ post-patch:
 			      s|/usr/share/fonts/|${X11BASE}/lib/X11/fonts/|g ; \
 			      s|seq |seq2 |g' \
 				 ${WRKSRC}/${FILE}
+.ifdef(WITH_THEMES)
+	@${REINPLACE_CMD} -e 's|/opt/dvd-slideshow/themes|${DATADIR}/themes|g' \
+				${WRKSRC}/${FILE}
+.endif
 .endfor
 
 do-install:
+	@${ECHO_MSG} "Installing scripts."
 .for FILE in dvd-slideshow dvd-menu dir2slideshow gallery1-to-slideshow jigl2slideshow
 	${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/bin
 .endfor
 	@${ECHO_MSG} "Installing man files."
 .for FILE in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/man/${FILE} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${FILE} ${PREFIX}/man/man1
 .endfor
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "Installing doc files."
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/dvd-slideshowrc ${DOCSDIR}
-.for FILE in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/dvd-slideshowrc ${DOCSDIR}
+.for FILE in changelog.html gallery1-to-slideshow.html dir2slideshow.html jigl2slideshow.html dvd-menu.html dvd-slideshow.html
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
+.endif
+.ifdef(WITH_THEMES)
+	@${ECHO_MSG} "Installing theme files."
+	${MKDIR} ${DATADIR}/themes
+	cd ${WRKSRC2} && ${FIND} * | ${CPIO} -dpmu -R ${BINOWN}:${BINGRP} --quiet ${DATADIR}/themes
 .endif
 
 .include <bsd.port.post.mk>
