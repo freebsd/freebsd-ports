@@ -8,43 +8,40 @@
 
 PORTNAME=	k3d
 PORTVERSION=	0.6.7.0
-DISTVERSIONSUFFIX=	-src
+DISTVERSIONSUFFIX=-src
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	dyeske@gmail.com
 COMMENT=	3D modeling, animation, and rendering system
 
-BUILD_DEPENDS=	${X11BASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	sigc-2:${PORTSDIR}/devel/libsigc++20 \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		Magick++.10:${PORTSDIR}/graphics/ImageMagick \
-		netpbm.1:${PORTSDIR}/graphics/netpbm \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib
+LIB_DEPENDS=	Magick++.10:${PORTSDIR}/graphics/ImageMagick \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		gts.5:${PORTSDIR}/graphics/gts \
-		glibmm-2.4:${PORTSDIR}/devel/glibmm \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		boost_signals.4:${PORTSDIR}/devel/boost \
 		execinfo:${PORTSDIR}/devel/libexecinfo
+RUN_DEPENDS=	ppmtompeg:${PORTSDIR}/graphics/netpbm
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 USE_GL=		yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	\
-	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS+=	--without-docbook --without-graphviz \
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--without-docbook --without-graphviz \
 		--with-truetype=freetype2 --with-imagemagick --with-jpeg \
-		--with-python=${PREFIX}  --with-tiff --with-openexr --with-plib \
-		--with-png --with-external-boost --with-libxml2
+		--with-python=${PYTHONBASE} --with-tiff --with-openexr \
+		--with-plib --with-png --with-external-boost --with-libxml2
 USE_GMAKE=	yes
-USE_GNOME+=	gnometarget gtk12 libxslt
+USE_GNOME=	gnometarget libxslt
+WANT_GNOME=	yes
 USE_LDCONFIG=	yes
-MAN1=	k3d.1
+MAN1=		k3d.1
 
 OPTIONS=	GNOME "Build for Gnome" off
 
@@ -55,10 +52,12 @@ BROKEN=		Does not compile on FreeBSD 5.x
 .endif
 
 .if defined(WITH_GNOME)
-CONFIGURE_ARGS+=	--with-gnome
+USE_GNOME+=	libgnome
+CONFIGURE_ARGS+=--with-gnome
+PKGNAMESUFFIX=	-gnome
 PLIST_SUB+=	GNOME=""
 .else
-CONFIGURE_ARGS+=	--without-gnome
+CONFIGURE_ARGS+=--without-gnome
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
