@@ -1,101 +1,210 @@
 bin/SABnzbd.py
+%%DATADIR%%/interfaces/Default/README.TXT
+%%DATADIR%%/interfaces/Default/templates/config.tmpl
+%%DATADIR%%/interfaces/Default/templates/config_directories.tmpl
+%%DATADIR%%/interfaces/Default/templates/config_email.tmpl
+%%DATADIR%%/interfaces/Default/templates/config_general.tmpl
+%%DATADIR%%/interfaces/Default/templates/config_rss.tmpl
+%%DATADIR%%/interfaces/Default/templates/config_scheduling.tmpl
+%%DATADIR%%/interfaces/Default/templates/config_server.tmpl
+%%DATADIR%%/interfaces/Default/templates/config_switches.tmpl
+%%DATADIR%%/interfaces/Default/templates/connection_info.tmpl
+%%DATADIR%%/interfaces/Default/templates/history.tmpl
+%%DATADIR%%/interfaces/Default/templates/main.tmpl
+%%DATADIR%%/interfaces/Default/templates/nzo.tmpl
+%%DATADIR%%/interfaces/Default/templates/queue.tmpl
+%%DATADIR%%/interfaces/Default/templates/static/images/favicon.ico
+%%DATADIR%%/interfaces/Default/templates/static/stylesheets/default.css
+%%DATADIR%%/interfaces/Plush/LICENSE.txt
+%%DATADIR%%/interfaces/Plush/README.txt
+%%DATADIR%%/interfaces/Plush/templates/config.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_directories.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_email.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_general.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_rss.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_scheduling.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_server.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_switches.tmpl
+%%DATADIR%%/interfaces/Plush/templates/connection_info.tmpl
+%%DATADIR%%/interfaces/Plush/templates/history.tmpl
+%%DATADIR%%/interfaces/Plush/templates/main.tmpl
+%%DATADIR%%/interfaces/Plush/templates/nzo.tmpl
+%%DATADIR%%/interfaces/Plush/templates/queue.tmpl
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_item_bullet.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_item_bullet_hover.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_item_left.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_table_footer.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_table_footer_bl.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_table_footer_br.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_table_heading.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_table_heading_tl.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_table_heading_tr.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_table_tbody_tr.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_table_tbody_tr_alt.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_listing_table_tbody_tr_hover.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_menu_a_hover.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_optionsMenu.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_progress_bar_empty.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_progress_bar_full.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_refreshSlider.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_subMenu.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_topbar.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_topbar_bottom_border.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_topbar_content.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_topbar_toggle.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_total_progress_bar_empty.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_total_progress_bar_full.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_tr_active.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_tr_failed.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_tr_finished.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/bg_tr_pending.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/config_header.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/favicon.ico
+%%DATADIR%%/interfaces/Plush/templates/static/images/gb_blank.gif
+%%DATADIR%%/interfaces/Plush/templates/static/images/gb_close.gif
+%%DATADIR%%/interfaces/Plush/templates/static/images/gb_overlay.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/h_postprocessing.gif
+%%DATADIR%%/interfaces/Plush/templates/static/images/hv_del.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/hv_join.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/hv_par2.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/hv_unrar.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/hv_unzip.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_close.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_connections.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_directories.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_disconnect.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_email.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_general.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_help.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_rss.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_scheduling.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_servers.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_switches.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_config_test_email.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_delete.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_delete_hover.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/icon_exclamation.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/nzo_bottom.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/nzo_delete.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/nzo_down.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/nzo_reload.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/nzo_top.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/nzo_up.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/o_refresh_handle.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/o_sidebyside.png
+%%DATADIR%%/interfaces/Plush/templates/static/images/o_topbottom.png
+%%DATADIR%%/interfaces/Plush/templates/static/javascripts/interface.js
+%%DATADIR%%/interfaces/Plush/templates/static/javascripts/jquery-1.2.1.pack.js
+%%DATADIR%%/interfaces/Plush/templates/static/javascripts/jquery.corner.js
+%%DATADIR%%/interfaces/Plush/templates/static/javascripts/plush.js
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/plush.css
+%%DATADIR%%/interfaces/smpl/LICENSE.txt
+%%DATADIR%%/interfaces/smpl/README.txt
+%%DATADIR%%/interfaces/smpl/templates/config.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_directories.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_email.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_general.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_rss.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_scheduling.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_server.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_switches.tmpl
+%%DATADIR%%/interfaces/smpl/templates/connection_info.tmpl
+%%DATADIR%%/interfaces/smpl/templates/default.css
+%%DATADIR%%/interfaces/smpl/templates/history.tmpl
+%%DATADIR%%/interfaces/smpl/templates/main.tmpl
+%%DATADIR%%/interfaces/smpl/templates/nzo.tmpl
+%%DATADIR%%/interfaces/smpl/templates/queue.tmpl
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Async.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Base.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Color.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/DOM.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/DateTime.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/DragAndDrop.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Format.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Iter.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Logging.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/LoggingPane.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/MochiKit.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/MockDOM.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Position.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Selector.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Signal.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Sortable.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Style.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Test.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/Visual.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/__package__.js
+%%DATADIR%%/interfaces/smpl/templates/static/PlotKit/Base.js
+%%DATADIR%%/interfaces/smpl/templates/static/PlotKit/Canvas.js
+%%DATADIR%%/interfaces/smpl/templates/static/PlotKit/EasyPlot.js
+%%DATADIR%%/interfaces/smpl/templates/static/PlotKit/Layout.js
+%%DATADIR%%/interfaces/smpl/templates/static/PlotKit/PlotKit.js
+%%DATADIR%%/interfaces/smpl/templates/static/PlotKit/PlotKit_Packed.js
+%%DATADIR%%/interfaces/smpl/templates/static/PlotKit/SVG.js
+%%DATADIR%%/interfaces/smpl/templates/static/PlotKit/SweetCanvas.js
+%%DATADIR%%/interfaces/smpl/templates/static/PlotKit/SweetSVG.js
+%%DATADIR%%/interfaces/smpl/templates/static/PlotKit/dummy.svg
+%%DATADIR%%/interfaces/smpl/templates/static/PlotKit/excanvas.js
+%%DATADIR%%/interfaces/smpl/templates/static/excanvas.js
+%%DATADIR%%/interfaces/smpl/templates/static/feed-icon-14x14.png
+%%DATADIR%%/interfaces/smpl/templates/static/images/32px-Crystal_Clear_action_stop.png
+%%DATADIR%%/interfaces/smpl/templates/static/images/ajax-loader.gif
+%%DATADIR%%/interfaces/smpl/templates/static/images/favicon.ico
+%%DATADIR%%/interfaces/smpl/templates/static/sabnzbd_small3.gif
+@dirrm share/sabnzbdplus/interfaces/smpl/templates/static/images
+@dirrm share/sabnzbdplus/interfaces/smpl/templates/static/PlotKit
+@dirrm share/sabnzbdplus/interfaces/smpl/templates/static/MochiKit
+@dirrm share/sabnzbdplus/interfaces/smpl/templates/static
+@dirrm share/sabnzbdplus/interfaces/smpl/templates
+@dirrm share/sabnzbdplus/interfaces/smpl
+@dirrm share/sabnzbdplus/interfaces/Plush/templates/static/stylesheets
+@dirrm share/sabnzbdplus/interfaces/Plush/templates/static/javascripts
+@dirrm share/sabnzbdplus/interfaces/Plush/templates/static/images
+@dirrm share/sabnzbdplus/interfaces/Plush/templates/static
+@dirrm share/sabnzbdplus/interfaces/Plush/templates
+@dirrm share/sabnzbdplus/interfaces/Plush
+@dirrm share/sabnzbdplus/interfaces/Default/templates/static/stylesheets
+@dirrm share/sabnzbdplus/interfaces/Default/templates/static/images
+@dirrm share/sabnzbdplus/interfaces/Default/templates/static
+@dirrm share/sabnzbdplus/interfaces/Default/templates
+@dirrm share/sabnzbdplus/interfaces/Default
+@dirrm share/sabnzbdplus/interfaces
+@dirrm share/sabnzbdplus
+%%PYTHON_SITELIBDIR%%/sabnzbd/__init__.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/articlecache.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/assembler.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/constants.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/decoder.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/decorators.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/trylist.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/articlecache.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/decoder.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/decorators.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/trylist.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/articlecache.pyo
-%%PYTHON_SITELIBDIR%%/sabnzbd/decoder.pyo
-%%PYTHON_SITELIBDIR%%/sabnzbd/decorators.pyo
-%%PYTHON_SITELIBDIR%%/sabnzbd/trylist.pyo
-%%PYTHON_SITELIBDIR%%/sabnzbd/__init__.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sabnzbd/assembler.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/assembler.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/assembler.pyo
-%%PYTHON_SITELIBDIR%%/sabnzbd/constants.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/constants.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/constants.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/downloader.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/downloader.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/downloader.pyo
+%%PYTHON_SITELIBDIR%%/sabnzbd/email.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/interface.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/interface.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/interface.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/misc.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/misc.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/misc.pyo
-%%PYTHON_SITELIBDIR%%/sabnzbd/rss.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/rss.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/rss.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/newsunpack.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/newsunpack.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/newsunpack.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/newswrapper.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/newswrapper.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/newswrapper.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/nzbgrab.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/nzbgrab.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/nzbgrab.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/nzbqueue.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/nzbqueue.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/nzbqueue.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/nzbstuff.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/nzbstuff.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/nzbstuff.pyo
+%%PYTHON_SITELIBDIR%%/sabnzbd/rss.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/trylist.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/__init__.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/configobj.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/configobj.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/configobj.pyo
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/json.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/kronos.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/kronos.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/kronos.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/listquote.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/listquote.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/listquote.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/__init__.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/auth.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/auth.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/auth.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/filter.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/filter.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/filter.pyo
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/providers.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/providers.pyc
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth/providers.pyo
-share/%%PORTNAME%%/SABnzbd.ini.sample
-share/%%PORTNAME%%/templates/config.tmpl
-share/%%PORTNAME%%/templates/config_directories.tmpl
-share/%%PORTNAME%%/templates/config_general.tmpl
-share/%%PORTNAME%%/templates/config_rss.tmpl
-share/%%PORTNAME%%/templates/config_scheduling.tmpl
-share/%%PORTNAME%%/templates/config_server.tmpl
-share/%%PORTNAME%%/templates/config_switches.tmpl
-share/%%PORTNAME%%/templates/connection_info.tmpl
-share/%%PORTNAME%%/templates/default.css
-share/%%PORTNAME%%/templates/history.tmpl
-share/%%PORTNAME%%/templates/main.tmpl
-share/%%PORTNAME%%/templates/nzo.tmpl
-share/%%PORTNAME%%/templates/placeholder.txt
-share/%%PORTNAME%%/templates/queue.tmpl
-share/%%PORTNAME%%/templates/static/placeholder.txt
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADE.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/%%PORTNAME%%/templates/static
-@dirrm share/%%PORTNAME%%/templates
-@dirrm share/%%PORTNAME%%
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/rsslib.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/sendEmail.pl
 @dirrm %%PYTHON_SITELIBDIR%%/sabnzbd/utils/multiauth
 @dirrm %%PYTHON_SITELIBDIR%%/sabnzbd/utils
-@dirrm %%PYTHON_SITELIBDIR%%/sabnzbd
+@dirrm %%PYTHON_SITELIBDIR%%/sabnzbd/
+@dirrmtry %%PYTHON_SITELIBDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/ISSUES.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

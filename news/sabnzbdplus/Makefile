@@ -1,34 +1,33 @@
-# New ports collection makefile for:	sabnzbd
-# Date created:				16 March 2006
+# New ports collection makefile for:   sabnzdbplus
+# Date created:				January 2008
 # Whom:					Daniel Bretoi
 #
 # $FreeBSD$
 #
 
-PORTNAME=	sabnzbd
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTNAME=	sabnzbdplus
+PORTVERSION=	0.3.0
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sabnzbd
-DISTNAME=	SABnzbd-${PORTVERSION}
+MASTER_SITES=	SF/sabnzbdplus
+DISTNAME=	SABnzbd-${PORTVERSION}-src
 
 MAINTAINER=	daniel@netwalk.org
 COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
 		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy-old \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils \
 		${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_PYTHON=	2.4+
-USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	SABnzbd
+NO_BUILD=yes
+USE_ZIP=yes
 
+WRKSRC=	${WRKDIR}/SABnzbd-${PORTVERSION}
 PLIST_SUB=	PORTNAME=${PORTNAME}
 SUB_LIST+=	PORTNAME=${PORTNAME}
-SUB_FILES=	pkg-message
+CONFLICTS=	sabzndb-0.*
 
 OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
 		UNRAR "Often required for unpacking many downloads." on \
@@ -49,11 +48,26 @@ RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PORTNAME%%|${PORTNAME}|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s:/usr/bin/python:${PYTHON_CMD}:g" \
+		 ${WRKSRC}/SABnzbd.py
+	@${REINPLACE_CMD} -e "s:%%PREFIX%%:'${DATADIR}':g" \
+		 ${WRKSRC}/SABnzbd.py
+
+# the NO_BUILD option stops execution after configure. This should really be
+# post-build
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/SABnzbd.py ${PREFIX}/bin/SABnzbd.py
+	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
+	${CP} -rp ${WRKSRC}/sabnzbd ${PYTHONPREFIX_SITELIBDIR}/
+	${INSTALL_SCRIPT} -d ${DATADIR}
+	${CP} -rp ${WRKSRC}/interfaces ${DATADIR}
 
 post-install:
-	${CHMOD} -R go+r ${PREFIX}/share/${PORTNAME}/
-	${CHMOD} -R go+r ${PREFIX}/share/doc/${PORTNAME}/
-	@${CAT} ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in CHANGELOG.txt INSTALL.txt   ISSUES.txt    LICENSE.txt   README.txt
+	${CP} ${WRKSRC}/$i ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
