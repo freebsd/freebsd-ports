@@ -25,13 +25,12 @@ EXTRACT_ONLY=	${GS_SRCS} ${IJS_SRCS}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL Postscript interpreter
 
-CONFLICTS=	gambc-* ghostscript-gnu-*
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
-CONFLICTS=	ghostscript-gnu*
+CONFLICTS=	gambc-* ghostscript-gnu-*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes

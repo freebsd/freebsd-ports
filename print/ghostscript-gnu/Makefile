@@ -55,8 +55,6 @@ EXTRACT_ONLY=	${GS_SRCS}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Postscript interpreter
 
-CONFLICTS=	gambc-* ghostscript-gpl-*
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
@@ -64,7 +62,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print
 # normazile WRKSRC so things like cups-pstoraster may work
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-CONFLICTS=	ghostscript-gpl*
+CONFLICTS=	gambc-* ghostscript-gpl-*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
