@@ -753,6 +753,7 @@
     SUBDIR += tbclock
     SUBDIR += tecnoballz
     SUBDIR += teewars
+    SUBDIR += teeworlds
     SUBDIR += teg
     SUBDIR += tenebrae
     SUBDIR += tetrinet
