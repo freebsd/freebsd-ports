@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlrpc-c
-PORTVERSION=	1.06.25
+PORTVERSION=	1.06.26
 CATEGORIES=	net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -57,6 +57,10 @@ PLIST_SUB+=	CLIENT="@comment "
 .else
 PLIST_SUB+=	CLIENT=""
 .endif
+
+post-extract:
+	@${FIND} ${WRKSRC} -type l -name blddir | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -type l -name srcdir | ${XARGS} ${RM}
 
 post-patch:
 	@${GREP} -lR '\-lpthread' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
