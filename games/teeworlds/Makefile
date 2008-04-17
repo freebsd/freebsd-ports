@@ -5,32 +5,37 @@
 # $FreeBSD$
 #
 
-PORTNAME=	teewars
-PORTVERSION=	0.3.4
+PORTNAME=	teeworlds
+PORTVERSION=	0.4.1
 CATEGORIES=	games
-MASTER_SITES=	http://www.teewars.com/files/ \
-		http://www.amdmi3.ru/distfiles/
+MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
+		http://www.teeworlds.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bam${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Platform game featuring buggers equipped with weapons
 
-USE_ZIP=	yes
 USE_PYTHON_BUILD=	yes
 
 BAM=	${WRKDIR}/bam.bin
+BAM_VERSION=	20080326
 BAM_TARGET=	release
 
-OPTIONS=	TEEWARS_SERVER_ONLY	"Build dedicated server only"	off
+OPTIONS=	TEEWORLDS_SERVER_ONLY	"Build dedicated server only"	off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TEEWARS_SERVER_ONLY)
+.if ${OSVERSION} < 700042
+BROKEN=		Does not compile
+.endif
+
+.if defined(WITH_TEEWORLDS_SERVER_ONLY)
 BAM_TARGET=	server_release
 PLIST_SUB+=	CLIENT="@comment "
 .else
 LIB_DEPENDS+=	portaudio.2:${PORTSDIR}/audio/portaudio2
+USE_XORG=	x11 xxf86vm
 USE_GL=		yes
 PLIST_SUB+=	CLIENT=""
 .endif
@@ -47,22 +52,22 @@ post-patch:
 		${XARGS} ${REINPLACE_CMD} -e 's|"data/|"${DATADIR}/|g'
 	@${REINPLACE_CMD} -e 's|"data/|"${DATADIR}/|g' ${WRKSRC}/datasrc/*
 
-# build bam executable - teewars own build system
+# build bam executable - teeworlds own build system
 pre-build:
 	cd ${WRKDIR}/bam && ${CC} ${CFLAGS} src/tools/txt2c.c -o src/tools/txt2c
 	cd ${WRKDIR}/bam && src/tools/txt2c < src/base.bam > src/internal_base.h
 	cd ${WRKDIR}/bam && ${CC} ${CFLAGS} src/lua/src/*.c src/lua/src/lib/*.c \
 		src/*.c -Isrc/lua/include -o ${BAM} -lm ${PTHREAD_LIBS}
 
-# build teewars
+# build teeworlds
 do-build:
-	cd ${WRKSRC} && ${BAM} ${BAM_TARGET}
+	cd ${WRKSRC} && ${BAM} -v ${BAM_TARGET}
 
 do-install:
-.if !defined(WITH_TEEWARS_SERVER_ONLY)
-	${INSTALL_PROGRAM} ${WRKSRC}/teewars ${PREFIX}/bin
+.if !defined(WITH_TEEWORLDS_SERVER_ONLY)
+	${INSTALL_PROGRAM} ${WRKSRC}/teeworlds ${PREFIX}/bin
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/teewars_srv ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/teeworlds_srv ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR}/
 

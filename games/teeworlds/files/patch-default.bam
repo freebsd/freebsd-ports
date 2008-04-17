@@ -1,9 +1,12 @@
---- default.bam.orig	2008-02-09 22:10:40.000000000 +0300
-+++ default.bam	2008-02-18 00:06:31.000000000 +0300
-@@ -173,19 +173,20 @@
- 		settings.cc.flags = "/wd4244"
- 	else
- 		settings.cc.flags = "-Wall"
+--- default.bam.orig	2008-03-23 16:34:56.000000000 +0300
++++ default.bam	2008-03-23 22:39:30.000000000 +0300
+@@ -207,14 +207,16 @@
+ 		if platform == "macosx" then
+ 			settings.cc.flags = "-Wall -fno-exceptions"
+ 		else
+-			settings.cc.flags = "-Wall -fstack-protector -fstack-protector-all -fno-exceptions"
++			settings.cc.flags = settings.cc.flags .. " -Wall -fstack-protector -fstack-protector-all -fno-exceptions"
+ 		end
 -		settings.linker.flags = ""
 +		settings.linker.flags = "-L/usr/local/lib/portaudio2 -L/usr/local/lib -pthread"
 +		settings.linker.libs:add("z")
@@ -17,22 +20,39 @@
  
  	if family == "unix" then
     		if platform == "macosx" then
- 			glfw_platform = "macosx"
- 		else
- 			glfw_platform = "x11"
+@@ -230,8 +232,6 @@
+ 			else
+ 				pa_hostapi = "oss"
+ 			end
+-			
 -			settings.linker.libs:add("pthread")
  		end
  	elseif family == "windows" then
  		glfw_platform = "win32"
-@@ -217,7 +218,6 @@
+@@ -263,11 +263,6 @@
+ 	pa_settings.cc.includes:add("src/engine/external/portaudio/src/common")
+ 	pa_settings.cc.includes:add("src/engine/external/portaudio/src/os/" .. pa_platform)
+ 	
+-	portaudio = Compile(pa_settings,
+-		Collect("src/engine/external/portaudio/src/common/*.c"),
+-		Collect("src/engine/external/portaudio/src/os/" .. pa_platform .. "/*.c"),
+-		Collect("src/engine/external/portaudio/src/hostapi/" .. pa_hostapi .. "/*.c"))
+-	
+ 	-- build game components
+ 	engine_settings = settings:copy()
+ 	
+@@ -277,9 +272,8 @@
+    		if platform == "macosx" then
+ 			engine_settings.cc.flags = "-Wall"
  		else
- 			engine_settings.cc.flags = "-Wall -pedantic-errors"
+-			engine_settings.cc.flags = "-Wall -pedantic-errors"
++			engine_settings.cc.flags = engine_settings.cc.flags .. " -Wall -pedantic-errors"
  		end
 -		engine_settings.linker.flags = ""
  	end
  
  	-- server
-@@ -237,10 +237,11 @@
+@@ -299,10 +293,11 @@
  			client_settings.linker.frameworks:add("AudioToolbox")
  			client_settings.linker.frameworks:add("AudioUnit")
  		else
@@ -45,27 +65,24 @@
  		end
  	elseif family == "windows" then
  		client_settings.linker.libs:add("opengl32.lib")
-@@ -249,10 +250,8 @@
+@@ -311,7 +306,6 @@
  	end
  
  	external_settings = settings:copy()
 -	zlib = Compile(external_settings, Collect("src/engine/external/zlib/*.c"))
  	wavpack = Compile(external_settings, Collect("src/engine/external/wavpack/*.c"))
  	pnglite = Compile(external_settings, Collect("src/engine/external/pnglite/*.c"))
--	portaudio = Compile(external_settings, Collect("src/engine/external/pa.c"))
- 	
- 	engine = Compile(engine_settings, Collect("src/engine/*.c"))
- 	client = Compile(client_settings, Collect("src/engine/client/*.c"))
-@@ -280,7 +279,7 @@
+ 
+@@ -337,7 +331,7 @@
  	
  	-- build client, server and master server
- 	client_exe = Link(client_settings, "teewars", game_shared, game_client,
--		engine, client, editor, glfw, portaudio, zlib, pnglite, wavpack,
-+		engine, client, editor, glfw, pnglite, wavpack,
+ 	client_exe = Link(client_settings, "teeworlds", game_shared, game_client,
+-		engine, client, game_editor, glfw, portaudio, zlib, pnglite, wavpack,
++		engine, client, game_editor, glfw, pnglite, wavpack,
  		client_link_other)
  
- 	server_exe = Link(server_settings, "teewars_srv", engine, server,
-@@ -326,7 +325,7 @@
+ 	server_exe = Link(server_settings, "teeworlds_srv", engine, server,
+@@ -383,7 +377,7 @@
  release_settings.config_name = "release"
  release_settings.config_ext = ""
  release_settings.debug = 0
