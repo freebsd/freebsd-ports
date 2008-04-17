@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ns
-PORTVERSION=	2.29
-PORTREVISION=	2
+PORTVERSION=	2.30
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	ns-src-${PORTVERSION}
@@ -30,10 +29,6 @@ MAKE_ARGS+=	"LDFLAGS=${LDFLAGS}"
 ALL_TARGET=
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/src/local/Tcl-1.0 \\|${LOCALBASE}/include/tclcl \\|g' \
