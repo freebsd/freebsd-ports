@@ -7,6 +7,7 @@
 
 PORTNAME=	PasteScript
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://pypi.python.org/packages/source/P/PasteScript/ \
 		${MASTER_SITE_LOCAL} \
@@ -20,7 +21,7 @@ COMMENT=	A pluggable command-line frontend
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	cheetah:${PORTSDIR}/devel/py-cheetah \
-		${PYTHON_SITELIBDIR}/${PYFLUP_EGG}/flup/__init__.py:${PORTSDIR}/www/py-flup \
+		${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup \
 		${PYTHON_SITELIBDIR}/${PYPASTE_EGG}/paste/__init__.py:${PORTSDIR}/www/py-paste \
 		${PYTHON_SITELIBDIR}/${PYPASTEDEPLOY_EGG}/paste/deploy/__init__.py:${PORTSDIR}/www/py-pastedeploy \
 		${PYTHON_SITELIBDIR}/${PYWSGIUTILS_EGG}:${PORTSDIR}/devel/py-wsgiutils \
@@ -43,7 +44,6 @@ PYPASTESCRIPT_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
 
 .include <bsd.port.pre.mk>
 
-PYFLUP_EGG!=	${MAKE} -f ${PORTSDIR}/www/py-flup/Makefile -V PYFLUP_EGG
 PYPASTE_EGG!=	${MAKE} -f ${PORTSDIR}/www/py-paste/Makefile -V PYPASTE_EGG
 PYPASTEDEPLOY_EGG!=	${MAKE} -f ${PORTSDIR}/www/py-pastedeploy/Makefile -V PYPASTEDEPLOY_EGG
 PYWSGIUTILS_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-wsgiutils/Makefile -V PYWSGIUTILS_EGG
