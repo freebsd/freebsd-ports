@@ -55,7 +55,7 @@ ADPMAXIDX=`expr ${ADPCOUNT} - 1`
 
 rc=0
 for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
-	echo "Adpater: ${ctrl}"
+	echo "Adapter: ${ctrl}"
 
 	# Print summary information.
 	echo "------------------------------------------------------------------------"
