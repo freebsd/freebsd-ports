@@ -19,7 +19,6 @@ COMMENT=	Quicken-like money and finance manager
 BUILD_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
     		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		ofx.4:${PORTSDIR}/finance/libofx \
 		gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38 \
 		goffice-0.4:${PORTSDIR}/devel/goffice04
 RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
@@ -31,7 +30,9 @@ RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
 		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist \
 		${LOCALBASE}/share/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
 
-OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off
+OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off	\
+		OFX		"OFX support"				off	\
+		POSTGRESQL	"Enable Postgresql as Backend"		off
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -44,11 +45,10 @@ USE_GNOME=	gnomeprefix libgsf_gnome libglade2 \
 		libgnomeprint libgnomeprintui
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+GC_LIBS=	-L${LOCALBASE}/lib -lintl
 CONFIGURE_ARGS=--with-glib-config=${GLIB_CONFIG} \
-		--enable-ofx \
 		--disable-error-on-warning
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=		gnc-prices.1 gnucash.1
 INFO=		gnucash-design
@@ -75,10 +75,32 @@ GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 LIB_DEPENDS+=	aqbanking.21:${PORTSDIR}/finance/aqbanking \
 		ktoblzcheck.6:${PORTSDIR}/finance/ktoblzcheck
 CONFIGURE_ARGS+=--enable-hbci
+GC_LIBS+=	-laqbanking
 PLIST_SUB+=	AQBANKING=""
 .else
 CONFIGURE_ARGS+=--disable-hbci
 PLIST_SUB+=	AQBANKING="@comment "
 .endif
+
+.if defined(WITH_OFX)
+CONFIGURE_ARGS+=--enable-ofx
+LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
+PLIST_SUB+=     OFX=""
+.else
+CONFIGURE_ARGS+=--disable-ofx
+PLIST_SUB+=     OFX="@comment "
+.endif
+
+.if defined(WITH_POSTGRESQL)
+CONFIGURE_ARGS+=--enable-sql
+PLIST_SUB+=     PGBACKEND=""
+USE_PGSQL+=	yes
+GC_LIBS+=	-lpq
+.else
+CONFIGURE_ARGS+=--disable-sql
+PLIST_SUB+=     PGBACKEND="@comment "
+.endif
+
+CONFIGURE_ENV+=	LIBS="${GC_LIBS}"
 
 .include <bsd.port.post.mk>
