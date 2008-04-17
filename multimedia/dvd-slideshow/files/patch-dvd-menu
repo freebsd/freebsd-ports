@@ -1,0 +1,25 @@
+--- dvd-menu.orig	2008-03-05 23:20:15.000000000 -0700
++++ dvd-menu	2008-03-05 23:22:38.000000000 -0700
+@@ -804,8 +804,8 @@
+ subtitle_code="EN"
+ 
+ # define some possible fonts:
+-font_dir="/usr/share/fonts/"
+-default_font1='n019004l.pfb' # helvetica bold URW fonts
++font_dir="/usr/local/lib/X11/fonts/"
++default_font1='n019004l.ttf' # helvetica bold URW fonts
+ default_font2='helb____.ttf' # helvetica bold truetype
+ 
+ ## other cool colors:  cadetblue cornflowerblue midnightblue
+@@ -1577,9 +1577,9 @@
+ 	        checkforprog ffmpeg
+ 	        echo "[dvd-menu] Creating ac3 audio..."
+ 	        check_rm "$tmpdir/audio.ac3"
+-	        ffmpeg -i "$tmpdir/audio.wav" -vn -y -ab 192 -acodec ac3 -ar $audio_sample_rate -ac 6 "$tmpdir/audio.ac3" >> "$logfile" 2>&1
++	        ffmpeg -i "$tmpdir/audio.wav" -vn -y -ab 192k -acodec ac3 -ar $audio_sample_rate -ac 6 "$tmpdir/audio.ac3" >> "$logfile" 2>&1
+ 		if [ "$fadein" -eq 1 ] || [ "$fadeout" -eq 1 ] ; then
+-	        	ffmpeg -i "$tmpdir/fade_audio.wav" -vn -y -ab 192 -acodec ac3 -ar $audio_sample_rate -ac 6 "$tmpdir/fade_audio.ac3" >> "$logfile" 2>&1
++	        	ffmpeg -i "$tmpdir/fade_audio.wav" -vn -y -ab 192k -acodec ac3 -ar $audio_sample_rate -ac 6 "$tmpdir/fade_audio.ac3" >> "$logfile" 2>&1
+ 		fi
+ 	else
+ 		## toolame is way faster! (3x in my test)
