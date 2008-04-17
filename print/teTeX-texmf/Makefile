@@ -25,7 +25,8 @@ RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/share/fonts/cmpsfont/README:${PORTSDIR}/print/cmpsfont \
 		${LOCALBASE}/share/fonts/amspsfont/READ.ME:${PORTSDIR}/print/amspsfnt
 
-CONFLICTS=	latex2e-[0-9]* tex-[0-9]* dvips-[0-9]* xdvi-[0-9]*
+CONFLICTS=	latex2e-[0-9]* tex-[0-9]* dvips-[0-9]* xdvi-[0-9]* \
+		ja-ptext-base-[0-9]*
 
 .include <bsd.port.pre.mk>
 
@@ -36,7 +37,6 @@ PLIST_SUB=	TEXMFDIR=${TEXMFDIR} \
 		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
 		MKTEXLSR=${MKTEXLSR} \
 		TEXMF_LSR=${TEXMF_LSR}
-CONFLICTS=	ja-ptex-base-[0-9]*
 
 TETEX_TEXMF_SRC=tetex-texmf-${PORTVERSION}.tar.gz
 TEXMFDIR=	share/texmf
