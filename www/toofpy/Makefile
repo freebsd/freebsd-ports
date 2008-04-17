@@ -8,7 +8,8 @@
 PORTNAME=	TooFPy
 PORTVERSION=	0.3.7
 CATEGORIES=	www python
-MASTER_SITES=	http://simon.bofh.ms/~gb/
+MASTER_SITES=	http://simon.bofh.ms/~gb/ \
+		LOCAL/beech
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	toolserver-snapshot.tar.gz
 
