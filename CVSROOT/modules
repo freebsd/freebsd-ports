@@ -14956,6 +14956,7 @@ sablevm		ports/java/sablevm
 sablevm-classpath	ports/java/sablevm-classpath
 sablotron	ports/textproc/sablotron
 sabnzbd		ports/news/sabnzbd
+sabnzbdplus	ports/news/sabnzbdplus
 safecat		ports/sysutils/safecat
 saferpay	ports/security/saferpay
 safesh		ports/security/safesh
