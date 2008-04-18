@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.1
-PORTREVISION=	13
+DISTVERSION=	1.3.2rc1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -37,10 +36,13 @@ PORTDOCSdoc=	Configuration.html faq.html
 PORTDOCScontrib=mod_ifsession.html mod_radius.html mod_rewrite.html \
 		mod_tls.html mod_wrap2.html mod_wrap2_file.html mod_wrap2_sql.html \
 		mod_ban.html mod_quotatab_radius.html ftpasswd.html
+PORTDOCSmodule=	mod_auth_file.html mod_auth_pam.html mod_cap.html mod_ctrls.html \
+		mod_delay.html mod_dso.html mod_facl.html mod_facts.html \
+		mod_ident.html mod_lang.html
 PORTDOCSreadme=	README README.DSO README.FreeBSD README.IPv6 README.LDAP README.PAM \
 		README.capabilities README.classes README.facl README.modules \
 		README.ports RELEASE_NOTES
-PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib} ${PORTDOCSreadme}
+PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib} ${PORTDOCSreadme} ${PORTDOCSmodule}
 
 PORTEXAMPLES=	ASCII.html CreateHome.html Filters.html SQL.html Umask.html \
 		AuthFiles.html DNS.html Globbing.html SSH.html Upgrade.html \
@@ -65,8 +67,10 @@ CONFIGURE_ARGS=	--localstatedir=/var/run \
 OPTIONS=	IPV6 "Use IPv6" off \
 		LDAP "Use LDAP" off \
 		LDAP_TLS "Use LDAP TLS (Requires LDAP, OPENSSL)" off\
-		MYSQL "MySQL auth (Can be combined with PGSQL)" off \
-		PGSQL "Postgres auth (Can be combined with MYSQL)" off \
+		MYSQL "MySQL auth (Can be combined)" off \
+		PGSQL "Postgres auth (Can be combined)" off \
+		SQLITE "SQLite auth (Can be combined)" off \
+		ODBC "ODBC (Can be combined)" off \
 		TDS "FreeTDS - Sybase & MS-SQL auth (Exclusive)" off \
 		OPENSSL "Include mod_tls" on \
 		QUOTA "Include mod_quota" off \
@@ -82,6 +86,7 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		QUOTATAB_RADIUS "include mod_quotatab_radius" off \
 		BAN "Include mod_ban (Requires CTRLS)" off \
 		NLS "Use nls (builds mod_lang)" off \
+		UNIQUE "Include mod_unique_id" off \
 		CLAMAV "Include mod_clamav" off \
 		DIGEST "Include mod_digest" off \
 		COMB "Include mod_comb (multistream upload)" off \
@@ -187,6 +192,21 @@ INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .endif
 
+.if defined(WITH_SQLITE)
+USE_SQLITE=	yes
+MODULES:=${MODULES}:mod_sql_sqlite
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+.endif
+
+.if defined(WITH_ODBC)
+LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
+MODULES:=${MODULES}:mod_sql_odbc
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+CONFIGURE_ARGS+=LIBS=-liodbc LD_LIBRARY_PATH=/usr/local/lib LDFLAGS=-L/usr/local/lib
+.endif
+
 .if ${MODULES:M*mod_sql_*}
 MODULES:=mod_sql${MODULES}
 PLIST_FILES+=	include/proftpd/mod_sql.h
@@ -216,6 +236,10 @@ MODULES:=${MODULES}:mod_quotatab_ldap
 .if defined(WITH_PGSQL) || defined(WITH_MYSQL)
 MODULES:=${MODULES}:mod_quotatab_sql
 .endif
+.endif
+
+.if defined(WITH_UNIQUE)
+MODULES:=${MODULES}:mod_unique_id
 .endif
 
 .if defined(WITH_CLAMAV)
@@ -328,6 +352,7 @@ post-install:
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCSdoc} ${DOCSDIR}/
 	@cd ${WRKSRC}/doc/contrib && ${INSTALL_DATA} ${PORTDOCScontrib} ${DOCSDIR}/
+	@cd ${WRKSRC}/doc/modules && ${INSTALL_DATA} ${PORTDOCSmodule} ${DOCSDIR}/
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCSreadme} ${DOCSDIR}/
 .endif
 .if !defined(NOPORTEXAMPLES)
@@ -340,3 +365,4 @@ post-install:
 .endif
 
 .include <bsd.port.post.mk>
+
