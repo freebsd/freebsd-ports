@@ -1377,6 +1377,7 @@
     SUBDIR += xpi-clearfields
     SUBDIR += xpi-close-all-tabs
     SUBDIR += xpi-colorfultabs
+    SUBDIR += xpi-cookiesafe
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-customizegoogle
     SUBDIR += xpi-cutemenus-crystalsvg
