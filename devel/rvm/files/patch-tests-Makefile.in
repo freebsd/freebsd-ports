@@ -1,0 +1,11 @@
+--- tests/Makefile.in.orig	2008-04-15 17:14:06.000000000 +0000
++++ tests/Makefile.in	2008-04-15 17:14:38.000000000 +0000
+@@ -60,7 +60,7 @@
+ am_testrvm_OBJECTS = testrvm.$(OBJEXT)
+ testrvm_OBJECTS = $(am_testrvm_OBJECTS)
+ testrvm_DEPENDENCIES = $(top_builddir)/rvm/librvmlwp.la
+-DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
++DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir) -I$(includedir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
