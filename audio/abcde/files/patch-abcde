@@ -1,5 +1,13 @@
 --- abcde.old	Tue Nov 22 13:12:14 2005
 +++ abcde	Tue Nov 22 13:12:51 2005
+@@ -2169,6 +2169,7 @@
+ 	HTTPGET=fetch
+ 	NEEDCDROMID=y
+ 	OSFLAVOUR=FBSD
++	MD5SUM=md5
+ elif [ X$(uname) = "XDarwin" ] ; then
+ 	HTTPGET=curl
+ 	OSFLAVOUR=OSX
 @@ -2453,17 +2453,18 @@
  
  # Allow -o OUTPUT(1):OPTIONS(1),...,OUTPUT(N):OPTIONS(N) mode of operation
