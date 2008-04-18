@@ -1,0 +1,31 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/DOM/.packlist
+%%SITE_PERL%%/MDOM/Assignment.pm
+%%SITE_PERL%%/MDOM/Command.pm
+%%SITE_PERL%%/MDOM/Directive.pm
+%%SITE_PERL%%/MDOM/Document.pm
+%%SITE_PERL%%/MDOM/Document/Gmake.pm
+%%SITE_PERL%%/MDOM/Dumper.pm
+%%SITE_PERL%%/MDOM/Element.pm
+%%SITE_PERL%%/MDOM/Node.pm
+%%SITE_PERL%%/MDOM/Rule.pm
+%%SITE_PERL%%/MDOM/Rule/Simple.pm
+%%SITE_PERL%%/MDOM/Rule/StaticPattern.pm
+%%SITE_PERL%%/MDOM/Token.pm
+%%SITE_PERL%%/MDOM/Token/Bare.pm
+%%SITE_PERL%%/MDOM/Token/Comment.pm
+%%SITE_PERL%%/MDOM/Token/Continuation.pm
+%%SITE_PERL%%/MDOM/Token/Interpolation.pm
+%%SITE_PERL%%/MDOM/Token/Modifier.pm
+%%SITE_PERL%%/MDOM/Token/Separator.pm
+%%SITE_PERL%%/MDOM/Token/Whitespace.pm
+%%SITE_PERL%%/MDOM/Unknown.pm
+%%SITE_PERL%%/MDOM/Util.pm
+%%SITE_PERL%%/Makefile/DOM.pm
+@dirrmtry %%SITE_PERL%%/Makefile
+@dirrmtry %%SITE_PERL%%/MDOM/Token
+@dirrmtry %%SITE_PERL%%/MDOM/Rule
+@dirrmtry %%SITE_PERL%%/MDOM/Document
+@dirrmtry %%SITE_PERL%%/MDOM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/DOM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile
