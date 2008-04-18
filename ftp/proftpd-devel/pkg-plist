@@ -15,6 +15,7 @@ include/proftpd/data.h
 include/proftpd/default_paths.h
 include/proftpd/dirtree.h
 include/proftpd/display.h
+include/proftpd/encode.h
 include/proftpd/env.h
 include/proftpd/event.h
 include/proftpd/feat.h
@@ -22,7 +23,6 @@ include/proftpd/fsio.h
 include/proftpd/ftp.h
 include/proftpd/glibc-glob.h
 include/proftpd/help.h
-include/proftpd/ident.h
 include/proftpd/inet.h
 include/proftpd/libsupp.h
 include/proftpd/log.h
@@ -44,11 +44,11 @@ include/proftpd/regexp.h
 include/proftpd/response.h
 include/proftpd/scoreboard.h
 include/proftpd/sets.h
+include/proftpd/str.h
 include/proftpd/support.h
 include/proftpd/table.h
 include/proftpd/timers.h
 include/proftpd/trace.h
-include/proftpd/utf8.h
 include/proftpd/var.h
 include/proftpd/version.h
 include/proftpd/xferlog.h
