@@ -52,7 +52,7 @@
  55.795636,	37.691646,	"marck"				# Moscow, Russia
  55.709525,	37.654288,	"glebius"			# Moscow, Russia
  55.783753,	37.631789,	"osa"				# Moscow, Russia
- 55.8,		37.6,		"ache,az,bsam,demon,maxim,rik,skv,stas,vsevolod,yar"	# Moscow, Russia
+ 55.8,		37.6,		"ache,az,bsam,demon,krion,maxim,rik,skv,stas,vsevolod,yar"	# Moscow, Russia
  55.768764,	37.588938,	"sergei"			# Moscow, Russia
  55.7203,	37.4314,	"sat"				# Moscow, Russia
  44.95,		34.1,		"phantom,ru"			# Simferopol, Ukraine
@@ -122,7 +122,6 @@
  50.9953,	6.9175,		"se"				# Cologne, Germany
  51.126809,	6.784074,	"oliver"			# Dormagen, Germany
  51.4666,	6.6166,		"ticso"				# Moers, Germany
- 51.097216,	6.459231	"krion"				# Juechen, Germany
  50.47,		6.42,		"brueffer"			# Aachen, Germany
  51.12,		6.41,		"andreas"			# Neuss, Germany
  50.76107,	6.09304,	"tg"				# Aachen, Germany
