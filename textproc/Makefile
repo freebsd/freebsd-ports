@@ -435,6 +435,7 @@
     SUBDIR += p5-MARC-Lint
     SUBDIR += p5-MARC-Record
     SUBDIR += p5-MKDoc-XML
+    SUBDIR += p5-Makefile-DOM
     SUBDIR += p5-Makefile-Parser
     SUBDIR += p5-MathML-Entities
     SUBDIR += p5-Net-YASA

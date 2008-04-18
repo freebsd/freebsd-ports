@@ -1,0 +1,11 @@
+This libary can serve as an advanced lexer for (GNU) makefiles. It
+parses makefiles as "documents" and the parsing is lossless. The
+results are data structures similar to DOM trees. The DOM trees hold
+every single bit of the information in the original input files,
+including white spaces, blank lines and makefile comments. That means
+it's possible to reproduce the original makefiles from the DOM trees.
+In addition, each node of the DOM trees is modifiable and so is the
+whole tree, just like the PPI module used for Perl source parsing and
+the HTML::TreeBuilder module used for parsing HTML source.
+
+WWW:	http://search.cpan.org/dist/Makefile-DOM/
