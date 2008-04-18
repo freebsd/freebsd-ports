@@ -7,7 +7,7 @@
 
 PORTNAME=	paraview
 PORTVERSION=	2.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v2.4/
 
@@ -63,8 +63,8 @@ do-configure:
 
 post-install:
 .for c2f in ${CMAKE2INST}
-	${SED} -e 's|${PATCH_WRKSRC}|${LIB_INSTDIR}|g' \
-		-e 's|${WRKSRC}|${LIB_INSTDIR}|g' \
+	${SED} -e 's|${WRKSRC}|${LIB_INSTDIR}|g' \
+		-e 's|${PATCH_WRKSRC}|${LIB_INSTDIR}|g' \
 		${WRKSRC}/${c2f} > ${LIB_INSTDIR}/`${BASENAME} ${c2f}`
 .endfor
 	${INSTALL_DATA} ${PATCH_WRKSRC}/ParaViewUse.cmake \
