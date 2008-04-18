@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mcabber
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.7
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 
@@ -16,7 +15,7 @@ COMMENT=	Small Jabber console client
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ssl
+CONFIGURE_ARGS=	--with-ssl --enable-sigwinch
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_OPENSSL=	yes
 USE_ICONV=	yes
