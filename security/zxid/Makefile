@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zxid
-PORTVERSION=	0.22
+PORTVERSION=	0.25
 CATEGORIES=	security www
 MASTER_SITES=	http://zxid.org/
 EXTRACT_SUFX=	.tgz
