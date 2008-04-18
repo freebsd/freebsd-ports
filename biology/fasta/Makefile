@@ -8,7 +8,8 @@
 PORTNAME=	fasta
 PORTVERSION=	21.u1.d1
 CATEGORIES=	biology
-MASTER_SITES=	http://ftp.virginia.edu/pub/fasta/
+MASTER_SITES=	http://faculty.virginia.edu/wrpearson/fasta/ \
+		ftp://ftp.ebi.ac.uk/pub/software/unix/fasta/
 DISTNAME=	fasta${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.shar.Z
 
