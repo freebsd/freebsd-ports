@@ -22,6 +22,7 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		LOCAL/beech:digest \
 		LOCAL/beech:comb \
 		LOCAL/beech:sql_tds
+PKGNAMESUFFIX=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -365,4 +366,3 @@ post-install:
 .endif
 
 .include <bsd.port.post.mk>
-
