@@ -9,7 +9,7 @@ PORTNAME=	dap
 PORTVERSION=	2.1.5
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.cee.hw.ac.uk/~richardk/downloads/
+MASTER_SITES=	http://www.sourcefiles.org/Multimedia/Soundfile_Editors/
 EXTRACT_SUFX=.tgz
 
 MAINTAINER=	ports@FreeBSD.org
