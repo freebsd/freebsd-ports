@@ -8,7 +8,7 @@
 PORTNAME=	pdf2djvu
 PORTVERSION=	0.4.5.1
 CATEGORIES=	converters
-MASTER_SITES=	http://pdf2djvu.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_${PORTVERSION}a${EXTRACT_SUFFIX}
 
 MAINTAINER=	darcsis@gmail.com
