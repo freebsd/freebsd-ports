@@ -8,7 +8,8 @@
 PORTNAME=	opencart
 PORTVERSION=	0.7.7
 CATEGORIES=	www misc
-MASTER_SITES=	http://open-cart.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PROJECTHOST=	open-cart
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
