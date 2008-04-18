@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_cband
 PORTVERSION=	0.9.7.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://cband.linux.pl/download/
 DISTNAME=	${PORTNAME:C/_/-/}-${PORTVERSION}
