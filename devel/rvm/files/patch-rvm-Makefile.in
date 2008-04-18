@@ -1,0 +1,11 @@
+--- rvm/Makefile.in.orig	2008-04-15 17:13:27.000000000 +0000
++++ rvm/Makefile.in	2008-04-15 17:13:46.000000000 +0000
+@@ -84,7 +84,7 @@
+ rvmutl_SOURCES = rvmutl.c
+ rvmutl_OBJECTS = rvmutl-rvmutl.$(OBJEXT)
+ rvmutl_DEPENDENCIES = librvmlwp.la
+-DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
++DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir) -I$(includedir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
