@@ -9564,6 +9564,7 @@ p5-Convert-Recode	ports/converters/p5-Convert-Recode
 p5-Convert-TNEF	ports/converters/p5-Convert-TNEF
 p5-Convert-UU	ports/converters/p5-Convert-UU
 p5-Convert-UUlib	ports/converters/p5-Convert-UUlib
+p5-Cookie-XS	ports/www/p5-Cookie-XS
 p5-Coro	ports/devel/p5-Coro
 p5-Crypt-Anubis	ports/security/p5-Crypt-Anubis
 p5-Crypt-AppleTwoFish	ports/security/p5-Crypt-AppleTwoFish
