@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine/HTTP/Prefork/.packlist
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Prefork.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Prefork/Handler.pm
+%%SITE_PERL%%/Catalyst/Engine/HTTP/Prefork/Restarter.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine/HTTP/Prefork
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrm %%SITE_PERL%%/Catalyst/Engine/HTTP/Prefork
+@dirrmtry %%SITE_PERL%%/Catalyst/Engine/HTTP
+@dirrmtry %%SITE_PERL%%/Catalyst/Engine
+@dirrmtry %%SITE_PERL%%/Catalyst
