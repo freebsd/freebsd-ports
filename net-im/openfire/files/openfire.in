@@ -25,6 +25,8 @@
 
 name="openfire"
 rcvar=${name}_enable
+load_rc_config $name
+
 # Set defaults
 : ${openfire_enable:=NO}
 : ${openfire_user:=${name}}
@@ -56,7 +58,6 @@ command_args="-f -p ${pidfile} ${java_command}"
 start_precmd="openfire_precmd"
 status_cmd="openfire_status"
 stop_cmd="openfire_stop"
-load_rc_config $name
 
 openfire_precmd() {
         touch ${pidfile}
