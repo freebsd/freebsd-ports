@@ -8,7 +8,7 @@
 PORTNAME=	pft
 PORTVERSION=	1.3
 CATEGORIES=	security
-MASTER_SITES=	http://www.phenoelit.de/hp/
+MASTER_SITES=	http://www.phenoelit-us.org/hp/
 DISTNAME=	libPJL-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
