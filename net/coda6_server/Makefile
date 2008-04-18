@@ -6,7 +6,7 @@
 
 PORTNAME=	coda
 PORTVERSION=	6.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 # as of 5 Oct 2006 the archive is not present on ftp.wu-wien.ac.at
 # but maybe it'll appear there soon
