@@ -28,6 +28,7 @@ sbin/purgevol_rep
 sbin/readdump
 sbin/startserver
 sbin/tape.pl
+sbin/tokentool
 sbin/updateclnt
 sbin/updatefetch
 sbin/updatesrv

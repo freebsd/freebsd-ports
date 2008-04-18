@@ -15,7 +15,6 @@ bin/parser
 bin/removeinc
 bin/repair
 bin/spy
-bin/vcodacon
 bin/xaskuser
 bin/xfrepair
 etc/coda/realms
