@@ -1,6 +1,7 @@
 bin/plb
+@unexec if cmp -s %D/etc/plb.conf.sample %D/etc/plb.conf; then rm -f %D/etc/plb.conf; fi
 etc/plb.conf.sample
-etc/rc.d/plb.sh.sample
+@exec if [ ! -f %D/etc/plb.conf ] ; then cp -p %D/%F %B/plb.conf; fi
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CONTACT
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
