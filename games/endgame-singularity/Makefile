@@ -6,9 +6,7 @@
 #
 
 PORTNAME=	singularity
-PORTVERSION=	0.26.0.1
-DISTVERSION=	0.26a
-PORTREVISION=	1
+DISTVERSION=	0.27
 CATEGORIES=	games
 MASTER_SITES=	http://emhsoft.com/singularity/ CENKES
 PKGNAMEPREFIX=	endgame-
@@ -36,7 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/py2exe/d;s|console.*|packages=["${PORTNAME}"],|;\
 		/name=/s|=.*|="${PORTNAME}",|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e '/data_loc = /s|=.*|= "${DATADIR}/"|;\
-		/musicpath/s|, ".."||' ${WRKSRC}/${PORTNAME}/g.py
+		/data_loc.*music/s|, ".."||' ${WRKSRC}/${PORTNAME}/g.py
 
 post-build:
 	@${ECHO_CMD} '#!${PYTHON_CMD}' > ${WRKSRC}/${PORTNAME}.py
