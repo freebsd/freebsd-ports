@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Memcached-libmemcached
-PORTVERSION=	0.19.01
+PORTVERSION=	0.19.02
 CATEGORIES=	databases devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/T/TI/TIMB
