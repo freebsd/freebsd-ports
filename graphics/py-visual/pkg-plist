@@ -87,6 +87,7 @@ bin/vpython
 %%PORTDOCS%%%%DOCSDIR%%/visual/texture-opacity-lighting.html
 %%PORTDOCS%%%%DOCSDIR%%/visual/vector.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tk-Visual.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/boxlighttest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bounce.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bounce2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colorsliders.py
@@ -109,6 +110,7 @@ bin/vpython
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/labels.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lathe.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lorenz.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mandelbrot.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/orbit.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/planar.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/randombox.py
