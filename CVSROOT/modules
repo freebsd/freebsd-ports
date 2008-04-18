@@ -9320,6 +9320,7 @@ p5-Catalyst-Controller-HTML-FormFu	ports/www/p5-Catalyst-Controller-HTML-FormFu
 p5-Catalyst-Devel	ports/www/p5-Catalyst-Devel
 p5-Catalyst-Engine-Apache	ports/www/p5-Catalyst-Engine-Apache
 p5-Catalyst-Engine-HTTP-POE	ports/www/p5-Catalyst-Engine-HTTP-POE
+p5-Catalyst-Engine-HTTP-Prefork	ports/www/p5-Catalyst-Engine-HTTP-Prefork
 p5-Catalyst-Enzyme	ports/www/p5-Catalyst-Enzyme
 p5-Catalyst-Example-InstantCRUD	ports/www/p5-Catalyst-Example-InstantCRUD
 p5-Catalyst-Helper-Controller-Scaffold	ports/www/p5-Catalyst-Helper-Controller-Scaffold
