@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rhino
-DISTVERSION=	1_6R7
+DISTVERSION=	1_7R1
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	lang java
@@ -27,7 +27,7 @@ ALL_TARGET=	jar
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 MAKE_ARGS=	-Dxmlbeans.url=file://${DISTDIR}/${DIST_SUBDIR}/xmlbeans-2.2.0.zip \
 		-Dswing-ex-url=file://${DISTDIR}/${DIST_SUBDIR}/src.zip
