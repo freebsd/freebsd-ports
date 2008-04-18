@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	coda
-PORTVERSION=	6.9.1
-PORTREVISION=	1
+PORTVERSION=	6.9.3
 CATEGORIES=	net
 # as of 5 Oct 2006 the archive is not present on ftp.wu-wien.ac.at
 # but maybe it'll appear there soon
@@ -16,19 +15,18 @@ MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/ \
 		ftp://ftp.wu-wien.ac.at/pub/systems/coda/src/
 PKGNAMESUFFIX=	-${CODA_SUITE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Server programs for a replicated high-performance network file system
 
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp \
 		rpc2.9:${PORTSDIR}/devel/rpc2 \
-		rvm.3:${PORTSDIR}/devel/rvm
+		rvmlwp.3:${PORTSDIR}/devel/rvm
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-ALL_TARGET=	coda
-INSTALL_TARGET=	${CODA_SUITE}-install
+CONFIGURE_ARGS+=	--enable-${CODA_SUITE}
 
 CODA_SUITE?=	server
 
