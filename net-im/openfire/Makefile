@@ -7,7 +7,7 @@
 
 PORTNAME=	openfire
 PORTVERSION=	3.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im java
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
