@@ -10,7 +10,8 @@ PORTVERSION=	1.0
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	www devel python
-MASTER_SITES=	http://googleappengine.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PROJECTHOST=	googleappengine
 DISTNAME=	${PORTNAME:S|-|_|}
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
