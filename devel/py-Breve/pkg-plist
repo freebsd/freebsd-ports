@@ -1,0 +1,4 @@
+bin/html2breve
+bin/soup2breve
+bin/xsd2breve
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
