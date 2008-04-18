@@ -20,10 +20,12 @@ USE_APACHE=	20+
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-apxs=${APXS}
 ALL_TARGET=	#
-PORTDOCS=	libpatricia.copyright
+PORTDOCS=	libpatricia.copyright documentation.txt faq.txt
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/libpatricia.copyright ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/documentation.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/faq.txt ${DOCSDIR}
 
 .include <bsd.port.mk>
