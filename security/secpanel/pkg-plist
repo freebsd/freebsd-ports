@@ -19,9 +19,11 @@ bin/secpanel
 %%DATADIR%%/images/swinback.gif
 %%DATADIR%%/images/swinback_gr.gif
 %%DATADIR%%/listserver.tcl
+%%DATADIR%%/multixterm
 %%DATADIR%%/secpanel.dist
 %%DATADIR%%/secpanel.wait
 %%DATADIR%%/secpanel_remoteconf.sh
 %%DATADIR%%/sp_scp.tcl
+%%DATADIR%%/termdefs
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
