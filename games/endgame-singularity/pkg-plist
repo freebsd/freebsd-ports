@@ -14,6 +14,9 @@ bin/singularity
 %%PYTHON_SITELIBDIR%%/singularity/clock.py
 %%PYTHON_SITELIBDIR%%/singularity/clock.pyc
 %%PYTHON_SITELIBDIR%%/singularity/clock.pyo
+%%PYTHON_SITELIBDIR%%/singularity/event.py
+%%PYTHON_SITELIBDIR%%/singularity/event.pyc
+%%PYTHON_SITELIBDIR%%/singularity/event.pyo
 %%PYTHON_SITELIBDIR%%/singularity/finance_screen.py
 %%PYTHON_SITELIBDIR%%/singularity/finance_screen.pyc
 %%PYTHON_SITELIBDIR%%/singularity/finance_screen.pyo
@@ -48,36 +51,43 @@ bin/singularity
 %%PYTHON_SITELIBDIR%%/singularity/tech.pyc
 %%PYTHON_SITELIBDIR%%/singularity/tech.pyo
 %%DATADIR%%/Attribution-ShareAlike 3.0.html
-%%DATADIR%%/acknowtt.ttf
-%%DATADIR%%/arrow.png
-%%DATADIR%%/bases.txt
-%%DATADIR%%/bases_en_US.txt
-%%DATADIR%%/bases_es_AR.txt
-%%DATADIR%%/click0.wav
-%%DATADIR%%/click1.wav
-%%DATADIR%%/click2.wav
-%%DATADIR%%/click3.wav
-%%DATADIR%%/earth.jpg
-%%DATADIR%%/events.txt
-%%DATADIR%%/events_en_US.txt
-%%DATADIR%%/events_es_AR.txt
-%%DATADIR%%/icon.png
-%%DATADIR%%/items.txt
-%%DATADIR%%/items_en_US.txt
-%%DATADIR%%/items_es_AR.txt
+%%DATADIR%%/bases.dat
+%%DATADIR%%/bases_en_US.dat
+%%DATADIR%%/bases_es_AR.dat
+%%DATADIR%%/events.dat
+%%DATADIR%%/events_en_US.dat
+%%DATADIR%%/events_es_AR.dat
+%%DATADIR%%/fonts/acknowtt.ttf
+%%DATADIR%%/fonts/vera.ttf
+%%DATADIR%%/images/arrow.png
+%%DATADIR%%/images/earth.jpg
+%%DATADIR%%/images/icon.png
+%%DATADIR%%/items.dat
+%%DATADIR%%/items_en_US.dat
+%%DATADIR%%/items_es_AR.dat
 %%DATADIR%%/music/.keep_me
 %%DATADIR%%/music-src/Advanced Simulacra.psy
+%%DATADIR%%/music-src/Awakening.psy
 %%DATADIR%%/music-src/By-Product.psy
 %%DATADIR%%/music-src/Coherence.psy
+%%DATADIR%%/music-src/Deprecation.psy
+%%DATADIR%%/music-src/Inevitable.psy
 %%DATADIR%%/music-src/Media Threat.psy
 %%DATADIR%%/music-src/README.txt
-%%DATADIR%%/strings_en_US.txt
-%%DATADIR%%/strings_es_AR.txt
-%%DATADIR%%/techs.txt
-%%DATADIR%%/techs_en_US.txt
-%%DATADIR%%/techs_es_AR.txt
-%%DATADIR%%/vera.ttf
+%%DATADIR%%/sounds/click0.wav
+%%DATADIR%%/sounds/click1.wav
+%%DATADIR%%/sounds/click2.wav
+%%DATADIR%%/sounds/click3.wav
+%%DATADIR%%/sounds/sounds.dat
+%%DATADIR%%/strings_en_US.dat
+%%DATADIR%%/strings_es_AR.dat
+%%DATADIR%%/techs.dat
+%%DATADIR%%/techs_en_US.dat
+%%DATADIR%%/techs_es_AR.dat
 @dirrm %%PYTHON_SITELIBDIR%%/singularity
-@dirrmtry %%DATADIR%%/music
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/music-src
+@dirrm %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%/music
 @dirrmtry %%DATADIR%%
