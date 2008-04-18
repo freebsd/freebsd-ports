@@ -7,7 +7,7 @@
 
 PORTNAME=	plb
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://plb.sunsite.dk/files/
 
@@ -19,25 +19,21 @@ LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 
+USE_RC_SUBR=	${PORTNAME}
+
 MAN8=		plb.8
 DOCS=		AUTHORS CONTACT COPYING NEWS README THANKS TODO
 
 .include <bsd.port.pre.mk>
 
-post-extract:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/plb.sh.sample \
-		> ${WRKSRC}/plb.sh.sample
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/plb.conf ${PREFIX}/etc/plb.conf.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/plb.sh.sample ${PREFIX}/etc/rc.d/plb.sh.sample
+	@if [ ! -f ${PREFIX}/etc/plb.conf ]; then \
+		${CP} -p ${PREFIX}/etc/plb.conf.sample ${PREFIX}/etc/plb.conf ; \
+	fi
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/plb
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/plb)
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/)
 .endif
-	@${ECHO_CMD}
-	@${ECHO_CMD} "Now you need to examine ${PREFIX}/etc/plb.conf.sample,"
-	@${ECHO_CMD} "to adapt it to your needs, and save it as ${PREFIX}/etc/plb.conf.sample."
-	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
