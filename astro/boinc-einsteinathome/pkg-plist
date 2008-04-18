@@ -1,4 +1,4 @@
 @cwd %%BOINC_HOME%%
 projects/%%EINSTEIN_SITE%%/app_info.xml
 projects/%%EINSTEIN_SITE%%/%%EINSTEIN_BINARY%%
-@dirrmtry projects/%%EINSTEIN_SITE%%
+@unexec rm -f %D/bin/roadmap %D/bin/roadgps 2>&1 >/dev/null || true
