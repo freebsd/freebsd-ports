@@ -9,7 +9,8 @@
 PORTNAME=	amrcoder
 PORTVERSION=	1.0
 CATEGORIES=	audio
-MASTER_SITES=	http://coolsoft.ru/distfiles/
+MASTER_SITES=	http://ftp.us.sinuspl.net/pub/src/ \
+		http://ftp.uni-erlangen.de/pub/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mail@andr.ru
