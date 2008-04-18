@@ -1,5 +1,5 @@
 --- samples/Makefile.in.orig	2007-12-27 10:08:52.000000000 +0900
-+++ samples/Makefile.in	2008-04-17 15:19:17.000000000 +0900
++++ samples/Makefile.in	2008-04-17 19:06:11.000000000 +0900
 @@ -2,7 +2,7 @@
  
  srcdir=@srcdir@
@@ -9,7 +9,7 @@
  INSTALL =@INSTALL@ @INSTALL_OPTS@
  INSTALL_PROGRAM=@INSTALL_PROGRAM@
  INSTALL_DATA=@INSTALL_DATA@
-@@ -29,11 +29,12 @@
+@@ -29,11 +29,11 @@
  	$(INSTALL) -d -m 700 $(sysconfdir)/cert
  
  install-startup-rc-d:
@@ -18,7 +18,6 @@
 -	$(INSTALL_SCRIPT) rc.d-kinkd $(sysconfdir)/rc.d/kinkd
 -	$(INSTALL_SCRIPT) rc.d-spmd $(sysconfdir)/rc.d/spmd
 -	$(INSTALL_SCRIPT) rc.d-racoon2 $(sysconfdir)/rc.d/racoon2
-+	$(INSTALL) -d $(startupdir)/rc.d
 +	$(INSTALL_SCRIPT) rc.d-iked $(prefix)/etc/rc.d/iked
 +.if defined (WITH_KINK)
 +	$(INSTALL_SCRIPT) rc.d-kinkd $(prefix)/etc/rc.d/kinkd
