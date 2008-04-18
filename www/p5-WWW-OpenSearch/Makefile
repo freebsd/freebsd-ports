@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-OpenSearch
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,8 +32,5 @@ MAN3=		WWW::OpenSearch.3 \
 		WWW::OpenSearch::Response.3 \
 		WWW::OpenSearch::Request.3 \
 		WWW::OpenSearch::Url.3
-
-post-patch:
-	${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
