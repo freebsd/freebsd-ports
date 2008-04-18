@@ -8,7 +8,7 @@
 PORTNAME=	hffzip
 PORTVERSION=	1.01
 CATEGORIES=	archivers
-MASTER_SITES=	http://utenti.quipo.it/claudioscordino/ \
+MASTER_SITES=	http://retis.sssup.it/~scordino/projects/ \
 		http://ngsoftwareltd.com/freebsd/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
