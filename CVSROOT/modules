@@ -10282,6 +10282,7 @@ p5-HTTP-Cookies-iCab	ports/www/p5-HTTP-Cookies-iCab
 p5-HTTP-Cookies-w3m	ports/www/p5-HTTP-Cookies-w3m
 p5-HTTP-DAV	ports/www/p5-HTTP-DAV
 p5-HTTP-GHTTP	ports/www/p5-HTTP-GHTTP
+p5-HTTP-HeaderParser-XS	ports/www/p5-HTTP-HeaderParser-XS
 p5-HTTP-Lite	ports/www/p5-HTTP-Lite
 p5-HTTP-MHTTP	ports/www/p5-HTTP-MHTTP
 p5-HTTP-MobileAgent	ports/www/p5-HTTP-MobileAgent
