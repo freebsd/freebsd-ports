@@ -1,0 +1,50 @@
+--- src/cf.data.pre.orig	Tue Jun 26 01:34:57 2007
++++ src/cf.data.pre	Mon Jul 16 20:02:21 2007
+@@ -1207,6 +1207,21 @@
+ 
+ 	Note that for coss, max-size must be less than COSS_MEMBUF_SZ
+ 	(hard coded at 1 MB).
++
++	Note for FreeBSD users:
++	COSS -- like aufs -- uses async IO so if you compiled Squid without
++	support for the aufs storage type, COSS will use POSIX AIO.
++	This means that you need to add the line
++
++	options VFS_AIO
++
++	to your kernel configuration in order to use COSS.
++
++	On FreeBSD 5 and higher you can load the aio(4) module and do not
++	necessarily need to recompile your kernel.
++
++	If you compiled Squid with both support for aufs and COSS, COSS
++	will use aufs' routines and does not need special kernel support.
+ DOC_END
+ 
+ NAME: logformat
+@@ -1439,6 +1454,10 @@
+ LOC: Config.pidFilename
+ DOC_START
+ 	A filename to write the process-id to.  To disable, enter "none".
++
++	Note: If you change this setting, you need to set squid_pidfile
++	in /etc/rc.conf to reflect the new value. Please see
++	%%PREFIX%%/etc/rc.d/squid for details.
+ DOC_END
+ 
+ NAME: debug_options
+@@ -3275,12 +3294,12 @@
+ 
+ NAME: cache_effective_user
+ TYPE: string
+-DEFAULT: nobody
++DEFAULT: %%SQUID_UID%%
+ LOC: Config.effectiveUser
+ DOC_START
+ 	If you start Squid as root, it will change its effective/real
+ 	UID/GID to the user specified below.  The default is to change
+-	to UID to nobody.  If you define cache_effective_user, but not
++	to UID to %%SQUID_UID%%.  If you define cache_effective_user, but not
+ 	cache_effective_group, Squid sets the GID to the effective
+ 	user's default group ID (taken from the password file) and
+ 	supplementary group list from the from groups membership of
