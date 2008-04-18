@@ -82,6 +82,7 @@
     SUBDIR += php5-ftp
     SUBDIR += phpwebftp
     SUBDIR += proftpd
+    SUBDIR += proftpd-devel
     SUBDIR += proftpd-mysql
     SUBDIR += profxp
     SUBDIR += proma
