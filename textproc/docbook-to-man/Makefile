@@ -15,18 +15,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DocBook SGML DTD into nroff/troff -man macros converter
 
-.include <bsd.port.pre.mk>
-
 # Global variables
 #
-
-# There are two ports that satisfy the nsgmls requirement.
-# Jade is preferred.
-
-.if ${MACHINE_ARCH} == "alpha"
-WITH_OPENJADE=	yes
-.endif
-
 .if defined(WITH_OPENJADE)
 RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/openjade
 .else
@@ -37,12 +27,21 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 USE_IMAKE=	yes
 PREFIX?=	${LOCALBASE}
 USE_XLIB=	yes
-XFREE86_HTML_MAN= no
+XFREE86_HTML_MAN=	no
 
 MAN1=	oinstant.1
 
+.include <bsd.port.pre.mk>
+
 # Local variables
 #
+
+# There are two ports that satisfy the nsgmls requirement.
+# Jade is preferred.
+
+.if ${ARCH} == "alpha"
+WITH_OPENJADE=	yes
+.endif
 
 .if defined(WITH_OPENJADE)
 NSGMLS=		onsgmls
