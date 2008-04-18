@@ -56,6 +56,8 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 
+CONFLICTS=	proftpd-devel-1.[0-9].*
+
 USE_RC_SUBR=	proftpd.sh
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
