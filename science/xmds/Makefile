@@ -6,20 +6,28 @@
 #
 
 PORTNAME=	xmds
-DISTVERSION=	1.5-2
+PORTVERSION=	1.6
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
+DISTNAME=	xmds-1.6.5
 
 MAINTAINER=	mplekos@physics.upatras.gr
 COMMENT=	XMDS is a code generator that integrates equations;
 
-BUILD_DEPENDS=	${LOCALBASE}/include/fftw.h:${PORTSDIR}/math/fftw
-
 MAN1=	loadxsil.1 xmds.1 xsil2graphics.1
 
+OPTIONS=	FFTW3 "Use fftw3 instead of fftw2" Off
 HAS_CONFIGURE=	YES
+USE_AUTOTOOLS=	automake:16
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_FFTW3)
+BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
+CONFIGURE_ARGS=	--enable-fftw3 --with-fftw3-path=${LOCALBASE}
+.else
+BUILD_DEPENDS=	${LOCALBASE}/include/fftw.h:${PORTSDIR}/math/fftw
 CONFIGURE_ARGS=	--with-fftw-path=${LOCALBASE}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
