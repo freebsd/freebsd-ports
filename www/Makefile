@@ -1375,6 +1375,7 @@
     SUBDIR += xpi-autobrowse
     SUBDIR += xpi-bookmarkdd
     SUBDIR += xpi-clearfields
+    SUBDIR += xpi-close-all-tabs
     SUBDIR += xpi-colorfultabs
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-customizegoogle
