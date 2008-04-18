@@ -13264,6 +13264,7 @@ procmail	ports/mail/procmail
 procmap		ports/sysutils/procmap
 prodosemu	ports/emulators/prodosemu
 proftpd		ports/ftp/proftpd
+proftpd-devel	ports/ftp/proftpd-devel
 proftpd-mysql	ports/ftp/proftpd-mysql
 profxp		ports/ftp/profxp
 proggy_fonts	ports/x11-fonts/proggy_fonts
