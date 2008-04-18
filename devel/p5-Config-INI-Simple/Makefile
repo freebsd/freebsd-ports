@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-INI-Simple
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,6 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Simple reading and writing from an INI file
 
 PERL_CONFIGURE=	5.8.7+
-USE_ZIP=	yes
 
 MAN3=		Config::INI::Simple.3
 
