@@ -18,7 +18,7 @@ human readable form in an XML file, and it goes away and writes and compiles a
 C++ program that integrates those equations as fast as it can possibly be done
 in your architecture. 
 
-Authr:	Paul Cochrane (principal developer) 	cochrane@physics.uq.edu.au
+Author:	Paul Cochrane (principal developer) 	cochrane@physics.uq.edu.au
 	Joseph Hope (second author) 		Joseph.Hope@anu.edu.au
 	Peter Drummond (xmds project leader)	drummond@physics.uq.edu.au
-WWW:	http://www.physics.uq.edu.au/xmds/index.html
+WWW:	http://www.xmds.org/
