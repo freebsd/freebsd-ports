@@ -1,0 +1,19 @@
+--- helpers/negotiate_auth/squid_kerb_auth/Makefile.in.orig	Mon Jul 16 20:40:58 2007
++++ helpers/negotiate_auth/squid_kerb_auth/Makefile.in	Mon Jul 16 20:44:52 2007
+@@ -264,12 +264,12 @@
+ #-L$(top_builddir)/lib -lmiscutil $(XTRA_LIBS)
+ 
+ # HEIMDAL
+-#KERBINC = -DHEIMDAL -I/usr/include/heimdal
+-#KERBLIBS = -lgssapi -lkrb5 -lcom_err -lasn1 -lroken
++KERBINC = -DHEIMDAL -I/usr/include
++KERBLIBS = -lgssapi -lkrb5 -lcom_err -lasn1 -lroken -lcrypt -lcrypto
+ 
+ # MIT
+-KERBINC = 
+-KERBLIBS = -lgssapi_krb5 -lkrb5 -lcom_err
++#KERBINC = 
++#KERBLIBS = -lgssapi_krb5 -lkrb5 -lcom_err
+ all: all-am
+ 
+ .SUFFIXES:
