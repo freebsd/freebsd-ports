@@ -25,24 +25,10 @@ USE_RC_SUBR=	smartd
 MAN5=		smartd.conf.5
 MAN8=		smartd.8 smartctl.8
 
-OPTIONS=	CISS "Support ciss(4) -- requires kernel source tree" off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_CISS)
-.	if !exists(/sys/dev/ciss/cissio.h)
-IGNORE=		built WITH_CISS requires /sys/dev/ciss/cissio.h
-.	endif
-CFLAGS+=	-I/sys/dev/ciss -I${FILESDIR}
-EXTRA_PATCHES=	${FILESDIR}/ciss-patch
-
-BROKEN=		does not work with 5.38
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-initdDATA | |' ${WRKSRC}/Makefile.in
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
