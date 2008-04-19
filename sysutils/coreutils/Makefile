@@ -7,7 +7,7 @@
 
 PORTNAME=	coreutils
 PORTVERSION=	6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,9 +24,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
-# GNU assumes that openat() implies the existence of fdopendir(),
-# which does not hold true on FreeBSD 8.
-CONFIGURE_ENV+=	ac_cv_func_openat=no
 
 USE_GMAKE=	yes
 
