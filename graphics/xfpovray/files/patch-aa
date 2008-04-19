@@ -9,12 +9,12 @@
  
  XCOMM If your compiler can't find the xforms library 
 -XFORMS_LIBDIR = /usr/local/lib
-+XFORMS_LIBDIR = ${X11BASE}/lib
++XFORMS_LIBDIR = ${LOCALBASE}/lib
  
  XCOMM If your compiler can't find the xforms header file 
 -XFORMS_INCDIR = /usr/local/include
-+.if exists(${X11BASE}/include/X11/forms.h)
-+XFORMS_INCDIR = ${X11BASE}/include/X11
++.if exists(${LOCALBASE}/include/X11/forms.h)
++XFORMS_INCDIR = ${LOCALBASE}/include/X11
 +.else
-+XFORMS_INCDIR = ${X11BASE}/include
++XFORMS_INCDIR = ${LOCALBASE}/include
 +.endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	intlfonts
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	intlfonts
@@ -15,11 +15,12 @@ MASTER_SITE_SUBDIR=	intlfonts
 MAINTAINER=	conrads@cox.net
 COMMENT=	Free X11 fonts for all characters that Emacs can handle
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT} \
-		type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+RUN_DEPENDS=	type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 PLIST_SUB=	FONTSDIR=${FONTSDIR} T1_FONTSDIR=${T1_FONTSDIR} \
 		TT_FONTSDIR=${TT_FONTSDIR} DOCDIR=${DOCDIR}
 

@@ -28,11 +28,11 @@
  
  .c.o:
 -	$(CC) -DVERSION=\"$(VERSION)\" $(SDL_FLAGS) -c -o $@ $<
-+	$(CC) $(CFLAGS) -I${X11BASE}/include -DVERSION=\"$(VERSION)\" $(SDL_FLAGS) -c -o $@ $<
++	$(CC) $(CFLAGS) -I${LOCALBASE}/include -DVERSION=\"$(VERSION)\" $(SDL_FLAGS) -c -o $@ $<
  
  glmaze: $(OBJECTS)
 -	$(CC) $(OBJECTS) -o $@ $(SDL_LIBS) -lGL -lGLU -lm 
-+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@ -L${X11BASE}/lib $(SDL_LIBS) -lGL -lGLU -lm 
++	$(CC) $(LDFLAGS) $(OBJECTS) -o $@ -L${LOCALBASE}/lib $(SDL_LIBS) -lGL -lGLU -lm 
  
  clean:
  	@echo Cleaning up...

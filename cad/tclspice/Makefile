@@ -25,7 +25,7 @@ AUTOMAKE_ARGS=	-c -a
 USE_GMAKE=	yes
 ALL_TARGET=	tcl
 INSTALL_TARGET=	install-tcl
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
 

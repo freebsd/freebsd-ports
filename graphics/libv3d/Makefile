@@ -81,7 +81,7 @@ MAN3=	V3DGLInterpriteDelete.3 \
 post-patch:
 	@${REINPLACE_CMD} -e "s,make,${GMAKE},g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s,%%CFLAGS%%,${CFLAGS},g" \
-		-e "s,%%X11BASE%%,${X11BASE},g" \
+		-e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		-e "s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g" \
 		-e "s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g" \
 		${WRKSRC}/libv3d/platforms.ini

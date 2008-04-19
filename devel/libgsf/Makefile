@@ -8,9 +8,9 @@
 
 PORTNAME=	libgsf
 PORTVERSION=	1.14.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
@@ -21,7 +21,6 @@ COMMENT?=	An extensible i/o abstraction for dealing with structured file formats
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

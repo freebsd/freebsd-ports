@@ -7,7 +7,7 @@
 
 PORTNAME=	tsclient
 PORTVERSION=	0.150
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	SF
 
@@ -21,7 +21,6 @@ OPTIONS=	GNOME		"Build with gnome support" on \
 		XNEST		"X via Xnest support (experimental)" off
 
 USE_AUTOTOOLS=	libtool:15 automake:19 autoconf:261
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

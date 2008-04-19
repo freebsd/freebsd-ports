@@ -7,7 +7,7 @@
 
 PORTNAME=	mga_hal
 PORTVERSION=	4.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	ftp://ftp.matrox.com/pub/mga/archive/linux/%SUBDIR%/:i386,amd64
 MASTER_SITE_SUBDIR=	2006/:i386 2006/64bit/:amd64
@@ -19,7 +19,6 @@ COMMENT=	Module for additional features with X.Org/XFree86 Matrox driver
 RESTRICTED=	Matrox drivers may not be distributed.
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 

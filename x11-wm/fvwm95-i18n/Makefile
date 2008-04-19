@@ -7,9 +7,9 @@
 
 PORTNAME=	fvwm95-i18n
 PORTVERSION=	2.0.43a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	fvwm95
 DISTNAME=	fvwm95-2.0.43a-Autoconf
 DISTFILES=	${EXTRACT_ONLY} fvwm95-2.0.43a-FreeBSD.apmpatch.tar.gz
@@ -23,14 +23,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Win95 lookalike fvwm2 window manager with an I18N patch
 
 LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay
-RUN_DEPENDS=	${X11BASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
+RUN_DEPENDS=	${LOCALBASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
 
 EXTRACT_ONLY=	${DISTNAME}.tgz ${PORTNAME}-${PORTVERSION}-portKit-19981123.tgz
-USE_X_PREFIX=	yes
-USE_XPM=	yes
-USE_XORG=	xbitmaps
+
+USE_XORG=	xbitmaps x11 xpm xmu xext
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--x-includes=${X11BASE}/include \
+CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include \
 		--includedir=${LOCALBASE}/include --libdir=${LOCALBASE}/lib
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}"
 MAN1=	fvwm95.1 xpmroot.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \

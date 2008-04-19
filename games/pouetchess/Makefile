@@ -16,7 +16,7 @@ MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	An open-source 3D chess game
 
 USE_SDL=	sdl image
-USE_GL=		yes
+USE_GL=		gl
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/pouetChess_0.11
@@ -36,11 +36,11 @@ post-patch:
 		"s|$$(${PRINTF} '\r')$$||" {} \;
 
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e '/^LIBS/ s|$$| -L${X11BASE}/lib|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^LIBS/ s|$$| -L${LOCALBASE}/lib|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/CXX	/ d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/CXXFLAGS.*+=/ d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|:=|+=|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|$$| -I${X11BASE}/include|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|$$| -I${LOCALBASE}/include|' ${WRKSRC}/Makefile
 
 	@${REINPLACE_CMD} -e 's|config\.ini|${PREFIX}/etc/pouetChess.conf|' ${WRKSRC}/src/globalInfos.cpp
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/src/globalInfos.h

@@ -24,7 +24,7 @@ LIBTOOLFILES=	builders/hardsid-builder/configure \
 		libsidplay/configure \
 		libsidutils/configure \
 		resid/configure
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \

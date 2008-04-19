@@ -7,7 +7,7 @@
 
 PORTNAME=	quirc
 PORTVERSION=	0.9.84
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc tk
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:local/}
 
@@ -16,8 +16,7 @@ COMMENT=	An irc client for the X Window System that uses TCL/TK
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
-USE_X_PREFIX=	yes
-USE_XLIB=	yes
+USE_XORG=	xt
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-wish=${LOCALBASE}/bin/wish8.4 \

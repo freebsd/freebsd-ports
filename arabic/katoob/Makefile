@@ -7,10 +7,9 @@
 
 PORTNAME=	katoob
 PORTVERSION=	0.3.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	arabic
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	arabeyes
+MASTER_SITES=	SF/arabeyes
 
 MAINTAINER=	sbahra@gwu.edu
 COMMENT=	Light-weight, bidirectional editor for arabic texts
@@ -18,7 +17,6 @@ COMMENT=	Light-weight, bidirectional editor for arabic texts
 MAN1=		katoob.1
 
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libtool:15

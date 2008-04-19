@@ -8,6 +8,7 @@
 
 PORTNAME=	glade3
 PORTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +17,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A user interface builder for GTK+/GNOME
 
 INSTALLS_ICONS=	yes
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 libxml2 gnomeprefix gnomehack \

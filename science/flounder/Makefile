@@ -22,8 +22,8 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
 		glut.4:${PORTSDIR}/graphics/libglut
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS} -lstdc++"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lstdc++"
 USE_GMAKE=	yes
 
 .if !defined(WITHOUT_AVIFILE)

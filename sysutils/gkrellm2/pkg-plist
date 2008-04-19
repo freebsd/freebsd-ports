@@ -9,7 +9,6 @@ sbin/gkrellmd
 %%EXAMPLESDIR%%/gkrellmd.conf
 @exec [ -f %D/etc/gkrellmd.conf ] || cp %B/%f %D/etc/gkrellmd.conf
 @dirrm %%EXAMPLESDIR%%
-@cwd %%X11BASE%%
 %%CLIENT%%include/gkrellm2/gkrellm.h
 %%CLIENT%%include/gkrellm2/gkrellm-public-proto.h
 %%CLIENT%%@dirrm include/gkrellm2
@@ -37,4 +36,3 @@ sbin/gkrellmd
 %%CLIENT%%@dirrmtry libexec/gkrellm2
 %%CLIENT%%@dirrmtry share/gkrellm2/themes
 %%CLIENT%%@dirrmtry share/gkrellm2
-@cwd %%PREFIX%%

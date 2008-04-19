@@ -9,7 +9,7 @@ PORTNAME=	gle
 PORTVERSION=	3.1.0
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF\
 		http://linas.org/gle/pub/ \
 		http://metalab.unc.edu/pub/Linux/libs/X/ \
 		ftp://tsx-11.mit.edu/pub/linux/sources/libs/
@@ -18,12 +18,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@dclg.ca
 COMMENT=	A GL Tubing and Extrusion Library
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
+USE_GL=		glut
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	"LIBS=-L${X11BASE}/lib -lXext ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	"LIBS=-L${LOCALBASE}/lib -lXext ${PTHREAD_LIBS}"
 
 MAN3=		gle.3gle gleExtrusion.3gle gleHelicoid.3gle gleLathe.3gle \
 		glePolyCone.3gle glePolyCylinder.3gle gleScrew.3gle \

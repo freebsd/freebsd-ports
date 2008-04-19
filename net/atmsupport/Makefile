@@ -21,7 +21,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-tcldir=${LOCALBASE}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	unidecode.1 uniencode.1
 

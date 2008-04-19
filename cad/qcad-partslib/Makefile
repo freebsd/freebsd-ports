@@ -7,7 +7,7 @@
 
 PORTNAME=	qcad-partslib
 PORTVERSION=	2.1.2.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	ftp://www.ribbonsoft.com/archives/partlibrary/
 DISTNAME=	partlibrary-${PORTVERSION:S/.1$/-1/}
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	qcad:${PORTSDIR}/cad/qcad
 WRKSRC=		${WRKDIR}/partlibrary-${PORTVERSION:S/.1$/-1/}
 DATADIR=	${PREFIX}/share/qcad/library
 
-USE_X_PREFIX=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist

@@ -4,9 +4,9 @@
 -LIBDIR = -L/usr/X11R6/lib
 -MANDIR = /usr/local/man/man1/
 -INSTALL = install
-+LIBDIR = -L${X11BASE}/lib
++LIBDIR = -L${LOCALBASE}/lib
  LIBS   = -lXpm -lXext -lX11
-+CFLAGS += -I${X11BASE}/include
++CFLAGS += -I${LOCALBASE}/include
  OBJS =	wmq3.o \
  		../wmgeneral/wmgeneral.o \
  		../wmgeneral/misc.o \

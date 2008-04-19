@@ -7,7 +7,7 @@
 
 PORTNAME=	flu
 PORTVERSION=	2.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.osc.edu/~jbryan/FLU/
 DISTNAME=	FLU_${PORTVERSION}
@@ -17,10 +17,10 @@ COMMENT=	A library containing extra widgets for FLTK
 
 LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
 
-USE_GL=		yes
+USE_GL=		gl
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --I=${X11BASE}/include --L=${X11BASE}/lib
+CONFIGURE_ARGS=	--prefix=${PREFIX} --I=${LOCALBASE}/include --L=${LOCALBASE}/lib
 USE_GMAKE=	yes
 PORTDOCS=	*
 

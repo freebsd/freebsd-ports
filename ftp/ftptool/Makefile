@@ -17,7 +17,7 @@ MAINTAINER=	serge.gagnon.1@ulaval.ca
 COMMENT=	Graphic ftp shell based on xview
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
-RUN_DEPENDS=	${X11BASE}/bin/textedit:${PORTSDIR}/editors/textedit
+RUN_DEPENDS=	${LOCALBASE}/bin/textedit:${PORTSDIR}/editors/textedit
 
 USE_IMAKE=	yes
 MAKE_ARGS=	CC=${CC}

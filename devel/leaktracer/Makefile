@@ -15,7 +15,7 @@ DISTNAME=	LeakTracer
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Trace and analyze memory leaks in C++ programs
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
 MAKE_ENV=	CXX="${CXX}" \

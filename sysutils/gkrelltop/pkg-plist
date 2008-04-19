@@ -1,3 +1,2 @@
 libexec/gkrellm2/plugins-gkrellmd/gkrelltopd.so
-%%CLIENT%%@cwd %%X11BASE%%
 %%CLIENT%%libexec/gkrellm2/plugins/gkrelltop.so

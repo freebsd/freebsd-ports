@@ -30,8 +30,8 @@ USE_JAVA=	yes
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure mozilla-plugin/configure lib/gtkglext/configure
 CONFIGURE_ARGS=	--enable-gecko-rpath
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:L}"	\
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client ${PTHREAD_LIBS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:L}"	\
+		LDFLAGS="-L${LOCALBASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client ${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"	\
 		LIBS="-lm"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

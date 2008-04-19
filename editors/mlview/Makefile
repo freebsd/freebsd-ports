@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_GNOME=	eel2 gnomehack gnomeprefix gtksourceview
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	mlview.schemas

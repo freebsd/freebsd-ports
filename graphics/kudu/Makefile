@@ -16,13 +16,13 @@ COMMENT=	A 3D skeletal animation tool, powered by GTK+ and OpenGL
 
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
-USE_GL=		yes
+USE_GL=		gl
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \

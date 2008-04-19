@@ -7,7 +7,7 @@
 
 PORTNAME=	xevil
 PORTVERSION=	2.02.r2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.xevil.com/download/stable/
 DISTNAME=	xevilsrc${PORTVERSION:S/.r/r/}
@@ -15,9 +15,8 @@ DISTNAME=	xevilsrc${PORTVERSION:S/.r/r/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast-action, networked, anti-social, kill-everything game
 
-USE_X_PREFIX=	yes
 USE_ZIP=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd

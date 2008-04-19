@@ -7,29 +7,27 @@
 
 PORTNAME=	gltt
 PORTVERSION=	2.5.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://gltt.sourceforge.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType fonts rendering using OpenGL
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
+USE_GL=		gl glut
 USE_FREETYPE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LIBS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-ttf-includes=${LOCALBASE}/include/freetype1 \
 		--with-ttf-libraries=${LOCALBASE}/lib \
-		--with-gl-includes=${X11BASE}/include \
-		--with-gl-libraries=${X11BASE}/lib \
-		--with-glut-includes=${X11BASE}/include \
-		--with-glut-libraries=${X11BASE}/lib
+		--with-gl-includes=${LOCALBASE}/include \
+		--with-gl-libraries=${LOCALBASE}/lib \
+		--with-glut-includes=${LOCALBASE}/include \
+		--with-glut-libraries=${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libaudiofile.so.0:${PORTSDIR}/audio/linux-liba
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin
 PLIST=		pkg-plist.${LINUX_RPM_ARCH}
 PLIST_SUB+=	ESOUND_VERSION="${PORTVERSION}"

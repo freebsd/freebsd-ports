@@ -20,7 +20,7 @@
  #CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX -Os -Wall -mpentium -DNASM
  #CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX -Os -DNASM
 -CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX -Os
-+CFLAGS += -I. $(DEFINES) -DBIG_ANSI_C -I${X11BASE}/include
++CFLAGS += -I. $(DEFINES) -DBIG_ANSI_C -I${LOCALBASE}/include
  
  # Gcc is often the only compiler that works for this
  # For HPUX, use CC = cc -Aa -D_HPUX_SOURCE
@@ -38,7 +38,7 @@
  # For Linux, use
  #LIBS = -L/usr/X11R6/lib -lX11 -lm -lncurses
 -LIBS = -L/usr/X11R6/lib -lX11 -lm -lncurses
-+LIBS = -L${X11BASE}/lib -lX11 -lm -lcurses
++LIBS = -L${LOCALBASE}/lib -lX11 -lm -lcurses
  #LIBS = -lX11 -lm -lcurses
  
  # For using nasm, set:

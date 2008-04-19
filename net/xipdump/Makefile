@@ -7,7 +7,7 @@
 
 PORTNAME=	xipdump
 PORTVERSION=	1.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.lse.epita.fr/twiki/pub/Projects/XipDump/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,7 @@ COMMENT=	Displays ip packets using X window
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
-USE_X_PREFIX=	yes
+USE_XORG=	xt x11 ice xaw xmu
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="`${LIBNET_CONFIG} --libs`"
 CFLAGS+=	`${LIBNET_CONFIG} --cflags` `${LIBNET_CONFIG} --defines` \

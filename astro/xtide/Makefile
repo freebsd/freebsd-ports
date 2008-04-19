@@ -7,6 +7,7 @@
 
 PORTNAME=	xtide
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -21,9 +22,8 @@ COMMENT=	Harmonic tide clock and tide predictor
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
-USE_XORG=	xpm
+USE_XORG=	xpm xaw
 USE_GNOME=	gnometarget
-USE_XLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -44,7 +44,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|== yes|= yes|g' ${WRKDIR}/libtcd-2.2.3/configure
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure
 .for file in Global.cc HarmonicsPath.cc wvsrtv.cc
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${file}
 .endfor

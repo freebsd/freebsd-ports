@@ -7,7 +7,7 @@
 
 PORTNAME=	ipe
 PORTVERSION=	6.0.p23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://ipe.compgeom.org/ \
 		http://tclab.kaist.ac.kr/~otfried/Ipe/
@@ -25,7 +25,6 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_QT_VER=	3
 MAKE_ENV+=	QTDIR=${QTDIR}
-USE_XLIB=	yes
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib
 MAN1=		figtoipe.1 ipe.1 ipe5toxml.1 ipetoipe.1 ipetopng.1

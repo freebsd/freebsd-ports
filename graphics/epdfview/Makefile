@@ -24,8 +24,8 @@ INSTALLS_ICONS=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 intlhack
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

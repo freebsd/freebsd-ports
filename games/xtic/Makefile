@@ -17,11 +17,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X version of a simple but tricky board game
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		xtic.1
 PLIST_FILES=	bin/xtic
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/configure.h
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure.h
 
 .include <bsd.port.mk>

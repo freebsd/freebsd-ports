@@ -17,7 +17,7 @@ COMMENT=		Direct streaming generator for Icecast/Shoutcast
 
 LIB_DEPENDS=		shout.5:${PORTSDIR}/audio/libshout2
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 

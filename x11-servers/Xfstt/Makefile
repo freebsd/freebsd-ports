@@ -7,14 +7,14 @@
 
 PORTNAME=	xfstt
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://download.berlios.de/xfstt/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A TrueType font server for X11
 
-USE_X_PREFIX=	yes
+USE_XORG=	fontsproto xproto
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var --disable-nls

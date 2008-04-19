@@ -19,7 +19,7 @@ COMMENT=	Time/Date applet for WindowMaker
 PLIST_FILES=	bin/wmtime
 WRKSRC=		${WRKDIR}/wmtime.app/wmtime
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 post-extract:
 	${CP} ${WRKSRC}/../Imakefile ${WRKSRC}/Imakefile

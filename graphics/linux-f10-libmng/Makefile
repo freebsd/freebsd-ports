@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 PLIST?=		${PKGDIR}/pkg-plist.${LINUX_RPM_ARCH}

@@ -7,10 +7,9 @@
 
 PORTNAME=	glimmer
 PORTVERSION=	1.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors gnome python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A full featured code editor for GNOME with many advanced features
@@ -20,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gtkmodule.so:${PORTSDIR}/x11-toolkits
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomeprint gnomevfs \

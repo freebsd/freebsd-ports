@@ -7,18 +7,20 @@
 
 PORTNAME=		ae_fonts_mono
 PORTVERSION=		1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		arabic
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	arabeyes
 DISTNAME=		ae_fonts_mono
 
 MAINTAINER=	sbahra@gwu.edu
 COMMENT=	A collection of PCF fonts that include Arabic glyphs
 
-BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_BZIP2=	yes
 
 do-build:
@@ -30,7 +32,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/lib/X11/fonts/ae_fonts_mono
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} "s|X11BASE|${X11BASE}|g" \
+	@${CAT} ${PKGMESSAGE} | ${SED} "s|LOCALBASE|${LOCALBASE}|g" \
 		| ${SED} "s|PORTNAME|${PORTNAME}|g"
 
 .include <bsd.port.mk>

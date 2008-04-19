@@ -8,7 +8,7 @@
 
 PORTNAME=	spim
 PORTVERSION=	7.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
 
@@ -28,8 +28,8 @@ OPTIONS=	GUI "Graphical user interface" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GUI)
-USE_XLIB=	yes
-BUILD_DEPENDS+=			imake:${X_IMAKE_PORT}
+USE_XORG=	x11 xaw
+BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake
 PLIST_FILES+=	bin/xspim
 MAN1+=		xspim.1
 .endif

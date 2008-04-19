@@ -8,8 +8,7 @@
 PORTNAME=	xmms-flac
 PORTVERSION=	1.2.1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	flac
+MASTER_SITES=	SF/flac
 DISTNAME=	flac-${PORTVERSION}
 
 MAINTAINER=	naddy@FreeBSD.org
@@ -22,7 +21,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \
-		--with-xmms-prefix="${X11BASE}"
+		--with-xmms-prefix="${LOCALBASE}"
 MAKE_ARGS=	LIBTOOL="${LIBTOOL} --tag=disable-static"
 MAKE_ENV=	MAKEOBJDIR=/nonexistent		# ignore ${WRKSRC}/obj
 MAKEFILE=	${FILESDIR}/Makefile

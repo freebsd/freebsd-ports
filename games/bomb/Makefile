@@ -19,7 +19,7 @@ LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound	\
 		vga.1:${PORTSDIR}/graphics/svgalib \
 		quicktime.0:${PORTSDIR}/multimedia/libquicktime
 
-MAKE_ENV=	SCM_CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"
+MAKE_ENV=	SCM_CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include"
 ALL_TARGET=	${PORTNAME}
 
 PORTDOCS=	README bomb.lsm guile.txt manual.txt notes.txt
@@ -29,7 +29,7 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/lib/bomb|${DATADIR}|;			\
 	s|/home/spot/src/quicktime4linux-1.1.9/quicktime|${LOCALBASE}/lib|;	\
 	s|..QTDIR./libquicktime.a|-lquicktime|;					\
-	s|/usr/X11R6/lib|${X11BASE}/lib -L${LOCALBASE}/lib|;			\
+	s|/usr/X11R6/lib|${LOCALBASE}/lib -L${LOCALBASE}/lib|;			\
 	s|-lpthread|${PTHREAD_LIBS}|;						\
 	s|/usr/bin/bomb|${PREFIX}/bin/bomb|;					\
 	s|/usr/share/control-center/.data|${DATADIR}/.data|;			\

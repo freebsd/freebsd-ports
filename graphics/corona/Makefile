@@ -21,7 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget lthack
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${LIBS} -L${LOCALBASE}/lib"

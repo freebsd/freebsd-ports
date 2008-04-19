@@ -8,7 +8,7 @@
 
 PORTNAME=	at-spi
 PORTVERSION=	1.22.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -25,7 +25,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomehier intltool gail libbonobo \
 		intlhack
-USE_XLIB=	yes
+USE_XORG=	x11 xtst
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

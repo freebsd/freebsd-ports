@@ -18,7 +18,7 @@ COMMENT=	Configuration file parser written in C++
 
 USE_AUTOTOOLS=	libtool:15
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \

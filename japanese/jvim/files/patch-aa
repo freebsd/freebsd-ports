@@ -23,7 +23,7 @@
 -	    -L/usr/lib
 +	    -L/usr/lib 			\
 +	    -L%LOCALBASE%/lib 		\
-+	    -L%X11BASE%/lib 		\
++	    -L%LOCALBASE%/lib 		\
 +	    -L/usr/X11R6/lib
 +
 +INSTALL_MAN?=	install -c -m ${MANMOD}

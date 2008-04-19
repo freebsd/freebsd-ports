@@ -67,8 +67,8 @@
 +CFLAGS +=-I${LOCALBASE}/include
 +LDFLAGS+=-L${LOCALBASE}/lib
 +.elif defined(HAVE_NAS)
-+CFLAGS +=-I${X11BASE}/include -DNAS
-+LDFLAGS+=-L${X11BASE}/lib
++CFLAGS +=-I${LOCALBASE}/include -DNAS
++LDFLAGS+=-L${LOCALBASE}/lib
 +.endif
 +
  freebsd:

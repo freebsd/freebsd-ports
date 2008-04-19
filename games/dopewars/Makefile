@@ -7,7 +7,7 @@
 
 PORTNAME=	dopewars
 PORTVERSION=	1.5.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -18,7 +18,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-USE_X_PREFIX=	yes
 
 CONFIGURE_ARGS=	--enable-networking --disable-plugins --localstatedir=${DATADIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

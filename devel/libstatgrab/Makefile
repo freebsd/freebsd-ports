@@ -19,7 +19,7 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Provides a useful interface to system statistics
 
 DIST_SUBDIR=	i-scream
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 

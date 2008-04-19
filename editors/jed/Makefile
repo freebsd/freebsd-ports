@@ -7,7 +7,7 @@
 
 PORTNAME=	jed
 PORTVERSION=	0.99.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v${PORTVERSION:R}/ \
@@ -52,7 +52,7 @@ LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	XJED="@comment "
 .else
-USE_XLIB=	yes
+USE_XORG=	x11 ice xt
 ALL_TARGET+=	xjed
 PLIST_SUB+=	XJED=""
 .endif

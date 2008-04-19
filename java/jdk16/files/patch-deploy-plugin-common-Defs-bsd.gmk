@@ -7,4 +7,4 @@ $FreeBSD$
  PLUGIN_PLATFORM_SRC := $(DEPLOY_TOPDIR)/src/plugin/solaris
  
 -OTHER_LDFLAGS = -L/usr/X11R6/lib
-+OTHER_LDFLAGS = -L${X11BASE}/lib
++OTHER_LDFLAGS = -L${LOCALBASE}/lib

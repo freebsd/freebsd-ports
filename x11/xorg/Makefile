@@ -17,23 +17,22 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org complete distribution metaport
 
 NO_BUILD=	yes
-PREFIX?=	${X11BASE}
 
-RUN_DEPENDS+=	${X11BASE}/lib/dri/r128_dri.so:${PORTSDIR}/graphics/dri
+RUN_DEPENDS+=	${LOCALBASE}/lib/dri/r128_dri.so:${PORTSDIR}/graphics/dri
 
 # data
-RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/xbitmaps.pc:${PORTSDIR}/x11/xbitmaps \
-		${X11BASE}/lib/X11/icons/handhelds/cursors/X_cursor:${PORTSDIR}/x11-themes/xcursor-themes
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xbitmaps.pc:${PORTSDIR}/x11/xbitmaps \
+		${LOCALBASE}/lib/X11/icons/handhelds/cursors/X_cursor:${PORTSDIR}/x11-themes/xcursor-themes
 
 # doc
-RUN_DEPENDS+=	${X11BASE}/share/X11/doc/hardcopy/BDF/bdf.PS.gz:${PORTSDIR}/x11/xorg-docs
+RUN_DEPENDS+=	${LOCALBASE}/share/X11/doc/hardcopy/BDF/bdf.PS.gz:${PORTSDIR}/x11/xorg-docs
 
 # app, lib, font, driver, proto
-RUN_DEPENDS+=	${X11BASE}/libdata/xorg/apps:${PORTSDIR}/x11/xorg-apps \
-		${X11BASE}/libdata/xorg/libraries:${PORTSDIR}/x11/xorg-libraries \
-		${X11BASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts \
-		${X11BASE}/libdata/xorg/drivers:${PORTSDIR}/x11-drivers/xorg-drivers \
-		${X11BASE}/libdata/xorg/protos:${PORTSDIR}/x11/xorg-protos
+RUN_DEPENDS+=	${LOCALBASE}/libdata/xorg/apps:${PORTSDIR}/x11/xorg-apps \
+		${LOCALBASE}/libdata/xorg/libraries:${PORTSDIR}/x11/xorg-libraries \
+		${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts \
+		${LOCALBASE}/libdata/xorg/drivers:${PORTSDIR}/x11-drivers/xorg-drivers \
+		${LOCALBASE}/libdata/xorg/protos:${PORTSDIR}/x11/xorg-protos
 
 .if defined(XORG_COMPLETE)
 RUN_DEPENDS+=	Xnest:${PORTSDIR}/x11-servers/xorg-nestserver \
@@ -59,7 +58,7 @@ DEPENDS_TARGET="package"
 .endif
 
 .if ${ARCH} != "alpha" && ${ARCH} != "ia64"
-RUN_DEPENDS+=	${X11BASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server
+RUN_DEPENDS+=	${LOCALBASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server
 .endif
 
 .include <bsd.port.post.mk>

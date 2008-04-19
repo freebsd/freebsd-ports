@@ -7,7 +7,7 @@
 
 PORTNAME=	modplug
 PORTVERSION=	2.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	audio
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
 		http://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
@@ -25,7 +25,6 @@ LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 PLUGDIR?=	lib/bmp/Input
 PLIST_FILES=	${PLUGDIR}/libmodplugbmp.so

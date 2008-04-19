@@ -23,8 +23,6 @@ QT_COMPONENTS=	gui imageformats_run moc_build network qmake_build rcc_build \
 		sql uic_build xml
 HAS_CONFIGURE=	yes
 
-CONFIGURE_ENV+=	X11BASE=${X11BASE}
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>

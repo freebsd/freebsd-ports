@@ -24,7 +24,7 @@ BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 REINPLACE_ARGS=	-i ""
 USE_IMAKE=	yes
 USE_LDCONFIG=	yes
-IMAKEINCLUDE=	"-I${X11BASE}/lib/X11/config -I${WRKSRC}/config"
+IMAKEINCLUDE=	"-I${LOCALBASE}/lib/X11/config -I${WRKSRC}/config"
 MAKE_ENV+=	IMAKEINCLUDE=${IMAKEINCLUDE}
 ALL_TARGET=	World
 SUB_FILES=	pkg-message
@@ -41,7 +41,7 @@ pre-configure:
 	  ${WRKSRC}/config/XView.cf
 	@${REINPLACE_CMD} -e "s,CcCmd cc,CcCmd ${CC}," \
 	  ${WRKSRC}/config/XView.tmpl
-	@${REINPLACE_CMD} -e 's+/usr/X11/+${X11BASE}/+g;' \
+	@${REINPLACE_CMD} -e 's+/usr/X11/+${LOCALBASE}/+g;' \
 	  ${WRKSRC}/clients/olwm/screen.c
 	${REINPLACE_CMD} -e 's+/usr/lib+${PREFIX}/lib+'	\
 		${X11BASE2FIX:C|^|${WRKSRC}/|}

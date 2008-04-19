@@ -10,7 +10,7 @@
 -CFLAGS := $(CFLAGS) -fPIC -Wall $(GTKFLAGS) $(IMLIBFLAGS) -I$(GKRELLM_HDRS)
 +GTKFLAGS = `${GTK_CONFIG} --cflags`
 +IMLIBFLAGS = `${IMLIB_CONFIG} --cflags-gdk`
-+CFLAGS += -fPIC -Wall $(GTKFLAGS) $(IMLIBFLAGS) -I${X11BASE}/include/gkrellm
++CFLAGS += -fPIC -Wall $(GTKFLAGS) $(IMLIBFLAGS) -I${LOCALBASE}/include/gkrellm
  LDFLAGS := -shared -Wl
  INST_DIR := $(DESTDIR)/usr/lib/gkrellm/plugins
  USER_INST_DIR := $(DESTDIR)$(HOME)/.gkrellm/plugins

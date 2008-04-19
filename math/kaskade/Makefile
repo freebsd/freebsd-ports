@@ -7,7 +7,7 @@
 
 PORTNAME=	kaskade
 PORTVERSION=	3.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.zib.de/pub/kaskade/3.x/
 DISTNAME=	${PORTVERSION}
@@ -19,7 +19,7 @@ USE_FORTRAN=	yes
 FORTRANLIBS=	-lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -31,7 +31,7 @@ BROKEN=		Does not compile with GCC 4.2
 
 post-patch:
 	${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.presed
-	${SED} -e 's#/usr/X11R6#${X11BASE}#g' \
+	${SED} -e 's#/usr/X11R6#${LOCALBASE}#g' \
 	    -e 's#/usr/local#${LOCALBASE}#g' \
 	    ${WRKSRC}/Makefile.presed > ${WRKSRC}/Makefile
 

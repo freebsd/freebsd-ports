@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.usablelabs.com/download/
 MAINTAINER=	piyawat@usablelabs.com
 COMMENT=	Thai language support library
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:15 autoconf:261 libtool:15

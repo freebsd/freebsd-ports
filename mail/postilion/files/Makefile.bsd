@@ -5,7 +5,7 @@ LOCALBASE?=	/usr/local
 TCL_VER?=	8.3
 DIR?=		lib/postlionlib
 
-LDADD=		-lm -L${LOCALBASE}/lib -L${X11BASE} -lc-client4 \
+LDADD=		-lm -L${LOCALBASE}/lib -lc-client4 \
 		-ltk${TCL_VER:S/.//} -ltcl${TCL_VER:S/.//} -lX11
 .if exists(/usr/lib/libpam.a)
 LDADD+=		-lpam
@@ -15,7 +15,7 @@ CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}
 CFLAGS+=	-I${LOCALBASE}/include/tk${TCL_VER}
 CFLAGS+=	-DNDEBUG -I.
 CFLAGS+=	-I${LOCALBASE}/include/c-client -I${LOCALBASE}/include
-CFLAGS+=	-I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 BINDIR		= ${LOCALBASE}/${DIR}
 

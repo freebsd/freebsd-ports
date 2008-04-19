@@ -7,7 +7,7 @@
 
 PORTNAME=	gicq
 PORTVERSION=	0.33
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese net
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.korsoft.com/pub/gicq/
@@ -24,7 +24,6 @@ COMMENT=	GTK based ICQ program
 
 LIB_DEPENDS=	icq.0:${PORTSDIR}/japanese/libicq
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gnome --disable-nls

@@ -16,7 +16,7 @@ COMMENT=	The Wild Magic Real-Time 3D Graphics Engine
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
-USE_GL=		yes
+USE_GL=		gl glut
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
@@ -26,8 +26,8 @@ MAKEFILE=	makefile.wm${MV}
 ALL_TARGET=	build
 MAKE_ARGS=	CFG=${CONFIG} SYS=${OPSYS:L} GRF=${GRF}
 MAKE_ENV=	CC=${CXX} GCC=${CXX} AR=${AR} EGL=${EGL} EGL0=glx EGL1=Glx	\
-		INCPATH="-I${LOCALBASE}/include -I${X11BASE}/include"		\
-		LIBPATH="-L${LOCALBASE}/lib -L${X11BASE}/lib"			\
+		INCPATH="-I${LOCALBASE}/include"		\
+		LIBPATH="-L${LOCALBASE}/lib"			\
 		XLIBS="-lX11 -lXext" GLIBS="-lGL -lGLU"
 PLIST_SUB=	CFG=${CONFIG} GRF=${GRF} WM=Wm${MV}
 

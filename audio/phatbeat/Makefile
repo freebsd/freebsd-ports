@@ -7,7 +7,7 @@
 
 PORTNAME=		phatbeat
 PORTVERSION=		1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=		audio
 MASTER_SITES=		http://www.postreal.org/files/
 DISTNAME=		PhatBeat-${PORTVERSION}
@@ -15,7 +15,6 @@ DISTNAME=		PhatBeat-${PORTVERSION}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A beat counter
 
-USE_X_PREFIX=		yes
 USE_SDL=		sdl image
 MAN1=			phatbeat.1
 

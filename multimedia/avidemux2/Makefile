@@ -28,10 +28,10 @@ USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15 aclocal:19:env
 USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_SDL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/a52dec" \
-		LIBFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}" \
+		LIBFLAGS="-L${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS} \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--disable-warnings \

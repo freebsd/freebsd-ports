@@ -7,10 +7,10 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
+PORTREVISION=	1
 CATEGORIES=		emulators
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	open-vm-tools
+MASTER_SITES=		SF
 
 MAINTAINER=		mbr@freebsd.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
@@ -23,7 +23,9 @@ GNU_CONFIGURE=		yes
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
 .else
-USE_XLIB=		yes
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include"
+USE_XORG=		x11 ice xineramaproto xinerama xrandr xtst
 USE_GNOME=		gtk12
 PLIST_SUB+=		X11=""
 PLIST=			${PKGDIR}/pkg-plist-x11
@@ -71,8 +73,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/freebsd/resume-vm-default ${PREFIX}/share/vmware-tools/resume-vm-default
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/freebsd/suspend-vm-default ${PREFIX}/share/vmware-tools/suspend-vm-default
 .if !defined(WITHOUT_X11)
-	${INSTALL} ${WRKSRC}/toolbox/toolbox ${X11BASE}/sbin/vmware-toolbox
-	${INSTALL} ${WRKSRC}/vmware-user/vmware-user ${X11BASE}/sbin/vmware-user
+	${INSTALL} ${WRKSRC}/toolbox/toolbox ${LOCALBASE}/sbin/vmware-toolbox
+	${INSTALL} ${WRKSRC}/vmware-user/vmware-user ${LOCALBASE}/sbin/vmware-user
 .endif
 
 .include <bsd.port.post.mk>

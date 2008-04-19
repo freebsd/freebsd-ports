@@ -7,14 +7,13 @@
 
 PORTNAME=	dlume
 PORTVERSION=	0.2.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://clay.ll.pl/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 address book
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

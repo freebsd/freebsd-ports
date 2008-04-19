@@ -25,7 +25,7 @@ USE_OPENSSL=	yes
 USE_GNOME=	gnomehack libxslt
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	xmlsec.1 xmlsec-config.1
 

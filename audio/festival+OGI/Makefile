@@ -38,7 +38,7 @@ MAKE_ENV+=	PKG_EST_HOME=${SPEECHTOOLS} \
 		PKG_FESTIVAL_BUILD_HOME=${FESTIVAL} \
 		PKG_FESTIVAL_HOME=${FHOME} \
 		PKG_COMPILER="${CC}" \
-		PKG_X11BASE=${X11BASE} \
+		PKG_LOCALBASE=${LOCALBASE} \
 		PKG_PREFIX=${PREFIX} \
 		GCC27_CC="${CC}" \
 		GCC27_CXX="${CXX}" \
@@ -77,7 +77,7 @@ post-patch:
 	${SPEECHTOOLS}/config/systems/${FESTIVAL_ARCH}_FreeBSD${ii}.${jj}.mak
 .endfor
 .endfor
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/speech_tools/config/systems/default.mak
 
 do-install:

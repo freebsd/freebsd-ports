@@ -8,6 +8,7 @@
 
 PORTNAME=	evolution-jescs
 PORTVERSION=	2.22
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +19,6 @@ COMMENT=	Sun Java Enterprise System Calendar Server provider for Evolution
 BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

@@ -14,9 +14,9 @@
 -DESTDIR= /usr/X11R6
 -LIBDIR = -L/usr/X11R6/lib
 +X11BASE	?= /usr/X11R6
-+INCDIR = -I${X11BASE}/include/X11 -I${X11BASE}/include
++INCDIR = -I${LOCALBASE}/include/X11 -I${LOCALBASE}/include
 +DESTDIR= ${PREFIX}
-+LIBDIR = -L${X11BASE}/lib
++LIBDIR = -L${LOCALBASE}/lib
  
  # for linux
  LIBS   = -lXpm -lX11 -lXext

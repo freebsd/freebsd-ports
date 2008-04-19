@@ -81,7 +81,6 @@
 %%LOCAL_FONTSDIR%%/TrueType/M+1P+IPAG-circle.ttf
 @dirrmtry %%LOCAL_FONTSDIR%%/TrueType
 @dirrmtry %%LOCAL_FONTSDIR%%
-@cwd %%X11BASE%%
 etc/fonts/conf.d/20-unhint-ipattfonts.conf
 etc/fonts/conf.d/62-fonts-ipattfonts.conf
 %%X_FONTSDIR%%/TrueType/ipag.ttf
@@ -95,8 +94,8 @@ etc/fonts/conf.d/62-fonts-ipattfonts.conf
 %%X_FONTSDIR%%/TrueType/M+1VM+IPAG-circle.ttf
 %%X_FONTSDIR%%/TrueType/M+1P+IPAG.ttf
 %%X_FONTSDIR%%/TrueType/M+1P+IPAG-circle.ttf
-@exec %%X11BASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
-@unexec %%X11BASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
+@unexec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
 @unexec rm -f %D/%%X_FONTSDIR%%/TrueType/fonts.cache-1
 @dirrmtry %%X_FONTSDIR%%/TrueType
-@unexec if [ -d %D/%%X_FONTSDIR%%/TrueType ]; then %%X11BASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true; fi
+@unexec if [ -d %D/%%X_FONTSDIR%%/TrueType ]; then %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true; fi

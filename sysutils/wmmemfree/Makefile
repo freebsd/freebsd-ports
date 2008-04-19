@@ -7,7 +7,7 @@
 
 PORTNAME=	wmmemfree
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/xutils
@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Memory and swap monitoring dockapp
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_XORG=	xpm
 
 MAN1=		${PORTNAME}.1

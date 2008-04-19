@@ -7,10 +7,9 @@
 
 PORTNAME=	minivmac
 PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}.src.tgz ${PORTNAME}-${PORTVERSION}.prj.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,15 +19,15 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/projects/bgclx86d
 
-USE_XLIB=	yes
+USE_XORG=	x11 xext
 USE_GMAKE=	yes
-CFLAGS+=	-I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 ALL_TARGET=	# nothing
 
 PLIST_FILES=	bin/minivmac
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/minivmac ${PREFIX}/bin

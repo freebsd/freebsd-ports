@@ -7,7 +7,7 @@
 
 PORTNAME=	xtel
 PORTVERSION=	3.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	french comms emulators
 MASTER_SITES=	http://pficheux.free.fr/xtel/download/
 
@@ -15,15 +15,16 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	An emulator for the french Minitel
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
-BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 # Remark: Xtel can serve a network, and emulate TVR and I-Minitel, but this is
 # the first release of this port, and these functionnalities have not (yet)
 # been implemented.
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xbitmaps
 
 MAN1=	xtel.1 xteld.1
 

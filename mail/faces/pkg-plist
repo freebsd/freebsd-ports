@@ -9,5 +9,4 @@ include/compface.h
 lib/libcompface.a
 lib/libcompface.so
 lib/libcompface.so.1
-%%X11%%@cwd %%X11BASE%%
 %%X11%%lib/X11/app-defaults/Faces

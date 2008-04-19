@@ -7,8 +7,8 @@
 -INCDIR		= -I/usr/local/include -I/usr/X11R6/include \
 -		  -I/usr/local/include/X11
 -LIBDIR		= -L/usr/local/lib -L/usr/X11R6/lib -L/usr/local/lib/X11
-+INCDIR		= -I${LOCALBASE}/include -I${X11BASE}/include
-+LIBDIR		= -L${LOCALBASE}/lib -L${X11BASE}/lib
++INCDIR		=  -I${LOCALBASE}/include
++LIBDIR		=  -L${LOCALBASE}/lib
  EXTRA_LIBS	= -lSM -lICE
  
  # Irix at Ifi

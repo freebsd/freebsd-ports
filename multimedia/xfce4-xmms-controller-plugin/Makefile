@@ -23,7 +23,7 @@ DEPRECATED=	Project is dead
 EXPIRATION_DATE=2008-03-31
 IGNORE=		Does not support xfce 4.4
 USE_GNOME=	gtk20
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/${PORTNAME}

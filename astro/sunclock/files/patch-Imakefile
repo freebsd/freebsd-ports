@@ -34,12 +34,12 @@
 -#JINC=-I/usr/include
 -
 -CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
-+XPMLIBDIR=-L${X11BASE}/lib
-+XPMINC=-I${X11BASE}/include/X11
++XPMLIBDIR=-L${LOCALBASE}/lib
++XPMINC=-I${LOCALBASE}/include/X11
 +JLIBDIR=-L${LOCALBASE}/lib
 +ZLIBDIR=-L${LOCALBASE}/lib
 +JINC=-I${LOCALBASE}/include
-+CCOPTIONS=-DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DNEW_CTIME -I${LOCALBASE}/include -I${X11BASE}/include -L${LOCALBASE}/lib -L${X11BASE}/lib
++CCOPTIONS=-DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DNEW_CTIME -I${LOCALBASE}/include -L${LOCALBASE}/lib
  #endif
  
  SRCS=sunclock.c astro.c widgets.c tildepath.c dirlist.c \

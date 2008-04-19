@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The freespace for Window Maker
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-patch:

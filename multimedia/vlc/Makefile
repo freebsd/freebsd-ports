@@ -24,7 +24,7 @@ COMMENT=	Multimedia streaming server and player for various audio/video formats
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
 OPTIONS+=	A52 "a52 audio support, many DVDs use this" On
 OPTIONS+=	AALIB "Aalib Console Graphics Support" Off
@@ -63,7 +63,7 @@ OPTIONS+=	X264 "Enable H.264/AVC codec support" On
 
 CONFLICTS=	vlc-devel-[0-9]*
 
-WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
+WITH_VLC_DEFAULT_FONT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -79,8 +79,8 @@ PLIST=		${WRKDIR}/plist
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include -I${LOCALBASE}/ffmpeg ${PTHREAD_CFLAGS} -DHAVE_POSTPROC_POSTPROCESS_H" \
-		LDFLAGS="${LDFLAGS} -L${FAKEDIR}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS} -lc" \
+CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/ffmpeg ${PTHREAD_CFLAGS} -DHAVE_POSTPROC_POSTPROCESS_H" \
+		LDFLAGS="${LDFLAGS} -L${FAKEDIR}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lc" \
 		LIBS="-lc"
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \

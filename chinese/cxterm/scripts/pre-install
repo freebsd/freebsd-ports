@@ -22,7 +22,7 @@ echo ""                                                    >> $CXTERM_SH
 
 
 #	look for Simple fonts from the X11R6 misc fonts collection
-if [ ! -f ${X11BASE}/lib/X11/fonts/misc/gb16st.pcf.Z ]; then
+if [ ! -f ${LOCALBASE}/lib/X11/fonts/misc/gb16st.pcf.Z ]; then
 	echo ""
 	echo "You need to install the X11R6 misc fonts in order to get the"
 	echo "Simple Chinese fonts."

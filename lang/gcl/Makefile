@@ -30,8 +30,6 @@ CONFIGURE_ARGS=--prefix=${PREFIX} \
 	--enable-tkconfig=${LOCALBASE}/lib/tk8.4 \
 	--enable-tclconfig=${LOCALBASE}/lib/tcl8.4 \
 	--with-x \
-	--x-includes=${X11BASE}/include \
-	--x-libraries=${X11BASE}/lib \
 	--disable-dlopen \
 	--disable-dynsysbfd \
 	--disable-statsysbfd \

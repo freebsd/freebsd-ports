@@ -7,11 +7,10 @@
 
 PORTNAME=		xvidcap
 DISTVERSION=		1.1.4p1
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		1
 CATEGORIES=		sysutils multimedia
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Capture your X display to individual frames or MPEG video
@@ -30,12 +29,12 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 			LDFLAGS="-L${LOCALBASE}/lib"	\
 			MAKE="${GMAKE}"
-CONFIGURE_ARGS=		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib	\
-			-with-forced-embedded-ffmpeg	# To be removed after ffmpeg-devel's upgrade
+CONFIGURE_ARGS=		-with-forced-embedded-ffmpeg	# To be removed after ffmpeg-devel's upgrade
 
 USE_GMAKE=		yes	# To be removed after ffmpeg-devel's upgrade
 USE_GNOME=		glib20 libglade2
 USE_GETTEXT=		yes
+USE_XORG=		x11 xmu
 INSTALLS_OMF=		yes
 
 .if !defined(CFLAGS) || ${CFLAGS:M-fno-strict-aliasing*} == ""

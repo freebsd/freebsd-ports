@@ -7,19 +7,17 @@
 
 PORTNAME=	phluid
 PORTVERSION=	0.0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	phluid
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A window manager that emphasizes efficiency, speed, and beauty
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lm"
 
 .include <bsd.port.mk>

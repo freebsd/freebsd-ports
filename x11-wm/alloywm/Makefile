@@ -7,7 +7,7 @@
 
 PORTNAME=	alloywm
 PORTVERSION=	0.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.phatboydesigns.net/devel/
 
@@ -17,10 +17,10 @@ COMMENT=	Has title bars, shading, resizing, automatic placement, window list
 BROKEN=		Checksum mismatch
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--xroot=${X11BASE}
+CONFIGURE_ARGS=	--xroot=${LOCALBASE}
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 WANT_GNOME=	yes
 REINPLACE_ARGS=	-i'' -E
 SCRIPTS=	${WRKSRC}/scriptdir
@@ -35,11 +35,11 @@ pre-configure:
 do-build:
 	cd ${WRKSRC}/goodies && ${GMAKE}
 .for ii in client events main misc new screen widgets
-	cd ${WRKSRC}/src && ${CC} -c ${CFLAGS} -I${X11BASE}/include \
+	cd ${WRKSRC}/src && ${CC} -c ${CFLAGS} -I${LOCALBASE}/include \
 		${ii}.c
 .endfor
 	cd ${WRKSRC}/src && ${CC} ${CFLAGS} -DSHAPE -o alloywm \
-		-L${X11BASE}/lib -lXext -lX11 \
+		-L${LOCALBASE}/lib -lXext -lX11 \
 		client.o events.o main.o misc.o new.o screen.o widgets.o
 
 pre-install:

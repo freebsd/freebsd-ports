@@ -7,7 +7,7 @@
 
 PORTNAME=	kanji
 PORTVERSION?=	1.0
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=   ${MASTER_SITE_PORTS_JP}
 MASTER_SITE_SUBDIR=	${DISTNAME}
@@ -20,13 +20,12 @@ COMMENT=	X11 ${PKGNAMESUFFIX}-dot kanji font
 
 EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
-		bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 DIST_SUBDIR=	${DISTNAME}
 FONTSDIR=	lib/X11/fonts/local
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -54,7 +53,7 @@ post-patch:
 pre-install:
 	@for file in INSTALL DEINSTALL; do \
 		${SED} -e 's,%%FONTSDIR%%,${FONTSDIR},g' \
-		       -e 's,%%X11BASE%%,${X11BASE},g' \
+		       -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 			< ${FILESDIR}/$${file}.tmpl > ${WRKSRC}/$${file}; \
 	done
 	@${SETENV} PKG_PREFIX=${PREFIX} \

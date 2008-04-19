@@ -7,18 +7,17 @@
 
 PORTNAME=	asbutton
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asbutton/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that displays 4 or 9 buttons to run apps of your choice
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 ALL_TARGET=	asbutton
-MAKE_ARGS=	INCLUDES="-I${X11BASE}/include/X11 -I${X11BASE}/include" \
-		LIBINC="-L${X11BASE}/lib" LIBS="-lm -lX11 -lXpm -lXext" \
+MAKE_ARGS=	INCLUDES="-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include" \
+		LIBINC="-L${LOCALBASE}/lib" LIBS="-lm -lX11 -lXpm -lXext" \
 		CCFLAGS="${CFLAGS}"
 
 .include <bsd.port.pre.mk>

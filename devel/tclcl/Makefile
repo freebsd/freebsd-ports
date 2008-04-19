@@ -10,8 +10,7 @@ PORTVERSION=	1.19
 PORTREVISION=	2
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	devel tcl tk
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	otcl-tclcl
+MASTER_SITES=	SF/otcl-tclcl
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Tcl/C++ interface used by ns and nam
@@ -20,6 +19,7 @@ LIB_DEPENDS=	otcl:${PORTSDIR}/lang/otcl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_XORG=	x11
 USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 
@@ -39,8 +39,7 @@ USE_TK=		80+
 
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 
-CONFIGURE_ARGS=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER} \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ARGS=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|exec tclsh|exec ${TCLSH}|g' ${WRKSRC}/otcldoc

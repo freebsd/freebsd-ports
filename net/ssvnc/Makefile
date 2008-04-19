@@ -7,25 +7,25 @@
 
 PORTNAME=	ssvnc
 PORTVERSION=	1.0.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	http://www.karlrunge.com/x11vnc/etv/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Enhanced TightVNC Viewer (SSVNC: SSL/SSH VNC viewer)
 
-BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel
 
-USE_XLIB=	yes
+USE_XORG=	xi xmu xt xaw
 USE_TCL_RUN=	84
 USE_TK_RUN=	84
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/usr/local|${LOCALBASE}|g; s|/usr/X11R6|${X11BASE}|g' \
+		's|/usr/local|${LOCALBASE}|g; s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/build.unix
 	@${REINPLACE_CMD} -e \
 		's|exec wish|exec ${WISH}|; \

@@ -44,7 +44,7 @@ CONFIGURE_ARGS=		--disable-download					\
 			--with-umfpack="-lumfpack"				\
 			--with-arpack="${ARPACK}"
 CONFIGURE_ENV=		CPPFLAGS="${MPICFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/suitesparse/include ${PTHREAD_CFLAGS}"	\
-			LDFLAGS="${MPILDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}" \
+			LDFLAGS="${MPILDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 			FC=${FC} F77=${F77} FCFLAGS=${FCFLAGS}
 
 DOC_TARGET=	freefem++doc.pdf
@@ -95,7 +95,7 @@ CONFIGURE_ARGS+=	--without-mpi
 
 pre-configure:
 	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"		\
-		-e "s|/usr/X11R6|${X11BASE}|g"				\
+		-e "s|/usr/X11R6|${LOCALBASE}|g"				\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	${REINPLACE_CMD} -e "s|mpicc|${LOCALBASE}/mpich2/bin/mpicxx|"	\
 		${WRKSRC}/src/mpi/Makefile.in

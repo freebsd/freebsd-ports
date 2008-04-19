@@ -18,7 +18,8 @@ MAINTAINER=	conrads@cox.net
 COMMENT=	Fonts from the SGI ProPack 1.4 (originally for Linux)
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+BUILD_DEPENDS=		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+			mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	lib/X11/fonts/local/sgi

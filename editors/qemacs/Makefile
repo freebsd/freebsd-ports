@@ -7,7 +7,7 @@
 
 PORTNAME=	qemacs
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://fabrice.bellard.free.fr/qemacs/
 
@@ -46,9 +46,9 @@ LDFLAGS=	`libpng-config --L_opts`
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=	--disable-x11
 .else
-USE_XLIB=	yes
-CFLAGS+=	-I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib
+USE_XORG=	x11 xv xext
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 post-patch:

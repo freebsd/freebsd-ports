@@ -7,17 +7,15 @@
 
 PORTNAME=	gtkpasman
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	phil@teaser.fr
 COMMENT=	A GTK+ passwords manager for system and network administrators
 
 RUN_DEPENDS+=   gpgv:${PORTSDIR}/security/gnupg1
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

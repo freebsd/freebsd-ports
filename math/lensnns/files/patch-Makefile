@@ -5,7 +5,7 @@
  #MACHINE   = INTEL
  MAKE      = /usr/bin/make
 -SYSLIB    = -export-dynamic -ldl -L/usr/X11R6/lib
-+SYSLIB    = -export-dynamic -ldl -L${X11BASE}/lib
++SYSLIB    = -export-dynamic -ldl -L${LOCALBASE}/lib
  
  # Windows 95/98/NT using Cygwin:
  ifeq ($(HOSTTYPE),i686)

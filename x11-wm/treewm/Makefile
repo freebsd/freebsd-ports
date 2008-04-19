@@ -7,26 +7,25 @@
 
 PORTNAME=	treewm
 PORTVERSION=	0.4.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Manager that arranges the windows in a tree
 
-BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
+BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 ice sm xext xmu xpm xt xxf86vm
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL PROBLEMS README README.tiling TODO default.cfg sample.cfg
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/Makefile
 
 post-build:
 	@${SED} 's|%%D%%|${DOCSDIR}|g' ${PKGDIR}/pkg-message >${PKGMESSAGE}

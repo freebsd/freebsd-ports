@@ -5,7 +5,7 @@
  CFLAGS ?= -O -g
  CFLAGS += $(FLAGS)
 -LIBS = -L/usr/X11R6/lib $(GTK_LIB)
-+LIBS = -L${X11BASE}/lib $(GTK_LIB) -lXxf86vm
++LIBS = -L${LOCALBASE}/lib $(GTK_LIB) -lXxf86vm
  LFLAGS = -shared
  CC ?= gcc
  INSTALL = install -c

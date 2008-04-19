@@ -251,9 +251,9 @@ CONFIGURE_ARGS+=	--without-freetype
 .if !defined(WITHOUT_IMAGEMAGICK_FONTCONFIG)
 LIB_DEPENDS+=		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
 CONFIGURE_ARGS+=	--with-fontconfig
-CONFIGURE_ENV+=		FONTCONFIG_CFLAGS="-I${X11BASE}/include" \
-			FONTCONFIG_LIBS="-L${X11BASE}/lib"
-MAKE_ENV+=		FONTCONFIG_CFLAGS="-I${X11BASE}/include"
+CONFIGURE_ENV+=		FONTCONFIG_CFLAGS="-I${LOCALBASE}/include" \
+			FONTCONFIG_LIBS="-L${LOCALBASE}/lib"
+MAKE_ENV+=		FONTCONFIG_CFLAGS="-I${LOCALBASE}/include"
 .else
 CONFIGURE_ARGS+=	--without-fontconfig
 .endif
@@ -284,8 +284,8 @@ IGNORE=			SVG support requires X11 libraries, please unset WITHOUT_X11
 .endif
 LIB_DEPENDS+=		rsvg-2:${PORTSDIR}/graphics/librsvg2
 CONFIGURE_ARGS+=	--with-rsvg
-CONFIGURE_ENV+=		RSVG_CFLAGS="-I${X11BASE}/include/librsvg-2" \
-			RSVG_LIBS="-L${X11BASE}/lib"
+CONFIGURE_ENV+=		RSVG_CFLAGS="-I${LOCALBASE}/include/librsvg-2" \
+			RSVG_LIBS="-L${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS+=	--without-rsvg
 .endif

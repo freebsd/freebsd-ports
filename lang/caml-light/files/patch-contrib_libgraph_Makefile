@@ -10,8 +10,8 @@
 -X11_INCLUDES=/usr/include
 -X11_LIB=/usr/lib
 -CPP=/lib/cpp -P
-+X11_INCLUDES=${X11BASE}
-+X11_LIB=${X11BASE}/lib
++X11_INCLUDES=${LOCALBASE}
++X11_LIB=${LOCALBASE}/lib
 +CPP=/usr/bin/cpp -P
  
 -BINDIR=/usr/local/bin

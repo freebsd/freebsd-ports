@@ -6,16 +6,16 @@ $FreeBSD$
  
  ifeq ($(PLATFORM), bsd)
    PLUGIN_PLATFORM_SRC := $(PLUGIN_TOP)/src/plugin/src/solaris
--  X11BASE = /usr/X11R6
-   OTHER_LDFLAGS = -L$(X11BASE)/lib
+-  LOCALBASE = /usr/X11R6
+   OTHER_LDFLAGS = -L$(LOCALBASE)/lib
    ifeq (,$(filter-out DragonFly NetBSD,$(TRUE_PLATFORM)))
-     OTHER_LDFLAGS += -Wl,-R$(X11BASE)/lib
+     OTHER_LDFLAGS += -Wl,-R$(LOCALBASE)/lib
 @@ -61,7 +60,7 @@
  
    # include search paths
    # XXXBSD: these should be defined in other place
--  CPPFLAGS1 += -I$(X11BASE)/include -I/usr/local/include
-+  CPPFLAGS1 += -I$(X11BASE)/include -I${LOCALBASE}/include
+-  CPPFLAGS1 += -I$(LOCALBASE)/include -I/usr/local/include
++  CPPFLAGS1 += -I$(LOCALBASE)/include -I${LOCALBASE}/include
  
    ifeq ($(TRUE_PLATFORM), FreeBSD)
        LDFLAGS_COMMON += -pthread

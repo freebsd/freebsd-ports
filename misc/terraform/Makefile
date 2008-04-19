@@ -8,17 +8,16 @@
 
 PORTNAME=	terraform
 PORTVERSION=	0.9.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive height field generation and manipulation program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:${PORTSDIR}/devel/trio
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_BISON=	build
 USE_GNOME=	gnomeprefix gnomehack gnomeprint
 USE_GMAKE=	yes

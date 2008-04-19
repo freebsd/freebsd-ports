@@ -7,7 +7,7 @@
 
 PORTNAME=	tkrat
 PORTVERSION=	2.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail tk
 MASTER_SITES=	http://tkrat.org/downloads/stable/ \
 		ftp://ftp.tkrat.org/pub/tkrat/
@@ -19,7 +19,7 @@ LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84 \
 		c-client4.9:${PORTSDIR}/mail/cclient
 
-USE_XLIB=	yes
+USE_XORG=	x11 xt
 
 GNU_CONFIGURE=	yes
 

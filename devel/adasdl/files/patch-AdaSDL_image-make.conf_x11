@@ -3,6 +3,6 @@
 @@ -1,4 +1,4 @@
  #LIBS= -L/usr/lib -L/usr/local/lib ~/lib -Wl,-rpath,. -lSDL -lpthread -L/usr/lib -lGL -lGLU
 -LIBS= -L/usr/lib -L/usr/local/lib -L~/lib  -lSDL_image -lSDL -lpthread -lGL -lGLU
-+LIBS= -L/usr/lib -L${LOCALBASE}/lib -L${X11BASE}/lib -L~/lib  -lSDL_image -lSDL -pthread -lGL -lGLU
++LIBS= -L/usr/lib -L${LOCALBASE}/lib -L~/lib  -lSDL_image -lSDL -pthread -lGL -lGLU
  
  EXE=

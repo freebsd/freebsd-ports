@@ -19,8 +19,7 @@ USE_TK=		yes
 USE_XORG=	x11 xext sm ice
 USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
-		--enable-ipv6
+CONFIGURE_ARGS=	--enable-ipv6
 
 MAN1=		rat.1
 MANCOMPRESSED=	no

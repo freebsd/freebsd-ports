@@ -20,11 +20,10 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-#USE_LDCONFIG=	yes  (should replace INSTALLS_SHLIB after ports/102750 got committed)
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_LINUX_PREFIX=	yes
 PLIST_SUB=	LINUXBASE=${LINUXBASE}
 

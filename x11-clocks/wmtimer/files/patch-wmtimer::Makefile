@@ -5,7 +5,7 @@
 -LIBDIR = -L/usr/X11R6/lib -L/usr/lib
 -LIBS   = -lXpm -lXext -lX11 -lpthread `pkg-config --libs gtk+-2.0`
 -CFLAGS = `pkg-config --cflags gtk+-2.0`
-+LIBDIR = -L${X11BASE}/lib -L${LOCALBASE}/lib
++LIBDIR = -L${LOCALBASE}/lib
 +LIBS   = -lXpm -lXext -lX11 `pkg-config --libs gtk+-2.0` ${PTHREAD_LIBS}
 +CFLAGS += `pkg-config --cflags gtk+-2.0` ${PTHREAD_CFLAGS}
  

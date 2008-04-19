@@ -9,10 +9,10 @@
 -CFLAGS	= -g -Wall -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align \
 -	-Wwrite-strings -Wconversion -Waggregate-return -Wstrict-prototypes \
 -	-Wmissing-prototypes -Wmissing-declarations -Wnested-externs
-+LIBS	= -L$(X11BASE)/lib -L/usr/local/lib -lX11 -lXext \
++LIBS	= -L$(LOCALBASE)/lib -L/usr/local/lib -lX11 -lXext \
 +		-ljpeg -lpng -ltiff -lz -lungif -lm -lImlib 
 +
-+CFLAGS	+= -I$(X11BASE)/include
++CFLAGS	+= -I$(LOCALBASE)/include
  
  VERSION=2.0
  

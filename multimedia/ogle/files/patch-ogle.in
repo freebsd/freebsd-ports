@@ -5,7 +5,7 @@
  DVDP_UI=$DVDP_ROOT/ogle_gui$gui_debug
  else
 -DVDP_UI=$exec_prefix/bin/ogle_gui$gui_debug
-+DVDP_UI=%%X11BASE%%/lib/ogle/ogle_gui$gui_debug
++DVDP_UI=%%LOCALBASE%%/lib/ogle/ogle_gui$gui_debug
  fi
  fi
  export DVDP_UI

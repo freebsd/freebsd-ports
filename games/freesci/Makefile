@@ -7,7 +7,7 @@
 
 PORTNAME=	freesci
 PORTVERSION=	0.3.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games emulators
 MASTER_SITES=	http://www-plan.cs.colorado.edu/creichen/${PORTNAME}/ \
 		http://teksolv.de/~jameson/
@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable interpreter for SCI games, such as the Space Quest series
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 INSTALLS_ICONS=	yes

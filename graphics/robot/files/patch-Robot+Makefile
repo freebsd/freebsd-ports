@@ -45,7 +45,7 @@
  
  #X library - may need to edit if location different
 -XLIB = -L/usr/X11R6/lib -lX11
-+XLIB = -L${X11BASE}/lib -lX11
++XLIB = -L${LOCALBASE}/lib -lX11
  
  # location of the FITS library
  FITSDIR = ../Fitsio/

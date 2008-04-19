@@ -8,7 +8,7 @@
 
 PORTNAME=	mdk
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gnu/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
@@ -23,7 +23,6 @@ COMMENT=	A set of utilities for developing programs using MIX and MIXAL
 LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile \
 		readline.5:${PORTSDIR}/devel/readline
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls

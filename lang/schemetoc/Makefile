@@ -18,7 +18,7 @@ COMMENT=	Scheme-to-C, a compiler and interpreter for compiling scheme into C
 
 USE_GCC=	2.95
 USE_XORG=	x11 xi
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		scc.1 sci.1
 
@@ -34,6 +34,6 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
-		s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/scsc/*.sc
+		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/scsc/*.sc
 
 .include <bsd.port.mk>

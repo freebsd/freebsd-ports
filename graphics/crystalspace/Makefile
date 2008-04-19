@@ -125,8 +125,8 @@ CONFIGURE_ARGS+=	--without-3ds
 .endif
 
 .if !defined(WITHOUT_ODE)
-BUILD_DEPENDS+=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
-CONFIGURE_ARGS+=	--with-ode=${X11BASE}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
+CONFIGURE_ARGS+=	--with-ode=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-ode
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	icon
 PORTVERSION=	9.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.arizona.edu/icon/ftp/packages/unix/
 DISTNAME=	${PORTNAME}.v${PORTVERSION:S/.//g}src
@@ -30,8 +30,8 @@ BINXS=		colrbook colrpick fontpick palette vib wevents xgamma
 CONFIG_CMD=	Configure
 PLIST_SUB=	WITHOUT_X11="@comment "
 .else
-USE_XLIB=	yes
-CFLAGS+=	-I${X11BASE}/include
+USE_XORG=	x11 xpm
+CFLAGS+=	-I${LOCALBASE}/include
 CONFIG_CMD=	X-Configure
 PLIST_SUB=	WITHOUT_X11=
 .endif
@@ -39,9 +39,9 @@ PLIST_SUB=	WITHOUT_X11=
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC.*|CC=${CC}|g ; \
 		 s|^CFLAGS.*|CFLAGS=${CFLAGS}|g ; \
-		 s|/usr/X11R6|${X11BASE}|g ; \
+		 s|/usr/X11R6|${LOCALBASE}|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}| ; \
-		 s|^XLIBS.*|XLIBS=-L${X11BASE}/lib -lX11|g" \
+		 s|^XLIBS.*|XLIBS=-L${LOCALBASE}/lib -lX11|g" \
 		${WRKSRC}/config/${ARCH_NAME}/Makedefs
 	@${REINPLACE_CMD} -e 's|/opt/icon|${ICONDIR}|g' ${WRKSRC}/ipl/BuildBin
 	@${REINPLACE_CMD} -e 's|ld -Bshareable|\$$CC -shared|g ; \

@@ -26,8 +26,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pygtk
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \

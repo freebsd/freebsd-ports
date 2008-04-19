@@ -5,7 +5,7 @@
  
  libXbgi.a: 
 -	(cd Xbgi; make)
-+	(cd Xbgi; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" X11BASE="$(X11BASE)")
++	(cd Xbgi; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" X11BASE="$(LOCALBASE)")
  
  all : $(BINS) $(LIBS) 
  

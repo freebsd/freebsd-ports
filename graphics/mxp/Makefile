@@ -23,9 +23,8 @@ post-extract:
 	@${CP} ${WRKSRC}/Makefile.noimake ${WRKSRC}/Makefile
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-				s|%%X11BASE%%|${X11BASE}|g ; \
-				s|%%CFLAGS%%|${CFLAGS}|g ; \
 				s|%%LOCALBASE%%|${LOCALBASE}|g ; \
+				s|%%CFLAGS%%|${CFLAGS}|g ; \
 				s|%%CC%%|${CC}|g'  ${WRKSRC}/Makefile
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mxp ${PREFIX}/bin

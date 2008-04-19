@@ -5,13 +5,13 @@
  # Root directory of XView developers package
  # For OpenWindows users, this is the same as $OPENWINHOME.
 -XVIEWROOT = ${OPENWINHOME}
-+XVIEWROOT = ${X11BASE}
++XVIEWROOT = ${LOCALBASE}
  
  # If not in OpenWindows, need to specify directory where libxview
  # and libolgx are.
  # For OpenWindows users, this is taken care of via $LD_LIBRARY_PATH.
 -XVIEWLIBDIR =
-+XVIEWLIBDIR = -L${X11BASE}/lib
++XVIEWLIBDIR = -L${LOCALBASE}/lib
  # e.g., XVIEWLIBDIR = -L/usr/openwin/lib
  # This -L... stuff may only be appropriate in a SunOS environment,
  # so do what's appropriate in your environment.  The -L<pathname>

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	elitetek@tekrealm.net
 COMMENT=	A screen locking and screen capture plugin for GKrellM
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 		import:${PORTSDIR}/graphics/ImageMagick
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmps-win32-plugin
 PORTVERSION=	0.0.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.vin.bg.ac.yu/linux/mmedia/xmps/
 
@@ -21,7 +21,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-USE_XLIB=	yes
 USE_LDCONFIG=	yes
 
 #CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs

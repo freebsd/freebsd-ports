@@ -18,9 +18,9 @@
 -  manpath = strdup("/usr/man:/usr/share/man:/usr/X11R6/man:/usr/local/man");
 +  manpath = strdup(
 +#if (defined(BSD) && (BSD >= 199306)) || (defined(sun) && defined(__svr4__))
-+		"/usr/share/man:%%X11BASE%%/man:%%LOCALBASE%%/man");
++		"/usr/share/man:%%LOCALBASE%%/man:%%LOCALBASE%%/man");
 +#else
-+		"/usr/man:%%X11BASE%%/man:%%LOCALBASE%%/man");
++		"/usr/man:%%LOCALBASE%%/man:%%LOCALBASE%%/man");
 +#endif
   }
   /* Allocate the maximum possible rather than continually realloc. */

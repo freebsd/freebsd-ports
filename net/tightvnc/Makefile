@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/vnc_unixsrc
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
 
@@ -51,7 +51,7 @@ PLIST_SUB+=	JVNC_VIEWER="@comment "
 
 #.include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/share/vnc/classes/index.vnc)
+.if exists(${LOCALBASE}/share/vnc/classes/index.vnc)
 IGNORE=		vnc has already been installed, please uninstall it first
 .endif
 

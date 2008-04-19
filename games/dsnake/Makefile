@@ -21,7 +21,7 @@ RESTRICTED=	Licence forbids any repacking and reselling
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/DeluxeSnake
 
 SUB_FILES=	pkg-install pkg-deinstall

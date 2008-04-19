@@ -7,7 +7,7 @@
 
 PORTNAME=	libtabe
 PORTVERSION=	0.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://cle.linux.org.tw/pub/xcin/cvs/
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 PLIST_SUB+=	X11=""
 .else
 CONFIGURE_ARGS+=--without-x

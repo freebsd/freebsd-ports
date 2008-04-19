@@ -36,7 +36,7 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

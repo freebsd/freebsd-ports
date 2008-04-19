@@ -7,7 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION?=	1.1.20
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
@@ -41,7 +41,7 @@ MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
 		dbus-monitor.1 dbus-send.1 dbus-uuidgen.1
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 .else
 CONFIGURE_ARGS+=--without-x
 .endif

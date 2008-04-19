@@ -7,10 +7,9 @@
 
 PORTNAME=	gnmm
 PORTVERSION=	0.1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
@@ -19,7 +18,6 @@ COMMENT=	A "nine mens' morris" implementation for the GNOME Desktop Environment
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	naga10
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA013391/fonts/
 DISTNAME=	knj10-${PORTVERSION}
@@ -16,10 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 10-dot kanji font 'naga10 font'
 
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
-		bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
-
-USE_X_PREFIX=	yes
+		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 .include <bsd.port.pre.mk>
 

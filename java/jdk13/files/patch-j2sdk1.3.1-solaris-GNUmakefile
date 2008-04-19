@@ -17,8 +17,8 @@ $FreeBSD$
  
 -X11_INCLUDE=/usr/X11R6/include
 -X11_LIB=/usr/X11R6/lib
-+X11_INCLUDE=$(X11BASE)/include
-+X11_LIB=$(X11BASE)/lib
++X11_INCLUDE=$(LOCALBASE)/include
++X11_LIB=$(LOCALBASE)/lib
  MOTIF_INCLUDE = $(MOTIF_DIR)/include
  MOTIF_LIB     = $(MOTIF_DIR)/lib
  INTL_INCLUDE  = $(INTL_DIR)/include

@@ -9,14 +9,14 @@
 -COMMONLIBS	= -L/usr/X11R6/lib/ -lX11 -lm
 -SHAREDLIBS	= -lforms
 -STATICLIBS	= -lXpm /usr/X11R6/lib/libforms.a
-+.if exists(${X11BASE}/include/X11/forms.h)
-+XFORMSINC	= -I${X11BASE}/include/X11
++.if exists(${LOCALBASE}/include/X11/forms.h)
++XFORMSINC	= -I${LOCALBASE}/include/X11
 +.endif
-+CCFLAG		= $(CFLAGS) -DXFORMS86 -DPREFIX=\"$(PREFIX)\" -I$(X11BASE)/include ${XFORMSINC}
++CCFLAG		= $(CFLAGS) -DXFORMS86 -DPREFIX=\"$(PREFIX)\" -I$(LOCALBASE)/include ${XFORMSINC}
 +#CC		= gcc
-+COMMONLIBS	= -L$(X11BASE)/lib/ -lX11 -lm
++COMMONLIBS	= -L$(LOCALBASE)/lib/ -lX11 -lm
 +SHAREDLIBS	= -lforms -lXpm
-+STATICLIBS	= $(X11BASE)/lib/libxforms.a -lXpm
++STATICLIBS	= $(LOCALBASE)/lib/libxforms.a -lXpm
  ECHO		= echo
  RM		= rm
  RMOPTS		= -f

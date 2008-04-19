@@ -65,7 +65,7 @@ PLIST_SUB+=	GAME="@comment "
 
 .if defined(WITH_GL)
 USE_GL=		yes
-CONFIGURE_ARGS+=--with-opengl=${X11BASE}
+CONFIGURE_ARGS+=--with-opengl=${LOCALBASE}
 PLIST_SUB+=	GL=""
 .else
 CONFIGURE_ARGS+=--with-opengl=no

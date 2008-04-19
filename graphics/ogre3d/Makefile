@@ -23,7 +23,7 @@ LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
 WRKSRC=		${WRKDIR}/ogrenew
 CONFIGURE_ARGS=	--disable-cg --program-transform-name= --enable-static \
 		--with-cppunit-prefix=/nonexistent --disable-freeimage
-CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -DNDEBUG" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -DNDEBUG" \
 		ZZIPLIB_CFLAGS="-I${LOCALBASE}/include" \
 		ZZIPLIB_LIBS="-L${LOCALBASE}/lib -lzzip"
 GNU_CONFIGURE=	YES
@@ -41,7 +41,7 @@ post-patch:
 		s|sdl-config|${SDL_CONFIG}|g; \
 		s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|"-lIL|"-L${LOCALBASE}/lib -lIL|g; \
-		s|-lGL -lGLU|-L${X11BASE}/lib &|g; \
+		s|-lGL -lGLU|-L${LOCALBASE}/lib &|g; \
 		s|" == "x|" = "x|g; \
 		s|-lfreeimage|-L${LOCALBASE}/lib &|g' \
 		${WRKSRC}/configure

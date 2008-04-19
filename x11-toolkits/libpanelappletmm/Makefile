@@ -7,6 +7,7 @@
 
 PORTNAME=	libpanelappletmm
 PORTVERSION=	2.22.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -21,9 +22,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 USE_GNOME=	gnomehack lthack gnomepanel
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes

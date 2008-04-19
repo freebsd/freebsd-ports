@@ -19,7 +19,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-oss --enable-shared
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_DJBFFT) && !defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft

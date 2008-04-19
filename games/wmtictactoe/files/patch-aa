@@ -4,8 +4,8 @@
 -LIBDIR = -L/usr/X11R6/lib
 +CC ?= gcc
 +CFLAGS += -c -Wall
-+INCLUDES = -I${X11BASE}/include
-+LIBDIR = -L${X11BASE}/lib
++INCLUDES = -I${LOCALBASE}/include
++LIBDIR = -L${LOCALBASE}/lib
  LIBS   = -lXpm -lXext -lX11
  OBJS =  wmtictactoe.o ../wmgeneral/wmgeneral.o
  

@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTREVISION=	${RUBY_PORTREVISION}
 PORTEPOCH=	1
 CATEGORIES+=	x11-toolkits ruby tcl tk
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 RUBY_EXTCONF_SUBDIRS=	. tkutil
-USE_XLIB=	yes
+USE_XORG=	x11
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -41,7 +41,7 @@ LIB_DEPENDS=	tcl${TK_VERSION:S/.//}:${TCLPORTDIR}${TK_VERSION:C/[^0-9]//g} \
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
-		--with-X11-dir=${X11BASE} \
+		--with-X11-dir=${LOCALBASE} \
 		--with-tcl-include=${LOCALBASE}/include/tcl${TK_VERSION} \
 		--with-tk-include=${LOCALBASE}/include/tk${TK_VERSION}
 .if defined(WITH_TCLTK_JP)

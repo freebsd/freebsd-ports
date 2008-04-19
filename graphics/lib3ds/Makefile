@@ -13,13 +13,12 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for handling 3DS (3D Studio) files
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
+USE_GL=		glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		3dsdump.1 lib3ds-config.1
 

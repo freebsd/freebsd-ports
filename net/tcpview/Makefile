@@ -26,6 +26,6 @@ post-patch:
 .endfor
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/DOC/Tcpview ${X11BASE}/lib/X11/app-defaults/
+	${INSTALL_DATA} ${WRKSRC}/DOC/Tcpview ${LOCALBASE}/lib/X11/app-defaults/
 
 .include <bsd.port.mk>

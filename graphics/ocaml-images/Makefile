@@ -31,14 +31,14 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GHOSTSCRIPT=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_FREETYPE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	\
-	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include --includedir=${X11BASE}/include
+	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include
 USE_GMAKE=	yes
 
 PKGDEINSTALL=	${PKGINSTALL}

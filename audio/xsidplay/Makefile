@@ -7,7 +7,7 @@
 
 PORTNAME=	xsidplay
 PORTVERSION=	1.6.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
@@ -16,13 +16,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front end for libsidplay
 
-USE_X_PREFIX=	yes
 USE_QT_VER=	3
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-qt3 --with-qt-binaries=${X11BASE}/bin
+CONFIGURE_ARGS=	--with-qt3 --with-qt-binaries=${LOCALBASE}/bin
 
 MAN1=		xsidplay.1
 PLIST_FILES=	bin/xsidplay

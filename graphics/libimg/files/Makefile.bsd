@@ -2,7 +2,6 @@ SHLIB_NAME?=	libimg.so.1
 
 PORTVERSION?=	1.2.4
 LOCALBASE?=	/usr/local
-X11BASE?=	/usr/X11R6
 TCL_VER?=	8.4
 
 .if exists(${LOCALBASE}/lib/tk${TCL_VER}/tkConfig.sh)
@@ -20,11 +19,11 @@ TK_STUB_LIB_SPEC=	-L${LOCALBASE}/lib -ltkstub${TCL_VER:S/.//}
 
 LDADD=		-lm -lz -L${LOCALBASE}/lib -lpng -ljpeg -ltiff \
 		${TCL_STUB_LIB_SPEC} ${TK_STUB_LIB_SPEC} \
-		-L${X11BASE}/lib -lX11
+		-lX11
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}/generic
-CFLAGS+=	-D__X11__ -I${X11BASE}/include -DALLOW_B64
+CFLAGS+=	-D__X11__ -I${LOCALBASE}/include -DALLOW_B64
 CFLAGS+=	-I${LOCALBASE}/include/tk${TCL_VER}
 CFLAGS+=	-DNDEBUG -Wall -I. -DUSE_TCL_STUBS -DUSE_TK_STUBS
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\" -I${LOCALBASE}/include

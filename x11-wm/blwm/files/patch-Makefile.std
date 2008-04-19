@@ -5,7 +5,7 @@
  # Directory of X Window System
  #
 -XDIR = /usr/X11R6
-+XDIR = $(X11BASE)
++XDIR = $(LOCALBASE)
  
  #
  # Directory where you install blwm binary

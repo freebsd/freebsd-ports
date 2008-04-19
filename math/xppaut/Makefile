@@ -7,7 +7,7 @@
 
 PORTNAME=	xppaut
 PORTVERSION=	5.96
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.math.pitt.edu/~bard/bardware/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,8 +16,7 @@ MAINTAINER=	stephen@math.missouri.edu
 COMMENT=	Graphical tool for solving differential equations, etc
 
 MAN1=		xppaut.1
-USE_X_PREFIX=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps x11 xproto
 MAKE_ARGS=	CC="${CC}"
 
 WRKSRC=		${WRKDIR}

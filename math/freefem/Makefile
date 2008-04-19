@@ -7,14 +7,14 @@
 
 PORTNAME=	freefem
 PORTVERSION=	3.5.8
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	SF/kfem
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A language for the Finite Element Method
 
-USE_XORG=	ice sm x11
-USE_XLIB=	yes
+USE_XORG=	ice sm x11 xt
 USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes

@@ -18,6 +18,6 @@ COMMENT=	Client library and basic utilities for RADIUS AAA
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

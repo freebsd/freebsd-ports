@@ -21,9 +21,9 @@ PLIST_FILES=	bin/mlclock %%DATADIR%%/mlclockrc %%DATADIR%%/mlclockrc-kanji
 PLIST_DIRS=	%%DATADIR%%
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${X11BASE}/include \
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include \
 		-DRCFILE=\".mlclockrc\" mlclock.c -o mlclock \
-		-L${X11BASE}/lib -lX11
+		-L${LOCALBASE}/lib -lX11
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mlclock ${PREFIX}/bin

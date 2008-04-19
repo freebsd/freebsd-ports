@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-crash
 PORTVERSION=	0.0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-crash/0.0
@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	sources/gnome-crash/0.0
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A small coredump analysis tool for GNOME
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade gnomeprint
 GNU_CONFIGURE=	yes

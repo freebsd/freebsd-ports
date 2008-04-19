@@ -7,7 +7,7 @@
 
 PORTNAME=	explosions
 PORTVERSION=	0.2005.07.31
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/explosions/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
@@ -18,7 +18,6 @@ COMMENT=	3D objects flying around resembling explosions with various effects
 USE_SDL=	sdl image
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_X_PREFIX=	yes
 
 post-patch:
 	@${PERL} -pi -e 's!CFLAGS=-Wall -O2!CFLAGS+=-Wall!; \

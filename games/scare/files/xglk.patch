@@ -5,7 +5,7 @@
  # for Glk, comment out the include line.
  GLKPATH	= $(GLKDIR)/$(GLK)
 -sinclude $(GLKPATH)/Make.$(GLK)
-+.include "$(X11BASE)/share/xglk/Make.$(GLK)"
++.include "$(LOCALBASE)/share/xglk/Make.$(GLK)"
  GLKLIBS	= -L$(GLKPATH) $(GLKLIB) $(LINKLIBS)
  
  # Always use the Bourne shell.
@@ -14,7 +14,7 @@
  os_glk.o: os_glk.c $(HEADERS)
  	$(CC) $(GLKARCH) $(CFLAGS) -Wno-write-strings			\
 -		-I $(GLKDIR)/$(GLK) -c -o $@ $<
-+		-DLINUX_GRAPHICS -I${X11BASE}/include/xglk -c -o $@ $<
++		-DLINUX_GRAPHICS -I${LOCALBASE}/include/xglk -c -o $@ $<
  
  # Option to build an IFP plugin version of SCARE.
  scare_plugin.c: scare.hdr

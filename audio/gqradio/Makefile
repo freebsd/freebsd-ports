@@ -7,15 +7,13 @@
 
 PORTNAME=	gqradio
 PORTVERSION=	1.9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=gqmpeg
+MASTER_SITES=	SF/gqmpeg
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 COMMENT=	GTK2 based FM tuner
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gnomehack gnomeprefix
 

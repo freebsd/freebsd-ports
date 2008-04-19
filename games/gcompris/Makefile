@@ -1,3 +1,4 @@
+
 # New ports collection makefile for:	gcompris2
 # Date created:				23 April 2003
 # Whom:					Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
@@ -7,10 +8,9 @@
 
 PORTNAME=	gcompris
 DISTVERSION=	8.3.2-2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gcompris
+MASTER_SITES=	SF/gcompris
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome2 educational games and activities for kids ages 2 to 10
@@ -26,7 +26,6 @@ RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-8.3.2
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

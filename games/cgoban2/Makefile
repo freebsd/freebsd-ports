@@ -7,7 +7,7 @@
 
 PORTNAME=	cgoban2
 PORTVERSION=	2.6.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games java
 MASTER_SITES=	http://kgs.kiseido.com/
 DISTNAME=	cgoban-unix-${PORTVERSION}
@@ -20,7 +20,6 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/cgoban
 
-USE_X_PREFIX=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 NO_BUILD=	yes

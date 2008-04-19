@@ -10,7 +10,7 @@ PORTNAME?=	vim
 PATCHLEVEL=	282
 PORTVERSION=	7.1.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTFILES=	${RELEASE}${EXTRACT_SUFX}
@@ -128,23 +128,26 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
 .elif defined(WITH_GTK2)
 USE_GNOME=	gtk20
 PKGNAMESUFFIX=	-gtk2
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk2 --with-gtk-prefix=${X11BASE}" ${I18N}
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk2 --with-gtk-prefix=${LOCALBASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
+USE_XORG+=	xt
 .elif defined(WITH_GNOME)
 .if ${WITH_GNOME:Mgnomelibs}!="" || ${WITH_GNOME}=="yes" || \
 	${WITH_GNOME}=="1"
 USE_GNOME=	gnomelibs gnomeprefix
 PKGNAMESUFFIX=	-gnome
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gnome --with-gtk-prefix=${X11BASE}" ${I18N}
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gnome --with-gtk-prefix=${LOCALBASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
+USE_XORG+=	xt
 .else
 USE_GNOME=	gtk12
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE}" ${I18N}
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${LOCALBASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
+USE_XORG+=	xt
 .endif
 .elif defined(WITH_MOTIF)
 USE_MOTIF=	yes
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${X11BASE} ${I18N}
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${LOCALBASE} ${I18N}
 .endif
 .else	# WITHOUT_X11
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x" ${I18N}

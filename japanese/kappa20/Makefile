@@ -7,7 +7,7 @@
 
 PORTNAME=	k20fonts
 PORTVERSION=	0.396
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://khdd.net/20dot.fonts/:kappa20 \
 		http://downloads.sourceforge.jp/x-tt/8412/:ayu20
@@ -19,14 +19,14 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	X11 20-dot kanji font 'Kappa20dot + ayu font'
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 AYUDISTNAME=	ayu20gothic-1.6
 AYU_SUFFIX=	.tar.gz
 
 BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
-		bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 .include <bsd.port.pre.mk>
 

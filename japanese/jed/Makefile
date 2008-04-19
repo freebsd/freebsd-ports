@@ -7,7 +7,7 @@
 
 PORTNAME=	jed
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese editors
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.kondara.org/~g/slang/
@@ -54,7 +54,7 @@ WITHOUT_XJED=	yes
 .if defined(WITHOUT_XJED) || defined(XJED_BROKEN)
 PLIST_SUB=	XJED_ENTRY="@comment xjed is not installed"
 .else
-USE_XLIB=	yes
+USE_XORG=	x11 xext
 BINSTUFF+=	xjed
 PLIST_SUB=	XJED_ENTRY="bin/xjed"
 .endif

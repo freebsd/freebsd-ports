@@ -7,7 +7,7 @@
 
 PORTNAME=	libast
 PORTVERSION=	0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.eterm.org/download/ \
 		CRITICAL
@@ -18,7 +18,6 @@ COMMENT=	A library of assorted spiffy things
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes

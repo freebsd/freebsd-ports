@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 # The vnc supplied zlib seg. faults if compiled with -O
 CONFIGURE_ARGS=	--with-installed-zlib
 USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xext
 WANT_PERL=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
@@ -45,8 +45,8 @@ DISTFILES+=	X430src-1.tgz:x \
 		X430src-2.tgz:x \
 		X430src-3.tgz:x
 
-RUN_DEPENDS+=	xauth:${X_CLIENTS_PORT} \
-		${X11BASE}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${X_FONTS_MISC_PORT}
+RUN_DEPENDS+=	xauth:${PORTSDIR}/x11/xauth \
+		${LOCALBASE}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${X_FONTS_MISC_PORT}
 
 USE_PERL5=	yes
 
@@ -77,7 +77,7 @@ post-extract:
 
 post-patch:
 .if !defined(WITHOUT_SERVER)
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/xc/config/cf/vnc.def
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' -e 's|%%CXX%%|${CXX}|g' \
 		${WRKSRC}/xc/config/cf/FreeBSD.cf
@@ -94,7 +94,6 @@ pre-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
 .if !defined(WITHOUT_SERVER)
 	@if [ -f ${WRKSRC}/xc/programs/Xserver/vnc/module/vnc.so ]; then \
-		${ECHO_CMD} @cwd ${X11BASE} ; \
 		${ECHO_CMD} lib/modules/extensions/vnc.so ; \
 		${ECHO_CMD} "@dirrmtry lib/modules/extensions" ; \
 		${ECHO_CMD} "@dirrmtry lib/modules" ; \
@@ -114,10 +113,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xc/programs/Xserver/Xvnc ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/vncserver ${PREFIX}/bin
 	@if [ -f ${WRKSRC}/xc/programs/Xserver/vnc/module/vnc.so ]; then \
-		${MKDIR} ${X11BASE}/lib/modules/extensions ; \
+		${MKDIR} ${LOCALBASE}/lib/modules/extensions ; \
 		${INSTALL_PROGRAM} \
 			${WRKSRC}/xc/programs/Xserver/vnc/module/vnc.so \
-			${X11BASE}/lib/modules/extensions ; \
+			${LOCALBASE}/lib/modules/extensions ; \
 	fi
 	${INSTALL_MAN} ${WRKSRC}/xc/programs/Xserver/Xvnc.man \
 		${PREFIX}/man/man1/Xvnc.1

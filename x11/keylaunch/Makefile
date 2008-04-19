@@ -22,7 +22,7 @@ USE_XORG=	x11
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
 post-patch:
-	@${PERL} -pi -e 's,%%X11BASE%%,${X11BASE},g' ${WRKSRC}/Makefile
+	@${PERL} -pi -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keylaunch ${PREFIX}/bin
@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/example_rc ${EXAMPLESDIR}/keylaunch.rc
 
 post-install:
-	@${SED} -e 's;/usr/X11R6;${PREFIX};g' < ${FILESDIR}/pkg-message.in > \
+	@${SED} -e 's;/usr/X11R6;${LOCALBASE};g' < ${FILESDIR}/pkg-message.in > \
 		${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

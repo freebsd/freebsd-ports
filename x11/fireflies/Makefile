@@ -18,8 +18,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/GL" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/GL" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-bindir=${LOCALBASE}/bin/xscreensaver-hacks \
 		--with-confdir=${LOCALBASE}/share/xscreensaver/config
 PLIST_SUB=	VERSION=${PORTVERSION}

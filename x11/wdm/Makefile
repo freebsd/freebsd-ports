@@ -40,8 +40,8 @@ CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-Logo=beastie.xpm \
 		--with-gfx-incs=${LOCALBASE}/include \
 		--with-gfx-libs=${LOCALBASE}/lib \
-		--with-defuserpath=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin:${LOCALBASE}/bin \
-		--with-defsystempath=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin \
+		--with-defuserpath=/bin:/usr/bin:/sbin:/usr/sbin:${LOCALBASE}/bin \
+		--with-defsystempath=/bin:/usr/bin:/sbin:/usr/sbin:${LOCALBASE}/bin \
 		--with-wmlist=wmaker:afterstep:blackbox:ctwm:enlightenment:fvwm:fvwm2:fvwm95:olvwm:qvwm:tvtwm
 
 MAN1=	wdm.1 wdmLogin.1
@@ -49,8 +49,8 @@ MAN1=	wdm.1 wdmLogin.1
 CPPFLAGS=	-I${LOCALBASE}/include -DCSRG_BASED -DHAS_SETUSERCONTEXT
 LDFLAGS=	-L${LOCALBASE}/lib -lintl
 
-DEF_SERVER?=	${X11BASE}/bin/X
-XRDB_PATH?=	${X11BASE}/bin/xrdb
+DEF_SERVER?=	${LOCALBASE}/bin/X
+XRDB_PATH?=	${LOCALBASE}/bin/xrdb
 
 WDMDIR=		${PREFIX}/lib/X11/wdm
 

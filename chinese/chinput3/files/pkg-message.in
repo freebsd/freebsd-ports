@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Please check the following files:
- %%X11BASE%%/lib/X11/locale/zh_CN/XI18N_OBJS
-If not exist, copy %%X11BASE%%/lib/X11/locale/zh/XI18N_OBJS to it.
+ %%LOCALBASE%%/lib/X11/locale/zh_CN/XI18N_OBJS
+If not exist, copy %%LOCALBASE%%/lib/X11/locale/zh/XI18N_OBJS to it.
 
 Remember to set environment varible XMODIFIERS:
  csh/tcsh: setenv XMODIFIERS @im=Chinput

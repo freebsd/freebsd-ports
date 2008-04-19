@@ -18,7 +18,7 @@ BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 PATCH_STRIP=	-p1
 USE_IMAKE=	yes
-XLOADFACEDIR=	$(X11BASE)/lib/X11/xloadface
+XLOADFACEDIR=	$(LOCALBASE)/lib/X11/xloadface
 
 MAN1=		xloadface.1
 MANLANG=	ja

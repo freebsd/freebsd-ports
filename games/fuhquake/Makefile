@@ -7,7 +7,7 @@
 
 PORTNAME=	fuhquake
 PORTVERSION=	0.31
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.fuhquake.net/files/releases/v${PORTVERSION}/ \
 		ftp://gibbage.mine.nu/clients/fuhquake/releases/v${PORTVERSION}/ \
@@ -69,14 +69,14 @@ MAKE_ARGS+=	-DWITHOUT_${f}
 .endfor
 
 .if defined(WITH_X11)
-USE_XLIB=	yes
+USE_XORG=	x11 xxf86dga
 PLIST_SUB+=	X11=""
 CLIENTS+=	x11
 .else
 PLIST_SUB+=	X11="@comment "
 .endif
 
-.if (defined(WITH_XMMS) || exists(${X11BASE}/lib/libxmms.so.4)) && \
+.if (defined(WITH_XMMS) || exists(${LOCALBASE}/lib/libxmms.so.4)) && \
     defined(CLIENTS)
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 MAKE_ARGS+=	-DWITH_XMMS \

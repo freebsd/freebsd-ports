@@ -7,7 +7,7 @@ $FreeBSD$
  
  ifeq ($(PLATFORM), bsd)
 -  CPPFLAGS += -I/usr/X11R6/include/X11/extensions -I$(MOTIF_DIR)/include -I$(OPENWIN_HOME)/include
-+  CPPFLAGS += -I$(X11BASE)/include/X11/extensions -I$(MOTIF_DIR)/include -I$(OPENWIN_HOME)/include
++  CPPFLAGS += -I$(LOCALBASE)/include/X11/extensions -I$(MOTIF_DIR)/include -I$(OPENWIN_HOME)/include
  endif
  
  ifeq ($(PLATFORM), solaris)

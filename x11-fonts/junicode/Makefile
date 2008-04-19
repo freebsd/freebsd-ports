@@ -9,8 +9,7 @@ PORTNAME=	junicode
 DISTVERSION=	0-6-12
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	gurkan@phys.ethz.ch
 COMMENT=	Unicode font for medievalists (Latin, IPA and Runic)
@@ -40,7 +39,7 @@ do-install:
 
 post-install:
 	@${ECHO_MSG} "===> Running fc-cache"
-	-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
+	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>

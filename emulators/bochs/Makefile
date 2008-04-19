@@ -205,7 +205,7 @@ CONFIGURE_ARGS+=--enable-x86-64
 .endif
 
 .if defined(WITH_XPM)
-USE_XPM=	yes
+USE_XORG=	xpm
 CONFIGURE_ARGS+=--with-xpm
 .endif
 

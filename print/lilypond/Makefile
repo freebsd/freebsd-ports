@@ -31,7 +31,7 @@ INFO=		lilypond lilypond-internals \
 		music-glossary
 
 BROKEN=	does not build with guile-1.8; needs update to 2.10.33
-#INSTALLS_SHLIB not needed for phyton library midi.so
+#USE_LDCONFIG not needed for phyton library midi.so
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes

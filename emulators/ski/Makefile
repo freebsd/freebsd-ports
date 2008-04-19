@@ -40,12 +40,12 @@ do-install:
 	cd ${PREFIX}/bin ; ${LN} -sf ski ${SL}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/nue/usr/X11R6/lib/X11/app-defaults/XSki \
-		${X11BASE}/lib/X11/app-defaults
+		${LOCALBASE}/lib/X11/app-defaults
 	${INSTALL_MAN} ${WRKSRC}/usr/man/man1/ski.1 ${PREFIX}/man/man1
 	@${MKDIR} ${PREFIX}/share/examples/ski
 	${INSTALL_DATA} ${FILESDIR}/ia64.cmd ${PREFIX}/share/examples/ski
 	${INSTALL_DATA} ${WRKSRC}/nue/usr/X11R6/lib/X11/app-defaults/XSki \
-		${X11BASE}/lib/X11/app-defaults
+		${LOCALBASE}/lib/X11/app-defaults
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/usr/doc/ski-0.943l/* ${DOCSDIR}

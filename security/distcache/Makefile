@@ -23,7 +23,7 @@ USE_RC_SUBR=	dc_server.sh
 USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 SUB_LIST+=	NAME=dc_server
 

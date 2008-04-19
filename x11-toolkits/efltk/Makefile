@@ -7,9 +7,9 @@
 
 PORTNAME=	efltk
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ede
+MASTER_SITES=	SF/ede
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Extended Fast Light Toolkit
@@ -27,7 +27,6 @@ CONFIGURE_ARGS+=	--disable-mysql
 USE_MYSQL=	yes
 .endif
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	autoconf:213
@@ -36,6 +35,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
 		DEBUGFLAG="${CFLAGS} -I${LOCALBASE}/include"
 MAKE_ENV+=	LD_LIBRARY_PATH="${WRKSRC}/lib"
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+USE_XORG=	x11 xext
 
 .include <bsd.port.mk>

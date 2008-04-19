@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-terminal
 PORTVERSION=	2.22.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +19,6 @@ COMMENT=	Terminal component for the GNOME 2 Desktop
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 INSTALLS_OMF=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui vte gnomedocutils
 GNU_CONFIGURE=	yes

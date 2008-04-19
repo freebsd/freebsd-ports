@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.sh.bin
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Unreal Tournament 2003 demo
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_LINUX=	yes
 NO_PACKAGE=	Distfile is 130MB, set FORCE_PACKAGE if you really want to build this package
 RESTRICTED=	Redistribution is limited, see license

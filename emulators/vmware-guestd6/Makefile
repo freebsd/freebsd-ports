@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-#PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-guestd
@@ -40,7 +40,7 @@ WANT_GNOME=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(VMWARE_X_PORTS)
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 NO_BUILD=	yes
 .if ${ARCH} == amd64
 WITH_VMWARE_GTK= yes
@@ -181,13 +181,13 @@ post-extract:
 
 do-install:
 .if ${ARCH} == i386
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}${OSSFX}/vmware-toolbox-tcl ${X11BASE}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}${OSSFX}/vmware-toolbox-tcl ${LOCALBASE}/bin
 .endif
 .if defined(WITH_VMWARE_GTK)
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}${OSSFX}/vmware-toolbox-gtk ${X11BASE}/bin
-	${LN} -sfh vmware-toolbox-gtk ${X11BASE}/bin/vmware-toolbox
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}${OSSFX}/vmware-toolbox-gtk ${LOCALBASE}/bin
+	${LN} -sfh vmware-toolbox-gtk ${LOCALBASE}/bin/vmware-toolbox
 .else
-	${LN} -sfh vmware-toolbox-tcl ${X11BASE}/bin/vmware-toolbox
+	${LN} -sfh vmware-toolbox-tcl ${LOCALBASE}/bin/vmware-toolbox
 .endif
 	-${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-guestd --cmd toolinstall.end 2>&1
 

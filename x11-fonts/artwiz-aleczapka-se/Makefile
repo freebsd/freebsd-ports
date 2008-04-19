@@ -8,7 +8,7 @@ PORTNAME=		artwiz-aleczapka-se
 PORTVERSION=		1.3
 PORTREVISION=	2
 CATEGORIES=		x11-fonts
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	artwizaleczapka
 
 MAINTAINER=	herbert.skuhra@gmx.at
@@ -21,7 +21,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 FONTS=	anorexia.se aqui.se cure.se drift.se edges.se fkp.se gelly.se \
 	glisp-bold.se glisp.se kates.se lime.se mints-mild.se \
 	mints-strong.se nu.se smoothansi.se snap.se
-FONTDIR=	${X11BASE}/lib/X11/fonts/${PORTNAME}/
+FONTDIR=	${LOCALBASE}/lib/X11/fonts/${PORTNAME}/
 FILES=	${FONTS:S,$,.pcf,} ${WRKSRC}/fonts.alias ${WRKSRC}/fonts.dir
 
 .include <bsd.port.pre.mk>
@@ -31,7 +31,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${FILES} ${FONTDIR}
 
 post-install:
-	@${SED} 's|$${X11BASE}|${X11BASE}|g' \
+	@${SED} 's|$${LOCALBASE}|${LOCALBASE}|g' \
 		${PKGDIR}/pkg-message >${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 

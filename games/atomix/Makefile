@@ -8,7 +8,7 @@
 
 PORTNAME=	atomix
 PORTVERSION=	2.14.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,7 +17,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A yet another little mind game
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

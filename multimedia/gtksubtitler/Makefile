@@ -7,7 +7,7 @@
 
 PORTNAME=	GTKsubtitler
 PORTVERSION=	0.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://matrix.kamp.pl/~pawelb/gtksubtitler/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small GNOME program for editing and converting subtitles
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 

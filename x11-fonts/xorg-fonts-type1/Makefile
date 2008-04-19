@@ -27,6 +27,6 @@ CONFLICTS=	XFree86-fontScalable-*
 do-install:	# empty
 
 NO_BUILD=	# none
-FONTDIR=	${X11BASE}/lib/X11/fonts
+FONTDIR=	${LOCALBASE}/lib/X11/fonts
 
 .include <bsd.port.mk>

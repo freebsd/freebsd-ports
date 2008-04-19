@@ -7,7 +7,7 @@
 
 PORTNAME=	fkiss
 PORTVERSION=	0.33a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/fkiss/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/a//}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 NOT_FOR_ARCHS=	alpha
 
-USE_XLIB=	yes
+USE_XORG=	x11 xproto
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	jdic
 PORTVERSION=	20061102
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits java
 MASTER_SITES=	https://jdic.dev.java.net/files/documents/880/43269/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS_REASON=	the required com.sun.jnlp is part of jawaws.jar, only ins
 
 USE_ZIP=	yes
 USE_ANT=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xext
 USE_GNOME=	pkgconfig # libgnome
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
@@ -53,7 +53,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/jdic.jar	\
 
 pre-configure:
 .for mk in ${MKFILES}
-	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g;	\
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g;	\
 		s|/usr/local|${LOCALBASE}|g'		\
 		${WRKSRC}/jdic/src/unix/native/${mk}/Makefile
 .endfor

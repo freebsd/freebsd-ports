@@ -29,12 +29,12 @@ post-build:
 	@${GZIP_CMD} ${WRKSRC}/*.pcf
 
 do-install:
-	@${MKDIR} ${X11BASE}/${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${X11BASE}/${FONTDIR}
+	@${MKDIR} ${LOCALBASE}/${FONTDIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${LOCALBASE}/${FONTDIR}
 
 post-install:
-	@cd ${X11BASE}/${FONTDIR}; mkfontdir
-	@${CP} ${X11BASE}/${FONTDIR}/fonts.dir ${X11BASE}/${FONTDIR}/fonts.scale || true
-	@command fc-cache -f -v ${X11BASE}/${FONTDIR} || true
+	@cd ${LOCALBASE}/${FONTDIR}; mkfontdir
+	@${CP} ${LOCALBASE}/${FONTDIR}/fonts.dir ${LOCALBASE}/${FONTDIR}/fonts.scale || true
+	@command fc-cache -f -v ${LOCALBASE}/${FONTDIR} || true
 
 .include <bsd.port.mk>

@@ -32,7 +32,7 @@ SUBFONT_DISTNAME=	subfont-c-0.90pre6
 MPLAYER_FONTDIR=	${LOCALBASE}/share/mplayer/fonts/chinese
 FREETYPE_CONFIG=	${LOCALBASE}/bin/freetype-config
 
-ARPHIC_FONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
+ARPHIC_FONTDIR=	${LOCALBASE}/lib/X11/fonts/TrueType
 ARPHIC_FONTS_BIG5=	bkai00mp bsmi00lp
 ARPHIC_FONTS_GB2312=	gbsn00lp gkai00mp
 ALL_FONTS=		${ARPHIC_FONTS_BIG5} ${ARPHIC_FONTS_GB2312}

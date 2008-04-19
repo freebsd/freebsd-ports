@@ -18,7 +18,7 @@ USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"	\
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 MAN1=		v_sim.1

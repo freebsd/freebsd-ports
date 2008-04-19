@@ -9,13 +9,13 @@ PORTNAME=	eric
 PORTVERSION=	3.9.4
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	eric-ide
 
 MAINTAINER=	leafy7382@gmail.com
 COMMENT=	A Python IDE implemented using PyQt and QScintilla
 
-BUILD_DEPENDS=	${X11BASE}/lib/libqscintilla.so:${PORTSDIR}/x11-toolkits/qscintilla \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libqscintilla.so:${PORTSDIR}/x11-toolkits/qscintilla \
 		${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip \
 		pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_XORG=	xpm
 
-CONFIGURE_ARGS+=	--with-libwraster=${X11BASE}
+CONFIGURE_ARGS+=	--with-libwraster=${LOCALBASE}
 
 MAN1=		wmweather+.1
 

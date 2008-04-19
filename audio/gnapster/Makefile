@@ -7,22 +7,20 @@
 
 PORTNAME=	gnapster
 PORTVERSION=	1.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnapster
+MASTER_SITES=	SF/gnapster
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME client for the online mp3 community called napster
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 WANT_GNOME=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 

@@ -19,7 +19,7 @@ COMMENT=	Allow non SOCKS aware applications to use SOCKS without modification
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.b.*//}
 

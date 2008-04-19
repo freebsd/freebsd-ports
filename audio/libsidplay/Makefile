@@ -15,7 +15,7 @@ MAINTAINER=	sec@42.org
 COMMENT=	A Commodore SID-chip emulator library to play SID music files
 
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

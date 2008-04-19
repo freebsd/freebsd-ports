@@ -18,7 +18,7 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 USE_GCC=	3.4
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-docdataDATA | |g'  ${WRKSRC}/Makefile.in

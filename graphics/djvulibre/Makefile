@@ -7,10 +7,9 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.20
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	djvu
+MASTER_SITES=	SF/djvu
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT?=	DjVu viewers, encoders, browser plugin, and utilities
@@ -42,7 +41,6 @@ MAN1_EN=	djvutoxml.1 djvuxml.1 djvuxmlparser.1 djvudigital.1
 PORTDOCS=	djvu2spec.djvu lizard2002.djvu
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
 USE_QT_VER=	3
 CONFIGURE_ENV+=	QTLIBS="-L${QT_PREFIX}/lib -lqt-mt"
 MAN1+=		djview3.1 nsdejavu.1

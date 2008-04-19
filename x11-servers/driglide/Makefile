@@ -29,7 +29,7 @@ ONLY_FOR_ARCHS=	i386
 CFLAGS+=	-O
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/configure.in \
 		${WRKSRC}/h3/glide3/src/Makefile.am \
 		${WRKSRC}/h5/glide3/src/Makefile.am

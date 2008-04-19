@@ -29,7 +29,7 @@ BITMAP_DISTVER=		${BITMAP_MVER}
 
 BITMAPDOCDIR=	share/doc/bitmap
 BITMAP_SETUPEL=	bitmap-setupel.el
-BITMAP_FONT=	${X11BASE}/lib/X11/fonts/local/bitmap16.pcf.gz
+BITMAP_FONT=	${LOCALBASE}/lib/X11/fonts/local/bitmap16.pcf.gz
 
 # bitmap install lispdir
 BITMAP_LISPDIR?=		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}

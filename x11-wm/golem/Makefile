@@ -7,10 +7,9 @@
 
 PORTNAME=	golem
 PORTVERSION=	0.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small window manager with themes and plugins
@@ -23,13 +22,13 @@ PLIST_SUB+=	NO_SOUND=""
 PLIST_SUB+=	NO_SOUND="@comment "
 .endif
 
+USE_XORG=	x11 xext xpm
+GNU_CONFIGURE=	yes
+
 .if defined(WANT_XINERAMA)
 CONFIGURE_ARGS+=	--enable-xinerama
+USE_XORG+=	xinerama
 .endif
-
-USE_X_PREFIX=	yes
-USE_XPM=	yes
-GNU_CONFIGURE=	yes
 
 MANCOMPRESSED=	yes
 MAN1=		golem.1

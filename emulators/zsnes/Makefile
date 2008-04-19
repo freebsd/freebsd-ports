@@ -68,9 +68,9 @@ CONFIGURE_ARGS+=--without-x
 PKGNAMESUFFIX=	-nox11
 .else
 CONFIGURE_ARGS+=--with-x
-CFLAGS+=	-I${X11BASE}/include
-CPPFLAGS+=	-I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if defined(WITH_OPENGL)

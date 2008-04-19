@@ -38,7 +38,7 @@ OPTIONS=	DEBUG	"Enable debugging support"	off \
 .if defined(WITH_OPENMOTIF_JDK)
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/open-motif-jdk:extract
 .else
-BUILD_DEPENDS+=	${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 .endif
 
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -86,13 +86,13 @@ EXTRACT_ONLY+=	${TZUPDATEFILE}
 .endif
 
 .if defined(WITH_WEB)
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 .endif
 
 .if defined(WITH_OPENMOTIF_JDK)
 OPENMOTIF_DIR=	${WRKDIR}/jdkmotif
 .else
-OPENMOTIF_DIR=	${X11BASE}
+OPENMOTIF_DIR=	${LOCALBASE}
 .endif
 
 # do we have valid native jdk installed?
@@ -264,7 +264,7 @@ post-patch:
 			${WRKSRC}/$${file}; \
 	done
 	@for file in ${X11_FILES}; do \
-		${REINPLACE_CMD} -e "s:%%X11BASE%%:${X11BASE}:" \
+		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 			${WRKSRC}/$${file}; \
 	done
 

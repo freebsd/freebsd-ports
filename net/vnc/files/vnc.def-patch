@@ -5,7 +5,7 @@
  #endif
  
 +#ifdef FreeBSDArchitecture
-+#define ProjectRoot %%X11BASE%%
++#define ProjectRoot %%LOCALBASE%%
 +#endif
 +
  #define HasFreetype2 NO

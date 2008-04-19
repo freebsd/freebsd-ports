@@ -7,7 +7,7 @@
 
 PORTNAME=	yadex
 PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.teaser.fr/~amajorel/yadex/ \
 		http://hjem.get2net.dk/RasII/amajorel/yadex/
@@ -16,9 +16,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A WAD-file editor, for games like Doom and Hexen
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD= yes
+USE_XORG=	x11
 MAKEFILE=	GNUmakefile
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" PREFIX="${PREFIX}"

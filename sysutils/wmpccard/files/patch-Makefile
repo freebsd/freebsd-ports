@@ -13,8 +13,8 @@
  
 -X11INCLUDES = -I${PREFIX}/include
 -X11LDFLAGS = -L${PREFIX}/lib
-+X11INCLUDES = -I${X11BASE}/include
-+X11LDFLAGS = -L${X11BASE}/lib
++X11INCLUDES = -I${LOCALBASE}/include
++X11LDFLAGS = -L${LOCALBASE}/lib
  X11LIBS = -lXext -lX11 -lXpm
  
 -CC = cc

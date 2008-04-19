@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:C/-i18n$//1}
 MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		USB radio control utility
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 MAKE_ENV=		NOPROFILE=yes
 
 MAN1=			ufmcontrol.1

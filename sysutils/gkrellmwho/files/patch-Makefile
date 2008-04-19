@@ -6,7 +6,7 @@ $FreeBSD$
 @@ -1,9 +1,9 @@
  # Modify INCLUDE to point to gkrellm.h (if it's not in /usr/local/include)
 -INCLUDE	= /usr/local/include
-+INCLUDE	= ${X11BASE}/include/gkrellm
++INCLUDE	= ${LOCALBASE}/include/gkrellm
  
 -CC	= gcc
 -CFLAGS	= -Wall -O2 -fPIC -I$(INCLUDE) 			\

@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Update program for the HVSC C= 64 SID tune collection
 
-BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 WRKSRC=	${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}
 

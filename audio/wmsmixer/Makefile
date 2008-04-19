@@ -15,7 +15,7 @@ MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	An audio mixer for the WindowMaker dock
 
 PLIST_FILES=	bin/wmsmixer
-USE_XPM=	YES
+USE_XORG=	xpm
 USE_IMAKE=	YES
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}"
 

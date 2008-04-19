@@ -49,8 +49,8 @@ GCONF_SCHEMAS=	compiz-addhelper.schemas \
 		compiz-widget.schemas
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-schemas
 
 post-patch:

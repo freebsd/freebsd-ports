@@ -9,27 +9,24 @@ PORTNAME=	ffff
 PORTVERSION=	323
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SFE
 DISTNAME=	FFFF${PORTVERSION}-src
 
 MAINTAINER=	rossiya@gmail.com
 COMMENT=	A fast mandelbrot fractal generator
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_DOS2UNIX=	yes
-USE_GCC=	3.2+
-USE_GL=		yes
+USE_GL=		glut
 USE_ZIP=	yes
 
 SOURCE=		FFFF3 FragmentProgram FragmentProgramARB10 GPUProgram \
 		PixelBuffer VertexProgram VertexProgramATI VertexProgramNV \
 		extensions vpext
 
-CXXFLAGS+=	-I${X11BASE}/include -I${X11BASE}/include/GL ${PTHREAD_CFLAGS} \
+CXXFLAGS+=	-I${LOCALBASE}/include/GL ${PTHREAD_CFLAGS} \
 		-D__linux__
-LDFLAGS+=	-L${X11BASE}/lib ${PTHREAD_LIBS} -lglut -lGL -lXext -lX11 -lXmu \
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lglut -lGL -lXext -lX11 -lXmu \
 		 -lGLU -lm
 
 PLIST_FILES=	bin/ffff

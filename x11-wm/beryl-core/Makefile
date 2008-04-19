@@ -32,8 +32,8 @@ USE_PERL5=	yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--disable-berylmesa
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib  ${PTHREAD_LIBS}"
 
 USE_XORG=	xcomposite xfixes xdamage xrandr ice sm xinerama glproto
 

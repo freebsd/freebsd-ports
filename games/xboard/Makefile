@@ -24,9 +24,6 @@ STRIP=
 MAN6=		xboard.6 zic2xpm.6
 INFO=		xboard
 
-CONFIGURE_ARGS+=	--x-libraries=${X11BASE}/lib \
-			--x-includes=${X11BASE}/include
-
 .if defined(WITH_XAW3D)
 CONFIGURE_ARGS+=	"--with-Xaw3d"
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d

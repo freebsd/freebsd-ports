@@ -7,16 +7,14 @@
 
 PORTNAME=	gnomermind
 PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A puzzle game for Gnome, loosely based on the classic MasterMind game
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf gnomehack gnomelibs gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

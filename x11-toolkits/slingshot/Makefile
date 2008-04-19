@@ -21,7 +21,7 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 WRKSRC=		${WRKDIR}/sspkg2.1
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	OPENWINHOME=${X11BASE}
+MAKE_ENV=	OPENWINHOME=${LOCALBASE}
 
 post-install:
 .if !defined(NOPORTDOCS)

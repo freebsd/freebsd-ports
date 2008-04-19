@@ -28,9 +28,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	xaw ice
 
-CPPFLAGS=	-I${X11BASE}/include
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib"
 
 .if defined(WITH_SDL)
 USE_SDL=	yes

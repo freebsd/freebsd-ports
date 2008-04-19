@@ -7,7 +7,7 @@
 
 PORTNAME=	mpegedit
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.netsw.org/graphic/movie/mpeg/mpegedit/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	A program to edit encoded mpeg streams
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext
 USE_GCC=	2.95
 PORTDOCS=	README manual.ps
 PLIST_FILES=	bin/mpeg_edit

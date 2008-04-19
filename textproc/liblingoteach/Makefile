@@ -19,7 +19,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(WITH_COMP)
 CONFIGURE_ARGS+=	--with-compression

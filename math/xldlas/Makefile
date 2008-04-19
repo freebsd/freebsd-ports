@@ -7,7 +7,7 @@
 
 PORTNAME=	xldlas
 PORTVERSION=	0.85
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/visualization
@@ -19,8 +19,6 @@ COMMENT=	An XForms-based statistics package
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 WRKSRC=		${WRKDIR}/xldlas
-
-USE_X_PREFIX=	yes
 
 MAN1=	xldlas.1
 

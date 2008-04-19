@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for embedding the perl interpreter (linux version)
 
 USE_LINUX_RPM=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 DIST_SUBDIR=	rpm

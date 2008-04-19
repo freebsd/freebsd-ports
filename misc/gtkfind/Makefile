@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkfind
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
@@ -17,7 +17,6 @@ COMMENT=	The program to use to have to remember all the options to find(1)
 BUILD_DEPENDS=	appres:${PORTSDIR}/x11/appres \
 		xterm:${PORTSDIR}/x11/xterm
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

@@ -7,10 +7,9 @@
 
 PORTNAME=	xarchive
 PORTVERSION=	0.2.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-0.2.8-6
 
 MAINTAINER=	mark@mkproductions.org
@@ -22,7 +21,6 @@ MAN1=		xarchive.1
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
 
 OPTIONS=	7ZIP "Support for 7zip archives" off \
 		ARJ "Support for ARJ archives" off \

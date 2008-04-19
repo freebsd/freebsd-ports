@@ -8,6 +8,7 @@
 
 PORTNAME=	libgail-gnome
 PORTVERSION=	1.20.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +18,6 @@ COMMENT=	An implementation of the ATK interfaces for GNOME widgets
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNOME_DESKTOP_VERSION=2

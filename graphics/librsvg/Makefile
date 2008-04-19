@@ -7,9 +7,9 @@
 
 PORTNAME=	librsvg
 PORTVERSION=	1.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sources/librsvg/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -21,7 +21,6 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomelibs gdkpixbuf
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -50,7 +50,7 @@ post-patch:
 		's|-I/usr/local/include/SDL11|`${SDL_CONFIG} --cflags`|; \
 		 s|-lSDL-1\.1|`${SDL_CONFIG} --libs`|; \
 		 s|/usr/local|${LOCALBASE}|; \
-		 s|/usr/X11R6|${X11BASE}|' \
+		 s|/usr/X11R6|${LOCALBASE}|' \
 		 ${WRKSRC}/${MAKEFILE}
 
 pre-build:

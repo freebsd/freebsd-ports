@@ -7,17 +7,15 @@
 
 PORTNAME=	xdesktopwaves
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulation of water waves on the desktop
 
-USE_X_PREFIX=	yes
-
 MAN1=		xdesktopwaves.1
+USE_XORG=	x11 xext
 
 PLIST_FILES=	bin/xdesktopwaves
 

@@ -22,7 +22,7 @@ USE_TCL=	yes
 USE_TCL_BUILD=	yes
 USE_TK=		yes
 USE_TK_BUILD=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xt
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:

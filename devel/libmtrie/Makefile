@@ -15,7 +15,7 @@ USE_BZIP2=	yes
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	A library to build an IP-netmask based mtrie.
 
-INSTALLS_SHLIB= yes
+USE_LDCONFIG= yes
 
 .if defined(NOPROFILE)
 PLIST_SUB+=     HURRRR="@comment "

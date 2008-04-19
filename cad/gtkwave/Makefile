@@ -23,7 +23,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/gtkwave
 
 DOCS=		doc/*.html doc/*.png doc/*.ps

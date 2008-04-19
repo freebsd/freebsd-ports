@@ -7,15 +7,17 @@
 
 PORTNAME=	x3270
 PORTVERSION=	3.3.7
+PORTREVISION=	1
 CATEGORIES=	x11 net
-MASTER_SITES=	SFE
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3270 Terminal emulator
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 USE_IMAKE=	yes
 GNU_CONFIGURE=	yes

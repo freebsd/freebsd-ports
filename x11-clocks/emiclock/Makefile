@@ -18,9 +18,9 @@ USE_IMAKE=	yes
 MAN1=		emiclock.1
 
 LANGRES=	resources/R6/EUC/EmiClock.ad
-LANGDIR=	${X11BASE}/lib/X11/ja_JP.eucJP/app-defaults
-LANGDIR2=	${X11BASE}/lib/X11/ja_JP.EUC/app-defaults
-EMICLOCKDIR=	${X11BASE}/lib/X11/EmiClock
+LANGDIR=	${LOCALBASE}/lib/X11/ja_JP.eucJP/app-defaults
+LANGDIR2=	${LOCALBASE}/lib/X11/ja_JP.EUC/app-defaults
+EMICLOCKDIR=	${LOCALBASE}/lib/X11/EmiClock
 PORTDOCS=	COPYRIGHT COPYRIGHT.en
 
 .include <bsd.port.pre.mk>

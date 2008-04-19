@@ -7,7 +7,7 @@
 
 PORTNAME=		xchat
 PORTVERSION=		1.8.11
-PORTREVISION=		9
+PORTREVISION=		10
 CATEGORIES+=		irc gnome ipv6
 MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 			http://xchat.linuxpower.org/files/source/1.8/
@@ -19,7 +19,6 @@ COMMENT=	An X11 IRC client using the GTK+ toolkit, and optionally, GNOME
 # the variables or the targets defined in it.  When you need to, please
 # contact its maintainer.
 
-USE_X_PREFIX=		yes
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_ICONV=		yes

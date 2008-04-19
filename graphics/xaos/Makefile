@@ -7,10 +7,9 @@
 
 PORTNAME=	xaos
 PORTVERSION=	3.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xaos
+MASTER_SITES=	SF/xaos
 DISTNAME=	XaoS-${PORTVERSION}
 
 MAINTAINER=	makc@issp.ac.ru
@@ -18,7 +17,7 @@ COMMENT=	A real-time fractal browser for X11 and ASCII terminals
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_XLIB=	yes
+USE_XORG=	x11 xt
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 

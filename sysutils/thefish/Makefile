@@ -7,6 +7,7 @@
 
 PORTNAME=	thefish
 PORTVERSION=	0.6.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +16,7 @@ MAINTAINER=	mmendez@energyhq.be
 COMMENT=	Qt/Gtk+/ncurses rc.conf editor/management tool
 
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		LOCALBASE="${LOCALBASE}" \
-		X11BASE="${X11BASE}"
+		LOCALBASE="${LOCALBASE}"
 
 WANT_GNOME=	yes
 
@@ -46,7 +46,7 @@ MAKE_ENV+=	WITH_GTK=yes
 .if defined(WITH_QT)
 USE_QT_VER=	3
 MAKE_ENV+=	WITH_QT=yes
-CXXFLAGS+=	-Wall -DWITH_QT -I${X11BASE}/include
+CXXFLAGS+=	-Wall -DWITH_QT -I${LOCALBASE}/include
 .endif
 
 MAN1=		thefish.1

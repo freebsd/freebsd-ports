@@ -24,7 +24,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 USE_BISON=	build
 LDFLAGS+=	-lm -lreadline -ltermcap
 .if !defined(WITHOUT_X11)
-CFLAGS+=	-I${LOCALBASE}/include/tk8.4 -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include -I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include/tk8.4 -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -ltk84 -ltcl84 -ltix8184
 .endif
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \

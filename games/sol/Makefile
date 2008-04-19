@@ -7,7 +7,7 @@
 
 PORTNAME=	sol
 PORTVERSION=	1.0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	shhopt.1:${PORTSDIR}/devel/libshhopt \
 CONFLICTS=	gnome-games-*
 
 USE_GMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xpm x11 xaw
 
 MAN6=		sol.6
 

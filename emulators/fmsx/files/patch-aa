@@ -11,7 +11,7 @@
 +CC      ?= gcc
 +DEFINES = -DFMSX -DUNIX -DLSB_FIRST -DMITSHM \
 +          -DDISK -DNARROW -DSOUND -D%%BPP%% -DZLIB
-+CFLAGS  = -O3 -Wall -I${X11BASE}/include -L${X11BASE}/lib ${DEFINES}
++CFLAGS  = -O3 -Wall -I${LOCALBASE}/include -L${LOCALBASE}/lib ${DEFINES}
  OBJECTS = fMSX.o MSX.o Patch.o Debug.o Disk.o Floppy.o Sound.o \
  	  Z80.o I8255.o AY8910.o YM2413.o SCC.o V9938.o I8251.o \
  	  Unix.o LibUnix.o SndUnix.o 

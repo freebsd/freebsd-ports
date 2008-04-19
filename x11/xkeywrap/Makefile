@@ -7,14 +7,14 @@
 
 PORTNAME=	xkeywrap
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Record, repeat, and play key sequence from keyboard
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xt
 MAN1=		xkeywrap.1
 MANCOMPRESSED=	yes
 PORTSDOCDIR=	${PREFIX}/share/doc/xkeywrap

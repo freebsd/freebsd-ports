@@ -7,7 +7,7 @@
 
 PORTNAME=	pager
 PORTVERSION=	0.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
@@ -21,7 +21,7 @@ RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-USE_XLIB=	yes
+USE_XORG=	x11
 
 SAWFISH_VERSION=	`${LOCALBASE}/bin/sawfish --version 2>&1 | \
 			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`

@@ -17,7 +17,7 @@ RUN_DEPENDS=	${NXPREFIX}/bin/nxagent:${PORTSDIR}/net/nxserver \
 		bash:${PORTSDIR}/shells/bash \
 		expect:${PORTSDIR}/lang/expect \
 		gls:${PORTSDIR}/sysutils/coreutils \
-		xauth:${X_CLIENTS_PORT}
+		xauth:${PORTSDIR}/x11/xauth
 USE_PERL5_RUN=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/nxserver-helper

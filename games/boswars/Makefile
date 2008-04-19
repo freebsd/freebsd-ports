@@ -7,7 +7,7 @@
 
 PORTNAME=	boswars
 PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://boswars.org:8001/bos/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -34,8 +34,8 @@ OPTIONS=	GL "Enable OpenGL support" on \
 .if !defined(WITHOUT_GL)
 USE_GL=		yes
 SCONS_ARGS+=	opengl=1
-CPPPATH+=	${X11BASE}/include
-LIBPATH+=	${X11BASE}/lib
+CPPPATH+=	${LOCALBASE}/include
+LIBPATH+=	${LOCALBASE}/lib
 .endif
 
 .if !defined(WITH_OPTIMIZED_CFLAGS)

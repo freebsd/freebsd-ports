@@ -7,7 +7,7 @@
 
 PORTNAME=	decurs
 PORTVERSION=	0.55.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://varg.dyndns.org/psi/files/
 
@@ -16,7 +16,7 @@ COMMENT=	A GTK+ based program that lets you edit you XFree86 mouse cursors
 
 LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GNOME=	gnometarget gtk20
 GNU_CONFIGURE=	yes
 

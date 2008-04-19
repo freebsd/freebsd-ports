@@ -7,10 +7,9 @@
 
 PORTNAME=	xpilot-ng
 PORTVERSION=	4.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xpilot
+MASTER_SITES=	SF/xpilot
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	ports@FreeBSD.org
@@ -44,10 +43,8 @@ MAN6=		xpilot-ng-replay.6 \
 		xpilot-ng-x11.6 \
 		xpilot-ng-xp-mapedit.6
 
-USE_X_PREFIX=	yes
-
-CPPFLAGS+=	-I${X11BASE}/include
-LDFLAGS+=	-I${X11BASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	SDL "SDL/OpenGL client" on \
 		SOUND "Sound" off

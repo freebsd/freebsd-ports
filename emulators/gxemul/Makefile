@@ -38,7 +38,7 @@ USE_XORG=	x11
 
 post-patch:
 	@${REINPLACE_CMD} -Ee \
-		's|/usr/X11R6|${X11BASE}|g; s|-O[0-9]?||g; s|-f[a-zA-Z-]+||g' \
+		's|/usr/X11R6|${LOCALBASE}|g; s|-O[0-9]?||g; s|-f[a-zA-Z-]+||g' \
 		${WRKSRC}/configure
 
 do-install:

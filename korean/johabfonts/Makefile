@@ -15,8 +15,9 @@ DISTNAME=	hanterm-font-${PORTVERSION}
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Hangul fonts for X11(johab) used in many hangul-related programs
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 USE_IMAKE=	yes
 

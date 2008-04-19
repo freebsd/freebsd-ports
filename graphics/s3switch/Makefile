@@ -7,7 +7,7 @@
 
 PORTNAME=	s3switch
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.probo.com/timr/
 DISTNAME=	s3ssrc
@@ -17,7 +17,6 @@ COMMENT=	Enable TV-out on S3 graphics cards
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 MAKE_ENV+=	FREEBSD=1
 

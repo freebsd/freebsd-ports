@@ -10,7 +10,7 @@ PORTVERSION=	0.9
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	opende
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
@@ -25,8 +25,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LIBS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 OPTIONS=	GIMPACT	"Enable gimpact instead of opcode support" off \
 		GYROSCOPIC "Configure ODE to work with gyroscopic term" on \

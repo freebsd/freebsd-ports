@@ -9,19 +9,18 @@ PORTNAME=	gillo
 DISTVERSION=	1.0beta1
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Players are cars throwing a magnetic fuzzy ball into a goal
 
 BUILD_DEPENDS=	${JAM}:${PORTSDIR}/devel/jam \
-		${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode \
-		${X11BASE}/lib/libplibsg.a:${PORTSDIR}/x11-toolkits/plib
+		${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode \
+		${LOCALBASE}/lib/libplibsg.a:${PORTSDIR}/x11-toolkits/plib
 
 USE_BZIP2=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -35,7 +34,7 @@ post-patch:
 		${WRKSRC}/src/Jamfile
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} "C++=${CC}" "X11BASE=${X11BASE}" \
+	cd ${WRKSRC} && ${SETENV} "C++=${CC}" "LOCALBASE=${LOCALBASE}" \
 		"CFLAGS=${CFLAGS} -DDATADIR=\\\"${PREFIX}/share\\\"" \
 	${JAM} -dx -sPREFIX=${PREFIX}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	tkstep
 PORTVERSION=	8.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese tk
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_0
@@ -22,8 +22,7 @@ COMMENT=	The Tk toolkit with a NeXTSTEP look and more
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 
-USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_AUTOTOOLS=	autoconf:213
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gcc --enable-shared --enable-step \

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkicq
 PORTVERSION=	0.60
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://gtkicq.pn.org/pub/gtkicq/
 
@@ -20,7 +20,6 @@ COMMENT=	Icq clone for japanese user
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libjcode.a:${PORTSDIR}/japanese/libjcode
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

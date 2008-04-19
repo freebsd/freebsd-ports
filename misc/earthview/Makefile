@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produces a view output of an arbitrary region of the Earth
 
 USE_XORG=	xpm
-CFLAGS+=	-I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 ALL_TARGET=	earthview
 
 PLIST_FILES=	bin/earthview share/earthview/topography/topography.cps \
@@ -29,7 +29,7 @@ PLIST_DIRS=	share/earthview/topography share/earthview/population \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%CC%%|${CC}|g" \
-		-e "s|%%CFLAGS%%|${CFLAGS}|g" -e "s|%%X11BASE%%|${X11BASE}|g" \
+		-e "s|%%CFLAGS%%|${CFLAGS}|g" -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/Makefile
 
 pre-build:

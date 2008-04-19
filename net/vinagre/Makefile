@@ -8,6 +8,7 @@
 
 PORTNAME=	vinagre
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,7 +24,6 @@ LIB_DEPENDS=	gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc \
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libglade2 gconf2 gnomedocutils
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

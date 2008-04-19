@@ -23,7 +23,7 @@ CONFLICTS=	ming-*
 
 WRKSRC=		${WRKDIR}/jaming-${PORTVERSION}/src
 MAKE_ARGS=	NOPROFILE=true
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_BISON=	build
 
 UTILS=		gif2dbl \

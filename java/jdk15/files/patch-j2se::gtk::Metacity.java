@@ -8,8 +8,8 @@ $FreeBSD$
  		    System.getProperty("swing.metacitythemedir"),
 -		    "/usr/X11R6/share/themes",
 -		    "/usr/X11R6/share/gnome/themes",
-+		    "%%X11BASE%%/share/themes",
-+		    "%%X11BASE%%/share/gnome/themes",
++		    "%%LOCALBASE%%/share/themes",
++		    "%%LOCALBASE%%/share/gnome/themes",
  		    "/usr/share/themes",
  		    "/usr/gnome/share/themes",  // Debian/Redhat/Solaris
                      "/opt/gnome2/share/themes"  // SuSE

@@ -8,6 +8,7 @@
 
 PORTNAME=	pessulus
 PORTVERSION=	2.16.4
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	 sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,7 +22,6 @@ USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2
 WANT_GNOME=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -17,9 +17,9 @@ MAINTAINER=	erik@smluc.org
 COMMENT=	Scheme script interpreter with multibyte character handling
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
-		${X11BASE}/lib/X11/rgb.txt:${X_CLIENTS_PORT}
+		${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
-		${X11BASE}/lib/X11/rgb.txt:${X_CLIENTS_PORT}
+		${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
 
 PLIST_SUB=	GAUCHE_VERSION="`gauche-config -V`"\
 		TARGET="${CONFIGURE_TARGET}"

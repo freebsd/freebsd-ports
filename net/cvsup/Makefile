@@ -7,7 +7,7 @@
 
 PORTNAME=	cvsup
 PORTVERSION=	16.1h
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_FREEBSD_ORG}
 MASTER_SITE_SUBDIR=development/CVSup/snapshots
@@ -55,7 +55,7 @@ CONFLICTS=	cvsup-[0-9]*
 NO_LATEST_LINK=	yes
 .endif
 .else
-USE_XLIB=	yes
+USE_XORG=	x11
 COMMENT+=	(GUI version)
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/formsvbt/${TARGET}/libm3formsvbt.a:${PORTSDIR}/lang/ezm3
 CONFLICTS=	cvsup-without-gui-[0-9]*

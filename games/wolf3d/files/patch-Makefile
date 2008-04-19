@@ -31,8 +31,8 @@
  SLFLAGS = $(LFLAGS) -lvga
 -XLFLAGS = $(LFLAGS) -L/usr/X11R6/lib -lX11 -lXext
 -DLFLAGS = $(LFLAGS) `sdl-config --libs` -L/usr/X11R6/lib -lX11 -lXext
-+XLFLAGS = $(LFLAGS) -L$(X11BASE)/lib -lX11 -lXext
-+DLFLAGS = $(LFLAGS) `$(SDL_CONFIG) --libs` -L$(X11BASE)/lib -lX11 -lXext
++XLFLAGS = $(LFLAGS) -L$(LOCALBASE)/lib -lX11 -lXext
++DLFLAGS = $(LFLAGS) `$(SDL_CONFIG) --libs` -L$(LOCALBASE)/lib -lX11 -lXext
  
  NASM = nasm
  

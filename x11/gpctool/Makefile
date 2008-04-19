@@ -21,7 +21,7 @@ LIB_DEPENDS=	gpc:${PORTSDIR}/devel/libgpc	\
 USE_ZIP=	yes
 USE_GL=		yes
 PLIST_FILES=	bin/gpctool
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_CDROM=	Can't be used for profit without permission
 
 MAKEFILE=	${FILESDIR}/BSDmakefile

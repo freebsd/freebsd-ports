@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-user-share
 PORTVERSION=	0.31
+PORTREVISION=	1
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,7 +22,6 @@ LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi-app
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_APACHE=	2.0+
 USE_GNOME=	gnomeprefix gnomehack intlhack libglade2 gconf2
 GNU_CONFIGURE=	yes

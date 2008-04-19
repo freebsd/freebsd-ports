@@ -223,7 +223,7 @@
   #LX11		= -L/usr/openwin/lib -lX11 -lXt
   
   #LX11		= -lX11 -lXt -lICE -lSM                                # X11R6
-+ LX11		= -L$(X11BASE)/lib -lX11 -lXt -lICE -lSM
++ LX11		= -L$(LOCALBASE)/lib -lX11 -lXt -lICE -lSM
   #LX11		= -L/usr/openwin/lib -lX11 -lXt -lICE -lSM
   
   #CC_CXINC	=

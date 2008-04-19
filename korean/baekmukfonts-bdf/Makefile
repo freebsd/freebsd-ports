@@ -7,7 +7,7 @@
 
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/obsoletes/ \
 		ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
@@ -21,10 +21,9 @@ EXTRACT_ONLY=	baekmuk-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	cjh@freebsd.org
 COMMENT=	Free Hangul fonts for X11(baekmuk)
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
-
-USE_X_PREFIX=	yes
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 FONTLIST=	batang10 batang10b batang12 batang12b batang14 batang14b \
 		batang16 batang16b batang18 batang18b batang20 batang20b \

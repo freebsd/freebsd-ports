@@ -26,8 +26,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"requires speaker(4)"
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
-CONFIGURE_ARGS+=--with-xpm-includes=${X11BASE}/include \
-		--with-xpm-library=${X11BASE}/lib
+CONFIGURE_ARGS+=--with-xpm-includes=${LOCALBASE}/include \
+		--with-xpm-library=${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

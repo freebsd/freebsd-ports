@@ -6,8 +6,8 @@
    else
 -    X11LIBDIR     = /usr/X11R6/lib
 -    X11INCLUDEDIR = /usr/X11R6/include
-+    X11LIBDIR     = $(X11BASE)/lib
-+    X11INCLUDEDIR = $(X11BASE)/include
++    X11LIBDIR     = $(LOCALBASE)/lib
++    X11INCLUDEDIR = $(LOCALBASE)/include
    endif
  endif
  

@@ -81,7 +81,6 @@ share/xawtv/secam-france.list
 share/xawtv/secam-russia.list
 share/xawtv/uhf.list
 @dirrm share/xawtv
-@cwd %%X11BASE%%
 lib/X11/app-defaults/MoTV
 lib/X11/app-defaults/Xawtv
 lib/X11/app-defaults/mtt

@@ -7,7 +7,7 @@
 
 PORTNAME=	glademm
 PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://home.wtal.de/petig/Gtk/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	A C++ code generator backend for glade and glade2
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget
 GNU_CONFIGURE=	yes

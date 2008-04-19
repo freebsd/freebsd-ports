@@ -7,6 +7,7 @@
 
 PORTNAME=	liberation-fonts-ttf
 PORTVERSION=	3
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://www.redhat.com/f/fonts/
 
@@ -16,8 +17,8 @@ COMMENT=	Liberation fonts from Red Hat to replace MS TTF fonts
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/liberation-fonts-0.2
+USE_XORG=	x11
 
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
 
@@ -29,8 +30,8 @@ FONTNAME=	Liberation
 FONTDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 INSTDAT=	License.txt fonts.dir fonts.scale
 
-MKFONTSCL_CMD=	${X11BASE}/bin/mkfontscale
-MKFONTDIR_CMD=	${X11BASE}/bin/mkfontdir
+MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
+MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
 do-build:
 	cd ${WRKSRC} &&	\

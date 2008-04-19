@@ -13,7 +13,7 @@
   XBanner.BarSize:	12
   
   ! Name of the pixmap file to tile over the root window
-! !XBanner.BgPixFile:	%%X11BASE%%/include/X11/pixmaps/xdm_bg.xpm
+! !XBanner.BgPixFile:	%%LOCALBASE%%/include/X11/pixmaps/xdm_bg.xpm
   
   ! The number of ripples for the Ripples BG style
   XBanner.Ripples:	3

@@ -7,6 +7,7 @@
 
 PORTNAME=	xd3d
 PORTVERSION=	8.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
@@ -36,11 +37,11 @@ RUN_DEPENDS+=	gifsicle:${PORTSDIR}/graphics/gifsicle
 
 MASTER_SITES_BACKUP=	http://pompo.net/ports/
 
-USE_XLIB=	yes
 REINPLACE_ARGS=	-i ""
 FETCH_CMD=	/usr/bin/fetch
 FETCH_BEFORE_ARGS=	-R -o ${DISTDIR}/${DISTFILES}
 
+USE_XORG=	x11 xpm
 USE_FORTRAN=	yes
 FFLAGS+=	-O
 MEMORY_XD3D?=	64
@@ -67,7 +68,7 @@ post-patch:
 	@${CP} ${WRKSRC}/RULES.freeBSD ${WRKSRC}/RULES
 	@${REINPLACE_CMD} -e "s|%%WRKSRC%%|${WRKSRC}|"		\
 		-e "s|%%PREFIX%%|${PREFIX}|"			\
-		-e "s|%%X11BASE%%|${X11BASE}|"			\
+		-e "s|%%X11BASE%%|${LOCALBASE}|"			\
 		-e "s|%%LANG%%|${XD3D_LANG}|"			\
 		-e "s|%%MEMORY_XD3D%%|${MEMORY_XD3D}|"		\
 		-e "s|%%F77%%|${F77}|"				\

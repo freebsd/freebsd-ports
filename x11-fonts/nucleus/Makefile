@@ -7,18 +7,20 @@
 
 PORTNAME=	nucleus
 PORTVERSION=	0.77
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	xfonts
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Another font package for X
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 post-install:
 	@${CAT} ${DESCR}

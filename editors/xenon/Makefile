@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X-based text editor
 
 USE_GMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAKEFILE=	${WRKSRC}/makefiles/Makefile.Linux
 NOPRECIOUSSOFTMAKEVARS=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/ex

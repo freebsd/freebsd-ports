@@ -7,7 +7,7 @@
 
 PORTNAME=	p-interp
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.klebsch.de/ \
 		ftp://ftp.apple.asimov.net/pub/apple_II/images/utility/programming/apple_pascal/:disks \
@@ -21,9 +21,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A UCSD (Apple) Pascal p-code interpreter environment
 
-BUILD_DEPENDS=	gccmakedep:${X_IMAKE_PORT}
+BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep
 
-USE_XLIB=	yes
+USE_XORG=	x11 xt
 
 RESTRICTED=	"Redistribution rights for Apple Pascal disk images are unclear"
 

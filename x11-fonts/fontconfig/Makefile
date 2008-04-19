@@ -22,14 +22,13 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
-PREFIX?=	${X11BASE}
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget pkgconfig ltverhack
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
 		--with-expat-lib=${LOCALBASE}/lib \
-		--with-default-fonts=${X11BASE}/lib/X11/fonts \
+		--with-default-fonts=${LOCALBASE}/lib/X11/fonts \
 		--with-cache-dir=/var/db/fontconfig \
 		--without-add-fonts \
 		--disable-docs
@@ -65,7 +64,7 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf.default; \
 	fi
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
-		s|%%X11BASE%%|${X11BASE}|' < ${FILESDIR}/pkg-install.in \
+		s|%%LOCALBASE%%|${LOCALBASE}|' < ${FILESDIR}/pkg-install.in \
 		> ${PKGINSTALL}
 .if !defined(PACKAGE_BUILDING)
 	@${LDCONFIG} -m ${PREFIX}/lib

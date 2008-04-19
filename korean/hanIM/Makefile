@@ -14,10 +14,10 @@ MASTER_SITES=   ftp://ftp.mizi.com/pub/hanIM/
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Mizi Research's Korean X11 Input Method
 
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
 USE_IMAKE=	YES
-USE_XPM=	yes
+USE_XORG=	xpm
 WRKSRC=		${WRKDIR}/hanIM
 
 post-install:

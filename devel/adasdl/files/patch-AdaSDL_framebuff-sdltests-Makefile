@@ -4,7 +4,7 @@
  
 -INC+=-I../../AdaSDL/binding -I../../AdaGL/GL -I..
 -include ../make.conf
-+LIBS= -L/usr/lib -L${LOCALBASE}/lib -L${X11BASE}/lib -L~/lib  -lSDL_mixer -lSDL -pthread -lGL -lGLU
++LIBS= -L/usr/lib -L${LOCALBASE}/lib -L~/lib  -lSDL_mixer -lSDL -pthread -lGL -lGLU
 +
 +INC+=-I${LOCALBASE}/lib/adaSDL -I${LOCALBASE}/lib/adaGL -I..
  

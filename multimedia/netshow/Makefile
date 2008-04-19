@@ -21,7 +21,7 @@ RESTRICTED=	"Commercial software"
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 PLIST_FILES=	bin/netshow
 
 pre-extract:

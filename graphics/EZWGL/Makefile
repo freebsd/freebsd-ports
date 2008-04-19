@@ -7,7 +7,7 @@
 
 PORTNAME=	EZWGL
 PORTVERSION=	1.50
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 DISTFILES=	${DISTNAME}-demo.tgz ${DISTNAME}-doc.tgz ${DISTNAME}-src.tgz
@@ -18,7 +18,7 @@ COMMENT=	The EZ Widget and Graphics Library
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

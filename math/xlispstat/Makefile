@@ -7,7 +7,7 @@
 
 PORTNAME=	xlispstat
 PORTVERSION=	3.52.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math lang lisp
 MASTER_SITES=	ftp://ftp.stat.umn.edu/pub/xlispstat/current/ \
 		http://lib.stat.cmu.edu/xlispstat/Src/current/ \
@@ -19,9 +19,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A statistics/X11 based lisp interpreter
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
+USE_XORG=	x11
 
 post-patch:
 	@${REINPLACE_CMD} '/^static double fmax/d' ${WRKSRC}/lowess.c

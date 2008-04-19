@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig glib20 gnomehack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

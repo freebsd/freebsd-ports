@@ -74,7 +74,7 @@ X11R6_FILES=	coxplot/Makefile \
 post-extract:
 	@${CP} -f ${FILESDIR}/Makefile.FreeBSD_PORT ${WRKSRC}
 .for f in ${X11R6_FILES}
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${X11BASE}|g' ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${LOCALBASE}|g' ${WRKSRC}/${f}
 .endfor
 	@${REINPLACE_CMD} -e 's|AFNI_2007_05_29_1644|${PORTVERSION}|g' ${WRKSRC}/AFNI_label.h
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/afni.1 ${WRKDIR}

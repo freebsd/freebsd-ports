@@ -55,7 +55,7 @@ post-patch:
 		${BUILD_WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -E \
 		-e 's|^(DB_PATH[[:space:]]*=).*$$|\1\$${HOME}/.db/|' \
-		-e 's|^(IMAGE_VIWER[[:space:]]*=).*$$|\1${X11BASE}/bin/xv|' \
+		-e 's|^(IMAGE_VIWER[[:space:]]*=).*$$|\1${LOCALBASE}/bin/xv|' \
 		-e 's|^(PATH_TO_LANGUAGE_FILTER[[:space:]]*=).*$$|\1${EXAMPLESDIR}/|' \
 		-e 's|(gocr[[:space:]]+)|${LOCALBASE}/bin/\1|' \
 		${WRKSRC}/pgm2txt

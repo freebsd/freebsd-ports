@@ -21,8 +21,8 @@ USE_GMAKE=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
-CPPFLAGS=	`${SDL_CONFIG} --cflags` -I${X11BASE}/include
-LDFLAGS=	`${SDL_CONFIG} --libs` -L${X11BASE}/lib -lSDL_image -lSDL_mixer -lGL -lGLU
+CPPFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
+LDFLAGS=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lSDL_image -lSDL_mixer -lGL -lGLU
 MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}"
 
 PLIST_FILES=	bin/sdb

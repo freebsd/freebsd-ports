@@ -29,7 +29,7 @@ USE_PERL5_BUILD=yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
-		${PERL} -pi -e 's#/usr/X11R6#${X11BASE}#g'
+		${PERL} -pi -e 's#/usr/X11R6#${LOCALBASE}#g'
 .for file in command.c rvt.c screen.c
 	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/rvt/${file}
 .endfor

@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	1.4.0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/control-center/1.4
@@ -19,7 +19,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for GNOME project
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomecanvas gnomevfs libcapplet
 USE_GETTEXT=	yes

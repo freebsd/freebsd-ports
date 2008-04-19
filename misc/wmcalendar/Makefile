@@ -32,7 +32,7 @@ PLIST_FILES=	bin/wmCalendar
 
 post-patch:
 	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
-			-e 's#/usr/X11R6#${X11BASE}#g' \
+			-e 's#/usr/X11R6#${LOCALBASE}#g' \
 			${WRKSRC}/Makefile
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmCalendar ${PREFIX}/bin

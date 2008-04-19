@@ -15,7 +15,7 @@ COMMENT=	Fortran 77 compatibility runtime
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 SRC_DISTFILES=	compat-gcc-32-${PORTVERSION}-47.fc4.src.rpm
 
 PLIST_FILES=	usr/lib/libg2c.so.0 usr/lib/libg2c.so.0.0.0

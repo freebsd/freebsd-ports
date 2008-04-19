@@ -7,10 +7,9 @@
 
 PORTNAME=	miniChinput
 PORTVERSION=	0.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	minichinput
+MASTER_SITES=	SF/minichinput
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiny version of Chinput
@@ -18,7 +17,7 @@ COMMENT=	A tiny version of Chinput
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xt
 USE_LDCONFIG=	yes
 ALL_TARGET=	all data
 INSTALL_TARGET=	install data-install
@@ -37,7 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#$$(prefix)$$(imdir)/{gb,gbk,big5}#$$(prefix)$$(imdir)/gb $$(prefix)$$(imdir)/gbk $$(prefix)$$(imdir)/big5#g' ${WRKSRC}/ImmModules/turbo/Makefile.in
 	@${REINPLACE_CMD} -e 's,-@PACKAGE_VERSION@,,g' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's,/share/man,/man,g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/src/IMdkit/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/src/IMdkit/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

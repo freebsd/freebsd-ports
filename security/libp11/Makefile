@@ -17,7 +17,7 @@ USE_AUTOTOOLS=	libltdl:15
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

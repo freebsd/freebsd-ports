@@ -7,7 +7,7 @@
 
 PORTNAME=	jisx0213-fonts
 PORTVERSION=	20040425
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www12.ocn.ne.jp/~imamura/ \
 		http://gitatsu.hp.infoseek.co.jp/bdf/:yagi
@@ -21,11 +21,11 @@ MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Japanese jisx0213 fonts
 
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
-		bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
 FONTSDIR=	lib/X11/fonts/local
 
 EXTRACT_CMD=		${CP}

@@ -28,9 +28,9 @@ READLINE_LIBS          =  -lreadline -ltermcap
 DEPEND_FLAG            = -MM
 DEPEND_FILE            = Depend
 
-GR_CFLAGS              =  -I${X11BASE}/include
+GR_CFLAGS              =  -I${LOCALBASE}/include
 GR_DFLAGS              = -DX11 -DXLIB -DX11HELP_PROG=\"${X11HELP_PROG}\"
-GR_LIBS                = -L${X11BASE}/lib  -lX11
+GR_LIBS                = -L${LOCALBASE}/lib  -lX11
 GR_SRCS                =  ${X11_SRCS}
 GR_HELPER_SRCS         =  ${X11HELPER_SRCS}
 GR_HELPER_PROG         =  ${X11HELP_PROG}

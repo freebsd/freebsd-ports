@@ -8,7 +8,7 @@
 
 PORTNAME=	gimp-app
 DISTVERSION=	2.4.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -36,7 +36,7 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xmu xext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME+=	gnomehack intltool intlhack gtk20 libartlgpl2 ltverhack desktopfileutils

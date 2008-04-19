@@ -8,20 +8,18 @@
 
 PORTNAME=		gkrellkam
 PORTVERSION=		2.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=		graphics
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 DISTNAME=		${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM plugin that display thumbnails of periodically updated images
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 LATEST_LINK=	gkrellkam2
 

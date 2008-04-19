@@ -27,7 +27,7 @@ MAKE_ARGS=	CONF=${EXAMPLESDIR}/dact.conf \
 		TOBUILD="dact libdact.so dact.conf"
 
 MAN1=		dact.1
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|prefix = @prefix@|prefix = ${PREFIX}|" \

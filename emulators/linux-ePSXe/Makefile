@@ -19,7 +19,7 @@ COMMENT=	A Sony Playstation emulator (Linux version)
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

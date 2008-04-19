@@ -32,7 +32,7 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \

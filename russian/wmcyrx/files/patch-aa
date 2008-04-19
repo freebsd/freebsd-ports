@@ -3,10 +3,10 @@
 @@ -1,31 +1,34 @@
  
 -I  = -I/usr/openwin/include -I/usr/local/include
-+I  = -I${X11BASE}/include -I${LOCALBASE}/include
++I  = -I${LOCALBASE}/include
  #L  = -Bstatic -lXpm -Bdynamic -lX11 -lXext
 -L  = -L/usr/local/lib -L/usr/openwin/lib -L/usr/X11/lib -lXpm -lX11 -lXext
-+L  = -L${LOCALBASE}/lib -L${X11BASE}/lib -L/usr/lib -lXpm -lX11 -lXext
++L  = -L${LOCALBASE}/lib -L/usr/lib -lXpm -lX11 -lXext
  #CC = gcc -O $I -DXLIB_ILLEGAL_ACCESS
 -CC=CC -O $I -DXLIB_ILLEGAL_ACCESS 
 +CXX ?= c++

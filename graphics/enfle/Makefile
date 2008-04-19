@@ -7,7 +7,7 @@
 
 PORTNAME=	enfle
 PORTVERSION=	20010130
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/files/stable/
 
@@ -20,8 +20,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		arc.1:${PORTSDIR}/archivers/libarc
 
+USE_XORG=	x11 xext
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--enable-all-plugins \

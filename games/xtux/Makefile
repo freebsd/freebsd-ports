@@ -7,10 +7,9 @@
 
 PORTNAME=	xtux
 PORTVERSION=	2003.03.06
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,8 +17,7 @@ COMMENT=	Humorous Arcade game for X
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GMAKE=	yes
 MAKE_ENV=	CPP="${CC} -E" CC="${CC}"
 
@@ -31,7 +29,7 @@ post-patch:
 		 s|^CFLAGS|#CFLAGS|g ; \
 		 s|^CPP|#CPP|g ; \
 		 s|^MAKE|#MAKE|g ; \
-		 s|/usr/X11R6|$${X11BASE}|g'
+		 s|/usr/X11R6|$${LOCALBASE}|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtux ${PREFIX}/bin

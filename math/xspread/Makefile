@@ -7,7 +7,7 @@
 
 PORTNAME=	xspread
 PORTVERSION=	3.1.1c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	# disappeared
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -17,10 +17,9 @@ COMMENT=	A spreadsheet program for X and terminals
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LIBS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		xspread.1 pxspread.1
 

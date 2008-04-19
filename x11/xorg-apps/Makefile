@@ -15,8 +15,6 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org apps meta-port
 
-PREFIX?=	${X11BASE}
-
 RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \

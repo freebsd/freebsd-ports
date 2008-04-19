@@ -7,10 +7,9 @@
 
 PORTNAME=	clanbomber
 PORTVERSION=	1.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bomberman-like multiplayer game
@@ -19,7 +18,6 @@ LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib
 
 BROKEN=		Does not compile with the newer clanCore
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \

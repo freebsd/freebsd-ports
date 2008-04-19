@@ -11,7 +11,7 @@
 # $FreeBSD$
 #
 
-DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -I${X11BASE}/include -DDATADIR='"${DATADIR}"' -DX11BASE='"${X11BASE}"'
+DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -I${LOCALBASE}/include -DDATADIR='"${DATADIR}"' -DLOCALBASE='"${LOCALBASE}"'
 
 .if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 DO_CFLAGS +=	-Did386
@@ -28,7 +28,7 @@ DO_CFLAGS +=	-O -pipe -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpen
 .if defined(WITH_XMMS)
 XMMS_CFLAGS !=	glib-config --cflags
 DO_CFLAGS +=	-D__XMMS__ ${XMMS_CFLAGS} ${PTHREAD_CFLAGS}
-XMMS_LIBS = -L${X11BASE}/lib -lxmms ${PTHREAD_LIBS}
+XMMS_LIBS = -L${LOCALBASE}/lib -lxmms ${PTHREAD_LIBS}
 .endif
 
 ########################################################################
@@ -186,8 +186,8 @@ CL_GLX_OBJS = \
 		vid_glx.o
 
 CL_COMMON_LIBS = -lm
-CL_X11_LIBS = -L${X11BASE}/lib -lX11 -lXext
-CL_GLX_LIBS = -L${LOCALBASE}/lib -lpng -ljpeg -L${X11BASE}/lib -lGL -lXxf86dga -lXxf86vm
+CL_X11_LIBS = -L${LOCALBASE}/lib -lX11 -lXext
+CL_GLX_LIBS = -L${LOCALBASE}/lib -lpng -ljpeg -L${LOCALBASE}/lib -lGL -lXxf86dga -lXxf86vm
 
 .c.o:
 		${CC} ${DO_CFLAGS} -c $< -o $*.o

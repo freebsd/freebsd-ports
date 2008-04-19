@@ -7,9 +7,9 @@
 
 PORTNAME=	steak
 PORTVERSION=	1.7.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	german
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://www.tm.informatik.uni-frankfurt.de/%7Erazi/steak/program/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Steak.${PORTVERSION}
@@ -18,6 +18,8 @@ MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	An english <-> german dictionary under the GPL
 
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+
+USE_XORG=	xt
 
 .if defined(WITHOUT_XSTEAK)
 USE_XORG=	x11
@@ -38,7 +40,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s,\$$HOME/bin/Steak/Datensatz,${PREFIX}/share/steak/Datensatz,; \
 			s,BINDIR=\$$HOME/bin/Steak,BINDIR=${DATADIR},; \
 			s,$$BINDIR/help.txt,${DATADIR}/help.txt,g" ${WRKSRC}/woerterbuch
-	${REINPLACE_CMD} -e "s,/usr/X11R6/,${X11BASE}/,g" ${WRKSRC}/Printbuffer/Makefile
+	${REINPLACE_CMD} -e "s,/usr/X11R6/,${LOCALBASE}/,g" ${WRKSRC}/Printbuffer/Makefile
 
 do-install:
 .if !defined(WITHOUT_XSTEAK)

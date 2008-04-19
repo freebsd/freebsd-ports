@@ -62,14 +62,14 @@ CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--disable-as-needed \
 		--enable-mt \
 		--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
 		--with-libthai=yes \
+		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include \
 		--with-lua=no \
 		--with-ssl-dir=${OPENSSLBASE}
 CONFIGURE_ENV+=	libltdl_cv_shlibext=".so"
 
-FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
-FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir
+FONTSCALE=	${LOCALBASE}/lib/X11/fonts/TTF/luximb.ttf
+FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.infodrom.org/projects/cgilib/download/ \
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A library of procedures for developing CGI programs in C
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 

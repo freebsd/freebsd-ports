@@ -36,8 +36,8 @@ post-patch:
 		${WRKSRC}/configurator.c
 
 	@${REINPLACE_CMD} -e 's|g++|${CXX}|; s|-Wall||g; s|-L/usr/X11/lib|-lXext|; \
-		s|-L/usr/lib/X11R6||; s|-L/usr/lib/X11||; s|-L/usr/X11R6/lib|-L${X11BASE}/lib|; \
-		s|-fno-rtti||; s|-ffast-math|${CXXFLAGS} -I${X11BASE}/include|' \
+		s|-L/usr/lib/X11R6||; s|-L/usr/lib/X11||; s|-L/usr/X11R6/lib|-L${LOCALBASE}/lib|; \
+		s|-fno-rtti||; s|-ffast-math|${CXXFLAGS} -I${LOCALBASE}/include|' \
 		${WRKSRC}/config/makefile.unix-gcc
 .if !defined(WITHOUT_OPCODE)
 	@${REINPLACE_CMD} -e 's/^#OPCODE_DIRECTORY/OPCODE_DIRECTORY/' \

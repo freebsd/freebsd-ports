@@ -1,13 +1,13 @@
-CFLAGS	     += -I%%LOCALBASE%%/include -I%%X11BASE%%/include
+CFLAGS	     += -I%%LOCALBASE%%/include
 
 DEST	      = ${PREFIX}/bin
 
-EXTHDRS	      = %%X11BASE%%/include/X11/X.h \
-		%%X11BASE%%/include/X11/Xfuncproto.h \
-		%%X11BASE%%/include/X11/Xlib.h \
-		%%X11BASE%%/include/X11/Xmd.h \
-		%%X11BASE%%/include/X11/Xosdefs.h \
-		%%X11BASE%%/include/X11/Xutil.h \
+EXTHDRS	      = %%LOCALBASE%%/include/X11/X.h \
+		%%LOCALBASE%%/include/X11/Xfuncproto.h \
+		%%LOCALBASE%%/include/X11/Xlib.h \
+		%%LOCALBASE%%/include/X11/Xmd.h \
+		%%LOCALBASE%%/include/X11/Xosdefs.h \
+		%%LOCALBASE%%/include/X11/Xutil.h \
 		%%LOCALBASE%%/include/gd/gd.h \
 		%%LOCALBASE%%/include/gd/gd_io.h
 
@@ -17,7 +17,7 @@ INSTALL	      = install
 
 LD	      = $(CC)
 
-LDFLAGS	      = -L%%LOCALBASE%%/lib -L%%X11BASE%%/lib %%GCCLIBDIR%%
+LDFLAGS	      = -L%%LOCALBASE%%/lib %%GCCLIBDIR%%
 
 LIBS	      = -lgd -lpng -ljpeg -lX11 -lz %%FORTRANLIBS%%  -lm
 

@@ -22,7 +22,7 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=  yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shared
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

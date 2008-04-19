@@ -9,7 +9,7 @@
 
 PORTNAME=	xgs
 PORTVERSION=	0.50
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.inwards.com/xgs/ \
 		http://www.inwards.com/xgs/2mg/
@@ -27,7 +27,7 @@ RESTRICTED=	"xgs.rom copyright is owned by Apple and cannot be distributed"
 # Source building
 #
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_XLIB=	yes
+USE_XORG=	x11 ice sm xext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x

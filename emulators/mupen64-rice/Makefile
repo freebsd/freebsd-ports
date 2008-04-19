@@ -54,7 +54,7 @@ CFLAGS+=	-DUSE_GTK `${GTK_CONFIG} --cflags` -fPIC
 CFLAGS+=	-O3 -fomit-frame-pointer -funroll-loops -ffast-math -Wall -pipe
 CFLAGS+=	-DX86 -mcpu=athlon -msse -mmmx
 LDFLAGS+=	`${GTK_CONFIG} --libs`  \
-		-lGL -lGLU -L${X11BASE}/lib `${SDL_CONFIG} --libs` -lc
+		-lGL -lGLU -L${LOCALBASE}/lib `${SDL_CONFIG} --libs` -lc
 
 MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" LD="${CXX}"
 

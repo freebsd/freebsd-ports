@@ -15,7 +15,7 @@ COMMENT=		Sender Rewriting Scheme C Implementation
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=		yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 SHLIB_MAJOR=		1
 GNU_CONFIGURE=		yes
 

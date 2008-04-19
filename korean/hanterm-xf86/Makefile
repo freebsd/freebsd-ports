@@ -7,7 +7,7 @@
 
 PORTNAME=	hanterm
 PORTVERSION=	2.0.5.173
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean x11
 MASTER_SITES=	http://kldp.net/frs/download.php/282/
 PKGNAMESUFFIX=	-xf
@@ -16,11 +16,11 @@ DISTNAME=	hanterm${PKGNAMESUFFIX}-2.0.5-173
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	X11R6-based xterm hacked for managing Korean languages
 
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
+USE_XORG=	xaw xext x11
 CONFLICTS=	ko-hanterm-3.*
 USE_ICONV=	yes
-USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-boxchar --enable-ansi-color \
 			--enable-256-color --enable-chat --enable-now-chat

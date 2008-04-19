@@ -6,15 +6,13 @@
 
 PORTNAME=	conglomerate
 PORTVERSION=	0.9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	GNOME2 visual XML editor with emphasis on DocBook editing
 
-USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gtksourceview gnomeprefix gnomehack intlhack

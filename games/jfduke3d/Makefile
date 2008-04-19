@@ -24,9 +24,8 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses x86 assembly code
 USE_ZIP=	yes
-USE_GCC=	3.2+
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}_src_${PORTVERSION}
@@ -38,7 +37,7 @@ post-patch:
 		 s|^(CC=).*|\1${CC}|; \
 		 s|^(CFLAGS=).*|\1${CFLAGS}|; \
 		 s|^(NASMFLAGS=).*|\1 -s -f elf|; \
-		 s|/usr/X11R6|${X11BASE}|; \
+		 s|/usr/X11R6|${LOCALBASE}|; \
 		 s|sdl-config|${SDL_CONFIG}|' \
 		${WRKSRC}/Makefile \
 		${WRKDIR}/jfbuild_src_${PORTVERSION}/Makefile \

@@ -7,17 +7,17 @@
 
 PORTNAME=	backfract
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.igoweb.org/~wms/comp/backfract/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fractal image animated wallpaper program
 
+USE_XORG=	x11
 PLIST_FILES=	bin/backfract
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
-USE_X_PREFIX=	yes
 NO_INSTALL_MANPAGE=	yes
 ALL_TARGET= 	# none
 

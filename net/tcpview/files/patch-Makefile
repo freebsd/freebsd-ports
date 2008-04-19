@@ -10,7 +10,7 @@
 -LIB =
 +DEFINES = -DCSLIP -DPPP
 +CCOPT = -O0
-+INCLUDES = -I.. -I$(X11BASE)/include
++INCLUDES = -I.. -I$(LOCALBASE)/include
 +LIB =-ll
  
  # These are for the Sun4 version
@@ -68,7 +68,7 @@
  
  tcpview: $(TCPVIEW_OBJ)
 -	$(CC) $(CFLAGS) -o $@ $(TCPVIEW_OBJ) $(XLIB) $(LIB)
-+	$(CC) $(CFLAGS) -o $@ $(TCPVIEW_OBJ) -L${X11BASE}/lib $(XLIB) $(LIB)
++	$(CC) $(CFLAGS) -o $@ $(TCPVIEW_OBJ) -L${LOCALBASE}/lib $(XLIB) $(LIB)
  
  tcpslice: $(TCPSLICE_OBJ)
  	$(CC) $(CFLAGS) -o $@ $(TCPSLICE_OBJ)

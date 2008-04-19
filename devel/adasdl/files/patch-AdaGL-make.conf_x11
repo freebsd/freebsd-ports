@@ -3,7 +3,7 @@
 @@ -1,5 +1,5 @@
  #LIBS= -L/usr/lib -L/usr/local/lib ~/lib -Wl,-rpath,. -lpthread -L/usr/lib -lGL -lGLU
 -LIBS= -L/usr/lib -L/usr/local/lib -L~/lib -lGL -lGLU
-+LIBS= -L/usr/lib -L${LOCALBASE}/lib -L${X11BASE}/lib -L~/lib -lXext -lX11 -lGL -lGLU
++LIBS= -L/usr/lib -L${LOCALBASE}/lib -L~/lib -lXext -lX11 -lGL -lGLU
  GNATHTML=/usr/local/bin/gnathtml.pl
  PERL=/usr/bin/perl
  

@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 

@@ -9,8 +9,7 @@ PORTNAME=	libquicktime
 PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SFE
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A library for reading and writing quicktime files
@@ -22,8 +21,8 @@ USE_GNOME=	gnometarget gnomehack pkgconfig
 USE_XORG=	xaw xv
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS} -lintl"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
 CONFIGURE_ARGS=	--with-x --enable-gpl
 CFLAGS+=	-fPIC
 MAN1=		lqtplay.1

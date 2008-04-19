@@ -7,7 +7,7 @@
 
 PORTNAME=	elmar-fonts
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	hebrew x11-fonts
 MASTER_SITES=	ftp://ftp.elmar.co.il/Portable/fonts/
 DISTNAME=	H.fonts
@@ -17,12 +17,11 @@ MAINTAINER=	nadav@cs.technion.ac.il
 COMMENT=	A collection of Hebrew fonts from El-Mar software Ltd
 
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/X11/fonts/hebrew
-	${TAR} -C ${PREFIX}/lib/X11/fonts/hebrew -xZpf \
+	${MKDIR} ${LOCALBASE}/lib/X11/fonts/hebrew
+	${TAR} -C ${LOCALBASE}/lib/X11/fonts/hebrew -xZpf \
 		${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 post-install:
 	@${CAT} ${PKGMESSAGE}

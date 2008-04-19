@@ -6,7 +6,7 @@
  else:
 +	# Section used for FreeBSD port
 +        LOCALBASE = os.environ['LOCALBASE']
-+        X11BASE = os.environ['X11BASE']
++        LOCALBASE = os.environ['LOCALBASE']
  	# determine compiler and linker flags for SDL
 -	env.ParseConfig('sdl-config --cflags')
 -	env.ParseConfig('sdl-config --libs')
@@ -19,8 +19,8 @@
 -
 +        env.Replace(CC = os.environ['CC'])
 +        env.Replace(CXX = os.environ['CXX'])
-+        env.Replace(CPPPATH = [X11BASE + '/include',LOCALBASE+ '/include'])
-+        env.Replace(LIBPATH = [X11BASE + '/lib',LOCALBASE+ '/lib'])
++        env.Replace(CPPPATH = [LOCALBASE + '/include',LOCALBASE+ '/include'])
++        env.Replace(LIBPATH = [LOCALBASE + '/lib',LOCALBASE+ '/lib'])
 +        env.Append(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
  
  # generate help for options

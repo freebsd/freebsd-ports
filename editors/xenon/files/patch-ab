@@ -20,8 +20,8 @@
  
 -INCLUDES = -I$(XEINC)
 -LIBS = -L/usr/X11R6/lib -lXpm -lX11
-+INCLUDES = -I$(XEINC) -I$(X11BASE)/include
-+LIBS = -L$(X11BASE)/lib -lXpm -lX11
++INCLUDES = -I$(XEINC) -I$(LOCALBASE)/include
++LIBS = -L$(LOCALBASE)/lib -lXpm -lX11
  
  backup:
  	cd ..;tar -cvzf xenon.tar.gz $(BACKUP)

@@ -22,7 +22,7 @@
  
  # The full path to your postscript viewer
 -GHOSTVIEW = /usr/X11/bin/gv
-+GHOSTVIEW = ${X11BASE}/bin/gv
++GHOSTVIEW = ${LOCALBASE}/bin/gv
  
  ### DON'T EDIT ANYTHING BELOW THIS LINE ###
  

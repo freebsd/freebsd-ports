@@ -7,10 +7,9 @@
 
 PORTNAME=	mesgui
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make a simple GUI under OpenGL
@@ -18,16 +17,16 @@ COMMENT=	Make a simple GUI under OpenGL
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=	sdl
-USE_GL=		yes
+USE_GL=		gl
 USE_GMAKE=	yes
 MAKE_ENV=	OPT="${OPT}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 OPT=		${CFLAGS} -fPIC -DPIC -Iinclude \
 		`${SDL_CONFIG} --cflags` `freetype-config --cflags` \
-		-I${LOCALBASE}/include -I${X11BASE}/include
+		-I${LOCALBASE}/include
 LDFLAGS=	`${SDL_CONFIG} --libs` `freetype-config --libs` \
-		-L${LOCALBASE}/lib -L${X11BASE}/lib
+		-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \

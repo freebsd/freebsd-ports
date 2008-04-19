@@ -19,7 +19,7 @@ COMMENT=	Make your XDM login screen look beautiful
 USE_XORG=	xpm x11
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/xres.c ${WRKSRC}/samples/XBanner.ad
 
 post-install:

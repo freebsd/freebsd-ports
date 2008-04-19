@@ -7,14 +7,13 @@
 
 PORTNAME=	gturing
 PORTVERSION=	0.1.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/gnome/sources/gturing/0.1/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple turing machine simulator for GNOME 2
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

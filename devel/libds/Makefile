@@ -15,7 +15,7 @@ DISTNAME=		libds-2.1
 MAINTAINER=		kingofgib@users.sourceforge.net
 COMMENT=		ANSI Generic Data Structures Library
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 ALL_TARGET=		gcc
 
 .include <bsd.port.pre.mk>

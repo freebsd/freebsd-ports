@@ -10,8 +10,7 @@ PORTNAME=	diacanvas2
 PORTVERSION=	0.14.4
 PORTREVISION=	1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	diacanvas
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general drawing canvas from dia dialog editor
@@ -22,7 +21,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_DISPLAY=	yes
 
 post-patch:

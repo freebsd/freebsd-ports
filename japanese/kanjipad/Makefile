@@ -7,14 +7,13 @@
 
 PORTNAME=	kanjipad
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://fishsoup.net/software/kanjipad/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Handwriting recognition
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_PERL5=	yes
 USE_GMAKE=	yes

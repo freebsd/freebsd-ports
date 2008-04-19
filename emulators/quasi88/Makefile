@@ -7,7 +7,7 @@
 
 PORTNAME=	quasi88
 PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC-8801 emulator for X
 
-USE_XLIB=	yes
+USE_XORG=	x11 xext
 USE_GMAKE=	yes
 MAKE_ENV=	DATADIR="${DATADIR}" _CC="${CC}" _CFLAGS="${CFLAGS}" \
 		_CXX="${CXX}" LD="${CXX}" PROGRAM="${PORTNAME}"
@@ -47,7 +47,7 @@ post-patch:
 		 s|^SDL_|# SDL_|g ; \
 		 s|gcc|$${_CC}|g ; \
 		 s|-O2|$${_CFLAGS}|g ; \
-		 s|/usr/X11R6|$${X11BASE}|g ; \
+		 s|/usr/X11R6|$${LOCALBASE}|g ; \
 		 s|g++|$${_CXX}|g ; \
 		 s|^CXXLIBS|# CXXLIBS|g ; \
 		 s|^LD|# LD|g ; \

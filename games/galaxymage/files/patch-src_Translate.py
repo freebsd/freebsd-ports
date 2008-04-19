@@ -5,7 +5,7 @@
         
      def getLanguageDict(self,lang):
 -        return gettext.translation('GalaxyMage',os.path.join(os.getcwd(),'locale'), languages=[lang])
-+        return gettext.translation('GalaxyMage',os.path.join('%%X11BASE%%/share/locale'), languages=[lang])
++        return gettext.translation('GalaxyMage',os.path.join('%%LOCALBASE%%/share/locale'), languages=[lang])
      
      def __init__(self):       
          #fill our language dictionnary with each language

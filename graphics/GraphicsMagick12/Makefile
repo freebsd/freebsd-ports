@@ -41,7 +41,7 @@ MAN5=	quantize.5
 
 .ifndef WINDOWS_FONT_DIR
 # Use fonts installed by x11-fonts/webfonts by default
-WINDOWS_FONT_DIR=${X11BASE}/lib/X11/fonts/webfonts
+WINDOWS_FONT_DIR=${LOCALBASE}/lib/X11/fonts/webfonts
 .endif
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

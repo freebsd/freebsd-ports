@@ -7,14 +7,13 @@
 
 PORTNAME=	gngb
 PORTVERSION=	20060309
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://m.peponas.free.fr/gngb/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GameBoy(tm) emulator
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget
 USE_SDL=	sdl
 USE_GMAKE=	yes
@@ -23,13 +22,13 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/gngb
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 MAN1=		gngb.1
 
 .if defined(WITH_GL)
-USE_GL=		yes
+USE_GL=		gl
 .else
 CONFIGURE_ARGS+=	--disable-gl
 .endif

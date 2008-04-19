@@ -7,16 +7,16 @@
 
 PORTNAME=	dtv
 PORTVERSION=	0.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A client/server based TV capture/display program
 
-USE_XLIB=	yes
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
+USE_XORG=	xau x11 xext xxf86dga
 NOT_FOR_ARCHS=	sparc64
 
 post-patch:

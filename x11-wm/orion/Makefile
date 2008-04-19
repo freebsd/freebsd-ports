@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm scheme
 MASTER_SITES=	ftp://ftp.scsh.net/pub/scsh/packages/orion-wm/
 
@@ -17,8 +17,8 @@ COMMENT=	An X11 window manager written in Scheme
 RUN_DEPENDS=	${LOCALBASE}/lib/scsh/0.6/module-system:${PORTSDIR}/devel/sunterlib \
 		${LOCALBASE}/lib/scsh/0.6/scx:${PORTSDIR}/x11-toolkits/scx
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
+USE_XORG=	x11
 
 DEPRECATED=		Version branch long since retired
 EXPIRATION_DATE=	2007-10-28

@@ -51,7 +51,7 @@ CONFIGURE_ARGS=	\
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 OPTIONS=	ALL		"Enable all options except GNUTLS."			off \

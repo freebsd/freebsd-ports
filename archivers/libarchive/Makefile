@@ -14,7 +14,7 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	BSDCPIO		"Enable bsdcpio"	on
 

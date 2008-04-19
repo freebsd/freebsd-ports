@@ -7,7 +7,7 @@
 
 PORTNAME=	pawm
 PORTVERSION=	2.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.pleyades.net/pawm/files/
 
@@ -15,14 +15,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Puto Amo Window Manager
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xrandr xrender xpm
 USE_GMAKE=	yes
 MAKEFILE=	Makefile.in
 MAKE_ARGS=	GCC="${CC}" MAKE.binary="${CC} ${LDFLAGS} -o"
 
-CFLAGS+=	-I. -I${X11BASE}/include -DNDEBUG
-LDFLAGS=	-lm -L${X11BASE}/lib -lXpm
+CFLAGS+=	-I. -I${LOCALBASE}/include -DNDEBUG
+LDFLAGS=	-lm -L${LOCALBASE}/lib -lXpm
 
 .include <bsd.port.pre.mk>
 

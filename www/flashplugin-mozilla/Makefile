@@ -7,10 +7,9 @@
 
 PORTNAME?=	flashplugin-mozilla
 PORTVERSION=	0.4.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gplflash
+MASTER_SITES=	SF/gplflash
 DISTNAME=	gplflash-${PORTVERSION}
 
 MAINTAINER=	llwang@infor.org
@@ -20,14 +19,14 @@ LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/plugin
 
+USE_XORG=	xt x11 xext
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 PLUGIN_DIR=	lib/browser_plugins
 PLIST_SUB+=	PLUGIN_DIR=${PLUGIN_DIR}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-plugin-dir="${PREFIX}/${PLUGIN_DIR}"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXt"
+		LDFLAGS="-L${LOCALBASE}/lib -lXt"
 CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 
 post-patch:

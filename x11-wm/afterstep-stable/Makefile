@@ -7,7 +7,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	2.2.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +26,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		rsvg-2.2:${PORTSDIR}/graphics/librsvg2 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ungif.5:${PORTSDIR}/graphics/libungif
-RUN_DEPENDS=	${X11BASE}/bin/xli:${PORTSDIR}/graphics/xli
+RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gtk20 pango

@@ -6,5 +6,4 @@ lib/tcpview/hosts
 lib/tcpview/manuf
 @dirrm lib/tcpview/filters
 @dirrm lib/tcpview
-@cwd %%X11BASE%%
 lib/X11/app-defaults/Tcpview

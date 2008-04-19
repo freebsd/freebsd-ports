@@ -21,9 +21,8 @@ LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick	\
 		cdf.0:${PORTSDIR}/science/cdf
 
 USE_BISON=	build
-USE_GL=		yes
+USE_GL=		gl
 USE_MOTIF=	yes
-USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CFLAGS+=	${PTHREAD_CFLAGS}
@@ -84,7 +83,7 @@ pre-configure:
 		${REINPLACE_CMD} -e "s;/usr/lpp;${PREFIX};g"
 .endfor
 	${REINPLACE_CMD} -e "s;-lpthread;${PTHREAD_LIBS};g"	\
-		-e "s;/usr/X11R6;${X11BASE};g"			\
+		-e "s;/usr/X11R6;${LOCALBASE};g"			\
 		${WRKSRC}/configure
 
 post-install:

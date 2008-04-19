@@ -32,7 +32,7 @@ MLINKS=		xwpe.1 xwe.1 \
 post-patch:
 .for file in we_prog.c we_fl_unix.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/${file}
+		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/${file}
 .endfor
 	${REINPLACE_CMD} -e 's|$$(INSTALL_PROGRAM)|${INSTALL_PROGRAM}|g' \
 	    ${WRKSRC}/Makefile.in

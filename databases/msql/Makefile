@@ -15,7 +15,7 @@ COMMENT=	The Mini SQL server, version 2
 
 CONFLICTS=	msql-3*
 
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 USE_PERL5=	YES
 
 # Not free for commercial use.

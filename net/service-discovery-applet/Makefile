@@ -8,7 +8,7 @@
 
 PORTNAME=	service-discovery-applet
 PORTVERSION=	0.4.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net dns gnome
 MASTER_SITES=	http://0pointer.de/~sebest/
 
@@ -18,7 +18,6 @@ COMMENT=	A GNOME applet that shows available network services using mDNS
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/avahi/__init__.py:${PORTSDIR}/net/py-avahi
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/avahi/__init__.py:${PORTSDIR}/net/py-avahi
 
-USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack pygnomedesktop

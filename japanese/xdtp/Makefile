@@ -18,7 +18,7 @@ COMMENT=	XDTP (XML Document Transfer Program)
 
 LIB_DEPENDS=	glibmm-2.4:${PORTSDIR}/devel/glibmm
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	libxml2 libxslt pkgconfig
 GNU_CONFIGURE=	yes
 

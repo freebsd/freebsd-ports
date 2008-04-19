@@ -7,7 +7,7 @@
 
 PORTNAME=	wmpop3
 PORTVERSION=	0.5.6a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	#
 DISTNAME=	WMPop3-${PORTVERSION}
@@ -17,8 +17,7 @@ COMMENT=	A POP3 mail check for the Window Maker dock
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}/wmpop3
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 ALL_TARGET=	clean all
 
 PLIST_FILES=	bin/wmpop3 %%EXAMPLESDIR%%/wmpop3rc

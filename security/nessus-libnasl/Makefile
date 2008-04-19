@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/libnasl
 USE_AUTOTOOLS=	libtool:15
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 
 MAN1=		nasl.1 nasl-config.1
 

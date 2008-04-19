@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Mar 28 09:51:41 2001
-+++ Makefile	Mon Feb  2 20:30:32 2004
+--- Makefile.orig	2001-03-28 02:51:41.000000000 +0200
++++ Makefile	2008-04-01 16:53:11.000000000 +0200
 @@ -11,16 +11,16 @@
  
  #C_ONLY=-DC_ONLY
@@ -36,17 +36,16 @@
  LIBS=-lvgagl -lvga
  endif
  
-@@ -43,9 +47,10 @@
+@@ -43,9 +47,9 @@
  #
  ifeq ($(TARGET),Linux_X)
  CONFFLAGS=-DPCE_CD_SUPPORT -DSOUND
 -LDFLAGS+=-L/usr/X11R6/lib
 -CFLAGS+=-I/usr/X11R6/include
 -SFLAGS+=-I/usr/X11R6/include
-+X11BASE?=/usr/X11R6
-+LDFLAGS+=-L${X11BASE}/lib
-+CFLAGS+=-I${X11BASE}/include
-+SFLAGS+=-I${X11BASE}/include
++LDFLAGS+=-L${LOCALBASE}/lib
++CFLAGS+=-I${LOCALBASE}/include
++SFLAGS+=-I${LOCALBASE}/include
  SYSTEMSRCS=video_x.c ui_x.c snd_unix.c keyboard_x.c cd_unix.c
  BINFILE=darcnes
  LIBS=-lXext -lXaw -lXmu -lXt -lX11

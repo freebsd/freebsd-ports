@@ -23,11 +23,11 @@ GNU_CONFIGURE=	yes
 # crud from the $PATH lie /usr/opt/Simili/tcl/.
 CONFIGURE_ARGS=	--disable-tcl --disable-tk
 # Season to taste --- anything better or equal to tcl8.0 is probably okay
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib \
 			-lX11 -ltcl84 -ltk84 -lm" \
 		CPPFLAGS="-I${LOCALBASE}/include/tcl8.4 -DHAVE_TCL \
 			-I${LOCALBASE}/include/tk8.4 -DHAVE_TK \
-			-I${X11BASE}/include"
+			-I${LOCALBASE}/include"
 
 ALL_TARGET=	xdeview
 INSTALL_TARGET=	install-tcl

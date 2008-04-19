@@ -47,7 +47,7 @@ DESKTOP_ENTRIES=	"Manencode" \
 do-configure:
 	@cd ${WRKSRC} \
 	&&  ${SETENV} ${MAKE_ENV} ${QMAKE} -spec ${QMAKESPEC} \
-	INCLUDEPATH+=${X11BASE}/include
+	INCLUDEPATH+=${LOCALBASE}/include
 
 pre-install:
 	${MKDIR} ${MANENCODEDIR}/Interface

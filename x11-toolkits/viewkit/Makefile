@@ -7,7 +7,7 @@
 
 PORTNAME=	viewkit
 PORTVERSION=	0.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.hungry.com/pub/hungry/viewkit/ \
 		${MASTER_SITE_LOCAL}
@@ -19,7 +19,6 @@ COMMENT=	ViewKit workalike from Hungry Programmers
 
 USE_AUTOTOOLS=	autoconf:261:env
 MOTIFPACKAGE?=	open-motif
-USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-${MOTIFPACKAGE}

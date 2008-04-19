@@ -33,7 +33,7 @@ PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS=--disable-x11-textmode
 .else
 USE_XORG=	x11
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
 .if !defined(NOPORTDOCS)

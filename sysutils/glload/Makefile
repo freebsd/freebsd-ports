@@ -14,15 +14,13 @@ MASTER_SITES=	http://reality.exsgi.org/eile/misc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gl base load monitor
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GL=		yes
+USE_GL=		glut
 MAKEFILE=	Makefile.FreeBSD
 MAKE_ARGS=	CC="${CC}" \
-		CFLAGS="${CFLAGS} -I${X11BASE}/include -DFreeBSD ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DFreeBSD ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		OBJS="get_load.o trackball.o glload.o texture.o screenShot.o"
 ALL_TARGET=	glload
 

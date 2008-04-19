@@ -25,7 +25,7 @@ post-patch:
 			s@gtk-config@${GTK_CONFIG}@g" ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/jyuroku ${X11BASE}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/jyuroku ${LOCALBASE}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)

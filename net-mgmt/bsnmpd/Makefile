@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libbegemot=${LOCALBASE}
 USE_AUTOTOOLS=	autoconf:261
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 
 USE_GCC=	3.2+
 USE_RC_SUBR=	bsnmpd.sh

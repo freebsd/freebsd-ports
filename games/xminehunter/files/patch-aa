@@ -6,12 +6,12 @@
 -
 -INCLUDES = -I/usr/local/X11R5/include
 -LIBS = -L/usr/local/X11R5/lib -lXm -lXt -lXpm -lXext -lX11
-+INSTALL_BIN_PATH = ${X11BASE}/bin
-+INSTALL_SCORE_PATH = ${X11BASE}/lib/X11/xminehunter
++INSTALL_BIN_PATH = ${LOCALBASE}/bin
++INSTALL_SCORE_PATH = ${LOCALBASE}/lib/X11/xminehunter
  
-+INCLUDES = -I${X11BASE}/include
-+LIBS = -L${X11BASE}/lib ${MOTIFLIB} -lXt -lXpm -lXext -lX11
-+LIBS+= -Wl,-rpath,${X11BASE}/lib
++INCLUDES = -I${LOCALBASE}/include
++LIBS = -L${LOCALBASE}/lib ${MOTIFLIB} -lXt -lXpm -lXext -lX11
++LIBS+= -Wl,-rpath,${LOCALBASE}/lib
  
  CC = g++
  

@@ -42,6 +42,6 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.post.mk>

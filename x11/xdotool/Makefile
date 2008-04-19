@@ -7,6 +7,7 @@
 
 PORTNAME=	xdotool
 DISTVERSION=	20070903
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.semicomplete.com/files/xdotool/ \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -15,7 +16,7 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Programatically simulate keyboard input or mouse activity
 
 USE_GNOME=	pkgconfig
-USE_XLIB=	yes
+USE_XORG=	x11 xtst
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/xdotool

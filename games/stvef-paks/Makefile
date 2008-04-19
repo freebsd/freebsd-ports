@@ -19,12 +19,12 @@ COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux .pk3 files
 
 # Make this a BUILD_DEPENDS too, so that it can create the
 # directory hierarchy for us.
-BUILD_DEPENDS=	${X11BASE}/games/stvef/linuxstvefded_1.2-static:${PORTSDIR}/games/stvef-server
+BUILD_DEPENDS=	${LOCALBASE}/games/stvef/linuxstvefded_1.2-static:${PORTSDIR}/games/stvef-server
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 EXTRACT_ONLY=	# Don't extract anything
 
 GAMEDIR=	${PREFIX}/games/stvef/

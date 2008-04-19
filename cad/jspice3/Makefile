@@ -7,7 +7,7 @@
 
 PORTNAME=	jspice3
 PORTVERSION=	2.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	cad
 MASTER_SITES=	http://www.wrcad.com/ftp/pub/	\
 		ftp://ftp.srware.com/pub/
@@ -22,7 +22,7 @@ OPTIONS=	X "Use X window system" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X)
-USE_XLIB=	yes
+USE_XORG=	x11 xaw xt
 .endif
 
 pre-configure:

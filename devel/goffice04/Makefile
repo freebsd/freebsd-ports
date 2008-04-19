@@ -9,7 +9,7 @@
 
 PORTNAME=	goffice
 PORTVERSION=	0.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	 sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,7 +23,6 @@ NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprint libglade2 \
 		libgsf_gnome libgnomeui ltverhack
 USE_GETTEXT=	yes

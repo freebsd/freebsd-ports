@@ -17,8 +17,8 @@ COMMENT=	An audio mixer for the WindowMaker dock with TV-like OSD
 PLIST_FILES=	bin/wmix
 ALL_TARGET=	${PORTNAME}
 USE_XORG=	xpm
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 PORTDOCS=	AUTHORS BUGS INSTALL NEWS README
 

@@ -7,10 +7,9 @@
 
 PORTNAME=		openrm
 PORTVERSION=		1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		graphics
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 DISTNAME=		${PORTNAME}-devel-${PORTVERSION}-1
 .ifdef (WITH_DEMOS)
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
@@ -28,8 +27,7 @@ WRKSRC2=	${WRKDIR}/rmdemo
 EXTRA_PATCHES=	${PATCHDIR}/makeinclude.diff
 .endif
 
-USE_X_PREFIX=	yes
-USE_GL=		yes
+USE_GL=		glu
 USE_PERL5_BUILD=yes
 ALL_TARGET=	freebsd docs
 MAKE_ARGS=	AR=${AR} \
@@ -38,8 +36,7 @@ MAKE_ARGS=	AR=${AR} \
 		ECHO_CMD=${ECHO_CMD} \
 		LN=${LN} \
 		RM=${RM} \
-		STRIP_CMD=${STRIP_CMD} \
-		X11BASE=${X11BASE}
+		STRIP_CMD=${STRIP_CMD}
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
@@ -57,7 +54,6 @@ pre-everything::
 .ifdef (WITH_DEMOS)
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
-			      s|%%X11BASE%%|${X11BASE}|g; \
 			      s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g; \
 			      s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC2}/makeinclude
 .endif

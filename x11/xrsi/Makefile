@@ -9,8 +9,7 @@ PORTNAME=	xrsi
 PORTVERSION=	0.9
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xrsi
+MASTER_SITES=	SF
 
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	A minimalist break enforcer for linux/unix for the prevention of RSI
@@ -20,7 +19,7 @@ PLIST_FILES=	bin/xrsi
 PORTDOCS=	Readme Licence
 
 do-build:
-	${CC} ${CFLAGS} -I${X11BASE}/include -L${X11BASE}/lib -lX11 -o ${WRKSRC}/xrsi ${WRKSRC}/xrsi.c
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib -lX11 -o ${WRKSRC}/xrsi ${WRKSRC}/xrsi.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrsi ${PREFIX}/bin/

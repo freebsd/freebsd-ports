@@ -7,23 +7,24 @@
 
 PORTNAME=	monafonts
 PORTVERSION=	2.90
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	monafont
+MASTER_SITES=	SF/monafont
 DISTNAME=	monafont-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	X11 12,14,16-dot kanji fonts
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+RUN_DEPENDES=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+
 USE_PERL5_BUILD=yes
 
 FONTSDIR=	lib/X11/fonts/local
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 ALL_TARGET=	bdf
 MAKE_ARGS=	PREFIX=${PREFIX}
 

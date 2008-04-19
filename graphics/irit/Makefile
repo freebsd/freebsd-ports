@@ -7,7 +7,7 @@
 
 PORTNAME=	irit
 PORTVERSION=	9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.technion.ac.il/~irit/
 DISTNAME=	${PORTNAME}-sm
@@ -23,10 +23,9 @@ BROKEN=		Checksum mismatch
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
 .ifdef (WITH_MOTIF)
 USE_MOTIF=	yes
-USE_GL=		yes
+USE_GL=		gl
 .endif
 USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes

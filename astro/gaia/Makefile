@@ -9,7 +9,7 @@ PORTNAME=	gaia
 PORTVERSION=	0.1.2
 PORTREVISION=	3
 CATEGORIES=	astro
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gaia-clean
 
 MAINTAINER=	se@FreeBSD.org
@@ -41,7 +41,7 @@ PORTDOCS=	README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		-e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/SConstruct
+		-e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/SConstruct
 
 .if !defined(NOPORTDOCS)
 post-install:

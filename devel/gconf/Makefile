@@ -8,7 +8,7 @@
 
 PORTNAME=	gconf
 PORTVERSION=	1.0.9
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/GConf/1.0
@@ -23,7 +23,6 @@ LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget glib12 gtk12 oaf libxml orbit
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes

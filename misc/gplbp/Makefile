@@ -7,7 +7,7 @@
 
 PORTNAME=	gplbp
 PORTVERSION=	0.92
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.stampede.org/skibum/gplbp/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.stampede.org/skibum/gplbp/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME Pilot Logbook application
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

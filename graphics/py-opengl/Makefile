@@ -44,7 +44,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/config/freebsd.cfg ${WRKSRC}/Tkinter.py
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 

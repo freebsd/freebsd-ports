@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays the modem status, designed to match AfterStep
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 MAN1=		asmodem.1
 PLIST_FILES=	bin/asmodem

@@ -7,7 +7,7 @@
 
 PORTNAME=	gno3dtet
 PORTVERSION=	1.96.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games gnome
 MASTER_SITES=	http://eseb.net/ftp/gno3dtet/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,6 @@ COMMENT=	GNOME version of the classic 3D-ified T*tris
 
 EXTRACT_DEPENDS=intltoolize:${PORTSDIR}/textproc/intltool
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui librsvg2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoheader:261 automake:19 aclocal:19 autoconf:261

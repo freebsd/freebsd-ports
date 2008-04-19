@@ -8,6 +8,7 @@
 
 PORTNAME=	qgo
 PORTVERSION=	1.5.4.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-r${PORTVERSION:E}
@@ -17,11 +18,11 @@ COMMENT=	A Go board and SGF editor written with the Qt library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
+USE_XORG=	x11 ice xext
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e \

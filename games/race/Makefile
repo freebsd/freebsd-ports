@@ -17,9 +17,9 @@ COMMENT=	OpenGL Racing Game
 
 USE_SDL=	mixer image sdl
 USE_BZIP2=	yes
-USE_GL=		yes
-CFLAGS+=	"-I${X11BASE}/include"
-MAKE_ENV=	CC="${CC} ${CFLAGS}" LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}"
+USE_GL=		glut
+CFLAGS+=	"-I${LOCALBASE}/include"
+MAKE_ENV=	CC="${CC} ${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|g" \

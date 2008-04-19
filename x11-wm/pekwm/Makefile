@@ -7,7 +7,7 @@
 
 PORTNAME=	pekwm
 PORTVERSION=	20060417
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://bsd-unix.org/downloads/ \
 		http://pekwm.org/files/
@@ -16,15 +16,13 @@ DISTNAME=	${PORTNAME}-0.1.5
 MAINTAINER=	xcas@cox.net
 COMMENT=	A windowmanager based on aewm++
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GCC=	3.4
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xft xpm x11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -7,7 +7,7 @@
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games ipv6
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/
 DISTNAME=	quake2-r${PORTVERSION}
@@ -55,7 +55,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 #                       ###
 
 .if defined(WITH_X11)
-USE_XLIB=	yes
+USE_XORG=	x11 xxf86dga
 MAKE_ARGS+=	BUILD_X11=YES
 REF_TARGETS+=	softx
 PLIST_SUB+=	X11=""

@@ -7,7 +7,7 @@
 
 PORTNAME=	amaterus
 PORTVERSION=	0.34.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.taiyaki.org/amaterus/src/
 
@@ -16,7 +16,6 @@ COMMENT=	A GTK+ window manager
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
-USE_XLIB=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

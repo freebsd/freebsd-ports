@@ -9,8 +9,7 @@ PORTNAME=	jack-rack
 PORTVERSION=	1.4.5
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	jack-rack
+MASTER_SITES=	SF/jack-rack
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A LADSPA effects rack for the JACK audio server
@@ -23,8 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 USE_BZIP2=	yes
 USE_GNOME=	libgnomeui libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-ladcca --disable-lash
 
 post-patch:

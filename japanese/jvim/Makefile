@@ -69,7 +69,7 @@ JPLIB!=		${ECHO_CMD} ${JPLIB} | sed 's%^%-lonew${INPUT_METHOD} %'
 pre-build:
 	cd ${WRKSRC}/src; \
 	${SED}	-e 's,%LOCALBASE%,${LOCALBASE},g' \
-		-e 's,%X11BASE%,${X11BASE},g' \
+		-e 's,%LOCALBASE%,${LOCALBASE},g' \
 			./makefile.junx > Makefile; \
 
 do-build:

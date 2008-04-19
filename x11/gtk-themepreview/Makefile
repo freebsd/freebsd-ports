@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-themepreview
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL}	# http://www.users.monornet.hu/linux/files/
 MASTER_SITE_SUBDIR=	danfe
@@ -17,7 +17,6 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A small application for preview your theme widgets in one small window
 
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	automake:19:env
 

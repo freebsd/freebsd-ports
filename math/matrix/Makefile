@@ -17,7 +17,7 @@ COMMENT=	C++ library to manipulate matrices and vectors
 WRKSRC=		${WRKDIR}/matrix
 
 USE_ZIP=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_SUB=	LIBVERSION=1
 
 .include <bsd.port.pre.mk>

@@ -7,13 +7,13 @@
 
 PORTNAME=	gperiodic
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.frantz.fi/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a periodic table of the elements
 
-USE_XLIB=	yes
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
 

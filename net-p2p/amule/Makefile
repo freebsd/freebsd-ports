@@ -7,10 +7,9 @@
 
 PORTNAME=	aMule
 PORTVERSION=	2.1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	amule
+MASTER_SITES=	SF/amule
 
 PATCH_SITES=	http://cvs.pld-linux.org/cgi-bin/cvsweb/SOURCES/
 PATCHFILES=	aMule-wx.patch?rev=1.2
@@ -23,7 +22,6 @@ LATEST_LINK=	aMule2
 CONFLICTS=	aMule-1.* aMule-devel-[0-9]* ed2k-hash-*
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix
 USE_GMAKE=	yes
 USE_WX=		2.8

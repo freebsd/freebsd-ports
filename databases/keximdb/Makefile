@@ -19,6 +19,6 @@ LIB_DEPENDS=		kexicore:${PORTSDIR}/editors/koffice-kde3
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 
 .include <bsd.port.mk>

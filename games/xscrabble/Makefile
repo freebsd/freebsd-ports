@@ -16,7 +16,7 @@ COMMENT=	X version of the popular board game
 
 USE_BZIP2=	yes
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 NO_INSTALL_MANPAGES=	yes
 
 XSCRABBLEDIR=	${PREFIX}/lib/X11/xscrabble

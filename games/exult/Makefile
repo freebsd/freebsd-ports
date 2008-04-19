@@ -7,10 +7,9 @@
 
 PORTNAME=	exult
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultima VII engine
@@ -18,7 +17,6 @@ COMMENT=	Ultima VII engine
 BUILD_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
-USE_XLIB=	yes
 USE_SDL=	sdl mixer
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -33,7 +31,7 @@ SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|desktop||' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

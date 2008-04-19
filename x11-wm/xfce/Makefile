@@ -7,10 +7,9 @@
 
 PORTNAME=	xfce
 PORTVERSION=	3.8.18
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CDE like desktop with GTK
@@ -18,7 +17,7 @@ COMMENT=	CDE like desktop with GTK
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 USE_GCC=	4.1
-USE_XORG=	x11
+USE_XORG=	x11 xpm
 USE_GETTEXT=	yes
 USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
@@ -28,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-conf-dir=${PREFIX}/etc/xfce \
 		--with-data-dir=${PREFIX}/share/xfce \
 		--with-locale-dir=${PREFIX}/share/locale \
-		--with-xpm=${X11BASE} \
+		--with-xpm=${LOCALBASE} \
 		--enable-gtk-engine=${PREFIX}/lib/gtk/themes/engines \
 		--disable-arts \
 		--enable-taskbar \
@@ -43,13 +42,13 @@ MAN1=		glob.1 xfbd.1 xfce.1 xfclock.1 xfglob.1 xfgnome.1 xfhelp.1 \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_XFT)
-LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG=	xft
 CONFIGURE_ARGS+=	--enable-xft
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${LOCALBASE}|g' ${WRKSRC}/other/xinitrc.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/other/xinitrc.in
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
 	@${REINPLACE_CMD} -e 's|/opt/kde3|${LOCALBASE}|g ; \
 		s|/opt/gnome|${LOCALBASE}|g' ${WRKSRC}/xfmenu/xfmenu.c

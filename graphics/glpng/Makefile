@@ -18,7 +18,7 @@ COMMENT=	Library to easily load PNG files as an OpenGL textures
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_GL=		yes
+USE_GL=		gl
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
 
@@ -30,8 +30,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|png/|libpng/|' ${WRKSRC}/glpng.c
 
 do-build:
-	${CC} ${CFLAGS} -fPIC -I${X11BASE}/include -I${LOCALBASE}/include -I${WRKDIR}/include -c -o ${WRKSRC}/libglpng.o ${WRKSRC}/glpng.c
-	${CC} ${CFLAGS} -fPIC -L${X11BASE}/lib -L${LOCALBASE}/lib -shared -lGL -lpng -lz -lm -o ${WRKSRC}/libglpng.so.1 ${WRKSRC}/libglpng.o
+	${CC} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${WRKDIR}/include -c -o ${WRKSRC}/libglpng.o ${WRKSRC}/glpng.c
+	${CC} ${CFLAGS} -fPIC -L${LOCALBASE}/lib -shared -lGL -lpng -lz -lm -o ${WRKSRC}/libglpng.so.1 ${WRKSRC}/libglpng.o
 	${AR} cqs ${WRKSRC}/libglpng.a ${WRKSRC}/libglpng.o
 
 do-install:

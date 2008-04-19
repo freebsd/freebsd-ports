@@ -1,10 +1,12 @@
---- Makefile	Thu Jun  8 22:44:02 2006
-+++ Makefile	Sat Aug 19 20:50:05 2006
-@@ -19,14 +19,14 @@
+--- Makefile.orig	2006-06-08 22:44:02.000000000 +0200
++++ Makefile	2008-04-11 13:18:40.000000000 +0200
+@@ -18,15 +18,15 @@
+ 
  CC?=gcc
  
- CFLAGS_COMMON=$(CFLAGS) -I. -I$(LOCALBASE)/include -I$(X11BASE)/include -D__linux__ -Wall
+-CFLAGS_COMMON=$(CFLAGS) -I. -I$(LOCALBASE)/include -I$(X11BASE)/include -D__linux__ -Wall
 -CFLAGS_RELEASE=-O2 -fno-strict-aliasing -ffast-math -funroll-loops
++CFLAGS_COMMON=$(CFLAGS) -I. -I$(LOCALBASE)/include -D__linux__ -Wall
 +CFLAGS_RELEASE=-fno-strict-aliasing -ffast-math -funroll-loops
  CFLAGS_DEBUG=-O0 -ggdb -DDEBUG
  CFLAGS_COMMON+=$(CFLAGS_RELEASE)

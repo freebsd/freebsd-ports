@@ -7,7 +7,7 @@
 
 PORTNAME=	phylip
 PORTVERSION=	3.66
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/ \
@@ -19,12 +19,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Phylogeny Inference Package
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
-USE_XLIB=	yes
+USE_XORG=	x11 xaw xt
 BUILD_WRKSRC=	${WRKSRC}/src
 
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" \
-		DC="${CC} -DX -I${X11BASE}/include ${CFLAGS}" \
-		DLIBS="-L${X11BASE}/lib -lX11 -lXaw -lXt"
+		DC="${CC} -DX -I${LOCALBASE}/include ${CFLAGS}" \
+		DLIBS="-L${LOCALBASE}/lib -lX11 -lXaw -lXt"
 
 PORTDOCS=	*
 

@@ -23,10 +23,10 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}"
 .include <bsd.port.pre.mk>
 
 # Add this condititonal while people might still have old versions
-# of qmake, living in X11BASE, installed. This should go away eventually.
+# of qmake, living in LOCALBASE, installed. This should go away eventually.
 
-.if exists(${X11BASE}/share/qt/mkspecs/freebsd-g++)
-QMAKESPEC=	${X11BASE}/share/qt/mkspecs/freebsd-g++
+.if exists(${LOCALBASE}/share/qt/mkspecs/freebsd-g++)
+QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 .else
 QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 .endif

@@ -8,7 +8,7 @@
 
 PORTNAME=	sound-juicer
 PORTVERSION=	2.22.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -23,7 +23,6 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautiluscdburner \

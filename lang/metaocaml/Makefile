@@ -76,7 +76,7 @@ MANPREFIX=	${PREFIX}/share/metaocaml
 
 .if defined(WITH_X11)
 USE_XORG=	x11
-CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
+CONFIGURE_ARGS+=-x11include ${LOCALBASE}/include -x11lib ${LOCALBASE}/lib
 PLIST_SUB+=	X11=""
 .else
 PLIST_SUB+=	X11="@comment "

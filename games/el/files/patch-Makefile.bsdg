@@ -15,7 +15,7 @@
  
 -PLATFORM=-march=i686
 -XDIR=-L/usr/X11R6/lib
-+XDIR=-L$(X11BASE)/lib -L$(LOCALBASE)/lib
++XDIR=-L$(LOCALBASE)/lib
  CWARN=
  #-Wdeclaration-after-statement -Wall -Werror
  CPPWARN=
@@ -28,7 +28,7 @@
 -_CXXFLAGS=$(PLATFORM) -O3 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS)
 +CFLAGS+=$(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -I/usr/X11R6/include/
 +_CFLAGS=$(CFLAGS) $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags)
-+CXXFLAGS+=-I$(LOCALBASE)/include -I$(X11BASE)/include $(OPTIONS)
++CXXFLAGS+=-I$(LOCALBASE)/include $(OPTIONS)
 +_CXXFLAGS=$(CXXFLAGS) -fomit-frame-pointer -ffast-math -pipe $(OPTIONS)
  
 -LDFLAGS=$(shell sdl11-config --libs) $(shell xml2-config --libs) -lSDL_net -lSDL_image -lopenal $(XDIR) -lGL -lGLU -lvorbis -lvorbisfile -lcal3d -lm -lpng

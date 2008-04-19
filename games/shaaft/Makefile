@@ -9,8 +9,7 @@ PORTNAME=	shaaft
 PORTVERSION=	0.5.0
 PORTREVISION=	6
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	criticalmass
+MASTER_SITES=	SF/criticalmass
 DISTNAME=	Shaaft-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -41,7 +40,7 @@ BROKEN=		Does not compile on sparc64
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG:T}|g ; \
 		s|^CXXFLAGS|#CXXFLAGS|g ; \
-		s|/usr/X11R6|${X11BASE}|g ; \
+		s|/usr/X11R6|${LOCALBASE}|g ; \
 		s|-lSDL | |g ; \
 		s|-lpng12|-lpng|g' ${WRKSRC}/configure
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \

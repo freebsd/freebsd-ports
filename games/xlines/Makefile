@@ -7,7 +7,7 @@
 
 PORTNAME=	xlines
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.trolltech.com/contrib/
 DISTNAME=	${PORTNAME}
@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remove as many balls from board as you can
 
 USE_QT_VER=	3
-USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 

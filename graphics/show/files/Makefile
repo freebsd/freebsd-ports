@@ -2,7 +2,7 @@
 
 CC        ?= gcc
 CFLAGS    ?= -g -O2 -Wall
-XROOT     = ${X11BASE}
+XROOT     = ${LOCALBASE}
 LROOT	  = ${LOCALBASE}
 INCLUDES  = -I$(XROOT)/include -I$(LROOT)/include
 LIBS      = -lX11 -lXext -ljpeg -lpng -ltiff -lz -lungif -lm -lImlib

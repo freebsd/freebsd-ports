@@ -8,6 +8,7 @@
 
 PORTNAME=	libgnomeprintui
 PORTVERSION=	2.18.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -20,8 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/mi
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeprint libgnomecanvas \
 		intlhack ltverhack

@@ -11,10 +11,10 @@
 -I 	= -I/usr/local/X11R5/include
 -
 -L 	= -L/usr/local/X11R5/lib -lXaw -lXmu -lXt -lXext -lX11 -lm
-+I 	= -I$(X11BASE)/include
++I 	= -I$(LOCALBASE)/include
  
-+L 	= -L$(X11BASE)/lib -lXaw -lXmu -lXt -lXext -lX11 -lm
-+L	+=-Wl,-rpath,$(X11BASE)/lib
++L 	= -L$(LOCALBASE)/lib -lXaw -lXmu -lXt -lXext -lX11 -lm
++L	+=-Wl,-rpath,$(LOCALBASE)/lib
  
  #------------------------------------------
  #  COMPILER UND LINKER

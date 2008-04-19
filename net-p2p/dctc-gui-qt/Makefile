@@ -9,8 +9,7 @@ PORTNAME=	dctc
 PORTVERSION=	0.1.2
 PORTREVISION=	3
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	dc-qt
+MASTER_SITES=	SF/dc-qt
 PKGNAMESUFFIX=	-gui-qt
 DISTNAME=	dc-qt-${PORTVERSION}
 
@@ -26,7 +25,7 @@ PLIST_FILES=	bin/dc_qt
 
 OPTIONS=	XINE "Enable support for video preview using libxine" off
 
-XINE_CONFIG?=	${X11BASE}/bin/xine-config
+XINE_CONFIG?=	${LOCALBASE}/bin/xine-config
 
 .ifndef(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}

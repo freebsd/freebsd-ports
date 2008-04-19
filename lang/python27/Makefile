@@ -23,7 +23,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_SCRIPT=	../configure # must be relative
 CONFIGURE_ENV=	OPT="${CFLAGS}" SVNVERSION="echo freebsd"
 MAKE_ENV=	VPATH="${PYTHON_WRKSRC}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
@@ -132,7 +132,7 @@ pre-patch:
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${PATCH_WRKSRC}/Lib/pydoc.py
 	${REINPLACE_CMD} -e \
-		's|^\( *prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
+		's|^\( *prefixes = .*\)\]$$|\1, "${LOCALBASE}"]|g' \
 		${PATCH_WRKSRC}/Lib/site.py
 	${REINPLACE_CMD} -e \
 		's|^	\(..ASDLGEN.*\)$$|	${TRUE}|g' \

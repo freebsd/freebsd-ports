@@ -7,7 +7,7 @@
 
 PORTNAME=	tinker
 PORTVERSION=	4.2.20040908
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		ftp://dasher.wustl.edu/pub/
@@ -17,8 +17,6 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose molecular modelling package
-
-BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 
 MAKE_ENV+=	HAVE_G2C=yes INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
@@ -46,7 +44,8 @@ FFLAGS+=	-mfancy-math-387 -malign-double
 .endif
 
 .if defined(WITH_VIEWER)
-USE_XLIB=	yes
+BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake
+USE_XORG=	x11 xext xi
 PLIST_SUB+=	WITH_VIEWER=""
 post-build:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer

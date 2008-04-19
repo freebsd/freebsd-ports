@@ -7,7 +7,7 @@
 
 PORTNAME=	kmysqladmin
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.alwins-world.de/programs/download/kmysqladmin/
 
@@ -16,7 +16,6 @@ COMMENT=	A graphical frontend for administration of mysql servers
 
 USE_AUTOTOOLS=	libtool:15
 USE_MYSQL=	yes
-USE_XLIB=	yes
 USE_QT_VER=	3
 USE_KDELIBS_VER=3
 USE_GETTEXT=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	mizifonts
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://ftp.mizi.co.kr/pub/hanIM/
 DISTNAME=	xfntmizi-1.1-2.noarch
@@ -18,9 +18,10 @@ COMMENT=	Mizi Research's Korean X11 Font(ksc5601.1987-[01] encoding)
 
 EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm
 
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
-
-USE_X_PREFIX=	yes
+RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+RUN_DEPENDENS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_WRKSUBDIR=	yes
 
@@ -48,7 +49,7 @@ do-install:
 	for i in ${WRKDIR}/*.gz; do \
 		${INSTALL_DATA} $$i ${PREFIX}/lib/X11/fonts/local/; \
 	done
-	cd ${PREFIX}/lib/X11/fonts/local/ ; mkfontdir
+	cd ${PREFIX}/lib/X11/fonts/local/ ; ${LOCALBASE}/bin/mkfontdir
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

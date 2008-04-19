@@ -86,7 +86,7 @@ pre-configure:
 .for cf in ${CF2FIX}
 	${REINPLACE_CMD} -e "s|%%CC%%|${CC}|;s|%%CFLAGS%%|${CFLAGS}|"		\
 		-e "s|%%CXX%%|${CXX}|;s|%%CXXFLAGS%%|${CXXFLAGS}|"		\
-		-e "s|/usr/X11R6|${X11BASE}|;s|/usr/local|${LOCALBASE}|"	\
+		-e "s|/usr/X11R6|${LOCALBASE}|;s|/usr/local|${LOCALBASE}|"	\
 		-e "s|%%PREFIX%%|${PREFIX}|"					\
 		-e "s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|"			\
 		-e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|"			\
@@ -98,7 +98,7 @@ pre-configure:
 		${WRKSRC}/player/app/gtk/hxplay
 .if defined(WITH_PLUGIN)
 	${REINPLACE_CMD} -e 's|%%GECKO%%|${GECKO}|g' \
-	                 -e 's|"%%GECKO_PREFIX%%/include\(.*\)"|"${LOCALBASE}/include\1", "${X11BASE}/include\1"|' \
+	                 -e 's|"%%GECKO_PREFIX%%/include\(.*\)"|"${LOCALBASE}/include\1"|' \
 		${WRKSRC}/player/app/plugin/unix.pcf
 .endif
 

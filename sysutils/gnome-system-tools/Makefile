@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-system-tools
 PORTVERSION=	2.22.0
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,7 +23,6 @@ USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack nautilus2
 USE_AUTOTOOLS=	libtool:15

@@ -7,14 +7,14 @@
 
 PORTNAME=	libstroke
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.etla.net/libstroke/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A stroke translation library
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 WANT_GNOME=	yes

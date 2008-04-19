@@ -29,7 +29,7 @@
  
 -# INC_DIR	= -I/usr/X11R6/include
 -# LIB_DIR	= -L/usr/X11R6/lib
-+INC_DIR	= -I${X11BASE}/include
-+LIB_DIR	= -L${X11BASE}/lib
++INC_DIR	= -I${LOCALBASE}/include
++LIB_DIR	= -L${LOCALBASE}/lib
  
  all:	$(TARGET)

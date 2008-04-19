@@ -17,7 +17,7 @@ COMMENT=	Text manipulation and autodetection for 6 major cyrillic charsets
 
 MAKE_ENV=	WRKSRC="${WRKSRC}" CFLAGS="${CFLAGS}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_OPTIMIZE)
 CFLAGS+=	-O2

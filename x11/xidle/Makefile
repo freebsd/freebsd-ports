@@ -16,8 +16,8 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Run a program on X inactivity
 
 USE_BZIP2=	yes
-CFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include -D__dead=static
-MAKE_ARGS+=	X11LIBDIR="${X11BASE}/lib" \
+CFLAGS+=	-I${LOCALBASE}/include -D__dead=static
+MAKE_ARGS+=	X11LIBDIR="${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 USE_XORG=	x11 xscrnsaver

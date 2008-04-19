@@ -7,7 +7,7 @@
 
 PORTNAME=	netrek-BRMH
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.netrek.org/pub/netrek/mirrors/ftp.csua.berkeley.edu.old/netrek/ \
 		
@@ -17,7 +17,6 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 16-player network space battle/conquest game with a Star Trek theme
 
-USE_X_PREFIX=		YES
 NO_BUILD=		YES
 NO_WRKSUBDIR=		YES
 PLIST_FILES=	bin/netrek

@@ -20,9 +20,9 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.src
 
 ALL_TARGET=	xrmftp
-CFLAGS+=	-I${X11BASE}/include -I${X11BASE}/include/X11
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/X11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		LDFLAGS="-L/usr/lib -L${X11BASE}/lib -lm -lX11 -lforms -lXpm"
+		LDFLAGS="-L/usr/lib -L${LOCALBASE}/lib -lm -lX11 -lforms -lXpm"
 
 PORTDOCS=	CHANGES FIXED-BUGS README
 PLIST_FILES=	bin/xrmftp

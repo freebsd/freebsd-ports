@@ -15,7 +15,6 @@ COMMENT=	The X protocol C-language Binding (XCB) protocol
 
 BUILD_DEPENDS=	xmllint:${PORTSDIR}/textproc/libxml2
 
-PREFIX?=	${X11BASE}
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes

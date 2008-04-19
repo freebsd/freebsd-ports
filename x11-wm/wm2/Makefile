@@ -7,7 +7,7 @@
 
 PORTNAME=	wm2
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.all-day-breakfast.com/wm2/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -15,9 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very simple window manager for X
 
-BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext xmu
 ALL_TARGET=	depend wm2
 
 do-install:

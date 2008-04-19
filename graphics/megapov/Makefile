@@ -26,9 +26,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty
 CONFIGURE_ARGS+=	COMPILED_BY="ports@FreeBSD.org"
-LDFLAGS+= -L${LOCALBASE}/lib -L${X11BASE}/lib
-CFLAGS+= -I${LOCALBASE}/include -I${X11BASE}/include
-CXXFLAGS+= -I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS+= -L${LOCALBASE}/lib -L${LOCALBASE}/lib
+CFLAGS+= -I${LOCALBASE}/include
+CXXFLAGS+= -I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 

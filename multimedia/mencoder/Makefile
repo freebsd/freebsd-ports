@@ -118,7 +118,7 @@ post-patch:
 			-e 's|[[:space:]]gcc[-[:digit:]\.]+| ${CC}|' \
 			-e 's|[[:space:]]gcc| ${CC}|' \
 			-e 's|\$$\(CC\)|${CC}|' \
-			-e 's|/usr/X11R6|${X11BASE}|'
+			-e 's|/usr/X11R6|${LOCALBASE}|'
 	@${FIND} ${WRKSRC}/DOCS/man -name "mplayer.1" | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \

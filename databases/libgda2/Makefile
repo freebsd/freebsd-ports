@@ -8,7 +8,7 @@
 
 PORTNAME=	libgda2
 PORTVERSION=	1.2.4
-PORTREVISION?=	3
+PORTREVISION?=	4
 PORTEPOCH?=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -31,7 +31,6 @@ CONFLICTS=	libgda-0*
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt referencehack intlhack
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

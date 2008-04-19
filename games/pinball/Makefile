@@ -9,8 +9,7 @@ PORTNAME=	pinball
 PORTVERSION=	0.3.1
 PORTREVISION=	8
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Emilia Pinball is a free pinball game
@@ -25,9 +24,9 @@ LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 
 USE_SDL=	image mixer sdl
 USE_GMAKE=	yes
-USE_GL=	yes
+USE_GL=		gl
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-debug
@@ -35,8 +34,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --without-debug
 CONFIGURE_ARGS+=	--with-allegro
 EXTRA_LIBS=	-lGL -lGLU
 .endif
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include -DRZR_LIBSTATIC" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${EXTRA_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -DRZR_LIBSTATIC" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${EXTRA_LIBS}"
 ALLEGRO_CONFIG=	${LOCALBASE}/bin/allegro-config
 
 DOCS=		README

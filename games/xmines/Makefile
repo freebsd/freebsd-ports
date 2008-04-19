@@ -7,7 +7,7 @@
 
 PORTNAME=	xmines
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minesweeper game for the X Window System
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xt
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -7,7 +7,7 @@
 
 PORTNAME=	bbrun
 PORTVERSION=	1.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
@@ -16,6 +16,7 @@ COMMENT=	A Run box for Blackbox
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/bbrun
 
+USE_XORG=	xpm
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

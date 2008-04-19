@@ -15,8 +15,6 @@ DISTNAME=	STonX-0.6.7-epsilon
 MAINTAINER=	treif@mayn.de
 COMMENT=	AtariST emulator
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		gccmakedep:${PORTSDIR}/devel/gccmakedep \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \

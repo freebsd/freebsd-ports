@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	1.0.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/:moz,ru,src,help \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/:moz,ru,src,help \
@@ -33,7 +33,6 @@ MOZILLA_VERSION=	1.0
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:mozsrc
 USE_GNOME=	orbit
-USE_XLIB=	yes
 USE_PERL5=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
@@ -105,10 +104,10 @@ CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"           \
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
-		imake:${X_IMAKE_PORT} \
+		imake:${PORTSDIR}/devel/imake \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		Xvfb:${X_VFBSERVER_PORT} \
-		${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz:${X_FONTS_MISC_PORT}
+		${LOCALBASE}/lib/X11/fonts/misc/cursor.pcf.gz:${X_FONTS_MISC_PORT}
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=  autoconf:261
 WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src
@@ -192,7 +191,7 @@ do-build:
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .endif
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	${LOCALBASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
 	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c 'source FreeBSDEnv.Set ; ${BUILD}'
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
@@ -203,7 +202,7 @@ do-install:
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .endif
-	@${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	@${LOCALBASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
 	@${SETENV} "LC_ALL=C" "LANG=C" DISPLAY="localhost:1001" ${TCSH} -c "cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal ; ./install --prefix=${PREFIX}"
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill

@@ -19,7 +19,7 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 DOCS=		doc/bddnotes.ps doc/buddy.ps doc/tech.txt README AUTHORS
 

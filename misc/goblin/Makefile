@@ -8,7 +8,7 @@
 
 PORTNAME=	goblin
 PORTVERSION=	2.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.math.uni-augsburg.de/~fremuth/goblin.docs/  \
 		${MASTER_SITE_LOCAL}
@@ -23,6 +23,7 @@ LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 CONFLICTS=	ImageMagick-[0-9]* display-*
 
+USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GCC=	3.2
 MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
@@ -32,9 +33,9 @@ MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
 ALL_TARGET=	all goblin.a glpk.a
 PLIST_SUB+=	VERSION=${PORTVERSION:R}
 
-CFLAGS+=	-I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 \
-		-I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/ \
+		${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 WISH=		${LOCALBASE}/bin/wish8.3
 

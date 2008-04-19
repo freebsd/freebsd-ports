@@ -60,7 +60,7 @@ CONFIGURE_ARGS=	--disable-nls \
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
 EXTRA_SHLIB=	libgcc_s
 .else

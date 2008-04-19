@@ -6,11 +6,11 @@
 
  Add the following line to the "Files" section and restart XFree86.
 
- FontPath "${X11BASE}/lib/X11/fonts/artwiz-aleczapka-de"
+ FontPath "${LOCALBASE}/lib/X11/fonts/artwiz-aleczapka-de"
 
  Additionally you have to do:
  
- # cd ${X11BASE}/lib/X11/fonts/artwiz-aleczapka-de
+ # cd ${LOCALBASE}/lib/X11/fonts/artwiz-aleczapka-de
  # fc-cache -v .  
 
 ------------------------------------------------------------------

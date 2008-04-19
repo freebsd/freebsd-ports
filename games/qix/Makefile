@@ -7,7 +7,7 @@
 
 PORTNAME=	qix
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
@@ -15,15 +15,17 @@ MASTER_SITE_SUBDIR=	jmz
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	The classic arcade game
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+		xset:${PORTSDIR}/x11/xset
 
 USE_DISPLAY=	yes
 
 .if defined(WITHOUT_X11)
 MAKE_ARGS=	NO_X11=yes
 .else
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 PLIST=		pkg-plist.x11
 .endif
 

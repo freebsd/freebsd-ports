@@ -7,7 +7,7 @@
 
 PORTNAME=	brasero
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,7 +23,6 @@ USE_GETTEXT=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomehier nautiluscdburner
 USE_GSTREAMER=	gconf core
 INSTALLS_ICONS=	yes

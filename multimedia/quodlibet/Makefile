@@ -7,7 +7,7 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/ \
 		http://www.tortall.net/mirrors/piman-software/
@@ -22,7 +22,6 @@ USE_PYTHON=	2.4+
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GSTREAMER=	gconf good python
 
 MAN1=		exfalso.1 quodlibet.1
@@ -107,7 +106,7 @@ PLIST_SUB+=	EXTENSIONS="@comment "
 
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
-		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
+		${LOCALBASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .endif
 
 do-configure:

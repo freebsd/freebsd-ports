@@ -12,7 +12,7 @@ INCS=	shhcards.h
 INCSDIR=${PREFIX}/include
 INCDIR=	${INCSDIR}			# for pre-bsd.incs.mk API
 
-CFLAGS+=	-I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 SRCS=	shhcards.c
 

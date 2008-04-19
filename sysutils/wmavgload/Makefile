@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another WindowMaker load gauge
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 ALL_TARGET=	wmavgload
 NO_INSTALL_MANPAGES=	yes
 

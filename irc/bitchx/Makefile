@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=--with-ssl
 .if defined(WITH_GNOME)
 USE_GNOME=	gnomelibs
 CONFIGURE_ARGS+=--with-gtk
-CFLAGS+=	-I${X11BASE}/include/gnome-1.0/
+CFLAGS+=	-I${LOCALBASE}/include/gnome-1.0/
 PLIST_SUB+=	NOGNOME="@comment " GNOME=""
 .else
 CONFIGURE_ARGS+=--without-gtk

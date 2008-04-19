@@ -99,7 +99,6 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-		-e 's,%%X11BASE%%,${X11BASE},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%DATADIR%%,${DATADIR},g' \
 		-e 's,%%CC%%,${CC},g' \

@@ -16,7 +16,7 @@ COMMENT=	Curl linux version
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 AUTOMATIC_PLIST=	yes
 DESCR=	${.CURDIR}/../${PORTNAME}/pkg-descr
 

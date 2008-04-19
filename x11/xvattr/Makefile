@@ -8,7 +8,7 @@
 
 PORTNAME=	xvattr
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
@@ -17,6 +17,7 @@ COMMENT=	Getting and setting Xv attributes
 
 USE_PERL5_BUILD=	yes
 USE_GNOME=		gtk12
+USE_XORG=	x11 xv
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

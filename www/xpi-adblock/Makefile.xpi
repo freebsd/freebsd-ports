@@ -132,8 +132,7 @@ USE_XPI=	${WITH_XPI_APPS}
 USE_XPI=	${XPI_APPS_ALL_WC}
 .endif
 
-XPI_APPS?=	${USE_XPI:S.^.${LOCALBASE}/lib/.:S.$./extensions.} \
-			${USE_XPI:S.^.${X11BASE}/lib/.:S.$./extensions.}
+XPI_APPS?=	${USE_XPI:S.^.${LOCALBASE}/lib/.:S.$./extensions.}
 XPI_SLDIRS_ALL=	${XPI_APPS_ALL:S.^.${XPI_SLDIR}/.}
 XPI_SLDIRS=		${USE_XPI:S.^.${XPI_SLDIR}/.}
 XPI_LINKFARMS=	${XPI_APPS} ${XPI_SLDIRS}

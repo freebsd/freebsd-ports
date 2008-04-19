@@ -7,7 +7,7 @@
 
 PORTNAME=	xgobi
 PORTVERSION=	2002.06.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	http://public.research.att.com/~stat/xgobi/
 DISTNAME=	xgobi
@@ -23,8 +23,7 @@ CONFIGURE_WRKSRC=	${PATCH_WRKSRC}
 BUILD_WRKSRC=	${PATCH_WRKSRC}
 
 USE_IMAKE=	true
-USE_XPM=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps xpm
 
 XFREE86_HTML_MAN=	no
 MANCOMPRESSED=	no

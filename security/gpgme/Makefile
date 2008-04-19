@@ -20,7 +20,7 @@ RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
 		--with-gpgsm=${LOCALBASE}/bin/gpgsm \

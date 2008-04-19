@@ -22,7 +22,7 @@ BROKEN=		Unfetchable
 DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=2007-04-10
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
 RESTRICTED=	"Redistribution prohibited"

@@ -20,6 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

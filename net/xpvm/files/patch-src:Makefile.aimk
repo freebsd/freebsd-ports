@@ -67,8 +67,8 @@ diff -ruN xpvm.orig/src/Makefile.aimk xpvm/src/Makefile.aimk
  # Linux Like Systems
 -#XINCL		=	-I/usr/X11R6/include
 -#XLIBDIR	=	-L/usr/X11R6/lib
-+XINCL		=	-I$(X11BASE)/include
-+XLIBDIR		=	-L$(X11BASE)/lib
++XINCL		=	-I$(LOCALBASE)/include
++XLIBDIR		=	-L$(LOCALBASE)/lib
  
  XLIB		=	-lX11 
  #XLIB		=	-lX11 -lXpm

@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-mount
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -19,7 +20,6 @@ LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
 		gnome-keyring:${PORTSDIR}/security/gnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/polkit-gnome.pc:${PORTSDIR}/sysutils/policykit-gnome
 
-USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gtk20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

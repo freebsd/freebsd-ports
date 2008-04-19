@@ -27,7 +27,7 @@ do-extract:
 	done
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/giftrans.c
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/giftrans.c
 
 do-build:
 	(cd ${WRKSRC}; ${CC} ${CFLAGS} giftrans.c -o giftrans)

@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	xmms-bluecurve-theme
+PORTREVISION=	1
 
 COMMENT=	The Bluecurve XMMS skin
 
@@ -14,9 +15,9 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
-NO_BUILD=	yes
+PREFIX=		${LOCALBASE}
 
-PREFIX=		${X11BASE}
+NO_BUILD=	yes
 
 SKIN=		Bluecurve-xmms.zip
 PLIST_FILES=	share/xmms/Skins/${SKIN}

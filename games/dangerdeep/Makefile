@@ -43,6 +43,8 @@ SCONS_ARGS+=	usex86sse=-1	# disable MMX/SSE on the build cluster
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/games/dangerdeep|${DATADIR}|; \
 		s|Linux|"Danger from the Deep"|' ${WRKSRC}/doc/man/dangerdeep.6
+	@${REINPLACE_CMD} -e 's|/usr/X11BASE|${LOCALBASE}|g' \
+	    ${WRKSRC}/SConstruct
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons ${SCONS_ARGS}

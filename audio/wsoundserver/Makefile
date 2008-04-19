@@ -7,7 +7,7 @@
 
 PORTNAME=	wsoundserver
 PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	WSoundServer-${PORTVERSION}
@@ -22,11 +22,10 @@ LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/WINGs"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/WINGs"
 
 MAN1=		get-wsound-flags.1x getsoundset.1x setsoundset.1x \
 			wsoundplay.1x wsoundserver.1x

@@ -7,7 +7,7 @@
 
 PORTNAME=	amiwm
 PORTVERSION=	0.20.p48
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/ \
 		http://www.plig.org/xwinman/archive/amiwm/
@@ -18,7 +18,7 @@ COMMENT=	A window manager that makes your desktop look like an Amiga(TM)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DHAVE_X11_EXTENSIONS_SHAPE_H"
-USE_X_PREFIX=	yes
+USE_XORG=	x11 ice sm xext xmu
 MAN1=		amiwm.1
 
 post-install:

@@ -7,9 +7,9 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.14.0
+PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	sf@slappy.org
 COMMENT=	Symbolic mathematics program
@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19 autoconf:261
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \

@@ -7,7 +7,7 @@
 
 PORTNAME=	xjump
 PORTVERSION=	2.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -18,10 +18,9 @@ COMMENT=	A simple X game where one tries to jump up as many levels as possible
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/g}
 
 PLIST_FILES=	bin/xjump
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xaw
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" RECORD_FILE="/var/games/xjump.record" \
-		IDIR="-I${X11BASE}/include" LDIR="-L${X11BASE}/lib"
+		IDIR="-I${LOCALBASE}/include" LDIR="-L${LOCALBASE}/lib"
 ALL_TARGET=	xjump
 
 do-install:

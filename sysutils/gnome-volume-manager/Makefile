@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-volume-manager
 PORTVERSION=	2.22.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -19,7 +19,6 @@ COMMENT=	Automatically mount removable media, and more
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
 		notify.1:${PORTSDIR}/devel/libnotify
 
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2
 USE_GMAKE=	yes

@@ -7,30 +7,29 @@
 
 PORTNAME=	prokyon3
 PORTVERSION=	0.9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prokyon3 is a multithreaded MP3 manager and tag editor
 
-BUILD_DEPENDS=	${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
+BUILD_DEPENDS=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
 LIB_DEPENDS=	id3-3.8:${PORTSDIR}/audio/id3lib \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+USE_XORG=	x11 xft
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_MYSQL=	yes
 USE_PERL5_BUILD=yes
-CONFIGURE_ARGS+=--with-qtdir=${X11BASE} --with-id3-libs=${LOCALBASE}\
-		--with-ogg-libs=${LOCALBASE} --with-vorbis-libs=${LOCALBASE} \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ARGS+=--with-qtdir=${LOCALBASE} --with-id3-libs=${LOCALBASE}\
+		--with-ogg-libs=${LOCALBASE} --with-vorbis-libs=${LOCALBASE}
 QT_NONSTANDARD=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include \
 		-I${QT_PREFIX}/include" LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 

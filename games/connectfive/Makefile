@@ -9,8 +9,7 @@ PORTNAME=	connectfive
 PORTVERSION=	1.0.2
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	connectfive
+MASTER_SITES=	SF/connectfive
 DISTNAME=	connectFive
 
 MAINTAINER=	amdmi3@amdmi3.ru
@@ -18,12 +17,12 @@ COMMENT=	Place five pieces in a row on a 3d board
 
 MAKEFILE=	Makefile.linux
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+			CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 ALL_TARGET=	default
 
 USE_SDL=	sdl
-USE_GL=		yes
+USE_GL=		gl
 USE_GMAKE=	yes
 
 WRKSRC=	${WRKDIR}/connectFive

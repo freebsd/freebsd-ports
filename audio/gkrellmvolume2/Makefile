@@ -16,7 +16,7 @@ DISTNAME=	gkrellm-volume-${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	GKrellM volume plugin
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 LATEST_LINK=	gkrellmvolume2

@@ -20,8 +20,8 @@ XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_EFL=	imlib2
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LIBS="-L${X11BASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib" \
 		XML_CONFIG="${XML_CONFIG}"
 
 post-patch:

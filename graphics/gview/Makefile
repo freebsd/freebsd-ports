@@ -7,14 +7,13 @@
 
 PORTNAME=	gview
 PORTVERSION=	0.1.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://homepages.petech.ac.za/~bruces/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer for X Window System with interface similar to ACDSee
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack imlib
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

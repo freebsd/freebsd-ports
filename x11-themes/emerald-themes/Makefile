@@ -20,8 +20,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} 's|/bin/bash|${LOCALBASE}/bin/bash|' \

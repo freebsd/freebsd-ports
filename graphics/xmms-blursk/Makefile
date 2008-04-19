@@ -7,7 +7,7 @@
 
 PORTNAME=	blursk
 PORTVERSION=	1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://web.cecs.pdx.edu/~kirkenda/blursk/
 PKGNAMEPREFIX=	xmms-
@@ -21,6 +21,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 PLIST_FILES=	lib/xmms/Visualization/libblursk.so
 USE_GNOME=	gtk12
+USE_XORG=	x11 xv
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

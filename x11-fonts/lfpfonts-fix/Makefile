@@ -7,21 +7,22 @@
 
 PORTNAME=	lfpfonts-fix
 PORTVERSION=	0.82
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	xfonts
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Fixed width fonts from the Linux Font Project
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 WRKSRC=		${WRKDIR}/lfpfonts-fix
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/lfpfonts-fix

@@ -7,7 +7,7 @@
 
 PORTNAME=	alevt
 PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.goron.de/~froese/alevt/
 
@@ -17,7 +17,7 @@ COMMENT=	X11 teletext decoding and display program
 OPTIONS=	PNG		"Export pages as PNG image"	on \
 		SMALLFONT	"Use a smaller and thiner font"	off
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 MAN1=		alevt.1x alevt-date.1 alevt-cap.1
 
 .include <bsd.port.pre.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	pgworksheet
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1695/
 
@@ -15,7 +16,6 @@ COMMENT=	Simple PostreSQL GUI front end
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyPgSQL/libpq/__init__.py:${PORTSDIR}/databases/py-pyPgSQL
 
-USE_X_PREFIX=	yes
 USE_PGSQL=	yes
 USE_BZIP2=	yes
 USE_GNOME=	pygtk2

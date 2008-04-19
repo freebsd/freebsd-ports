@@ -7,7 +7,7 @@
 
 PORTNAME=	mixer.app
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -17,11 +17,11 @@ COMMENT=	Another mixer intended for the windowmaker dockapp
 
 PLIST_FILES=	bin/Mixer.app
 WRKSRC=		${WRKDIR}/Mixer.app-${PORTVERSION}
-CXXFLAGS+=	-fno-rtti -fno-exceptions -I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib -lXpm -lXext -lX11
+CXXFLAGS+=	-fno-rtti -fno-exceptions -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lXpm -lXext -lX11
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
 
-USE_XPM=	yes
+USE_XORG=	xpm xext x11
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Mixer.app ${PREFIX}/bin

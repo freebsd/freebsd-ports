@@ -19,10 +19,10 @@ LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng \
 
 GNU_CONFIGURE=	yes
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
-CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
+CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CCONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--with-gengameng-prefix="${X11BASE}"
+CONFIGURE_ARGS+=	--with-gengameng-prefix="${LOCALBASE}"
 
 MAN6=		burgerspace.6
 PLIST_FILES=	bin/burgerspace

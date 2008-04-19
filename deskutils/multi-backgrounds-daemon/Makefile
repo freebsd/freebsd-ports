@@ -6,14 +6,13 @@
 
 PORTNAME=	multi-backgrounds-daemon
 PORTVERSION=	0.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://jeanschu.free.fr/multi-backgrounds-daemon/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Change your GNOME2 backgound when you switch to other workspace
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui libwnck

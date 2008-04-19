@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-apr-config=${LOCALBASE}/bin/apr-1-config \
 	--with-default-encoding=${DEFAULT_ENCODING} \
 	--with-filter-moduledir=${PREFIX}/lib/rast/filters
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDFLAGS="-lz"
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 
 MAN1=	rast-config.1 rast-create.1 rast-delete.1 rast-optimize.1 \
 	rast-register.1 rast-search.1

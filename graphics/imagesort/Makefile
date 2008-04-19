@@ -7,7 +7,7 @@
 
 PORTNAME=	imagesort
 PORTVERSION=	2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible X utility for managing many image files
 
+USE_XORG=	x11 xt
 USE_GNOME=	imlib
 CFLAGS:=	${CFLAGS} -I${LOCALBASE}/include
 

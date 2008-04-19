@@ -12,7 +12,7 @@
  # Location of X-windows software
  #
 -X11_INCLUDE    =
-+X11_INCLUDE    = -I$(X11BASE)/include
++X11_INCLUDE    = -I$(LOCALBASE)/include
  X11_LIB        = -lX11
  #
  # Location of MPI (Message Passing Interface) software

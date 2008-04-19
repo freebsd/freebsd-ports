@@ -21,7 +21,7 @@ COMMENT=	Validating XML parser from the Apache XML Project (linux version)
 USE_LINUX_RPM=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 LINUX_DIST_VER=	4
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 SRC_DISTFILES=
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 

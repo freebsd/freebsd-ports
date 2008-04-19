@@ -152,8 +152,8 @@
 -XCFLAGS=-I/usr/X11R6/include
 -XLDFLAGS=-L/usr/X11R6/lib$(_LIB) -lX11 -lXext -lXxf86dga -lXxf86vm
 -AALDFLAGS=-lm -laa
-+XCFLAGS=-I${X11BASE}/include
-+XLDFLAGS=-L${X11BASE}/lib -lX11 -lXext -lXxf86dga -lXxf86vm
++XCFLAGS=-I${LOCALBASE}/include
++XLDFLAGS=-L${LOCALBASE}/lib -lX11 -lXext -lXxf86dga -lXxf86vm
 +AACFLAGS=-I${PREFIX}/include
 +AALDFLAGS=-L${PREFIX}/lib -laa
  
@@ -161,7 +161,7 @@
 +SDLCFLAGS=$(shell ${SDL_CONFIG} --cflags)
  ifeq ($(strip $(STATICSDL)),YES)
 -	SDLLDFLAGS += -L/usr/X11R6/lib$(_LIB) -Wl,-Bstatic $(SDLDIR)/libSDL.a
-+	SDLLDFLAGS += -L${X11BASE}/lib$(_LIB) -Wl,-Bstatic $(SDLDIR)/libSDL.a
++	SDLLDFLAGS += -L${LOCALBASE}/lib$(_LIB) -Wl,-Bstatic $(SDLDIR)/libSDL.a
  	SDLLDFLAGS += $(SDLDIR)/libesd.a $(SDLDIR)/libartsc.a -Wl,-Bdynamic
  	SDLLDFLAGS += -lpthread -lX11 -lXext -lXxf86dga -lXxf86vm -lXv \
  		-lXinerama
@@ -177,8 +177,8 @@
  
 -GLXCFLAGS=-I/usr/X11R6/include -DOPENGL
 -GLXLDFLAGS=-L/usr/X11R6/lib$(_LIB) -lX11 -lXext -lXxf86dga -lXxf86vm
-+GLXCFLAGS=-I${X11BASE}/include -DOPENGL
-+GLXLDFLAGS=-L${X11BASE}/lib$(_LIB) -lX11 -lXext -lXxf86dga -lXxf86vm
++GLXCFLAGS=-I${LOCALBASE}/include -DOPENGL
++GLXLDFLAGS=-L${LOCALBASE}/lib$(_LIB) -lX11 -lXext -lXxf86dga -lXxf86vm
  
  SDLGLCFLAGS=$(SDLCFLAGS) -DOPENGL
  SDLGLLDFLAGS=$(SDLLDFLAGS)

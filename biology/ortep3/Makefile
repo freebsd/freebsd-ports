@@ -27,7 +27,7 @@ MAKE_ARGS=	LFLAGS="${LFLAGS}"
 
 .if defined(WITH_PGPLOT)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-aa
-LFLAGS=		-L${LOCALBASE}/lib -lpgplot -L${X11BASE}/lib -lX11
+LFLAGS=		-L${LOCALBASE}/lib -lpgplot -lX11
 .endif
 
 post-extract:

@@ -11,8 +11,8 @@ $FreeBSD$
 +bindir	= $(PREFIX)/bin
 +incdir	= ./inc
 +srcdir	= ./src
-+fltkinc	= $(X11BASE)/include
-+x11lib	= $(X11BASE)/lib
++fltkinc	= $(LOCALBASE)/include
++x11lib	= $(LOCALBASE)/lib
  
  # compiler settings
 -CXX       = g++ 

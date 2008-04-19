@@ -8,7 +8,7 @@ $FreeBSD$
  .I ~/.xcheckersrc
  and in
 -.I /usr/lib/X11/app-defaults/XCheckers.
-+.I @X11BASE@/lib/X11/app-defaults/XCheckers.
++.I @LOCALBASE@/lib/X11/app-defaults/XCheckers.
  (First mentioned places overriding)
  
  .TP
@@ -17,13 +17,13 @@ $FreeBSD$
  
  .SH FILES
 -.I /usr/lib/X11/app-defaults/XCheckers,
-+.I @X11BASE@/lib/X11/app-defaults/XCheckers,
++.I @LOCALBASE@/lib/X11/app-defaults/XCheckers,
  .br
 -.I /usr/lib/X11/xcheckers/scene.xpm,
-+.I @X11BASE@/share/xcheckers/scene.xpm,
++.I @LOCALBASE@/share/xcheckers/scene.xpm,
  .br
 -.I /usr/lib/X11/xcheckers/stars.xpm
-+.I @X11BASE@/share/xcheckers/stars.xpm
++.I @LOCALBASE@/share/xcheckers/stars.xpm
  
  .SH SEE ALSO
  .BR simplech (6),

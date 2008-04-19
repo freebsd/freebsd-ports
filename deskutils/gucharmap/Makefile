@@ -8,6 +8,7 @@
 
 PORTNAME=	gucharmap
 PORTVERSION=	2.22.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +20,6 @@ LIB_DEPENDS=	rarian.0:${PORTSDIR}/textproc/rarian
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gtk20 gnomedocutils gconf2
 WANT_GNOME=	yes

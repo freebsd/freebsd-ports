@@ -57,9 +57,9 @@
 +
 +ifeq ($(OSTYPE),FreeBSD)
 +# These variables are defined from the port, and passed by the environment.
-+SHARED_FLAGS+=	-I$(LOCALBASE)/include -I$(X11BASE)/include \
++SHARED_FLAGS+=	-I$(LOCALBASE)/include \
 +		-DDATADIR='\"$(Q2DIR)\"' -DLIBDIR='\"$(LIBDIR)\"'
-+LDFLAGS+=	-L$(LOCALBASE)/lib -L$(X11BASE)/lib
++LDFLAGS+=	-L$(LOCALBASE)/lib
 +X11_LDFLAGS+=	$(PTHREAD_LIBS)
 +endif
  
@@ -87,13 +87,13 @@
 +SHARED_FLAGS += -DHOMEDIR
 +endif
 +
-+ifeq ($(wildcard $(X11BASE)/include/X11/extensions/xf86vmode.h),/usr/include/X11/extensions/xf86vmode.h)
++ifeq ($(wildcard $(LOCALBASE)/include/X11/extensions/xf86vmode.h),/usr/include/X11/extensions/xf86vmode.h)
  SHARED_FLAGS += -DXF86VMODE
  X11_LDFLAGS += -lXxf86vm
  endif
  
 -ifeq ($(wildcard /usr/include/X11/extensions/xf86dga.h),/usr/include/X11/extensions/xf86dga.h)
-+ifeq ($(wildcard $(X11BASE)/include/X11/extensions/xf86dga.h),/usr/include/X11/extensions/xf86dga.h)
++ifeq ($(wildcard $(LOCALBASE)/include/X11/extensions/xf86dga.h),/usr/include/X11/extensions/xf86dga.h)
  SHARED_FLAGS += -DXF86DGA
  X11_LDFLAGS += -lXxf86dga
  endif

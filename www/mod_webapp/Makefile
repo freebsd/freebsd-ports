@@ -24,7 +24,7 @@ USE_PYTHON_BUILD=yes
 USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 # Release information for distribution files.
 TOMCAT_RELEASE=		${PORTVERSION}

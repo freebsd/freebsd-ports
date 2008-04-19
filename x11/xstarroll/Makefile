@@ -7,7 +7,7 @@
 
 PORTNAME=	xstarroll
 PORTVERSION=	1.1b
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.saturn.dti.ne.jp/~hsakai/myfreesoft/
@@ -17,15 +17,14 @@ COMMENT=	Letters fly to far, far, far away
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.1
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xt xaw
 ALL_TARGET=	xstarroll
 
 MAN1=		xstarroll.1
 PLIST_FILES=	bin/xstarroll
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${X11BASE}|g ; \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${LOCALBASE}|g ; \
 		 s|gcc |$${CC} |g ; \
 		 s|-O |$${CFLAGS} |g' ${WRKSRC}/Makefile
 

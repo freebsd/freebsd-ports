@@ -24,9 +24,7 @@ USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/Emulator_Src_${PORTVERSION}/BuildUnix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib \
-		--with-x --with-fltk=${X11BASE}
+CONFIGURE_ARGS=	--with-x --with-fltk=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		CFLAGS=-DBROKEN_VIRTUAL_DEFAULT_ARGUMENTS=1 \
 		LIBS="${PTHREAD_LIBS}"

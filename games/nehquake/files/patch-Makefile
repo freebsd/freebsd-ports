@@ -67,8 +67,8 @@
  
 -GLLDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib -lGL -lX11 -lXext -ldl -lXxf86dga -lXxf86vm
 -GLCFLAGS=-DGLQUAKE -I/usr/include -I/usr/X11R6/include
-+GLLDFLAGS=-L$(X11BASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
-+GLCFLAGS=-DGLQUAKE -I$(X11BASE)/include
++GLLDFLAGS=-L$(LOCALBASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
++GLCFLAGS=-DGLQUAKE -I$(LOCALBASE)/include
  
  DO_CC=$(CC) $(CFLAGS) -o $@ -c $<
  DO_DEBUG_CC=$(CC) $(DEBUG_CFLAGS) -o $@ -c $<

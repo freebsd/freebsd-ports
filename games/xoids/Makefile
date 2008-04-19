@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window Asteroids style game with full color pixmaps
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN6=		xoids.6
 
 post-extract:

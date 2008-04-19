@@ -5,7 +5,7 @@
  MESAPATH=""
  MESADEFAULT=1
 -XLIBPATH="/usr/X11R6/lib"
-+XLIBPATH="%%X11BASE%%/lib"
++XLIBPATH="%%LOCALBASE%%/lib"
  TR=0
  TRINCL=""
  TRLIBS=""
@@ -36,7 +36,7 @@
 +    CXXFLAG=`echo $OS $OT %%CXXFLAGS%%`
      if [ "$MESADEFAULT" = "1" ] ; then
 -	MESAPATH="/usr/X11R6"
-+	MESAPATH="%%X11BASE%%"
++	MESAPATH="%%LOCALBASE%%"
      fi
      OPENGLINCL="-I${MESAPATH}/include"
      OPENGLLIBS="-L${MESAPATH}/lib -lGL -lGLU -L${XLIBPATH} -lX11 -lXext"

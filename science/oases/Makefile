@@ -34,7 +34,7 @@ post-patch:
 		 s|%%FFLAGS%%|${FFLAGS}|g ; \
 		 s|%%CFLAGS%%|${CFLAGS}|g ; \
 		 s|%%LDFLAGS%%|${LDFLAGS}|g ; \
-		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/Makefile
+		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/FreeBSD-FreeBSD/* ${PREFIX}/bin

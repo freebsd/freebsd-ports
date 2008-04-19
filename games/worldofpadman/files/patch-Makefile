@@ -131,7 +131,7 @@
 +  BASE_CFLAGS = -DARCH='\"$(ARCH)\"' -I$(LOCALBASE)/include -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes
  
 -  GL_CFLAGS = -I/usr/X11R6/include
-+  GL_CFLAGS = -I$(X11BASE)/include
++  GL_CFLAGS = -I$(LOCALBASE)/include
  
    DEBUG_CFLAGS=$(BASE_CFLAGS) -g
 +  RELEASE_CFLAGS=$(BASE_CFLAGS) -DNDEBUG -pipe
@@ -228,7 +228,7 @@
 +  endif
 +
 +  ifneq ($(USE_SDL_VIDEO),1)
-+    CLIENT_LDFLAGS += -L$(X11BASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
++    CLIENT_LDFLAGS += -L$(LOCALBASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
    endif
  
    ifeq ($(USE_OPENAL),1)

@@ -7,6 +7,7 @@
 
 PORTNAME=	dislin
 PORTVERSION=	9.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
@@ -18,7 +19,7 @@ LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
 
 RESTRICTED=	free for non-commercial use.
 ONLY_FOR_ARCHS=	i386
-USE_XLIB=	yes
+USE_XORG=	x11
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

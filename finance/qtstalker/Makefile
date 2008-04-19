@@ -9,8 +9,7 @@ PORTNAME=	qtstalker
 PORTVERSION=	0.28
 PORTREVISION=	1
 CATEGORIES=	finance kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Commodity and stock market charting and technical analysis
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	db2:${PORTSDIR}/databases/db2
 
 USE_QT_VER=3
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
@@ -84,8 +83,8 @@ do-configure:
 	@cd ${WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} -spec ${QMAKESPEC} \
-		"INCLUDEPATH += ${QT_PREFIX}/include ${LOCALBASE}/include ${X11BASE}/include" \
-		"LIBS += -L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		"INCLUDEPATH += ${QT_PREFIX}/include ${LOCALBASE}/include" \
+		"LIBS += -L${LOCALBASE}/lib " \
 		"QMAKE_CFLAGS_SHLIB += -fPIC" \
 		"QMAKE_CXXFLAGS_SHLIB += -fPIC" \
 		"DEFINES += QT_NO_COMPAT PIC" -o ${MAKEFILE} qtstalker.pro

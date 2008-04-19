@@ -8,7 +8,7 @@
 
 PORTNAME=	evolution-gconf-tools
 PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://people.redhat.com/dmalcolm/evolution-gconf-tools/
 
@@ -18,7 +18,6 @@ COMMENT=	Scripts to make it easier to work with Evolution's configuration
 RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix
 

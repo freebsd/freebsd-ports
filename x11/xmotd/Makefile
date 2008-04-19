@@ -37,7 +37,7 @@ USE_MOTIF=	yes
 .endif
 
 .if defined(WITH_XPM)
-USE_XPM=	yes
+USE_XORG=	xpm
 .endif
 
 post-extract:
@@ -59,7 +59,7 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xmotd ${X11BASE}/bin/xmotd
+	${INSTALL_PROGRAM} ${WRKSRC}/xmotd ${LOCALBASE}/bin/xmotd
 	${INSTALL_MAN} ${WRKSRC}/xmotd.8 ${MANPREFIX}/man/man8
 
 .include <bsd.port.post.mk>

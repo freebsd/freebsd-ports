@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tile-removing puzzle game for the X Window system
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 INSTALL_TARGET=	install install.dir
 BINOWN=		root
 BINGRP=		games

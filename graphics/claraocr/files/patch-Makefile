@@ -23,8 +23,8 @@
 -INCLUDE = -I/usr/X11R6/include
 -LIBPATH = -L/usr/X11R6/lib
 -CC = gcc
-+INCLUDE = -I${X11BASE}/include
-+LIBPATH = -L${X11BASE}/lib
++INCLUDE = -I${LOCALBASE}/include
++LIBPATH = -L${LOCALBASE}/lib
 +CC ?= gcc
  
  #

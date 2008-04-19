@@ -9,8 +9,7 @@ PORTNAME=	konverse
 PORTVERSION=	0.2
 PORTREVISION=	6
 CATEGORIES=	net-im kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE Jabber Client
@@ -20,8 +19,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS+=--with-extra-includes=${LOCALBASE}/include \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib \
 		--with-qt-libraries=${QT_PREFIX}/lib
 
 pre-patch:

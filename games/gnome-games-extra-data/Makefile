@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-games-extra-data
 PORTVERSION=	2.22.0
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-games-extra-data/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -20,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/sol:${PORTSDIR}/games/gnome-games
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \

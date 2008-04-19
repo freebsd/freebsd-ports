@@ -41,10 +41,9 @@ post-patch:
 		 s|%%CXX%%|${CXX}|g ; \
 		 s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
 		 s|%%PREFIX%%|${PREFIX}|g ; \
-		 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/vertex/platforms.ini
+		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/vertex/platforms.ini
 	@${REINPLACE_CMD} -e \
-		's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/vertex/vmahelp.c
+		's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/vertex/vmahelp.c
 	@${REINPLACE_CMD} -e \
 		's|CC =|CC ?=|g' ${WRKSRC}/pconf/Makefile
 

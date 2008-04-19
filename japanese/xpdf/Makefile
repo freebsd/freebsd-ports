@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.00
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 DISTNAME=	xpdf-japanese
@@ -17,9 +17,8 @@ COMMENT=	Japanese xpdf font support
 
 RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf \
 		${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
-		${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
+		${LOCALBASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 SUB_FILES=	dot.xpdfrc
 SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR}

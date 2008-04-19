@@ -124,7 +124,6 @@ do-install:
 	@${SED} \
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
 	  -e "s+%%PREFIX%%+${PREFIX}+g" \
-	  -e "s+%%X11BASE%%+${X11BASE}+g" \
 	  -e "s+%%LOCALBASE%%+${LOCALBASE}+g" \
 	  -e "s+%%BROWSER%%+${BROWSER}+g" \
 	  -e "s,%%JAVA_VERSION%%,${JAVA_VERSION},g" \

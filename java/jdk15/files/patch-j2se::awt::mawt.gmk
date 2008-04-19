@@ -9,9 +9,9 @@ $FreeBSD$
 -	    LIBXT = /usr/X11R6/lib/libXt.a
 -	    LIBSM = /usr/X11R6/lib/libSM.a
 -	    LIBICE = /usr/X11R6/lib/libICE.a
-+	    LIBXT = $(X11BASE)/lib/libXt.a
-+	    LIBSM = $(X11BASE)/lib/libSM.a
-+	    LIBICE = $(X11BASE)/lib/libICE.a
++	    LIBXT = $(LOCALBASE)/lib/libXt.a
++	    LIBSM = $(LOCALBASE)/lib/libSM.a
++	    LIBICE = $(LOCALBASE)/lib/libICE.a
  	endif
      endif
  else
@@ -20,7 +20,7 @@ $FreeBSD$
  
  ifeq ($(LINUX_OR_BSD), true)
 -  CPPFLAGS += -I/usr/X11R6/include -I/usr/X11R6/include/X11/extensions
-+  CPPFLAGS += -I$(X11BASE)/include -I$(X11BASE)/include/X11/extensions
++  CPPFLAGS += -I$(LOCALBASE)/include -I$(LOCALBASE)/include/X11/extensions
  endif
  
  ifeq ($(PLATFORM), solaris)

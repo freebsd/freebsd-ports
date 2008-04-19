@@ -2,15 +2,14 @@ SHLIB_NAME?=	libimg.so.1
 
 PORTVERSION?=	1.2.4
 LOCALBASE?=	/usr/local
-X11BASE?=	/usr/X11R6
 TCL_VER?=	8.0
 
 LDADD=		-lm -lz -L${LOCALBASE}/lib -lpng -ljpeg -ltiff \
-		-L${X11BASE}/lib -lX11
+		-lX11
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}/generic
-CFLAGS+=	-D__X11__ -I${X11BASE}/include -DALLOW_B64
+CFLAGS+=	-D__X11__ -I${LOCALBASE}/include -DALLOW_B64
 CFLAGS+=	-I${LOCALBASE}/include/tkstep${TCL_VER}
 CFLAGS+=	-DNDEBUG -Wall -I.
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\" -I${LOCALBASE}/include

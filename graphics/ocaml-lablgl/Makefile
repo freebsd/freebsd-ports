@@ -15,9 +15,7 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	OpenGL interface for Objective Caml
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
-USE_GL=		yes
+USE_GL=		glut
 USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_WASH=	yes
@@ -35,7 +33,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/lablgl
 post-extract:
 	@${CP} ${WRKSRC}/Makefile.config.freebsd ${WRKSRC}/Makefile.config
 
-	@${REINPLACE_CMD} -e "s,/usr/X11R6,${X11BASE},g" \
+	@${REINPLACE_CMD} -e "s,/usr/X11R6,${LOCALBASE},g" \
 		-e "s,/usr/local,${LOCALBASE},g" \
 		-e "s,^\(BINDIR[ \t]*=\).*,\1${PREFIX}/bin,g" \
 		-e "s,^\(RANLIB[ \t]*=\).*,\1ranlib,g" \

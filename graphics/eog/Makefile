@@ -8,6 +8,7 @@
 
 PORTNAME=	eog
 PORTVERSION=	2.22.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -22,7 +23,6 @@ USE_GNOME=	gnomeprefix gnomehack intlhack librsvg2 desktopfileutils \
 		gnomedesktop
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 GNOME_DESKTOP_VERSION=2

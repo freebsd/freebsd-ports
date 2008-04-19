@@ -16,7 +16,7 @@
  ##
  
 -XINCLUDEDIR = . 
-+XINCLUDEDIR = ${X11BASE}/include
++XINCLUDEDIR = ${LOCALBASE}/include
  
  ##
  ##  (1) Choosing your compiler

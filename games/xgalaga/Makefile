@@ -7,21 +7,18 @@
 
 PORTNAME=	xgalaga
 PORTVERSION=	2.0.34
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://people.FreeBSD.org/~linimon/public_distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Galaga resurrected on X
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xmu
 HAS_CONFIGURE=	yes
 # xgalaga has a very strange usage of these variables...
-CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/X11/xgalaga \
-		--exec_prefix=${X11BASE}/bin \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
+CONFIGURE_ARGS=	--prefix=${LOCALBASE}/lib/X11/xgalaga \
+		--exec_prefix=${LOCALBASE}/bin
 
 .if defined(NOSOUND)
 CONFIGURE_ARGS+=	--without-sound

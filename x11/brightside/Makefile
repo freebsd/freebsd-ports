@@ -7,7 +7,7 @@
 
 PORTNAME=	brightside
 PORTVERSION=	1.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	http://files.catmur.co.uk/brightside/
 
@@ -15,7 +15,7 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A tool to add reactivity to the edges and corners of the GNOME desktop
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xt
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack libwnck libgnomeui

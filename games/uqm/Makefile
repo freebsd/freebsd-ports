@@ -92,7 +92,7 @@ do-configure:
 	@${ECHO_MSG} INPUT_install_bindir_VALUE=\''$$prefix/bin'\' >> ${WRKSRC}/sc2/config.state
 	@${ECHO_MSG} INPUT_install_libdir_VALUE=\''$$prefix/lib'\' >> ${WRKSRC}/sc2/config.state
 	@${ECHO_MSG} INPUT_install_sharedir_VALUE=\''$$prefix/share'\' >> ${WRKSRC}/sc2/config.state
-	cd ${WRKSRC}/sc2 && ${SETENV} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} PREFIX=${PREFIX} ./build.sh uqm config
+	cd ${WRKSRC}/sc2 && ${SETENV} LOCALBASE=${LOCALBASE} PREFIX=${PREFIX} ./build.sh uqm config
 
 do-build:
 	cd ${WRKSRC}/sc2 && ./build.sh uqm

@@ -20,6 +20,6 @@ PLIST_FILES=	bin/wmcdplay
 WRKSRC=		${WRKDIR}/wmcdplay
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	yawm
 PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.sai.msu.su/pub/X11/win_man/
 DISTNAME=	yawm-0.0.1-a4
@@ -18,7 +18,7 @@ COMMENT=	Has title bars, iconizing, maximizing, taskbar, placement, clock
 GNU_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
 #USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 DOCS=		AUTHORS COPYING ChangeLog
 
 DEPRECATED=	project no longer exists

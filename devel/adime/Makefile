@@ -25,7 +25,7 @@ INFO=		adime
 
 MAKEFILE=	makefile
 INSTALL_TARGET=	install install-info install-man
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 pre-build:
 	@(cd ${WRKSRC} && ${SH} fix.sh unix)

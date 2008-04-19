@@ -23,7 +23,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 do-build:
 	@cd ${WRKSRC} && \
-		${CC} -L${X11BASE}/lib -I${X11BASE}/include click.c \
+		${CC} -L${LOCALBASE}/lib -I${LOCALBASE}/include click.c \
 			-lX11 -lXtst -o ${PORTNAME}
 
 do-install:

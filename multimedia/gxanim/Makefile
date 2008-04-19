@@ -7,7 +7,7 @@
 
 PORTNAME=	gxanim
 PORTVERSION=	0.50
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rswarren.com/code/
 DISTNAME=	GXAnim-${PORTVERSION}
@@ -21,7 +21,6 @@ PLIST_FILES=	bin/gxanim
 WRKSRC=	${WRKDIR}/gxanim-${PORTVERSION}
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GNOME=	gtk12
 
 .include <bsd.port.mk>

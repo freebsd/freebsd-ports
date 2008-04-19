@@ -30,7 +30,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
-		-e 's,/usr/X11R6,${X11BASE},g' \
+		-e 's,/usr/X11R6,${LOCALBASE},g' \
 		-e 's,/usr/include/X11,${LOCALBASE}/include,g' \
 		${WRKSRC}/${PYSETUP}
 .if defined(WITHOUT_X11)

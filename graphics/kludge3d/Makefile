@@ -10,8 +10,7 @@ PORTNAME=	kludge3d
 PORTVERSION=	20040822
 PORTREVISION=	6
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple 3d editor
@@ -20,7 +19,7 @@ LIB_DEPENDS=	3ds-1.3:${PORTSDIR}/graphics/lib3ds \
 		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_PYTHON=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_GNOME=	gnometarget gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -29,9 +28,9 @@ CONFIGURE_ARGS=	--with-lib-GL
 
 PLIST_FILES=	bin/kludge3d
 
-CPPFLAGS=	-I${LOCALBASE}/include -L${X11BASE}/include \
+CPPFLAGS=	-I${LOCALBASE}/include \
 		-I${PYTHON_INCLUDEDIR} ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib \
+LDFLAGS=	-L${LOCALBASE}/lib \
 		-L${PYTHON_LIBDIR}/config ${PTHREAD_LIBS}
 
 post-patch:

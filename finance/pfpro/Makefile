@@ -17,7 +17,7 @@ COMMENT=	SDK for VeriSign's PayFlow Pro
 
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	Only for VeriSign PayFlow Pro customers
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 

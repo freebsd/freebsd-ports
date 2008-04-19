@@ -16,8 +16,8 @@ COMMENT=	X Window 3D Pong game for 1 or 2 players with a ball and paddles
 
 USE_XORG=	x11
 USE_GMAKE=	yes
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
-		XLIB="-L${X11BASE}/lib -lX11"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		XLIB="-L${LOCALBASE}/lib -lX11"
 
 post-patch:
 	@${REINPLACE_CMD} -e \

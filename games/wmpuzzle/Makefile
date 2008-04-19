@@ -7,7 +7,7 @@
 
 PORTNAME=	wmpuzzle
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://www.godisch.de/debian/wmpuzzle/
 
@@ -16,8 +16,7 @@ COMMENT=	A dockable puzzle game for WindowMaker and AfterStep
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -26,8 +25,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN6=		wmpuzzle.6
 PLIST_FILES=	bin/wmpuzzle
 
-CPPFLAGS=	-I${X11BASE}/include -DBSD
-LDFLAGS=	-L${X11BASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include -DBSD
+LDFLAGS=	-L${LOCALBASE}/lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmpuzzle ${PREFIX}/bin

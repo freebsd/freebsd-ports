@@ -17,11 +17,11 @@
 +#CC            = /usr/bin/gcc
  
 -X11_LIBS      = -L/usr/X11R6/lib -lpthread -lX11 -lXext -lXxf86dga -lXxf86vm
-+X11_LIBS      = -L${X11BASE}/lib -lX11 -lXext -lXxf86dga -lXxf86vm
++X11_LIBS      = -L${LOCALBASE}/lib -lX11 -lXext -lXxf86dga -lXxf86vm
  
  # to enable OpenGL code in source 
 -OPENGL_CFLAGS = -D__glx__ -DGLQUAKE
-+OPENGL_CFLAGS = -D__glx__ -DGLQUAKE -I${X11BASE}/include
++OPENGL_CFLAGS = -D__glx__ -DGLQUAKE -I${LOCALBASE}/include
  OPENGL_LIBS   = -lGL -lGLU
  
 -PNG_LIBS      = -lpng -lz

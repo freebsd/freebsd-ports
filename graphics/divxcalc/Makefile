@@ -8,20 +8,22 @@
 
 PORTNAME=	divxcalc
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://imagef1.net.nz/divxcalc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DivX Calculator
 
+USE_XORG=	x11 ice xext
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:15:env autoconf:261:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/divxcalc
 

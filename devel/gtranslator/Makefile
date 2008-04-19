@@ -8,7 +8,7 @@
 
 PORTNAME=	gtranslator
 PORTVERSION=	1.1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -18,7 +18,6 @@ COMMENT=	A GNOME application for creating GNU gettext translation files
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gnometarget gnomevfs2 libgnomeui
 USE_GMAKE=	yes

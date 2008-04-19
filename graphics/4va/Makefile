@@ -7,7 +7,7 @@
 
 PORTNAME=	4va
 PORTVERSION=	1.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/hacks/X
@@ -16,9 +16,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Four-Dimensional graphics tumbler for X11
 
-USE_XLIB=	yes
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
-		CLIBS="-lm -lX11 -L${X11BASE}/lib"
+USE_XORG=	x11
+
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CLIBS="-lm -lX11 -L${LOCALBASE}/lib"
 
 MAN1=		4va.1
 

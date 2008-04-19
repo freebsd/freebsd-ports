@@ -7,7 +7,7 @@
 
 PORTNAME=	simplicity
 PORTVERSION=	1.2.6b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.datarepresentations.com/products/simplicity/
 DISTNAME=	simpjava
@@ -22,7 +22,6 @@ JDK13DIR?=	${LOCALBASE}/jdk1.3.1
 JAVAVM=		${JDK13DIR}/bin/java
 
 RESTRICTED=	"Restrictive license"
-USE_XLIB=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Simplicity

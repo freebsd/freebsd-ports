@@ -7,7 +7,7 @@
 
 PORTNAME=	wmshuffle
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://www.linuks.mine.nu/dockapp/ \
 		http://freebsd.nsu.ru/distfiles/
@@ -16,8 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable Shuffle game for WindowMaker and AfterStep
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 post-install:
 	@${MKDIR} ${DATADIR}

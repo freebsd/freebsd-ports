@@ -7,7 +7,7 @@
 
 PORTNAME=	fluxspace
 PORTVERSION=	0.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 BROKEN=		Checksum mismatch
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -29,7 +29,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IDESK) || exists(${X11BASE}/bin/idesk)
+.if defined(WITH_IDESK) || exists(${LOCALBASE}/bin/idesk)
 RUN_DEPENDS+=	idesk:${PORTSDIR}/x11/idesk
 .endif
 .if defined(WITH_ROX-FILER) || exists(${LOCALBASE}/bin/rox)

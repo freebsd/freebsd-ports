@@ -19,7 +19,7 @@ COMMENT=	PCI configuration space I/O made easy
 
 USE_GMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_ENV=	LANG=C
 ALL_TARGET=	lib/libpci.a
 

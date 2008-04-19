@@ -20,21 +20,21 @@ COMMENT=	Java Development Kit 1.3
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
-		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
+		${LOCALBASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 .if defined(WITH_PLUGIN)
 FORBIDDEN=	Vulnerabilities in the browser plugin
 USE_GNOME+=	gtk12
 LIB_DEPENDS=	nspr4.1:$(PORTSDIR)/devel/nspr
 .endif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
-		${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
+		${LOCALBASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
+		${LOCALBASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 
 .if defined(WITH_JAPANESE_FONTS)
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/fonts.dir.kochi:${PORTSDIR}/japanese/kochi-ttfonts
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/TrueType/fonts.dir.kochi:${PORTSDIR}/japanese/kochi-ttfonts
 .endif
 .if defined(WITH_RUSSIAN_FONTS)
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/webfonts/fonts.dir:${PORTSDIR}/x11-fonts/webfonts
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/webfonts/fonts.dir:${PORTSDIR}/x11-fonts/webfonts
 .endif
 .if defined(WITH_CHINESE_FONTS)
 RUN_DEPENDS+=	${LOCALBASE}/share/fonts/TrueType/arphic:${PORTSDIR}/chinese/arphicttf
@@ -53,8 +53,8 @@ USE_XORG=	ice sm x11 xext xp xt xtst
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 MAKE_ENV=	ALT_BOOTDIR="${JDK13DIR}" \
-		ALT_MOTIF_DIR="${X11BASE}" \
-		OPENWINHOME="${X11BASE}" \
+		ALT_MOTIF_DIR="${LOCALBASE}" \
+		OPENWINHOME="${LOCALBASE}" \
 		SYS_CFLAGS="${CFLAGS}" \
 		CLASSPATH="" \
 		LD_LIBRARY_PATH="" \
@@ -204,7 +204,7 @@ post-patch:
 			${WRKSRC}/$${file}; \
 	done
 	@for file in ${X11_FILES}; do \
-		${REINPLACE_CMD} -e "s:%%X11BASE%%:${X11BASE}:" \
+		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 			${WRKSRC}/$${file}; \
 	done
 

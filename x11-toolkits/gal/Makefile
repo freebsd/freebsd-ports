@@ -7,7 +7,7 @@
 
 PORTNAME=	gal
 PORTVERSION=	0.24
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.24
@@ -19,7 +19,7 @@ COMMENT=	A collection of widgets taken from GNOME gnumeric and evolution
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier libglade gnomevfs

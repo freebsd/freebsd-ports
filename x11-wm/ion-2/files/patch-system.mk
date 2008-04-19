@@ -55,7 +55,7 @@
  ##
  
 -X11_PREFIX=/usr/X11R6
-+X11_PREFIX=$(X11BASE)
++X11_PREFIX=$(LOCALBASE)
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
  

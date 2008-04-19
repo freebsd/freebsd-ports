@@ -7,10 +7,9 @@
 
 PORTNAME=	swami
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An advanced instrument editor
@@ -22,7 +21,6 @@ LIB_DEPENDS=	fluidsynth.2:${PORTSDIR}/audio/fluidsynth \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk12
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes

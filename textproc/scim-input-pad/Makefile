@@ -18,7 +18,7 @@ COMMENT=	SCIM add-on to input various symbols with on-screen pad
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	xcogitate
 PORTVERSION=	1.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mph
@@ -16,12 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A logic game with board and stones
 
 PLIST_FILES=	bin/xcogitate
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 WRKSRC=		${WRKDIR}/XCOGITATE_SOURCE
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${X11BASE}/include -o xcogitate xcogitate.c -L${X11BASE}/lib -lX11 -lXpm
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include -o xcogitate xcogitate.c -L${LOCALBASE}/lib -lX11 -lXpm
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xcogitate ${PREFIX}/bin

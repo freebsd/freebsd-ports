@@ -22,7 +22,6 @@ RUN_DEPENDS=	gedit:${PORTSDIR}/editors/gedit \
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15

@@ -11,7 +11,7 @@
 +            add_directory(include_dirs,
 +                          os.path.join(os.getenv("PREFIX"), "include"))
 +            add_directory(include_dirs,
-+                          os.path.join(os.getenv("X11BASE"), "include"))
++                          os.path.join(os.getenv("LOCALBASE"), "include"))
  
          #
          # locate tkinter libraries

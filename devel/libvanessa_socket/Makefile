@@ -21,7 +21,7 @@ LIB_DEPENDS=	vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger \
 MAN1=		vanessa_socket_pipe.1
 
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

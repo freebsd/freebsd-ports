@@ -24,8 +24,8 @@ WRKSRC=		${WRKDIR}/E-buttons
 USE_GL=	gl
 USE_EFL=	imlib2
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lepplet -lGL -lImlib2 ${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -lepplet -lGL -lImlib2 ${PTHREAD_LIBS}
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o E-Buttons.epplet \

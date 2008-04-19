@@ -15,7 +15,7 @@ DISTNAME=	djbdns-pd-${PORTVERSION}
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Public domain DNS client library
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	it
 

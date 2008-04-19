@@ -8,7 +8,7 @@
 
 PORTNAME=	uic3
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=0
+PORTREVISION=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -22,6 +22,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build qt3support corelib gui network sql xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
+USE_XORG=	sm ice xrender xrandr xfixes xcursor xinerama xi
 
 HAS_CONFIGURE=	yes
 

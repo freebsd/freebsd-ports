@@ -19,7 +19,7 @@
      if (not defined $xvfb and ($_ eq "xrt2d" or $_ eq "xrt3d" or $_ eq "xmgrace")) {
          print "Enter path to X virtual frame buffer(Xvfb): "; 
 -        $xvfb = <STDIN>; 
-+        $xvfb = "%%X11BASE%%/bin/Xvfb";
++        $xvfb = "%%LOCALBASE%%/bin/Xvfb";
          chop $xvfb; 
          @xvfb = $xvfb; 
      }

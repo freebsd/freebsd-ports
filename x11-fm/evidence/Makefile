@@ -9,8 +9,7 @@ PORTNAME=	evidence
 PORTVERSION=	0.9.8
 PORTREVISION=	9
 CATEGORIES=	x11-fm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	freebsd@troback.com
 COMMENT=	Enlightened file-manager
@@ -40,8 +39,8 @@ CONFIGURE_ARGS=	--disable-dbus \
 		--disable-thumbnailer-avi \
 		--disable-thumbnailer-mpeg3 \
 		--enable-plugin-ttf
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/*
 

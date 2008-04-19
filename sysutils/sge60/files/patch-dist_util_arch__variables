@@ -11,7 +11,7 @@ $FreeBSD$
 +   RC_PREFIX=%%LOCALBASE%%/etc/rc.d
     RC_SUFFIX=.sh
 -   XTERM=/usr/X11R6/bin/xterm
-+   XTERM=%%X11BASE%%/bin/xterm
++   XTERM=%%LOCALBASE%%/bin/xterm
     MAILER=/usr/bin/mail
     QLOGIN_COMMAND=telnet
     QLOGIN_DAEMON=/usr/libexec/telnetd

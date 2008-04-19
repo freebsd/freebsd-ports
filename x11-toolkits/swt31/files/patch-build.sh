@@ -8,7 +8,7 @@
 +		CC=%%CC%%
 +		CXX=%%CXX%%
 +		LD=%%CC%%
-+		XTEST_LIB_PATH=$X11BASE/lib
++		XTEST_LIB_PATH=$LOCALBASE/lib
 +		GECKO_INCLUDES="`${GECKO_CONFIG} --cflags gtkmozembed` -I${LOCALBASE}/include/nspr"
 +		GECKO_LIBS="`${GECKO_CONFIG} --libs gtkmozembed` -L${LOCALBASE}/lib"
 +		case $MODEL in

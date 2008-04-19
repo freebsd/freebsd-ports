@@ -25,7 +25,7 @@ MANIFEST=	MANIFEST.color-mate
 do-build:
 # Create color-mate-rgb.el
 	cd ${WRKSRC}; \
-	(${CAT} ${X11BASE}/lib/X11/rgb.txt | ${PERL5} ./rgb2el.pl > ./color-mate-rgb.el ) || ( ${ECHO} "Make rgb table from color-mate-rgb.el.std" ; ${CP} ./color-mate-rgb.el.std ./color-mate-rgb.el)
+	(${CAT} ${LOCALBASE}/lib/X11/rgb.txt | ${PERL5} ./rgb2el.pl > ./color-mate-rgb.el ) || ( ${ECHO} "Make rgb table from color-mate-rgb.el.std" ; ${CP} ./color-mate-rgb.el.std ./color-mate-rgb.el)
 # Create Xresource for theme
 	cd ${WRKSRC}/theme; \
 	${SH} ${FILESDIR}/theme_build.sh

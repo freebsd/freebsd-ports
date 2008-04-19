@@ -20,7 +20,7 @@
 -#define RGB_DB3 "/usr/X11R6/lib/X11/rgb.txt"
 +#define RGB_DB1 "%%PREFIX%%/share/netpbm/rgb.txt"
 +#define RGB_DB2 "%%LOCALBASE%%/share/netpbm/rgb.txt"
-+#define RGB_DB3 "%%X11BASE%%/lib/X11/rgb.txt"
++#define RGB_DB3 "%%LOCALBASE%%/lib/X11/rgb.txt"
  #endif
  
  /* CONFIGURE: This is the name of an environment variable that tells

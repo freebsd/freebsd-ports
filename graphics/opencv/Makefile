@@ -8,10 +8,9 @@
 
 PORTNAME=	opencv
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	opencvlibrary
+MASTER_SITES=	SF/opencvlibrary
 
 MAINTAINER=	msabramo@yahoo.com
 COMMENT=	Open Source Computer Vision Library from Intel
@@ -56,7 +55,6 @@ OPTIONS=	GTK "Enable GTK+-2.0 support" Off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GTK)
-USE_XLIB=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=--with-gtk
 .else
@@ -86,9 +84,9 @@ CONFIGURE_ARGS+=--without-gtk
 #.endif
 
 .if defined(WITH_XINE)
-CFLAGS+=	-I${X11BASE}/include
-CPPFLAGS+=	-I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--with-xine
 .else

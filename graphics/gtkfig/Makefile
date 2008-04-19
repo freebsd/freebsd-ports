@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkfig
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://k332.feld.cvut.cz/pub/local/lemming/gtkfig/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Figure-drawing tool
 
 PLIST_FILES=	bin/gtkfig
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -17,7 +18,6 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
 CFLAGS:=	${CFLAGS} -O2
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

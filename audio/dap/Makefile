@@ -18,8 +18,7 @@ COMMENT=	Audio sample editing and processing suite
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 MAKEFILE=	Makefile.linux
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 MAKE_ENV+=	OTHER_INCLUDE_DIR=. OTHER_LIBRARY_DIR=.
 

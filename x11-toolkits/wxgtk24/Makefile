@@ -7,11 +7,10 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.4.2
-PORTREVISION?=	15
+PORTREVISION?=	16
 PKGNAMESUFFIX=	${WXGTK_FLAVOR}
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	wxwindows
+MASTER_SITES=	SF/wxwindows
 DISTNAME=	wxGTK-${PORTVERSION}
 
 MAINTAINER?=	fjoe@FreeBSD.org
@@ -22,8 +21,8 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_GL=		yes
+USE_XORG=	x11 sm xxf86vm xinerama
+USE_GL=		glu
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
@@ -38,12 +37,10 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--includedir=${PREFIX}/include/wx-2.4
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include \
 			  -I${LOCALBASE}/include \
-			  -I${X11BASE}/include \
 			  ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv \
-			 -L${X11BASE}/lib \
 			 ${PTHREAD_LIBS}"\
-		X11BASE="${X11BASE}"
+		X11BASE="${LOCALBASE}"
 NO_LATEST_LINK=	yes
 PLIST=		${.CURDIR}/pkg-plist
 

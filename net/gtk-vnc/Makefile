@@ -7,16 +7,15 @@
 
 PORTNAME=	gtk-vnc
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	net gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtk-vnc
+MASTER_SITES=	SF
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC viewer widget for GTK+
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 
-USE_XLIB=	yes
 USE_GNOME=	pygtk2 gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

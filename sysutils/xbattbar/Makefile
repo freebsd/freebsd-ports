@@ -7,7 +7,7 @@
 
 PORTNAME=	xbattbar
 PORTVERSION=	1.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://iplab.aist-nara.ac.jp/member/suguru/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -16,7 +16,6 @@ MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Simple battery meter
 
 USE_IMAKE=	yes
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xbattbar-${PORTVERSION}
 MAN1=		xbattbar.1
 PLIST_FILES=	bin/xbattbar

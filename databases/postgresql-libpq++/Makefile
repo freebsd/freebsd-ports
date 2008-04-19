@@ -19,7 +19,7 @@ COMMENT=	C++ interface for  PostgreSQL
 
 USE_PGSQL=	YES
 USE_GMAKE=	YES
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 
 post-patch:
 	${REINPLACE_CMD} "s,/usr/local/pgsql,${PREFIX},; \

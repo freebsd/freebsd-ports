@@ -12,7 +12,7 @@
  RANLIB   = ranlib
  
 -INCLUDES = -I../ui -I../editor -I../globals -Iencoder -Idecoder
-+INCLUDES = -I../ui -I../editor -I../globals -Iencoder -Idecoder -I$(X11BASE)/include
++INCLUDES = -I../ui -I../editor -I../globals -Iencoder -Idecoder -I$(LOCALBASE)/include
  DEPFILE  = Dependancies
  SUBDIRS  = decoder encoder
  HEADERS  = bstream.H frame.H mpeg.H

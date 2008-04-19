@@ -22,8 +22,8 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20 gnometarget gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	include/gtkcairo.h \
 		lib/libgtkcairo.a \

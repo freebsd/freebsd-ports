@@ -4,7 +4,7 @@
  		--with-ttf $$TTFINCDIR \
  		--with-afterbase=no \
  		--disable-glx \
-+		--x-libraries=$(X11BASE)/lib --x-includes=$(X11BASE)/include \
++		--x-libraries=$(LOCALBASE)/lib --x-includes=$(LOCALBASE)/include \
  		$$MMX \
  		$(ASTEPDBG) \
  		--with-builtin-ungif \

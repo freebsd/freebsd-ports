@@ -25,7 +25,7 @@ PLIST_FILES=	bin/xbomb \
 PLIST_DIRS=	lib/X11/xbomb
 
 do-build:
-	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} -DX11BASE=\"${X11BASE}\" \
+	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} -DLOCALBASE=\"${LOCALBASE}\" \
 		`pkg-config --cflags xaw8` *.c -o xbomb \
 		`pkg-config --libs xaw8`
 

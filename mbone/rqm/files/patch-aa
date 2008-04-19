@@ -18,7 +18,7 @@
    FreeBSD ) CC="gcc"
              WFLAGS=$GCCWFLAGS
 -	    INCLUDE="-I/usr/local/include"
-+	    INCLUDE="-I${PREFIX}/include -I${X11BASE}/include"
++	    INCLUDE="-I${LOCALBASE}/include"
  	    LDLIBS="-lm"
  	    DEBUG="-g"
  	    CHAR="-fsigned-char"

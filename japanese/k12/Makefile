@@ -7,7 +7,7 @@
 
 PORTNAME=	kaname12
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://www.din.or.jp/~storm/fonts/
@@ -18,10 +18,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	mita@jp.FreeBSD.org
 COMMENT=	X11 12-dot kanji font
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
-
-USE_X_PREFIX=	yes
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 .include <bsd.port.pre.mk>
 

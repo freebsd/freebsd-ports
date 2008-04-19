@@ -15,8 +15,8 @@
  # Linux
 -CFLAGS = -DSYSV -I/usr/include/X11 -Wall
 -LDFLAGS = -L/usr/X11R6/lib -lX11
-+CFLAGS += -I$(X11BASE)/include
-+LDFLAGS = -L$(X11BASE)/lib -lX11
++CFLAGS += -I$(LOCALBASE)/include
++LDFLAGS = -L$(LOCALBASE)/lib -lX11
  
  SOUND = blockade-snd.o
  SOUNDH = blockade-snd.h

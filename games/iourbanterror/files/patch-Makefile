@@ -213,7 +213,7 @@
 +  endif
 +
 +  ifneq ($(USE_SDL_VIDEO),1)
-+    CLIENT_LDFLAGS += -L$(X11BASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
++    CLIENT_LDFLAGS += -L$(LOCALBASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
    endif
  
    ifeq ($(USE_OPENAL),1)

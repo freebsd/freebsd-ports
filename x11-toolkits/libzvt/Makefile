@@ -7,7 +7,7 @@
 
 PORTNAME=	libzvt
 PORTVERSION=	2.0.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library components for Zed's Virtual Terminal
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 USE_BISON=	build
 USE_LDCONFIG=	yes

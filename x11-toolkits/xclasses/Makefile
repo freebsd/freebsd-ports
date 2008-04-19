@@ -9,8 +9,7 @@ PORTNAME=	xclasses
 PORTVERSION=	1.4.0
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xcmail
+MASTER_SITES=	SF/xcmail
 DISTNAME=	Xclasses-public-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -33,7 +32,7 @@ pre-configure:
 	@${PERL} -pi \
 		-e "s|%%CXX%%|${CXX}|g;" \
 		-e "s|%%CXXFLAGS%%|${CXXFLAGS}|g;" \
-		-e "s|%%X11BASE%%|${X11BASE}|g;" ${WRKSRC}/${file}
+		-e "s|%%LOCALBASE%%|${LOCALBASE}|g;" ${WRKSRC}/${file}
 .endfor
 	${REINPLACE_CMD} -e 's|\([:alnum:]\)\\$$|\1 \\|' ${WRKSRC}/Makefile
 

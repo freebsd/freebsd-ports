@@ -17,8 +17,7 @@ COMMENT=	An audio mixer for the WindowMaker dock
 
 PLIST_FILES=	bin/wmfmixer
 USE_GMAKE=	yes
-USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	xpm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

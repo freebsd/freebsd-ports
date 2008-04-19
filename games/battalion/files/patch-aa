@@ -37,7 +37,7 @@
  # STEP 7: CHOOSE ANY OPTIMIZATIONS OR ADD ANY SPECIAL INCLUSIONS
  # ------------------------------------------------------------
 -CFLAGS     = -O  -I/usr/local/X11/include -I/usr/demo/SOUND/ -I./.
-+CFLAGS+= -I${X11BASE}/include -DPREFIX=\"${PREFIX}\"
++CFLAGS+= -I${LOCALBASE}/include -DPREFIX=\"${PREFIX}\"
  
  
  # STEP 8: ADD ANY SPECIAL LIBRARY PATHS
@@ -46,7 +46,7 @@
  
  OBJ 	= battalion.o audio.o net.o gprim.o graphics.o objects.o text.o update.o tk.o font.o
 -LIBS    = -L./. -L/usr/X11R6/lib -lm -lX11 -lXext
-+LIBS    = -L./. -L${X11BASE}/lib -lm -lX11 -lXext -lcompat $(PTHREAD_LIBS)
++LIBS    = -L./. -L${LOCALBASE}/lib -lm -lX11 -lXext -lcompat $(PTHREAD_LIBS)
  
  all:	$(TARGET)
  

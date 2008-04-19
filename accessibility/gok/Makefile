@@ -8,6 +8,7 @@
 
 PORTNAME=	gok
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	accessibility sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -19,7 +20,6 @@ COMMENT=	GNOME On-Screen Keyboard (GOK)
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui atspi libwnck \
 		gnomespeech

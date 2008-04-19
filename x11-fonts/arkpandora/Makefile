@@ -7,7 +7,7 @@
 
 PORTNAME=	arkpandora
 PORTVERSION=	2.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.users.bigpond.net.au/gavindi/
 DISTNAME=	ttf-${PORTNAME}-${PORTVERSION}
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
 		ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 
@@ -33,7 +33,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-TTMKFDIR_CMD?=	${X11BASE}/bin/ttmkfdir
+TTMKFDIR_CMD?=	${LOCALBASE}/bin/ttmkfdir
 
 .SILENT:
 
@@ -75,7 +75,7 @@ install-conf:
 
 post-install:
 	${ECHO_MSG} "===> Running fc-cache"
-	-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
+	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
 	${ECHO_MSG}
 	${CAT} ${PKGMESSAGE}
 	${ECHO_MSG}

@@ -15,12 +15,11 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	hernan.di.pietro@gmail.com
 COMMENT=	An impressive OpenGL Demo
 
-LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut
 
-USE_GL=		yes
+USE_GL=		glut
 
-MAKE_ARGS=	'CXXFLAGS=${CXXFLAGS} -I${X11BASE}/include -pipe -s -O2' \
-		'LDFLAGS=-L${X11BASE}/lib -lGL -lglut'
+MAKE_ARGS=	'CXXFLAGS=${CXXFLAGS} -I${LOCALBASE}/include -pipe -s -O2' \
+		'LDFLAGS=-L${LOCALBASE}/lib -lGL -lglut'
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/scene*.cpp

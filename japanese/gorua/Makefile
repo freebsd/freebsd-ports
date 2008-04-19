@@ -16,7 +16,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Gtk+ on Ruby User Agent for 2ch BBS
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
-		${X11BASE}/lib/X11/fonts/local/mona6x12a.pcf.gz:${PORTSDIR}/japanese/monafonts
+		${LOCALBASE}/lib/X11/fonts/local/mona6x12a.pcf.gz:${PORTSDIR}/japanese/monafonts
 
 USE_BZIP2=	yes
 USE_RUBY=	yes

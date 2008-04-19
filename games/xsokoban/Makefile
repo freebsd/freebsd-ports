@@ -17,7 +17,7 @@ COMMENT=	A puzzle of pushing objects to the goals
 
 USE_IMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_XPM=	yes
+USE_XORG=	xpm
 WRKSRC=		${WRKDIR}/xsokoban
 ALL_TARGET=	xsokoban
 MAN1=		xsokoban.1

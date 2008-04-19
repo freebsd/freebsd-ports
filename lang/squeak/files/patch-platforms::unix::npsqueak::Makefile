@@ -5,7 +5,7 @@
  ############ Customize flags here #######################
  
 -INC	= -I./include -I/usr/X11R6/include
-+INC	= -I./include -I%%X11BASE%%/include
++INC	= -I./include -I%%LOCALBASE%%/include
  CC	= gcc
  CFLAGS	= $(INC) -O2 -fPIC -Wall
  LD	= gcc
@@ -14,7 +14,7 @@
  
  npsqueak.so : npsqueak.o npunix.o 
 -	$(LD) $(LDFLAGS) npsqueak.o npunix.o -o npsqueak.so 
-+	$(LD) $(LDFLAGS) npsqueak.o npunix.o -o npsqueak.so -L%%X11BASE%%/lib -lXt -lX11
++	$(LD) $(LDFLAGS) npsqueak.o npunix.o -o npsqueak.so -L%%LOCALBASE%%/lib -lXt -lX11
  
  npsqueak.o: npsqueak.c ../config.h
  	$(CC) -c $(CFLAGS) -DVM_LIBDIR=\"$(VM_LIBDIR)\" $<

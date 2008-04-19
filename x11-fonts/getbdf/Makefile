@@ -7,7 +7,7 @@
 
 PORTNAME=	getbdf
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.netsw.org/x11/tools/internal/
 DISTNAME=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	Convert any X server font to .bdf format
 
 PLIST_FILES=	bin/getbdf
 USE_PERL5_BUILD=yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	getbdf
 

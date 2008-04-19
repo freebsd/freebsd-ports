@@ -8,7 +8,7 @@
 
 PORTNAME=	epiphany
 PORTVERSION=	2.22.1.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -26,7 +26,6 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_PYTHON=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils

@@ -7,14 +7,14 @@
 
 PORTNAME=	xbraitenberg
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.lcdf.org/~eddietwo/xbraitenberg/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Braitenberg vehicle simulator with pseudo-physics
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 ice sm xext
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 

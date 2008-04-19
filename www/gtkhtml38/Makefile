@@ -8,7 +8,7 @@
 
 PORTNAME=	gtkhtml3
 PORTVERSION=	3.12.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -25,7 +25,6 @@ DEPRECATED=	Older API; newer applications should use www/gtkhtml3
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gail libgnomeui ltverhack \
 		libgnomeprintui

@@ -5,8 +5,8 @@
  
 -INCLUDES =-I/usr/X11R6/include/X11 -I/usr/local/include -I/usr/include/X11R6/X11
 -LIBINC =-L/usr/X11R6/lib -L/usr/include/lib
-+INCLUDES = -I${X11BASE}/include/X11 -I${X11BASE}/include
-+LIBINC = -L${X11BASE}/lib
++INCLUDES = -I${LOCALBASE}/include/X11 -I${LOCALBASE}/include
++LIBINC = -L${LOCALBASE}/lib
  LIBS = -lm -lX11 -lXpm -lXext
  
  TARGET  = wmcp

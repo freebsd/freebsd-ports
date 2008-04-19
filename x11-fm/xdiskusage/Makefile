@@ -34,10 +34,10 @@ BROKEN=		Does not compile
 
 do-build:
 .for i in panels xdiskusage
-	${CXX} ${CXXFLAGS} -I${X11BASE}/include -c \
+	${CXX} ${CXXFLAGS} -I${LOCALBASE}/include -c \
 		${WRKSRC}/${i}.C -o ${WRKSRC}/${i}.o
 .endfor
-	${CXX} ${CXXFLAGS} -L${X11BASE}/lib -o \
+	${CXX} ${CXXFLAGS} -L${LOCALBASE}/lib -o \
 		${WRKSRC}/xdiskusage ${WRKSRC}/panels.o \
 		${WRKSRC}/xdiskusage.o -lfltk -lm -lXext -lX11 ${LDFLAGS}
 

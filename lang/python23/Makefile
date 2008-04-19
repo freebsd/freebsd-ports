@@ -22,7 +22,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 MAKE_ENV=	VPATH="${WRKSRC}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
@@ -111,7 +111,7 @@ pre-patch:
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${WRKSRC}/Lib/pydoc.py
 	${REINPLACE_CMD} -e \
-		's|^\(prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
+		's|^\(prefixes = .*\)\]$$|\1, "${LOCALBASE}"]|g' \
 		${WRKSRC}/Lib/site.py
 .for ver in 6 7 8
 	${MKDIR} ${WRKSRC}/Lib/plat-freebsd${ver}

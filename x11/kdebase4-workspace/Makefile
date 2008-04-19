@@ -18,7 +18,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
 RUN_DEPENDS=	${KDE_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde-xdg-env
-BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		smbclient:${PORTSDIR}/net/samba-libsmbclient \
 		usb-0.1:${PORTSDIR}/devel/libusb
@@ -33,7 +33,7 @@ USE_OPENSSL=	yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 SUB_FILES=	kdm pkg-deinstall pkg-install pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -45,8 +45,8 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 CONFIGURE_ENV+=	RUN_KAPPFINDER=no kde_cv_utmp_file=/var/run/utmp
 CONFIGURE_ARGS+=--without-java			\
-		--with-qt-dir=${X11BASE}	\
-		--with-xdmdir=${X11BASE}/lib/X11/xdm \
+		--with-qt-dir=${LOCALBASE}	\
+		--with-xdmdir=${LOCALBASE}/lib/X11/xdm \
 		--with-ssl-dir=${OPENSSLBASE}
 
 OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \

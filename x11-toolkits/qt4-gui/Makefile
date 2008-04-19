@@ -8,7 +8,7 @@
 
 PORTNAME=	gui
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -18,7 +18,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt graphical user interface library
 
-LIB_DEPENDS?=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS?=	png:${PORTSDIR}/graphics/png \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build corelib
@@ -27,7 +28,8 @@ QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
+USE_XORG=	xrender xrandr xinerama inputproto xfixes sm xcursor \
+		xext x11 ice xi xt
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH

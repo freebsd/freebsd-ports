@@ -34,7 +34,7 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --target-os=linux --target-cpu=i386 \
-		--with-x11-prefix=${X11BASE} --with-cc=${CC} --with-cxx=${CXX}
+		--with-x11-prefix=${LOCALBASE} --with-cc=${CC} --with-cxx=${CXX}
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
@@ -49,7 +49,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,x86_64,amd64,g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${LIBDIR}/i386/linux
@@ -60,7 +60,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 # XXX switch to USE_XORG once XFree86-4 is removed
-BUILD_DEPENDS+=	${X11BASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
-RUN_DEPENDS+=	${X11BASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
+RUN_DEPENDS+=	${LOCALBASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
 
 .include <bsd.port.post.mk>

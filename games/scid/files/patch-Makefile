@@ -34,9 +34,9 @@
 -# TCL_INCLUDE = -I /usr/local/include/tcl8.0 -I /usr/local/include/tk8.0
 -# TCL_LIBRARY = -L /usr/local/lib -ltcl80 -ldl
 -# TK_LIBRARY  = $(TCL_LIBRARY) -ltk80 -L /usr/X11/lib -lX11
-+TCL_INCLUDE = -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 -I${X11BASE}/include
++TCL_INCLUDE = -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 -I${LOCALBASE}/include
 +TCL_LIBRARY = -L${LOCALBASE}/lib -ltcl84
-+TK_LIBRARY  = $(TCL_LIBRARY) -ltk84 -L${X11BASE}/lib -lX11
++TK_LIBRARY  = $(TCL_LIBRARY) -ltk84 -L${LOCALBASE}/lib -lX11
  
  
  ########################################

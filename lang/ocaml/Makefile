@@ -7,7 +7,7 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	3.10.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
@@ -54,8 +54,8 @@ CONFIGURE_ARGS+=-no-pthread
 
 .if !defined(WITHOUT_X11)
 PLIST_SUB+=	X11=""
-USE_XLIB=	yes
-CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
+USE_XORG=	x11
+CONFIGURE_ARGS+=-x11include ${LOCALBASE}/include -x11lib ${LOCALBASE}/lib
 .else
 PLIST_SUB+=	X11="@comment "
 WITHOUT_TK=	yes

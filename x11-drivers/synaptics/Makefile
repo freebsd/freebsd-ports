@@ -7,7 +7,7 @@
 
 PORTNAME=	synaptics
 PORTVERSION=	0.14.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://web.telia.com/~u89404340/touchpad/files/:synaptics
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:synaptics \
@@ -17,12 +17,9 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	The Synaptics touchpad X driver
 
-BUILD_DEPENDS=	${X11BASE}/bin/X:${X_SERVER_PORT}
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
+USE_XORG=	xorg-server xi xproto
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -54,7 +51,7 @@ post-extract:
 .endfor
 
 pre-install:
-	${MKDIR} ${X11BASE}/lib/xorg/modules/input/
+	${MKDIR} ${LOCALBASE}/lib/xorg/modules/input/
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -16,7 +16,7 @@ COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}_src_${PORTVERSION}/${PORTNAME}
@@ -42,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|^(CC=).*|\1${CC}|; \
 		 s|^(CXX=).*|\1${CXX}|; \
-		 s|/usr/X11R6|${X11BASE}|; \
+		 s|/usr/X11R6|${LOCALBASE}|; \
 		 s|sdl-config|${SDL_CONFIG}|' \
 		${WRKSRC}/Makefile \
 		${WRKSRC}/../build/Makefile \

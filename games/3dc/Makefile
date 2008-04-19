@@ -16,7 +16,7 @@ DISTNAME=		3Dc-${PORTVERSION}
 MAINTAINER=		adam-ports@blacktabby.org
 COMMENT=	3-Dimensional Chess for X Window System
 
-LIB_DEPENDS=		Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_PERL5_BUILD=yes
 USE_XORG=		xpm

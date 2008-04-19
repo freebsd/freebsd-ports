@@ -7,7 +7,7 @@
 
 PORTNAME=	renderpark
 PORTVERSION=	3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.kuleuven.ac.be/pub/graphics/software/RenderPark/
 DISTNAME=	RenderPark
@@ -19,7 +19,7 @@ DIST_SUBDIR=	${DISTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for physically based photo-realistic image synthesis
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+USE_GL=		glut
 
 .ifdef (WITH_XRML)
 LIB_DEPENDS+=	xrml.0:${PORTSDIR}/graphics/xrml
@@ -29,7 +29,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 WRKSRC2=	${WRKDIR}/Scenes
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 USE_GCC=	2.95
 NOT_FOR_ARCHS=	amd64 sparc64 ia64
@@ -62,9 +61,9 @@ post-patch:
 	@${ECHO_CMD} "" >> ${WRKSRC}/Config.site
 	@${ECHO_CMD} "####################################################" >> ${WRKSRC}/Config.site
 	@${ECHO_CMD} "# VRML input support (requires XRML library)" >> ${WRKSRC}/Config.site
-	@${ECHO_CMD} "VRMLHOME = ${X11BASE}" >> ${WRKSRC}/Config.site
-	@${ECHO_CMD} "VRMLFLAGS = -I${X11BASE}/include/xrml" >> ${WRKSRC}/Config.site
-	@${ECHO_CMD} "VRMLLIB = -L${X11BASE}/lib -lxrml" >> ${WRKSRC}/Config.site
+	@${ECHO_CMD} "VRMLHOME = ${LOCALBASE}" >> ${WRKSRC}/Config.site
+	@${ECHO_CMD} "VRMLFLAGS = -I${LOCALBASE}/include/xrml" >> ${WRKSRC}/Config.site
+	@${ECHO_CMD} "VRMLLIB = -L${LOCALBASE}/lib -lxrml" >> ${WRKSRC}/Config.site
 .endif
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
 			      s|%%CXX%%|${CXX}|g ;\

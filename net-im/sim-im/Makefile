@@ -6,7 +6,7 @@
 
 PORTNAME=	sim-im
 PORTVERSION=	0.9.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://sim-im.lehis.ru/dist/ \
@@ -33,9 +33,9 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
+USE_XORG=	x11 xext ice
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--prefix=${PREFIX} --x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 
 .if !defined(WITH_KDE)
 CONFIGURE_ARGS+=--disable-kde --enable-mt

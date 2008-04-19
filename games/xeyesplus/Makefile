@@ -7,7 +7,7 @@
 
 PORTNAME=	xeyes+
 PORTVERSION=	2.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.asahi-net.or.jp/~fj9y-ynym/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -15,14 +15,13 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Horrible eyes looking at your mouse cursor
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 PLIST_FILES=	bin/xeyes+
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${X11BASE}/include -DXPM -DUSLEEP \
-		-o xeyes+ xeyes+.c -L${X11BASE}/lib -lX11 -lXpm -lm
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${LOCALBASE}/include -DXPM -DUSLEEP \
+		-o xeyes+ xeyes+.c -L${LOCALBASE}/lib -lX11 -lXpm -lm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xeyes+ ${PREFIX}/bin

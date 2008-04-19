@@ -5,7 +5,7 @@
  #ifndef DEFAULT_PATH_VALUE
  #define DEFAULT_PATH_VALUE \
 -  "/usr/gnu/bin:/usr/local/bin:/bin:/usr/bin:."
-+  "/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin:%%X11BASE%%/bin"
++  "/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin"
  #endif
  
  /* The value for PATH when invoking `command -p'.  This is only used when

@@ -27,11 +27,11 @@
 --- 1,10 ----
   OBJS=           getbdf.o Xargs.o open_display.o
   
-! CFLAGS+=        -I. -I${X11BASE}/include
+! CFLAGS+=        -I. -I${LOCALBASE}/include
   
   
   getbdf:         $(OBJS)
-! 		cc $(CFLAGS) $(OBJS) -o getbdf -L${X11BASE}/lib -lX11 -lm
+! 		cc $(CFLAGS) $(OBJS) -o getbdf -L${LOCALBASE}/lib -lX11 -lm
   
   clean:
   	               rm -f $(OBJS) getbdf

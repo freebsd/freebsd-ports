@@ -26,6 +26,6 @@ INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2 gnomehier
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>

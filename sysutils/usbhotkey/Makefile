@@ -8,8 +8,7 @@
 PORTNAME=		usbhotkey
 PORTVERSION=		0.3.1
 CATEGORIES=		sysutils
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	usbhotkey
+MASTER_SITES=		SF/usbhotkey
 
 MAINTAINER=		ntarmos@ceid.upatras.gr
 COMMENT=		A utility to remap USB keyboards under X11
@@ -22,8 +21,8 @@ OPTIONS=		GUI "Enable GUI bits (Imlib dependency)" on
 USE_RUBY=		yes
 USE_GMAKE=		yes
 HAS_CONFIGURE=		yes
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 

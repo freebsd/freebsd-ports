@@ -7,7 +7,7 @@
 
 PORTNAME=	gresolver
 PORTVERSION=	0.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://jodrell.net/files/gresolver/
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Lo
 		${SITE_PERL}/Net/IPv6Addr.pm:${PORTSDIR}/net-mgmt/p5-Net-IPv6Addr
 
 USE_PERL5=	yes
-USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 

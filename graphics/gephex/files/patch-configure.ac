@@ -17,7 +17,7 @@
  # optional libraries
  
 +ac_save_CFLAGS="$CFLAGS"
-+CFLAGS="${CFLAGS} -I%%X11BASE%%/include"
++CFLAGS="${CFLAGS} -I%%LOCALBASE%%/include"
 +
  CHECK_EXTRA_LIB([GL],
                  [AC_CHECK_HEADER([GL/glx.h],have_gl=yes,have_gl=no)],

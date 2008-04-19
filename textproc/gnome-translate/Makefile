@@ -7,7 +7,7 @@
 
 PORTNAME=		gnome-translate
 PORTVERSION=		0.99
-PORTREVISION=		8
+PORTREVISION=		9
 CATEGORIES=		textproc
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	libtranslate
@@ -20,7 +20,6 @@ LIB_DEPENDS=		translate:${PORTSDIR}/textproc/libtranslate
 INSTALLS_OMF=		yes
 INSTALLS_ICONS=		yes
 GCONF_SCHEMAS=		gnome-translate.schemas
-USE_X_PREFIX=		yes
 USE_GNOME=		gnomehack gnomeprefix eel2 intlhack
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes

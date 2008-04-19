@@ -8,7 +8,7 @@
 
 PORTNAME=	nautilus
 PORTVERSION=	2.22.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,7 +22,6 @@ INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop eel2 \
 		librsvg2 desktopfileutils ltverhack gvfs ltasneededhack
 GNOME_DESKTOP_VERSION=2

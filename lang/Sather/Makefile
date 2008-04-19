@@ -31,7 +31,7 @@ INFO=		sather sather-mode sather-tutorial
 
 SAT_CFLAGS=	${CFLAGS} -I. -I${BC_DIR}/include \
 		-I../System/Common \
-		-I${LOCALBASE}/include -I${X11BASE}/include \
+		-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4
 SAT_LIBS=	-L${BC_DIR}/.libs -L${LOCALBASE}/lib -lgc -lm
 SAT_LIBDIR=	${PREFIX}/lib/sather
@@ -59,8 +59,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s,/usr/lib/sather,${SAT_LIBDIR}," \
-		-e "s,/usr/X11R6,${X11BASE}," \
-		-e "s,/usr/X11R6,${X11BASE}," \
+		-e "s,/usr/X11R6,${LOCALBASE}," \
+		-e "s,/usr/X11R6,${LOCALBASE}," \
 		${WRKSRC}/Boot/sacomp.code/strings.c \
 		${WRKSRC}/Doc/Installation.html \
 		${WRKSRC}/Doc/man/man1/sabrowse.1 \

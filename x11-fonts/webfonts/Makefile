@@ -43,11 +43,11 @@ EXTRACT_AFTER_ARGS=
 #
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-TTFONTSDIR?=	${X11BASE}/lib/X11/fonts/TrueType
+TTFONTSDIR?=	${LOCALBASE}/lib/X11/fonts/TrueType
 
 PLIST_SUB=	FONTNAME="${FONTNAME}" \
 		FONTSDIR="${FONTSDIR:S|${PREFIX}/||}" \
-		TTFONTSDIR="${TTFONTSDIR:S|${X11BASE}/||}"
+		TTFONTSDIR="${TTFONTSDIR:S|${LOCALBASE}/||}"
 
 SUB_LIST=	FONTSDIR="${FONTSDIR}" DOCSDIR="${DOCSDIR}"
 SUB_FILES=	pkg-message
@@ -108,7 +108,7 @@ do-install:
 #
 post-install:
 	${ECHO_MSG} "===> Running fc-cache"
-	-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
+	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
 	${ECHO_MSG}
 	${CAT} ${PKGMESSAGE}
 	${ECHO_MSG}

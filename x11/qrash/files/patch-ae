@@ -3,7 +3,7 @@
 @@ -1,10 +1,10 @@
  # Maximum optimization
 -CXXFLAGS += -O6 -ffast-math -funroll-loops -w
-+CXXFLAGS += -I$(X11BASE)/include -ffast-math -funroll-loops
++CXXFLAGS += -I$(LOCALBASE)/include -ffast-math -funroll-loops
  
  # Debugging options
  #CXXFLAGS += -g

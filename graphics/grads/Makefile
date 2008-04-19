@@ -20,7 +20,7 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	The Grid Analysis and Display System
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libudunits.a:${PORTSDIR}/science/udunits \
-		${X11BASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
+		${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png

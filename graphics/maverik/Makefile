@@ -23,7 +23,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		DISTNAME="${DISTNAME}"
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	setup
-CONFIGURE_ARGS=	--MESAPATH=${X11BASE}
+CONFIGURE_ARGS=	--MESAPATH=${LOCALBASE}
 USE_LDCONFIG=	yes
 MANCOMPRESSED=	no
 
@@ -49,7 +49,7 @@ post-extract:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genman3list.sh
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%X11BASE%%,${X11BASE},g ; \
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
 		s,%%CC%%,${CC},g ; \
 		s,%%CXX%%,${CXX},g ; \
 		s,%%CFLAGS%%,${CFLAGS},g ; \

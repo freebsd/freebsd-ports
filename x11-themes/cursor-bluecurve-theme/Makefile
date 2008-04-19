@@ -18,8 +18,6 @@ BROKEN=		Incorrect pkg-plist and unfetchable
 DEPRECATED=		"${BROKEN}"
 EXPIRATION_DATE=	2007-11-02
 
-PREFIX=		${X11BASE}
-
 THEMES=		Bluecurve Bluecurve-inverse LBluecurve LBluecurve-inverse
 
 .for t in ${THEMES}
@@ -45,7 +43,7 @@ do-build:
 .include "${MASTERDIR}/bsd.bluecurve.mk"
 .include <bsd.port.pre.mk>
 
-BUILD_DEPENDS+=	xcursorgen:${X_CLIENTS_PORT}	# needed by cursorthemegen
-RUN_DEPENDS+=	xcursorgen:${X_CLIENTS_PORT}	# for the lib/X11/icons directory
+BUILD_DEPENDS+=	xcursorgen:${PORTSDIR}/x11/xcursorgen	# needed by cursorthemegen
+RUN_DEPENDS+=	xcursorgen:${PORTSDIR}/x11/xcursorgen	# for the lib/X11/icons directory
 
 .include <bsd.port.post.mk>

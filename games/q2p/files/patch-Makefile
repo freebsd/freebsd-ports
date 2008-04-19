@@ -161,7 +161,7 @@
 +GAME_NAME=game.$(SHLIB_EXT)
  
  BASE_CFLAGS+=-I$(LOCALBASE)/include \
-             -I$(X11BASE)/include \
+             -I$(LOCALBASE)/include \
 @@ -168,15 +165,14 @@
  
  ifeq ($(strip $(OPTIMIZE)),YES)

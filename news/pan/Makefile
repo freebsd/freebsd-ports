@@ -8,6 +8,7 @@
 
 PORTNAME=	pan
 PORTVERSION=	0.132
+PORTREVISION=	1
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -18,7 +19,6 @@ COMMENT=	Threaded GTK+2 newsreader based on Agent for Windows
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gmime-2.0.4:${PORTSDIR}/mail/gmime2
 
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20 intlhack

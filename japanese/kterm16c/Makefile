@@ -28,12 +28,12 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xterm that speaks Japanese with 16 colors like on a VGA
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf \
-		mkfontdir:${X_CLIENTS_PORT}
-EXTRACT_DEPENDS=bdftopcf:${X_CLIENTS_PORT}
+BUILD_DEPENDS=		nkf:${PORTSDIR}/japanese/nkf
+RUN_DEPENDS=		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+EXTRACT_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 .include <bsd.port.pre.mk>
 

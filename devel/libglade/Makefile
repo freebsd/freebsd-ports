@@ -7,7 +7,7 @@
 
 PORTNAME=	libglade
 PORTVERSION=	0.17
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libglade/0.17
@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	sources/libglade/0.17
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME glade library
 
-USE_XLIB=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gnomedb

@@ -7,7 +7,7 @@
 
 PORTNAME=	gxditview
 PORTVERSION=	${GXDVVERSION}${GXDVREVISION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 DISTFILES=	# none
 
@@ -28,7 +28,7 @@ GXDVREVISION!=	sed -e 's/^0$$//' -e 's/^[1-9].*$$/.&/' /usr/src/contrib/groff/RE
 
 .if exists(/usr/src/contrib/groff/src/devices/xditview) && \
     exists(/usr/src/gnu/usr.bin/groff/src/devices/xditview)
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xproto xt xmu xaw
 MANCOMPRESSED=	maybe
 WRKSRC=		/usr/src/gnu/usr.bin/groff/src/devices/xditview
 MAKE_ENV=	MAKEOBJDIR=${WRKDIR}

@@ -7,7 +7,7 @@
 
 PORTNAME=	bamg
 PORTVERSION=	0.68
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math science
 MASTER_SITES=	http://pauillac.inria.fr/cdrom/ftp/bamg/	\
 		http://www-rocq1.inria.fr/gamma/cdrom/ftp/bamg/	\
@@ -24,7 +24,7 @@ RESTRICTED=	No resale, contact author for commercial usage
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 
 ALL_TARGET=	world

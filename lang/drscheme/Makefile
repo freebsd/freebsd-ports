@@ -7,7 +7,7 @@
 
 PORTNAME=	drscheme
 PORTVERSION=	370
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -23,17 +23,15 @@ EXTRACT_ONLY=	plt-${PORTVERSION}-src-unix.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft	\
-		Xrender.1:${PORTSDIR}/x11/libXrender	\
-		cairo.2:${PORTSDIR}/graphics/cairo	\
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo	\
 		jpeg.9:${PORTSDIR}/graphics/jpeg	\
 		png.5:${PORTSDIR}/graphics/png
 
+USE_XORG=	xft x11 xrender
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared --enable-xft --enable-gl \
 		--enable-xrender --enable-cairo --with-x --enable-pthread \
 		--enable-lt=${LIBTOOL} \
-		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}"
 

@@ -15,7 +15,7 @@
  
  adamem: $(OBJECTS)
 -	$(LD) -s -Wl,-Map,adamem.map -L/usr/X11R6/lib \
-+	$(LD) -s -Wl,-Map,adamem.map -L${X11BASE}/lib \
++	$(LD) -s -Wl,-Map,adamem.map -L${LOCALBASE}/lib \
                -o adamem $(OBJECTS) -lXext -lX11 -lz
  
  cvem: adamem

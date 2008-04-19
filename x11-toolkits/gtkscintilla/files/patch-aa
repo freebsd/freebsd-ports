@@ -20,7 +20,7 @@ $FreeBSD$
 -CFLAGS = $(shell gtk-config --cflags) -g -Wall -DGTK -DSCI_LEXER
 -LDFLAGS_PRE = $(shell gtk-config --libs) -DGTK 
 -LDFLAGS_POST =  $(LEXERS)  $(SCINTILLA_LIB) -lstdc++
-+SCINTILLA_INCLUDE = $(X11BASE)/include/scintilla
++SCINTILLA_INCLUDE = $(LOCALBASE)/include/scintilla
 +SCINTILLA_LIB = -lscintilla
 +SCINTILLA_IFACE = scintilla/include/Scintilla.iface
 +LEXERS = -lscintilla_lexers

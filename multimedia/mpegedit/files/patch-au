@@ -9,7 +9,7 @@
 +#CC		= gcc
 +CPP 		= ${CXX}
  RANLIB          = ranlib
-+INCLUDES	= -I$(X11BASE)/include
++INCLUDES	= -I$(LOCALBASE)/include
  DEPFILE 	= Dependencies
  CCOPTIMISATIONS = -O6 -funroll-loops -fomit-frame-pointer
  ANALYSIS 	= -DANALYSIS

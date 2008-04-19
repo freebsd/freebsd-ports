@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-libs
 PORTVERSION=	1.4.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-libs/1.4
@@ -21,8 +21,7 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	xpm ice x11
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix esound gtk12 imlib libxml orbit

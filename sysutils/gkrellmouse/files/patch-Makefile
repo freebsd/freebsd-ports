@@ -5,7 +5,7 @@
  
  # This should point to your gkrellm headers
 -GKRELLM_HDRS := /usr/include/gkrellm
-+GKRELLM_HDRS := ${X11BASE}/include/gkrellm
++GKRELLM_HDRS := ${LOCALBASE}/include/gkrellm
  
 -CC := gcc
 -GTKFLAGS := $(shell gtk-config --cflags)

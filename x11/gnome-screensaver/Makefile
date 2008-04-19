@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-screensaver
 PORTVERSION=	2.22.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +20,6 @@ LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	xscreensaver-gl-helper:${PORTSDIR}/x11/xscreensaver-gnome-hacks
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

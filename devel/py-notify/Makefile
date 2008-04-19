@@ -7,7 +7,7 @@
 
 PORTNAME=	notify
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=python-
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/notify-python/
@@ -18,7 +18,6 @@ COMMENT=	A python bindings for libnotify
 
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
 
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pygtk2

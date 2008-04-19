@@ -27,6 +27,6 @@ post-configure:
 	  -e 's/^INSTMRISFLAGS.*/INSTMRISFLAGS = \$(OWNER) -m 2555/' Makefile
 
 post-install:
-	@${CHMOD} g+w ${X11BASE}/lib/X11/xmris
+	@${CHMOD} g+w ${LOCALBASE}/lib/X11/xmris
 
 .include <bsd.port.mk>

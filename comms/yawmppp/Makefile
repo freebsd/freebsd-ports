@@ -7,21 +7,18 @@
 
 PORTNAME=	yawmppp
 PORTVERSION=	2.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms windowmaker
 MASTER_SITES=	ftp://ftp.seul.org/pub/yawmppp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Window Maker dockapp that helps with easy use of pppd
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-USE_XPM=	yes
-CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS} -I${X11BASE}/include"
-CONFIGURE_ARGS=	--x-includes="${X11BASE}/include" \
-		--x-libraries="${X11BASE}/lib"
+USE_XORG=	xpm x11
+CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 MAN1=		yawmppp.1x
 

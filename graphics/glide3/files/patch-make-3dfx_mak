@@ -5,7 +5,7 @@
  
  ifeq "$(OS)" "FreeBSD"
 -GCINCS	       = -I. -I$(BUILD_ROOT_SWLIBS)/include -I$(BUILD_ROOT_HW)/include -I/usr/X11R6/include
-+GCINCS	       = -I. -I$(BUILD_ROOT_SWLIBS)/include -I$(BUILD_ROOT_HW)/include -I$(X11BASE)/include
++GCINCS	       = -I. -I$(BUILD_ROOT_SWLIBS)/include -I$(BUILD_ROOT_HW)/include -I$(LOCALBASE)/include
  GCOPTS	       = -Wall
 -# 
 -# BIG_OPT Indicates O3(?) or better is being used. It changes the

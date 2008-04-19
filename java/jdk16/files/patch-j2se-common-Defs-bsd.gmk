@@ -7,7 +7,7 @@ $FreeBSD$
  override MOOT_PRIORITIES         = true
  override NO_INTERRUPTIBLE_IO     = false
 -override OPENWIN_HOME            = /usr/X11R6
-+override OPENWIN_HOME            = ${X11BASE}
++override OPENWIN_HOME            = ${LOCALBASE}
  override OPENWIN_LIB             = $(OPENWIN_HOME)/lib
  override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
  override SUN_CMM_SUBDIR          =

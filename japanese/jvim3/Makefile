@@ -35,13 +35,13 @@ PORT_DOCDIR=	${PREFIX}/share/doc/ja-jvim-${PORTVERSION}
 # -DUSE_X11 is the cause of a problem treating Japanese
 MACHINE=	-DBSD_UNIX -DUSE_LOCALE
 CC=		cc ${CFLAGS} -Wall
-LIBS=		-ltermlib -L${PREFIX}/lib 
+LIBS=		-ltermlib -L${PREFIX}/lib
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 MACHINE+=	-DUSE_X11
-CC+=		-I${X11BASE}/include
-LIBS+=		-L${X11BASE}/lib -lX11
+CC+=		-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lX11
 .endif
 
 # Specifying a velue INPUT_METHOD, and seting values BUILD_DEPENDS,

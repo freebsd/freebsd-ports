@@ -31,7 +31,7 @@ IGNORE=		may not be automatically fetched due to licensing\
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 RESTRICTED=	"Redistribution not allowed"
 

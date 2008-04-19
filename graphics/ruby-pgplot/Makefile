@@ -26,7 +26,7 @@ USE_FORTRAN=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-CONFIGURE_ARGS=	--with-x11-dir="${X11BASE}" --with-gfortranlib="gfortran -L`${CAT} ${WRKSRC}/LIBDIR`/../../.."
+CONFIGURE_ARGS=	--with-x11-dir="${LOCALBASE}" --with-gfortranlib="gfortran -L`${CAT} ${WRKSRC}/LIBDIR`/../../.."
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	FuncUsage	README.en

@@ -7,7 +7,7 @@
 
 PORTNAME=	STk
 PORTVERSION=	4.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://kaolin.unice.fr/pub/STk/
@@ -16,8 +16,9 @@ MASTER_SITE_SUBDIR=	devel/lang/lisp
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scheme interpreter with full access to the Tk graphical package
 
-USE_XLIB=	yes
+USE_XORG=	x11 ice sm xt
 GNU_CONFIGURE=	yes
+CFLAGS=		-I${LOCALBASE}/include
 
 PLIST_SUB=	STK_VERSION=${PORTVERSION} STK_ARCH=${STK_ARCH}
 

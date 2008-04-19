@@ -9,7 +9,7 @@
  
  # Flags for the gnu compiler
 -CFLAGS	= -DFREEBSD -DUSE_OLD_TTY -g -Wall -x c++ -I /usr/X11R6/include -fno-implicit-templates -DEXPLICIT_TEMPLATES
-+CFLAGS	+= -DFREEBSD -g -Wall -x c++ -I $(X11BASE)/include -fno-implicit-templates -DEXPLICIT_TEMPLATES
++CFLAGS	+= -DFREEBSD -g -Wall -x c++ -I $(LOCALBASE)/include -fno-implicit-templates -DEXPLICIT_TEMPLATES
  
  LIB	= spunk.a
  ZIPFILE = spunk.zip
@@ -20,7 +20,7 @@
 -xresed:		$(LIB) $(RESEDITOBJS)
 -	$(CC) -g -o xresed $(RESEDITOBJS) $(LIB) -lg++ -L/usr/X11R6/lib -lX11
 +resed:	$(LIB) $(RESEDITOBJS)
-+	$(CC) -g -o xresed $(RESEDITOBJS) $(LIB) -L$(X11BASE)/lib -lX11
++	$(CC) -g -o xresed $(RESEDITOBJS) $(LIB) -L$(LOCALBASE)/lib -lX11
  
  lib:	$(LIB)
  

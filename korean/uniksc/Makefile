@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 MAINTAINER=	cjh@freebsd.org
 COMMENT=	Converts data between Korean KSC-5601 and Unicode 3.0 UTF-16
 
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 
 .if ${MACHINE_ARCH:L} == "amd64"
 CFLAGS+=	"-fPIC"

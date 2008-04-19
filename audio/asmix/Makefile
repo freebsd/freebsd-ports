@@ -17,8 +17,8 @@ COMMENT=	Volume control dock-app for the AfterStep Window Manager
 USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \
-		--with-xpm-includes=${X11BASE}/include \
-		--with-xpm-library=${X11BASE}/lib
+		--with-xpm-includes=${LOCALBASE}/include \
+		--with-xpm-library=${LOCALBASE}/lib
 
 MAN1=		${PORTNAME}.1x
 PLIST_FILES=	bin/asmix

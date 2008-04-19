@@ -15,7 +15,7 @@ MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	Create a snowy and Santa-y desktop
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN6=		xsnow.6
 PLIST_FILES=	bin/xsnow
 

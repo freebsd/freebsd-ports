@@ -84,8 +84,8 @@ CONFIGURE_ARGS+=	--disable-anti-alias
 .if defined(WITH_DILLO_DLGUI)
 CONFIGURE_ARGS+=	--enable-dlgui
 BUILD_DEPENDS+=	fltk>=2.0.r4825:${PORTSDIR}/x11-toolkits/fltk2
-CPPFLAGS+=	-I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--disable-dlgui
 .endif

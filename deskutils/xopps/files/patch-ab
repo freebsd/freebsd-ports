@@ -14,8 +14,8 @@
 -MACHINCLPATH = -I/SFOC/$(SFOCVER)/include/$(MACH) -I/usr/5include
 -MACHLIBPATH = -L/usr/5lib
 +MACHDEFS =	-ansi -fsigned-char
-+MACHINCLPATH =	-I$(X11BASE)/include
-+MACHLIBPATH =	-L$(X11BASE)/lib
++MACHINCLPATH =	-I$(LOCALBASE)/include
++MACHLIBPATH =	-L$(LOCALBASE)/lib
  MACHLIBS = 
  MACHLIBS_SYBCL = -lsybdb -lcs -lct -lcomn -ltcl -lintl -linsck -lm
  

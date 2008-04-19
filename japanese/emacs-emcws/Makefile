@@ -7,7 +7,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -49,7 +49,7 @@ CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 
 .if !defined(NO_X11)
 CONFIGURE_ARGS=	--with-x-toolkit --with-pop
-USE_XLIB=	YES
+USE_X11=	x11
 .else
 CONFIGURE_ARGS=	--with-x=no --with-pop
 .endif

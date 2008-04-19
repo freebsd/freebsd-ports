@@ -10,7 +10,7 @@
  
 -PREFIX = /usr
 -PUBLIC_SEQUENCES = $(PREFIX)/share/AutoZen
-+PREFIX = ${X11BASE}
++PREFIX = ${LOCALBASE}
 +PUBLIC_SEQUENCES = $(PREFIX)/share/autozen
  
  # uncomment one of the OS= lines below if you're compiling on one of those OSen. 

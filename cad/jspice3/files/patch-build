@@ -14,7 +14,7 @@
  if [ -f conf/util/configure ]; then
      cd conf
 -    util/configure -srcdir .
-+    util/configure -srcdir . --prefix=${PREFIX} -x-includes="${X11BASE}/include" -x-libraries="${X11BASE}/lib"
++    util/configure -srcdir . --prefix=${PREFIX} -x-includes="${LOCALBASE}/include" -x-libraries="${LOCALBASE}/lib"
      if  [ ! -f ../src/include/config.h ] || \
              [ "`diff config.h ../src/include/config.h |head`" ]; then
          echo Installing config.h

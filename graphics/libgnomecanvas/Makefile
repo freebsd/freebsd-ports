@@ -8,9 +8,9 @@
 
 PORTNAME=	libgnomecanvas
 PORTVERSION=	2.20.1.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
@@ -23,7 +23,6 @@ USE_BZIP2=	yes
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack libglade2 libartlgpl2 ltverhack referencehack gail

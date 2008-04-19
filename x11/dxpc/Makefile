@@ -23,7 +23,7 @@ USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}
-MAKE_ARGS=	CPPFLAGS="-I. -I${X11BASE}/include"
+MAKE_ARGS=	CPPFLAGS="-I. -I${LOCALBASE}/include"
 
 MAN1=		dxpc.1
 PLIST_FILES=	bin/dxpc

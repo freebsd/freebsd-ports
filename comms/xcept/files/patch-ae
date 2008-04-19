@@ -13,8 +13,8 @@
 -XINC	= -I/usr/X386/include
 -XLIB	= -L/usr/X386/lib
 +#CC	= gcc
-+XINC	= -I${X11BASE}/include
-+XLIB	= -L${X11BASE}/lib
++XINC	= -I${LOCALBASE}/include
++XLIB	= -L${LOCALBASE}/lib
  #WARN	= -W -Wunused -Wswitch -Wcomment -Wshadow -Wpointer-arith -Wcast-qual
  
  

@@ -18,7 +18,7 @@ USE_AUTOTOOLS=	libtool:15
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""

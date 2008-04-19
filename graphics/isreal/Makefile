@@ -7,7 +7,7 @@
 
 PORTNAME=	isreal
 PORTVERSION=	2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	markp
@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image classification utility
 
 PLIST_FILES=	bin/isreal
-USE_XLIB=	yes
 USE_GNOME=	imlib
 CFLAGS:=	${CFLAGS} -I${LOCALBASE}/include
 

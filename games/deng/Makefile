@@ -19,11 +19,11 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
-USE_GL=		yes
+USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_SDL=	sdl mixer net
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		`${SDL_CONFIG} --cflags`"
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

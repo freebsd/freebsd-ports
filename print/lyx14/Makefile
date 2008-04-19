@@ -67,7 +67,7 @@ post-configure:
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/bin/makepsres)
+.if exists(${LOCALBASE}/bin/makepsres)
 PLIST_SUB+=	PSRES=
 .else
 PLIST_SUB+=	PSRES='@comment '
@@ -84,7 +84,7 @@ LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 CONFIGURE_ARGS+=	--with-frontend=qt
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 .else
 LIB_DEPENDS+=	forms:${PORTSDIR}/x11-toolkits/xforms
 CONFIGURE_ARGS+=--with-frontend=xforms
@@ -106,7 +106,7 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=--without-ispell
 .endif
 
-.if exists(${X11BASE}/lib/libqt-mt.prl)
+.if exists(${LOCALBASE}/lib/libqt-mt.prl)
 QT_PRESENT=	on
 .else
 QT_PRESENT=	off

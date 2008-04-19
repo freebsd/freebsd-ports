@@ -7,16 +7,16 @@
 
 PORTNAME=	magic
 PORTVERSION=	7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	http://vlsi.cornell.edu/magic/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive editor for VLSI layouts
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
-MAKE_ENV=	CADDIR="${PREFIX}" X11BASE="${X11BASE}"
+MAKE_ENV=	CADDIR="${PREFIX}"
 ALL_TARGET=	mains
 
 BINS=	XHelper7 ext2sim ext2spice extcheck magic magicusage net2ir

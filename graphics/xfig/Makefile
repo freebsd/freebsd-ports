@@ -25,7 +25,7 @@ CONFLICTS=	xfig-[12].* xfig-3.1* xfig-3.2.[1234]*
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		xfig.1
 MANCOMPRESSED=	yes
 

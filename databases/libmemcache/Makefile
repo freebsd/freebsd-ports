@@ -16,7 +16,7 @@ COMMENT=	The C library for accessing a memcache cluster
 USE_BZIP2=	yes
 
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 OPTIONS=	DEBUG	"Build with debugging turned on" off

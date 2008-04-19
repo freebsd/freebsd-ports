@@ -7,7 +7,7 @@
 
 PORTNAME=	flightgear-aircrafts
 PORTVERSION=	20060812
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft/ \
@@ -86,9 +86,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Additional aircrafts for the FlightGear flight simulator
 
-RUN_DEPENDS=	${X11BASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
+RUN_DEPENDS=	${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
-PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

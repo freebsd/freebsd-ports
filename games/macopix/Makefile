@@ -7,6 +7,7 @@
 
 PORTNAME=	macopix
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://rosegray.sakura.ne.jp/macopix/
 .if defined(WITH_GTK1)
@@ -36,7 +37,6 @@ RESTRICTED_FILES=	\
 		macopix-mascot-HxB-euc-ja-0.30.tar.gz
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 .if defined(WITH_GTK1)
 USE_GNOME=	gtk12 gdkpixbuf
 .else

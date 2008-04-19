@@ -7,7 +7,7 @@
 
 PORTNAME=	sam
 PORTVERSION=	4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors plan9
 MASTER_SITES=	ftp://ftp.cs.usyd.edu.au/matty/unicode/
 DISTNAME=	${PORTNAME}
@@ -19,12 +19,12 @@ COMMENT=	A unix version of Rob Pike's editor for plan9
 DEPRECATED=	distfile and homepage disappeared
 EXPIRATION_DATE=	2007-01-04
 
+USE_XORG=	x11 xt ice sm
 EXTRACT_CMD=		${GZCAT}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	| ${SH}
 
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
 
 MAN1=		sam.1
 MAN3=		add.3 balloc.3 bitblt.3 cachechars.3 event.3 frame.3 \

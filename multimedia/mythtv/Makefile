@@ -21,7 +21,7 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-SAX-Expat
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
-		${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin \
+		${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin \
 		wget:${PORTSDIR}/ftp/wget
 
 BROKEN=		Incorrect handling of user addition

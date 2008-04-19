@@ -8,8 +8,7 @@
 PORTNAME=	trackballs
 PORTVERSION=	1.1.4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	SDL-based Marble Madness clone
@@ -17,7 +16,7 @@ COMMENT=	SDL-based Marble Madness clone
 LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -30,8 +29,8 @@ MAKE_ARGS=	mkinstalldirs="${MKDIR}"
 
 MAN6=		${PORTNAME}.6
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lintl
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -lintl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|install -D|$$(INSTALL)|' \

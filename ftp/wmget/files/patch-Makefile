@@ -5,7 +5,7 @@
  #	make PREFIX=/opt/dockapps install
 -PREFIX=		/usr/local
 +X11BASE?=	/usr/X11R6
-+PREFIX?=	${X11BASE}
++PREFIX?=	${LOCALBASE}
  
  INSTALLDIR=	install -d -m 755
 -INSTALLBIN=	install -m 555
@@ -16,11 +16,11 @@
 +INSTALLMAN=	$(INSTALL_MAN)
 +CC?=		gcc
 +CFLAGS?=	-Wall -W
-+CFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include
++CFLAGS+=	-I${LOCALBASE}/include
  # The following line is what I use during development
  #CFLAGS:=	$(CFLAGS) -Werror -g 
 -LDFLAGS=	-L/usr/X11R6/lib -lXpm -lXext -lX11 -lm -lcurl
-+LDFLAGS+=	-L${X11BASE}/lib -L${LOCALBASE}/lib -lXpm -lXext -lX11 -lm -lcurl
++LDFLAGS+=	-L${LOCALBASE}/lib -lXpm -lXext -lX11 -lm -lcurl
  DOCS=		wmget.1
  
  VERSION:=	$(shell grep '\#define WMGET_VERSION ' wmget.h \

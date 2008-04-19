@@ -6,7 +6,7 @@
 
 PORTNAME=	wmmp3
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.dotfiles.com/software/wmmp3/
 
@@ -16,8 +16,7 @@ COMMENT=	A front-end for mpg123 in a Window Maker dockapp
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 
 post-install:
 	@${ECHO} "===>   Installing sample.wmmp3 in ${PREFIX}/share/examples/wmmp3"

@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--program-transform-name=''
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=	kmldonkey.1 kmldonkey_submit.1
 

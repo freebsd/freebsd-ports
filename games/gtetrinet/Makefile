@@ -6,7 +6,7 @@
 
 PORTNAME=	gtetrinet
 PORTVERSION=	0.7.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games gnome ipv6
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -17,7 +17,6 @@ COMMENT=	A version of the popular TetriNET multiplayer tetris clone
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	esound gnomehack gnomeprefix gnometarget libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

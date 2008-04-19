@@ -7,7 +7,7 @@
 
 PORTNAME=	ntfsprogs
 PORTVERSION=	1.13.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	linux-ntfs
@@ -93,8 +93,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(DESTDIR)/sbin|$$(DESTDIR)/${PREFIX}/sbin|' \
 		${WRKSRC}/ntfsprogs/Makefile.in
 	@${REINPLACE_CMD} -e \
-		's|$$(libdir)/\(gnome-vfs-2.0/modules\)|${X11BASE}/lib/\1|; \
-		 s|$$(sysconfdir)/\(gnome-vfs-2.0/modules\)|${X11BASE}/etc/\1|' \
+		's|$$(libdir)/\(gnome-vfs-2.0/modules\)|${LOCALBASE}/lib/\1|; \
+		 s|$$(sysconfdir)/\(gnome-vfs-2.0/modules\)|${LOCALBASE}/etc/\1|' \
 		${WRKSRC}/libntfs/Makefile.in
 .if defined(WITH_UBLIO)
 	@${REINPLACE_CMD} -e 's|^libntfs_la_LIBADD =|& -lublio|' \

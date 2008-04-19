@@ -14,12 +14,12 @@ MAINTAINER=	kris@FreeBSD.org
 COMMENT=	A WMaker dockapp which displays meteorological data for your city
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	xmessage:${X_CLIENTS_PORT}
-RUN_DEPENDS=	xmessage:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
+RUN_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
 
-CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 USE_XORG=	xpm

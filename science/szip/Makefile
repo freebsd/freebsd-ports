@@ -20,7 +20,7 @@ COMMENT=	Lossless compression library for scientific data
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 DOCFILE=	Release_notes_2_0.pdf
 
 post-install:

@@ -16,12 +16,12 @@ FONTSDIR?=	${PREFIX}/share/fonts/TrueType
 FONTSDIR_REL=	${FONTSDIR:S,^${PREFIX}/,,}
 PLIST_SUB+=	FONTSDIR=${FONTSDIR_REL}
 
-XFONTSDIR?=	${X11BASE}/lib/X11/fonts/TrueType
-XFONTSDIR_REL=	${XFONTSDIR:S,${X11BASE}/,,}
+XFONTSDIR?=	${LOCALBASE}/lib/X11/fonts/TrueType
+XFONTSDIR_REL=	${XFONTSDIR:S,${LOCALBASE}/,,}
 PLIST_SUB+=	XFONTSDIR=${XFONTSDIR_REL}
 
 .if !defined(WITHOUT_X11)
-RUN_DEPENDS+=	${X11BASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS+=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 _TTF_MODULES=	xttfm
 .endif
 
@@ -62,7 +62,7 @@ do-install-ttf:
 .endfor
 .if !defined(WITHOUT_X11)
 	@${ECHO_MSG} "===>  Running fc-cache"
-	-@${X11BASE}/bin/fc-cache -f -v ${XFONTSDIR}
+	-@${LOCALBASE}/bin/fc-cache -f -v ${XFONTSDIR}
 .endif
 
 add-plist-post: add-plist-ttf
@@ -81,8 +81,8 @@ add-plist-ttf:
 .	endfor
 .endfor
 .if !defined(WITHOUT_X11)
-	@${ECHO_CMD} "@unexec ${X11BASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${X11BASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/fc-cache -f -v ${XFONTSDIR} || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec find ${XFONTSDIR} -size -3c -delete || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir ${XFONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
 .endif

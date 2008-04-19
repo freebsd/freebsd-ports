@@ -8,6 +8,7 @@
 
 PORTNAME=	evolution-exchange
 PORTVERSION=	2.22.1
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,7 +22,6 @@ RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_BDB=	41

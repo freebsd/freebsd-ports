@@ -7,7 +7,7 @@
 
 PORTNAME=	vflib
 PORTVERSION=	${VFLIB_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/VFlib2/ \
 		ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/
@@ -22,7 +22,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector font library with free vector font, BIG5 and GB supported
 
-BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 VFLIB_VERSION=	2.25.6
 PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
@@ -33,14 +33,14 @@ CONFIGURE_ARGS=	--with-freetype \
 		--with-freetype-includedir=${LOCALBASE}/include/freetype1/freetype \
 		--with-freetype-libdir=${LOCALBASE}/lib
 USE_FREETYPE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xext
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 
 .include <bsd.port.pre.mk>
 
 pre-patch:
-	@${SED} -e "s;%%LOCALBASE%%;${LOCALBASE};g" -e "s;%%X11BASE%%;${X11BASE};g" ${DISTDIR}/zh-vfontcap.in > ${WRKSRC}/vfontcap
+	@${SED} -e "s;%%LOCALBASE%%;${LOCALBASE};g" -e "s;%%X11BASE%%;${LOCALBASE};g" ${DISTDIR}/zh-vfontcap.in > ${WRKSRC}/vfontcap
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,varargs.h,stdarg.h," ${WRKSRC}/tools/disol.c

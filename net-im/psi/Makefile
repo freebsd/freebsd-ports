@@ -17,7 +17,7 @@ COMMENT?=	A Qt-based Jabber client
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	qca.1:${PORTSDIR}/devel/qca
-RUN_DEPENDS=	${X11BASE}/lib/plugins/crypto/libqca-tls.so:${PORTSDIR}/security/qca-tls
+RUN_DEPENDS=	${LOCALBASE}/lib/plugins/crypto/libqca-tls.so:${PORTSDIR}/security/qca-tls
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -27,9 +27,9 @@ CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 		PTHREAD_LDFLAGS=${PTHREAD_LIBS} \
 		KDEDIR=${LOCALBASE}
-CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${X11BASE} \
-		--with-qca-inc=${X11BASE}/include/plugins/qca \
-		--with-qca-lib=${X11BASE}/lib \
+CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${LOCALBASE} \
+		--with-qca-inc=${LOCALBASE}/include/plugins/qca \
+		--with-qca-lib=${LOCALBASE}/lib \
 		--disable-growl --disable-dnotify --disable-ghbnr
 MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++

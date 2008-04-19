@@ -5,7 +5,7 @@
  # make procedure in the parent SAOimage directory.
  
 -CFLAGS  = -c -O
-+CFLAGS  += -c -I${X11BASE}/include
++CFLAGS  += -c -I${LOCALBASE}/include
  
  LINT   = lint
  RANLIB = ranlib
@@ -14,7 +14,7 @@
  
  LIB	= libbtn.a
 -XLIBH	= /usr/include/X11/Xlib.h
-+XLIBH	= ${X11BASE}/include/X11/Xlib.h
++XLIBH	= ${LOCALBASE}/include/X11/Xlib.h
  #XLIBH = /usr/openwin/share/include/X11/Xlib.h  #for OpenWindows
  
  all:	$(LIB)

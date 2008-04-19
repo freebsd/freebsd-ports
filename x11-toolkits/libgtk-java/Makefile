@@ -8,6 +8,7 @@
 
 PORTNAME=	libgtk-java
 PORTVERSION=	2.10.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits java
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +19,6 @@ COMMENT=	Java wrapper for Gtk+, Pango, Atk, and Glib
 LIB_DEPENDS=	cairojni-${CAIRO_API_VERSION}.1:${PORTSDIR}/graphics/cairo-java
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -8,6 +8,7 @@
 
 PORTNAME=	gconf-editor
 PORTVERSION=	2.22.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
@@ -18,7 +19,6 @@ COMMENT=	A gconf database editor for the GNOME 2 environment
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes

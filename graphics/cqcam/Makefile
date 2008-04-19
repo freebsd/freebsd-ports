@@ -7,7 +7,7 @@
 
 PORTNAME=	cqcam
 PORTVERSION=	0.91
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.duke.edu/~reynolds/cqcam/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 ONLY_FOR_ARCHS=	i386
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

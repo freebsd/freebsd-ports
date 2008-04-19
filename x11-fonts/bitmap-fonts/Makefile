@@ -7,7 +7,7 @@
 
 PORTNAME=	bitmap-fonts
 PORTVERSION=	${BITMAP_FONTS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/ \
 		ftp://ftp.jpl.org/pub/elisp/bitmap/snapshots/
@@ -16,7 +16,9 @@ DISTNAME=	${PORTNAME}-${BITMAP_FONTS_VER}
 MAINTAINER=	conrads@cox.net
 COMMENT=	Bitmap font, (6x12, 7x14, 8x16, 12x24) dots bitmap font
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 # distfile version
 BITMAP_FONTS_VER=	1.0
@@ -26,7 +28,6 @@ PKGINSTALL=	${WRKDIR}/INSTALL
 PKGDEINSTALL=	${WRKDIR}/DEINSTALL
 
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
 
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
@@ -43,18 +44,18 @@ do-build:
 	done
 
 pre-install:
-	@${SETENV} PKG_PREFIX=${X11BASE} \
+	@${SETENV} PKG_PREFIX=${LOCALBASE} \
 		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 do-install:
 	@(cd ${WRKSRC}; \
 	    for i in ${BITMAP_FONTS_SIZE} ; do \
-	        ${INSTALL_DATA} bitmap$${i}.pcf.gz ${X11BASE}/${FONTSDIR} ; \
+	        ${INSTALL_DATA} bitmap$${i}.pcf.gz ${LOCALBASE}/${FONTSDIR} ; \
 	    done ; \
 	)
 
 post-install:
-	@${SETENV} PKG_PREFIX=${X11BASE} \
+	@${SETENV} PKG_PREFIX=${LOCALBASE} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

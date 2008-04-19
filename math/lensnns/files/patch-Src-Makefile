@@ -9,8 +9,8 @@
 +  TCLVER= 8.3
 +  TCLDIR= /usr/local/include
 +  BINDIR= $(TOP)/Bin/$(HOSTTYPE)
-+  INCL=   -I$(TCLDIR)/tcl$(TCLVER)/generic -I$(TCLDIR)/tk$(TCLVER)/generic -I${X11BASE}/include
-+  LIBS=   -L$(BINDIR) -L/usr/local/lib -L${X11BASE}/lib -ltk83 -ltcl83 -lm -lX11 $(SYSLIB)
++  INCL=   -I$(TCLDIR)/tcl$(TCLVER)/generic -I$(TCLDIR)/tk$(TCLVER)/generic -I${LOCALBASE}/include
++  LIBS=   -L$(BINDIR) -L/usr/local/lib -L${LOCALBASE}/lib -ltk83 -ltcl83 -lm -lX11 $(SYSLIB)
 +else
    O=      ../Obj/$(HOSTTYPE)
    TCLVER= 8.3.4

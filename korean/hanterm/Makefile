@@ -15,7 +15,7 @@ MASTER_SITES=	http://hanterm.org/download/ \
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	An xterm hacked for managing Korean languages
 
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
 
 CONFLICTS=	ko-hanterm-xf-2.*
 USE_IMAKE=	yes

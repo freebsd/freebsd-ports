@@ -8,7 +8,7 @@
 
 PORTNAME=	gfslicer
 PORTVERSION=	1.5.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -19,7 +19,6 @@ COMMENT=	A utility to split and join files
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_AUTOTOOLS=	automake:14:env
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

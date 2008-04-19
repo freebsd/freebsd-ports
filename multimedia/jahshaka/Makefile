@@ -7,10 +7,9 @@
 
 PORTNAME=	jahshaka
 PORTVERSION=	1.9a9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}fx
+MASTER_SITES=	SF/${PORTNAME}fx
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,12 +17,10 @@ COMMENT=	Video and film composing, editing and special fx system
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile \
-		glut.4:${PORTSDIR}/graphics/libglut \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_GL=		yes
-USE_X_PREFIX=	yes
+USE_GL=		glut
 USE_QT_VER=	3
 MAKE_ENV=	QMAKESPEC=${QMAKESPEC} QTDIR=${QT_PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}

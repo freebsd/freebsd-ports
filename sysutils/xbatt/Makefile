@@ -17,7 +17,7 @@ COMMENT=	Laptop battery status display for X11
 ONLY_FOR_ARCHS=	i386
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/xbatt
 

@@ -50,7 +50,7 @@ HAS_CONFIGURE=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-CONFIGURE_ARGS=	--prefix=${PREFIX} --qt-dir=${X11BASE} --with-qt-lib=qt-mt \
+CONFIGURE_ARGS=	--prefix=${PREFIX} --qt-dir=${LOCALBASE} --with-qt-lib=qt-mt \
 		--build-qslideshow --build-qplayer
 NO_BUILD=	yes
 

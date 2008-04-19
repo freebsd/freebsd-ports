@@ -20,7 +20,7 @@
 -# BINDIR = /usr/local/bin/X11
 +BINDIR = $(PREFIX)/bin
 +LIBDIR = $(PREFIX)/lib/X11
-+CONFIGDIR = $(X11BASE)/lib/X11/config
++CONFIGDIR = $(LOCALBASE)/lib/X11/config
 +MANPATH = $(PREFIX)/man
  
  

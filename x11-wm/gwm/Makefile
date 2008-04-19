@@ -7,7 +7,7 @@
 
 PORTNAME=	gwm
 PORTVERSION=	1.8d
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://koala.ilog.fr/ftp/pub/gwm/
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Window Manager
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		gwm.1
 
 DEPRECATED=		Project is dead

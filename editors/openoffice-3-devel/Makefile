@@ -7,6 +7,7 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	3.0.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
@@ -43,7 +44,7 @@ USE_GNOME+=	libidl
 .if defined(WITH_KDE)
 USE_KDELIBS_VER=	3
 .endif
-USE_XLIB=	yes
+USE_XORG=	x11 ice
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
@@ -125,7 +126,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gpatch:${PORTSDIR}/devel/patch \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bash:${PORTSDIR}/shells/bash \
-		imake:${X_IMAKE_PORT} \
+		imake:${PORTSDIR}/devel/imake \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf #i85469#
 
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant

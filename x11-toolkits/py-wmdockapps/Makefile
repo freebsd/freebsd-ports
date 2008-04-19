@@ -23,6 +23,6 @@ PYDISTUTILS_PKGNAME=	pywmdockapps
 USE_XORG=	x11 xpm xau xext xfixes xi
 
 post-patch:
-	${REINPLACE_CMD} 's|/usr/X11R6|${X11BASE}|' ${WRKSRC}/setup.py
+	${REINPLACE_CMD} 's|/usr/X11R6|${LOCALBASE}|' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

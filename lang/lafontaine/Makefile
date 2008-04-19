@@ -8,7 +8,7 @@
 
 PORTNAME=	lafontaine
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nongnu.org/lafontaine/archives/
 DISTNAME=	${PORTNAME}_0.4-1
@@ -18,7 +18,6 @@ COMMENT=	Graphical logo interpreter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.4
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

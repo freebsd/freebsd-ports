@@ -15,8 +15,8 @@ start_cmd="ldconfig_start"
 stop_cmd=":"
 
 load_rc_config $name
-: ${ldconfig_local_dirs="%%PREFIX%%/%%LDCONFIG_DIR%% %%X11BASE%%/%%LDCONFIG_DIR%%"}
-: ${ldconfig_local32_dirs="%%PREFIX%%/%%LDCONFIG32_DIR%% %%X11BASE%%/%%LDCONFIG32_DIR%%"}
+: ${ldconfig_local_dirs="%%PREFIX%%/%%LDCONFIG_DIR%% %%LOCALBASE%%/%%LDCONFIG_DIR%%"}
+: ${ldconfig_local32_dirs="%%PREFIX%%/%%LDCONFIG32_DIR%% %%LOCALBASE%%/%%LDCONFIG32_DIR%%"}
 
 ldconfig_start()
 {

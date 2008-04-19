@@ -7,7 +7,7 @@
 
 PORTNAME=	wmtictactoe
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jim
@@ -19,8 +19,7 @@ COMMENT=	A dockable TicTacToe game for WindowMaker and AfterStep
 PLIST_FILES=	bin/wmtictactoe
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/wmtictactoe.app/wmtictactoe
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 post-install:
 	@${ECHO} "===>   Run 'wmtictactoe --help' for the available options"

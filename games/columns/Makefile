@@ -7,7 +7,7 @@
 
 PORTNAME=	columns
 PORTVERSION=	1.2b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 # mastersite disappeared in December 2000
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -18,7 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice little implementation of columns game for X Window System
 
 USE_SDL=	sdl
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 DATADIR=	${PREFIX}/share/Columns

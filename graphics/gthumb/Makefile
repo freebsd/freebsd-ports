@@ -7,6 +7,7 @@
 
 PORTNAME=	gthumb
 PORTVERSION=	2.10.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
@@ -18,7 +19,6 @@ COMMENT=	An image viewer and browser for the GNOME 2 environment
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libgnomeprintui gnomedocutils

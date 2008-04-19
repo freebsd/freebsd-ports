@@ -19,14 +19,13 @@ BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs
 
 USE_BZIP2=	yes
-USE_GCC=	3.2+
 USE_SDL=	sdl mixer image ttf gfx
 USE_GL=		yes
 USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libphysfs=${PREFIX} \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

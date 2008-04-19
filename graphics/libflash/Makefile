@@ -7,10 +7,9 @@
 
 PORTNAME=	libflash
 PORTVERSION=	0.4.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gplflash
+MASTER_SITES=	Sf/gplflash
 DISTNAME=	gplflash-${PORTVERSION}
 
 MAINTAINER=	llwang@infor.org
@@ -19,6 +18,7 @@ COMMENT=	GPL Flash (TM) Library
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_XORG=	x11 xext xkbfile xt
 WRKSRC=		${WRKDIR}/${DISTNAME}/lib
 USE_AUTOTOOLS=	libtool:15
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
@@ -26,8 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 USE_BZIP2=	yes
-USE_XLIB=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/swf.h

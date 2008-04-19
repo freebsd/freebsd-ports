@@ -74,7 +74,7 @@ PLIST_SUB+=	VORBIS="@comment "
 
 .if defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
-CONFIGURE_ARGS+=--with-xmms-prefix=${X11BASE}
+CONFIGURE_ARGS+=--with-xmms-prefix=${LOCALBASE}
 PLIST_SUB+=	XMMS=""
 .else
 CONFIGURE_ARGS+=--disable-xmms

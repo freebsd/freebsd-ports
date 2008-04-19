@@ -7,7 +7,7 @@
 
 PORTNAME=	xrml
 PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.kuleuven.ac.be/pub/graphics/software/RenderPark/
 DISTNAME=	${PORTNAME}
@@ -19,7 +19,6 @@ COMMENT=	Extensible scene graph library based on VRML'97
 WRKSRC=		${WRKDIR}/${PORTNAME:U}
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_MOTIF=	yes
 USE_LDCONFIG=	yes
@@ -43,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
 			      s|%%CXX%%|${CXX}|g ; \
 			      s|%%CXXFLAGS%%|${CXXFLAGS}|g ; \
-			      s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/Config.site
+			      s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Config.site
 
 pre-build:
 	${GMAKE} -C ${WRKSRC}/FILTERS link_includes

@@ -7,6 +7,7 @@
 #
 
 PORTNAME=	gdl
+PORTREVISION=	1
 PORTVERSION=	0.7.11
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
@@ -16,7 +17,6 @@ COMMENT=	Components intended to be shared between GNOME development tools
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

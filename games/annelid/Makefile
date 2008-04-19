@@ -23,7 +23,7 @@ RESTRICTED=	No redistribution allowed
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
-USE_GL=		yes
+USE_GL=		gl
 NO_WRKSUBDIR=	yes
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
@@ -40,7 +40,7 @@ DATAFILES=	annelid.dat apple.tga apple.wav backd.tga backn.tga font.dat \
 post-patch:
 # Fix Makefile.
 	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CFLAGS}| ; \
-		s|%%X11BASE%%|${X11BASE}| ; \
+		s|%%LOCALBASE%%|${LOCALBASE}| ; \
 		s|sdl-config|${SDL_CONFIG}|' \
 		${WRKSRC}/${MAKEFILE}
 

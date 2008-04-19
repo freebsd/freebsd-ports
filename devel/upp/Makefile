@@ -9,18 +9,16 @@ PORTNAME=	upp
 PORTVERSION=	2007.1
 PORTREVISION=	3
 CATEGORIES=	devel x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	m.sund@arcor.de
 COMMENT=	Ultimate++, a BSD-licensed, cross-platform, C/C++ RAD suite
 
-LIB_DEPENDS=	Xft:${PORTSDIR}/x11-fonts/libXft\
-		freetype.9:${PORTSDIR}/print/freetype2\
-		expat.6:${PORTSDIR}/textproc/expat2\
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		expat.6:${PORTSDIR}/textproc/expat2
 
+USE_XORG=	xft
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
 
 .if defined(WITH_SDL)
@@ -56,8 +54,8 @@ post-build:
 	@${ECHO_CMD} "RELEASE_OPTIONS = \"-O3 -ffunction-sections\";" >> ${WRKSRC}/GCC.bm
 	@${ECHO_CMD} "DEBUGGER = \"gdb\";" >> ${WRKSRC}/GCC.bm
 	@${ECHO_CMD} "PATH = \"\";" >> ${WRKSRC}/GCC.bm
-	@${ECHO_CMD} "INCLUDE = \"${X11BASE}/include;${LOCALBASE}/include;${LOCALBASE}/include/freetype2;${LOCALBASE}/include/gtk-2.0;${LOCALBASE}/include/glib-2.0;${LOCALBASE}/include/cairo;${LOCALBASE}/include/pango-1.0;${LOCALBASE}/include/atk-1.0\";" >> ${WRKSRC}/GCC.bm
-	@${ECHO_CMD} "LIB = \"${X11BASE}/lib;${LOCALBASE}/lib\";" >> ${WRKSRC}/GCC.bm
+	@${ECHO_CMD} "INCLUDE = \"${LOCALBASE}/include;${LOCALBASE}/include/freetype2;${LOCALBASE}/include/gtk-2.0;${LOCALBASE}/include/glib-2.0;${LOCALBASE}/include/cairo;${LOCALBASE}/include/pango-1.0;${LOCALBASE}/include/atk-1.0\";" >> ${WRKSRC}/GCC.bm
+	@${ECHO_CMD} "LIB = \"${LOCALBASE}/lib\";" >> ${WRKSRC}/GCC.bm
 	@${ECHO_CMD} "REMOTE_HOST = \"\";" >> ${WRKSRC}/GCC.bm
 	@${ECHO_CMD} "REMOTE_OS = \"\";" >> ${WRKSRC}/GCC.bm
 	@${ECHO_CMD} "REMOTE_TRANSFER = \"\";" >> ${WRKSRC}/GCC.bm

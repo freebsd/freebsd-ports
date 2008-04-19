@@ -9,15 +9,14 @@ PORTNAME=		coverhunter
 PORTVERSION=		0.3
 PORTREVISION=	3
 CATEGORIES=		audio graphics
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A program fetching the covers of your digital music albums
 
 RUN_DEPENDS=		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
-USE_X_PREFIX=		yes
+USE_XORG=	x11
 USE_GNOME=		pygtk2
 USE_PYTHON=		2.3+
 NO_BUILD=		yes

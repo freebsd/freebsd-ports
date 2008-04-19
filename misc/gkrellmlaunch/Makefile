@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application launcher plugin for GKrellM
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 PLIST_FILES=	libexec/gkrellm/plugins/gkrellmlaunch.so

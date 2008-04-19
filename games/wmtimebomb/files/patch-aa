@@ -4,11 +4,11 @@
 -XPMLIB = -L/usr/X11R6/lib -lXpm -lm -ljpeg -lpng -lz -ltiff -lgif
 -WMAKER = -L/usr/local/lib -lWMaker -lWINGs -lwraster -lPropList
 +XPMLIB = `pkg-config --libs WINGs wmlib wrlib`
-+WMAKER = -L${X11BASE}/lib -lWMaker
++WMAKER = -L${LOCALBASE}/lib -lWMaker
   
  LOCAL_LIBRARIES = $(WMAKER) $(XPMLIB) $(XLIB)
  
-+EXTRA_INCLUDES= `pkg-config --cflags WINGs wmlib wrlib` -I${X11BASE}/include 
++EXTRA_INCLUDES= `pkg-config --cflags WINGs wmlib wrlib` -I${LOCALBASE}/include 
 +
  SRCS = timebomb.c
  OBJS = timebomb.o

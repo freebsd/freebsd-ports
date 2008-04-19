@@ -9,7 +9,7 @@
 
 PORTNAME=	gnome-web-photo
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
@@ -22,7 +22,6 @@ USE_GECKO=	firefox seamonkey xulrunner firefox15<->firefox
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko=${GECKO}
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomevfs2 gnomehack gnomeprefix
 GCONF_SCHEMAS=	thumbnailer.schemas
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	icbm3d
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/icbm3d/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"Inter-Continental Ballistic Missiles, 3D" - 3D game of defense
 
 WRKSRC=		${WRKDIR}/icbm3d
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 MAKEFILE=	makefile
 ALL_TARGET=	icbm3d
 

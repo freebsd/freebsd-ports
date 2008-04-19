@@ -17,7 +17,7 @@ COMMENT=	A simulation of snowboarding at the Jay Peak resort in Vermont
 
 WRKSRC=		${WRKDIR}/soulride
 ONLY_FOR_ARCHS=	i386
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
 SUB_FILES=	virtual-jay-peak

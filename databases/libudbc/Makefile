@@ -21,7 +21,7 @@ COMMENT=	Openlink UDBC SDK
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
 RESTRICTED=	'Downloading and redistribution terms are unclear'

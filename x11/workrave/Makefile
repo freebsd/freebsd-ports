@@ -7,7 +7,7 @@
 
 PORTNAME=	workrave
 PORTVERSION=	1.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
@@ -17,9 +17,9 @@ COMMENT=	A Gnome RSI prevention tool
 OPTIONS=	GNOME "Build with Gnome support" on \
 		NETWORK "Build with network support" on
 
+USE_XORG=	x11 xmu
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-gconf

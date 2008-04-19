@@ -53,7 +53,7 @@
  # OpenGL
  # OpenGL includes
 -GLINC = -I/usr/X11R6/include/
-+GLINC = -I${X11BASE}/include/
++GLINC = -I${LOCALBASE}/include/
  # MacOSX (Aqua):
  #GLINC =
  # link options for linking with OpenGL libraries
@@ -62,7 +62,7 @@
  # TIFF
  # TIFF includes
 -TIFFINC = -I/usr/include/
-+TIFFINC = -I${X11BASE}/include/
++TIFFINC = -I${LOCALBASE}/include/
  # link options for linking with TIFF library
  TIFFLIB = -ltiff
  
@@ -113,12 +113,12 @@
  # X11
  # X11 includes
 -X11INC = -I/usr/X11R6/include
-+X11INC = -I${X11BASE}/include
++X11INC = -I${LOCALBASE}/include
  # MacOSX (Aqua):
  #X11INC =
  # link options for linking with X11
 -X11LIBS = -L/usr/X11R6/lib -lXmu -lXext -lX11
-+X11LIBS = -L${X11BASE}/lib -lXmu -lXext -lX11
++X11LIBS = -L${LOCALBASE}/lib -lXmu -lXext -lX11
  #X11LIBS = -L/usr/X11R6/lib -lXmu -lXext -lX11
  # MacOSX (Aqua):
  #X11LIBS =

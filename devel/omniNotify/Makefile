@@ -29,7 +29,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 # Don't compiled on != i386
 ONLY_FOR_ARCHS=	i386

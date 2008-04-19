@@ -7,7 +7,7 @@
 
 PORTNAME=	xscorch
 PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xscorch/ \
 		http://mirror.dok.org/xscorch/
@@ -17,8 +17,7 @@ COMMENT=	Multiplayer tank shoot-em-up
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes

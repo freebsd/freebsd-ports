@@ -7,7 +7,7 @@
 
 PORTNAME=	wmg
 PORTVERSION=	0.15.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm gnome
 MASTER_SITES=	http://ductape.net/~reeve/downloads/
 DISTNAME=	wmG-${PORTVERSION}
@@ -15,8 +15,7 @@ DISTNAME=	wmG-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small GTK-based GNOME-compliant window manager
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

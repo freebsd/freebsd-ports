@@ -8,7 +8,7 @@
 +BINDIR = $(PREFIX)/bin
  XCOMM MKDIRHIER = /bin/sh /usr/bin/X11/mkdirhier -p
 -MKDIRHIER = mkdirhier 
-+MKDIRHIER = ${X11BASE}/bin/mkdirhier 
++MKDIRHIER = ${LOCALBASE}/bin/mkdirhier 
  
  XCOMM Uncomment and change XAPPLOADDIR to the directory where you want the
  XCOMM app-defaults resource files to go.  You will have to use the environment
@@ -17,7 +17,7 @@
  XCOMM purpose of DESTDIR is to test an install process by installing in a benign area.
  
 -XCOMM XAPPLOADDIR = /home/user/xfig
-+XAPPLOADDIR = ${X11BASE}/lib/X11/app-defaults
++XAPPLOADDIR = ${LOCALBASE}/lib/X11/app-defaults
  
  XCOMM Uncomment the following definition for XAW3D if you want to use
  XCOMM the 3d Athena Widget Set (highly recommended!)

@@ -7,7 +7,7 @@ $FreeBSD$
  CLASSPATH_SEP  = $(CLASSPATH_SEPARATOR)
  PATH_SEP       = /
 -X11DIR         = /usr/X11R6
-+X11DIR         = $(X11BASE)
++X11DIR         = $(LOCALBASE)
  ifneq (,$(filter-out NetBSD DragonFly,$(TRUE_PLATFORM)))
  LIBS           = -L$(X11DIR)/lib -lX11
  else

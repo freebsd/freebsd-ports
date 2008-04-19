@@ -31,7 +31,7 @@ OPTIONS=	DESIGNER_PLUGIN "Install plugin for Qt Designer" on \
 
 QMAKE=		${LOCALBASE}/bin/qmake
 SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-PLUGINDIR=	${X11BASE}/lib/plugins/designer
+PLUGINDIR=	${LOCALBASE}/lib/plugins/designer
 
 .include <bsd.port.pre.mk>
 
@@ -89,9 +89,9 @@ post-configure:
 		${MV} Makefile.tmp Makefile && \
 		cd ${WRKSRC}/designer && \
 		${CAT} designer.pro | ${GREP} -v lqscintilla > designer.tmp && \
-		${ECHO} "INCPATH += ${X11BASE}/include ../qt" >> \
+		${ECHO} "INCPATH += ${LOCALBASE}/include ../qt" >> \
 			designer.tmp && \
-		${ECHO} "LIBS += -L../qt -L${X11BASE}/lib -lqscintilla" >> \
+		${ECHO} "LIBS += -L../qt -L${LOCALBASE}/lib -lqscintilla" >> \
 			designer.tmp && \
 		${ECHO} "DESTDIR = ." >> designer.tmp && \
 		${MV} designer.tmp designer.pro )

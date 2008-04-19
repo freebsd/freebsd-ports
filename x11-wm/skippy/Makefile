@@ -7,16 +7,14 @@
 
 PORTNAME=	skippy
 PORTVERSION=	0.5.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://thegraveyard.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-screen X11 task-switcher like Apple's Expose
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-
-USE_XLIB=	yes
+USE_XORG=	x11 xext xinerama xft xmu
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
 USE_EFL=	imlib2
@@ -26,7 +24,7 @@ PLIST_DIRS=	%%DATADIR%%
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|; \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|; \
 		s|/usr/local|${LOCALBASE}|; s|gcc|${CC}|' \
 			${WRKSRC}/Makefile
 post-build:

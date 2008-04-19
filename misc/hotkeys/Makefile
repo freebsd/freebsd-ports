@@ -6,7 +6,7 @@
 
 PORTNAME=	hotkeys
 PORTVERSION=	0.5.7.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	http://ypwong.org/hotkeys/${PORTVERSION}/	\
 		${MASTER_SITE_XCONTRIB}
@@ -20,10 +20,9 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_ARGS=	--with-db3-inc=${BDB_INCLUDE_DIR} \
 		--with-db3-lib=${BDB_LIB_DIR} \
-		--with-db-name=${BDB_LIB_NAME} \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
+		--with-db-name=${BDB_LIB_NAME}
 
+USE_XORG=	x11 xkbfile xmu
 GNU_CONFIGURE=	yes
 USE_BDB=	yes
 USE_GMAKE=	yes

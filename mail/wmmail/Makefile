@@ -7,7 +7,7 @@
 
 PORTNAME=	wmmail
 PORTVERSION=	0.64
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	# none
 DISTNAME=	WMMail.app-${PORTVERSION}
@@ -17,8 +17,7 @@ COMMENT=	A little mail notifier for the Window Maker dock
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-PL-libs="-L${LOCALBASE}/lib" \

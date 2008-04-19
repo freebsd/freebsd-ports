@@ -20,7 +20,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 
 USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_FILES=	lib/xmms/Output/libarts.a \
 		lib/xmms/Output/libarts.la \

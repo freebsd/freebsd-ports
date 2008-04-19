@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_GCC=	3.4+
 USE_GNOME=	gnomehack gnometarget libxml2 pkgconfig
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6" DOC_VERSION=${PORTVERSION:R}
 

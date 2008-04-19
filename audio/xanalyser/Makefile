@@ -27,7 +27,7 @@ PLIST_FILES=	bin/xanalyser \
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 	-e 's|-lXm |${MOTIFLIB} |g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

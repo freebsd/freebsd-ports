@@ -7,7 +7,7 @@
 
 PORTNAME=	gimpshop
 PORTVERSION=	2.2.11
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.plasticbugs.com/blogimg/ \
 		http://freebsd.powered.net/distfiles/
@@ -28,15 +28,14 @@ CONFLICTS=	gimp-1.* gimp-2.* gimp-gnome-2.*
 SHLIBVER?=	200
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	xpm x11 ice xmu
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 librsvg2 \
 		desktopfileutils
 WANT_GNOME=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl \
 		--with-html-dir=${DOCSDIR} \
@@ -44,8 +43,8 @@ CONFIGURE_ARGS=	--disable-perl \
 		--enable-static \
 		--disable-print \
 		--with-desktop-dir=${LOCALBASE}/share
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 WRKSRC=		${WRKDIR}/gimp-${PORTVERSION}
 

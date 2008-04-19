@@ -8,7 +8,7 @@
 
 PORTNAME=	gal2
 PORTVERSION=	2.5.3
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.5
@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui libgnomeprintui \
 		ltverhack
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=  libtool:15
 CONFIGURE_ARGS=	--enable-static --with-libiconv

@@ -6,6 +6,7 @@
 
 PORTNAME=	sim-im-devel
 PORTVERSION=	0.9.5.2099
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://sim-im.lehis.ru/dist/ \
 		http://www.sim-im.lehis.ru/dist/
@@ -22,6 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
+USE_XORG=	x11 xext
 USE_OPENSSL=	yes
 USE_PERL5_BUILD=	yes
 USE_GETTEXT=	yes
@@ -30,8 +32,6 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-CONFIGURE_ARGS=	--prefix=${PREFIX} --x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 
 OPTIONS=	KDE "Enable KDE support" off \
 		DEBUG "Enable debug" on

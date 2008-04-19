@@ -7,7 +7,7 @@
 
 PORTNAME=	xfrisk
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://tuxick.net/xfrisk/files/
 DISTNAME=	XFrisk-${PORTVERSION}
@@ -19,10 +19,8 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 NO_CDROM=	Possible trademark infringement
 
-USE_X_PREFIX=	yes
 NO_INSTALL_MANPAGES=	yes
 WRKSRC=		${WRKDIR}/XFrisk
 USE_GMAKE=	yes
-MAKE_ENV+=	XDIR=${X11BASE}
 
 .include <bsd.port.mk>

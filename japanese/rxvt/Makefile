@@ -7,15 +7,14 @@
 
 PORTNAME=	rxvt
 PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xterm replacement that supports pixmap background and Japanese
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 ice xt xpm
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 MAN1=		rxvt.1 rclock.1
@@ -24,8 +23,10 @@ CONFIGURE_ARGS=	--enable-xpm-background --enable-transparency \
 		--enable-languages --with-encoding=eucj \
 		--disable-backspace-key --disable-delete-key \
 		--enable-utmp --enable-wtmp \
-		--with-xpm --with-xpm-includes=${X11BASE}/include/X11 \
-		--with-xpm-library=${X11BASE}/lib
+		--with-xpm --with-xpm-includes=${LOCALBASE}/include/X11 \
+		--with-xpm-library=${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 DOCDIR=		${PREFIX}/share/doc/ja/rxvt
 RXVTLIB=	${PREFIX}/lib/X11/rxvt

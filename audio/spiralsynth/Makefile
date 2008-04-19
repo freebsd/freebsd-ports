@@ -7,7 +7,7 @@
 
 PORTNAME=	spiralsynth
 PORTVERSION=	0.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.pawfal.org/Software/SpiralSynth/dload/
 DISTNAME=	SpiralSynth-${PORTVERSION}
@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 PLIST=		${WRKDIR}/pkg-plist
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -47,7 +46,7 @@ post-patch:
 			s|CXXFLAGS=|CXXFLAGS+=|g ; \
 			s|LINK	=	g++|LINK	=	${CXX}|g ; \
 			s|-lm|${PTHREAD_LIBS} -lm|g ; \
-			s|/usr/X11R6|${X11BASE}|g ; \
+			s|/usr/X11R6|${LOCALBASE}|g ; \
 			s|iostream.h|iostream|g ;\
 			s|<strstream>|<sstream>|g ;\
 			s|machine/soundcard|sys/soundcard|g' \

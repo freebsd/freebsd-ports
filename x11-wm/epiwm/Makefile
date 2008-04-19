@@ -7,13 +7,14 @@
 
 PORTNAME=	epiwm
 PORTVERSION=	0.5.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.nongnu.org/epiwm/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another fast, small, configurable window manager
 
+USE_XORG=	x11 xpm
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 

@@ -85,8 +85,8 @@ INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
 CONFIGURE_SCRIPT=	../platforms/unix/config/configure
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/share \
 			--without-quartz \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include"
 
 # don't pass "-s" to install to avoid trying to strip a shell script
 CONFIGURE_ENV=
@@ -163,7 +163,6 @@ PLIST_SUB=		IMAGEVERSION=${IMAGEVERSION}\
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s,%%LOCALBASE%%,${LOCALBASE},g" \
-		-e "s,%%X11BASE%%,${X11BASE},g" \
 		${WRKSRC}/platforms/unix/npsqueak/npsqueakregister.in \
 		${WRKSRC}/platforms/unix/npsqueak/npsqueakrun.in \
 		${WRKSRC}/platforms/unix/npsqueak/Makefile

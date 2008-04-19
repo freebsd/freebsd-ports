@@ -32,7 +32,7 @@ LIB_DEPENDS=	${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT} \
 
 COMPONENTS=	libs progs
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 
 LIB_FILES=	cmdenv envir nedxml sim_std tkenv
@@ -55,8 +55,8 @@ pre-configure:
 	@${ECHO} "OMNETPP_PLOVE_DIR=${DATADIR}/plove" >> ${CONFIGUREUSER}
 	@${ECHO} "OMNETPP_TKENV_DIR=${DATADIR}/tkenv" >> ${CONFIGUREUSER}
 	@${ECHO} "OMNETPP_BITMAP_PATH=${DATADIR}/bitmaps" >> ${CONFIGUREUSER}
-	@${ECHO} "TK_CFLAGS=\"-I${X11BASE}/include -I${LOCALBASE}/include/${TCL_VERSION} -I${LOCALBASE}/include/${TK_VERSION}\"" >> ${CONFIGUREUSER}
-	@${ECHO} "TK_LIBS=\"-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11 -l${TCL_NODOT} -l${TK_NODOT}\"" >> ${CONFIGUREUSER}
+	@${ECHO} "TK_CFLAGS=\"-I${LOCALBASE}/include -I${LOCALBASE}/include/${TCL_VERSION} -I${LOCALBASE}/include/${TK_VERSION}\"" >> ${CONFIGUREUSER}
+	@${ECHO} "TK_LIBS=\"-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lX11 -l${TCL_NODOT} -l${TK_NODOT}\"" >> ${CONFIGUREUSER}
 	@${ECHO} "EXPAT_CFLAGS=\"-I${LOCALBASE}/include\"" >> ${CONFIGUREUSER}
 	@${ECHO} "EXPAT_LIBS=\"-L${LOCALBASE}/lib -lexpat\"" >> ${CONFIGUREUSER}
 	@${ECHO} "WISH=wish${TK_VERSION}" | ${SED} 's,tk,,' >> ${CONFIGUREUSER}

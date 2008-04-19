@@ -42,9 +42,9 @@ CONFIGURE_ARGS=	--prefix="${WRKDIR}" \
 		--disable-absolute-pathes \
 		--disable-locallinks \
 		--with-tcl-lib="-L${LOCALBASE}/lib -ltcl${TCL_VER:S/.//}" \
-		--with-tcl-incl="-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${X11BASE}/include" \
+		--with-tcl-incl="-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${LOCALBASE}/include" \
 		--with-tk-lib="-ltk${TK_VER:S/.//}" \
-		--with-tk-incl="-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${X11BASE}/include"
+		--with-tk-incl="-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${LOCALBASE}/include"
 
 MAN1=		ocs.1 oc.1 genmake.1
 

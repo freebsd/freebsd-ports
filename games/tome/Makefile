@@ -7,7 +7,7 @@
 
 PORTNAME=	tome
 PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://t-o-m-e.net/dl/src/
 DISTNAME=	tome-234-src
@@ -30,15 +30,15 @@ DESKTOP_ENTRIES=	"ToME" "Roguelike game based on JRR Tolkien's work" \
 .include <bsd.port.pre.mk>
 
 .ifndef (WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 
 post-patch:
 .ifdef (WITHOUT_X11)
 	${REINPLACE_CMD} -e 's/-DUSE_X11//g' ${WRKSRC}/${MAKEFILE}
 	${REINPLACE_CMD} -e 's/-lX11//g' ${WRKSRC}/${MAKEFILE}
-	${REINPLACE_CMD} -e 's@-L$$(X11BASE)/lib@@g' ${WRKSRC}/${MAKEFILE}
-	${REINPLACE_CMD} -e 's@-I$$(X11BASE)/include@@g' ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's@-L$$(LOCALBASE)/lib@@g' ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e 's@-I$$(LOCALBASE)/include@@g' ${WRKSRC}/${MAKEFILE}
 .endif
 
 .include <bsd.port.post.mk>

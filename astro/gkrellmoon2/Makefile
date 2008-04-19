@@ -9,14 +9,14 @@ PORTNAME=	gkrellmoon2
 PORTVERSION=	0.6
 PORTREVISION=	4
 CATEGORIES=	astro
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gkrellmoon
 DISTNAME=	gkrellmoon-${PORTVERSION}
 
 MAINTAINER=	w@wrzask.pl
 COMMENT=	A moon clock plugin for Gkrellm2
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USE_GNOME=	gtk20

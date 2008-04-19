@@ -8,6 +8,7 @@
 
 PORTNAME=	gcalctool
 PORTVERSION=	5.22.1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -21,7 +22,6 @@ USE_BZIP2=	yes
 USE_BISON=	build
 INSTALLS_OMF=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gnomedocutils libglade2

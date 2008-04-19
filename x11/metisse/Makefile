@@ -17,7 +17,7 @@ COMMENT=	An innovative X-based window system
 CONFLICTS=	fvwm-1.* fvwm-2.5.*
 
 LIB_DEPENDS=	Nucleo.0:${PORTSDIR}/x11-toolkits/nucleo
-RUN_DEPENDS=	${X11BASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
+RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
 
 BROKEN=		Does not compile
 
@@ -26,7 +26,7 @@ PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-fontdir=${X11BASE}/lib/X11/fonts
+CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/lib/X11/fonts
 MAKE_ARGS=	METISSE_DOC_DIR="${DOCSDIR}"
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes

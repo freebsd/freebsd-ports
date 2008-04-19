@@ -19,7 +19,7 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 PLIST_FILES=	bin/xtuner
 USE_IMAKE=	YES
-USE_XPM=	YES
+USE_XORG=	xpm
 
 .include <bsd.port.pre.mk>
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	XaraLX
 PORTVERSION?=	0.7r1692
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/ \
 		${MASTER_SITE_LOCAL}
@@ -18,7 +18,6 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT?=	Top-tier vector/general purpose graphics program (recommended version)
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config \
 		xml2-config:${PORTSDIR}/textproc/libxml2 \
@@ -34,6 +33,7 @@ CONFIGURE_ARGS+=	--program-suffix=${PKGNAMESUFFIX}
 USE_GMAKE=	yes
 MAKE_ENV?=	LANG=C
 
+USE_XORG=	x11
 USE_GCC=	3.4+
 USE_WX=		2.6
 WX_CONF_ARGS=	absolute

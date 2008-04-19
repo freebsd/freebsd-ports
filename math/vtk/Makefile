@@ -56,7 +56,7 @@ BUILD_DEPENDS+=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
 
 USE_GMAKE=	yes
 USE_GL=		yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CMAKE?=		${LOCALBASE}/bin/cmake
 CXXFLAGS+=	-Wno-deprecated

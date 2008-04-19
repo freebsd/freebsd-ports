@@ -71,8 +71,8 @@
 -VIEWINC = -I/usr/X11/include
 -VIEWLIB = -L/usr/X11/lib -lX11
 -VIEWDEF = -DiX11 -DiLINUX
-+VIEWINC = -I${X11BASE}/include
-+VIEWLIB = -L${X11BASE}/lib -lX11
++VIEWINC = -I${LOCALBASE}/include
++VIEWLIB = -L${LOCALBASE}/lib -lX11
 +VIEWDEF = -DiX11
  
  #

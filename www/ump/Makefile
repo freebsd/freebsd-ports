@@ -76,7 +76,7 @@ post-extract:
 
 post-configure:
 	@${MV} ${WRKSRC}/interface/Makefile ${WRKSRC}/interface/Makefile.orig
-	@${SED} -e 's^m_so_libs = $$^m_so_libs = -L${X11BASE}/lib ${MOTIFLIB} -lXt -lXext -lSM -lICE -lX11 ^' \
+	@${SED} -e 's^m_so_libs = $$^m_so_libs = -L${LOCALBASE}/lib ${MOTIFLIB} -lXt -lXext -lSM -lICE -lX11 ^' \
 		-e 's^dynamic_targets = $$^dynamic_targets = interface_m.so^' \
 		${WRKSRC}/interface/Makefile.orig > ${WRKSRC}/interface/Makefile
 	@cd ${WRKSRC}; ${SETENV} CONFIG_HEADERS='' CONFIG_FILES=ump/Makefile ${SH} ./config.status

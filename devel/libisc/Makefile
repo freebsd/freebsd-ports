@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 MANCOMPRESSED=	yes
 BUILD_WRKSRC=	${WRKSRC}/lib/bind/freebsdportisc/
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		assertions.3 eventlib.3 logging.3 tree.3 bitncmp.3 heap.3 \
 		memcluster.3

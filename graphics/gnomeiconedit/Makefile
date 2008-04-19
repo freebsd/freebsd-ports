@@ -7,10 +7,9 @@
 
 PORTNAME=	gnomeiconedit
 PORTVERSION=	1.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	giconedit
+MASTER_SITES=	SF/giconedit
 DISTNAME=	gnome-iconedit-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +17,6 @@ COMMENT=	A small GNOME Icon Editor
 
 USE_GNOME=	gnomeprefix gnomehack bonobo gnomeprint
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

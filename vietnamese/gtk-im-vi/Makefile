@@ -22,7 +22,7 @@ USE_LDCONFIG=	YES
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; s,ChangeLog,,' \
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},; s,ChangeLog,,' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/po/Makefile.in.in
 
 post-install:

@@ -31,7 +31,7 @@ USE_GNOME=	gnometarget gnomehack ltverhack referencehack
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS}"
 
 .if defined(WITHOUT_X11)

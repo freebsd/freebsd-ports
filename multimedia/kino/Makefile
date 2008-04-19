@@ -7,7 +7,7 @@
 
 PORTNAME=	kino
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,7 @@ RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder	\
 OPTIONS=	QUICKTIME "With Quicktime support" off	\
 		FFMPEG_KINO "With ffmpeg-kino" off
 
+USE_XORG=	x11 xv ice
 USE_AUTOTOOLS=	autoconf:261
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -31,9 +32,9 @@ USE_GNOME=	gnomehack gnomeprefix libglade2 libxml2
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/lqt		\
-			-I${LOCALBASE}/include -I${X11BASE}/include"	\
+			-I${LOCALBASE}/include"	\
 		LDFLAGS="-L${LOCALBASE}/lib/libquicktime	\
-			-L${LOCALBASE}/lib -L${X11BASE}/lib"	\
+			-L${LOCALBASE}/lib"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-dv1394
 MAN1=	kino.1 kino2raw.1

@@ -9,15 +9,14 @@ PORTNAME=	linpsk
 PORTVERSION=	0.8.1
 PORTREVISION=	4
 CATEGORIES=	comms hamradio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A qt psk31 client
 
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		portaudio:${PORTSDIR}/audio/portaudio
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/fonts.dir:${PORTSDIR}/x11-fonts/bitstream-vera
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/fonts.dir:${PORTSDIR}/x11-fonts/bitstream-vera
 
 USE_PERL5_BUILD=yes
 USE_QT_VER=	3
@@ -27,14 +26,14 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-qtdir=${X11BASE} --prefix=${PREFIX}
+CONFIGURE_ARGS=	--with-qtdir=${LOCALBASE} --prefix=${PREFIX}
 
 SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-I$$(top_srcdir)/src/portaudio||' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/src/interfaces/Makefile.in

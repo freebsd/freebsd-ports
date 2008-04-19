@@ -7,7 +7,7 @@
 
 PORTNAME=	topaz
 PORTVERSION=	3.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA007663/topaz/bin/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}-src
@@ -17,7 +17,7 @@ COMMENT=	A command driven graph plotting system for scientists and engineers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_XLIB=	yes
+USE_XORG=	x11
 MAKEFILE=	Makefile.freebsd
 
 post-install:

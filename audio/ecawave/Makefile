@@ -7,7 +7,7 @@
 
 PORTNAME=	ecawave
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -17,7 +17,6 @@ COMMENT=	Simple graphical audio file editor
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecasound.a:${PORTSDIR}/audio/ecasound
 
 USE_QT_VER=	3
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

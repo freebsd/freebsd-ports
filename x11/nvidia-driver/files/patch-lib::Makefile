@@ -2,7 +2,7 @@
 +++ lib/Makefile	Wed Jun 22 19:12:16 2005
 @@ -6,7 +6,7 @@
  FIND_DIRS=	/usr/lib	\
- 		${X11BASE}/lib
+ 		${LOCALBASE}/lib
  
 -.if exists(/compat/linux)
 +.if exists(/compat/linux) && !defined(WITHOUT_LINUX)

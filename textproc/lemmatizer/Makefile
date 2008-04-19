@@ -28,7 +28,7 @@ GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS=	--with-datadir=${DB_DIR}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib
 
 pre-fetch:

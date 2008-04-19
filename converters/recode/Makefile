@@ -18,7 +18,7 @@ COMMENT=	Converts files between character sets and usages
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_PERL5=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

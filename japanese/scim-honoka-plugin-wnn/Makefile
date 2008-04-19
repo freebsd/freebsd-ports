@@ -37,7 +37,7 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 IGNORE=		does not build in FreeBSD < 5.x
 .else
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
 .include <bsd.port.post.mk>

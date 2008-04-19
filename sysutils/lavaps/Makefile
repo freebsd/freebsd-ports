@@ -29,9 +29,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	-x-includes="${X11BASE}/include" \
-			-x-libraries="${X11BASE}/lib"
-
 .if defined(WITH_GTK)
 PKGNAMESUFFIX=	-gtk2
 USE_GNOME+=	gtk20 libgnomeui

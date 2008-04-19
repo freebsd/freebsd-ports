@@ -17,8 +17,8 @@ COMMENT=	Free 2D jump and run game
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 

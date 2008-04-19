@@ -7,7 +7,7 @@
 
 PORTNAME=	pvm
 PORTVERSION=	3.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.netlib.org/pvm3/	\
 		ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
@@ -22,7 +22,7 @@ PKGNAMESUFFIX=	-nox11
 MAKE_ENV+=	WITHOUT_X11=yes
 PLIST_SUB+=	X11='@comment '
 .else
-USE_XLIB=	yes
+USE_XORG=	x11 xaw xt
 PLIST_SUB+=	X11=''
 .endif
 

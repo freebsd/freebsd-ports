@@ -7,7 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.40.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.backtrace.info/releases/0.40/
 
@@ -31,6 +31,7 @@ CONFLICTS=	bmpx-devel-[0-9]*
 
 USE_AUTOTOOLS=	automake:19 autoconf:261
 USE_BISON=	build
+USE_XORG=	ice sm
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2 desktopfileutils
@@ -46,8 +47,6 @@ CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=	--x-includes=${X11BASE}/include \
-			--x-libraries=${X11BASE}/lib
 
 MAN1=		beep-media-player-2.1
 

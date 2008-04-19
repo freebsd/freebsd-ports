@@ -19,7 +19,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(WITH_COMPAT)
 INSTALL_TARGET=	install install-compat

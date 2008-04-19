@@ -32,7 +32,7 @@ FILES_TO_PATCH=	Makefile psk31.1 twpskHelp user-twpsk/makefile \
 post-patch:
 .for file in ${FILES_TO_PATCH}
 	@${REINPLACE_CMD} -e \
-		's|/usr/local|${LOCALBASE}|g;s|/usr/X11R6|${X11BASE}|g' \
+		's|/usr/local|${LOCALBASE}|g;s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/${file}
 .endfor
 

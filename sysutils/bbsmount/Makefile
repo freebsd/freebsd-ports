@@ -7,15 +7,14 @@
 
 PORTNAME=	bbsmount
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://phoenix.inf.upol.cz/~jezberam/bbsmount/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical disk mounter for the Blackbox slit
 
-USE_X_PREFIX=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 ice xpm xi
 GNU_CONFIGURE=	yes
 USE_GCC=	2.95
 PORTDOCS=	README BUGS NEWS AUTHORS ChangeLog

@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-menu-editor
 PORTVERSION=	0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils
 MASTER_SITES=	http://manny.cluecoder.org/packages/gnome-menu-editor/
 
@@ -18,7 +18,6 @@ COMMENT=	Simple menu editor for Gnome
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomemenus intlhack gtk20 gnomevfs2
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

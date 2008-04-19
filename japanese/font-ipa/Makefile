@@ -43,10 +43,10 @@ do-install:
 	${LN} -s -f \
 		${DATADIR}/fonts/ipa*.ttf ${DATADIR}/fonts/M+*.ttf \
 		${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
-	${MKDIR} ${X11BASE}/${X_FONTSDIR}/TrueType
+	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TrueType
 	${LN} -s -f \
 		${DATADIR}/fonts/ipa*.ttf ${DATADIR}/fonts/M+*.ttf \
-		${X11BASE}/${X_FONTSDIR}/TrueType/
+		${LOCALBASE}/${X_FONTSDIR}/TrueType/
 	${MKDIR} ${PREFIX}/etc/fonts/conf.d
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-ipattfonts.conf \
 		${FILESDIR}/62-fonts-ipattfonts.conf \
@@ -57,7 +57,7 @@ do-install:
 .endif
 
 post-install:
-	${X11BASE}/bin/fc-cache -f -v ${X11BASE}/${X_FONTSDIR}/TrueType
+	${LOCALBASE}/bin/fc-cache -f -v ${LOCALBASE}/${X_FONTSDIR}/TrueType
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

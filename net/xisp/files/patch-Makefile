@@ -9,7 +9,7 @@
 -X11PREFIX  = /usr/X11R6
 +CC         ?= gcc
 +PREFIX     = %%PREFIX%%
-+X11PREFIX  = ${X11BASE}
++X11PREFIX  = ${LOCALBASE}
  INCX11     = $(X11PREFIX)/include
  LIBX11     = $(X11PREFIX)/lib
 -INCFORMS   = $(X11PREFIX)/include

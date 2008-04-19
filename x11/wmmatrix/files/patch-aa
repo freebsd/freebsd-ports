@@ -8,9 +8,9 @@
 -LIBDIR = -L/usr/X11R6/lib
 +CC     ?= gcc
 +CFLAGS ?= -O2 -Wall 
-+INCDIR = -I${X11BASE}/include
-+DESTDIR= ${PREFIX}
-+LIBDIR = -L${X11BASE}/lib
++INCDIR = -I${LOCALBASE}/include
++DESTDIR= ${LOCALBASE}
++LIBDIR = -L${LOCALBASE}/lib
  
  # for Linux
  LIBS   = -lXpm -lX11 -lXext

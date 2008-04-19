@@ -22,7 +22,7 @@ USE_IMAKE=	yes
 MAKE_ARGS=	INFOFILES=""
 
 post-install:
-		${MKDIR} ${X11BASE}/lib/X11/locale/C/props; \
-		${INSTALL_DATA} ${WRKSRC}/C/* ${X11BASE}/lib/X11/locale/C/props
+		${MKDIR} ${PREFIX}/lib/X11/locale/C/props; \
+		${INSTALL_DATA} ${WRKSRC}/C/* ${PREFIX}/lib/X11/locale/C/props
 
 .include <bsd.port.mk>

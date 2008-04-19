@@ -7,10 +7,9 @@
 
 PORTNAME=	libvisual-plugins
 PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libvisual
+MASTER_SITES=	SF/libvisual
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of plugins for the libvisual framework
@@ -19,12 +18,11 @@ LIB_DEPENDS=	visual.0:${PORTSDIR}/graphics/libvisual
 
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget pkgconfig
-USE_GL=		yes
-USE_XLIB=	yes
+USE_GL=		gl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
@@ -32,7 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 BROKEN=		Broken objformat handling
 .endif
 
-BUILD_DEPENDS=	mkdirhier:${X_IMAKE_PORT}
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 .if defined(WITH_MPLAYER)
 BUILD_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer

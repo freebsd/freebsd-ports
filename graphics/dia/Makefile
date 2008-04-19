@@ -8,7 +8,7 @@
 
 PORTNAME=	dia
 DISTVERSION=	0.96.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/t
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gnomehack gnomeprefix libxslt libartlgpl2 intlhack \
 		desktopfileutils

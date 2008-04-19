@@ -223,13 +223,13 @@
  mupen64:	$(OBJ) $(OBJ_X86) $(OBJ_GTK_GUI) $(OBJ_VCR)
 -		$(CXX) $^ $(CFLAGS) $(LIB) -Wl,-export-dynamic $(GTK_LIBS) `avifile-config --libs` `sdl-config --libs` -L/usr/X11R6/lib -lGL -lpthread -ldl -o $@
 -		strip --strip-all $@
-+		$(CXX) $^ $(CFLAGS) $(LIB) -Wl,-export-dynamic $(GTK_LIBS) `avifile-config --libs` `${SDL_CONFIG} --libs` -L${X11BASE}/lib -lGL -o $@
++		$(CXX) $^ $(CFLAGS) $(LIB) -Wl,-export-dynamic $(GTK_LIBS) `avifile-config --libs` `${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lGL -o $@
  endif
  
  mupen64_oldgui:	$(OBJ) $(OBJ_X86) main/main_gtk.o
 -		$(CC) $^ $(LIB) -Wl,-export-dynamic $(GTK_LIBS) `sdl-config --libs` -L/usr/X11R6/lib -lGL -lpthread -ldl -o $@
 -		strip --strip-all $@
-+		$(CC) $^ $(LIB) -Wl,-export-dynamic $(GTK_LIBS) `${SDL_CONFIG} --libs` -L${X11BASE}/lib -lGL -o $@
++		$(CC) $^ $(LIB) -Wl,-export-dynamic $(GTK_LIBS) `${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lGL -o $@
  
  plugins/mupen64_input.so: $(OBJ_INPUT)
  			  $(CC) $^ -Wl,-Bsymbolic -shared $(GTK_LIBS) -o $@

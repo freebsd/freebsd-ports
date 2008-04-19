@@ -20,7 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_GHOSTSCRIPT_RUN=	yes
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		fig2dev.1 fig2ps2tex.1 pic2tpic.1 transfig.1
 
 MAKE_ARGS+=	INSTALLFLAGS="${COPY}" \

@@ -7,10 +7,9 @@
 
 PORTNAME=	glame
 PORTVERSION=	2.0.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful, fast, stable, and easily extensible sound editor for GNOME
@@ -21,10 +20,8 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		guile.18:${PORTSDIR}/lang/guile
 
-USE_XORG=	xbitmaps
-USE_XLIB=	yes
+USE_XORG=	xbitmaps x11
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
-USE_GCC=	3.4+
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15

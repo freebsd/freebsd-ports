@@ -7,6 +7,7 @@
 
 PORTNAME=	qterm
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.yuanjue.net/download/
@@ -16,13 +17,14 @@ PKGNAMEPREFIX=	zh-
 MAINTAINER=	yuanjue@yuanjue.net
 COMMENT=	QTerm is a BBS client for BSD/Linux
 
+USE_XORG=	x11 ice xext xt xaw xpm xi xproto xextproto
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_QT_VER=	3
 HAS_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-mt --prefix=${PREFIX} \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ARGS=	--enable-mt --prefix=${PREFIX}
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	2.3+

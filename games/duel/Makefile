@@ -16,16 +16,16 @@ DISTNAME=	lin${PORTNAME}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An overhead, OpenGL space shooter
 
-BUILD_DEPENDS=	${X11BASE}/lib/libftgl.a:${PORTSDIR}/graphics/ftgl
+BUILD_DEPENDS=	${LOCALBASE}/lib/libftgl.a:${PORTSDIR}/graphics/ftgl
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` `freetype-config --cflags` -I${X11BASE}/include -I${X11BASE}/include/FTGL" \
-		LDFLAGS="`${SDL_CONFIG} --libs` -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` `freetype-config --cflags` -I${LOCALBASE}/include -I${LOCALBASE}/include/FTGL" \
+		LDFLAGS="`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}-sh

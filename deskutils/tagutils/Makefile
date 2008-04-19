@@ -18,7 +18,7 @@ LIB_DEPENDS=	leaftag.0:${PORTSDIR}/devel/libleaftag
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

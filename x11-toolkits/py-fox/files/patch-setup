@@ -7,8 +7,8 @@
 +    XLIBINC = []
  else:
 -    XLIBDIR = ['/usr/X11R6/lib']
-+    XLIBDIR = ['%%X11BASE%%/lib']
-+    XLIBINC = ['%%X11BASE%%/include']
++    XLIBDIR = ['%%LOCALBASE%%/lib']
++    XLIBINC = ['%%LOCALBASE%%/include']
  
  # Other libraries
  OLIBDIRS = ['c:\cygwin\usr\local\lib']

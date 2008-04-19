@@ -32,7 +32,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	${REINPLACE_CMD} s/libmysqlcppapi-1.9/libmysqlcppapi/g \

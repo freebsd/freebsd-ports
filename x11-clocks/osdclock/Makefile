@@ -20,8 +20,8 @@ COMMENT=	Small clock which uses libxosd to render text to the root window
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
 
 USE_GCC=	3.4
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib ${PTHREAD_LIBS}" \
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		PREFIX="${PREFIX}"
 
 PLIST_FILES=	bin/osd_clock

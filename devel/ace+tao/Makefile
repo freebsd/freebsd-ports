@@ -23,7 +23,7 @@ TAO_VERSION=	1.4.2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 TESTS=		"@comment "
 .if defined(WITH_TESTS)

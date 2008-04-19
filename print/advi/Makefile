@@ -27,7 +27,7 @@ RUN_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
 USE_GHOSTSCRIPT=yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -41,7 +41,7 @@ post-extract:
 	@${REINPLACE_CMD} -E \
 		-e 's,^(COPTIONS[[:space:]]*=).*,\1-ccopt "${CFLAGS}",' \
 		-e 's,^(COPTOPTIONS[[:space:]]*=).*,\1-ccopt "${CFLAGS}",' \
-		-e 's,^(X11_INCLUDES[[:space:]]*=).*,\1-I${X11BASE}/include,' \
+		-e 's,^(X11_INCLUDES[[:space:]]*=).*,\1-I${LOCALBASE}/include,' \
 		-e 's,install -m 644,\$${BSD_INSTALL_DATA},' \
 		-e 's,install -m 755,\$${BSD_INSTALL_PROGRAM},' \
 		${WRKSRC}/Makefile

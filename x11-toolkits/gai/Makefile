@@ -8,10 +8,9 @@
 
 PORTNAME=	gai
 PORTVERSION=	0.5.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	General Applet Interface Library
@@ -19,7 +18,7 @@ COMMENT=	General Applet Interface Library
 LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_BZIP2=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	sdl
 USE_GNOME=	gnomepanel
 GNU_CONFIGURE=	yes
@@ -30,11 +29,11 @@ PLIST_FILES=	include/gai/gai.h lib/libgai.so.${PORTVERSION} \
 		share/locale/de/LC_MESSAGES/gai.mo
 PLIST_DIRS=	include/gai
 PORTDOCS=	*
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|sdl-config --|${SDL_CONFIG} --|g; \
-		s|/usr/X11R6|${X11BASE}|g" ${WRKSRC}/configure
+		s|/usr/X11R6|${LOCALBASE}|g" ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

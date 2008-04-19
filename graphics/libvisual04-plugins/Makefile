@@ -30,8 +30,8 @@ CONFIGURE_ARGS=	--disable-alsa \
 		--disable-gforce \
 		--disable-jess \
 		--prefix=${PREFIX}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 MAJORMINOR=	${PORTVERSION:C/.[0-9]+$//}
 

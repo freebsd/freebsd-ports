@@ -35,8 +35,8 @@
  
 -INCLUDEDIRS = -I/usr/openwin/include -I/usr/X11R6/include
 -LIBDIRS = -L/usr/openwin/lib -L/usr/X11R6/lib
-+INCLUDEDIRS = -I${X11BASE}/include
-+LIBDIRS = -L${X11BASE}/lib
++INCLUDEDIRS = -I${LOCALBASE}/include
++LIBDIRS = -L${LOCALBASE}/lib
  
 -CC = gcc
 -CCFLAGS = -O2 -fomit-frame-pointer -pipe -Wall #-Wstrict-prototypes

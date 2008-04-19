@@ -8,10 +8,9 @@
 
 PORTNAME=	libafterimage
 PORTVERSION=	1.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	afterstep
+MASTER_SITES=	SF/afterstep
 DISTNAME=	libAfterImage-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,11 +25,11 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_GNOME=	librsvg2
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+USE_XORG=	x11
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-staticlibs --enable-sharedlibs \
 		--without-builtin-ungif --without-afterbase \
 		--with-x

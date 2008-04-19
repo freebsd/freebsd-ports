@@ -8,6 +8,7 @@
 
 PORTNAME=	gedit
 PORTVERSION=	2.22.1
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -22,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes

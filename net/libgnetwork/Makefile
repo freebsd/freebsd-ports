@@ -7,7 +7,7 @@
 
 PORTNAME=	libgnetwork
 PORTVERSION=	0.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.0
@@ -19,7 +19,6 @@ COMMENT=	A GLib-based networking wrapper
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

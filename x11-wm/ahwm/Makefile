@@ -8,14 +8,14 @@
 
 PORTNAME=	ahwm
 PORTVERSION=	0.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://people.cs.uchicago.edu/~ahiorean/ahwm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 window manager
 
-USE_XLIB=	yes
+USE_XORG=	x11 xext
 
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX}

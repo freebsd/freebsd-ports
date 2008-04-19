@@ -20,10 +20,10 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_IMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		sunclock.1
 

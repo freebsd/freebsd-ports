@@ -45,7 +45,7 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${FONTSDIR}
 .if !defined(WITHOUT_X11)
-	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${X11BASE}/etc/fonts/local.conf
+	${INSTALL_DATA} ${FILESDIR}/local.conf-odo ${LOCALBASE}/etc/fonts/local.conf
 .endif
 
 .include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"

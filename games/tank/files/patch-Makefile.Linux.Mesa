@@ -10,7 +10,7 @@
  MESA = Mesa
  
 -INCLUDE = -I/usr/include -I$(MESA)/include -I$(MESA)/include/GL
-+INCLUDE = -I$(X11BASE)/include -I$(X11BASE)/include/GL
++INCLUDE = -I$(LOCALBASE)/include -I$(LOCALBASE)/include/GL
  
 -CFLAGS = $(INCLUDE) $(ARCH) -O2 -m486 -Wall -pipe \
 -	-pedantic -funroll-loops -mieee-fp
@@ -18,7 +18,7 @@
 +	-pedantic -funroll-loops
  
 -LDFLAGS = -L/usr/X11R6/lib -L$(MESA)/lib
-+LDFLAGS = -L$(X11BASE)/lib
++LDFLAGS = -L$(LOCALBASE)/lib
  
  TAR	= tar  
  COMPRESS = compress -v

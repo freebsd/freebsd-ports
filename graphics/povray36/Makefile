@@ -7,7 +7,7 @@
 
 PORTNAME=	povray
 PORTVERSION=	3.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/ \
@@ -25,6 +25,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
+USE_XORG=	x11
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -54,9 +55,9 @@ CXXFLAGS=	-O3 -tpp7 -axN -Vaxlib
 .endif
 
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--x-includes="${X11BASE}/include" --includedir=${LOCALBASE} \
-		CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include" \
-		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include" \
+CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" --includedir=${LOCALBASE} \
+		CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib" \
+		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib" \
 		LDFLAGS="-L${LOCALBASE}/lib" COMPILED_BY=${MAINTAINER} \
 		--disable-optimiz
 

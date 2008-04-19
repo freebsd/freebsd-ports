@@ -7,7 +7,7 @@
 
 PORTNAME=	gretools
 PORTVERSION=	1.2.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.cs.utexas.edu/~arvindn/gretools/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:R}
@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME vocabulary builder
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget pygnome2
 USE_PYTHON=	yes
 USE_GMAKE=	yes

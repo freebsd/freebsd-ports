@@ -24,8 +24,8 @@ CONFLICTS=	crystalentitylayer-[0-9]*
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-cs-prefix=${LOCALBASE}
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"

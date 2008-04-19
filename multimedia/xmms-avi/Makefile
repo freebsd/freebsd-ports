@@ -39,7 +39,7 @@ post-patch:
 		 s|-O2||g ; \
 		 s|$$(CC_OPTS)|@CFLAGS@|g'
 
-# This is to avoid libtool running ldconfig -m ${X11BASE}/lib/xmms/Input
+# This is to avoid libtool running ldconfig -m ${LOCALBASE}/lib/xmms/Input
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/libavixmms.so ${PREFIX}/lib/xmms/Input
 

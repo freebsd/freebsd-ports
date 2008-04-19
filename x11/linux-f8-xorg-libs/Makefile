@@ -21,7 +21,7 @@ CONFLICTS=		linux-XFree86-libs
 
 USE_LINUX_RPM=		yes
 LINUX_DIST_VER=		4
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 
 SRC_DISTFILES=		xorg-x11-6.8.2-37.FC4.49.2.1.src.rpm
 

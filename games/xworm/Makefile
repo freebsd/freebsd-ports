@@ -7,7 +7,7 @@
 
 PORTNAME=	xworm
 PORTVERSION=	1.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.ekran.no/archive/x/
 DISTNAME=	${PORTNAME}102
@@ -15,12 +15,12 @@ DISTNAME=	${PORTNAME}102
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic game with apples and hungry worm
 
+USE_XORG=	x11 xt
 WRKSRC=		${WRKDIR}/XWorm
-USE_X_PREFIX=	yes
 ALL_TARGET=	linux
-MAKE_ARGS=	CC="${CC}" INCDIR="-I${X11BASE}/include" \
+MAKE_ARGS=	CC="${CC}" INCDIR="-I${LOCALBASE}/include" \
 		LINUXFLAGS='${CFLAGS} -DXWORMDIR=\"${DATADIR}\"' \
-		LINUXLINK="-L${X11BASE}/lib -lXt -lX11 -lm"
+		LINUXLINK="-L${LOCALBASE}/lib -lXt -lX11 -lm"
 
 DATA=		font grid raw
 PLIST_FILES=	bin/xworm ${DATA:S/^/%%DATADIR%%\/xworm./}

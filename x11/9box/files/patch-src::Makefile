@@ -2,8 +2,8 @@
 +++ src/Makefile	Wed Jul 23 21:35:39 2003
 @@ -1,10 +1,14 @@
 +CC=		%%CC%%
-+CFLAGS+=	-g -I. -I%%X11BASE%%/include
-+LIBS+=		-L%%X11BASE%%/lib -lX11
++CFLAGS+=	-g -I. -I%%LOCALBASE%%/include
++LIBS+=		-L%%LOCALBASE%%/lib -lX11
 +
  all:	9box
  

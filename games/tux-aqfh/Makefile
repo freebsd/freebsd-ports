@@ -7,25 +7,23 @@
 
 PORTNAME=	tux_aqfh
 PORTVERSION=	1.0.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://tuxaqfh.sourceforge.net/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL adventure game
 
-BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
-USE_X_PREFIX=	yes
-USE_GL=		yes
+USE_GL=		glut
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-plib=${X11BASE}
+CONFIGURE_ARGS=	--with-plib=${LOCALBASE}
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lusbhid ${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -lusbhid ${PTHREAD_LIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e \

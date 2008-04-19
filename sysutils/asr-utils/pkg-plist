@@ -17,5 +17,4 @@ dpt/dptcom
 dpt/dptcom.chk
 dpt/dptsig
 @dirrm dpt
-%%LIBXM%%@cwd %%X11BASE%%
 %%LIBXM%%lib/libXm.so.1

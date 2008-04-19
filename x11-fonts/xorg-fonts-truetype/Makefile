@@ -18,14 +18,12 @@ COMMENT=	X.Org TrueType fonts
 RUN_DEPENDS=	${FONTDIR}/TTF/luximb.ttf:${PORTSDIR}/x11-fonts/font-bh-ttf \
 		${FONTDIR}/OTF/SyrCOMAdiabene.otf:${PORTSDIR}/x11-fonts/font-misc-meltho \
 		${FONTDIR}/TTF/GohaTibebZemen.ttf:${PORTSDIR}/x11-fonts/font-misc-ethiopic \
-		${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/encodings \
-		${X11BASE}/lib/X11/fonts/bitstream-vera/VeraIt.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
-
-CONFLICTS=	XFree86-fontScalable-*
+		${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/encodings \
+		${LOCALBASE}/lib/X11/fonts/bitstream-vera/VeraIt.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 
 do-install:	# empty
 
 NO_BUILD=	# none
-FONTDIR=	${X11BASE}/lib/X11/fonts
+FONTDIR=	${LOCALBASE}/lib/X11/fonts
 
 .include <bsd.port.mk>

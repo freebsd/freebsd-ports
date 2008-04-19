@@ -15,7 +15,6 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
 
 USE_AUTOTOOLS=	libtool:15
-USE_XLIBS=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

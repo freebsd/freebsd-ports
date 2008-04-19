@@ -9,7 +9,7 @@ PORTNAME=		ae_fonts1_ttf
 PORTVERSION=		1.1
 PORTREVISION=	2
 CATEGORIES=		arabic x11-fonts
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	arabeyes
 DISTNAME=		ae_fonts1_ttf_${PORTVERSION}
 
@@ -72,7 +72,7 @@ do-install:
 .endfor
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} "s|X11BASE|${X11BASE}|g" \
+	@${CAT} ${PKGMESSAGE} | ${SED} "s|LOCALBASE|${LOCALBASE}|g" \
 		| ${SED} "s|PORTNAME|ae_fonts1|g"
 
 .include <bsd.port.mk>

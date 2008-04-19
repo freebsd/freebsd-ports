@@ -7,7 +7,7 @@
 
 PORTNAME=	moztraybiff
 PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,6 @@ BROKEN=		${PORTNAME} needs the Thunderbird port in order to build
 TBVER!=		cd ../thunderbird && ${MAKE} -V PORTVERSION
 .endif
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnome
 MAKE_ARGS+=	MOZILLA_PLATFORM=tbird TBVER=${TBVER} MOZ_TRUNK=0

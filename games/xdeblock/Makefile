@@ -18,7 +18,7 @@ COMMENT=	Block action game
 WRKSRC=		${WRKDIR}/xdeblo_v1.0
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 NO_INSTALL_MANPAGES=	yes
 
 post-patch:

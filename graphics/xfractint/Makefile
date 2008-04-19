@@ -7,6 +7,7 @@
 
 PORTNAME=	xfractint
 PORTVERSION=	20.2.04
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sdboyd56.com/xfractint/
 DISTNAME=	xfract${PORTVERSION}
@@ -17,7 +18,7 @@ COMMENT=	The Unix port of fractint
 NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 
 MAN1=		xfractint.1
 

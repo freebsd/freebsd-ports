@@ -19,7 +19,7 @@ COMMENT=	GKrellM2 plugin that monitors active giFT transfers
 
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

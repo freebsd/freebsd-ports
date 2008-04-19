@@ -23,7 +23,7 @@ post-patch:
 	@${REINPLACE_CMD} '/^#/d' ${WRKSRC}/Local.config
 
 pre-install:
-	@${REINPLACE_CMD} 's:@X11BASE@:${X11BASE}:g' \
+	@${REINPLACE_CMD} 's:@LOCALBASE@:${LOCALBASE}:g' \
 		${WRKSRC}/xcheckers.src/xcheckers.man
 
 .include <bsd.port.mk>

@@ -51,8 +51,8 @@
  #
 -# MESA_INC = -I/mach/emc2-32/isl/gershon/c/mesa/MesaLib-2.4/include -D__MESA__ -D__OPENGL__
 -# MESA_LIB = -L/mach/emc2-32/isl/gershon/c/mesa/MesaLib-2.4/lib -lGLU -lGL
-+MESA_INC = -I${X11BASE}/include -D__MESA__ -D__OPENGL__
-+MESA_LIB = -L${X11BASE}/lib -lGLU -lGL
++MESA_INC = -I${LOCALBASE}/include -D__MESA__ -D__OPENGL__
++MESA_LIB = -L${LOCALBASE}/lib -lGLU -lGL
  
  #
  # Support of (shared) libraries.  You will need to set the proper suffix
@@ -105,7 +105,7 @@
 +ifeq ($(WITH_MOTIF_DEF),yes)
 +DFLAGS+=	${MESA_INC}
 +else
-+DFLAGS+=	-D__X11__ -I${X11BASE}/include
++DFLAGS+=	-D__X11__ -I${LOCALBASE}/include
 +endif
 +CFLAGS += -fPIC $(DFLAGS)
  # ifeq ($(CFG), Rel)
@@ -118,10 +118,10 @@
 -# GRAPXMTLIBS = -L/usr/X11R6/lib -lXm -lXt -lX11
 -# GRAPDRVS = nuldrvs$(IRITEXEPF) x11drvs$(IRITEXEPF) xmtdrvs$(IRITEXEPF)
 +MORELIBS =  -lc
-+GRAPX11LIBS = -L${X11BASE}/lib -lX11
++GRAPX11LIBS = -L${LOCALBASE}/lib -lX11
 +GRAPDRVS = nuldrvs$(IRITEXEPF) x11drvs$(IRITEXEPF)
 +ifeq ($(WITH_MOTIF_DEF),yes)
-+GRAPXMTLIBS = -L${X11BASE}/lib -lXm -lXt -lX11
++GRAPXMTLIBS = -L${LOCALBASE}/lib -lXm -lXt -lX11
 +GRAPOGLLIBS = ${MESA_LIB} ${GRAPXMTLIBS}
 +GRAPDRVS+= xmtdrvs$(IRITEXEPF) xogldrvs$(IRITEXEPF)
 +endif

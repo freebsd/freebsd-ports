@@ -16,7 +16,7 @@ COMMENT=	Library to allow credit card processing through MCVE
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-pthread
 
 .include <bsd.port.mk>

@@ -44,7 +44,7 @@ GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 post-extract:
 	@${INSTALL_DATA} ${FILESDIR}/Makefile.tmpl ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's;%%LOCALBASE%%;${LOCALBASE};g ; \
-	s;%%X11BASE%%;${X11BASE};g' \
+	s;%%LOCALBASE%%;${LOCALBASE};g' \
 	${WRKSRC}/Makefile
 	@${MV} ${WRKSRC}/gl_src.c ${WRKSRC}/gl_src.c.bogus
 

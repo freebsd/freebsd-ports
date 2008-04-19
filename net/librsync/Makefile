@@ -25,7 +25,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-shared --disable-trace
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=	librsync.3
 

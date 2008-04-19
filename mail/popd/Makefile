@@ -17,7 +17,7 @@ COMMENT=	Very fast, highly configurable POP3 server (fully RFC1939 compliant)
 MAN5=	popd.conf.5
 MAN8=	popd.8
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MANCOMPRESSED=	maybe
 .if defined(NOPROFILE)
 PLIST_SUB=	NOPROFILE="@comment "

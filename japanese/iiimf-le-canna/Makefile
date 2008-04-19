@@ -7,7 +7,7 @@
 
 PORTNAME=	le-canna
 PORTVERSION=	12.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -26,7 +26,6 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USE_XLIB=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
@@ -38,8 +37,8 @@ BUILDDIR=	${WRKSRC}/leif
 IGNORE=	is supported on FreeBSD 5.3 and later only
 .endif
 
-CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv ${PTHREAD_LIBS}
+CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-patch:

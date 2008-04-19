@@ -7,7 +7,7 @@
 
 PORTNAME=	cbview
 PORTVERSION=	0.06
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://elvine.org/code/cbview/
 
@@ -21,7 +21,6 @@ RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_X_PREFIX=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	COPYING Changes INSTALL README TODO

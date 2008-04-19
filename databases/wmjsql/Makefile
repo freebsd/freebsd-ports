@@ -17,8 +17,7 @@ COMMENT=	MySQL server status displaying dockapp
 
 USE_MYSQL=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 ALL_TARGET=	clean all
 

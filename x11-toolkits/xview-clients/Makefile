@@ -7,7 +7,7 @@
 
 PORTNAME=	xview-clients
 PORTVERSION=	3.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.efd.lth.se/pub/X11/ \
 		ftp://ftp.uni-heidelberg.de/pub/X11/contrib/libraries/ \
@@ -23,7 +23,6 @@ PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../xview:patch
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_IMAKE=	yes
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../xview/work/${DISTNAME}
 ALL_TARGET=	Clients
 

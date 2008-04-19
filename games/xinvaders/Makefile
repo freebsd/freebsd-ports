@@ -7,7 +7,7 @@
 
 PORTNAME=	xinvaders
 PORTVERSION=	2.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade/invaders
@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"don't sell for profit"
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xmu xaw xt
 USE_AUTOTOOLS=	automake:14 autoconf:213
 AUTOMAKE_ARGS=	--include-deps
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

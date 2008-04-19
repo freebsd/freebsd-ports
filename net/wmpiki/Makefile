@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XORG=	xpm
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|$$(X11BASE)|g' \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|$$(LOCALBASE)|g' \
 		-e 's|/include/X11|/include|g' \
 		-e 's|gcc|cc|g' \
 		${WRKSRC}/Makefile

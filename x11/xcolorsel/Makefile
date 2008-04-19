@@ -18,13 +18,13 @@ COMMENT=	X utility to translate rgb values into X color names
 
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
-WRKSRC=		$(WRKDIR)/xcolorsel
+WRKSRC=		${WRKDIR}/xcolorsel
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		xcolorsel.1
 
 post-patch:
-	@${ECHO_CMD} "*.file: ${X11BASE}/lib/X11/rgb.txt" >> ${WRKSRC}/Xcolorsel.ad
+	@${ECHO_CMD} "*.file: ${LOCALBASE}/lib/X11/rgb.txt" >> ${WRKSRC}/Xcolorsel.ad
 	@${REINPLACE_CMD} -e 's|#include <malloc.h>||g' \
 		-e 's|/Xaw/|/Xaw3d/|g' ${WRKSRC}/*.[ch]
 	@${REINPLACE_CMD} -e 's|app2head|./app2head|g' \

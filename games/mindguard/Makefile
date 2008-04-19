@@ -40,15 +40,15 @@ DOCS=	algorithms.html antarctic.html author.html \
 	versions.html
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mindguard ${X11BASE}/bin/mindguard
-	${MKDIR} ${X11BASE}/share/mindguard
+	${INSTALL_PROGRAM} ${WRKSRC}/mindguard ${PREFIX}/bin/mindguard
+	${MKDIR} ${PREFIX}/share/mindguard
 .for i in ${CARRIERS}
-	${INSTALL_DATA} ${WRKSRC}/carriers/$i ${X11BASE}/share/mindguard
+	${INSTALL_DATA} ${WRKSRC}/carriers/$i ${PREFIX}/share/mindguard
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${X11BASE}/share/doc/mindguard
+	${MKDIR} ${PREFIX}/share/doc/mindguard
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/$i ${X11BASE}/share/doc/mindguard
+	${INSTALL_DATA} ${WRKSRC}/docs/$i ${PREFIX}/share/doc/mindguard
 .endfor
 .endif
 

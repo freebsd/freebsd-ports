@@ -7,13 +7,13 @@
 
     to your Mozilla plugins directory, which is usually found at
 
- %%X11BASE%%/lib/mozilla/plugins
+ %%LOCALBASE%%/lib/mozilla/plugins
 
     To use it with Firefox, create the symbolic link to
-    %%X11BASE%%/lib/firefox/plugins
+    %%LOCALBASE%%/lib/firefox/plugins
 
 E.g.
-ln -sf %%PREFIX%%/HelixPlayer/mozilla/nphelix.so %%X11BASE%%/lib/firefox/plugins
+ln -sf %%PREFIX%%/HelixPlayer/mozilla/nphelix.so %%LOCALBASE%%/lib/firefox/plugins
 
 ================================================================================
 

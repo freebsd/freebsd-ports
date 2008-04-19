@@ -6,8 +6,8 @@
 -INCDIR = -I/usr/X11R6/include/X11
 -DESTDIR= /usr/bin
 -LIBDIR = -L/usr/X11R6/lib
-+INCDIR = -I${X11BASE}/include/X11 -I${X11BASE}/include
-+LIBDIR = -L${X11BASE}/lib
++INCDIR = -I${LOCALBASE}/include/X11 -I${LOCALBASE}/include
++LIBDIR = -L${LOCALBASE}/lib
  LIBS   = -ldockapp -lX11 -lXext -lXpm
  OBJS   = wmzazof.o
  

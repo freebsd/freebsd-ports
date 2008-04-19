@@ -16,9 +16,6 @@ COMMENT=	X Keyboard Configuration Database
 
 BUILD_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp
 
-# XXX - sigh
-PREFIX=		${X11BASE}
-
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes

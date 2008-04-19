@@ -23,7 +23,7 @@
  		-I$(SDKDIR)
  else
 -  INSTALLED_X = /usr/X11R6
-+  INSTALLED_X = ${X11BASE}
++  INSTALLED_X = ${LOCALBASE}
    INPUT_MODULE_DIR = $(DESTDIR)/$(INSTALLED_X)/$(LIBDIR)/modules/input
    SYNAPTICS_DRV = synaptics_drv.o
    LDCOMBINEFLAGS = -r
@@ -31,8 +31,8 @@
    else
      SERVERSRC = $(TOP)/programs/Xserver
      ALLINCLUDES = -I. \
-+	-I${X11BASE}/include \
-+	-I${X11BASE}/include/X11 \
++	-I${LOCALBASE}/include \
++	-I${LOCALBASE}/include/X11 \
 +	-I$(SERVERSRC)/hw/xfree86 \
  	-I$(SERVERSRC)/hw/xfree86/common \
  	-I$(SERVERSRC)/hw/xfree86/os-support \
@@ -41,7 +41,7 @@
  	-I$(SERVERSRC)/include \
  	-I$(TOP)/include
 -    X_INCLUDES_ROOT = $(TOP)
-+    X_INCLUDES_ROOT = $(X11BASE)
++    X_INCLUDES_ROOT = $(LOCALBASE)
    endif
  endif
  

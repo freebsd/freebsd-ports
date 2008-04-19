@@ -22,10 +22,10 @@
 - LFLAGS="$LFLAGS -L/usr/X11R6/lib"
 - INCS="-I/usr/X11R6/include"
 - echo " X11 libraries location: /usr/X11R6/lib" 1>&6
-+elif [ -r "${X11BASE}/lib" ]; then
-+ LFLAGS="$LFLAGS -L${X11BASE}/lib"
-+ INCS="-I${X11BASE}/include"
-+ echo " X11 libraries location: ${X11BASE}/lib" 1>&6
++elif [ -r "${LOCALBASE}/lib" ]; then
++ LFLAGS="$LFLAGS -L${LOCALBASE}/lib"
++ INCS="-I${LOCALBASE}/include"
++ echo " X11 libraries location: ${LOCALBASE}/lib" 1>&6
  # X11R5 in /usr/X11R5/lib ?
  elif [ -r "/usr/X11R5/lib" ]; then
   LFLAGS="$LFLAGS -L/usr/X11R5/lib"
@@ -46,7 +46,7 @@
  int main() {; return 0;}
  EOF
  
-+CFLAGS="${CFLAGS} -I${X11BASE}/include"
++CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 +
  if { (eval echo $config_script: \"$compile\") 1>&5; (eval $compile) 2>&5; }; then
    rm -rf conftest*

@@ -8,8 +8,7 @@ PORTNAME=		gambas
 PORTVERSION=		1.0.19
 PORTREVISION=		1
 CATEGORIES=		lang
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Gambas Almost Means BASic
@@ -30,7 +29,7 @@ CONFIGURE_ARGS=		--with-conv-includes=${LOCALBASE}/include	\
 			--with-conv-libraries=${LOCALBASE}/lib		\
 			--with-gettext-includes=${LOCALBASE}/include	\
 			--with-gettext-libraries=${LOCALBASE}/lib	\
-			--with-moc=${X11BASE}/bin
+			--with-moc=${LOCALBASE}/bin
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"		\
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

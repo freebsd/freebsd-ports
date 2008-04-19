@@ -7,7 +7,7 @@
 
 PORTNAME=	xawtv
 PORTVERSION=	3.95
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.bytesex.org/releases/xawtv/
 
@@ -15,11 +15,10 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A TV viewing application and a few TV utilities
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
-		${X11BASE}/lib/X11/fonts/misc/led-iso8859-1.pcf.gz:${PORTSDIR}/x11-fonts/tv-fonts
+		${LOCALBASE}/lib/X11/fonts/misc/led-iso8859-1.pcf.gz:${PORTSDIR}/x11-fonts/tv-fonts
 RUN_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
-		${X11BASE}/lib/X11/fonts/misc/led-iso8859-1.pcf.gz:${PORTSDIR}/x11-fonts/tv-fonts
-LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
-		png.5:${PORTSDIR}/graphics/png \
+		${LOCALBASE}/lib/X11/fonts/misc/led-iso8859-1.pcf.gz:${PORTSDIR}/x11-fonts/tv-fonts
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 OPTIONS=	AA		"Enable AA support" on \
@@ -32,7 +31,7 @@ USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_XORG=	x11
+USE_XORG=	x11 xaw
 CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 		CFLAGS="-I${WRKSRC}/common"
 MAKE_ENV=	verbose=yes
@@ -95,10 +94,10 @@ CONFIGURE_ARGS+=--enable-quicktime=no
 PLIST_SUB+=	QT="@comment "
 .endif
 
-PLIST_SUB+=	X11PREFIX=${X11BASE}
+PLIST_SUB+=	X11PREFIX=${LOCALBASE}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g; \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g; \
 		s|/usr/local|${LOCALBASE}|g; \
 		s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|-lquicktime|-L${LOCALBASE}/lib &|g' \

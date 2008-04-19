@@ -21,8 +21,8 @@ USE_GNOME=	gnomehack libgsf_gnome gnomevfs2 ltverhack intlhack pygtk2
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/gsf \
 		--disable-gtk-doc --with-bz2 --with-gnome --with-python
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=
 GSF_SLAVE=	yes

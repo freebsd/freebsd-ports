@@ -40,7 +40,7 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CONFIGURE_ARGS+=--with-ncurses
 ALL_TARGET=	default examples demos cli cdkshlib
 INSTALL_TARGET=	install installCDKSHLibrary
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include "${.CURDIR}/maninfo.mk"
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	simage
 PORTVERSION=	1.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 
@@ -20,7 +20,6 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png
 
-USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

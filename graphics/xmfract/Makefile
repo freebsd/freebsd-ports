@@ -7,7 +7,7 @@
 
 PORTNAME=	xmfract
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	graphics
@@ -17,10 +17,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The dos based 'fractint' with an X/Motif front end
 
 USE_MOTIF=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-editres	\
-	--with-motif="motif_includes=${X11BASE}/include motif_libraries=${X11BASE}/lib"
+	--with-motif="motif_includes=${LOCALBASE}/include motif_libraries=${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 

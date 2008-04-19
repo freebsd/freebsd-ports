@@ -10,18 +10,17 @@ PORTNAME=	armagetron
 PORTVERSION=	0.2.7.1
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	armagetronad
+MASTER_SITES=	SF/armagetronad
 DISTNAME=	armagetronad-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer networked Tron clone in 3D
 
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	sdl image
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CFLAGS} -I${X11BASE}/include"
+CONFIGURE_ENV=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png

@@ -16,15 +16,15 @@ MASTER_SITE_SUBDIR=	perky
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	X On-Screen-Display Library and XMMS plug-in
 
-XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
+XMMS_CONFIG?=	${LOCALBASE}/bin/xmms-config
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib' \
-		CFLAGS='${CFLAGS}' X11BASE='${X11BASE}' \
+		CFLAGS='${CFLAGS}' LOCALBASE='${LOCALBASE}' \
 		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}' \
-		XMMS_PLUGINDIR=${X11BASE}/lib/xmms
+		XMMS_PLUGINDIR=${LOCALBASE}/lib/xmms
 
 MAN1=		osd_cat.1 xosd-config.1
 MAN3=		xosd.3 xosd_create.3 xosd_destroy.3 xosd_display.3 \

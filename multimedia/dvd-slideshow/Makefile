@@ -22,7 +22,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		jhead:${PORTSDIR}/graphics/jhead \
 		flvtool2:${PORTSDIR}/multimedia/ruby-flvtool2 \
-		${X11BASE}/lib/X11/fonts/urwfonts-ttf/README:${PORTSDIR}/x11-fonts/urwfonts-ttf
+		${LOCALBASE}/lib/X11/fonts/urwfonts-ttf/README:${PORTSDIR}/x11-fonts/urwfonts-ttf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
 
@@ -78,7 +78,7 @@ PLIST_SUB+=	NOPORTDOCS=""
 post-patch:
 .for FILE in dvd-slideshow dvd-menu dir2slideshow gallery1-to-slideshow jigl2slideshow
 	@${REINPLACE_CMD} -e 's|!/bin/bash|!${PREFIX}/bin/bash|g ; \
-			      s|/usr/share/fonts/|${X11BASE}/lib/X11/fonts/|g ; \
+			      s|/usr/share/fonts/|${LOCALBASE}/lib/X11/fonts/|g ; \
 			      s|seq |seq2 |g' \
 				 ${WRKSRC}/${FILE}
 .ifdef(WITH_THEMES)

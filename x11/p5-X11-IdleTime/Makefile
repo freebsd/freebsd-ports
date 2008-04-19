@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
     		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_XLIB=	yes
+USE_XORG=	x11 xscrnsaver
 PERL_CONFIGURE=	5.8.0+
 
 MANPREFIX=	${SITE_PERL}
@@ -26,7 +26,7 @@ MAN3=		X11::IdleTime.3
 
 post-patch:
 .for i in IdleTime.pm
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/${i}
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/${i}
 	@${PERL} -pi -e "s,[\d\.]+,${PORTVERSION:C/0./0.0/}, if m{VERSION}" ${WRKSRC}/${i}
 .endfor
 

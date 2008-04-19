@@ -23,6 +23,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Imlib2.3
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

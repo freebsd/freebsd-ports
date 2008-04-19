@@ -20,9 +20,9 @@ SUB_FILES=	pkg-message
 
 do-build:
 	cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} \
-		-I${X11BASE}/include/X11 -I${X11BASE}/include \
+		-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include \
 		wmb_libs.c wmbutton.c -o wmbutton \
-		-L${X11BASE}/lib -lXpm -lXext -lX11
+		-L${LOCALBASE}/lib -lXpm -lXext -lX11
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmbutton ${PREFIX}/bin/wmbutton

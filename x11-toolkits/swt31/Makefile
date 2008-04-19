@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
 USE_ZIP=	yes
 MAKEFILE=	make_freebsd.mak
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_SUB=	BUILD=${SWT_VERSION}
 PLIST_FILES=	%%JAVAJARDIR%%/swt.jar \
 		lib/libswt-atk-gtk-%%BUILD%%.so \

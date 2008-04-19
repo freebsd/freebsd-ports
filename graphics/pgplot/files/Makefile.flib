@@ -15,7 +15,7 @@ DRIVERS=gidriv.f gldriv.f hgdriv.f lxdriv.f nudriv.f ppdriv.f psdriv.f ttdriv.f 
 SRCS= ${PG_ROUTINES} ${PG_NON_STANDARD} ${GR_ROUTINES} ${SYSTEM_ROUTINES} \
 	${DRIVERS} grexec.f
 
-CFLAGS+=-DPG_PPU -I${X11BASE}/include -I${PREFIX}/include
+CFLAGS+=-DPG_PPU -I${LOCALBASE}/include -I${PREFIX}/include
 LDADD=-L${PREFIX}/lib -lpng
 
 .include <bsd.lib.mk>

@@ -249,18 +249,18 @@
 -		/usr/include/X11/StringDefs.h \
 -		/usr/include/X11/Xutil.h \
 -		/usr/include/X11/cursorfont.h \
-+		$(X11BASE)/include/X11/Intrinsic.h \
-+		$(X11BASE)/include/X11/StringDefs.h \
-+		$(X11BASE)/include/X11/Xutil.h \
-+		$(X11BASE)/include/X11/cursorfont.h \
++		$(LOCALBASE)/include/X11/Intrinsic.h \
++		$(LOCALBASE)/include/X11/StringDefs.h \
++		$(LOCALBASE)/include/X11/Xutil.h \
++		$(LOCALBASE)/include/X11/cursorfont.h \
  		defs.h xws_defs.h
  
  xws_delim.o:    /usr/include/stdio.h \
  		/usr/include/strings.h \
 -		/usr/include/X11/Intrinsic.h \
 -		/usr/include/X11/Xutil.h \
-+		$(X11BASE)/include/X11/Intrinsic.h \
-+		$(X11BASE)/include/X11/Xutil.h \
++		$(LOCALBASE)/include/X11/Intrinsic.h \
++		$(LOCALBASE)/include/X11/Xutil.h \
  		defs.h xws_defs.h
  
  xws_color.o:	/usr/include/stdio.h \
@@ -268,35 +268,35 @@
 -		/usr/include/X11/Intrinsic.h \
 -		/usr/include/X11/Xutil.h \
 -		/usr/include/X11/Xatom.h \
-+		$(X11BASE)/include/X11/Intrinsic.h \
-+		$(X11BASE)/include//X11/Xutil.h \
-+		$(X11BASE)/include/X11/Xatom.h \
++		$(LOCALBASE)/include/X11/Intrinsic.h \
++		$(LOCALBASE)/include//X11/Xutil.h \
++		$(LOCALBASE)/include/X11/Xatom.h \
  		defs.h xws_defs.h xws_color.h
  
 -xws_polyline.o:/usr/include/X11/Intrinsic.h \
-+xws_polyline.o:$(X11BASE)/include/X11/Intrinsic.h \
++xws_polyline.o:$(LOCALBASE)/include/X11/Intrinsic.h \
  		defs.h xws_defs.h
  
  xws_polygon.o:	/usr/include/stdio.h \
 -		/usr/include/X11/Intrinsic.h \
-+		$(X11BASE)/include/X11/Intrinsic.h \
++		$(LOCALBASE)/include/X11/Intrinsic.h \
  		defs.h xws_defs.h xws_fill.h
  
 -xws_marker.o:	/usr/include/X11/Intrinsic.h \
-+xws_marker.o:	$(X11BASE)/include/X11/Intrinsic.h \
++xws_marker.o:	$(LOCALBASE)/include/X11/Intrinsic.h \
  		defs.h xws_defs.h
  
  xws_text.o:	/usr/include/strings.h \
 -		/usr/include/X11/Intrinsic.h \
 -		/usr/include/X11/Xatom.h \
-+		$(X11BASE)/include/X11/Intrinsic.h \
-+		$(X11BASE)/include/X11/Xatom.h \
++		$(LOCALBASE)/include/X11/Intrinsic.h \
++		$(LOCALBASE)/include/X11/Xatom.h \
  		defs.h xws_defs.h
  
  xws_cla.o:      /usr/include/stdio.h \
  		/usr/include/math.h \
 -		/usr/include/X11/Intrinsic.h \
-+		$(X11BASE)/include/X11/Intrinsic.h \
++		$(LOCALBASE)/include/X11/Intrinsic.h \
  		defs.h xws_defs.h xws_color.h
  #-----------------------------------------------------------------------------
  # DrawCGM and CGMGen, and test routines

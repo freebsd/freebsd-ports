@@ -24,8 +24,8 @@ USE_PERL5_BUILD=yes
 USE_GNOME=	gtk20
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--extra-inc=${LOCALBASE}/include:${X11BASE}/include \
-		--extra-ld=${LOCALBASE}/lib:${X11BASE}/lib \
+		--extra-inc=${LOCALBASE}/include \
+		--extra-ld=${LOCALBASE}/lib \
 		--disable-dgt
 
 INSTALL_TARGET=	install install-man

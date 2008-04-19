@@ -26,7 +26,7 @@ EXPIRATION_DATE=	2007-10-28
 PLIST_SUB=	TARGET=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 			-e 's|echo aout|echo elf|g' \
 	${WRKSRC}/configure
 

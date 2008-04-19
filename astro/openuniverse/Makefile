@@ -9,8 +9,7 @@ PORTNAME=	openuniverse
 DISTVERSION=	1.0beta3
 PORTREVISION=	4
 CATEGORIES=	astro
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	openuniverse
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL Solar System simulator for X Window System
@@ -26,8 +25,8 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib" \
 
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${X11BASE}/include/GL -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm"  \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/GL -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lm"  \
 		LIBS="-lcompat" PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 

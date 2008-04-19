@@ -15,7 +15,7 @@ COMMENT=	Astronomical julian date calculator
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

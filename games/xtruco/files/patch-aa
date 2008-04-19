@@ -5,13 +5,13 @@
  ################################
  
 -INCLUDES	= -I/usr/X11/include
-+INCLUDES	= -I${X11BASE}/include
++INCLUDES	= -I${LOCALBASE}/include
  
  # Remove '-DIPC_OK' if you have problems with 'shared-memory' (IPC routines)
  OPC		= -DIPC_OK
  
 -LIBRARIES	= -lX11 -L/usr/X11/lib
-+LIBRARIES	= -lX11 -L${X11BASE}/lib
++LIBRARIES	= -lX11 -L${LOCALBASE}/lib
  
  CFILES		= xtruco.c bitmap.c cursor.c display.c event.c gc.c pixmap.c\
  		  topwind.c window.c color.c button.c font.c read.c

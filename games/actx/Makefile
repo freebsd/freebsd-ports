@@ -17,7 +17,7 @@ COMMENT=	Window sitter for X11
 NO_CDROM=	'contains commercial character data'
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		actx.1
 MANLANG=	"" ja
 

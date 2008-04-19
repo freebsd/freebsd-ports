@@ -25,7 +25,7 @@ PLIST_DIRS=	%%DATADIR%%
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|; \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|; \
 		s|/usr/local|${LOCALBASE}|; s|gcc|${CC}|' \
 			${WRKSRC}/Makefile
 post-build:

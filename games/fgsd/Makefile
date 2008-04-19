@@ -9,16 +9,15 @@ PORTNAME=	fgsd
 DISTVERSION=	0.3.1a
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A scenery designer for the FlightGear flight simulator
 
-BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
-RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
+		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
+RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
+		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
 		flu:${PORTSDIR}/x11-toolkits/flu \
 		ungif:${PORTSDIR}/graphics/libungif \
@@ -26,12 +25,11 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
 		CGAL:${PORTSDIR}/math/cgal \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
-		glut:${PORTSDIR}/graphics/libglut
 
-USE_GL=		yes
+USE_GL=		glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/fgsd share/pixmaps/fgsd.xpm
 DESKTOP_ENTRIES="FlightGear Scenery Designer" \

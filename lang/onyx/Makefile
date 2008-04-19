@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libedit-prefix=${LOCALBASE} \
 		--with-pcre-prefix=${LOCALBASE}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		onyx.1 onyx_config.1
 

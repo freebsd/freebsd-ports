@@ -2,7 +2,7 @@
 +++ wmmultipop3/Makefile	Sun May 26 19:40:43 2002
 @@ -1,14 +1,13 @@
 -LIBDIR = -L/usr/X11R6/lib
-+LIBDIR = -L${X11BASE}/lib
++LIBDIR = -L${LOCALBASE}/lib
  LIBS   = -lXpm -lXext -lX11
 -FLAGS  = -O2
  OBJS   = wmmultipop3.o Pop3Client.o ../wmgeneral/wmgeneral.o ../wmgeneral/misc.o ../wmgeneral/list.o
@@ -10,7 +10,7 @@
  
  .c.o:
 -	cc -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
-+	${CC} -I${X11BASE}/include ${CFLAGS} -c -Wall $< -o $@
++	${CC} -I${LOCALBASE}/include ${CFLAGS} -c -Wall $< -o $@
  
  wmmultipop3: $(OBJS) 
 -	cc $(FLAGS) -o wmmultipop3 $^ -lXext $(LIBDIR) $(LIBS)

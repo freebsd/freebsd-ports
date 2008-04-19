@@ -64,8 +64,8 @@ $FreeBSD$
  #LIBS = -L/usr/Motif-1.2/lib32 -lXm \
  #       -L/usr/lib/X11 -lXmu -lXt -lXext -lX11 -lSM -lICE $(FTYPE_LIBS)
  
-+INCS = -I${X11BASE}/include ${FTYPE_INCS}
-+LIBS = -L${X11BASE}/lib ${MOTIFLIB} \
++INCS = -I${LOCALBASE}/include ${FTYPE_INCS}
++LIBS = -L${LOCALBASE}/lib ${MOTIFLIB} \
 +       -lXpm -lXmu -lXt -lX11 -lSM -lICE -lXext ${FTYPE_LIBS}
 +
  all: xmbdfed

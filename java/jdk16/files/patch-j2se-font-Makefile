@@ -7,7 +7,7 @@ $FreeBSD$
  # setup the list of libraries to link in...
  ifeq ($(PLATFORM), bsd)
 -OTHER_INCLUDES += -I/usr/X11R6/include
-+OTHER_INCLUDES += -I${X11BASE}/include
++OTHER_INCLUDES += -I${LOCALBASE}/include
  OTHER_LDLIBS  += -lawt $(LIBM) $(LIBCXX)
  else
  ifeq ($(PLATFORM), linux)

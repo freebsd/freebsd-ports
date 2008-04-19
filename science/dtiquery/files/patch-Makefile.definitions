@@ -14,7 +14,7 @@
  ifdef FreeBSD
  
 -WX_CONFIG_BIN		?= /usr/X11R6/bin/wxgtk2-2.8-config
-+WX_CONFIG_BIN		?= ${X11BASE}/bin/wxgtk2-2.8-config
++WX_CONFIG_BIN		?= ${LOCALBASE}/bin/wxgtk2-2.8-config
  VTK_INCLUDE_PATHS	?= -I/usr/local/include/vtk-5.0/
  VTK_LIB_PATHS		?= -L/usr/local/lib/vtk-5.0/
  WX_INCLUDE_PATHS	?= `$(WX_CONFIG_BIN) --cxxflags`
@@ -27,7 +27,7 @@
  JAMA_INCLUDE_PATH	?= -I/usr/local/include/
  ZLIB_INCLUDE_PATH	?= -I/usr/include
 -SYS_INCLUDE_PATHS	?= -I/usr/include -I/usr/X11R6/include -I/usr/local/include/gtk-2.0 -I/usr/X11R6/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/include/cairo -I/usr/local/include/pango-1.0 -I/usr/X11R6/include/pango-1.0 -I/usr/local/include/atk-1.0 
-+SYS_INCLUDE_PATHS	?= -I/usr/include -I${X11BASE}/include -I/usr/local/include/gtk-2.0 -I${X11BASE}/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/include/cairo -I/usr/local/include/pango-1.0 -I${X11BASE}/include/pango-1.0 -I/usr/local/include/atk-1.0 
++SYS_INCLUDE_PATHS	?= -I/usr/include -I${LOCALBASE}/include -I/usr/local/include/gtk-2.0 -I${LOCALBASE}/include/gtk-2.0 -I/usr/local/include/glib-2.0 -I/usr/local/include/cairo -I/usr/local/include/pango-1.0 -I${LOCALBASE}/include/pango-1.0 -I/usr/local/include/atk-1.0 
 +SYS_CXXFLAGS 		?= -g
  SYS_LIBS		?= -L/usr/local/lib -lXt -lGL -lpng
  

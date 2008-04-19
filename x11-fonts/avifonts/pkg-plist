@@ -17,4 +17,4 @@
 %%FONTSDIR%%/fonts.dir
 @unexec rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm %%FONTSDIR%%
-@exec %%X11BASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true

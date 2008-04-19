@@ -21,7 +21,7 @@
  # add library search path
  #
 -CFLAGS+=-L/usr/X11/lib
-+CFLAGS+=-L${X11BASE}/lib
++CFLAGS+=-L${LOCALBASE}/lib
  
  # on some systems you might add this line, because gcc starts wining
  # about 'sizeof(Display)', since Display might be an empty struct;
@@ -52,7 +52,7 @@
  #LIBS=-lnsl
  
 +# FreeBSD
-+XDIR=${X11BASE}/include
++XDIR=${LOCALBASE}/include
 +LIBS=-lm
 +
  #

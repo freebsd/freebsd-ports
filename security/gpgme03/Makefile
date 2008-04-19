@@ -22,7 +22,7 @@ LATEST_LINK=	gpgme03
 
 USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 INFO=	gpgme03
 

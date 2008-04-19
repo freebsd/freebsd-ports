@@ -24,6 +24,6 @@ USE_PYTHON=	-2.4
 USE_PYTHON_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

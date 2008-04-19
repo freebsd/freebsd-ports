@@ -19,8 +19,9 @@ PATCHFILES=	j${PORTNAME}-${PORTVERSION}.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dungeon explorin', slashin', hackin' game
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_LATEST_LINK=	yes
 
@@ -52,7 +53,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/win/X11/JNetHack.ad ${PREFIX}/share/examples/ja/nethack
 .for i in ibm nh10
 	${INSTALL_DATA} ${WRKSRC}/win/X11/$i.bdf ${PREFIX}/share/examples/ja/nethack
-	${X11BASE}/bin/bdftopcf ${PREFIX}/share/examples/ja/nethack/$i.bdf \
+	${LOCALBASE}/bin/bdftopcf ${PREFIX}/share/examples/ja/nethack/$i.bdf \
 		> ${PREFIX}/share/examples/ja/nethack/$i.pcf
 	${RM} ${PREFIX}/share/examples/ja/nethack/$i.bdf
 	${GZIP_CMD} ${PREFIX}/share/examples/ja/nethack/$i.pcf

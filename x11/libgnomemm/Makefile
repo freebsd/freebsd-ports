@@ -7,10 +7,9 @@
 
 PORTNAME=	libgnomemm
 PORTVERSION=	2.0.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11 gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtkmm
+MASTER_SITES=	SF/gtkmm
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org
@@ -20,11 +19,10 @@ LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgnome
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
 
 .include <bsd.port.mk>

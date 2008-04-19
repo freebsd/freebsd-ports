@@ -7,10 +7,9 @@
 
 PORTNAME=		snd
 PORTVERSION=		7.8
-PORTREVISION=		9
+PORTREVISION=		10
 CATEGORIES=		audio
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		SF
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Multitracking sound editor and utilities
@@ -54,8 +53,7 @@ CONFIGURE_ARGS+=	--with-gtk \
 			--with-gtkrc-colors \
 			--with-float-samples
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 
 .include <bsd.port.pre.mk>

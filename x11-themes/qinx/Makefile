@@ -18,7 +18,7 @@ USE_KDEBASE_VER=3
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
 
 .include <bsd.port.mk>

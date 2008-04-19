@@ -7,7 +7,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.0.20080409
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
@@ -29,8 +29,8 @@ HAS_CONFIGURE=	yes
 OPTIONS=	DEBUG "Enable Debugging" Off \
 		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
 
-CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
-			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${LOCALBASE}/include" \
+			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib" \
 			--enable-shared
 
 .include <bsd.port.pre.mk>
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--enable-mp4-output
 
 .if defined(WITH_X11_OUTPUT)
 CONFIGURE_ARGS+=	--enable-visualize
-USE_XLIB=		yes
+USE_XORG=	x11
 .endif
 
 post-patch:

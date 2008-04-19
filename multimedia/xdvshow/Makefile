@@ -7,7 +7,7 @@
 
 PORTNAME=	xdvshow
 PORTVERSION=	00.2003.09.03
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.sfc.wide.ad.jp/DVTS/software/xdvshow/
 DISTNAME=	${PORTNAME}
@@ -20,13 +20,12 @@ LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
 PLIST_FILES=	bin/xdvshow
 GNU_CONFIGURE=		YES
 USE_AUTOTOOLS=	autoconf:261
-USE_XLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g" \
 		-e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
-		-e "s|/usr/X11R6|${X11BASE}|g" \
+		-e "s|/usr/X11R6|${LOCALBASE}|g" \
 		${WRKSRC}/configure.in
 	${REINPLACE_CMD} -e "s|-Werror||" ${WRKSRC}/src/Makefile.in
 

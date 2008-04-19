@@ -23,7 +23,7 @@ REINPLACE_ARGS=	-i "" # no backup (for install)
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g; \
-		s,/usr/X11R6,${X11BASE},g' \
+		s,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/lib/freebsd-g++/tmake.conf
 
 do-install:

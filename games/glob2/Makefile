@@ -22,12 +22,12 @@ LIB_DEPENDS=		vorbis.4:${PORTSDIR}/audio/libvorbis	\
 			freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=		image net sdl ttf
-USE_GL=			yes
+USE_GL=			gl
 USE_GMAKE=		yes
 USE_SCONS=		yes
 SCONS_BUILDENV=		${SCONS_ENV}
-LINKFLAGS=		${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib
-CFLAGS+=		${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include
+LINKFLAGS=		${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CFLAGS+=		${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 

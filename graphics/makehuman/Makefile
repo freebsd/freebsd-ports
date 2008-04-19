@@ -15,16 +15,15 @@ MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Application for parametrical modeling of 3D humanoid characters
 
 LIB_DEPENDS=	animorph.0:${PORTSDIR}/graphics/animorph \
-		mhgui.0:${PORTSDIR}/graphics/mhgui \
-		glut.4:${PORTSDIR}/graphics/libglut
+		mhgui.0:${PORTSDIR}/graphics/mhgui
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-USE_GL=		yes
+USE_GL=		glut
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

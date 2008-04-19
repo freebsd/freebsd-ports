@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e \
-		's|/usr/include/synaptics|${X11BASE}/include/synaptics|g' \
+		's|/usr/include/synaptics|${LOCALBASE}/include/synaptics|g' \
 		${WRKSRC}/ksynaptics/src/Makefile.in
 
 .include <bsd.port.mk>

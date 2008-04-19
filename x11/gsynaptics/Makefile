@@ -33,6 +33,6 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-RUN_DEPENDS+=	${X11BASE}/lib/xorg/modules/input/synaptics_drv.so:${PORTSDIR}/x11-drivers/synaptics
+RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/input/synaptics_drv.so:${PORTSDIR}/x11-drivers/synaptics
 
 .include <bsd.port.post.mk>

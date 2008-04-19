@@ -24,7 +24,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyxmms
 USE_BZIP2=	yes
 USE_GNOME=	glib12
-XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
+XMMS_CONFIG?=	${LOCALBASE}/bin/xmms-config
 MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" XMMS_CONFIG="${XMMS_CONFIG}"
 
 .include <bsd.port.mk>

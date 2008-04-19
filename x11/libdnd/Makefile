@@ -7,7 +7,7 @@
 
 PORTNAME=	libdnd
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://leb.net/offix/
 DISTNAME=	dnd.${PORTVERSION}
@@ -16,10 +16,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drag and drop library
 
-USE_XLIB=	yes
+USE_XORG=	x11 xmu ice xaw
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/DND/DNDlib
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/" \
+		LDFLAGS="-L${LOCALBASE}/lib/"
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -32,7 +32,7 @@ USE_LDCONFIG=	yes
 MAKE_ARGS=	SHELL=${SH}
 CFLAGS+=	-DUSE_XSHM -DHZ=100
 
-PREFIX=		${X11BASE}
+PREFIX=		${LOCALBASE}
 FILESDIR=	${.CURDIR}/../../graphics/libGL/files
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
 CONFDIR=	${WRKSRC}/configs
@@ -66,7 +66,7 @@ FAST_MATH=	-ffast-math
 pre-patch:
 	@${REINPLACE_CMD} \
 		-e '/^CC =/d' -e '/^CXX =/d' \
-		-e 's|/usr/X11R6|${X11BASE}|g' \
+		-e 's|/usr/X11R6|${LOCALBASE}|g' \
 		-e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		-e 's|-ffast-math|${FAST_MATH}|g' \
@@ -76,9 +76,9 @@ pre-patch:
 		-e 's|-DHAVE_POSIX_MEMALIGN||' \
 		${CONFDIR}/freebsd-dri
 	@${REINPLACE_CMD} \
-		-e 's|^\(MKDEP_OPTIONS.*\)|\1 -- -I${X11BASE}/include|' \
-		-e 's|^\(MKLIB_OPTIONS.*\)|\1 -L${X11BASE}/lib|' \
-		-e 's|^DRI_DRIVER_INSTALL_DIR.*|DRI_DRIVER_INSTALL_DIR = ${X11BASE}/lib/dri|' \
+		-e 's|^\(MKDEP_OPTIONS.*\)|\1 -- -I${LOCALBASE}/include|' \
+		-e 's|^\(MKLIB_OPTIONS.*\)|\1 -L${LOCALBASE}/lib|' \
+		-e 's|^DRI_DRIVER_INSTALL_DIR.*|DRI_DRIVER_INSTALL_DIR = ${LOCALBASE}/lib/dri|' \
 		${CONFDIR}/default
 
 .if !target(do-install)

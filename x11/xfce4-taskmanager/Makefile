@@ -16,8 +16,6 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A task manager for XFCE
 
-CONFIGURE_ENV=	PKG_CONFIG_PATH=${X11BASE}/libdata/pkgconfig:${LOCALBASE}/libdata/pkgconfig
-
 GNU_CONFIGURE=	yes
 USE_BZIP=	yes
 USE_GETTEXT=	yes

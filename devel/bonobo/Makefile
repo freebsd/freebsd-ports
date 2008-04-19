@@ -8,7 +8,7 @@
 
 PORTNAME=	bonobo
 PORTVERSION=	1.0.22
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
@@ -18,7 +18,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The component and compound document system for GNOME
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix oaf gnomehier gnomeprint

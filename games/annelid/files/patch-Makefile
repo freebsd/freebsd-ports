@@ -16,7 +16,7 @@
 -CCC=g++
 -CFLAGS=-I. `sdl-config --cflags` -c -Wall -ggdb -fomit-frame-pointer -O3
 +CCC=$(CXX)
-+CFLAGS=%%CFLAGS%% -I. -I%%X11BASE%%/include `sdl-config --cflags` -c -Wall $(OPT)
++CFLAGS=%%CFLAGS%% -I. -I%%LOCALBASE%%/include `sdl-config --cflags` -c -Wall $(OPT)
 +OPT = -fomit-frame-pointer -O3
  
 -LD=g++
@@ -26,7 +26,7 @@
  LIBS=-lopengl32 `sdl-config --libs`
  else
 -LIBS=-L/usr/X11R6/lib -lGL `sdl-config --libs`
-+LIBS=-L%%X11BASE%%/lib -lGL `sdl-config --libs`
++LIBS=-L%%LOCALBASE%%/lib -lGL `sdl-config --libs`
  endif
  
  all: $(NAME)

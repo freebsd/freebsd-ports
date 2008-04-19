@@ -7,7 +7,7 @@
 
 PORTNAME=	expocity
 PORTVERSION=	2.6.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.pycage.de/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -20,14 +20,14 @@ LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 CONFLICTS=	metacity*
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_X11=	x11
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix gnomehack gnomehier gconf2 libglade2
 GCONF_SCHEMAS=	metacity.schemas
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 

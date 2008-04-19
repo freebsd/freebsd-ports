@@ -19,8 +19,8 @@ USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--program-prefix=""
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 post-patch:
 	${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG}|g; \

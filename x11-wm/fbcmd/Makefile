@@ -25,7 +25,7 @@ USE_XORG=	x11 xmu
 PLIST_FILES=	bin/fbcmd
 
 post-extract:
-	@${REINPLACE_CMD} -e "s|/usr/X11R6|${X11BASE}|g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|/usr/X11R6|${LOCALBASE}|g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fbcmd ${PREFIX}/bin

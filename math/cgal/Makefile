@@ -18,7 +18,7 @@ COMMENT=	A computational geometry library
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 SHLIB_VERSION=	0
 
 HAS_CONFIGURE=		yes

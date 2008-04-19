@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text editor for X
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		xed.1
 
 pre-build:

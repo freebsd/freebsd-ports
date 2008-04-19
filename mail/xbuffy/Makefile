@@ -7,7 +7,7 @@
 
 PORTNAME=	xbuffy
 PORTVERSION=	3.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.fiction.net/blong/programs/xbuffy/
 DISTNAME=	${PORTNAME}-3.3.bl.3
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-3.3.bl.3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A replacement for xbiff that handles multiple mail files
 
-USE_X_PREFIX=	yes
+USE_XORG=	xext xt xaw
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		xbuffy.1

@@ -21,7 +21,7 @@
 +COPTIONS=-DVERSION=\"${VERSION}\"
  
 -CFLAGS=${COPTIONS} ${DEBUG} ${CONFIGS} ${PREFS} -I../include
-+CFLAGS+=${COPTIONS} ${DEBUG} ${CONFIGS} ${PREFS} -I../include -I${X11BASE}/include
++CFLAGS+=${COPTIONS} ${DEBUG} ${CONFIGS} ${PREFS} -I../include -I${LOCALBASE}/include
  LDOPTIONS=
  
  # LDLIBS should include the name of your X library path if not /usr/lib;
@@ -29,7 +29,7 @@
  # appear much but it looks much better when it does.
  # Linux
 -LDLIBS=-L/usr/X11R6/lib -lXpm -lXaw3d -lXmu -lXext -lXt -lX11
-+LDLIBS=-L${X11BASE}/lib -lXpm -lXaw3d -lXmu -lXext -lXt -lX11 -Wl,-rpath,${X11BASE}/lib
++LDLIBS=-L${LOCALBASE}/lib -lXpm -lXaw3d -lXmu -lXext -lXt -lX11 -Wl,-rpath,${LOCALBASE}/lib
  # Sun
  #LDLIBS=-lXpm -lXaw -lXmu -lXext -lXt -lX11 -lm
  

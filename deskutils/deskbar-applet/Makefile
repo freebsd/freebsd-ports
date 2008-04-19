@@ -8,6 +8,7 @@
 
 PORTNAME=	deskbar-applet
 PORTVERSION=	2.22.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,7 +23,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-e
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack pygnomedesktop intlhack
 USE_PYTHON=	yes
 USE_GMAKE=	yes

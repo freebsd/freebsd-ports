@@ -7,7 +7,7 @@
 
 PORTNAME=	claraocr
 PORTVERSION=	0.9.9
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	graphics accessibility
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	clara-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	Optical character recognition (OCR) utility
 
 RUN_DEPENDS=	pnmenlarge:${PORTSDIR}/graphics/netpbm
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_PERL5=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
 

@@ -70,7 +70,7 @@
  			 $(top_builddir)/swlibs/$(TEXTURE_UTILITIES_DIR)/lib/libtexus.la \
               $(top_builddir)/@FX_GLIDE_HW@/minihwc/libminihwc.la
 -LINK_LIBS  = -L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm -lm
-+LINK_LIBS  = -L$(X11BASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm -lm
++LINK_LIBS  = -L$(LOCALBASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm -lm
  
  CLEANFILES = fxinline.h fxgasm.h
  

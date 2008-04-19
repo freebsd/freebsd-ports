@@ -7,7 +7,7 @@
 
 PORTNAME=	spellcast
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.eblong.com/zarf/ftp/
 DISTNAME=	${PORTNAME}
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer fight with spells turn based game for X Window System
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 MAN6=		spellcast.6
 
 do-install:

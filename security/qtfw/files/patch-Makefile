@@ -15,8 +15,8 @@
 -QT_LIBS:=-L/usr/X11R6/lib
 -LIBS:=-lqt-mt -pthread
 +CXXFLAGS+=-I. -I.. -Wall ${PTHREAD_CFLAGS}
-+QT_INCLUDES:=-I${X11BASE}/include
-+QT_LIBS:=-L${X11BASE}/lib
++QT_INCLUDES:=-I${LOCALBASE}/include
++QT_LIBS:=-L${LOCALBASE}/lib
 +LIBS:=-lqt-mt ${PTHREAD_LIBS}
  
  UI_TEMPLATES_DIR:=../qtdesigner-ui

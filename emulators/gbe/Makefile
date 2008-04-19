@@ -7,7 +7,7 @@
 
 PORTNAME=	gbe
 PORTVERSION=	0.0.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zophar.net/unix/Files/
 
@@ -17,10 +17,10 @@ COMMENT=	Nintendo GameBoy(tm) emulator with GNU source code
 PLIST_FILES=	bin/gbe
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gbe ${PREFIX}/bin

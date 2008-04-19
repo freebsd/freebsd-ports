@@ -10,9 +10,7 @@ PORTNAME?=	clearlooks
 PORTVERSION=	0.6.2
 PORTREVISION=	6
 CATEGORIES=	x11-themes
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	clearlooks
-DISTNAME=	clearlooks-${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT?=	GTK+ 2.x engine based on Bluecurve
@@ -22,8 +20,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(PORTNAME) && ${PORTNAME} == "clearlooks"
 OPTIONS+=	ANIMATION "Enable experimental animated progressbars" Off \

@@ -34,8 +34,8 @@ USE_XORG=	x11 xau xdmcp xext xi xrandr xv sm ice
 MAN1=		electricsheep.1
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 LIBTOOLFILES=	configure mpeg2dec/configure flam3/configure
 
@@ -52,7 +52,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/usr/X11R6/lib/xscreensaver/config|${X11BASE}/share/xscreensaver/config|' \
+		's|/usr/X11R6/lib/xscreensaver/config|${LOCALBASE}/share/xscreensaver/config|' \
 		${WRKSRC}/Makefile.in
 
 	@${REINPLACE_CMD} -e \

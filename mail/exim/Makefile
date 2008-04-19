@@ -47,7 +47,7 @@ WITH_EXIMON=	yes
 .endif
 
 .if defined(WITH_EXIMON)
-USE_XLIB=	yes
+USE_XORG=	x11 xaw xt
 .endif
 
 USE_BZIP2=	yes

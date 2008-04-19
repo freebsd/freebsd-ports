@@ -129,7 +129,7 @@ QMON=		noqmon
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
-	    -e "s|%%X11BASE%%|${X11BASE}|g" \
+	    -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 	    -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 	    ${WRKSRC}/dist/util/arch_variables \
 	    ${WRKSRC}/dist/pvm/src/aimk
@@ -137,7 +137,7 @@ post-patch:
 	    -e "s|%%CXX%%|${CXX}|g" \
 	    -e "s|%%CFLAGS%%|${CFLAGS}|g" \
 	    -e "s|%%CXXFLAGS%%|${CXXFLAGS}|g" \
-	    -e "s|%%X11BASE%%|${X11BASE}|g" \
+	    -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 	    ${WRKSRC}/aimk \
 	    ${WRKSRC}/dist/pvm/src/aimk
 	@test -d ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} || \
@@ -156,7 +156,7 @@ post-patch:
 	    ${REINPLACE_CMD} "s|-g -O2|${CFLAGS}|"
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' \
-	    -e 's|%%X11BASE%%|${X11BASE}|g' \
+	    -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    ${FILESDIR}/aimk.private > ${WRKSRC}/aimk.private
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' < \

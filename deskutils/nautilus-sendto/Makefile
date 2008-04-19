@@ -7,6 +7,7 @@
 
 PORTNAME=	nautilus-sendto
 PORTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -19,7 +20,6 @@ RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 MAN1=		nautilus-sendto.1
 GCONF_SCHEMAS=	nst.schemas
 USE_BZIP2=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intlhack gnomeprefix gnometarget nautilus2 gnomehack

@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-libraries
 PORTVERSION=	7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -18,51 +18,49 @@ COMMENT=	X.org libraries meta-port
 
 NO_BUILD=	yes
 
-PREFIX?=	${X11BASE}
-
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
-		${X11BASE}/libdata/pkgconfig/xfont.pc:${PORTSDIR}/x11-fonts/libXfont \
-		${X11BASE}/libdata/pkgconfig/xfontcache.pc:${PORTSDIR}/x11-fonts/libXfontcache \
-		${X11BASE}/libdata/pkgconfig/ice.pc:${PORTSDIR}/x11/libICE \
-		${X11BASE}/libdata/pkgconfig/sm.pc:${PORTSDIR}/x11/libSM \
-		${X11BASE}/libdata/pkgconfig/xres.pc:${PORTSDIR}/x11/libXres \
-		${X11BASE}/libdata/pkgconfig/xtrap.pc:${PORTSDIR}/x11/libXTrap \
-		${X11BASE}/libdata/pkgconfig/xau.pc:${PORTSDIR}/x11/libXau \
-		${X11BASE}/libdata/pkgconfig/xaw8.pc:${PORTSDIR}/x11-toolkits/libXaw \
-		${X11BASE}/libdata/pkgconfig/xcomposite.pc:${PORTSDIR}/x11/libXcomposite \
-		${X11BASE}/libdata/pkgconfig/xcursor.pc:${PORTSDIR}/x11/libXcursor \
-		${X11BASE}/libdata/pkgconfig/xdamage.pc:${PORTSDIR}/x11/libXdamage \
-		${X11BASE}/libdata/pkgconfig/xdmcp.pc:${PORTSDIR}/x11/libXdmcp \
-		${X11BASE}/libdata/pkgconfig/xevie.pc:${PORTSDIR}/x11/libXevie \
-		${X11BASE}/libdata/pkgconfig/xext.pc:${PORTSDIR}/x11/libXext \
-		${X11BASE}/libdata/pkgconfig/xfixes.pc:${PORTSDIR}/x11/libXfixes \
-		${X11BASE}/libdata/pkgconfig/xfont.pc:${PORTSDIR}/x11-fonts/libXfont \
-		${X11BASE}/libdata/pkgconfig/xi.pc:${PORTSDIR}/x11/libXi \
-		${X11BASE}/libdata/pkgconfig/xinerama.pc:${PORTSDIR}/x11/libXinerama \
-		${X11BASE}/libdata/pkgconfig/xmu.pc:${PORTSDIR}/x11-toolkits/libXmu \
-		${X11BASE}/libdata/pkgconfig/xp.pc:${PORTSDIR}/x11/libXp \
-		${X11BASE}/libdata/pkgconfig/xpm.pc:${PORTSDIR}/x11/libXpm \
-		${X11BASE}/libdata/pkgconfig/xrandr.pc:${PORTSDIR}/x11/libXrandr \
-		${X11BASE}/libdata/pkgconfig/xrender.pc:${PORTSDIR}/x11/libXrender \
-		${X11BASE}/libdata/pkgconfig/xscrnsaver.pc:${PORTSDIR}/x11/libXScrnSaver \
-		${X11BASE}/libdata/pkgconfig/xt.pc:${PORTSDIR}/x11-toolkits/libXt \
-		${X11BASE}/libdata/pkgconfig/xtst.pc:${PORTSDIR}/x11/libXtst \
-		${X11BASE}/libdata/pkgconfig/xv.pc:${PORTSDIR}/x11/libXv \
-		${X11BASE}/libdata/pkgconfig/xvmc.pc:${PORTSDIR}/x11/libXvMC \
-		${X11BASE}/libdata/pkgconfig/xxf86dga.pc:${PORTSDIR}/x11/libXxf86dga \
-		${X11BASE}/libdata/pkgconfig/xxf86misc.pc:${PORTSDIR}/x11/libXxf86misc \
-		${X11BASE}/libdata/pkgconfig/xxf86vm.pc:${PORTSDIR}/x11/libXxf86vm \
-		${X11BASE}/libdata/pkgconfig/xkbfile.pc:${PORTSDIR}/x11/libxkbfile \
-		${X11BASE}/libdata/pkgconfig/xkbui.pc:${PORTSDIR}/x11/libxkbui \
-		${X11BASE}/libdata/pkgconfig/xft.pc:${PORTSDIR}/x11-fonts/libXft \
-		${X11BASE}/libdata/pkgconfig/xprintutil.pc:${PORTSDIR}/x11/libXprintUtil \
-		${X11BASE}/libdata/pkgconfig/xprintapputil.pc:${PORTSDIR}/x11/libXprintAppUtil \
-		${X11BASE}/libdata/pkgconfig/fontenc.pc:${PORTSDIR}/x11-fonts/libfontenc \
-		${X11BASE}/libdata/pkgconfig/dmx.pc:${PORTSDIR}/x11/libdmx \
-		${X11BASE}/libdata/pkgconfig/xtrans.pc:${PORTSDIR}/x11/xtrans \
-		${X11BASE}/libdata/pkgconfig/libfs.pc:${PORTSDIR}/x11-fonts/libFS \
-		${X11BASE}/libdata/pkgconfig/oldx.pc:${PORTSDIR}/x11/liboldX \
-		${X11BASE}/libdata/pkgconfig/pixman-1.pc:${PORTSDIR}/x11/pixman
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
+		${LOCALBASE}/libdata/pkgconfig/xfont.pc:${PORTSDIR}/x11-fonts/libXfont \
+		${LOCALBASE}/libdata/pkgconfig/xfontcache.pc:${PORTSDIR}/x11-fonts/libXfontcache \
+		${LOCALBASE}/libdata/pkgconfig/ice.pc:${PORTSDIR}/x11/libICE \
+		${LOCALBASE}/libdata/pkgconfig/sm.pc:${PORTSDIR}/x11/libSM \
+		${LOCALBASE}/libdata/pkgconfig/xres.pc:${PORTSDIR}/x11/libXres \
+		${LOCALBASE}/libdata/pkgconfig/xtrap.pc:${PORTSDIR}/x11/libXTrap \
+		${LOCALBASE}/libdata/pkgconfig/xau.pc:${PORTSDIR}/x11/libXau \
+		${LOCALBASE}/libdata/pkgconfig/xaw8.pc:${PORTSDIR}/x11-toolkits/libXaw \
+		${LOCALBASE}/libdata/pkgconfig/xcomposite.pc:${PORTSDIR}/x11/libXcomposite \
+		${LOCALBASE}/libdata/pkgconfig/xcursor.pc:${PORTSDIR}/x11/libXcursor \
+		${LOCALBASE}/libdata/pkgconfig/xdamage.pc:${PORTSDIR}/x11/libXdamage \
+		${LOCALBASE}/libdata/pkgconfig/xdmcp.pc:${PORTSDIR}/x11/libXdmcp \
+		${LOCALBASE}/libdata/pkgconfig/xevie.pc:${PORTSDIR}/x11/libXevie \
+		${LOCALBASE}/libdata/pkgconfig/xext.pc:${PORTSDIR}/x11/libXext \
+		${LOCALBASE}/libdata/pkgconfig/xfixes.pc:${PORTSDIR}/x11/libXfixes \
+		${LOCALBASE}/libdata/pkgconfig/xfont.pc:${PORTSDIR}/x11-fonts/libXfont \
+		${LOCALBASE}/libdata/pkgconfig/xi.pc:${PORTSDIR}/x11/libXi \
+		${LOCALBASE}/libdata/pkgconfig/xinerama.pc:${PORTSDIR}/x11/libXinerama \
+		${LOCALBASE}/libdata/pkgconfig/xmu.pc:${PORTSDIR}/x11-toolkits/libXmu \
+		${LOCALBASE}/libdata/pkgconfig/xp.pc:${PORTSDIR}/x11/libXp \
+		${LOCALBASE}/libdata/pkgconfig/xpm.pc:${PORTSDIR}/x11/libXpm \
+		${LOCALBASE}/libdata/pkgconfig/xrandr.pc:${PORTSDIR}/x11/libXrandr \
+		${LOCALBASE}/libdata/pkgconfig/xrender.pc:${PORTSDIR}/x11/libXrender \
+		${LOCALBASE}/libdata/pkgconfig/xscrnsaver.pc:${PORTSDIR}/x11/libXScrnSaver \
+		${LOCALBASE}/libdata/pkgconfig/xt.pc:${PORTSDIR}/x11-toolkits/libXt \
+		${LOCALBASE}/libdata/pkgconfig/xtst.pc:${PORTSDIR}/x11/libXtst \
+		${LOCALBASE}/libdata/pkgconfig/xv.pc:${PORTSDIR}/x11/libXv \
+		${LOCALBASE}/libdata/pkgconfig/xvmc.pc:${PORTSDIR}/x11/libXvMC \
+		${LOCALBASE}/libdata/pkgconfig/xxf86dga.pc:${PORTSDIR}/x11/libXxf86dga \
+		${LOCALBASE}/libdata/pkgconfig/xxf86misc.pc:${PORTSDIR}/x11/libXxf86misc \
+		${LOCALBASE}/libdata/pkgconfig/xxf86vm.pc:${PORTSDIR}/x11/libXxf86vm \
+		${LOCALBASE}/libdata/pkgconfig/xkbfile.pc:${PORTSDIR}/x11/libxkbfile \
+		${LOCALBASE}/libdata/pkgconfig/xkbui.pc:${PORTSDIR}/x11/libxkbui \
+		${LOCALBASE}/libdata/pkgconfig/xft.pc:${PORTSDIR}/x11-fonts/libXft \
+		${LOCALBASE}/libdata/pkgconfig/xprintutil.pc:${PORTSDIR}/x11/libXprintUtil \
+		${LOCALBASE}/libdata/pkgconfig/xprintapputil.pc:${PORTSDIR}/x11/libXprintAppUtil \
+		${LOCALBASE}/libdata/pkgconfig/fontenc.pc:${PORTSDIR}/x11-fonts/libfontenc \
+		${LOCALBASE}/libdata/pkgconfig/dmx.pc:${PORTSDIR}/x11/libdmx \
+		${LOCALBASE}/libdata/pkgconfig/xtrans.pc:${PORTSDIR}/x11/xtrans \
+		${LOCALBASE}/libdata/pkgconfig/libfs.pc:${PORTSDIR}/x11-fonts/libFS \
+		${LOCALBASE}/libdata/pkgconfig/oldx.pc:${PORTSDIR}/x11/liboldX \
+		${LOCALBASE}/libdata/pkgconfig/pixman-1.pc:${PORTSDIR}/x11/pixman
 
 .if !defined(XORG_UPGRADE) && !defined(PACKAGE_BUILDING) && exists(/usr/X11R6)
 pre-everything::
@@ -78,7 +76,7 @@ pre-everything::
 	fi
 .elif !exists(/usr/X11R6) && !defined(WITHOUT_X11R6_SYMLINK)
 pre-install::
-	${LN} -s ${X11BASE} /usr/X11R6 || ${TRUE}
+	${LN} -s ${LOCALBASE} /usr/X11R6 || ${TRUE}
 .endif
 
 do-install:

@@ -9,8 +9,7 @@ PORTNAME=	libgnomecanvasmm
 PORTVERSION=	2.0.1
 PORTREVISION=	7
 CATEGORIES=	graphics gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtkmm
+MASTER_SITES=	SF/gtkmm
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org
@@ -19,11 +18,10 @@ COMMENT=	C++ wrapper for libgnomecanvas library
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgnomecanvas
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
 
 post-patch:

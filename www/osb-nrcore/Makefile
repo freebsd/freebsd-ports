@@ -7,10 +7,9 @@
 
 PORTNAME=	osb-nrcore
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtk-webcore
+MASTER_SITES=	SF/gtk-webcore
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ WebCore html rendering engine
@@ -18,6 +17,7 @@ COMMENT=	Gtk+ WebCore html rendering engine
 BUILD_DEPENDS=	osb-jscore>=0.5.2:${PORTSDIR}/lang/osb-jscore
 RUN_DEPENDS=	osb-jscore>=0.5.2:${PORTSDIR}/lang/osb-jscore
 
+USE_XORG=	x11 xt
 USE_GNOME=	gnomehack gnometarget gtk20
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \

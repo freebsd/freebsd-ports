@@ -17,8 +17,7 @@ MAINTAINER=	sjr@comcast.net
 COMMENT=	An X-based interface to the Berkeley mail program
 
 USE_IMAKE=	yes
-USE_XPM=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps xpm
 MAN1=		xmail.1
 
 .include <bsd.port.mk>

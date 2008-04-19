@@ -9,7 +9,7 @@
 +#LFLAGS	= -g
  
 -X11PREFIX ?= /usr/X11R6
-+X11PREFIX = $(X11BASE)
++X11PREFIX = $(LOCALBASE)
  X11INCL	= -I$(X11PREFIX)/include
 -X11LIBS	= -L$(X11PREFIX)/lib -lX11 -lXpm -lxpg4
 +X11LIBS	= -L$(X11PREFIX)/lib -lX11 -lXpm

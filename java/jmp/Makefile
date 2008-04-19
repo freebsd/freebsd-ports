@@ -7,7 +7,7 @@
 
 PORTNAME=	jmp
 PORTVERSION=	0.51
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/ \
 		http://www.klop.ws/~ronald/software-mirrors/
@@ -50,7 +50,7 @@ PLIST_FILES=	lib/libjmp.la lib/libjmp.so lib/libjmp.so.0 \
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--enable-noui
 .else
-USE_XLIB=	yes
+USE_XORG=	x11
 LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
 .endif
 

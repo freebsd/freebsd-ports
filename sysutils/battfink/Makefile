@@ -7,7 +7,7 @@
 
 PORTNAME=	battfink
 PORTVERSION=	0.6.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An energy saving preferences app for GNOME
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_GMAKE=	yes

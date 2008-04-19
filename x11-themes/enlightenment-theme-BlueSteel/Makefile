@@ -7,18 +7,18 @@
 
 PORTNAME=	enlightenment-theme-BlueSteel
 PORTVERSION=	0.16.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	enlightenment
 DISTNAME=	${PORTNAME:S/enlightenment/e16/}-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A themes of enlightenment window menager
 
-RUN_DEPENDS=	${X11BASE}/bin/e16:${PORTSDIR}/x11-wm/enlightenment
+RUN_DEPENDS=	${LOCALBASE}/bin/e16:${PORTSDIR}/x11-wm/enlightenment
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsstd
 NO_BUILD=	yes

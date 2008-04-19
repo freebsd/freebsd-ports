@@ -7,7 +7,7 @@
 
 PORTNAME=	xarchon
 PORTVERSION=	0.50
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.seul.org/pub/xarchon/ \
 		http://xarchon.seul.org/
@@ -16,10 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A chess-like strategy game with battle options
 
-USE_XLIB=	yes
 USE_GNOME=	esound gtk12
 USE_GMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm ice
 GNU_CONFIGURE=	yes
 
 MAN6=	xarchon.6

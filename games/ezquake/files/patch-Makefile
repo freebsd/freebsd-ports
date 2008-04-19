@@ -84,4 +84,4 @@
 +GL_LIBS = -ljpeg
  
  ifeq ($(OS),freebsd)
- X11BASE ?= /usr/X11R6
+ LOCALBASE ?= /usr/X11R6

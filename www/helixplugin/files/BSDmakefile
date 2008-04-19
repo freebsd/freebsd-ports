@@ -6,7 +6,7 @@ CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}/xpcom
 CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}/npapi
 CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}/string
 CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}
-CXXFLAGS	+=	-I${X11BASE}/include
+CXXFLAGS	+=	-I${LOCALBASE}/include
 CXXFLAGS	+=	-I${TOP}/player/app/plugin/include
 CXXFLAGS	+=	-I${TOP}/player/app/gtk/pub
 

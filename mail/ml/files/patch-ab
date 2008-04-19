@@ -5,7 +5,7 @@
  XCOMM dir, the parent of X11, and the parent of the Motif (Xm) include dir
  
 -EXTRA_INCLUDES =  -I../Xm -I/usr/openwin/include -I$(INCROOT) -I./ -I../
-+EXTRA_INCLUDES = -I/usr/dt/include -DDEFAULT_LIBDIR="\"${X11BASE}/lib/X11/ml\"" -I$(INCROOT) -I. -I..
++EXTRA_INCLUDES = -I/usr/dt/include -DDEFAULT_LIBDIR="\"${LOCALBASE}/lib/X11/ml\"" -I$(INCROOT) -I. -I..
  
  
  XCOMM   `Compile time defines: 
@@ -29,7 +29,7 @@
 -OTHERLIBS=-lgen
 -ML_LIBDIR=/usr/local/lib/ml
 +OTHERLIBS=-lcrypt
-+ML_LIBDIR=${X11BASE}/lib/X11/ml
++ML_LIBDIR=${LOCALBASE}/lib/X11/ml
  HELP_FILES=`find ../lib -type f -print`
  
  XCOMM  Default font sizes. Linux folks will want FONTSIZE=14 (or

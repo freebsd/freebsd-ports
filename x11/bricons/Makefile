@@ -18,7 +18,7 @@ COMMENT=	Quick start up utility for applications on an X display
 
 USE_IMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		bricons.1
 
 .include <bsd.port.pre.mk>

@@ -60,7 +60,7 @@
  
  # Location of X libraries for X-gw
 -XLIBDIR=/usr/X11/lib
-+XLIBDIR=$(X11BASE)/lib
++XLIBDIR=$(LOCALBASE)/lib
  #XLIBDIR=/usr/local/X11R5/lib
  
  # X Libraries
@@ -75,7 +75,7 @@
  
  # Location of X include files
 -XINCLUDE=/usr/X11/include
-+XINCLUDE=$(X11BASE)/include
++XINCLUDE=$(LOCALBASE)/include
  #XINCLUDE=/usr/local/X11R5/include
  
  # Objects to include in libfwall for SYSV

@@ -22,7 +22,7 @@ LIB_DEPENDS=	bioapi100.0:${PORTSDIR}/security/bioapi \
 PLIST_FILES=	lib/libtfmessbsp.so
 
 USE_ZIP=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 # Maintainer note

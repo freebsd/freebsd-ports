@@ -7,19 +7,16 @@
 
 PORTNAME=	kahakai
 PORTVERSION=	0.6.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	xcas@cox.net
 COMMENT=	Kahakai window manager
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
-	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-RUN_DEPENDS=	\
-	${X11BASE}/lib/X11/fonts/artwiz-fonts:${PORTSDIR}/x11-fonts/artwiz-fonts
+		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/artwiz-fonts:${PORTSDIR}/x11-fonts/artwiz-fonts
 
 BROKEN=		Does not compile
 
@@ -28,6 +25,7 @@ DEPRECATED=	"Development ceased"
 USE_AUTOTOOLS=	libtool:15
 USE_PERL5_BUILD=yes
 USE_BZIP2=	yes
+USE_XORG=	x11 xft
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
@@ -37,9 +35,9 @@ USE_EFL=	imlib2
 MAN1=		kahakai.1
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS=${PTHREAD_CFLAGS} \
-		LDFLAGS=-L${X11BASE}/lib \
+		LDFLAGS=-L${LOCALBASE}/lib \
 		LIBS=${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
@@ -49,7 +47,7 @@ BROKEN=		"Does not compile on alpha 4.x"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/tmp/ktest|${X11BASE}|' \
+	@${REINPLACE_CMD} -e 's|/tmp/ktest|${LOCALBASE}|' \
 		${WRKSRC}/data/styles/Default.kastyle.in
 	@${REINPLACE_CMD} -e 's|bool max|bool wmax|' \
 		${WRKSRC}/src/Window.hh

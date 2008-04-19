@@ -20,8 +20,8 @@ USE_XORG=	x11
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CAT=${CAT} \
 		STRIP=/usr/bin/strip \
-		INCLUDES="-I${X11BASE}/include" \
-		LDLIBS="-lm -L${X11BASE}/lib -lX11" \
+		INCLUDES="-I${LOCALBASE}/include" \
+		LDLIBS="-lm -L${LOCALBASE}/lib -lX11" \
 		MORELIBS=""
 PLIST_FILES=	bin/xworld
 STRIP=		#don't strip out image data on install

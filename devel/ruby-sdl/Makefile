@@ -28,7 +28,7 @@ USE_RUBY_EXTCONF=	yes
 
 CONFIGURE_ARGS=	--with-sdl-config="sdl-config" \
 		--enable-opengl --linkoglmodule \
-		--with-x11-dir="${X11BASE}"
+		--with-x11-dir="${LOCALBASE}"
 INSTALL_TARGET=	site-install
 
 RUBY_RD_FILES=	rubysdl_doc.en.rd \

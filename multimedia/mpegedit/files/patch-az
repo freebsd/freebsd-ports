@@ -12,7 +12,7 @@
  RM       = rm -f
  INCLUDES = -I../globals -I../ui -I../MpegCodec -I../MpegCodec/decoder \
 -	   -I../MpegCodec/encoder -I$(PBMDIR) 
-+	   -I../MpegCodec/encoder -I$(PBMDIR) -I$(X11BASE)/include
++	   -I../MpegCodec/encoder -I$(PBMDIR) -I$(LOCALBASE)/include
  
  DEPFILE  = Dependancies
  HEADERS  = yuv.H 2x2_window.H mono_window.H bw_window.H effects.H \

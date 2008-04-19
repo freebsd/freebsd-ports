@@ -4,9 +4,9 @@
 -LIBDIR = -L/usr/X11R6/lib
 -LIBS   = -lXpm -lXext -lX11
 -FLAGS = -O2
-+LIBDIR = -L${X11BASE}/lib
++LIBDIR = -L${LOCALBASE}/lib
 +LIBS   = -lXpm -lXext -lX11 -lkvm
-+CFLAGS += -I${X11BASE}/include
++CFLAGS += -I${LOCALBASE}/include
 +CFLAGS += -DDEFAULT_WMINETRC="\"${PREFIX}/etc/wminetrc\""
  OBJS =	wminet.o \
  		../wmgeneral/wmgeneral.o \

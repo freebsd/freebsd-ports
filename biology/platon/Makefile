@@ -7,7 +7,7 @@
 
 PORTNAME=	platon
 PORTVERSION=	2007.01.09
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://xraysoft.chem.uu.nl/pub/unix/
 DISTNAME=	platon
@@ -20,7 +20,7 @@ COMMENT=	Tool for viewing molecular/crystallographic structures
 # There is a charge of US$ 5000 for commercial users.
 RESTRICTED=	free for academic, US$ 5000 for commercial users
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_FORTRAN=	yes
 
 # This port only has snapshot archive
@@ -43,7 +43,7 @@ pre-patch:
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e "s+%%X11BASE%%+${X11BASE}+"  ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s+%%LOCALBASE%%+${LOCALBASE}+"  ${WRKSRC}/Makefile
 
 pre-install:
 	${STRIP_CMD} ${WRKDIR}/${DISTNAME}/platon

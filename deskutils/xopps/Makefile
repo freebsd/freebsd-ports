@@ -7,7 +7,7 @@
 
 PORTNAME=	xopps
 PORTVERSION=	1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ \
 		http://dl.droso.net/ports/
@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool which lets you draw Gantt charts
 
 ALL_TARGET=
-USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 MAKE_ENV=	'MACH=${OPSYS}'
 

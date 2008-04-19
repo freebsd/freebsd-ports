@@ -8,6 +8,7 @@
 
 PORTNAME=	goobox
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -18,7 +19,7 @@ COMMENT=	CD player and ripper for GNOME Desktop environment
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

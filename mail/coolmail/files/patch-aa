@@ -9,8 +9,8 @@
  LINK     = $(CC)
 -INCLUDES = -I/usr/X11R5/include
 -LIB_DIRS = -L/usr/X11R5/lib
-+INCLUDES = -I$(X11BASE)/include
-+LIB_DIRS = -L$(X11BASE)/lib
++INCLUDES = -I$(LOCALBASE)/include
++LIB_DIRS = -L$(LOCALBASE)/lib
  BINDIR   = /usr/local/bin
  MANDIR   = /usr/local/man/man1
  
@@ -32,7 +32,7 @@
  
  LIBS  = $(LIB_DIRS) -lXt -lX11 -lm -lXext
 -COPTS = $(CFLAGS) $(AUDIO)
-+LIBS += -Wl,-rpath,$(X11BASE)/lib
++LIBS += -Wl,-rpath,$(LOCALBASE)/lib
 +COPTS = $(CFLAGS) $(AUDIO) $(MAILDIR)
  
  all: coolmail

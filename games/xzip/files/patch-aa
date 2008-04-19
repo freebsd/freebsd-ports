@@ -6,8 +6,8 @@
  
 -XINCLUDE = /usr/include/X11
 -XLIB = /usr/lib/X11
-+XINCLUDE = $(X11BASE)/include
-+XLIB = $(X11BASE)/lib
++XINCLUDE = $(LOCALBASE)/include
++XLIB = $(LOCALBASE)/lib
 +
 +SYSTEMFLAGS = -DAUTO_END_MODE
  

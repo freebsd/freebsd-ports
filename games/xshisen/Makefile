@@ -7,15 +7,14 @@
 
 PORTNAME=	xshisen
 PORTVERSION=	1.51
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.techfirm.co.jp/~masaoki/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shisen-sho puzzle game for X11
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sharedstatedir="${DATADIR}"
 INSTALL_TARGET=	install-prog

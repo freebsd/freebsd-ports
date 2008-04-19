@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 .for i in portoseguro portoseguro.conf
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${X11BASE}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${LOCALBASE}/bin
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

@@ -18,7 +18,7 @@ COMMENT=	Challenging 2D motocross platform game
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		curl.4:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
+BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -30,8 +30,8 @@ USE_DOS2UNIX=	src/*.cpp src/*.h
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include -I${LUA_INCDIR}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${LUA_LIBDIR}
+CPPFLAGS=	-I${LOCALBASE}/include -I${LUA_INCDIR}
+LDFLAGS=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

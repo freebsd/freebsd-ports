@@ -6,17 +6,17 @@
    -I./ \
    -I/usr/include \
 -  -I/usr/include/GL \
-+  -I%%X11BASE%%/include/GL \
++  -I$(LOCALBASE)/include/GL \
    -I../../libSNL/src \
 -  -I/usr/X11/include 
-+  -I%%X11BASE%%/include 
++  -I$(LOCALBASE)/include 
  
 -LFLAGS = \
 -  -L/usr/lib -lGL -lGLU -lglut \
 -  -L/usr/X11/lib -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
 +LFLAGS += \
-+  -L%%X11BASE%%/lib -lGL -lGLU -lglut \
-+  -L%%X11BASE%%/lib -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
++  -L$(LOCALBASE)/lib -lGL -lGLU -lglut \
++  -L$(LOCALBASE)/lib -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
    -lm 
  
  # -L/usr/X11/lib64 -lpthread -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \

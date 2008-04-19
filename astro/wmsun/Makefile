@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/wmSun
 USE_XORG=	xext xpm x11
 ALL_TARGET=	clean all
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		INCDIR="-I${X11BASE}/include" LIBDIR="-L${X11BASE}/lib"
+		INCDIR="-I${LOCALBASE}/include" LIBDIR="-L${LOCALBASE}/lib"
 
 MAN1=		wmSun.1
 PLIST_FILES=	bin/wmSun

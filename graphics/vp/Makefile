@@ -16,8 +16,7 @@ COMMENT=	An image viewer for X
 
 USE_SDL=	image
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		vp.1

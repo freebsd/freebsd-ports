@@ -7,9 +7,9 @@
 
 PORTNAME=	gnome-pilot-conduits
 PORTVERSION=	2.0.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	palm comms gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
 DIST_SUBDIR=	gnome2
 
@@ -20,7 +20,6 @@ LIB_DEPENDS=	gpilotd.3:${PORTSDIR}/palm/gnome-pilot
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_BISON=	build
 USE_GNOME=	gnomeprefix gnomehack libgnome
 USE_GETTEXT=	yes

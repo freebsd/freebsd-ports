@@ -7,8 +7,8 @@ diff -ruN ./sys/unix/Makefile.src ../nethack-3.2.2/sys/unix/Makefile.src
  
 -CFLAGS = -g -I../include
 -LFLAGS = -g
-+CFLAGS += -O -I../include -I${X11BASE}/include
-+LFLAGS = -L${X11BASE}/lib
++CFLAGS += -O -I../include -I${LOCALBASE}/include
++LFLAGS = -L${LOCALBASE}/lib
  
  
  # Set the WINSRC, WINOBJ, and WINLIB lines to correspond to your desired

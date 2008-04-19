@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-cups-manager
 PORTVERSION=	0.31
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -23,7 +23,6 @@ RUN_DEPENDS=	gnomesu:${PORTSDIR}/security/libgnomesu
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui libgnomeui \
 		desktopfileutils

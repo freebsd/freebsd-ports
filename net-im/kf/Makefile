@@ -7,7 +7,7 @@
 
 PORTNAME=	kf
 PORTVERSION=	0.5.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://files.jabberstudio.org/kf/ \
 		http://jabberstudio.rediris.es/kf/ \
@@ -18,6 +18,7 @@ COMMENT=	A simple Jabber client using the GTK+ 2.0 toolkit
 
 LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 
+USE_XORG=	x11 xscrnsaver
 USE_GNOME=	libglade2
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes

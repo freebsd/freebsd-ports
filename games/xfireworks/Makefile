@@ -7,15 +7,14 @@
 
 PORTNAME=	xfireworks
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fireworks on X
 
-USE_X_PREFIX=	yes
-
+USE_XORG=	x11
 MAN1=		xfireworks.1
 
 do-install:

@@ -7,6 +7,7 @@
 
 PORTNAME=	netspeed_applet
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.wh-hms.uni-ulm.de/~mfcn/shared/netspeed/
 
@@ -15,7 +16,6 @@ COMMENT=	Applet that shows how much network traffic occurs on an interface
 
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 
-USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier intlhack gnomeprefix gnomehack gnomepanel

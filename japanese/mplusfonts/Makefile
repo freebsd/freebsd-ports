@@ -7,7 +7,7 @@
 
 PORTNAME=	mplusfonts
 PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://downloads.sourceforge.jp/mplus-fonts/5030/ \
 		http://wids.net/archive/mplusfonts/distfiles/
@@ -16,11 +16,11 @@ DISTNAME=	mplus_bitmap_fonts-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	12x13 dots X11 kanji fonts with simple and readable design
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+RUN_DEPENDES=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 

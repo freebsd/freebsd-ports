@@ -8,6 +8,7 @@
 
 PORTNAME=	valknut
 PORTVERSION=	0.3.13
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	wxdcgui
@@ -19,12 +20,12 @@ LIB_DEPENDS=	dc.0:${PORTSDIR}/net-p2p/dclib \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_QT_VER=	3
+USE_XORG=	x11 ice xext
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libdc=${LOCALBASE} \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ARGS=	--with-libdc=${LOCALBASE}
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

@@ -17,7 +17,7 @@ COMMENT=	Tool to find the "best" compiler options using genetic algorithm
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		evocosm-3.1.1:${PORTSDIR}/devel/libevocosm
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS=-I${PREFIX}/include/ LDFLAGS=-L${PREFIX}/lib/
 

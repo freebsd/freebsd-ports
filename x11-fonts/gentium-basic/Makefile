@@ -70,7 +70,7 @@ install-docs:
 
 post-install:
 	${ECHO_MSG} "===> Running fc-cache"
-	-${X11BASE}/bin/fc-cache -f -v ${FONTSTGT}
+	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSTGT}
 	${ECHO_MSG}
 	${CAT} ${PKGMESSAGE}
 	${ECHO_MSG}

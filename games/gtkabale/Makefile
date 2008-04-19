@@ -7,14 +7,13 @@
 
 PORTNAME=	gtkabale
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lazy version of solitaire game
 
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

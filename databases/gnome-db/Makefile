@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-db
 PORTVERSION=	0.2.96
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-db/0.2
@@ -18,7 +18,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provide uniform access to data sources for the GNOME environment
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier libgda
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

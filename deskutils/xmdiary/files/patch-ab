@@ -17,10 +17,10 @@
 -XDDATADIR = /usr/local/lib/xdiary
 -XDAPPDIR  = /usr/lib/X11/app-defaults
 -XDMANDIR  = /usr/local/man/man1  
-+XDEXEDIR  = $(X11BASE)/bin
-+XDDATADIR = $(X11BASE)/lib/X11/xdiary
-+XDAPPDIR  = $(X11BASE)/lib/X11/app-defaults
-+XDMANDIR  = $(X11BASE)/man/man1  
++XDEXEDIR  = $(LOCALBASE)/bin
++XDDATADIR = $(LOCALBASE)/lib/X11/xdiary
++XDAPPDIR  = $(LOCALBASE)/lib/X11/app-defaults
++XDMANDIR  = $(LOCALBASE)/man/man1  
  
  
  /*----------------------------------------------------------------------------

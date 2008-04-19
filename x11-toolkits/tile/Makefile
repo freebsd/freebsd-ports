@@ -19,7 +19,6 @@ USE_TK=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR} \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
 		--exec-prefix=${PREFIX} --enable-shared
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${TCL_INCLUDES} ${TK_INCLUDES}"
 TCL_INCLUDES=	-I${LOCALBASE}/include/tcl${TK_VER} -I${LOCALBASE}/include/tcl${TK_VER}/generic

@@ -7,6 +7,7 @@
 
 PORTNAME=	awesome
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
 		cairo.2:${PORTSDIR}/graphics/cairo \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_XLIB=	yes
+USE_XORG=	x11 xft xext xinerama xt xrandr xproto
 
 MAN1=		awesome.1 \
 		awesome-client.1

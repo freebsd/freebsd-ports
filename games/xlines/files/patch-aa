@@ -6,11 +6,11 @@
 -LFLAGS=-L/usr/local/qt/lib -lqt -L/usr/X11/lib -lX11
 -CC=gcc
 -MOC=/usr/local/qt/bin/moc
-+INCDIR=${X11BASE}/include/
-+CXXFLAGS+=-I${X11BASE}/include -DSHOW_NEXT_COLORS ${PTHREAD_CFLAGS}
-+LFLAGS=-L${X11BASE}/lib -lqt-mt ${PTHREAD_LIBS}
++INCDIR=${LOCALBASE}/include/
++CXXFLAGS+=-I${LOCALBASE}/include -DSHOW_NEXT_COLORS ${PTHREAD_CFLAGS}
++LFLAGS=-L${LOCALBASE}/lib -lqt-mt ${PTHREAD_LIBS}
 +CC?=gcc
-+MOC=${X11BASE}/bin/moc
++MOC=${LOCALBASE}/bin/moc
  
  SRC=lines.cpp lines.moc
  OBJECTS=lines.o

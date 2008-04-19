@@ -148,7 +148,7 @@
  # not in $(XINCLUDE).
  
 -XINCLUDE=-I/usr/X11R6/include
-+XINCLUDE=-I${X11BASE}/include
++XINCLUDE=-I${LOCALBASE}/include
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
@@ -161,7 +161,7 @@
  
  #XLIBDIRS=-L/usr/local/X/lib
 -XLIBDIRS=-L/usr/X11R6/lib
-+XLIBDIRS=-L${X11BASE}/lib
++XLIBDIRS=-L${LOCALBASE}/lib
  XLIBDIR=
 -XLIBS=Xt Xext X11
 +#XLIBS=Xt Xext X11

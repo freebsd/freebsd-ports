@@ -7,7 +7,7 @@
 
 PORTNAME=	rosegarden
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cannam.demon.co.uk/rosegarden/distribution/
 DISTNAME=	${PORTNAME}-2.1pl2
@@ -18,7 +18,7 @@ COMMENT=	The Rosegarden Editor and Sequencer suite
 BUILD_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi
 RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi
 
-USE_X_PREFIX=	yes
+USE_XORG=	xaw
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.2
 

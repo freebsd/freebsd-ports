@@ -27,7 +27,7 @@ PLIST_FILES=	lib/xmms/General/libalarm.so
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
-# This is to avoid libtool running ldconfig -m ${X11BASE}/lib/xmms/General
+# This is to avoid libtool running ldconfig -m ${LOCALBASE}/lib/xmms/General
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/.libs/libalarm.so ${PREFIX}/lib/xmms/General
 

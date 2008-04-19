@@ -9,13 +9,12 @@ PORTNAME=	he2
 PORTVERSION=	0.61
 PORTREVISION=	2
 CATEGORIES=	hebrew editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An editor for editing (primarily LaTeX) Hebrew files
 
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/hebrew:${PORTSDIR}/hebrew/elmar-fonts
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/hebrew:${PORTSDIR}/hebrew/elmar-fonts
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

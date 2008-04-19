@@ -6,8 +6,8 @@
  # for Red Hat Linux
 -XINCLUDE = -I/usr/X11R6/include/X11
 -XLIB = -L/usr/X11R6/lib -lX11
-+XINCLUDE = -I${X11BASE}/include
-+XLIB = -L${X11BASE}/lib -lX11
++XINCLUDE = -I${LOCALBASE}/include
++XLIB = -L${LOCALBASE}/lib -lX11
  
  # for SparcStation / Solaris 
  #XINCLUDE = -I/usr/openwin/include

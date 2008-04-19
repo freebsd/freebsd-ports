@@ -290,8 +290,7 @@ post-configure:
 
 pre-build:
 	@cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} \
-	    SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
-	    X11BASE="${X11BASE}"
+	    SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
 
 post-install:
 	${LN} -sf ${TK_LIB_FILE} ${PREFIX}/lib/${TK_LIB}

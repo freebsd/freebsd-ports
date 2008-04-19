@@ -7,6 +7,7 @@
 
 PORTNAME=	wmii
 DISTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.suckless.org/download/
 
@@ -18,10 +19,10 @@ RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu \
 		${LOCALBASE}/9/bin/rc:${PORTSDIR}/devel/9base
 
 USE_ICONV=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xextproto xt xext
 
 MAKE_ARGS=	PREFIX="${PREFIX}" INCLUDE="${LOCALBASE}/include" \
-		INCX11="-I${X11BASE}/include" LIBX11="-L${X11BASE}/lib" \
+		INCX11="-I${LOCALBASE}/include" LIBX11="-L${LOCALBASE}/lib" \
 		CC="${CC} -c" LD="${CC}" LIBIXP="-lixp" STATIC="" \
 		LIBICONV="-liconv" MAN="${MANPREFIX}/man"
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	oglext
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.julius.caesar.de/files/oglext/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -18,8 +18,7 @@ COMMENT=	A library for easier access to OpenGL extensions
 BUILD_DEPENDS=	${LOCALBASE}/bin/tmake:${PORTSDIR}/devel/tmake
 
 USE_GMAKE=	yes
-USE_GL=		yes
-USE_X_PREFIX=	yes
+USE_GL=		gl
 USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
 

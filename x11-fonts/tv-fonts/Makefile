@@ -41,6 +41,6 @@ do-install:
 .endfor
 
 post-install:
-	@-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
+	@-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
 
 .include <bsd.port.mk>

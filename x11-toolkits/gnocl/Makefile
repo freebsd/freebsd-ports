@@ -7,10 +7,9 @@
 
 PORTNAME=	gnocl
 PORTVERSION=	0.9.90
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnocl
+MASTER_SITES=	SF/gnocl
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ and Gnome extension for Tcl
@@ -19,12 +18,11 @@ BUILD_DEPENDS=	${LOCALBASE}/include/tcl8.4/tcl.h:${PORTSDIR}/lang/tcl84
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
 .include <bsd.port.pre.mk>

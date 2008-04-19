@@ -3,7 +3,7 @@
 @@ -1,5 +1,9 @@
 -CFLAGS = -DWITH_DISPLAY=1 -Wall -O2 -g -I/usr/X11R6/include -I/usr/local/include 
 -SRC = mchip.c capture.c dump.c sonypi.c pci.c yuv.c timer.c avi.c command.c display.c ptable.c jpeg.c
-+CFLAGS += -DWITH_DISPLAY=1 -I${X11BASE}/include -I${LOCALBASE}/include 
++CFLAGS += -DWITH_DISPLAY=1 -I${LOCALBASE}/include
 +SRCMI = mchip.c capture.c dump.c sonypi.c yuv.c timer.c avi.c command.c display.c ptable.c jpeg.c
 +#LINUX
 +#SRCMD = pci.c

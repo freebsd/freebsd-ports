@@ -8,8 +8,7 @@
 PORTNAME=	the
 PORTVERSION=	3.2
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	hessling-editor
+MASTER_SITES=	SF/hessling-editor
 DISTNAME=	THE-${PORTVERSION}
 
 PATCH_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/

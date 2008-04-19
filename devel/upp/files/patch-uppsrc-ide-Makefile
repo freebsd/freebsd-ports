@@ -10,11 +10,11 @@
 -C_FLAGS = $(CC) -x c
 -CPPFLAGS = $(CC) -x c++ 
 -LIBPATH =  -L"/usr/X11R6/lib"
-+CINC =  -I$(UPPDIR1) -I$(X11BASE)/include -I$(LOCALBASE)/include -I$(LOCALBASE)/include/freetype2 -I$(LOCALBASE)/include/gtk-2.0 -I$(LOCALBASE)/include/glib-2.0 -I$(LOCALBASE)/include/cairo -I$(LOCALBASE)/include/pango-1.0 -I$(LOCALBASE)/include/atk-1.0
++CINC =  -I$(UPPDIR1) -I$(LOCALBASE)/include -I$(LOCALBASE)/include/freetype2 -I$(LOCALBASE)/include/gtk-2.0 -I$(LOCALBASE)/include/glib-2.0 -I$(LOCALBASE)/include/cairo -I$(LOCALBASE)/include/pango-1.0 -I$(LOCALBASE)/include/atk-1.0
 +Macro =  -DflagGUI -DflagGCC -DflagSHARED -DflagFREEBSD
 +C_FLAGS = $(CC) -x c -c $(CFLAGS)
 +CPPFLAGS = $(CC) -x c++ -c $(CXXFLAGS)
-+LIBPATH =  -L$(X11BASE)/lib -L$(LOCALBASE)/lib
++LIBPATH =  -L$(LOCALBASE)/lib
  AR = ar -sr
  OutDir_ide = $(UPPOUT)ide/GCC-Gcc-Gui-Linux-Main-Shared/
  Macro_ide = $(Macro) -DflagMAIN

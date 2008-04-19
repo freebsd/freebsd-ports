@@ -18,7 +18,7 @@ COMMENT=	A C++ class library and toolset for ODBC access to data sources
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	pkgconfig
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-isqlxx
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"

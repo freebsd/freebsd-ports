@@ -8,7 +8,7 @@
 
 PORTNAME=	libgnomedb
 PORTVERSION=	3.0.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -25,7 +25,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgda3 gtksourceview \
 		intlhack referencehack
-USE_XLIB=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes

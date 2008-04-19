@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -43,7 +43,7 @@ MAKE_ENV+=	enable_nls=0
 .else
 USE_GETTEXT=	yes
 .endif
-USE_XLIB=	yes
+USE_XORG=	x11 sm
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls-openssl.26:${PORTSDIR}/security/gnutls
 MAKE_ENV+=	GNUTLSINC=${LOCALBASE}/include GNUTLSLIB=${LOCALBASE}/lib \
@@ -77,8 +77,6 @@ MAN8=		gkrellmd.8
 PORTDOCS=	COPYRIGHT CREDITS README Themes.html
 .endif
 
-MAN1PREFIX=	${X11BASE}
-
 .include <bsd.port.pre.mk>
 
 ALL_TARGET=	freebsd
@@ -86,15 +84,15 @@ ALL_TARGET=	freebsd
 INSTALL_TARGET=	install_freebsd
 .endif
 
-MAKE_ENV+=	CC="${CC}" INSTALLROOT=${X11BASE} INSTALLDIR=${X11BASE}/bin \
-		PKGCONFIGDIR=${X11BASE}/libdata/pkgconfig \
+MAKE_ENV+=	CC="${CC}" INSTALLROOT=${LOCALBASE} INSTALLDIR=${LOCALBASE}/bin \
+		PKGCONFIGDIR=${LOCALBASE}/libdata/pkgconfig \
 		SINSTALLROOT=${PREFIX} SINSTALLDIR=${PREFIX}/sbin \
 		SPKGCONFIGDIR=${PREFIX}/libdata/pkgconfig \
 		MANDIR=${MAN1PREFIX}/man/man1 SMANDIR=${MANPREFIX}/man/man8 \
 		VERSION=${PORTVERSION}
 
-CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${X11BASE}/share/gkrellm2/themes\"' \
-		-DSYSTEM_PLUGINS_DIR='\"${X11BASE}/libexec/gkrellm2/plugins\"' \
+CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${LOCALBASE}/share/gkrellm2/themes\"' \
+		-DSYSTEM_PLUGINS_DIR='\"${LOCALBASE}/libexec/gkrellm2/plugins\"' \
 		-DGKRELLMD_SYS_ETC='\"${PREFIX}/etc\"' \
 		-DGKRELLMD_SYSTEM_PLUGINS_DIR='\"${PREFIX}/libexec/gkrellm2/plugins-gkrellmd\"'
 
@@ -113,11 +111,11 @@ post-patch:
 
 post-install:
 .if !defined(GKRELLM_SERVER_ONLY)
-	@${MKDIR} ${X11BASE}/libexec/gkrellm2/plugins
-	@${MKDIR} ${X11BASE}/share/gkrellm2/themes
+	@${MKDIR} ${LOCALBASE}/libexec/gkrellm2/plugins
+	@${MKDIR} ${LOCALBASE}/share/gkrellm2/themes
 	@${GZIP_CMD} ${MAN1PREFIX}/man/man1/gkrellm.1
 .if ${OSVERSION} < 500000
-	@${CHMOD} 2511 ${X11BASE}/bin/gkrellm
+	@${CHMOD} 2511 ${LOCALBASE}/bin/gkrellm
 .endif
 .endif
 .if ${OSVERSION} < 500000

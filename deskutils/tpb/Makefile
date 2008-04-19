@@ -38,7 +38,7 @@ PLIST_SUB+=	NLS="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
-		s|%%X11BASE%%|${X11BASE}|g' \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/cfg.h \
 		${WRKSRC}/man/tpb.1
 

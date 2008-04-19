@@ -42,7 +42,7 @@ $FreeBSD$
  override MOOT_PRIORITIES         = true
  override NO_INTERRUPTIBLE_IO     = true
 -override OPENWINHOME             = /usr/X11R6
-+override OPENWINHOME             = $(X11BASE)
++override OPENWINHOME             = $(LOCALBASE)
  override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
  override PREPROCESS_BEFORE_AS    = true
  override PRIVATIZE_JVM_SYMBOLS   = false
@@ -51,7 +51,7 @@ $FreeBSD$
      LDFLAGS_COMMON += -L$(MOTIF_DIR)/lib -L/usr/X11R6/lib # for libXp
    else
 -    MOTIF_DIR=/usr/X11R6
-+    MOTIF_DIR=$(X11BASE)
++    MOTIF_DIR=$(LOCALBASE)
    endif
  endif
  ifdef ALT_MOTIF_DIR

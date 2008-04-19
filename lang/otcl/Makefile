@@ -10,8 +10,7 @@ PORTVERSION=	1.13
 PORTREVISION=	3
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	lang tcl tk
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	otcl-tclcl
+MASTER_SITES=	SF/otcl-tclcl
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	MIT Object Tcl
@@ -35,11 +34,10 @@ PORTDOCS=	${DOCS:S/doc\///}
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-DHAVE_UNISTD_H
-CONFIGURE_ARGS+=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER} \
-		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
+CONFIGURE_ARGS+=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		-e's|X11/Intrinsic.h|X11/Xlib.h|g' \
 		${WRKSRC}/configure ${WRKSRC}/conf/configure.in.x11
 	@${REINPLACE_CMD} -e 's|../lib/tcl$$TCL_HI_VERS|${TCL_LIBDIR}|g' \

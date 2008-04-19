@@ -32,7 +32,6 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
-USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
 WRKSRC=		${WRKDIR}
 GNU_CONFIGURE=	yes

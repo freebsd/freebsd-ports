@@ -16,7 +16,7 @@ COMMENT=	Linux version of the graphic library for GTK+
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
 ONLY_FOR_ARCHS=	i386 amd64
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION=${PORTVERSION:C/^([^\.]+\.[^\.]+\.[^\.]+).+/\1/}
 MD5_FILE?=	${PKGDIR}/distinfo
 

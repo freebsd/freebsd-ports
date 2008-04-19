@@ -20,7 +20,7 @@ PLIST_FILES=	bin/padkey
 PORTDOCS=	CREDITS README
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6/|${X11BASE}/|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/X11R6/|${LOCALBASE}/|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/padkey ${PREFIX}/bin/padkey

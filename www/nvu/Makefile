@@ -29,7 +29,7 @@ MAKEFILE=	client.mk
 ALL_TARGET=	build_all
 MOZ_EXTENSIONS=	wallet,xml-rpc,xmlextras,pref,universalchardet,editor/cascades,spellcheck
 PORT_MOZCONFIG=	${WRKSRC}/composer/config/mozconfig.linux
-CFLAGS+=	-I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/Makefile.common"

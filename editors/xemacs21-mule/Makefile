@@ -55,8 +55,6 @@ CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
 
 CONFIGURE_ARGS=	--with-x11 \
 		--with-mule \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib \
 		--with-site-lisp \
 		--site-libraries='${SITE_LIBRARIES}' \
 		--site-includes='${SITE_INCLUDES}' \
@@ -68,7 +66,7 @@ CONFIGURE_ARGS=	--with-x11 \
 		--with-png \
 		--with-tiff \
 		--with-xpm \
-		--infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:${X11BASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
+		--infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		--with-clash-detection \
 		--with-database=berkdb \
 		${WITH_XIM} \

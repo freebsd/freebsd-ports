@@ -9,8 +9,7 @@ PORTNAME=	aalib
 PORTVERSION=	1.4.r5
 PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	aa-project
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	shaun@FreeBSD.org
@@ -19,13 +18,13 @@ COMMENT=	An ascii art library
 USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 INFO=		aalib
 
 .if !defined(WITHOUT_X11)
 USE_XORG=	x11
-CONFIGURE_ARGS=	--x-includes="${X11BASE}/include" \
-		--x-libraries="${X11BASE}/lib"
+CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" \
+		--x-libraries="${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS=	--with-x=no
 .endif

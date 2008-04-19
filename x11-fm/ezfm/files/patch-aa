@@ -18,14 +18,14 @@
  #
 -CC= gcc  -g -DLINUX -I../include
 +CC?= gcc  -g -DLINUX -I../include
-+CFLAGS+= -I$(LOCALBASE)/include -I$(X11BASE)/include
++CFLAGS+= -I$(LOCALBASE)/include
  
  #
  #----------------------------------------------------------------------------------
 -LIBS = libfile.a -L../EZWGL/lib -lEZ -L/usr/X11R6/lib -lX11 -lXext  -ljpeg -ltiff -lpng -lz -lm  -lc
 -STATICLIBS = libfile.a /usr/local/lib/libEZ.a -L/usr/X11R6/lib -lX11 -lXext  -lm  -lc
-+LIBS = libfile.a -L../EZWGL/lib -lEZ -L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext  -ljpeg -ltiff -lpng -lz -lm  -lc
-+STATICLIBS = libfile.a ${LOCALBASE}/lib/libEZ.a -L${X11BASE}/lib -lX11 -lXext  -lm  -lc
++LIBS = libfile.a -L../EZWGL/lib -lEZ -L${LOCALBASE}/lib -lX11 -lXext  -ljpeg -ltiff -lpng -lz -lm  -lc
++STATICLIBS = libfile.a ${LOCALBASE}/lib/libEZ.a -L${LOCALBASE}/lib -lX11 -lXext  -lm  -lc
  
  SRC= action.c folder.c atoms.c clientMessage.c main.c icons.c items.c finfo.c \
       signal.c info.c infoBtn.c printer.c misc.c mbtnFile.c mbtnView.c mbtnHelp.c popup.c\

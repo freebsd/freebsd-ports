@@ -8,7 +8,7 @@
 
 PORTNAME=	gregexp
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	http://dentrassi.de/download/gregexp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -18,7 +18,6 @@ COMMENT=	A graphical regular expression explorer
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

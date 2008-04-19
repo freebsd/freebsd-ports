@@ -20,7 +20,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BISON=	build
 USE_LDCONFIG=	yes
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 regression-test:
 		cd ${WRKSRC} && ./test

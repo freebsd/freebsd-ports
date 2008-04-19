@@ -22,7 +22,7 @@
 -    eval "TIX_LIB_FILE=libtix${TCL_SHARED_LIB_SUFFIX}"
 -    TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS}"
 +    eval "TIX_LIB_FILE=libtix${LIB_VERSION}.so.1"
-+    TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS} -L${PREFIX}/lib -L\${X11BASE}/lib -lX11 -ltk84"
++    TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS} -L${PREFIX}/lib -L\${LOCALBASE}/lib -lX11 -ltk84"
  
      # The Tcl SAM library
      #

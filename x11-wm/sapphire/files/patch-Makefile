@@ -12,7 +12,7 @@
 -prefix   = /usr
 -XROOT    = $(prefix)/X11R6
 +prefix   = ${PREFIX}
-+XROOT    = ${X11BASE}
++XROOT    = ${LOCALBASE}
  DESTDIR  =
  INCLUDES = -I$(XROOT)/include
  LDPATH   = -L$(XROOT)/lib

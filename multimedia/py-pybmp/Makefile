@@ -25,6 +25,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 post-extract:
-	${SED} -e 's|%%X11BASE%%|${X11BASE}|g' ${FILESDIR}/setup.cfg.port >> ${WRKSRC}/setup.cfg
+	${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${FILESDIR}/setup.cfg.port >> ${WRKSRC}/setup.cfg
 
 .include <bsd.port.mk>

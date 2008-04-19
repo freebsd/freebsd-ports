@@ -38,8 +38,8 @@ USE_LDCONFIG=	yes
 
 MAN1=		shutterbug.1 reswrap.1
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 OPTIONS=	XFT	"Enable Xft support" on \
 		SHM	"Enable Shared Memory support" on \

@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/bmp/General/libalarm.so
 
-# This is to avoid libtool running ldconfig -m ${X11BASE}/lib/bmp/General
+# This is to avoid libtool running ldconfig -m ${LOCALBASE}/lib/bmp/General
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/.libs/libalarm.so ${PREFIX}/lib/bmp/General
 

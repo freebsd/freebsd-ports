@@ -9,7 +9,7 @@ PORTNAME=	xpaint
 PORTVERSION=	2.7.8.1
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		ftp://ftp.ac-grenoble.fr/Office/
 MASTER_SITE_SUBDIR=	sf-${PORTNAME}
 
@@ -21,17 +21,17 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_BZIP2=	yes
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 MAN1=		xpaint.1
 
 .if defined(WITH_NEXTAW)
 LIB_DEPENDS+=	neXtaw:${PORTSDIR}/x11-toolkits/neXtaw
-XAW_INCDIR=	${X11BASE}/include/X11/neXtaw
+XAW_INCDIR=	${LOCALBASE}/include/X11/neXtaw
 XAW_LIBS=	-lneXtaw
 .else
-LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
-XAW_INCDIR=	${X11BASE}/include/X11/Xaw3d
+LIB_DEPENDS+=  Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+XAW_INCDIR=	${LOCALBASE}/include/X11/Xaw3d
 XAW_LIBS=	-lXaw3d
 .endif
 

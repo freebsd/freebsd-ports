@@ -39,7 +39,7 @@
  #	a convenience that is used in the following definitions.
  
 -X_DIR		= /usr
-+X_DIR		= ${X11BASE}
++X_DIR		= ${LOCALBASE}
  
  #	INCX lists the X include directories.  This may be different between
  #	MIT X11r5, X11r4, and your vendor's version of X11, though listing

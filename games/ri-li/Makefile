@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer
 
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` -I${X11BASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lSDL |`${SDL_CONFIG} --libs`|' ${WRKSRC}/configure

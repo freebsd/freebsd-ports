@@ -9,28 +9,27 @@ PORTNAME=	gracer
 PORTVERSION=	0.1.5
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	A 3D motor sport simulator
 
-BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tcl82.1:${PORTSDIR}/lang/tcl82 \
-		glut.4:${PORTSDIR}/graphics/libglut
+		tcl82.1:${PORTSDIR}/lang/tcl82
 
+USE_GL=		glut
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/tcl8.2 \
-			  -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+			  -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 # for plib (sound):
-CONFIGURE_ARGS+= --with-plib=${X11BASE}/plib
+CONFIGURE_ARGS+= --with-plib=${LOCALBASE}/plib
 
 MAN6=		gracer.6
 

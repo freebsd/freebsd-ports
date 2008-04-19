@@ -27,6 +27,6 @@ PLIST_FILES=	bin/workman lib/help/workman.info
 .include <bsd.port.pre.mk>
 
 post-install:
-	${GZIP_CMD} ${X11BASE}/man/man5/workmandb.5
+	${GZIP_CMD} ${PREFIX}/man/man5/workmandb.5
 
 .include <bsd.port.post.mk>

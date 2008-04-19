@@ -29,6 +29,10 @@ PLIST_FILES=	bin/qiv
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_XINERAMA)
+USE_XORG+=	x11 xinerama
+.enif
+
 pre-configure:
 .if ! defined(WITH_XINERAMA)
 .else

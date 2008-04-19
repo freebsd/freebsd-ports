@@ -17,7 +17,7 @@ COMMENT=	Library that provides ADTs (queues, dynamic arrays and more)
 
 LIB_DEPENDS=	vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger
 
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	YES

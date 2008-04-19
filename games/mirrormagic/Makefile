@@ -18,7 +18,7 @@ COMMENT=	An arcade style game with stereo sound for X Window System
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" RW_GAME_DIR="${DATADIR}/scores" \
-		X11_PATH="${X11BASE}"
+		X11_PATH="${LOCALBASE}"
 WANT_SDL=	yes
 
 OPTIONS=	SDL	"SDL support"	on

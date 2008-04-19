@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qt-bluecurve-theme
-
+PORTREVISION=	1
 COMMENT=	The Bluecurve QT theme
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
@@ -14,16 +14,15 @@ MASTERDIR=	${.CURDIR}/../bluecurve-themes
 USE_QT_VER=	3
 BUILD_WRKSRC=	${WRKSRC}/art/qt/Bluecurve
 
-QT_CFLAGS=	-I${X11BASE}/include -DQT_THREAD_SUPPORT ${PTHREAD_CFLAGS}
-QT_LIBS=	-L${X11BASE}/lib -lqt-mt ${PTHREAD_LIBS}
-USE_X_PREFIX=	yes
+QT_CFLAGS=	-I${LOCALBASE}/include -DQT_THREAD_SUPPORT ${PTHREAD_CFLAGS}
+QT_LIBS=	-L${LOCALBASE}/lib -lqt-mt ${PTHREAD_LIBS}
 
 SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GtkStyle|0|' ${BUILD_WRKSRC}/bluecurve.cpp
 	@${REINPLACE_CMD} -e \
-		's|^\(libraryPath\)=.*|\1=${X11BASE}/lib/plugins|' \
+		's|^\(libraryPath\)=.*|\1=${LOCALBASE}/lib/plugins|' \
 		${WRKSRC}/art/qt/qtrc
 
 do-build:

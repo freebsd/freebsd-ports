@@ -45,7 +45,7 @@ post-patch:
 		-e 's|gcc|${CC}|' \
 		-e 's|g++|${CXX}|' \
 		-e 's|/usr/local|${LOCALBASE}|' \
-		-e 's|/usr/X11R6|${X11BASE}|' \
+		-e 's|/usr/X11R6|${LOCALBASE}|' \
 		-e 's|release|release thread|' \
 		-e 's|-pthread -D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
 		-e 's|-pthread|${PTHREAD_LIBS}|' \

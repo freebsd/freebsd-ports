@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkatlantic
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://gtkatlantic.gradator.net/downloads/v0.4/
 
@@ -18,7 +18,6 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

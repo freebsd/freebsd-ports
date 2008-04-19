@@ -6,8 +6,8 @@
  # for X11 + Motif
 -CFLAGS	+= -I/usr/X11R6/include
 -LDFLAGS	+= -L/usr/X11R6/$(LIB)
-+CFLAGS	+= -I$(X11BASE)/include
-+LDFLAGS	+= -L$(X11BASE)/$(LIB)
++CFLAGS	+= -I$(LOCALBASE)/include
++LDFLAGS	+= -L$(LOCALBASE)/$(LIB)
  LDLIBS	+= -lXm -lXpm -lXt -lXext -lX11
  
  # RegEdit.c is good old K&R ...
