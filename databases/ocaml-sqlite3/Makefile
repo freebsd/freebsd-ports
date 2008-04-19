@@ -6,55 +6,35 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	databases
-MASTER_SITES=	http://metamatix.org/~ocaml/
+MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ocaml-sqlite3-port@kotka.de
+MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	OCaml bindings to sqlite3 library
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+USE_SQLITE=		yes
+USE_OCAML=		yes
+USE_OCAML_FINDLIB=	yes
+USE_OCAML_LDCONFIG=	yes
+USE_OCAML_PLIST=	yes
 
-WRKSRC=		${WRKDIR}/ocaml-sqlite3
-
-USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CC="${CC}"\
 		CFLAGS="${CFLAGS}"\
 		CPPFLAGS="-UHAVE_ALLOCA_H -I${PREFIX}/include"\
-		LDFLAGS="-L${PREFIX}/lib"
+		LDFLAGS="-L${PREFIX}/lib"\
+		LIBS="${PTHREAD_LIBS}"
 
 USE_BZIP2=	yes
-
-SUB_FILES=	pkg-install pkg-deinstall
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	README style.css *.html
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-BROKEN=		Does not build on amd64
-.endif
-
-do-install:
-	@${ECHO_MSG} "==>  Installing port files for ${PKGORIGIN}..."
-	@( cd ${WRKSRC};\
-	   OCAMLFIND_DESTDIR="${PREFIX}/lib/ocaml/site-lib"\
-	   OCAMLFIND_LDCONF="${PREFIX}/lib/ocaml/ld.conf"\
-	   ocamlfind install\
-		sqlite3 META sqlite3.cmi sqlite3.mli sqlite3.cma\
-		*.cmxa *.a *.cmx *.so;\
-	   OCAMLPATH="${PREFIX}/lib/ocaml/site-lib"\
-	   ocamlfind ocamlmktop -o sqlite3top -package "sqlite3" sqlite3.cma;\
-	   ${INSTALL_SCRIPT} sqlite3top ${PREFIX}/bin/ocamlsqlite3 )
+post-install:
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "==>  Installing port documentation for ${PKGORIGIN}..."
 	@${MKDIR} ${DOCSDIR}
 	@( cd ${WRKSRC}; ${INSTALL_DATA} README ${DOCSDIR} )
 	@( cd ${WRKSRC}/doc;\
@@ -63,4 +43,4 @@ do-install:
 	   done )
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
