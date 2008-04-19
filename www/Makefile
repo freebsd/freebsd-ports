@@ -1018,6 +1018,7 @@
     SUBDIR += pear-Services_Compete
     SUBDIR += pear-Services_Delicious
     SUBDIR += pear-Services_Digg
+    SUBDIR += pear-Services_Google
     SUBDIR += pear-Services_SharedBook
     SUBDIR += pear-Services_TinyURL
     SUBDIR += pear-Services_W3C_CSSValidator
