@@ -1,30 +1,42 @@
+bin/compile_p6grammar.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pugs/Compiler/Rule/.packlist
+%%SITE_PERL%%/Pugs/AST/Expression.pm
+%%SITE_PERL%%/Pugs/Compiler/Grammar.pm
 %%SITE_PERL%%/Pugs/Compiler/Regex.pm
 %%SITE_PERL%%/Pugs/Compiler/RegexPerl5.pm
 %%SITE_PERL%%/Pugs/Compiler/Rule.pm
 %%SITE_PERL%%/Pugs/Compiler/Token.pm
+%%SITE_PERL%%/Pugs/Emitter/Grammar/Perl5.pm
+%%SITE_PERL%%/Pugs/Emitter/Rule/Parsec.pm
 %%SITE_PERL%%/Pugs/Emitter/Rule/Perl5.pm
 %%SITE_PERL%%/Pugs/Emitter/Rule/Perl5/CharClass.pm
 %%SITE_PERL%%/Pugs/Emitter/Rule/Perl5/Ratchet.pm
+%%SITE_PERL%%/Pugs/Emitter/Rule/Perl5/Regex.pm
+%%SITE_PERL%%/Pugs/Emitter/Rule/Perl6/Ratchet.pm
 %%SITE_PERL%%/Pugs/Grammar/Base.pm
 %%SITE_PERL%%/Pugs/Grammar/Precedence.pm
 %%SITE_PERL%%/Pugs/Grammar/Rule.pm
-%%SITE_PERL%%/Pugs/Grammar/Rule2.pm
 %%SITE_PERL%%/Pugs/Grammar/Rule.pmc
+%%SITE_PERL%%/Pugs/Grammar/Rule2.pm
+%%SITE_PERL%%/Pugs/Grammar/RulePure.pm
 %%SITE_PERL%%/Pugs/Runtime/Common.pm
 %%SITE_PERL%%/Pugs/Runtime/Match.pm
 %%SITE_PERL%%/Pugs/Runtime/Match/HsBridge.pm
 %%SITE_PERL%%/Pugs/Runtime/Regex.pm
 %%SITE_PERL%%/Pugs/Runtime/Rule.pm
 %%SITE_PERL%%/Pugs/Runtime/StrPos.pm
+%%SITE_PERL%%/Pugs/Runtime/Tracer.pm
 @dirrm %%SITE_PERL%%/Pugs/Runtime/Match
 @dirrmtry %%SITE_PERL%%/Pugs/Runtime
 @dirrmtry %%SITE_PERL%%/Pugs/Grammar
+@dirrm %%SITE_PERL%%/Pugs/Emitter/Rule/Perl6
 @dirrm %%SITE_PERL%%/Pugs/Emitter/Rule/Perl5
 @dirrmtry %%SITE_PERL%%/Pugs/Emitter/Rule
+@dirrm %%SITE_PERL%%/Pugs/Emitter/Grammar
 @dirrm %%SITE_PERL%%/Pugs/Emitter
 @dirrmtry %%SITE_PERL%%/Pugs/Compiler
+@dirrmtry %%SITE_PERL%%/Pugs/AST
 @dirrmtry %%SITE_PERL%%/Pugs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pugs/Compiler/Rule/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pugs/Compiler/Rule
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pugs/Compiler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pugs

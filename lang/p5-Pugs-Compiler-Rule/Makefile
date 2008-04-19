@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	Pugs-Compiler-Rule
-PORTVERSION=	0.23
+PORTVERSION=	0.28
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/F/FG/FGLOCK
+MASTER_SITE_SUBDIR=	../by-authors/id/A/AG/AGENT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
@@ -24,12 +24,16 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=	compile_p6grammar.pl.1
 MAN3=	Pugs::Compiler::Regex.3 \
+	Pugs::Compiler::Grammar.3 \
 	Pugs::Compiler::RegexPerl5.3 \
 	Pugs::Compiler::Rule.3 \
 	Pugs::Compiler::Token.3 \
+	Pugs::Emitter::Grammar::Perl5.3 \
 	Pugs::Grammar::Precedence.3 \
 	Pugs::Runtime::Match.3 \
-	Pugs::Runtime::StrPos.3
+	Pugs::Runtime::StrPos.3 \
+    	Pugs::Runtime::Tracer.3
 
 .include <bsd.port.mk>
