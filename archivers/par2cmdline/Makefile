@@ -7,26 +7,21 @@
 
 PORTNAME=	par2cmdline
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	parchive
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jonathan@kc8onw.net
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Tools for using Parity v2 Archive files
-
-WRKSRC=		${WRKDIR}/${DISTNAME}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	README
+CONFLICTS=	par2cmdline-tbb-[0-9]*
 PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
-
-post-patch:
-	@${REINPLACE_CMD} -e 's| -lstdc++||g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|#define PACKED __attribute__ ((packed))|#define PACKED|' ${WRKSRC}/par1fileformat.h
-	@${REINPLACE_CMD} -e 's|#define PACKED __attribute__ ((packed))|#define PACKED|' ${WRKSRC}/par2fileformat.h
 
 post-install:
 .if !defined(NOPORTDOCS)
