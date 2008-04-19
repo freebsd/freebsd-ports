@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	PhpDocumentor
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -178,6 +177,7 @@ DOCS=		Documentation/Release-old/Release-0.2.4 \
 		Documentation/Release-old/Release-1.4.0rc1 \
 		Documentation/Release-old/Release-1.4.0rc2 \
 		Documentation/Release-old/Release-1.4.0 \
+		Documentation/Release-old/Release-1.4.1 \
 		Documentation/TODO \
 		Documentation/RoadMap \
 		tutorials/Converters/CHMdefault/CHMdefaultConverter.cls \
@@ -255,7 +255,7 @@ DOCS=		Documentation/Release-old/Release-0.2.4 \
 		INSTALL \
 		LICENSE \
 		README \
-		Release-1.4.1 \
+		Release-1.4.2 \
 		Authors
 TESTS=		Documentation/tests/bug-557861/bug-557861.php \
 		Documentation/tests/bug-441278.php \
