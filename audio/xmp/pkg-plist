@@ -2,4 +2,4 @@ bin/xmp
 etc/xmp/xmp.conf.default
 etc/xmp/xmp-modules.conf.default
 @dirrmtry etc/xmp
-@unexec rm %D/lib/xmms/Input/xmp-xmms.so 2>/dev/null || true
+@rmtry lib/xmms/Input/xmp-xmms.so
