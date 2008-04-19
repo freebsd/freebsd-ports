@@ -14872,6 +14872,7 @@ rubygem-haml	ports/www/rubygem-haml
 rubygem-highline	ports/devel/rubygem-highline
 rubygem-hoe		ports/devel/rubygem-hoe
 rubygem-hpricot	ports/www/rubygem-hpricot
+rubygem-htauth	ports/www/rubygem-htauth
 rubygem-htmltools	ports/textproc/rubygem-htmltools
 rubygem-ini	ports/textproc/rubygem-ini
 rubygem-inline	ports/devel/rubygem-inline
