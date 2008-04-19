@@ -660,6 +660,7 @@
     SUBDIR += pear-Net_URL_Mapper
     SUBDIR += pear-Net_UserAgent_Detect
     SUBDIR += pear-Net_UserAgent_Mobile
+    SUBDIR += pear-Net_Vpopmaild
     SUBDIR += pear-Net_Whois
     SUBDIR += pear-SOAP
     SUBDIR += pear-Services_Pingback
