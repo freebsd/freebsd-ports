@@ -27,7 +27,7 @@ libexec/firebird/udf/ib_udf2.sql
 %%LOCALSTATEDIR%%/security2.fdb.sample
 @exec [ -f %D/%%LOCALSTATEDIR%%/security2.fdb ] || cp %D/%F %D/%%LOCALSTATEDIR%%/security2.fdb
 %%LOCALSTATEDIR%%/help/help.fdb
-@rmtry %%LOCALSTATEDIR%%/firebird.log
+@unexec [ -s %D/%%LOCALSTATEDIR%%/firebird.log ] || rm -f %D/%%LOCALSTATEDIR%%/firebird.log
 @rmtry %%LOCALSTATEDIR%%/isc_event1.`hostname`
 @rmtry %%LOCALSTATEDIR%%/isc_init1.`hostname`
 @rmtry %%LOCALSTATEDIR%%/isc_lock1.`hostname`
