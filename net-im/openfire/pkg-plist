@@ -100,6 +100,21 @@
 %%DATADIR%%/plugins/admin/webapp/images/im_free_chat.gif
 %%DATADIR%%/plugins/admin/webapp/images/incoming_32x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/info-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-login-form-bg.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-body-contentbox-bg.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-nav-bg-over.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-nav-bg.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-nav-bg-left.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-tertnav-top.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-nav-bg-right.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-nav-div.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-nav-bg-on.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-body-bg.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-subnav-bg.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-login-bg.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-login-form-bg-gray.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-subnav-div.gif
+%%DATADIR%%/plugins/admin/webapp/images/jive-tertnav-arrow.gif
 %%DATADIR%%/plugins/admin/webapp/images/language_zh_CN.gif
 %%DATADIR%%/plugins/admin/webapp/images/lock.gif
 %%DATADIR%%/plugins/admin/webapp/images/login_background.png
@@ -231,6 +246,27 @@
 %%DATADIR%%/resources/database/upgrade/13/openfire_oracle.sql
 %%DATADIR%%/resources/database/upgrade/13/openfire_mysql.sql
 %%DATADIR%%/resources/database/upgrade/13/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/14/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/14/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/14/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/14/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/14/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/14/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/14/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/15/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/15/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/15/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/15/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/15/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/15/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/15/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/16/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/16/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/16/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/16/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/16/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/16/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/16/openfire_sybase.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_db2.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_hsqldb.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_mysql.sql
@@ -316,6 +352,9 @@
 @dirrm %%DATADIR%%/resources/database/upgrade/11
 @dirrm %%DATADIR%%/resources/database/upgrade/12
 @dirrm %%DATADIR%%/resources/database/upgrade/13
+@dirrm %%DATADIR%%/resources/database/upgrade/14
+@dirrm %%DATADIR%%/resources/database/upgrade/15
+@dirrm %%DATADIR%%/resources/database/upgrade/16
 @dirrm %%DATADIR%%/resources/database/upgrade/1
 @dirrm %%DATADIR%%/resources/database/upgrade
 @dirrm %%DATADIR%%/resources/database
