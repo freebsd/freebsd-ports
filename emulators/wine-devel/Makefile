@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.59
+PORTVERSION=	0.9.60
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
@@ -75,7 +75,6 @@ post-install:
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
 .endif
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl ${PREFIX}/lib/wine
 	@${MKDIR} ${DESKTOPDIR}
 	@${MV} ${DATADIR}/applications/wine.desktop ${DESKTOPDIR}/
 	@${ECHO}
