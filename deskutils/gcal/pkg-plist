@@ -45,54 +45,54 @@ bin/txt2gcal
 %%DATADIR%%/misc/README
 %%DATADIR%%/misc/daily/daily
 @exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
+@rmtry bin/gcal-%f
 %%DATADIR%%/misc/daily/daily.awk
 %%DATADIR%%/misc/daily/daily.pl
 %%DATADIR%%/misc/daily/daily.rc
 %%DATADIR%%/misc/ddiff/ddiff
 @exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
+@rmtry bin/gcal-%f
 %%DATADIR%%/misc/ddiff/ddiff1.awk
 %%DATADIR%%/misc/ddiff/ddiff1.pl
 %%DATADIR%%/misc/ddiff/ddiff2.awk
 %%DATADIR%%/misc/ddiff/ddiff2.pl
 %%DATADIR%%/misc/ddiff/ddiffdrv
 @exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
+@rmtry bin/gcal-%f
 %%DATADIR%%/misc/ddiff/ddiffdrv.awk
 %%DATADIR%%/misc/ddiff/ddiffdrv.pl
 %%DATADIR%%/misc/ddiff/zone.tab
 %%DATADIR%%/misc/dst/dst
 @exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
+@rmtry bin/gcal-%f
 %%DATADIR%%/misc/dst/dst.awk
 %%DATADIR%%/misc/dst/dst.pl
 %%DATADIR%%/misc/gcalltx/gcalltx
 @exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
+@rmtry bin/gcal-%f
 %%DATADIR%%/misc/gcalltx/gcalltx.pl
 @exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
+@rmtry bin/gcal-%f
 %%DATADIR%%/misc/gcalltx/gcalltx.sed
 %%DATADIR%%/misc/gcalmagic.add
 %%DATADIR%%/misc/moon/moon
 @exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
+@rmtry bin/gcal-%f
 %%DATADIR%%/misc/mrms/mrms
 @exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
+@rmtry bin/gcal-%f
 %%DATADIR%%/misc/mrms/mrms.awk
 %%DATADIR%%/misc/mrms/mrms.pl
 %%DATADIR%%/misc/mrms/mrms.rc
 %%DATADIR%%/misc/srss/srss
 @exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
+@rmtry bin/gcal-%f
 %%DATADIR%%/misc/srss/srss.awk
 %%DATADIR%%/misc/srss/srss.pl
 %%DATADIR%%/misc/srss/srss.rc
 %%DATADIR%%/misc/wloc/wlocdrv
 @exec ln -fs ../%F %D/bin/gcal-%f
-@unexec rm -f %D/bin/gcal-%f
+@rmtry bin/gcal-%f
 %%DATADIR%%/misc/wloc/wlocdrv1.awk
 %%DATADIR%%/misc/wloc/wlocdrv1.pl
 %%DATADIR%%/misc/wloc/wlocdrv2.awk

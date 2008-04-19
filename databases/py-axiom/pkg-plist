@@ -303,7 +303,7 @@ bin/axiomatic
 %%PYTHON_SITELIBDIR%%/axiom/userbase.py
 %%PYTHON_SITELIBDIR%%/axiom/userbase.pyc
 %%PYTHON_SITELIBDIR%%/axiom/userbase.pyo
-@unexec rm -f %D/%%PYTHON_SITELIBDIR%%/axiom/plugins/dropin.cache || true
+@rmtry %%PYTHON_SITELIBDIR%%/axiom/plugins/dropin.cache
 @dirrm %%PYTHON_SITELIBDIR%%/axiom/benchmarks
 @dirrm %%PYTHON_SITELIBDIR%%/axiom/examples
 @dirrm %%PYTHON_SITELIBDIR%%/axiom/plugins
