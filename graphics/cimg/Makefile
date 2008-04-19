@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cimg
-PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTVERSION=	1.2.8
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -26,6 +25,7 @@ MAKE_ENV=	CPPFLAGS="${CFLAGS} ${LAPACK_DEF} ${PTHREAD_CFLAGS}"	\
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+USE_GMAKE=	yes
 USE_GCC=	3.4+
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	board.0:${PORTSDIR}/graphics/libboard
@@ -55,11 +55,15 @@ RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
 .if !defined(WITHOUT_MEDCON)
 RUN_DEPENDS+=	medcon:${PORTSDIR}/graphics/xmedcon
 .endif
+.if !defined(WITHOUT_FFMPEG)
+RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
+.endif
 
 DOCBASE=	CHANGES.txt README.txt
-DOCREFS=	download.shtml favicon.ico favicon.png foot_reference.html	\
-		head.html head_reference.html img index.shtml links.shtml	\
-		news.shtml reference screenshots.shtml
+DOCREFS=	CImg.doxygen CImg_documentation.h CImg_reference.pdf chat.shtml	\
+		download.shtml favicon.ico favicon.png footer.html header.html	\
+		header_reference.html img index.shtml links.shtml news.shtml	\
+		reference screenshots.shtml
 .else
 NOBUILD=	yes
 .endif
@@ -69,6 +73,7 @@ pre-configure:
 .if !defined(NOPORTDOCS)
 	${GREP} -lR 'img/' ${BUILD_WRKSRC} |	\
 		${XARGS} ${REINPLACE_CMD} -e 's|"img/|"${EXAMPLESDIR}/img/|g'
+	${REINPLACE_CMD} -e 's|make|${GMAKE}|' ${BUILD_WRKSRC}/Makefile
 .else
 	${REINPLACE_CMD} -e 's|^OPTFLAGS|#OPTFLAGS|' ${BUILD_WRKSRC}/Makefile
 .endif
@@ -88,7 +93,7 @@ do-install:
 	${CP} -R ${WRKSRC}/documentation/${doc} ${DOCSDIR}
 . endfor
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@(cd ${EXAMPLESDIR} && ${MAKE} clean)
+	@(cd ${EXAMPLESDIR} && ${GMAKE} clean)
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} ${EXAMPLESDIR}
 	${FIND} ${DOCSDIR} ${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 .endif
