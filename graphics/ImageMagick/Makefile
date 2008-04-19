@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.3.6-9
+DISTVERSION=	6.4.0-7
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -21,21 +21,27 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
 MASTER_SITE_SUBDIR=	imagemagick
+EXTRACT_SUFX=	.tar.lzma
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Image processing tools
 
+EXTRACT_DEPENDS=	lzma:${PORTSDIR}/archivers/lzma
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
+EXTRACT_CMD=	${LOCALBASE}/bin/lzma d
+EXTRACT_BEFORE_ARGS=	-so
 USE_PERL5=	yes
-USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_AUTOTOOLS=	libtool:15 libltdl:15
+USE_AUTOTOOLS=	libltdl:15
+# For some reason, using our libtool breaks the build into pieces:
+#USE_AUTOTOOLS+=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --without-dps
 USE_LDCONFIG=	yes
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+#ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
 		animate.1 conjure.1 compare.1 composite.1 convert.1 display.1 \
@@ -347,11 +353,11 @@ post-patch:
 
 post-install:
 .if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
-	@${TOUCH} ${PREFIX}/lib/ImageMagick/modules-Q8/coders/.keep
-	@${TOUCH} ${PREFIX}/lib/ImageMagick/modules-Q8/filters/.keep
+	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q8/coders/.keep
+	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q8/filters/.keep
 .else
-	@${TOUCH} ${PREFIX}/lib/ImageMagick/modules-Q16/coders/.keep
-	@${TOUCH} ${PREFIX}/lib/ImageMagick/modules-Q16/filters/.keep
+	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q16/coders/.keep
+	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q16/filters/.keep
 .endif
 
 test check:
@@ -366,7 +372,7 @@ WITHOUT_IMAGEMAGICK_TESTS=yes
 .	endfor
 .endif
 .if !defined(WITHOUT_IMAGEMAGICK_TESTS)
-.	for m in HDRI MODULES
+.	for m in MODULES HDRI
 .		if defined(WITH_IMAGEMAGICK_$m)
 .			warning	Presence of $m breaks self-tests. Disabling them.
 WITHOUT_IMAGEMAGICK_TESTS=yes
