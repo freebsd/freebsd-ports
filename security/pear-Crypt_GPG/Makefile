@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_GPG
-PORTVERSION=	0.3.11
+PORTVERSION=	0.6.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -17,8 +17,10 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 CATEGORY=	Crypt
 FILES=		GPG.php GPG/Exceptions.php GPG/Key.php \
-		GPG/Signature.php GPG/Driver/Php.php
-TESTS=		PhpDriver.php test.php
+		GPG/Signature.php GPG/UserId.php GPG/SubKey.php \
+		GPG/Driver/Php.php GPG/Driver/GnuPG.php
+TESTS=		PhpDriverTestCase.php DriverTestCase.php \
+		GnuPGDriverTestCase.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
