@@ -39,3 +39,5 @@ share/abiword-2.6/templates/Press-Release.awt
 share/abiword-2.6/templates/Resume.awt
 share/abiword-2.6/templates/Two-Columns.awt
 share/abiword-2.6/templates/US-Letter.awt
+@dirrmtry share/abiword-2.6/dictionary
+@dirrmtry share/abiword-2.6/clipart
