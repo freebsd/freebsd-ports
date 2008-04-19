@@ -10,7 +10,7 @@
 @unexec cp %D/etc/xpdfrc %D/etc/xpdfrc.chinese-traditional
 @unexec grep -F -v --file=%D/%%DATADIR%%/chinese-traditional/dot.xpdfrc %D/etc/xpdfrc.chinese-traditional > %D/etc/xpdfrc
 %%DATADIR%%/chinese-traditional/dot.xpdfrc
-@unexec rm -f %D/etc/xpdfrc.chinese-traditional
+@rmtry etc/xpdfrc.chinese-traditional
 @dirrm %%DATADIR%%/chinese-simplified
 @dirrm %%DATADIR%%/chinese-traditional
 @dirrmtry %%DATADIR%%

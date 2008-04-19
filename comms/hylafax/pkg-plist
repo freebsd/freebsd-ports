@@ -63,7 +63,7 @@ hylafax/COPYRIGHT
 @exec mkfifo %D/hylafax/FIFO
 @exec chown uucp:dialer %D/hylafax/FIFO
 @exec chmod 0600 %D/hylafax/FIFO
-@unexec rm %D/hylafax/FIFO 2>&1 >/dev/null || true
+@rmtry hylafax/FIFO
 @exec mkdir %D/hylafax/archive
 @exec chown uucp:dialer %D/hylafax/archive
 @exec chmod 0700 %D/hylafax/archive
