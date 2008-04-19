@@ -7,6 +7,7 @@
 
 PORTNAME=	ck4up
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jue.li/crux/ck4up/
 
@@ -19,7 +20,6 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 RUBY_VER=	1.8
 RUBY_NO_BUILD_DEPENDS=	yes
-RUBY_SHEBANG_FILES=	ck4up.rb
 
 MAN1=		ck4up.1
 
