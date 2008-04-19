@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	4.2.205.5730
+PORTVERSION=	4.3.7191.6508
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTFILES=	${TARGET_DISTFILE}
@@ -39,6 +39,9 @@ UNMAKESELF=	${LOCALBASE}/bin/unmakeself
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+.endif
+.if ${OSVERSION} < 700000
+IGNORE=		needs new Linux syscalls only in ${OPSYS} >= 7
 .endif
 
 do-fetch:
