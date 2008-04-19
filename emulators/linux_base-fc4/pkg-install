@@ -48,6 +48,11 @@ POST-INSTALL)
 	echo 'Running linux ldconfig...'
 	${PKG_PREFIX}/sbin/ldconfig -r ${PKG_PREFIX}
 #
+# Create a symlink to disallow using a FreeBSD native library, but find
+# linux one at /lib/obsolete/linuxthreads
+#
+	ln -s ${PKG_PREFIX}/lib/ld-2.3.6.so ${PKG_PREFIX}/usr/lib/librt.so.1
+#
 # Create linux mtree
 #
 	mkdir -p ${PKG_PREFIX}/var/yp
