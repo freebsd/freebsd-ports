@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	newmail
-PORTVERSION=	0.0.11
-PORTREVISION=	5
+PORTVERSION=	0.0.12
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -15,8 +14,8 @@ PKGNAMEPREFIX=	claws-mail-
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Message header summary logging plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.4.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.4.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261
