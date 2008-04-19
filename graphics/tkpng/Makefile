@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 		--with-tclinclude=${LOCALBASE}/include/tcl${TK_VER}/generic \
 		--with-tkinclude=${LOCALBASE}/include/tk${TK_VER}/generic \
 		--exec-prefix=${PREFIX} --enable-shared
-CPPFLAGS=	-I${LOCALBASE}/include/tk${TK_VER}/generic -I${X11BASE}/include
+CPPFLAGS=	-I${LOCALBASE}/include/tk${TK_VER}/generic -I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 TKPKG=		${PORTNAME}${PORTVERSION}
 PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG} TKLIBVER=${TKLIBVER}

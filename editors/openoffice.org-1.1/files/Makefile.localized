@@ -145,7 +145,7 @@ LANG_PKGNAME=   ja
 LANG_EXT=       81
 LANG_CONFIGURE_ARG=     JAPN
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/&,}
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
 L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################

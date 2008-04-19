@@ -7,7 +7,7 @@
 
 PORTNAME=	chipmunk
 PORTVERSION=	5.64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/chipmunk/pickup/sources/
 DISTFILES=	psys-1.59.tar.gz log-5.64.tar.gz netcmp-1.13.tar.gz \
@@ -23,7 +23,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An electronic CAD system
 
 NO_WRKSUBDIR=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>

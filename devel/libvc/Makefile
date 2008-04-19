@@ -19,7 +19,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		vc.3
 

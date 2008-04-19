@@ -6,7 +6,7 @@ ANGBANDLIB?=	/usr/local/lib/angband
 all:	testing
 
 testing:
-	cd src && make "EXTRA_CFLAGS=-I${X11BASE}/include ${JAPANESE_CFLAGS} -DDEFAULT_PATH=\\\"${ANGBANDLIB}\\\""
+	cd src && make "EXTRA_CFLAGS=-I${LOCALBASE}/include ${JAPANESE_CFLAGS} -DDEFAULT_PATH=\\\"${ANGBANDLIB}\\\""
 
 test:	testing
 	ANGBAND_PATH=./lib ./testing

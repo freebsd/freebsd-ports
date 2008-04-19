@@ -18,10 +18,10 @@ COMMENT=	A swallowable applet monitors the CPU usage, memory and swap, etc
 USE_XORG=	xpm x11
 
 BUILD_WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/asmon
-CFLAGS+=	-I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 ALL_TARGET=	clean asmon
-MAKE_ARGS+=	LIBDIR="-L${X11BASE}/lib" \
+MAKE_ARGS+=	LIBDIR="-L${LOCALBASE}/lib" \
 		SOLARIS_LIBS=-lkvm
 
 PLIST_FILES=	bin/asmon

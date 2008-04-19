@@ -15,7 +15,7 @@ MAINTAINER=	amistry@am-productions.biz
 COMMENT=	LRMI is a library for calling real mode BIOS routines
 
 ONLY_FOR_ARCHS=	i386
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKEFILE=	Makefile.bsd
 
 SHLIB_VERSION=	0

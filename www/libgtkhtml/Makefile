@@ -8,6 +8,7 @@
 
 PORTNAME=	libgtkhtml
 PORTVERSION=	2.11.1
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.11
@@ -17,7 +18,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight HTML rendering/printing/editing engine
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libxslt gnomevfs2 gail ltverhack
 USE_LDCONFIG=	yes

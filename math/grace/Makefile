@@ -36,7 +36,7 @@ USE_GMAKE=	YES
 USE_MOTIF=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	\
-	--with-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include \
+	--with-extra-incpath=${LOCALBASE}/include/X11:${LOCALBASE}/include \
 	--with-extra-ldpath=${LOCALBASE}/lib --without-bundled_xbae \
 	--enable-grace-home=${DATADIR}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

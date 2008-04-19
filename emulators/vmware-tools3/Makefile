@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware-tools
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	# bundled with VMware itself
 DISTNAME=	vmware-freebsd-tools
@@ -23,7 +23,6 @@ IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/vmware-freebsd-tools
 
 ONLY_FOR_ARCHS=	i386
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_LATEST_LINK=	yes
 .if !defined(BATCH)

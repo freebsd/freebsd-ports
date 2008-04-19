@@ -7,7 +7,7 @@
 
 PORTNAME=	xzx
 PORTVERSION=	4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://mitglied.lycos.de/suppentops123/spectrum/xzx/
 DISTNAME=	${PORTNAME}-pro-${PORTVERSION}
@@ -16,13 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
 
 # xmkmf is used in configure script; USE_IMAKE makes the build unhappy
-BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
+BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
 
 # Server redirects to distfile; won't work with -A
 FETCH_CMD=	/usr/bin/fetch -Rr
 
 USE_MOTIF=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 ice sm xext xpm xt xxf86vm
 
 # License forbids redistribution
 RESTRICTED=	Redistribution forbidden by license

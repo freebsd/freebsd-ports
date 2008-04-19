@@ -17,7 +17,7 @@ DISTNAME=	gkrellm_qst-${PORTVERSION}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Plugin for Gkrellm that displays updated info on several game servers
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 		qstat:${PORTSDIR}/games/qstat
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	mastergear
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/MG/
 DISTNAME=	MG20-FreeBSD-80x86-bin
@@ -23,7 +23,6 @@ ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
 STRIP=
-USE_X_PREFIX=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mg ${PREFIX}/bin

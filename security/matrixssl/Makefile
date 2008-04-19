@@ -16,7 +16,7 @@ COMMENT=	Small alternative SSL implementation
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libmatrixssl* ${PREFIX}/lib

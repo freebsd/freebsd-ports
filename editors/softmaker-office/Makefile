@@ -7,7 +7,7 @@
 
 PORTNAME=	SoftMaker-Office
 PORTVERSION=	2006
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.softmaker.net/down/
 DISTFILES=	ofb06trial.tgz
@@ -15,9 +15,9 @@ DISTFILES=	ofb06trial.tgz
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Microsoft Word/Excel OpenDocument and OpenOffice.org editor
 
-RUN_DEPENDS=	${X11BASE}/bin/xfs:${X_FONTSERVER_PORT}
+RUN_DEPENDS=	${LOCALBASE}/bin/xfs:${X_FONTSERVER_PORT}
 
-USE_XLIB=	yes
+USE_XORG=	x11
 
 NO_BUILD=	yes
 

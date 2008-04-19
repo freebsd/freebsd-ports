@@ -7,7 +7,7 @@
 
 PORTNAME=	xpns
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc cad
 MASTER_SITES=	http://robotics.ee.uwa.edu.au/pns/ftp/
 DISTFILES=	pns_source.tar.Z
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Petri-Net Simulator for Xwindows
 
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xaw
 MAKEFILE=	makefile
 ALL_TARGET=	pns
 

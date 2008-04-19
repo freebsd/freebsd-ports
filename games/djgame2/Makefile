@@ -45,9 +45,9 @@ post-patch:
 		${WRKSRC}/makelinux
 	@${REINPLACE_CMD} -e 's|qmake|${QMAKE}|' \
 		${WRKSRC}/makelinux
-	@${ECHO_CMD} "INCLUDEPATH += ${X11BASE}/include" \
+	@${ECHO_CMD} "INCLUDEPATH += ${LOCALBASE}/include" \
 		>> ${WRKSRC}/Base/Base.pro
-	@${ECHO_CMD} "INCLUDEPATH += ${X11BASE}/include" \
+	@${ECHO_CMD} "INCLUDEPATH += ${LOCALBASE}/include" \
 		>> ${WRKSRC}/Hall/Hall.pro
 	@${CHMOD} a+x ${WRKSRC}/makelinux
 

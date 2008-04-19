@@ -8,7 +8,7 @@
 
 PORTNAME=	cxterm
 PORTVERSION=	5.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/ \
 		http://www.525183.com/freebsd/cxterm/ \
@@ -23,8 +23,10 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sunrychen@gmail.com
 COMMENT=	An xterm that speaks Chinese
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 WRKSRC=		${WRKDIR}/cxterm-5.0
 USE_IMAKE=	yes

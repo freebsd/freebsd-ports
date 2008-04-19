@@ -9,8 +9,7 @@ PORTNAME=      adasdl
 PORTVERSION=   20010504
 PORTREVISION=	5
 CATEGORIES=    devel
-MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=    ${PORTNAME}
+MASTER_SITES=  SF
 DISTNAME=      AdaSDL_${PORTVERSION}
 
 MAINTAINER=	david@realityrift.com
@@ -29,9 +28,9 @@ do-patch:
 	for i in `${FIND} ${WRKSRC} -name 'make.conf_x11'`; do \
 		${REINPLACE_CMD} \
 			-e 's,/usr/local,${LOCALBASE},g' \
-			-e 's,/usr/X11R6,${X11BASE},g' \
+			-e 's,/usr/X11R6,${LOCALBASE},g' \
 			-e 's,-lpthread,-pthread,' \
-			-e 's,-lGL,-L${X11BASE}/lib\ -lX11 -lXext -lGL,' \
+			-e 's,-lGL,-L${LOCALBASE}/lib\ -lX11 -lXext -lGL,' \
 		$${i}; \
 	done
 

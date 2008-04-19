@@ -33,7 +33,7 @@
 +## Variation -- Compile for FreeBSD
 +##
 +CFLAGS += -D"USE_X11" -D"USE_GCU" -D"USE_TRANSPARENCY" ${EXTRA_CFLAGS}
-+LIBS = -L${X11BASE}/lib -lX11 -lcurses -ltermcap
++LIBS = -L${LOCALBASE}/lib -lX11 -lcurses -ltermcap
  
  
  

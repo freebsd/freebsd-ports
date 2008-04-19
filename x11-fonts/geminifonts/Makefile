@@ -7,7 +7,7 @@
 
 PORTNAME=	gemini
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.brama.com/compute/unix/
 PKGNAMEPREFIX=	koi8-u-
@@ -18,17 +18,19 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Ukrainian KOI8 fonts for X11R6 (koi8-u)
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 USE_PERL5_BUILD=yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 NO_WRKSUBDIR=	yes
 
 MAKE_ARGS+=	-j 2
 
 post-patch:
 	${REINPLACE_CMD} -e 's/\.Z/.gz/g' \
-	    -e 's|DESTDIR =.*|DESTDIR=${X11BASE}/lib/X11/fonts/koi8-u-gemini|' \
+	    -e 's|DESTDIR =.*|DESTDIR=${LOCALBASE}/lib/X11/fonts/koi8-u-gemini|' \
 	${WRKSRC}/Makefile
 
 post-install:

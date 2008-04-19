@@ -7,7 +7,7 @@
 
 PORTNAME=	xmx
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.cs.brown.edu/pub/xmx/
 EXTRACT_SUFX=	.tar.Z
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ob@breuninger.org
 COMMENT=	An X protocol multiplexor
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 MAN1=		xmx.1
 PLIST_FILES=	bin/xmx

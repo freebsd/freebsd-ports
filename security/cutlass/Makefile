@@ -19,7 +19,7 @@ BUILD_DEPENDS=	botan-config:${PORTSDIR}/security/botan \
 
 MAN3=	cutlass.3
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	libglade2
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"

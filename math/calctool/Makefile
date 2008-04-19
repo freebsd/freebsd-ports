@@ -7,7 +7,7 @@
 
 PORTNAME=	calctool
 PORTVERSION=	2.4.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nsayer
@@ -27,7 +27,7 @@ MAN1=		calctool.1
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 BINARIES+=	xcalctool
 PLIST_SUB+=	X11=""
 .else
@@ -57,7 +57,7 @@ FPIC=	-fpic
 
 post-patch:
 	@${REINPLACE_CMD}	-e "s#%%FPIC%%#${FPIC}#g" \
-				-e "s#%%X11BASE%%#${X11BASE}#g" \
+				-e "s#%%LOCALBASE%%#${LOCALBASE}#g" \
 				-e "s#%%BINARIES%%#${BINARIES}#g" \
 				-e "s#%%DATADIR%%#${DATADIR}#g" \
 				${WRKSRC}/Makefile

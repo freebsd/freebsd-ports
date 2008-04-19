@@ -34,16 +34,16 @@
  #
 -#X11INCDIR         = -I$(OPENWINHOME)/include
 -#X11LIBDIR         = -L$(OPENWINHOME)/lib
-+X11INCDIR         = -I%%X11BASE%%/include
-+X11LIBDIR         = -L%%X11BASE%%/lib
++X11INCDIR         = -I%%LOCALBASE%%/include
++X11LIBDIR         = -L%%LOCALBASE%%/lib
  #-------------------------------------------------------------------------
  #  If you are compiling the XView version, then the following two lines
  #  should be uncommented.
  #
 -XVIEWINCDIR      = -I$(OPENWINHOME)/include
 -XVIEWLIBDIR      = -L$(OPENWINHOME)/lib
-+XVIEWINCDIR      = -I%%X11BASE%%/include
-+XVIEWLIBDIR      = -L%%X11BASE%%/lib
++XVIEWINCDIR      = -I%%LOCALBASE%%/include
++XVIEWLIBDIR      = -L%%LOCALBASE%%/lib
  #
  #=========================================================================
  #

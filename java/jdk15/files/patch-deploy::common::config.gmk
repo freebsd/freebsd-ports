@@ -7,10 +7,10 @@ $FreeBSD$
  ifeq ($(LINUX_OR_BSD), true)
    PLUGIN_PLATFORM_SRC := $(PLUGIN_TOP)/src/plugin/solaris
 -  OTHER_LDFLAGS = -L/usr/X11R6/lib
-+  OTHER_LDFLAGS = -L$(X11BASE)/lib
++  OTHER_LDFLAGS = -L$(LOCALBASE)/lib
    ifeq ($(TRUE_PLATFORM), NetBSD)
 -    OTHER_LDFLAGS += -Wl,-R/usr/X11R6/lib
-+    OTHER_LDFLAGS += -Wl,-R$(X11BASE)/lib
++    OTHER_LDFLAGS += -Wl,-R$(LOCALBASE)/lib
    endif
  endif
  

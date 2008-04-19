@@ -8,16 +8,14 @@
 
 PORTNAME=	GSubEdit
 PORTVERSION=	0.4.p1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:L}
+MASTER_SITES=	SF/${PORTNAME:L}
 DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME Subtitle Editor is a tool for editing/converting video subtitles
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
 GNU_CONFIGURE=	yes

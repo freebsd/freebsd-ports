@@ -5,12 +5,12 @@
 
  Add the following line to the "Files" section and restart XFree86.
 
- FontPath "X11BASE/lib/X11/fonts/ae_fonts_mono"
- FontPath "X11BASE/lib/X11/fonts/ae_fonts1/AAHS"
- FontPath "X11BASE/lib/X11/fonts/ae_fonts1/AGA"
- FontPath "X11BASE/lib/X11/fonts/ae_fonts1/FS"
- FontPath "X11BASE/lib/X11/fonts/ae_fonts1/Kasr"
- FontPath "X11BASE/lib/X11/fonts/ae_fonts1/MCS"
- FontPath "X11BASE/lib/X11/fonts/ae_fonts1/Shmookh"
- FontPath "X11BASE/lib/X11/fonts/kacst_fonts"
+ FontPath "LOCALBASE/lib/X11/fonts/ae_fonts_mono"
+ FontPath "LOCALBASE/lib/X11/fonts/ae_fonts1/AAHS"
+ FontPath "LOCALBASE/lib/X11/fonts/ae_fonts1/AGA"
+ FontPath "LOCALBASE/lib/X11/fonts/ae_fonts1/FS"
+ FontPath "LOCALBASE/lib/X11/fonts/ae_fonts1/Kasr"
+ FontPath "LOCALBASE/lib/X11/fonts/ae_fonts1/MCS"
+ FontPath "LOCALBASE/lib/X11/fonts/ae_fonts1/Shmookh"
+ FontPath "LOCALBASE/lib/X11/fonts/kacst_fonts"
 ------------------------------------------------------------------

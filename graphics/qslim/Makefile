@@ -17,20 +17,20 @@ COMMENT=	SlimKit Surface Modeling Tools
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		forms.1:${PORTSDIR}/x11-toolkits/xforms \
-		glut.4:${PORTSDIR}/graphics/libglut
+		forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 CONFIGURE_WRKSRC=	${WRKSRC}/mixkit/build
 BUILD_WRKSRC=	${WRKSRC}/mixkit/src
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GL=		glut
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	# none
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include \
-		-I${X11BASE}/include/X11 ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/X11 ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 CFLAGS+=	-DMIX_ANSI_IOSTREAMS -fpermissive
 

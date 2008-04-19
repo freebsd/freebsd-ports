@@ -5,7 +5,7 @@
  
  ifneq ($(TARGET_OS),WIN32)
 -LDFLAGS+=-Xlinker -rpath=$(BINDIR)
-+LDFLAGS+=-L${LOCALBASE}/lib -L${X11BASE}/lib -Xlinker -rpath=$(BINDIR)
++LDFLAGS+=-L${LOCALBASE}/lib -Xlinker -rpath=$(BINDIR)
  endif
  
  ifeq ($(TARGET_ARCH_SPARC64),yes)

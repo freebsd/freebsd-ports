@@ -23,7 +23,6 @@ USE_BISON=	build
 USE_GMAKE=	yes
 USE_GCC=	3.4
 GNU_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 MAN1=		RtConfig.1 peval.1 rpslcheck.1 IRR-Errors.1
 MAN3=		librpsl.3

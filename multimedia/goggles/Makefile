@@ -7,7 +7,7 @@
 
 PORTNAME=	goggles
 PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.fifthplanet.net/files/
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xv
 
 pre-everything::
 .ifndef(WITH_DVD_DEVICE)
@@ -79,8 +79,6 @@ do-build:
 		--prefix=${PREFIX} \
 		--fox-prefix=${LOCALBASE} \
 		--ogle-prefix=${LOCALBASE} \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib \
 		--with-xv=yes
 
 post-build:

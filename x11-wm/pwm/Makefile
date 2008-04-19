@@ -7,7 +7,7 @@
 
 PORTNAME=	pwm
 PORTVERSION=	2007.07.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -18,7 +18,7 @@ COMMENT=	A lightweight window manager with emphasis on usability
 
 USE_XORG=	x11
 USE_GMAKE=	yes
-MAKE_ENV=	X11_PREFIX="${X11BASE}" HAS_SYSTEM_ASPRINTF=1
+MAKE_ENV=	X11_PREFIX="${LOCALBASE}" HAS_SYSTEM_ASPRINTF=1
 
 MAN1=		pwm.1x
 

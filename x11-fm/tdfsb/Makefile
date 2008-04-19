@@ -45,7 +45,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}| ; \
 			s|gcc|${CC}| ; s| -lm|| ; \
 			s|/usr/local|${LOCALBASE}|g ; \
-			s|/usr/X11R6|${X11BASE}|g ; \
+			s|/usr/X11R6|${LOCALBASE}|g ; \
 			s|-O2|${CFLAGS}|g' \
 				${WRKSRC}/${COMPILE_SCRIPT}
 

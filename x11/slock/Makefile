@@ -13,12 +13,12 @@ MASTER_SITES=	http://www.suckless.org/download/ CENKES
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Simple X screen locker
 
-MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${X11BASE}/lib" \
-		X11INC="${X11BASE}/include" CC="${CC}" \
+MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
+		X11INC="${LOCALBASE}/include" CC="${CC}" \
 		MANPREFIX="${MANPREFIX}/man"
 PLIST_FILES=	bin/slock
 
-USE_XLIB=	yes
+USE_XORG=	x11 xt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include||;s|-L/usr/lib||;s|= -Os|+=|'\

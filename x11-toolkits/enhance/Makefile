@@ -8,7 +8,7 @@
 
 PORTNAME=	enhance
 PORTVERSION=	20080223
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
@@ -17,7 +17,6 @@ COMMENT=	A library for rapid application development with ETK/Glade
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_LDCONFIG=	yes
 USE_EFL=	ecore etk exml

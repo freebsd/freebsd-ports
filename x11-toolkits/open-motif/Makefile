@@ -10,7 +10,7 @@ PORTNAME=	open-motif
 PORTVERSION=	2.2.3
 PORTREVISION=	5
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://ftp.motifzone.com/%SUBDIR%/                              
+MASTER_SITES=	http://ftp.motifzone.com/%SUBDIR%/
 MASTER_SITE_SUBDIR=	om${PORTVERSION}/src
 DISTNAME=	openMotif-${PORTVERSION}
 EXTRACT_SUFX=	.tar.gz
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_XORG=	xaw xbitmaps
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-DCSRG_BASED -DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_ENV=	LANG=C
 
 DEMOS_SRC=	${WRKSRC}/demos/programs

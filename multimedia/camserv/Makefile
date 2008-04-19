@@ -26,7 +26,7 @@ USE_AUTOTOOLS=	autoconf:261 libtool:15 libltdl:15
 USE_EFL=	imlib2
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/gtk12 \
 		-I${LOCALBASE}/include/gdk-pixbuf-1.0 \
 		-I${LOCALBASE}/include/glib12" \

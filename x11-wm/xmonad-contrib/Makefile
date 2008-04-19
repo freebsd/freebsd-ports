@@ -7,6 +7,7 @@
 
 PORTNAME=	xmonad-contrib
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	x11-wm haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad-contrib/${PORTVERSION}/
 
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 RUN_DEPENDS=	xmonad:${PORTSDIR}/x11-wm/xmonad
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
-USE_XLIB=	yes
+USE_XORG=	x11
 
 CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs
 GHC_VERSION=	6.8.2

@@ -17,17 +17,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
 USE_BZIP2=	yes
 USE_XORG=	x11 sm ice xext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-extensions
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAKE_ARGS=	INCLUDES="-I${WRKSRC}/unzip -I${WRKSRC} -I${X11BASE}/include \
-			-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDLIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+MAKE_ARGS=	INCLUDES="-I${WRKSRC}/unzip -I${WRKSRC} -I${LOCALBASE}/include \
+		${PTHREAD_CFLAGS}" LDLIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		OPTIMISE="${CXXFLAGS}"
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

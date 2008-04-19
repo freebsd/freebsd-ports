@@ -8,20 +8,19 @@
 
 PORTNAME=	kaffeine-mozilla
 PORTVERSION=	0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	kaffeine
+MASTER_SITES=	SF/kaffeine
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kaffeine Mozilla plugin
 
 RUN_DEPENDS=	kaffeine:${PORTSDIR}/multimedia/kaffeine
 
-USE_XLIB=	yes
+USE_XORG=	x11 xaw
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 USE_AUTOTOOLS=	libtool:15
 
 post-patch:

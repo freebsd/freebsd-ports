@@ -27,7 +27,6 @@ BROKEN=		Configure fails without X support
 
 # configure --program-suffix doesn't work somehow
 MAKE_ARGS=	binsuffix="${BINSUFFIX}"
-CONFIGURE_ARGS+=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 
 PORTDOCDIR=	share/doc/gnuserv-${EMACS_PORT_NAME}
 MAN1=		gnuserv${BINSUFFIX}.1

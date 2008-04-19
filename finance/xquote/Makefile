@@ -18,7 +18,7 @@ LIB_DEPENDS=	Xbae.4:${PORTSDIR}/x11-toolkits/xbae
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 PLIST_FILES=	bin/Xquote lib/X11/app-defaults/Xquote
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	amaya
 PORTVERSION=	9.55
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \
@@ -24,12 +25,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	adam-ports@blacktabby.org
 COMMENT=	The W3C's testbed web editor/browser
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/Amaya/obj
 
+USE_XORG=	xft x11
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 imlib
 USE_ICONV=	yes

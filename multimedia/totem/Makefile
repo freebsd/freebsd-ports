@@ -8,7 +8,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	2.22.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -26,7 +26,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui desktopfileutils \
 		nautiluscdburner ltverhack pygtk2
 GNOME_DESKTOP_VERSION=2

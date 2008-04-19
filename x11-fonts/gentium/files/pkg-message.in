@@ -1,7 +1,7 @@
 IMPORTANT - READ CAREFULLY: Please read the COPYRIGHT included with these fonts
 before using.  The copyright can be found at
 
-	%%PREFIX%%/%%FONTSDIR%%/OFL
+	%%LOCALBASE%%/%%FONTSDIR%%/OFL
 
 To use these fonts, follow the instructions below.
 
@@ -12,4 +12,4 @@ line to the "Modules" section of xorg.conf:
 
 Add the following line to the "Files" section of xorg.conf:
 
-	FontPath "%%PREFIX%%/%%FONTSDIR%%/"
+	FontPath "%%LOCALBASE%%/%%FONTSDIR%%/"

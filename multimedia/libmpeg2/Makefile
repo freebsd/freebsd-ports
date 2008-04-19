@@ -7,7 +7,7 @@
 
 PORTNAME=	libmpeg2
 PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 DISTNAME=	mpeg2dec-${PORTVERSION}
@@ -15,7 +15,6 @@ DISTNAME=	mpeg2dec-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
 
-USE_XLIB=	yes
 USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes

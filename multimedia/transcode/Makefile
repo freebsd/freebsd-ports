@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://transcode.kabewm.com/ \
 		http://fromani.exit1.org/
@@ -24,7 +24,6 @@ BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 USE_BZIP2=	yes
 FAKEDIR=	${WRKDIR}/fake
 PLIST=		${WRKDIR}/plist
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 WANT_SDL=	yes

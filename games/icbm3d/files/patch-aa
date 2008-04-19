@@ -7,7 +7,7 @@
 -CC=gcc
 +CC?=gcc
 +PREFIX?=/usr/X11R6
-+X11BASE?=/usr/X11R6
++LOCALBASE?=/usr/X11R6
  MATHLIB=-lm
  
  INSTALLROOT=$(PREFIX)
@@ -15,8 +15,8 @@
  
 -XLIB=-L$(PREFIX)/lib -lX11 #-lcompat
 -CFLAGS=-I$(PREFIX)/include -O2
-+XLIB=-L$(X11BASE)/lib -lX11 #-lcompat
-+CFLAGS+=-I$(X11BASE)/include
++XLIB=-L$(LOCALBASE)/lib -lX11 #-lcompat
++CFLAGS+=-I$(LOCALBASE)/include
  
  
  # End of makefile user-definable variables-----------------------------------

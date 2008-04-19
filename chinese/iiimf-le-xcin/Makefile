@@ -7,7 +7,7 @@
 
 PORTNAME=	iiimf-le-xcin
 PORTVERSION=	0.1.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	chinese textproc
 MASTER_SITES=	http://people.redhat.com/llch/iiimf-xcin/${PORTVERSION}/
 EXTRACT_SUFX=	-11.src.rpm
@@ -20,7 +20,6 @@ RUN_DEPENDS=	iiimd:${PORTSDIR}/textproc/iiimf-server
 
 WRKSRC=		${WRKDIR}/iiimf-xcin
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GNOME=	libxml2
 USE_AUTOTOOLS=	automake:19 autoheader:261 autoconf:261 libtool:15
 AUTOMAKE_ARGS=	--add-missing

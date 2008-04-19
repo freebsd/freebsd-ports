@@ -35,7 +35,7 @@ PLIST_DIRS=	%%DATADIR%%
 USE_EFL+=	engrave
 .endif
 
-.if defined(WITH_ENLIGHTENMENT) || exists(${X11BASE}/bin/enlightenment_remote)
+.if defined(WITH_ENLIGHTENMENT) || exists(${LOCALBASE}/bin/enlightenment_remote)
 BUILD_DEPENDS+=	enlightenment_remote:${PORTSDIR}/x11-wm/enlightenment-devel
 RUN_DEPENDS+=	enlightenment_remote:${PORTSDIR}/x11-wm/enlightenment-devel
 .endif

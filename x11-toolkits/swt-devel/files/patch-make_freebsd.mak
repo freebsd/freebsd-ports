@@ -14,7 +14,7 @@
  # Do not use pkg-config to get libs because it includes unnecessary dependencies (i.e. pangoxft-1.0)
  GTKCFLAGS = `pkg-config --cflags gtk+-2.0`
 -GTKLIBS = `pkg-config --libs-only-L gtk+-2.0 gthread-2.0` -lgtk-x11-2.0 -lgthread-2.0 -L/usr/X11R6/lib $(XLIB64) -lXtst
-+GTKLIBS = `pkg-config --libs-only-L gtk+-2.0 gthread-2.0` -lgtk-x11-2.0 -lgthread-2.0 -L$(X11BASE)/lib $(XLIB64) -lXtst
++GTKLIBS = `pkg-config --libs-only-L gtk+-2.0 gthread-2.0` -lgtk-x11-2.0 -lgthread-2.0 -L$(LOCALBASE)/lib $(XLIB64) -lXtst
  
  CDE_LIBS = -L$(CDE_HOME)/lib -R$(CDE_HOME)/lib -lXt -lX11 -lDtSvc
  
@@ -23,7 +23,7 @@
  
  GLXCFLAGS = 
 -GLXLIBS = -shared -fPIC -L/usr/X11R6/lib -lGL -lGLU -lm
-+GLXLIBS = -shared -fPIC -L$(X11BASE)/lib -lGL -lGLU -lm
++GLXLIBS = -shared -fPIC -L$(LOCALBASE)/lib -lGL -lGLU -lm
  
  # Uncomment for Native Stats tool
  #NATIVE_STATS = -DNATIVE_STATS
@@ -31,7 +31,7 @@
  		-DFREEBSD -DGTK \
  		-I$(JAVA_HOME)/include \
  		-I$(JAVA_HOME)/include/freebsd \
-+		-I$(X11BASE)/include \
++		-I$(LOCALBASE)/include \
  		-fPIC \
  		${SWT_PTR_CFLAGS}
  LIBS = -shared -fPIC

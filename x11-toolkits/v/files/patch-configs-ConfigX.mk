@@ -39,8 +39,8 @@
 -INCDIR  +=       -I/usr/$(X11RV)/include
 -LIBDIR  +=       -L/usr/$(X11RV)/lib
 -LIBS    +=       -lV -lXmu -lXt -lXext -lX11 -lxm
-+INCDIR  +=       -I$(X11BASE)/include
-+LIBDIR  +=       -L$(X11BASE)/lib
++INCDIR  +=       -I$(LOCALBASE)/include
++LIBDIR  +=       -L$(LOCALBASE)/lib
 +LIBS    +=       -lXmu -lXt -lXext -lX11
  TARZ    =
  RANLIB  =       ranlib

@@ -29,6 +29,6 @@ do-install:
 
 post-install:
 	@${ECHO_MSG} "==> Running fc-cache"
-	@${X11BASE}/bin/fc-cache -f -v ${PREFIX}/${FONTSDIR}
+	@${LOCALBASE}/bin/fc-cache -f -v ${PREFIX}/${FONTSDIR}
 
 .include <bsd.port.mk>

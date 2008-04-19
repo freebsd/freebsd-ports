@@ -7,10 +7,9 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	lib
 DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 
@@ -33,20 +32,19 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		dca.0:${PORTSDIR}/multimedia/libdca
 
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_XORG=	x11 xv xinerama
+USE_GL=		gl glu
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${X11BASE}/include" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
@@ -125,7 +123,7 @@ CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
 
 .if defined(WITH_XVMC)
-.if defined(WITH_NVIDIA_GL) || exists(${X11BASE}/lib/libXvMCNVIDIA.so.1)
+.if defined(WITH_NVIDIA_GL) || exists(${LOCALBASE}/lib/libXvMCNVIDIA.so.1)
 CONFIGURE_ARGS+=	--with-xvmc-lib=XvMCNVIDIA
 LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
 .else

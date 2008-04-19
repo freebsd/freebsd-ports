@@ -8,7 +8,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.3.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -23,7 +23,6 @@ LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_XLIB=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_PERL5=	yes
@@ -32,7 +31,6 @@ USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui gtkhtml3 \
 		libgnomeprintui
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libltdl:15
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--enable-threads \

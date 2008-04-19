@@ -19,12 +19,12 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/xmms/General/libmailnotify.so \
 		lib/xmms/General/alert.wav
 
 post-patch:
-	${REINPLACE_CMD} -e "s,/usr/lib,${X11BASE}/lib," ${WRKSRC}/mailnotify.c
+	${REINPLACE_CMD} -e "s,/usr/lib,${LOCALBASE}/lib," ${WRKSRC}/mailnotify.c
 
 .include <bsd.port.mk>

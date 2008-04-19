@@ -8,7 +8,7 @@
 
 PORTNAME=	hbiff
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
 		${MASTER_SITE_LOCAL}
@@ -17,11 +17,11 @@ MASTER_SITE_SUBDIR=	obrien
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	A replacement for xbiff that handles popup window with mail headers
 
-USE_XLIB=	yes
+USE_XORG=	x11
 MAN1=		hbiff.1
 
 do-build:
-	cd ${WRKSRC} ; cc -I${X11BASE}/include hbiff.c -L${X11BASE}/lib -lX11
+	cd ${WRKSRC} ; cc -I${LOCALBASE}/include hbiff.c -L${LOCALBASE}/lib -lX11
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/a.out ${PREFIX}/bin/hbiff

@@ -15,6 +15,5 @@ lib/libgoom2.la
 lib/libgoom2.so
 lib/libgoom2.so.0
 libdata/pkgconfig/libgoom2.pc
-%%XMMS%%@cwd %%X11BASE%%
 %%XMMS%%lib/xmms/Visualization/libxmmsgoom2.so
 @dirrm include/goom

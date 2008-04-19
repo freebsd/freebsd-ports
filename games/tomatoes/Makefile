@@ -21,7 +21,7 @@ TDATA=		${WRKDIR}/tomatoes-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_SDL=	mixer image
-USE_GL=		yes
+USE_GL=		gl
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CXX}" \
@@ -39,9 +39,9 @@ PLIST_FILES=	bin/tomatoes \
 PLIST_DIRS=	%%DATADIR%%/music \
 		%%DATADIR%%
 
-SDL_CFLAGS=	`${SDL_CONFIG} --cflags` -I${X11BASE}/include
+SDL_CFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
 SDL_LDFLAGS=	`${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer \
-		-L${X11BASE}/lib -lGL -lGLU
+		-L${LOCALBASE}/lib -lGL -lGLU
 
 .include <bsd.port.pre.mk>
 

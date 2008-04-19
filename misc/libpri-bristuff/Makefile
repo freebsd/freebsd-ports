@@ -22,7 +22,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A C implementation of the Primary Rate ISDN specification
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

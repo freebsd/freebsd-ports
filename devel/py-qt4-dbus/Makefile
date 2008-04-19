@@ -6,7 +6,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -25,6 +25,7 @@ HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake moc
+USE_XORG=	x11 xext
 
 OPTIONS=	DEBUG	"Enable debugging in generated code" off \
 		TRACING	"Enable tracing in generated code" off

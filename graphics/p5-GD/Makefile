@@ -20,8 +20,8 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	-options "JPEG,FT,XPM,GIF,PNG" \
-		-lib_gd_path ${LOCALBASE} -lib_ft_path ${X11BASE} \
-		-lib_png_path ${LOCALBASE} -lib_zlib_path ${LOCALBASE}
+		-lib_gd_path ${LOCALBASE} -lib_ft_path} \
+		-lib_png_path ${LOCALBASE} -lib_zlib_path
 
 MAN1=		bdf2gdfont.pl.1
 MAN3=		GD.3 GD::Polyline.3 GD::Simple.3 \

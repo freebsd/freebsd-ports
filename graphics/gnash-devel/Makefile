@@ -165,7 +165,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^PTHREAD_[A-Z]*=/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/test/ s|==|=|; s|== x|= x|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
-		s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure \
+		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
 		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
 .if !defined(WITH_DEBUGLOG)
 	@${REINPLACE_CMD} -e 's|gnash-dbg.log|/dev/null|' \

@@ -7,7 +7,7 @@
 
 PORTNAME=	xyaku
 PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.sepia.dti.ne.jp/inoue/software/xyaku/ \
 		http://redundancy.redundancy.org/mirror/
@@ -16,6 +16,8 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A general dictionary/search engine front-end for X
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
+
+USE_XORG=	x11 xt xext ice sm
 
 OPTIONS=	UTF8 "Use UTF-8 edict dictionaries" on
 
@@ -28,7 +30,6 @@ RUN_DEPENDS+=	${EDICT_FILE}:${PORTSDIR}/japanese/edict
 .endif
 
 USE_RUBY=	yes
-USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:213 libtool:15
 CONFIGURE_ARGS=	--with-edict="${EDICT_FILE}" \
 		--with-ruby="${RUBY}"

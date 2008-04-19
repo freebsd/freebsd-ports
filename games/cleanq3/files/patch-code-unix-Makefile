@@ -52,7 +52,7 @@
 -endif #alpha test
 +BASE_CFLAGS = $(CFLAGS) -DDATADIR='\"$(Q3DIR)\"' -DLIBDIR='\"$(LIBDIR)\"' -pipe
  
-+GL_CFLAGS = -I$(X11BASE)/include
++GL_CFLAGS = -I$(LOCALBASE)/include
  
 -BASE_CFLAGS =  -pipe
 +DEBUG_CFLAGS=$(BASE_CFLAGS) -g  -Wall -Werror
@@ -94,7 +94,7 @@
  #GLLDFLAGS=-L/usr/X11R6/lib -L$(MESADIR)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
  #GLLDFLAGS=-L/usr/X11/lib -lGL -lX11 -lXext -lm
 -GLLDFLAGS=-L/usr/X11R6/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
-+GLLDFLAGS=-L$(X11BASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
++GLLDFLAGS=-L$(LOCALBASE)/lib -lGL -lX11 -lXext -lXxf86dga -lXxf86vm
  
 -ifeq ($(ARCH),axp)
 -TARGETS=\

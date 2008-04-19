@@ -1,8 +1,8 @@
 #!/bin/sh
 
 if [ "x$2" = "xPOST-DEINSTALL" ]; then
-	cd ${PKG_PREFIX}/%%FONTSDIR%%; %%X11BASE%%/bin/mkfontdir
-	%%X11BASE%%/bin/xset fp rehash ||
+	cd ${PKG_PREFIX}/%%FONTSDIR%%; %%LOCALBASE%%/bin/mkfontdir
+	%%LOCALBASE%%/bin/xset fp rehash ||
 	(
 	 echo "**********************************************************"
 	 echo "You should restart X server or do 'xset fp rehash' command"

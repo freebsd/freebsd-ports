@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Include files and a library of Wnn7
 
-BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 WRKSRC=		${WRKDIR}/src
 DOCDIR=		${PREFIX}/share/doc/ja-Wnn7-lib
@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/config/Project.tmpl \
 		${WRKSRC}/config/X11.tmpl \
 		${WRKSRC}/Makefile.ini

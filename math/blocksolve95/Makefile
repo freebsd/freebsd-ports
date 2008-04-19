@@ -7,7 +7,7 @@
 
 PORTNAME=	blocksolve95
 PORTVERSION=	3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://info.mcs.anl.gov/pub/BlockSolve95/	\
 		ftp://ftp.irisa.fr/pub/mirrors/BlockSolve95/
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${MPIDIR}/lib/libmpich.a:${PORTSDIR}/net/mpich2
 LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
 RUN_DEPENDS=	${MPIDIR}/bin/mpirun:${PORTSDIR}/net/mpich2
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	GMAKE=${GMAKE} PETSC_ARCH=${PETSC_ARCH} BOPT=${BOPT}	\

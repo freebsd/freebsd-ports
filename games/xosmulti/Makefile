@@ -7,7 +7,7 @@
 
 PORTNAME=	xosmulti
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flathill
@@ -18,8 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A little girl cartoon on the top of the active window
 
 WRKSRC=		${WRKDIR}/xosmulti
-USE_X_PREFIX=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps x11 xt xi
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xosmulti ${PREFIX}/bin

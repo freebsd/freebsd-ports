@@ -7,7 +7,7 @@
 
 VERSION=	4.1
 REVISION=	16
-PORTREVISION=	1
+PORTREVISION=	2
 
 PORTNAME=	xloadimage
 PORTVERSION=	${VERSION}.${REVISION}
@@ -24,7 +24,7 @@ COMMENT=	X11 Image Loading Utility
 PATCH_STRIP=	-p1
 EXTRA_PATCHES=	${WRKSRC}/debian/patches/*.dpatch
 
-USE_XLIB=	yes
+USE_XORG=	x11
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff

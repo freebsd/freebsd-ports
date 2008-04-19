@@ -19,7 +19,7 @@ RUN_DEPENDS=	gkrellmd:${PORTSDIR}/sysutils/gkrellm2
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GMAKE=	yes
-MAKE_ARGS=	INSTALLDIR=${X11BASE}/libexec/gkrellm2/plugins \
+MAKE_ARGS=	INSTALLDIR=${LOCALBASE}/libexec/gkrellm2/plugins \
 		INSTALLDIRD=${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
 
 .if defined(GKRELLM_SERVER_ONLY)

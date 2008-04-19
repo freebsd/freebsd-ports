@@ -35,11 +35,11 @@ PLIST_SUB+=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 FONTNAME=	${PORTNAME}
-FONTSBASE=	${X11BASE}/lib/X11/fonts
+FONTSBASE=	${LOCALBASE}/lib/X11/fonts
 FONTSDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 
-MKFONTSCL_CMD=	${X11BASE}/bin/mkfontscale
-MKFONTDIR_CMD=	${X11BASE}/bin/mkfontdir
+MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
+MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 
 do-build:
 	cd ${WRKSRC} &&	${MKFONTSCL_CMD}

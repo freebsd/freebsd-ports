@@ -7,7 +7,7 @@
 
 PORTNAME=	asclock-xlib
 PORTVERSION=	2.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks afterstep windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -16,12 +16,12 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	New flavor of asclock
 
 WRKSRC=		${WRKDIR}/asclock-xlib
-USE_XPM=	YES
+USE_XORG=	xpm
 
 .if defined(BATCH)
 USE_IMAKE=	YES
 .else
-USE_X_PREFIX=	YES
+USE_XORG=	x11
 HAS_CONFIGURE=	YES
 .endif
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	tremulous
 PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|$|${PORTNAME}/|} \
 		http://0day.icculus.org/mirrors/tremulous/ \
@@ -74,8 +74,8 @@ MAKE_ENV+=	USE_SDL_AUDIO=1
 USE_SDL=	sdl
 MAKE_ENV+=	USE_SDL_VIDEO=1
 .   else
-USE_GL=		yes
-USE_XLIB=	yes
+USE_GL=		gl
+USE_XORG=	x11 xxf86dga
 .   endif
 # Vorbis
 .   if defined(WITH_VORBIS)

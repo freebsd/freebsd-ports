@@ -85,7 +85,7 @@ pre-configure:
 	@${ECHO} "INSTALL_CGKIT_LIGHT = True" >> ${WRKSRC}/config.cfg;
 .endif
 	@${REINPLACE_CMD} -e "/%%LOCALBASE%%/s//${LOCALBASE:S/\//\\\//g}/g" \
-	    -e "/%%X11BASE%%/s//${X11BASE:S/\//\\\//g}/g" ${WRKSRC}/supportlib/cpp_config.cfg ${WRKSRC}/config.cfg; \
+	     ${WRKSRC}/supportlib/cpp_config.cfg ${WRKSRC}/config.cfg; \
 	cd ${WRKSRC}/supportlib; \
 	scons
 

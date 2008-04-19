@@ -30,8 +30,8 @@
 +FC.FreeBSD-FreeBSD	= %%FC%%
 +CC.FreeBSD-FreeBSD	= %%CC%%
 +FFLAGS.FreeBSD-FreeBSD	= %%FFLAGS%% 
-+CFLAGS.FreeBSD-FreeBSD	= %%CFLAGS%% -I%%X11BASE%%/include
-+LFLAGS.FreeBSD-FreeBSD	= %%LDFLAGS%% -L%%X11BASE%%/lib
++CFLAGS.FreeBSD-FreeBSD	= %%CFLAGS%% -I%%LOCALBASE%%/include
++LFLAGS.FreeBSD-FreeBSD	= %%LDFLAGS%% -L%%LOCALBASE%%/lib
 +RANLIB.FreeBSD-FreeBSD	= ranlib
 +LIB_MISC.FreeBSD-FreeBSD	= 	
 +MISC.FreeBSD-FreeBSD	= 

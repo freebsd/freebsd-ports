@@ -7,7 +7,7 @@
 
 PORTNAME=	xrmap
 PORTVERSION=	2.33
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/data/:data \
 		ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/:src
@@ -24,8 +24,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_BZIP2=	yes
 USE_IMAKE=	yes
 MANCOMPRESSED=	no
-USE_XPM=	yes
-USE_XLIB=	yes
+USE_XORG=	xpm
 
 CIAFILE=	CIA_WDB2.jpd.bz2
 POPFILE=	population.dat.bz2

@@ -13,9 +13,9 @@
 --- 1,8 ----
 ! CC     ?= gcc
 ! CFLAGS ?= -O2
-! INCDIR = -I${X11BASE}/include
+! INCDIR = -I${LOCALBASE}/include
 ! DESTDIR= ${PREFIX}
-! LIBDIR = -L${X11BASE}/lib
+! LIBDIR = -L${LOCALBASE}/lib
   
   # for Linux
   LIBS   = -lXpm -lX11 -lXext

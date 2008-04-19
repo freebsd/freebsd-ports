@@ -8,7 +8,7 @@
 -if $(DEBUG) { CCFLAGS += -g -O0 -DDEBUG ; }
 -else CCFLAGS += -O3 ;
 +CCFLAGS  += $(CFLAGS) %%SDL_CFLAGS%% ;
-+HDRS = $(X11BASE)/include ;
++HDRS = $(LOCALBASE)/include ;
 +#if $(DEBUG) { CCFLAGS += -g -O0 -DDEBUG ; }
 +#else CCFLAGS += -O3 ;
  C++FLAGS += $(CCFLAGS) ;

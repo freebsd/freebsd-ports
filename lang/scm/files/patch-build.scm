@@ -31,7 +31,7 @@
  		 (cond
  		  ((equal? (car fnames) "edline") "-lreadline")
 -		  ((equal? (car fnames) "x") "-L/usr/X11R6/lib -lSM -lICE -lXext -lX11 -lxpg4")
-+		  ((equal? (car fnames) "x") "-L%%X11BASE%%/lib -lSM -lICE -lXext -lX11 -lxpg4")
++		  ((equal? (car fnames) "x") "-L%%LOCALBASE%%/lib -lSM -lICE -lXext -lX11 -lxpg4")
  		  (else ""))
  		 "-o" (string-append (car fnames) ".so")
  		 (map (lambda (fname) (string-append fname ".o")) fnames))

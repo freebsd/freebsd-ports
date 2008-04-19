@@ -9,10 +9,9 @@
 
 PORTNAME=	lplayer
 PORTVERSION=	1.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,12 +22,12 @@ LIB_DEPENDS=	db_cxx-4.3.0:${PORTSDIR}/databases/db43 \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_XORG=	x11 xinerama
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-xmms-prefix=${X11BASE} --with-xinerama \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ARGS=	--with-xmms-prefix=${LOCALBASE} --with-xinerama
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 

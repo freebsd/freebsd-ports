@@ -24,7 +24,7 @@
  #X11 = /usr/lpp/X11
  
 -X11 = /usr/X11R6
-+X11 = $(X11BASE)
++X11 = $(LOCALBASE)
  
  # You probably won't need to change these if you have the X11 variable
  #   above set properly...

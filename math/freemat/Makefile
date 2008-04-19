@@ -35,7 +35,7 @@ QT_COMPONENTS=		gui network opengl moc rcc uic xml svg
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-blas="${BLAS}" --without-llvm
-CPPFLAGS=		${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${AMDINC}
+CPPFLAGS=		${CXXFLAGS} -I${LOCALBASE}/include  ${AMDINC}
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\
 			FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 

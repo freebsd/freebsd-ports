@@ -44,7 +44,7 @@ MAN3=	Prima::Clipboard.3.gz Prima::Drawable.3.gz Prima::File.3.gz Prima::Image.3
 
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALL_MAN3="${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3" \
-			INSTALL_MAN1="${PREFIX}/man/man1" X11BASE="${X11BASE}"
+			INSTALL_MAN1="${PREFIX}/man/man1" X11BASE="${LOCALBASE}"
 CONFIGURE_SCRIPT=	Makefile.PL
 USE_XORG=		x11 xpm xext xrender
 USE_PERL5=		yes

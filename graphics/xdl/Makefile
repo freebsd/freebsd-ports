@@ -7,7 +7,7 @@
 
 PORTNAME=	xdl
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	trevor
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display DL animations on an X screen
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 MAN1=		xdl.1
 PLIST_FILES=	bin/xdl
 

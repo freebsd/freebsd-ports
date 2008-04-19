@@ -19,14 +19,12 @@ COMMENT=	A clone of the terminal emulator rxvt modified to support Unicode
 PATCH_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Encode/HanExtra.pm:${PORTSDIR}/chinese/p5-Encode-HanExtra \
 		${SITE_PERL}/${PERL_ARCH}/Encode/JIS2K.pm:${PORTSDIR}/converters/p5-Encode-JIS2K
 .endif
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
-USE_XORG=		xpm
+USE_GNOME=	pkgconfig
+USE_XORG=		xpm xft
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
-CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt		\
-			--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=		yes
 

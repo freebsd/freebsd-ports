@@ -23,8 +23,8 @@ USE_GMAKE=	yes
 MAKE_ARGS=	WISH="${PREFIX}/bin/wish8.4" \
 		texinfodir="${PREFIX}/${INFO_PATH}" \
 		gzgrep="\"/usr/bin/zgrep -E\"" \
-		mastermen="\"/usr/share/man ${PREFIX}/man ${X11BASE}/man\"" \
-		masterbin="\"/usr/bin ${PREFIX}/bin ${X11BASE}/bin\"" \
+		mastermen="\"/usr/share/man ${PREFIX}/man ${LOCALBASE}/man\"" \
+		masterbin="\"/usr/bin ${PREFIX}/bin ${LOCALBASE}/bin\"" \
 		manformat="{groff -Tlatin1 -te -mandoc}" \
 		manprint="{groff -mandoc -Tps -te -l}"
 

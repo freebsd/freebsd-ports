@@ -28,7 +28,7 @@ HGL_DOCS=	${PREFIX}/share/doc/hs-hgl
 BUILD_WRKSRC=	${WRKSRC}/lib/x11
 MAKE_ARGS=	system=FreeBSD \
 		hugs_install=${HGL_LIBS} \
-		X_dir=${X11BASE} \
+		X_dir=${LOCALBASE} \
 		CC=${CC}
 ALL_TARGET=	all
 

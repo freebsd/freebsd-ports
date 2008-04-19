@@ -20,7 +20,7 @@ ALL_TARGET=	xrot
 PLIST_FILES=	bin/xrot
 WRKSRC=		${WRKDIR}/xrot
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrot ${PREFIX}/bin

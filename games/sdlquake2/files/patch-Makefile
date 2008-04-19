@@ -6,8 +6,8 @@
 +CC?=gcc
 +SDL_CONFIG?=sdl-config
 +LOCALBASE?=/usr/local
-+X11BASE?=/usr/X11R6
-+CFLAGS+=-O3 -ffast-math -DDATADIR='"$(Q2DIR)"' -DLIBDIR='"$(LIBDIR)"' $(shell $(SDL_CONFIG) --cflags) -I$(X11BASE)/include
++LOCALBASE?=/usr/X11R6
++CFLAGS+=-O3 -ffast-math -DDATADIR='"$(Q2DIR)"' -DLIBDIR='"$(LIBDIR)"' $(shell $(SDL_CONFIG) --cflags) -I$(LOCALBASE)/include
 +
 +LIBS=-lm -lz
 +
@@ -53,7 +53,7 @@
  
  ref_sdlgl.so: $(sdlgl_OBJ)
 -	$(CC) -shared -g -o $@ $(shell sdl-config --libs) -lGL -ljpeg -lpng12 $^
-+	$(CC) -shared -g -o $@ $(shell $(SDL_CONFIG) --libs) -L$(X11BASE)/lib -lGL -ljpeg -lpng $^
++	$(CC) -shared -g -o $@ $(shell $(SDL_CONFIG) --libs) -L$(LOCALBASE)/lib -lGL -ljpeg -lpng $^
  
  ALLOBJ:=$(quake2_OBJ) $(sdlgl_OBJ)
  

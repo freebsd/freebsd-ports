@@ -32,7 +32,7 @@ do-install:
 	@${SED} -e 's|%%CC%%|${CC}|g; \
 		    s|%%RM%%|${RM}|g; \
 		    s|%%CFLAGS%%|${CFLAGS}|g; \
-		    s|%%X11BASE%%|${X11BASE}|g' \
+		    s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		<${FILESDIR}/Makefile.ex >${EXAMPLESDIR}/Makefile
 
 .ifndef (NOPORTDOCS)

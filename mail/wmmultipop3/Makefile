@@ -7,7 +7,7 @@
 
 PORTNAME=	wmmultipop3
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://bart.sm.luth.se/~dansun-8/software/wmMultiPop3/
 DISTNAME=	wmMultiPop3-${PORTVERSION}
@@ -16,8 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A WindowMaker dockapp that checks multiple pop3 accounts for new mail
 
 BUILD_WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 DOC_FILES=	ChangeLog INSTALL README
 

@@ -18,7 +18,7 @@ COMMENT=	Internet/Intranet Input Method Framework protocol library
 
 ONLY_FOR_ARCHS=	i386
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15:env

@@ -1,8 +1,8 @@
 --- Makefile.orig	Sun Sep  8 17:09:50 2002
 +++ Makefile	Sun Sep  8 17:10:42 2002
 @@ -1,18 +1,19 @@
- I  = -I${X11BASE}/include -I${LOCALBASE}/include
- L  = -L${LOCALBASE}/lib -L${X11BASE}/lib -L/usr/lib -lXpm -lX11 -lXext
+ I  = -I${LOCALBASE}/include
+ L  = -L${LOCALBASE}/lib -L/usr/lib -lXpm -lX11 -lXext
  
 -CC+= ${CFLAGS} ${COPT} $I -DXLIB_ILLEGAL_ACCESS
 +CXX?= c++

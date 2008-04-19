@@ -129,7 +129,7 @@ post-patch: .SILENT
 pre-su-install:
 # XXX This port silently assumes PREFIX == X11BASE XXX
 	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
-# xorg-server-1.4 installs its own ${X11BASE}/lib/xorg/modules/libwfb.so,
+# xorg-server-1.4 installs its own ${LOCALBASE}/lib/xorg/modules/libwfb.so,
 # so back it up so it can be later restored similarly to what NVidia does:
 .if ${NVVERSION} >= 974600
 	@${MV} -f ${PREFIX}/${MODULESDIR}/libwfb.so \

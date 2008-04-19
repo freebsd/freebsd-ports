@@ -22,7 +22,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=		wmfsm.1
 PLIST_FILES=	bin/wmfsm
 
-CPPFLAGS=	-I${X11BASE}/include
-LDFLAGS=	-L${X11BASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

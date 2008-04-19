@@ -64,7 +64,7 @@
  NBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
  	  -DNO_MOTIF
 -FBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DNOLOCK -DNOREGEX -DRABBITS\
-+FBSD_C	= -ansi -I$(X11BASE)/include -DBSD -DNOLOCK -DNOREGEX -DRABBITS\
++FBSD_C	= -ansi -I$(LOCALBASE)/include -DBSD -DNOLOCK -DNOREGEX -DRABBITS\
  	  -DSTDLIBMALLOC
  OBSD_C	= -ansi -I/usr/X11R6/include -DBSD -DRABBITS -DNOLOCK -DNOREGEX\
  	  -DNO_MOTIF -DSTDLIBMALLOC
@@ -76,9 +76,9 @@
 -FBSD_L2	= -L/usr/X11R6/lib -lc
 -OBSD_L1	= -L/usr/local/lib -lXm -L/usr/X11R6/lib -lXt -lX11
 -OBSD_L2	= -lc
-+FBSD_L1 = -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
++FBSD_L1 = -L$(LOCALBASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
 +FBSD_L2 =
-+OBSD_L1 = -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
++OBSD_L1 = -L$(LOCALBASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext
 +OBSD_L2 =
  LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM -lXm -lXt -lX11 -lXpm -lc -lXext -lSM -lICE -lX11
  LINUX_L2= -lc
@@ -106,11 +106,11 @@
  SRC	= Makefile $(P_SRC) daemon.c $(N_SRC) $(S_SRC) $(INC) $(S_INC) configure
  
 -LDIR	= /usr/X11R6/lib
-+LDIR	= $(X11BASE)/lib
++LDIR	= $(LOCALBASE)/lib
  BINDIR	= plan-$(VERSION)
  gMYCC	= gcc
 -gCF	= -I/usr/X11R6/include -D_POSIX_SOURCE -DNOLOCK -DLINUX
-+gCF	= -I$(X11BASE)/include -D_POSIX_SOURCE -DNOLOCK -DLINUX
++gCF	= -I$(LOCALBASE)/include -D_POSIX_SOURCE -DNOLOCK -DLINUX
  gL1F	= -L$(LDIR) -lSM $(LDIR)/libXm.a -lXt -lX11 $(LDIR)/libXpm.a -lc -lXext -lSM -lICE -lXp -lX11
  gL2F	= -lc
- 
+

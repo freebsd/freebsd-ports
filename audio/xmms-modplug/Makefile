@@ -7,7 +7,7 @@
 
 PORTNAME=	modplug
 PORTVERSION=	2.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	audio
 MASTER_SITES=	SFE
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PKGNAMEPREFIX:S/-//}
@@ -20,7 +20,6 @@ COMMENT=	A modplug-based plugin for XMMS
 LIB_DEPENDS?=	xmms.4:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
 
-USE_X_PREFIX=	yes
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 PLUGDIR?=	lib/xmms/Input

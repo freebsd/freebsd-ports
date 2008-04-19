@@ -7,7 +7,7 @@
 
 PORTNAME=	xcircuit
 PORTVERSION=	3.4.22
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
@@ -17,8 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	An X11 drawing program [especially for circuit schematics]
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xt
 USE_TCL=	84
 USE_TCL_BUILD=	84
 USE_TK=		84

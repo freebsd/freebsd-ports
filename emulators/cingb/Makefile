@@ -7,17 +7,16 @@
 
 PORTNAME=	cingb
 PORTVERSION=	0.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another Nintendo GameBoy(tm) emulator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	standard
 
@@ -36,7 +35,7 @@ CPPFLAGS+=	-DUSE_LITTLE_ENDIAN
 do-configure:
 	cd ${WRKSRC} && ${SED} -e \
 		's|gcc|$${CC}|g ; \
-		 s|/usr/X11R6|$${X11BASE}|g ; \
+		 s|/usr/X11R6|$${LOCALBASE}|g ; \
 		 s|^CFLAGS|#CFLAGS|g ; \
 		 s|^OPTMZ|#OPTMZ|g ; \
 		 s|%%%endian%%%|$${CPPFLAGS}|g ; \

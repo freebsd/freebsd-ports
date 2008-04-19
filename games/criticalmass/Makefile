@@ -7,11 +7,10 @@
 
 PORTNAME=	criticalmass
 PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	CriticalMass-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -21,7 +20,7 @@ CONFLICTS=	shaaft-[0-9]*
 
 USE_BZIP2=	yes
 USE_SDL=	image mixer sdl
-USE_GL=		yes
+USE_GL=		gl
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -41,7 +40,7 @@ post-patch:
 		's|SDL/SDL|SDL|g'
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG:T}|g ; \
 		 s|^CXXFLAGS|#CXXFLAGS|g ; \
-		 s|/usr/X11R6|${X11BASE}|g ; \
+		 s|/usr/X11R6|${LOCALBASE}|g ; \
 		 s|-lSDL | |g ; \
 		 s|-lpng12|-lpng|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|and def|\&\& def|g' ${WRKSRC}/utils/OSName.hpp

@@ -21,8 +21,8 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
 OPTIONS=	JPEG	"Enable jpeg image support"	on \
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--without-x
 PKGNAMESUFFIX+=	-nox11
 PLIST_SUB=	X11="@comment "
 .else
-USE_XLIB=	yes
+USE_XORG=	x11 sm xext
 PLIST_SUB=	X11=""
 .endif
 

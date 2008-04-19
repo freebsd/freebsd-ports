@@ -29,7 +29,7 @@ PLIST_FILES=	bin/kompmgr
 
 do-build:
 	cd ${WRKSRC}/kwin/kompmgr && \
-	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${X11BASE}/lib -lX11 -lXdamage\
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib -lX11 -lXdamage\
 	-lXfixes -lXrender -lXcomposite -lm -o kompmgr kompmgr.c
 
 do-install:

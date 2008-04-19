@@ -20,9 +20,9 @@
  
 -OBJS   = wmxss.o \
 -         xutils.o
-+CFLAGS+=	-I${X11BASE}/include -O2 -Wall
++CFLAGS+=	-I${LOCALBASE}/include -O2 -Wall
 +LDADD+=	-lXpm -lX11 -lXext
-+LDADD+= -L${X11BASE}/lib
++LDADD+= -L${LOCALBASE}/lib
  
 +NOMAN=
  

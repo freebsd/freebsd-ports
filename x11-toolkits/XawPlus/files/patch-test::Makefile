@@ -14,7 +14,7 @@ $FreeBSD$
  
 -LIB_PATH =	-L/usr/X11/lib			# Libraries for X
 -INC_PATH =	-I/usr/X11/include		# Header for X
-+PREFIX=%%X11BASE%%
++PREFIX=%%XLOCALBASE%%
 +
 +LIB_PATH =	-L$(PREFIX)/lib			# Libraries for X
 +INC_PATH =	-I$(PREFIX)/include		# Header for X

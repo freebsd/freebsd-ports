@@ -18,7 +18,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Another kana-kanji conversion system
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget lthack pkgconfig
 
 DOCSDIR=	share/doc/ja/anthy

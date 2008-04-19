@@ -7,7 +7,7 @@
 
 PORTNAME=	qrash
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://qmg.org/files/demos/qmg/ \
 		ftp://qmg.org/pub/demos/qmg/ \
@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS=	i386
 USE_GCC=	2.95
 USE_GMAKE=	yes
 USE_PERL5=	yes	# XXX
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 ALL_TARGET=	qrash
 

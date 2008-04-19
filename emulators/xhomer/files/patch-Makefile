@@ -5,7 +5,7 @@
  # other to "Y" or by setting both to "N" (most non-Linux systems).
  
 -X11DIR = /usr/X11R6
-+X11DIR = $(X11BASE)
++X11DIR = $(LOCALBASE)
  
  ifeq ($(X11DIR)/include/X11/extensions/xf86dga.h,$(wildcard $(X11DIR)/include/X11/extensions/xf86dga.h))
    ifeq ($(X11DIR)/include/X11/extensions/xf86dga1.h,$(wildcard $(X11DIR)/include/X11/extensions/xf86dga1.h))

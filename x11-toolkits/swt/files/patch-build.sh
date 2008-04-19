@@ -10,7 +10,7 @@
  	export SWT_PTR_CFLAGS
  	if [ -d /lib64 ]; then
 -		XLIB64=-L/usr/X11R6/lib64
-+		XLIB64=-L${X11BASE}/lib64
++		XLIB64=-L${LOCALBASE}/lib64
  		export XLIB64
  	fi
  fi

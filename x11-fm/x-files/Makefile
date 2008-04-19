@@ -7,7 +7,7 @@
 
 PORTNAME=	x-files
 PORTVERSION=	2.00b1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm tk
 MASTER_SITES=	http://users.tkk.fi/~mkivinie/X-Files/data/
 DISTNAME=	X-Files-${PORTVERSION}
@@ -20,13 +20,12 @@ RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 WRKSRC=		${WRKDIR}/X-Files
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 MAN1=		X-Files.1x
 
 pre-install:
 	@tclsh8.3 ${SCRIPTDIR}/mktclIndex ${WRKSRC}
 	@${RM} -f ${WRKSRC}/xfinstall.tcl
-	@${SED} s#@X11BASE@#${X11BASE}# <${WRKSRC}/X-Files.tcl >${WRKSRC}/tmpfile
+	@${SED} s#@PREFIX@#${PREFIX}# <${WRKSRC}/X-Files.tcl >${WRKSRC}/tmpfile
 	@${MV} ${WRKSRC}/tmpfile ${WRKSRC}/X-Files.tcl
 
 do-install:
@@ -36,8 +35,8 @@ do-install:
 .endfor
 	@${CHMOD} 0555 ${PREFIX}/lib/X11/X-Files/X-Files.tcl
 	@${LN} -s ${PREFIX}/lib/X11/X-Files/X-Files.tcl ${PREFIX}/bin/X-Files
-	@${MKDIR} ${X11BASE}/include/X11/pixmaps
-	@${INSTALL_DATA} ${WRKSRC}/X-Files.xpm ${X11BASE}/include/X11/pixmaps
-	@${INSTALL_MAN} ${WRKSRC}/X-Files.1x ${X11BASE}/man/man1
+	@${MKDIR} ${PREFIX}/include/X11/pixmaps
+	@${INSTALL_DATA} ${WRKSRC}/X-Files.xpm ${PREFIX}/include/X11/pixmaps
+	@${INSTALL_MAN} ${WRKSRC}/X-Files.1x ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ $FreeBSD$
  {
  #ifndef __solaris__
 -   char *ptr   = "/usr/X11R6/lib/X11/fonts/Type1:/usr/X11R6/lib/X11/fonts/TrueType:/usr/X11R6/lib/X11/fonts/tt";
-+   char *ptr   = "%%X11BASE%%/lib/X11/fonts/Type1:%%X11BASE%%/lib/X11/fonts/TrueType:%%X11BASE%%/lib/X11/fonts/tt";
++   char *ptr   = "%%LOCALBASE%%/lib/X11/fonts/Type1:%%LOCALBASE%%/lib/X11/fonts/TrueType:%%LOCALBASE%%/lib/X11/fonts/tt";
  #else
      char *ptr   = getSolarisFontLocations((int) (noType1==JNI_TRUE));
  #endif

@@ -7,7 +7,7 @@ $FreeBSD$
  ifeq ($(PLATFORM), bsd)
  # XXXBSD: why here?
 -OTHER_INCLUDES += -I/usr/X11R6/include
-+OTHER_INCLUDES += -I$(X11BASE)/include
++OTHER_INCLUDES += -I$(LOCALBASE)/include
  OTHER_LDLIBS  += -lawt$(SUFFIX) $(LIBM) $(LIBCXX)
  else
  ifeq ($(PLATFORM), linux)

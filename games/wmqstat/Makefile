@@ -16,7 +16,7 @@ COMMENT=	A dockapp for monitoring of various Internet game servers
 
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
-USE_XORG=	xpm
+USE_XORG=	xpm x11 xext
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README

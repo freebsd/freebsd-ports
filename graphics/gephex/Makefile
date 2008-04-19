@@ -25,11 +25,10 @@ CONFIGURE_ARGS=	--without-V4L --without-ASOUNDLIB --without-LINUX_JOYSTICK \
 		--without-FFMPEG --without-AVIFILE --without-MPEG3 \
 		--without-LIBPNG --without-SDL --without-SDL_IMAGE \
 		--without-SDL_TTF --without-AALIB --disable-static \
-		--with-qt-libdir="${X11BASE}/lib" \
-		--with-qt-incdir="${X11BASE}/include" \
-		--with-qt-bindir="${X11BASE}/bin"
+		--with-qt-libdir="${LOCALBASE}/lib" \
+		--with-qt-incdir="${LOCALBASE}/include" \
+		--with-qt-bindir="${LOCALBASE}/bin"
 USE_QT_VER=	3
-USE_XLIB=	yes
 WANT_SDL=	yes
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}-${PORTVERSION:R}
@@ -64,7 +63,7 @@ WITH_MPEG3=	yes
 WITH_PNG=	yes
 .endif
 
-.if exists(${X11BASE}/lib/libGL.so) && !defined(WITHOUT_GL)
+.if exists(${LOCALBASE}/lib/libGL.so) && !defined(WITHOUT_GL)
 WITH_GL=	yes
 .endif
 
@@ -172,7 +171,6 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|; \
-			      s|%%X11BASE%%|${X11BASE}|; \
 			      s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%PORTDOCS%%|${DO_DOCS}|' ${WRKSRC}/Makefile.am

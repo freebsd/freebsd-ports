@@ -23,7 +23,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_XORG=	xxf86dga
 USE_SCONS=	yes
 SCONS_ARGS=	warnings=0
@@ -63,8 +63,8 @@ PLIST_SUB+=	GAMELIBS="@comment "
 .if defined(WITH_LUA)
 USE_LUA=	5.0
 SCONS_ARGS+=	lua=1
-CPPPATH=	${LOCALBASE}/include ${X11BASE}/include ${LUA_INCDIR}
-LIBPATH=	${LOCALBASE}/lib ${X11BASE}/lib ${LUA_LIBDIR}
+CPPPATH=	${LOCALBASE}/include ${LUA_INCDIR}
+LIBPATH=	${LOCALBASE}/lib ${LUA_LIBDIR}
 .endif
 
 .if defined(WITHOUT_OPTIMIZED_CFLAGS)

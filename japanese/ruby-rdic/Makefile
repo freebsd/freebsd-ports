@@ -31,7 +31,7 @@ RUBY_RD_FILES=	xselection.rd \
 USE_XORG=	x11
 INSTALL_TARGET=	site-install
 
-MAKE_ARGS+=	CFLAGS='-I ${X11BASE}/include'
+MAKE_ARGS+=	CFLAGS='-I ${LOCALBASE}/include'
 
 DOCS_EN=	ChangeLog.rdic \
 		ChangeLog.xselection \
@@ -53,7 +53,7 @@ DOCS_ETC=	eliminate.default \
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|' ${WRKSRC}/extconf.rb
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' ${WRKSRC}/extconf.rb
 
 post-install: rb-install doc-install
 

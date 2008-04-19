@@ -19,6 +19,6 @@ BUILD_DIRS=	config src/include src/interfaces src/bin/pg_dump \
 		src/bin/psql src/bin/scripts src/bin/pg_config \
 		doc src/makefiles
 CLIENT_ONLY=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include "${MASTERDIR}/Makefile"

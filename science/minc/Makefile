@@ -28,7 +28,7 @@ COMMENT=	Medical Imaging NetCDF
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.2+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

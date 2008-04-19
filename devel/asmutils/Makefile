@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/asmutils
 
 # This will play merry hell with portlint

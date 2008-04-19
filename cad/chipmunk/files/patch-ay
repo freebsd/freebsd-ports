@@ -5,7 +5,7 @@
  ##
  
 -XINCLUDEDIR = .
-+XINCLUDEDIR = ${X11BASE}/include
++XINCLUDEDIR = ${LOCALBASE}/include
  
  ##
  ## If X isn't in the library path (the case for many MachTen and Linux 
@@ -14,7 +14,7 @@
  ##
  
 -LIBX11 = -lX11
-+LIBX11 = -lX11 -L${X11BASE}/lib
++LIBX11 = -lX11 -L${LOCALBASE}/lib
  
  
  

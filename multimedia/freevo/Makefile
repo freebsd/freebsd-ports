@@ -53,15 +53,15 @@ OPTIONS=	MPLAYER	"Enable mplayer video playback support" On \
 # AUTODETECTION
 ###
 
-.if exists(${X11BASE}/bin/xmame) && !defined(WITHOUT_MAME)
+.if exists(${LOCALBASE}/bin/xmame) && !defined(WITHOUT_MAME)
 WITH_MAME=	YES
 .endif
 
-.if exists(${X11BASE}/bin/snes9x) && !defined(WITHOUT_SNES9X)
+.if exists(${LOCALBASE}/bin/snes9x) && !defined(WITHOUT_SNES9X)
 WITH_SNES9X=	YES
 .endif
 
-.if exists(${X11BASE}/bin/zsnes) && !defined(WITHOUT_ZSNES)
+.if exists(${LOCALBASE}/bin/zsnes) && !defined(WITHOUT_ZSNES)
 WITH_ZSNES=	YES
 .endif
 

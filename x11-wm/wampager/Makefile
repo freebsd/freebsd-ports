@@ -7,7 +7,7 @@
 
 PORTNAME=	wampager
 PORTVERSION=	0.9.3.20041204
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.ijs.si/~lesi/waimea/ \
 		http://www.daemon.li/distfiles/
@@ -17,8 +17,8 @@ COMMENT=	A mini pager for the waimea window manager
 
 PLIST_FILES=	bin/wampager
 
+USE_XORG=	x11 xext xpm ice
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

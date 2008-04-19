@@ -24,8 +24,8 @@ USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_GL=		yes
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

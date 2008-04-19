@@ -7,16 +7,15 @@
 
 PORTNAME=	peksystray
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system tray dockapp similar to the GNOME notification area applet
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 ice sm
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 

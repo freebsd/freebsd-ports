@@ -7,7 +7,7 @@
 
 PORTNAME=	ogle
 PORTVERSION=	0.9.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
@@ -21,8 +21,8 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOTOOLS=	libtool:15
+USE_XORG=	x11 xext sm
 USE_SUBMAKE=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE} \
 		--with-dvdread=${LOCALBASE} \
 		--with-libmad=${LOCALBASE} \
 		--with-liba52=${LOCALBASE}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 DEFAULT_DVD_DEVICE?=	/dev/acd0c
 
@@ -47,7 +47,7 @@ post-patch:
 	@${REINPLACE_CMD} -E -e "s|(DEFAULT_DVD_DEVICE=\")/dev/acd0c(\")|\1${DEFAULT_DVD_DEVICE}\2|" \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-	@${REINPLACE_CMD} -e "s|%%X11BASE%%|${X11BASE}|" ${WRKSRC}/scripts/ogle.in
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/scripts/ogle.in
 # hack to make ogle work with liba52 + djbfft
 # CFLAGS safeness
 	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|; \

@@ -18,7 +18,7 @@ COMMENT=	Open Source implementation of the Lotus Sametime protocol
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-doxygen=no \
 		--with-gmp-prefix=${LOCALBASE}

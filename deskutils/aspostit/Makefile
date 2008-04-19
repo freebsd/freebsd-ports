@@ -7,7 +7,7 @@
 
 PORTNAME=	aspostit
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	apps/aspostit
@@ -17,8 +17,7 @@ COMMENT=	An AfterStep dockable version of XPostIt
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg/
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xaw xext x11
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes

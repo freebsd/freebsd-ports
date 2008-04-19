@@ -18,11 +18,11 @@ COMMENT=	Clone of the strategy board game 'Blokus'
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_WX=		2.6
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 
 MAKEFILE=	makefile
 

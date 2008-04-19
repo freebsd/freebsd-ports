@@ -7,7 +7,7 @@
 
 PORTNAME=	xspy
 PORTVERSION=	1.0c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.acm.vt.edu/~jmaxwell/programs/xspy/
 
@@ -15,7 +15,6 @@ MAINTAINER=	onatan@gmail.com
 COMMENT=	A utility for monitoring keystrokes on remote X servers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_XLIB=	yes
 USE_IMAKE=	yes
 XMKMF=		xmkmf
 

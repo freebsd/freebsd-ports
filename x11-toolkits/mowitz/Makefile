@@ -17,7 +17,7 @@ LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_AUTOTOOLS=	libtool:15
 USE_XORG=	xpm
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xawm=Xaw3d
 

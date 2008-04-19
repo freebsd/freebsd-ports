@@ -20,7 +20,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org X server and related programs
 
 LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
-RUN_DEPENDS=	${X11BASE}/share/X11/xkb/rules/base.xml:${PORTSDIR}/x11/xkeyboard-config
+RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base.xml:${PORTSDIR}/x11/xkeyboard-config
 
 CONFLICTS=	XFree86-Server-*
 

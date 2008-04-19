@@ -26,9 +26,8 @@ USE_LDCONFIG=	yes
 
 MAN1=		elk.1
 
-CPPFLAGS=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include \
-		-I${X11BASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

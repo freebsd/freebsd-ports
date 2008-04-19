@@ -23,6 +23,6 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Apache::Scoreboard.3
 
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 
 .include <bsd.port.mk>

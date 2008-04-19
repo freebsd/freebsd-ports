@@ -10,8 +10,7 @@ PORTNAME=	gnome-schedule
 PORTVERSION=	0.9.0
 PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME GUI for configuring a users crontab
@@ -22,7 +21,6 @@ RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix pygnome2
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/share
 

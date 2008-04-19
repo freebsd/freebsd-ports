@@ -7,8 +7,8 @@
 -LIBDIR = -L/usr/X11R6/lib
 -LIBDIR = -L/usr/X11R6/lib
 -INCDIR = -I/usr/X11R6/include
-+LIBDIR = -L${X11BASE}/lib -L${LOCALBASE}/lib
-+INCDIR = -I${X11BASE}/include
++LIBDIR = -L${LOCALBASE}/lib -L${LOCALBASE}/lib
++INCDIR = -I${LOCALBASE}/include
  
  # Edit OSLIBS as appropriate to include OS specific libraries.
  

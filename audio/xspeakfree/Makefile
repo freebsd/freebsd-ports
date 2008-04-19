@@ -7,7 +7,7 @@
 
 PORTNAME=	xspeakfree
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mbone net audio
 MASTER_SITES=	http://www.liquidx.org/distfiles/
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/bin/sfmike:${PORTSDIR}/mbone/speak_freely \
 
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 
 PORTDOCS=	BUGS HISTORY INSTALL LICENSE README TODO
 

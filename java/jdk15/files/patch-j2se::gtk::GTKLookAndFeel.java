@@ -8,8 +8,8 @@ $FreeBSD$
                          System.getProperty("swing.gtkthemedir"),
 -			"/usr/X11R6/share/gnome/themes", // FreeBSD
 -			"/usr/X11R6/share/themes", // FreeBSD
-+			"%%X11BASE%%/share/gnome/themes", // FreeBSD
-+			"%%X11BASE%%/share/themes", // FreeBSD
++			"%%LOCALBASE%%/share/gnome/themes", // FreeBSD
++			"%%LOCALBASE%%/share/themes", // FreeBSD
                          "/usr/share/themes" // Debian/Redhat/Solaris/SuSE
                      };
  

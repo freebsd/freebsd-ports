@@ -7,7 +7,7 @@
 
 PORTNAME=	startup-notification
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://www.freedesktop.org/software/startup-notification/releases/
@@ -18,8 +18,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library that supports startup notification spec from freedesktop.org
 
 USE_BZIP2=	yes
+USE_XORG=	x11
 USE_AUTOTOOLS=	libtool:15
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes

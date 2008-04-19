@@ -6,14 +6,14 @@
  DESTDIR =
 -GNUSTEP_BINDIR = /usr/local/GNUstep/Apps/Temperature.app
 -X11_BINDIR = /usr/X11R6/bin
-+GNUSTEP_BINDIR = $(X11BASE)/GNUstep/Apps/Temperature.app
-+X11_BINDIR = $(X11BASE)/bin
++GNUSTEP_BINDIR = $(LOCALBASE)/GNUstep/Apps/Temperature.app
++X11_BINDIR = $(LOCALBASE)/bin
  
  CXX=c++
 -CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -O2 -I/usr/X11R6/include
 -LDFLAGS += -L/usr/X11R6/lib -lXpm -lXext -lX11
-+CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -I$(X11BASE)/include
-+LDFLAGS += -L$(X11BASE)/lib -lXpm -lXext -lX11
++CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -I$(LOCALBASE)/include
++LDFLAGS += -L$(LOCALBASE)/lib -lXpm -lXext -lX11
  
  OBJECTS = Main.o Temperature.o Xpm.o
  

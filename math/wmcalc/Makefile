@@ -7,7 +7,7 @@
 
 PORTNAME=	wmcalc
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math windowmaker
 MASTER_SITES=	http://members.cox.net/ehf_dockapps/wmcalc/ \
 		${MASTER_SITE_LOCAL}
@@ -18,8 +18,7 @@ COMMENT=	Simple dockable calculator
 
 ALL_TARGET=	clean wmcalc
 PLIST_FILES=	bin/wmcalc
-USE_X_PREFIX=   yes
-USE_XPM=	yes
+USE_XORG=   xpm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmcalc ${PREFIX}/bin

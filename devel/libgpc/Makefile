@@ -18,7 +18,7 @@ USE_ZIP=	yes
 PLIST_FILES=	lib/libgpc.so.2	\
 		lib/libgpc.so	lib/libgpc.a	\
 		include/gpc.h
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_CDROM=	Can't be used for profit without permission
 
 MAKEFILE=	${FILESDIR}/BSDmakefile

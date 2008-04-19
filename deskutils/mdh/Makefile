@@ -7,7 +7,7 @@
 
 PORTNAME=	mdh
 PORTVERSION=	1.9.59
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gozer.org/my_stuff/gtk/gtk/mdh/
 
@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2-based toolbar, like a smaller GNOME panel
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

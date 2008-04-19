@@ -7,6 +7,7 @@
 
 PORTNAME=	flightgear-mb339-pan
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://hcilab.uniud.it/pan/downloads/
 DISTNAME=	MB339-PAN
@@ -14,11 +15,10 @@ DISTNAME=	MB339-PAN
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A simulation of the MB-339 PAN aerobatic jet
 
-RUN_DEPENDS=	${X11BASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
+RUN_DEPENDS=	${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
 BROKEN=		Size mismatch
 
-PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

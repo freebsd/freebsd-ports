@@ -111,7 +111,7 @@ USE_GNOME+=	glib20
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11='@comment '
 .else
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GNOME+=	gtk20 gnomelibs
 PLIST_SUB+=	X11=''
 MAN1+=	xgnokii.1

@@ -24,8 +24,8 @@ USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 NO_LATEST_LINK=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-ipv6 \
 		--prefix=${PREFIX} \
 		--with-libintl-prefix=${LOCALBASE} \

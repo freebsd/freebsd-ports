@@ -12,7 +12,7 @@
 +mandir  = ${prefix}/man/man1
  ifeq ($(OS), FreeBSD)
 -resdir  = $(ROOT)/usr/X11R6/lib/X11
-+resdir  = ${X11BASE}/lib/X11
++resdir  = ${LOCALBASE}/lib/X11
  else
  resdir  = $(LOCALBASE)/lib/X11
  endif

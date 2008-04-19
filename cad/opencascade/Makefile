@@ -56,17 +56,17 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}				\
 		--with-tk=${TK_LIBDIR}					\
 		--with-java-include=${JAVA_HOME}/include		\
-		--with-dps-include=${X11BASE}/include			\
-		--with-dps-library=${X11BASE}/lib			\
-		--with-gl-include=${X11BASE}/include			\
-		--with-gl-library=${X11BASE}/lib			\
-		--with-xmu-include=${X11BASE}/include/X11		\
-		--with-xmu-library=${X11BASE}/lib			\
+		--with-dps-include=${LOCALBASE}/include			\
+		--with-dps-library=${LOCALBASE}/lib			\
+		--with-gl-include=${LOCALBASE}/include			\
+		--with-gl-library=${LOCALBASE}/lib			\
+		--with-xmu-include=${LOCALBASE}/include/X11		\
+		--with-xmu-library=${LOCALBASE}/lib			\
 		--with-stlport-include=${LOCALBASE}/include/stlport	\
 		--with-stlport-libname=stlport_${STL_COMPILER}		\
 		--with-stlport-library=${LOCALBASE}/lib			\
 		--enable-production=yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} ${GCC4WA} -I${X11BASE}/include	\
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} ${GCC4WA} -I${LOCALBASE}/include	\
 		-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" ARCH=${ARCH}
 # We strip the libs
 MAKE_ENV=	INSTALL_STRIP_FLAG=-s OCC_BUILDDIR="${PATCH_WRKSRC}"	\
@@ -177,12 +177,12 @@ pre-configure:
 		-e 's|/usr/bin/gcc|${CC}|'		\
 		-e 's|%%JAVAHOME%%|${JAVA_HOME}|'	\
 		-e 's|/usr/local|${LOCALBASE}|'		\
-		-e 's|/usr/X11R6|${X11BASE}|'		\
+		-e 's|/usr/X11R6|${LOCALBASE}|'		\
 		${WRKSRC}/src/OS/Draw.tcl		\
 		${WRKSRC}/src/OS/Visualization.tcl	\
 		${WRKSRC}/src/OS/ApplicationFramework.tcl
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|'\
-		-e 's|/usr/X11R6|${X11BASE}|'		\
+		-e 's|/usr/X11R6|${LOCALBASE}|'		\
 		-e 's|/usr/local/bin/tclsh8.4|${TCLSH}|'\
 		${PATCH_WRKSRC}/wok/site/wokinit.csh	\
 		${WRKSRC}/src/WOKsite/wokinit.csh	\

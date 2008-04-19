@@ -7,7 +7,7 @@
 
 PORTNAME=	elvis
 PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/elvis/ \
 		ftp://ftp.false.com/pub/elvis/ \
@@ -33,11 +33,11 @@ MAN1=		elvfmt.1 elvis.1 elvtags.1 ref.1
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=	--without-x
 .else
-USE_XPM=	yes
+USE_XORG=	xpm
 .if defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--without-xft
 .else
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG=	xft xt
 CONFIGURE_ARGS+=	--libs="${LDFLAGS}"
 CFLAGS+=	`freetype-config --cflags`
 LDFLAGS=	`freetype-config --libs`
@@ -53,7 +53,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g ; \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g ; \
 		 s|-lipc|-lcurses|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS+=|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|FT_FILE|ELVIS_FT_FILE|g' \

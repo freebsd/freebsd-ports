@@ -5,7 +5,7 @@
  
  mavbiff: mavbiff.o mavraise.o
 -	gcc -o mavbiff -Wall mavbiff.o mavraise.o ${GTK_L} -L/usr/X11R6/lib
-+	gcc -o mavbiff -Wall mavbiff.o mavraise.o ${GTK_L} -L${X11BASE}/lib
++	gcc -o mavbiff -Wall mavbiff.o mavraise.o ${GTK_L} -L${LOCALBASE}/lib
  
  .c.o:
  	$(CC) $(OPT_C) $(GTK_C) -o $@ $<

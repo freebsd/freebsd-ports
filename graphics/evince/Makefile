@@ -8,7 +8,7 @@
 
 PORTNAME=	evince
 PORTVERSION=	2.22.1.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -24,7 +24,6 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui desktopfileutils \

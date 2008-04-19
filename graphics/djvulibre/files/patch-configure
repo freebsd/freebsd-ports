@@ -5,7 +5,7 @@
  verbose=
  x_includes=NONE
 -x_libraries=NONE
-+x_libraries=${X11BASE}/lib
++x_libraries=${LOCALBASE}/lib
  
  # Installation directory options.
  # These are left unexpanded so users can "make install exec_prefix=/foo"

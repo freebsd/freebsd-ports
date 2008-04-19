@@ -21,8 +21,8 @@ USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
 		--with-xpm --enable-xpm-background --enable-transparency \
-		--with-xpm-includes=${X11BASE}/include/X11 \
-		--with-xpm-library=${X11BASE}/lib
+		--with-xpm-includes=${LOCALBASE}/include/X11 \
+		--with-xpm-library=${LOCALBASE}/lib
 MAN1=		rxvt.1
 PLIST_FILES=	bin/rxvt
 

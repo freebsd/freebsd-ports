@@ -4,7 +4,7 @@
  INSTALL	= install -c -o root -g wheel
  
 -X11PREFIX = /usr/X11R6
-+X11PREFIX = $(X11BASE)
++X11PREFIX = $(LOCALBASE)
  
  INSTALL_BINDIR = $(X11PREFIX)/bin
  INSTALL_LIBDIR = $(X11PREFIX)/lib/X11/xyagamo

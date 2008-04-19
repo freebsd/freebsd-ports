@@ -7,15 +7,12 @@
 
 PORTNAME=	scwm-icons
 PORTVERSION=	0.99.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	scwm
+MASTER_SITES=	SF/scwm
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An icon collection for the scwm window manager
-
-USE_X_PREFIX=	yes
 
 NO_BUILD=	yes
 

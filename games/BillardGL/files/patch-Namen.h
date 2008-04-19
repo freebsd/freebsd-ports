@@ -5,7 +5,7 @@
  
  #ifndef _WIN32
 -#define PFAD "/usr/share/BillardGL/"
-+#define PFAD "%%X11BASE%%/share/%%PORTNAME%%/"
++#define PFAD "%%LOCALBASE%%/share/%%PORTNAME%%/"
  #endif
  
  #ifndef PFAD

@@ -218,7 +218,7 @@
 #  Disable ALL streaming plugins.
 #
 # WITH_VLC_DEFAULT_FONT=/path/to/font
-#  default: ${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
+#  default: ${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 #  This option lets you change the default font for subtitles
 #
 # NOPORTDOCS=yes

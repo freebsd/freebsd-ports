@@ -49,7 +49,7 @@ PLIST_SUB+=	MENU_THUNDERBIRD="@comment "
 .endif
 
 do-build:
-	@${REINPLACE_CMD} -e 's|@X11BASE@|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|@LOCALBASE@|${PREFIX}|g' \
 		${WRKSRC}/${FIREFOX_REMOTE}
 	@${REINPLACE_CMD} -e 's|@UTF8@|${UTF8_HACK}|g' \
 		${WRKSRC}/${FIREFOX_REMOTE}
@@ -62,15 +62,15 @@ do-install:
 		${PREFIX}/bin/${THUNDERBIRD_REMOTE}
 .if defined (WITH_MENU_FIREFOX)
 	${INSTALL_DATA} ${WRKSRC}/mozilla_firefox.desktop \
-		${X11BASE}/share/applications/
+		${LOCALBASE}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/mozilla_firefox.png \
-		${X11BASE}/share/pixmaps/
+		${LOCALBASE}/share/pixmaps/
 .endif
 .if defined (WITH_MENU_THUNDERBIRD)
 	${INSTALL_DATA} ${WRKSRC}/mozilla_thunderbird.desktop \
-		${X11BASE}/share/applications/
+		${LOCALBASE}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/mozilla_thunderbird.png \
-		${X11BASE}/share/pixmaps/
+		${LOCALBASE}/share/pixmaps/
 .endif
 	${CAT} ${PKGMESSAGE}
 

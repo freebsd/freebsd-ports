@@ -18,7 +18,7 @@ COMMENT=	A dockable cd player for AfterStep or WindowMaker
 LIB_DEPENDS=	workman.1:${PORTSDIR}/audio/libworkman
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 DATAFILES=	ascd-0.13pr6-themes.tgz
 THEMESDIR=	ascd-0.13pr6-themes

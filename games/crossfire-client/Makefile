@@ -9,7 +9,7 @@ PORTNAME=	crossfire-client
 PORTVERSION=	1.8.0
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
 		ftp://ftp.real-time.com/pub/games/crossfire/
 MASTER_SITE_SUBDIR=	${PORTNAME:S/-client//}
@@ -27,8 +27,8 @@ USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-sound-dir=${DATADIR}/sounds
 
 MAN6=		cfclient.6

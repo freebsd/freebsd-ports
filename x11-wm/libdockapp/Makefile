@@ -7,7 +7,7 @@
 
 PORTNAME=	libdockapp
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://solfertje.student.utwente.nl/~dalroi/libdockapp/files/
 
@@ -18,12 +18,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/^lib//}-${PORTVERSION}
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-font --without-examples
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \

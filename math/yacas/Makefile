@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	X11	"Build with X11 features"			off \
  		GMP	"Use libgmp for arbitrary precision arithmetic" off
@@ -51,8 +51,8 @@ PLIST_SUB+=	GMP="@comment " NOGMP=""
 USE_GL=		yes
 CONFIGURE_ARGS+=	--with-x
 PLIST_SUB+=	X11=""
-CPPFLAGS+=	-I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11="@comment "

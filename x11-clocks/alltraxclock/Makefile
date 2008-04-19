@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}2_0.2-1
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	An analog clock plugin for gkrellm2
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 ALL_TARGET=	alltraxclock.so

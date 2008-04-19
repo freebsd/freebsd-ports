@@ -9,7 +9,7 @@ PORTNAME=	silky
 PORTVERSION=	0.5.4
 PORTREVISION=	5
 CATEGORIES=	net security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	silky
 
@@ -25,8 +25,8 @@ CONFIGURE_ARGS=	--with-silc-include=${LOCALBASE}/include/silc \
 		--with-silc-libs=${LOCALBASE}/lib \
 		--with-docdir=${DOCSDIR} \
 		--with-libintl-prefix=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 USE_GNOME=	gtk20 libglade2 gnomelibs
 USE_GMAKE=	yes
@@ -35,7 +35,7 @@ USE_PERL5=	yes
 post-patch:
 	@${PERL} -pi -e 's/ include / /' ${WRKSRC}/Makefile.in
 	@${PERL} -pi -e 's|share/pixmaps/\$${\w+}|share/pixmaps/|; \
-			s|(PACKAGE_PIXMAPS_DIR \")\$${packageprefix}/|\1${X11BASE}/|' \
+			s|(PACKAGE_PIXMAPS_DIR \")\$${packageprefix}/|\1${LOCALBASE}/|' \
 	    ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>

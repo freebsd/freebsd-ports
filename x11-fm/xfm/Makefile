@@ -17,7 +17,7 @@ COMMENT=	The X File Manager
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		xfm.1 xfmtype.1
 
 .include <bsd.port.mk>

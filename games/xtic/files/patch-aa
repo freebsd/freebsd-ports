@@ -5,4 +5,4 @@
   *  Change this to the correct place, if needed */
  
 -#define XPMLIBRARY -L/usr/local/lib -lXpm
-+#define XPMLIBRARY -L%%X11BASE%%/lib -lXpm
++#define XPMLIBRARY -L%%LOCALBASE%%/lib -lXpm

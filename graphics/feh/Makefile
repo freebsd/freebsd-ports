@@ -7,7 +7,7 @@
 
 PORTNAME=	feh
 PORTVERSION=	1.3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
@@ -16,7 +16,7 @@ COMMENT=	An image viewer that utilizes Imlib2
 
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xt xinerama
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -24,8 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		feh.1
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${PERL} -pi.bak -e \

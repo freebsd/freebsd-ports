@@ -2,6 +2,6 @@
 %%FONTSDIR%%/Junicode-BoldItalic.ttf
 %%FONTSDIR%%/Junicode-Italic.ttf
 %%FONTSDIR%%/Junicode-Regular.ttf
-@exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm %%FONTSDIR%%

@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-query-browser
 PORTVERSION=	1.1.18
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQLAdministrationSuite
@@ -23,7 +23,6 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 
 BROKEN=		Checksum mismatch
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:261:env
 CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
@@ -35,7 +34,7 @@ DEFAULT_MYSQL_VER=	50
 IGNORE_WITH_MYSQL=	323
 
 GTKHTML_VER=	${gtkhtml3_DETECT:R}
-CONFIGURE_ARGS_GUI=	--prefix=${X11BASE} \
+CONFIGURE_ARGS_GUI=	--prefix=${LOCALBASE} \
 			--datadir=${DATADIR} \
 			--localstatedir=${PREFIX}/share
 CONFIGURE_ARGS_MAIN=	${CONFIGURE_ARGS_GUI} \

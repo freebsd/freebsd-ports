@@ -120,7 +120,7 @@ CONFIGURE_ARGS+=	--with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
 .endif
 
 # Include extra files if X11 is installed
-.if defined(WITH_X11) || (exists(${X11BASE}/lib/libX11.a) \
+.if defined(WITH_X11) || (exists(${LOCALBASE}/lib/libX11.a) \
 	&& !defined(WITHOUT_X11))
 USE_XORG=	x11
 PLIST:=		${WRKDIR}/PLIST

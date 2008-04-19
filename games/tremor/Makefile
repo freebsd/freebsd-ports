@@ -7,7 +7,7 @@
 
 PORTNAME=	tremor
 PORTVERSION=	3.2.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake1/:src \
 		http://tremor.quakedev.com/:data
@@ -25,9 +25,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 USE_BZIP2=	yes
-USE_GCC=	3.4+
-USE_GL=		gl
-USE_XORG=	xxf86dga
+USE_GL=		gl glu
+USE_XORG=	x11 xxf86dga
 USE_GMAKE=	yes
 ALL_TARGET=	release
 

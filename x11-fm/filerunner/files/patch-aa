@@ -8,7 +8,7 @@
 -X11INC = /usr/X11/include
 +TCLINC = ${PREFIX}/include/tcl8.4
 +TKINC   = ${PREFIX}/include/tk8.4
-+X11INC = ${X11BASE}/include
++X11INC = ${LOCALBASE}/include
  
 -CFLAGS = -Wall -fPIC -O3 -I$(TCLINC) -I$(TKINC) -I$(X11INC)
 +CFLAGS += -Wall -fPIC -I$(TCLINC) -I$(TKINC) -I$(X11INC)

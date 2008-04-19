@@ -7,7 +7,7 @@
 
 PORTNAME=	rocksndiamonds
 PORTVERSION=	3.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://homepages.compuserve.de/rocksndiamonds/
@@ -18,7 +18,7 @@ COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" RW_GAME_DIR="${DATADIR}/scores" \
-		X11_PATH="${X11BASE}"
+		X11_PATH="${LOCALBASE}"
 
 MAN1=		rocksndiamonds.1
 
@@ -27,8 +27,7 @@ LIB_DEPENDS+=	smpeg:${PORTSDIR}/multimedia/smpeg
 USE_SDL=	image mixer net sdl
 ALL_TARGET=	sdl
 .else
-USE_XLIB=	yes
-USE_XORG=	x11
+USE_XORG=	x11 xpm xt
 ALL_TARGET=	x11
 .endif
 

@@ -16,6 +16,4 @@ EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-xmms-1.2.x-xfont
 
 MAINTAINER=	clive@FreeBSD.org
 
-#RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
-
 .include "${MASTERDIR}/Makefile"

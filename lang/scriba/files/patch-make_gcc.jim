@@ -5,7 +5,7 @@
  -L where the libraries are
  }
 -{#define cc=gcc -w}
-+{#define cc=cc -w %%CFLAGS%% -L%%LOCALBASE%%/lib -I%%LOCALBASE%%/include -L%%X11BASE%%/lib -I%%X11BASE%%/include -I%%LOCALBASE%%/include/libxml2 -L%%LOCALBASE%%/lib/mysql }
++{#define cc=cc -w %%CFLAGS%% -L%%LOCALBASE%%/lib -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/libxml2 -L%%LOCALBASE%%/lib/mysql }
  {#define CcOptOutput/X=-o X}
  {#define CcOptInput/X=X}
  {#define CcOptCompile=-c}
@@ -14,7 +14,7 @@
  {#define LibOptInput/X=X}
  
 -{#define ld=ld -shared -Bstatic}
-+{#define ld=ld %%LDFLAGS%% -shared -Bstatic -L%%LOCALBASE%%/lib -L%%X11BASE%%/lib -L%%LOCALBASE%%/lib/mysql }
++{#define ld=ld %%LDFLAGS%% -shared -Bstatic -L%%LOCALBASE%%/lib -L%%LOCALBASE%%/lib/mysql }
  {#define LdOptOutput/X=-o X}
  {#define LdOptInput/X=X}
  

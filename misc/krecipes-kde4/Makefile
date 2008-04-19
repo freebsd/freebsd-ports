@@ -9,8 +9,7 @@ PORTNAME=	krecipes
 PORTVERSION=	0.9.1
 PORTREVISION=	1
 CATEGORIES=	misc kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	hank@millerfarm.com
 COMMENT=	Recipe database for cooks
@@ -31,13 +30,13 @@ USE_SQLITE=	yes
 .endif
 
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
+RUN_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
 
 .if defined(WITH_POSTGRESQL)
-RUN_DEPENDS+=	${X11BASE}/lib/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt-pgsql-plugin
+RUN_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt-pgsql-plugin
 .else
 CONFIGURE_ARGS+=	--without-postgresql
 .endif

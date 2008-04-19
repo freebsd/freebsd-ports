@@ -7,7 +7,7 @@
 
 PORTNAME=	xmbase-grok
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://grok.ftp.fu-berlin.de/ \
 		ftp://bitrot.de/pub/grok/
@@ -18,11 +18,11 @@ COMMENT=	Graphical Resource Organizer Kit
 
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xt
 USE_MOTIF=	yes
 MAKE_ENV=	MYCC="${CC}" DEBUG="${CFLAGS}" YO="" INCDIR="" \
 		GBIN="${PREFIX}/bin" GLIB="${DATADIR}" \
-		CF="-I${X11BASE}/include" LF="${MOTIFLIB} -lXt -lX11 -lm"
+		CF="-I${LOCALBASE}/include" LF="${MOTIFLIB} -lXt -lX11 -lm"
 MAN1=		grok.1
 
 DATADIR=	${PREFIX}/lib/X11/xmbase-grok

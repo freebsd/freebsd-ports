@@ -36,8 +36,8 @@
 -XINCDIR  = -I/usr/X11R6/include
 -XLIBDIR  = -L/usr/X11R6/lib -lstdc++
 +UOS      = -DFREEBSD
-+XINCDIR  = -I$(X11BASE)/include
-+XLIBDIR  = -L$(X11BASE)/lib
++XINCDIR  = -I$(LOCALBASE)/include
++XLIBDIR  = -L$(LOCALBASE)/lib
  
  #######################################################################
  # HP/UX

@@ -7,7 +7,7 @@
 
 PORTNAME=	spice
 PORTVERSION=	3f5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	cad
 MASTER_SITES=	http://embedded.eecs.berkeley.edu/pubs/downloads/spice/:sources
 DISTFILES=	spice3f5${EXTRACT_SUFX}:sources	\
@@ -31,7 +31,7 @@ PKGNAMESUFFIX=	-without-x11
 COMMENT=	A general-purpose circuit simulation program (non-X11 version)
 MAKE_ARGS+=	-DWITHOUT_X11
 .else
-USE_XLIB=	yes
+USE_XORG=	x11 xaw xext xmu xt
 .endif
 
 .include <bsd.port.pre.mk>
@@ -43,7 +43,7 @@ do-configure:
 	@${CP} ${FILESDIR}/FreeBSD ${WRKSRC}/conf/FreeBSD
 	@${CP} ${FILESDIR}/FreeBSD.without_x11 ${WRKSRC}/conf/FreeBSD.without_x11
 	@${REINPLACE_CMD} -e 's+@CC@+${CC}+ ; s+@CFLAGS@+${CFLAGS}+ ; \
-	    s+@X11BASE@+${X11BASE}+;' \
+	    s+@X11BASE@+${LOCALBASE}+;' \
 	    ${WRKSRC}/conf/FreeBSD ${WRKSRC}/conf/FreeBSD.without_x11
 
 post-install:

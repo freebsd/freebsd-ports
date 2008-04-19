@@ -15,7 +15,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	An advanced delta creator, patcher, and library
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_FILES=	bin/bdelta \
 		bin/bpatch \
 		lib/libbdelta.so

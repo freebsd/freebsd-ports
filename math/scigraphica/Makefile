@@ -7,10 +7,10 @@
 
 PORTNAME=	scigraphica
 PORTVERSION=	0.8.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math gnome
 MASTER_SITES=	http://scigraphica.sourceforge.net/src/ \
-		${MASTER_SITE_SOURCEFORGE} \
+		SF \
 		http://magnet.fsu.edu/~feiguin/scigraphica/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -22,7 +22,6 @@ LIB_DEPENDS=	gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/gtk-1.2/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
 
-USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 USE_GNOME=	yes

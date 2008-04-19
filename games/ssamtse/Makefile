@@ -19,9 +19,9 @@ COMMENT=	Serious Sam - The Second Encounter
 NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GL=		yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_PACKAGE=	yes	# distfiles must be downloaded manually, wierd legal issues etc etc etc.
 
 SSAMDIR=	${PREFIX}/ssam

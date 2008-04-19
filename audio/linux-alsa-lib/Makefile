@@ -16,7 +16,7 @@ COMMENT=	The Advanced Linux Sound Architecture libraries
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 AUTOMATIC_PLIST=yes
 BRANDELF_DIRS=	usr/bin
 

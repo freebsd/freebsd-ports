@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 NO_WRKSUBDIR=	yes
 EXTRACT_AFTER_ARGS=	> ${DISTNAME}

@@ -20,7 +20,7 @@
 -CFLAGS=-g $(OS) $(INCLUDES) -fno-builtin -D_LIBXG_EXTENSION
 -LDFLAGS=-g -R/usr/openwin/lib -L/usr/openwin/lib -R/usr/ucblib -L/usr/ucblib
 -CC=gcc
-+INCLUDES=-I. -I../libtext -I$(SAMPATH)/include -I${X11BASE}/include
++INCLUDES=-I. -I../libtext -I$(SAMPATH)/include -I${LOCALBASE}/include
 +CFLAGS+= $(OS) $(INCLUDES)
 +LDFLAGS=
 +CC?=gcc
@@ -31,8 +31,8 @@
 -XLIBS=-lXt -lX11
 -
 +LIBS=../libtext/libtext.a $(SAMPATH)/libframe/libframe.a $(SAMPATH)/libXg/libXg.a
-+XLIBS= -lXt -lX11 -L${X11BASE}/lib
-+XLIBS+=-Wl,-rpath,$(X11BASE)/lib
++XLIBS= -lXt -lX11 -L${LOCALBASE}/lib
++XLIBS+=-Wl,-rpath,$(LOCALBASE)/lib
  OBJECTS=9term.o command.o display.o pty.o
  
  $(TARGET): $(OBJECTS)

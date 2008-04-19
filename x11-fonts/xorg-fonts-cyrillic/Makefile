@@ -24,7 +24,7 @@ RUN_DEPENDS=	${FONTDIR}/cyrillic/crox1c.pcf.gz:${PORTSDIR}/x11-fonts/font-cronyx
 CONFLICTS=	XFree86-fontCyrillic-*
 
 NO_BUILD=	# none
-FONTDIR=	${X11BASE}/lib/X11/fonts
+FONTDIR=	${LOCALBASE}/lib/X11/fonts
 
 do-install:	# empty
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	robot
 PORTVERSION=	4.93.89
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lheaftp.gsfc.nasa.gov/pub/corbet/robot/
 DISTNAME=	robot-beta
@@ -16,12 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph plotting and data analysis program using OpenLook
 
 BUILD_DEPENDS=	fsplit:${PORTSDIR}/devel/fortran-utils \
-		imake:${X_IMAKE_PORT}
+		imake:${PORTSDIR}/devel/imake
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-MAKE_ENV+=	OPENWINHOME=${X11BASE}
+MAKE_ENV+=	OPENWINHOME=${LOCALBASE}
 WEB_BROWSER?=	firefox
 USE_FORTRAN=	yes
 FFLAGS+=	-ffixed-line-length-80

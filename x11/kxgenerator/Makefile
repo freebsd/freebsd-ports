@@ -23,7 +23,7 @@ INSTALLS_ICONS=	yes
 
 pre-configure:
 .for i in properties.h main.cpp
-	@${REINPLACE_CMD} -e "s:/usr/lib/xorg:${X11BASE}/lib:g"	\
+	@${REINPLACE_CMD} -e "s:/usr/lib/xorg:${LOCALBASE}/lib:g"	\
 		${WRKSRC}/src/${i}
 .endfor
 

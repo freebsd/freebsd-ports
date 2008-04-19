@@ -7,10 +7,9 @@
 
 PORTNAME=	kiltdown
 PORTVERSION=	0.8.045
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	kiltdown
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kiltdown is an UI independant Email Client for UNIX
@@ -18,13 +17,13 @@ COMMENT=	Kiltdown is an UI independant Email Client for UNIX
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
 PLIST_FILES=	bin/kiltdown
-USE_X_PREFIX=	yes
+
 USE_QT_VER=	3
 USE_GMAKE=	yes
 MY_CONFIGURE_ARGS=	-release
-MY_CONFIGURE_ARGS+=	-qtinc ${X11BASE}/include -qtlib ${X11BASE}/lib
+MY_CONFIGURE_ARGS+=	-qtinc ${LOCALBASE}/include -qtlib ${LOCALBASE}/lib
 MY_CONFIGURE_ARGS+=	-dbinc ${LOCALBASE}/include/db3 -dblib ${LOCALBASE}/lib
-BUILD_ENV+=		PATH=${PATH}:${X11BASE}/bin
+BUILD_ENV+=		PATH=${PATH}:${LOCALBASE}/bin
 
 .include <bsd.port.pre.mk>
 

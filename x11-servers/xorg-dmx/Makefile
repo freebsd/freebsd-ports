@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-dmx
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 
@@ -26,7 +26,7 @@ USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 		compositeproto trapproto recordproto resourceproto \
 		xineramaproto evieproto xkbfile xfont fontenc xkbui \
 		xxf86misc xxf86vm xaw7 xmu xpm xext xrender xfixes xi dmxproto \
-		xau dmx xtst xres pixman
+		xau dmx xtst xres pixman xtrans
 		
 CONFIGURE_ARGS=	--disable-xprint --disable-xvfb --disable-xorg --disable-xnest \
 		--enable-dmx --localstatedir=/var

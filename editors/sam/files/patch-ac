@@ -35,7 +35,7 @@
   
   #	add -Iincludedir for any include directories that need to be searched
   #	for posix header files (for UMIPS, add -I/usr/include/posix)
-! INCS=-I../include -I${X11BASE}/include
+! INCS=-I../include -I${LOCALBASE}/include
   
   #	SAMTERM contains the name of the file containing the samterm
   #	executable.  SAMTERMDIR is the directory where it is installed.
@@ -44,7 +44,7 @@
   
   #	set this if your X libraries are in different locations
   #	or if you need extra libraries to load with X11 applications
-! XLIBS=-lXt -lX11 -lSM -lICE -L${X11BASE}/lib
+! XLIBS=-lXt -lX11 -lSM -lICE -L${LOCALBASE}/lib
   
 ! CFLAGS+=$(OS) $(INCS) -D_LIBXG_EXTENSION
   

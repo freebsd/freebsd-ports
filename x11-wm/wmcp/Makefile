@@ -7,7 +7,7 @@
 
 PORTNAME=	wmcp
 PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 
@@ -15,8 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable pager for Window Maker
 
 PLIST_FILES=	bin/wmcp
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xext xpm
 ALL_TARGET=	clean wmcp
 
 do-install:

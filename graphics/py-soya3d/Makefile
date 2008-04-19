@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:${PORTSDIR}/graphics/py-edit
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_GMAKE=	yes
 
 PYDISTUTILS_PKGNAME=	Soya
@@ -55,7 +55,7 @@ CFLAGS	+=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		-e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/setup.py
+		-e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)

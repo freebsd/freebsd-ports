@@ -42,8 +42,8 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 MAKE_ENV+=	INSTALL_DATA="${INSTALL_DATA}" \
 		MKDIR="${MKDIR}" GHC="${GHC}"
 MAKE_ARGS+=	CC="${CC}" GHC="${GHC}" CC_OPTS="${CFLAGS}" \
-		CC_INC="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3" \
-		CCLIB="-L${X11BASE}/lib/X11 -L${LOCALBASE}/lib" \
+		CC_INC=" -I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3" \
+		CCLIB="-L${LOCALBASE}/lib" \
 		IMPORTS="${GHC_LIB}/imports/tclhaskell" TCLLIBS="-ltk83 -ltcl83" \
 		TCL_REQ="-ltk83 -ltcl83" PREFIX="${GHC_LIB}"
 

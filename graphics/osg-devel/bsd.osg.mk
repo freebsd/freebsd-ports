@@ -27,7 +27,7 @@ post-patch: osg-post-patch
 osg-post-patch:
 	@${REINPLACE_CMD} -Ee 's|-O2|${CXXFLAGS}|; \
 		s|(-I\|-L\|-rpath )/usr/local|\1${LOCALBASE}|; \
-		s|(-I\|-L\|-rpath )/usr/X11R6|\1${X11BASE}|' \
+		s|(-I\|-L\|-rpath )/usr/X11R6|\1${LOCALBASE}|' \
 		${WRKSRC}/Make/makedefs
 	@${REINPLACE_CMD} -e 's|DOF=$$(OPTF)|DOF="$$(OPTF)"|' \
 		${WRKSRC}/Make/makerules

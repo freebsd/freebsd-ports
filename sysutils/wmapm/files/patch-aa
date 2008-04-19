@@ -8,9 +8,9 @@
 -LIBDIR = -L/usr/X11R6/lib
 +CC     ?= gcc
 +CFLAGS ?= -O2 -Wall
-+INCDIR = -I${X11BASE}/include
++INCDIR = -I${LOCALBASE}/include
 +DESTDIR= ${PREFIX}
-+LIBDIR = -L${X11BASE}/lib
++LIBDIR = -L${LOCALBASE}/lib
  LIBS   = -lXpm -lX11 -lXext
  OBJS   = wmapm.o \
           ../wmgeneral/wmgeneral.o

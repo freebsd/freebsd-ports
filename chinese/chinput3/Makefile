@@ -7,7 +7,7 @@
 
 PORTNAME=	chinput
 PORTVERSION=	3.0.2.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://ftp.jaist.ac.jp/pub/FreeBSD/distfiles/ \
 		http://www.gtlib.gatech.edu/pub/FreeBSD/distfiles/
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese GB2312,BIG5 code input server
 
 LATEST_LINK=	zh-chinput3
-USE_XLIB=	yes
+USE_XORG=	x11 xt
 USE_GETTEXT=	yes
 USE_GNOME=	gtk12 imlib
 USE_LDCONFIG=	${PREFIX}/lib/Chinput/im/
@@ -42,7 +42,7 @@ pre-build:
 		    s|-I/usr/include|-I${LOCALBASE}/include|; \
 		    s|-L/usr/lib|-L${LOCALBASE}/lib|; \
 		    s|-L/usr/X11R6|-L${LOCALBASE}/lib -L/usr/X11R6|; \
-		    s|/usr/X11R6|${X11BASE}|'
+		    s|/usr/X11R6|${LOCALBASE}|'
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

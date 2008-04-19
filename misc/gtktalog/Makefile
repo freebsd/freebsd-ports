@@ -7,7 +7,7 @@
 
 PORTNAME=	gtktalog
 PORTVERSION=	1.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg
 RUN_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

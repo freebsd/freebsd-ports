@@ -3,7 +3,7 @@
 @@ -1,5 +1,5 @@
  # Where is your Xwindows located?
 -X11=/usr/X11R6
-+X11=${X11BASE}
++X11=${LOCALBASE}
  
  #
  # For building rpms
@@ -29,7 +29,7 @@
  
  freebsd:
 -	${MAKE} all CC=gcc XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=/usr/X11R6/
-+	${MAKE} all CC=${CC} XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=${X11BASE}
++	${MAKE} all CC=${CC} XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=${LOCALBASE}
  
  openbsd:
  	${MAKE} all CC=gcc XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=/usr/X11R6/

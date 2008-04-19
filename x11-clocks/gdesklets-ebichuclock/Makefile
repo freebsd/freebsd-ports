@@ -7,7 +7,7 @@
 
 PORTNAME=	ebichuclock
 PORTVERSION=	0.1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -19,7 +19,7 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${LOCALBASE}/share/gdesklets/Sensors/Clock/__init__.py:${PORTSDIR}/x11-clocks/gdesklets-clock
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 
 NAME=		ebichuclock
 DATADIR=	${PREFIX}/share

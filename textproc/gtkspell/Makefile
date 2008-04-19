@@ -8,7 +8,7 @@
 
 PORTNAME=	gtkspell
 PORTVERSION=	2.0.11
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://gtkspell.sourceforge.net/download/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

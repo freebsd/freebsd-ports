@@ -15,8 +15,8 @@ MASTER_SITES=	http://www.suckless.org/download/ \
 MAINTAINER=	daniel@roe.ch
 COMMENT=	X11 generic pointer warping utility
 
-MAKE_ARGS=	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -lX11" \
-		CFLAGS="${CFLAGS} -I${X11BASE}/include \
+MAKE_ARGS=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lX11" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include \
 			-DVERSION=\\\"${PORTVERSION}\\\"" \
 		LD=${CC}
 

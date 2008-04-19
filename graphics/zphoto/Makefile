@@ -7,7 +7,7 @@
 
 PORTNAME=	zphoto
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics www
 MASTER_SITES=	http://namazu.org/~satoru/zphoto/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,7 +44,6 @@ CONFIGURE_ARGS+=	--disable-zip
 .endif
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_XLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<ming.h>|<ming/ming.h>|g' ${WRKSRC}/*.c ${WRKSRC}/configure

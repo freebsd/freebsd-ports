@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for storing and manipulating dates and times in second/attosecond
 
 ALL_TARGET=	it
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_ENV=	LIBVERSION="${LIBVERSION}"
 
 PLIST_SUB=	LIBVERSION=${LIBVERSION} \

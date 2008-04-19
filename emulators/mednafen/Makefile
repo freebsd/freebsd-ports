@@ -24,8 +24,8 @@ GNU_CONFIGURE=	yes
 USE_SDL=	sdl net
 USE_XORG=	x11
 USE_GL=		glut
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 WRKSRC=	${WRKDIR}/${PORTNAME}
@@ -54,7 +54,7 @@ IGNORE=		needs round(3), which appears in 5.3 or later
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' -e \
-		's|/usr/local|${LOCALBASE}|g' -e 's|/usr/X11R6|${X11BASE}|g' \
+		's|/usr/local|${LOCALBASE}|g' -e 's|/usr/X11R6|${LOCALBASE}|g' \
 			${WRKSRC}/configure
 
 post-install:

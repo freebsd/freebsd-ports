@@ -7,7 +7,7 @@
 
 PORTNAME=	merlin
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.doc.ic.ac.uk/~np2/software/download/
 DISTNAME=	${PORTNAME}
@@ -19,7 +19,6 @@ RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 
 post-patch:
 	@${SED} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" \

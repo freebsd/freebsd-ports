@@ -7,21 +7,23 @@
 
 PORTNAME=	lfpfonts-var
 PORTVERSION=	0.83
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	xfonts
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Variable width fonts from the Linux Font Project
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 WRKSRC=		${WRKDIR}/lfpfonts-var
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/lfpfonts-var

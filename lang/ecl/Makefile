@@ -34,7 +34,7 @@ OPTIONS=	ASDF "Enable ASDF building facility" on \
 MAN1=		ecl.1
 INFO=		ecl ecldev
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/ecl
 
 .include <bsd.port.pre.mk>

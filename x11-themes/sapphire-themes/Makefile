@@ -25,17 +25,17 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 do-patch:
-	${REINPLACE_CMD} 's:~/\.:${X11BASE}/share/:g' \
+	${REINPLACE_CMD} 's:~/\.:${LOCALBASE}/share/:g' \
 		${WRKDIR}/menu/default \
 		${WRKDIR}/themes/*.theme
 	${REINPLACE_CMD} 's:-15-:-12-:g' ${WRKDIR}/themes/*.theme
 
 do-install:
-	${MKDIR} ${X11BASE}/share/sapphire/themes/backgrounds/
+	${MKDIR} ${LOCALBASE}/share/sapphire/themes/backgrounds/
 	${INSTALL_DATA} ${WRKDIR}/themes/backgrounds/* \
-		${X11BASE}/share/sapphire/themes/backgrounds/
+		${LOCALBASE}/share/sapphire/themes/backgrounds/
 	${INSTALL_DATA} ${WRKDIR}/themes/*.theme \
-		${X11BASE}/share/sapphire/themes/
-	${INSTALL_DATA} ${WRKDIR}/menu/default ${X11BASE}/share/sapphire/menu/
+		${LOCALBASE}/share/sapphire/themes/
+	${INSTALL_DATA} ${WRKDIR}/menu/default ${LOCALBASE}/share/sapphire/menu/
 
 .include <bsd.port.mk>

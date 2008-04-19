@@ -7,7 +7,7 @@
 
 PORTNAME=	pinetreefonts
 PORTVERSION=	1.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/tar/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
@@ -18,10 +18,10 @@ DISTNAME=	pinetree.precomposed-${PORTVERSION}-bdf
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Hangul fonts for X11(pinetree, KSC5601-1987-0 encoding)
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
-
-USE_X_PREFIX=	yes
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+RUN_DEPENDENS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 WRKSRC=		${WRKDIR}/pinetree.precomposed/bdf
 

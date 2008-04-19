@@ -15,7 +15,7 @@ MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Open Source Basic Security Module (BSM) Audit Implementation
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		auditreduce.1		\
 		praudit.1

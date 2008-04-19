@@ -9,8 +9,8 @@
 -LIBDIR  = -L/usr/X11R6/lib
 -DESTDIR = /usr/X11R6
 +CFLAGS  += -g -Wall
-+INCDIR  = -I${X11BASE}/include/X11 -I${X11BASE}/include
-+LIBDIR  = -L${X11BASE}/lib
++INCDIR  = -I${LOCALBASE}/include/X11 -I${LOCALBASE}/include
++LIBDIR  = -L${LOCALBASE}/lib
 +DESTDIR = $(PREFIX)
  
  # for linux

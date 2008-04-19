@@ -7,15 +7,16 @@
 
 PORTNAME=	xpad
 PORTVERSION=	2.14
+PORTREVISION=	1
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	amyfoub@gmail.com
 COMMENT=	A virtual note-pad system for your X11 desktop
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_XORG=	x11 sm
 USE_GNOME=	pkgconfig gtk20 gnomehier intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

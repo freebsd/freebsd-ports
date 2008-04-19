@@ -7,7 +7,7 @@
 
 PORTNAME=	countdown
 PORTVERSION=	0.8
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -19,7 +19,7 @@ COMMENT=	Countdown the remaining time until a configurable date
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_PYTHON=	yes
 
 NAME=		Countdown

@@ -19,12 +19,12 @@ COMMENT=	Fast, stable, compatible, and secure Quake II client
 
 USE_BZIP2=	yes
 USE_SDL=	sdl
-USE_GL=		yes
+USE_GL=		glut
 USE_DOS2UNIX=	src/vanctf/g_local.h
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
-		OPENGL_CFLAGS="-I${X11BASE}/include" OPENGL_LIBS="-L${X11BASE}/lib"
+		OPENGL_CFLAGS="-I${LOCALBASE}/include" OPENGL_LIBS="-L${LOCALBASE}/lib"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LIBDIR=		${PREFIX}/lib/${PORTNAME}

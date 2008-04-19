@@ -21,7 +21,7 @@ MAN1=		xballoon.1
 PLIST_FILES=	bin/xballoon
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${X11BASE}|g ; \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${LOCALBASE}|g ; \
 		 s|gcc |$${CC} |g ; \
 		 s|-O |$${CFLAGS} |g' ${WRKSRC}/Makefile
 

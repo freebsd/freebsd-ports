@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Spreadsheet Program + Japanese patches
 
 # xmkmf is for configure script, not for USE_IMAKE.
-BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 USE_BISON=	build
 
@@ -29,10 +29,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/Xbae/Matrix.h:${PORTSDIR}/x11-toolkits/xbae
 CONFIGURE_ARGS+=--without-motif
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 INFO=		oleo
 
 .include <bsd.port.pre.mk>

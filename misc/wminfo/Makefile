@@ -21,7 +21,7 @@ USE_XORG=	xpm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(LIBS)$$|& $$(OBJS)|g' \
-		-e 's|/usr/X11R6|$$(X11BASE)|g' \
+		-e 's|/usr/X11R6|$$(LOCALBASE)|g' \
 		-e 's|/share/include|/include|g' \
 		${WRKSRC}/Makefile
 

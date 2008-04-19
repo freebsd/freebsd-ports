@@ -7,7 +7,7 @@
 
 PORTNAME=	IglooFTP
 PORTVERSION=	0.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://littleigloo.org/pub/iglooftp/
@@ -19,6 +19,7 @@ COMMENT=	Easy to use FTP client for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
+USE_XORG=	x11 xmu
 USE_GNOME=	gtk12
 ALL_TARGET=	# empty
 MAKE_ARGS=	CC=${CC} C_FLAGS="${CFLAGS}" DESTDIR=${PREFIX}

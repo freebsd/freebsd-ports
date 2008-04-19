@@ -32,7 +32,7 @@ USE_GNOME=	gtk20
 CONFIGURE_ARGS=--enable-gtk2
 .endif
 USE_XORG=	x11
-CONFIGURE_ARGS+=--with-gtk-prefix=${X11BASE}
+CONFIGURE_ARGS+=--with-gtk-prefix=${LOCALBASE}
 .else
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS=--without-gtk --with-gtk-prefix=/nonexistant

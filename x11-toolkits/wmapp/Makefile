@@ -17,7 +17,7 @@ COMMENT=	A DockApp Graphics Library
 
 USE_XORG=	x11 xpm
 USE_GMAKE=	yes
-CFLAGS+=	-I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 ALL_TARGET=	# empty
 PLIST_FILES=	lib/libwmapp.a
 

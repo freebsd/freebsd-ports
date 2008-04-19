@@ -22,7 +22,7 @@ MAN1=		blast.1
 PLIST_FILES=	bin/blast
 
 do-build:
-	${CC} ${CFLAGS} ${WRKSRC}/blast.c -I${X11BASE}/include -L${X11BASE}/lib -lX11 -lXext -o ${WRKSRC}/blast
+	${CC} ${CFLAGS} ${WRKSRC}/blast.c -I${LOCALBASE}/include -L${LOCALBASE}/lib -lX11 -lXext -o ${WRKSRC}/blast
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/blast ${PREFIX}/bin/blast

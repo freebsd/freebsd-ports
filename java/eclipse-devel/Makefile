@@ -26,8 +26,7 @@ ECLIPSE=	${PORTNAME}
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
 USE_ZIP=	yes
-USE_GCC=	3.4+
-USE_GL=		yes
+USE_GL=		glu
 
 .if !defined(WITHOUT_MOZILLA)
 USE_GECKO=	xulrunner firefox mozilla seamonkey
@@ -127,7 +126,7 @@ do-install:
 	@${SED} \
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
 	  -e "s+%%PREFIX%%+${PREFIX}+g" \
-	  -e "s+%%X11BASE%%+${X11BASE}+g" \
+	  -e "s+%%LOCALBASE%%+${LOCALBASE}+g" \
 	  -e "s+%%LOCALBASE%%+${LOCALBASE}+g" \
 	  -e "s+%%BROWSER%%+${BROWSER}+g" \
 	  -e "s,%%JAVA_VERSION%%,${JAVA_VERSION},g" \

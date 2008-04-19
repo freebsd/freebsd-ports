@@ -7,7 +7,7 @@
 
 PORTNAME=	ical
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese deskutils tk
 MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/shellutil/ \
 		ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/ \
@@ -30,6 +30,7 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 MASTERDIR=	${.CURDIR}/../../deskutils/ical
 MD5_FILE=	${.CURDIR}/distinfo
 
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclconfig=${PREFIX}/lib/tcl8.0jp \
 		--with-tclhdir=${PREFIX}/include/tcl8.0jp \

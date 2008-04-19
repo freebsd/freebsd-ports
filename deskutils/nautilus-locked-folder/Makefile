@@ -20,8 +20,8 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GNOME=	nautilus2
 PKGCONFIGS=	gtk+-2.0 libglade-2.0 libnautilus-extension libgnomeui-2.0
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include `pkg-config --cflags ${PKGCONFIGS}`" \
-		LDFLASG="-L${LOCALBASE}/lib -L${X11BASE}/lib `pkg-config --libs ${PKGCONFIGS}`" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags ${PKGCONFIGS}`" \
+		LDFLASG="-L${LOCALBASE}/lib `pkg-config --libs ${PKGCONFIGS}`" \
 		LIBS="-lssl"
 PLIST_FILES=	lib/nautilus/extensions-2.0/libnautilus-locked-folder.a \
 		lib/nautilus/extensions-2.0/libnautilus-locked-folder.la \

@@ -7,10 +7,9 @@
 
 PORTNAME=	mjpegtools
 DISTVERSION=	1.9.0rc3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mjpeg
+MASTER_SITES=	SF/mjpeg
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
@@ -54,7 +53,7 @@ PLIST_SUB+=	PNG:="@comment "
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 CONFIGURE_ARGS+=--with-x
 .else
 CONFIGURE_ARGS+=--without-x

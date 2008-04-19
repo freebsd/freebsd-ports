@@ -22,13 +22,13 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gtk-prefix="${X11BASE}" \
-		--x-includes="${X11BASE}/include" \
-		--x-libraries="${X11BASE}/lib"
+CONFIGURE_ARGS=	--with-gtk-prefix="${LOCALBASE}" \
+		--x-includes="${LOCALBASE}/include" \
+		--x-libraries="${LOCALBASE}/lib"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${X11BASE}/libdata/pkgconfig
-INSTALLS_SHLIB=	yes
+		PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${LOCALBASE}/libdata/pkgconfig
+USE_LDCONFIG=	yes
 
 MAN1=	dubdv.1 dvconnect.1 encodedv.1
 
@@ -67,7 +67,7 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|(pkgconfigdir =).+(/pkgconfig)|\1 ${PREFIX}/libdata\2|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -E -e 's|(-lXv)|\1 -lXext -L${X11BASE}/lib|; \
+	@${REINPLACE_CMD} -E -e 's|(-lXv)|\1 -lXext -L${LOCALBASE}/lib|; \
 		/objformat=/s|=.*|=elf|; \
 		s@(PKG_CONFIG --(cflags|libs) )"\$$REQUIRES"@\1 gtk@' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

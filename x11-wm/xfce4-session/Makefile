@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-session
 PORTVERSION=	4.4.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libgui libmcs libutil mcsmanager
+USE_XORG=	x11 sm ice
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1
 

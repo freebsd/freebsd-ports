@@ -24,7 +24,7 @@ CPP = cpp
 
 # X library
 
-XLIB = -L${X11BASE}/lib -lX11
+XLIB = -L${LOCALBASE}/lib -lX11
 XLIBCFLAGS =
 PICFLAGS = -fpic -DPIC
 

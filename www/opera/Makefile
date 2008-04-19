@@ -49,7 +49,7 @@ NO_BUILD=	yes
 OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on \
 		SHARED	"Use a shared Qt library (instead of static)"	on
 
-.if exists(${X11BASE}/lib/libqt-mt.prl)
+.if exists(${LOCALBASE}/lib/libqt-mt.prl)
 QT_PRESENT=	on
 .else
 QT_PRESENT=	off
@@ -106,7 +106,7 @@ PLIST_SUB+=	KDE="@comment "
 post-patch:
 	@${CP} ${WRKSRC}/search.ini ${WRKSRC}/locale/en
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
+		s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 			${WRKSRC}/install.sh ${WRKSRC}/ini/pluginpath.ini \
 			${WRKSRC}/config/opera6rc
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/install.sh

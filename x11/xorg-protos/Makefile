@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-protos
 PORTVERSION=	7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -15,8 +15,6 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org protos meta-port
-
-USE_X_PREFIX=	yes
 
 BUILD_DEPENDS=	${PREFIX}/include/X11/extensions/bigreqstr.h:${PORTSDIR}/x11/bigreqsproto \
 		${PREFIX}/include/X11/extensions/composite.h:${PORTSDIR}/x11/compositeproto \

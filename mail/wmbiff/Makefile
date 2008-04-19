@@ -9,16 +9,14 @@ PORTNAME=	wmbiff
 PORTVERSION=	0.4.27
 PORTREVISION=	7
 CATEGORIES=	mail windowmaker afterstep
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xbiff-like Window Maker dock app
 
 OPTIONS=	GNUTLS "Support for SSL" off
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

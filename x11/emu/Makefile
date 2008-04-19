@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator for the X Window System
 
-BUILD_DEPENDS=	xrdb:${X_CLIENTS_PORT}
-RUN_DEPENDS=	xrdb:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
+RUN_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 
 USE_IMAKE=	yes
 USE_DISPLAY=	yes

@@ -8,7 +8,7 @@
  #include <sys/wait.h>
  
 -cvar_t mp3_dir = {"mp3_xmms_dir", "/usr/local/bin"};
-+cvar_t mp3_dir = {"mp3_xmms_dir", X11BASE "/bin"};
++cvar_t mp3_dir = {"mp3_xmms_dir", LOCALBASE "/bin"};
  cvar_t mp3_xmms_session = {"mp3_xmms_session", "0"};
  
  #endif

@@ -19,16 +19,16 @@ OPTIONS+=	THREADS "With threading support" off
 
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4
-USE_GL=		yes
+USE_GL=		gl
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libltdl:15
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=--enable-ltdl-install=no
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		GL_LIBS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib" \
+		GL_LIBS="-L${LOCALBASE}/lib"
 
 MAN1=	gldb.1
 MAN3=	bugle.3
@@ -70,6 +70,6 @@ BROKEN=		Fails to link
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/gentokens/find_header.perl
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/gentokens/find_header.perl
 
 .include <bsd.port.post.mk>

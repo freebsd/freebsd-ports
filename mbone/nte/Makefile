@@ -7,7 +7,7 @@
 
 PORTNAME=	nte
 PORTVERSION=	1.5a29
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mbone tk
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/nte/1.5a29/
 
@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/nte
 
 PLIST_FILES=	bin/nte
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 
 MAKE_ENV=	LOCALBASE="${LOCALBASE}"
 

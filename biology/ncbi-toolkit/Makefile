@@ -53,7 +53,7 @@ MLINKS=	blast.1 bl2seq.1 blast.1 blastall.1 blast.1 blastcl3.1 \
 	blast.1 seedtop.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/make/makedis.csh \
 		${WRKSRC}/platform/freebsd.ncbi.mk
 

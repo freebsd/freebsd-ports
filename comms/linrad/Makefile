@@ -43,7 +43,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}/|' \
 		${WRKSRC}/help.c
 .for f in ${X11_PATCHFILES}
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/${f}
 .endfor
 
 do-install:

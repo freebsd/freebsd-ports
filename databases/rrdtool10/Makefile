@@ -21,7 +21,7 @@ CONFLICTS=	rrdtool-1.2*
 LATEST_LINK=	rrdtool10
 
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-local-zlib \
 		--program-transform-name=''
 CONFIGURE_ENV=	PERL=${PERL} PERL_MAKE_OPTIONS="PREFIX=${PREFIX}"

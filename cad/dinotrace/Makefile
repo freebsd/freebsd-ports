@@ -7,7 +7,7 @@
 
 PORTNAME=	dinotrace
 DISTVERSION=	9.3b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.com/ftp/
 EXTRACT_SUFX=	.tgz
@@ -19,7 +19,7 @@ USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_MOTIF=	yes
 USE_PERL5_BUILD=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 sm ice xmu xt
 USE_GMAKE=	yes
 
 INFO=		dinotrace

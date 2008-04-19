@@ -9,7 +9,7 @@ PORTNAME=	ember
 PORTVERSION=	0.5.1
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://amber.worldforge.org/ember/releases/stable/
 MASTER_SITE_SUBDIR=worldforge
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
@@ -49,9 +49,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '\
 		s|sdl-config|${SDL_CONFIG}|g; \
 		s|"-lIL|"-L${LOCALBASE}/lib -lIL|g; \
-		s|-lGL|-L${X11BASE}/lib -lGL|g' \
+		s|-lGL|-L${LOCALBASE}/lib -lGL|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|^CFLAGS =.*|& $${SDL_CFLAGS} -I${X11BASE}/include|g' \
+	@${REINPLACE_CMD} -e 's|^CFLAGS =.*|& $${SDL_CFLAGS} -I${LOCALBASE}/include|g' \
 		${WRKSRC}/src/framework/Makefile.in
 	@${REINPLACE_CMD} -e 's|<SDL/|<|g' \
 		${WRKSRC}/src/components/ogre/OgreSetup.cpp \

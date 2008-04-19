@@ -24,7 +24,7 @@ FFTW3_SUFX=
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_PERL5_BUILD=yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-shared --enable-threads
 CONFIGURE_ENV=	CPPLAGS="${PTHREAD_CFLAGS}" \

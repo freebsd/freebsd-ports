@@ -33,7 +33,7 @@
  
  #ADFLAGS = -I/usr/openwin/share/include	# ATTENTION: OpenWindows users...
 -ADFLAGS = -I/usr/X11R6/include
-+ADFLAGS = -I${X11BASE}/include
++ADFLAGS = -I${LOCALBASE}/include
  
  # Libraries that move about or may require special specification.
  #
@@ -42,7 +42,7 @@
  # to specify its path fully in XLIB.
  
 -XLIB = -L/usr/X11R6/lib -lX11
-+XLIB = -L${X11BASE}/lib -lX11
++XLIB = -L${LOCALBASE}/lib -lX11
  #XLIB = -L/usr/X11R6/lib -lX11	# ATTENTION: OpenWindows users...
  #F77LIB = -lF77 -lI77 -lU77
  F77LIB = -lf2c
@@ -51,7 +51,7 @@
  
  
 -XLIBH = /usr/X11R6/include/X11/Xlib.h /usr/X11R6/include/X11/Xutil.h
-+XLIBH = ${X11BASE}/include/X11/Xlib.h ${X11BASE}/include/X11/Xutil.h
++XLIBH = ${LOCALBASE}/include/X11/Xlib.h ${LOCALBASE}/include/X11/Xutil.h
  STRUCT = hfiles/struct.h hfiles/buffer.h hfiles/color.h hfiles/control.h \
  	 hfiles/coord.h hfiles/cursor.h hfiles/image.h hfiles/window.h
  WORKS = $(XLIBH) $(STRUCT) hfiles/constant.h hfiles/extern.h $(WCSH)
@@ -61,8 +61,8 @@
  		defs/desktop.def defs/cursor.def
 -mainkey.o	: $(WORKS) /usr/include/X11/keysym.h \
 -		/usr/include/X11/keysymdef.h
-+mainkey.o	: $(WORKS) ${X11BASE}/include/X11/keysym.h \
-+		${X11BASE}/include/X11/keysymdef.h
++mainkey.o	: $(WORKS) ${LOCALBASE}/include/X11/keysym.h \
++		${LOCALBASE}/include/X11/keysymdef.h
  #mainkey.o	: $(WORKS)	# for OpenWindows
  mainslct.o	: $(WORKS)
  mainutil.o	: $(XLIBH) $(STRUCT) hfiles/extern.h

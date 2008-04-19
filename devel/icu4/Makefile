@@ -20,7 +20,7 @@ COMMENT=	International Components for Unicode (from IBM)
 OPTIONS=	THREADS "Build thread-safe version of the library" on
 CONFLICTS=	icu2-[0-9]*
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 
 WRKSRC=			${WRKDIR}/icu/source
 

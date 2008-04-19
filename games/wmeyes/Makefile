@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The world's most useless WindowMaker dock app
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 NO_INSTALL_MANPAGES=	yes
 
 PORTDOCS=	README

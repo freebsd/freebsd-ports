@@ -18,7 +18,7 @@ COMMENT=	A nifty set of desktop apps, including floating buttons
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 REINPLACE_ARGS=	-i ""
 
 post-patch:

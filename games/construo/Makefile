@@ -20,8 +20,8 @@ USE_GMAKE=	yes
 USE_XORG=	sm ice x11 xext xxf86vm
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${DATADIR}
 
 OPTIONS=	GLUT "Use glut" on
@@ -29,7 +29,7 @@ OPTIONS=	GLUT "Use glut" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GLUT)
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+USE_GL=		glut
 PLIST_SUB+=	GLUTBIN:=""
 .else
 PLIST_SUB+=	GLUTBIN:="@comment "

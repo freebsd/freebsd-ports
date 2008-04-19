@@ -20,7 +20,7 @@ COMMENT=		A graphical FTP client for KDE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.a.1/alpha1b/}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes

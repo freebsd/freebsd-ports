@@ -61,7 +61,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 .endif
 
 .if defined(WITH_X11)
-USE_XLIB=		yes
+USE_XORG=		x11
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x

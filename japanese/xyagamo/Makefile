@@ -7,15 +7,14 @@
 
 PORTNAME=	xyagamo
 PORTVERSION=	0.1b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese games
 MASTER_SITES=	http://www.dokidoki.ne.jp/home2/shinmaru/mahjong/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese version of a four player mahjong game
 
-USE_X_PREFIX=	YES
-USE_XPM=	yes
+USE_XORG=	xpm
 
 MAN6=		xyagamo.6
 MANLANG=	ja

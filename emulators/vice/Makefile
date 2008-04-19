@@ -28,7 +28,6 @@ RESTRICTED=	"ROMs are copyrighted by Commodore Business Machines"
 
 USE_XORG=	xpm xext xv x11 xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes xv
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 

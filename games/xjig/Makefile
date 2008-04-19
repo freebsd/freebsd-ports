@@ -7,7 +7,7 @@
 
 PORTNAME=	xjig
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jigsaw puzzle game for X11
 
-USE_XLIB=	yes
+USE_XORG=	x11 xproto xext
 MAKEFILE=	Makefile.Linux
 MAN1=		xjig.1
 PLIST_FILES=	bin/xjig

@@ -29,9 +29,9 @@ CONFIGURE_ENV+=	PYTHON_VERSION=${PYTHON_VERSION:S/python//} LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--with-python-libdir=${PYTHON_LIBDIR} \
 		--with-python-incdir=${PYTHON_INCLUDEDIR} \
-		--with-fontconfig-incdir=${X11BASE}/include/fontconfig \
-		--with-fontconfig-libdir=${X11BASE}/lib
-INSTALLS_SHLIB=	yes
+		--with-fontconfig-incdir=${LOCALBASE}/include/fontconfig \
+		--with-fontconfig-libdir=${LOCALBASE}/lib
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	${PREFIX}/lib/hk_classes/
 
 INSTALLS_EGGINFO=	yes

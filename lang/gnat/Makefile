@@ -113,7 +113,7 @@ CONFIGURE_ENV=	${COMPILE_DATA} PATH=${have_boot}
 # Shared library handling
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
 LIBRARY_VERSION=	2006
 PLIST_SUB+=		SHAREDLIB=""

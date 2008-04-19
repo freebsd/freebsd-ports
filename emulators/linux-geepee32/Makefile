@@ -18,7 +18,7 @@ COMMENT=	The only GP32 emulator for i386
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 
 ONLY_FOR_ARCHS=	i386
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_LINUX=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

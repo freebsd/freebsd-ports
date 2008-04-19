@@ -28,7 +28,7 @@ TETGEN_SRC=		predicates.cxx tetgen.cxx tetgen.h
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-fltk-prefix=${X11BASE} \
+CONFIGURE_ARGS=	--with-fltk-prefix=${LOCALBASE} \
 		--with-gsl-prefix=${LOCALBASE} \
 		--with-jpeg-prefix=${LOCALBASE} \
 		--with-png-prefix=${LOCALBASE}

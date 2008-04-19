@@ -17,7 +17,7 @@ COMMENT=	Ogg bitstream library
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""

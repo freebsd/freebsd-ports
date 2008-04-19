@@ -7,7 +7,7 @@
 
 PORTNAME=	wmbattery
 PORTVERSION=	1.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.kitenet.net/programs/wmbattery/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -19,9 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib \
-		--x-includes=${X11BASE}/include
-
 MAN1=		wmbattery.1
 
 post-install:

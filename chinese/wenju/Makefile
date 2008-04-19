@@ -7,10 +7,9 @@
 
 PORTNAME=	wenju
 PORTVERSION=	1.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	chinese
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	wenju
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of writing tools in Chinese
@@ -18,7 +17,6 @@ COMMENT=	Collection of writing tools in Chinese
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

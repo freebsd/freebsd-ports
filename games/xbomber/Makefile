@@ -7,7 +7,7 @@
 
 PORTNAME=	xbomber
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/xbomber/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -16,8 +16,8 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A game based on "Super Bomberman" for the Super Nintendo
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_XORG=	x11
 
-USE_X_PREFIX=	yes
 MAKEFILE=	makefile
 
 do-install:

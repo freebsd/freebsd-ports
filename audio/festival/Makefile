@@ -50,7 +50,7 @@ post-build test:
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKDIR}/speech_tools test
 
 post-patch::
-	${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g'	\
+	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g'	\
 		${WRKSRC}/*/config/systems/default.mak
 
 .include <bsd.port.pre.mk>

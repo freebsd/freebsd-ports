@@ -7,7 +7,7 @@
 
 PORTNAME=	ogle
 PORTVERSION=	0.9.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 PKGNAMESUFFIX=	-gui
@@ -22,13 +22,12 @@ LIB_DEPENDS=	glade-2.0:${PORTSDIR}/devel/libglade2 \
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomehack \
 		gnomehier \
 		gnomeprefix \
 		gtk20
 WANT_GNOME=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \

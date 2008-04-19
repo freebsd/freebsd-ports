@@ -5,8 +5,8 @@
  ifeq ($(OS),unix)
  	RM = rm
 -	LFLAG1 = -L/usr/lib -L/usr/X11R6/lib
-+	IFLAG1 = -I$(X11BASE)/include
-+	LFLAG1 = -L$(X11BASE)/lib
++	IFLAG1 = -I$(LOCALBASE)/include
++	LFLAG1 = -L$(LOCALBASE)/lib
  	# Where the GLUI library is:
 -	LFLAG2 = -L/home/thomas/graphics/OpenGL/glui_v2_2/lib
 +	LFLAG2 = 

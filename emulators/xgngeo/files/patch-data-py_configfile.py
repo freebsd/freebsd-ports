@@ -5,7 +5,7 @@
  			"z80clock": 0,
  			#Other thing section.
 -			"libglpath": "/usr/lib/libGL.so",
-+			"libglpath": "%%X11BASE%%/lib/libGL.so",
++			"libglpath": "%%LOCALBASE%%/lib/libGL.so",
  			"sleepidle": "true",
  			"bench": "false",
  			},{ #XGngeo's default.

@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/fluxbox-${PORTNAME}
 
 FONTS=	anorexia aqui cure cursor drift edges gelly glisp-bold \
 	glisp lime mints-mild mints-strong nu snap
-FONTDIR=	${X11BASE}/lib/X11/fonts/${PORTNAME}/
+FONTDIR=	${LOCALBASE}/lib/X11/fonts/${PORTNAME}/
 FILES=	${FONTS:S,$,.pcf.gz,} ${FILESDIR}/fonts.dir
 
 .include <bsd.port.pre.mk>
@@ -33,7 +33,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${FILES} ${FONTDIR}
 
 post-install:
-	@${SED} 's|$${X11BASE}|${X11BASE}|g' \
+	@${SED} 's|$${LOCALBASE}|${LOCALBASE}|g' \
 		${PKGDIR}/pkg-message >${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 

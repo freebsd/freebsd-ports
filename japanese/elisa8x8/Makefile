@@ -7,7 +7,7 @@
 
 PORTNAME=	elisa8x8
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.bsdbbq.org/~toshi/distfiles/
 DISTNAME=	elisat10
@@ -15,9 +15,9 @@ DISTNAME=	elisat10
 MAINTAINER=	toshi@tea.forus.or.jp
 COMMENT=	X11 8-dot kanji font 'elisa font'
 
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
-
-USE_X_PREFIX=	yes
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 .include <bsd.port.pre.mk>
 

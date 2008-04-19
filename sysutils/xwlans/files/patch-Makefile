@@ -18,12 +18,12 @@
   clean::
   	rm *.o
 --- 1,14 ----
-! CFLAGS += -L${X11BASE}/lib -I${X11BASE}/include
+! CFLAGS += -L${LOCALBASE}/lib -I${LOCALBASE}/include
   
   OBJS	= main.o graphics.o sys.o osdep/freebsd.o
   
   all::	${OBJS}
-! 	${CC} -o xwlans *.o -lX11 -L${X11BASE}/lib -I${X11BASE}/include 
+! 	${CC} -o xwlans *.o -lX11 -L${LOCALBASE}/lib -I${LOCALBASE}/include 
   
   install:: xwlans 
   	strip xwlans

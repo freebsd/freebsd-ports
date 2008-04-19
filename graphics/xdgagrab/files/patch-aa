@@ -5,5 +5,5 @@
  
  xdgagrab : xdgagrab.c
 -	gcc -O2 -m486 -Wall -I/usr/X11R6/include -o xdgagrab xdgagrab.c -L/usr/X11R6/lib -lX11 -lXxf86dga -lXext
-+	${CC} ${CFLAGS} -I${X11BASE}/include -o xdgagrab xdgagrab.c -L${X11BASE}/lib -lX11 -lXxf86dga -lXext
++	${CC} ${CFLAGS} -I${LOCALBASE}/include -o xdgagrab xdgagrab.c -L${LOCALBASE}/lib -lX11 -lXxf86dga -lXext
  

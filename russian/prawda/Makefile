@@ -17,7 +17,7 @@ COMMENT=	English-Russian translator
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 USE_XORG=	x11 xaw xmu xt sm
-CXXFLAGS+=	-I${X11BASE}/include -L${X11BASE}/lib
+CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|ulong|unsigned long|g;;s|malloc.h|stdlib.h|g" ${WRKSRC}/src/face/video_x.cpp

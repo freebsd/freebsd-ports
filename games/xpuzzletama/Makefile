@@ -18,7 +18,7 @@ COMMENT=	Puzzle tama, a tetris like game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 NO_INSTALL_MANPAGES=	yes
 
 PLIST_FILES=	bin/xpuzzletama lib/X11/xpuzzletama/tama_score

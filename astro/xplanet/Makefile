@@ -7,20 +7,19 @@
 
 PORTNAME=	xplanet
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro geography
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Draw pictures of the earth textured by an image
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+USE_XORG=	xt xscrnsaver
 USE_GNOME=	#
 CONFIGURE_ARGS=	--with-map-extension=jpg
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lm"
 
 OPTIONS=	FREETYPE "Enable Freetype support" on \
 		PANGO "Enable PANGO support" on \

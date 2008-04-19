@@ -16,12 +16,9 @@ DISTNAME=	${PORTNAME}-KXL-${PORTVERSION}
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	2D length scroll shooting game
 
-BUILD_DEPENDS=	${X11BASE}/include/KXL.h:${PORTSDIR}/devel/kxl
-RUN_DEPENDS=	${X11BASE}/lib/libKXL-1.1.7.so:${PORTSDIR}/devel/kxl
+BUILD_DEPENDS=	${LOCALBASE}/include/KXL.h:${PORTSDIR}/devel/kxl
+RUN_DEPENDS=	${LOCALBASE}/lib/libKXL-1.1.7.so:${PORTSDIR}/devel/kxl
 
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
 
 .include <bsd.port.mk>

@@ -7,9 +7,9 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.50
+PORTREVISION=	1
 CATEGORIES=	www multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mplayerplug-in
+MASTER_SITES=	SF/mplayerplug-in
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Mozilla plugin for the MPlayer media player
@@ -29,8 +29,9 @@ PLUGINSFILES=	mplayerplug-in.so mplayerplug-in.xpt mplayerplug-in-wmp.so \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gmp
 USE_GNOME=	gnometarget
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -DBSD" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DBSD" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+USE_XORG=	x11 xpm xt
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"

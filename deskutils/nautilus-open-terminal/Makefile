@@ -8,6 +8,7 @@
 
 PORTNAME=	nautilus-open-terminal
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -20,7 +21,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	nautilus2 gnomeprefix intlhack gnomehack
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 GCONF_SCHEMAS=	nautilus-open-terminal.schemas

@@ -90,7 +90,7 @@ LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 BLAS_LIB=	-lblas
 .endif
 
-.if exists(${X11BASE}/bin/acroread)
+.if exists(${LOCALBASE}/bin/acroread)
 RUN_DEPENDS+=	acroread:${PORTSDIR}/print/acroreadwrapper
 .else
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf

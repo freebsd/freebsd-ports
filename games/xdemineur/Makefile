@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another minesweeper game for the X Window System
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		xdemineur.1
 PLIST_FILES=	bin/xdemineur
 

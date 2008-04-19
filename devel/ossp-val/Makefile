@@ -18,7 +18,7 @@ COMMENT=	A flexible name to value mapping library for C variables
 LIB_DEPENDS=	ex.10:${PORTSDIR}/devel/ossp-ex
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-ex=${LOCALBASE}

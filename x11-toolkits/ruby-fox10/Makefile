@@ -9,8 +9,7 @@ PORTNAME=	fox
 PORTVERSION=	1.0.29
 PORTREVISION=	5
 CATEGORIES=	x11-toolkits ruby
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fxruby
+MASTER_SITES=	SF/fxruby
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	FXRuby-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -39,7 +38,7 @@ DOCS_EN=	ANNOUNCE	ChangeLog	README	\
 post-patch:
 	${RUBY} -i -p \
 		-e 'gsub %r:/usr/local\b:, "${LOCALBASE}"' \
-		-e 'gsub %r:/usr/X11R6\b:, "${X11BASE}"' \
+		-e 'gsub %r:/usr/X11R6\b:, "${LOCALBASE}"' \
 		${WRKSRC}/ext/fox/extconf.rb
 
 post-install:

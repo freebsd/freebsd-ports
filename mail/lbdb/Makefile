@@ -28,7 +28,7 @@ WITH_GPG=	yes
 .if exists (${LOCALBASE}/bin/abook)
 WITH_ABOOK=	yes
 .endif
-.if exists (${X11BASE}/bin/evolution)
+.if exists (${LOCALBASE}/bin/evolution)
 WITH_EVOLUTION=	yes
 .endif
 .if exists (/usr/bin/getent)

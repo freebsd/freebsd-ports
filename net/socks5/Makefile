@@ -30,7 +30,7 @@ CONFLICTS=	dante-[0-9]*
 #		--with-passwd
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHAVE_VSNPRINTF
 CONFIGURE_ARGS=	--with-libconffile=${PREFIX}/etc/libsocks5.conf \

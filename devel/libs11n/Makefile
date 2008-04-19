@@ -19,7 +19,7 @@ COMMENT=	A C++ library for easily serializing a wide variety of objects
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_ZIP=	yes
 USE_GCC=	3.2+
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-extract:
 	@${CP} ${PATCHDIR}/Makefile.bsd ${WRKSRC}/Makefile

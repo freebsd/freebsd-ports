@@ -26,7 +26,7 @@ CONFIGURE_ARGS+=	--enable-xdmauth --datadir=${PREFIX}/lib
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_XCB)
-BUILD_DEPENDS+=	${X11BASE}/libdata/pkgconfig/xcb-xlib.pc:${PORTSDIR}/x11/libxcb
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xcb-xlib.pc:${PORTSDIR}/x11/libxcb
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=	--with-xcb=yes
 PLIST_SUB+=	XCB=""

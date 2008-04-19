@@ -7,10 +7,9 @@
 
 PORTNAME=	tleenx2
 PORTVERSION=	20040214
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	polish net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tleenx
+MASTER_SITES=	SF/leenx
 DISTNAME=	TleenX2-${PORTVERSION}
 
 MAINTAINER=	mkorzen@gmail.com
@@ -20,6 +19,7 @@ LIB_DEPENDS=	tlen.1:${PORTSDIR}/polish/libtlen
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+USE_XORG=	xscrnsaver
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 WRKSRC=		${WRKDIR}/TleenX2-${PORTVERSION}
 
@@ -27,7 +27,7 @@ MAN1=		tleenx2.1
 PORTDOCS=	README gg.txt sms.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

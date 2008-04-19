@@ -6,10 +6,10 @@
 -CXXFLAGS=$(CXXOPTFLAGS) -I../enet/include `sdl-config --cflags`
 +CXX?=g++
 +CXXOPTFLAGS=-Wall
-+CXXFLAGS+=$(CXXOPTFLAGS) -I$(LOCALBASE)/include `$(SDL_CONFIG) --cflags` -I$(X11BASE)/include
++CXXFLAGS+=$(CXXOPTFLAGS) -I$(LOCALBASE)/include `$(SDL_CONFIG) --cflags`
  
 -CLIENT_LIBS=-L../enet -lenet `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU 
-+CLIENT_LIBS=-L$(LOCALBASE)/lib -lenet `$(SDL_CONFIG) --libs` -lSDL_image -lSDL_mixer -lz -L$(X11BASE)/lib -lGL -lGLU 
++CLIENT_LIBS=-L$(LOCALBASE)/lib -lenet `$(SDL_CONFIG) --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU 
  CLIENT_OBJS= \
  	client.o \
  	clientextras.o \

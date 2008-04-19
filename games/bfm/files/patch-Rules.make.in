@@ -42,7 +42,7 @@
  	@LUA_CFLAGS@ $(CCL) $(VERSION) $(COMP_CFLAGS) @SOUND_CFLAGS@ @PLATFORM@ \
 -	$(DATADIR) \
 -    -I/usr/local/include $(ARTSC)
-+	$(DATADIR) $(ARTSC) -I$(LOCALBASE)/include -I$(X11BASE)/include
++	$(DATADIR) $(ARTSC) -I$(LOCALBASE)/include
  
  CTAGSFLAGS=-i defptvS -a -f 
  

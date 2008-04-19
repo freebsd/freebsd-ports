@@ -7,7 +7,7 @@
 
 PORTNAME=	xvmahjongg
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.Z
@@ -18,7 +18,6 @@ COMMENT=	Mahjongg for XView with multicolored tiles
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 ALL_TARGET=	mahjongg.swap
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mahjongg2.1
 MAN6=		xvmahjongg.6
 

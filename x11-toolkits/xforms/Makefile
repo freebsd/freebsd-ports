@@ -32,18 +32,18 @@ PATCHFILES=	xforms-1.0-i18n_7.patch
 PATCH_DIST_STRIP=	-p1
 .endif
 
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GL=		gl
 USE_IMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		fdesign.1 fd2ps.1
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-O4||' ${WRKSRC}/Imakefile
-.if defined(X11BASE)
-.	if ${X11BASE} != "/usr/X11R6"
-	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+.if defined(LOCALBASE)
+.	if ${LOCALBASE} != "/usr/X11R6"
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/image/rgb_db.c
 .	endif
 .endif

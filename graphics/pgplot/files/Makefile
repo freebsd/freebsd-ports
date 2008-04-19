@@ -1,8 +1,8 @@
 # $FreeBSD$
 all:
-	make -f Makefile.flib X11BASE="${X11BASE}"
+	make -f Makefile.flib LOCALBASE="${LOCALBASE}"
 	make -f Makefile.clib
-	make -f Makefile.bin X11BASE="${X11BASE}"
+	make -f Makefile.bin LOCALBASE="${LOCALBASE}"
 	make -f Makefile.doc
 
 install:

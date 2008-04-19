@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Oct 28 10:55:08 2000
-+++ Makefile	Thu Mar 15 20:10:02 2007
+--- Makefile.orig	2000-10-28 10:55:08.000000000 +0200
++++ Makefile	2008-04-12 14:19:18.000000000 +0200
 @@ -8,13 +8,12 @@
  X11BASE?=	/usr/X11R6
  
@@ -15,12 +15,14 @@
  .endif
  
  SRCS=		tkXAccess.c
-@@ -25,7 +24,7 @@
+@@ -25,8 +24,8 @@
  PAXFILES=	${SRCS} ${TCL_SRCS} ${HDRS} ${OTHER}
  PAXNAME=	pib-1.1
  
 -CFLAGS+=	-I${PREFIX}/include/tcl8.2 -I${PREFIX}/include/tk8.2 \
+-		-I${X11BASE}/include \
 +CFLAGS+=	-I${PREFIX}/include/tcl8.4 -I${PREFIX}/include/tk8.4 \
- 		-I${X11BASE}/include \
++		-I${LOCALBASE}/include \
  		-DUSE_XACCESS -DHAVE_UNISTD_H=1 -DHAVE_LIMITS_H=1 \
  		-DSTDC_HEADERS=1 -DTK_FILE_COUNT=_r -DNEED_MATHERR=1 \
+ 		-DTK_LIBRARY=\"${PREFIX}/lib/tk8.2\"

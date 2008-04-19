@@ -7,7 +7,7 @@
 
 PORTNAME=	libsx
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	libraries
@@ -19,7 +19,7 @@ COMMENT=	Simple X11 library
 
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
-USE_XORG=	x11
+USE_XORG=	x11 xext xmu xt
 ALL_TARGET=	src freq
 
 do-install:

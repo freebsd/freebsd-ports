@@ -6,7 +6,7 @@
 
 PORTNAME=	mac
 PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	CENKES
 PKGNAMEPREFIX=	bmp-
@@ -18,7 +18,6 @@ COMMENT=	Monkey's Audio Codec non-win32 port
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 		mac.2:${PORTSDIR}/audio/mac
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"

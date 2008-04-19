@@ -7,7 +7,7 @@
 
 PORTNAME=	clip
 DISTVERSION=	1.1.16-1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
 		ftp://www.cis.by/pub/clip/pub/clip/	\
@@ -24,7 +24,7 @@ COMMENT=	xBase and Clipper language compatible compiler
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 		wget:${PORTSDIR}/ftp/wget			\
-		xmkmf:${X_IMAKE_PORT}
+		imake:${PORTSDIR}/devel/imake
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 		png.5:${PORTSDIR}/graphics/png			\
 		freetype.9:${PORTSDIR}/print/freetype2		\
@@ -38,6 +38,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${DISTVERSION}
 USE_GETTEXT=	yes
+USE_XORG+=	x11 xau ice xproto
 WANT_GNOME=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -99,8 +100,7 @@ USE_BISON=		build
 USE_GMAKE=		yes
 USE_ICONV=		yes
 REINPLACE_ARGS=		-i ""
-USE_XLIB=		yes
-USE_XPM=		yes
+USE_XORG+=		xpm xau ice xproto
 USE_GNOME=		gtk12 gtk20
 HAS_CONFIGURE=		yes
 CONFIGURE_WRKSRC=	${WRKSRC}/clip
@@ -146,7 +146,7 @@ pre-configure:
 	-e "s|#include.*<malloc.h>|#include <stdlib.h>|"			\
 	-e "s|#!/bin/sh|#!${LOCALBASE}/bin/bash|"				\
 	-e "s|/usr/local|${LOCALBASE}|g"					\
-	-e "s|/usr/X11R6|${X11BASE}|g"
+	-e "s|/usr/X11R6|${LOCALBASE}|g"
 	${REINPLACE_CMD} "s|-I/usr/include|-I${LOCALBASE}/include -L${LOCALBASE}/lib|"	\
 		${WRKSRC}/cliplibs/clip-xml/configure
 	${REINPLACE_CMD} -e "s|-I/usr/include|-I${LOCALBASE}/include|"		\

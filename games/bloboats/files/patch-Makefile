@@ -49,7 +49,7 @@
  ### Libs
  LIBS_DEFAULT = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU
 -LIBS_FREEBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -L/usr/X11R6/lib -lGL -lGLU
-+LIBS_FREEBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -L$(X11BASE)/lib -lGL -lGLU
++LIBS_FREEBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -L$(LOCALBASE)/lib -lGL -lGLU
  LIBS_NETBSD = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU -L/usr/pkg/lib
  LIBS_MACOSX = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -framework OpenGL
  LIBS_CROSS = `$(SDLCONFIG) --libs` -lSDL_image -lSDL_mixer -lSDL_net -lopengl32 -lglu32
@@ -67,7 +67,7 @@
  BINARY_ = $(BINARY_$(TARGET)_)
  CXXFLAGS_DEFAULT_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
 -CXXFLAGS_FREEBSD_ = -g `$(SDLCONFIG) --cflags` -I/usr/X11R6/include -o bin/$(BINARY_) -O2
-+CXXFLAGS_FREEBSD_ = `$(SDLCONFIG) --cflags` -I$(X11BASE)/include -o bin/$(BINARY_) -O2
++CXXFLAGS_FREEBSD_ = `$(SDLCONFIG) --cflags` -I$(LOCALBASE)/include -o bin/$(BINARY_) -O2
  CXXFLAGS_NETBSD = -g `$(SDLCONFIG) --cflags` -O2 -I/usr/pkg/include
  CXXFLAGS_MACOSX_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2
  CXXFLAGS_CROSS_ = -g `$(SDLCONFIG) --cflags` -o bin/$(BINARY_) -O2

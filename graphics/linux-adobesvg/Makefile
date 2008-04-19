@@ -16,7 +16,7 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	The Adobe SVG browser plugin (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_LINUX=	yes
 
 RESTRICTED=	"Redistribution prohibited"

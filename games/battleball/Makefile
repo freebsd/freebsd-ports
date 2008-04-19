@@ -19,10 +19,10 @@ USE_GL=		glu gl
 WRKSRC=		${WRKDIR}/battleball-2.1-src
 CFLAGS+=	-Wno-deprecated ${PTHREAD_CFLAGS}
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"	\
-		XLIBS="-L${X11BASE}/lib -lX11"		\
+		XLIBS="-L${LOCALBASE}/lib -lX11"		\
 		LIBS="-lm ${XLIBS} ${PTHREAD_LIBS}"	\
-		GLINCS="-I${X11BASE}/include"		\
-		GLLIBS="-lXi -lXmu -lXext -L${X11BASE}/lib -lGL"
+		GLINCS="-I${LOCALBASE}/include"		\
+		GLLIBS="-lXi -lXmu -lXext -L${LOCALBASE}/lib -lGL"
 
 PLIST_FILES=	bin/battleball
 .if !defined(NOPORTDOCS)

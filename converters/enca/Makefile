@@ -20,7 +20,7 @@ USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--without-librecode \
 		--with-libiconv=${LOCALBASE}

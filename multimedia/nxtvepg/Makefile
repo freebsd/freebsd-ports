@@ -9,8 +9,7 @@ PORTNAME=	nxtvepg
 PORTVERSION=	2.7.6
 PORTREVISION=	2
 CATEGORIES=	multimedia tcl tk
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Viewer for Nextview Electronic TV Programme Guide (needs bktr driver)
@@ -19,7 +18,7 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 NOT_FOR_ARCHS=	sparc64
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xmu
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} WRKSRC=${WRKSRC}
 
 MAN1=		nxtvepg.1
@@ -36,9 +35,9 @@ post-patch:
 .endif
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nxtvepg ${X11BASE}/bin
-	${INSTALL_DATA}    ${WRKSRC}/Nxtvepg.ad ${X11BASE}/lib/X11/app-defaults/Nxtvepg
-	${INSTALL_MAN}     ${WRKSRC}/nxtvepg.1 ${X11BASE}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/nxtvepg ${LOCALBASE}/bin
+	${INSTALL_DATA}    ${WRKSRC}/Nxtvepg.ad ${LOCALBASE}/lib/X11/app-defaults/Nxtvepg
+	${INSTALL_MAN}     ${WRKSRC}/nxtvepg.1 ${LOCALBASE}/man/man1
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

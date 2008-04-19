@@ -7,7 +7,7 @@
 
 PORTNAME=	snns
 PORTVERSION=	4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www-ra.informatik.uni-tuebingen.de/downloads/SNNS/ \
 		ftp://ftp.informatik.uni-stuttgart.de/pub/SNNS/
@@ -17,10 +17,9 @@ DISTNAME=	SNNSv${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully featured neural network simulator
 
-USE_XLIB=	yes
+USE_XORG=	x11 xaw xt
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}/snns --enable-global \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ARGS=	--prefix=${PREFIX}/snns --enable-global
 
 post-configure:
 	@(${SED} -e "s#%prefix%#${PREFIX}#g" < ${FILESDIR}/snns > ${WRKSRC}/snns)

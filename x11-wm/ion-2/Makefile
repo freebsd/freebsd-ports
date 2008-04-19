@@ -8,7 +8,7 @@
 
 PORTNAME=	ion-2
 PORTVERSION=	20040729
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
 
@@ -17,7 +17,7 @@ COMMENT=	A tiling tabbed window manager
 
 CONFLICTS=	ion-2002* ion-devel-* pwm-*
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext xinerama
 USE_AUTOTOOLS=	libtool:15 libltdl:15
 USE_LUA=	5.0
 USE_GMAKE=	yes

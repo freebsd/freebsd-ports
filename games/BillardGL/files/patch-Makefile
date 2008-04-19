@@ -14,11 +14,11 @@
 +CXX	?=	g++
 +CFLAGS	+=	-pipe -Wall -W -DNO_DEBUG -g
 +CXXFLAGS+=	-pipe -Wall -W -DNO_DEBUG -g 
-+INCPATH	=	-I${X11BASE}/include 
++INCPATH	=	-I${LOCALBASE}/include 
 +LINK	= 	${CXX}
  LFLAGS	=	
 -LIBS	=	-L/usr/X11R6/lib -lGL -lGLU -lglut -lXmu -lXext -lX11 -lm -lXi
-+LIBS	=	-L${X11BASE}/lib -lGL -lGLU -lglut -lXmu -lXext -lX11 -lm -lXi
++LIBS	=	-L${LOCALBASE}/lib -lGL -lGLU -lglut -lXmu -lXext -lX11 -lm -lXi
  
  ## -lqgl -lGLU
  

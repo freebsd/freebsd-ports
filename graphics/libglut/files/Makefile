@@ -4,8 +4,8 @@
 
 LIB=		glut
 SHLIB_MAJOR=	4
-CFLAGS+=	-I../../../include -I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib -lGLU -lX11 -lXext -lGL -lXmu -lXi
+CFLAGS+=	-I../../../include -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lGLU -lX11 -lXext -lGL -lXmu -lXi
 LIBDIR=		${PREFIX}/lib
 NO_PROFILE?=	yes
 

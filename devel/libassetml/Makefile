@@ -7,9 +7,9 @@
 
 PORTNAME=	libassetml
 PORTVERSION=	1.2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ofset
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,7 +19,6 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack lthack gnomeprefix gnometarget glib20 libxml2 pkgconfig
 USE_GETTEXT=	yes

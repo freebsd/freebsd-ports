@@ -18,7 +18,7 @@ COMMENT=	A full-featured Xt widget to display 2D data in a graph
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 MAKE_ENV=	EXTRA_DEFINES="-fPIC" LIBNAME=${LIBNAME}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 INCLUDES=	SciPlot.h SciPlotP.h SciPlotUtil.h
 LIBNAME=	lib${PORTNAME:L}	# Remove :L for libSciPlot

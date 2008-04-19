@@ -13,7 +13,7 @@
 -CFLAGS = -W -g -O -I../include
 +CFLAGS += -I../include
 +ifeq ("$(GRAPHICS)","X11_GRAPHICS")
-+CFLAGS += -DX11_GRAPHICS -I${X11BASE}/include
++CFLAGS += -DX11_GRAPHICS -I${LOCALBASE}/include
 +endif
 +ifeq ("$(GRAPHICS)","QT_GRAPHICS")
 +CFLAGS += -DQT_GRAPHICS
@@ -66,7 +66,7 @@
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
 -WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
-+WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -L${X11BASE}/lib
++WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -L${LOCALBASE}/lib
  # WINX11LIB = -lXaw -lXmu -lXt -lX11
  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0

@@ -7,16 +7,14 @@
 
 PORTNAME=	fnlib
 PORTVERSION=	0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	enlightenment
+MASTER_SITES=	SF/enlightenment
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fonts and font libraries necessary for Enlightenment
 
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes

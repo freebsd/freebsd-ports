@@ -33,7 +33,7 @@ MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 
 DOCSDIR=	${PREFIX}/share/doc/blitz
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|\$${CXX}|g ; \

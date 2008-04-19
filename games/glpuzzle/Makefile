@@ -20,12 +20,12 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_SDL=	sdl mixer
-USE_GL=		yes
+USE_GL=		gl
 USE_GMAKE=	yes
 
 MAKE_ENV=	CXX="${CXX}" \
-		CPPFLAGS="`${SDL_CONFIG} --cflags` -I${X11BASE}/include" \
-		LDFLAGS="`${SDL_CONFIG} --libs` -L${X11BASE}/lib"
+		CPPFLAGS="`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include" \
+		LDFLAGS="`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib"
 
 post-patch:
 .for i in font image puzzles sound

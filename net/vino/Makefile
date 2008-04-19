@@ -8,6 +8,7 @@
 
 PORTNAME=	vino
 PORTVERSION=	2.22.1
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,7 +20,6 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2

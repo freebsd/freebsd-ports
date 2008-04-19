@@ -7,10 +7,9 @@
 
 PORTNAME=	nvtv
 PORTVERSION=	0.4.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	nv-tv-out
+MASTER_SITES=	SF/nv-tv-out
 DISTNAME=	nvtv-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,10 +21,10 @@ ONLY_FOR_ARCHS=	i386
 
 CONFIGURE_ENV=	CC="${CC} -I${PREFIX}/include"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
+USE_XORG=	x11 xxf86vm xmu
 
 MAN1=		nvtv.1x
 MAN8=		nvtvd.8

@@ -7,9 +7,9 @@
 
 PORTNAME=	gnomeicu
 PORTVERSION=	0.99.14
+PORTREVISION=	1
 CATEGORIES=	net-im gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnomeicu
+MASTER_SITES=	SF
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 ICQ client
@@ -17,7 +17,6 @@ COMMENT=	GNOME 2 ICQ client
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 gnomepanel libxml2 \
 		intlhack

@@ -7,17 +7,15 @@
 
 PORTNAME=	gtodo
 PORTVERSION=	0.14
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtodo
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Gtk2 Todo list manager
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget gnomevfs2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

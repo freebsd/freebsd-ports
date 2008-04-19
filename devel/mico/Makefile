@@ -7,7 +7,7 @@
 
 PORTNAME=	mico
 PORTVERSION=	2.3.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/
 
@@ -19,7 +19,7 @@ COMMENT=	Secure, reliable, production-quality, standards-based CORBA middleware
 
 PATCH_DIST_STRIP=	-p1
 WRKSRC=			${WRKDIR}/${PORTNAME}
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		autoconf:261
@@ -62,7 +62,7 @@ MICO_SERVICE=		"@comment "
 CONFIGURE_ENV+=		CXXFLAGS="${CPPFLAGS} -Wno-unused"
 
 .if defined(WITH_X11)
-USE_XLIB=		yes
+USE_XORG=		x11
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x

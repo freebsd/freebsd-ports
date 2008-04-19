@@ -9,8 +9,7 @@ PORTNAME=	kiki
 PORTVERSION=	1.0.2
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
@@ -21,23 +20,22 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_PYTHON=	2.3
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	sdl mixer image
 USE_DOS2UNIX=	kodilib/linux/Makefile src/main/KikiController.cpp linux/Makefile kodilib/src/types/KVector.h src/main/KikiPythonWidget.h
-USE_GCC=	3.4+
 
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 WRKSRC=		${WRKDIR}/kiki
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|.*|CXXFLAGS+=$$(KODI_INCLUDES) -I${X11BASE}/include `${SDL_CONFIG} --cflags`|' ${WRKSRC}/kodilib/linux/Makefile
-	@${REINPLACE_CMD} -e '/^X11_INCLUDES/ s|/.*/|${X11BASE}/include|' ${WRKSRC}/linux/Makefile
+	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|.*|CXXFLAGS+=$$(KODI_INCLUDES) -I${LOCALBASE}/include `${SDL_CONFIG} --cflags`|' ${WRKSRC}/kodilib/linux/Makefile
+	@${REINPLACE_CMD} -e '/^X11_INCLUDES/ s|/.*/|${LOCALBASE}/include|' ${WRKSRC}/linux/Makefile
 	@${REINPLACE_CMD} -e '/PYTHON/ s|/usr|${LOCALBASE}|' ${WRKSRC}/linux/Makefile
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/linux/Makefile
 	@${REINPLACE_CMD} -e 's|CXXFLAGS =|CXXFLAGS +=|' ${WRKSRC}/linux/Makefile
 	@${REINPLACE_CMD} -e 's|PYTHON_VERSION|PYTHON_VER|' ${WRKSRC}/linux/Makefile
-	@${REINPLACE_CMD} -e '/^GLLIBS/ s|$$| -L${X11BASE}/lib|' ${WRKSRC}/linux/Makefile
+	@${REINPLACE_CMD} -e '/^GLLIBS/ s|$$| -L${LOCALBASE}/lib|' ${WRKSRC}/linux/Makefile
 	@${REINPLACE_CMD} -e 's|getenv("KIKI_HOME")|"${DATADIR}"|' ${WRKSRC}/src/main/KikiController.cpp
 
 do-build:

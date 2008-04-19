@@ -7,23 +7,22 @@
 
 PORTNAME=	wmmaiload
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Incoming mail monitor dockapp with a similar look to wmcpuload
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -D_GNU_SOURCE ${PTHREAD_CFLAGS}" \
-		CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIB_SSL="-lssl -lcrypto" \
 		LIB_THREADS="${PTHREAD_LIBS}" \
 		DEBUG_CFLAGS="-I${OPENSSLINC}" \

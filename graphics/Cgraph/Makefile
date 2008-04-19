@@ -17,7 +17,7 @@ COMMENT=	A PostScript plotting library in C
 
 WRKSRC=		${WRKDIR}/Cgraph/source
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile

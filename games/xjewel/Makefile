@@ -7,7 +7,7 @@
 
 PORTNAME=	xjewel
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/ \
 		ftp://ftp.x.org/R5contrib/
@@ -16,8 +16,9 @@ EXTRACT_SUFX=	.tar.z
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	X11 dropping jewels game
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 USE_IMAKE=	yes
 

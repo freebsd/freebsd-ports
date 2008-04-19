@@ -7,27 +7,26 @@
 
 PORTNAME=	clementine
 PORTVERSION=	0.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Has title bars, iconizing, and styles (unstable)
 
 RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv \
-			rxvt:${PORTSDIR}/x11/rxvt
+		rxvt:${PORTSDIR}/x11/rxvt
 
 PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 DOCS=		COPYING HISTORY LICENSE
 REINPLACE_ARGS=	-i'' -E
 
 post-patch:
 	${REINPLACE_CMD} 's:^CFLAGS:IGNORE:g ; s:^DEFINES:IGNORE:g ;\
-		s:/usr/X11R6:${X11BASE}:g' \
+		s:/usr/X11R6:${LOCALBASE}:g' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} 's:./clementine:${PREFIX}/bin/clementine:g' \
 		${WRKSRC}/windowmanager.cpp

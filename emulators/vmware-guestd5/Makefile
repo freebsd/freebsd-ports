@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-#PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-guestd
@@ -29,13 +29,13 @@ ONLY_FOR_ARCHS=	i386 amd64
 IS_INTERACTIVE=	yes
 .endif
 .if defined(VMWARE_X_PORTS)
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 NO_BUILD=	yes
 .if defined(WITH_VMWARE_GTK)
 PLIST_SUB+=	INSTALLXGTKTOOL:=""
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xsxt
 USE_GNOME=	glib12 gtk12
 .if (${OSVERSION} >= 600000)
 LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
@@ -162,18 +162,18 @@ post-extract:
 .if defined(VMWARE_X_PORTS)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}/vmware-toolbox-tcl ${X11BASE}/bin
-	${LN} -sfh vmware-toolbox-tcl ${X11BASE}/bin/vmware-toolbox
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}/vmware-toolbox-tcl ${LOCALBASE}/bin
+	${LN} -sfh vmware-toolbox-tcl ${LOCALBASE}/bin/vmware-toolbox
 .if defined(WITH_VMWARE_GTK)
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}/vmware-toolbox-gtk ${X11BASE}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}/vmware-toolbox-gtk ${LOCALBASE}/bin
 .endif
-	if [ ! -d ${X11BASE}/lib/modules/input ] ; then \
-		${MKDIR} ${X11BASE}/lib/modules/input ; \
+	if [ ! -d ${LOCALBASE}/lib/modules/input ] ; then \
+		${MKDIR} ${LOCALBASE}/lib/modules/input ; \
 	fi
 .if ${ARCH} == i386
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XOrg/6.8.x/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XOrg/6.8.x/vmmouse_drv.o ${LOCALBASE}/lib/modules/input/vmmouse_drv.o_VMware
 .else
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XOrg/6.8.x_64/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XOrg/6.8.x_64/vmmouse_drv.o ${LOCALBASE}/lib/modules/input/vmmouse_drv.o_VMware
 .endif
 	-${WRKSRC}/lib/sbin${BITS}/vmware-guestd --cmd toolinstall.end
 

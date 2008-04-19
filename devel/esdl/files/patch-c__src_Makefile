@@ -8,7 +8,7 @@ $FreeBSD$
  else
  
 -  OGLDIR  = /usr
-+  OGLDIR  = ${X11BASE}
++  OGLDIR  = ${LOCALBASE}
  
  # Uncomment these if your opengl header is located in another directory than
  # the usual $(OGLDIR)/include/GL/gl.h

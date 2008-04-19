@@ -17,11 +17,11 @@ COMMENT=	SDL/OpenGL top-down shooter
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	sdl mixer image
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
 		SDL_CONFIG="${SDL_CONFIG}"
 
 .include <bsd.port.mk>

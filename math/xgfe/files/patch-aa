@@ -11,12 +11,12 @@
 +#CC	=	gcc
 +CXXFLAGS	+=	${PTHREAD_CFLAGS}
 +QTDIR	=	$(QT_PREFIX)
-+INCPATH	=	-I$(X11BASE)/include
++INCPATH	=	-I$(LOCALBASE)/include
 +LINK	=	$(CXX)
  LFLAGS	=	
 -LIBS	=	-L$(QTDIR)/lib -lqt -L/usr/X11R6/lib -lX11
 -MOC	=	moc
-+LIBS	=	-L$(X11BASE)/lib -lqt-mt -lX11 ${PTHREAD_LIBS}
++LIBS	=	-L$(LOCALBASE)/lib -lqt-mt -lX11 ${PTHREAD_LIBS}
 +MOC	=	${QTDIR}/bin/moc
  
  ####### Files

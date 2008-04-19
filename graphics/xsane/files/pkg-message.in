@@ -2,7 +2,7 @@ Congratulations, XSane is now installed.
 
 To install XSane as a GIMP plug-in, please type:
 
-ln -sf ${X11BASE}/bin/xsane ~/.gimp-n.n/plug-ins/xsane
+ln -sf ${LOCALBASE}/bin/xsane ~/.gimp-n.n/plug-ins/xsane
 
 Then run the GIMP, and a new "XSane" menu item should appear in the
 "File->Acquire" menu.  Use this to access your scanner.

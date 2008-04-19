@@ -8,7 +8,7 @@
 +CPP      = ${CXX}
  RANLIB   = ranlib
  RM       = rm -f
-+INCLUDES = -I../globals -I$(X11BASE)/include
++INCLUDES = -I../globals -I$(LOCALBASE)/include
  
  #  CPPFLAGS     -Wall     all warnings
  #               -pipe     speeds up compilation (remove only if not using g++)

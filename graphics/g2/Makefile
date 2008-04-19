@@ -7,7 +7,7 @@
 
 PORTNAME=	g2
 PORTVERSION=	0.40
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
@@ -17,7 +17,7 @@ COMMENT=	An easy to use, portable and powerful 2D graphics library
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
-USE_XLIB=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 

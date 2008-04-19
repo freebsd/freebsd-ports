@@ -18,13 +18,12 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL/GLU/GLUT interface modules for Ruby
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+USE_GL=		glut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-CONFIGURE_ARGS=	--with-ruby-dir="${LOCALBASE}" --with-x11-dir="${X11BASE}"
+CONFIGURE_ARGS=	--with-ruby-dir="${LOCALBASE}" --with-x11-dir="${LOCALBASE}"
 INSTALL_TARGET=	site-install
 
 post-install:

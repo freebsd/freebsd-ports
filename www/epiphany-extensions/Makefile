@@ -8,6 +8,7 @@
 
 PORTNAME=	epiphany-extensions
 PORTVERSION=	2.22.1
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,7 +22,6 @@ RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GECKO=	firefox firefox15<->firefox xulrunner
 USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget
 INSTALLS_OMF=	yes

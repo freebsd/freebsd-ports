@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-font-sampler
 PORTVERSION=	0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://linuxadvocate.org/projects/gfontsampler/downloads/
 DISTNAME=	gfontsampler-${PORTVERSION}
@@ -15,8 +15,7 @@ DISTNAME=	gfontsampler-${PORTVERSION}
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A program for viewing several fonts at once
 
-USE_X_PREFIX=	yes
-USE_GCC=	3.4+
+USE_XORG=	x11
 USE_GNOME=	libgnomeui gnomeprefix
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

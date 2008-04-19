@@ -32,7 +32,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin/freetype-config|${LOCALBASE}/bin/freetype-config|; \
 		 s|/usr/bin/imlib2-config|${LOCALBASE}/bin/imlib2-config|; \
-		 s|/usr/X11R6/include|${X11BASE}/include|; \
+		 s|/usr/X11R6/include|${LOCALBASE}/include|; \
 		 s|"COPYING", "README", ||' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|sysconfig\.get_python_lib()|"${PREFIX}/share"|' \
 		${WRKSRC}/setup.py ${WRKSRC}/pypanel

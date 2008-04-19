@@ -42,7 +42,7 @@ USE_GMAKE=	yes
 USE_BDB=	yes
 USE_AUTOTOOLS=  libtool:15 autotools:run
 _NO_KDE_FINAL=	yes
-CONFIGURE_ARGS+=--with-qtdoc-dir=${X11BASE}/share/doc/qt/html \
+CONFIGURE_ARGS+=--with-qtdoc-dir=${LOCALBSE}/share/doc/qt/html \
 		--with-db-includedir=${BDB_INCLUDE_DIR} \
 		--with-db-libdir=${BDB_LIB_DIR} --with-db-lib=${BDB_LIB_NAME} \
 		--with-apr-config=${LOCALBASE}/bin/apr-1-config \

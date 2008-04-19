@@ -17,7 +17,7 @@ COMMENT=		Drop stack applet for KDE
 USE_AUTOTOOLS=	libtool:15
 USE_KDEBASE_VER=	3
 GNU_CONFIGURE=		yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \

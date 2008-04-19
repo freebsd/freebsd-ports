@@ -23,8 +23,8 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_XORG=	x11 xext
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -o buttonbox -L${X11BASE}/lib \
-		-I${X11BASE}/include -lX11 -lXext button.c configuration.c \
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o buttonbox -L${LOCALBASE}/lib \
+		-I${LOCALBASE}/include -lX11 -lXext button.c configuration.c \
 		colour.c dispatcher.c main.c
 
 pre-install:
@@ -39,8 +39,8 @@ pre-install:
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/ButtonBox.ad ${X11BASE}/lib/X11/app-defaults/
-	${INSTALL_PROGRAM} ${WRKSRC}/buttonbox ${X11BASE}/bin/
+	${INSTALL_DATA} ${WRKSRC}/ButtonBox.ad ${LOCALBASE}/lib/X11/app-defaults/
+	${INSTALL_PROGRAM} ${WRKSRC}/buttonbox ${LOCALBASE}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
 	for i in ${DOCS}; \

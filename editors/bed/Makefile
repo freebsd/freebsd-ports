@@ -34,7 +34,7 @@ MANCOMPRESSED=	yes
 # Check for menubar support in "x11/rxvt". In case of failure, disable X11 if
 # BATCH or PACKAGE_BUILDING, and IGNORE otherwise.
 .if !defined(WITHOUT_X11)
-. if exists(${X11BASE}/bin/rxvt)
+. if exists(${LOCALBASE}/bin/rxvt)
 MENUBAR_TEST!=	rxvt -h 2>&1 | ${GREP} -i menubar || ${TRUE}
 .  if empty(MENUBAR_TEST)
 .   if defined(BATCH) || defined(PACKAGE_BUILDING)

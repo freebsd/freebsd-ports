@@ -12,7 +12,7 @@
  INCDIR	= ../spunk
  
 -CFLAGS	= -DFREEBSD -g -Wall -I$(INCDIR) -x c++ -L /usr/X11R6/lib -fno-implicit-templates -DEXPLICIT_TEMPLATES
-+CFLAGS	+= -DFREEBSD -g -Wall -I$(INCDIR) -x c++ -L $(X11BASE)/lib -fno-implicit-templates -DEXPLICIT_TEMPLATES
++CFLAGS	+= -DFREEBSD -g -Wall -I$(INCDIR) -x c++ -L $(LOCALBASE)/lib -fno-implicit-templates -DEXPLICIT_TEMPLATES
  
  
  # ------------------------------------------------------------------------------
@@ -34,7 +34,7 @@
  
  xestic: $(LIB) $(OBJS)
 -	$(CC) -o xestic $(OBJS) $(LIB) -ltermcap -lg++ -lX11
-+	$(CC) -L $(X11BASE)/lib -o xestic $(OBJS) $(LIB) -ltermcap -lX11
++	$(CC) -L $(LOCALBASE)/lib -o xestic $(OBJS) $(LIB) -ltermcap -lX11
  
  
  # ------------------------------------------------------------------------------

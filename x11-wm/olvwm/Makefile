@@ -28,7 +28,7 @@ LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 REINPLACE_ARGS= -i ""
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		olvwm.1 olvwmrc.1
 XFREE86_HTML_MAN=	no
 

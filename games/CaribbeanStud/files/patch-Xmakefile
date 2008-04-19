@@ -6,11 +6,11 @@
  
 +## FreeBSD
 +##
-+XINCLUDES=-I$(X11BASE)/include
++XINCLUDES=-I$(LOCALBASE)/include
 +UILFLAGS=
 +CFLAGS+= -fhandle-exceptions -fno-for-scope
 +CXXFLAGS+= $(XINCLUDES)
-+LDFLAGS+=-L$(X11BASE)/lib
++LDFLAGS+=-L$(LOCALBASE)/lib
 +LDLIBS=
 +MOTIFLIBS=-lXm -lXmu -lXt -lX11 ${MOTIFLIB}
 +

@@ -9,7 +9,7 @@
 +
  # bibliotecas para Linux
 -LIBSLINUX = -L/usr/X11R6/lib -lGL -lGLU -lglut -L/usr/lib -lSDL_mixer -lSDL -lpthread `sdl-config --cflags --libs` -lSDL_net
-+LIBSLINUX = -L$(X11BASE)/lib -lGL -lGLU -lglut `sdl-config --libs` -lSDL_mixer -lSDL_net
++LIBSLINUX = -L$(LOCALBASE)/lib -lGL -lGLU -lglut `sdl-config --libs` -lSDL_mixer -lSDL_net
  
  # bibliotecas para Windows
  LIBSWIN = -lopengl32 -lglu32 -lglut32 -lmingw32 -lSDLmain -lSDL -lSDL_mixer -mwindows -L$(DEVCPP_PATH)\lib -lSDL_net
@@ -22,7 +22,7 @@
  
  # flags (otimizacao e nao exibir warnings)
 -FLAGS = -O2 -DREENTRANT -DHAVE_OPENGL #-g 
-+FLAGS = $(CFLAGS) -DREENTRANT -DHAVE_OPENGL -I$(X11BASE)/include `sdl-config --cflags`
++FLAGS = $(CFLAGS) -DREENTRANT -DHAVE_OPENGL -I$(LOCALBASE)/include `sdl-config --cflags`
 +
 +ifdef OPTIMIZED_CFLAGS
 +FLAGS += -O2

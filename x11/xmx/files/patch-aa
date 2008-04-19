@@ -29,8 +29,8 @@
 -
 -$(XMX):	$(OFILES)
 -	cc $(CFLAGS) -o $(XMX) $(OFILES) $(LIB)
-+LIBPATH		= -L${X11BASE}/lib 
-+INCPATH		= -I${X11BASE}/include
++LIBPATH		= -L${LOCALBASE}/lib 
++INCPATH		= -I${LOCALBASE}/include
  
 -debug:
 -	make xmxd CFLAGS="$(DBGFG)" LIB="$(DEBUGLIB)"

@@ -115,7 +115,7 @@ post-build:
 	cd ${WRKSRC}/doc && makeinfo --no-split groff.texinfo
 .endif
 	cd ${WRKSRC} && ${FIND} font -name DESC \
-	| ${XARGS} ${REINPLACE_CMD} -E -e 's|pro +(gxditview)|pro ${X11BASE}/bin/\1|g;'
+	| ${XARGS} ${REINPLACE_CMD} -E -e 's|pro +(gxditview)|pro ${LOCALBASE}/bin/\1|g;'
 	cd ${WRKSRC} && ${FIND} font -name DESC \
 	| ${XARGS} ${REINPLACE_CMD} -E -e 's|pro +([^/].*)|pro ${PREFIX}/bin/\1|g;'
 

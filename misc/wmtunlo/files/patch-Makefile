@@ -6,8 +6,8 @@
 -INCS			= -I/usr/X11R6/include/X11
 -LIBS			= -L/usr/X11R6/lib -lXpm -lX11 -lXext -lm
 +CFLAGS			+= -Wall
-+INCS			= -I${X11BASE}/include -I${X11BASE}/include/X11
-+LIBS			= -L${X11BASE}/lib -lXpm -lX11 -lXext -lm
++INCS			= -I${LOCALBASE}/include -I${LOCALBASE}/include/X11
++LIBS			= -L${LOCALBASE}/lib -lXpm -lX11 -lXext -lm
  INSTALL_PREFIX	= /usr/local
  
  

@@ -22,7 +22,7 @@ PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Apache::Scoreboard.3 Apache::DummyScoreboard.3
 
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 
 post-patch:
 	@${RM} -f ${WRKSRC}/lib/Apache/*.orig

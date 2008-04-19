@@ -14,7 +14,7 @@ COMMENT=	Version 3 of the Mini SQL relational database system
 
 CONFLICTS=	msql-2*
 
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 USE_PERL5=	YES
 
 LATEST_LINK=	msql3

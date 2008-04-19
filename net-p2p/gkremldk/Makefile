@@ -18,7 +18,7 @@ COMMENT=	Shows current mldonkey donwload/upload rates and allows setting them
 
 BUILD_DEPENDS=	\
 		pkg-config:${PORTSDIR}/devel/pkg-config \
-		${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+		${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USE_BZIP2=	yes
@@ -27,9 +27,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -E \
-		-e 's|^(LFLAGS).*|\1 = ${LDFLAGS} ${PTHREAD_LIBS} -L${X11BASE}/lib|' \
+		-e 's|^(LFLAGS).*|\1 = ${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib|' \
 		-e 's|-lpthread|${PTHREAD_LIBS}|' \
-		-e 's|(-fPIC)|\1 ${CFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include|' \
+		-e 's|(-fPIC)|\1 ${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include|' \
 		${WRKSRC}/Makefile.in
 
 do-install:

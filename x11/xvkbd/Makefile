@@ -25,7 +25,7 @@ USE_IMAKE=	yes
 .include <bsd.port.pre.mk>
 
 .if	defined(WITH_XAW3D)
-BUILD_DEPENDS=	${X11BASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
+BUILD_DEPENDS=	${LOCALBASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
 .if	defined(WITH_XAW3D)

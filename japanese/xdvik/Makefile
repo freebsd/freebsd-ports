@@ -9,8 +9,7 @@ PORTNAME=	xdvik
 PORTVERSION=	${VERSION_XDVIK}.${VERSION_JPATCH}
 PORTREVISION=	9
 CATEGORIES=	japanese print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xdvi
+MASTER_SITES=	SF/xdvi
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-tetex
 DISTNAME=	xdvik-${VERSION_XDVIK}
@@ -29,8 +28,8 @@ RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex \
-		${X11BASE}/${TTFMINCHO}:${PORTSDIR}/japanese/ipa-ttfonts \
-		${X11BASE}/${TTFGOTHIC}:${PORTSDIR}/japanese/ipa-ttfonts
+		${LOCALBASE}/${TTFMINCHO}:${PORTSDIR}/japanese/ipa-ttfonts \
+		${LOCALBASE}/${TTFGOTHIC}:${PORTSDIR}/japanese/ipa-ttfonts
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
@@ -85,8 +84,8 @@ TTFMINCHO=	lib/X11/fonts/TrueType/ipam.ttf
 TTFGOTHIC=	lib/X11/fonts/TrueType/ipag.ttf
 VFONTCAPFT_SRC=	${WRKSRC}/vfontmap.freetype
 VFONTCAPFT_SUB=	CIDFONTDIR=${LOCALBASE}/${CIDFONTDIR} \
-		TTFMINCHO=${X11BASE}/${TTFMINCHO} \
-		TTFGOTHIC=${X11BASE}/${TTFGOTHIC}
+		TTFMINCHO=${LOCALBASE}/${TTFMINCHO} \
+		TTFGOTHIC=${LOCALBASE}/${TTFGOTHIC}
 
 .include <bsd.port.pre.mk>
 

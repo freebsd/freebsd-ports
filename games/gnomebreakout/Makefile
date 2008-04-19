@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomebreakout
 PORTVERSION=	0.5.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.users.on.net/~mipearson/
 DISTNAME=	gnome-breakout-${PORTVERSION}
@@ -15,7 +15,6 @@ DISTNAME=	gnome-breakout-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of the classic breakout game
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

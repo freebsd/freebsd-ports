@@ -15,8 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome Java Accessibility Bridge
 
-BUILD_DEPENDS=	xprop:${X_CLIENTS_PORT}
-RUN_DEPENDS=	xprop:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
+RUN_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

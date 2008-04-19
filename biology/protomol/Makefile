@@ -26,8 +26,8 @@ USE_GCC=	3.4+
 # Hack to cure a misbehavior of the configure script
 CONFIGURE_ARGS+=	--without-irix_mipspro_mpi
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
-CXXFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}"
 

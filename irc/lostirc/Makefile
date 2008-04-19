@@ -7,9 +7,9 @@
 
 PORTNAME=	lostirc
 PORTVERSION=	0.4.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://demian.dyndns.org/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -18,9 +18,7 @@ COMMENT=	A simple and minimal IRC client for X
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

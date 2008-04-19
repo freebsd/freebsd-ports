@@ -28,8 +28,7 @@ EXTRACT_ONLY+=	${DIST_EXAMPLES}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A Three-Dimensional Structural Finite Element Program
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
-		arpack.1:${PORTSDIR}/math/arpack	\
+LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack	\
 		spooles.1:${PORTSDIR}/math/spooles \
 		metis.1:${PORTSDIR}/math/metis	\
 		taucs.1:${PORTSDIR}/math/taucs
@@ -47,7 +46,7 @@ DIST_EXAMPLES=	ccx_${PORTVERSION}.test${EXTRACT_SUFX}	\
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
-USE_GL=	yes
+USE_GL=	glut
 
 BROWSER?=	mozilla
 PSVIEWER?=	gv
@@ -97,8 +96,7 @@ pre-build:
 	s+%%LAPACK_LIBS%%+${LAPACK_LIBS}+ ; \
 	s+%%LOCALBASE%%+${LOCALBASE}+g;' \
 		${WRKSRC}/ccx_${PORTVERSION}/src/Makefile
-	@${REINPLACE_CMD} -e 's+%%X11BASE%%+${X11BASE}+g; \
-	s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g; \
+	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g; \
 	s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' \
 		${WRKSRC}/cgx_${PORTVERSION}/src/Makefile
 	@${REINPLACE_CMD} -e 's+%%DOCSDIR%%+${DOCSDIR}+g; \

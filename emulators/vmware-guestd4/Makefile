@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators kld
 MASTER_SITES=	# bundled with VMware itself
 PKGNAMESUFFIX?=	-guestd
@@ -30,7 +30,7 @@ USE_RC_SUBR=	vmware-guestd.sh
 IS_INTERACTIVE=	yes
 .endif
 .if defined(VMWARE_X_PORTS)
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 NO_BUILD=	yes
 .endif
 
@@ -108,10 +108,10 @@ post-patch:
 .if defined(VMWARE_X_PORTS)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/vmware-toolbox ${X11BASE}/bin
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/XF86Config-4 ${X11BASE}/etc/XF86Config-4_VMware
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.3.x/vmware_drv.o ${X11BASE}/lib/modules/drivers/vmware_drv.o_VMware
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.2.x/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/vmware-toolbox ${LOCALBASE}/bin
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/XF86Config-4 ${LOCALBASE}/etc/XF86Config-4_VMware
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.3.x/vmware_drv.o ${LOCALBASE}/lib/modules/drivers/vmware_drv.o_VMware
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.2.x/vmmouse_drv.o ${LOCALBASE}/lib/modules/input/vmmouse_drv.o_VMware
 	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
 
 .else

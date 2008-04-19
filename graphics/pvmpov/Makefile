@@ -41,7 +41,7 @@ pre-configure:
 			 ${TAR} -c -f - povray31 ) \
 			| (cd ${WRKSRC} && ${TAR} --unlink -x -f -)
 		@ cd ${WRKSRC} && ${PATCH} -p0 -s < pvmpov.patch
-		@ ${PERL} -pi -e "s|%X11BASE%|${X11BASE}| ; s|%LOCALBASE%|${LOCALBASE}|" \
+		@ ${PERL} -pi -e "s|%LOCALBASE%|${LOCALBASE}|" \
 			${BUILDBASE}/Makefile.aimk
 
 do-build:

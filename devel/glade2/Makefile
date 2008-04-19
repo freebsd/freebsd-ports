@@ -8,6 +8,7 @@
 
 PORTNAME=	glade
 PORTVERSION=	2.12.2
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -21,7 +22,6 @@ LIB_DEPENDS=	rarian.0:${PORTSDIR}/textproc/rarian
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gtk20 desktopfileutils

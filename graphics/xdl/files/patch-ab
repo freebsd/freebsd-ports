@@ -8,8 +8,8 @@
 -CFLAGS = -O2
 -LIBS = -lX11 $(IXLIBS)
 +CC ?= gcc
-+CFLAGS += -I${X11BASE}/include
-+LIBS += -L${X11BASE}/lib -lX11 $(IXLIBS)
++CFLAGS += -I${LOCALBASE}/include
++LIBS += -L${LOCALBASE}/lib -lX11 $(IXLIBS)
  
  #
  # These specify where to install the binary

@@ -32,8 +32,8 @@ LE_TARGETS=	newpy
 .if !defined(WITHOUT_XAUX)
 LE_TARGETS+=	newpy/xaux
 USE_MOTIF=	yes
-CFLAGS+=	-I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB+=	WANT_XAUX=""
 .else
 PLIST_SUB+=	WANT_XAUX="@comment "

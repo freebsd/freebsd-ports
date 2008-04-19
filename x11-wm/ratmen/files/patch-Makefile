@@ -17,8 +17,8 @@
 -LIBS   = -L/usr/X11R6/lib -lX11
 -CFLAGS = $(OPTIMIZE) $(WARN) $(DEBUG)
 +CC     ?= gcc
-+LIBS   = -L$(X11BASE)/lib -lX11
-+CFLAGS += $(OPTIMIZE) $(WARN) $(DEBUG) -I$(X11BASE)/include
++LIBS   = -L$(LOCALBASE)/lib -lX11
++CFLAGS += $(OPTIMIZE) $(WARN) $(DEBUG) -I$(LOCALBASE)/include
  
  all: doc $(PROG)
  

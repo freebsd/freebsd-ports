@@ -21,9 +21,9 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		jwm.1
 

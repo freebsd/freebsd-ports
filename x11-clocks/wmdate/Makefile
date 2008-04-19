@@ -17,7 +17,7 @@ COMMENT=	Date app for the WindowMaker dock
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 PLIST_FILES=	bin/wmdate
 

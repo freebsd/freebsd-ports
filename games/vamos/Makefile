@@ -24,8 +24,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
-CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib \
-		ac_cv_header_boost_test_unit_test_hpp=no
+CONFIGURE_ARGS=	ac_cv_header_boost_test_unit_test_hpp=no
 USE_LDCONFIG=	yes
 
 INFO=		vamos

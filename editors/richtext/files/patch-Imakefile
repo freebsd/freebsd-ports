@@ -5,7 +5,7 @@
  #CC = objc -q -g
  #MOTIFDIR=$(USRLIBDIR)
 -MOTIFDIR=/usr/local/LessTif/Motif1.2
-+MOTIFDIR=${X11BASE}
++MOTIFDIR=${LOCALBASE}
  
  .SUFFIXES : .m .lm
  

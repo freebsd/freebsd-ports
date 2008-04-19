@@ -7,7 +7,7 @@
  CXX = g++
  
 -CFLAGS  = -Dunix  -U__APPLE__  -c $(OPT) -I$(FLTK) -I$(PDF) -I$(X11)/include 
-+CFLAGS+= -Dunix -U__APPLE__ -c $(OPT) -I$(X11BASE)/include -I$(LOCALBASE)/include
++CFLAGS+= -Dunix -U__APPLE__ -c $(OPT) -I$(LOCALBASE)/include
  
  
  OBJECTS = seaview.o pdf.o custom.o use_mase_files.o regions.o load_seq.o align.o xfmatpt.o comlines.o chooser_plus.o resource.o nexus.o
@@ -19,7 +19,7 @@
 -             -L$(X11)/lib -lX11 -lm 
 +	$(CXX) -o $@ $(OBJECTS) -L$(LOCALBASE)/lib -lfltk \
 +             -Xlinker -Bstatic -lpdf -Xlinker -Bdynamic \
-+             -L$(X11BASE)/lib -lX11 -lm 
++             -L$(LOCALBASE)/lib -lX11 -lm 
  	strip $@
  
  

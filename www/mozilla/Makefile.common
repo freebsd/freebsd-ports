@@ -56,8 +56,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		nspr4:${PORTSDIR}/devel/nspr \
-		nss3:${PORTSDIR}/security/nss \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft
+		nss3:${PORTSDIR}/security/nss
 
 MAINTAINER?=	gnome@FreeBSD.org
 
@@ -68,7 +67,8 @@ MOZ_RPATH?=	${MOZILLA}
 USE_GNOME+=	gtk20 libidl desktopfileutils
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
-USE_XLIB=	yes
+USE_XORG=	printproto sm xt xi xext x11 xinerama \
+		ice xproto
 
 MOZILLA_SUFX?=	none
 WRKSRC?=	${WRKDIR}/mozilla
@@ -141,8 +141,8 @@ MOZ_OPTIONS+=	--enable-crypto 	\
 		--enable-xft		\
 		--with-pthreads
 # Configure options for install
-MOZ_OPTIONS+=	--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
+MOZ_OPTIONS+=	--x-includes=${LOCALBASE}/include \
+		--x-libraries=${LOCALBASE}/lib
 .if !defined(MOZ_EXTENSIONS)
 MOZ_OPTIONS+=	--enable-extensions=default
 .else
@@ -223,8 +223,7 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 		-e 's|@CFLAGS@|${CFLAGS}|g'		\
 		-e 's|@LDFLAGS@|${LDFLAGS}|g'		\
 		-e 's|@LIBS@|${LIBS}|g'			\
-		-e 's|@X11BASE@|${X11BASE}|g'		\
-		-e 's|@LOCALBASE@|${LOCALBASE}|g'	\
+		-e 's|@LOCALBASE@|${LOCALBASE}|g'		\
 		-e 's|@FAKEDIR@|${FAKEDIR}|g'		\
 		-e 's|@PERL@|${PERL5}|g'			\
 		-e 's|@KRB5_HOME@|${KRB5_HOME}|g'	\
@@ -233,8 +232,7 @@ MOZ_SED_ARGS+=	-e's|@CPPFLAGS@|${CPPFLAGS}|g'		\
 		-e 's|%%CFLAGS%%|${CFLAGS}|g'		\
 		-e 's|%%LDFLAGS%%|${LDFLAGS}|g'		\
 		-e 's|%%LIBS%%|${LIBS}|g'		\
-		-e 's|%%X11BASE%%|${X11BASE}|g'		\
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g'	\
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g'		\
 		-e 's|%%FAKEDIR%%|${FAKEDIR}|g'		\
 		-e 's|%%PERL%%|${PERL5}|g'		\
 		-e 's|%%KRB5_HOME%%|${KRB5_HOME}|g'	\
@@ -292,7 +290,7 @@ gecko-post-patch:
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		${WRKSRC}/config/autoconf.mk.in
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
-		s|echo aout|echo elf|g ; s|/usr/X11R6|${X11BASE}|g' \
+		s|echo aout|echo elf|g ; s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
 	@if [ -d ${WRKSRC}/directory/c-sdk ]; then \
@@ -303,7 +301,7 @@ gecko-post-patch:
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
 		s|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|echo aout|echo elf|g ; \
-		s|/usr/X11R6|${X11BASE}|g' \
+		s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh

@@ -7,7 +7,7 @@
 
 PORTNAME=	vic
 PORTVERSION=	2.8.1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mbone tk ipv6
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl1.1.6/
 DISTNAME=	${PORTNAME}-2.8ucl1.1.6
@@ -16,15 +16,15 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	MBONE video tool
 
 BUILD_DEPENDS+= v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
-
 LIB_DEPENDS=	uclmmbase:${PORTSDIR}/devel/uclmmbase
+
 USE_TK=		yes
 USE_TK_BUILD=	yes
 
 USE_AUTOTOOLS=	autoconf:213
-USE_X_PREFIX=	yes
-CONFIGURE_ARGS= -x-libraries=${X11BASE}/lib \
-		-x-includes=${X11BASE}/include \
+USE_XORG=	xext
+CONFIGURE_ARGS= -x-libraries=${LOCALBASE}/lib \
+		-x-includes=${LOCALBASE}/include \
 		-without-ucltcl \
 		-with-tcl=${LOCALBASE} \
 		-without-ucltk \

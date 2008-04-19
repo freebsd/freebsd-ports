@@ -5,7 +5,7 @@
  
  # Define where the X11 include files are.
 -X11_INCLUDE_DIR = /usr/X11R6/include
-+X11_INCLUDE_DIR = ${X11BASE}/include
++X11_INCLUDE_DIR = ${LOCALBASE}/include
  
  # Uncomment out this line if you do not want debug information included.
  # DEBUG = -g -Wall -ansi -pedantic

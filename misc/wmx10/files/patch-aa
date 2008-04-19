@@ -3,8 +3,8 @@
 @@ -1,12 +1,12 @@
 -INCDIR	=	-I/usr/X11R6/include
 -LIBDIR	=	-L/usr/X11R6/lib
-+INCDIR	=	-I${X11BASE}/include
-+LIBDIR	=	-L${X11BASE}/lib
++INCDIR	=	-I${LOCALBASE}/include
++LIBDIR	=	-L${LOCALBASE}/lib
  LIBS	=	-lXpm -lXext -lX11
  OBJS	=	br_cmd.o wmx10.o ../wmgeneral/wmgeneral.o
 -CFLAGS  = 	-D$(shell echo `uname -s`) #-DDEBUG
@@ -26,4 +26,4 @@
 -	strip wmx10
 -	mv wmx10 /usr/local/bin
 +install:	wmx10
-+	${BSD_INSTALL_PROGRAM} wmx10 ${X11BASE}/bin
++	${BSD_INSTALL_PROGRAM} wmx10 ${LOCALBASE}/bin

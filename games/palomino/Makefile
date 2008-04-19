@@ -15,11 +15,9 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Action flight simulator with its own 3D engine
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
 USE_ZIP=	yes
 USE_PYTHON=	yes
-USE_GL=		yes
+USE_GL=		glut
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -36,7 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} -Ee 's!(-O[0-9s]?|-funroll-loops|-fno-inline)!!g'\
 		${WRKSRC}/gfx/tools/cc-config.sh
 	@${REINPLACE_CMD} -e 's|-march=$$ARCH||' ${WRKSRC}/gfx/tools/cc-config.sh
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g'\
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g'\
 		${WRKSRC}/gfx/tools/cc-config.sh ${WRKSRC}/gfx/tools/ld-config.sh
 
 do-install:

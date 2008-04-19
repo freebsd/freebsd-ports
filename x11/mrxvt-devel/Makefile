@@ -7,7 +7,7 @@
 
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	materm
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	--enable-xim --enable-cjk --with-encoding=eucj
 .endif
 
 .if defined(WITH_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG+=	xft
 CONFIGURE_ARGS+=	--enable-xft
 .endif
 
@@ -113,8 +113,8 @@ CONFIGURE_ARGS+=	--with-atab-extra=${EXTRA_ATAB_HEIGHT:M[0-9]*}
 CONFIGURE_ARGS+=	--with-tab-radius=${TAB_RADIUS:M[0-9]*}
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
-		LIBS="${LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LIBS="${LIBS} -L${LOCALBASE}/lib"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mrxvt ${PREFIX}/bin

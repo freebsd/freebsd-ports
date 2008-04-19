@@ -7,14 +7,14 @@
 
 PORTNAME=	cog
 PORTVERSION=	0.8.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.krakoa.dk/progs/cog/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program for editing advanced GNOME settings in an easy way
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_GETTEXT=	yes

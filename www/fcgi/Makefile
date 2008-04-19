@@ -17,7 +17,7 @@ COMMENT=	FastCGI Development Kit
 USE_AUTOTOOLS=	libtool:15
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		cgi-fcgi.1
 MAN3=		FCGI_Accept.3 FCGI_Finish.3 FCGI_SetExitStatus.3 \

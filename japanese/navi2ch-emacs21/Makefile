@@ -10,8 +10,7 @@ PORTVERSION=	1.7.5
 PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	japanese www elisp
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -35,7 +34,7 @@ PLIST_SUB+=	FSF="@comment "
 LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}
 PLIST_SUB+=	FSF=""
 .if !defined(WITHOUT_X11)
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/monak12.pcf.gz:${PORTSDIR}/japanese/monafonts
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/monak12.pcf.gz:${PORTSDIR}/japanese/monafonts
 .endif
 .endif
 

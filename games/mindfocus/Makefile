@@ -16,7 +16,7 @@ MAINTAINER=	ixtl@utmc.or.jp
 COMMENT=	Lovely characters stay on top of active window
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 RESTRICTED=	'contains commercial character data'
 
 post-install:

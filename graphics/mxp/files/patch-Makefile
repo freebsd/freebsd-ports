@@ -17,8 +17,8 @@
  # following 2 defines.
 -XLIBS = -L/usr/openwin/lib
 -XINC = -I/usr/openwin/include
-+XLIBS = -L%%X11BASE%%/lib
-+XINC = -I%%X11BASE%%/include
++XLIBS = -L%%LOCALBASE%%/lib
++XINC = -I%%LOCALBASE%%/include
  
  # Specify where your Xpm installation directories are
  # If you have the XPM libraries uncomment and adjust the following lines

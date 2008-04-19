@@ -20,13 +20,13 @@ USE_XORG=	x11 xaw
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS} -fPIC -DHAS_WCHAR_H" \
-		INC_PATH="-I. -I${X11BASE}/include" LIB_PATH="-L${X11BASE}/lib"
+		INC_PATH="-I. -I${LOCALBASE}/include" LIB_PATH="-L${LOCALBASE}/lib"
 ALL_TARGET=	lib
 USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:so\.3\..:so.3:' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's:%%X11BASE%%:${X11BASE}:' ${WRKSRC}/test/Makefile
+	@${REINPLACE_CMD} -e 's:%%LOCALBASE%%:${LOCALBASE}:' ${WRKSRC}/test/Makefile
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/X11/XawPlus

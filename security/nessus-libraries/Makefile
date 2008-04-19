@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--enable-cipher
 CONFIGURE_ARGS+=	--enable-bpf-sharing
 .endif
 
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 
 MAN1=		nessus-config.1
 

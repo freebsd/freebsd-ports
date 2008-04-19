@@ -33,7 +33,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 
 post-configure:
 	@${REINPLACE_CMD} -e 's@%%DATADIR%%@${DATADIR}@g' ${WRKSRC}/GalaxyMage.py ${WRKSRC}/src/Resources.py
-	@${REINPLACE_CMD} -e 's@%%X11BASE%%@${X11BASE}@g' ${WRKSRC}/src/Translate.py
+	@${REINPLACE_CMD} -e 's@%%LOCALBASE%%@${LOCALBASE}@g' ${WRKSRC}/src/Translate.py
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/GalaxyMage.py ${PREFIX}/bin/GalaxyMage

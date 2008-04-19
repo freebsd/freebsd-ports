@@ -7,7 +7,7 @@
 
 PORTNAME=	afterstep-i18n
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP:S/$/:afterstep/} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -30,8 +30,7 @@ COMMENT=	The NeXTstep clone window manager with Fontset support
 RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 
 DIST_SUBDIR=	afterstep
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_IMAKE=	yes
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes

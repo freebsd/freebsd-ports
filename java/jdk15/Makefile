@@ -20,7 +20,7 @@ COMMENT=	Java Development Kit 1.5.0
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
-		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
+		${LOCALBASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 OPTIONS=	DEBUG	"Enable debugging support"	off \
@@ -126,7 +126,7 @@ RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 
 MAKE_ENV+=	ALT_BOOTDIR="${BOOTSTRAPJDKDIR}" \
-		ALT_MOTIF_DIR="${X11BASE}" \
+		ALT_MOTIF_DIR="${LOCALBASE}" \
 		DEFAULT_LD_LIBRARY_PATH="/usr/lib:${LOCALBASE}/lib" \
 		SYS_CFLAGS="${CFLAGS}" \
 		LANG="C" \
@@ -281,7 +281,7 @@ post-patch:
 			${WRKSRC}/$${file}; \
 	done
 	@for file in ${X11_FILES}; do \
-		${REINPLACE_CMD} -e "s:%%X11BASE%%:${X11BASE}:" \
+		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 			${WRKSRC}/$${file}; \
 	done
 	${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" \

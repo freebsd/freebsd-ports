@@ -116,7 +116,7 @@
 +	-lz\
  	$(LIBREGEX)\
 -        /usr/X11R6/lib/libXinerama.a \
-+        ${X11BASE}/lib/libXinerama.a \
++        ${LOCALBASE}/lib/libXinerama.a \
  		-lgtk-x11-2.0 -lgdk-x11-2.0 \
          -latk-1.0 -lgdk_pixbuf-2.0 -lm -lpangoxft-1.0 -lpangox-1.0 -lgthread-2.0\
          -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -ldl\
@@ -133,8 +133,8 @@
  	$(LIBS3D)\
 -       /usr/X11R6/lib/libXinerama.a \
 -        /usr/X11R6/lib/libXxf86vm.a \
-+	${X11BASE}/lib/libXinerama.a \
-+        ${X11BASE}/lib/libXxf86vm.a \
++	${LOCALBASE}/lib/libXinerama.a \
++        ${LOCALBASE}/lib/libXxf86vm.a \
  		-lgtk-x11-2.0 -lgdk-x11-2.0 \
          -latk-1.0 -lgdk_pixbuf-2.0 -lm -lpangoxft-1.0 -lpangox-1.0 -lgthread-2.0\
          -lpango-1.0 -lgobject-2.0 -lgmodule-2.0 -ldl\
@@ -162,11 +162,11 @@
  
  # attention à l'ordre des libairies
 -LIBS = -L/usr/local/lib -L/usr/X11R6/lib\
-+LIBS = -L${LOCALBASE}/lib -L${X11BASE}/lib\
++LIBS = -L${LOCALBASE}/lib\
  	$(EXTRALIBS) $(WXSYSLIB)\
  	$(LIBSTDC) $(PYLIBS)
  
 -LIBS_WITH_GL = -L/usr/local/lib -L/usr/X11R6/lib\
-+LIBS_WITH_GL = -L${LOCALBASE}/lib -L${X11BASE}/lib\
++LIBS_WITH_GL = -L${LOCALBASE}/lib\
  	$(EXTRALIBS) $(WXSYSLIB_WITH_GL)\
  	$(LIBSTDC) $(PYLIBS)

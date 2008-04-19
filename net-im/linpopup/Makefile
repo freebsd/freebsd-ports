@@ -7,7 +7,7 @@
 
 PORTNAME=	linpopup
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.chez.com/littleigloo/files/
 DISTNAME=	LinPopUp-${PORTVERSION}.src
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba3
 
 WRKSRC=		${WRKDIR}/LinPopUp-${PORTVERSION}/src
 
+USE_XORG=	x11 xmu
 USE_GNOME=	gtk12
 ALL_TARGET=	LinPopUp
 

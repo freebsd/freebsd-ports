@@ -7,16 +7,16 @@
 
 PORTNAME=	xbl
 PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www710.univ-lyon1.fr/~exco/XBL/ GENTOO/distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D block-dropping game
 
-BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 MAN1=		xbl.1
 

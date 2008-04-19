@@ -48,10 +48,10 @@ post-patch:
 		    s|$$QTDIR/bin/qmake|${LOCALBASE}/bin/qmake|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} \
-		-e 's|system( ld|& -shared -L${LOCALBASE}/lib -L${X11BASE}/lib|' \
+		-e 's|system( ld|& -shared -L${LOCALBASE}/lib|' \
 		${CONFIGURE_WRKSRC}/check.qbas
 	@${REINPLACE_CMD} \
-		-e 's|/usr/local|${LOCALBASE}|; s|/opt|${X11BASE}|' \
+		-e 's|/usr/local|${LOCALBASE}|; s|/opt|${LOCALBASE}|' \
 		${CONFIGURE_WRKSRC}/paths.qbas
 
 .if !defined(NOPORTDOCS)

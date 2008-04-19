@@ -9,8 +9,7 @@ PORTNAME=	octave-forge
 PORTVERSION=	2006.03.17
 PORTREVISION=	2
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	octave
+MASTER_SITES=	SF/octave
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Many additional features to math/octave
@@ -29,9 +28,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty
 CONFIGURE_ARGS=	--with-cc=${CC} \
-		--with-cxx=${CXX} \
-		--x-libraries=${X11BASE}/lib \
-		--x-includes=${X11BASE}/include
+		--with-cxx=${CXX}
 
 USE_FORTRAN=	yes
 

@@ -7,7 +7,7 @@
 
 PORTNAME=		root
 PORTVERSION=		5.02.00
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		devel science math
 MASTER_SITES=		ftp://root.cern.ch/root/
 DISTNAME=		${PORTNAME}_v${PORTVERSION}.source
@@ -36,9 +36,8 @@ LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=		gmp.7:${PORTSDIR}/math/libgmp4
 USE_OPENSSL=		yes
 USE_GMAKE=		yes
-USE_XLIB=		yes
-USE_XPM=		yes
-USE_GL=			yes
+USE_XORG=		xpm x11
+USE_GL=			gl
 USE_GNOME=		libxml2
 
 # A lot of additional features are most likely used in high energy physics
@@ -84,7 +83,7 @@ CONFIGURE_ARGS=		${CONFIGURE_TARGET}		\
 			--enable-xml			\
 			--enable-xrootd
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib/root %%PREFIX%%/lib/root/cint
 MAN1=			cint.1 g2root.1 g2rootold.1 h2root.1 hadd.1 makecint.1
 MAN1+=			memprobe.1 olbd.1 proofd.1 proofserv.1 rlibmap.1
@@ -260,7 +259,7 @@ post-patch:
 		s|auxlibs=\"PTHREAD-LIBS|auxlibs=\"${PTHREAD_LIBS}|'         \
 		${WRKSRC}/config/root-config.in
 	@${REINPLACE_CMD} -e                                                 \
-		's|/usr/X11R6|${X11BASE}|g'                                   \
+		's|/usr/X11R6|${LOCALBASE}|g'                                   \
 		${WRKSRC}/configure \
 		${WRKSRC}/cint/lib/gl/setup \
 		${WRKSRC}/cint/lib/xlib/setup \

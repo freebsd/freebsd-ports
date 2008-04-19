@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs
 PORTVERSION=	${XEMACS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -94,8 +94,7 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--with-png --with-jpeg --with-tiff
-USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	xpm x11
 .if !defined(WITHOUT_MOTIF) && !defined(MOTIF_STATIC)
 USE_MOTIF=	yes
 WITH_SCROLLBARS=	--with-scrollbars=motif

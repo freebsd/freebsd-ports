@@ -19,7 +19,7 @@ MAKEFILE=	${WRKSRC}/saferpay/Makefile
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}
 
 post-patch:

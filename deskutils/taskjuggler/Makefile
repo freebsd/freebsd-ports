@@ -34,7 +34,6 @@ USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_CFLAGS}"
-CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

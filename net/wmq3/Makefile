@@ -7,7 +7,7 @@
 
 PORTNAME=	wmq3
 PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net windowmaker games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
@@ -19,8 +19,7 @@ RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 SUB_FILES=	pkg-message
 

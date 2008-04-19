@@ -6,9 +6,9 @@
 -INCDIR = -I/usr/X11R6/include/X11
 -DESTDIR= /usr/X11R6
 -LIBDIR = -L/usr/X11R6/lib
-+INCDIR = -I${X11BASE}/include
++INCDIR = -I${LOCALBASE}/include
 +DESTDIR= ${PREFIX}
-+LIBDIR = -L${X11BASE}/lib
++LIBDIR = -L${LOCALBASE}/lib
  # for linux
  LIBS   = -lXpm -lX11 -lXext
  # for Solaris

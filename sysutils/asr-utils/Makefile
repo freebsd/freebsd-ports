@@ -30,7 +30,7 @@ BINS+=		dptscom dptmgr
 .endif
 MAN8=		raidutil.8
 
-.if !defined(WITHOUT_X11) && !exists(${X11BASE}/lib/libXm.so.1)
+.if !defined(WITHOUT_X11) && !exists(${LOCALBASE}/lib/libXm.so.1)
 # we shall install our own libXm.so.1, enable it in pkg-plist
 PLIST_SUB+=	LIBXM=""
 .else
@@ -53,8 +53,8 @@ do-install:
 	cd ${WRKSRC} ; ${INSTALL_DATA} \
 	    dptcom.chk dptmgr.hlp dptmgr.ini dptmgr.rsc read.me \
 	    ${PREFIX}/dpt
-.if !exists(${X11BASE}/lib/libXm.so.1)
-	${INSTALL_SCRIPT} ${WRKSRC}/libXm.so.1 ${X11BASE}/lib
+.if !exists(${LOCALBASE}/lib/libXm.so.1)
+	${INSTALL_SCRIPT} ${WRKSRC}/libXm.so.1 ${LOCALBASE}/lib
 .endif
 .else
 NO_BUILD=	yes

@@ -25,9 +25,9 @@ PORTDOCS=	README TODO NEWS AUTHORS readme.txt installation.txt
 PLIST_FILES=	bin/d2x
 
 .ifdef(WITH_OPENGL)
-USE_GL=		yes
+USE_GL=		glut
 CONFIGURE_ARGS+=--with-opengl
-CONFIGURE_ENV=LDFLAGS=-L${X11BASE}/lib CPPFLAGS=-I${X11BASE}/include
+CONFIGURE_ENV=LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 .endif
 
 pre-everything::

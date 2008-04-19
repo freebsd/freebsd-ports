@@ -17,7 +17,7 @@
 +#CC			= gcc
  
 -XROOT    = /usr/X11R6
-+XROOT    = $(X11BASE)
++XROOT    = $(LOCALBASE)
  INCLPATH = -I$(XROOT)/include
  LDPATH   = -L$(XROOT)/lib
  

@@ -27,6 +27,6 @@ USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 IGNORE_WITH_PHP?=5
 DEFAULT_PHP_VER?=4
-CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>

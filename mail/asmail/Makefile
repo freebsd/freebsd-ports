@@ -7,22 +7,21 @@
 
 PORTNAME=	asmail
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmail/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Biff-type program, designed to match AfterStep
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shaping \
 		--with-xpm \
-		--with-xpm-includes=${X11BASE}/include \
-		--with-xpm-library=${X11BASE}/lib
+		--with-xpm-includes=${LOCALBASE}/include \
+		--with-xpm-library=${LOCALBASE}/lib
 
 MAN1=	asmail.1x
 MAN5=	asmailrc.5x

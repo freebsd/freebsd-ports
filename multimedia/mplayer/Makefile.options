@@ -147,7 +147,7 @@ CONFIGURE_ARGS+=	--disable-speex
 
 .if defined(WITH_XANIM)
 BUILD_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
-CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${X11BASE}/lib/X11/xanim
+CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${LOCALBASE}/lib/X11/xanim
 .else
 CONFIGURE_ARGS+=--disable-xanim
 .endif
@@ -272,7 +272,7 @@ CONFIGURE_ARGS+=	--disable-win32dll \
 
 .if defined(WITH_REALPLAYER)
 CONFIGURE_ARGS+=	--enable-real \
-			--realcodecsdir=${X11BASE}/lib/RealPlayer/codecs
+			--realcodecsdir=${LOCALBASE}/lib/RealPlayer/codecs
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 .else

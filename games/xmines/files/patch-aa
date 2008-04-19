@@ -12,8 +12,8 @@
 -SCOREFILES = /usr/X386/lib/X11/games
 +CFLAGS += -DSCOREfILE=\"$(SCOREFILES)/scores\"
 +CC ?= gcc
-+INCLUDE = ${X11BASE}/include
-+LIBRARY = ${X11BASE}/lib
++INCLUDE = ${LOCALBASE}/include
++LIBRARY = ${LOCALBASE}/lib
 +BIN = ${PREFIX}/bin
 +SCOREFILES = ${PREFIX}/share/xmines
  

@@ -7,10 +7,10 @@
 -LFLAGS=			-L/usr/local/lib -lz -lfltk -lptypes  -lexpat -L/usr/X11R6/lib -lm -lXpm -lX11 -ldl -lpthread -lXft
 -LFLAGS2=		-L/usr/local/lib -lfltk_ -lptypes -L/usr/X11R6/lib -lXpm -lX11 -ldl -lpthread
 +COMP=			$(CC)
-+IFLAGS=			-I../util -Isrc -I$(LOCALBASE)/include -I$(LOCALBASE)/include/ptypes -I$(X11BASE)/include
++IFLAGS=			-I../util -Isrc -I$(LOCALBASE)/include -I$(LOCALBASE)/include/ptypes
 +CFLAGS:=			$(CFLAGS) -Wno-format-y2k
-+LFLAGS=			-L$(LOCALBASE)/lib -lz -lfltk -lptypes  -lexpat -L$(X11BASE)/lib -lm -lXpm -lX11  $(PTHREAD_LIBS) -lXft -lcompat
-+LFLAGS2=		-L$(LOCALBASE)/lib -lfltk -lptypes -L$(X11BASE)/lib -lXpm -lX11  $(PTHREAD_LIBS)
++LFLAGS=			-L$(LOCALBASE)/lib -lz -lfltk -lptypes  -lexpat -lm -lXpm -lX11  $(PTHREAD_LIBS) -lXft -lcompat
++LFLAGS2=		-L$(LOCALBASE)/lib -lfltk -lptypes -lXpm -lX11  $(PTHREAD_LIBS)
  XTRADER=		xtrader
  XTRADER2=		xtrader.static
  

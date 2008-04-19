@@ -171,9 +171,9 @@ SHIA=		zsh
 SHIADEP=	${SHIA}
 
 .if !defined(WITH_ED)
-. if exists(${X11BASE}/bin/nedit)
+. if exists(${LOCALBASE}/bin/nedit)
 WITH_ED=	nedit
-RUN_DEPENDS+=	${X11BASE}/bin/nedit:${PORTSDIR}/editors/nedit
+RUN_DEPENDS+=	${LOCALBASE}/bin/nedit:${PORTSDIR}/editors/nedit
 . elif exists(${LOCALBASE}/bin/gvim)
 WITH_ED=	gvim
 RUN_DEPENDS+=	${LOCALBASE}/bin/gvim:${PORTSDIR}/editors/vim
@@ -188,10 +188,10 @@ WITH_ED=	gedit
 RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:${PORTSDIR}/editors/gedit
 . elif exists(${LOCALBASE}/bin/kwrite)
 WITH_ED=	kwrite
-RUN_DEPENDS+=	${X11BASE}/bin/kwrite:${PORTSDIR}/x11/kdebase3
+RUN_DEPENDS+=	${LOCALBASE}/bin/kwrite:${PORTSDIR}/x11/kdebase3
 . elif exists(${LOCALBASE}/bin/xedit)
 WITH_ED=	xedit
-RUN_DEPENDS+=	${X11BASE}/bin/xedit:${PORTSDIR}/x11/xedit
+RUN_DEPENDS+=	${LOCALBASE}/bin/xedit:${PORTSDIR}/x11/xedit
 . else
 WITH_ED=	vi
 . endif

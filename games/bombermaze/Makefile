@@ -7,15 +7,13 @@
 
 PORTNAME=	bombermaze
 PORTVERSION=	0.6.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A multiplayer game, strategy place bombs to kill enemies and obstacles
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
 USE_GETTEXT=	yes

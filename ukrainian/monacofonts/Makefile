@@ -7,7 +7,7 @@
 
 PORTNAME=	monaco
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ukrainian x11-fonts
 MASTER_SITES=	http://www.brama.com/compute/unix/
 PKGNAMEPREFIX=	koi8-u-
@@ -17,10 +17,11 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A collection of 5 "fixed" fonts for X11 from www.brama.com
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 USE_ZIP=	yes
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/Monaco.bdf
 

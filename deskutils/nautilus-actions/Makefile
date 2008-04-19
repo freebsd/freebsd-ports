@@ -8,6 +8,7 @@
 
 PORTNAME=	nautilus-actions
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp2.grumz.net/grumz/
 
@@ -21,7 +22,6 @@ USE_GETTEXT=	yes
 USE_GNOME=	nautilus2 intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-nautilus-extdir=${LOCALBASE}/lib/nautilus/extensions-2.0

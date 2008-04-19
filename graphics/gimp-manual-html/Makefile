@@ -33,7 +33,6 @@ pre-everything::
 	@${ECHO_MSG} "This manual is available in two formats: HTML and PDF."
 	@${ECHO_MSG} "Note that the manual is pretty darn big."
 
-PREFIX?=	${X11BASE}	# This port itself does not require Xlib
 EXTRACT_ONLY=	#empty
 NO_BUILD=	yes
 

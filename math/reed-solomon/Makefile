@@ -15,7 +15,7 @@ COMMENT=	A Reed-Solomon CODEC library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKEFILE=	makefile
 
 MAN3=		rs.3

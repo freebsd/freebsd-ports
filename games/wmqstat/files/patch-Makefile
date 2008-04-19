@@ -1,15 +1,17 @@
---- Makefile.orig	Fri Apr 25 05:00:09 2003
-+++ Makefile	Fri Apr 25 05:00:40 2003
+--- ./Makefile.orig	2003-04-24 21:31:39.000000000 +0200
++++ ./Makefile	2008-04-13 13:00:54.000000000 +0200
 @@ -1,14 +1,11 @@
 -CC =	cc
+-
+-X11BASE =	/usr/X11R6
+-LDIR =	-L${X11BASE}/lib
+-IDIR =	-I${X11BASE}/include
 +CC ?=	cc
  
--X11BASE =	/usr/X11R6
- LDIR =	-L${X11BASE}/lib
- IDIR =	-I${X11BASE}/include
- 
 -INSTALL =	install
--
++LDIR =	-L${LOCALBASE}/lib
++IDIR =	-I${LOCALBASE}/include
+ 
  LIBS =	-lX11 -lXpm -lXext
  
 -CFLAGS = -O -pipe -s -Wall
@@ -17,13 +19,12 @@
  
  OBJS =	appcore/wmqstat.o\
  	appcore/srv_proc.o\
-@@ -22,9 +19,6 @@
- 
+@@ -23,8 +20,5 @@
  all:	${OBJS}
  	${CC} ${CFLAGS} -o wmqstat ${OBJS} ${LDIR} ${LIBS}
--
+ 
 -install:
 -	${INSTALL} -o root -g wheel -m 755 wmqstat ${X11BASE}/bin
- 
+-
  clean:
  	rm -f wmqstat appcore/*.o wmgeneral/*.o core

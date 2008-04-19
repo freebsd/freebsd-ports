@@ -7,7 +7,7 @@
 
 PORTNAME=	xmixer
 PORTVERSION=	0.9.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://mpx.freeshell.net/
 
@@ -32,7 +32,7 @@ PROGRAMS=	xmixer xgmixer
 MLINKS+=	xmixer.1 xgmixer.1
 PLIST_FILES+=	bin/xgmixer
 .else
-USE_XLIB=	yes
+USE_XORG=	x11 xt ice xaw
 PROGRAMS=	xmixer
 .endif
 

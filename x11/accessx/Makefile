@@ -25,8 +25,8 @@ PLIST_FILES=	bin/ax bin/accessx
 post-patch:
 	${REINPLACE_CMD} \
 		-e "s@/usr/local@${PREFIX}@" \
-		-e "s@/usr/X11R6/lib@${X11BASE}/lib@" \
-		-e "s@g\+\+@${CXX} ${CXXFLAGS} -I${X11BASE}/include@g" \
+		-e "s@/usr/X11R6/lib@${LOCALBASE}/lib@" \
+		-e "s@g\+\+@${CXX} ${CXXFLAGS} -I${LOCALBASE}/include@g" \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s@wish -f@${WISH} -f@g" ${WRKSRC}/accessx
 

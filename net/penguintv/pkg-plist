@@ -173,6 +173,5 @@ share/locale/sv/LC_MESSAGES/penguintv.mo
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/ajax
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv
 
-@comment @cwd %%X11BASE%%
 @comment etc/gconf/gconf.xml.defaults/schemas/apps/penguintv/%gconf.xml
 @comment etc/gconf/gconf.xml.defaults/apps/penguintv/%gconf.xml

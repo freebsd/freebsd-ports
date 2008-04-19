@@ -8,8 +8,7 @@
 PORTNAME=	dotproject
 PORTVERSION=	${DOTPROJECTVER}.${DEVELVERSION:C/^([a-z]).*/\1/}${DEVELVERSION:C/^[a-z]*//}
 CATEGORIES=	www devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${DOTPROJECTVER}-${DEVELVERSION}
 
@@ -33,7 +32,7 @@ SUB_LIST+=	DOTPROJECTDIR=${DOTPROJECTDIR}
 SUB_FILES=	pkg-message
 
 .if defined(WITH_JPGRAPH)
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/webfonts/arial.ttf:${PORTSDIR}/x11-fonts/webfonts \
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/webfonts/arial.ttf:${PORTSDIR}/x11-fonts/webfonts \
 		${PREFIX}/share/jpgraph/jpgraph.php:${PORTSDIR}/graphics/jpgraph2
 .endif
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	bonobo-conf
 PORTVERSION=	0.16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/bonobo-conf/0.16
@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	sources/bonobo-conf/0.16
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Bonobo configuration moniker
 
-USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo gconf

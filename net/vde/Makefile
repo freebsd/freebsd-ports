@@ -18,7 +18,7 @@ COMMENT=	User-mode virtual ethernet infrastructure
 CONFLICTS=	vde2-[0-9]*
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	5.10.32
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -43,10 +44,10 @@ OPTIONS=	X11 "Build Boinc Manager GUI" on \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_WX=		2.6+
 WX_CONF_ARGS=	absolute
-CPPFLAGS+=		-I${X11BASE}/include
+CPPFLAGS+=		-I${LOCALBASE}/include
 
 USE_ICONV=	yes
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \

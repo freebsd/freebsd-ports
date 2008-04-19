@@ -4,7 +4,7 @@
  EXTRALIBS = ../common/common.a
  EXTRACPPFLAGS= -DGERBVIEW -DPCBNEW -fno-strict-aliasing -I./ -I../gerbview -I../include\
 -	-I../share -I../pcbnew -I../3d-viewer
-+	-I../share -I../pcbnew -I../3d-viewer -I${X11BASE}/include
++	-I../share -I../pcbnew -I../3d-viewer -I${LOCALBASE}/include
  
  #COMMON = pcbnew.h struct.h
  

@@ -20,8 +20,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+		alut.1:${PORTSDIR}/audio/freealut\
 		openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 
 PLIST_FILES=	bin/blender
@@ -79,7 +79,7 @@ pre-configure:
 		s|-pipe||; \
 		s|-O2|${CFLAGS}|; \
 		s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|; \
-		s|/usr/X11R6|${X11BASE}|' \
+		s|/usr/X11R6|${LOCALBASE}|' \
 		${WRKSRC}/source/nan_compile.mk
 
 	@${REINPLACE_CMD} -e \

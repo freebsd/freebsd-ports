@@ -16,7 +16,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A graphical shell for the X Window System
 
 USE_IMAKE=		yes
-USE_XPM=		yes
+USE_XORG=		xpm
 WRKSRC=			${WRKDIR}/xdtm
 MAN1=			xdtm.1
 

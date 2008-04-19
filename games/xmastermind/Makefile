@@ -7,7 +7,7 @@
 
 PORTNAME=		xmastermind
 PORTVERSION=		0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
@@ -17,7 +17,7 @@ COMMENT=	Mastermind game for X Window System
 
 LIB_DEPENDS=		forms.1:${PORTSDIR}/x11-toolkits/xforms
 
-USE_X_PREFIX=		yes
+USE_XORG=	x11 xpm
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \

@@ -20,13 +20,13 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgzstream.a:${PORTSDIR}/devel/gzstream
 
-USE_GL=		yes
+USE_GL=		gl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-gzstream --with-libtiff-lzw --with-x
-CFLAGS=		-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CFLAGS=		-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	libgfx.a
 

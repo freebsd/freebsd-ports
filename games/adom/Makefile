@@ -19,7 +19,7 @@ NO_CDROM=	Copy of CD must be sent to author
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 WRKSRC=		${WRKDIR}/adom
 NO_BUILD=	yes

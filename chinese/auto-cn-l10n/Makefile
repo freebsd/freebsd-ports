@@ -27,7 +27,7 @@ OPTIONS=	WQY		"WenQuanYi Bitmap Song Font"		on \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_WQY)
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/wqy/wenquanyi_10pt.pcf:${PORTSDIR}/x11-fonts/wqy
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/wqy/wenquanyi_10pt.pcf:${PORTSDIR}/x11-fonts/wqy
 .endif
 
 .if defined(WITH_FIREFLYTTF)
@@ -52,7 +52,7 @@ RUN_DEPENDS+=	relaxconf:${PORTSDIR}/sysutils/relaxconf
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%X11BASE%%|${X11BASE}|g; \
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/dot.xselector ${WRKSRC}/dot.xinitrc
 
 do-install:

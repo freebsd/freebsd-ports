@@ -41,8 +41,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
-USE_XLIB=	yes
-USE_GL=		yes
+USE_GL=		glut
 USE_FREETYPE=	yes
 USE_TCL=	yes
 USE_TCL_BUILD=	yes
@@ -56,8 +55,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-libs=${LOCALBASE}/lib \
 		--with-tcltk-includes="${TCL_INCLUDEDIR} ${TK_INCLUDEDIR}" \
-		--with-opengl-includes=${X11BASE}/include \
-		--with-opengl-libs=${X11BASE}/lib \
+		--with-opengl-includes=${LOCALBASE}/include \
+		--with-opengl-libs=${LOCALBASE}/lib \
 		--with-freetype \
 		--with-freetype-includes=${LOCALBASE}/include/freetype2 \
 		--with-nls \

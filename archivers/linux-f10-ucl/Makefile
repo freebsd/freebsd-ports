@@ -17,7 +17,7 @@ COMMENT=		RPM of UCL, a lossless data compression library
 USE_LINUX_RPM=		yes
 RPMVERSION=		3
 LINUX_DIST_VER=		4
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 MASTER_SITE_SRC_SUBDIR=	../extras/${LINUX_DIST_VER}/SRPMS
 DESCR=			${.CURDIR}/../${PORTNAME}/pkg-descr
 

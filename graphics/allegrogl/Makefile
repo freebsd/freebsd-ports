@@ -18,7 +18,7 @@ LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_GL=		glu
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
@@ -44,7 +44,7 @@ post-install:
 		 s|%%RM%%|${RM}|g; \
 		 s|%%CFLAGS%%|${CFLAGS}|g; \
 		 s|%%PREFIX%%|${PREFIX}|g; \
-		 s|%%X11BASE%%|${X11BASE}|g; \
+		 s|%%LOCALBASE%%|${LOCALBASE}|g; \
 		 s|%%ALLEGRO_CONFIG%%|${ALLEGRO_CONFIG}|g' \
 		 < ${FILESDIR}/makefile.ex > ${EXAMPLESDIR}/makefile
 

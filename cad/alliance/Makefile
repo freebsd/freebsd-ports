@@ -28,8 +28,6 @@ USE_MOTIF=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	ALLIANCE_TOP=${ALLIANCE_TOP}
 CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man \
-		--x-libraries=${X11BASE}/lib \
-		--x-includes=${X11BASE}/include \
 		--prefix=${ALLIANCE_TOP} ${CONFIGURE_TARGET}
 SUB_FILES=	pkg-message
 

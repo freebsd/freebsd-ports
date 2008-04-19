@@ -21,7 +21,7 @@ USE_XORG=	x11
 
 .include <bsd.port.pre.mk>
 
-XSERVER=	-DXSERVER_PATH=\"${X11BASE}/bin/Xorg\"
+XSERVER=	-DXSERVER_PATH=\"${LOCALBASE}/bin/Xorg\"
 PKGNAMEPREFIX=	xorg-
 COMMENT=	Wrapper for X.org X11 server
 

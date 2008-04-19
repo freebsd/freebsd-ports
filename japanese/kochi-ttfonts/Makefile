@@ -7,7 +7,7 @@
 
 PORTNAME=	kochi-ttfonts
 PORTVERSION=	20030809
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://downloads.sourceforge.jp/efont/5411/ \
 		${MASTER_SITE_PORTS_JP}
@@ -16,7 +16,6 @@ DISTFILES=	kochi-substitute-${PORTVERSION}.tar.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Japanese TrueType fonts named 'Kochi'
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 NO_BUILD=	yes
 

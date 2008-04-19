@@ -7,7 +7,7 @@
 
 PORTNAME=	vvv
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.ufes.br/~thomas/graphics/vvv/ \
 		${MASTER_SITE_LOCAL}
@@ -18,13 +18,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tutorial tool for understanding viewing and projection in OpenGL
 
-BUILD_DEPENDS=	${X11BASE}/lib/libglui.a:${PORTSDIR}/devel/glui
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+BUILD_DEPENDS= ${LOCALBASE}/lib/libglui.a:${PORTSDIR}/devel/glui
 
 USE_GMAKE=	yes
-USE_GL=		yes
-USE_X_PREFIX=	yes
-MAKE_ENV=	OS=unix X11BASE="${X11BASE}"
+USE_GL=		glut
+MAKE_ENV=	OS=unix
 ALL_TARGET=	${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

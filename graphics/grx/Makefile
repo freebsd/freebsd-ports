@@ -21,7 +21,7 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-fontpath=${DATADIR}/fonts \
-		--with-x11-base=${X11BASE}
+		--with-x11-base=${LOCALBASE}
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 ALL_TARGET=	libs

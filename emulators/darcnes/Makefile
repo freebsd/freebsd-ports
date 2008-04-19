@@ -7,7 +7,7 @@
 
 PORTNAME=	darcnes
 PORTVERSION=	9b0401
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.dridus.com/~nyef/darcnes/download/
 DISTNAME=	dn${PORTVERSION}
@@ -43,7 +43,7 @@ LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
 MAKE_ARGS+=	TARGET=Linux_svgalib
 PKGNAMESUFFIX=	-svgalib
 .else
-USE_XLIB=	yes
+USE_XORG=	x11 xaw xext xmu xt
 .endif
 .endif
 

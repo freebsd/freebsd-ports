@@ -18,7 +18,7 @@ COMMENT=	Cross-platform game programming library (linux version)
 USE_LINUX_RPM=		yes
 ONLY_FOR_ARCHS=		i386 amd64
 DIST_SUBDIR=		rpm
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 USE_XLIB=		yes
 SRC_DISTFILES=
 

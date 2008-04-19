@@ -7,10 +7,9 @@
 
 PORTNAME=	pmars
 PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	corewar
+MASTER_SITES=	SF/corewar
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A portable corewar system with ICWS'94 extensions
@@ -70,11 +69,11 @@ MAKE_ARGS+=	CFLAGS+="-DSMALLMEM"
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 TARGETS+=	x11
 X11_ARGS+=	CFLAGS+="-DXWINGRAPHX" \
-		CFLAGS+="-I${X11BASE}/include" \
-		LIB+="-L${X11BASE}/lib -lX11"
+		CFLAGS+="-I${LOCALBASE}/include" \
+		LIB+="-L${LOCALBASE}/lib -lX11"
 PLIST_SUB+=	X11=""
 .else
 PLIST_SUB+=	X11="@comment "

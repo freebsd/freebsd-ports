@@ -9,15 +9,15 @@
 -
 +CFLAGS ?= -O2
 +CC ?= gcc
-+XLIB = -L$(X11BASE)/lib  -lXaw -lXmu -lXt
-+XLIB+= -Wl,-rpath,$(X11BASE)/lib
++XLIB = -L$(LOCALBASE)/lib  -lXaw -lXmu -lXt
++XLIB+= -Wl,-rpath,$(LOCALBASE)/lib
  OBJS = asprint.o
 -INCS = 
 -
 -default : asprint  ./makefile
 -clean:
 -	rm -f $(OBJS) *~ asprint core
-+INCS = -I$(X11BASE)/include
++INCS = -I$(LOCALBASE)/include
  
  asprint: $(OBJS)
  	$(CC) -o asprint $(CFLAGS) $(OBJS) $(XLIB)

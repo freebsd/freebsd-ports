@@ -7,10 +7,9 @@
 
 PORTNAME=	mplayerxp
 PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-threaded branch of the well known mplayer media player
@@ -24,10 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fon
 ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
-#USE_GNOME=	gtk12
-USE_GCC=	3.4+
 USE_ICONV=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 WANT_SDL=	yes
@@ -46,8 +42,8 @@ BROKEN=		Does not compile with GCC 4.2
 # add this after <bsd.port.pre.mk> so that we inherit /etc/make.conf
 CONFIGURE_ARGS+=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include \
-		--with-x11incdir=${X11BASE}/include \
-		--with-x11libdir=${X11BASE}/lib \
+		--with-x11incdir=${LOCALBASE}/include \
+		--with-x11libdir=${LOCALBASE}/lib \
 		--cc=${CC} \
 		--prefix=${PREFIX} \
 		--confdir=${PREFIX}/etc/${PORTNAME} \

@@ -8,9 +8,9 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	anjuta
+MASTER_SITES=	SF
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated Development Environment for C and C++
@@ -30,7 +30,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_AUTOTOOLS=	autotools:run
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

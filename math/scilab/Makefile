@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	4.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math cad parallel
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 WANT_GNOME=	yes
@@ -31,12 +32,10 @@ CONFIGURE_ARGS=	--with-tk \
 		--with-tcl-library=${LOCALBASE}/lib \
 		--with-tcl-include=${LOCALBASE}/include/tcl8.4 \
 		--with-xaw3d \
-		--x-include=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib \
 		--without-java \
 		--without-ocaml
 
-CONFIGURE_ENV+=	X11BASE=${X11BASE} F77=${F77} FFLAGS="${FFLAGS}"
+CONFIGURE_ENV+=	F77=${F77} FFLAGS="${FFLAGS}"
 
 OPTIONS=	GTK2	"Use Gtk+2 interface"	off \
 		PVM	"Use PVM"	 	off

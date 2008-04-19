@@ -7,7 +7,7 @@
 
 PORTNAME=		BillardGL
 PORTVERSION=		1.75
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		games
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	billardgl
@@ -15,16 +15,14 @@ MASTER_SITE_SUBDIR=	billardgl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL billiard simulator
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_GMAKE=	yes
-USE_GL=		gl
+USE_GL=		gl glut
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PORTNAME%%|${PORTNAME}|; \
-			      s|%%X11BASE%%|${X11BASE}|' ${WRKSRC}/Namen.h
+			      s|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Namen.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

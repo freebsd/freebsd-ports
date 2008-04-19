@@ -18,8 +18,8 @@ COMMENT=	The GNU spreadsheet for X11 and terminals
 USE_PERL5_BUILD=	yes
 USE_BISON=	build
 USE_AUTOTOOLS=	autoconf:213
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
 
 INFO=		oleo

@@ -15,12 +15,12 @@ $FreeBSD$
 - "/usr/bin/netscape", "", (char *)HELP_PROG_INPUT_TYPE_URL, \
 - "/usr/local/bin/netscape", "", (char *)HELP_PROG_INPUT_TYPE_URL, \
 - "/bin/netscape", "", (char *)HELP_PROG_INPUT_TYPE_URL, \
-+ "%%X11BASE%%/bin/netscape", "", (char *)HELP_PROG_INPUT_TYPE_URL, \
++ "%%LOCALBASE%%/bin/netscape", "", (char *)HELP_PROG_INPUT_TYPE_URL, \
  \
 - "/usr/X11R6/bin/nxterm", "-e lynx", (char *)HELP_PROG_INPUT_TYPE_URL, \
 - "/usr/X11R6/bin/xterm", "-e lynx", (char *)HELP_PROG_INPUT_TYPE_URL, \
-+ "%%X11BASE%%/bin/nxterm", "-e lynx", (char *)HELP_PROG_INPUT_TYPE_URL, \
-+ "%%X11BASE%%/bin/xterm", "-e lynx", (char *)HELP_PROG_INPUT_TYPE_URL, \
++ "%%LOCALBASE%%/bin/nxterm", "-e lynx", (char *)HELP_PROG_INPUT_TYPE_URL, \
++ "%%LOCALBASE%%/bin/xterm", "-e lynx", (char *)HELP_PROG_INPUT_TYPE_URL, \
  \
   NULL, NULL, NULL \
  }

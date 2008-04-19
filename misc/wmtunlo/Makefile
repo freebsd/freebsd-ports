@@ -7,14 +7,14 @@
 
 PORTNAME=	wmtunlo
 PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://clay.ll.pl/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A falling-down-a-tunnel dockapp
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xpm xextproto
 ALL_TARGET=	wmtunlo
 
 do-install:

@@ -17,7 +17,7 @@ COMMENT=	Linear Programming Solver
 
 PORTMAJOR_VER=	5.5
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTMAJOR_VER}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if ${MACHINE_ARCH} == "sparc64"
 PICFLAG?=       -fPIC

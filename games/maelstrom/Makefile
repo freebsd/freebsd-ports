@@ -7,7 +7,7 @@
 
 PORTNAME=	maelstrom
 PORTVERSION=	3.0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.devolution.com/~slouken/projects/Maelstrom/src/
 DISTNAME=	Maelstrom-${PORTVERSION}
@@ -15,9 +15,8 @@ DISTNAME=	Maelstrom-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asteroids-style game for X Window System
 
-USE_X_PREFIX=	yes
 USE_SDL=	sdl net
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

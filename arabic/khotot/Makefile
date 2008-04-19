@@ -7,7 +7,7 @@
 
 PORTNAME=	khotot
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	arabic
 MASTER_SITES=	#
 DISTFILES=	#
@@ -17,15 +17,15 @@ MAINTAINER=	sbahra@gwu.edu
 COMMENT=	A meta-port of the most popular font packages
 
 .if !defined(WITHOUT_MONO)
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/ae_fonts_mono/fonts.dir:${PORTSDIR}/arabic/ae_fonts_mono
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/ae_fonts_mono/fonts.dir:${PORTSDIR}/arabic/ae_fonts_mono
 .endif
 
 .if !defined(WITHOUT_AEFONTS)
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/ae_fonts1/AAHS/fonts.dir:${PORTSDIR}/arabic/ae_fonts_ttf
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/ae_fonts1/AAHS/fonts.dir:${PORTSDIR}/arabic/ae_fonts_ttf
 .endif
 
 .if !defined(WITHOUT_KACST)
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/kacst_fonts/fonts.dir:${PORTSDIR}/arabic/kacst_fonts
+RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/kacst_fonts/fonts.dir:${PORTSDIR}/arabic/kacst_fonts
 .endif
 
 NO_BUILD=	yes
@@ -53,7 +53,7 @@ do-install:
 	# This is a meta-port, the do-install target is not needed
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} "s|X11BASE|${X11BASE}|g" \
+	@${CAT} ${PKGMESSAGE} | ${SED} "s|LOCALBASE|${LOCALBASE}|g" \
 		${PKGDIR}/pkg-message
 
 .include <bsd.port.mk>

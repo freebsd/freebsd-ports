@@ -20,6 +20,6 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 
 post-install:
-	${STRIP_CMD} ${X11BASE}/bin/deskmenu
+	${STRIP_CMD} ${PREFIX}/bin/deskmenu
 
 .include <bsd.port.mk>

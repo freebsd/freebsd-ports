@@ -7,9 +7,9 @@
 -  INCLUDESDIR=${XCLASSESINCLUDE:-"/usr/local/include"}
 -  LIBSDIR=${XCLASSESLIB:-"/usr/local/lib"}
 -  CONFIGSDIR=${XCLASSESCONFIG:-"/usr/lib/X11/Xclasses"}
-+  INCLUDESDIR=%%X11BASE%%/include/
-+  LIBSDIR=%%X11BASE%%/lib/
-+  CONFIGSDIR=%%X11BASE%%/share/Xclasses/
++  INCLUDESDIR=%%LOCALBASE%%/include/
++  LIBSDIR=%%LOCALBASE%%/lib/
++  CONFIGSDIR=%%LOCALBASE%%/share/Xclasses/
    ROOTID=0
  
    if [ "$2" != "quit" ]; then
@@ -38,7 +38,7 @@
  # look for installed XPM lib
    MAKEXPM="y"
 -  for N in /usr/include/X11 /usr/local/include/X11
-+  for N in %%X11BASE%%/include/X11/
++  for N in %%LOCALBASE%%/include/X11/
    do
      if [ -f "$N/xpm.h" ]; then
       MAKEXPM="n"
@@ -47,7 +47,7 @@
  
  # look for shapes
 -  if [ -f "/usr/include/X11/extensions/shape.h" ]; then
-+  if [ -f "%%X11BASE%%/include/X11/extensions/shape.h" ]; then
++  if [ -f "%%LOCALBASE%%/include/X11/extensions/shape.h" ]; then
      USESHAPE="y"
    else
      USESHAPE="n"

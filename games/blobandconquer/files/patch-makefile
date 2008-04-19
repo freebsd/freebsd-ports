@@ -17,12 +17,12 @@
  CXXFLAGS += -Wmissing-format-attribute -Wmissing-noreturn
  CXXFLAGS += -Wdisabled-optimization
 -CXXFLAGS += `sdl-config --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
-+CXXFLAGS += -I$(X11BASE)/include `$(SDL_CONFIG) --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
++CXXFLAGS += -I$(LOCALBASE)/include `$(SDL_CONFIG) --cflags` -DVERSION=$(VERSION) -DRELEASE=$(RELEASE) -DUSEPAK=$(USEPAK) -DDEV=$(DEV)
  CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DGAMEPLAYMANUAL=\"$(DOCDIR)/index.html\" -Wall -pedantic
  CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\"
 -LIBPATH = -L/usr/X11/lib -L/usr/X11R6/lib
 -LIBS = -lGL -lGLU `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
-+LIBPATH = -L$(X11BASE)/lib
++LIBPATH = -L$(LOCALBASE)/lib
 +LIBS = -lGL -lGLU `$(SDL_CONFIG) --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz -lintl
  
  # Yes, it means compiling is a little slower... but it's less hassle

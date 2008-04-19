@@ -7,7 +7,7 @@
 
 PORTNAME?=	gdk-pixbuf
 PORTVERSION=	0.22.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES?=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gdk-pixbuf/0.22
@@ -23,6 +23,7 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_XORG=	xt xi x11
 USE_GNOME+=	gnomehack gtk12
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

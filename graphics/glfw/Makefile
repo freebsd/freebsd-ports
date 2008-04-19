@@ -24,7 +24,6 @@ do-configure:
 	@(cd ${WRKSRC} &&		\
 	${SETENV} CC="${CC}"		\
 		  CFLAGS="${CFLAGS}"	\
-		  X11BASE="${X11BASE}"	\
 		  PTHREAD_LIBS="${PTHREAD_LIBS}" ./compile.sh)
 
 do-install:

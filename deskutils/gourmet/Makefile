@@ -7,10 +7,9 @@
 
 PORTNAME=	gourmet
 PORTVERSION=	0.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	grecipe-manager
+MASTER_SITES=	SF/grecipe-manager
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	GNOME recipe manager
@@ -19,7 +18,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py
 		${PYTHON_SITELIBDIR}/PyRTF/__init__.py:${PORTSDIR}/print/py-rtf \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
-USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 

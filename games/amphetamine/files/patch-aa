@@ -25,7 +25,7 @@ $FreeBSD$
  # Directories to search for header files
  
 -SEARCHDIRS := -I${MYCODEDIR} ${SDL_HEADERS}
-+SEARCHDIRS := -I${MYCODEDIR} ${SDL_HEADERS} -I ${X11BASE}/include
++SEARCHDIRS := -I${MYCODEDIR} ${SDL_HEADERS} -I ${LOCALBASE}/include
  
  # makemake variables
  
@@ -56,7 +56,7 @@ $FreeBSD$
  endif
  
 -LDFLAGS   = -L/usr/lib -L/usr/local/lib -L/usr/X11R6/lib 
-+LDFLAGS   = -L$(X11BASE)/lib
++LDFLAGS   = -L$(LOCALBASE)/lib
  
  .PHONY : default
  default : amph
@@ -78,7 +78,7 @@ $FreeBSD$
  ./src/Surface.o: ./src/AmpHead.hpp ./src/Clut.hpp ./src/ConstVal.hpp ./src/Graphfil.hpp ./src/Shape.hpp ./src/ShapeLd.hpp ./src/Surface.hpp ./src/System.hpp /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h
  
 -./src/System.o: ./src/AmpHead.hpp ./src/Graphfil.hpp ./src/System.hpp /usr/include/X11/xpm.h /usr/include/fcntl.h /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h /usr/include/string.h /usr/include/sys/stat.h /usr/include/sys/time.h /usr/include/sys/types.h /usr/include/unistd.h
-+./src/System.o: ./src/AmpHead.hpp ./src/Graphfil.hpp ./src/System.hpp ${X11BASE}/include/X11/xpm.h /usr/include/fcntl.h /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h /usr/include/string.h /usr/include/sys/stat.h /usr/include/sys/time.h /usr/include/sys/types.h /usr/include/unistd.h
++./src/System.o: ./src/AmpHead.hpp ./src/Graphfil.hpp ./src/System.hpp ${LOCALBASE}/include/X11/xpm.h /usr/include/fcntl.h /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h /usr/include/string.h /usr/include/sys/stat.h /usr/include/sys/time.h /usr/include/sys/types.h /usr/include/unistd.h
  
  ./src/Thing.o: ./src/AmpHead.hpp ./src/Appl.hpp ./src/Bullet.hpp ./src/ConstVal.hpp ./src/Element.hpp ./src/File.hpp ./src/Graphfil.hpp ./src/Level.hpp ./src/ObjInfo.hpp ./src/Object.hpp ./src/Pltform.hpp ./src/Shape.hpp ./src/ShapeLd.hpp ./src/Surface.hpp ./src/System.hpp ./src/Thing.hpp /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h
  

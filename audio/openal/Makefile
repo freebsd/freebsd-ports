@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--enable-capture
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
 WANT_SDL=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	ARTS "aRts backend" off \
 		ESD "esd backend" off \

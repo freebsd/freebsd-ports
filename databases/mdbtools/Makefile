@@ -7,10 +7,9 @@
 
 PORTNAME=	mdbtools
 PORTVERSION=	0.5
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
@@ -31,7 +30,7 @@ MAN1=		mdb-ver.1 mdb-tables.1 mdb-schema.1 mdb-sql.1 mdb-export.1
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GNOME+=	gnomeprefix gnomehack libgnomeui
 PKGNAMESUFFIX=	-gnome
 .endif

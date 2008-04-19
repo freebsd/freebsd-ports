@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux
 USE_LINUX_RPM=	yes
 RPMVERSION=	15.5
 LINUX_DIST_VER=	4
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST=		pkg-plist.${LINUX_RPM_ARCH}
 
 .include <bsd.port.mk>

@@ -11,8 +11,8 @@
 +CC?=		gcc
 +CFLAGS?=		-O4 -Wall
 +DEFINES=	-DPREFIX=\"${PREFIX}\"
-+INCLUDES=	-I${X11BASE}/include -I${X11BASE}/include/X11
-+LIBS=		-L${X11BASE}/lib
++INCLUDES=	-I${LOCALBASE}/include -I${LOCALBASE}/include/X11
++LIBS=		-L${LOCALBASE}/lib
  LDLIBS=		-lXpm -lX11
  DEPEND=		makedepend
  OBJS=		wintype.o xtron.o main.o xpm2pixmap.o resource.o

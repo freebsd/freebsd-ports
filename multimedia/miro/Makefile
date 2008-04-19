@@ -32,7 +32,7 @@ USE_GSTREAMER=	python
 INSTALLS_EGGINFO=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/platform/gtk-x11
-MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}"
+MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 
 DATADIR=	${PREFIX}/share/${PORTNAME:L}
 PLIST_SUB=	VER=${PORTVERSION} PYTHON_VER=${_PYTHON_VERSION}	\
@@ -47,7 +47,7 @@ MANCOMPRESSED=	yes
 pre-configure:
 .for pyscr in setup.py platform/resources.py
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|'		\
-		-e 's|/usr/X11R6|${X11BASE}|g'				\
+		-e 's|/usr/X11R6|${LOCALBASE}|g'				\
 		-e 's|/usr/share|${PREFIX}/share|g'			\
 		-e 's|/usr/libexec|${PREFIX}/libexec|g'			\
 		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|'		\

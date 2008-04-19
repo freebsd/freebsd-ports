@@ -7,7 +7,7 @@
 
 PORTNAME=	hanyangfonts
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=   ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
@@ -17,9 +17,9 @@ DISTNAME=	hanyang-font-pcf
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Hanyang Hangul fonts for X11
 
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
-
-USE_X_PREFIX=	yes
+RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_WRKSUBDIR=   yes
 

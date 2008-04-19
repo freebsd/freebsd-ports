@@ -24,7 +24,7 @@ USE_ICONV=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 INFO=		pinentry
 
 CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}

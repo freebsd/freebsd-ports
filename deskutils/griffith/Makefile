@@ -31,6 +31,6 @@ post-patch:
 	@${FIND} ${WRKSRC}/ -name Makefile |\
 		${XARGS} ${REINPLACE_CMD} -e '/^PREFIX/d' -e '/^MANDIR/s|=.*|=${MANPREFIX}/man|'
 	@${REINPLACE_CMD} -e '/^LANGUAGES=/s|find.*|cd i18n/\&\&ls -d *)|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/share/fonts|${X11BASE}/lib/X11/fonts|' ${WRKSRC}/${PORTNAME}
+	@${REINPLACE_CMD} -e 's|/usr/share/fonts|${LOCALBASE}/lib/X11/fonts|' ${WRKSRC}/${PORTNAME}
 
 .include <bsd.port.mk>

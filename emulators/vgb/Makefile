@@ -7,7 +7,7 @@
 
 PORTNAME=	vgb
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -19,7 +19,7 @@ COMMENT=	Nintendo GameBoy(tm) emulator
 
 WRKSRC=		${WRKDIR}/GB
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext
 
 do-configure:
 	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' ${FILESDIR}/vgb.sh \

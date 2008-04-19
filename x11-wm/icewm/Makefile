@@ -7,6 +7,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.2.35
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
@@ -14,6 +15,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Window Manager designed for speed, usability and consistency
 
 WANT_GNOME=	yes
+USE_XORG=	x11 ice xinerama xext
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

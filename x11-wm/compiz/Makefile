@@ -60,8 +60,8 @@ GCONF_SCHEMAS=	gwd.schemas \
 		compiz-zoom.schemas
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 OPTIONS=	RSVG "Enable librsvg2 support" on \
 		GTK "Enable gtk2 support" on \

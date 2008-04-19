@@ -21,7 +21,7 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_KDEBASE_VER=	3
 USE_AUTOTOOLS=		libtool:15
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 CONFIGURE_ARGS+=	--disable-pgsql
 
 OPTIONS=	KIPI "Support for libkipi" on \

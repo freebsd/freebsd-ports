@@ -10,7 +10,7 @@
  
  mindguard: mindguard.c mindguard.h 
 -	$(CC) `gtk-config --cflags`  mindguard.c -o mindguard `gtk-config --libs`
-+	$(CC) -DX11BASE=\"${X11BASE}\" `${GTK_CONFIG} --cflags`  ${CFLAGS} mindguard.c -o mindguard `${GTK_CONFIG} --libs`
++	$(CC) -DLOCALBASE=\"${PREFIX}\" `${GTK_CONFIG} --cflags`  ${CFLAGS} mindguard.c -o mindguard `${GTK_CONFIG} --libs`
  
  install: mindguard install-bin install-carriers install-docs
  

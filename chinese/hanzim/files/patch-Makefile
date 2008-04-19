@@ -32,7 +32,7 @@
  
  # location of x library
 -LIBXDIR = -L /usr/X11/lib
-+LIBXDIR = -L${X11BASE}/lib
++LIBXDIR = -L${LOCALBASE}/lib
  
  # you might need to change "libtcl" and "libtk" to "libtcl8.x" and "libtk8.x"
 -LIBS = $(LIBXDIR) $(LIBTCLDIR) -ltk -ltcl -lX11 -lm -ldl
@@ -47,7 +47,7 @@
 -CC = cc
 -DEFINES = -D$(OS) -DLIBDIR=\"$(LIBDIR)\"
 -CFLAGS = -O2 $(DEFINES)
-+DEFINES = -D$(OS) -DLIBDIR=\"$(LIBDIR)\" -I${LOCALBASE}/include/tk8.4 -I${LOCALBASE}/include/tcl8.4 -I${X11BASE}/include
++DEFINES = -D$(OS) -DLIBDIR=\"$(LIBDIR)\" -I${LOCALBASE}/include/tk8.4 -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include
 +CFLAGS += $(DEFINES)
  #CFLAGS = -O2 -Wall -pedantic -ansi $(DEFINES)
  LFLAGS = $(LIBS)  -s

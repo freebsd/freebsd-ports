@@ -7,7 +7,7 @@
 
 PORTNAME=		vmd
 PORTVERSION=		1.8.3
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		science graphics python tcl tk
 MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.97/:tachyon \
 			ftp://ftp.ebi.ac.uk/pub/software/unix/stride/src/:stride
@@ -18,7 +18,7 @@ DISTFILES=		${VMD_DIST} \
 MAINTAINER=		sangwoos@gmail.com
 COMMENT=		A molecular visualization program
 
-BUILD_DEPENDS=		makedepend:${X_IMAKE_PORT} \
+BUILD_DEPENDS=		makedepend:${PORTSDIR}/devel/makedepend \
 			${PYNUMERIC}
 LIB_DEPENDS=		tcl84:${PORTSDIR}/lang/tcl84 \
 			tk84:${PORTSDIR}/x11-toolkits/tk84 \
@@ -27,7 +27,7 @@ RUN_DEPENDS=		${PYNUMERIC}
 
 USE_PERL5_BUILD=	yes
 USE_GMAKE=		yes
-USE_GL=			yes
+USE_GL=			glu
 USE_PYTHON=		yes
 
 RESTRICTED=		"License has restrictions"

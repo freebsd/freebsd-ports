@@ -9,8 +9,7 @@ PORTNAME=	barrage
 PORTVERSION=	1.0.2
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lgames
+MASTER_SITES=	SF/lgames
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	az@FreeBSD.org
@@ -21,7 +20,7 @@ USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games
 
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|applications|applnk/Applications|g' \

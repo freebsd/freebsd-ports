@@ -22,10 +22,10 @@ USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile.linux
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${OPTFLAGS}" \
 		LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 
@@ -35,7 +35,7 @@ OPTIONS=	OPTIMIZATION	"Enable optimization"	off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == ia64 
+.if ${ARCH} == amd64 || ${ARCH} == ia64
 BROKEN=		does not compile on ${ARCH}
 .endif
 

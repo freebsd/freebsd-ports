@@ -7,10 +7,9 @@
 
 PORTNAME=	doom
 PORTVERSION=	1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
-MASTER_SITE_SUBDIR=	source
+MASTER_SITES=	SF/source
 DISTNAME=	doomsrc
 
 MAINTAINER=	jmz@FreeBSD.org
@@ -21,8 +20,8 @@ NO_CDROM=	requested by IDsoftware
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_ZIP=	yes
+USE_XORG=	x11
 NO_WRKSUBDIR=	yes
 
 DATADIR=	${DMDIR}
@@ -35,7 +34,7 @@ post-patch:
 		-E -e 's|#include +<malloc.h>|#include <stdlib.h>|g'
 
 do-build:
-	@cd ${WRKDIR}/linuxdoom-1.10 && ${GMAKE} X11BASE=${X11BASE}
+	@cd ${WRKDIR}/linuxdoom-1.10 && ${GMAKE} X11BASE=${LOCALBASE}
 	@cd ${WRKDIR}/sndserv && ${GMAKE}
 
 do-install:

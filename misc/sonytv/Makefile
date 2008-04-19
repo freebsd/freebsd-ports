@@ -7,7 +7,7 @@
 
 PORTNAME=	sonytv
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc tk
 MASTER_SITES=	http://tools.ana.com/demos/
 
@@ -15,8 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sony-compatible TV remote
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
-
-USE_X_PREFIX=	yes
 
 NO_BUILD=	yes
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	fgfs-base
 PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Shared/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/
@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Shared/ \
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	FlightGear scenery, textures and aircraft models
 
-PREFIX?=	${X11BASE}	# USE_X_PREFIX would pull in USE_XLIB
 NO_BUILD=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/data

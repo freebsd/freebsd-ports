@@ -53,7 +53,7 @@
 -CFLAGS = -Wall $(CDEFS.udp) $(COPT.arch) \
 -	 -I. -I.. -I/usr/X11R6/include $(COPT.sound) $(COPT.opengl)
 +CFLAGS += $(CDEFS.udp) $(COPT.arch) \
-+	 -I. -I.. -I${X11BASE}/include -I${LOCALBASE}/include $(COPT.sound) $(COPT.opengl)
++	 -I. -I.. -I${LOCALBASE}/include -I${LOCALBASE}/include $(COPT.sound) $(COPT.opengl)
  
  # Uncomment the line below if you want to use original "[" and "]" keys
  # for inventory access, instead of "k" and "l".
@@ -68,7 +68,7 @@
  endif
  
 -X_LDFLAGS = -L/usr/X11R6/lib
-+X_LDFLAGS = -L${X11BASE}/lib
++X_LDFLAGS = -L${LOCALBASE}/lib
  
  X11LIBS = -lXext -lX11
 -GLLIBS  = -lSDL -lpthread

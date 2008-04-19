@@ -24,7 +24,7 @@ USE_GNOME=	gdkpixbuf
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-GL-prefix=${X11BASE}/lib \
+CONFIGURE_ARGS=	--with-GL-prefix=${LOCALBASE}/lib \
 		--with-lib-GL \
 		--with-host=${LOCALBASE}/bin/host
 CONFIGURE_ENV+=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

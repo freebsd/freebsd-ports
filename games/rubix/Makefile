@@ -7,7 +7,7 @@
 
 PORTNAME=	rubix
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://sed.free.fr/rubix/
 
@@ -15,10 +15,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Rubik's cube game with a rather interesting interface
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_XORG=	x11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DENGLISH" \
-		XINC="-I${X11BASE}/include" XLIB="-L${X11BASE}/lib -lX11"
+		XINC="-I${LOCALBASE}/include" XLIB="-L${LOCALBASE}/lib -lX11"
 ALL_TARGET=	${PORTNAME}
 
 PORTDOCS=	${DOCFILES}

@@ -9,8 +9,7 @@ PORTNAME=		kkbswitch
 PORTVERSION=		1.4.3
 PORTREVISION=	3
 CATEGORIES=		sysutils kde
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	kkbswitch
+MASTER_SITES=		SF/kkbswitch
 
 MAINTAINER=		achilov-rn@askd.ru
 COMMENT=		Keyboard layout switcher and indicator for KDE 3.x
@@ -32,7 +31,7 @@ MAN1=			kkbswitch.1
 OPTIONS=		RU_UA_LAYOUT	"With additional RU_UA keyboard layout" off
 
 PLIST_SUB=		PREFIX=${PREFIX} \
-			X11BASE=${X11BASE} \
+			LOCALBASE=${LOCALBASE} \
 			DOCSDIR=${DOCSDIR}
 
 .include <bsd.port.pre.mk>

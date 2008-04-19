@@ -10,11 +10,11 @@
 -$pnm_command='/usr/bin/gs -sDEVICE=pnmraw -sOutputFile=- -sNOPAUSE -dBATCH -q -r400';
 -$convert_command='/usr/bin/pnmcrop | /usr/bin/pnmmargin -white 10 | /usr/bin/convert - ';
 +$LOCALBASE='%%LOCALBASE%%';
-+$X11BASE='%%X11BASE%%';
++$LOCALBASE='%%LOCALBASE%%';
 +
 +$latex_command="${LOCALBASE}/bin/platex";	# latex command in your site.
 +$dvips_command="${LOCALBASE}/bin/dvips";
-+$tgif_command="${X11BASE}/bin/tgif";
++$tgif_command="${LOCALBASE}/bin/tgif";
 +$pnm_command="${LOCALBASE}/bin/gs -sDEVICE=pnmraw -sOutputFile=- -sNOPAUSE -dBATCH -q -r400";
 +$convert_command="${LOCALBASE}/bin/pnmcrop | ${LOCALBASE}/bin/pnmmargin -white 10 | ${LOCALBASE}/bin/convert - ";
  

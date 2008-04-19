@@ -15,7 +15,6 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Network API translation layer for X applications and libraries
 
 USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes

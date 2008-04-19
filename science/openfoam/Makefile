@@ -19,12 +19,12 @@ COMMENT=	Open Field Operation and Manipulation - CFD Simulation Toolbox
 BUILD_DEPENDS=	micod:${PORTSDIR}/devel/mico						\
 		bash:${PORTSDIR}/shells/bash						\
 		cmake:${PORTSDIR}/devel/cmake						\
-		${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode				\
+		${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode				\
 		${PARAVIEW_LIB}/ParaViewConfig.cmake:${PORTSDIR}/science/paraview	\
 		${LOCALBASE}/share/java/java3d/jar/j3dutils.jar:${PORTSDIR}/java/java3d	\
 		${LOCALBASE}/include/libiberty/demangle.h:${PORTSDIR}/devel/gnulibiberty\
 		${LOCALBASE}/include/vtk/vtkDataSetSource.h:${PORTSDIR}/math/vtk-headers\
-		${X11BASE}/lib/X11/fonts/freefont-ttf/FreeSans.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
+		${LOCALBASE}/lib/X11/fonts/freefont-ttf/FreeSans.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
 #		${LOCALBASE}/lib/parmetis/libmetis.a:${PORTSDIR}/math/parmetis
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo	\
 		readline.5:${PORTSDIR}/devel/readline
@@ -201,7 +201,7 @@ pre-configure:
 		-e "s|\$$LAMHOME/platforms/\$$WM_OPTIONS|${LOCALBASE}|"		\
 		-e "s|^SOURCE |source |"					\
 		${BATCHRC:S|^|${WRKSRC}/|}
-	${REINPLACE_CMD} -e "s|-lGL|-L${X11BASE}/lib -lGL|"	\
+	${REINPLACE_CMD} -e "s|-lGL|-L${LOCALBASE}/lib -lGL|"	\
 		${GL2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e "s|GCC_VERSION=4.1.1|GCC_VERSION=${GCC_VER:S/_//}|"	\
 		-e "s|JAVA_VERSION=1.4.2+|JAVA_VERSION=${JAVA_PORT_VERSION}|"	\
@@ -218,7 +218,7 @@ pre-configure:
 		-e "s|-lpthread|${PTHREAD_LIBS}|"		\
 		${WRKSRC}/wmake/rules/${OPSYS}/${f}
 .endfor
-	${REINPLACE_CMD} -e "s|/usr/X11R6|${X11BASE}|"		\
+	${REINPLACE_CMD} -e "s|/usr/X11R6|${LOCALBASE}|"		\
 		${WRKSRC}/wmake/rules/${OPSYS}/X
 .for f in ${VER2FIX}
 	${REINPLACE_CMD} -e "s|%%ARCH%%|${ARCH}|"	\

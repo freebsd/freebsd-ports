@@ -9,14 +9,13 @@ PORTNAME=	wily
 PORTVERSION=	0.13.42
 PORTREVISION=	2
 CATEGORIES=	editors plan9
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	serge.gagnon.1@ulaval.ca
 COMMENT=	A clone of the Plan9 editor `acme'
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rc:${PORTSDIR}/shells/rc \
-		${X11BASE}/lib/X11/fonts/Xg/unicode.9.font:${PORTSDIR}/x11-fonts/Xg
+		${LOCALBASE}/lib/X11/fonts/Xg/unicode.9.font:${PORTSDIR}/x11-fonts/Xg
 
 USE_XORG=	x11 ice xt
 GNU_CONFIGURE=	YES

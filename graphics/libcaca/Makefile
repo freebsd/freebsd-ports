@@ -7,6 +7,7 @@
 
 PORTNAME=	libcaca
 DISTVERSION=	0.99.beta13
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://libcaca.zoy.org/files/
 
@@ -31,7 +32,7 @@ MAN1=		caca-config.1 cacafire.1 cacaplay.1 cacaserver.1 cacaview.1 \
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--disable-x11
 .else
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 
 .if defined(WITHOUT_IMLIB2)

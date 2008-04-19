@@ -51,14 +51,14 @@
  # (usually /usr/include; for SunOS with OpenLook, /usr/openwin/include)
  # Needed for the "libgraph" and "camltk" packages.
 -X11_INCLUDES=/usr/X11R6/include
-+X11_INCLUDES=${X11BASE}/include
++X11_INCLUDES=${LOCALBASE}/include
  #X11_INCLUDES=/usr/include/X11
  
  # The path to the directory containing the X11 libraries.
  # (usually /usr/lib; for SunOS with OpenLook, /usr/openwin/lib)
  # Needed for the "libgraph" and "camltk" packages.
 -X11_LIB=/usr/X11R6/lib
-+X11_LIB=${X11BASE}/lib
++X11_LIB=${LOCALBASE}/lib
  #X11_LIB=/usr/lib/X11
  
  # Name of the target architecture.

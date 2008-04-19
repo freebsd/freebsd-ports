@@ -14,7 +14,7 @@ MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Utility to manipulate memory from running processes and core files
 
 HAS_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386
 

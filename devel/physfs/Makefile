@@ -16,6 +16,6 @@ COMMENT=	A library to provide abstract access to various archives
 
 USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

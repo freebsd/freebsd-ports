@@ -14,7 +14,7 @@
 +CC 		?= gcc
 +#_E 		:= @
 +LOCALBASE 	?= /usr/local
-+X11BASE 	?= /usr/X11R6
++LOCALBASE 	?= /usr/X11R6
 +USE_OPTIMIZED_CFLAGS 	?= YES
  
 -default_target: glx
@@ -63,7 +63,7 @@
  
  GLX_CFLAGS := $(CFLAGS) \
 -	-DGLQUAKE	-I/usr/X11R6/include
-+	-DGLQUAKE	-I$(X11BASE)/include
++	-DGLQUAKE	-I$(LOCALBASE)/include
 +
 +ifeq ($(strip $(USE_X86_ASM)),YES)
 +GLX_CFLAGS += -Did386
@@ -73,7 +73,7 @@
 -	-lGL		-L/usr/X11R6/lib	-lX11 \
 -	-lXext		-lXxf86dga		-lXxf86vm \
 -	-lpng		-ljpeg
-+	-L$(X11BASE)/lib	-lGL		-lX11 \
++	-L$(LOCALBASE)/lib	-lGL		-lX11 \
 +	-lXext			-lXxf86dga	-lXxf86vm \
 +	-L$(LOCALBASE)/lib	-lpng		-ljpeg
  
@@ -96,7 +96,7 @@
  X11_S_OBJS := $(addprefix $(X11_DIR)/, $(addsuffix .o, $(X11_S_FILES)))
  
 -X11_CFLAGS := $(CFLAGS)
-+X11_CFLAGS := $(CFLAGS) -I$(X11BASE)/include
++X11_CFLAGS := $(CFLAGS) -I$(LOCALBASE)/include
 +
 +ifeq ($(strip $(USE_X86_ASM)),YES)
 +X11_CFLAGS += -Did386
@@ -105,7 +105,7 @@
  X11_LDFLAGS := $(LDFLAGS) \
 -	-L/usr/X11R6/lib	-lX11		-lXext \
 -	-lpng
-+	-L$(X11BASE)/lib	-lX11		-lXext \
++	-L$(LOCALBASE)/lib	-lX11		-lXext \
 +	-L$(LOCALBASE)/lib	-lpng
  
  x11: _DIR := $(X11_DIR)
@@ -120,7 +120,7 @@
  SVGA_LDFLAGS := $(LDFLAGS) \
 -	-L/usr/X11R6/lib	-lX11		-lpthread \
 -	-lvga			-lpng
-+	-L$(X11BASE)/lib	-lX11		-lpthread \
++	-L$(LOCALBASE)/lib	-lX11		-lpthread \
 +	-L$(LOCALBASE)/lib	-lvga		-lpng
  
 +ifeq ($(OSTYPE),Linux)

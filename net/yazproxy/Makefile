@@ -17,7 +17,7 @@ LIB_DEPENDS=	yazpp:${PORTSDIR}/net/yaz++
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared --with-yazpp=${LOCALBASE}/bin
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN8=		yazproxy.8
 

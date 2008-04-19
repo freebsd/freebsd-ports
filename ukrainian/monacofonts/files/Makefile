@@ -8,10 +8,10 @@ PCFS:=	${STEMS:S/$/.pcf.gz/}
 all:	${PCFS} fonts.dir fonts.alias
 
 .bdf.pcf.gz:
-	${X11BASE}/bin/bdftopcf < $< | gzip -9 > $@
+	${LOCALBASE}/bin/bdftopcf < $< | gzip -9 > $@
 
 fonts.dir: ${PCFS}
-	${X11BASE}/bin/mkfontdir
+	${LOCALBASE}/bin/mkfontdir
 
 # I don't know why ``isoir-111'' was  chosen for this fonts' encoding --
 # they  are in  koi8-u, so  the each  will have  a corresponding  alias.
@@ -24,7 +24,7 @@ fonts.alias: fonts.dir
 		print $$2 " " name; gsub("koi8-u", "koi8-r", $$2); \
 		print $$2 " " name}' < fonts.dir > fonts.alias
 
-DIR=	${X11BASE}/lib/X11/fonts/koi8u-monaco
+DIR=	${LOCALBASE}/lib/X11/fonts/koi8u-monaco
 
 install: all
 	${MKDIR} ${DIR}

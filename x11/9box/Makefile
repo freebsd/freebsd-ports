@@ -7,7 +7,7 @@
 
 PORTNAME=	9box
 PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
@@ -16,15 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	9box can "pack" windows inside itself
 
 PLIST_FILES=	bin/9box
-USE_XLIB=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps x11 xt
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g; \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%CC%%|${CC}|g' \
 		${WRKSRC}/src/Makefile
 

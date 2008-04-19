@@ -7,7 +7,7 @@
 
 PORTNAME=	e16utils
 PORTVERSION=	0.16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://public.planetmirror.com/pub/enlightenment/e16utils/
@@ -19,7 +19,6 @@ COMMENT=	Standalone menu and keybinding editors for enlightment 0.16
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 
 SUB_STUBS=	e16menuedit-0.1 e16keyedit-0.2

@@ -7,7 +7,7 @@
 
 PORTNAME=	feappv
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad science
 MASTER_SITES=	http://www.ce.berkeley.edu/~rlt/feappv/
 MASTER_SITE_SUBDIR=	feap
@@ -25,7 +25,7 @@ USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-L
 
 WRKSRC=		${WRKDIR}/ver20
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_FORTRAN=	yes
 FFLAGS+=	-O2
 MAKEFILE=	makefile
@@ -34,7 +34,7 @@ ALL_TARGET=	install
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g; s+%%CC%%+${CC}+g;	\
 	s+%%FFLAGS%%+${FFLAGS}+g; s+%%CFLAGS%%+${CFLAGS}+g;	\
-	s+/usr/X11R6+${X11BASE}+g; s+%%WRKSRC%%+${WRKSRC}+;' 	\
+	s+/usr/X11R6+${LOCALBASE}+g; s+%%WRKSRC%%+${WRKSRC}+;' 	\
 	${WRKSRC}/makefile.in
 
 do-install:

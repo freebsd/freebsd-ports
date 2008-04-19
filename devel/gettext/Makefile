@@ -83,7 +83,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/gettext-tools/misc/${f} \
 			 ${PREFIX}/share/emacs/site-lisp
 .endfor
-	@${MKDIR} ${X11BASE}/share/locale
+	@${MKDIR} ${LOCALBASE}/share/locale
 	@cd ${WRKSRC}/gettext-tools/doc && make install-info-am
 
 .include <bsd.port.mk>

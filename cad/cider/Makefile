@@ -7,7 +7,7 @@
 
 PORTNAME=	cider
 PORTVERSION=	1.b1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mita
@@ -18,11 +18,11 @@ COMMENT=	A mixed-level circuit and device simulator (includes SPICE3)
 
 CONFLICTS=	spice-[0-9]*
 WRKSRC=		${WRKDIR}/sim
-USE_XLIB=	yes
 MAN1=		sconvert.1 nutmeg.1 spice.1 cider.1
 MAN3=		mfb.3
 MAN5=		mfbcap.5
 MLINKS=		spice.1 spice3.1
+USE_XORG=	xt xaw xmu
 
 MAKE_ENV+=	CC="${CC}"
 

@@ -28,7 +28,7 @@ CONFIGURE_ENV=	LDFLAGS=-static
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,_PRIV_FILENAME \"/etc/,_PRIV_FILENAME \"${PREFIX}/etc/,g; \
-		s,/usr/bin/X11/,${X11BASE}/,g" ${WRKSRC}/options.h
+		s,/usr/bin/X11/,${LOCALBASE}/,g" ${WRKSRC}/options.h
 	@${REINPLACE_CMD} -e "s,sys/dir.h,dirent.h," ${WRKSRC}/*.[ch]
 	@${REINPLACE_CMD} -e "s,make clean,\$${MAKE} clean," \
 				${WRKSRC}/libtomcrypt/Makefile.in

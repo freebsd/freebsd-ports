@@ -15,10 +15,10 @@
  ### Directories for include files of X11 and libraries
  
 -X_INCLUDE	= /usr/X11R6/include
-+X_INCLUDE	= $(X11BASE)/include
++X_INCLUDE	= $(LOCALBASE)/include
  
 -XLIB_DIR		= /usr/X11R6/lib
-+XLIB_DIR		= $(X11BASE)/lib
++XLIB_DIR		= $(LOCALBASE)/lib
  
  ###################################################################
  

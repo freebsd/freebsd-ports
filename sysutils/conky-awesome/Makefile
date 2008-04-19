@@ -23,8 +23,8 @@ USE_ICONV=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-proc-uptime \
 			--disable-hddtemp
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 MAN1=		conky.1
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	mozplugger
 PORTVERSION=	1.7.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,11 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lorenl@north-winds.org
 COMMENT=	Framework for loading web content in external viewers
 
-EXTRACT_DEPENDS=bzip2:${PORTSDIR}/archivers/bzip2
+EXTRACT_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
 
+USE_XORG=	x11 xt
 MAN7=		mozplugger.7
-
-USE_XLIB=	yes
 
 FETCH_CMD=	/usr/bin/fetch -Rr
 

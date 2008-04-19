@@ -48,7 +48,7 @@
 #				  It determines the type of parameters that have to be passed
 #				  to the configure script. In the first case it adds
 #				  "--with-wx-config=${WX_CONFIG}" (absolute path of
-#				  WX_CONFIG), and in second one "--with-wx=${X11BASE}" plus
+#				  WX_CONFIG), and in second one "--with-wx=${LOCALBASE}" plus
 #				  "--with-wx-config=${WX_CONFIG:T} (prefix and name).
 # WX_PREMK		- Define to determine version and define WX_CONFIG/WX_VERSION
 #				  after <bsd.port.pre.mk> (in case the port needs to manually run
@@ -189,7 +189,7 @@ _WX_COMP=				${comp}
 .		for ver in ${_WX_VERS_ALL}
 .			if defined(_WX_LIB_${comp}_${ver})
 _WX_SHVER_${comp}_${ver}=	0
-_WX_FILE_${comp}_${ver}=	${X11BASE}/lib/lib${_WX_LIB_${comp}_${ver}}.so.${_WX_SHVER_${comp}_${ver}}
+_WX_FILE_${comp}_${ver}=	${LOCALBASE}/lib/lib${_WX_LIB_${comp}_${ver}}.so.${_WX_SHVER_${comp}_${ver}}
 .			endif
 .			if ${_WX_COMP} == "python"
 _WX_DEPTYPE_${comp}_${ver}=	run
@@ -494,8 +494,8 @@ _WX_VER=				${ver}
 # Set variables.
 #
 
-WX_CONFIG?=				${X11BASE}/bin/wxgtk2${_WX_UC}-${_WX_VER}-config
-WXRC_CMD?=				${X11BASE}/bin/wxrc-gtk2${_WX_UC}-${_WX_VER}
+WX_CONFIG?=				${LOCALBASE}/bin/wxgtk2${_WX_UC}-${_WX_VER}-config
+WXRC_CMD?=				${LOCALBASE}/bin/wxrc-gtk2${_WX_UC}-${_WX_VER}
 WX_VERSION?=			${_WX_VER}
 
 .endif		# _WX_Need_Version
@@ -586,7 +586,7 @@ CONFIGURE_ENV+=			WX_CONFIG=${WX_CONFIG}
 .	if ${WX_CONF_ARGS:L} == "absolute"
 CONFIGURE_ARGS+=		--with-wx-config=${WX_CONFIG}
 .	elif ${WX_CONF_ARGS:L} == "relative"
-CONFIGURE_ARGS+=		--with-wx=${X11BASE} \
+CONFIGURE_ARGS+=		--with-wx=${LOCALBASE} \
 						--with-wx-config=${WX_CONFIG:T}
 .	else
 IGNORE?=				selected an invalid wxWidgets configure argument type: ${WX_CONF_ARGS}

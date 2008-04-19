@@ -7,7 +7,7 @@
 
 PORTNAME=	netrek-COW
 PORTVERSION=	3.00.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.netrek.org/pub/netrek/clients/cow/COW-bin/old/
 DISTFILES=	COW.3.00pl0.FreeBSD.gz
@@ -15,7 +15,6 @@ DISTFILES=	COW.3.00pl0.FreeBSD.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 16-player network space battle/conquest game with a Star Trek theme
 
-USE_X_PREFIX=		YES
 NO_BUILD=		YES
 NO_WRKSUBDIR=		YES
 PLIST_FILES=	bin/netrek

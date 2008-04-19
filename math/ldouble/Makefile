@@ -19,7 +19,7 @@ COMMENT=	Long double math precision functions
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 sparc64
 
 PLIST_FILES=	lib/libml.a \

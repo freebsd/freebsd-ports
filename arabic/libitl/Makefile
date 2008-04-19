@@ -16,7 +16,7 @@ COMMENT=	An API abstraction to common Islamic calculations
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/itl
 
 WRKSRC=		${WRKDIR}/itl/libs-${PORTVERSION}

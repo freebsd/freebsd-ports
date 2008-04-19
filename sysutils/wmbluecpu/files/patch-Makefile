@@ -3,8 +3,8 @@
 @@ -1,43 +1,23 @@
 -#Makefile
 +CC ?=	cc
-+LDIR =	-L${X11BASE}/lib
-+IDIR =	-I${X11BASE}/include
++LDIR =	-L${LOCALBASE}/lib
++IDIR =	-I${LOCALBASE}/include
  
 -PREFIX=/usr/local
 -BINDIR=$(PREFIX)/bin

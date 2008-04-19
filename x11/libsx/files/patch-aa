@@ -14,7 +14,7 @@
  #  CFLAGS = -g -D_POSIX_SOURCE -DOPENGL_SUPPORT
  #
 -CFLAGS = -g -D_POSIX_SOURCE 
-+CFLAGS += -O -D_POSIX_SOURCE -I$(X11BASE)/include
++CFLAGS += -O -D_POSIX_SOURCE -I$(LOCALBASE)/include
  
  #
  # if you are on a System V (like the SGI) machine, just define RANLIB
@@ -34,5 +34,5 @@
  #LIBS   =  $(LIBSX) -lXaw -lXmu -lXt -lX11
 -LIBS   =  $(LIBSX) -lXaw -lXmu -lXt -lX11
 -
-+LIBS   =  $(LIBSX) -lXaw3d -lXmu -lXt -lX11 -lm -lXext -L$(X11BASE)/lib
-+LIBS+=	-Wl,-rpath,${X11BASE}/lib
++LIBS   =  $(LIBSX) -lXaw3d -lXmu -lXt -lX11 -lm -lXext -L$(LOCALBASE)/lib
++LIBS+=	-Wl,-rpath,${LOCALBASE}/lib

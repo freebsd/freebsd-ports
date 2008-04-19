@@ -19,7 +19,7 @@ NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 FONTS=	moosefont terminalpants
-FONTDIR=	${X11BASE}/lib/X11/fonts/${PORTNAME}/
+FONTDIR=	${LOCALBASE}/lib/X11/fonts/${PORTNAME}/
 FILES=	${FONTS:S,$,.pcf.gz,} ${FILESDIR}/fonts.dir
 WRKSRC=	${WRKDIR}/ppants
 
@@ -33,7 +33,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${FILES} ${FONTDIR}
 
 post-install:
-	@${SED} 's,$${X11BASE},${X11BASE},g' \
+	@${SED} 's,$${LOCALBASE},${LOCALBASE},g' \
 		${PKGDIR}/pkg-message >${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.3.9
+PORTREVISION=	1
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
@@ -22,7 +23,7 @@ USE_BZIP2=	YES
 HAS_CONFIGURE=	YES
 USE_GNOME=	gtk20
 USE_GMAKE=	YES
-USE_GCC=	3.4+
+USE_XORG=	xtst
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
 OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method"	off
@@ -58,17 +59,17 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \
 		${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/lib,${LOCALBASE}/lib,g; \
-		s,/usr/include,${X11BASE}/include,g; s,Xft2/X11/Xft,X11/Xft,' \
+		s,/usr/include,${LOCALBASE}/include,g; s,Xft2/X11/Xft,X11/Xft,' \
 		${WRKSRC}/qt-im/Makefile
 	@${REINPLACE_CMD} -e 's,modify-XIM ,,; 8,10 d' \
 		${WRKSRC}/scripts/Makefile
-	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; s,/opt/gnome,${X11BASE},;' \
+	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; s,/opt/gnome,${LOCALBASE},;' \
 		${WRKSRC}/scripts/utf8-edit ${WRKSRC}/scripts/gcin-user-setup \
 		${WRKSRC}/scripts/gtab.append_prepare
 	@${REINPLACE_CMD} -e 's,wget,fetch,' ${WRKSRC}/scripts/noseeing-inst
 	@${REINPLACE_CMD} -e 's,gcin-im-client.h,im-client/gcin-im-client.h,;' \
 		${WRKSRC}/gtk-im/gtkimcontextgcin.c
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},' \
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' \
 		${WRKSRC}/IMdkit/lib/Makefile ${WRKSRC}/Makefile \
 		${WRKSRC}/qt-im/Makefile ${WRKSRC}/scripts/modify-XIM \
 		${WRKSRC}/scripts/utf8-edit

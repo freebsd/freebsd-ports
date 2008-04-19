@@ -8,6 +8,7 @@
 
 PORTNAME=	libgnomecanvasmm
 PORTVERSION=	2.22.0
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -22,9 +23,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LATEST_LINK=	libgnomecanvasmm26
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 USE_GNOME=	gnomehack libgnomecanvas
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	proggy_fonts
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.proggyfonts.com/download/
 DISTFILES=	ProggyClean.pcf.zip ProggySquare.pcf.zip	\
@@ -19,9 +19,10 @@ DISTFILES=	ProggyClean.pcf.zip ProggySquare.pcf.zip	\
 MAINTAINER=	llwang@infor.org
 COMMENT=	The perfect monospaced bitmap programming fonts
 
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

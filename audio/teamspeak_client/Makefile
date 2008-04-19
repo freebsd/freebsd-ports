@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 NO_BUILD=	yes
 
 TSIMG=		${WRKSRC}/setup.data/image

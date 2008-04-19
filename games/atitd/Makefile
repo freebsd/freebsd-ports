@@ -17,7 +17,7 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Linux "A Tale in the Desert" (ATITD) client
 
-RUN_DEPENDS=	${X11BASE}/bin/xhost:${X_CLIENTS_PORT}
+RUN_DEPENDS=	${LOCALBASE}/bin/xhost:${PORTSDIR}/x11/xhost
 
 .include <bsd.port.pre.mk>
 

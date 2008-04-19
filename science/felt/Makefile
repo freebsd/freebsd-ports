@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/FElt-${PORTVERSION}
 USE_MOTIF=	yes
 USE_GL=		glu
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--x-defaults=${X11BASE}/lib/X11/app-defaults
+CONFIGURE_ARGS=	--x-defaults=${LOCALBASE}/lib/X11/app-defaults
 CFLAGS+=	-D__GLX_MOTIF
 
 MAN1=		burlap.1 corduroy.1 felt.1 patchwork.1 velvet.1 yardstick.1

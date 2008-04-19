@@ -7,8 +7,8 @@
 -LIBS = -lm -lX11
 -CFLAGS = -O
 +.if defined(X11)
-+LIBS = -L${X11BASE}/lib -lX11 -lm
-+CFLAGS += -DX11 -I${X11BASE}/include -DDEFAULT_DIR=\"${PREFIX}/lib/astrolog\"
++LIBS = -L${LOCALBASE}/lib -lX11 -lm
++CFLAGS += -DX11 -I${LOCALBASE}/include -DDEFAULT_DIR=\"${PREFIX}/lib/astrolog\"
 +.else
 +LIBS = -lm
 +CFLAGS += -DDEFAULT_DIR=\"${PREFIX}/lib/astrolog\"

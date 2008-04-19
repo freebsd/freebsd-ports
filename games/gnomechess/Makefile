@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomechess
 PORTVERSION=	0.3.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-chess/0.3
@@ -19,7 +19,6 @@ COMMENT=	A GUI chess front-end to crafy, for the GNOME Desktop Environment
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomecanvas gnomehack gnomeprefix libglade
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes

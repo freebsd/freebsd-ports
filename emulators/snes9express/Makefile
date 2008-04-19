@@ -7,10 +7,9 @@
 
 PORTNAME=	snes9express
 PORTVERSION=	1.42
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	GTK interface for snes9x
@@ -19,8 +18,6 @@ RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
-USE_XLIB=	yes
-
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

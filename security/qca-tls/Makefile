@@ -23,7 +23,7 @@ USE_OPENSSL=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-CONFIGURE_ARGS=	--qtdir=${X11BASE} \
+CONFIGURE_ARGS=	--qtdir=${LOCALBASE} \
 		--with-openssl-inc=${OPENSSLINC} --with-openssl-lib=${OPENSSLLIB}
 MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++

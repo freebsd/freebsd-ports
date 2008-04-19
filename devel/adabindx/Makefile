@@ -7,7 +7,7 @@
 
 PORTNAME=	adabindx
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://home.arcor.de/hfvogt/
 
@@ -17,18 +17,18 @@ COMMENT=	An Ada-binding to the X Window System and *tif
 BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 
 USE_MOTIF=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 post-patch:
 #	@mv ${WRKSRC}/lib ${WRKSRC}/src
 
 #do-install:
-#	@${MKDIR} ${X11BASE}/lib/adabindx
+#	@${MKDIR} ${LOCALBASE}/lib/adabindx
 #	@(for i in `cat pkg-plist|grep "lib/adabindx"|grep -v dirrm|sed "s/lib\/adabindx\///"`; do \
 #		${INSTALL_DATA} ${WRKSRC}/lib/$${i} ${PREFIX}/lib/adabindx; \
 #	done)
 #
-#	@${MKDIR} ${X11BASE}/share/adabindx
+#	@${MKDIR} ${LOCALBASE}/share/adabindx
 #	@(for i in `cat pkg-plist|grep "share/adabindx"|grep -v dirrm|sed "s/share\/adabindx\///"`; do \
 #		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/share/adabindx; \
 #	done)

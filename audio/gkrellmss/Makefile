@@ -14,17 +14,16 @@ MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plugin for GKrellM with a VU meter showing left/right channel audio
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 LIB_DEPENDS=	gdk_pixbuf_xlib.2:${PORTSDIR}/graphics/gdk-pixbuf
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 NO_LATEST_LINK=	yes
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	esound imlib
-USE_XPM=	yes
+USE_XORG=	xpm
 
 DOC_FILES=	Changelog README Themes
 

@@ -27,8 +27,8 @@ USE_GMAKE=	yes
 PORTDOCS=	README
 
 # find dependencies
-CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include \
-		-L${LOCALBASE}/lib -L${X11BASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include \
+		-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 

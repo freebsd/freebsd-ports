@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-mag
 PORTVERSION=	0.14.10
+PORTREVISION=	1
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,7 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen magnifier
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
+USE_XORG=	xfixes xdamage ice xcomposite sm
 USE_GNOME=	gnomehack gnomeprefix atspi libbonobo intlhack ltverhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

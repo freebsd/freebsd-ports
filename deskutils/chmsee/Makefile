@@ -7,7 +7,7 @@
 
 PORTNAME=	chmsee
 PORTVERSION=	0.9.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://chmsee.gro.clinux.org/
 
@@ -22,7 +22,6 @@ USE_GNOME=	gtk20 libglade2 gnomeprefix gnomehack libgnome
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -7,7 +7,7 @@
 
 PORTNAME=	fcalc
 PORTVERSION=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}-tcl
@@ -18,7 +18,7 @@ COMMENT=	F/Calc is a calculator for photographic formulas
 RUN_DEPENDS=	${LOCALBASE}/lib/tix8.1/Tix.tcl:${PORTSDIR}/x11-toolkits/tix
 
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xt
 USE_TK_RUN=	84
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-1.00

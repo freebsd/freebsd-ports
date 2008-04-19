@@ -13,7 +13,7 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Fibonacci Heap Library
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		fh_extractmin.3 fh_makeheap.3 fh_makekeyheap.3
 

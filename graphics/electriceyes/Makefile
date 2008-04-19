@@ -7,7 +7,7 @@
 
 PORTNAME=	electriceyes
 PORTVERSION=	0.3.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ee/0.3
@@ -16,7 +16,6 @@ DISTNAME=	ee-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A graphic view base imlib & gtk
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
 USE_GETTEXT=	yes

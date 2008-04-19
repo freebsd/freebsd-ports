@@ -7,7 +7,7 @@
 
 PORTNAME=	apc
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
@@ -17,7 +17,7 @@ COMMENT=	An xforms based Auto Payment Calculator
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xpm
 MAN1=		apc.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/apc

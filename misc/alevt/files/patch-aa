@@ -19,8 +19,8 @@
 +.endif
  
 -CFLAGS=$(OPT) -DVERSION=\"$(VER)\" $(DEFS) -I/usr/X11R6/include -I/usr/local/include -W
-+CFLAGS+=-DVERSION=\"$(VER)\" $(DEFS) -I${X11BASE}/include -I${LOCALBASE}/include -W
-+X11_LIBS=-L${X11BASE}/lib -lX11
++CFLAGS+=-DVERSION=\"$(VER)\" $(DEFS) -I${LOCALBASE}/include -W
++X11_LIBS=-L${LOCALBASE}/lib -lX11
  
  EXPOBJS=export.o exp-txt.o exp-html.o exp-gfx.o font.o
  OBJS=main.o ui.o xio.o fdset.o vbi.o cache.o help.o edline.o search.o edit.o misc.o hamm.o lang.o $(EXPOBJS)

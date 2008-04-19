@@ -26,7 +26,7 @@ USE_GNOME=	glib12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	xpm
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

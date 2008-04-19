@@ -9,14 +9,13 @@ PORTNAME=	larbin
 PORTVERSION=	2.6.3
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful HTTP crawler with an easy interface
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		makedepend:${X_IMAKE_PORT}
+		makedepend:${PORTSDIR}/devel/makedepend
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

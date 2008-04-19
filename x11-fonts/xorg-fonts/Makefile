@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-fonts
 PORTVERSION=	7.3
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -16,7 +17,6 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org fonts meta-port
 
 USE_XORG=	fontutil
-PREFIX?=	${X11BASE}
 
 FONTSDIR=	${PREFIX}/lib/X11/fonts
 RUN_DEPENDS=	${FONTSDIR}/100dpi/courB08-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/xorg-fonts-100dpi \

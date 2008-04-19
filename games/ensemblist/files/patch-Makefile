@@ -6,8 +6,8 @@
  DATADIR=$(DESTDIR)/usr/share/$(NAME)
 -COMPILE_FLAGS=-Wall -O3 -fomit-frame-pointer `libmikmod-config --cflags` -DNDEBUG -DDATADIR=$(DATADIR)
 -LINK_FLAGS=-lm -L /usr/X11R6/lib -lXmu -lGL -lglut -lGLU -lpng `libmikmod-config --libs` -lpthread
-+COMPILE_FLAGS=$(CFLAGS) -Wall -I$(LOCALBASE)/include -I$(X11BASE)/include `$(LOCALBASE)/bin/libmikmod-config --cflags` -DNDEBUG -DDATADIR=$(DATADIR) $(PTHREAD_CFLAGS)
-+LINK_FLAGS=-lm -L$(LOCALBASE)/lib -L$(X11BASE)/lib -lXmu -lGL -lglut -lGLU -lpng `$(LOCALBASE)/bin/libmikmod-config --libs` $(PTHREAD_LIBS)
++COMPILE_FLAGS=$(CFLAGS) -Wall -I$(LOCALBASE)/include -I$(LOCALBASE)/include `$(LOCALBASE)/bin/libmikmod-config --cflags` -DNDEBUG -DDATADIR=$(DATADIR) $(PTHREAD_CFLAGS)
++LINK_FLAGS=-lm -L$(LOCALBASE)/lib -L$(LOCALBASE)/lib -lXmu -lGL -lglut -lGLU -lpng `$(LOCALBASE)/bin/libmikmod-config --libs` $(PTHREAD_LIBS)
  endif
  APPLE_FRAMEWORKS=-framework GLUT -framework Cocoa -framework OpenGL
  #uncomment the following if you want to compile on MacOS/X

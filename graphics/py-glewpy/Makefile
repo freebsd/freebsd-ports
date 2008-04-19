@@ -24,8 +24,8 @@ BROKEN=		fails to install
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>

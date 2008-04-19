@@ -8,7 +8,7 @@
 -PREFIX=/usr/local
 -CFLAGS=-Wall -g ${UCD}
 +PREFIX?=/usr/local
-+CFLAGS+=${UCD} -DCDDB_PATH=\"${X11BASE}/lib/X11/xmcd/cddb\"
++CFLAGS+=${UCD} -DCDDB_PATH=\"${LOCALBASE}/lib/X11/xmcd/cddb\"
  all:dagrab
  
  dagrab:dagrab.o

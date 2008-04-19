@@ -10,22 +10,16 @@ PORTNAME=	gl-117
 PORTVERSION=	1.3.2
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTVERSIONSUFFIX=	-src
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	An OpenGL & SDL action flight simulator
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
-USE_SDL=	mixer sdl
-USE_GL=		yes
+USE_GL=		glut
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--x-include=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib \
-		--with-opengl-dir=${X11BASE}
+CONFIGURE_ARGS=	--with-opengl-dir=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 

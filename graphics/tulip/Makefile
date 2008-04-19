@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" GLDIR="${X11BASE}"
+CONFIGURE_ENV=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" GLDIR="${LOCALBASE}"
 CONFIGURE_ARGS=	--with-qt-includes=${QT_PREFIX}/include \
 		--with-qt-libraries=${QT_PREFIX}/lib \
 		--with-extra-libs=${LOCALBASE}/lib
@@ -39,7 +39,7 @@ USE_LDCONFIG=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${PREFIX}/include \
 		-I${QT_PREFIX}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
-LDFLAGS=	-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib \
+LDFLAGS=	-Wl,-export-dynamic -L${LOCALBASE}/lib \
 		-ljpeg -L${QT_PREFIX}/lib -lcompat ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>

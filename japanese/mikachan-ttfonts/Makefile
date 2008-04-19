@@ -8,7 +8,7 @@
 
 PORTNAME=	mikachan-ttfonts
 PORTVERSION=	8.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://members.tripod.co.jp/mikachan_font/ \
 		${MASTER_SITE_PORTS_JP}
@@ -26,7 +26,6 @@ EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	pq
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mika.ttf
 DIST_SUBDIR=	${PORTNAME}
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	FONTSDIR=${FONTSDIR}

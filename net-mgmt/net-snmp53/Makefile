@@ -29,7 +29,7 @@ PATCH_DEPENDS=	${LIBTOOL_DEPENDS}
 USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_RC_SUBR=	snmpd.sh snmptrapd.sh
 USE_OPENSSL=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 NO_LATEST_LINK=	yes
 .if !defined(WITHOUT_PERL)
 USE_PERL5=	yes

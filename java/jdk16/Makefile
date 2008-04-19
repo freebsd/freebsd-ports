@@ -19,7 +19,7 @@ COMMENT=	Java Development Kit 1.6.0
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
-		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
+		${LOCALBASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-base
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
@@ -123,7 +123,7 @@ RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 
 MAKE_ENV+=	ALT_BOOTDIR="${BOOTSTRAPJDKDIR}" \
-		ALT_MOTIF_DIR="${X11BASE}" \
+		ALT_MOTIF_DIR="${LOCALBASE}" \
 		ALT_DEVTOOLS_PATH="${LOCALBASE}" \
 		LANG="C" \
 		LC_ALL="C" \
@@ -134,7 +134,6 @@ MAKE_ENV+=	ALT_BOOTDIR="${BOOTSTRAPJDKDIR}" \
 		SKIP_COMPARE_IMAGES="true" \
 		SKIP_FASTDEBUG_BUILD="true" \
 		LOCALBASE="${LOCALBASE}" \
-		X11BASE="${X11BASE}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .if defined(WITH_DEBUG)
@@ -287,7 +286,7 @@ post-patch:
 			${WRKSRC}/$${file}; \
 	done
 	@for file in ${X11_FILES}; do \
-		${REINPLACE_CMD} -e "s:%%X11BASE%%:${X11BASE}:" \
+		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 			${WRKSRC}/$${file}; \
 	done
 	@for file in ${DESKTOP_FILES}; do \

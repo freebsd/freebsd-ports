@@ -4,6 +4,6 @@ cfg=${WRKSRC}/m3config/src/${TARGET}
 cp -p ${cfg} ${cfg}.bak || exit
 sed \
     -e "/^INSTALL_ROOT = /s|\".*\"|\"${PREFIX}\"|" \
-    -e "/^X11ROOT = /s|\".*\"|\"${X11BASE}/lib\"|" \
+    -e "/^X11ROOT = /s|\".*\"|\"${LOCALBASE}/lib\"|" \
     ${cfg} > ${cfg}.tmp || exit
 mv ${cfg}.tmp ${cfg}

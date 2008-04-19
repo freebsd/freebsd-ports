@@ -7,7 +7,7 @@
 
 PORTNAME=	sced
 PORTVERSION=	1.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.wisc.edu/~schenney/sced/src/
 
@@ -16,7 +16,7 @@ COMMENT=	SCene EDitor for povray/renderman/genray/etc
 
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 
-USE_XLIB=	yes
+USE_XORG=	x11 xt xaw
 GNU_CONFIGURE=	yes
 
 MAN1=		sced.1

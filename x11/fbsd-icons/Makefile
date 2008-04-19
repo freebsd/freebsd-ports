@@ -20,7 +20,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 do-install:
-		${MKDIR} ${X11BASE}/icons
-		( cd ${X11BASE}/icons; ${TAR} --no-same-owner --no-same-permissions -xzf ${DISTDIR}/fbsd-icons.tar.gz )
+		${MKDIR} ${PREFIX}/icons
+		( cd ${PREFIX}/icons; ${TAR} --no-same-owner --no-same-permissions -xzf ${DISTDIR}/fbsd-icons.tar.gz )
 
 .include <bsd.port.mk>

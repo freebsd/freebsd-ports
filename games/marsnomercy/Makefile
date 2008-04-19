@@ -18,7 +18,7 @@ COMMENT=	A turn-based strategy game setting on Mars
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	sdl image ttf
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 SCONS_ARGS=	prefix=${PREFIX}

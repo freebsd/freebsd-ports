@@ -18,7 +18,7 @@ BUILD_DEPENDS=	cdoc:${PORTSDIR}/devel/cdoc \
 		make+:${PORTSDIR}/devel/makeplus
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 PLIST_SUB=	VERSION=${PORTVERSION}

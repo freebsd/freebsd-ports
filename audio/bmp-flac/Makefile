@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \
-		--with-xmms-prefix="${X11BASE}"
+		--with-xmms-prefix="${LOCALBASE}"
 
 MAKEFILE=	${FILESDIR}/Makefile
 
@@ -38,7 +38,7 @@ post-configure:
 	@${RM} -rf ${WRKSRC}/obj
 	@${RM} -rf ${WRKSRC}/include/FLAC
 
-# This is to avoid libtool running ldconfig -m ${X11BASE}/lib/bmp/Input
+# This is to avoid libtool running ldconfig -m ${LOCALBASE}/lib/bmp/Input
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/plugin_bmp/.libs/libbmp-flac.so ${PREFIX}/lib/bmp/Input
 

@@ -23,13 +23,13 @@ LIB_DEPENDS=	qscintilla.7:${PORTSDIR}/x11-toolkits/qscintilla	\
 RUN_DEPENDS=	${ORACLE_HOME}/network/admin/tnsnames.ora:${PORTSDIR}/databases/oracle8-client
 
 .if !defined(WITHOUT_MYSQL)
-BUILD_DEPENDS+=	${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
-RUN_DEPENDS+=	${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
+BUILD_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
+RUN_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
 .endif
 
 .if !defined(WITHOUT_PGSQL)
-BUILD_DEPENDS+=	${X11BASE}/lib/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt-pgsql-plugin
-RUN_DEPENDS+=	${X11BASE}/lib/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt-pgsql-plugin
+BUILD_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt-pgsql-plugin
+RUN_DEPENDS+=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/databases/qt-pgsql-plugin
 .endif
 
 ORACLE_HOME?=	${LOCALBASE}/oracle8-client

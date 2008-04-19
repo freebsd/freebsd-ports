@@ -7,7 +7,7 @@
 
 PORTNAME=	neXtaw
 PORTVERSION=	0.15.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://siag.nu/pub/neXtaw/
 
@@ -15,11 +15,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Athena Widgets with N*XTSTEP appearance
 
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
+USE_XORG=	xmu x11 xext
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
 post-patch:

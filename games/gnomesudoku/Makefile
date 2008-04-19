@@ -7,10 +7,9 @@
 
 PORTNAME=	gnomesudoku
 PORTVERSION=	0.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnome-sudoku
+MASTER_SITES=	SF/gnome-sudoku
 DISTNAME=	gnome-sudoku-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
@@ -21,13 +20,12 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 
 .if !defined(DISPLAY)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
-		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
+		${LOCALBASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
 .if !defined(PACKAGE_BUILDING)
 MAKE_ENV+=	DISPLAY="localhost:1001"
 .endif
 .endif
 
-USE_X_PREFIX=	yes
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 USE_GNOME=	gnomehack gnomeprefix pygnome2 pygnomedesktop
@@ -40,7 +38,7 @@ pre-configure:
 		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
 		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
 	fi
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	${LOCALBASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
 
 post-configure:
@@ -54,7 +52,7 @@ pre-install:
 		${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill || ${TRUE} ; \
 		${RM} -f ${WRKDIR}/.Xvfb.pid ; \
 	fi
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	${LOCALBASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
 
 post-install:

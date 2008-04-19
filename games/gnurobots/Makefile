@@ -7,7 +7,7 @@
 
 PORTNAME=	gnurobots
 PORTVERSION=	1.0D
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnurobots
@@ -18,8 +18,7 @@ COMMENT=	GNU diversion wherein Scheme-coded robots explore a world
 LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
-USE_XPM=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xpm
 
 pre-patch:
 	${CP} ${WRKSRC}/getopt/getopt.h ${WRKSRC}/include

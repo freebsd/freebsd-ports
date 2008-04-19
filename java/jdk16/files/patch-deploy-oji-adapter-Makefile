@@ -6,7 +6,7 @@ $FreeBSD$
  dummy:=$(shell $(MKDIR) -p $(LIB_LOCATION))
  
 -X11DIR = /usr/X11R6
-+X11DIR = ${X11BASE}
++X11DIR = ${LOCALBASE}
  
  ifeq ($(PLATFORM), solaris)
  LDLIBS = -lX11 -ldl -lCrun -lc

@@ -17,7 +17,7 @@ DISTNAME=	gkrellm_${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@fsck.ch
 COMMENT=	GKrellM2 plugin that allows the setting of countdowns
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USE_GNOME=	gtk20

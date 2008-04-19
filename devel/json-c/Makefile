@@ -13,7 +13,7 @@ MASTER_SITES=	http://oss.metaparadigm.com/json-c/
 MAINTAINER=	gno@yahoo-inc.com
 COMMENT=	A JSON (Javascript Object Notation) implementation in C
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig gnomehack

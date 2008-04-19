@@ -17,8 +17,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A script that helps install Postscript fonts in X Window System
 
 .if !defined(WITHOUT_X11)
-RUN_DEPENDS=	${X11BASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
-		${X11BASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+RUN_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 .endif
 
 USE_PERL5=	yes

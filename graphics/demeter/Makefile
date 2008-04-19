@@ -7,10 +7,9 @@
 
 PORTNAME=	demeter
 PORTVERSION=	3.21
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 .ifdef (WITH_SAMPLE_DATA)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		DemeterSampleData-${SAMPLE_DATA_VER}-2${EXTRACT_SUFX}
@@ -20,14 +19,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library to render 3D terrains using OpenGL
 
 USE_GMAKE=	yes
-USE_GL=		yes
-USE_X_PREFIX=	yes
+USE_GL=		gl glu
 WANT_GNOME=	yes
 WANT_SDL=	yes
 USE_AUTOTOOLS=	automake:15 autoconf:261 libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS=" -L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
 SAMPLE_DATA_VER=	3.20
@@ -45,7 +43,7 @@ WITH_SDL=	yes
 WITH_LIBXML2=	yes
 .endif
 
-.if exists(${X11BASE}/lib/libosg.so)
+.if exists(${LOCALBASE}/lib/libosg.so)
 WITH_OSG=	yes
 .endif
 
@@ -62,8 +60,8 @@ USE_GNOME=	libxml2
 .endif
 
 .ifdef (WITH_OSG)
-BUILD_DEPENDS+=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
-RUN_DEPENDS+=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
+RUN_DEPENDS+=	${LOCALBASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
 .endif
 
 .ifdef (WITH_GDAL)

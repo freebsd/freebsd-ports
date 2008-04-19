@@ -7,10 +7,10 @@
 
 PORTNAME=	wqy
 PORTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	wqy
 DISTNAME=	${PORTNAME}-bitmapfont-pcf-${PORTVERSION}-6
@@ -20,7 +20,7 @@ COMMENT=	A font which includes all the CJK characters covered by Unicode 4.0
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-bitmapfont
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 FONTSDIR=	lib/X11/fonts/wqy
 CONFDDIR=	etc/fonts/conf.d
 CONFAVAILDIR=	etc/fonts/conf.avail
@@ -29,8 +29,10 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR} \
 		CONFDDIR=${CONFDDIR} \
 		CONFAVAILDIR=${CONFAVAILDIR}
 
-BUILD_DEPENDS+=        mkfontdir:${X_CLIENTS_PORT}
-BUILD_DEPENDS+=        fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 OPTIONS=	ALIAS	"Install fonts.alias" off
 

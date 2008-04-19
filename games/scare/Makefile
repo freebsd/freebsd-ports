@@ -27,8 +27,8 @@ BINFILES=	scare
 .if defined(WITH_XGLK)
 PKGNAMESUFFIX=	-glk
 
-BUILD_DEPENDS+=	${X11BASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
-RUN_DEPENDS+=	${X11BASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
+RUN_DEPENDS+=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
 
 ALL_TARGET=	all glkscare
 

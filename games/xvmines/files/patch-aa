@@ -3,7 +3,7 @@
 @@ -1,7 +1,8 @@
 -WHERE :sh = (tmp=`echo /usr/openwin`;echo ${OPENWINHOME:=$tmp})
 +#WHERE :sh = (tmp=`echo /usr/openwin`;echo ${OPENWINHOME:=$tmp})
-+WHERE=${X11BASE}
++WHERE=${LOCALBASE}
  
  #CC = gcc
 -CC = cc 

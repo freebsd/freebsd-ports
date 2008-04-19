@@ -5,7 +5,7 @@
  					break;
  				case 2:
 -					strcpy(car_path, "/usr/local/share/MindGuard/carriers/");
-+					strcpy(car_path, X11BASE "/share/mindguard/");
++					strcpy(car_path, LOCALBASE "/share/mindguard/");
  					break;
  				default:
  					break;

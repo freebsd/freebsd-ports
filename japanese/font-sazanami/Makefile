@@ -69,7 +69,7 @@ do-install:
 .endif
 
 post-install:
-	${X11BASE}/bin/fc-cache -f -v ${PREFIX}/${FONTSDIR}
+	${LOCALBASE}/bin/fc-cache -f -v ${PREFIX}/${FONTSDIR}
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

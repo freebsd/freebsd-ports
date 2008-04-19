@@ -18,7 +18,7 @@ COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
 USE_GMAKE=	YES
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-hints=freebsd.hints
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

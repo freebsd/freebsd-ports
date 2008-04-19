@@ -1,7 +1,7 @@
 CC=cc
-INCLUDES=-I${LOCALBASE}/include/tcl8.0 -I${LOCALBASE}/include/tk8.0 -I${LOCALBASE}/include/tk8.0/generic -I${X11BASE}/include
+INCLUDES=-I${LOCALBASE}/include/tcl8.0 -I${LOCALBASE}/include/tk8.0 -I${LOCALBASE}/include/tk8.0/generic -I${LOCALBASE}/include
 LIB_DIR=${LOCALBASE}/lib
-LIBS=-L${LIB_DIR} -ltk80 -ltcl80 -lm -L${X11BASE}/lib -lX11
+LIBS=-L${LIB_DIR} -ltk80 -ltcl80 -lm -L${LOCALBASE}/lib -lX11
 CFLAGS+=-ggdb $(INCLUDES) -DFREEBSD -DPROTOTYPES -DHAVE_NO_VALUES_H -DHAVE_LIMITS_H -DHAVE_UNISTD_H -DMAXINT=INT_MAX -DDEFINED_ERRLIST
 # for search.h
 CFLAGS+=-I../src

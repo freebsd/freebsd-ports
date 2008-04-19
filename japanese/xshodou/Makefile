@@ -7,7 +7,7 @@
 
 PORTNAME=	xshodou
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese tk
 MASTER_SITES=	http://www.saturn.dti.ne.jp/~hsakai/myfreesoft/
 
@@ -16,12 +16,11 @@ COMMENT=	A Japanese shodou program for X based on Tcl/Tk
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
-USE_X_PREFIX=	yes
-
 MAN1=		xshodou.1
 MANCOMPRESSED=	yes
 
 WISH=		${LOCALBASE}/bin/wish8.0
+USE_XORG=	x11
 
 post-patch:
 	@${REINPLACE_CMD} -e \

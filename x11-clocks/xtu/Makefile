@@ -27,7 +27,7 @@ USE_GNOME=	imlib
 CPPFLAGS=	-DUSE_IMLIB `${IMLIB_CONFIG} --cflags`
 LDFLAGS=	`${IMLIB_CONFIG} --libs`
 .else
-USE_XPM=	yes
+USE_XORG=	x11 xpm xext
 CPPFLAGS=	-DUSE_XPM
 LDFLAGS=	-lXpm -lX11 -lXext
 .endif

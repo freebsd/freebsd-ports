@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
 		--includedir=${PREFIX}/include/mysql++ \
 		--disable-examples
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFLICTS=	${PORTNAME}*-2.*
 NO_LATEST_LINK=	yes

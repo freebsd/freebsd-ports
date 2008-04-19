@@ -23,7 +23,7 @@ USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-inotify
-CXXFLAGS+=	-I${X11BASE}/include -L${X11BASE}/lib
+CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 OPTIONS=	XINERAMA "Xinerama support" on
 
@@ -35,7 +35,7 @@ MAN1=		nitrogen.1
 CONFIGURE_ARGS+=--disable-xinerama
 .else
 CONFIGURE_ARGS+=--enable-xinerama
-LIB_DEPENDS+=	Xinerama:${PORTSDIR}/x11/libXinerama
+USE_XORG+=	xinerama
 .endif
 
 post-patch:

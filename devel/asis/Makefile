@@ -19,7 +19,7 @@ COMMENT=	GNAT implementation of the Ada Semantic Interface Specification
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

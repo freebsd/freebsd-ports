@@ -7,14 +7,13 @@
 
 PORTNAME=	grpn
 PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://lashwhip.com/grpn/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+-based reverse polish notation (RPN) calculator
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
 ALL_TARGET=

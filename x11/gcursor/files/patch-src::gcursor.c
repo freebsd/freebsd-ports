@@ -10,7 +10,7 @@
 -	"/usr/local/share/icons/",
 -	"/usr/share/icons/",
 +	"%%LOCALBASE%%/lib/X11/icons/",
-+	"%%X11BASE%%/lib/X11/icons/",
++	"%%LOCALBASE%%/lib/X11/icons/",
  	"%s/.icons/",
  	NULL
  };	

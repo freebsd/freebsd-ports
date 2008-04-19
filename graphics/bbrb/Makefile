@@ -7,10 +7,9 @@
 
 PORTNAME=	bbrb
 PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical background manager for the Blackbox window manager
@@ -18,7 +17,6 @@ COMMENT=	A graphical background manager for the Blackbox window manager
 RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv \
 		blackbox:${PORTSDIR}/x11-wm/blackbox
 
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 

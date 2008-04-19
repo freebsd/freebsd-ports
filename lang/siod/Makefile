@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small footprint implementation of the Scheme programming language
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

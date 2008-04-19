@@ -36,7 +36,7 @@ USE_SDL+=		image
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|' \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' \
 		-e 's/echo aout/echo elf/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|\($${exec_prefix}/lib\)/quake3|\1/q3base|' \
 		${WRKSRC}/src/Makefile.in

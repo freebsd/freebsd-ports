@@ -7,7 +7,7 @@
 
 PORTNAME=	xli
 PORTVERSION=	1.17.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://pantransit.reptiles.org/prog/xli/ \
 		${MASTER_SITE_XCONTRIB}
@@ -22,7 +22,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 WRKSRC=		${WRKDIR}/xli-${XLI_SNAPVER}
 
-USE_XLIB=	yes
+USE_XORG=	xi
 USE_IMAKE=	yes
 MAN1=		xli.1 xlito.1
 MLINKS=		xli.1 xview.1 \

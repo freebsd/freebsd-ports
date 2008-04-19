@@ -14,7 +14,7 @@
  #LIBS = -lImlib -lX11 -lXext -ljpeg -lgif -lm
  
 -CFLAGS = -g -L$(XDIR)/lib -I$(XDIR)/include 
-+CFLAGS += -L$(LOCALBASE)/lib -L$(X11BASE)/lib -I$(X11BASE)/include 
++CFLAGS += -L$(LOCALBASE)/lib -I$(LOCALBASE)/include 
  
  all: imagesort.o
  

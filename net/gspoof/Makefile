@@ -31,7 +31,7 @@ post-patch:
 		 ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|-Wall -O2|@CFLAGS@|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share|g ; \
-		 s|/usr/share|${X11BASE}/share|g' ${WRKSRC}/gtk.c
+		 s|/usr/share|${LOCALBASE}/share|g' ${WRKSRC}/gtk.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gspoof ${PREFIX}/bin

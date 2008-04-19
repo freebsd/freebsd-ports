@@ -20,11 +20,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build uic_build qt3support_build corelib gui xml
 HAS_CONFIGURE=	yes
+USE_XORG=	xt inputproto xtst xrender xrandr xfixes xcursor\
+		xext x11 sm ice xi
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} -unix PREFIX=${PREFIX} \
-		INCLUDEPATH+=${X11BASE}/include LIBS+=-L${X11BASE}/lib \
+		INCLUDEPATH+=${LOCALBASE}/include LIBS+=-L${LOCALBASE}/lib \
 		keepass.pro
 
 .include <bsd.port.mk>

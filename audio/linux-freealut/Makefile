@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libopenal.so.0:${PORTSDIR}/audio/linux-openal
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
-INSTALL_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 DIST_SUBDIR=	rpm
 AUTOMATIC_PLIST=yes

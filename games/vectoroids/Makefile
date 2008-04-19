@@ -7,14 +7,13 @@
 
 PORTNAME=	vectoroids
 PORTVERSION=	1.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/vectoroids/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vector-based, pretty, Asteroids clone
 
-USE_X_PREFIX=	yes
 USE_SDL=	image mixer sdl
 USE_GMAKE=	yes
 

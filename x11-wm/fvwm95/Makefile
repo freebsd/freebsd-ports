@@ -7,10 +7,9 @@
 
 PORTNAME=	fvwm95
 PORTVERSION=	2.0.43a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Autoconf
 EXTRACT_SUFX=	.tgz
 
@@ -18,11 +17,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Win95 lookalike version of the fvwm2 window manager
 
 LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay
-RUN_DEPENDS=	${X11BASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
+RUN_DEPENDS=	${LOCALBASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps x11 xpm xmu xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include \
 		--libdir=${LOCALBASE}/lib

@@ -52,7 +52,6 @@ sbin/ntfslabel
 sbin/ntfsresize
 sbin/ntfsundelete
 @dirrm include/ntfs
-%%GNOMEVFS2%%@cwd %%X11BASE%%
 %%GNOMEVFS2%%etc/gnome-vfs-2.0/modules/libntfs.conf
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.a
 %%GNOMEVFS2%%lib/gnome-vfs-2.0/modules/libntfs-gnomevfs.la

@@ -15,7 +15,7 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	erik@smluc.org
 COMMENT=	A 3-D network tank game that uses OpenGL/Mesa
 
-BUILD_DEPENDS=	${X11BASE}/lib/libaux.a:${PORTSDIR}/graphics/libaux
+BUILD_DEPENDS=	${LOCALBASE}/lib/libaux.a:${PORTSDIR}/graphics/libaux
 
 USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"

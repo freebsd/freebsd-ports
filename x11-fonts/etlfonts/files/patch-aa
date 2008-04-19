@@ -11,13 +11,13 @@
 + 
 + install: .pcf_done
 + 	( \
-+ 	  if [ ! -d ${X11BASE}/lib/X11/fonts/non-cjk ] ; \
-+ 	    then mkdir -p ${X11BASE}/lib/X11/fonts/non-cjk ; \
++ 	  if [ ! -d ${LOCALBASE}/lib/X11/fonts/non-cjk ] ; \
++ 	    then mkdir -p ${LOCALBASE}/lib/X11/fonts/non-cjk ; \
 + 	  fi ; \
 + 	)
-+ 	cp *pcf* fonts.alias ${X11BASE}/lib/X11/fonts/non-cjk
++ 	cp *pcf* fonts.alias ${LOCALBASE}/lib/X11/fonts/non-cjk
 + 	( \
-+ 	  cd ${X11BASE}/lib/X11/fonts/non-cjk ; \
++ 	  cd ${LOCALBASE}/lib/X11/fonts/non-cjk ; \
 + 	  mkfontdir ; \
 + 	)
 + 

@@ -40,7 +40,7 @@ pre-patch:
 		${WRKDIR}/paraview-${PORTVERSION}/GUI/Widgets/CMakeLists.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKDIR}/paraview-${PORTVERSION}/Utilities/TclTk/tk*/unix/configure
 
 do-configure:
@@ -48,8 +48,8 @@ do-configure:
 	cd ${WRKSRC} && \
 	${LOCALBASE}/bin/cmake ../${DISTNAME} \
 		-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
-		-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
-		-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
+		-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		-DPARAVIEW_USE_SYSTEM_HDF5=1 \
 		-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_PNG="ON" \

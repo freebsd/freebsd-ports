@@ -9,8 +9,7 @@ PORTNAME=	libgltext
 PORTVERSION=	0.3.1
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gltext
+MASTER_SITES=	SF/gltext
 DISTNAME=	gltext-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -19,11 +18,11 @@ COMMENT=	Portable font rendering library for C++
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_AUTOTOOLS=	libtool:15
-USE_GL=	yes
+USE_GL=		glu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+USE_LCONFIG=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 
@@ -32,7 +31,7 @@ OPTIONS=	EXAMPLES	"Compile examples, need libglut"	off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_EXAMPLES)
-LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
+USE_GL=	glut
 FLAG_EXAMPLES=	true
 PLIST_SUB+=	EXAMPLES=""
 .else

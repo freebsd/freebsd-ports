@@ -21,11 +21,11 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 STRIP=
-CONFIGURE_ARGS=	--with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11"
+CONFIGURE_ARGS=	--with-extra-lib=${LOCALBASE}/lib --with-extra-inc="${LOCALBASE}/include ${LOCALBASE}/include/X11"
 MAN1=		lyx.1 reLyX.1
 
 .include <bsd.port.pre.mk>

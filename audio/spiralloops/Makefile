@@ -7,7 +7,7 @@
 
 PORTNAME=	spiralloops
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.pawfal.org/Software/SpiralLoops/dload/
 DISTNAME=	SpiralLoops-${PORTVERSION}
@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 PLIST=		${WRKDIR}/pkg-plist
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .include <bsd.port.pre.mk>
@@ -33,12 +32,11 @@ post-patch:
 	${SED} -E "s:-ldl::g; \
 		s:^CFLAGS:XCFLAGS:g; \
 		s:^CXXFLAGS:XCXXFLAGS:g; \
-		s:usr/X11R6:${PREFIX}:g; \
 		s:-O3:${PTHREAD_CFLAGS}:g; \
 		s:CFLAGS =:CFLAGS +=:g; \
 		s:CXXFLAGS=:CXXFLAGS+=:g; \
 		s:-lm:${PTHREAD_LIBS} -lm:g; \
-		s:/usr/X11R6:${X11BASE}:g" \
+		s:/usr/X11R6:${LOCALBASE}:g" \
 		< ${WRKSRC}/Makefile.in.orig > ${WRKSRC}/Makefile.in
 
 pre-install:

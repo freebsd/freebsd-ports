@@ -15,12 +15,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL port of the Abuse game engine
 
 USE_BZIP2=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN6=		abuse-sdl.6

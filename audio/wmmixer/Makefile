@@ -19,7 +19,7 @@ COMMENT=	An audio mixer for the WindowMaker dock
 PLIST_FILES=		bin/wmmixer
 WRKSRC=			${WRKDIR}/wmmixer
 USE_IMAKE=		yes
-USE_XPM=		yes
+USE_XORG=		xpm
 NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>

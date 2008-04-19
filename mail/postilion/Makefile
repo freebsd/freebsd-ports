@@ -27,7 +27,7 @@ MAKE_ARGS=	PORTVERSION="${PORTVERSION}" LOCALBASE="${LOCALBASE}" \
 		MKDIR="${MKDIR}" INSTALL_DATA="${INSTALL_DATA}" \
 		DIR=lib/postilionlib SED="${SED}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude '*/imap/*'
 
 do-configure:

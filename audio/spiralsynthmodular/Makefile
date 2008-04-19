@@ -55,7 +55,7 @@ post-patch:
 		s|MidiPlugin||' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-	@${REINPLACE_CMD} -e 's|-I/usr/X11R6/include|-I${LOCALBASE}/include -I${X11BASE}/include|' \
+	@${REINPLACE_CMD} -e 's|-I/usr/X11R6/include|-I${LOCALBASE}/include|' \
 		${WRKSRC}/SpiralSound/Plugins/LADSPAPlugin/Makefile.in
 
 	@${REINPLACE_CMD} -e 's|O_SYNC|O_FSYNC|' \
@@ -83,7 +83,7 @@ post-patch:
 		s|^CC[[:space:]]*=.+$$|CC=${CC}|; \
 		s|^CXX[[:space:]]*=.+$$|CXX=${CXX}|; \
 		s|g\+\+|${CXX}|; \
-		s,@FLTK_(C|CXX)FLAGS@,-I${X11BASE}/include -I${LOCALBASE}/include,; \
+		s,@FLTK_(C|CXX)FLAGS@,-I${LOCALBASE}/include,; \
 		s|-lpthread|${PTHREAD_LIBS}|g'
 
 .include <bsd.port.post.mk>

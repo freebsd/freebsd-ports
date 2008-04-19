@@ -8,7 +8,7 @@ $FreeBSD$
  PATH_SEP       = /
 -X11DIR         = /usr/X11R6
 -LOCALDIR       = /usr/local
-+X11DIR         = ${X11BASE}
++X11DIR         = ${LOCALBASE}
 +LOCALDIR       = ${LOCALBASE}
  ifneq ($(OS_VENDOR), NetBSD)
  LIBS           = -L$(X11DIR)/lib -lX11 -L$(LOCALDIR)/lib -liconv

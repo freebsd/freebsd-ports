@@ -8,7 +8,7 @@
 +CC?=gcc
  MATHLIB=-lm
 -CFLAGS=-I/usr/X11/include
-+CFLAGS+=-I${X11BASE}/include -DDATADIR=\"${PREFIX}/share/xbomber\"
++CFLAGS+=-I${LOCALBASE}/include -DDATADIR=\"${PREFIX}/share/xbomber\"
  
  # Change this to "touch" if your system doesn't have the "strip" command:
  POSTPROCESS=strip
@@ -22,7 +22,7 @@
  
  # uncomment for FreeBSD
 -#XLIB=-L /usr/X11R6/lib -lX11 -lcompat
-+XLIB=-L${X11BASE}/lib -lX11 -lcompat
++XLIB=-L${LOCALBASE}/lib -lX11 -lcompat
  
  # End of makefile user-definable variables-----------------------------------
  

@@ -11,7 +11,7 @@
  
 -XROOT = /usr/X11R6
 -DAROOT = /usr/local
-+XROOT = $(X11BASE)
++XROOT = $(LOCALBASE)
 +DAROOT = $(LOCALBASE)
  
  # If you want to use gdk-pixbuf, pass GDKPIXBUF=1 to make command

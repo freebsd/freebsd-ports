@@ -9,8 +9,7 @@ PORTNAME=	xdrawchem
 PORTVERSION=	1.9.9
 PORTREVISION=	4
 CATEGORIES=	biology
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xdrawchem
+MASTER_SITES=	SF
 
 MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	Chemical drawing program
@@ -23,9 +22,9 @@ USE_QT_VER=	3
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-CONFIGURE_ENV=	QTINCDIR="${X11BASE}/include" \
-	QTLIBDIR="${X11BASE}/lib" \
-	LDFLAGS="${LDFLAGS} -lm"
+CONFIGURE_ENV=	QTINCDIR="${LOCALBASE}/include" \
+		QTLIBDIR="${LOCALBASE}/lib" \
+		LDFLAGS="${LDFLAGS} -lm"
 
 MAKE_ARGS+=	LDFLAGS+="-lqt-mt ${PTHREAD_LIBS}"
 

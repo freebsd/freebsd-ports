@@ -32,9 +32,7 @@ USE_PERL5=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-libdir-path=${PREFIX}/lib/xvile \
-		--datadir=${PREFIX}/share/xvile \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
+		--datadir=${PREFIX}/share/xvile
 MAN1=		xvile.1
 
 OPTIONS= FILTERS "Add support for loadable filters" OFF

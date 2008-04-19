@@ -4,8 +4,8 @@
  include Makefile.bsd
  else
  
-+ifndef X11BASE
-+  X11BASE=/usr/X11R6
++ifndef LOCALBASE
++  LOCALBASE=/usr/X11R6
 +endif
 +
 +ifndef LOCALBASE
@@ -13,7 +13,7 @@
 +endif
 +
 +ifndef PREFIX
-+  PREFIX=$(X11BASE)
++  PREFIX=$(LOCALBASE)
 +endif
 +
  ROOT    =
@@ -23,7 +23,7 @@
  bindir  = $(ROOT)${exec_prefix}/bin
  mandir  = $(ROOT)${prefix}/man/man1
 -resdir  = $(ROOT)/usr/X11R6/lib/X11
-+resdir  = $(ROOT)$(X11BASE)/lib/X11
++resdir  = $(ROOT)$(LOCALBASE)/lib/X11
  
  # if you have perl set the path here, else just leave it alone
  PERL    = /usr/bin/perl

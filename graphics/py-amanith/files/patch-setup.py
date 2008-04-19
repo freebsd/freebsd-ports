@@ -5,21 +5,21 @@
  from os.path import join
  
 +LOCALBASE = os.environ['LOCALBASE']
-+X11BASE = os.environ['X11BASE']
++LOCALBASE = os.environ['LOCALBASE']
 +
  try:
    amanith_base = os.environ["AMANITHDIR"]
  except:
 -  amanith_base = "amanith"
 +  amanith_base = os.environ['LOCALBASE']
-+  X11BASE = os.environ['X11BASE']
++  LOCALBASE = os.environ['LOCALBASE']
  
  debug = False
  libs = ["amanith"]
 -inc = [join("changes", "include"), join(amanith_base, "include"), "include"]
 -lib = [join(amanith_base, "lib")]
-+inc = [join("changes", "include"), join(amanith_base, "include"), join(X11BASE,"include") ,"include"]
-+lib = [join(amanith_base, "lib"), join(X11BASE, "lib")]
++inc = [join("changes", "include"), join(amanith_base, "include"), join(LOCALBASE,"include") ,"include"]
++lib = [join(amanith_base, "lib"), join(LOCALBASE, "lib")]
  cc_args = []
  swig_args = ["-Ibuild/amanith"]
  

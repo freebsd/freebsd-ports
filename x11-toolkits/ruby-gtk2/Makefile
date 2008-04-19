@@ -35,11 +35,11 @@ INSTALL_TARGET=	site-install
 DOCS=		COPYING.LIB ChangeLog README
 
 post-patch: general-patch
-	@${REINPLACE_CMD} -e 's|/usr/share|${X11BASE}/share|g' \
+	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/sample/gtk-demo/common.rb
 	@${REINPLACE_CMD} -e 's|local/bin/ruby|bin/env ruby|g' \
 		${WRKSRC}/sample/misc/button2.rb
-	@${REINPLACE_CMD} -e 's|/usr/local/share|${X11BASE}/share|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local/share|${LOCALBASE}/share|g' \
 			${WRKSRC}/sample/testgtk/testgtk*
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 

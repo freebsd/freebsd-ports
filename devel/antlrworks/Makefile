@@ -6,6 +6,7 @@
 
 PORTNAME=	antlrworks
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
@@ -16,7 +17,6 @@ COMMENT=	The ANTLR GUI Development Environment
 
 USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	"-d${DISTNAME}"
-USE_X_PREFIX=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 

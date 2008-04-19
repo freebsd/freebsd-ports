@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 LIBDIR?=	${PREFIX}/lib/xmms/General
 SRCLIBDIR?=	src/.libs
 
-LDCONFIG_DIRS=	%%X11BASE%%/lib/xmms/General
+LDCONFIG_DIRS=	%%LOCALBASE%%/lib/xmms/General
 PLIST_FILES=	lib/xmms/General/libinfopipe.so
 
 post-patch:

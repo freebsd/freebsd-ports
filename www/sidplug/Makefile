@@ -29,7 +29,7 @@ CFLAGS+=	-fPIC
 do-install:
 	@${MKDIR} ${PREFIX}/lib/browser_plugins
 	@${INSTALL_PROGRAM} ${WRKSRC}/npsidplug.so ${PREFIX}/lib/browser_plugins
-	@${LN} -sf ${X11BASE}/bin/xsidplay ${PREFIX}/bin/sidplug
+	@${LN} -sf ${LOCALBASE}/bin/xsidplay ${PREFIX}/bin/sidplug
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/Lazy_Fast.sid ${EXAMPLESDIR}

@@ -16,11 +16,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the ALC and NORM Reliable Multicast Protocols
 
-BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT} \
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		gdome-config:${PORTSDIR}/textproc/gdome2 \
 		glib-gettextize:${PORTSDIR}/devel/glib20
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 MAN1=		fcast.1 fcastn.1 mclrecv2.1 mclsend2.1
 MAN2=		mcl_abort.2 mcl_close.2 mcl_ctl.2 mcl_open.2 mcl_recv.2 \

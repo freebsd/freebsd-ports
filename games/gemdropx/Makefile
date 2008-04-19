@@ -7,7 +7,7 @@
 
 PORTNAME=	gemdropx
 PORTVERSION=	0.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/gemdropx/src/
 
@@ -16,7 +16,6 @@ COMMENT=	An interesting one-player puzzle game for X
 
 USE_SDL=	mixer
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 MAKE_ENV=	JOY=NO \
 		SDL_CONFIG="${SDL_CONFIG}"
 

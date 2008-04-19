@@ -29,6 +29,6 @@ MAN3=	Chart::Graph.3 \
 	Chart::Graph::Xrt3d.3
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%X11BASE%%,${X11BASE}," ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>

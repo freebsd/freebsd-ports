@@ -8,6 +8,7 @@
 
 PORTNAME=	sawfish
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
@@ -24,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x1
 GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier gnomehack esound
 USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env

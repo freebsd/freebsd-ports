@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Jan 17 06:19:35 2007
-+++ Makefile	Wed Feb 14 15:40:17 2007
-@@ -21,51 +21,44 @@
+--- ./Makefile.orig	2007-01-17 10:19:35.000000000 +0100
++++ ./Makefile	2008-04-13 17:38:19.000000000 +0200
+@@ -21,51 +21,42 @@
  BUILD_DEBUG_DIR=debug_build
  BUILD_RELEASE_DIR=release_build
  
@@ -40,7 +40,6 @@
 -X11BASE=/usr/X11R6
 +LOCALBASE?=/usr/local
 +GAMEBASE=$(LOCALBASE)
-+X11BASE?=/usr/X11R6
  SYSBINDIR=$(LOCALBASE)/bin
 -DATADIR= $(GAMEBASE)/games/quake
 -
@@ -54,7 +53,7 @@
 -BASE_CFLAGS+= \
 +BASE_CFLAGS+= $(CFLAGS) \
               -I$(LOCALBASE)/include \
-              -I$(X11BASE)/include \
+-             -I$(X11BASE)/include \
  	     -Dstricmp=strcasecmp \
               -DGLQUAKE
 -ifeq ($(ARCH),i386)
@@ -65,7 +64,7 @@
  DEBUG_CFLAGS=$(BASE_CFLAGS) -g -ggdb -Wall
  RELEASE_CFLAGS+=$(BASE_CFLAGS) \
                 -fno-strict-aliasing \
-@@ -76,9 +69,6 @@
+@@ -76,9 +67,6 @@
                    -falign-loops=2 \
                    -falign-jumps=2 \
                    -falign-functions=2
@@ -75,7 +74,13 @@
  endif
  
  ifeq ($(strip $(STRIP)),YES)
-@@ -107,7 +97,7 @@
+@@ -102,12 +90,11 @@
+ 
+ X_LDFLAGS=-L$(X11BASE)/lib$(ARCH_LIBDIR) \
+           -lX11 -lXext -lXxf86vm -lXxf86dga
+-GLX_LDFLAGS=-L$(X11BASE)/lib$(ARCH_LIBDIR) \
+-            -L$(LOCALBASE)/lib$(ARCH_LIBDIR) \
++GLX_LDFLAGS=-L$(LOCALBASE)/lib$(ARCH_LIBDIR) \
  	    -lGL -lGLU -ljpeg `libpng-config --libs`
  
  
@@ -84,7 +89,7 @@
  SDL_CFLAGS=$(shell $(SDL_CONFIG) --cflags)
  SDL_LDFLAGS=$(shell $(SDL_CONFIG) --libs)
  
-@@ -405,4 +395,4 @@
+@@ -405,4 +392,4 @@
  	@echo 
  	@printf "Type tremor as user to start playing.\n"
  	@echo .....

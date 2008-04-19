@@ -18,7 +18,7 @@ COMMENT=	An opensource MPEG-4 codec, based on OpenDivx
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GCC?=	3.4+
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/build/generic

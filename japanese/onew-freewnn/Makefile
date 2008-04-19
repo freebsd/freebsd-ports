@@ -64,7 +64,6 @@ PORT_DOCDIR=	${LOCALBASE}/share/doc/ja-onew${INPUT_METHOD}
 
 post-patch:
 	${SED}	-e 's,%LOCALBASE%,${LOCALBASE},g' \
-		-e 's,%X11BASE%,${X11BASE},g' \
 		${ONEW_CONF} > ${WRKSRC}/ONEW_CONF
 
 do-install:

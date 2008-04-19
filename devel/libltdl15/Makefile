@@ -10,7 +10,7 @@ MASTERDIR=	${.CURDIR}/../../devel/libtool15
 
 COMMENT=	System independent dlopen wrapper
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-ltdl-install
 BUILD_WRKSRC=	${WRKSRC}/libltdl
 INSTALL_WRKSRC=	${WRKSRC}/libltdl

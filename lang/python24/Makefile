@@ -127,7 +127,7 @@ pre-patch:
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${WRKSRC}/Lib/pydoc.py
 	${REINPLACE_CMD} -e \
-		's|^\( *prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
+		's|^\( *prefixes = .*\)\]$$|\1, "${LOCALBASE}"]|g' \
 		${WRKSRC}/Lib/site.py
 .if defined(WITH_FPECTL) && ${ARCH} == i386
 	${ECHO} "fpectl fpectlmodule.c" >> ${WRKSRC}/Modules/Setup.dist

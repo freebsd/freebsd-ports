@@ -37,7 +37,7 @@ PATCHFILES=	${DISTNAME}.NFS-xauth.patch:nfs \
 PATCH_DIST_STRIP=	-p1
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 MAN1=		kterm.1
 MANLANG=	"" ja
@@ -54,7 +54,7 @@ NKFCMD=		nkf
 	@${ECHO} "Error: \$${WITH_XAW3DLIB} and \$${WITH_NEXTAWLIB} cannot be specified simultaneously!"
 	@${FALSE}
 .elif defined(WITH_XAW3DLIB)
-LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS+=  Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 post-patch:
 	@${ECHO_MSG}  "===>  Applying Xaw3d scrollbar patch"
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-Xaw3d

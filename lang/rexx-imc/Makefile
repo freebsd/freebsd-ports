@@ -26,7 +26,7 @@ CONFIGURE_ARGS=		o all
 # configures and builds in one step
 NO_BUILD=		yes
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 
 MAN1=		rexx.1 rxstack.1 rxque.1
 

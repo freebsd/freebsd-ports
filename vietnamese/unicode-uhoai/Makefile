@@ -8,7 +8,7 @@
 
 PORTNAME=	unicode-uhoai
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	http://www.geocities.com/~starkville/mozilla/
 DISTNAME=	uhoaiw21
@@ -18,12 +18,11 @@ COMMENT=	Unicode TrueType Font with UHoai Vietnamese encoding
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	taken care of in do-install target
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir \
-		bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/TrueType

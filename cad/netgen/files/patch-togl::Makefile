@@ -29,7 +29,7 @@
  
  # Where to find tcl.h, tk.h, OpenGL/Mesa headers, etc:
 -INCLUDES = -I/usr/local/include -I/usr/include/tcl -I/usr/freeware/include
-+INCLUDES = -I$(X11BASE)/include $(CPLUSPLUSFLAGS3)
++INCLUDES = -I$(LOCALBASE)/include $(CPLUSPLUSFLAGS3)
  
  # Where to find libtcl.a, libtk.a, OpenGL/Mesa libraries:
 -LIBDIRS = -L/usr/local/lib

@@ -8,6 +8,7 @@
 
 PORTNAME=	fast-user-switch-applet
 PORTVERSION=	2.22.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,8 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Fast user switching applet for GNOME
 
+USE_XORG=	x11
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 gnomepanel

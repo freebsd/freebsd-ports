@@ -40,8 +40,8 @@
  
 +# Uncomment these lines for FreeBSD
 +CC		 ?= cc
-+LIBFLAGS         = -L$(LIBDIR) -L${X11BASE}/lib
-+IFLAGS           = -I$(INCDIR)/tk8.0 -I$(INCDIR)/tcl8.0 -I${X11BASE}/include
++LIBFLAGS         = -L$(LIBDIR) -L${LOCALBASE}/lib
++IFLAGS           = -I$(INCDIR)/tk8.0 -I$(INCDIR)/tcl8.0 -I${LOCALBASE}/include
 +LIBS             = -ll -ltk80 -ltcl80 -lm -lX11
 +
  # Tcl initialisation files to be compiled into a C string.

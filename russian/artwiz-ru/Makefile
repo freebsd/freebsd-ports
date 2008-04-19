@@ -25,10 +25,10 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/fonts
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-FONTDIR=	${X11BASE}/lib/X11/fonts/${PORTNAME}
+FONTDIR=	${LOCALBASE}/lib/X11/fonts/${PORTNAME}
 
 post-patch:
-	@${SED} -e 's,X11BASE,${X11BASE},g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${SED} -e 's,LOCALBASE,${LOCALBASE},g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${FONTDIR}

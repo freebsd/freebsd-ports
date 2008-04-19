@@ -119,10 +119,10 @@
   
   # Platform specific includes
   ifeq ($(PLATFORM),Motif)
-! PLATFORMINC=-I../../include/XmHTML -I${X11BASE}/include
+! PLATFORMINC=-I../../include/XmHTML -I${LOCALBASE}/include
   else
   ifeq ($(PLATFORM),gtk)
-! PLATFORMINC=-I../../include/gtk-xmhtml -I${X11BASE}/include
+! PLATFORMINC=-I../../include/gtk-xmhtml -I${LOCALBASE}/include
   endif
   endif
   
@@ -142,7 +142,7 @@
   # Motif version (default)
   ifeq ($(PLATFORM),Motif)
   
-! LIBDIR = -L${X11BASE}/lib
+! LIBDIR = -L${LOCALBASE}/lib
   # This is what is required under Linux (Motif 2.0.1).
   # Your mileage may vary.
 ! LIBS   = ${MOTIFLIB} -lXpm -lXmu -lXt -lXext -lX11 -lSM -lICE

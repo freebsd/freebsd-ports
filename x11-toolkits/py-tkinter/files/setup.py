@@ -18,7 +18,7 @@ except:
 tkversion = "8.4"
 prefix = sysconfig.PREFIX
 # Python 1.5 doesn't have os.getenv()?
-x11base = os.environ['X11BASE'] or '/usr/X11R6'
+x11base = os.environ['LOCALBASE'] or '/usr/X11R6'
 inc_dirs = [prefix + "/include",
             prefix + "/include/tcl" + tkversion,
             prefix + "/include/tk" + tkversion,

@@ -5,7 +5,7 @@
  
  # Launch xscreensaver (if available)
 -xscreensaver -no-splash &
-+XBINDIR=%%X11BASE%%/bin
++XBINDIR=%%LOCALBASE%%/bin
 +if [ -x $XBINDIR/xscreensaver ]; then
 +	xscreensaver -no-splash &
 +fi

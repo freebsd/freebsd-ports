@@ -7,6 +7,7 @@
 
 PORTNAME=	gsnapshot
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -16,6 +17,7 @@ COMMENT=	A gtk+ based screen capture
 USE_AUTOTOOLS=	automake:15:env libtool:15
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+USE_XORG=	x11
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

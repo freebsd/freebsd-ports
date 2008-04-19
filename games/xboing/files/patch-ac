@@ -5,7 +5,7 @@
  XCOMM placed. Default will be the current directory.
  
 -    XBOING_DIR = .
-+    XBOING_DIR = ${X11BASE}/lib/X11/xboing
++    XBOING_DIR = ${LOCALBASE}/lib/X11/xboing
  
  XCOMM These are some defines that must be set. Some may be overwritten in the
  XCOMM machine arch section.
@@ -13,7 +13,7 @@
 -    XPMLIB 				= -L/usr/X11/lib -lXpm
 -    XPMINCLUDE 			= -I/usr/X11/include/X11
 +    XPMLIB 				= -lXpm
-+    XPMINCLUDE 			= -I${X11BASE}/include/X11
++    XPMINCLUDE 			= -I${LOCALBASE}/include/X11
      XBOINGINCLUDE 		= -I./include
      LEVEL_INSTALL_DIR 	= $(XBOING_DIR)/levels
      SOUNDS_DIR 			= $(XBOING_DIR)/sounds

@@ -7,7 +7,7 @@
 
 PORTNAME=	vpce
 PORTVERSION=	0.3f
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Way/3340/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC Engine (TG16) emulator on X
 
 NO_WRKSUBDIR=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 NO_BUILD=	yes
 
 STRIP=

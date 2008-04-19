@@ -7,7 +7,7 @@
 
 PORTNAME=	fugu
 PORTVERSION=	1.1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im python
 MASTER_SITES=	http://fugu.gale.org/dist/old/
 
@@ -18,8 +18,6 @@ RUN_DEPENDS+= 	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw
 
 USE_OPENSSL=	yes
 USE_PYTHON=	yes
-USE_XLIB=	yes
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	autoconf:213
 GNU_CONFIGURE=	yes
 

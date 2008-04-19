@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TCL84_PORT}:build \
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix/tk8.4
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
 		--with-tclconfig="${PREFIX}/lib/tcl8.4" \

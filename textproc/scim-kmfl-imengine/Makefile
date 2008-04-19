@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-kmfl-imengine
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://anthesphoria.net/files/distribution/
@@ -21,6 +22,7 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
 LIB_DEPENDS=	kmfl:${PORTSDIR}/textproc/libkmfl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_XORG=	x11 xkbfile
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk20 intltool intlhack pkgconfig glib20
 USE_GETTEXT=	yes

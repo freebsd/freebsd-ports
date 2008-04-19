@@ -6,7 +6,7 @@
 
 PORTNAME=	xgospel
 PORTVERSION=	1.12d
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.teaser.fr/~jlgailly/
 
@@ -15,8 +15,7 @@ COMMENT=	An X11 Go (weiqi, baduk) client for the Internet Go Server
 
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
-USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	xpm x11 ice
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-x --with-xpm --with-xaw3d

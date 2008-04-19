@@ -3,7 +3,7 @@
 @@ -1,5 +1,5 @@
  EXTRALIBS =
 -EXTRACPPFLAGS= -I./ -I../include -I../common -I../pcbnew
-+EXTRACPPFLAGS= -I./ -I../include -I../common -I../pcbnew -I${X11BASE}/include
++EXTRACPPFLAGS= -I./ -I../include -I../common -I../pcbnew -I${LOCALBASE}/include
  
  CPPFLAGS += $(EXTRACPPFLAGS)
  

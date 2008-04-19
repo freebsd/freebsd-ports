@@ -17,7 +17,7 @@ COMMENT=	MIDI-capable real-time audio processor/synthesizer
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S;.src;/src;}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include \
 		-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 MAKEFILE=	makefile

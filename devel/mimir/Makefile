@@ -17,6 +17,6 @@ COMMENT=		Data-structure library used by the Elan Programming Environment
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 
 .include <bsd.port.mk>

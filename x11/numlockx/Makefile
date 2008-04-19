@@ -21,6 +21,6 @@ USE_XORG=	x11 xext
 PLIST_FILES=	bin/numlockx
 
 # Needed for the "configure" program to find XTest and XKB header files
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>

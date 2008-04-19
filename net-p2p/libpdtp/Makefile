@@ -16,7 +16,7 @@ COMMENT=	Client library for Peer Distributed Transfer Protocol (PDTP)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CFLAGS+=	-fpic
 
 do-install:

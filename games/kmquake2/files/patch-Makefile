@@ -56,7 +56,7 @@
 +Q2DIR?=$(LOCALBASE)/share/quake2
  LIBDIR?=$(LOCALBASE)/lib/kmquake2
  
- XCFLAGS=-I$(X11BASE)/include
+ XCFLAGS=-I$(LOCALBASE)/include
 @@ -91,7 +95,7 @@
  endif
  
@@ -150,7 +150,7 @@
 -$(BINDIR)/baseq2/kmq2game$(ARCH).$(SHLIBEXT) : $(GAME_OBJS)
 -	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS) -lGL
 +$(BINDIR)/baseq2/kmq2game.$(SHLIBEXT) : $(GAME_OBJS)
-+	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS) -L$(X11BASE)/lib -lGL
++	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS) -L$(LOCALBASE)/lib -lGL
  
  $(BUILDDIR)/game/acebot_ai.o :          $(GAME_DIR)/acesrc/acebot_ai.c
  	$(DO_SHLIB_CC)

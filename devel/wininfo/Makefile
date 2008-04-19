@@ -7,18 +7,20 @@
 
 PORTNAME=		wininfo
 PORTVERSION=		0.7
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		devel
 MASTER_SITES=		http://www.freedesktop.org/software/wininfo/
 
 MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A window information utility
 
-USE_GNOME=		gtk20 gnomeprefix
+USE_XORG=		xext xrender xinerama xrandr xi xfixes xcursor \
+			xcomposite x11 xres
+USE_GNOME=		gtk20 gnomeprefix pkgconfig 
 GNU_CONFIGURE=		yes
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=			wininfo.1
 

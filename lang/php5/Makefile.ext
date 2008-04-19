@@ -96,7 +96,7 @@ CONFIGURE_ARGS+=--with-gd \
 		--with-png-dir=${LOCALBASE} \
 		--with-zlib-dir=/usr
 .	if !defined(WITHOUT_X11)
-CONFIGURE_ARGS+=--with-xpm-dir=${X11BASE}
+CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
 .	endif
 
 OPTIONS=	T1LIB "Include T1lib support" on \

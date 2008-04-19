@@ -74,16 +74,16 @@ pre-configure:
 		${REINPLACE_CMD} -e 's|CC = gcc|#CC = gcc|'		\
 			-e 's|LD = gcc|LD = ${CC}|'			\
 			-e 's|LD = g++|LD = ${CXX}|'			\
-			-e 's|-O2|${CFLAGS} -I${X11BASE}/include|'	\
+			-e 's|-O2|${CFLAGS} -I${LOCALBASE}/include|'	\
 			-e 's|wx-config|${WX_CONFIG}|'			\
-			-e 's|LDFLAGS =|LDFLAGS += -L${X11BASE}/lib|'	\
+			-e 's|LDFLAGS =|LDFLAGS += -L${LOCALBASE}/lib|'	\
 			-e 's|libs.linux|libs.${OPSYS}|'		\
 			-e 's|gcc -D|${CC} -D|' $$f ;			\
 	done
 	${REINPLACE_CMD} -e 's|kicad/linux|${INSTDIR}/${OPSYS}|'	\
 		-e 's|/usr/share/kicad|${PREFIX}/${INSTDIR}|'		\
 		-e 's|/usr/local|${PREFIX}|' ${WRKSRC}/common/gestfich.cpp
-	${REINPLACE_CMD} -e 's|/usr/bin/xpdf|${X11BASE}/bin/xpdf|'	\
+	${REINPLACE_CMD} -e 's|/usr/bin/xpdf|${LOCALBASE}/bin/xpdf|'	\
 		-e 's|/usr/bin/konqueror|${LOCALBASE}/bin/konqueror|'	\
 		${WRKSRC}/common/eda_doc.cpp
 

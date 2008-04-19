@@ -40,10 +40,10 @@
 ! BINDIR	=$(PREFIX)/bin
   
   # Library directories for Linux
-! XLIBDIR	=$(X11BASE)/lib
+! XLIBDIR	=$(LOCALBASE)/lib
   
   # Include directory for gcc (if you get X11/Xlib.h: file not found)
-! INCDIR =-I$(X11BASE)/include
+! INCDIR =-I$(LOCALBASE)/include
   
   # Library directories for the Ultrix (probably most Unixes)
   #XLIBDIR =/usr/lib/X11

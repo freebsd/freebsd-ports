@@ -17,7 +17,7 @@ COMMENT=	A multi terminal based on aterm
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--with-xpm=${X11BASE}
+		--with-xpm=${LOCALBASE}
 
 DOCS=		AUTHORS ChangeLog INSTALL TODO
 MAN1=		multi-aterm.1

@@ -18,7 +18,7 @@ COMMENT=	Library providing access to ``dictionary'' data structures
 
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-extract:
 .	for ___f in avl_insert.pdf empty.pdf treap_insert.pdf

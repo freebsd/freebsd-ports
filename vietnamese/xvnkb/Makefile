@@ -8,10 +8,9 @@
 
 PORTNAME=	xvnkb
 PORTVERSION=	0.2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	vietnamese
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	chinhngt@sectorb.msk.ru
 COMMENT=	A Vietnamese input method for X-Window
@@ -21,12 +20,12 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}" XLIB_DIR="${X11BASE}"
+CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}" XLIB_DIR="${LOCALBASE}"
 
 .if defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--no-xft
 .else
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG=	xft
 .endif
 
 SUB_LIST=	PORTVERSION=${PORTVERSION}
@@ -43,7 +42,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/locale/la_LN.UTF-8/LC_CTYPE:${PORTSDIR}/misc/ut
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/tools/Makefile.dep
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/tools/Makefile.dep
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/xvnkb

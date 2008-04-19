@@ -6,7 +6,7 @@
  
  #CCOPT = -O
 -CCOPT = -O3
-+CCOPT = %%CFLAGS%% -I%%LOCALBASE%%/include -I%%X11BASE%%/include
++CCOPT = %%CFLAGS%% -I%%LOCALBASE%%/include
  #CCOPT = -O3 -g3
  #CCOPT = -ansi -pedantic -g3
  #CCOPT = -ansi -pedantic -O -Wall -Wstrict-prototypes -g3
@@ -14,7 +14,7 @@
  HEADERS = defines.h typedefs.h
  
 -LIBPATH = -L/usr/X11R6/lib
-+LIBPATH = -L%%X11BASE%%/lib
++LIBPATH = -L%%LOCALBASE%%/lib
  
  LINKOPT = -lX11 -lm
  

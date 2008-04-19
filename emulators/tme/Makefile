@@ -7,7 +7,7 @@
 
 PORTNAME=	tme
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://people.csail.mit.edu/fredette/tme/
 
@@ -16,6 +16,7 @@ COMMENT=	Emulator for Sun 2/120, 3/150 and SPARCstation 2 machines
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_XORG=	x11
 USE_GNOME=	gtk12 gnometarget
 CONFIGURE_ARGS+=	--disable-shared
 MAKE_ENV=	LANG=C

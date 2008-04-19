@@ -7,7 +7,7 @@
 
 PORTNAME=	slrnface
 PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/s/${PORTNAME}
@@ -21,10 +21,9 @@ LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	slrnface
 MAKE_ARGS=	CC="${CC}" C_FLAGS="${CFLAGS}" \
-		X_INCL=-I${X11BASE}/include \
-		XF_LIB="-L${X11BASE}/lib -L${LOCALBASE}/lib -lcompface"
-
-USE_XLIB=	yes
+		X_INCL=-I${LOCALBASE}/include \
+		XF_LIB="-L${LOCALBASE}/lib -lcompface"
+USE_XORG=	xt
 
 MAN1=		slrnface.1
 PLIST_FILES=	bin/slrnface share/examples/slrnface/slrnface.sl

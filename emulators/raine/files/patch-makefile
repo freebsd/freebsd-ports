@@ -10,7 +10,7 @@
    SDL_CFLAGS = "$(shell sdl-config --cflags)"
 
 -   INCDIR += $(PNG_CFLAGS) $(ALLEGRO_CFLAGS) $(SDL_CFLAGS) -I$(X11BASE)/include -I$(LOCALBASE)/include 
-+   INCDIR += ` allegro-config --cflags` `libpng-config --cflags` -I$(X11BASE)/include -I$(LOCALBASE)/include
++   INCDIR += ` allegro-config --cflags` `libpng-config --cflags` -I$(LOCALBASE)/include
 
  
     DEFINE = -D__RAINE__ \

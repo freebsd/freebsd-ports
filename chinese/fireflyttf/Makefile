@@ -54,7 +54,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${TTF} ${FONTSDIR}
 	${INSTALL_DATA} ${FILESDIR}/local.conf-sung ${FONTSDIR}
 .if !defined(WITHOUT_X11)
-	${INSTALL_DATA} ${FILESDIR}/local.conf-sung ${X11BASE}/etc/fonts/local.conf
+	${INSTALL_DATA} ${FILESDIR}/local.conf-sung ${LOCALBASE}/etc/fonts/local.conf
 .endif
 
 .include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"

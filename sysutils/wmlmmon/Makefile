@@ -19,8 +19,8 @@ ONLY_FOR_ARCHS=	i386
 USE_XORG=	xpm
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-xpm-includes=${X11BASE}/include \
-		--with-xpm-libraries=${X11BASE}/lib
+CONFIGURE_ARGS=	--with-xpm-includes=${LOCALBASE}/include \
+		--with-xpm-libraries=${LOCALBASE}/lib
 MAN8=		wmlmmon.8
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/wmlmmon

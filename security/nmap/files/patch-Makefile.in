@@ -5,7 +5,7 @@
  nmaplibexecdir = @libexecdir@/nmap
  nmapdatadir = @datadir@/nmap
 -deskdir = $(prefix)/share/applications
-+deskdir = $(X11BASE)/share/applications
++deskdir = $(LOCALBASE)/share/applications
  NMAPDEVDIR=~/nmap-dev
  
  export NBASEDIR=@NBASEDIR@

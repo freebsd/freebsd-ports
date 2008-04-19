@@ -6,7 +6,7 @@
 -INCLUDES = -I/usr/include/X11
 -
 -CC=gcc -g $(INCLUDES)
-+CFLAGS += -I${X11BASE}/include -DMOTIF1_2
++CFLAGS += -I${LOCALBASE}/include -DMOTIF1_2
  
  RANLIB=ranlib
  

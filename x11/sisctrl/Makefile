@@ -7,21 +7,20 @@
 
 PORTNAME=	sisctrl
 PORTVERSION=	0.0.20051202
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.winischhofer.net/sis/
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Display Control Panel for XFree86/X.org SiS driver
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 ice xxf86vm xinerama xv xrandr
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	 --with-xv-path=${X11BASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ARGS=	 --with-xv-path=${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/sisctrl
 MAN1=		sisctrl.1x

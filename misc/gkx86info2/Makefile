@@ -15,7 +15,7 @@ MASTER_SITES=	http://anchois.free.fr/ \
 MAINTAINER=	ports@fsck.ch
 COMMENT=	GKrellM2 plugin that simply prints the current clock speed
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 ONLY_FOR_ARCHS=	i386

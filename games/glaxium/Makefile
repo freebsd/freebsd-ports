@@ -30,7 +30,7 @@ MAN6=		glaxium.6
 USE_DOS2UNIX=variables.cpp scene.cpp
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g; \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g; \
 		 s|/games/glaxium|/glaxium|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gcc -g -o|$$(CC) -o|g ; \
 		 s|/games/glaxium|/glaxium|g' ${WRKSRC}/Makefile.in

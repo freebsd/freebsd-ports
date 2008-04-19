@@ -9,6 +9,7 @@
 PORTNAME=	gnumeric
 PORTVERSION=	1.8.2
 CATEGORIES=	math gnome
+PORTREVISION=	1
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	gnome2
@@ -21,7 +22,6 @@ LIB_DEPENDS=	goffice-0.6.6:${PORTSDIR}/devel/goffice \
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier \

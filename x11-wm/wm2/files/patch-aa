@@ -3,7 +3,7 @@
 @@ -1,9 +1,10 @@
  
 -LIBS	=  -L/usr/X11/lib -lXext -lX11 -lXmu -lm
-+LIBS	=  -L$(PREFIX)/lib -lXext -lX11 -lXmu -lm
++LIBS	=  -L$(LOCALBASE)/lib -lXext -lX11 -lXmu -lm
 +LIBS	+= -Wl,-rpath,$(PREFIX)/lib
  
 -CC	= gcc
@@ -11,7 +11,7 @@
 -CFLAGS	= -O2
 +CC	?= gcc
 +CCC	= $(CXX)
-+CFLAGS	+= -I$(PREFIX)/include
++CFLAGS	+= -I$(LOCALBASE)/include
  OBJECTS	= Border.o Buttons.o Client.o Events.o Main.o Manager.o Rotated.o
  
  .c.o:

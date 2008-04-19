@@ -3,8 +3,8 @@
 @@ -1,15 +1,15 @@
 -INCLUDES =-I/usr/X11R6/include/X11 -I/usr/local/include -I/usr/include/X11R6/X11
 -LIBINC =-L/usr/X11R6/lib -L/usr/include/lib
-+INCLUDES =-I${X11BASE}/include -I${X11BASE}/include/X11
-+LIBINC =-L${X11BASE}/lib
++INCLUDES =-I${LOCALBASE}/include -I${LOCALBASE}/include/X11
++LIBINC =-L${LOCALBASE}/lib
  LIBS = -lX11 -lXpm -lXext -lm
  
  TARGET = wmcalc

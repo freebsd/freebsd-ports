@@ -7,7 +7,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	1.0.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
     		http://wireshark.osmirror.nl/download/src/ \
@@ -26,7 +26,6 @@ USE_PERL5_BUILD=yes
 USE_PYTHON_BUILD=yes
 USE_ICONV=	yes
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
@@ -62,7 +61,7 @@ PLIST_SUB+=	${x:U}=bin/$x
 .endfor
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 
 .if !defined(LITE)

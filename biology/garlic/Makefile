@@ -31,8 +31,7 @@ CFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
-	s|%%LOCALBASE%%|${LOCALBASE}|g ;\
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ;\
 	s|%%CC%%|${CC}|g ; \
 	s|%%CFLAGS%%|${CFLAGS}|g'  ${WRKSRC}/Makefile
 .if !defined(WITH_OPTIMIZED_FLAGS)

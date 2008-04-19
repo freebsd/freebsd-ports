@@ -9,8 +9,7 @@ PORTNAME=	bomberclone
 PORTVERSION=	0.11.8
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Reimplementation of Atomic Bomber Man
@@ -21,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=""
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		CXXFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
+		CXXFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include"
 
 post-extract:
 	${FIND} ${WRKSRC} -type d -name CVS | ${XARGS} ${RM} -rf ;

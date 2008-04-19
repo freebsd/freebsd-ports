@@ -21,14 +21,14 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	sdl mixer image
 USE_PYTHON=	yes
 
 WRKSRC=		${WRKDIR}/gamediameter
 
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` -I${X11BASE}/include" \
-		LDFLAGS="`${SDL_CONFIG} --libs` -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include" \
+		LDFLAGS="`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib"
 
 DATADIR=	${PREFIX}/share/gamediameter
 

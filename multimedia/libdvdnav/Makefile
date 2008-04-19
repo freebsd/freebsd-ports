@@ -20,7 +20,7 @@ LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--program-transform-name=''
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15 autoconf:261 automake:16
 
 post-patch:

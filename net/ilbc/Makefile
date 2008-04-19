@@ -15,6 +15,6 @@ COMMENT=	Internet Low Bit Rate codec (RFC3951)
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

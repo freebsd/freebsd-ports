@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	sockd.sh
 

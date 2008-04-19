@@ -16,7 +16,7 @@ MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
 COMMENT=	A Ruby interface to the scientific graphic library DCL
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
-		${X11BASE}/lib/libcdcl.a:${PORTSDIR}/science/cdcl
+		${LOCALBASE}/lib/libcdcl.a:${PORTSDIR}/science/cdcl
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 
 .if defined(WITHOUT_GTK)

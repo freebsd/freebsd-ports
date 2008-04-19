@@ -28,8 +28,8 @@
  	FreeBSD|OpenBSD)
 -		LIB_opengl_CFLAGS="-I/usr/X11R6/include -D_THREAD_SAFE"
 -		LIB_opengl_LDFLAGS="-L/usr/X11R6/lib -lX11 -lXext -pthread -lGL"
-+		LIB_opengl_CFLAGS="-I${X11BASE}/include -D_THREAD_SAFE"
-+		LIB_opengl_LDFLAGS="-L${X11BASE}/lib -lX11 -lXext -pthread -lGL"
++		LIB_opengl_CFLAGS="-I${LOCALBASE}/include -D_THREAD_SAFE"
++		LIB_opengl_LDFLAGS="-L${LOCALBASE}/lib -lX11 -lXext -pthread -lGL"
  		;;
  	MINGW32*|CYGWIN*)
  		LIB_opengl_CFLAGS=""

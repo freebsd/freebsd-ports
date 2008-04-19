@@ -20,7 +20,7 @@ COMMENT=	A parallel language "Synchronization Resources"
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	prefix
-CONFIGURE_ENV=	PREFIX="${PREFIX}" X11BASE="${X11BASE}"
+CONFIGURE_ENV=	PREFIX="${PREFIX}"
 NO_WRKSUBDIR=	yes
 MAN1 =		sr.1 srl.1 srm.1 srprof.1 srtex.1 srlatex.1 srgrind.1 \
 		ccr2sr.1 m2sr.1 csp2sr.1

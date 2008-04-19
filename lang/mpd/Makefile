@@ -48,7 +48,7 @@ post-patch:
 		 s%^((MPD(CMD|LIB)|MAN[135]) =) /usr/local%\1 ${PREFIX}%" \
 		 ${WRKSRC}/Configuration
 .if !defined(WITHOUT_X11)
-	@${REINPLACE_CMD} -Ee 's%^(XINCL =) .*%\1 ${X11BASE}/include%' \
+	@${REINPLACE_CMD} -Ee 's%^(XINCL =) .*%\1 ${LOCALBASE}/include%' \
 		${WRKSRC}/Configuration
 .else
 	@${REINPLACE_CMD} -Ee 's%^(XINCL =) .*%\1%' ${WRKSRC}/Configuration

@@ -22,8 +22,8 @@ USE_BZIP2=	yes
 USE_GL=		yes
 USE_QT_VER=	3
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gl-include=${X11BASE}/include	\
-		--with-gl-library=${X11BASE}/lib	\
+CONFIGURE_ARGS=	--with-gl-include=${LOCALBASE}/include	\
+		--with-gl-library=${LOCALBASE}/lib	\
 		--with-qt-dir=${QTDIR}			\
 		--enable-qt-mt				\
 		--with-cascade-dir=${CASROOT}
@@ -48,7 +48,7 @@ PLIST_SUB=	INSTDIR=${LINSTDIR}
 pre-configure:
 	${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'	\
-		-e 's|/usr/X11R6|${X11BASE}|'			\
+		-e 's|/usr/X11R6|${LOCALBASE}|'			\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:

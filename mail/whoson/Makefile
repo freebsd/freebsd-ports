@@ -19,7 +19,7 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-config=${PREFIX}/etc/whoson.conf
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	whoson.sh
 

@@ -23,7 +23,7 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${LOCALBASE}/share/texmf/tex/latex/prettyref/prettyref.sty:${PORTSDIR}/print/latex-prettyref \
-		${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
+		${LOCALBASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
 
 LATEST_LINK=	lyx15
@@ -93,7 +93,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/bin/makepsres)
+.if exists(${LOCALBASE}/bin/makepsres)
 PLIST_SUB+=	PSRES=
 .else
 PLIST_SUB+=	PSRES='@comment '

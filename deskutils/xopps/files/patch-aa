@@ -62,7 +62,7 @@
 -LIBS = -lXm -lXt -lX11
 -SFOCLIBPATH = -L$(SFOCDIR)/lib -L/sfoc/lib -L$(TPSDIR)/lib -L/tps/lib
 +LIBS = -lXm -lXext -lXt -lX11 ${MOTIFLIB}
-+LIBS+= -Wl,-rpath,$(X11BASE)/lib
++LIBS+= -Wl,-rpath,$(LOCALBASE)/lib
 +#SFOCLIBPATH = -L$(SFOCDIR)/lib -L/sfoc/lib -L$(TPSDIR)/lib -L/tps/lib
  FULLLIBPATH = $(LIBPATH) $(SFOCLIBPATH) $(MACHLIBPATH)
  

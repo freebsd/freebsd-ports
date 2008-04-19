@@ -8,7 +8,7 @@
 
 PORTNAME=	seahorse
 PORTVERSION=	2.22.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -25,7 +25,6 @@ LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme \
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GECKO=	firefox xulrunner firefox-devel<->firefox
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui

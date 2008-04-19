@@ -21,7 +21,7 @@ USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	openct
 SUB_FILES=	etoken.conf
 

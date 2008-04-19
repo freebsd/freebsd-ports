@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-print
 PORTVERSION=	0.37
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-print/0.37
@@ -27,7 +27,6 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gnomelibs gnomecanvas

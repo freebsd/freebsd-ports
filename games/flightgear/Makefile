@@ -18,20 +18,20 @@ COMMENT?=	The FlightGear flight simulator
 
 LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut \
 		openal.0:${PORTSDIR}/audio/openal
-BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
-RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
-		${X11BASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
+		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
+RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
+		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
+		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
 FGVERSION=	0.9.10
 
-USE_GL=		yes
+USE_GL=		gl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--datadir=${X11BASE}/share	# location of fgfs-base
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share	# location of fgfs-base
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .if ${PORTNAME} == FlightGear

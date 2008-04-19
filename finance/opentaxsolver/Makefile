@@ -9,8 +9,7 @@ PORTNAME=	${UPPORTNAME:L}
 PORTVERSION=	5.05
 PORTREVISION=	1
 CATEGORIES=	finance
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	opentaxsolver
+MASTER_SITES=	SF/opentaxsolver
 DISTNAME=	${UPPORTNAME}2007_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -23,7 +22,7 @@ UPPORTNAME=	OpenTaxSolver
 post-patch:
 	@${REINPLACE_CMD} -e 's/%%PREFIX%%/${PREFIX:C,/,\/,g}/' \
 	${WRKSRC}/src/GUI/ots_gui.c
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|' \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' \
 	${WRKSRC}/src/GUI/Makefile.linux
 
 # 4.07 distfile has pre-built (linux) binaries we must whack.

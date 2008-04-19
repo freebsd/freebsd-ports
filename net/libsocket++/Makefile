@@ -17,7 +17,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A C++ wrapper library to the sockets
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	automake:19 autoconf:261 libtool:15
 SCRIPTS_ENV+=	ACLOCAL_FLAGS="-I ${LOCALBASE}/share/aclocal/"
 

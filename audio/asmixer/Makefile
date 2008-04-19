@@ -20,8 +20,8 @@ PLIST_FILES=	bin/asmixer
 USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \
-		--with-xpm-includes=${X11BASE} \
-		--with-xpm-library=${X11BASE}
+		--with-xpm-includes=${LOCALBASE} \
+		--with-xpm-library=${LOCALBASE}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \

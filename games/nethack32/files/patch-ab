@@ -6,8 +6,8 @@
  
 -CFLAGS = -O -I../include
 -LFLAGS = 
-+CFLAGS += -O -I../include -I${X11BASE}/include
-+LFLAGS =  -L${X11BASE}/lib
++CFLAGS += -O -I../include -I${LOCALBASE}/include
++LFLAGS =  -L${LOCALBASE}/lib
  
  
  # Set the WINSRC, WINOBJ, and WINLIB lines to correspond to your desired

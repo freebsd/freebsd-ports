@@ -25,7 +25,7 @@
  
  # Includes
 -INCLUDES = -I/usr/include -I/usr/X11R6/include -I.
-+INCLUDES = -I/usr/include -I${X11BASE}/include -I. $(shell /usr/local/bin/wxgtk2u-2.8-config --cxxflags)
++INCLUDES = -I/usr/include -I${LOCALBASE}/include -I. $(shell /usr/local/bin/wxgtk2u-2.8-config --cxxflags)
  
  # Libraries
  # (The pkg-config stuff was requested by a user, somehow pangox was missing)

@@ -104,7 +104,7 @@ CLINKFLAGS = -o
 # then please use
 # INCLUDES = -I/usr/local/X11/include/
 # INCLUDES = -I/RW/esprit/X11R5/include/
-INCLUDES = -I%%X11BASE%%/include/
+INCLUDES = -I%%LOCALBASE%%/include/
 
 # Library directories
 # For Sunview, this should be enough, because on Suns, Sunview
@@ -117,7 +117,7 @@ INCLUDES = -I%%X11BASE%%/include/
 # then please use
 # LIBPATH = -L/usr/local/X11/lib/
 # LIBPATH = -L/RW/esprit/X11R5/lib/
-LIBPATH = -L%%X11BASE%%/lib/
+LIBPATH = -L%%LOCALBASE%%/lib/
 
 # Libraries
 # Libraries for SunView

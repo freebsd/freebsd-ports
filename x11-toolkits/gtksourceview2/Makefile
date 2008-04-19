@@ -8,7 +8,7 @@
 
 PORTNAME=	gtksourceview2
 PORTVERSION=	2.2.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,7 +23,6 @@ COMMENT=	A text widget that adds syntax highlighting to the GtkTextView widget
 .if !defined(REFERENCE_PORT)
 
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes

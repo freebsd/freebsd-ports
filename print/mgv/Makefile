@@ -19,7 +19,6 @@ COMMENT=	A PostScript and PDF previewer
 USE_XORG=	xpm
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	X11BASE=${X11BASE}
 CONFIGURE_ARGS=	--enable-optimize \
 		--disable-debug
 PLIST_SUB=	MGV_VERSION=${PORTVERSION}

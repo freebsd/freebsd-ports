@@ -19,7 +19,7 @@ PLIST_FILES=	bin/weewm
 USE_XORG=	x11
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,^CC=,CC?=,' -e 's,/usr/X11R6,${X11BASE},g' \
+	@${REINPLACE_CMD} -e 's,^CC=,CC?=,' -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/src/Makefile
 
 do-install:

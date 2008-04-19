@@ -7,7 +7,7 @@
 
 PORTNAME=	mpich
 DISTVERSION=	1.2.7p1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
@@ -43,7 +43,7 @@ PLIST_SUB+=	X11="@comment "
 .else
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
-USE_XLIB=	yes
+USE_XORG=	x11
 CONFIGURE_ARGS+=--enable-mpe_graphics
 PLIST_SUB+=	X11=""
 .endif
@@ -205,7 +205,7 @@ CONFIGURE_ENV+=	RSHCOMMAND="${LOCALBASE}/bin/ssh"
 
 pre-configure:
 .for fic in mpe/configure mpe/src/Makefile.in
-	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/${fic}
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/${fic}
 .endfor
 .for fic in examples/basic/Makefile.in installtest/Makefile.in
 	${REINPLACE_CMD} -e 's|@F90_SUFFIX@|f90|' ${WRKSRC}/${fic}

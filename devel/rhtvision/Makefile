@@ -7,9 +7,9 @@
 
 PORTNAME=	rhtvision
 PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	tvision
 DISTNAME=	rhtvision-${PORTVERSION}.src
 
@@ -19,7 +19,7 @@ COMMENT=	Complete C++ Text User Interface (TUI) library
 WRKSRC=		${WRKDIR}/tvision
 USE_PERL5=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
@@ -30,9 +30,9 @@ USE_GETTEXT=	yes
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11 xrender xmu sm xt ice
 PLIST_SUB+=	X11_ONLY=""
-CFLAGS+=	-I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 .else
 PLIST_SUB+=	X11_ONLY="@comment "
 
@@ -44,7 +44,7 @@ post-patch:
 .for f in config.pl confignt.pl conflib.pl linux/compress Makefile.in
 	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL5},g' \
 		-e 's,/usr/local,${LOCALBASE},g' \
-		-e 's,/usr/X11R6,${X11BASE},g' \
+		-e 's,/usr/X11R6,${LOCALBASE},g' \
 		-e 's,\(soname.*\)Version,\1VersionMajor,g' \
 		-e 's/\tmake/\t\\$$(MAKE)/g' \
 		-e 's/	make/	$$(MAKE)/g' \

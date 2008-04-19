@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.kldp.net/gtkcomm/
 MAINTAINER=	cjh@kr.freebsd.org
 COMMENT=	Serial controlling software, with gtk+ widget
 
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
 USE_PERL5_BUILD=yes
 USE_GNOME=	imlib

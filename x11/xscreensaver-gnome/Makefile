@@ -8,7 +8,7 @@
 
 PORTNAME?=	xscreensaver-gnome
 PORTVERSION=	4.24
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -20,9 +20,8 @@ LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle
 
 CONFLICTS?=	xscreensaver-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
-USE_XLIB=	yes
-USE_XPM=	yes
-USE_GL=		yes
+USE_XORG=	x11 xpm
+USE_GL=		gl
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
 USE_GNOME=	gnomehier libglade2 gnomehack

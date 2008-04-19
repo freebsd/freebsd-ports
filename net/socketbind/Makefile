@@ -14,7 +14,7 @@ DISTFILES=	# none
 MAINTAINER=	nm@web.am
 COMMENT=	Library to bind applications on multihomed machines to specific IP address
 
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
 NOMAN=		YES
 INSTALL_TARGET=
 PLIST_SUB=	"DOCSDIR=share/doc/${PORTNAME}"

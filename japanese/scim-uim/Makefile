@@ -9,7 +9,7 @@ PORTNAME=	scim-uim
 PORTVERSION=	0.1.4
 PORTREVISION=	8
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://freedesktop.org/~suzhe/sources/
 MASTER_SITE_SUBDIR=scim
 
@@ -35,11 +35,11 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-aa ${FILESDIR}/extra-patch-ab
 .if ${OSVERSION} < 500035
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -I${LOCALBASE}/include/stlport" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/stlport" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-4-stable
 .else
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -D__STDC_ISO_10646__" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 .endif
 

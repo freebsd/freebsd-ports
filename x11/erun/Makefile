@@ -23,8 +23,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GL=	gl
 USE_EFL=	imlib2
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lepplet -lImlib2 -lGL ${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -lepplet -lImlib2 -lGL ${PTHREAD_LIBS}
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o ${PORTNAME}.epplet \

@@ -17,7 +17,7 @@ COMMENT=	A library to make string handling easier in C
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

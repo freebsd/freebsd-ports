@@ -8,15 +8,14 @@
 PORTNAME=		xxkb
 PORTVERSION=		1.11
 CATEGORIES=		x11
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xxkb
+MASTER_SITES=		SF/xxkb
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=		alexander.pohoyda@gmx.net
 COMMENT=		An XKB keyboard layout switcher and indicator
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
-USE_XPM=		yes
+USE_XORG=		xpm
 USE_IMAKE=		yes
 
 MAN1=			xxkb.1

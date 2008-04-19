@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	1.1.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.1/ \
 		http://openoffice.lunarshells.com/sources/1.1/ \
@@ -29,7 +29,6 @@ DISTFILES+=	${MOZILLA_PROJECT} ${MOZILLA_SOURCE}
 USE_GNOME+=	orbit
 .endif
 
-USE_XLIB=	yes
 USE_PERL5=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
@@ -110,7 +109,7 @@ CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"           \
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
-		imake:${X_IMAKE_PORT}
+		imake:${PORTSDIR}/devel/imake
 #.if defined(WITHOUT_JAVA)
 #LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 #.endif

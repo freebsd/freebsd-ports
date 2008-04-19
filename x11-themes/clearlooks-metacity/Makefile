@@ -8,7 +8,7 @@
 
 PORTNAME=	clearlooks-metacity
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.stellingwerff.com/
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,7 +21,6 @@ CONFLICTS=	gnome-themes-2.11.9[1-9]* gnome-themes-2.*
 
 WRKSRC=		${WRKDIR}/Clearlooks/metacity-1/
 USE_GNOME=	metacity gnomeprefix
-USE_X_PREFIX=	yes
 DATADIR=	share/themes/Clearlooks/metacity-1
 NO_BUILD=	yes
 

@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libopenal.so.1:${PORTSDIR}/audio/linux-openal 
 
 IGNOREFILES=	${DISTFILES}	# user-created distribution
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes

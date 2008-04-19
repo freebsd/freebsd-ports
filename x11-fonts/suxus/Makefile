@@ -7,7 +7,7 @@
 
 PORTNAME=	suxus
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 DISTFILES=	${PORTNAME}-iso-8859-1.bdf.gz fonts.alias
@@ -16,11 +16,12 @@ DIST_SUBDIR=	suxus
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	An x11 font designed to be small yet easily read
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT} \
-		mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 SUB_FILES=	pkg-message
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

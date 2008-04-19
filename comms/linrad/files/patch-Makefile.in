@@ -17,7 +17,7 @@
 -@MEM@ -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
 --Wparentheses -Wstrict-prototypes -Werror -ffast-math \
 --fomit-frame-pointer -c -o
-+CFL	= ${CFLAGS} -DOSNUM=1 -I${X11BASE}/include -c -o
++CFL	= ${CFLAGS} -DOSNUM=1 -I${LOCALBASE}/include -c -o
  CFW	= -g -O -DOSNUM=2 -W -Wimplicit -Wreturn-type -Wformat \
  -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
  -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
@@ -35,7 +35,7 @@
  
  
 -	gcc @MEM@ -oxlinrad -L/usr/X11R6/lib -lX11 -lpthread -lm \
-+	$(LCC) @MEM@ -oxlinrad -L${X11BASE}/lib -lX11 -pthread -lm \
++	$(LCC) @MEM@ -oxlinrad -L${LOCALBASE}/lib -lX11 -pthread -lm \
  -Wl,-Map,linrad.xmap,-warn-common \
  xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol lvar.ol \
  mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \

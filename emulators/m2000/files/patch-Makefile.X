@@ -10,12 +10,12 @@
 +LD	?= gcc	# Linker used
  
 -CFLAGS  = -Wall -fomit-frame-pointer -O2 -I/usr/X11/include \
-+CFLAGS  += -Wall -fomit-frame-pointer -O2 -I${X11BASE}/include \
++CFLAGS  += -Wall -fomit-frame-pointer -O2 -I${LOCALBASE}/include \
  	  -DLSB_FIRST -DHAVE_FTRUNCATE -DHAVE_CLOCK -DUNIX_X \
  	  -DSOUND -DMITSHM
  
 -LFLAGS	= -s -L/usr/X11/lib
-+LFLAGS	+= -L${X11BASE}/lib
++LFLAGS	+= -L${LOCALBASE}/lib
  
  OBJECTS = M2000.o P2000.o Z80.o Z80Debug.o \
            Unix.o X.o

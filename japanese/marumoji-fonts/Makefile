@@ -7,7 +7,7 @@
 
 PORTNAME=	marumoji-fonts
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	yoichi
@@ -22,11 +22,11 @@ MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Japanese marumoji fonts
 
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
-		bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
 FONTSDIR=	lib/X11/fonts/local
 
 .include <bsd.port.pre.mk>

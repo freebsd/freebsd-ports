@@ -8,7 +8,7 @@
 
 PORTNAME=	babytrans
 PORTVERSION=	0.9.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils
 MASTER_SITES=	http://fjolliton.free.fr/babytrans/
 
@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+/GNOME front-end for Babylon Translator .dic files
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

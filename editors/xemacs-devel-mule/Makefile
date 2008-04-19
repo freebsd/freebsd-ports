@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -43,7 +43,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
 
-USE_XORG=	x11 xpm
+USE_XORG+=	x11 xpm
 CONFIGURE_ARGS=	--with-xpm
 .endif
 
@@ -57,14 +57,12 @@ USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_TARGET=--build=${XEMACS_ARCH}
 
 CONFIGURE_ARGS+=	--enable-mule \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib \
 		--with-site-libraries='${SITE_LIBRARIES}' \
 		--with-site-includes='${SITE_INCLUDES}' \
 		--enable-sound=native \
 		--with-site-lisp \
 		--with-pop \
-		--with-infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:${X11BASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
+		--with-infopath=${LOCALBASE}/lib/xemacs/info:${LOCALBASE}/info:/usr/info:${LOCALBASE}/lib/texmf/doc/info:/usr/lib/texmf/doc:/usr/share/info \
 		--enable-clash-detection \
 		--enable-database=berkdb \
 		${WITH_XIM} \
@@ -110,7 +108,7 @@ CONFIGURE_ARGS+=--disable-kkcc --disable-mc-alloc --disable-newgc
 
 .if defined(WITH_XFT)
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-USE_XORG=	x11 xft xpm
+USE_XORG+=	x11 xft xpm
 CONFIGURE_ARGS+=--with-xft=all
 .elif defined(WITH_GTK)
 CONFIGURE_ARGS+=--with-gtk

@@ -36,7 +36,6 @@ OPTIONS=	XMMS "Build XMMS plugin" off \
 .if defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 PLIST_SUB+=	XMMS=""
-PLIST_SUB+=	X11BASE="${X11BASE}"
 .else
 CONFIGURE_ARGS+=--disable-xmms
 PLIST_SUB+=	XMMS="@comment "

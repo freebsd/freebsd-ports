@@ -7,7 +7,7 @@
 
 PORTNAME=	irsim
 PORTVERSION=	9.7.64
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
 EXTRACT_SUFX=	.tgz
@@ -15,13 +15,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An event-driven logic-level simulator for MOS circuis
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts/
 
-CFLAGS+=	-I${X11BASE}/include
-LDFLAGS+=	-L${X11BASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	PIC_CFLAGS="-fpic" LDFLAGS="${LDFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 

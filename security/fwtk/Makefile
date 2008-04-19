@@ -7,7 +7,7 @@
 
 PORTNAME=	fwtk
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
@@ -47,7 +47,7 @@ IGNORE=		does not build on 5.x and above with WITH_SKEY set because it requires 
 .if !defined(WITHOUT_X11)
 MAN8+=		x-gw.8
 LIBEXEC_BINS+=	x-gw
-USE_XLIB=	yes
+USE_XORG=	x11
 PLIST_SUB+=	X11=""
 .else
 PLIST_SUB+=	X11="@comment "

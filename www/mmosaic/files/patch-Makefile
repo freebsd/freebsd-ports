@@ -60,7 +60,7 @@
  #xinc	= -I/usr/X11/include
  # Linux, FreeBSD
 -#xinc	= -I/usr/X11R6/include
-+xinc	= -I/${X11BASE}/include
++xinc	= -I/${LOCALBASE}/include
  # Irix
  #xinc	= -I/usr/include
  # Solaris 2.x
@@ -76,7 +76,7 @@
  #xlibs	= -L/usr/X11/lib -lXm_s -lXt_s -lX11_s -lXqnx_s -lXt -lXmu -lXext
  # Linux, FreeBSD, NetBSD with Lesstif
 -#xlibs	= -L/usr/X11R6/lib -lXm -lXmu -lXt -lXext -lX11 -lm 
-+xlibs	= -L/${X11BASE}/lib -lXm -lXmu -lXt -lXext -lX11 -lm 
++xlibs	= -L/${LOCALBASE}/lib -lXm -lXmu -lXt -lXext -lX11 -lm 
  # some distrib. of Linux require -lSM -lICE
  # Linux Red Hat 6.1 lesstif-0.88.1-3 kernel 2.2.12-20
  #xlibs = -L/usr/X11R6/lib -lXm -lXmu -lXt -lXext -lX11 -lm -lSM -lICE

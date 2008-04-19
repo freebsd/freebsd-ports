@@ -10,7 +10,7 @@
 
 PORTNAME=	astrolog
 PORTVERSION=	5.40
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.astrolog.org/ftp/ephem/:ephem \
 		http://www.astrolog.org/ftp/:dist
@@ -23,7 +23,7 @@ COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
 USE_ZIP=	yes
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 MAKE_ARGS=	-DX11
 .endif
 EXTRACT_CMD=	${SH}

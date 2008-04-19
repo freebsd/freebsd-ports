@@ -7,7 +7,7 @@
 
 PORTNAME=	qscanplot
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 # per distfile survey, mastersite disappeared in March 2003
 MASTER_SITES=	# http://www.gae.ucm.es/~gonzalez/qscanplot/
@@ -17,7 +17,7 @@ COMMENT=	A program to extract data from scanned plots, graphs and figures
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext xinerama
 USE_QT_VER=	3
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes

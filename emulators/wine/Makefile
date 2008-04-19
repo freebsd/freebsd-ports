@@ -10,7 +10,7 @@ PORTNAME=	wine
 PORTVERSION=	0.9.60
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
+MASTER_SITES=	SFE \
 		http://ibiblio.org/pub/linux/system/emulators/wine/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -38,7 +38,7 @@ USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		glut
-USE_XPM=	yes
+USE_XORG=	xpm
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

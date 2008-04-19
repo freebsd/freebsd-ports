@@ -9,19 +9,19 @@
 
 PORTNAME=	kaptain
 PORTVERSION=	0.72
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for building/running QT GUIs for commmand line programs
 
+USE_XORG=	x11 ice xext
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-mt \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ARGS=	--enable-mt
 
 MAN1=		kaptain.1
 INFO=		kaptain

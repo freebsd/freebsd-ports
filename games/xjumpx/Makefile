@@ -7,15 +7,14 @@
 
 PORTNAME=	xjumpx
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://fenix.ne.jp/~cdrtk/soft/dl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved version of xjump
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xaw
 
 MAN1=		xjumpx.1
 MANCOMPRESSED=	yes

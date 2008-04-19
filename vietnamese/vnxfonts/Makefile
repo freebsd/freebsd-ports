@@ -10,7 +10,7 @@
 
 PORTNAME=	vnxfonts
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	obrien
@@ -20,11 +20,11 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	X fonts for displaying Vietnamese
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 WRKSRC=		${WRKDIR}/fonts/X
-USE_X_PREFIX=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/vietnamese

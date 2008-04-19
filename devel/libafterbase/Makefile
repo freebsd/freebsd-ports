@@ -8,16 +8,14 @@
 
 PORTNAME=	libafterbase
 PORTVERSION=	0.92
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	afterstep
+MASTER_SITES=	SF/afterstep
 DISTNAME=	libAfterBase-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AfterStep basic functionality library
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-staticlibs --enable-sharedlibs --with-x

@@ -6,8 +6,8 @@
  #   only if they are not in a standard directory.
 -LIBDIRS = 
 -INCDIRS = 
-+LIBDIRS = -L$(X11BASE)/lib
-+INCDIRS = -I$(X11BASE)/include
++LIBDIRS = -L$(LOCALBASE)/lib
++INCDIRS = -I$(LOCALBASE)/include
  #LIBDIRS = -L/usr/imports/lib/X11R5
  #INCDIRS = -I/usr/imports/include/X11R5 -I/usr/imports/include
  

@@ -22,7 +22,8 @@ USE_BZIP2=	yes
 USE_GNOME=	esound gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--disable-fbdev-dga --enable-fpe=uae ac_cv_have_33bit_addressing=no ac_cv_file__dev_ptmx=no
+CONFIGURE_ARGS=	--disable-fbdev-dga --enable-fpe=uae ac_cv_have_33bit_addressing=no ac_cv_file__dev_ptmx=no \
+		--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 

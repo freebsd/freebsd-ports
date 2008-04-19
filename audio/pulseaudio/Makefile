@@ -8,6 +8,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		oil-0.3.0:${PORTSDIR}/devel/liboil
 
 USE_GNOME=	gnometarget gnomehack glib20 ltverhack
-USE_XLIB=	yes
+USE_XORG=	x11 sm
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15

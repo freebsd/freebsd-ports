@@ -7,10 +7,9 @@
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	polish net-im
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ggadu
+MASTER_SITES=	SF/ggadu
 DISTNAME=	gg2-${PORTVERSION}
 
 MAINTAINER=	smyru@heron.pl
@@ -48,8 +47,7 @@ CONFIGURE_ARGS=	--disable-esdtest \
 		--without-remote
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${X11BASE}/include"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	TLEN	"Enable Tlen.pl network plugin"		off \
 		JABBER	"Enable Jabber loudmouth plugin"	off \

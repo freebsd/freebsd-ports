@@ -19,8 +19,8 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 USE_GL=		yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CXX}" LN="${CXX}" OPT="${OPT}" \
-		INCLUDE_PATH="-I${X11BASE}/include" \
-		LIB_PATH="-L${X11BASE}/lib"
+		INCLUDE_PATH="-I${LOCALBASE}/include" \
+		LIB_PATH="-L${LOCALBASE}/lib"
 
 OPT=		-DIMAGE_PATH="\\\"${PREFIX}/lib/X11/glclock/\\\"" \
 		${CFLAGS}

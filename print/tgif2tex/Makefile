@@ -31,7 +31,6 @@ DOCSRC=		how-to-use.aux how-to-use.dvi \
 do-build:
 	${REINPLACE_CMD} \
 		-e "s,%%LOCALBASE%%,${LOCALBASE}," \
-		-e "s,%%X11BASE%%,${X11BASE}," \
 		${WRKSRC}/tgif2tex
 
 do-install:

@@ -7,17 +7,17 @@
 
 PORTNAME=	aewm
 PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.red-bean.com/~decklin/software/aewm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICCCM-compliant window manager based on 9wm
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext xt xaw
 WANT_GNOME=	yes
 USE_GMAKE=	yes
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" XROOT="${X11BASE}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" XROOT="${LOCALBASE}"
 
 MAN1=		aeclients.1 aewm.1
 

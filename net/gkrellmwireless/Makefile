@@ -14,7 +14,7 @@ MASTER_SITES=	http://gkrellm.luon.net/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM wireless plugin
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 NO_LATEST_LINK=	yes

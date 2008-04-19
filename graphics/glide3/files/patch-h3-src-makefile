@@ -73,7 +73,7 @@
               $(top_builddir)/swlibs/newpci/pcilib/libfxpci.la \
               $(top_builddir)/@FX_GLIDE_HW@/minihwc/libminihwc.la
 -LINK_LIBS  = -L/usr/X11R6/lib -lX11 -lXext -lXxf86dga -lXxf86vm
-+LINK_LIBS  = -L$(X11BASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm
++LINK_LIBS  = -L$(LOCALBASE)/lib -lX11 -lXext -lXxf86dga -lXxf86vm
  
  CLEANFILES = fxinline.h fxgasm.h
  

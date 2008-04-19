@@ -14,17 +14,15 @@ MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/president/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the cardgame President (or Ass) against 3 AIs
 
-
 USE_TK=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-carddir=${PREFIX}/share/games/tvp \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ARGS=	--enable-carddir=${PREFIX}/share/games/tvp
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/tcl8.4 \
 			  -I${LOCALBASE}/include/tk8.4" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
+		LIBS="-L${LOCALBASE}/lib \
 		-ltcl84 -ltk84 -lX11 -lm"
 #CFLAGS+=	-lX11 -lm -ltcl84 -ltk84 \
-#		-L${LOCALBASE}/lib -L${X11BASE}/lib
+#		-L${LOCALBASE}/lib
 USE_PERL5_BUILD=yes
 
 MAN6=		tvp.6

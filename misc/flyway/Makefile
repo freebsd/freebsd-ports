@@ -8,7 +8,7 @@
 
 PORTNAME=	flyway
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc python geography
 MASTER_SITES=	http://www.bellz.org/flyway/
 
@@ -18,7 +18,6 @@ COMMENT=	A VFR/IFR Route Planner for Pilots
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
-USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/FlyWay

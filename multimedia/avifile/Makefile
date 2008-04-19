@@ -49,7 +49,7 @@ VERSION=	0.7
 
 # qt -- USE_QT_VER has to happen befor bsd.port.pre.mk
 .if !defined(WITHOUT_QT)
-. if exists(${X11BASE}/include/qt2/qapp.h)
+. if exists(${LOCALBASE}/include/qt2/qapp.h)
 USE_QT_VER=	2
 . else
 USE_QT_VER=	3
@@ -237,11 +237,11 @@ post-patch:
 		${WRKSRC}/plugins/libmad/Makefile.in
 .endif
 .if !defined(WITHOUT_QT)
-. if exists(${X11BASE}/include/qt2/qapp.h)
+. if exists(${LOCALBASE}/include/qt2/qapp.h)
 	@${REINPLACE_CMD} -e 's|qt-mt|qt2-mt|' ${WRKSRC}/configure
 . endif
-	@${REINPLACE_CMD} -e 's|QT_CFLAGS = \@QT_CFLAGS\@|QT_CFLAGS = -I${X11BASE}/include \@QT_CFLAGS\@|; \
-		s|QT_LIBS = \@QT_LIBS\@|QT_LIBS = -L${X11BASE}/lib \@QT_LIBS\@|' \
+	@${REINPLACE_CMD} -e 's|QT_CFLAGS = \@QT_CFLAGS\@|QT_CFLAGS = -I${LOCALBASE}/include \@QT_CFLAGS\@|; \
+		s|QT_LIBS = \@QT_LIBS\@|QT_LIBS = -L${LOCALBASE}/lib \@QT_LIBS\@|' \
 		${WRKSRC}/libavqt/Makefile.in
 .endif
 .if !defined(WITHOUT_XVID)

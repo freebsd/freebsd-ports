@@ -18,7 +18,7 @@ COMMENT=	Open-source implementation of the Service Location Protocol
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openslp \
 		--localstatedir=/var
 CONFIGURE_TARGET=--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}

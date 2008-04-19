@@ -9,8 +9,8 @@ $FreeBSD$
 -OBJS	=	wmflame.o ../wmgeneral/wmgeneral.o 
 +CC ?= gcc
 +CFLAGS += -c -Wall
-+INCDIR = -I${X11BASE}/include
-+LIBDIR = -L${X11BASE}/lib
++INCDIR = -I${LOCALBASE}/include
++LIBDIR = -L${LOCALBASE}/lib
 +LIBS   = -lXpm -lXext -lX11
 +OBJS =  wmflame.o ../wmgeneral/wmgeneral.o
  

@@ -7,17 +7,17 @@
 
 PORTNAME=	xsc
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.panix.com/~mbh/xsc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vector graphics space shoot'em up game
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 PLIST_FILES=	bin/xsc
 
 .include <bsd.port.mk>

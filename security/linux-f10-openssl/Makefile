@@ -15,7 +15,7 @@ COMMENT=	SSL and crypto library (Linux Version)
 
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 DESCR=	${.CURDIR}/../${PORTNAME}/pkg-descr
 
 .include <bsd.port.mk>

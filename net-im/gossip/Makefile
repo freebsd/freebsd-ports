@@ -8,7 +8,7 @@
 
 PORTNAME=	gossip
 PORTVERSION=	0.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,8 +23,8 @@ LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth \
 		aspell.16:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
+USE_XORG=	x11 xext ice
 USE_BZIP2=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

@@ -70,7 +70,7 @@
    return 0;
   }
   ';
-!  $conf{'X11LibPath'}=$ENV{'X11BASE'} . '/lib' unless $conf{'X11LibPath'};
+!  $conf{'X11LibPath'}=$ENV{'LOCALBASE'} . '/lib' unless $conf{'X11LibPath'};
    $conf{'X11Lib'}='X11 Xmu' unless $conf{'X11Lib'};
    $libs=$conf{'X11Lib'};
    $libs=~s/(\S+)/-l$1/g;
@@ -87,7 +87,7 @@
      {
       if (!$conf{'X11IncludePath'})
         {
-!        $conf{'X11IncludePath'}=$ENV{'X11BASE'} . '/include';
+!        $conf{'X11IncludePath'}=$ENV{'LOCALBASE'} . '/include';
          $o.="-I$conf{'X11IncludePath'} -L$conf{'X11LibPath'} $libs";
          if ($test=~/OK, (\d+)\.(\d+)/)
            {

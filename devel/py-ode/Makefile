@@ -18,7 +18,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Python bindings for The Open Dynamics Engine
 
-BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
+BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 USE_BZIP2=	yes
 
@@ -33,7 +33,7 @@ OPTIONS=	TRIMESH	"Trimesh support (sync with OPCODE opt of devel/ode)"	on
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${X11BASE}|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/setup.py
 .if defined(WITHOUT_TRIMESH)
 	@${REINPLACE_CMD} -e '/TRIMESH_ENABLE/ s|True|False|' ${WRKSRC}/setup.py
 .endif

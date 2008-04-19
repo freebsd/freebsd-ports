@@ -49,7 +49,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|exec ./scmlit|exec $$SCMLIT|g' ${WRKSRC}/build
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
 		 s|%%CFLAGS%%|${CFLAGS}|g ; \
-		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/build.scm
+		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/build.scm
 
 post-build:
 	@cd ${WRKSRC} \

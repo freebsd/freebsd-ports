@@ -7,9 +7,9 @@
 
 PORTNAME=	nexuiz
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -49,7 +49,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis \
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-USE_GL=		yes
+USE_GL=		glut
+USE_XORG=	x11 xpm xxf86vm xxf86dga xext
 ALL_TARGET+=	cl-release
 PLIST_SUB+=	CLIENT=""
 .else
@@ -74,7 +75,7 @@ PLIST_SUB+=	SERVER="@comment "
 post-extract:
 	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20080229.zip \
 		-d ${WRKDIR}/Nexuiz/sources
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -E 's,(fs_basedir\, )"",\1"${DATADIR}",' ${WRKSRC}/fs.c
 
 do-build:

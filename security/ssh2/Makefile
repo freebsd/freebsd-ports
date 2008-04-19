@@ -7,7 +7,7 @@
 
 PORTNAME=	ssh2
 PORTVERSION=	3.2.9.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security ipv6
 # The list of official mirror sites is at:
 # http://www.ssh.com/support/downloads/secureshellserver/non-commercial.html
@@ -86,9 +86,9 @@ EXTRA_PATCHES+=		${FILESDIR}/kerberos-patch-apps::ssh::ssh2_config \
 .endif
 
 .if !defined(WITHOUT_X11)
-BUILD_DEPENDS+=		${X11BASE}/bin/xauth:${X_CLIENTS_PORT}
-RUN_DEPENDS+=		${X11BASE}/bin/xauth:${X_CLIENTS_PORT}
-USE_XLIB=		yes
+BUILD_DEPENDS+=		xauth:${PORTSDIR}/x11/xauth
+RUN_DEPENDS+=		xauth:${PORTSDIR}/x11/xauth
+USE_XORG=		x11
 PLIST_SUB+=		WITH_X11:=""
 .else
 CONFIGURE_ARGS+=	--without-x
@@ -138,7 +138,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\/etc\/ssh2|${PREFIX}&|g' \
 		${WRKSRC}/HOWTO.anonymous.sftp
 	@${REINPLACE_CMD} -e \
-		's|$$PATH:\/usr\/X11R6\/bin:\/usr\/X11\/bin|${X11BASE}\/bin|' \
+		's|$$PATH:\/usr\/X11R6\/bin:\/usr\/X11\/bin|${LOCALBASE}\/bin|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e 's|\$$\(ETCDIR\)|${PREFIX}\/etc|g' \
 		${WRKSRC}/apps/ssh/ssh_dummy_shell.out

@@ -46,7 +46,7 @@ LIBXMDIR!=	${ECHO_CMD} ${MOTIFLIB} | ${SED} -e 's/\/libXm\.a//g' | ${AWK} '{prin
 LIBXMDIR!=	${ECHO_CMD} ${MOTIFLIB} | ${SED} -e 's/-L//g' | ${AWK} '{print $$1}'
 .endif
 .else
-LIBXMDIR=	${X11BASE}
+LIBXMDIR=	${LOCALBASE}
 .endif
 
 pre-patch:

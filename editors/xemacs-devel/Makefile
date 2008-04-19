@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-devel
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
@@ -29,9 +29,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
-USE_XLIB=	yes
-USE_XORG=	xbitmaps
-USE_XPM=	yes
+USE_XORG+=	xbitmaps x11 ice xext xaw xt xmu
 .endif
 
 XEMACS_MAJOR_VER?=	21
@@ -82,7 +80,7 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/lib/libXm.so)
+.if exists(${LOCALBASE}/lib/libXm.so)
 USE_MOTIF=	yes
 HAVE_MOTIF=	yes
 .endif

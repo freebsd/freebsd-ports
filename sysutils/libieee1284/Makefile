@@ -16,7 +16,7 @@ COMMENT=	IEEE1284 communications library
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
 .if defined(WITH_PYTHON)

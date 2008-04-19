@@ -10,8 +10,7 @@ PORTVERSION=	2.03p3
 PORTREVISION=	27
 PORTEPOCH=	1
 CATEGORIES=	www graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	webmagick
+MASTER_SITES=	SF/webmagick
 DISTNAME=	${PORTNAME}-2.03pre3
 
 MAINTAINER=	ache@freebsd.org
@@ -31,7 +30,7 @@ CONFIGURE_ENV=	webmagick_cv_rootpath=${PREFIX}/www/data \
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${X11BASE}/bin/xlsfonts)
+.if !exists(${LOCALBASE}/bin/xlsfonts)
 WITHOUT_X11=	yes
 .endif
 

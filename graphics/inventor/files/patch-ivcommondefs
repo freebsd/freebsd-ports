@@ -18,7 +18,7 @@
  LCOPTS += $(LINUXOPTS)
  
 -X11DIR = /usr/X11R6
-+X11DIR = ${X11BASE}
++X11DIR = ${LOCALBASE}
  X11INCDIR = $(X11DIR)/include
  X11LIBDIR = $(X11DIR)/lib
  
@@ -61,7 +61,7 @@
  #
  
 +ifeq ($(usingFreeBSD), 1)
-+IVPREFIX = ${X11BASE}
++IVPREFIX = ${LOCALBASE}
 +else
  IVPREFIX = /usr
 +endif

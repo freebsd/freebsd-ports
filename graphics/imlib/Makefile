@@ -8,7 +8,7 @@
 
 PORTNAME=	imlib
 PORTVERSION=	1.9.15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/imlib/1.9
@@ -22,8 +22,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
 USE_AUTOTOOLS=	libtool:15
-USE_XLIB=	yes
 USE_BZIP2=	yes
+USE_XORG=	sm xext x11
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 gnomehack
 GNU_CONFIGURE=	yes

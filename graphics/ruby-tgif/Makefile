@@ -7,7 +7,7 @@
 
 PORTNAME=	tgif
 PORTVERSION=	20010408
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~Nori/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby extension library to draw Tgif graphics
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TGIF_PORT}:build \
-		imake:${X_IMAKE_PORT}
+		imake:${PORTSDIR}/devel/imake
 
 # NB not USE_IMAKE; this is required for the tgif build but this
 # port doesn't use it directly.
@@ -26,12 +26,11 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TGIF_PORT}:build \
 USE_GETTEXT=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_XLIB=	yes
 
 TGIF_PORT=	graphics/tgif
 
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}-${PORTVERSION}
-CONFIGURE_ARGS=	--with-x-dir="${X11BASE}" \
+CONFIGURE_ARGS=	--with-x-dir="${LOCALBASE}" \
 		--with-ldflags=" `cd ${WRKSRC}/tgif; ${MAKE} -V LDOPTIONS -V LOCAL_LIBRARIES -V LDLIBS -V EXTRA_LOAD_FLAGS | paste -s -`"
 INSTALL_TARGET=	site-install
 

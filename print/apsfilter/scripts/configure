@@ -113,7 +113,7 @@ while [ "$1" ]; do
 		esac
 		;;
 	\"ACROREAD7\")
-		echo RUN_DEPENDS+=${X11BASE}/Adobe/Acrobat7.0/ENU/bin/acroread:${PORTSDIR}/print/acroread7
+		echo RUN_DEPENDS+=${LOCALBASE}/Adobe/Acrobat7.0/ENU/bin/acroread:${PORTSDIR}/print/acroread7
 		;;
 	\"CONVERT\")
 		echo RUN_DEPENDS+=convert:${PORTSDIR}/graphics/ImageMagick

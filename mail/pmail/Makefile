@@ -7,7 +7,7 @@
 
 PORTNAME=	pmail
 PORTVERSION=	0.5.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail python gnome
 MASTER_SITES=	# previous mastersites disappeared in 2001 and 2002
 
@@ -17,7 +17,6 @@ COMMENT=	A GNOME/python email client
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GNOME=	yes

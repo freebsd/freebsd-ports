@@ -3,8 +3,8 @@
 @@ -1,38 +1,17 @@
 -#Makefile
 +CC ?=	cc
-+LDIR =	-L${X11BASE}/lib
-+IDIR =	-I${X11BASE}/include
++LDIR =	-L${LOCALBASE}/lib
++IDIR =	-I${LOCALBASE}/include
  
 -PROG=wmmemfree
 -OBJS=dockapp.o draw.o mem_linux.o options.o wmmemfree.o

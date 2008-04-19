@@ -7,17 +7,15 @@
 
 PORTNAME=	gnome-jabber
 PORTVERSION=	0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 Jabber Client
 
 LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui
 USE_GETTEXT=	yes

@@ -42,8 +42,8 @@
  # and /usr/lib normally on recent Linux systems
 -DRIVERFLAGS = -I/usr/include $(HWFLAGS)
 -DRIVERLIBS = -L/usr/lib -lGLU -lGL
-+DRIVERFLAGS = -I${X11BASE}/include $(HWFLAGS)
-+DRIVERLIBS = -L${X11BASE}/lib -lGLU -lGL
++DRIVERFLAGS = -I${LOCALBASE}/include $(HWFLAGS)
++DRIVERLIBS = -L${LOCALBASE}/lib -lGLU -lGL
  
  # Mesa (free OpenGL-like library: www.mesa3d.org)
  # On recent systems, 'MesaGL' is installed as 'GL' and 'MesaGLU' as 'GLU' and
@@ -52,13 +52,13 @@
  # X window system flags and files:
  
 -X11HOME = /usr/X11R6
-+X11HOME = ${X11BASE}
++X11HOME = ${LOCALBASE}
  XINCLUDES = -I$(X11HOME)/include 
  XLIBS = -L$(X11HOME)/lib -lXt -lXmu -lX11 $(CCMALLOCLIB) 
  # CCMALLOCLIB = -lccmalloc -ldl
  
 -# MOTIFHOME = /usr/X11R6
-+MOTIFHOME = ${X11BASE}
++MOTIFHOME = ${LOCALBASE}
  # lesstif:
 -MOTIFHOME = /usr/X11R6/LessTif/Motif1.2
 +#MOTIFHOME = /usr/X11R6/LessTif/Motif1.2

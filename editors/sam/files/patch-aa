@@ -26,11 +26,11 @@
 ! OS=-DBSDi
   
   #	add -Iincludedir for any include directories that need to be searched
-! INCS=-I../include -I${X11BASE}/include
+! INCS=-I../include -I${LOCALBASE}/include
   
   #	set this if your X libraries are in different locations
   #	or if you need extra libraries to load with X11 applications
-! XLIBS=-lXt -lX11 -L${X11BASE}/lib
+! XLIBS=-lXt -lX11 -L${LOCALBASE}/lib
   
   #	add name of library orderer - use ":" if none
 ! RANLIB=ranlib

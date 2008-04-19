@@ -29,8 +29,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|= /usr/X11R6|= $${PREFIX}|g ; \
 		 s|gcc |$${CC} |g ; \
 		 s|-O |$${CFLAGS} |g ; \
-		 s|-I/usr/X11R6/|-I$${X11BASE}/|g ; \
-		 s|-L/usr/X11R6/|-L$${X11BASE}/|g' ${WRKSRC}/Makefile
+		 s|-I/usr/X11R6/|-I$${LOCALBASE}/|g ; \
+		 s|-L/usr/X11R6/|-L$${LOCALBASE}/|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmangekyou ${PREFIX}/bin

@@ -7,7 +7,7 @@
 -CFLAGS += $(GTK_CFLAGS) -O2 -Wall \
 +CFLAGS += -I. $(GTK_CFLAGS) \
            -DPREFIX=\"$(PREFIX)\" \
-           -DLOCALBASE=\"$(LOCALBASE)\" -DX11BASE=\"$(X11BASE)\"
+           -DLOCALBASE=\"$(LOCALBASE)\" -DX11BASE=\"$(LOCALBASE)\"
  
 @@ -116,7 +116,7 @@
  # Build Rules:

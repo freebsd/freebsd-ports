@@ -7,7 +7,7 @@
 
 PORTNAME=	emc2
 PORTVERSION=	2.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math science
 MASTER_SITES=	http://www-c.inria.fr/gamma/cdrom/ftp/emc2/ \
 		http://www-rocq1.inria.fr/gamma/cdrom/ftp/emc2/
@@ -24,7 +24,7 @@ RESTRICTED=	No resale, contact author for commercial usage
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
 

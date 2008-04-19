@@ -4,7 +4,7 @@
 -CC        = gcc
 -CFLAGS    = -g -O2 -Wall
 -XROOT     = /usr/X11
-+XROOT     = %%X11BASE%%
++XROOT     = %%LOCALBASE%%
  INCLUDES  = -I$(XROOT)/include
  LIBS      = -lX11 
  LDPATH    = -L$(XROOT)/lib

@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.eekim.com/software/cgihtml/ \
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Library that simplifies the task of writing CGI programs in C
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-extract:
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist

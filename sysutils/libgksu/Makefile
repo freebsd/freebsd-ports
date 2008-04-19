@@ -7,7 +7,7 @@
 
 PORTNAME=	libgksu
 PORTVERSION=	1.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/old_stuff/libgksu1.2/
 DISTNAME=	${PORTNAME}1.2-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}1.2-${PORTVERSION}
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Library providing su and sudo functionality
 
-RUN_DEPENDS=	xauth:${X_CLIENTS_PORT} \
+RUN_DEPENDS=	xauth:${PORTSDIR}/x11/xauth \
 		sudo:${PORTSDIR}/security/sudo
 
 USE_GNOME=	pkgconfig glib20

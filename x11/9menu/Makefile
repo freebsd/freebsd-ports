@@ -32,6 +32,6 @@ MANCOMPRESSED=	yes
 
 do-build:
 	cd ${WRKSRC} && \
-	${CC} ${CFLAGS} -I${X11BASE}/include -L${X11BASE}/lib -lX11 -o 9menu 9menu.c
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib -lX11 -o 9menu 9menu.c
 
 .include <bsd.port.mk>

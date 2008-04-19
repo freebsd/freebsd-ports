@@ -8,8 +8,7 @@
 PORTNAME=	gl
 PORTVERSION=	0.4.4
 CATEGORIES=	graphics scheme
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gauche
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	gauche-
 DISTNAME=	Gauche-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -18,13 +17,10 @@ MAINTAINER=	erik@smluc.org
 COMMENT=	OpenGL binding for Gauche
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GL=		glut
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
-CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 
 EXAMPLESDIR=	${PREFIX}/share/examples/gauche/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}

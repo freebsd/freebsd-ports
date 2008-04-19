@@ -11,5 +11,5 @@
 +#CFLAGS= 	-O2 -Wall
 +LDFLAGS+=	-lXm -lXt -lX11 -lm
  DEFINES?= 	-DDEFAULT_COLOR
- ALL_CFLAGS= 	$(CFLAGS) $(DEFINES) -I$(X11BASE)/include -L$(X11BASE)/lib
+ ALL_CFLAGS= 	$(CFLAGS) $(DEFINES) -I$(LOCALBASE)/include -L$(LOCALBASE)/lib
  

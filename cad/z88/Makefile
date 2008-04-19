@@ -42,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g ; s+%%CFLAGS%%+${CFLAGS}+g' \
 		${WRKSRC}/z88kernel.mk
 	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g ; s+%%CFLAGS%%+${CFLAGS}+g ; \
-	s+%%X11BASE%%+${X11BASE}+g;' \
+	s+%%LOCALBASE%%+${LOCALBASE}+g;' \
 		${WRKSRC}/z88other.mk
 	@${REINPLACE_CMD} -e 's+%%PREFIX%%+${PREFIX}+g; ' \
 		${WRKSRC}/z88.sh

@@ -7,14 +7,14 @@
 
 PORTNAME=	xcompmgr
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://xapps.freedesktop.org/release/
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	A sample X compositing manager
 
-USE_XLIB=	yes
+USE_XORG=	x11 xcomposite xfixes xdamage xrender
 GNU_CONFIGURE=	yes
 
 MAN1=		xcompmgr.1

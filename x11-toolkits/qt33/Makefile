@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -30,7 +30,6 @@ CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
 
 USE_BZIP2=	yes
 REINPLACE_ARGS=	-i ""
-USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -77,10 +76,10 @@ PACKAGE_COOKIE=	${WRKDIR}/.package_done.${PORTNAME}.${PREFIX:S/\//_/g}
 
 PREFIX_REAL!=	/bin/realpath ${PREFIX}
 
-# The previous Qt port versions installed qmake and qmake's specs under X11BASE
+# The previous Qt port versions installed qmake and qmake's specs under LOCALBASE
 # The new devel/qmake port installs them under LOCALBASE. We can use
 # either one here, but we prefer the newer:
-.for d in ${X11BASE} ${LOCALBASE} ${PREFIX}
+.for d in ${LOCALBASE} ${PREFIX}
 .	if exists($d/share/qt/mkspecs/freebsd-g++/qplatformdefs.h)
 QTBASE=$d
 PLATFORM=${QTBASE}/share/qt/mkspecs/freebsd-g++
@@ -157,7 +156,7 @@ CONFLICTS+=	qt-3.3.*
 CONFLICTS+=	qt-copy-[0-9]*
 .endif
 
-.if exists(${X11BASE}/include/qt2/qapp.h)
+.if exists(${LOCALBASE}/include/qt2/qapp.h)
 BROKEN=	You have QT2 headers installed!  Installing this port
 BROKEN+=will result in conflicts between QT3 and QT2!
 .endif

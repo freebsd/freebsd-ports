@@ -22,7 +22,7 @@ USE_PYTHON=	yes
 USE_BZIP2=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/display/setup.py
 
 do-build:

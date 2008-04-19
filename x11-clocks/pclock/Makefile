@@ -19,8 +19,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig/src
 
 USE_XORG=	x11 xau xdmcp xext xpm
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" OBJS="Main.o Graphics.o" \
-		INCDIR="-I. -I${X11BASE}/include ${CPPFLAGS}" \
-		LIBDIR="-L${X11BASE}/lib ${LDFLAGS}"
+		INCDIR="-I. -I${LOCALBASE}/include ${CPPFLAGS}" \
+		LIBDIR="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 post-extract:
 	cd ${WRKSRC} && ${RM} -f getopt*

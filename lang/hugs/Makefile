@@ -36,8 +36,7 @@ BROKEN=		dumps core during build on ${ARCH}
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_GL=	yes
-LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
+USE_GL=	glut
 PLIST_SUB+=	X11=""
 .else
 BROKEN=		not supported at the moment
@@ -55,7 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^install		:: install_notes/d ; \
 		/^install		:: install_guide/d' \
 		${WRKSRC}/src/MkInstal.in
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/packages/OpenGL/configure \
 		${WRKSRC}/packages/GLUT/configure \
 		${WRKSRC}/packages/X11/configure \

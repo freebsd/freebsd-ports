@@ -12,7 +12,7 @@
  OBJS=$(SRCS:%.c=%.o)
  
 -X11=/opt/X11
-+X11=${X11BASE}
++X11=${LOCALBASE}
  
  X11_INCLUDE=$(X11)/include
  X11_LIB=$(X11)/lib

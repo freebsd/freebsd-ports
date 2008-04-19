@@ -7,7 +7,7 @@
 
 PORTNAME=	vat
 PORTVERSION=	4.0b2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mbone tk
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 DISTFILES=	vatsrc-4.0b2.tar.gz
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${GSM_WORK}/lib/libgsm.a:${GSM_DIR}:build
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		gsm.1:${GSM_DIR}
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ARGS=	--with-gsm=${GSM_WORK}
 INSTALL_TARGET=	install install-man

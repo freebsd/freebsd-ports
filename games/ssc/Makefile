@@ -9,8 +9,7 @@ PORTNAME=	ssc
 PORTVERSION=	0.8
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}x
+MASTER_SITES=	SF/${PORTNAME}x
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL arcade space shoot-em-up with interesting physics
@@ -21,12 +20,12 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_BZIP2=	yes
 USE_GCC=	3.2
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
-		LDFLAGS=-L${X11BASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS=-L${LOCALBASE}/lib
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>

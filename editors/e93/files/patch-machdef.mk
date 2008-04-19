@@ -23,8 +23,8 @@
  # files are located elsewhere on your system:
 -X_INCLUDE=-I/usr/X11R6/include
 -X_LIB=-L/usr/X11R6/lib
-+X_INCLUDE=-I${X11BASE}/include
-+X_LIB=-L${X11BASE}/lib
++X_INCLUDE=-I${LOCALBASE}/include
++X_LIB=-L${LOCALBASE}/lib
  
  
  # if your system needs some extra libraries, add them here:

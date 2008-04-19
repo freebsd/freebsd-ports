@@ -8,9 +8,9 @@
 
 PORTNAME=	oaf
 PORTVERSION=	0.6.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/oaf/0.6
 DIST_SUBDIR=	gnome
 
@@ -21,7 +21,6 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk12 orbit libxml
 USE_GETTEXT=	yes

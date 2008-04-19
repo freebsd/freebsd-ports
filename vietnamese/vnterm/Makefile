@@ -21,7 +21,9 @@ USE_IMAKE=	yes
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet \
-		mkfontdir:${X_CLIENTS_PORT}
+		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/vietnamese/fonts.dir:${PORTSDIR}/vietnamese/vnxfonts
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/programs/xterm

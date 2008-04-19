@@ -11,7 +11,7 @@
  # Change next line to the location of the libsx library
  #
 -EXTRA_LOAD_FLAGS = -L/users/math/martenl/projects/lib 
-+EXTRA_LOAD_FLAGS = -L$(X11BASE)
++EXTRA_LOAD_FLAGS = -L$(LOCALBASE)
   LOCAL_LIBRARIES = -lfreq -lsx -lm XawClientLibs
           DEPLIBS = XawClientDepLibs
   

@@ -8,6 +8,7 @@
 
 PORTNAME=	metacity
 PORTVERSION=	2.22.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -20,8 +21,8 @@ LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 CONFLICTS=	expocity-[0-9]*
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GETTEXT=	yes
+USE_XORG=	x11 xcomposite xdamage
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomeprefix intlhack gnomehack gconf2 ltverhack gtk20

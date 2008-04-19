@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	state-threads
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	State Threads Library for Internet Applications
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386 alpha amd64
 
 .include <bsd.port.pre.mk>

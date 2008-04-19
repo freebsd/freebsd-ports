@@ -7,9 +7,9 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.8.7
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	wxwindows
+MASTER_SITES=	SF/wxwindows
 PKGNAMESUFFIX=	${WXGTK_FLAVOR}
 DISTNAME=	wxGTK-${PORTVERSION:rc1=-rc1}
 
@@ -23,8 +23,8 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png\
 		mspack.1:${PORTSDIR}/archivers/libmspack
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_GL=		yes
+USE_XORG=	x11 sm xxf86vm xinerama 
+USE_GL=		glu
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GNOME=	gtk20 gconf2
@@ -44,7 +44,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"\
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"\
 		WXCONFIG_CPPFLAGS="${PTHREAD_CFLAGS}"\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"\
-		X11BASE="${X11BASE}"
+		X11BASE="${LOCALBASE}"
 PLIST=		${.CURDIR}/pkg-plist
 
 WXGTK_FLAVOR?=	gtk2
@@ -54,7 +54,7 @@ PORTREVISION=	0
 .endif
 
 .if ${WXGTK_FLAVOR} != "gtk2-common"
-RUN_DEPENDS=	${X11BASE}/include/wx-2.8/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk28-common
+RUN_DEPENDS=	${LOCALBASE}/include/wx-2.8/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk28-common
 .endif
 
 .if ${WXGTK_FLAVOR:M*-common} != ""
@@ -70,7 +70,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .if ${WXGTK_FLAVOR} != "gtk2-contrib-common"
 USE_WX=		2.8
-RUN_DEPENDS=	${X11BASE}/include/wx-2.8/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk28-contrib-common
+RUN_DEPENDS=	${LOCALBASE}/include/wx-2.8/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk28-contrib-common
 
 .if ${WXGTK_FLAVOR:M*-unicode*} != ""
 WX_UNICODE=	yes

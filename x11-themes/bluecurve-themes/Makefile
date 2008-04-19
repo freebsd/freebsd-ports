@@ -28,11 +28,11 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 # note: gtk-/icon-/metacity- are brought in by gnome-
-RUN_DEPENDS=	${X11BASE}/lib/X11/icons/Bluecurve/cursors/X_cursor:${PORTSDIR}/x11-themes/cursor-bluecurve-theme \
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/icons/Bluecurve/cursors/X_cursor:${PORTSDIR}/x11-themes/cursor-bluecurve-theme \
 		${LOCALBASE}/share/themes/Bluecurve/index.theme:${PORTSDIR}/x11-themes/gnome-bluecurve-theme \
 		${LINUXBASE}/usr/share/themes/Bluecurve/gtk-2.0/gtkrc:${PORTSDIR}/x11-themes/linux-gtk-bluecurve-theme \
-		${X11BASE}/lib/plugins/styles/bluecurve.so:${PORTSDIR}/x11-themes/qt-bluecurve-theme \
-		${X11BASE}/share/xmms/Skins/Bluecurve-xmms.zip:${PORTSDIR}/x11-themes/xmms-bluecurve-theme
+		${LOCALBASE}/lib/plugins/styles/bluecurve.so:${PORTSDIR}/x11-themes/qt-bluecurve-theme \
+		${LOCALBASE}/share/xmms/Skins/Bluecurve-xmms.zip:${PORTSDIR}/x11-themes/xmms-bluecurve-theme
 
 NO_BUILD=	yes
 

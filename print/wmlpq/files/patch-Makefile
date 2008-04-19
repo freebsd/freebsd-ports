@@ -3,11 +3,11 @@
 @@ -1,13 +1,11 @@
 -prefix=
 -CPPFLAGS = -I/usr/X11R6/include -I/usr/local/include
-+CPPFLAGS = -I$(X11BASE)/include -I/usr/local/include
++CPPFLAGS = -I$(LOCALBASE)/include -I/usr/local/include
  LIBS = -lXpm -lX11 -ldockapp  
 -LDFLAGS = -L/usr/X11R6/lib -L/usr/local/lib
 -CFLAGS = -O2 -Wall
-+LDFLAGS = -L$(X11BASE)/lib -L/usr/local/lib
++LDFLAGS = -L$(LOCALBASE)/lib -L/usr/local/lib
 +CFLAGS += -Wall
  DFLAGS = -ggdb3 -Wall
  

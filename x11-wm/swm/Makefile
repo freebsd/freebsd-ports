@@ -7,13 +7,13 @@
 
 PORTNAME=	swm
 PORTVERSION=	1.3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www2.informatik.hu-berlin.de/~sperling/prog/
 EXTRACT_SUFX=	c-src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=Window manager for low-memory systems, with title bars and shading
+COMMENT=	Window manager for low-memory systems, with title bars and shading
 
 BINS=		swm swmbg swmswitch
 DOCDIR=		share/doc/${PORTNAME}
@@ -23,8 +23,7 @@ PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	share/swm/pixmaps share/swm
 SCRIPTS=	startswm
 USE_GMAKE=	yes
-USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext xpm
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 post-patch:
@@ -35,10 +34,10 @@ post-patch:
 .endfor
 
 post-build:
-	cd ${WRKSRC}/../swmbg && ${CC} ${CFLAGS} -I${X11BASE}/include *.c \
-		-o ${WRKSRC}/swmbg -lX11 -lXext -lXpm -L${X11BASE}/lib
-	cd ${WRKSRC}/../swmswitch && ${CC} ${CFLAGS} -I${X11BASE}/include *.c \
-	-o ${WRKSRC}/swmswitch -lX11 -L${X11BASE}/lib
+	cd ${WRKSRC}/../swmbg && ${CC} ${CFLAGS} -I${LOCALBASE}/include *.c \
+		-o ${WRKSRC}/swmbg -lX11 -lXext -lXpm -L${LOCALBASE}/lib
+	cd ${WRKSRC}/../swmswitch && ${CC} ${CFLAGS} -I${LOCALBASE}/include *.c \
+	-o ${WRKSRC}/swmswitch -lX11 -L${LOCALBASE}/lib
 
 pre-install:
 	${RM} -f ${PLIST}

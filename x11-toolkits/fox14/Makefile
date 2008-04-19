@@ -39,8 +39,8 @@ USE_LDCONFIG=	yes
 
 MAN1=		shutterbug.1 reswrap.1
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 OPTIONS=	OPTIMIZED_CXXFLAGS "Enable additional optimizations" off \
 		CUPS "Enable CUPS support" off \

@@ -11,8 +11,8 @@
  HEADER = dockapp.h
 -CFLAGS += -Wall -I/usr/local/include -I/usr/X11R6/include
 -LDFLAGS += -L/usr/local/lib -L/usr/X11R6/lib -lX11 -lXext -lXpm
-+CFLAGS += -Wall -I$(LOCALBASE)/include -I$(X11BASE)/include
-+LDFLAGS += -L$(LOCALBASE)/lib -L$(X11BASE)/lib -lX11 -lXext -lXpm
++CFLAGS += -Wall -I$(LOCALBASE)/include
++LDFLAGS += -L$(LOCALBASE)/lib -lX11 -lXext -lXpm
  
  all: ${PROGRAM}
  

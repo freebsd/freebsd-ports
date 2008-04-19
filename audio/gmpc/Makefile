@@ -7,6 +7,7 @@
 
 PORTNAME=	gmpc
 PORTVERSION=	0.15.5.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION:C/\.0$//}/ \
@@ -19,6 +20,7 @@ LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
 		curl.4:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
+USE_XORG=	x11 sm
 USE_GMAKE=	yes
 USE_GNOME=	libglade2 gnomevfs2 gnomehack
 USE_GETTEXT=	yes

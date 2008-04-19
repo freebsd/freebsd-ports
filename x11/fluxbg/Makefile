@@ -9,8 +9,7 @@ PORTNAME=	fluxbg
 PORTVERSION=	0.7
 PORTREVISION=	7
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Background changer for fluxbox/blackbox
@@ -22,14 +21,13 @@ USE_GNOME=	gnomehack gnometarget
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${LOCALBASE}/bin/fbsetbg) && \
-    !exists(${X11BASE}/bin/fbsetbg)
+.if !exists(${LOCALBASE}/bin/fbsetbg)
 RUN_DEPENDS=	fbsetbg:${PORTSDIR}/x11-wm/fluxbox
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
-		s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/src/fluxbg_conf.cc
+		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/src/fluxbg_conf.cc
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

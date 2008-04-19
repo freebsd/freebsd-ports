@@ -8,7 +8,7 @@
 
 PORTNAME=	pets
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.loria.fr/~rougier/pub/Software/
 
@@ -17,7 +17,6 @@ COMMENT=	Funny pets to follow your mouse pointer
 
 WRKSRC=		${WRKDIR}/pet-${PORTVERSION}
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 pkgconfig
 
 SUB_FILES=	pkg-message

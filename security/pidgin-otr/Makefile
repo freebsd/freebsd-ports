@@ -8,7 +8,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	3.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security net
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 PKGNAMEPREFIX=	pidgin-
@@ -24,7 +24,6 @@ LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
 		purple.4:${PORTSDIR}/net-im/libpurple
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool
 USE_GETTEXT=	yes

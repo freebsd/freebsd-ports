@@ -15,7 +15,7 @@ MAINTAINER=	anray@FreeBSD.org
 COMMENT=	A library for reading PhotoCD images
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 MAKEFILE=	${WRKSRC}/GNUmakefile
 

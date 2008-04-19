@@ -8,7 +8,7 @@ $FreeBSD$
  GTK_LIB = `$(GTK_CONFIG) --libs`
  
 -GKRELLM_INCLUDE= -I/usr/local/include
-+GKRELLM_INCLUDE= -I${X11BASE}/include/gkrellm
++GKRELLM_INCLUDE= -I${LOCALBASE}/include/gkrellm
  
  IMLIB_INCLUDE = `$(IMLIB_CONFIG) --cflags-gdk`
  IMLIB_LIB = `$(IMLIB_CONFIG) --libs-gdk`

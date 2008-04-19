@@ -19,7 +19,7 @@ MAINTAINER=	b3k@mail.ru
 COMMENT=	An implementation of an ICAP server
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	c_icap
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

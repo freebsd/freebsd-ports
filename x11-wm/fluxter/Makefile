@@ -7,14 +7,14 @@
 
 PORTNAME=	fluxter
 PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://benedict.isomedia.com/homes/stevencooper/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop pager for the Fluxbox Slit
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 ice xproto xt xaw xext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

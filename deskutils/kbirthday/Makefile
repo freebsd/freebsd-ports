@@ -17,7 +17,7 @@ COMMENT=	KDE kicker-applet that reminds you of birthdays and anniversaries
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 # may or may not solve the alpha compilation issue....
 CONFIGURE_ARGS=	--with-pic
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	tcpillust
 PORTVERSION=	1.0a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net tcl tk
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/CSL/nishida/
 
@@ -16,7 +16,7 @@ COMMENT=	A graphical TCP connection analysis tool
 
 USE_TCL=	yes
 USE_TK=		yes
-USE_XLIB=	yes
+USE_XORG=	xt
 USE_MOTIF=	yes
 
 MAN1=		tcpillust.1
@@ -32,7 +32,7 @@ PLIST_FILES=	bin/tcpillust \
 do-build:
 .for file in binread.c button.c draw.c parser.c tcpillust.c
 	${CC} ${CFLAGS} -I${LOCALBASE}/include/ -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \
-	-I${X11BASE}/include -DILTDIR=\"${DATADIR}\" -c ${WRKSRC}/${file} -o ${WRKSRC}/${file:S/.c/.o/}
+	-I${LOCALBASE}/include -DILTDIR=\"${DATADIR}\" -c ${WRKSRC}/${file} -o ${WRKSRC}/${file:S/.c/.o/}
 .endfor
 	${CC} ${CFLAGS} -L${TCL_LIBDIR} -L${TK_LIBDIR} -L${LOCALBASE}/lib \
 	-lm -lpcap -ltcl${TCL_VER:S/.//} -ltk${TK_VER:S/.//} ${WRKSRC}/*.o -o ${WRKSRC}/tcpillust

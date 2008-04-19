@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-toolkits tk
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_0
@@ -33,10 +33,11 @@ PATCH_DIST_ARGS=-d ${TOPDIR} -E ${PATCH_DIST_STRIP}
 PATCH_DIST_ARGS=-d ${TOPDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 USE_AUTOTOOLS=	autoconf:213
-USE_XLIB=	yes
+USE_XORG=	x11
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${VERSION}jp \
-	--enable-xlibHack --enable-onTheSpot \
-	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
+	--enable-xlibHack --enable-onTheSpot
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 RANLIB=		ranlib
 USE_LDCONFIG=	yes
 

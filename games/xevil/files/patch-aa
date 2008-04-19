@@ -29,7 +29,7 @@
 -INCL_DIRS="-I/usr/X11R6/include" LIBS_DIRS="-L/usr/X11R6/lib" \
 +	@$(MAKE) CC="${CXX}" \
 +CFLAGS="-DUSE_RANDOM -DUSE_UINT_NET_LENGTH -DUNAME_USR_BIN ${CXXFLAGS}" \
-+INCL_DIRS="-I$(X11BASE)/include" LIBS_DIRS="-L$(X11BASE)/lib" \
++INCL_DIRS="-I$(LOCALBASE)/include" LIBS_DIRS="-L$(LOCALBASE)/lib" \
  OBJ_DIR=$(DEPTH)/x11/FREEBSD PCKG_NAME="freebsd" \
  LIBS="-lXpm -lX11 -lm" $(TARGETS)
  

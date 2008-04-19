@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-vfs
 PORTVERSION=	1.0.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/1.0
@@ -20,7 +20,6 @@ COMMENT=	GNOME Virtual File System
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix glib12 libxml gtk12 orbit gconf \
 		gnomemimedata gnomelibs
 USE_GETTEXT=	yes

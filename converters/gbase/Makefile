@@ -7,7 +7,7 @@
 
 PORTNAME=	gbase
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	converters
 MASTER_SITES=	http://www.hibernaculum.net/download/
 
@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to convert between the 4 common bases used in programming
 
 PLIST_FILES=	bin/gbase
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
 do-install:

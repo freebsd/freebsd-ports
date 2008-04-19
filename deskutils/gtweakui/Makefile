@@ -7,16 +7,14 @@
 
 PORTNAME=	gTweakUI
 PORTVERSION=	0.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtweakui
+MASTER_SITES=	SF/gtweakui
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of simple dialogs as a front end to GConf
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui gconf2 libglade2 intlhack
 USE_GMAKE=	yes

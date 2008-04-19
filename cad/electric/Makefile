@@ -58,7 +58,7 @@ post-patch:
 		s|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|@PTHREAD_LIBS@|${PTHREAD_LIBS:S/"//g}|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/X11R6/|${X11BASE}/|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/X11R6/|${LOCALBASE}/|' ${WRKSRC}/configure
 .for FEATURE in ${FEATURES}
 	@${REINPLACE_CMD} -e 's|#%%${FEATURE}%%||g' ${WRKSRC}/Makefile.in
 .endfor

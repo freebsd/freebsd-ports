@@ -42,7 +42,7 @@
 -		-fpic \
 +		-I$(JAVA_HOME)/include/freebsd \
 +		-fpic -fPIC \
-+		-I$(X11BASE)/include \
++		-I$(LOCALBASE)/include \
  		${SWT_PTR_CFLAGS}
 -LIBS = -shared -fpic -s
 +LIBS = -shared -fpic -fPIC -s

@@ -15,7 +15,7 @@ COMMENT=	C++ port of the JUnit framework for unit testing
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(WITH_DOXYGEN)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen

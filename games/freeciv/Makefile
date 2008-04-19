@@ -38,7 +38,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		ggz-gtk.1:${PORTSDIR}/games/ggz-gtk-client \
 		ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
 		ggzmod.5:${PORTSDIR}/games/ggz-client-libs
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_SDL=	mixer
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=--enable-client=gtk

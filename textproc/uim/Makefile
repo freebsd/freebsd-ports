@@ -17,7 +17,7 @@ PKGNAMESUFFIX=	-nox11
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Input method library
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 USE_GNOME+=	gnometarget glib20
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	terminatorx
 PORTVERSION=	3.82
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -22,8 +22,8 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		jack.0:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 INSTALLS_OMF=	yes
+USE_XORG=	x11 xext xi xxf86dga
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

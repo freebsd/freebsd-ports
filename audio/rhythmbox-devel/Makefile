@@ -8,6 +8,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.11.5
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.11
@@ -27,7 +28,6 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes

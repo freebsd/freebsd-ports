@@ -19,8 +19,8 @@ COMMENT=	Multi-lingual unicode text editor with TTF support
 
 USE_GETTEXT=	yes
 USE_XORG=	x11
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		LC_ALL=
 GNU_CONFIGURE=	YES
 MAKE_ENV=	LC_ALL=

@@ -36,7 +36,7 @@ post-patch:
 		s,LDFLAGS =,LDFLAGS+=,g; s,PREFIX =,#PREFIX =,g; \
 		s,$$[(]DESTDIR[)]/usr/local,${PREFIX},g; \
 		s,CC =,#CC =,g; \
-		s,/usr/X11R6,${X11BASE},g" ${WRKSRC}/Makefile
+		s,/usr/X11R6,${LOCALBASE},g" ${WRKSRC}/Makefile
 
 post-install:
 	@${MKDIR} ${DATADIR}

@@ -7,7 +7,7 @@
 
 PORTNAME=	truetypefonts
 PORTVERSION=	2001.08.18.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/t/ttf-xtt
@@ -16,7 +16,6 @@ DISTNAME=	ttf-xtt_0.${PORTVERSION:R:S/.//g}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese TrueType Fonts
 
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/ttf-xtt-0.${PORTVERSION:R:S/.//g}
 NO_BUILD=	yes

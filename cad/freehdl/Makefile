@@ -7,7 +7,7 @@
 
 PORTNAME=	freehdl
 PORTVERSION=	0.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	http://www.home.hs-karlsruhe.de/~fado0011/ \
 		http://cran.mit.edu/~enaroska/
@@ -19,10 +19,8 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib \
-		--prefix=${PREFIX} \
-		--mandir=${MANPREFIX}/man \
-		--infodir=${PREFIX}/info
+CONFIGURE_ARGS=	--infodir=${PREFIX}/info \
+		--mandir=${MANPREFIX}/man
 
 MAN1=		freehdl-config.1 \
 		freehdl-gennodes.1 \

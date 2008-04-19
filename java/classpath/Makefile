@@ -8,6 +8,7 @@
 
 PORTNAME=	classpath
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SAVANNAH}
@@ -19,6 +20,7 @@ COMMENT=	A GNU project to create a free Java class library
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		jikes:${PORTSDIR}/java/jikes
 
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes

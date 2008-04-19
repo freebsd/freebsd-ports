@@ -16,7 +16,7 @@
  ## first one for OS X.
  
 -XINCLUDEDIR = .
-+XINCLUDEDIR = ${X11BASE}/include
++XINCLUDEDIR = ${LOCALBASE}/include
  
 -BINDIR = ../../bin
 +BINDIR = ${PREFIX}/bin
@@ -28,7 +28,7 @@
  ##
  
 -LIBX11 = -lX11
-+LIBX11 = -lX11 -L${X11BASE}/lib
++LIBX11 = -lX11 -L${LOCALBASE}/lib
  
  ##
  ## (2) Library additions

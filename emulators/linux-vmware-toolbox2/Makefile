@@ -19,7 +19,7 @@ COMMENT=VMware toolbox for guest OS (for VMware 2.x, Linux version)
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/linux-vmware-toolbox
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 NO_BUILD=	yes
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes

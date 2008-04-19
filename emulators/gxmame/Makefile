@@ -7,11 +7,10 @@
 
 PORTNAME=	gxmame
 DISTVERSION=	0.35beta2
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,7 +19,6 @@ COMMENT=	GXmame is a GTK frontend for xmame
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
-USE_XLIB=	yes
 USE_GNOME=	gtk20 intlhack gnomehack gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

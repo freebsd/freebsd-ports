@@ -47,14 +47,14 @@
  
  # Location of X libraries for X-gw
 -XLIBDIR=/usr/X11R6/lib
-+XLIBDIR=${X11BASE}lib/X11
++XLIBDIR=${LOCALBASE}lib/X11
  
  # X Libraries
  XLIBS = -L$(XLIBDIR) -lXaw -lXmu -lXt -lXext -lX11 -lSM -lICE -lXext
  
  # Location of X include files
 -XINCLUDE=/usr/X11R6/include
-+XINCLUDE=${X11BASE}/include/X11
++XINCLUDE=${LOCALBASE}/include/X11
  
  # IPFilter location
  #IPFILTER=$(PREFIX)/development/src/ipfilter/ip_fil3.2.9

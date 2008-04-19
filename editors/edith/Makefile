@@ -7,7 +7,7 @@
 
 PORTNAME=	edith
 PORTVERSION=	1.58
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors linux
 MASTER_SITES=	http://www.groenink.com/pub/edith/
 DISTFILES=	edith1.55.common.tar.gz \
@@ -18,7 +18,7 @@ COMMENT=	A X11 GUI editor for binary and plain text files
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 
 RESTRICTED=	"Redistribution not allowed"
 NO_BUILD=	yes

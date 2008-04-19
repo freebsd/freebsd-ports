@@ -9,8 +9,7 @@
 PORTNAME=	gts
 PORTVERSION=	0.7.6
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	GNU Triangulated Surface Library
@@ -18,7 +17,7 @@ COMMENT=	GNU Triangulated Surface Library
 USE_GNOME=	glib20 gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	NETPBM "Build with libnetpbm support" off
 

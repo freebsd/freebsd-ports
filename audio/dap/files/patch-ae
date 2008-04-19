@@ -13,7 +13,7 @@
  BACKDIR = ../bak/main
  HOMEDIR = $(HOME)
 -X11DIR  = /usr/X11R6
-+X11DIR  = ${X11BASE}
++X11DIR  = ${LOCALBASE}
  INCDIR  = -I. -I.. -I$(SOUND) -I$(SPKIT) -I$(TOOLTIP) -I$(X11DIR)/include -I$(X11DIR)/include/X11
  LIBDIR  = -L$(SPKIT)/spkit -L$(AUDIO) -L$(AUDIOF) -L$(TOOLTIP) -L$(X11DIR)/lib
 -CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused

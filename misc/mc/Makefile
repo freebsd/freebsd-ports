@@ -64,7 +64,7 @@ _MANLANG=	es hu it pl ru.KOI8-R sr
 .if !defined(WITH_X11) || defined(MINIMAL)
 CONFIGURE_ARGS+=--without-x
 .else
-USE_XLIB=	yes
+USE_XORG=	x11 xext
 .endif
 
 .if !defined(WITH_EDIT) && (defined(WITHOUT_EDIT) || defined(MINIMAL))

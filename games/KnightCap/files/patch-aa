@@ -23,9 +23,9 @@
 -X11 = /usr/X11R6
 -GLUT_LIBS = -L$(GLUT)/lib/glut -lglut
 -MESA_LIBS = -L$(MESA)/lib -lMesaGLU -lMesaGL -lm
-+MESA = ${X11BASE}
-+GLUT = ${X11BASE}
-+X11 = ${X11BASE}
++MESA = ${LOCALBASE}
++GLUT = ${LOCALBASE}
++X11 = ${LOCALBASE}
 +GLUT_LIBS = -L$(GLUT)/lib -lglut
 +MESA_LIBS = -L$(MESA)/lib -lGLU -lGL -lm
  XLIBS = -L$(X11)/lib -lXmu -lXt -lXext -lX11 -lXi

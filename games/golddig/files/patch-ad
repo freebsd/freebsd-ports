@@ -29,10 +29,10 @@
  #CFLAGS = -O2
  #CFLAGS = -O
 -CFLAGS = -O -W -Wreturn-type -Wunused -g -finline-functions
-+CFLAGS += -W -Wreturn-type -Wunused -finline-functions -I${X11BASE}/include
++CFLAGS += -W -Wreturn-type -Wunused -finline-functions -I${LOCALBASE}/include
  #CFLAGS = -g
 -LDFLAGS = -g
-+LDFLAGS = -L ${X11BASE}/lib
++LDFLAGS = -L ${LOCALBASE}/lib
  
  all: ${GAME} ${EDITOR}
  

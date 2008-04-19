@@ -24,7 +24,7 @@
   
   #ifndef vms
 ! #  if (defined(BSD) && (BSD >= 199306))
-!      strcpy(line,"%%X11BASE%%/lib/X11/app-defaults/");
+!      strcpy(line,"%%LOCALBASE%%/lib/X11/app-defaults/");
 ! #  else
 !      strcpy(line,"/usr/lib/X11/app-defaults/");
 ! #  endif

@@ -16,7 +16,7 @@
  OBJS     = main.o globals/version.o
  ARCHIVES = editor/editor.a ui/ui.a MpegCodec/mpeg.a
 -    LIBS = -lXext -lX11 -lpnm -lppm -lpbm -lpgm -lm
-+    LIBS = -L$(X11BASE)/lib -L$(LOCALBASE)/lib -lXext -lX11 -lnetpbm -lm
++    LIBS = -L$(LOCALBASE)/lib -L$(LOCALBASE)/lib -lXext -lX11 -lnetpbm -lm
  #
  #  CPPFLAGS     -Wall     all warnings
  #               -pipe     speeds up compilation (remove only if not using g++)
@@ -30,7 +30,7 @@
 -	      -IMpegCodec/encoder -Ieditor 
 -CPPFLAGS    = -Wall -pipe -O4
 -CFLAGS      = -Wall -pipe -O4
-+	      -IMpegCodec/encoder -Ieditor -I$(X11BASE)/include 
++	      -IMpegCodec/encoder -Ieditor -I$(LOCALBASE)/include 
 +CPPFLAGS    = ${CXXFLAGS}
 +#CFLAGS     = -Wall -pipe -O4
  SHMEM	    = -DSH_MEM

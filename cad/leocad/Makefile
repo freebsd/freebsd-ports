@@ -39,8 +39,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|%%X11BASE%%|${X11BASE}|g; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g; \
+		's|%%LOCALBASE%%|${LOCALBASE}|g; \
 		s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
 		${WRKSRC}/config.mk

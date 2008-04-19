@@ -3,8 +3,8 @@
 CC=%%CC%%
 RM=%%RM%%
 
-CFLAGS=		%%CFLAGS%% -DHAVE_ZLIB -O3 -I%%X11BASE%%/include
-LDFLAGS=	-lgl2ps -lGL -lGLU -lglut -L%%X11BASE%%/lib -lX11 -lXi -lXmu -lm -lz
+CFLAGS=		%%CFLAGS%% -DHAVE_ZLIB -O3 -I%%LOCALBASE%%/include
+LDFLAGS=	-lgl2ps -lGL -lGLU -lglut -L%%LOCALBASE%%/lib -lX11 -lXi -lXmu -lm -lz
 
 gl2psTest: gl2psTest.o
 	${CC} ${LDFLAGS} $> -o $@

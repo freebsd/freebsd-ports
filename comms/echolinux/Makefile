@@ -20,8 +20,8 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 		gsm.1:${PORTSDIR}/audio/gsm
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|$${CC}|' -e 's|/usr/include/X11|$${X11BASE}/include|' \
-		-e 's|-o echogui -L/usr/X11R6/lib -lX11 -lXpm -lforms -lm -lpthread|$${CFLAGS} -o echogui -L$${X11BASE}/lib -lX11 -lXpm -lforms -lm ${PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|gcc|$${CC}|' -e 's|/usr/include/X11|$${LOCALBASE}/include|' \
+		-e 's|-o echogui -L/usr/X11R6/lib -lX11 -lXpm -lforms -lm -lpthread|$${CFLAGS} -o echogui -L$${LOCALBASE}/lib -lX11 -lXpm -lforms -lm ${PTHREAD_LIBS}|' \
 		-e 's|CARGS|CFLAGS|' -e 's|= -DNodeFont=FL_TINY_SIZE|+= ${PTHREAD_CFLAGS} -DNodeFont=FL_TINY_SIZE|' \
 		-e 's|/usr/local/bin/|$${PREFIX}/bin/|' \
 		${WRKSRC}/echogui/Makefile

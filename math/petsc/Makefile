@@ -7,6 +7,7 @@
 
 PORTNAME=	petsc
 DISTVERSION=	2.3.3-p0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -38,9 +39,9 @@ SUB_LIST=		PETSC_ARCH=${TARGET} PETSC_DIR=${PREFIX}/${PFX}
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=		yes
-CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/include	\
-			--with-x-lib=${X11BASE}/lib/libX11.so
+USE_XORG=		x11
+CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/include	\
+			--with-x-lib=${LOCALBASE}/lib/libX11.so
 .endif
 
 USE_FORTRAN=	yes

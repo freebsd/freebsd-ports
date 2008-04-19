@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-languages \
 		--with-xpm --enable-xpm-background --enable-transparency \
 		--enable-shared
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		rxvt.1
 

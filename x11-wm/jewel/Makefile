@@ -26,7 +26,7 @@ post-patch:
 		s|^CFLAGS|#CFLAGS|g; \
 		s|^prefix|#prefix|g; \
 		s|prefix|PREFIX|g; \
-		s|/usr/X11R6|${X11BASE}|g; \
+		s|/usr/X11R6|${LOCALBASE}|g; \
 		s|CC|CXX|g; \
 		s|CFLAGS|CXXFLAGS|g' \
 		${WRKSRC}/Makefile

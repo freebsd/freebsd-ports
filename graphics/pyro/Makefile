@@ -7,7 +7,7 @@
 
 PORTNAME=	pyro
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://nostatic.org/pyro/
 EXTRACT_SUFX=	.tgz
@@ -15,11 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple OpenGL-based firework simulator
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		glut.4:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_GL=		yes
-USE_X_PREFIX=	yes
+USE_GL=		gl glut
+USE_XORG=	xi xmu xext
 
 EXAMPLES=	pyro.dsp water.jpg
 PLIST_FILES=	bin/pyro ${EXAMPLES:S|^|%%EXAMPLESDIR%%/|}
@@ -31,9 +30,8 @@ post-patch:
 
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/*.c -o ${WRKSRC}/${PORTNAME} \
-		-DAUXDIR=\"${EXAMPLESDIR}\" -I${WRKSRC} -I${X11BASE}/include \
-		-I${LOCALBASE}/include -L${X11BASE}/lib -L${LOCALBASE}/lib \
-		-ljpeg -lm -lXmu -lXi -lXext -lGL -lGLU -lglut
+		-DAUXDIR=\"${EXAMPLESDIR}\" -I${WRKSRC} -I${LOCALBASE}/include \
+		-L${LOCALBASE}/lib -ljpeg -lm -lXmu -lXi -lXext -lGL -lGLU -lglut
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

@@ -7,7 +7,7 @@
 
 PORTNAME?=	xmame
 PORTVERSION?=	0.106
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.franksworld.org/dist/xmame/ \
 		http://x.mame.net/download/ \
@@ -143,9 +143,9 @@ SDLSOUNDCOMMENT=
 .endif
 
 .if defined(WITH_OPENGL)
-USE_XLIB=	yes
+USE_XORG+=	x11
 DISPLAY_TARGET=	opengl
-CFLAGS+=	${PTHREAD_CFLAGS} -I${X11BASE}/include
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 USE_GL=		yes
 DISPLAY_METHOD=	x11
 PLIST_SUB+=	OPENGL=""
@@ -157,13 +157,13 @@ PLIST_SUB+=	OPENGL="@comment "
 .if defined(WITH_SVGALIB)
 DISPLAY_TARGET=	svgalib
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
-USE_XPM=	yes
+USE_XORG+=	xpm
 DISPLAY_METHOD=	svgalib
 .endif
 
 .if defined(WITH_X11)
 DISPLAY_METHOD=	x11
-USE_XLIB=	yes
+USE_XORG+=	x11
 .endif
 
 # Option WITH_ESOUND
@@ -203,7 +203,7 @@ do-configure:
 		-e "s@# SOUND_SDL@${SDLSOUNDCOMMENT}SOUND_SDL@g" \
 		-e "s@^DISPLAY_METHOD.*@DISPLAY_METHOD = ${DISPLAY_METHOD}@g" \
 		-e "s@# X11_DGA@X11_DGA@g" \
-		-e "s@/usr/X11R6@${X11BASE}@g" \
+		-e "s@/usr/X11R6@${LOCALBASE}@g" \
 		-e "s@^SDL_CONFIG.*@SDL_CONFIG = ${SDL_CONFIG}@g" \
 		-e "s@^GLLIBS += .*@GLLIBS += ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix

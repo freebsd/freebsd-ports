@@ -7,6 +7,7 @@
 
 PORTNAME=	code2000
 PORTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://code2000.net/
 DISTFILES=	${PORTNAME:U}${EXTRACT_SUFX:U}
@@ -21,7 +22,6 @@ BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 
 RESTRICTED=	Only unmodified original package can be distributed
 
-USE_X_PREFIX=	yes
 USE_ZIP=	yes
 
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
@@ -33,9 +33,9 @@ SUB_LIST=	FONTSDIR=${FONTSDIR}
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 
-MKFONTSCL_CMD=	${X11BASE}/bin/mkfontscale
-MKFONTDIR_CMD=	${X11BASE}/bin/mkfontdir
-FCCACHE_CMD=	${X11BASE}/bin/fc-cache -f -v
+MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
+MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
+FCCACHE_CMD=	${LOCALBASE}/bin/fc-cache -f -v
 
 post-extract: move-fonts rename-license
 

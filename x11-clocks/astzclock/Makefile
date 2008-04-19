@@ -15,7 +15,7 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Afterstep clock with some timezone extensions
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		astzclock.1
 PLIST_FILES=	bin/astzclock
 

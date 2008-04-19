@@ -19,7 +19,7 @@ BUILD_DEPENDS=	icoconvert:${PORTSDIR}/graphics/icoconvert
 RUN_DEPENDS=	X-Plane:${PORTSDIR}/games/linux-x-plane
 
 WRKSRC=		${WRKDIR}/GoodWay${GWVERSION}F
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_ZIP=	yes
 USE_LINUX=	yes
 RESTRICTED=	"Redistribution prohibited"
@@ -27,7 +27,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 GWVERSION=	${PORTVERSION:S|.||g}
 
-XDIR=		${X11BASE}/lib/x-plane
+XDIR=		${LOCALBASE}/lib/x-plane
 GWDIR=		${PREFIX}/lib/goodway
 GWDIR_REL=	${GWDIR:S,^${PREFIX}/,,}
 
@@ -59,11 +59,11 @@ post-patch:
 
 do-build:
 .for t in athlon-xp i586 pentium-3
-	@if [ -e ${X11BASE}/lib/x-plane/X-Plane-${t} ]; then \
-		${ECHO_CMD} 'GNL_XPlaneEXE=${X11BASE}/lib/x-plane/X-Plane-${t}' > ${WRKSRC}/Properties3.prf; \
+	@if [ -e ${LOCALBASE}/lib/x-plane/X-Plane-${t} ]; then \
+		${ECHO_CMD} 'GNL_XPlaneEXE=${LOCALBASE}/lib/x-plane/X-Plane-${t}' > ${WRKSRC}/Properties3.prf; \
 	fi
 .endfor
-	@${ECHO_CMD} 'GNL_XPlaneDir=${X11BASE}/lib/x-plane' >> ${WRKSRC}/Properties3.prf
+	@${ECHO_CMD} 'GNL_XPlaneDir=${LOCALBASE}/lib/x-plane' >> ${WRKSRC}/Properties3.prf
 	@icoconvert ${WRKSRC}/ICON1.ICO
 	@${MKDIR} ${WRKSRC}/.icons
 	@${MV} ${WRKSRC}/ICON1_*.png ${WRKSRC}/.icons

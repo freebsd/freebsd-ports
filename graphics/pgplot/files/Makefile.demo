@@ -1,6 +1,6 @@
 PGPLOT_LIB = -L/usr/local/lib -lpgplot
 CPGPLOT_LIB = -L/usr/local/lib  -lcpgplot
-LIBS= -L${X11BASE}/lib -lX11 -lm
+LIBS= -L${LOCALBASE}/lib -lX11 -lm
 
 OSVERSION!=	/sbin/sysctl -n kern.osreldate
 .if ${OSVERSION} > 400004

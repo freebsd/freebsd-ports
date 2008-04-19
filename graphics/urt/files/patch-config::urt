@@ -158,6 +158,6 @@
  #ifdef X11
 -LIBX11 = -lX11
 -INCX11 = 
-+LIBX11 = -L${X11BASE}/lib -lX11
-+INCX11 = -I${X11BASE}/include
++LIBX11 = -L${LOCALBASE}/lib -lX11
++INCX11 = -I${LOCALBASE}/include
  #endif

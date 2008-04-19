@@ -5,7 +5,7 @@
  
  CC = gcc
 -CFLAGS = -g -Wall -L/usr/local/lib -I/usr/local/include
-+CFLAGS = -Wall -L$(LOCALBASE)/lib -I$(LOCALBASE)/include -L$(X11BASE)/lib -I$(X11BASE)/include
++CFLAGS = -Wall -L$(LOCALBASE)/lib -I$(LOCALBASE)/include
  OBJS = convert.o iks.o ikspool.o jabber.o sha.o core.o iksid.o io.o parser.o \
  	utility.o
  all: $(OBJS)

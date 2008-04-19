@@ -5,7 +5,7 @@
  #-------------------------------------------------------
  #INSTALLPATH = /opt/local/i386/bin
 -INSTALLPATH = /usr/local/bin
-+INSTALLPATH = ${X11BASE}/bin
++INSTALLPATH = ${LOCALBASE}/bin
  ########################################################
  
  
@@ -14,7 +14,7 @@
  #-------------------------------------------------------
  #PIXMAPPATH = /opt/local/lib
 -PIXMAPPATH = /usr/local/bin
-+PIXMAPPATH = ${X11BASE}/include/X11/pixmaps
++PIXMAPPATH = ${LOCABASE}/include/X11/pixmaps
  ########################################################
  
  
@@ -51,7 +51,7 @@
  # mysql library dir
  #-------------------------------------------------------
 -MYSQLLOAD = -Wl,-R/usr/local/mysql/lib/mysql -L/usr/local/mysql/lib/mysql -lmysqlclient
-+MYSQLLOAD = -Wl,-R${LOCALBASE}/lib/mysql -L${LOCALBASE}/lib/mysql -lmysqlclient
++MYSQLLOAD = -Wl,-R${LOCALBASE}/lib/mysql -lmysqlclient
  ########################################################
  
  
@@ -60,7 +60,7 @@
  #-------------------------------------------------------
  #XFORMLIBDIR = -L/opt/local/i386/lib
 -XFORMLIBDIR = -L/usr/lib
-+XFORMLIBDIR = -L${X11BASE}/lib
++XFORMLIBDIR = -L${LOCALBASE}/lib
  ########################################################
  
  
@@ -69,7 +69,7 @@
  #-------------------------------------------------------
  #XFORMINCDIR = -I/opt/local/include
 -XFORMINCDIR = -I/usr/X11R6/include
-+XFORMINCDIR = -I${X11BASE}/include -I${X11BASE}/include/X11
++XFORMINCDIR = -I${LOCALBASE}/include -I${LOCALBASE}/include/X11
  ########################################################
  
  
@@ -78,7 +78,7 @@
  # Use this for Linux:
  XINC =
 -XLOAD = -L/usr/X11R6/lib -lX11 /usr/X11R6/lib/libXpm.so.4
-+XLOAD = -L${X11BASE}/lib -lX11
++XLOAD = -L${LOCALBASE}/lib -lX11
  ########################################################
  
  

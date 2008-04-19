@@ -7,7 +7,7 @@
 
 PORTNAME=	vflib
 PORTVERSION=	${VFLIB_VERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/
 DISTNAME=	VFlib2-${PORTVERSION}
@@ -16,15 +16,15 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Japanese Vector font library
 
-BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/TrueType/sazanami-mincho.ttf:${PORTSDIR}/japanese/sazanami-ttf
 
 VFLIB_VERSION=	2.25.6
 PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
 
+USE_XORG=	x11 xext
 USE_FREETYPE=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:213
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-freetype \

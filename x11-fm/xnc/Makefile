@@ -7,7 +7,7 @@
 
 PORTNAME=	xnc
 PORTVERSION=	5.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.xnc.dubna.su/src-5/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -28,8 +28,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+USE_XORG=	x11 xext xt
 CONFIGURE_ARGS+=--with-pty=BSD --with-libintl-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

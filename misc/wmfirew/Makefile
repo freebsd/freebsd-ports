@@ -7,7 +7,7 @@
 
 PORTNAME=	wmfirew
 PORTVERSION=	0.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://web.novalis.org/programs/
 
@@ -17,8 +17,7 @@ COMMENT=	A dockapp that shows fireworks in action
 PLIST_FILES=	bin/wmfirew
 WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
 USE_GMAKE=	yes
-USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	xpm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

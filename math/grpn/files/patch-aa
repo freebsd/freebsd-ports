@@ -14,10 +14,10 @@
  
  
 -CFLAGS = -g -O2 -I/usr/X11/include  `$(GTK_DIR)gtk-config --cflags` -DGTK_VER_1_1
-+CFLAGS+= -I${X11BASE}/include -I${PREFIX}/include  `${GTK_CONFIG} --cflags` -DGTK_VER_1_1
++CFLAGS+= -I${LOCALBASE}/include -I${PREFIX}/include  `${GTK_CONFIG} --cflags` -DGTK_VER_1_1
  
 -DFLAGS =  -L/usr/X11/lib 
-+DFLAGS = -L${X11BASE}/lib -L${PREFIX}/lib
++DFLAGS = -L${LOCALBASE}/lib -L${PREFIX}/lib
  
  # end of user configurable section
  

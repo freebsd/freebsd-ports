@@ -8,7 +8,7 @@ $FreeBSD$
  LDLIBS = -lX11
 -X11HDRDIR = /usr/X11R6/include
 -ICONVHDRDIR = /usr/local/include
-+X11HDRDIR = $(X11BASE)/include
++X11HDRDIR = $(LOCALBASE)/include
 +ICONVHDRDIR = $(LOCALBASE)/include
  else
  X11HDRDIR =

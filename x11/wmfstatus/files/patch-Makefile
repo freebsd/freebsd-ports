@@ -2,7 +2,7 @@
 +++ Makefile	Thu Dec 27 18:35:43 2001
 @@ -1,6 +1,6 @@
 -LIBDIR = -L/usr/X11R6/lib
-+LIBDIR = -L${X11BASE}/lib
++LIBDIR = -L${LOCALBASE}/lib
  LIBS   = -lXpm -lXext -lX11
 -FLAGS = -O2
 +FLAGS = ${CFLAGS}
@@ -14,7 +14,7 @@
  
  .c.o:
 -	cc -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
-+	${CC} -I${X11BASE}/include $(FLAGS) -c -Wall $< -o $*.o
++	${CC} -I${LOCALBASE}/include $(FLAGS) -c -Wall $< -o $*.o
  
  wmfstatus: $(OBJS)
 -	cc $(FLAGS) -o wmfstatus $^ -lXext $(LIBDIR) $(LIBS)

@@ -20,9 +20,9 @@ USE_IMAKE=	yes
 MAN1=		xmemory.1
 
 post-install:
-	@${MKDIR} ${X11BASE}/lib/X11/xmemory
+	@${MKDIR} ${LOCALBASE}/lib/X11/xmemory
 	${INSTALL_DATA} ${WRKSRC}/home.mem ${WRKSRC}/sports.mem \
-			${X11BASE}/lib/X11/xmemory
-	${LN} -sf home.mem ${X11BASE}/lib/X11/xmemory/default.mem
+			${LOCALBASE}/lib/X11/xmemory
+	${LN} -sf home.mem ${LOCALBASE}/lib/X11/xmemory/default.mem
 
 .include <bsd.port.mk>
