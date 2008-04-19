@@ -3,7 +3,7 @@ lib/libphish.a
 lib/libphish.la
 include/phish.h
 bin/libphish-config
-@unexec rm -f %D/lib/libphish.so
+@rmtry lib/libphish.so
 %%PORTDOCS%%%%DOCSDIR%%/Doxyfile
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html

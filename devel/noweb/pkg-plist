@@ -49,7 +49,7 @@ share/noweb/xchunks
 @dirrmtry share/texmf-local/tex/latex
 @dirrmtry share/texmf-local/tex/plain
 @dirrmtry share/texmf-local/tex
-@unexec rm %D/share/texmf-local/ls-R 2>/dev/null || true
+@rmtry hare/texmf-local/ls-R
 @dirrmtry share/texmf-local
 @unexec mktexlsr 2>/dev/null || true
 @dirrm share/noweb
