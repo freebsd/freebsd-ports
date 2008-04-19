@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	openssh
-DISTVERSION=	4.7p1
-PORTREVISION=	1
+DISTVERSION=	5.0p1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
-		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
-		http://mirror.mcs.anl.gov/openssh/portable/%SUBDIR%/
-MASTER_SITE_SUBDIR=	# empty
+.if defined(OPENSSH_SNAPSHOT)
+MASTER_SITES=	http://www.mindrot.org/openssh_snap/
+.else
+MASTER_SITES=	${MASTER_SITE_OPENBSD}
+MASTER_SITE_SUBDIR=	OpenSSH/portable
+.endif
 PKGNAMESUFFIX=	${PORTABLE_SUFFIX}${GSSAPI_SUFFIX}${BASE_SUFFIX}
 DISTNAME=	# empty
 
@@ -23,7 +24,6 @@ COMMENT=	The portable version of OpenBSD's OpenSSH
 .if defined(OPENSSH_SNAPSHOT)
 PORTREVISION!=		date -v-1d +%Y%m%d
 NO_CHECKSUM=		yes
-MASTER_SITE_SUBDIR+=	snapshot
 DISTNAME+=		${PORTNAME}-SNAP-${PORTREVISION}
 .else
 DISTNAME+=		${PORTNAME}-${DISTVERSION}
@@ -39,7 +39,6 @@ MAN8=	sftp-server.8 sshd.8 ssh-keysign.8
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
 
 USE_OPENSSL=		yes
-USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
@@ -95,7 +94,7 @@ CONFIGURE_ARGS+=	--disable-suid-ssh
 .if defined(WITH_KERB_GSSAPI)
 PATCH_DIST_STRIP=	-p0
 PATCH_SITES+=		http://www.sxw.org.uk/computing/patches/
-PATCHFILES+=		openssh-4.7p1-gsskex-20070927.patch
+PATCHFILES+=		openssh-5.0p1-gsskex-20080404.patch
 .endif
 PORTABLE_SUFFIX=	# empty
 GSSAPI_SUFFIX=		-gssapi
@@ -140,18 +139,16 @@ BROKEN=			HPN and LPK patches are incompatible
 .if defined(WITH_HPN)
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-4.7p1-hpn12v20.diff.gz
+PATCHFILES+=		openssh-5.0p1-hpn13v3.diff.gz
 .endif
 
 # See http://dev.inversepath.com/trac/openssh-lpk
 .if defined(WITH_LPK)
-PATCH_DIST_STRIP=	-p2
-PATCH_SITES+=		http://dev.inversepath.com/openssh-lpk/
-PATCHFILES+=		openssh-lpk-4.6p1-0.3.9.patch
+EXTRA_PATCHES=		${FILESDIR}/openssh-lpk-5.0p1-0.3.9.patch
 USE_OPENLDAP=		yes
 CPPFLAGS+=		"-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY"
-CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L/usr/local/lib' \
-			--with-cppflags='-I/usr/local/include -DWITH_LDAP_PUBKEY'
+CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L${LOCALBASE}/lib' \
+			--with-cppflags='-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY'
 .endif
 
 .if defined(WITH_OVERWRITE_BASE)
