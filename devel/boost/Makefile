@@ -128,6 +128,8 @@ BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdaxp/bjam
 BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdsparc/bjam
 .elif ${ARCH} == ia64
 BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdia64/bjam
+.elif ${ARCH} == powerpc
+BJAM=		${WRKSRC}/tools/jam/src/bin.freebsdppc/bjam
 .else
 BJAM=		${WRKSRC}/tools/jam/src/bin.freebsd/bjam
 .endif
