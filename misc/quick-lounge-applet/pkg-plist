@@ -113,6 +113,7 @@ share/locale/el/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/en_CA/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/en_GB/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/es/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/eu/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/fi/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/fr/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/gl/LC_MESSAGES/quick-lounge-applet.mo
@@ -126,6 +127,7 @@ share/locale/ms/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/nb/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ne/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/nl/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/oc/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/pa/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/pl/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/pt/LC_MESSAGES/quick-lounge-applet.mo
@@ -133,6 +135,7 @@ share/locale/pt_BR/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ru/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/rw/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sk/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/sl/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sr/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sr@Latn/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/sv/LC_MESSAGES/quick-lounge-applet.mo
