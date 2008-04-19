@@ -28,4 +28,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.Inc
+
 .include <bsd.port.mk>
