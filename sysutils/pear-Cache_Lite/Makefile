@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Cache_Lite
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 PORTEPOCH=	1
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	PEAR fast and safe little cache system
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
