@@ -22,7 +22,7 @@ bin/iReport
 %%DATADIR%%/fonts/flatline.ttf
 %%DATADIR%%/fonts/progenisis.ttf
 @exec ln -sf %D/%%JAVAJARDIR%% %D/%%DATADIR%%/lib
-@unexec rm -f %D/%%DATADIR%%/lib
+@rmtry %%DATADIR%%/lib
 %%DATADIR%%/notice.txt
 %%DATADIR%%/plugins/JRXMLDataSourcePlugin.xml
 %%DATADIR%%/plugins/checkupdate.xml

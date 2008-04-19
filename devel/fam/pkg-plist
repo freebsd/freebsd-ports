@@ -5,5 +5,5 @@ lib/libfam.a
 lib/libfam.la
 lib/libfam.so
 lib/libfam.so.0
-@comment For non-standart prefixes
-@unexec rm -f %D/libdata/ldconfig/fam || true
+@comment For non-standard prefixes
+@rmtry libdata/ldconfig/fam

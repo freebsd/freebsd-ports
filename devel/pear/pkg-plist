@@ -160,10 +160,10 @@ etc/pear.conf
 @dirrm %%DOCSDIR%%/Structures_Graph/docs
 @dirrm %%DOCSDIR%%/Structures_Graph
 @dirrmtry share/doc/pear
-@unexec rm %D/share/pear/.depdb 2> /dev/null || true
-@unexec rm %D/share/pear/.depdblock 2> /dev/null || true
-@unexec rm %D/share/pear/.filemap 2> /dev/null || true
-@unexec rm %D/share/pear/.lock 2> /dev/null || true
+@rmtry share/pear/.depdb
+@rmtry share/pear/.depdblock
+@rmtry share/pear/.filemap
+@rmtry share/pear/.lock
 @dirrmtry share/pear/.channels/.alias
 @dirrmtry share/pear/.channels
 @dirrmtry share/pear/.registry/.channel.__uri

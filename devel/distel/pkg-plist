@@ -34,4 +34,4 @@
 @dirrm %%LIB32DIR%%/erlang/lib/distel-2007.11.03/ebin
 @dirrm %%LIB32DIR%%/erlang/lib/distel-2007.11.03
 @exec ln -sf distel-%%VERSION%% %D/%%LIB32DIR%%/erlang/lib/distel
-@unexec rm -f %D/%%LIB32DIR%%/erlang/lib/distel
+@rmtry %%LIB32DIR%%/erlang/lib/distel

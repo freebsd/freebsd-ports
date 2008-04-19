@@ -21,4 +21,4 @@ lib/erlang/lib/slang-%%VERSION%%/src/slang_lib.erl
 @dirrm lib/erlang/lib/slang-%%VERSION%%/c_src
 @dirrm lib/erlang/lib/slang-%%VERSION%%
 @exec ln -sf slang-%%VERSION%% %D/lib/erlang/lib/slang
-@unexec rm -f %D/lib/erlang/lib/slang
+@rmtry lib/erlang/lib/slang

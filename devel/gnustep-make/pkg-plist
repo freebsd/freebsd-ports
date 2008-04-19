@@ -131,7 +131,7 @@ System/Tools/opentool
 @dirrm System/Tools/Resources
 @dirrm System/Tools/Java
 @dirrm System/Tools
-@unexec rm -f %D/System/Makefiles
+@rmtry System/Makefiles
 @dirrm System/Library/Sounds
 @dirrm System/Library/Services
 @dirrm System/Library/PostScript
