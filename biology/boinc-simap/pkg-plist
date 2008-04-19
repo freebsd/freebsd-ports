@@ -2,4 +2,4 @@
 projects/%%SIMAP_SITE%%/app_info.xml
 projects/%%SIMAP_SITE%%/%%SIMAP_BINARY%%
 projects/%%SIMAP_SITE%%/%%HMMER_BINARY%%
-@unexec rmdir %D/projects/%%SIMAP_SITE%% 2>/dev/null || true
+@dirrmtry projects/%%SIMAP_SITE%%
