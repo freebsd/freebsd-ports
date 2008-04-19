@@ -26,9 +26,9 @@ sbin/gds_drop
 @exec [ -f %D/%%LOCALSTATEDIR%%/security.fdb ] || cp %D/%F %D/%%LOCALSTATEDIR%%/security.fdb
 %%LOCALSTATEDIR%%/RELNOTES
 %%LOCALSTATEDIR%%/help/help.fdb
-@unexec [ -s %D/%%LOCALSTATEDIR%%/firebird.log ] || rm -f %D/%%LOCALSTATEDIR%%/firebird.log
-@unexec rm -f %D/%%LOCALSTATEDIR%%/isc_event1.`hostname`
-@unexec rm -f %D/%%LOCALSTATEDIR%%/isc_init1.`hostname`
-@unexec rm -f %D/%%LOCALSTATEDIR%%/isc_lock1.`hostname`
+@rmtry %%LOCALSTATEDIR%%/firebird.log
+@rmtry %%LOCALSTATEDIR%%/isc_event1.`hostname`
+@rmtry %%LOCALSTATEDIR%%/isc_init1.`hostname`
+@rmtry %%LOCALSTATEDIR%%/isc_lock1.`hostname`
 @dirrm %%LOCALSTATEDIR%%/help
 @dirrmtry %%LOCALSTATEDIR%%

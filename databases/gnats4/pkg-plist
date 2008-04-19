@@ -40,7 +40,7 @@ libexec/gnats/pr-edit
 @dirrm libexec/gnats
 @exec mkdir -p %%GNATSDBDIR%%
 @exec chown gnats %%GNATSDBDIR%%
-@unexec rmdir %%GNATSDBDIR%% 2>/dev/null || true
+@dirrmtry %%GNATSDBDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

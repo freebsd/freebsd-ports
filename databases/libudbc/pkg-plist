@@ -11,7 +11,7 @@ lib/libudbc.a
 lib/libudbc.la
 lib/libudbc.so
 @exec ln %D/lib/libudbc.so %D/lib/libudbc.so.3
-@unexec rm %D/lib/libudbc.so.3
+@rmtry lib/libudbc.so.3
 %%PORTDOCS%%share/doc/libudbc/udbc.doc
 %%PORTDOCS%%share/doc/libudbc/udbc.ini.sample
 %%PORTDOCS%%share/examples/libudbc/Makefile
