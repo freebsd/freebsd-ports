@@ -12054,6 +12054,7 @@ paps		ports/print/paps
 paq		ports/archivers/paq
 par		ports/textproc/par
 par2cmdline	ports/archivers/par2cmdline
+par2cmdline-tbb	ports/archivers/par2cmdline-tbb
 paraget		ports/ftp/paraget
 paragui		ports/x11-toolkits/paragui
 paragui-devel	ports/x11-toolkits/paragui-devel
