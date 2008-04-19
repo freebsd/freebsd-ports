@@ -813,7 +813,7 @@ share/eagle/ulp/unidat.ulp
 share/eagle/ulp/update-packages.ulp
 share/eagle/ulp/useful-routines.ulp
 share/eagle/ulp/warning.bmp
-@unexec rm -f %D/share/eagle/bin/eagle.key || true
+@rmtry share/eagle/bin/eagle.key
 @dirrm share/eagle/ulp
 @dirrm share/eagle/scr
 @dirrm share/eagle/projects/examples/tutorial

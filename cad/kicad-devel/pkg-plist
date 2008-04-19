@@ -1,18 +1,18 @@
 %%INSTDIR%%/%%OPSYS%%/cvpcb
 @exec ln -sf %D/%F %D/bin
-@unexec rm %D/bin/%f 2>&1 >/dev/null || true
+@rmtry bin/%f
 %%INSTDIR%%/%%OPSYS%%/eeschema
 @exec ln -sf %D/%F %D/bin
-@unexec rm %D/bin/%f 2>&1 >/dev/null || true
+@rmtry bin/%f
 %%INSTDIR%%/%%OPSYS%%/gerbview
 @exec ln -sf %D/%F %D/bin
-@unexec rm %D/bin/%f 2>&1 >/dev/null || true
+@rmtry bin/%f
 %%INSTDIR%%/%%OPSYS%%/kicad
 @exec ln -sf %D/%F %D/bin
-@unexec rm %D/bin/%f 2>&1 >/dev/null || true
+@rmtry bin/%f
 %%INSTDIR%%/%%OPSYS%%/pcbnew
 @exec ln -sf %D/%F %D/bin
-@unexec rm %D/bin/%f 2>&1 >/dev/null || true
+@rmtry bin/%f
 %%INSTDIR%%/%%OPSYS%%/plugins/netlist_form_pads-pcb
 %%INSTDIR%%/INSTALL.txt
 %%INSTDIR%%/author.txt

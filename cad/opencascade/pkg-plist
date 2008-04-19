@@ -45970,10 +45970,10 @@ lib/libwokutilscmd.so.0
 %%OCCROOT%%/wok/site/wokinit.csh
 %%OCCROOT%%/wok/wok_entities/ATLIST
 @comment "The following entities only exist if wokinit.csh has been run."
-@unexec rm %D%/OpenCAS/wok/wok_entities/DEFAULT.edl 2>/dev/null || true
-@unexec rm %D%/OpenCAS/wok/wok_entities/OS.edl 2>/dev/null || true
-@unexec rm %D%/OpenCAS/wok/wok_entities/OS/adm/WSLIST 2>/dev/null || true
-@unexec rm %D%/OpenCAS/wok/wok_entities/WOKSESSION.edl 2>/dev/null || true
+@rmtry OpenCAS/wok/wok_entities/DEFAULT.edl
+@rmtry OpenCAS/wok/wok_entities/OS.edl
+@rmtry OpenCAS/wok/wok_entities/OS/adm/WSLIST
+@rmtry OpenCAS/wok/wok_entities/WOKSESSION.edl
 @dirrmtry %%OCCROOT%%/wok/wok_entities/OS/adm
 @dirrmtry %%OCCROOT%%/wok/wok_entities/OS/SCCS
 @dirrmtry %%OCCROOT%%/wok/wok_entities/OS
