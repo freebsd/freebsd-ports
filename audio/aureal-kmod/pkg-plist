@@ -1,6 +1,6 @@
 etc/rc.d/aureal.sh.sample
 @unexec `if [ -e /bin/chflags ]; then echo /bin/chflags; else echo /usr/bin/chflags; fi` noschg %D/lib/au88x0/snd_au88?0.ko
-@unexec rm -f %D/lib/au88x0/linker.hints
+@rmtry lib/au88x0/linker.hints
 lib/au88x0/snd_au8810.ko
 lib/au88x0/snd_au8820.ko
 lib/au88x0/snd_au8830.ko
