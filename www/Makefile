@@ -1006,6 +1006,7 @@
     SUBDIR += paros
     SUBDIR += peacock
     SUBDIR += pear-HTML_AJAX
+    SUBDIR += pear-HTML_TagCloud
     SUBDIR += pear-HTTP
     SUBDIR += pear-HTTP_Client
     SUBDIR += pear-HTTP_Download

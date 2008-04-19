@@ -1,0 +1,8 @@
+This package can be used to generate tag clouds. The output is HTML and CSS.
+And it does not only visualize frequency, but also timeline information.
+The newer the tag is, the deeper its color will be; older tags will have
+a lighter color.The main goal of "HTML_TagCloud" is to provide an easy to
+implement and configureable Tag Cloud solution that is suitable for any
+PHP-based webapp.
+
+WWW: http://pear.php.net/package/HTML_TagCloud/
