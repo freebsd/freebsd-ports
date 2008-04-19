@@ -31,7 +31,7 @@ PLIST_FILES=	bin/qiv
 
 .if defined(WITH_XINERAMA)
 USE_XORG+=	x11 xinerama
-.enif
+.endif
 
 pre-configure:
 .if ! defined(WITH_XINERAMA)
