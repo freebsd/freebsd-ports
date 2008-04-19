@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	notification
-PORTVERSION=	0.15
-PORTREVISION=	2
+PORTVERSION=	0.16
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -17,8 +16,8 @@ MAINTAINER=	c0rn@o2.pl
 COMMENT=	New/unread mail notification plugin for claws-mail
 
 LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
-BUILD_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.4.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.4.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261
@@ -37,6 +36,7 @@ PLIST_FILES=	lib/claws-mail/plugins/notification_plugin.a \
 		share/locale/pt_BR/LC_MESSAGES/notification_plugin.mo \
 		share/locale/zh_CN/LC_MESSAGES/notification_plugin.mo \
 		share/locale/fi/LC_MESSAGES/notification_plugin.mo \
-		share/locale/it/LC_MESSAGES/notification_plugin.mo
+		share/locale/it/LC_MESSAGES/notification_plugin.mo \
+		share/locale/fr/LC_MESSAGES/notification_plugin.mo
 
 .include <bsd.port.mk>
