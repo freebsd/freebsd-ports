@@ -8,4 +8,4 @@ This wrapper is written in a way that enables a friendly
 coexistence with the old (version 2) sqlite and its
 ocaml wrapper ocaml-sqlite.
 
-WWW: http://metamatix.org/~ocaml/
+WWW: http://www.ocaml.info/home/ocaml_sources.html
