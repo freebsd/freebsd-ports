@@ -1,0 +1,6 @@
+This module was mainly written for Net::XMPP2, Net::IRC3 and BS to
+provide a consistent API for registering and emitting events. Even
+though I originally wrote it for those modules I relased it seperately
+in case anyone may find this module useful.
+
+WWW:	http://search.cpan.org/dist/BS-Event/
