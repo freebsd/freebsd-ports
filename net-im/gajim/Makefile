@@ -7,7 +7,7 @@
 
 PORTNAME=	gajim
 PORTVERSION=	0.11.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/ \
 		http://ports.internal.vlink.ru/distfiles/
@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	2.4+
-USE_XORG=	x11 xext
+USE_XORG=	x11 xext xscrnsaver
 
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I ${LOCALBASE}/include" \
 		LDFLAGS="-L ${LOCALBASE}/lib" PYTHON=${PYTHON_CMD}

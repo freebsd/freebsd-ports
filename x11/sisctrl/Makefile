@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.winischhofer.net/sis/
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Display Control Panel for XFree86/X.org SiS driver
 
-USE_XORG=	x11 ice xxf86vm xinerama xv xrandr
+USE_XORG=	x11 ice xxf86vm xinerama xv xrandr xext sm
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
