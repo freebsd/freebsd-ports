@@ -1,0 +1,12 @@
+Argus is a generic IP network transaction auditing tool that has been used 
+by thousands of sites to perform a number of powerful network management 
+tasks that are currently not possible using commercial network management 
+tools.
+
+Argus runs as an application level daemon, promiscuously reading network
+datagrams from a specified interface, and generates network traffic audit
+records for the network activity that it encounters.  It is the way that
+Argus categorizes and reports on network activity that makes this tool
+unique and powerful.
+
+WWW: http://www.qosient.com/argus/
