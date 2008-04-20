@@ -1,0 +1,53 @@
+bin/argusbug
+bin/ra
+bin/rabins
+bin/racluster
+bin/racount
+bin/radark
+bin/radump
+bin/rafilteraddr
+bin/ragraph
+bin/ragrep
+bin/rahisto
+bin/rahosts
+bin/ralabel
+bin/ranonymize
+bin/rapath
+bin/rapolicy
+bin/raports
+bin/rasort
+bin/rasplit
+bin/rastream
+bin/rastrip
+bin/ratemplate
+bin/ratimerange
+bin/ratop
+bin/ratree
+include/cons_def.h
+include/cons_out.h
+lib/argus_client.a
+lib/argus_common.a
+lib/argus_parse.a
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/HOW-TO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/Config/delegated-ipv4-latest
+%%EXAMPLESDIR%%/Config/excel.rc
+%%EXAMPLESDIR%%/Config/ra.print.all.conf
+%%EXAMPLESDIR%%/Config/racluster.conf
+%%EXAMPLESDIR%%/Config/radium.conf
+%%EXAMPLESDIR%%/Config/ragetcountrycodes.sh
+%%EXAMPLESDIR%%/Config/ranonymize.conf
+%%EXAMPLESDIR%%/Config/rarc
+%%EXAMPLESDIR%%/Config/rastream.sh
+%%EXAMPLESDIR%%/Startup/radium
+%%EXAMPLESDIR%%/System/magic
+%%EXAMPLESDIR%%/System/protocols
+@dirrm %%EXAMPLESDIR%%/System
+@dirrm %%EXAMPLESDIR%%/Startup
+@dirrm %%EXAMPLESDIR%%/Config
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

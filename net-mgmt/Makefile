@@ -16,6 +16,7 @@
     SUBDIR += argus-clients
     SUBDIR += argus-monitor
     SUBDIR += argus3
+    SUBDIR += argus3-clients
     SUBDIR += arpalert
     SUBDIR += arpscan
     SUBDIR += arpwatch

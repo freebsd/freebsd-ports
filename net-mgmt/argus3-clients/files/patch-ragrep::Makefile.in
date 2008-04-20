@@ -1,0 +1,11 @@
+--- ragrep/Makefile.in~	2008-02-05 04:37:43.000000000 +0100
++++ ragrep/Makefile.in	2008-02-07 11:32:41.614018339 +0100
+@@ -38,7 +38,7 @@
+ 
+ CC = @CC@
+ CCOPT = @V_CCOPT@
+-INCLS = -I$(srcdir) -I$(srcdir)/../include -I$(srcdir)/../common @V_INCLS@
++INCLS = -I$(srcdir) -I$(srcdir)/../include -I$(srcdir)/../common @V_INCLS@ @SASLFLAGS@
+ DEFS = @DEFS@
+ COMPATLIB = @COMPATLIB@ @LIB_SASL@ @LIBS@ @V_THREADS@
+ 
