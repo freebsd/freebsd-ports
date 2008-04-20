@@ -6,7 +6,7 @@
 
 PORTNAME=	rox-filer
 PORTVERSION=	2.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	SF/rox
 DISTNAME=	rox-filer-${PORTVERSION}
@@ -21,7 +21,7 @@ PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 USE_AUTOTOOLS=	autoconf:213
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XORG=	x11
+USE_XORG=	x11 sm xaw xproto
 USE_GNOME=	pkgconfig glib20 gtk20 libxml2 gnomevfs2 pango libglade2
 HAS_CONFIGURE=	yes
 

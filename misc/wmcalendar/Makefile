@@ -7,7 +7,7 @@
 
 PORTNAME=	wmcalendar
 PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ LIB_DEPENDS=	ical.27:${PORTSDIR}/devel/libical
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
+USE_XORG=	xpm
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}" \
 		LFLAGS="`pkg-config --libs gtk+-2.0` -L${LOCALBASE}/lib" \
@@ -26,6 +27,8 @@ MAKE_ARGS=	CC="${CC}" \
 		INCDIR="`pkg-config --cflags gtk+-2.0` -I${LOCALBASE}/include" \
 		LIBDIR="" \
 		LIBS="-lical -lXpm"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		wmCalendar.1
 PLIST_FILES=	bin/wmCalendar
