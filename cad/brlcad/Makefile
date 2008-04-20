@@ -7,7 +7,7 @@
 
 PORTNAME=	brlcad
 PORTVERSION=	7.10.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GL=		gl
-USE_ORG=	x11 xt
+USE_XORG=	x11 xt xi xproto xext inputproto
 USE_GMAKE=	yes
 USE_TK=		85
 
