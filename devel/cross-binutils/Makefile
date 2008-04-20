@@ -33,6 +33,7 @@ MAN1=		${OURTARGET}-addr2line.1 \
 		${OURTARGET}-ar.1 \
 		${OURTARGET}-as.1 \
 		${OURTARGET}-c++filt.1 \
+		${OURTARGET}-gprof.1 \
 		${OURTARGET}-dlltool.1 \
 		${OURTARGET}-ld.1 \
 		${OURTARGET}-nlmconv.1 \
@@ -44,6 +45,7 @@ MAN1=		${OURTARGET}-addr2line.1 \
 		${OURTARGET}-size.1 \
 		${OURTARGET}-strings.1 \
 		${OURTARGET}-strip.1 \
+		${OURTARGET}-windmc.1 \
 		${OURTARGET}-windres.1
 
 INFO=		${OURTARGET}-as \
@@ -55,6 +57,7 @@ PLIST_FILES=	bin/${OURTARGET}-addr2line \
 		bin/${OURTARGET}-ar \
 		bin/${OURTARGET}-as \
 		bin/${OURTARGET}-c++filt \
+		bin/${OURTARGET}-gprof \
 		bin/${OURTARGET}-ld \
 		bin/${OURTARGET}-nm \
 		bin/${OURTARGET}-objcopy \
@@ -102,6 +105,8 @@ post-patch:
 		${WRKSRC}/binutils/doc/Makefile.in
 	@${FIXREFS} ld ${WRKSRC}/ld/ld.texinfo \
 		${WRKSRC}/ld/Makefile.in
+	@${FIXREFS} gprof ${WRKSRC}/gprof/gprof.texi \
+		${WRKSRC}/gprof/Makefile.in
 
 	@${MV} ${WRKSRC}/gas/doc/as.texinfo \
 		${WRKSRC}/gas/doc/${OURTARGET}-as.texinfo
@@ -111,6 +116,8 @@ post-patch:
 		${WRKSRC}/binutils/doc/${OURTARGET}-binutils.texi
 	@${MV} ${WRKSRC}/ld/ld.texinfo \
 		${WRKSRC}/ld/${OURTARGET}-ld.texinfo
+	@${MV} ${WRKSRC}/gprof/gprof.texi \
+		${WRKSRC}/gprof/${OURTARGET}-gprof.texi
 
 #
 # Disable install target in some directories
