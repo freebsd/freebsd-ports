@@ -1,14 +1,15 @@
---- applets/clock/clock-zonetable.c.orig	2008-01-20 13:32:13.000000000 -0500
-+++ applets/clock/clock-zonetable.c	2008-01-20 13:35:34.000000000 -0500
-@@ -124,7 +124,10 @@ clock_zonetable_new (gchar *zoneinfodir)
-         priv = PRIVATE (this);
+--- applets/clock/clock-zonetable.c.orig	2008-04-15 16:58:01.000000000 -0400
++++ applets/clock/clock-zonetable.c	2008-04-19 20:32:30.000000000 -0400
+@@ -18,8 +18,12 @@
+ #define ISO3166_FILE SYSTEM_ZONEINFODIR"/country.tab"
+ #else
+ #define ZONETAB_FILE SYSTEM_ZONEINFODIR"/zone.tab"
++#ifdef __FreeBSD__
++#define ISO3166_FILE DATADIR"/gnome-panel/iso3166.tab"
++#else
+ #define ISO3166_FILE SYSTEM_ZONEINFODIR"/iso3166.tab"
+ #endif
++#endif
  
-         priv->zonetab = g_build_filename (zoneinfodir, "zone.tab", NULL);
--        priv->iso3166 = g_build_filename (zoneinfodir, "iso3166.tab", NULL);
-+        /*priv->iso3166 = g_build_filename (zoneinfodir, "iso3166.tab", NULL);*/
-+	/* FreeBSD doesn't include iso3166.tab, so we install it especially
-+	 * for this clock. */
-+	priv->iso3166 = g_build_filename (DATADIR, "gnome-panel", "iso3166.tab", NULL);
+ static GObject *zonetable_singleton = NULL;
  
- #ifdef CLOCK_TEXTDOMAIN
-         /* this is used when clock is embedded in the gnome-panel
