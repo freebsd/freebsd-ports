@@ -106,7 +106,7 @@ PLIST_SUB+=	KDE="@comment "
 post-patch:
 	@${CP} ${WRKSRC}/search.ini ${WRKSRC}/locale/en
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 			${WRKSRC}/install.sh ${WRKSRC}/ini/pluginpath.ini \
 			${WRKSRC}/config/opera6rc
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/install.sh
