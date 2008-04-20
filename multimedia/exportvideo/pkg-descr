@@ -1,6 +1,0 @@
-The exportvideo utility extracts the video data from a nuppelvideo
-file and writes a YUV4MPEG stream which can be piped to mpeg2enc.
-In other words, it exports the nuppelvideo .nuv format for encoding
-(S)VCD/DVD compliant MPEGs with mjpegtools.
-
-WWW: http://tigerente.htu.tuwien.ac.at/~aoe/mystuff/mpeg2_movie-avipatch/mpeg2_movie-avi.html

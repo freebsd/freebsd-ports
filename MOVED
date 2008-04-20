@@ -3451,3 +3451,4 @@ graphics/libimg-tkstep80||2008-04-09|Has expired: tkstep80 scheduled for expirat
 x11-toolkits/tkstep80||2008-04-09|Has expired: development stalled for years, outdated, unmaintained
 devel/p5-Tie-Watch|x11-toolkits/p5-Tk|2008-04-14|bundled with p5-Tk
 games/teewars|games/teeworls|2008-04-17|Project renamed
+multimedia/exportvideo||2008-04-21|Add-on for soon to be removed nuppelvideo port
