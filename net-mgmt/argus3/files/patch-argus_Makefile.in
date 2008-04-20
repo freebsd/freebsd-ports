@@ -1,0 +1,20 @@
+--- argus/Makefile.in~	2008-02-05 04:37:42.000000000 +0100
++++ argus/Makefile.in	2008-02-07 10:39:11.099545848 +0100
+@@ -41,7 +41,7 @@
+ 
+ CC = @CC@
+ CCOPT = @V_CCOPT@
+-INCLS = -I$(srcdir) @V_INCLS@ -I$(srcdir)/../include 
++INCLS = -I$(srcdir) @V_INCLS@ -I$(srcdir)/../include @SASLFLAGS@
+ DEFS = @DEFS@ -DARGUS_SYSLOG=1
+ #DEFS = -DARGUSPERFMETRICS=1 @DEFS@
+ 
+@@ -79,7 +79,7 @@
+ 
+ OBJ =	$(SRC:.c=.o)
+ 
+-LIB = @LIBS@ $(WRAPLIBS) $(COMPATLIB) ../lib/argus_common.a -lm
++LIB = @LIBS@ @LIB_SASL@ $(WRAPLIBS) $(COMPATLIB) ../lib/argus_common.a -lm
+ 
+ HDR =	pcap.h pcap-int.h pcap-namedb.h pcap-nit.h pcap-pf.h \
+ 	ethertype.h gencode.h gnuc.h
