@@ -19,4 +19,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_FILES=	bin/dmucs bin/gethost bin/loadavg bin/monitor bin/remhost
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
