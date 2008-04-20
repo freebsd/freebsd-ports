@@ -18,7 +18,7 @@ LIB_DEPENDS=	visual.0:${PORTSDIR}/graphics/libvisual
 
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget pkgconfig
-USE_GL=		gl
+USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -7,6 +7,7 @@
 
 PORTNAME=       slock
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.suckless.org/download/ CENKES
 
@@ -18,7 +19,7 @@ MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
 		MANPREFIX="${MANPREFIX}/man"
 PLIST_FILES=	bin/slock
 
-USE_XORG=	x11 xt
+USE_XORG=	x11 xt xproto xext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include||;s|-L/usr/lib||;s|= -Os|+=|'\

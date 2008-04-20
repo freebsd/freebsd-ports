@@ -7,7 +7,7 @@
 
 PORTNAME=	ivtools
 PORTVERSION=	1.2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--with-tiff=${PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 USE_LDCONFIG=	yes
 MAKE_ARGS=	ARCH=FREEBSD
+USE_XORG=	x11 xaw ice xext
 
 MANCOMPRESSED=	no
 MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1

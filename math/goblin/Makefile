@@ -34,7 +34,7 @@ ALL_TARGET=	all goblin.a glpk.a
 PLIST_SUB+=	VERSION=${PORTVERSION:R}
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/ \
-		${PTHREAD_CFLAGS}
+		${PTHREAD_CFLAGS} -I${LOCALBASE}/include/tk8.3
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 WISH=		${LOCALBASE}/bin/wish8.3
