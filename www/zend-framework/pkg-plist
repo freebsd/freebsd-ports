@@ -1569,6 +1569,7 @@
 %%DATADIR%%/library/Zend/XmlRpc/Value/Double.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/Exception.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/Integer.php
+%%DATADIR%%/library/Zend/XmlRpc/Value/Nil.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/Scalar.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/String.php
 %%DATADIR%%/library/Zend/XmlRpc/Value/Struct.php
@@ -1630,6 +1631,7 @@
 %%DATADIR%%/tests/Zend/Config/_files/onetoplevelstring.xml
 %%DATADIR%%/tests/Zend/Config/_files/separator.ini
 %%DATADIR%%/tests/Zend/Config/_files/toplevelstring.xml
+%%DATADIR%%/tests/Zend/Config/_files/zf2843.ini
 %%DATADIR%%/tests/Zend/ConfigTest.php
 %%DATADIR%%/tests/Zend/Console/GetoptTest.php
 %%DATADIR%%/tests/Zend/Controller/Action/Helper/ActionStackTest.php
@@ -1933,6 +1935,8 @@
 %%DATADIR%%/tests/Zend/Form/ElementTest.php
 %%DATADIR%%/tests/Zend/Form/FormTest.php
 %%DATADIR%%/tests/Zend/Form/SubFormTest.php
+%%DATADIR%%/tests/Zend/Form/_files/config/multiOptions.ini
+%%DATADIR%%/tests/Zend/Form/_files/config/multiOptions.xml
 %%DATADIR%%/tests/Zend/Form/_files/decorators/Label.php
 %%DATADIR%%/tests/Zend/Form/_files/locale/array.php
 %%DATADIR%%/tests/Zend/Form/_files/views/contentWrappingDecorator.phtml
@@ -2824,6 +2828,7 @@
 @dirrm %%DATADIR%%/tests/Zend/Form/_files/views
 @dirrm %%DATADIR%%/tests/Zend/Form/_files/locale
 @dirrm %%DATADIR%%/tests/Zend/Form/_files/decorators
+@dirrm %%DATADIR%%/tests/Zend/Form/_files/config
 @dirrm %%DATADIR%%/tests/Zend/Form/_files
 @dirrm %%DATADIR%%/tests/Zend/Form/Element
 @dirrm %%DATADIR%%/tests/Zend/Form/Decorator
