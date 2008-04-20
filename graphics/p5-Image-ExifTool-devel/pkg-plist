@@ -34,6 +34,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/ICC_Profile.pm
 %%SITE_PERL%%/Image/ExifTool/ID3.pm
 %%SITE_PERL%%/Image/ExifTool/IPTC.pm
+%%SITE_PERL%%/Image/ExifTool/ITC.pm
 %%SITE_PERL%%/Image/ExifTool/JVC.pm
 %%SITE_PERL%%/Image/ExifTool/JPEG.pm
 %%SITE_PERL%%/Image/ExifTool/Jpeg2000.pm
@@ -80,6 +81,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/WriteCanonRaw.pl
 %%SITE_PERL%%/Image/ExifTool/WriteExif.pl
 %%SITE_PERL%%/Image/ExifTool/WriteIPTC.pl
+%%SITE_PERL%%/Image/ExifTool/WritePDF.pl
 %%SITE_PERL%%/Image/ExifTool/WritePNG.pl
 %%SITE_PERL%%/Image/ExifTool/WritePhotoshop.pl
 %%SITE_PERL%%/Image/ExifTool/WritePostScript.pl
@@ -133,6 +135,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/ICC_Profile.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/ID3.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/IPTC.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/ITC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/JFIF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/JVC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/JPEG.html
