@@ -4665,9 +4665,9 @@ hawkvoice	ports/audio/hawkvoice
 hayes		ports/multimedia/hayes
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
-hcs12mem	ports/devel/hcs12mem
 hcfmdm		ports/comms/hcfmdm
 hcidump		ports/comms/hcidump
+hcs12mem	ports/devel/hcs12mem
 hdf		ports/science/hdf
 hdf-szip	ports/science/szip
 hdf5		ports/science/hdf5
@@ -9165,6 +9165,7 @@ p5-BBS-UserInfo-SOB	ports/net/p5-BBS-UserInfo-SOB
 p5-BBS-UserInfo-Wretch	ports/net/p5-BBS-UserInfo-Wretch
 p5-BFD		ports/devel/p5-BFD
 p5-BIND-Conf_Parser	ports/dns/p5-BIND-Conf_Parser
+p5-BS-Event	ports/devel/p5-BS-Event
 p5-BSD-Jail-Object	ports/sysutils/p5-BSD-Jail-Object
 p5-BSD-Resource	ports/devel/p5-BSD-Resource
 p5-BSD-Sysctl	ports/sysutils/p5-BSD-Sysctl
@@ -10415,10 +10416,10 @@ p5-Iterator-Util	ports/devel/p5-Iterator-Util
 p5-JQuery	ports/devel/p5-JQuery
 p5-JSAN		ports/lang/p5-JSAN
 p5-JSON		ports/converters/p5-JSON
-p5-JSON1	ports/converters/p5-JSON1
 p5-JSON-Any	ports/converters/p5-JSON-Any
 p5-JSON-DWIW	ports/converters/p5-JSON-DWIW
 p5-JSON-XS	ports/converters/p5-JSON-XS
+p5-JSON1	ports/converters/p5-JSON1
 p5-Jabber-Connection	ports/net-im/p5-Jabber-Connection
 p5-Jabber-Lite	ports/net-im/p5-Jabber-Lite
 p5-Jabber-SimpleSend	ports/net-im/p5-Jabber-SimpleSend
