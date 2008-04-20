@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=--ipv6=0
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e "s:^EFLAGS=:EFLAGS=${LDFLAGS}:" \
+		-e "s|^EFLAGS=|EFLAGS=${LDFLAGS}|" \
 		${WRKSRC}/configure
 
 	@${REINPLACE_CMD} \
