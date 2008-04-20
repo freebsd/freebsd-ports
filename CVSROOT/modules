@@ -487,6 +487,7 @@ argus		ports/net-mgmt/argus
 argus-clients	ports/net-mgmt/argus-clients
 argus-monitor	ports/net-mgmt/argus-monitor
 argus3		ports/net-mgmt/argus3
+argus3-clients	ports/net-mgmt/argus3-clients
 ari-yahoo	ports/net-im/ari-yahoo
 aria		ports/www/aria
 aria2		ports/www/aria2
