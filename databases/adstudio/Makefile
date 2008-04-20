@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	adstudio
-PORTVERSION=	4.7.2
-PORTREVISION=	1
+PORTVERSION=	6.5.9
 CATEGORIES=	databases devel java
-MASTER_SITES=	http://download.aquafold.com/download/v${PORTVERSION}/linux/
-DISTNAME=	ads-linux-novm-${PORTVERSION}
+MASTER_SITES=	http://download.aquafold.com/download/v${PORTVERSION:R}.0/java/
+DISTNAME=	ads-java-novm-${PORTVERSION}
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A database query and administration tool
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
@@ -28,15 +27,19 @@ WRKSRC=		${WRKDIR}/datastudio
 
 INSTFILES=	License.txt PAD_FILE.XML changelog.txt datastudio.gif	\
 		datastudio.ico lib license
+EXTRACT_AFTER_ARGS=|${TAR} -xpf - ./datastudio/datastudio.sh
 
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%ADS_HOME%%|${DATADIR}|"	\
-		-e "s|^java |JAVA_VERSION=${JAVA_VERSION} ${LOCALBASE}/bin/java -Xmx256M |"	\
+		-e "s|^java |JAVA_VERSION=${JAVA_VERSION} exec ${LOCALBASE}/bin/java -Xmx256M |"	\
 		${WRKSRC}/datastudio.sh
 
 do-install:
 	${MKDIR} ${DATADIR}
-	${CP} -R ${INSTFILES:S|^|${WRKSRC}/|} ${DATADIR}
+	${TAR} -C ${DATADIR} -xpf ${DISTDIR}/${_DISTFILES}	\
+		${INSTFILES:S|^|./datastudio/|}
+	${MV} ${DATADIR}/datastudio/* ${DATADIR}
+	${RMDIR} ${DATADIR}/datastudio
 	${INSTALL_SCRIPT} ${WRKSRC}/datastudio.sh ${PREFIX}/bin
 
 post-install:
