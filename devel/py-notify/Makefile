@@ -7,8 +7,8 @@
 
 PORTNAME=	notify
 PORTVERSION=	0.1.1
-PORTREVISION=	2
 DISTVERSIONPREFIX=python-
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/notify-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,9 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS
+
+post-extract:
+	@${RM} ${WRKSRC}/src/pynotify.c
 
 .ifndef (NOPORTDOCS)
 post-install:
