@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fastdb
-PORTVERSION=	3.40
+PORTVERSION=	3.47
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -27,13 +27,13 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	FastDB.htm
 
+.include <bsd.port.pre.mk>
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/FastDB.htm ${DOCSDIR}
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 .if ${OSVERSION} < 601105
