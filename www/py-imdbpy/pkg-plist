@@ -18,6 +18,9 @@ bin/search_person.py
 %%PYTHON_SITELIBDIR%%/imdb/__init__.py
 %%PYTHON_SITELIBDIR%%/imdb/__init__.pyc
 %%PYTHON_SITELIBDIR%%/imdb/__init__.pyo
+%%PYTHON_SITELIBDIR%%/imdb/_compat.py
+%%PYTHON_SITELIBDIR%%/imdb/_compat.pyc
+%%PYTHON_SITELIBDIR%%/imdb/_compat.pyo
 %%PYTHON_SITELIBDIR%%/imdb/_exceptions.py
 %%PYTHON_SITELIBDIR%%/imdb/_exceptions.pyc
 %%PYTHON_SITELIBDIR%%/imdb/_exceptions.pyo
