@@ -60,9 +60,10 @@ alephone/M1A1.zip	games/alephone-data	Bungie/Microsoft do not allow
 alephone/Marathon*.zip	games/alephone-data	Bungie/Microsoft do not allow
 						charging for Marathon data
 						files
-ads-java-novm-*		databases/adstudio	Free for personal or educational
-						use but a commercial license is
-						required for all other usages
+ads-java-novm-*		databases/adstudio	Only free for qualified Open Source
+						Software Developers but a commercial
+						license is required for all other
+						usages
 altivore.c		security/altivore	No redistribution allowed
 annelid-*		games/annelid		Redistribution is limited
 apache_*ssl_*		www/apache13-ssl	Crypto; export-controlled
