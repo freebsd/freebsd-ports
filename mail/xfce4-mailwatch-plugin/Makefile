@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-mailwatch-plugin
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/mailwatch/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -23,5 +23,6 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libgui libutil panel
+USE_XORG=	x11 xt xaw
 
 .include <bsd.port.mk>
