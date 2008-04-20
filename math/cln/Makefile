@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cln
-PORTVERSION=	1.1.13
+PORTVERSION=	1.2.2
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.ginac.de/CLN/ \
 		http://www.mirrors.wiretapped.net/security/cryptography/libraries/math/cln/ \
@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--with-gmp
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
-MAN1=		cln-config.1
 INFO=		cln
 
 STRIP=		# none
@@ -52,9 +51,11 @@ BROKEN=		Does not compile when older version is installed. Please pkg_delete old
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/dvi
-	${INSTALL_DATA} ${WRKSRC}/doc/*.dvi ${DOCSDIR}/dvi
+	${INSTALL_DATA} ${WRKSRC}/doc/*.dvi ${DOCSDIR}/dvi/
 	@${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html/
+	@${MKDIR} ${DOCSDIR}/html/cln
+	${INSTALL_DATA} ${WRKSRC}/doc/cln/*.html ${DOCSDIR}/html/cln/
 .endif
 
 .include <bsd.port.post.mk>
