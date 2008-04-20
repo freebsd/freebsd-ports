@@ -8,7 +8,7 @@
 
 PORTNAME=		fc
 PORTVERSION=		4
-PORTREVISION=		12
+PORTREVISION=		13
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -197,6 +197,11 @@ do-install:
 # Let some linux applications (e.g. print/acroread7) print with default settings
 #
 	@${INSTALL_SCRIPT} ${FILESDIR}/lp ${PREFIX}/usr/bin
+#
+# Create a hard link to disallow using a FreeBSD native library, but find a
+# linux one at /lib/obsolete/linuxthreads; soft link happened to be insufficient
+#
+	@${LN} ${PREFIX}/lib/librt-2.3.6.so ${PREFIX}/usr/lib/librt.so.1
 
 post-install:
 #
