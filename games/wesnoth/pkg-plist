@@ -330,6 +330,25 @@ share/locale/he/LC_MESSAGES/wesnoth-tutorial.mo
 share/locale/he/LC_MESSAGES/wesnoth-units.mo
 share/locale/he/LC_MESSAGES/wesnoth-utbs.mo
 share/locale/he/LC_MESSAGES/wesnoth.mo
+share/locale/hr/LC_MESSAGES/wesnoth-aoi.mo
+share/locale/hr/LC_MESSAGES/wesnoth-did.mo
+share/locale/hr/LC_MESSAGES/wesnoth-editor.mo
+share/locale/hr/LC_MESSAGES/wesnoth-ei.mo
+share/locale/hr/LC_MESSAGES/wesnoth-httt.mo
+share/locale/hr/LC_MESSAGES/wesnoth-l.mo
+share/locale/hr/LC_MESSAGES/wesnoth-lib.mo
+share/locale/hr/LC_MESSAGES/wesnoth-multiplayer.mo
+share/locale/hr/LC_MESSAGES/wesnoth-nr.mo
+share/locale/hr/LC_MESSAGES/wesnoth-sof.mo
+share/locale/hr/LC_MESSAGES/wesnoth-sotbe.mo
+share/locale/hr/LC_MESSAGES/wesnoth-tb.mo
+share/locale/hr/LC_MESSAGES/wesnoth-thot.mo
+share/locale/hr/LC_MESSAGES/wesnoth-trow.mo
+share/locale/hr/LC_MESSAGES/wesnoth-tsg.mo
+share/locale/hr/LC_MESSAGES/wesnoth-tutorial.mo
+share/locale/hr/LC_MESSAGES/wesnoth-units.mo
+share/locale/hr/LC_MESSAGES/wesnoth-utbs.mo
+share/locale/hr/LC_MESSAGES/wesnoth.mo
 share/locale/hu/LC_MESSAGES/wesnoth-aoi.mo
 share/locale/hu/LC_MESSAGES/wesnoth-did.mo
 share/locale/hu/LC_MESSAGES/wesnoth-editor.mo
@@ -2861,6 +2880,7 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/core/images/portraits/Kitty/elvish-scout.png
 %%DATADIR%%/data/core/images/portraits/Kitty/elvish-shaman.png
 %%DATADIR%%/data/core/images/portraits/Kitty/elvish-shyde.png
+%%DATADIR%%/data/core/images/portraits/Kitty/elvish-sorceress.png
 %%DATADIR%%/data/core/images/portraits/Neoriceisgood/dwarvish_berzerker.png
 %%DATADIR%%/data/core/images/portraits/Neoriceisgood/orcish_grunt.png
 %%DATADIR%%/data/core/images/portraits/Neoriceisgood/orcish_leader.png
@@ -4839,6 +4859,24 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/core/images/units/dwarves/thunderguard-defend.png
 %%DATADIR%%/data/core/images/units/dwarves/thunderguard.png
 %%DATADIR%%/data/core/images/units/dwarves/ulfserker-attack.png
+%%DATADIR%%/data/core/images/units/dwarves/ulfserker-attack-1.png
+%%DATADIR%%/data/core/images/units/dwarves/ulfserker-attack-2.png
+%%DATADIR%%/data/core/images/units/dwarves/ulfserker-attack-3.png
+%%DATADIR%%/data/core/images/units/dwarves/ulfserker-attack-4.png
+%%DATADIR%%/data/core/images/units/dwarves/ulfserker-attack-5.png
+%%DATADIR%%/data/core/images/units/dwarves/ulfserker-attack-6.png
+%%DATADIR%%/data/core/images/units/dwarves/ulfserker-attack-7.png
+%%DATADIR%%/data/core/images/units/dwarves/ulfserker-attack-8.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-defend-1.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-defend-2.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-attack-1.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-attack-2.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-attack-3.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-attack-4.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-attack-5.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-attack-6.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-attack-7.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-attack-8.png
 %%DATADIR%%/data/core/images/units/dwarves/ulfserker-defend.png
 %%DATADIR%%/data/core/images/units/dwarves/ulfserker-idle-1.png
 %%DATADIR%%/data/core/images/units/dwarves/ulfserker-idle-2.png
@@ -4846,6 +4884,10 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/core/images/units/dwarves/ulfserker-idle-4.png
 %%DATADIR%%/data/core/images/units/dwarves/ulfserker-idle-5.png
 %%DATADIR%%/data/core/images/units/dwarves/ulfserker-idle-6.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-laugh-1.png
+%%DATADIR%%/data/core/images/units/dwarves/berserker-laugh-2.png
+%%DATADIR%%/data/core/images/units/dwarves/ulfserker-laugh-1.png
+%%DATADIR%%/data/core/images/units/dwarves/ulfserker-laugh-2.png
 %%DATADIR%%/data/core/images/units/dwarves/ulfserker.png
 %%DATADIR%%/data/core/images/units/elves-wood/archer+female-bow-attack1.png
 %%DATADIR%%/data/core/images/units/elves-wood/archer+female-bow-attack2.png
@@ -6556,9 +6598,15 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-attack1.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-attack2.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-attack3.png
-%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-defend.png
-%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-die-1.png
-%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-die-2.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-dying-1.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-dying-2.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-dying-3.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-dying-4.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-dying-5.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-dying-6.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-dying-7.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-defend-1.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/deathblade-defend-2.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathblade.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-crossbow-attack1.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/deathknight-crossbow-attack2.png
@@ -6648,9 +6696,24 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/core/images/units/undead/nightgaunt-die-4.png
 %%DATADIR%%/data/core/images/units/undead/nightgaunt-die-5.png
 %%DATADIR%%/data/core/images/units/undead/nightgaunt.png
-%%DATADIR%%/data/core/images/units/undead/shadow-attack.png
-%%DATADIR%%/data/core/images/units/undead/shadow-defend.png
-%%DATADIR%%/data/core/images/units/undead/shadow.png
+%%DATADIR%%/data/core/images/units/undead/shadow-n-1.png
+%%DATADIR%%/data/core/images/units/undead/shadow-n-2.png
+%%DATADIR%%/data/core/images/units/undead/shadow-n-3.png
+%%DATADIR%%/data/core/images/units/undead/shadow-n-attack-1.png
+%%DATADIR%%/data/core/images/units/undead/shadow-n-attack-2.png
+%%DATADIR%%/data/core/images/units/undead/shadow-n-attack-3.png
+%%DATADIR%%/data/core/images/units/undead/shadow-n-attack-4.png
+%%DATADIR%%/data/core/images/units/undead/shadow-n-attack-5.png
+%%DATADIR%%/data/core/images/units/undead/shadow-n-attack-6.png
+%%DATADIR%%/data/core/images/units/undead/shadow-s-1.png
+%%DATADIR%%/data/core/images/units/undead/shadow-s-2.png
+%%DATADIR%%/data/core/images/units/undead/shadow-s-3.png
+%%DATADIR%%/data/core/images/units/undead/shadow-s-attack-1.png
+%%DATADIR%%/data/core/images/units/undead/shadow-s-attack-2.png
+%%DATADIR%%/data/core/images/units/undead/shadow-s-attack-3.png
+%%DATADIR%%/data/core/images/units/undead/shadow-s-attack-4.png
+%%DATADIR%%/data/core/images/units/undead/shadow-s-attack-5.png
+%%DATADIR%%/data/core/images/units/undead/shadow-s-attack-6.png
 %%DATADIR%%/data/core/images/units/undead/soulless-attack-n.png
 %%DATADIR%%/data/core/images/units/undead/soulless-attack-s.png
 %%DATADIR%%/data/core/images/units/undead/soulless-attack.png
@@ -6741,6 +6804,20 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/core/images/units/undead/zombie-attack-n.png
 %%DATADIR%%/data/core/images/units/undead/zombie-attack-s.png
 %%DATADIR%%/data/core/images/units/undead/zombie-attack.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-die-1.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-die-2.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-die-3.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-die-4.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-ne-1.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-ne-2.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-ne-3.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-ne-4.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-ne-5.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-se-1.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-se-2.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-se-3.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-se-4.png
+%%DATADIR%%/data/core/images/units/undead/zombie-bat-se-5.png
 %%DATADIR%%/data/core/images/units/undead/zombie-defend.png
 %%DATADIR%%/data/core/images/units/undead/zombie-die-1.png
 %%DATADIR%%/data/core/images/units/undead/zombie-die-2.png
@@ -7380,6 +7457,7 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/languages/hu_HU.cfg
 %%DATADIR%%/data/languages/id_ID.cfg
 %%DATADIR%%/data/languages/it_IT.cfg
+%%DATADIR%%/data/languages/hr_HR.cfg
 %%DATADIR%%/data/languages/ja_JP.cfg
 %%DATADIR%%/data/languages/ko_KR.cfg
 %%DATADIR%%/data/languages/la_IT.cfg
@@ -7999,8 +8077,13 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DOCSDIR%%/manual/manual.da.html
 %%DOCSDIR%%/manual/manual.de.html
 %%DOCSDIR%%/manual/manual.en.html
+%%DOCSDIR%%/manual/manual.fr.html
+%%DOCSDIR%%/manual/manual.gl_ES.html
+%%DOCSDIR%%/manual/manual.hu.html
 %%DOCSDIR%%/manual/manual.it.html
 %%DOCSDIR%%/manual/manual.pl.html
+%%DOCSDIR%%/manual/manual.ru.html
+%%DOCSDIR%%/manual/manual.sv.html
 %%DOCSDIR%%/manual/manual.txt
 %%DOCSDIR%%/manual/manual.zh_CN.html
 %%DOCSDIR%%/manual/styles/manual.css
@@ -8255,12 +8338,16 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 @dirrm %%DOCSDIR%%/manual/styles
 @dirrm %%DOCSDIR%%/manual
 @dirrm %%DOCSDIR%%
+@dirrmtry man/ca_ES@valencia/man6
+@dirrmtry man/ca_ES@valencia
 @dirrmtry man/cs/man6
 @dirrmtry man/cs
 @dirrmtry man/de/man6
 @dirrmtry man/de
 @dirrmtry man/fr/man6
 @dirrmtry man/fr
+@dirrmtry man/gl_ES/man6
+@dirrmtry man/gl_ES
 @dirrmtry man/it/man6
 @dirrmtry man/it
 @dirrmtry man/jp/man6
