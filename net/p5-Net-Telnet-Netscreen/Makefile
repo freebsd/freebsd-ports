@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	Net-Telnet-Netscreen
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Netscreen-${PORTVERSION}
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	A Perl interface for interact with a Netscreen firewall
