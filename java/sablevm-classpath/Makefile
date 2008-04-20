@@ -8,7 +8,7 @@
 
 PORTNAME=	sablevm-classpath
 PORTVERSION=	1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sablevm
@@ -23,7 +23,7 @@ OPTIONS=	GTK2 "Enable Gtk+ AWT peer" ON \
 
 CONFLICTS=	classpath-*
 
-USE_XORG=	x11 ice xtst
+USE_XORG=	x11 ice xtst sm
 GNU_CONFIGURE=	yes
 USE_GNOME=	# empty
 USE_GMAKE=	yes
