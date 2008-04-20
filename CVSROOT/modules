@@ -2833,7 +2833,6 @@ expense		ports/finance/expense
 expiretable	ports/security/expiretable
 explosions	ports/misc/explosions
 expocity	ports/x11-wm/expocity
-exportvideo	ports/multimedia/exportvideo
 exrtools	ports/graphics/exrtools
 exslt		ports/textproc/exslt
 extace		ports/audio/extace
