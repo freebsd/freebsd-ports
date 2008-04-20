@@ -3452,3 +3452,4 @@ x11-toolkits/tkstep80||2008-04-09|Has expired: development stalled for years, ou
 devel/p5-Tie-Watch|x11-toolkits/p5-Tk|2008-04-14|bundled with p5-Tk
 games/teewars|games/teeworls|2008-04-17|Project renamed
 multimedia/exportvideo||2008-04-21|Add-on for soon to be removed nuppelvideo port
+multimedia/nuppelvideo||2008-04-21|Unmaintained upstream for years.  The nuppelvideo format is now supported by mencoder
