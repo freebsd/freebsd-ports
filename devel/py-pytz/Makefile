@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pytz
-PORTVERSION=	2007f
+PORTVERSION=	2008a
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
@@ -15,24 +15,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	World Timezone Definitions for Python
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
-PYDISTUTILS_BUILD_TARGET=	bdist_egg
-PYDISTUTILS_INSTALL_TARGET=	easy_install
-PYDISTUTILS_INSTALLARGS=	-O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${PYPYTZ_EGG}
-
-PYPYTZ_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
-
-PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYPYTZ_EGG=${PYPYTZ_EGG} \
-		PYPYTZ_EGG_VER="${PORTNAME}==${PORTVERSION}"
+USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
