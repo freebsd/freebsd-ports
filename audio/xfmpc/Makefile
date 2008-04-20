@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	xfmpc
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.6
 CATEGORIES=	audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A MPD plugin for xfce
+COMMENT=	A graphical MPD client focusing on low footprint
 
 LIB_DEPENDS=	mpd.0:${PORTSDIR}/audio/libmpd
 
