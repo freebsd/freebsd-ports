@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	3.7.9
+PORTVERSION=	3.9.3
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -26,40 +26,55 @@ NO_BUILD=		yes
 SUB_FILES=		pkg-message
 USE_MYSQL=		yes
 DEFAULT_MYSQL_VER=	50
-USE_PHP=		mysql session zlib gd pdf xml pcre
+USE_PHP=		mysql session zlib gd pdf dom xsl pcre
 DEFAULT_PHP_VER=	5
 WANT_PHP_MOD=		yes
 WRKSRC=			${WRKDIR}/ilias3
-PLIST=			${WRKDIR}/pkg-plist
+ILIASDATADIR=		www/iliasdata
+PORTDOCS=*
+PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}
+SUB_FILES=	pkg-message
+SUB_LIST=	ILIASDATADIR=${ILIASDATADIR}
 
-INSTALL_DIR?=	www/${PORTNAME}
-
-OPTIONS=	PHP4 "Use PHP4 instead of PHP5" off \
-		MYSQL4 "Use MySQL 4.x instead of MySQL 5.x" off
+OPTIONS=	SCORM2004 "Using SCORM2004 support" off	\
+		Checker "Link Checker" off \
+		Mail "Internet compliant E-Mail addresses" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PHP4)
-DEFAULT_PHP_VER=	4
-LIB_DEPENDS+=		sablot.70:${PORTSDIR}/textproc/sablotron
+.if defined(WITH_SCORM2004)
+USE_PHP+=	json
 .endif
 
-.if defined(WITH_MYSQL4)
-DEFAULT_MYSQL_VER=	41
+.if defined(WITH_Checker)
+RUN_DEPENDS+=	 ${LOCALBASE}/share/pear/HTTP_Request.php:${PORTSDIR}/www/pear-HTTP_Request
 .endif
 
-PLIST_SUB=	INSTALL_DIR=${INSTALL_DIR}
+.if defined(WITH_Mail)
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/Mail.php:${PORTSDIR}/mail/pear-Mail
+.endif
 
-pre-install:
-		@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${INSTALL_DIR}?g" >${PLIST}
-		@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${INSTALL_DIR}?g" >> ${PLIST}
+post-extract:
+	@cd ${WRKSRC} && ${MV} docs ${WRKDIR}
 
 do-install:
-		@${MKDIR} ${PREFIX}/${INSTALL_DIR}
-		@cd ${WRKSRC} && ${FIND} . | ${PAX} -rw ${PREFIX}/${INSTALL_DIR}
-		@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${INSTALL_DIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${CHMOD} -R 755 ${WWWDIR}
+	@${INSTALL} -d ${PREFIX}/${ILIASDATADIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${ILIASDATADIR}
+	@${CHMOD} -R 755 ${PREFIX}/${ILIASDATADIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' >>${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${ILIASDATADIR}' \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${PREFIX}/${ILIASDATADIR}' >>${TMPPLIST}
 
-post-install:
-		@${CAT} ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	@cd ${WRKDIR}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
+
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
