@@ -935,6 +935,7 @@
     SUBDIR += p5-B-Size
     SUBDIR += p5-B-Utils
     SUBDIR += p5-BFD
+    SUBDIR += p5-BS-Event
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-BSD-stat
     SUBDIR += p5-Best
