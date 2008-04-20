@@ -7,7 +7,7 @@
 
 PORTNAME=	bbapm
 PORTVERSION=	0.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bbtools
@@ -23,6 +23,7 @@ COMMENT=	APM monitor for the Blackbox slit
 ONLY_FOR_ARCHS=	i386
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
+USE_XORG=	x11
 
 PLIST_FILES=	bin/bbapm share/bbtools/README.bbapm share/bbtools/bbapm.conf \
 		share/bbtools/bbapm.nobb share/bbtools/bbapm.style \
