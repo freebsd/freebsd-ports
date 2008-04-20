@@ -1,4 +1,3 @@
-bin/cln-config
 include/cln/GV.h
 include/cln/GV_complex.h
 include/cln/GV_integer.h
@@ -14,7 +13,6 @@ include/cln/SV_rational.h
 include/cln/SV_real.h
 include/cln/SV_ringelt.h
 include/cln/V.h
-include/cln/abort.h
 include/cln/cln.h
 include/cln/complex.h
 include/cln/complex_class.h
@@ -25,6 +23,7 @@ include/cln/config.h
 include/cln/dfloat.h
 include/cln/dfloat_class.h
 include/cln/dfloat_io.h
+include/cln/exception.h
 include/cln/ffloat.h
 include/cln/ffloat_class.h
 include/cln/ffloat_io.h
@@ -80,31 +79,31 @@ include/cln/version.h
 lib/libcln.a
 lib/libcln.la
 lib/libcln.so
-lib/libcln.so.4
+lib/libcln.so.5
 libdata/pkgconfig/cln.pc
-share/aclocal/cln.m4
 %%PORTDOCS%%%%DOCSDIR%%/dvi/cln.dvi
 %%PORTDOCS%%%%DOCSDIR%%/html/cln.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_1.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_10.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_11.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_12.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_13.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_14.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_15.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_16.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_3.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_4.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_5.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_6.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_7.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_9.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_abt.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_ovr.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cln_toc.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/dvi
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_11.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_12.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_13.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_14.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_15.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_16.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_9.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_abt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln/cln_fot.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/cln/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/dvi/
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/cln
