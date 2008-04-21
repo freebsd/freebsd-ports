@@ -22,7 +22,7 @@ BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Compress/LZMA_Alone
 MAKEFILE=	makefile.gcc
 PLIST_FILES=	bin/${PORTNAME}
 CFLAGS+=	-D_LZMA_SYSTEM_SIZE_T
-MAKE_ENV+=	CXX="${CXX}"
+MAKE_ENV+=	CXX="${CXX}" CC="${CC}"
 PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt history.txt lzma.txt
 
 post-patch:
