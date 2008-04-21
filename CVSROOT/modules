@@ -9765,6 +9765,7 @@ p5-Data-Throttler	ports/devel/p5-Data-Throttler
 p5-Data-Throttler-Memcached	ports/devel/p5-Data-Throttler-Memcached
 p5-Data-TreeDumper	ports/devel/p5-Data-TreeDumper
 p5-Data-TreeDumper-Renderer-DHTML	ports/www/p5-Data-TreeDumper-Renderer-DHTML
+p5-Data-TreeDumper-Renderer-GTK	ports/devel/p5-Data-TreeDumper-Renderer-GTK
 p5-Data-Types	ports/devel/p5-Data-Types
 p5-Data-UUID	ports/devel/p5-Data-UUID
 p5-Data-Validate	ports/devel/p5-Data-Validate
