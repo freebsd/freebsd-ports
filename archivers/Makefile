@@ -56,6 +56,7 @@
     SUBDIR += linux-ucl
     SUBDIR += linux-upx
     SUBDIR += lzma
+    SUBDIR += lzmautils
     SUBDIR += lzo
     SUBDIR += lzo2
     SUBDIR += lzop
