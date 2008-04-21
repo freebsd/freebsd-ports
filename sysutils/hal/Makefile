@@ -8,7 +8,7 @@
 
 PORTNAME=	hal
 DISTVERSION=	0.5.11rc2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -105,10 +105,12 @@ post-install:
 	${MKDIR} ${PREFIX}/share/hal/fdi/policy/10osvendor
 	${INSTALL_DATA} ${FILESDIR}/10-mouse-sysmouse.fdi \
 	    	${PREFIX}/share/hal/fdi/policy/10osvendor
-	@${SETENV} PKG_PREFIX=${PREFIX} PACKAGE_BUILDING=${PACKAGE_BUILDING} \
+.if !defined(PACKAGE_BUILDING)
+	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if !defined(PACKAGE_BUILDING) && defined(NEEDS_MEDIA)
+.if defined(NEEDS_MEDIA)
 	${MKDIR} /media
+.endif
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
