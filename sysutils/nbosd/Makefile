@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	nbosd
-PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Displays battery life and CPU frequency with an OSD
@@ -19,6 +17,8 @@ BUILD_DEPENDS=	xosd-config:${PORTSDIR}/misc/xosd
 
 PLIST_FILES=	bin/nbosd
 PORTDOCS=	*
+
+MAKE_ENV+=	PREFIX=${PREFIX}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nbosd ${PREFIX}/bin
