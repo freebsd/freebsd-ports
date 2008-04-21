@@ -153,7 +153,7 @@ CONFIGURE_ARGS+=	--disable-aalib --disable-aalibtest
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	Wand.10:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
