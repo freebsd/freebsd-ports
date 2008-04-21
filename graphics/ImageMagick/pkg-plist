@@ -462,7 +462,10 @@ lib/libMagickWand.la
 lib/libMagickWand.so
 lib/libMagickWand.so.1
 libdata/pkgconfig/ImageMagick++.pc
+libdata/pkgconfig/Magick++.pc
 libdata/pkgconfig/ImageMagick.pc
+libdata/pkgconfig/MagickCore.pc
+libdata/pkgconfig/MagickWand.pc
 libdata/pkgconfig/Wand.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Image/Magick.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/.packlist
