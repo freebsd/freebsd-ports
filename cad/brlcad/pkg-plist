@@ -1,6 +1,8 @@
 @unexec rm -f %%LOCALBASE%%/bin/mged.sh
 @exec ln -s %%PREFIX%%/bin/mged.sh %%LOCALBASE%%/bin/mged.sh
 bin/a-d
+bin/adrt_master
+bin/adrt_slave
 bin/alias-pix
 bin/all_sf
 bin/anim_cascade
@@ -33,6 +35,7 @@ bin/bot_shell-vtk
 bin/bottest
 bin/brep_cube
 bin/brep_simple
+bin/breplicator
 bin/brickwall
 bin/brlcad-config
 bin/brlman
@@ -146,6 +149,7 @@ bin/fence
 bin/fhor
 bin/files-tape
 bin/firpass
+bin/fix_polysolids
 bin/g-acad
 bin/g-adrt
 bin/g-dxf
@@ -172,7 +176,7 @@ bin/gif-fb
 bin/gif2fb
 bin/globe
 bin/halftone
-bin/hd
+bin/hex
 bin/i-a
 bin/i-d
 bin/i-f
@@ -181,6 +185,7 @@ bin/ihist
 bin/imgdims
 bin/imod
 bin/indent.sh
+bin/intaval-g.py
 bin/ipuscan
 bin/ipustat
 bin/ir-X
@@ -193,6 +198,7 @@ bin/lgt
 bin/loop
 bin/lowp
 bin/mac-pix
+bin/masonry
 bin/mged
 bin/mged.sh
 bin/mk_bolt
@@ -206,6 +212,7 @@ bin/morphedit.tcl
 bin/msrandom
 bin/mst
 bin/nastran-g
+bin/news2tracker.sh
 bin/nirt
 bin/nmg-bot
 bin/nmg-rib
@@ -305,6 +312,7 @@ bin/query
 bin/rawbot
 bin/remapid
 bin/remrt
+bin/reshoot
 bin/rle-fb
 bin/rle-pix
 bin/room
@@ -363,6 +371,7 @@ bin/testfree
 bin/texturescale
 bin/torii
 bin/tracker.sh
+bin/trimconfig.sh
 bin/ttcp
 bin/tube
 bin/txyz-pl
@@ -372,11 +381,9 @@ bin/u-d
 bin/u-f
 bin/umod
 bin/ustat
-bin/vas4
 bin/vdeck
 bin/vegitation
 bin/viewpoint-g
-bin/wall
 bin/wavelet
 bin/wdb_example
 bin/xyz-pl
@@ -449,11 +456,10 @@ include/brlcad/brlcad_config.h
 include/brlcad/bu.h
 include/brlcad/cmd.h
 include/brlcad/common.h
-include/brlcad/compat4.h
-include/brlcad/conf.h
 include/brlcad/config_win.h
 include/brlcad/db.h
 include/brlcad/db5.h
+include/brlcad/dg.h
 include/brlcad/dm-Null.h
 include/brlcad/dm-X.h
 include/brlcad/dm-glx.h
@@ -471,13 +477,9 @@ include/brlcad/fbio.h
 include/brlcad/fbserv_obj.h
 include/brlcad/libtermio.h
 include/brlcad/light.h
-include/brlcad/machine.h
 include/brlcad/mater.h
 include/brlcad/missing.h
-include/brlcad/msr.h
 include/brlcad/nmg.h
-include/brlcad/noalias-prag.h
-include/brlcad/noalias.h
 include/brlcad/nurb.h
 include/brlcad/opennurbs_ext.h
 include/brlcad/optical.h
@@ -490,14 +492,10 @@ include/brlcad/raytrace.h
 include/brlcad/redblack.h
 include/brlcad/regex.h
 include/brlcad/rtgeom.h
-include/brlcad/rtlist.h
 include/brlcad/rtprivate.h
 include/brlcad/rtserver.h
-include/brlcad/rtstring.h
 include/brlcad/shadefuncs.h
 include/brlcad/shadework.h
-include/brlcad/shortvect-pr.h
-include/brlcad/shortvect.h
 include/brlcad/solid.h
 include/brlcad/spectrum.h
 include/brlcad/spm.h
@@ -518,12 +516,139 @@ include/itclIntDecls.h
 include/itk.h
 include/itkDecls.h
 include/missing.h
+include/openNURBS/opennurbs.h
+include/openNURBS/opennurbs_3dm.h
+include/openNURBS/opennurbs_3dm_attributes.h
+include/openNURBS/opennurbs_3dm_properties.h
+include/openNURBS/opennurbs_3dm_settings.h
+include/openNURBS/opennurbs_annotation.h
+include/openNURBS/opennurbs_annotation2.h
+include/openNURBS/opennurbs_arc.h
+include/openNURBS/opennurbs_arccurve.h
+include/openNURBS/opennurbs_archive.h
+include/openNURBS/opennurbs_array.h
+include/openNURBS/opennurbs_array_defs.h
+include/openNURBS/opennurbs_bezier.h
+include/openNURBS/opennurbs_bitmap.h
+include/openNURBS/opennurbs_bounding_box.h
+include/openNURBS/opennurbs_brep.h
+include/openNURBS/opennurbs_circle.h
+include/openNURBS/opennurbs_color.h
+include/openNURBS/opennurbs_cone.h
+include/openNURBS/opennurbs_crc.h
+include/openNURBS/opennurbs_curve.h
+include/openNURBS/opennurbs_curveonsurface.h
+include/openNURBS/opennurbs_curveproxy.h
+include/openNURBS/opennurbs_cylinder.h
+include/openNURBS/opennurbs_defines.h
+include/openNURBS/opennurbs_detail.h
+include/openNURBS/opennurbs_dimstyle.h
+include/openNURBS/opennurbs_ellipse.h
+include/openNURBS/opennurbs_error.h
+include/openNURBS/opennurbs_evaluate_nurbs.h
+include/openNURBS/opennurbs_extensions.h
+include/openNURBS/opennurbs_font.h
+include/openNURBS/opennurbs_fpoint.h
+include/openNURBS/opennurbs_geometry.h
+include/openNURBS/opennurbs_gl.h
+include/openNURBS/opennurbs_group.h
+include/openNURBS/opennurbs_hatch.h
+include/openNURBS/opennurbs_instance.h
+include/openNURBS/opennurbs_intersect.h
+include/openNURBS/opennurbs_knot.h
+include/openNURBS/opennurbs_layer.h
+include/openNURBS/opennurbs_light.h
+include/openNURBS/opennurbs_line.h
+include/openNURBS/opennurbs_linecurve.h
+include/openNURBS/opennurbs_linestyle.h
+include/openNURBS/opennurbs_linetype.h
+include/openNURBS/opennurbs_mapchan.h
+include/openNURBS/opennurbs_massprop.h
+include/openNURBS/opennurbs_material.h
+include/openNURBS/opennurbs_math.h
+include/openNURBS/opennurbs_matrix.h
+include/openNURBS/opennurbs_memory.h
+include/openNURBS/opennurbs_mesh.h
+include/openNURBS/opennurbs_nurbscurve.h
+include/openNURBS/opennurbs_nurbssurface.h
+include/openNURBS/opennurbs_object.h
+include/openNURBS/opennurbs_object_history.h
+include/openNURBS/opennurbs_objref.h
+include/openNURBS/opennurbs_offsetsurface.h
+include/openNURBS/opennurbs_optimize.h
+include/openNURBS/opennurbs_plane.h
+include/openNURBS/opennurbs_planesurface.h
+include/openNURBS/opennurbs_pluginlist.h
+include/openNURBS/opennurbs_point.h
+include/openNURBS/opennurbs_pointcloud.h
+include/openNURBS/opennurbs_pointgeometry.h
+include/openNURBS/opennurbs_pointgrid.h
+include/openNURBS/opennurbs_polycurve.h
+include/openNURBS/opennurbs_polyline.h
+include/openNURBS/opennurbs_polylinecurve.h
+include/openNURBS/opennurbs_rendering.h
+include/openNURBS/opennurbs_revsurface.h
+include/openNURBS/opennurbs_sphere.h
+include/openNURBS/opennurbs_string.h
+include/openNURBS/opennurbs_sumsurface.h
+include/openNURBS/opennurbs_surface.h
+include/openNURBS/opennurbs_surfaceproxy.h
+include/openNURBS/opennurbs_system.h
+include/openNURBS/opennurbs_textlog.h
+include/openNURBS/opennurbs_texture.h
+include/openNURBS/opennurbs_texture_mapping.h
+include/openNURBS/opennurbs_torus.h
+include/openNURBS/opennurbs_userdata.h
+include/openNURBS/opennurbs_uuid.h
+include/openNURBS/opennurbs_version.h
+include/openNURBS/opennurbs_viewport.h
+include/openNURBS/opennurbs_workspace.h
+include/openNURBS/opennurbs_x.h
+include/openNURBS/opennurbs_xform.h
+include/openNURBS/opennurbs_zlib.h
 include/qray.h
 include/rb_internals.h
+include/tie/camera.h
+include/tie/component.h
+include/tie/cut.h
+include/tie/depth.h
+include/tie/flat.h
+include/tie/flos.h
+include/tie/grid.h
+include/tie/hit.h
+include/tie/normal.h
+include/tie/path.h
+include/tie/phong.h
+include/tie/render.h
+include/tie/render_internal.h
+include/tie/render_util.h
+include/tie/spall.h
+include/tie/surfel.h
+include/tie/texture_blend.h
+include/tie/texture_bump.h
+include/tie/texture_camo.h
+include/tie/texture_checker.h
+include/tie/texture_clouds.h
+include/tie/texture_gradient.h
+include/tie/texture.h
+include/tie/texture_image.h
+include/tie/texture_internal.h
+include/tie/texture_mix.h
+include/tie/texture_perlin.h
+include/tie/texture_stack.h
 include/tie/tie.h
 include/tie/tie_define.h
 include/tie/tie_kdtree.h
 include/tie/tie_struct.h
+include/tie/tienet.h
+include/tie/tienet_define.h
+include/tie/tienet_util.h
+include/tie/tienet_master.h
+include/tie/tienet_slave.h
+include/tie/umath.h
+include/tie/rand.h
+include/tie/adrt.h
+include/tie/adrt_struct.h
 lib/blt2.4/ZoomStack.itcl
 lib/blt2.4/dd_protocols/dd-color.tcl
 lib/blt2.4/dd_protocols/dd-file.tcl
@@ -542,14 +667,14 @@ lib/blt2.4/tclIndex
 lib/blt2.4/treeview.tcl
 lib/blt2.4/treeview.xbm
 lib/blt2.4/treeview_m.xbm
-lib/itcl3.3/itcl.tcl
-lib/itcl3.3/pkgIndex.tcl
-lib/itk3.3/Archetype.itk
-lib/itk3.3/Toplevel.itk
-lib/itk3.3/Widget.itk
-lib/itk3.3/itk.tcl
-lib/itk3.3/pkgIndex.tcl
-lib/itk3.3/tclIndex
+lib/itcl3.4/itcl.tcl
+lib/itcl3.4/pkgIndex.tcl
+lib/itk3.4/Archetype.itk
+lib/itk3.4/Toplevel.itk
+lib/itk3.4/Widget.itk
+lib/itk3.4/itk.tcl
+lib/itk3.4/pkgIndex.tcl
+lib/itk3.4/tclIndex
 lib/iwidgets4.0.1/iwidgets.tcl
 lib/iwidgets4.0.1/license.terms
 lib/iwidgets4.0.1/pkgIndex.tcl
@@ -612,14 +737,14 @@ lib/iwidgets4.0.1/scripts/timefield.itk
 lib/iwidgets4.0.1/scripts/toolbar.itk
 lib/iwidgets4.0.1/scripts/unknownimage.gif
 lib/iwidgets4.0.1/scripts/watch.itk
-lib/libblt.a
-lib/libblt.la
-lib/libblt.so
-lib/libblt.so.0
-lib/libblt2.4.a
-lib/libblt2.4.la
-lib/libblt2.4.so
-lib/libblt2.4.so.0
+lib/libBLT.a
+lib/libBLT.la
+lib/libBLT.so
+lib/libBLT.so.0
+lib/libBLT24.a
+lib/libBLT24.la
+lib/libBLT24.so
+lib/libBLT24.so.0
 lib/libbn.a
 lib/libbn.la
 lib/libbn.so
@@ -648,38 +773,42 @@ lib/libitcl.a
 lib/libitcl.la
 lib/libitcl.so
 lib/libitcl.so.0
-lib/libitcl3.3.a
-lib/libitcl3.3.la
-lib/libitcl3.3.so
-lib/libitcl3.3.so.0
+lib/libitcl3.4.a
+lib/libitcl3.4.la
+lib/libitcl3.4.so
+lib/libitcl3.4.so.0
 lib/libitclstub.a
 lib/libitclstub.la
 lib/libitclstub.so
 lib/libitclstub.so.0
-lib/libitclstub3.3.a
-lib/libitclstub3.3.la
-lib/libitclstub3.3.so
-lib/libitclstub3.3.so.0
+lib/libitclstub3.4.a
+lib/libitclstub3.4.la
+lib/libitclstub3.4.so
+lib/libitclstub3.4.so.0
 lib/libitk.a
 lib/libitk.la
 lib/libitk.so
 lib/libitk.so.0
-lib/libitk3.3.a
-lib/libitk3.3.la
-lib/libitk3.3.so
-lib/libitk3.3.so.0
+lib/libitk3.4.a
+lib/libitk3.4.la
+lib/libitk3.4.so
+lib/libitk3.4.so.0
 lib/libitkstub.a
 lib/libitkstub.la
 lib/libitkstub.so
 lib/libitkstub.so.0
-lib/libitkstub3.3.a
-lib/libitkstub3.3.la
-lib/libitkstub3.3.so
-lib/libitkstub3.3.so.0
+lib/libitkstub3.4.a
+lib/libitkstub3.4.la
+lib/libitkstub3.4.so
+lib/libitkstub3.4.so.0
 lib/libmultispectral.a
 lib/libmultispectral.la
 lib/libmultispectral.so
 lib/libmultispectral.so.19
+lib/libopenNURBS.a
+lib/libopenNURBS.la
+lib/libopenNURBS.so
+lib/libopenNURBS.so.0
 lib/liboptical.a
 lib/liboptical.la
 lib/liboptical.so
@@ -692,6 +821,10 @@ lib/libpkg.a
 lib/libpkg.la
 lib/libpkg.so
 lib/libpkg.so.19
+lib/librender.a
+lib/librender.la
+lib/librender.so
+lib/librender.so.0
 lib/librt.a
 lib/librt.la
 lib/librt.so
@@ -708,10 +841,20 @@ lib/libtermio.a
 lib/libtermio.la
 lib/libtermio.so
 lib/libtermio.so.19
+lib/libtexture.a
+lib/libtexture.la
 lib/libtie.a
 lib/libtie.la
 lib/libtie.so
 lib/libtie.so.0
+lib/libtienet.a
+lib/libtienet.la
+lib/libtienet.so
+lib/libtienet.so.0
+lib/libtieutil.a
+lib/libtieutil.la
+lib/libtieutil.so
+lib/libtieutil.so.0
 lib/libwdb.a
 lib/libwdb.la
 lib/libwdb.so
@@ -763,12 +906,14 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/db/lgt-test.g
 %%DATADIR%%/%%PORTVERSION%%/db/m35.g
 %%DATADIR%%/%%PORTVERSION%%/db/moss.g
+%%DATADIR%%/%%PORTVERSION%%/db/operators.asc2g
 %%DATADIR%%/%%PORTVERSION%%/db/operators.g
 %%DATADIR%%/%%PORTVERSION%%/db/pic.g
 %%DATADIR%%/%%PORTVERSION%%/db/prim.g
 %%DATADIR%%/%%PORTVERSION%%/db/sphflake.g
 %%DATADIR%%/%%PORTVERSION%%/db/star.g
 %%DATADIR%%/%%PORTVERSION%%/db/tank_car.g
+%%DATADIR%%/%%PORTVERSION%%/db/terra.dsp
 %%DATADIR%%/%%PORTVERSION%%/db/terra.g
 %%DATADIR%%/%%PORTVERSION%%/db/toyjeep.g
 %%DATADIR%%/%%PORTVERSION%%/db/truck.g
@@ -776,6 +921,7 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/db/woodsman.g
 %%DATADIR%%/%%PORTVERSION%%/db/world.g
 %%DATADIR%%/%%PORTVERSION%%/db/xmp.g
+%%DATADIR%%/%%PORTVERSION%%/doc/BRL-CAD.bib
 %%DATADIR%%/%%PORTVERSION%%/doc/IDEAS
 %%DATADIR%%/%%PORTVERSION%%/doc/PROJECTS
 %%DATADIR%%/%%PORTVERSION%%/doc/README.AIX
@@ -789,7 +935,11 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/doc/anim.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/archer_ack.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/benchmark.tr
+%%DATADIR%%/%%PORTVERSION%%/doc/book/VolumeII.xml
+%%DATADIR%%/%%PORTVERSION%%/doc/book/VolumeIV.xml
+%%DATADIR%%/%%PORTVERSION%%/doc/brep.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/cvs.txt
+%%DATADIR%%/%%PORTVERSION%%/doc/deprecation.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/description.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/ged.tr
 %%DATADIR%%/%%PORTVERSION%%/doc/history.txt
@@ -954,6 +1104,7 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/cadwidgets/contents.html
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/cadwidgets/index.html
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/cadwidgets/skeleton.html
+%%DATADIR%%/%%PORTVERSION%%/html/manuals/eagleCAD.bmp
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/eagleCAD.gif
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/index.html
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/libbu/cmdhist_obj.html
@@ -1137,6 +1288,7 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Arb7EditFrame.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Arb8EditFrame.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/Archer.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/ArcherCore.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/BotEditFrame.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/CombEditFrame.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/EhyEditFrame.tcl
@@ -1168,6 +1320,7 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/closeall.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/combination.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/command.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/compSelect.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/configure.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_copy.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/edit_cut.png
@@ -1185,6 +1338,7 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/folder_open.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/folder_open_small.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/folder_open_small_disabled.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/measure.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/open.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/option_text.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/option_tree.png
@@ -1204,6 +1358,7 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_half.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_list.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_other.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_part.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_pipe.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_rhc.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Crystal/primitive_rpc.png
@@ -1287,6 +1442,8 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/bug.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/closeall.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/combination.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/command.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/compSelect.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/configure.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/edit_copy.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/edit_cut.png
@@ -1297,9 +1454,13 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/edit_translate.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/file_new.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/file_text_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/file_text_small_disabled.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/find.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/folder_closed_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/folder_closed_small_disabled.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/folder_open_small.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/folder_open_small_disabled.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/measure.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/open.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/option_text.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/option_tree.png
@@ -1319,6 +1480,7 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_half.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_list.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_other.png
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_part.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_pipe.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_rhc.png
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/archer/images/Themes/Windows/primitive_rpc.png
@@ -1646,6 +1808,7 @@ libdata/pkgconfig/wdb.pc
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html
 @dirrm %%DATADIR%%/%%PORTVERSION%%/doc/legal
+@dirrm %%DATADIR%%/%%PORTVERSION%%/doc/book
 @dirrm %%DATADIR%%/%%PORTVERSION%%/doc
 @dirrm %%DATADIR%%/%%PORTVERSION%%/db
 @dirrm %%DATADIR%%/%%PORTVERSION%%/awf
@@ -1659,12 +1822,13 @@ libdata/pkgconfig/wdb.pc
 @dirrm man
 @dirrm lib/iwidgets4.0.1/scripts
 @dirrm lib/iwidgets4.0.1
-@dirrm lib/itk3.3
-@dirrm lib/itcl3.3
+@dirrm lib/itk3.4
+@dirrm lib/itcl3.4
 @dirrm lib/blt2.4/dd_protocols
 @dirrm lib/blt2.4
 @dirrm lib
 @dirrm include/tie
+@dirrm include/openNURBS
 @dirrm include/brlcad
 @dirrm include
 @dirrm bin

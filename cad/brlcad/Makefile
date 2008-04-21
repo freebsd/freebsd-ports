@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	brlcad
-PORTVERSION=	7.10.4
-PORTREVISION=	4
+PORTVERSION=	7.12.0
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
@@ -38,7 +37,8 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-adrt-build \
 	--with-libs="-lpng ${EXTRA_LIBS}" --program-transform-name=""		\
 	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/libs	\
-	--disable-jove-build
+	--disable-jove-build							\
+	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 MAN1=	alias-pix.1 all_sf.1 anim_cascade.1 anim_fly.1 anim_hardtrack.1		\
@@ -58,7 +58,7 @@ MAN1=	alias-pix.1 all_sf.1 anim_cascade.1 anim_fly.1 anim_hardtrack.1		\
 	fbline.1 fbpoint.1 fbscanplot.1 fbserv.1 fbstretch.1 fbzoom.1		\
 	firpass.1 g-acad.1 g-dxf.1 g-euclid.1 g-iges.1 g-nff.1 g-nmg.1 g-obj.1	\
 	g-shell.rect.1 g-stl.1 g-tankill.1 g-var.1 g-vrml.1 g-x3d.1 g2asc.1	\
-	g_diff.1 g_lint.1 g_qa.1 gencolor.1 gif-fb.1 gif2fb.1 halftone.1 hd.1	\
+	g_diff.1 g_lint.1 g_qa.1 gencolor.1 gif-fb.1 gif2fb.1 halftone.1 hex.1	\
 	iges-g.1 imgdims.1 ir-X.1 ir-sgi.1 irdisp.1 lgt.1 loop.1 mac-pix.1	\
 	mged.1 mk_bolt.1 mk_gastank.1 mk_handle.1 mk_window.1 mk_winfrm.1	\
 	mk_wire.1 morphedit.1 nastran-g.1 nirt.1 nmg-bot.1 nmg-rib.1		\
@@ -70,22 +70,22 @@ MAN1=	alias-pix.1 all_sf.1 anim_cascade.1 anim_fly.1 anim_hardtrack.1		\
 	pixhist3d-pl.1 pixhist3d.1 pixinterp2x.1 pixmatte.1 pixmerge.1		\
 	pixmorph.1 pixrect.1 pixrot.1 pixsaturate.1 pixscale.1 pixshrink.1	\
 	pixstat.1 pixsubst.1 pixtile.1 pixuntile.1 pl-X.1 pl-asc.1 pl-fb.1	\
-	pl-hpgl.1 pl-pl.1 pl-ps.1 pl-sgi.1 pl-starbase.1 pl-tek.1 plcolor.1	\
+	pl-hpgl.1 pl-pl.1 pl-ps.1 pl-sgi.1 pl-tek.1 plcolor.1			\
 	pldebug.1 plgetframe.1 plline2.1 plrot.1 ply-g.1 png-bw.1 png-fb.1	\
 	png-pix.1 png_info.1 polar-fb.1 poly-bot.1 pp-fb.1 proe-g.1 query.1	\
-	remrt.1 rle-fb.1 rle-pix.1 rpatch.1 rt.1 rt_bot_faces.1 rtarea.1	\
-	rtcheck.1 rtedge.1 rtg3.1 rthide.1 rtpp.1 rtrange.1 rtray.1 rtregis.1	\
-	rtscale.1 rtshot.1 rttherm.1 rtwalk.1 rtweight.1 rtxray.1 scriptsort.1	\
-	secpass.1 shapefact.1 showshot.1 showtherm.1 ssamp-bw.1 stl-g.1		\
-	sun-pix.1 tabinterp.1 tabsub.1 tankill-g.1 terrain.1 vas4.1 vdeck.1	\
-	viewpoint-g.1 wavelet.1
+	remapid.1 remrt.1 reshoot.1 rle-fb.1 rle-pix.1 rpatch.1 rt.1 		\
+	rt_bot_faces.1 rtarea.1 rtcheck.1 rtedge.1 rtg3.1 rthide.1 rtpp.1 	\
+	rtrange.1 rtray.1 rtregis.1 rtscale.1 rtshot.1 rttherm.1 rtwalk.1	\
+	rtweight.1 rtxray.1 scriptsort.1 secpass.1 shapefact.1 showshot.1	\
+	showtherm.1 ssamp-bw.1 stl-g.1 sun-pix.1 tabinterp.1 tabsub.1		\
+	tankill-g.1 terrain.1 vdeck.1 viewpoint-g.1 wavelet.1
 
 MAN3=	htond.3 libcursor.3 liborle.3 librt.3 redblack.3 libbu.3 libfb.3	\
-	libplot3.3 libwdb.3
+	libplot3.3 libwdb.3 RegisterC.3 Stack.3
 
 MAN5=	bw.5 cmap.5 pix.5 plot3.5
 
-MANN=	Archetype.n Toplevel.n Widget.n body.n class.n code.n	\
+MANN=	Archetype.n Toplevel.n Widget.n body.n class.n code.n			\
 	configbody.n delete.n ensemble.n find.n is.n itcl.n itclvars.n itk.n	\
 	itkvars.n iwidgets_buttonbox.n iwidgets_calendar.n			\
 	iwidgets_canvasprintbox.n iwidgets_canvasprintdialog.n			\
@@ -120,7 +120,7 @@ CONFIGURE_ARGS+=	--disable-debug --enable-optimized
 .endif
 
 post-patch:
-	${REINPLACE_CMD} "s+-exact Tcl 8\.5a6+Tcl 8.5+" ${WRKSRC}/src/other/tcl/library/init.tcl
+	${REINPLACE_CMD} "s+-exact Tcl 8\.5\.1+Tcl 8.5+" ${WRKSRC}/src/other/tcl/library/init.tcl
 
 pre-install:
 	${CP} ${FILESDIR}/mged.sh ${WRKSRC}
