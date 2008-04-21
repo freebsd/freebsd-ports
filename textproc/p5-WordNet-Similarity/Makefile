@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,7 +33,8 @@ MAN1=		rawtextFreq.pl.1 \
 		treebankFreq.pl.1 \
 		wnDepths.pl.1 \
 		semCorRawFreq.pl.1 \
-		semCorFreq.pl.1
+		semCorFreq.pl.1 \
+		similarity_server.pl.1
 MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		WordNet::Similarity::hso.3 WordNet::Similarity::vector.3 \
 		WordNet::Similarity::random.3 WordNet::Similarity::res.3 \
@@ -46,7 +47,8 @@ MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		WordNet::Similarity::ICFinder.3 \
 		WordNet::Similarity::PathFinder.3 \
 		WordNet::Tools.3 \
-		vectorFile.3 stem.3 get_wn_info.3
+		WordNet::get_wn_info.3 WordNet::stem.3 \
+		WordNet::vectorFile.3
 
 post-patch:
 	@${FIND} ${WRKSRC}/build -type f| ${XARGS} ${REINPLACE_CMD} -e \
