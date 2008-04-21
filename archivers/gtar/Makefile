@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	g
 
 MAINTAINER=	naddy@FreeBSD.org
-COMMENT=	GNU version of the traditional tar archiver
+COMMENT=	GNU version of the traditional tape archiver
+
+# Actually we need lzma(1), but not the one in archivers/lzma.
+RUN_DEPENDS=	${LOCALBASE}/bin/lzcat:${PORTSDIR}/archivers/lzmautils
 
 INFO=		tar
 
@@ -25,9 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib ${LDSTATIC}' \
 		DEFAULT_ARCHIVE=/dev/sa0 \
 		DEFAULT_RMT_COMMAND=/etc/rmt
-# GNU assumes that openat() implies the existence of fdopendir(),
-# which does not hold true on FreeBSD 8.
-CONFIGURE_ENV+=	ac_cv_func_openat=no
 
 .if defined(WANT_STATIC)
 LDSTATIC=	-static

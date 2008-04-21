@@ -23,13 +23,11 @@ libexec/grmt
 %%NLS%%share/locale/ms/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/tar.mo
-%%NLS%%share/locale/no/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/tar.mo
-%%NLS%%share/locale/rw/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tar.mo
@@ -37,7 +35,6 @@ libexec/grmt
 %%NLS%%share/locale/uk/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/tar.mo
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/tar.mo
 %%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ky
