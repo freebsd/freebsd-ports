@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.5.3.8
+PORTVERSION=	1.5.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -46,7 +46,6 @@ MAN1=		git-add.1 \
 		git-commit-tree.1 \
 		git-commit.1 \
 		git-config.1 \
-		git-convert-objects.1 \
 		git-count-objects.1 \
 		git-cvsexportcommit.1 \
 		git-cvsimport.1 \
@@ -57,6 +56,7 @@ MAN1=		git-add.1 \
 		git-diff-index.1 \
 		git-diff-tree.1 \
 		git-diff.1 \
+		git-fast-export.1 \
 		git-fast-import.1 \
 		git-fetch-pack.1 \
 		git-fetch.1 \
@@ -70,6 +70,7 @@ MAN1=		git-add.1 \
 		git-get-tar-commit-id.1 \
 		git-grep.1 \
 		git-hash-object.1 \
+		git-help.1 \
 		git-http-fetch.1 \
 		git-http-push.1 \
 		git-imap-send.1 \
@@ -77,7 +78,6 @@ MAN1=		git-add.1 \
 		git-init-db.1 \
 		git-init.1 \
 		git-instaweb.1 \
-		git-local-fetch.1 \
 		git-log.1 \
 		git-lost-found.1 \
 		git-ls-files.1 \
@@ -122,7 +122,6 @@ MAN1=		git-add.1 \
 		git-rev-parse.1 \
 		git-revert.1 \
 		git-rm.1 \
-		git-runstatus.1 \
 		git-send-email.1 \
 		git-send-pack.1 \
 		git-sh-setup.1 \
@@ -132,14 +131,11 @@ MAN1=		git-add.1 \
 		git-show-index.1 \
 		git-show-ref.1 \
 		git-show.1 \
-		git-ssh-fetch.1 \
-		git-ssh-upload.1 \
 		git-stash.1 \
 		git-status.1 \
 		git-stripspace.1 \
 		git-submodule.1 \
 		git-svn.1 \
-		git-svnimport.1 \
 		git-symbolic-ref.1 \
 		git-tag.1 \
 		git-tar-tree.1 \
@@ -153,10 +149,12 @@ MAN1=		git-add.1 \
 		git-var.1 \
 		git-verify-pack.1 \
 		git-verify-tag.1 \
+		git-web--browse.1 \
 		git-whatchanged.1 \
 		git-write-tree.1
 MAN3=		Git.3
 MAN5=		gitattributes.5 \
+		gitcli.5 \
 		gitignore.5 \
 		gitmodules.5
 MAN7=		git.7
