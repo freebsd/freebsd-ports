@@ -27,6 +27,15 @@ bin/clive
 %%PYTHON_SITELIBDIR%%/clive/main.py
 %%PYTHON_SITELIBDIR%%/clive/main.pyc
 %%PYTHON_SITELIBDIR%%/clive/main.pyo
+%%PYTHON_SITELIBDIR%%/clive/newt/__init__.py
+%%PYTHON_SITELIBDIR%%/clive/newt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/clive/newt/__init__.pyo
+%%OPTRSSATOM%%%%PYTHON_SITELIBDIR%%/clive/newt/_snackmodule.a
+%%OPTRSSATOM%%%%PYTHON_SITELIBDIR%%/clive/newt/_snackmodule.la
+%%OPTRSSATOM%%%%PYTHON_SITELIBDIR%%/clive/newt/_snackmodule.so
+%%PYTHON_SITELIBDIR%%/clive/newt/snack.py
+%%PYTHON_SITELIBDIR%%/clive/newt/snack.pyc
+%%PYTHON_SITELIBDIR%%/clive/newt/snack.pyo
 %%PYTHON_SITELIBDIR%%/clive/nomad.py
 %%PYTHON_SITELIBDIR%%/clive/nomad.pyc
 %%PYTHON_SITELIBDIR%%/clive/nomad.pyo
@@ -67,5 +76,6 @@ bin/clive
 %%PYTHON_SITELIBDIR%%/clive/urlgrabber/sslfactory.pyc
 %%PYTHON_SITELIBDIR%%/clive/urlgrabber/sslfactory.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/clive/urlgrabber
+@dirrm %%PYTHON_SITELIBDIR%%/clive/newt
 @dirrm %%PYTHON_SITELIBDIR%%/clive/feedparser
 @dirrm %%PYTHON_SITELIBDIR%%/clive
