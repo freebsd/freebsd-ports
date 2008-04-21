@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libamrnb
-PORTVERSION=	7.0.0.0
+PORTVERSION=	7.0.0.1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.penguin.cz/pub/users/utx/amr/ \
