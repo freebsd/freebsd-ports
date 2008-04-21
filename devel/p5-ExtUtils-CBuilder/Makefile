@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ExtUtils-CBuilder
-PORTVERSION=	0.22
-PORTREVISION=	1
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +19,7 @@ PERL_CONFIGURE=	yes
 MAN3=		ExtUtils::CBuilder.3 ExtUtils::CBuilder::Platform::Windows.3
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Changes
+PORTDOCS=	Changes README
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
