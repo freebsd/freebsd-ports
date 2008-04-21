@@ -23,4 +23,7 @@ NO_INSTALL_MANPAGES=	yes
 WRKSRC=		${WRKDIR}/XFrisk
 USE_GMAKE=	yes
 
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 .include <bsd.port.mk>
