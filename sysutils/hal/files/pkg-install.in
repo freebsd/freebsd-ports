@@ -1,8 +1,7 @@
 #!/bin/sh
 
-[ "$2" != POST-INSTALL ] && exit 0
-
-if [ -z "${PACKAGE_BUILDING}" ]; then
+case $2 in
+POST-INSTALL)
 	USER=haldaemon
 	GROUP=${USER}
 	UID=560
@@ -36,14 +35,16 @@ if [ -z "${PACKAGE_BUILDING}" ]; then
 	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/run/hald
 	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/cache/hald
 	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/lib/hal
-fi
 
-for pair in %%RC_FILES%%; do
-	file=`echo $pair | cut -f 1 -d :`
-	destdir=`echo $pair | cut -f 2 -d :`
+	for pair in %%RC_FILES%%; do
+		file=`echo $pair | cut -f 1 -d :`
+		destdir=`echo $pair | cut -f 2 -d :`
 
-	if [ ! -f $destdir/$file ]; then
-	    	mkdir -p $destdir
-		cp -p %%DATADIR%%/dist/$file $destdir/$file
-	fi
-done
+		if [ ! -f $destdir/$file ]; then
+	    		mkdir -p $destdir
+			cp -p %%DATADIR%%/dist/$file $destdir/$file
+		fi
+	done
+	exit 0
+	;;
+esac
