@@ -7440,6 +7440,7 @@ lynx-current	ports/www/lynx-current
 lyx		ports/print/lyx
 lyx15		ports/print/lyx15
 lzma		ports/archivers/lzma
+lzmautils	ports/archivers/lzmautils
 lzo		ports/archivers/lzo
 lzo2		ports/archivers/lzo2
 lzop		ports/archivers/lzop
