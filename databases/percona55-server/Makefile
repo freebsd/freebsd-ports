@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.23
+PORTVERSION=	5.1.24
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -129,7 +129,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/extra/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
 	@${REINPLACE_CMD} -e "/^AM_CXXFLAGS/s|=.*|+= \$$(NDB_CXXFLAGS)|" `${FIND} ${WRKSRC}/storage/ndb -name Makefile.in`
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
@@ -164,7 +163,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = mysql_fix_privilege_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g;s|man8_MANS =|man8_MANS = ${MAN8}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-exec-am: install-binPROGRAMS|install-exec-am:|g" ${WRKSRC}/extra/Makefile.in
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/support-files/mysql.m4 ${PREFIX}/share/aclocal/
