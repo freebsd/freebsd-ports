@@ -61,10 +61,6 @@ bin/resolveip
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndb_cluster_connection.hpp
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndb_opt_defaults.h
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndberror.h
-lib/mysql/ha_example.a
-lib/mysql/ha_example.la
-lib/mysql/ha_example.so
-lib/mysql/ha_example.so.0
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmyisam.a
@@ -76,10 +72,15 @@ lib/mysql/libmysys.a
 %%NDB%%lib/mysql/libndbclient.so
 %%NDB%%lib/mysql/libndbclient.so.3
 lib/mysql/libvio.a
+lib/mysql/plugin/ha_example.a
+lib/mysql/plugin/ha_example.la
+lib/mysql/plugin/ha_example.so
+lib/mysql/plugin/ha_example.so.0
 libexec/mysqld
 %%NDB%%libexec/ndb_cpcd
 %%NDB%%libexec/ndb_mgmd
 %%NDB%%libexec/ndbd
+%%DATADIR%%/ChangeLog
 %%DATADIR%%/binary-configure
 %%DATADIR%%/charsets/Index.xml
 %%DATADIR%%/charsets/README
@@ -107,6 +108,9 @@ libexec/mysqld
 %%DATADIR%%/charsets/macce.xml
 %%DATADIR%%/charsets/macroman.xml
 %%DATADIR%%/charsets/swe7.xml
+%%DATADIR%%/config.huge.ini
+%%DATADIR%%/config.medium.ini
+%%DATADIR%%/config.small.ini
 %%DATADIR%%/czech/errmsg.sys
 %%DATADIR%%/danish/errmsg.sys
 %%DATADIR%%/dutch/errmsg.sys
