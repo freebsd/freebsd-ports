@@ -1,16 +1,19 @@
---- ./SConstruct.orig	Sun Sep  2 16:44:44 2007
-+++ ./SConstruct	Sun Sep  9 03:42:09 2007
-@@ -49,6 +49,9 @@
+--- SConstruct.orig	2008-04-13 19:55:45.000000000 -0500
++++ SConstruct	2008-04-13 19:56:57.000000000 -0500
+@@ -48,8 +48,10 @@
+ 
+ 
  opts = DefineOptions("build_options.py", ARGUMENTS)
- env = Environment(ENV = {'PATH':os.environ['PATH']}) # for an unknown reason Environment(options=opts) doesnt work well
- opts.Update(env) # Needed as Environment(options=opts) doesnt seem to work
+-env = Environment(ENV = {'PATH':os.environ['PATH']}) # for an unknown reason Environment(options=opts) doesnt work well
+-opts.Update(env) # Needed as Environment(options=opts) doesnt seem to work
++env = Environment(ENV = os.environ, options = opts)
 +env['CCFLAGS'] = Split(ccflags) + Split(env['CCFLAGS'])
 +env['CPPPATH'] = Split(env['CPPPATH'])
 +env['LIBPATH'] = Split(env['LIBPATH'])
  Help(opts.GenerateHelpText(env))
  mingw = env.Copy()
  optionsChanged = True
-@@ -142,6 +145,10 @@
+@@ -143,6 +145,10 @@
        'LIBS': ['GL'], 
        'LIBPATH': ['/usr/lib', '/usr/X11R6/lib'],
        'CPPPATH': ['/usr/include']}
@@ -21,12 +24,20 @@
    opengl['cygwin'] = {
        'LIBS': ['opengl3']}
    opengl['darwin'] = {
-@@ -150,6 +157,8 @@
-   platform = sys.platform
-   if sys.platform[:5] == 'linux':
-      platform = 'linux'
-+  if sys.platform[:7] == 'freebsd':
-+     platform = 'freebsd'
-   glconfig = opengl.get(platform, {})
+@@ -154,6 +160,8 @@
+   else:
+      if sys.platform[:5] == 'linux':
+         platform = 'linux'
++     if sys.platform[:7] == 'freebsd':
++        platform = 'freebsd'
+      glconfig = opengl.get(platform, {})
    for key in glconfig:
        if key != 'LIBS':
+@@ -283,7 +291,6 @@
+ 
+ # define the different build environments (variants)
+ release = env.Copy()
+-release.Append(CCFLAGS = Split('-O2 -pipe -fomit-frame-pointer -fexpensive-optimizations -ffast-math'))
+ 
+ if mingw['extrapath']:
+   mingw.Tool('crossmingw', toolpath = ['tools/scons/'])

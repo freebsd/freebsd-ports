@@ -42,29 +42,63 @@ bin/boswars
 %%DATADIR%%/campaigns/tutorial/level02.sms
 %%DATADIR%%/campaigns/tutorial/level03.smp
 %%DATADIR%%/campaigns/tutorial/level03.sms
-%%DATADIR%%/graphics/elites/missile/grenade.png
-%%DATADIR%%/graphics/elites/missile/nuke.png
-%%DATADIR%%/graphics/elites/missile/rocket.png
-%%DATADIR%%/graphics/elites/ui/elites_claw.png
-%%DATADIR%%/graphics/elites/ui/ui_1024_bpanel.png
-%%DATADIR%%/graphics/elites/ui/ui_1280_bpanel.png
-%%DATADIR%%/graphics/elites/ui/ui_1600_bpanel.png
-%%DATADIR%%/graphics/elites/ui/ui_640_bpanel.png
-%%DATADIR%%/graphics/elites/ui/ui_800_bpanel.png
-%%DATADIR%%/graphics/elites/ui/ui_info.png
-%%DATADIR%%/graphics/elites/ui/ui_minimap.png
-%%DATADIR%%/graphics/elites/ui/ui_res_icons.png
-%%DATADIR%%/graphics/elites/units/engineer_icons.png
-%%DATADIR%%/graphics/general/arrow_E.png
-%%DATADIR%%/graphics/general/arrow_N.png
-%%DATADIR%%/graphics/general/arrow_NE.png
-%%DATADIR%%/graphics/general/arrow_NW.png
-%%DATADIR%%/graphics/general/arrow_S.png
-%%DATADIR%%/graphics/general/arrow_SE.png
-%%DATADIR%%/graphics/general/arrow_SW.png
-%%DATADIR%%/graphics/general/arrow_W.png
+%%DATADIR%%/graphics/explosions/expl_160x128x1.png
+%%DATADIR%%/graphics/explosions/expl_288x288x1.png
+%%DATADIR%%/graphics/explosions/expl_64x64x1.png
+%%DATADIR%%/graphics/explosions/explosion.png
+%%DATADIR%%/graphics/explosions/flash.png
+%%DATADIR%%/graphics/explosions/large01.png
+%%DATADIR%%/graphics/explosions/large02.png
+%%DATADIR%%/graphics/explosions/large03.png
+%%DATADIR%%/graphics/explosions/large04.png
+%%DATADIR%%/graphics/explosions/large05.png
+%%DATADIR%%/graphics/explosions/large06.png
+%%DATADIR%%/graphics/explosions/large07.png
+%%DATADIR%%/graphics/explosions/large08.png
+%%DATADIR%%/graphics/explosions/large09.png
+%%DATADIR%%/graphics/explosions/medium01.png
+%%DATADIR%%/graphics/explosions/medium02.png
+%%DATADIR%%/graphics/explosions/medium03.png
+%%DATADIR%%/graphics/explosions/medium04.png
+%%DATADIR%%/graphics/explosions/medium05.png
+%%DATADIR%%/graphics/explosions/medium06.png
+%%DATADIR%%/graphics/explosions/medium07.png
+%%DATADIR%%/graphics/explosions/medium08.png
+%%DATADIR%%/graphics/explosions/medium09.png
+%%DATADIR%%/graphics/explosions/small01.png
+%%DATADIR%%/graphics/explosions/small02.png
+%%DATADIR%%/graphics/explosions/small03.png
+%%DATADIR%%/graphics/explosions/small04.png
+%%DATADIR%%/graphics/explosions/small05.png
+%%DATADIR%%/graphics/explosions/small06.png
+%%DATADIR%%/graphics/explosions/small07.png
+%%DATADIR%%/graphics/explosions/small08.png
+%%DATADIR%%/graphics/explosions/small09.png
+%%DATADIR%%/graphics/explosions/smokedark04.png
+%%DATADIR%%/graphics/explosions/smokedark08.png
+%%DATADIR%%/graphics/explosions/smokedark12.png
+%%DATADIR%%/graphics/explosions/smokedark16.png
+%%DATADIR%%/graphics/explosions/smokedark20.png
+%%DATADIR%%/graphics/explosions/smokedark24.png
+%%DATADIR%%/graphics/explosions/smokedark28.png
+%%DATADIR%%/graphics/explosions/smokedark32.png
+%%DATADIR%%/graphics/explosions/smokedark36.png
+%%DATADIR%%/graphics/explosions/smokedark40.png
+%%DATADIR%%/graphics/explosions/smokedark44.png
+%%DATADIR%%/graphics/explosions/smokedark48.png
+%%DATADIR%%/graphics/explosions/smokelight04.png
+%%DATADIR%%/graphics/explosions/smokelight08.png
+%%DATADIR%%/graphics/explosions/smokelight12.png
+%%DATADIR%%/graphics/explosions/smokelight16.png
+%%DATADIR%%/graphics/explosions/smokelight20.png
+%%DATADIR%%/graphics/explosions/smokelight24.png
+%%DATADIR%%/graphics/explosions/smokelight28.png
+%%DATADIR%%/graphics/explosions/smokelight32.png
+%%DATADIR%%/graphics/explosions/smokelight36.png
+%%DATADIR%%/graphics/explosions/smokelight40.png
+%%DATADIR%%/graphics/explosions/smokelight44.png
+%%DATADIR%%/graphics/explosions/smokelight48.png
 %%DATADIR%%/graphics/general/commands.png
-%%DATADIR%%/graphics/general/cross.png
 %%DATADIR%%/graphics/general/dejavusans10.png
 %%DATADIR%%/graphics/general/dejavusans12.png
 %%DATADIR%%/graphics/general/dejavusans14.png
@@ -73,20 +107,13 @@ bin/boswars
 %%DATADIR%%/graphics/general/dejavusansbold14.png
 %%DATADIR%%/graphics/general/fog.png
 %%DATADIR%%/graphics/general/freesansbold14.png
-%%DATADIR%%/graphics/general/green.png
 %%DATADIR%%/graphics/general/health2.png
-%%DATADIR%%/graphics/general/magnifying_glass.png
 %%DATADIR%%/graphics/general/mana2.png
-%%DATADIR%%/graphics/general/red.png
-%%DATADIR%%/graphics/general/small_green_cross.png
-%%DATADIR%%/graphics/general/ui_buttons.png
-%%DATADIR%%/graphics/general/yellow.png
 %%DATADIR%%/graphics/missiles/big_fire.png
-%%DATADIR%%/graphics/missiles/expl_160x128x1.png
-%%DATADIR%%/graphics/missiles/expl_288x288x1.png
-%%DATADIR%%/graphics/missiles/expl_64x64x1.png
-%%DATADIR%%/graphics/missiles/explosion.png
 %%DATADIR%%/graphics/missiles/green_cross.png
+%%DATADIR%%/graphics/missiles/grenade.png
+%%DATADIR%%/graphics/missiles/nuke.png
+%%DATADIR%%/graphics/missiles/rocket.png
 %%DATADIR%%/graphics/missiles/small_fire.png
 %%DATADIR%%/graphics/neutral/destroyed_site.png
 %%DATADIR%%/graphics/neutral/small_destroyed_site.png
@@ -95,9 +122,33 @@ bin/boswars
 %%DATADIR%%/graphics/screens/menu.png
 %%DATADIR%%/graphics/screens/victory.png
 %%DATADIR%%/graphics/tiles/desert.png
-%%DATADIR%%/graphics/tiles/winter.png
+%%DATADIR%%/graphics/ui/cursor-info.png
+%%DATADIR%%/graphics/ui/cursors/arrow_E.png
+%%DATADIR%%/graphics/ui/cursors/arrow_N.png
+%%DATADIR%%/graphics/ui/cursors/arrow_NE.png
+%%DATADIR%%/graphics/ui/cursors/arrow_NW.png
+%%DATADIR%%/graphics/ui/cursors/arrow_S.png
+%%DATADIR%%/graphics/ui/cursors/arrow_SE.png
+%%DATADIR%%/graphics/ui/cursors/arrow_SW.png
+%%DATADIR%%/graphics/ui/cursors/arrow_W.png
+%%DATADIR%%/graphics/ui/cursors/cross.png
+%%DATADIR%%/graphics/ui/cursors/green.png
+%%DATADIR%%/graphics/ui/cursors/red.png
+%%DATADIR%%/graphics/ui/cursors/small_green_cross.png
+%%DATADIR%%/graphics/ui/cursors/yellow.png
+%%DATADIR%%/graphics/ui/elites_claw.png
 %%DATADIR%%/graphics/ui/rosace1.png
+%%DATADIR%%/graphics/ui/ui_1024_bpanel.png
+%%DATADIR%%/graphics/ui/ui_1280_bpanel.png
+%%DATADIR%%/graphics/ui/ui_1600_bpanel.png
+%%DATADIR%%/graphics/ui/ui_640_bpanel.png
+%%DATADIR%%/graphics/ui/ui_800_bpanel.png
+%%DATADIR%%/graphics/ui/ui_info.png
+%%DATADIR%%/graphics/ui/ui_minimap.png
+%%DATADIR%%/graphics/ui/ui_res_icons.png
 %%DATADIR%%/graphics/ui/x_startpoint.png
+%%DATADIR%%/intro/boswars_intro.ogg
+%%DATADIR%%/intro/logo_boswars.png
 %%DATADIR%%/languages/bg.po
 %%DATADIR%%/languages/bos-cs.po
 %%DATADIR%%/languages/bos-da.po
@@ -105,7 +156,9 @@ bin/boswars
 %%DATADIR%%/languages/bos-es.po
 %%DATADIR%%/languages/bos-fi.po
 %%DATADIR%%/languages/bos-fr.po
+%%DATADIR%%/languages/bos-nl.po
 %%DATADIR%%/languages/bos-pt.po
+%%DATADIR%%/languages/bos-sv.po
 %%DATADIR%%/languages/bos-tr.po
 %%DATADIR%%/languages/bos.pot
 %%DATADIR%%/languages/cs.po
@@ -117,30 +170,12 @@ bin/boswars
 %%DATADIR%%/languages/fr.po
 %%DATADIR%%/languages/genpot.sh
 %%DATADIR%%/languages/makesame.py
+%%DATADIR%%/languages/nl.po
 %%DATADIR%%/languages/pl.po
 %%DATADIR%%/languages/pt.po
+%%DATADIR%%/languages/sv.po
 %%DATADIR%%/languages/tr.po
 %%DATADIR%%/languages/updatepo.sh
-%%DATADIR%%/maps/C1_M10_Fort_Savoy.smp
-%%DATADIR%%/maps/C1_M10_Fort_Savoy.sms
-%%DATADIR%%/maps/C1_M1_the_river.smp
-%%DATADIR%%/maps/C1_M1_the_river.sms
-%%DATADIR%%/maps/C1_M2_green_valley.smp
-%%DATADIR%%/maps/C1_M2_green_valley.sms
-%%DATADIR%%/maps/C1_M3_Buffy_forrest.smp
-%%DATADIR%%/maps/C1_M3_Buffy_forrest.sms
-%%DATADIR%%/maps/C1_M4_shield_of_wasteland.smp
-%%DATADIR%%/maps/C1_M4_shield_of_wasteland.sms
-%%DATADIR%%/maps/C1_M5_Rochebrune.smp
-%%DATADIR%%/maps/C1_M5_Rochebrune.sms
-%%DATADIR%%/maps/C1_M6_Aiglier.smp
-%%DATADIR%%/maps/C1_M6_Aiglier.sms
-%%DATADIR%%/maps/C1_M7_Bellegarde.smp
-%%DATADIR%%/maps/C1_M7_Bellegarde.sms
-%%DATADIR%%/maps/C1_M8_Savoy_steps.smp
-%%DATADIR%%/maps/C1_M8_Savoy_steps.sms
-%%DATADIR%%/maps/C1_M9_Savoy_lake.smp
-%%DATADIR%%/maps/C1_M9_Savoy_lake.sms
 %%DATADIR%%/maps/antarticum.map/presentation.smp
 %%DATADIR%%/maps/antarticum.map/setup.sms
 %%DATADIR%%/maps/antarticum.map/terrain.lua
@@ -149,38 +184,76 @@ bin/boswars
 %%DATADIR%%/maps/battlefield.map/setup.sms
 %%DATADIR%%/maps/battlefield.map/terrain.lua
 %%DATADIR%%/maps/battlefield.map/terrain.png
-%%DATADIR%%/maps/braza.smp
-%%DATADIR%%/maps/braza.sms
+%%DATADIR%%/maps/braza.map/presentation.smp
+%%DATADIR%%/maps/braza.map/setup.sms
 %%DATADIR%%/maps/bridge.map/access-fast.lua
 %%DATADIR%%/maps/bridge.map/access-water.lua
 %%DATADIR%%/maps/bridge.map/presentation.smp
 %%DATADIR%%/maps/bridge.map/setup.sms
 %%DATADIR%%/maps/bridge.map/terrain.lua
 %%DATADIR%%/maps/bridge.map/terrain.png
+%%DATADIR%%/maps/bridge2far.map/access-unpassable.lua
+%%DATADIR%%/maps/bridge2far.map/class-no-pass.png
+%%DATADIR%%/maps/bridge2far.map/presentation.smp
+%%DATADIR%%/maps/bridge2far.map/setup.sms
+%%DATADIR%%/maps/bridge2far.map/terrain.lua
+%%DATADIR%%/maps/bridge2far.map/terrain.png
+%%DATADIR%%/maps/campaigns/elites/Aiglier.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Aiglier.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Bellegarde.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Bellegarde.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Buffy_Forest.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Buffy_Forest.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Fort_Savoy.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Fort_Savoy.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Green_Valley.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Green_Valley.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Rochebrune.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Rochebrune.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Savoy_Lake.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Savoy_Lake.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Savoy_Steps.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Savoy_Steps.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/Shield_of_Wasteland.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/Shield_of_Wasteland.map/setup.sms
+%%DATADIR%%/maps/campaigns/elites/The_River.map/presentation.smp
+%%DATADIR%%/maps/campaigns/elites/The_River.map/setup.sms
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/access-unpassable.lua
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/presentation.smp
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/setup.sms
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/terrain.lua
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/terrain.png
+%%DATADIR%%/maps/campaigns/tutorial/tutorial.map/unpassable.png
 %%DATADIR%%/maps/canyon.map/access-unpassable.lua
 %%DATADIR%%/maps/canyon.map/class-no-pass.png
 %%DATADIR%%/maps/canyon.map/presentation.smp
 %%DATADIR%%/maps/canyon.map/setup.sms
 %%DATADIR%%/maps/canyon.map/terrain.lua
 %%DATADIR%%/maps/canyon.map/terrain.png
-%%DATADIR%%/maps/cross.smp
-%%DATADIR%%/maps/cross.sms
-%%DATADIR%%/maps/forest.smp
-%%DATADIR%%/maps/forest.sms
-%%DATADIR%%/maps/highlands.smp
-%%DATADIR%%/maps/highlands.sms
+%%DATADIR%%/maps/cross.map/presentation.smp
+%%DATADIR%%/maps/cross.map/setup.sms
+%%DATADIR%%/maps/forest.map/presentation.smp
+%%DATADIR%%/maps/forest.map/setup.sms
+%%DATADIR%%/maps/guerillawarfare.map/access-unpassable.lua
+%%DATADIR%%/maps/guerillawarfare.map/presentation.smp
+%%DATADIR%%/maps/guerillawarfare.map/setup.sms
+%%DATADIR%%/maps/guerillawarfare.map/terrain-no-access.png
+%%DATADIR%%/maps/guerillawarfare.map/terrain.lua
+%%DATADIR%%/maps/guerillawarfare.map/terrain.png
+%%DATADIR%%/maps/highlands.map/presentation.smp
+%%DATADIR%%/maps/highlands.map/setup.sms
 %%DATADIR%%/maps/islandwar.map/access-fast.lua
 %%DATADIR%%/maps/islandwar.map/access-water.lua
 %%DATADIR%%/maps/islandwar.map/presentation.smp
 %%DATADIR%%/maps/islandwar.map/setup.sms
 %%DATADIR%%/maps/islandwar.map/terrain.lua
 %%DATADIR%%/maps/islandwar.map/terrain.png
-%%DATADIR%%/maps/laby.smp
-%%DATADIR%%/maps/laby.sms
-%%DATADIR%%/maps/lake.smp
-%%DATADIR%%/maps/lake.sms
-%%DATADIR%%/maps/multiplayer.smp
-%%DATADIR%%/maps/multiplayer.sms
+%%DATADIR%%/maps/labyrinth.map/presentation.smp
+%%DATADIR%%/maps/labyrinth.map/setup.sms
+%%DATADIR%%/maps/lake.map/presentation.smp
+%%DATADIR%%/maps/lake.map/setup.sms
+%%DATADIR%%/maps/multiplayer.map/presentation.smp
+%%DATADIR%%/maps/multiplayer.map/setup.sms
 %%DATADIR%%/maps/patches.map/128x.png
 %%DATADIR%%/maps/patches.map/256x.png
 %%DATADIR%%/maps/patches.map/32x.png
@@ -201,30 +274,31 @@ bin/boswars
 %%DATADIR%%/maps/river.map/setup.sms
 %%DATADIR%%/maps/river.map/terrain.lua
 %%DATADIR%%/maps/river.map/terrain.png
-%%DATADIR%%/maps/tutorial.map/access-unpassable.lua
-%%DATADIR%%/maps/tutorial.map/presentation.smp
-%%DATADIR%%/maps/tutorial.map/setup.sms
-%%DATADIR%%/maps/tutorial.map/terrain.lua
-%%DATADIR%%/maps/tutorial.map/terrain.png
-%%DATADIR%%/maps/tutorial.map/unpassable.png
 %%DATADIR%%/maps/wetlands01.map/access-unpassable.lua
 %%DATADIR%%/maps/wetlands01.map/presentation.smp
 %%DATADIR%%/maps/wetlands01.map/terrain.lua
 %%DATADIR%%/maps/wetlands01.map/wetlands01-nopass.png
 %%DATADIR%%/maps/wetlands01.map/wetlands01.png
 %%DATADIR%%/maps/wetlands01.map/wetlands01.sms
+%%DATADIR%%/maps/wetlands02.map/access-water.lua
+%%DATADIR%%/maps/wetlands02.map/presentation.smp
+%%DATADIR%%/maps/wetlands02.map/setup.sms
+%%DATADIR%%/maps/wetlands02.map/terrain.png
+%%DATADIR%%/maps/wetlands02.map/wetlands02-access-water.png
 %%DATADIR%%/scripts/ai.lua
+%%DATADIR%%/scripts/ais/blitz.lua
 %%DATADIR%%/scripts/ais/passive.lua
 %%DATADIR%%/scripts/ais/rush.lua
 %%DATADIR%%/scripts/ais/tankrush.lua
 %%DATADIR%%/scripts/anim.lua
-%%DATADIR%%/scripts/bos.lua
+%%DATADIR%%/scripts/boswars.lua
 %%DATADIR%%/scripts/buttons.lua
 %%DATADIR%%/scripts/buttonstyles.lua
 %%DATADIR%%/scripts/cheats.lua
 %%DATADIR%%/scripts/commands.lua
 %%DATADIR%%/scripts/cursors.lua
 %%DATADIR%%/scripts/editor.lua
+%%DATADIR%%/scripts/explosions.lua
 %%DATADIR%%/scripts/fonts.lua
 %%DATADIR%%/scripts/guichan.lua
 %%DATADIR%%/scripts/helpers.lua
@@ -239,9 +313,7 @@ bin/boswars
 %%DATADIR%%/scripts/missiles.lua
 %%DATADIR%%/scripts/sound.lua
 %%DATADIR%%/scripts/spells.lua
-%%DATADIR%%/scripts/stratagus.lua
 %%DATADIR%%/scripts/tilesets/desert.lua
-%%DATADIR%%/scripts/tilesets/winter.lua
 %%DATADIR%%/scripts/ui.lua
 %%DATADIR%%/scripts/uilayout.lua
 %%DATADIR%%/scripts/units.lua
@@ -358,6 +430,7 @@ bin/boswars
 %%DATADIR%%/units/engineer/engineer_action.wav
 %%DATADIR%%/units/engineer/engineer_attack.wav
 %%DATADIR%%/units/engineer/engineer_die.wav
+%%DATADIR%%/units/engineer/engineer_icons.png
 %%DATADIR%%/units/engineer/engineer_select.wav
 %%DATADIR%%/units/engineer/ico_engineer.png
 %%DATADIR%%/units/engineer/unit_engineer.png
@@ -562,7 +635,6 @@ bin/boswars
 %%DATADIR%%/units/weakhotspot/hotspot.png
 %%DATADIR%%/units/weakhotspot/hotspot_i.png
 %%DATADIR%%/units/weakhotspot/unit-weakhotspot.lua
-%%DATADIR%%/video/boswars_intro.ogg
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/README-SDL.txt
@@ -598,7 +670,6 @@ bin/boswars
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/scripts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/video
 @dirrm %%DATADIR%%/units/weakhotspot
 @dirrm %%DATADIR%%/units/vehiclefactory
 @dirrm %%DATADIR%%/units/vault
@@ -647,17 +718,42 @@ bin/boswars
 @dirrm %%DATADIR%%/scripts/menus
 @dirrm %%DATADIR%%/scripts/ais
 @dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/maps/wetlands02.map
 @dirrm %%DATADIR%%/maps/wetlands01.map
-@dirrm %%DATADIR%%/maps/tutorial.map
 @dirrm %%DATADIR%%/maps/river.map
 @dirrm %%DATADIR%%/maps/patches.map
+@dirrm %%DATADIR%%/maps/multiplayer.map
+@dirrm %%DATADIR%%/maps/lake.map
+@dirrm %%DATADIR%%/maps/labyrinth.map
 @dirrm %%DATADIR%%/maps/islandwar.map
+@dirrm %%DATADIR%%/maps/highlands.map
+@dirrm %%DATADIR%%/maps/guerillawarfare.map
+@dirrm %%DATADIR%%/maps/forest.map
+@dirrm %%DATADIR%%/maps/cross.map
 @dirrm %%DATADIR%%/maps/canyon.map
+@dirrm %%DATADIR%%/maps/campaigns/tutorial/tutorial.map
+@dirrm %%DATADIR%%/maps/campaigns/tutorial
+@dirrm %%DATADIR%%/maps/campaigns/elites/The_River.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Shield_of_Wasteland.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Savoy_Steps.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Savoy_Lake.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Rochebrune.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Green_Valley.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Fort_Savoy.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Buffy_Forest.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Bellegarde.map
+@dirrm %%DATADIR%%/maps/campaigns/elites/Aiglier.map
+@dirrm %%DATADIR%%/maps/campaigns/elites
+@dirrm %%DATADIR%%/maps/campaigns
+@dirrm %%DATADIR%%/maps/bridge2far.map
 @dirrm %%DATADIR%%/maps/bridge.map
+@dirrm %%DATADIR%%/maps/braza.map
 @dirrm %%DATADIR%%/maps/battlefield.map
 @dirrm %%DATADIR%%/maps/antarticum.map
 @dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%/languages
+@dirrm %%DATADIR%%/intro
+@dirrm %%DATADIR%%/graphics/ui/cursors
 @dirrm %%DATADIR%%/graphics/ui
 @dirrm %%DATADIR%%/graphics/tiles
 @dirrm %%DATADIR%%/graphics/screens
@@ -665,10 +761,7 @@ bin/boswars
 @dirrm %%DATADIR%%/graphics/neutral
 @dirrm %%DATADIR%%/graphics/missiles
 @dirrm %%DATADIR%%/graphics/general
-@dirrm %%DATADIR%%/graphics/elites/units
-@dirrm %%DATADIR%%/graphics/elites/ui
-@dirrm %%DATADIR%%/graphics/elites/missile
-@dirrm %%DATADIR%%/graphics/elites
+@dirrm %%DATADIR%%/graphics/explosions
 @dirrm %%DATADIR%%/graphics
 @dirrm %%DATADIR%%/campaigns/tutorial
 @dirrm %%DATADIR%%/campaigns/elites

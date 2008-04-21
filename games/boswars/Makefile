@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	boswars
-PORTVERSION=	2.4.1
-PORTREVISION=	3
+PORTVERSION=	2.5
 CATEGORIES=	games
 MASTER_SITES=	http://boswars.org:8001/bos/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -38,14 +37,18 @@ CPPPATH+=	${LOCALBASE}/include
 LIBPATH+=	${LOCALBASE}/lib
 .endif
 
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-SCONS_ARGS+=	optimized_cflags=1
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+CFLAGS+=	-fomit-frame-pointer -fexpensive-optimizations -ffast-math
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/SConstruct
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
-.for f in campaigns graphics languages maps scripts sounds units video
+.for f in campaigns graphics intro languages maps scripts sounds units
 	${CP} -R ${WRKSRC}/${f} ${DATADIR}
 .endfor
 .if !defined(NOPORTDOCS)
