@@ -23,7 +23,6 @@ bin/git-clone
 bin/git-commit
 bin/git-commit-tree
 bin/git-config
-bin/git-convert-objects
 bin/git-count-objects
 bin/git-cvsexportcommit
 bin/git-cvsimport
@@ -34,6 +33,7 @@ bin/git-diff
 bin/git-diff-files
 bin/git-diff-index
 bin/git-diff-tree
+bin/git-fast-export
 bin/git-fast-import
 bin/git-fetch
 bin/git-fetch--tool
@@ -56,7 +56,6 @@ bin/git-index-pack
 bin/git-init
 bin/git-init-db
 bin/git-instaweb
-bin/git-local-fetch
 bin/git-log
 bin/git-lost-found
 bin/git-ls-files
@@ -110,7 +109,6 @@ bin/git-rev-list
 bin/git-rev-parse
 bin/git-revert
 bin/git-rm
-bin/git-runstatus
 bin/git-send-email
 bin/git-send-pack
 bin/git-sh-setup
@@ -122,16 +120,11 @@ bin/git-show
 bin/git-show-branch
 bin/git-show-index
 bin/git-show-ref
-bin/git-ssh-fetch
-bin/git-ssh-pull
-bin/git-ssh-push
-bin/git-ssh-upload
 bin/git-stash
 bin/git-status
 bin/git-stripspace
 bin/git-submodule
 bin/git-svn
-bin/git-svnimport
 bin/git-symbolic-ref
 bin/git-tag
 bin/git-tar-tree
@@ -145,6 +138,7 @@ bin/git-upload-pack
 bin/git-var
 bin/git-verify-pack
 bin/git-verify-tag
+bin/git-web--browse
 bin/git-whatchanged
 bin/git-write-tree
 %%GUI%%bin/gitk
@@ -158,14 +152,16 @@ share/git-core/templates/description
 share/git-core/templates/hooks/applypatch-msg
 share/git-core/templates/hooks/commit-msg
 share/git-core/templates/hooks/post-commit
-share/git-core/templates/hooks/post-update
 share/git-core/templates/hooks/post-receive
+share/git-core/templates/hooks/post-update
 share/git-core/templates/hooks/pre-applypatch
 share/git-core/templates/hooks/pre-commit
 share/git-core/templates/hooks/pre-rebase
+share/git-core/templates/hooks/prepare-commit-msg
 share/git-core/templates/hooks/update
 share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/tclIndex
+%%GUI%%share/git-gui/lib/about.tcl
 %%GUI%%share/git-gui/lib/blame.tcl
 %%GUI%%share/git-gui/lib/branch.tcl
 %%GUI%%share/git-gui/lib/branch_checkout.tcl
@@ -175,22 +171,39 @@ share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/browser.tcl
 %%GUI%%share/git-gui/lib/checkout_op.tcl
 %%GUI%%share/git-gui/lib/choose_font.tcl
+%%GUI%%share/git-gui/lib/choose_repository.tcl
 %%GUI%%share/git-gui/lib/choose_rev.tcl
 %%GUI%%share/git-gui/lib/class.tcl
 %%GUI%%share/git-gui/lib/commit.tcl
 %%GUI%%share/git-gui/lib/console.tcl
 %%GUI%%share/git-gui/lib/database.tcl
+%%GUI%%share/git-gui/lib/date.tcl
 %%GUI%%share/git-gui/lib/diff.tcl
 %%GUI%%share/git-gui/lib/encoding.tcl
 %%GUI%%share/git-gui/lib/error.tcl
+%%GUI%%share/git-gui/lib/git-gui.ico
 %%GUI%%share/git-gui/lib/index.tcl
+%%GUI%%share/git-gui/lib/logo.tcl
 %%GUI%%share/git-gui/lib/merge.tcl
 %%GUI%%share/git-gui/lib/option.tcl
 %%GUI%%share/git-gui/lib/remote.tcl
 %%GUI%%share/git-gui/lib/remote_branch_delete.tcl
 %%GUI%%share/git-gui/lib/shortcut.tcl
+%%GUI%%share/git-gui/lib/spellcheck.tcl
 %%GUI%%share/git-gui/lib/status_bar.tcl
 %%GUI%%share/git-gui/lib/transport.tcl
+%%GUI%%share/git-gui/lib/win32.tcl
+%%GUI%%share/git-gui/lib/win32_shortcut.js
+%%GUI%%share/git-gui/lib/msgs/de.msg
+%%GUI%%share/git-gui/lib/msgs/fr.msg
+%%GUI%%share/git-gui/lib/msgs/hu.msg
+%%GUI%%share/git-gui/lib/msgs/it.msg
+%%GUI%%share/git-gui/lib/msgs/ja.msg
+%%GUI%%share/git-gui/lib/msgs/ru.msg
+%%GUI%%share/git-gui/lib/msgs/sv.msg
+%%GUI%%share/git-gui/lib/msgs/zh_cn.msg
+%%GUI%%share/gitk/lib/msgs/de.msg
+%%GUI%%share/gitk/lib/msgs/it.msg
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm lib/xemacs/site-lisp/git
 @dirrmtry lib/xemacs/site-lisp
@@ -198,6 +211,10 @@ share/git-core/templates/info/exclude
 @dirrm share/emacs/site-lisp/git
 @dirrmtry share/emacs/site-lisp
 @dirrmtry share/emacs
+%%GUI%%@dirrm share/gitk/lib/msgs
+%%GUI%%@dirrm share/gitk/lib
+%%GUI%%@dirrm share/gitk
+%%GUI%%@dirrm share/git-gui/lib/msgs
 %%GUI%%@dirrm share/git-gui/lib
 %%GUI%%@dirrm share/git-gui
 @dirrm share/git-core/templates/branches
