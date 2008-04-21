@@ -10,7 +10,7 @@ PORTVERSION=	1.07
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/trickle/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Lightweight, portable bandwidth shaper
 
 LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
