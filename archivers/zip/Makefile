@@ -17,6 +17,7 @@ COMMENT=	Create/update ZIP files compatible with pkzip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	unix/Makefile
+MAKE_ENV+=	CC="${CC}"
 ALL_TARGET=	generic
 MAN1=		zip.1
 
