@@ -7,7 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
@@ -26,7 +26,7 @@ USE_GMAKE=	YES
 USE_XORG=	xtst
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
-OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method"	off
+OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method"	on
 
 MAN1=		gcin.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 		gcin-message.1 gcin-setup.1 gtab-merge.1 juyin-learn.1 \
@@ -39,12 +39,16 @@ MASTER_SITES+=	http://cle.linux.org.tw/~edt1023/gcin/:boshiamy \
 		LOCAL/chinsan/gcin:boshiamy \
 		http://edt1023.sayya.org/gcin/:boshiamy
 DISTFILES+=	${BOSHIAMY_FILE}:boshiamy
-BOSHIAMY_FILE=	noseeing-9.tar.gz
+BOSHIAMY_FILE=	noseeing-10.tar.gz
 post-extract:
 	@${TAR} -C ${WRKSRC}/data/ -zxf ${DISTDIR}/${BOSHIAMY_FILE} \
 		noseeing.cin
+	@${TAR} -C ${WRKSRC}/scripts/ -zxf ${DISTDIR}/${BOSHIAMY_FILE} \
+	  	noseeadd.rb
 	@${REINPLACE_CMD} -e 's,cj.gtab,cj.gtab noseeing.gtab,' \
 		${WRKSRC}/data/Makefile
+	@${REINPLACE_CMD} -e 's,noseeing-inst,noseeing-inst noseeadd.rb,' \
+		${WRKSRC}/scripts/Makefile
 .endif
 
 pre-patch:
