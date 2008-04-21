@@ -84,6 +84,9 @@ share/apps/rkward/analysis/t_test_two_vars.xml
 share/apps/rkward/analysis/time_series/Box_test.php
 share/apps/rkward/analysis/time_series/Box_test.rkh
 share/apps/rkward/analysis/time_series/Box_test.xml
+share/apps/rkward/analysis/time_series/hp_filter.php
+share/apps/rkward/analysis/time_series/hp_filter.rkh
+share/apps/rkward/analysis/time_series/hp_filter.xml
 share/apps/rkward/analysis/time_series/kpss_test.php
 share/apps/rkward/analysis/time_series/kpss_test.rkh
 share/apps/rkward/analysis/time_series/kpss_test.xml
