@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uhexen2
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	hexen2source-${PORTVERSION}
@@ -46,7 +45,7 @@ PLIST_SUB+=	DEMO="" \
 UH2_DATA=	default.cfg hexen.rc pak0.pak progs.dat
 UH2_DATADIR=	${WRKDIR}/hexen2demo-${PORTVERSION}
 .else
-DISTFILES+=	gamedata-all-1.19${EXTRACT_SUFX}
+DISTFILES+=	gamedata-all-1.19a${EXTRACT_SUFX}
 PLIST_SUB+=	DEMO="@comment " \
 		FULL=""
 SUB_FILES+=	pkg-message
@@ -57,10 +56,8 @@ UH2_DATADIR=	${WRKDIR}
 .if defined(WITH_HEXEN2)
 MAKE_ENV+=	BUILD_HEXEN2=yes
 PLIST_SUB+=	HEXEN2=""
-UH2_BIN+=	hexen2/glhexen2
-. if defined(WITH_X86_ASM) && ${ARCH} == "i386"
-UH2_BIN+=	hexen2/hexen2
-. endif
+UH2_BIN+=	hexen2/glhexen2 \
+		hexen2/hexen2
 .else
 PLIST_SUB+=	HEXEN2="@comment "
 .endif
@@ -72,10 +69,8 @@ DISTFILES+=	hexenworld-pakfiles-0.15${EXTRACT_SUFX}
 MAKE_ENV+=	BUILD_HW=yes
 PLIST_SUB+=	HW=""
 UH2_BIN+=	hexenworld/Client/glhwcl hexenworld/Master/hwmaster \
-		hexenworld/Server/hwsv
-. if defined(WITH_X86_ASM) && ${ARCH} == "i386"
-UH2_BIN+=	hexenworld/Client/hwcl
-. endif
+		hexenworld/Server/hwsv \
+		hexenworld/Client/hwcl
 .else
 PLIST_SUB+=	HW="@comment "
 .endif
@@ -99,9 +94,6 @@ PLIST_SUB+=	LAUNCHER_GTK2="@comment "
 .if defined(WITH_X86_ASM) && ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 MAKE_ENV+=	USE_X86_ASM=yes
-PLIST_SUB+=	X86_ASM=""
-.else
-PLIST_SUB+=	X86_ASM="@comment "
 .endif
 
 post-extract:
@@ -134,7 +126,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/launcher/h2launcher.gtk1 ${PREFIX}/bin
 .endif
 .if defined(WITH_LAUNCHER_GTK2)
-	${INSTALL_PROGRAM} ${WRKSRC}/launcher/h2launcher ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/launcher/h2launcher.gtk2 ${PREFIX}/bin
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

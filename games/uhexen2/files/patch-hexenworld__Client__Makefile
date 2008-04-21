@@ -1,6 +1,6 @@
---- hexenworld/Client/Makefile.orig	Sat Sep 15 09:16:44 2007
-+++ hexenworld/Client/Makefile	Mon Oct  8 15:51:44 2007
-@@ -113,13 +113,13 @@
+--- ./hexenworld/Client/Makefile.orig	2008-04-03 20:37:25.000000000 -0300
++++ ./hexenworld/Client/Makefile	2008-04-21 15:15:19.000000000 -0300
+@@ -115,13 +115,13 @@
  USE_SDLAUDIO=yes
  USE_MIDI=yes
  USE_CDAUDIO=yes
@@ -15,8 +15,8 @@
 +USE_X86_ASM?=no
  COMPILE_32BITS=no
  
- # build environment sanity checks
-@@ -176,7 +176,7 @@
+ # include the common dirty stuff
+@@ -167,7 +167,7 @@
  
  else
  
@@ -25,13 +25,3 @@
  
  ifdef NO_UNIT_AT_A_TIME
  CFLAGS := $(CFLAGS) $(call check_gcc,-fno-unit-at-a-time,)
-@@ -184,7 +184,9 @@
- 
- ifeq ($(OPT_EXTRA),yes)
- # Note: re-check these flags for non-ia32 machines
-+ifeq ($(MACH_TYPE),x86)
- CFLAGS := $(CFLAGS) $(call check_gcc,-falign-loops=2 -falign-jumps=2 -falign-functions=2,-malign-loops=2 -malign-jumps=2 -malign-functions=2)
-+endif
- CFLAGS := $(CFLAGS) -fomit-frame-pointer
- endif
- endif

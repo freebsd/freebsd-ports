@@ -16,9 +16,11 @@ ifeq ($(BUILD_HW),yes)
 endif
 ifeq ($(BUILD_LAUNCHER_GTK1),yes)
 	$(MAKE) -C launcher GTK1=yes
+	cd launcher && mv h2launcher h2launcher.gtk1
 	$(MAKE) -C launcher clean
 endif
 ifeq ($(BUILD_LAUNCHER_GTK2),yes)
 	$(MAKE) -C launcher
+	cd launcher && mv h2launcher h2launcher.gtk2
 	$(MAKE) -C launcher clean
 endif
