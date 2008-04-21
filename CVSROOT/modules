@@ -14887,6 +14887,7 @@ rubygem-layout-yullio	ports/www/rubygem-layout-yullio
 rubygem-maruku	ports/www/rubygem-maruku
 rubygem-mechanize	ports/www/rubygem-mechanize
 rubygem-memcache-client	ports/databases/rubygem-memcache-client
+rubygem-mocha	ports/devel/rubygem-mocha
 rubygem-mongrel	ports/www/rubygem-mongrel
 rubygem-mongrel_cluster	ports/www/rubygem-mongrel_cluster
 rubygem-mp3info	ports/audio/rubygem-mp3info
