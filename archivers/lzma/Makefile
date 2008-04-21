@@ -7,12 +7,15 @@
 
 PORTNAME=	lzma
 PORTVERSION=	4.57
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SFE/sevenzip
 DISTNAME=	7z${PORTVERSION:S/.//g}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	High-ratio LZMA compressor
+
+CONFLICTS=	lzmautils-[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
