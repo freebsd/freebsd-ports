@@ -7,7 +7,7 @@
 
 PORTNAME=	amaya
 PORTVERSION=	9.55
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \
@@ -30,7 +30,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/Amaya/obj
 
-USE_XORG=	xft x11
+USE_XORG=	xft x11 xt
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 imlib
 USE_ICONV=	yes
