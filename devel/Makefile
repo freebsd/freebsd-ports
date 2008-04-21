@@ -1099,6 +1099,7 @@
     SUBDIR += p5-Data-Throttler
     SUBDIR += p5-Data-Throttler-Memcached
     SUBDIR += p5-Data-TreeDumper
+    SUBDIR += p5-Data-TreeDumper-Renderer-GTK
     SUBDIR += p5-Data-Types
     SUBDIR += p5-Data-UUID
     SUBDIR += p5-Data-Validate
