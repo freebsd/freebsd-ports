@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.2rc1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -349,6 +350,9 @@ post-configure:
 		${WRKSRC}/src/proftpd.8 ${WRKSRC}/utils/ftpshut.8 \
 		${WRKSRC}/utils/ftpcount.1
 
+pre-install:
+	@cd ${LOCALBASE}/lib && ${INSTALL} -d pkgconfig
+
 post-install:
 	@cd  ${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf
 .if !defined(NOPORTDOCS)
@@ -366,5 +370,7 @@ post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpdctl ${PREFIX}/sbin/
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${MAN8PREFIX}/man/man8/
 .endif
+	@cd ${LOCALBASE}/lib/pkgconfig && ${MV} proftpd.pc ${LOCALBASE}/libdata/pkgconfig
+	@${RM} -r ${LOCALBASE}/lib/pkgconfig
 
 .include <bsd.port.post.mk>

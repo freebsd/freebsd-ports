@@ -2,6 +2,8 @@ bin/ftpcount
 bin/ftpdctl
 bin/ftptop
 bin/ftpwho
+libdata/pkgconfig/proftpd.pc
+lib/proftpd/libsupp.a
 include/proftpd/auth.h
 include/proftpd/bindings.h
 include/proftpd/buildstamp.h
@@ -58,4 +60,5 @@ sbin/proftpd
 @unexec if cmp -s %D/etc/proftpd.conf %D/etc/proftpd.conf.sample; then rm -f %D/etc/proftpd.conf; fi
 etc/proftpd.conf.sample
 @exec cp -n %D/%F %B/proftpd.conf
+@dirrm lib/proftpd
 @dirrm include/proftpd
