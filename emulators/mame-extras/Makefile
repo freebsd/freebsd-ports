@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mame
-PORTVERSION=	0.122u7
+PORTVERSION=	0.124
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mame.net/:mame \
 		http://www.mameworld.net/mameinfo/update/:mameinfo \
@@ -87,8 +87,8 @@ PLIST_SUB+=	HISCORE="@comment "
 .endif
 
 .if !defined(WITHOUT_HISTORY)
-DISTFILES+=	mamehistory122a${EXTRACT_SUFX}:history
-EXTRACT_ONLY+=	mamehistory122a${EXTRACT_SUFX}
+DISTFILES+=	mamehistory124${EXTRACT_SUFX}:history
+EXTRACT_ONLY+=	mamehistory124${EXTRACT_SUFX}
 PLIST_SUB+=	HISTORY=""
 .else
 PLIST_SUB+=	HISTORY="@comment "
