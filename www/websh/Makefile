@@ -7,7 +7,7 @@
 
 PORTNAME=	websh
 PORTVERSION=	3.6.0b4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www tcl
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=tcl/${PORTNAME}/source
@@ -50,8 +50,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's,\.html,.whtml,g' ${WRKSRC:H:H}/doc/mod_websh/htdocs/*.ws3
 
 post-configure:
-	# "STUBS" are for wimps:
-	${REINPLACE_CMD} -e 's,tclstub,tcl,' ${WRKSRC}/Makefile
+	# Remove the "STUBS" and the PACKAGE_* defines, which may conflict
+	# with Apache's definitions:
+	${REINPLACE_CMD} -e 's,tclstub,tcl,'	\
+		-e 's,-DPACKAGE_[^=]*=."[^"]*",,g' ${WRKSRC}/Makefile
 
 post-build test:
 	${SETENV} LANG=C ${GMAKE} -C ${WRKSRC} test | ${AWK} '\
