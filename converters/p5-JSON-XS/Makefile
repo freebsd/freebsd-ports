@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	JSON-XS
-PORTVERSION=	2.10
+PORTVERSION=	2.20
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	JSON serialising/deserialising, done correctly and fast
 
 PERL_CONFIGURE=	5.8.0+
+MAN1=		json_xs.1
 MAN3=		JSON::XS.3 JSON::XS::Boolean.3
 
 .include <bsd.port.mk>
