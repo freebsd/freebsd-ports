@@ -1,9 +1,9 @@
 %%HEXEN2%%bin/glhexen2
 %%HW%%bin/glhwcl
-%%LAUNCHER_GTK2%%bin/h2launcher
 %%LAUNCHER_GTK1%%bin/h2launcher.gtk1
-%%X86_ASM%%%%HEXEN2%%bin/hexen2
-%%X86_ASM%%%%HW%%bin/hwcl
+%%LAUNCHER_GTK2%%bin/h2launcher.gtk2
+%%HEXEN2%%bin/hexen2
+%%HW%%bin/hwcl
 %%HW%%bin/hwmaster
 %%HW%%bin/hwsv
 %%PORTDOCS%%%%DOCSDIR%%/ABOUT
@@ -27,6 +27,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.0
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.1
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.2
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.3
+%%PORTDOCS%%%%DOCSDIR%%/SrcNotes.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/data1/default.cfg
 %%DATADIR%%/data1/hexen.rc
@@ -39,7 +41,7 @@
 %%HW%%%%DATADIR%%/hw/default.cfg
 %%HW%%%%DATADIR%%/hw/hwprogs.dat
 %%HW%%%%DATADIR%%/hw/pak4.pak
-%%HW%%%%DATADIR%%/hw/pak4_readme.txt
+%%FULL%%%%HW%%%%DATADIR%%/hw/pak4_readme.txt
 %%HW%%%%DATADIR%%/hw/strings.txt
 %%FULL%%%%DATADIR%%/portals/default.cfg
 %%FULL%%%%DATADIR%%/portals/hexen.rc
