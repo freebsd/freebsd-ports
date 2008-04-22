@@ -11046,6 +11046,7 @@ p5-PPI-XS	ports/textproc/p5-PPI-XS
 p5-PPerl	ports/devel/p5-PPerl
 p5-PV		ports/devel/p5-PV
 p5-Package-Constants	ports/devel/p5-Package-Constants
+p5-Package-Generator	ports/devel/p5-Package-Generator
 p5-PadWalker	ports/devel/p5-PadWalker
 p5-Palm		ports/palm/p5-Palm
 p5-Palm-PalmDoc	ports/palm/p5-Palm-PalmDoc
