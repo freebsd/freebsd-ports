@@ -1209,6 +1209,7 @@
     SUBDIR += p5-Digest-TransformPath
     SUBDIR += p5-Dir-Project
     SUBDIR += p5-Directory-Scratch
+    SUBDIR += p5-Directory-Scratch-Structured
     SUBDIR += p5-Env-PS1
     SUBDIR += p5-Env-Path
     SUBDIR += p5-Errno
