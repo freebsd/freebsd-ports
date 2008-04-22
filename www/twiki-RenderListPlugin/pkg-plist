@@ -1,0 +1,44 @@
+%%TWDIR%%/data/TWiki/RenderListPlugin.txt
+%%TWDIR%%/data/TWiki/RenderListPlugin.txt,v
+%%TWDIR%%/data/TWiki/VarRENDERLIST.txt
+%%TWDIR%%/lib/TWiki/Plugins/RenderListPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/RenderListPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/RenderListPlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/RenderListPlugin.pm
+%%TWDIR%%/pub/TWiki/RenderListPlugin/doc.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/dot_ud.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/dot_udr.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/dot_ur.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/email.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/empty.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/file.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/files.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/folder.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/folders.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/globe.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/group.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/home.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/image.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/pdf.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/person.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/persons.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/ppt.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/see.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/sound.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/trend.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/virtualhome.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/virtualperson.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/virtualpersons.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/xls.gif
+%%TWDIR%%/pub/TWiki/RenderListPlugin/zip.gif
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/RenderListPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/RenderListPlugin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

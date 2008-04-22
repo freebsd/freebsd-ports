@@ -1,0 +1,67 @@
+%%TWDIR%%/data/Main/ClassicSkinUserViewTemplate.txt
+%%TWDIR%%/data/TWiki/ClassicSkin.txt
+%%TWDIR%%/lib/TWiki/Contrib/ClassicSkin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Contrib/ClassicSkin/MANIFEST
+%%TWDIR%%/lib/TWiki/Contrib/ClassicSkin/build.pl
+%%TWDIR%%/lib/TWiki/Contrib/ClassicSkin.pm
+%%TWDIR%%/pub/TWiki/ClassicSkin/fullscreen.gif
+%%TWDIR%%/pub/TWiki/ClassicSkin/screenshot.gif
+%%TWDIR%%/templates/addform.classic.tmpl
+%%TWDIR%%/templates/attach.classic.tmpl
+%%TWDIR%%/templates/attachagain.classic.tmpl
+%%TWDIR%%/templates/attachnew.classic.tmpl
+%%TWDIR%%/templates/attachtables.classic.tmpl
+%%TWDIR%%/templates/backlinks.classic.tmpl
+%%TWDIR%%/templates/backlinksallwebs.classic.tmpl
+%%TWDIR%%/templates/backlinksweb.classic.tmpl
+%%TWDIR%%/templates/changeform.classic.tmpl
+%%TWDIR%%/templates/changes.classic.tmpl
+%%TWDIR%%/templates/css.classic.tmpl
+%%TWDIR%%/templates/cssmediatypes.classic.tmpl
+%%TWDIR%%/templates/edit.classic.tmpl
+%%TWDIR%%/templates/editform.classic.tmpl
+%%TWDIR%%/templates/edittext.classic.tmpl
+%%TWDIR%%/templates/form.classic.tmpl
+%%TWDIR%%/templates/formtables.classic.tmpl
+%%TWDIR%%/templates/login.classic.tmpl
+%%TWDIR%%/templates/mailresetpassword.classic.tmpl
+%%TWDIR%%/templates/moveattachment.classic.tmpl
+%%TWDIR%%/templates/oops.classic.tmpl
+%%TWDIR%%/templates/oopsaccessdenied.classic.tmpl
+%%TWDIR%%/templates/oopsalerts.classic.tmpl
+%%TWDIR%%/templates/oopsattention.classic.tmpl
+%%TWDIR%%/templates/oopsleaseconflict.classic.tmpl
+%%TWDIR%%/templates/oopsmore.classic.tmpl
+%%TWDIR%%/templates/preview.classic.tmpl
+%%TWDIR%%/templates/rdiff.classic.tmpl
+%%TWDIR%%/templates/registerconfirm.classic.tmpl
+%%TWDIR%%/templates/registernotify.classic.tmpl
+%%TWDIR%%/templates/registernotifyadmin.classic.tmpl
+%%TWDIR%%/templates/rename.classic.tmpl
+%%TWDIR%%/templates/renamebase.classic.tmpl
+%%TWDIR%%/templates/renameconfirm.classic.tmpl
+%%TWDIR%%/templates/renamedelete.classic.tmpl
+%%TWDIR%%/templates/renameweb.classic.tmpl
+%%TWDIR%%/templates/renamewebbase.classic.tmpl
+%%TWDIR%%/templates/renamewebconfirm.classic.tmpl
+%%TWDIR%%/templates/renamewebdelete.classic.tmpl
+%%TWDIR%%/templates/searchbookview.classic.tmpl
+%%TWDIR%%/templates/searchformat.classic.tmpl
+%%TWDIR%%/templates/searchmeta.classic.tmpl
+%%TWDIR%%/templates/settings.classic.tmpl
+%%TWDIR%%/templates/twiki.classic.tmpl
+%%TWDIR%%/templates/view.classic.tmpl
+%%TWDIR%%/templates/viewprint.classic.tmpl
+@dirrm %%TWDIR%%/data/Main
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Contrib/ClassicSkin
+@dirrm %%TWDIR%%/lib/TWiki/Contrib
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/ClassicSkin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%/templates
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

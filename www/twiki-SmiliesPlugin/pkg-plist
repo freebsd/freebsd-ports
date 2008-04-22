@@ -1,0 +1,56 @@
+%%TWDIR%%/data/TWiki/SmiliesPlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/SmiliesPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/SmiliesPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/SmiliesPlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/SmiliesPlugin.pm
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/biggrin.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/biggrin.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/confused.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/confused.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/cool.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/cool.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/devil.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/devil.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/devilwink.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/devilwink.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/eek.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/eek.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/frown.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/frown.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/indifferent.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/indifferent.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/love.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/love.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/mad.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/mad.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/no.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/no.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/redface.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/redface.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/rolleyes.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/rolleyes.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/sealed.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/sealed.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/skull.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/skull.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/smile.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/smile.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/thumbs.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/thumbs.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/tongue.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/tongue.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/wink.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/wink.gif,v
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/yes.gif
+%%TWDIR%%/pub/TWiki/SmiliesPlugin/yes.gif,v
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/SmiliesPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/SmiliesPlugin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

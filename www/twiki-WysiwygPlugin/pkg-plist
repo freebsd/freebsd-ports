@@ -1,0 +1,63 @@
+%%TWDIR%%/POSTINSTALL
+%%TWDIR%%/data/TWiki/WysiwygPlugin.txt
+%%TWDIR%%/data/TWiki/WysiwygPluginSettings.txt
+%%TWDIR%%/data/TWiki/WysiwygPluginTopicLister.txt
+%%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/Constants.pm
+%%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML/Base.pm
+%%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML/Leaf.pm
+%%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML/Node.pm
+%%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML/WC.pm
+%%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML.pm
+%%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/TML2HTML.pm
+%%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin.pm
+%%TWDIR%%/pub/TWiki/WysiwygPlugin/wikiringlogo20x20.png
+%%TWDIR%%/test/unit/WysiwygPlugin/TranslatorTests.pm
+%%TWDIR%%/test/unit/WysiwygPlugin/WysiwygPluginSuite.pm
+%%TWDIR%%/test/unit/WysiwygPlugin/WysiwygPluginTests.pm
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/definitionList.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/listItem.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/orderList.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/paragraph.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/stylesBold.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/stylesBoldFixedFont.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/stylesBoldItalic.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/stylesFixedFont.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/stylesItalic.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/table.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/titles.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/result_tml/verbatim.txt
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/definitionList.html
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/listItem.html
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/orderList.html
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/paragraph.html
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/stylesBold.html
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/stylesBoldFixedFont.html
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/stylesBoldItalic.html
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/stylesFixedFont.html
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/stylesItalic.html
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/table.html
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/titles.html
+%%TWDIR%%/test/unit/WysiwygPlugin/test_html/verbatim.html
+%%TWDIR%%/tools/html2tml.pl
+%%TWDIR%%/tools/tml2html.pl
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/WysiwygPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/WysiwygPlugin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%/test/unit/WysiwygPlugin/result_tml
+@dirrm %%TWDIR%%/test/unit/WysiwygPlugin/test_html
+@dirrm %%TWDIR%%/test/unit/WysiwygPlugin
+@dirrm %%TWDIR%%/test/unit
+@dirrm %%TWDIR%%/test
+@dirrm %%TWDIR%%/tools
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

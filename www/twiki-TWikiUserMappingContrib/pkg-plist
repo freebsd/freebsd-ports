@@ -1,0 +1,51 @@
+%%TWDIR%%/data/Main/NobodyGroup.txt
+%%TWDIR%%/data/Main/TWikiAdminGroup.txt
+%%TWDIR%%/data/Main/TWikiGroupTemplate.txt
+%%TWDIR%%/data/Main/TWikiRegistrationAgent.txt
+%%TWDIR%%/data/Main/UserHomepageHeader.txt
+%%TWDIR%%/data/Main/UserList.txt
+%%TWDIR%%/data/Main/UserListByDateJoined.txt
+%%TWDIR%%/data/Main/UserListByLocation.txt
+%%TWDIR%%/data/Main/UserListByPhotograph.txt
+%%TWDIR%%/data/Main/UserListHeader.txt
+%%TWDIR%%/data/TWiki/BulkRegistration.txt
+%%TWDIR%%/data/TWiki/BulkResetPassword.txt
+%%TWDIR%%/data/TWiki/ChangeEmailAddress.txt
+%%TWDIR%%/data/TWiki/ChangePassword.txt
+%%TWDIR%%/data/TWiki/LoginName.txt
+%%TWDIR%%/data/TWiki/ManagingUsers.txt
+%%TWDIR%%/data/TWiki/NewUserTemplate.txt
+%%TWDIR%%/data/TWiki/ResetPassword.txt
+%%TWDIR%%/data/TWiki/TWikiRegistration.txt
+%%TWDIR%%/data/TWiki/TWikiUserMappingContrib.txt
+%%TWDIR%%/data/TWiki/TWikiUserSetting.txt
+%%TWDIR%%/data/TWiki/TWikiUsersTemplate.txt
+%%TWDIR%%/data/TWiki/UserForm.txt
+%%TWDIR%%/data/TWiki/UserToolsCategory.txt
+%%TWDIR%%/lib/TWiki/Contrib/TWikiUserMappingContrib/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Contrib/TWikiUserMappingContrib/MANIFEST
+%%TWDIR%%/lib/TWiki/Contrib/TWikiUserMappingContrib/build.pl
+%%TWDIR%%/lib/TWiki/Contrib/TWikiUserMappingContrib.pm
+%%TWDIR%%/lib/TWiki/Users/TWikiUserMapping.pm
+%%TWDIR%%/pub/TWiki/RegistrationApprovals/.keep_me
+%%TWDIR%%/test/unit/TWikiUserMappingContrib/TWikiUserMappingContribSuite.pm
+%%TWDIR%%/test/unit/TWikiUserMappingContrib/TWikiUserMappingContribTests.pm
+%%TWDIR%%/test/unit/TWikiUserMappingContrib/TWikiUserMappingTests.pm
+%%TWDIR%%/tools/upgrade_emails.pl
+@dirrm %%TWDIR%%/data/Main
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Contrib/TWikiUserMappingContrib
+@dirrm %%TWDIR%%/lib/TWiki/Contrib
+@dirrm %%TWDIR%%/lib/TWiki/Users
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/RegistrationApprovals
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%/test/unit/TWikiUserMappingContrib
+@dirrm %%TWDIR%%/test/unit
+@dirrm %%TWDIR%%/test
+@dirrm %%TWDIR%%/tools
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

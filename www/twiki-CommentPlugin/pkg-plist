@@ -1,0 +1,32 @@
+%%TWDIR%%/data/Sandbox/CommentPluginExampleComments.txt
+%%TWDIR%%/data/Sandbox/CommentPluginTemplateExample.txt
+%%TWDIR%%/data/TWiki/CommentPlugin.txt
+%%TWDIR%%/data/TWiki/CommentPluginExamples.txt
+%%TWDIR%%/data/TWiki/CommentPluginTemplate.txt
+%%TWDIR%%/data/TWiki/VarCOMMENT.txt
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin/Comment.pm
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin/PREINSTALL
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/CommentPlugin.pm
+%%TWDIR%%/pub/TWiki/CommentPlugin/wikiringlogo20x20.png
+%%TWDIR%%/templates/comments.tmpl
+%%TWDIR%%/test/unit/CommentPlugin/CommentPluginSuite.pm
+%%TWDIR%%/test/unit/CommentPlugin/CommentPluginTests.pm
+@dirrm %%TWDIR%%/data/Sandbox
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/CommentPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/CommentPlugin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%/templates
+@dirrm %%TWDIR%%/test/unit/CommentPlugin
+@dirrm %%TWDIR%%/test/unit
+@dirrm %%TWDIR%%/test
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

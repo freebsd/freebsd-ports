@@ -1,0 +1,36 @@
+%%TWDIR%%/data/TWiki/TagMeChangeRequests.txt
+%%TWDIR%%/data/TWiki/TagMeCreateNewTag.txt
+%%TWDIR%%/data/TWiki/TagMeDebugSearch.txt
+%%TWDIR%%/data/TWiki/TagMeDebugViewTags.txt
+%%TWDIR%%/data/TWiki/TagMeDeleteTag.txt
+%%TWDIR%%/data/TWiki/TagMePlugin.txt
+%%TWDIR%%/data/TWiki/TagMeRenameTag.txt
+%%TWDIR%%/data/TWiki/TagMeSearch.txt
+%%TWDIR%%/data/TWiki/TagMeViewAllTags.txt
+%%TWDIR%%/data/TWiki/TagMeViewMyTags.txt
+%%TWDIR%%/lib/TWiki/Plugins/TagMePlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/TagMePlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/TagMePlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/TagMePlugin.pm
+%%TWDIR%%/pub/TWiki/TagMePlugin/alltagcloud.gif
+%%TWDIR%%/pub/TWiki/TagMePlugin/buttons_gradient.psd
+%%TWDIR%%/pub/TWiki/TagMePlugin/tag_add.gif
+%%TWDIR%%/pub/TWiki/TagMePlugin/tag_addnew.gif
+%%TWDIR%%/pub/TWiki/TagMePlugin/tag_remove.gif
+%%TWDIR%%/pub/TWiki/TagMePlugin/tagme.css
+%%TWDIR%%/pub/TWiki/TagMePlugin/topictags.gif
+%%TWDIR%%/pub/_work_areas_doc_example_TagMePlugin.zip
+%%TWDIR%%/templates/view.tagme.tmpl
+%%TWDIR%%/templates/view.tagme04x01.tmpl
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/TagMePlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/TagMePlugin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%/templates
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

@@ -1,0 +1,48 @@
+%%TWDIR%%/data/TWiki/TWikiTip001.txt
+%%TWDIR%%/data/TWiki/TWikiTip002.txt
+%%TWDIR%%/data/TWiki/TWikiTip003.txt
+%%TWDIR%%/data/TWiki/TWikiTip004.txt
+%%TWDIR%%/data/TWiki/TWikiTip005.txt
+%%TWDIR%%/data/TWiki/TWikiTip006.txt
+%%TWDIR%%/data/TWiki/TWikiTip007.txt
+%%TWDIR%%/data/TWiki/TWikiTip008.txt
+%%TWDIR%%/data/TWiki/TWikiTip009.txt
+%%TWDIR%%/data/TWiki/TWikiTip010.txt
+%%TWDIR%%/data/TWiki/TWikiTip011.txt
+%%TWDIR%%/data/TWiki/TWikiTip012.txt
+%%TWDIR%%/data/TWiki/TWikiTip013.txt
+%%TWDIR%%/data/TWiki/TWikiTip014.txt
+%%TWDIR%%/data/TWiki/TWikiTip015.txt
+%%TWDIR%%/data/TWiki/TWikiTip016.txt
+%%TWDIR%%/data/TWiki/TWikiTip017.txt
+%%TWDIR%%/data/TWiki/TWikiTip018.txt
+%%TWDIR%%/data/TWiki/TWikiTip019.txt
+%%TWDIR%%/data/TWiki/TWikiTip020.txt
+%%TWDIR%%/data/TWiki/TWikiTip021.txt
+%%TWDIR%%/data/TWiki/TWikiTip022.txt
+%%TWDIR%%/data/TWiki/TWikiTip023.txt
+%%TWDIR%%/data/TWiki/TWikiTip024.txt
+%%TWDIR%%/data/TWiki/TWikiTip025.txt
+%%TWDIR%%/data/TWiki/TWikiTip026.txt
+%%TWDIR%%/data/TWiki/TWikiTip027.txt
+%%TWDIR%%/data/TWiki/TWikiTip028.txt
+%%TWDIR%%/data/TWiki/TWikiTip029.txt
+%%TWDIR%%/data/TWiki/TWikiTips.txt
+%%TWDIR%%/data/TWiki/TWikiTipsOfTheDay.txt
+%%TWDIR%%/data/TWiki/TWikiTipsOfTheDayAddNew.txt
+%%TWDIR%%/data/TWiki/TWikiTipsOfTheDayAdmin.txt
+%%TWDIR%%/data/TWiki/TWikiTipsOfTheDayInclude.txt
+%%TWDIR%%/data/TWiki/TWikiTipsOfTheDayTemplate.txt
+%%TWDIR%%/data/TWiki/TipsContrib.txt
+%%TWDIR%%/lib/TWiki/Contrib/TipsContrib/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Contrib/TipsContrib/MANIFEST
+%%TWDIR%%/lib/TWiki/Contrib/TipsContrib/build.pl
+%%TWDIR%%/lib/TWiki/Contrib/TipsContrib.pm
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Contrib/TipsContrib
+@dirrm %%TWDIR%%/lib/TWiki/Contrib
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

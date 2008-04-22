@@ -1,0 +1,15 @@
+A "twisty" is an interface toggle control to show and hide content.
+
+TwistyPlugin gives you several options to control the appearance of a
+twisty:
+
+* use link text or buttons
+* position an icon left or right
+* remember the state at the next visit of the page
+* start the Twisty open or closed
+* start the Twisty open or closed for the first visit
+* use a span or div for the content
+* set a class for the content span or div
+
+Author: Rafael Alvarez, Arthur Clemens
+WWW: http://twiki.org/cgi-bin/view/Plugins/TwistyPlugin

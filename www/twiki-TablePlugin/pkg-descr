@@ -1,0 +1,11 @@
+Gives extra control of table display:
+* Changing table properties like border width, cell spacing and cell
+  padding
+* Changing background color and text color for header cells
+* Changing background color and text color for data cells - colors can
+  alternate
+* Table attributes can be set and overridden
+* Row spans
+
+Author: John Talintyre, Peter Thoeny
+WWW: http://twiki.org/cgi-bin/view/Plugins/TablePlugin

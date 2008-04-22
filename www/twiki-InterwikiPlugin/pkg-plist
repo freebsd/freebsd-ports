@@ -1,0 +1,14 @@
+%%TWDIR%%/data/TWiki/InterWikis.txt
+%%TWDIR%%/data/TWiki/InterwikiPlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/InterwikiPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/InterwikiPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/InterwikiPlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/InterwikiPlugin.pm
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/InterwikiPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

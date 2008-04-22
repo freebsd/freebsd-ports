@@ -1,0 +1,29 @@
+%%TWDIR%%/data/TWiki/BehaviourContrib.txt
+%%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib/MANIFEST
+%%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib/build.pl
+%%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib.pm
+%%TWDIR%%/pub/TWiki/BehaviourContrib/behaviour.compressed.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/behaviour.compressed_src.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/behaviour.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/behaviour_src.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/cssQuery-p.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/src/cssQuery-level2.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/src/cssQuery-level3.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/src/cssQuery-standard.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/src/cssQuery.js
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/src/test.html
+%%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/test.html
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Contrib/BehaviourContrib
+@dirrm %%TWDIR%%/lib/TWiki/Contrib
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery/src
+@dirrm %%TWDIR%%/pub/TWiki/BehaviourContrib/cssQuery
+@dirrm %%TWDIR%%/pub/TWiki/BehaviourContrib
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

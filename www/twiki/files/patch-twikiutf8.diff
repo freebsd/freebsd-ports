@@ -1,0 +1,111 @@
+# From: http://dot-and-thing.blogspot.com/2008/03/twiki-utf8.html
+diff -urE --exclude=data --exclude=pub twiki-4.2/lib/TWiki/UI/Edit.pm twiki/lib/TWiki/UI/Edit.pm
+--- lib/TWiki/UI/Edit.pm	2008-01-22 06:18:55.000000000 +0300
++++ lib/TWiki/UI/Edit.pm	2008-03-12 10:39:49.000000000 +0300
+@@ -13,6 +13,8 @@
+ use Assert;
+ use Error qw( :try );
+ 
++use Encode;
++
+ require TWiki;
+ require TWiki::UI;
+ require TWiki::OopsException;
+@@ -239,7 +241,10 @@
+             $formTemplate = $form->{name} if $form;
+         }
+ 
+-        $text = $session->expandVariablesOnTopicCreation( $text, $user, $webName, $topic );
++		if ($TWiki::cfg{Site}{CharSet} =~ /^utf-?8$/) {
++			$text = Encode::decode_utf8 ($text);
++		}
++		$text = $session->expandVariablesOnTopicCreation( $text, $user, $webName, $topic );
+         $tmpl =~ s/%NEWTOPIC%/1/;
+     } else {
+         $tmpl =~ s/%NEWTOPIC%//;
+@@ -346,7 +351,12 @@
+ 
+     $tmpl =~ s/%FORMTEMPLATE%//go; # Clear if not being used
+ 
+-    return ( $text, $tmpl );
++	if ($TWiki::cfg{Site}{CharSet} =~ /^utf-?8$/) {
++		$text = Encode::decode_utf8 ($text);
++	}
++	
++
++	return ( $text, $tmpl );
+ }
+ 
+ sub finalize_edit {
+diff -urE --exclude=data --exclude=pub twiki-4.2/lib/TWiki/UI/Save.pm twiki/lib/TWiki/UI/Save.pm
+--- lib/TWiki/UI/Save.pm	2008-01-22 06:18:55.000000000 +0300
++++ lib/TWiki/UI/Save.pm	2008-03-11 17:19:56.000000000 +0300
+@@ -37,6 +37,8 @@
+ use Error qw( :try );
+ use Assert;
+ 
++use Encode;
++
+ require TWiki;
+ require TWiki::UI;
+ require TWiki::Meta;
+@@ -141,6 +143,9 @@
+ 
+     # Determine the new text
+     my $newText = $query->param( 'text' );
++	if ($TWiki::cfg{Site}{CharSet} =~ /^utf-?8$/) {
++		$newText = Encode::decode_utf8 ($newText);
++	}
+ 
+     my $forceNewRev = $query->param( 'forcenewrevision' );
+     $saveOpts->{forcenewrevision} = $forceNewRev;
+diff -urE --exclude=data --exclude=pub twiki-4.2/lib/TWiki/UI/View.pm twiki/lib/TWiki/UI/View.pm
+--- lib/TWiki/UI/View.pm	2008-01-22 06:18:55.000000000 +0300
++++ lib/TWiki/UI/View.pm	2008-03-11 17:17:34.000000000 +0300
+@@ -40,6 +40,8 @@
+ use CGI::Carp qw( fatalsToBrowser );
+ use CGI qw( -any ); # pretty basic, this
+ 
++use Encode;
++
+ require TWiki;
+ require TWiki::UI;
+ require TWiki::Sandbox;
+@@ -99,7 +101,12 @@
+         require TWiki::Time;
+         ( $currMeta, $currText ) = $store->readTopic
+           ( $session->{user}, $webName, $topicName, undef );
+-        TWiki::UI::checkAccess( $session, $webName, $topicName,
++		
++		if ($TWiki::cfg{Site}{CharSet} =~ /^utf-?8$/) {
++			$currText = Encode::decode_utf8 ($currText);
++		}
++        
++		TWiki::UI::checkAccess( $session, $webName, $topicName,
+                                 'VIEW', $session->{user}, $currText );
+         ( $revdate, $revuser, $showRev ) = $currMeta->getRevisionInfo();
+         $revdate = TWiki::Time::formatTime( $revdate );
+@@ -111,6 +118,10 @@
+         if( $rev < $showRev ) {
+             ( $meta, $text ) = $store->readTopic
+               ( $session->{user}, $webName, $topicName, $rev );
++			
++			if ($TWiki::cfg{Site}{CharSet} =~ /^utf-?8$/) {
++				$text = Encode::decode_utf8 ($text);
++			}
+ 
+             ( $revdate, $revuser ) = $meta->getRevisionInfo();
+             $revdate = TWiki::Time::formatTime( $revdate );
+diff -urE --exclude=data --exclude=pub twiki-4.2/lib/TWiki.pm twiki/lib/TWiki.pm
+--- lib/TWiki.pm	2008-01-22 06:18:55.000000000 +0300
++++ lib/TWiki.pm	2008-03-11 18:28:34.000000000 +0300
+@@ -2405,7 +2405,8 @@
+ sub urlDecode {
+     my $text = shift;
+ 
+-    $text =~ s/%([\da-f]{2})/chr(hex($1))/gei;
++    $text =~ s/%u([\da-f]+)/chr(hex($1))/eig;
++	$text =~ s/%([\da-f]{2})/chr(hex($1))/gei;
+ 
+     return $text;
+ }

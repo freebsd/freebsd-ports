@@ -1,0 +1,27 @@
+%%TWDIR%%/data/TWiki/SlideShowPlugin.txt
+%%TWDIR%%/data/TWiki/VarSLIDESHOWEND.txt
+%%TWDIR%%/data/TWiki/VarSLIDESHOWSTART.txt
+%%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin/SlideShow.pm
+%%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin.pm
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/clearpixel.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/endpres.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/first.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/last.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/logo.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/next.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/prev.gif
+%%TWDIR%%/pub/TWiki/SlideShowPlugin/startpres.gif
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/SlideShowPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/SlideShowPlugin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki
