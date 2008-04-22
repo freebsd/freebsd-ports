@@ -53,6 +53,8 @@ post-patch:
 		-e 's|^(MAKE=).*$$|\1${GMAKE}|' \
 		-e 's|function print_help|print_help|' \
 		${WRKSRC}/gb
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
+	    ${WRKSRC}/build/xvdetect
 
 do-configure:
 # fix dvd device

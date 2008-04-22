@@ -5,7 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	clearlooks-themes
+PORTNAME=	clearlooks
+PKGNAMESUFFIX+=	-themes
 
 COMMENT=	Clearlooks themes with the engine coming from gtk-engines2
 
