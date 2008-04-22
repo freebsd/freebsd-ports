@@ -1,0 +1,11 @@
+--- ./data/hanja/Makefile.in.orig	2008-04-20 10:01:44.000000000 +0300
++++ ./data/hanja/Makefile.in	2008-04-22 11:57:45.000000000 +0300
+@@ -378,7 +378,7 @@
+ 
+ 
+ $(hanjadicbin_DATA): hanja.txt ../../tools/hanjac
+-	../../tools/hanjac $< $@
++	../../tools/hanjac hanja.txt hanja.bin
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

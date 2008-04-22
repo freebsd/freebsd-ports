@@ -1,15 +1,14 @@
-diff -urN ../libhangul-0.0.7_orig/test/Makefile.in test/Makefile.in
---- ../libhangul-0.0.7_orig/test/Makefile.in	2008-01-31 23:21:44.000000000 +0900
-+++ test/Makefile.in	2008-02-04 02:53:07.000000000 +0900
+--- ../libhangul-0.0.8_orig/test/Makefile.in	2008-04-20 16:01:44.000000000 +0900
++++ test/Makefile.in	2008-04-21 18:12:41.000000000 +0900
 @@ -184,9 +184,11 @@
  hangul_CFLAGS = 
  hangul_SOURCES = hangul.c
  hangul_LDADD = ../hangul/libhangul.la
-+hangul_LDFLAGS = -liconv
++hangul_LDFLAGS = -liconv 
  hanja_CFLAGS = 
  hanja_SOURCES = hanja.c
  hanja_LDADD = ../hangul/libhangul.la
-+hanja_LDFLAGS = -liconv
++hanja_LDFLAGS = -liconv 
  all: all-am
  
  .SUFFIXES:
@@ -22,7 +21,7 @@ diff -urN ../libhangul-0.0.7_orig/test/Makefile.in test/Makefile.in
  hanja$(EXEEXT): $(hanja_OBJECTS) $(hanja_DEPENDENCIES) 
  	@rm -f hanja$(EXEEXT)
 -	$(hanja_LINK) $(hanja_OBJECTS) $(hanja_LDADD) $(LIBS)
-+	$(hanja_LINK) $(hanja_OBJECTS) $(hanja_LDADD) $(hanja_LDFLAGS) $(LIBS)
++	$(hanja_LINK) $(hanja_OBJECTS) $(hanja_LDADD) $(hanja_LDADD) $(LIBS)
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
