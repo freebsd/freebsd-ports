@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arpalert
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.11
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.arpalert.org/src/
 
@@ -16,14 +16,7 @@ COMMENT=	ARP traffic monitoring
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 ALL_TARGET=	${PORTNAME}
-CFLAGS+=        -fPIC
 
 MAN8=		arpalert.8
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
