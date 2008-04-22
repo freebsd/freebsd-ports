@@ -1,0 +1,20 @@
+--- nmm/utils/net/SockStream_Linux.cpp.orig	2008-04-18 16:00:06.574327511 +0200
++++ nmm/utils/net/SockStream_Linux.cpp	2008-04-18 16:02:21.213756868 +0200
+@@ -268,7 +268,7 @@
+ 
+ #ifndef __CYGWIN__
+   void SockStream::enablePartialFrames(const bool& value){
+-#ifndef BUILD_MACOSX
++#if !defined(BUILD_MACOSX) && !defined(__FreeBSD__)
+     if ( setsockopt(getSocket(), SOL_TCP,  TCP_CORK, reinterpret_cast<const char*>(&value), sizeof(value)) == -1) {
+       createSetSockOptException(errno);
+     }
+@@ -283,7 +283,7 @@
+   bool SockStream::isPartialFramesEnabled(){
+     int retval = 0;
+ #ifndef __CYGWIN__
+-#ifndef BUILD_MACOSX
++#if !defined(BUILD_MACOSX) && !defined(__FreeBSD__)
+     unsigned int size = sizeof(retval);
+     if (getsockopt(getSocket(), SOL_TCP, TCP_CORK, reinterpret_cast<char*>(&retval), &size) == -1)  {
+       createSetSockOptException(errno);
