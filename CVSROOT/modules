@@ -9962,6 +9962,7 @@ p5-Env-PS1	ports/devel/p5-Env-PS1
 p5-Env-Path	ports/devel/p5-Env-Path
 p5-Errno	ports/devel/p5-Errno
 p5-Error	ports/lang/p5-Error
+p5-Eval-Context	ports/devel/p5-Eval-Context
 p5-Event	ports/devel/p5-Event
 p5-Event-ExecFlow	ports/devel/p5-Event-ExecFlow
 p5-Event-Lib	ports/devel/p5-Event-Lib
