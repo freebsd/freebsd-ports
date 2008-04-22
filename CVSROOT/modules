@@ -4910,6 +4910,7 @@ ia64sim		ports/emulators/ia64sim
 iaikpkcs11wrapper	ports/security/iaikpkcs11wrapper
 iat		ports/sysutils/iat
 iaxmodem	ports/net/iaxmodem
+ib-kmod		ports/comms/ib-kmod
 ibsh		ports/shells/ibsh
 ical		ports/deskutils/ical
 ical2html	ports/converters/ical2html
