@@ -1,9 +1,9 @@
---- ../libhangul-0.0.7_orig/Makefile.in	2008-01-31 23:42:08.000000000 +0900
-+++ Makefile.in	2008-02-04 02:51:19.000000000 +0900
+--- ./Makefile.in.orig	2008-04-20 10:01:45.000000000 +0300
++++ ./Makefile.in	2008-04-22 11:57:45.000000000 +0300
 @@ -191,7 +191,7 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
- SUBDIRS = hangul data bindings test
+ SUBDIRS = hangul tools data test
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = libhangul.pc
