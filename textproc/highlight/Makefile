@@ -31,6 +31,10 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^PREFIX =|PREFIX ?=|' ${WRKSRC}/${MAKEFILE}
