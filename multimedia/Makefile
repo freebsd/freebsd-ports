@@ -162,6 +162,7 @@
     SUBDIR += mplex
     SUBDIR += mythtv
     SUBDIR += netshow
+    SUBDIR += nmm
     SUBDIR += noatun-plugins
     SUBDIR += nxtvepg
     SUBDIR += ogle
