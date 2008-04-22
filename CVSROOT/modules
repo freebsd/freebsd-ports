@@ -8522,6 +8522,7 @@ nmap		ports/security/nmap
 nmap-i18n-man	ports/security/nmap-i18n-man
 nmh		ports/mail/nmh
 nml		ports/lang/nml
+nmm		ports/multimedia/nmm
 nmzmail		ports/mail/nmzmail
 nn		ports/news/nn
 nn-aspell	ports/textproc/nn-aspell
