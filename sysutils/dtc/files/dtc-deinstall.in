@@ -9,10 +9,9 @@ UNIX_TYPE=freebsd
 PREFIX=%%PREFIX%%
 LOCALBASE=%%LOCALBASE%%
 QMAIL_DIR=%%QMAIL_DIR%%
-DTCROOT=%%DTCROOT%%
 
-. ${LOCALBASE}/${DTCROOT}/admin/install/bsd_config
-. ${LOCALBASE}/${DTCROOT}/admin/install/functions
+. ${LOCALBASE}/www/dtc/admin/install/bsd_config
+. ${LOCALBASE}/www/dtc/admin/install/functions
 
 DTCsearchConfigFiles
 DTCuninstallPackage

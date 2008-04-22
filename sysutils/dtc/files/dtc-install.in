@@ -8,19 +8,19 @@
 PREFIX=%%PREFIX%%
 LOCALBASE=%%LOCALBASE%%
 QMAIL_DIR=%%QMAIL_DIR%%
-DTCROOT=%%DTCROOT%%
 
 # DATABASE CONFIGURATION
 echo "### MYSQL CONFIGURATION ###"
 echo ""
 echo "WARNING: Your MySQL Server MUST be running."
-echo "If not, please issue the following cmd:"
-echo "${LOCALBASE}/etc/rc.d/mysql-server.sh start"
+echo "If not, please add mysql_enable=\"YES\" in your"
+echo "/etc/rc.conf and issue the following cmd:"
+echo "/usr/local/etc/rc.d/mysql-server start"
 echo ""
 
-. ${LOCALBASE}/${DTCROOT}/admin/install/bsd_config
-. ${LOCALBASE}/${DTCROOT}/admin/install/interactive_installer
-. ${LOCALBASE}/${DTCROOT}/admin/install/functions
+. ${LOCALBASE}/www/dtc/admin/install/bsd_config
+. ${LOCALBASE}/www/dtc/admin/install/interactive_installer
+. ${LOCALBASE}/www/dtc/admin/install/functions
 
 enableBsdBind
 copyBsdPhpIni

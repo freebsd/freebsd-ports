@@ -1,648 +1,841 @@
-%%DTCROOT%%/admin/checkbind.sh
-%%DTCROOT%%/admin/404.php
-%%DTCROOT%%/admin/cpugraph/createrrd.sh
-%%DTCROOT%%/admin/cpugraph/get_cpu_load.sh
-%%DTCROOT%%/admin/accesslog.php
-%%DTCROOT%%/admin/bw_per_month.php
-%%DTCROOT%%/admin/cpugraph.cgi
-%%DTCROOT%%/admin/cron.php
-%%DTCROOT%%/admin/deamons_state.php
-%%DTCROOT%%/admin/deamons_state_strings.php
-%%DTCROOT%%/admin/favicon.ico
-%%DTCROOT%%/admin/index.php
-%%DTCROOT%%/admin/ip_change.sh
-%%DTCROOT%%/admin/mailgraph.cgi
-%%DTCROOT%%/admin/memgraph.cgi
-%%DTCROOT%%/admin/netusegraph.cgi
-%%DTCROOT%%/admin/patch_saslatuhd_startup
-%%DTCROOT%%/admin/queuegraph.cgi
-%%DTCROOT%%/admin/reminders.php
-%%DTCROOT%%/admin/updateChroot.sh
-%%DTCROOT%%/admin/view_waitingusers.php
-%%DTCROOT%%/admin/dtcrm/main.php
-%%DTCROOT%%/admin/dtcrm/product_manager.php
-%%DTCROOT%%/admin/dtcrm/submit_to_sql.php
-%%DTCROOT%%/admin/genfiles/change_debconf_domain.sh
-%%DTCROOT%%/admin/genfiles/change_debconf_ip.sh
-%%DTCROOT%%/admin/genfiles/gen_awstats.php
-%%DTCROOT%%/admin/genfiles/gen_backup_script.php
-%%DTCROOT%%/admin/genfiles/gen_customer_ssl_cert.sh
-%%DTCROOT%%/admin/genfiles/gen_email_account.php
-%%DTCROOT%%/admin/genfiles/gen_maildrop_userdb.php
-%%DTCROOT%%/admin/genfiles/gen_mailfilter.sh
-%%DTCROOT%%/admin/genfiles/gen_named_files.php
-%%DTCROOT%%/admin/genfiles/gen_perso_vhost.php
-%%DTCROOT%%/admin/genfiles/gen_postfix_email_account.php
-%%DTCROOT%%/admin/genfiles/gen_pro_vhost.php
-%%DTCROOT%%/admin/genfiles/gen_qmail_email_account.php
-%%DTCROOT%%/admin/genfiles/gen_sasl.sh
-%%DTCROOT%%/admin/genfiles/gen_ssh_account.php
-%%DTCROOT%%/admin/genfiles/gen_webalizer_stat.php
-%%DTCROOT%%/admin/genfiles/genfiles.php
-%%DTCROOT%%/admin/genfiles/mailfilter_vacation_template
-%%DTCROOT%%/admin/genfiles/remote_mail_list.php
-%%DTCROOT%%/admin/inc/adddomain.png
-%%DTCROOT%%/admin/inc/databases.png
-%%DTCROOT%%/admin/inc/dedic-server.png
-%%DTCROOT%%/admin/inc/domains.png
-%%DTCROOT%%/admin/inc/draw_user_admin.php
-%%DTCROOT%%/admin/inc/dtc_config.php
-%%DTCROOT%%/admin/inc/dtc_config_strings.php
-%%DTCROOT%%/admin/inc/folder.png
-%%DTCROOT%%/admin/inc/ftp-accounts.png
-%%DTCROOT%%/admin/inc/help.png
-%%DTCROOT%%/admin/inc/img.php
-%%DTCROOT%%/admin/inc/img_alt.php
-%%DTCROOT%%/admin/inc/img_alt_skin.php
-%%DTCROOT%%/admin/inc/imglong.png
-%%DTCROOT%%/admin/inc/imgshort.png
-%%DTCROOT%%/admin/inc/mailboxs.png
-%%DTCROOT%%/admin/inc/mailing-lists.png
-%%DTCROOT%%/admin/inc/my-account.png
-%%DTCROOT%%/admin/inc/nameservers.png
-%%DTCROOT%%/admin/inc/nav.php
-%%DTCROOT%%/admin/inc/nickhandles.png
-%%DTCROOT%%/admin/inc/package-installer.png
-%%DTCROOT%%/admin/inc/password.png
-%%DTCROOT%%/admin/inc/reseller.png
-%%DTCROOT%%/admin/inc/ssh-accounts.png
-%%DTCROOT%%/admin/inc/stats.png
-%%DTCROOT%%/admin/inc/subdomains.png
-%%DTCROOT%%/admin/inc/submit_root_querys.php
-%%DTCROOT%%/admin/inc/ticket.png
-%%DTCROOT%%/admin/inc/tools.png
-%%DTCROOT%%/admin/inc/virtual-server.png
-%%DTCROOT%%/admin/install/bsd_config
-%%DTCROOT%%/admin/install/debian_config
-%%DTCROOT%%/admin/install/functions
-%%DTCROOT%%/admin/install/gentoo_config
-%%DTCROOT%%/admin/install/install
-%%DTCROOT%%/admin/install/interactive_installer
-%%DTCROOT%%/admin/install/mk_root_mailbox.php
-%%DTCROOT%%/admin/install/osx_config
-%%DTCROOT%%/admin/install/redhat_config
-%%DTCROOT%%/admin/install/uninstall
-%%DTCROOT%%/admin/memgraph/createrrd.sh
-%%DTCROOT%%/admin/memgraph/get_meminfo.sh
-%%DTCROOT%%/admin/netusegraph/createrrd.sh
-%%DTCROOT%%/admin/netusegraph/get_net_usage.sh
-%%DTCROOT%%/admin/queuegraph/count_postfix.sh
-%%DTCROOT%%/admin/queuegraph/count_qmail.sh
-%%DTCROOT%%/admin/queuegraph/createrrd.sh
-%%DTCROOT%%/admin/reminders_msg/server_expired_already.txt
-%%DTCROOT%%/admin/reminders_msg/server_expired_last_warning.txt
-%%DTCROOT%%/admin/reminders_msg/server_expired_shutdown.txt
-%%DTCROOT%%/admin/reminders_msg/server_expired_today.txt
-%%DTCROOT%%/admin/reminders_msg/server_will_expire.txt
-%%DTCROOT%%/admin/reminders_msg/shared_expired_already.txt
-%%DTCROOT%%/admin/reminders_msg/shared_expired_last_warning.txt
-%%DTCROOT%%/admin/reminders_msg/shared_expired_shutdown.txt
-%%DTCROOT%%/admin/reminders_msg/shared_expired_today.txt
-%%DTCROOT%%/admin/reminders_msg/shared_will_expire.txt
-%%DTCROOT%%/admin/reminders_msg/vps_expired_already.txt
-%%DTCROOT%%/admin/reminders_msg/vps_expired_last_warning.txt
-%%DTCROOT%%/admin/reminders_msg/vps_expired_shutdown.txt
-%%DTCROOT%%/admin/reminders_msg/vps_expired_today.txt
-%%DTCROOT%%/admin/reminders_msg/vps_will_expire.txt
-%%DTCROOT%%/admin/tables/admin.sql
-%%DTCROOT%%/admin/tables/backup.sql
-%%DTCROOT%%/admin/tables/clients.sql
-%%DTCROOT%%/admin/tables/commande.sql
-%%DTCROOT%%/admin/tables/config.sql
-%%DTCROOT%%/admin/tables/cron_job.sql
-%%DTCROOT%%/admin/tables/dedicated.sql
-%%DTCROOT%%/admin/tables/domain.sql
-%%DTCROOT%%/admin/tables/email_accouting.sql
-%%DTCROOT%%/admin/tables/fetchmail.sql
-%%DTCROOT%%/admin/tables/freeradius.sql
-%%DTCROOT%%/admin/tables/ftp_access.sql
-%%DTCROOT%%/admin/tables/ftp_accounting.sql
-%%DTCROOT%%/admin/tables/ftp_logs.sql
-%%DTCROOT%%/admin/tables/groups.sql
-%%DTCROOT%%/admin/tables/handle.sql
-%%DTCROOT%%/admin/tables/http_accounting.sql
-%%DTCROOT%%/admin/tables/ip_port_service.sql
-%%DTCROOT%%/admin/tables/mailinglist.sql
-%%DTCROOT%%/admin/tables/nameservers.sql
-%%DTCROOT%%/admin/tables/new_admin.sql
-%%DTCROOT%%/admin/tables/paiement.sql
-%%DTCROOT%%/admin/tables/pending_queries.sql
-%%DTCROOT%%/admin/tables/pending_renewal.sql
-%%DTCROOT%%/admin/tables/pop_access.sql
-%%DTCROOT%%/admin/tables/product.sql
-%%DTCROOT%%/admin/tables/scheduled_updates.sql
-%%DTCROOT%%/admin/tables/secpayconf.sql
-%%DTCROOT%%/admin/tables/smtp_logs.sql
-%%DTCROOT%%/admin/tables/ssh_access.sql
-%%DTCROOT%%/admin/tables/ssh_groups.sql
-%%DTCROOT%%/admin/tables/ssh_user_group.sql
-%%DTCROOT%%/admin/tables/ssl_ips.sql
-%%DTCROOT%%/admin/tables/subdomain.sql
-%%DTCROOT%%/admin/tables/tik_admins.sql
-%%DTCROOT%%/admin/tables/tik_cats.sql
-%%DTCROOT%%/admin/tables/tik_queries.sql
-%%DTCROOT%%/admin/tables/vps.sql
-%%DTCROOT%%/admin/tables/vps_ip.sql
-%%DTCROOT%%/admin/tables/vps_server.sql
-%%DTCROOT%%/admin/tables/whitelist.sql
-%%DTCROOT%%/admin/tables/whois.sql
-%%DTCROOT%%/admin/dtc_db.php
-%%DTCROOT%%/admin/restor_db.php
-%%DTCROOT%%/client/bw_per_month.php
-%%DTCROOT%%/client/dynip.php
-%%DTCROOT%%/client/enets-notify.php
-%%DTCROOT%%/client/enets_pay_icon.gif
-%%DTCROOT%%/client/favicon.ico
-%%DTCROOT%%/client/img2.php
-%%DTCROOT%%/client/index.php
-%%DTCROOT%%/client/list_domains.php
-%%DTCROOT%%/client/login.php
-%%DTCROOT%%/client/new_account.php
-%%DTCROOT%%/client/new_account_form.php
-%%DTCROOT%%/client/new_account_renewal.php
-%%DTCROOT%%/client/paypal.php
-%%DTCROOT%%/client/secpaycallback_worldpay.php
-%%DTCROOT%%/client/inc/adddomain.png
-%%DTCROOT%%/client/inc/database.png
-%%DTCROOT%%/client/inc/databases.png
-%%DTCROOT%%/client/inc/dedic-server.png
-%%DTCROOT%%/client/inc/dns.png
-%%DTCROOT%%/client/inc/domain.png
-%%DTCROOT%%/client/inc/domains.png
-%%DTCROOT%%/client/inc/floppy.png
-%%DTCROOT%%/client/inc/folder.png
-%%DTCROOT%%/client/inc/ftp-accounts.png
-%%DTCROOT%%/client/inc/help.png
-%%DTCROOT%%/client/inc/home.png
-%%DTCROOT%%/client/inc/img.php
-%%DTCROOT%%/client/inc/img_alt.php
-%%DTCROOT%%/client/inc/img_alt_skin.php
-%%DTCROOT%%/client/inc/imglong.png
-%%DTCROOT%%/client/inc/imgshort.png
-%%DTCROOT%%/client/inc/mail.png
-%%DTCROOT%%/client/inc/mailboxs.png
-%%DTCROOT%%/client/inc/mailing-lists.png
-%%DTCROOT%%/client/inc/man.png
-%%DTCROOT%%/client/inc/my-account.png
-%%DTCROOT%%/client/inc/nameservers.png
-%%DTCROOT%%/client/inc/nickhandles.png
-%%DTCROOT%%/client/inc/package-installer.png
-%%DTCROOT%%/client/inc/password.png
-%%DTCROOT%%/client/inc/reseller.png
-%%DTCROOT%%/client/inc/ssh-accounts.png
-%%DTCROOT%%/client/inc/stat.png
-%%DTCROOT%%/client/inc/stats.png
-%%DTCROOT%%/client/inc/subdomains.png
-%%DTCROOT%%/client/inc/ticket.png
-%%DTCROOT%%/client/inc/tool.png
-%%DTCROOT%%/client/inc/tools.png
-%%DTCROOT%%/client/inc/tst_icon.png
-%%DTCROOT%%/client/inc/virtual-server.png
-%%DTCROOT%%/doc/changelog
-%%DTCROOT%%/doc/LICENSE
-%%DTCROOT%%/doc/daemonconf_howto/ftp_http_logging_to_mysql
-%%DTCROOT%%/doc/daemonconf_howto/my_init.d_qmail.startup.script
-%%DTCROOT%%/doc/daemonconf_howto/qmail_anti_spam_measures
-%%DTCROOT%%/doc/README.gentoo
-%%DTCROOT%%/doc/build_debian_upload.sh
-%%DTCROOT%%/doc/dns_transfer.sh
-%%DTCROOT%%/doc/todo
-%%DTCROOT%%/doc/update_stable_rtag.sh
-%%DTCROOT%%/doc/dtc_storefront/README
-%%DTCROOT%%/doc/dtc_storefront/dtc_storefront/dbconnect.php
-%%DTCROOT%%/doc/dtc_storefront/dtc_storefront.php
-%%DTCROOT%%/doc/dtc_storefront/gplhost-testimonials-delete.php
-%%DTCROOT%%/doc/dtc_storefront/gplhost-testimonials-record.php
-%%DTCROOT%%/doc/dtc_storefront/gplhost-testimonials-validate.php
-%%DTCROOT%%/doc/dtc_storefront/gplhost-testimonials.php
-%%DTCROOT%%/doc/html/en/addzone.png
-%%DTCROOT%%/doc/html/en/1.html
-%%DTCROOT%%/doc/html/en/2.html
-%%DTCROOT%%/doc/html/en/3.html
-%%DTCROOT%%/doc/html/en/4.html
-%%DTCROOT%%/doc/html/en/5.html
-%%DTCROOT%%/doc/html/en/clientconfig.png
-%%DTCROOT%%/doc/html/en/conffilegen.png
-%%DTCROOT%%/doc/html/en/confprinc.png
-%%DTCROOT%%/doc/html/en/confzone.png
-%%DTCROOT%%/doc/html/en/doc.css
-%%DTCROOT%%/doc/html/en/domainconf.png
-%%DTCROOT%%/doc/html/en/dtc.png
-%%DTCROOT%%/doc/html/en/dtc_cluster.png
-%%DTCROOT%%/doc/html/en/dtc_logo.gif
-%%DTCROOT%%/doc/html/en/ftps.png
-%%DTCROOT%%/doc/html/en/index.example.php
-%%DTCROOT%%/doc/html/en/index.html
-%%DTCROOT%%/doc/html/en/mailboxs.png
-%%DTCROOT%%/doc/html/en/menudtc.png
-%%DTCROOT%%/doc/html/en/newadmin.png
-%%DTCROOT%%/doc/html/en/page_top.html
-%%DTCROOT%%/doc/html/fr/addzone.png
-%%DTCROOT%%/doc/html/fr/1.html
-%%DTCROOT%%/doc/html/fr/2.html
-%%DTCROOT%%/doc/html/fr/3.html
-%%DTCROOT%%/doc/html/fr/4.html
-%%DTCROOT%%/doc/html/fr/5.html
-%%DTCROOT%%/doc/html/fr/clientconfig.png
-%%DTCROOT%%/doc/html/fr/conffilegen.png
-%%DTCROOT%%/doc/html/fr/confprinc.png
-%%DTCROOT%%/doc/html/fr/confzone.png
-%%DTCROOT%%/doc/html/fr/doc.css
-%%DTCROOT%%/doc/html/fr/domainconf.png
-%%DTCROOT%%/doc/html/fr/dtc.png
-%%DTCROOT%%/doc/html/fr/dtc_logo.gif
-%%DTCROOT%%/doc/html/fr/ftps.png
-%%DTCROOT%%/doc/html/fr/index.html
-%%DTCROOT%%/doc/html/fr/index.php
-%%DTCROOT%%/doc/html/fr/mailboxs.png
-%%DTCROOT%%/doc/html/fr/menudtc.png
-%%DTCROOT%%/doc/html/fr/newadmin.png
-%%DTCROOT%%/doc/html/fr/page_top.html
-%%DTCROOT%%/doc/iglobalwall/doc.txt
-%%DTCROOT%%/doc/iglobalwall/iglobalwall.tar.gz
-%%DTCROOT%%/doc/iglobalwall/mail_header.rar
-%%DTCROOT%%/email/index.php
-%%DTCROOT%%/email/api.php
-%%DTCROOT%%/email/gfx
-%%DTCROOT%%/email/imgcache
-%%DTCROOT%%/email/inc/domain.png
-%%DTCROOT%%/email/inc/domains.png
-%%DTCROOT%%/email/inc/img.php
-%%DTCROOT%%/email/login.php
-%%DTCROOT%%/email/submit_to_sql_dtcemail.php
-%%DTCROOT%%/Makefile
-%%DTCROOT%%/shared/404_template/expired.php
-%%DTCROOT%%/shared/404_template/404.php
-%%DTCROOT%%/shared/404_template/index.php
-%%DTCROOT%%/shared/autoSQLconfig.php
-%%DTCROOT%%/shared/cyradm.php
-%%DTCROOT%%/shared/default_admin_site.php
-%%DTCROOT%%/shared/dtc_lib.php
-%%DTCROOT%%/shared/upgrade_sql.php
-%%DTCROOT%%/shared/drawlib/anotherDtc.php
-%%DTCROOT%%/shared/drawlib/cc_code_popup.php
-%%DTCROOT%%/shared/drawlib/dtc_functions.php
-%%DTCROOT%%/shared/drawlib/skin.php
-%%DTCROOT%%/shared/drawlib/skinLib.php
-%%DTCROOT%%/shared/drawlib/templates.php
-%%DTCROOT%%/shared/drawlib/tree_menu.php
-%%DTCROOT%%/shared/dtcrm/srs/CHANGELOG
-%%DTCROOT%%/shared/dtcrm/srs/OPS.php
-%%DTCROOT%%/shared/dtcrm/srs/country_codes.php
-%%DTCROOT%%/shared/dtcrm/srs/openSRS.php
-%%DTCROOT%%/shared/dtcrm/srs/openSRS_base.php
-%%DTCROOT%%/shared/dtcrm/srs/ops.dtd
-%%DTCROOT%%/shared/dtcrm/srs/readme
-%%DTCROOT%%/shared/dtcrm/srs/test.php
-%%DTCROOT%%/shared/dtcrm/srs/test.xml
-%%DTCROOT%%/shared/dtcrm/srs/todo
-%%DTCROOT%%/shared/dtcrm/RENAME_ME_srs_config.php
-%%DTCROOT%%/shared/dtcrm/draw.php
-%%DTCROOT%%/shared/dtcrm/draw_adddomain.php
-%%DTCROOT%%/shared/dtcrm/draw_handle.php
-%%DTCROOT%%/shared/dtcrm/draw_nameservers.php
-%%DTCROOT%%/shared/dtcrm/draw_register_forms.php
-%%DTCROOT%%/shared/dtcrm/draw_transferdomain.php
-%%DTCROOT%%/shared/dtcrm/draw_whois.php
-%%DTCROOT%%/shared/dtcrm/opensrs.php
-%%DTCROOT%%/shared/dtcrm/registry_calls.php
-%%DTCROOT%%/shared/dtcrm/srs_base.php
-%%DTCROOT%%/shared/dtcrm/srs_nameserver.php
-%%DTCROOT%%/shared/dtcrm/srs_registernames.php
-%%DTCROOT%%/shared/dtcrm/strings.php
-%%DTCROOT%%/shared/dtcrm/submit_to_sql.php
-%%DTCROOT%%/shared/dtcrm/todo
-%%DTCROOT%%/shared/dtcrm/webnic.cc/domainQuery.php
-%%DTCROOT%%/shared/dtcrm/webnic.cc/domainRegistration.php
-%%DTCROOT%%/shared/dtcrm/webnic.cc/test.php
-%%DTCROOT%%/shared/dtcrm/webnic.cc/webnic_base.php
-%%DTCROOT%%/shared/dtcrm/webnic.cc/webnic_settings.php
-%%DTCROOT%%/shared/dtcrm/webnic.cc/webnic_submit.php
-%%DTCROOT%%/shared/gfx/dtc_logo.gif
-%%DTCROOT%%/shared/gfx/dtc.css
-%%DTCROOT%%/shared/gfx/bar/middle_n.png
-%%DTCROOT%%/shared/gfx/bar/end.gif
-%%DTCROOT%%/shared/gfx/bar/end.png
-%%DTCROOT%%/shared/gfx/bar/middle_green.gif
-%%DTCROOT%%/shared/gfx/bar/middle_orange.gif
-%%DTCROOT%%/shared/gfx/bar/middle_red.gif
-%%DTCROOT%%/shared/gfx/bar/middle_s.png
-%%DTCROOT%%/shared/gfx/bar/middle_umpty.gif
-%%DTCROOT%%/shared/gfx/bar/middle_yellow.gif
-%%DTCROOT%%/shared/gfx/bar/start.gif
-%%DTCROOT%%/shared/gfx/bar/start.png
-%%DTCROOT%%/shared/gfx/dtc/all_scripts.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_backup.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_mail.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_named.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_stats.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_web.gif
-%%DTCROOT%%/shared/gfx/dtc/generate_web2.gif
-%%DTCROOT%%/shared/gfx/dtc/reinit_named.gif
-%%DTCROOT%%/shared/gfx/dtc_logo_small.gif
-%%DTCROOT%%/shared/gfx/generate_pass.png
-%%DTCROOT%%/shared/gfx/help.png
-%%DTCROOT%%/shared/gfx/see_password.png
-%%DTCROOT%%/shared/gfx/stock_add_24.png
-%%DTCROOT%%/shared/gfx/stock_apply_20.png
-%%DTCROOT%%/shared/gfx/stock_save_24.png
-%%DTCROOT%%/shared/gfx/stock_trash_24.png
-%%DTCROOT%%/shared/gfx/tucows.jpg
-%%DTCROOT%%/shared/gfx/wz_tooltip.js
-%%DTCROOT%%/shared/gfx/language/en/pub/banner_alight.gif
-%%DTCROOT%%/shared/gfx/language/en/button_en.gif
-%%DTCROOT%%/shared/gfx/language/de.gif
-%%DTCROOT%%/shared/gfx/language/dtc.gif
-%%DTCROOT%%/shared/gfx/language/en.gif
-%%DTCROOT%%/shared/gfx/language/es.gif
-%%DTCROOT%%/shared/gfx/language/fr.gif
-%%DTCROOT%%/shared/gfx/language/hu.gif
-%%DTCROOT%%/shared/gfx/language/it.gif
-%%DTCROOT%%/shared/gfx/language/nl.gif
-%%DTCROOT%%/shared/gfx/language/pl.png
-%%DTCROOT%%/shared/gfx/language/pt.gif
-%%DTCROOT%%/shared/gfx/language/ru.gif
-%%DTCROOT%%/shared/gfx/language/se.png
-%%DTCROOT%%/shared/gfx/language/zh.gif
-%%DTCROOT%%/shared/gfx/language/fr/pub/banner_alight.gif
-%%DTCROOT%%/shared/gfx/language/fr/button_fr.gif
-%%DTCROOT%%/shared/gfx/language/nl/pub/banner_alight.gif
-%%DTCROOT%%/shared/gfx/language/nl/button_en.gif
-%%DTCROOT%%/shared/gfx/language/ru/pub/banner_alight.gif
-%%DTCROOT%%/shared/gfx/language/ru/button_en.gif
-%%DTCROOT%%/shared/gfx/menu/admins.png
-%%DTCROOT%%/shared/gfx/menu/bw_icon.png
-%%DTCROOT%%/shared/gfx/menu/client-interface.png
-%%DTCROOT%%/shared/gfx/menu/config.gif
-%%DTCROOT%%/shared/gfx/menu/config_panel.png
-%%DTCROOT%%/shared/gfx/menu/crm.png
-%%DTCROOT%%/shared/gfx/menu/daemons.png
-%%DTCROOT%%/shared/gfx/menu/domain-config.png
-%%DTCROOT%%/shared/gfx/menu/product_manager.png
-%%DTCROOT%%/shared/gfx/menu/recycle.gif
-%%DTCROOT%%/shared/gfx/menu/renewals.png
-%%DTCROOT%%/shared/gfx/menu/user-editor.png
-%%DTCROOT%%/shared/gfx/menu/users.gif
-%%DTCROOT%%/shared/gfx/pagetop/dtc_banner.gif
-%%DTCROOT%%/shared/gfx/pagetop/dtc_banner_end.gif
-%%DTCROOT%%/shared/gfx/pagetop/dtc_logo.gif
-%%DTCROOT%%/shared/gfx/pagetop/logoend.gif
-%%DTCROOT%%/shared/gfx/pagetop/logofond.gif
-%%DTCROOT%%/shared/gfx/pagetop/logostart.gif
-%%DTCROOT%%/shared/gfx/securepay/poweredByWorldPay.gif
-%%DTCROOT%%/shared/gfx/skin/darkblue/background.gif
-%%DTCROOT%%/shared/gfx/skin/darkblue/bgcolor.php
-%%DTCROOT%%/shared/gfx/skin/darkblue/border_1.gif
-%%DTCROOT%%/shared/gfx/skin/darkblue/border_2.gif
-%%DTCROOT%%/shared/gfx/skin/darkblue/border_3.gif
-%%DTCROOT%%/shared/gfx/skin/darkblue/border_4.gif
-%%DTCROOT%%/shared/gfx/skin/darkblue/corner_1.gif
-%%DTCROOT%%/shared/gfx/skin/darkblue/corner_2.gif
-%%DTCROOT%%/shared/gfx/skin/darkblue/corner_3.gif
-%%DTCROOT%%/shared/gfx/skin/darkblue/corner_4.gif
-%%DTCROOT%%/shared/gfx/skin/darkblue/skin.css
-%%DTCROOT%%/shared/gfx/skin/darkblue/skin.php
-%%DTCROOT%%/shared/gfx/skin/frame/border_1.gif
-%%DTCROOT%%/shared/gfx/skin/frame/border_2.gif
-%%DTCROOT%%/shared/gfx/skin/frame/border_3.gif
-%%DTCROOT%%/shared/gfx/skin/frame/border_4.gif
-%%DTCROOT%%/shared/gfx/skin/frame/corner_1.gif
-%%DTCROOT%%/shared/gfx/skin/frame/corner_2.gif
-%%DTCROOT%%/shared/gfx/skin/frame/corner_3.gif
-%%DTCROOT%%/shared/gfx/skin/frame/corner_4.gif
-%%DTCROOT%%/shared/gfx/skin/frame/skin.css
-%%DTCROOT%%/shared/gfx/skin/frame/skin.php
-%%DTCROOT%%/shared/gfx/skin/green/background.gif
-%%DTCROOT%%/shared/gfx/skin/green/border_1.gif
-%%DTCROOT%%/shared/gfx/skin/green/border_2.gif
-%%DTCROOT%%/shared/gfx/skin/green/border_3.gif
-%%DTCROOT%%/shared/gfx/skin/green/border_4.gif
-%%DTCROOT%%/shared/gfx/skin/green/corner_1.gif
-%%DTCROOT%%/shared/gfx/skin/green/corner_2.gif
-%%DTCROOT%%/shared/gfx/skin/green/corner_3.gif
-%%DTCROOT%%/shared/gfx/skin/green/corner_4.gif
-%%DTCROOT%%/shared/gfx/skin/green/skin.css
-%%DTCROOT%%/shared/gfx/skin/green/skin.php
-%%DTCROOT%%/shared/gfx/skin/green2/background.gif
-%%DTCROOT%%/shared/gfx/skin/green2/border_1.gif
-%%DTCROOT%%/shared/gfx/skin/green2/border_2.gif
-%%DTCROOT%%/shared/gfx/skin/green2/border_3.gif
-%%DTCROOT%%/shared/gfx/skin/green2/border_4.gif
-%%DTCROOT%%/shared/gfx/skin/green2/corner_1.gif
-%%DTCROOT%%/shared/gfx/skin/green2/corner_2.gif
-%%DTCROOT%%/shared/gfx/skin/green2/corner_3.gif
-%%DTCROOT%%/shared/gfx/skin/green2/corner_4.gif
-%%DTCROOT%%/shared/gfx/skin/green2/imglong.png
-%%DTCROOT%%/shared/gfx/skin/green2/imgshort.png
-%%DTCROOT%%/shared/gfx/skin/green2/skin.css
-%%DTCROOT%%/shared/gfx/skin/green2/skin.php
-%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/debian.gif
-%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/dolar.gif
-%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/dtc.gif
-%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/dtc_logo.gif
-%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/earth.gif
-%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/gplhost.gif
-%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/icann-logo_small.gif
-%%DTCROOT%%/shared/gfx/skin/green_gpl/icons/phpmyadmin.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/background.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/bgcolor.php
-%%DTCROOT%%/shared/gfx/skin/green_gpl/border_bottom.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/border_left.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/border_right.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/corner_bottom_left.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/corner_bottom_right.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/corner_top_left.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/corner_top_right.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/no_title_corner_top_left.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/no_title_corner_top_right.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/no_title_title_3_background.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/skin.css
-%%DTCROOT%%/shared/gfx/skin/green_gpl/skin.php
-%%DTCROOT%%/shared/gfx/skin/green_gpl/title_1_icon.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/title_2_transi.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/title_3_background.png
-%%DTCROOT%%/shared/gfx/skin/green_gpl/title_4_end.png
-%%DTCROOT%%/shared/gfx/skin/iglobal/background.gif
-%%DTCROOT%%/shared/gfx/skin/iglobal/bgcolor.php
-%%DTCROOT%%/shared/gfx/skin/iglobal/border_bottom.gif
-%%DTCROOT%%/shared/gfx/skin/iglobal/border_left.gif
-%%DTCROOT%%/shared/gfx/skin/iglobal/border_right.gif
-%%DTCROOT%%/shared/gfx/skin/iglobal/border_top.gif
-%%DTCROOT%%/shared/gfx/skin/iglobal/corner_bottom_left.gif
-%%DTCROOT%%/shared/gfx/skin/iglobal/corner_bottom_right.gif
-%%DTCROOT%%/shared/gfx/skin/iglobal/corner_top_left.gif
-%%DTCROOT%%/shared/gfx/skin/iglobal/corner_top_right.gif
-%%DTCROOT%%/shared/gfx/skin/iglobal/imglong.png
-%%DTCROOT%%/shared/gfx/skin/iglobal/imgshort.png
-%%DTCROOT%%/shared/gfx/skin/iglobal/skin.css
-%%DTCROOT%%/shared/gfx/skin/iglobal/skin.php
-%%DTCROOT%%/shared/gfx/skin/muedgrey/amp_style.css
-%%DTCROOT%%/shared/gfx/skin/muedgrey/background.gif
-%%DTCROOT%%/shared/gfx/skin/muedgrey/bgcolor.php
-%%DTCROOT%%/shared/gfx/skin/muedgrey/border_1.gif
-%%DTCROOT%%/shared/gfx/skin/muedgrey/border_2.gif
-%%DTCROOT%%/shared/gfx/skin/muedgrey/border_3.gif
-%%DTCROOT%%/shared/gfx/skin/muedgrey/border_4.gif
-%%DTCROOT%%/shared/gfx/skin/muedgrey/corner_1.gif
-%%DTCROOT%%/shared/gfx/skin/muedgrey/corner_2.gif
-%%DTCROOT%%/shared/gfx/skin/muedgrey/corner_3.gif
-%%DTCROOT%%/shared/gfx/skin/muedgrey/corner_4.gif
-%%DTCROOT%%/shared/gfx/skin/muedgrey/degrade.jpg
-%%DTCROOT%%/shared/gfx/skin/muedgrey/imglong.png
-%%DTCROOT%%/shared/gfx/skin/muedgrey/imgshort.png
-%%DTCROOT%%/shared/gfx/skin/muedgrey/skin.css
-%%DTCROOT%%/shared/gfx/skin/muedgrey/skin.php
-%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/background.png
-%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/bgcolor.php
-%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/border_bottom.png
-%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/ruffdogs.css
-%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/skin.css
-%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/skin.php
-%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/title_1_icon.png
-%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/title_2_transi.png
-%%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla/title_3_background.png
-%%DTCROOT%%/shared/gfx/skin/tex/bgcolor.php
-%%DTCROOT%%/shared/gfx/skin/tex/bgtitlewin.png
-%%DTCROOT%%/shared/gfx/skin/tex/bgwin.png
-%%DTCROOT%%/shared/gfx/skin/tex/imglong.png
-%%DTCROOT%%/shared/gfx/skin/tex/imgshort.png
-%%DTCROOT%%/shared/gfx/skin/tex/pagetop.html
-%%DTCROOT%%/shared/gfx/skin/tex/skin.css
-%%DTCROOT%%/shared/gfx/skin/tex/skin.php
-%%DTCROOT%%/shared/inc/forms/admin_stats.php
-%%DTCROOT%%/shared/inc/forms/database.php
-%%DTCROOT%%/shared/inc/forms/dedicated.php
-%%DTCROOT%%/shared/inc/forms/dns.php
-%%DTCROOT%%/shared/inc/forms/domain_info.php
-%%DTCROOT%%/shared/inc/forms/domain_stats.php
-%%DTCROOT%%/shared/inc/forms/email.php
-%%DTCROOT%%/shared/inc/forms/ftp.php
-%%DTCROOT%%/shared/inc/forms/lists.php
-%%DTCROOT%%/shared/inc/forms/lists_strings.php
-%%DTCROOT%%/shared/inc/forms/my_account.php
-%%DTCROOT%%/shared/inc/forms/packager.php
-%%DTCROOT%%/shared/inc/forms/reseller.php
-%%DTCROOT%%/shared/inc/forms/root_admin.php
-%%DTCROOT%%/shared/inc/forms/ssh.php
-%%DTCROOT%%/shared/inc/forms/subdomain.php
-%%DTCROOT%%/shared/inc/forms/ticket.php
-%%DTCROOT%%/shared/inc/forms/tools.php
-%%DTCROOT%%/shared/inc/forms/vps.php
-%%DTCROOT%%/shared/inc/forms/vps_strings.php
-%%DTCROOT%%/shared/inc/accounting.php
-%%DTCROOT%%/shared/inc/dbconect.php
-%%DTCROOT%%/shared/inc/domain_export.php
-%%DTCROOT%%/shared/inc/draw.php
-%%DTCROOT%%/shared/inc/fetch.php
-%%DTCROOT%%/shared/inc/fetchmail.php
-%%DTCROOT%%/shared/inc/nusoap.php
-%%DTCROOT%%/shared/inc/skin.class.php
-%%DTCROOT%%/shared/inc/submit_to_sql.php
-%%DTCROOT%%/shared/inc/tree_mem_to_db.php
-%%DTCROOT%%/shared/inc/vps.php
-%%DTCROOT%%/shared/inc/sql/database.php
-%%DTCROOT%%/shared/inc/sql/database_strings.php
-%%DTCROOT%%/shared/inc/sql/dns.php
-%%DTCROOT%%/shared/inc/sql/domain_info.php
-%%DTCROOT%%/shared/inc/sql/domain_info_strings.php
-%%DTCROOT%%/shared/inc/sql/email.php
-%%DTCROOT%%/shared/inc/sql/email_strings.php
-%%DTCROOT%%/shared/inc/sql/ftp.php
-%%DTCROOT%%/shared/inc/sql/ftp_strings.php
-%%DTCROOT%%/shared/inc/sql/lists.php
-%%DTCROOT%%/shared/inc/sql/reseller.php
-%%DTCROOT%%/shared/inc/sql/ssh.php
-%%DTCROOT%%/shared/inc/sql/ssh_strings.php
-%%DTCROOT%%/shared/inc/sql/subdomain.php
-%%DTCROOT%%/shared/inc/sql/subdomain_strings.php
-%%DTCROOT%%/shared/inc/sql/ticket.php
-%%DTCROOT%%/shared/inc/sql/vps.php
-%%DTCROOT%%/shared/inc/sql/vps_strings.php
-%%DTCROOT%%/shared/securepay/gateways/enets.php
-%%DTCROOT%%/shared/securepay/gateways/paypal.php
-%%DTCROOT%%/shared/securepay/gateways/worldpay.php
-%%DTCROOT%%/shared/securepay/paiement.php
-%%DTCROOT%%/shared/securepay/paiement_config.php
-%%DTCROOT%%/shared/securepay/pay_functions.php
-%%DTCROOT%%/shared/template/dtc_logo.gif
-%%DTCROOT%%/shared/template/favicon.ico
-%%DTCROOT%%/shared/template/index.php
-%%DTCROOT%%/shared/vars/clear_lang_array.php
-%%DTCROOT%%/shared/vars/error_strings.php
-%%DTCROOT%%/shared/vars/global_vars.php
-%%DTCROOT%%/shared/vars/lang.php
-%%DTCROOT%%/shared/vars/strings.php
-%%DTCROOT%%/shared/vars/table_names.php
-%%DTCROOT%%/shared/dtc_version.php
-%%DTCROOT%%/admin/gfx
-%%DTCROOT%%/admin/imgcache
-%%DTCROOT%%/client/gfx
-%%DTCROOT%%/client/imgcache
+%%LOCALBASE%%/www/dtc/shared/visitors_template/visitors.php
+%%LOCALBASE%%/www/dtc/shared/vars/table_names.php
+%%LOCALBASE%%/www/dtc/shared/vars/locale/zh_CN/LC_MESSAGES/messages.mo
+%%LOCALBASE%%/www/dtc/shared/vars/locale/se_NO/LC_MESSAGES/messages.mo
+%%LOCALBASE%%/www/dtc/shared/vars/locale/ru_RU.UTF-8/LC_MESSAGES/messages.mo
+%%LOCALBASE%%/www/dtc/shared/vars/locale/pt_PT/LC_MESSAGES/messages.mo
+%%LOCALBASE%%/www/dtc/shared/vars/locale/pl_PL/LC_MESSAGES/messages.mo
+%%LOCALBASE%%/www/dtc/shared/vars/locale/nl_NL/LC_MESSAGES/messages.mo
+%%LOCALBASE%%/www/dtc/shared/vars/locale/it_IT/LC_MESSAGES/messages.mo
+%%LOCALBASE%%/www/dtc/shared/vars/locale/hu_HU/LC_MESSAGES/messages.mo
+%%LOCALBASE%%/www/dtc/shared/vars/locale/fr_FR/LC_MESSAGES/messages.mo
+%%LOCALBASE%%/www/dtc/shared/vars/locale/es_ES/LC_MESSAGES/messages.mo
+%%LOCALBASE%%/www/dtc/shared/vars/locale/de_DE/LC_MESSAGES/messages.mo
+%%LOCALBASE%%/www/dtc/shared/vars/lang.php
+%%LOCALBASE%%/www/dtc/shared/vars/global_vars.php
+%%LOCALBASE%%/www/dtc/shared/vars/clear_lang_array.php
+%%LOCALBASE%%/www/dtc/shared/template/logo_dtc.gif
+%%LOCALBASE%%/www/dtc/shared/template/index.php
+%%LOCALBASE%%/www/dtc/shared/template/favicon.ico
+%%LOCALBASE%%/www/dtc/shared/template/dtclogo.png
+%%LOCALBASE%%/www/dtc/shared/template/dtc_logo.gif
+%%LOCALBASE%%/www/dtc/shared/securepay/pay_functions.php
+%%LOCALBASE%%/www/dtc/shared/securepay/paiement.php
+%%LOCALBASE%%/www/dtc/shared/securepay/paiement_config.php
+%%LOCALBASE%%/www/dtc/shared/securepay/gateways/worldpay.php
+%%LOCALBASE%%/www/dtc/shared/securepay/gateways/paypal.php
+%%LOCALBASE%%/www/dtc/shared/securepay/gateways/enets.php
+%%LOCALBASE%%/www/dtc/shared/maxmind/TelephoneVerification.php
+%%LOCALBASE%%/www/dtc/shared/maxmind/LocationVerification.php
+%%LOCALBASE%%/www/dtc/shared/maxmind/HTTPBase.php
+%%LOCALBASE%%/www/dtc/shared/maxmind/CreditCardFraudDetection.php
+%%LOCALBASE%%/www/dtc/shared/inc/vps.php
+%%LOCALBASE%%/www/dtc/shared/inc/tree_mem_to_db.php
+%%LOCALBASE%%/www/dtc/shared/inc/submit_to_sql.php
+%%LOCALBASE%%/www/dtc/shared/inc/sql/vps.php
+%%LOCALBASE%%/www/dtc/shared/inc/sql/ticket.php
+%%LOCALBASE%%/www/dtc/shared/inc/sql/subdomain.php
+%%LOCALBASE%%/www/dtc/shared/inc/sql/ssh.php
+%%LOCALBASE%%/www/dtc/shared/inc/sql/reseller.php
+%%LOCALBASE%%/www/dtc/shared/inc/sql/lists.php
+%%LOCALBASE%%/www/dtc/shared/inc/sql/email.php
+%%LOCALBASE%%/www/dtc/shared/inc/sql/domain_stats.php
+%%LOCALBASE%%/www/dtc/shared/inc/sql/domain_info.php
+%%LOCALBASE%%/www/dtc/shared/inc/sql/dns.php
+%%LOCALBASE%%/www/dtc/shared/inc/sql/database.php
+%%LOCALBASE%%/www/dtc/shared/inc/skin.class.php
+%%LOCALBASE%%/www/dtc/shared/inc/nusoap.php
+%%LOCALBASE%%/www/dtc/shared/inc/HTTPRequestClass.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/vps.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/tools.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/ticket.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/subdomain.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/ssh.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/root_admin.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/reseller.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/packager.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/my_account.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/lists.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/invoices.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/ftp.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/email.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/domain_stats.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/domain_info.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/dns.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/dedicated.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/database.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/aliases.php
+%%LOCALBASE%%/www/dtc/shared/inc/forms/admin_stats.php
+%%LOCALBASE%%/www/dtc/shared/inc/fetch.php
+%%LOCALBASE%%/www/dtc/shared/inc/fetchmail.php
+%%LOCALBASE%%/www/dtc/shared/inc/draw.php
+%%LOCALBASE%%/www/dtc/shared/inc/domain_export.php
+%%LOCALBASE%%/www/dtc/shared/inc/delete_user.php
+%%LOCALBASE%%/www/dtc/shared/inc/dbconect.php
+%%LOCALBASE%%/www/dtc/shared/inc/accounting.php
+%%LOCALBASE%%/www/dtc/shared/gfx/wz_tooltip.js
+%%LOCALBASE%%/www/dtc/shared/gfx/stock_trash_24.png
+%%LOCALBASE%%/www/dtc/shared/gfx/stock_save_24.png
+%%LOCALBASE%%/www/dtc/shared/gfx/stock_apply_20.png
+%%LOCALBASE%%/www/dtc/shared/gfx/stock_add_24.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/skin.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/skin.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/pagetop.html
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/imgshort.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/imglong.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/bgwin.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/bgtitlewin.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/bgcolor.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/title_3_background.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/title_2_transi.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/title_1_icon.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/skin.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/skin.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/ruffdogs.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/border_bottom.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/bgcolor.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/background.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/skin.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/skin.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/imgshort.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/imglong.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/corner_4.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/corner_3.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/corner_2.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/corner_1.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/border_4.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/border_3.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/border_2.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/border_1.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/bgcolor.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/background.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/amp_style.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/skin.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/skin.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/imgshort.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/imglong.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/corner_top_right.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/corner_top_left.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/corner_bottom_right.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/corner_bottom_left.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/border_top.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/border_right.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/border_left.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/border_bottom.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/bgcolor.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/background.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/skin.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/skin.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/title_4_end.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/title_3_background.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/title_2_transi.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/title_1_icon.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/skin.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/skin.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/no_title_title_3_background.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/no_title_corner_top_right.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/no_title_corner_top_left.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/phpmyadmin.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/icann-logo_small.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/gplhost.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/earth.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/dtc_logo.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/dtc.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/dolar.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/debian.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/corner_top_right.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/corner_top_left.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/corner_bottom_right.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/corner_bottom_left.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/border_right.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/border_left.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/border_bottom.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/bgcolor.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/background.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/corner_4.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/corner_3.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/corner_2.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/corner_1.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/border_4.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/border_3.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/border_2.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/border_1.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/background.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/skin.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/skin.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/imgshort.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/imglong.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/corner_4.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/corner_3.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/corner_2.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/corner_1.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/border_4.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/border_3.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/border_2.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/border_1.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/background.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/skin.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/skin.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/corner_4.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/corner_3.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/corner_2.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/corner_1.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/border_4.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/border_3.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/border_2.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/border_1.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/default_layout.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/skin.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/skin.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/corner_4.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/corner_3.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/corner_2.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/corner_1.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/border_4.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/border_3.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/border_2.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/border_1.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/bgcolor.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/background.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/skin.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/skin.css
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/pagetop.html
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/layout.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/imgshort.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/imglong.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_tree_plus.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_tree_minus.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_tree-finalbranch.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_tree-branch.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_select_left.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_open.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_openbottom.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_leaf_select.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_leaf-2s.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf-2s.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-whois.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-vpsservers.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-supporttickets.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-subdomains.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-statistics.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-sslservers.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-sshaccounts.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-servers.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-resellers.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-pastpayments.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-passwords.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-packageinstaller.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-nickhandles.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-nameservers.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mxnsservers.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mailinglists.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mailgroups.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mailboxes.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-help.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-general.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-ftpaccounts.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-domaintools.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-dedicatedservers.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-database.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-addadomainname.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/p_domainconfig.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/p_clientinterface.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/p_admineditor.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/box_wnb_content_nb_item_vsep.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/box_wnb_content_nb_item_select.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/box_wnb_content_nb_item.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/spacer.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/pixel_E4E6D9.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/usernavbarreplacement.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_user.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_server.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_renewal.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_product.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_daemon.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_customer.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_config.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_bandwith.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_item_background-select.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_item_background.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_background.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/logo_dtc.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/h2_background.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx_defaults.php
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-vpsservers.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-supportickets.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-sslip.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-renewals.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-payementgateway.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-paths.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-namedzonefiles.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-mxnsservers.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-ipaddresses.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-invoicing.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-general.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-ftpbackup.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-domainnamereg.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-companies.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/input_btn_right.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/input_btn_mid.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/input_btn_left.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/input_btn_background-2s.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_seepass.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_p_ok.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_p_delete.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_p_background-2s.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_p_add.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_help.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_generatepass.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_title_right.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_title_left.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_title_background.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_item_select_left.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_item-2s.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_right.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_mid.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_left.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_background-2s.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_bottom.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_background.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_content_top_right.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_content_nb_item_vsep.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_content_bottom.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_topright.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_topleft.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_bottomright.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_bottomleft.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/bgwin.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/bgtitlewin.png
+%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/bgcolor.php
+%%LOCALBASE%%/www/dtc/shared/gfx/see_password.png
+%%LOCALBASE%%/www/dtc/shared/gfx/securepay/poweredByWorldPay.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/logostart.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/logofond.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/logoend.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/dtc_logo.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/dtc_banner.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/dtc_banner_end.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/users.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/user-editor.png
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/renewals.png
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/recycle.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/product_manager.png
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/domain-config.png
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/daemons.png
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/crm.png
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/config_panel.png
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/config.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/client-interface.png
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/bw_icon.png
+%%LOCALBASE%%/www/dtc/shared/gfx/menu/admins.png
+%%LOCALBASE%%/www/dtc/shared/gfx/language/zh.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/se.png
+%%LOCALBASE%%/www/dtc/shared/gfx/language/se.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/ru/pub/banner_alight.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/ru.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/ru/button_en.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/pt.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/pl.png
+%%LOCALBASE%%/www/dtc/shared/gfx/language/pl.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/nl/pub/banner_alight.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/nl.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/nl/button_en.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/it.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/hu.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/fr/pub/banner_alight.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/fr.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/fr/button_fr.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/es.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/en/pub/banner_alight.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/en.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/en/button_en.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/dtc.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/language/de.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/help.png
+%%LOCALBASE%%/www/dtc/shared/gfx/generate_pass.png
+%%LOCALBASE%%/www/dtc/shared/gfx/dtc/reinit_named.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/dtc_logo_small.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/dtc_logo.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_web.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_web2.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_stats.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_named.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_mail.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_backup.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/dtc.css
+%%LOCALBASE%%/www/dtc/shared/gfx/dtc/all_scripts.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/bar/start.png
+%%LOCALBASE%%/www/dtc/shared/gfx/bar/start.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_yellow.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_umpty.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_s.png
+%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_red.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_orange.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_n.png
+%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_green.gif
+%%LOCALBASE%%/www/dtc/shared/gfx/bar/end.png
+%%LOCALBASE%%/www/dtc/shared/gfx/bar/end.gif
+%%LOCALBASE%%/www/dtc/shared/dtc_version.php
+%%LOCALBASE%%/www/dtc/shared/dtc_stats_index.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/webnic_submit.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/webnic_settings.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/webnic_base.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/test.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/domainRegistration.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/domainQuery.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/submit_to_sql.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/test.xml
+%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/test.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/srs_registernames.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/OPS.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/ops.dtd
+%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/openSRS.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/openSRS_base.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/srs_nameserver.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/country_codes.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/srs_base.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/RENAME_ME_srs_config.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/registry_calls.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/opensrs.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_whois.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_transferdomain.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_register_forms.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/draw.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_nameservers.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_handle.php
+%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_adddomain.php
+%%LOCALBASE%%/www/dtc/shared/dtc_lib.php
+%%LOCALBASE%%/www/dtc/shared/drawlib/tree_menu.php
+%%LOCALBASE%%/www/dtc/shared/drawlib/templates.php
+%%LOCALBASE%%/www/dtc/shared/drawlib/skin.php
+%%LOCALBASE%%/www/dtc/shared/drawlib/skinLib.php
+%%LOCALBASE%%/www/dtc/shared/drawlib/dtc_functions.php
+%%LOCALBASE%%/www/dtc/shared/drawlib/cc_code_popup.php
+%%LOCALBASE%%/www/dtc/shared/drawlib/anotherDtc.php
+%%LOCALBASE%%/www/dtc/shared/default_admin_site.php
+%%LOCALBASE%%/www/dtc/shared/cyradm.php
+%%LOCALBASE%%/www/dtc/shared/autoSQLconfig.php
+%%LOCALBASE%%/www/dtc/shared/404_template/logo.png
+%%LOCALBASE%%/www/dtc/shared/404_template/index.php
+%%LOCALBASE%%/www/dtc/shared/404_template/expired.php
+%%LOCALBASE%%/www/dtc/shared/404_template/404.php
+%%LOCALBASE%%/www/dtc/email/submit_to_sql_dtcemail.php
+%%LOCALBASE%%/www/dtc/email/login.php
+%%LOCALBASE%%/www/dtc/email/index.php
+%%LOCALBASE%%/www/dtc/email/inc/img.php
+%%LOCALBASE%%/www/dtc/email/inc/img_alt_skin.php
+%%LOCALBASE%%/www/dtc/email/inc/img_alt.php
+%%LOCALBASE%%/www/dtc/email/inc/domains.png
+%%LOCALBASE%%/www/dtc/email/inc/domain.png
+%%LOCALBASE%%/www/dtc/email/api.php
+%%LOCALBASE%%/www/dtc/client/vps_stats_swap.php
+%%LOCALBASE%%/www/dtc/client/vps_stats_network.php
+%%LOCALBASE%%/www/dtc/client/vps_stats_hdd.php
+%%LOCALBASE%%/www/dtc/client/vps_stats_cpu.php
+%%LOCALBASE%%/www/dtc/client/secpaycallback_worldpay.php
+%%LOCALBASE%%/www/dtc/client/paypal.php
+%%LOCALBASE%%/www/dtc/client/new_account_renewal.php
+%%LOCALBASE%%/www/dtc/client/new_account.php
+%%LOCALBASE%%/www/dtc/client/new_account_form.php
+%%LOCALBASE%%/www/dtc/client/login.php
+%%LOCALBASE%%/www/dtc/client/list_domains.php
+%%LOCALBASE%%/www/dtc/client/invoice.php
+%%LOCALBASE%%/www/dtc/client/index.php
+%%LOCALBASE%%/www/dtc/client/inc/virtual-server.png
+%%LOCALBASE%%/www/dtc/client/inc/tools.png
+%%LOCALBASE%%/www/dtc/client/inc/ticket.png
+%%LOCALBASE%%/www/dtc/client/inc/subdomains.png
+%%LOCALBASE%%/www/dtc/client/inc/stats.png
+%%LOCALBASE%%/www/dtc/client/inc/stat.png
+%%LOCALBASE%%/www/dtc/client/inc/ssh-accounts.png
+%%LOCALBASE%%/www/dtc/client/inc/reseller.png
+%%LOCALBASE%%/www/dtc/client/inc/password.png
+%%LOCALBASE%%/www/dtc/client/inc/package-installer.png
+%%LOCALBASE%%/www/dtc/client/inc/nickhandles.png
+%%LOCALBASE%%/www/dtc/client/inc/nameservers.png
+%%LOCALBASE%%/www/dtc/client/inc/my-account.png
+%%LOCALBASE%%/www/dtc/client/inc/man.png
+%%LOCALBASE%%/www/dtc/client/inc/mail.png
+%%LOCALBASE%%/www/dtc/client/inc/mailing-lists.png
+%%LOCALBASE%%/www/dtc/client/inc/mailboxs.png
+%%LOCALBASE%%/www/dtc/client/inc/mailaliasgroup.png
+%%LOCALBASE%%/www/dtc/client/inc/imgshort.png
+%%LOCALBASE%%/www/dtc/client/inc/img.php
+%%LOCALBASE%%/www/dtc/client/inc/imglong.png
+%%LOCALBASE%%/www/dtc/client/inc/img_alt_skin.php
+%%LOCALBASE%%/www/dtc/client/inc/img_alt.php
+%%LOCALBASE%%/www/dtc/client/inc/home.png
+%%LOCALBASE%%/www/dtc/client/inc/help.png
+%%LOCALBASE%%/www/dtc/client/inc/ftp-accounts.png
+%%LOCALBASE%%/www/dtc/client/inc/folder.png
+%%LOCALBASE%%/www/dtc/client/inc/floppy.png
+%%LOCALBASE%%/www/dtc/client/inc/domains.png
+%%LOCALBASE%%/www/dtc/client/inc/domain.png
+%%LOCALBASE%%/www/dtc/client/inc/dns.png
+%%LOCALBASE%%/www/dtc/client/inc/dedic-server.png
+%%LOCALBASE%%/www/dtc/client/inc/databases.png
+%%LOCALBASE%%/www/dtc/client/inc/database.png
+%%LOCALBASE%%/www/dtc/client/inc/adddomain.png
+%%LOCALBASE%%/www/dtc/client/get_vps_location_status.php
+%%LOCALBASE%%/www/dtc/client/favicon.ico
+%%LOCALBASE%%/www/dtc/client/enets_pay_icon.gif
+%%LOCALBASE%%/www/dtc/client/enets-notify.php
+%%LOCALBASE%%/www/dtc/client/dynip.php
+%%LOCALBASE%%/www/dtc/client/bw_per_month.php
+%%LOCALBASE%%/www/dtc/admin/vps_stats_swap.php
+%%LOCALBASE%%/www/dtc/admin/vps_stats_network.php
+%%LOCALBASE%%/www/dtc/admin/vps_stats_hdd.php
+%%LOCALBASE%%/www/dtc/admin/vps_stats_cpu.php
+%%LOCALBASE%%/www/dtc/admin/view_waitingusers.php
+%%LOCALBASE%%/www/dtc/admin/updateChroot.sh
+%%LOCALBASE%%/www/dtc/admin/tables/whois.sql
+%%LOCALBASE%%/www/dtc/admin/tables/whitelist.sql
+%%LOCALBASE%%/www/dtc/admin/tables/vps_stats.sql
+%%LOCALBASE%%/www/dtc/admin/tables/vps.sql
+%%LOCALBASE%%/www/dtc/admin/tables/vps_server.sql
+%%LOCALBASE%%/www/dtc/admin/tables/vps_ip.sql
+%%LOCALBASE%%/www/dtc/admin/tables/tik_queries.sql
+%%LOCALBASE%%/www/dtc/admin/tables/tik_cats.sql
+%%LOCALBASE%%/www/dtc/admin/tables/tik_admins.sql
+%%LOCALBASE%%/www/dtc/admin/tables/subdomain.sql
+%%LOCALBASE%%/www/dtc/admin/tables/ssl_ips.sql
+%%LOCALBASE%%/www/dtc/admin/tables/ssh_user_group.sql
+%%LOCALBASE%%/www/dtc/admin/tables/ssh_groups.sql
+%%LOCALBASE%%/www/dtc/admin/tables/ssh_access.sql
+%%LOCALBASE%%/www/dtc/admin/tables/smtp_logs.sql
+%%LOCALBASE%%/www/dtc/admin/tables/secpayconf.sql
+%%LOCALBASE%%/www/dtc/admin/tables/scheduled_updates.sql
+%%LOCALBASE%%/www/dtc/admin/tables/product.sql
+%%LOCALBASE%%/www/dtc/admin/tables/pop_access.sql
+%%LOCALBASE%%/www/dtc/admin/tables/pending_renewal.sql
+%%LOCALBASE%%/www/dtc/admin/tables/pending_queries.sql
+%%LOCALBASE%%/www/dtc/admin/tables/paiement.sql
+%%LOCALBASE%%/www/dtc/admin/tables/new_admin.sql
+%%LOCALBASE%%/www/dtc/admin/tables/nameservers.sql
+%%LOCALBASE%%/www/dtc/admin/tables/mailinglist.sql
+%%LOCALBASE%%/www/dtc/admin/tables/mailaliasgroup.sql
+%%LOCALBASE%%/www/dtc/admin/tables/ip_port_service.sql
+%%LOCALBASE%%/www/dtc/admin/tables/invoicing.sql
+%%LOCALBASE%%/www/dtc/admin/tables/http_accounting.sql
+%%LOCALBASE%%/www/dtc/admin/tables/handle.sql
+%%LOCALBASE%%/www/dtc/admin/tables/groups.sql
+%%LOCALBASE%%/www/dtc/admin/tables/ftp_logs.sql
+%%LOCALBASE%%/www/dtc/admin/tables/ftp_accounting.sql
+%%LOCALBASE%%/www/dtc/admin/tables/ftp_access.sql
+%%LOCALBASE%%/www/dtc/admin/tables/freeradius.sql
+%%LOCALBASE%%/www/dtc/admin/tables/fetchmail.sql
+%%LOCALBASE%%/www/dtc/admin/tables/email_accouting.sql
+%%LOCALBASE%%/www/dtc/admin/tables/domain.sql
+%%LOCALBASE%%/www/dtc/admin/tables/dedicated.sql
+%%LOCALBASE%%/www/dtc/admin/tables/cron_job.sql
+%%LOCALBASE%%/www/dtc/admin/tables/config.sql
+%%LOCALBASE%%/www/dtc/admin/tables/completedorders.sql
+%%LOCALBASE%%/www/dtc/admin/tables/companies.sql
+%%LOCALBASE%%/www/dtc/admin/tables/commande.sql
+%%LOCALBASE%%/www/dtc/admin/tables/clients.sql
+%%LOCALBASE%%/www/dtc/admin/tables/backup.sql
+%%LOCALBASE%%/www/dtc/admin/tables/admin.sql
+%%LOCALBASE%%/www/dtc/admin/sa-wrapper
+%%LOCALBASE%%/www/dtc/admin/rrdtool.sh
+%%LOCALBASE%%/www/dtc/admin/restor_db.php
+%%LOCALBASE%%/www/dtc/admin/reminders.php
+%%LOCALBASE%%/www/dtc/admin/queuegraph/createrrd.sh
+%%LOCALBASE%%/www/dtc/admin/queuegraph/count_qmail.sh
+%%LOCALBASE%%/www/dtc/admin/queuegraph/count_postfix.sh
+%%LOCALBASE%%/www/dtc/admin/patch_saslatuhd_startup
+%%LOCALBASE%%/www/dtc/admin/netusegraph.php
+%%LOCALBASE%%/www/dtc/admin/netusegraph/get_net_usage.sh
+%%LOCALBASE%%/www/dtc/admin/netusegraph/createrrd.sh
+%%LOCALBASE%%/www/dtc/admin/memgraph.php
+%%LOCALBASE%%/www/dtc/admin/memgraph/get_meminfo.sh
+%%LOCALBASE%%/www/dtc/admin/memgraph/createrrd.sh
+%%LOCALBASE%%/www/dtc/admin/maint_apache.php
+%%LOCALBASE%%/www/dtc/admin/mailgraph.php
+%%LOCALBASE%%/www/dtc/admin/ip_change.sh
+%%LOCALBASE%%/www/dtc/admin/install/uninstall
+%%LOCALBASE%%/www/dtc/admin/install/slack_config
+%%LOCALBASE%%/www/dtc/admin/install/redhat_config
+%%LOCALBASE%%/www/dtc/admin/install/osx_config
+%%LOCALBASE%%/www/dtc/admin/install/mk_root_mailbox.php
+%%LOCALBASE%%/www/dtc/admin/install/interactive_installer
+%%LOCALBASE%%/www/dtc/admin/install/install
+%%LOCALBASE%%/www/dtc/admin/install/gentoo_config
+%%LOCALBASE%%/www/dtc/admin/install/functions
+%%LOCALBASE%%/www/dtc/admin/install/debian_config
+%%LOCALBASE%%/www/dtc/admin/install/bsd_config
+%%LOCALBASE%%/www/dtc/admin/index.php
+%%LOCALBASE%%/www/dtc/admin/inc/virtual-server.png
+%%LOCALBASE%%/www/dtc/admin/inc/tools.png
+%%LOCALBASE%%/www/dtc/admin/inc/ticket.png
+%%LOCALBASE%%/www/dtc/admin/inc/submit_root_querys.php
+%%LOCALBASE%%/www/dtc/admin/inc/subdomains.png
+%%LOCALBASE%%/www/dtc/admin/inc/stats.png
+%%LOCALBASE%%/www/dtc/admin/inc/ssh-accounts.png
+%%LOCALBASE%%/www/dtc/admin/inc/reseller.png
+%%LOCALBASE%%/www/dtc/admin/inc/renewals.php
+%%LOCALBASE%%/www/dtc/admin/inc/password.png
+%%LOCALBASE%%/www/dtc/admin/inc/package-installer.png
+%%LOCALBASE%%/www/dtc/admin/inc/nickhandles.png
+%%LOCALBASE%%/www/dtc/admin/inc/nav.php
+%%LOCALBASE%%/www/dtc/admin/inc/nameservers.png
+%%LOCALBASE%%/www/dtc/admin/inc/my-account.png
+%%LOCALBASE%%/www/dtc/admin/inc/monitor.php
+%%LOCALBASE%%/www/dtc/admin/inc/mailing-lists.png
+%%LOCALBASE%%/www/dtc/admin/inc/mailboxs.png
+%%LOCALBASE%%/www/dtc/admin/inc/mailaliasgroup.png
+%%LOCALBASE%%/www/dtc/admin/inc/imgshort.png
+%%LOCALBASE%%/www/dtc/admin/inc/img.php
+%%LOCALBASE%%/www/dtc/admin/inc/imglong.png
+%%LOCALBASE%%/www/dtc/admin/inc/img_alt_skin.php
+%%LOCALBASE%%/www/dtc/admin/inc/img_alt.php
+%%LOCALBASE%%/www/dtc/admin/inc/help.png
+%%LOCALBASE%%/www/dtc/admin/inc/graphs.php
+%%LOCALBASE%%/www/dtc/admin/inc/ftp-accounts.png
+%%LOCALBASE%%/www/dtc/admin/inc/folder.png
+%%LOCALBASE%%/www/dtc/admin/inc/dtc_config.php
+%%LOCALBASE%%/www/dtc/admin/inc/draw_user_admin.php
+%%LOCALBASE%%/www/dtc/admin/inc/domains.png
+%%LOCALBASE%%/www/dtc/admin/inc/dedic-server.png
+%%LOCALBASE%%/www/dtc/admin/inc/databases.png
+%%LOCALBASE%%/www/dtc/admin/inc/adddomain.png
+%%LOCALBASE%%/www/dtc/admin/genfiles/remote_mail_list.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/mailfilter_vacation_template
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_webalizer_stat.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_ssh_account.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_qmail_email_account.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_pro_vhost.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_pro_vhost_alt-wildcard.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_postfix_email_account.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_perso_vhost.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_named_files.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_named_files_alt-wildcard.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_maildrop_userdb.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/genfiles.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_email_account.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_customer_ssl_cert.sh
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_backup_script.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/gen_awstats.php
+%%LOCALBASE%%/www/dtc/admin/genfiles/change_debconf_ip.sh
+%%LOCALBASE%%/www/dtc/admin/genfiles/change_debconf_domain.sh
+%%LOCALBASE%%/www/dtc/admin/dtcrm/submit_to_sql.php
+%%LOCALBASE%%/www/dtc/admin/dtcrm/product_manager.php
+%%LOCALBASE%%/www/dtc/admin/dtcrm/main.php
+%%LOCALBASE%%/www/dtc/admin/dtc_db.php
+%%LOCALBASE%%/www/dtc/admin/dtc-chroot-shell
+%%LOCALBASE%%/www/dtc/admin/dkfilter.patch
+%%LOCALBASE%%/www/dtc/admin/deamons_state.php
+%%LOCALBASE%%/www/dtc/admin/cron.php
+%%LOCALBASE%%/www/dtc/admin/cpugraph.php
+%%LOCALBASE%%/www/dtc/admin/cpugraph/get_cpu_load.sh
+%%LOCALBASE%%/www/dtc/admin/cpugraph/createrrd.sh
+%%LOCALBASE%%/www/dtc/admin/checkbind.sh
+%%LOCALBASE%%/www/dtc/admin/bw_per_month.php
+%%LOCALBASE%%/www/dtc/admin/backup_db.php
+%%LOCALBASE%%/www/dtc/admin/accesslog.php
+%%LOCALBASE%%/www/dtc/admin/404.php
+%%LOCALBASE%%/share/doc/dtc/update_stable_rtag.sh
+%%LOCALBASE%%/share/doc/dtc/todo
+%%LOCALBASE%%/share/doc/dtc/README.gentoo
+%%LOCALBASE%%/share/doc/dtc/iglobalwall/mail_header.rar
+%%LOCALBASE%%/share/doc/dtc/iglobalwall/iglobalwall.tar.gz
+%%LOCALBASE%%/share/doc/dtc/iglobalwall/doc.txt
+%%LOCALBASE%%/share/doc/dtc/html/fr/page_top.html
+%%LOCALBASE%%/share/doc/dtc/html/fr/newadmin.png
+%%LOCALBASE%%/share/doc/dtc/html/fr/menudtc.png
+%%LOCALBASE%%/share/doc/dtc/html/fr/mailboxs.png
+%%LOCALBASE%%/share/doc/dtc/html/fr/index.php
+%%LOCALBASE%%/share/doc/dtc/html/fr/index.html
+%%LOCALBASE%%/share/doc/dtc/html/fr/ftps.png
+%%LOCALBASE%%/share/doc/dtc/html/fr/dtc.png
+%%LOCALBASE%%/share/doc/dtc/html/fr/dtc_logo.gif
+%%LOCALBASE%%/share/doc/dtc/html/fr/domainconf.png
+%%LOCALBASE%%/share/doc/dtc/html/fr/doc.css
+%%LOCALBASE%%/share/doc/dtc/html/fr/confzone.png
+%%LOCALBASE%%/share/doc/dtc/html/fr/confprinc.png
+%%LOCALBASE%%/share/doc/dtc/html/fr/conffilegen.png
+%%LOCALBASE%%/share/doc/dtc/html/fr/clientconfig.png
+%%LOCALBASE%%/share/doc/dtc/html/fr/addzone.png
+%%LOCALBASE%%/share/doc/dtc/html/fr/5.html
+%%LOCALBASE%%/share/doc/dtc/html/fr/4.html
+%%LOCALBASE%%/share/doc/dtc/html/fr/3.html
+%%LOCALBASE%%/share/doc/dtc/html/fr/2.html
+%%LOCALBASE%%/share/doc/dtc/html/fr/1.html
+%%LOCALBASE%%/share/doc/dtc/html/en/page_top.html
+%%LOCALBASE%%/share/doc/dtc/html/en/newadmin.png
+%%LOCALBASE%%/share/doc/dtc/html/en/menudtc.png
+%%LOCALBASE%%/share/doc/dtc/html/en/mailboxs.png
+%%LOCALBASE%%/share/doc/dtc/html/en/index.html
+%%LOCALBASE%%/share/doc/dtc/html/en/index.example.php
+%%LOCALBASE%%/share/doc/dtc/html/en/ftps.png
+%%LOCALBASE%%/share/doc/dtc/html/en/dtc.png
+%%LOCALBASE%%/share/doc/dtc/html/en/dtc_logo.gif
+%%LOCALBASE%%/share/doc/dtc/html/en/dtc_cluster.png
+%%LOCALBASE%%/share/doc/dtc/html/en/domainconf.png
+%%LOCALBASE%%/share/doc/dtc/html/en/doc.css
+%%LOCALBASE%%/share/doc/dtc/html/en/confzone.png
+%%LOCALBASE%%/share/doc/dtc/html/en/confprinc.png
+%%LOCALBASE%%/share/doc/dtc/html/en/conffilegen.png
+%%LOCALBASE%%/share/doc/dtc/html/en/clientconfig.png
+%%LOCALBASE%%/share/doc/dtc/html/en/addzone.png
+%%LOCALBASE%%/share/doc/dtc/html/en/5.html
+%%LOCALBASE%%/share/doc/dtc/html/en/4.html
+%%LOCALBASE%%/share/doc/dtc/html/en/3.html
+%%LOCALBASE%%/share/doc/dtc/html/en/2.html
+%%LOCALBASE%%/share/doc/dtc/html/en/1.html
+%%LOCALBASE%%/share/doc/dtc/dtc_storefront/README
+%%LOCALBASE%%/share/doc/dtc/dtc_storefront/gplhost-testimonials-validate.php
+%%LOCALBASE%%/share/doc/dtc/dtc_storefront/gplhost-testimonials-record.php
+%%LOCALBASE%%/share/doc/dtc/dtc_storefront/gplhost-testimonials.php
+%%LOCALBASE%%/share/doc/dtc/dtc_storefront/gplhost-testimonials-delete.php
+%%LOCALBASE%%/share/doc/dtc/dtc_storefront/dtc_storefront.php
+%%LOCALBASE%%/share/doc/dtc/dtc_storefront/dtc_storefront/dbconnect.php
+%%LOCALBASE%%/share/doc/dtc/dtc-chroot-shell.8
+%%LOCALBASE%%/share/doc/dtc/dns_transfer.sh
+%%LOCALBASE%%/share/doc/dtc/daemonconf_howto/qmail_anti_spam_measures
+%%LOCALBASE%%/share/doc/dtc/daemonconf_howto/my_init.d_qmail.startup.script
+%%LOCALBASE%%/share/doc/dtc/daemonconf_howto/ftp_http_logging_to_mysql
+%%LOCALBASE%%/share/doc/dtc/contrib/vps_mailling.php
+%%LOCALBASE%%/share/doc/dtc/contrib/tail_apache_logs_for_a_domain.php
+%%LOCALBASE%%/share/doc/dtc/contrib/reassing_bandwidth_for_vps_and_dedicated.php
+%%LOCALBASE%%/share/doc/dtc/contrib/dtc_recalc_webalizer_stats.sh
+%%LOCALBASE%%/share/doc/dtc/contrib/checkAmavis
+%%LOCALBASE%%/share/doc/dtc/contrib/check_all_system_file_md5sums.sh
+%%LOCALBASE%%/share/doc/dtc/changelog
+%%LOCALBASE%%/share/doc/dtc/build_debian_upload.sh
+%%LOCALBASE%%/man/man8/dtc-chroot-shell.8
+%%LOCALBASE%%/etc/logrotate.d/dtc
+%%LOCALBASE%%/etc/dtc/signature.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/vps_will_expire.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/vps_expired_today.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/vps_expired_shutdown.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/vps_expired_last_warning.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/vps_expired_already.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/shared_will_expire.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/shared_expired_today.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/shared_expired_shutdown.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/shared_expired_last_warning.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/shared_expired_already.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/server_will_expire.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/server_expired_today.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/server_expired_shutdown.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/server_expired_last_warning.txt
+%%LOCALBASE%%/etc/dtc/reminders_msg/server_expired_already.txt
+%%LOCALBASE%%/etc/dtc/registration_msg/vps_open.txt
+%%LOCALBASE%%/etc/dtc/registration_msg/shared_open.txt
+%%LOCALBASE%%/etc/dtc/registration_msg/dedicated_open.txt
+%%LOCALBASE%%/etc/dtc/messages_header.txt
+%%LOCALBASE%%/etc/dtc/logrotate.template
+%%LOCALBASE%%/etc/cron.d/dtc
+%%LOCALBASE%%/www/dtc/admin/gfx
+%%LOCALBASE%%/www/dtc/admin/imgcache
+%%LOCALBASE%%/www/dtc/client/gfx
+%%LOCALBASE%%/www/dtc/client/imgcache
 sbin/dtc-install
 sbin/dtc-deinstall
-@dirrm %%DTCROOT%%/shared/vars
-@dirrm %%DTCROOT%%/shared/template
-@dirrm %%DTCROOT%%/shared/securepay/gateways
-@dirrm %%DTCROOT%%/shared/securepay
-@dirrm %%DTCROOT%%/shared/inc/sql
-@dirrm %%DTCROOT%%/shared/inc/forms
-@dirrm %%DTCROOT%%/shared/inc
-@dirrm %%DTCROOT%%/shared/imgcache
-@dirrm %%DTCROOT%%/shared/gfx/skin/tex
-@dirrm %%DTCROOT%%/shared/gfx/skin/ruffdogs_mozilla
-@dirrm %%DTCROOT%%/shared/gfx/skin/muedgrey
-@dirrm %%DTCROOT%%/shared/gfx/skin/iglobal
-@dirrm %%DTCROOT%%/shared/gfx/skin/green_gpl/icons
-@dirrm %%DTCROOT%%/shared/gfx/skin/green_gpl
-@dirrm %%DTCROOT%%/shared/gfx/skin/green2
-@dirrm %%DTCROOT%%/shared/gfx/skin/green
-@dirrm %%DTCROOT%%/shared/gfx/skin/frame
-@dirrm %%DTCROOT%%/shared/gfx/skin/darkblue
-@dirrm %%DTCROOT%%/shared/gfx/skin
-@dirrm %%DTCROOT%%/shared/gfx/securepay
-@dirrm %%DTCROOT%%/shared/gfx/pagetop
-@dirrm %%DTCROOT%%/shared/gfx/menu
-@dirrm %%DTCROOT%%/shared/gfx/language/ru/pub
-@dirrm %%DTCROOT%%/shared/gfx/language/ru
-@dirrm %%DTCROOT%%/shared/gfx/language/nl/pub
-@dirrm %%DTCROOT%%/shared/gfx/language/nl
-@dirrm %%DTCROOT%%/shared/gfx/language/fr/pub
-@dirrm %%DTCROOT%%/shared/gfx/language/fr
-@dirrm %%DTCROOT%%/shared/gfx/language/en/pub
-@dirrm %%DTCROOT%%/shared/gfx/language/en
-@dirrm %%DTCROOT%%/shared/gfx/language
-@dirrm %%DTCROOT%%/shared/gfx/dtc
-@dirrm %%DTCROOT%%/shared/gfx/bar
-@dirrm %%DTCROOT%%/shared/gfx
-@dirrm %%DTCROOT%%/shared/dtcrm/webnic.cc
-@dirrm %%DTCROOT%%/shared/dtcrm/srs
-@dirrm %%DTCROOT%%/shared/dtcrm
-@dirrm %%DTCROOT%%/shared/drawlib
-@dirrm %%DTCROOT%%/shared/404_template
-@dirrm %%DTCROOT%%/shared
-@dirrm %%DTCROOT%%/email/inc
-@dirrm %%DTCROOT%%/email
-@dirrm %%DTCROOT%%/doc/iglobalwall
-@dirrm %%DTCROOT%%/doc/html/fr
-@dirrm %%DTCROOT%%/doc/html/en
-@dirrm %%DTCROOT%%/doc/html
-@dirrm %%DTCROOT%%/doc/dtc_storefront/dtc_storefront
-@dirrm %%DTCROOT%%/doc/dtc_storefront
-@dirrm %%DTCROOT%%/doc/daemonconf_howto
-@dirrm %%DTCROOT%%/doc
-@dirrm %%DTCROOT%%/client/inc
-@dirrm %%DTCROOT%%/client
-@dirrm %%DTCROOT%%/admin/tables
-@dirrm %%DTCROOT%%/admin/reminders_msg
-@dirrm %%DTCROOT%%/admin/queuegraph
-@dirrm %%DTCROOT%%/admin/netusegraph
-@dirrm %%DTCROOT%%/admin/memgraph
-@dirrm %%DTCROOT%%/admin/install
-@dirrm %%DTCROOT%%/admin/inc
-@dirrm %%DTCROOT%%/admin/genfiles
-@dirrm %%DTCROOT%%/admin/dtcrm
-@dirrm %%DTCROOT%%/admin/cpugraph
-@dirrm %%DTCROOT%%/admin
+%%LOCALBASE%%/dtc/email/gfx
+%%LOCALBASE%%/dtc/email/imgcache
+@dirrm %%LOCALBASE%%/www/dtc/shared/visitors_template
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/zh_CN/LC_MESSAGES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/zh_CN
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/se_NO/LC_MESSAGES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/se_NO
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/ru_RU.UTF-8/LC_MESSAGES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/ru_RU.UTF-8
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/pt_PT/LC_MESSAGES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/pt_PT
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/pl_PL/LC_MESSAGES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/pl_PL
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/nl_NL/LC_MESSAGES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/nl_NL
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/it_IT/LC_MESSAGES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/it_IT
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/hu_HU/LC_MESSAGES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/hu_HU
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/fr_FR/LC_MESSAGES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/fr_FR
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/es_ES/LC_MESSAGES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/es_ES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/de_DE/LC_MESSAGES
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/de_DE
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale
+@dirrm %%LOCALBASE%%/www/dtc/shared/vars
+@dirrm %%LOCALBASE%%/www/dtc/shared/template
+@dirrm %%LOCALBASE%%/www/dtc/shared/securepay/gateways
+@dirrm %%LOCALBASE%%/www/dtc/shared/securepay
+@dirrm %%LOCALBASE%%/www/dtc/shared/maxmind
+@dirrm %%LOCALBASE%%/www/dtc/shared/inc/sql
+@dirrm %%LOCALBASE%%/www/dtc/shared/inc/forms
+@dirrm %%LOCALBASE%%/www/dtc/shared/inc
+@dirrm %%LOCALBASE%%/www/dtc/shared/imgcache
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/tex
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/green2
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/green
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/frame
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/securepay
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/pagetop
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/menu
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/ru/pub
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/ru
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/nl/pub
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/nl
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/fr/pub
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/fr
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/en/pub
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/en
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/dtc
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/bar
+@dirrm %%LOCALBASE%%/www/dtc/shared/gfx
+@dirrm %%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc
+@dirrm %%LOCALBASE%%/www/dtc/shared/dtcrm/srs
+@dirrm %%LOCALBASE%%/www/dtc/shared/dtcrm
+@dirrm %%LOCALBASE%%/www/dtc/shared/drawlib
+@dirrm %%LOCALBASE%%/www/dtc/shared/404_template
+@dirrm %%LOCALBASE%%/www/dtc/shared
+@dirrm %%LOCALBASE%%/www/dtc/email/inc
+@dirrm %%LOCALBASE%%/www/dtc/email
+@dirrm %%LOCALBASE%%/www/dtc/client/inc
+@dirrm %%LOCALBASE%%/www/dtc/client
+@dirrm %%LOCALBASE%%/www/dtc/admin/tables
+@dirrm %%LOCALBASE%%/www/dtc/admin/queuegraph
+@dirrm %%LOCALBASE%%/www/dtc/admin/netusegraph
+@dirrm %%LOCALBASE%%/www/dtc/admin/memgraph
+@dirrm %%LOCALBASE%%/www/dtc/admin/install
+@dirrm %%LOCALBASE%%/www/dtc/admin/inc
+@dirrm %%LOCALBASE%%/www/dtc/admin/genfiles
+@dirrm %%LOCALBASE%%/www/dtc/admin/dtcrm
+@dirrm %%LOCALBASE%%/www/dtc/admin/cpugraph
+@dirrm %%LOCALBASE%%/www/dtc/admin
+@dirrm %%LOCALBASE%%/www/dtc
+@dirrm %%LOCALBASE%%/www
+@dirrm %%LOCALBASE%%/var/dtc
+@dirrm %%LOCALBASE%%/var
+@dirrm %%LOCALBASE%%/share/doc/dtc/iglobalwall
+@dirrm %%LOCALBASE%%/share/doc/dtc/html/fr
+@dirrm %%LOCALBASE%%/share/doc/dtc/html/en
+@dirrm %%LOCALBASE%%/share/doc/dtc/html
+@dirrm %%LOCALBASE%%/share/doc/dtc/dtc_storefront/dtc_storefront
+@dirrm %%LOCALBASE%%/share/doc/dtc/dtc_storefront
+@dirrm %%LOCALBASE%%/share/doc/dtc/daemonconf_howto
+@dirrm %%LOCALBASE%%/share/doc/dtc/contrib
+@dirrm %%LOCALBASE%%/share/doc/dtc
+@dirrm %%LOCALBASE%%/share/doc
+@dirrm %%LOCALBASE%%/share
+@dirrm %%LOCALBASE%%/man/man8
 @dirrm %%DTCROOT%%/etc/zones
 @dirrm %%DTCROOT%%/etc
 @dirrm %%DTCROOT%%
