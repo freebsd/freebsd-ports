@@ -1,0 +1,11 @@
+--- module_example/Makefile.orig	2008-03-31 11:36:42.000000000 -0700
++++ module_example/Makefile	2008-04-22 11:40:52.000000000 -0700
+@@ -2,7 +2,7 @@
+ # $Id: Makefile 690 2008-03-31 18:36:43Z  $
+ 
+ CC = gcc
+-CFLAGS = -Wall -g
++CFLAGS = -Wall -g -fPIC
+ 
+ all: example.so
+ 
