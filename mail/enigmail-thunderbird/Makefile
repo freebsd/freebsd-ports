@@ -44,6 +44,12 @@ XPI_FILE=	${DISTNAME}-${GECKO}-freebsd-${ARCH}.xpi
 PLIST_FILES=	%%DATADIR%%/${XPI_FILE}
 PLIST_DIRS=	%%DATADIR%%
 
+.include <bsd.port.pre.mk>
+
+.if ${GECKO} == "thunderbird" && ${ARCH} == "amd64" && ${OSVERSION} >= 700000
+USE_GCC=	3.4
+.endif
+
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -68,4 +74,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
