@@ -1,0 +1,15 @@
+%%TWDIR%%/data/TWiki/SpreadSheetPlugin.txt
+%%TWDIR%%/data/TWiki/VarCALC.txt
+%%TWDIR%%/lib/TWiki/Plugins/SpreadSheetPlugin/Calc.pm
+%%TWDIR%%/lib/TWiki/Plugins/SpreadSheetPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/SpreadSheetPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/SpreadSheetPlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/SpreadSheetPlugin.pm
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/SpreadSheetPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

@@ -1,0 +1,31 @@
+%%TWDIR%%/data/TWiki/BlogAddOn.txt
+%%TWDIR%%/data/_BlogAddOn/BlogAddOnHome.txt
+%%TWDIR%%/data/_BlogAddOn/BlogAddOnStyles.txt
+%%TWDIR%%/data/_BlogAddOn/BlogCategory.txt
+%%TWDIR%%/data/_BlogAddOn/BlogPost.txt
+%%TWDIR%%/data/_BlogAddOn/BlogPostCommentTemplate.txt
+%%TWDIR%%/data/_BlogAddOn/BlogPostCreator.txt
+%%TWDIR%%/data/_BlogAddOn/BlogPostExample.txt
+%%TWDIR%%/data/_BlogAddOn/BlogPostForm.txt
+%%TWDIR%%/data/_BlogAddOn/BlogPostTemplate.txt
+%%TWDIR%%/data/_BlogAddOn/BlogPostViewTemplate.txt
+%%TWDIR%%/lib/TWiki/Contrib/BlogAddOn/Config.spec
+%%TWDIR%%/lib/TWiki/Contrib/BlogAddOn/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Contrib/BlogAddOn/MANIFEST
+%%TWDIR%%/lib/TWiki/Contrib/BlogAddOn/build.pl
+%%TWDIR%%/lib/TWiki/Contrib/BlogAddOn.pm
+%%TWDIR%%/pub/TWiki/BlogAddOn/example.png
+%%TWDIR%%/pub/TWiki/BlogAddOn/screenshot_list.png
+%%TWDIR%%/pub/TWiki/BlogAddOn/screenshot_post.png
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data/_BlogAddOn
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Contrib/BlogAddOn
+@dirrm %%TWDIR%%/lib/TWiki/Contrib
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/BlogAddOn
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

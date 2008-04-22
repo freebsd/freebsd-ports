@@ -1,0 +1,20 @@
+%%TWDIR%%/data/Sandbox/PluginTestEmptyPlugin.txt
+%%TWDIR%%/data/TWiki/EmptyPlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/EmptyPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/EmptyPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/EmptyPlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/EmptyPlugin.pm
+%%TWDIR%%/test/unit/EmptyPlugin/EmptyPluginSuite.pm
+%%TWDIR%%/test/unit/EmptyPlugin/EmptyPluginTests.pm
+@dirrm %%TWDIR%%/data/Sandbox
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/EmptyPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/test/unit/EmptyPlugin
+@dirrm %%TWDIR%%/test/unit
+@dirrm %%TWDIR%%/test
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

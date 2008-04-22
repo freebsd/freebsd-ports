@@ -1,0 +1,8 @@
+This contrib packages in a convenient way the JavaScript library and
+the CSS file needed to implement Twisty sections.
+
+It is recommended to use the TwistyPlugin as it eases the deployment
+and use of this contrib.
+
+Author: Arthur Clemens, Rafael Alvarez, Sam Hasler.
+WWW: http://twiki.org/cgi-bin/view/Plugins/TwistyContrib

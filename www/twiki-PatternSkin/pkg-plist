@@ -1,0 +1,148 @@
+%%TWDIR%%/data/Main/PatternSkinUserViewTemplate.txt
+%%TWDIR%%/data/Main/WebLeftBar.txt
+%%TWDIR%%/data/Sandbox/WebLeftBar.txt
+%%TWDIR%%/data/TWiki/PatternSkin.txt
+%%TWDIR%%/data/TWiki/PatternSkinColorSettings.txt
+%%TWDIR%%/data/TWiki/PatternSkinCss.txt
+%%TWDIR%%/data/TWiki/PatternSkinCssCookbook.txt
+%%TWDIR%%/data/TWiki/PatternSkinCssCookbookCenterPage.txt
+%%TWDIR%%/data/TWiki/PatternSkinCssCookbookCenterPageBorder.txt
+%%TWDIR%%/data/TWiki/PatternSkinCssCookbookEditTableStyle.txt
+%%TWDIR%%/data/TWiki/PatternSkinCssCookbookFonts.txt
+%%TWDIR%%/data/TWiki/PatternSkinCssCookbookNoLeftBar.txt
+%%TWDIR%%/data/TWiki/PatternSkinCssCookbookNoTopBar.txt
+%%TWDIR%%/data/TWiki/PatternSkinCustomization.txt
+%%TWDIR%%/data/TWiki/PatternSkinElements.txt
+%%TWDIR%%/data/TWiki/PatternSkinGraphics.txt
+%%TWDIR%%/data/TWiki/PatternSkinHeaderArt.txt
+%%TWDIR%%/data/TWiki/PatternSkinWebCreateNewTopicTemplate.txt
+%%TWDIR%%/data/TWiki/WebBottomBar.txt
+%%TWDIR%%/data/TWiki/WebLeftBar.txt
+%%TWDIR%%/data/TWiki/WebLeftBarCookbook.txt
+%%TWDIR%%/data/TWiki/WebLeftBarExample.txt
+%%TWDIR%%/data/TWiki/WebLeftBarLogin.txt
+%%TWDIR%%/data/TWiki/WebLeftBarPersonalTemplate.txt
+%%TWDIR%%/data/TWiki/WebLeftBarSearch.txt
+%%TWDIR%%/data/TWiki/WebLeftBarWebsList.txt
+%%TWDIR%%/data/TWiki/WebTopBar.txt
+%%TWDIR%%/data/Trash/WebLeftBar.txt
+%%TWDIR%%/data/_default/WebLeftBar.txt
+%%TWDIR%%/lib/TWiki/Contrib/PatternSkin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Contrib/PatternSkin/MANIFEST
+%%TWDIR%%/lib/TWiki/Contrib/PatternSkin/build.pl
+%%TWDIR%%/lib/TWiki/Contrib/PatternSkin.pm
+%%TWDIR%%/pub/TWiki/PatternSkin/TWiki_header.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/background_action.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/background_alert.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/background_button.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/background_form_element.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/background_input.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/background_submit.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/bg_action_gradient.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/bg_button_gradient.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/bg_button_small_gradient.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/bg_buttoncancel_gradient.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/bg_outer_gradient.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/bg_submit_gradient.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/border_sidebar_personal.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/bullet-lock.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/bullet-personal_sidebar.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/bullet-toc.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/button_arrow.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/button_font_selector.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/colors.css
+%%TWDIR%%/pub/TWiki/PatternSkin/form_gradient.gif
+%%TWDIR%%/pub/TWiki/PatternSkin/layout.css
+%%TWDIR%%/pub/TWiki/PatternSkin/pattern.js
+%%TWDIR%%/pub/TWiki/PatternSkin/pattern_edit.js
+%%TWDIR%%/pub/TWiki/PatternSkin/patternskin_screenshot.jpg
+%%TWDIR%%/pub/TWiki/PatternSkin/patternskin_screenshot_full.png
+%%TWDIR%%/pub/TWiki/PatternSkin/print.css
+%%TWDIR%%/pub/TWiki/PatternSkin/style.css
+%%TWDIR%%/pub/TWiki/PatternSkin/webtopiccreator.js
+%%TWDIR%%/pub/TWiki/PatternSkinColorSettings/.keep_me
+%%TWDIR%%/pub/TWiki/PatternSkinCss/CSS_element_layout_view.pattern.tmpl.png
+%%TWDIR%%/pub/TWiki/PatternSkinCssCookbookCenterPage/centerpage.css
+%%TWDIR%%/pub/TWiki/PatternSkinCssCookbookCenterPageBorder/centerpageborder.css
+%%TWDIR%%/pub/TWiki/PatternSkinCssCookbookCenterPageBorder/gradient_page.gif
+%%TWDIR%%/pub/TWiki/PatternSkinCssCookbookCenterPageBorder/striped_pageshadow.gif
+%%TWDIR%%/pub/TWiki/PatternSkinCssCookbookEditTableStyle/edittable.css
+%%TWDIR%%/pub/TWiki/PatternSkinCssCookbookFonts/fonts.css
+%%TWDIR%%/pub/TWiki/PatternSkinCssCookbookNoLeftBar/hideleftbar.css
+%%TWDIR%%/pub/TWiki/PatternSkinCssCookbookNoTopBar/notopbar.css
+%%TWDIR%%/pub/TWiki/PatternSkinCustomization/LowRes.css
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/TWiki_header.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/background_alert.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/bg_action_gradient.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/bg_button_16x16_generic.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/bg_button_gradient.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/bg_button_small_gradient.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/bg_buttoncancel_gradient.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/bg_outer_gradient.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/bg_sidebar_reflection.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/bg_submit_gradient.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/border_sidebar_personal.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/bullet-lock.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/bullet-personal_sidebar.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/bullet-toc.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/button_arrow.psd
+%%TWDIR%%/pub/TWiki/PatternSkinGraphics/button_font_selector.psd
+%%TWDIR%%/templates/attach.pattern.tmpl
+%%TWDIR%%/templates/attachagain.pattern.tmpl
+%%TWDIR%%/templates/attachnew.pattern.tmpl
+%%TWDIR%%/templates/attachtables.pattern.tmpl
+%%TWDIR%%/templates/changeform.pattern.tmpl
+%%TWDIR%%/templates/changes.pattern.tmpl
+%%TWDIR%%/templates/css.pattern.tmpl
+%%TWDIR%%/templates/edit.pattern.tmpl
+%%TWDIR%%/templates/formtables.pattern.tmpl
+%%TWDIR%%/templates/login.pattern.tmpl
+%%TWDIR%%/templates/oops.pattern.tmpl
+%%TWDIR%%/templates/preview.pattern.tmpl
+%%TWDIR%%/templates/rdiff.pattern.tmpl
+%%TWDIR%%/templates/renameattachmentdelete.pattern.tmpl
+%%TWDIR%%/templates/renamebase.pattern.tmpl
+%%TWDIR%%/templates/renamedelete.pattern.tmpl
+%%TWDIR%%/templates/renamewebbase.pattern.tmpl
+%%TWDIR%%/templates/search.pattern.tmpl
+%%TWDIR%%/templates/searchbase.pattern.tmpl
+%%TWDIR%%/templates/searchbookview.pattern.tmpl
+%%TWDIR%%/templates/searchformat.pattern.tmpl
+%%TWDIR%%/templates/searchmeta.pattern.tmpl
+%%TWDIR%%/templates/settings.pattern.tmpl
+%%TWDIR%%/templates/twiki.pattern.tmpl
+%%TWDIR%%/templates/view.pattern.tmpl
+%%TWDIR%%/templates/viewbottombar.pattern.tmpl
+%%TWDIR%%/templates/viewleftbar.pattern.tmpl
+%%TWDIR%%/templates/viewnoleftbar.pattern.tmpl
+%%TWDIR%%/templates/viewnotopbar.pattern.tmpl
+%%TWDIR%%/templates/viewplain.pattern.tmpl
+%%TWDIR%%/templates/viewprint.pattern.tmpl
+%%TWDIR%%/templates/viewrightbar.pattern.tmpl
+%%TWDIR%%/templates/viewtopbar.pattern.tmpl
+@dirrm %%TWDIR%%/data/Main
+@dirrm %%TWDIR%%/data/Sandbox
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data/Trash
+@dirrm %%TWDIR%%/data/_default
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Contrib/PatternSkin
+@dirrm %%TWDIR%%/lib/TWiki/Contrib
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkin
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkinColorSettings
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCss
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookCenterPage
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookCenterPageBorder
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookEditTableStyle
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookFonts
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookNoLeftBar
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCssCookbookNoTopBar
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkinCustomization
+@dirrm %%TWDIR%%/pub/TWiki/PatternSkinGraphics
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%/templates
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

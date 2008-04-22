@@ -3,79 +3,44 @@
 # $FreeBSD$
 #
 
-TWIKIDIR=%%TWIKIDIR%%
-
-HOSTNAME=`hostname`
-
-REINPLACE_CMD="%%REINPLACE_CMD%%"
-
-WWWUSER=%%WWWUSER%%
-WWWGROUP=%%WWWGROUP%%
+TWDIR=%%TWDIR%%
+WWWDIR=%%WWWDIR%%
+WWWOWN=%%WWWOWN%%
+WWWGRP=%%WWWGRP%%
 
 case $2 in
 	PRE-INSTALL)
 		;;
 	POST-INSTALL)
-		# hmmm, if we modify this here, the file fails md5sum when deinstalling
-		# but if we do this in Makefile, then we have a hardcoded PREFIX. What to
-		# do?
-
-		for i in `find ${TWIKIDIR}/data -type f`; do
-			$REINPLACE_CMD -e "s/nobody:/${WWWUSER}:/g" $i;
+		cd ${TWDIR}/
+		find -s * -type d | while read dir; do
+			mkdir -p ${WWWDIR}/$dir/
 		done
-		find ${TWIKIDIR}/data -type f -name \*.bak | xargs rm
-
-		chown -R ${WWWUSER}:${WWWGROUP} ${TWIKIDIR}
-
-		chmod 755 ${TWIKIDIR}/bin/*
-		chmod 664 `find ${TWIKIDIR}/data -type f`
-		chmod 775 `find ${TWIKIDIR}/data -type d`
-		chmod 775 `find ${TWIKIDIR}/pub  -type d`
+		find -s * -not -type d | while read file; do
+			if [ -e ${WWWDIR}/$file ]; then
+				echo "${WWWDIR}/$file exists, skipping"
+			else
+				cp $file ${WWWDIR}/$file
+			fi
+		done
+		chown -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
+		chmod -R u+w ${WWWDIR}/
+		cd ${WWWDIR}/
+		chmod o-rwx data lib locale templates test tools working
+		chmod a+x bin/* tools/*
 
 		# let the user know what's going on
 		cat << __EOF__
-
 *****************************************************************
-TWiki has been installed in ${TWIKIDIR}, with a sample
-configuration file in ${TWIKIDIR}/lib/TWiki.cfg.sample
-You need to copy this file to ${TWIKIDIR}/lib/TWiki.cfg
-and possibly edit it before your installation will be complete.
-
-In most cases, you can simply type:
-
-cp ${TWIKIDIR}/lib/TWiki.cfg.sample ${TWIKIDIR}/lib/TWiki.cfg
-
-Then you should be able to visit http://${HOSTNAME}/twiki/
-
-You need to setup your webserver correctly for TWiki to work
-An example for apache is below:
-
-ScriptAlias /twiki/bin/ "${PKG_PREFIX}/www/twiki/bin/"
-Alias /twiki/ "${PKG_PREFIX}/www/twiki/"
-<Directory "${PKG_PREFIX}/www/twiki/bin">
-  Options +ExecCGI
-  SetHandler cgi-script
-  Allow from all
-  SetEnv USER "${WWWUSER}"
-</Directory>
-<Directory "${PKG_PREFIX}/www/twiki/pub">
-  Options FollowSymLinks +Includes
-  AllowOverride None
-  Allow from all
-</Directory>
-
-Note that this default configuration defines a completely
-open TWiki - any visitor may make changes. Please consult the
-documentation for other configuration options if this is not the
-desired mode of operation.
-
-Please visit http://TWiki.org/feedback.html and leave feedback
-on your experiences with TWiki.
-
-Good Luck!
+* You can inspect differences (if any) between the distribition *
+* and the files installed using this command:                   *
+  % diff -ru ${TWDIR} ${WWWDIR}
+* For more info:                                                *
+*  http://wiki.FreeBSD.org/TWiki                                *
+*  http://twiki.org/cgi-bin/view/Codev/TWikiOnFreeBSD           *
+*  http://twiki.org/cgi-bin/view/TWiki/WebHome                  *
 *****************************************************************
 __EOF__
-
 		;;
 	*)
 		echo "Unexpected Argument $2!!!"

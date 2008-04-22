@@ -1,0 +1,118 @@
+%%TWDIR%%/data/TWiki/JSCalendarContrib.txt
+%%TWDIR%%/data/TWiki/JSCalendarContribInline.txt
+%%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib/MANIFEST
+%%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib/build.pl
+%%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib.pm
+%%TWDIR%%/lib/TWiki/Form/Date.pm
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/ChangeLog
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/README
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/bugtest-hidden-selects.html
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-blue.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-blue2.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-brown.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-green.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-setup.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-setup_stripped.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-system.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-tas.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-win2k-1.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-win2k-2.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-win2k-cold-1.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar-win2k-cold-2.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar.php
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar_icon.psd
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/calendar_stripped.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/dayinfo.html
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/doc/html/field-button.jpg
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/doc/html/reference-Z-S.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/doc/html/reference.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/doc/html/reference.html
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/doc/reference.pdf
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/img.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/index.html
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-af.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-al.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-bg.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-big5-utf8.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-big5.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-br.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-ca.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-cs-utf8.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-cs-win.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-da.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-de.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-du.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-el.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-en.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-es.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-fi.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-fr.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-he-utf8.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-hr-utf8.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-hr.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-hu.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-it.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-jp.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-ko-utf8.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-ko.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-lt-utf8.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-lt.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-lv.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-nl.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-no.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-pl-utf8.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-pl.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-pt.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-ro.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-ru.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-ru_win_.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-si.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-sk.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-sp.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-sv.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-tr.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/calendar-zh.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/lang/cn_utf8.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/menuarrow.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/menuarrow2.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/multiple-dates.html
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/release-notes.html
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/screenshot.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/simple-1.html
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/simple-2.html
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/simple-3.html
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua/active-bg.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua/dark-bg.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua/hover-bg.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua/menuarrow.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua/normal-bg.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua/rowhover-bg.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua/status-bg.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua/theme.css
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua/title-bg.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua/today-bg.gif
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua/transparent-bg.png
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/test-position.html
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/test.php
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/twiki.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/twiki_src.js
+%%TWDIR%%/pub/TWiki/JSCalendarContrib/wikiringlogo20x20.png
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Contrib/JSCalendarContrib
+@dirrm %%TWDIR%%/lib/TWiki/Contrib
+@dirrm %%TWDIR%%/lib/TWiki/Form
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib/doc/html
+@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib/doc
+@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib/lang
+@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib/skins/aqua
+@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib/skins
+@dirrm %%TWDIR%%/pub/TWiki/JSCalendarContrib
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

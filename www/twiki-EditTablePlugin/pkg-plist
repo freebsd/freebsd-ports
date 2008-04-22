@@ -1,0 +1,39 @@
+%%TWDIR%%/data/TWiki/EditTablePlugin.txt
+%%TWDIR%%/data/TWiki/VarEDITTABLE.txt
+%%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin/Core.pm
+%%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin.pm
+%%TWDIR%%/pub/TWiki/EditTablePlugin/EditTablePluginCalendarExample.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/ScreenshotEditCell1.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/ScreenshotEditCell2.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/btn_delete.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/btn_delete_disabled.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/btn_delete_over.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/btn_move.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/btn_move_disabled.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/btn_move_over.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/edittable.css
+%%TWDIR%%/pub/TWiki/EditTablePlugin/edittable.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/edittable.js
+%%TWDIR%%/pub/TWiki/EditTablePlugin/edittable.psd
+%%TWDIR%%/pub/TWiki/EditTablePlugin/img.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/menuarrow.gif
+%%TWDIR%%/pub/TWiki/EditTablePlugin/separator_bg_anim.gif
+%%TWDIR%%/test/unit/EditTablePlugin/EditTablePluginSuite.pm
+%%TWDIR%%/test/unit/EditTablePlugin/EditTablePluginTests.pm
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/EditTablePlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/EditTablePlugin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%/test/unit/EditTablePlugin
+@dirrm %%TWDIR%%/test/unit
+@dirrm %%TWDIR%%/test
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

@@ -1,0 +1,10 @@
+The User Mapping Manager interface provides services for mapping
+between a 'user identity' as used when talking to an external
+authentication provider, an internal TWiki canonical user ID, and the
+displayed name used to identify the user in TWiki. This is the default
+TWikiUserMapping in which user information is stored in TWiki topics -
+one per user, and then any mapping needed is done using the TWikiUsers
+topic in the Main.
+
+Author: Sven Dowideit
+WWW: http://twiki.org/cgi-bin/view/Plugins/TWikiUserMappingContrib
