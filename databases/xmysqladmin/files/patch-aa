@@ -14,7 +14,7 @@
  #-------------------------------------------------------
  #PIXMAPPATH = /opt/local/lib
 -PIXMAPPATH = /usr/local/bin
-+PIXMAPPATH = ${LOCABASE}/include/X11/pixmaps
++PIXMAPPATH = ${LOCALBASE}/include/X11/pixmaps
  ########################################################
  
  
@@ -51,7 +51,7 @@
  # mysql library dir
  #-------------------------------------------------------
 -MYSQLLOAD = -Wl,-R/usr/local/mysql/lib/mysql -L/usr/local/mysql/lib/mysql -lmysqlclient
-+MYSQLLOAD = -Wl,-R${LOCALBASE}/lib/mysql -lmysqlclient
++MYSQLLOAD = -Wl,-R${LOCALBASE}/lib/mysql -L${LOCALBASE}/lib/mysql -lmysqlclient
  ########################################################
  
  
