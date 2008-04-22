@@ -17,6 +17,8 @@ COMMENT=	PHP based weblog software
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:${PORTSDIR}/archivers/pear-File_Archive
 
+BROKEN=		does not fetch
+
 SNAPSHOT=	200803202342
 WRKSRC=		${WRKDIR}/serendipity-nightly
 NO_BUILD=	YES
