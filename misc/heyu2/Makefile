@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	heyu2
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.heyu.org/download/
 DISTNAME=	heyu-${PORTVERSION}
@@ -33,8 +33,6 @@ OPTIONS=	CM17A		"X10 CM17A \"Firecracker\" Support"		on \
 		EXTENDED	"Extended Type 0 (Shutter/Shade) Support"	on \
 		RFXSENS		"RFXSensors (RF) Support"			on \
 		RFXMETER	"RFXMeter (RF) Support"				on
-
-.include <bsd.port.pre.mk>
 
 .if !defined(WITH_CM17A)
 CONFIGURE_ARGS+=	nocm17a
@@ -73,4 +71,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/x10config.sample ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/x10.sched.sample ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
