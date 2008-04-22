@@ -6,22 +6,29 @@
 #
 
 PORTNAME=	qtiplot-doc
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	math
-MASTER_SITES=	BERLIOS
-MASTER_SITE_SUBDIR=	qtiplot
-DISTNAME=	qtiplot-manual-en
+MASTER_SITES=	http://soft.proindependent.com/src/
+DISTNAME=	qtiplot-${PORTVERSION}
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	The QtiPlot Handbook
 
+BUILD_DEPENDS=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
+		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
+		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/share/sgml/docbook/dsssl/modular/html/docbook.dsl:${PORTSDIR}/textproc/dsssl-docbook-modular
+
 USE_BZIP2=	yes
-NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/qtiplot/manual
+WRKSRC=		${WRKDIR}/qtiplot-${PORTVERSION}/manual
+
+post-patch:
+	cd ${WRKSRC} && ${REINPLACE_CMD} -e "s:/usr/local:${LOCALBASE}:g" \
+		docbook-en/index.docbook qtiplot.dsl qtiplot_html.xsl Makefile
 
 do-install:
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR}
+	cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${DATADIR}
 
 .include <bsd.port.mk>
