@@ -7,6 +7,7 @@
 
 PORTNAME=	w3m
 PORTVERSION=	${W3M_VERSION}
+PORTREVISION=	1
 CATEGORIES+=	www ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -64,7 +65,7 @@ PLIST_SUB+=	JAPANESE="@comment "
 
 .if defined(INLINE_IMAGE)
 USE_GNOME=	gtk20
-CONFIGURE_ARGS+=	--with-imagelib=gtk2
+CONFIGURE_ARGS+=	--with-imagelib=gtk2 --enable-image=fb,x11
 
 DOCS+=		README.img
 DOCS_JP+=	README.img
