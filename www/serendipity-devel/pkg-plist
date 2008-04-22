@@ -1504,6 +1504,7 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/plugin_remoterss.tpl
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/serendipity_plugin_remoterss.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cs.inc.php
@@ -2052,9 +2053,6 @@
 %%SERENDIPITY%%/templates/mt-rusty/preview.png
 %%SERENDIPITY%%/templates/mt-rusty/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-rusty/style.css
-%%SERENDIPITY%%/templates/mt-stormy/inactive.txt
-%%SERENDIPITY%%/templates/mt-stormy/info.txt
-%%SERENDIPITY%%/templates/mt-stormy/style.css
 %%SERENDIPITY%%/templates/mt-trendy/htmlarea.css
 %%SERENDIPITY%%/templates/mt-trendy/img/back.png
 %%SERENDIPITY%%/templates/mt-trendy/img/forward.png
@@ -2125,7 +2123,6 @@
 @dirrm %%SERENDIPITY%%/templates/mt3-chalkboard
 @dirrm %%SERENDIPITY%%/templates/mt-trendy/img
 @dirrm %%SERENDIPITY%%/templates/mt-trendy
-@dirrm %%SERENDIPITY%%/templates/mt-stormy
 @dirrm %%SERENDIPITY%%/templates/mt-rusty/img
 @dirrm %%SERENDIPITY%%/templates/mt-rusty
 @dirrm %%SERENDIPITY%%/templates/mt-plainjane
