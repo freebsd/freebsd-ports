@@ -3453,3 +3453,4 @@ devel/p5-Tie-Watch|x11-toolkits/p5-Tk|2008-04-14|bundled with p5-Tk
 games/teewars|games/teeworls|2008-04-17|Project renamed
 multimedia/exportvideo||2008-04-21|Add-on for soon to be removed nuppelvideo port
 multimedia/nuppelvideo||2008-04-21|Unmaintained upstream for years.  The nuppelvideo format is now supported by mencoder
+graphics/ascii0|graphics/asciio|2008-04-22|renamed by delete+add
