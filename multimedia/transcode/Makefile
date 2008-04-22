@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=	--with-theora-prefix=${LOCALBASE} --enable-theora
 CONFIGURE_ARGS+=	--enable-theora=no
 .endif
 
-.if (defined(WITH_IMAGEMAGICK) || exists(${LOCALBASE}/lib/libMagick.so)) && !defined(WITHOUT_IMAGEMAGICK)
+.if (defined(WITH_IMAGEMAGICK) || exists(${LOCALBASE}/lib/libMagickWand.so)) && !defined(WITHOUT_IMAGEMAGICK)
 LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=	--enable-imagemagick --with-imagemagick-prefix=${LOCALBASE}
 .else
