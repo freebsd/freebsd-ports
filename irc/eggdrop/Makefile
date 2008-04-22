@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	eggdrop
-PORTVERSION=	1.6.18
-PORTREVISION=	1
+PORTVERSION=	1.6.19
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/ \
 		LOCAL/beech
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-ssl.patch.gz
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-ssl-rootie.patch.gz
 PATCH_SITES=	http://www.egghelp.org/files/patches/ \
 		LOCAL/beech
 
