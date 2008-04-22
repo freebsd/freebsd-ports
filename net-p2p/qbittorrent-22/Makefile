@@ -7,6 +7,7 @@
 
 PORTNAME=	qbittorrent
 DISTVERSION=	1.0.0rc11
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
@@ -36,7 +37,7 @@ MANCOMPRESSED=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
 .else
 CONFIGURE_ARGS+=--disable-libmagick
 .endif

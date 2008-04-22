@@ -39,7 +39,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--without-magick
 PLIST_SUB+=	IMAGEMAGICK="@comment "
 .else
-LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick++.1:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	IMAGEMAGICK=""
 .endif
 
