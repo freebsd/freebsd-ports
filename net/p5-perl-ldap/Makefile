@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perl-ldap
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net/GBARR
@@ -33,6 +33,8 @@ MAN3=		Bundle::Net::LDAP.3 \
 		Net::LDAP::Control::Paged.3 \
 		Net::LDAP::Control::PasswordPolicy.3 \
 		Net::LDAP::Control::PersistentSearch.3 \
+		Net::LDAP::Control::PostRead.3 \
+		Net::LDAP::Control::PreRead.3 \
 		Net::LDAP::Control::ProxyAuth.3 \
 		Net::LDAP::Control::Sort.3 \
 		Net::LDAP::Control::SortResult.3 \

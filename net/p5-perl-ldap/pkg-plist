@@ -12,6 +12,8 @@
 %%SITE_PERL%%/Net/LDAP/Control/Paged.pm
 %%SITE_PERL%%/Net/LDAP/Control/PasswordPolicy.pm
 %%SITE_PERL%%/Net/LDAP/Control/PersistentSearch.pm
+%%SITE_PERL%%/Net/LDAP/Control/PostRead.pm
+%%SITE_PERL%%/Net/LDAP/Control/PreRead.pm
 %%SITE_PERL%%/Net/LDAP/Control/ProxyAuth.pm
 %%SITE_PERL%%/Net/LDAP/Control/Sort.pm
 %%SITE_PERL%%/Net/LDAP/Control/SortResult.pm
