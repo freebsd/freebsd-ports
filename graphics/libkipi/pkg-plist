@@ -14,10 +14,10 @@ include/libkipi/version.h
 lib/libkipi.a
 lib/libkipi.la
 lib/libkipi.so
-lib/libkipi.so.1
+lib/libkipi.so.2
 libdata/pkgconfig/libkipi.pc
-share/apps/kipi/data/banner_left.png
 share/apps/kipi/data/kipi-plugins_logo.png
+share/icons/hicolor/128x128/apps/kipi.png
 share/icons/hicolor/16x16/apps/kipi.png
 share/icons/hicolor/22x22/apps/kipi.png
 share/icons/hicolor/32x32/apps/kipi.png
@@ -40,9 +40,12 @@ share/locale/gl/LC_MESSAGES/libkipi.mo
 share/locale/is/LC_MESSAGES/libkipi.mo
 share/locale/it/LC_MESSAGES/libkipi.mo
 share/locale/ja/LC_MESSAGES/libkipi.mo
+share/locale/ka/LC_MESSAGES/libkipi.mo
 share/locale/lt/LC_MESSAGES/libkipi.mo
+share/locale/ms/LC_MESSAGES/libkipi.mo
 share/locale/mt/LC_MESSAGES/libkipi.mo
 share/locale/nb/LC_MESSAGES/libkipi.mo
+share/locale/nds/LC_MESSAGES/libkipi.mo
 share/locale/nl/LC_MESSAGES/libkipi.mo
 share/locale/pa/LC_MESSAGES/libkipi.mo
 share/locale/pl/LC_MESSAGES/libkipi.mo
@@ -54,7 +57,9 @@ share/locale/sk/LC_MESSAGES/libkipi.mo
 share/locale/sl/LC_MESSAGES/libkipi.mo
 share/locale/sr/LC_MESSAGES/libkipi.mo
 share/locale/sr@Latn/LC_MESSAGES/libkipi.mo
+share/locale/sv/LC_MESSAGES/libkipi.mo
 share/locale/ta/LC_MESSAGES/libkipi.mo
+share/locale/th/LC_MESSAGES/libkipi.mo
 share/locale/tr/LC_MESSAGES/libkipi.mo
 share/locale/uk/LC_MESSAGES/libkipi.mo
 share/locale/zh_CN/LC_MESSAGES/libkipi.mo
@@ -62,5 +67,7 @@ share/servicetypes/kipiplugin.desktop
 @dirrmtry share/apps/kipi/data
 @dirrmtry share/apps/kipi
 @dirrm include/libkipi
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
