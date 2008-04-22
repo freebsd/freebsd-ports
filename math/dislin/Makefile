@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dislin
-PORTVERSION=	9.2
-PORTREVISION=	1
+PORTVERSION=	9.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
@@ -40,15 +39,29 @@ USE_LDCONFIG=	yes
 
 .if ${OSVERSION} < 600000
 BINVER=		-5.4
-.else
+BINDIR=		54
+.elif ${OSVERSION} < 700000
 BINVER=		-6.0
+BINDIR=		60
+.else
+BINVER=		-7.0
+BINDIR=		70
 .endif
-.if ${OSVERSION} >= 700000
-LIB_DEPENDS+=	z.3:${PORTSDIR}/misc/compat6x
-.endif
+#.if ${OSVERSION} >= 800000
+#LIB_DEPENDS+=	z.3:${PORTSDIR}/misc/compat7x
+#.endif
+
+SCRIPTS2FIX=	clink dlink f2clink
+
+pre-configure:
+.for sc in ${SCRIPTS2FIX}
+	${REINPLACE_CMD} -e '/libs="-L$$DISLIN/s|"$$| ${PTHREAD_LIBS}"|'	\
+		${WRKSRC}/fbsd_${BINDIR}/bin/${sc}
+.endfor
 
 do-install:
 	cd ${WRKSRC} && ${SETENV} DISLIN=${DISLIN_DIR} ${SH} INSTALL
+	${RM} ${SCRIPTS2FIX:S|^|${DISLIN_DIR}/bin/|:S|$|.bak|}
 	${INSTALL_SCRIPT} ${WRKDIR}/dislin.sh ${DISLIN_DIR}/bin
 .for _program in ${PROGRAMS}
 	${LN} -s ${DISLIN_DIR}/bin/dislin.sh ${PREFIX}/bin/${_program}
@@ -62,6 +75,7 @@ do-install:
 	${LN} -s ${LOCALBASE}/lib/libf2c.so ${DISLIN_DIR}/libg2c.so
 	${LN} -s ${LOCALBASE}/lib/libf2c.so.2 ${DISLIN_DIR}/libg2c.so.2
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DISLIN_DIR}
+	${CHMOD} a+r ${DISLIN_DIR}/README
 
 post-install:
 	@${ECHO_MSG}
