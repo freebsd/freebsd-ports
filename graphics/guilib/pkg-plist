@@ -12,6 +12,8 @@ include/GUI/GUI_status.h
 include/GUI/GUI_termwin.h
 include/GUI/GUI_widget.h
 include/GUI/GUI_widgets.h
+include/GUI/GUI_output.h
+include/GUI/GUI_loadimage.h
 lib/libGUI.a
 lib/libGUI.la
 lib/libGUI.so
