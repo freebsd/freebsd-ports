@@ -1213,6 +1213,7 @@
     SUBDIR += p5-Env-PS1
     SUBDIR += p5-Env-Path
     SUBDIR += p5-Errno
+    SUBDIR += p5-Eval-Context
     SUBDIR += p5-Event
     SUBDIR += p5-Event-ExecFlow
     SUBDIR += p5-Event-Lib
