@@ -7,7 +7,7 @@
 
 PORTNAME=	synfig
 DISTVERSION=	0.61.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26 \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		Magick.10:${PORTSDIR}/graphics/ImageMagick \
+		MagickWand.1:${PORTSDIR}/graphics/ImageMagick \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		dv.4:${PORTSDIR}/multimedia/libdv \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR

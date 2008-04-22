@@ -16,7 +16,7 @@ DISTNAME=	dx-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
-LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick	\
+LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick	\
 		tiff.4:${PORTSDIR}/graphics/tiff		\
 		cdf.0:${PORTSDIR}/science/cdf
 
