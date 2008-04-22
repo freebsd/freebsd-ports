@@ -7,6 +7,7 @@
 
 PORTNAME=	pstoedit
 PORTVERSION=	3.45
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
@@ -38,7 +39,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--without-magick
 PLIST_SUB+=	IMAGEMAGICK="@comment "
 .else
-LIB_DEPENDS+=	Magick++.10:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	IMAGEMAGICK=""
 .endif
 
