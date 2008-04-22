@@ -7,6 +7,7 @@
 
 PORTNAME=	cinepaint
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -25,6 +26,7 @@ USE_PYTHON=	yes
 USE_GNOME=	gtk12
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+USE_XORG=	xpm
 
 MAN1=		cinepaint.1 cinepainttool.1
 
