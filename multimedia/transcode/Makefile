@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://transcode.kabewm.com/ \
 		http://fromani.exit1.org/
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--enable-theora=no
 .endif
 
 .if (defined(WITH_IMAGEMAGICK) || exists(${LOCALBASE}/lib/libMagick.so)) && !defined(WITHOUT_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=	--enable-imagemagick --with-imagemagick-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--enable-imagemagick=no

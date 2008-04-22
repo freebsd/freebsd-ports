@@ -7,7 +7,7 @@
 
 PORTNAME=	rmagick
 PORTVERSION=	1.15.10
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -43,7 +43,7 @@ DOCS=		ChangeLog README.html
 .if defined(WITH_GRAPHICSMAGICK)
 LIB_DEPENDS+=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
 .else
-LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 pre-configure:

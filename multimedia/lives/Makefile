@@ -7,6 +7,7 @@
 
 PORTNAME=	lives
 DISTVERSION=	0.9.8.10
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/%7Esalsaman/lives/current/ CENKES
 DISTNAME=	LiVES-${DISTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	LiVES-${DISTVERSION}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Video editing system
 
-LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		jack.0:${PORTSDIR}/audio/jack \
