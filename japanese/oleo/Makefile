@@ -7,7 +7,7 @@
 
 PORTNAME=	oleo
 PORTVERSION=	1.99.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese math
 MASTER_SITES=	http://www.hh.iij4u.or.jp/~hayasida/oleo/ \
 		${MASTER_SITE_GNU}
@@ -29,6 +29,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/Xbae/Matrix.h:${PORTSDIR}/x11-toolkits/xbae
 CONFIGURE_ARGS+=--without-motif
 .endif
 
+USE_XORG=	x11 xext xt
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 GNU_CONFIGURE=	yes

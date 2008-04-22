@@ -23,7 +23,7 @@ NO_INSTALL_MANPAGES=	yes
 WRKSRC=		${WRKDIR}/XFrisk
 USE_GMAKE=	yes
 
-USE_XORG=	x11 xt
+USE_XORG=	x11 xt xaw xmu sm ice
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
