@@ -24,6 +24,8 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/pxp-engine/pxp_engine.a:${PORTSDIR}/textproc/ocaml-pxp \
 		${LOCALBASE}/lib/ocaml/site-lib/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex
 
+BROKEN=		does not build with new ocaml
+
 USE_GMAKE=	yes
 
 HAS_CONFIGURE=	yes
