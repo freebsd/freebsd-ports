@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.11
-PORTREVISION=	3
+PORTVERSION=	1.1.12
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	lib
@@ -65,11 +64,11 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		GTK2 "Enable gdkpixbuf support" off \
 		WAVPACK "Enable WavPack support" on
 
-MAN1=	xine-config.1
+MAN1=	xine-config.1 xine-list-1.1.1
 MAN5=	xine.5
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.20"
+PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.21"
 
 .include <bsd.port.pre.mk>
 

@@ -1,4 +1,5 @@
 bin/xine-config
+bin/xine-list-1.1
 include/xine.h
 include/xine/alphablend.h
 include/xine/attributes.h
@@ -140,6 +141,7 @@ lib/libxine.so.1
 %%WITH_CACA%%%%PLUGINSDIR%%/xineplug_vo_out_caca.so
 %%PLUGINSDIR%%/xineplug_vo_out_none.so
 %%PLUGINSDIR%%/xineplug_vo_out_opengl.so
+%%PLUGINSDIR%%/xineplug_vo_out_raw.so
 %%PLUGINSDIR%%/xineplug_vo_out_sdl.so
 %%WITH_VIDIX%%%%PLUGINSDIR%%/xineplug_vo_out_vidix.so
 %%PLUGINSDIR%%/xineplug_vo_out_xshm.so
