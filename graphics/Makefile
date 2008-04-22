@@ -27,6 +27,7 @@
     SUBDIR += aoi
     SUBDIR += aolserver-nsgd
     SUBDIR += aqsis
+    SUBDIR += ascii0
     SUBDIR += autopano-sift
     SUBDIR += autoq3d
     SUBDIR += autotrace
