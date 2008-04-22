@@ -7,7 +7,6 @@
 
 PORTNAME=	serendipity-devel
 PORTVERSION=	1.0.${SNAPSHOT}
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.s9y.org/snapshots/
 DISTNAME=	s9y_${SNAPSHOT}
@@ -17,9 +16,7 @@ COMMENT=	PHP based weblog software
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:${PORTSDIR}/archivers/pear-File_Archive
 
-BROKEN=		does not fetch
-
-SNAPSHOT=	200803202342
+SNAPSHOT=	200804222342
 WRKSRC=		${WRKDIR}/serendipity-nightly
 NO_BUILD=	YES
 SERENDIPITY?=	www/serendipity
