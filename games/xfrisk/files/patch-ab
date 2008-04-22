@@ -24,7 +24,7 @@
  # for X11R6
  # Point this at your X tree.
 -XDIR=/usr/X11R6
-+XDIR?=/usr/X11R6
++XDIR?=/usr/local
  #XDIR=/usr/local/X11
  #XDIR=/usr/openwin
  
