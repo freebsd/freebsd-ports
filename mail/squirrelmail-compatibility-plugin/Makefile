@@ -6,6 +6,7 @@
 
 PORTNAME=	compatibility
 PORTVERSION=	2.0.11
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=	squirrelmail-
