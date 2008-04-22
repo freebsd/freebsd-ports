@@ -1,0 +1,6 @@
+A Perl/GTK application that lets you draw ASCII charts using a GUI. Objects on
+the screen are sizable and have all the properties you'd expect in a drawing
+tool (titles for the boxes, bullets, etc), but the end result is plain text
+that's embeddable in your code.
+
+WWW: http://search.cpan.org/dist/App-Asciio/
