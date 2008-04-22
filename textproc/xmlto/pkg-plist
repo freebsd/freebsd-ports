@@ -4,6 +4,7 @@ bin/xmlto
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/format/docbook/awt
 %%DATADIR%%/format/docbook/dvi
 %%DATADIR%%/format/docbook/fo
 %%DATADIR%%/format/docbook/html
@@ -11,8 +12,11 @@ bin/xmlto
 %%DATADIR%%/format/docbook/xhtml
 %%DATADIR%%/format/docbook/xhtml-nochunks
 %%DATADIR%%/format/docbook/man
+%%DATADIR%%/format/docbook/mif
+%%DATADIR%%/format/docbook/pcl
 %%DATADIR%%/format/docbook/pdf
 %%DATADIR%%/format/docbook/ps
+%%DATADIR%%/format/docbook/svg
 %%DATADIR%%/format/docbook/txt
 %%DATADIR%%/format/docbook/htmlhelp
 %%DATADIR%%/format/docbook/javahelp
