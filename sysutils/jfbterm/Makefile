@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	jfbterm
-PORTVERSION=	0.4.7
+PORTVERSION=	0.5.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ac.auone-net.jp/~baba/jfbterm/ \
 		http://chirashi-no-ura.net/files/
-DISTNAME=	jfbterm-0.4.7-FreeBSD-0.4.0
+DISTNAME=	jfbterm-FreeBSD-0.5.0
 
 MAINTAINER=	bsdports@gmail.com
 COMMENT=	Multilanguage can be displayed on the console
@@ -25,7 +25,11 @@ SUB_FILES=	pkg-message
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		--mandir="${LOCALBASE}/man"
+
+MAN1=	jfbterm.1
+MAN5=	jfbterm.conf.5
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
