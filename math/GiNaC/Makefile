@@ -8,6 +8,7 @@
 
 PORTNAME=	GiNaC
 PORTVERSION=	1.3.8
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library for symbolic mathematical calculations
 
-LIB_DEPENDS=	cln.4:${PORTSDIR}/math/cln
+LIB_DEPENDS=	cln.5:${PORTSDIR}/math/cln
 
 USE_BZIP2=	yes
 USE_GCC=	3.4+
