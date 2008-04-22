@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/Spelling.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Spelling/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Spelling
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
