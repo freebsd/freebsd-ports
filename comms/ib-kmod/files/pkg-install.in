@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+KMODDIR="%%KMODDIR%%"
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+fi
+
+type kldxref >/dev/null 2>&1 && kldxref ${KMODDIR} || true

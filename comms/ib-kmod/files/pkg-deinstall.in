@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Unload if_ib module if necessary
+#
+# $FreeBSD$
+#
+
+KMODDIR="%%KMODDIR%%"
+
+case "$2" in
+DEINSTALL)
+	echo "Unloading if_ib kernel module."
+
+	# Unload the module if it is currently loaded.
+	kldstat -n if_ib 2>/dev/null >/dev/null && kldunload if_ib || true
+	;;
+POST-DEINSTALL)
+	type kldxref >/dev/null 2>&1 && kldxref ${KMODDIR} || true
+	;;
+esac
