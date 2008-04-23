@@ -1,0 +1,5 @@
+include/csv.h
+lib/libcsv.a
+lib/libcsv.so
+lib/libcsv.so.%%SHLIB_MAJOR%%
+%%PROFILE%%lib/libcsv_p.a

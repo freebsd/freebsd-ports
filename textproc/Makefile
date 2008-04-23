@@ -259,6 +259,7 @@
     SUBDIR += lemmatizer
     SUBDIR += lemmatizer2
     SUBDIR += libcroco
+    SUBDIR += libcsv
     SUBDIR += libebml
     SUBDIR += libextractor
     SUBDIR += libkmfl
