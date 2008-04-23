@@ -1,18 +1,18 @@
---- bin/jruby.orig	Fri Apr  6 13:57:54 2007
-+++ bin/jruby	Fri Apr  6 14:00:13 2007
+--- ./bin/jruby.old	2008-04-23 11:36:44.368716680 +0800
++++ ./bin/jruby	2008-04-23 11:40:04.632441243 +0800
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/bin/env bash
  # -----------------------------------------------------------------------------
  # jruby.sh - Start Script for the JRuby interpreter
  #
-@@ -26,6 +26,9 @@
- esac
+@@ -37,6 +37,9 @@
+ JRUBY_HOME_1=`dirname "$PRG"`           # the ./bin dir
+ JRUBY_HOME=`dirname "$JRUBY_HOME_1"`  # the . dir
  
- # ----- Verify and Set Required Environment Variables -------------------------
 +JAVA_HOME=%%JAVA_HOME%%
 +JRUBY_HOME=%%JRUBY_HOME%%
 +
- 
- if [ -z "$JRUBY_HOME" ] ; then
-   ## resolve links - $0 may be a link to  home
+ if [ -z "$JRUBY_OPTS" ] ; then
+   JRUBY_OPTS=""
+ fi
