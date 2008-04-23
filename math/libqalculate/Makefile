@@ -16,6 +16,8 @@ COMMENT=	A a multi-purpose desktop calculator (backend library)
 
 LIB_DEPENDS=	cln.5:${PORTSDIR}/math/cln
 
+BROKEN=		does not configure with new cln
+
 USE_GNOME=	glib20 gnomehack gnometarget intlhack libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
