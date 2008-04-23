@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Makefile.orig
 +++ Makefile
 @@ -8,7 +8,7 @@
@@ -57,7 +54,7 @@ $FreeBSD$
  	@cat $(ROOTDIR)/logo.txt | $(CATUTF)
  
  # modulválasztós, menüs interfész
-@@ -71,62 +71,62 @@
+@@ -71,89 +71,89 @@
  	make myspell
  
  # munkakönyvtárak létrehozása
@@ -97,14 +94,6 @@ $FreeBSD$
 -	@$(SH) bin/igek $(ROOTDIR)
 +	$(SH) bin/igek $(ROOTDIR)
  
- 	@echo "==> névszók" | $(CATUTF)
--	@$(SH) bin/fonevek $(ROOTDIR)
-+	$(SH) bin/fonevek $(ROOTDIR)
- 
- 	@echo "==> morfológiai kódok" | $(CATUTF)
--	@$(SH) bin/kodok $(ROOTDIR)
-+	$(SH) bin/kodok $(ROOTDIR)
- 
  # egyéb kivételek: az m4 miatt nem megy külön héjprogramba
  	@echo "==> kivételek" | $(CATUTF)
 -	@cat $(SZOTAR)/kivetelek/igekotos/*.2* \
@@ -126,22 +115,34 @@ $FreeBSD$
  	@echo $(EN) ."$(EC)"
 -	@cat $(WRKDIR)/ragozatlan.2 $(SZOTAR)/kivetelek/ragozatlan/*.2* \
 +	cat $(WKDIR)/ragozatlan.2 $(SZOTAR)/kivetelek/ragozatlan/*.2* \
- 		| $(M4) | grep -v ^# | grep -v "#[A-Z]" \
+ 		| $(M4) | $(BINDIR)/field | grep -v ^# | grep -v "#[A-Z]" \
  		| sed 's/[	 ]*#.*$$//' \
  		| LC_ALL=C $(AWK) -f $(AWKDIR)/tovek.awk \
  		>> $(DICT)
  	@echo $(EN) ."$(EC)"
 -	@cat $(WRKDIR)/ragozatlan.2 $(SZOTAR)/kivetelek/ragozatlan/*.2* \
 +	cat $(WKDIR)/ragozatlan.2 $(SZOTAR)/kivetelek/ragozatlan/*.2* \
- 		| $(M4) | grep -v ^# | grep -i "#$(*F)" | sed 's/[	 ]*#.*$$//' \
+ 		| $(M4) | $(BINDIR)/field | grep -v ^# | grep -i "#$(*F)" | sed 's/[	 ]*#.*$$//' \
  		| LC_ALL=C $(AWK) -f $(AWKDIR)/tovek.awk \
  		>> $(DICT)
-@@ -137,23 +137,23 @@
+ 	@echo Rendben.
+ 
+ 	@echo "==> névszók" | $(CATUTF)
+-	@$(SH) bin/fonevek $(ROOTDIR)
++	$(SH) bin/fonevek $(ROOTDIR)
+ 
+ 	@echo "==> morfológiai kódok" | $(CATUTF)
+-	@$(SH) bin/kodok $(ROOTDIR)
++	$(SH) bin/kodok $(ROOTDIR)
+ 
+ 	@echo $(EN) ."$(EC)"
+ 
  	@echo "==> tiltott szavak"
- 	@$(SH) bin/tiltott $(ROOTDIR) $(*F)
+-	@$(SH) bin/tiltott $(ROOTDIR) $(*F)
++	$(SH) bin/tiltott $(ROOTDIR) $(*F)
  
 -	@mv $(DICT) $(WRKDIR)/magyar4$(*F).dict
-+	@mv $(DICT) $(WKDIR)/magyar4$(*F).dict
++	mv $(DICT) $(WKDIR)/magyar4$(*F).dict
  	@echo Rendben.
  
  # ragozási táblázat (magyar.aff) elõállítása
@@ -195,20 +196,23 @@ $FreeBSD$
  # a myspellhez elõállított magyar.aff állományhoz
  hu_HU.aff: magyar.aff
  	@echo "===> myspell ragozási táblázat (hu_HU.aff) elõállítása" | $(CATUTF)
--	@$(SH) bin/i2myspell $(WRKDIR)/magyar.aff MYSPELL_heading \
-+	@$(SH) bin/i2myspell $(WKDIR)/magyar.aff MYSPELL_heading \
+-	@$(SH) bin/i2myspell $(WRKDIR)/magyar.aff HUNSPELL_heading \
++	@$(SH) bin/i2myspell $(WKDIR)/magyar.aff HUNSPELL_heading \
  		A-ZÁÉÍÓÖÕÚÜÛ a-záéíóöõúüû | sed 's/q\([^[]*\]\)/-\1/' | \
-                 bin/newsyntax >$(ROOTDIR)/hu_HU_morph.aff
- 	@$(AWK) -f $(AWKDIR)/delete_morph_tags.awk $(ROOTDIR)/hu_HU_morph.aff | \
-@@ -222,16 +222,16 @@
+                 bin/newsyntax >$(ROOTDIR)/hu_HU_morph.aff                
+ 	@cat $(ROOTDIR)/hu_HU_morph.aff | bin/aff2gen | \
+@@ -223,20 +223,20 @@
  # a myspellhez elõállított hashtáblából (magyar4myspell.hash)
  hu_HU.dic: magyar.aff
  	@echo "===> myspell szótár (hu_HU.dic) elõállítása" | $(CATUTF)
 -	@$(SH) bin/i2myspell -d $(WRKDIR)/magyar4myspell.dict | \
 +	@$(SH) bin/i2myspell -d $(WKDIR)/magyar4myspell.dict | \
- 	      bin/lemma_present | bin/quniq >$(ROOTDIR)/hu_HU_morph.dic
- 	@LC_ALL=C sed 's/	.*//' $(ROOTDIR)/hu_HU_morph.dic | \
- 	    bin/mezok >$(ROOTDIR)/hu_HU.dic
+ 	    bin/lemma_present | bin/quniq >$(ROOTDIR)/hu_HU_morph.dic
+ 	@cat $(ROOTDIR)/hu_HU_morph.dic | \
+-	    bin/dic2gen $(WRKDIR)/mezok2.txt >$(ROOTDIR)/hu_HU_gen.dic
++	    bin/dic2gen $(WKDIR)/mezok2.txt >$(ROOTDIR)/hu_HU_gen.dic
+ 	@cat hu_HU_gen.dic | \
+ 	    sed 's/\t\([^p].\|.[^h]\):[^\t]*//g' >$(ROOTDIR)/hu_HU.dic
  
  u8: hu_HU.aff hu_HU.dic
  	@echo "===> Unicode karakterkódolású állományok elõállítása" | $(CATUTF)
@@ -218,10 +222,13 @@ $FreeBSD$
 +	@bin/u8myspell $(ROOTDIR)/hu_HU_morph $(WKDIR)/hu_HU_u8_morph l2
 +	@cat $(WKDIR)/hu_HU_u8_morph.dic | sed 's#	/#/#' >$(ROOTDIR)/hu_HU_u8_morph.dic
 +	@mv $(WKDIR)/hu_HU_u8_morph.aff $(ROOTDIR)
- 	@sed 's/	.*//' $(ROOTDIR)/hu_HU_u8_morph.dic | \
- 	    bin/mezok_utf >$(ROOTDIR)/hu_HU_u8.dic
- 	@$(AWK) -f $(AWKDIR)/delete_morph_tags.awk $(ROOTDIR)/hu_HU_u8_morph.aff \
-@@ -245,7 +245,7 @@
+ 	@cat $(ROOTDIR)/hu_HU_u8_morph.dic | \
+-	    bin/dic2gen $(WRKDIR)/mezok_utf.txt >$(ROOTDIR)/hu_HU_u8_gen.dic
++	    bin/dic2gen $(WKDIR)/mezok_utf.txt >$(ROOTDIR)/hu_HU_u8_gen.dic
+ 	@cat hu_HU_u8_gen.dic | \
+ 	    sed 's/\t\([^p].\|.[^h]\):[^\t]*//g' >$(ROOTDIR)/hu_HU_u8.dic
+ 	@cat $(ROOTDIR)/hu_HU_u8_morph.aff | \
+@@ -252,7 +252,7 @@
  	@cd kr; make
  
  # minden komponens kompilálása
@@ -230,7 +237,7 @@ $FreeBSD$
  
  # új modul létrehozása
  new:
-@@ -254,7 +254,7 @@
+@@ -261,7 +261,7 @@
  
  # takarítás
  clean: 
