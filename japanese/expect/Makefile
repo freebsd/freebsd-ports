@@ -7,7 +7,7 @@
 
 PORTNAME=	expect
 PORTVERSION=	5.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese lang tk
 MASTER_SITES=	ftp://ftp.nist.gov/mel/div826/subject/expect/old/
 
@@ -17,7 +17,9 @@ COMMENT=	A sophisticated scripter based on Japanized tcl/tk
 LIB_DEPENDS=	tk80jp.1:${PORTSDIR}/japanese/tk80
 
 USE_AUTOTOOLS=	autoconf:213
-CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+    		CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-shared --with-tclconfig=${PREFIX}/lib/tcl8.0jp \
 		--with-tkconfig=${PREFIX}/lib/tk8.0jp \
 		--with-tclinclude=${PREFIX}/include/tcl8.0jp \
