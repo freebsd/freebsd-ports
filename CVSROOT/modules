@@ -6605,6 +6605,7 @@ libconvolve	ports/audio/libconvolve
 libcoro		ports/devel/libcoro
 libcoyotl	ports/devel/libcoyotl
 libcroco	ports/textproc/libcroco
+libcsv		ports/textproc/libcsv
 libctl		ports/science/libctl
 libcwd		ports/devel/libcwd
 libcyrillic	ports/russian/libcyrillic
