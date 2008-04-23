@@ -14,7 +14,7 @@ PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	Tool Command Language (development version)
+COMMENT=	Tool Command Language
 
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}/unix
