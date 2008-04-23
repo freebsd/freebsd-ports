@@ -274,7 +274,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^static.*lrint/s|static ||' ${WRKSRC}/filter/filter_modfps.c
 
 	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|g ; \
-		s|FFMPEG_VERSION|LIBAVCODEC_IDENT|g' \
+		s|FFMPEG_VERSION|LIBAVCODEC_IDENT|g ; \
+		s|-lMagick|-lMagickCore|g' \
 			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
