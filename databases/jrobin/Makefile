@@ -7,38 +7,26 @@
 #
 
 PORTNAME=	jrobin
-PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTVERSION=	1.5.8
 CATEGORIES=	databases java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+MASTER_SITES=	http://repo.opennms.org/maven2/org/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.jar
+EXTRACT_ONLY=
 
 MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	A pure Java alternative to RRDTool
 
 USE_JAVA=	yes
-USE_ANT=	yes
 JAVA_VERSION=	1.5+
-ALL_TARGET=	dist
-WRKSRC=		${WRKDIR}/JRobinLite-${PORTVERSION}
-BUILD_WRKSRC=	${WRKSRC}/ant
+NO_BUILD=	yes
 
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	javadoc
-PORTDOCS=	*
-.endif
-
-CLASSES=	jrobin convertor inspector
+CLASSES=	jrobin
 
 do-install:
 .for c in ${CLASSES}
-	${INSTALL_DATA} ${WRKSRC}/lib/${c}-${PORTVERSION}.jar ${JAVAJARDIR}/${c}.jar
+	${INSTALL_DATA} ${DISTDIR}/${c}-${PORTVERSION}.jar ${JAVAJARDIR}/${c}.jar
 	@${ECHO} '${JAVAJARDIR:S,^${PREFIX}/,,}/${c}.jar' >> ${TMPPLIST}
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
