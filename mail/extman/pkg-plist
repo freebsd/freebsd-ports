@@ -25,10 +25,13 @@ www/extman/addon/passwd2ext.pl
 www/extman/addon/upgrade_0.16_to_0.2beta3.sql
 www/extman/addon/upgrade_0.2.0_to_0.2.1.sql
 www/extman/addon/upgrade_0.2.1_to_0.2.2.sql
+www/extman/addon/upgrade_0.2.3_to_0.2.4.sql
 www/extman/addon/upgrade_0.2beta3_to_0.2.0.sql
 www/extman/cgi/alias.cgi
 www/extman/cgi/captcha.cgi
+www/extman/cgi/changepwd.cgi
 www/extman/cgi/domain.cgi
+www/extman/cgi/forgetpwd.cgi
 www/extman/cgi/groupmail.cgi
 www/extman/cgi/index.cgi
 www/extman/cgi/manager.cgi
@@ -54,6 +57,7 @@ www/extman/docs/mysql_virtual_mailbox_maps.cf
 www/extman/docs/mysql_virtual_sender_maps.cf
 www/extman/html/default/ac.js
 www/extman/html/default/autocomplete.css
+www/extman/html/default/changepwd.html
 www/extman/html/default/default.css
 www/extman/html/default/edit_alias.html
 www/extman/html/default/edit_domain.html
@@ -62,6 +66,7 @@ www/extman/html/default/edit_manager.html
 www/extman/html/default/edit_user.html
 www/extman/html/default/editor.html
 www/extman/html/default/error.html
+www/extman/html/default/forgetpwd.html
 www/extman/html/default/images/alias.gif
 www/extman/html/default/images/attach.gif
 www/extman/html/default/images/backup.gif
@@ -165,6 +170,8 @@ www/extman/html/default/index.html
 www/extman/html/default/js/common.js
 www/extman/html/default/js/editor.js
 www/extman/html/default/js/menu.js
+www/extman/html/default/js/tab.js
+www/extman/html/default/jumpto.inc
 www/extman/html/default/manlib.js
 www/extman/html/default/multifile_new.inc
 www/extman/html/default/navbar.html
@@ -174,7 +181,7 @@ www/extman/html/default/overview_manager.html
 www/extman/html/default/overview_user.html
 www/extman/html/default/passwd.html
 www/extman/html/default/signup.html
-www/extman/html/default/signup.html.old
+www/extman/html/default/tab.css
 www/extman/html/default/viewlog_all.html
 www/extman/html/images/donate.png
 www/extman/html/images/extman_logo.gif
@@ -203,13 +210,14 @@ www/extman/libs/Ext/Mgr/LDAP.pm
 www/extman/libs/Ext/Mgr/MySQL.pm
 www/extman/libs/Ext/MgrApp.pm
 www/extman/libs/Ext/MgrApp/Alias.pm
+www/extman/libs/Ext/MgrApp/ChangePwd.pm
 www/extman/libs/Ext/MgrApp/Domain.pm
+www/extman/libs/Ext/MgrApp/ForgetPwd.pm
 www/extman/libs/Ext/MgrApp/GroupMail.pm
 www/extman/libs/Ext/MgrApp/Login.pm
 www/extman/libs/Ext/MgrApp/Manager.pm
 www/extman/libs/Ext/MgrApp/OverView.pm
 www/extman/libs/Ext/MgrApp/Signup.pm
-www/extman/libs/Ext/MgrApp/Signup.pm.old
 www/extman/libs/Ext/MgrApp/User.pm
 www/extman/libs/Ext/MgrApp/ViewLog.pm
 www/extman/libs/Ext/Passwd.pm
@@ -219,10 +227,18 @@ www/extman/libs/Ext/Template.pm
 www/extman/libs/Ext/Utils.pm
 www/extman/libs/Ext/buildpkg.sh
 www/extman/libs/HTML/KTemplate.pm
+www/extman/tools/adminctl.pl
+www/extman/tools/aliasctl.pl
+www/extman/tools/diffinfo.pl
+www/extman/tools/domainctl.pl
 www/extman/tools/expireusers.pl
 www/extman/tools/maildirmake.pl
+www/extman/tools/makegbook.pl
+www/extman/tools/purgeuser.pl
 www/extman/tools/reportusage.pl
+www/extman/tools/setid.pl
 www/extman/tools/t_hashdir.pl
+www/extman/tools/userctl.pl
 www/extman/webman.cf
 @dirrm www/extman/tools
 @dirrm www/extman/libs/HTML
