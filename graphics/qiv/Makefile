@@ -26,12 +26,9 @@ USE_GNOME=	imlib
 
 MAN1=		qiv.1
 PLIST_FILES=	bin/qiv
+USE_XORG+=	x11 xinerama
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_XINERAMA)
-USE_XORG+=	x11 xinerama
-.endif
 
 pre-configure:
 .if ! defined(WITH_XINERAMA)
