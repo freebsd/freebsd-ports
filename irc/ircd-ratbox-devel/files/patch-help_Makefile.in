@@ -1,5 +1,5 @@
---- help/Makefile.in.orig	Mon Sep 12 16:58:45 2005
-+++ help/Makefile.in	Mon Jan 23 23:15:32 2006
+--- ./help/Makefile.in.orig	Fri Sep  1 19:20:19 2006
++++ ./help/Makefile.in	Tue Apr 22 02:20:19 2008
 @@ -63,14 +63,6 @@
  	rm -f opers/index.tmp
  

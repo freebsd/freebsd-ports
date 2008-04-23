@@ -7,59 +7,57 @@
 # ex: ts=8
 
 PORTNAME=	ircd-ratbox
-PORTVERSION=	2.2.6
-PORTREVISION=	1
+#PORTVERSION=	3.0.0
+DISTVERSION=	3.0.0beta2
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/		\
-		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/		\
-		http://www.ircd-ratbox.org/download/			\
-		ftp://ftp.parodius.com/pub/ircd-ratbox/			\
-		http://www.ircd-ratbox.org/download/old/
+MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/testing/	\
+		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/testing/	\
+		http://www.ircd-ratbox.org/download/testing/		\
+		ftp://ftp.parodius.com/pub/ircd-ratbox/testing/old/	\
+		http://www.ircd-ratbox.org/download/testing/old/
 PKGNAMESUFFIX=	-devel
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	Advanced, stable IRC daemon, used widely on EFnet ('testing' release)
 
 CONFLICTS=	ircd-ratbox-[0-9]*
 
-MAN8=		ircd.8
+USE_BZIP2=	yes
+#MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox.sh
+USE_SQLITE=	3
 
-LOGDIR=		/var/log/${PORTNAME}
-RUNDIR=		/var/run/${PORTNAME}
+LOGDIR?=	/var/log/${PORTNAME}
+RUNDIR?=	/var/run/${PORTNAME}
+DBDIR?=		/var/db/${PORTNAME}
 SUB_FILES=	pkg-message pkg-install
-PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
-SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
+PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
+SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/${PORTNAME}	   \
-		--with-logdir=/var/log/${PORTNAME}		   \
-		--with-moduledir=${PREFIX}/lib/${PORTNAME}/modules \
-		--with-helpdir=${DATADIR}/help
+CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/${PORTNAME}		\
+		--with-logdir=/var/log/${PORTNAME}			\
+		--with-moduledir=${PREFIX}/lib/${PORTNAME}/modules	\
+		--with-helpdir=${DATADIR}/help				\
+		--libdir=${PREFIX}/lib/${PORTNAME}			\
+		--with-sqlite3-path=${LOCALBASE}
 
 PORTDOCS=	[^i]*.txt README.* technical/[^i]*.txt Tao-of-IRC.*
 
 #-- Options ------------------------------------------------------------
 
-OPTIONS=	KQUEUE		"Use superior kqueue(2) instead of poll(2)"	on  \
-		OPENSSL		"Enable openssl support"			on  \
+OPTIONS=	OPENSSL		"Enable openssl support"			on  \
 		IPV6		"Enable IPv6 support"				on  \
 		ZIPLINKS	"Enable ziplinks support"			on  \
 		SHARED_MODULES	"Enable shared modules support"			on  \
 		ASSERT		"Enable debugging code"				off \
 		SMALL_NET	"Tune server for small networks"		off \
-		SERVICES	"Enable ratbox-services compatibility code"	off
+		SERVICES	"Enable ratbox-services compatibility code"	off \
+		SSLONLY		"Enable SSL only chan' support (chanmode +S)"	off
 
 #----------------------------------------------------------------------
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_KQUEUE)
-CONFIGURE_ARGS+=	--enable-kqueue
-.else
-CONFIGURE_ARGS+=	--enable-poll
-.endif
 
 .if defined(WITH_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
@@ -94,14 +92,14 @@ CONFIGURE_ARGS+=	--enable-small-net
 CONFIGURE_ARGS+=	--enable-services
 .endif
 
+.if defined(WITH_SSLONLY)
+CONFIGURE_ARGS+=	--enable-sslonly-channels
+.endif
+
 #-- User Configuration -------------------------------------------------
 
 .if defined(NICKLEN)
 CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
-.endif
-
-.if defined(TOPICLEN)
-CONFIGURE_ARGS+=	--with-topiclen=${TOPICLEN}
 .endif
 
 #-----------------------------------------------------------------------
@@ -110,7 +108,6 @@ pre-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "This port has additional options:"
 	@${ECHO_MSG} "    NICKLEN     [default 9, max 50]    - Max nick length on server"
-	@${ECHO_MSG} "    TOPICLEN    [default 160, max 390] - Max topic length"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Press CTRL+C now if you wish to set them."
 	@${ECHO_MSG} ""
@@ -124,6 +121,7 @@ post-patch:
 				${WRKSRC}/doc/example.conf	\
 				${WRKSRC}/doc/example.efnet.conf
 	@${REINPLACE_CMD} -e "s#%%RUNDIR%%#${RUNDIR}#g" ${WRKSRC}/include/config.h
+	@${REINPLACE_CMD} -e "s#%%DBDIR%%#${DBDIR}#g" ${WRKSRC}/include/config.h
 
 pre-su-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL

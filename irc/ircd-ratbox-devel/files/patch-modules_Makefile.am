@@ -1,0 +1,20 @@
+--- ./modules/Makefile.am.orig	Wed Feb  6 16:45:19 2008
++++ ./modules/Makefile.am	Tue Apr 22 02:20:19 2008
+@@ -327,15 +327,9 @@
+ move-old-modules:
+ # move the old module directory out of the way, stale modules cause massive
+ # amounts of problems.
+-	-@if test -d $(DESTDIR)$(moduledir)-old; then \
+-		$(RM) -rf $(DESTDIR)$(moduledir)-old; \
+-	fi
+-	-@if test -d $(DESTDIR)$(moduledir); then \
+-		echo "ircd: backing up modules"; \
+-		$(MV) $(DESTDIR)$(moduledir) $(DESTDIR)$(moduledir)-old; \
+-		$(MKDIR_P) $(DESTDIR)$(moduledir); \
++	-@if test ! -d $(DESTDIR)$(moduledir); then \
++		mkdir $(DESTDIR)$(moduledir); \
+ 	fi
+-
+ 
+ else # !STATIC_MODULES
+ 

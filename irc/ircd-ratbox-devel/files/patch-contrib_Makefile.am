@@ -1,0 +1,10 @@
+--- ./contrib/Makefile.am.orig	Fri Mar  7 16:10:01 2008
++++ ./contrib/Makefile.am	Tue Apr 22 02:20:19 2008
+@@ -10,7 +10,6 @@
+ AM_CFLAGS=$(WARNFLAGS)
+ 
+ SRCS = \
+-example_module.c        \
+ m_42.c  	\
+ m_clearchan.c   \
+ m_flags.c       \

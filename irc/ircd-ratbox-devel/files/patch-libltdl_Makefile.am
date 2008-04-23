@@ -1,0 +1,17 @@
+--- ./libltdl/Makefile.am.orig	Tue Sep  4 23:06:44 2007
++++ ./libltdl/Makefile.am	Tue Apr 22 02:20:19 2008
+@@ -1,7 +1,7 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+ AUTOMAKE_OPTIONS = no-dependencies foreign
+-
++CONVENIENCE_LTDL=1
+ if INSTALL_LTDL
+ include_HEADERS = ltdl.h
+ lib_LTLIBRARIES = libltdl.la
+@@ -30,3 +30,5 @@
+ $(libltdl_la_OBJECTS) $(libltdlc_la_OBJECTS): libtool
+ libtool: $(LIBTOOL_DEPS)
+ 	$(SHELL) ./config.status --recheck
++	
++install-includeHEADERS:

@@ -1,0 +1,11 @@
+--- ./tools/Makefile.am.orig	Sun Mar 16 14:12:14 2008
++++ ./tools/Makefile.am	Tue Apr 22 02:20:19 2008
+@@ -9,7 +9,3 @@
+ mkpasswd_SOURCES = mkpasswd.c
+ 
+ mkpasswd_LDADD = ../libratbox/src/libratbox.la
+-
+-
+-install-exec-hook:
+-	$(INSTALL) genssl.sh $(DESTDIR)$(bindir)
+\ No newline at end of file
