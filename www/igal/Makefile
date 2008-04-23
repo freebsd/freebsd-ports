@@ -15,7 +15,7 @@ MAINTAINER=	absinthe@pobox.com
 COMMENT=	A static html image gallery generator for *nix
 
 RUN_DEPENDS=	${LOCALBASE}/bin/cjpeg:${PORTSDIR}/graphics/jpeg \
-		${LOCALBASE}/include/Magick++.h:${PORTSDIR}/graphics/ImageMagick
+		convert:${PORTSDIR}/graphics/ImageMagick
 
 MAN1=	igal.1
 
