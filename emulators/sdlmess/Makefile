@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdlmess
-PORTVERSION=	0.122
-PORTREVISION=	2
+PORTVERSION=	0.124
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -26,8 +25,11 @@ SUB_FILES=	${PORTNAME} pkg-message
 
 .include <bsd.port.pre.mk>
 
+# In FreeBSD 5.x fails to build due to an internal compiler error. Using the
+# version 3.4 from ports which probably fixes this error requires a hack to
+# get around bsd.gcc.mk handling, so use a higher version than in base system.
 .if ${OSVERSION} < 600000 && ${ARCH} == "amd64"
-BROKEN=		does not compile
+USE_GCC=	4.2+
 .endif
 
 do-install:
