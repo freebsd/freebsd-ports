@@ -38,6 +38,10 @@ OPTIONS=	MOZILLA_PLUGIN "Install Mozilla plugin" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+CFLAGS+=	-O2
+.endif
+
 .if !defined(WITHOUT_DBUS)
 CONFIGURE_ARGS+=--with-dbus
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
