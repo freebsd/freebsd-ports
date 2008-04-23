@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -28,9 +27,10 @@ TETGEN_SRC=		predicates.cxx tetgen.cxx tetgen.h
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-fltk-prefix=${LOCALBASE} \
-		--with-gsl-prefix=${LOCALBASE} \
-		--with-jpeg-prefix=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-fltk-prefix=${LOCALBASE}	\
+		--with-gsl-prefix=${LOCALBASE}	\
+		--with-med-prefix=${LOCALBASE}	\
+		--with-jpeg-prefix=${LOCALBASE}	\
 		--with-png-prefix=${LOCALBASE}
 USE_GMAKE=	yes
 ALL_TARGET=	all utils
