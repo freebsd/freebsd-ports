@@ -26,3 +26,4 @@ share/sgml/docbook/utils-0.6.14/docbook-utils.dsl
 @dirrm share/sgml/docbook/utils-0.6.14/frontends
 @dirrm share/sgml/docbook/utils-0.6.14/helpers
 @dirrm share/sgml/docbook/utils-0.6.14
+@dirrmtry share/sgml/docbook
