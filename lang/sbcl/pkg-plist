@@ -95,6 +95,8 @@ lib/sbcl/sb-cover/tests.fasl
 lib/sbcl/sb-cover/sb-cover.fasl
 lib/sbcl/sb-cover/test-data-1.fasl
 lib/sbcl/sb-cover/test-data-2.fasl
+lib/sbcl/sb-cover/test-data-3.fasl
+lib/sbcl/sb-cover/test-data-3.lisp
 lib/sbcl/sb-cover/test-passed
 lib/sbcl/sb-executable/sb-executable.fasl
 lib/sbcl/sb-grovel/.cvsignore
