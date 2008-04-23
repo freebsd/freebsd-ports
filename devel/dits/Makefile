@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	dits
-PORTVERSION=	2.2.30
+PORTVERSION=	2.2.34
 CATEGORIES=	devel
-MASTER_SITES=	http://vdmvm.org/ \
-		http://www.codeconcepts.com/
+MASTER_SITES=	http://vdmvm.com/
 
 MAINTAINER=	greg@codeconcepts.com
 COMMENT=	A data integrity verifying disk exercising test suite
 
-MAN1=		dits.1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/dits
+MAN1=	dits.1
+MANCOMPRESSED=	no
 
 .include <bsd.port.mk>
