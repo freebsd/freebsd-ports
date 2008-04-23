@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------
-ircd-ratbox has been successfully installed.
+ircd-ratbox-devel has been successfully installed.
 
 Sample 'ircd.conf' and 'ircd.motd' files have been created in the
 ircd-ratbox configuration directory. A sample configuration file is
@@ -11,6 +11,11 @@ Once you have added ircd_ratbox_enable="YES" to /etc/rc.conf, the
 server can be started by running:
 
 	%%PREFIX%%/etc/rc.d/ircd-ratbox start
+
+You can check your ircd.conf configuration file for syntactical errors
+using the following rc.d script command:
+
+	%%PREFIX%%/etc/rc.d/ircd-ratbox conftest
 
 Be sure to check out 'ratbox-services' if you need a services package.
 ------------------------------------------------------------------------

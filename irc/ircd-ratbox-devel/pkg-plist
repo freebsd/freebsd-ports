@@ -1,96 +1,10 @@
-bin/convertilines
-bin/convertklines
+bin/bandb
+bin/bantool
+bin/ident
 bin/ircd
 bin/mkpasswd
-bin/servlink
-bin/viconf
-bin/viklines
-bin/vimotd
-etc/ircd-ratbox/ircd-efnet.conf.sample
-lib/ircd-ratbox/modules/autoload/m_accept.so
-lib/ircd-ratbox/modules/autoload/m_admin.so
-lib/ircd-ratbox/modules/autoload/m_away.so
-lib/ircd-ratbox/modules/autoload/m_cap.so
-lib/ircd-ratbox/modules/autoload/m_capab.so
-lib/ircd-ratbox/modules/autoload/m_close.so
-lib/ircd-ratbox/modules/autoload/m_cmessage.so
-lib/ircd-ratbox/modules/autoload/m_connect.so
-lib/ircd-ratbox/modules/autoload/m_dline.so
-lib/ircd-ratbox/modules/autoload/m_encap.so
-lib/ircd-ratbox/modules/autoload/m_etrace.so
-lib/ircd-ratbox/modules/autoload/m_gline.so
-lib/ircd-ratbox/modules/autoload/m_help.so
-lib/ircd-ratbox/modules/autoload/m_info.so
-lib/ircd-ratbox/modules/autoload/m_invite.so
-lib/ircd-ratbox/modules/autoload/m_ison.so
-lib/ircd-ratbox/modules/autoload/m_kline.so
-lib/ircd-ratbox/modules/autoload/m_knock.so
-lib/ircd-ratbox/modules/autoload/m_links.so
-lib/ircd-ratbox/modules/autoload/m_list.so
-lib/ircd-ratbox/modules/autoload/m_locops.so
-lib/ircd-ratbox/modules/autoload/m_lusers.so
-lib/ircd-ratbox/modules/autoload/m_map.so
-lib/ircd-ratbox/modules/autoload/m_monitor.so
-lib/ircd-ratbox/modules/autoload/m_motd.so
-lib/ircd-ratbox/modules/autoload/m_names.so
-lib/ircd-ratbox/modules/autoload/m_oper.so
-lib/ircd-ratbox/modules/autoload/m_operspy.so
-lib/ircd-ratbox/modules/autoload/m_pass.so
-lib/ircd-ratbox/modules/autoload/m_ping.so
-lib/ircd-ratbox/modules/autoload/m_pong.so
-lib/ircd-ratbox/modules/autoload/m_post.so
-lib/ircd-ratbox/modules/autoload/m_rehash.so
-lib/ircd-ratbox/modules/autoload/m_restart.so
-lib/ircd-ratbox/modules/autoload/m_resv.so
-lib/ircd-ratbox/modules/autoload/m_set.so
-lib/ircd-ratbox/modules/autoload/m_stats.so
-lib/ircd-ratbox/modules/autoload/m_svinfo.so
-lib/ircd-ratbox/modules/autoload/m_tb.so
-lib/ircd-ratbox/modules/autoload/m_testline.so
-lib/ircd-ratbox/modules/autoload/m_testmask.so
-lib/ircd-ratbox/modules/autoload/m_time.so
-lib/ircd-ratbox/modules/autoload/m_topic.so
-lib/ircd-ratbox/modules/autoload/m_trace.so
-lib/ircd-ratbox/modules/autoload/m_unreject.so
-lib/ircd-ratbox/modules/autoload/m_user.so
-lib/ircd-ratbox/modules/autoload/m_userhost.so
-lib/ircd-ratbox/modules/autoload/m_users.so
-lib/ircd-ratbox/modules/autoload/m_version.so
-lib/ircd-ratbox/modules/autoload/m_wallops.so
-lib/ircd-ratbox/modules/autoload/m_who.so
-lib/ircd-ratbox/modules/autoload/m_whois.so
-lib/ircd-ratbox/modules/autoload/m_whowas.so
-lib/ircd-ratbox/modules/autoload/m_xline.so
-lib/ircd-ratbox/modules/contrib/m_clearchan.so
-lib/ircd-ratbox/modules/contrib/m_flags.so
-lib/ircd-ratbox/modules/contrib/m_force.so
-lib/ircd-ratbox/modules/contrib/m_mkpasswd.so
-lib/ircd-ratbox/modules/contrib/m_ojoin.so
-lib/ircd-ratbox/modules/contrib/m_okick.so
-lib/ircd-ratbox/modules/contrib/m_olist.so
-lib/ircd-ratbox/modules/contrib/m_opme.so
-lib/ircd-ratbox/modules/contrib/m_webirc.so
-lib/ircd-ratbox/modules/contrib/spy_admin_notice.so
-lib/ircd-ratbox/modules/contrib/spy_info_notice.so
-lib/ircd-ratbox/modules/contrib/spy_links_notice.so
-lib/ircd-ratbox/modules/contrib/spy_motd_notice.so
-lib/ircd-ratbox/modules/contrib/spy_stats_notice.so
-lib/ircd-ratbox/modules/contrib/spy_stats_p_notice.so
-lib/ircd-ratbox/modules/contrib/spy_whois_notice.so
-lib/ircd-ratbox/modules/contrib/spy_whois_notice_global.so
-lib/ircd-ratbox/modules/m_die.so
-lib/ircd-ratbox/modules/m_error.so
-lib/ircd-ratbox/modules/m_join.so
-lib/ircd-ratbox/modules/m_kick.so
-lib/ircd-ratbox/modules/m_kill.so
-lib/ircd-ratbox/modules/m_message.so
-lib/ircd-ratbox/modules/m_mode.so
-lib/ircd-ratbox/modules/m_nick.so
-lib/ircd-ratbox/modules/m_part.so
-lib/ircd-ratbox/modules/m_quit.so
-lib/ircd-ratbox/modules/m_server.so
-lib/ircd-ratbox/modules/m_sjoin.so
-lib/ircd-ratbox/modules/m_squit.so
+bin/resolver
+bin/ssld
 %%DATADIR%%/help/opers/accept
 %%DATADIR%%/help/opers/admin
 %%DATADIR%%/help/opers/away
@@ -128,6 +42,7 @@ lib/ircd-ratbox/modules/m_squit.so
 %%DATADIR%%/help/opers/modload
 %%DATADIR%%/help/opers/modrestart
 %%DATADIR%%/help/opers/modunload
+%%DATADIR%%/help/opers/monitor
 %%DATADIR%%/help/opers/motd
 %%DATADIR%%/help/opers/names
 %%DATADIR%%/help/opers/nick
@@ -218,6 +133,94 @@ lib/ircd-ratbox/modules/m_squit.so
 %%DATADIR%%/help/users/who
 %%DATADIR%%/help/users/whois
 %%DATADIR%%/help/users/whowas
+lib/ircd-ratbox/libcore.la
+lib/ircd-ratbox/libcore.so
+lib/ircd-ratbox/libratbox.la
+lib/ircd-ratbox/libratbox.so
+@unexec f="%D/lib/ircd-ratbox/modules/autoload/m_services.so"; if [ -f "$f" ]; then rm -f "$f"; fi
+@unexec f="%D/lib/ircd-ratbox/modules/autoload/m_services.la"; if [ -f "$f" ]; then rm -f "$f"; fi
+lib/ircd-ratbox/modules/autoload/m_accept.so
+lib/ircd-ratbox/modules/autoload/m_admin.so
+lib/ircd-ratbox/modules/autoload/m_adminwall.so
+lib/ircd-ratbox/modules/autoload/m_away.so
+lib/ircd-ratbox/modules/autoload/m_cap.so
+lib/ircd-ratbox/modules/autoload/m_capab.so
+lib/ircd-ratbox/modules/autoload/m_close.so
+lib/ircd-ratbox/modules/autoload/m_cmessage.so
+lib/ircd-ratbox/modules/autoload/m_connect.so
+lib/ircd-ratbox/modules/autoload/m_dline.so
+lib/ircd-ratbox/modules/autoload/m_encap.so
+lib/ircd-ratbox/modules/autoload/m_gline.so
+lib/ircd-ratbox/modules/autoload/m_help.so
+lib/ircd-ratbox/modules/autoload/m_info.so
+lib/ircd-ratbox/modules/autoload/m_invite.so
+lib/ircd-ratbox/modules/autoload/m_ison.so
+lib/ircd-ratbox/modules/autoload/m_kline.so
+lib/ircd-ratbox/modules/autoload/m_knock.so
+lib/ircd-ratbox/modules/autoload/m_links.so
+lib/ircd-ratbox/modules/autoload/m_list.so
+lib/ircd-ratbox/modules/autoload/m_locops.so
+lib/ircd-ratbox/modules/autoload/m_lusers.so
+lib/ircd-ratbox/modules/autoload/m_map.so
+lib/ircd-ratbox/modules/autoload/m_monitor.so
+lib/ircd-ratbox/modules/autoload/m_motd.so
+lib/ircd-ratbox/modules/autoload/m_names.so
+lib/ircd-ratbox/modules/autoload/m_oper.so
+lib/ircd-ratbox/modules/autoload/m_operspy.so
+lib/ircd-ratbox/modules/autoload/m_pass.so
+lib/ircd-ratbox/modules/autoload/m_ping.so
+lib/ircd-ratbox/modules/autoload/m_pong.so
+lib/ircd-ratbox/modules/autoload/m_post.so
+lib/ircd-ratbox/modules/autoload/m_rehash.so
+lib/ircd-ratbox/modules/autoload/m_restart.so
+lib/ircd-ratbox/modules/autoload/m_resv.so
+lib/ircd-ratbox/modules/autoload/m_set.so
+lib/ircd-ratbox/modules/autoload/m_stats.so
+lib/ircd-ratbox/modules/autoload/m_svinfo.so
+lib/ircd-ratbox/modules/autoload/m_tb.so
+lib/ircd-ratbox/modules/autoload/m_testline.so
+lib/ircd-ratbox/modules/autoload/m_testmask.so
+lib/ircd-ratbox/modules/autoload/m_time.so
+lib/ircd-ratbox/modules/autoload/m_topic.so
+lib/ircd-ratbox/modules/autoload/m_trace.so
+lib/ircd-ratbox/modules/autoload/m_unreject.so
+lib/ircd-ratbox/modules/autoload/m_user.so
+lib/ircd-ratbox/modules/autoload/m_userhost.so
+lib/ircd-ratbox/modules/autoload/m_version.so
+lib/ircd-ratbox/modules/autoload/m_wallops.so
+lib/ircd-ratbox/modules/autoload/m_who.so
+lib/ircd-ratbox/modules/autoload/m_whois.so
+lib/ircd-ratbox/modules/autoload/m_whowas.so
+lib/ircd-ratbox/modules/autoload/m_xline.so
+lib/ircd-ratbox/modules/contrib/m_42.so
+lib/ircd-ratbox/modules/contrib/m_clearchan.so
+lib/ircd-ratbox/modules/contrib/m_flags.so
+lib/ircd-ratbox/modules/contrib/m_force.so
+lib/ircd-ratbox/modules/contrib/m_mkpasswd.so
+lib/ircd-ratbox/modules/contrib/m_ojoin.so
+lib/ircd-ratbox/modules/contrib/m_okick.so
+lib/ircd-ratbox/modules/contrib/m_olist.so
+lib/ircd-ratbox/modules/contrib/m_opme.so
+lib/ircd-ratbox/modules/contrib/spy_admin_notice.so
+lib/ircd-ratbox/modules/contrib/spy_info_notice.so
+lib/ircd-ratbox/modules/contrib/spy_links_notice.so
+lib/ircd-ratbox/modules/contrib/spy_motd_notice.so
+lib/ircd-ratbox/modules/contrib/spy_stats_notice.so
+lib/ircd-ratbox/modules/contrib/spy_stats_p_notice.so
+lib/ircd-ratbox/modules/contrib/spy_whois_notice.so
+lib/ircd-ratbox/modules/contrib/spy_whois_notice_global.so
+lib/ircd-ratbox/modules/m_die.so
+lib/ircd-ratbox/modules/m_error.so
+lib/ircd-ratbox/modules/m_join.so
+lib/ircd-ratbox/modules/m_kick.so
+lib/ircd-ratbox/modules/m_kill.so
+lib/ircd-ratbox/modules/m_message.so
+lib/ircd-ratbox/modules/m_mode.so
+lib/ircd-ratbox/modules/m_nick.so
+lib/ircd-ratbox/modules/m_part.so
+lib/ircd-ratbox/modules/m_quit.so
+lib/ircd-ratbox/modules/m_server.so
+lib/ircd-ratbox/modules/m_squit.so
 @dirrm lib/ircd-ratbox/modules/autoload
 @dirrm lib/ircd-ratbox/modules/contrib
 @dirrm lib/ircd-ratbox/modules
@@ -226,10 +229,7 @@ lib/ircd-ratbox/modules/m_squit.so
 @dirrm %%DATADIR%%/help/opers
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
-@unexec f="%D/etc/ircd-ratbox/dline.conf"; if [ ! -s "$f" ]; then rm -f "$f"; fi
-@unexec f="%D/etc/ircd-ratbox/kline.conf"; if [ ! -s "$f" ]; then rm -f "$f"; fi
-@unexec f="%D/etc/ircd-ratbox/resv.conf";  if [ ! -s "$f" ]; then rm -f "$f"; fi
-@unexec f="%D/etc/ircd-ratbox/xline.conf"; if [ ! -s "$f" ]; then rm -f "$f"; fi
+etc/ircd-ratbox/ircd-efnet.conf.sample
 @unexec if cmp -s %D/etc/ircd-ratbox/ircd.conf.sample %D/etc/ircd-ratbox/ircd.conf; then rm -f %D/etc/ircd-ratbox/ircd.conf; fi
 etc/ircd-ratbox/ircd.conf.sample
 @exec if [ ! -f %D/etc/ircd-ratbox/ircd.conf ] ; then cp -p %D/%F %B/ircd.conf; fi
@@ -237,5 +237,7 @@ etc/ircd-ratbox/ircd.conf.sample
 etc/ircd-ratbox/ircd.motd.sample
 @exec if [ ! -f %D/etc/ircd-ratbox/ircd.motd ] ; then cp -p %D/%F %B/ircd.motd; fi
 @dirrmtry etc/ircd-ratbox
+@cwd /
 @dirrmtry %%LOGDIR%%
 @dirrmtry %%RUNDIR%%
+@dirrmtry %%DBDIR%%
