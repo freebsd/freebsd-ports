@@ -1,6 +1,6 @@
---- ./makefile.sdl.orig	Mon Dec 31 13:41:23 2007
-+++ ./makefile.sdl	Mon Feb  4 13:15:31 2008
-@@ -99,11 +99,13 @@
+--- ./makefile.sdl.orig	2008-03-26 20:35:31.000000000 -0300
++++ ./makefile.sdl	2008-04-21 16:26:24.000000000 -0300
+@@ -104,11 +104,13 @@
  # uncomment next line to include the internal profiler
  # PROFILER = 1
  
@@ -12,9 +12,9 @@
  X86_PPC_DRC = 1
 +endif
  
- 
- 
-@@ -113,7 +115,9 @@
+ # uncomment next line to build using unix-style libsdl on Mac OS X
+ # (vs. the native framework port).  Normal users should not enable this.
+@@ -121,7 +123,9 @@
  #-------------------------------------------------
  
  # uncomment next line if you are building for a 64-bit target
@@ -25,7 +25,7 @@
  
  # uncomment next line if you are building for a big-endian target
  # BIGENDIAN = 1
-@@ -186,8 +190,8 @@
+@@ -198,8 +202,8 @@
  
  # compiler, linker and utilities
  AR = @ar
@@ -36,7 +36,7 @@
  MD = -mkdir$(EXE)
  RM = @rm -f
  
-@@ -211,7 +215,7 @@
+@@ -223,7 +227,7 @@
  endif
  
  # fullname is prefix+name+suffix+debugsuffix
@@ -45,7 +45,7 @@
  
  # add an EXE suffix to get the final emulator name
  EMULATOR = $(FULLNAME)$(EXE)
-@@ -276,7 +280,7 @@
+@@ -293,7 +297,7 @@
  #-------------------------------------------------
  
  # we compile to C89 standard with GNU extensions
@@ -54,16 +54,17 @@
  
  # this speeds it up a bit by piping between the preprocessor/compiler/assembler
  CFLAGS += -pipe
-@@ -313,7 +317,7 @@
- # if we are optimizing, include optimization options
+@@ -331,9 +335,6 @@
  # and make all errors into warnings
  ifneq ($(OPTIMIZE),0)
--CFLAGS += -Werror $(ARCHOPTS) -fno-strict-aliasing
-+CFLAGS += $(ARCHOPTS) -fno-strict-aliasing
- #CFLAGS += $(ARCHOPTS) -fno-strict-aliasing
+ CFLAGS += $(ARCHOPTS) -fno-strict-aliasing
+-ifneq ($(TARGETOS),os2)
+-CFLAGS += -Werror
+-endif
  endif
  
-@@ -339,6 +343,7 @@
+ # if symbols are on, make sure we have frame pointers
+@@ -358,6 +359,7 @@
  	-I$(SRC)/lib/util \
  	-I$(SRC)/osd \
  	-I$(SRC)/osd/$(OSD) \
@@ -71,12 +72,12 @@
  
  
  
-@@ -349,7 +354,7 @@
- # LDFLAGS are used generally; LDFLAGSEMULATOR are additional
- # flags only used when linking the core emulator
+@@ -370,7 +372,7 @@
+ LDFLAGS =
  ifneq ($(TARGETOS),macosx)
+ ifneq ($(TARGETOS),os2)
 -LDFLAGS = -Wl,--warn-common
 +LDFLAGS = -Wl,--warn-common -L$(LOCALBASE)/lib
- else
- LDFLAGS = 
  endif
+ endif
+ LDFLAGSEMULATOR =

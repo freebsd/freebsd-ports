@@ -85,6 +85,7 @@ libexec/sdlmess/testkeys
 %%DATADIR%%/hash/advision.hsi
 %%DATADIR%%/hash/aim65.hsi
 %%DATADIR%%/hash/apexc.hsi
+%%DATADIR%%/hash/apfm1000.hsi
 %%DATADIR%%/hash/apple1.hsi
 %%DATADIR%%/hash/apple2.hsi
 %%DATADIR%%/hash/aquarius.hsi
