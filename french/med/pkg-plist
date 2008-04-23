@@ -2,16 +2,11 @@ bin/mdump
 bin/medconforme
 bin/medimport
 bin/xmdump
-include/MAJ_21_22.h
-include/MAJ_231_232.h
 include/MEDerreur.hxx
 include/MEDimport.h
 include/MEDimport.hxx
 include/med.h
 include/med.hf
-include/med21.h
-include/med_hdfi21.h
-include/med_hdfi231.h
 include/med_proto.h
 include/med_utils.h
 include/med_win_dll.h
