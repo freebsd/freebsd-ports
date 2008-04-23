@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	brlcad
-PORTVERSION=	7.12.0
+PORTVERSION=	7.12.2
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
@@ -78,7 +78,7 @@ MAN1=	alias-pix.1 all_sf.1 anim_cascade.1 anim_fly.1 anim_hardtrack.1		\
 	rtrange.1 rtray.1 rtregis.1 rtscale.1 rtshot.1 rttherm.1 rtwalk.1	\
 	rtweight.1 rtxray.1 scriptsort.1 secpass.1 shapefact.1 showshot.1	\
 	showtherm.1 ssamp-bw.1 stl-g.1 sun-pix.1 tabinterp.1 tabsub.1		\
-	tankill-g.1 terrain.1 vdeck.1 viewpoint-g.1 wavelet.1
+	tankill-g.1 terrain.1 tire.1 vdeck.1 viewpoint-g.1 wavelet.1
 
 MAN3=	htond.3 libcursor.3 liborle.3 librt.3 redblack.3 libbu.3 libfb.3	\
 	libplot3.3 libwdb.3 RegisterC.3 Stack.3
