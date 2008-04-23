@@ -7,6 +7,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	1.2.2b
+PORTREVISION=	1
 CATEGORIES=	hungarian textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S@$@:code@:S@%SUBDIR%@${PORTNAME}@} \
 		${MASTER_SITE_SOURCEFORGE:S@$@:data@:S@%SUBDIR%@magyarispell@}
