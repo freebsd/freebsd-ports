@@ -1,5 +1,6 @@
 @unexec rm -f %%LOCALBASE%%/bin/mged.sh
 @exec ln -s %%PREFIX%%/bin/mged.sh %%LOCALBASE%%/bin/mged.sh
+bin/3dm-g
 bin/a-d
 bin/adrt_master
 bin/adrt_slave
@@ -285,6 +286,7 @@ bin/pixuntile
 bin/pixwrite.sh
 bin/pl-X
 bin/pl-asc
+bin/pl-dm
 bin/pl-fb
 bin/pl-hpgl
 bin/pl-pl
@@ -369,6 +371,7 @@ bin/tea_nmg
 bin/terrain
 bin/testfree
 bin/texturescale
+bin/tire
 bin/torii
 bin/tracker.sh
 bin/trimconfig.sh
@@ -608,6 +611,8 @@ include/openNURBS/opennurbs_xform.h
 include/openNURBS/opennurbs_zlib.h
 include/qray.h
 include/rb_internals.h
+include/tie/adrt.h
+include/tie/adrt_struct.h
 include/tie/camera.h
 include/tie/component.h
 include/tie/cut.h
@@ -619,18 +624,19 @@ include/tie/hit.h
 include/tie/normal.h
 include/tie/path.h
 include/tie/phong.h
+include/tie/rand.h
 include/tie/render.h
 include/tie/render_internal.h
 include/tie/render_util.h
 include/tie/spall.h
 include/tie/surfel.h
+include/tie/texture.h
 include/tie/texture_blend.h
 include/tie/texture_bump.h
 include/tie/texture_camo.h
 include/tie/texture_checker.h
 include/tie/texture_clouds.h
 include/tie/texture_gradient.h
-include/tie/texture.h
 include/tie/texture_image.h
 include/tie/texture_internal.h
 include/tie/texture_mix.h
@@ -642,13 +648,10 @@ include/tie/tie_kdtree.h
 include/tie/tie_struct.h
 include/tie/tienet.h
 include/tie/tienet_define.h
-include/tie/tienet_util.h
 include/tie/tienet_master.h
 include/tie/tienet_slave.h
+include/tie/tienet_util.h
 include/tie/umath.h
-include/tie/rand.h
-include/tie/adrt.h
-include/tie/adrt_struct.h
 lib/blt2.4/ZoomStack.itcl
 lib/blt2.4/dd_protocols/dd-color.tcl
 lib/blt2.4/dd_protocols/dd-file.tcl
@@ -909,6 +912,7 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/db/operators.asc2g
 %%DATADIR%%/%%PORTVERSION%%/db/operators.g
 %%DATADIR%%/%%PORTVERSION%%/db/pic.g
+%%DATADIR%%/%%PORTVERSION%%/db/pinewood.g
 %%DATADIR%%/%%PORTVERSION%%/db/prim.g
 %%DATADIR%%/%%PORTVERSION%%/db/sphflake.g
 %%DATADIR%%/%%PORTVERSION%%/db/star.g
@@ -1657,6 +1661,7 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/text.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/titles.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/tree.tcl
+%%DATADIR%%/%%PORTVERSION%%/tclscripts/mged/xclone.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/mouse.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/nirt/pkgIndex.tcl
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/nirt/prototype.sh
