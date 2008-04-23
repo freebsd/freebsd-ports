@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Mason
-PORTVERSION=	1.35
+PORTVERSION=	1.39
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,16 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	High-performance, dynamic web site authoring system
 
-BUILD_DEPENDS=	p5-Module-Build>=0.28:${PORTSDIR}/devel/p5-Module-Build
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container \
-		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
+RUN_DEPENDS=	p5-Cache-Cache>=1:${PORTSDIR}/devel/p5-Cache-Cache \
+		p5-Class-Container>=0.7:${PORTSDIR}/devel/p5-Class-Container \
+		p5-Exception-Class>=1.15:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-Params-Validate>=0.07:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
 
-PERL_MODBUILD=	yes
-CONFIGURE_ARGS+=	--noprompts
+PERL_CONFIGURE=	yes
 
 MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason.3 \
