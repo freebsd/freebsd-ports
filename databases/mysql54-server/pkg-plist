@@ -154,6 +154,7 @@ libexec/mysqld
 %%NDB%%@dirrm include/mysql/storage/ndb
 %%NDB%%@dirrm include/mysql/storage
 @dirrmtry include/mysql
+@dirrm lib/mysql/plugin
 @dirrmtry lib/mysql
 @dirrm %%DATADIR%%/charsets
 @dirrm %%DATADIR%%/czech
