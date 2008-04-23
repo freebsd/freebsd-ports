@@ -15,6 +15,7 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Library for using the IP Flow Information Export protocol
 
 GNU_CONFIGURE=	yes
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
