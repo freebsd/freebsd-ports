@@ -33,6 +33,8 @@ CONFIGURE_ARGS=	--enable-gtk --enable-threads --with-netcdf \
 		--with-mixkit=${LOCALBASE}/lib/libmix.a --with-x
 USE_LDCONFIG=	yes
 
+BROKEN=		Does not compile
+
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
