@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	med
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	french science
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 
