@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pytz
-PORTVERSION=	2008a
+PORTVERSION=	2008b
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
