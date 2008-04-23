@@ -7,7 +7,7 @@
 -#ifdef __alpha__
 -fp_except_t allmask = FP_X_INV|FP_X_OFL|FP_X_UFL|FP_X_DZ|FP_X_IMP;
 -#else
-+#if defined(__i386__)
++#if defined(__i386__) || defined(__amd64__)
  fp_except_t allmask = FP_X_INV|FP_X_OFL|FP_X_UFL|FP_X_DZ|FP_X_IMP|FP_X_DNML;
 +#else
 +fp_except_t allmask = FP_X_INV|FP_X_OFL|FP_X_UFL|FP_X_DZ|FP_X_IMP;
