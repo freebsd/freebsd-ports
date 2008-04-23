@@ -31,8 +31,7 @@ CONFIGURE_ARGS+=--with-python-libdir=${PYTHON_LIBDIR} \
 		--with-python-incdir=${PYTHON_INCLUDEDIR} \
 		--with-fontconfig-incdir=${LOCALBASE}/include/fontconfig \
 		--with-fontconfig-libdir=${LOCALBASE}/lib
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	${PREFIX}/lib/hk_classes/
+USE_LDCONFIG=	${PREFIX}/lib/hk_classes/
 
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGVERSION=	1.1
