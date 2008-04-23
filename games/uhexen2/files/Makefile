@@ -6,9 +6,7 @@
 
 all:
 ifeq ($(BUILD_HEXEN2),yes)
-ifeq ($(USE_X86_ASM),yes)
 	$(MAKE) -C hexen2 h2 clean
-endif
 	$(MAKE) -C hexen2 glh2 clean
 endif
 ifeq ($(BUILD_HW),yes)

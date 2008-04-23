@@ -1,14 +1,10 @@
---- ./hexenworld/build.sh.orig	Sun Sep 24 14:24:48 2006
-+++ ./hexenworld/build.sh	Tue Jan  9 17:01:16 2007
-@@ -45,10 +45,13 @@
- echo "" && echo "Building hexenworld master server.."
- $MAKE_CMD -C Master || exit 1
+--- hexenworld/build.sh.orig	2007-10-18 13:55:49.000000000 -0300
++++ hexenworld/build.sh	2008-04-22 22:52:13.000000000 -0300
+@@ -41,8 +41,9 @@
  
-+if [ "$USE_X86_ASM" = yes ]; then
  echo "" && echo "Building hexenworld client (software renderer)"
  $MAKE_CMD -C Client hw || exit 1
 +$MAKE_CMD -s -C Client clean
-+fi
  
  echo "" && echo "Building hexenworld client (opengl renderer)"
 -$MAKE_CMD -s -C Client clean
