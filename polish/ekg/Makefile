@@ -6,6 +6,7 @@
 
 PORTNAME=		ekg
 PORTVERSION=		1.7
+PORTREVISION=		1
 PORTEPOCH=		2
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://ekg.chmurka.net/
@@ -22,7 +23,6 @@ USE_GNOME=		gnomehack pkgconfig
 CONFIGURE_ARGS+=	--disable-shared \
 			--disable-static \
 			--enable-dynamic \
-			--without-openssl \
 			--disable-libgadu-openssl \
 			--without-libungif \
 			--without-libjpeg
@@ -31,13 +31,18 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lexecinfo"
 
-OPTIONS=	ASPELL "Build with ASPELL support" off
+OPTIONS=	ASPELL "Build with ASPELL support" off \
+		OPENSSL "Build with OPENSSL support" on
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ASPELL)
 LIB_DEPENDS+=		aspell.16:${PORTSDIR}/polish/aspell
 CONFIGURE_ARGS+=	--enable-aspell
+.endif
+
+.if defined(WITHOUT_OPENSSL)
+CONFIGURE_ARGS+=	--without-openssl
 .endif
 
 USE_LDCONFIG=	yes
