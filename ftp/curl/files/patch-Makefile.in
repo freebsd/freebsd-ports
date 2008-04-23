@@ -1,0 +1,29 @@
+diff -urN -x .svn ../../vendor/curl/Makefile.in ./Makefile.in
+--- ../../vendor/curl/Makefile.in	2008-03-20 15:23:26.000000000 +0200
++++ ./Makefile.in	2008-03-21 12:25:17.000000000 +0200
+@@ -259,9 +259,9 @@
+  curl-style.el sample.emacs RELEASE-NOTES buildconf buildconf.bat libcurl.pc.in
+ 
+ bin_SCRIPTS = curl-config
+-SUBDIRS = lib src
+-DIST_SUBDIRS = $(SUBDIRS) tests include packages docs
+-pkgconfigdir = $(libdir)/pkgconfig
++SUBDIRS = lib src docs
++DIST_SUBDIRS = $(SUBDIRS) tests include packages
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libcurl.pc
+ all: all-recursive
+ 
+@@ -817,12 +817,10 @@
+ # We extend the standard install with a custom hook:
+ install-data-hook:
+ 	cd include && $(MAKE) install
+-	cd docs && $(MAKE) install
+ 
+ # We extend the standard uninstall with a custom hook:
+ uninstall-hook:
+ 	cd include && $(MAKE) uninstall
+-	cd docs && $(MAKE) uninstall
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

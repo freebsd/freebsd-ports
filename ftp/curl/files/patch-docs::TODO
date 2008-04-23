@@ -1,0 +1,80 @@
+diff -urN -urN -x .svn ../../vendor/curl/docs/TODO ./docs/TODO
+--- ../../vendor/curl/docs/TODO	2008-03-24 00:40:11.000000000 +0200
++++ ./docs/TODO	2008-03-29 16:08:15.000000000 +0200
+@@ -48,19 +48,19 @@
+ 
+  7. SSL
+  7.1 Disable specific versions
+- 7.2 Provide mytex locking API
++ 7.2 Provide mutex locking API
+  7.3 dumpcert
+  7.4 Evaluate SSL patches
+  7.5 Cache OpenSSL contexts
+  7.6 Export session ids
+- 7.7 Provide callback for cert verfication
++ 7.7 Provide callback for cert verification
+  7.8 Support other SSL libraries
+  7.9  Support SRP on the TLS layer
+  7.10 improve configure --with-ssl
+ 
+  8. GnuTLS
+  8.1 Make NTLM work without OpenSSL functions
+- 8.2 SSl engine stuff
++ 8.2 SSL engine stuff
+  8.3 SRP
+  8.4 non-blocking
+  8.5 check connection
+@@ -111,7 +111,7 @@
+ 
+ 1.1 Zero-copy interface
+ 
+- Introdue another callback interface for upload/download that makes one less
++ Introduce another callback interface for upload/download that makes one less
+  copy of data and thus a faster operation.
+  [http://curl.haxx.se/dev/no_copy_callbacks.txt]
+ 
+@@ -148,7 +148,7 @@
+  know MUST have it. This is error-prone. We therefore want the header files to
+  adapt to configure results. Those results must be stored in a new header and
+  they must use a curl name space, i.e not be HAVE_* prefix (as that would risk
+- collide with other apps that use libcurl and that runs configure).
++ a collision with other apps that use libcurl and that runs configure).
+ 
+  Work on this has been started but hasn't been finished, and the initial patch
+  and some details are found here:
+@@ -161,7 +161,7 @@
+ 
+ 2.1 More non-blocking
+ 
+- Make sure we don't ever loop because of non-blocking sockets return
++ Make sure we don't ever loop because of non-blocking sockets returning
+  EWOULDBLOCK or similar. The GnuTLS connection etc.
+ 
+ 2.2 Pause transfers
+@@ -290,7 +290,7 @@
+  Provide an option that allows for disabling specific SSL versions, such as
+  SSLv2 http://curl.haxx.se/bug/feature.cgi?id=1767276
+ 
+-7.2 Provide mytex locking API
++7.2 Provide mutex locking API
+ 
+  Provide a libcurl API for setting mutex callbacks in the underlying SSL
+  library, so that the same application code can use mutex-locking
+@@ -324,7 +324,7 @@
+  the state from such a buffer at a later date - this is used by mod_ssl for
+  apache to implement and SSL session ID cache".
+ 
+-7.7 Provide callback for cert verfication
++7.7 Provide callback for cert verification
+ 
+  OpenSSL supports a callback for customised verification of the peer
+  certificate, but this doesn't seem to be exposed in the libcurl APIs. Could
+@@ -355,7 +355,7 @@
+  hey... Another option is to get available DES and MD4 source code from the
+  cryptopp library. They are fine license-wise, but are C++.
+ 
+-8.2 SSl engine stuff
++8.2 SSL engine stuff
+ 
+  Is this even possible?
+ 

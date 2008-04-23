@@ -1,6 +1,7 @@
---- configure.old	Fri Apr 13 18:29:31 2007
-+++ configure	Fri Apr 13 18:29:33 2007
-@@ -5497,7 +5497,7 @@
+diff -urN -x .svn ../../vendor/curl/configure ./configure
+--- ../../vendor/curl/configure	2008-03-20 15:23:26.000000000 +0200
++++ ./configure	2008-03-20 23:55:32.000000000 +0200
+@@ -5488,7 +5488,7 @@
  { echo "$as_me:$LINENO: checking if arch-OS host is AMD64-linux (to build static libraries with PIC)" >&5
  echo $ECHO_N "checking if arch-OS host is AMD64-linux (to build static libraries with PIC)... $ECHO_C" >&6; }
  case $host in
@@ -9,7 +10,16 @@
      { echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6; }
      with_pic=yes
-@@ -24467,8 +24467,10 @@
+@@ -20913,7 +20913,7 @@
+ 
+ case $host in
+   #
+-  x86_64*linux*)
++  x86_64*linux*|amd64*freebsd*|ia64*freebsd*)
+     #
+         if test "z$ICC" = "z"; then
+ 
+@@ -25496,8 +25496,10 @@
          PKGTEST="no"
      PREFIX_OPENSSL=$OPT_SSL
      LIB_OPENSSL="$PREFIX_OPENSSL/lib$libsuff"
