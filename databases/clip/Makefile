@@ -7,7 +7,7 @@
 
 PORTNAME=	clip
 DISTVERSION=	1.1.16-1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
 		ftp://www.cis.by/pub/clip/pub/clip/	\
@@ -38,10 +38,12 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${DISTVERSION}
 USE_GETTEXT=	yes
-USE_XORG+=	x11 xau ice xproto
+USE_XORG+=	x11 xau ice xproto xmu xpm
 WANT_GNOME=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	IODBC		"iODBC support"				on \
 		UNIXODBC	"unixODBC support (not with iODBC)"	off \
