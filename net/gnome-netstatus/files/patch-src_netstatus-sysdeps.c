@@ -1,5 +1,5 @@
 --- src/netstatus-sysdeps.c.orig	2007-02-13 04:39:19.000000000 -0500
-+++ src/netstatus-sysdeps.c	2007-07-29 13:14:34.000000000 -0400
++++ src/netstatus-sysdeps.c	2008-04-23 13:07:24.000000000 -0400
 @@ -37,13 +37,26 @@
  
  #ifdef __FreeBSD__
@@ -157,7 +157,12 @@
  
  char *
  netstatus_sysdeps_read_iface_wireless_details (const char *iface,
-@@ -548,21 +633,44 @@ netstatus_sysdeps_read_iface_wireless_de
+@@ -544,25 +629,52 @@ netstatus_sysdeps_read_iface_wireless_de
+   if (signal_strength)
+     *signal_strength = 0;
+ 
++#if __FreeBSD_version < 800036
+   if (g_strncasecmp (iface, "an",   2) &&
        g_strncasecmp (iface, "wi",   2) &&
        g_strncasecmp (iface, "ath",  3) &&
        g_strncasecmp (iface, "ndis", 4) &&
@@ -168,6 +173,9 @@
 +      g_strncasecmp (iface, "rum",  3) &&
 +      g_strncasecmp (iface, "ray",  3) &&
        g_strncasecmp (iface, "acx",  3))
++#else
++  if (g_strncasecmp (iface, "wlan", 4))
++#endif
      return error_message;
  
 +#if __FreeBSD_version < 700046
