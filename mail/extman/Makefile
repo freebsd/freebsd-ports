@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	extman
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.chifeng.name/dist/extman/%SUBDIR%/ \
-		http://chifeng.cosoft.org.cn/extman/%SUBDIR%/
+		http://mirror3.extmail.net/dist/%SUBDIR%/
 
 MAINTAINER?=	chifeng@gmail.com
 COMMENT=	Web interface to manage Virtual Accounts
@@ -22,8 +22,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-
 
 OPTIONS=	MySQL "Use MySQL support" On \
 		LDAP "Use LDAP support" Off
-
-SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -39,6 +37,5 @@ OWCGIDIR=	${PREFIX}/www/extman
 do-install:
 	@${MKDIR} ${OWCGIDIR}
 	@cd ${WRKSRC} && ${CP} -Rpf * ${OWCGIDIR}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
