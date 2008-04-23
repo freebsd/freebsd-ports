@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.16.3
-PORTREVISION=	1
+PORTVERSION=	7.18.0
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -22,7 +21,8 @@ COMMENT=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 MAN1=		curl.1 curl-config.1
 MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 \
 		curl_easy_escape.3 curl_easy_getinfo.3 \
-		curl_easy_init.3 curl_easy_perform.3 curl_easy_reset.3 \
+		curl_easy_init.3 curl_easy_pause.3 \
+		curl_easy_perform.3 curl_easy_reset.3 \
 		curl_easy_setopt.3 curl_easy_strerror.3 curl_easy_unescape.3 \
 		curl_escape.3 \
 		curl_unescape.3 curl_formadd.3 curl_formget.3 curl_formfree.3 curl_free.3 \
@@ -54,6 +54,8 @@ OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 		GNUTLS "Use GNU TLS if OPENSSL is OFF" off \
 		IPV6 "IPv6 support" on \
 		KERBEROS4 "Kerberos 4 authentication" off \
+		LDAP "LDAP support" off \
+		LDAPS "LDAPS support (requires LDAP and SSL)" off \
 		LIBIDN "Internationalized Domain Names via libidn" off \
 		LIBSSH2 "SCP/SFTP support via libssh2" off \
 		NTLM "NTLM authentication" off \
@@ -75,6 +77,16 @@ IGNORE=		only supports NTLM with OpenSSL
 
 .if defined(WITH_CARES) && defined(WITH_IPV6)
 IGNORE=		does not support both c-ares and IPv6 - disable one of them
+.endif
+
+.if defined(WITH_LDAPS)
+.if !defined(WITH_LDAP)
+IGNORE=			only supports LDAPS with LDAP
+.else
+.if !defined(WITH_OPENSSL) && !defined(WITH_GNUTLS)
+IGNORE=			only supports LDAPS with SSL (OpenSSL or GNUTLS)
+.endif
+.endif
 .endif
 
 .if !defined(WITHOUT_OPENSSL)
@@ -116,6 +128,21 @@ CONFIGURE_ARGS += --with-krb4=/usr
 CONFIGURE_ARGS += --without-krb4
 .endif
 
+.if defined(WITH_LDAP)
+CONFIGURE_ARGS+=	--enable-ldap
+USE_OPENLDAP=	yes
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+ADDFLAGS=	true
+.if defined(WITH_LDAPS)
+CONFIGURE_ARGS+=	--enable-ldaps
+.else
+CONFIGURE_ARGS+=	--disable-ldaps
+.endif
+.else
+CONFIGURE_ARGS+=	--disable-ldap --disable-ldaps
+.endif
+
 .if defined(WITH_LIBIDN)
 LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-libidn=${LOCALBASE}
@@ -140,15 +167,25 @@ CONFIGURE_ARGS+=	--enable-ntlm
 CONFIGURE_ARGS+=	--disable-ntlm
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|\$$(libdir)/pkgconfig|\$$(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
+.if defined(ADDFLAGS)
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+.endif
+
+DOCS=		BINDINGS BUGS CONTRIBUTE DISTRO-DILEMMA FAQ FEATURES \
+		HISTORY INSTALL INSTALL.devcpp INTERNALS KNOWN_BUGS \
+		LICENSE-MIXING MANUAL README.netware README.win32 RESOURCES \
+		SSLCERTS THANKS TODO TheArtOfHttpScripting VERSIONS \
+		curl-config.html curl-config.pdf curl.html curl.pdf \
+		index.html
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs && exec ${COPYTREE_SHARE} \* ${DOCSDIR} \
-		"! -name Makefile ! -name Makefile.am ! -name Makefile.in ! -name curl.1 ! -name curl-config.1 ! -name *.3")
+	${INSTALL_DATA} ${DOCS:S@^@${WRKSRC}/docs/@} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/libcurl
+	(cd ${WRKSRC}/docs/libcurl && exec ${INSTALL_DATA} ABI *.html *.pdf *.m4 ${DOCSDIR}/libcurl/)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/examples/README ${WRKSRC}/docs/examples/Makefile.example ${WRKSRC}/docs/examples/makefile* ${WRKSRC}/docs/examples/*.c ${WRKSRC}/docs/examples/*.cc ${EXAMPLESDIR}/
 .endif
 
 # Setting LC_ALL=C is a kludge; maybe curl/libcurl shouldn't actually use

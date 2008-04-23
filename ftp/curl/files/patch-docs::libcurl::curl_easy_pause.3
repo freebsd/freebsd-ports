@@ -1,0 +1,21 @@
+diff -urN -urN -x .svn ../../vendor/curl/docs/libcurl/curl_easy_pause.3 ./docs/libcurl/curl_easy_pause.3
+--- ../../vendor/curl/docs/libcurl/curl_easy_pause.3	2008-01-08 16:52:07.000000000 +0200
++++ ./docs/libcurl/curl_easy_pause.3	2008-03-29 16:08:15.000000000 +0200
+@@ -12,7 +12,7 @@
+ Using this function, you can explicitly mark a running connection to get
+ paused, and you can unpause a connection that was previously paused.
+ 
+-A connection can made to pause by using this function or by letting the read
++A connection can be paused by using this function or by letting the read
+ or the write callbacks return the proper magic return code
+ (\fICURL_READFUNC_PAUSE\fP and \fICURL_WRITEFUNC_PAUSE\fP).
+ 
+@@ -53,7 +53,7 @@
+ function.
+ 
+ If the downloaded data is compressed and is asked to get uncompressed
+-automatially on download, libcurl will continue to uncompress the entire
++automatically on download, libcurl will continue to uncompress the entire
+ downloaded chunk and it will cache the data uncompressed. This has the side-
+ effect that if you download something that is compressed a lot, it can result
+ in a very large data amount needing to be allocated to save the data during
