@@ -83,6 +83,9 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/Anna.gif
 %%PORTDOCS%%%%DOCSDIR%%/Antigone.gif
 %%PORTDOCS%%%%DOCSDIR%%/As.png
+%%PORTDOCS%%%%DOCSDIR%%/BASEdlg.png
+%%PORTDOCS%%%%DOCSDIR%%/BASEfeat.png
+%%PORTDOCS%%%%DOCSDIR%%/BASElang.png
 %%PORTDOCS%%%%DOCSDIR%%/BDFgrey.html
 %%PORTDOCS%%%%DOCSDIR%%/BethSans.png
 %%PORTDOCS%%%%DOCSDIR%%/BethSerif.png
@@ -107,6 +110,8 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/CaslonOriginality.png
 %%PORTDOCS%%%%DOCSDIR%%/ChangeWeight.png
 %%PORTDOCS%%%%DOCSDIR%%/CharPrint.png
+%%PORTDOCS%%%%DOCSDIR%%/ClippedA.png
+%%PORTDOCS%%%%DOCSDIR%%/ClippedARaster.png
 %%PORTDOCS%%%%DOCSDIR%%/CondenseExtend.png
 %%PORTDOCS%%%%DOCSDIR%%/Constrain1_1.png
 %%PORTDOCS%%%%DOCSDIR%%/Constrain1_2.png
@@ -147,6 +152,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/GenerateOptions.png
 %%PORTDOCS%%%%DOCSDIR%%/GlossaryFS.html
 %%PORTDOCS%%%%DOCSDIR%%/GlossaryFrame.html
+%%PORTDOCS%%%%DOCSDIR%%/GradientDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/GridFit.png
 %%PORTDOCS%%%%DOCSDIR%%/GridFitM.png
 %%PORTDOCS%%%%DOCSDIR%%/H-bm.png
@@ -163,6 +169,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/ItalicCompGalliard.png
 %%PORTDOCS%%%%DOCSDIR%%/KernPairs.png
 %%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LinearGradient.png
 %%PORTDOCS%%%%DOCSDIR%%/MATH-Constants.png
 %%PORTDOCS%%%%DOCSDIR%%/MATH-Exten.png
 %%PORTDOCS%%%%DOCSDIR%%/MATH-GlyphConstructed.png
@@ -200,6 +207,8 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/PfaEdits.gif
 %%PORTDOCS%%%%DOCSDIR%%/PoV.png
 %%PORTDOCS%%%%DOCSDIR%%/Print.png
+%%PORTDOCS%%%%DOCSDIR%%/RadialGradient.png
+%%PORTDOCS%%%%DOCSDIR%%/RadialGradientDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/ReviewHints.png
 %%PORTDOCS%%%%DOCSDIR%%/SelectByATT.png
 %%PORTDOCS%%%%DOCSDIR%%/Shades.png
@@ -227,7 +236,11 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/TTStack.png
 %%PORTDOCS%%%%DOCSDIR%%/TTStorage.png
 %%PORTDOCS%%%%DOCSDIR%%/TTgloss.png
+%%PORTDOCS%%%%DOCSDIR%%/Tile.png
 %%PORTDOCS%%%%DOCSDIR%%/TilePath.png
+%%PORTDOCS%%%%DOCSDIR%%/TilePatternDlg.png
+%%PORTDOCS%%%%DOCSDIR%%/TiledPattern.png
+%%PORTDOCS%%%%DOCSDIR%%/TiledPattern45.png
 %%PORTDOCS%%%%DOCSDIR%%/To-kerned.png
 %%PORTDOCS%%%%DOCSDIR%%/To-unkerned.png
 %%PORTDOCS%%%%DOCSDIR%%/Tricolor.png
@@ -245,6 +258,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/agetinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/agrave_anchored.png
 %%PORTDOCS%%%%DOCSDIR%%/ahighest.png
+%%PORTDOCS%%%%DOCSDIR%%/alignedBaselines.png
 %%PORTDOCS%%%%DOCSDIR%%/allgreek.png
 %%PORTDOCS%%%%DOCSDIR%%/alphakappaiota.png
 %%PORTDOCS%%%%DOCSDIR%%/alphakappaiotatheta.png
@@ -261,6 +275,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/autowidth.html
 %%PORTDOCS%%%%DOCSDIR%%/autowidth.png
 %%PORTDOCS%%%%DOCSDIR%%/autowidthmenu.png
+%%PORTDOCS%%%%DOCSDIR%%/baseline.html
 %%PORTDOCS%%%%DOCSDIR%%/bdfinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/bdfinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/bed-script.png
@@ -285,6 +300,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-pos.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-subs.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-tex.png
+%%PORTDOCS%%%%DOCSDIR%%/charinfo-tilesize.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-variants.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/charinfo.png
@@ -343,6 +359,9 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/cvt-to-mac.png
 %%PORTDOCS%%%%DOCSDIR%%/cvtangenticon.png
 %%PORTDOCS%%%%DOCSDIR%%/definegroups.png
+%%PORTDOCS%%%%DOCSDIR%%/devaBaseline.png
+%%PORTDOCS%%%%DOCSDIR%%/devaHangBaseline.png
+%%PORTDOCS%%%%DOCSDIR%%/devaLatinBaseline.png
 %%PORTDOCS%%%%DOCSDIR%%/diffs.html
 %%PORTDOCS%%%%DOCSDIR%%/display.html
 %%PORTDOCS%%%%DOCSDIR%%/displaygroups.png
@@ -549,6 +568,9 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/l9.png
 %%PORTDOCS%%%%DOCSDIR%%/lang-dlg.png
 %%PORTDOCS%%%%DOCSDIR%%/langdlg.png
+%%PORTDOCS%%%%DOCSDIR%%/latinBaseline.png
+%%PORTDOCS%%%%DOCSDIR%%/latinHangBaseline.png
+%%PORTDOCS%%%%DOCSDIR%%/latinNormalBaseline.png
 %%PORTDOCS%%%%DOCSDIR%%/layerdlg.png
 %%PORTDOCS%%%%DOCSDIR%%/layers.png
 %%PORTDOCS%%%%DOCSDIR%%/lcani.gif
@@ -575,6 +597,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/metrics-kappa_iota.png
 %%PORTDOCS%%%%DOCSDIR%%/metricsmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/metricsview.html
+%%PORTDOCS%%%%DOCSDIR%%/misalignedBaselines.png
 %%PORTDOCS%%%%DOCSDIR%%/mmappleaxes.png
 %%PORTDOCS%%%%DOCSDIR%%/mmaxes.png
 %%PORTDOCS%%%%DOCSDIR%%/mmcharview.png
@@ -686,6 +709,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/serif2.png
 %%PORTDOCS%%%%DOCSDIR%%/setwidth.png
 %%PORTDOCS%%%%DOCSDIR%%/sfd.html
+%%PORTDOCS%%%%DOCSDIR%%/sfdchangelog.html
 %%PORTDOCS%%%%DOCSDIR%%/sfddiff.html
 %%PORTDOCS%%%%DOCSDIR%%/sfdformat.html
 %%PORTDOCS%%%%DOCSDIR%%/short-long-s.png

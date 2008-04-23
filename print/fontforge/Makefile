@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20080309
-PORTREVISION=	2
+PORTVERSION=	20080330
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -31,10 +30,7 @@ EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
 .endif
 
 .if !defined(NOPORTDOCS)
-#DOC_VERSION=	${PORTVERSION}
-# the main executable was updated because of a build problem with emulators/wine
-# however, the documentation was not updated because it was a minor update
-DOC_VERSION=	20080302
+DOC_VERSION=	${PORTVERSION}
 DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
 .endif
 
