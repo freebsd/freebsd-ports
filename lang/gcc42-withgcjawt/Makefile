@@ -15,6 +15,7 @@ MASTERDIR=	${.CURDIR}/../../lang/gcc42
 DESCR=	${.CURDIR}/pkg-descr
 
 WITH_JAVA_AWT=	yes
+USE_XORG=	xtst xt xaw xmu
 
 #weird libtool issue http://gcc.gnu.org/bugzilla/show_bug.cgi?id=28442
 EXTRA_PATCHES+=	${.CURDIR}/files/patch-configure
