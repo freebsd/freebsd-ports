@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	2.11.5
+DISTVERSION=	2.11.5.2
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
@@ -105,7 +105,7 @@ USE_PHP+=	${opt:L}
 
 .include <bsd.port.pre.mk>
 
-_PMA_GID!=	/usr/sbin/pw group show -n ${PMA_GRP} | ${CUT} -d : -f 3
+_PMA_GID!=	${PW} group show -n ${PMA_GRP} | ${CUT} -d : -f 3
 .if empty(_PMA_GID)
 _PMA_GID=	80
 .endif
@@ -130,11 +130,11 @@ pre-everything::
 	${ECHO_MSG} "databases/phpmyadmin"
 	${ECHO_MSG} ""
 .if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
-	@if /usr/sbin/pw show -n phpmyadm >/dev/null 2>&1 ; then              \
+	@if ${PW} show -n phpmyadm >/dev/null 2>&1 ; then                     \
 	    ${ECHO_MSG} "===> WARNING ******************************" ;       \
 	    ${ECHO_MSG} "The default username used by ${PKNAME} has changed"; \
 	    ${ECHO_MSG} "to ${PMA_USR} -- you should delete the old user:" ;  \
-	    ${ECHO_MSG} "  # /usr/sbin/pw user del -n phpmyadm" ;             \
+	    ${ECHO_MSG} "  # ${PW} user del -n phpmyadm" ;                    \
 	    ${ECHO_MSG} "" ;                                                  \
 	fi
 .endif
