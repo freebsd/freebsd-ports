@@ -21,13 +21,26 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/FreeBSD
 
-CFLAGS+=	${PTHREAD_CFLAGS}
+AS =		nasm
+AFLAGS =	-f elf -Ox
+ALL_TARGET=	test
+MAKE_ENV+=	AS="${AS}" \
+		AFLAGS="${AFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/gogo-petit
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}| ; \
-	s|/usr/local/bin|${PREFIX}/bin|g' ${WRKSRC}/Makefile || @${ECHO} yo
+OPTIONS=	THREADS	"build a multithreaded encoder for SMP" Off
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.ifdef(WITH_THREADS)
+LDFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS}
+MAKEFILE=	${FILESDIR}/Makefile.rfork
+.else
+MAKEFILE=	${FILESDIR}/Makefile.unthreaded
+.endif
+
+.include <bsd.port.post.mk>

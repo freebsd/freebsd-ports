@@ -1,0 +1,111 @@
+#######################################################
+#
+#   Makefile for GOGO-no-coda
+#
+#   Copyright(C)2001,2002,2003 K.Sakai
+#   Copyright(C)2001,2002,2003 gogo-developer
+#
+#######################################################
+
+TARGET = gogo-petit
+
+#######################################################
+
+LD   = ${CC} ${CFLAGS}
+MAKECFG = makecfg
+LIBS = -lm 
+VPATH = ../engine:../engine/i386:../file_io
+
+AFLAGS += -I../engine/i386/ -D__unix__ $(E3DN)
+
+CFLAGS += -DHAVE_CONFIG_H -DLAMEPARSE -DLAMESNDFILE
+CFLAGS += -DUSE_X86ASM
+
+COBJS =	bitstream.o get_audio.o \
+	newmdct.o quantize_pvt.o \
+	tables.o util.o \
+	gogo.o \
+	psymodel.o reservoir.o \
+	takehiro.o \
+	fft.o lame.o \
+	quantize.o \
+	tool.o vbrtag.o \
+	main.o gogo_io.o setup.o
+
+AOBJS = clka.o cpua.o cpu.o choose_table.o quantizea.o quant3dn.o vars.o psymodela.o psysse.o psy3dn.o gogo2_fht.o fftsse.o mdctsse.o mdct3dn.o sbandfpu.o sbandsse.o sbandtbl.o sband3dn.o
+
+.SUFFIXES: .nas .c
+
+all:	$(TARGET)
+
+install	: $(TARGET)
+	${BSD_INSTALL_PROGRAM} ${TARGET} ${PREFIX}/bin
+
+$(TARGET): $(COBJS) $(AOBJS)
+	$(LD) $(COBJS) $(AOBJS) $(LDFLAGS) -o $(TARGET) $(LIBS)
+
+.nas.o:
+	$(AS) $(AFLAGS) $< -o $@
+
+.c.o:
+	${CC} -c -I../engine $(CFLAGS) $< -o $@
+
+clean:
+	\rm -f *.o $(TARGET) *~ ../engine/i386/global.cfg $(MAKECFG)
+
+$(MAKECFG) : ../engine/i386/makecfg.c global.h
+	${CC} -I../engine $(CFLAGS) $< -o $@
+
+cpua.o:		cpua.nas nasm.cfg global.cfg
+clka.o:		clka.nas nasm.cfg global.cfg
+choose_table.o:	choose_table.nas nasm.cfg global.cfg
+quantizea.o:	quantizea.nas nasm.cfg global.cfg
+quant3dn.o:	quant3dn.nas nasm.cfg global.cfg
+cpu.o:		cpu.c common.h cpu.h gogo.h global.h
+vars.o:		vars.nas global.cfg
+psymodela.o:	psymodela.nas nasm.cfg global.cfg
+psysse.o:	psysse.nas nasm.cfg global.cfg
+psy3dn.o:	psy3dn.nas nasm.cfg global.cfg
+gogo2_fht.o:	gogo2_fht.nas nasm.cfg global.cfg
+fftsse.o:	fftsse.nas nasm.cfg global.cfg
+mdctsse.o:	mdctsse.nas nasm.cfg global.cfg
+mdct3dn.o:	mdct3dn.nas nasm.cfg global.cfg
+sbandtbl.o:	sbandtbl.nas nasm.cfg global.cfg
+sbandfpu.o:	sbandfpu.nas nasm.cfg global.cfg
+sbandsse.o:	sbandsse.nas nasm.cfg global.cfg
+sband3dn.o:	sband3dn.nas nasm.cfg global.cfg
+
+global.cfg : $(MAKECFG) global.h
+	./$(MAKECFG) > ../engine/i386/global.cfg
+
+bitstream.o:	bitstream.c    config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h lame.h util.h tables.h bitstream.h quantize.h quantize_pvt.h
+fft.o:		fft.c          config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h util.h fft.h
+get_audio.o:	get_audio.c    config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h lame.h get_audio.h tool.h gogo_io.h
+gogo.o:		gogo.c         config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h lame.h get_audio.h cpu.h tool.h gogo_io.h encoder.c version.h
+lame.o:		lame.c         config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h lame.h util.h bitstream.h tables.h quantize_pvt.h vbrtag.h
+newmdct.o:	newmdct.c      config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h util.h newmdct.h
+psymodel.o:	psymodel.c     config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h util.h psymodel.h tables.h
+quantize.o:	quantize.c     config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h util.h quantize.h reservoir.h quantize_pvt.h
+quantize_pvt.o:	quantize_pvt.c config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h util.h tables.h reservoir.h quantize_pvt.h
+reservoir.o:	reservoir.c    config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h util.h reservoir.h
+tables.o:	tables.c       config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h util.h tables.h
+takehiro.o:	takehiro.c     config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h util.h tables.h quantize_pvt.h
+tool.o:		tool.c         config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h tool.h lame.h vbrtag.h gogo_io.h
+util.o:		util.c         config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h util.h
+vbrtag.o:	vbrtag.c       config.h global.h common.h gogo.h l3side.h encoder.h machine.h thread.h vbrtag.h bitstream.h
+
+main.o:		../main.c common.h gogo.h global.h tool.h cpu.h
+	${CC} -c -I../engine $(CFLAGS) -I../engine $< -o $@
+
+test: $(TARGET)
+	./$(TARGET) -test 10 -q 0
+	./$(TARGET) -test 10 -q 5
+	./$(TARGET) -test 10 -q 9
+	./$(TARGET) -test 10 -a -q 0 -b 160
+	./$(TARGET) -test 10 -a -q 5 -b 192
+	./$(TARGET) -test 10 -a -q 9 -b 256
+	./$(TARGET) -test 10 -v 0 -vb 40 256
+	./$(TARGET) -test 10 -v 5 -q 1
+	./$(TARGET) -test 10 -v 9 -vb 160 320
+	./$(TARGET) -test 10 -s 2 -b 64
+	./$(TARGET) -test 10 -s 999 -b 32
