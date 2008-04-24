@@ -383,8 +383,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://ftp.port80.se/fedora/core/%SUBDIR%/ \
 	http://ftp.upjs.sk/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.upjs.sk/pub/fedora/linux/core/%SUBDIR%/ \
-	http://ftp.mirror.tw/pub/fedora/linux/core/%SUBDIR%/ \
-	ftp://ftp.mirror.tw/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.tlk-l.net/pub/mirrors/fedora.redhat.com/linux/core/%SUBDIR%/ \
 	http://limestone.uoregon.edu/ftp/fedora/%SUBDIR%/ \
 	ftp://limestone.uoregon.edu/fedora/%SUBDIR%/ \
