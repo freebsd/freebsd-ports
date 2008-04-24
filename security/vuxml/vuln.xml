@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fe971a0f-1246-11dd-bab7-0016179b2dd5">
+    <topic>phpmyadmin -- Shared Host Information Disclosure</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><lt>2.11.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A phpMyAdmin security announcement report:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-3">
+	  <p>It is possible to read the contents of any file that the web server's
+	    user can access. The exact mechanism to achieve this won't be disclosed.
+	    If a user can upload on the same host where phpMyAdmin is running a PHP
+	    script that can read files with the rights of the web server's user, the
+	    current advisory does not describe an additional threat.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1924</cvename>
+      <url>http://secunia.com/advisories/29944/</url>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-3</url>
+    </references>
+    <dates>
+      <discovery>2008-04-23</discovery>
+      <entry>2008-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6eb1dc51-1244-11dd-bab7-0016179b2dd5">
     <topic>phpmyadmin -- Username/Password Session File Information Disclosure</topic>
     <affects>
