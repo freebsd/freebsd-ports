@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7a7c5853-10a3-11dd-8eb8-00163e000016">
+    <topic>libxine -- array index vulnerability</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.1.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xine Team reports:</p>
+	<blockquote cite="http://www.xinehq.de/index.php/news">
+	  <p>A new xine-lib version is now available. This release contains a
+	    security fix (an unchecked array index that could allows remote
+	    attackers to execute arbitrary code via a header structure
+	    containing a negative offset, which is used to dereference a
+	    function pointer.)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+       <cvename>CVE-2008-1686</cvename>
+       <url>http://www.xinehq.de/index.php/news</url>
+    </references>
+    <dates>
+      <discovery>2008-04-06</discovery>
+      <entry>2008-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="589d8053-0b03-11dd-b4ef-00e07dc4ec84">
     <topic>clamav -- Multiple Vulnerabilities</topic>
     <affects>
