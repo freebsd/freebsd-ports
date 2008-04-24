@@ -4,6 +4,14 @@ bin/bmp-play-uris-2.0
 bin/bmp2
 include/bmp-2.0/bmp/bmp.hh
 include/bmp-2.0/bmp/dbus.hh
+include/bmp-2.0/bmp/types/types-basic.hh
+include/bmp-2.0/bmp/types/types-bookmarks.hh
+include/bmp-2.0/bmp/types/types-database.hh
+include/bmp-2.0/bmp/types/types-lastfm.hh
+include/bmp-2.0/bmp/types/types-library.hh
+include/bmp-2.0/bmp/types/types-network.hh
+include/bmp-2.0/bmp/types/types-ui.hh
+include/bmp-2.0/bmp/types/types-xspf.hh
 lib/bmpx/plugins/taglib/libtaglib_plugin_flac.la
 lib/bmpx/plugins/taglib/libtaglib_plugin_flac.so
 lib/bmpx/plugins/taglib/libtaglib_plugin_flac.so.0
@@ -50,6 +58,7 @@ share/applications/bmp-2.0-offline.desktop
 share/applications/bmp-2.0.desktop
 share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/glade/dialog-add-podcast.glade
+%%DATADIR%%/glade/dialog-bounce-adjust.glade
 %%DATADIR%%/glade/dialog-equalizer.glade
 %%DATADIR%%/glade/dialog-export.glade
 %%DATADIR%%/glade/dialog-filebrowser.glade
@@ -138,13 +147,12 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/icons/tray-icons/tray-icon-default.png
 %%DATADIR%%/icons/tray-icons/tray-icon-paused.png
 %%DATADIR%%/icons/tray-icons/tray-icon-playing.png
-%%DATADIR%%/images/cover-frame.png
 %%DATADIR%%/images/logo-splash.png
 %%DATADIR%%/images/logo-about.png
 %%DATADIR%%/images/audio-default.png
+%%DATADIR%%/images/video-default.png
 %%DATADIR%%/images/throbber.gif
 %%DATADIR%%/images/throbber-small.gif
-%%DATADIR%%/images/throbber-square.gif
 %%DATADIR%%/images/svg/button-background.svg
 %%DATADIR%%/images/svg/button-outline.svg
 %%DATADIR%%/images/stock/approve-partial.png
@@ -291,5 +299,6 @@ share/icons/hicolor/48x48/apps/bmpx.png
 @dirrm lib/bmpx/plugins/taglib
 @dirrm lib/bmpx/plugins
 @dirrm lib/bmpx
+@dirrm include/bmp-2.0/bmp/types
 @dirrm include/bmp-2.0/bmp
 @dirrm include/bmp-2.0
