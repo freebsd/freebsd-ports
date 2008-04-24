@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Cache-Cache>=1:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Params-Validate>=0.07:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason.3 \
