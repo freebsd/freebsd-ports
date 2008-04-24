@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	subtitlecomposer
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=subcomposer
@@ -14,12 +14,10 @@ MASTER_SITE_SUBDIR=subcomposer
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	Subtitle editor for KDE
 
-LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	automake:17:env libtool:15
-USE_PERL5_BUILD=yes
+USE_AUTOTOOLS=	libtool:15
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gstreamer
@@ -34,10 +32,5 @@ LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
 .else
 CONFIGURE_ARGS+=--without-xine
 .endif
-
-pre-configure:
-	@cd ${CONFIGURE_WRKSRC} \
-		&& ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} ${AUTOMAKE_ARGS} \
-		&& ${PERL} admin/am_edit
 
 .include <bsd.port.post.mk>
