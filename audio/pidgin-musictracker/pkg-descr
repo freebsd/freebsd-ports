@@ -1,0 +1,8 @@
+MusicTracker is a plugin for Pidgin which displays the music track currently
+playing in the status message of various accounts such as AIM, Yahoo, MSN,
+Gtalk (Jabber), etc., i.e. any protocol Pidgin supports custom statuses on.
+Support for a wide range of audio players on both Windows and UNIX platforms
+is planned. Currently supported players: Amarok, Rhythmbox, Audacious, XMMS,
+MPC/MPD, Exaile, Banshee and Quod Libet.
+
+WWW: http://code.google.com/p/musictracker/
