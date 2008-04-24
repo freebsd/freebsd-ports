@@ -363,7 +363,6 @@ gst_soup_GST_PLUGIN_DIR=ext/soup
 gst_soup_PLIST_FILES=	${GST_LIB_DIR}/libgstsouphttpsrc.a \
 			${GST_LIB_DIR}/libgstsouphttpsrc.la \
 			${GST_LIB_DIR}/libgstsouphttpsrc.so
-gst_soup_DIST=		bad
 
 # spc
 gst_spc_LIB_DEPENDS+=	OpenSPC.3:${PORTSDIR}/audio/openspc
