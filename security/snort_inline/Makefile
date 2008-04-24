@@ -7,6 +7,7 @@
 
 PORTNAME=	snort_inline
 PORTVERSION=	2.4.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://freebsd.rogness.net/ports/snort_inline/
 
@@ -21,6 +22,13 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-inline --enable-ipfw
 
 LIB_DEPENDS+=		dnet:${PORTSDIR}/net/libdnet
+
+OPTIONS=		MYSQL "With MySQL support" off \
+			ODBC "With ODBC support" off \
+			POSTGRESQL "With POSTGRESQL support" off \
+			FLEXRESP "With flexible responses (resp. w/packet resets)" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
@@ -47,6 +55,22 @@ LDFLAGS+=		-lssl -lcrypto
 CONFIGURE_ARGS+=	--with-postgresql=no
 .endif
 
+.if defined(WITH_FLEXRESP)
+LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet10-config
+
+.if exists(${LIBNET_CONFIG})
+LIBNET_CFLAGS!=	${LIBNET_CONFIG} --cflags
+LIBNET_LIBS!=	${LIBNET_CONFIG} --libs
+LIBNET_INCDIR=	${LIBNET_CFLAGS:M-I*:S/-I//}
+LIBNET_LIBDIR=	${LIBNET_LIBS:M-L*:S/-L//}
+.endif
+
+BUILD_DEPENDS+=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
+CONFIGURE_ARGS+=	--enable-flexresp \
+			--with-libnet-includes=${LIBNET_INCDIR} \
+			--with-libnet-libraries=${LIBNET_LIBDIR}
+.endif
+
 MAN8=		snort.8 snort_inline.8
 DOCS=		ChangeLog doc/AUTHORS doc/BUGS doc/CREDITS doc/faq* doc/NEWS \
 		doc/README* doc/TODO doc/USAGE doc/*.pdf
@@ -61,12 +85,9 @@ post-patch:
 	${REINPLACE_CMD} "s,$RULE_PATH/classification.config,${DATADIR}/classification.config," ${WRKSRC}/etc/snort_inline.conf
 	${REINPLACE_CMD} "s,$RULE_PATH/reference.config,${DATADIR}/reference.config," ${WRKSRC}/etc/snort_inline.conf
 	${REINPLACE_CMD} -e "s/^unicode.map/\/usr\/local\/share\/snort_inline\/unicode.map/" ${WRKSRC}/etc/snort_inline.conf
-
-pre-configure:
-	@${ECHO} ""
-	@${ECHO} "Set WITH_MYSQL, WITH_ODBC or WITH_POSTGRESQL"
-	@${ECHO} "to get additional support."
-	@${ECHO} ""
+.if defined(WITH_FLEXRESP)
+	${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|g' ${WRKSRC}/configure
+.endif
 
 post-install:
 	@${MKDIR} ${DATADIR}
@@ -97,4 +118,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
