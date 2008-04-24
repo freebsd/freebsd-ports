@@ -515,6 +515,8 @@ TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_GCC_PORT} && make -V TARGLIB)
 #
 .if defined(USE_GNUSTEP_LDCONFIG)
 .for i in ${USE_GNUSTEP_LDCONFIG}
+# don't remove INSTALLS_SHLIB, see ports/123042
+#USE_LDCONFIG+=	${i}
 LDCONFIG_DIRS+=	${i}
 .endfor
 INSTALLS_SHLIB=	yes
