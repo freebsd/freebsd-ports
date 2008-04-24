@@ -66,7 +66,7 @@ SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES+=	pkg-message
 
 .include <bsd.port.pre.mk>
-_PLA_GID!=	/usr/sbin/pw group show -n ${PLA_GRP} | ${CUT} -d : -f 3
+_PLA_GID!=	${PW} group show -n ${PLA_GRP} | ${CUT} -d : -f 3
 .if empty(_PLA_GID)
 _PLA_GID=	80
 .endif
@@ -84,11 +84,11 @@ pre-everything::
 	${ECHO_MSG} "please use the net/phpldapadmin098 port instead."
 	${ECHO_MSG} ""
 .if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
-	@if /usr/sbin/pw show -n pldapadm >/dev/null 2>&1 ; then	      \
+	@if ${PW} show -n pldapadm >/dev/null 2>&1 ; then	              \
 	    ${ECHO_MSG} "===> WARNING ******************************" ;	      \
 	    ${ECHO_MSG} "The default username used by ${PKNAME} has changed"; \
 	    ${ECHO_MSG} "to ${PLA_USR} -- you should delete the old user:" ;  \
-	    ${ECHO_MSG} "  # /usr/sbin/pw user del -n pldapadm" ;	      \
+	    ${ECHO_MSG} "  # ${PW} user del -n pldapadm" ;	              \
 	    ${ECHO_MSG} "" ;						      \
 	fi
 .endif
