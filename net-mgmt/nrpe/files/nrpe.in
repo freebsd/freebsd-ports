@@ -1,7 +1,11 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net-mgmt/nrpe/files/Attic/nrpe.in,v 1.1 2008-04-07 12:34:07 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/net-mgmt/nrpe/files/Attic/nrpe.in,v 1.2 2008-04-24 16:21:57 anders Exp $
 #
+
+# PROVIDE: nrpe
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf to enable apache2:
