@@ -504,6 +504,7 @@
     SUBDIR += penguinsap
     SUBDIR += phatbeat
     SUBDIR += picard
+    SUBDIR += pidgin-musictracker
     SUBDIR += pimp3
     SUBDIR += play
     SUBDIR += playgsf
