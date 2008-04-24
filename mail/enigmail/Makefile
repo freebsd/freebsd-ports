@@ -7,7 +7,7 @@
 
 PORTNAME=	enigmail
 PORTVERSION?=	0.93.0
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	mail security
 MASTER_SITES=	\
 		http://mozdev.secsup.org/enigmail/src/ \
@@ -36,6 +36,7 @@ IPCVERSION?=	1.1.3
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libidl
+USE_XORG=	xp
 
 WRKSRC=		${WRKDIR}/mozilla
 LOCAL_SRCDIR?=	www/mozilla
