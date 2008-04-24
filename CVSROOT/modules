@@ -12763,6 +12763,7 @@ pidgin-guifications	ports/net-im/pidgin-guifications
 pidgin-hotkeys	ports/net-im/pidgin-hotkeys
 pidgin-latex	ports/net-im/pidgin-latex
 pidgin-libnotify	ports/net-im/pidgin-libnotify
+pidgin-musictracker	ports/audio/pidgin-musictracker
 pidgin-otr	ports/security/pidgin-otr
 pidgin-rhythmbox	ports/net-im/pidgin-rhythmbox
 pidof		ports/sysutils/pidof
