@@ -37,7 +37,6 @@ BAD_GST_ALL_PLUGINS+= \
 		sdl \
 		sndfile \
 		soundtouch \
-		soup \
 		spc \
 		swfdec \
 		timidity \
@@ -66,6 +65,7 @@ GOOD_GST_ALL_PLUGINS+= \
 		taglib \
 		raw1394 \
 		shout2 \
+		soup \
 		speex \
 		taglib \
 		wavpack
