@@ -11,6 +11,9 @@ lib/kde3/kio_virt.so
 share/applications/kde/krusader.desktop
 share/applications/kde/krusader_root-mode.desktop
 share/apps/konqueror/servicemenus/isoservice.desktop
+share/apps/krusader/alpa-yellow.color
+share/apps/krusader/bash.color
+share/apps/krusader/dos_navigator.color
 share/apps/krusader/icons/crystalsvg/16x16/actions/kr_addbookmark.png
 share/apps/krusader/icons/crystalsvg/16x16/actions/kr_arc_pack.png
 share/apps/krusader/icons/crystalsvg/16x16/actions/kr_arc_test.png
@@ -105,9 +108,20 @@ share/apps/krusader/icons/crystalsvg/32x32/actions/kr_unselectall.png
 share/apps/krusader/icons/crystalsvg/32x32/actions/kr_useractions.png
 share/apps/krusader/icons/crystalsvg/32x32/apps/krusader_root.xpm
 share/apps/krusader/icons/crystalsvg/32x32/apps/krusader_user.xpm
+share/apps/krusader/js/calc.js
+share/apps/krusader/js/calc.ui
+share/apps/krusader/js/mount.js
+share/apps/krusader/js/mount.ui
+share/apps/krusader/js/recode.js
+share/apps/krusader/js/recode.ui
+share/apps/krusader/js/select_from_file.js
 share/apps/krusader/krusaderui.rc
+share/apps/krusader/midnight_cmd_AHamann.color
 share/apps/krusader/midnight_commander.color
+share/apps/krusader/midnight_commander.keymap
+share/apps/krusader/midnight_commander.keymap.info
 share/apps/krusader/splash.png
+share/apps/krusader/total_cmd_pleasent.color
 share/apps/krusader/total_commander.color
 share/apps/krusader/total_commander.keymap
 share/apps/krusader/total_commander.keymap.info
@@ -249,6 +263,7 @@ share/services/virt.protocol
 @dirrm share/doc/HTML/ru/krusader
 @dirrm share/doc/HTML/en/krusader
 @dirrmtry share/config
+@dirrm share/apps/krusader/js
 @dirrm share/apps/krusader/icons/crystalsvg/32x32/apps
 @dirrm share/apps/krusader/icons/crystalsvg/32x32/actions
 @dirrm share/apps/krusader/icons/crystalsvg/32x32

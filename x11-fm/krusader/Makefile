@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	krusader
-PORTVERSION=	1.80.0
+PORTVERSION=	1.90.0
 CATEGORIES=	x11-fm kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=krusader
+MASTER_SITES=	SF
 
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	A two window file-manager for KDE, like midnight or norton commander
@@ -25,6 +24,7 @@ CONFIGURE_TARGET=
 CONFIGURE_ENV+=QTDIR=${QTDIR} KDEDIR=${KDEDIR}
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 LD_CONFIG=	yes
+INSTALLS_ICONS=	yes
 
 MAN1=	krusader.1
 
