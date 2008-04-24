@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.26
-PORTREVISION=	2
+PORTVERSION=	1.27.1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -18,13 +17,11 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+		-DCMAKE_C_COMPILER:STRING="${CC}" \
+		-DCMAKE_CXX_COMPILER:STRING="${CXX}"
 
 OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
-		EDITING "Install Doom and Vavoom editing tools" off \
 		FLAC "Enable FLAC support" off \
 		LAUNCHER "Build GUI launcher" on \
 		LIBMAD "Enable MP3 support" off \
@@ -35,7 +32,7 @@ OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
 		VORBIS "Enable Ogg Vorbis support" off \
 		SDL "Use SDL for hardware API" on
 
-SUB_FILES=	${PORTNAME} pkg-message
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -53,62 +50,59 @@ IGNORE=		selected conflicting options ALLEGRO and SDL
 .endif
 
 .if defined(WITH_ALLEGRO)
-LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro \
-		agl.4:${PORTSDIR}/graphics/allegrogl
-CONFIGURE_ARGS+=--with-allegro
+LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
+CMAKE_ARGS+=	-DWITH_ALLEGRO=Y
 .else
-CONFIGURE_ARGS+=--without-allegro
-.endif
-
-.if defined(WITH_EDITING)
-PLIST_SUB+=	EDITING=""
-.else
-PLIST_SUB+=	EDITING="@comment "
+CMAKE_ARGS+=	-DWITH_ALLEGRO=N
 .endif
 
 .if defined(WITH_FLAC)
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
-CONFIGURE_ARGS+=--with-flac
+CMAKE_ARGS+=	-DWITH_FLAC=Y
 .else
-CONFIGURE_ARGS+=--without-flac
+CMAKE_ARGS+=	-DWITH_FLAC=N
 .endif
 
 .if defined(WITH_LAUNCHER)
 USE_WX=		2.4+
-WX_CONF_ARGS=	absolute
-CONFIGURE_ARGS+=--enable-launcher
+CMAKE_ARGS+=	-DENABLE_LAUNCHER=Y \
+		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
 PLIST_SUB+=	LAUNCHER=""
 .else
-CONFIGURE_ARGS+=--disable-launcher
+CMAKE_ARGS+=	-DENABLE_LAUNCHER=N
 PLIST_SUB+=	LAUNCHER="@comment "
 .endif
 
 .if defined(WITH_LIBMAD)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
-CONFIGURE_ARGS+=--with-libmad
+CMAKE_ARGS+=	-DWITH_LIBMAD=Y
 .else
-CONFIGURE_ARGS+=--without-libmad
+CMAKE_ARGS+=	-DWITH_LIBMAD=N
 .endif
 
 .if defined(WITH_MIKMOD)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
-CONFIGURE_ARGS+=--with-mikmod
+CMAKE_ARGS+=	-DWITH_MIKMOD=Y
 .else
-CONFIGURE_ARGS+=--without-mikmod
+CMAKE_ARGS+=	-DWITH_MIKMOD=N
 .endif
 
 .if defined(WITH_OPENAL)
 LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
-CONFIGURE_ARGS+=--with-openal
+CMAKE_ARGS+=	-DWITH_OPENAL=Y
 .else
-CONFIGURE_ARGS+=--without-openal
+CMAKE_ARGS+=	-DWITH_OPENAL=N
 .endif
 
 .if defined(WITH_OPENGL)
 USE_GL=		yes
-CONFIGURE_ARGS+=--with-opengl
+. if defined(WITH_ALLEGRO)
+LIB_DEPENDS+=	agl.0:${PORTSDIR}/graphics/allegrogl
+BROKEN=		please use SDL instead of ALLEGRO, for OPENGL support
+. endif
+CMAKE_ARGS+=	-DWITH_OPENGL=Y
 .else
-CONFIGURE_ARGS+=--without-opengl
+CMAKE_ARGS+=	-DWITH_OPENGL=N
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
@@ -117,37 +111,27 @@ CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=--with-vorbis
+CMAKE_ARGS+=	-DWITH_VORBIS=Y
 .else
-CONFIGURE_ARGS+=--without-vorbis
+CMAKE_ARGS+=	-DWITH_VORBIS=N
 .endif
 
 .if defined(WITH_SDL)
 USE_SDL=	mixer sdl
-CONFIGURE_ARGS+=--with-sdl
+CMAKE_ARGS+=	-DWITH_SDL=Y
 .else
-CONFIGURE_ARGS+=--without-sdl
+CMAKE_ARGS+=	-DWITH_SDL=N
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\.$$host_cpu||' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@cd ${WRKSRC} && ${SH} fixunix.sh
+	@${REINPLACE_CMD} -e 's|$$\* $${IWADDIR}|-iwaddir ${DMDIR} $$*|' \
+		${WRKSRC}/source/CMakeLists.txt
+
+pre-build:
+	@cd ${WRKSRC} && cmake ${CMAKE_ARGS} .
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-.if defined(WITH_EDITING)
-	${INSTALL_PROGRAM} ${WRKSRC}/utils/bin/* ${PREFIX}/libexec/${PORTNAME}
-. for f in utils/editing progs
-	${CP} -r ${WRKSRC}/${f} ${DATADIR}
-	@${FIND} ${DATADIR}/${f:T} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} ${BINMODE}
-	@${FIND} ${DATADIR}/${f:T} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-. endfor
-	@${FIND} ${DATADIR}/progs -type f -name "Makefile*" -print0 | \
-		${XARGS} -0 ${REINPLACE_CMD} -i '' -Ee 's|^(VCC =).*|\1 vcc|'
-.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/vavoom.txt ${DOCSDIR}
