@@ -323,6 +323,7 @@
 %%MMDIR%%/bin/convert.py
 %%MMDIR%%/bin/discard
 %%MMDIR%%/bin/dumpdb
+%%MMDIR%%/bin/export.py
 %%MMDIR%%/bin/find_member
 %%MMDIR%%/bin/fix_url.py
 %%MMDIR%%/bin/genaliases
@@ -409,6 +410,10 @@
 %%MMDIR%%/messages/fr/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/fr/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/fr/README.fr
+%%MMDIR%%/messages/gl/LC_MESSAGES/mailman.mo
+%%MMDIR%%/messages/gl/LC_MESSAGES/mailman.po
+%%MMDIR%%/messages/he/LC_MESSAGES/mailman.mo
+%%MMDIR%%/messages/he/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/hr/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/hr/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/hu/LC_MESSAGES/mailman.mo
@@ -443,9 +448,9 @@
 %%MMDIR%%/messages/ru/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/ru/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/ru/README.ru
-%%SUB_SLOVAK%%%%MMDIR%%/messages/sk/LC_MESSAGES/mailman.mo
-%%SUB_SLOVAK%%%%MMDIR%%/messages/sk/LC_MESSAGES/mailman.po
-%%SUB_SLOVAK%%%%MMDIR%%/messages/sk/README.sk
+%%MMDIR%%/messages/sk/LC_MESSAGES/mailman.mo
+%%MMDIR%%/messages/sk/LC_MESSAGES/mailman.po
+%%MMDIR%%/messages/sk/README.sk
 %%MMDIR%%/messages/sl/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/sl/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/sr/LC_MESSAGES/mailman.mo
@@ -735,6 +740,14 @@
 %%MMDIR%%/templates/cs/adminunsubscribeack.txt
 %%MMDIR%%/templates/cs/admlogin.html
 %%MMDIR%%/templates/cs/approve.txt
+%%MMDIR%%/templates/cs/archidxentry.html
+%%MMDIR%%/templates/cs/archidxfoot.html
+%%MMDIR%%/templates/cs/archidxhead.html
+%%MMDIR%%/templates/cs/archlistend.html
+%%MMDIR%%/templates/cs/archliststart.html
+%%MMDIR%%/templates/cs/archtoc.html
+%%MMDIR%%/templates/cs/archtocentry.html
+%%MMDIR%%/templates/cs/archtocnombox.html
 %%MMDIR%%/templates/cs/article.html
 %%MMDIR%%/templates/cs/bounce.txt
 %%MMDIR%%/templates/cs/checkdbs.txt
@@ -744,14 +757,17 @@
 %%MMDIR%%/templates/cs/emptyarchive.html
 %%MMDIR%%/templates/cs/headfoot.html
 %%MMDIR%%/templates/cs/help.txt
+%%MMDIR%%/templates/cs/invite.txt
 %%MMDIR%%/templates/cs/listinfo.html
 %%MMDIR%%/templates/cs/masthead.txt
 %%MMDIR%%/templates/cs/newlist.txt
+%%MMDIR%%/templates/cs/nomoretoday.txt
 %%MMDIR%%/templates/cs/options.html
 %%MMDIR%%/templates/cs/postack.txt
 %%MMDIR%%/templates/cs/postauth.txt
 %%MMDIR%%/templates/cs/postheld.txt
 %%MMDIR%%/templates/cs/private.html
+%%MMDIR%%/templates/cs/probe.txt
 %%MMDIR%%/templates/cs/refuse.txt
 %%MMDIR%%/templates/cs/roster.html
 %%MMDIR%%/templates/cs/subauth.txt
@@ -1073,6 +1089,7 @@
 %%MMDIR%%/templates/fr/postauth.txt
 %%MMDIR%%/templates/fr/postheld.txt
 %%MMDIR%%/templates/fr/private.html
+%%MMDIR%%/templates/fr/probe.txt
 %%MMDIR%%/templates/fr/refuse.txt
 %%MMDIR%%/templates/fr/roster.html
 %%MMDIR%%/templates/fr/subauth.txt
@@ -1082,6 +1099,93 @@
 %%MMDIR%%/templates/fr/unsubauth.txt
 %%MMDIR%%/templates/fr/userpass.txt
 %%MMDIR%%/templates/fr/verify.txt
+%%MMDIR%%/templates/gl/admindbdetails.html
+%%MMDIR%%/templates/gl/admindbpreamble.html
+%%MMDIR%%/templates/gl/admindbsummary.html
+%%MMDIR%%/templates/gl/admlogin.html
+%%MMDIR%%/templates/gl/archidxentry.html
+%%MMDIR%%/templates/gl/archidxfoot.html
+%%MMDIR%%/templates/gl/archidxhead.html
+%%MMDIR%%/templates/gl/archlistend.html
+%%MMDIR%%/templates/gl/archliststart.html
+%%MMDIR%%/templates/gl/archtoc.html
+%%MMDIR%%/templates/gl/archtocentry.html
+%%MMDIR%%/templates/gl/article.html
+%%MMDIR%%/templates/gl/emptyarchive.html
+%%MMDIR%%/templates/gl/headfoot.html
+%%MMDIR%%/templates/gl/listinfo.html
+%%MMDIR%%/templates/gl/options.html
+%%MMDIR%%/templates/gl/private.html
+%%MMDIR%%/templates/gl/roster.html
+%%MMDIR%%/templates/gl/subscribe.html
+%%MMDIR%%/templates/gl/adminsubscribeack.txt
+%%MMDIR%%/templates/gl/adminunsubscribeack.txt
+%%MMDIR%%/templates/gl/approve.txt
+%%MMDIR%%/templates/gl/bounce.txt
+%%MMDIR%%/templates/gl/checkdbs.txt
+%%MMDIR%%/templates/gl/convert.txt
+%%MMDIR%%/templates/gl/cronpass.txt
+%%MMDIR%%/templates/gl/disabled.txt
+%%MMDIR%%/templates/gl/handle_opts.html
+%%MMDIR%%/templates/gl/help.txt
+%%MMDIR%%/templates/gl/invite.txt
+%%MMDIR%%/templates/gl/masthead.txt
+%%MMDIR%%/templates/gl/newlist.txt
+%%MMDIR%%/templates/gl/nomoretoday.txt
+%%MMDIR%%/templates/gl/postack.txt
+%%MMDIR%%/templates/gl/postauth.txt
+%%MMDIR%%/templates/gl/postheld.txt
+%%MMDIR%%/templates/gl/refuse.txt
+%%MMDIR%%/templates/gl/subauth.txt
+%%MMDIR%%/templates/gl/subscribeack.txt
+%%MMDIR%%/templates/gl/unsub.txt
+%%MMDIR%%/templates/gl/unsubauth.txt
+%%MMDIR%%/templates/gl/userpass.txt
+%%MMDIR%%/templates/gl/verify.txt
+%%MMDIR%%/templates/he/admindbdetails.html
+%%MMDIR%%/templates/he/admindbpreamble.html
+%%MMDIR%%/templates/he/admindbsummary.html
+%%MMDIR%%/templates/he/admlogin.html
+%%MMDIR%%/templates/he/archidxentry.html
+%%MMDIR%%/templates/he/archidxfoot.html
+%%MMDIR%%/templates/he/archidxhead.html
+%%MMDIR%%/templates/he/archlistend.html
+%%MMDIR%%/templates/he/archliststart.html
+%%MMDIR%%/templates/he/archtoc.html
+%%MMDIR%%/templates/he/archtocentry.html
+%%MMDIR%%/templates/he/archtocnombox.html
+%%MMDIR%%/templates/he/article.html
+%%MMDIR%%/templates/he/emptyarchive.html
+%%MMDIR%%/templates/he/headfoot.html
+%%MMDIR%%/templates/he/listinfo.html
+%%MMDIR%%/templates/he/options.html
+%%MMDIR%%/templates/he/private.html
+%%MMDIR%%/templates/he/roster.html
+%%MMDIR%%/templates/he/subscribe.html
+%%MMDIR%%/templates/he/adminsubscribeack.txt
+%%MMDIR%%/templates/he/adminunsubscribeack.txt
+%%MMDIR%%/templates/he/approve.txt
+%%MMDIR%%/templates/he/bounce.txt
+%%MMDIR%%/templates/he/checkdbs.txt
+%%MMDIR%%/templates/he/convert.txt
+%%MMDIR%%/templates/he/cronpass.txt
+%%MMDIR%%/templates/he/disabled.txt
+%%MMDIR%%/templates/he/help.txt
+%%MMDIR%%/templates/he/invite.txt
+%%MMDIR%%/templates/he/masthead.txt
+%%MMDIR%%/templates/he/newlist.txt
+%%MMDIR%%/templates/he/nomoretoday.txt
+%%MMDIR%%/templates/he/postack.txt
+%%MMDIR%%/templates/he/postauth.txt
+%%MMDIR%%/templates/he/postheld.txt
+%%MMDIR%%/templates/he/probe.txt
+%%MMDIR%%/templates/he/refuse.txt
+%%MMDIR%%/templates/he/subauth.txt
+%%MMDIR%%/templates/he/subscribeack.txt
+%%MMDIR%%/templates/he/unsub.txt
+%%MMDIR%%/templates/he/unsubauth.txt
+%%MMDIR%%/templates/he/userpass.txt
+%%MMDIR%%/templates/he/verify.txt
 %%MMDIR%%/templates/hr/admindbdetails.html
 %%MMDIR%%/templates/hr/admindbpreamble.html
 %%MMDIR%%/templates/hr/admindbsummary.html
@@ -1475,6 +1579,7 @@
 %%MMDIR%%/templates/pl/archliststart.html
 %%MMDIR%%/templates/pl/archtoc.html
 %%MMDIR%%/templates/pl/archtocentry.html
+%%MMDIR%%/templates/pl/archtocnombox.html
 %%MMDIR%%/templates/pl/article.html
 %%MMDIR%%/templates/pl/bounce.txt
 %%MMDIR%%/templates/pl/checkdbs.txt
@@ -1673,50 +1778,50 @@
 %%MMDIR%%/templates/ru/unsubauth.txt
 %%MMDIR%%/templates/ru/userpass.txt
 %%MMDIR%%/templates/ru/verify.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/admindbdetails.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/admindbpreamble.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/admindbsummary.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/adminsubscribeack.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/adminunsubscribeack.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/admlogin.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/approve.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archidxentry.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archidxfoot.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archidxhead.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archlistend.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archliststart.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archtoc.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archtocentry.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/archtocnombox.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/article.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/bounce.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/checkdbs.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/convert.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/cronpass.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/disabled.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/emptyarchive.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/headfoot.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/help.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/invite.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/listinfo.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/masthead.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/newlist.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/nomoretoday.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/options.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/postack.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/postauth.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/postheld.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/private.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/probe.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/refuse.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/roster.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/subauth.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/subscribe.html
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/subscribeack.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/unsub.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/unsubauth.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/userpass.txt
-%%SUB_SLOVAK%%%%MMDIR%%/templates/sk/verify.txt
+%%MMDIR%%/templates/sk/admindbdetails.html
+%%MMDIR%%/templates/sk/admindbpreamble.html
+%%MMDIR%%/templates/sk/admindbsummary.html
+%%MMDIR%%/templates/sk/admlogin.html
+%%MMDIR%%/templates/sk/archidxentry.html
+%%MMDIR%%/templates/sk/archidxfoot.html
+%%MMDIR%%/templates/sk/archidxhead.html
+%%MMDIR%%/templates/sk/archlistend.html
+%%MMDIR%%/templates/sk/archliststart.html
+%%MMDIR%%/templates/sk/archtoc.html
+%%MMDIR%%/templates/sk/archtocentry.html
+%%MMDIR%%/templates/sk/archtocnombox.html
+%%MMDIR%%/templates/sk/article.html
+%%MMDIR%%/templates/sk/emptyarchive.html
+%%MMDIR%%/templates/sk/headfoot.html
+%%MMDIR%%/templates/sk/listinfo.html
+%%MMDIR%%/templates/sk/options.html
+%%MMDIR%%/templates/sk/private.html
+%%MMDIR%%/templates/sk/roster.html
+%%MMDIR%%/templates/sk/subscribe.html
+%%MMDIR%%/templates/sk/adminsubscribeack.txt
+%%MMDIR%%/templates/sk/adminunsubscribeack.txt
+%%MMDIR%%/templates/sk/approve.txt
+%%MMDIR%%/templates/sk/bounce.txt
+%%MMDIR%%/templates/sk/checkdbs.txt
+%%MMDIR%%/templates/sk/convert.txt
+%%MMDIR%%/templates/sk/cronpass.txt
+%%MMDIR%%/templates/sk/disabled.txt
+%%MMDIR%%/templates/sk/help.txt
+%%MMDIR%%/templates/sk/invite.txt
+%%MMDIR%%/templates/sk/masthead.txt
+%%MMDIR%%/templates/sk/newlist.txt
+%%MMDIR%%/templates/sk/nomoretoday.txt
+%%MMDIR%%/templates/sk/postack.txt
+%%MMDIR%%/templates/sk/postauth.txt
+%%MMDIR%%/templates/sk/postheld.txt
+%%MMDIR%%/templates/sk/probe.txt
+%%MMDIR%%/templates/sk/refuse.txt
+%%MMDIR%%/templates/sk/subauth.txt
+%%MMDIR%%/templates/sk/subscribeack.txt
+%%MMDIR%%/templates/sk/unsub.txt
+%%MMDIR%%/templates/sk/unsubauth.txt
+%%MMDIR%%/templates/sk/userpass.txt
+%%MMDIR%%/templates/sk/verify.txt
 %%MMDIR%%/templates/sl/admindbdetails.html
 %%MMDIR%%/templates/sl/admindbpreamble.html
 %%MMDIR%%/templates/sl/admindbsummary.html
@@ -2059,6 +2164,7 @@
 %%MMDIR%%/tests/bounces/dsn_12.txt
 %%MMDIR%%/tests/bounces/dsn_13.txt
 %%MMDIR%%/tests/bounces/dsn_14.txt
+%%MMDIR%%/tests/bounces/dsn_15.txt
 %%MMDIR%%/tests/bounces/dumbass_01.txt
 %%MMDIR%%/tests/bounces/exim_01.txt
 %%MMDIR%%/tests/bounces/groupwise_01.txt
@@ -2078,6 +2184,8 @@
 %%MMDIR%%/tests/bounces/qmail_01.txt
 %%MMDIR%%/tests/bounces/qmail_02.txt
 %%MMDIR%%/tests/bounces/qmail_03.txt
+%%MMDIR%%/tests/bounces/qmail_04.txt
+%%MMDIR%%/tests/bounces/qmail_05.txt
 %%MMDIR%%/tests/bounces/sendmail_01.txt
 %%MMDIR%%/tests/bounces/simple_01.txt
 %%MMDIR%%/tests/bounces/simple_02.txt
@@ -2095,6 +2203,17 @@
 %%MMDIR%%/tests/bounces/simple_14.txt
 %%MMDIR%%/tests/bounces/simple_15.txt
 %%MMDIR%%/tests/bounces/simple_16.txt
+%%MMDIR%%/tests/bounces/simple_17.txt
+%%MMDIR%%/tests/bounces/simple_18.txt
+%%MMDIR%%/tests/bounces/simple_19.txt
+%%MMDIR%%/tests/bounces/simple_20.txt
+%%MMDIR%%/tests/bounces/simple_21.txt
+%%MMDIR%%/tests/bounces/simple_22.txt
+%%MMDIR%%/tests/bounces/simple_23.txt
+%%MMDIR%%/tests/bounces/simple_24.txt
+%%MMDIR%%/tests/bounces/simple_25.txt
+%%MMDIR%%/tests/bounces/simple_26.txt
+%%MMDIR%%/tests/bounces/simple_27.txt
 %%MMDIR%%/tests/bounces/sina_01.txt
 %%MMDIR%%/tests/bounces/smtp32_01.txt
 %%MMDIR%%/tests/bounces/smtp32_02.txt
@@ -2102,6 +2221,7 @@
 %%MMDIR%%/tests/bounces/smtp32_04.txt
 %%MMDIR%%/tests/bounces/smtp32_05.txt
 %%MMDIR%%/tests/bounces/smtp32_06.txt
+%%MMDIR%%/tests/bounces/smtp32_07.txt
 %%MMDIR%%/tests/bounces/yahoo_01.txt
 %%MMDIR%%/tests/bounces/yahoo_02.txt
 %%MMDIR%%/tests/bounces/yahoo_03.txt
@@ -2155,7 +2275,7 @@
 @dirrm %%MMDIR%%/templates/sv
 @dirrm %%MMDIR%%/templates/sr
 @dirrm %%MMDIR%%/templates/sl
-%%SUB_SLOVAK%%@dirrm %%MMDIR%%/templates/sk
+@dirrm %%MMDIR%%/templates/sk
 @dirrm %%MMDIR%%/templates/ru
 @dirrm %%MMDIR%%/templates/ro
 @dirrm %%MMDIR%%/templates/pt_BR
@@ -2170,6 +2290,8 @@
 @dirrm %%MMDIR%%/templates/ia
 @dirrm %%MMDIR%%/templates/hu
 @dirrm %%MMDIR%%/templates/hr
+@dirrm %%MMDIR%%/templates/he
+@dirrm %%MMDIR%%/templates/gl
 @dirrm %%MMDIR%%/templates/fr
 @dirrm %%MMDIR%%/templates/fi
 @dirrm %%MMDIR%%/templates/eu
@@ -2213,8 +2335,8 @@
 @dirrm %%MMDIR%%/messages/sr
 @dirrm %%MMDIR%%/messages/sl/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/sl
-%%SUB_SLOVAK%%@dirrm %%MMDIR%%/messages/sk/LC_MESSAGES
-%%SUB_SLOVAK%%@dirrm %%MMDIR%%/messages/sk
+@dirrm %%MMDIR%%/messages/sk/LC_MESSAGES
+@dirrm %%MMDIR%%/messages/sk
 @dirrm %%MMDIR%%/messages/ru/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/ru
 @dirrm %%MMDIR%%/messages/ro/LC_MESSAGES
@@ -2243,6 +2365,10 @@
 @dirrm %%MMDIR%%/messages/hu
 @dirrm %%MMDIR%%/messages/hr/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/hr
+@dirrm %%MMDIR%%/messages/he/LC_MESSAGES
+@dirrm %%MMDIR%%/messages/he
+@dirrm %%MMDIR%%/messages/gl/LC_MESSAGES
+@dirrm %%MMDIR%%/messages/gl
 @dirrm %%MMDIR%%/messages/fr/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/fr
 @dirrm %%MMDIR%%/messages/fi/LC_MESSAGES

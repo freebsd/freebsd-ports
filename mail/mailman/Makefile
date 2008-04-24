@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.9
-PORTREVISION=	5
+DISTVERSION=	2.1.10
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.list.org/
@@ -24,7 +23,6 @@ OPTIONS=	SENDMAIL "for use with sendmail" off \
 		POSTFIX "for use with postfix" off \
 		COURIER "for use with courier" off \
 		CHINESE "support for Chinese mailing lists" off \
-		SLOVAK "add Slovak translation" off \
 		HTDIG "htdig integration patches" off
 
 HAS_CONFIGURE=	yes
@@ -57,9 +55,9 @@ PLIST_SUB+=	MMDIR=${MM_DIR} IMGDIR=${IMGDIR}
 DOCFILES=	ACKNOWLEDGMENTS BUGS FAQ INSTALL NEWS README README-I18N.en \
 	  	README.CONTRIB README.NETSCAPE \
 		README.USERAGENT TODO UPGRADING \
-		admin/www/mailman-admin.txt \
-		admin/www/mailman-install.txt \
-		admin/www/mailman-member.txt
+		doc/mailman-admin.txt \
+		doc/mailman-install.txt \
+		doc/mailman-member.txt
 
 IMGFILES=	PythonPowered.png mailman.jpg mm-icon.png
 
@@ -121,14 +119,6 @@ RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 PLIST_SUB+=	SUB_HTDIG=""
 .else
 PLIST_SUB+=	SUB_HTDIG="@comment "
-.endif
-
-.if defined(WITH_SLOVAK)
-PATCH_SITES+=	http://people.freebsd.org/~mm/mailman/patches/
-PATCHFILES+=	sk-2.1.9-0.1.patch.gz
-PLIST_SUB+=	SUB_SLOVAK=""
-.else
-PLIST_SUB+=	SUB_SLOVAK="@comment "
 .endif
 
 pre-fetch:
