@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6eb1dc51-1244-11dd-bab7-0016179b2dd5">
+    <topic>phpmyadmin -- Username/Password Session File Information Disclosure</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><lt>2.11.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A phpMyAdmin security announcement report:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-2">
+	  <p>phpMyAdmin saves sensitive information like the MySQL username and
+	    password and the Blowfish secret key in session data, which might be
+	    unprotected on a shared host.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1567</cvename>
+      <url>http://secunia.com/advisories/29613/</url>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-3</url>
+    </references>
+    <dates>
+      <discovery>2008-03-31</discovery>
+      <entry>2008-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a7c5853-10a3-11dd-8eb8-00163e000016">
     <topic>libxine -- array index vulnerability</topic>
     <affects>
