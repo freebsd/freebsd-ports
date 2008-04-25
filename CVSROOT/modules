@@ -18293,6 +18293,7 @@ ytnef		ports/converters/ytnef
 ytree		ports/misc/ytree
 yudit		ports/editors/yudit
 yui		ports/editors/yui
+yuicompressor	ports/www/yuicompressor
 yydecode	ports/news/yydecode
 z80-asm		ports/devel/z80-asm
 z80asm		ports/devel/z80asm
