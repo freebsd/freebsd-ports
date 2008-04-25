@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+bin/awesome
+bin/awesome-client
+bin/awesome-message
+%%DATADIR%%/icons/layouts/dwindle.png
+%%DATADIR%%/icons/layouts/dwindlew.png
+%%DATADIR%%/icons/layouts/floating.png
+%%DATADIR%%/icons/layouts/floatingw.png
+%%DATADIR%%/icons/layouts/max.png
+%%DATADIR%%/icons/layouts/maxw.png
+%%DATADIR%%/icons/layouts/spiral.png
+%%DATADIR%%/icons/layouts/spiralw.png
+%%DATADIR%%/icons/layouts/tile.png
+%%DATADIR%%/icons/layouts/tilebottom.png
+%%DATADIR%%/icons/layouts/tilebottomw.png
+%%DATADIR%%/icons/layouts/tileleft.png
+%%DATADIR%%/icons/layouts/tileleftw.png
+%%DATADIR%%/icons/layouts/tiletop.png
+%%DATADIR%%/icons/layouts/tiletopw.png
+%%DATADIR%%/icons/layouts/tilew.png
+@dirrm %%DATADIR%%/icons/layouts
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
