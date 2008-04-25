@@ -1480,6 +1480,7 @@
     SUBDIR += yahoo-ui
     SUBDIR += yaws
     SUBDIR += youtube_dl
+    SUBDIR += yuicompressor
     SUBDIR += zend-framework
     SUBDIR += zenphoto
     SUBDIR += zerowait-httpd
