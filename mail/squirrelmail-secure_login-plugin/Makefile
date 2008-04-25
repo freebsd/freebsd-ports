@@ -7,6 +7,7 @@
 
 PORTNAME=	secure_login
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=	squirrelmail-
