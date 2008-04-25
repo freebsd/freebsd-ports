@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	arcconf
-DISTVERSION=	v5_20_17414
+DISTVERSION=	v5_30_17509
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.adaptec.com/raid/storage_manager/
 DISTNAME=	cli_freebsd${DIST_EXT}_${DISTVERSION}
