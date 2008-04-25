@@ -7,6 +7,7 @@
 
 PORTNAME=	nmm
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.motama.com/download/
 
@@ -78,8 +79,6 @@ post-install:
 #
 ## TODO
 #
-# - OSS audio support
-#	to be written from scratch
 # - libraw1394 (SF)
 #	for firewire support
 # - libliveMedia (live555.com)
