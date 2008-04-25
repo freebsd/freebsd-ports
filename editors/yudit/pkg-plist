@@ -22,6 +22,7 @@ bin/yudit
 %%DATADIR%%/data/Berbere-etendu.my
 %%DATADIR%%/data/Berbere-standard.my
 %%DATADIR%%/data/BlissSymbolics.my
+%%DATADIR%%/data/Bulgarian-Translit.my
 %%DATADIR%%/data/Bulgarian.my
 %%DATADIR%%/data/CS-qwerty.my
 %%DATADIR%%/data/CS.my
@@ -97,6 +98,7 @@ bin/yudit
 %%DATADIR%%/data/OldItalic.my
 %%DATADIR%%/data/Oriya-Inscript.my
 %%DATADIR%%/data/Oriya.my
+%%DATADIR%%/data/Pali.my
 %%DATADIR%%/data/Persian.my
 %%DATADIR%%/data/Polish-slash.my
 %%DATADIR%%/data/Polish.my
@@ -154,6 +156,7 @@ bin/yudit
 %%DATADIR%%/data/cluster.my
 %%DATADIR%%/data/cp-1250.my
 %%DATADIR%%/data/cp-1251.my
+%%DATADIR%%/data/cp-1252.my
 %%DATADIR%%/data/example.my
 %%DATADIR%%/data/gb-18030.my
 %%DATADIR%%/data/gb-2312-l.my
@@ -207,15 +210,20 @@ bin/yudit
 %%DATADIR%%/doc/COPYING.TXT
 %%DATADIR%%/doc/FAQ.TXT
 %%DATADIR%%/doc/HOWTO-arabic.txt
+%%DATADIR%%/doc/HOWTO-baybayin.txt
 %%DATADIR%%/doc/HOWTO-berber.txt
 %%DATADIR%%/doc/HOWTO-bidi.txt
+%%DATADIR%%/doc/HOWTO-build.txt
 %%DATADIR%%/doc/HOWTO-configure.txt
 %%DATADIR%%/doc/HOWTO-devanagari.txt
 %%DATADIR%%/doc/HOWTO-freehand.txt
+%%DATADIR%%/doc/HOWTO-georgian.txt
+%%DATADIR%%/doc/HOWTO-greekancient.txt
 %%DATADIR%%/doc/HOWTO-japanese.txt
 %%DATADIR%%/doc/HOWTO-keymap.txt
 %%DATADIR%%/doc/HOWTO-malayalam.txt
 %%DATADIR%%/doc/HOWTO-rovasiras.txt
+%%DATADIR%%/doc/HOWTO-syntax.txt
 %%DATADIR%%/doc/HOWTO-tamil.txt
 %%DATADIR%%/doc/HOWTO-tibetan.txt
 %%DATADIR%%/doc/HOWTO-vietnamese.txt
@@ -250,36 +258,69 @@ bin/yudit
 %%DATADIR%%/fonts/yudit.hex
 %%DATADIR%%/fonts/yudit.ttf
 %%DATADIR%%/locale/am/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/am/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/ar/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ar/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/az/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/az/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/bg/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/bg/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/bn/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/bn/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/cs/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/cs/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/de/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/de/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/el/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/el/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/en/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/en/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/es/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/es/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/fi/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/fi/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/fr/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/fr/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/ga/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ga/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/gu/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/gu/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/hi/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/hi/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/hu/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/hu/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/ja/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ja/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/ko/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ko/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/mn/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/mn/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/mr/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/mr/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/pa/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/pa/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/pl/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/pl/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/ru/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ru/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/sl/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/sl/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/sr/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/sr/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/ta/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ta/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/uk/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/uk/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/ur/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/ur/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/vi/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/vi/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/yi/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/yi/LC_MESSAGES/messages.po
 %%DATADIR%%/locale/zh/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/zh/LC_MESSAGES/messages.po
+%%DATADIR%%/locale/zh_CN/LC_MESSAGES/messages.mo
+%%DATADIR%%/locale/zh_CN/LC_MESSAGES/messages.po
 %%DATADIR%%/src/ASCII-IPA.kmap
 %%DATADIR%%/src/ArabTeX.kmap
 %%DATADIR%%/src/Arabic.kmap
@@ -299,6 +340,7 @@ bin/yudit
 %%DATADIR%%/src/Berbere-etendu.kmap
 %%DATADIR%%/src/Berbere-standard.kmap
 %%DATADIR%%/src/BlissSymbolics.kmap
+%%DATADIR%%/src/Bulgarian-Translit.kmap
 %%DATADIR%%/src/Bulgarian.kmap
 %%DATADIR%%/src/CS-qwerty.kmap
 %%DATADIR%%/src/CS.kmap
@@ -361,6 +403,7 @@ bin/yudit
 %%DATADIR%%/src/Mongolian.kmap
 %%DATADIR%%/src/Oriya-Inscript.kmap
 %%DATADIR%%/src/Oriya.kmap
+%%DATADIR%%/src/Pali.kmap
 %%DATADIR%%/src/Persian.kmap
 %%DATADIR%%/src/Polish-slash.kmap
 %%DATADIR%%/src/Polish.kmap
@@ -409,7 +452,11 @@ bin/yudit
 %%DATADIR%%/src/Vietnamese.kmap
 %%DATADIR%%/src/Welsh.kmap
 %%DATADIR%%/src/Yiddish.kmap
+%%DATADIR%%/syntax/README.TXT
+@dirrmtry %%DATADIR%%/syntax
 @dirrmtry %%DATADIR%%/src
+@dirrmtry %%DATADIR%%/locale/zh_CN/LC_MESSAGES
+@dirrmtry %%DATADIR%%/locale/zh_CN
 @dirrmtry %%DATADIR%%/locale/zh/LC_MESSAGES
 @dirrmtry %%DATADIR%%/locale/zh
 @dirrmtry %%DATADIR%%/locale/yi/LC_MESSAGES
