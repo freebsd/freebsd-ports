@@ -40,6 +40,10 @@ MAN1=		ace-gperf.1
 EXTRA_PATCHES=	${FILESDIR}/extra-ace-OS_NS_netdb.inl
 .endif
 
+.if ${OSVERSION} >= 800024
+BROKEN=		does not compile
+.endif
+
 post-extract:
 	@${MKDIR} ${BUILD_WRKSRC}
 
