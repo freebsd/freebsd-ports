@@ -562,6 +562,7 @@
 %%BLOGDIR%%/pivot/lamer_protection.php
 %%BLOGDIR%%/pivot/langs/index.html
 %%BLOGDIR%%/pivot/langs/pvl_de.php
+%%BLOGDIR%%/pivot/langs/pvl_de_formal.php
 %%BLOGDIR%%/pivot/langs/pvl_de_utf8.php
 %%BLOGDIR%%/pivot/langs/pvl_dk_utf8.php
 %%BLOGDIR%%/pivot/langs/pvl_eng.php
