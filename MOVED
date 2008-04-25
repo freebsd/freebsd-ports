@@ -3459,3 +3459,4 @@ net/dhcp-agent||2008-04-25|Has expired: Dhcp-agent has not been updated since 20
 net/ocaml-netclient||2008-04-25|Has expired: is part of ocaml-net
 net/samplicator||2008-04-25|Has expired: Project has vanished
 graphics/entice||2008-04-25|Has expired: Broken and unmaintained
+security/wpa_supplicant||2008-04-26|Obsolete, newer version in base
