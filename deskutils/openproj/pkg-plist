@@ -19,7 +19,7 @@
 %%DATADIR%%/license/third-party/third-party-licenses-with-build-libs.html
 %%DATADIR%%/license/third-party/xstream.txt
 %%DATADIR%%/openproj.jar
-%%DATADIR%%/readme.txt
+%%DATADIR%%/readme.html
 bin/openproj
 @dirrm %%DATADIR%%/license/third-party
 @dirrm %%DATADIR%%/license

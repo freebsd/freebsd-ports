@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openproj
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF
 
@@ -20,7 +20,7 @@ JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}-${PORTVERSION}
-DATAFILES=	lib license openproj.jar readme.txt
+DATAFILES=	lib license openproj.jar readme.html
 
 SUB_FILES=	openproj.sh
 
