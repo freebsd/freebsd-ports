@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	asv
-PORTVERSION=	0.4
-PORTREVISION=	4
+PORTVERSION=	0.5
 CATEGORIES=	textproc python
-MASTER_SITES=	http://tratt.net/laurie/python/asv/releases/
+MASTER_SITES=	http://tratt.net/laurie/computing/python/asv/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +16,12 @@ COMMENT=	An extensible Python module to parse simple text file formats like CSV
 
 USE_PYTHON=	yes
 
-ASV_BASEDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages
+PORTDOCS=	INSTALL README THANKS
+PORTEXAMPLES=	asv_example.py example_data.csv
+PLIST_FILES=	bin/asv \
+		%%PYTHON_SITELIBDIR%%/ASV.py \
+		%%PYTHON_SITELIBDIR%%/ASV.pyc \
+		%%PYTHON_SITELIBDIR%%/ASV.pyo
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
@@ -27,18 +31,20 @@ pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
 
 do-install:
-	@printf '#!/bin/sh\n${PYTHON_CMD} ${ASV_BASEDIR}/ASV.py "$$@"\n' \
+	@printf '#!/bin/sh\n${PYTHON_CMD} ${PYTHONPREFIX_SITELIBDIR}/ASV.py "$$@"\n' \
 		> ${WRKDIR}/asv.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/asv.sh ${PREFIX}/bin/asv
-	@${INSTALL_DATA} ${WRKSRC}/ASV.* ${ASV_BASEDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/asv.sh ${PREFIX}/bin/asv
+	${INSTALL_DATA} ${WRKSRC}/ASV.* ${PYTHONPREFIX_SITELIBDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for docfile in INSTALL README THANKS
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+.for docfile in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-.for egfile in asv_example.* example_data.csv
-	@${INSTALL_DATA} ${WRKSRC}/${egfile} ${EXAMPLESDIR}
+.for egfile in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${egfile} ${EXAMPLESDIR}
 .endfor
 .endif
 
