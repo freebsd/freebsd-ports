@@ -15810,6 +15810,7 @@ stress		ports/sysutils/stress
 stringencoders	ports/devel/stringencoders
 strobe		ports/security/strobe
 stroq		ports/games/stroq
+structuresynth	ports/graphics/structuresynth
 stuffit		ports/archivers/stuffit
 stumpwm		ports/x11-wm/stumpwm
 stund		ports/net/stund
