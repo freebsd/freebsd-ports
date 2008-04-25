@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="67bd39ba-12b5-11dd-bab7-0016179b2dd5">
+    <topic>firefox -- javascript harbage collector vulnerability</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>2.0.0.14,1</lt></range>
+      </package>
+      <package>
+        <name>linux-firefox</name>
+	<range><lt>2.0.0.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Foundation reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/announce/2008/mfsa2008-20.html">
+	  <p>Fixes for security problems in the JavaScript engine described in
+	    MFSA 2008-15 introduced a stability problem, where some users experienced
+	    crashes during JavaScript garbage collection. This is being fixed primarily
+	    to address stability concerns. We have no demonstration that this particular
+	    crash is exploitable but are issuing this advisory because some crashes of this
+	    type have been shown to be exploitable in the past.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1237</cvename>
+      <cvename>CVE-2008-1380</cvename>
+      <bid>28818</bid>
+      <url>http://secunia.com/advisories/29787</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-20.html</url>
+    </references>
+    <dates>
+      <discovery>2008-04-16</discovery>
+      <entry>2008-04-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="57c705d6-12ae-11dd-bab7-0016179b2dd5">
     <topic>png -- unknown chunk processing uninitialized memory access</topic>
     <affects>
