@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	parsing
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.11
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pyparsing
+MASTER_SITES=	SF/pyparsing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyparsing-${PORTVERSION}
 
@@ -17,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General parsing module for Python
 
 USE_PYTHON=	2.3+
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyparsing
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
@@ -25,9 +24,12 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/htmldoc/* ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
