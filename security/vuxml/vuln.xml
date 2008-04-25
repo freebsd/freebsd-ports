@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b84a992a-12ab-11dd-bab7-0016179b2dd5">
+    <topic>openfire -- unspecified denial of service</topic>
+    <affects>
+      <package>
+	<name>openfire</name>
+	<range><lt>3.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/29751">
+	  <p>A vulnerability has been reported in Openfire, which can be exploited
+	    by malicious people to cause a Denial of Service.</p>
+	  <p>The vulnerability is caused due to an unspecified error and can be
+	    exploited to cause a Denial of Service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1728</cvename>
+      <bid>28722</bid>
+      <url>http://secunia.com/advisories/29751</url>
+      <url>http://www.igniterealtime.org/issues/browse/JM-1289</url>
+    </references>
+    <dates>
+      <discovery>2008-04-10</discovery>
+      <entry>2008-04-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f6377f08-12a7-11dd-bab7-0016179b2dd5">
     <topic>php -- integer overflow vulnerability</topic>
     <affects>
