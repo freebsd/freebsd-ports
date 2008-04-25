@@ -1,39 +1,12 @@
---- ./ptx/Makefile.mk.orig	Tue Nov  8 06:40:54 2005
-+++ ./ptx/Makefile.mk	Tue Feb 21 06:44:24 2006
-@@ -13,7 +13,7 @@
- install:
- 	$(INSTALL) -c ptx $(ROOT)$(BINDIR)/ptx
- 	$(STRIP) $(ROOT)$(BINDIR)/ptx
--	$(INSTALL) -c -m 644 ptx.1b $(ROOT)$(MANDIR)/man1b/ptx.1b
-+	$(INSTALL) -c -m 644 ptx.1b $(ROOT)$(MANDIR)/man1/ptx.1
- 	test -d $(ROOT)$(LIBDIR) || mkdir -p $(ROOT)$(LIBDIR)
- 	$(INSTALL) -c -m 644 eign $(ROOT)$(LIBDIR)/eign
- 
---- ./troff/troff.d/tmac.d/Makefile.mk.orig	Mon Dec  5 07:59:40 2005
-+++ ./troff/troff.d/tmac.d/Makefile.mk	Tue Feb 21 06:44:24 2006
-@@ -17,9 +17,9 @@
- 	do \
- 		$(INSTALL) -c -m 644 $$i $(ROOT)$(MACDIR)/$$i || exit; \
- 	done
--	test -d $(ROOT)$(MANDIR)/man7b || mkdir -p $(ROOT)$(MANDIR)/man7b
--	$(INSTALL) -c -m 644 mcolor.7b $(ROOT)$(MANDIR)/man7b/mcolor.7b
--	$(INSTALL) -c -m 644 mpictures.7b $(ROOT)$(MANDIR)/man7b/mpictures.7b
-+	test -d $(ROOT)$(MANDIR)/man7 || mkdir -p $(ROOT)$(MANDIR)/man7
-+	$(INSTALL) -c -m 644 mcolor.7b $(ROOT)$(MANDIR)/man7/mcolor.7
-+	$(INSTALL) -c -m 644 mpictures.7b $(ROOT)$(MANDIR)/man7/mpictures.7
- 
- clean:
- 	rm -f andoc bib doc e m s pm
 --- ./troff/troff.d/Makefile.mk.orig	Thu Dec 22 08:23:54 2005
 +++ ./troff/troff.d/Makefile.mk	Tue Feb 21 06:44:24 2006
-@@ -29,8 +29,8 @@
+@@ -29,7 +29,7 @@
  	$(STRIP) $(ROOT)$(BINDIR)/ta
  	$(INSTALL) -c otfdump $(ROOT)$(BINDIR)/otfdump
  	$(STRIP) $(ROOT)$(BINDIR)/otfdump
 -	$(INSTALL) -c -m 644 troff.1b $(ROOT)$(MANDIR)/man1b/troff.1b
--	$(INSTALL) -c -m 644 otfdump.1b $(ROOT)$(MANDIR)/man1b/otfdump.1b
 +	$(INSTALL) -c -m 644 troff.1b $(ROOT)$(MANDIR)/man1/troff.1
-+	$(INSTALL) -c -m 644 otfdump.1b $(ROOT)$(MANDIR)/man1/otfdump.1
+	$(INSTALL) -c -m 644 otfdump.1 $(ROOT)$(MANDIR)/man1/otfdump.1
  
  clean:
  	rm -f $(OBJ) draw.o ta.o troff ta otfdump otfdump.o otfdump_version.o \
@@ -75,17 +48,6 @@
  
  clean:
  	rm -f $(OBJ) checknr core log *~
---- ./grap/Makefile.mk.orig	Sun Nov  6 06:56:11 2005
-+++ ./grap/Makefile.mk	Tue Feb 21 06:44:24 2006
-@@ -20,7 +20,7 @@
- 	$(STRIP) $(ROOT)$(BINDIR)/grap
- 	test -d $(ROOT)$(LIBDIR) || mkdir -p $(ROOT)$(LIBDIR)
- 	$(INSTALL) -c -m 644 grap.defines $(ROOT)$(LIBDIR)/grap.defines
--	$(INSTALL) -c -m 644 grap.1b $(ROOT)$(MANDIR)/man1b/grap.1b
-+	$(INSTALL) -c -m 644 grap.1b $(ROOT)$(MANDIR)/man1/grap.1
- 
- clean:
- 	rm -f $(OBJ) grapl.c grap.c y.tab.h grap core log *~
 --- ./eqn/checkeq.d/Makefile.mk.orig	Tue Aug 16 09:21:32 2005
 +++ ./eqn/checkeq.d/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -14,8 +14,8 @@
@@ -151,17 +113,6 @@
  
  clean:
  	rm -f $(OBJ) tbl core log *~
---- ./picpack/Makefile.mk.orig	Thu Sep 22 02:50:35 2005
-+++ ./picpack/Makefile.mk	Tue Feb 21 06:44:24 2006
-@@ -13,7 +13,7 @@
- install:
- 	$(INSTALL) -c picpack $(ROOT)$(BINDIR)/picpack
- 	$(STRIP) $(ROOT)$(BINDIR)/picpack
--	$(INSTALL) -c -m 644 picpack.1b $(ROOT)$(MANDIR)/man1b/picpack.1b
-+	$(INSTALL) -c -m 644 picpack.1b $(ROOT)$(MANDIR)/man1/picpack.1
- 
- clean:
- 	rm -f $(OBJ) picpack core log *~
 --- ./vgrind/Makefile.mk.orig	Thu Oct 27 07:46:35 2005
 +++ ./vgrind/Makefile.mk	Tue Feb 21 06:44:24 2006
 @@ -26,7 +26,7 @@
@@ -173,14 +124,3 @@
  
  clean:
  	rm -f $(OBJ) vfontedpr vgrind retest retest.o core log *~
---- ./pic/Makefile.mk.orig	Tue Oct 18 08:48:45 2005
-+++ ./pic/Makefile.mk	Tue Feb 21 06:44:24 2006
-@@ -19,7 +19,7 @@
- install:
- 	$(INSTALL) -c pic $(ROOT)$(BINDIR)/pic
- 	$(STRIP) $(ROOT)$(BINDIR)/pic
--	$(INSTALL) -c -m 644 pic.1b $(ROOT)$(MANDIR)/man1b/pic.1b
-+	$(INSTALL) -c -m 644 pic.1b $(ROOT)$(MANDIR)/man1/pic.1
- 
- clean:
- 	rm -f $(OBJ) picl.c picy.c y.tab.h pic core log *~
