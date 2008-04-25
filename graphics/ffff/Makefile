@@ -7,7 +7,7 @@
 
 PORTNAME=	ffff
 PORTVERSION=	323
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 DISTNAME=	FFFF${PORTVERSION}-src
@@ -15,17 +15,17 @@ DISTNAME=	FFFF${PORTVERSION}-src
 MAINTAINER=	rossiya@gmail.com
 COMMENT=	A fast mandelbrot fractal generator
 
-
+USE_XORG=	x11 xmu xext
 USE_DOS2UNIX=	yes
-USE_GL=		glut
+USE_GL=		gl glut
 USE_ZIP=	yes
 
 SOURCE=		FFFF3 FragmentProgram FragmentProgramARB10 GPUProgram \
 		PixelBuffer VertexProgram VertexProgramATI VertexProgramNV \
 		extensions vpext
 
-CXXFLAGS+=	-I${LOCALBASE}/include/GL ${PTHREAD_CFLAGS} \
-		-D__linux__
+CXXFLAGS+=	-I${LOCALBASE}/include/GL -D__linux__ -I${LOCALBASE}/include/ \
+		${PTHREAD_CFLAGS} 
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lglut -lGL -lXext -lX11 -lXmu \
 		 -lGLU -lm
 
