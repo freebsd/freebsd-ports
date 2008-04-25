@@ -1,0 +1,11 @@
+--- configure.orig	2008-04-25 20:11:19.000000000 +0200
++++ configure	2008-04-25 20:11:30.000000000 +0200
+@@ -11755,7 +11755,7 @@
+ {
+ 
+        int __xmknodat  ( int ver,
+-                         inf dirfd,
++                         int dirfd,
+                          const char *pathname ,
+                          mode_t  mode ,  dev_t dev);
+ 
