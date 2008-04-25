@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	yudit
-PORTVERSION=	2.8.1
-PORTREVISION=	2
+PORTVERSION=	2.9.0
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/editors/X
+		SUNSITE/apps/editors/X
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-lingual unicode text editor with TTF support
 
-USE_GETTEXT=	yes
 USE_XORG=	x11
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LC_ALL=
-GNU_CONFIGURE=	YES
+USE_GNOME=	gnometarget
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LC_ALL=
 MAKE_ENV=	LC_ALL=
 MAN1=		mytool.1 uniconv.1 uniprint.1
 USE_GMAKE=	YES
