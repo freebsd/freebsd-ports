@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libntlm
-PORTVERSION=	0.4.2
+PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 
