@@ -10,6 +10,7 @@ bin/qucshelp
 bin/qucslib
 bin/qucstrans
 bin/qucsveri
+%%DATADIR%%/bitmaps/MESFET.png
 %%DATADIR%%/bitmaps/ac.png
 %%DATADIR%%/bitmaps/ac_current.png
 %%DATADIR%%/bitmaps/ac_voltage.png
@@ -36,6 +37,8 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/coaxial.png
 %%DATADIR%%/bitmaps/coplanar.png
 %%DATADIR%%/bitmaps/coupler.png
+%%DATADIR%%/bitmaps/cpw.png
+%%DATADIR%%/bitmaps/cpw_back.png
 %%DATADIR%%/bitmaps/cpwgap.png
 %%DATADIR%%/bitmaps/cpwopen.png
 %%DATADIR%%/bitmaps/cpwshort.png
@@ -48,6 +51,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/dcfeed.png
 %%DATADIR%%/bitmaps/deactiv.png
 %%DATADIR%%/bitmaps/dflipflop.png
+%%DATADIR%%/bitmaps/diac.png
 %%DATADIR%%/bitmaps/digi.png
 %%DATADIR%%/bitmaps/digi_source.png
 %%DATADIR%%/bitmaps/diode.png
@@ -86,6 +90,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/isolator.png
 %%DATADIR%%/bitmaps/jkflipflop.png
 %%DATADIR%%/bitmaps/line.png
+%%DATADIR%%/bitmaps/log_amp.png
 %%DATADIR%%/bitmaps/marker.png
 %%DATADIR%%/bitmaps/microstrip.png
 %%DATADIR%%/bitmaps/mirror.png
@@ -127,11 +132,14 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/pmosfet.png
 %%DATADIR%%/bitmaps/pmosfet_sub.png
 %%DATADIR%%/bitmaps/pnp.png
+%%DATADIR%%/bitmaps/pnp_therm.png
 %%DATADIR%%/bitmaps/pnpsub.png
+%%DATADIR%%/bitmaps/pnpsub_therm.png
 %%DATADIR%%/bitmaps/pointer.png
 %%DATADIR%%/bitmaps/polar.png
 %%DATADIR%%/bitmaps/polarsmith.png
 %%DATADIR%%/bitmaps/port.png
+%%DATADIR%%/bitmaps/potentiometer.png
 %%DATADIR%%/bitmaps/previous.png
 %%DATADIR%%/bitmaps/pshifter.png
 %%DATADIR%%/bitmaps/quit.png
@@ -144,6 +152,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/relais.png
 %%DATADIR%%/bitmaps/resistor.png
 %%DATADIR%%/bitmaps/resistor_us.png
+%%DATADIR%%/bitmaps/rfedd.png
 %%DATADIR%%/bitmaps/rotate_ccw.png
 %%DATADIR%%/bitmaps/rsflipflop.png
 %%DATADIR%%/bitmaps/smith.png
@@ -163,6 +172,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/tabular.png
 %%DATADIR%%/bitmaps/text.png
 %%DATADIR%%/bitmaps/textnew.png
+%%DATADIR%%/bitmaps/thyristor.png
 %%DATADIR%%/bitmaps/timing.png
 %%DATADIR%%/bitmaps/tiny.button.qucs.xpm
 %%DATADIR%%/bitmaps/tiny.qucs.xpm
@@ -171,6 +181,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/top.png
 %%DATADIR%%/bitmaps/tran.png
 %%DATADIR%%/bitmaps/transformer.png
+%%DATADIR%%/bitmaps/triac.png
 %%DATADIR%%/bitmaps/truth.png
 %%DATADIR%%/bitmaps/twistedpair.png
 %%DATADIR%%/bitmaps/undo.png
