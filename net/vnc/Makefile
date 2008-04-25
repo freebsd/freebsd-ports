@@ -17,6 +17,9 @@ DIST_SUBDIR=	xc
 MAINTAINER=	james@now.ie
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
+RUN_DEPENDS=	xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts \
+		xauth:${PORTSDIR}/x11/xauth
+
 GNU_CONFIGURE=	yes
 # The vnc supplied zlib seg. faults if compiled with -O
 CONFIGURE_ARGS=	--with-installed-zlib
