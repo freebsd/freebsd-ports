@@ -54,7 +54,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CVE-2008-04-21</cvename>
+      <cvename>CVE-2008-1845</cvename>
       <url>http://secunia.com/advisories/29803/</url>
       <url>http://www.mirbsd.org/mksh.htm#clog</url>
     </references>
