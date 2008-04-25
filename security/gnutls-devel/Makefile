@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.7
 CATEGORIES=	security net
 MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/ \
 		ftp://alpha.gnu.org/gnu/gnutls/
@@ -31,7 +31,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-included-lzo
+CONFIGURE_ARGS+=	--with-included-lzo --disable-guile
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>

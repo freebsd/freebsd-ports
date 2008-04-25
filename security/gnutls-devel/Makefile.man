@@ -88,6 +88,10 @@ MAN3=	\
 	gnutls_compression_set_priority.3 \
 	gnutls_credentials_clear.3 \
 	gnutls_credentials_set.3 \
+	gnutls_crypto_cipher_register.3 \
+	gnutls_crypto_digest_register.3 \
+	gnutls_crypto_mac_register.3 \
+	gnutls_crypto_rnd_register.3 \
 	gnutls_db_check_entry.3 \
 	gnutls_db_get_ptr.3 \
 	gnutls_db_remove_session.3 \

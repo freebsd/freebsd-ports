@@ -20,6 +20,7 @@ info/gnutls-logo.png
 info/gnutls-objects.png
 info/gnutls-x509.png
 include/gnutls/compat.h
+include/gnutls/crypto.h
 include/gnutls/extra.h
 include/gnutls/gnutls.h
 include/gnutls/openpgp.h
