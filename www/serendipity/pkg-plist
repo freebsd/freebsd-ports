@@ -1502,6 +1502,7 @@ www/serendipity/bundled-libs/.current_version
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/plugin_remoterss.tpl
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/serendipity_plugin_remoterss.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cs.inc.php
