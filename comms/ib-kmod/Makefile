@@ -24,6 +24,12 @@ KMODDIR?=	/boot/modules
 PLIST_FILES=	"@cwd ${KMODDIR}" \
 		if_ib.ko
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+IGNORE=		fails to compile on versions of FreeBSD 7
+.endif
+
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)
 	@${ECHO} "*************************************************"; \
@@ -39,4 +45,4 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
