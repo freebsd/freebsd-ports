@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		mksh
-PORTVERSION=		R33b
+PORTVERSION=		R33d
 CATEGORIES=		shells
 MASTER_SITES=		http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 			http://pub.allbsd.org/MirOS/dist/mir/mksh/
@@ -20,9 +20,6 @@ WRKSRC=			${WRKDIR}/${PORTNAME}
 MAN1=			mksh.1
 PLIST_FILES=		bin/mksh share/examples/mksh/dot.mkshrc
 PLIST_DIRS=		share/examples/mksh
-
-PKGINSTALL=		pkg-install
-PKGDEINSTALL=		pkg-deinstall
 
 .include <bsd.port.pre.mk>
 
@@ -40,12 +37,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dot.mkshrc ${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/mksh.1 ${MANPREFIX}/man/man1
 
-pre-install:
-	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
-		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
-	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${ECHO_MSG} "updating /etc/shells"
+	@${CP} /etc/shells /etc/shells.bak
+	@(${GREP} -v ${PREFIX}/bin/mksh /etc/shells.bak; \
+	${ECHO_CMD} ${PREFIX}/bin/mksh) > /etc/shells
+	@${RM} /etc/shells.bak
 
 .include <bsd.port.post.mk>
