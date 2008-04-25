@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common/Email/Address/.packlist
+%%SITE_PERL%%/Regexp/Common/Email/Address.pm
+@dirrmtry %%SITE_PERL%%/Regexp/Common/Email
+@dirrmtry %%SITE_PERL%%/Regexp/Common
+@dirrmtry %%SITE_PERL%%/Regexp
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common/Email/Address
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common/Email
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Common
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp
