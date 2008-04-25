@@ -51,6 +51,7 @@ MAN1=		${OURTARGET}-addr2line.1 \
 INFO=		${OURTARGET}-as \
 		${OURTARGET}-bfd \
 		${OURTARGET}-binutils \
+		${OURTARGET}-gprof \
 		${OURTARGET}-ld
 
 PLIST_FILES=	bin/${OURTARGET}-addr2line \
