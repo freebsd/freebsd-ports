@@ -1,11 +1,10 @@
 bin/crafty
-lib/crafty/book.lrn
 lib/crafty/books.bin
 lib/crafty/crafty.hlp
-lib/crafty/position.bin
-lib/crafty/position.lrn
 share/doc/crafty/crafty.doc.ascii
 share/doc/crafty/crafty.doc.ps
+share/doc/crafty/bitmaps.tgz
+share/doc/crafty/sound.zip
 @dirrm share/doc/crafty
 @dirrm lib/crafty/cpf
 @dirrm lib/crafty
