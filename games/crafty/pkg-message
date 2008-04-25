@@ -1,7 +1,21 @@
 
-This package is set to allow per-user config files, and a shared
-books directory.  To accomplish this, crafty is setuid nobody, and
-the books and learning information is owned by the user 'nobody.'
+This package is set to allow per-user config files, and a shared books
+directory.  To accomplish this, crafty is setgid nobody, and the books
+and learning information are owned by the user 'nobody.'
 
 The location values are tunable, see message when make is issued.
 
+		** IMPORTANT **
+
+IF YOU ARE UPGRADING TO THIS VERSION, YOU WILL NEED TO DE-INSTALL ANY
+OPENING BOOKS YOU HAVE AS THE FORMATS HAVE CHANGED.  SIMPLY UNINSTALL
+AND REBUILD FROM THE PORT (NOT PACKAGE) AND THEY'LL BE REBUILT BY THE
+ENGINE IN THE NEW FORMAT.
+
+If you have an SMP system, add a line to your ~/.craftyrc file to the
+effect:
+
+smpmt=2 (or however many cpus you have)
+
+Do not set this higher than you really have, or performance will
+actually drop.

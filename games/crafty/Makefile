@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	crafty
-PORTVERSION=	20.14
-PORTREVISION=	2
+PORTVERSION=	22.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/:data \
 		ftp://ftp.cis.uab.edu/pub/hyatt/documentation/:doc \
-		ftp://ftp.cis.uab.edu/pub/hyatt/source/:src
+		ftp://ftp.cis.uab.edu/pub/hyatt/source/:src \
+		ftp://ftp.cis.uab.edu/pub/hyatt/book/:utils
 DISTFILES=	crafty-${PORTVERSION}.zip:src \
 		start.pgn:data
 DIST_SUBDIR=	crafty
@@ -20,12 +20,14 @@ EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 MAINTAINER=	shoemaker@bluebottle.com
 COMMENT=	A chess programm for playing and analyzing games
 
-USE_ZIP=        yes
+USE_ZIP=	yes
 USE_GMAKE=	yes
 
 .if !defined(NOPORTDOCS)
 DOCFILES=	crafty.doc.ascii crafty.doc.ps
 DISTFILES+=	${DOCFILES:S/$/:doc/}
+UTILS=		bitmaps.tgz sound.zip
+DISTFILES+=	${UTILS:S/$/:utils/}
 .endif
 
 ALL_TARGET=	freebsd
@@ -45,9 +47,9 @@ WITH_TBDIR=	${PREFIX}/lib/crafty/TB
 .if !defined(WITH_PERSDIR)
 WITH_PERSDIR=	${PREFIX}/lib/crafty/cpf
 .endif
-OPT=		-DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
+OPT=		-DCPUS=4 -DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 		-DLOGDIR=\\\"${WITH_LOGDIR}\\\" \
-	       	-DRCDIR=\\\"${WITH_RCDIR}\\\" \
+		-DRCDIR=\\\"${WITH_RCDIR}\\\" \
 		-DTBDIR=\\\"${WITH_TBDIR}\\\" \
 		-DPERSDIR=\\\"${WITH_PERSDIR}\\\"
 
@@ -73,17 +75,13 @@ do-install:
 	${CHOWN} -R root:nogroup ${PREFIX}/lib/crafty
 	${CHMOD} 775 ${PREFIX}/lib/crafty ${PREFIX}/lib/crafty/cpf
 	${INSTALL_DATA} ${WRKSRC}/books.bin ${PREFIX}/lib/crafty/books.bin
-	${INSTALL_DATA} ${WRKSRC}/book.lrn ${PREFIX}/lib/crafty/book.lrn
-	${INSTALL_DATA} ${WRKSRC}/position.bin ${PREFIX}/lib/crafty/position.bin
-	${INSTALL_DATA} ${WRKSRC}/position.lrn ${PREFIX}/lib/crafty/position.lrn
 	${INSTALL_DATA} ${WRKSRC}/crafty.hlp ${PREFIX}/lib/crafty/crafty.hlp
 	${CHOWN} root:nogroup ${PREFIX}/lib/crafty/book*
-	${CHOWN} root:nogroup ${PREFIX}/lib/crafty/position*
 	${CHMOD} 664 ${PREFIX}/lib/crafty/book*
-	${CHMOD} 664 ${PREFIX}/lib/crafty/position*
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${UTILS} ${DOCSDIR}
 .endif
 
 post-install:

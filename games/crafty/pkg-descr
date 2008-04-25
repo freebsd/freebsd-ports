@@ -1,7 +1,14 @@
-This is crafty - a chess programm which is not just able to play a
-game and tell you the best move but also can annotate PGN files.
+Crafty is a rapidly developing chess engine with more and more features being
+added regularly.  It can play, analyze, and even annotate games for you.  Crafty
+can utilize tablebases; these are available for freebsd in the related ports.
 
-The user interface is ASCII based.  For a graphical interface one can
-use xboard which interfaces very well with it.
+The files bitmaps.tgz and sound.tgz are available in your doc directory,
+usually /usr/local/share/doc/crafty.  The bitmaps are for html annotations
+performed by crafty - they should be unpacked into the directory you normally
+analyze games into, and all should be fine...
 
-- Stefan Eggers <seggers@semyam.dinoco.de>
+The sounds are for move announcements.  Unpack the archive somewhere,
+and have a look at the 'speak' script to customize for your use, if
+desired.
+
+// J Shoemaker
