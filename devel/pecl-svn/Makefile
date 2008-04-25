@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svn
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,7 +14,7 @@ DISTNAME=	svn-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A PECL extension to the libsvn library
 
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion
