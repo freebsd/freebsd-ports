@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="57c705d6-12ae-11dd-bab7-0016179b2dd5">
-    <topic>png - unknown chunk processing uninitialized memory access</topic>
+    <topic>png -- unknown chunk processing uninitialized memory access</topic>
     <affects>
       <package>
 	<name>png</name>
