@@ -21,8 +21,12 @@ PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800030
+BROKEN=		does not compile
+.endif
+
 .if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ia64"
+BROKEN=		does not compile on ia64
 .endif
 
 post-patch:
