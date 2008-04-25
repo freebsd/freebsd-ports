@@ -28,6 +28,10 @@ MAKEFILE=	${WRKSRC}/makefile
 
 USE_FORTRAN=	yes
 
+.if ${OSVERSION} >= 800030
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/xwin.c
 
