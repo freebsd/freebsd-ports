@@ -17252,7 +17252,6 @@ wormux		ports/games/wormux
 wormux-devel	ports/games/wormux-devel
 wots		ports/sysutils/wots
 wotsap		ports/misc/wotsap
-wpa_supplicant	ports/security/wpa_supplicant
 wping		ports/net/wping
 wprint		ports/print/wprint
 wput		ports/ftp/wput
