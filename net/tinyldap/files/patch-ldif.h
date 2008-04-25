@@ -1,12 +1,12 @@
---- ldif.h.orig	Mon Jul  8 22:57:42 2002
-+++ ldif.h	Mon Mar  1 12:19:54 2004
-@@ -2,7 +2,9 @@
+--- ldif.h.orig	2008-04-25 13:09:34.000000000 +0200
++++ ldif.h	2008-04-25 21:36:30.000000000 +0200
+@@ -4,7 +4,9 @@
  #include <ldap.h>
  
  /* how many attributes do we allow per record? */
 +#ifndef ATTRIBS
- #define ATTRIBS 32
+ #define ATTRIBS 100
 +#endif
  
  struct attribute {
-   long name, value;
+   uint32_t name, value;

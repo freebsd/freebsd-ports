@@ -17,17 +17,18 @@ COMMENT=	A small LDAP implementation
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/${LIBOWFAT_PORT}
 
-SNAPSHOT=	20040323
+SNAPSHOT=	20080425
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	-DATTRIBS=512
 LIBOWFAT_PORT?=	devel/libowfat
 TINYLDAP_DATA?=	${PREFIX}/tinyldap/data
-SBINFILES=	dumpidx idx2ldif addindex parse tinyldap_debug \
-		tinyldap_standalone
-BINFILES=	ldapclient ldapclient_str md5password
-DOCFILES=	FORMAT GETTING.STARTED README RFCs THANKS TODO
+SBINFILES=	acl addindex bindrequest dumpacls dumpidx idx2ldif parse \
+		tinyldap_debug tinyldap_standalone
+BINFILES=	ldapclient ldapclient_str ldapdelete md5password mysql2ldif
+DOCFILES=	ACL FORMAT GETTING.STARTED README README.security RFCs \
+		THANKS TODO
 
 post-patch:
 	${TOUCH} ${WRKSRC}/alloca.h
