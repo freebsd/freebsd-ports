@@ -1,27 +1,39 @@
---- Makefile.orig	Sat Mar 13 00:21:24 2004
-+++ Makefile	Tue Mar 23 15:49:03 2004
-@@ -32,16 +32,19 @@
+--- Makefile.orig	2008-04-25 13:09:33.000000000 +0200
++++ Makefile	2008-04-25 21:51:06.000000000 +0200
+@@ -35,18 +35,22 @@
  
  auth.a: auth.o
  
 -DIET=/opt/diet/bin/diet -Os
 -CC=gcc
--CFLAGS=-pipe -I. -Wall -W
 +DIET=
 +CC?=gcc
-+CFLAGS?=-pipe -I. -Wall -W
+ CFLAGS=-pipe -I. -Wall -W -Wextra
  ifneq ($(DEBUG),)
 -DIET=/opt/diet/bin/diet
--CFLAGS=-pipe -I. -Wall -W -g
+-CFLAGS=-pipe -I. -Wall -W -g -fstack-protector
 +DIET=
-+CFLAGS+=-g
++CFLAGS?=-pipe -I. -Wall -W -g -fstack-protector
  endif
- ifneq ($(DIET),)
- LIBS+=-llatin1
+ ifeq ($(COVERAGE),1)
+ DIET=
+-CFLAGS=-pipe -I. -g -fprofile-arcs -ftest-coverage
++CFLAGS?=-pipe -I. -g -fprofile-arcs -ftest-coverage
  endif
-+CFLAGS+=-I. -I${LOCALBASE}/include/libowfat
+ 
++CFLAGS+=-I. -I${LOCALBASE}/include/libowfat -Os
 +LDFLAGS+=-L${LOCALBASE}/lib
 +LIBS+=-lmd
++
+ ifneq ($(DIET),)
+ LIBS+=-llatin1
+ else
+@@ -79,7 +83,7 @@
+ 	$(DIET) $(CC) $(CFLAGS) -DSTANDALONE -DDEBUG -o $@ $^ $(LDFLAGS) -lowfat $(LIBS)
  
- %.o: %.c
- 	$(DIET) $(CC) $(CFLAGS) -c $<
+ acl: acl.c ldap.a asn1.a
+-	$(DIET) $(CC) $(CFLAGS) -o acl acl.c -I. ldap.a asn1.a -lowfat $(LIBS)
++	$(DIET) $(CC) $(CFLAGS) -o acl acl.c -I. ldap.a asn1.a $(LDFLAGS) -lowfat $(LIBS)
+ 
+ 
+ .PHONY: clean tar
