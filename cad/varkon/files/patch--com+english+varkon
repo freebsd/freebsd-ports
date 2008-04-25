@@ -1,80 +1,58 @@
---- ../com/english/varkon.orig	Thu Mar 27 06:36:43 2003
-+++ ../com/english/varkon	Tue May 13 18:49:31 2003
-@@ -13,12 +13,12 @@
- # Root directory for VARKON installation. Change this
- # line to point to the right location.
+--- ../com/english/varkon.orig	2008-03-07 18:27:29.000000000 -0500
++++ ../com/english/varkon	2008-04-23 13:59:24.000000000 -0500
+@@ -16,10 +16,10 @@
  
--VARKON_ROOT=/usr/varkon/varkon_1.17D
+ # Root directory for VARKON installation.
+ # Alternative 1, relative path.
+-VARKON_ROOT=`(cd $(dirname $0); cd ..; cd ..; pwd)`
++#VARKON_ROOT=`(cd $(dirname $0); cd ..; cd ..; pwd)`
+ 
+ # Alternative 2, explicit path.
+-# VARKON_ROOT=/home/username/varkon/varkon_2.Xx
 +VARKON_ROOT=%%VARKON_PREFIX%%
  export VARKON_ROOT
  
- # Standard menufiles  (*.MDF, *.INC)
- 
--VARKON_MDF=$VARKON_ROOT/mdf/english
-+VARKON_MDF=$VARKON_ROOT/mdf
- export VARKON_MDF
- 
- # Project files  (*.PID)
-@@ -27,7 +27,7 @@
- # versions of VARKON to persist in a common place.
- # All users need write access to this directory
- 
--VARKON_PID=$VARKON_ROOT/pid
-+VARKON_PID=$HOME/pid
- export VARKON_PID
- 
- # Errormessages   (*.ERM)
-@@ -37,7 +37,7 @@
+ # Module library path (*.MBO)
+@@ -44,7 +44,7 @@
+ export VARKON_ERM
  
  # The VARKON documentation (*.htm)
- 
 -VARKON_DOC=$VARKON_ROOT/man
 +VARKON_DOC=%%DOCSDIR%%
  export VARKON_DOC
  
- # System module library   (*.MBO)
-@@ -52,7 +52,7 @@
+ # Temporary files
+@@ -53,7 +53,7 @@
+ # directory should usually reside on the local machine
  # so you may set it up differently for different users.
  # All users need write access to this directory
- 
 -VARKON_TMP=$VARKON_ROOT/tmp
 +VARKON_TMP=/tmp
  export VARKON_TMP
  
  # Fonts for graphical text
-@@ -81,7 +81,7 @@
+@@ -77,7 +77,7 @@
+ export VARKON_TOL
  
  # Standard resources for X-Windows
- 
 -VARKON_INI=$VARKON_ROOT/cnf/ini/english
 +VARKON_INI=$VARKON_ROOT/cnf/ini
  export VARKON_INI
  
- # Default root for VARKON applications
-@@ -91,7 +91,7 @@
- # not interfere with old jobs.
- # All users need write access to this directory
- 
--VARKON_PRD=$VARKON_ROOT/app
-+VARKON_PRD=$HOME/app
- export VARKON_PRD
- 
- # PATH for executables (xvarkon, mbsc, plotterdrivers)
-@@ -111,14 +111,14 @@
+ # PATH for executables (xvarkon, mbsc and plotterdrivers)
+@@ -96,7 +96,7 @@
+ # if you want to. Don't edit the standard ini-file included
+ # in the distribution or you will have to do it all
  # over again when updating the system.
- 
- xvarkon $1 $2    \
---i$VARKON_INI/linux
-+-i$VARKON_INI/freebsd
+-$VARKON_BIN/xvarkon -GLOBAL -i$VARKON_INI/linux
++$VARKON_BIN/xvarkon -GLOBAL -i$VARKON_INI/freebsd
  
  # With an inifile of your own it would look something
  # like the following:
- 
- # xvarkon $1 $2    \
--# -i$VARKON_INI/linux -i$HOME/cnf/ini/english/my_own_inifile
-+# -i$VARKON_INI/freebsd -i$HOME/cnf/ini/english/my_own_inifile
- 
- # If you want to run the system in pure drafting mode, add
- # "-r" to the command line.
--# xvarkon -r $1 $2 -i$VARKON_INI/linux
-+# xvarkon -r $1 $2 -i$VARKON_INI/freebsd
+@@ -114,4 +114,4 @@
+ #
+ # If you want to specify a default job directory use the -jd
+ # option on the command line. Here is an example:
+-# $VARKON_BIN/xvarkon -GLOBAL -jd /home/my_directory/my_varkon_jobs
+\ No newline at end of file
++# $VARKON_BIN/xvarkon -GLOBAL -jd /home/my_directory/my_varkon_jobs
