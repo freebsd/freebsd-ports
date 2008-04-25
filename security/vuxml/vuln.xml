@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="57c705d6-12ae-11dd-bab7-0016179b2dd5">
+    <topic>png - unknown chunk processing uninitialized memory access</topic>
+    <affects>
+      <package>
+	<name>png</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://.com/advisories/29792">
+	  <p>Tavis Ormandy has reported a vulnerability in libpng, which can be
+	    exploited by malicious people to cause a Denial of Service, disclose
+	    potentially sensitive information, or potentially compromise an
+	    application using the library.</p>
+	  <p>The vulnerability is caused due to the improper handling of PNG chunks
+	    unknown to the library. This can be exploited to trigger the use of
+	    uninitialized memory in e.g. a free() call via unknown PNG chunks having
+	    a length of zero.</p>
+	  <p>Successful exploitation may allow execution of arbitrary code, but requires
+	    that the application calls the png_set_read_user_chunk_fn() function or the
+	    png_set_keep_unknown_chunks() function under specific conditions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1382</cvename>
+      <bid>28770</bid>
+      <url>http://secunia.com/advisories/29792</url>
+      <url>http://libpng.sourceforge.net/Advisory-1.2.26.txt</url>
+    </references>
+    <dates>
+      <discovery>2008-04-12</discovery>
+      <entry>2008-04-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b84a992a-12ab-11dd-bab7-0016179b2dd5">
     <topic>openfire -- unspecified denial of service</topic>
     <affects>
