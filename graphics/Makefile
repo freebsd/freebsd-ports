@@ -719,6 +719,7 @@
     SUBDIR += sswf
     SUBDIR += stamp
     SUBDIR += stl2pov
+    SUBDIR += structuresynth
     SUBDIR += svg2pdf
     SUBDIR += svg2png
     SUBDIR += svg2swf
