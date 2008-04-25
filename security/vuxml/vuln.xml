@@ -82,7 +82,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/29751">
 	  <p>A vulnerability has been reported in Openfire, which can be exploited
 	    by malicious people to cause a Denial of Service.</p>
@@ -512,7 +512,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Opera Software reports of multiple security issues in Opera.
-	  All of them can lead to arbitrary code execution.  Details are 
+	  All of them can lead to arbitrary code execution.  Details are
 	  as the following:</p>
 	<ul>
 	  <li><a href="http://www.opera.com/support/search/view/881/">Newsfeed
