@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f47f2746-12c5-11dd-bab7-0016179b2dd5">
+    <topic>mailman -- script insertion vulnerability</topic>
+    <affects>
+      <package>
+	<name>ja-mailman</name>
+	<name>mailman</name>
+	<name>mailman-with-htdig</name>
+	<range><lt>2.1.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/28794">
+	  <p>A vulnerability has been reported in Mailman, which can be exploited
+	    by malicious users to conduct script insertion attacks.</p>
+	  <p>Certain input when editing the list templates and the list info attribute
+	    is not properly sanitised before being stored. This can be exploited to
+	    insert arbitrary HTML and script code, which is executed in a user's
+	    browser session in context of an affected site when the malicious website
+	    is accessed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0564</cvename>
+      <bid>27630</bid>
+      <url>http://www.ubuntu.com/usn/usn-586-1</url>
+      <url>http://secunia.com/advisories/28794</url>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=593924</url>
+    </references>
+    <dates>
+      <discovery>2008-02-05</discovery>
+      <entry>2008-04-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="86c05550-12c1-11dd-bab7-0016179b2dd5">
     <topic>mksh -- TTY attachment privilege escalation</topic>
     <affects>
