@@ -495,6 +495,7 @@
     SUBDIR += p5-RTF-Writer
     SUBDIR += p5-Regex-PreSuf
     SUBDIR += p5-Regexp-Common
+    SUBDIR += p5-Regexp-Common-Email-Address
     SUBDIR += p5-Regexp-Common-profanity_us
     SUBDIR += p5-Regexp-Copy
     SUBDIR += p5-Regexp-DefaultFlags
