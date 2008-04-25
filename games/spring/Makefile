@@ -43,6 +43,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 PORTDOCS=	README.html
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
 		${WRKSRC}/rts/build/scons/config.py
@@ -65,4 +71,4 @@ post-install:
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
