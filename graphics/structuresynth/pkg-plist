@@ -1,0 +1,36 @@
+bin/structuresynth
+%%DATADIR%%/Examples/Arc Sphere.es
+%%DATADIR%%/Examples/Ball.es
+%%DATADIR%%/Examples/Binary Circle.es
+%%DATADIR%%/Examples/BinaryKite.es
+%%DATADIR%%/Examples/Boxes II.es
+%%DATADIR%%/Examples/Chaos II.es
+%%DATADIR%%/Examples/City of Glass.es
+%%DATADIR%%/Examples/Colors.es
+%%DATADIR%%/Examples/Colorspyro.es
+%%DATADIR%%/Examples/Colorspyro2.es
+%%DATADIR%%/Examples/Default.es
+%%DATADIR%%/Examples/Defunct Tech.es
+%%DATADIR%%/Examples/Frame In Frame.es
+%%DATADIR%%/Examples/Grid.es
+%%DATADIR%%/Examples/Grinder.es
+%%DATADIR%%/Examples/Jugend2D.es
+%%DATADIR%%/Examples/Menger.es
+%%DATADIR%%/Examples/Menger2.es
+%%DATADIR%%/Examples/Menger3.es
+%%DATADIR%%/Examples/Mondrian.es
+%%DATADIR%%/Examples/Octopod II.es
+%%DATADIR%%/Examples/Quartz.es
+%%DATADIR%%/Examples/Snakeoids.es
+%%DATADIR%%/Examples/SpiralTree2D.es
+%%DATADIR%%/Examples/Stairs.es
+%%DATADIR%%/Examples/Torus2.es
+%%DATADIR%%/Examples/Torus3.es
+%%DATADIR%%/Examples/Trees 2d.es
+%%DATADIR%%/Examples/Trees 3d.es
+%%DATADIR%%/Examples/Tube.es
+%%DATADIR%%/Misc/about.html
+%%DATADIR%%/Misc/icon.jpg
+@dirrm %%DATADIR%%/Misc
+@dirrm %%DATADIR%%/Examples
+@dirrm %%DATADIR%%
