@@ -7,11 +7,12 @@
 
 PORTNAME=	tree
 PORTVERSION=	1.5.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/ CENKES
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	gb@isis.u-strasbg.fr
 COMMENT=	Display a tree-view of directories with optional color or HTML output
 
 MAKE_ENV+=	MKDIR="${MKDIR}"
@@ -19,10 +20,4 @@ MAKE_ENV+=	MKDIR="${MKDIR}"
 MAN1=		tree.1
 PLIST_FILES=	bin/tree
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 800000
-IGNORE=	garbage output under 8.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
