@@ -1,5 +1,7 @@
 bin/ltris
 %%NLS%%share/locale/de/LC_MESSAGES/ltris.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/ltris.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/ltris.mo
 %%DATADIR%%/figures
 %%DATADIR%%/gfx/back0.bmp
 %%DATADIR%%/gfx/back1.bmp

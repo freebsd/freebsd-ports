@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	ltris
-PORTVERSION=	1.0.11
-PORTREVISION=	3
+PORTVERSION=	1.0.12
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lgames
+MASTER_SITES=	SF/lgames
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An another tetris clone but a good one with bunch of cool features
