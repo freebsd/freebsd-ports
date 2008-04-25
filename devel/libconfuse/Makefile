@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	libconfuse
-PORTVERSION=	2.5
-PORTREVISION=	3
+PORTVERSION=	2.6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		ftp://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
+MASTER_SITES=	http://bzero.se/confuse/
 MASTER_SITE_SUBDIR=	confuse
 DISTNAME=	confuse-${PORTVERSION}
 
