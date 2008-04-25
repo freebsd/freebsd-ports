@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
 DISTNAME=	glibc-linuxthreads-${PORTVERSION}
 
-MAINTAINER=	tegge@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX pthreads implementation using rfork to generate kernel threads
 
 .if defined(LINUXTHREADS_WRAP_API)
@@ -198,7 +198,7 @@ post-patch:
 	fi
 .endif
 .if defined(LINUXTHREADS_WRAP_API)
-	perl -pi -e '$$func=$$1 if m/^extern\s+\S+\s+\*?(\S+)\s+\(/; $$alias="#ifdef COMPILING_WRAPUTHREAD\n\t__attribute__((weak, alias(\"_$$func\")))\n#endif\n"; $$wrap="#ifndef COMPILING_LINUXTHREADS\n\t__asm__(\"linuxthreads_$$func\")\n#endif\n"; $$alias="" if ( $$func =~ m/^(pthread_spin|_pthread_cleanup|pthread_rwlockattr_[gs]etkind_np|pthread_kill_other_threads_np)/ ); s=__THROW=\n$$wrap$$alias\t__THROW= unless m/^#/;' ${WRKSRC}/sysdeps/pthread/pthread.h  ${WRKSRC}/sysdeps/unix/sysv/linux/bits/sigthread.h
+	{PERL} -pi -e '$$func=$$1 if m/^extern\s+\S+\s+\*?(\S+)\s+\(/; $$alias="#ifdef COMPILING_WRAPUTHREAD\n\t__attribute__((weak, alias(\"_$$func\")))\n#endif\n"; $$wrap="#ifndef COMPILING_LINUXTHREADS\n\t__asm__(\"linuxthreads_$$func\")\n#endif\n"; $$alias="" if ( $$func =~ m/^(pthread_spin|_pthread_cleanup|pthread_rwlockattr_[gs]etkind_np|pthread_kill_other_threads_np)/ ); s=__THROW=\n$$wrap$$alias\t__THROW= unless m/^#/;' ${WRKSRC}/sysdeps/pthread/pthread.h  ${WRKSRC}/sysdeps/unix/sysv/linux/bits/sigthread.h
 .endif
 .endif
 
