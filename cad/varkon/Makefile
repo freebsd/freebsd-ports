@@ -1,53 +1,40 @@
 # New ports collection makefile for:	Varkon
 # Date created:		19 April 2003
-# Whom:			Pedro Giffuni <giffunip@asme.org>
+# Whom:			Pedro F. Giffuni
 #
 # $FreeBSD$
 #
 
 PORTNAME=	varkon
-PORTVERSION=	1.17D
-PORTREVISION=	2
+PORTVERSION=	1.19C
 CATEGORIES=	cad
-MASTER_SITES=	http://www.tech.oru.se/cad/varkon/pub/linux/:sources \
-		http://www.tech.oru.se/cad/varkon/:docs
-DISTFILES=	${PORTNAME}_sources_${PORTVERSION}${EXTRACT_SUFX}:sources \
-		v_man.zip:docs m_man.zip:docs
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	Varkon_sources_${PORTVERSION}
 DIST_SUBDIR=	varkon
-EXTRACT_ONLY=	${PORTNAME}_sources_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free CAD system and applications development tool
 
-.ifndef	NOPORTDOCS
-BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
-.endif
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GL=		yes
 USE_GMAKE=	yes
-VARKON_ROOT=	${WRKDIR}/${PORTNAME}_${PORTVERSION}
+USE_XORG=	xpm
+ALL_TARGET=
+VARKON_ROOT=	${WRKDIR}/Varkon_${PORTVERSION}
 WRKSRC=		${VARKON_ROOT}/sources
-MAKE_ENV+=	VARKON_ROOT=${VARKON_ROOT}
+USE_DOS2UNIX=	Makefile
 
 VARKON_PREFIX=	${PREFIX}/share/varkon
-WEB_BROWSER?=	mozilla
+WEB_BROWSER?=	firefox
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's+%%MAKE%%+${GMAKE}+g;' ${WRKSRC}/make_varkon
-	@${REINPLACE_CMD} -e 's+netscape+${WEB_BROWSER}+ ' \
-	     ${VARKON_ROOT}/cnf/ini/english/linux
+do-configure:
 	@${REINPLACE_CMD} -e 's+%%VARKON_PREFIX%%+${VARKON_PREFIX}+ ; s+%%DOCSDIR%%+${DOCSDIR}+g ' \
 	     ${VARKON_ROOT}/com/english/varkon
 	@${FIND} ${WRKSRC} -name 'Makefile.FreeBSD' -print0 | ${XARGS} -0 \
-		${REINPLACE_CMD} -e 's+/usr/X11R6+${LOCALBASE}+g'
-do-build:
-	@(cd ${WRKSRC};${SETENV} ${MAKE_ENV} ${SH} make_varkon )
+		${REINPLACE_CMD} -e 's+/usr/local+${LOCALBASE}+g'
+	@${FIND} ${WRKSRC} -name 'Makefile*' | ${XARGS} ${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g'
 
 do-install:
 	@${MKDIR} ${VARKON_PREFIX}/bin
@@ -63,18 +50,12 @@ do-install:
 	@${MKDIR} ${VARKON_PREFIX}/cnf/ini
 	@${INSTALL} ${VARKON_ROOT}/cnf/ini/english/linux \
 	  ${VARKON_PREFIX}/cnf/ini/freebsd
-	@${CP} -R ${VARKON_ROOT}/mdf/english ${VARKON_PREFIX}/mdf
+	@${CP} -R ${VARKON_ROOT}/mdf ${VARKON_PREFIX}/mdf
 	@${INSTALL_SCRIPT} ${VARKON_ROOT}/com/english/varkon \
 	  ${PREFIX}/bin
 .ifndef NOPORTDOCS
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${VARKON_ROOT}/app ${EXAMPLESDIR}
-	@${CP} -R ${VARKON_ROOT}/pid ${EXAMPLESDIR}
 	@${MKDIR} ${DOCSDIR}	#Varkon Manual
-	@unzip ${DISTDIR}/${DIST_SUBDIR}/v_man	\
-		-d ${DOCSDIR}
-	@unzip -uo ${DISTDIR}/${DIST_SUBDIR}/m_man	\
-		-d ${DOCSDIR}
+	@${CP} -R ${VARKON_ROOT}/man/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
