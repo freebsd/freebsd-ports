@@ -7,6 +7,7 @@
 
 PORTNAME=	jacal
 PORTVERSION=	1b7
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTNAME=	jacal1b7
@@ -28,8 +29,5 @@ MAN1=		jacal.1
 do-configure:
 	cd ${WRKSRC}; \
 	${FIND} . -type f -exec perl -spi -e 's|%%PREFIX%%|${PREFIX}|' {} ';'
-
-do-install:
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>

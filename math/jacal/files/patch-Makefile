@@ -5,7 +5,7 @@
  
  rpm_prefix=$(HOME)/rpmbuild/
 -prefix = /usr/local/
-+prefix = %%PREFIX%%
++prefix = %%PREFIX%%/
  exec_prefix = $(prefix)
  # directory where `make install' will put executable.
  bindir = $(exec_prefix)bin/
