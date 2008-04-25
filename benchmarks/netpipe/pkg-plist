@@ -1,5 +1,0 @@
-bin/NPtcp
-bin/NPtcp6
-%%PORTDOCS%%share/doc/netpipe/README
-%%PORTDOCS%%share/doc/netpipe/netpipe_paper.ps
-%%PORTDOCS%%@dirrm share/doc/netpipe
