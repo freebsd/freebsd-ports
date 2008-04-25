@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter-greylist
-PORTVERSION=	3.0
+PORTVERSION=	4.0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 DISTNAME=	milter-greylist-${PORTVERSION}
@@ -42,12 +42,13 @@ WITH_SENDMAIL_BASE=yes
 
 .if defined(WITH_SENDMAIL_BASE)
 .if exists(/usr/lib/libmilter.a)
+_MILT_DEP=
 MILTERBASE=	/usr
 .else
 BROKEN=		"Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes"
 .endif
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+_MILT_DEP=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 MILTERBASE?=	${LOCALBASE}
 .endif
 
@@ -58,10 +59,16 @@ MILTERBASE?=	${LOCALBASE}
 .if ${OSVERSION} < 502102
 IGNORE=		Using libspf2 requires a thread safe resolver
 .else
-LIB_DEPENDS+=	spf2.2:${PORTSDIR}/mail/libspf2
-CONFIGURE_ARGS+=	--with-libspf2=${LOCALBASE}
+BUILD_DEPENDS+=	libspf2>=1.2.5:${PORTSDIR}/mail/libspf2
+CONFIGURE_ARGS+= 	--with-libspf2=${LOCALBASE}
 .endif
 .endif
+.if defined(WITH_GEOIP)
+BUILD_DEPENDS+=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
+CONFIGURE_ARGS+= 	--with-libGeoIP=${LOCALBASE}
+.endif
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+BUILD_DEPENDS+= ${_MILT_DEP}
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		${PTHREAD_LIBS}
