@@ -631,6 +631,7 @@
     SUBDIR += qnetwalk
     SUBDIR += qonk
     SUBDIR += qstat
+    SUBDIR += quackle
     SUBDIR += quake-data
     SUBDIR += quake-dpmod
     SUBDIR += quake-extras
