@@ -1,0 +1,17 @@
+YUI Compressor is JavaScript and CSS minificator.
+
+YUI Compressor is written in Java and relies on Rhino to tokenize the
+source JavaScript file.  It starts by analyzing the source JavaScript
+file to understand how it is structured.  It then prints out the token
+stream, omitting as many white space characters as possible, and
+replacing all local symbols by a 1 (or 2, or 3) letter symbol wherever
+such a substitution is appropriate (in the face of evil features such as
+eval or with, the YUI Compressor takes a defensive approach by not
+obfuscating any of the scopes containing the evil statement).
+
+The CSS compression algorithm uses a set of finely tuned regular
+expressions to compress the source CSS file.  The YUI Compressor is
+open-source, so don't hesitate to look at the code to understand exactly
+how it works.
+
+WWW: http://developer.yahoo.com/yui/compressor/
