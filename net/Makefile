@@ -106,7 +106,6 @@
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
-    SUBDIR += dhcp-agent
     SUBDIR += dhcp6
     SUBDIR += dhcpcd
     SUBDIR += dhcpdump
@@ -405,7 +404,6 @@
     SUBDIR += nvnet
     SUBDIR += nxserver
     SUBDIR += nylon
-    SUBDIR += ocaml-netclient
     SUBDIR += ohphone
     SUBDIR += olsrd
     SUBDIR += omnitty
@@ -805,7 +803,6 @@
     SUBDIR += samba3
     SUBDIR += samba4wins
     SUBDIR += sambasentinel
-    SUBDIR += samplicator
     SUBDIR += sbd
     SUBDIR += scamper
     SUBDIR += scand

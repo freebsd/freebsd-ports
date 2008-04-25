@@ -1998,7 +1998,6 @@ dgd-net		ports/net/dgd-net
 dgen-sdl	ports/emulators/dgen-sdl
 dgpsip		ports/astro/dgpsip
 dgs		ports/x11/dgs
-dhcp-agent	ports/net/dhcp-agent
 dhcp6		ports/net/dhcp6
 dhcpcd		ports/net/dhcpcd
 dhcpdump	ports/net/dhcpdump
@@ -2628,7 +2627,6 @@ enscriptfonts	ports/print/enscriptfonts
 ensemblist	ports/games/ensemblist
 enterminus	ports/x11/enterminus
 enteruser	ports/sysutils/enteruser
-entice		ports/graphics/entice
 entity		ports/devel/entity
 entitymib	ports/net/entitymib
 entrans		ports/www/entrans
@@ -6017,7 +6015,6 @@ kde3-i18n-gl	ports/misc/kde3-i18n-gl
 kde3-i18n-hi	ports/misc/kde3-i18n-hi
 kde3-i18n-hr	ports/misc/kde3-i18n-hr
 kde3-i18n-hsb	ports/misc/kde3-i18n-hsb
-kde3-i18n-id	ports/misc/kde3-i18n-id
 kde3-i18n-is	ports/misc/kde3-i18n-is
 kde3-i18n-it	ports/misc/kde3-i18n-it
 kde3-i18n-kk	ports/misc/kde3-i18n-kk
@@ -8693,7 +8690,6 @@ ocaml-lacaml	ports/devel/ocaml-lacaml
 ocaml-magic	ports/devel/ocaml-magic
 ocaml-mode.el	ports/lang/ocaml-mode.el
 ocaml-net	ports/www/ocaml-net
-ocaml-netclient	ports/net/ocaml-netclient
 ocaml-nox11	ports/lang/ocaml-nox11
 ocaml-ocamlgraph	ports/math/ocaml-ocamlgraph
 ocaml-ocurl	ports/ftp/ocaml-ocurl
@@ -15007,7 +15003,6 @@ samefile	ports/sysutils/samefile
 samhain		ports/security/samhain
 samhain-client	ports/security/samhain-client
 samhain-server	ports/security/samhain-server
-samplicator	ports/net/samplicator
 sampsvr		ports/games/sampsvr
 sams		ports/www/sams
 sancp		ports/security/sancp

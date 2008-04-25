@@ -106,7 +106,6 @@
     SUBDIR += electriceyes
     SUBDIR += enblend
     SUBDIR += enfle
-    SUBDIR += entice
     SUBDIR += eog
     SUBDIR += epdfview
     SUBDIR += epeg
