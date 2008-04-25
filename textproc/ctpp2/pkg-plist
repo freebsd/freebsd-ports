@@ -1,5 +1,6 @@
 include/ctpp2/CDT.hpp
 include/ctpp2/CTPP2.hpp
+include/ctpp2/CTPP2BitIndex.hpp
 include/ctpp2/CTPP2CharIterator.hpp
 include/ctpp2/CTPP2Compiler.hpp
 include/ctpp2/CTPP2FileSourceLoader.hpp
@@ -11,6 +12,7 @@ include/ctpp2/CTPP2Syntax.h
 include/ctpp2/CTPP2SourceLoader.hpp
 include/ctpp2/CTPP2SysHeaders.h
 include/ctpp2/CTPP2Types.h
+include/ctpp2/CTPP2Util.hpp
 include/ctpp2/CTPPException.hpp
 include/ctpp2/CTPPParserException.hpp
 include/ctpp2/FileOutputCollector.hpp
@@ -37,7 +39,7 @@ include/ctpp2/VMStackException.hpp
 include/ctpp2/VMSyscall.hpp
 lib/libctpp2.so
 lib/libctpp2.so.2
-lib/libctpp2.so.2.1.1
+lib/libctpp2.so.2.2.0
 lib/libctpp2-st.a
 bin/ctpp2vm
 bin/ctpp2c
