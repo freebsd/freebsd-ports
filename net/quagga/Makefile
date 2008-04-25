@@ -198,7 +198,11 @@ post-install:
 	@${ECHO} "Note!!! To use MD5 passwords on BGP sessions, your kernel must"
 	@${ECHO} "be built with the following options:"
 	@${ECHO} "  options TCP_SIGNATURE"
+.if ${OSVERSION} < 700000
 	@${ECHO} "  options FAST_IPSEC"
+.else
+	@${ECHO} "  options IPSEC"
+.endif
 	@${ECHO} "  device crypto"
 	@${ECHO} "  device cryptodev"
 	@${ECHO} ""
