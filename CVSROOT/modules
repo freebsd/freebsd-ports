@@ -14196,6 +14196,7 @@ qtpkg		ports/ports-mgmt/qtpkg
 qtstalker	ports/finance/qtstalker
 qu-aspell	ports/textproc/qu-aspell
 quack		ports/lang/quack
+quackle		ports/games/quackle
 quagga		ports/net/quagga
 quake-data	ports/games/quake-data
 quake-dpmod	ports/games/quake-dpmod
