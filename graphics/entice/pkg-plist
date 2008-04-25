@@ -1,5 +1,0 @@
-bin/entice
-%%DATADIR%%/themes/artifakt.edj
-%%DATADIR%%/themes/default.edj
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%

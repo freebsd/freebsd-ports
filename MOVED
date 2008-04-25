@@ -3454,3 +3454,8 @@ games/teewars|games/teeworls|2008-04-17|Project renamed
 multimedia/exportvideo||2008-04-21|Add-on for soon to be removed nuppelvideo port
 multimedia/nuppelvideo||2008-04-21|Unmaintained upstream for years.  The nuppelvideo format is now supported by mencoder
 graphics/ascii0|graphics/asciio|2008-04-22|renamed by delete+add
+misc/kde3-i18n-id||2008-04-25|Has expired: "Distfile no longer available, outdated"
+net/dhcp-agent||2008-04-25|Has expired: Dhcp-agent has not been updated since 2003, it does  not build with guile-1.8, and it is unmaintained
+net/ocaml-netclient||2008-04-25|Has expired: is part of ocaml-net
+net/samplicator||2008-04-25|Has expired: Project has vanished
+graphics/entice||2008-04-25|Has expired: Broken and unmaintained
