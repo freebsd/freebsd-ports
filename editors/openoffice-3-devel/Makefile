@@ -7,6 +7,7 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	3.0.${SNAPDATE}
+PORTREVISION?=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
@@ -43,7 +44,8 @@ USE_GNOME+=	libidl
 .if defined(WITH_KDE)
 USE_KDELIBS_VER=	3
 .endif
-USE_XORG=	x11 ice
+USE_XORG=	x11 ice xaw xau xext xrender xrandr \
+		xi xt xcursor xdamage xcomposite xfixes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
