@@ -23,8 +23,6 @@ USE_GMAKE=	yes
 USE_XORG=	x11 xaw ice
 MAKE_ARGS+=	LDFLAGS=-shared-libgcc
 CNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--without-hal
 INSTALLS_ICONS=	yes
 
@@ -38,7 +36,7 @@ OPTIONS=	MOZILLA_PLUGIN "Install Mozilla plugin" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
+.if ${OSVERSION} < 700000
 CFLAGS+=	-O2
 .endif
 
