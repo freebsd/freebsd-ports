@@ -1,8 +1,6 @@
-Index: sbr/concat.c
-diff -u sbr/concat.c.orig sbr/concat.c
---- sbr/concat.c.orig	Wed Dec  1 13:01:21 1993
-+++ sbr/concat.c	Fri Jul 18 14:42:47 2003
-@@ -2,13 +2,12 @@
+--- sbr/concat.c.orig	1993-12-01 13:01:21.000000000 +0900
++++ sbr/concat.c	2008-04-27 00:14:56.000000000 +0900
+@@ -2,34 +2,40 @@
  
  #include "../h/mh.h"
  #include <stdio.h>
@@ -18,8 +16,10 @@ diff -u sbr/concat.c.orig sbr/concat.c
  {
      register char  *cp,
                     *dp,
-@@ -17,19 +16,26 @@
-     register    va_list list;
+                    *sp;
+     register unsigned   len;
+-    register    va_list list;
++    va_list list;
  
      len = 1;
 -    va_start (list); 
