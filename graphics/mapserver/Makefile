@@ -6,10 +6,9 @@
 #
 
 PORTNAME=		mapserver
-PORTVERSION=		4.4.1
-PORTREVISION=		4
+PORTVERSION=		5.0.2
 CATEGORIES=		graphics www geography
-MASTER_SITES=		http://cvs.gis.umn.edu/dist/
+MASTER_SITES=		http://download.osgeo.org/mapserver/
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		System for developing web-based GIS applications
@@ -88,7 +87,7 @@ CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
 		${ECHO_MSG} ""; \
 		sleep 2; \
 	fi
-BUILD_DEPENDS+=		php-config:${PORTSDIR}/lang/php4
+USE_PHP=	yes
 CONFIGURE_ARGS+=	--with-php=${LOCALBASE}
 PHP_EXTENSION_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e 's,/usr/local/,,'
 PLIST_SUB+=		PHP_EXTENSION_DIR=${PHP_EXTENSION_DIR}
