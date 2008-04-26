@@ -1,0 +1,17 @@
+bin/tbku
+man/cat1/tbku.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/Imaging-FreeBSD-With-tbku.html
+%%PORTDOCS%%%%DOCSDIR%%/Imaging-FreeBSD-With-tbku.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Imaging-FreeBSD-With-tbku.ps
+%%PORTDOCS%%%%DOCSDIR%%/Imaging-FreeBSD-With-tbku.txt
+%%PORTDOCS%%%%DOCSDIR%%/Imaging-SUSE-Linux-With-tbku.html
+%%PORTDOCS%%%%DOCSDIR%%/Imaging-SUSE-Linux-With-tbku.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Imaging-SUSE-Linux-With-tbku.ps
+%%PORTDOCS%%%%DOCSDIR%%/Imaging-SUSE-Linux-With-tbku.txt
+%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW.txt
+%%PORTDOCS%%%%DOCSDIR%%/tbku-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/tbku.html
+%%PORTDOCS%%%%DOCSDIR%%/tbku.pdf
+%%PORTDOCS%%%%DOCSDIR%%/tbku.ps
+%%PORTDOCS%%%%DOCSDIR%%/tbku.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

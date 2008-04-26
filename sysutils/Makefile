@@ -658,6 +658,7 @@
     SUBDIR += syslog-ng2
     SUBDIR += system-tools-backends
     SUBDIR += sysupdate
+    SUBDIR += tbku
     SUBDIR += tclsyslog
     SUBDIR += tcplist
     SUBDIR += tdir
