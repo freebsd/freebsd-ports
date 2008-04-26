@@ -8,7 +8,7 @@
 
 PORTNAME=	htmltolatex
 PORTVERSION=	1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc
 MASTER_SITES=	http://people.FreeBSD.org/~foxfair/distfiles/
 DISTNAME=	${PORTNAME}
@@ -16,13 +16,24 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to LaTeX to PDF Converter
 
-LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick
 
 USE_BISON=	build
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-MAKE_ARGS=	CXX="${CXX}" \
-		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -DUNIX"
+MAKE_ARGS=	-j`${SYSCTL} -n hw.ncpu` CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS} -DUNIX \
+		    `GraphicsMagick++-config --cppflags`"
+
+post-configure:
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g'	\
+	    -e 's,-lMagick,-lGraphicsMagick,g'	\
+	    -e 's,-lstdc++,,'	\
+	    -e 's,{quote},{tightquote},' ${WRKSRC}/QA/test1*_baseline*.tex \
+		${WRKSRC}/${MAKEFILE}
+
+post-build test:
+	cd ${WRKSRC}/QA && ./run_tests
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/h2l ${PREFIX}/bin
