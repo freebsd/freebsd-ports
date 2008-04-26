@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.72
-PORTREVISION=	2
+PORTVERSION=	0.73
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/mtr/ \
@@ -17,8 +16,9 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	automake:19 autoheader:261 autoconf:261
 
 MAN8=		mtr.8
 PLIST_FILES=	sbin/mtr
@@ -42,15 +42,15 @@ CONFIGURE_ARGS=--without-gtk --with-gtk-prefix=/nonexistant
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|-lresolv||g' ${WRKSRC}/Makefile
+post-patch:
+	@${REINPLACE_CMD} -e '/getopt/d' ${WRKSRC}/Makefile.am
 
 post-install:
-	@${ECHO} ""
-	@${ECHO} "${PREFIX}/sbin/mtr is setuid \"root\" "
-	@${ECHO} ""
-	@${ECHO} "Please read about potential security issues"
-	@${ECHO} "in file ${WRKSRC}/SECURITY (not installed)"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "${PREFIX}/sbin/mtr is setuid \"root\" "
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Please read about potential security issues"
+	@${ECHO_MSG} "in file ${WRKSRC}/SECURITY (not installed)"
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
