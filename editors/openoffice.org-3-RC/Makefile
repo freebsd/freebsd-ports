@@ -55,7 +55,11 @@ WITHOUT_CPU_CFLAGS=	true
 
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
+.if (${OSVERSION} >= 800000)
+JAVA_VENDOR=	bsdjava
+.else
 JAVA_VENDOR=	freebsd bsdjava
+.endif
 .if (${OSVERSION} >= 700000)
 JAVA_VERSION=	1.5
 .else
