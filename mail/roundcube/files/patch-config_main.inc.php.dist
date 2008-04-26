@@ -1,7 +1,7 @@
---- config/main.inc.php.dist.orig	Sat Dec  9 19:55:13 2006
-+++ config/main.inc.php.dist	Sat Dec  9 19:57:58 2006
-@@ -160,8 +160,8 @@
- // Make use of the built-in spell checker. It is based on GoogieSpell.
+--- config/main.inc.php.dist.orig	2008-04-26 00:18:03.000000000 +0200
++++ config/main.inc.php.dist	2008-04-26 00:19:22.000000000 +0200
+@@ -188,8 +188,8 @@
+ // requires to be compiled with Open SSL support
  $rcmail_config['enable_spellcheck'] = TRUE;
  
 -// For a locally installed Nox Spell Server, please specify the URI to call it.

@@ -1,19 +1,20 @@
 %%WWWDIR%%/SQL/mssql.initial.sql
 %%WWWDIR%%/SQL/mysql.initial.sql
-%%WWWDIR%%/SQL/mysql.update-0.1a.sql
 %%WWWDIR%%/SQL/mysql.update.sql
+%%WWWDIR%%/SQL/mysql.update.sql~
 %%WWWDIR%%/SQL/mysql5.initial.sql
 %%WWWDIR%%/SQL/postgres.initial.sql
 %%WWWDIR%%/SQL/postgres.update.sql
 %%WWWDIR%%/SQL/sqlite.initial.sql
 %%WWWDIR%%/SQL/sqlite.update.sql
 %%WWWDIR%%/bin/html2text.php
-%%WWWDIR%%/bin/makedoc.sh
 %%WWWDIR%%/bin/modcss.php
 %%WWWDIR%%/bin/msgimport
 %%WWWDIR%%/bin/quotaimg.php
 %%WWWDIR%%/config/.htaccess
+%%WWWDIR%%/config/db.inc.php
 %%WWWDIR%%/config/db.inc.php.dist
+%%WWWDIR%%/config/main.inc.php
 %%WWWDIR%%/config/main.inc.php.dist
 %%WWWDIR%%/index.php
 %%WWWDIR%%/logs/.htaccess
@@ -149,6 +150,7 @@
 %%WWWDIR%%/program/js/tiny_mce/themes/advanced/anchor.htm
 %%WWWDIR%%/program/js/tiny_mce/themes/advanced/charmap.htm
 %%WWWDIR%%/program/js/tiny_mce/themes/advanced/color_picker.htm
+%%WWWDIR%%/program/js/tiny_mce/themes/advanced/css/editor_content.css
 %%WWWDIR%%/program/js/tiny_mce/themes/advanced/css/editor_popup.css
 %%WWWDIR%%/program/js/tiny_mce/themes/advanced/docs/en/about.htm
 %%WWWDIR%%/program/js/tiny_mce/themes/advanced/docs/en/common_buttons.htm
@@ -273,6 +275,46 @@
 %%WWWDIR%%/program/lib/DB/sqlite.php
 %%WWWDIR%%/program/lib/DB/storage.php
 %%WWWDIR%%/program/lib/DB/sybase.php
+%%WWWDIR%%/program/lib/MDB2.php
+%%WWWDIR%%/program/lib/MDB2/Date.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Datatype/Common.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Datatype/mssql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Datatype/mysql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Datatype/mysqli.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Datatype/pgsql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Datatype/sqlite.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Function/Common.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Function/mssql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Function/mysql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Function/mysqli.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Function/pgsql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Function/sqlite.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Manager/Common.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Manager/mssql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Manager/mysql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Manager/mysqli.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Manager/pgsql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Manager/sqlite.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Native/Common.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Native/mssql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Native/mysql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Native/mysqli.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Native/pgsql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Native/sqlite.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Reverse/Common.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Reverse/mssql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Reverse/mysql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Reverse/mysqli.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Reverse/pgsql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/Reverse/sqlite.php
+%%WWWDIR%%/program/lib/MDB2/Driver/mssql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/mysql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/mysqli.php
+%%WWWDIR%%/program/lib/MDB2/Driver/pgsql.php
+%%WWWDIR%%/program/lib/MDB2/Driver/sqlite.php
+%%WWWDIR%%/program/lib/MDB2/Extended.php
+%%WWWDIR%%/program/lib/MDB2/Iterator.php
+%%WWWDIR%%/program/lib/MDB2/LOB.php
 %%WWWDIR%%/program/lib/Mail/mime.php
 %%WWWDIR%%/program/lib/Mail/mimeDecode.php
 %%WWWDIR%%/program/lib/Mail/mimePart.php
@@ -304,10 +346,12 @@
 %%WWWDIR%%/program/lib/encoding/ISO-8859-7.map
 %%WWWDIR%%/program/lib/encoding/ISO-8859-8.map
 %%WWWDIR%%/program/lib/encoding/ISO-8859-9.map
+%%WWWDIR%%/program/lib/encoding/KSC5601.map
 %%WWWDIR%%/program/lib/enriched.inc
 %%WWWDIR%%/program/lib/html2text.inc
 %%WWWDIR%%/program/lib/icl_commons.inc
 %%WWWDIR%%/program/lib/imap.inc
+%%WWWDIR%%/program/lib/magic
 %%WWWDIR%%/program/lib/mime.inc
 %%WWWDIR%%/program/lib/rc_mail_mime.inc
 %%WWWDIR%%/program/lib/utf7.inc
@@ -356,6 +400,8 @@
 %%WWWDIR%%/program/localization/ge/messages.inc
 %%WWWDIR%%/program/localization/gl/labels.inc
 %%WWWDIR%%/program/localization/gl/messages.inc
+%%WWWDIR%%/program/localization/he/labels.inc
+%%WWWDIR%%/program/localization/he/messages.inc
 %%WWWDIR%%/program/localization/hi/labels.inc
 %%WWWDIR%%/program/localization/hi/messages.inc
 %%WWWDIR%%/program/localization/hr/labels.inc
@@ -365,12 +411,16 @@
 %%WWWDIR%%/program/localization/id_ID/labels.inc
 %%WWWDIR%%/program/localization/id_ID/messages.inc
 %%WWWDIR%%/program/localization/index.inc
+%%WWWDIR%%/program/localization/is/labels.inc
+%%WWWDIR%%/program/localization/is/messages.inc
 %%WWWDIR%%/program/localization/it/labels.inc
 %%WWWDIR%%/program/localization/it/messages.inc
 %%WWWDIR%%/program/localization/ja/labels.inc
 %%WWWDIR%%/program/localization/ja/messages.inc
 %%WWWDIR%%/program/localization/kr/labels.inc
 %%WWWDIR%%/program/localization/kr/messages.inc
+%%WWWDIR%%/program/localization/ku/labels.inc
+%%WWWDIR%%/program/localization/ku/messages.inc
 %%WWWDIR%%/program/localization/lt/labels.inc
 %%WWWDIR%%/program/localization/lt/messages.inc
 %%WWWDIR%%/program/localization/lv/labels.inc
@@ -381,6 +431,8 @@
 %%WWWDIR%%/program/localization/ms_MY/messages.inc
 %%WWWDIR%%/program/localization/nb_NO/labels.inc
 %%WWWDIR%%/program/localization/nb_NO/messages.inc
+%%WWWDIR%%/program/localization/ne/labels.inc
+%%WWWDIR%%/program/localization/ne/messages.inc
 %%WWWDIR%%/program/localization/nl_BE/labels.inc
 %%WWWDIR%%/program/localization/nl_BE/messages.inc
 %%WWWDIR%%/program/localization/nl_NL/labels.inc
@@ -405,6 +457,8 @@
 %%WWWDIR%%/program/localization/sk/messages.inc
 %%WWWDIR%%/program/localization/sl/labels.inc
 %%WWWDIR%%/program/localization/sl/messages.inc
+%%WWWDIR%%/program/localization/sq_AL/labels.inc
+%%WWWDIR%%/program/localization/sq_AL/messages.inc
 %%WWWDIR%%/program/localization/sr_cyrillic/labels.inc
 %%WWWDIR%%/program/localization/sr_cyrillic/messages.inc
 %%WWWDIR%%/program/localization/sr_latin/labels.inc
@@ -514,8 +568,9 @@
 %%WWWDIR%%/skins/default/images/buttons/ldap_pas.png
 %%WWWDIR%%/skins/default/images/buttons/logout.gif
 %%WWWDIR%%/skins/default/images/buttons/logout.png
-%%WWWDIR%%/skins/default/images/buttons/%%MAIL%%.gif
-%%WWWDIR%%/skins/default/images/buttons/%%MAIL%%.png
+%%WWWDIR%%/skins/default/images/buttons/mail.gif
+%%WWWDIR%%/skins/default/images/buttons/mail.png
+%%WWWDIR%%/skins/default/images/buttons/markread_act.png
 %%WWWDIR%%/skins/default/images/buttons/next_act.png
 %%WWWDIR%%/skins/default/images/buttons/next_pas.png
 %%WWWDIR%%/skins/default/images/buttons/next_sel.png
@@ -596,7 +651,7 @@
 %%WWWDIR%%/skins/default/includes/settingscripts.html
 %%WWWDIR%%/skins/default/includes/settingstabs.html
 %%WWWDIR%%/skins/default/includes/taskbar.html
-%%WWWDIR%%/skins/default/%%MAIL%%.css
+%%WWWDIR%%/skins/default/mail.css
 %%WWWDIR%%/skins/default/pngbehavior.htc
 %%WWWDIR%%/skins/default/print.css
 %%WWWDIR%%/skins/default/settings.css
@@ -610,7 +665,7 @@
 %%WWWDIR%%/skins/default/templates/error.html
 %%WWWDIR%%/skins/default/templates/identities.html
 %%WWWDIR%%/skins/default/templates/login.html
-%%WWWDIR%%/skins/default/templates/%%MAIL%%.html
+%%WWWDIR%%/skins/default/templates/mail.html
 %%WWWDIR%%/skins/default/templates/managefolders.html
 %%WWWDIR%%/skins/default/templates/message.html
 %%WWWDIR%%/skins/default/templates/messagepart.html
@@ -621,6 +676,7 @@
 %%WWWDIR%%/skins/default/watermark.html
 %%WWWDIR%%/temp/.htaccess
 %%SPELLCHECK%%%%WWWDIR%%/spellchecker.php
+@dirrm %%WWWDIR%%/temp
 @dirrm %%WWWDIR%%/skins/default/templates
 @dirrm %%WWWDIR%%/skins/default/includes
 @dirrm %%WWWDIR%%/skins/default/images/icons
@@ -642,6 +698,7 @@
 @dirrm %%WWWDIR%%/program/localization/th_TH
 @dirrm %%WWWDIR%%/program/localization/sr_latin
 @dirrm %%WWWDIR%%/program/localization/sr_cyrillic
+@dirrm %%WWWDIR%%/program/localization/sq_AL
 @dirrm %%WWWDIR%%/program/localization/sl
 @dirrm %%WWWDIR%%/program/localization/sk
 @dirrm %%WWWDIR%%/program/localization/si
@@ -654,18 +711,22 @@
 @dirrm %%WWWDIR%%/program/localization/nn_NO
 @dirrm %%WWWDIR%%/program/localization/nl_NL
 @dirrm %%WWWDIR%%/program/localization/nl_BE
+@dirrm %%WWWDIR%%/program/localization/ne
 @dirrm %%WWWDIR%%/program/localization/nb_NO
 @dirrm %%WWWDIR%%/program/localization/ms_MY
 @dirrm %%WWWDIR%%/program/localization/mk
 @dirrm %%WWWDIR%%/program/localization/lv
 @dirrm %%WWWDIR%%/program/localization/lt
+@dirrm %%WWWDIR%%/program/localization/ku
 @dirrm %%WWWDIR%%/program/localization/kr
 @dirrm %%WWWDIR%%/program/localization/ja
 @dirrm %%WWWDIR%%/program/localization/it
+@dirrm %%WWWDIR%%/program/localization/is
 @dirrm %%WWWDIR%%/program/localization/id_ID
 @dirrm %%WWWDIR%%/program/localization/hu
 @dirrm %%WWWDIR%%/program/localization/hr
 @dirrm %%WWWDIR%%/program/localization/hi
+@dirrm %%WWWDIR%%/program/localization/he
 @dirrm %%WWWDIR%%/program/localization/gl
 @dirrm %%WWWDIR%%/program/localization/ge
 @dirrm %%WWWDIR%%/program/localization/ga_IE
@@ -692,6 +753,13 @@
 @dirrm %%WWWDIR%%/program/lib/encoding
 @dirrm %%WWWDIR%%/program/lib/Net
 @dirrm %%WWWDIR%%/program/lib/Mail
+@dirrm %%WWWDIR%%/program/lib/MDB2/Driver/Reverse
+@dirrm %%WWWDIR%%/program/lib/MDB2/Driver/Native
+@dirrm %%WWWDIR%%/program/lib/MDB2/Driver/Manager
+@dirrm %%WWWDIR%%/program/lib/MDB2/Driver/Function
+@dirrm %%WWWDIR%%/program/lib/MDB2/Driver/Datatype
+@dirrm %%WWWDIR%%/program/lib/MDB2/Driver
+@dirrm %%WWWDIR%%/program/lib/MDB2
 @dirrm %%WWWDIR%%/program/lib/DB
 @dirrm %%WWWDIR%%/program/lib/Auth/SASL
 @dirrm %%WWWDIR%%/program/lib/Auth
@@ -744,9 +812,8 @@
 @dirrm %%WWWDIR%%/program/js
 @dirrm %%WWWDIR%%/program/include
 @dirrm %%WWWDIR%%/program
+@dirrm %%WWWDIR%%/logs
+@dirrm %%WWWDIR%%/config
+@dirrm %%WWWDIR%%/bin
 @dirrm %%WWWDIR%%/SQL
-@dirrmtry %%WWWDIR%%/temp
-@dirrmtry %%WWWDIR%%/logs
-@dirrmtry %%WWWDIR%%/config
-@dirrmtry %%WWWDIR%%/bin
-@dirrmtry %%WWWDIR%%
+@dirrm %%WWWDIR%%
