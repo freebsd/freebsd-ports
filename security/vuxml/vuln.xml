@@ -39,11 +39,11 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>gnupg</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.0.9</lt></range>
       </package>
       <package>
         <name>gnupg1</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.4.9</lt></range>
       </package>
     </affects>
     <description>
