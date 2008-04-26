@@ -15,17 +15,18 @@ COMMENT=	Faster and improved version of dd
 USE_GMAKE=	yes
 MAKE_ENV=	MAKEPROG="${GMAKE}" CCOM="${CC}" COPTX="${CFLAGS}"
 MAN1=		sdd.1
+PLIST_FILES=	bin/sdd
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
+.if ${ARCH} != "i386" || ${CC} != "cc"
 post-extract:
 	@${LN} -sf i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
+		${WRKSRC}/RULES/${ARCH}-freebsd-${CC}.rul
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sdd/OBJ/${MACHINE_ARCH}-freebsd-${CC}/sdd \
+	${INSTALL_PROGRAM} ${WRKSRC}/sdd/OBJ/${ARCH}-freebsd-${CC}/sdd \
 		${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/sdd/sdd.1 ${PREFIX}/man/man1
 
