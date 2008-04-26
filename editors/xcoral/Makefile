@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	xcoral
-PORTVERSION=	3.46
-PORTREVISION=	2
+PORTVERSION=	3.47
 CATEGORIES=	editors
 MASTER_SITES=	http://xcoral.free.fr/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiwindow mouse-based text editor for X
 
-GNU_CONFIGURE=	yes
 USE_XORG=	x11
-CONFIGURE_ARGS=	--libdir=${PREFIX}/share
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lgnuregex"
+CONFIGURE_ARGS=	--libdir=${PREFIX}/share
+
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
