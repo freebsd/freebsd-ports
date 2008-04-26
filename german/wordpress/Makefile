@@ -7,16 +7,16 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	2.3.3
+PORTVERSION=	2.5.1
 CATEGORIES=	german www
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	de-
-DISTNAME=	wp_de_233
+DISTNAME=	wp_de_255
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/latest/${PORTNAME}
 
 USE_ZIP=	YES
 USE_PHP=	mysql pcre xml
