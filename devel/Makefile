@@ -1878,6 +1878,7 @@
     SUBDIR += pear-XML_Util
     SUBDIR += pear-XML_XPath
     SUBDIR += pear-apd
+    SUBDIR += pear-codegen
     SUBDIR += pecl-automap
     SUBDIR += pecl-bbcode
     SUBDIR += pecl-bcompiler
