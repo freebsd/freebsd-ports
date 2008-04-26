@@ -58,6 +58,7 @@
     SUBDIR += cbview
     SUBDIR += cegui
     SUBDIR += cenon
+    SUBDIR += cfdg
     SUBDIR += chbg
     SUBDIR += cimg
     SUBDIR += cinepaint
