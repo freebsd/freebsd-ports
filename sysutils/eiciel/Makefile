@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eiciel
-PORTVERSION=	0.9.5.1
-PORTREVISION=	1
+PORTVERSION=	0.9.6.1
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://rofi.roger-ferrer.org/eiciel/download/
 
@@ -24,11 +23,8 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-nautilus-extensions-dir=${PREFIX}/lib/nautilus/extensions-2.0
-MAN1=		eiciel.1
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^libeiciel_nautilus_la_LDFLAGS/ s|= |= -avoid-version -module |' \
-		${WRKSRC}/src/Makefile.in
+MAN1=		eiciel.1
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
