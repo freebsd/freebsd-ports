@@ -200,6 +200,7 @@
     SUBDIR += endgame-singularity-music
     SUBDIR += enigma
     SUBDIR += ensemblist
+    SUBDIR += etracer
     SUBDIR += euchre
     SUBDIR += evilfinder
     SUBDIR += evq3

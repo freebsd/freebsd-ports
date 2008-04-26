@@ -1,0 +1,471 @@
+bin/etracer
+share/etracer/courses/contrib/doing/course.tcl
+share/etracer/courses/contrib/doing/elev.png
+share/etracer/courses/contrib/doing/preview.png
+share/etracer/courses/contrib/doing/terrain.png
+share/etracer/courses/contrib/doing/trees.png
+share/etracer/courses/course_idx.tcl
+share/etracer/courses/events/a-tux_racer/bumpy_ride/course.tcl
+share/etracer/courses/events/a-tux_racer/bumpy_ride/elev.png
+share/etracer/courses/events/a-tux_racer/bumpy_ride/preview.png
+share/etracer/courses/events/a-tux_racer/bumpy_ride/terrain.png
+share/etracer/courses/events/a-tux_racer/bumpy_ride/trees.png
+share/etracer/courses/events/a-tux_racer/bunny_hill/course.tcl
+share/etracer/courses/events/a-tux_racer/bunny_hill/elev.png
+share/etracer/courses/events/a-tux_racer/bunny_hill/preview.png
+share/etracer/courses/events/a-tux_racer/bunny_hill/terrain.png
+share/etracer/courses/events/a-tux_racer/bunny_hill/trees.png
+share/etracer/courses/events/a-tux_racer/cupicon.png
+share/etracer/courses/events/a-tux_racer/event.tcl
+share/etracer/courses/events/a-tux_racer/frozen_river/course.tcl
+share/etracer/courses/events/a-tux_racer/frozen_river/elev.png
+share/etracer/courses/events/a-tux_racer/frozen_river/preview.png
+share/etracer/courses/events/a-tux_racer/frozen_river/terrain.png
+share/etracer/courses/events/a-tux_racer/frozen_river/trees.png
+share/etracer/courses/events/a-tux_racer/herringrunicon.png
+share/etracer/courses/events/a-tux_racer/path_of_daggers/course.tcl
+share/etracer/courses/events/a-tux_racer/path_of_daggers/elev.png
+share/etracer/courses/events/a-tux_racer/path_of_daggers/preview.png
+share/etracer/courses/events/a-tux_racer/path_of_daggers/terrain.png
+share/etracer/courses/events/a-tux_racer/path_of_daggers/trees.png
+share/etracer/courses/events/a-tux_racer/twisty_slope/course.tcl
+share/etracer/courses/events/a-tux_racer/twisty_slope/elev.png
+share/etracer/courses/events/a-tux_racer/twisty_slope/preview.png
+share/etracer/courses/events/a-tux_racer/twisty_slope/terrain.png
+share/etracer/courses/events/a-tux_racer/twisty_slope/trees.png
+share/etracer/courses/events/b-herring_run/bumpy_ride/course.tcl
+share/etracer/courses/events/b-herring_run/bumpy_ride/elev.png
+share/etracer/courses/events/b-herring_run/bumpy_ride/preview.png
+share/etracer/courses/events/b-herring_run/bumpy_ride/terrain.png
+share/etracer/courses/events/b-herring_run/bumpy_ride/trees.png
+share/etracer/courses/events/b-herring_run/cupicon.png
+share/etracer/courses/events/b-herring_run/deadman/course.tcl
+share/etracer/courses/events/b-herring_run/deadman/elev.png
+share/etracer/courses/events/b-herring_run/deadman/preview.png
+share/etracer/courses/events/b-herring_run/deadman/terrain.png
+share/etracer/courses/events/b-herring_run/deadman/trees.png
+share/etracer/courses/events/b-herring_run/event.tcl
+share/etracer/courses/events/b-herring_run/hamburger_hill/course.tcl
+share/etracer/courses/events/b-herring_run/hamburger_hill/elev.png
+share/etracer/courses/events/b-herring_run/hamburger_hill/preview.png
+share/etracer/courses/events/b-herring_run/hamburger_hill/terrain.png
+share/etracer/courses/events/b-herring_run/hamburger_hill/trees.png
+share/etracer/courses/events/b-herring_run/hazzard_valley/course.tcl
+share/etracer/courses/events/b-herring_run/hazzard_valley/elev.png
+share/etracer/courses/events/b-herring_run/hazzard_valley/preview.png
+share/etracer/courses/events/b-herring_run/hazzard_valley/terrain.png
+share/etracer/courses/events/b-herring_run/hazzard_valley/trees.png
+share/etracer/courses/events/b-herring_run/herringrunicon.png
+share/etracer/courses/events/b-herring_run/high_road/course.tcl
+share/etracer/courses/events/b-herring_run/high_road/elev.png
+share/etracer/courses/events/b-herring_run/high_road/preview.png
+share/etracer/courses/events/b-herring_run/high_road/terrain.png
+share/etracer/courses/events/b-herring_run/high_road/trees.png
+share/etracer/courses/events/b-herring_run/ice_labyrinth/course.tcl
+share/etracer/courses/events/b-herring_run/ice_labyrinth/elev.png
+share/etracer/courses/events/b-herring_run/ice_labyrinth/preview.png
+share/etracer/courses/events/b-herring_run/ice_labyrinth/terrain.png
+share/etracer/courses/events/b-herring_run/ice_labyrinth/trees.png
+share/etracer/courses/events/b-herring_run/ive_got_a_woody/course.tcl
+share/etracer/courses/events/b-herring_run/ive_got_a_woody/elev.png
+share/etracer/courses/events/b-herring_run/ive_got_a_woody/preview.png
+share/etracer/courses/events/b-herring_run/ive_got_a_woody/terrain.png
+share/etracer/courses/events/b-herring_run/ive_got_a_woody/trees.png
+share/etracer/courses/events/b-herring_run/keep_it_up/course.tcl
+share/etracer/courses/events/b-herring_run/keep_it_up/elev.png
+share/etracer/courses/events/b-herring_run/keep_it_up/preview.png
+share/etracer/courses/events/b-herring_run/keep_it_up/terrain.png
+share/etracer/courses/events/b-herring_run/keep_it_up/trees.png
+share/etracer/courses/events/b-herring_run/mount_herring/course.tcl
+share/etracer/courses/events/b-herring_run/mount_herring/elev.png
+share/etracer/courses/events/b-herring_run/mount_herring/preview.png
+share/etracer/courses/events/b-herring_run/mount_herring/terrain.png
+share/etracer/courses/events/b-herring_run/mount_herring/trees.png
+share/etracer/courses/events/b-herring_run/mount_satan/course.tcl
+share/etracer/courses/events/b-herring_run/mount_satan/elev.png
+share/etracer/courses/events/b-herring_run/mount_satan/preview.png
+share/etracer/courses/events/b-herring_run/mount_satan/terrain.png
+share/etracer/courses/events/b-herring_run/mount_satan/trees.png
+share/etracer/courses/events/b-herring_run/penguins_cant_fly/course.tcl
+share/etracer/courses/events/b-herring_run/penguins_cant_fly/elev.png
+share/etracer/courses/events/b-herring_run/penguins_cant_fly/preview.png
+share/etracer/courses/events/b-herring_run/penguins_cant_fly/terrain.png
+share/etracer/courses/events/b-herring_run/penguins_cant_fly/trees.png
+share/etracer/courses/events/b-herring_run/ski_jump/course.tcl
+share/etracer/courses/events/b-herring_run/ski_jump/elev.png
+share/etracer/courses/events/b-herring_run/ski_jump/preview.png
+share/etracer/courses/events/b-herring_run/ski_jump/terrain.png
+share/etracer/courses/events/b-herring_run/ski_jump/trees.png
+share/etracer/courses/events/b-herring_run/skull_mountain/course.tcl
+share/etracer/courses/events/b-herring_run/skull_mountain/elev.png
+share/etracer/courses/events/b-herring_run/skull_mountain/preview.png
+share/etracer/courses/events/b-herring_run/skull_mountain/terrain.png
+share/etracer/courses/events/b-herring_run/skull_mountain/trees.png
+share/etracer/courses/events/b-herring_run/slalom/course.tcl
+share/etracer/courses/events/b-herring_run/slalom/elev.png
+share/etracer/courses/events/b-herring_run/slalom/preview.png
+share/etracer/courses/events/b-herring_run/slalom/terrain.png
+share/etracer/courses/events/b-herring_run/slalom/trees.png
+share/etracer/courses/events/b-herring_run/snow_valley/course.tcl
+share/etracer/courses/events/b-herring_run/snow_valley/elev.png
+share/etracer/courses/events/b-herring_run/snow_valley/preview.png
+share/etracer/courses/events/b-herring_run/snow_valley/terrain.png
+share/etracer/courses/events/b-herring_run/snow_valley/trees.png
+share/etracer/courses/events/b-herring_run/the_narrow_way/course.tcl
+share/etracer/courses/events/b-herring_run/the_narrow_way/elev.png
+share/etracer/courses/events/b-herring_run/the_narrow_way/preview.png
+share/etracer/courses/events/b-herring_run/the_narrow_way/terrain.png
+share/etracer/courses/events/b-herring_run/the_narrow_way/trees.png
+share/etracer/courses/events/b-herring_run/tux-toboggan_run/course.tcl
+share/etracer/courses/events/b-herring_run/tux-toboggan_run/elev.png
+share/etracer/courses/events/b-herring_run/tux-toboggan_run/preview.png
+share/etracer/courses/events/b-herring_run/tux-toboggan_run/terrain.png
+share/etracer/courses/events/b-herring_run/tux-toboggan_run/trees.png
+share/etracer/courses/events/c-mountain_mania/bobsled_ride/course.tcl
+share/etracer/courses/events/c-mountain_mania/bobsled_ride/elev.png
+share/etracer/courses/events/c-mountain_mania/bobsled_ride/preview.png
+share/etracer/courses/events/c-mountain_mania/bobsled_ride/terrain.png
+share/etracer/courses/events/c-mountain_mania/bobsled_ride/trees.png
+share/etracer/courses/events/c-mountain_mania/candy_lane/course.tcl
+share/etracer/courses/events/c-mountain_mania/candy_lane/elev.png
+share/etracer/courses/events/c-mountain_mania/candy_lane/preview.png
+share/etracer/courses/events/c-mountain_mania/candy_lane/terrain.png
+share/etracer/courses/events/c-mountain_mania/candy_lane/trees.png
+share/etracer/courses/events/c-mountain_mania/crazy_path/course.tcl
+share/etracer/courses/events/c-mountain_mania/crazy_path/elev.png
+share/etracer/courses/events/c-mountain_mania/crazy_path/preview.png
+share/etracer/courses/events/c-mountain_mania/crazy_path/terrain.png
+share/etracer/courses/events/c-mountain_mania/crazy_path/trees.png
+share/etracer/courses/events/c-mountain_mania/cupicon.png
+share/etracer/courses/events/c-mountain_mania/event.tcl
+share/etracer/courses/events/c-mountain_mania/herringrunicon.png
+share/etracer/courses/events/c-mountain_mania/hey_tux/course.tcl
+share/etracer/courses/events/c-mountain_mania/hey_tux/elev.rgb
+share/etracer/courses/events/c-mountain_mania/hey_tux/preview.rgb
+share/etracer/courses/events/c-mountain_mania/hey_tux/terrain.rgb
+share/etracer/courses/events/c-mountain_mania/hey_tux/trees.rgb
+share/etracer/courses/events/c-mountain_mania/hippo_run/course.tcl
+share/etracer/courses/events/c-mountain_mania/hippo_run/elev.png
+share/etracer/courses/events/c-mountain_mania/hippo_run/preview.png
+share/etracer/courses/events/c-mountain_mania/hippo_run/terrain.png
+share/etracer/courses/events/c-mountain_mania/hippo_run/trees.png
+share/etracer/courses/events/c-mountain_mania/ice_pipeline/course.tcl
+share/etracer/courses/events/c-mountain_mania/ice_pipeline/elev.rgb
+share/etracer/courses/events/c-mountain_mania/ice_pipeline/preview.png
+share/etracer/courses/events/c-mountain_mania/ice_pipeline/terrain.rgb
+share/etracer/courses/events/c-mountain_mania/ice_pipeline/trees.rgb
+share/etracer/courses/events/c-mountain_mania/in_search_of_vodka/course.tcl
+share/etracer/courses/events/c-mountain_mania/in_search_of_vodka/elev.rgb
+share/etracer/courses/events/c-mountain_mania/in_search_of_vodka/preview.rgb
+share/etracer/courses/events/c-mountain_mania/in_search_of_vodka/terrain.rgb
+share/etracer/courses/events/c-mountain_mania/in_search_of_vodka/trees.rgb
+share/etracer/courses/events/c-mountain_mania/merry_go_round/course.tcl
+share/etracer/courses/events/c-mountain_mania/merry_go_round/elev.png
+share/etracer/courses/events/c-mountain_mania/merry_go_round/preview.png
+share/etracer/courses/events/c-mountain_mania/merry_go_round/terrain.png
+share/etracer/courses/events/c-mountain_mania/merry_go_round/trees.png
+share/etracer/courses/events/c-mountain_mania/nature_stroll/course.tcl
+share/etracer/courses/events/c-mountain_mania/nature_stroll/elev.png
+share/etracer/courses/events/c-mountain_mania/nature_stroll/preview.png
+share/etracer/courses/events/c-mountain_mania/nature_stroll/terrain.png
+share/etracer/courses/events/c-mountain_mania/nature_stroll/trees.png
+share/etracer/courses/events/c-mountain_mania/slippy_slidey/course.tcl
+share/etracer/courses/events/c-mountain_mania/slippy_slidey/elev.png
+share/etracer/courses/events/c-mountain_mania/slippy_slidey/preview.png
+share/etracer/courses/events/c-mountain_mania/slippy_slidey/terrain.png
+share/etracer/courses/events/c-mountain_mania/slippy_slidey/trees.png
+share/etracer/courses/events/c-mountain_mania/volcanoes/course.tcl
+share/etracer/courses/events/c-mountain_mania/volcanoes/elev.png
+share/etracer/courses/events/c-mountain_mania/volcanoes/preview.png
+share/etracer/courses/events/c-mountain_mania/volcanoes/terrain.png
+share/etracer/courses/events/c-mountain_mania/volcanoes/trees.png
+share/etracer/courses/events/d-niehoff_experience/challenge_one/course.tcl
+share/etracer/courses/events/d-niehoff_experience/challenge_one/elev.png
+share/etracer/courses/events/d-niehoff_experience/challenge_one/preview.png
+share/etracer/courses/events/d-niehoff_experience/challenge_one/terrain.png
+share/etracer/courses/events/d-niehoff_experience/challenge_one/trees.png
+share/etracer/courses/events/d-niehoff_experience/chinese_wall/course.tcl
+share/etracer/courses/events/d-niehoff_experience/chinese_wall/elev.png
+share/etracer/courses/events/d-niehoff_experience/chinese_wall/preview.png
+share/etracer/courses/events/d-niehoff_experience/chinese_wall/terrain.png
+share/etracer/courses/events/d-niehoff_experience/chinese_wall/trees.png
+share/etracer/courses/events/d-niehoff_experience/cupicon.png
+share/etracer/courses/events/d-niehoff_experience/event.tcl
+share/etracer/courses/events/d-niehoff_experience/explore_mountains/course.tcl
+share/etracer/courses/events/d-niehoff_experience/explore_mountains/elev.png
+share/etracer/courses/events/d-niehoff_experience/explore_mountains/preview.png
+share/etracer/courses/events/d-niehoff_experience/explore_mountains/terrain.png
+share/etracer/courses/events/d-niehoff_experience/explore_mountains/trees.png
+share/etracer/courses/events/d-niehoff_experience/frozen_lakes/course.tcl
+share/etracer/courses/events/d-niehoff_experience/frozen_lakes/elev.png
+share/etracer/courses/events/d-niehoff_experience/frozen_lakes/preview.png
+share/etracer/courses/events/d-niehoff_experience/frozen_lakes/terrain.png
+share/etracer/courses/events/d-niehoff_experience/frozen_lakes/trees.png
+share/etracer/courses/events/d-niehoff_experience/herringrunicon.png
+share/etracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail/course.tcl
+share/etracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail/elev.png
+share/etracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail/preview.png
+share/etracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail/terrain.png
+share/etracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail/trees.png
+share/etracer/courses/events/d-niehoff_experience/secret_valleys/course.tcl
+share/etracer/courses/events/d-niehoff_experience/secret_valleys/elev.png
+share/etracer/courses/events/d-niehoff_experience/secret_valleys/preview.png
+share/etracer/courses/events/d-niehoff_experience/secret_valleys/terrain.png
+share/etracer/courses/events/d-niehoff_experience/secret_valleys/trees.png
+share/etracer/courses/events/d-niehoff_experience/tux_at_home/course.tcl
+share/etracer/courses/events/d-niehoff_experience/tux_at_home/elev.png
+share/etracer/courses/events/d-niehoff_experience/tux_at_home/preview.png
+share/etracer/courses/events/d-niehoff_experience/tux_at_home/terrain.png
+share/etracer/courses/events/d-niehoff_experience/tux_at_home/trees.png
+share/etracer/courses/events/d-niehoff_experience/wild_mountains/course.tcl
+share/etracer/courses/events/d-niehoff_experience/wild_mountains/elev.png
+share/etracer/courses/events/d-niehoff_experience/wild_mountains/preview.png
+share/etracer/courses/events/d-niehoff_experience/wild_mountains/terrain.png
+share/etracer/courses/events/d-niehoff_experience/wild_mountains/trees.png
+share/etracer/courses/themes/common.tcl
+share/etracer/courses/themes/conditions/common/cloudyback.png
+share/etracer/courses/themes/conditions/common/cloudybottom.png
+share/etracer/courses/themes/conditions/common/cloudyfront.png
+share/etracer/courses/themes/conditions/common/cloudyleft.png
+share/etracer/courses/themes/conditions/common/cloudyright.png
+share/etracer/courses/themes/conditions/common/cloudytop.png
+share/etracer/courses/themes/conditions/common/conditions.tcl
+share/etracer/courses/themes/conditions/common/envmap.png
+share/etracer/courses/themes/conditions/common/evening_light.tcl
+share/etracer/courses/themes/conditions/common/eveningback.png
+share/etracer/courses/themes/conditions/common/eveningbottom.png
+share/etracer/courses/themes/conditions/common/eveningenv.png
+share/etracer/courses/themes/conditions/common/eveningfront.png
+share/etracer/courses/themes/conditions/common/eveningleft.png
+share/etracer/courses/themes/conditions/common/eveningright.png
+share/etracer/courses/themes/conditions/common/eveningtop.png
+share/etracer/courses/themes/conditions/common/foggy_light.tcl
+share/etracer/courses/themes/conditions/common/night_light.tcl
+share/etracer/courses/themes/conditions/common/nightback.png
+share/etracer/courses/themes/conditions/common/nightbottom.png
+share/etracer/courses/themes/conditions/common/nightenv.png
+share/etracer/courses/themes/conditions/common/nightfront.png
+share/etracer/courses/themes/conditions/common/nightleft.png
+share/etracer/courses/themes/conditions/common/nightright.png
+share/etracer/courses/themes/conditions/common/nighttop.png
+share/etracer/courses/themes/conditions/common/sunny_light.tcl
+share/etracer/courses/themes/conditions/common/sunnyback.png
+share/etracer/courses/themes/conditions/common/sunnybottom.png
+share/etracer/courses/themes/conditions/common/sunnyfront.png
+share/etracer/courses/themes/conditions/common/sunnyleft.png
+share/etracer/courses/themes/conditions/common/sunnyright.png
+share/etracer/courses/themes/conditions/common/sunnytop.png
+share/etracer/courses/themes/huds/common/huds.tcl
+share/etracer/courses/themes/items/common/finish.png
+share/etracer/courses/themes/items/common/flag.png
+share/etracer/courses/themes/items/common/herring_standard.png
+share/etracer/courses/themes/items/common/items.tcl
+share/etracer/courses/themes/items/common/start.png
+share/etracer/courses/themes/items/flags/flag2.png
+share/etracer/courses/themes/items/flags/items.tcl
+share/etracer/courses/themes/items/herrings/herring_dead.png
+share/etracer/courses/themes/items/herrings/herring_green.png
+share/etracer/courses/themes/items/herrings/herring_red.png
+share/etracer/courses/themes/items/herrings/items.tcl
+share/etracer/courses/themes/items/herrings/star.png
+share/etracer/courses/themes/items/stuff/items.tcl
+share/etracer/courses/themes/items/stuff/life.png
+share/etracer/courses/themes/models/common/models.tcl
+share/etracer/courses/themes/models/common/shrub.ac
+share/etracer/courses/themes/models/common/shrub.png
+share/etracer/courses/themes/models/common/tree.ac
+share/etracer/courses/themes/models/common/tree.png
+share/etracer/courses/themes/models/common/tree_barren.ac
+share/etracer/courses/themes/models/common/tree_barren.png
+share/etracer/courses/themes/models/stuff/barrier.ac
+share/etracer/courses/themes/models/stuff/barrier.png
+share/etracer/courses/themes/models/stuff/models.tcl
+share/etracer/courses/themes/models/trees/models.tcl
+share/etracer/courses/themes/models/trees/tree_xmas.ac
+share/etracer/courses/themes/models/trees/tree_xmas.png
+share/etracer/courses/themes/ppracer.tcl
+share/etracer/courses/themes/terrains/add/road.png
+share/etracer/courses/themes/terrains/add/speed.png
+share/etracer/courses/themes/terrains/add/terrains.tcl
+share/etracer/courses/themes/terrains/common/buttprint.png
+share/etracer/courses/themes/terrains/common/buttstart.png
+share/etracer/courses/themes/terrains/common/buttstop.png
+share/etracer/courses/themes/terrains/common/ice.png
+share/etracer/courses/themes/terrains/common/rock.png
+share/etracer/courses/themes/terrains/common/snow.png
+share/etracer/courses/themes/terrains/common/snowparticles.png
+share/etracer/courses/themes/terrains/common/terrains.tcl
+share/etracer/courses/themes/terrains/ice/greenice.png
+share/etracer/courses/themes/terrains/ice/hardice.png
+share/etracer/courses/themes/terrains/ice/terrains.tcl
+share/etracer/courses/themes/terrains/lava/lava.png
+share/etracer/courses/themes/terrains/lava/lavastone.png
+share/etracer/courses/themes/terrains/lava/terrains.tcl
+share/etracer/courses/themes/terrains/mud/mud.png
+share/etracer/courses/themes/terrains/mud/mudparticles.png
+share/etracer/courses/themes/terrains/mud/mudprint.png
+share/etracer/courses/themes/terrains/mud/mudstart.png
+share/etracer/courses/themes/terrains/mud/mudstop.png
+share/etracer/courses/themes/terrains/mud/terrains.tcl
+share/etracer/courses/themes/terrains/rock/snowyrock.png
+share/etracer/courses/themes/terrains/rock/terrains.tcl
+share/etracer/courses/themes/terrains/sand/redsand.png
+share/etracer/courses/themes/terrains/sand/sand.png
+share/etracer/courses/themes/terrains/sand/terrains.tcl
+share/etracer/courses/themes/terrains/snow/buttprint.png
+share/etracer/courses/themes/terrains/snow/buttstart.png
+share/etracer/courses/themes/terrains/snow/buttstop.png
+share/etracer/courses/themes/terrains/snow/dirtsnow.png
+share/etracer/courses/themes/terrains/snow/dirtsnowparticles.png
+share/etracer/courses/themes/terrains/snow/dsnow.png
+share/etracer/courses/themes/terrains/snow/dsnow2.png
+share/etracer/courses/themes/terrains/snow/snowparticles.png
+share/etracer/courses/themes/terrains/snow/snowygrass.png
+share/etracer/courses/themes/terrains/snow/stsnow1.png
+share/etracer/courses/themes/terrains/snow/stsnow2.png
+share/etracer/courses/themes/terrains/snow/terrains.tcl
+share/etracer/etracer_init.tcl
+share/etracer/fonts/PaperCuts20.ttf
+share/etracer/fonts/PaperCuts_outline.ttf
+share/etracer/models.tcl
+share/etracer/music/credits1-cp.it
+share/etracer/music/options1-jt.it
+share/etracer/music/race1-jt.it
+share/etracer/music/readme
+share/etracer/music/start1-jt.it
+share/etracer/music/wonrace1-jt.it
+share/etracer/objects.png
+share/etracer/sounds/fish_pickup1.wav
+share/etracer/sounds/fish_pickup2.wav
+share/etracer/sounds/fish_pickup3.wav
+share/etracer/sounds/tux_hit_tree1.wav
+share/etracer/sounds/tux_on_ice1.wav
+share/etracer/sounds/tux_on_rock1.wav
+share/etracer/sounds/tux_on_snow1.wav
+share/etracer/terrains.png
+share/etracer/textures/checkmark.png
+share/etracer/textures/conditions_button.png
+share/etracer/textures/energymask.png
+share/etracer/textures/gaugeenergymask.png
+share/etracer/textures/gaugeoutline.png
+share/etracer/textures/gaugespeedmask.png
+share/etracer/textures/herringicon.png
+share/etracer/textures/listbox_arrows.png
+share/etracer/textures/mask_outline.png
+share/etracer/textures/mask_outline2.png
+share/etracer/textures/menu_bottom_left.png
+share/etracer/textures/menu_bottom_right.png
+share/etracer/textures/menu_title.png
+share/etracer/textures/menu_title_small.png
+share/etracer/textures/menu_top_left.png
+share/etracer/textures/menu_top_right.png
+share/etracer/textures/mirror_button.png
+share/etracer/textures/mouse_cursor.png
+share/etracer/textures/noicon.png
+share/etracer/textures/nopreview.png
+share/etracer/textures/snow_button.png
+share/etracer/textures/snowparticles.png
+share/etracer/textures/speedmask.png
+share/etracer/textures/splash.png
+share/etracer/textures/splash_small.png
+share/etracer/textures/timeicon.png
+share/etracer/textures/tuxlife.png
+share/etracer/textures/wind_button.png
+share/etracer/translations/de_DE.tcl
+share/etracer/translations/en_GB.tcl
+share/etracer/translations/es_ES.tcl
+share/etracer/translations/eu_ES.tcl
+share/etracer/translations/fi_FI.tcl
+share/etracer/translations/fr_FR.tcl
+share/etracer/translations/it_IT.tcl
+share/etracer/translations/languages.tcl
+share/etracer/translations/nb_NO.tcl
+share/etracer/translations/nl_NL.tcl
+share/etracer/translations/nn_NO.tcl
+share/etracer/translations/pl_PL.tcl
+share/etracer/translations/pt_PT.tcl
+share/etracer/translations/ro_RO.tcl
+share/etracer/translations/ru_RU.tcl
+share/etracer/translations/sk_SK.tcl
+share/etracer/translations/sv_SE.tcl
+share/etracer/tux.tcl
+share/etracer/tux_snowboard.tcl
+share/etracer/tux_walk.tcl
+@dirrm share/etracer/translations
+@dirrm share/etracer/textures
+@dirrm share/etracer/sounds
+@dirrm share/etracer/music
+@dirrm share/etracer/fonts
+@dirrm share/etracer/courses/themes/terrains/snow
+@dirrm share/etracer/courses/themes/terrains/sand
+@dirrm share/etracer/courses/themes/terrains/rock
+@dirrm share/etracer/courses/themes/terrains/mud
+@dirrm share/etracer/courses/themes/terrains/lava
+@dirrm share/etracer/courses/themes/terrains/ice
+@dirrm share/etracer/courses/themes/terrains/common
+@dirrm share/etracer/courses/themes/terrains/add
+@dirrm share/etracer/courses/themes/terrains
+@dirrm share/etracer/courses/themes/models/trees
+@dirrm share/etracer/courses/themes/models/stuff
+@dirrm share/etracer/courses/themes/models/common
+@dirrm share/etracer/courses/themes/models
+@dirrm share/etracer/courses/themes/items/stuff
+@dirrm share/etracer/courses/themes/items/herrings
+@dirrm share/etracer/courses/themes/items/flags
+@dirrm share/etracer/courses/themes/items/common
+@dirrm share/etracer/courses/themes/items
+@dirrm share/etracer/courses/themes/huds/common
+@dirrm share/etracer/courses/themes/huds
+@dirrm share/etracer/courses/themes/conditions/common
+@dirrm share/etracer/courses/themes/conditions
+@dirrm share/etracer/courses/themes
+@dirrm share/etracer/courses/events/d-niehoff_experience/wild_mountains
+@dirrm share/etracer/courses/events/d-niehoff_experience/tux_at_home
+@dirrm share/etracer/courses/events/d-niehoff_experience/secret_valleys
+@dirrm share/etracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail
+@dirrm share/etracer/courses/events/d-niehoff_experience/frozen_lakes
+@dirrm share/etracer/courses/events/d-niehoff_experience/explore_mountains
+@dirrm share/etracer/courses/events/d-niehoff_experience/chinese_wall
+@dirrm share/etracer/courses/events/d-niehoff_experience/challenge_one
+@dirrm share/etracer/courses/events/d-niehoff_experience
+@dirrm share/etracer/courses/events/c-mountain_mania/volcanoes
+@dirrm share/etracer/courses/events/c-mountain_mania/slippy_slidey
+@dirrm share/etracer/courses/events/c-mountain_mania/nature_stroll
+@dirrm share/etracer/courses/events/c-mountain_mania/merry_go_round
+@dirrm share/etracer/courses/events/c-mountain_mania/in_search_of_vodka
+@dirrm share/etracer/courses/events/c-mountain_mania/ice_pipeline
+@dirrm share/etracer/courses/events/c-mountain_mania/hippo_run
+@dirrm share/etracer/courses/events/c-mountain_mania/hey_tux
+@dirrm share/etracer/courses/events/c-mountain_mania/crazy_path
+@dirrm share/etracer/courses/events/c-mountain_mania/candy_lane
+@dirrm share/etracer/courses/events/c-mountain_mania/bobsled_ride
+@dirrm share/etracer/courses/events/c-mountain_mania
+@dirrm share/etracer/courses/events/b-herring_run/tux-toboggan_run
+@dirrm share/etracer/courses/events/b-herring_run/the_narrow_way
+@dirrm share/etracer/courses/events/b-herring_run/snow_valley
+@dirrm share/etracer/courses/events/b-herring_run/slalom
+@dirrm share/etracer/courses/events/b-herring_run/skull_mountain
+@dirrm share/etracer/courses/events/b-herring_run/ski_jump
+@dirrm share/etracer/courses/events/b-herring_run/penguins_cant_fly
+@dirrm share/etracer/courses/events/b-herring_run/mount_satan
+@dirrm share/etracer/courses/events/b-herring_run/mount_herring
+@dirrm share/etracer/courses/events/b-herring_run/keep_it_up
+@dirrm share/etracer/courses/events/b-herring_run/ive_got_a_woody
+@dirrm share/etracer/courses/events/b-herring_run/ice_labyrinth
+@dirrm share/etracer/courses/events/b-herring_run/high_road
+@dirrm share/etracer/courses/events/b-herring_run/hazzard_valley
+@dirrm share/etracer/courses/events/b-herring_run/hamburger_hill
+@dirrm share/etracer/courses/events/b-herring_run/deadman
+@dirrm share/etracer/courses/events/b-herring_run/bumpy_ride
+@dirrm share/etracer/courses/events/b-herring_run
+@dirrm share/etracer/courses/events/a-tux_racer/twisty_slope
+@dirrm share/etracer/courses/events/a-tux_racer/path_of_daggers
+@dirrm share/etracer/courses/events/a-tux_racer/frozen_river
+@dirrm share/etracer/courses/events/a-tux_racer/bunny_hill
+@dirrm share/etracer/courses/events/a-tux_racer/bumpy_ride
+@dirrm share/etracer/courses/events/a-tux_racer
+@dirrm share/etracer/courses/events
+@dirrm share/etracer/courses/contrib/doing
+@dirrm share/etracer/courses/contrib
+@dirrm share/etracer/courses
+@dirrm share/etracer
