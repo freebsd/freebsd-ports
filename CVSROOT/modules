@@ -16000,6 +16000,7 @@ tavrasm		ports/devel/tavrasm
 taxipilot	ports/games/taxipilot
 tbb		ports/devel/tbb
 tbclock		ports/games/tbclock
+tbku		ports/sysutils/tbku
 tcb		ports/misc/tcb
 tcl-Mysql	ports/databases/tcl-Mysql
 tcl-manual	ports/lang/tcl-manual
