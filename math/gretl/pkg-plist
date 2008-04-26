@@ -344,6 +344,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/gretlgui.hlp.it
 %%NOGNOME:%%%%DATADIR%%/gtksourceview/gnuplot.lang
 %%NOGNOME:%%%%DATADIR%%/gtksourceview/gretl.lang
+%%DATADIR%%/helpfigs/Gamma.png
 %%DATADIR%%/helpfigs/adf1.png
 %%DATADIR%%/helpfigs/aic.png
 %%DATADIR%%/helpfigs/arlags.png
@@ -369,6 +370,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/helpfigs/poisson1.png
 %%DATADIR%%/helpfigs/poisson2.png
 %%DATADIR%%/helpfigs/simformula.png
+%%DATADIR%%/helpfigs/structural.png
 %%DATADIR%%/helpfigs/syssigma1.png
 %%DATADIR%%/helpfigs/syssigma2.png
 %%DATADIR%%/helpfigs/vif.png
