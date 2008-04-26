@@ -12055,6 +12055,7 @@ pandoc		ports/textproc/pandoc
 pango		ports/x11-toolkits/pango
 pango-reference	ports/x11-toolkits/pango-reference
 pangoxsl	ports/x11-toolkits/pangoxsl
+panomatic	ports/graphics/panomatic
 panoptis	ports/net/panoptis
 pantera		ports/security/pantera
 pantomime	ports/mail/pantomime
