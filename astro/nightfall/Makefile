@@ -18,6 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	x11 xext xrender xinerama xi xrandr xcursor \
 		xcomposite xdamage xfixes
+WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget gtk20
 USE_PERL5=	yes
 USE_GETTEXT=	yes
@@ -35,10 +36,8 @@ MAN1=		nightfall.1
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix libgnomeui
 INSTALLS_OMF=	yes
-PLIST_SUB=	GNOME=""
 .else
 CONFIGURE_ARGS+=	--disable-gnome
-PLIST_SUB=	GNOME="@comment "
 .endif
 
 .if defined(WITHOUT_PGPLOT)
