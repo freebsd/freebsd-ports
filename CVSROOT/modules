@@ -12376,6 +12376,7 @@ pear-XML_Util	ports/devel/pear-XML_Util
 pear-XML_Wddx	ports/textproc/pear-XML_Wddx
 pear-XML_XPath	ports/devel/pear-XML_XPath
 pear-apd	ports/devel/pear-apd
+pear-codegen	ports/devel/pear-codegen
 pearpc		ports/emulators/pearpc
 pebrot		ports/net-im/pebrot
 pecl-APC	ports/www/pecl-APC
