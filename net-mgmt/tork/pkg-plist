@@ -407,11 +407,14 @@ share/locale/de/LC_MESSAGES/tork.mo
 share/locale/fr/LC_MESSAGES/tork.mo
 share/locale/libkickermenu_tork-cs/LC_MESSAGES/tork.mo
 share/locale/libkickermenu_tork-fr/LC_MESSAGES/tork.mo
+share/locale/libkickermenu_tork-zh_CN/LC_MESSAGES/tork.mo
 share/locale/tr/LC_MESSAGES/tork.mo
 share/locale/zh_CN/LC_MESSAGES/tork.mo
 share/menu/tork
 share/pixmaps/tork.xpm
 share/services/torioslave.protocol
+@dirrm share/locale/libkickermenu_tork-zh_CN/LC_MESSAGES
+@dirrm share/locale/libkickermenu_tork-zh_CN
 @dirrm share/locale/libkickermenu_tork-fr/LC_MESSAGES
 @dirrm share/locale/libkickermenu_tork-fr
 @dirrm share/locale/libkickermenu_tork-cs/LC_MESSAGES
