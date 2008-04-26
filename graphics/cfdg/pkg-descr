@@ -1,0 +1,24 @@
+Context Free Design Grammar compiler.
+
+About CFDG:
+
+Chris Coyne created a small language for design grammars called CFDG.
+These grammars are sets of non-deterministic rules to produce images.
+The images are surprisingly beautiful, often from very simple grammars.
+Context Free is a full graphical environment for editing, rendering,
+and exploring CFDG design grammars.
+
+Features:
+* Simultaneously available for Macintosh, Windows and Posix/Unix.
+* Progressive image update: watch it generate
+* Save generated images in PNG or SVG format.
+* Produce animations
+* Edit grammars and re-render easily.
+* Render very large images (as large as 100 Mega-pixels).
+* Can handle generated images with millions of shapes.
+* Carefully tuned graphics rendering
+* Many built-in examples
+* Automatic checking for updates (Mac only).
+* It's free, as in beer and as in speech. 
+
+WWW:	http://www.contextfreeart.org/

@@ -1,0 +1,20 @@
+--- Makefile.orig	2007-04-29 08:51:20.000000000 +0300
++++ Makefile	2008-03-14 21:17:24.000000000 +0200
+@@ -52,7 +52,7 @@
+ # Under Cygwin replace strip $@ with strip $@.exe
+ 
+ cfdg: $(OBJS)
+-	$(LINK.o) $^ -L/usr/local/lib -lstdc++ -lpng -lz -fexceptions -o $@
++	$(LINK.o) $^ `libpng-config --ldflags` -lstdc++ -fexceptions -o $@
+ 	strip $@
+ 
+ 
+@@ -103,7 +103,7 @@
+ #
+ 
+ CPPFLAGS += $(patsubst %,-I%,$(INC_DIRS))
+-CPPFLAGS += -O3
++CPPFLAGS += `libpng-config --cflags`
+ #CPPFLAGS += -ggdb
+ 
+ $(OBJ_DIR)/%.o : %.cpp
