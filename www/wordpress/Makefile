@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	2.5
+PORTVERSION=	2.5.1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/ \
