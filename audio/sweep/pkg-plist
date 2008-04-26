@@ -16,8 +16,6 @@ lib/sweep/libladspameta.so
 lib/sweep/libnormalise.so
 lib/sweep/libreverse.so
 share/applications/sweep.desktop
-share/pixmaps/sweep.svg
-%%DATADIR%%/sweep_splash.png
 share/locale/de/LC_MESSAGES/sweep.mo
 share/locale/el/LC_MESSAGES/sweep.mo
 share/locale/en_AU/LC_MESSAGES/sweep.mo
@@ -25,8 +23,11 @@ share/locale/es_ES/LC_MESSAGES/sweep.mo
 share/locale/fr/LC_MESSAGES/sweep.mo
 share/locale/hu/LC_MESSAGES/sweep.mo
 share/locale/it/LC_MESSAGES/sweep.mo
+share/locale/ja/LC_MESSAGES/sweep.mo
 share/locale/pl/LC_MESSAGES/sweep.mo
 share/locale/ru/LC_MESSAGES/sweep.mo
+share/pixmaps/sweep.svg
+%%DATADIR%%/sweep_splash.png
 @dirrm %%DATADIR%%
 @dirrm lib/sweep
 @dirrm include/sweep
