@@ -2743,6 +2743,7 @@ etoile-unitkit	ports/devel/etoile-unitkit
 etoile-wildmenus	ports/x11-themes/etoile-wildmenus
 etoile-xwindowserverkit	ports/x11/etoile-xwindowserverkit
 etrace		ports/net/etrace
+etracer		ports/games/etracer
 ettercap	ports/net-mgmt/ettercap
 etunnel		ports/net/etunnel
 euchre		ports/games/euchre
