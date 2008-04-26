@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	gnome-volume-manager
-PORTVERSION=	2.22.3
+PORTVERSION=	2.22.5
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	GNOME
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Automatically mount removable media, and more
