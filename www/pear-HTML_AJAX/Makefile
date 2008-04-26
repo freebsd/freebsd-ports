@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_AJAX
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.5
 CATEGORIES=	www devel pear
 
 MAINTAINER=	numisemis@yahoo.com
@@ -32,6 +32,8 @@ EXAMPLES=	guestbook/auto_server.php \
 		review/index.php \
 		review/review.class.php \
 		support/customLib.js \
+		support/interceptor.php \
+		support/isajax.php \
 		support/livesearch.class.php \
 		support/post_tester.php \
 		support/test.class.php \
@@ -40,6 +42,7 @@ EXAMPLES=	guestbook/auto_server.php \
 		support/xml.class.php \
 		tests/behaviorSpeed.php \
 		tests/duplicateJSLib.php \
+		tests/helper_combine.php \
 		tests/js_utils_getElements.php \
 		tests/js_utils_vardump.php \
 		tests/serialize.php.examples.php \
@@ -51,12 +54,15 @@ EXAMPLES=	guestbook/auto_server.php \
 		tests/test_speed.php \
 		action_usage.php \
 		auto_server.php \
+		bugfixes.php \
 		error_usage.php \
 		form.php \
 		grab.php \
 		haa_usage.php \
 		helper_usage.php \
 		index.php \
+		interceptors.php \
+		interceptorServer.php \
 		php_callback.php \
 		proxyless_usage.php \
 		proxy_usage_inline_javascript.php \
