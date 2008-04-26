@@ -9,7 +9,7 @@ PORTNAME=	nntpcache
 PORTVERSION=	3.0.2
 PORTREVISION=	6
 CATEGORIES=	news
-MASTER_SITES=	http://www.nntpcache.com/pub/nntpcache/
+MASTER_SITES=	http://www.xs4all.nl/~suelette/
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	News caching/anti-spam/server-merging system
