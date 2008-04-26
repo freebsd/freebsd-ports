@@ -1,17 +1,16 @@
 # New ports collection makefile for:	devel/rubygem-stream
 # Date created:				02.08.2005
-# Whom:					Ulrich Spoerlein <q@galgenberg.net>
+# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	stream
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.galgenberg.net/distfiles/
-MASTER_SITE_SUBDIR=	fenner
+MASTER_SITES=	RF
+MASTER_SITE_SUBDIR=	rgl
 
 MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Interface for external iterators
