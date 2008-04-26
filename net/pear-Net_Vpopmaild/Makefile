@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	Net_Vpopmaild
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	net mail pear
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	PEAR Class for accessing Vpopmail's vpopmaild daemon
 
-BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
+		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
