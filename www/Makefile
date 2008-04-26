@@ -1015,6 +1015,7 @@
     SUBDIR += pear-HTTP_Request
     SUBDIR += pear-HTTP_Server
     SUBDIR += pear-HTTP_Session
+    SUBDIR += pear-HTTP_Session2
     SUBDIR += pear-HTTP_Upload
     SUBDIR += pear-Services_Compete
     SUBDIR += pear-Services_Delicious
