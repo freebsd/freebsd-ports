@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	magickwand
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.magickwand.org/download/php/
 PKGNAMEPREFIX=	php-
 DISTNAME=	MagickWandForPHP-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PHP extension to manipulate images
 
 LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
