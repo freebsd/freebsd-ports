@@ -16,7 +16,7 @@
  #define	INDEX_FN    PORTS_BASE "/INDEX"
 -#define INDEX_MAXLN 4096
 +#endif
-+#define INDEX_MAXLN 8192
++#define INDEX_MAXLN 16384
  #define DB_DIR	    "/var/db/pkg"
  #define ITER_BYTES  (128 * 1024)
  #define ITER_ENTS   32
