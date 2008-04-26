@@ -34,6 +34,7 @@ bin/xcoral
 %%DATADIR%%/shell-script.sc
 %%DATADIR%%/sun-keydef.sc
 %%DATADIR%%/title.sc
+%%DATADIR%%/title.sc.gen
 %%DATADIR%%/top-ten.sc
 %%DATADIR%%/utilities.sc
 %%DATADIR%%/version.sc
