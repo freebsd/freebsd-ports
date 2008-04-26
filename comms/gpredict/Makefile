@@ -6,6 +6,7 @@
 
 PORTNAME=	gpredict
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	groundstation
@@ -14,9 +15,12 @@ MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio satellite tracking and prediction
 
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib:install
+BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl:install
+RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl:install
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-network
 USE_GMAKE=	yes
 
 MAN1=		gpredict.1
