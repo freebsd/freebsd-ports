@@ -6,21 +6,17 @@
 #
 
 PORTNAME=	roundcube
-PORTVERSION=	0.1.${SNAPSHOT}
+PORTVERSION=	0.1.1
+PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.farrokhi.net/roundcube/:unixified \
-		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
-MASTER_SITE_SUBDIR=	ale/:freebsd
-DISTFILES=	${PORTNAME}-${PORTVERSION:S/.${SNAPSHOT}//}-${SNAPSHOT}${EXTRACT_SUFX}:unixified
+MASTER_SITES=	SF/${PORTNAME}mail
+DISTNAME=	${PORTNAME}mail-${PORTVERSION}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
-SNAPSHOT=	20080104
-
-WRKSRC=		${WRKDIR}/${PORTNAME}mail
+#WRKSRC=		${WRKDIR}/${PORTNAME}mail
 NO_BUILD=	yes
-USE_BZIP2=	yes
 
 RCUBECOMP=	SQL bin config index.php logs program skins temp
 PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADING
