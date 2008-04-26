@@ -6,40 +6,33 @@
 #
 
 PORTNAME=	synfigstudio
-DISTVERSION=	0.61.06
+DISTVERSION=	0.61.08
 CATEGORIES=	graphics multimedia
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=synfig
+MASTER_SITES=	SF/synfig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector-based 2D animation software package
 
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ETL.pc:${PORTSDIR}/devel/etl
 LIB_DEPENDS=	synfig.0:${PORTSDIR}/devel/synfig \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ETL.pc:${PORTSDIR}/devel/etl
 
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack gnometarget gtk20
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
-USE_GNOME=	gtk20 gnomehack
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
+USE_LDCONFIG=	yes
 
 post-patch:
-	@${REINPLACE_CMD} 's|TARGET_MNG="no"|TARGET_MNG="yes"|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} 's|#include <sigc++\/compatibility\.h>||g ; \
-		s|SigC::Connection|sigc::connection|g ; \
-		s|SigC::slot|sigc::ptr_fun|g ; \
-		s|namespace SigC|namespace sigc|g' \
-			${WRKSRC}/src/gtkmm/*.*
+	@${REINPLACE_CMD} '/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
+		 /optimization_flags/s|CFLAGS=|#CFLAGS=|' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
+.for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
