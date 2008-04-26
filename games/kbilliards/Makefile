@@ -32,6 +32,10 @@ CFLAGS+=	-Dsqrtl=sqrt
 CFLAGS+=	-Dround=rint
 .endif
 
+.if ${OSVERSION} >= 800024
+BROKEN=		does not compile
+.endif
+
 pre-configure:
 	@cd ${WRKSRC} && ${PERL} admin/am_edit
 
