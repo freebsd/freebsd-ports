@@ -6,27 +6,23 @@
 #
 
 PORTNAME=	etl
-DISTVERSION=	0.04.09
+PORTVERSION=	0.04.11
 CATEGORIES=	devel lang
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	synfig
-DISTNAME=	ETL-${DISTVERSION}
+MASTER_SITES=	SF/synfig
+DISTNAME=	ETL-0.4.11
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voria Extended Class and Template Library
 
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
+GNU_CONFIGURE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.for doc in AUTHORS ChangeLog INSTALL NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 

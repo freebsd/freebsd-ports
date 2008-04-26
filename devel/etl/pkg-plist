@@ -21,6 +21,7 @@ include/ETL/_hermite.h
 include/ETL/_misc.h
 include/ETL/_mutex_null.h
 include/ETL/_mutex_pthreads.h
+include/ETL/_mutex_pthreads_simple.h
 include/ETL/_mutex_win32.h
 include/ETL/_pen.h
 include/ETL/_random.h
@@ -49,6 +50,7 @@ include/ETL/handle
 include/ETL/hermite
 include/ETL/ipc
 include/ETL/misc
+include/ETL/mutex
 include/ETL/pen
 include/ETL/random
 include/ETL/rect
@@ -63,4 +65,10 @@ include/ETL/thread
 include/ETL/trivial
 include/ETL/value
 libdata/pkgconfig/ETL.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/ETL
