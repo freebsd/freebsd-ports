@@ -17,6 +17,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_DOS2UNIX=	yes
 
+DEPRECATED=	Use www/pear-HTTP_Session2 instead
+EXPIRATION_DATE=	2008-05-15
+
 FILES=		Session.php Session/Container.php Session/Container/DB.php \
 		Session/Container/MDB.php Session/Container/MDB2.php \
 		Session/Container/Memcache.php
