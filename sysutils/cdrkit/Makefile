@@ -25,10 +25,16 @@ MAN5=		genisoimagerc.5
 
 CONFLICTS=	cdrtools-* cjk-cdrtools-*
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800030
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/include/AddSchilyBits.cmake ${WRKSRC}/3rd-party/dirsplit/CMakeLists.txt
 
 do-configure:
 	@(cd ${WRKSRC}; ${LOCALBASE}/bin/cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_C_FLAGS:STRING="${CFLAGS} -I./libparanoia -I${LOCALBASE}/include -L${LOCALBASE}/lib" -DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib")
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
