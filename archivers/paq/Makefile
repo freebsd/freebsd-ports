@@ -7,7 +7,7 @@
 
 PORTNAME=	paq
 DISTVERSION=	8o9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cs.fit.edu/~mmahoney/compression/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -32,7 +32,7 @@ PLIST_SUB+=	CPPFILE=${CPPFILE} LPAQ=${LPAQ}	LPQ=${LPQ} PAQ9=${PAQ9}
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 PAQFLAGS+=	-DUNIX
 ASM1?=	nasm -f elf -o
-ASM2?=
+ASM2?=	
 .if !defined(WITH_SSE2)
 ASMFILE=	paq7asm
 .else
