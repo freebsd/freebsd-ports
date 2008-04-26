@@ -36,13 +36,13 @@ milterdkim_uid=${milterdkim_uid:-"mailnull"}
 milterdkim_profiles=${milterdkim_profiles:-}
 milterdkim_socket=${milterdkim_socket:-"local:/var/run/milterdkim/filter"}
 milterdkim_cfgfile=${milterdkim_cfgfile:-"%%PREFIX%%/etc/mail/dkim-filter.conf"}
-milterdkim_domain=${milterdkim_domain:-"example.com"}
+milterdkim_domain=${milterdkim_domain:-}
 milterdkim_key=${milterdkim_key:-}
 milterdkim_selector=${milterdkim_selector:-}
 milterdkim_alg=${milterdkim_alg:-}
 # Options other than above can be set with $milterdkim_flags.
 # see dkim-milter documentation for detail.
-milterdkim_flags=${milterdkim_flags:-"-b sv -c simple/simple -m MSA"}
+milterdkim_flags=${milterdkim_flags:-}
 
 . %%RC_SUBR%%
 
