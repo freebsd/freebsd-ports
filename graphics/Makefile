@@ -538,6 +538,7 @@
     SUBDIR += p5-chart
     SUBDIR += p5-ming
     SUBDIR += paintlib
+    SUBDIR += panoglview
     SUBDIR += panomatic
     SUBDIR += passepartout
     SUBDIR += pear-Image_3D
