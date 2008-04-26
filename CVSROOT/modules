@@ -12929,6 +12929,7 @@ pm3-gui		ports/lang/pm3-gui
 pm3-m3tk	ports/lang/pm3-m3tk
 pm3-net		ports/lang/pm3-net
 pm3-netobj	ports/lang/pm3-netobj
+pm3umpdl	ports/audio/pm3umpdl
 pmacct		ports/net-mgmt/pmacct
 pmail		ports/mail/pmail
 pmake		ports/devel/pmake
