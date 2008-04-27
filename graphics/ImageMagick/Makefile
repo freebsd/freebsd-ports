@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.4.0-7
+DISTVERSION=	6.4.0-11
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -21,17 +21,18 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
 MASTER_SITE_SUBDIR=	imagemagick
-EXTRACT_SUFX=	.tar.lzma
+EXTRACT_SUFX=	.7z
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Image processing tools
 
-EXTRACT_DEPENDS=	lzma:${PORTSDIR}/archivers/lzma
+EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-EXTRACT_CMD=	${LOCALBASE}/bin/lzma d
-EXTRACT_BEFORE_ARGS=	-so
+EXTRACT_CMD=	${LOCALBASE}/bin/7z
+EXTRACT_BEFORE_ARGS=	x -bd -o${WRKDIR} -w${WRKDIR}
+EXTRACT_AFTER_ARGS=	> /dev/null
 USE_PERL5=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libltdl:15
@@ -41,7 +42,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --without-dps
 USE_LDCONFIG=	yes
-#ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
 		animate.1 conjure.1 compare.1 composite.1 convert.1 display.1 \
