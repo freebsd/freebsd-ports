@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tkabber-plugins
-PORTVERSION=	20071014
+PORTVERSION=	20080323
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	External Plugins for Tkabber
 
 RUN_DEPENDS=	tkabber-devel>=0.10.a.20071015:${PORTSDIR}/net-im/tkabber-devel

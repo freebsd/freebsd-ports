@@ -1,11 +1,13 @@
 %%DATADIR%%/aniemoticons/aniemoticons.tcl
 %%DATADIR%%/aniemoticons/anigif.tcl
 %%DATADIR%%/attline/AUTHORS
-%%DATADIR%%/attline/BUGS
+%%DATADIR%%/attline/INSTALL
+%%DATADIR%%/attline/README
 %%DATADIR%%/attline/TODO
 %%DATADIR%%/attline/attline.tcl
 %%DATADIR%%/attline/license.terms
 %%DATADIR%%/attline/msgs/de.msg
+%%DATADIR%%/attline/msgs/es.msg
 %%DATADIR%%/attline/msgs/pl.msg
 %%DATADIR%%/attline/msgs/ru.msg
 %%DATADIR%%/bc/bc.tcl
@@ -113,6 +115,7 @@
 %%DATADIR%%/debug/msgs/ru.msg
 %%DATADIR%%/debug/msgs/uk.msg
 %%DATADIR%%/ejabberd/ejabberd.tcl
+%%DATADIR%%/ejabberd/msgs/de.msg
 %%DATADIR%%/ejabberd/msgs/es.msg
 %%DATADIR%%/ejabberd/msgs/pl.msg
 %%DATADIR%%/ejabberd/msgs/ru.msg
@@ -125,6 +128,8 @@
 %%DATADIR%%/floatinglog/floatinglog.tcl
 %%DATADIR%%/floatinglog/license.terms
 %%DATADIR%%/floatinglog/msgs/de.msg
+%%DATADIR%%/floatinglog/msgs/es.msg
+%%DATADIR%%/floatinglog/msgs/pl.msg
 %%DATADIR%%/floatinglog/msgs/ru.msg
 %%DATADIR%%/georoster/ChangeLog
 %%DATADIR%%/georoster/bwmap2.gif
@@ -150,6 +155,9 @@
 %%DATADIR%%/georoster/ua.coords
 %%DATADIR%%/georoster/us.coords
 %%DATADIR%%/gmail/gmail.tcl
+%%DATADIR%%/gmail/msgs/de.msg
+%%DATADIR%%/gmail/msgs/es.msg
+%%DATADIR%%/gmail/msgs/pl.msg
 %%DATADIR%%/gmail/msgs/ru.msg
 %%DATADIR%%/iconsets/amibulb/docking/tkabber.ico
 %%DATADIR%%/iconsets/amibulb/icondef.xml
@@ -438,6 +446,8 @@
 %%DATADIR%%/mute/msgs/ru.msg
 %%DATADIR%%/mute/mute.tcl
 %%DATADIR%%/openurl/msgs/de.msg
+%%DATADIR%%/openurl/msgs/es.msg
+%%DATADIR%%/openurl/msgs/pl.msg
 %%DATADIR%%/openurl/msgs/ru.msg
 %%DATADIR%%/openurl/openurl.tcl
 %%DATADIR%%/osd/ChangeLog
@@ -449,6 +459,8 @@
 %%DATADIR%%/presencecmd/VERSION
 %%DATADIR%%/presencecmd/license.terms
 %%DATADIR%%/presencecmd/msgs/de.msg
+%%DATADIR%%/presencecmd/msgs/es.msg
+%%DATADIR%%/presencecmd/msgs/pl.msg
 %%DATADIR%%/presencecmd/msgs/ru.msg
 %%DATADIR%%/presencecmd/presencecmd.tcl
 %%DATADIR%%/quiz/quiz.tcl
@@ -527,6 +539,7 @@
 %%DATADIR%%/tkabber-khim/khim/pl.msg
 %%DATADIR%%/tkabber-khim/khim/ru.msg
 %%DATADIR%%/tkabber-khim/khim/uk.msg
+%%DATADIR%%/tkabber-khim/msgs/es.msg
 %%DATADIR%%/tkabber-khim/msgs/pl.msg
 %%DATADIR%%/tkabber-khim/msgs/ru.msg
 %%DATADIR%%/tkabber-khim/tkabber-khim.tcl
@@ -584,8 +597,11 @@
 @dirrm %%DATADIR%%/georoster
 @dirrm %%DATADIR%%/gmail/msgs
 @dirrm %%DATADIR%%/gmail
-@dirrm %%DATADIR%%/iconsets/jarl/roster
-@dirrm %%DATADIR%%/iconsets/jarl
+@dirrm %%DATADIR%%/iconsets/gabber/services
+@dirrm %%DATADIR%%/iconsets/gabber/tkabber
+@dirrm %%DATADIR%%/iconsets/gabber/docking
+@dirrm %%DATADIR%%/iconsets/gabber/roster
+@dirrm %%DATADIR%%/iconsets/gabber
 @dirrm %%DATADIR%%/iconsets/gush/tkabber
 @dirrm %%DATADIR%%/iconsets/gush/docking
 @dirrm %%DATADIR%%/iconsets/gush/roster
@@ -595,16 +611,12 @@
 @dirrm %%DATADIR%%/iconsets/jajc/docking
 @dirrm %%DATADIR%%/iconsets/jajc/roster
 @dirrm %%DATADIR%%/iconsets/jajc
-@dirrm %%DATADIR%%/iconsets/kroc/services
-@dirrm %%DATADIR%%/iconsets/kroc/tkabber
-@dirrm %%DATADIR%%/iconsets/kroc/docking
-@dirrm %%DATADIR%%/iconsets/kroc/roster
-@dirrm %%DATADIR%%/iconsets/kroc
-@dirrm %%DATADIR%%/iconsets/gabber/services
-@dirrm %%DATADIR%%/iconsets/gabber/tkabber
-@dirrm %%DATADIR%%/iconsets/gabber/docking
-@dirrm %%DATADIR%%/iconsets/gabber/roster
-@dirrm %%DATADIR%%/iconsets/gabber
+@dirrm %%DATADIR%%/iconsets/jarl/roster
+@dirrm %%DATADIR%%/iconsets/jarl
+@dirrm %%DATADIR%%/iconsets/amibulb/tkabber
+@dirrm %%DATADIR%%/iconsets/amibulb/docking
+@dirrm %%DATADIR%%/iconsets/amibulb/roster
+@dirrm %%DATADIR%%/iconsets/amibulb
 @dirrm %%DATADIR%%/iconsets/psi/tkabber
 @dirrm %%DATADIR%%/iconsets/psi/roster
 @dirrm %%DATADIR%%/iconsets/psi
@@ -612,10 +624,11 @@
 @dirrm %%DATADIR%%/iconsets/icq/docking
 @dirrm %%DATADIR%%/iconsets/icq/roster
 @dirrm %%DATADIR%%/iconsets/icq
-@dirrm %%DATADIR%%/iconsets/amibulb/tkabber
-@dirrm %%DATADIR%%/iconsets/amibulb/docking
-@dirrm %%DATADIR%%/iconsets/amibulb/roster
-@dirrm %%DATADIR%%/iconsets/amibulb
+@dirrm %%DATADIR%%/iconsets/kroc/services
+@dirrm %%DATADIR%%/iconsets/kroc/tkabber
+@dirrm %%DATADIR%%/iconsets/kroc/docking
+@dirrm %%DATADIR%%/iconsets/kroc/roster
+@dirrm %%DATADIR%%/iconsets/kroc
 @dirrm %%DATADIR%%/iconsets
 @dirrm %%DATADIR%%/jidlink/plugins
 @dirrm %%DATADIR%%/jidlink/msgs
