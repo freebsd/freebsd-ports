@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	biggles
-PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTVERSION=	1.6.5
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	python2-${PORTNAME}-${PORTVERSION}
@@ -16,16 +15,28 @@ DISTNAME=	python2-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create publication-quality 2D scientific plots
 
-BUILD_DEPENDS=	${PYNUMERIC}
+BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	plot:${PORTSDIR}/graphics/plotutils
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	python2-biggles
-USE_LDCONFIG=	yes
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS} -fPIC" \
+		LIBPLOT_CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBPLOT_LDFLAGS="-L${LOCALBASE}/lib -lplot"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/make.inc
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/setup.py
+pre-build:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+
+do-install:
+	@${MKDIR} ${PYTHON_SITELIBDIR}/biggles
+.for ext in ini so py pyc pyo
+	${INSTALL_DATA} ${WRKSRC}/src/*.${ext} ${PYTHON_SITELIBDIR}/biggles
+.endfor
+	@${MKDIR} ${PYTHON_SITELIBDIR}/biggles/libplot
+.for ext in so py pyc pyo
+	${INSTALL_DATA} ${WRKSRC}/src/libplot/*.${ext} ${PYTHON_SITELIBDIR}/biggles/libplot
+.endfor
 
 .include <bsd.port.mk>
