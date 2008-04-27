@@ -33,11 +33,12 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 
 LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
 		gsl.12:${PORTSDIR}/math/gsl		\
+		dps.0:${PORTSDIR}/x11/dgs		\
 		readline.5:${PORTSDIR}/devel/readline
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include"	\
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick"	\
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 
 SLAVEDIRS=	science/py-gnudatalanguage
@@ -54,7 +55,7 @@ PLIST_SUB+=	MASTER=""
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=--with-Magick=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-Magick=no

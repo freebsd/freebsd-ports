@@ -1,0 +1,19 @@
+--- configure.orig	2007-10-30 00:27:12.000000000 +0100
++++ configure	2008-04-27 14:17:16.000000000 +0200
+@@ -19673,13 +19673,13 @@
+     INCLUDES="$INCLUDES -I/usr/include/magick"
+   fi
+ 
+-  echo "$as_me:$LINENO: checking for GetMagickVersion in -lMagick" >&5
+-echo $ECHO_N "checking for GetMagickVersion in -lMagick... $ECHO_C" >&6
++  echo "$as_me:$LINENO: checking for GetMagickVersion in -lGraphicsMagick" >&5
++echo $ECHO_N "checking for GetMagickVersion in -lGraphicsMagick... $ECHO_C" >&6
+ if test "${ac_cv_lib_Magick_GetMagickVersion+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lMagick  $LIBS"
++LIBS="-lGraphicsMagick  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
