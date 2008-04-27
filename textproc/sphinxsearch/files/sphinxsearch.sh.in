@@ -42,8 +42,9 @@ load_rc_config ${name}
 command=%%PREFIX%%/sbin/searchd
 pidfile=${%%PORTNAME%%_pidfile}
 required_files=${%%PORTNAME%%_conffile}
+start_precmd=%%PORTNAME%%_prestart
 
-%%PORTNAME%%_precmd ()
+%%PORTNAME%%_prestart ()
 {
     piddir=$(dirname ${%%PORTNAME%%_pidfile})
     if [ ! -d ${piddir} ]; then
