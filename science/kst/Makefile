@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/scientific
@@ -19,8 +18,7 @@ LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
-USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
@@ -50,7 +48,6 @@ PLIST_SUB+=	CDF="@comment "
 .endif
 
 pre-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${SH} admin/cvs.sh dist)
 	@${REINPLACE_CMD} -e 's|@kde_widgetdir@|@prefix@/lib/kde3/plugins/designer|' \
 		${WRKSRC}/kst/src/widgets/Makefile.in
 .if !defined(WITH_NETCDF)
