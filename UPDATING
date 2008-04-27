@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080426:
+  AFFECTS: users of www/phpgedview
+  AUTHOR: beech@FreeBSD.org
+
+  The install location of phpgedview has changed from www/data/phpGedView to
+  www/phpgedview. If you are updating from a previous version please do
+  the following:
+
+	mv /usr/local/www/data/phpGedView /usr/local/www
+
+  You will also need to adjust the paths in your browser to reflect the new
+  location.
+
 20080416:
   AFFECTS: users of security/clamav
   AUTHOR: garga@FreeBSD.org
