@@ -7,37 +7,35 @@
 #
 
 PORTNAME=	qfsm
-PORTVERSION=	0.46
+PORTVERSION=	0.50
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical tool for designing finite state machines
 
-USE_QT_VER=	3
-USE_PERL5_BUILD=yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-qt-dir=${QT_PREFIX}
-
-QTCPPFLAGS=	${PTHREAD_CFLAGS}
-QTCFGLIBS=	${PTHREAD_LIBS}
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui qt3support svg xml \
+		moc_build porting_build qmake_build uic_build uic3_build
+INSTALLS_ICONS=	yes
+USE_XORG=	xi
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s| doc/user||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/qfsm.pro
+
+do-configure:
+	@cd ${WRKSRC} \
+		&& ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS} qfsm.pro
 
 post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/qfsm
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/user/*.docbook ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/user/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/user/*.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/user/*.png ${DOCSDIR}
+	@(cd ${WRKSRC}/doc/user && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.fsm ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>

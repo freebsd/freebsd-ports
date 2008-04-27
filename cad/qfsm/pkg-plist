@@ -1,9 +1,12 @@
 bin/qfsm
 share/applications/qfsm.desktop
+%%PORTDOCS%%%%DOCSDIR%%/.qfsm.docbook.swo
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/addstate.png
 %%PORTDOCS%%%%DOCSDIR%%/addtrans.png
 %%PORTDOCS%%%%DOCSDIR%%/copy.png
 %%PORTDOCS%%%%DOCSDIR%%/cut.png
+%%PORTDOCS%%%%DOCSDIR%%/doc_Makefile
 %%PORTDOCS%%%%DOCSDIR%%/integrity_check.png
 %%PORTDOCS%%%%DOCSDIR%%/machine_properties.png
 %%PORTDOCS%%%%DOCSDIR%%/new.png
@@ -12,8 +15,10 @@ share/applications/qfsm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/paste.png
 %%PORTDOCS%%%%DOCSDIR%%/print.png
 %%PORTDOCS%%%%DOCSDIR%%/qfsm.docbook
+%%PORTDOCS%%%%DOCSDIR%%/qfsm.fo
 %%PORTDOCS%%%%DOCSDIR%%/qfsm.html
 %%PORTDOCS%%%%DOCSDIR%%/qfsm.pdf
+%%PORTDOCS%%%%DOCSDIR%%/qfsm.rtf
 %%PORTDOCS%%%%DOCSDIR%%/save.png
 %%PORTDOCS%%%%DOCSDIR%%/select.png
 %%PORTDOCS%%%%DOCSDIR%%/simulate.png
@@ -21,15 +26,22 @@ share/applications/qfsm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/state_properties.png
 %%PORTDOCS%%%%DOCSDIR%%/straighten.png
 %%PORTDOCS%%%%DOCSDIR%%/toolbar.png
+%%PORTDOCS%%%%DOCSDIR%%/toolbar2.png
+%%PORTDOCS%%%%DOCSDIR%%/toolbar3.png
 %%PORTDOCS%%%%DOCSDIR%%/transition_properties.png
 %%PORTDOCS%%%%DOCSDIR%%/undo.png
+%%PORTDOCS%%%%DOCSDIR%%/working_area.png
+%%PORTDOCS%%%%DOCSDIR%%/working_area.xcf
 %%PORTDOCS%%%%DOCSDIR%%/working_area2.png
 %%PORTDOCS%%%%DOCSDIR%%/zoom.png
 %%PORTDOCS%%%%DOCSDIR%%/zoomin.png
 %%PORTDOCS%%%%DOCSDIR%%/zoomout.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii_example.fsm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii_example2.fsm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bin_example.fsm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datum.fsm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/float.fsm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/integer.fsm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text_example.fsm
 share/icons/hicolor/32x32/apps/qfsm.png
 share/icons/hicolor/32x32/mimetypes/x-qfsm.png
 share/icons/hicolor/48x48/apps/qfsm.png
@@ -41,19 +53,19 @@ share/mimelnk/application/x-qfsm.desktop
 %%DATADIR%%/French.qm
 %%DATADIR%%/German.qm
 @dirrm %%DATADIR%%
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
-@dirrm share/icons/hicolor/64x64/mimetypes
-@dirrm share/icons/hicolor/64x64/apps
-@dirrm share/icons/hicolor/64x64
-@dirrm share/icons/hicolor/48x48/mimetypes
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/mimetypes
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor
-@dirrm share/icons
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk
+@dirrmtry share/icons/hicolor/64x64/mimetypes
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/mimetypes
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/mimetypes
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
