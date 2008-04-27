@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	typo3
-PORTVERSION=	4.1.6
-PORTREVISION=	1
+PORTVERSION=	4.2.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +18,7 @@ COMMENT=	The typo3 content management system
 NO_BUILD=	yes
 USE_PHP=	mysql pcre xml session ctype
 WANT_PHP_WEB=	yes
+IGNORE_WITH_PHP=	4
 
 TYPO3DIR=	www/${DISTNAME}
 SITEDIR?=	www/typo3
