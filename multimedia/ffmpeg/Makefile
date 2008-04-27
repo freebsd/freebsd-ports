@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2007-10-04
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -20,6 +20,26 @@ CONFIGURE_LOG=	config.err
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_SDL=	yes
+
+OPTIONS=	AMR_NB	"AMR narrowband encoder" off \
+		AMR_WB	"AMR wideband encoder" off \
+		FAAC	"FAAC mp4/aac audio encoder" off \
+		FAAD	"FAAD mp4/aac audio decoder" on \
+		GSM	"gsm audio codec" off \
+		IPV6	"IPV6 network support" on \
+		LAME	"lame MP3 codec" off \
+		LIBA52	"liba52 support"	on \
+		OGG	"OGG codec" on \
+		OPTIMIZED_CFLAGS "Additional optimizations" off \
+		SDL	"SDL support (build ffplay)" off \
+		SWSCALER "Software scaler support" off \
+		THEORA	"libtheora support (implies OGG)" on \
+		VHOOK	"video hooking" on \
+		VHOOK_FREETYPE2 "drawtext support (implies VHOOK)" off \
+		VHOOK_IMLIB2 "imlib2 support (implies VHOOK)" off \
+		VORBIS	"libvorbisenc support (implies OGG)" on \
+		X264	"X.264 codec" on \
+		XVID	"XVID codec" off
 
 .include <bsd.port.pre.mk>
 
@@ -86,29 +106,38 @@ CONFIGURE_ARGS+=	--disable-liba52
 #CONFIGURE_ARGS+=	--enable-libdts
 #.endif
 ## faac
-.ifdef(WITH_FAAC) || exists(${LOCALBASE}/lib/libfaac.so)
+
+.ifdef(WITH_FAAC)
 LIB_DEPENDS+=		faac.0:${PORTSDIR}/audio/faac
-
 CONFIGURE_ARGS+=	--enable-libfaac
+.else
+CONFIGURE_ARGS+=	--disable-libfaac
 .endif
-## faad
-.ifndef(WITHOUT_FAAD) || exists(${LOCALBASE}/lib/libfaad.so)
-LIB_DEPENDS+=		faad.0:${PORTSDIR}/audio/faad
 
+## faad
+.ifndef(WITHOUT_FAAD)
+LIB_DEPENDS+=		faad.0:${PORTSDIR}/audio/faad
 CONFIGURE_ARGS+=	--enable-libfaad \
 			--enable-libfaadbin
+.else
+CONFIGURE_ARGS+=	--disable-libfaad
 .endif
+
 ## amr
-.ifdef(WITH_AMR_NB) || exists($LOCALBASE}/lib/libamrnb.so)
+.ifdef(WITH_AMR_NB)
 LIB_DEPENDS+=		amrnb.3:${PORTSDIR}/audio/libamrnb
-
 CONFIGURE_ARGS+=	--enable-libamr-nb
+.else
+CONFIGURE_ARGS+=	--disable-libamr-nb
 .endif
-.ifdef(WITH_AMR_WB) || exists($LOCALBASE}/lib/libamrwb.so)
-LIB_DEPENDS+=		amrwb.3:${PORTSDIR}/audio/libamrwb
 
+.ifdef(WITH_AMR_WB)
+LIB_DEPENDS+=		amrwb.3:${PORTSDIR}/audio/libamrwb
 CONFIGURE_ARGS+=	--enable-libamr-wb
+.else
+CONFIGURE_ARGS+=	--disable-libamr-wb
 .endif
+
 USE_RC_SUBR=		ffserver
 
 .if ${MACHINE_CPU:Mmmx}==""
@@ -117,28 +146,32 @@ CONFIGURE_ARGS+=	--disable-mmx
 WITHOUT_BUILTIN_VECTOR=	yes
 .endif
 ## gsm
-.ifdef(WITH_GSM) || exists(${LOCALBASE}/lib/libgsm.so)
+.ifdef(WITH_GSM)
 LIB_DEPENDS+=		gsm.1:${PORTSDIR}/audio/gsm
 
 CONFIGURE_ARGS+=	--enable-libgsm
+.else
+CONFIGURE_ARGS+=	--disable-libgsm
 .endif
 ## mp3
-.ifdef(WITH_LAME) || exists(${LOCALBASE}/lib/libmp3lame.so) || defined(WITH_MP3)
+.ifdef(WITH_LAME)
 LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
-
 CONFIGURE_ARGS+=	--enable-libmp3lame
+.else
+CONFIGURE_ARGS+=	--disable-libmp3lame
 .endif
-## ogg
-.ifndef(WITHOUT_OGG) || exists(${LOCALBASE}/lib/libogg.so)
-LIB_DEPENDS+=		ogg.5:${PORTSDIR}/audio/libogg
 
+## ogg
+.if !defined(WITHOUT_OGG) || !defined(WITHOUT_VORBIS) || !defined(WITHOUT_THEORA)
+LIB_DEPENDS+=		ogg.5:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=	--enable-libogg
+.else
+CONFIGURE_ARGS+=	--disable-libogg
 .endif
 
 ## SDL
-.ifdef(WITH_SDL) || ${HAVE_SDL:Msdl}
+.ifdef(WITH_SDL)
 USE_SDL+=	sdl
-
 PLIST_FILES+=	bin/ffplay
 .if !defined(NOPORTDOCS)
 MAN1+=	ffplay.1
@@ -152,24 +185,29 @@ CONFIGURE_ARGS+=	--disable-ffplay
 CONFIGURE_ARGS+=	--enable-swscaler
 PLIST_SUB+=	SWSCAL=""
 .else
+CONFIGURE_ARGS+=	--disable-swscaler
 PLIST_SUB+=	SWSCAL="@comment "
 .endif
 
 ## theora
 .if !defined(WITHOUT_THEORA)
-WITH_OGG=	yes
 LIB_DEPENDS+=		theora.0:${PORTSDIR}/multimedia/libtheora
 
 CONFIGURE_ARGS+=	--enable-libtheora
+.else
+CONFIGURE_ARGS+=	--disable-libtheora
 .endif
+
 ## vorbis
 .if !defined(WITHOUT_VORBIS)
-WITH_OGG=	yes
 LIB_DEPENDS+=		vorbisenc.2:${PORTSDIR}/audio/libvorbis
 
 CONFIGURE_ARGS+=	--enable-libvorbis
 FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
+.else
+CONFIGURE_ARGS+=	--disable-libvorbis
 .endif
+
 # x264
 .ifndef(WITHOUT_X264)
 LIB_DEPENDS+=		x264.50:${PORTSDIR}/multimedia/x264
@@ -182,84 +220,46 @@ CONFIGURE_ARGS+=	--disable-libx264
 .if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
 FFMPEG_CFLAGS+=		-msse
 .endif
-. ifdef(WITH_FREETYPE2) || exists(${LOCALBASE}/lib/libfreetype.so)
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 
-PLIST_FILES+=	lib/vhook/drawtext.so
-. endif # freetype2
-. ifdef(WITH_IMLIB2) || exists(${LOCALBASE}/lib/libImlib2.so)
-USE_EFL+=	imlib2
-
-PLIST_FILES+=	lib/vhook/imlib2.so
+.if !defined(WITHOUT_VHOOK) || defined(WITH_VHOOK_FREETYPE2) || defined(WITH_VHOOK_IMLIB2)
+. ifdef(WITH_VHOOK_FREETYPE2)
+LIB_DEPENDS+=   freetype.9:${PORTSDIR}/print/freetype2
+PLIST_FILES+=   lib/vhook/drawtext.so
+CONFIGURE_ARGS+=	--enable-freetype2
 . else
-WITHOUT_IMLIB2=	yes
+CONFIGURE_ARGS+=	--disable-freetype2
+. endif # freetype2
+. ifdef(WITH_VHOOK_IMLIB2)
+USE_EFL+=	imlib2
+.  if !exists(${LOCALBASE}/include/X11/Xlib.h)
+CFLAGS+=	-DX_DISPLAY_MISSING
+.  endif
+PLIST_FILES+=   lib/vhook/imlib2.so
+CONFIGURE_ARGS+=	--enable-imlib2
+. else
+CONFIGURE_ARGS+=	--disable-imlib2
 . endif # imlib2
+CONFIGURE_ARGS+=	--enable-vhook
+PLIST_SUB+=	VHOOK=""
+.else
+CONFIGURE_ARGS+=	--disable-vhook
+PLIST_SUB+=	VHOOK="@comment "
+. endif
 
 ## xvid
-.ifdef(WITH_XVID) || exists(${LOCALBASE}/lib/libxvidcore.so)
+.ifdef(WITH_XVID)
 LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
-
 CONFIGURE_ARGS+=	--enable-libxvid
+.else
+CONFIGURE_ARGS+=	--disable-libxvid
 .endif
 
-pre-everything::
-.ifndef(WITHOUT_A52)
-	@${ECHO_MSG} 'Define WITHOUT_LIBA52 to disable liba52 support'
-	@${ECHO_MSG}
+pre-configure:
+.if defined(WITHOUT_OGG) && (!defined(WITHOUT_VORBIS) || !defined(WITHOUT_THEORA))
+	@${ECHO_MSG}	WITH_VORBIS or WITH_THEORA defined, libogg will be built
 .endif
-#.ifndef(WITH_DTS)
-#	@${ECHO_MSG} 'Define WITH_DTS to enable DTS codec'
-#	@${ECHO_MSG}
-#.endif
-.ifndef(WITH_FAAC)
-	@${ECHO_MSG} 'Define WITH_FAAC to enable FAAC mp4/aac audio encoder'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITHOUT_FAAD)
-	@${ECHO_MSG} 'Define WITHOUT_FAAD to disable FAAD mp4/aac audio decoder'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITH_FREETYPE2)
-	@${ECHO_MSG} 'Define WITH_FREETYPE2 to enable VHOOK drawtext FREETYPE2 codec'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITHOUT_IPV6)
-	@${ECHO_MSG} 'Define WITHOUT_IPV6 to disable IPV6 network support'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITH_LAME)
-	@${ECHO_MSG} 'Define WITH_LAME to enable lame MP3 codec'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITH_OGG)
-	@${ECHO_MSG} 'Define WITH_OGG to enable OGG codec'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} 'You can enable additional compilation optimizations'
-	@${ECHO_MSG} 'by defining WITH_OPTIMIZED_CFLAGS'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITH_SWSCALER)
-	@${ECHO_MSG} 'Define WITH_SWSCALER to enable software scaler support'
-	@${ECHO_MSG} 'Warning: swscaler does not work with VLC!'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITHOUT_THEORA)
-	@${ECHO_MSG} 'Define WITHOUT_THEORA to disable libtheora support'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITHOUT_VORBIS)
-	@${ECHO_MSG} 'Define WITHOUT_VORBIS to disable libvorbisenc VORBIS codec'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITHOUT_X264)
-	@${ECHO_MSG} 'Define WITHOUT_X264 to disable X264 codec'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITH_XVID)
-	@${ECHO_MSG} 'Define WITH_XVID to enable XVID codec'
-	@${ECHO_MSG}
+.if defined(WITHOUT_VHOOK) && (defined(WITH_VHOOK_FREETYPE2) || defined(WITH_VHOOK_IMLIB2))
+	@${ECHO_MSG}	WITH_VHOOK_FREETYPE2 or WITH_VHOOK_IMLIB2 defined, video hooks will be built
 .endif
 
 post-patch:
@@ -340,11 +340,11 @@ post-install:
 	fi
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for FILE in ${DOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
-.for file in ${DOC_DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.for FILE in ${DOC_DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
