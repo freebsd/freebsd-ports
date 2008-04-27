@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendd
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	dns
 MASTER_SITES=	http://www.bsdmon.com/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -16,13 +16,13 @@ COMMENT=	A small DynDNS client
 OPTIONS=	OPENDD_SSL	"Build with SSL support"	off \
 		RC_NG		"Install RC_NG script"		on
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	COPYING COPYRIGHT README
 PLIST_FILES=	sbin/${PORTNAME} \
-		"@unexec if cmp -s %D/etc/${PORTNAME}/${PORTNAME}.conf %D/etc/${PORTNAME}/${PORTNAME}.conf.default; then ${RM} -f %D/etc/${PORTNAME}/${PORTNAME}.conf; fi " \
-		"etc/${PORTNAME}/${PORTNAME}.conf.default" \
-		"etc/${PORTNAME}/${PORTNAME}.pem" \
-		"@dirrmtry etc/${PORTNAME}"
+		"@unexec if cmp -s %D/%%ETCDIR%%/${PORTNAME}.conf %D/%%ETCDIR%%/${PORTNAME}.conf.default; then ${RM} -f %D/%%ETCDIR%%/${PORTNAME}.conf; fi " \
+		"%%ETCDIR%%/${PORTNAME}.conf.default" \
+		"@exec [ -f %B/${PORTNAME}.conf ] || ${CP} %B/%f %B/${PORTNAME}.conf" \
+		"%%ETCDIR%%/${PORTNAME}.pem" \
+		"@dirrmtry %%ETCDIR%%"
 
 .include <bsd.port.pre.mk>
 
@@ -38,18 +38,19 @@ MAKE_ENV+=	"USE_SOCKET_SSL=yes"
 .endif
 
 pre-patch:
-	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 post-patch:
 .if defined(WITH_OPENDD_SSL) && !defined(WITHOUT_SSL)
 	@${REINPLACE_CMD} 's|use_ssl = 0|use_ssl = 1|' ${WRKSRC}/${PORTNAME}.conf
-	@${REINPLACE_CMD} -e "s|^FLAGS =|FLAGS        = ${CFLAGS}|" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|^FLAGS =|FLAGS = ${CFLAGS}|" -e "s|^SSL =|SSL = ${LDFLAGS}|" \
+	    ${WRKSRC}/Makefile
 .endif
 .for i in ${PORTNAME}.conf globals.h
-	@${REINPLACE_CMD} 's|/etc/${PORTNAME}.pem|${PREFIX}/etc/${PORTNAME}/${PORTNAME}.pem|' \
+	@${REINPLACE_CMD} 's|/etc/${PORTNAME}.pem|${ETCDIR}/${PORTNAME}.pem|' \
 	    ${WRKSRC}/${i}
 .endfor
-	@${REINPLACE_CMD} 's|/etc/${PORTNAME}.conf|${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf|' \
+	@${REINPLACE_CMD} 's|/etc/${PORTNAME}.conf|${ETCDIR}/${PORTNAME}.conf|' \
 	    ${WRKSRC}/globals.h
 .if defined(WITH_RC_NG)
 	@${REINPLACE_CMD} 's|runasdaemon = 0|runasdaemon = 1|' ${WRKSRC}/${PORTNAME}.conf
@@ -57,13 +58,13 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
-	@${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf.default
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pem ${PREFIX}/etc/${PORTNAME}/
-.if !exists(${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf)
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}/
+	@${MKDIR} ${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${ETCDIR}/${PORTNAME}.conf.default
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pem ${ETCDIR}
+.if !exists(${ETCDIR}/${PORTNAME}.conf)
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${ETCDIR}
 .endif
-	@${CHMOD} 600 ${PREFIX}/etc/${PORTNAME}/*.conf
+	@${CHMOD} 600 ${ETCDIR}/*.conf
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}

@@ -21,7 +21,7 @@ load_rc_config $name
 : ${opendd_pidfile="/var/run/opendd.pid"}
 
 command="%%PREFIX%%/sbin/opendd"
-required_files="%%PREFIX%%/etc/opendd/opendd.conf"
+required_files="%%ETCDIR%%/opendd.conf"
 pidfile="/var/run/opendd.pid"
 start_precmd="opendd_check"
 
