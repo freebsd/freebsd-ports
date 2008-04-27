@@ -7,6 +7,7 @@
 
 PORTNAME=	qpxtool
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -24,6 +25,7 @@ MAKE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		QTDIR="${QT_PREFIX}"
 
 USE_LDCONFIG=	yes
+MANCOMPRESSED=	no
 MAN8=		pxcontrol.8 pxfw.8
 
 post-patch:
