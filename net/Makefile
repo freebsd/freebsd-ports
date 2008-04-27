@@ -662,6 +662,7 @@
     SUBDIR += pear-Net_Whois
     SUBDIR += pear-SOAP
     SUBDIR += pear-Services_Pingback
+    SUBDIR += pear-URI_Template
     SUBDIR += pear-XML_RPC
     SUBDIR += pecl-cvsclient
     SUBDIR += pecl-geoip
