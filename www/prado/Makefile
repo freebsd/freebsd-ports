@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prado
-PORTVERSION=	3.1.1.r2290
+PORTVERSION=	3.1.2.r2448
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -53,6 +53,12 @@ PROD=		production
 PROD=		development
 .endif
 
+.if defined(NOPORTDOCS)
+SUB_LIST+=	HASHMARK=\#
+.else
+SUB_LIST+=	HASHMARK=
+.endif
+
 CONF=		prado-${PROD}${CGI_EXT}.conf
 SUB_FILES+=	${CONF}
 
@@ -91,6 +97,10 @@ do-install:
 	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
 		${WWWDIR}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
+		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
+		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 post-install:
 	@if [ -d "${CONFDIR}" ]; then \

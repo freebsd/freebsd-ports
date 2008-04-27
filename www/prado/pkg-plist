@@ -13,11 +13,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Caching/TGlobalStateCacheDependency.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Caching/TMemCache.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Caching/TSqliteCache.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Caching/TXCache.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Caching/_Caching_TAPCCache_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Caching/_Caching_TCache_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Caching/_Caching_TDbCache_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Caching/_Caching_TMemCache_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Caching/_Caching_TSqliteCache_php.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Caching/_Caching_TXCache_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Collections/TAttributeCollection.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Collections/TDummyDataSource.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Collections/TDummyDataSourceIterator.html
@@ -67,19 +69,18 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord.Scaffold/_Data_ActiveRecord_Scaffold_TScaffoldSearch_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord.Scaffold/_Data_ActiveRecord_Scaffold_TScaffoldView_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/TActiveRecord.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/TActiveRecordChangeEventParameter.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/TActiveRecordConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/TActiveRecordConfigurationException.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/TActiveRecordCriteria.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/TActiveRecordException.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/TActiveRecordGateway.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/TActiveRecordManager.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/TActiveRecordStateRegistry.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/_Data_ActiveRecord_Exceptions_TActiveRecordException_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/_Data_ActiveRecord_TActiveRecordConfig_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/_Data_ActiveRecord_TActiveRecordCriteria_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/_Data_ActiveRecord_TActiveRecordGateway_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/_Data_ActiveRecord_TActiveRecordManager_php.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/_Data_ActiveRecord_TActiveRecordStateRegistry_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveRecord/_Data_ActiveRecord_TActiveRecord_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveReecord.Scaffold.InputBuilder/TIbmScaffoldInput.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Data.ActiveReecord.Scaffold.InputBuilder/TMssqlScaffoldInput.html
@@ -309,8 +310,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Util/TBrowserLogRoute.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Util/TDataFieldAccessor.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Util/TDateTimeStamp.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Util/TDbLogRoute.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Util/TEmailLogRoute.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Util/TFileLogRoute.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Util/TFirebugLogRoute.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Util/TLogRoute.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Util/TLogRouter.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Util/TLogger.html
@@ -344,6 +347,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActiveCustomValidator.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActiveCustomValidatorClientSide.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActiveDropDownList.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActiveHiddenField.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActiveHyperLink.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActiveImage.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActiveImageButton.html
@@ -353,6 +357,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActiveListControlAdapter.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActiveListItemCollection.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActivePageAdapter.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActivePager.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActivePanel.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActiveRadioButton.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/TActiveRadioButtonList.html
@@ -391,11 +396,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActiveHiddenField_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActiveHyperLink_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActiveImageButton_php.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActiveImage_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActiveLabel_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActiveLinkButton_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActiveListBox_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActiveListControlAdapter_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActivePageAdapter_php.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActivePager_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActivePanel_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActiveRadioButtonList_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.ActiveControls/_Web_UI_ActiveControls_TActiveRadioButton_php.html
@@ -418,7 +425,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/IDataSource.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/IItemDataRenderer.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/IRepeatInfoUser.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TActiveHiddenField.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TBaseDataList.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TBaseValidator.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TBoundColumn.html
@@ -472,6 +478,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TDataListItemCollection.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TDataListItemEventParameter.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TDataListItemRenderer.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TDataRenderer.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TDataSourceControl.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TDataSourceSelectParameters.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TDataSourceView.html
@@ -494,6 +501,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/THotSpotCollection.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/THotSpotMode.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/THtmlArea.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/THtmlElement.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/THyperLink.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/THyperLinkColumn.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TImage.html
@@ -504,6 +512,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TInlineFrame.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TInlineFrameAlign.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TInlineFrameScrollBars.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TItemDataRenderer.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TJavascriptLogger.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TKeyboard.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TLabel.html
@@ -612,7 +621,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TWizardStepNavigationTemplate.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TWizardStepType.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/TXmlTransform.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_ActiveControls_TActiveImage_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TBaseDataList_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TBaseValidator_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TBoundColumn_php.html
@@ -639,6 +647,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TDataGrid_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TDataListItemRenderer_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TDataList_php.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TDataRenderer_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TDataSourceControl_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TDataSourceView_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TDataTypeValidator_php.html
@@ -651,12 +660,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TFileUpload_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TFont_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_THiddenField_php.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_THtmlElement_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_THyperLinkColumn_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_THyperLink_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TImageButton_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TImageMap_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TImage_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TInlineFrame_php.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TItemDataRenderer_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TJavascriptLogger_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TKeyboard_php.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI.WebControls/_Web_UI_WebControls_TLabel_php.html
@@ -711,6 +722,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI/IPageStatePersister.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI/IPostBackDataHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI/IPostBackEventHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI/ISurroundable.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI/ITemplate.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI/ITheme.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/System.Web.UI/IValidatable.html
@@ -1458,6 +1470,10 @@
 %%WWWDIR%%/demos/quickstart/protected/controls/ja/RunBar.tpl
 %%WWWDIR%%/demos/quickstart/protected/controls/ja/SearchBox.tpl
 %%WWWDIR%%/demos/quickstart/protected/controls/ja/TopicList.tpl
+%%WWWDIR%%/demos/quickstart/protected/controls/pl/Layout.tpl
+%%WWWDIR%%/demos/quickstart/protected/controls/pl/RequiresVersion.tpl
+%%WWWDIR%%/demos/quickstart/protected/controls/pl/SearchBox.tpl
+%%WWWDIR%%/demos/quickstart/protected/controls/pl/SinceVersion.tpl
 %%WWWDIR%%/demos/quickstart/protected/controls/pl/TopicList.tpl
 %%WWWDIR%%/demos/quickstart/protected/controls/zh/TopicList.tpl
 %%WWWDIR%%/demos/quickstart/protected/index/Zend/Exception.php
@@ -1507,6 +1523,7 @@
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/ActiveCheckBox.page
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/ActiveCustomValidator.page
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/ActiveHyperLink.page
+%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/ActivePager.page
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Home.page
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Introduction.page
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveButton/Home.page
@@ -1518,6 +1535,8 @@
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveHyperLink/Home.page
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveHyperLink/Home.php
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveHyperLink/hello_world.gif
+%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActivePager/Home.page
+%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActivePager/Home.php
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/config.xml
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/TActiveButtonClass.png
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/TActiveButtonClass.vsd
@@ -1525,6 +1544,7 @@
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/id/ActiveCheckBox.page
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/id/ActiveCustomValidator.page
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/id/ActiveHyperLink.page
+%%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/id/ActivePager.page
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/id/Home.page
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/id/TActiveButtonClass.png
 %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/id/postback-callback.png
@@ -1571,6 +1591,26 @@
 %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/Security.page
 %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/State.page
 %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/Themes.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Assets.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Auth.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Collections.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Error.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/I18N.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Logging.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/MasterContent.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Performance.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Scripts.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Scripts1.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Scripts2.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Scripts3.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Security.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/State.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/Themes.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/exception.gif
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/exception2.gif
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/logrouter.gif
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/mastercontent.gif
+%%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es/pcrelation.gif
 %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/exception.gif
 %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/exception2.gif
 %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/id/Assets.page
@@ -1861,6 +1901,12 @@
 %%WWWDIR%%/demos/quickstart/protected/pages/Database/id/object_states.png
 %%WWWDIR%%/demos/quickstart/protected/pages/Database/id/sqlmap_active_record.png
 %%WWWDIR%%/demos/quickstart/protected/pages/Database/object_states.png
+%%WWWDIR%%/demos/quickstart/protected/pages/Database/pl/ActiveRecord.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Database/pl/ar_objects.png
+%%WWWDIR%%/demos/quickstart/protected/pages/Database/pl/ar_relations.png
+%%WWWDIR%%/demos/quickstart/protected/pages/Database/pl/diagram.png
+%%WWWDIR%%/demos/quickstart/protected/pages/Database/pl/object_states.png
+%%WWWDIR%%/demos/quickstart/protected/pages/Database/pl/sqlmap_active_record.png
 %%WWWDIR%%/demos/quickstart/protected/pages/Database/sqlmap_active_record.png
 %%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/Applications.page
 %%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/Architecture.page
@@ -1914,6 +1960,19 @@
 %%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/lifecycles.vsd
 %%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/objectdiagram.gif
 %%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/objectdiagram.vsd
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/Applications.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/Architecture.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/Components.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/Controls.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/Hangman.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/Modules.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/Pages.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/Services.page
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/applifecycles.gif
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/classtree.gif
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/directory.gif
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/lifecycles.gif
+%%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl/objectdiagram.gif
 %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/AboutPrado.page
 %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/CommandLine.page
 %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/HelloWorld.page
@@ -1923,6 +1982,7 @@
 %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/Upgrading.page
 %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/directory.gif
 %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/es/AboutPrado.page
+%%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/es/Installation.page
 %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/fr/AboutPrado.page
 %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/fr/CommandLine.page
 %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/fr/HelloWorld.page
@@ -1990,6 +2050,9 @@
 %%WWWDIR%%/demos/quickstart/protected/pages/ViewSource.page
 %%WWWDIR%%/demos/quickstart/protected/pages/ViewSource.php
 %%WWWDIR%%/demos/quickstart/protected/pages/config.xml
+%%WWWDIR%%/demos/quickstart/protected/pages/pl/Construction.page
+%%WWWDIR%%/demos/quickstart/protected/pages/pl/Search.page
+%%WWWDIR%%/demos/quickstart/protected/pages/pl/ViewSource.page
 %%WWWDIR%%/demos/quickstart/themes/PradoSoft/arrowdown.gif
 %%WWWDIR%%/demos/quickstart/themes/PradoSoft/comment.gif
 %%WWWDIR%%/demos/quickstart/themes/PradoSoft/comment_add.gif
@@ -2228,6 +2291,7 @@
 %%WWWDIR%%/framework/Caching/TDbCache.php
 %%WWWDIR%%/framework/Caching/TMemCache.php
 %%WWWDIR%%/framework/Caching/TSqliteCache.php
+%%WWWDIR%%/framework/Caching/TXCache.php
 %%WWWDIR%%/framework/Collections/TAttributeCollection.php
 %%WWWDIR%%/framework/Collections/TDummyDataSource.php
 %%WWWDIR%%/framework/Collections/TList.php
@@ -2266,7 +2330,6 @@
 %%WWWDIR%%/framework/Data/ActiveRecord/TActiveRecordCriteria.php
 %%WWWDIR%%/framework/Data/ActiveRecord/TActiveRecordGateway.php
 %%WWWDIR%%/framework/Data/ActiveRecord/TActiveRecordManager.php
-%%WWWDIR%%/framework/Data/ActiveRecord/TActiveRecordStateRegistry.php
 %%WWWDIR%%/framework/Data/Common/Mssql/TMssqlCommandBuilder.php
 %%WWWDIR%%/framework/Data/Common/Mssql/TMssqlMetaData.php
 %%WWWDIR%%/framework/Data/Common/Mssql/TMssqlTableColumn.php
@@ -2723,15 +2786,17 @@
 %%WWWDIR%%/framework/Web/Javascripts/source/prado/ratings/stars1.png
 %%WWWDIR%%/framework/Web/Javascripts/source/prado/scriptaculous-adapter.js
 %%WWWDIR%%/framework/Web/Javascripts/source/prado/validator/validation3.js
-%%WWWDIR%%/framework/Web/Javascripts/source/prototype/prototype.js
-%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous/CHANGELOG
-%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous/MIT-LICENSE
-%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous/README
-%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous/builder.js
-%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous/controls.js
-%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous/dragdrop.js
-%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous/effects.js
-%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous/slider.js
+%%WWWDIR%%/framework/Web/Javascripts/source/prototype-1.6.0.2/prototype.js
+%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous-1.8.1/CHANGELOG
+%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous-1.8.1/MIT-LICENSE
+%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous-1.8.1/README
+%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous-1.8.1/builder.js
+%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous-1.8.1/controls.js
+%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous-1.8.1/dragdrop.js
+%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous-1.8.1/effects.js
+%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous-1.8.1/scriptaculous.js
+%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous-1.8.1/slider.js
+%%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous-1.8.1/sound.js
 %%WWWDIR%%/framework/Web/Services/TFeedService.php
 %%WWWDIR%%/framework/Web/Services/TJsonService.php
 %%WWWDIR%%/framework/Web/Services/TPageService.php
@@ -2760,6 +2825,7 @@
 %%WWWDIR%%/framework/Web/UI/ActiveControls/TActiveListBox.php
 %%WWWDIR%%/framework/Web/UI/ActiveControls/TActiveListControlAdapter.php
 %%WWWDIR%%/framework/Web/UI/ActiveControls/TActivePageAdapter.php
+%%WWWDIR%%/framework/Web/UI/ActiveControls/TActivePager.php
 %%WWWDIR%%/framework/Web/UI/ActiveControls/TActivePanel.php
 %%WWWDIR%%/framework/Web/UI/ActiveControls/TActiveRadioButton.php
 %%WWWDIR%%/framework/Web/UI/ActiveControls/TActiveRadioButtonList.php
@@ -2817,6 +2883,7 @@
 %%WWWDIR%%/framework/Web/UI/WebControls/TDataGridPagerStyle.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TDataList.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TDataListItemRenderer.php
+%%WWWDIR%%/framework/Web/UI/WebControls/TDataRenderer.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TDataSourceControl.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TDataSourceView.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TDataTypeValidator.php
@@ -2831,12 +2898,14 @@
 %%WWWDIR%%/framework/Web/UI/WebControls/THead.php
 %%WWWDIR%%/framework/Web/UI/WebControls/THiddenField.php
 %%WWWDIR%%/framework/Web/UI/WebControls/THtmlArea.php
+%%WWWDIR%%/framework/Web/UI/WebControls/THtmlElement.php
 %%WWWDIR%%/framework/Web/UI/WebControls/THyperLink.php
 %%WWWDIR%%/framework/Web/UI/WebControls/THyperLinkColumn.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TImage.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TImageButton.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TImageMap.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TInlineFrame.php
+%%WWWDIR%%/framework/Web/UI/WebControls/TItemDataRenderer.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TJavascriptLogger.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TKeyboard.php
 %%WWWDIR%%/framework/Web/UI/WebControls/TLabel.php
@@ -3038,8 +3107,8 @@
 @dirrm %%WWWDIR%%/framework/Web/UI/ActiveControls
 @dirrm %%WWWDIR%%/framework/Web/UI
 @dirrm %%WWWDIR%%/framework/Web/Services
-@dirrm %%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous
-@dirrm %%WWWDIR%%/framework/Web/Javascripts/source/prototype
+@dirrm %%WWWDIR%%/framework/Web/Javascripts/source/scriptaculous-1.8.1
+@dirrm %%WWWDIR%%/framework/Web/Javascripts/source/prototype-1.6.0.2
 @dirrm %%WWWDIR%%/framework/Web/Javascripts/source/prado/validator
 @dirrm %%WWWDIR%%/framework/Web/Javascripts/source/prado/ratings
 @dirrm %%WWWDIR%%/framework/Web/Javascripts/source/prado/logger
@@ -3135,6 +3204,7 @@
 @dirrm %%WWWDIR%%/demos/quickstart/themes/PradoSoft
 @dirrm %%WWWDIR%%/demos/quickstart/themes
 @dirrm %%WWWDIR%%/demos/quickstart/protected/runtime
+@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/pl
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Tutorial/id
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Tutorial/fr
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Tutorial
@@ -3147,11 +3217,13 @@
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/fr
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted/es
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/GettingStarted
+@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/pl
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/ja
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/id
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/Samples/Hangman
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals/Samples
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Fundamentals
+@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Database/pl
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Database/id
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Database/Samples/Scaffold
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Database/Samples
@@ -3212,6 +3284,7 @@
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Configurations/id
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Configurations
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/id
+@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/es
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/Samples/I18N/zh_TW
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/Samples/I18N/messages
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/Samples/I18N/id
@@ -3219,6 +3292,7 @@
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Advanced/Samples
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/Advanced
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/id
+@dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActivePager
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveHyperLink
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveCustomValidator
 @dirrm %%WWWDIR%%/demos/quickstart/protected/pages/ActiveControls/Samples/TActiveCheckBox
@@ -3445,40 +3519,40 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/System
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/%%WWWDIR%%/demos/helloworld/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/helloworld/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog/themes/NoTheme
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day1/blog/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day1/blog/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day2/blog/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day2/blog/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day3/blog/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day3/blog/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day4/blog/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day4/blog/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day5/blog/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day5/blog/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/chat/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/chat/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/composer/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/composer/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/currency-converter/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/currency-converter/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/address-book/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/address-book/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/northwind-db/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/northwind-db/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/personal/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/personal/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/quickstart/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/quickstart/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/soap/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/soap/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/sqlmap/assets
-@exec mkdir -p %D/%%WWWDIR%%/demos/sqlmap/protected/runtime
-@exec mkdir -p %D/%%WWWDIR%%/demos/time-tracker/assets
 @exec mkdir -p %D/%%WWWDIR%%/demos/time-tracker/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/time-tracker/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/sqlmap/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/sqlmap/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/soap/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/soap/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/quickstart/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/quickstart/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/personal/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/personal/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/northwind-db/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/northwind-db/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/helloworld/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/helloworld/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/currency-converter/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/currency-converter/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/composer/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/composer/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/chat/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/chat/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog/themes/NoTheme
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day5/blog/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day5/blog/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day4/blog/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day4/blog/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day3/blog/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day3/blog/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day2/blog/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day2/blog/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day1/blog/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/samples/day1/blog/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/blog-tutorial/assets
+@exec mkdir -p %D/%%WWWDIR%%/demos/address-book/protected/runtime
+@exec mkdir -p %D/%%WWWDIR%%/demos/address-book/assets
