@@ -16,7 +16,6 @@ MAINTAINER=	xcas@cox.net
 COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
 
 USE_BZIP2=	yes
-USE_GCC=	3.4
 USE_GMAKE=	yes
 USE_SDL=	sdl
 
