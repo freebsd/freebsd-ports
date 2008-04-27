@@ -201,7 +201,7 @@ do-install:
 # Create a hard link to disallow using a FreeBSD native library, but find a
 # linux one at /lib/obsolete/linuxthreads; soft link happened to be insufficient
 #
-	@${LN} ${PREFIX}/lib/librt-2.3.6.so ${PREFIX}/usr/lib/librt.so.1
+	@${LN} -f ${PREFIX}/lib/librt-2.3.6.so ${PREFIX}/usr/lib/librt.so.1
 
 post-install:
 #
