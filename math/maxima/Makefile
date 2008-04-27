@@ -8,23 +8,23 @@
 PORTNAME=	maxima
 PORTVERSION=	5.14.0
 PORTREVISION=	1
-CATEGORIES=	math
+CATEGORIES=	math tk
 MASTER_SITES=	SF
 
 MAINTAINER=	sf@slappy.org
 COMMENT=	Symbolic mathematics program
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/${LISPPORT}
-LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
+USE_TK=		84+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19 autoconf:261
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-posix-shell=${LOCALBASE}/bin/bash \
-			--with-wish=${LOCALBASE}/bin/wish8.4 \
+			--with-wish=${WISH} \
 			${LISPSELECT}
 # don't pass "-s" to install to avoid trying to strip a shell script
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}"
