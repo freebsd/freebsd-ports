@@ -7,7 +7,6 @@
 
 PORTNAME=	fltk
 PORTVERSION=	2.0.${SNAPSHOT}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/snapshots
@@ -30,11 +29,12 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-SNAPSHOT=	r6066
+SNAPSHOT=	r6090
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on \
 		FLTK_CAIRO "Use cairo as graphics backend" off \
-		FLTK_EXAMPLES "Build and install example programs" on
+		FLTK_EXAMPLES "Build and install example programs" on \
+		FLTK_XINERAMA "Enable Xinerama support" on
 
 EXAMPLESDIR=	${PREFIX}/share/examples/fltk2
 LATEST_LINK=	fltk2
@@ -44,8 +44,8 @@ USE_GMAKE=	yes
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	"-I${LOCALBASE}/include"
-LDFLAGS+=	"-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=	--enable-jpeg --enable-png --enable-gl --enable-xft \
 			--enable-zlib
@@ -63,8 +63,8 @@ PORTDOCS=	*
 
 .if defined(WITH_FLTK_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
-CPPFLAGS+=	"${PTHREAD_CFLAGS}"
-LDFLAGS+=	"${PTHREAD_LIBS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
@@ -93,6 +93,13 @@ example_img=	images/ulon.bmp
 PORTEXAMPLES=	*
 .else
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile
+.endif
+
+.if defined(WITH_FLTK_XINERAMA)
+USE_XORG+=	xinerama
+CONFIGURE_ARGS+=	--enable-xinerama
+.else
+CONFIGURE_ARGS+=	--disable-xinerama
 .endif
 
 post-patch:
