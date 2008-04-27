@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2008-04-27 15:21:08.000000000 -0700
++++ Makefile.in	2008-04-27 15:21:36.000000000 -0700
+@@ -112,7 +112,7 @@
+ all: all-redirect
+ .SUFFIXES:
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+-	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps Makefile
++	cd $(top_srcdir) && $(AUTOMAKE) Makefile
+ 
+ Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) \
