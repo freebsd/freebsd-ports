@@ -24,9 +24,9 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	automake:110 autoconf:261 aclocal:110 libtool:15
 
-DESKTOP_ENTRIES="ochusha" "A GUI BBS browser for 2ch.net" \
+DESKTOP_ENTRIES="Ochusha" "A GUI BBS browser for 2ch.net" \
 		"${LOCALBASE}/share/ochusha/ochusha32.xpm" \
-		"Ochusha" "Application;Network;" \
+		"ochusha" "Application;Network;" \
 		false
 
 ACLOCAL_ARGS=	-I "${ACLOCAL_DIR}" -I ${LOCALBASE}/share/aclocal
