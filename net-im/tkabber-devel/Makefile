@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.10.0.a.20071015
+PORTVERSION=	0.10.0.a.20080407
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Tcl/Tk based jabber client, development version
 
 LIB_DEPENDS=	img.1:${PORTSDIR}/graphics/libimg \

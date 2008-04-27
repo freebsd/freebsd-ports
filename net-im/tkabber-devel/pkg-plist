@@ -323,8 +323,10 @@ bin/tkabber
 %%DATADIR%%/plugins/iq/oob.tcl
 %%DATADIR%%/plugins/iq/ping.tcl
 %%DATADIR%%/plugins/iq/time.tcl
+%%DATADIR%%/plugins/iq/time2.tcl
 %%DATADIR%%/plugins/iq/version.tcl
 %%DATADIR%%/plugins/pep/user_activity.tcl
+%%DATADIR%%/plugins/pep/user_location.tcl
 %%DATADIR%%/plugins/pep/user_mood.tcl
 %%DATADIR%%/plugins/pep/user_tune.tcl
 %%DATADIR%%/plugins/richtext/chatlog.tcl
@@ -333,6 +335,9 @@ bin/tkabber
 %%DATADIR%%/plugins/richtext/stylecodes.tcl
 %%DATADIR%%/plugins/richtext/urls.tcl
 %%DATADIR%%/plugins/roster/annotations.tcl
+%%DATADIR%%/plugins/roster/backup.tcl
+%%DATADIR%%/plugins/roster/bkup_annotations.tcl
+%%DATADIR%%/plugins/roster/bkup_conferences.tcl
 %%DATADIR%%/plugins/roster/cache_categories.tcl
 %%DATADIR%%/plugins/roster/conferenceinfo.tcl
 %%DATADIR%%/plugins/roster/conferences.tcl
