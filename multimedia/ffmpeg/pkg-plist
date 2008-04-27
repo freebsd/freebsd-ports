@@ -47,10 +47,10 @@ lib/libpostproc.so.51.1.0
 %%SWSCAL%%lib/libswscale.so
 %%SWSCAL%%lib/libswscale.so.%%SHLIB_VER%%
 %%SWSCAL%%lib/libswscale.so.0.5.0
-lib/vhook/fish.so
-lib/vhook/null.so
-lib/vhook/ppm.so
-lib/vhook/watermark.so
+%%VHOOK%%lib/vhook/fish.so
+%%VHOOK%%lib/vhook/null.so
+%%VHOOK%%lib/vhook/ppm.so
+%%VHOOK%%lib/vhook/watermark.so
 libdata/pkgconfig/libavcodec.pc
 libdata/pkgconfig/libavformat.pc
 libdata/pkgconfig/libavutil.pc

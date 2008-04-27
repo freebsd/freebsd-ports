@@ -1,6 +1,6 @@
---- configure.orig	2007-07-08 13:47:15.000000000 -0400
-+++ configure	2007-07-09 12:37:09.000000000 -0400
-@@ -210,11 +210,11 @@
+--- configure.orig	2007-09-29 22:25:06.000000000 +0200
++++ configure	2008-03-12 08:59:27.000000000 +0100
+@@ -211,11 +211,11 @@
  
  # "tr '[a-z]' '[A-Z]'" is a workaround for Solaris tr not grokking "tr a-z A-Z"
  toupper(){
@@ -14,7 +14,19 @@
  }
  
  set_all(){
-@@ -992,15 +992,9 @@
+@@ -604,9 +604,11 @@
+     ffmpeg
+     ffplay
+     ffserver
++    freetype2
+     gpl
+     gprof
+     gray
++    imlib2
+     ipv6
+     liba52
+     liba52bin
+@@ -1033,15 +1035,9 @@
      enable fast_unaligned
    ;;
    x86_64|amd64)
@@ -32,7 +44,38 @@
    ;;
    # armv4l is a subset of armv[567]*l
    arm|armv[4567]*l)
-@@ -1734,12 +1728,6 @@
+@@ -1491,8 +1487,8 @@
+ 
+ if check_func dlopen; then
+     ldl=
+-elif check_func dlopen -ldl; then
+-    ldl=-ldl
++elif check_func dlopen ; then
++    ldl=
+ fi
+ 
+ check_func fork
+@@ -1597,10 +1593,17 @@
+ if enabled vhook; then
+     check_ldflags -rdynamic
+     check_ldflags -export-dynamic
++    if enabled imlib2; then
++        check_foo_config imlib2 imlib2 Imlib2.h imlib_load_font
++    fi
++    if enabled freetype2; then
++        check_foo_config freetype2 freetype ft2build.h FT_Init_FreeType
++    fi
++else
++    disable imlib2
++    disable freetype2
+ fi
+ 
+-check_foo_config imlib2 imlib2 Imlib2.h imlib_load_font
+-check_foo_config freetype2 freetype ft2build.h FT_Init_FreeType
+ 
+ ##########################################
+ # SDL check
+@@ -1705,12 +1708,6 @@
      check_cflags -Os            # not all compilers support -Os
      optimize="small"
  elif enabled optimize; then
@@ -45,7 +88,7 @@
  fi
  
  # PIC flags for shared library objects where they are needed
-@@ -1927,15 +1915,15 @@
+@@ -1894,15 +1891,15 @@
  if enabled shared; then
    echo "BUILD_SHARED=yes" >> config.mak
    echo "PIC=-fPIC -DPIC" >> config.mak
@@ -66,7 +109,16 @@
    echo "SWSVERSION=$sws_version" >> config.mak
    echo "SLIBNAME=${SLIBNAME}" >> config.mak
    echo "SLIBNAME_WITH_VERSION=${SLIBNAME_WITH_VERSION}" >> config.mak
-@@ -1969,7 +1957,7 @@
+@@ -1911,7 +1908,7 @@
+   echo "SLIB_INSTALL_EXTRA_CMD=${SLIB_INSTALL_EXTRA_CMD}" >> config.mak
+ fi
+ echo "LIB_INSTALL_EXTRA_CMD=${LIB_INSTALL_EXTRA_CMD}" >> config.mak
+-echo "EXTRALIBS=$extralibs" >> config.mak
++echo "EXTRALIBS=-L%%LOCALBASE%%/lib -L%%LOCALBASE%%/lib $extralibs" >> config.mak
+ 
+ print_config ARCH_   $TMPH config.mak $ARCH_LIST
+ print_config HAVE_   $TMPH config.mak $HAVE_LIST
+@@ -1932,7 +1929,7 @@
  
  echo "SRC_PATH=\"$source_path\"" >> config.mak
  echo "SRC_PATH_BARE=$source_path" >> config.mak
@@ -74,8 +126,8 @@
 +echo "BUILD_ROOT=\"$(pwd)\"" >> config.mak
  
  # Apparently it's not possible to portably echo a backslash.
- if enabled asmalign_pot; then
-@@ -2047,8 +2035,8 @@
+ enabled asmalign_pot &&
+@@ -2008,8 +2005,8 @@
  Version: $version
  Requires: $requires
  Conflicts:
@@ -86,7 +138,7 @@
  EOF
  }
  
-@@ -2071,7 +2059,8 @@
+@@ -2032,7 +2029,8 @@
  Requires: $requires
  Conflicts:
  Libs: \${libdir}/${LIBPREF}${shortname}${LIBSUF} $libs
