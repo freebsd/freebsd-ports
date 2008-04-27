@@ -40,6 +40,8 @@ MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=41
 CFLAGS+=	-DHAVE_ALTQ=1
 .endif
 
+MAKE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" __MAKE_CONF=/dev/null
+
 PLIST_FILES=	sbin/pftop
 
 post-patch:
