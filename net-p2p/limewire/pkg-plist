@@ -5,18 +5,22 @@ bin/limewire
 %%JAVASHAREDIR%%/limewire/root/magnet10/limewire.gif
 %%JAVASHAREDIR%%/limewire/root/magnet10/options.js
 %%JAVASHAREDIR%%/limewire/root/magnet10/silentdetect.js
-%%JAVASHAREDIR%%/limewire/vorbis.jar
+%%JAVASHAREDIR%%/limewire/vorbisspi.jar
 %%JAVASHAREDIR%%/limewire/tritonus.jar
 %%JAVASHAREDIR%%/limewire/themes.jar
 %%JAVASHAREDIR%%/limewire/spacer.gif
-%%JAVASHAREDIR%%/limewire/mp3sp14.jar
+%%JAVASHAREDIR%%/limewire/mp3spi.jar
+%%JAVASHAREDIR%%/limewire/messages.jar
 %%JAVASHAREDIR%%/limewire/magnet.protocol
 %%JAVASHAREDIR%%/limewire/looks.jar
 %%JAVASHAREDIR%%/limewire/log4j.properties
 %%JAVASHAREDIR%%/limewire/log4j.jar
 %%JAVASHAREDIR%%/limewire/limewire.js
+%%JAVASHAREDIR%%/limewire/jorbis.jar
+%%JAVASHAREDIR%%/limewire/jogg.jar
 %%JAVASHAREDIR%%/limewire/jmdns.jar
-%%JAVASHAREDIR%%/limewire/jl011.jar
+%%JAVASHAREDIR%%/limewire/jl.jar
+%%JAVASHAREDIR%%/limewire/jflac.jar
 %%JAVASHAREDIR%%/limewire/jdic_stub.jar
 %%JAVASHAREDIR%%/limewire/jdic.jar
 %%JAVASHAREDIR%%/limewire/jcraft.jar
@@ -25,7 +29,10 @@ bin/limewire
 %%JAVASHAREDIR%%/limewire/httpcore.jar
 %%JAVASHAREDIR%%/limewire/httpcore-nio.jar
 %%JAVASHAREDIR%%/limewire/hashes
+%%JAVASHAREDIR%%/limewire/guice-1.0.jar
+%%JAVASHAREDIR%%/limewire/gettext-commons.jar
 %%JAVASHAREDIR%%/limewire/foxtrot.jar
+%%JAVASHAREDIR%%/limewire/forms.jar
 %%JAVASHAREDIR%%/limewire/data.ser
 %%JAVASHAREDIR%%/limewire/daap.jar
 %%JAVASHAREDIR%%/limewire/commons-pool.jar
@@ -33,9 +40,8 @@ bin/limewire
 %%JAVASHAREDIR%%/limewire/commons-logging.jar
 %%JAVASHAREDIR%%/limewire/commons-httpclient.jar
 %%JAVASHAREDIR%%/limewire/clink.jar
+%%JAVASHAREDIR%%/limewire/aopalliance.jar
 %%JAVASHAREDIR%%/limewire/ProgressTabs.jar
-%%JAVASHAREDIR%%/limewire/MessagesBundles.jar
-%%JAVASHAREDIR%%/limewire/xml.war
 %%JAVASHAREDIR%%/limewire/LimeWire.jar
 @dirrm %%JAVASHAREDIR%%/limewire/root/magnet10
 @dirrm %%JAVASHAREDIR%%/limewire/root
