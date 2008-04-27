@@ -560,6 +560,7 @@
     SUBDIR += p5-Games-Tournament-RoundRobin
     SUBDIR += pachi
     SUBDIR += palomino
+    SUBDIR += passage
     SUBDIR += pathological
     SUBDIR += pcgen
     SUBDIR += pear-Games_Chess
