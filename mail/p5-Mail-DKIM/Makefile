@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.30.1
+PORTVERSION=	0.31
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,7 +36,8 @@ MAN3=		Mail::DKIM.3 \
 		Mail::DKIM::Signature.3 \
 		Mail::DKIM::Signer.3 \
 		Mail::DKIM::SignerPolicy.3 \
-		Mail::DKIM::Verifier.3
+		Mail::DKIM::Verifier.3 \
+		Mail::DKIM::TextWrap.3
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/dkim*.pl ${PREFIX}/bin
