@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phar
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.3
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
