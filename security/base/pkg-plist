@@ -60,6 +60,7 @@ www/base/includes/base_capabilities.php
 www/base/includes/base_constants.inc.php
 www/base/includes/base_db.inc.php
 www/base/includes/base_include.inc.php
+www/base/includes/base_iso3166.inc.php
 www/base/includes/base_log_error.inc.php
 www/base/includes/base_log_timing.inc.php
 www/base/includes/base_net.inc.php
