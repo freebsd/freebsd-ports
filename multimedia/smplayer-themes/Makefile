@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smplayer-themes
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.15
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=smplayer
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=smplayer
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Themes for smplayer
 
+USE_BZIP2=	yes
 NO_BUILD=	yes
 
 DATADIR=	${PREFIX}/share/smplayer
