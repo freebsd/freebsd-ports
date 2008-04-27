@@ -12358,6 +12358,7 @@ pear-Text_Spell_Audio	ports/audio/pear-Text_Spell_Audio
 pear-Text_Wiki	ports/www/pear-Text_Wiki
 pear-Translation2	ports/sysutils/pear-Translation2
 pear-UDDI	ports/www/pear-UDDI
+pear-URI_Template	ports/net/pear-URI_Template
 pear-VFS	ports/devel/pear-VFS
 pear-Validate	ports/devel/pear-Validate
 pear-Validate_AU	ports/devel/pear-Validate_AU
