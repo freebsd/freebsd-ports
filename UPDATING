@@ -99,7 +99,7 @@ upgrades.
   read carefully record 20070327 about emulators/linux_base-fc6.
 
 20080323:
-  AFFECTS: Gstreamer users
+  AFFECTS: users of multimedia/gstreamer
   AUTHOR: multimedia@FreeBSD.org
 
   Gstreamer is updated. Due to the move of some plugins between ports. You will
@@ -143,7 +143,7 @@ upgrades.
   manual pages of gnump3d.
 
 20080318:
-  AFFECTS: users of net/skype net/skype_devel
+  AFFECTS: users of net/skype net/skype-devel
   AUTHOR: beech@FreeBSD.org
 
   For FreeBSD versions 7.0 and above:
@@ -521,7 +521,7 @@ upgrades.
   actually anything using it).
 
 20071024:
-  AFFECTS: All GNOME users and ports depend on gnomehier
+  AFFECTS: All GNOME users and ports depend on misc/gnomehier
   AUTHOR: gnome@FreeBSD.org
 
   GNOME has been updated to 2.20.1. All ports that depend on gnomehier have
@@ -852,7 +852,7 @@ upgrades.
   bsd.destdir.mk.
 
 20070730:
-  AFFECTS: users of py-*
+  AFFECTS: users of lang/python24 and py-*
   AUTHOR: python@FreeBSD.org
 
   The default version of Python has been changed from 2.4.x to 2.5.x.
@@ -1008,7 +1008,7 @@ upgrades.
     http://www.perforce.com/perforce/doc.062/user/relnotes.txt
 
 20070525:
-  AFFECTS: users of textproc/{senna,p5-Senna}
+  AFFECTS: users of textproc/senna and textproc/p5-Senna
   AUTHOR: kuriyama@FreeBSD.org
 
   Index format (binary) and some of APIs are changed.  At least you
