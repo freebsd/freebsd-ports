@@ -12083,6 +12083,7 @@ paros		ports/www/paros
 party		ports/irc/party
 pas2dox		ports/devel/pas2dox
 pash		ports/shells/pash
+passage		ports/games/passage
 passepartout	ports/graphics/passepartout
 passivetex	ports/print/passivetex
 passlogd	ports/net/passlogd
