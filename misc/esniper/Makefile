@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	esniper
-DISTVERSION=	2-17-1
+DISTVERSION=	2-18-1
 CATEGORIES=	misc net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -16,6 +16,7 @@ COMMENT=	A lightweight console application for sniping ebay auctions
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-curl-config=${LOCALBASE}/bin/curl-config
 USE_OPENSSL=	yes
 
 MAN1=		esniper.1
