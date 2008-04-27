@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	geekbench
-PORTVERSION=	2
+PORTVERSION=	2.0.15
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.primatelabs.ca/download/
-DISTNAME=	Geekbench${PORTVERSION}-Linux
+DISTNAME=	Geekbench2-Linux
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Cross-platform benchmark suite
