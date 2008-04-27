@@ -16,7 +16,7 @@ upgrades.
 
 	mv /usr/local/www/data/phpGedView /usr/local/www
 
-  You will also need to adjust the paths in your browser to reflect the new
+  You will also need to adjust the paths in your web server to reflect the new
   location.
 
 20080416:
