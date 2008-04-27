@@ -773,6 +773,7 @@
     SUBDIR += pear-XML_Wddx
     SUBDIR += pecl-ctemplate
     SUBDIR += pecl-doublemetaphone
+    SUBDIR += pecl-enchant
     SUBDIR += pecl-html_parse
     SUBDIR += pecl-stem
     SUBDIR += pecl-syck
