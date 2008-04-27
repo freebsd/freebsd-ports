@@ -2132,6 +2132,7 @@
     SUBDIR += pyobfuscate
     SUBDIR += pypersrc
     SUBDIR += pyrex
+    SUBDIR += pysvn
     SUBDIR += pythk
     SUBDIR += pythontidy
     SUBDIR += qca
