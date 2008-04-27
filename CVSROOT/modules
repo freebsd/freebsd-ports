@@ -14004,6 +14004,7 @@ pysol		ports/games/pysol
 pysol-cardsets	ports/games/pysol-cardsets
 pysol-music	ports/games/pysol-music
 pysol-sound-server	ports/audio/pysol-sound-server
+pysvn		ports/devel/pysvn
 pysycache	ports/games/pysycache
 pysycache-lang	ports/games/pysycache-lang
 pysycache-themes	ports/games/pysycache-themes
