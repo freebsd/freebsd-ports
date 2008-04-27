@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-perftools
-PORTVERSION=	0.94
+PORTVERSION=	0.97
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	vd/${PORTNAME}
 
 MAINTAINER=	yuri@tsoft.com
 COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
-
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

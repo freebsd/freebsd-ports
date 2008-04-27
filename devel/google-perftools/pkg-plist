@@ -9,10 +9,6 @@ lib/libprofiler.a
 lib/libprofiler.la
 lib/libprofiler.so
 lib/libprofiler.so.0
-lib/libstacktrace.a
-lib/libstacktrace.la
-lib/libstacktrace.so
-lib/libstacktrace.so.0
 lib/libtcmalloc.a
 lib/libtcmalloc.la
 lib/libtcmalloc.so
@@ -30,6 +26,7 @@ man/man1/pprof.1
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.windows
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/cpuprofile-fileformat.html
 %%PORTDOCS%%%%DOCSDIR%%/cpuprofile.html
 %%PORTDOCS%%%%DOCSDIR%%/designstyle.css
 %%PORTDOCS%%%%DOCSDIR%%/heap-example1.png
