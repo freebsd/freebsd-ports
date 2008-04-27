@@ -5,27 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	qnetwalk
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	games
-MASTER_SITES=	http://qt.osdn.org.ua/
+MASTER_SITES=	http://qt.osdn.org.ua/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Qt-version of the NetWalk game
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-
-USE_QT_VER=	3
-MAKE_ENV=	QTDIR="${QT_PREFIX}"
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake corelib gui moc rcc
 
 MAN6=		qnetwalk.6
-
-QMAKE?=		qmake
-QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		"s|/usr/local|${PREFIX}|g" ${WRKSRC}/${PORTNAME}.pro
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
@@ -34,9 +25,12 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qnetwalk ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/qnetwalk.6 ${MANPREFIX}/man/man6
-	@${MKDIR} ${DATADIR}/sounds
+	${MKDIR} ${DATADIR}/sounds
 	${INSTALL_DATA} ${WRKSRC}/sounds/*.wav ${DATADIR}/sounds
-	@${MKDIR} ${DATADIR}/translations
+	${MKDIR} ${DATADIR}/translations
 	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/menu/qnetwalk.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/menu/qnetwalk.xpm ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

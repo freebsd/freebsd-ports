@@ -1,4 +1,6 @@
 bin/qnetwalk
+share/applications/qnetwalk.desktop
+share/pixmaps/qnetwalk.xpm
 %%DATADIR%%/sounds/click.wav
 %%DATADIR%%/sounds/connect.wav
 %%DATADIR%%/sounds/start.wav
@@ -7,10 +9,14 @@ bin/qnetwalk
 %%DATADIR%%/translations/qnetwalk_de.qm
 %%DATADIR%%/translations/qnetwalk_es.qm
 %%DATADIR%%/translations/qnetwalk_fr.qm
+%%DATADIR%%/translations/qnetwalk_it.qm
 %%DATADIR%%/translations/qnetwalk_nl.qm
 %%DATADIR%%/translations/qnetwalk_pl.qm
 %%DATADIR%%/translations/qnetwalk_pt_BR.qm
 %%DATADIR%%/translations/qnetwalk_ru.qm
+%%DATADIR%%/translations/qnetwalk_tr.qm
+%%DATADIR%%/translations/qnetwalk_ua.qm
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
