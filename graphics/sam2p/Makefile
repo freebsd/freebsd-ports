@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sam2p
-PORTVERSION=	0.44
-PORTREVISION=	1
+PORTVERSION=	0.45
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.bme.hu/~pts/
@@ -22,8 +21,6 @@ BUILD_DEPENDS=	tif22pnm:${PORTSDIR}/graphics/tif22pnm \
 		zip:${PORTSDIR}/archivers/zip \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
-
-BROKEN=		Size mismatch
 
 USE_GHOSTSCRIPT_RUN=	yes
 
