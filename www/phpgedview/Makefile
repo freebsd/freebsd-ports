@@ -1,57 +1,51 @@
 # New ports collection makefile for:	phpGedView
-# Date created:				20 fevrier 2004
+# Date created:				20 février 2004
 # Whom:					Hubert Tournier <hubert@frbsd.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	phpGedView
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	4.1.4
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	phpgedview
-DISTNAME=	${PORTNAME}-${PORTVERSION}final
+DISTNAME=	${PORTNAME:S/p/P/}-basic-${PORTVERSION}
 
-MAINTAINER=	alecn2002@yandex.ru
+MAINTAINER=	fbsd@opal.com
 COMMENT=	Online genealogy viewer
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
+USE_ZIP=	yes
 USE_PHP=	yes
 NO_BUILD=	yes
-USE_MYSQL=	yes
 
-GEDVIEWDIR?=	www/data/phpGedView
-FULLGWDIR=	${PREFIX}/${GEDVIEWDIR}
-PLIST_SUB+=	GEDVIEWDIR=${GEDVIEWDIR}
-
-PLIST=		${WRKDIR}/pkg-plist
-
-FILES_TO_DISTATE=	authentication_index.php \
-			authentication_mysql.php \
-			config.php \
-			config_download.php \
-			config_gedcom.php
+SUB_FILES=	pkg-message pkg-deinstall
+DISTATE=	config.php config_download.php config_gedcom.php
 
 post-extract:
-.for f in ${FILES_TO_DISTATE}
-	${MV}  ${WRKSRC}/${f} ${WRKSRC}/${f}-dist
+.for f in ${DISTATE}
+	@${MV} ${WRKSRC}/${f} ${WRKSRC}/${f}-dist
 .endfor
-	${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?%%GEDVIEWDIR%%?g" >${PLIST}
-	${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm %%GEDVIEWDIR%%?g" >> ${PLIST}
-	${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
 
 do-install:
-	${INSTALL_DATA} -d ${FULLGWDIR}
-	${CP} -Rnv ${WRKSRC}/* ${FULLGWDIR}
-	${FIND} ${FULLGWDIR} -type d -exec ${CHMOD} a+x {} \;
-.for f in ${FILES_TO_DISTATE}
-	${CHMOD} a+w ${FULLGWDIR}/${f}-dist
-.endfor
-	${CHMOD} a+w ${FULLGWDIR}/index
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${CHMOD} 755 ${WWWDIR}
+	@${CHMOD} 644 ${WWWDIR}/index
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >>${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} 755 ${WWWDIR}' >>${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} 644 ${WWWDIR}/index' >>${TMPPLIST}
 
 post-install:
+.for f in ${DISTATE}
+	@if [ ! -f ${WWWDIR}/${f} ]; then \
+		${CP} -p ${WWWDIR}/${f}-dist ${WWWDIR}/${f}; \
+		${CHMOD} 666 ${WWWDIR}/${f}; \
+	fi
+.endfor
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
