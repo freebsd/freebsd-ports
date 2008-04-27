@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	libzdb
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thread-safe connection pool library
 
-GNU_CONFIGURE=	yes
+OPTIONS=	MYSQL "Add MySQL support" on \
+		SQLITE " Add Sqlite support" on \
+		PGSQL "Add PgSQL support" on
+
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnometarget
-USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
-
-OPTIONS=	MYSQL "Add MySQL support" on \
-		SQLITE " Add Sqlite support" on \
-		PGSQL "Add PgSQL support" on
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
@@ -53,6 +52,11 @@ CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread |${PTHREAD_LIBS} |g ; \
+		 s|_mysql/lib |_mysql/lib/mysql |g ; \
+		 s|_mysql/include |_mysql/include/mysql |g ; \
+		 s|_mysql/include"|_mysql/include/mysql"|g ; \
+		 s|_mysql/lib/l|_mysql/lib/mysql/l|g ; \
+		 s|_mysql/lib/ |_mysql/lib/mysql |g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
