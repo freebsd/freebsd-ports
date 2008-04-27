@@ -8,10 +8,11 @@
 
 PORTNAME=	tif22pnm
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.bme.hu/~pts/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Converts TIFF- sampled images to PNM image
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
