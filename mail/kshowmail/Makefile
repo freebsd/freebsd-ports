@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kshowmail
-PORTVERSION=	3.2.9.1
+PORTVERSION=	3.3.0
 CATEGORIES=	mail kde
 MASTER_SITES=	SF
 
@@ -15,23 +15,12 @@ COMMENT=	POP3 mail checker for KDE
 LIB_DEPENDS=	mimelib.1:${PORTSDIR}/deskutils/kdepim3
 
 USE_KDELIBS_VER=	3
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_NLS)
-PLIST_SUB=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB=	NLS=""
-.endif
-
-post-patch:
-.if defined(WITHOUT_NLS)
-	${REINPLACE_CMD} -e 's|po||g' ${WRKSRC}/Makefile.am
-.endif
 
 pre-configure:
 	@cd ${WRKSRC}/admin && ${RM} -f ltmain.sh && ${CP} -f ${LTMAIN} .
