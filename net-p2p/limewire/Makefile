@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	4.14.12
+PORTVERSION=	4.16.7
 PORTEPOCH=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	http://www10.limewire.com/download/
@@ -16,8 +16,6 @@ MAINTAINER=	armitage@smartwifi.com.ph
 COMMENT=	A Java based Gnutella client
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
-
-BROKEN=		Checksum mismatch
 
 USE_ZIP=	yes
 USE_JAVA=	yes
