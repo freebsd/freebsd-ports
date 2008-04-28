@@ -18,7 +18,6 @@
 %%WWWDIR%%/db/README.txt
 %%WWWDIR%%/db/_htaccess
 %%WWWDIR%%/db/case_patch.php
-%%WWWDIR%%/db/dbg_console.sql
 %%WWWDIR%%/db/fulltext.sql
 %%WWWDIR%%/db/index.php
 %%WWWDIR%%/db/oracle/index.php
@@ -2090,6 +2089,7 @@
 %%WWWDIR%%/lib/wiki-plugins/wikiplugin_split.php
 %%WWWDIR%%/lib/wiki-plugins/wikiplugin_sql.php
 %%WWWDIR%%/lib/wiki-plugins/wikiplugin_sub.php
+%%WWWDIR%%/lib/wiki-plugins/wikiplugin_sup.php
 %%WWWDIR%%/lib/wiki-plugins/wikiplugin_tag.php
 %%WWWDIR%%/lib/wiki-plugins/wikiplugin_thumb.php
 %%WWWDIR%%/lib/wiki-plugins/wikiplugin_titlesearch.php
