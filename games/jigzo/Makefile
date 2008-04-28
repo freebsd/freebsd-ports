@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	glpuzzle
-PORTVERSION=	0.2
-PORTREVISION=	4
+PORTNAME=	jigzo
+PORTVERSION=	0.5
 CATEGORIES=	games
-MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/glpuzzle/ \
+MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/jigzo/ \
 		http://www.amdmi3.ru/distfiles/
 EXTRACT_SUFX=	.tgz
 
@@ -23,24 +22,21 @@ USE_SDL=	sdl mixer
 USE_GL=		gl
 USE_GMAKE=	yes
 
-MAKE_ENV=	CXX="${CXX}" \
-		CPPFLAGS="`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include" \
-		LDFLAGS="`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib"
+MAKE_ENV=	CXX="${CXX}"
+PORTDOCS=	*
 
 post-patch:
 .for i in font image puzzles sound
-	@${REINPLACE_CMD} -e "s|${i}/|${DATADIR}/${i}/|g" ${WRKSRC}/main.cxx
+	@${REINPLACE_CMD} -e "s|${i}/|${DATADIR}/${i}/|g" \
+	    ${WRKSRC}/src/main.cxx
 .endfor
-	@${REINPLACE_CMD} -e "s|g++|${CXX}|g" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s|INCLFLAGS|CPPFLAGS|" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "/^include.*DEPENDS/ d" ${WRKSRC}/Makefile
+	@${FIND} ${WRKSRC} -name .thumbnails | ${XARGS} ${RM} -rf
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/glpuzzle ${PREFIX}/bin
-.for i in font image puzzles sound
-	${MKDIR} ${DATADIR}/${i}
-	${INSTALL_DATA} ${WRKSRC}/${i}/* ${DATADIR}/${i}
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "font image puzzles sound" \
+	${DATADIR}/
 
 .ifndef (NOPORTDOCS)
 post-install:
