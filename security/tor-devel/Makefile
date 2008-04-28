@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.0.23-rc
+DISTVERSION=	0.2.0.25-rc
 CATEGORIES=	security net
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://mirror.onionland.org/dist/
@@ -79,7 +79,7 @@ post-patch:
 		${WRKSRC}/contrib/tor-tsocks.conf.sample
 	@${REINPLACE_CMD} -e "s|tor-tsocks.conf|tor-tsocks.conf.sample|g" \
 		${WRKSRC}/contrib/Makefile.in
-	@${FIND} ${WRKSRC} -type f | ${XARGS} \
+	@${FIND} -X ${WRKSRC} -type f | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E \
 		-e 's|-g -O2||g' \
 		-e 's|-O2||g' \
@@ -87,8 +87,8 @@ post-patch:
 		-e 's|netinet/in6|netinet6/in6|g'
 
 post-configure:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g'
+	@${FIND} -X ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
+		"s|-lpthread|${PTHREAD_LIBS}|g"
 
 pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
@@ -102,5 +102,9 @@ post-install:
 	${MKDIR} /var/db/tor/data
 	${CHOWN} _tor:_tor /var/db/tor
 	${CAT} ${PKGMESSAGE}
+
+check:
+	@( cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
+	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check )
 
 .include <bsd.port.post.mk>
