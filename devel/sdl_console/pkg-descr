@@ -1,0 +1,7 @@
+SDL_Console is a drop down console that can be easily added to any SDL
+application. It is similar to Quake and other games consoles. A console
+gives you the ability to interact with your program in an easy way by
+executing predefined commands. You can also have more than one console
+at a time.
+
+WWW: http://wacha.ch/wiki/sdlconsole/

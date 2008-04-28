@@ -1,0 +1,9 @@
+include/SDL_console/DT_drawtext.h
+include/SDL_console/SDL_console.h
+include/SDL_console/internal.h
+lib/libSDL_console-2.1.so
+lib/libSDL_console-2.1.so.0
+lib/libSDL_console.a
+lib/libSDL_console.la
+lib/libSDL_console.so
+@dirrmtry include/SDL_console
