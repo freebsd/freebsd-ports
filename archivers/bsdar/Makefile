@@ -7,7 +7,7 @@
 PORTNAME=	ar
 PORTVERSION=	20080302
 CATEGORIES=	archivers
-MASTER_SITES=	http://web.student.chalmers.se/~kaiw/patch/
+MASTER_SITES=	http://people.freebsd.org/~kaiw/distfiles/
 PKGNAMEPREFIX=	bsd-
 EXTRACT_SUFX=	.tgz
 
