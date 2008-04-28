@@ -1,5 +1,5 @@
 .\" Roff format skeleton provided by Taketo Kabe <kabe@sra-tohoku.co.jp>
-.TH stone 1 "version 2.3d"
+.TH stone 1 "version 2.3e"
 .
 .SH 名称
 stone \- Simple Repeater
@@ -9,7 +9,7 @@ stone \- Simple Repeater
 .br
 .B "      [-u \fImax\fP] [-f \fIn\fP] [-l] [-L \fIfile\fP] [-a \fIfile\fP] [-i \fIfile\fP]"
 .br
-.B "      [-X \fIn\fP] [-T \fIn\fP] [-r]"
+.B "      [-X \fIn\fP] [-T \fIn\fP] [-A <n>] [-r]"
 .br
 .B "      [-x \fIport\fP[,\fIport\fP][-\fIport\fP]... \fIxhost\fP... --]"
 .br
@@ -45,7 +45,7 @@ UNIX マシンでも使うことができます。
 .
 .TP
 .B 2. 単純
-わずか 9000 行 (C 言語) ですので、セキュリティホールが生じる可能
+わずか 10000 行 (C 言語) ですので、セキュリティホールが生じる可能
 性を最小限にできます。
 .
 .TP
@@ -93,8 +93,10 @@ ID を出力するファイルを指定します。
 .P
 \fB-X\fP は中継を行なう際のバッファの大きさを指定します。デフォルトは
 1000 バイトです。\fB-T\fP を指定すると TCP セッションのタイムアウトの
-秒数を変更できます。デフォルトは 600 (10 分) です。\fB-r\fP を指定する
-と \fIst\fP のソケットに SO_REUSEADDR を設定します。
+秒数を変更できます。デフォルトは 600 (10 分) です。
+\fB-A\fP を指定すると listen 呼び出しの未処理接続キューの最大長を変更できます。
+デフォルトは 50 です。
+\fB-r\fP を指定すると \fIst\fP のソケットに SO_REUSEADDR を設定します。
 .P
 \fB-x\fP を指定すると http proxy の接続先を制限できます。接続先のポー
 ト番号のリスト \fIport\fP[,\fIport\fP][-\fIport\fP]... および接続先ホストの
