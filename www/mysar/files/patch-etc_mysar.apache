@@ -1,5 +1,0 @@
---- etc/mysar.apache.orig	Tue Jan 10 10:33:30 2006
-+++ etc/mysar.apache	Tue Jan 10 10:33:38 2006
-@@ -1 +1 @@
--Alias /mysar /usr/local/mysar/www
-+Alias /mysar %%LOCALBASE%%/mysar/www

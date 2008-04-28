@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mySAR
-PORTVERSION=	2.0.12
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysar
@@ -17,10 +16,13 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	MySQL Squid Access Report
 
-WRKSRC=		${WRKDIR}/${PORTNAME:L}
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+WRKROOT=	${WRKDIR}/${PORTNAME:L}
+WRKSRC=		${WRKROOT}/bin/mysar-binary-importer/
+GNU_CONFIGURE=	yes
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre
-NO_BUILD=	yes
 
 MYSARPREFIX=	mysar
 MYSARDIR?=	${PREFIX}/${MYSARPREFIX}
@@ -30,21 +32,39 @@ SUB_FILES=	pkg-message
 SUB_LIST=	MYSARDIR=${MYSARDIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-post-patch:
-	${REINPLACE_CMD} -e 's,%%MYSARDIR%%,${MYSARDIR},g' \
-		${WRKSRC}/etc/*
-	${REINPLACE_CMD} -e 's,%%PHP%%,${LOCALBASE}/bin/php,g' \
-		${WRKSRC}/bin/*
+post-extract:
+	${CHMOD} +x ${WRKSRC}/config/*
 
-	${FIND} ${WRKSRC} -name *.orig -delete
-	${FIND} ${WRKSRC} -name *.bak -delete
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's,/usr/local/mysar/,${MYSARDIR},g' \
+		${WRKROOT}/etc/mysar.cron
+	${REINPLACE_CMD} \
+		-e 's,/usr/local/mysar/,${MYSARDIR},g' \
+		${WRKROOT}/etc/mysar.apache
+
+	${REINPLACE_CMD} \
+		-e 's,%%MYSARDIR%%,${MYSARDIR},g' \
+		`find ${WRKROOT}/etc -type f`
+	${REINPLACE_CMD} \
+		-e 's,%%PHP%%,${LOCALBASE}/bin/php,g' \
+		`find ${WRKROOT}/bin -type f`
+	${REINPLACE_CMD} \
+		-e 's,/bin/sh,${LOCALBASE}/bin/bash,g' \
+		`find ${WRKROOT}/bin/mysar-binary-importer -type f`
+
+	${FIND} ${WRKROOT} -name *.orig -delete
+	${FIND} ${WRKROOT} -name *.bak -delete
 
 do-install:
+	${MV} ${WRKSRC} ${WRKROOT}
 	${MKDIR} ${MYSARDIR}
-	${CP} -R ${WRKSRC}/* ${MYSARDIR}
+	${CP} -R `find ${WRKROOT} -mindepth 1 -maxdepth 1 ! -name mysar-binary-importer` ${MYSARDIR}
+	${INSTALL_PROGRAM} ${WRKROOT}/mysar-binary-importer/src/mysar ${MYSARDIR}/bin
+	${INSTALL_DATA} ${WRKROOT}/mysar-binary-importer/mysar.conf ${MYSARDIR}/etc
 	${CHOWN} -R ${WWWOWN} ${MYSARDIR}/www-templates
 	${CHOWN} -R ${WWWOWN} ${MYSARDIR}/smarty-tmp
 
-post-install:
 	${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>

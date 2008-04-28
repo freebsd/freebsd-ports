@@ -1,9 +1,0 @@
---- etc/mysar.cron.orig	Tue Jan 10 10:33:43 2006
-+++ etc/mysar.cron	Tue Jan 10 10:34:26 2006
-@@ -1,3 +1,3 @@
--* * * * *	root	/usr/local/mysar/bin/mysar-importer.php > /usr/local/mysar/log/mysar-importer.log 2>&1
--* * * * *	root	/usr/local/mysar/bin/mysar-resolver.php > /usr/local/mysar/log/mysar-resolver.log 2>&1
--0 0 * * *	root	/usr/local/mysar/bin/mysar-maintenance.php /usr/local/mysar/log/mysar-maintenance.log 2>&1
-+* * * * *	root	%%MYSARDIR%%/bin/mysar-importer.php > %%MYSARDIR%%/log/mysar-importer.log 2>&1
-+* * * * *	root	%%MYSARDIR%%/bin/mysar-resolver.php > %%MYSARDIR%%/log/mysar-resolver.log 2>&1
-+0 0 * * *	root	%%MYSARDIR%%/bin/mysar-maintenance.php %%MYSARDIR%%/log/mysar-maintenance.log 2>&1
