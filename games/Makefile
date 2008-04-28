@@ -739,6 +739,7 @@
     SUBDIR += starlanes
     SUBDIR += stepbill
     SUBDIR += stormbaancoureur
+    SUBDIR += stransball2
     SUBDIR += stratagus
     SUBDIR += stroq
     SUBDIR += stvef-paks
