@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libconfig
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hyperrealm.com/libconfig/
 
@@ -18,7 +17,7 @@ USE_GNOME=	gnomehack pkgconfig
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+CONFIGURE_ARGS+=	--infodir=${PREFIX}/${INFO_PATH}
 INFO=		libconfig
 
 .include <bsd.port.mk>
