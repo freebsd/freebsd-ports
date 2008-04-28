@@ -21,8 +21,6 @@ USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=	--includedir="${PREFIX}/include/${PORTNAME:S/2//}"
 
-CONFLICTS=	gtkdatabox-0.1.*
-
 OPTIONS=	GLADE "Enable libglade2 support" off \
 		GLADEUI "Enable glade3 support" off
 
