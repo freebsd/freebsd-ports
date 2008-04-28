@@ -1194,6 +1194,7 @@
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-rails-app-installer
     SUBDIR += rubygem-redcloth
+    SUBDIR += rubygem-rfacebook
     SUBDIR += rubygem-rubyfulsoup
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-scrubyt
