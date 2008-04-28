@@ -15138,6 +15138,7 @@ sdf		ports/textproc/sdf
 sdig		ports/net-mgmt/sdig
 sdl12		ports/devel/sdl12
 sdlCC		ports/games/sdlCC
+sdl_console	ports/devel/sdl_console
 sdl_gfx		ports/graphics/sdl_gfx
 sdl_gui		ports/x11-toolkits/sdl_gui
 sdl_image	ports/graphics/sdl_image
