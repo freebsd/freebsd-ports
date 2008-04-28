@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.3.8
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -20,16 +19,14 @@ COMMENT=	A C++ library for symbolic mathematical calculations
 LIB_DEPENDS=	cln.5:${PORTSDIR}/math/cln
 
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		MAKEINFO="makeinfo --no-split"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 MAN1=	ginsh.1 viewgar.1
-INFO=	ginac
+INFO=	ginac ginac-examples
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -40,7 +37,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 BROKEN=		Does not build on alpha
 .endif
 
-post-extract:
-	@${RM} -f ${WRKSRC}/doc/tutorial/ginac.info*
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
