@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	op_panel
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	www
 MASTER_SITES=	http://www.asternic.org/files/
 

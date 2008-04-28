@@ -34,7 +34,6 @@ www/op_panel/dhtml/index.php
 www/op_panel/dhtml/js/base64.js
 www/op_panel/dhtml/js/builder.js
 www/op_panel/dhtml/js/controls.js
-www/op_panel/dhtml/js/dhtmltooltip.js
 www/op_panel/dhtml/js/dragdrop.js
 www/op_panel/dhtml/js/effects.js
 www/op_panel/dhtml/js/operator.js
@@ -42,6 +41,7 @@ www/op_panel/dhtml/js/prototype.js
 www/op_panel/dhtml/js/scriptaculous.js
 www/op_panel/dhtml/js/slider.js
 www/op_panel/dhtml/js/window.js
+www/op_panel/dhtml/js/wz_tooltip.js
 www/op_panel/dhtml/variables.php
 www/op_panel/extensions.conf.sample
 www/op_panel/flash/help_de.html
@@ -51,6 +51,7 @@ www/op_panel/flash/help_fr.html
 www/op_panel/flash/help_it.html
 www/op_panel/flash/help_se.html
 www/op_panel/flash/help_no.html
+www/op_panel/flash/help_ru.html
 www/op_panel/flash/index-clicktodial.html
 www/op_panel/flash/index-crm.html
 www/op_panel/flash/index-fixed.html
@@ -58,6 +59,7 @@ www/op_panel/flash/index-restrict.html
 www/op_panel/flash/index.html
 www/op_panel/flash/mypage.php
 www/op_panel/flash/operator_panel.swf
+www/op_panel/flash/crossdomain.xml
 www/op_panel/init/op_panel_debian.sh
 www/op_panel/init/op_panel_redhat.sh
 www/op_panel/init/op_panel_suse.sh
@@ -74,6 +76,8 @@ www/op_panel/op_lang_fr.cfg
 www/op_panel/op_lang_it.cfg
 www/op_panel/op_lang_se.cfg
 www/op_panel/op_lang_no.cfg
+www/op_panel/op_lang_ru.cfg
+www/op_panel/op_lang_gl.cfg
 www/op_panel/op_server.cfg
 www/op_panel/op_server.pl
 www/op_panel/op_style.cfg
