@@ -22,8 +22,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01.01a38
-PORTREVISION=	1
+PORTVERSION=	2.01.01a39
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -64,6 +63,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/a(.+)$//}
 SUB_FILES=	pkg-message
 
 .if defined(WITH_RSCSI)
+MAN1+=		rscsi.1
 PKGINSTALL=	${PKGDIR}/pkg-install.rscsi
 PLIST_SUB=	RSCSI=""
 PKGNAMESUFFIX=	-rscsi-devel
@@ -120,7 +120,8 @@ post-patch:
 .for i in DEFAULTS/Defaults.freebsd btcflash/btcflash.1 cdda2wav/cdda2wav.1 \
 	cdrecord/README.rscsi cdrecord/cdrecord.1 cdrecord/cdrecord.dfl \
 	cdrecord/defaults.c include/schily/deflts.h librscg/scsi-remote.c \
-	readcd/readcd.1 rscsi/rscsi.c rscsi/rscsi.dfl scgcheck/scgcheck.1
+	readcd/readcd.1 rscsi/rscsi.1 rscsi/rscsi.c rscsi/rscsi.dfl \
+	scgcheck/scgcheck.1
 	@${REINPLACE_CMD} -e 's|\/opt\/schily|${PREFIX}|g; \
 		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
 		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g' ${WRKSRC}/${i}
@@ -161,6 +162,9 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2wav.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/readcd/readcd.1 ${PREFIX}/man/man1
+.if defined(WITH_RSCSI)
+	@${INSTALL_MAN} ${WRKSRC}/rscsi/rscsi.1 ${PREFIX}/man/man1
+.endif
 	@${INSTALL_MAN} ${WRKSRC}/scgcheck/scgcheck.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/mkisofs/mkisofs.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 ${PREFIX}/man/man8
