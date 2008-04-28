@@ -538,6 +538,7 @@
     SUBDIR += oneko-sakura
     SUBDIR += oolite
     SUBDIR += oonsoo
+    SUBDIR += openalchemist
     SUBDIR += openarena
     SUBDIR += openastromenace
     SUBDIR += opencity

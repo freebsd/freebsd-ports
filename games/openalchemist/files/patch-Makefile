@@ -1,0 +1,48 @@
+--- Makefile.orig	2006-08-13 19:18:16.000000000 +0200
++++ Makefile	2008-03-26 19:27:29.000000000 +0100
+@@ -1,15 +1,13 @@
+ PACKAGES = clanCore-0.8 clanDisplay-0.8 clanApp-0.8 clanGL-0.8 clanSDL-0.8
+-LIBS = `pkg-config --libs $(PACKAGES)`
+-OPTIONS =  -Iincludes -Wall -g
++LIBS = `pkg-config --libs $(PACKAGES)` $(PTHREAD_LIBS)
++OPTIONS =  -Iincludes -I/usr/local/include -Wall -g
+ LINKER_OPTIONS =  #-u malloc -lefence
+ STATIC_LIBS = `pkg-config --libs $(PACKAGES) --static`
+ CFLAGS = `pkg-config --cflags $(PACKAGES)`
+ 
+-INSTALL_DIR = /usr/local/games/openalchemist
+-
+ all: openalchemist
+ 	@echo "OK"
+-	
++
+ test: 
+ 	@echo "Test dependances installation"
+ 	pkg-config --exists $(PACKAGES)
+@@ -60,20 +58,13 @@
+ 	-rm openalchemist
+ 	-rm skins/aqua.zip
+ 	-rm skins/brushed.zip
+-	
++
+ install: openalchemist
+-	mkdir $(INSTALL_DIR)
+-	mkdir $(INSTALL_DIR)/skins
+-	cp openalchemist $(INSTALL_DIR)/
+-	cp skins/aqua.zip $(INSTALL_DIR)/skins/aqua.zip
+-	cp skins/brushed.zip $(INSTALL_DIR)/skins/brushed.zip
+-	ln -s $(INSTALL_DIR)/openalchemist /usr/local/bin/openalchemist
+-
+-uninstall: $(INSTALL_DIR)
+-	rm $(INSTALL_DIR)/* -R
+-	rmdir $(INSTALL_DIR)
+-	rm /usr/local/bin/openalchemist
+-	
++	mkdir -p $(PREFIX)/bin
++	mkdir -p $(PREFIX)/share/games/openalchemist/skins
++	cp openalchemist $(PREFIX)/bin/
++	cp skins/aqua.zip $(PREFIX)/share/games/openalchemist/skins/aqua.zip
++	cp skins/brushed.zip $(PREFIX)/share/games/openalchemist/skins/brushed.zip
+ 
+ static: includes/*.h bin/main.o bin/game.o bin/key_events.o bin/detect_to_destroy.o bin/detect_to_fall.o bin/drawing.o bin/hightscores.o bin/pause.o bin/preferences.o bin/skins-selector.o skins/aqua.zip skins/brushed.zip
+ 	@echo "On assemble le fichier final"
