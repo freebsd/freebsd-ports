@@ -1,0 +1,15 @@
+--- doc/examples/ginac-examples.texi.orig	2008-03-26 21:08:16.000000000 +0900
++++ doc/examples/ginac-examples.texi	2008-04-06 21:38:31.000000000 +0900
+@@ -11,6 +11,12 @@
+ @parindent=0pt
+ @end iftex
+ @c %**end of header
++
++@dircategory Mathematics
++@direntry
++* ginac-examples: (ginac).          GiNaC Examples.
++@end direntry
++
+ @ifnottex
+ @node Top
+ @end ifnottex
