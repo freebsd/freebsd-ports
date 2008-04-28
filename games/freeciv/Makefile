@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeciv
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -53,6 +52,15 @@ PLIST=	${PKGDIR}/pkg-plist.nox11
 PKGNAMESUFFIX?=	-nox11
 CONFIGURE_ARGS+=--enable-client=no
 CONFLICTS=	freeciv-[0-9]*
+.endif
+
+.ifndef WITHOUT_AUTH
+.ifndef WITHOUT_MYSQL
+CONFIGURE_ARGS+=	--enable-auth --with-mysql-prefix=${LOCALBASE}
+USE_MYSQL=	yes
+.endif
+.else
+CONFIGURE_ARGS+=	--disable-auth
 .endif
 
 post-patch:
