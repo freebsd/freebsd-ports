@@ -67,6 +67,10 @@ CONFIGURE_ARGS+= 	--with-libspf2=${LOCALBASE}
 BUILD_DEPENDS+=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+= 	--with-libGeoIP=${LOCALBASE}
 .endif
+.if defined(WITH_CURL)
+BUILD_DEPENDS+= curl>=7.18:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
+.endif
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 BUILD_DEPENDS+= ${_MILT_DEP}
 
