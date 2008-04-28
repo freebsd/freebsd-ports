@@ -3900,7 +3900,6 @@ glpi		ports/www/glpi
 glpk		ports/math/glpk
 glpng		ports/graphics/glpng
 glproto		ports/x11/glproto
-glpuzzle	ports/games/glpuzzle
 glrparser	ports/devel/glrparser
 glsfcave	ports/games/glsfcave
 gltk		ports/graphics/gltk
