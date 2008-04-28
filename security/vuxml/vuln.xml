@@ -212,7 +212,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="67bd39ba-12b5-11dd-bab7-0016179b2dd5">
-    <topic>firefox -- javascript harbage collector vulnerability</topic>
+    <topic>firefox -- javascript garbage collector vulnerability</topic>
     <affects>
       <package>
 	<name>firefox</name>
@@ -222,17 +222,38 @@ Note:  Please add new entries to the beginning of this file.
         <name>linux-firefox</name>
 	<range><lt>2.0.0.14</lt></range>
       </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.1.10</lt></range>
+      </package>
+      <package>
+	<name>flock</name>
+	<name>linux-flock</name>
+	<range><lt>1.1.2</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<name>linux-seamonkey-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<name>linux-thunderbird</name>
+	<range><lt>2.0.0.14</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Mozilla Foundation reports:</p>
 	<blockquote cite="http://www.mozilla.org/security/announce/2008/mfsa2008-20.html">
 	  <p>Fixes for security problems in the JavaScript engine described in
-	    MFSA 2008-15 introduced a stability problem, where some users experienced
-	    crashes during JavaScript garbage collection. This is being fixed primarily
-	    to address stability concerns. We have no demonstration that this particular
-	    crash is exploitable but are issuing this advisory because some crashes of this
-	    type have been shown to be exploitable in the past.</p>
+	    MFSA 2008-15 introduced a stability problem, where some users
+	    experienced crashes during JavaScript garbage collection. This is
+	    being fixed primarily to address stability concerns. We have no
+	    demonstration that this particular crash is exploitable but are
+	    issuing this advisory because some crashes of this type have been
+	    shown to be exploitable in the past.</p>
 	</blockquote>
       </body>
     </description>
@@ -246,6 +267,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-04-16</discovery>
       <entry>2008-04-25</entry>
+      <modified>2008-04-28</modified>
     </dates>
   </vuln>
 
