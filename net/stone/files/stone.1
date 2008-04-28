@@ -1,5 +1,5 @@
 .\" Roff format skeleton provided by Taketo Kabe <kabe@sra-tohoku.co.jp>
-.TH stone 1 "version 2.3d"
+.TH stone 1 "version 2.3e"
 .
 .SH NAME
 stone \- Simple Repeater
@@ -9,7 +9,7 @@ stone \- Simple Repeater
 .br
 .B "      [-u \fImax\fP] [-f \fIn\fP] [-l] [-L \fIfile\fP] [-a \fIfile\fP] [-i \fIfile\fP]"
 .br
-.B "      [-X \fIn\fP] [-T \fIn\fP] [-r]"
+.B "      [-X \fIn\fP] [-T \fIn\fP] [-A <n>] [-r]"
 .br
 .B "      [-x \fIport\fP[,\fIport\fP][-\fIport\fP]... \fIxhost\fP... --]"
 .br
@@ -44,7 +44,7 @@ FreeBSD, BSD/OS, SunOS, Solaris, HP-UX and so on.
 .
 .TP
 .B 2. Simple.
-\fBStone\fP's source code is only 9000 lines long (written in C
+\fBStone\fP's source code is only 10000 lines long (written in C
 language), so you can minimize the risk of security
 holes.
 .
@@ -99,8 +99,10 @@ used, the program writes its process ID to the file.
 The \fB-X\fP \fIn\fP flag alters the buffer size of the repeater.
 The default value is 1000 bytes. If
 the \fB-T\fP \fIn\fP is used, the timeout of TCP sessions can be
-specified to \fIn\fP sec.  Default: 600 (10 min).  The \fB-r\fP flag is
-used, SO_REUSEADDR is set on the socket of \fIst\fP .
+specified to \fIn\fP sec.  Default: 600 (10 min).
+The \fB-A\fP flag specifies the maximum length the
+queue of pending connections may grow to.  Default: 50.
+The \fB-r\fP flag is used, SO_REUSEADDR is set on the socket of \fIst\fP.
 .P
 Using the \fB-x\fP \fIport\fP[,\fIport\fP][-\fIport\fP]... \fIxhost\fP... \fB--\FP flag,
 the http proxy (described later) can only connect to
