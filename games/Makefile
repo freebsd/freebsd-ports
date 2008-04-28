@@ -367,6 +367,7 @@
     SUBDIR += jfduke3d
     SUBDIR += jfk
     SUBDIR += jigsaw
+    SUBDIR += jigzo
     SUBDIR += jin
     SUBDIR += joequake
     SUBDIR += jools

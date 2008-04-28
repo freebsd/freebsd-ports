@@ -5806,6 +5806,7 @@ jhead		ports/graphics/jhead
 jid3lib		ports/audio/jid3lib
 jigdo		ports/net-p2p/jigdo
 jigsaw		ports/games/jigsaw
+jigzo		ports/games/jigzo
 jikes		ports/java/jikes
 jin		ports/games/jin
 jing		ports/textproc/jing
