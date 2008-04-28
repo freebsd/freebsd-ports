@@ -8,6 +8,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Pyfort/base.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Pyfort/configuration.py
 lib/%%PYTHON_VERSION%%/site-packages/Pyfort/configuration.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Pyfort/configuration.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Pyfort/detect_fortran.py
+lib/%%PYTHON_VERSION%%/site-packages/Pyfort/detect_fortran.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Pyfort/detect_fortran.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Pyfort/driver.py
 lib/%%PYTHON_VERSION%%/site-packages/Pyfort/driver.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Pyfort/driver.pyo
