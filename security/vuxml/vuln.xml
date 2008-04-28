@@ -39,11 +39,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>gnupg</name>
-	<range><lt>2.0.9</lt></range>
-      </package>
-      <package>
-	<name>gnupg1</name>
-	<range><lt>1.4.9</lt></range>
+	<range><ge>1.0.0</ge><lt>1.4.9</lt></range>
+	<range><ge>2.0.0</ge><lt>2.0.9</lt></range>
       </package>
     </affects>
     <description>
@@ -70,6 +67,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-03-19</discovery>
       <entry>2008-04-26</entry>
+      <modified>2008-04-29</modified>
     </dates>
   </vuln>
 
