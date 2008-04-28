@@ -13,7 +13,6 @@
 %%SITE_PERL%%/Module/Install/Share.pm
 %%SITE_PERL%%/Module/Install/WriteAll.pm
 %%SITE_PERL%%/Module/Install/Include.pm
-%%SITE_PERL%%/Module/Install/Scripts.pm
 %%SITE_PERL%%/Module/Install/Admin.pm
 %%SITE_PERL%%/Module/Install/Can.pm
 %%SITE_PERL%%/Module/Install/PAR.pm
