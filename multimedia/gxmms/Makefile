@@ -18,10 +18,9 @@ COMMENT=	A simple GNOME panel applet for controlling XMMS
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-BROKEN=		Does not compile
-
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

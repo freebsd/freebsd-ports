@@ -1,7 +1,11 @@
---- src/xmmsctrl.c.orig	Fri Sep  3 00:19:54 2004
-+++ src/xmmsctrl.c	Thu Nov  4 14:36:56 2004
-@@ -48,13 +48,14 @@
-     static gchar *msg_error = _("Sorry, unable to launch XMMS.");
+--- src/xmmsctrl.c.orig	2004-09-03 00:19:54.000000000 +0200
++++ src/xmmsctrl.c	2008-04-24 15:36:57.000000000 +0200
+@@ -45,16 +45,17 @@
+ xmms_start(XMMSData *xmms)
+ {
+     static gchar *exec_cmd = "xmms";
+-    static gchar *msg_error = _("Sorry, unable to launch XMMS.");
++    gchar *msg_error = _("Sorry, unable to launch XMMS.");
      gint timer;
      time_t lt;
 +    gchar *exec_this;
