@@ -7,7 +7,7 @@
 
 PORTNAME=	cripple
 PORTVERSION=	0.06b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.vortex.prodigynet.co.uk/${PORTNAME}/
 
@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_CDRTOOLS=	yes
 
-LIB_DEPENDES+=	cdio.8:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	cdio.8:${PORTSDIR}/sysutils/libcdio
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame\
 		cdparanoia:${PORTSDIR}/audio/cdparanoia
 
