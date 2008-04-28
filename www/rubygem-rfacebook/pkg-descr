@@ -1,0 +1,6 @@
+RFacebook is a Ruby interface to the Facebook API.
+
+It hides all the nitty-gritty details behind a beautiful Ruby front-end,
+allowing you to focus on writing great code.
+
+WWW: http://rfacebook.rubyforge.org/
