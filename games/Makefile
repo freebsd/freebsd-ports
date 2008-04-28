@@ -75,6 +75,7 @@
     SUBDIR += belooted
     SUBDIR += bfm
     SUBDIR += biloba
+    SUBDIR += biniax2
     SUBDIR += biorythm
     SUBDIR += bitefusion
     SUBDIR += blackjack
