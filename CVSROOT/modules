@@ -529,10 +529,10 @@ asapm		ports/sysutils/asapm
 asbutton	ports/misc/asbutton
 asc		ports/games/asc
 ascd		ports/audio/ascd
-asciio		ports/graphics/asciio
 ascii2binary	ports/converters/ascii2binary
 ascii2pdf	ports/textproc/ascii2pdf
 asciidoc	ports/textproc/asciidoc
+asciio		ports/graphics/asciio
 asciiquarium	ports/games/asciiquarium
 asclock		ports/x11-clocks/asclock
 asclock-gtk	ports/x11-clocks/asclock-gtk
@@ -1231,6 +1231,7 @@ cdb		ports/databases/cdb
 cdbkup		ports/sysutils/cdbkup
 cdcat		ports/deskutils/cdcat
 cdcl		ports/science/cdcl
+cdcollect	ports/misc/cdcollect
 cddb-bundle	ports/audio/cddb-bundle
 cdecl		ports/devel/cdecl
 cdf		ports/sysutils/cdf
