@@ -1,0 +1,6 @@
+bin/openalchemist
+share/games/openalchemist/skins/aqua.zip
+share/games/openalchemist/skins/brushed.zip
+@dirrm share/games/openalchemist/skins
+@dirrm share/games/openalchemist
+@dirrmtry share/games
