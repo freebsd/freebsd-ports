@@ -12,9 +12,7 @@
 %%WWWDIR%%/bin/msgimport
 %%WWWDIR%%/bin/quotaimg.php
 %%WWWDIR%%/config/.htaccess
-%%WWWDIR%%/config/db.inc.php
 %%WWWDIR%%/config/db.inc.php.dist
-%%WWWDIR%%/config/main.inc.php
 %%WWWDIR%%/config/main.inc.php.dist
 %%WWWDIR%%/index.php
 %%WWWDIR%%/logs/.htaccess
@@ -511,6 +509,7 @@
 %%WWWDIR%%/program/steps/settings/manage_folders.inc
 %%WWWDIR%%/program/steps/settings/save_identity.inc
 %%WWWDIR%%/program/steps/settings/save_prefs.inc
+%%WWWDIR%%/robots.txt
 %%WWWDIR%%/skins/default/addresses.css
 %%WWWDIR%%/skins/default/colorpicker.css
 %%WWWDIR%%/skins/default/common.css
@@ -568,7 +567,7 @@
 %%WWWDIR%%/skins/default/images/buttons/ldap_pas.png
 %%WWWDIR%%/skins/default/images/buttons/logout.gif
 %%WWWDIR%%/skins/default/images/buttons/logout.png
-%%WWWDIR%%/skins/default/images/buttons/mail.gif
+%%WWWDIR%%/skins/default/images/buttons/%%MAIL%%.gif
 %%WWWDIR%%/skins/default/images/buttons/mail.png
 %%WWWDIR%%/skins/default/images/buttons/markread_act.png
 %%WWWDIR%%/skins/default/images/buttons/next_act.png
@@ -651,7 +650,7 @@
 %%WWWDIR%%/skins/default/includes/settingscripts.html
 %%WWWDIR%%/skins/default/includes/settingstabs.html
 %%WWWDIR%%/skins/default/includes/taskbar.html
-%%WWWDIR%%/skins/default/mail.css
+%%WWWDIR%%/skins/default/%%MAIL%%.css
 %%WWWDIR%%/skins/default/pngbehavior.htc
 %%WWWDIR%%/skins/default/print.css
 %%WWWDIR%%/skins/default/settings.css
@@ -665,7 +664,7 @@
 %%WWWDIR%%/skins/default/templates/error.html
 %%WWWDIR%%/skins/default/templates/identities.html
 %%WWWDIR%%/skins/default/templates/login.html
-%%WWWDIR%%/skins/default/templates/mail.html
+%%WWWDIR%%/skins/default/templates/%%MAIL%%.html
 %%WWWDIR%%/skins/default/templates/managefolders.html
 %%WWWDIR%%/skins/default/templates/message.html
 %%WWWDIR%%/skins/default/templates/messagepart.html
