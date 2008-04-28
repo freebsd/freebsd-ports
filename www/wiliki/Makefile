@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wiliki
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6
 CATEGORIES=	www scheme
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	WiLiKi-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -20,11 +19,12 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${LOCALBASE}/share/gauche/${GAUCHE_VER}/lib/dbm/gdbm.scm:${PORTSDIR}/databases/gauche-gdbm
 
 GNU_CONFIGURE=	yes
+VARDIR=		/var/wiliki
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not build"
+BROKEN=		Does not build
 .endif
 
 .if exists(${LOCALBASE}/bin/gauche-config)
@@ -47,8 +47,8 @@ post-install:
 .endfor
 	${MKDIR} ${PREFIX}/www/data
 	${INSTALL_DATA} ${WRKSRC}/src/*.css ${PREFIX}/www/data
-	${MKDIR} /var/wiliki
-	${CHOWN} www:www /var/wiliki
+	${MKDIR} ${VARDIR}
+	${CHOWN} www:www ${VARDIR}
 	@${CAT} ${PKGMESSAGE}
 
 test:
