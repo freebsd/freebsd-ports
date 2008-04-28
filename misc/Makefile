@@ -33,6 +33,7 @@
     SUBDIR += c-hey
     SUBDIR += callid
     SUBDIR += cave
+    SUBDIR += cdcollect
     SUBDIR += chef
     SUBDIR += chmlib
     SUBDIR += chord
