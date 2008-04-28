@@ -45,6 +45,8 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 		SPELLCHECK "Enable spellchecking" off \
 		LOCALCHECK "Install internal spellchecker" off
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
 IGNORE=		needs a database backend
 .endif
@@ -119,4 +121,4 @@ post-install:
 	@${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
