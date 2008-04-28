@@ -2289,6 +2289,7 @@
     SUBDIR += scons
     SUBDIR += scsh-install-lib
     SUBDIR += sdl12
+    SUBDIR += sdl_console
     SUBDIR += sdl_sge
     SUBDIR += sdlmm
     SUBDIR += sdts++
