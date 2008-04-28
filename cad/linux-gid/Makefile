@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical pre- and post-processor for numerical simulation programs
 
 CONFLICTS=	id-utils-[0-9]* coreutils-[0-9]*
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_LINUX=	yes
 USE_XLIB=	yes
