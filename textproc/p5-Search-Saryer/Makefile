@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Search-Saryer
-PORTVERSION=	0.30
+PORTVERSION=	0.40
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://namazu.org/~tsuchiya/perl/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the Sary library
 
 LIB_DEPENDS=	sary.10:${PORTSDIR}/textproc/sary
