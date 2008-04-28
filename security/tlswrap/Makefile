@@ -7,6 +7,7 @@
 
 PORTNAME=	tlswrap
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://tlswrap.sunsite.dk/
 DISTNAME=	${PORTNAME}-1.04
@@ -14,6 +15,7 @@ DISTNAME=	${PORTNAME}-1.04
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An FTP proxy that wraps data and control with TLS/SSL
 
+MAKE_ENV+=	CC="${CC}"
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
@@ -27,7 +29,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
