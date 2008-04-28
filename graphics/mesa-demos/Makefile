@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	demos
-PORTVERSION=	7.0.2
+PORTVERSION=	7.0.3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mesa3d/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	mesa3d
 PKGNAMEPREFIX=	mesa-
 DISTFILES=	MesaDemos-${PORTVERSION}${EXTRACT_SUFX} \
 		MesaLib-${PORTVERSION}${EXTRACT_SUFX}
@@ -44,8 +44,7 @@ DEMO_DATA=	geartrain.dat isosurf.dat terrain.dat
 
 XDEMO_PROGS=	glthreads glxcontexts glxdemo glxgears glxgears_fbconfig \
 		glxheads glxinfo glxpbdemo glxpixmap glxswapcontrol manywin \
-		offset overlay pbdemo pbinfo wincopy xfont xrotfontdemo \
-		yuvrect_client
+		offset overlay pbdemo pbinfo wincopy xfont xrotfontdemo
 
 # Generate packing list
 PLIST_FILES=
