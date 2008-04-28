@@ -875,6 +875,7 @@ bind94		ports/dns/bind94
 bindgraph	ports/dns/bindgraph
 bindtest	ports/net/bindtest
 bing		ports/net/bing
+biniax2		ports/games/biniax2
 binkd		ports/net/binkd
 bins		ports/www/bins
 binup		ports/sysutils/binup
