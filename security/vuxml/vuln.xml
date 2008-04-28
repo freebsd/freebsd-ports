@@ -354,7 +354,15 @@ Note:  Please add new entries to the beginning of this file.
     <topic>python -- Integer Signedness Error in zlib Module</topic>
     <affects>
       <package>
-	<name>python25</name>
+        <name>python23</name>
+	<range><lt>2.3.6_1</lt></range>
+      </package>
+      <package>
+        <name>python24</name>
+	<range><lt>2.4.5_1</lt></range>
+      </package>
+      <package>
+        <name>python25</name>
 	<range><lt>2.5.2_2</lt></range>
       </package>
     </affects>
@@ -378,6 +386,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-04-10</discovery>
       <entry>2008-04-25</entry>
+       <modified>2008-04-28</modified>
     </dates>
   </vuln>
 
