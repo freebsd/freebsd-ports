@@ -15,6 +15,7 @@ EXTRACT_ONLY=	${DISTFILES:M*gz}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Show Unicode coverage of a font
 
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	pdfoutline:${PORTSDIR}/textproc/pdfoutline
