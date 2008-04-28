@@ -1,5 +1,5 @@
---- Makefile.orig	2008-03-25 07:15:46.000000000 +0100
-+++ Makefile	2008-03-29 09:39:23.279570569 +0100
+--- Makefile.orig	2008-04-28 15:58:53.000000000 +0200
++++ Makefile	2008-04-28 16:06:53.000000000 +0200
 @@ -13,6 +13,7 @@
  prefix=/usr
  bindir=$(prefix)/bin
@@ -14,7 +14,7 @@
  endif 
 +ifdef FREEBSD_BUILD
 + INSTALL=install
-+endif 
++endif
  
  #define proper sed (use gnused for Darwin?)
  SED=sed -i
@@ -45,7 +45,7 @@
  			mkdir -p $(DESTDIR)$(datadir)/locale/$$loc/LC_MESSAGES/; \
  		fi; \
  		$(INSTALL) -m 644 po/messages.mo "$(DESTDIR)$(datadir)/locale/$$loc/LC_MESSAGES/notecase.mo"; \
-@@ -537,12 +544,17 @@
+@@ -537,7 +544,12 @@
  pouninstall:
  	@rm -vf $(DESTDIR)$(datadir)/locale/*/LC_MESSAGES/notecase.mo
  	@echo done uninstalling translations
@@ -59,26 +59,20 @@
  #
  # install application
  #
- install: notecase$(EXE) poinstall
--	$(Q)if [ "$(OSX_BUILD)" = "1" ]; then \
-+	$(Q)if [ "$(OSX_BUILD)" = "1" ] || [ "$(FREEBSD_BUILD)" = "1" ]; then \
- 		mkdir -p $(DESTDIR)$(bindir); \
- 		mkdir -p $(DESTDIR)$(datadir)/doc/notecase/; \
- 		mkdir -p $(DESTDIR)$(datadir)/applications/; \
-@@ -550,7 +562,6 @@
- 		mkdir -p $(DESTDIR)$(datadir)/pixmaps/; \
- 	fi;
+@@ -548,7 +560,6 @@
+ 	install -d -m 755 $(DESTDIR)$(datadir)/mime/packages/
+ 	install -d -m 755 $(DESTDIR)$(datadir)/pixmaps/
  	$(INSTALL) -m 755 $(BIN)/notecase$(EXE) "$(DESTDIR)$(bindir)/notecase$(EXE)"
 -	$(INSTALL) -m 644 docs/help.ncd "$(DESTDIR)$(datadir)/doc/notecase/help.ncd"
  	$(INSTALL) -m 644 docs/notecase.xml "$(DESTDIR)$(datadir)/mime/packages/notecase.xml"
  	$(Q)if [ -n "$(NOKIA_MAEMO_BUILD)" ]; then \
  		$(INSTALL) -m 644 docs/notecase.desktop "$(DESTDIR)$(datadir)/applications/hildon/notecase.desktop"; \
-@@ -742,7 +753,7 @@
+@@ -740,7 +751,7 @@
  #
  # Note: first "make" command forces generating correct help file path in "config.h"
  #
 -DEBSIZE:=$(shell du -ks ./notecase/ | cut -f 1)
 +#DEBSIZE:=$(shell du -ks ./notecase/ | cut -f 1)
  
- deb: clean
+ deb:
  	$(Q)mkdir ./notecase
