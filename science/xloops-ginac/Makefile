@@ -15,22 +15,21 @@ MASTER_SITES=	http://wwwthep.physik.uni-mainz.de/~xloops/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program calculating Feynman diagrams
 
-LIB_DEPENDS=	ginac-1.3.8:${PORTSDIR}/math/GiNaC
+LIB_DEPENDS=	ginac-1.4.0:${PORTSDIR}/math/GiNaC
 
-BROKEN=		Does not configure (cannot find GiNaC)
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2008-03-17
-
-USE_GCC=	3.4
-USE_GMAKE=	yes
 USE_GNOME=	gnometarget
-GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	aclocal:110 autoheader:261 autoconf:261 automake:110 \
+		libtool:15
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
 
 CFLAGS+=	-fpermissive
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
