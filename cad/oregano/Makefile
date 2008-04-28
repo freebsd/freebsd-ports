@@ -14,6 +14,8 @@ MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/86/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Schematic capture and simulation of electrical circuits
 
+BROKEN=	does not fetch
+
 USE_GNOME=	gnomehack gnomeprefix gtksourceview intlhack libglade2 \
 		libgnomeui
 USE_GETTEXT=	yes
