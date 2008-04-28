@@ -15808,6 +15808,7 @@ stow		ports/sysutils/stow
 stowES		ports/sysutils/stowES
 str		ports/devel/str
 strace		ports/devel/strace
+stransball2	ports/games/stransball2
 stratagus	ports/games/stratagus
 straw		ports/net/straw
 stream		ports/benchmarks/stream
