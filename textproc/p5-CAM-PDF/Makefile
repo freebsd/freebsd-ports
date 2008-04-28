@@ -7,6 +7,7 @@
 
 PORTNAME=	CAM-PDF
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CD/CDOLAN
@@ -37,5 +38,14 @@ MAN3=		CAM::PDF.3 CAM::PDF::Content.3 CAM::PDF::Decrypt.3 \
 	       	CAM::PDF::PageText.3 CAM::PDF::Renderer::Dump.3 \
 		CAM::PDF::Renderer::Images.3 CAM::PDF::Renderer::Text.3 \
 		CAM::PDF::Renderer::TextFB.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	CHANGES README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
