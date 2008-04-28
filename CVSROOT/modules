@@ -8892,6 +8892,7 @@ openxmldir	ports/www/openxmldir
 openyahtzee	ports/games/openyahtzee
 openzz		ports/devel/openzz
 opera		ports/www/opera
+opera-devel	ports/www/opera-devel
 opera-linuxplugins	ports/www/opera-linuxplugins
 ophcrack	ports/security/ophcrack
 ophoto		ports/graphics/ophoto
