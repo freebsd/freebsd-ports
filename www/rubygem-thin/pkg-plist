@@ -1,7 +1,7 @@
 bin/thin
 %%GEM_CACHE%%
 %%GEM_DOC_DIR%%/rdoc/classes/Process.html
-%%GEM_DOC_DIR%%/rdoc/classes/Process.src/M000174.html
+%%GEM_DOC_DIR%%/rdoc/classes/Process.src/M000175.html
 %%GEM_DOC_DIR%%/rdoc/classes/Rack.html
 %%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter.html
 %%GEM_DOC_DIR%%/rdoc/classes/Rack/Adapter.src/M000001.html
@@ -82,6 +82,7 @@ bin/thin
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000164.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000165.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000166.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/Connection.src/M000167.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/Controllers/Cluster.src/M000069.html
@@ -151,7 +152,7 @@ bin/thin
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src/M000105.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/Logging.src/M000106.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/OptionRequired.html
-%%GEM_DOC_DIR%%/rdoc/classes/Thin/OptionRequired.src/M000167.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/OptionRequired.src/M000168.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/PidFileExist.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/PlatformNotSupported.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/Request.html
@@ -203,13 +204,13 @@ bin/thin
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/Stats/Adapter.src/M000096.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/Stats/Adapter.src/M000097.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.html
-%%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src/M000168.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src/M000169.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src/M000170.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src/M000171.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src/M000172.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/SwiftiplyConnection.src/M000173.html
 %%GEM_DOC_DIR%%/rdoc/classes/Thin/UnixConnection.html
-%%GEM_DOC_DIR%%/rdoc/classes/Thin/UnixConnection.src/M000173.html
+%%GEM_DOC_DIR%%/rdoc/classes/Thin/UnixConnection.src/M000174.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/files/lib/rack/adapter/loader_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/rack/adapter/rails_rb.html
@@ -294,7 +295,6 @@ bin/thin
 %%GEM_LIB_DIR%%/lib/thin/stats.rb
 %%GEM_LIB_DIR%%/lib/thin/statuses.rb
 %%GEM_LIB_DIR%%/lib/thin/version.rb
-%%GEM_LIB_DIR%%/lib/thin_backend.bundle
 %%GEM_LIB_DIR%%/lib/thin_parser.bundle
 %%GEM_LIB_DIR%%/lib/thin_parser.so
 %%GEM_LIB_DIR%%/spec/backends/swiftiply_client_spec.rb
