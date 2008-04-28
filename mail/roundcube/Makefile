@@ -7,18 +7,18 @@
 
 PORTNAME=	roundcube
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 PORTEPOCH=	1
-CATEGORIES=	mail
+CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail
 DISTNAME=	${PORTNAME}mail-${PORTVERSION}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
-#WRKSRC=		${WRKDIR}/${PORTNAME}mail
 NO_BUILD=	yes
 
-RCUBECOMP=	SQL bin config index.php logs program skins temp
+RCUBECOMP=	SQL bin config index.php logs program robots.txt skins temp
 PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADING
 
 SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
@@ -62,7 +62,7 @@ USE_PHP+=	sqlite
 .endif
 
 .if defined(WITH_SPELLCHECK)
-USE_PHP+=	openssl sockets
+USE_PHP+=	openssl
 .endif
 
 .if defined(WITH_LOCALCHECK)
@@ -83,7 +83,8 @@ post-patch:
 .if defined(WITH_REPLACE_MAIL_URL)
 	@${REINPLACE_CMD} "s/'mail'/'${MAIL}'/g" ${WRKSRC}/index.php \
 		${WRKSRC}/program/include/main.inc \
-		${WRKSRC}/program/js/app.js
+		${WRKSRC}/program/js/app.js \
+		${WRKSRC}/program/steps/addressbook/mailto.inc
 	@${REINPLACE_CMD} "s/_task=mail/_task=${MAIL}/g" \
 		${WRKSRC}/program/steps/mail/rss.inc
 	@${REINPLACE_CMD} "s/command=\"mail\"/command=\"${MAIL}\"/g" \
@@ -95,8 +96,6 @@ post-patch:
 		${WRKSRC}/skins/default/templates/*.html
 	@${MV} ${WRKSRC}/skins/default/images/buttons/mail.gif \
 		${WRKSRC}/skins/default/images/buttons/${MAIL}.gif
-	@${MV} ${WRKSRC}/skins/default/images/buttons/mail.png \
-		${WRKSRC}/skins/default/images/buttons/${MAIL}.png
 	@${MV} ${WRKSRC}/skins/default/mail.css \
 		${WRKSRC}/skins/default/${MAIL}.css
 	@${MV} ${WRKSRC}/skins/default/templates/mail.html \
