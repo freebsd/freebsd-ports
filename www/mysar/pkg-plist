@@ -1,3 +1,5 @@
+%%MYSAR%%/bin/mysar
+%%MYSAR%%/etc/mysar.conf
 %%MYSAR%%/CHANGELOG
 %%MYSAR%%/COPYING
 %%MYSAR%%/INSTALL
@@ -111,6 +113,15 @@
 %%MYSAR%%/www-templates.pt_BR/IPSitesSummary.tpl
 %%MYSAR%%/www-templates.pt_BR/footer.tpl
 %%MYSAR%%/www-templates.pt_BR/administration.tpl
+%%MYSAR%%/www-templates.ru_RU/header.tpl
+%%MYSAR%%/www-templates.ru_RU/IPSummary.tpl
+%%MYSAR%%/www-templates.ru_RU/details.tpl
+%%MYSAR%%/www-templates.ru_RU/allsites.tpl
+%%MYSAR%%/www-templates.ru_RU/siteusers.tpl
+%%MYSAR%%/www-templates.ru_RU/index.tpl
+%%MYSAR%%/www-templates.ru_RU/IPSitesSummary.tpl
+%%MYSAR%%/www-templates.ru_RU/footer.tpl
+%%MYSAR%%/www-templates.ru_RU/administration.tpl
 %%MYSAR%%/www/dfl.css
 %%MYSAR%%/www/images/down-arrow.gif
 %%MYSAR%%/www/images/splash_main.gif
@@ -125,6 +136,7 @@
 @dirrmtry %%MYSAR%%/inc
 @dirrmtry %%MYSAR%%/smarty-tmp
 @dirrmtry %%MYSAR%%/log
+@dirrmtry %%MYSAR%%/www-templates.ru_RU
 @dirrmtry %%MYSAR%%/www-templates.fr_FR
 @dirrmtry %%MYSAR%%/www-templates.pt_BR
 @dirrmtry %%MYSAR%%/www-templates

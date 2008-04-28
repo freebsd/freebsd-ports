@@ -1,0 +1,11 @@
+--- configure.orig	2008-04-28 12:03:38.000000000 +0000
++++ configure	2008-04-28 12:03:54.000000000 +0000
+@@ -569,7 +569,7 @@
+ subdirs=
+ MFLAGS=
+ MAKEFLAGS=
+-SHELL=${CONFIG_SHELL-/bin/sh}
++SHELL=/bin/sh
+ 
+ # Identity of this package.
+ PACKAGE_NAME='mysar'
