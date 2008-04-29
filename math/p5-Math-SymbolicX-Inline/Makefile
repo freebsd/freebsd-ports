@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Math-SymbolicX-Inline
-PORTVERSION=	1.01
+PORTVERSION=	1.11
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Inlined Math::Symbolic functions
 
 BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic \
