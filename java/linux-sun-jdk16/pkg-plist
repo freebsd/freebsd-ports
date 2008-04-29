@@ -3289,6 +3289,7 @@
 %%T%%/jre/lib/security/java.security
 %%T%%/jre/lib/security/javaws.policy
 %%T%%/jre/lib/security/local_policy.jar
+%%T%%/jre/lib/servicetag/jdk_header.png
 %%T%%/jre/lib/sound.properties
 %%T%%/jre/lib/zi/Africa/Abidjan
 %%T%%/jre/lib/zi/Africa/Accra
@@ -4196,6 +4197,7 @@
 @dirrm %%T%%/jre/lib/zi/America
 @dirrm %%T%%/jre/lib/zi/Africa
 @dirrm %%T%%/jre/lib/zi
+@dirrm %%T%%/jre/lib/servicetag
 @dirrm %%T%%/jre/lib/security
 @dirrm %%T%%/jre/lib/oblique-fonts
 @dirrm %%T%%/jre/lib/management
