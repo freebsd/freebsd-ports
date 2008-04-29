@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	Math-SymbolicX-ParserExtensionFactory
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate parser extensions
 
 BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic
 
 MAN3=	Math::SymbolicX::ParserExtensionFactory.3
 
