@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	dinoex
 PKGNAMEPREFIX=	etoile-
 DISTNAME=	Etoile-${SNAPSHOT}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Dict client for GNUstep
 
 USE_BZIP2=	yes
