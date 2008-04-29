@@ -1,6 +1,6 @@
---- e2fsprogs-1.35/e2fsck/unix.c~	Sun Dec  7 18:11:38 2003
-+++ e2fsprogs-1.35/e2fsck/unix.c	Tue Feb 24 22:13:52 2004
-@@ -461,6 +461,24 @@
+--- a/e2fsck/unix.c.orig	2008-04-23 20:56:25.000000000 +0200
++++ b/e2fsck/unix.c	2008-04-29 09:05:01.000000000 +0200
+@@ -462,6 +462,24 @@
  	return 0;
  }
  
@@ -26,7 +26,7 @@
  
  static void reserve_stdio_fds(void)
 @@ -493,6 +511,17 @@
- 	ctx->progress_fd = 0;
+ 	ctx->progress = e2fsck_update_progress;
  }
  
 +static void signal_progress_now(int sig EXT2FS_ATTR((unused)))
@@ -43,7 +43,7 @@
  static void signal_progress_off(int sig EXT2FS_ATTR((unused)))
  {
  	e2fsck_t ctx = e2fsck_global_ctx;
-@@ -825,6 +854,8 @@
+@@ -830,6 +859,8 @@
  	sigaction(SIGUSR1, &sa, 0);
  	sa.sa_handler = signal_progress_off;
  	sigaction(SIGUSR2, &sa, 0);
