@@ -1,0 +1,12 @@
+diff -ru heirloom-sh-050706/defs.h heirloom-sh-050706.new/defs.h
+--- defs.h	2005-07-03 21:25:46.000000000 +0200
++++ defs.h	2008-03-27 22:30:33.000000000 +0100
+@@ -148,7 +148,7 @@
+ #define		ENDARGS		0
+ 
+ /* enable shell accounting */
+-#define		ACCT
++/* #define		ACCT */
+ 
+ #include	<unistd.h>
+ #include	"mac.h"
