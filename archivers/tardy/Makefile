@@ -1,13 +1,12 @@
-# ex:ts=8
 # Ports collection makefile for:	tardy
-# Date created:			Jan 14, 2003
-# Whom:				ijliao
+# Date created:				Jan 14, 2003
+# Whom:					ijliao
 #
 # $FreeBSD$
 #
 
 PORTNAME=	tardy
-PORTVERSION=	1.12
+PORTVERSION=	1.16
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
