@@ -134,6 +134,7 @@
     SUBDIR += mandvd
     SUBDIR += manencode
     SUBDIR += manslide
+    SUBDIR += mediainfo
     SUBDIR += mencoder
     SUBDIR += mimms
     SUBDIR += miro

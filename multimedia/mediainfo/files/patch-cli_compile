@@ -1,0 +1,8 @@
+--- CLI_Compile.sh.old	2008-04-28 20:15:04.000000000 -0700
++++ CLI_Compile.sh	2008-04-28 20:15:16.000000000 -0700
+@@ -102,4 +102,3 @@
+ # Going home
+ cd $Home
+ echo "MediaInfo executable is in MediaInfo/Project/GNU/CLI"
+-echo "For installing, cd MediaInfo/Project/GNU/CLI && make install"
+\ No newline at end of file

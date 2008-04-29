@@ -1,0 +1,12 @@
+--- ZenLib/Source/ZenLib/int128u.cpp       2008-04-12 10:52:16.000000000 -0700
++++ ZenLib/Source/ZenLib/int128u.cpp     2008-04-24 23:31:13.000000000 -0700
+@@ -47,6 +47,9 @@
+ #if defined (__MONTAVISTA__) || defined (__ARMEL__)
+     #define fmodl fmod
+ #endif
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++    #define fmodl fmod
++#endif
+ using namespace std;
+
+ namespace ZenLib
