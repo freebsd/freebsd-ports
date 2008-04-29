@@ -7,6 +7,7 @@
 
 PORTNAME=	tardy
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,5 +26,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^\(${var}\)\ =\ \(.*\)|\1 ?= \2|' \
 		${WRKSRC}/Makefile.in
 .endfor
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man1/${MAN1} ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
