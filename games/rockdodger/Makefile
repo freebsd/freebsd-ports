@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rockdodger
-PORTVERSION=	0.6
-PORTREVISION=	6
+PORTVERSION=	0.6.0a
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	spacerocks
@@ -27,7 +26,7 @@ pre-patch:
 		-e "s%/usr/games%${PREFIX}/bin%" \
 		-e "s%data/\*.{bmp,png,wav,mod}%data/*%" \
 		${WRKSRC}/Makefile ${WRKSRC}/main.c
-	@cd ${WRKSRC} && ${REINPLACE_CMD} -e "s%#include <SDL/%#include <%" SFont.c SFont.h main.c sound.c sound.h
+	@cd ${WRKSRC} && ${REINPLACE_CMD} -e "s%#include <SDL/%#include <%" SFont.c SFont.h main.c sound.c
 
 pre-install:
 	@${MKDIR} ${GAMESDIR}
