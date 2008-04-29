@@ -1,8 +1,4 @@
 %%OCAML_SITELIBDIR%%/calendar/META
-%%OCAML_SITELIBDIR%%/calendar/calendar.a
-%%OCAML_SITELIBDIR%%/calendar/calendar.cma
-%%OCAML_SITELIBDIR%%/calendar/calendar.cmi
-%%OCAML_SITELIBDIR%%/calendar/calendar.cmxa
 %%OCAML_SITELIBDIR%%/calendar/calendar.mli
 %%OCAML_SITELIBDIR%%/calendar/date.cmi
 %%OCAML_SITELIBDIR%%/calendar/date.mli
