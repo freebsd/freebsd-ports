@@ -16,8 +16,10 @@ DISTNAME=	cromwell-snapshot-${PORTVERSION}
 # cromwell-kenv: support for passing kenv(1) options by putting
 #                'append foo1=bar1,foo2=bar2' in the linuxboot.cfg entry
 # cromwell-gcc4: adds missing prototypes so it will compile using gcc 4
+# cromwell-gcc4-2: fixes a problem with a pointer size in gcc 4
 PATCH_SITES=		http://rink.nu/downloads/xbox-patches/
 PATCHFILES=		cromwell-ufs.diff cromwell-kenv.diff cromwell-gcc4.diff
+PATCHFILES+=		cromwell-gcc4-2.diff
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	rink@FreeBSD.org
@@ -56,10 +58,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=	Does not build with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
