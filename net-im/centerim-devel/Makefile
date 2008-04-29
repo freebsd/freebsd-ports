@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centerim
-DISTVERSION=	4.22.5-4-g516e
+DISTVERSION=	4.22.5-34-g61aa
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/mobshots/ \
 		ftp://ftp.centerim.org/mobshots/
@@ -29,17 +29,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 CONFLICTS=	centericq-[0-9]* centerim-[0-9]*
 
 OPTIONS=	NLS             "Native Language Support" on \
-		MULTIBYTE       "Multibyte Support" off \
-		FRIBIDI         "Fribidi Support" off \
-		MSN             "Support for MSN Protocol" off \
-		YAHOO           "Support for Yahoo! Messenger Protocol" off \
-		AIM             "Support for AOL's Instant Messenger Protocol" off \
-		IRC             "Support for IRC Protocol" off \
-		JABBER          "Support for Jabber Protocol" off \
-		GPGME           "Support for PGP encrypted Jabber messages" off \
-		RSS             "Support for RSS" off \
-		LJ              "Support for LiveJournal" off \
-		GG              "Support for Gadu-Gadu Protocol" off
+		MULTIBYTE       "Multibyte Support" on \
+		FRIBIDI         "Fribidi Support" on \
+		MSN             "Support for MSN Protocol" on \
+		YAHOO           "Support for Yahoo! Messenger Protocol" on \
+		AIM             "Support for AOL's Instant Messenger Protocol" on \
+		IRC             "Support for IRC Protocol" on \
+		JABBER          "Support for Jabber Protocol" on \
+		GPGME           "Support for PGP encrypted Jabber messages" on \
+		RSS             "Support for RSS" on \
+		LJ              "Support for LiveJournal" on \
+		GG              "Support for Gadu-Gadu Protocol" on
 
 MAN1=	cimconv.1 centerim.1
 
