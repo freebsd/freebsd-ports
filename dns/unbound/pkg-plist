@@ -1,0 +1,11 @@
+etc/unbound/unbound.conf.sample
+include/unbound.h
+lib/libunbound-0.11.so
+lib/libunbound.so
+lib/libunbound.la
+lib/libunbound.a
+sbin/unbound
+sbin/unbound-checkconf
+sbin/unbound-host
+@dirrmtry etc/unbound
+@dirrmtry /var/run/unbound

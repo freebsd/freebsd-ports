@@ -1,0 +1,28 @@
+Unbound is designed as a set of modular components, so that also
+DNSSEC (secure DNS) validation and stub-resolvers (that do not run as
+a server, but are linked into an application) are easily possible.
+
+Goals:
+    * A validating recursive DNS resolver.
+    * Code diversity in the DNS resolver monoculture.
+    * Drop-in replacement for BIND apart from config.
+    * DNSSEC support.
+    * Fully RFC compliant.
+    * High performance
+          o even with validation.
+    * Used as
+          o stub resolver.
+          o full caching name server.
+          o resolver library.
+    * Elegant design of validator, resolver, cache modules.
+          o provide the ability to pick and choose modules.
+    * Robust.
+    * In C, open source: The BSD license.
+    * Smallest as possible component that does the job.
+    * Stub-zones can be configured (local data or AS112 zones).
+
+Non-goals:
+    * An authoritative name server.
+    * Too many Features.
+
+WWW: http://unbound.net

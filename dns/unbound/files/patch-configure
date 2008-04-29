@@ -1,0 +1,11 @@
+--- configure.orig	2008-04-25 18:25:51.000000000 +0400
++++ configure	2008-04-25 18:26:00.000000000 +0400
+@@ -3300,7 +3300,7 @@
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PIDFILE "$ub_dir/unbound.pid"
++#define PIDFILE "/var/run/unbound.pid"
+ _ACEOF
+ 
+ 
