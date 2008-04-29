@@ -655,6 +655,7 @@
     SUBDIR += quesa
     SUBDIR += qvplay
     SUBDIR += raster3d
+    SUBDIR += rawstudio
     SUBDIR += ray++
     SUBDIR += rayshade
     SUBDIR += reallyslick
