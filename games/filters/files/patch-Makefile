@@ -1,15 +1,17 @@
---- Makefile.orig	2007-12-12 20:39:07.000000000 +0100
-+++ Makefile	2007-12-12 20:40:23.000000000 +0100
-@@ -2,7 +2,7 @@
+--- ./Makefile.orig	2008-04-14 19:22:29.000000000 +0200
++++ ./Makefile	2008-04-29 15:59:17.000000000 +0200
+@@ -2,8 +2,9 @@
  BUILD	= jethro kraut cockney jive nyc ken ky00te newspeak nethackify
  OTHER	= eleet b1ff chef jibberish upside-down rasterman studly fudd \
  	  censor spammer uniencode pirate kenny scottish fanboy
 -CFLAGS	= -O2 -lfl
 +LDFLAGS+=	-lfl
+ export CFLAGS
++export LDFLAGS
  INSTALL_PROGRAM = install
  
  # DEB_BUILD_OPTIONS suport, to control binary stripping.
-@@ -41,7 +41,7 @@
+@@ -42,7 +43,7 @@
  .l:
  	$(RM) $*.c
  	$(LEX) -t $< > $*.c
