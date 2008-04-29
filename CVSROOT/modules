@@ -4286,7 +4286,6 @@ grass		ports/databases/grass
 graveman	ports/sysutils/graveman
 grc		ports/misc/grc
 grdesktop	ports/net/grdesktop
-greed		ports/ftp/greed
 greed_game	ports/games/greed
 gregarius	ports/www/gregarius
 gregexp		ports/misc/gregexp
