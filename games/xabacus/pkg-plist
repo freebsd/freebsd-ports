@@ -1,6 +1,5 @@
 bin/xabacus
 lib/X11/app-defaults/Abacus
-%%DATADIR%%/Abacus.les
 %%DATADIR%%/Abacus.ps
 %%DATADIR%%/Abacus1_1.les
 %%DATADIR%%/Abacus1_2.les
