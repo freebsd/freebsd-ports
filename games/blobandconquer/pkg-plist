@@ -70,10 +70,20 @@ bin/blobAndConquer
 %%DATADIR%%/data/combatResources/models
 %%DATADIR%%/data/combatResources/sounds
 %%DATADIR%%/data/combatResources/textures
+%%DATADIR%%/data/cutscenes/scripts/ambushEnd
+%%DATADIR%%/data/cutscenes/scripts/ambushStart
 %%DATADIR%%/data/cutscenes/scripts/ancientTomb1Start
 %%DATADIR%%/data/cutscenes/scripts/ancientTomb3End
 %%DATADIR%%/data/cutscenes/scripts/assimilatorStart
+%%DATADIR%%/data/cutscenes/scripts/bossBattle1Start
+%%DATADIR%%/data/cutscenes/scripts/bossBattle2Start
+%%DATADIR%%/data/cutscenes/scripts/bossBattle3Start
+%%DATADIR%%/data/cutscenes/scripts/bossBattle4Start
 %%DATADIR%%/data/cutscenes/scripts/communicationStart
+%%DATADIR%%/data/cutscenes/scripts/cryptEnd
+%%DATADIR%%/data/cutscenes/scripts/cryptStart
+%%DATADIR%%/data/cutscenes/scripts/finalEnd
+%%DATADIR%%/data/cutscenes/scripts/finalStart
 %%DATADIR%%/data/cutscenes/scripts/grasslands2Start
 %%DATADIR%%/data/cutscenes/scripts/hub
 %%DATADIR%%/data/cutscenes/scripts/innerTowerStart
@@ -82,9 +92,18 @@ bin/blobAndConquer
 %%DATADIR%%/data/cutscenes/scripts/unknownStart
 %%DATADIR%%/data/cutscenes/scripts/wasteDisposalStart
 %%DATADIR%%/data/cutscenes/text/en/ambushEnd
+%%DATADIR%%/data/cutscenes/text/en/ambushStart
 %%DATADIR%%/data/cutscenes/text/en/ancientTomb1Start
 %%DATADIR%%/data/cutscenes/text/en/assimilatorStart
+%%DATADIR%%/data/cutscenes/text/en/bossBattle1Start
+%%DATADIR%%/data/cutscenes/text/en/bossBattle2Start
+%%DATADIR%%/data/cutscenes/text/en/bossBattle3Start
+%%DATADIR%%/data/cutscenes/text/en/bossBattle4Start
 %%DATADIR%%/data/cutscenes/text/en/communicationsStart
+%%DATADIR%%/data/cutscenes/text/en/cryptEnd
+%%DATADIR%%/data/cutscenes/text/en/cryptStart
+%%DATADIR%%/data/cutscenes/text/en/finalEnd
+%%DATADIR%%/data/cutscenes/text/en/finalStart
 %%DATADIR%%/data/cutscenes/text/en/grasslands2Start
 %%DATADIR%%/data/cutscenes/text/en/innerTowerStart
 %%DATADIR%%/data/cutscenes/text/en/supplyExit
@@ -106,6 +125,8 @@ bin/blobAndConquer
 %%DATADIR%%/data/gameDefs/specialist
 %%DATADIR%%/data/gameDefs/spiderBlobCommander
 %%DATADIR%%/data/gameDefs/weapons
+%%DATADIR%%/data/misc/en/LICENSE
+%%DATADIR%%/data/misc/en/credits
 %%DATADIR%%/data/misc/en/laserGrid
 %%DATADIR%%/data/misc/en/mastermind
 %%DATADIR%%/data/misc/letterFrequencyTable
@@ -182,6 +203,7 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/game/cannonbase.png
 %%DATADIR%%/gfx/game/cannontop.png
 %%DATADIR%%/gfx/game/colon.png
+%%DATADIR%%/gfx/game/credits.png
 %%DATADIR%%/gfx/game/cypher1.png
 %%DATADIR%%/gfx/game/cypher2.png
 %%DATADIR%%/gfx/game/desimilator.png
@@ -192,6 +214,7 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/game/hackerswitch.png
 %%DATADIR%%/gfx/game/hook.png
 %%DATADIR%%/gfx/game/icegun.png
+%%DATADIR%%/gfx/game/licensePic.png
 %%DATADIR%%/gfx/game/missionFailed.png
 %%DATADIR%%/gfx/game/orderIcon1.tga
 %%DATADIR%%/gfx/game/orderIcon2.tga
@@ -240,6 +263,7 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/primitive/item.primitive
 %%DATADIR%%/gfx/primitive/keycard.primitive
 %%DATADIR%%/gfx/primitive/lifeCrystal.primitive
+%%DATADIR%%/gfx/primitive/map.primitive
 %%DATADIR%%/gfx/primitive/medipack.primitive
 %%DATADIR%%/gfx/primitive/sentryGun.primitive
 %%DATADIR%%/gfx/primitive/weapon.primitive
@@ -285,9 +309,11 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/rw2/webbing.blend.raw
 %%DATADIR%%/music/A Bear Called Otso.xm
 %%DATADIR%%/music/Advancement.xm
+%%DATADIR%%/music/Autumns Dawning.s3m
 %%DATADIR%%/music/Dark Club.s3m
 %%DATADIR%%/music/Dark.s3m
 %%DATADIR%%/music/Dragon Cave.xm
+%%DATADIR%%/music/Escape From Tower.xm
 %%DATADIR%%/music/Helmet Shake.mod
 %%DATADIR%%/music/Liquid Crystal.xm
 %%DATADIR%%/music/Longstabben.xm
@@ -484,6 +510,7 @@ bin/blobAndConquer
 %%DATADIR%%/textures/game/machineGunDroid.png
 %%DATADIR%%/textures/game/machineGunSpiderBlob.png
 %%DATADIR%%/textures/game/manualTargetter.png
+%%DATADIR%%/textures/game/map.png
 %%DATADIR%%/textures/game/mastermindArrow.png
 %%DATADIR%%/textures/game/mastermindBackground.png
 %%DATADIR%%/textures/game/mastermindBall1.png
