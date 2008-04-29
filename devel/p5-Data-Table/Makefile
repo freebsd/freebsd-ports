@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Data-Table
-PORTVERSION=	1.52
+PORTVERSION=	1.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Data type related to database tables, HTML table displays, etc
 
 PERL_CONFIGURE=	yes
