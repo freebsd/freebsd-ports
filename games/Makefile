@@ -82,6 +82,7 @@
     SUBDIR += blackshadeselite
     SUBDIR += blinkensisters
     SUBDIR += blobandconquer
+    SUBDIR += blobby
     SUBDIR += bloboats
     SUBDIR += blobwars
     SUBDIR += block
