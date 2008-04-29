@@ -14331,6 +14331,7 @@ rats		ports/security/rats
 rawdog		ports/news/rawdog
 rawio		ports/benchmarks/rawio
 rawrec		ports/audio/rawrec
+rawstudio	ports/graphics/rawstudio
 ray++		ports/graphics/ray++
 raysfilter	ports/mail/raysfilter
 rayshade	ports/graphics/rayshade
