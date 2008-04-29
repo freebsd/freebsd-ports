@@ -7613,6 +7613,7 @@ mdnsd		ports/dns/mdnsd
 mdpop3d		ports/mail/mdpop3d
 mdtest		ports/benchmarks/mdtest
 meanwhile	ports/net-im/meanwhile
+mediainfo	ports/multimedia/mediainfo
 mediaproxy	ports/net/mediaproxy
 mediatomb	ports/net/mediatomb
 mediawiki	ports/www/mediawiki
