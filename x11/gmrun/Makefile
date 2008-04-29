@@ -31,6 +31,10 @@ PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e '/select_executables_only(const struct dirent/ s,const ,,' \
+		${WRKSRC}/src/gtkcompletionline.cc
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
