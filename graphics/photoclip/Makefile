@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.vaisburd.net/PhotoClip/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	PhotoClip-${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple image viewer and editor for GNUstep
 
 USE_GNUSTEP=	yes

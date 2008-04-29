@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gnustep.it/Renaissance/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Renaissance-${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep GUI Development Framework
 
 USE_GNUSTEP=	yes
