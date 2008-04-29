@@ -119,6 +119,7 @@
     SUBDIR += staticcharge
     SUBDIR += tinystats
     SUBDIR += totd
+    SUBDIR += unbound
     SUBDIR += updatedd
     SUBDIR += vizone
     SUBDIR += walker
