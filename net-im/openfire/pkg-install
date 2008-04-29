@@ -7,9 +7,7 @@ POST-INSTALL)
         PUID=342
         PGID=${PUID}
 
-        if pw group show "${PGROUP}" >/dev/null; then
-                echo "You already have a group \"${PGROUP}\", so I will use it."
-        else
+        if ! pw group show "${PGROUP}" > /dev/null; then
                 if pw groupadd ${PGROUP} -g ${PGID}; then
                         echo "Added group \"${PGROUP}\"."
                 else
@@ -18,9 +16,7 @@ POST-INSTALL)
                 fi
         fi
 
-        if pw user show "${PUSER}" >/dev/null; then
-                echo "You already have a user \"${PUSER}\", so I will use it."
-        else
+        if ! pw user show "${PUSER}" > /dev/null; then
                 if pw useradd ${PUSER} -u ${PUID} -g ${PGROUP} -h - \
                         -d /nonexistent -s /sbin/nologin -c "Openfire Daemon"
                 then

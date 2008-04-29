@@ -4,6 +4,8 @@
 %%EXAMPLESDIR%%/openfire.xml
 %%EXAMPLESDIR%%/keystore
 %%EXAMPLESDIR%%/truststore
+@exec if ! /usr/sbin/pw group show openfire > /dev/null; then /usr/sbin/pw groupadd openfire -g 342 && echo "Added group openfire."; fi
+@exec if ! /usr/sbin/pw user show openfire > /dev/null; then /usr/sbin/pw useradd openfire -u 342 -g 342 -h - -d /nonexistent -s /sbin/nologin -c "Openfire Daemon" && echo "Added user openfire."; fi
 @exec [ -d /var/log/openfire ] || mkdir -p  /var/log/openfire && chown openfire:openfire /var/log/openfire
 @exec [ -d /var/db/openfire ] || mkdir -p  /var/db/openfire && chown openfire:openfire /var/db/openfire
 @exec [ -d %D/%%ETCDIR%% ] || mkdir -p %D/%%ETCDIR%% && chown openfire:openfire %D/%%ETCDIR%%
