@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djgame2
-PORTVERSION=	3.1.2
+PORTVERSION=	3.2.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.bluedj.com/download/src/
 DISTNAME=	source-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	bluedj contains many popular online games
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui qt3support qmake_build uic_build rcc_build moc_build
+QT_COMPONENTS=	gui qt3support qmake_build uic_build rcc_build moc_build svg
 
 QMAKE?=		qmake-qt4
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
@@ -26,6 +26,8 @@ MAKE_ENV=	QMAKESPEC="{QMAKESPEC}"
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DATADIR=	${PREFIX}/share/djgame2
+
+SUB_FILES=	djgame2.desktop startdjg
 
 .include <bsd.port.pre.mk>
 
@@ -35,29 +37,25 @@ BROKEN=		libLandLord does not compile
 
 post-patch:
 	${RM} -f ${WRKSRC}/Hall/HallRes/platform/x11/install
-	@${SED} -e 's|%%DATADIR%%|${DATADIR}|' \
-		< ${FILESDIR}/djgame2.desktop.in > ${WRKDIR}/djgame2.desktop
-	@${SED} -e 's|%%DATADIR%%|${DATADIR}|' \
-		< ${FILESDIR}/startdjg.in > ${WRKDIR}/startdjg
 	@${REINPLACE_CMD} -e 's|linux/soundcard.h|sys/soundcard.h|g' \
 		${WRKSRC}/Base/src/PlayWave.cpp
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' \
-		${WRKSRC}/makelinux
+		${WRKSRC}/make_linux_output
 	@${REINPLACE_CMD} -e 's|qmake|${QMAKE}|' \
-		${WRKSRC}/makelinux
+		${WRKSRC}/make_linux_output
 	@${ECHO_CMD} "INCLUDEPATH += ${LOCALBASE}/include" \
 		>> ${WRKSRC}/Base/Base.pro
 	@${ECHO_CMD} "INCLUDEPATH += ${LOCALBASE}/include" \
 		>> ${WRKSRC}/Hall/Hall.pro
-	@${CHMOD} a+x ${WRKSRC}/makelinux
+	@${CHMOD} a+x ${WRKSRC}/make_linux_output
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./makelinux
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./make_linux_output
 
 do-install:
 	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/Hall/release; ${TAR} -cf - *) | \
-	${TAR}  -xf - -C ${DATADIR}
+	(cd ${WRKSRC}/Hall/build; ${TAR} -cf - *) | \
+		${TAR}  -xf - -C ${DATADIR}
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/djgame2.desktop ${PREFIX}/share/applications
 	${INSTALL_SCRIPT} ${WRKDIR}/startdjg ${PREFIX}/bin
