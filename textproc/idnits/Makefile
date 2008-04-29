@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/idnits/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	fenner@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Looks for problems in internet draft formatting
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

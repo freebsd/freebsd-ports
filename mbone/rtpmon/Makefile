@@ -12,8 +12,8 @@ CATEGORIES=	mbone tk
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 
-MAINTAINER=	fenner@FreeBSD.org
-COMMENT=	A program to montior loss in multicast sessions
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program to monitor loss in multicast sessions
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 

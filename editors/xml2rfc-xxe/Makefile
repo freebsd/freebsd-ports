@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://rtg.ietf.org/~fenner/ietf/
 PKGNAMESUFFIX=	-${XXE_VERSION}
 
-MAINTAINER=	fenner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xml2rfc configuration for XMLMind XML Editor
 
 RUN_DEPENDS=	xxe:${PORTSDIR}/editors/xxe

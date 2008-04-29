@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 DISTNAME=	imm.source
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	fenner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet Image(or other data) Multicaster (and receiver)
 
 USE_TK=		yes

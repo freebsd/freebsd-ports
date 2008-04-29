@@ -10,7 +10,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fenner@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performs simple NetBIOS Name Service Requests
 
 PERL_CONFIGURE=	YES

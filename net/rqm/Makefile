@@ -8,10 +8,10 @@
 PORTNAME=	rqm
 PORTVERSION=	1.0.0
 PORTREVISION=	1
-CATEGORIES=	mbone
+CATEGORIES=	mbone tk
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rqm/1.0.0/
 
-MAINTAINER=	fenner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical RTP quality monitor
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84

@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fenner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl modules to perform SNMP set,get,walk,next,walk_hash etc
 
 #
