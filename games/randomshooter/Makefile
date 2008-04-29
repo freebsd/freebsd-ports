@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	randomshooter
-DISTVERSION=	0.3-1
+DISTVERSION=	0.4-1
 CATEGORIES=	games
 # original url: http://parallelrealities.co.uk/download.php?proj=randomShooter&file=${DISTNAME}&type=zip
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/
