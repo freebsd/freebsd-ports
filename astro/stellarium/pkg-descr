@@ -1,8 +1,6 @@
-Stellarium is a 3D photo-realistic real time sky renderer. With stellarium,
-you really see what you can see with your eyes, binoculars or a small
-telescope.
+Stellarium is a free open source planetarium for your computer.  It shows
+a realistic sky in 3D, just like what you see with the naked eye,
+binoculars or a telescope.  It is being used in planetarium projectors.
+Just set your coordinates and go.
 
 WWW: http://stellarium.sourceforge.net/
-
-- Jean-Yves Lefort
-jylefort@FreeBSD.org
