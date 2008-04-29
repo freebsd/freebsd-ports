@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fraqtive
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -23,6 +23,8 @@ CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" \
 CONFIGURE_ARGS=	-prefix ${PREFIX} -qmake ${QMAKE}
 
 OPTIONS=	SSE2 "Enable SSE2 optimization" off
+
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.pre.mk>
 
