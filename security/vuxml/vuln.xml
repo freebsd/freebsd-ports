@@ -277,7 +277,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>png</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.2.27</lt></range>
       </package>
     </affects>
     <description>
@@ -308,6 +308,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-04-12</discovery>
       <entry>2008-04-25</entry>
+      <modified>2008-04-29</modified>
     </dates>
   </vuln>
 
