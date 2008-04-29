@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	Net-MAC-Vendor
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Look up the vendor for a MAC
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 
 MAN3=	Net::MAC::Vendor.3
 
