@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Math/SymbolicX/Error.pm
+%%SITE_PERL%%/Math/SymbolicX/t.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Error/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX/Error
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SymbolicX

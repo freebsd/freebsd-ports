@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Math-SymbolicX-Error
-PORTVERSION=	0.02
+PORTVERSION=	1.01
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parser extension for dealing with numeric errors
 
 BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic \
