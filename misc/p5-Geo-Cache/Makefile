@@ -11,7 +11,7 @@ CATEGORIES=	misc perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object interface for GPS waypoints
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \

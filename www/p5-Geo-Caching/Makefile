@@ -11,7 +11,7 @@ CATEGORIES=	www perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object interface for querying Geocaching.com website
 
 BUILD_DEPENDS=	${SITE_PERL}/Geo/Cache.pm:${PORTSDIR}/misc/p5-Geo-Cache \

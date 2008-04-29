@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access the Open Distributed Hash Table (Open DHT)
 
 RUN_DEPENDS=	${SITE_PERL}/Class/Accessor/Chained/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor-Chained \

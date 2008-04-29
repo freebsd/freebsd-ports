@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/G/GA/GARTH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to the SWF Chart generation tool
 
 MAN3=		SWF::Chart.3

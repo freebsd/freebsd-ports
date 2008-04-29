@@ -12,7 +12,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy tool to create social network maps
 
 BUILD_DEPENDS=	${SITE_PERL}/Spiffy.pm:${PORTSDIR}/devel/p5-Spiffy \

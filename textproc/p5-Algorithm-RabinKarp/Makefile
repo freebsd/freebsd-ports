@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/N/NN/NNUNLEY
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION}_1
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rabin-Karp streaming hash
 
 BUILD_DEPENDS=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.nomic.net/~uckelman/mkhexgrid/releases/ \
 		http://aaron.daltons.ca/freebsd/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fully-configurable hex grid generator
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/lexical_cast.hpp:${PORTSDIR}/devel/boost

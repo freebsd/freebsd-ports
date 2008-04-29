@@ -11,7 +11,7 @@ CATEGORIES=	games perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Guess the letters in a word (ie Hangman)
 
 MAN3=	Games::GuessWord.3

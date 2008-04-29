@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/P/PD/PDENIS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IRC hangman bot
 
 BUILD_DEPENDS=	${SITE_PERL}/Bot/BasicBot.pm:${PORTSDIR}/irc/p5-Bot-BasicBot \

@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of an Object Dependency Algorithm
 
 BUILD_DEPENDS=	p5-Scalar-List-Utils>1.10:${PORTSDIR}/lang/p5-Scalar-List-Utils \

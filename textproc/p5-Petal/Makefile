@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BP/BPOSTLE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Template Attribute Language - TAL for Perl!
 
 BUILD_DEPENDS=	${SITE_PERL}/MKDoc/XML.pm:${PORTSDIR}/textproc/p5-MKDoc-XML \

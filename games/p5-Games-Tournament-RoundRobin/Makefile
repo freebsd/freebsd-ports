@@ -11,7 +11,7 @@ CATEGORIES=	games perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Round-Robin Tournament Schedule Pairings
 
 MAN3=	Games::Tournament::RoundRobin.3 \

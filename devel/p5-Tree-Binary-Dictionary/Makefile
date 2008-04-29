@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dictionary API to a binary tree
 
 RUN_DEPENDS=	${SITE_PERL}/Tree/Binary.pm:${PORTSDIR}/devel/p5-Tree-Binary

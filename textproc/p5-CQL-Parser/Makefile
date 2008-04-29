@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/E/ES/ESUMMERS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiles CQL strings into parse trees of Node subtypes
 
 BUILD_DEPENDS=	${SITE_PERL}/String/Tokenizer.pm:${PORTSDIR}/textproc/p5-String-Tokenizer \

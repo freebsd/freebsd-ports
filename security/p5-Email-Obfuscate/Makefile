@@ -11,7 +11,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Obfuscates email addresses
 
 PERL_CONFIGURE=	yes

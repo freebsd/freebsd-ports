@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	dungeonmaker
 DISTNAME=	dungeonmaker-${PORTVERSION}
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program/library that "grows" dungeons for use in isometric games
 
 USE_LDCONFIG=	yes

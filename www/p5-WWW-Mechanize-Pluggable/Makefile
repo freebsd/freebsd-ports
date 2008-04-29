@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Custmomize WWW::Mechanize via plugins
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Form.pm:${PORTSDIR}/www/p5-libwww \

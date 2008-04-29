@@ -11,7 +11,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calculate offset polygons
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/YAML.pm:${PORTSDIR}/textproc/p5-YAML

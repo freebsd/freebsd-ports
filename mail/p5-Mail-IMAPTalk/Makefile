@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IMAP client interface with lots of features
 
 MAN3=	Mail::IMAPTalk.3

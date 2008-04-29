@@ -10,7 +10,7 @@ PORTVERSION=	1.0.92
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.codenix.com/~tolua/
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extended version of tolua, a tool to integrate C/C++ code with Lua
 
 LIB_DEPENDS=	lua:${PORTSDIR}/lang/lua50

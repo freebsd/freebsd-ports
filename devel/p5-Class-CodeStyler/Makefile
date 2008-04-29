@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for code generation program formatting and execution
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/STL/Containers.pm:${PORTSDIR}/devel/p5-Class-STL-Containers

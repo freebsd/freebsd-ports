@@ -12,7 +12,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replace tags with text and geometry
 
 BUILD_DEPENDS=	${SITE_PERL}/CAD/Drawing.pm:${PORTSDIR}/graphics/p5-CAD-Drawing \

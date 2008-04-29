@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Match hash keys using Regular Expressions
 
 BUILD_DEPENDS=	p5-Attribute-Handlers>=0.76:${PORTSDIR}/devel/p5-Attribute-Handlers

@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://oss.linbit.com/csync2/ \
 		http://people.freebsd.org/~aaron/distfiles/
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cluster synchronization tool
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \

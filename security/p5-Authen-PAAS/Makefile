@@ -11,7 +11,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Authentication & Authorization Service
 
 BUILD_DEPENDS=	p5-Config-Record>=1.1.0:${PORTSDIR}/devel/p5-Config-Record \

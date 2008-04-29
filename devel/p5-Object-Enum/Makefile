@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION}0
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for if ($$foo eq 'bar')
 
 RUN_DEPENDS=	${SITE_PERL}/Sub/Install.pm:${PORTSDIR}/devel/p5-Sub-Install \

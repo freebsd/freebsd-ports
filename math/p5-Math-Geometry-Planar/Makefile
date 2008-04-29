@@ -11,7 +11,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of planar geometry functions
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Math/Geometry/Planar/GPC.pm:${PORTSDIR}/math/p5-Math-Geometry-Planar-GPC \

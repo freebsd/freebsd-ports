@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=../../authors/id/B/BD/BDFOY
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML validator and sanity checker
 
 BUILD_DEPENDS=	p5-ConfigReader-Simple>=1.15:${PORTSDIR}/devel/p5-ConfigReader-Simple \

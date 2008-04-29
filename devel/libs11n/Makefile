@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	s11n
 DISTNAME=	${PORTNAME}-${PORTVERSION}-nobuildfiles
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library for easily serializing a wide variety of objects
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

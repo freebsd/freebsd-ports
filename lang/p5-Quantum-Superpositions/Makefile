@@ -11,7 +11,7 @@ CATEGORIES=	lang science perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QM-like superpositions in Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Multimethods.pm:${PORTSDIR}/devel/p5-Class-Multimethods

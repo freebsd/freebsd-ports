@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	opentnl
 DISTNAME=	tnl-${PORTVERSION}-source
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A robust, secure, easy to use cross-platform C++ networking API
 
 WRKSRC=		${WRKDIR}/tnl/tnl

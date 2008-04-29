@@ -10,8 +10,8 @@ PORTVERSION=	1.0.2
 CATEGORIES=	games devel
 MASTER_SITES=	SFE/libfov
 
-MAINTAINER=	aaron@FreeBSD.org
-COMMENT=	C  library for calculating fields of view on low resolution rasters
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	C library for calculating fields of view on low resolution rasters
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/fov
 USE_LDCONFIG=	yes

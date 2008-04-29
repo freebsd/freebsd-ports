@@ -11,7 +11,7 @@ CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phylogenetic analysis using perl
 
 BUILD_DEPENDS=	p5-Exception-Class>1.22:${PORTSDIR}/devel/p5-Exception-Class \

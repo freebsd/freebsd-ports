@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/D/DC/DCONWAY
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Comments that do more than just sit there
 
 BUILD_DEPENDS=	${SITE_PERL}/Filter/Simple.pm:${PORTSDIR}/textproc/p5-Filter-Simple \

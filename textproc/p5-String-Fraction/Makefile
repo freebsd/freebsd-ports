@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert fractions into unicode chars
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Fraction.pm:${PORTSDIR}/textproc/p5-HTML-Fraction
