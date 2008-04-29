@@ -7,6 +7,7 @@
 
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/169/:src \
 		http://gridengine.sunsource.net/download/SGE61/:bin \
@@ -184,7 +185,11 @@ do-build:
 	@cd ${WRKSRC} && ${SETENV} SGE_ROOT=${TMP_SGE_ROOT} \
 	    ./scripts/distinst -local -libs ${SGE_ARCH} -- ${INST_PROGS}
 .if defined(WITHOUT_QSH)
-	${INSTALL_SCRIPT} ${FILESDIR}/qsh-disabled.sh ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qsh
+	@${RM} ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qlogin
+	@${RM} ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qrsh
+	@${MV} ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qsh ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qrsh
+	@${LN} -s qrsh ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qlogin
+	@${INSTALL_SCRIPT} ${FILESDIR}/qsh-disabled.sh ${TMP_SGE_ROOT}/bin/${SGE_ARCH}/qsh
 .endif
 .if !defined(WITH_X11)
 	@${RM} ${TMP_SGE_ROOT}/catman/cat/cat1/qmon.1
