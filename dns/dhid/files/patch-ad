@@ -1,5 +1,5 @@
---- conf.c.orig	Wed Sep 12 12:32:09 2001
-+++ conf.c	Sat Feb 19 21:26:06 2005
+--- conf.c.orig	2008-04-17 11:38:54.000000000 +0000
++++ conf.c	2008-04-29 04:20:36.000000000 +0000
 @@ -155,7 +155,7 @@
                  cp->id=atoi(line_entry(2,line));
  
@@ -9,15 +9,16 @@
                  cp->atype=APASS;
          }
          if(!strcmp(line_entry(1,line),"isaddr")) {
-@@ -180,32 +180,32 @@
+@@ -180,33 +180,33 @@
  		sp->addr=0;
  		sp->hostname[0]='\0';
  	
 -		strcpy(str2,line_entry(2,line));
-+		strlcpy(str2,line_entry(2,line),sizeof(str2));
- 
+-
 -		strcpy(str,dot_entry(1,str2));
 -		strcpy(str3,dot_entry(2,str2));
++		strlcpy(str2,line_entry(2,line),sizeof(str2));
++  
 +		strlcpy(str,dot_entry(1,str2),sizeof(str));
 +		strlcpy(str3,dot_entry(2,str2),sizeof(str3));
  
@@ -30,6 +31,7 @@
 -                strcpy(str,line_entry(2,line));
 +                strlcpy(str,line_entry(2,line),sizeof(str));
                  cp->refresh=atoi(str);
+ 		if(cp->refresh<60) cp->refresh=60;
          }
          if(!strcmp(line_entry(1,line),"oncmd")) {
 -                strcpy(cp->on_cmd,line_entry(2,line));
@@ -52,7 +54,7 @@
                  cp->atype=AQRC;
  #else
                  syslog(LOG_ERR,"QRC authentication not available in this client"
-@@ -216,7 +216,7 @@
+@@ -217,7 +217,7 @@
          }
         if(!strcmp(line_entry(1,line),"authq")) {
  #ifdef  QRC

@@ -1,7 +1,7 @@
---- main.c.orig	Fri Oct 28 23:41:02 2005
-+++ main.c	Sat Jan  7 19:11:18 2006
+--- main.c.orig	2008-04-22 22:37:12.000000000 +0000
++++ main.c	2008-04-29 04:16:08.000000000 +0000
 @@ -74,7 +74,7 @@
-                         unsigned char linecmd[512];
+                         char linecmd[512];
                          struct in_addr sa;
                          sa.s_addr=cp->laddr;
 -                        sprintf(linecmd,"%s %d %s %s",cp->off_cmd,cp->id,
@@ -10,7 +10,7 @@
                          ,cp->off_cmdp);
                          cmd_fork(linecmd);
 @@ -106,7 +106,7 @@
-                         unsigned char linecmd[512];
+                         char linecmd[512];
                          struct in_addr sa;
                          sa.s_addr=cp->laddr;
 -                        sprintf(linecmd,"%s %d %s %s",cp->off_cmd,cp->id,
@@ -18,8 +18,8 @@
                          inet_ntoa((struct in_addr)sa)
                          ,cp->off_cmdp);
                          cmd_fork(linecmd);
-@@ -189,7 +189,7 @@
- 		unsigned char linecmd[512];
+@@ -191,7 +191,7 @@
+ 		char linecmd[512];
  		struct in_addr sa;
  		sa.s_addr=cp->laddr;
 -		sprintf(linecmd,"%s %d %s %s",cp->on_cmd,cp->id,
@@ -38,7 +38,7 @@
  		m.hdr.opcode=AUTH_REQ;
  		m.hdr.hostid=cp->id;
  		m.refresh=cp->refresh;
-@@ -289,14 +289,14 @@
+@@ -292,14 +292,14 @@
  	int c;
  	extern char *optarg;
  
@@ -57,12 +57,12 @@
  	case('h'): usage(argv);
  	default: usage(argv);
  	}
-@@ -370,7 +370,7 @@
-                 	unsigned char linecmd[512];
+@@ -381,7 +381,7 @@
+                 	char linecmd[512];
                  	struct in_addr sa;
                  	sa.s_addr=cp->laddr;
 -                	sprintf(linecmd,"%s %d %s %s",cp->off_cmd,cp->id,
-+                	snprintf(linecmd,sizeof(linecmd),"%s %d %s %s",cp->off_cmd,cp->id,
-                 	inet_ntoa((struct in_addr)sa)
-                 	,cp->off_cmdp);
++                	snprintf(linecmd, sizeof(linecmd), "%s %d %s %s",cp->off_cmd,cp->id,
+                 	inet_ntoa((struct in_addr)sa),cp->off_cmdp);
                  	cmd_fork(linecmd);
+                 	}
