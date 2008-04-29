@@ -16673,6 +16673,7 @@ unace		ports/archivers/unace
 unadf		ports/archivers/unadf
 unalz		ports/archivers/unalz
 unarj		ports/archivers/unarj
+unbound		ports/dns/unbound
 unclutter	ports/misc/unclutter
 uncrustify	ports/textproc/uncrustify
 undernet-ircu	ports/irc/undernet-ircu
