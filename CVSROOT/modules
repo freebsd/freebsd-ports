@@ -938,6 +938,7 @@ blimitd		ports/sysutils/blimitd
 blinkensisters	ports/games/blinkensisters
 blitz++		ports/math/blitz++
 blobandconquer	ports/games/blobandconquer
+blobby		ports/games/blobby
 bloboats	ports/games/bloboats
 blobwars	ports/games/blobwars
 block		ports/games/block
