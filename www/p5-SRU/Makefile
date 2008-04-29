@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	SRU
-PORTVERSION=	0.95
+PORTVERSION=	0.97
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRICAS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Search and Retrieval by URL
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
@@ -21,7 +21,12 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
 		${SITE_PERL}/CQL/Parser.pm:${PORTSDIR}/textproc/p5-CQL-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
+		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+		${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
+		${SITE_PERL}/CQL/Parser.pm:${PORTSDIR}/textproc/p5-CQL-Parser
 
 MAN3=	Catalyst::Controller::SRU.3 \
 	SRU.3 \
