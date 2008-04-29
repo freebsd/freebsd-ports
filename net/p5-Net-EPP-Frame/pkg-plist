@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Net/EPP/Frame/Command/Check.pm
 %%SITE_PERL%%/Net/EPP/Frame/Command/Check/Contact.pm
 %%SITE_PERL%%/Net/EPP/Frame/Command/Check/Domain.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/
 %%SITE_PERL%%/Net/EPP/Frame/Command/Check/Host.pm
 %%SITE_PERL%%/Net/EPP/Frame/Command/Create.pm
 %%SITE_PERL%%/Net/EPP/Frame/Command/Create/Contact.pm
@@ -17,8 +18,12 @@
 %%SITE_PERL%%/Net/EPP/Frame/Command/Login.pm
 %%SITE_PERL%%/Net/EPP/Frame/Command/Logout.pm
 %%SITE_PERL%%/Net/EPP/Frame/Command/Poll.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Poll/Req.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Poll/Ack.pm
 %%SITE_PERL%%/Net/EPP/Frame/Command/Renew.pm
 %%SITE_PERL%%/Net/EPP/Frame/Command/Transfer.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Transfer/Domain.pm
+%%SITE_PERL%%/Net/EPP/Frame/Command/Transfer/Contact.pm
 %%SITE_PERL%%/Net/EPP/Frame/Command/Update.pm
 %%SITE_PERL%%/Net/EPP/Frame/Command/Update/Contact.pm
 %%SITE_PERL%%/Net/EPP/Frame/Command/Update/Domain.pm
@@ -36,6 +41,8 @@
 @dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Delete
 @dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Create
 @dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Check
+@dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Poll
+@dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Transfer
 @dirrm %%SITE_PERL%%/Net/EPP/Frame/Command
 @dirrm %%SITE_PERL%%/Net/EPP/Frame
 @dirrmtry %%SITE_PERL%%/Net/EPP

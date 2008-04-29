@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Net-EPP-Frame
-PORTVERSION=	0.07
+PORTVERSION=	0.11
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An EPP XML frame system built on top of XML::LibXML
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
@@ -45,7 +45,11 @@ MAN3=	Net::EPP::Frame.3 \
 	Net::EPP::Frame::Greeting.3 \
 	Net::EPP::Frame::Hello.3 \
 	Net::EPP::Frame::ObjectSpec.3 \
-	Net::EPP::Frame::Response.3
+	Net::EPP::Frame::Response.3 \
+	Net::EPP::Frame::Command::Poll::Req.3 \
+	Net::EPP::Frame::Command::Transfer::Domain.3 \
+	Net::EPP::Frame::Command::Transfer::Contact.3 \
+	Net::EPP::Frame::Command::Poll::Ack.3
 
 PERL_CONFIGURE=	yes
 
