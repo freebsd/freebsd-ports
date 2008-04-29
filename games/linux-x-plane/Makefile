@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	# empty
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A commercial flight simulator
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libopenal.so.1:${PORTSDIR}/audio/linux-openal \

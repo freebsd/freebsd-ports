@@ -12,7 +12,7 @@ CATEGORIES=	lang elisp
 MASTER_SITES=	http://mfgames.com/linux/releases/
 DISTNAME=	${PORTNAME:S|.el$||}-${PORTVERSION}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs/XEmacs major mode for editing C\# source code
 
 USE_BZIP2=	yes

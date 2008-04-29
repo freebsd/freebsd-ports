@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/misc
 DISTNAME=	dtmf-dial-${PORTVERSION}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate DTMF dial tones from the command line
 
 WRKSRC=		${WRKDIR}/dial

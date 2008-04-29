@@ -12,7 +12,7 @@ CATEGORIES=	games linux
 MASTER_SITES=	http://www.xpgoodwayteam.org/dwn_goodway/
 DISTNAME=	goodwayv${GWVERSION}_free
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flight planner for the X-Plane flight simulator
 
 BUILD_DEPENDS=	icoconvert:${PORTSDIR}/graphics/icoconvert

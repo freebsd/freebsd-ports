@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	etf_${PORTVERSION}-english-2
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A class-based teamplay modification for Enemy Territory
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory

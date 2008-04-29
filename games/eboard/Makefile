@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eboard-extras-1pl2.tar.gz eboard-extras-2.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 
 USE_BZIP2=	yes

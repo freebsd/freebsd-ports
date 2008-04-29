@@ -12,7 +12,7 @@ CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A toolkit for 3D games and simulations
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib

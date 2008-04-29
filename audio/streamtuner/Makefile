@@ -12,7 +12,7 @@ CATEGORIES=		audio www
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A GTK+ stream directory browser
 
 BUILD_DEPENDS=		rarian-sk-config:${PORTSDIR}/textproc/rarian

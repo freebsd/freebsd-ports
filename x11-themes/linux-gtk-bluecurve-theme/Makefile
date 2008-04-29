@@ -10,7 +10,7 @@ DISTVERSION=	0.117-1
 CATEGORIES=	x11-themes linux
 DISTNAME=	redhat-artwork-${DISTVERSION}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Bluecurve GTK+ 1.x and 2.x themes (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64

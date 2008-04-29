@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.osc.edu/~jbryan/FLU/
 DISTNAME=	FLU_${PORTVERSION}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library containing extra widgets for FLTK
 
 LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk

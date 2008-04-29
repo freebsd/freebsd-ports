@@ -11,7 +11,7 @@ CATEGORIES=	devel emulators kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Linux joystick interface ported to FreeBSD
 
 PROGRAMS=	jscal jstest

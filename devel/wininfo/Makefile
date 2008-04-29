@@ -11,7 +11,7 @@ PORTREVISION=		5
 CATEGORIES=		devel
 MASTER_SITES=		http://www.freedesktop.org/software/wininfo/
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A window information utility
 
 USE_XORG=		xext xrender xinerama xrandr xi xfixes xcursor \

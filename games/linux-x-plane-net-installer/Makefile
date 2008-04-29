@@ -12,7 +12,7 @@ CATEGORIES=	games linux
 MASTER_SITES=	http://dev.x-plane.com/installer/${PORTVERSION}/
 DISTFILES=	X-Plane-Net-Install.gz
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The X-Plane network installer
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libopenal.so.0:${PORTSDIR}/audio/linux-openal \

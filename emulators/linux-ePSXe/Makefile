@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.epsxe.com/files/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	epsxe160lin
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Sony Playstation emulator (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk

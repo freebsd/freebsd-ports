@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/icon-slicer/releases/
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An utility for generating icon and cursor themes
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt

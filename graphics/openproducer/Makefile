@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform C++/OpenGL library focused on camera control
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads

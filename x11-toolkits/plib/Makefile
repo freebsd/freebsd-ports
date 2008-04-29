@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://plib.sourceforge.net/dist/
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable library for joystick/sound/OpenGL GUI/3D math
 
 USE_GL=		glu

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.burtonini.com/computing/
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A window manipulation tool
 
 USE_GNOME=	libwnck

@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	archivers
 DISTFILES=
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract Makeself archives
 
 LDFLAGS=	-larchive -lbz2 -lz

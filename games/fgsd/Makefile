@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scenery designer for the FlightGear flight simulator
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \

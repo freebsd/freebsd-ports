@@ -12,7 +12,7 @@
 PORTNAME?=	bluecurve-themes
 CATEGORIES=	x11-themes
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Meta-port for Bluecurve themes
 
 .if ${PORTNAME} == "bluecurve-themes"	# meta-port

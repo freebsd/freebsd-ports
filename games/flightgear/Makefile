@@ -13,7 +13,7 @@ MASTER_SITES+=	ftp://ftp.flightgear.org/pub/fgfs/Source/:fg \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Source/:fg
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:fg
 
-MAINTAINER?=	jylefort@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	The FlightGear flight simulator
 
 LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut \

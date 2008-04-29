@@ -10,7 +10,7 @@ DISTVERSION=	0.0.9-0.6.20060204cvs.fc4
 CATEGORIES=	audio linux
 MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D positional spatialized sound library (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib \

@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME applet displaying hardware sensor values
 
 RUN_DEPENDS=	mbmon:${PORTSDIR}/sysutils/mbmon \

@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An advanced drum machine
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

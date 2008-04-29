@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoftware/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full screen visualization of network traffic
 
 GNU_CONFIGURE=	yes

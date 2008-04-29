@@ -12,7 +12,7 @@ CATEGORIES=		textproc
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	libtranslate
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A natural language translator
 
 LIB_DEPENDS=		translate:${PORTSDIR}/textproc/libtranslate

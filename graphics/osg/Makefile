@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads \

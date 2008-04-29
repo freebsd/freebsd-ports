@@ -83,7 +83,7 @@ DISTFILES=	707_20060324.zip \
 		YF-23_20060226.zip
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional aircrafts for the FlightGear flight simulator
 
 RUN_DEPENDS=	${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base

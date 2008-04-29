@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.soulride.com/products/images/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	virtual_jay_peak_linux_1_1a
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simulation of snowboarding at the Jay Peak resort in Vermont
 
 WRKSRC=		${WRKDIR}/soulride

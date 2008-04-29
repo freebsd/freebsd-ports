@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	padJoy${MAJOR}${MINOR}${MICRO}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PSEmu Pro joystick plugin (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk \

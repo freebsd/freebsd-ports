@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.mpi-sb.mpg.de/pub/outgoing/CGAL/
 DISTNAME=	CGAL-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc_html${EXTRACT_SUFX}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A computational geometry library
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost
