@@ -7,6 +7,7 @@
 
 PORTNAME=	phpGedView
 PORTVERSION=	4.1.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	phpgedview
@@ -19,11 +20,36 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 USE_ZIP=	yes
-USE_PHP=	yes
+USE_PHP=	calendar dom gd pcre session xml
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message pkg-deinstall
 DISTATE=	config.php config_download.php config_gedcom.php
+
+OPTIONS=\
+	MYSQL	"Install MYSQL data storage option"		off \
+	PGSQL	"Install Postgress data storage option"		off \
+	SQLITE	"Install SQLITE data storage option"		on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
+check-makevars::
+		@${ECHO_CMD} "${PKGNAME}: Makefile options: at least one database: MYSQL, PGSQL or SQLITE must be installed."
+		@${FALSE}
+.endif
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+.endif
+
+.if defined(WITH_SQLITE)
+USE_PHP +=	sqlite
+.endif
 
 post-extract:
 .for f in ${DISTATE}
@@ -32,20 +58,18 @@ post-extract:
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHMOD} 755 ${WWWDIR}
-	@${CHMOD} 644 ${WWWDIR}/index
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >>${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 ${WWWDIR}' >>${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 644 ${WWWDIR}/index' >>${TMPPLIST}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/index ${WWWDIR}/media
+	@${CHMOD} -R u+w ${WWWDIR}/index ${WWWDIR}/media
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/index ${WWWDIR}/media' >>${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} -R u+w ${WWWDIR}/index ${WWWDIR}/media' >>${TMPPLIST}
 
 post-install:
 .for f in ${DISTATE}
 	@if [ ! -f ${WWWDIR}/${f} ]; then \
 		${CP} -p ${WWWDIR}/${f}-dist ${WWWDIR}/${f}; \
-		${CHMOD} 666 ${WWWDIR}/${f}; \
+		${CHMOD} a+w ${WWWDIR}/${f}; \
 	fi
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
