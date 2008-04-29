@@ -1,7 +1,8 @@
+bin/shorten
 %%SITE_PERL%%/WWW/Shorten.pm
-%%SITE_PERL%%/WWW/Shorten/_dead.pm
 %%SITE_PERL%%/WWW/Shorten/BabyURL.pm
 %%SITE_PERL%%/WWW/Shorten/EkDk.pm
+%%SITE_PERL%%/WWW/Shorten/LinkToolbot.pm
 %%SITE_PERL%%/WWW/Shorten/Linkz.pm
 %%SITE_PERL%%/WWW/Shorten/MakeAShorterLink.pm
 %%SITE_PERL%%/WWW/Shorten/Metamark.pm
@@ -16,27 +17,11 @@
 %%SITE_PERL%%/WWW/Shorten/Tinylink.pm
 %%SITE_PERL%%/WWW/Shorten/URLjr.pm
 %%SITE_PERL%%/WWW/Shorten/V3.pm
+%%SITE_PERL%%/WWW/Shorten/_dead.pm
 %%SITE_PERL%%/WWW/Shorten/generic.pm
 %%SITE_PERL%%/WWW/Shorten/qURL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/.packlist
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/Artistic
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.SPOON
-%%PORTDOCS%%%%DOCSDIR%%/Changes
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENCE
-%%PORTDOCS%%%%DOCSDIR%%/MANIFEST
-%%PORTDOCS%%%%DOCSDIR%%/MANIFEST.SKIP
-%%PORTDOCS%%%%DOCSDIR%%/META.yml
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/SIGNATURE
-%%PORTDOCS%%%%EXAMPLESDIR%%/shorten
-%%PORTDOCS%%%%EXAMPLESDIR%%/shortenrc
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrm %%SITE_PERL%%/WWW/Shorten
+@dirrmtry %%SITE_PERL%%/WWW/Shorten
 @dirrmtry %%SITE_PERL%%/WWW

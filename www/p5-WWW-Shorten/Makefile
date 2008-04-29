@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Shorten
-PORTVERSION=	1.97
+PORTVERSION=	1.100
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,16 +14,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Abstract interface to URL shortening sites
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	p5-libwww>=5.75:${PORTSDIR}/www/p5-libwww \
+		p5-URI>=1.27:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		shorten.1
 MAN3=		WWW::Shorten.3 \
 		WWW::Shorten::BabyURL.3 \
 		WWW::Shorten::EkDk.3 \
 		WWW::Shorten::Linkz.3 \
+		WWW::Shorten::LinkToolbot.3 \
 		WWW::Shorten::MakeAShorterLink.3 \
 		WWW::Shorten::Metamark.3 \
 		WWW::Shorten::NotLong.3 \
@@ -40,23 +42,5 @@ MAN3=		WWW::Shorten.3 \
 		WWW::Shorten::_dead.3 \
 		WWW::Shorten::generic.3 \
 		WWW::Shorten::qURL.3
-
-DOCS=		AUTHORS Artistic COPYING CREDITS ChangeLog.SPOON Changes \
-		INSTALL LICENCE MANIFEST MANIFEST.SKIP META.yml \
-		README SIGNATURE
-EXAMPLES=	shorten shortenrc
-
-post-install:
-.ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing docs for ${PKGNAME}"
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${EXAMPLES} ${EXAMPLESDIR}
-.endif
-
-test:
-	cd ${WRKSRC} ; make test
 
 .include <bsd.port.mk>
