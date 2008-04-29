@@ -792,6 +792,7 @@
     SUBDIR += ruby-spread
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
+    SUBDIR += rubygem-net-netrc
     SUBDIR += rubygem-openid
     SUBDIR += rubygem-twitter
     SUBDIR += rubygem-twitter4r
