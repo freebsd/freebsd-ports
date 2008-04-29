@@ -8,8 +8,7 @@
 
 PORTNAME=	white_dune
 PORTVERSION=	${DISTVERSION:S/pl/./}
-DISTVERSION=	0.28pl12
-PORTREVISION=	1
+DISTVERSION=	0.28pl13
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://vrml.cip.ica.uni-stuttgart.de/dune/ CENKES
@@ -32,9 +31,11 @@ CONFIGURE_ARGS=	--with-optimization \
 		--with-vrml97am1url="${DOCSDIR}/vrml97Amendment1" \
 		--with-x3ddrafturl="${DOCSDIR}/x3dDraft" \
 		--with-scriptednodesurl="${DOCSDIR}/scriptedNodes"
-MAN1=		dune.1 illegal2vrml.1
 CPPFLAGS=	`${SDL_CONFIG} --cflags` -DUSBHID_UCR_DATA -DUSBHID_NEW
 LDFLAGS=	`${SDL_CONFIG} --libs`
+ALL_TARGET=	dune
+
+MAN1=		dune.1 illegal2vrml.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/dune ${PREFIX}/bin/
