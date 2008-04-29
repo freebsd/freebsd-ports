@@ -5,20 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	sqsh
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	databases
 MASTER_SITES=	SF
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for querying Sybase database servers
 
-LIB_DEPENDS=	ct.4:${PORTSDIR}/databases/freetds
+LIB_DEPENDS=	ct:${PORTSDIR}/databases/freetds
 
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SYBASE="${LOCALBASE}"
 CONFIGURE_ARGS=	--with-readline
-ALL_TARGET=	build
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu` build
 
 MAN1=	sqsh.1
 
