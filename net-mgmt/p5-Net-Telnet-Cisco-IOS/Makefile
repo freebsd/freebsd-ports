@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION}beta
 
-MAINTAINER=	snowfly@yunteche.du.tw
+MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Manage Cisco IOS Devices
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Telnet/Cisco.pm:${PORTSDIR}/net-mgmt/p5-Telnet-Cisco
