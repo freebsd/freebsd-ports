@@ -1,19 +1,11 @@
---- ./ky00te.dir/makefile.orig	Wed Jan 25 05:54:34 2006
-+++ ./ky00te.dir/makefile	Tue Jan  2 18:06:34 2007
-@@ -5,13 +5,13 @@
+--- ./ky00te.dir/makefile.orig	2008-04-14 19:21:51.000000000 +0200
++++ ./ky00te.dir/makefile	2008-04-29 15:58:59.000000000 +0200
+@@ -5,7 +5,7 @@
  	rm -f ../ky00te
  
  ../ky00te: y.tab.o lex.yy.o
--	cc $(CFLAGS) -o ../ky00te lex.yy.o y.tab.o -lfl
-+	$(CC) $(CFLAGS) -o ../ky00te lex.yy.o y.tab.o -lfl
+-	$(CC) -o ../ky00te lex.yy.o y.tab.o $(CFLAGS)
++	$(CC) -o ../ky00te lex.yy.o y.tab.o $(CFLAGS) $(LDFLAGS)
  
  lex.yy.o: lex.yy.c y.tab.h
--	cc $(CFLAGS) -c lex.yy.c
-+	$(CC) $(CFLAGS) -c lex.yy.c
- 
- y.tab.o: y.tab.c
--	cc $(CFLAGS) -c y.tab.c
-+	$(CC) $(CFLAGS) -c y.tab.c
- 
- lex.yy.c: ky00te.lex
- 	flex ky00te.lex
+ 	$(CC) $(CFLAGS) -c lex.yy.c
