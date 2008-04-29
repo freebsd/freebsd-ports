@@ -1,0 +1,9 @@
+bin/blobby
+bin/blobby-server
+%%DATADIR%%/gfx.zip
+%%DATADIR%%/gf2x.zip
+%%DATADIR%%/sounds.zip
+%%DATADIR%%/scripts.zip
+%%DATADIR%%/config.xml
+%%DATADIR%%/inputconfig.xml
+@dirrm %%DATADIR%%
