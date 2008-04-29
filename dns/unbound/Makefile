@@ -15,6 +15,7 @@ COMMENT=	A validating, recursive, and caching DNS resolver
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	unbound
 
