@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/ \
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Ladder-${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNU Go frontend for GNUstep
 
 RUN_DEPENDS=	gnugo:${PORTSDIR}/games/gnugo

@@ -12,7 +12,7 @@ CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.linuks.mine.nu/stepbill/ \
 		${MASTER_SITE_GNUSTEP_CH}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Get rid of those nasty Wingdows viruses
 
 USE_GNUSTEP=	yes
