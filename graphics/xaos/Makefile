@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xaos
-PORTVERSION=	3.2.3
-PORTREVISION=	3
+PORTVERSION=	3.3
 CATEGORIES=	graphics
-MASTER_SITES=	SF/xaos
+MASTER_SITES=	SF
 DISTNAME=	XaoS-${PORTVERSION}
 
 MAINTAINER=	makc@issp.ac.ru
@@ -17,9 +16,11 @@ COMMENT=	A real-time fractal browser for X11 and ASCII terminals
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_XORG=	x11 xt
+USE_XORG=	x11 xt x11 xau xdmcp xext
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	autoconf:261
 
 OPTIONS=	PTHREAD "Enable experimental SMP support" off
 
@@ -29,12 +30,14 @@ CONFIGURE_ARGS=	--with-aa-driver=no --with-dga-driver=no \
 		--with-ggi-driver=no --with-svga-driver=no \
 		--with-included-gettext=yes \
 		--with-x --with-png=yes \
-		--with-mit-shm=yes
+		--with-mit-shm=yes \
+		--with-sffe=no
 
 MAN6=		xaos.6
 INFO=		xaos
 
 PLIST_SUB+=	XAOSDIR="share/XaoS"
+DESKTOP_ENTRIES="XaoS" "Fractal zoomer" "" "xaos" "" false
 
 .include <bsd.port.pre.mk>
 
@@ -46,7 +49,12 @@ CONFIGURE_ENV+=		LIBS="${PTHREAD_LIBS}" \
 CONFIGURE_ARGS+=	--with-pthread=no
 .endif
 
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/xaos
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.post.mk>
