@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openftd
-PORTVERSION=	0.99.2
+PORTVERSION=	1.1.0
 CATEGORIES=	news
 MASTER_SITES=	http://www.icheb.nl/mirrors/openftd/
 
