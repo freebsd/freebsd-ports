@@ -1,10 +1,13 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/Mail/IMAPClient.pm
 %%SITE_PERL%%/Mail/IMAPClient.pod
 %%SITE_PERL%%/Mail/IMAPClient/BodyStructure.pm
+%%SITE_PERL%%/Mail/IMAPClient/BodyStructure.pod
 %%SITE_PERL%%/Mail/IMAPClient/BodyStructure/Parse.grammar
 %%SITE_PERL%%/Mail/IMAPClient/BodyStructure/Parse.pm
 %%SITE_PERL%%/Mail/IMAPClient/BodyStructure/Parse.pod
 %%SITE_PERL%%/Mail/IMAPClient/MessageSet.pm
+%%SITE_PERL%%/Mail/IMAPClient/MessageSet.pod
 %%SITE_PERL%%/Mail/IMAPClient/Thread.grammar
 %%SITE_PERL%%/Mail/IMAPClient/Thread.pm
 %%SITE_PERL%%/Mail/IMAPClient/Thread.pod
