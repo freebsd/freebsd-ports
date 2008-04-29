@@ -12,7 +12,7 @@ CATEGORIES=	editors gnustep
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Basic text editor for GNUstep
 
 USE_GNUSTEP=	yes

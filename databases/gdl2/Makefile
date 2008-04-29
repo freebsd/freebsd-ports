@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
 DISTNAME=	gnustep-dl2-${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep Database Library 2 (Enterprise Objects Framework)
 
 USE_GNUSTEP=	yes

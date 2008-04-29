@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.nongnu.org/charmap/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Character map for GNUstep
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
