@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.xmlmind.net/xmleditor/_download/
 PKGNAMESUFFIX=	-perso
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	fenner@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A validating XML editor featuring a word processor-like view
 
 USE_JAVA=	YES

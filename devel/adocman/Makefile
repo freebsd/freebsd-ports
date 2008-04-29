@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sitedocs
 
-MAINTAINER=	fenner@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automated sourceforge administration tool
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \

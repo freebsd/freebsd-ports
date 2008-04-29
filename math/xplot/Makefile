@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	math graphics net
 MASTER_SITES=	http://www.xplot.org/xplot/
 
-MAINTAINER=	fenner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 plotting package
 
 GNU_CONFIGURE=	yes

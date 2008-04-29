@@ -12,7 +12,7 @@ CATEGORIES=	mbone tk
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 DISTFILES=	vatsrc-4.0b2.tar.gz
 
-MAINTAINER=	fenner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Visual Audio Tool - multicast audioconferencing
 
 GSM_DIR=	${.CURDIR}/../../audio/gsm

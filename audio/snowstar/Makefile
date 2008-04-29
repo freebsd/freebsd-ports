@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	fenner@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI interface to copy files to/from the Diamond Rio PM300
 
 RUN_DEPENDS=	rio:${PORTSDIR}/audio/rio \

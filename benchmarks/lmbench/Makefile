@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.bitmover.com/lmbench/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/a4//}
 
-MAINTAINER=	fenner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system performance measurement tool
 
 ALL_TARGET=	build
