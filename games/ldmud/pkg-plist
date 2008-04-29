@@ -844,6 +844,7 @@ sbin/ldmud
 %%PORTDOCS%%%%DOCSDIR%%/efun/this_player
 %%PORTDOCS%%%%DOCSDIR%%/efun/throw
 %%PORTDOCS%%%%DOCSDIR%%/efun/time
+%%PORTDOCS%%%%DOCSDIR%%/efun/tls_refresh_certs
 %%PORTDOCS%%%%DOCSDIR%%/efun/to_array
 %%PORTDOCS%%%%DOCSDIR%%/efun/to_float
 %%PORTDOCS%%%%DOCSDIR%%/efun/to_int
