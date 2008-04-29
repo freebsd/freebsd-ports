@@ -1,6 +1,6 @@
-# New ports collection makefile for:	celestia
+# New ports collection makefile for:	Celestia
 # Date created:				2002-05-17
-# Whom:					trevor
+# Whom:					Trevor Johnson <trevor@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	astro
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${CELESTIA_UI}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Scriptable space flight simulator for X
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
