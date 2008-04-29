@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	zipper
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	archivers gnustep
 MASTER_SITES=	http://xanthippe.dyndns.org/Zipper/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Zipper-${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tool for inspecting the contents of a compressed archive
 
 USE_GNUSTEP=	yes
