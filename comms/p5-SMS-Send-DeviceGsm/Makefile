@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	SMS-Send-DeviceGsm
-PORTVERSION=	1.00
+PORTVERSION=	1.02
 CATEGORIES=	comms perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	SMS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
@@ -19,14 +18,8 @@ RUN_DEPENDS=	${SITE_PERL}/SMS/Send.pm:${PORTSDIR}/comms/p5-SMS-Send \
 		${SITE_PERL}/Device/Gsm.pm:${PORTSDIR}/comms/p5-Device-Gsm
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.6.1+
 
 MAN3=		SMS::Send::DeviceGsm.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.0 due to dependency. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
