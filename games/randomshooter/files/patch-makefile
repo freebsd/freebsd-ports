@@ -1,9 +1,9 @@
---- makefile.orig	2008-03-02 14:32:18.000000000 +0300
-+++ makefile	2008-03-18 23:20:03.000000000 +0300
+--- makefile.orig	2008-03-29 01:53:41.000000000 +0300
++++ makefile	2008-04-29 00:19:06.000000000 +0400
 @@ -1,22 +1,20 @@
 -RELEASE = 0
 +RELEASE = 1
- VERSION = 0.2
+ VERSION = 0.4
 -BINDIR = /usr/games
 -DATADIR = /usr/share/games/randomshooter/
  
