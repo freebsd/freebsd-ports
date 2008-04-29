@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	lapispuzzle
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	LapisPuzzle-${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tetris-like game for GNUstep
 
 USE_GNUSTEP=	yes
