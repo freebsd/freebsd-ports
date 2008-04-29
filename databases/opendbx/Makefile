@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendbx
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	databases
 MASTER_SITES=	http://www.linuxnetworks.de/opendbx/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
