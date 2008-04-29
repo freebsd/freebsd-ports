@@ -12,7 +12,7 @@ CATEGORIES=	audio gnustep
 MASTER_SITES=	http://www.linuks.mine.nu/volumecontrol/ \
 		${MASTER_SITE_GNUSTEP_CH}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Audio mixer for GNUstep
 
 USE_GNUSTEP=	yes
