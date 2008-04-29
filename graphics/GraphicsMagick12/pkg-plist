@@ -200,7 +200,6 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/types.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/widget.html
 %%PORTDOCS%%%%DOCSDIR%%/www/body.html
-%%PORTDOCS%%%%DOCSDIR%%/www/body.html.rej
 %%PORTDOCS%%%%DOCSDIR%%/www/books.html
 %%PORTDOCS%%%%DOCSDIR%%/www/color.html
 %%PORTDOCS%%%%DOCSDIR%%/www/composite.html
