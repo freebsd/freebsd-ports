@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.linuks.mine.nu/aclock/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	aclock-${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Analog Clock for GNUstep
 
 USE_GNUSTEP=	yes

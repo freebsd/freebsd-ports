@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.eskimo.com/~pburns/Dictionaries/files/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Jishyo-${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	English to Japanese dictionary for GNUstep
 
 USE_GNUSTEP=	yes

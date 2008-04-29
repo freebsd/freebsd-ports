@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gap
 DISTNAME=	TimeMon-gnustep
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	CPU time usage monitor for GNUstep
 
 USE_GNUSTEP=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tamsys
 DISTNAME=	GTAMSAnalyzer.src.${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Qualitative Research Software for the Free World for GNUstep
 
 USE_GNUSTEP=	yes

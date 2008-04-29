@@ -13,7 +13,7 @@ MASTER_SITES=	http://mail.rochester.edu/~asveikau/grouch/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	AOL and ICQ Instant Messenger client for GNUstep
 
 USE_GNUSTEP=	yes

@@ -15,7 +15,7 @@ MASTER_SITES=	http://download.fr2.forge.objectweb.org/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Paje_${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Generic visualization tool for GNUstep (Gantt chart and more)
 
 USE_GNUSTEP=	yes

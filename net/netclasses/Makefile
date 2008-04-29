@@ -11,7 +11,7 @@ CATEGORIES=	net gnustep
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Objective-C framework for socket programming with GNUstep
 
 USE_GNUSTEP=	yes
