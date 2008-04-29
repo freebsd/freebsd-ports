@@ -1,10 +1,4 @@
 bin/xaos
-share/locale/cs/LC_MESSAGES/xaos.mo
-share/locale/de/LC_MESSAGES/xaos.mo
-share/locale/es/LC_MESSAGES/xaos.mo
-share/locale/fr/LC_MESSAGES/xaos.mo
-share/locale/hu/LC_MESSAGES/xaos.mo
-share/locale/ro/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/catalogs/README
 %%XAOSDIR%%/catalogs/cesky.cat
 %%XAOSDIR%%/catalogs/deutsch.cat
@@ -31,6 +25,7 @@ share/locale/ro/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/examples/3d8.xpf
 %%XAOSDIR%%/examples/3d9.xpf
 %%XAOSDIR%%/examples/README
+%%XAOSDIR%%/examples/alien.xpf
 %%XAOSDIR%%/examples/axe.xpf
 %%XAOSDIR%%/examples/barnsl1.xpf
 %%XAOSDIR%%/examples/barnsl2.xpf
@@ -45,7 +40,10 @@ share/locale/ro/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/examples/beatle2.xpf
 %%XAOSDIR%%/examples/bolygo.xpf
 %%XAOSDIR%%/examples/brown.xpf
+%%XAOSDIR%%/examples/burnship.xpf
+%%XAOSDIR%%/examples/butterfly.xpf
 %%XAOSDIR%%/examples/checker.xpf
+%%XAOSDIR%%/examples/circle.xpf
 %%XAOSDIR%%/examples/crone.xpf
 %%XAOSDIR%%/examples/csiga2.xpf
 %%XAOSDIR%%/examples/csiga3.xpf
@@ -58,6 +56,7 @@ share/locale/ro/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/examples/edge2.xpf
 %%XAOSDIR%%/examples/edge3.xpf
 %%XAOSDIR%%/examples/eifell.xpf
+%%XAOSDIR%%/examples/eyes.xpf
 %%XAOSDIR%%/examples/fract0.xpf
 %%XAOSDIR%%/examples/fract1.xpf
 %%XAOSDIR%%/examples/galaxy.xpf
@@ -67,6 +66,8 @@ share/locale/ro/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/examples/head.xpf
 %%XAOSDIR%%/examples/head2.xpf
 %%XAOSDIR%%/examples/head3.xpf
+%%XAOSDIR%%/examples/heart.xpf
+%%XAOSDIR%%/examples/helloween.xpf
 %%XAOSDIR%%/examples/hornflake1.xpf
 %%XAOSDIR%%/examples/hornflake2.xpf
 %%XAOSDIR%%/examples/impulzus.xpf
@@ -131,6 +132,7 @@ share/locale/ro/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/examples/palace.xpf
 %%XAOSDIR%%/examples/pavaszem.xpf
 %%XAOSDIR%%/examples/pavaszem2.xpf
+%%XAOSDIR%%/examples/pentafrac.xpf
 %%XAOSDIR%%/examples/pepita.xpf
 %%XAOSDIR%%/examples/perb1.xpf
 %%XAOSDIR%%/examples/perb2.xpf
@@ -144,6 +146,7 @@ share/locale/ro/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/examples/redmand2.xpf
 %%XAOSDIR%%/examples/rocks.xpf
 %%XAOSDIR%%/examples/shell.xpf
+%%XAOSDIR%%/examples/skullfrm.xpf
 %%XAOSDIR%%/examples/something.xpf
 %%XAOSDIR%%/examples/spiral.xpf
 %%XAOSDIR%%/examples/spiral2.xpf
@@ -163,6 +166,7 @@ share/locale/ro/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/examples/truecol6.xpf
 %%XAOSDIR%%/examples/truecol7.xpf
 %%XAOSDIR%%/examples/ufo.xpf
+%%XAOSDIR%%/examples/warriormask.xpf
 %%XAOSDIR%%/examples/zsigapro.xpf
 %%XAOSDIR%%/help/xaos.hlp
 %%XAOSDIR%%/tutorial/3dtutor.xaf
@@ -219,9 +223,15 @@ share/locale/ro/LC_MESSAGES/xaos.mo
 %%XAOSDIR%%/tutorial/trice.xaf
 %%XAOSDIR%%/tutorial/truecol.xaf
 %%XAOSDIR%%/tutorial/truecol.xhf
-@dirrm %%XAOSDIR%%/catalogs
-@dirrm %%XAOSDIR%%/examples
+%%NLS%%share/locale/cs/LC_MESSAGES/xaos.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xaos.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xaos.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xaos.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xaos.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xaos.mo
 @dirrm %%XAOSDIR%%/tutorial
-@dirrm %%XAOSDIR%%/doc
 @dirrm %%XAOSDIR%%/help
+@dirrm %%XAOSDIR%%/examples
+@dirrm %%XAOSDIR%%/doc
+@dirrm %%XAOSDIR%%/catalogs
 @dirrm %%XAOSDIR%%
