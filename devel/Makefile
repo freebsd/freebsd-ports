@@ -2266,6 +2266,7 @@
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rascut
+    SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rscm
     SUBDIR += rubygem-rspec
