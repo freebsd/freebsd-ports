@@ -10,3 +10,6 @@ SIZE (cromwell-kenv.diff) = 8351
 MD5 (cromwell-gcc4.diff) = f76f32e70469717ce84fecbbd795a71c
 SHA256 (cromwell-gcc4.diff) = 9c6d1ad5ec200f2b305bbbe6bfc8ebff37d1947d3ddd2d8344347e63eaaf4d11
 SIZE (cromwell-gcc4.diff) = 9476
+MD5 (cromwell-gcc4-2.diff) = 2cb3256bab34b5402d044c9c5970b7dd
+SHA256 (cromwell-gcc4-2.diff) = 6f6212ab6082eeeae0d22b6cef6985d0551a500d92d1eb6ccccff6c1123e7dad
+SIZE (cromwell-gcc4-2.diff) = 578
