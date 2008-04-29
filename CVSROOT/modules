@@ -14935,6 +14935,7 @@ rubygem-rak	ports/textproc/rubygem-rak
 rubygem-rake	ports/devel/rubygem-rake
 rubygem-rapt	ports/devel/rubygem-rapt
 rubygem-rascut	ports/devel/rubygem-rascut
+rubygem-rcov	ports/devel/rubygem-rcov
 rubygem-redcloth	ports/www/rubygem-redcloth
 rubygem-rfacebook	ports/www/rubygem-rfacebook
 rubygem-rgl	ports/devel/rubygem-rgl
