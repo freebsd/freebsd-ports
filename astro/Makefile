@@ -60,6 +60,7 @@
     SUBDIR += roadmap
     SUBDIR += saoimage
     SUBDIR += sattrack
+    SUBDIR += sextractor
     SUBDIR += sky2000
     SUBDIR += spacechart
     SUBDIR += sscalc
