@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	MP4-Info
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fetch info from MPEG-4 files
 
 PERL_CONFIGURE=	5.7.3+	#inherited from p5-Encode
