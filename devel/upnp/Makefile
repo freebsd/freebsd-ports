@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	upnp
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.5
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pupnp
+MASTER_SITES=	SF/pupnp
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	farrokhi@FreeBSD.org
@@ -20,16 +19,9 @@ CONFLICTS=	upnp-1.0.*
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack
 USE_DOS2UNIX=	yes
 USE_LDCONFIG=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
 
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ENV+=	LIBS="-llwres -lcompat"
@@ -42,8 +34,6 @@ CONFIGURE_ARGS=	--with-documentation=${DOCSDIR}
 
 post-patch:
 	${FIND} ${WRKSRC} -type f | \
-		${XARGS} ${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,'
-	${REINPLACE_CMD} -Ee 's,^(pkgconfigexecdir = ).*,\1${PREFIX}/libdata/pkgconfig,' \
-		${WRKSRC}/Makefile.in
+	    ${XARGS} ${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

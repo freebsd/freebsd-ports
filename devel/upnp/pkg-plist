@@ -1,12 +1,11 @@
+include/upnp/ixml.h
 include/upnp/FreeList.h
 include/upnp/LinkedList.h
 include/upnp/ThreadPool.h
 include/upnp/TimerThread.h
-include/upnp/iasnprintf.h
 include/upnp/ithread.h
-include/upnp/ixml.h
-include/upnp/upnp.h
 include/upnp/upnpconfig.h
+include/upnp/upnp.h
 include/upnp/upnpdebug.h
 include/upnp/upnptools.h
 lib/libixml.a
@@ -16,7 +15,7 @@ lib/libixml.so.2
 lib/libthreadutil.a
 lib/libthreadutil.la
 lib/libthreadutil.so
-lib/libthreadutil.so.3
+lib/libthreadutil.so.4
 lib/libupnp.a
 lib/libupnp.la
 lib/libupnp.so
@@ -197,9 +196,9 @@ libdata/pkgconfig/libupnp.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/upnp/UPNP_E_SOCKET_READ-202.html
 %%PORTDOCS%%%%DOCSDIR%%/html/upnp/UPNP_E_SOCKET_WRITE-201.html
 %%PORTDOCS%%%%DOCSDIR%%/html/upnp/UPNP_E_SUBSCRIBE_UNACCEPTED-301.html
+%%PORTDOCS%%%%DOCSDIR%%/html/upnp/UPNP_E_UNSUBSCRIBE_UNACCEPTED-302.html
 %%PORTDOCS%%%%DOCSDIR%%/html/upnp/UPNP_E_SUCCESS0.html
 %%PORTDOCS%%%%DOCSDIR%%/html/upnp/UPNP_E_TIMEDOUT-207.html
-%%PORTDOCS%%%%DOCSDIR%%/html/upnp/UPNP_E_UNSUBSCRIBE_UNACCAPTED-302.html
 %%PORTDOCS%%%%DOCSDIR%%/html/upnp/UPNP_S_ALL.html
 %%PORTDOCS%%%%DOCSDIR%%/html/upnp/UPNP_S_DEVICE.html
 %%PORTDOCS%%%%DOCSDIR%%/html/upnp/UPNP_S_ROOT.html
