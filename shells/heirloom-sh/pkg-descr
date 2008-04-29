@@ -1,0 +1,7 @@
+Heirloom-sh is a portable version of OpenSolaris' #!/bin/sh.
+If one need to write portable shell scripts, this one is excellent for
+testing them. It is installed as jsh (job shell).
+
+Other OpenSolaris user land tools are available in sysutils/heirloom
+
+WWW: http://heirloom.sourceforge.net/sh.html
