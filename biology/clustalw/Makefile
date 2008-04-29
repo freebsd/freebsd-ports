@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	clustalw
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	biology
 MASTER_SITES=	http://www.clustal.org/download/%SUBDIR%/ \
 		ftp://ftp.ebi.ac.uk/pub/software/clustalw2/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	A multiple alignment program for DNA or proteins
 
 RESTRICTED=	No commercial use.
