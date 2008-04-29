@@ -15232,6 +15232,7 @@ setquota	ports/sysutils/setquota
 settitle	ports/x11/settitle
 setxkbmap	ports/x11/setxkbmap
 sex		ports/games/sex
+sextractor	ports/astro/sextractor
 seyon		ports/comms/seyon
 sfbol		ports/games/sfbol
 sfdisk		ports/sysutils/sfdisk
