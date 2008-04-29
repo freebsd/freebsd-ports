@@ -19,7 +19,7 @@
  
  LPROGS=		@E2INITRD_PROG@
  
-@@ -311,11 +310,9 @@
+@@ -315,11 +314,9 @@
  		echo "	INSTALL_DATA $(man5dir)/$$i"; \
  		$(INSTALL_DATA) $$i $(DESTDIR)$(man5dir)/$$i; \
  	done

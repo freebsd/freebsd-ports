@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.40.8
+PORTVERSION=	1.40.9
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	matthias.andree@gmx.de
-COMMENT?=	Utilities and library to manipulate ext2/ext3 filesystems
+COMMENT?=	Utilities & library to manipulate ext2/ext3/ext4 filesystems
 
 PATCH_STRIP=	-p1
 USE_LDCONFIG=	yes
