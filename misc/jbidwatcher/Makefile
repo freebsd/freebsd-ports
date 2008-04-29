@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	jbidwatcher
-DISTVERSION=	1.0.2
-PORTREVISION?=	0
+DISTVERSION=	2.0beta2
 CATEGORIES=	misc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.jbidwatcher.com/rdl/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	JBidWatcher-${DISTVERSION}
+DISTNAME=	JBidwatcher-${DISTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
@@ -20,7 +19,7 @@ MAINTAINER=	shurd@sasktel.net
 COMMENT=	A Java-based application allowing you to monitor eBay auctions
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
