@@ -18,12 +18,11 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/ \
-		${MASTER_SITE_SOURCEFORGE} \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	imagemagick
 EXTRACT_SUFX=	.7z
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image processing tools
 
 EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
@@ -76,7 +75,6 @@ OPTIONS=	X11				"X11 support" on \
 		IMAGEMAGICK_WMF			"WMF format support" off \
 		IMAGEMAGICK_SVG			"SVG format support" off \
 		IMAGEMAGICK_PDF			"PDF format support" on \
-		IMAGEMAGICK_MPEG2		"MPEG2 format support" on \
 		IMAGEMAGICK_GSLIB	"libgs (Postscript SHLIB) support" off
 
 .include <bsd.port.pre.mk>
@@ -230,7 +228,7 @@ LIB_DEPENDS+=		gvc:${PORTSDIR}/graphics/graphviz
 CFLAGS+=		-I${LOCALBASE}/include/graphviz
 LDFLAGS+=		-L${LOCALBASE}/lib/graphviz
 .else
-CONFIGURE_ARGS+=	--without-dot --without-gvc
+CONFIGURE_ARGS+=	--without-gvc
 .endif
 
 # LCMS (Little CMS) color management
@@ -299,16 +297,13 @@ USE_GHOSTSCRIPT=	yes
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX+=		-nox11
-CONFIGURE_ARGS+=	--without-x --without-mpeg2
+CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=		X11='@comment '
 .else
 CONFLICTS+=		display-[0-9]*
 CONFIGURE_ARGS+=	--with-x
 USE_XORG=		xext xt
 PLIST_SUB+=		X11=''
-.if !defined(WITHOUT_IMAGEMAGICK_MPEG2)
-RUN_DEPENDS+=		mpeg2encode:${PORTSDIR}/multimedia/mpeg2codec
-.endif
 .endif
 
 .if ${ARCH} == sparc64 && ${OSVERSION} < 700000
