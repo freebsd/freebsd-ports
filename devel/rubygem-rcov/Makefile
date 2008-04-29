@@ -1,0 +1,19 @@
+# Ports collection makefile for:	rcov
+# Date created:				15 April 2008
+# Whom:					Steven Kreuzer
+#
+# $FreeBSD$
+#
+
+PORTNAME=	rcov
+PORTVERSION=	0.8.1.2.0
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RF
+
+MAINTAINER=	skreuzer@exit2shell.com
+COMMENT=	Code coverage tool for Ruby
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+
+.include <bsd.port.mk>
