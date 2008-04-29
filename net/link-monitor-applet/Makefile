@@ -12,7 +12,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	link-monitor
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME applet displaying the round-trip time to one or more hosts
 
 LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP

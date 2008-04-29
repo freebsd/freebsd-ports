@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	jylefort
 DISTFILES=	timeseal.BSD386-1.0-i386
 EXTRACT_ONLY=
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Account for network lag in FICS chess games
 
 ONLY_FOR_ARCHS=	i386 amd64

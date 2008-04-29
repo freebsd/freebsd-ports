@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.adobe.com/pub/adobe/magic/svgviewer/linux/3.x/${DI
 DISTNAME=	adobesvg-${DISTVERSION:C|x.*$||}
 DISTFILES=	adobesvg-${DISTVERSION}-linux-i386${EXTRACT_SUFX}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Adobe SVG browser plugin (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64

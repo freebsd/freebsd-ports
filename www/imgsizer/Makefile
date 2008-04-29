@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=		www textproc
 MASTER_SITES=		http://www.catb.org/~esr/imgsizer/
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A tool to autogenerate WIDTH and HEIGHT for IMG HTML tags
 
 RUN_DEPENDS=		rdjpgcom:${PORTSDIR}/graphics/jpeg \

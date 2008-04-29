@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://linuxadvocate.org/projects/gruler/downloads/
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A customizable screen ruler for GNOME
 
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2

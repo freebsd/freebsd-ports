@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	1.95
 DISTNAME=	festvox_${VOICE}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	The MBROLA ${VOICE} voice (${VOICEDESC}) for Festival
 
 RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:${PORTSDIR}/audio/festlex-cmu \

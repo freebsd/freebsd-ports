@@ -10,7 +10,7 @@ DISTVERSION=	1.0.10-3
 CATEGORIES=	audio linux
 DISTNAME=	${PORTNAME}-${DISTVERSION}.FC4
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Advanced Linux Sound Architecture libraries
 
 ONLY_FOR_ARCHS=	i386 amd64

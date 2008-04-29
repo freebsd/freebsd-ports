@@ -9,7 +9,7 @@ PORTNAME=		arts
 DISTVERSION=		1.5.3-0.1.fc4
 CATEGORIES=		audio kde linux
 
-MAINTAINER=		jylefort@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Audio system for the KDE integrated X11 desktop (Linux version)
 
 ONLY_FOR_ARCHS=		i386 amd64

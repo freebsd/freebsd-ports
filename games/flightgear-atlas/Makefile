@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/atlas
 DISTNAME=	Atlas-${PORTVERSION}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A map viewer for use with the FlightGear flight simulator
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \

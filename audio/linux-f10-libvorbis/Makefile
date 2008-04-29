@@ -9,7 +9,7 @@ PORTNAME=	libvorbis
 DISTVERSION=	1.1.0-2
 CATEGORIES=	audio linux
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio compression codec library (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libogg.so.0:${PORTSDIR}/audio/linux-libogg

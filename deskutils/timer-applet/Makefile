@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	timerapplet
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A timer applet for the GNOME panel
 
 LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify

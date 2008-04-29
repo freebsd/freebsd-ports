@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/jack-rack
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A LADSPA effects rack for the JACK audio server
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa

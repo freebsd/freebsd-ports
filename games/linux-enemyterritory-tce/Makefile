@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	tcetest
 DISTFILES=	tcetest049.zip
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern tactical Enemy Territory modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory

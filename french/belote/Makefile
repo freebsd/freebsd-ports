@@ -12,7 +12,7 @@ CATEGORIES=	french games java
 MASTER_SITES=	http://coincher.free.fr/
 DISTNAME=	belote
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Un jeu de belote coinchée contre l'ordinateur ou en réseau
 
 USE_ZIP=	yes

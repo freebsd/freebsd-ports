@@ -10,7 +10,7 @@ DISTVERSION=	1.1.2-2
 PORTREVISION=	3
 CATEGORIES=	audio linux
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ogg bitstream library (Linux version)
 
 ONLY_FOR_ARCHS=	i386 amd64

@@ -12,7 +12,7 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application launcher for the GNOME desktop
 
 USE_BZIP2=	yes

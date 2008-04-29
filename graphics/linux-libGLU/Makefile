@@ -11,7 +11,7 @@ CATEGORIES=	graphics linux
 DISTNAME=	xorg-x11-Mesa-libGLU-${PORTVERSION}-${RPMVERSION}
 SRC_DISTFILES=	xorg-x11-${PORTVERSION}-${RPMVERSION}${SRC_SUFX}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL utility library (Linux version)
 
 CONFLICTS=	linux_dri-[0-9]*

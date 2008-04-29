@@ -9,7 +9,7 @@ PORTNAME=	openthreads
 PORTVERSION=	1.5
 CATEGORIES=	devel
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library which provides a C++ object-oriented thread interface
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/OpenThreads

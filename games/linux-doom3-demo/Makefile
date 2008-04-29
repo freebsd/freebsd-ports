@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	doom3-linux-${PORTVERSION}-demo.x86
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOOM III demo for Linux
 
 ONLY_FOR_ARCHS=	i386 amd64

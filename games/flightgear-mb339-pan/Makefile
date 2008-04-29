@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://hcilab.uniud.it/pan/downloads/
 DISTNAME=	MB339-PAN
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simulation of the MB-339 PAN aerobatic jet
 
 RUN_DEPENDS=	${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base

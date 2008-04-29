@@ -12,7 +12,7 @@ CATEGORIES=	astro
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${CELESTIA_UI}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scriptable space flight simulator for X
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

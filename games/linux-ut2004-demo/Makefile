@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	ut2004-lnx-demo${PORTVERSION}
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament 2004 demo
 
 ONLY_FOR_ARCHS=	i386 amd64
