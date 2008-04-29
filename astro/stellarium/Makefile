@@ -1,6 +1,6 @@
-# New ports collection makefile for:	stellarium
-# Date created:			26 Jan 2004
-# Whom:				Jean-Yves Lefort <jylefort@brutele.be>
+# New ports collection makefile for:	Stellarium
+# Date created:				26 Jan 2004
+# Whom:					Jean-Yves Lefort <jylefort@brutele.be>
 #
 # $FreeBSD$
 #
@@ -9,10 +9,9 @@ PORTNAME=	stellarium
 PORTVERSION=	0.9.0
 PORTREVISION=	2
 CATEGORIES=	astro
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A 3D photo-realistic sky renderer
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
@@ -63,7 +62,7 @@ do-configure:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
