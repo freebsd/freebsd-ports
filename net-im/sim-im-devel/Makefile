@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sim-im-devel
-PORTVERSION=	0.9.5.2099
-PORTREVISION=	1
+PORTVERSION=	0.9.5.2152
 CATEGORIES=	net-im
 MASTER_SITES=	http://sim-im.lehis.ru/dist/ \
 		http://www.sim-im.lehis.ru/dist/
