@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	Tie-Hash-Regex
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Match hash keys using Regular Expressions
 
 BUILD_DEPENDS=	p5-Attribute-Handlers>=0.76:${PORTSDIR}/devel/p5-Attribute-Handlers
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Attribute-Handlers>=0.76:${PORTSDIR}/devel/p5-Attribute-Handlers
 
 MAN3=	Tie::Hash::Regex.3
 
