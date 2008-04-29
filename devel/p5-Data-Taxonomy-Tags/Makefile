@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Represents a set of tags for any item
 
 MAN3=		Data::Taxonomy::Tags.3 Data::Taxonomy::Tags::Tag.3

@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apply a chain of filters to text
 
 BUILD_DEPENDS=	${SITE_PERL}/URI/Find.pm:${PORTSDIR}/textproc/p5-URI-Find \

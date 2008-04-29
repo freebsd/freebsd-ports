@@ -11,7 +11,7 @@ CATEGORIES=	devel www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl implementation of Google Checkout (GCO)
 
 RUN_DEPENDS=	p5-libwww>=5.65:${PORTSDIR}/www/p5-libwww \

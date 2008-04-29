@@ -12,7 +12,7 @@ CATEGORIES=	ftp www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A generic file fetching mechanism
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

@@ -11,7 +11,7 @@ CATEGORIES=	textproc www math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert XHTML+MathML Named Entities to Numeric Character References
 
 MAN3=	MathML::Entities.3

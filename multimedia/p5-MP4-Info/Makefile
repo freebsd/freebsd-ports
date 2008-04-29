@@ -11,7 +11,7 @@ CATEGORIES=	multimedia perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fetch info from MPEG-4 files
 
 PERL_CONFIGURE=	5.7.3+	#inherited from p5-Encode

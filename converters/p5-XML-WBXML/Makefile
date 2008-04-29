@@ -11,7 +11,7 @@ CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert between XML and WBXML using libwbxml2
 
 LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2

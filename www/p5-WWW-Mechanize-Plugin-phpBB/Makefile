@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screen scraper for phpBB installations
 
 BUILD_DEPENDS=	${SITE_PERL}/WWW/Mechanize/Pluggable.pm:${PORTSDIR}/www/p5-WWW-Mechanize-Pluggable \

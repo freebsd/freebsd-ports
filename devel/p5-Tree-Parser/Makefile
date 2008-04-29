@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Module to parse formatted files into tree structures
 
 BUILD_DEPENDS=	${SITE_PERL}/Array/Iterator.pm:${PORTSDIR}/devel/p5-Array-Iterator \

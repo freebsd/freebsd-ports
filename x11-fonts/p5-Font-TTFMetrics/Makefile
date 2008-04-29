@@ -11,7 +11,7 @@ CATEGORIES=	x11-fonts perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parser for the TTF file
 
 MAN3=	Font::TTFMetrics.3

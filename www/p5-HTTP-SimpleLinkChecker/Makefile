@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check the HTTP response code for a link
 
 BUILD_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww

@@ -11,7 +11,7 @@ CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts numeric values to and from their Japanese string equivalents
 
 MAN3=	Lingua::JA::Numbers.3

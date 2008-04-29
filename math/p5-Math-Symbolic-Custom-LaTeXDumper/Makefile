@@ -11,7 +11,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	aaron@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Math::Symbolic LaTeX output
 
 BUILD_DEPENDS=	p5-Math-Symbolic>=0.201:${PORTSDIR}/math/p5-Math-Symbolic
