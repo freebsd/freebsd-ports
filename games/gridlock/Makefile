@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.dozingcatsoftware.com/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	Gridlock-gnustep-${PORTVERSION}
 
-MAINTAINER=	gurkan@phys.ethz.ch
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A collection of grid-based board games for GNUstep
 
 USE_GNUSTEP=	yes
