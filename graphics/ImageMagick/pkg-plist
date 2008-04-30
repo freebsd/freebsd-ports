@@ -128,7 +128,6 @@ include/ImageMagick/wand/montage.h
 include/ImageMagick/wand/pixel-iterator.h
 include/ImageMagick/wand/pixel-wand.h
 include/ImageMagick/wand/stream.h
-lib/ImageMagick-%%PORTVERSION%%/config/colors.xml
 lib/ImageMagick-%%PORTVERSION%%/config/configure.xml
 lib/ImageMagick-%%PORTVERSION%%/config/delegates.xml
 lib/ImageMagick-%%PORTVERSION%%/config/english.xml
@@ -473,6 +472,7 @@ libdata/pkgconfig/Wand.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
 %%DATADIR%%-%%PORTVERSION%%/config/coder.xml
+%%DATADIR%%-%%PORTVERSION%%/config/colors.xml
 %%DATADIR%%-%%PORTVERSION%%/config/log.xml
 %%DATADIR%%-%%PORTVERSION%%/config/magic.xml
 %%DATADIR%%-%%PORTVERSION%%/config/mime.xml
