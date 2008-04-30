@@ -89,7 +89,7 @@ FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 .include <bsd.port.pre.mk>
 
 .if defined(TGTARCH)
-. if ${TGTARCH} == "m68k" && ${ARCH} == "amd64" && ${OSVERSION} < 600000
+. if ${OSVERSION} < 600000
 BROKEN=		Does not compile
 . endif
 .endif
