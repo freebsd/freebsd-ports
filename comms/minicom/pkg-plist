@@ -75,3 +75,5 @@ etc/minicom/minicom.users
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extras/terminfo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/extras
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
