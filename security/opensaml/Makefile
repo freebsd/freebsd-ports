@@ -18,6 +18,8 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		xml-security-c.13:${PORTSDIR}/security/apache-xml-security-c
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
