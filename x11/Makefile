@@ -265,6 +265,7 @@
     SUBDIR += sxpc
     SUBDIR += temperature.app
     SUBDIR += terminal.app
+    SUBDIR += terminator
     SUBDIR += thinglaunch
     SUBDIR += tilda
     SUBDIR += tkXwin
