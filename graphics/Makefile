@@ -552,6 +552,7 @@
     SUBDIR += pecl-imlib2
     SUBDIR += pecl-qrencode
     SUBDIR += pecomato
+    SUBDIR += pencil
     SUBDIR += peps
     SUBDIR += pfscalibration
     SUBDIR += pfstmo
