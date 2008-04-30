@@ -33,7 +33,11 @@ post-configure:
 		${WRKSRC}/${MAKEFILE}
 
 post-build test:
-	cd ${WRKSRC}/QA && ./run_tests
+	@if ! cd ${WRKSRC}/QA && ./run_tests;	\
+	then	\
+		${CAT} ${WRKSRC}/QA/*.diff;	\
+		exit 1;	\
+	fi
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/h2l ${PREFIX}/bin
