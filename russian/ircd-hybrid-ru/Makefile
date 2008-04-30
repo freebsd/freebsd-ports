@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	ircd-hybrid-ru
 PKGNAMESUFFIX=	-hybrid-ru
-DISTNAME=	ircd-hybrid-ru-7.2.1
+DISTNAME=	ircd-hybrid-ru-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Russian version of well known hybrid IRC server
