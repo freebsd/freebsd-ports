@@ -21,18 +21,13 @@ MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	imagemagick
-EXTRACT_SUFX=	.7z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Image processing tools
-
-EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-EXTRACT_CMD=	${LOCALBASE}/bin/7z
-EXTRACT_BEFORE_ARGS=	x -bd -o${WRKDIR} -w${WRKDIR}
-EXTRACT_AFTER_ARGS=	> /dev/null
+USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libltdl:15
