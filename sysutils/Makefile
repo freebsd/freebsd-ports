@@ -12,6 +12,7 @@
     SUBDIR += aaccli
     SUBDIR += abck
     SUBDIR += acidlaunch
+    SUBDIR += ack
     SUBDIR += adtool
     SUBDIR += afbinit
     SUBDIR += afflib
