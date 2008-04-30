@@ -191,6 +191,7 @@ achievo		ports/misc/achievo
 acidlaunch	ports/sysutils/acidlaunch
 acidrip		ports/multimedia/acidrip
 acidwarp	ports/graphics/acidwarp
+ack		ports/sysutils/ack
 aclgen		ports/misc/aclgen
 aclock		ports/x11-clocks/aclock
 acm		ports/games/acm
