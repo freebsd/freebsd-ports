@@ -18,6 +18,8 @@ BUILD_DEPENDS=	ocaml-net<2:${PORTSDIR}/www/ocaml-net \
 RUN_DEPENDS=	ocaml-net<2:${PORTSDIR}/www/ocaml-net \
 		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl
 
+BROKEN=		unsatisfiable dependency line
+
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
