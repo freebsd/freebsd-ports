@@ -1,0 +1,19 @@
+%%TWDIR%%/data/TWiki/SubscribePlugin.txt
+%%TWDIR%%/data/TWiki/VarSUBSCRIBE.txt
+%%TWDIR%%/lib/TWiki/Plugins/SubscribePlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/SubscribePlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/SubscribePlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/SubscribePlugin.pm
+%%TWDIR%%/pub/TWiki/SubscribePlugin/logo.gif
+%%TWDIR%%/pub/TWiki/SubscribePlugin/wikiringlogo20x20.png
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/SubscribePlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/SubscribePlugin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

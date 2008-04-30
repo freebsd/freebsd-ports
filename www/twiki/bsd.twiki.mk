@@ -77,7 +77,7 @@ make-port:
 	echo "# New ports collection makefile for:	$$pnam" > Makefile &&\
 	date '+# Date created:%t%t%e %B %Y' >> Makefile &&\
 	echo '#' >> Makefile &&\
-	echo '# $$FreeBSD$$' >> Makefile &&\
+	echo '# $$''FreeBSD$$' >> Makefile &&\
 	echo '#' >> Makefile &&\
 	echo >> Makefile &&\
 	echo "PORTNAME=	$$nnam" >> Makefile &&\

@@ -1,0 +1,13 @@
+%%TWDIR%%/data/TWiki/TopicVarsPlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/TopicVarsPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/TopicVarsPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/TopicVarsPlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/TopicVarsPlugin.pm
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/TopicVarsPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki

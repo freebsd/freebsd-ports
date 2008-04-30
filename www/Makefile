@@ -1328,11 +1328,13 @@
     SUBDIR += twiki-SlideShowPlugin
     SUBDIR += twiki-SmiliesPlugin
     SUBDIR += twiki-SpreadSheetPlugin
+    SUBDIR += twiki-SubscribePlugin
     SUBDIR += twiki-TWikiUserMappingContrib
     SUBDIR += twiki-TablePlugin
     SUBDIR += twiki-TagMePlugin
     SUBDIR += twiki-TinyMCEPlugin
     SUBDIR += twiki-TipsContrib
+    SUBDIR += twiki-TopicVarsPlugin
     SUBDIR += twiki-TwistyContrib
     SUBDIR += twiki-TwistyPlugin
     SUBDIR += twiki-WysiwygPlugin
