@@ -1,0 +1,41 @@
+--- Makefile.orig	2008-04-28 16:55:08.000000000 -0500
++++ Makefile	2008-04-28 16:56:07.000000000 -0500
+@@ -9,13 +9,10 @@
+ ####### Compiler, tools and options
+ 
+ CC	?=	gcc
+-ifeq ($(CC),)
+-CC	:=	gcc
+-endif
+ INCPATH :=	.
+-CFLAGS	:=	-Wall -W -O2 -DNO_DEBUG
++CFLAGS	+=	-Wall -W
+ LDLIBS	:=	
+-LDFLAGS	:=	
++LDFLAGS	+=	
+ 
+ # 64 bit file offsets even on 32 bit
+ # platforms (LFS, if supported by the
+@@ -24,13 +21,7 @@
+ 
+ INSTALL_PATH :=	/usr/local/bin
+ 
+-ifeq ($(USE_LARGEFILE),yes)
+-# these flags work for linux / glibc.
+-# change for others, if necessary.
+ FILESIZE_DEFS:=	-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+-else
+-FILESIZE_DEFS:=	
+-endif
+ 
+ ####### Files
+ 
+@@ -54,7 +45,7 @@
+ 	$(CC) $(LDFLAGS) -o $(BINARY) $(OBJECTS) $(LDLIBS)
+ 
+ uoff_t.h: mkuoff_t.c
+-	$(CC) $(FILESIZE_DEFS) -o mkuoff_t mkuoff_t.c
++	$(CC) $(CFLAGS) $(FILESIZE_DEFS) -o mkuoff_t mkuoff_t.c
+ 	@echo "Generating uoff_t.h"
+ 	@./mkuoff_t
+ 

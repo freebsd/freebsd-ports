@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	lxsplit
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.freebyte.com/download/ \
-		http://document-root.de/mirror/lxsplit/
-DISTNAME=	lxsplit
+MASTER_SITES=	SF
 
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Simple program to split or join files
@@ -19,9 +17,6 @@ PLIST_FILES=	bin/lxsplit
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/lxsplit ${PREFIX}/bin/
-
-post-install:
-		${STRIP_CMD} ${PREFIX}/bin/lxsplit
+	${INSTALL_PROGRAM} ${WRKSRC}/lxsplit ${PREFIX}/bin/
 
 .include <bsd.port.mk>
