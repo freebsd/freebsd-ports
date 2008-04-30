@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ircd
-PORTVERSION=	7.2.1
-PORTREVISION=	1
+PORTVERSION=	7.2.2
 CATEGORIES=	irc russian
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
