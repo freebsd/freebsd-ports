@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/audio/squeezecenter/files/Attic/pkg-install.in,v 1.5 2008-04-04 15:48:14 brooks Exp $
+# $FreeBSD: /tmp/pcvs/ports/audio/squeezecenter/files/Attic/pkg-install.in,v 1.6 2008-04-30 23:18:04 brooks Exp $
 
 name=slimserver
 u=%%SLIMUSER%%
@@ -13,7 +13,7 @@ statedir=%%SLIMDBDIR%%
 cachedir=${statedir}/cache
 conffile=${statedir}/squeezecenter.conf
 playlistdir=${statedir}/playlists
-pidfile=/var/run/${name}.pid
+pidfile=/var/run/${name}/${name}.pid
 newsyslogfile=/etc/newsyslog.conf
 logcomment="# added by audio/squeezecenter port"
 serverlogfile=/var/log/squeezecenter/server.log
