@@ -76,7 +76,6 @@
     SUBDIR += gnome-icons-snowish
     SUBDIR += gnome-icons-stylish
     SUBDIR += gnome-icons-ximian-south
-    SUBDIR += gnome-industrial-theme
     SUBDIR += gnome-look
     SUBDIR += gnome-splashscreen-manager
     SUBDIR += gnome-themes
