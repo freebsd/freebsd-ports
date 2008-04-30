@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	xmlrpc-epi
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose implementation of the xmlrpc specification in C
+
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -19,7 +21,8 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"		\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
-CONFIGURE_ARGS=	--program-transform="s|^|xre-|"
+CONFIGURE_ARGS=	--program-transform="s|^|xre-|" \
+		--with-expat=/usr/local
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
