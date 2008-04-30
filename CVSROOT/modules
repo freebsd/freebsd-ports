@@ -2235,7 +2235,6 @@ drupal4-attachment	ports/www/drupal4-attachment
 drupal4-filemanager	ports/www/drupal4-filemanager
 drupal4-gsitemap	ports/www/drupal4-gsitemap
 drupal4-i18n	ports/www/drupal4-i18n
-drupal4-ldap_integration	ports/security/drupal4-ldap_integration
 drupal4-nice_menus	ports/www/drupal4-nice_menus
 drupal4-taxonomy_access	ports/www/drupal4-taxonomy_access
 drupal4-textile	ports/www/drupal4-textile
