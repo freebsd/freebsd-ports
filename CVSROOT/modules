@@ -11157,6 +11157,7 @@ p5-RDF-Notation3	ports/textproc/p5-RDF-Notation3
 p5-RDF-Simple	ports/textproc/p5-RDF-Simple
 p5-RDFStore	ports/textproc/p5-RDFStore
 p5-REST-Application	ports/net/p5-REST-Application
+p5-REST-Google	ports/net/p5-REST-Google
 p5-RIFF-Info	ports/multimedia/p5-RIFF-Info
 p5-RPC-Simple	ports/net/p5-RPC-Simple
 p5-RPC-XML	ports/net/p5-RPC-XML
