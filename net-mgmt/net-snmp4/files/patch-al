@@ -1,6 +1,6 @@
---- configure.in~	Sat May  6 01:46:26 2000
-+++ configure.in	Wed May 17 11:09:08 2000
-@@ -1286,6 +1286,26 @@
+--- configure.in.orig	2006-06-19 08:08:48.000000000 +0000
++++ configure.in	2008-04-30 05:57:39.000000000 +0000
+@@ -1405,6 +1405,26 @@
  AC_CACHE_CHECK(type of rtentry structure,ac_cv_RTENTRY_TYPE,
  [
  
@@ -24,6 +24,6 @@
 +  rt.rt_dst;
 +  ], ac_cv_RTENTRY_TYPE="BSD-4.4")
 +
- dnl 4.4 compat
+ # 4.4 compat
  AC_TRY_COMPILE([
- #include <sys/types.h>
+ #ifdef HAVE_SYS_PARAM_H
