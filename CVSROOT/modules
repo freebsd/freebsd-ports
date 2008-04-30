@@ -16138,6 +16138,7 @@ tentakel	ports/sysutils/tentakel
 termatrix	ports/misc/termatrix
 terminal.app	ports/x11/terminal.app
 terminality	ports/devel/terminality
+terminator	ports/x11/terminator
 terminatorx	ports/audio/terminatorx
 terminus-font	ports/x11-fonts/terminus-font
 termlog		ports/security/termlog
