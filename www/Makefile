@@ -188,7 +188,6 @@
     SUBDIR += firefox-devel
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
-    SUBDIR += firefox15
     SUBDIR += flashplugin-mozilla
     SUBDIR += flat-frog
     SUBDIR += flickcurl
@@ -1048,7 +1047,6 @@
     SUBDIR += php5-session
     SUBDIR += php5-tidy
     SUBDIR += phpSysInfo
-    SUBDIR += phpadsnew
     SUBDIR += phpbb
     SUBDIR += phpbb-devel
     SUBDIR += phpbb3

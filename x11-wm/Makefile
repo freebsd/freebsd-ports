@@ -121,7 +121,6 @@
     SUBDIR += tvtwm
     SUBDIR += twm
     SUBDIR += ude
-    SUBDIR += uwm
     SUBDIR += vtwm
     SUBDIR += w9wm
     SUBDIR += waimea
@@ -147,6 +146,5 @@
     SUBDIR += xfce4-wm
     SUBDIR += xmonad
     SUBDIR += xmonad-contrib
-    SUBDIR += yawm
 
 .include <bsd.port.subdir.mk>
