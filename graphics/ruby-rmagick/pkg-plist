@@ -1,5 +1,5 @@
 %%RUBY_SITELIBDIR%%/RMagick.rb
-%%RUBY_SITEARCHLIBDIR%%/RMagick.so
+%%RUBY_SITEARCHLIBDIR%%/RMagick2.so
 %%RUBY_SITELIBDIR%%/rvg/clippath.rb
 %%RUBY_SITELIBDIR%%/rvg/container.rb
 %%RUBY_SITELIBDIR%%/rvg/deep_equal.rb
@@ -15,7 +15,6 @@
 %%RUBY_SITELIBDIR%%/rvg/transformable.rb
 %%RUBY_SITELIBDIR%%/rvg/units.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/.rmagick
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Adispatch.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/InitialCoords.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/NewCoordSys.rb.html
@@ -28,7 +27,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Use02.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Use03.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ViewBox.rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Zconstitute.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/adaptive_threshold.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/add_noise.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/affine.rb.html
@@ -64,11 +62,11 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/colorize.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/colors.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/composite.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/composite_layers.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/comtasks.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/constants.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/contrast.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/crop.rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/crop_resized.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/crop_with_gravity.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/css/.rmagick
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/css/doc.css
@@ -88,6 +86,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/enhance.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/equalize.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/evenodd.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fill_pattern.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/flatten_images.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/flip.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/flop.rb.html
@@ -158,6 +157,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rect02.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rectangle.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/reduce_noise.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/resize_to_fill.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/resize_to_fit.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/roll.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rotate.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rotate_f.rb.html
@@ -235,6 +236,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/wet_floor.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/writing_mode01.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/writing_mode02.rb.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/constitute.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/crop_with_gravity.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/describe.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/find_similar_region.rb
