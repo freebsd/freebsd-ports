@@ -25,7 +25,6 @@ name="mu_conference"
 rcvar=`set_rcvar`
 
 command="%%PREFIX%%/bin/mu-conference"
-pidfile=${mu_conference_pidfile:-"%%JABBER_PIDDIR%%/mu-conference.pid"}
 
 stop_postcmd="mu_conference_stop_post"
 
@@ -38,7 +37,9 @@ load_rc_config $name
 : ${mu_conference_config="%%PREFIX%%/etc/muc.xml"}
 : ${mu_conference_enable="NO"}
 : ${mu_conference_user="%%JABBER_USER%%"}
+: ${mu_conference_pidfile="%%JABBER_PIDDIR%%/mu-conference.pid"}
 
+pidfile=${mu_conference_pidfile}
 command_args="-c ${mu_conference_config} -B >/dev/null 2>&1"
 
 run_rc_command "$1"
