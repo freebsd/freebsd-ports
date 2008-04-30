@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	splitvt
-PORTVERSION=	1.6.5
-PORTREVISION=	2
+PORTVERSION=	1.6.6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.devolution.com/~slouken/projects/splitvt/
 
@@ -20,9 +19,7 @@ ALL_TARGET=
 MAN1=		splitvt.1
 
 post-patch:
-	@(cd ${WRKSRC} && ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		config.c > foo && ${MV} foo config.c)
-	${RM} ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/config.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/splitvt ${PREFIX}/bin
