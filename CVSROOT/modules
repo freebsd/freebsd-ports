@@ -16580,6 +16580,7 @@ twiki-TablePlugin	ports/www/twiki-TablePlugin
 twiki-TagMePlugin	ports/www/twiki-TagMePlugin
 twiki-TinyMCEPlugin	ports/www/twiki-TinyMCEPlugin
 twiki-TipsContrib	ports/www/twiki-TipsContrib
+twiki-TopicVarsPlugin	ports/www/twiki-TopicVarsPlugin
 twiki-TwistyContrib	ports/www/twiki-TwistyContrib
 twiki-TwistyPlugin	ports/www/twiki-TwistyPlugin
 twiki-WysiwygPlugin	ports/www/twiki-WysiwygPlugin
