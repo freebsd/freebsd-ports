@@ -1,5 +1,5 @@
---- bin/macros_FreeBSD.mk.orig	2007-11-23 18:35:59.000000000 +0100
-+++ bin/macros_FreeBSD.mk	2007-12-30 22:19:04.000000000 +0100
+--- bin/macros_FreeBSD.mk.orig	2008-04-23 11:32:13.000000000 +0200
++++ bin/macros_FreeBSD.mk	2008-04-29 23:49:19.000000000 +0200
 @@ -1,3 +1,4 @@
 +# $FreeBSD$
  #============================================================================
@@ -17,7 +17,7 @@
  # Macro pour BFT
  #---------------
  
--BFT_HOME        =/home/saturne/opt/bft-1.0.5/arch/Linux
+-BFT_HOME        =/home/saturne/opt/bft-1.0.6/arch/Linux
 +BFT_HOME        =${LOCALBASE}
  
  BFT_INC         =-I$(BFT_HOME)/include
@@ -26,7 +26,7 @@
  # Macro pour FVM
  #---------------
  
--FVM_HOME        =/home/saturne/opt/fvm-0.9.0/arch/Linux
+-FVM_HOME        =/home/saturne/opt/fvm-0.10.0/arch/Linux
 +FVM_HOME        =${LOCALBASE}
  
  FVM_INC         =-I$(FVM_HOME)/include
@@ -36,7 +36,7 @@
  MPE_COMM        =0
  
 -# Pour Open MPI sur saturne
--MPI_HOME        =/home/saturne/opt/openmpi-1.2.4/arch/Linux
+-MPI_HOME        =/home/saturne/opt/openmpi-1.2.5/arch/Linux
 -MPI_INC         =-isystem$(MPI_HOME)/include
 -MPI_LIB         =-pthread -L$(MPI_HOME)/lib -lmpi -lopen-rte -lopen-pal -ldl -Wl,--export-dynamic -lnsl -lutil -lm -ldl
 +# Pour MPI sur saturne
@@ -45,18 +45,16 @@
  
  # Macro pour Sockets
  #-------------------
-@@ -75,20 +75,19 @@
+@@ -75,7 +75,7 @@
  # Option XML
  XML             =1
  
--XML_HOME = /home/saturne/opt/libxml2-2.6.19
-+XML_HOME =${LOCALBASE}
+-XML_HOME = /usr
++XML_HOME = ${LOCALBASE}
  
  XML_INC  =-I$(XML_HOME)/include/libxml2
--XML_LIB  =-L$(XML_HOME)/arch/Linux/lib -lxml2
-+XML_LIB  =-L$(XML_HOME)/lib -lxml2
- 
- # Macro pour BLAS
+ XML_LIB  =-L$(XML_HOME)/lib -lxml2
+@@ -84,11 +84,10 @@
  #----------------
  
  # Option BLAS
@@ -75,7 +73,7 @@
  # Compilateur C
  #--------------
  
--CCOMP                  = /home/saturne/opt/gcc-4.2.2/arch/Linux/bin/gcc
+-CCOMP                  = /home/saturne/opt/gcc-4.2.3/arch/Linux/bin/gcc
 +CCOMP                  = $(CC)
  
  CCOMPFLAGSDEF          = -std=c99 -funsigned-char -pedantic -W -Wall -Wshadow \
@@ -106,14 +104,14 @@
  #--------------------
  #  Profiling gprof : -pg -a
  
--FTNCOMP                = /home/saturne/opt/gcc-4.2.2/arch/Linux/bin/gfortran
+-FTNCOMP                = /home/saturne/opt/gcc-4.2.3/arch/Linux/bin/gfortran
 +FTNCOMP                = $(FC)
  
  FTNCOMPFLAGSDEF        = -I.
  
 -FTNCOMPFLAGS           = $(FTNCOMPFLAGSDEF) -O1
 -FTNCOMPFLAGSOPTPART1   = $(FTNCOMPFLAGSDEF) -O2
--FTNCOMPFLAGSOPTPART2   = $(FTNCOMPFLAGSDEF) -O6
+-FTNCOMPFLAGSOPTPART2   = $(FTNCOMPFLAGSDEF) -O3
 -FTNCOMPFLAGSOPTPART3   = $(FTNCOMPFLAGSDEF) -O0
 +FTNCOMPFLAGS           = $(FTNCOMPFLAGSDEF) $(FFLAGS)
 +FTNCOMPFLAGSOPTPART1   = $(FTNCOMPFLAGSDEF) $(FFLAGS)
@@ -126,7 +124,7 @@
  
  # Linker
  
--LDEDL           = /home/saturne/opt/gcc-4.2.2/arch/Linux/bin/gfortran
+-LDEDL           = /home/saturne/opt/gcc-4.2.3/arch/Linux/bin/gfortran
 -LDEDLFLAGS      = -O
 -LDEDLFLAGSLO    = -O0
 +LDEDL           = $(FC)
@@ -135,7 +133,7 @@
  LDEDLFLAGSDBG   = -g
  LDEDLFLAGSPROF  = -pg
  LDEDLFLAGSVERS  = -v
--LDEDLRPATH      = -rdynamic -Wl,-rpath -Wl,/home/saturne/opt/gcc-4.2.2/arch/Linux/lib:
+-LDEDLRPATH      = -rdynamic -Wl,-rpath -Wl,/home/saturne/opt/gcc-4.2.3/arch/Linux/lib:
 +LDEDLRPATH      = -rdynamic -Wl,-rpath -Wl,
  
  

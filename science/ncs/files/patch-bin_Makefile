@@ -1,5 +1,5 @@
---- bin/Makefile.orig	2007-11-23 18:35:59.000000000 +0100
-+++ bin/Makefile	2007-12-30 21:52:12.000000000 +0100
+--- bin/Makefile.orig	2008-02-18 19:51:37.000000000 +0100
++++ bin/Makefile	2008-04-29 23:19:31.000000000 +0200
 @@ -174,7 +174,6 @@
  
  link:
@@ -8,39 +8,3 @@
  	@make privcompil
  	@make privlink
  	@make privfin
-@@ -846,7 +845,7 @@
- 	           echo "$(BO)or in one of its sub-directories$(NO)" ;\
- 	           echo ;\
- 	           tput init ;\
--	           exit -1 ;\
-+	           exit 1 ;\
- 	      fi ;\
- 	 fi ;\
- 	 dirprec=`dirname $${dirprec}` ;\
-@@ -858,7 +857,7 @@
- 	      echo "$(BO) You must be in the general directory: $(DIR_CS)$(NO)" ;\
- 	      echo ;\
- 	      tput init ;\
--	      exit -1 ;\
-+	      exit 1 ;\
- 	 fi ;\
- 	 if   [ ! "$${modtrav}" = "$${module}" ] ;\
- 	 then echo ;\
-@@ -867,7 +866,7 @@
- 	      echo "$(BO)You must be in directory: $${module}$(NO)" ;\
- 	      echo ;\
- 	      tput init ;\
--	      exit -1 ;\
-+	      exit 1 ;\
- 	 fi ;\
- 	 if   [ ! "$${opttrav}" = "$(MYOPT)" ] ;\
- 	 then echo ;\
-@@ -881,7 +880,7 @@
- 	      fi ;\
- 	      echo ;\
- 	      tput init ;\
--	      exit -1 ;\
-+	      exit 1 ;\
- 	 fi ;\
- 	 if [ "$${modtrav}" = "BASE" ] ;\
- 	 then INC_CS="toto" ;\

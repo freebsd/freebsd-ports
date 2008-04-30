@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	bft
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	science parallel
-MASTER_SITES=	http://www.edf.fr/html/RetD/livraison_saturne_${REL_DATE}/
+MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Base Functions and Types library
 
-REL_DATE=	20071218
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-TESTSBIN=	bft_test
+TESTSBIN=	bft_test bft_mem_usage_test bft_printf_test
 
 pre-configure:
 	# No useful doc there
@@ -27,7 +29,7 @@ pre-configure:
 
 regression-test:
 .for pg in ${TESTSBIN}
-	@(cd ${WRKSRC}/tests; ./${pg} arg1 arg2)
+	(cd ${WRKSRC}/tests; ./${pg} arg1 arg2)
 .endfor
 
 .include <bsd.port.mk>

@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	ecs
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	science
-MASTER_SITES=	http://www.edf.fr/html/RetD/livraison_saturne_${REL_DATE}/
+MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Preprocessor
@@ -18,15 +20,15 @@ LIB_DEPENDS=	med.2:${PORTSDIR}/french/med		\
 		hdf5.0:${PORTSDIR}/science/hdf5		\
 		cgns.0:${PORTSDIR}/science/cgnslib
 
-REL_DATE=	20071218
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-bft-prefix=${LOCALBASE}	\
-		--with-hdf5-prefix=${LOCALBASE}	\
-		--with-cgns-prefix=${LOCALBASE}	\
-		--with-med-prefix=${LOCALBASE}	\
-		--with-metis-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-bft=${LOCALBASE}		\
+		--with-hdf5=${LOCALBASE}	\
+		--with-cgns=${LOCALBASE}	\
+		--with-med=${LOCALBASE}		\
+		--with-metis=${LOCALBASE}
 CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 .if defined(WITHOUT_NLS)
@@ -42,7 +44,11 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+NOPORTDOCS=	yes	# PDF not produced ATM
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base
 PORTDOCS=	mi_ecs.pdf mu_ecs.pdf
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -52,6 +58,11 @@ LIB_DEPENDS+=	metis.1:${PORTSDIR}/math/metis
 .else
 # Prefer metis-edf to avoid conflict with Code_Aster
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis-edf
+.endif
+
+pre-configure:
+.if !defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e '/^SUBDIRS/s| po| po doc|' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
