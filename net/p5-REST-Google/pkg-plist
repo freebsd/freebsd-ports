@@ -1,0 +1,25 @@
+%%SITE_PERL%%/REST/Google.pm
+%%SITE_PERL%%/REST/Google.pod
+%%SITE_PERL%%/REST/Google/Feeds.pm
+%%SITE_PERL%%/REST/Google/Feeds.pod
+%%SITE_PERL%%/REST/Google/Search.pm
+%%SITE_PERL%%/REST/Google/Search.pod
+%%SITE_PERL%%/REST/Google/Search/Blogs.pm
+%%SITE_PERL%%/REST/Google/Search/Blogs.pod
+%%SITE_PERL%%/REST/Google/Search/Books.pm
+%%SITE_PERL%%/REST/Google/Search/Books.pod
+%%SITE_PERL%%/REST/Google/Search/Images.pm
+%%SITE_PERL%%/REST/Google/Search/Images.pod
+%%SITE_PERL%%/REST/Google/Search/Local.pm
+%%SITE_PERL%%/REST/Google/Search/Local.pod
+%%SITE_PERL%%/REST/Google/Search/News.pm
+%%SITE_PERL%%/REST/Google/Search/News.pod
+%%SITE_PERL%%/REST/Google/Search/Video.pm
+%%SITE_PERL%%/REST/Google/Search/Video.pod
+%%SITE_PERL%%/REST/Google/Search/Web.pm
+%%SITE_PERL%%/REST/Google/Search/Web.pod
+%%SITE_PERL%%/REST/Google/Translate.pm
+%%SITE_PERL%%/REST/Google/Translate.pod
+@dirrm %%SITE_PERL%%/REST/Google/Search
+@dirrm %%SITE_PERL%%/REST/Google
+@dirrm %%SITE_PERL%%/REST
