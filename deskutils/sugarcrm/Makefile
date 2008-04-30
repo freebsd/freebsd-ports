@@ -13,6 +13,8 @@ DISTNAME=	SugarCE-${PORTVERSION}
 MAINTAINER=	nick@foobar.org
 COMMENT=	A web based customer relationship management suite
 
+BROKEN=		does not fetch
+
 IGNORE_WITH_MYSQL=	323 40
 USE_PHP=	gd mysql session pcre xml zlib mbstring curl imap
 USE_ZIP=	yes

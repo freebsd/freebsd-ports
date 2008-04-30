@@ -16,6 +16,8 @@ COMMENT=	The only pure Java Subversion client library in the world
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+BROKEN=		does not fetch
+
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
