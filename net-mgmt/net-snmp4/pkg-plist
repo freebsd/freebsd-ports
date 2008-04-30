@@ -9,7 +9,7 @@ bin/snmpdf
 bin/snmpget
 bin/snmpgetnext
 bin/snmpinform
-bin/snmpnetstat
+bin/snmpnetstat53
 bin/snmpset
 bin/snmpstatus
 bin/snmptable
