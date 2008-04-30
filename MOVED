@@ -3463,3 +3463,7 @@ security/wpa_supplicant||2008-04-26|Obsolete, newer version in base
 games/glpuzzle|games/jigzo|2008-04-28|Project renamed
 ftp/greed||2008-04-29|Has expired: No longer maintained
 x11-themes/gnome-industrial-theme||2008-04-29|Has expired: gnome-themes-extras no longer has industrial engine
+www/firefox15||2008-04-30|Has expired: Obsolete version, use Firefox 2.0 or greater instead
+www/phpadsnew||2008-04-30|Has expired: replaced by www/openx
+x11-wm/yawm||2008-04-30|Has expired: project no longer exists
+x11-wm/uwm||2008-04-30|Has expired: Version branch long since retired

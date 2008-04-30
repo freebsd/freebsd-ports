@@ -3039,7 +3039,6 @@ firefox		ports/www/firefox
 firefox-devel	ports/www/firefox-devel
 firefox-i18n	ports/www/firefox-i18n
 firefox-remote	ports/www/firefox-remote
-firefox15	ports/www/firefox15
 firemime	ports/mail/firemime
 firepay		ports/mail/firepay
 fireprofile	ports/databases/fireprofile
@@ -12711,7 +12710,6 @@ php_doc-pt	ports/portuguese/php_doc-br
 php_doc-ru	ports/russian/php_doc
 php_doc-tw	ports/chinese/php_doc-tw
 php_doc-zh	ports/chinese/php_doc-zh
-phpadsnew	ports/www/phpadsnew
 phpbb		ports/www/phpbb
 phpbb-devel	ports/www/phpbb-devel
 phpbb3		ports/www/phpbb3
@@ -16772,7 +16770,6 @@ uudeview	ports/converters/uudeview
 uudx		ports/converters/uudx
 uulib		ports/converters/uulib
 uwatch		ports/sysutils/uwatch
-uwm		ports/x11-wm/uwm
 uz-aspell	ports/textproc/uz-aspell
 uzap		ports/editors/uzap
 v		ports/x11-toolkits/v
@@ -18291,7 +18288,6 @@ yatex		ports/print/yatex
 yatex-xemacs	ports/print/yatex-xemacs
 yaunc		ports/misc/yaunc
 yawho		ports/sysutils/yawho
-yawm		ports/x11-wm/yawm
 yawmppp		ports/comms/yawmppp
 yaws		ports/www/yaws
 yaz		ports/net/yaz
