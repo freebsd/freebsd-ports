@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pgcalc2
-DISTVERSION=	2.2-4
-PORTREVISION=	1
+DISTVERSION=	2.2-5
 CATEGORIES=	math kde
 MASTER_SITES=	http://www.pgcalc.net/
 
