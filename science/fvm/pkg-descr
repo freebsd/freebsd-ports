@@ -1,4 +1,4 @@
-BFT stands for Finite Volume Mesh.
+FVM stands for Finite Volume Mesh.
 It is intended to provide finite volume mesh I/O and some other services such
 as interpolation, possibly in parallel using MPI.
 

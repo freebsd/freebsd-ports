@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	ncs
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	science parallel
-MASTER_SITES=	http://www.edf.fr/html/RetD/livraison_saturne_${REL_DATE}/
+MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Kernel
@@ -17,10 +19,9 @@ LIB_DEPENDS=	fvm.0:${PORTSDIR}/science/fvm
 RUN_DEPENDS=	xmgrace:${PORTSDIR}/math/grace	\
 		ecs:${PORTSDIR}/science/ecs
 
-REL_DATE=	20071218
-
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/bin
 MAKE_ENV=	NOM_ARCH=${OPSYS} CS_HOME=${WRKSRC} CS_MPI_PATH=${MPI_HOME}/bin	\
 		PTHREAD_LIBS=${PTHREAD_LIBS} TERM=${TERM}			\
@@ -73,7 +74,8 @@ MPI_LIBS=	-lmpich
 .endif
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	pdftex:${PORTSDIR}/print/teTeX-base
+# No PDF at the moment
+#BUILD_DEPENDS+=	pdftex:${PORTSDIR}/print/teTeX-base
 DOCS=		AUTHORS COMPATIBILITY Changelog TODO
 .endif
 
@@ -94,13 +96,6 @@ BLAS_LIB=	-lblas
 RUN_DEPENDS+=	acroread:${PORTSDIR}/print/acroreadwrapper
 .else
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
-.endif
-
-.if exists(${LOCALBASE}/apps/homard/homard)
-WITH_HOMARD=	yes
-.endif
-.if defined(WITH_HOMARD)
-RUN_DEPENDS+=	${LOCALBASE}/apps/homard/homard:${PORTSDIR}/french/homard
 .endif
 
 pre-everything::
@@ -145,9 +140,9 @@ do-build:
 		${GREP} -B 10 '^Stop in ') || ${TRUE}
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "===>  Building documentation."
+	#@${ECHO_MSG} "===>  Building documentation."
 	@${ECHO_MSG}
-	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./lance_install DOC)
+	#(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./lance_install DOC)
 .endif
 
 do-install:
@@ -170,15 +165,16 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arch/${OPSYS}/bin/cs13.exe	\
 		${CS_HOME}/arch/${OPSYS}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${CS_HOME}/doc/THEORY/ ${CS_HOME}/doc/USER/	\
+	${MKDIR} ${DOCSDIR}
+	#${MKDIR} ${DOCSDIR} ${CS_HOME}/doc/THEORY/ ${CS_HOME}/doc/USER/	\
 		${CS_HOME}/doc/TUTORIAL/
-	${INSTALL_DATA} ${WRKSRC}/doc/THEORY/theory.pdf ${CS_HOME}/doc/THEORY/
-	${INSTALL_DATA} ${WRKSRC}/doc/TUTORIAL/tutorial.pdf ${CS_HOME}/doc/TUTORIAL/
-	${INSTALL_DATA} ${WRKSRC}/doc/USER/user.pdf ${CS_HOME}/doc/USER/
-	${LN} -sf ${CS_HOME}/doc/THEORY/theory.pdf ${CS_HOME}/doc/TUTORIAL/tutorial.pdf	\
-		${CS_HOME}/doc/USER/user.pdf ${DOCSDIR}/
+	#${INSTALL_DATA} ${WRKSRC}/doc/THEORY/theory.pdf ${CS_HOME}/doc/THEORY/
+	#${INSTALL_DATA} ${WRKSRC}/doc/TUTORIAL/tutorial.pdf ${CS_HOME}/doc/TUTORIAL/
+	#${INSTALL_DATA} ${WRKSRC}/doc/USER/user.pdf ${CS_HOME}/doc/USER/
+	#${LN} -sf ${CS_HOME}/doc/THEORY/theory.pdf ${CS_HOME}/doc/TUTORIAL/tutorial.pdf	\
+	#	${CS_HOME}/doc/USER/user.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	${LN} -sf ${LOCALBASE}/share/doc/ecs/ ${ECS_HOME}/doc
+	#${LN} -sf ${LOCALBASE}/share/doc/ecs/ ${ECS_HOME}/doc
 .endif
 
 post-install:

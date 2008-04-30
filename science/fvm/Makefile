@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	fvm
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	science parallel
-MASTER_SITES=	http://www.edf.fr/html/RetD/livraison_saturne_${REL_DATE}/
+MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Finite Volume Mesh
@@ -18,29 +20,29 @@ LIB_DEPENDS=	med.2:${PORTSDIR}/french/med		\
 		hdf5.0:${PORTSDIR}/science/hdf5		\
 		cgns.0:${PORTSDIR}/science/cgnslib
 
-REL_DATE=	20071218
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-bft-prefix=${LOCALBASE}	\
-		--with-hdf5-prefix=${LOCALBASE}	\
-		--with-cgns-prefix=${LOCALBASE}	\
-		--with-med-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-bft=${LOCALBASE}	\
+		--with-hdf5=${LOCALBASE}	\
+		--with-cgns=${LOCALBASE}	\
+		--with-med=${LOCALBASE}
 CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 .if defined(WITH_LAM)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/liblam.a:${PORTSDIR}/net/lam
 RUN_DEPENDS+=	${LOCALBASE}/bin/lamboot:${PORTSDIR}/net/lam
-CONFIGURE_ARGS+=	--with-mpi-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}
 .elif defined(WITH_OPENMPI)
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
-CONFIGURE_ARGS+=	--with-mpi-prefix=${LOCALBASE}/mpi/openmpi
+CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}/mpi/openmpi
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
-CONFIGURE_ARGS+=	--with-mpi-prefix=${LOCALBASE}/mpich2
+CONFIGURE_ARGS+=	--with-mpi=${LOCALBASE}/mpich2
 .endif
 
 .if defined(WITH_DEBUG)
@@ -55,7 +57,7 @@ pre-configure:
 
 regression-test:
 .for pg in ${TESTSBIN}
-	@(cd ${WRKSRC}/tests; ./${pg})
+	(cd ${WRKSRC}/tests; ./${pg})
 .endfor
 
 .include <bsd.port.mk>
