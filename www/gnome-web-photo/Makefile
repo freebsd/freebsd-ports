@@ -18,7 +18,7 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Tool to generate full-size image files and thumbnails
 
 USE_BZIP2=	yes
-USE_GECKO=	firefox seamonkey xulrunner firefox15<->firefox
+USE_GECKO=	firefox seamonkey xulrunner
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko=${GECKO}
 USE_GMAKE=	yes

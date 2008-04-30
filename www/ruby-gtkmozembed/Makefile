@@ -21,7 +21,7 @@ COMMENT=	Ruby binding for GtkMozEmbed a widget embedding a Gecko renderer
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 
 USE_RUBY=	yes
-USE_GECKO=	firefox mozilla xulrunner firefox15
+USE_GECKO=	firefox mozilla xulrunner
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"

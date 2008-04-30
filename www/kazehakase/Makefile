@@ -21,7 +21,7 @@ LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GECKO=	firefox mozilla seamonkey xulrunner firefox15<->seamonkey
+USE_GECKO=	firefox mozilla seamonkey xulrunner seamonkey
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko_engine=${GECKO}
