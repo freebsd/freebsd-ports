@@ -12464,6 +12464,7 @@ peercast	ports/net-p2p/peercast
 peksystray	ports/x11-wm/peksystray
 pekwm		ports/x11-wm/pekwm
 pen		ports/net/pen
+pencil		ports/graphics/pencil
 pengpong	ports/games/pengpong
 penguin-command	ports/games/penguin-command
 penguinsap	ports/audio/penguinsap
