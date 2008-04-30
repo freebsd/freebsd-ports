@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lacaml
-PORTVERSION=	4.3.1
+PORTVERSION=	4.3.2
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
