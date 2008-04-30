@@ -16575,6 +16575,7 @@ twiki-RenderListPlugin	ports/www/twiki-RenderListPlugin
 twiki-SlideShowPlugin	ports/www/twiki-SlideShowPlugin
 twiki-SmiliesPlugin	ports/www/twiki-SmiliesPlugin
 twiki-SpreadSheetPlugin	ports/www/twiki-SpreadSheetPlugin
+twiki-SubscribePlugin	ports/www/twiki-SubscribePlugin
 twiki-TWikiUserMappingContrib	ports/www/twiki-TWikiUserMappingContrib
 twiki-TablePlugin	ports/www/twiki-TablePlugin
 twiki-TagMePlugin	ports/www/twiki-TagMePlugin
