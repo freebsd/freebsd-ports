@@ -1,14 +1,6 @@
---- utmp.c.orig	Sat Jan 13 22:48:13 2001
-+++ utmp.c	Sat Oct  7 14:35:08 2006
-@@ -6,13 +6,15 @@
- #include	<fcntl.h>
- #include	<utmp.h>
- #include	<stdio.h>
-+#include	<unistd.h>
-+#include	<string.h>
- 
- #ifdef DEBUG_UTMP
- #undef  UTMP_FILE
+--- utmp.c.orig	2007-04-01 17:56:49.000000000 +0000
++++ utmp.c	2008-04-30 04:00:23.000000000 +0000
+@@ -13,7 +13,7 @@
  #define UTMP_FILE  "/tmp/utmp"
  #else
  #ifndef UTMP_FILE
