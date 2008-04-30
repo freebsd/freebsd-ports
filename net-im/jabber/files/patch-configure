@@ -1,6 +1,32 @@
---- configure.orig	Sat Feb 17 10:54:39 2007
-+++ configure	Sat Feb 17 10:56:22 2007
-@@ -23750,8 +23750,8 @@
+--- configure.orig	2007-07-19 00:24:45.000000000 +0200
++++ configure	2008-04-29 18:51:04.000000000 +0200
+@@ -21168,6 +21168,7 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/stddef.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netdb.h>
+@@ -22554,7 +22555,7 @@
+ if test "${with_mysql+set}" = set; then
+   withval=$with_mysql; mysql=$withval
+ else
+-  mysql=yes
++  mysql=no
+ fi
+
+ if test "$mysql" != "no"; then
+@@ -22778,7 +22779,7 @@
+ if test "${with_postgresql+set}" = set; then
+   withval=$with_postgresql; postgresql=$withval
+ else
+-  postgresql=yes
++  postgresql=no
+ fi
+
+ if test "$postgresql" != "no"; then
+@@ -22787,8 +22788,8 @@
  	CPPFLAGS="${CPPFLAGS} -I$postgresql/include"
      fi
      if test "${ac_cv_header_postgresql_libpq_fe_h+set}" = set; then
@@ -11,7 +37,7 @@
  if test "${ac_cv_header_postgresql_libpq_fe_h+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  fi
-@@ -23759,8 +23759,8 @@
+@@ -22796,8 +22797,8 @@
  echo "${ECHO_T}$ac_cv_header_postgresql_libpq_fe_h" >&6; }
  else
    # Is the header compilable?
@@ -22,7 +48,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -23768,7 +23768,7 @@
+@@ -22805,7 +22806,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -31,7 +57,7 @@
  _ACEOF
  rm -f conftest.$ac_objext
  if { (ac_try="$ac_compile"
-@@ -23817,15 +23817,15 @@
+@@ -22837,15 +22838,15 @@
  echo "${ECHO_T}$ac_header_compiler" >&6; }
  
  # Is the header present?
@@ -50,7 +76,7 @@
  _ACEOF
  if { (ac_try="$ac_cpp conftest.$ac_ext"
  case "(($ac_try" in
-@@ -23865,30 +23865,30 @@
+@@ -22878,30 +22879,30 @@
  # So?  What about this header?
  case $ac_header_compiler:$ac_header_preproc:$ac_cxx_preproc_warn_flag in
    yes:no: )
