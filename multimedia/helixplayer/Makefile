@@ -52,7 +52,7 @@ BROKEN=		coredumps during compilation on ${ARCH}
 .endif
 
 .if defined(WITH_PLUGIN)
-USE_GECKO=	firefox mozilla firefox15 seamonkey
+USE_GECKO=	firefox mozilla seamonkey
 PLIST_SUB+=	PLUGIN=""
 PKGMESSAGE=	${WRKDIR}/msg.withplugin
 .else

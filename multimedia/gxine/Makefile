@@ -67,7 +67,7 @@ LIB_DEPENDS+=	js.1:${PORTSDIR}/lang/spidermonkey
 CONFIGURE_ARGS+=--without-browser-plugin
 PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
 .else
-USE_GECKO=	firefox mozilla seamonkey xulrunner firefox15
+USE_GECKO=	firefox mozilla seamonkey xulrunner
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 LIB_DEPENDS+=	nspr4.1:${PORTSDIR}/devel/nspr
 CONFIGURE_ENV+=	NSPR_CFLAGS="-I${LOCALBASE}/include/nspr" \

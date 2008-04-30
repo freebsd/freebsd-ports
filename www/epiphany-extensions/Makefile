@@ -22,7 +22,7 @@ RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_GECKO=	firefox firefox15<->firefox xulrunner
+USE_GECKO=	firefox xulrunner
 USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget
 INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
