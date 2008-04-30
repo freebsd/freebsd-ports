@@ -1,11 +1,11 @@
 bin/it-config
+lib/libit++.a
+
 include/it++/base/array.h
 include/it++/base/bessel.h
 include/it++/base/binary.h
 include/it++/base/binfile.h
 include/it++/base/cblas.h
-include/it++/base/cfix.h
-include/it++/base/cfixed.h
 include/it++/base/cholesky.h
 include/it++/base/circular_buffer.h
 include/it++/base/converters.h
@@ -16,12 +16,6 @@ include/it++/base/factory.h
 include/it++/base/fastica.h
 include/it++/base/fastmath.h
 include/it++/base/filter.h
-include/it++/base/fix.h
-include/it++/base/fix_base.h
-include/it++/base/fix_factory.h
-include/it++/base/fix_functions.h
-include/it++/base/fix_operators.h
-include/it++/base/fixed.h
 include/it++/base/help_functions.h
 include/it++/base/integration.h
 include/it++/base/inv.h
@@ -36,7 +30,6 @@ include/it++/base/mat.h
 include/it++/base/matfunc.h
 include/it++/base/operators.h
 include/it++/base/parser.h
-include/it++/base/plot_pdf.h
 include/it++/base/qr.h
 include/it++/base/random.h
 include/it++/base/scalfunc.h
@@ -83,7 +76,38 @@ include/it++/srccode/lpcfunc.h
 include/it++/srccode/pnm.h
 include/it++/srccode/vq.h
 include/it++/srccode/vqtrain.h
-lib/libit++.a
+include/it++/alpha_modules.h
+include/it++/base/copy_vector.h
+include/it++/base/fftw3.h
+include/it++/base/freq_filt.h
+include/it++/base/lapack.h
+include/it++/comm/channel_code.h
+include/it++/fixedpoint/cfix.h
+include/it++/fixedpoint/cfixed.h
+include/it++/fixedpoint/fix.h
+include/it++/fixedpoint/fix_base.h
+include/it++/fixedpoint/fix_factory.h
+include/it++/fixedpoint/fix_functions.h
+include/it++/fixedpoint/fix_operators.h
+include/it++/fixedpoint/fixed.h
+include/it++/graphics/libharu.h
+include/it++/graphics/plot_pdf.h
+include/it++/itfixedpoint.h
+include/it++/itgraphics.h
+include/it++/itprotocol.h
+include/it++/protocol/events.h
+include/it++/protocol/front_drop_queue.h
+include/it++/protocol/packet.h
+include/it++/protocol/packet_channel.h
+include/it++/protocol/packet_generator.h
+include/it++/protocol/selective_repeat.h
+include/it++/protocol/signals_slots.h
+include/it++/protocol/tcp.h
+include/it++/protocol/tcp_client_server.h
+
+@dirrm include/it++/fixedpoint
+@dirrm include/it++/graphics
+@dirrm include/it++/protocol
 @dirrm include/it++/srccode
 @dirrm include/it++/matlab
 @dirrm include/it++/comm
