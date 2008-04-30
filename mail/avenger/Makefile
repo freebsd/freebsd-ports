@@ -12,7 +12,7 @@
 #
 
 PORTNAME=	avenger
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailavenger.org/dist/
 
