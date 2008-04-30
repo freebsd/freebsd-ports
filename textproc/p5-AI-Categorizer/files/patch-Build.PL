@@ -1,15 +1,9 @@
---- Build.PL	Mon Feb 20 10:02:49 2006
-+++ Build.PL	Mon Feb 20 10:03:57 2006
-@@ -27,28 +27,4 @@
- 		     },
-   );
+--- Build.PL.orig	2007-03-24 03:31:23.000000000 +0100
++++ Build.PL	2008-04-30 14:57:51.000000000 +0200
+@@ -36,12 +36,3 @@
  
--my $categorizer = File::Spec->catfile('eg', 'categorizer');
--if ($build->y_n("Do you want to install the $categorizer script to $Config{installscript}?", 'n')) {
--  $build->scripts($categorizer);
--}
--
--
+ $build->create_build_script;
+ 
 -{
 -  my $path = $build->prompt
 -    (
@@ -17,15 +11,5 @@
 -     "to the 'weka.jar' file, or '-' to search CLASSPATH, or '!' to skip:",
 -     '!'
 -    );
--  
--  if ($path eq '!') {
--    unlink "classpath" if -e "classpath";
--  } else {
--    local *FH;
--    open FH, "> classpath" or die "Can't create classpath: $!";
--    print FH $path;
--    close FH;
--  }
+-  $build->notes(classpath => $path eq '!' ? undef : $path);
 -}
--
- $build->create_build_script;
