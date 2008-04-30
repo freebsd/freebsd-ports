@@ -1,0 +1,6 @@
+This is a companion plugin to the MailerContrib. It allows you to
+trivially add a "Subscribe me" link to topics to get subscribed to
+changes.
+
+Author: Crawford Currie
+WWW: http://twiki.org/cgi-bin/view/Plugins/SubscribePlugin
