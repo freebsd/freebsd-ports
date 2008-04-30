@@ -32,20 +32,17 @@ bin/rexxwrapper-config
 %%DATADIR%%/rxdefines.h
 %%DATADIR%%/zlib/adler32.c
 %%DATADIR%%/zlib/compress.c
+%%DATADIR%%/zlib/crc32.c
+%%DATADIR%%/zlib/crc32.h
 %%DATADIR%%/zlib/deflate.c
 %%DATADIR%%/zlib/deflate.h
-%%DATADIR%%/zlib/infblock.c
-%%DATADIR%%/zlib/infblock.h
-%%DATADIR%%/zlib/infcodes.c
-%%DATADIR%%/zlib/infcodes.h
 %%DATADIR%%/zlib/inffast.c
 %%DATADIR%%/zlib/inffast.h
 %%DATADIR%%/zlib/inffixed.h
 %%DATADIR%%/zlib/inflate.c
+%%DATADIR%%/zlib/inflate.h
 %%DATADIR%%/zlib/inftrees.c
 %%DATADIR%%/zlib/inftrees.h
-%%DATADIR%%/zlib/infutil.c
-%%DATADIR%%/zlib/infutil.h
 %%DATADIR%%/zlib/trees.c
 %%DATADIR%%/zlib/trees.h
 %%DATADIR%%/zlib/uncompr.c
@@ -53,7 +50,20 @@ bin/rexxwrapper-config
 %%DATADIR%%/zlib/zlib.h
 %%DATADIR%%/zlib/zutil.c
 %%DATADIR%%/zlib/zutil.h
+share/doc/RexxWrapper-2.4/common/default.css
+share/doc/RexxWrapper-2.4/common/images/osi-certified-90x75.png
+share/doc/RexxWrapper-2.4/common/images/rexxla.png
+share/doc/RexxWrapper-2.4/common/images/sourceforge.png
+share/doc/RexxWrapper-2.4/common/images/valid-html401.png
+share/doc/RexxWrapper-2.4/common/images/vcss.png
+share/doc/RexxWrapper-2.4/images/rxwrap64.png
+share/doc/RexxWrapper-2.4/index.html
+
 @dirrm %%DATADIR%%/common
 @dirrm %%DATADIR%%/des
 @dirrm %%DATADIR%%/zlib
 @dirrm %%DATADIR%%
+@dirrm share/doc/RexxWrapper-2.4/common/images
+@dirrm share/doc/RexxWrapper-2.4/common
+@dirrm share/doc/RexxWrapper-2.4/images
+@dirrm share/doc/RexxWrapper-2.4
