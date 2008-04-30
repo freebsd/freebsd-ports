@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	blat
-PORTVERSION=	33
+PORTVERSION=	34
 CATEGORIES=	biology
 MASTER_SITES=	http://www.soe.ucsc.edu/~kent/src/
 DISTNAME=	${PORTNAME}Src${PORTVERSION}
@@ -48,10 +48,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
