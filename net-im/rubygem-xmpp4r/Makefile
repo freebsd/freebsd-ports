@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmpp4r
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://download.gna.org/xmpp4r/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ COMMENT=	XMPP/Jabber library for Ruby
 USE_RUBY=	YES
 USE_RUBY_RDOC=	YES
 
-LIB_FILES=	lib/xmpp4r.rb lib/callbacks.rb lib/xmpp4r
+LIB_FILES=	lib/xmpp4r.rb lib/xmpp4r/callbacks.rb lib/xmpp4r
 DOCS=		ChangeLog LICENSE README UPDATING
 EXAMPLES=	basic advanced
 
