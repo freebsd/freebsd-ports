@@ -1,8 +1,8 @@
---- Makefile.orig	Tue Aug 20 05:17:53 2002
-+++ Makefile	Wed May 25 13:55:10 2005
-@@ -1,33 +1,35 @@
- VER=1.6.1
--OPT=-O2 -s
+--- Makefile.orig	2007-12-03 05:19:54.000000000 +0000
++++ Makefile	2008-04-30 12:36:24.000000000 +0000
+@@ -1,37 +1,40 @@
+ VER=1.6.2
+-OPT=-O2 -s -w
 -#OPT=-O -g
 +
 +.if defined(WITH_PNG)
@@ -14,11 +14,18 @@
 +FONT=neep9
 +.else
  FONT=vtxt
+-USR_X11R6=/usr/X11R6
++.endif
++
++USR_X11R6=/usr/local
+ #USR_X11R6=/usr
+ MAN_DIR=man
+ #MAN_DIR=share/man
+ HOSTCC=$(CC)
 -# a smaller and thinner font
 -#FONT=neep9
-+.endif
  
--CFLAGS=$(OPT) -DVERSION=\"$(VER)\" $(DEFS) -I/usr/X11R6/include -I/usr/local/include -W
+-CFLAGS=$(OPT) -DVERSION=\"$(VER)\" $(DEFS) -I$(USR_X11R6)/include
 +CFLAGS+=-DVERSION=\"$(VER)\" $(DEFS) -I${LOCALBASE}/include -W
 +X11_LIBS=-L${LOCALBASE}/lib -lX11
  
@@ -28,14 +35,13 @@
  COBJS=alevt-cap.o vbi.o fdset.o misc.o hamm.o lang.o $(EXPOBJS)
  
 -ifneq ($(findstring WITH_PNG,$(DEFS)),)
--EXPLIBS=-L/usr/local/lib -lpng -lz -lm
+-EXPLIBS=-lpng -lz -lm
 -endif
 -
  all: alevt alevt-date alevt-cap alevt.1x alevt-date.1 alevt-cap.1
- 	sync
  
  alevt: $(OBJS)
--	$(CC) $(OPT) $(OBJS) -o alevt -L/usr/X11R6/lib -lX11 $(EXPLIBS)
+-	$(CC) $(OPT) $(OBJS) -o alevt -L$(USR_X11R6)/lib -L$(USR_X11R6)/lib64 -lX11 $(EXPLIBS)
 +	$(CC) $(CFLAGS) $(OBJS) -o alevt $(PNG_LIBS) $(X11_LIBS)
  
  alevt-date: $(TOBJS)
