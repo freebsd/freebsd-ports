@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AI-Categorizer
-PORTVERSION=	0.07
+PORTVERSION=	0.09
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,6 +33,8 @@ MAN3=	AI::Categorizer.3 \
 	AI::Categorizer::Document.3 \
 	AI::Categorizer::Experiment.3 \
 	AI::Categorizer::FeatureSelector.3 \
+	AI::Categorizer::FeatureSelector::CategorySelector.3 \
+	AI::Categorizer::FeatureSelector::ChiSquare.3 \
 	AI::Categorizer::FeatureSelector::DocFrequency.3 \
 	AI::Categorizer::FeatureVector.3 \
 	AI::Categorizer::Hypothesis.3 \
