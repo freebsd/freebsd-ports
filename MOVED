@@ -3468,3 +3468,5 @@ www/phpadsnew||2008-04-30|Has expired: replaced by www/openx
 x11-wm/yawm||2008-04-30|Has expired: project no longer exists
 x11-wm/uwm||2008-04-30|Has expired: Version branch long since retired
 arabic/katoob||2008-04-30|Removed on maintainers request due to inactivity of project
+security/drupal4-ldap_integration||2008-04-30|Removed due to being broken and
+clearly not used
