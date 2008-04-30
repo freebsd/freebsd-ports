@@ -1,5 +1,14 @@
---- setup.rb.orig	Tue Aug 29 19:50:14 2006
-+++ setup.rb	Tue Aug 29 19:51:57 2006
+--- setup.rb.orig	2006-04-27 02:28:12.000000000 +0400
++++ setup.rb	2008-04-29 21:18:38.101609901 +0400
+@@ -147,7 +147,7 @@
+   def standard_entries(rbconfig)
+     c = rbconfig
+ 
+-    rubypath = File.join(c['bindir'], c['ruby_install_name'] + c['EXEEXT'])
++    rubypath = ENV['RUBY'] || File.join(c['bindir'], c['ruby_install_name'] + c['EXEEXT'])
+ 
+     major = c['MAJOR'].to_i
+     minor = c['MINOR'].to_i
 @@ -227,17 +227,17 @@
                     'the directory for system configuration files'),
        PathItem.new('localstatedir', 'path', parameterize.call(c['localstatedir']),

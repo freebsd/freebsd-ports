@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rmagick
-PORTVERSION=	1.15.13
+PORTVERSION=	2.3.0
 CATEGORIES=	graphics ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
+
+LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
@@ -31,23 +33,9 @@ CONFIGURE_ARGS=	--doc-dir="${RUBY_MODDOCDIR}" --prefix="${PREFIX}"
 CONFIGURE_ARGS+=	--disable-htmldoc
 .endif
 
-OPTIONSFILE?=	${PORT_DBDIR}/${DIST_SUBDIR}-${PORTNAME}/options
-
-OPTIONS=	GRAPHICSMAGICK "Use GraphicsMagick instead of ImageMagick" Off
-
 DOCS=		ChangeLog README.html
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_GRAPHICSMAGICK)
-LIB_DEPENDS+=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
-.else
-LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
-.endif
-
-pre-configure:
-	cd ${CONFIGURE_WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ./configure --prefix="${PREFIX}"
 
 post-install:
 .if !defined(NOPORTDOCS)
