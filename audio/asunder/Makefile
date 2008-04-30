@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	1.0.2
+PORTVERSION=	1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
@@ -17,13 +17,14 @@ RUN_DEPENDS=	${LOCALBASE}/bin/cdparanoia:${PORTSDIR}/audio/cdparanoia
 
 OPTIONS=	LAME "lame support" on \
 		OGG "ogg-vorbis support" on \
-		FLAC "FLAC support" on
+		FLAC "FLAC support" on \
+		WAVPACK "WavPack support" off
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 
-DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
+PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 
 .include <bsd.port.pre.mk>
 
@@ -39,14 +40,14 @@ RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
 
-do-install:
+.if defined(WITH_WAVPACK)
+RUN_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
+.endif
+
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/asunder.desktop ${DATADIR}/
-	@${INSTALL_DATA} ${WRKSRC}/pixmaps/asunder.png ${DATADIR}/
 
 .include <bsd.port.post.mk>
