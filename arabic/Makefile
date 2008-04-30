@@ -8,7 +8,6 @@
     SUBDIR += arabtex
     SUBDIR += aspell
     SUBDIR += kacst_fonts
-    SUBDIR += katoob
     SUBDIR += kde3-i18n
     SUBDIR += khotot
     SUBDIR += koffice-i18n
