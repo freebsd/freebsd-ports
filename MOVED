@@ -3462,3 +3462,4 @@ graphics/entice||2008-04-25|Has expired: Broken and unmaintained
 security/wpa_supplicant||2008-04-26|Obsolete, newer version in base
 games/glpuzzle|games/jigzo|2008-04-28|Project renamed
 ftp/greed||2008-04-29|Has expired: No longer maintained
+x11-themes/gnome-industrial-theme||2008-04-29|Has expired: gnome-themes-extras no longer has industrial engine
