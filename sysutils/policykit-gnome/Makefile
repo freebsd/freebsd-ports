@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	policykit-gnome
-PORTVERSION=	0.7
-PORTREVISION=	3
+PORTVERSION=	0.8
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 DISTNAME=	PolicyKit-gnome-${PORTVERSION}

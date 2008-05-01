@@ -48,6 +48,7 @@ libexec/polkit-explicit-grant-helper
 libexec/polkit-grant-helper
 libexec/polkit-grant-helper-pam
 libexec/polkit-read-auth-helper
+libexec/polkit-resolve-exe-helper
 libexec/polkit-revoke-helper
 libexec/polkit-set-default-helper
 libexec/polkitd

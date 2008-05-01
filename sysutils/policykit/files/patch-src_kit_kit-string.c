@@ -1,42 +1,31 @@
---- src/kit/kit-string.c.orig	2007-12-23 00:42:03.000000000 -0500
-+++ src/kit/kit-string.c	2007-12-23 00:41:26.000000000 -0500
-@@ -77,7 +77,15 @@ kit_strdup (const char *s)
- out:
-         return p;
- }
-+#else /* !KIT_BUILD_TESTS */
-+char *
-+kit_strdup (const char *s)
+--- src/kit/kit-string.c.orig	2008-04-08 15:44:50.000000000 -0400
++++ src/kit/kit-string.c	2008-04-22 01:00:49.000000000 -0400
+@@ -113,6 +113,28 @@ out:
+ 
+ #else
+ 
++#ifndef HAVE_STRNDUP
++static char
++*strndup ( const char *s, size_t n)
 +{
-+        return strdup (s);
++        size_t nAvail;
++        char *p;
++
++        if ( !s )
++                return NULL;
++
++        if ( strlen(s) > n )
++                nAvail = n + 1;
++        else
++                nAvail = strlen(s) + 1;
++        p = malloc ( nAvail );
++        memcpy ( p, s, nAvail );
++        p[nAvail - 1] = '\0';
++
++        return p;
 +}
-+#endif /* KIT_BUILD_TESTS */
- 
-+#if defined(KIT_BUILD_TESTS) || !defined(HAVE_STRNDUP)
- /**
-  * kit_strndup:
-  * @s: string
-@@ -111,13 +119,7 @@ out:
-         return p;
- }
- 
--#else
--
--char *
--kit_strdup (const char *s)
--{
--        return strdup (s);
--}
-+#else /* !KIT_BUILD_TESTS || HAVE_STRNDUP */
- 
++#endif
++
  char *
- kit_strndup (const char *s, size_t n)
-@@ -125,7 +127,7 @@ kit_strndup (const char *s, size_t n)
-         return strndup (s, n);
- }
- 
--#endif /* KIT_BUILD_TESTS */
-+#endif /* KIT_BUILD_TESTS || !HAVE_STRNDUP */
- 
- /**
-  * kit_strdup_printf:
+ kit_strdup (const char *s)
+ {

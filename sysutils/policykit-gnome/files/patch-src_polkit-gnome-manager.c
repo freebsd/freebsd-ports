@@ -1,6 +1,6 @@
---- src/polkit-gnome-manager.c.orig	2008-03-28 13:00:47.000000000 -0400
-+++ src/polkit-gnome-manager.c	2008-03-28 13:01:56.000000000 -0400
-@@ -363,7 +363,11 @@ get_exe_for_pid (pid_t pid)
+--- src/polkit-gnome-manager.c.orig	2008-04-16 21:44:19.000000000 -0400
++++ src/polkit-gnome-manager.c	2008-04-19 01:17:11.000000000 -0400
+@@ -364,7 +364,11 @@ get_exe_for_pid (pid_t pid)
  
          result = NULL;
  
