@@ -1,0 +1,70 @@
+Index: kqemu-freebsd.c
+@@ -33,6 +33,11 @@
+ 
+ #include <machine/vmparam.h>
+ #include <machine/stdarg.h>
++#ifdef __x86_64__
++#include <sys/pcpu.h>
++#include <machine/segments.h>
++#include <machine/tss.h>
++#endif
+ 
+ #include "kqemu-kernel.h"
+ 
+@@ -234,6 +239,19 @@
+     va_end(ap);
+ }
+ 
++#ifdef __x86_64__
++/* called with interrupts disabled */
++void CDECL kqemu_tss_workaround(void)
++{
++    int gsel_tss = GSEL(GPROC0_SEL, SEL_KPL);
++
++    gdt_segs[GPROC0_SEL].ssd_base = (long) &common_tss[PCPU_GET(cpuid)];
++    ssdtosyssd(&gdt_segs[GPROC0_SEL],
++       (struct system_segment_descriptor *)&gdt[GPROC0_SEL]);
++    ltr(gsel_tss);
++}
++#endif
++
+ struct kqemu_instance { 
+ #if __FreeBSD_version >= 500000
+     TAILQ_ENTRY(kqemu_instance) kqemu_ent;
+Index: common/kernel.c
+@@ -1025,6 +1025,9 @@
+ #ifdef __x86_64__
+     uint16_t saved_ds, saved_es;
+     unsigned long fs_base, gs_base;
++#ifdef __FreeBSD__
++    struct kqemu_global_state *g = s->global_state;
++#endif
+ #endif
+     
+ #ifdef PROFILE
+@@ -1188,6 +1191,13 @@
+             apic_restore_nmi(s, apic_nmi_mask);
+         }
+         profile_record(s);
++#ifdef __FreeBSD__
++#ifdef __x86_64__
++        spin_lock(&g->lock);
++        kqemu_tss_workaround();
++        spin_unlock(&g->lock);
++#endif
++#endif
+ 
+         if (s->mon_req == MON_REQ_IRQ) {
+             struct kqemu_exception_regs *r;
+Index: kqemu-kernel.h
+@@ -44,4 +44,10 @@
+ 
+ void CDECL kqemu_log(const char *fmt, ...);
+ 
++#ifdef __FreeBSD__
++#ifdef __x86_64__
++void CDECL kqemu_tss_workaround(void);
++#endif
++#endif
++
+ #endif /* KQEMU_KERNEL_H */
