@@ -1,6 +1,6 @@
 %%I386%%lib/dri/i810_dri.so
 %%I386_AMD64%%lib/dri/i915_dri.so
-%%I386%%lib/dri/i965_dri.so
+%%I386_AMD64%%lib/dri/i965_dri.so
 lib/dri/mach64_dri.so
 lib/dri/mga_dri.so
 lib/dri/r128_dri.so
