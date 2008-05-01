@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_CompatInfo
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -20,14 +20,16 @@ USE_DOS2UNIX=	yes
 
 CATEGORY=	PHP
 FILES=		CompatInfo/Cli.php CompatInfo/const_array.php \
-		CompatInfo/func_array.php CompatInfo.php
+		CompatInfo/func_array.php scripts/compatinfo.bat scripts/pci.php \
+		CompatInfo.php
 EXAMPLES=	checkConstants.php checkExtensions.php checkPHP5.php \
 		ci_frontend.php cliCustom.php cliOutput.txt \
 		ignorePHP5implements.php parseArray.php parseDir.php \
 		parseFile.php parseString.php
 TESTS=		emptyDir/empty_dir.txt parseDir/PHP5/tokens.php5 \
-		parseDir/extensions.php parseDir/phpinfo.php \
-		parseFile/conditional.php parseFile/empty.php \
+		parseDir/PHP5/upload_error.php parseDir/extensions.php \
+		parseDir/phpinfo.php parseFile/conditional.php \
+		parseFile/empty.php parseFile/ignore_functions_match.php \
 		parseFile/math.php parseFile/PackageUpdate.php \
 		parseFile/php5_method_chaining.php \
 		parseFile/php5_method_chaining_samp2.php \
