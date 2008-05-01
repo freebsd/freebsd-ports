@@ -3,6 +3,7 @@ OPTIONS=	PERL "Enable Perl interpreter" off \
 		RUBY "Enable Ruby interpreter" off \
 		CSCOPE "Enable cscope" off \
 		EXUBERANT_CTAGS "Use exctags instead of ctags" off \
+		X11 "X11 GUI (must enable if things below are)" off \
 		ATHENA "Athena GUI" off \
 		GTK2 "GTK2 GUI" off \
 		GNOME "Gnome1 GUI" off \
