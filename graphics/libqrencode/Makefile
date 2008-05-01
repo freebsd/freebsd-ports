@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	libqrencode
-PORTVERSION=	2.0.0
+PORTVERSION=	3.0.0
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://megaui.net/fukuchi/works/qrencode/
 DISTNAME=	qrencode-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A C library for encoding data in a QR Code symbol
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
@@ -29,7 +29,7 @@ MAN1=		qrencode.1
 PLIST_FILES=	bin/qrencode \
 		include/qrencode.h \
 		lib/libqrencode.so \
-		lib/libqrencode.so.2 \
+		lib/libqrencode.so.3 \
 		libdata/pkgconfig/libqrencode.pc
 
 .include <bsd.port.mk>
