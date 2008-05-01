@@ -170,6 +170,7 @@ smokeping/lib/Smokeping/probes/LDAP.pm
 smokeping/lib/Smokeping/probes/Radius.pm
 smokeping/lib/Smokeping/probes/RemoteFPing.pm
 smokeping/lib/Smokeping/probes/SSH.pm
+smokeping/lib/Smokeping/probes/TCPPing.pm
 smokeping/lib/Smokeping/probes/TacacsPlus.pm
 smokeping/lib/Smokeping/probes/TelnetIOSPing.pm
 smokeping/lib/Smokeping/probes/TelnetJunOSPing.pm

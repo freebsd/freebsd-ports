@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	2.2.7
-PORTREVISION=	2
+PORTVERSION=	2.3.6
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -17,11 +16,12 @@ COMMENT=	Latency logging and graphing system
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		p5-CGI-SpeedyCGI>0:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
-		p5-SNMP_Session>0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		p5-CGI.pm>0:${PORTSDIR}/www/p5-CGI.pm \
+		p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-Digest-MD5>0:${PORTSDIR}/security/p5-Digest-MD5 \
-		p5-Pod-Parser>0:${PORTSDIR}/textproc/p5-Pod-Parser \
 		p5-Net>0:${PORTSDIR}/net/p5-Net \
+		p5-Pod-Parser>0:${PORTSDIR}/textproc/p5-Pod-Parser \
+		p5-SNMP_Session>0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
@@ -192,6 +192,7 @@ ETC1=		basepage.html config smokemail tmail
 post-extract:
 	${RM} ${WRKSRC}/lib/BER.pm
 	${RM} ${WRKSRC}/lib/SNMP_*.pm
+	${RM} -rf ${WRKSRC}/lib/Digest
 
 pre-patch:
 	${REINPLACE_CMD} -e s!/usr/bin/!%%PREFIX%%/bin/! \
