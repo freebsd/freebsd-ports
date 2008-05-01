@@ -1,5 +1,5 @@
---- src/polkit/polkit-config.c.orig	2007-12-23 00:25:46.000000000 -0500
-+++ src/polkit/polkit-config.c	2007-12-23 00:25:51.000000000 -0500
+--- src/polkit/polkit-config.c.orig	2008-04-21 19:47:19.000000000 -0400
++++ src/polkit/polkit-config.c	2008-04-21 19:47:27.000000000 -0400
 @@ -39,7 +39,6 @@
  #include <grp.h>
  #include <unistd.h>

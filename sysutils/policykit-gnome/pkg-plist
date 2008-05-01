@@ -17,5 +17,14 @@ share/dbus-1/services/gnome-org.freedesktop.PolicyKit.AuthenticationAgent.servic
 share/dbus-1/services/org.gnome.PolicyKit.AuthorizationManager.service
 share/dbus-1/services/org.gnome.PolicyKit.service
 share/locale/da/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/el/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/en_GB/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/es/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/fi/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/fr/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/he/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/hu/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/ja/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/sv/LC_MESSAGES/PolicyKit-gnome.mo
 @dirrmtry share/applications
 @dirrm include/PolicyKit/polkit-gnome
