@@ -73,6 +73,7 @@ _bgpd:*:130:130:BGP Daemon:/var/empty:/usr/sbin/nologin
 _ospfd:*:131:131:OSPF Daemon:/var/empty:/usr/sbin/nologin
 _spamd:*:132:132:Spam Daemon:/var/empty:/usr/sbin/nologin
 freeradius:*:133:133:FreeRADIUS Daemon:/nonexistent:/usr/sbin/nologin
+undernet:*:134:134:Undernet ircu Daemon:/nonexistant:/usr/sbin/nologin
 cricket:*:141:80:Cricket Monitoring User:/usr/local/cricket:/usr/sbin/nologin
 dovecot:*:143:143:Dovecot User:/var/empty:/usr/sbin/nologin
 rbldns:*:153:153:rbldnsd pseudo-user:/nonexistent:/usr/sbin/nologin
