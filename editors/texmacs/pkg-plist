@@ -27,7 +27,6 @@ libexec/TeXmacs/bin/tm_python
 libexec/TeXmacs/bin/tm_r
 libexec/TeXmacs/bin/tm_reduce
 libexec/TeXmacs/bin/tm_sage
-libexec/TeXmacs/bin/tm_shell
 libexec/TeXmacs/bin/tm_xypic
 share/TeXmacs/LICENSE
 share/TeXmacs/doc/about/about-summary.de.tm
@@ -2129,7 +2128,6 @@ share/TeXmacs/progs/generic/generic-kbd.scm
 share/TeXmacs/progs/generic/insert-menu.scm
 share/TeXmacs/progs/graphics/graphics-edit.scm
 share/TeXmacs/progs/graphics/graphics-env.scm
-share/TeXmacs/progs/graphics/graphics-env.scm.orig
 share/TeXmacs/progs/graphics/graphics-group.scm
 share/TeXmacs/progs/graphics/graphics-kbd.scm
 share/TeXmacs/progs/graphics/graphics-main.scm
