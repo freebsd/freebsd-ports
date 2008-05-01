@@ -1,0 +1,24 @@
+BINDIR = ${PREFIX}/bin
+MANDIR = ${PREFIX}/man/man8
+
+.if !empty(OPENSSLBASE) && ${OPENSSLBASE} != "/usr"
+CFLAGS+= -I${OPENSSLINC}
+LDADD+=	-L${OPENSSLLIB}
+.endif
+LDADD+= -lcrypto
+
+WARNS	= 3
+
+# Manual page appears to have been removed from the distribution.
+# This is being investigated...
+#MAN8	= sscep.8
+NO_MAN	= yes
+
+PROG	= sscep
+SRCS    = sscep.c init.c net.c sceputils.c pkcs7.c ias.c fileutils.c
+
+beforeinstall:
+	${BSD_INSTALL_SCRIPT} ${.CURDIR}/mkrequest ${BINDIR}/
+	${BSD_INSTALL_DATA} ${.CURDIR}/sscep.conf ${PREFIX}/etc/sscep.conf.sample
+
+.include <bsd.prog.mk>
