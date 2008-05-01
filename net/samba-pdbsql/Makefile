@@ -6,27 +6,24 @@
 #
 
 PORTNAME=		pdbsql
-PORTVERSION=		0.2
-PORTREVISION=		1
+PORTVERSION=		0.3.1
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	pdbsql
 PKGNAMEPREFIX=		samba-
-DISTNAME=		${PORTNAME}-${PORTVERSION}-${PKGNAMEPREFIX}${SAMBA_VERSION}
+DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Multiplexor, MySQL and PostgeSQL passdb backends for Samba3
-
-BROKEN=			Does not compile
 
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 # Add a build dependency for Samba port
 USE_AUTOTOOLS=		autoconf:261 autoheader:261
+WRKSRC=                 ${WRKDIR}/${DISTNAME}-samba
 
 SAMBA_PORT=		net/samba3
-SAMBA_VERSION=		3.0.23
 
 OPTIONS=		MYSQL	"With MySQL passdb backend"		on \
 			PGSQL	"With PostgreSQL passdb backend"	on
