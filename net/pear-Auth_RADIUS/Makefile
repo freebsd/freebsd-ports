@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Auth_RADIUS
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	net security pear
 
 MAINTAINER=	chinsan@FreeBSD.org
