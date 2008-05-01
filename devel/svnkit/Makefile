@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svnkit
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	devel java
 MASTER_SITES=	http://svnkit.com/
 DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
@@ -16,20 +16,18 @@ COMMENT=	The only pure Java Subversion client library in the world
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-BROKEN=		does not fetch
-
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.3855
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.4142
 
 DATA_FILES=	COPYING \
 		JNA-LICENSE JAVAHL-LICENSE SEQUENCE-LICENSE TRILEAD-LICENSE \
 		changelog.txt logging.properties.disabled svnkitsrc.zip \
 		jna.jar svnkit-cli.jar svnkit-javahl.jar svnkit.jar trilead.jar \
-		README.txt
+		README.txt THIRD-PARTY.txt
 
 PLIST_FILES=	bin/jsvn bin/jsvnadmin bin/jsvnlook \
 		bin/jsvnsync bin/jsvnversion \
