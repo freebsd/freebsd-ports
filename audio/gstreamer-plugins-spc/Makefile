@@ -14,4 +14,6 @@ GST_PLUGIN=	spc
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
+BROKEN=		does not compile
+
 .include "${MASTERDIR}/Makefile"
