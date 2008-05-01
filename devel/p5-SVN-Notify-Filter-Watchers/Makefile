@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Notify-Filter-Watchers
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	Subscribe to SVN::Notify commits with a Subversion property
 
-RUN_DEPENDS=	p5-SVN-Notify>=2.71:${PORTSDIR}/devel/p5-SVN-Notify
-BUILD_DEPENDS=	p5-SVN-Notify>=2.71:${PORTSDIR}/devel/p5-SVN-Notify
+RUN_DEPENDS=	p5-SVN-Notify>=2.72:${PORTSDIR}/devel/p5-SVN-Notify
+BUILD_DEPENDS=	p5-SVN-Notify>=2.72:${PORTSDIR}/devel/p5-SVN-Notify
 
 PERL_CONFIGURE=	yes
 
