@@ -20,6 +20,7 @@
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
     SUBDIR += clhep
+    SUBDIR += colt
     SUBDIR += crf++
     SUBDIR += dcl
     SUBDIR += devisor

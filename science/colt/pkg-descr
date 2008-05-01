@@ -1,0 +1,11 @@
+Colt is a package for scalable scientific and technical computing in Java. It
+consists of several free Java libraries, for user convenience bundled under one
+single uniform umbrella. Namely the Colt library, the Jet library, the CoreJava
+library, and the Concurrent library.
+
+The Colt library provides fundamental general-purpose data structures optimized
+for numerical data, such as resizable arrays, dense and sparse matrices
+(multi-dimensional arrays), linear algebra, associative containers and buffer
+management. 
+
+WWW: http://dsd.lbl.gov/~hoschek/colt/
