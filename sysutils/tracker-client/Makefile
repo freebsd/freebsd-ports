@@ -49,7 +49,7 @@ CONFIGURE_ARGS=	--enable-video-extractor=gstreamer \
 .include <bsd.port.pre.mk>
 
 .if defined(TRACKER_SLAVE)
-LIB_DEPENDS+=	trackerclient:${PORTSDIR}/sysutils/tracker
+LIB_DEPENDS+=	trackerclient:${PORTSDIR}/sysutils/tracker-client
 . if ${TRACKER_SLAVE}=="gnome"
 PKGNAMESUFFIX=	-gnome
 LIB_DEPENDS+=	tracker-gtk:${PORTSDIR}/sysutils/tracker-libtrackergtk
