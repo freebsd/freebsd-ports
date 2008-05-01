@@ -1,0 +1,40 @@
+#!/bin/sh
+
+if [ "x$2" != "xPRE-INSTALL" ]; then
+       exit 0;
+fi
+
+	USER=undernet
+	GROUP=${USER}
+	UID=134
+	GID=${UID}
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+		if pw usermod ${USER} -d "/nonexistant"
+		then
+			echo "Changed home directory of \"${USER}\" to \"${NONEXISTENT}\""
+		else
+			echo "Changing home directory of \"${USER}\" to \"${NONEXISTENT}\" failed..."
+			exit 1
+		fi
+	else
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-d "/nonexistant" -s "/sbin/nologin" -c "Undernet ircu Daemon"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi

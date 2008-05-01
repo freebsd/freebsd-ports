@@ -1,20 +1,20 @@
---- ircd/Makefile.in	Sat Nov  1 05:19:09 2003
-+++ ircd/Makefile.in	Wed Feb 18 01:45:08 2004
-@@ -273,7 +273,7 @@
- 	  ${LN_S} ircd.`cat /tmp/ircd.tag` ${SYMLINK}; )
+--- ircd/Makefile.in	2007-10-29 21:16:57.000000000 -0400
++++ ircd/Makefile.in	2008-04-12 21:30:24.000000000 -0400
+@@ -288,7 +288,7 @@
  	@${RM} /tmp/ircd.tag
- 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} chkconf ${BINDIR}
+ 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} umkpasswd ${BINDIR}
+ 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} convert-conf ${BINDIR}
 -	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}
 +	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}/ircd.conf.example
- # 	( cd ${DPATH}; \
- # 	  ${TOUCH} ${MPATH}; \
- # 	  ${TOUCH} ${RPATH}; \
-@@ -291,7 +291,7 @@
- 	@echo "Installing new ircd as ${BINDIR}/ircd :"
+ 
+ install-no-symlink: build mkbindir
+ 	@if [ ! -d ${DPATH} -a ! -f ${DPATH} ]; then \
+@@ -302,7 +302,7 @@
  	${INSTALL} -m ${IRCDMODE} -o ${IRCDOWN} -g ${IRCDGRP} ircd ${BINDIR}/ircd
- 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} chkconf ${BINDIR}
+ 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} umkpasswd ${BINDIR}
+ 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} convert-conf ${BINDIR}
 -	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}
 +	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}/ircd.conf.example
- # 	( cd ${DPATH}; \
- # 	  ${TOUCH} ${MPATH}; \
- # 	  ${TOUCH} ${RPATH}; \
+ 
+ uninstall:
+ 	@if [ "${BINDIR}" != "${DPATH}" ]; then \
