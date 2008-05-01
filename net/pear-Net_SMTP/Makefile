@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_SMTP
-PORTVERSION=	1.2.10
+PORTVERSION=	1.3.0
 CATEGORIES=	net mail www pear
 
 MAINTAINER=	bg1tpt@gmail.com
@@ -20,7 +20,6 @@ FILES=		SMTP.php
 DOCS=		guide.txt
 TESTS=		auth.phpt basic.phpt config.php.dist quotedata.phpt
 EXAMPLES=	basic.php
-_EXAMPLESDIR=	docs/examples
 
 LATEST_LINK=	pear-Net_SMTP
 OPTIONS=	PEAR_AUTH_SASL "PEAR::Auth_SASL support" off
