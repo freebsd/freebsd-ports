@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	mt-daapd
-PORTVERSION=	0.2.4.1
-CATEGORIES=	audio
+PORTVERSION=	0.2.4.2
+CATEGORIES=	audio japanese
 MASTER_SITES=	SF
 
 MAINTAINER=	mark@foster.cc
 COMMENT=	Multithread daapd yet another Server for Apple iTunes
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
-LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag
+#BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
@@ -25,6 +26,12 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-id3tag=${PREFIX} --with-gdbm-includes=${LOCALBASE}/include
 
 USE_AUTOTOOLS=	autoheader:261 autoconf:261:env
+
+USE_ICONV=	yes
+PATCH_SITES+=	http://www.apionet.or.jp/~tomi/
+PATCH_SITES+=	${MASTER_SITE_LOCAL}
+PATCHFILES+=	mt-daapd-0.2.4.1-cp932.patch
+PATCH_DIST_STRIP+=	-p1
 
 DAAPD_USER?=	daapd
 DAAPD_GROUP?=	daapd
