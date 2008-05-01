@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.28
+PORTVERSION?=		3.0.28a
 PORTREVISION=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -110,7 +110,7 @@ CONFIGURE_ARGS+=	--with-pam --with-readline --with-sendfile-support \
 IGNORE=			doesn't compile when tdb is installed. Uninstall databases/tdb port
 .endif
 
-# Let proccess generate meaningful backtrace on core dump
+# Let process generate meaningful backtrace on core dump
 LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 .if !defined(WITHOUT_LDAP)
