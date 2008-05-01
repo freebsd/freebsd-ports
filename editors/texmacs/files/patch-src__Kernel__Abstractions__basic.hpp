@@ -1,5 +1,5 @@
---- src/Classes/Abstract/basic.hpp.orig	Sat Dec  3 03:08:07 2005
-+++ src/Classes/Abstract/basic.hpp	Mon Dec  5 18:43:02 2005
+--- src/Kernel/Abstractions/basic.hpp.orig	2008-05-01 17:24:56.000000000 +0800
++++ src/Kernel/Abstractions/basic.hpp	2008-05-01 17:25:51.000000000 +0800
 @@ -24,9 +24,10 @@
  // instead of include <iostream.h>
  
