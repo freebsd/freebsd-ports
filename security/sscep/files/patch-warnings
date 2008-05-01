@@ -1,0 +1,322 @@
+Fix a lot of warnings and (what seems to be) two errors...
+
+	-mi
+
+--- ias.h	2006-03-13 06:45:20.000000000 -0500
++++ ias.h	2008-04-29 10:03:02.000000000 -0400
+@@ -6,13 +6,6 @@
+  */
+ 
+-/* Macros */
+-
+-#define i2d_pkcs7_issuer_and_subject_bio(bp, ias) \
+-	ASN1_i2d_bio(i2d_pkcs7_issuer_and_subject, bp, (unsigned char *)ias)
+-#define i2d_PKCS7_ISSUER_AND_SERIAL_bio(bp, ias)  \
+-	ASN1_i2d_bio(i2d_PKCS7_ISSUER_AND_SERIAL, bp, (unsigned char *)ias)
+-
+ /* Routines */
+-int i2d_pkcs7_issuer_and_subject(pkcs7_issuer_and_subject *, unsigned char **);
++int i2d_pkcs7_issuer_and_subject(void *, unsigned char **);
+ pkcs7_issuer_and_subject *
+ d2i_pkcs7_issuer_and_subject(pkcs7_issuer_and_subject **, unsigned char **,
+--- net.c	2007-12-27 01:08:39.000000000 -0500
++++ net.c	2008-04-29 10:03:02.000000000 -0400
+@@ -151,13 +151,13 @@
+ 
+ /* URL-encode the input and return back encoded string */
+-char * url_encode(char *s, size_t n) {
++char * url_encode(const char *s, size_t n) {
+ 	char	*r;
+ 	size_t	len;
+-	int     i;
++	size_t	i;
+ 	char    ch[2];
+ 
+ 	/* Allocate 2 times bigger space than the original string */
+ 	len = 2 * n;
+-	r = (char *)malloc(len);	
++	r = malloc(len);	
+ 	if (r == NULL) {
+ 		return NULL;
+--- pkcs7.c	2006-03-13 06:45:21.000000000 -0500
++++ pkcs7.c	2008-04-29 10:03:02.000000000 -0400
+@@ -10,4 +10,18 @@
+ #include "ias.h"
+ 
++static int
++pkcs7_translator(void *p, unsigned char **out)
++{
++	return i2d_PKCS7_ISSUER_AND_SERIAL(p, out);
++}
++#define i2d_pkcs7_issuer_and_subject_bio(bp, ias) \
++	ASN1_i2d_bio(i2d_pkcs7_issuer_and_subject, bp, (unsigned char *)ias)
++#define i2d_PKCS7_ISSUER_AND_SERIAL_bio(bp, ias)  \
++	ASN1_i2d_bio(pkcs7_translator, bp, (unsigned char *)ias)
++
++static int add_attribute_string(STACK_OF(X509_ATTRIBUTE) *, int,
++    const char *);
++static int add_attribute_octet(STACK_OF(X509_ATTRIBUTE) *, int,
++    const char *, int);
+ /*
+  * Wrap data in PKCS#7 envelopes and base64-encode the result.
+@@ -64,5 +78,5 @@
+ 				exit (SCEP_PKISTATUS_P7);
+ 			}
+-			BIO_flush(databio);
++			(void)BIO_flush(databio);
+ 			BIO_set_flags(databio, BIO_FLAGS_MEM_RDONLY); 
+ 			break;
+@@ -90,5 +104,5 @@
+ 				exit (SCEP_PKISTATUS_P7);
+ 			}
+-			BIO_flush(databio);
++			(void)BIO_flush(databio);
+ 			BIO_set_flags(databio, BIO_FLAGS_MEM_RDONLY); 
+ 			break;
+@@ -100,5 +114,5 @@
+ 			/* Signer cert */
+ 			signercert = localcert;
+-			signercert = rsa;
++			signerkey = rsa;
+ 
+ 			/* Read data in memory bio */
+@@ -111,5 +125,5 @@
+ 				exit (SCEP_PKISTATUS_P7);
+ 			}
+-			BIO_flush(databio);
++			(void)BIO_flush(databio);
+ 			BIO_set_flags(databio, BIO_FLAGS_MEM_RDONLY); 
+ 			break;
+@@ -121,5 +135,5 @@
+ 			/* Signer cert */
+ 			signercert = localcert;
+-			signercert = rsa;
++			signerkey = rsa;
+ 
+ 			/* Read data in memory bio */
+@@ -132,5 +146,5 @@
+ 				exit (SCEP_PKISTATUS_P7);
+ 			}
+-			BIO_flush(databio);
++			(void)BIO_flush(databio);
+ 			BIO_set_flags(databio, BIO_FLAGS_MEM_RDONLY); 
+ 			break;
+@@ -195,5 +209,5 @@
+ 		exit (SCEP_PKISTATUS_P7);
+ 	}
+-	BIO_flush(memorybio);
++	(void)BIO_flush(memorybio);
+ 	BIO_set_flags(memorybio, BIO_FLAGS_MEM_RDONLY); 
+ 	len = BIO_get_mem_data(memorybio, &buffer);
+@@ -298,5 +312,5 @@
+ 	/* Copy PKCS#7 */
+ 	i2d_PKCS7_bio(outbio, s->request_p7);
+-	BIO_flush(outbio);
++	(void)BIO_flush(outbio);
+ 	BIO_set_flags(memorybio, BIO_FLAGS_MEM_RDONLY);
+ 	s->request_len = BIO_get_mem_data(memorybio, &s->request_payload);
+@@ -370,5 +384,5 @@
+ 		BIO_write(outbio, buffer, bytes);
+ 	}
+-	BIO_flush(outbio);
++	(void)BIO_flush(outbio);
+ 	if (v_flag)
+ 		printf("%s: PKCS#7 contains %d bytes of enveloped data\n",
+@@ -584,5 +598,5 @@
+ 		exit (SCEP_PKISTATUS_P7);
+ 	}
+-	BIO_flush(outbio);
++	(void)BIO_flush(outbio);
+ 
+ 	/* Write decrypted data */
+@@ -599,6 +613,6 @@
+ 
+ /* Add signed attributes */
+-int
+-add_attribute_string(STACK_OF(X509_ATTRIBUTE) *attrs, int nid, char *buffer) {
++static int
++add_attribute_string(STACK_OF(X509_ATTRIBUTE) *attrs, int nid, const char *buffer) {
+ 	ASN1_STRING     *asn1_string = NULL;
+ 	X509_ATTRIBUTE  *x509_a;
+@@ -623,6 +637,6 @@
+ 
+ }
+-int
+-add_attribute_octet(STACK_OF(X509_ATTRIBUTE) *attrs, int nid, char *buffer,
++static int
++add_attribute_octet(STACK_OF(X509_ATTRIBUTE) *attrs, int nid, const char *buffer,
+ 		int len) {
+ 	ASN1_STRING     *asn1_string = NULL;
+--- ias.c	2006-03-13 06:45:20.000000000 -0500
++++ ias.c	2008-04-29 10:03:02.000000000 -0400
+@@ -15,7 +15,8 @@
+ #include "ias.h"
+ 
+-int i2d_pkcs7_issuer_and_subject(pkcs7_issuer_and_subject *a,
++int i2d_pkcs7_issuer_and_subject(void *pv,
+ 	     unsigned char **pp) {
+ 
++	pkcs7_issuer_and_subject *a = pv;
+ 	M_ASN1_I2D_vars(a);
+ 	M_ASN1_I2D_len(a->issuer,i2d_X509_NAME);
+--- sceputils.c	2006-03-13 06:45:22.000000000 -0500
++++ sceputils.c	2008-04-29 10:03:02.000000000 -0400
+@@ -48,5 +48,5 @@
+  */
+ int new_selfsigned(struct scep *s) {
+-	unsigned char		 *ptr;
++	const unsigned char	 *ptr;
+ 	X509			 *cert;
+ 	X509_NAME		 *subject;
+@@ -99,5 +99,5 @@
+ 	}
+ 	/* Get serial no from transaction id */
+-	ptr = (unsigned char *)s->transaction_id;
++	ptr = (const unsigned char *)s->transaction_id;
+ 	if (!(serial = c2i_ASN1_INTEGER(NULL, &ptr, 32))) {
+ 		fprintf(stderr, "%s: error converting serial\n", pname);
+@@ -231,5 +231,5 @@
+ 	
+ 	/* Assign space for ASCII presentation of the digest */
+-	str = (unsigned char *)malloc(2 * MD5_DIGEST_LENGTH + 1);
++	str = malloc(2 * MD5_DIGEST_LENGTH + 1); /* XXX this is never freed */
+ 	ret = str;
+ 
+@@ -246,5 +246,5 @@
+ 	/* Copy as ASCII string and return: */
+ 	for (c = 0; c < MD5_DIGEST_LENGTH; c++, str += 2) {
+-		sprintf((char *)str, "%02X", md[c]);
++		sprintf(str, "%02X", md[c]);
+ 
+ 	}
+@@ -252,4 +252,2 @@
+ 	return(ret);
+ }
+-
+-
+--- sscep.h	2007-12-27 01:15:38.000000000 -0500
++++ sscep.h	2008-04-29 10:03:02.000000000 -0400
+@@ -139,7 +139,7 @@
+ 
+ /* Fingerprint, signing and encryption algorithms */
+-EVP_MD *fp_alg;
+-EVP_MD *sig_alg;
+-EVP_CIPHER *enc_alg;
++const EVP_MD *fp_alg;
++const EVP_MD *sig_alg;
++const EVP_CIPHER *enc_alg;
+ 
+ /* OpenSSL OID handles */
+@@ -188,5 +188,5 @@
+ 	/* SCEP message types */
+ 	int request_type;
+-	char *request_type_str;
++	const char *request_type_str;
+ 	int reply_type;
+ 	char *reply_type_str;
+@@ -199,5 +199,5 @@
+ 
+ 	/* SCEP transaction attributes */
+-	char *transaction_id;
++	const char *transaction_id;
+ 	unsigned char *sender_nonce;
+ 	int sender_nonce_len;
+@@ -237,7 +237,4 @@
+ int send_msg (struct http_reply *, char *, char *, int, int);
+ 
+-/* Catch SIGALRM */
+-void catchalarm (int);
+-
+ /* Get config file parameter */
+ char *get_string (char *);
+@@ -291,10 +288,4 @@
+ int pkcs7_unwrap(struct scep *);
+ 
+-/* Add signed string attribute */
+-int add_attribute_string(STACK_OF(X509_ATTRIBUTE) *, int, char *);
+-
+-/* Add signed octet attribute */
+-int add_attribute_octet(STACK_OF(X509_ATTRIBUTE) *, int, char *, int);
+-
+ /* Find signed attributes */
+ int get_signed_attribute(STACK_OF(X509_ATTRIBUTE) *, int, int, char **);
+@@ -302,5 +293,5 @@
+ 
+ /* URL-endcode */
+-char *url_encode (char *, size_t);
++char *url_encode (const char *, size_t);
+ 
+ /* End of Functions */
+--- cmd.h	2006-03-13 06:45:14.000000000 -0500
++++ cmd.h	2008-04-29 10:03:02.000000000 -0400
+@@ -45,5 +45,5 @@
+ 
+ /* CA identifier */
+-char *i_char;
++const char *i_char;
+ int i_flag;
+ 
+--- sscep.c	2007-12-27 01:08:39.000000000 -0500
++++ sscep.c	2008-04-29 10:03:15.000000000 -0400
+@@ -64,4 +64,10 @@
+ } /* handle_serial */
+ 
++static void
++catchalarm(int signo __unused) {
++	fprintf(stderr, "%s: connection timed out\n", pname);
++	exit (SCEP_PKISTATUS_TIMEOUT);
++}
++
+ int
+ main(int argc, char **argv) {
+@@ -349,11 +355,11 @@
+ 	/* Check algorithms */
+ 	if (!E_flag) {
+-		enc_alg = (EVP_CIPHER *)EVP_des_cbc();
++		enc_alg = EVP_des_cbc();
+ 	} else if (!strncmp(E_char, "blowfish", 8)) {
+-		enc_alg = (EVP_CIPHER *)EVP_bf_cbc();
++		enc_alg = EVP_bf_cbc();
+ 	} else if (!strncmp(E_char, "des", 3)) {
+-		enc_alg = (EVP_CIPHER *)EVP_des_cbc();
++		enc_alg = EVP_des_cbc();
+ 	} else if (!strncmp(E_char, "3des", 4)) {
+-		enc_alg = (EVP_CIPHER *)EVP_des_ede3_cbc();
++		enc_alg = EVP_des_ede3_cbc();
+ 	} else {
+ 		fprintf(stderr, "%s: unsupported algorithm: %s\n",
+@@ -362,9 +368,9 @@
+ 	}
+ 	if (!S_flag) {
+-		sig_alg = (EVP_MD *)EVP_md5();
++		sig_alg = EVP_md5();
+ 	} else if (!strncmp(S_char, "md5", 3)) {
+-		sig_alg = (EVP_MD *)EVP_md5();
++		sig_alg = EVP_md5();
+ 	} else if (!strncmp(S_char, "sha1", 4)) {
+-		sig_alg = (EVP_MD *)EVP_sha1();
++		sig_alg = EVP_sha1();
+ 	} else {
+ 		fprintf(stderr, "%s: unsupported algorithm: %s\n",
+@@ -374,9 +380,9 @@
+ 	/* Fingerprint algorithm */
+ 	if (!F_flag) {
+-		fp_alg = (EVP_MD *)EVP_md5();
++		fp_alg = EVP_md5();
+ 	} else if (!strncmp(F_char, "md5", 3)) {
+-		fp_alg = (EVP_MD *)EVP_md5();
++		fp_alg = EVP_md5();
+ 	} else if (!strncmp(F_char, "sha1", 4)) {
+-		fp_alg = (EVP_MD *)EVP_sha1();
++		fp_alg = EVP_sha1();
+ 	} else {
+ 		fprintf(stderr, "%s: unsupported algorithm: %s\n",
+@@ -778,8 +784,2 @@
+ 	exit(0);
+ }
+-
+-void
+-catchalarm(int signo) {
+-	fprintf(stderr, "%s: connection timed out\n", pname);
+-	exit (SCEP_PKISTATUS_TIMEOUT);
+-}
