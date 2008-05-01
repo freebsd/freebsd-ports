@@ -23,6 +23,8 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		fftw3f.4:${PORTSDIR}/math/fftw3-float \
 		tag.5:${PORTSDIR}/audio/taglib
 
+BROKEN=		does not configure
+
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
