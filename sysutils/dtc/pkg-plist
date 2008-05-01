@@ -732,8 +732,6 @@
 %%LOCALBASE%%/www/dtc/client/imgcache
 sbin/dtc-install
 sbin/dtc-deinstall
-%%LOCALBASE%%/dtc/email/gfx
-%%LOCALBASE%%/dtc/email/imgcache
 @dirrm %%LOCALBASE%%/www/dtc/shared/visitors_template
 @dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/zh_CN/LC_MESSAGES
 @dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/zh_CN
