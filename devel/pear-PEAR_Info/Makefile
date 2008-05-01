@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	PEAR_Info
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Show Information about your PEAR install and its packages
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
+  		${PEARDIR}/Console/Getargs.php:${PORTSDIR}/devel/pear-Console_Getargs
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-PEAR_Info
 OPTIONS=	PEAR_PHPUnit3 "PEAR::PHPUnit3 support" on
 
 CATEGORY=	PEAR
-FILES=		Info.php pearinfo.css
+FILES=		Info.php pearinfo.css Info/Cli.php scripts/pearinfo
 TESTS=		pear2_dir/empty_dir.txt sysconf_dir/empty_dir.txt \
 		templates/credits.tpl templates/general.tpl \
 		templates/packages.tpl user_dir/empty_dir.txt AllTests.php \
