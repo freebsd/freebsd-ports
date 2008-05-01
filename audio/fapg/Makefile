@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	fapg
-PORTVERSION=	0.38
+PORTVERSION=	0.41
 CATEGORIES=	audio
 MASTER_SITES=	http://royale.zerezo.com/${PORTNAME}/
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Fast Audio Playlist Generator
+
+LIB_DEPENDS=	uriparser:${PORTSDIR}/net/uriparser
 
 MAKE_ARGS+=	CC=${CC}
 
