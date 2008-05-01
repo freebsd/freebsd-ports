@@ -9,7 +9,7 @@
 -use lib qw(lib);
 +use lib qw(%%PREFIX%%/smokeping/lib);
  
- use Smokeping 2.002007;
+ use Smokeping 2.003006;
   
 -Smokeping::main("etc/config.dist");
 +$0 = "%%PREFIX%%/bin/smokeping";

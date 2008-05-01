@@ -1,15 +1,13 @@
---- etc/config.dist.orig	Thu Jun  2 15:47:39 2005
-+++ etc/config.dist	Sun Sep 18 18:14:12 2005
-@@ -7,14 +7,14 @@
- owner    = Peter Random
- contact  = some@address.nowhere
- mailhost = my.mail.host
--sendmail = /usr/lib/sendmail
+--- etc/config.dist.orig	2008-02-04 18:00:46.000000000 +0100
++++ etc/config.dist	2008-05-01 15:26:00.000000000 +0200
+@@ -7,13 +7,13 @@
+ # NOTE: do not put the Image Cache below cgi-bin
+ # since all files under cgi-bin will be executed ... this is not
+ # good for images.
 -imgcache = /home/oetiker/public_html/smokeping-ms/cache
 -imgurl   = cache
 -datadir  = /tmp/smokeping-ms/data
 -piddir  = /tmp/smokeping-ms/var
-+sendmail = /usr/sbin/sendmail
 +imgcache = %%PREFIX%%/smokeping/htdocs/img
 +imgurl   = /smokeimg
 +datadir  = %%PREFIX%%/var/smokeping
@@ -22,21 +20,21 @@
  # specify this to get syslog logging
  syslogfacility = local0
  # each probe is now run in its own process
-@@ -66,7 +66,7 @@
+@@ -47,7 +47,7 @@
  
  *** Presentation ***
  
 -template = /home/oetiker/checkouts/smokeping/trunk/software/etc/basepage.html.dist
 +template = %%PREFIX%%/etc/smokeping/basepage.html
  
- + overview 
+ + charts
  
-@@ -89,7 +89,7 @@
+@@ -105,7 +105,7 @@
  
  + FPing
  
 -binary = /usr/sbin/fping
 +binary = %%PREFIX%%/sbin/fping
  
- *** Targets ***
- 
+ *** Slaves ***
+ secrets=/home/oetiker/checkouts/smokeping/trunk/software/etc/smokeping_secrets.dist
