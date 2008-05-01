@@ -7,6 +7,7 @@
 
 PORTNAME=	dri
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics
 
@@ -16,12 +17,11 @@ LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm \
 		expat.6:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
-CONFLICTS=	xfree86-dri-* dri-6.2.2005* dri-6.5.2006*
+CONFLICTS=	dri-6.2.2005* dri-6.5.2006*
 
 MAKE_ENV+=	FBSDCC="${CC}" FBSDCXX="${CXX}" \
 		FBSDCFLAGS="${CFLAGS}" FBSDCXXFLAGS="${CXXFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
-USE_GCC=	3.4+
 
 USE_XORG=	x11
 
@@ -42,6 +42,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/tdfx_dri.so ${DRIMODDIR}
 .elif ${ARCH} == amd64
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i915_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/i965_dri.so ${DRIMODDIR}
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/mach64_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/mga_dri.so ${DRIMODDIR}
