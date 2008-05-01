@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Auth
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6.1
 CATEGORIES=	security pear
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -25,7 +25,8 @@ OPTIONS=	PEAR_LOG "PEAR::Log support" off \
 		PEAR_AUTH_RADIUS "PEAR::AUTH_RADIUS support" off \
 		PEAR_CRYPT_CHAP "PEAR::CRYPT_CHAP support" off \
 		PEAR_FILE_SMBPASSWD "PEAR::File_SMBPasswd support" off \
-		PEAR_SOAP "PEAR::SOAP support" off
+		PEAR_SOAP "PEAR::SOAP support" off \
+		PEAR_NET_VPOPMAILD "PEAR::Net_Vpopmaild support" off
 
 CATEGORY=	Auth
 FILES=		Auth.php Auth.php.bak Auth/Anonymous.php Auth/Auth.php \
@@ -90,6 +91,10 @@ RUN_DEPENDS+=	${PEARDIR}/File/SMBPasswd.php:${PORTSDIR}/security/pear-File_SMBPa
 
 .if defined(WITH_PEAR_SOAP)
 RUN_DEPENDS+=	${PEARDIR}/SOAP/Base.php:${PORTSDIR}/net/pear-SOAP
+.endif
+
+.if defined(WITH_PEAR_NET_VPOPMAILD)
+RUN_DEPENDS+=	${PEARDIR}/Net/Vpopmaild.php:${PORTSDIR}/net/pear-Net_Vpopmaild
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
