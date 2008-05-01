@@ -7,7 +7,7 @@
 
 PORTNAME=	kqemu
 PORTVERSION=	1.3.0.p11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://fabrice.bellard.free.fr/qemu/ \
 		http://qemu.org/ \
@@ -48,7 +48,7 @@ KMODDIR=	/boot/modules
 MAKE_ENV+=	KMODDIR="${KMODDIR}"
 
 .if !exists(${SRC_BASE}/sys/Makefile)
-IGNORE=		kqemu requires kernel source to be installed
+IGNORE=		requires kernel source to be installed
 .endif
 
 .if ${OSVERSION} >= 700024 && ${OSVERSION} < 700053 && !defined(NOKSE)
@@ -57,6 +57,8 @@ IGNORE=		kqemu requires kernel source to be installed
 # Sun Jul 22 21:35:44 2007 UTC commit removing the KSE ABI incompatiblity)
 CFLAGS+=	-DKSE
 .endif
+
+CFLAGS+=       ${DEBUG_FLAGS}
 
 post-extract:
 .if ${OSVERSION} >= 700024 && ${OSVERSION} < 700053 && !defined(NOKSE)
