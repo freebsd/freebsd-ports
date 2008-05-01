@@ -14,7 +14,7 @@ EXTRACT_SUFX=	# empty
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	Transforms the output of 'cvs status' to a sorted ASCII table
 
 USE_PERL5=	yes
