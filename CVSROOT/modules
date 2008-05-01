@@ -1518,6 +1518,7 @@ colorer		ports/devel/colorer
 colorize	ports/sysutils/colorize
 colorstep	ports/x11-themes/colorstep
 colortail	ports/misc/colortail
+colt		ports/science/colt
 columns		ports/games/columns
 comclear	ports/www/comclear
 comconsole	ports/sysutils/comconsole
