@@ -24,7 +24,7 @@ COMMENT=	Library for manipulating PNG images
 MAKEFILE=	${WRKSRC}/scripts/makefile.freebsd
 ALL_TARGET=	all libpng-config test
 MAKE_FLAGS=	ccopts="${CFLAGS}" ldopts="${LDFLAGS}" -f
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 SHLIB_VER=	5
 USE_BZIP2=	yes
 
