@@ -40,7 +40,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/Python
 .include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
-PYVER!=		${PYTHON_CMD} -c "import sys; print sys.version[:3]"
+PYVER=		${PYTHON_VER}
 
 .if defined(WITH_DEBUG)
 ARGS+=		-u
