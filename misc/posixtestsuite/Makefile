@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	posixtestsuite
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.5.2
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	posixtest
+MASTER_SITES=	SF/posixtest
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open POSIX Test Suite
@@ -31,9 +29,9 @@ RUN_RESULT=	${WRKSRC}/run.result
 LOCAL_REGR_LOG=	${WRKSRC}/regression.result
 
 .if defined(QUIET)
-THEPIPE= >
+THEPIPE=	>
 .else
-THEPIPE= | tee 2>&1
+THEPIPE=	| tee 2>&1
 .endif
 
 .if defined(WITH_THRLIB)
