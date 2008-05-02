@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	qscintilla
-PORTVERSION=	1.7.1
-PORTREVISION=	2
+PORTVERSION=	${QSCI1_VERSION}
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/QScintilla1/ \
-		http://freebsd.ricin.com/ports/distfiles/
-DISTNAME=	QScintilla-1.71-gpl-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITES_QSCI1}
+DISTNAME=	${QSCI1_DISTNAME}
 
-MAINTAINER=	danny@ricin.com
+MAINTAINER=	${PYQT_MAINTAINER}
 COMMENT=	QT port of the Scintilla C++ editor class
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
@@ -33,6 +32,7 @@ QMAKE=		${LOCALBASE}/bin/qmake
 SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 PLUGINDIR=	${LOCALBASE}/lib/plugins/designer
 
+.include "../../devel/py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
 .if defined(NOPORTDOCS) || defined(WITHOUT_DOCS)
@@ -40,7 +40,7 @@ PLIST_SUB+=	DOCS="@comment "
 .else
 PLIST_SUB+=	DOCS=""
 .endif
-.if defined(WITHOUT_EXAMPLES)
+.if defined(NOPORTEXAMPLES) || defined(WITHOUT_EXAMPLES)
 PLIST_SUB+=	EXAMPLES="@comment "
 .else
 PLIST_SUB+=	EXAMPLES=""
@@ -143,7 +143,7 @@ do-install:
 		${INSTALL_DATA} doc/html/* ${DOCSDIR}/html &&  \
 		${INSTALL_DATA} doc/Scintilla/* ${DOCSDIR}/Scintilla )
 .endif
-.if !defined(WITHOUT_EXAMPLES)
+.if !defined(NOPORTEXAMPLES) && !defined(WITHOUT_EXAMPLES)
 	( cd ${WRKSRC} && \
 		${MKDIR} -m 0755 ${EXAMPLESDIR} && \
 		${INSTALL_DATA} example/* ${EXAMPLESDIR} )
