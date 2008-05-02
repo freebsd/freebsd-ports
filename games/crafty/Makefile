@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crafty
-PORTVERSION=	22.0
+PORTVERSION=	22.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/pgn/:data \
 		ftp://ftp.cis.uab.edu/pub/hyatt/documentation/:doc \
@@ -51,7 +51,7 @@ OPT=		-DCPUS=4 -DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 		-DLOGDIR=\\\"${WITH_LOGDIR}\\\" \
 		-DRCDIR=\\\"${WITH_RCDIR}\\\" \
 		-DTBDIR=\\\"${WITH_TBDIR}\\\" \
-		-DPERSDIR=\\\"${WITH_PERSDIR}\\\"
+		-DPERSDIR=\\\"${WITH_PERSDIR}\\\" -DSKILL
 
 .include <bsd.port.pre.mk>
 

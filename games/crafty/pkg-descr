@@ -1,14 +1,21 @@
-Crafty is a rapidly developing chess engine with more and more features being
-added regularly.  It can play, analyze, and even annotate games for you.  Crafty
-can utilize tablebases; these are available for freebsd in the related ports.
+Crafty is a rapidly developing chess engine with more and more features
+being added regularly.  It can play, analyze, and even annotate games
+for you.  Crafty can utilize tablebases; these are available for freebsd
+in the related ports.
 
 The files bitmaps.tgz and sound.tgz are available in your doc directory,
-usually /usr/local/share/doc/crafty.  The bitmaps are for html annotations
-performed by crafty - they should be unpacked into the directory you normally
-analyze games into, and all should be fine...
+usually /usr/local/share/doc/crafty.  The bitmaps are for html
+annotations performed by crafty - they should be unpacked into the
+directory you normally analyze games into, and all should be fine...
 
 The sounds are for move announcements.  Unpack the archive somewhere,
 and have a look at the 'speak' script to customize for your use, if
 desired.
+
+22.1 -> New "skill" command that can be used to "dumb down" crafty.
+"skill <n>" where n is a number between 1 and 100.  100 is max (default)
+skill.  Skill 70 will drop the playing Elo by about 200 points.  Skill
+50 will drop it about 400 points.  The curve is not linear, and the
+closer you get to 1, the lower the rating.
 
 // J Shoemaker
