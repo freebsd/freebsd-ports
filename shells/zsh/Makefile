@@ -21,8 +21,7 @@
 #			NOTE: does NOT have to be inside ${PREFIX} tree
 
 PORTNAME=	zsh
-PORTVERSION=	4.3.4
-PORTREVISION=	3
+PORTVERSION=	4.3.6
 CATEGORIES=	shells
 MASTER_SITES=	SF
 .if !defined(NOPORTDOCS)
@@ -43,7 +42,7 @@ USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-curses-terminfo --with-tcsetpgrp \
+CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-etcdir=${ZSH_ETCDIR} \
 		--enable-fndir=${ZSH_FNDIR} --enable-function-subdirs \
 		--enable-site-fndir=${ZSH_SITEFNDIR}
