@@ -7,7 +7,7 @@
 
 PORTNAME=	iscsi
 PORTVERSION=	20080207
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
 		http://www.magnesium.net/~mdf/distfiles/
@@ -55,3 +55,4 @@ post-install:
 .endfor
 
 .include <bsd.port.mk>
+	@${CAT} ${PKGMESSAGE}
