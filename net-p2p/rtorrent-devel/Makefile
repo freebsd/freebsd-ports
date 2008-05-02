@@ -24,4 +24,6 @@ DESCR=		${MASTERDIR}/pkg-descr
 
 CONFLICTS=	rtorrent-[0-9]*
 
+USE_GCC=	4.2+
+
 .include "${MASTERDIR}/Makefile"
