@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ne
-PORTVERSION=	1.42
+PORTVERSION=	1.43
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.dsi.unimi.it/ \
 		${MASTER_SITE_GENTOO}
-
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	az@FreeBSD.org
