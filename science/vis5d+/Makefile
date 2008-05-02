@@ -17,7 +17,8 @@ MAINTAINER=	stephen@math.missouri.edu
 COMMENT=	OpenGL-based volumetric visualization program for scientific datasets
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmix.a:${PORTSDIR}/graphics/qslim \
-		convert:${PORTSDIR}/graphics/ImageMagick
+		convert:${PORTSDIR}/graphics/ImageMagick \
+		${LOCALBASE}/include/gfx/gfx.h:${PORTSDIR}/graphics/libgfx
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
@@ -28,16 +29,14 @@ USE_GL=		yes
 USE_GNOME=	gnometarget gtk12
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" F77="${F77}" FFLAGS="-fno-range-check"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" F77="${F77}" FFLAGS="-fno-range-check" LIBS="-lgfx"
 CONFIGURE_ARGS=	--enable-gtk --enable-threads --with-netcdf \
 		--with-mixkit=${LOCALBASE}/lib/libmix.a --with-x
 USE_LDCONFIG=	yes
 
-BROKEN=		Does not compile
-
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-CFLAGS+=	-DMIX_ANSI_IOSTREAMS -fpermissive
+CFLAGS+=	-DMIX_ANSI_IOSTREAMS -fPIC -fpermissive
 
 .include <bsd.port.mk>
