@@ -1,7 +1,5 @@
 %%SITE_PERL%%/DBD/Multi.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Multi/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Multi
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Multi
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry %%SITE_PERL%%/DBD
