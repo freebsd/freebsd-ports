@@ -15027,6 +15027,7 @@ samefile	ports/sysutils/samefile
 samhain		ports/security/samhain
 samhain-client	ports/security/samhain-client
 samhain-server	ports/security/samhain-server
+samidare	ports/www/samidare
 sampsvr		ports/games/sampsvr
 sams		ports/www/sams
 sancp		ports/security/sancp
