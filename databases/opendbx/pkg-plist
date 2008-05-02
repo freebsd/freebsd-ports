@@ -4,6 +4,8 @@ lib/libopendbx.la
 lib/libopendbx.so
 lib/libopendbx.so.2
 libdata/pkgconfig/opendbx.pc
+%%NLS%%share/locale/de/LC_MESSAGES/opendbx.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/opendbx.mo
 %%WITHPGSQL%%lib/opendbx/libpgsqlbackend.a
 %%WITHPGSQL%%lib/opendbx/libpgsqlbackend.la
 %%WITHPGSQL%%lib/opendbx/libpgsqlbackend.so
@@ -29,3 +31,7 @@ libdata/pkgconfig/opendbx.pc
 %%WITHSYBASE%%lib/opendbx/libsybasebackend.so
 %%WITHSYBASE%%lib/opendbx/libsybasebackend.so.2
 @dirrm lib/opendbx
+%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@quot
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de

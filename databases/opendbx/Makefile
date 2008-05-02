@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendbx
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.linuxnetworks.de/opendbx/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -14,24 +14,23 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tremere@cainites.net
 COMMENT=	A C library for accessing databases with a single API
 
-USE_GMAKE=		YES
-USE_AUTOTOOLS=		libtool:15
+USE_GMAKE=	YES
+USE_AUTOTOOLS=	libtool:15
 
-CPPFLAGS+=		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=		${PTHREAD_LIBS} -L../lib -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS} -L../lib -L${LOCALBASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-backends="${CONFIGURE_MODULES}"
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-USE_LDCONFIG=		${PREFIX}/lib/opendbx
+USE_LDCONFIG=	${PREFIX}/lib/opendbx
 
 OPTIONS=	MYSQL	"Support for the MySQL database" on \
 		PGSQL	"Support for the PostgreSQL database" off \
 		SQLITE	"Support for the SQLite 2 database" off \
 		SQLITE3	"Support for the SQLite 3 database" off \
 		MSSQL	"Support for the MSSQL database" off \
-		SYBASE	"Support for the Sybase database" off \
-		GETTEXT	"Support for the gettext library" off
+		SYBASE	"Support for the Sybase database" off
 
 .include <bsd.port.pre.mk>
 
@@ -89,10 +88,12 @@ PLIST_SUB+=		WITHSYBASE=""
 PLIST_SUB+=		WITHSYBASE="@comment "
 .endif
 
-.if defined(WITH_GETTEXT)
-USE_GETTEXT=		YES
-.else
+.if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.else
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
 .endif
 
 .include <bsd.port.post.mk>
