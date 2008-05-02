@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	chmsee
-PORTVERSION=	0.9.6
-PORTREVISION=	7
+PORTVERSION=	1.0.0
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://chmsee.gro.clinux.org/
+MASTER_SITES=	http://download.gro.clinux.org/chmsee/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
-LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
+MAN1=		chmsee
+
+LIB_DEPENDS+=	chm.0:${PORTSDIR}/misc/chmlib \
 		gtkhtml-3.14:${PORTSDIR}/www/gtkhtml3
 
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20 libglade2 gnomeprefix gnomehack libgnome
+USE_GECKO=	mozilla firefox seamonkey
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -31,4 +33,6 @@ post-patch:
 	@${REINPLACE_CMD} 's|libgtkhtml-3.8|libgtkhtml-3.14|g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+.include <bsd.port.post.mk>

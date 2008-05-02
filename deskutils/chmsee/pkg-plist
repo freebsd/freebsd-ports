@@ -2,11 +2,16 @@ bin/chmsee
 share/applications/chmsee.desktop
 share/chmsee/chmsee-splash.png
 share/chmsee/chmsee.glade
-share/chmsee/chmsee.html
-share/chmsee/chmsee.png
+share/chmsee/chmsee-icon.png
+share/chmsee/book-open.png
+share/chmsee/book-closed.png
+share/chmsee/default-prefs.js
+share/chmsee/helpdoc.png
+share/chmsee/hide-pane.png
+share/chmsee/show-pane.png
 share/mime-info/chmsee.keys
 share/mime-info/chmsee.mime
-share/pixmaps/chmsee.png
+share/pixmaps/chmsee-icon.png
 share/locale/zh_CN/LC_MESSAGES/chmsee.mo
 @dirrm share/chmsee
 @dirrmtry share/applications
