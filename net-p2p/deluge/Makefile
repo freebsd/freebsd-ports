@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	0.5.8.9
+PORTVERSION=	0.5.9.0
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://ftp.osuosl.org/pub/deluge/source/${PORTVERSION}/
 
@@ -34,7 +34,7 @@ DOCS=		LICENSE README
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+.if ${ARCH} == "sparc64" || ${ARCH} == "ia64" || ${ARCH} == "amd64"
 CFLAGS+=	-DAMD64
 .endif
 
