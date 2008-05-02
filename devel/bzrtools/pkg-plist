@@ -94,6 +94,12 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_cbranch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_cbranch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_cbranch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_dotgraph.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_dotgraph.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_dotgraph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_link_tree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_link_tree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_link_tree.pyo
