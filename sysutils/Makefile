@@ -412,6 +412,7 @@
     SUBDIR += mbmon
     SUBDIR += mcron
     SUBDIR += mcweject
+    SUBDIR += mdcp
     SUBDIR += mdf2iso
     SUBDIR += megarc
     SUBDIR += memdump
