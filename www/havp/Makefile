@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	havp
-PORTVERSION=	0.87
-PORTREVISION=	1
+PORTVERSION=	0.88
 CATEGORIES=	www
 MASTER_SITES=	http://www.server-side.de/download/ \
 				http://bio3k.softboard.ru/uploads/arch/
@@ -33,10 +32,8 @@ SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	LOG_DIR=${LOG_DIR} TMP_DIR=${TMP_DIR} RUN_DIR=${RUN_DIR}
 
 OPTIONS=	SSL "Enable SSL proxying (not scanned, only forwarded!)" on \
-			CLAMAV "Enable libclamav support" on \
-			TROPHIE "Enable Trend Micro (Trophie) support" off
-
-BROKEN=	Doesn't build with clamav-0.93
+		CLAMAV "Enable libclamav support" on \
+		TROPHIE "Enable Trend Micro (Trophie) support" off
 
 .include <bsd.port.pre.mk>
 
