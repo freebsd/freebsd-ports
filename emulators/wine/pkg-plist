@@ -778,6 +778,7 @@ lib/wine/libunicows.def
 lib/wine/liburl.def
 lib/wine/liburlmon.def
 lib/wine/libuser32.def
+lib/wine/libuserenv.def
 lib/wine/libusp10.def
 lib/wine/libuuid.a
 lib/wine/libuxtheme.def
