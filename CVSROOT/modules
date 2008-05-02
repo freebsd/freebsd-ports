@@ -14944,6 +14944,7 @@ rubygem-rcov	ports/devel/rubygem-rcov
 rubygem-redcloth	ports/www/rubygem-redcloth
 rubygem-rfacebook	ports/www/rubygem-rfacebook
 rubygem-rgl	ports/devel/rubygem-rgl
+rubygem-righthttpconnection	ports/net/rubygem-righthttpconnection
 rubygem-rrdtool	ports/databases/rubygem-rrdtool
 rubygem-rscm	ports/devel/rubygem-rscm
 rubygem-rspec	ports/devel/rubygem-rspec
