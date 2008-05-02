@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupod
-PORTVERSION=	0.99.2
+PORTVERSION=	0.99.6
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://www.blinkenlights.ch/gnupod-dist/stable/
@@ -31,24 +31,24 @@ MAN1=		gnupod_addsong.pl.1 gnupod_check.pl.1 gnupod_INIT.pl.1 \
 MANCOMPRESSED=	yes
 
 USE_PERL5=	5.8.0+
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--infodir=${PREFIX}/info \
-		--mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 
-OPTIONS=	FLAC "Enable FLAC support" off
+OPTIONS=	FLAC "Enable FLAC support" off \
+		VORBIS "Enable Ogg Vorbis support" off
 
 .include <bsd.port.pre.mk>
 
-.if exists(${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm)
-WITH_FLAC=	YES
+.if defined(WITH_FLAC) || exists(${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm:${PORTSDIR}/audio/p5-Audio-FLAC-Header
 .endif
 
-.if defined(WITH_FLAC)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm:${PORTSDIR}/audio/p5-Audio-FLAC-Header
+.if defined(WITH_VORBIS) || exists(${SITE_PERL}/Ogg/Vorbis/Header/PurePerl.pm)
+BUILD_DEPENDS+=	${SITE_PERL}/Ogg/Vorbis/Header/PurePerl.pm:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header-PurePerl
+BUILD_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 .endif
 
 .ifndef(NOPORTDOCS)
