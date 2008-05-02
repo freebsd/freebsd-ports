@@ -10,11 +10,14 @@ bin/gnupod_otgsync.pl
 bin/gnupod_search.pl
 bin/mktunes.pl
 bin/tunes2pod.pl
+lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/ArtworkDB.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/FileMagic.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/FooBar.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/Hash58.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/Mktunes.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/iTunesDB.pm
-lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/lastfm.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/QTfile.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/SysInfo.pm
 lib/perl5/%%PERL_VER%%/BSDPAN/GNUpod/XMLhelper.pm
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/fdl.texi
