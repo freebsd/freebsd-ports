@@ -1,21 +1,5 @@
 --- main/SAPI.c.orig	2007-05-25 11:20:01.000000000 +0200
 +++ main/SAPI.c	2008-02-01 23:48:51.000000000 +0100
-@@ -301,6 +301,7 @@
- 
- 	/* SG(sapi_headers).http_response_code = 200; */ 
- 	SG(sapi_headers).http_status_line = NULL;
-+	SG(sapi_headers).mimetype = NULL;
- 	SG(read_post_bytes) = 0;
- 	SG(request_info).post_data = NULL;
- 	SG(request_info).raw_post_data = NULL;
-@@ -340,6 +341,7 @@
- 	SG(sapi_headers).http_response_code = 200;
- 	*/
- 	SG(sapi_headers).http_status_line = NULL;
-+	SG(sapi_headers).mimetype = NULL;
- 	SG(headers_sent) = 0;
- 	SG(read_post_bytes) = 0;
- 	SG(request_info).post_data = NULL;
 @@ -604,7 +606,7 @@
  					ptr++;
  					len--;
