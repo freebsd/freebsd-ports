@@ -1,0 +1,9 @@
+bin/viking
+bin/viking-remote
+%%NLS%%share/locale/cs/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/da/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/de/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/es/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/viking.mo
