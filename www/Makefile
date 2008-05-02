@@ -1202,6 +1202,7 @@
     SUBDIR += rubygem-taggable
     SUBDIR += rubygem-thin
     SUBDIR += runsomebrowser
+    SUBDIR += samidare
     SUBDIR += sams
     SUBDIR += sarg
     SUBDIR += sbox-dtc
