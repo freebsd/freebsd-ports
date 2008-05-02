@@ -14,6 +14,7 @@ bin/zsh-%%ZSH_VER%%
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/complete.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/complist.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/computil.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/curses.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/datetime.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/deltochar.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/example.so
@@ -26,6 +27,7 @@ bin/zsh-%%ZSH_VER%%
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/newuser.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/parameter.so
 %%PCRE%%%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/pcre.so
+%%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/regex.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/rlimits.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/sched.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/stat.so
@@ -42,7 +44,6 @@ bin/zsh-%%ZSH_VER%%
 %%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%/zsh/net
 %%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%/zsh
 %%NO_STATIC%%@dirrm lib/zsh/%%ZSH_VER%%
-%%NO_STATIC%%lib/zsh/libzsh-%%ZSH_VER%%.so
 %%NO_STATIC%%@dirrm lib/zsh
 @exec   mkdir %%ZSH_SITEFNDIR%% 2> /dev/null || true
 @unexec rmdir %%ZSH_SITEFNDIR%% 2> /dev/null || true
@@ -51,6 +52,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Calendar/calendar_add
 %%ZSH_FNDIR%%/Calendar/calendar_edit
 %%ZSH_FNDIR%%/Calendar/calendar_lockfiles
+%%ZSH_FNDIR%%/Calendar/calendar_parse
 %%ZSH_FNDIR%%/Calendar/calendar_read
 %%ZSH_FNDIR%%/Calendar/calendar_scandate
 %%ZSH_FNDIR%%/Calendar/calendar_show
@@ -69,8 +71,8 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/AIX/_volume_groups
 %%ZSH_FNDIR%%/Completion/BSD/_bsd_pkg
 %%ZSH_FNDIR%%/Completion/BSD/_chflags
-%%ZSH_FNDIR%%/Completion/BSD/_cvsup
 %%ZSH_FNDIR%%/Completion/BSD/_csup
+%%ZSH_FNDIR%%/Completion/BSD/_cvsup
 %%ZSH_FNDIR%%/Completion/BSD/_kld
 %%ZSH_FNDIR%%/Completion/BSD/_portlint
 %%ZSH_FNDIR%%/Completion/BSD/_portsnap
@@ -88,6 +90,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Base/_complete
 %%ZSH_FNDIR%%/Completion/Base/_complete_debug
 %%ZSH_FNDIR%%/Completion/Base/_complete_help
+%%ZSH_FNDIR%%/Completion/Base/_complete_help_generic
 %%ZSH_FNDIR%%/Completion/Base/_complete_tag
 %%ZSH_FNDIR%%/Completion/Base/_correct
 %%ZSH_FNDIR%%/Completion/Base/_correct_filename
@@ -170,24 +173,32 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Debian/_debfoster
 %%ZSH_FNDIR%%/Completion/Debian/_debsign
 %%ZSH_FNDIR%%/Completion/Debian/_dlocate
+%%ZSH_FNDIR%%/Completion/Debian/_dpatch-edit-patch
 %%ZSH_FNDIR%%/Completion/Debian/_dpkg
+%%ZSH_FNDIR%%/Completion/Debian/_dpkg-buildpackage
 %%ZSH_FNDIR%%/Completion/Debian/_dpkg-cross
+%%ZSH_FNDIR%%/Completion/Debian/_dpkg-repack
 %%ZSH_FNDIR%%/Completion/Debian/_dpkg_source
 %%ZSH_FNDIR%%/Completion/Debian/_dput
 %%ZSH_FNDIR%%/Completion/Debian/_dupload
 %%ZSH_FNDIR%%/Completion/Debian/_invoke-rc.d
+%%ZSH_FNDIR%%/Completion/Debian/_lighttpd
 %%ZSH_FNDIR%%/Completion/Debian/_linda
 %%ZSH_FNDIR%%/Completion/Debian/_lintian
 %%ZSH_FNDIR%%/Completion/Debian/_madison
 %%ZSH_FNDIR%%/Completion/Debian/_make-kpkg
+%%ZSH_FNDIR%%/Completion/Debian/_members
 %%ZSH_FNDIR%%/Completion/Debian/_mergechanges
 %%ZSH_FNDIR%%/Completion/Debian/_module-assistant
 %%ZSH_FNDIR%%/Completion/Debian/_piuparts
+%%ZSH_FNDIR%%/Completion/Debian/_reprepro
 %%ZSH_FNDIR%%/Completion/Debian/_schroot
+%%ZSH_FNDIR%%/Completion/Debian/_svn-buildpackage
 %%ZSH_FNDIR%%/Completion/Debian/_toolchain-source
 %%ZSH_FNDIR%%/Completion/Debian/_update-alternatives
 %%ZSH_FNDIR%%/Completion/Debian/_update-rc.d
 %%ZSH_FNDIR%%/Completion/Debian/_uscan
+%%ZSH_FNDIR%%/Completion/Debian/_vim-addons
 %%ZSH_FNDIR%%/Completion/Debian/_wajig
 %%ZSH_FNDIR%%/Completion/Debian/_wanna-build
 %%ZSH_FNDIR%%/Completion/Linux/_acpi
@@ -200,6 +211,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Linux/_iptables
 %%ZSH_FNDIR%%/Completion/Linux/_iwconfig
 %%ZSH_FNDIR%%/Completion/Linux/_losetup
+%%ZSH_FNDIR%%/Completion/Linux/_lsusb
 %%ZSH_FNDIR%%/Completion/Linux/_mii-tool
 %%ZSH_FNDIR%%/Completion/Linux/_modutils
 %%ZSH_FNDIR%%/Completion/Linux/_mondo
@@ -236,9 +248,11 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_bzip2
 %%ZSH_FNDIR%%/Completion/Unix/_bzr
 %%ZSH_FNDIR%%/Completion/Unix/_cal
+%%ZSH_FNDIR%%/Completion/Unix/_calendar
 %%ZSH_FNDIR%%/Completion/Unix/_canonical_paths
 %%ZSH_FNDIR%%/Completion/Unix/_ccal
 %%ZSH_FNDIR%%/Completion/Unix/_cdcd
+%%ZSH_FNDIR%%/Completion/Unix/_cdrdao
 %%ZSH_FNDIR%%/Completion/Unix/_cdrecord
 %%ZSH_FNDIR%%/Completion/Unix/_chkconfig
 %%ZSH_FNDIR%%/Completion/Unix/_chmod
@@ -252,6 +266,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_cplay
 %%ZSH_FNDIR%%/Completion/Unix/_cssh
 %%ZSH_FNDIR%%/Completion/Unix/_ctags_tags
+%%ZSH_FNDIR%%/Completion/Unix/_cut
 %%ZSH_FNDIR%%/Completion/Unix/_cvs
 %%ZSH_FNDIR%%/Completion/Unix/_darcs
 %%ZSH_FNDIR%%/Completion/Unix/_date
@@ -264,6 +279,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_diffstat
 %%ZSH_FNDIR%%/Completion/Unix/_dir_list
 %%ZSH_FNDIR%%/Completion/Unix/_directories
+%%ZSH_FNDIR%%/Completion/Unix/_dmidecode
 %%ZSH_FNDIR%%/Completion/Unix/_domains
 %%ZSH_FNDIR%%/Completion/Unix/_du
 %%ZSH_FNDIR%%/Completion/Unix/_dvi
@@ -287,6 +303,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_fuser
 %%ZSH_FNDIR%%/Completion/Unix/_gcc
 %%ZSH_FNDIR%%/Completion/Unix/_gdb
+%%ZSH_FNDIR%%/Completion/Unix/_genisoimage
 %%ZSH_FNDIR%%/Completion/Unix/_getconf
 %%ZSH_FNDIR%%/Completion/Unix/_getent
 %%ZSH_FNDIR%%/Completion/Unix/_getmail
@@ -301,10 +318,13 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_grep
 %%ZSH_FNDIR%%/Completion/Unix/_groff
 %%ZSH_FNDIR%%/Completion/Unix/_groups
+%%ZSH_FNDIR%%/Completion/Unix/_growisofs
 %%ZSH_FNDIR%%/Completion/Unix/_gs
+%%ZSH_FNDIR%%/Completion/Unix/_guilt
 %%ZSH_FNDIR%%/Completion/Unix/_gzip
 %%ZSH_FNDIR%%/Completion/Unix/_hosts
 %%ZSH_FNDIR%%/Completion/Unix/_iconv
+%%ZSH_FNDIR%%/Completion/Unix/_id
 %%ZSH_FNDIR%%/Completion/Unix/_ifconfig
 %%ZSH_FNDIR%%/Completion/Unix/_imagemagick
 %%ZSH_FNDIR%%/Completion/Unix/_init_d
@@ -318,6 +338,8 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_knock
 %%ZSH_FNDIR%%/Completion/Unix/_kvno
 %%ZSH_FNDIR%%/Completion/Unix/_last
+%%ZSH_FNDIR%%/Completion/Unix/_ld_debug
+%%ZSH_FNDIR%%/Completion/Unix/_ldd
 %%ZSH_FNDIR%%/Completion/Unix/_less
 %%ZSH_FNDIR%%/Completion/Unix/_links
 %%ZSH_FNDIR%%/Completion/Unix/_list_files
@@ -334,6 +356,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_mailboxes
 %%ZSH_FNDIR%%/Completion/Unix/_make
 %%ZSH_FNDIR%%/Completion/Unix/_man
+%%ZSH_FNDIR%%/Completion/Unix/_md5sum
 %%ZSH_FNDIR%%/Completion/Unix/_mencal
 %%ZSH_FNDIR%%/Completion/Unix/_mercurial
 %%ZSH_FNDIR%%/Completion/Unix/_metaflac
@@ -361,6 +384,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_other_accounts
 %%ZSH_FNDIR%%/Completion/Unix/_pack
 %%ZSH_FNDIR%%/Completion/Unix/_patch
+%%ZSH_FNDIR%%/Completion/Unix/_path_commands
 %%ZSH_FNDIR%%/Completion/Unix/_path_files
 %%ZSH_FNDIR%%/Completion/Unix/_pax
 %%ZSH_FNDIR%%/Completion/Unix/_pbm
@@ -390,11 +414,13 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_quilt
 %%ZSH_FNDIR%%/Completion/Unix/_raggle
 %%ZSH_FNDIR%%/Completion/Unix/_rake
+%%ZSH_FNDIR%%/Completion/Unix/_ranlib
 %%ZSH_FNDIR%%/Completion/Unix/_rar
 %%ZSH_FNDIR%%/Completion/Unix/_rcs
 %%ZSH_FNDIR%%/Completion/Unix/_renice
-%%ZSH_FNDIR%%/Completion/Unix/_rlogin
 %%ZSH_FNDIR%%/Completion/Unix/_ri
+%%ZSH_FNDIR%%/Completion/Unix/_rlogin
+%%ZSH_FNDIR%%/Completion/Unix/_rrdtool
 %%ZSH_FNDIR%%/Completion/Unix/_rsync
 %%ZSH_FNDIR%%/Completion/Unix/_rubber
 %%ZSH_FNDIR%%/Completion/Unix/_ruby
@@ -441,8 +467,10 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Unix/_tracepath
 %%ZSH_FNDIR%%/Completion/Unix/_twisted
 %%ZSH_FNDIR%%/Completion/Unix/_unace
+%%ZSH_FNDIR%%/Completion/Unix/_uname
 %%ZSH_FNDIR%%/Completion/Unix/_unexpand
 %%ZSH_FNDIR%%/Completion/Unix/_uniq
+%%ZSH_FNDIR%%/Completion/Unix/_units
 %%ZSH_FNDIR%%/Completion/Unix/_urls
 %%ZSH_FNDIR%%/Completion/Unix/_user_admin
 %%ZSH_FNDIR%%/Completion/Unix/_user_at_host
@@ -478,8 +506,8 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/X/_nedit
 %%ZSH_FNDIR%%/Completion/X/_netscape
 %%ZSH_FNDIR%%/Completion/X/_qiv
-%%ZSH_FNDIR%%/Completion/X/_urxvt
 %%ZSH_FNDIR%%/Completion/X/_setxkbmap
+%%ZSH_FNDIR%%/Completion/X/_urxvt
 %%ZSH_FNDIR%%/Completion/X/_vnc
 %%ZSH_FNDIR%%/Completion/X/_x_arguments
 %%ZSH_FNDIR%%/Completion/X/_x_borderwidth
@@ -506,6 +534,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/X/_xloadimage
 %%ZSH_FNDIR%%/Completion/X/_xmodmap
 %%ZSH_FNDIR%%/Completion/X/_xpdf
+%%ZSH_FNDIR%%/Completion/X/_xrandr
 %%ZSH_FNDIR%%/Completion/X/_xscreensaver
 %%ZSH_FNDIR%%/Completion/X/_xset
 %%ZSH_FNDIR%%/Completion/X/_xt_arguments
@@ -527,6 +556,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Zsh/_compdef
 %%ZSH_FNDIR%%/Completion/Zsh/_condition
 %%ZSH_FNDIR%%/Completion/Zsh/_default
+%%ZSH_FNDIR%%/Completion/Zsh/_delimiters
 %%ZSH_FNDIR%%/Completion/Zsh/_directory_stack
 %%ZSH_FNDIR%%/Completion/Zsh/_dirs
 %%ZSH_FNDIR%%/Completion/Zsh/_disable
@@ -539,7 +569,10 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Completion/Zsh/_file_descriptors
 %%ZSH_FNDIR%%/Completion/Zsh/_first
 %%ZSH_FNDIR%%/Completion/Zsh/_functions
+%%ZSH_FNDIR%%/Completion/Zsh/_globqual_delims
+%%ZSH_FNDIR%%/Completion/Zsh/_globquals
 %%ZSH_FNDIR%%/Completion/Zsh/_hash
+%%ZSH_FNDIR%%/Completion/Zsh/_history_modifiers
 %%ZSH_FNDIR%%/Completion/Zsh/_in_vared
 %%ZSH_FNDIR%%/Completion/Zsh/_jobs
 %%ZSH_FNDIR%%/Completion/Zsh/_jobs_bg
@@ -609,7 +642,12 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Misc/promptnl
 %%ZSH_FNDIR%%/Misc/relative
 %%ZSH_FNDIR%%/Misc/run-help
+%%ZSH_FNDIR%%/Misc/run-help-git
+%%ZSH_FNDIR%%/Misc/run-help-svk
+%%ZSH_FNDIR%%/Misc/run-help-svn
+%%ZSH_FNDIR%%/Misc/sticky-note
 %%ZSH_FNDIR%%/Misc/tetris
+%%ZSH_FNDIR%%/Misc/xtermctl
 %%ZSH_FNDIR%%/Misc/zargs
 %%ZSH_FNDIR%%/Misc/zcalc
 %%ZSH_FNDIR%%/Misc/zed
@@ -631,6 +669,7 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Prompts/prompt_off_setup
 %%ZSH_FNDIR%%/Prompts/prompt_oliver_setup
 %%ZSH_FNDIR%%/Prompts/prompt_redhat_setup
+%%ZSH_FNDIR%%/Prompts/prompt_special_chars
 %%ZSH_FNDIR%%/Prompts/prompt_suse_setup
 %%ZSH_FNDIR%%/Prompts/prompt_walters_setup
 %%ZSH_FNDIR%%/Prompts/prompt_zefram_setup
@@ -706,8 +745,8 @@ bin/zsh-%%ZSH_VER%%
 %%ZSH_FNDIR%%/Zle/keeper
 %%ZSH_FNDIR%%/Zle/keymap+widget
 %%ZSH_FNDIR%%/Zle/kill-word-match
-%%ZSH_FNDIR%%/Zle/match-words-by-style
 %%ZSH_FNDIR%%/Zle/match-word-context
+%%ZSH_FNDIR%%/Zle/match-words-by-style
 %%ZSH_FNDIR%%/Zle/modify-current-argument
 %%ZSH_FNDIR%%/Zle/narrow-to-region
 %%ZSH_FNDIR%%/Zle/narrow-to-region-invisible
