@@ -62,7 +62,7 @@
 #     requests.
 
 PORTNAME=	squid
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -81,7 +81,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/Versions/v3/3.0/ \
 		http://www2.tw.squid-cache.org/Versions/v3/3.0/
 MASTER_SITE_SUBDIR=	squid-3/STABLE
-DISTNAME=	squid-3.0.STABLE4
+DISTNAME=	squid-3.0.STABLE5
 DIST_SUBDIR=	squid3.0
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -102,7 +102,7 @@ COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid30
 
-CONFLICTS=	squid-2.[0-9].*
+CONFLICTS=	squid-2.[0-9].* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
 # disable autotools bootstrapping for now, 3.0.STABLE does not currently
 # require it:
