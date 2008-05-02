@@ -1,6 +1,8 @@
+BSD_PYQT_MK_VERSION=	20080501
+
 PYQT_MAINTAINER=	danny@ricin.com
 
-MASTER_SITE_RIVERBANK=	http://www.riverbankcomputing.com/Downloads/
+MASTER_SITE_RIVERBANK=	http://www.riverbankcomputing.com/static/Downloads/
 MASTER_SITE_RICIN=	http://freebsd.ricin.com/ports/distfiles/
 
 MASTER_SITES_SIP=	${MASTER_SITE_RIVERBANK}sip4/ ${MASTER_SITE_RICIN}
