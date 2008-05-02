@@ -1,16 +1,8 @@
-
 This package is set to allow per-user config files, and a shared books
 directory.  To accomplish this, crafty is setgid nobody, and the books
 and learning information are owned by the user 'nobody.'
 
 The location values are tunable, see message when make is issued.
-
-		** IMPORTANT **
-
-IF YOU ARE UPGRADING TO THIS VERSION, YOU WILL NEED TO DE-INSTALL ANY
-OPENING BOOKS YOU HAVE AS THE FORMATS HAVE CHANGED.  SIMPLY UNINSTALL
-AND REBUILD FROM THE PORT (NOT PACKAGE) AND THEY'LL BE REBUILT BY THE
-ENGINE IN THE NEW FORMAT.
 
 If you have an SMP system, add a line to your ~/.craftyrc file to the
 effect:
@@ -19,3 +11,9 @@ smpmt=2 (or however many cpus you have)
 
 Do not set this higher than you really have, or performance will
 actually drop.
+
+New "skill" command that can be used to "dumb down" crafty.  "skill <n>"
+where n is a number between 1 and 100.  100 is max (default) skill.
+Skill 70 will drop the playing Elo by about 200 points.  Skill 50 will
+drop it about 400 points.  The curve is not linear, and the closer you
+get to 1, the lower the rating.
