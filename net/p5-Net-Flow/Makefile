@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Flow
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Decode and encode NetFlow/IPFIX datagrams
 
-PERL_CONFIGURE=	5.6.1+
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Net::Flow.3
 
