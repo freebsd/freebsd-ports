@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keynav
-DISTVERSION=	20071031
+DISTVERSION=	20080501
 CATEGORIES=	x11
 MASTER_SITES=	http://www.semicomplete.com/files/keynav/ \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -27,5 +27,9 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/keynavrc ${EXAMPLESDIR}
 .endif
+
+# Because gcc in RELENG_6 doesn't support -Wno-missing-field-initializers
+post-patch:
+	@${REINPLACE_CMD} -e 's,-Wno-missing-field-initializers,,' ${WRKSRC}/xdotool/Makefile
 
 .include <bsd.port.mk>
