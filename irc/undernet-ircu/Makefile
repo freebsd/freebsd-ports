@@ -14,17 +14,14 @@ DISTNAME=	ircu${PORTVERSION}
 MAINTAINER=	weaseal@users.sourceforge.net
 COMMENT=	Undernet IRCU irc daemon
 
-CONFLICTS=	ircd-hybrid*
+CONFLICTS=	ircd-hybrid-7.[0-9]*
 
 GNU_CONFIGURE=		yes
 USE_RC_SUBR=		undernet.sh
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-dpath=${PREFIX}/etc/ --with-symlink=no
 
-PLIST_FILES=	bin/ircd bin/umkpasswd bin/convert-conf
-.if exists(${PREFIX}/etc/ircd.conf.example})
-PLIST_FILES+=	etc/ircd.conf.example
-.endif
+PLIST_FILES=	bin/ircd bin/umkpasswd bin/convert-conf etc/ircd.conf.example
 
 MAN8=		ircd.8
 
