@@ -465,6 +465,7 @@
     SUBDIR += xzoom
     SUBDIR += yakuake
     SUBDIR += yalias
+    SUBDIR += yeahconsole
     SUBDIR += yelp
     SUBDIR += zenity
 
