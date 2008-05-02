@@ -115,6 +115,7 @@
     SUBDIR += dillo-i18n
     SUBDIR += docebo
     SUBDIR += dojo
+    SUBDIR += dojo-shrinksafe
     SUBDIR += dokeos
     SUBDIR += dokuwiki
     SUBDIR += dokuwiki-devel
