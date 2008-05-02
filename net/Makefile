@@ -795,6 +795,7 @@
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-net-netrc
     SUBDIR += rubygem-openid
+    SUBDIR += rubygem-rightaws
     SUBDIR += rubygem-righthttpconnection
     SUBDIR += rubygem-twitter
     SUBDIR += rubygem-twitter4r
