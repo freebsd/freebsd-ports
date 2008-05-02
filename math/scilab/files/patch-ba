@@ -1,24 +1,39 @@
---- Makefile.in.orig	Tue Feb 14 13:14:22 2006
-+++ Makefile.in	Sat May 27 20:34:22 2006
-@@ -108,7 +108,7 @@
+--- Makefile.in.orig	2007-10-23 19:25:45.000000000 +0200
++++ Makefile.in	2008-04-28 17:26:44.000000000 +0200
+@@ -111,7 +111,7 @@
  	conftest conftest.c so_locations
  
  # SCIBASE for scilab binaries generation
--SCIBASE = scilab-4.1.1
+-SCIBASE = scilab-4.1.2
 +SCIBASE = scilab
  
  PVMBINDISTFILES = \
  	$(SCIBASE)/pvm3/Readme \
-@@ -263,9 +263,9 @@
- 		( for file in $(INSTBINDISTFILES) @PVMINST1@; do tar cf - $${file}  | (cd $(PREFIX)/lib/$(SCIBASE); tar xf -); done); \
- 		(cd $(PREFIX)/lib/$(SCIBASE);touch .binary; make postinstall PREFIX=$(PREFIX) ) \
- 	fi
--	install -d $(PREFIX)/share/doc/$(DOCNAME)/
--	install ACKNOWLEDGEMENTS CHANGES README_Unix Version.incl \
--		licence.txt license.txt  $(PREFIX)/share/doc/$(DOCNAME)
-+%%PORTDOCS%%	install -d $(PREFIX)/share/doc/$(DOCNAME)/
-+%%PORTDOCS%%	install ACKNOWLEDGEMENTS CHANGES README_Unix Version.incl \
-+%%PORTDOCS%%		licence.txt license.txt  $(PREFIX)/share/doc/$(DOCNAME)
- 	install -d $(PREFIX)/bin 
- 	$(RM)  $(PREFIX)/bin/scilab
- 	ln -fs $(PREFIX)/lib/$(SCIBASE)/bin/scilab $(PREFIX)/bin/scilab
+@@ -127,21 +127,21 @@
+ BINDISTFILES = \
+ 	$(SCIBASE)/.binary \
+ 	$(SCIBASE)/.pvmd.conf \
+-	$(SCIBASE)/ACKNOWLEDGEMENTS \
+-	$(SCIBASE)/CHANGES \
++%%PORTDOCS%%	$(SCIBASE)/ACKNOWLEDGEMENTS \
++%%PORTDOCS%%	$(SCIBASE)/CHANGES \
+ 	$(SCIBASE)/Makefile \
+ 	$(SCIBASE)/Makefile.OBJ \
+ 	$(SCIBASE)/Makefile.incl \
+ 	$(SCIBASE)/Makemex \
+ 	$(SCIBASE)/Path.incl \
+-	$(SCIBASE)/README_Unix \
+-	$(SCIBASE)/RELEASE_NOTES \
++%%PORTDOCS%%	$(SCIBASE)/README_Unix \
++%%PORTDOCS%%	$(SCIBASE)/RELEASE_NOTES \
+ 	$(SCIBASE)/SVN_revision.incl \
+ 	$(SCIBASE)/Version.incl \
+ 	$(SCIBASE)/configure \
+ 	$(SCIBASE)/libtool \
+-	$(SCIBASE)/license.txt \
+-	$(SCIBASE)/licence.txt \
++%%PORTDOCS%%	$(SCIBASE)/license.txt \
++%%PORTDOCS%%	$(SCIBASE)/licence.txt \
+ 	$(SCIBASE)/scilab.quit \
+ 	$(SCIBASE)/scilab.star \
+ 	$(SCIBASE)/X11_defaults \
