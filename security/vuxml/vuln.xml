@@ -348,7 +348,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>php5</name>
-	<range><gt>0</gt></range>
+	<range><lt>5.2.6</lt></range>
       </package>
     </affects>
     <description>
@@ -372,6 +372,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-03-21</discovery>
       <entry>2008-04-25</entry>
+      <modified>2008-05-02</modified>
     </dates>
   </vuln>
 
