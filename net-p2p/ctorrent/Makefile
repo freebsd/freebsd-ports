@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctorrent
-PORTVERSION=	3.3
+PORTVERSION=	3.3.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.rahul.net/dholmes/ctorrent/
 DISTNAME=	${PORTNAME}-dnh${PORTVERSION}
