@@ -1148,6 +1148,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_multiparent.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_multiparent.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_multiparent.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_mutabletree.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_mutabletree.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_mutabletree.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_nonascii.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_nonascii.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_nonascii.pyo
@@ -1222,9 +1225,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revision.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revision.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revision.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revisionnamespaces.py
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revisionnamespaces.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revisionnamespaces.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revisionspec.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revisionspec.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revisionspec.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revisiontree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revisiontree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_revisiontree.pyo
@@ -1324,6 +1327,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_ui.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_ui.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_ui.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_uncommit.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_uncommit.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_uncommit.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_upgrade.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_upgrade.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_upgrade.pyo
@@ -1579,6 +1585,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/memory.py
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/memory.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/memory.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/transport/nosmart.py
+%%PYTHON_SITELIBDIR%%/bzrlib/transport/nosmart.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/transport/nosmart.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/readonly.py
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/readonly.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/readonly.pyo
