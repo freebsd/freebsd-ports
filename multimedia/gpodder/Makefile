@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gpodder
@@ -32,7 +32,7 @@ INSTALLS_ICONS=	yes
 MANCOMPRESSED=	no
 MAN1=		${PORTNAME}.1
 
-PORTDOCS=	AUTHORS COPYING ChangeLog PKG-INFO README
+PORTDOCS=	COPYING ChangeLog PKG-INFO README
 
 OPTIONS=	IPOD "iPod synchronization support" off \
 		VIDEO "Video media support using mplayer" off \
