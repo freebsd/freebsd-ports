@@ -7605,6 +7605,7 @@ md5coll		ports/security/md5coll
 md5deep		ports/security/md5deep
 mdbconv		ports/palm/mdbconv
 mdbtools	ports/databases/mdbtools
+mdcp		ports/sysutils/mdcp
 mdcrack		ports/security/mdcrack
 mdf2iso		ports/sysutils/mdf2iso
 mdh		ports/deskutils/mdh
