@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-gzstream --with-libtiff-lzw --with-x
-CFLAGS=		-I${LOCALBASE}/include
+CFLAGS=		-I${LOCALBASE}/include -fPIC
 LDFLAGS=	-L${LOCALBASE}/lib
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	libgfx.a
