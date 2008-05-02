@@ -2165,6 +2165,7 @@ doctorj		ports/devel/doctorj
 documancer	ports/misc/documancer
 dodgindiamond2	ports/games/dodgindiamond2
 dojo		ports/www/dojo
+dojo-shrinksafe	ports/www/dojo-shrinksafe
 dokeos		ports/www/dokeos
 dokuwiki	ports/www/dokuwiki
 dokuwiki-devel	ports/www/dokuwiki-devel
