@@ -7,7 +7,7 @@
 
 PORTNAME=	animenfo
 PORTVERSION=	20020819
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.animenfo.com/extension/files/
 PKGNAMESUFFIX=	-client-gui-gtk${PKGNAMESUFFIX2}
@@ -19,8 +19,7 @@ COMMENT=	AnimeNfo client with GTK support
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gtk20 gnomelibs
-USE_XORG=	xdamage
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
