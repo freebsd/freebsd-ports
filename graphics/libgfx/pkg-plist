@@ -30,6 +30,7 @@ include/gfx/vec4.h
 include/gfx/win/gui-mfc.h
 include/gfx/win/mfc.h
 include/gfx/win/wintools.h
-lib/libgfx.a
+lib/libgfx.so
+lib/libgfx.so.0
 @dirrm include/gfx/win
 @dirrm include/gfx

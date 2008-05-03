@@ -8,7 +8,7 @@
 
 PORTNAME=	vis5d+
 PORTVERSION=	1.2.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vis5d
@@ -16,10 +16,10 @@ MASTER_SITE_SUBDIR=	vis5d
 MAINTAINER=	stephen@math.missouri.edu
 COMMENT=	OpenGL-based volumetric visualization program for scientific datasets
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmix.a:${PORTSDIR}/graphics/qslim \
-		convert:${PORTSDIR}/graphics/ImageMagick \
-		${LOCALBASE}/include/gfx/gfx.h:${PORTSDIR}/graphics/libgfx
+BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
+		mix.0:${PORTSDIR}/graphics/qslim \
+		gfx.0:${PORTSDIR}/graphics/libgfx \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 

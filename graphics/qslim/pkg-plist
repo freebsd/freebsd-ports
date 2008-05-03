@@ -49,5 +49,6 @@ include/mixkit/mixmops.h
 include/mixkit/mixmsg.h
 include/mixkit/mixvops.h
 include/mixkit/stdmix.h
-lib/libmix.a
+lib/libmix.so
+lib/libmix.so.0
 @dirrm include/mixkit
