@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	svninfo
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	print
 MASTER_SITES=	http://www.brucker.ch/projects/svninfo/download/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	miwi
+MASTER_SITE_SUBDIR=	brix
 PKGNAMEPREFIX=	latex-
 
 MAINTAINER=	brix@FreeBSD.org
