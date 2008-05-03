@@ -812,6 +812,7 @@
     SUBDIR += scamper
     SUBDIR += scand
     SUBDIR += scapy
+    SUBDIR += scnc
     SUBDIR += scr_ipfm
     SUBDIR += sdl_net
     SUBDIR += seda
