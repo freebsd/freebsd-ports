@@ -53,6 +53,8 @@ USE_PYTHON=	yes
 HAS_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ""
 
+BROKEN=		does not compile
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-full-src-${PORTVERSION:R}
 PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster} TOOLDIR=${PORTNAME}/${vaster}/outils
 PKGMESSAGE=	${WRKDIR}/pkg-message
