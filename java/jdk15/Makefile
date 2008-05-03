@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/tiger/
@@ -55,8 +56,8 @@ JDK_BUILD_NUMBER=	03
 JDK_BUILD_DATE=		05_oct_2007
 LATEST_LINK=	jdk15
 
-TZUPDATE_VERSION=	1.3.3
-TZUPDATE_TZVERSION=	2007k
+TZUPDATE_VERSION=	1_3_5
+TZUPDATE_TZVERSION=	2008b
 
 .if !defined(WITH_LINUX_BOOTSTRAP)
 NATIVE_BOOTSTRAP_JDKS+=	${LOCALBASE}/diablo-jdk1.5.0 \
@@ -338,7 +339,7 @@ post-build:
 .if defined(WITH_TZUPDATE)
 	@# Update time zones
 	@-${JDKIMAGEDIR}/bin/java -jar \
-		${WRKDIR}/tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}/tzupdater.jar -u -bc
+		${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/tzupdater.jar -u -bc
 	@-${RM} -rf ${JDKIMAGEDIR}/jre/lib/zi.tzdata*
 .endif
 
