@@ -220,6 +220,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/La_Rioja
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Mendoza
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Rio_Gallegos
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/San_Juan
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/San_Luis
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Tucuman
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Argentina/Ushuaia
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Aruba
@@ -363,7 +364,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Bangkok
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Beirut
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Bishkek
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Brunei
-diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Calcutta
+%%TZORIGINAL%%diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Calcutta
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Choibalsan
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Chongqing
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Colombo
@@ -375,6 +376,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Dushanbe
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Gaza
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Harbin
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Hong_Kong
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Ho_Chi_Minh
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Hovd
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Irkutsk
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Jakarta
@@ -385,6 +387,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kamchatka
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Karachi
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kashgar
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Katmandu
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kolkata
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Krasnoyarsk
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kuala_Lumpur
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Kuching
@@ -408,7 +411,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Riyadh
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Riyadh87
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Riyadh88
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Riyadh89
-diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Saigon
+%%TZORIGINAL%%diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Saigon
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Sakhalin
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Samarkand
 diablo-jre%%JRE_VERSION%%/lib/zi/Asia/Seoul
