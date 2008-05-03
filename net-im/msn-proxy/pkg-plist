@@ -29,6 +29,7 @@ bin/msn-proxy
 %%WWWDIR%%/view-to.php
 %%WWWDIR%%/view.php
 %%WWWDIR%%/imagens/ausente.gif
+%%WWWDIR%%/imagens/block.gif
 %%WWWDIR%%/imagens/notinlist.png
 %%WWWDIR%%/imagens/ocupado.gif
 %%WWWDIR%%/imagens/offline.gif
