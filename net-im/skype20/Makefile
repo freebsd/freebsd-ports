@@ -9,8 +9,7 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	1.4.0.118
-PORTREVISION=	4
+PORTVERSION=	2.0.0.68
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
@@ -32,25 +31,31 @@ USE_GL=	linux
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
-
 RESTRICTED=	Redistribution prohibited.
 
-WRKSRC=		${WRKDIR}/skype_static-${DISTVERSION}-oss
+WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}-oss
+SKYPEDIR=	share/skype
 PORTDOCS=	LICENSE README
 SUB_FILES=	pkg-message
+SUB_LIST=	SKYPEDIR=${SKYPEDIR}
+PLIST_SUB=	SKYPEDIR=${SKYPEDIR}
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|Exec=skype|Exec=skype --resources=${PREFIX}/${SKYPEDIR}|' \
+		${WRKSRC}/skype.desktop
+
 do-build:
-	${BRANDELF} -t Linux ${WRKSRC}/skype
+	@${BRANDELF} -t Linux ${WRKSRC}/skype
 
 do-install:
 	@${INSTALL} -d ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
+	@${INSTALL} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/icons/SkypeBlue_48x48.png ${PREFIX}/share/pixmaps/skype.png
 	@${INSTALL_PROGRAM} ${WRKSRC}/skype ${PREFIX}/bin/skype
 	@${CHMOD} a+rx ${PREFIX}/bin/skype
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "avatars icons sounds lang" ${DATADIR}/
+	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "avatars icons sounds lang" ${PREFIX}/${SKYPEDIR}/
 
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
