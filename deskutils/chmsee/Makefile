@@ -13,7 +13,8 @@ MASTER_SITES=	http://download.gro.clinux.org/chmsee/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
-MAN1=		chmsee
+MAN1=		chmsee.1
+MANCOMPRESSED=	no
 
 LIB_DEPENDS+=	chm.0:${PORTSDIR}/misc/chmlib \
 		gtkhtml-3.14:${PORTSDIR}/www/gtkhtml3
