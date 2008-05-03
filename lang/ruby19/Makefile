@@ -44,6 +44,10 @@ OPTIONS=	RDOC "Build and install Rdoc indexes" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+BROKEN=	Does not compile
+.endif
+
 # PORTEPOCH/PORTREVISION hack
 
 .if ${PORTEPOCH} != 0
