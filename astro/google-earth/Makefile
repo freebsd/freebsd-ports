@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	4.3.7191.6508
+PORTVERSION=	4.3.7204.836
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTFILES=	${TARGET_DISTFILE}
@@ -16,7 +16,8 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Explore, Search and Discover
 
 EXTRACT_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
+RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info \
+		${LINUXBASE}/usr/lib/libgthread-2.0.so.0:${PORTSDIR}/devel/linux-glib2
 
 RESTRICTED=	Not sure about redistribution rights
 
@@ -39,9 +40,6 @@ UNMAKESELF=	${LOCALBASE}/bin/unmakeself
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 .else
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
-.endif
-.if ${OSVERSION} < 700000
-IGNORE=		needs new Linux syscalls only in ${OPSYS} >= 7
 .endif
 
 do-fetch:
