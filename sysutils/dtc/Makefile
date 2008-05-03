@@ -34,6 +34,8 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql50-server \
 NO_BUILD=	yes
 USE_PHP=	mysql pcre session
 
+BROKEN=		bad plist
+
 .if defined(WITH_PHP5)
 DEFAULT_PHP_VER=5
 BROKEN_WITH_PHP=4
