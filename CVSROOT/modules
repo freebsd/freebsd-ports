@@ -4554,6 +4554,7 @@ gtkterm2	ports/x11/gtkterm2
 gtktetcolor	ports/games/gtktetcolor
 gtkunique	ports/x11-toolkits/gtkunique
 gtkwave		ports/cad/gtkwave
+gtkwave3	ports/cad/gtkwave3
 gtkyahoo	ports/net-im/gtkyahoo
 gtl		ports/misc/gtl
 gtoaster	ports/sysutils/gtoaster
