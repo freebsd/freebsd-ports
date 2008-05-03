@@ -31,6 +31,8 @@ USE_BZIP2=	yes
 USE_LINUX=	yes
 RESTRICTED=	Redistribution prohibited.
 
+IGNORE=		has moved, use net/skype instead
+
 WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}-oss
 SKYPEDIR=	share/skype
 PORTDOCS=	LICENSE README
