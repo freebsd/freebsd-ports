@@ -16,9 +16,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for Oracle
 
-BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client
+BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client \
+		cppunit-config:${PORTSDIR}/devel/cppunit
 LIB_DEPENDS=	qscintilla.7:${PORTSDIR}/x11-toolkits/qscintilla	\
-		cppunit-1.10.2:${PORTSDIR}/devel/cppunit		\
 		pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${ORACLE_HOME}/network/admin/tnsnames.ora:${PORTSDIR}/databases/oracle8-client
 

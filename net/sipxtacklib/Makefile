@@ -18,7 +18,6 @@ LIB_DEPENDS=	sipXport:${PORTSDIR}/net/sipxportlib \
 		pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
-		cppunit-config:${PORTSDIR}/devel/cppunit \
 		ginstall:${PORTSDIR}/sysutils/coreutils \
 		cppunit-config:${PORTSDIR}/devel/cppunit
 
