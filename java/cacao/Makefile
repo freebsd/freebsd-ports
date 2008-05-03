@@ -14,6 +14,8 @@ COMMENT=	JIT compiler for JAVA
 
 BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 
+BROKEN=		does not configure
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libltdl
 USE_JAVA=	yes
