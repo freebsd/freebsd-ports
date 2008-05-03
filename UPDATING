@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080503:
+  AFFECTS: users of net/skype-devel
+  AUTHOR: beech@FreeBSD.org
+
+  Skype-devel has been moved to update net/skype. If you are running
+  skype-devel, please do the following:
+
+	portupgrade -o net/skype net/skype-devel
+
+
 20080426:
   AFFECTS: users of www/phpgedview
   AUTHOR: beech@FreeBSD.org
