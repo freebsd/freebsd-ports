@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cppunit
-PORTVERSION=	1.10.2
+PORTVERSION=	1.12.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,6 +39,10 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -Ee "s,^(pkgconfigdatadir).*,\1 = ${LOCALBASE}/libdata/pkgconfig," \
+		${WRKSRC}/Makefile.in
+
 post-install:
 	@${FIND} ${PREFIX}/include/cppunit ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
@@ -50,5 +54,5 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/NEWS ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
-	
+
 .include <bsd.port.mk>

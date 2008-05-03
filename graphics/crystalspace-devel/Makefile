@@ -150,7 +150,7 @@ CONFIGURE_ARGS+=	--without-caca
 .endif
 
 .if !defined(WITHOUT_CPPUNIT)
-LIB_DEPENDS+=	cppunit-1.10:${PORTSDIR}/devel/cppunit
+BUILD_DEPENDS+=	cppunit-config:${PORTSDIR}/devel/cppunit
 .else
 CONFIGURE_ARGS+=	--without-cppunit
 .endif
