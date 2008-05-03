@@ -744,7 +744,7 @@ bar		ports/textproc/bar
 barbecue	ports/graphics/barbecue
 barcode		ports/graphics/barcode
 barnyard	ports/security/barnyard
-barnyard-sguil6	ports/security/barnyard-sguil6
+barnyard-sguil	ports/security/barnyard-sguil
 barrage		ports/games/barrage
 barry		ports/ports-mgmt/barry
 bas2tap		ports/lang/bas2tap
