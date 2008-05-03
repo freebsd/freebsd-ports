@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qdvdauthor
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -30,11 +29,14 @@ DATA_FILES=	silence.mp2 html/en/audio_streams.html html/en/system_register.html 
 		qdvdauthor_es.qm qdvdauthor_fr.qm qdvdauthor_it.qm \
 		qdvdauthor_pl.qm qplayer_ca.qm qplayer_de.qm \
 		qplayer_es.qm qplayer_fr.qm qslideshow_ca.qm \
-		qslideshow_de.qm qslideshow_es.qm qslideshow_fr.qm
+		qslideshow_de.qm qslideshow_es.qm qslideshow_fr.qm \
+		qslideshow_it.qm qrender_ca.qm qrender_de.qm \
+		qrender_es.qm
 
 PLIST_FILES=	bin/qdvdauthor \
 		bin/qslideshow \
 		bin/qplayer \
+		bin/qrender \
 		share/pixmaps/qdvdauthor.png \
 		${DATA_FILES:S,^,%%DATADIR%%/,}
 PLIST_DIRS=	%%DATADIR%%/html/en %%DATADIR%%/html %%DATADIR%%
@@ -124,6 +126,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/qdvdauthor ${PREFIX}/bin/qdvdauthor
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/qslideshow ${PREFIX}/bin/qslideshow
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/qplayer    ${PREFIX}/bin/qplayer
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/qrender    ${PREFIX}/bin/qrender
 
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/qdvdauthor.png ${PREFIX}/share/pixmaps
@@ -141,5 +144,9 @@ do-install:
 .for locale in ca de es fr
 	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qplayer_${locale}.qm     ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qslideshow_${locale}.qm  ${DATADIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qslideshow_it.qm  ${DATADIR}
+.for locale in ca de es
+	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qrender_${locale}.qm  ${DATADIR}
 .endfor
 .include <bsd.port.post.mk>
