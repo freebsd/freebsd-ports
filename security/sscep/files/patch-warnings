@@ -160,7 +160,7 @@ Fix a lot of warnings and (what seems to be) two errors...
  	M_ASN1_I2D_vars(a);
  	M_ASN1_I2D_len(a->issuer,i2d_X509_NAME);
 --- sceputils.c	2006-03-13 06:45:22.000000000 -0500
-+++ sceputils.c	2008-04-29 10:03:02.000000000 -0400
++++ sceputils.c	2008-05-03 12:35:42.000000000 -0400
 @@ -48,5 +48,5 @@
   */
  int new_selfsigned(struct scep *s) {
@@ -168,28 +168,35 @@ Fix a lot of warnings and (what seems to be) two errors...
 +	const unsigned char	 *ptr;
  	X509			 *cert;
  	X509_NAME		 *subject;
-@@ -99,5 +99,5 @@
+@@ -99,6 +99,11 @@
  	}
  	/* Get serial no from transaction id */
 -	ptr = (unsigned char *)s->transaction_id;
+-	if (!(serial = c2i_ASN1_INTEGER(NULL, &ptr, 32))) {
 +	ptr = (const unsigned char *)s->transaction_id;
- 	if (!(serial = c2i_ASN1_INTEGER(NULL, &ptr, 32))) {
++#if OPENSSL_VERSION_NUMBER < 0x0090800fL
++#	define CAST_CRUTCH	(unsigned char **)
++#else
++#	define CAST_CRUTCH
++#endif
++	if (!(serial = c2i_ASN1_INTEGER(NULL, CAST_CRUTCH&ptr, 32))) {
  		fprintf(stderr, "%s: error converting serial\n", pname);
-@@ -231,5 +231,5 @@
+ 		ERR_print_errors_fp(stderr);
+@@ -231,5 +236,5 @@
  	
  	/* Assign space for ASCII presentation of the digest */
 -	str = (unsigned char *)malloc(2 * MD5_DIGEST_LENGTH + 1);
 +	str = malloc(2 * MD5_DIGEST_LENGTH + 1); /* XXX this is never freed */
  	ret = str;
  
-@@ -246,5 +246,5 @@
+@@ -246,5 +251,5 @@
  	/* Copy as ASCII string and return: */
  	for (c = 0; c < MD5_DIGEST_LENGTH; c++, str += 2) {
 -		sprintf((char *)str, "%02X", md[c]);
 +		sprintf(str, "%02X", md[c]);
  
  	}
-@@ -252,4 +252,2 @@
+@@ -252,4 +257,2 @@
  	return(ret);
  }
 -
