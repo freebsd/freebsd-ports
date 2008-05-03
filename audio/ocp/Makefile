@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://stian.lunafish.org/ocp/ \
 		CRITICAL
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The legendary Open Cubic Player
 
 LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
