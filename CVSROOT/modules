@@ -15106,6 +15106,7 @@ scm		ports/lang/scm
 scmail		ports/mail/scmail
 scmpc		ports/audio/scmpc
 scmxx		ports/comms/scmxx
+scnc		ports/net/scnc
 scons		ports/devel/scons
 scorched3d	ports/games/scorched3d
 scotch		ports/cad/scotch
