@@ -1,0 +1,11 @@
+--- examples/Makefile.in.orig	2007-11-28 22:04:29.000000000 +0000
++++ examples/Makefile.in	2008-05-03 10:57:01.000000000 +0100
+@@ -152,7 +152,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ dist_examples_DATA = des.sav des.script des.v des.vzt
+-examplesdir = $(pkgdatadir)/examples
++examplesdir = $(datadir)/examples/@PACKAGE@
+ all: all-am
+ 
+ .SUFFIXES:

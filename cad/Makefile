@@ -41,6 +41,7 @@
     SUBDIR += gplcver
     SUBDIR += gspiceui
     SUBDIR += gtkwave
+    SUBDIR += gtkwave3
     SUBDIR += gwave
     SUBDIR += impact
     SUBDIR += irsim
