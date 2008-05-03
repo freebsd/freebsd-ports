@@ -7,36 +7,32 @@
 
 PORTNAME?=	FlightGear
 PORTVERSION?=	${FGVERSION}
-PORTREVISION?=	1
 CATEGORIES=	games
-MASTER_SITES+=	ftp://ftp.flightgear.org/pub/fgfs/Source/:fg \
-		ftp://ftp.de.flightgear.org/pub/fgfs/Source/:fg
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:fg
+MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
+		ftp://ftp.de.flightgear.org/pub/fgfs/Source/
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	ganael.laplanche@martymac.com
 COMMENT?=	The FlightGear flight simulator
 
-LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut \
-		openal.0:${PORTSDIR}/audio/openal
+LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
-FGVERSION=	0.9.10
+FGVERSION=	1.0.0
 
-USE_GL=		gl
+USE_XORG=	ice sm x11 xext xi xt xmu
+USE_GL=		gl glu glut
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share	# location of fgfs-base
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-.if ${PORTNAME} == FlightGear
-MAN1=		est-epsilon.1 fgfs.1 fgjs.1 gl-info.1 js_demo.1 pstest.1
-.endif
+MAN1=	est-epsilon.1 js_demo.1 pstest.1 fgjs.1 gl-info.1 fgfs.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_REENTRANT|${PTHREAD_CFLAGS}|' \
