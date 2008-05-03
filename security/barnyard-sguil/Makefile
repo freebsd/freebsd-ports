@@ -1,12 +1,12 @@
-# New ports collection makefile for:	barnyard-sguil6
+# New ports collection makefile for:	barnyard-sguil
 # Date created:				23 Jan 2006
 # Whom:					pauls
 #
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-sguil6
-COMMENT=	An output system for Snort (patched for sguil6)
+PKGNAMESUFFIX=	-sguil
+COMMENT=	An output system for Snort (patched for sguil)
 
 LIB_DEPENDS+=	tcl84.1:${PORTSDIR}/lang/tcl84
 
