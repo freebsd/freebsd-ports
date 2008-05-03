@@ -1444,6 +1444,7 @@
     SUBDIR += xpi-jsview
     SUBDIR += xpi-linkification
     SUBDIR += xpi-locale-switcher
+    SUBDIR += xpi-menueditor
     SUBDIR += xpi-mldonkey
     SUBDIR += xpi-mousegestures
     SUBDIR += xpi-mozex
