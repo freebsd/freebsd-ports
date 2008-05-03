@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.nazgul.ch/dev/ \
 		http://dougbarton.us/Downloads/
 DISTNAME=	wmwlmon-${PORTVERSION}
 
-MAINTAINER=	marcus@nazgul.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DockApp showing the state of a wireless network device
 
 USE_XORG=	x11 xpm
@@ -24,10 +24,13 @@ PLIST_FILES=	bin/wmwlmon
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600100
-BROKEN=	Needs WLAN infrastructure from 6.0-RELEASE or newer
+IGNORE=		needs WLAN infrastructure from 6.0-RELEASE or newer
 .elif ${OSVERSION} >= 700042
 BROKEN=		Does not compile with GCC 4.2
 .endif
+
+DEPRECATED=		Does not work after removal of wi_req
+EXPIRATION_DATE=	2008-07-03
 
 post-patch:
 	${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.presed
