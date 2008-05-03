@@ -23,6 +23,8 @@ RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321 \
 		faad:${PORTSDIR}/audio/faad \
 		flac:${PORTSDIR}/audio/flac
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
