@@ -38,6 +38,10 @@ SCONS_ARGS+=	enable_lua=false
 
 DESKTOP_ENTRIES="Battle Tanks" "${COMMENT}" "" "bt" "Application;Game;" false
 
+.if ${OSVERSION} < 700042
+BROKEN=		does not compile
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bt ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/*[^s].so ${PREFIX}/lib
