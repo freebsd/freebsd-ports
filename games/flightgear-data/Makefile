@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	fgfs-base
-PORTVERSION=	0.9.10
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Shared/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	FlightGear scenery, textures and aircraft models
 
 NO_BUILD=	yes
@@ -24,7 +23,7 @@ PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
-	@${RM} -f ${WRKSRC}/Aircraft/A-10/COPYING ${WRKSRC}/COPYING
+	@${RM} -f ${WRKSRC}/COPYING ${WRKSRC}/Aircraft/A-10/COPYING ${WRKSRC}/Aircraft/787/COPYING
 
 pre-install:
 	@${RM} -f ${PLIST}
@@ -37,8 +36,7 @@ pre-install:
 		| ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
 
 do-install:
-	cd ${WRKSRC} && \
-	${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	${MKDIR} ${DATADIR}
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${DATADIR})
 
 .include <bsd.port.mk>
