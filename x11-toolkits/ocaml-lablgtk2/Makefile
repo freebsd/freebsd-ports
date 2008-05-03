@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lablgtk2
-PORTVERSION=	2.6.0
-PORTREVISION=	4
+PORTVERSION=	2.10.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \
 		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
@@ -155,5 +154,6 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}/rsvg
 	@${INSTALL_DATA} ${WRKSRC}/examples/rsvg/* ${EXAMPLESDIR}/rsvg
 .endif
+	@${INSTALL_DATA} ${WRKSRC}/META ${PREFIX}/${OCAML_LIBDIR}/${PORTNAME}
 
 .include <bsd.port.post.mk>

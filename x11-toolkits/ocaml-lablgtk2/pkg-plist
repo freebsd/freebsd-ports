@@ -1,10 +1,15 @@
 bin/gdk-pixbuf-mlsource
 %%GLADE%%bin/lablgladecc2
 bin/lablgtk2
+lib/ocaml/lablgtk2/META
 lib/ocaml/lablgtk2/gAction.cmi
 lib/ocaml/lablgtk2/gAction.cmx
 lib/ocaml/lablgtk2/gAction.ml
 lib/ocaml/lablgtk2/gAction.mli
+lib/ocaml/lablgtk2/gAssistant.cmi
+lib/ocaml/lablgtk2/gAssistant.cmx
+lib/ocaml/lablgtk2/gAssistant.ml
+lib/ocaml/lablgtk2/gAssistant.mli
 lib/ocaml/lablgtk2/gBin.cmi
 lib/ocaml/lablgtk2/gBin.cmx
 lib/ocaml/lablgtk2/gBin.ml
@@ -68,6 +73,7 @@ lib/ocaml/lablgtk2/gRange.cmi
 lib/ocaml/lablgtk2/gRange.cmx
 lib/ocaml/lablgtk2/gRange.ml
 lib/ocaml/lablgtk2/gRange.mli
+lib/ocaml/lablgtk2/gSourceView.mli
 lib/ocaml/lablgtk2/gText.cmi
 lib/ocaml/lablgtk2/gText.cmx
 lib/ocaml/lablgtk2/gText.ml
@@ -151,6 +157,9 @@ lib/ocaml/lablgtk2/gpointer.mli
 lib/ocaml/lablgtk2/gtk.cmi
 lib/ocaml/lablgtk2/gtk.cmx
 lib/ocaml/lablgtk2/gtk.ml
+lib/ocaml/lablgtk2/gtkAssistant.cmi
+lib/ocaml/lablgtk2/gtkAssistant.cmx
+lib/ocaml/lablgtk2/gtkAssistant.ml
 lib/ocaml/lablgtk2/gtkBase.cmi
 lib/ocaml/lablgtk2/gtkBase.cmx
 lib/ocaml/lablgtk2/gtkBase.ml
@@ -205,6 +214,7 @@ lib/ocaml/lablgtk2/gtkSignal.cmi
 lib/ocaml/lablgtk2/gtkSignal.cmx
 lib/ocaml/lablgtk2/gtkSignal.ml
 lib/ocaml/lablgtk2/gtkSignal.mli
+lib/ocaml/lablgtk2/gtkSourceView_types.mli
 %%GTKSPELL%%lib/ocaml/lablgtk2/gtkSpell.cmi
 %%GTKSPELL%%lib/ocaml/lablgtk2/gtkSpell.cmx
 %%GTKSPELL%%lib/ocaml/lablgtk2/gtkSpell.ml
@@ -263,12 +273,14 @@ lib/ocaml/lablgtk2/liblablgtkgl2.a
 %%GTKSPELL%%lib/ocaml/lablgtk2/liblablgtkspell.a
 %%PANEL%%lib/ocaml/lablgtk2/liblablpanel.a
 %%RSVG%%lib/ocaml/lablgtk2/liblablrsvg.a
+lib/ocaml/lablgtk2/ml_domain.h
 lib/ocaml/lablgtk2/ml_gdk.h
 lib/ocaml/lablgtk2/ml_gdkpixbuf.h
 lib/ocaml/lablgtk2/ml_glib.h
 lib/ocaml/lablgtk2/ml_gobject.h
 lib/ocaml/lablgtk2/ml_gpointer.h
 lib/ocaml/lablgtk2/ml_gtk.h
+lib/ocaml/lablgtk2/ml_gtktext.h
 lib/ocaml/lablgtk2/ml_gtktree.h
 lib/ocaml/lablgtk2/ml_gvaluecaml.h
 lib/ocaml/lablgtk2/ml_pango.h
@@ -301,6 +313,7 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%GTKSPELL%%lib/ocaml/stublibs/dlllablgtkspell.so
 %%PANEL%%lib/ocaml/stublibs/dlllablpanel.so
 %%RSVG%%lib/ocaml/stublibs/dlllablrsvg.so
+%%PORTDOCS%%%%EXAMPLESDIR%%/GL/aargb.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/GL/gears.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/GL/morph3d.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/GL/planet.ml
@@ -311,7 +324,10 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-3.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-4.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/GL/tutorial-5.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/about.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/action.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/assistant.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/assistant_tutorial.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/buttons.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/calc.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/calendar.ml
@@ -323,7 +339,9 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%PORTDOCS%%%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/canvas-richtext.ml
 %%PORTDOCS%%%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/flower.png
 %%PORTDOCS%%%%GNOMECANVAS%%%%EXAMPLESDIR%%/canvas/toroid.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/cgets.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/clist.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/cputs.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/combo.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/combobox.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/counter.ml
@@ -355,6 +373,7 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/image256x256.rgb
 %%PORTDOCS%%%%EXAMPLESDIR%%/kaimono.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/label.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/link_button.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/lissajous.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/nihongo.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/notebook.ml
@@ -370,6 +389,7 @@ lib/ocaml/stublibs/dlllablgtkgl2.so
 %%PORTDOCS%%%%RSVG%%%%EXAMPLESDIR%%/rsvg/test_rsvg.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/scrolledwin.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/signal_override.ml
+%%PORTDOCS%%%%EXAMPLESDIR%%/slide_show.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/socket.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/spell.ml
 %%PORTDOCS%%%%EXAMPLESDIR%%/test.xpm
