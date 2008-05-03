@@ -6,30 +6,31 @@
 #
 
 PORTNAME=	sguil-sensor
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sguil
 
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Sguil is a network security monitoring program
 
+LIB_DEPENDS=	tls:${PORTSDIR}/devel/tcltls
 RUN_DEPENDS=	snort:${PORTSDIR}/security/snort \
-		barnyard:${PORTSDIR}/security/barnyard-sguil6 \
+		barnyard:${PORTSDIR}/security/barnyard-sguil \
 		${LOCALBASE}/lib/tclx8.4/tclx.tcl:${PORTSDIR}/lang/tclX
 
-OPTIONS=	SANCP "Include sancp support" off \
-		TLS "Include openssl support" off
+OPTIONS=	SANCP "Include sancp sensor" off \
+		PADS "Include pads sensor" off
 
 NO_BUILD=	yes
-USE_RC_SUBR=	sensor_agent.sh
+USE_RC_SUBR=	example_agent.sh pcap_agent.sh snort_agent.sh
 TCLSH_CMD?=	tclsh8.4
 WRKSRC=		${WRKDIR}/sguil-${PORTVERSION}
 SUB_LIST=	SGUILDIR=${SGUILDIR}
-SUB_FILES=	pkg-message sensor_agent.sh
+SUB_FILES=	pkg-message example_agent.sh pcap_agent.sh snort_agent.sh
 PLIST_SUB=	SGUILDIR=${SGUILDIR}
 SGUILDIR?=	sguil-sensor
+AGENTS=		example_agent.tcl pads_agent.tcl pcap_agent.tcl sancp_agent.tcl snort_agent.tcl
 
 PORTDOCS=	CHANGES FAQ INSTALL INSTALL.openbsd LICENSE.QPL \
 		OPENSSL.README TODO UPGRADE USAGE sguildb.dia
@@ -40,43 +41,75 @@ WITH_PCRE=	true
 
 .if defined(WITH_SANCP)
 RUN_DEPENDS+=	sancp:${PORTSDIR}/security/sancp
+USE_RC_SUBR+=	sancp_agent.sh
+SUB_FILES+=	sancp_agent.sh
 PLIST_SUB+=	USESANCP=
 .else
 PLIST_SUB+=	USESANCP="@comment "
 .endif
 
-.if defined(WITH_TLS)
-LIB_DEPENDS+=	tls:${PORTSDIR}/devel/tcltls
+.if defined(WITH_PADS)
+RUN_DEPENDS+=	pads:${PORTSDIR}/net-mgmt/pads
+USE_RC_SUBR+=	pads_agent.sh
+SUB_FILES+=	pads_agent.sh
+PLIST_SUB+=	USEPADS=
+.else
+PLIST_SUB+=	USEPADS="@comment "
 .endif
 
 post-patch:
-.for f in sensor_agent.tcl
+.for f in ${AGENTS}
 	@${REINPLACE_CMD} -e 's:exec tclsh:exec ${PREFIX}/bin/${TCLSH_CMD}:g' \
+		${WRKSRC}/sensor/${f}
+	@${REINPLACE_CMD} -e 's:/etc/:${PREFIX}/etc/${SGUILDIR}/:g' \
 		${WRKSRC}/sensor/${f}
 .endfor
 
 do-install:
 	@${MKDIR} ${PREFIX}/bin/${SGUILDIR}
-	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/sensor/sensor_agent.tcl \
-		${PREFIX}/bin/${SGUILDIR}/sensor_agent.tcl
+	@${MKDIR} ${PREFIX}/etc/${SGUILDIR}
+.for f in example_agent.tcl pcap_agent.tcl snort_agent.tcl
+	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/sensor/${f} \
+		${PREFIX}/bin/${SGUILDIR}/${f}
+.endfor
 .for f in log_packets.sh
 	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/sensor/${f} \
 		${PREFIX}/bin/${SGUILDIR}/${f}
 .endfor
-.for f in sensor_agent.conf
+.for f in example_agent.conf pcap_agent.conf snort_agent.conf
 	${INSTALL_DATA} ${WRKSRC}/sensor/${f} \
-		${PREFIX}/etc/${f}-sample
+		${PREFIX}/etc/${SGUILDIR}/${f}-sample
 .endfor
 .for f in log_packets.conf
 	${INSTALL_DATA} ${FILESDIR}/${f} \
-		${PREFIX}/etc/${f}-sample
+		${PREFIX}/etc/${SGUILDIR}/${f}-sample
 .endfor
 .if defined(WITH_SANCP)
+.for f in sancp_agent.conf
+	${INSTALL_DATA} ${WRKSRC}/sensor/${f} \
+		${PREFIX}/etc/${SGUILDIR}/${f}-sample
+.endfor
 .for f in sancp.conf
 	${INSTALL_DATA} ${WRKSRC}/sensor/sancp/${f} \
 		${PREFIX}/etc/${f}-sample
 .endfor
+.for f in sancp_agent.tcl
+	${INSTALL_SCRIPT} ${WRKSRC}/sensor/${f} \
+		${PREFIX}/bin/${SGUILDIR}/${f}
+.endfor
 .endif
+.if defined(WITH_PADS)
+.for f in pads_agent.conf
+	${INSTALL_DATA} ${WRKSRC}/sensor/${f} \
+		${PREFIX}/etc/${SGUILDIR}/${f}-sample
+.endfor
+.for f in pads_agent.tcl
+	${INSTALL_SCRIPT} ${WRKSRC}/sensor/${f} \
+		${PREFIX}/bin/${SGUILDIR}/${f}
+.endfor
+.endif
+post-install:
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} \

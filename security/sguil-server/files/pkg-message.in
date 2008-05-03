@@ -2,11 +2,21 @@
          * !!!!!!!!!!! WARNING !!!!!!!!!!! *
          ***********************************
 
+PLEASE NOTE: If you are upgrading from a previous version,
+read the UPGRADE doc (in %%DOCSDIR%%) before proceeding!!!
+Some noteworthy changes in version 0.7.0:
+SSL is now required for server, sensor and client.
+The sguild.conf and sguild.email files have changed.
+You MUST run the upgrade_0.7.tcl script to clean up and
+prepare the database before running the new version.  BE SURE
+TO BACK UP YOUR DATABASE BEFORE PROCEEDING!!!
+
 If you had existing config files in %%PREFIX%%/etc/%%SGUILDIR%%
 they were not overwritten.  If this is a first time install, you
 must copy the sample files to the corresponding conf file and 
 edit the various config files for your site.  See the INSTALL
-doc in %%DOCSDIR%% for details.
+doc in %%DOCSDIR%% for details.  If this is an upgrade, replace
+your existing conf file with the new one and edit accordingly.
 
 The sql scripts for creating database tables were placed in
 the %%PREFIX%%/share/%%SGUILDIR%%/ directory.  PLEASE 
@@ -23,8 +33,12 @@ A startup script, named sguild.sh was installed in
 %%PREFIX%%/etc/rc.d/.  To enable it, edit /etc/rc.conf
 per the instructions in the script.
 
+NOTE:  Sguild now runs under the sguil user account not root!
+
 For general questions, see the sguil faq: 
-http://sguil.sourceforge.net/index.php?page=faq
+http://www.vorant.com/nsmwiki/Sguil_FAQ or visit the nsm wiki:
+http://www.vorant.com/nsmwiki/Main_Page
+
 For detailed install instructions see Richard Bejtlich's
 excellent guide at his blog: 
 http://taosecurity.blogspot.com/2006/03/new-sguil-scripts-and-vm-i-have-not.html

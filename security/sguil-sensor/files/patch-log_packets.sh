@@ -1,12 +1,13 @@
---- sensor/log_packets.sh.orig	Fri Mar 24 13:12:18 2006
-+++ sensor/log_packets.sh	Mon Mar 27 17:22:54 2006
-@@ -23,37 +23,16 @@
+--- sensor/log_packets.sh.orig	2008-04-03 22:16:22.000000000 -0500
++++ sensor/log_packets.sh	2008-04-03 22:22:20.000000000 -0500
+@@ -22,38 +22,16 @@
+ #                                                            #
  ##############################################################
  
- 
--# Edit these for your setup
 +# You shouldn't need to edit anything in this script
  
+-# Edit these for your setup
+-
 -# Sensors hostname.
 -# Note: If running multiple snort instances, then this must be different
 -#       for each instance (ie sensor1, sensor2, sensor-eth0, sensor-eth1, etc)
@@ -36,7 +37,7 @@
 -#Some installs may need these
 -#LD_LIBRARY_PATH=/usr/local/lib/mysql
 -#export LD_LIBRARY_PATH
-+CONF=/usr/local/etc/log_packets.conf
++CONF=/usr/local/etc/sguil-sensor/log_packets.conf
 +if [ -r ${CONF} ]; then
 +  . ${CONF}
 +else

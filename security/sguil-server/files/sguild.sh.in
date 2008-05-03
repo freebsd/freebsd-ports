@@ -21,12 +21,13 @@ rcvar=`set_rcvar`
 
 command="%%PREFIX%%/bin/${name}"
 procname="%%TCLSH%%"
-pidfile="/var/run/${name}.pid"
-check_pidfile="${pidfile} ${procname} /bin/sh"
+check_process="${procname}"
+sguild_user="sguil"
+pid="/var/run/%%SGUILDIR%%/${name}.pid"
 
 sguild_enable=${sguild_enable-NO}
 sguild_conf=${sguild_conf-%%PREFIX%%/etc/%%SGUILDIR%%/sguild.conf}
-sguild_flags=${sguild_flags--D}
+sguild_flags=${sguild_flags--D -P ${pid}}
 [ -n "$sguild_conf" ] && sguild_flags="$sguild_flags -c $sguild_conf"
 
 load_rc_config ${name}
