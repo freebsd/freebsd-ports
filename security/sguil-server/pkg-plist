@@ -16,9 +16,11 @@ lib/%%SGUILDIR%%/SguildCreateDB.tcl
 lib/%%SGUILDIR%%/SguildEmailEvent.tcl
 lib/%%SGUILDIR%%/SguildEvent.tcl
 lib/%%SGUILDIR%%/SguildGenericDB.tcl
+lib/%%SGUILDIR%%/SguildGenericEvent.tcl
 lib/%%SGUILDIR%%/SguildHealthChecks.tcl
 lib/%%SGUILDIR%%/SguildLoaderd.tcl
 lib/%%SGUILDIR%%/SguildMysqlMerge.tcl
+lib/%%SGUILDIR%%/SguildPadsLib.tcl
 lib/%%SGUILDIR%%/SguildQueryd.tcl
 lib/%%SGUILDIR%%/SguildReportBuilder.tcl
 lib/%%SGUILDIR%%/SguildSendComms.tcl
@@ -30,12 +32,16 @@ share/%%SGUILDIR%%/create_ruledb.sql
 share/%%SGUILDIR%%/create_sguildb.sql
 share/%%SGUILDIR%%/migrate_event.tcl
 share/%%SGUILDIR%%/migrate_sancp.tcl
+share/%%SGUILDIR%%/sancp_cleanup.tcl
+share/%%SGUILDIR%%/update_0.7.tcl
 share/%%SGUILDIR%%/update_sguildb_v5-v6.sql
 share/%%SGUILDIR%%/update_sguildb_v6-v7.sql
 share/%%SGUILDIR%%/update_sguildb_v7-v8.sql
 share/%%SGUILDIR%%/update_sguildb_v8-v9.sql
 share/%%SGUILDIR%%/update_sguildb_v9-v10.sql
 share/%%SGUILDIR%%/update_sguildb_v10-v11.sql
-@dirrm share/%%SGUILDIR%%
-@unexec if [ ! -f %D/etc/%%SGUILDIR%%/sguild.conf ] ; then rmdir %D/etc/%%SGUILDIR%%; fi
+share/%%SGUILDIR%%/update_sguildb_v11-v12.sql
+@dirrmtry etc/%%SGUILDIR%%/certs
+@unexec if [ ! -f %D/etc/%%SGUILDIR%%/sguild.conf ] && [ ! -d %D/etc/%%SGUILDIR%%/certs ] ; then rmdir %D/etc/%%SGUILDIR%%; fi
 @dirrm lib/%%SGUILDIR%%
+@dirrm share/%%SGUILDIR%%

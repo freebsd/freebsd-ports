@@ -1,15 +1,15 @@
---- sguild.orig	Tue Mar 28 04:36:05 2006
-+++ sguild	Tue Mar 28 04:37:10 2006
-@@ -229,7 +229,7 @@
-   package require tls
-   # Check for certs
-   if {![info exists CERTS_PATH]} {
+--- sguild.orig	2008-04-08 22:02:24.000000000 -0500
++++ sguild	2008-04-08 22:09:11.000000000 -0500
+@@ -235,7 +235,7 @@
+ # Check for certs
+ if {![info exists CERTS_PATH]} {
+ 
 -    set CERTS_PATH /etc/sguild/certs
 +    set CERTS_PATH /usr/local/etc/sguil-server/certs
-   }
-   if {![file exists $CERTS_PATH] || ![file isdirectory $CERTS_PATH]} {
-     puts "ERROR: $CERTS_PATH does not exist or is not a directory"
-@@ -251,13 +251,13 @@
+ 
+ }
+ 
+@@ -265,13 +265,13 @@
  
  if { ![info exists CONF_FILE] } {
    # No conf file specified check the defaults
@@ -26,7 +26,7 @@
      DisplayUsage $argv0
    }
  }
-@@ -338,17 +338,17 @@
+@@ -354,17 +354,17 @@
  # Check for a valid USERS file
  if { ![info exists USERS_FILE] } {
    # No users file was specified. Go with the defaults
@@ -48,7 +48,7 @@
        DisplayUsage $argv0
      }
    }
-@@ -376,8 +376,8 @@
+@@ -392,8 +392,8 @@
  # Load accessfile
  if { ![info exists ACCESS_FILE] } {
    # Check the defaults
@@ -59,7 +59,7 @@
    } elseif { [file exists ./sguild.access] } {
      set ACCESS_FILE "./sguild.access"
    } else {
-@@ -391,8 +391,8 @@
+@@ -407,8 +407,8 @@
  }
  # Load auto cat config
  if { ![info exists AUTOCAT_FILE] } {
@@ -70,7 +70,7 @@
     } else {
       set AUTOCAT_FILE "./autocat.conf"
     }
-@@ -402,8 +402,8 @@
+@@ -418,8 +418,8 @@
  }
  # Load email config file
  if { ![info exists EMAIL_FILE] } {
@@ -81,7 +81,7 @@
    } else {
      set EMAIL_FILE "./sguild.email"
    }
-@@ -415,8 +415,8 @@
+@@ -431,8 +431,8 @@
  }
  # Load global queries.
  if { ![info exists GLOBAL_QRY_FILE] } {
@@ -92,7 +92,7 @@
    } else {
      set GLOBAL_QRY_FILE "./sguild.queries"
    }
-@@ -428,8 +428,8 @@
+@@ -444,8 +444,8 @@
  }
  # Load report queries.
  if { ![info exists REPORT_QRY_FILE] } {

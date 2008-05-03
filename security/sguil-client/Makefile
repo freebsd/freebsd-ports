@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	sguil-client
-PORTVERSION=	0.6.1
-PORTREVISION=	3
+PORTVERSION=	0.7.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sguil
 
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Sguil is a network security monitoring program
 
+LIB_DEPENDS=	tls:${PORTSDIR}/devel/tcltls
 RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib \
-		gpgv:${PORTSDIR}/security/gnupg1 \
+		gpg2:${PORTSDIR}/security/gnupg \
 		${LOCALBASE}/lib/tclx8.4/tclx.tcl:${PORTSDIR}/lang/tclX \
 		${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
 
-OPTIONS=	TLS "Include openssl support" off \
-		WIRESHARK "Install wireshark" off \
+OPTIONS=	WIRESHARK "Install wireshark" off \
 		AUDIO "Install Festival Speech Synthesis" off
 
 NO_BUILD=	YES
@@ -39,7 +38,8 @@ PORTDOCS=	CHANGES FAQ INSTALL INSTALL.openbsd LICENSE.QPL \
 		OPENSSL.README TODO UPGRADE USAGE sguildb.dia
 
 LIBFILES=	SguilUtil.tcl dkffont.tcl email17.tcl extdata.tcl guilib.tcl nessusheader.html \
-		qrybuild.tcl qrylib.tcl report.tcl sancp.tcl sellib.tcl sound.tcl stdquery.tcl whois.tcl
+		qrybuild.tcl qrylib.tcl report.tcl sancp.tcl sellib.tcl sound.tcl stdquery.tcl \
+		whois.tcl
 
 IMAGES=		DarkLineDown10x9.xbm DarkLineDown12x11.xbm DarkLineDown8x7.xbm DarkLineUp10x9.xbm \
 		DarkLineUp12x11.xbm DarkLineUp8x7.xbm LightLineDown10x9.xbm LightLineDown12x11.xbm \
@@ -54,10 +54,6 @@ SCRIPTS=	mwutil.tcl repair.tcl tablelistBind.tcl tablelistConfig.tcl tablelistEd
 		tablelistWidget.tcl tclIndex
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_TLS)
-LIB_DEPENDS+=	tls:${PORTSDIR}/devel/tcltls
-.endif
 
 .if defined(WITH_WIRESHARK)
 RUN_DEPENDS+=	wireshark:${PORTSDIR}/net/wireshark

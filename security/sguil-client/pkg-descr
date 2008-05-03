@@ -4,13 +4,13 @@ The actual interface and GUI server are written in tcl/tk
 (www.tcl.tk). Sguil also relies on other open source software
 in order to function properly.
 
-The client requires gpg, iwidgets and other tcl packages and may
-also use wireshark, festival and tls depending on your selection
+The client requires tls, gpg, iwidgets and other tcl packages and may
+also use wireshark and festival depending on your selection
 of options.  Run "make config" in the port to see what options
 are available.
 
-Sguil currently functions as an analysis interface and has
-no snort sensor or rule management capabilities.
+Sguil currently functions as an analysis interface and does not yet
+have rule management capabilities.
 
 WWW: http://sguil.sourceforge.net/index.php
 pauls@utdallas.edu

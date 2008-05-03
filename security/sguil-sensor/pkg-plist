@@ -1,6 +1,15 @@
 bin/%%SGUILDIR%%/log_packets.sh
-bin/%%SGUILDIR%%/sensor_agent.tcl
-etc/log_packets.conf-sample
+bin/%%SGUILDIR%%/example_agent.tcl
+bin/%%SGUILDIR%%/pcap_agent.tcl
+bin/%%SGUILDIR%%/snort_agent.tcl
+etc/%%SGUILDIR%%/example_agent.conf-sample
+etc/%%SGUILDIR%%/pcap_agent.conf-sample
+etc/%%SGUILDIR%%/snort_agent.conf-sample
+etc/%%SGUILDIR%%/log_packets.conf-sample
+%%USEPADS%%bin/%%SGUILDIR%%/pads_agent.tcl
+%%USEPADS%%etc/%%SGUILDIR%%/pads_agent.conf-sample
 %%USESANCP%%etc/sancp.conf-sample
-etc/sensor_agent.conf-sample
+%%USESANCP%%bin/%%SGUILDIR%%/sancp_agent.tcl
+%%USESANCP%%etc/%%SGUILDIR%%/sancp_agent.conf-sample
 @dirrm bin/%%SGUILDIR%%
+@dirrmtry etc/%%SGUILDIR%%

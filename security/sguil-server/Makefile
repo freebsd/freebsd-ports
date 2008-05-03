@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	sguil-server
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sguil
 
 MAINTAINER=	pauls@utdallas.edu
@@ -18,7 +17,6 @@ COMMENT=	Sguil is a network security monitoring program
 RUN_DEPENDS=	p0f:${PORTSDIR}/net-mgmt/p0f \
 		tcpflow:${PORTSDIR}/net/tcpflow \
 		dtplite:${PORTSDIR}/devel/tcllib \
-		barnyard:${PORTSDIR}/security/barnyard-sguil6 \
 		${LOCALBASE}/lib/tclx8.4/tclx.tcl:${PORTSDIR}/lang/tclX
 LIB_DEPENDS=	tls:${PORTSDIR}/devel/tcltls
 
@@ -29,23 +27,32 @@ SGUILDIR?=	sguil-server
 WRKSRC=		${WRKDIR}/sguil-${PORTVERSION}
 PATCH_WRKSRC=	${WRKSRC}/server
 PLIST_SUB=	SGUILDIR=${SGUILDIR}
-SUB_FILES=	pkg-message
-SUB_LIST=	SGUILDIR=${SGUILDIR} TCLSH=${TCLSH_CMD}
-LIBRARIES=	SguildAccess.tcl SguildEvent.tcl SguildReportBuilder.tcl \
-		SguildAutoCat.tcl SguildGenericDB.tcl SguildSendComms.tcl \
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
+SUB_LIST=	SGUILDIR=${SGUILDIR} TCLSH=${TCLSH_CMD} CURDIR=${.CURDIR} \
+		WRKSRC=${WRKSRC} DOCSDIR=${DOCSDIR}
+LIBRARIES=	SguildAccess.tcl SguildGenericDB.tcl SguildReportBuilder.tcl \
+		SguildAutoCat.tcl SguildGenericEvent.tcl SguildSendComms.tcl \
 		SguildClientCmdRcvd.tcl SguildHealthChecks.tcl SguildSensorAgentComms.tcl \
 		SguildConnect.tcl SguildLoaderd.tcl SguildSensorCmdRcvd.tcl \
 		SguildCreateDB.tcl SguildMysqlMerge.tcl SguildTranscript.tcl \
-		SguildEmailEvent.tcl SguildQueryd.tcl SguildUtils.tcl
-SCRIPTS=	create_ruledb.sql update_sguildb_v10-v11.sql update_sguildb_v8-v9.sql \
-		create_sguildb.sql update_sguildb_v5-v6.sql update_sguildb_v9-v10.sql \
-		migrate_event.tcl update_sguildb_v6-v7.sql migrate_sancp.tcl update_sguildb_v7-v8.sql
+		SguildEmailEvent.tcl SguildPadsLib.tcl SguildUtils.tcl \
+		SguildEvent.tcl SguildQueryd.tcl
+SCRIPTS=	create_ruledb.sql update_0.7.tcl update_sguildb_v7-v8.sql \
+		create_sguildb.sql update_sguildb_v10-v11.sql update_sguildb_v8-v9.sql \
+		migrate_event.tcl update_sguildb_v11-v12.sql update_sguildb_v9-v10.sql \
+		migrate_sancp.tcl update_sguildb_v5-v6.sql sancp_cleanup.tcl update_sguildb_v6-v7.sql
 CONFS=		autocat.conf sguild.access sguild.conf sguild.email sguild.queries sguild.reports sguild.users
 
-PORTDOCS=	CHANGES INSTALL INSTALL.openbsd LICENSE.QPL \
-		OPENSSL.README TODO USAGE sguildb.dia
+PORTDOCS=	CHANGES FAQ INSTALL INSTALL.openbsd LICENSE.QPL \
+		OPENSSL.README TODO UPGRADE USAGE sguildb.dia
+
+OPTIONS=	MYSQL50 "Install mysql50 server" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_MYSQL50)
+RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql50-server
+.endif
 
 MYSQLTCL_VER!=	cd ${PORTSDIR}/databases/mysqltcl && ${MAKE} -V PORTVERSION
 
@@ -56,10 +63,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:exec tclsh:exec ${TCLSH_CMD}:g' ${WRKSRC}/server/${f}
 .endfor
 
-do-install:
-	@${MKDIR} ${PREFIX}/etc/${SGUILDIR}
+pre-su-install:
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+pre-install:
 	@${MKDIR} ${PREFIX}/lib/${SGUILDIR}
 	@${MKDIR} ${PREFIX}/share/${SGUILDIR}
+	@${MKDIR} /var/run/${SGUILDIR}
+do-install:
 .for f in archive_sguildb.tcl sguild
 	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/server/${f} ${PREFIX}/bin/${f}
 .endfor
@@ -80,6 +92,9 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+	@${SETENV} PKG_PREFIX=${PREFIX} && PORTSDIR=${PORTSDIR} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

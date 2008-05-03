@@ -5,13 +5,14 @@ The actual interface and GUI server are written in tcl/tk
 in order to function properly.
 
 The sensor list includes security/barnyard, security/snort, 
-security/sancp, tcpdump (a part of the OS) and devel/tcltls as 
-well as lang/tcl84 and lang/tclX.  Care has been taken to ensure 
-that everything you need to build a working sguil operation is 
-in the FreeBSD ports system or part of the OS already. 
+security/sancp, net-mgmt/pads, tcpdump (a part of the OS) 
+and devel/tcltls as well as lang/tcl84 and lang/tclX.  Care 
+has been taken to ensure that everything you need to build 
+a working sguil operation is in the FreeBSD ports system or 
+is part of the OS already. 
 
 Sguil currently functions as an analysis interface and has
-no snort sensor or rule management capabilities.
+rule management capabilities.
 
 WWW: http://sguil.sourceforge.net/index.php
 pauls@utdallas.edu
