@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	msn-proxy
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -28,11 +27,11 @@ MSNPROXYWWW=	ajax.inc.php al.inc.php bl.inc.php chat-to.php chat.php \
 		header.inc.php index.php mysql.inc.php save_contact_op.php \
 		save_default_op.php save_msg.php save_user_op.php user.php \
 		view-to.php view.php
-MSNPROXYIMG=	ausente.gif notinlist.png ocupado.gif offline.gif online.gif \
-		send_im.gif webcam.png
+MSNPROXYIMG=	ausente.gif block.gif notinlist.png ocupado.gif offline.gif \
+		online.gif send_im.gif webcam.png
 
 WANT_PHP_WEB=	yes
-USE_PHP=	mysql
+USE_PHP=	mysql session
 MAKE_ARGS=	SYSCONFDIR=$(DESTDIR)${PREFIX}/etc/msn-proxy \
 			BINDIR=$(DESTDIR)${PREFIX}/bin
 
