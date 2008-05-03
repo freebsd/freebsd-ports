@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-ClamAV
 PORTVERSION=	0.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,8 +25,6 @@ USE_LDCONFIG=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Mail::ClamAV.3
-
-BROKEN=	Doesn't build with clamav-0.93
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
