@@ -79,6 +79,7 @@ share/pixmaps/tuxguitar.xpm
 %%DATADIR%%/help/images/start/tb_markers.png
 %%DATADIR%%/help/images/start/fs_track_properties.png
 %%DATADIR%%/help/images/start/tb_add_track.png
+%%DATADIR%%/help/images/start/p_mode.png
 %%DATADIR%%/help/images/introduction/header.png
 %%DATADIR%%/help/images/tools/plugins_dialog.png
 %%DATADIR%%/help/images/tools/keybinding_editor.png
