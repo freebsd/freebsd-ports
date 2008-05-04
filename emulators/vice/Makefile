@@ -6,7 +6,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	1.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.viceteam.org/online/ \
 		http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
-.if !defined(VICE_WITH_GNOME)
+.if defined(VICE_WITH_XAW3D)
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
@@ -31,14 +31,20 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 
-.if defined(VICE_WITH_GNOME)
-GNOME_SUFFIX=	-gnome
-USE_GNOME=	gnomelibs libgnomeui
-CONFIGURE_ARGS=	--enable-gnomeui
-CONFLICTS?=	vice-1.*
+.if defined(VICE_WITH_XAW3D)
+GNOME_SUFFIX=	-xaw3d
+CONFIGURE_ARGS=	--with-xaw3d --disable-gnomeui
+CONFLICTS?=	vice-gnome-1.* vice-1.*
 .else
-CONFIGURE_ARGS=	--with-xaw3d
-CONFLICTS?=	vice-gnome-1.*
+.if !defined(VICE_WITHOUT_GNOME)
+GNOME_SUFFIX=	-gnome
+USE_GNOME=	gtk20
+CONFIGURE_ARGS=	--enable-gnomeui
+CONFLICTS?=	vice-1.* vice-xaw3d-1.*
+.else
+CONFIGURE_ARGS=	--without-xaw3d --disable-gnomeui
+CONFLICTS?=	vice-xaw3d-1.* vice-gnome-1.*
+.endif
 .endif
 
 CFLAGS+=	-I${LOCALBASE}/include
