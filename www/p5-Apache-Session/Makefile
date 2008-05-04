@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Session
-PORTVERSION=	1.81
+PORTVERSION=	1.83
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -45,11 +45,4 @@ MAN3=		Apache::Session.3 \
 		Apache::Session::Store::Sybase.3 \
 		Apache::Session::Sybase.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
