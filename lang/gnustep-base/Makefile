@@ -6,7 +6,11 @@
 #
 
 PORTNAME=	gnustep-base
+.if defined(WITH_GNUSTEP_DEVEL)
+PORTVERSION=	1.15.3
+.else
 PORTVERSION=	1.14.3
+.endif
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
