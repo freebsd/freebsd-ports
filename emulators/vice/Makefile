@@ -26,7 +26,8 @@ LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 RESTRICTED=	"ROMs are copyrighted by Commodore Business Machines"
 
-USE_XORG=	xpm xext xv x11 xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes xv
+USE_XORG=	xpm ice sm xext xv xt x11 xmu
+USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
@@ -44,6 +45,7 @@ CONFLICTS?=	vice-1.* vice-xaw3d-1.*
 .else
 CONFIGURE_ARGS=	--without-xaw3d --disable-gnomeui
 CONFLICTS?=	vice-xaw3d-1.* vice-gnome-1.*
+USE_XORG+=	xaw
 .endif
 .endif
 
