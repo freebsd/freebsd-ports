@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	groovy
-DISTVERSION=	1.5.5
+DISTVERSION=	1.5.6
 CATEGORIES=	lang java
 MASTER_SITES=	http://dist.groovy.codehaus.org/distributions/
 DISTNAME=	groovy-${PORTVERSION}
