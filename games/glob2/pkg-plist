@@ -313,7 +313,14 @@ share/applications/glob2.desktop
 %%DATADIR%%/data/gfx/gamegui25.png
 %%DATADIR%%/data/gfx/gamegui26.png
 %%DATADIR%%/data/gfx/gamegui27.png
+%%DATADIR%%/data/gfx/gamegui28.png
+%%DATADIR%%/data/gfx/gamegui29.png
 %%DATADIR%%/data/gfx/gamegui3.png
+%%DATADIR%%/data/gfx/gamegui30r.png
+%%DATADIR%%/data/gfx/gamegui31.png
+%%DATADIR%%/data/gfx/gamegui32.png
+%%DATADIR%%/data/gfx/gamegui33.png
+%%DATADIR%%/data/gfx/gamegui34.png
 %%DATADIR%%/data/gfx/gamegui4.png
 %%DATADIR%%/data/gfx/gamegui5.png
 %%DATADIR%%/data/gfx/gamegui6.png
@@ -436,6 +443,13 @@ share/applications/glob2.desktop
 %%DATADIR%%/data/gfx/miniswarm0b0r.png
 %%DATADIR%%/data/gfx/miniswarm0c0r.png
 %%DATADIR%%/data/gfx/out.png
+%%DATADIR%%/data/gfx/particle0.png
+%%DATADIR%%/data/gfx/particle0r.png
+%%DATADIR%%/data/gfx/particle1.png
+%%DATADIR%%/data/gfx/particle1r.png
+%%DATADIR%%/data/gfx/particle2.png
+%%DATADIR%%/data/gfx/particle2r.png
+%%DATADIR%%/data/gfx/particle3.png
 %%DATADIR%%/data/gfx/pool0b0.png
 %%DATADIR%%/data/gfx/pool0b0r.png
 %%DATADIR%%/data/gfx/pool0b1.png
@@ -1643,12 +1657,6 @@ share/applications/glob2.desktop
 %%DATADIR%%/data/gui/editor9.png
 %%DATADIR%%/data/gui/yog0.png
 %%DATADIR%%/data/gui/yog1.png
-%%DATADIR%%/data/icons/glob2-icon-128x128.png
-%%DATADIR%%/data/icons/glob2-icon-16x16.png
-%%DATADIR%%/data/icons/glob2-icon-24x24.png
-%%DATADIR%%/data/icons/glob2-icon-32x32.png
-%%DATADIR%%/data/icons/glob2-icon-48x48.png
-%%DATADIR%%/data/icons/glob2-icon-64x64.png
 %%DATADIR%%/data/keyboard-gui.default.txt
 %%DATADIR%%/data/keyboard-mapedit.default.txt
 %%DATADIR%%/data/nicowar.default.txt
@@ -1665,6 +1673,7 @@ share/applications/glob2.desktop
 %%DATADIR%%/data/texts.es.txt
 %%DATADIR%%/data/texts.eu.txt
 %%DATADIR%%/data/texts.fr.txt
+%%DATADIR%%/data/texts.gr.txt
 %%DATADIR%%/data/texts.hu.txt
 %%DATADIR%%/data/texts.incomplete.txt
 %%DATADIR%%/data/texts.it.txt
@@ -1715,10 +1724,26 @@ share/applications/glob2.desktop
 %%DATADIR%%/scripts/tutorial_part2.sgsl
 %%DATADIR%%/scripts/tutorial_part3.sgsl
 %%DATADIR%%/scripts/tutorial_part4.sgsl
+share/icons/hicolor/128x128/apps/glob2-icon-128x128.png
+share/icons/hicolor/16x16/apps/glob2-icon-16x16.png
+share/icons/hicolor/24x24/apps/glob2-icon-24x24.png
+share/icons/hicolor/32x32/apps/glob2-icon-32x32.png
+share/icons/hicolor/48x48/apps/glob2-icon-48x48.png
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%/data/zik
-@dirrm %%DATADIR%%/data/icons
 @dirrm %%DATADIR%%/data/gui
 @dirrm %%DATADIR%%/data/gfx/cursor
 @dirrm %%DATADIR%%/data/gfx
