@@ -104,10 +104,10 @@ EXCLUDELIBS=	ALUT GLUT HGL OpenAL OpenGL X11
 # you could view the output of: ${BOOT_GHC} describe haddock
 .if defined(WITH_DOCS)
 
-MASTER_SITES+=	http://www.haskell.org/haddock/dist/:docs \
+MASTER_SITES+=	http://hackage.haskell.org/packages/archive/haddock/2.1.0/:docs \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/:docs
 
-DISTFILES+=	haddock-2.0.0.0.tar.gz:docs \
+DISTFILES+=	haddock-2.1.0.tar.gz:docs \
 		hscolour-1.9.tar.gz:docs
 
 EXTRACT_ONLY=	${_DISTFILES:C/hscolour.*$//g:C/haddock.*$//g}
