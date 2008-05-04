@@ -1,0 +1,16 @@
+--- ./symon/Makefile.orig	2008-05-02 08:37:53.000000000 -0400
++++ ./symon/Makefile	2008-05-02 08:42:15.000000000 -0400
+@@ -29,11 +29,10 @@
+ 
+ install: symon symon.8 symon.conf
+ 	${INSTALL} -c -m 555 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} symon      ${PREFIX}/${BINDIR}/
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${MANDIR}/man8
+ 	${INSTALL} -c -m 444 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} symon.8 ${PREFIX}/${MANDIR}/man8/symon.8
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${SHRDIR}
++	${INSTALL} -d -m 755 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${SHRDIR}
+ 	${INSTALL} -c -m 555 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} c_config.sh ${PREFIX}/${SHRDIR}/
+-	${INSTALL} -d -m 555 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${EXADIR}
++	${INSTALL} -d -m 755 -g ${INSTALLGROUPDIR} -o ${INSTALLUSER} ${PREFIX}/${EXADIR}
+ 	${INSTALL} -c -m 444 -g ${INSTALLGROUPFILE} -o ${INSTALLUSER} symon.conf ${PREFIX}/${EXADIR}/
+ 
+ conf.h:  Makefile ../Makefile.inc

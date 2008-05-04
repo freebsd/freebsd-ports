@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sysutils/symon
 # Date created:				17.02.2005
-# Whom:					Ulrich Spoerlein <q@uni.de>
+# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	symon
-PORTVERSION=	2.78
+PORTVERSION=	2.79
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/
 
