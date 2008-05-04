@@ -90,6 +90,7 @@
     SUBDIR += dkimproxy
     SUBDIR += dovecot
     SUBDIR += dovecot-antispam
+    SUBDIR += dovecot-devel
     SUBDIR += dovecot-sieve
     SUBDIR += drac
     SUBDIR += drbl
