@@ -4,9 +4,13 @@
 #
 # $FreeBSD$
 #
+# Note: If you update this port make sure you create the distfinfo for all
+# versions: sbcl-1.v.v-x86-64-freebsd and sbcl-1.v.v-x86-freebsd
+#
 
 PORTNAME=	sbcl
 PORTVERSION=	1.0.16
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
