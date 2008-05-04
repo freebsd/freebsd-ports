@@ -107,6 +107,7 @@
     SUBDIR += pidgin-hotkeys
     SUBDIR += pidgin-latex
     SUBDIR += pidgin-libnotify
+    SUBDIR += pidgin-manualsize
     SUBDIR += pidgin-rhythmbox
     SUBDIR += pork
     SUBDIR += psi
