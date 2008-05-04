@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	jfbterm
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ac.auone-net.jp/~baba/jfbterm/ \
 		http://chirashi-no-ura.net/files/
-DISTNAME=	jfbterm-FreeBSD-0.5.0
+DISTNAME=	${PORTNAME}-FreeBSD-${PORTVERSION}
 
 MAINTAINER=	bsdports@gmail.com
 COMMENT=	Multilanguage can be displayed on the console
