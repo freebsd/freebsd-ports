@@ -1,5 +1,5 @@
---- apr-util-1.2.8/build/dbm.m4-orig	Wed Dec  7 09:02:23 2005
-+++ apr-util-1.2.8/build/dbm.m4	Wed Dec 23 09:07:34 2005
+--- apr-util-1.2.12/build/dbm.m4-orig	Wed Dec  7 09:02:23 2005
++++ apr-util-1.2.12/build/dbm.m4	Wed Dec 23 09:07:34 2005
 @@ -588,6 +588,8 @@
      elif test "$withval" = "no"; then
        apu_have_gdbm=0
