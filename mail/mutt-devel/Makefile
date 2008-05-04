@@ -314,7 +314,7 @@ LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .if defined(WITH_MUTT_IMAP_HEADER_CACHE)
 USE_BDB=	42+
 .endif
-.if exists(${LOCALBASE}/lib/libidn.so)
+.if exists(${LOCALBASE}/lib/libidn.so) && !defined(WITHOUT_MUTT_IDN)
 WITH_MUTT_IDN=	yes
 .endif
 .if defined(WITH_MUTT_IDN)
