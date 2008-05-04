@@ -7,16 +7,20 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.13
-PORTREVISION=	2
+DISTVERSION=	1.1.rc4
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.dovecot.org/releases/1.0/
+MASTER_SITES=	http://www.dovecot.org/releases/1.1/rc/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	robin@isometry.net
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 USE_ICONV=	yes
 USE_RC_SUBR=	dovecot.sh
+
+CONFLICTS?=	${PORTNAME}-1.[02-9].*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
