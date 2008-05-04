@@ -1,0 +1,57 @@
+--- mail.local/mail.local.8.orig	2003-10-20 22:26:51.000000000 +0200
++++ mail.local/mail.local.8	2008-05-04 11:55:42.000000000 +0200
+@@ -16,9 +16,9 @@
+ \- store mail in a mailbox
+ .SH SYNOPSIS
+ .B mail.local
+-.RB [ \-7 "] [" \-b "] [" \-d "] [" \-D
++.RB [ \-7 "] [" \-b "] [" \-B "] [" \-d "] [" \-D
+ .IR mbdb ]
+-.RB [ \-l "] [" \-f 
++.RB [ \-l "] [" \-s "] [" \-f 
+ \fIfrom\fR|\fB\-r\fR
+ .IR from ]
+ .RB [ \-h
+@@ -38,6 +38,11 @@
+ .B \-7
+ Do not advertise 8BITMIME support in LMTP mode.
+ .TP 
++.B \-B
++Turn off the attempts to notify the
++.Dq biff
++service.
++.TP 
+ .B \-b
+ Return a permanent error instead of a temporary error
+ if a mailbox exceeds quota.
+@@ -56,6 +61,13 @@
+ .TP
+ .B \-l
+ Turn on LMTP mode.
++.TP
++.B \-s
++Turn off the
++.Xr fsync 2
++call that forces the mailbox to be committed to disk before returning a
++.Dq success
++status.
+ .TP 
+ .BI \-r " from"
+ Specify the sender's name (for backward compatibility).
+@@ -120,7 +132,7 @@
+ .SH FILES
+ .PD 0.2v
+ .TP 2.2i
+-/tmp/local.XXXXXX
++/var/tmp/local.XXXXXX
+ temporary files
+ .TP
+ /var/mail/user
+@@ -131,7 +143,6 @@
+ .PD
+ .SH SEE ALSO
+ mail(1), 
+-xsend(1), 
+ flock(2), 
+ getservbyname(3), 
+ comsat(8), 
