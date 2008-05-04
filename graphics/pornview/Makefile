@@ -7,7 +7,7 @@
 
 PORTNAME=	pornview
 PORTVERSION=	0.2.0.p.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,8 +19,9 @@ COMMENT=	PornView is an image viewer/manager
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
 USE_XORG=	x11 xi xext xinerama
-USE_GNOME=	gdkpixbuf gnomehack gnomeprefix
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gtk2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
