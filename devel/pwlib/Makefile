@@ -7,10 +7,10 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=    ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE}
 DISTNAME=	openh323/ptlib-v${PORTVERSION:S/./_/g}-src.
 EXTRACT_SUFX=	tar.gz
 
@@ -46,6 +46,7 @@ CONFIGURE_ENV+=	ATOMICITY_H="<ext/atomicity.h>"
 .else
 CONFIGURE_ENV+=	ATOMICITY_H="<bits/atomicity.h>"
 .endif
+
 # if explicitely asked for, depend upon it
 .if defined(WITH_SDL)
 USE_SDL+=	sdl
@@ -84,6 +85,11 @@ USE_OPENLDAP=	yes
 CONFIGURE_ENV+=	OPENLDAPLIBDIR="${LOCALBASE}/lib"
 MAKE_ENV+=	OPENLDAPLIBDIR="${LOCALBASE}/lib"
 .endif
+
+#disable OBDC support... it doesn't compile and nothing _seems_ to
+#actually use it. If you do have something that requires this please
+#send patches!
+CONFIGURE_ARGS+=	--disable-odbc
 
 #enable esound support
 .if defined(WITH_ESOUND) && ${HAVE_GNOME:Mesound}!=""
