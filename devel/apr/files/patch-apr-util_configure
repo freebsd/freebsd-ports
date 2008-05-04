@@ -1,5 +1,5 @@
---- apr-util-1.2.8/configure.orig	Mon Sep 26 18:28:49 2005
-+++ apr-util-1.2.8/configure	Fri Dec 23 15:06:09 2005
+--- apr-util-1.2.12/configure.orig	Mon Sep 26 18:28:49 2005
++++ apr-util-1.2.12/configure	Fri Dec 23 15:06:09 2005
 @@ -13806,6 +13806,8 @@
      elif test "$withval" = "no"; then
        apu_have_gdbm=0
