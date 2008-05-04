@@ -6,7 +6,11 @@
 #
 
 PORTNAME=	gnustep
+.if defined(WITH_GNUSTEP_DEVEL)
+PORTVERSION=	1.15.3
+.else
 PORTVERSION=	1.14.3
+.endif
 CATEGORIES=	devel lang gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
