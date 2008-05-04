@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.3.14.2
+PORTVERSION=	1.3.15
 CATEGORIES=	net
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.3/src/
 PKGNAMESUFFIX=	-devel
@@ -26,7 +26,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/design-thoughts
 	@${MKDIR} ${DOCSDIR}/internals
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}/
 #	@${INSTALL_DATA} ${WRKSRC}/doc/design-thoughts/* ${DOCSDIR}/design-thoughts/
 #	@${INSTALL_DATA} ${WRKSRC}/doc/internals/* ${DOCSDIR}/internals/
 	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} internals ${DOCSDIR}/)
