@@ -7,7 +7,7 @@
 
 PORTNAME=	gimageview
 PORTVERSION=	0.2.27
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
@@ -25,13 +25,9 @@ MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 OPTIONS=	SPLASH "Show splash on startup" On
 
-.if defined(WITH_GTK2)
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--with-gtk2
 CFLAGS+=	-DUSE_GTK2
-.else
-USE_GNOME=	gdkpixbuf gnomehier
-.endif
 
 .include <bsd.port.pre.mk>
 
