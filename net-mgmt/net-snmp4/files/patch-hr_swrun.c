@@ -1,5 +1,5 @@
 --- agent/mibgroup/host/hr_swrun.c.orig	2006-06-06 08:11:59.000000000 +0000
-+++ agent/mibgroup/host/hr_swrun.c	2008-04-30 11:30:47.000000000 +0000
++++ agent/mibgroup/host/hr_swrun.c	2008-05-04 07:06:22.000000000 +0000
 @@ -549,7 +549,7 @@
              string[ sizeof(string)-1 ] = 0;
  #endif
@@ -36,7 +36,21 @@
  	    long_return = proc_table[LowProcIndex].ki_runtime / 100000;
      #else
  	    long_return = proc_table[LowProcIndex].kp_proc.p_uticks +
-@@ -1266,7 +1266,7 @@
+@@ -999,12 +999,8 @@
+ 	    long_return = proc_buf->p_swrss;
+ #endif
+ #elif HAVE_KVM_GETPROCS
+-#if defined(freebsd3) && !defined(darwin)
+-    #if defined(freebsd5)
++#if defined(freebsd6) || defined(freebsd7) || defined(__FreeBSD_version)
+ 	    long_return = proc_table[LowProcIndex].ki_size/1024;
+-    #else
+-	    long_return = proc_table[LowProcIndex].kp_eproc.e_vm.vm_map.size/1024;
+-    #endif
+ #else
+ 	    long_return = proc_table[LowProcIndex].kp_eproc.e_vm.vm_tsize +
+ 			  proc_table[LowProcIndex].kp_eproc.e_vm.vm_ssize +
+@@ -1266,7 +1262,7 @@
  #elif defined(solaris2)
  	return proc_table[current_proc_entry++];
  #elif HAVE_KVM_GETPROCS
