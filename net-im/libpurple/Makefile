@@ -8,7 +8,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.4.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pidgin
@@ -19,7 +19,7 @@ COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME?=	gnomeprefix gnomehack intlhack glib20
+USE_GNOME?=	gnomeprefix gnomehack intlhack glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
 		--disable-consoleui \
