@@ -15,7 +15,9 @@ MASTER_SITES=	http://www.cmis.csiro.au/maaate/packages/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG audio analysis toolkit
 
-BROKEN=	checksum mismatch
+BROKEN=		checksum mismatch due to fetch grabbing an error page instead of the distfiles
+DEPRICATED=	Homepage and distfiles have disappeared, last update was in 2002
+EXPIRATION_DATE=2008-07-29
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
