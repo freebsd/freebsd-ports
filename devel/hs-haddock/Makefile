@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	haddock
-PORTVERSION=	2.0.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://www.haskell.org/haddock/dist/
+MASTER_SITES=	http://hackage.haskell.org/packages/archive/haddock/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	haskell@FreeBSD.org
