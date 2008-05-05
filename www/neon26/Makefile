@@ -113,7 +113,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-PORTDOCS:=	${PORTDOCS:S/26//}
+DOCSDIR:=	${DOCSDIR:S/26//}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${MANPREFIX}/man/man1
