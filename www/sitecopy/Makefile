@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up with local copy
 
-LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon
+LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon26
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \

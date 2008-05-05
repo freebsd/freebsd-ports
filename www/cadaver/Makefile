@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.webdav.org/cadaver/ \
 MAINTAINER=	josh@tcbug.org
 COMMENT=	Commandline client for DAV
 
-LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon
+LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon26
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

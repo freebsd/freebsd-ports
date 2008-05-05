@@ -310,7 +310,7 @@ PLIST_SUB+=	PARANORMALPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_NEON)
-LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon
+LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon26
 CONFIGURE_ARGS+=--enable-neon
 PLIST_SUB+=	NEONPLUGIN=""
 .else

@@ -16,7 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Cross-platform GUI front-end for the Subversion revision system
 
 BUILD_DEPENDS=	apr-1-config:${PORTSDIR}/devel/apr-svn \
-		neon-config:${PORTSDIR}/www/neon \
+		neon-config:${PORTSDIR}/www/neon26 \
 		svn:${PORTSDIR}/devel/subversion \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/VERSION:${PORTSDIR}/textproc/docbook-xsl

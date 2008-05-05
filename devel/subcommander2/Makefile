@@ -14,7 +14,7 @@ DISTNAME=	Subcommander-${PORTVERSION}
 MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	Qt based multiplatform subversion client, diff & merge tool
 
-LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon \
+LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon26 \
 		apr-1.2:${PORTSDIR}/devel/apr-svn \
 		boost_thread.4:${PORTSDIR}/devel/boost \
 		svn_client-1.0:${PORTSDIR}/devel/subversion

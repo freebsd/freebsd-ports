@@ -21,7 +21,7 @@ BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gbf-1.1:${PORTSDIR}/devel/gnome-build \
 		gladeui-1.7:${PORTSDIR}/devel/glade3 \
-		neon.26:${PORTSDIR}/www/neon \
+		neon.26:${PORTSDIR}/www/neon26 \
 		devhelp-1.0:${PORTSDIR}/devel/devhelp
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
