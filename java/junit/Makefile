@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	junit
-PORTVERSION=	3.8.2
-PORTREVISION=	1
+PORTVERSION=	4.4
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
+#MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	hq@FreeBSD.org
@@ -22,10 +21,6 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${JAVA_PORT_VERSION} == "1.1"
-RUN_DEPENDS+=	${JAVALIBDIR}/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
-.endif
-
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README.html cpl-v10.html doc javadoc
 .endif
@@ -34,9 +29,9 @@ PLIST_FILES=	%%JAVAJARDIR%%/junit.jar %%DATADIR%%/src.jar
 PLIST_DIRS=	%%DATADIR%%
 
 do-install:
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit.jar ${JAVAJARDIR}/
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit-${PORTVERSION}.jar ${JAVAJARDIR}/junit.jar
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/src.jar ${DATADIR}/
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit-${PORTVERSION}-src.jar ${DATADIR}/src.jar
 	cd ${INSTALL_WRKSRC}/junit/samples \
 	  && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/\{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
