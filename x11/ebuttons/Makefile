@@ -7,7 +7,7 @@
 
 PORTNAME=	E-buttons
 PORTVERSION=	0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A simple epplet that contains several buttons used to launch programs
 
-LIB_DEPENDS=	epplet.2:${PORTSDIR}/x11-wm/epplets
+LIB_DEPENDS=	epplet.3:${PORTSDIR}/x11-wm/epplets
 
 PLIST_FILES=	bin/E-Buttons.epplet
 
