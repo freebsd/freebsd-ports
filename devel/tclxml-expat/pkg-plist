@@ -1,0 +1,6 @@
+include/xmlparse.h
+include/xmlrole.h
+include/xmltok.h
+lib/Tclexpat%%VER%%/libTclexpat%%VER%%.so
+lib/Tclexpat%%VER%%/pkgIndex.tcl
+@dirrm lib/Tclexpat3.1

@@ -2377,6 +2377,7 @@
     SUBDIR += tclthread
     SUBDIR += tcltls
     SUBDIR += tclxml
+    SUBDIR += tclxml-expat
     SUBDIR += tdl
     SUBDIR += templ
     SUBDIR += terminality
