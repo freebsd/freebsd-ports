@@ -6,91 +6,28 @@
 #
 
 PORTNAME=		codeblocks
-PORTVERSION=		1.0r2
-PORTREVISION=		2
+PORTVERSION=		8.02
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		${PORTNAME}-1.0rc2
-EXTRACT_SUFX=		.tgz
+DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	m.sund@arcor.de
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Open source, cross-platform, free C/C++ IDE
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	wx_gtk2u_xrc-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26-unicode
+RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
-USE_GMAKE=	yes
+USE_BZIP2=	yes
+USE_WX=		2.8
+USE_GNOME=	pkgconfig
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
-TARGETS=	tinyXML scintilla sdk wxDockit src console_runner doc
-PLUGINS=	Astyle CompilerGCC DebuggerGDB CodeCompletion ClassWizard DefMimeHandler PluginsWizard ToDo XPManifest
-EXTENSIONS=	CC CPP LD LIB
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+CONFIGURE_ARGS+=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=All
+CONFIGURE_TARGET=
+MAN1=	cb_console_runner.1 cb_share_config.1 codeblocks.1
 
-GCC=	${CC}
-CPP=	${CXX}
-LD=	${CXX}
-LIB=	ar
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == ia64 && ${OSVERSION} >= 600000 && ${OSVERSION} < 700000
-BROKEN=		Code::Blocks is currently not supported on IA64 FreeBSD 6
-.endif
-
-post-extract:
-	@${FIND} -E ${WRKSRC} -type f -iregex \
-	".*\.(c|h|cpp|am|in|doxy|cbp|template|xrc|html)" -print0 | \
-	${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
-	@for f in `${FIND} -E ${WRKSRC} -type f -name Makefile -print`; \
-	do ${CP} $$f $$f.bak && (${CAT} $$f.bak | ${TR} -d "\r" > $$f); done
-	@${FIND} -E ${WRKSRC} -type f -iregex ".*\.txt" -print0 | \
-	${XARGS} -0 ${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//'
-	@(${CAT} ${WRKSRC}/update | ${TR} -d "\r" > ${WRKSRC}/update.sh)
-
-pre-build:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-
-.for t in ${TARGETS}
-. for e in ${EXTENSIONS}
-	@${ECHO_CMD} "${t}_${e}=${${e}}" >> ${WRKSRC}/gcc.defs
-. endfor
-.endfor
-.for p in ${PLUGINS}
-. for e in ${EXTENSIONS}
-	@${ECHO_CMD} "plugin_${p}_${e}=${${e}}" >> ${WRKSRC}/gcc.defs
-. endfor
-.endfor
-
-post-build:
-	@(${FIND} -E ${WRKSRC} -type f -iregex ".*\.(orig|bak)" -exec ${RM} {} \;)
-	@${CHMOD} +x ${WRKSRC}/update.sh
-	@(cd ${WRKSRC} && ./update.sh)
-	@${MV} ${WRKSRC}/output/share/CodeBlocks ${WRKSRC}/output/share/codeblocks
-	@${MV} ${WRKSRC}/output/console_runner.exe ${WRKSRC}/output/console_runner
-	@${MV} ${WRKSRC}/output/codeblocks.exe ${WRKSRC}/output/codeblocks
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/output/console_runner ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/output/${PORTNAME} ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/output/*.so ${PREFIX}/lib
-	@(cd ${WRKSRC}/output && ${FIND} share -type d -exec ${MKDIR} ${PREFIX}/{} \;)
-	@(cd ${WRKSRC}/output && ${FIND} share -name "*.so" -type f -exec ${INSTALL_PROGRAM} {} ${PREFIX}/{} \;)
-	@(cd ${WRKSRC}/output && ${FIND} share  \! -name "*.so" -type f -exec ${CP} {} ${PREFIX}/{} \;)
-
-post-install:
-	@${ECHO_CMD} bin/${PORTNAME} >> ${TMPPLIST}
-	@${ECHO_CMD} bin/console_runner >> ${TMPPLIST}
-	@${ECHO_CMD} lib/libcodeblocks.so >> ${TMPPLIST}
-	@${ECHO_CMD} lib/libwxscintilla.so >> ${TMPPLIST}
-	@(cd ${WRKSRC}/output && ${FIND} share -type f -exec ${ECHO_CMD} {} >> ${TMPPLIST} \;)
-	@${ECHO_CMD} @dirrm share/${PORTNAME}/images/codecompletion >> ${TMPPLIST}
-	@${ECHO_CMD} @dirrm share/${PORTNAME}/images >> ${TMPPLIST}
-	@${ECHO_CMD} @dirrm share/${PORTNAME}/lexers >> ${TMPPLIST}
-	@${ECHO_CMD} @dirrm share/${PORTNAME}/plugins >> ${TMPPLIST}
-	@${ECHO_CMD} @dirrm share/${PORTNAME}/templates >> ${TMPPLIST}
-	@${ECHO_CMD} @dirrm share/${PORTNAME} >> ${TMPPLIST}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
