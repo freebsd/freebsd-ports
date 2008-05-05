@@ -393,6 +393,9 @@ sbin/indexer
 %%DOCSDIR%%/msearch-toolsreq.html
 %%DOCSDIR%%/msearch-track.html
 %%DOCSDIR%%/msearch-udmstemmer.html
+%%DOCSDIR%%/msearch-cmdref-casefolding.html
+%%DOCSDIR%%/msearch-cmdref-groupbysite.html
+%%DOCSDIR%%/msearch-cmdref-skip.html
 %%DOCSDIR%%/msearch-vary.html
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/ftpsearch.conf
