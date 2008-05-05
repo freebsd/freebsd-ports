@@ -40,7 +40,6 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
-ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.${OPERA_TYPE}-shared-qt.${ARCH}.freebsd-${OPERA_BUILD}
 USE_QT_VER=	3
 
@@ -49,6 +48,12 @@ NO_BUILD=	yes
 OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+ONLY_FOR_ARCHS=	i386 amd64
+.else
+ONLY_FOR_ARCHS=	i386
+.endif
 
 .if ${ARCH} == amd64
 OPERA_LIB=	amd64
