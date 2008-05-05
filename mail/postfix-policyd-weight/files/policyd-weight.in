@@ -13,7 +13,7 @@
 
 . /etc/rc.subr
 
-name="policyd-weight"
+name="policyd_weight"
 rcvar=policyd_weight_enable
 
 start_cmd=policyd_weight_start
