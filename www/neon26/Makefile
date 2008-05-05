@@ -5,17 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	neon
+PORTNAME=	neon26
 PORTVERSION=	0.26.4
-PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/ \
 		http://keyserver.kjsl.com/~jharris/distfiles/
+DISTNAME=	neon-${PORTVERSION}
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	An HTTP and WebDAV client library for Unix systems
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+
+CONFLICTS=	neon28-[0-9]*
 
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
@@ -109,6 +111,10 @@ MLINKS=	ne_add_request_header.3 ne_print_request_header.3 \
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+PORTDOCS:=	${PORTDOCS:S/26//}
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${MANPREFIX}/man/man3
@@ -117,4 +123,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/using-neon.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
