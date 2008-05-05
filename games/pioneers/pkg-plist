@@ -30,6 +30,7 @@ share/games/pioneers/pond.game
 share/games/pioneers/seafarers-gold.game
 share/games/pioneers/seafarers.game
 share/games/pioneers/small.game
+share/games/pioneers/south_africa.game
 share/games/pioneers/square.game
 share/games/pioneers/star.game
 share/games/pioneers/themes/FreeCIV-like/board.png
@@ -155,6 +156,8 @@ share/pixmaps/pioneers/style-human.png
 share/pixmaps/pioneers/trade.png
 share/pixmaps/pioneers/wool.png
 share/locale/af/LC_MESSAGES/pioneers.mo
+share/locale/cs/LC_MESSAGES/pioneers.mo
+share/locale/da/LC_MESSAGES/pioneers.mo
 share/locale/de/LC_MESSAGES/pioneers.mo
 share/locale/es/LC_MESSAGES/pioneers.mo
 share/locale/fr/LC_MESSAGES/pioneers.mo
@@ -162,6 +165,7 @@ share/locale/hu/LC_MESSAGES/pioneers.mo
 share/locale/it/LC_MESSAGES/pioneers.mo
 share/locale/ja/LC_MESSAGES/pioneers.mo
 share/locale/nl/LC_MESSAGES/pioneers.mo
+share/locale/pt/LC_MESSAGES/pioneers.mo
 share/locale/sv/LC_MESSAGES/pioneers.mo
 @dirrm share/games/pioneers/themes/FreeCIV-like
 @dirrm share/games/pioneers/themes/Iceland
