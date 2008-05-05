@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: throttled
+# REQUIRE: ipfw
+# BEFORE: NETWORKING
+# KEYWORD: nojail
+
+. %%RC_SUBR%%
+
+name="throttled"
+rcvar=`set_rcvar`
+
+start_precmd="throttled_precmd"
+command="%%PREFIX%%/sbin/throttled-startup"
+procname="%%PREFIX%%/sbin/throttled"
+
+throttled_precmd()
+{
+	if ! ${SYSCTL} net.inet.ip.fw.enable > /dev/null 2>&1; then
+		warn "IPFW must be enabled"
+		return 1
+	fi
+	return 0
+}
+
+load_rc_config $name
+
+: ${throttled_enable="NO"}
+
+run_rc_command "$1"
