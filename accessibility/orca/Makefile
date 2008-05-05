@@ -8,6 +8,7 @@
 
 PORTNAME=	orca
 PORTVERSION=	2.22.1
+PORTREVISION=	1
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +17,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Scriptable screen reader
 
 LIB_DEPENDS=	gnome-mag.2:${PORTSDIR}/accessibility/gnome-mag
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 LATEST_LINK=	gnome-orca
 

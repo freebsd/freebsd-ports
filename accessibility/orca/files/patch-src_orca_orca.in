@@ -1,8 +1,8 @@
---- src/orca/orca.in.orig	2007-11-08 11:02:26.000000000 -0500
-+++ src/orca/orca.in	2007-11-15 15:43:24.000000000 -0500
+--- src/orca/orca.in.orig	2008-05-01 16:52:27.000000000 -0500
++++ src/orca/orca.in	2008-05-01 16:57:15.000000000 -0500
 @@ -1,4 +1,4 @@
 -#!/bin/bash
-+#!/usr/local/bin/bash
++#!/bin/sh
  #
  # Orca
  #
@@ -11,11 +11,20 @@
  # Set the user's $PATH for this script.
  #
 -export PATH="${PATH}:/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/X11R6/bin"
-+export PATH="${PATH}:/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/local/bin:/usr/X11R6/bin"
++export PATH="${PATH}:/usr/bin:/usr/sbin:/bin:/usr/local/bin"
  
  # If you set RUNONCE to "true", then this will just run Orca once and quit.
  #
-@@ -145,7 +145,7 @@ watchdog()
+@@ -74,7 +74,7 @@
+ cleanup()
+ {
+     USERID=`id | cut -f2 -d= | cut -f1 -d\(`
+-    PIDS=`ps -eo pid,ruid,args | grep $USERID | egrep "orca[.]orca|synthesis-driver|festival [-][-]server" | grep -v grep | awk '{ print $1 }'`
++    PIDS=`ps -exo pid,ruid,args | grep $USERID | egrep "orca[.]orca|synthesis-driver|festival [-][-]server" | grep -v grep | awk '{ print $1 }'`
+ 
+     IFS='
+     '
+@@ -145,7 +145,7 @@
          do
              sleep 5
              USERID=`id | cut -f2 -d= | cut -f1 -d\(`
@@ -24,3 +33,21 @@
  
              if [ "x$PID" = "x" ]
              then
+@@ -258,7 +258,7 @@
+ then
+     main
+ else
+-    if [ `grep -c "\-q" <<< $ARGS` -gt 0 ]
++    if [ `echo $ARGS | grep -c "\-q"` -gt 0 ]
+     then
+         cleanup
+     else
+@@ -270,7 +270,7 @@
+         # erroneously types an illegal command line argument, the
+         # help text is emitted and the other orca is not killed.
+         #
+-        if [ `egrep -c "\-s|\-g|\-t|\-n|\-u|\-e|\-d" <<< $ARGS` -eq 0 ]
++        if [ `echo $ARGS | egrep -c "\-s|\-g|\-t|\-n|\-u|\-e|\-d"` -eq 0 ]
+         then
+             runOrca "NO_CLEANUP"
+         else
