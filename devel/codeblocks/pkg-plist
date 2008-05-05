@@ -1,0 +1,725 @@
+bin/cb_console_runner
+bin/cb_share_config
+bin/codeblocks
+etc/gtk-2.0/gdk-pixbuf.loaders
+etc/gtk-2.0/gtk.immodules
+include/codeblocks/annoyingdialog.h
+include/codeblocks/autodetectcompilers.h
+include/codeblocks/backgroundthread.h
+include/codeblocks/base64.h
+include/codeblocks/blockallocated.h
+include/codeblocks/cbeditor.h
+include/codeblocks/cbeditorprintout.h
+include/codeblocks/cbexception.h
+include/codeblocks/cbfunctor.h
+include/codeblocks/cbplugin.h
+include/codeblocks/cbproject.h
+include/codeblocks/cbstyledtextctrl.h
+include/codeblocks/cbthreadedtask.h
+include/codeblocks/cbthreadpool.h
+include/codeblocks/cbthreadpool_extras.h
+include/codeblocks/cbtool.h
+include/codeblocks/cbworkspace.h
+include/codeblocks/compileoptionsbase.h
+include/codeblocks/compiler.h
+include/codeblocks/compilercommandgenerator.h
+include/codeblocks/compilerfactory.h
+include/codeblocks/compileroptions.h
+include/codeblocks/compiletargetbase.h
+include/codeblocks/configmanager.h
+include/codeblocks/configurationpanel.h
+include/codeblocks/configuretoolsdlg.h
+include/codeblocks/confirmreplacedlg.h
+include/codeblocks/crc32.h
+include/codeblocks/editarrayfiledlg.h
+include/codeblocks/editarrayorderdlg.h
+include/codeblocks/editarraystringdlg.h
+include/codeblocks/editkeywordsdlg.h
+include/codeblocks/editor_hooks.h
+include/codeblocks/editorbase.h
+include/codeblocks/editorcolourset.h
+include/codeblocks/editorconfigurationdlg.h
+include/codeblocks/editorlexerloader.h
+include/codeblocks/editormanager.h
+include/codeblocks/editpairdlg.h
+include/codeblocks/editpathdlg.h
+include/codeblocks/edittooldlg.h
+include/codeblocks/encodingdetector.h
+include/codeblocks/externaldepsdlg.h
+include/codeblocks/filefilters.h
+include/codeblocks/filegroupsandmasks.h
+include/codeblocks/filemanager.h
+include/codeblocks/finddlg.h
+include/codeblocks/findreplacebase.h
+include/codeblocks/genericmultilinenotesdlg.h
+include/codeblocks/globals.h
+include/codeblocks/ibaseloader.h
+include/codeblocks/ibaseworkspaceloader.h
+include/codeblocks/id.h
+include/codeblocks/importers_globals.h
+include/codeblocks/incrementalselectlistdlg.h
+include/codeblocks/infowindow.h
+include/codeblocks/licenses.h
+include/codeblocks/logger.h
+include/codeblocks/loggers.h
+include/codeblocks/logmanager.h
+include/codeblocks/macrosmanager.h
+include/codeblocks/managedthread.h
+include/codeblocks/manager.h
+include/codeblocks/menuitemsmanager.h
+include/codeblocks/misctreeitemdata.h
+include/codeblocks/multiselectdlg.h
+include/codeblocks/newfromtemplatedlg.h
+include/codeblocks/personalitymanager.h
+include/codeblocks/pipedprocess.h
+include/codeblocks/pluginmanager.h
+include/codeblocks/pluginsconfigurationdlg.h
+include/codeblocks/prep.h
+include/codeblocks/printing_types.h
+include/codeblocks/projectbuildtarget.h
+include/codeblocks/projectdepsdlg.h
+include/codeblocks/projectfile.h
+include/codeblocks/projectfileoptionsdlg.h
+include/codeblocks/projectlayoutloader.h
+include/codeblocks/projectloader.h
+include/codeblocks/projectloader_hooks.h
+include/codeblocks/projectmanager.h
+include/codeblocks/projectoptionsdlg.h
+include/codeblocks/projectsfilemasksdlg.h
+include/codeblocks/projecttemplateloader.h
+include/codeblocks/replacedlg.h
+include/codeblocks/safedelete.h
+include/codeblocks/scripting/bindings/sc_base_types.h
+include/codeblocks/scripting/bindings/sc_plugin.h
+include/codeblocks/scripting/include/sqdbgserver.h
+include/codeblocks/scripting/include/sqrdbg.h
+include/codeblocks/scripting/include/sqstdaux.h
+include/codeblocks/scripting/include/sqstdblob.h
+include/codeblocks/scripting/include/sqstdio.h
+include/codeblocks/scripting/include/sqstdmath.h
+include/codeblocks/scripting/include/sqstdstring.h
+include/codeblocks/scripting/include/sqstdsystem.h
+include/codeblocks/scripting/include/squirrel.h
+include/codeblocks/scripting/sqplus/SqPlusConst.h
+include/codeblocks/scripting/sqplus/SquirrelBindingsUtils.h
+include/codeblocks/scripting/sqplus/SquirrelObject.h
+include/codeblocks/scripting/sqplus/SquirrelVM.h
+include/codeblocks/scripting/sqplus/sqplus.h
+include/codeblocks/scriptingmanager.h
+include/codeblocks/scriptsecuritywarningdlg.h
+include/codeblocks/sdk.h
+include/codeblocks/sdk_common.h
+include/codeblocks/sdk_events.h
+include/codeblocks/sdk_precomp.h
+include/codeblocks/searchresultslog.h
+include/codeblocks/selecttargetdlg.h
+include/codeblocks/settings.h
+include/codeblocks/templatemanager.h
+include/codeblocks/tinyxml/tinystr.h
+include/codeblocks/tinyxml/tinywxuni.h
+include/codeblocks/tinyxml/tinyxml.h
+include/codeblocks/toolsmanager.h
+include/codeblocks/uservarmanager.h
+include/codeblocks/virtualbuildtargetsdlg.h
+include/codeblocks/workspaceloader.h
+include/codeblocks/wxFlatNotebook/fnb_customize_dlg.h
+include/codeblocks/wxFlatNotebook/fnb_resources.h
+include/codeblocks/wxFlatNotebook/fnb_singleton.h
+include/codeblocks/wxFlatNotebook/fnb_smart_ptr.h
+include/codeblocks/wxFlatNotebook/popup_dlg.h
+include/codeblocks/wxFlatNotebook/renderer.h
+include/codeblocks/wxFlatNotebook/wxFNBDropTarget.h
+include/codeblocks/wxFlatNotebook/wxFlatNotebook.h
+include/codeblocks/wxFlatNotebook/xh_fnb.h
+include/codeblocks/wxscintilla/include/wx/wxscintilla.h
+include/codeblocks/xtra_res.h
+lib/libcodeblocks.la
+lib/libcodeblocks.so
+lib/libcodeblocks.so.0
+libdata/pkgconfig/codeblocks.pc
+share/applications/codeblocks.desktop
+%%DATADIR%%/astyle.zip
+%%DATADIR%%/autosave.zip
+%%DATADIR%%/classwizard.zip
+%%DATADIR%%/codecompletion.zip
+%%DATADIR%%/compiler.zip
+%%DATADIR%%/debugger.zip
+%%DATADIR%%/defaultmimehandler.zip
+%%DATADIR%%/icons/app.xpm
+%%DATADIR%%/icons/app_64.xpm
+%%DATADIR%%/icons/c64.xpm
+%%DATADIR%%/icons/cbp64.xpm
+%%DATADIR%%/icons/cg64.xpm
+%%DATADIR%%/icons/cpp64.xpm
+%%DATADIR%%/icons/csd64.xpm
+%%DATADIR%%/icons/d64.xpm
+%%DATADIR%%/icons/dev64.xpm
+%%DATADIR%%/icons/dsp64.xpm
+%%DATADIR%%/icons/dsw64.xpm
+%%DATADIR%%/icons/f64.xpm
+%%DATADIR%%/icons/h64.xpm
+%%DATADIR%%/icons/proj64.xpm
+%%DATADIR%%/icons/rc64.xpm
+%%DATADIR%%/images/16x16/bookmark_add.png
+%%DATADIR%%/images/16x16/dbginfo.png
+%%DATADIR%%/images/16x16/dbgnext.png
+%%DATADIR%%/images/16x16/dbgrun.png
+%%DATADIR%%/images/16x16/dbgrunto.png
+%%DATADIR%%/images/16x16/dbgstep.png
+%%DATADIR%%/images/16x16/dbgstepi.png
+%%DATADIR%%/images/16x16/dbgstepout.png
+%%DATADIR%%/images/16x16/dbgstop.png
+%%DATADIR%%/images/16x16/editcopy.png
+%%DATADIR%%/images/16x16/editcut.png
+%%DATADIR%%/images/16x16/editpaste.png
+%%DATADIR%%/images/16x16/exit.png
+%%DATADIR%%/images/16x16/fileclose.png
+%%DATADIR%%/images/16x16/filefind.png
+%%DATADIR%%/images/16x16/filefindnext.png
+%%DATADIR%%/images/16x16/filefindprev.png
+%%DATADIR%%/images/16x16/filenew.png
+%%DATADIR%%/images/16x16/fileopen.png
+%%DATADIR%%/images/16x16/fileprint.png
+%%DATADIR%%/images/16x16/filequickprint.png
+%%DATADIR%%/images/16x16/filesave.png
+%%DATADIR%%/images/16x16/filesaveall.png
+%%DATADIR%%/images/16x16/filesaveas.png
+%%DATADIR%%/images/16x16/findf.png
+%%DATADIR%%/images/16x16/folder.png
+%%DATADIR%%/images/16x16/folder_new.png
+%%DATADIR%%/images/16x16/folder_open.png
+%%DATADIR%%/images/16x16/goto.png
+%%DATADIR%%/images/16x16/history_clear.png
+%%DATADIR%%/images/16x16/idea.png
+%%DATADIR%%/images/16x16/info.png
+%%DATADIR%%/images/16x16/newproject.png
+%%DATADIR%%/images/16x16/plug.png
+%%DATADIR%%/images/16x16/redo.png
+%%DATADIR%%/images/16x16/run.png
+%%DATADIR%%/images/16x16/searchreplace.png
+%%DATADIR%%/images/16x16/searchreplacef.png
+%%DATADIR%%/images/16x16/undo.png
+%%DATADIR%%/images/16x16/view_sidetree.png
+%%DATADIR%%/images/16x16/view_tree.png
+%%DATADIR%%/images/16x16/window.png
+%%DATADIR%%/images/16x16/window_fullscreen.png
+%%DATADIR%%/images/ascii.png
+%%DATADIR%%/images/codeblocks.png
+%%DATADIR%%/images/codecompletion/class.png
+%%DATADIR%%/images/codecompletion/class_folder.png
+%%DATADIR%%/images/codecompletion/ctor_private.png
+%%DATADIR%%/images/codecompletion/ctor_protected.png
+%%DATADIR%%/images/codecompletion/ctor_public.png
+%%DATADIR%%/images/codecompletion/dtor_private.png
+%%DATADIR%%/images/codecompletion/dtor_protected.png
+%%DATADIR%%/images/codecompletion/dtor_public.png
+%%DATADIR%%/images/codecompletion/enum.png
+%%DATADIR%%/images/codecompletion/enumerator.png
+%%DATADIR%%/images/codecompletion/enums_folder.png
+%%DATADIR%%/images/codecompletion/method_private.png
+%%DATADIR%%/images/codecompletion/method_protected.png
+%%DATADIR%%/images/codecompletion/method_public.png
+%%DATADIR%%/images/codecompletion/namespace.png
+%%DATADIR%%/images/codecompletion/others_folder.png
+%%DATADIR%%/images/codecompletion/preproc.png
+%%DATADIR%%/images/codecompletion/preproc_folder.png
+%%DATADIR%%/images/codecompletion/symbols_folder.png
+%%DATADIR%%/images/codecompletion/typedef.png
+%%DATADIR%%/images/codecompletion/typedefs_folder.png
+%%DATADIR%%/images/codecompletion/var_private.png
+%%DATADIR%%/images/codecompletion/var_protected.png
+%%DATADIR%%/images/codecompletion/var_public.png
+%%DATADIR%%/images/compile.png
+%%DATADIR%%/images/compilerun.png
+%%DATADIR%%/images/contents_16x16.png
+%%DATADIR%%/images/dbginfo.png
+%%DATADIR%%/images/dbgnext.png
+%%DATADIR%%/images/dbgrun.png
+%%DATADIR%%/images/dbgrunto.png
+%%DATADIR%%/images/dbgstep.png
+%%DATADIR%%/images/dbgstepi.png
+%%DATADIR%%/images/dbgstepout.png
+%%DATADIR%%/images/dbgstop.png
+%%DATADIR%%/images/edit_16x16.png
+%%DATADIR%%/images/editcopy.png
+%%DATADIR%%/images/editcut.png
+%%DATADIR%%/images/editpaste.png
+%%DATADIR%%/images/file-missing.png
+%%DATADIR%%/images/file-modified.png
+%%DATADIR%%/images/file-readonly.png
+%%DATADIR%%/images/file.png
+%%DATADIR%%/images/filefind.png
+%%DATADIR%%/images/filenew.png
+%%DATADIR%%/images/fileopen.png
+%%DATADIR%%/images/fileprint.png
+%%DATADIR%%/images/filesave.png
+%%DATADIR%%/images/filesaveall.png
+%%DATADIR%%/images/filesaveas.png
+%%DATADIR%%/images/flag_16x16.png
+%%DATADIR%%/images/folder.png
+%%DATADIR%%/images/folder_new.png
+%%DATADIR%%/images/folder_open.png
+%%DATADIR%%/images/misc_16x16.png
+%%DATADIR%%/images/modified_file.png
+%%DATADIR%%/images/newproject.png
+%%DATADIR%%/images/project-readonly.png
+%%DATADIR%%/images/project.png
+%%DATADIR%%/images/rc-file-added.png
+%%DATADIR%%/images/rc-file-conflict.png
+%%DATADIR%%/images/rc-file-external.png
+%%DATADIR%%/images/rc-file-gotlock.png
+%%DATADIR%%/images/rc-file-lockstolen.png
+%%DATADIR%%/images/rc-file-mismatch.png
+%%DATADIR%%/images/rc-file-missing.png
+%%DATADIR%%/images/rc-file-modified.png
+%%DATADIR%%/images/rc-file-noncontrolled.png
+%%DATADIR%%/images/rc-file-outofdate.png
+%%DATADIR%%/images/rc-file-requireslock.png
+%%DATADIR%%/images/rc-file-uptodate.png
+%%DATADIR%%/images/rebuild.png
+%%DATADIR%%/images/redo.png
+%%DATADIR%%/images/run.png
+%%DATADIR%%/images/searchreplace.png
+%%DATADIR%%/images/settings/abbrev-off.png
+%%DATADIR%%/images/settings/abbrev.png
+%%DATADIR%%/images/settings/astyle-plugin-off.png
+%%DATADIR%%/images/settings/astyle-plugin.png
+%%DATADIR%%/images/settings/autosave-off.png
+%%DATADIR%%/images/settings/autosave.png
+%%DATADIR%%/images/settings/batch-off.png
+%%DATADIR%%/images/settings/batch.png
+%%DATADIR%%/images/settings/codestats-off.png
+%%DATADIR%%/images/settings/codestats.png
+%%DATADIR%%/images/settings/colours-off.png
+%%DATADIR%%/images/settings/colours.png
+%%DATADIR%%/images/settings/compiler-off.png
+%%DATADIR%%/images/settings/compiler.png
+%%DATADIR%%/images/settings/debugger-off.png
+%%DATADIR%%/images/settings/debugger.png
+%%DATADIR%%/images/settings/default-code-off.png
+%%DATADIR%%/images/settings/default-code.png
+%%DATADIR%%/images/settings/dialogs-off.png
+%%DATADIR%%/images/settings/dialogs.png
+%%DATADIR%%/images/settings/dragscroll-off.png
+%%DATADIR%%/images/settings/dragscroll.png
+%%DATADIR%%/images/settings/editor-off.png
+%%DATADIR%%/images/settings/editor.png
+%%DATADIR%%/images/settings/envvars-off.png
+%%DATADIR%%/images/settings/envvars.png
+%%DATADIR%%/images/settings/extensions-off.png
+%%DATADIR%%/images/settings/extensions.png
+%%DATADIR%%/images/settings/folding-off.png
+%%DATADIR%%/images/settings/folding.png
+%%DATADIR%%/images/settings/general-prefs-off.png
+%%DATADIR%%/images/settings/general-prefs.png
+%%DATADIR%%/images/settings/generic-plugin-off.png
+%%DATADIR%%/images/settings/generic-plugin.png
+%%DATADIR%%/images/settings/gutter-margin-off.png
+%%DATADIR%%/images/settings/gutter-margin.png
+%%DATADIR%%/images/settings/help-plugin-off.png
+%%DATADIR%%/images/settings/help-plugin.png
+%%DATADIR%%/images/settings/net-off.png
+%%DATADIR%%/images/settings/net.png
+%%DATADIR%%/images/settings/notebook-appearance-off.png
+%%DATADIR%%/images/settings/notebook-appearance.png
+%%DATADIR%%/images/settings/onekeytobindthem-off.png
+%%DATADIR%%/images/settings/onekeytobindthem.png
+%%DATADIR%%/images/settings/profiler-off.png
+%%DATADIR%%/images/settings/profiler.png
+%%DATADIR%%/images/settings/syntax-highlight-off.png
+%%DATADIR%%/images/settings/syntax-highlight.png
+%%DATADIR%%/images/settings/todo-off.png
+%%DATADIR%%/images/settings/todo.png
+%%DATADIR%%/images/settings/view-off.png
+%%DATADIR%%/images/settings/view.png
+%%DATADIR%%/images/settings/wxsmith-off.png
+%%DATADIR%%/images/settings/wxsmith.png
+%%DATADIR%%/images/source.png
+%%DATADIR%%/images/splash.png
+%%DATADIR%%/images/splash_new.png
+%%DATADIR%%/images/stop.png
+%%DATADIR%%/images/undo.png
+%%DATADIR%%/images/vfolder_open.png
+%%DATADIR%%/images/window.png
+%%DATADIR%%/images/workspace-readonly.png
+%%DATADIR%%/images/workspace.png
+%%DATADIR%%/lexers/lexer_OgreCompositor.sample
+%%DATADIR%%/lexers/lexer_OgreCompositor.xml
+%%DATADIR%%/lexers/lexer_OgreMaterial.sample
+%%DATADIR%%/lexers/lexer_OgreMaterial.xml
+%%DATADIR%%/lexers/lexer_angelscript.sample
+%%DATADIR%%/lexers/lexer_angelscript.xml
+%%DATADIR%%/lexers/lexer_bash.sample
+%%DATADIR%%/lexers/lexer_bash.xml
+%%DATADIR%%/lexers/lexer_batch.sample
+%%DATADIR%%/lexers/lexer_batch.xml
+%%DATADIR%%/lexers/lexer_cg.sample
+%%DATADIR%%/lexers/lexer_cg.xml
+%%DATADIR%%/lexers/lexer_cpp.sample
+%%DATADIR%%/lexers/lexer_cpp.xml
+%%DATADIR%%/lexers/lexer_css.sample
+%%DATADIR%%/lexers/lexer_css.xml
+%%DATADIR%%/lexers/lexer_d.sample
+%%DATADIR%%/lexers/lexer_d.xml
+%%DATADIR%%/lexers/lexer_diff.sample
+%%DATADIR%%/lexers/lexer_diff.xml
+%%DATADIR%%/lexers/lexer_f77.sample
+%%DATADIR%%/lexers/lexer_f77.xml
+%%DATADIR%%/lexers/lexer_fortran.sample
+%%DATADIR%%/lexers/lexer_fortran.xml
+%%DATADIR%%/lexers/lexer_glsl.sample
+%%DATADIR%%/lexers/lexer_glsl.xml
+%%DATADIR%%/lexers/lexer_gm.sample
+%%DATADIR%%/lexers/lexer_gm.xml
+%%DATADIR%%/lexers/lexer_hitasm.sample
+%%DATADIR%%/lexers/lexer_hitasm.xml
+%%DATADIR%%/lexers/lexer_html.sample
+%%DATADIR%%/lexers/lexer_html.xml
+%%DATADIR%%/lexers/lexer_latex.sample
+%%DATADIR%%/lexers/lexer_latex.xml
+%%DATADIR%%/lexers/lexer_lua.sample
+%%DATADIR%%/lexers/lexer_lua.xml
+%%DATADIR%%/lexers/lexer_make.sample
+%%DATADIR%%/lexers/lexer_make.xml
+%%DATADIR%%/lexers/lexer_masm.sample
+%%DATADIR%%/lexers/lexer_masm.xml
+%%DATADIR%%/lexers/lexer_matlab.sample
+%%DATADIR%%/lexers/lexer_matlab.xml
+%%DATADIR%%/lexers/lexer_nsis.sample
+%%DATADIR%%/lexers/lexer_nsis.xml
+%%DATADIR%%/lexers/lexer_perl.sample
+%%DATADIR%%/lexers/lexer_perl.xml
+%%DATADIR%%/lexers/lexer_prg.sample
+%%DATADIR%%/lexers/lexer_prg.xml
+%%DATADIR%%/lexers/lexer_properties.sample
+%%DATADIR%%/lexers/lexer_properties.xml
+%%DATADIR%%/lexers/lexer_python.sample
+%%DATADIR%%/lexers/lexer_python.xml
+%%DATADIR%%/lexers/lexer_rc.sample
+%%DATADIR%%/lexers/lexer_rc.xml
+%%DATADIR%%/lexers/lexer_squirrel.sample
+%%DATADIR%%/lexers/lexer_squirrel.xml
+%%DATADIR%%/lexers/lexer_vbscript.sample
+%%DATADIR%%/lexers/lexer_vbscript.xml
+%%DATADIR%%/lexers/lexer_verilog.sample
+%%DATADIR%%/lexers/lexer_verilog.xml
+%%DATADIR%%/lexers/lexer_vhdl.sample
+%%DATADIR%%/lexers/lexer_vhdl.xml
+%%DATADIR%%/lexers/lexer_xml.sample
+%%DATADIR%%/lexers/lexer_xml.xml
+%%DATADIR%%/manager_resources.zip
+%%DATADIR%%/openfileslist.zip
+%%DATADIR%%/plugins/libastyle.la
+%%DATADIR%%/plugins/libastyle.so
+%%DATADIR%%/plugins/libautosave.la
+%%DATADIR%%/plugins/libautosave.so
+%%DATADIR%%/plugins/libclasswizard.la
+%%DATADIR%%/plugins/libclasswizard.so
+%%DATADIR%%/plugins/libcodecompletion.la
+%%DATADIR%%/plugins/libcodecompletion.so
+%%DATADIR%%/plugins/libcompiler.la
+%%DATADIR%%/plugins/libcompiler.so
+%%DATADIR%%/plugins/libdebugger.la
+%%DATADIR%%/plugins/libdebugger.so
+%%DATADIR%%/plugins/libdefaultmimehandler.la
+%%DATADIR%%/plugins/libdefaultmimehandler.so
+%%DATADIR%%/plugins/libopenfileslist.la
+%%DATADIR%%/plugins/libopenfileslist.so
+%%DATADIR%%/plugins/libprojectsimporter.la
+%%DATADIR%%/plugins/libprojectsimporter.so
+%%DATADIR%%/plugins/libscriptedwizard.la
+%%DATADIR%%/plugins/libscriptedwizard.so
+%%DATADIR%%/plugins/libtodo.la
+%%DATADIR%%/plugins/libtodo.so
+%%DATADIR%%/projectsimporter.zip
+%%DATADIR%%/resources.zip
+%%DATADIR%%/scriptedwizard.zip
+%%DATADIR%%/scripts/edit_startup_script.script
+%%DATADIR%%/scripts/gdb_types.script
+%%DATADIR%%/scripts/make_dist.script
+%%DATADIR%%/scripts/startup.script
+%%DATADIR%%/scripts/wx_help.script
+%%DATADIR%%/start_here.zip
+%%DATADIR%%/templates/console-main-c.cpp
+%%DATADIR%%/templates/console-main-cpp.cpp
+%%DATADIR%%/templates/console.cbp
+%%DATADIR%%/templates/console.png
+%%DATADIR%%/templates/console.template
+%%DATADIR%%/templates/dll.png
+%%DATADIR%%/templates/glfw-main.cpp
+%%DATADIR%%/templates/glfw-static.cbp
+%%DATADIR%%/templates/glfw.png
+%%DATADIR%%/templates/glfw.template
+%%DATADIR%%/templates/glut-main.cpp
+%%DATADIR%%/templates/glut.png
+%%DATADIR%%/templates/irr_linux.cbp
+%%DATADIR%%/templates/irr_main.cpp
+%%DATADIR%%/templates/irrlicht.png
+%%DATADIR%%/templates/irrlicht.template
+%%DATADIR%%/templates/ogre-main.cpp
+%%DATADIR%%/templates/ogre.template
+%%DATADIR%%/templates/ogre_linux.cbp
+%%DATADIR%%/templates/ogrelogo.png
+%%DATADIR%%/templates/qt-main.cpp
+%%DATADIR%%/templates/qt.cbp
+%%DATADIR%%/templates/qt.template
+%%DATADIR%%/templates/qtlogo32.png
+%%DATADIR%%/templates/sdccapp-main.c
+%%DATADIR%%/templates/sdccapp.cbp
+%%DATADIR%%/templates/sdccapp.png
+%%DATADIR%%/templates/sdccapp.template
+%%DATADIR%%/templates/sdl-cb.bmp
+%%DATADIR%%/templates/sdl-main.cpp
+%%DATADIR%%/templates/sdl.png
+%%DATADIR%%/templates/sdlapp.cbp
+%%DATADIR%%/templates/sdlapp.template
+%%DATADIR%%/templates/sharedlib-sample.c
+%%DATADIR%%/templates/sharedlib.cbp
+%%DATADIR%%/templates/sharedlib.template
+%%DATADIR%%/templates/staticlib-sample.c
+%%DATADIR%%/templates/staticlib.cbp
+%%DATADIR%%/templates/staticlib.template
+%%DATADIR%%/templates/wizard/avr/files/main.c
+%%DATADIR%%/templates/wizard/avr/logo.png
+%%DATADIR%%/templates/wizard/avr/wizard.png
+%%DATADIR%%/templates/wizard/avr/wizard.script
+%%DATADIR%%/templates/wizard/avr/wizard.xrc
+%%DATADIR%%/templates/wizard/c_file/logo.png
+%%DATADIR%%/templates/wizard/c_file/wizard.png
+%%DATADIR%%/templates/wizard/c_file/wizard.script
+%%DATADIR%%/templates/wizard/common_functions.script
+%%DATADIR%%/templates/wizard/config.script
+%%DATADIR%%/templates/wizard/console/c/main.c
+%%DATADIR%%/templates/wizard/console/cpp/main.cpp
+%%DATADIR%%/templates/wizard/console/logo.png
+%%DATADIR%%/templates/wizard/console/wizard.png
+%%DATADIR%%/templates/wizard/console/wizard.script
+%%DATADIR%%/templates/wizard/d/console/hello.d
+%%DATADIR%%/templates/wizard/d/logo.png
+%%DATADIR%%/templates/wizard/d/wizard.png
+%%DATADIR%%/templates/wizard/d/wizard.script
+%%DATADIR%%/templates/wizard/directx/files/main.cpp
+%%DATADIR%%/templates/wizard/directx/logo.png
+%%DATADIR%%/templates/wizard/directx/wizard.png
+%%DATADIR%%/templates/wizard/directx/wizard.script
+%%DATADIR%%/templates/wizard/dll/files/main.cpp
+%%DATADIR%%/templates/wizard/dll/files/main.h
+%%DATADIR%%/templates/wizard/dll/logo.png
+%%DATADIR%%/templates/wizard/dll/wizard.png
+%%DATADIR%%/templates/wizard/dll/wizard.script
+%%DATADIR%%/templates/wizard/empty/logo.png
+%%DATADIR%%/templates/wizard/empty/wizard.png
+%%DATADIR%%/templates/wizard/empty/wizard.script
+%%DATADIR%%/templates/wizard/empty_file/logo.png
+%%DATADIR%%/templates/wizard/empty_file/wizard.png
+%%DATADIR%%/templates/wizard/empty_file/wizard.script
+%%DATADIR%%/templates/wizard/fltk/files/main.cpp
+%%DATADIR%%/templates/wizard/fltk/fluid/main.cpp
+%%DATADIR%%/templates/wizard/fltk/fluid/main.fld
+%%DATADIR%%/templates/wizard/fltk/fluid/main.h
+%%DATADIR%%/templates/wizard/fltk/logo.png
+%%DATADIR%%/templates/wizard/fltk/wizard.png
+%%DATADIR%%/templates/wizard/fltk/wizard.script
+%%DATADIR%%/templates/wizard/glfw/files/main.cpp
+%%DATADIR%%/templates/wizard/glfw/logo.png
+%%DATADIR%%/templates/wizard/glfw/wizard.png
+%%DATADIR%%/templates/wizard/glfw/wizard.script
+%%DATADIR%%/templates/wizard/glut/files/main.cpp
+%%DATADIR%%/templates/wizard/glut/logo.png
+%%DATADIR%%/templates/wizard/glut/wizard.png
+%%DATADIR%%/templates/wizard/glut/wizard.script
+%%DATADIR%%/templates/wizard/gtk/files/main.c
+%%DATADIR%%/templates/wizard/gtk/logo.png
+%%DATADIR%%/templates/wizard/gtk/wizard.png
+%%DATADIR%%/templates/wizard/gtk/wizard.script
+%%DATADIR%%/templates/wizard/h_file/logo.png
+%%DATADIR%%/templates/wizard/h_file/wizard.png
+%%DATADIR%%/templates/wizard/h_file/wizard.script
+%%DATADIR%%/templates/wizard/irrlicht/files/main.cpp
+%%DATADIR%%/templates/wizard/irrlicht/logo.png
+%%DATADIR%%/templates/wizard/irrlicht/wizard.png
+%%DATADIR%%/templates/wizard/irrlicht/wizard.script
+%%DATADIR%%/templates/wizard/lf/files/quick/main.cpp
+%%DATADIR%%/templates/wizard/lf/files/structured/CMain.cpp
+%%DATADIR%%/templates/wizard/lf/files/structured/CMain.h
+%%DATADIR%%/templates/wizard/lf/files/structured/main.cpp
+%%DATADIR%%/templates/wizard/lf/logo.png
+%%DATADIR%%/templates/wizard/lf/wizard.png
+%%DATADIR%%/templates/wizard/lf/wizard.script
+%%DATADIR%%/templates/wizard/ogre/files/main.cpp
+%%DATADIR%%/templates/wizard/ogre/logo.png
+%%DATADIR%%/templates/wizard/ogre/wizard.png
+%%DATADIR%%/templates/wizard/ogre/wizard.script
+%%DATADIR%%/templates/wizard/opengl/files_unix/main.c
+%%DATADIR%%/templates/wizard/opengl/files_win/main.c
+%%DATADIR%%/templates/wizard/opengl/logo.png
+%%DATADIR%%/templates/wizard/opengl/wizard.png
+%%DATADIR%%/templates/wizard/opengl/wizard.script
+%%DATADIR%%/templates/wizard/plugins/logo.png
+%%DATADIR%%/templates/wizard/plugins/templates/generic_template.cpp
+%%DATADIR%%/templates/wizard/plugins/templates/generic_template.h
+%%DATADIR%%/templates/wizard/plugins/templates/manifest_template.xml
+%%DATADIR%%/templates/wizard/plugins/templates/mime_template.cpp
+%%DATADIR%%/templates/wizard/plugins/templates/mime_template.h
+%%DATADIR%%/templates/wizard/plugins/templates/tool_template.cpp
+%%DATADIR%%/templates/wizard/plugins/templates/tool_template.h
+%%DATADIR%%/templates/wizard/plugins/templates/wizard_template.cpp
+%%DATADIR%%/templates/wizard/plugins/templates/wizard_template.h
+%%DATADIR%%/templates/wizard/plugins/wizard.png
+%%DATADIR%%/templates/wizard/plugins/wizard.script
+%%DATADIR%%/templates/wizard/plugins/wizard.xrc
+%%DATADIR%%/templates/wizard/qt4/files/main.cpp
+%%DATADIR%%/templates/wizard/qt4/logo.png
+%%DATADIR%%/templates/wizard/qt4/wizard.png
+%%DATADIR%%/templates/wizard/qt4/wizard.script
+%%DATADIR%%/templates/wizard/sdl/files/cb.bmp
+%%DATADIR%%/templates/wizard/sdl/files/main.cpp
+%%DATADIR%%/templates/wizard/sdl/logo.png
+%%DATADIR%%/templates/wizard/sdl/wizard.png
+%%DATADIR%%/templates/wizard/sdl/wizard.script
+%%DATADIR%%/templates/wizard/sharedlib/files/main.c
+%%DATADIR%%/templates/wizard/sharedlib/logo.png
+%%DATADIR%%/templates/wizard/sharedlib/wizard.png
+%%DATADIR%%/templates/wizard/sharedlib/wizard.script
+%%DATADIR%%/templates/wizard/smartwin/files/main.cpp
+%%DATADIR%%/templates/wizard/smartwin/logo.png
+%%DATADIR%%/templates/wizard/smartwin/wizard.png
+%%DATADIR%%/templates/wizard/smartwin/wizard.script
+%%DATADIR%%/templates/wizard/staticlib/files/main.c
+%%DATADIR%%/templates/wizard/staticlib/logo.png
+%%DATADIR%%/templates/wizard/staticlib/wizard.png
+%%DATADIR%%/templates/wizard/staticlib/wizard.script
+%%DATADIR%%/templates/wizard/sys/files/driver.c
+%%DATADIR%%/templates/wizard/sys/logo.png
+%%DATADIR%%/templates/wizard/sys/wizard.png
+%%DATADIR%%/templates/wizard/sys/wizard.script
+%%DATADIR%%/templates/wizard/win32gui/files/dialog/main.cpp
+%%DATADIR%%/templates/wizard/win32gui/files/dialog/resource.h
+%%DATADIR%%/templates/wizard/win32gui/files/dialog/resource.rc
+%%DATADIR%%/templates/wizard/win32gui/files/frame/main.cpp
+%%DATADIR%%/templates/wizard/win32gui/logo.png
+%%DATADIR%%/templates/wizard/win32gui/wizard.png
+%%DATADIR%%/templates/wizard/win32gui/wizard.script
+%%DATADIR%%/templates/wizard/wxwidgets/common/app.cpp
+%%DATADIR%%/templates/wizard/wxwidgets/common/app.h
+%%DATADIR%%/templates/wizard/wxwidgets/common/main.cpp
+%%DATADIR%%/templates/wizard/wxwidgets/common/main.h
+%%DATADIR%%/templates/wizard/wxwidgets/logo.png
+%%DATADIR%%/templates/wizard/wxwidgets/pch/wx_pch.h
+%%DATADIR%%/templates/wizard/wxwidgets/rc/resource.rc
+%%DATADIR%%/templates/wizard/wxwidgets/wizard.png
+%%DATADIR%%/templates/wizard/wxwidgets/wizard.script
+%%DATADIR%%/templates/wizard/wxwidgets/wizard.xrc
+%%DATADIR%%/templates/wizard/wxwidgets/wxfb/dialog/GUIDialog.cpp
+%%DATADIR%%/templates/wizard/wxwidgets/wxfb/dialog/GUIDialog.h
+%%DATADIR%%/templates/wizard/wxwidgets/wxfb/dialog/WxWizDialog.fbp
+%%DATADIR%%/templates/wizard/wxwidgets/wxfb/frame/GUIFrame.cpp
+%%DATADIR%%/templates/wizard/wxwidgets/wxfb/frame/GUIFrame.h
+%%DATADIR%%/templates/wizard/wxwidgets/wxfb/frame/WxWizFrame.fbp
+%%DATADIR%%/templates/wizard/wxwidgets/wxsmith/app.cpp
+%%DATADIR%%/templates/wizard/wxwidgets/wxsmith/main.cpp
+%%DATADIR%%/templates/wizard/wxwidgets/wxsmith/main.h
+%%DATADIR%%/templates/wizard/wxwidgets/wxsmith/resource.wxs
+%%DATADIR%%/templates/wx-app-ash.cpp
+%%DATADIR%%/templates/wx-app-ash.h
+%%DATADIR%%/templates/wx-main-ash.cpp
+%%DATADIR%%/templates/wx-main-ash.h
+%%DATADIR%%/templates/wx-main-s.cpp
+%%DATADIR%%/templates/wx-main-sh.cpp
+%%DATADIR%%/templates/wx-main-sh.h
+%%DATADIR%%/templates/wx_pch.h
+%%DATADIR%%/templates/wxwidgets.cbp
+%%DATADIR%%/templates/wxwidgets.png
+%%DATADIR%%/templates/wxwidgets.template
+%%DATADIR%%/tips.txt
+%%DATADIR%%/todo.zip
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-codeblocks-workspace.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-codeblocks.png
+share/mime/application/x-codeblocks-workspace.xml
+share/mime/application/x-codeblocks.xml
+share/mime/packages/codeblocks.xml
+share/pixmaps/codeblocks.png
+@dirrmtry share/icons/gnome/48x48/mimetypes
+@dirrmtry share/applications
+@dirrm %%DATADIR%%/templates/wizard/wxwidgets/wxsmith
+@dirrm %%DATADIR%%/templates/wizard/wxwidgets/wxfb/frame
+@dirrm %%DATADIR%%/templates/wizard/wxwidgets/wxfb/dialog
+@dirrm %%DATADIR%%/templates/wizard/wxwidgets/wxfb
+@dirrm %%DATADIR%%/templates/wizard/wxwidgets/rc
+@dirrm %%DATADIR%%/templates/wizard/wxwidgets/pch
+@dirrm %%DATADIR%%/templates/wizard/wxwidgets/common
+@dirrm %%DATADIR%%/templates/wizard/wxwidgets
+@dirrm %%DATADIR%%/templates/wizard/win32gui/files/frame
+@dirrm %%DATADIR%%/templates/wizard/win32gui/files/dialog
+@dirrm %%DATADIR%%/templates/wizard/win32gui/files
+@dirrm %%DATADIR%%/templates/wizard/win32gui
+@dirrm %%DATADIR%%/templates/wizard/sys/files
+@dirrm %%DATADIR%%/templates/wizard/sys
+@dirrm %%DATADIR%%/templates/wizard/staticlib/files
+@dirrm %%DATADIR%%/templates/wizard/staticlib
+@dirrm %%DATADIR%%/templates/wizard/smartwin/files
+@dirrm %%DATADIR%%/templates/wizard/smartwin
+@dirrm %%DATADIR%%/templates/wizard/sharedlib/files
+@dirrm %%DATADIR%%/templates/wizard/sharedlib
+@dirrm %%DATADIR%%/templates/wizard/sdl/files
+@dirrm %%DATADIR%%/templates/wizard/sdl
+@dirrm %%DATADIR%%/templates/wizard/qt4/files
+@dirrm %%DATADIR%%/templates/wizard/qt4
+@dirrm %%DATADIR%%/templates/wizard/plugins/templates
+@dirrm %%DATADIR%%/templates/wizard/plugins
+@dirrm %%DATADIR%%/templates/wizard/opengl/files_win
+@dirrm %%DATADIR%%/templates/wizard/opengl/files_unix
+@dirrm %%DATADIR%%/templates/wizard/opengl
+@dirrm %%DATADIR%%/templates/wizard/ogre/files
+@dirrm %%DATADIR%%/templates/wizard/ogre
+@dirrm %%DATADIR%%/templates/wizard/lf/files/structured
+@dirrm %%DATADIR%%/templates/wizard/lf/files/quick
+@dirrm %%DATADIR%%/templates/wizard/lf/files
+@dirrm %%DATADIR%%/templates/wizard/lf
+@dirrm %%DATADIR%%/templates/wizard/irrlicht/files
+@dirrm %%DATADIR%%/templates/wizard/irrlicht
+@dirrm %%DATADIR%%/templates/wizard/h_file
+@dirrm %%DATADIR%%/templates/wizard/gtk/files
+@dirrm %%DATADIR%%/templates/wizard/gtk
+@dirrm %%DATADIR%%/templates/wizard/glut/files
+@dirrm %%DATADIR%%/templates/wizard/glut
+@dirrm %%DATADIR%%/templates/wizard/glfw/files
+@dirrm %%DATADIR%%/templates/wizard/glfw
+@dirrm %%DATADIR%%/templates/wizard/fltk/fluid
+@dirrm %%DATADIR%%/templates/wizard/fltk/files
+@dirrm %%DATADIR%%/templates/wizard/fltk
+@dirrm %%DATADIR%%/templates/wizard/empty_file
+@dirrm %%DATADIR%%/templates/wizard/empty
+@dirrm %%DATADIR%%/templates/wizard/dll/files
+@dirrm %%DATADIR%%/templates/wizard/dll
+@dirrm %%DATADIR%%/templates/wizard/directx/files
+@dirrm %%DATADIR%%/templates/wizard/directx
+@dirrm %%DATADIR%%/templates/wizard/d/console
+@dirrm %%DATADIR%%/templates/wizard/d
+@dirrm %%DATADIR%%/templates/wizard/console/cpp
+@dirrm %%DATADIR%%/templates/wizard/console/c
+@dirrm %%DATADIR%%/templates/wizard/console
+@dirrm %%DATADIR%%/templates/wizard/c_file
+@dirrm %%DATADIR%%/templates/wizard/avr/files
+@dirrm %%DATADIR%%/templates/wizard/avr
+@dirrm %%DATADIR%%/templates/wizard
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/lexers
+@dirrm %%DATADIR%%/images/settings
+@dirrm %%DATADIR%%/images/codecompletion
+@dirrm %%DATADIR%%/images/16x16
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@dirrm include/codeblocks/wxscintilla/include/wx
+@dirrm include/codeblocks/wxscintilla/include
+@dirrm include/codeblocks/wxscintilla
+@dirrm include/codeblocks/wxFlatNotebook
+@dirrm include/codeblocks/tinyxml
+@dirrm include/codeblocks/scripting/sqplus
+@dirrm include/codeblocks/scripting/include
+@dirrm include/codeblocks/scripting/bindings
+@dirrm include/codeblocks/scripting
+@dirrm include/codeblocks

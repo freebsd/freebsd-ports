@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2008-03-01 22:49:41.000000000 +0100
++++ Makefile.in	2008-05-02 18:52:24.000000000 +0200
+@@ -243,7 +243,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = src
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(exec_prefix)/libdata/pkgconfig
+ pkgconfig_DATA = codeblocks.pc
+ EXTRA_DIST = $(top_srcdir)/bootstrap \
+ 		codeblocks.spec \
