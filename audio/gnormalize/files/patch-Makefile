@@ -23,7 +23,7 @@
  
  
  install: all
-+	cat ${MAN_PAGE}.bz2 | bzip2 -d -- > ${MAN_PAGE}
++	cat ${MAN_PAGE}.lzma | lzma -d -- > ${MAN_PAGE}
  	mkdir -p "$(BINDIR)"
  	mkdir -p "$(ICONDIR)"
  	mkdir -p "$(ICONDIR2)"
@@ -35,7 +35,7 @@
 -	install -Dm 755 gnormalize "$(BINDIR)/gnormalize"
 -	install -m 644 $(DOCS) "$(DOCDIR)/"
 -	install -m 644 $(DOCS) "$(BASE)/"
--	install -m 644 gnormalize.1.bz2 "$(MANDIR)/man1/gnormalize.1.bz2"
+-	install -m 644 gnormalize.1.lzma "$(MANDIR)/man1/gnormalize.1.lzma"
 +	$(INSTALL_PROG) gnormalize "$(BINDIR)/gnormalize"
 +	$(INSTALL_DATA) $(DOCS) "$(BASE)/"
 +	$(INSTALL_DATA) ${MAN_PAGE} "$(MANDIR)/man1/${MAN_PAGE}"
@@ -55,7 +55,7 @@
  
  uninstall:
  	rm -f "$(BINDIR)/gnormalize"
--	rm -f "$(MANDIR)/man1/gnormalize.1.bz2"
+-	rm -f "$(MANDIR)/man1/gnormalize.1.lzma"
 +	rm -f "$(MANDIR)/man1/gnormalize.1"
  	rm -f "$(ICONDIR)/gnormalize.png"
  	rm -f "$(LICONDIR)/gnormalize.png"

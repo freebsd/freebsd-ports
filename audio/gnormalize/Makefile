@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnormalize
-PORTVERSION=	0.53
+PORTVERSION=	0.60
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	An alternative for replaygain
 
+BUILD_DEPENDS=	lzma:${PORTSDIR}/archivers/lzmautils
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/${PERL_ARCH}/Audio/CD.pm:${PORTSDIR}/audio/p5-Audio-CD \
 		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
