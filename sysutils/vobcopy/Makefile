@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vobcopy
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
@@ -25,7 +25,7 @@ ALL_TARGET=	${PORTNAME}
 MAN1=	vobcopy.1
 
 PLIST_FILES=	bin/vobcopy
-PORTDOCS=	COPYING Changelog README Release-Notes TODO \
+PORTDOCS=	Changelog FAQ README THANKS TODO \
 		alternative_programs.txt
 
 .include <bsd.port.pre.mk>
