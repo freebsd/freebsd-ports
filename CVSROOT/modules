@@ -16357,6 +16357,7 @@ tolkien-ttf	ports/x11-fonts/tolkien-ttf
 tolua		ports/lang/tolua
 tolua++		ports/lang/tolua++
 tolua4		ports/lang/tolua4
+tolua50		ports/lang/tolua50
 tomatoes	ports/games/tomatoes
 tomboy		ports/deskutils/tomboy
 tomcat-native	ports/www/tomcat-native
