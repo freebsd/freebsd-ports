@@ -7,7 +7,7 @@
 
 PORTNAME=	E-Run
 PORTVERSION=	1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kbyanc
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	kbyanc
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A simple epplet for launching arbitrary programs
 
-LIB_DEPENDS=	epplet.2:${PORTSDIR}/x11-wm/epplets
+LIB_DEPENDS=	epplet.3:${PORTSDIR}/x11-wm/epplets
 
 PLIST_FILES=	bin/E-Run.epplet
 
