@@ -7,7 +7,7 @@
 
 PORTNAME=	throttled
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.intrarts.com/Files/
 EXTRACT_SUFX=	.tgz
@@ -16,6 +16,8 @@ MAINTAINER=	quest@mac.com
 COMMENT=	Bandwidth shaping and QoS solution
 
 USE_GMAKE=	yes
+
+USE_RC_SUBR=	${PORTNAME}
 
 PLIST_FILES=	sbin/throttled sbin/throttled-startup
 
