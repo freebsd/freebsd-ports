@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=	3.3.4
+PORTVERSION=	3.3.5
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
 
@@ -31,7 +31,7 @@ MAKE_ENV+=	MKDIRPROG="${MKDIR}"
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 SHLIB_VER=	1
 
-OPTIONS=	MNOGO_THREADS "Enable pthreads (unstable)"	off \
+OPTIONS=	MNOGO_THREADS "Enable pthreads"			on \
 		MNOGO_SSL     "Enable SSL"			on  \
 		MNOGO_ASIAN   "Enable asian charsets"		off \
 		MNOGO_SYSLOG  "Send logs to syslog"             on  \
