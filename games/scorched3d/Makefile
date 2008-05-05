@@ -7,7 +7,6 @@
 
 PORTNAME=		scorched3d
 PORTVERSION=		0.${SCORCH_VERSION}${SCORCH_REVISION}
-PORTREVISION=		3
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scorched3d
@@ -18,9 +17,13 @@ COMMENT=		Scorched is a game based loosely on the classic DOS game
 
 BUILD_DEPENDS=		openal-config:${PORTSDIR}/audio/openal
 RUN_DEPENDS=		openal-config:${PORTSDIR}/audio/openal
-LIB_DEPENDS=		alut.1:${PORTSDIR}/audio/freealut
+LIB_DEPENDS=		alut.1:${PORTSDIR}/audio/freealut \
+			fftw3f:${PORTSDIR}/math/fftw3-float \
+			fftw3:${PORTSDIR}/math/fftw3 \
+			jpeg:${PORTSDIR}/graphics/jpeg \
+			png:${PORTSDIR}/graphics/png
 
-SCORCH_VERSION=		40.1d
+SCORCH_VERSION=		41.3
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
@@ -31,7 +34,7 @@ USE_GL=			yes
 USE_GMAKE=		yes
 USE_AUTOTOOLS=	automake:15 autoconf:261
 USE_PERL5=	yes
-USE_WX=		2.6
+USE_WX=		2.4+
 WX_CONF_ARGS=	absolute
 
 WRKSRC=			${WRKDIR}/scorched
@@ -49,10 +52,6 @@ MAKE_ARGS=		ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" \
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,g' \
-		${WRKSRC}/src/3dsparse/aseFile.tab.cpp \
-		${WRKSRC}/src/ode/config.h \
-		${WRKSRC}/src/zlib/zutil.h
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/configure.ac
 
