@@ -1,0 +1,79 @@
+--- src/Makefile.in.orig	2008-02-29 17:13:08.000000000 +0900
++++ src/Makefile.in	2008-03-05 00:25:31.000000000 +0900
+@@ -46,9 +46,8 @@
+ # the directories also define the default search path for the
+ # initialization files (gs_*.ps) and the fonts.
+ 
+-INSTALL = $(GLSRCDIR)/instcopy -c
+-INSTALL_PROGRAM = $(INSTALL) -m 755
+-INSTALL_DATA = $(INSTALL) -m 644
++INSTALL_PROGRAM = ${BSD_INSTALL_SCRIPT}
++INSTALL_DATA = ${BSD_INSTALL_DATA}
+ INSTALL_SHARED = @INSTALL_SHARED@
+ 
+ prefix = @prefix@
+@@ -164,7 +163,7 @@
+ # some older JPEG streams that violate the standard. If the JPEG
+ # library built from local sources, the patch will be applied.
+ 
+-SHARE_JPEG=@SHARE_LIBJPEG@
++SHARE_JPEG=1
+ JPEG_NAME=jpeg
+ 
+ # Define the directory where the PNG library sources are stored,
+@@ -172,14 +171,14 @@
+ # You may need to change this if the libpng version changes.
+ # See libpng.mak for more information.
+ 
+-SHARE_LIBPNG=@SHARE_LIBPNG@
++SHARE_LIBPNG=1
+ PNGSRCDIR=@LIBPNGDIR@
+ LIBPNG_NAME=png
+ 
+ # Define the directory where the zlib sources are stored.
+ # See zlib.mak for more information.
+ 
+-SHARE_ZLIB=@SHARE_ZLIB@
++SHARE_ZLIB=1
+ ZSRCDIR=@ZLIBDIR@
+ #ZLIB_NAME=gz
+ ZLIB_NAME=z
+@@ -250,7 +249,7 @@
+ # Define the added flags for standard, debugging, profiling 
+ # and shared object builds.
+ 
+-CFLAGS_STANDARD=@OPT_CFLAGS@
++CFLAGS_STANDARD?=@OPT_CFLAGS@
+ CFLAGS_DEBUG=-g -O
+ CFLAGS_PROFILE=-pg @OPT_CFLAGS@
+ CFLAGS_SO=@DYNAMIC_CFLAGS@
+@@ -295,7 +294,7 @@
+ # Solaris may need -lnsl -lsocket -lposix4.
+ # (Libraries required by individual drivers are handled automatically.)
+ 
+-EXTRALIBS=@LIBS@ @DYNAMIC_LIBS@ @FONTCONFIG_LIBS@
++EXTRALIBS=@LIBS@ @DYNAMIC_LIBS@ @FONTCONFIG_LIBS@ -Wl,-export-dynamic
+ 
+ # Define the standard libraries to search at the end of linking.
+ # Most platforms require -lpthread for the POSIX threads library;
+@@ -340,10 +339,10 @@
+ 
+ # If POSIX sync primitives are used, also change the STDLIBS to include
+ # the pthread library.
+-#SYNC=posync
++SYNC=posync
+ 
+ # Default is No sync primitives since some platforms don't have it (HP-UX)
+-SYNC=nosync
++#SYNC=nosync
+ 
+ # programs we use
+ RM=rm -f
+@@ -498,6 +497,7 @@
+ # ---------------- End of platform-specific section ---------------- #
+ 
+ INSTALL_CONTRIB=@INSTALL_CONTRIB@
++include $(GLSRCDIR)/drivers.mak
+ include $(GLSRCDIR)/unixhead.mak
+ include $(GLSRCDIR)/gs.mak
+ # psromfs.mak must precede lib.mak

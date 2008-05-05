@@ -1,24 +1,51 @@
---- lib/cidfmap.orig	Thu Dec 29 04:56:24 2005
-+++ lib/cidfmap	Sat Apr 28 15:25:55 2007
-@@ -26,3 +26,31 @@
+--- lib/cidfmap.orig	2005-12-29 04:56:24.000000000 +0900
++++ lib/cidfmap	2008-03-04 07:04:11.000000000 +0900
+@@ -26,3 +26,58 @@
  %   /ShinGo-Bold   /HeiseiKakuGo-W5 ;
  %   /Ryumin-Medium << /FileType /TrueType /Path (H:/AuxFiles/Fonts/BATANG.TTC) /SubfontID 3 /CSI [(Japan1) 2] >> ;
  %
 +/Ryumin-Light << /FileType /TrueType /Path (Ryumin-Light.ttf) /SubfontID 0 /CSI [(Japan1) 3] >> ;
 +/GothicBBB-Medium << /FileType /TrueType /Path (GothicBBB-Medium.ttf) /SubfontID 0 /CSI [(Japan1) 3] >> ;
 +
++/Ryumin-Medium		/Ryumin-Light ;
++/Ryumin-Regular		/Ryumin-Light ;
++/RyuminPro-Light	/Ryumin-Light ;
++
++/GothicBBBPro-Medium	/GothicBBB-Medium ;
++
++/KozGoPro-Bold		/GothicBBB-Medium ;
++/KozGoPro-Heavy		/GothicBBB-Medium ;
++/KozGoPro-Medium	/GothicBBB-Medium ;
++/KozGoPro-Regular	/GothicBBB-Medium ;
++
++/KozMinPro-Bold		/Ryumin-Light ;
++/KozMinPro-Light	/Ryumin-Light ;
++/KozMinPro-Medium	/Ryumin-Light ;
++/KozMinPro-Regular	/Ryumin-Light ;
++
++/HiraKakuPro-W3		/GothicBBB-Medium ;
++/HiraKakuPro-W6		/GothicBBB-Medium ;
++/HiraKakuStd-W8		/GothicBBB-Medium ;
++
++/HiraMaruPro-W4		/GothicBBB-Medium ;
++
++/HiraMinPro-W3		/Ryumin-Light ;
++
 +/HeiseiMin-W3		/Ryumin-Light ;
-+%/HeiseiMin-W3		/WadaMin-Regular ;
 +/HeiseiKakuGo-W5	/GothicBBB-Medium ;
-+%/HeiseiKakuGo-W5	/WadaGo-Bold ;
++
 +/FutoMinA101-Bold	/Ryumin-Light ;
-+%/FutoMinA101-Bold	/WadaMin-Regular ;
++/FutoMinA101Pro-Bold	/Ryumin-Light ;
 +/FutoGoB101-Bold	/GothicBBB-Medium ;
-+%/FutoGoB101-Bold	/WadaGo-Bold ;
++/FutoGoB101Pro-Bold	/GothicBBB-Medium ;
++
 +/Jun101-Light		/Ryumin-Light ;
-+%/Jun101-Light		/WadaMin-Regular ;
++/Jun101Pro-Light	/Ryumin-Light ;
++
 +/MidashiGo-MB31		/GothicBBB-Medium ;
-+%/MidashiGo-MB31	/WadaGo-Bold ;
++/MidashiGoPro-MB31	/GothicBBB-Medium ;
++
++/MidashiMinPro-MA31	/Ryumin-Light ;
 +
 +%/Munhwa-Regular	/Munhwa-Regular ;
 +%/MunhwaGothic-Regular	/MunhwaGothic-Regular ;
