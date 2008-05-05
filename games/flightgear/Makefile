@@ -8,8 +8,14 @@
 PORTNAME?=	FlightGear
 PORTVERSION?=	${FGVERSION}
 CATEGORIES=	games
+# see http://www.flightgear.org/templates.js
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
-		ftp://ftp.de.flightgear.org/pub/fgfs/Source/
+		ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
+		ftp://ftp.kingmont.com/flightsims/flightgear/Source/ \
+		ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Source/ \
+		http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
+		http://flightgear.mxchange.org/pub/fgfs/Source/ \
+		http://ftp3.linux.kiev.ua/pub/fgfs/Source/
 
 MAINTAINER?=	ganael.laplanche@martymac.com
 COMMENT?=	The FlightGear flight simulator

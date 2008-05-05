@@ -8,8 +8,13 @@
 PORTNAME=	fgfs-base
 PORTVERSION=	1.0.0
 CATEGORIES=	games
+# see http://www.flightgear.org/templates.js
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Shared/ \
-		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/
+		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/ \
+		ftp://ftp.kingmont.com/flightsims/flightgear/Shared/ \
+		ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Shared/ \
+		http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Shared/ \
+		http://ftp3.linux.kiev.ua/pub/fgfs/Shared/
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	FlightGear scenery, textures and aircraft models
