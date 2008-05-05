@@ -39,7 +39,7 @@ include/libfo-0.5/libfo/libfo-compat.h
 lib/libfo-0.5.a
 lib/libfo-0.5.la
 lib/libfo-0.5.so
-lib/libfo-0.5.so.502
+lib/libfo-0.5.so.505
 libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/FoArea.html
 %%DOCSDIR%%/FoAreaArea.html
@@ -105,7 +105,6 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/areas.html
 %%DOCSDIR%%/backends.html
 %%DOCSDIR%%/basic-interface.html
-%%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/conformance.html
 %%DOCSDIR%%/context.html
 %%DOCSDIR%%/datatypes.html
@@ -124,6 +123,7 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/node.html
 %%DOCSDIR%%/object.html
+%%DOCSDIR%%/object-hierarchy.html
 %%DOCSDIR%%/other-objects.html
 %%DOCSDIR%%/properties.html
 %%DOCSDIR%%/right.png
@@ -378,11 +378,11 @@ libdata/pkgconfig/libfo-0.5.pc
 %%DOCSDIR%%/xmlroff-writing-mode.html
 %%DOCSDIR%%/xmlroff.devhelp
 %%DOCSDIR%%/xmlroff.devhelp2
-share/xml/libfo-0.5.2/catalog.xml
-share/xml/libfo-0.5.2/libfo-compat.xsl
-share/xml/libfo-0.5.2/xmlroff.fo
-share/xml/libfo-0.5.2/xmlroff.xml
-@dirrm share/xml/libfo-0.5.2
+share/xml/libfo-0.5.5/catalog.xml
+share/xml/libfo-0.5.5/libfo-compat.xsl
+share/xml/libfo-0.5.5/xmlroff.fo
+share/xml/libfo-0.5.5/xmlroff.xml
+@dirrm share/xml/libfo-0.5.5
 @dirrm %%DOCSDIR%%
 @dirrm include/libfo-0.5/libfo/util
 @dirrm include/libfo-0.5/libfo/property
