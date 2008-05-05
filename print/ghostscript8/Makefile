@@ -6,54 +6,57 @@
 #
 
 PORTNAME=	ghostscript
-PORTVERSION=	${GS_VERSION}
-PORTREVISION=	${GS_REVISION}
-PORTEPOCH=	${GS_EPOCH}
+PORTVERSION=	8.62
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
-		http://www.linuxprinting.org/ijs/download/:ijs_srcs \
-		http://www.humblesoft.com/pub/:epag \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${GS_VERSION:S/.//}/:gs_srcs
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
+		http://www.humblesoft.com/pub/:epag
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs
 PKGNAMESUFFIX=	-gpl
-DISTFILES=	${GS_SRCS}:gs_srcs \
-		${IJS_SRCS}:ijs_srcs \
-		${EPAG_SRCS}:epag
-DIST_SUBDIR=	ghostscript
-EXTRACT_ONLY=	${GS_SRCS} ${IJS_SRCS}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gs_srcs ${EPAG_SRCS}:epag
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL Postscript interpreter
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
-CONFLICTS=	gambc-* ghostscript-gnu-*
+CONFLICTS=	gambc-[0-9]* ghostscript-gnu-[0-9]* ghostscript-gnu-*-[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
 		EXTRALIBS="${EXTRALIBS}" \
 		SOC_LOADER="dxmainc.c"
-PLIST_SUB=	GS_VERSION="${GS_VERSION}" \
-		CIDFONTDIR="${CIDFONTDIR}"
+CONFIGURE_ENV=	${MAKE_ENV} \
+		CPPFLAGS="-DUPD_SIGNAL=0 -I. -I${WRKSRC}/jasper/src/libjasper/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-compile-inits \
+		--enable-contrib
+XCFLAGS=	${PTHREAD_CFLAGS}
+XLDFLAGS=	${PTHREAD_LIBS}
+
+PLIST_SUB=	GS_VERSION="${PORTVERSION}" \
+		CIDFONTDIR="${CIDFONTDIR:S,^${PREFIX}/,,}"
+SUB_FILES=	pkg-message
+SUB_LIST=	DATADIR=${DATADIR} PORTVERSION=${PORTVERSION}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	A4SIZE	"Set A4 (not Letter) as a default paper size"	off \
-		FONTCONFIG	"fontconfig support"	off \
+		FONTCONFIG	"fontconfig support"	on \
 		FT_BRIDGE	"FreeType bridge"	off \
-		ICONV	"libiconv support (required by opvp/oprp drivers)" on \
-		JPNFONTS	"Japanese font support"	on \
-		SVGALIB	"svgalib support"	off
-.if defined(WITHOUT_X11)
-OPTIONS+=	X11	"X11 support"	off
-.else
-OPTIONS+=	X11	"X11 support"	on
-.endif
+		SHLIB		"With shared libraries"	off \
+		X11	"X11 support"	on
 
-MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 gs-pcl3.1 pcl3opts.1 \
+MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 \
 		pdf2dsc.1 pdf2ps.1 pdfopt.1 pf2afm.1 pfbtopfa.1 printafm.1 \
 		ps2ascii.1 ps2epsi.1 ps2pdf.1 ps2pdfwr.1 ps2ps.1 wftopfa.1
 MLINKS=		gslp.1 gsbj.1 \
@@ -64,16 +67,99 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2pdf.1 ps2pdf13.1 \
 		ps2ps.1 eps2eps.1
 
-XCFLAGS=	${PTHREAD_CFLAGS}
-XLDFLAGS=	${PTHREAD_LIBS}
+CIDFONTDIR=	${DATADIR}/${PORTVERSION}/Resource
 
-.include "Makefile.inc"
+.include "Makefile.drivers"
 .include <bsd.port.pre.mk>
 
-SCRIPTS_ENV=	GS_DRIVERS_LIST="${GS_DRIVERS_LIST}" \
-		WITHOUT_X11="${WITHOUT_X11}" \
-		WITH_SVGALIB="${WITH_SVGALIB}" \
-		WITH_ICONV="${WITH_ICONV}"
+.for D in ${OPTIONS:MGS_*:S/^GS_//}
+.if !defined(WITHOUT_GS_${D})
+PLIST_SUB+=	GS_${D}=""
+.else
+PLIST_SUB+=	GS_${D}="@comment "
+.endif
+.endfor
+
+.if !defined(WITHOUT_GS_dmprt)
+.include "${FILESDIR}/Makefile.dmprt"
+.endif
+
+.if !defined(WITHOUT_GS_epag)
+.include "${FILESDIR}/Makefile.epag"
+.endif
+
+EPAG_BASE=	epag
+EPAG_SRCS=	${EPAG_BASE}-3.09.tar.gz
+EPAG_NAME=	${EPAG_SRCS:S,.tar.gz$,,}
+
+post-extract-epag:
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
+	${LN} -s -f ${EPAG_NAME} ${WRKSRC}/${EPAG_BASE}
+	${INSTALL_DATA} ${FILESDIR}/epag.contrib.mak ${WRKSRC}/src/epag.contrib.mak
+
+post-extract: post-extract-epag
+
+.if !defined(WITHOUT_GS_pcl3)
+.include "${FILESDIR}/Makefile.pcl3"
+.endif
+
+.if defined(WITH_GS_lvga256) \
+	|| defined(WITH_GS_vgalib)
+. if defined(WITHOUT_SVGALIB)
+. warning drivers incompatible with WITHDOUT_SVGALIB will be removed automatically
+. undef WITH_GS_lvga256
+. undef WITH_GS_vgalib
+. else
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+. endif
+.endif
+
+.if defined(WITH_GS_x11) \
+	|| defined(WITH_GS_x11alpha) \
+	|| defined(WITH_GS_x11cmyk) \
+	|| defined(WITH_GS_x11cmyk2) \
+	|| defined(WITH_GS_x11cmyk4) \
+	|| defined(WITH_GS_x11cmyk8) \
+	|| defined(WITH_GS_x11gray2) \
+	|| defined(WITH_GS_x11gray4) \
+	|| defined(WITH_GS_x11mono) \
+	|| defined(WITH_GS_x11rg16x) \
+	|| defined(WITH_GS_x11rg32x)
+. if defined(WITHOUT_X11)
+. warning drivers incompatible with WITHDOUT_X11 will be removed automatically
+. undef WITH_GS_x11
+. undef WITH_GS_x11alpha
+. undef WITH_GS_x11cmyk
+. undef WITH_GS_x11cmyk2
+. undef WITH_GS_x11cmyk4
+. undef WITH_GS_x11cmyk8
+. undef WITH_GS_x11gray2
+. undef WITH_GS_x11gray4
+. undef WITH_GS_x11mono
+. undef WITH_GS_x11rg16x
+. undef WITH_GS_x11rg32x
+. endif
+USE_XORG=	xt xext
+CONFIGURE_ARGS+=--with-x \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
+.else
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
+CONFIGURE_ARGS+=--without-x
+.endif
+
+.if defined(WITH_GS_oprp) \
+	|| defined(WITH_GS_opvp)
+. if defined(WITHOUT_ICONV)
+. warning drivers incompatible with WITHDOUT_ICONV will be removed automatically
+. undef WITH_GS_oprp
+. undef WITH_GS_opvp
+. else
+USE_ICONV=	yes
+CONFIGURE_ARGS+=--with-libiconv=gnu
+EXTRALIBS+=	-liconv
+. endif
+.endif
 
 .if !defined(WITH_LETTERSIZE)
 .if defined(A4) || defined(WITH_A4SIZE)
@@ -82,254 +168,130 @@ MSG_PAPERSIZE=	"NOTE: Default paper size will be A4."
 .endif
 .endif
 
-.if defined(WITHOUT_X11)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
-.else
-USE_XORG=	xt xext
-.endif
-
-.if defined(WITH_SVGALIB)
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
-.endif
-
-.if defined(WITH_ICONV)
-USE_ICONV=	yes
-EXTRALIBS+=	-liconv
-.endif
-
-.if defined(WITH_FONTCONFIG)
+.if !defined(WITHOUT_FONTCONFIG)
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-XCFLAGS+=	-DHAVE_FONTCONFIG=1
-EXTRALIBS+=	-lfontconfig
+CONFIGURE_ARGS+=	--enable-fontconfig
+.else
+CONFIGURE_ARGS+=	--disable-fontconfig
 .endif
 
-.if defined(WITH_FT_BRIDGE)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libfreetype.a:${PORTSDIR}/print/freetype2
-MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".a"
+.if !defined(WITHOUT_FT_BRIDGE)
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".so"
+PLIST_SUB+=	FAPI=""
+.else
+PLIST_SUB+=	FAPI="@comment "
 .endif
 
+.if !defined(WITHOUT_SHLIB)
+.if defined(WITHOUT_X11)
+MAKE_ENV+=	SOC_LOADER="dxmainc.c"
+.else
+USE_GNOME+=	gtk20
+MAKE_ENV+=	SOC_LOADER="dxmain.c" \
+		SOC_CFLAGS="`pkg-config --cflags gtk+-2.0`" \
+		SOC_LIBS="`pkg-config --libs gtk+-2.0`"
+.endif
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall
 USE_LDCONFIG=	yes
-PLIST_SUB+=	SHLIB_VER="${GS_VERSION:R}"
-
-GS_SRCS=	${DISTNAME}${EXTRACT_SUFX}
-IJS_SRCS=	ijs-0.35${EXTRACT_SUFX}
-CIDFONTDIR=	${PREFIX}/share/ghostscript/${GS_VERSION}/Resource
-
-# Additional Drivers:
-
-# EPAG - additional driver for Epson ESC/Page printers
-# http://www.humblesoft.com/gdevepag.html
-EPAG=		epag
-EPAG_VERS=	3.09
-EPAG_NAME=	${EPAG}-${EPAG_VERS}
-EPAG_SRCS=	${EPAG_NAME}.tar.gz
-
-# Add support for Japanese fonts
-.if defined(WITH_JPNFONTS)
-MASTER_SITES+=	http://www.interq.or.jp/mars/cherry/mac/:jpn
-DISTFILES+=	${JPN_SRCS}:jpn
-JPN_SRCS=	Font.tar.bz2
-PLIST_SUB+=	JPN=""
+PLIST_SUB+=	SHLIB="" SHLIB_VER="${PORTVERSION:R}"
 .else
-PLIST_SUB+=	JPN="@comment "
+PLIST_SUB+=	SHLIB="@comment "
 .endif
 
-.SILENT:
+PORTDOCS=	${PORTVERSION}
+PORTDOC_FILES=	japanese/Gdevlips.htm japanese/README.gs550j		\
+	japanese/cdj880.txt japanese/dj505j.txt japanese/djgpp.txt	\
+	japanese/gdev10v.txt japanese/gdevalps.txt			\
+	japanese/gdevcd8.txt japanese/gdevdmpr.txt			\
+	japanese/gdevfmlbp.txt japanese/gdevj100.txt			\
+	japanese/gdevlbp3.txt japanese/gdevmag.txt			\
+	japanese/gdevmd2k.txt japanese/gdevmjc.txt			\
+	japanese/gdevml6.txt japanese/gdevp201.txt japanese/gs261j.euc	\
+	japanese/gs261j.txt chp2200/AUTHORS chp2200/INSTALL		\
+	epson740/README epson740/upp-HowTo-to-be			\
+	lxm3200-tweaked/LICENSE lxm3200-tweaked/README			\
+	lxm3200-tweaked/RELEASE_NOTES					\
+	lxm3200-tweaked/Z12-Z31-QuickSetup md2k_md5k/README.jis
 
 pre-everything::
-	${ECHO_MSG} ${MSG_PAPERSIZE}
-
-post-extract:
-	${ECHO_MSG} ">>> in post-extract ..."
-	${RM} -fr ${WRKSRC}/ijs
-	${LN} -sf ../ijs-0.35 ${WRKSRC}/ijs
-
-# ** 3rd party driver **
-# Note: don't forget to add those devices in scripts/configure,
-# which update unix-gcc.mak to build gs with these new devices!
-#
-# for EPAG driver
-	${ECHO_MSG} ">>>   extracting ${EPAG_SRCS} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
-	${LN} -sf ${EPAG_NAME} ${WRKSRC}/${EPAG}
-# for Japanese fonts
-.if defined(WITH_JPNFONTS)
-	${ECHO_MSG} ">>>   extracting ${JPN_SRCS} ..."
-	${TAR} -C ${WRKSRC}/Resource -xypof ${DISTDIR}/${DIST_SUBDIR}/${JPN_SRCS}
-.endif
+	@${ECHO_MSG} ${MSG_PAPERSIZE}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
-		${WRKSRC}/src/unix-gcc.mak
-	${REINPLACE_CMD} -e 's|\. de|\.|g' \
-		${WRKSRC}/src/unixinst.mak
-# for DMPRT driver
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g ; \
-		 s|%%GS_VERSION%%|${GS_VERSION}|g' \
+		 s|%%GS_VERSION%%|${PORTVERSION}|g' \
 			${WRKSRC}/contrib/japanese/dmp_site.ps
 
-# here we apply the modifications necessary to build the 3rd party drivers
-# advantage: you see unmodified makefiles after a pure make extract
 pre-configure:
-	${ECHO_MSG} ">>> in pre-configure ..."
-# for EPAG driver
-	${ECHO_MSG} ">>>   adding EPAG driver to contrib.mak ..."
-	${CAT} ${FILESDIR}/epag.contrib.mak \
-		>> ${WRKSRC}/src/contrib.mak
+	${TOUCH} ${WRKSRC}/ijs/config.guess
+	cd ${WRKSRC}/expat/conftools && ${INSTALL_SCRIPT} \
+		ltmain.sh mkinstalldirs install-sh config.sub \
+		${WRKSRC}/ijs
 
 post-configure:
-	${ECHO_MSG} ">>> in post-configure ..."
-	cd ${WRKSRC}/jasper ; \
-		${SETENV} ${MAKE_ENV} ${SH} ./configure --prefix=${PREFIX}
-	cd ${WRKSRC}/ijs ; \
-		${SETENV} ${MAKE_ENV} ${SH} ./configure --prefix=${PREFIX}
+	cd ${WRKSRC}/jasper && \
+		${SETENV} ${CONFIGURE_ENV} ${SH} ./configure --prefix=${PREFIX}
+	cd ${WRKSRC}/ijs && \
+		${SETENV} ${CONFIGURE_ENV} ${SH} ./configure --prefix=${PREFIX}
 
-pre-build:
-	${ECHO_MSG} ">>> in pre-build ..."
-	${ECHO_MSG} ">>>   creating directories for compilation ..."
+pre-build-drivers.mak:
+	@${ECHO_CMD} 'DEVICE_DEVS= \' > ${WRKSRC}/src/drivers.mak
+.for D in ${OPTIONS:MGS_*:S/^GS_//}
+.if defined(WITH_GS_${D})
+	@${ECHO_CMD} '$$(DD)${D}.dev \' >> ${WRKSRC}/src/drivers.mak
+.endif
+.endfor
+
+pre-build: pre-build-drivers.mak
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
-	${ECHO_MSG} ">>>   creating symlinks for EPAG ..."
-.for i in gdevepag.c
-	${LN} -sf ${WRKSRC}/${EPAG_NAME}/${i} ${WRKSRC}/src
-.endfor
 .if defined(WITH_FT_BRIDGE)
 	${MKDIR} ${WRKSRC}/freetype/include
-	${LN} -sf ${LOCALBASE}/include/ft2build.h \
+	${LN} -s -f ${LOCALBASE}/include/ft2build.h \
 		${WRKSRC}/freetype/include/ft2build.h
-	${LN} -sf ${LOCALBASE}/include/freetype2/freetype \
+	${LN} -s -f ${LOCALBASE}/include/freetype2/freetype \
 		${WRKSRC}/freetype/include/freetype
 	${MKDIR} ${WRKSRC}/freetype/objs
-	${LN} -sf ${LOCALBASE}/lib/libfreetype.a \
-		${WRKSRC}/freetype/objs/freetype214MT_D.a
+	${LN} -s -f ${LOCALBASE}/lib/libfreetype.so \
+		${WRKSRC}/freetype/objs/freetype214MT_D.so
 .endif
 
-post-build:
-# for PCL3 driver
-	${ECHO_MSG} ">>>   building PCL3 utility ..."
-	cd ${WRKSRC} ; \
-		${CC} ${CFLAGS} -I./obj -I./soobj -I./src \
-		-I./contrib/pcl3/eprn -o bin/pcl3opts \
-		contrib/pcl3/src/pcl3opts.c contrib/pcl3/src/pclscan.c \
-		contrib/pcl3/eprn/mediasize.c contrib/pcl3/src/pclsize.c
-# for EPAG driver
-	${ECHO_MSG} ">>>   building EPAG utility ..."
-	cd ${WRKSRC}/${EPAG_NAME} ; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
-
 pre-su-install:
-	${ECHO_MSG} ">>> in pre-install ..."
-	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
-post-install:
-	${ECHO_MSG} ">>> in post-install ..."
-	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
-	${ECHO_MSG} ">>>   stripping gs ..."
-	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
-	${LN} -sf gsc ${PREFIX}/bin/gs
-# for PCL3 driver
-	${ECHO_MSG} ">>>   installing PCL3 utility in bindir ..."
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/pcl3opts ${PREFIX}/bin
-	${ECHO_MSG} ">>>   installing PCL3 manpages ..."
-.for i in gs-pcl3.1 pcl3opts.1
-	${INSTALL_MAN} ${WRKSRC}/contrib/pcl3/doc/${i} ${MANPREFIX}/man/man1
-.endfor
-# other pcl3 stuff, which might be interesting for runtime
-	${ECHO_MSG} ">>>   creating PCL3 destdir ..."
-	${MKDIR} ${DATADIR}/${GS_VERSION}/pcl3
-	${ECHO_MSG} ">>>   installing files in PCL3 destdir ..."
-.for i in NEWS BUGS README lib/example.mcf lib/if-pcl3 ps/calign.ps \
-	ps/dumppdd.ps ps/levels-test.ps ps/margins-A4.ps \
-	ps/margins-A4Rotated.ps ps/margins-Env10Rotated.ps \
-	ps/margins-EnvDLRotated.ps ps/margins-Letter.ps \
-	ps/margins-LetterRotated.ps
-	${INSTALL_DATA} ${WRKSRC}/contrib/pcl3/${i} \
-		${DATADIR}/${GS_VERSION}/pcl3
-.endfor
-# for DMPRT driver
-	${ECHO_MSG} ">>>   installing DMPRT resources ..."
-.for i in dmp_init.ps dmp_site.ps escp_24.src
-	${INSTALL_DATA} ${WRKSRC}/contrib/japanese/${i} \
-		${DATADIR}/${GS_VERSION}/lib
-.endfor
-# for EPAG driver
-	${ECHO_MSG} ">>>   installing EPAG utility in bindir ..."
-	${INSTALL_PROGRAM} ${WRKSRC}/${EPAG_NAME}/ert ${PREFIX}/bin
-# contributed UPP driver
-	${ECHO_MSG} ">>> installing contributed UPP profiles ..."
-	${INSTALL_DATA} ${WRKSRC}/contrib/uniprint/*.upp \
-		${DATADIR}/${GS_VERSION}/lib
-.for i in lqx70ch.upp lqx70cl.upp lqx70cm.upp
-	${INSTALL_DATA} ${FILESDIR}/${i} \
-		${DATADIR}/${GS_VERSION}/lib
-.endfor
-# for Japanese fonts
-.if defined(WITH_JPNFONTS)
-	${ECHO_MSG} ">>>   installing Japanese font resources ..."
-	${INSTALL_DATA} ${WRKSRC}/Resource/Font/* \
-		${DATADIR}/${GS_VERSION}/Resource/Font/
-.endif
-#
-# now NOPORTDOCS dependend stuff
-#
-.if !defined(NOPORTDOCS)
-	${ECHO_MSG} ">>> installing PORTDOC stuff ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/japanese
-	${INSTALL_DATA} ${WRKSRC}/contrib/japanese/doc/* \
-		${DOCSDIR}/${GS_VERSION}/japanese
-# for HP2200 driver
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/chp2200
-.for file in AUTHORS INSTALL
-	${INSTALL_DATA} ${WRKSRC}/contrib/chp2200/${file} \
-		${DOCSDIR}/${GS_VERSION}/chp2200
-.endfor
-# contributed UPP driver
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/epson740
-.for file in README upp-HowTo-to-be
-	${INSTALL_DATA} ${WRKSRC}/contrib/epson740/${file} \
-		${DOCSDIR}/${GS_VERSION}/epson740
-.endfor
-# for LXM3200 driver
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/lxm3200-tweaked
-	${INSTALL_DATA} ${WRKSRC}/contrib/lxm3200-tweaked/* \
-		${DOCSDIR}/${GS_VERSION}/lxm3200-tweaked
-# for MD2K driver
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/md2k_md5k
-	${INSTALL_DATA} ${WRKSRC}/contrib/md2k_md5k/* \
-		${DOCSDIR}/${GS_VERSION}/md2k_md5k
-# for PCL3 driver
-	${ECHO_MSG} ">>>   installing PCL3 docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/pcl3
-.for i in NEWS doc/gs-pcl3.html doc/how-to-report.txt doc/pcl3opts.html
-	${INSTALL_DATA} ${WRKSRC}/contrib/pcl3/${i} \
-		${DOCSDIR}/${GS_VERSION}/pcl3
-.endfor
-# for EPAG driver
-	${ECHO_MSG} ">>>   installing EPAG docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${EPAG}
-.for i in ert.txt gdevepag.txt ChangeLog
-	${INSTALL_DATA} ${WRKSRC}/${EPAG_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${EPAG}
-.endfor
-.for i in psprint gsepagif.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/${EPAG_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${EPAG}
-.endfor
-.endif
-	${ECHO_MSG} "> post-installation tasks completed."
-	${ECHO_MSG}
-	${CAT} ${PKGMESSAGE}
-	${ECHO_MSG}
+post-install-docs:
+	${MKDIR} ${WRKSRC}/contrib/japanese
+	${INSTALL_DATA} ${WRKSRC}/contrib/japanese/doc/* ${WRKSRC}/contrib/japanese
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}
+	cd ${WRKSRC}/contrib && \
+		${TAR} cf - ${PORTDOC_FILES} | \
+		( cd ${DOCSDIR}/${PORTVERSION} && ${TAR} xof - )
 
 .if defined(WITH_FT_BRIDGE)
-	${ECHO_MSG} " *** Configure FAPIfontmap and FAPIcidfmap accordingly"
-	${ECHO_MSG} " *** in ${DATADIR}/${GS_VERSION}/lib"
-	${ECHO_MSG} " *** to use FreeType fonts."
-	${ECHO_MSG}
+post-install-fapi:
+	${INSTALL_DATA} ${WRKSRC}/lib/FAPIcidfmap			\
+		${WRKSRC}/lib/FAPIconfig ${WRKSRC}/lib/FAPIfontmap	\
+		${DATADIR}/${PORTVERSION}/lib
+
+post-install: post-install-fapi
+.endif
+
+post-install:
+.if defined(WITH_SHLIB)
+	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
+	${LN} -sf gsc ${PREFIX}/bin/gs
+.else
+	${STRIP_CMD} ${PREFIX}/bin/gs
+.endif
+	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
+
+.if !defined(NOPORTDOCS)
+post-install: post-install-docs
 .endif
 
 .include <bsd.port.post.mk>

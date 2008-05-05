@@ -2,3 +2,7 @@ Note: in order to use the script dvipdf, dvips must be installed.
 This program may be provided by either print/dvips or print/dvipsk-tetex
 (print/dvipsk-tetex may be preferable since it doesn't conflict with
 tetex things).
+
+Also note that FAPIfontmap and FAPIcidfmap in
+%%DATADIR%%/%%PORTVERSION%%/lib have to be configured first if
+WITH_FT_BRIDGE is enabled.

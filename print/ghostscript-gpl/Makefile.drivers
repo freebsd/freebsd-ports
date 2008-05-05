@@ -1,0 +1,324 @@
+# $FreeBSD$
+
+.if !defined(WITHOUT_X11)
+OPTIONS_X11_DEFAULT=	on
+.else
+OPTIONS_X11_DEFAULT=	off
+.endif
+
+.if !defined(WITH_SVGALIB)
+OPTIONS_SVGALIB_DEFAULT=	off
+.else
+OPTIONS_SVGALIB_DEFAULT=	on
+.endif
+
+.if !defined(WITHOUT_ICONV)
+OPTIONS_ICONV_DEFAULT=	on
+.else
+OPTIONS_ICONV_DEFAULT=	off
+.endif
+
+OPTIONS_X11= \
+GS_x11	"D: X Window System version 11, release >=4"	${OPTIONS_X11_DEFAULT} \
+GS_x11alpha	"D: X Window System masquer. alpha capability"	${OPTIONS_X11_DEFAULT} \
+GS_x11cmyk	"D: X Window System masquer. 1-bit-per-plane CMYK"	${OPTIONS_X11_DEFAULT} \
+GS_x11cmyk2	"D: X Window System 2-bit-per-plane CMYK"	${OPTIONS_X11_DEFAULT} \
+GS_x11cmyk4	"D: X Window System 4-bit-per-plane CMYK"	${OPTIONS_X11_DEFAULT} \
+GS_x11cmyk8	"D: X Window System 8-bit-per-plane CMYK"	${OPTIONS_X11_DEFAULT} \
+GS_x11gray2	"D: X Window System 2-bit gray-scale"	${OPTIONS_X11_DEFAULT} \
+GS_x11gray4	"D: X Window System 4-bit gray-scale"	${OPTIONS_X11_DEFAULT} \
+GS_x11mono	"D: X Window System masquer. black-and-white"	${OPTIONS_X11_DEFAULT} \
+GS_x11rg16x	"D: X Window System G5/B5/R6 pixel layout"	${OPTIONS_X11_DEFAULT} \
+GS_x11rg32x	"D: X Window System G11/B10/R11 pixel layout"	${OPTIONS_X11_DEFAULT}
+
+OPTIONS_SVGALIB= \
+GS_lvga256	"D: SVGAlib, 256-color VGA modes"	${OPTIONS_SVGALIB_DEFAULT} \
+GS_vgalib	"D: SVGAlib, 16-color VGA modes"	${OPTIONS_SVGALIB_DEFAULT}
+
+OPTIONS_ICONV= \
+GS_oprp	"D: OpenPrinting Raster printer driver interface [contr]"	${OPTIONS_ICONV_DEFAULT} \
+GS_opvp	"D: OpenPrinting Vecter printer driver interface [contr]"	${OPTIONS_ICONV_DEFAULT}
+
+OPTIONS+=	${OPTIONS_X11}
+OPTIONS+=	${OPTIONS_SVGALIB}
+OPTIONS+=	${OPTIONS_ICONV}
+
+OPTIONS+=	\
+GS_md2k	"D: ALPS MD-2000/2010/4000/1300/1500/5000 [contr]"	on \
+GS_md5k	"D: ALPS MD-5000 Eco Mode [contr]"	on \
+GS_md50Mono	"D: ALPS MD-5000 Monochrome [contr]"	on \
+GS_md50Eco	"D: ALPS MD-5000 Eco Mode [contr]"	on \
+GS_md1xMono	"D: ALPS MD-1x00 Monochrome [contr]"	on \
+GS_appledmp	"D: Apple Dot Matrix Printer / Imagewriter"	on \
+GS_iwhi	"D: Apple Imagewriter, high-resolution mode"	on \
+GS_iwlo	"D: Apple Imagewriter, low-resolution mode"	on \
+GS_iwlq	"D: Apple Imagewriter LQ in 320 x 216 dpi mode"	on \
+GS_hl7x0	"D: Brother HL-720/730/760(=PCL), MFC6550MC"	on \
+GS_hl1240	"D: Brother HL-1030/240 (600x600 dpi) [contr]"	on \
+GS_hl1250	"D: Brother HL-1050/1070/1250/1270N (1200x600 dpi) [contr]"	on \
+GS_bj10e	"D: Canon BJ-10e"	on \
+GS_bj10v	"D: Canon BJ-10v [contr]"	on \
+GS_bj10vh	"D: Canon BJ-10v, high-mergin [contr]"	on \
+GS_bj200	"D: Canon BJ-200 and BJC-240(b&w)"	on \
+GS_bjc600	"D: Canon BJC-600/4xxx/70 + Apple StyleWriter 2x00"	on \
+GS_bjc800	"D: Canon BJC-240/800"	on \
+GS_bjccmyk	"D: Canon BJC-210/240/250/265/1000 [contr]"	on \
+GS_bjccolor	"D: Canon BJC-210/240/250/265/1000 truecolor [contr]"	on \
+GS_bjcgray	"D: Canon BJC-210/240/250/265/1000 grayscale [contr]"	on \
+GS_bjcmono	"D: Canon BJC-210/240/250/265/1000 monochrome [contr]"	on \
+GS_lbp8	"D: Canon LBP-8II laser printer"	on \
+GS_lbp310	"D: Canon LBP-310 [contr]"	on \
+GS_lbp320	"D: Canon LBP-320 Pro/LBP-350 [contr]"	on \
+GS_lips2p	"D: Canon LIPS II+ [contr]"	on \
+GS_lips3	"D: Canon LIPS III [contr]"	on \
+GS_lips4	"D: Canon LIPS IV [contr]"	on \
+GS_bjc880j	"D: Canon LIPS IVc (BJC-680J/880J) [contr]"	on \
+GS_lips4v	"D: Canon LIPS IV, vector output mode [contr]"	on \
+GS_m8510	"D: C.Itoh M8510 printer"	on \
+GS_coslw2p	"D: CoStar LabelWriter II II/Plus"	on \
+GS_coslwxl	"D: CoStar LabelWriter XL"	on \
+GS_uniprint	"D: Configurable ESC/P,ESC/P2,HP-RTL/PCL,P2X"	on \
+GS_dmprt	"D: Configurable dot matrix printer driver [contr]"	on \
+GS_dl2100	"D: DEC DL2100 [contr]"	on \
+GS_la50	"D: DEC LA50 [contr]"	on \
+GS_la70	"D: DEC LA70 [contr]"	on \
+GS_la75	"D: DEC LA75 [contr]"	on \
+GS_la75plus	"D: DEC LA75+ [contr]"	on \
+GS_ln03	"D: DEC LN03 [contr]"	on \
+GS_lj250	"D: DEC LJ250 Companion color printer"	on \
+GS_declj250	"D: DEC LJ250 driver (alternate)"	on \
+GS_ap3250	"D: Epson ActionPrinter 3250"	on \
+GS_epson	"D: Epson dot matrix, 9/24-pin"	on \
+GS_eps9mid	"D: Epson 9-pin, interleaved lines, medium resol"	on \
+GS_eps9high	"D: Epson 9-pin, interleaved lines, triple resol"	on \
+GS_lp8000	"D: Epson LP-8000 line printer"	on \
+GS_epag	"D: Epson ESC/Page laser printer (generic)"	on \
+GS_escpage	"D: Epson ESC/Page laser printer (generic) [contr]"	on \
+GS_lp2000	"D: Epson LP-2000/3000/7000/7000G laser printer [contr]"	on \
+GS_alc8600	"D: Epson AL-C8600 color laser printer [contr]"	on \
+GS_alc8500	"D: Epson AL-C8500 color laser printer [contr]"	on \
+GS_alc2000	"D: Epson AL-C2000 color laser printer [contr]"	on \
+GS_alc4000	"D: Epson AL-C4000 color laser printer [contr]"	on \
+GS_alc1900	"D: Epson AL-C1900 color laser printer [contr]"	on \
+GS_alc4100	"D: Epson AL-C4100 color laser printer [contr]"	on \
+GS_lp9800c	"D: Epson LP-9800C color laser printer [contr]"	on \
+GS_lp9000c	"D: Epson LP-9000C color laser printer [contr]"	on \
+GS_lp9500c	"D: Epson LP-9500C color laser printer [contr]"	on \
+GS_lp8800c	"D: Epson LP-8800C color laser printer [contr]"	on \
+GS_lp8300c	"D: Epson LP-8300C color laser printer [contr]"	on \
+GS_lp8500c	"D: Epson LP-8500C color laser printer [contr]"	on \
+GS_lp3000c	"D: Epson LP-3000C color laser printer [contr]"	on \
+GS_lp8200c	"D: Epson LP-8200C color laser printer [contr]"	on \
+GS_lp8000c	"D: Epson LP-8000C color laser printer [contr]"	on \
+GS_epl6100	"D: Epson EPL-6100 laser printer [contr]"	on \
+GS_epl5900	"D: Epson EPL-5900 laser printer [contr]"	on \
+GS_epl5800	"D: Epson EPL-5800 laser printer [contr]"	on \
+GS_epl2050	"D: Epson EPL-N2050 laser printer [contr]"	on \
+GS_epl2050p	"D: Epson EPL-N2050+ laser printer [contr]"	on \
+GS_epl2120	"D: Epson EPL-N2120 laser printer [contr]"	on \
+GS_epl2500	"D: Epson EPL-N2500 laser printer [contr]"	on \
+GS_epl2750	"D: Epson EPL-N2750 laser printer [contr]"	on \
+GS_lp9000b	"D: Epson LP-9000B laser printer [contr]"	on \
+GS_lp2500	"D: Epson LP-2500 laser printer [contr]"	on \
+GS_lp9100	"D: Epson LP-9100(R) laser printer [contr]"	on \
+GS_lp7900	"D: Epson LP-7900(R) laser printer [contr]"	on \
+GS_lp7500	"D: Epson LP-7500(R) laser printer [contr]"	on \
+GS_lp2400	"D: Epson LP-2400 laser printer [contr]"	on \
+GS_lp2200	"D: Epson LP-2200 laser printer [contr]"	on \
+GS_lp9400	"D: Epson LP-9400(R) laser printer [contr]"	on \
+GS_lp8900	"D: Epson LP-8900(R) laser printer [contr]"	on \
+GS_lp8700	"D: Epson LP-8700(R) laser printer [contr]"	on \
+GS_lp8100	"D: Epson LP-8100(R) laser printer [contr]"	on \
+GS_lp7700	"D: Epson LP-7700(R) laser printer [contr]"	on \
+GS_lp8600f	"D: Epson LP-8600FX(N) laser printer [contr]"	on \
+GS_lp8400f	"D: Epson LP-8400FX(N) laser printer [contr]"	on \
+GS_lp8300f	"D: Epson LP-8300F laser printer [contr]"	on \
+GS_lp1900	"D: Epson LP-1900(N) laser printer [contr]"	on \
+GS_lp9600s	"D: Epson LP-9600S laser printer [contr]"	on \
+GS_lp9300	"D: Epson LP-9300 laser printer [contr]"	on \
+GS_lp9600	"D: Epson LP-9600 laser printer [contr]"	on \
+GS_lp8600	"D: Epson LP-8600FX(N) laser printer [contr]"	on \
+GS_lp1800	"D: Epson LP-1800 laser printer [contr]"	on \
+GS_lq850	"D: Epson LQ-850 (360x360) (emul on Canon BJ300)"	on \
+GS_epsonc	"D: Epson LQ-2550, Fujitsu 3400/2400/1200 color"	on \
+GS_mj700v2c	"D: Epson MachJet series, CMYK [contr]"	on \
+GS_mj500c	"D: Epson MachJet MJ-500C 360dpi, CMY/mono [contr]"	on \
+GS_mj6000c	"D: Epson MachJet MJ-830C/930C/6000C [contr]"	on \
+GS_mj8000c	"D: Epson MachJet MJ-8000C [contr]"	on \
+GS_st800	"D: Epson Stylus 800 printer"	on \
+GS_stcolor	"D: Epson Stylus Color and II/IIs/1500 (see driver docu)"	on \
+GS_photoex	"D: Epson Stylus Color Photo, Photo EX, Photo 700"	on \
+GS_fmlbp	"D: Fujitsu contrib2xx Page Printer [contr]"	on \
+GS_fmpr	"D: Fujitsu contrib [contr]"	on \
+GS_lp2563	"D: HP 2563B line printer"	on \
+GS_dnj650c	"D: HP DesignJet 650C"	on \
+GS_deskjet	"D: HP DeskJet and DeskJet Plus"	on \
+GS_djet500	"D: HP DeskJet 500 (for DeskJet 600 use -r600)"	on \
+GS_cdeskjet	"D: HP DeskJet 500C, 1 bit/pixel color"	on \
+GS_djet500c	"D: HP DeskJet 500C alternate driver, not for 550/560C"	on \
+GS_cdjcolor	"D: HP DeskJet 500C/540C (24b/px), Citizen Projet IIc"	on \
+GS_cdjmono	"D: HP DeskJet 500/510/520/540C b/w printing"	on \
+GS_cdj500	"D: HP DeskJet 500/540C (same as cdjcolor)"	on \
+GS_cdj550	"D: HP DeskJet 550C/560C/660C/660Cse"	on \
+GS_dj505j	"D: HP DeskJet 505J"	on \
+GS_cdj670	"D: HP DeskJet 670/690 [contr]"	on \
+GS_cdj850	"D: HP DeskJet 850/855/870/1100 [contr]"	on \
+GS_cdj880	"D: HP DeskJet 880 [contr]"	on \
+GS_cdj890	"D: HP DeskJet 890 [contr]"	on \
+GS_cdj1600	"D: HP DeskJet 1600 [contr]"	on \
+GS_chp2200	"D: HP Business Inkjet 2200 [contr]"	on \
+GS_cdj970	"D: HP DeskJet 970CXi [contr]"	on \
+GS_laserjet	"D: HP LaserJet"	on \
+GS_ljetplus	"D: HP LaserJet Plus"	on \
+GS_ljet2p	"D: HP LaserJet IId/IIp/III* with TIFF compression"	on \
+GS_ljet3	"D: HP LaserJet III* with Delta Row compression"	on \
+GS_ljet3d	"D: HP LaserJet IIID with duplex capability"	on \
+GS_ljet4	"D: HP LaserJet 4/5L/5P (not real LJ5), 600dpi"	on \
+GS_ljet4d	"D: HP LaserJet 4 with duplex, 600dpi"	on \
+GS_lj4dith	"D: HP LaserJet 4 with Floyd-Steinberg dithering"	on \
+GS_ljet4pjl	"D: HP LaserJet 4V/4LJ Pro"	on \
+GS_lj4dithp	"D: HP LaserJet 4V/4LJ Pro with dithering"	on \
+GS_cljet5	"D: HP LaserJet 5/5M Color (new driver, old=cljet5pr)"	on \
+GS_cljet5c	"D: HP LaserJet 5/5M Color Simple"	on \
+GS_cljet5pr	"D: HP LaserJet 5/5M Color (old, rotation hacks/flaws)"	on \
+GS_lj5mono	"D: HP LaserJet 5 and 6 family (PCL5 / PCL XL), bitmap"	on \
+GS_lj5gray	"D: HP LaserJet 5 and 6 family, gray-scale bitmap"	on \
+GS_pj	"D: HP PaintJet XL driver"	on \
+GS_pjetxl	"D: HP PaintJet XL driver (alternate)"	on \
+GS_pjxl	"D: HP PaintJet XL color printer"	on \
+GS_paintjet	"D: HP PaintJet color printer (alternate)"	on \
+GS_pjxl300	"D: HP PaintJet XL300, DeskJet 1200C, HP CopyJet"	on \
+GS_pxlmono	"D: HP PCL XL mono printers (LaserJet 5/6 family)"	on \
+GS_pxlcolor	"D: HP PCL XL color printers (Color LaserJet 4500/5000)"	on \
+GS_pcl3	"D: HP PCL 3+ (generic) [contr]"	on \
+GS_ijs	"D: HP Inkjet and other raster devices"	on \
+GS_ibmpro	"D: IBM 9-pin Proprinter"	on \
+GS_jetp3852	"D: IBM Jetprinter ink-jet color (Model \#3852)"	on \
+GS_imagen	"D: Imagen ImPress printers"	on \
+GS_fs600	"D: Kyocera FS-600 (600 dpi)"	on \
+GS_lxm5700m	"D: Lexmark 5700 monotone"	on \
+GS_lxm3200	"D: Lexmark 3200/Z12/Z22/Z31/Z32 [contr]"	on \
+GS_lx5000	"D: Lexmark 5000/Z51/Z82 [contr]"	on \
+GS_lex2050	"D: Lexmark 2050 [contr]"	on \
+GS_lex3200	"D: Lexmark 3200 [contr]"	on \
+GS_lex5700	"D: Lexmark 5700 [contr]"	on \
+GS_lex7000	"D: Lexmark 7000 [contr]"	on \
+GS_cp50	"D: Mitsubishi CP50 color"	on \
+GS_pr1000	"D: NEC PC-PR 1000 [contr]"	on \
+GS_pr1000_4	"D: NEC PC-PR 1000/4 [contr]"	on \
+GS_pr150	"D: NEC PC-PR 150 [contr]"	on \
+GS_pr201	"D: NEC PC-PR 201 [contr]"	on \
+GS_picty180	"D: NEC PICTY 180 (PC-PR101J/180)"	on \
+GS_necp6	"D: NEC PinWriter P6/P6+/P60, 360x360 DPI resol"	on \
+GS_npdl	"D: NEC Printer Description Language [contr]"	on \
+GS_oce9050	"D: OCE 9050 printer"	on \
+GS_oki182	"D: Okidata MicroLine 182"	on \
+GS_okiibm	"D: Okidata MicroLine IBM-compatible printers"	on \
+GS_ml600	"D: Okidata Microline 600CL/620CL [contr]"	on \
+GS_oki4w	"D: Okidata OkiPage 4w+ [contr]"	on \
+GS_atx23	"D: Practical Automation ATX-23 label printer"	on \
+GS_atx24	"D: Practical Automation ATX-24 label printer"	on \
+GS_atx38	"D: Practical Automation ATX-38 label printer"	on \
+GS_r4081	"D: Ricoh 4081 laser printer"	on \
+GS_rpdl	"D: Ricoh Printer Description Language [contr]"	on \
+GS_gdi	"D: Samsung SmartGDI laser printer [contr]"	on \
+GS_jj100	"D: Star JJ-100 [contr]"	on \
+GS_sj48	"D: StarJet 48 inkjet printer"	on \
+GS_t4693d2	"D: Tektronix 4693d color, 2 bits per R/G/B component"	on \
+GS_t4693d4	"D: Tektronix 4693d color, 4 bits per R/G/B component"	on \
+GS_t4693d8	"D: Tektronix 4693d color, 8 bits per R/G/B component"	on \
+GS_tek4696	"D: Tektronix 4695/4696 inkjet plotter"	on \
+GS_xes	"D: Xerox XES (2700, 3700, 4045, etc.) [contr]"	on \
+GS_bmpmono	"D: BMP Monochrome"	on \
+GS_bmpgray	"D: BMP 8-bit gray"	on \
+GS_bmp16	"D: BMP 4-bit EGA/VGA"	on \
+GS_bmp256	"D: BMP 8-bit 256-color"	on \
+GS_bmp16m	"D: BMP 24-bit"	on \
+GS_bmp32b	"D: BMP 32-bit pseudo-.BMP"	on \
+GS_bmpsep1	"D: BMP Separated 1-bit CMYK"	on \
+GS_bmpsep8	"D: BMP Separated 8-bit CMYK"	on \
+GS_ccr	"D: CalComp Raster format"	on \
+GS_cgmmono	"D: CGM Monochrome -- LOW LEVEL OUTPUT ONLY"	on \
+GS_cgm8	"D: CGM 8-bit 256-color -- DITTO"	on \
+GS_cgm24	"D: CGM 24-bit color -- DITTO"	on \
+GS_cif	"D: CIF file format for VLSI"	on \
+GS_dfaxhigh	"D: DigiBoard, DigiFAX software format (high resol)"	on \
+GS_dfaxlow	"D: DigiFAX low (normal) resol"	on \
+GS_xcf	"D: Gimp XCF, RGB"	on \
+GS_xcfcmyk	"D: Gimp XCF, CMYK"	on \
+GS_faxg3	"D: Group 3 fax, with EOLs but no header or EOD"	on \
+GS_faxg32d	"D: Group 3 2-D fax, with EOLs but no header or EOD"	on \
+GS_faxg4	"D: Group 4 fax, with EOLs but no header or EOD"	on \
+GS_miff24	"D: ImageMagick MIFF, 24-bit direct color, RLE compressed"	on \
+GS_inferno	"D: Inferno bitmaps"	on \
+GS_jpeg	"D: JPEG format, RGB output"	on \
+GS_jpeggray	"D: JPEG format, gray output"	on \
+GS_mag16	"D: MAG format, 16-color [contr]"	on \
+GS_mag256	"D: MAG format, 256-color [contr]"	on \
+GS_mgrmono	"D: MGR devices 1-bit monochrome"	on \
+GS_mgrgray2	"D: MGR devices 2-bit gray scale"	on \
+GS_mgrgray4	"D: MGR devices 4-bit gray scale"	on \
+GS_mgrgray8	"D: MGR devices 8-bit gray scale"	on \
+GS_mgr4	"D: MGR devices 4-bit (VGA) color"	on \
+GS_mgr8	"D: MGR devices 8-bit color"	on \
+GS_pcxmono	"D: PCX file format, monochrome 1-bit b/w"	on \
+GS_pcxgray	"D: PCX file format, 8-bit gray scale"	on \
+GS_pcx16	"D: PCX file format, 4-bit planar EGA/VGA color"	on \
+GS_pcx256	"D: PCX file format, 8-bit chunky color"	on \
+GS_pcx24b	"D: PCX file format, 24-bit color 3x8-bit planes"	on \
+GS_pcxcmyk	"D: PCX file format, 4-bit chunky CMYK color"	on \
+GS_pdfwrite	"D: PDF output (like Adobe Acrobat Distiller)"	on \
+GS_psdrgb	"D: PhotoShop PSD, RGB"	on \
+GS_psdcmyk	"D: PhotoShop PSD, CMYK"	on \
+GS_bit	"D: Plain bits, monochrome"	on \
+GS_bitrgb	"D: Plain bits, RGB"	on \
+GS_bitcmyk	"D: Plain bits, CMYK"	on \
+GS_plan9bm	"D: Plan 9 bitmap format"	on \
+GS_pam	"D: Portable Arbitrary Map file format"	on \
+GS_pbm	"D: Portable Bitmap,  plain format"	on \
+GS_pbmraw	"D: Portable Bitmap,  raw format"	on \
+GS_pgm	"D: Portable Graymap, plain format"	on \
+GS_pgmraw	"D: Portable Graymap, raw format"	on \
+GS_pgnm	"D: Portable Graymap, plain format, optim. to PBM"	on \
+GS_pgnmraw	"D: Portable Graymap, raw format, optim. to PBM"	on \
+GS_pnm	"D: Portable Pixmap,  plain format RGB, optim. to PGM/PBM"	on \
+GS_pnmraw	"D: Portable Pixmap,  raw format RGB, optim. to PGM/PBM"	on \
+GS_ppm	"D: Portable Pixmap,  plain format RGB"	on \
+GS_ppmraw	"D: Portable Pixmap,  raw format RGB"	on \
+GS_pkm	"D: Portable inKmap (plain format) (4-bit CMYK => RGB)"	on \
+GS_pkmraw	"D: Portable inKmap (raw format) (4-bit CMYK => RGB)"	on \
+GS_pksm	"D: Portable Separated map (plain) (4-bit CMYK => 4 pages)"	on \
+GS_pksmraw	"D: Portable Separated map (raw) (4-bit CMYK => 4 pages)"	on \
+GS_pngmono	"D: PNG Monochrome Portable Network Graphics"	on \
+GS_pnggray	"D: PNG 8-bit gray Portable Network Graphics"	on \
+GS_png16	"D: PNG 4-bit color Portable Network Graphics"	on \
+GS_png256	"D: PNG 8-bit color Portable Network Graphics"	on \
+GS_png16m	"D: PNG 24-bit color Portable Network Graphics"	on \
+GS_pngalpha	"D: PNG 32-bit RGBA color Portable Network Graphics"	on \
+GS_psmono	"D: PostScript (Level 1) monochrome image"	on \
+GS_psgray	"D: PostScript (Level 1) 8-bit gray image"	on \
+GS_psrgb	"D: PostScript (Level 2) 24-bit color image"	on \
+GS_pswrite	"D: PostScript output (like PostScript Distillery)"	on \
+GS_ps2write	"D: PostScript (Level 2) output"	on \
+GS_epswrite	"D: EPS output (like PostScript Distillery)"	on \
+GS_cfax	"D: SFF format for CAPI fax interface"	on \
+GS_sgirgb	"D: SGI RGB pixmap format"	on \
+GS_sunhmono	"D: Harlequin variant of 1-bit Sun raster file"	on \
+GS_tiffcrle	"D: TIFF CCITT RLE 1 dim = Group 3 fax with no EOLs"	on \
+GS_tiffg3	"D: TIFF Group 3 fax with EOLs"	on \
+GS_tiffg32d	"D: TIFF Group 3 2-D fax"	on \
+GS_tiffg4	"D: TIFF Group 4 fax"	on \
+GS_tiffgray	"D: TIFF 8-bit gray, no compression"	on \
+GS_tiff12nc	"D: TIFF 12-bit RGB, no compression"	on \
+GS_tiff24nc	"D: TIFF 24-bit RGB, no compression, NeXT std. format"	on \
+GS_tiff32nc	"D: TIFF 32-bit CMYK"	on \
+GS_tiffsep	"D: TIFF gray for each colorant plus a CMYK composite"	on \
+GS_tifflzw	"D: TIFF LZW,      tag = 5,     mono"	on \
+GS_tiffpack	"D: TIFF PackBits, tag = 32773, mono"	on \
+GS_bbox	"D: Bounding box output"	on \
+GS_devicen	"D: DeviceN process color model device"	on \
+GS_perm	"D: DeviceN which permutes color components"	on \
+GS_spotcmyk	"D: DeviceN with CMYK and spot color support"	on \
+GS_imdi	"D: IMDI color converting device"	on \
+GS_wtsimdi	"D: WTS halftoning device"	on \
+GS_wtscmyk	"D: WTS halftoning CMYK device"	on
