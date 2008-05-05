@@ -82,7 +82,7 @@ CFLAGS+=	-g
 .endif
 
 .if !defined(WITHOUT_NEON)
-LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon
+LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon26
 CONFIGURE_ARGS+=	--with-neon=${LOCALBASE}
 PLIST_SUB+=		WITHOUT_NEON=""
 .else

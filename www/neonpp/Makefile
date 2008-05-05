@@ -16,7 +16,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	C++ wrapper library for neon
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
-		neon.26:${PORTSDIR}/www/neon
+		neon.26:${PORTSDIR}/www/neon26
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

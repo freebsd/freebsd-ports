@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		gdiff:${PORTSDIR}/textproc/diffutils \
 		gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon \
+LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon26 \
 		gpgme.17:${PORTSDIR}/security/gpgme
 
 USE_GMAKE=	yes

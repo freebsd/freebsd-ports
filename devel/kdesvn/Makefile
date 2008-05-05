@@ -25,7 +25,7 @@ CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr-svn \
 		svn_client-1:${PORTSDIR}/devel/subversion \
-		neon:${PORTSDIR}/www/neon
+		neon:${PORTSDIR}/www/neon26
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
