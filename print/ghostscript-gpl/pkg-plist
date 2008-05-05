@@ -8,13 +8,13 @@ bin/fixmswrd.pl
 bin/font2c
 bin/gs
 bin/gsbj
-%%SHLIB%%bin/gsc
+bin/gsc
 bin/gsdj
 bin/gsdj500
 bin/gslj
 bin/gslp
 bin/gsnd
-%%SHLIB%%bin/gsx
+bin/gsx
 bin/lprsetup.sh
 %%GS_pcl3%%bin/pcl3opts
 bin/pdf2dsc
@@ -35,13 +35,13 @@ bin/ps2ps2
 bin/pv.sh
 bin/unix-lpr.sh
 bin/wftopfa
-%%SHLIB%%include/ghostscript/gdevdsp.h
-%%SHLIB%%include/ghostscript/iapi.h
-%%SHLIB%%include/ghostscript/ierrors.h
-%%SHLIB%%@dirrm include/ghostscript
-%%SHLIB%%lib/libgs.so
-%%SHLIB%%lib/libgs.so.%%SHLIB_VER%%
-%%SHLIB%%lib/libgs.so.%%GS_VERSION%%
+include/ghostscript/gdevdsp.h
+include/ghostscript/iapi.h
+include/ghostscript/ierrors.h
+@dirrm include/ghostscript
+lib/libgs.so
+lib/libgs.so.%%SHLIB_VER%%
+lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/78-EUC-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/78-EUC-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/78-H

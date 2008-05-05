@@ -7,6 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	8.62
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -53,7 +54,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 OPTIONS=	A4SIZE	"Set A4 (not Letter) as a default paper size"	off \
 		FONTCONFIG	"fontconfig support"	on \
 		FT_BRIDGE	"FreeType bridge"	off \
-		SHLIB		"With shared libraries"	off \
 		X11	"X11 support"	on
 
 MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 \
@@ -183,22 +183,10 @@ PLIST_SUB+=	FAPI=""
 PLIST_SUB+=	FAPI="@comment "
 .endif
 
-.if !defined(WITHOUT_SHLIB)
-.if defined(WITHOUT_X11)
-MAKE_ENV+=	SOC_LOADER="dxmainc.c"
-.else
-USE_GNOME+=	gtk20
-MAKE_ENV+=	SOC_LOADER="dxmain.c" \
-		SOC_CFLAGS="`pkg-config --cflags gtk+-2.0`" \
-		SOC_LIBS="`pkg-config --libs gtk+-2.0`"
-.endif
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall
 USE_LDCONFIG=	yes
-PLIST_SUB+=	SHLIB="" SHLIB_VER="${PORTVERSION:R}"
-.else
-PLIST_SUB+=	SHLIB="@comment "
-.endif
+PLIST_SUB+=	SHLIB_VER="${PORTVERSION:R}"
 
 PORTDOCS=	${PORTVERSION}
 PORTDOC_FILES=	japanese/Gdevlips.htm japanese/README.gs550j		\
@@ -279,12 +267,8 @@ post-install: post-install-fapi
 .endif
 
 post-install:
-.if defined(WITH_SHLIB)
 	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
 	${LN} -sf gsc ${PREFIX}/bin/gs
-.else
-	${STRIP_CMD} ${PREFIX}/bin/gs
-.endif
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
