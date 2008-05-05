@@ -2723,6 +2723,7 @@ etoile-bookmarkkit	ports/www/etoile-bookmarkkit
 etoile-camaelon	ports/x11-themes/etoile-camaelon
 etoile-collectionkit	ports/devel/etoile-collectionkit
 etoile-dictionaryreader	ports/deskutils/etoile-dictionaryreader
+etoile-distributedview	ports/deskutils/etoile-distributedview
 etoile-etoilemenus	ports/x11-themes/etoile-etoilemenus
 etoile-extendedworkspacekit	ports/deskutils/etoile-extendedworkspacekit
 etoile-foundation	ports/devel/etoile-foundation
