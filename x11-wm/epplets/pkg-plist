@@ -30,10 +30,14 @@ bin/E-UrlWatch.epplet
 bin/E-Wireless.epplet
 bin/Emix.epplet
 include/epplet.h
+lib/libepplet_glx.a
+lib/libepplet_glx.la
+lib/libepplet_glx.so
+lib/libepplet_glx.so.3
 lib/libepplet.a
 lib/libepplet.la
 lib/libepplet.so
-lib/libepplet.so.2
+lib/libepplet.so.3
 share/e16/epplet_data/E-Biff/7of9.png
 share/e16/epplet_data/E-Biff/newmail.png
 share/e16/epplet_data/E-Biff/nomail.png
