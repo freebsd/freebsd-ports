@@ -35,4 +35,10 @@ MAN1=	ghwdump.1 gtkwave.1 lxt2miner.1 lxt2vcd.1 mvl2lxt.1 \
 	vzt2vcd.1 vztminer.1
 MAN5=	gtkwaverc.5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile on 5.x
+.endif
+
+.include <bsd.port.post.mk>
