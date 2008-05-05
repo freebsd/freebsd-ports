@@ -16,6 +16,8 @@ DISTFILES=	toolserver-snapshot.tar.gz
 MAINTAINER=	frank@fenor.de
 COMMENT=	Toolserver Framework for Python
 
+BROKEN=		does not patch
+
 WRKSRC=		work/Toolserver-${PORTVERSION}
 USE_RC_SUBR=	toolserver
 PYDISTUTILS_PKGNAME=	Toolserver
