@@ -24,5 +24,7 @@ USE_GNUSTEP_INSTALL=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DIR|#GNUSTEP_INSTALLATION_DIR|' \
 		${WRKSRC}/GNUmakefile
+	${REINPLACE_CMD} -e 's|PSWait|myPSWait|' \
+		${WRKSRC}/Board.m
 
 .include <bsd.port.mk>
