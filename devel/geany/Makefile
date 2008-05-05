@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geany
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -60,6 +60,10 @@ post-patch:
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e '/^SUBDIRS/ s|po||' ${WRKSRC}/Makefile.in
 .endif
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/geany.desktop ${PREFIX}/share/applications/

@@ -1,4 +1,36 @@
 bin/geany
+include/geany/dialogs.h
+include/geany/document.h
+include/geany/editor.h
+include/geany/encodings.h
+include/geany/filetypes.h
+include/geany/geany.h
+include/geany/highlighting.h
+include/geany/keybindings.h
+include/geany/msgwindow.h
+include/geany/plugindata.h
+include/geany/pluginmacros.h
+include/geany/plugins.h
+include/geany/prefs.h
+include/geany/project.h
+include/geany/scintilla/SciLexer.h
+include/geany/scintilla/Scintilla.h
+include/geany/scintilla/Scintilla.iface
+include/geany/scintilla/ScintillaWidget.h
+include/geany/sciwrappers.h
+include/geany/search.h
+include/geany/support.h
+include/geany/tagmanager/tm_file_entry.h
+include/geany/tagmanager/tm_project.h
+include/geany/tagmanager/tm_source_file.h
+include/geany/tagmanager/tm_symbol.h
+include/geany/tagmanager/tm_tag.h
+include/geany/tagmanager/tm_tagmanager.h
+include/geany/tagmanager/tm_work_object.h
+include/geany/tagmanager/tm_workspace.h
+include/geany/templates.h
+include/geany/ui_utils.h
+include/geany/utils.h
 lib/geany/autosave.la
 lib/geany/autosave.so
 lib/geany/classbuilder.la
@@ -11,6 +43,7 @@ lib/geany/htmlchars.la
 lib/geany/htmlchars.so
 lib/geany/vcdiff.la
 lib/geany/vcdiff.so
+libdata/pkgconfig/geany.pc
 share/applications/geany.desktop
 share/icons/hicolor/16x16/apps/classviewer-class.png
 share/icons/hicolor/16x16/apps/classviewer-macro.png
@@ -102,6 +135,7 @@ share/pixmaps/geany.png
 %%NLS%%share/locale/nl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/geany.mo
@@ -114,3 +148,6 @@ share/pixmaps/geany.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
+@dirrm include/geany/tagmanager
+@dirrm include/geany/scintilla
+@dirrm include/geany
