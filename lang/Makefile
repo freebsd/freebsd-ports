@@ -328,6 +328,7 @@
     SUBDIR += tolua
     SUBDIR += tolua++
     SUBDIR += tolua4
+    SUBDIR += tolua50
     SUBDIR += treecc
     SUBDIR += tuareg-mode.el
     SUBDIR += twelf
