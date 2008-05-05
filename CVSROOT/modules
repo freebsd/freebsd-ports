@@ -16065,6 +16065,7 @@ tcltutor	ports/lang/tcltutor
 tcludp		ports/net/tcludp
 tclwebtest	ports/www/tclwebtest
 tclxml		ports/devel/tclxml
+tclxml-expat	ports/devel/tclxml-expat
 tcm		ports/graphics/tcm
 tcmplex-panteltje	ports/multimedia/tcmplex-panteltje
 tcpblast	ports/benchmarks/tcpblast
