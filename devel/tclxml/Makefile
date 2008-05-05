@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	tclxml
-PORTVERSION=	2.6
-CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTVERSION=	3.1
+CATEGORIES=	devel tcl
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	tclxml
 
-MAINTAINER=	dyeske@gmail.com
+MAINTAINER?=	dyeske@gmail.com
 COMMENT=	API for parsing XML documents using Tcl
 
-BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
-RUN_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84 \
-		dtplite:${PORTSDIR}/devel/tcllib
+RUN_DEPENDS?=	dtplite:${PORTSDIR}/devel/tcllib
 
+USE_TCL=	82+
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
-		--with-tclinclude=${LOCALBASE}/include/tcl8.4
+USE_LDCONFIG?=	${PREFIX}/lib/Tclxml${PORTVERSION}
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+		--with-tclinclude=${TCL_INCLUDEDIR}
+PLIST=		${PKGDIR}${PKGNAMESUFFIX}/pkg-plist
+PATCHDIR=	${PKGDIR}${PKGNAMESUFFIX}/files/
 PLIST_SUB=	VER=${PORTVERSION}
 
 .include <bsd.port.mk>

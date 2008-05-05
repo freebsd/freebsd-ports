@@ -6,6 +6,3 @@ will be able to use different parser implementations without change
 to the application code.
 
 WWW: http://tclxml.sourceforge.net/
-
-- David
-dyeske@gmail.com
