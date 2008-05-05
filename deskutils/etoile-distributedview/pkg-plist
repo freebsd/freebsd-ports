@@ -1,0 +1,8 @@
+Local/Library/Headers/DistributedView/Cocoa.h
+Local/Library/Headers/DistributedView/EtoileCompatibility.h
+Local/Library/Headers/DistributedView/UKDistributedView.h
+Local/Library/Headers/DistributedView/UKFinderIconCell.h
+Local/Library/Libraries/libDistributedView.so
+Local/Library/Libraries/libDistributedView.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libDistributedView.so.%%LIBVERSION%%
+@dirrm Local/Library/Headers/DistributedView
