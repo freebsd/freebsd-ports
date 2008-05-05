@@ -21,7 +21,8 @@ include/neon/ne_uri.h
 include/neon/ne_utils.h
 include/neon/ne_xml.h
 include/neon/ne_xmlreq.h
-lib/libneon.so.26
+include/neon/ne_pkcs11.h
+lib/libneon.so.28
 lib/libneon.so
 lib/libneon.la
 lib/libneon.a
@@ -31,9 +32,10 @@ libdata/pkgconfig/neon.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/neon.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/neon.mo
-%%NLS%%share/locale/zh/LC_MESSAGES/neon.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/neon.mo
 %%PORTDOCS%%%%DOCSDIR%%/html/api.html
 %%PORTDOCS%%%%DOCSDIR%%/html/biblio.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compliance.html
@@ -61,7 +63,8 @@ libdata/pkgconfig/neon.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/refreq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refreqbody.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refreqhdr.html
-%%PORTDOCS%%%%DOCSDIR%%/html/refreqopts.html
+%%PORTDOCS%%%%DOCSDIR%%/html/refreqflags.html
+%%PORTDOCS%%%%DOCSDIR%%/html/refsessflags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refresolve.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refresphdr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/refsess.html

@@ -5,17 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	neon
-PORTVERSION=	0.26.4
-PORTREVISION=	0
+PORTNAME=	neon28
+PORTVERSION=	0.28.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/ \
 		http://keyserver.kjsl.com/~jharris/distfiles/
+DISTNAME=	neon-${PORTVERSION}
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	An HTTP and WebDAV client library for Unix systems
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+
+CONFLICTS=	neon26-[0-9]*
 
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
@@ -46,7 +48,8 @@ MAN3=	ne_add_request_header.3 ne_addr_resolve.3 ne_buffer.3 \
 	ne_buffer_destroy.3 ne_get_error.3 ne_get_response_header.3 \
 	ne_get_status.3 ne_i18n_init.3 ne_iaddr_make.3 ne_has_support.3 \
 	ne_malloc.3 ne_request_create.3 ne_session_create.3 \
-	ne_set_request_body_buffer.3 ne_set_request_expect100.3 \
+	ne_set_request_body_buffer.3 ne_get_request_flag.3 \
+	ne_get_session_flag.3 ne_set_request_flag.3 ne_set_session_flag.3 \
 	ne_set_server_auth.3 ne_set_useragent.3 ne_shave.3 ne_sock_init.3 \
 	ne_ssl_cert_cmp.3 ne_ssl_cert_identity.3 ne_ssl_cert_read.3 \
 	ne_ssl_clicert_read.3 ne_ssl_readable_dname.3 ne_ssl_set_verify.3 \
@@ -109,6 +112,10 @@ MLINKS=	ne_add_request_header.3 ne_print_request_header.3 \
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+DOCSDIR:=	${DOCSDIR:S/28//}
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${MANPREFIX}/man/man3
@@ -117,4 +124,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/using-neon.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
