@@ -33,10 +33,4 @@ post-patch:
 	@${REINPLACE_CMD} -Ee 's|(dummy) wxrc|\1 ${WXRC_CMD:T}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000 && ${ARCH} == i386
-BROKEN=	Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
