@@ -8375,6 +8375,7 @@ nemesis		ports/net/nemesis
 nenscript	ports/print/nenscript
 neon		ports/www/neon
 neon26		ports/www/neon26
+neon28		ports/www/neon28
 neonpp		ports/www/neonpp
 neowebscript	ports/www/neowebscript
 nepenthes	ports/net/nepenthes
