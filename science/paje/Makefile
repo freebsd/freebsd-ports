@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	paje
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.97
 CATEGORIES=	science gnustep
-MASTER_SITES=	http://download.fr2.forge.objectweb.org/ \
-		http://download.forge.objectweb.org/paje/ \
-		http://download.zh.forge.objectweb.org/paje/ \
-		${MASTER_SITE_GNUSTEP_CH}
+MASTER_SITES=	http://download.forge.objectweb.org/paje/ \
+		http://download.zh.forge.objectweb.org/paje/
 DISTNAME=	Paje_${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -25,5 +22,9 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+post-patch:
+	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DOMAIN|#GNUSTEP_INSTALLATION_DOMAIN|' \
+                ${WRKSRC}/GNUmakefile
 
 .include <bsd.port.mk>
