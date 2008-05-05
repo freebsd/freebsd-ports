@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	BTQueue-${PORTVERSION}
 
-MAINTAINER=	stefan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alternative BitTorrent client with queuing functionality
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
