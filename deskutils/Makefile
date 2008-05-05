@@ -41,6 +41,7 @@
     SUBDIR += estickies
     SUBDIR += etask
     SUBDIR += etoile-dictionaryreader
+    SUBDIR += etoile-distributedview
     SUBDIR += etoile-extendedworkspacekit
     SUBDIR += etoile-hardware
     SUBDIR += etoile-lookandbehavior
