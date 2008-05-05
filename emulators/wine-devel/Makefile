@@ -17,7 +17,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 
-BUILD_DEPENDS=	fontforge:${PORTSDIR}/print/fontforge
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
