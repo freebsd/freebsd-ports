@@ -1,8 +1,22 @@
-Local/Library/Headers/DistributedView/Cocoa.h
-Local/Library/Headers/DistributedView/EtoileCompatibility.h
-Local/Library/Headers/DistributedView/UKDistributedView.h
-Local/Library/Headers/DistributedView/UKFinderIconCell.h
+Local/Library/Frameworks/DistributedView.framework/DistributedView
+Local/Library/Frameworks/DistributedView.framework/Headers
+Local/Library/Frameworks/DistributedView.framework/Resources
+Local/Library/Frameworks/DistributedView.framework/Versions/%%MAJORLIBVERSION%%/DistributedView
+Local/Library/Frameworks/DistributedView.framework/Versions/%%MAJORLIBVERSION%%/Headers/EtoileCompatibility.h
+Local/Library/Frameworks/DistributedView.framework/Versions/%%MAJORLIBVERSION%%/Headers/UKDistributedView.h
+Local/Library/Frameworks/DistributedView.framework/Versions/%%MAJORLIBVERSION%%/Headers/UKFinderIconCell.h
+Local/Library/Frameworks/DistributedView.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/DistributedView.framework/Versions/%%MAJORLIBVERSION%%/libDistributedView.so
+Local/Library/Frameworks/DistributedView.framework/Versions/%%MAJORLIBVERSION%%/libDistributedView.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/DistributedView.framework/Versions/%%MAJORLIBVERSION%%/libDistributedView.so.%%LIBVERSION%%
+Local/Library/Frameworks/DistributedView.framework/Versions/Current
+Local/Library/Frameworks/DistributedView.framework/libDistributedView.so
+Local/Library/Headers/DistributedView
 Local/Library/Libraries/libDistributedView.so
 Local/Library/Libraries/libDistributedView.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libDistributedView.so.%%LIBVERSION%%
-@dirrm Local/Library/Headers/DistributedView
+@dirrm Local/Library/Frameworks/DistributedView.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm Local/Library/Frameworks/DistributedView.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm Local/Library/Frameworks/DistributedView.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/DistributedView.framework/Versions
+@dirrm Local/Library/Frameworks/DistributedView.framework
