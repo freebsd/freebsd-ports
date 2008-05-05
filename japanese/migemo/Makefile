@@ -20,7 +20,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Japanese incremental search tool
 
 .if !defined(EMACS_PORT_NAME)
-USE_AUTOTOOLS=	automake:14 autoconf:213
+USE_AUTOTOOLS=	automake:15 autoconf:213
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.am ${FILESDIR}/extra-patch-configure.in
 PLIST_SUB=	MIGEMO="" ELISP="@comment "
 .endif
