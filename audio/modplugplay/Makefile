@@ -9,7 +9,7 @@ PORTNAME=	modplugplay
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.linuks.mine.nu/modplugplay/ \
+MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/modplugplay/ \
 		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
 
@@ -21,11 +21,15 @@ LIB_DEPENDS=	modplug.0:${PORTSDIR}/audio/libmodplug
 MAN1=		modplugplay.1
 PLIST_FILES=	bin/modplugplay
 
+CFLAGS+=	-I${LOCALBASE}/include/libmodplug -L${LOCALBASE}/lib
+LDFLAGS+=	-lmodplug
+
 do-build:
-	${CXX} ${WRKSRC}/modplugplay.c ${CFLAGS} -o ${WRKSRC}/${PORTNAME} -lmodplug -L${LOCALBASE}/lib -I${LOCALBASE}/include/libmodplug
+	${CXX} ${WRKSRC}/${PORTNAME}.c ${CFLAGS} ${LDFLAGS} \
+		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
