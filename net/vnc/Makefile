@@ -7,7 +7,7 @@
 
 PORTNAME=	vnc
 PORTVERSION=	4.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/:vnc
 DISTNAME=	vnc-4_1_2-unixsrc
@@ -83,6 +83,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/xc/config/cf/vnc.def
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' -e 's|%%CXX%%|${CXX}|g' \
+		-e 's|%%CFLAGS%%|${CFLAGS}|g' \
 		${WRKSRC}/xc/config/cf/FreeBSD.cf
 .endif
 
