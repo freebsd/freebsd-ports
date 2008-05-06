@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	par2cmdline-tbb
-PORTVERSION=	20080203
+PORTVERSION=	20080420
 CATEGORIES=	archivers
 MASTER_SITES=	http://chuchusoft.com/par2_tbb/
 DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}
@@ -17,7 +17,9 @@ COMMENT=	Tools for using Parity v2 Archive files (tbb version)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtbb.so:${PORTSDIR}/devel/tbb \
 		${NONEXISTENT}:${PORTSDIR}/devel/tbb:extract
 
-USE_AUTOTOOLS=	autoconf:261 automake:16
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 PORTDOCS=	README
 CONFLICTS=	par2cmdline-[0-9]*
