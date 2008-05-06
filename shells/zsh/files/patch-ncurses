@@ -12,17 +12,19 @@
 +[Define if _XOPEN_SOURCE_EXTENDED should not be defined to avoid clashes])
 +AC_CACHE_CHECK(if _XOPEN_SOURCE_EXTENDED should not be defined,
 +zsh_cv_no_xopen,
- [case "$host_os" in
+-[case "$host_os" in
 -  *openbsd*)
 -  zsh_cv_curses_needs_xopen=no
-+  *openbsd*|*freebsd*)
++[[case "$host_os" in
++  *openbsd*|*freebsd5*|*freebsd6.[012]*)
 +  zsh_cv_no_xopen=yes
    ;;
    *)
 -  zsh_cv_curses_needs_xopen=yes
 +  zsh_cv_no_xopen=no
    ;;
- esac])
+-esac])
++esac]])
 -if test x$zsh_cv_curses_needs_xopen = xyes; then
 -  AC_DEFINE(ZSH_CURSES_NEEDS_XOPEN)
 +if test x$zsh_cv_no_xopen = xyes; then
