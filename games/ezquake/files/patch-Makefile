@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jan  4 11:28:34 2008
-+++ Makefile	Fri Jan  4 11:29:06 2008
+--- Makefile.orig	2008-04-27 17:51:52.000000000 -0300
++++ Makefile	2008-04-29 22:27:42.000000000 -0300
 @@ -6,7 +6,7 @@
  
  # compilation tool and detection of targets/achitecture
@@ -21,13 +21,13 @@
 -	ARCH_CFLAGS = -march=i686 -mtune=generic -mmmx -Did386
 -endif
 -ifeq ($(ARCH),ppc)
--	ARCH_CFLAGS = -arch i686 -arch ppc -msse2
+-	ARCH_CFLAGS = -arch ppc -faltivec -maltivec -mcpu=7450 -mtune=7450 -mpowerpc -mpowerpc-gfxopt
 -endif
 -
  ifeq ($(OS),linux)
  	DEFAULT_TARGET = glx
  	OS_GL_CFLAGS = -DWITH_DGA -DWITH_EVDEV -DWITH_VMODE
-@@ -53,19 +42,19 @@
+@@ -55,19 +44,19 @@
  # Directories for object files #
  ################################
  
@@ -52,15 +52,22 @@
 +X11_TARGET = $(TYPE)/ezquake.x11
 +SVGA_TARGET = $(TYPE)/ezquake.svga
 +MAC_TARGET = $(TYPE)/ezquake-gl.mac
+ QUAKE_DIR="/opt/quake/"
  
  ################
+@@ -89,7 +78,8 @@
+ # -DWITH_MPD       for mpd       MP3 player support
+ # -DWITH_WINAMP    for winamp    MP3 player support
+ PRJ_CFLAGS = -DWITH_ZLIB -DWITH_PNG -DEMBED_TCL -DJSS_CAM -DWITH_ZIP -DWITH_FTE_VFS
+-BASE_CFLAGS = -pipe -Wall -funsigned-char $(ARCH_CFLAGS) $(PRJ_CFLAGS) -I./libs
++BASE_CFLAGS := $(CFLAGS) -pipe -Wall -funsigned-char $(ARCH_CFLAGS) $(PRJ_CFLAGS) `pcre-config --cflags` -I$(TCL_INCLUDEDIR) -I.. -DQ1DIR='"$(Q1DIR)"' -DDATADIR='"$(DATADIR)"'
++
  
-@@ -81,9 +70,11 @@
  
- # compiler flags
- PRJ_CFLAGS = -DWITH_ZLIB -DWITH_PNG -DEMBED_TCL -DJSS_CAM -DWITH_ZIP #-DWITH_FTE_VFS
--BASE_CFLAGS = -pipe -Wall -funsigned-char $(ARCH_CFLAGS) $(PRJ_CFLAGS) -I ./libs
-+BASE_CFLAGS := $(CFLAGS) -pipe -Wall -funsigned-char $(ARCH_CFLAGS) $(PRJ_CFLAGS) `pcre-config --cflags` -I$(TCL_INCLUDEDIR) -I.. -DDATADIR='"$(Q1DIR)"'
+ ########################
+@@ -112,7 +102,9 @@
+ 
+ ########################
  
 +ifeq ($(USE_OPTIMIZED_CFLAGS),YES)
  RELEASE_CFLAGS = -O2 -fno-strict-aliasing -ffast-math -funroll-loops
@@ -68,20 +75,21 @@
  DEBUG_CFLAGS = -ggdb
  
  # opengl builds
-@@ -96,13 +87,13 @@
+@@ -125,13 +117,13 @@
  endif
  
  ifeq ($(TYPE),release)
 -LDFLAGS = -lm -lpthread
 +LDFLAGS = -lm -pthread
  else
- LDFLAGS = -ggdb -lm -lpthread
+-LDFLAGS = -ggdb -lm -lpthread
++LDFLAGS = -ggdb -lm -pthread
  endif
  
--COMMON_LIBS = libs/$(LIB_PREFIX)/minizip.a libs/$(LIB_PREFIX)/libpng.a libs/$(LIB_PREFIX)/libz.a libs/$(LIB_PREFIX)/libpcre.a libs/$(LIB_PREFIX)/libexpat.a libs/$(LIB_PREFIX)/libtcl8.4.a
+-COMMON_LIBS = libs/$(LIB_PREFIX)/minizip.a libs/$(LIB_PREFIX)/libpng.a libs/$(LIB_PREFIX)/libz.a libs/$(LIB_PREFIX)/libpcre.a libs/$(LIB_PREFIX)/libexpat.a libs/$(LIB_PREFIX)/libtcl.a
 -GL_LIBS = libs/$(LIB_PREFIX)/libjpeg.a
 +COMMON_LIBS = -lm -lpng -lz `pcre-config --libs` `glib-config --libs` -lexpat -ltcl$(TCL_SUFX)
 +GL_LIBS = -ljpeg
  
  ifeq ($(OS),freebsd)
- LOCALBASE ?= /usr/X11R6
+ X11BASE ?= /usr/X11R6

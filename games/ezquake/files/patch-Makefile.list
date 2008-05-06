@@ -1,16 +1,16 @@
---- Makefile.list.orig	Fri Jan  4 11:28:34 2008
-+++ Makefile.list	Fri Jan  4 11:28:47 2008
-@@ -109,7 +109,8 @@
- 	net_chan \
+--- Makefile.list.orig	2008-04-27 17:51:56.000000000 -0300
++++ Makefile.list	2008-04-29 22:32:27.000000000 -0300
+@@ -137,7 +137,8 @@
  	q_shared \
  	version \
--	zone
-+	zone \
+ 	zone \
+-	zone2
++	zone2 \
 +	../unzip ../ioapi
  
  GL_C_FILES := \
  	collision \
-@@ -167,7 +168,6 @@
+@@ -195,7 +196,6 @@
  	in_linux \
  	keymap_x11 \
  	localtime_linux \
