@@ -6924,6 +6924,7 @@ librcc		ports/devel/librcc
 librcd		ports/devel/librcd
 libreadline-java	ports/devel/libreadline-java
 libredblack	ports/devel/libredblack
+librelp		ports/devel/librelp
 librep		ports/lang/librep
 libretto-config	ports/sysutils/libretto-config
 librfc822	ports/mail/librfc822
@@ -14569,6 +14570,13 @@ rsyslog		ports/sysutils/rsyslog
 rsyslog-gssapi	ports/sysutils/rsyslog-gssapi
 rsyslog-mysql	ports/sysutils/rsyslog-mysql
 rsyslog-pgsql	ports/sysutils/rsyslog-pgsql
+rsyslog3		ports/sysutils/rsyslog3
+rsyslog3-dbi	ports/sysutils/rsyslog3-dbi
+rsyslog3-gssapi	ports/sysutils/rsyslog3-gssapi
+rsyslog3-mysql	ports/sysutils/rsyslog3-mysql
+rsyslog3-pgsql	ports/sysutils/rsyslog3-pgsql
+rsyslog3-relp	ports/sysutils/rsyslog3-relp
+rsyslog3-snmp	ports/sysutils/rsyslog3-snmp
 rt2		ports/www/rt2
 rt2-demo	ports/games/rt2-demo
 rt3		ports/www/rt3
