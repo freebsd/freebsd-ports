@@ -1,0 +1,68 @@
+# UserName - YourHotmailUserName (without @something)
+UserName=
+
+# Password - YourHotmailPassword (so restrict the access rights to this configuration file.)
+Password=
+
+# Domain - YourHotmailDomain (default 'hotmail.com', basically what's after the @ in your address)
+#Domain=hotmail.com
+
+# Proxy - ProxyServer if you're behind one.
+#Proxy=
+
+# ProxyAuth - ProxyPassword if you're behind one with password. 
+#ProxyAuth=
+
+# Downloaded - SomeFileName (it keeps track of all id's of messages
+#                        that were fetched already) 
+Downloaded=
+
+# FetchOnlyUnread - Yes or No (default)
+# If Yes only messages that are marked unread are fetched.
+# Downloaded and FetchOnlyUnread are mutual exclusive.
+#FetchOnlyUnread=No
+
+# RetryLimit - N (default 2) : how many times to retry fetching a
+# web page via curl (the webpage fetcher behind the scenes)
+#RetryLimit=2
+
+# CurlBin - CommandForCurl ('curl -k' by default).
+CurlBin=/usr/local/bin/curl -k
+
+# Processor - FilterCommand ('/usr/bin/procmail' by default).
+# Any filtercommand taking the message in mbox format on its stdin and doing something with it.
+#                        
+#   *) '/bin/cat - >> FetchedMail' might be another interesting one to drop directly in a mbox file.
+#
+#   *) The distribution contains also SmtpForward.pl and SmtpAuthForward.pl.
+#      Those can be used as 'Processor' to forward the mails to an SMTP server.
+Processor=/usr/local/bin/procmail
+
+# Folder - FolderName. Folders that need to be fetched. 
+# This option must be repeated for each folder you want to fetch.
+# If this option is not present then all folders will be fetched.
+#Folder=
+
+# MarkRead - Yes or No (default) : whether the message will be 
+# marked read after being downloaded. By the way : 
+# it never gets marked in any way when not downloaded due to it being already in the 
+# Downloaded = SomeFileName (see higer) file.
+#MarkRead=No
+
+# Delete - Yes or No (default) : whether the message will be 
+# deleted after being downloaded. By the way : 
+# it never gets deleted in any way when not downloaded due to it being already in the 
+# Downloaded = SomeFileName (see higer) file.
+#Delete=No
+
+# MoveToFolder - FolderName or @FileName
+# FolderName is the folder to which the message must be moved after being downloaded.
+# By the way : it never gets moved in any way when not downloaded due to it 
+# being already in the Downloaded = SomeFileName (see higer) file.
+# If this argument takes the form @FileName then the FolderName is taken from
+# the contents of the file FileName.
+# The idea is that f.i. a spamfilter can decide to what folder it must be moved.
+# That spamfilter would be part of Processor    = FilterCommand (see higher) and
+# write a FolderName (for instance Junk if considered junk) to the file FileName.
+#MoveToFolter=
+
