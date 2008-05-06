@@ -9,6 +9,7 @@ lib/kgtk/libkqt3.so
 %%NLS%%share/locale/de/LC_MESSAGES/kdialogd3.mo
 %%NLS%%share/locale/es/LC_MESSAGES/kdialogd3.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/kdialogd3.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/kdialogd3.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/kdialogd3.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/kdialogd3.mo
 @dirrm lib/kgtk
