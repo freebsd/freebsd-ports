@@ -3470,3 +3470,4 @@ x11-wm/uwm||2008-04-30|Has expired: Version branch long since retired
 arabic/katoob||2008-04-30|Removed on maintainers request due to inactivity of project
 security/drupal4-ldap_integration||2008-04-30|Removed due to being broken and clearly not used
 www/neon|www/neon26|2008-05-05|Moved to be able to integrate www/neon26
+ports-mgmt/instant-tinderbox||2008-05-07|No longer functional in the current infrastructure

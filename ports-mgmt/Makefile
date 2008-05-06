@@ -8,7 +8,6 @@
    SUBDIR += bpm
    SUBDIR += fastest_sites
    SUBDIR += genplist
-   SUBDIR += instant-tinderbox
    SUBDIR += jailaudit
    SUBDIR += kports
    SUBDIR += lsknobs
