@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+2008056:
+  AFFECTS: users of net-mgmt/collectd
+  AUTHOR: daniel@roe.ch
+
+  Previously, net-mgmt/collectd used to remove the config file
+  even if it was changed by the user. This has now been fixed.
+  To upgrade without losing your configuration, copy
+  ${PREFIX}/etc/collectd.conf away to a safe place before
+  upgrading net-mgmt/collectd.
+  In addition, the default location of the data files changed
+  from ${PREFIX}/var/lib/collectd to /var/db/collectd; you
+  may want to move your data files and edit your configuration
+  accordingly.
+
 20080503:
   AFFECTS: users of net/skype-devel
   AUTHOR: beech@FreeBSD.org
@@ -14,7 +28,6 @@ upgrades.
   skype-devel, please do the following:
 
 	portupgrade -o net/skype net/skype-devel
-
 
 20080426:
   AFFECTS: users of www/phpgedview
