@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	ezquake
-PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTVERSION=	1.9
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF:ezquake \
 		http://www.winimage.com/zLibDll/:minizip
-DISTFILES=	${PORTNAME}_source_${PORTVERSION}${EXTRACT_SUFX}:ezquake \
-		${PORTNAME}_win32_${PORTVERSION}${EXTRACT_SUFX}:ezquake \
+DISTFILES=	${PORTNAME}_source_${PORTVERSION}.7z:ezquake \
+		${PORTNAME}_linux-x86_${PORTVERSION}${EXTRACT_SUFX}:ezquake \
 		unzip101e.zip:minizip
 
 MAINTAINER=	alepulver@FreeBSD.org
@@ -23,15 +22,14 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		png.5:${PORTSDIR}/graphics/png
 
-USE_ZIP=	yes
 USE_DOS2UNIX=	*.[ch] Makefile*
 USE_GMAKE=	yes
 USE_TCL=	yes
 MAKE_ENV=	TCL_SUFX="${TCL_VER:S/.//}"
-.for v in TCL_INCLUDEDIR TCL_LIBDIR
+.for v in TCL_INCLUDEDIR TCL_LIBDIR DATADIR
 MAKE_ENV+=	${v}="${${v}}"
 .endfor
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.//:S/./-/}_stable
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.//}_stable_sources
 
 OPTIONS=	GLX "Build GLX client" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
@@ -55,7 +53,7 @@ PLIST_SUB+=	GLX="@comment "
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_XORG=	xxf86dga	
+USE_XORG=	xxf86dga
 ALL_TARGET+=	x11
 PLIST_SUB+=	X11=""
 .else
@@ -68,13 +66,23 @@ MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=YES
 MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=NO
 .endif
 
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	@cd ${WRKDIR} && \
+		${UNZIP_CMD} -qo ${DISTDIR}/${DISTFILES:C/:.*//:M*.zip} && \
+		${TAR} zxf ${DISTDIR}/${DISTFILES:C/:.*//:M*.tar.gz} && \
+		7z x ${DISTDIR}/${DISTFILES:C/:.*//:M*.7z} >/dev/null
+	@${LN} -s ${WRKSRC}/libs/asmlib.h ${WRKSRC}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|libtcl\.so|libtcl${TCL_VER:S/.//}|' \
 		${WRKSRC}/embed_tcl.h
 
 do-install:
-	${MKDIR} ${Q1DIR}/${PORTNAME}
-	${CP} -R ${WRKDIR}/ezquake/* ${WRKDIR}/qw/* ${Q1DIR}/${PORTNAME}
+.for dir in ezquake qw
+	${MKDIR} ${DATADIR}/${dir}
+	${CP} -r ${WRKDIR}/${dir}/* ${DATADIR}/${dir}
+.endfor
 .if !defined(WITHOUT_GLX)
 	${INSTALL_PROGRAM} ${WRKSRC}/release/ezquake-gl.glx \
 		${PREFIX}/bin/ezquake-glx
