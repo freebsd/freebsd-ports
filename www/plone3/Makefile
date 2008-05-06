@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plone3
-PORTVERSION=	3.0.6
+PORTVERSION=	3.1.1
 CATEGORIES=	www zope
 MASTER_SITES=	https://launchpad.net/plone/${PORTVERSION:R}/${PORTVERSION}/+download/
 DISTNAME=	Plone-${PORTVERSION}
@@ -15,7 +15,8 @@ DIST_SUBDIR=	zope
 MAINTAINER=	nakaji@jp.FreeBSD.org
 COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
 
 WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}
 USE_ZOPE=	yes
@@ -47,13 +48,13 @@ _MODULES=	ATContentTypes ATReferenceBrowserWidget AdvancedQuery \
 		CMFTestCase CMFTopic CMFUid DCWorkflow ExtendedPathIndex \
 		ExternalEditor GenericSetup GroupUserFolder Marshall \
 		MimetypesRegistry NuPlone PasswordResetTool \
-		PlacelessTranslationService PloneLanguageTool PlonePAS \
-		PloneTestCase PloneTranslations PluggableAuthService \
-		PluginRegistry PortalTransforms ResourceRegistries \
-		SecureMailHost ZopeVersionControl \
+		PlacelessTranslationService PloneLanguageTool \
+		PlonePAS PloneTestCase PloneTranslations \
+		PluggableAuthService PluginRegistry PortalTransforms \
+		ResourceRegistries SecureMailHost ZopeVersionControl \
 		kupu statusmessages validation
 
-_PY_MODULES=	archetypes five kss plone wicked
+_PY_MODULES=	archetypes borg five kss plone wicked
 
 PLONE_PODIRS=	PlacelessTranslationService/locales PloneTranslations \
 		kupu/i18n kupu/mmbase/i18n
