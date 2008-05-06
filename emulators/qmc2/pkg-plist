@@ -20,6 +20,24 @@ etc/qmc2/qmc2.ini.sample
 %%DOCSDIR%%/html/de/index.html
 %%DOCSDIR%%/html/de/readme.html
 %%DOCSDIR%%/html/de/todo.html
+%%DOCSDIR%%/html/fr/changes.html
+%%DOCSDIR%%/html/fr/copying.html
+%%DOCSDIR%%/html/fr/credits.html
+%%DOCSDIR%%/html/fr/faq.html
+%%DOCSDIR%%/html/fr/img/ballou.png
+%%DOCSDIR%%/html/fr/img/jonas.png
+%%DOCSDIR%%/html/fr/img/rene.png
+%%DOCSDIR%%/html/fr/img/robert.png
+%%DOCSDIR%%/html/fr/img/sammy.png
+%%DOCSDIR%%/html/fr/img/sphere_blue.png
+%%DOCSDIR%%/html/fr/img/sphere_green.png
+%%DOCSDIR%%/html/fr/img/sphere_grey.png
+%%DOCSDIR%%/html/fr/img/sphere_red.png
+%%DOCSDIR%%/html/fr/img/sphere_yellowgreen.png
+%%DOCSDIR%%/html/fr/img/teddy.png
+%%DOCSDIR%%/html/fr/index.html
+%%DOCSDIR%%/html/fr/readme.html
+%%DOCSDIR%%/html/fr/todo.html
 %%DOCSDIR%%/html/pl/changes.html
 %%DOCSDIR%%/html/pl/copying.html
 %%DOCSDIR%%/html/pl/credits.html
@@ -373,9 +391,11 @@ etc/qmc2/qmc2.ini.sample
 %%DATADIR%%/img/yes.png
 %%DATADIR%%/img/zip.png
 %%DATADIR%%/lng/qmc2_de.qm
+%%DATADIR%%/lng/qmc2_fr.qm
 %%DATADIR%%/lng/qmc2_pl.qm
 %%DATADIR%%/lng/qmc2_us.qm
 %%DATADIR%%/lng/qt_de.qm
+%%DATADIR%%/lng/qt_fr.qm
 %%DATADIR%%/lng/qt_pl.qm
 %%DATADIR%%/opt/SDLMAME/template.xml
 %%DATADIR%%/opt/template.xml
@@ -393,6 +413,8 @@ etc/qmc2/qmc2.ini.sample
 @dirrm %%DOCSDIR%%/html/us
 @dirrm %%DOCSDIR%%/html/pl/img
 @dirrm %%DOCSDIR%%/html/pl
+@dirrm %%DOCSDIR%%/html/fr/img
+@dirrm %%DOCSDIR%%/html/fr
 @dirrm %%DOCSDIR%%/html/de/img
 @dirrm %%DOCSDIR%%/html/de
 @dirrm %%DOCSDIR%%/html
