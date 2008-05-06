@@ -79,7 +79,7 @@
 +
  cat >>confdefs.h <<_ACEOF
 -#define PTYRANGE0 "$p0"
-+#define PTYRANGE0 "pqrsPQRS"
++#define PTYRANGE0 "pqrsPQRSlmnoLMNO"
  _ACEOF
  
  cat >>confdefs.h <<_ACEOF
