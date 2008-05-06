@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prosearch
-PORTVERSION=	0.18.1
+PORTVERSION=	0.18.2
 CATEGORIES=	net www
 MASTER_SITES=	http://pro.setun.net/search/download/ SF
 MASTER_SITE_SUBDIR=	pro-search
@@ -29,6 +29,7 @@ OPTIONS=\
 		RSYNC " crawler with RSYNC " off \
 		WEB "With web deps (APACHE)" on \
 		MOD_PERL2 "With MOD_PERL2" off \
+		MOD_FASTCGI "With MOD_FASTCGI" off \
 		DB "With database server deps" on \
 		MYSQL "mysql" on \
 		PGSQL "postgres" off \
@@ -57,7 +58,13 @@ USE_APACHE=	2.0+
 
 .if defined(WITH_MOD_PERL2)
 RUN_DEPENDS+=\
- ${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
+${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
+.endif
+
+.if defined(WITH_MOD_FASTCGI)
+RUN_DEPENDS+=\
+${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi	\
+${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
 .endif
 
 .if defined(WITH_MYSQL)
