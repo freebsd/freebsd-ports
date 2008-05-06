@@ -1,0 +1,5 @@
+Pwman3 is a console based password management application. 
+Pwman3 is written in python. It uses sql for storage 
+and all data is encrypted when it isn't being viewed on screen.
+
+WWW: http://pwman.bleurgh.com
