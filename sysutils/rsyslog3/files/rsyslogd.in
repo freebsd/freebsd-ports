@@ -20,7 +20,6 @@ pidfile="${rsyslogd_pidfile}"
 command_args="-i ${pidfile} -f ${rsyslogd_config}"
 required_files="${rsyslogd_config}"
 start_precmd="rsyslogd_precmd"
-stop_precmd="stop_precmd"
 extra_commands="reload"
 
 sockfile="/var/run/rsyslogd.sockets"
