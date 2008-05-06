@@ -57,6 +57,7 @@ libexec/nmap/nselib-bin/bit.so
 %%DATADIR%%/nselib/listop.lua
 %%DATADIR%%/nselib/url.lua
 %%DATADIR%%/nselib/tab.lua
+%%DATADIR%%/nselib/datafiles.lua
 @dirrm %%DATADIR%%/nselib
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db
