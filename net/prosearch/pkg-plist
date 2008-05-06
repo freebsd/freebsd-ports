@@ -21,6 +21,7 @@
 %%SEARCHDIR%%/doc/html2txt.pl
 %%SEARCHDIR%%/doc/make-cygwin.cmd
 %%SEARCHDIR%%/lib/psmisc.pm
+%%SEARCHDIR%%/lib/lib.css
 %%SEARCHDIR%%/lib/lib.js
 %%SEARCHDIR%%/lib/player.js
 %%SEARCHDIR%%/lib/search1.js
@@ -48,6 +49,7 @@
 %%SEARCHDIR%%/web/help_en.js
 %%SEARCHDIR%%/web/help_ru.js
 %%SEARCHDIR%%/web/index.cgi
+%%SEARCHDIR%%/web/index.fcgi
 %%SEARCHDIR%%/web/JsHttpRequest.js
 %%SEARCHDIR%%/web/JsHttpRequest.pm
 %%SEARCHDIR%%/web/newstyle.css
@@ -80,6 +82,7 @@
 %%SEARCHDIR%%/web/img/ie.png
 %%SEARCHDIR%%/web/img/image.png
 %%SEARCHDIR%%/web/img/ini.png
+%%SEARCHDIR%%/web/img/mod_perl.png
 %%SEARCHDIR%%/web/img/mov.png
 %%SEARCHDIR%%/web/img/mysql.png
 %%SEARCHDIR%%/web/img/nrg.png
@@ -102,6 +105,7 @@
 %%SEARCHDIR%%/web/img/xhtml11.png
 %%SEARCHDIR%%/web/img/xml.png
 %%SEARCHDIR%%/web/lib/psmisc.pm
+%%SEARCHDIR%%/web/lib/lib.css
 %%SEARCHDIR%%/web/lib/lib.js
 %%SEARCHDIR%%/web/lib/player.js
 %%SEARCHDIR%%/web/lib/search1.js
