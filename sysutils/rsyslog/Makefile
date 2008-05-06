@@ -7,7 +7,7 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	CENKES http://download.rsyslog.com/rsyslog/
 
@@ -22,6 +22,7 @@ MAN8=	rfc3195d.8 rklogd.8 rsyslogd.8
 MAN5=	rsyslog.conf.5
 .endif
 
+CONFLICTS=	rsyslog-3.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes

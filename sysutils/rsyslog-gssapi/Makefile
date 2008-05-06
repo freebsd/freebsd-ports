@@ -8,7 +8,6 @@
 TYPE=		gssapi
 COMMENT=	GSS API output module for rsyslog
 PKGNAMESUFFIX=	-${TYPE}
-PORTREVISION=	1
 
 MASTERDIR=	${.CURDIR}/../rsyslog
 CONFIGURE_ARGS+=	--enable-${TYPE}-krb5

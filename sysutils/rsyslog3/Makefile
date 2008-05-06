@@ -1,4 +1,4 @@
-# New ports collection makefile for:	rsyslog
+# New ports collection makefile for:	rsyslog3
 # Date created:		9 July 2007
 # Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
@@ -6,55 +6,31 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	2.0.4
-PORTREVISION=	1
-CATEGORIES=	sysutils
-MASTER_SITES=	CENKES http://download.rsyslog.com/rsyslog/
 
-MAINTAINER=	infofarmer@FreeBSD.org
-COMMENT?=	Enhanced syslog daemon
+COMMENT=	Enhanced syslog daemon
 
-LIB_DEPENDS=	logging.0:${PORTSDIR}/devel/liblogging
-.ifndef PKGNAMESUFFIX
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
-MAN8=	rfc3195d.8 rklogd.8 rsyslogd.8
+MAN8=	rsyslogd.8
 MAN5=	rsyslog.conf.5
-.endif
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-klogd --disable-static
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-
-PORT_VERBS=	rfc3195d rklogd ${PORTNAME}
+CONFIGURE_ARGS+=--enable-klog --disable-static --enable-mail \
+		--enable-imfile --enable-imtemplate --enable-openssl \
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|<wait.h>|<sys/wait.h>|' ${WRKSRC}/srUtils.c
-	@${REINPLACE_CMD} -e '/^rfc3195d_LDADD =/s|$$| -llogging|;s|-ldl||'\
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
-		${WRKSRC}/Makefile.in ${WRKSRC}/syslogd.c
-	@${REINPLACE_CMD} -e 's|rs_strerror_r|strerror_r|g' ${WRKSRC}/rfc3195d.c
+		${WRKSRC}/syslogd.c
 	@${GREP} -rl '/etc/rsyslog.conf' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} -e\
 		's|/etc/rsyslog.conf|${PREFIX}/etc/rsyslog.conf|'
-	@${ECHO_CMD} '#include <sys/socket.h>' >> ${WRKSRC}/net.h
-	@${ECHO_CMD} '#include <paths.h>' >> ${WRKSRC}/omusrmsg.h
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
-post-configure:
-	@${ECHO_CMD} '#define FEATURE_RFC3195 1' >> ${WRKSRC}/config.h
-	@${ECHO_CMD} '#define PATCHLEVEL "0"' >> ${WRKSRC}/config.h
-
-.ifndef PKGNAMESUFFIX
 post-install:
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${DOCSDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
-.endif
 
+.include "${.CURDIR}/bsd.rsyslog.mk"
 .include <bsd.port.mk>

@@ -596,6 +596,13 @@
     SUBDIR += rsyslog-gssapi
     SUBDIR += rsyslog-mysql
     SUBDIR += rsyslog-pgsql
+    SUBDIR += rsyslog3
+    SUBDIR += rsyslog3-dbi
+    SUBDIR += rsyslog3-gssapi
+    SUBDIR += rsyslog3-mysql
+    SUBDIR += rsyslog3-pgsql
+    SUBDIR += rsyslog3-relp
+    SUBDIR += rsyslog3-snmp
     SUBDIR += rtty
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota

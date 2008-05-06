@@ -16,8 +16,6 @@ load_rc_config $name
 : ${rsyslogd_enable:="NO"}
 : ${rsyslogd_pidfile:="/var/run/rsyslogd.pid"}
 : ${rsyslogd_config:="%%PREFIX%%/etc/rsyslog.conf"}
-: ${rsyslogd_klog_enable:="NO"}
-: ${rsyslogd_klog_pidfile:="/var/run/rsyslog-klog.pid"}
 pidfile="${rsyslogd_pidfile}"
 command_args="-i ${pidfile} -f ${rsyslogd_config}"
 required_files="${rsyslogd_config}"
@@ -29,20 +27,8 @@ sockfile="/var/run/rsyslogd.sockets"
 evalargs="rc_flags=\"\`set_socketlist\` \$rc_flags\""
 altlog_proglist="named"
 
-stop_precmd()
-{
-	if [ -r ${rsyslogd_klog_pidfile} ]&&[ -s ${rsyslogd_klog_pidfile} ]; then
-		kill `cat ${rsyslogd_klog_pidfile}`
-	fi
-	rm -f ${rsyslogd_klog_pidfile}
-}
-
 rsyslogd_precmd()
 {
-	if checkyesno rsyslogd_klog_enable; then
-		daemon -cfp ${rsyslogd_klog_pidfile}\
-			logger -t kernel -p kern.notice -f /dev/klog
-	fi
 	local _l _ldir
 
 	#	Transitional symlink for old binaries
