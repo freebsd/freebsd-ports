@@ -35,7 +35,7 @@ ZSH_VER=	${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	autoconf:261:env
+USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
@@ -73,11 +73,6 @@ SHELLS=		/etc/shells
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 602107
-# also needed for early versions of 7.0-CURRENT, but we don't care
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ncurses
-.endif
-
 .if defined(WITH_ZSH_PCRE)
 CONFIGURE_ARGS+=	--enable-pcre
 LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
@@ -109,7 +104,7 @@ CONFIGURE_ARGS+=	--enable-multibyte
 .endif
 
 .if ${OSVERSION} >= 503000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bsdtar
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 .endif
 
 post-patch:
