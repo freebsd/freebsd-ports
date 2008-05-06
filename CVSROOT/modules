@@ -1944,6 +1944,7 @@ de-wordpress	ports/german/wordpress
 deal		ports/games/deal
 deb2targz	ports/archivers/deb2targz
 decibel		ports/net-im/decibel
+deco		ports/archivers/deco
 deco		ports/misc/deco
 decomment	ports/sysutils/decomment
 decss		ports/www/decss
