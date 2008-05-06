@@ -231,6 +231,7 @@
     SUBDIR += gtkhtml38
     SUBDIR += guile-www
     SUBDIR += gurlchecker
+    SUBDIR += habari
     SUBDIR += harvest
     SUBDIR += hastymail
     SUBDIR += havp
