@@ -21,6 +21,7 @@ CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 ALL_TARGET=	migemo.elc
 
 PLIST_SUB=	MIGEMO="@comment " ELISP=""
+SLAVE_PORT=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/${EMACS_SITE_LISPDIR}
