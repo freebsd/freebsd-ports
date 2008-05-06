@@ -612,6 +612,7 @@
     SUBDIR += pvk
     SUBDIR += pwauth
     SUBDIR += pwman
+    SUBDIR += pwman3
     SUBDIR += pxytest
     SUBDIR += py-bcrypt
     SUBDIR += py-cerealizer
