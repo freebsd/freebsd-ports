@@ -1,0 +1,104 @@
+--- Makefile.orig	Sat Apr 19 17:21:37 2008
++++ Makefile	Tue Apr 29 15:32:48 2008
+@@ -1,12 +1,12 @@
+ all: library all_samples 
+ 
+ 
+-CFLAGS=-O4  -I. -w
++CFLAGS+=-I. -w
+ 
+ DCRAW_LIB_OBJECTS=object/dcraw_common.o object/foveon.o object/io.o object/libraw_cxx.o object/libraw_c_api.o
+ DCRAW_LIB_MT_OBJECTS=object/dcraw_common_mt.o object/foveon_mt.o object/io_mt.o object/libraw_cxx_mt.o object/libraw_c_api_mt.o
+ 
+-library: lib/libraw.a lib/libraw_r.a
++library: lib/libraw.a lib/libraw_r.a lib/libraw.so.0 lib/libraw_r.so.0
+ 
+ all_samples: bin/identify bin/simple_dcraw  bin/dcraw_emu bin/dcraw_half bin/half_mt
+ 
+@@ -18,40 +18,40 @@
+ 	@if [ -d /usr/local/bin ] ; then cp bin/[a-z]* /usr/local/bin/ ; else echo 'no /usr/local/bin' ; fi
+ 
+ bin/identify: lib/libraw.a samples/identify.cpp
+-	g++ ${CFLAGS} -o bin/identify samples/identify.cpp -L./lib -lraw  -lm
++	${CXX} ${CFLAGS} -o bin/identify samples/identify.cpp -L./lib -lraw  -lm
+ 
+ bin/simple_dcraw: lib/libraw.a samples/simple_dcraw.cpp
+-	g++ ${CFLAGS} -o bin/simple_dcraw samples/simple_dcraw.cpp -L./lib -lraw  -lm
++	${CXX} ${CFLAGS} -o bin/simple_dcraw samples/simple_dcraw.cpp -L./lib -lraw  -lm
+ 
+ bin/dcraw_half: lib/libraw.a object/dcraw_half.o
+-	gcc ${CFLAGS} -o bin/dcraw_half object/dcraw_half.o -L./lib -lraw  -lm -lstdc++
++	${CC} ${CFLAGS} -o bin/dcraw_half object/dcraw_half.o -L./lib -lraw  -lm -lstdc++
+ 
+ bin/half_mt: lib/libraw_r.a object/half_mt.o
+-	gcc -pthread ${CFLAGS} -o bin/half_mt object/half_mt.o -L./lib -lraw_r  -lm -lstdc++
++	${CC} ${PTHREAD_LIBS} ${CFLAGS} -o bin/half_mt object/half_mt.o -L./lib -lraw_r  -lm -lstdc++
+ 
+ bin/dcraw_emu: lib/libraw.a samples/dcraw_emu.cpp
+-	g++ ${CFLAGS} -o bin/dcraw_emu samples/dcraw_emu.cpp -L./lib -lraw  -lm
++	${CXX} ${CFLAGS} -o bin/dcraw_emu samples/dcraw_emu.cpp -L./lib -lraw  -lm
+ 
+ object/dcraw_common.o: internal/dcraw_common.cpp
+-	g++ -c ${CFLAGS} -o object/dcraw_common.o internal/dcraw_common.cpp
++	${CXX} -c ${CFLAGS} -o object/dcraw_common.o internal/dcraw_common.cpp
+ 
+ object/foveon.o: internal/foveon.cpp
+-	g++ -c ${CFLAGS} -o object/foveon.o internal/foveon.cpp
++	${CXX} -c ${CFLAGS} -o object/foveon.o internal/foveon.cpp
+ 
+ object/io.o: src/io.c
+-	gcc -c ${CFLAGS} -DUSE_MMAP_IO -o object/io.o src/io.c
++	${CC} -c ${CFLAGS} -DUSE_MMAP_IO -o object/io.o src/io.c
+ 
+ object/libraw_cxx.o: src/libraw_cxx.cpp
+-	g++ -c ${CFLAGS} -o object/libraw_cxx.o src/libraw_cxx.cpp
++	${CXX} -c ${CFLAGS} -o object/libraw_cxx.o src/libraw_cxx.cpp
+ 
+ object/libraw_c_api.o: src/libraw_c_api.cpp
+-	g++ -c ${CFLAGS} -o object/libraw_c_api.o src/libraw_c_api.cpp
++	${CXX} -c ${CFLAGS} -o object/libraw_c_api.o src/libraw_c_api.cpp
+ 
+ object/dcraw_half.o: samples/dcraw_half.c
+-	gcc -c ${CFLAGS} -o object/dcraw_half.o samples/dcraw_half.c
++	${CC} -c ${CFLAGS} -o object/dcraw_half.o samples/dcraw_half.c
+ 
+ object/half_mt.o: samples/half_mt.c
+-	gcc -c -pthread ${CFLAGS} -DLIBRAW_THREADS -o object/half_mt.o samples/half_mt.c
++	${CC} -c ${PTHREAD_CFLAGS} ${CFLAGS} -DLIBRAW_THREADS -o object/half_mt.o samples/half_mt.c
+ 
+ 
+ lib/libraw.a: ${DCRAW_LIB_OBJECTS}
+@@ -64,20 +64,28 @@
+ 	ar crv lib/libraw_r.a ${DCRAW_LIB_MT_OBJECTS}
+ 	ranlib lib/libraw_r.a
+ 
++lib/libraw.so.0: ${DCRAW_LIB_OBJECTS}
++	rm -f lib/libraw.so.0
++	${CC} ${CFLAGS} -shared -Wl,-soname,libraw.so.0 -o lib/libraw.so.0 ${DCRAW_LIB_OBJECTS}
++
++lib/libraw_r.so.0: ${DCRAW_LIB_MT_OBJECTS}
++	rm -f lib/libraw_r.so.0
++	${CC} ${CFLAGS} -shared -Wl,-soname,libraw_r.so.0 -o lib/libraw_r.so.0 ${DCRAW_LIB_MT_OBJECTS}
++
+ object/dcraw_common_mt.o: internal/dcraw_common.cpp
+-	g++ -c -pthread -DLIBRAW_THREADS ${CFLAGS} -o object/dcraw_common_mt.o internal/dcraw_common.cpp
++	${CXX} -c ${PTHREAD_CFLAGS} -DLIBRAW_THREADS ${CFLAGS} -o object/dcraw_common_mt.o internal/dcraw_common.cpp
+ 
+ object/foveon_mt.o: internal/foveon.cpp
+-	g++ -c -DLIBRAW_THREADS -pthread ${CFLAGS} -o object/foveon_mt.o internal/foveon.cpp
++	${CXX} -c -DLIBRAW_THREADS ${PTHREAD_CFLAGS} ${CFLAGS} -o object/foveon_mt.o internal/foveon.cpp
+ 
+ object/io_mt.o: src/io.c
+-	gcc -c -DLIBRAW_THREADS -pthread ${CFLAGS} -DUSE_MMAP_IO -o object/io_mt.o src/io.c
++	${CC} -c -DLIBRAW_THREADS ${PTHREAD_CFLAGS} ${CFLAGS} -DUSE_MMAP_IO -o object/io_mt.o src/io.c
+ 
+ object/libraw_cxx_mt.o: src/libraw_cxx.cpp
+-	g++ -c -DLIBRAW_THREADS -pthread ${CFLAGS} -o object/libraw_cxx_mt.o src/libraw_cxx.cpp
++	${CXX} -c -DLIBRAW_THREADS ${PTHREAD_CFLAGS} ${CFLAGS} -o object/libraw_cxx_mt.o src/libraw_cxx.cpp
+ 
+ object/libraw_c_api_mt.o: src/libraw_c_api.cpp
+-	g++ -c -DLIBRAW_THREADS -pthread ${CFLAGS} -o object/libraw_c_api_mt.o src/libraw_c_api.cpp
++	${CXX} -c -DLIBRAW_THREADS ${PTHREAD_CFLAGS} ${CFLAGS} -o object/libraw_c_api_mt.o src/libraw_c_api.cpp
+ 
+ clean:
+ 	rm -fr bin/*.dSYM

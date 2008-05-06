@@ -1,0 +1,13 @@
+include/libraw/libraw.h
+include/libraw/libraw_alloc.h
+include/libraw/libraw_const.h
+include/libraw/libraw_internal.h
+include/libraw/libraw_io.h
+include/libraw/libraw_types.h
+lib/libraw.a
+lib/libraw.so
+lib/libraw.so.0
+lib/libraw_r.a
+lib/libraw_r.so
+lib/libraw_r.so.0
+@dirrm include/libraw
