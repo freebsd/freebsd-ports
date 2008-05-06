@@ -7,7 +7,7 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.1.3.r1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 PKGNAMESUFFIX=	${SHORT_VER}-devel
@@ -31,6 +31,8 @@ DOCS=		README doc/BUGS doc/CHANGELOG doc/CONTRIB doc/COPYING \
 EXAMPLES=	sample/*.c
 
 SHORT_VER=	113
+
+USE_LDCONFIG=	${PREFIX}/lib/libnet${SHORT_VER}
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config \
