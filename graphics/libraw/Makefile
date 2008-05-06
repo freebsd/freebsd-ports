@@ -14,6 +14,9 @@ DISTNAME=	LibRaw-${PORTVERSION}
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Library for manipulating raw images
 
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		lcms.1:${PORTSDIR}/graphics/lcms
+
 MAKE_ENV+=	CXX="${CXX}" CC="${CC}" CFLAGS="${CFLAGS}" \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
