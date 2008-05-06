@@ -7,6 +7,7 @@
 
 PORTNAME=	legends
 PORTVERSION=	0.4.1.43
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://legendsthegame.net/files/:game \
 		http://legendsthegame.net/files/maps/:maps
@@ -22,7 +23,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_MAKESELF=	yes
 USE_LINUX=	yes
-USE_GL=		yes
+USE_GL=		linux
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/lib/${PORTNAME}
@@ -30,9 +31,6 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 # Standard map pack used in official servers.
 MAP_PACK=	BTMappack-1.05.unf
 PLIST_SUB=	MAP_PACK="${MAP_PACK}"
-
-# Should be in bsd.commands.mk. Remove when ports/118749 is committed.
-UNMAKESELF_CMD?=	${LOCALBASE}/bin/unmakeself
 
 post-extract:
 	@cd ${WRKDIR} && ${TAR} xf legends.tar
