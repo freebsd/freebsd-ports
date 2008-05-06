@@ -6916,6 +6916,7 @@ libqglviewer	ports/graphics/libqglviewer
 libqrencode	ports/graphics/libqrencode
 libquicktime	ports/multimedia/libquicktime
 libranlib	ports/math/libranlib
+libraw		ports/graphics/libraw
 librcc		ports/devel/librcc
 librcd		ports/devel/librcd
 libreadline-java	ports/devel/libreadline-java
