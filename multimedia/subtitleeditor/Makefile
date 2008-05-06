@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	subtitleeditor
-PORTVERSION=	0.13.6
-PORTREVISION=	1
+PORTVERSION=	0.20.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://kitone.free.fr/subtitleeditor/files/ CENKES
+MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.20/
 
-MAINTAINER=	infofarmer@FreeBSD.org
+MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Subtitle editor
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
@@ -24,15 +23,15 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 USE_GNOME=	gtk20
 USE_GSTREAMER=	good
 USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 PLIST_SUB=	DESKTOPDIR="${DESKTOPDIR:S,^${PREFIX}/,,}"
-MAN1=		${PORTNAME}.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|strtoll|strtoq|g' ${WRKSRC}/src/SubtitleASS.cc
+	@${REINPLACE_CMD} -e 's|strtoll|strtoq|g' ${WRKSRC}/src/formats/SubtitleASS.cc
 
 .include <bsd.port.mk>
