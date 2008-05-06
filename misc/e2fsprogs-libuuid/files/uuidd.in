@@ -16,5 +16,7 @@ rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/uuidd"
 procname="${command}"
 
+: ${uuidd_enable="NO"}
+
 load_rc_config $name
 run_rc_command "$1"
