@@ -402,6 +402,7 @@
     SUBDIR += libpuzzle
     SUBDIR += libqglviewer
     SUBDIR += libqrencode
+    SUBDIR += libraw
     SUBDIR += librsvg
     SUBDIR += librsvg2
     SUBDIR += libspiro
