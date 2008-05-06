@@ -13,7 +13,7 @@ MASTER_SITES=	http://bsd-unix.org/downloads/ \
 		http://pekwm.org/files/
 DISTNAME=	${PORTNAME}-0.1.5
 
-MAINTAINER=	xcas@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A windowmanager based on aewm++
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
