@@ -106,7 +106,7 @@ post-extract: post-extract-epag
 .if defined(WITH_GS_lvga256) \
 	|| defined(WITH_GS_vgalib)
 . if defined(WITHOUT_SVGALIB)
-. warning drivers incompatible with WITHDOUT_SVGALIB will be removed automatically
+. warning drivers incompatible with WITHOUT_SVGALIB will be removed automatically
 . undef WITH_GS_lvga256
 . undef WITH_GS_vgalib
 . else
