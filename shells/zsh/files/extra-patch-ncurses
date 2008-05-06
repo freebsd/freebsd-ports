@@ -1,0 +1,58 @@
+--- configure.ac.orig	2008-03-28 12:49:32.000000000 +0100
++++ configure.ac	2008-05-05 09:47:30.860369561 +0200
+@@ -669,20 +669,20 @@
+    termcap_curses_order="$ncursesw_test tinfo termcap $ncurses_test curses" ;;
+ esac])dnl
+ 
+-AH_TEMPLATE([ZSH_CURSES_NEEDS_XOPEN],
+-[Define if the curses libraries need _XOPEN_SOURCE_EXTENDED defined])
+-AC_CACHE_CHECK(if the curses library needs _XOPEN_SOURCE_EXTENDED,
+-zsh_cv_curses_needs_xopen,
++AH_TEMPLATE([ZSH_NO_XOPEN],
++[Define if _XOPEN_SOURCE_EXTENDED should not be defined to avoid clashes])
++AC_CACHE_CHECK(if _XOPEN_SOURCE_EXTENDED should not be defined,
++zsh_cv_no_xopen,
+ [case "$host_os" in
+-  *openbsd*)
+-  zsh_cv_curses_needs_xopen=no
++  *openbsd*|*freebsd*)
++  zsh_cv_no_xopen=yes
+   ;;
+   *)
+-  zsh_cv_curses_needs_xopen=yes
++  zsh_cv_no_xopen=no
+   ;;
+ esac])
+-if test x$zsh_cv_curses_needs_xopen = xyes; then
+-  AC_DEFINE(ZSH_CURSES_NEEDS_XOPEN)
++if test x$zsh_cv_no_xopen = xyes; then
++  AC_DEFINE(ZSH_NO_XOPEN)
+ fi
+ 
+ dnl Check for tigetflag (terminfo) before tgetent (termcap).
+--- Src/system.h.orig	2007-12-14 13:43:33.000000000 +0100
++++ Src/system.h	2008-05-05 09:50:17.333164563 +0200
+@@ -52,9 +52,20 @@
+ # undef HAVE_SYS_UTSNAME_H
+ #endif
+ 
+-#if defined(ZSH_CURSES_SOURCE) && defined(ZSH_CURSES_NEEDS_XOPEN)
+-#define _XOPEN_SOURCE_EXTENDED 1
+-#endif
++#ifndef ZSH_NO_XOPEN
++# ifdef ZSH_CURSES_SOURCE
++#  define _XOPEN_SOURCE_EXTENDED 1
++# else
++#  ifdef MULTIBYTE_SUPPORT
++/*
++ * Needed for wcwidth() which is part of XSI.
++ * Various other uses of the interface mean we can't get away with just
++ * _XOPEN_SOURCE.
++ */
++#   define _XOPEN_SOURCE_EXTENDED 1
++#  endif /* MULTIBYTE_SUPPORT */
++# endif /* ZSH_CURSES_SOURCE */
++#endif /* ZSH_NO_XOPEN */
+ 
+ /*
+  * Solaris by default zeroes all elements of the tm structure in
