@@ -68,6 +68,8 @@ CONFIGURE_ARGS=	--program-prefix=nmm- \
 		--with-vorbis=${LOCALBASE} \
 		--with-a52dec=${LOCALBASE} \
 		--with-mpeg2dec=${LOCALBASE}
+CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}" CFLAGS="${PTHREAD_CFLAGS}"
+MAKE_ENV+=	LIBS="${PTHREAD_LIBS}" CFLAGS="${PTHREAD_CFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's:Magick++ Magick:Magick++ MagickCore:g' \
