@@ -186,6 +186,7 @@
     SUBDIR += james
     SUBDIR += jamlib
     SUBDIR += jboss-mailservices
+    SUBDIR += jmba
     SUBDIR += junkfilter
     SUBDIR += kavmilter
     SUBDIR += kbiff
