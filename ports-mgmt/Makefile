@@ -16,6 +16,7 @@
    SUBDIR += newportsversioncheck
    SUBDIR += p5-FreeBSD-Portindex
    SUBDIR += p5-FreeBSD-Ports
+   SUBDIR += p5-FreeBSD-Ports-INDEXhash
    SUBDIR += pib
    SUBDIR += pkg-orphan
    SUBDIR += pkg_cleanup

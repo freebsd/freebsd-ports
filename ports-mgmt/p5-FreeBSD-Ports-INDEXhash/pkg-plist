@@ -1,0 +1,7 @@
+%%SITE_PERL%%/FreeBSD/Ports/INDEXhash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Ports/INDEXhash/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Ports/INDEXhash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Ports
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD
+@dirrmtry %%SITE_PERL%%/FreeBSD/Ports
+@dirrmtry %%SITE_PERL%%/FreeBSD
