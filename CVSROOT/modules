@@ -3717,6 +3717,7 @@ getbdf		ports/x11-fonts/getbdf
 getdelta	ports/sysutils/getdelta
 getdp		ports/science/getdp
 getleft		ports/www/getleft
+getlive		ports/mail/getlive
 getmail		ports/mail/getmail
 gettext		ports/devel/gettext
 gettext-lint	ports/devel/gettext-lint
