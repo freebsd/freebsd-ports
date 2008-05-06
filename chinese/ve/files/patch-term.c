@@ -41,8 +41,7 @@
 -
 -  tty_new.c_lflag &= ~(ICANON | ECHO | RAW | ISIG);
 -  tcsetattr(1, TCSANOW, &tty_new);
-+  tty_new.c_lflag &= ~(ICANON | ECHO | ISIG);
-   restore_tty();
+-  restore_tty();
 -
 -#else
 -
@@ -54,7 +53,8 @@
 -  tty_new.sg_flags &= ~(TANDEM | CBREAK | LCASE | ECHO | CRMOD);
 -#endif
 -
--  stty(1, &tty_new);
++  tty_new.c_lflag &= ~(ICANON | ECHO | ISIG);
+   stty(1, &tty_new);
 -#endif
  }
  
