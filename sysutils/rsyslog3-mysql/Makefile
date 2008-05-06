@@ -1,4 +1,4 @@
-# New ports collection makefile for:	rsyslog-mysql
+# New ports collection makefile for:	rsyslog3-mysql
 # Date created:		13 December 2007
 # Whom:			Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
@@ -6,19 +6,10 @@
 #
 
 COMMENT=	MySQL output module for rsyslog
-PKGNAMESUFFIX=	-mysql
 
-MASTERDIR=	${.CURDIR}/../rsyslog
+MNAME=	mysql
+MTYPES=	om
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--enable-mysql
-RUN_DEPENDS=	rsyslog>=0:${PORTSDIR}/sysutils/rsyslog
-PLIST_FILES=	lib/rsyslog/ommysql.so
-PLIST_DIRS=	lib/rsyslog
-PLIST=	""
 
-do-install:
-	@${INSTALL} -d ${PREFIX}/lib/rsyslog/
-	@${INSTALL_PROGRAM} ${WRKSRC}/plugins/ommysql/.libs/ommysql.so \
-		${PREFIX}/lib/rsyslog/
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../rsyslog3/bsd.rsyslog.mk"
+.include <bsd.port.mk>

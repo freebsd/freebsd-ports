@@ -666,6 +666,7 @@
     SUBDIR += librcd
     SUBDIR += libreadline-java
     SUBDIR += libredblack
+    SUBDIR += librelp
     SUBDIR += libruin
     SUBDIR += libs11n
     SUBDIR += libshbuf

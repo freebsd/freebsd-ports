@@ -10,7 +10,4 @@ this:
 newsyslog(8) has the path of syslogd's pid file hardcoded. To
 make it work seamlessly with rsyslog, add this:
  rsyslogd_pidfile="/var/run/syslog.pid"
-rsyslogd(8) does not support logging /dev/klog. To enable a
-simple logger(1)-based workaround, add this:
- rsyslogd_klog_enable="YES"
 ===================================================================
