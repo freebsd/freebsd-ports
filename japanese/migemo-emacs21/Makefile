@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD}
 ALL_TARGET=	migemo.elc
 
 PLIST_SUB=	MIGEMO="@comment " ELISP=""
+SLAVE_PORT=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/migemo.el ${PREFIX}/${EMACS_LIBDIR}/site-lisp
