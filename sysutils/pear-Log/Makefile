@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -38,6 +38,7 @@ _SQLSDIR=	misc
 LATEST_LINK=	pear-Log
 OPTIONS=	PEAR_DB "PEAR::DB support" off \
 		PEAR_MDB2 "PEAR::MDB2 support" off \
+		PEAR_Mail "PEAR::Mail support" off \
 		PHP_SQLITE "PHP sqlite support (php5 only)" off
 
 .include <bsd.port.pre.mk>
@@ -48,6 +49,10 @@ BUILD_DEPENDS+=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 
 .if defined(WITH_PEAR_MDB2)
 BUILD_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
+.endif
+
+.if defined(WITH_PEAR_Mail)
+BUILD_DEPENDS+=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail
 .endif
 
 .if defined(WITH_PHP_SQLITE)
