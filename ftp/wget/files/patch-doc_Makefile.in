@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Mon Jun  6 23:42:17 2005
-+++ doc/Makefile.in	Wed Apr 11 22:18:59 2007
+--- doc/Makefile.in.orig	2008-05-01 04:57:18.613091552 -0400
++++ doc/Makefile.in	2008-05-01 04:58:14.768389781 -0400
 @@ -22,7 +22,7 @@
  SHELL = /bin/sh
  
@@ -10,7 +10,7 @@
  TEXI2DVI = texi2dvi
  # Program to convert DVI files to PostScript
 @@ -51,7 +51,7 @@
- TEXI2POD     = texi2pod.pl
+ TEXI2POD     = $(srcdir)/texi2pod.pl
  POD2MAN      = @POD2MAN@
  MAN          = wget.$(manext)
 -WGETRC       = $(sysconfdir)/wgetrc
