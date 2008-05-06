@@ -7,7 +7,7 @@
 
 PORTNAME=	kgtk
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://source.antisupport.com/kgtk/ \
 		http://home.freeuk.com/cpdrummond/
@@ -44,7 +44,8 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITHOUT_UNICODE)
-EXTRA_PATCHES+=	${PATCHDIR}/opt-patch-gtk2__kgtk2-wrapper.cmake
+EXTRA_PATCHES+=	${PATCHDIR}/opt-patch-kgtk-wrapper \
+		${PATCHDIR}/opt-patch-gtk2__kgtk2-wrapper.cmake
 .endif
 
 post-patch:
