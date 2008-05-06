@@ -5073,7 +5073,6 @@ inputproto	ports/x11/inputproto
 inspircd	ports/irc/inspircd
 installwatch	ports/sysutils/installwatch
 instant-server	ports/misc/instant-server
-instant-tinderbox	ports/ports-mgmt/instant-tinderbox
 instiki		ports/www/instiki
 insub		ports/irc/insub
 intclock	ports/x11-clocks/intclock
