@@ -38,4 +38,10 @@ do-install:
 	${MKDIR} ${DATADIR}/Misc
 	${INSTALL_DATA} ${WRKSRC}/Misc/* ${DATADIR}/Misc
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=	Does not compile
+.endif
+
+.include <bsd.port.post.mk>
