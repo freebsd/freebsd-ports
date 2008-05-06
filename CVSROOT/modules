@@ -5821,6 +5821,7 @@ jlex		ports/java/jlex
 jline		ports/devel/jline
 jlint		ports/java/jlint
 jlj		ports/deskutils/jlj
+jmba		ports/mail/jmba
 jmf		ports/java/jmf
 jmk-x11-fonts	ports/x11-fonts/jmk-x11-fonts
 jmp		ports/java/jmp
