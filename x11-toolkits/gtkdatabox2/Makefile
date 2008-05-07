@@ -15,7 +15,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	leoz.2005@gmail.com
 COMMENT=	A GTK+2 widget to display large amounts of numerical data
 
-CONFLICTS=	gtkdatabox-0.1.*
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool:15
