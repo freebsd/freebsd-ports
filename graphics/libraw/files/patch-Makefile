@@ -1,11 +1,11 @@
 --- Makefile.orig	Sat Apr 19 17:21:37 2008
-+++ Makefile	Tue Apr 29 15:32:48 2008
++++ Makefile	Wed May  7 10:20:57 2008
 @@ -1,12 +1,12 @@
  all: library all_samples 
  
  
 -CFLAGS=-O4  -I. -w
-+CFLAGS+=-I. -w
++CFLAGS+=-I. -w -fPIC
  
  DCRAW_LIB_OBJECTS=object/dcraw_common.o object/foveon.o object/io.o object/libraw_cxx.o object/libraw_c_api.o
  DCRAW_LIB_MT_OBJECTS=object/dcraw_common_mt.o object/foveon_mt.o object/io_mt.o object/libraw_cxx_mt.o object/libraw_c_api_mt.o
