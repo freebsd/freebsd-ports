@@ -37,9 +37,10 @@ PRE-INSTALL)
 			exit 1
 		fi
 	fi
+	;;
 
-	[ -d /var/run/unbound ] || mkdir -p /var/run/unbound
-	chown "${USER}" /var/run/unbound
+POST-INSTALL)
+	chown "${USER}" $PREFIX/etc/unbound
 	;;
 *)
 ;;
