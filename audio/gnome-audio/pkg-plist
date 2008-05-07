@@ -14,5 +14,5 @@ share/sounds/question.wav
 share/sounds/shutdown1.wav
 share/sounds/startup3.wav
 share/sounds/warning.wav
-@dirrm share/sounds/gtk-events
 @dirrm share/sounds/panel
+@dirrm share/sounds/gtk-events

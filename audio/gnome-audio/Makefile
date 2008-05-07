@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnome-audio
-PORTVERSION=	2.22.1
-PORTREVISION=	1
+PORTVERSION=	2.22.2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 
@@ -16,9 +15,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound files for use with GNOME 2
 
 USE_BZIP2=	yes
-USE_XORG=	x11
 NO_BUILD=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomehier
+USE_GNOME=	gnomeprefix gnomehier
 MAKE_ENV=	prefix=${PREFIX}
 
 post-patch:
