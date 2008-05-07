@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	lzma
-PORTVERSION=	4.57
-PORTREVISION=	1
+PORTVERSION=	4.58
 CATEGORIES=	archivers
 MASTER_SITES=	SFE/sevenzip
-DISTNAME=	7z${PORTVERSION:S/.//g}
+DISTNAME=	lzma${PORTVERSION:S/.//g}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	High-ratio LZMA compressor
