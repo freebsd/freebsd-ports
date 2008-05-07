@@ -1,0 +1,22 @@
+bin/cosmosmash
+share/applications/cosmosmash.desktop
+share/pixmaps/cosmosmash.png
+%%DATADIR%%/sounds/rock-hit-0.wav
+%%DATADIR%%/sounds/rock-hit-1.wav
+%%DATADIR%%/sounds/player-hit.wav
+%%DATADIR%%/sounds/pulsar-beep.wav
+%%DATADIR%%/sounds/saucer-shooting.wav
+%%DATADIR%%/sounds/hyperspace.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/applications
