@@ -7,3 +7,4 @@ share/pornview/scripts/helloworld
 @dirrm share/pornview/scripts
 @dirrm share/pornview
 @dirrmtry share/gnome/apps/Graphics
+@dirrmtry share/gnome/apps
