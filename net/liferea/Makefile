@@ -16,7 +16,7 @@ COMMENT=	Simple RSS/RDF feed reader
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-USE_GECKO=	mozilla firefox
+USE_GECKO=	firefox mozilla
 USE_GNOME=	gnomeprefix gnomehack libgtkhtml libglade2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
