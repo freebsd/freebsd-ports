@@ -8,8 +8,8 @@
 PORTNAME=		glob2
 PORTVERSION=		0.9.3
 CATEGORIES=		games
-MASTER_SITES=		http://dl.sv.nongnu.org/releases/glob2/${PORTVERSION}/
-MASTER_SITE_SUBDIR=	thierry
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Globulation 2 - a free and innovative strategy game
