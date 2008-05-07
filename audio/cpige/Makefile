@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cpige
-DISTVERSION=	1.4-2
+DISTVERSION=	1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://ed.zehome.com/cpige/ \
 		http://T32.TecNik93.com/FreeBSD/ports/sources/cpige/
