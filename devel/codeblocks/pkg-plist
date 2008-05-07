@@ -1,8 +1,6 @@
 bin/cb_console_runner
 bin/cb_share_config
 bin/codeblocks
-etc/gtk-2.0/gdk-pixbuf.loaders
-etc/gtk-2.0/gtk.immodules
 include/codeblocks/annoyingdialog.h
 include/codeblocks/autodetectcompilers.h
 include/codeblocks/backgroundthread.h
