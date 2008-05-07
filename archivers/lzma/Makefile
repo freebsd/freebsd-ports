@@ -40,7 +40,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/DOC/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
