@@ -6,16 +6,21 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	2.9.21
+PORTVERSION=	3.0.${SNAPSHOT}
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://downloads.powerdns.com/releases/ \
-		http://mirrors.evolva.ro/powerdns.com/releases/
-DISTNAME=	pdns-${PORTVERSION}
+MASTER_SITES=	http://svn.powerdns.com/snapshots/${REVISION}/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	pdns-${PORTVERSION:S/.${SNAPSHOT}//}-svn.${SNAPSHOT}.${REVISION}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with multiple backends including SQL
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
+
+SNAPSHOT=	20080406
+REVISION=	1177
+
+CONFLICTS=	powerdns-[0-2]*
 
 USE_GMAKE=	YES
 USE_SUBMAKE=	YES
@@ -38,16 +43,19 @@ MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 SUB_FILES=	pkg-message
 
 OPTIONS=	PGSQL           "PostgreSQL backend" on \
+		PGSQL_LOCAL	"RUN_DEPEND on PostgreSQL" off \
 		MYSQL           "MySQL backend" off \
+		MYSQL_LOCAL	"RUN_DEPEND on MySQL server" off \
 		SQLITE          "SQLite 2 backend" off \
 		SQLITE3         "SQLite 3 backend" off \
 		OPENDBX         "OpenDBX backend" off \
 		OPENLDAP        "OpenLDAP backend" off \
+		OPENLDAP_LOCAL	"RUN_DEPEND on OpenLDAP server" off \
 		GEO             "Geo backend" off
 
 .include <bsd.port.pre.mk>
 
-USE_RC_SUBR+=	pdns
+USE_RC_SUBR+=	pdns-devel
 
 .if defined(WITH_GEO)
 CONFIGURE_MODULES+=	"geo"
@@ -80,11 +88,36 @@ CONFIGURE_ARGS+=	--disable-mysql
 PLIST_SUB+=		WITHMYSQL="@comment "
 .endif
 
+.if defined(WITH_OPENDBX) || defined(WITH_PGSQL)
+.	if defined(WITH_PGSQL_LOCAL)
+USE_PGSQL?=		YES
+RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+SUB_LIST+=	PGSQL=postgresql
+.	else
+SUB_LIST+=	PGSQL=
+.	endif
+.endif
+.if defined(WITH_OPENDBX) || defined(WITH_MYSQL)
+.	if defined(WITH_MYSQL_LOCAL)
+USE_MYSQL?=		YES
+RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+SUB_LIST+=	MYSQL=mysql
+.	else
+SUB_LIST+=	MYSQL=
+.	endif
+.endif
+
 .if defined(WITH_OPENLDAP)
 USE_OPENLDAP?=		YES
 CONFIGURE_MODULES+=	"ldap"
 CXXFLAGS+=		-L${LOCALBASE}/lib -DLDAP_DEPRECATED=1
 PLIST_SUB+=		WITHOPENLDAP=""
+.	if defined(WITH_OPENLDAP_LOCAL)
+RUN_DEPENDS+=	openldap-server>=0:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-server
+SUB_LIST+=	SLAPD=slapd
+.	else
+SUB_LIST+=	SLAPD=
+.	endif
 .else
 PLIST_SUB+=		WITHOPENLDAP="@comment "
 .endif
@@ -134,10 +167,17 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
-.for i in pdns.conf tables-mssql_or_sybase.sql tables-mysql.sql tables-pgsql.sql tables-sqlite.sql
+.for i in pdns.conf
 	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/
 .endfor
 .endif
+.for j in libgpgsqlbackend.so libgmysqlbackend.so libgsqlitebackend.so \
+	libgsqlite3backend.so libldapbackend.so libopendbxbackend.so \
+	libgeobackend.so libpipebackend.so
+	@if ([ -f ${PREFIX}/lib/$j ] && [ ! -f ${PREFIX}/lib/$j.0 ]); then \
+		${LN} -sf ${PREFIX}/lib/$j ${PREFIX}/lib/$j.0; \
+	fi
+.endfor
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
