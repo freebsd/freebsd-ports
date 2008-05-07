@@ -444,6 +444,8 @@ man/man1/xpmroot.1.gz
 @dirrm %%DOCSDIR%%/fvwm
 @dirrm %%DOCSDIR%%/images/svg_rendering
 @dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%/modules/images/FvwmTabs
+@dirrm %%DOCSDIR%%/modules/images
 @dirrm %%DOCSDIR%%/modules
 @dirrm %%DOCSDIR%%
 @dirrm libexec/fvwm/%%FVWM_VERSION%%
