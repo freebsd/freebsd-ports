@@ -55,6 +55,8 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CONFIGUREDCFLAGS="${CONFIGUREDCFLAGS}"
 .else
 CONFIGURE_ARGS+=	--disable-iconv
+CONFIGURE_ENV+=		ac_cv_search_libiconv_open=no
+CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
 .endif
 
 .if defined(WITH_FLAGS)
@@ -71,7 +73,7 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
 
 .if defined(WITH_POPT_PORT)
 LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS+=	--with-included-popt
@@ -90,11 +92,6 @@ pre-configure:
 		${WRKSRC}/rsync.h ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${WRKSRC}/rsync.h ${WRKSRC}/zlib/zutil.h
-
-.if defined(WITHOUT_ICONV)
-post-configure:
-	@${REINPLACE_CMD} -e 's|-liconv||' ${WRKSRC}/Makefile
-.endif
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/rsync
