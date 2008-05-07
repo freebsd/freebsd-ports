@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080507:
+  AFFECTS: perl interface users of audio/gramofile
+  AUTHOR: rafan@FreeBSD.org
+
+  Perl support is removed due to devel/swig11 removal in ports.
+  If you use the Perl interface, you are encouraged to use
+  the new Audio::Gramofile found on cpan (contact me for the ports).
+
 20080506:
   AFFECTS: users of net-mgmt/collectd
   AUTHOR: daniel@roe.ch
