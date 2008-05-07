@@ -1,12 +1,12 @@
-%%CAMPAIGN:%%bin/campaignd
-%%TOOLS:%%bin/cutter
-%%TOOLS:%%bin/exploder
+%%CAMPAIGN%%bin/campaignd
+%%TOOLS%%bin/cutter
+%%TOOLS%%bin/exploder
 bin/wesnoth
-bin/wmlindent
-bin/wmllint
-bin/wmlscope
-%%EDITOR:%%bin/wesnoth_editor
-%%SERVER:%%bin/wesnothd
+%%TOOLS%%bin/wmlindent
+%%TOOLS%%bin/wmllint
+%%TOOLS%%bin/wmlscope
+%%EDITOR%%bin/wesnoth_editor
+%%SERVER%%bin/wesnothd
 share/locale/af/LC_MESSAGES/wesnoth-aoi.mo
 share/locale/af/LC_MESSAGES/wesnoth-did.mo
 share/locale/af/LC_MESSAGES/wesnoth-editor.mo
@@ -8359,10 +8359,10 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 @dirrmtry man/zh_CN/man6
 @dirrmtry man/zh_CN
 share/applications/wesnoth.desktop
-share/applications/wesnoth_editor.desktop
+%%EDITOR%%share/applications/wesnoth_editor.desktop
 share/pixmaps/wesnoth-icon.png
-share/pixmaps/wesnoth_editor-icon.png
-%%SERVER:%%@unexec rmdir /var/run/wesnothd 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/run/wesnothd' to remove it." | fmt
+%%EDITOR%%share/pixmaps/wesnoth_editor-icon.png
+%%SERVER%%@unexec rmdir /var/run/wesnothd 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/run/wesnothd' to remove it." | fmt
 @dirrmtry share/locale/ca_ES@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca_ES@valencia
 @dirrmtry share/locale/gl_ES/LC_MESSAGES
