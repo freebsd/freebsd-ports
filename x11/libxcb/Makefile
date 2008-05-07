@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libxcb
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1
 CATEGORIES=	x11
-MASTER_SITES=	XORG/current/src/extras
+#MASTER_SITES=	XORG/current/src/extras
+MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	The X protocol C-language Binding (XCB) library
@@ -45,5 +45,10 @@ XDMCP_LIBS=	-L${LOCALBASE}/lib -lXdmcp
 
 XPROTO_CFLAGS=	-I${LOCALBASE}/include
 XPROTO_LIBS=	-L${LOCALBASE}/lib
+
+post-install:
+	@${ECHO_MSG} ''
+	@${CAT} pkg-message
+	@${ECHO_MSG} ''
 
 .include <bsd.port.mk>
