@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	abiword-extras
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.6.3
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
