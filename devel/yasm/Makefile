@@ -7,16 +7,16 @@
 #
 
 PORTNAME=	yasm
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.tortall.net/projects/yasm/releases/
 
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	A complete rewrite of the NASM assembler
 
-USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ARGS+=--disable-python --disable-python-bindings
+CONFIGURE_ENV+=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
@@ -26,9 +26,10 @@ CFLAGS:=	${CFLAGS:C/-O[0-9]//g}
 .endif
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
+CONFIGURE_ARGS+=--disable-nls --without-libiconv-prefix --without-libintl-prefix
 .else
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 .endif
 
 INSTALL_TARGET=	install install-man
