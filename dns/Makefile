@@ -103,6 +103,7 @@
     SUBDIR += posadis
     SUBDIR += poweradmin
     SUBDIR += powerdns
+    SUBDIR += powerdns-devel
     SUBDIR += powerdns-recursor
     SUBDIR += py-adns
     SUBDIR += py-dns
