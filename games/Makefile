@@ -133,6 +133,7 @@
     SUBDIR += construo
     SUBDIR += corewars
     SUBDIR += cosmo
+    SUBDIR += cosmosmash
     SUBDIR += cowsay
     SUBDIR += crack-attack
     SUBDIR += crafty
