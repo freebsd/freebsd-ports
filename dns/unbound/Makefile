@@ -7,7 +7,7 @@
 
 PORTNAME=	unbound
 PORTVERSION=	0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -43,5 +43,8 @@ post-patch:
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+post-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
