@@ -4502,7 +4502,6 @@ gtkballs	ports/games/gtkballs
 gtkbe		ports/x11-themes/gtkbe
 gtkcairo	ports/graphics/gtkcairo
 gtkchtheme	ports/x11/gtkchtheme
-gtkdatabox	ports/x11-toolkits/gtkdatabox
 gtkdatabox2	ports/x11-toolkits/gtkdatabox2
 gtkdiff		ports/textproc/gtkdiff
 gtkdps		ports/graphics/gtkdps
