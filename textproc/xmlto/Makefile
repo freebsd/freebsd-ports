@@ -43,9 +43,11 @@ XSL_DIR=	${LOCALBASE}/share/xsl/docbook
 MAN1=		xmlif.1 xmlto.1
 DOCS=		AUTHORS NEWS
 
-.if !defined(WITH_PASSIVETEX)
 post-patch:
-	${REINPLACE_CMD} -e '/format\/fo\//d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-a|-PpR|' \
+	    ${WRKSRC}/format/docbook/man
+.if !defined(WITH_PASSIVETEX)
+	@${REINPLACE_CMD} -e '/format\/fo\//d' ${WRKSRC}/Makefile.in
 .endif
 
 post-build:
