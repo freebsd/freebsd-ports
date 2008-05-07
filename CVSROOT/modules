@@ -1582,6 +1582,7 @@ corona		ports/graphics/corona
 cos		ports/java/cos
 cosmo		ports/games/cosmo
 cosmoplayer	ports/graphics/cosmoplayer
+cosmosmash	ports/games/cosmosmash
 cost		ports/textproc/cost
 cotty		ports/sysutils/cotty
 countrycodes	ports/misc/countrycodes
