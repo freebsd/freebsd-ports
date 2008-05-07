@@ -7,6 +7,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -37,67 +38,46 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN6=		wesnoth.6
 MANLANG=	"" ca_ES@valencia cs de fr gl_ES it ja nl sk sv zh_CN
 
-.if defined(WITH_CAMPAIGN) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--enable-campaign-server
-PLIST_SUB+=		CAMPAIGN:=""
-.else
-PLIST_SUB+=		CAMPAIGN:="@comment "
-.endif
+OPTIONS=	CAMPAIGN "Enable campaign server" On \
+		EDITOR	"Enable map editor"  On \
+		SERVER "Enable server" On \
+		TOOLS "Enable extra tools for artists and translators" On
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-.if defined(WITH_ZIPIOS)
-CONFIGURE_ARGS+=	--with-zipios
-LIB_DEPENDS+=	zipios.0:${PORTSDIR}/archivers/zipios++
+.if defined(WITHOUT_CAMPAIGN)
+PLIST_SUB+=		CAMPAIGN="@comment "
+.else
+CONFIGURE_ARGS+=	--enable-campaign-server
+PLIST_SUB+=		CAMPAIGN=""
 .endif
 
-.if defined(WITH_EDITOR) || defined(PACKAGE_BUILDING)
+.if defined(WITHOUT_EDITOR)
+PLIST_SUB+=		EDITOR="@comment "
+.else
 CONFIGURE_ARGS+=	--enable-editor
 MAN6+=			wesnoth_editor.6
-PLIST_SUB+=		EDITOR:=""
-.else
-PLIST_SUB+=		EDITOR:="@comment "
+PLIST_SUB+=		EDITOR=""
 .endif
 
-.if defined(WITH_SERVER) || defined(PACKAGE_BUILDING)
+.if defined(WITHOUT_SERVER)
+PLIST_SUB+=		SERVER="@comment "
+.else
 CONFIGURE_ARGS+=	--enable-server
 MAN6+=			wesnothd.6
-PLIST_SUB+=		SERVER:=""
-.else
-PLIST_SUB+=		SERVER:="@comment "
+PLIST_SUB+=		SERVER=""
 .endif
 
-.if defined(WITH_TOOLS) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--enable-tools
-PLIST_SUB+=		TOOLS:=""
+.if defined(WITHOUT_TOOLS)
+PLIST_SUB+=		TOOLS="@comment "
 .else
-PLIST_SUB+=		TOOLS:="@comment "
+CONFIGURE_ARGS+=	--enable-tools
+PLIST_SUB+=		TOOLS=""
 .endif
 
 .include <bsd.port.pre.mk>
-
-pre-everything::
-.if !defined(WITH_CAMPAIGN) || !defined(WITH_DEBUG) || !defined(WITH_EDITOR) || !defined(WITH_SERVER) || !defined(WITH_TOOLS)
-	@${ECHO_MSG} "You may specify the following on the command line:"
-	@${ECHO_MSG} " "
-.endif
-.if !defined(WITH_CAMPAIGN)
-	@${ECHO_MSG} "WITH_CAMPAIGN=yes to enable compilation of campaign server."
-.endif
-.if !defined(WITH_DEBUG)
-	@${ECHO_MSG} "WITH_DEBUG=yes to enable debugging in Wesnoth."
-.endif
-.if !defined(WITH_EDITOR)
-	@${ECHO_MSG} "WITH_EDITOR=yes to enable compilation of map editor."
-.endif
-.if !defined(WITH_SERVER)
-	@${ECHO_MSG} "WITH_SERVER=yes to enable compilation of server."
-.endif
-.if !defined(WITH_TOOLS)
-	@${ECHO_MSG} "WITH_TOOLS=yes to enable compilation of tools for translators and artists."
-.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|[$$][{]datarootdir[}]/icons|${LOCALBASE}/share/pixmaps|' \
