@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	matplotlib
-PORTVERSION=	0.90.0
-PORTREVISION=	1
+PORTVERSION=	0.91.2
 CATEGORIES=	math python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,14 +15,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	A plotting library uses a syntax familiar to matlab users
 
-BUILD_DEPENDS=	${PYNUMERIC} \
+BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_SITELIBDIR}/${PYPYTZ_EGG}:${PORTSDIR}/devel/py-pytz \
+		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${LOCALBASE}/lib/libagg.a:${PORTSDIR}/graphics/agg
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	${PYNUMERIC} \
+RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
@@ -49,12 +48,10 @@ post-patch:
 		-e s,%%USE_TCL%%,${USE_TCL}, \
 		${WRKSRC}/setupext.py
 
+.if !defined(NOPORTEXAMPLES)
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+.endif
 
-.include <bsd.port.pre.mk>
-
-PYPYTZ_EGG!=	${MAKE} -f ${PORTSDIR}/devel/py-pytz/Makefile -V PYPYTZ_EGG
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

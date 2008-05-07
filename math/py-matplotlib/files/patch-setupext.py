@@ -1,9 +1,9 @@
---- setupext.py.orig	2007-02-01 04:32:51.000000000 -0500
-+++ setupext.py	2007-12-19 21:26:33.000000000 -0500
-@@ -50,9 +50,11 @@
+--- setupext.py.orig	2007-12-24 13:23:32.000000000 -0500
++++ setupext.py	2008-02-22 12:23:24.000000000 -0500
+@@ -52,9 +52,11 @@
      'cygwin' : ['/usr/local', '/usr',],
      'darwin' : ['/sw/lib/freetype2', '/sw/lib/freetype219', '/usr/local',
-                 '/usr', '/sw'],
+                 '/usr', '/sw', '/usr/X11R6'],
 -    'freebsd4' : ['/usr/local', '/usr'],
 -    'freebsd5' : ['/usr/local', '/usr'],
 -    'freebsd6' : ['/usr/local', '/usr'],
@@ -15,15 +15,16 @@
      'sunos5' : [os.getenv('MPLIB_BASE') or '/usr/local',],
      'gnukfreebsd5' : ['/usr/local', '/usr'],
      'gnukfreebsd6' : ['/usr/local', '/usr'],
-@@ -455,9 +457,9 @@
+@@ -983,9 +985,9 @@
+             tk_lib = "/usr/local/lib"
+             tk_ver = ""
+         # Add final versions of directories and libraries to module lists
+-        module.include_dirs.extend([tcl_inc, tk_inc])
+-        module.library_dirs.extend([tcl_lib, tk_lib])
+-        module.libraries.extend(['tk' + tk_ver, 'tcl' + tk_ver])
++        module.include_dirs.extend(["%%TCL_INCLUDEDIR%%", "%%TK_INCLUDEDIR%%"])
++        module.library_dirs.extend(["%%TCL_LIBDIR%%", "%%TK_LIBDIR%%"])
++        module.libraries.extend(['tk%%USE_TK%%', 'tcl%%USE_TCL%%'])
+     
+     return message
  
-     # you're still here? ok we'll try it this way
-     o = find_tcltk() # todo: try/except
--    module.include_dirs.extend([o.tcl_inc, o.tk_inc])
-+    module.include_dirs.extend(["%%TCL_INCLUDEDIR%%", "%%TK_INCLUDEDIR%%"])
-     module.library_dirs.extend([o.tcl_lib, o.tk_lib])
--    module.libraries.extend(['tk'+o.tkv, 'tcl'+o.tkv])
-+    module.libraries.extend(['tk%%USE_TK%%', 'tcl%%USE_TCL%%'])
- 
- 
- def add_windowing_flags(module):
