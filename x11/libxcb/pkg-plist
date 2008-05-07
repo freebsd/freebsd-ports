@@ -134,4 +134,4 @@ libdata/pkgconfig/xcb-xtest.pc
 libdata/pkgconfig/xcb-xv.pc
 libdata/pkgconfig/xcb-xvmc.pc
 libdata/pkgconfig/xcb.pc
-@dirrm include/xcb
+@dirrmtry include/xcb
