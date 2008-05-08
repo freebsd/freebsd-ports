@@ -166,6 +166,7 @@ sbin/ikiwiki-mass-rebuild
 share/locale/bg/LC_MESSAGES/ikiwiki.mo
 share/locale/cs/LC_MESSAGES/ikiwiki.mo
 share/locale/da/LC_MESSAGES/ikiwiki.mo
+share/locale/de/LC_MESSAGES/ikiwiki.mo
 share/locale/es/LC_MESSAGES/ikiwiki.mo
 share/locale/fr/LC_MESSAGES/ikiwiki.mo
 share/locale/gu/LC_MESSAGES/ikiwiki.mo
