@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8950ac62-1d30-11dd-9388-0211060005df">
+    <topic>qemu -- "drive_init()" Disk Format Security Bypass</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>0.9.1_6</lt></range>
+	<range><ge>0.9.1s.20070101*</ge><lt>0.9.1s.20080302_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/30111/">
+	  <p>A vulnerability has been reported in QEMU, which can be exploited
+	    by malicious, local users to bypass certain security
+	    restrictions.</p>
+	  <p>The vulnerability is caused due to the "drive_init()" function
+	    in vl.c determining the format of a disk from data contained in
+	    the disk's header. This can be exploited by a malicious user in
+	    a guest system to e.g. read arbitrary files on the host by
+	    writing a fake header to a raw formatted disk image.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2004</cvename>
+      <url>http://secunia.com/advisories/30111/</url>
+      <mlist>http://lists.gnu.org/archive/html/qemu-devel/2008-04/msg00675.html</mlist>
+    </references>
+    <dates>
+      <discovery>2008-04-28</discovery>
+      <entry>2008-05-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ef12755-1c6c-11dd-851d-0016d325a0ed">
     <topic>swfdec -- exposure of sensitive information</topic>
     <affects>
