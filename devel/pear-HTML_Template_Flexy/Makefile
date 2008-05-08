@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Template_Flexy
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -32,6 +32,7 @@ FILES=		Flexy.php Flexy/example.ini Flexy/Element.php \
 		Flexy/Token/Method.php Flexy/Token/Processing.php \
 		Flexy/Token/Text.php Flexy/Test.php Flexy/Compiler.php \
 		Flexy/Compiler/Flexy.php Flexy/Compiler/Flexy/Tag.php \
+		Flexy/Compiler/Flexy/CustomFlexyAttributes.php \
 		Flexy/Compiler/Flexy/Flexy.php Flexy/Compiler/Standard.php \
 		Flexy/Compiler/Standard/Tag.php \
 		Flexy/Compiler/Standard/Flexy.php Flexy/Compiler/Regex.php \
