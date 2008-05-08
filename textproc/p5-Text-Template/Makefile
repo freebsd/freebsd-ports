@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Template
-PORTVERSION=	1.44
+PORTVERSION=	1.45
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://perl.plover.com/Template/ \
 		CPAN
