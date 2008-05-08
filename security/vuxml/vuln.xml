@@ -47,13 +47,13 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/29915">
 	  <p>A vulnerability has been reported in swfdec, which can be
-      exploited by malicious people to disclose sensitive
-      information.</p>
-		<p>The vulnerability is caused due to swfdec not properly
-      restricting untrusted sandboxes from reading local files, which
-      can be exploited to disclose the content of arbitrary local
-      files by e.g. tricking a user into visiting a malicious
-      website.</p>
+    	    exploited by malicious people to disclose sensitive
+    	    information.</p>
+	  <p>The vulnerability is caused due to swfdec not properly
+	    restricting untrusted sandboxes from reading local files,
+	    which can be exploited to disclose the content of arbitrary
+	    local files by e.g. tricking a user into visiting a malicious
+	    website.</p>
 	</blockquote>
       </body>
     </description>
