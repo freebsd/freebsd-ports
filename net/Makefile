@@ -590,6 +590,7 @@
     SUBDIR += p5-Parallel-MPI
     SUBDIR += p5-Parallel-Pvm
     SUBDIR += p5-PlRPC
+    SUBDIR += p5-Queue-Beanstalk
     SUBDIR += p5-REST-Application
     SUBDIR += p5-REST-Google
     SUBDIR += p5-RPC-Simple
