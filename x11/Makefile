@@ -55,6 +55,7 @@
     SUBDIR += e17-module-uptime
     SUBDIR += e17-module-weather
     SUBDIR += e17-module-winselector
+    SUBDIR += eaglemode
     SUBDIR += ebuttons
     SUBDIR += ecore-desktop
     SUBDIR += ecore-imf
