@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	8.62
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -41,7 +41,10 @@ CONFIGURE_ENV=	${MAKE_ENV} \
 		CPPFLAGS="-DUPD_SIGNAL=0 -I. -I${WRKSRC}/jasper/src/libjasper/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-compile-inits \
-		--enable-contrib
+		--enable-contrib \
+		--enable-dynamic \
+		--with-ijs \
+		--with-jasper
 XCFLAGS=	${PTHREAD_CFLAGS}
 XLDFLAGS=	${PTHREAD_LIBS}
 
@@ -210,18 +213,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g ; \
 		 s|%%GS_VERSION%%|${PORTVERSION}|g' \
 			${WRKSRC}/contrib/japanese/dmp_site.ps
-
-pre-configure:
-	${TOUCH} ${WRKSRC}/ijs/config.guess
-	cd ${WRKSRC}/expat/conftools && ${INSTALL_SCRIPT} \
-		ltmain.sh mkinstalldirs install-sh config.sub \
-		${WRKSRC}/ijs
-
-post-configure:
-	cd ${WRKSRC}/jasper && \
-		${SETENV} ${CONFIGURE_ENV} ${SH} ./configure --prefix=${PREFIX}
-	cd ${WRKSRC}/ijs && \
-		${SETENV} ${CONFIGURE_ENV} ${SH} ./configure --prefix=${PREFIX}
 
 pre-build-drivers.mak:
 	@${ECHO_CMD} 'DEVICE_DEVS= \' > ${WRKSRC}/src/drivers.mak
