@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	swfdec
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.6/
 
@@ -31,6 +30,8 @@ OPTIONS=	GSTREAMER "Support for decoding some codecs with GStreamer" off
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_GSTREAMER)
 USE_GSTREAMER=	yes
 .else
@@ -41,4 +42,5 @@ CONFIGURE_ARGS+=	--disable-gstreamer --enable-ffmpeg --enable-mad
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|SWFDEC_LIBVERSION="0:0:0"|SWFDEC_LIBVERSION="1:0:0"|' ${WRKSRC}/configure.ac
-.include <bsd.port.mk>
+
+.include <bsd.port.post.mk>
