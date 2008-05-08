@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	robodoc
-PORTVERSION=	4.99.34
+PORTVERSION=	4.99.36
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~rfsber/Robo/DistSource/
 
