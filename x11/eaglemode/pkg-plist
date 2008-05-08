@@ -1,0 +1,455 @@
+bin/eaglemode
+lib/eaglemode/README
+lib/eaglemode/bin/eaglemode
+lib/eaglemode/bin/emSendMiniIpc
+lib/eaglemode/bin/emShowStdDlg
+lib/eaglemode/doc/html/GeneralUserGuide.html
+lib/eaglemode/doc/html/InstallAndStart.html
+lib/eaglemode/doc/html/License.html
+lib/eaglemode/doc/html/SystemRequirements.html
+lib/eaglemode/doc/html/emFileManCustomization.html
+lib/eaglemode/doc/html/emFileManUserGuide.html
+lib/eaglemode/doc/html/images/ControlAndContent.png
+lib/eaglemode/doc/html/images/MouseFunc1.png
+lib/eaglemode/doc/html/images/MouseFunc2.png
+lib/eaglemode/doc/html/images/MouseFunc3.png
+lib/eaglemode/doc/html/images/emFileManOverview.png
+lib/eaglemode/doc/html/index.html
+lib/eaglemode/doc/ps/GeneralUserGuide.ps
+lib/eaglemode/doc/ps/InstallAndStart.ps
+lib/eaglemode/doc/ps/License.ps
+lib/eaglemode/doc/ps/SystemRequirements.ps
+lib/eaglemode/doc/ps/emFileManCustomization.ps
+lib/eaglemode/doc/ps/emFileManUserGuide.ps
+lib/eaglemode/doc/ps/index.ps
+lib/eaglemode/eaglemode.sh
+lib/eaglemode/etc/emCore/FpPlugins/README
+lib/eaglemode/etc/emCore/FpPlugins/SilChess.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emAv_xine.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emBmp.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emClock.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emDir.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emDirStat.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emFileLink.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emFractal.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emGif.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emIlbm.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emJpeg.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emMines.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emPcx.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emPng.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emPnm.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emPs.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emRas.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emRgb.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTestPanel.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emText.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emText_Alt.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTga.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTiff.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_abiword.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_archives.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_dvi.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_eps.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_fig.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_g3.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_html.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_pdf.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_pov.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_rpm.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_svg.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_wmf.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_xwd.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTreeDump.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emXbm.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emXpm.emFpPlugin
+lib/eaglemode/etc/emFileMan/Commands/Advanced.props
+lib/eaglemode/etc/emFileMan/Commands/Advanced/CopyAs.pl
+lib/eaglemode/etc/emFileMan/Commands/Advanced/Exchange.pl
+lib/eaglemode/etc/emFileMan/Commands/Advanced/FileInfo.pl
+lib/eaglemode/etc/emFileMan/Commands/Advanced/MoveAs.pl
+lib/eaglemode/etc/emFileMan/Commands/Advanced/SelectRecursively.pl
+lib/eaglemode/etc/emFileMan/Commands/Advanced/SymLink.pl
+lib/eaglemode/etc/emFileMan/Commands/Advanced/chmod.pl
+lib/eaglemode/etc/emFileMan/Commands/Advanced/chown.pl
+lib/eaglemode/etc/emFileMan/Commands/Advanced/touch.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive.props
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands.props
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/Pack.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/Pack7z.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackAr.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackArc.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackArj.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackBz2.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackGz.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackLzh.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackLzo.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackTar.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackTarLzo.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackZoo.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MoreUnpackCommands.props
+lib/eaglemode/etc/emFileMan/Commands/Archive/MoreUnpackCommands/UnpackHere.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MoreUnpackCommands/UnpackNewDir.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/PackTarBz2.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/PackTarGz.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/PackZip.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/Unpack.pl
+lib/eaglemode/etc/emFileMan/Commands/AudioVideo.props
+lib/eaglemode/etc/emFileMan/Commands/AudioVideo/Totem.pl
+lib/eaglemode/etc/emFileMan/Commands/AudioVideo/XMMS.pl
+lib/eaglemode/etc/emFileMan/Commands/AudioVideo/xine.pl
+lib/eaglemode/etc/emFileMan/Commands/Clone.pl
+lib/eaglemode/etc/emFileMan/Commands/Copy.pl
+lib/eaglemode/etc/emFileMan/Commands/Delete.pl
+lib/eaglemode/etc/emFileMan/Commands/Graphics.props
+lib/eaglemode/etc/emFileMan/Commands/Graphics/Inkscape.pl
+lib/eaglemode/etc/emFileMan/Commands/Graphics/TheGIMP.pl
+lib/eaglemode/etc/emFileMan/Commands/Graphics/Xfig.pl
+lib/eaglemode/etc/emFileMan/Commands/Move.pl
+lib/eaglemode/etc/emFileMan/Commands/NewDir.pl
+lib/eaglemode/etc/emFileMan/Commands/NewFile.pl
+lib/eaglemode/etc/emFileMan/Commands/PlainText.props
+lib/eaglemode/etc/emFileMan/Commands/PlainText/KWrite.pl
+lib/eaglemode/etc/emFileMan/Commands/PlainText/Kate.pl
+lib/eaglemode/etc/emFileMan/Commands/PlainText/Meld.pl
+lib/eaglemode/etc/emFileMan/Commands/PlainText/NEdit.pl
+lib/eaglemode/etc/emFileMan/Commands/PlainText/diff.pl
+lib/eaglemode/etc/emFileMan/Commands/PlainText/gedit.pl
+lib/eaglemode/etc/emFileMan/Commands/PlainText/grep.props
+lib/eaglemode/etc/emFileMan/Commands/PlainText/grep/grep.pl
+lib/eaglemode/etc/emFileMan/Commands/PlainText/grep/grepi.pl
+lib/eaglemode/etc/emFileMan/Commands/PlainText/vi.pl
+lib/eaglemode/etc/emFileMan/Commands/PlainText/wc.pl
+lib/eaglemode/etc/emFileMan/Commands/Rename.pl
+lib/eaglemode/etc/emFileMan/Commands/Run.props
+lib/eaglemode/etc/emFileMan/Commands/Run/Run.pl
+lib/eaglemode/etc/emFileMan/Commands/Run/RunInTerminal.pl
+lib/eaglemode/etc/emFileMan/Commands/Run/RunOnSource.pl
+lib/eaglemode/etc/emFileMan/Commands/Run/RunOnSourceInTerminal.pl
+lib/eaglemode/etc/emFileMan/Commands/StructuredText.props
+lib/eaglemode/etc/emFileMan/Commands/StructuredText/AbiWord.pl
+lib/eaglemode/etc/emFileMan/Commands/StructuredText/Evince.pl
+lib/eaglemode/etc/emFileMan/Commands/StructuredText/Iceweasel.pl
+lib/eaglemode/etc/emFileMan/Commands/StructuredText/Konqueror.pl
+lib/eaglemode/etc/emFileMan/Commands/StructuredText/OpenOfficeOrg.pl
+lib/eaglemode/etc/emFileMan/Commands/StructuredText/Xpdf.pl
+lib/eaglemode/etc/emFileMan/Commands/Terminal.pl
+lib/eaglemode/etc/emMain/CreateInitialBookmarks.pl
+lib/eaglemode/etc/emMain/VcFiles/AboutEagleMode.emFileLink
+lib/eaglemode/etc/emMain/VcFiles/Chess1.silchess
+lib/eaglemode/etc/emMain/VcFiles/Clock1.emClock
+lib/eaglemode/etc/emMain/VcFiles/Clock2.emClock
+lib/eaglemode/etc/emMain/VcFiles/DebugTreeDump.emFileLink
+lib/eaglemode/etc/emMain/VcFiles/DebugTreeDump.txt
+lib/eaglemode/etc/emMain/VcFiles/FS.emFileLink
+lib/eaglemode/etc/emMain/VcFiles/GeneralUserGuide.emFileLink
+lib/eaglemode/etc/emMain/VcFiles/InstallAndStart.emFileLink
+lib/eaglemode/etc/emMain/VcFiles/Julia1.emFractal
+lib/eaglemode/etc/emMain/VcFiles/Julia2.emFractal
+lib/eaglemode/etc/emMain/VcFiles/Julia3.emFractal
+lib/eaglemode/etc/emMain/VcFiles/Julia4.emFractal
+lib/eaglemode/etc/emMain/VcFiles/Julia5.emFractal
+lib/eaglemode/etc/emMain/VcFiles/Julia6.emFractal
+lib/eaglemode/etc/emMain/VcFiles/Julia7.emFractal
+lib/eaglemode/etc/emMain/VcFiles/Julia8.emFractal
+lib/eaglemode/etc/emMain/VcFiles/Julia9.emFractal
+lib/eaglemode/etc/emMain/VcFiles/License.emFileLink
+lib/eaglemode/etc/emMain/VcFiles/Mandelbrot.emFractal
+lib/eaglemode/etc/emMain/VcFiles/Mines1.emMines
+lib/eaglemode/etc/emMain/VcFiles/MultiJulia.emFractal
+lib/eaglemode/etc/emMain/VcFiles/SystemRequirements.emFileLink
+lib/eaglemode/etc/emMain/VcFiles/TestPanel.emTestPanel
+lib/eaglemode/etc/emMain/VcFiles/emFileManCustomization.emFileLink
+lib/eaglemode/etc/emMain/VcFiles/emFileManUserGuide.emFileLink
+lib/eaglemode/etc/emMain/VcItems/AboutEagleMode.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Chess1.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Clock1.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Clock2.emVcItem
+lib/eaglemode/etc/emMain/VcItems/DebugTreeDump.emVcItem
+lib/eaglemode/etc/emMain/VcItems/DebugTreeDumpText.emVcItem
+lib/eaglemode/etc/emMain/VcItems/FS.emVcItem
+lib/eaglemode/etc/emMain/VcItems/GeneralUserGuide.emVcItem
+lib/eaglemode/etc/emMain/VcItems/InstallAndStart.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Julia1.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Julia2.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Julia3.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Julia4.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Julia5.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Julia6.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Julia7.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Julia8.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Julia9.emVcItem
+lib/eaglemode/etc/emMain/VcItems/License.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Mandelbrot.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Mines1.emVcItem
+lib/eaglemode/etc/emMain/VcItems/MultiJulia.emVcItem
+lib/eaglemode/etc/emMain/VcItems/SystemRequirements.emVcItem
+lib/eaglemode/etc/emMain/VcItems/TestPanel.emVcItem
+lib/eaglemode/etc/emMain/VcItems/emFileManCustomization.emVcItem
+lib/eaglemode/etc/emMain/VcItems/emFileManUserGuide.emVcItem
+lib/eaglemode/include/SilChess/SilChessControlPanel.h
+lib/eaglemode/include/SilChess/SilChessMachine.h
+lib/eaglemode/include/SilChess/SilChessModel.h
+lib/eaglemode/include/SilChess/SilChessPanel.h
+lib/eaglemode/include/SilChess/SilChessRayTracer.h
+lib/eaglemode/include/emAv/emAvClient.h
+lib/eaglemode/include/emAv/emAvFileControlPanel.h
+lib/eaglemode/include/emAv/emAvFileModel.h
+lib/eaglemode/include/emAv/emAvFilePanel.h
+lib/eaglemode/include/emAv/emAvServerModel.h
+lib/eaglemode/include/emBmp/emBmpImageFileModel.h
+lib/eaglemode/include/emClock/emAlarmClockModel.h
+lib/eaglemode/include/emClock/emAlarmClockPanel.h
+lib/eaglemode/include/emClock/emClockDatePanel.h
+lib/eaglemode/include/emClock/emClockFileModel.h
+lib/eaglemode/include/emClock/emClockHandsPanel.h
+lib/eaglemode/include/emClock/emClockPanel.h
+lib/eaglemode/include/emClock/emStopwatchPanel.h
+lib/eaglemode/include/emClock/emTimeZonesModel.h
+lib/eaglemode/include/emClock/emWorldClockPanel.h
+lib/eaglemode/include/emCore/emATMatrix.h
+lib/eaglemode/include/emCore/emArray.h
+lib/eaglemode/include/emCore/emAvlTree.h
+lib/eaglemode/include/emCore/emClipboard.h
+lib/eaglemode/include/emCore/emColor.h
+lib/eaglemode/include/emCore/emConfigModel.h
+lib/eaglemode/include/emCore/emContext.h
+lib/eaglemode/include/emCore/emCoreConfig.h
+lib/eaglemode/include/emCore/emCrossPtr.h
+lib/eaglemode/include/emCore/emCursor.h
+lib/eaglemode/include/emCore/emEngine.h
+lib/eaglemode/include/emCore/emErrorPanel.h
+lib/eaglemode/include/emCore/emFileModel.h
+lib/eaglemode/include/emCore/emFilePanel.h
+lib/eaglemode/include/emCore/emFpPlugin.h
+lib/eaglemode/include/emCore/emGUIFramework.h
+lib/eaglemode/include/emCore/emImage.h
+lib/eaglemode/include/emCore/emImageFile.h
+lib/eaglemode/include/emCore/emInput.h
+lib/eaglemode/include/emCore/emInstallInfo.h
+lib/eaglemode/include/emCore/emList.h
+lib/eaglemode/include/emCore/emMiniIpc.h
+lib/eaglemode/include/emCore/emModel.h
+lib/eaglemode/include/emCore/emPainter.h
+lib/eaglemode/include/emCore/emPanel.h
+lib/eaglemode/include/emCore/emPriSchedAgent.h
+lib/eaglemode/include/emCore/emProcess.h
+lib/eaglemode/include/emCore/emRec.h
+lib/eaglemode/include/emCore/emRecFileModel.h
+lib/eaglemode/include/emCore/emRef.h
+lib/eaglemode/include/emCore/emRes.h
+lib/eaglemode/include/emCore/emScheduler.h
+lib/eaglemode/include/emCore/emScreen.h
+lib/eaglemode/include/emCore/emSigModel.h
+lib/eaglemode/include/emCore/emSignal.h
+lib/eaglemode/include/emCore/emStd1.h
+lib/eaglemode/include/emCore/emStd2.h
+lib/eaglemode/include/emCore/emString.h
+lib/eaglemode/include/emCore/emSubViewPanel.h
+lib/eaglemode/include/emCore/emTimer.h
+lib/eaglemode/include/emCore/emTmpFile.h
+lib/eaglemode/include/emCore/emToolkit.h
+lib/eaglemode/include/emCore/emVarModel.h
+lib/eaglemode/include/emCore/emVarSigModel.h
+lib/eaglemode/include/emCore/emView.h
+lib/eaglemode/include/emCore/emWindow.h
+lib/eaglemode/include/emFileMan/emDirEntry.h
+lib/eaglemode/include/emFileMan/emDirEntryAltPanel.h
+lib/eaglemode/include/emFileMan/emDirEntryPanel.h
+lib/eaglemode/include/emFileMan/emDirModel.h
+lib/eaglemode/include/emFileMan/emDirPanel.h
+lib/eaglemode/include/emFileMan/emDirStatPanel.h
+lib/eaglemode/include/emFileMan/emFileLinkModel.h
+lib/eaglemode/include/emFileMan/emFileLinkPanel.h
+lib/eaglemode/include/emFileMan/emFileManConfig.h
+lib/eaglemode/include/emFileMan/emFileManControlPanel.h
+lib/eaglemode/include/emFileMan/emFileManModel.h
+lib/eaglemode/include/emFileMan/emFileManSelInfoPanel.h
+lib/eaglemode/include/emFileMan/emFileManViewConfig.h
+lib/eaglemode/include/emFractal/emFractalFileModel.h
+lib/eaglemode/include/emFractal/emFractalFilePanel.h
+lib/eaglemode/include/emGif/emGifFileModel.h
+lib/eaglemode/include/emGif/emGifFilePanel.h
+lib/eaglemode/include/emIlbm/emIlbmImageFileModel.h
+lib/eaglemode/include/emJpeg/emJpegImageFileModel.h
+lib/eaglemode/include/emMain/emBookmarks.h
+lib/eaglemode/include/emMain/emCoreConfigPanel.h
+lib/eaglemode/include/emMain/emMainContentPanel.h
+lib/eaglemode/include/emMain/emMainPanel.h
+lib/eaglemode/include/emMain/emMainWindow.h
+lib/eaglemode/include/emMain/emStarFieldPanel.h
+lib/eaglemode/include/emMain/emVirtualCosmos.h
+lib/eaglemode/include/emMines/emMinesControlPanel.h
+lib/eaglemode/include/emMines/emMinesFileModel.h
+lib/eaglemode/include/emMines/emMinesPanel.h
+lib/eaglemode/include/emPcx/emPcxImageFileModel.h
+lib/eaglemode/include/emPng/emPngImageFileModel.h
+lib/eaglemode/include/emPnm/emPnmImageFileModel.h
+lib/eaglemode/include/emPs/emPsDocument.h
+lib/eaglemode/include/emPs/emPsDocumentPanel.h
+lib/eaglemode/include/emPs/emPsFileModel.h
+lib/eaglemode/include/emPs/emPsFilePanel.h
+lib/eaglemode/include/emPs/emPsPagePanel.h
+lib/eaglemode/include/emPs/emPsRenderer.h
+lib/eaglemode/include/emRas/emRasImageFileModel.h
+lib/eaglemode/include/emRgb/emRgbImageFileModel.h
+lib/eaglemode/include/emTestPanel/emTestPanel.h
+lib/eaglemode/include/emText/emTextFileModel.h
+lib/eaglemode/include/emText/emTextFilePanel.h
+lib/eaglemode/include/emTga/emTgaImageFileModel.h
+lib/eaglemode/include/emTiff/emTiffImageFileModel.h
+lib/eaglemode/include/emTmpConv/emTmpConvFramePanel.h
+lib/eaglemode/include/emTmpConv/emTmpConvModel.h
+lib/eaglemode/include/emTmpConv/emTmpConvModelClient.h
+lib/eaglemode/include/emTmpConv/emTmpConvPanel.h
+lib/eaglemode/include/emTreeDump/emTreeDumpFileModel.h
+lib/eaglemode/include/emTreeDump/emTreeDumpFilePanel.h
+lib/eaglemode/include/emTreeDump/emTreeDumpRec.h
+lib/eaglemode/include/emTreeDump/emTreeDumpRecPanel.h
+lib/eaglemode/include/emTreeDump/emTreeDumpUtil.h
+lib/eaglemode/include/emWnds/emWndsClipboard.h
+lib/eaglemode/include/emWnds/emWndsScheduler.h
+lib/eaglemode/include/emWnds/emWndsScreen.h
+lib/eaglemode/include/emWnds/emWndsWindowPort.h
+lib/eaglemode/include/emX11/emX11Clipboard.h
+lib/eaglemode/include/emX11/emX11Screen.h
+lib/eaglemode/include/emX11/emX11WindowPort.h
+lib/eaglemode/include/emXbm/emXbmImageFileModel.h
+lib/eaglemode/include/emXpm/emXpmImageFileModel.h
+%%EMAV%%lib/eaglemode/lib/emAv/emAvServerProc_xine
+lib/eaglemode/lib/emTmpConv/emTmpConvProc
+lib/eaglemode/lib/libSilChess.so
+%%EMAV%%lib/eaglemode/lib/libemAv.so
+lib/eaglemode/lib/libemBmp.so
+lib/eaglemode/lib/libemClock.so
+lib/eaglemode/lib/libemCore.so
+lib/eaglemode/lib/libemFileMan.so
+lib/eaglemode/lib/libemFractal.so
+lib/eaglemode/lib/libemGif.so
+lib/eaglemode/lib/libemIlbm.so
+lib/eaglemode/lib/libemJpeg.so
+lib/eaglemode/lib/libemMines.so
+lib/eaglemode/lib/libemPcx.so
+lib/eaglemode/lib/libemPng.so
+lib/eaglemode/lib/libemPnm.so
+lib/eaglemode/lib/libemPs.so
+lib/eaglemode/lib/libemRas.so
+lib/eaglemode/lib/libemRgb.so
+lib/eaglemode/lib/libemTestPanel.so
+lib/eaglemode/lib/libemText.so
+lib/eaglemode/lib/libemTga.so
+lib/eaglemode/lib/libemTiff.so
+lib/eaglemode/lib/libemTmpConv.so
+lib/eaglemode/lib/libemTreeDump.so
+lib/eaglemode/lib/libemX11.so
+lib/eaglemode/lib/libemXbm.so
+lib/eaglemode/lib/libemXpm.so
+lib/eaglemode/res/emAv/Masks.tga
+lib/eaglemode/res/emAv/Notes.tga
+lib/eaglemode/res/emAv/Pause.tga
+lib/eaglemode/res/emAv/Play.tga
+lib/eaglemode/res/emAv/PlayFast.tga
+lib/eaglemode/res/emAv/PlaySlow.tga
+lib/eaglemode/res/emAv/Stop.tga
+lib/eaglemode/res/emCore/Button.tga
+lib/eaglemode/res/emCore/ButtonBorder.tga
+lib/eaglemode/res/emCore/ButtonChecked.tga
+lib/eaglemode/res/emCore/ButtonPressed.tga
+lib/eaglemode/res/emCore/CheckBox.tga
+lib/eaglemode/res/emCore/CheckBoxPressed.tga
+lib/eaglemode/res/emCore/CustomRectBorder.tga
+lib/eaglemode/res/emCore/Font.tga
+lib/eaglemode/res/emCore/GroupBorder.tga
+lib/eaglemode/res/emCore/GroupInnerBorder.tga
+lib/eaglemode/res/emCore/IOField.tga
+lib/eaglemode/res/emCore/PopupBorder.tga
+lib/eaglemode/res/emCore/RadioBox.tga
+lib/eaglemode/res/emCore/RadioBoxPressed.tga
+lib/eaglemode/res/emCore/Splitter.tga
+lib/eaglemode/res/emCore/SplitterPressed.tga
+lib/eaglemode/res/emCore/Tunnel.tga
+lib/eaglemode/res/emFileMan/images/InnerBorder.tga
+lib/eaglemode/res/emFileMan/images/OuterBorder.tga
+lib/eaglemode/res/emFileMan/scripts/cmd-util.pl
+lib/eaglemode/res/emFileMan/scripts/emArch.sh
+lib/eaglemode/res/emMain/ControlEdges.tga
+lib/eaglemode/res/emMain/Sky.tga
+lib/eaglemode/res/emMain/Slider.tga
+lib/eaglemode/res/emMain/Star.tga
+lib/eaglemode/res/emMain/VcItemInnerBorder.tga
+lib/eaglemode/res/emMain/VcItemOuterBorder.tga
+lib/eaglemode/res/emPs/rendering.tga
+lib/eaglemode/res/emPs/waiting.tga
+lib/eaglemode/res/icons/eaglemode.ico
+lib/eaglemode/res/icons/eaglemode.tga
+lib/eaglemode/res/icons/eaglemode32.png
+lib/eaglemode/res/icons/eaglemode32.tga
+lib/eaglemode/res/icons/eaglemode48.png
+lib/eaglemode/res/icons/eaglemode48.tga
+lib/eaglemode/res/icons/em-dialog48.tga
+lib/eaglemode/res/icons/em-error-unknown-icon.tga
+@dirrm lib/eaglemode/res/icons
+@dirrm lib/eaglemode/res/emPs
+@dirrm lib/eaglemode/res/emMain
+@dirrm lib/eaglemode/res/emFileMan/scripts
+@dirrm lib/eaglemode/res/emFileMan/images
+@dirrm lib/eaglemode/res/emFileMan
+@dirrm lib/eaglemode/res/emCore
+@dirrm lib/eaglemode/res/emAv
+@dirrm lib/eaglemode/res
+@dirrm lib/eaglemode/lib/emTmpConv
+%%EMAV%%@dirrm lib/eaglemode/lib/emAv
+@dirrm lib/eaglemode/lib
+@dirrm lib/eaglemode/include/emXpm
+@dirrm lib/eaglemode/include/emXbm
+@dirrm lib/eaglemode/include/emX11
+@dirrm lib/eaglemode/include/emWnds
+@dirrm lib/eaglemode/include/emTreeDump
+@dirrm lib/eaglemode/include/emTmpConv
+@dirrm lib/eaglemode/include/emTiff
+@dirrm lib/eaglemode/include/emTga
+@dirrm lib/eaglemode/include/emText
+@dirrm lib/eaglemode/include/emTestPanel
+@dirrm lib/eaglemode/include/emRgb
+@dirrm lib/eaglemode/include/emRas
+@dirrm lib/eaglemode/include/emPs
+@dirrm lib/eaglemode/include/emPnm
+@dirrm lib/eaglemode/include/emPng
+@dirrm lib/eaglemode/include/emPcx
+@dirrm lib/eaglemode/include/emMines
+@dirrm lib/eaglemode/include/emMain
+@dirrm lib/eaglemode/include/emJpeg
+@dirrm lib/eaglemode/include/emIlbm
+@dirrm lib/eaglemode/include/emGif
+@dirrm lib/eaglemode/include/emFractal
+@dirrm lib/eaglemode/include/emFileMan
+@dirrm lib/eaglemode/include/emCore
+@dirrm lib/eaglemode/include/emClock
+@dirrm lib/eaglemode/include/emBmp
+@dirrm lib/eaglemode/include/emAv
+@dirrm lib/eaglemode/include/SilChess
+@dirrm lib/eaglemode/include
+@dirrm lib/eaglemode/etc/emMain/VcItems
+@dirrm lib/eaglemode/etc/emMain/VcFiles
+@dirrm lib/eaglemode/etc/emMain
+@dirrm lib/eaglemode/etc/emFileMan/Commands/StructuredText
+@dirrm lib/eaglemode/etc/emFileMan/Commands/Run
+@dirrm lib/eaglemode/etc/emFileMan/Commands/PlainText/grep
+@dirrm lib/eaglemode/etc/emFileMan/Commands/PlainText
+@dirrm lib/eaglemode/etc/emFileMan/Commands/Graphics
+@dirrm lib/eaglemode/etc/emFileMan/Commands/AudioVideo
+@dirrm lib/eaglemode/etc/emFileMan/Commands/Archive/MoreUnpackCommands
+@dirrm lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands
+@dirrm lib/eaglemode/etc/emFileMan/Commands/Archive
+@dirrm lib/eaglemode/etc/emFileMan/Commands/Advanced
+@dirrm lib/eaglemode/etc/emFileMan/Commands
+@dirrm lib/eaglemode/etc/emFileMan
+@dirrm lib/eaglemode/etc/emCore/FpPlugins
+@dirrm lib/eaglemode/etc/emCore
+@dirrm lib/eaglemode/etc
+@dirrm lib/eaglemode/doc/ps
+@dirrm lib/eaglemode/doc/html/images
+@dirrm lib/eaglemode/doc/html
+@dirrm lib/eaglemode/doc
+@dirrm lib/eaglemode/bin
+@dirrm lib/eaglemode
