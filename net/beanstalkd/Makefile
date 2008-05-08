@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	beanstalkd
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	net
 MASTER_SITES=	http://xph.us/software/beanstalkd/rel/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast, distributed, in-memory workqueue service
 
-LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
 
 USE_RC_SUBR=	beanstalkd
 USE_GMAKE=	yes
