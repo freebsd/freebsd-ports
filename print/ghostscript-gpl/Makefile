@@ -126,7 +126,7 @@ LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 	|| defined(WITH_GS_x11rg16x) \
 	|| defined(WITH_GS_x11rg32x)
 . if defined(WITHOUT_X11)
-. warning drivers incompatible with WITHDOUT_X11 will be removed automatically
+. warning drivers incompatible with WITHOUT_X11 will be removed automatically
 . undef WITH_GS_x11
 . undef WITH_GS_x11alpha
 . undef WITH_GS_x11cmyk
@@ -151,7 +151,7 @@ CONFIGURE_ARGS+=--without-x
 .if defined(WITH_GS_oprp) \
 	|| defined(WITH_GS_opvp)
 . if defined(WITHOUT_ICONV)
-. warning drivers incompatible with WITHDOUT_ICONV will be removed automatically
+. warning drivers incompatible with WITHOUT_ICONV will be removed automatically
 . undef WITH_GS_oprp
 . undef WITH_GS_opvp
 . else
