@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYNUMERIC} \
 
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOME=	gnomeprefix gnomehack gtkhtml
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

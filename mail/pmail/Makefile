@@ -14,12 +14,9 @@ MASTER_SITES=	# previous mastersites disappeared in 2001 and 2002
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME/python email client
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
-
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	yes
+USE_GNOME=	gnomeprefix gnomehack pygnome
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
