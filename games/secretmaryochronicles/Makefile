@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	secretmaryochronicles
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	smclone
-DISTFILES=	smc-${PORTVERSION}
+DISTNAME=	smc-${PORTVERSION}
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Secret Maryo Chronicles two-dimensional platform game
@@ -24,13 +23,11 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer ttf
-USE_GL=		yes
+USE_GL=		gl glu
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
-
-WRKSRC=		${WRKDIR}/${DISTFILES}
 
 DATADIR=	${PREFIX}/share/smc
 
