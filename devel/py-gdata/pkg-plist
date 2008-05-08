@@ -34,6 +34,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/codesearch/service.py
 %%PYTHON_SITELIBDIR%%/gdata/codesearch/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/codesearch/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/contacts/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/contacts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/contacts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/contacts/service.py
+%%PYTHON_SITELIBDIR%%/gdata/contacts/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/contacts/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.pyo
@@ -70,12 +76,16 @@
 %%PYTHON_SITELIBDIR%%/gdata/test_data.py
 %%PYTHON_SITELIBDIR%%/gdata/test_data.pyc
 %%PYTHON_SITELIBDIR%%/gdata/test_data.pyo
+%%PYTHON_SITELIBDIR%%/gdata/urlfetch.py
+%%PYTHON_SITELIBDIR%%/gdata/urlfetch.pyc
+%%PYTHON_SITELIBDIR%%/gdata/urlfetch.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/spreadsheet
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/photos
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/media
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/geo
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/exif
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/docs
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/contacts
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/codesearch
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/base
