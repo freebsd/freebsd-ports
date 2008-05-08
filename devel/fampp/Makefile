@@ -14,9 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper for fam from SGI
 
-# This isn't required to utilize full functionality
-#USE_GNOME=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_FAM=	yes
