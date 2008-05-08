@@ -2400,6 +2400,7 @@ e4graph		ports/devel/e4graph
 e93		ports/editors/e93
 e_dbus		ports/devel/e_dbus
 eaccelerator	ports/www/eaccelerator
+eaglemode	ports/x11/eaglemode
 earthview	ports/misc/earthview
 easydiff	ports/textproc/easydiff
 easygtk		ports/x11-toolkits/easygtk
