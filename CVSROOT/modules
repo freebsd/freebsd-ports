@@ -11162,6 +11162,7 @@ p5-Project-Gantt	ports/devel/p5-Project-Gantt
 p5-Pugs-Compiler-Rule	ports/lang/p5-Pugs-Compiler-Rule
 p5-Qmail-Envelope	ports/mail/p5-Qmail-Envelope
 p5-Quantum-Superpositions	ports/lang/p5-Quantum-Superpositions
+p5-Queue-Beanstalk	ports/net/p5-Queue-Beanstalk
 p5-Quota	ports/sysutils/p5-Quota
 p5-RADIUS-UserFile	ports/textproc/p5-RADIUS-UserFile
 p5-RDF-Core	ports/textproc/p5-RDF-Core
