@@ -66,7 +66,11 @@ lib/libfontforge.so.1
 lib/libgdraw.a
 lib/libgdraw.la
 lib/libgdraw.so
-lib/libgdraw.so.3
+lib/libgdraw.so.4
+lib/libgioftp.a
+lib/libgioftp.la
+lib/libgioftp.so
+lib/libgioftp.so.1
 lib/libgutils.a
 lib/libgutils.la
 lib/libgutils.so
@@ -165,6 +169,8 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/HotKeys.html
 %%PORTDOCS%%%%DOCSDIR%%/IndexFS.html
 %%PORTDOCS%%%%DOCSDIR%%/IndexFrame.html
+%%PORTDOCS%%%%DOCSDIR%%/InsertTextDlg.html
+%%PORTDOCS%%%%DOCSDIR%%/InsertTxtDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/ItalicCompCaslon.png
 %%PORTDOCS%%%%DOCSDIR%%/ItalicCompGalliard.png
 %%PORTDOCS%%%%DOCSDIR%%/KernPairs.png
@@ -203,6 +209,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/OFL-vi.html
 %%PORTDOCS%%%%DOCSDIR%%/OutlineInline.png
 %%PORTDOCS%%%%DOCSDIR%%/PageSetup.png
+%%PORTDOCS%%%%DOCSDIR%%/PathToBind.png
 %%PORTDOCS%%%%DOCSDIR%%/PfaEdit-TeX.html
 %%PORTDOCS%%%%DOCSDIR%%/PfaEdits.gif
 %%PORTDOCS%%%%DOCSDIR%%/PoV.png
@@ -236,8 +243,12 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/TTStack.png
 %%PORTDOCS%%%%DOCSDIR%%/TTStorage.png
 %%PORTDOCS%%%%DOCSDIR%%/TTgloss.png
+%%PORTDOCS%%%%DOCSDIR%%/TextBoundDistortedGlyphs.png
+%%PORTDOCS%%%%DOCSDIR%%/TextBoundUnitaryGlyph.png
+%%PORTDOCS%%%%DOCSDIR%%/TextUnbound.png
 %%PORTDOCS%%%%DOCSDIR%%/Tile.png
 %%PORTDOCS%%%%DOCSDIR%%/TilePath.png
+%%PORTDOCS%%%%DOCSDIR%%/TilePattern.png
 %%PORTDOCS%%%%DOCSDIR%%/TilePatternDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/TiledPattern.png
 %%PORTDOCS%%%%DOCSDIR%%/TiledPattern45.png
@@ -625,6 +636,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/o3.png
 %%PORTDOCS%%%%DOCSDIR%%/o4.png
 %%PORTDOCS%%%%DOCSDIR%%/o5.png
+%%PORTDOCS%%%%DOCSDIR%%/oflib.html
 %%PORTDOCS%%%%DOCSDIR%%/oldchangelog.html
 %%PORTDOCS%%%%DOCSDIR%%/openfont.png
 %%PORTDOCS%%%%DOCSDIR%%/otherlinks.html
