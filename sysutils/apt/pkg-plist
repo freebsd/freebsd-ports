@@ -22,6 +22,7 @@ libexec/apt/methods/ftp
 libexec/apt/methods/gpgv
 libexec/apt/methods/gzip
 libexec/apt/methods/http
+libexec/apt/methods/https
 libexec/apt/methods/rred
 libexec/apt/methods/rsh
 libexec/apt/methods/ssh
