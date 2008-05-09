@@ -6,6 +6,7 @@
 
 PORTNAME=	apt
 PORTVERSION=	0.6.46.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	apt_0.6.46.4-0.1
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		dpkg:${PORTSDIR}/archivers/dpkg \
 		gpg:${PORTSDIR}/security/gnupg1
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -40,6 +42,7 @@ APTDIR?=	/var/db/apt
 PLIST_SUB+=	APTDIR=${APTDIR:C,^/,,}
 
 post-patch:
+	${CP} ${FILESDIR}/https.cc ${FILESDIR}/https.h ${WRKSRC}/methods/
 	${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' -e \
 	's|@APTDIR@|${APTDIR}|g' -e 's|@DPKGDIR@|${DPKGDIR}|g' -e \
 	's|@LOCALBASE@|${LOCALBASE}|g' \
@@ -76,6 +79,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/methods/gpgv ${PREFIX}/libexec/apt/methods
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/methods/gzip ${PREFIX}/libexec/apt/methods
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/methods/http ${PREFIX}/libexec/apt/methods
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/methods/https ${PREFIX}/libexec/apt/methods
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/methods/rred ${PREFIX}/libexec/apt/methods
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/methods/rsh ${PREFIX}/libexec/apt/methods
 	(cd ${PREFIX}/libexec/apt/methods; ${LN} -sf rsh ssh; ${LN} -sf gzip bzip2)
