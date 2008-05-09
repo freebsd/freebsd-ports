@@ -7,6 +7,7 @@
 
 PKGNAMESUFFIX=	-sguil
 COMMENT=	An output system for Snort (patched for sguil)
+PORTREVISION=	1
 
 LIB_DEPENDS+=	tcl84.1:${PORTSDIR}/lang/tcl84
 
