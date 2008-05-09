@@ -145,10 +145,9 @@ PLIST_SUB+=	SNMP="@comment "
 .endif
 
 .if defined(WITH_XMMS)
-USE_GNOME+=	_glib20
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 CONFIGURE_ARGS+=--enable-xmms
-CFLAGS+=	`pkg-config glib --cflags`
+CFLAGS+=	`xmms-config --cflags`
 PLIST_SUB+=	XMMS=""
 .else
 CONFIGURE_ARGS+=--disable-xmms
