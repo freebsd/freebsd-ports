@@ -7,7 +7,7 @@
 
 PORTNAME=	paq
 DISTVERSION=	8o9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cs.fit.edu/~mmahoney/compression/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	A family of archivers with extremely high compression ratios
 LPAQ=		lpaq8
 LPQ=		lpq1
 PAQ9=		paq9a
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LPAQ}${EXTRACT_SUFX} ${LPQ}${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LPAQ}${EXTRACT_SUFX} ${LPQ}v2${EXTRACT_SUFX} \
 		${PAQ9}${EXTRACT_SUFX}
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
@@ -113,6 +113,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/readme.txt ${DOCSDIR}/${LPAQ}_readme.txt
 .endif
 .endif
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
