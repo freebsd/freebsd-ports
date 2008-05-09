@@ -7,6 +7,7 @@
 
 PORTNAME=	see
 PORTVERSION=	3.0.1376
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://www.evolane.com/download/mirror/etcl/ \
 		http://www.evolane.fr/download/mirror/etcl/
@@ -17,7 +18,8 @@ COMMENT=	Simple ECMAScript Engine (SEE)
 
 OPTIONS=	GC "Use Boehm-Weiser garbage collection package" on \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
-		SEE_DEBUG "Internal SEE library debugging" off
+		SEE_DEBUG "Internal SEE library debugging" off \
+		MULTIPLE_THREADS "Enable thread-safety" on
 
 CONFLICTS=	see-[0-9]*
 
@@ -32,6 +34,10 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_MULTIPLE_THREADS)
+CFLAGS+=	-DMULTIPLE_THREADS
+.endif
+
 .if !defined(WITH_SEE_DEBUG)
 CFLAGS+=	-DNDEBUG
 .endif
@@ -44,8 +50,10 @@ CFLAGS+=	-O3 -fomit-frame-pointer
 LIB_DEPENDS+=	gc:${PORTSDIR}/devel/boehm-gc
 .else
 CONFIGURE_ARGS+=	--without-boehm-gc
+.if !defined(WITH_MULTIPLE_THREADS)
 PTHREAD_CFLAGS=
 PTHREAD_LIBS=
+.endif
 .endif
 
 post-patch:
