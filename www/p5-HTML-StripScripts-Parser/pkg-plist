@@ -1,0 +1,7 @@
+%%SITE_PERL%%/HTML/StripScripts/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/StripScripts/Parser/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/StripScripts/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/StripScripts
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/StripScripts
+@dirrmtry %%SITE_PERL%%/HTML
