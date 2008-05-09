@@ -1,25 +1,25 @@
 # New ports collection makefile for:   ptop
-# Date created:        18 December 2007
-# Whom:                sunghyuk
+# Date created:		18 December 2007
+# Whom:			Sunghyuk Do <sunghyuk@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ptop
-DISTVERSION=	3.6.1b4
+PORTVERSION=	3.6.2
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1654/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1781/
+DISTNAME=	pg_top-${PORTVERSION}
 
 MAINTAINER=	sunghyuk@gmail.com
 COMMENT=	Top clone for postgresql
 
-WRKSRC=	${WRKDIR}/ptop-3.6.1-beta4
-
-MAN1=	ptop.1
+MAN1=	pg_top.1
 USE_GMAKE=	yes
 USE_PGSQL=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-PLIST_FILES=	bin/ptop
+PLIST_FILES=	bin/pg_top
 
 .include <bsd.port.mk>
