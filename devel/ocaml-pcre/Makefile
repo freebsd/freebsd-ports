@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	5.14.0
+PORTVERSION=	5.15.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
