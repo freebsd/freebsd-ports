@@ -25,7 +25,7 @@ PLIST_FILES=	bin/ipsc
 MAN8=	ipsc.8
 
 .if defined(HAVE_GNOME)
-USE_GNOME=	yes
+USE_GNOME=	gnomeprefix gnomehack gtkhtml
 ALL_TARGET=	all
 PLIST_FILES+=	bin/gipsc
 .else
