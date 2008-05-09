@@ -1,12 +1,12 @@
---- configure.in.orig	Sat May  1 11:43:29 2004
-+++ configure.in	Mon Jan 23 14:32:54 2006
+--- configure.in.orig	2004-05-01 11:43:29.000000000 -0500
++++ configure.in	2008-05-03 19:38:01.000000000 -0500
 @@ -1,4 +1,4 @@
 -# $Id: configure.in,v 1.17 2004/05/01 16:43:29 andrewbaker Exp $ 
 +# $Id: configure.in,v 1.2 2005/03/08 20:37:40 bamm Exp $ 
  AC_INIT(src/barnyard.c)
  AM_CONFIG_HEADER(config.h)
  AM_INIT_AUTOMAKE(barnyard,0.2.0)
-@@ -281,13 +281,53 @@
+@@ -281,7 +281,7 @@
  
    dnl check for the header
    LDFLAGS="${LDFLAGS} -L${MYSQL_LIB_DIR}"
@@ -15,11 +15,20 @@
    AC_CHECK_LIB(mysqlclient, mysql_real_connect, FOUND=yes, FOUND=no)
  
    if test "$FOUND" = "no"; then
-       FAIL_MESSAGE("mysqlclient library", "$MYSQL_LIB_DIR")
-   fi
+@@ -290,8 +290,8 @@
      
-+fi
+ fi
+ 
+-
+ dnl mysql support 
 +
+ AC_ARG_ENABLE(postgres,
+     [  --enable-postgres              PostgreSQL database support])
+ AC_ARG_WITH(postgres_includes,
+@@ -338,6 +338,46 @@
+     
+ fi
+ 
 +AC_ARG_ENABLE(tcl,
 +	[  --enable-tcl           Enable Tcl language support.],,
 +	[enable_tcl="no"])
@@ -58,6 +67,8 @@
 +	TCL_INCLUDE="$TCL_PREFIX/include/tcl$TCL_VERSION"
 +	CPPFLAGS="$CPPFLAGS -I$TCL_INCLUDE -DENABLE_TCL";
 +    fi
- fi
- 
- 
++fi
++
+ if test "$tru64_types" = "yes"; then
+         AC_CHECK_TYPE(u_int8_t, unsigned char)
+         AC_CHECK_TYPE(u_int16_t, unsigned short)
