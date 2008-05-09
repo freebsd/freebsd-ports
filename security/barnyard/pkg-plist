@@ -2,7 +2,7 @@ bin/barnyard
 @unexec if [ -f %D/etc/barnyard.conf ] && cmp -s %D/etc/barnyard.conf %D/etc/barnyard.conf-sample; then rm -f %D/etc/barnyard.conf; fi
 etc/barnyard.conf-sample
 @exec if [ ! -f %D/etc/barnyard.conf ] ; then cp -p %D/%F %B/barnyard.conf; fi
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/LICENSE.QPL
-%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.QPL
+%%PORTDOCS%%%%DOCSDIR%%/README
