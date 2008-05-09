@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libqrencode
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://megaui.net/fukuchi/works/qrencode/
