@@ -1,0 +1,23 @@
+This module strips scripting constructs out of HTML, leaving as
+much non-scripting markup in place as possible. This allows web
+applications to display HTML originating from an untrusted source
+without introducing XSS (cross site scripting) vulnerabilities.
+You will probably use HTML::StripScripts::Parser rather than using
+this module directly.
+
+The process is based on whitelists of tags, attributes and attribute
+values. This approach is the most secure against disguised scripting
+constructs hidden in malicious HTML documents. As well as removing
+scripting constructs, this module ensures that there is a matching
+end for each start tag, and that the tags are properly nested.
+
+Previously, in order to customise the output, you needed to subclass
+HTML::StripScripts and override methods. Now, most customisation
+can be done through the Rules option provided to new(). (See
+examples/declaration/ and examples/tags/ for cases where subclassing
+is necessary.) The HTML document must be parsed into start tags,
+end tags and text before it can be filtered by this module. Use
+either HTML::StripScripts::Parser or HTML::StripScripts::Regex
+instead if you want to input an unparsed HTML document.
+
+WWW: http://search.cpan.org/dist/HTML-StripScripts/

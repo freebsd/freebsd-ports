@@ -781,6 +781,7 @@
     SUBDIR += p5-HTML-StickyQuery
     SUBDIR += p5-HTML-Stream
     SUBDIR += p5-HTML-Strip
+    SUBDIR += p5-HTML-StripScripts
     SUBDIR += p5-HTML-Summary
     SUBDIR += p5-HTML-Table
     SUBDIR += p5-HTML-TableExtract
