@@ -282,6 +282,7 @@ libdata/pkgconfig/libgoffice-0.6.pc
 %%DOCSDIR%%/goffice-GoPath.html
 %%DOCSDIR%%/goffice-GoPattern.html
 %%DOCSDIR%%/goffice-GoPluginLoaderModule.html
+%%DOCSDIR%%/goffice-GoRange.html
 %%DOCSDIR%%/goffice-GoReg.html
 %%DOCSDIR%%/goffice-GoRegression.html
 %%DOCSDIR%%/goffice-GoRotationSel.html
@@ -372,6 +373,7 @@ share/locale/tr/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/goffice-%%VERSION%%.mo
+share/locale/zh_HK/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/pixmaps/goffice/%%VERSION%%/area.xpm
 share/pixmaps/goffice/%%VERSION%%/bar-hboth.png
@@ -514,6 +516,8 @@ share/pixmaps/goffice/%%VERSION%%/surface.xpm
 @dirrm include/libgoffice-0.6/goffice/app
 @dirrm include/libgoffice-0.6/goffice
 @dirrm include/libgoffice-0.6
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
