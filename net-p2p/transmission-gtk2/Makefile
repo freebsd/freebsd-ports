@@ -10,7 +10,8 @@ PKGNAMESUFFIX=	-gtk2
 
 COMMENT=	A free BitTorrent client written from scratch in C with GTK+2
 
-LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 MASTERDIR=	${.CURDIR}/../transmission

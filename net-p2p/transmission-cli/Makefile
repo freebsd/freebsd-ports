@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	1.11
+PORTVERSION=	1.20
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT?=	A free BitTorrent client written from scratch in C
+
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

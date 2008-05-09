@@ -1,28 +1,24 @@
---- configure.orig	2008-03-29 14:43:46.000000000 -0500
-+++ configure	2008-03-29 14:47:37.000000000 -0500
-@@ -882,11 +882,9 @@
- PTHREAD_CC
+--- configure.orig	2008-05-09 16:26:19.000000000 -0500
++++ configure	2008-05-09 16:27:32.000000000 -0500
+@@ -885,8 +885,6 @@
  PTHREAD_LIBS
  PTHREAD_CFLAGS
--PKG_CONFIG
+ PKG_CONFIG
 -OPENSSL_CFLAGS
 -OPENSSL_LIBS
+ LIBCURL_CFLAGS
+ LIBCURL_LIBS
  subdirs
- LIBEVENT_CPPFLAGS
-+PKG_CONFIG
- GTK_CFLAGS
- GTK_LIBS
- BUILD_GTK_TRUE
-@@ -979,8 +977,6 @@
+@@ -985,8 +983,6 @@
  F77
  FFLAGS
  PKG_CONFIG
 -OPENSSL_CFLAGS
 -OPENSSL_LIBS
+ LIBCURL_CFLAGS
+ LIBCURL_LIBS
  GTK_CFLAGS
- GTK_LIBS
- GIO_CFLAGS
-@@ -1609,10 +1605,6 @@
+@@ -1620,10 +1616,6 @@
    F77         Fortran 77 compiler command
    FFLAGS      Fortran 77 compiler flags
    PKG_CONFIG  path to pkg-config utility
@@ -30,181 +26,180 @@
 -              C compiler flags for OPENSSL, overriding pkg-config
 -  OPENSSL_LIBS
 -              linker flags for OPENSSL, overriding pkg-config
-   GTK_CFLAGS  C compiler flags for GTK, overriding pkg-config
-   GTK_LIBS    linker flags for GTK, overriding pkg-config
-   GIO_CFLAGS  C compiler flags for GIO, overriding pkg-config
-@@ -4523,7 +4515,7 @@
+   LIBCURL_CFLAGS
+               C compiler flags for LIBCURL, overriding pkg-config
+   LIBCURL_LIBS
+@@ -4542,7 +4534,7 @@
    ;;
  *-*-irix6*)
    # Find out which ABI we are using.
--  echo '#line 4526 "configure"' > conftest.$ac_ext
-+  echo '#line 4518 "configure"' > conftest.$ac_ext
+-  echo '#line 4545 "configure"' > conftest.$ac_ext
++  echo '#line 4537 "configure"' > conftest.$ac_ext
    if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
    (eval $ac_compile) 2>&5
    ac_status=$?
-@@ -7266,11 +7258,11 @@
+@@ -7285,11 +7277,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:7269: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:7261: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:7288: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:7280: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:7273: \$? = $ac_status" >&5
-+   echo "$as_me:7265: \$? = $ac_status" >&5
+-   echo "$as_me:7292: \$? = $ac_status" >&5
++   echo "$as_me:7284: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -7556,11 +7548,11 @@
+@@ -7575,11 +7567,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:7559: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:7551: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:7578: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:7570: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:7563: \$? = $ac_status" >&5
-+   echo "$as_me:7555: \$? = $ac_status" >&5
+-   echo "$as_me:7582: \$? = $ac_status" >&5
++   echo "$as_me:7574: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -7660,11 +7652,11 @@
+@@ -7679,11 +7671,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:7663: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:7655: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:7682: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:7674: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>out/conftest.err)
     ac_status=$?
     cat out/conftest.err >&5
--   echo "$as_me:7667: \$? = $ac_status" >&5
-+   echo "$as_me:7659: \$? = $ac_status" >&5
+-   echo "$as_me:7686: \$? = $ac_status" >&5
++   echo "$as_me:7678: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s out/conftest2.$ac_objext
     then
       # The compiler can only warn and ignore the option if not recognized
-@@ -10011,7 +10003,7 @@
+@@ -10030,7 +10022,7 @@
    lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
    lt_status=$lt_dlunknown
    cat > conftest.$ac_ext <<EOF
--#line 10014 "configure"
-+#line 10006 "configure"
+-#line 10033 "configure"
++#line 10025 "configure"
  #include "confdefs.h"
  
  #if HAVE_DLFCN_H
-@@ -10111,7 +10103,7 @@
+@@ -10130,7 +10122,7 @@
    lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
    lt_status=$lt_dlunknown
    cat > conftest.$ac_ext <<EOF
--#line 10114 "configure"
-+#line 10106 "configure"
+-#line 10133 "configure"
++#line 10125 "configure"
  #include "confdefs.h"
  
  #if HAVE_DLFCN_H
-@@ -12531,11 +12523,11 @@
+@@ -12550,11 +12542,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:12534: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:12526: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:12553: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:12545: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:12538: \$? = $ac_status" >&5
-+   echo "$as_me:12530: \$? = $ac_status" >&5
+-   echo "$as_me:12557: \$? = $ac_status" >&5
++   echo "$as_me:12549: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -12635,11 +12627,11 @@
+@@ -12654,11 +12646,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:12638: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:12630: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:12657: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:12649: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>out/conftest.err)
     ac_status=$?
     cat out/conftest.err >&5
--   echo "$as_me:12642: \$? = $ac_status" >&5
-+   echo "$as_me:12634: \$? = $ac_status" >&5
+-   echo "$as_me:12661: \$? = $ac_status" >&5
++   echo "$as_me:12653: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s out/conftest2.$ac_objext
     then
       # The compiler can only warn and ignore the option if not recognized
-@@ -14199,11 +14191,11 @@
+@@ -14218,11 +14210,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:14202: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:14194: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:14221: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:14213: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:14206: \$? = $ac_status" >&5
-+   echo "$as_me:14198: \$? = $ac_status" >&5
+-   echo "$as_me:14225: \$? = $ac_status" >&5
++   echo "$as_me:14217: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -14303,11 +14295,11 @@
+@@ -14322,11 +14314,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:14306: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:14298: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:14325: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:14317: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>out/conftest.err)
     ac_status=$?
     cat out/conftest.err >&5
--   echo "$as_me:14310: \$? = $ac_status" >&5
-+   echo "$as_me:14302: \$? = $ac_status" >&5
+-   echo "$as_me:14329: \$? = $ac_status" >&5
++   echo "$as_me:14321: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s out/conftest2.$ac_objext
     then
       # The compiler can only warn and ignore the option if not recognized
-@@ -16492,11 +16484,11 @@
+@@ -16511,11 +16503,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:16495: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:16487: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:16514: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:16506: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:16499: \$? = $ac_status" >&5
-+   echo "$as_me:16491: \$? = $ac_status" >&5
+-   echo "$as_me:16518: \$? = $ac_status" >&5
++   echo "$as_me:16510: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -16782,11 +16774,11 @@
+@@ -16801,11 +16793,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:16785: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:16777: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:16804: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:16796: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:16789: \$? = $ac_status" >&5
-+   echo "$as_me:16781: \$? = $ac_status" >&5
+-   echo "$as_me:16808: \$? = $ac_status" >&5
++   echo "$as_me:16800: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -16886,11 +16878,11 @@
+@@ -16905,11 +16897,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:16889: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:16881: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:16908: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:16900: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>out/conftest.err)
     ac_status=$?
     cat out/conftest.err >&5
--   echo "$as_me:16893: \$? = $ac_status" >&5
-+   echo "$as_me:16885: \$? = $ac_status" >&5
+-   echo "$as_me:16912: \$? = $ac_status" >&5
++   echo "$as_me:16904: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s out/conftest2.$ac_objext
     then
       # The compiler can only warn and ignore the option if not recognized
-@@ -22187,6 +22179,148 @@
+@@ -22377,6 +22369,148 @@
+ fi
  
  
- 
-+
 +{ echo "$as_me:$LINENO: checking for CRYPTO_new_ex_data in -lcrypto" >&5
 +echo $ECHO_N "checking for CRYPTO_new_ex_data in -lcrypto... $ECHO_C" >&6; }
 +if test "${ac_cv_lib_crypto_CRYPTO_new_ex_data+set}" = set; then
@@ -346,134 +341,14 @@
 +
 +fi
 +
- { echo "$as_me:$LINENO: checking for library containing socket" >&5
- echo $ECHO_N "checking for library containing socket... $ECHO_C" >&6; }
- if test "${ac_cv_search_socket+set}" = set; then
-@@ -22354,237 +22488,6 @@
++
+ 
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+ 	if test -n "$ac_tool_prefix"; then
+@@ -22498,117 +22632,6 @@
  fi
  
- 
--
--if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
--	if test -n "$ac_tool_prefix"; then
--  # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
--set dummy ${ac_tool_prefix}pkg-config; ac_word=$2
--{ echo "$as_me:$LINENO: checking for $ac_word" >&5
--echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
--if test "${ac_cv_path_PKG_CONFIG+set}" = set; then
--  echo $ECHO_N "(cached) $ECHO_C" >&6
--else
--  case $PKG_CONFIG in
--  [\\/]* | ?:[\\/]*)
--  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
--  ;;
--  *)
--  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
--for as_dir in $PATH
--do
--  IFS=$as_save_IFS
--  test -z "$as_dir" && as_dir=.
--  for ac_exec_ext in '' $ac_executable_extensions; do
--  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
--    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
--    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
--    break 2
--  fi
--done
--done
--IFS=$as_save_IFS
--
--  ;;
--esac
--fi
--PKG_CONFIG=$ac_cv_path_PKG_CONFIG
--if test -n "$PKG_CONFIG"; then
--  { echo "$as_me:$LINENO: result: $PKG_CONFIG" >&5
--echo "${ECHO_T}$PKG_CONFIG" >&6; }
--else
--  { echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6; }
--fi
--
--
--fi
--if test -z "$ac_cv_path_PKG_CONFIG"; then
--  ac_pt_PKG_CONFIG=$PKG_CONFIG
--  # Extract the first word of "pkg-config", so it can be a program name with args.
--set dummy pkg-config; ac_word=$2
--{ echo "$as_me:$LINENO: checking for $ac_word" >&5
--echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
--if test "${ac_cv_path_ac_pt_PKG_CONFIG+set}" = set; then
--  echo $ECHO_N "(cached) $ECHO_C" >&6
--else
--  case $ac_pt_PKG_CONFIG in
--  [\\/]* | ?:[\\/]*)
--  ac_cv_path_ac_pt_PKG_CONFIG="$ac_pt_PKG_CONFIG" # Let the user override the test with a path.
--  ;;
--  *)
--  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
--for as_dir in $PATH
--do
--  IFS=$as_save_IFS
--  test -z "$as_dir" && as_dir=.
--  for ac_exec_ext in '' $ac_executable_extensions; do
--  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
--    ac_cv_path_ac_pt_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
--    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
--    break 2
--  fi
--done
--done
--IFS=$as_save_IFS
--
--  ;;
--esac
--fi
--ac_pt_PKG_CONFIG=$ac_cv_path_ac_pt_PKG_CONFIG
--if test -n "$ac_pt_PKG_CONFIG"; then
--  { echo "$as_me:$LINENO: result: $ac_pt_PKG_CONFIG" >&5
--echo "${ECHO_T}$ac_pt_PKG_CONFIG" >&6; }
--else
--  { echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6; }
--fi
--
--  if test "x$ac_pt_PKG_CONFIG" = x; then
--    PKG_CONFIG=""
--  else
--    case $cross_compiling:$ac_tool_warned in
--yes:)
--{ echo "$as_me:$LINENO: WARNING: In the future, Autoconf will not detect cross-tools
--whose name does not start with the host triplet.  If you think this
--configuration is useful to you, please write to autoconf@gnu.org." >&5
--echo "$as_me: WARNING: In the future, Autoconf will not detect cross-tools
--whose name does not start with the host triplet.  If you think this
--configuration is useful to you, please write to autoconf@gnu.org." >&2;}
--ac_tool_warned=yes ;;
--esac
--    PKG_CONFIG=$ac_pt_PKG_CONFIG
--  fi
--else
--  PKG_CONFIG="$ac_cv_path_PKG_CONFIG"
--fi
--
--fi
--if test -n "$PKG_CONFIG"; then
--	_pkg_min_version=0.9.0
--	{ echo "$as_me:$LINENO: checking pkg-config is at least version $_pkg_min_version" >&5
--echo $ECHO_N "checking pkg-config is at least version $_pkg_min_version... $ECHO_C" >&6; }
--	if $PKG_CONFIG --atleast-pkgconfig-version $_pkg_min_version; then
--		{ echo "$as_me:$LINENO: result: yes" >&5
--echo "${ECHO_T}yes" >&6; }
--	else
--		{ echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6; }
--		PKG_CONFIG=""
--	fi
--
--fi
--
--pkg_failed=no
+ pkg_failed=no
 -{ echo "$as_me:$LINENO: checking for OPENSSL" >&5
 -echo $ECHO_N "checking for OPENSSL... $ECHO_C" >&6; }
 -
@@ -482,12 +357,12 @@
 -        pkg_cv_OPENSSL_CFLAGS="$OPENSSL_CFLAGS"
 -    else
 -        if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"openssl >= 0.9.4\"") >&5
--  ($PKG_CONFIG --exists --print-errors "openssl >= 0.9.4") 2>&5
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"openssl >= \$OPENSSL_MINIMUM\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "openssl >= $OPENSSL_MINIMUM") 2>&5
 -  ac_status=$?
 -  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); }; then
--  pkg_cv_OPENSSL_CFLAGS=`$PKG_CONFIG --cflags "openssl >= 0.9.4" 2>/dev/null`
+-  pkg_cv_OPENSSL_CFLAGS=`$PKG_CONFIG --cflags "openssl >= $OPENSSL_MINIMUM" 2>/dev/null`
 -else
 -  pkg_failed=yes
 -fi
@@ -500,12 +375,12 @@
 -        pkg_cv_OPENSSL_LIBS="$OPENSSL_LIBS"
 -    else
 -        if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"openssl >= 0.9.4\"") >&5
--  ($PKG_CONFIG --exists --print-errors "openssl >= 0.9.4") 2>&5
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"openssl >= \$OPENSSL_MINIMUM\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "openssl >= $OPENSSL_MINIMUM") 2>&5
 -  ac_status=$?
 -  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); }; then
--  pkg_cv_OPENSSL_LIBS=`$PKG_CONFIG --libs "openssl >= 0.9.4" 2>/dev/null`
+-  pkg_cv_OPENSSL_LIBS=`$PKG_CONFIG --libs "openssl >= $OPENSSL_MINIMUM" 2>/dev/null`
 -else
 -  pkg_failed=yes
 -fi
@@ -524,14 +399,14 @@
 -        _pkg_short_errors_supported=no
 -fi
 -        if test $_pkg_short_errors_supported = yes; then
--	        OPENSSL_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "openssl >= 0.9.4"`
+-	        OPENSSL_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "openssl >= $OPENSSL_MINIMUM"`
 -        else
--	        OPENSSL_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "openssl >= 0.9.4"`
+-	        OPENSSL_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "openssl >= $OPENSSL_MINIMUM"`
 -        fi
 -	# Put the nasty error message in config.log where it belongs
 -	echo "$OPENSSL_PKG_ERRORS" >&5
 -
--	{ { echo "$as_me:$LINENO: error: Package requirements (openssl >= 0.9.4) were not met:
+-	{ { echo "$as_me:$LINENO: error: Package requirements (openssl >= $OPENSSL_MINIMUM) were not met:
 -
 -$OPENSSL_PKG_ERRORS
 -
@@ -542,7 +417,7 @@
 -and OPENSSL_LIBS to avoid the need to call pkg-config.
 -See the pkg-config man page for more details.
 -" >&5
--echo "$as_me: error: Package requirements (openssl >= 0.9.4) were not met:
+-echo "$as_me: error: Package requirements (openssl >= $OPENSSL_MINIMUM) were not met:
 -
 -$OPENSSL_PKG_ERRORS
 -
@@ -584,207 +459,41 @@
 -	:
 -fi
 -
- # Check whether --enable-largefile was given.
- if test "${enable_largefile+set}" = set; then
-   enableval=$enable_largefile;
-@@ -23052,6 +22955,126 @@
+-pkg_failed=no
+ { echo "$as_me:$LINENO: checking for LIBCURL" >&5
+ echo $ECHO_N "checking for LIBCURL... $ECHO_C" >&6; }
  
- 
- 
-+
-+if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
-+	if test -n "$ac_tool_prefix"; then
-+  # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
-+set dummy ${ac_tool_prefix}pkg-config; ac_word=$2
-+{ echo "$as_me:$LINENO: checking for $ac_word" >&5
-+echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
-+if test "${ac_cv_path_PKG_CONFIG+set}" = set; then
-+  echo $ECHO_N "(cached) $ECHO_C" >&6
-+else
-+  case $PKG_CONFIG in
-+  [\\/]* | ?:[\\/]*)
-+  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
-+  ;;
-+  *)
-+  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
-+for as_dir in $PATH
-+do
-+  IFS=$as_save_IFS
-+  test -z "$as_dir" && as_dir=.
-+  for ac_exec_ext in '' $ac_executable_extensions; do
-+  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
-+    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
-+    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
-+    break 2
-+  fi
-+done
-+done
-+IFS=$as_save_IFS
-+
-+  ;;
-+esac
-+fi
-+PKG_CONFIG=$ac_cv_path_PKG_CONFIG
-+if test -n "$PKG_CONFIG"; then
-+  { echo "$as_me:$LINENO: result: $PKG_CONFIG" >&5
-+echo "${ECHO_T}$PKG_CONFIG" >&6; }
-+else
-+  { echo "$as_me:$LINENO: result: no" >&5
-+echo "${ECHO_T}no" >&6; }
-+fi
-+
-+
-+fi
-+if test -z "$ac_cv_path_PKG_CONFIG"; then
-+  ac_pt_PKG_CONFIG=$PKG_CONFIG
-+  # Extract the first word of "pkg-config", so it can be a program name with args.
-+set dummy pkg-config; ac_word=$2
-+{ echo "$as_me:$LINENO: checking for $ac_word" >&5
-+echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
-+if test "${ac_cv_path_ac_pt_PKG_CONFIG+set}" = set; then
-+  echo $ECHO_N "(cached) $ECHO_C" >&6
-+else
-+  case $ac_pt_PKG_CONFIG in
-+  [\\/]* | ?:[\\/]*)
-+  ac_cv_path_ac_pt_PKG_CONFIG="$ac_pt_PKG_CONFIG" # Let the user override the test with a path.
-+  ;;
-+  *)
-+  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
-+for as_dir in $PATH
-+do
-+  IFS=$as_save_IFS
-+  test -z "$as_dir" && as_dir=.
-+  for ac_exec_ext in '' $ac_executable_extensions; do
-+  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
-+    ac_cv_path_ac_pt_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
-+    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
-+    break 2
-+  fi
-+done
-+done
-+IFS=$as_save_IFS
-+
-+  ;;
-+esac
-+fi
-+ac_pt_PKG_CONFIG=$ac_cv_path_ac_pt_PKG_CONFIG
-+if test -n "$ac_pt_PKG_CONFIG"; then
-+  { echo "$as_me:$LINENO: result: $ac_pt_PKG_CONFIG" >&5
-+echo "${ECHO_T}$ac_pt_PKG_CONFIG" >&6; }
-+else
-+  { echo "$as_me:$LINENO: result: no" >&5
-+echo "${ECHO_T}no" >&6; }
-+fi
-+
-+  if test "x$ac_pt_PKG_CONFIG" = x; then
-+    PKG_CONFIG=""
-+  else
-+    case $cross_compiling:$ac_tool_warned in
-+yes:)
-+{ echo "$as_me:$LINENO: WARNING: In the future, Autoconf will not detect cross-tools
-+whose name does not start with the host triplet.  If you think this
-+configuration is useful to you, please write to autoconf@gnu.org." >&5
-+echo "$as_me: WARNING: In the future, Autoconf will not detect cross-tools
-+whose name does not start with the host triplet.  If you think this
-+configuration is useful to you, please write to autoconf@gnu.org." >&2;}
-+ac_tool_warned=yes ;;
-+esac
-+    PKG_CONFIG=$ac_pt_PKG_CONFIG
-+  fi
-+else
-+  PKG_CONFIG="$ac_cv_path_PKG_CONFIG"
-+fi
-+
-+fi
-+if test -n "$PKG_CONFIG"; then
-+	_pkg_min_version=0.9.0
-+	{ echo "$as_me:$LINENO: checking pkg-config is at least version $_pkg_min_version" >&5
-+echo $ECHO_N "checking pkg-config is at least version $_pkg_min_version... $ECHO_C" >&6; }
-+	if $PKG_CONFIG --atleast-pkgconfig-version $_pkg_min_version; then
-+		{ echo "$as_me:$LINENO: result: yes" >&5
-+echo "${ECHO_T}yes" >&6; }
-+	else
-+		{ echo "$as_me:$LINENO: result: no" >&5
-+echo "${ECHO_T}no" >&6; }
-+		PKG_CONFIG=""
-+	fi
-+
-+fi
-+
- pkg_failed=no
- { echo "$as_me:$LINENO: checking for GTK" >&5
- echo $ECHO_N "checking for GTK... $ECHO_C" >&6; }
-@@ -23154,6 +23177,8 @@
- fi
- 
- build_gtk=no
-+use_gio=no
-+use_libnotify=no
- if test "x$want_gtk" = "xyes" ; then
-     if test "x$have_gtk" = "xyes"; then
-       build_gtk=yes
-@@ -23174,6 +23199,7 @@
- 
- 
- 
-+if test "x$build_gtk" = "xyes"; then
- 
- pkg_failed=no
- { echo "$as_me:$LINENO: checking for GIO" >&5
-@@ -23333,6 +23359,7 @@
- _ACEOF
- 
- fi
-+fi
- 
- 
- case "$am__api_version" in
-@@ -26732,11 +26759,9 @@
- PTHREAD_CC!$PTHREAD_CC$ac_delim
+@@ -27105,8 +27128,6 @@
  PTHREAD_LIBS!$PTHREAD_LIBS$ac_delim
  PTHREAD_CFLAGS!$PTHREAD_CFLAGS$ac_delim
--PKG_CONFIG!$PKG_CONFIG$ac_delim
+ PKG_CONFIG!$PKG_CONFIG$ac_delim
 -OPENSSL_CFLAGS!$OPENSSL_CFLAGS$ac_delim
 -OPENSSL_LIBS!$OPENSSL_LIBS$ac_delim
+ LIBCURL_CFLAGS!$LIBCURL_CFLAGS$ac_delim
+ LIBCURL_LIBS!$LIBCURL_LIBS$ac_delim
  subdirs!$subdirs$ac_delim
- LIBEVENT_CPPFLAGS!$LIBEVENT_CPPFLAGS$ac_delim
-+PKG_CONFIG!$PKG_CONFIG$ac_delim
- GTK_CFLAGS!$GTK_CFLAGS$ac_delim
- GTK_LIBS!$GTK_LIBS$ac_delim
- BUILD_GTK_TRUE!$BUILD_GTK_TRUE$ac_delim
-@@ -26814,7 +26839,7 @@
+@@ -27183,6 +27204,8 @@
+ BUILD_CLI_TRUE!$BUILD_CLI_TRUE$ac_delim
+ BUILD_CLI_FALSE!$BUILD_CLI_FALSE$ac_delim
+ BUILD_DARWIN_TRUE!$BUILD_DARWIN_TRUE$ac_delim
++BUILD_DARWIN_FALSE!$BUILD_DARWIN_FALSE$ac_delim
++BUILD_DAEMON_TRUE!$BUILD_DAEMON_TRUE$ac_delim
+ _ACEOF
+ 
+   if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 97; then
+@@ -27224,14 +27247,12 @@
+ ac_delim='%!_!# '
+ for ac_last_try in false false false false false :; do
+   cat >conf$$subs.sed <<_ACEOF
+-BUILD_DARWIN_FALSE!$BUILD_DARWIN_FALSE$ac_delim
+-BUILD_DAEMON_TRUE!$BUILD_DAEMON_TRUE$ac_delim
+ BUILD_DAEMON_FALSE!$BUILD_DAEMON_FALSE$ac_delim
+ LIBOBJS!$LIBOBJS$ac_delim
  LTLIBOBJS!$LTLIBOBJS$ac_delim
  _ACEOF
  
--  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 96; then
-+  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 94; then
+-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 5; then
++  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 3; then
      break
    elif $ac_last_try; then
      { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
-@@ -26833,7 +26858,7 @@
- 
- cat >>$CONFIG_STATUS <<_ACEOF
- cat >"\$tmp/subs-2.sed" <<\CEOF$ac_eof
--/@[a-zA-Z_][a-zA-Z_0-9]*@/!b
-+/@[a-zA-Z_][a-zA-Z_0-9]*@/!b end
- _ACEOF
- sed '
- s/[,\\&]/\\&/g; s/@/@|#_!!_#|/g
-@@ -26846,6 +26871,8 @@
- ' >>$CONFIG_STATUS <conf$$subs.sed
- rm -f conf$$subs.sed
- cat >>$CONFIG_STATUS <<_ACEOF
-+:end
-+s/|#_!!_#|//g
- CEOF$ac_eof
- _ACEOF
- 
-@@ -27099,7 +27126,7 @@
- s&@INSTALL@&$ac_INSTALL&;t t
- s&@MKDIR_P@&$ac_MKDIR_P&;t t
- $ac_datarootdir_hack
--" $ac_file_inputs | sed -f "$tmp/subs-1.sed" | sed -f "$tmp/subs-2.sed" | sed 's/|#_!!_#|//g' >$tmp/out
-+" $ac_file_inputs | sed -f "$tmp/subs-1.sed" | sed -f "$tmp/subs-2.sed" >$tmp/out
- 
- test -z "$ac_datarootdir_hack$ac_datarootdir_seen" &&
-   { ac_out=`sed -n '/\${datarootdir}/p' "$tmp/out"`; test -n "$ac_out"; } &&
