@@ -1,4 +1,5 @@
 lib/webmin/virtual-server/CHANGELOG
+lib/webmin/virtual-server/IDNA/Punycode.pm
 lib/webmin/virtual-server/RELEASE
 lib/webmin/virtual-server/acl_security.pl
 lib/webmin/virtual-server/admins-lib.pl
@@ -56,6 +57,7 @@ lib/webmin/virtual-server/edit_ffile.cgi
 lib/webmin/virtual-server/edit_limits.cgi
 lib/webmin/virtual-server/edit_mail.cgi
 lib/webmin/virtual-server/edit_newbw.cgi
+lib/webmin/virtual-server/edit_newchroot.cgi
 lib/webmin/virtual-server/edit_newdynip.cgi
 lib/webmin/virtual-server/edit_newfeatures.cgi
 lib/webmin/virtual-server/edit_newfields.cgi
@@ -136,6 +138,7 @@ lib/webmin/virtual-server/help/mailgroupname.html
 lib/webmin/virtual-server/help/mysql.de.html
 lib/webmin/virtual-server/help/mysql.fr.html
 lib/webmin/virtual-server/help/mysql.html
+lib/webmin/virtual-server/help/newchroot.html
 lib/webmin/virtual-server/help/newmail.html
 lib/webmin/virtual-server/help/ownersemail.html
 lib/webmin/virtual-server/help/ownersname.de.html
@@ -197,6 +200,7 @@ lib/webmin/virtual-server/images/icon.gif
 lib/webmin/virtual-server/images/movedown.gif
 lib/webmin/virtual-server/images/moveup.gif
 lib/webmin/virtual-server/images/newbw.gif
+lib/webmin/virtual-server/images/newchroot.gif
 lib/webmin/virtual-server/images/newdns.gif
 lib/webmin/virtual-server/images/newdom.gif
 lib/webmin/virtual-server/images/newdynip.gif
@@ -287,9 +291,13 @@ lib/webmin/virtual-server/newfeatures-all/3.55/1-migrationftp
 lib/webmin/virtual-server/newfeatures-all/3.55/2-migrationdomain
 lib/webmin/virtual-server/newfeatures-all/3.55/3-plesksubdoms
 lib/webmin/virtual-server/newfeatures-all/3.55/4-collectinfo
+lib/webmin/virtual-server/newfeatures-all/3.56/2-pleskram
+lib/webmin/virtual-server/newfeatures-all/3.56/4-idn
+lib/webmin/virtual-server/newfeatures-all/3.56/5-ftpchroot
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
+lib/webmin/virtual-server/newfeatures-gpl/3.56/1-customfields
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
@@ -317,6 +325,7 @@ lib/webmin/virtual-server/save_frame.cgi
 lib/webmin/virtual-server/save_limits.cgi
 lib/webmin/virtual-server/save_mail.cgi
 lib/webmin/virtual-server/save_newbw.cgi
+lib/webmin/virtual-server/save_newchroot.cgi
 lib/webmin/virtual-server/save_newdynip.cgi
 lib/webmin/virtual-server/save_newfeatures.cgi
 lib/webmin/virtual-server/save_newfields.cgi
@@ -355,16 +364,19 @@ lib/webmin/virtual-server/virtual_feature_api.pl
 lib/webmin/virtual-server/vui-lib.pl
 lib/webmin/virtual-server/warnbw-template
 lib/webmin/virtual-server/writelogs.pl
+@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.56
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.55
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.54
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.53
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm lib/webmin/virtual-server/newfeatures-gpl
+@dirrm lib/webmin/virtual-server/newfeatures-all/3.56
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.55
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.54
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.53
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.52
 @dirrm lib/webmin/virtual-server/newfeatures-all
+@dirrm lib/webmin/virtual-server/IDNA
 @dirrm lib/webmin/virtual-server/lang
 @dirrm lib/webmin/virtual-server/images
 @dirrm lib/webmin/virtual-server/help
