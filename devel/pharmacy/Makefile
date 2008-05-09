@@ -7,7 +7,7 @@
 
 PORTNAME=	pharmacy
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	GNOME frontend for CVS
 
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPCFLAGS="-I${LOCALBASE}/include" \
