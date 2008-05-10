@@ -5,13 +5,13 @@
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
 -"'modprobe dazuko.o'. You will next be asked for the root password."
-+"'kldload dazuko.ko'. You will next be asked for the root password."
++"'modprobe dazuko.ko'. You will next be asked for the root password."
  msgstr ""
  "KlamAV potřebuje nejprve zavést modul 'dazuko'. Tento modul KlamAVu umožní "
  "přístup k souborům v reálném čase. Pokud nechcete, aby se tato zpráva v "
  "budoucnu zobrazovala, přidejte následující řádek do vašeho init skriptu: "
 -"'modprobe dazuko.o'. Nyní budete požádáni o heslo roota."
-+"'kldload dazuko.ko'. Nyní budete požádáni o heslo roota."
++"'kldload dazuko.o'. Nyní budete požádáni o heslo roota."
  
  #: klamd.cpp:734 klamd.cpp:735
  msgid "Load Module"
@@ -22,7 +22,7 @@
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
 -"'modprobe dazuko.o'. You will next be asked for the root password."
-+"'kldload dazuko.ko'. You will next be asked for the root password."
++"'modprobe dazuko.o'. You will next be asked for the root password."
  msgstr ""
  "Es muß das Modul mit dem Namen \"dazuko\" geladen werden. Dies ermöglicht "
  "einen verbesserten Zugriffn auf die Datein. Wenn sie nicht möchten, dass "
@@ -33,13 +33,13 @@
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
 -"'modprobe dazuko.o'. You will next be asked for the root password."
-+"'kldload dazuko.ko'. You will next be asked for the root password."
++"'kldload dazuko.o'. You will next be asked for the root password."
  msgstr ""
  "Se necesita cargar un módulo llamado 'dazuko' primero. Este módulo le "
  "permite a KlamAV acceso en tiempo real a los ficheros. Si no quiere que este "
  "mensaje aparezca en el futuro, ponga lo siguiente en los scripts de "
 -"inicialización: 'modprobe dazuko.o'. Necesita la clave de administrador."
-+"inicialización: 'kldload dazuko.ko'. Necesita la clave de administrador."
++"inicialización: 'modprobe dazuko.ko'. Necesita la clave de administrador."
  
  #: klamd.cpp:734 klamd.cpp:735
  msgid "Load Module"
@@ -51,7 +51,7 @@
  #: klamd.cpp:733
 -msgid "I need to load a module called 'dazuko' first. This module will allow KlamAV to gain real-time access to files. If you don't want this message to appear in future, put the following command in your initialization scripts: 'modprobe dazuko.o'. You will next be asked for the root password."
 -msgstr "Auparavant, KlamAV a besoin de charger un module appelé 'dazuko'. Ce module permettra un accès temps réel aux fichiers. Si vous ne voulez pas que ce message apparaisse dans le futur, mettez la commande suivante dans vos scripts d'initialisation: 'modprobe dazuko.o'. Il vous sera demander le mot de passe administrateur."
-+msgid "I need to load a module called 'dazuko' first. This module will allow KlamAV to gain real-time access to files. If you don't want this message to appear in future, put the following command in your initialization scripts: 'kldload dazuko.ko'. You will next be asked for the root password."
++msgid "I need to load a module called 'dazuko' first. This module will allow KlamAV to gain real-time access to files. If you don't want this message to appear in future, put the following command in your initialization scripts: 'modprobe dazuko.o'. You will next be asked for the root password."
 +msgstr "Auparavant, KlamAV a besoin de charger un module appelé 'dazuko'. Ce module permettra un accès temps réel aux fichiers. Si vous ne voulez pas que ce message apparaisse dans le futur, mettez la commande suivante dans vos scripts d'initialisation: 'kldload dazuko.ko'. Il vous sera demander le mot de passe administrateur."
  
  #: klamd.cpp:734
@@ -63,7 +63,7 @@
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
 -"'modprobe dazuko.o'. You will next be asked for the root password."
-+"'kldload dazuko.ko'. You will next be asked for the root password."
++"'modprobe dazuko.o'. You will next be asked for the root password."
  msgstr ""
  "Először be kell tölteni a 'dazuko' nevű modult. Ez a modul teszi lehetővé a "
  "KlamAV számára a fájlok valós idejű elérését. Ha azt szeretné, hogy ez az "
@@ -81,7 +81,7 @@
  "in future, put the following command in your initialization scripts: "
 -"'modprobe dazuko.o'. You will next be asked for the root password."
 -msgstr "Necessiti dapprima di caricare un modulo chiamato 'dazuko'. Questo modulo permetterà a KlamAv di avere funzionalità 'real time' per l'accesso ai file. Se vuoi che questo messaggio non appaia più in futuro, importa il seguente comando nello script di inizializzazione: 'modprobe dazuko.o'. Per compiere questa azione ti verrà chiesta la password di amministratore."
-+"'kldload dazuko.ko'. You will next be asked for the root password."
++"'modprobe dazuko.o'. You will next be asked for the root password."
 +msgstr "Necessiti dapprima di caricare un modulo chiamato 'dazuko'. Questo modulo permetterà a KlamAv di avere funzionalità 'real time' per l'accesso ai file. Se vuoi che questo messaggio non appaia più in futuro, importa il seguente comando nello script di inizializzazione: 'kldload dazuko.ko'. Per compiere questa azione ti verrà chiesta la password di amministratore."
  
  #: klamd.cpp:734 klamd.cpp:735
@@ -93,7 +93,7 @@
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
 -"'modprobe dazuko.o'. You will next be asked for the root password."
-+"'kldload dazuko.ko'. You will next be asked for the root password."
++"'modprobe dazuko.o'. You will next be asked for the root password."
  msgstr ""
  "Konieczne jest załadowanie najpier modułu Dazuko. Moduł ten pozwoli "
  "programowi KlamAV uzyskać dostęp do skanowania plików w czasie rzeczywistym. "
@@ -110,7 +110,7 @@
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
 -"'modprobe dazuko.o'. You will next be asked for the root password."
-+"'kldload dazuko.ko'. You will next be asked for the root password."
++"'modprobe dazuko.o'. You will next be asked for the root password."
  msgstr ""
  "Preciso carregar um módulo chamado 'dazuko' antes. Este módulo permitirá ao "
  "KlamAV obter acesso em tempo real a arquivos. Se não desejar que esta "
@@ -127,7 +127,7 @@
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
 -"'modprobe dazuko.o'. You will next be asked for the root password."
-+"'kldload dazuko.ko'. You will next be asked for the root password."
++"'modprobe dazuko.o'. You will next be asked for the root password."
  msgstr ""
  "Необходимо запустить модуль, называемый dazuko. Этот модуль разрешит KlamAV "
  "получать доступ в реальном времени к файлам. Далее Вас попросят ввести "
@@ -138,7 +138,18 @@
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
 -"'modprobe dazuko.o'. You will next be asked for the root password."
-+"'kldload dazuko.ko'. You will next be asked for the root password."
++"'modprobe dazuko.o'. You will next be asked for the root password."
  msgstr ""
+ 
+ #: klamd.cpp:734 klamd.cpp:735
+--- po/tr.po	2008-05-09 15:45:18.000000000 -0300
++++ po/tr.po	2008-05-09 15:48:44.000000000 -0300
+@@ -996,7 +996,7 @@
+ msgstr ""
+ "İlk önce 'dazuko' adlı bir modülü yüklemem gerekiyor. Bu modül KlamAV'ın "
+ "dosyalara gerçek-zamanlı erşimini sağlar.Bu mesajın gelecekte görünmesini "
+-"istemiyorsanız, şu komutu başlangıç betiklerinize ekleyin: 'modprobe dazuko."
++"istemiyorsanız, şu komutu başlangıç betiklerinize ekleyin: 'kldload dazuko.k"
+ "o'. Daha sonra yetkili kullanıcı şifresi sorulacak."
  
  #: klamd.cpp:734 klamd.cpp:735
