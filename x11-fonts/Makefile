@@ -16,6 +16,7 @@
     SUBDIR += bitstream-vera
     SUBDIR += c64bdf
     SUBDIR += code2000
+    SUBDIR += code2001
     SUBDIR += cyberbit-ttfonts
     SUBDIR += cyr-rfx
     SUBDIR += dejavu
