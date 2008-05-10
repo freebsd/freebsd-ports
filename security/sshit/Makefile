@@ -7,7 +7,7 @@
 
 PORTNAME=	sshit
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://anp.ath.cx/sshit/ \
 		${MASTER_SITE_LOCAL}
@@ -25,6 +25,9 @@ USE_PERL5_RUN=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/sshit
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/${PORTNAME}
