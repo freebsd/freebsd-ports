@@ -1,15 +1,11 @@
---- plugins/org.eclipse.swt.gtk.freebsd.amd64/build.xml.orig	Fri Aug 17 17:35:50 2007
-+++ plugins/org.eclipse.swt.gtk.freebsd.amd64/build.xml	Fri Aug 17 17:49:35 2007
-@@ -40,18 +40,17 @@
- 
- 	<target name="properties" if="eclipse.running">
- 		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
--		<!--compile the jar in org.eclipse.swt.tools-->
+--- plugins/org.eclipse.swt.gtk.freebsd.amd64/build.xml.orig	2007-11-19 13:18:37.000000000 +0900
++++ plugins/org.eclipse.swt.gtk.freebsd.amd64/build.xml	2007-11-19 15:06:14.000000000 +0900
+@@ -44,14 +44,14 @@
  	</target>
  
  	<target name="build.update.jar" depends="init">
 -		<delete dir="${temp.folder}"/>
-+		<!-- <delete dir="${temp.folder}"/>
++		<!-- <delete dir="${temp.folder}"/>  
  		<mkdir dir="${temp.folder}"/>
  		<antcall target="build.jars"/>
  		<antcall target="gather.bin.parts">
@@ -21,18 +17,16 @@
  	</target>
  
  	<target name="@dot" depends="init" unless="@dot" description="Create jar: @dot.">
-@@ -231,7 +230,9 @@
- 
+@@ -232,6 +232,8 @@
  	<target name="build.cfiles" depends="build.jars">
  		<!-- generate the C code from the (64 bit) SWT PI java classes -->
--		<!-- assumes the swt.jar has already been built  -->
-+		<!-- compile the jar in org.eclipse.swt.tools -->
-+		<ant antfile="build.xml" dir="${toolsplugindir}" inheritAll="false" target="build.jars" />		
+ 		<!-- assumes the swt.jar has already been built  -->
++		<ant antfile="build.xml" dir="${toolsplugindir}" inheritAll="false" target="build.jars" />
 + 		<!-- assumes the swttools.jar has already been built  -->
  		<java classname="org.eclipse.swt.tools.internal.JNIGeneratorApp" classpath="${toolsplugindir}/bin:${toolsplugindir}/swttools.jar:${basedir}/swt.jar"><arg value="org.eclipse.swt.internal.C"/><arg value="${basedir}/src/Eclipse SWT PI/common/library/"/><arg value="${build.result.folder}/swt.jar"/></java>
  		<java classname="org.eclipse.swt.tools.internal.JNIGeneratorApp" classpath="${toolsplugindir}/bin:${toolsplugindir}/swttools.jar:${basedir}/swt.jar"><arg value="org.eclipse.swt.internal.gtk.OS"/><arg value="${basedir}/src/Eclipse SWT PI/gtk/library/"/><arg value="${build.result.folder}/swt.jar"/></java>
  		<java classname="org.eclipse.swt.tools.internal.JNIGeneratorApp" classpath="${toolsplugindir}/bin:${toolsplugindir}/swttools.jar:${basedir}/swt.jar"><arg value="org.eclipse.swt.internal.accessibility.gtk.ATK"/><arg value="${basedir}/src/Eclipse SWT PI/gtk/library/"/><arg value="${build.result.folder}/swt.jar"/></java>
-@@ -345,6 +346,8 @@
+@@ -345,6 +347,8 @@
  		<delete file="${plugin.destination}/${full.name}.jar"/>
  		<delete file="${plugin.destination}/${full.name}.zip"/>
  		<delete dir="${temp.folder}"/>

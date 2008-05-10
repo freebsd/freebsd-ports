@@ -47,6 +47,11 @@
 			<property name="os" value="solaris"/>
 			<property name="ws" value="gtk"/>
 		</ant>
+		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.filesystem.freebsd.amd64" target="${target}">
+			<property name="arch" value="amd64"/>
+			<property name="os" value="freebsd"/>
+			<property name="ws" value="gtk"/>
+		</ant>
 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.filesystem.linux.x86_64" target="${target}">
 			<property name="arch" value="x86_64"/>
 			<property name="os" value="linux"/>
@@ -59,11 +64,6 @@
 		</ant>
 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.filesystem.freebsd.x86" target="${target}">
 			<property name="arch" value="x86"/>
-			<property name="os" value="freebsd"/>
-			<property name="ws" value="gtk"/>
-		</ant>
-		<ant antfile="build.xml" dir="../../plugins/org.eclipse.core.filesystem.freebsd.amd64" target="${target}">
-			<property name="arch" value="amd64"/>
 			<property name="os" value="freebsd"/>
 			<property name="ws" value="gtk"/>
 		</ant>
@@ -418,17 +418,17 @@
 			<param name="os" value="*"/>
 			<param name="feature.base" value="${feature.temp.folder}"/>
 		</antcall>
-		<jar destfile="${feature.destination}/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G.jar" basedir="${feature.temp.folder}/features/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G"/>
+		<jar destfile="${feature.destination}/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft.jar" basedir="${feature.temp.folder}/features/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft"/>
 		<delete dir="${feature.temp.folder}"/>
 	</target>
 
 	<target name="gather.bin.parts" depends="init" if="feature.base">
-		<mkdir dir="${feature.base}/features/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G"/>
+		<mkdir dir="${feature.base}/features/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft"/>
 		<antcall target="children">
 			<param name="destination.temp.folder" value="${feature.base}/plugins"/>
 			<param name="target" value="gather.bin.parts"/>
 		</antcall>
-		<copy todir="${feature.base}/features/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G" failonerror="true" overwrite="false">
+		<copy todir="${feature.base}/features/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft" failonerror="true" overwrite="false">
 			<fileset dir="${basedir}">
 				<include name="epl-v10.html"/>
 				<include name="eclipse_update_120.jpg"/>
@@ -437,7 +437,7 @@
 				<include name="license.html"/>
 			</fileset>
 		</copy>
-		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G/feature.xml"  selfVersion="3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G" featureIds="org.eclipse.rcp:0.0.0,3.3.0.v20070607-8y8eE8NEbsN3X_fjWS8HPNG," pluginIds="com.jcraft.jsch:0.0.0,0.1.31,javax.servlet:0.0.0,2.4.0.v200706111738,javax.servlet.jsp:0.0.0,2.0.0.v200706191603,org.apache.jasper:0.0.0,5.5.17.v200706111724,org.apache.commons.el:0.0.0,1.0.0.v200706111724,org.apache.commons.logging:0.0.0,1.0.4.v200706111724,org.apache.ant:0.0.0,1.7.0.v200706080842,org.apache.lucene:0.0.0,1.9.1.v200706111724,org.apache.lucene.analysis:0.0.0,1.9.1.v200706181610,org.eclipse.ant.core:0.0.0,3.1.200.v20070522,org.eclipse.compare:0.0.0,3.3.0.I20070606,org.eclipse.core.boot:0.0.0,3.1.100.v20060603,org.eclipse.core.filebuffers:0.0.0,3.3.0.v20070606-0010,org.eclipse.core.filesystem:0.0.0,1.1.0.v20070606,org.eclipse.core.net:0.0.0,1.0.0.I20070531,org.eclipse.core.resources:0.0.0,3.3.0.v20070604,org.eclipse.core.resources.compatibility:0.0.0,3.2.100.v20070502,org.eclipse.core.runtime.compatibility:0.0.0,3.1.200.v20070502,org.eclipse.osgi.services:0.0.0,3.1.200.v20070605,org.eclipse.osgi.util:0.0.0,3.1.200.v20070605,org.eclipse.core.variables:0.0.0,3.2.0.v20070426,org.eclipse.debug.core:0.0.0,3.3.0.v20070607-1800,org.eclipse.debug.ui:0.0.0,3.3.0.v20070607-1800,org.eclipse.equinox.http.registry:0.0.0,1.0.0.v20070608,org.eclipse.equinox.http.jetty:0.0.0,1.0.0.v20070607,org.eclipse.equinox.http.servlet:0.0.0,1.0.0.v20070606,org.eclipse.equinox.jsp.jasper:0.0.0,1.0.0.v20070607,org.eclipse.equinox.jsp.jasper.registry:0.0.0,1.0.0.v20070607,org.eclipse.help.webapp:0.0.0,3.3.0.v20070607,org.eclipse.help.base:0.0.0,3.3.0.v20070606,org.eclipse.help.ui:0.0.0,3.3.0.v20070530,org.eclipse.help.appserver:0.0.0,3.1.200.v20070510,org.eclipse.ltk.core.refactoring:0.0.0,3.3.0.v20070606-0010,org.eclipse.ltk.ui.refactoring:0.0.0,3.3.0.v20070606-0010,org.eclipse.platform:0.0.0,3.3.0.v20070613,org.eclipse.platform.doc.user:0.0.0,3.3.0.I20070615-1300,org.eclipse.search:0.0.0,3.3.0.v20070606-0010,org.eclipse.team.core:0.0.0,3.3.0.I20070607,org.eclipse.team.ui:0.0.0,3.3.0.I20070607,org.eclipse.tomcat:0.0.0,4.1.230.v20070531,org.eclipse.text:0.0.0,3.3.0.v20070606-0010,org.eclipse.jface.text:0.0.0,3.3.0.v20070606-0010,org.eclipse.jsch.core:0.0.0,1.0.0.I20070426,org.eclipse.jsch.ui:0.0.0,1.0.0.I20070525,org.eclipse.ui.console:0.0.0,3.2.0.v20070530,org.eclipse.ui.presentations.r21:0.0.0,3.2.100.I20070605-0010,org.eclipse.ui.intro:0.0.0,3.2.100.v20070530,org.eclipse.ui.intro.universal:0.0.0,3.2.100.v20070530A,org.eclipse.ui.cheatsheets:0.0.0,3.3.0.v20070507,org.eclipse.ui.browser:0.0.0,3.2.100.v20070524A,org.eclipse.ui.navigator:0.0.0,3.3.0.I20070605-0010,org.eclipse.ui.navigator.resources:0.0.0,3.3.0.I20070605-0010,org.eclipse.ui.net:0.0.0,1.0.0.I20070516,org.eclipse.ui.workbench.texteditor:0.0.0,3.3.0.v20070606-0010,org.eclipse.ui.views:0.0.0,3.2.100.I20070319-0010,org.eclipse.ui.editors:0.0.0,3.3.0.v20070606-0010,org.eclipse.ui.forms:0.0.0,3.3.0.v20070511,org.eclipse.ui.externaltools:0.0.0,3.1.200.v20070416,org.eclipse.ui.ide:0.0.0,3.3.0.I20070620,org.eclipse.ui.ide.application:0.0.0,1.0.0.I20070530-0100,org.eclipse.ui.win32:0.0.0,3.2.100.I20070319-0010,org.eclipse.update.core:0.0.0,3.2.100.v20070615,org.eclipse.update.scheduler:0.0.0,3.2.100.v20070615,org.eclipse.update.ui:0.0.0,3.2.100.v20070615,org.eclipse.ui.workbench.compatibility:0.0.0,3.2.0.I20070319-0010,org.eclipse.core.filesystem.hpux.ia64_32:0.0.0,1.0.0.v20060603,org.eclipse.core.filesystem.hpux.PA_RISC:0.0.0,1.0.0.v20060603,org.eclipse.core.filesystem.linux.ppc:0.0.0,1.0.100.v20070430,org.eclipse.core.filesystem.freebsd.x86:0.0.0,1.1.0.v20070416,org.eclipse.core.filesystem.freebsd.amd64:0.0.0,1.1.0.v20070416,org.eclipse.core.filesystem.linux.x86:0.0.0,1.1.0.v20070416,org.eclipse.core.filesystem.linux.x86_64:0.0.0,1.0.100.v20070510,org.eclipse.core.filesystem.solaris.sparc:0.0.0,1.0.100.v20070425,org.eclipse.core.filesystem.macosx:0.0.0,1.0.0.v20060603,org.eclipse.core.filesystem.qnx.x86:0.0.0,1.0.0.v20060603,org.eclipse.core.filesystem.win32.x86:0.0.0,1.1.0.v20070510,org.eclipse.core.resources.win32:0.0.0,3.3.0.v20070226,org.eclipse.update.core.freebsd:0.0.0,3.2.0.v20070615,org.eclipse.update.core.linux:0.0.0,3.2.0.v20070615,org.eclipse.update.core.win32:0.0.0,3.2.100.v20070615,org.eclipse.ui.views.properties.tabbed:0.0.0,3.3.0.I20070605-0010,org.eclipse.core.runtime.compatibility.registry:0.0.0,3.2.100.v20070316,org.mortbay.jetty:0.0.0,5.1.11.v200706111724,"/>
+		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft/feature.xml"  selfVersion="3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft" featureIds="org.eclipse.rcp:0.0.0,3.3.3.r33x_r20080129-8y8eE9UEUWI6qujeED0xT7bc," pluginIds="com.jcraft.jsch:0.0.0,0.1.31,javax.servlet:0.0.0,2.4.0.v200706111738,javax.servlet.jsp:0.0.0,2.0.0.v200706191603,org.apache.jasper:0.0.0,5.5.17.v200706111724,org.apache.commons.el:0.0.0,1.0.0.v200706111724,org.apache.commons.logging:0.0.0,1.0.4.v200706111724,org.apache.ant:0.0.0,1.7.0.v200706080842,org.apache.lucene:0.0.0,1.9.1.v200706111724,org.apache.lucene.analysis:0.0.0,1.9.1.v200706181610,org.eclipse.ant.core:0.0.0,3.1.200.v20070522,org.eclipse.compare:0.0.0,3.3.2.r33x_20080128,org.eclipse.core.boot:0.0.0,3.1.100.v20060603,org.eclipse.core.filebuffers:0.0.0,3.3.1.r331_v20070829,org.eclipse.core.filesystem:0.0.0,1.1.0.v20070606,org.eclipse.core.net:0.0.0,1.0.1.r33x_20070709,org.eclipse.core.resources:0.0.0,3.3.1.R33x_v20080205,org.eclipse.core.resources.compatibility:0.0.0,3.2.100.v20070502,org.eclipse.core.runtime.compatibility:0.0.0,3.1.200.v20070502,org.eclipse.osgi.services:0.0.0,3.1.200.v20070605,org.eclipse.osgi.util:0.0.0,3.1.200.v20070605,org.eclipse.core.variables:0.0.0,3.2.0.v20070426,org.eclipse.debug.core:0.0.0,3.3.2.v20080117_r332,org.eclipse.debug.ui:0.0.0,3.3.2.v20080117_r332,org.eclipse.equinox.http.registry:0.0.0,1.0.1.R33x_v20071231,org.eclipse.equinox.http.jetty:0.0.0,1.0.1.R33x_v20070816,org.eclipse.equinox.http.servlet:0.0.0,1.0.1.R33x_v20070816,org.eclipse.equinox.jsp.jasper:0.0.0,1.0.1.R33x_v20070816,org.eclipse.equinox.jsp.jasper.registry:0.0.0,1.0.0.v20070607,org.eclipse.help.webapp:0.0.0,3.3.2.v20071102_33x,org.eclipse.help.base:0.0.0,3.3.1.v20070813_33x,org.eclipse.help.ui:0.0.0,3.3.2.v20071126_33x,org.eclipse.help.appserver:0.0.0,3.1.200.v20070510,org.eclipse.ltk.core.refactoring:0.0.0,3.3.1.r332_20080128,org.eclipse.ltk.ui.refactoring:0.0.0,3.3.1.r332_20080128,org.eclipse.platform:0.0.0,3.3.3.r33x_r20080129,org.eclipse.platform.doc.user:0.0.0,3.3.0.M20070913-1400,org.eclipse.search:0.0.0,3.3.1.r331_v20070831-0800,org.eclipse.team.core:0.0.0,3.3.1.r33x_20080128,org.eclipse.team.ui:0.0.0,3.3.2.r33x_20080128,org.eclipse.tomcat:0.0.0,4.1.230.v20070531,org.eclipse.text:0.0.0,3.3.0.v20070606-0010,org.eclipse.jface.text:0.0.0,3.3.2.r332_20071017-0800,org.eclipse.jsch.core:0.0.0,1.0.0.I20070426,org.eclipse.jsch.ui:0.0.0,1.0.1.r33x_20070709,org.eclipse.ui.console:0.0.0,3.2.2.v20071031_r332,org.eclipse.ui.presentations.r21:0.0.0,3.2.100.I20070605-0010,org.eclipse.ui.intro:0.0.0,3.2.101.v20070827_33x,org.eclipse.ui.intro.universal:0.0.0,3.2.100.v20070530A,org.eclipse.ui.cheatsheets:0.0.0,3.3.1.v20080125_33x,org.eclipse.ui.browser:0.0.0,3.2.100.v20070524A,org.eclipse.ui.navigator:0.0.0,3.3.2.M20080207-0800,org.eclipse.ui.navigator.resources:0.0.0,3.3.1.M20070831-2000,org.eclipse.ui.net:0.0.0,1.0.0.I20070516,org.eclipse.ui.workbench.texteditor:0.0.0,3.3.2.r332_20080109-0800,org.eclipse.ui.views:0.0.0,3.2.101.M20080207-0800,org.eclipse.ui.editors:0.0.0,3.3.2.r332_20080109-0800,org.eclipse.ui.forms:0.0.0,3.3.0.v20070511,org.eclipse.ui.externaltools:0.0.0,3.1.200.v20070416,org.eclipse.ui.ide:0.0.0,3.3.2.M20080207-0800,org.eclipse.ui.ide.application:0.0.0,1.0.0.I20070530-0100,org.eclipse.ui.win32:0.0.0,3.2.100.I20070319-0010,org.eclipse.update.core:0.0.0,3.2.101.R33x_v20070911,org.eclipse.update.scheduler:0.0.0,3.2.100.v20070615,org.eclipse.update.ui:0.0.0,3.2.100.v20070615,org.eclipse.ui.workbench.compatibility:0.0.0,3.2.0.I20070319-0010,org.eclipse.core.filesystem.hpux.ia64_32:0.0.0,1.0.0.v20060603,org.eclipse.core.filesystem.hpux.PA_RISC:0.0.0,1.0.0.v20060603,org.eclipse.core.filesystem.linux.ppc:0.0.0,1.0.100.v20070430,org.eclipse.core.filesystem.freebsd.x86:0.0.0,1.1.0.v20070416,org.eclipse.core.filesystem.linux.x86:0.0.0,1.1.0.v20070416,org.eclipse.core.filesystem.freebsd.amd64:0.0.0,1.0.100.v20070510,org.eclipse.core.filesystem.linux.x86_64:0.0.0,1.0.100.v20070510,org.eclipse.core.filesystem.solaris.sparc:0.0.0,1.0.100.v20070425,org.eclipse.core.filesystem.macosx:0.0.0,1.0.0.v20060603,org.eclipse.core.filesystem.qnx.x86:0.0.0,1.0.0.v20060603,org.eclipse.core.filesystem.win32.x86:0.0.0,1.1.0.v20070510,org.eclipse.core.resources.win32:0.0.0,3.3.0.v20070226,org.eclipse.update.core.freebsd:0.0.0,3.2.0.v20070615,org.eclipse.update.core.linux:0.0.0,3.2.0.v20070615,org.eclipse.update.core.win32:0.0.0,3.2.100.v20070615,org.eclipse.ui.views.properties.tabbed:0.0.0,3.3.1.M20070831-0800,org.eclipse.core.runtime.compatibility.registry:0.0.0,3.2.100.v20070316,org.mortbay.jetty:0.0.0,5.1.11.v200706111724,"/>
 		<antcall target="rootFiles${os}_${ws}_${arch}"/>
 	</target>
 	<target name="rootFileswin32_win32_x86">
@@ -522,28 +522,6 @@
 		<chmod perm="755" dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" includes="eclipse" /> 
 		<chmod perm="755" dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" includes="*.so*" /> 
 	</target>
-	<target name="rootFilesfreebsd_gtk_amd64">
-		<mkdir dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/"/>
-		<copy todir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/" failonerror="true" overwrite="true">
-			<fileset dir="${basedir}/about_files/freebsd.gtk.amd64">
-				<include name="**"/>
-			</fileset>
-			<fileset dir="${basedir}/../../features/org.eclipse.equinox.executable/bin/gtk/freebsd/amd64">
-				<include name="**"/>
-			</fileset>
-			<fileset dir="${basedir}/gtk">
-				<include name="**"/>
-			</fileset>
-			<fileset dir="${basedir}/rootfiles">
-				<include name="**"/>
-			</fileset>
-			<fileset dir="${basedir}/../../plugins/org.eclipse.platform">
-				<include name="startup.jar"/>
-			</fileset>
-		</copy>
-		<chmod perm="755" dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" includes="eclipse" /> 
-		<chmod perm="755" dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" includes="*.so*" /> 
-	</target>
 	<target name="rootFileslinux_gtk_x86">
 		<mkdir dir="${feature.base}/linux.gtk.x86/${collectingFolder}/"/>
 		<copy todir="${feature.base}/linux.gtk.x86/${collectingFolder}/" failonerror="true" overwrite="true">
@@ -603,6 +581,28 @@
 		</copy>
 		<chmod perm="755" dir="${feature.base}/linux.gtk.ppc64/${collectingFolder}" includes="*.so*" /> 
 		<chmod perm="755" dir="${feature.base}/linux.gtk.ppc64/${collectingFolder}" includes="eclipse" /> 
+	</target>
+	<target name="rootFilesfreebsd_gtk_amd64">
+		<mkdir dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/"/>
+		<copy todir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/" failonerror="true" overwrite="true">
+			<fileset dir="${basedir}/about_files/freebsd.gtk.amd64">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="${basedir}/../../features/org.eclipse.equinox.executable/bin/gtk/freebsd/amd64">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="${basedir}/gtk">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="${basedir}/rootfiles">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="${basedir}/../../plugins/org.eclipse.platform">
+				<include name="startup.jar"/>
+			</fileset>
+		</copy>
+		<chmod perm="755" dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" includes="eclipse" /> 
+		<chmod perm="755" dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" includes="*.so*" /> 
 	</target>
 	<target name="rootFileslinux_gtk_x86_64">
 		<mkdir dir="${feature.base}/linux.gtk.x86_64/${collectingFolder}/"/>
@@ -844,10 +844,10 @@
 		<antcall target="rootFileswin32_wpf_x86"/>
 		<antcall target="rootFilesmacosx_carbon_ppc"/>
 		<antcall target="rootFilesfreebsd_gtk_x86"/>
-		<antcall target="rootFilesfreebsd_gtk_amd64"/>
 		<antcall target="rootFileslinux_gtk_x86"/>
 		<antcall target="rootFileslinux_gtk_ppc"/>
 		<antcall target="rootFileslinux_gtk_ppc64"/>
+		<antcall target="rootFilesfreebsd_gtk_amd64"/>
 		<antcall target="rootFileslinux_gtk_x86_64"/>
 		<antcall target="rootFileslinux_gtk_ia64"/>
 		<antcall target="rootFileslinux_gtk_s390"/>
@@ -874,7 +874,7 @@
 			<param name="feature.base" value="${feature.temp.folder}"/>
 			<param name="os" value="*"/>
 		</antcall>
-		<zip destfile="${feature.destination}/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G.bin.dist.zip" basedir="${feature.temp.folder}" filesonly="false" whenempty="skip" update="false"/>
+		<zip destfile="${feature.destination}/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft.bin.dist.zip" basedir="${feature.temp.folder}" filesonly="false" whenempty="skip" update="false"/>
 		<delete dir="${feature.temp.folder}"/>
 	</target>
 
@@ -882,11 +882,11 @@
 		<delete dir="${feature.temp.folder}"/>
 		<mkdir dir="${feature.temp.folder}"/>
 		<antcall target="all.children">
-			<param name="destination.temp.folder" value="${feature.temp.folder}/plugins/org.eclipse.platform.source_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G/src"/>
+			<param name="destination.temp.folder" value="${feature.temp.folder}/plugins/org.eclipse.platform.source_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft/src"/>
 			<param name="include.children" value="true"/>
 			<param name="target" value="gather.sources"/>
 		</antcall>
-		<zip destfile="${feature.destination}/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G.src.zip" basedir="${feature.temp.folder}" filesonly="true" whenempty="skip" update="false"/>
+		<zip destfile="${feature.destination}/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft.src.zip" basedir="${feature.temp.folder}" filesonly="true" whenempty="skip" update="false"/>
 		<delete dir="${feature.temp.folder}"/>
 	</target>
 
@@ -898,15 +898,15 @@
 			<param name="include.children" value="true"/>
 			<param name="target" value="gather.logs"/>
 		</antcall>
-		<zip destfile="${feature.destination}/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G.log.zip" basedir="${feature.temp.folder}" filesonly="true" whenempty="skip" update="false"/>
+		<zip destfile="${feature.destination}/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft.log.zip" basedir="${feature.temp.folder}" filesonly="true" whenempty="skip" update="false"/>
 		<delete dir="${feature.temp.folder}"/>
 	</target>
 
 	<target name="clean" depends="init" description="Clean the feature: org.eclipse.platform of all the zips, jars and logs created.">
-		<delete file="${feature.destination}/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G.jar"/>
-		<delete file="${feature.destination}/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G.bin.dist.zip"/>
-		<delete file="${feature.destination}/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G.log.zip"/>
-		<delete file="${feature.destination}/org.eclipse.platform_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G.src.zip"/>
+		<delete file="${feature.destination}/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft.jar"/>
+		<delete file="${feature.destination}/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft.bin.dist.zip"/>
+		<delete file="${feature.destination}/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft.log.zip"/>
+		<delete file="${feature.destination}/org.eclipse.platform_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft.src.zip"/>
 		<delete dir="${feature.temp.folder}"/>
 		<antcall target="all.children">
 			<param name="target" value="clean"/>
@@ -914,7 +914,7 @@
 	</target>
 
 	<target name="refresh" depends="init" if="eclipse.running" description="Refresh this folder.">
-		<eclipse.convertPath fileSystemPath="/builds/I200706251500/src/features/org.eclipse.platform/" property="resourcePath"/>
+		<eclipse.convertPath fileSystemPath="/builds/M200802211800/src/features/org.eclipse.platform/" property="resourcePath"/>
 		<eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
 		<antcall target="all.children">
 			<param name="target" value="refresh"/>
@@ -922,7 +922,7 @@
 	</target>
 	<target name="gather.sources">
 		<antcall target="children">
-			<param name="destination.temp.folder" value="${feature.temp.folder}/plugins/org.eclipse.platform.source_3.3.0.v20070612-_19UEkLEzwsdF9jSqQ-G/src"/>
+			<param name="destination.temp.folder" value="${feature.temp.folder}/plugins/org.eclipse.platform.source_3.3.3.r33x_r20080129-_19UEl7Ezk_gXF1kouft/src"/>
 			<param name="target" value="gather.sources"/>
 		</antcall>
 	</target>

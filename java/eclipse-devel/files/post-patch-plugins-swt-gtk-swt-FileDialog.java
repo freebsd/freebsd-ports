@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- plugins/org.eclipse.swt/Eclipse SWT/gtk/org/eclipse/swt/widgets/FileDialog.java.orig	2007-09-21 18:58:07.000000000 +0200
 +++ plugins/org.eclipse.swt/Eclipse SWT/gtk/org/eclipse/swt/widgets/FileDialog.java	2008-02-05 20:49:58.000000000 +0100
 @@ -378,29 +378,29 @@

@@ -1,5 +1,5 @@
---- plugins/org.eclipse.team.core/build.xml.orig	2007-06-26 04:39:43.000000000 +0900
-+++ plugins/org.eclipse.team.core/build.xml	2007-09-05 23:58:46.000000000 +0900
+--- plugins/org.eclipse.team.core/build.xml.orig	2007-10-24 06:31:14.000000000 +0900
++++ plugins/org.eclipse.team.core/build.xml	2007-11-19 15:10:19.000000000 +0900
 @@ -147,6 +147,10 @@
  			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.hpux.PA_RISC_1.0.0.v20060603/@dot"/>
  			<pathelement path="../org.eclipse.core.filesystem.linux.ppc/@dot"/>
@@ -7,7 +7,7 @@
 +			<pathelement path="../org.eclipse.core.filesystem.freebsd.x86/@dot"/>
 +			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.freebsd.x86_1.1.0.v20070416/@dot"/>
 +			<pathelement path="../org.eclipse.core.filesystem.freebsd.amd64/@dot"/>
-+			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.freebsd.amd64_1.1.0.v20070416/@dot"/>
++			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.freebsd.amd64_1.1.0.v20070510/@dot"/>
  			<pathelement path="../org.eclipse.core.filesystem.linux.x86/@dot"/>
  			<pathelement path="${build.result.folder}/../org.eclipse.core.filesystem.linux.x86_1.1.0.v20070416/@dot"/>
  			<pathelement path="../org.eclipse.core.filesystem.linux.x86_64/@dot"/>

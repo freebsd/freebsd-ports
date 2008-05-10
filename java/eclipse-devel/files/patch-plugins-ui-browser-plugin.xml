@@ -1,6 +1,6 @@
---- plugins/org.eclipse.ui.browser/plugin.xml.orig	2007-06-26 04:57:13.000000000 +0900
-+++ plugins/org.eclipse.ui.browser/plugin.xml	2007-09-06 11:26:03.000000000 +0900
-@@ -74,11 +74,11 @@
+--- plugins/org.eclipse.ui.browser/plugin.xml.orig	2007-10-24 06:48:42.000000000 +0900
++++ plugins/org.eclipse.ui.browser/plugin.xml	2007-11-19 15:30:34.000000000 +0900
+@@ -74,11 +74,12 @@
        <browser
           id="org.eclipse.ui.browser.mozilla"
           name="%browserMozilla"
@@ -9,12 +9,12 @@
           executable="mozilla"
           factoryclass="org.eclipse.ui.internal.browser.browsers.MozillaFactory">
           <location>usr/bin/mozilla</location>
--         <location>usr/X11/bin/mozilla</location>
+          <location>usr/X11/bin/mozilla</location>
 +         <location>usr/local/bin/mozilla</location>
        </browser>
        <browser
           id="org.eclipse.ui.browser.netscape"
-@@ -93,24 +93,26 @@
+@@ -93,23 +94,25 @@
        <browser
           id="org.eclipse.ui.browser.firefox"
           name="%browserFirefox"
@@ -30,6 +30,7 @@
 +         os="freebsd,linux,aix,hpux,solaris"
           executable="konqueror">
           <location>opt/kde3/bin/konqueror</location>
++         <location>/usr/local/bin/konqueror</location>
        </browser>
        <browser
           id="org.eclipse.ui.browser.galeon"
@@ -38,9 +39,7 @@
 +         os="freebsd,linux,aix,hpux,solaris"
           executable="galeon">
           <location>opt/usr/gnome/bin/galeon</location>
-+         <location>usr/local/bin/galeon</location>
++         <location>/usr/local/bin/galeon</location>
        </browser>
-+
        
        <!-- Windows -->
-       <browser
