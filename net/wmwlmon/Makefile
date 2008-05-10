@@ -7,7 +7,7 @@
 
 PORTNAME=	wmwlmon
 PORTVERSION=	0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net windowmaker
 MASTER_SITES=	http://www.nazgul.ch/dev/ \
 		http://dougbarton.us/Downloads/
@@ -25,18 +25,17 @@ PLIST_FILES=	bin/wmwlmon
 
 .if ${OSVERSION} < 600100
 IGNORE=		needs WLAN infrastructure from 6.0-RELEASE or newer
-.elif ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
+.elif ${OSVERSION} > 700047
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-wl.c ${PATCHDIR}/extra-patch-wmwlmon.1
+pre-everything::
+	@${ECHO_CMD} "========================================================"
+	@${ECHO_CMD} "On FreeBSD > 700047 there is no wi(4) support"
+	@${ECHO_CMD} "========================================================"
 .endif
 
-DEPRECATED=		Does not work after removal of wi_req
-EXPIRATION_DATE=	2008-07-03
-
 post-patch:
-	${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.presed
-	${SED} -e 's#/usr/X11R6#${LOCALBASE}#g' \
-	    -e 's#/usr/local#${LOCALBASE}#g' \
-	    ${WRKSRC}/Makefile.presed > ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's#/usr/X11R6#${LOCALBASE}#g' \
+		-e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmwlmon ${PREFIX}/bin
