@@ -1,126 +1,91 @@
---- assemble.org.eclipse.sdk.freebsd.gtk.x86.xml.orig	Sun Oct 21 11:04:01 2007
-+++ assemble.org.eclipse.sdk.freebsd.gtk.x86.xml	Sun Oct 21 16:46:44 2007
-@@ -11,6 +11,11 @@
+--- assemble.org.eclipse.sdk.freebsd.gtk.x86.xml.orig	2008-03-08 12:58:43.000000000 +0900
++++ assemble.org.eclipse.sdk.freebsd.gtk.x86.xml	2008-03-08 13:35:32.000000000 +0900
+@@ -11,6 +11,9 @@
  	<property name="eclipse.features" value="${eclipse.base}/features"/>
  	<property name="archiveFullPath" value="${basedir}/${buildLabel}/${archiveName}"/>
  	<property name="tarargs" value=""/>
-+
 +	<condition property="jdk16">
 +		<isset property="JavaSE-1.6"/>
 +	</condition>
-+
  	<!-- Beginning of the jarUp task -->
  	<target name="jarUp" description="Create a jar from the given location.">
  		<available property="${source}/${elementName}_exists" file="${source}/${elementName}"/>
-@@ -29,7 +34,7 @@
- 		<eclipse.jarProcessor sign="${jarProcessor.sign}" pack="${jarProcessor.pack200}" unsign="${jarProcessor.unsign}" jar="${source}/${elementName}.jar" alias="${sign.alias}" keystore="${sign.keystore}" storepass="${sign.storepass}"/>
- 	</target>
- 	<!-- End of the jarUp task -->
--	<target name="main">
-+	<target name="main" >
- 		<condition property="pluginArchivePrefix" value="plugins">
- 			<equals arg1="${archivePrefix}"  arg2="" trim="true"/>
- 		</condition>
-@@ -65,9 +70,7 @@
- 		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.externaltools" target="gather.bin.parts">
- 			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
- 		</ant>
--		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.apt.pluggable.core" target="gather.bin.parts">
--			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
--		</ant>
-+
- 		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.junit" target="gather.bin.parts">
- 			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
- 		</ant>
-@@ -161,9 +164,7 @@
- 		<ant antfile="build.xml" dir="plugins/org.eclipse.team.cvs.ui" target="gather.bin.parts">
+@@ -50,9 +53,6 @@
+ 		<ant antfile="build.xml" dir="plugins/org.eclipse.pde.ui.templates" target="gather.bin.parts">
  			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
  		</ant>
 -		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.compiler.tool" target="gather.bin.parts">
 -			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
 -		</ant>
-+
- 		<ant antfile="build.xml" dir="plugins/org.eclipse.core.commands" target="gather.bin.parts">
+ 		<ant antfile="build.xml" dir="plugins/org.junit4" target="gather.bin.parts">
  			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
  		</ant>
-@@ -311,9 +312,7 @@
- 		<ant antfile="build.xml" dir="plugins/org.eclipse.cvs.source" target="gather.bin.parts">
+@@ -134,9 +134,6 @@
+ 		<ant antfile="build.xml" dir="plugins/org.eclipse.core.runtime" target="gather.bin.parts">
  			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
  		</ant>
 -		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.compiler.apt" target="gather.bin.parts">
 -			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
 -		</ant>
-+
- 		<ant antfile="build.xml" dir="plugins/org.eclipse.pde.junit.runtime" target="gather.bin.parts">
+ 		<ant antfile="build.xml" dir="plugins/org.eclipse.equinox.app" target="gather.bin.parts">
  			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
  		</ant>
-@@ -480,10 +479,7 @@
- 			<param name="source" value="${eclipse.plugins}"/>
- 			<param name="elementName" value="org.eclipse.ui.externaltools_3.1.200.v20070416"/>
+@@ -146,9 +143,6 @@
+ 		<ant antfile="build.xml" dir="plugins/org.eclipse.team.cvs.ui" target="gather.bin.parts">
+ 			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+ 		</ant>
+-		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.apt.pluggable.core" target="gather.bin.parts">
+-			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+-		</ant>
+ 		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.intro.universal" target="gather.bin.parts">
+ 			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+ 		</ant>
+@@ -474,10 +468,6 @@
  		</antcall>
--		<antcall target="jarUp">
--			<param name="source" value="${eclipse.plugins}"/>
--			<param name="elementName" value="org.eclipse.jdt.apt.pluggable.core_1.0.1.R33x_v20070831-0435"/>
--		</antcall>
-+
  		<antcall target="jarUp">
  			<param name="source" value="${eclipse.plugins}"/>
- 			<param name="elementName" value="org.eclipse.jdt.junit_3.3.1.r331_v20070829"/>
-@@ -596,10 +592,7 @@
- 			<param name="source" value="${eclipse.plugins}"/>
- 			<param name="elementName" value="org.eclipse.team.cvs.ui_3.3.1.r33x_20070807"/>
- 		</antcall>
+-			<param name="elementName" value="org.eclipse.jdt.compiler.tool_1.0.1.v_793_R33x"/>
+-		</antcall>
 -		<antcall target="jarUp">
 -			<param name="source" value="${eclipse.plugins}"/>
--			<param name="elementName" value="org.eclipse.jdt.compiler.tool_1.0.1.v_780_R33x"/>
--		</antcall>
-+
+ 			<param name="elementName" value="org.eclipse.swt.gtk.freebsd.x86_3.3.2.v3349"/>
+ 		</antcall>
+ 		<antcall target="jarUp">
+@@ -574,10 +564,6 @@
+ 		</antcall>
  		<antcall target="jarUp">
  			<param name="source" value="${eclipse.plugins}"/>
- 			<param name="elementName" value="org.eclipse.core.commands_3.3.0.I20070605-0010"/>
-@@ -776,10 +769,7 @@
- 			<param name="source" value="${eclipse.plugins}"/>
- 			<param name="elementName" value="org.eclipse.debug.core_3.3.1.v20070731_r331"/>
- 		</antcall>
+-			<param name="elementName" value="org.eclipse.jdt.compiler.apt_1.0.1.R33x_v20071002-2100"/>
+-		</antcall>
 -		<antcall target="jarUp">
 -			<param name="source" value="${eclipse.plugins}"/>
--			<param name="elementName" value="org.eclipse.jdt.compiler.apt_1.0.1.R33x_v20070831-0435"/>
--		</antcall>
-+
+ 			<param name="elementName" value="org.eclipse.equinox.app_1.0.1.R33x_v20070828"/>
+ 		</antcall>
+ 		<antcall target="jarUp">
+@@ -590,10 +576,6 @@
+ 		</antcall>
  		<antcall target="jarUp">
  			<param name="source" value="${eclipse.plugins}"/>
- 			<param name="elementName" value="org.eclipse.pde.junit.runtime_3.3.0.v20070608-1300"/>
-@@ -892,23 +882,51 @@
- 			<param name="source" value="${eclipse.plugins}"/>
- 			<param name="elementName" value="org.eclipse.ui.intro_3.2.101.v20070827_33x"/>
+-			<param name="elementName" value="org.eclipse.jdt.apt.pluggable.core_1.0.1.R33x_v20071002-2100"/>
+-		</antcall>
+-		<antcall target="jarUp">
+-			<param name="source" value="${eclipse.plugins}"/>
+ 			<param name="elementName" value="org.eclipse.jdt.junit.runtime_3.3.0.v20070606-0010"/>
  		</antcall>
--		<eclipse.brand root="${eclipse.base}/freebsd.gtk.x86/${collectingFolder}" icons="${launcherIcons}" name="${launcherName}" os="${os}"		/>
+ 		<antcall target="jarUp">
+@@ -892,6 +874,9 @@
+ 			<param name="source" value="${eclipse.plugins}"/>
+ 			<param name="elementName" value="org.eclipse.team.core_3.3.1.r33x_20080128"/>
+ 		</antcall>
 +
 +		<antcall target="main.jdk16" inheritAll="true"/>
 +
-+		<eclipse.brand root="${eclipse.base}/freebsd.gtk.x86/${collectingFolder}" icons="${launcherIcons}" name="${launcherName}" os="${os}" />
+ 		<eclipse.brand root="${eclipse.base}/freebsd.gtk.x86/${collectingFolder}" icons="${launcherIcons}" name="${launcherName}" os="${os}"		/>
  		<exec executable="cp" dir="${basedir}">
--			<arg line="-r &apos;${assemblyTempDir}/${collectingFolder}/freebsd.gtk.x86/${collectingFolder}&apos; &apos;${assemblyTempDir}&apos;"/>
-+			<arg line="-r &apos;${assemblyTempDir}/${collectingFolder}/freebsd.gtk.x86/${collectingFolder}&apos; &apos;${assemblyTempDir}&apos;" />
+ 			<arg line="-r &apos;${assemblyTempDir}/${collectingFolder}/freebsd.gtk.x86/${collectingFolder}&apos; &apos;${assemblyTempDir}&apos;"/>
+@@ -909,6 +894,31 @@
  		</exec>
- 		<exec executable="rm" dir="${basedir}">
--			<arg line="-rf &apos;${assemblyTempDir}/${collectingFolder}/freebsd.gtk.x86&apos;"/>
-+			<arg line="-rf &apos;${assemblyTempDir}/${collectingFolder}/freebsd.gtk.x86&apos;" />
- 		</exec>
- 		<exec executable="tar" dir="${assemblyTempDir}">
--			<arg line="${tarargs}-cvf &apos;${archiveFullPath}&apos; ${archivePrefix} "/>
-+			<arg line="${tarargs}-cvf &apos;${archiveFullPath}&apos; ${archivePrefix} " />
- 		</exec>
--		<antcall target="gzipResults"/>
-+		<antcall target="gzipResults" />
- 		<exec executable="rm">
--			<arg line="-rf"/>
--			<arg line="&apos;${assemblyTempDir}&apos;"/>
-+			<arg line="-rf" />
-+			<arg line="&apos;${assemblyTempDir}&apos;" />
- 		</exec>
--		<delete dir="${assemblyTempDir}"/>
-+		<delete dir="${assemblyTempDir}" />
+ 		<delete dir="${assemblyTempDir}"/>
  	</target>
 +
 +	<target name="main.jdk16" if="jdk16">
@@ -135,15 +100,15 @@
 +		</ant>
 +		<antcall target="jarUp">
 +			<param name="source" value="${eclipse.plugins}" />
-+			<param name="elementName" value="org.eclipse.jdt.apt.pluggable.core_1.0.1.R33x_v20070831-0435" />
++			<param name="elementName" value="org.eclipse.jdt.apt.pluggable.core_1.0.1.R33x_v20071002-2100" />
 +		</antcall>
 +		<antcall target="jarUp">
 +			<param name="source" value="${eclipse.plugins}" />
-+			<param name="elementName" value="org.eclipse.jdt.compiler.apt_1.0.1.R33x_v20070831-0435" />
++			<param name="elementName" value="org.eclipse.jdt.compiler.apt_1.0.1.R33x_v20071002-2100" />
 +		</antcall>
 +		<antcall target="jarUp">
 +			<param name="source" value="${eclipse.plugins}" />
-+			<param name="elementName" value="org.eclipse.jdt.compiler.tool_1.0.1.v_780_R33x" />
++			<param name="elementName" value="org.eclipse.jdt.compiler.tool_1.0.1.v_793_R33x" />
 +		</antcall>
 +	</target>
 +

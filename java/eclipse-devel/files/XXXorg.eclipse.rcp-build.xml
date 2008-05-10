@@ -32,11 +32,6 @@
 			<property name="os" value="aix"/>
 			<property name="ws" value="motif"/>
 		</ant>
-		<ant antfile="build.xml" dir="../../plugins/org.eclipse.equinox.launcher.gtk.freebsd.amd64" target="${target}">
-			<property name="arch" value="amd64"/>
-			<property name="os" value="freebsd"/>
-			<property name="ws" value="gtk"/>
-		</ant>
 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64" target="${target}">
 			<property name="arch" value="x86_64"/>
 			<property name="os" value="linux"/>
@@ -57,14 +52,19 @@
 			<property name="os" value="linux"/>
 			<property name="ws" value="gtk"/>
 		</ant>
-		<ant antfile="build.xml" dir="../../plugins/org.eclipse.equinox.launcher.gtk.linux.x86" target="${target}">
-			<property name="arch" value="x86"/>
-			<property name="os" value="linux"/>
-			<property name="ws" value="gtk"/>
-		</ant>
 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86" target="${target}">
 			<property name="arch" value="x86"/>
 			<property name="os" value="freebsd"/>
+			<property name="ws" value="gtk"/>
+		</ant>
+		<ant antfile="build.xml" dir="../../plugins/org.eclipse.equinox.launcher.gtk.freebsd.amd64" target="${target}">
+			<property name="arch" value="amd64"/>
+			<property name="os" value="freebsd"/>
+			<property name="ws" value="gtk"/>
+		</ant>
+		<ant antfile="build.xml" dir="../../plugins/org.eclipse.equinox.launcher.gtk.linux.x86" target="${target}">
+			<property name="arch" value="x86"/>
+			<property name="os" value="linux"/>
 			<property name="ws" value="gtk"/>
 		</ant>
 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.equinox.launcher.gtk.linux.ppc" target="${target}">
@@ -162,6 +162,11 @@
 			<property name="os" value="freebsd"/>
 			<property name="ws" value="gtk"/>
 		</ant>
+		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk.freebsd.amd64" target="${target}">
+			<property name="arch" value="amd64"/>
+			<property name="os" value="freebsd"/>
+			<property name="ws" value="gtk"/>
+		</ant>
 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk.linux.x86" target="${target}">
 			<property name="arch" value="x86"/>
 			<property name="os" value="linux"/>
@@ -251,11 +256,6 @@
 			<property name="arch" value="x86"/>
 			<property name="os" value="win32"/>
 			<property name="ws" value="win32"/>
-		</ant>
-		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk.freebsd.amd64" target="${target}">
-			<property name="arch" value="amd64"/>
-			<property name="os" value="freebsd"/>
-			<property name="ws" value="gtk"/>
 		</ant>
 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.swt.gtk.linux.x86_64" target="${target}">
 			<property name="arch" value="x86_64"/>
@@ -351,7 +351,7 @@
 				<include name="eclipse_update_120.jpg"/>
 			</fileset>
 		</copy>
-		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.rcp_3.3.3.r33x_r20080129-8y8eE9UEUWI6qujeED0xT7bc/feature.xml"  selfVersion="3.3.3.r33x_r20080129-8y8eE9UEUWI6qujeED0xT7bc" featureIds="" pluginIds="com.ibm.icu:0.0.0,3.6.1.v20070906,org.eclipse.core.commands:0.0.0,3.3.0.I20070605-0010,org.eclipse.core.databinding:0.0.0,1.0.1.M20070822-0800,org.eclipse.core.databinding.beans:0.0.0,1.0.1.M20070910-0800b,org.eclipse.core.jobs:0.0.0,3.3.1.R33x_v20070709,org.eclipse.core.expressions:0.0.0,3.3.0.v20070606-0010,org.eclipse.core.runtime:0.0.0,3.3.100.v20070530,org.eclipse.core.runtime.compatibility.auth:0.0.0,3.2.100.v20070502,org.eclipse.osgi:0.0.0,3.3.2.R33x_v20080105,org.eclipse.help:0.0.0,3.3.2.v20071126_33x,org.eclipse.swt:0.0.0,3.3.2.v3349d,org.eclipse.jface:0.0.0,3.3.2.M20080207-0800,org.eclipse.jface.databinding:0.0.0,1.1.1.M20080207-0800,org.eclipse.ui:0.0.0,3.3.1.M20071128-0800,org.eclipse.ui.workbench:0.0.0,3.3.2.M20080207-0800,org.eclipse.ui.carbon:0.0.0,3.2.100.I20070605-0010,org.eclipse.update.configurator:0.0.0,3.2.101.R33x_v20070810,org.eclipse.swt.win32.win32.x86:0.0.0,3.3.3.v3349,org.eclipse.swt.wpf.win32.x86:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.freebsd.x86:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.linux.x86:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.linux.s390:0.0.0,3.3.0.R3_3,org.eclipse.swt.gtk.linux.s390x:0.0.0,3.3.0.R3_3,org.eclipse.swt.gtk.solaris.sparc:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.solaris.x86:0.0.0,3.3.0.HEAD,org.eclipse.swt.gtk.linux.ppc:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.freebsd.amd64:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.linux.x86_64:0.0.0,3.3.2.v3349,org.eclipse.swt.carbon.macosx:0.0.0,3.3.3.v3349,org.eclipse.swt.motif.aix.ppc:0.0.0,3.3.1.v3349,org.eclipse.swt.motif.hpux.PA_RISC:0.0.0,3.3.1.v3348,org.eclipse.swt.motif.linux.x86:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.linux.ia64:0.0.0,3.3.0.HEAD,org.eclipse.swt.motif.solaris.sparc:0.0.0,3.3.1.v3349,org.eclipse.swt.photon.qnx.x86:0.0.0,3.3.1.v3349,org.eclipse.swt.motif.hpux.ia64_32:0.0.0,3.3.0.HEAD,org.eclipse.rcp:0.0.0,3.2.1.r33x_r20080131,org.eclipse.core.contenttype:0.0.0,3.2.100.v20070319,org.eclipse.equinox.app:0.0.0,1.0.1.R33x_v20070828,org.eclipse.equinox.common:0.0.0,3.3.0.v20070426,org.eclipse.equinox.preferences:0.0.0,3.2.101.R33x_v20080117,org.eclipse.equinox.registry:0.0.0,3.3.1.R33x_v20070802,org.eclipse.equinox.launcher:0.0.0,1.0.1.R33x_v20080118,org.eclipse.equinox.launcher.gtk.solaris.sparc:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.carbon.macosx:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.linux.ppc:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.freebsd.x86:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.linux.x86:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.linux.s390:0.0.0,1.0.0,org.eclipse.equinox.launcher.gtk.linux.s390x:0.0.0,1.0.0,org.eclipse.equinox.launcher.motif.linux.x86:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.freebsd.amd64:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.linux.x86_64:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.motif.aix.ppc:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.motif.hpux.PA_RISC:0.0.0,1.0.1.R33x_v20070803,org.eclipse.equinox.launcher.wpf.win32.x86:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.win32.win32.x86:0.0.0,1.0.3.R33x_v20080118,"/>
+		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.rcp_3.3.3.r33x_r20080129-8y8eE9UEUWI6qujeED0xT7bc/feature.xml"  selfVersion="3.3.3.r33x_r20080129-8y8eE9UEUWI6qujeED0xT7bc" featureIds="" pluginIds="com.ibm.icu:0.0.0,3.6.1.v20070906,org.eclipse.core.commands:0.0.0,3.3.0.I20070605-0010,org.eclipse.core.databinding:0.0.0,1.0.1.M20070822-0800,org.eclipse.core.databinding.beans:0.0.0,1.0.1.M20070910-0800b,org.eclipse.core.jobs:0.0.0,3.3.1.R33x_v20070709,org.eclipse.core.expressions:0.0.0,3.3.0.v20070606-0010,org.eclipse.core.runtime:0.0.0,3.3.100.v20070530,org.eclipse.core.runtime.compatibility.auth:0.0.0,3.2.100.v20070502,org.eclipse.osgi:0.0.0,3.3.2.R33x_v20080105,org.eclipse.help:0.0.0,3.3.2.v20071126_33x,org.eclipse.swt:0.0.0,3.3.2.v3349d,org.eclipse.jface:0.0.0,3.3.2.M20080207-0800,org.eclipse.jface.databinding:0.0.0,1.1.1.M20080207-0800,org.eclipse.ui:0.0.0,3.3.1.M20071128-0800,org.eclipse.ui.workbench:0.0.0,3.3.2.M20080207-0800,org.eclipse.ui.carbon:0.0.0,3.2.100.I20070605-0010,org.eclipse.update.configurator:0.0.0,3.2.101.R33x_v20070810,org.eclipse.swt.win32.win32.x86:0.0.0,3.3.3.v3349,org.eclipse.swt.wpf.win32.x86:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.freebsd.x86:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.freebsd.amd64:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.linux.x86:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.linux.s390:0.0.0,3.3.0.R3_3,org.eclipse.swt.gtk.linux.s390x:0.0.0,3.3.0.R3_3,org.eclipse.swt.gtk.solaris.sparc:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.solaris.x86:0.0.0,3.3.0.HEAD,org.eclipse.swt.gtk.linux.ppc:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.linux.x86_64:0.0.0,3.3.2.v3349,org.eclipse.swt.carbon.macosx:0.0.0,3.3.3.v3349,org.eclipse.swt.motif.aix.ppc:0.0.0,3.3.1.v3349,org.eclipse.swt.motif.hpux.PA_RISC:0.0.0,3.3.1.v3348,org.eclipse.swt.motif.linux.x86:0.0.0,3.3.2.v3349,org.eclipse.swt.gtk.linux.ia64:0.0.0,3.3.0.HEAD,org.eclipse.swt.motif.solaris.sparc:0.0.0,3.3.1.v3349,org.eclipse.swt.photon.qnx.x86:0.0.0,3.3.1.v3349,org.eclipse.swt.motif.hpux.ia64_32:0.0.0,3.3.0.HEAD,org.eclipse.rcp:0.0.0,3.2.1.r33x_r20080131,org.eclipse.core.contenttype:0.0.0,3.2.100.v20070319,org.eclipse.equinox.app:0.0.0,1.0.1.R33x_v20070828,org.eclipse.equinox.common:0.0.0,3.3.0.v20070426,org.eclipse.equinox.preferences:0.0.0,3.2.101.R33x_v20080117,org.eclipse.equinox.registry:0.0.0,3.3.1.R33x_v20070802,org.eclipse.equinox.launcher:0.0.0,1.0.1.R33x_v20080118,org.eclipse.equinox.launcher.gtk.solaris.sparc:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.carbon.macosx:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.linux.ppc:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.freebsd.x86:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.freebsd.amd64:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.linux.x86:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.linux.s390:0.0.0,1.0.0,org.eclipse.equinox.launcher.gtk.linux.s390x:0.0.0,1.0.0,org.eclipse.equinox.launcher.motif.linux.x86:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.gtk.linux.x86_64:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.motif.aix.ppc:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.motif.hpux.PA_RISC:0.0.0,1.0.1.R33x_v20070803,org.eclipse.equinox.launcher.wpf.win32.x86:0.0.0,1.0.3.R33x_v20080118,org.eclipse.equinox.launcher.win32.win32.x86:0.0.0,1.0.3.R33x_v20080118,"/>
 		<antcall target="rootFiles${os}_${ws}_${arch}"/>
 	</target>
 	<target name="rootFileswin32_win32_x86">
@@ -424,6 +424,25 @@
 		<chmod perm="755" dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" includes="eclipse" /> 
 		<chmod perm="755" dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" includes="*.so*" /> 
 	</target>
+	<target name="rootFilesfreebsd_gtk_amd64">
+		<mkdir dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/"/>
+		<copy todir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/" failonerror="true" overwrite="true">
+			<fileset dir="${basedir}/../../features/org.eclipse.platform/about_files/freebsd.gtk.amd64">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="${basedir}/../../features/org.eclipse.equinox.executable/bin/gtk/freebsd/amd64">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="${basedir}/rootfiles">
+				<include name="**"/>
+			</fileset>
+			<fileset dir="${basedir}/../org.eclipse.platform/rootfiles">
+				<include name="**"/>
+			</fileset>
+		</copy>
+		<chmod perm="755" dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" includes="eclipse" /> 
+		<chmod perm="755" dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" includes="*.so*" /> 
+	</target>
 	<target name="rootFileslinux_gtk_x86">
 		<mkdir dir="${feature.base}/linux.gtk.x86/${collectingFolder}/"/>
 		<copy todir="${feature.base}/linux.gtk.x86/${collectingFolder}/" failonerror="true" overwrite="true">
@@ -469,25 +488,6 @@
 			</fileset>
 		</copy>
 		<chmod perm="755" dir="${feature.base}/linux.gtk.ppc64/${collectingFolder}" includes="eclipse" /> 
-	</target>
-	<target name="rootFilesfreebsd_gtk_amd64">
-		<mkdir dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/"/>
-		<copy todir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}/" failonerror="true" overwrite="true">
-			<fileset dir="${basedir}/../../features/org.eclipse.platform/about_files/freebsd.gtk.amd64">
-				<include name="**"/>
-			</fileset>
-			<fileset dir="${basedir}/../../features/org.eclipse.equinox.executable/bin/gtk/freebsd/amd64">
-				<include name="**"/>
-			</fileset>
-			<fileset dir="${basedir}/rootfiles">
-				<include name="**"/>
-			</fileset>
-			<fileset dir="${basedir}/../org.eclipse.platform/rootfiles">
-				<include name="**"/>
-			</fileset>
-		</copy>
-		<chmod perm="755" dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" includes="eclipse" /> 
-		<chmod perm="755" dir="${feature.base}/freebsd.gtk.amd64/${collectingFolder}" includes="*.so*" /> 
 	</target>
 	<target name="rootFileslinux_gtk_x86_64">
 		<mkdir dir="${feature.base}/linux.gtk.x86_64/${collectingFolder}/"/>
@@ -687,10 +687,10 @@
 		<antcall target="rootFileswin32_wpf_x86"/>
 		<antcall target="rootFilesmacosx_carbon_ppc"/>
 		<antcall target="rootFilesfreebsd_gtk_x86"/>
+		<antcall target="rootFilesfreebsd_gtk_amd64"/>
 		<antcall target="rootFileslinux_gtk_x86"/>
 		<antcall target="rootFileslinux_gtk_ppc"/>
 		<antcall target="rootFileslinux_gtk_ppc64"/>
-		<antcall target="rootFilesfreebsd_gtk_amd64"/>
 		<antcall target="rootFileslinux_gtk_x86_64"/>
 		<antcall target="rootFileslinux_gtk_ia64"/>
 		<antcall target="rootFileslinux_gtk_s390"/>
