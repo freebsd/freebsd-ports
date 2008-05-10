@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail_Queue
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	mail www pear
 
 MAINTAINER=	chinsan@FreeBSD.org
