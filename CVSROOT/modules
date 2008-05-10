@@ -1500,6 +1500,7 @@ coda6_client	ports/net/coda6_client
 coda6_server	ports/net/coda6_server
 code-browser	ports/editors/code-browser
 code2000	ports/x11-fonts/code2000
+code2001	ports/x11-fonts/code2001
 code2html	ports/textproc/code2html
 codeblocks	ports/devel/codeblocks
 codeeditor	ports/editors/codeeditor
