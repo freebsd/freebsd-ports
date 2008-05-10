@@ -15,8 +15,9 @@ PORTNAME=	libxml2
 PORTVERSION=	2.6.31
 PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
-MASTER_SITES=	ftp://xmlsoft.org/libxml2/ \
-		ftp://fr.rpmfind.net/pub/libxml/
+MASTER_SITES=	ftp://fr.rpmfind.net/pub/libxml/ \
+		ftp://gd.tuwien.ac.at/pub/libxml/ \
+		ftp://xmlsoft.org/libxml2/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
