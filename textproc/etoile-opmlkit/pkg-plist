@@ -1,0 +1,22 @@
+Local/Library/Frameworks/OPMLKit.framework/Headers
+Local/Library/Frameworks/OPMLKit.framework/OPMLKit
+Local/Library/Frameworks/OPMLKit.framework/Resources
+Local/Library/Frameworks/OPMLKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/OPMLDocument.h
+Local/Library/Frameworks/OPMLKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/OPMLOutline.h
+Local/Library/Frameworks/OPMLKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/OPMLParser.h
+Local/Library/Frameworks/OPMLKit.framework/Versions/%%MAJORLIBVERSION%%/OPMLKit
+Local/Library/Frameworks/OPMLKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/OPMLKit.framework/Versions/%%MAJORLIBVERSION%%/libOPMLKit.so
+Local/Library/Frameworks/OPMLKit.framework/Versions/%%MAJORLIBVERSION%%/libOPMLKit.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/OPMLKit.framework/Versions/%%MAJORLIBVERSION%%/libOPMLKit.so.%%LIBVERSION%%
+Local/Library/Frameworks/OPMLKit.framework/Versions/Current
+Local/Library/Frameworks/OPMLKit.framework/libOPMLKit.so
+Local/Library/Headers/OPMLKit
+Local/Library/Libraries/libOPMLKit.so
+Local/Library/Libraries/libOPMLKit.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libOPMLKit.so.%%LIBVERSION%%
+@dirrm Local/Library/Frameworks/OPMLKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm Local/Library/Frameworks/OPMLKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm Local/Library/Frameworks/OPMLKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/OPMLKit.framework/Versions
+@dirrm Local/Library/Frameworks/OPMLKit.framework
