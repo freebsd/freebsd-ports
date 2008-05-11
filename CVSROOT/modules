@@ -2738,6 +2738,7 @@ etoile-inspectorkit	ports/deskutils/etoile-inspectorkit
 etoile-installer	ports/sysutils/etoile-installer
 etoile-io	ports/lang/etoile-io
 etoile-iterm	ports/x11/etoile-iterm
+etoile-login	ports/x11-wm/etoile-login
 etoile-lookandbehavior	ports/deskutils/etoile-lookandbehavior
 etoile-lucenekit	ports/textproc/etoile-lucenekit
 etoile-menuserver	ports/deskutils/etoile-menuserver
