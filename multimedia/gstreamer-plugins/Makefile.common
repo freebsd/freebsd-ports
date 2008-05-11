@@ -228,6 +228,7 @@ gst_gdk_pixbuf_PLIST_FILES=	${GST_LIB_DIR}/libgstgdkpixbuf.a \
 				${GST_LIB_DIR}/libgstgdkpixbuf.so
 # gio
 gst_gio_USE_GNOME+=	glib20
+gst_gio_CONFIGURE_ARGS+=--enable-experimental
 gst_gio_DIST=	base
 
 # gnomevfs
