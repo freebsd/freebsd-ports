@@ -14,6 +14,8 @@ DISTFILES=	bi_gram-src-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Simple N-Gram (bi-gram) FULLTEXT parser plugin for MySQL 5.1+
 
+BROKEN=		does not compile
+
 CFLAGS+=	-I"${LOCALBASE}/include" -I"${LOCALBASE}/include/mysql"
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 GNU_CONFIGURE=	yes
