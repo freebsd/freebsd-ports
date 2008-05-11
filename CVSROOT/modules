@@ -2733,6 +2733,7 @@ etoile-extendedworkspacekit	ports/deskutils/etoile-extendedworkspacekit
 etoile-foundation	ports/devel/etoile-foundation
 etoile-hardware	ports/deskutils/etoile-hardware
 etoile-iconkit	ports/x11-themes/etoile-iconkit
+etoile-inspectorkit	ports/deskutils/etoile-inspectorkit
 etoile-installer	ports/sysutils/etoile-installer
 etoile-io	ports/lang/etoile-io
 etoile-iterm	ports/x11/etoile-iterm
