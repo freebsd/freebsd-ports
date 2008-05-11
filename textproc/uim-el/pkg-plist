@@ -7,6 +7,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/uim-el/uim-preedit.el
 %%EMACS_VERSION_SITE_LISPDIR%%/uim-el/uim-util.el
 %%EMACS_VERSION_SITE_LISPDIR%%/uim-el/uim-var.el
+%%EMACS_VERSION_SITE_LISPDIR%%/uim-el/uim-version.el
 %%EMACS_VERSION_SITE_LISPDIR%%/uim-el/uim.el
 %%PORTDOCS%%%%DOCSDIR_JA%%/README.ja
 %%PORTDOCS%%%%DOCSDIR%%/README

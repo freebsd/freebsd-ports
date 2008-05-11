@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-gnome
 COMMENT=	GNOME applets of uim input method
 
 USE_GNOME=	gtk20 gnomepanel
-LIB_DEPENDS=	uim.5:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.6:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	uim-pref-gtk:${PORTSDIR}/textproc/uim-gtk
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
@@ -26,7 +26,7 @@ IGNORE=		requires X11
 .endif
 
 do-build:
-	(cd ${WRKSRC}/helper && ${GMAKE} LIBS="-luim -luim-custom")
+	(cd ${WRKSRC}/helper && ${GMAKE})
 
 do-install:
 	(cd ${WRKSRC}/helper && \

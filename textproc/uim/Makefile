@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES?=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -66,9 +66,9 @@ PLIST_SUB+=	X11=""
 CONFIGURE_ARGS+=--without-${_x}
 .endif
 .endfor
-.for _x in gnome kde
-.if ${CONFIGURE_ARGS:M--enable-${_x}-applet} == ""
-CONFIGURE_ARGS+=--disable-${_x}-applet
+.for _x in gnome-applet kde-applet emacs pref
+.if ${CONFIGURE_ARGS:M--enable-${_x}} == ""
+CONFIGURE_ARGS+=--disable-${_x}
 .endif
 .endfor
 

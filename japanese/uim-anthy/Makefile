@@ -19,14 +19,14 @@ USE_GNOME=	gtk20
 .endif
 
 LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy \
-		uim.5:${PORTSDIR}/textproc/uim
+		uim.6:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
 CONFIGURE_ARGS=	--with-anthy
 
 .if !defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--with-gtk2 -enable-dict
+CONFIGURE_ARGS+=	--with-gtk2 --enable-dict
 .endif
 
 UIM_SLAVE=	yes
@@ -37,7 +37,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in \
 do-build:
 	(cd ${WRKSRC}/uim && ${GMAKE} libuim-anthy.la)
 .if !defined(WITHOUT_X11)
-	(cd ${WRKSRC}/helper && ${GMAKE} LIBS="-luim" uim-dict-gtk)
+	(cd ${WRKSRC}/helper && ${GMAKE} uim-dict-gtk)
 .endif
 
 do-install:

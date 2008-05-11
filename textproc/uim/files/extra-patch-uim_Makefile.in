@@ -1,85 +1,125 @@
---- uim/Makefile.in.orig	2007-03-15 05:37:42.000000000 +0900
-+++ uim/Makefile.in	2007-09-25 22:15:09.000000000 +0900
-@@ -86,8 +86,6 @@
- libLTLIBRARIES_INSTALL = $(INSTALL)
+--- uim/Makefile.in.orig	2008-05-06 14:23:17.000000000 +0900
++++ uim/Makefile.in	2008-05-06 22:51:59.000000000 +0900
+@@ -95,8 +95,6 @@
  uim_pluginLTLIBRARIES_INSTALL = $(INSTALL)
- LTLIBRARIES = $(lib_LTLIBRARIES) $(uim_plugin_LTLIBRARIES)
+ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES) \
+ 	$(uim_plugin_LTLIBRARIES)
+-@ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@libuim_anthy_utf8_la_DEPENDENCIES = libuim-scm.la \
+-@ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@	libuim.la
+ am__libuim_anthy_utf8_la_SOURCES_DIST = anthy-utf8.c
+ @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@am_libuim_anthy_utf8_la_OBJECTS = libuim_anthy_utf8_la-anthy-utf8.lo
+ libuim_anthy_utf8_la_OBJECTS = $(am_libuim_anthy_utf8_la_OBJECTS)
+@@ -106,8 +104,6 @@
+ @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@am_libuim_anthy_utf8_la_rpath =  \
+ @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@	-rpath \
+ @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@	$(uim_plugindir)
 -@ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@libuim_anthy_la_DEPENDENCIES =  \
--@ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@	libuim.la
+-@ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@	libuim-scm.la libuim.la
  am__libuim_anthy_la_SOURCES_DIST = anthy.c
  @ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@am_libuim_anthy_la_OBJECTS = libuim_anthy_la-anthy.lo
  libuim_anthy_la_OBJECTS = $(am_libuim_anthy_la_OBJECTS)
-@@ -96,7 +94,6 @@
- 	$(libuim_anthy_la_LDFLAGS) $(LDFLAGS) -o $@
- @ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@am_libuim_anthy_la_rpath =  \
- @ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@	-rpath $(uim_plugindir)
--@CANNA_TRUE@libuim_canna_la_DEPENDENCIES = libuim.la
+@@ -119,7 +115,6 @@
+ libuim_bsdlook_la_DEPENDENCIES =
+ am_libuim_bsdlook_la_OBJECTS = libuim_bsdlook_la-bsdlook.lo
+ libuim_bsdlook_la_OBJECTS = $(am_libuim_bsdlook_la_OBJECTS)
+-@CANNA_TRUE@libuim_canna_la_DEPENDENCIES = libuim-scm.la libuim.la
  am__libuim_canna_la_SOURCES_DIST = canna.c
  @CANNA_TRUE@am_libuim_canna_la_OBJECTS = libuim_canna_la-canna.lo
  libuim_canna_la_OBJECTS = $(am_libuim_canna_la_OBJECTS)
-@@ -118,7 +115,6 @@
- libuim_custom_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+@@ -159,7 +154,6 @@
+ libuim_look_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(libuim_custom_la_LDFLAGS) $(LDFLAGS) -o $@
--@M17NLIB_TRUE@libuim_m17nlib_la_DEPENDENCIES = libuim.la
+ 	$(libuim_look_la_LDFLAGS) $(LDFLAGS) -o $@
+-@M17NLIB_TRUE@libuim_m17nlib_la_DEPENDENCIES = libuim-scm.la libuim.la
  am__libuim_m17nlib_la_SOURCES_DIST = m17nlib.c
  @M17NLIB_TRUE@am_libuim_m17nlib_la_OBJECTS =  \
  @M17NLIB_TRUE@	libuim_m17nlib_la-m17nlib.lo
-@@ -127,7 +123,6 @@
+@@ -168,7 +162,6 @@
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libuim_m17nlib_la_LDFLAGS) $(LDFLAGS) -o $@
  @M17NLIB_TRUE@am_libuim_m17nlib_la_rpath = -rpath $(uim_plugindir)
--@MANA_TRUE@libuim_mana_la_DEPENDENCIES = libuim.la
+-@MANA_TRUE@libuim_mana_la_DEPENDENCIES = libuim-scm.la libuim.la
  am__libuim_mana_la_SOURCES_DIST = mana.c
  @MANA_TRUE@am_libuim_mana_la_OBJECTS = libuim_mana_la-mana.lo
  libuim_mana_la_OBJECTS = $(am_libuim_mana_la_OBJECTS)
-@@ -135,7 +130,6 @@
+@@ -176,7 +169,6 @@
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libuim_mana_la_LDFLAGS) $(LDFLAGS) -o $@
  @MANA_TRUE@am_libuim_mana_la_rpath = -rpath $(uim_plugindir)
--@PRIME_TRUE@libuim_prime_la_DEPENDENCIES = libuim.la
+-@PRIME_TRUE@libuim_prime_la_DEPENDENCIES = libuim-scm.la libuim.la
  am__libuim_prime_la_SOURCES_DIST = prime.c
  @PRIME_TRUE@am_libuim_prime_la_OBJECTS = libuim_prime_la-prime.lo
  libuim_prime_la_OBJECTS = $(am_libuim_prime_la_OBJECTS)
-@@ -143,7 +137,6 @@
+@@ -184,7 +176,6 @@
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libuim_prime_la_LDFLAGS) $(LDFLAGS) -o $@
  @PRIME_TRUE@am_libuim_prime_la_rpath = -rpath $(uim_plugindir)
--@SCIM_TRUE@libuim_scim_la_DEPENDENCIES = libuim.la
+-@SCIM_TRUE@libuim_scim_la_DEPENDENCIES = libuim-scm.la libuim.la
  am__libuim_scim_la_SOURCES_DIST = scim.cpp
  @SCIM_TRUE@am_libuim_scim_la_OBJECTS = libuim_scim_la-scim.lo
  libuim_scim_la_OBJECTS = $(am_libuim_scim_la_OBJECTS)
-@@ -497,27 +490,27 @@
- 	uim-helper-client.c intl.c uim-ipc.c plugin.c $(am__append_5)
+@@ -199,7 +190,6 @@
+ libuim_scm_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libuim_scm_la_LDFLAGS) $(LDFLAGS) -o $@
+-@SJ3_TRUE@libuim_sj3_la_DEPENDENCIES = libuim.la
+ am__libuim_sj3_la_SOURCES_DIST = sj3.c
+ @SJ3_TRUE@am_libuim_sj3_la_OBJECTS = libuim_sj3_la-sj3.lo
+ libuim_sj3_la_OBJECTS = $(am_libuim_sj3_la_OBJECTS)
+@@ -214,7 +204,6 @@
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libuim_skk_la_LDFLAGS) $(LDFLAGS) -o $@
+ am__DEPENDENCIES_1 =
+-@WNN_TRUE@libuim_wnn_la_DEPENDENCIES = libuim.la $(am__DEPENDENCIES_1)
+ am__libuim_wnn_la_SOURCES_DIST = wnnlib.h wnnlib.c
+ @WNN_TRUE@am_libuim_wnn_la_OBJECTS = libuim_wnn_la-wnnlib.lo
+ libuim_wnn_la_OBJECTS = $(am_libuim_wnn_la_OBJECTS)
+@@ -618,39 +607,39 @@
+ 	$(am__append_2) $(am__append_8) $(am__append_10)
  libuim_custom_la_SOURCES = uim-custom.c
  @M17NLIB_TRUE@libuim_m17nlib_la_SOURCES = m17nlib.c
--@M17NLIB_TRUE@libuim_m17nlib_la_LIBADD = @M17NLIB_LIBS@ libuim.la
-+@M17NLIB_TRUE@libuim_m17nlib_la_LIBADD = @M17NLIB_LIBS@ -luim
+-@M17NLIB_TRUE@libuim_m17nlib_la_LIBADD = @M17NLIB_LIBS@ libuim-scm.la libuim.la
++@M17NLIB_TRUE@libuim_m17nlib_la_LIBADD = @M17NLIB_LIBS@ -luim-scm -luim
  @M17NLIB_TRUE@libuim_m17nlib_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
  @M17NLIB_TRUE@libuim_m17nlib_la_CPPFLAGS = -I$(top_srcdir) @M17NLIB_CFLAGS@
  @SCIM_TRUE@libuim_scim_la_SOURCES = scim.cpp
--@SCIM_TRUE@libuim_scim_la_LIBADD = @SCIM_LIBS@ libuim.la
-+@SCIM_TRUE@libuim_scim_la_LIBADD = @SCIM_LIBS@ -luim
+-@SCIM_TRUE@libuim_scim_la_LIBADD = @SCIM_LIBS@ libuim-scm.la libuim.la
++@SCIM_TRUE@libuim_scim_la_LIBADD = @SCIM_LIBS@ -luim-scm -luim
  @SCIM_TRUE@libuim_scim_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
  @SCIM_TRUE@libuim_scim_la_CXXFLAGS = -I$(top_srcdir) @SCIM_CFLAGS@
  @CANNA_TRUE@libuim_canna_la_SOURCES = canna.c
--@CANNA_TRUE@libuim_canna_la_LIBADD = libuim.la -lcanna
-+@CANNA_TRUE@libuim_canna_la_LIBADD = -luim -lcanna
+-@CANNA_TRUE@libuim_canna_la_LIBADD = libuim-scm.la libuim.la -lcanna
++@CANNA_TRUE@libuim_canna_la_LIBADD = -luim-scm -luim -lcanna
  @CANNA_TRUE@libuim_canna_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
  @CANNA_TRUE@libuim_canna_la_CPPFLAGS = -I$(top_srcdir)
+ @WNN_TRUE@libuim_wnn_la_SOURCES = wnnlib.h wnnlib.c
+-@WNN_TRUE@libuim_wnn_la_LIBADD = libuim.la $(WNN_LIBS) -lwnn @WNN_LIBADD@
++@WNN_TRUE@libuim_wnn_la_LIBADD = -luim $(WNN_LIBS) -lwnn @WNN_LIBADD@
+ @WNN_TRUE@libuim_wnn_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
+ @WNN_TRUE@libuim_wnn_la_CPPFLAGS = -I$(top_srcdir) $(WNN_CPPFLAGS)
+ @SJ3_TRUE@libuim_sj3_la_SOURCES = sj3.c
+-@SJ3_TRUE@libuim_sj3_la_LIBADD = @SJ3_LIBS@ libuim.la
++@SJ3_TRUE@libuim_sj3_la_LIBADD = @SJ3_LIBS@ -luim
+ @SJ3_TRUE@libuim_sj3_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
+ @SJ3_TRUE@libuim_sj3_la_CPPFLAGS = -I$(top_srcdir) @SJ3_CFLAGS@
  @ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@libuim_anthy_la_SOURCES = anthy.c
--@ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@libuim_anthy_la_LIBADD = @ANTHY_LIBS@ libuim.la
-+@ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@libuim_anthy_la_LIBADD = @ANTHY_LIBS@ -luim
+-@ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@libuim_anthy_la_LIBADD = @ANTHY_LIBS@ libuim-scm.la libuim.la
++@ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@libuim_anthy_la_LIBADD = @ANTHY_LIBS@ -luim-scm -luim
  @ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@libuim_anthy_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
  @ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@libuim_anthy_la_CPPFLAGS = -I$(top_srcdir)
+ @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@libuim_anthy_utf8_la_SOURCES = anthy-utf8.c
+-@ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@libuim_anthy_utf8_la_LIBADD = @ANTHY_UTF8_LIBS@ libuim-scm.la libuim.la
++@ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@libuim_anthy_utf8_la_LIBADD = @ANTHY_UTF8_LIBS@ -luim-scm -luim
+ @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@libuim_anthy_utf8_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
+ @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@libuim_anthy_utf8_la_CPPFLAGS = -I$(top_srcdir) @ANTHY_UTF8_CFLAGS@
  @MANA_TRUE@libuim_mana_la_SOURCES = mana.c
--@MANA_TRUE@libuim_mana_la_LIBADD = libuim.la
-+@MANA_TRUE@libuim_mana_la_LIBADD = -luim
+-@MANA_TRUE@libuim_mana_la_LIBADD = libuim-scm.la libuim.la
++@MANA_TRUE@libuim_mana_la_LIBADD = -luim-scm -luim
  @MANA_TRUE@libuim_mana_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
  @MANA_TRUE@libuim_mana_la_CPPFLAGS = -I$(top_srcdir)
  @PRIME_TRUE@libuim_prime_la_SOURCES = prime.c
--@PRIME_TRUE@libuim_prime_la_LIBADD = libuim.la
-+@PRIME_TRUE@libuim_prime_la_LIBADD = -luim
+-@PRIME_TRUE@libuim_prime_la_LIBADD = libuim-scm.la libuim.la
++@PRIME_TRUE@libuim_prime_la_LIBADD = -luim-scm -luim
  @PRIME_TRUE@libuim_prime_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
  @PRIME_TRUE@libuim_prime_la_CPPFLAGS = -I$(top_srcdir)
- libuim_skk_la_SOURCES = skk.c
+ libuim_skk_la_SOURCES = skk.c bsdlook.h
