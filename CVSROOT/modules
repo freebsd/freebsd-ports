@@ -15951,7 +15951,6 @@ swi-pl		ports/lang/swi-pl
 swig11		ports/devel/swig11
 swig13		ports/devel/swig13
 swiggle		ports/www/swiggle
-swigruby	ports/devel/swigruby
 swish++		ports/www/swish++
 swish-e		ports/www/swish-e
 swisswatch	ports/x11-clocks/swisswatch
