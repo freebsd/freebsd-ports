@@ -24,6 +24,8 @@ LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick \
 		gmp.7:${PORTSDIR}/math/libgmp4 \
 		curl:${PORTSDIR}/ftp/curl
 
+BROKEN=		bad plist
+
 USE_BISON=	build
 USE_GNOME=	gnometarget libxml2 libxslt
 CFLAGS+=	-I${LOCALBASE}/include
