@@ -12,7 +12,7 @@ COMMENT=	QT modules of uim input method
 USE_QT_VER=	3
 USE_AUTOTOOLS=	libtool:15
 
-LIB_DEPENDS=	uim.5:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.6:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
@@ -33,7 +33,7 @@ IGNORE=		requires X11
 .endif
 
 do-build:
-	(cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${GMAKE} LIBS="-luim -luim-custom")
+	(cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${GMAKE})
 
 do-install:
 	(cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${GMAKE} install)

@@ -15,7 +15,7 @@ COMMENT=	Uim plugin using m17n library input method
 
 BUILD_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
 LIB_DEPENDS=	m17n.3:${PORTSDIR}/devel/m17n-lib \
-		uim.5:${PORTSDIR}/textproc/uim
+		uim.6:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
@@ -27,7 +27,7 @@ UIM_SLAVE=	yes
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in
 
 do-build:
-	(cd ${WRKSRC}/uim && ${GMAKE} LIBS="-luim" libuim-m17nlib.la)
+	(cd ${WRKSRC}/uim && ${GMAKE} libuim-m17nlib.la)
 
 do-install:
 	(cd ${WRKSRC}/uim && \

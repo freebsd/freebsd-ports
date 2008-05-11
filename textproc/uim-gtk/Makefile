@@ -10,11 +10,11 @@ PKGNAMESUFFIX=	-gtk
 COMMENT=	GTK+ modules of uim input method
 
 USE_GNOME=	gtk20
-LIB_DEPENDS=	uim.5:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.6:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
-CONFIGURE_ARGS=	--with-gtk2
+CONFIGURE_ARGS=	--with-gtk2 --enable-pref
 
 UIM_SLAVE=	yes
 
@@ -26,8 +26,9 @@ IGNORE=		requires X11
 .endif
 
 do-build:
-	(cd ${WRKSRC}/gtk && ${GMAKE} LIBS="-luim")
-	(cd ${WRKSRC}/helper && ${GMAKE} LIBS="-luim -luim-custom")
+	(cd ${WRKSRC}/uim && ${GMAKE} libuim-x-util.la)
+	(cd ${WRKSRC}/gtk && ${GMAKE})
+	(cd ${WRKSRC}/helper && ${GMAKE})
 
 do-install:
 	(cd ${WRKSRC}/gtk && ${GMAKE} install)

@@ -13,7 +13,7 @@ USE_KDELIBS_VER=3
 USE_QT_VER=	3
 USE_AUTOTOOLS=	libtool:15
 
-LIB_DEPENDS=	uim.5:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.6:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	uim-pref-qt:${PORTSDIR}/textproc/uim-qt
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
@@ -35,7 +35,7 @@ IGNORE=		requires X11
 .endif
 
 do-build:
-	(cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${GMAKE} LIBTOOL=${WRKSRC}/libtool LIBS="-luim -luim-custom" uim_panelapplet.la)
+	(cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${GMAKE} uim_panelapplet.la)
 
 do-install:
 	(cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${GMAKE} install-appletLTLIBRARIES install-lnkDATA)
