@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Weather
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	misc www pear geography
 
 MAINTAINER=	chinsan@FreeBSD.org
