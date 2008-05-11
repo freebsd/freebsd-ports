@@ -51,6 +51,7 @@
     SUBDIR += etoile-azalea
     SUBDIR += etoile-azdock
     SUBDIR += etoile-azswitch
+    SUBDIR += etoile-login
     SUBDIR += evilwm
     SUBDIR += expocity
     SUBDIR += fbcmd
