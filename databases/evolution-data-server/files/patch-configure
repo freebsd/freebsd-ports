@@ -24,15 +24,6 @@
  
  int
  main ()
-@@ -28982,7 +28990,7 @@ if test "x${with_krb5}" != "xno"; then
- 	LDFLAGS_save="$LDFLAGS"
- 
- 	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
--	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
-+	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi -lcrypt"
- 	sunlibs="-lkrb5 -lgss"
- 	{ echo "$as_me:$LINENO: checking for Kerberos 5" >&5
- echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6; }
 @@ -33825,7 +33833,7 @@ idldir='${datadir}'/idl/evolution-data-s
  imagesdir='${datadir}'/pixmaps/evolution-data-server
  
