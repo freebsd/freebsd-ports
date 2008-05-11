@@ -31,6 +31,7 @@ USE_PERL5_BUILD=yes
 .if ${OSVERSION} >= 800000
 IGNORE=	FreeBSD 8.x is unsupported
 .elif ${OSVERSION} >= 700000
+BROKEN=		does not compile
 PLIST_SUB+=	RELENG_5="@comment "
 PLIST_SUB+=	RELENG_6="@comment "
 PLIST_SUB+=	RELENG_7=""
