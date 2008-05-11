@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="633716fa-1f8f-11dd-b143-0211d880e350">
+    <topic>vorbis-tools -- Speex header processing vulnerability</topic>
+    <affects>
+      <package>
+	<name>vorbis-tools</name>
+	<range><lt>1.2.0_2,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/29882/">
+	  <p>A vulnerability has been reported in vorbis-tools,
+	    which can potentially be exploited by malicious people
+	    to compromise a user's system.</p>
+	  <p>The vulnerability is caused due to an input validation
+	    error when processing Speex headers, which can be
+	    exploited via a specially crafted Speex stream containing
+	    a negative "modeID" field in the header.</p>
+	  <p>Successful exploitation may allow execution of arbitrary
+	    code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1686</cvename>
+      <url>http://secunia.com/advisories/29882/</url>
+    </references>
+    <dates>
+      <discovery>2008-04-18</discovery>
+      <entry>2008-05-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8950ac62-1d30-11dd-9388-0211060005df">
     <topic>qemu -- "drive_init()" Disk Format Security Bypass</topic>
     <affects>
