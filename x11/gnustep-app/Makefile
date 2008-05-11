@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnustep-app
-PORTVERSION=	1.13.0
-PORTREVISION=	24
+PORTVERSION=	1.14.3
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -76,6 +75,9 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	SystemConfig:deskutils/etoile-systemconfig \
 	MultimediaKit:multimedia/etoile-multimediakit \
 	EtoileUI:deskutils/etoile-ui \
+	DistributedView:deskutils/etoile-distributedview \
+
+#	InspectorKit:deskutils/etoile-inspectorkit \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
@@ -106,13 +108,12 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	SystemPreferences:deskutils/systempreferences \
 	WrapperFactory:deskutils/gnustep-wrapper \
 	GRubik:games/grubik \
+	Azalea:x11-wm/etoile-azalea \
 	AZDock:x11-wm/etoile-azdock \
 	Position:astro/position \
 	AZBackground:x11-themes/etoile-azbackground \
 	ClipBook:deskutils/gworkspace-clipbook \
 	MDFinder:deskutils/gworkspace-gwmetadata \
-
-#	DistributedView:deskutils/etoile-distributedview \
 
 USE_GNUSTEP_LOCAL_APPS+=	\
 	Gomoku:games/gomoku.app \
@@ -175,7 +176,6 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Installer:sysutils/etoile-installer \
 	Hardware:deskutils/etoile-hardware \
 	LookAndBehavior:deskutils/etoile-lookandbehavior \
-	Azalea:x11-wm/etoile-azalea \
 	EtoileMenuServer:deskutils/etoile-menuserver \
 	Expense:finance/expense \
 	FreeTar:archivers/freetar \

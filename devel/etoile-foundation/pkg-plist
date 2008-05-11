@@ -1,14 +1,28 @@
-Local/Library/Headers/EtoileFoundation/Cocoa.h
-Local/Library/Headers/EtoileFoundation/EtoileCompatibility.h
-Local/Library/Headers/EtoileFoundation/NSFileManager+NameForTempFile.h
-Local/Library/Headers/EtoileFoundation/UKFileWatcher.h
-Local/Library/Headers/EtoileFoundation/UKKQueue.h
-Local/Library/Headers/EtoileFoundation/UKMainThreadProxy.h
-Local/Library/Headers/EtoileFoundation/UKNibOwner.h
-Local/Library/Headers/EtoileFoundation/UKPluginsRegistry.h
-Local/Library/Headers/EtoileFoundation/UKPushbackMessenger.h
-Local/Library/Headers/EtoileFoundation/UKThreadMessenger.h
+Local/Library/Frameworks/EtoileFoundation.framework/EtoileFoundation
+Local/Library/Frameworks/EtoileFoundation.framework/Headers
+Local/Library/Frameworks/EtoileFoundation.framework/Resources
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/EtoileFoundation
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Headers/EtoileCompatibility.h
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSFileManager+NameForTempFile.h
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Headers/OSBundleExtensionLoader.h
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Headers/UKFileWatcher.h
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Headers/UKKQueue.h
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Headers/UKMainThreadProxy.h
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Headers/UKPluginsRegistry.h
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Headers/UKPushbackMessenger.h
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Headers/UKThreadMessenger.h
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/libEtoileFoundation.so
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/libEtoileFoundation.so.%%LIBVERSION%%
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/libEtoileFoundation.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/EtoileFoundation.framework/Versions/Current
+Local/Library/Frameworks/EtoileFoundation.framework/libEtoileFoundation.so
+Local/Library/Headers/EtoileFoundation
 Local/Library/Libraries/libEtoileFoundation.so
 Local/Library/Libraries/libEtoileFoundation.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libEtoileFoundation.so.%%LIBVERSION%%
-@dirrm Local/Library/Headers/EtoileFoundation
+@dirrm Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/EtoileFoundation.framework/Versions
+@dirrm Local/Library/Frameworks/EtoileFoundation.framework

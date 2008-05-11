@@ -1,3 +1,5 @@
+Local/Applications/Typewriter.app/Resources/Document-RichText.tiff
+Local/Applications/Typewriter.app/Resources/Document-Text.tiff
 Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/data.classes
 Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/data.info
 Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/objects.gorm
@@ -9,6 +11,7 @@ Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm/data.inf
 Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
 Local/Applications/Typewriter.app/Resources/Info-gnustep.plist
 Local/Applications/Typewriter.app/Resources/Typewriter.desktop
+Local/Applications/Typewriter.app/Resources/Typewriter.tiff
 Local/Applications/Typewriter.app/Typewriter
 Local/Applications/Typewriter.app/stamp.make
 Local/Tools/Typewriter

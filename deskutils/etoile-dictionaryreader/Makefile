@@ -6,26 +6,22 @@
 #
 
 PORTNAME=	dictionaryreader
-PORTVERSION=	0.1.${SNAPSHOT}
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dinoex
+MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
-DISTNAME=	Etoile-${SNAPSHOT}
+DISTNAME=	etoile-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Dict client for GNUstep
 
-USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
-SNAPSHOT=	20061221
-WRKSRC=	${WRKDIR}/Etoile/
+WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/User/DictionaryReader
 
 .include <bsd.port.mk>
