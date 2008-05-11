@@ -139,6 +139,7 @@
     SUBDIR += et-aspell
     SUBDIR += etoile-lucenekit
     SUBDIR += etoile-ogrekit
+    SUBDIR += etoile-opmlkit
     SUBDIR += exempi
     SUBDIR += exml
     SUBDIR += expat2
