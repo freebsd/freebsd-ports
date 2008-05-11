@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	manualsize
-PORTVERSION=	0.0.2
+PORTVERSION=	0.5a
 CATEGORIES=	net-im
 MASTER_SITES=	http://leapster.org/patches/pidgin/source/ \
 		http://autocthonia.net/freebsd/distfiles/
