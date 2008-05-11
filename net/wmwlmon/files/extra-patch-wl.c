@@ -4,7 +4,7 @@
  int
  get_wi_signal(const char *interface)
  {
-+#if __FreeBSD__ > 600100 && __FreeBSD__ < 700047 /* wi support is broken on 7 because of struct wi_req removal*/
++#if __FreeBSD__ > 600100 && __FreeBSD__ < 700052 /* wi support is broken on 7 because of struct wi_req removal*/
  	int		s;
  	struct ifreq	ifr;
  	struct wi_req	wreq;
