@@ -1,5 +1,6 @@
 bin/gammu
 bin/gammu-config
+bin/jadmaker
 include/gammu/gammu-backup.h
 include/gammu/gammu-bitmap.h
 include/gammu/gammu-calendar.h

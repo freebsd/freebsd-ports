@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.17.0
-PORTREVISION=	1
+PORTVERSION=	1.20.0
 CATEGORIES=	comms
 MASTER_SITES=	ftp://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com/gammu/releases/
@@ -27,7 +26,7 @@ USE_GNOME=	pkgconfig
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES=files/extra-patch-CMakeLists.txt
 .else
-MAN1=		gammu.1 gammu-config.1
+MAN1=		gammu.1 gammu-config.1 jadmaker.1
 PORTDOCS=	*
 .endif
 
