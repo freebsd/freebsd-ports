@@ -7,6 +7,7 @@
 
 PORTNAME=	ipa-ttfonts
 PORTVERSION=	1.0.20060520.p1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -47,10 +48,13 @@ do-install:
 	${LN} -s -f \
 		${DATADIR}/fonts/ipa*.ttf ${DATADIR}/fonts/M+*.ttf \
 		${LOCALBASE}/${X_FONTSDIR}/TrueType/
-	${MKDIR} ${PREFIX}/etc/fonts/conf.d
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-ipattfonts.conf \
 		${FILESDIR}/62-fonts-ipattfonts.conf \
-		${PREFIX}/etc/fonts/conf.d
+		${PREFIX}/etc/fonts/conf.avail
+	${LN} -s -f ../conf.avail/20-unhint-ipattfonts.conf \
+		${PREFIX}/etc/fonts/conf.d/20-unhint-ipattfonts.conf
+	${LN} -s -f ../conf.avail/62-fonts-ipattfonts.conf \
+		${PREFIX}/etc/fonts/conf.d/62-fonts-ipattfonts.conf
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
