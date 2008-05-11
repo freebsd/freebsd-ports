@@ -2742,6 +2742,7 @@ etoile-menuserver	ports/deskutils/etoile-menuserver
 etoile-mollusk	ports/www/etoile-mollusk
 etoile-multimediakit	ports/multimedia/etoile-multimediakit
 etoile-ogrekit	ports/textproc/etoile-ogrekit
+etoile-opmlkit	ports/textproc/etoile-opmlkit
 etoile-panekit	ports/deskutils/etoile-panekit
 etoile-rsskit	ports/www/etoile-rsskit
 etoile-servicesbarkit	ports/deskutils/etoile-servicesbarkit
