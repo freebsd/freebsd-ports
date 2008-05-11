@@ -174,9 +174,10 @@ diff -urNad lusernet.app-0.4.2~/FolderThreader.m FolderThreader.m
 diff -urNad lusernet.app-0.4.2~/FolderWindowController.m FolderWindowController.m
 --- lusernet.app-0.4.2~/FolderWindowController.m	2004-03-03 01:58:37.000000000 +0200
 +++ FolderWindowController.m	2006-09-27 00:13:21.000000000 +0300
-@@ -20,7 +20,7 @@
+@@ -20,7 +20,8 @@
  #include <AppKit/NSCell.h>
  #include <AppKit/NSFont.h>
++#include <AppKit/NSEvent.h>
  
 -#include <Pantomime/MimeUtility.h>
 +#include <Pantomime/CWMIMEUtility.h>
@@ -216,6 +217,14 @@ diff -urNad lusernet.app-0.4.2~/MessageViewController.h MessageViewController.h
 diff -urNad lusernet.app-0.4.2~/MessageViewController.m MessageViewController.m
 --- lusernet.app-0.4.2~/MessageViewController.m	2004-03-03 01:58:37.000000000 +0200
 +++ MessageViewController.m	2006-09-27 00:13:21.000000000 +0300
+@@ -5,6 +5,7 @@
+ #include <Foundation/NSObject.h>
+ #include <Foundation/NSBundle.h>
+ #include <Foundation/NSFileManager.h>
++#include <AppKit/NSAttributedString.h>
+ #include <AppKit/NSFileWrapper.h>
+ #include <AppKit/NSTextView.h>
+ #include <AppKit/NSScrollView.h>
 @@ -21,11 +21,11 @@
  
  #include "GUISource.h"
@@ -468,10 +477,11 @@ diff -urNad lusernet.app-0.4.2~/Pref_MessageViewing.h Pref_MessageViewing.h
 diff -urNad lusernet.app-0.4.2~/Pref_MessageViewing.m Pref_MessageViewing.m
 --- lusernet.app-0.4.2~/Pref_MessageViewing.m	2004-03-03 01:58:37.000000000 +0200
 +++ Pref_MessageViewing.m	2006-09-27 00:13:21.000000000 +0300
-@@ -8,11 +8,14 @@
+@@ -8,11 +8,15 @@
  #include <Foundation/NSBundle.h>
  
  #include <AppKit/NSButton.h>
++#include <AppKit/NSFontManager.h>
 +#include <AppKit/NSPopUpButton.h>
  #include <AppKit/NSTextField.h>
  #include <GNUstepGUI/GSVbox.h>
