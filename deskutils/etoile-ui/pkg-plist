@@ -1,8 +1,23 @@
-Local/Library/Headers/EtoileUI/Cocoa.h
-Local/Library/Headers/EtoileUI/EtoileCompatibility.h
-Local/Library/Headers/EtoileUI/NSBezierPathCappedBoxes.h
-Local/Library/Headers/EtoileUI/NSImage+NiceScaling.h
+Local/Library/Frameworks/EtoileUI.framework/EtoileUI
+Local/Library/Frameworks/EtoileUI.framework/Headers
+Local/Library/Frameworks/EtoileUI.framework/Resources
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/EtoileUI
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/EtoileCompatibility.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSBezierPathCappedBoxes.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSImage+NiceScaling.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers/UKNibOwner.h
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/libEtoileUI.so
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/libEtoileUI.so.%%LIBVERSION%%
+Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/libEtoileUI.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/EtoileUI.framework/Versions/Current
+Local/Library/Frameworks/EtoileUI.framework/libEtoileUI.so
+Local/Library/Headers/EtoileUI
 Local/Library/Libraries/libEtoileUI.so
 Local/Library/Libraries/libEtoileUI.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libEtoileUI.so.%%LIBVERSION%%
-@dirrm Local/Library/Headers/EtoileUI
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/EtoileUI.framework/Versions
+@dirrm Local/Library/Frameworks/EtoileUI.framework

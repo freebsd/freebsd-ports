@@ -1,12 +1,27 @@
-Local/Library/Headers/BookmarkKit/BKBookmark.h
-Local/Library/Headers/BookmarkKit/BKBookmarkQuery.h
-Local/Library/Headers/BookmarkKit/BKBookmarkSearchResult.h
-Local/Library/Headers/BookmarkKit/BKBookmarkStore.h
-Local/Library/Headers/BookmarkKit/BKBookmarkView.h
-Local/Library/Headers/BookmarkKit/BKGlobals.h
-Local/Library/Headers/BookmarkKit/BKGroup.h
-Local/Library/Headers/BookmarkKit/BookmarkKit.h
+Local/Library/Frameworks/BookmarkKit.framework/BookmarkKit
+Local/Library/Frameworks/BookmarkKit.framework/Headers
+Local/Library/Frameworks/BookmarkKit.framework/Resources
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/BookmarkKit
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmark.h
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkQuery.h
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkSearchResult.h
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkStore.h
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkView.h
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKGlobals.h
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKGroup.h
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BookmarkKit.h
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/libBookmarkKit.so
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/libBookmarkKit.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/libBookmarkKit.so.%%LIBVERSION%%
+Local/Library/Frameworks/BookmarkKit.framework/Versions/Current
+Local/Library/Frameworks/BookmarkKit.framework/libBookmarkKit.so
+Local/Library/Headers/BookmarkKit
 Local/Library/Libraries/libBookmarkKit.so
 Local/Library/Libraries/libBookmarkKit.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libBookmarkKit.so.%%LIBVERSION%%
-@dirrm Local/Library/Headers/BookmarkKit
+@dirrm Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/BookmarkKit.framework/Versions
+@dirrm Local/Library/Frameworks/BookmarkKit.framework

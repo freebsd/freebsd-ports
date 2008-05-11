@@ -1,8 +1,24 @@
-System/Library/Headers/XWindowServerKit/XFunctions.h
-System/Library/Headers/XWindowServerKit/XScreen.h
-System/Library/Headers/XWindowServerKit/XWindow.h
-System/Library/Headers/XWindowServerKit/gnustep.h
+System/Library/Frameworks/XWindowServerKit.framework/Headers
+System/Library/Frameworks/XWindowServerKit.framework/Resources
+System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/XFunctions.h
+System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/XScreen.h
+System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/XWindow.h
+System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/gnustep.h
+System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/ScriptingInfo.plist
+System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/XWindowServerKit
+System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/libXWindowServerKit.so
+System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/libXWindowServerKit.so.%%MAJORLIBVERSION%%
+System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/libXWindowServerKit.so.%%LIBVERSION%%
+System/Library/Frameworks/XWindowServerKit.framework/Versions/Current
+System/Library/Frameworks/XWindowServerKit.framework/XWindowServerKit
+System/Library/Frameworks/XWindowServerKit.framework/libXWindowServerKit.so
+System/Library/Headers/XWindowServerKit
 System/Library/Libraries/libXWindowServerKit.so
 System/Library/Libraries/libXWindowServerKit.so.%%MAJORLIBVERSION%%
 System/Library/Libraries/libXWindowServerKit.so.%%LIBVERSION%%
-@dirrm System/Library/Headers/XWindowServerKit
+@dirrm System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm System/Library/Frameworks/XWindowServerKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm System/Library/Frameworks/XWindowServerKit.framework/Versions
+@dirrm System/Library/Frameworks/XWindowServerKit.framework

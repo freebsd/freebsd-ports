@@ -1,14 +1,35 @@
-Local/Library/Headers/PaneKit/CocoaCompatibility.h
-Local/Library/Headers/PaneKit/NSPreferencePane.h
-Local/Library/Headers/PaneKit/PKPane.h
-Local/Library/Headers/PaneKit/PKPaneRegistry.h
-Local/Library/Headers/PaneKit/PKPanesController.h
-Local/Library/Headers/PaneKit/PKPreferencePane.h
-Local/Library/Headers/PaneKit/PKPreferencePaneRegistry.h
-Local/Library/Headers/PaneKit/PKPreferencesController.h
-Local/Library/Headers/PaneKit/PKPresentationBuilder.h
-Local/Library/Headers/PaneKit/PaneKit.h
+Local/Library/Frameworks/PaneKit.framework/Headers
+Local/Library/Frameworks/PaneKit.framework/PaneKit
+Local/Library/Frameworks/PaneKit.framework/Resources
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CocoaCompatibility.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSPreferencePane.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKMatrixViewPresentation.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKPane.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKPaneRegistry.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKPanesController.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKPlainPresentation.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKPopUpButtonPresentation.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKPreferencePane.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKPreferencePaneRegistry.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKPreferencesController.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKPresentationBuilder.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKTableViewPresentation.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PKToolbarPresentation.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PaneKit.h
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/PaneKit
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/libPaneKit.so
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/libPaneKit.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/libPaneKit.so.%%LIBVERSION%%
+Local/Library/Frameworks/PaneKit.framework/Versions/Current
+Local/Library/Frameworks/PaneKit.framework/libPaneKit.so
+Local/Library/Headers/PaneKit
 Local/Library/Libraries/libPaneKit.so
 Local/Library/Libraries/libPaneKit.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libPaneKit.so.%%LIBVERSION%%
-@dirrm Local/Library/Headers/PaneKit
+@dirrm Local/Library/Libraries
+@dirrm Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm Local/Library/Frameworks/PaneKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/PaneKit.framework/Versions
+@dirrm Local/Library/Frameworks/PaneKit.framework

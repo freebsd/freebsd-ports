@@ -1,8 +1,24 @@
-Local/Library/Headers/libSystemConfig/SCKeyboard.h
-Local/Library/Headers/libSystemConfig/SCMonitor.h
-Local/Library/Headers/libSystemConfig/SCMouse.h
-Local/Library/Headers/libSystemConfig/SCSound.h
+Local/Library/Frameworks/SystemConfig.framework/Headers
+Local/Library/Frameworks/SystemConfig.framework/Resources
+Local/Library/Frameworks/SystemConfig.framework/SystemConfig
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCConfig.h
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCKeyboard.h
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCMonitor.h
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCMouse.h
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers/SCSound.h
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/SystemConfig
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/libSystemConfig.so
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/libSystemConfig.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/libSystemConfig.so.%%LIBVERSION%%
+Local/Library/Frameworks/SystemConfig.framework/Versions/Current
+Local/Library/Frameworks/SystemConfig.framework/libSystemConfig.so
+Local/Library/Headers/SystemConfig
 Local/Library/Libraries/libSystemConfig.so
 Local/Library/Libraries/libSystemConfig.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libSystemConfig.so.%%LIBVERSION%%
-@dirrm Local/Library/Headers/libSystemConfig
+@dirrm Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm Local/Library/Frameworks/SystemConfig.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/SystemConfig.framework/Versions
+@dirrm Local/Library/Frameworks/SystemConfig.framework

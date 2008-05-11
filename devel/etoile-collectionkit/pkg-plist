@@ -1,14 +1,30 @@
-Local/Library/Headers/CollectionKit/CKCollection.h
-Local/Library/Headers/CollectionKit/CKCollectionView.h
-Local/Library/Headers/CollectionKit/CKGlobals.h
-Local/Library/Headers/CollectionKit/CKGroup.h
-Local/Library/Headers/CollectionKit/CKItem.h
-Local/Library/Headers/CollectionKit/CKMultiValue.h
-Local/Library/Headers/CollectionKit/CKRecord.h
-Local/Library/Headers/CollectionKit/CKSearchElement.h
-Local/Library/Headers/CollectionKit/CKTypedefs.h
-Local/Library/Headers/CollectionKit/CollectionKit.h
+Local/Library/Frameworks/CollectionKit.framework/CollectionKit
+Local/Library/Frameworks/CollectionKit.framework/Headers
+Local/Library/Frameworks/CollectionKit.framework/Resources
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/CollectionKit
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKCollection.h
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKCollectionView.h
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKGlobals.h
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKGroup.h
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKItem.h
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKMultiValue.h
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKRecord.h
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKSearchElement.h
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKTypedefs.h
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CollectionKit.h
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/libCollectionKit.so
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/libCollectionKit.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/libCollectionKit.so.%%LIBVERSION%%
+Local/Library/Frameworks/CollectionKit.framework/Versions/Current
+Local/Library/Frameworks/CollectionKit.framework/libCollectionKit.so
+Local/Library/Headers/CollectionKit
 Local/Library/Libraries/libCollectionKit.so
-Local/Library/Libraries/libCollectionKit.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libCollectionKit.so.%%LIBVERSION%%
-@dirrm Local/Library/Headers/CollectionKit
+Local/Library/Libraries/libCollectionKit.so.%%MAJORLIBVERSION%%
+@dirrm Local/Library/Libraries
+@dirrm Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm Local/Library/Frameworks/CollectionKit.framework/Versions
+@dirrm Local/Library/Frameworks/CollectionKit.framework
