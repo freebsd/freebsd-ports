@@ -24,7 +24,7 @@ OPTIONS=	CGI_OWNER "Check CGI file owner" on \
 		CGI_SETGID "Check CGI file setgid permissions" on \
 		CGI_GROUP_WRITABLE "Check CGI g+w file permissions" on \
 		CGI_WORLD_WRITABLE "Check CGI o+w file permissions" on \
-		USE_SCRIPT_URL "Use REDIRECT_URL to build SCRIPT_NAME" off \
+		USE_REDIRECT_URL "Use REDIRECT_URL to build SCRIPT_NAME" off \
 		USE_SCRIPT_URL "Use SCRIPT_URL to build SCRIPT_NAME" off \
 		NPH "Enable nph binaries" off \
 		DEBUG "Enable cgiwrapd binaries" off
