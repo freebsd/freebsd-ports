@@ -16,6 +16,8 @@ COMMENT=	An image gallery generator for KDE
 
 LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
 
+BROKEN=		does not build
+
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
