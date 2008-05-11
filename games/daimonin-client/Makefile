@@ -6,24 +6,26 @@
 #
 
 PORTNAME=	daimonin_client
-PORTVERSION=	0.9.7
-PORTREVISION=	2
+PORTVERSION=	0.9.7.1
 CATEGORIES=	games
 MASTER_SITES=	SF/daimonin
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Free open source Massively Multiplayer On-line Role-playing Game (MMORPG)
 
+LIB_DEPENDS=	physfs:${PORTSDIR}/devel/physfs \
+		curl.4:${PORTSDIR}/ftp/curl
+
+USE_ZIP=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}/share
-CONFIGURE_ENV=	CFLAGS="-pipe"
+CONFIGURE_ENV=	CFLAGS="-pipe" LDFLAGS="-L${LOCALBASE}/lib"
 USE_SDL=	mixer image
 SUB_FILES=	daimonin.sh
 SUB_LIST=	PORTVERSION=${PORTVERSION}
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/make/linux
+WRKSRC=		${WRKDIR}/client/make/linux
 
 post-patch:
 	@${CHMOD} a+x ${WRKSRC}/configure ${WRKSRC}/make_utils/install-sh
