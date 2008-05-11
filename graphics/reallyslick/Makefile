@@ -18,6 +18,8 @@ COMMENT=	OpenGL screensaver collection
 
 LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
