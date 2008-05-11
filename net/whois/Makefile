@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	Marco d'Itri whois client
 
+BROKEN=		does not fetch
+
 USE_ICONV=		yes
 USE_PERL5_BUILD=	yes
 
