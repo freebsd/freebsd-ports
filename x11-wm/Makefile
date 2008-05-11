@@ -50,6 +50,7 @@
     SUBDIR += epplets
     SUBDIR += etoile-azalea
     SUBDIR += etoile-azdock
+    SUBDIR += etoile-azswitch
     SUBDIR += evilwm
     SUBDIR += expocity
     SUBDIR += fbcmd
