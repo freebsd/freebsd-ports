@@ -1,8 +1,8 @@
 Index: kqemu-freebsd.c
-@@ -33,6 +33,11 @@
- 
- #include <machine/vmparam.h>
- #include <machine/stdarg.h>
+@@ -38,6 +38,11 @@
+ #else
+ #include <machine/npx.h>
+ #endif
 +#ifdef __x86_64__
 +#include <sys/pcpu.h>
 +#include <machine/segments.h>
@@ -11,13 +11,13 @@ Index: kqemu-freebsd.c
  
  #include "kqemu-kernel.h"
  
-@@ -234,6 +239,19 @@
+@@ -248,6 +253,19 @@
      va_end(ap);
  }
  
 +#ifdef __x86_64__
 +/* called with interrupts disabled */
-+void CDECL kqemu_tss_workaround(void)
++void CDECL kqemu_tss_fixup(void)
 +{
 +    int gsel_tss = GSEL(GPROC0_SEL, SEL_KPL);
 +
@@ -49,7 +49,7 @@ Index: common/kernel.c
 +#ifdef __FreeBSD__
 +#ifdef __x86_64__
 +        spin_lock(&g->lock);
-+        kqemu_tss_workaround();
++        kqemu_tss_fixup();
 +        spin_unlock(&g->lock);
 +#endif
 +#endif
@@ -63,7 +63,7 @@ Index: kqemu-kernel.h
  
 +#ifdef __FreeBSD__
 +#ifdef __x86_64__
-+void CDECL kqemu_tss_workaround(void);
++void CDECL kqemu_tss_fixup(void);
 +#endif
 +#endif
 +
