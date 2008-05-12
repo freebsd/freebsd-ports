@@ -8,7 +8,7 @@
 PORTNAME=	colt
 PORTVERSION=	1.2.0
 CATEGORIES=	science java
-MASTER_SITES=	http://dsd.lbl.gov/~hoschek/colt-download/releases/
+MASTER_SITES=	http://acs.lbl.gov/~hoschek/colt-download/releases/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Java package for scalable scientific and technical computing
