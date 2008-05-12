@@ -1,0 +1,21 @@
+share/bsdadminscripts/buildflags.awk
+etc/buildflags.conf.sample
+share/bsdadminscripts/buildflags.mk
+sbin/pkg_libchk
+sbin/pkg_validate
+sbin/portconfig
+sbin/rcstart
+sbin/rcstatus
+sbin/rcstop
+sbin/rcrestart
+sbin/rconestart
+sbin/rconestatus
+sbin/rconestop
+sbin/rconerestart
+sbin/portbuild
+sbin/portclean
+sbin/portfetch
+sbin/portpackage
+sbin/portconfig-recursive
+sbin/portfetch-recursive
+@dirrm share/bsdadminscripts
