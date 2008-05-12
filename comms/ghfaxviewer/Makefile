@@ -7,20 +7,18 @@
 
 PORTNAME=	ghfaxviewer
 PORTVERSION=	0.22.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	halifax
 
-MAINTAINER=	domi@saargate.de
+MAINTAINER=	domi@nonsensss.de
 COMMENT=	GNOME compliant fax viewer capable of displaying TIFF G3 faxes
 
-LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnome-print \
-		gconf-1.1:${PORTSDIR}/devel/gconf \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOME=	gnomeprefix gnomehack gconf gnomeprint
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
