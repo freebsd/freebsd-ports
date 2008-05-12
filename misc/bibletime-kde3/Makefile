@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.5.1
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
@@ -23,13 +23,16 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--enable-static-clucene
 INSTALLS_ICONS=	yes
 
-DOCSDIR=	share/doc/HTML/en/bibletime
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+CONFIGURE_ARGS+=	--enable-static-clucene
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s^-lpthread^${PTHREAD_LIBS}^g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s^-lpthread^${PTHREAD_LIBS}^g" ${WRKSRC}/bibletime/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
