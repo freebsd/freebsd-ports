@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	lhs2tex
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.13
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://people.cs.uu.nl/andres/${PORTNAME}/
 
@@ -18,13 +17,14 @@ COMMENT=	A preprocessor to generate LaTeX code from literate Haskell sources
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir=${DATADIR} \
 		--docdir=${DOCSDIR} \
 		--mandir=${MANPREFIX}/man
+
+.include <bsd.port.pre.mk>
 
 .if defined(NOPORTDOCS)
 INSTALL_TARGET=install
@@ -34,4 +34,8 @@ INSTALL_TARGET=install install-doc
 
 MAN1=		lhs2TeX.1
 
-.include <bsd.port.mk>
+.if ${OSVERSION} < 700042
+IGNORE=		has a broken dependency
+.endif
+
+.include <bsd.port.post.mk>
