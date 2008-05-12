@@ -660,6 +660,7 @@ automake16	ports/devel/automake16
 automake17	ports/devel/automake17
 automake18	ports/devel/automake18
 automake19	ports/devel/automake19
+automounter	ports/sysutils/automounter
 autopano-sift	ports/graphics/autopano-sift
 autopsy		ports/sysutils/autopsy
 autoq3d		ports/graphics/autoq3d
