@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlreport
-PORTVERSION=	3.4a
+PORTVERSION=	3.5
 CATEGORIES=	databases
 MASTER_SITES=	http://hackmysql.com/scripts/
 EXTRACT_SUFX=	.tgz
