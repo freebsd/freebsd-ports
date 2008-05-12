@@ -14,7 +14,7 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 apache_enable="${apache_enable-NO}"
-apache_flags="-DSSL"
+apache_flags=${apache_flags-"-DSSL"}
 apache_pidfile="/var/run/httpd.pid"
 
 . %%RC_SUBR%%
