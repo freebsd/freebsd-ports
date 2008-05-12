@@ -11,7 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
-MAINTAINER=	xcas@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kahakai window manager
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
