@@ -60,7 +60,6 @@
     SUBDIR += emacs-emcws
     SUBDIR += emacs-manual
     SUBDIR += epic4
-    SUBDIR += epson-ttfonts
     SUBDIR += epwutil
     SUBDIR += escpf
     SUBDIR += esecanna

@@ -3473,3 +3473,4 @@ www/neon|www/neon26|2008-05-05|Moved to be able to integrate www/neon26
 ports-mgmt/instant-tinderbox||2008-05-07|No longer functional in the current infrastructure
 x11-toolkits/gtkdatabox|x11-toolkits/gtkdatabox2|2008-05-08|This old version has been superseeded by x11-toolkits/gtkdatabox2
 devel/swigruby||2008-05-11|Has expired: use devel/swig13 instead, last release was 8 years ago
+japanese/epson-ttfonts||2008-05-12|Removed because of extremely restrictive license
