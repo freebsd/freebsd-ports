@@ -1,29 +1,70 @@
 Index: kqemu-freebsd.c
-@@ -38,6 +38,11 @@
+@@ -38,6 +38,14 @@
  #else
  #include <machine/npx.h>
  #endif
 +#ifdef __x86_64__
++#include <sys/smp.h>
 +#include <sys/pcpu.h>
++#include <machine/pcb.h>
++#include <machine/specialreg.h>
 +#include <machine/segments.h>
 +#include <machine/tss.h>
 +#endif
  
  #include "kqemu-kernel.h"
  
-@@ -248,6 +253,19 @@
+@@ -248,6 +256,57 @@
      va_end(ap);
  }
  
 +#ifdef __x86_64__
++int kqemu_cpu0gdtfixed;
++int kqemu_gdts_used;
++struct user_segment_descriptor *kqemu_gdts;
++struct region_descriptor kqemu_r_newgdt;
++extern  struct pcpu __pcpu[];
++
 +/* called with interrupts disabled */
-+void CDECL kqemu_tss_fixup(void)
++void CDECL kqemu_tss_fixup(unsigned long kerngdtbase)
 +{
 +    int gsel_tss = GSEL(GPROC0_SEL, SEL_KPL);
++    unsigned cpuid = PCPU_GET(cpuid);
++    struct user_segment_descriptor *newgdt = gdt;
 +
-+    gdt_segs[GPROC0_SEL].ssd_base = (long) &common_tss[PCPU_GET(cpuid)];
++    if (mp_ncpus <= 1 || kerngdtbase != (unsigned long)&gdt)
++	/* UP host or gdt already moved, nothing to do */
++	return;
++    if (cpuid) {
++	/* move gdts of all but first cpu */
++	if (!kqemu_gdts)
++	    /*
++	     * XXX gdt is allocated as
++	     *	struct user_segment_descriptor gdt[NGDT * MAXCPU];
++	     * so it has room for the moved copies; need to allocate at
++	     * kldload (and only free if kqemu_gdts_used is zero) should this
++	     * change in the future
++	     */
++	    kqemu_gdts = &gdt[NGDT];
++	++kqemu_gdts_used;
++	newgdt = &kqemu_gdts[NGDT * (cpuid - 1)];
++	bcopy(&gdt, newgdt, NGDT * sizeof(gdt[0]));
++	kqemu_r_newgdt.rd_limit = NGDT * sizeof(gdt[0]) - 1;
++	kqemu_r_newgdt.rd_base = (long) newgdt;
++    } else {
++	if (kqemu_cpu0gdtfixed)
++	    return;
++	++kqemu_cpu0gdtfixed;
++    }
++    gdt_segs[GPROC0_SEL].ssd_base = (long) &common_tss[cpuid];
 +    ssdtosyssd(&gdt_segs[GPROC0_SEL],
-+       (struct system_segment_descriptor *)&gdt[GPROC0_SEL]);
++       (struct system_segment_descriptor *)&newgdt[GPROC0_SEL]);
++    if (cpuid) {
++	lgdt(&kqemu_r_newgdt);
++	wrmsr(MSR_GSBASE, (u_int64_t)&__pcpu[cpuid]);
++	wrmsr(MSR_KGSBASE, curthread->td_pcb->pcb_gsbase);
++	wrmsr(MSR_FSBASE, 0);
++    }
 +    ltr(gsel_tss);
 +}
 +#endif
@@ -49,7 +90,7 @@ Index: common/kernel.c
 +#ifdef __FreeBSD__
 +#ifdef __x86_64__
 +        spin_lock(&g->lock);
-+        kqemu_tss_fixup();
++        kqemu_tss_fixup(s->kernel_gdt.base);
 +        spin_unlock(&g->lock);
 +#endif
 +#endif
@@ -57,13 +98,13 @@ Index: common/kernel.c
          if (s->mon_req == MON_REQ_IRQ) {
              struct kqemu_exception_regs *r;
 Index: kqemu-kernel.h
-@@ -44,4 +44,10 @@
+@@ -48,4 +48,10 @@
  
  void CDECL kqemu_log(const char *fmt, ...);
  
 +#ifdef __FreeBSD__
 +#ifdef __x86_64__
-+void CDECL kqemu_tss_fixup(void);
++void CDECL kqemu_tss_fixup(unsigned long kerngdtbase);
 +#endif
 +#endif
 +
