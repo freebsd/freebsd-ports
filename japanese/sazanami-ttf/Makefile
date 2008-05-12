@@ -7,7 +7,7 @@
 
 PORTNAME=	sazanami-ttf
 PORTVERSION=	20040629
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	efont/10087
@@ -21,55 +21,48 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-FONTSDIR=	lib/X11/fonts/TrueType
-LOCALFONTSDIR=	share/fonts
 MAKE_ENV=	FONTSDIR=${FONTSDIR}
 PLIST_SUB=	FONTSDIR=${FONTSDIR} \
 		LOCALFONTSDIR=${LOCALBASE}/${LOCALFONTSDIR}
 
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-install
+SUB_FILES=	pkg-install
+SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
+PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
+		LOCAL_FONTSDIR=${LOCAL_FONTSDIR} \
+		DATADIR=share/${PORTNAME}
 WRKSRC=		${WRKDIR}/sazanami-${PORTVERSION}
 
-DOC_FILES=	README \
-		doc/oradano/README.txt doc/misaki/misakib8.txt \
-		doc/mplus/LICENSE_J doc/shinonome/LICENSE \
-		doc/ayu/README.txt doc/kappa/README
+LOCAL_FONTSDIR=	share/fonts
+X_FONTSDIR=	lib/X11/fonts
+
+PORTDOCS=	README doc
 
 do-install:
-.if !exists(${PREFIX}/${FONTSDIR})
-	@${ECHO} "*********************************************************"
-	@${ECHO} "Please add ${PREFIX}/${FONTSDIR} to your font path"
-	@${ECHO} "and load 'xtt' module in /etc/XF86Config."
-	@${ECHO} "*********************************************************"
-	${MKDIR} ${PREFIX}/${FONTSDIR}
-.endif
-	${INSTALL_DATA} ${WRKSRC}/sazanami-gothic.ttf \
-			${WRKSRC}/sazanami-mincho.ttf \
-			${FILESDIR}/fonts.dir.sazanami \
-			${FILESDIR}/fonts.alias.sazanami \
-			${PREFIX}/${FONTSDIR}
-	${MKDIR} ${LOCALBASE}/${LOCALFONTSDIR}/TrueType
+	${MKDIR} ${DATADIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${DATADIR}
+	${MKDIR} ${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
 	${LN} -s -f \
-		${PREFIX}/${FONTSDIR}/sazanami-gothic.ttf \
-		${LOCALBASE}/${LOCALFONTSDIR}/TrueType/sazanami-gothic.ttf
+		${DATADIR}/*.ttf ${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
+	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TrueType
 	${LN} -s -f \
-		${PREFIX}/${FONTSDIR}/sazanami-mincho.ttf \
-		${LOCALBASE}/${LOCALFONTSDIR}/TrueType/sazanami-mincho.ttf
-	${MKDIR} ${PREFIX}/etc/fonts/conf.d
-	${INSTALL_DATA} ${FILESDIR}/3.sazanami-ttf.conf \
-			${PREFIX}/etc/fonts/conf.d
+		${DATADIR}/*.ttf ${LOCALBASE}/${X_FONTSDIR}/TrueType/
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-sazanami-ttf.conf \
+		${FILESDIR}/62-fonts-sazanami-ttf.conf \
+		${PREFIX}/etc/fonts/conf.avail
+	${LN} -s -f ../conf.avail/20-unhint-sazanami-ttf.conf \
+		${PREFIX}/etc/fonts/conf.d/20-unhint-sazanami-ttf.conf
+	${LN} -s -f ../conf.avail/62-fonts-sazanami-ttf.conf \
+		${PREFIX}/etc/fonts/conf.d/62-fonts-sazanami-ttf.conf
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for F in ${DOC_FILES:Mdoc/*}
-	${MKDIR} ${DOCSDIR}/${F:S,^doc/,,:H}
-	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}/${F:S,^doc/,,:H}
-.endfor
-.for F in ${DOC_FILES:Ndoc/*}
-	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${CP} -R ${PORTDOCS} ${DOCSDIR}
 .endif
 
 post-install:
-	${LOCALBASE}/bin/fc-cache -f -v ${PREFIX}/${FONTSDIR}
+	${LOCALBASE}/bin/fc-cache -f -v ${LOCALBASE}/${X_FONTSDIR}/TrueType
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

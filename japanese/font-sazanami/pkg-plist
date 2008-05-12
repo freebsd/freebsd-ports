@@ -1,30 +1,20 @@
 @comment $FreeBSD$
-etc/fonts/conf.d/3.sazanami-ttf.conf
-%%FONTSDIR%%/fonts.alias.sazanami
-%%FONTSDIR%%/fonts.dir.sazanami
-%%FONTSDIR%%/sazanami-mincho.ttf
-%%FONTSDIR%%/sazanami-gothic.ttf
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/oradano/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/misaki/misakib8.txt
-%%PORTDOCS%%%%DOCSDIR%%/mplus/LICENSE_J
-%%PORTDOCS%%%%DOCSDIR%%/shinonome/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/ayu/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/kappa/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/oradano
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/misaki
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/mplus
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/shinonome
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ayu
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/kappa
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || true
-@exec mkdir -p %%LOCALFONTSDIR%%/TrueType
-@exec ln -s -f %D/%%FONTSDIR%%/sazanami-mincho.ttf %%LOCALFONTSDIR%%/TrueType/sazanami-mincho.ttf
-@exec ln -s -f %D/%%FONTSDIR%%/sazanami-gothic.ttf %%LOCALFONTSDIR%%/TrueType/sazanami-gothic.ttf
-@unexec rm -f %%LOCALFONTSDIR%%/TrueType/sazanami-mincho.ttf
-@unexec rm -f %%LOCALFONTSDIR%%/TrueType/sazanami-gothic.ttf
-@unexec /bin/rmdir %%LOCALFONTSDIR%%/TrueType 2> /dev/null  || true
-@unexec /bin/rmdir %%LOCALFONTSDIR%% 2> /dev/null  || true
-@unexec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || true
-@unexec if [ -s %D/%%FONTSDIR%%/fonts.cache-1 ]; then rm -f %D/%%FONTSDIR%%/fonts.cache-1; fi
+%%DATADIR%%/sazanami-mincho.ttf
+%%DATADIR%%/sazanami-gothic.ttf
+%%LOCAL_FONTSDIR%%/TrueType/sazanami-mincho.ttf
+%%LOCAL_FONTSDIR%%/TrueType/sazanami-gothic.ttf
+@dirrmtry %%LOCAL_FONTSDIR%%/TrueType
+@dirrmtry %%LOCAL_FONTSDIR%%
+etc/fonts/conf.avail/20-unhint-sazanami-ttf.conf
+etc/fonts/conf.avail/62-fonts-sazanami-ttf.conf
+@exec ln -s -f ../conf.avail/20-unhint-sazanami-ttf.conf %D/etc/fonts/conf.d/20-unhint-sazanami-ttf.conf
+@exec ln -s -f ../conf.avail/62-fonts-sazanami-ttf.conf %D/etc/fonts/conf.d/62-fonts-sazanami-ttf.conf
+@unexec rm -f %D/etc/fonts/conf.d/20-unhint-sazanami-ttf.conf
+@unexec rm -f %D/etc/fonts/conf.d/62-fonts-sazanami-ttf.conf
+%%X_FONTSDIR%%/TrueType/sazanami-mincho.ttf
+%%X_FONTSDIR%%/TrueType/sazanami-gothic.ttf
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
+@unexec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true
+@unexec rm -f %D/%%X_FONTSDIR%%/TrueType/fonts.cache-1
+@dirrmtry %%X_FONTSDIR%%/TrueType
+@unexec if [ -d %D/%%X_FONTSDIR%%/TrueType ]; then %%LOCALBASE%%/bin/fc-cache -f -v %D/%%X_FONTSDIR%%/TrueType || true; fi
