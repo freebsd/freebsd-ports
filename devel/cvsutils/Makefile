@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsutils
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.red-bean.com/cvsutils/releases/
@@ -22,7 +22,7 @@ MAN1=		cvsutils.1
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in AUTHORS ChangeLog NEWS README TODO
+.for f in AUTHORS ChangeLog NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
