@@ -182,6 +182,7 @@
     SUBDIR += mytop
     SUBDIR += mywwwatcher
     SUBDIR += namazu2
+    SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3
     SUBDIR += opendbx
     SUBDIR += oracle7-client
