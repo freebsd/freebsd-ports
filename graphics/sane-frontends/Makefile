@@ -9,7 +9,7 @@ PORTNAME=	sane-frontends
 PORTVERSION=	1.0.14
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://alioth.debian.org/download.php/1140/ \
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/1140/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp3.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -34,6 +34,10 @@ OPTIONS=	GTK1 "GTK1 support (Default is GTK2)" off \
 		GIMP "also build xscanimage as a GIMP plug-in" off
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700042
+IGNORE=		has a broken dependency
+.endif
 
 .if defined(WITH_GTK1)
 USE_GNOME+=	gtk12
