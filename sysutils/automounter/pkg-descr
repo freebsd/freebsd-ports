@@ -1,0 +1,11 @@
+A script to dynamically configure amd and populate /media with appropriate
+links, when USB mass storage devices appear. It relies on geom labels, hence
+it only works for properly labeled devices.
+
+It also allows to automatically attach geli encrypted devices and images with
+keys polled from file systems it makes mountable.
+
+WWW: http://sourceforge.net/projects/bsdadminscripts/
+
+- Kamikaze
+kamikaze@bsdforen.de

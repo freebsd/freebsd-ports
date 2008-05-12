@@ -38,6 +38,7 @@
     SUBDIR += asr-utils
     SUBDIR += ataidle
     SUBDIR += atitvout
+    SUBDIR += automounter
     SUBDIR += autopsy
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
