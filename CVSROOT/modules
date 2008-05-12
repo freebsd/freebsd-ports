@@ -8714,6 +8714,7 @@ ocaml-ocamlgraph	ports/math/ocaml-ocamlgraph
 ocaml-ocurl	ports/ftp/ocaml-ocurl
 ocaml-ounit	ports/devel/ocaml-ounit
 ocaml-pcre	ports/devel/ocaml-pcre
+ocaml-pgocaml	ports/databases/ocaml-pgocaml
 ocaml-pomap	ports/devel/ocaml-pomap
 ocaml-pxp	ports/textproc/ocaml-pxp
 ocaml-res	ports/devel/ocaml-res
