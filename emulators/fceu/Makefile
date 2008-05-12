@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF/fceultra
 DISTNAME=	${PORTNAME}-${PORTVERSION}-pre.src
 
-MAINTAINER=	xcas@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
 
 USE_BZIP2=	yes
