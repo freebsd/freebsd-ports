@@ -1,3 +1,4 @@
+bin/diff_tpl_auto_escape
 bin/make_tpl_varnames_h
 bin/template-converter
 include/google/template.h

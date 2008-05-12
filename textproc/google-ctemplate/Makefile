@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	google-ctemplate
-PORTVERSION=	0.9
+PORTVERSION=	0.90
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	ctemplate-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A simple but powerful template language for C++
 
 GNU_CONFIGURE=	yes
