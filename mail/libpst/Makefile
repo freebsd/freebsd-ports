@@ -8,7 +8,7 @@
 PORTNAME=	libpst
 PORTVERSION=	0.5.1
 CATEGORIES=	mail converters
-MASTER_SITES=	http://alioth.debian.org/download.php/844/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/844/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	natey@natey.com
