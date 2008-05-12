@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvs2cl
-PORTVERSION=	2.67
+PORTVERSION=	2.69
 CATEGORIES=	devel
 MASTER_SITES=	http://www.red-bean.com/cvs2cl/ \
 		http://www.sysfault.org/freebsd/${DIST_SUBDIR}/
