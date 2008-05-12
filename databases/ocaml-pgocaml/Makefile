@@ -7,6 +7,7 @@
 
 PORTNAME=	pgocaml
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://merjis.com/_file/
 PKGNAMEPREFIX=	ocaml-
@@ -25,5 +26,9 @@ USE_OCAML_FINDLIB=	yes
 OCAML_PKGDIRS=	pgocaml
 
 INSTALL_TARGET=	findlib_install
+
+post-install:
+	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 
 .include <bsd.port.mk>
