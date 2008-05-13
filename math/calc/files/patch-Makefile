@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Feb  7 01:35:20 2007
-+++ Makefile	Wed Feb  7 14:54:34 2007
-@@ -571,7 +571,7 @@
+--- Makefile.orig	2008-05-10 08:04:43.000000000 -0700
++++ Makefile	2008-05-10 08:05:39.000000000 -0700
+@@ -585,7 +585,7 @@
  
  #INCDIR= /usr/local/include
  #INCDIR= /dev/env/DJDIR/include
@@ -9,7 +9,7 @@
  
  # Where to install calc realted things
  #
-@@ -598,15 +598,15 @@
+@@ -612,15 +612,15 @@
  #
  #BINDIR= /usr/local/bin
  #BINDIR= /dev/env/DJDIR/bin
@@ -26,9 +26,9 @@
 -CALC_SHAREDIR= /usr/share/calc
 +CALC_SHAREDIR= ${PREFIX}/share/calc
  
- #CALC_INCDIR= /usr/local/include/calc
- #CALC_INCDIR= /dev/env/DJDIR/include/calc
-@@ -680,7 +680,7 @@
+ # NOTE: Do not set CALC_INCDIR to /usr/include or /usr/local/include!!!
+ #	Always be sure that the CALC_INCDIR path ends in /calc to avoid
+@@ -698,7 +698,7 @@
  #MANDIR=
  #MANDIR= /usr/local/man/man1
  #MANDIR= /usr/man/man1
@@ -37,46 +37,3 @@
  #MANDIR= /dev/env/DJDIR/man/man1
  #MANDIR= /usr/man/u_man/man1
  #MANDIR= /usr/contrib/man/man1
-@@ -785,13 +785,13 @@
- #
- # If in doubt, set USE_READLINE, READLINE_LIB and READLINE_INCLUDE to nothing.
- #
--USE_READLINE=
--#USE_READLINE= -DUSE_READLINE
-+#USE_READLINE=
-+USE_READLINE= -DUSE_READLINE
- #
--READLINE_LIB=
-+#READLINE_LIB=
- #READLINE_LIB= -lreadline -lhistory -lncurses
- #READLINE_LIB= -L/usr/gnu/lib -lreadline -lhistory -lncurses
--#READLINE_LIB= -L/usr/local/lib -lreadline -lhistory -lncurses
-+READLINE_LIB= -lreadline -lhistory -lncurses
- #
- # For Apple OS X: install fink from http://fink.sourceforge.net
- #		  and then do a 'fink install readline' and then use:
-@@ -1008,13 +1008,13 @@
- CCOPT= ${DEBUG} ${NO_SHARED}
- CCMISC=
- #
--CFLAGS= -DCALC_SRC ${CCWARN} ${CCOPT} ${CCMISC}
--ICFLAGS= -DCALC_SRC ${CCWARN} ${CCMISC}
-+CFLAGS+= -DCALC_SRC
-+ICFLAGS= -DCALC_SRC
- #
- LDFLAGS= ${NO_SHARED} ${LD_NO_SHARED}
- ILDFLAGS=
- #
--LCC= gcc
-+LCC= cc
- CC= ${PURIFY} ${LCC} ${CCWERR}
- #
- ###
-@@ -1573,6 +1573,7 @@
- TARGETS= ${LICENSE} ${CALC_LIBS} custom/.all calc${EXT} sample/.all \
- 	 cal/.all help/.all help/builtin cscript/.all calc.1 calc.usage
- 
-+RM=	rm
- 
- ###
- #
