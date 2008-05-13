@@ -7,6 +7,7 @@
 
 PORTNAME=	calendar
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lri.fr/~signoles/prog/calendar/
 PKGNAMEPREFIX=	ocaml-
@@ -18,6 +19,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
-USE_OCAML_PLIST=	yes
+
+post-install:
+	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
+		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 
 .include <bsd.port.mk>
