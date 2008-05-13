@@ -209,7 +209,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/7zr:${PORTSDIR}/archivers/p7zip
 .endif
 
 .if defined(WITH_MSWORD)
-RUN_DEPENDS+=	${LOCALBASE}/bin/ripole:${PORTSDIR}/archivers/ripole
+RUN_DEPENDS+=	${LOCALBASE}/bin/ripole:${PORTSDIR}/textproc/ripole
 .endif
 
 .if defined(WITH_TNEF)
