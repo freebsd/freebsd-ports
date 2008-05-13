@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X File System Monitor
 
 USE_IMAKE=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps x11 xext
 MAKE_ARGS=	CC="${CC}" CCOPTIONS="-DFreeBSD"
 MAN1=		xfsm.1
 PLIST_FILES=	bin/xfsm

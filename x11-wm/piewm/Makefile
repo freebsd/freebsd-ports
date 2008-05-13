@@ -16,7 +16,7 @@ COMMENT=	A tvtwm with pie (circular) menus
 
 DISABLE_SIZE=	yes
 USE_IMAKE=	yes
-USE_XORG=	xbitmaps xpm
+USE_XORG=	xbitmaps xpm xmu
 MAN1=		piewm.1
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Graphical password applet for entering SSH passphrase
 
 USE_IMAKE=	yes
-USE_XORG=	x11
+USE_XORG=	x11 xt
 
 MAN1=		x11-ssh-askpass.1
 MLINKS=		x11-ssh-askpass.1 ssh-askpass.1

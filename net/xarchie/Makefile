@@ -17,7 +17,7 @@ COMMENT=	X11 front-end program for the archie network search service
 
 USE_IMAKE=	yes
 USE_GMAKE=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps xaw
 MAN1=		xarchie.1
 
 .include <bsd.port.mk>

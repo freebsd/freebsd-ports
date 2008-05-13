@@ -16,7 +16,7 @@ MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	Graphically display and edit the keyboard mapping
 
 USE_IMAKE=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps xaw
 MAN1=		xkeycaps.1
 PLIST_FILES=	bin/xkeycaps
 
