@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}
 MANLANG=	"" "de.ISO8859-1"
 MAN1=		hf.1 hfterm.1 hfkernel.1
 MAN1_EN=	dcf77gen.1 dcf77rx.1
+CONFLICTS=	sysutils/lbl-hf-1.*
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
