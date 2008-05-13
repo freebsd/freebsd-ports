@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080513:
+  AFFECTS: users of audio/ampache
+  AUTHOR: jadawin@FreeBSD.org
+
+  Ampache 3.4 uses a different config parser. Unfortunately the new parser 
+  is unable to read old config files. You must run php 
+  ${WWWDIR}/bin/migrate_config.inc from the command line.
+
 20080508:
   AFFECTS: users of databases/ptop
   AUTHOR: beech@FreeBSD.org
