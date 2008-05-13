@@ -37,4 +37,3 @@ Local/Library/Libraries/libRSSKit.so.%%LIBVERSION%%
 @dirrm Local/Library/Frameworks/RSSKit.framework/Versions/%%MAJORLIBVERSION%%
 @dirrm Local/Library/Frameworks/RSSKit.framework/Versions
 @dirrm Local/Library/Frameworks/RSSKit.framework
-@dirrm Local/Library/Frameworks
