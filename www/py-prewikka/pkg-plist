@@ -17,7 +17,9 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/Config.py
 %%PYTHON_SITELIBDIR%%/prewikka/Filter.py
 %%PYTHON_SITELIBDIR%%/prewikka/Error.py
+%%PYTHON_SITELIBDIR%%/prewikka/resolve.py
 %%PYTHON_SITELIBDIR%%/prewikka/__init__.py
+%%PYTHON_SITELIBDIR%%/prewikka/_threading_local.py
 %%PYTHON_SITELIBDIR%%/prewikka/MyConfigParser.py
 %%PYTHON_SITELIBDIR%%/prewikka/siteconfig.py
 %%PYTHON_SITELIBDIR%%/prewikka/utils.py
@@ -182,9 +184,14 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/MyConfigParser.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/siteconfig.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/utils.pyo
+%%PYTHON_SITELIBDIR%%/prewikka/resolve.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/_threading_local.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/resolve.pyo
+%%PYTHON_SITELIBDIR%%/prewikka/_threading_local.pyo
 %%NLS%%share/locale/de/LC_MESSAGES/prewikka.mo
 %%NLS%%share/locale/es/LC_MESSAGES/prewikka.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/prewikka.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/prewikka.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/prewikka.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/prewikka.mo
 %%DATADIR%%/cgi-bin/prewikka.cgi
