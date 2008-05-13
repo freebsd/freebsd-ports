@@ -6448,6 +6448,7 @@ laughingman	ports/games/laughingman
 lavaps		ports/sysutils/lavaps
 lazarus		ports/editors/lazarus
 lbdb		ports/mail/lbdb
+lbl-hf		ports/sysutils/lbl-hf
 lbpp		ports/devel/lbpp
 lbrate		ports/archivers/lbrate
 lbreakout	ports/games/lbreakout
