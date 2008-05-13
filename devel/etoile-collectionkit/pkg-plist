@@ -22,7 +22,6 @@ Local/Library/Headers/CollectionKit
 Local/Library/Libraries/libCollectionKit.so
 Local/Library/Libraries/libCollectionKit.so.%%LIBVERSION%%
 Local/Library/Libraries/libCollectionKit.so.%%MAJORLIBVERSION%%
-@dirrm Local/Library/Libraries
 @dirrm Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
 @dirrm Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
 @dirrm Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%
