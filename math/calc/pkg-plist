@@ -19,6 +19,7 @@ include/calc/cmath.h
 include/calc/conf.h
 include/calc/config.h
 include/calc/custom.h
+include/calc/decl.h
 include/calc/endian_calc.h
 include/calc/file.h
 include/calc/fposval.h
@@ -31,7 +32,6 @@ include/calc/have_getpgid.h
 include/calc/have_getprid.h
 include/calc/have_getsid.h
 include/calc/have_gettime.h
-include/calc/have_malloc.h
 include/calc/have_memmv.h
 include/calc/have_newstr.h
 include/calc/have_offscl.h
@@ -49,26 +49,32 @@ include/calc/have_ustat.h
 include/calc/hist.h
 include/calc/jump.h
 include/calc/label.h
+include/calc/lib_calc.h
 include/calc/lib_util.h
 include/calc/longbits.h
-include/calc/math_error.h
-include/calc/md5.h
 include/calc/nametype.h
 include/calc/opcodes.h
 include/calc/prime.h
 include/calc/qmath.h
-include/calc/shs.h
-include/calc/shs1.h
-include/calc/string.h
+include/calc/sha1.h
+include/calc/str.h
 include/calc/symbol.h
 include/calc/terminal.h
 include/calc/token.h
 include/calc/value.h
-include/calc/win32dll.h
 include/calc/zmath.h
 include/calc/zrand.h
 include/calc/zrandom.h
-lib/libcalc.a
+lib/libcalc.so
+lib/libcalc.so.2
+lib/libcalc.so.2.12
+lib/libcalc.so.2.12.3
+lib/libcalc.so.2.12.3.3
+lib/libcustcalc.so
+lib/libcustcalc.so.2
+lib/libcustcalc.so.2.12
+lib/libcustcalc.so.2.12.3
+lib/libcustcalc.so.2.12.3.3
 %%DATADIR%%/README
 %%DATADIR%%/alg_config.cal
 %%DATADIR%%/beer.cal
@@ -82,12 +88,13 @@ lib/libcalc.a
 %%DATADIR%%/custhelp/help
 %%DATADIR%%/custhelp/pmodm127
 %%DATADIR%%/custhelp/pzasusb8
+%%DATADIR%%/custhelp/register
 %%DATADIR%%/custhelp/sysinfo
 %%DATADIR%%/custom/argv.cal
 %%DATADIR%%/custom/halflen.cal
-%%DATADIR%%/custom/libcustcalc.a
 %%DATADIR%%/custom/pmodm127.cal
 %%DATADIR%%/custom/pzasusb8.cal
+%%DATADIR%%/custom/register.cal
 %%DATADIR%%/deg.cal
 %%DATADIR%%/dotest.cal
 %%DATADIR%%/ellip.cal
@@ -137,6 +144,7 @@ lib/libcalc.a
 %%DATADIR%%/help/builtin
 %%DATADIR%%/help/calc_tty
 %%DATADIR%%/help/calclevel
+%%DATADIR%%/help/calcpath
 %%DATADIR%%/help/catalan
 %%DATADIR%%/help/ceil
 %%DATADIR%%/help/cfappr
@@ -156,6 +164,7 @@ lib/libcalc.a
 %%DATADIR%%/help/cot
 %%DATADIR%%/help/coth
 %%DATADIR%%/help/count
+%%DATADIR%%/help/cp
 %%DATADIR%%/help/credit
 %%DATADIR%%/help/csc
 %%DATADIR%%/help/csch
@@ -299,7 +308,6 @@ lib/libcalc.a
 %%DATADIR%%/help/mattrace
 %%DATADIR%%/help/mattrans
 %%DATADIR%%/help/max
-%%DATADIR%%/help/md5
 %%DATADIR%%/help/memsize
 %%DATADIR%%/help/meq
 %%DATADIR%%/help/min
@@ -377,7 +385,6 @@ lib/libcalc.a
 %%DATADIR%%/help/segment
 %%DATADIR%%/help/select
 %%DATADIR%%/help/sgn
-%%DATADIR%%/help/sha
 %%DATADIR%%/help/sha1
 %%DATADIR%%/help/sin
 %%DATADIR%%/help/sinh
@@ -390,6 +397,7 @@ lib/libcalc.a
 %%DATADIR%%/help/srandom
 %%DATADIR%%/help/ssq
 %%DATADIR%%/help/statement
+%%DATADIR%%/help/stoponerror
 %%DATADIR%%/help/str
 %%DATADIR%%/help/strcat
 %%DATADIR%%/help/strcmp
@@ -475,10 +483,12 @@ lib/libcalc.a
 %%DATADIR%%/unitfrac.cal
 %%DATADIR%%/varargs.cal
 %%DATADIR%%/xx_print.cal
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/custom
-@dirrm %%DATADIR%%/custhelp
-@dirrm %%DATADIR%%
-@dirrm include/calc/custom
-@dirrm include/calc
-@dirrm bin/cscript
+@dirrmtry share/man/man1
+@dirrmtry share/man
+@dirrmtry %%DATADIR%%/help
+@dirrmtry %%DATADIR%%/custom
+@dirrmtry %%DATADIR%%/custhelp
+@dirrmtry %%DATADIR%%
+@dirrmtry include/calc/custom
+@dirrmtry include/calc
+@dirrmtry bin/cscript
