@@ -7,7 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.5.4
+PORTVERSION=	2.6.0
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -28,7 +28,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Un
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6 \
-		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server
+		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server \
+		p5-Mail-DKIM>=0.31:${PORTSDIR}/mail/p5-Mail-DKIM
 
 USE_PERL5_RUN=	5.8.2+
 GNU_CONFIGURE=	yes
@@ -39,7 +40,7 @@ BUILD_WRKSRC=	${WRKSRC}/helper-progs
 DOCS=	AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES \
 		README_FILES/README.* README_FILES/screen.css \
 		README_FILES/amavisd-new-docs.html \
-		README_FILES/TODO-SNMP-AGENT
+		README_FILES/TODO-SNMP-AGENT		
 
 AMAVISUSER?=	vscan
 AMAVISGROUP?=	vscan
@@ -72,6 +73,7 @@ OPTIONS=	BDB	"Use BerkeleyDB for nanny/cache/snmp"	on \
 		LZOP	"LZOP support with archivers/lzop"	on \
 		FREEZE	"FREEZE support with archivers/freeze"	on \
 		P7ZIP	"P7ZIP support with archivers/p7zip"	on \
+		MSWORD	"Ms Word support with textproc/ripole"	on \
 		TNEF	"Add external tnef decoder converters/tnef"	off
 
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
@@ -206,9 +208,22 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/unfreeze:${PORTSDIR}/archivers/freeze
 RUN_DEPENDS+=	${LOCALBASE}/bin/7zr:${PORTSDIR}/archivers/p7zip
 .endif
 
+.if defined(WITH_MSWORD)
+RUN_DEPENDS+=	${LOCALBASE}/bin/ripole:${PORTSDIR}/archivers/ripole
+.endif
+
 .if defined(WITH_TNEF)
 RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .endif
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} " **** UPGRADE WARNING:  SQL SCHEMA CHANGED ****"
+	@${ECHO} " If you are upgrading from version prior to 2.6.0"
+	@${ECHO} " Hit ^c now and read /usr/ports/UPDATING section or"
+	@${ECHO} " /usr/local/share/doc/amavisd-new/RELEASE_NOTES"
+	@read -p "Hit ^c now to stop, any key to continue: " -t 5 a || true
+	@${ECHO} ""
 
 post-patch:
 .for f in amavisd.conf amavisd.conf-sample amavisd amavisd-agent amavisd-nanny amavisd-release
