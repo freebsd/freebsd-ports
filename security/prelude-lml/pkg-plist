@@ -21,15 +21,15 @@ etc/prelude-lml/ruleset/cisco-router.rules
 etc/prelude-lml/ruleset/cisco-vpn.rules
 etc/prelude-lml/ruleset/clamav.rules
 etc/prelude-lml/ruleset/dell-om.rules
-etc/prelude-lml/ruleset/exim.rules
 etc/prelude-lml/ruleset/f5-bigip.rules
 etc/prelude-lml/ruleset/grsecurity.rules
+etc/prelude-lml/ruleset/exim.rules
 etc/prelude-lml/ruleset/honeyd.rules
 etc/prelude-lml/ruleset/honeytrap.rules
 etc/prelude-lml/ruleset/httpd.rules
 etc/prelude-lml/ruleset/ipchains.rules
-etc/prelude-lml/ruleset/ipfw.rules
 etc/prelude-lml/ruleset/ipso.rules
+etc/prelude-lml/ruleset/ipfw.rules
 etc/prelude-lml/ruleset/kojoney.rules
 etc/prelude-lml/ruleset/linksys-wap11.rules
 etc/prelude-lml/ruleset/modsecurity.rules
@@ -59,6 +59,7 @@ etc/prelude-lml/ruleset/spamassassin.rules
 etc/prelude-lml/ruleset/squid.rules
 etc/prelude-lml/ruleset/ssh.rules
 etc/prelude-lml/ruleset/sudo.rules
+etc/prelude-lml/ruleset/suhosin.rules
 etc/prelude-lml/ruleset/tripwire.rules
 etc/prelude-lml/ruleset/vigor.rules
 etc/prelude-lml/ruleset/vpopmail.rules
