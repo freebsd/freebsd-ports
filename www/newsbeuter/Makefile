@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	newsbeuter
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	www
 MASTER_SITES=	http://synflood.at/newsbeuter/
 
