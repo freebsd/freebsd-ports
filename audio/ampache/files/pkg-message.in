@@ -14,3 +14,13 @@ that you add something like the following to httpd.conf:
         Order Deny,Allow
         Allow from all
     </Directory>
+
+---------------------------------------------------------------------------
+!!WARNING!!
+---------------------------------------------------------------------------
+Migrating from 3.3.x to 3.4.x
+
+Ampache 3.4 uses a different config parser that is over 10x faster then
+the previous version. Unfortunately the new parser is unable to read the
+old config files. You must run php %%WWWDIR%%/bin/migrate_config.inc from the
+command line to create your new config file.
