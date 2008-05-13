@@ -1,12 +1,12 @@
-%%WWWDIR%%/activate.php
 %%WWWDIR%%/admin/access.php
 %%WWWDIR%%/admin/catalog.php
 %%WWWDIR%%/admin/duplicates.php
+%%WWWDIR%%/admin/export.php
 %%WWWDIR%%/admin/flag.php
 %%WWWDIR%%/admin/index.php
 %%WWWDIR%%/admin/mail.php
 %%WWWDIR%%/admin/modules.php
-%%WWWDIR%%/admin/preferences.php
+%%WWWDIR%%/admin/shout.php
 %%WWWDIR%%/admin/system.php
 %%WWWDIR%%/admin/users.php
 %%WWWDIR%%/albums.php
@@ -16,60 +16,73 @@
 %%WWWDIR%%/bin/catalog_update.inc
 %%WWWDIR%%/bin/delete_disabled.inc
 %%WWWDIR%%/bin/dump_album_art.inc
+%%WWWDIR%%/bin/fix_filenames.inc
+%%WWWDIR%%/bin/migrate_config.inc
 %%WWWDIR%%/bin/print_tags.inc
 %%WWWDIR%%/bin/sort_files.inc
+%%WWWDIR%%/bin/write_playlists.inc
 %%WWWDIR%%/bin/write_tags.inc
 %%WWWDIR%%/browse.php
 %%WWWDIR%%/config/.htaccess
 %%WWWDIR%%/config/ampache.cfg.php.dist
 %%WWWDIR%%/config/motd.php.dist
 %%WWWDIR%%/config/registration_agreement.php.dist
+%%WWWDIR%%/democratic.php
 %%WWWDIR%%/docs/CHANGELOG
 %%WWWDIR%%/docs/GPL-LICENSE
 %%WWWDIR%%/docs/INSTALL
 %%WWWDIR%%/docs/MIGRATION
 %%WWWDIR%%/docs/README
-%%WWWDIR%%/download/index.php
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/flag.php
 %%WWWDIR%%/genre.php
 %%WWWDIR%%/image.php
-%%WWWDIR%%/images/ampache-dark-bg.gif
-%%WWWDIR%%/images/ampache-light-bg.gif
-%%WWWDIR%%/images/ampache-mid.gif
-%%WWWDIR%%/images/ampache.gif
+%%WWWDIR%%/images/ampache.png
 %%WWWDIR%%/images/blank-pixel.gif
 %%WWWDIR%%/images/blankalbum.gif
+%%WWWDIR%%/images/icon_add.png
 %%WWWDIR%%/images/icon_add_user.png
+%%WWWDIR%%/images/icon_admin.png
 %%WWWDIR%%/images/icon_all.png
+%%WWWDIR%%/images/icon_ampache.png
 %%WWWDIR%%/images/icon_batch_download.png
+%%WWWDIR%%/images/icon_browse.png
+%%WWWDIR%%/images/icon_cog.png
+%%WWWDIR%%/images/icon_comment.png
 %%WWWDIR%%/images/icon_delete.png
 %%WWWDIR%%/images/icon_disable.png
-%%WWWDIR%%/images/icon_disable_hover.png
 %%WWWDIR%%/images/icon_download.png
 %%WWWDIR%%/images/icon_edit.png
 %%WWWDIR%%/images/icon_enable.png
-%%WWWDIR%%/images/icon_enable_hover.png
 %%WWWDIR%%/images/icon_flag.png
 %%WWWDIR%%/images/icon_flag_off.png
+%%WWWDIR%%/images/icon_home.png
 %%WWWDIR%%/images/icon_link.png
+%%WWWDIR%%/images/icon_lock.png
+%%WWWDIR%%/images/icon_logout.png
+%%WWWDIR%%/images/icon_money.png
 %%WWWDIR%%/images/icon_next.png
 %%WWWDIR%%/images/icon_next_hover.png
 %%WWWDIR%%/images/icon_pause.png
 %%WWWDIR%%/images/icon_pause_hover.png
 %%WWWDIR%%/images/icon_play.png
 %%WWWDIR%%/images/icon_play_hover.png
+%%WWWDIR%%/images/icon_playlist_add.png
 %%WWWDIR%%/images/icon_preferences.png
 %%WWWDIR%%/images/icon_prev.png
 %%WWWDIR%%/images/icon_prev_hover.png
 %%WWWDIR%%/images/icon_random.png
+%%WWWDIR%%/images/icon_server_lightning.png
 %%WWWDIR%%/images/icon_statistics.png
 %%WWWDIR%%/images/icon_stop.png
 %%WWWDIR%%/images/icon_stop_hover.png
+%%WWWDIR%%/images/icon_thumb_down.png
+%%WWWDIR%%/images/icon_thumb_up.png
 %%WWWDIR%%/images/icon_view.png
 %%WWWDIR%%/images/icon_volumedn.png
 %%WWWDIR%%/images/icon_volumemute.png
 %%WWWDIR%%/images/icon_volumeup.png
+%%WWWDIR%%/images/icon_world_link.png
 %%WWWDIR%%/images/ratings/star_rating.gif
 %%WWWDIR%%/images/ratings/x.gif
 %%WWWDIR%%/images/ratings/x_off.gif
@@ -80,41 +93,54 @@
 %%WWWDIR%%/lib/artist.lib.php
 %%WWWDIR%%/lib/batch.lib.php
 %%WWWDIR%%/lib/class/access.class.php
+%%WWWDIR%%/lib/class/ajax.class.php
 %%WWWDIR%%/lib/class/album.class.php
+%%WWWDIR%%/lib/class/ampachemail.class.php
+%%WWWDIR%%/lib/class/api.class.php
 %%WWWDIR%%/lib/class/artist.class.php
-%%WWWDIR%%/lib/class/audioscrobbler.class.php
+%%WWWDIR%%/lib/class/browse.class.php
 %%WWWDIR%%/lib/class/catalog.class.php
+%%WWWDIR%%/lib/class/config.class.php
+%%WWWDIR%%/lib/class/dba.class.php
+%%WWWDIR%%/lib/class/democratic.class.php
 %%WWWDIR%%/lib/class/error.class.php
 %%WWWDIR%%/lib/class/flag.class.php
 %%WWWDIR%%/lib/class/genre.class.php
+%%WWWDIR%%/lib/class/localplay.abstract.php
 %%WWWDIR%%/lib/class/localplay.class.php
+%%WWWDIR%%/lib/class/metadata.class.php
 %%WWWDIR%%/lib/class/playlist.class.php
 %%WWWDIR%%/lib/class/plugin.class.php
+%%WWWDIR%%/lib/class/preference.class.php
+%%WWWDIR%%/lib/class/radio.class.php
+%%WWWDIR%%/lib/class/random.class.php
 %%WWWDIR%%/lib/class/rating.class.php
+%%WWWDIR%%/lib/class/registration.class.php
+%%WWWDIR%%/lib/class/scrobbler.class.php
+%%WWWDIR%%/lib/class/shoutbox.class.php
 %%WWWDIR%%/lib/class/song.class.php
 %%WWWDIR%%/lib/class/stats.class.php
 %%WWWDIR%%/lib/class/stream.class.php
-%%WWWDIR%%/lib/class/tmp_playlist.class.php
+%%WWWDIR%%/lib/class/tmpplaylist.class.php
 %%WWWDIR%%/lib/class/update.class.php
 %%WWWDIR%%/lib/class/user.class.php
+%%WWWDIR%%/lib/class/vainfo.class.php
+%%WWWDIR%%/lib/class/vauth.class.php
 %%WWWDIR%%/lib/class/view.class.php
+%%WWWDIR%%/lib/class/xmldata.class.php
+%%WWWDIR%%/lib/class/xmlrpcclient.class.php
+%%WWWDIR%%/lib/class/xmlrpcserver.class.php
 %%WWWDIR%%/lib/debug.lib.php
-%%WWWDIR%%/lib/democratic.lib.php
-%%WWWDIR%%/lib/duplicates.php
-%%WWWDIR%%/lib/flag.php
 %%WWWDIR%%/lib/general.lib.php
 %%WWWDIR%%/lib/gettext.php
 %%WWWDIR%%/lib/init.php
 %%WWWDIR%%/lib/install.php
 %%WWWDIR%%/lib/javascript-base.js
-%%WWWDIR%%/lib/localplay.lib.php
 %%WWWDIR%%/lib/log.lib.php
-%%WWWDIR%%/lib/playlist.lib.php
 %%WWWDIR%%/lib/preferences.php
 %%WWWDIR%%/lib/rating.lib.php
 %%WWWDIR%%/lib/rss.php
 %%WWWDIR%%/lib/search.php
-%%WWWDIR%%/lib/song.php
 %%WWWDIR%%/lib/stream.lib.php
 %%WWWDIR%%/lib/themes.php
 %%WWWDIR%%/lib/ui.lib.php
@@ -123,15 +149,18 @@
 %%WWWDIR%%/locale/base/gather-messages.sh
 %%WWWDIR%%/locale/base/merge-messages.sh
 %%WWWDIR%%/locale/base/messages.po
+%%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/el_GR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/el_GR/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/en_GB/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/en_GB/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.po
-%%WWWDIR%%/locale/is_IS/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/nl_NL/LC_MESSAGES/messages.mo
@@ -146,118 +175,98 @@
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
 %%WWWDIR%%/modules/archive/archive.lib.php
-%%WWWDIR%%/modules/captcha/COLLEGE.ttf
+%%WWWDIR%%/modules/captcha/FreeMono-Medium.ttf
 %%WWWDIR%%/modules/captcha/captcha.php
-%%WWWDIR%%/modules/catalog.php
-%%WWWDIR%%/modules/flash/FMP3.swf
-%%WWWDIR%%/modules/flash/license.txt
-%%WWWDIR%%/modules/flash/readme.txt
-%%WWWDIR%%/modules/flash/swfobject.js
+%%WWWDIR%%/modules/flash/LICENSE
+%%WWWDIR%%/modules/flash/Original/skin.xml
+%%WWWDIR%%/modules/flash/crossdomain.xml
+%%WWWDIR%%/modules/flash/xspf_jukebox.swf
 %%WWWDIR%%/modules/flash/xspf_player.php
-%%WWWDIR%%/modules/flash/xspf_player.swf
+%%WWWDIR%%/modules/getid3/docs/changelog.txt
+%%WWWDIR%%/modules/getid3/docs/dependencies.txt
+%%WWWDIR%%/modules/getid3/docs/license.commercial.txt
+%%WWWDIR%%/modules/getid3/docs/license.txt
+%%WWWDIR%%/modules/getid3/docs/readme.txt
+%%WWWDIR%%/modules/getid3/docs/readme.windows.txt
+%%WWWDIR%%/modules/getid3/docs/structure.txt
+%%WWWDIR%%/modules/getid3/extension.cache.dbm.php
+%%WWWDIR%%/modules/getid3/extension.cache.mysql.php
+%%WWWDIR%%/modules/getid3/getid3.php
+%%WWWDIR%%/modules/getid3/module.archive.gzip.php
+%%WWWDIR%%/modules/getid3/module.archive.szip.php
+%%WWWDIR%%/modules/getid3/module.archive.tar.php
+%%WWWDIR%%/modules/getid3/module.archive.zip.php
+%%WWWDIR%%/modules/getid3/module.audio-video.asf.php
+%%WWWDIR%%/modules/getid3/module.audio-video.flv.php
+%%WWWDIR%%/modules/getid3/module.audio-video.mpeg.php
+%%WWWDIR%%/modules/getid3/module.audio-video.nsv.php
+%%WWWDIR%%/modules/getid3/module.audio-video.quicktime.php
+%%WWWDIR%%/modules/getid3/module.audio-video.real.php
+%%WWWDIR%%/modules/getid3/module.audio-video.riff.php
+%%WWWDIR%%/modules/getid3/module.audio-video.swf.php
+%%WWWDIR%%/modules/getid3/module.audio.aac_adif.php
+%%WWWDIR%%/modules/getid3/module.audio.aac_adts.php
+%%WWWDIR%%/modules/getid3/module.audio.ac3.php
+%%WWWDIR%%/modules/getid3/module.audio.au.php
+%%WWWDIR%%/modules/getid3/module.audio.avr.php
+%%WWWDIR%%/modules/getid3/module.audio.bonk.php
+%%WWWDIR%%/modules/getid3/module.audio.dts.php
+%%WWWDIR%%/modules/getid3/module.audio.la.php
+%%WWWDIR%%/modules/getid3/module.audio.lpac.php
+%%WWWDIR%%/modules/getid3/module.audio.midi.php
+%%WWWDIR%%/modules/getid3/module.audio.monkey.php
+%%WWWDIR%%/modules/getid3/module.audio.mp3.php
+%%WWWDIR%%/modules/getid3/module.audio.mpc.php
+%%WWWDIR%%/modules/getid3/module.audio.mpc_old.php
+%%WWWDIR%%/modules/getid3/module.audio.optimfrog.php
+%%WWWDIR%%/modules/getid3/module.audio.rkau.php
+%%WWWDIR%%/modules/getid3/module.audio.shorten.php
+%%WWWDIR%%/modules/getid3/module.audio.tta.php
+%%WWWDIR%%/modules/getid3/module.audio.voc.php
+%%WWWDIR%%/modules/getid3/module.audio.vqf.php
+%%WWWDIR%%/modules/getid3/module.audio.wavpack.php
+%%WWWDIR%%/modules/getid3/module.audio.xiph.php
+%%WWWDIR%%/modules/getid3/module.graphic.bmp.php
+%%WWWDIR%%/modules/getid3/module.graphic.gif.php
+%%WWWDIR%%/modules/getid3/module.graphic.jpeg.php
+%%WWWDIR%%/modules/getid3/module.graphic.pcd.php
+%%WWWDIR%%/modules/getid3/module.graphic.png.php
+%%WWWDIR%%/modules/getid3/module.graphic.tiff.php
+%%WWWDIR%%/modules/getid3/module.lib.data_hash.php
+%%WWWDIR%%/modules/getid3/module.lib.iconv_replacement.php
+%%WWWDIR%%/modules/getid3/module.lib.image_size.php
+%%WWWDIR%%/modules/getid3/module.misc.iso.php
+%%WWWDIR%%/modules/getid3/module.tag.apetag.php
+%%WWWDIR%%/modules/getid3/module.tag.id3v1.php
+%%WWWDIR%%/modules/getid3/module.tag.id3v2.php
+%%WWWDIR%%/modules/getid3/module.tag.lyrics3.php
+%%WWWDIR%%/modules/getid3/write.apetag.php
+%%WWWDIR%%/modules/getid3/write.flac.php
+%%WWWDIR%%/modules/getid3/write.id3v1.php
+%%WWWDIR%%/modules/getid3/write.id3v2.php
+%%WWWDIR%%/modules/getid3/write.lyrics3.php
+%%WWWDIR%%/modules/getid3/write.vorbis.php
 %%WWWDIR%%/modules/horde/Browser.php
 %%WWWDIR%%/modules/httpq/httpqplayer.class.php
-%%WWWDIR%%/modules/id3/changelog.txt
-%%WWWDIR%%/modules/id3/dependencies.txt
-%%WWWDIR%%/modules/id3/getid3/extension.cache.dbm.php
-%%WWWDIR%%/modules/id3/getid3/extension.cache.mysql.php
-%%WWWDIR%%/modules/id3/getid3/getid3.lib.php
-%%WWWDIR%%/modules/id3/getid3/getid3.php
-%%WWWDIR%%/modules/id3/getid3/helperapps/readme.txt
-%%WWWDIR%%/modules/id3/getid3/module.archive.gzip.php
-%%WWWDIR%%/modules/id3/getid3/module.archive.rar.php
-%%WWWDIR%%/modules/id3/getid3/module.archive.szip.php
-%%WWWDIR%%/modules/id3/getid3/module.archive.tar.php
-%%WWWDIR%%/modules/id3/getid3/module.archive.zip.php
-%%WWWDIR%%/modules/id3/getid3/module.audio-video.asf.php
-%%WWWDIR%%/modules/id3/getid3/module.audio-video.bink.php
-%%WWWDIR%%/modules/id3/getid3/module.audio-video.flv.php
-%%WWWDIR%%/modules/id3/getid3/module.audio-video.matroska.php
-%%WWWDIR%%/modules/id3/getid3/module.audio-video.mpeg.php
-%%WWWDIR%%/modules/id3/getid3/module.audio-video.nsv.php
-%%WWWDIR%%/modules/id3/getid3/module.audio-video.quicktime.php
-%%WWWDIR%%/modules/id3/getid3/module.audio-video.real.php
-%%WWWDIR%%/modules/id3/getid3/module.audio-video.riff.php
-%%WWWDIR%%/modules/id3/getid3/module.audio-video.swf.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.aac.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.ac3.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.au.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.avr.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.bonk.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.flac.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.la.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.lpac.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.midi.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.mod.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.monkey.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.mp3.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.mpc.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.ogg.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.optimfrog.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.rkau.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.shorten.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.tta.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.voc.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.vqf.php
-%%WWWDIR%%/modules/id3/getid3/module.audio.wavpack.php
-%%WWWDIR%%/modules/id3/getid3/module.graphic.bmp.php
-%%WWWDIR%%/modules/id3/getid3/module.graphic.gif.php
-%%WWWDIR%%/modules/id3/getid3/module.graphic.jpg.php
-%%WWWDIR%%/modules/id3/getid3/module.graphic.pcd.php
-%%WWWDIR%%/modules/id3/getid3/module.graphic.png.php
-%%WWWDIR%%/modules/id3/getid3/module.graphic.svg.php
-%%WWWDIR%%/modules/id3/getid3/module.graphic.tiff.php
-%%WWWDIR%%/modules/id3/getid3/module.misc.exe.php
-%%WWWDIR%%/modules/id3/getid3/module.misc.iso.php
-%%WWWDIR%%/modules/id3/getid3/module.tag.apetag.php
-%%WWWDIR%%/modules/id3/getid3/module.tag.id3v1.php
-%%WWWDIR%%/modules/id3/getid3/module.tag.id3v2.php
-%%WWWDIR%%/modules/id3/getid3/module.tag.lyrics3.php
-%%WWWDIR%%/modules/id3/getid3/write.apetag.php
-%%WWWDIR%%/modules/id3/getid3/write.id3v1.php
-%%WWWDIR%%/modules/id3/getid3/write.id3v2.php
-%%WWWDIR%%/modules/id3/getid3/write.lyrics3.php
-%%WWWDIR%%/modules/id3/getid3/write.metaflac.php
-%%WWWDIR%%/modules/id3/getid3/write.php
-%%WWWDIR%%/modules/id3/getid3/write.real.php
-%%WWWDIR%%/modules/id3/getid3/write.vorbiscomment.php
-%%WWWDIR%%/modules/id3/helperapps/cygwin1.dll
-%%WWWDIR%%/modules/id3/helperapps/head.exe
-%%WWWDIR%%/modules/id3/helperapps/md5sum.exe
-%%WWWDIR%%/modules/id3/helperapps/metaflac.exe
-%%WWWDIR%%/modules/id3/helperapps/readme.txt
-%%WWWDIR%%/modules/id3/helperapps/sha1sum.exe
-%%WWWDIR%%/modules/id3/helperapps/shorten.exe
-%%WWWDIR%%/modules/id3/helperapps/tail.exe
-%%WWWDIR%%/modules/id3/helperapps/vorbiscomment.exe
-%%WWWDIR%%/modules/id3/license.txt
-%%WWWDIR%%/modules/id3/readme.txt
-%%WWWDIR%%/modules/id3/structure.txt
-%%WWWDIR%%/modules/id3/vainfo.class.php
 %%WWWDIR%%/modules/infotools/AmazonSearchEngine.class.php
 %%WWWDIR%%/modules/infotools/Snoopy.class.php
 %%WWWDIR%%/modules/infotools/jamendoSearch.class.php
 %%WWWDIR%%/modules/infotools/lastfm.class.php
+%%WWWDIR%%/modules/infotools/openstrands.class.php
 %%WWWDIR%%/modules/kajax/README
 %%WWWDIR%%/modules/kajax/ajax.js
-%%WWWDIR%%/modules/lib.php
 %%WWWDIR%%/modules/localplay/httpq.controller.php
-%%WWWDIR%%/modules/localplay/icecast.controller.php
 %%WWWDIR%%/modules/localplay/mpd.controller.php
-%%WWWDIR%%/modules/localplay/xbmc.controller.php
 %%WWWDIR%%/modules/mpd/CHANGELOG
 %%WWWDIR%%/modules/mpd/README
 %%WWWDIR%%/modules/mpd/USAGE
-%%WWWDIR%%/modules/mpd/mpd-class-example.php
 %%WWWDIR%%/modules/mpd/mpd.class.php
 %%WWWDIR%%/modules/plugins/Lastfm.plugin.php
+%%WWWDIR%%/modules/plugins/OpenStrands.plugin.php
 %%WWWDIR%%/modules/plugins/RioPlayer.plugin.php
+%%WWWDIR%%/modules/prototype/prototype.js
 %%WWWDIR%%/modules/validatemail/validateEmail.php
 %%WWWDIR%%/modules/validatemail/validateEmailFormat.php
-%%WWWDIR%%/modules/vauth/auth.lib.php
-%%WWWDIR%%/modules/vauth/dbh.lib.php
-%%WWWDIR%%/modules/vauth/init.php
-%%WWWDIR%%/modules/vauth/session.lib.php
 %%WWWDIR%%/modules/xmlrpc/ChangeLog
 %%WWWDIR%%/modules/xmlrpc/README
 %%WWWDIR%%/modules/xmlrpc/xmlrpc.inc
@@ -265,128 +274,175 @@
 %%WWWDIR%%/play/index.php
 %%WWWDIR%%/playlist.php
 %%WWWDIR%%/preferences.php
-%%WWWDIR%%/randomplay.php
-%%WWWDIR%%/ratings.php
+%%WWWDIR%%/radio.php
+%%WWWDIR%%/random.php
 %%WWWDIR%%/register.php
 %%WWWDIR%%/rss.php
 %%WWWDIR%%/search.php
 %%WWWDIR%%/server/ajax.server.php
+%%WWWDIR%%/server/browse.ajax.php
+%%WWWDIR%%/server/democratic.ajax.php
+%%WWWDIR%%/server/flag.ajax.php
+%%WWWDIR%%/server/index.ajax.php
+%%WWWDIR%%/server/localplay.ajax.php
+%%WWWDIR%%/server/playlist.ajax.php
+%%WWWDIR%%/server/random.ajax.php
+%%WWWDIR%%/server/song.ajax.php
+%%WWWDIR%%/server/stats.ajax.php
+%%WWWDIR%%/server/stream.ajax.php
 %%WWWDIR%%/server/xml.server.php
 %%WWWDIR%%/server/xmlrpc.server.php
+%%WWWDIR%%/shout.php
 %%WWWDIR%%/song.php
 %%WWWDIR%%/sql/ampache.sql
+%%WWWDIR%%/sql/ampache40.sql
 %%WWWDIR%%/stats.php
-%%WWWDIR%%/templates/footer.inc
+%%WWWDIR%%/stream.php
+%%WWWDIR%%/templates/csshover2.htc
+%%WWWDIR%%/templates/footer.inc.php
 %%WWWDIR%%/templates/handheld.css
-%%WWWDIR%%/templates/header.inc
+%%WWWDIR%%/templates/header.inc.php
 %%WWWDIR%%/templates/install.css
 %%WWWDIR%%/templates/javascript_refresh.inc.php
-%%WWWDIR%%/templates/list_header.inc
+%%WWWDIR%%/templates/list_header.inc.php
 %%WWWDIR%%/templates/print.css
-%%WWWDIR%%/templates/show_access_list.inc
-%%WWWDIR%%/templates/show_add_access.inc
+%%WWWDIR%%/templates/rightbar.inc.php
+%%WWWDIR%%/templates/show_access_list.inc.php
+%%WWWDIR%%/templates/show_account.inc.php
+%%WWWDIR%%/templates/show_add_access.inc.php
 %%WWWDIR%%/templates/show_add_catalog.inc.php
+%%WWWDIR%%/templates/show_add_live_stream.inc.php
 %%WWWDIR%%/templates/show_add_playlist.inc.php
+%%WWWDIR%%/templates/show_add_shout.inc.php
 %%WWWDIR%%/templates/show_add_user.inc.php
+%%WWWDIR%%/templates/show_adds_catalog.inc.php
 %%WWWDIR%%/templates/show_admin_info.inc.php
 %%WWWDIR%%/templates/show_admin_tools.inc.php
-%%WWWDIR%%/templates/show_album.inc
+%%WWWDIR%%/templates/show_album.inc.php
 %%WWWDIR%%/templates/show_album_art.inc.php
-%%WWWDIR%%/templates/show_albums.inc
+%%WWWDIR%%/templates/show_album_row.inc.php
 %%WWWDIR%%/templates/show_albums.inc.php
 %%WWWDIR%%/templates/show_all_popular.inc.php
-%%WWWDIR%%/templates/show_all_recent.inc.php
 %%WWWDIR%%/templates/show_alphabet_form.inc.php
-%%WWWDIR%%/templates/show_artist.inc
+%%WWWDIR%%/templates/show_artist.inc.php
 %%WWWDIR%%/templates/show_artist_box.inc.php
-%%WWWDIR%%/templates/show_artists.inc
+%%WWWDIR%%/templates/show_artist_row.inc.php
 %%WWWDIR%%/templates/show_artists.inc.php
-%%WWWDIR%%/templates/show_big_art.inc
-%%WWWDIR%%/templates/show_box.inc.php
+%%WWWDIR%%/templates/show_big_art.inc.php
 %%WWWDIR%%/templates/show_box_bottom.inc.php
 %%WWWDIR%%/templates/show_box_top.inc.php
-%%WWWDIR%%/templates/show_confirm_action.inc.php
+%%WWWDIR%%/templates/show_catalog_row.inc.php
+%%WWWDIR%%/templates/show_catalogs.inc.php
+%%WWWDIR%%/templates/show_clean_catalog.inc.php
 %%WWWDIR%%/templates/show_confirmation.inc.php
-%%WWWDIR%%/templates/show_disabled_songs.inc
+%%WWWDIR%%/templates/show_create_democratic.inc.php
+%%WWWDIR%%/templates/show_debug.inc.php
+%%WWWDIR%%/templates/show_democratic.inc.php
+%%WWWDIR%%/templates/show_democratic_playlist.inc.php
+%%WWWDIR%%/templates/show_denied.inc.php
+%%WWWDIR%%/templates/show_disabled_songs.inc.php
+%%WWWDIR%%/templates/show_duplicate.inc.php
 %%WWWDIR%%/templates/show_duplicates.inc.php
-%%WWWDIR%%/templates/show_edit_access.inc
+%%WWWDIR%%/templates/show_edit_access.inc.php
 %%WWWDIR%%/templates/show_edit_album.inc.php
+%%WWWDIR%%/templates/show_edit_album_row.inc.php
 %%WWWDIR%%/templates/show_edit_artist.inc.php
+%%WWWDIR%%/templates/show_edit_artist_row.inc.php
 %%WWWDIR%%/templates/show_edit_catalog.inc.php
+%%WWWDIR%%/templates/show_edit_live_stream_row.inc.php
+%%WWWDIR%%/templates/show_edit_playlist_row.inc.php
+%%WWWDIR%%/templates/show_edit_playlist_song_row.inc.php
+%%WWWDIR%%/templates/show_edit_shout.inc.php
 %%WWWDIR%%/templates/show_edit_song.inc.php
+%%WWWDIR%%/templates/show_edit_song_row.inc.php
 %%WWWDIR%%/templates/show_edit_user.inc.php
 %%WWWDIR%%/templates/show_embed_xspf.inc.php
+%%WWWDIR%%/templates/show_export.inc.php
 %%WWWDIR%%/templates/show_flag.inc.php
+%%WWWDIR%%/templates/show_flag_row.inc.php
 %%WWWDIR%%/templates/show_flagged.inc.php
+%%WWWDIR%%/templates/show_gather_art.inc.php
 %%WWWDIR%%/templates/show_genre.inc.php
 %%WWWDIR%%/templates/show_genres.inc.php
 %%WWWDIR%%/templates/show_get_albumart.inc.php
 %%WWWDIR%%/templates/show_import_playlist.inc.php
 %%WWWDIR%%/templates/show_index.inc.php
-%%WWWDIR%%/templates/show_install.inc
+%%WWWDIR%%/templates/show_install.inc.php
 %%WWWDIR%%/templates/show_install_account.inc.php
-%%WWWDIR%%/templates/show_install_config.inc
+%%WWWDIR%%/templates/show_install_config.inc.php
 %%WWWDIR%%/templates/show_install_lang.inc.php
 %%WWWDIR%%/templates/show_ip_history.inc.php
-%%WWWDIR%%/templates/show_list_duplicates.inc.php
+%%WWWDIR%%/templates/show_live_stream_row.inc.php
+%%WWWDIR%%/templates/show_live_streams.inc.php
 %%WWWDIR%%/templates/show_local_catalog_info.inc.php
-%%WWWDIR%%/templates/show_localplay.inc.php
+%%WWWDIR%%/templates/show_localplay_add_instance.inc.php
 %%WWWDIR%%/templates/show_localplay_control.inc.php
+%%WWWDIR%%/templates/show_localplay_controllers.inc.php
+%%WWWDIR%%/templates/show_localplay_edit_instance.inc.php
+%%WWWDIR%%/templates/show_localplay_instances.inc.php
 %%WWWDIR%%/templates/show_localplay_playlist.inc.php
 %%WWWDIR%%/templates/show_localplay_status.inc.php
-%%WWWDIR%%/templates/show_login_form.inc
+%%WWWDIR%%/templates/show_login_form.inc.php
 %%WWWDIR%%/templates/show_mail_users.inc.php
-%%WWWDIR%%/templates/show_modules.inc.php
-%%WWWDIR%%/templates/show_now_playing.inc
+%%WWWDIR%%/templates/show_manage_democratic.inc.php
+%%WWWDIR%%/templates/show_manage_shoutbox.inc.php
+%%WWWDIR%%/templates/show_now_playing.inc.php
 %%WWWDIR%%/templates/show_now_playing_row.inc.php
 %%WWWDIR%%/templates/show_object_rating.inc.php
 %%WWWDIR%%/templates/show_object_rating_static.inc.php
+%%WWWDIR%%/templates/show_object_row.inc.php
+%%WWWDIR%%/templates/show_objects.inc.php
 %%WWWDIR%%/templates/show_play_selected.inc.php
-%%WWWDIR%%/templates/show_playlist_box.inc.php
+%%WWWDIR%%/templates/show_playlist.inc.php
 %%WWWDIR%%/templates/show_playlist_edit.inc.php
+%%WWWDIR%%/templates/show_playlist_row.inc.php
+%%WWWDIR%%/templates/show_playlist_song_row.inc.php
+%%WWWDIR%%/templates/show_playlist_songs.inc.php
 %%WWWDIR%%/templates/show_playlists.inc.php
 %%WWWDIR%%/templates/show_playtype_switch.inc.php
+%%WWWDIR%%/templates/show_plugins.inc.php
 %%WWWDIR%%/templates/show_preference_admin.inc.php
 %%WWWDIR%%/templates/show_preference_box.inc.php
-%%WWWDIR%%/templates/show_preferences.inc
+%%WWWDIR%%/templates/show_preferences.inc.php
+%%WWWDIR%%/templates/show_random.inc.php
 %%WWWDIR%%/templates/show_random_albums.inc.php
-%%WWWDIR%%/templates/show_random_play.inc
 %%WWWDIR%%/templates/show_recently_played.inc.php
+%%WWWDIR%%/templates/show_registration_confirmation.inc.php
 %%WWWDIR%%/templates/show_rename_artist.inc.php
-%%WWWDIR%%/templates/show_search.inc
-%%WWWDIR%%/templates/show_search_bar.inc
-%%WWWDIR%%/templates/show_similar_artists.inc
-%%WWWDIR%%/templates/show_songs.inc
-%%WWWDIR%%/templates/show_test.inc
-%%WWWDIR%%/templates/show_tv.inc.php
-%%WWWDIR%%/templates/show_tv_adminctl.inc.php
-%%WWWDIR%%/templates/show_tv_nowplaying.inc.php
-%%WWWDIR%%/templates/show_tv_playlist.inc.php
+%%WWWDIR%%/templates/show_run_add_catalog.inc.php
+%%WWWDIR%%/templates/show_search.inc.php
+%%WWWDIR%%/templates/show_search_bar.inc.php
+%%WWWDIR%%/templates/show_search_options.inc.php
+%%WWWDIR%%/templates/show_shout_row.inc.php
+%%WWWDIR%%/templates/show_shoutbox.inc.php
+%%WWWDIR%%/templates/show_similar_artists.inc.php
+%%WWWDIR%%/templates/show_song.inc.php
+%%WWWDIR%%/templates/show_song_row.inc.php
+%%WWWDIR%%/templates/show_songs.inc.php
+%%WWWDIR%%/templates/show_stats_newest.inc.php
+%%WWWDIR%%/templates/show_stats_popular.inc.php
+%%WWWDIR%%/templates/show_test.inc.php
+%%WWWDIR%%/templates/show_test_config.inc.php
 %%WWWDIR%%/templates/show_user.inc.php
+%%WWWDIR%%/templates/show_user_activate.inc.php
+%%WWWDIR%%/templates/show_user_preferences.inc.php
 %%WWWDIR%%/templates/show_user_recommendations.inc.php
 %%WWWDIR%%/templates/show_user_registration.inc.php
 %%WWWDIR%%/templates/show_user_stats.inc.php
-%%WWWDIR%%/templates/show_users.inc
 %%WWWDIR%%/templates/show_users.inc.php
+%%WWWDIR%%/templates/show_verify_catalog.inc.php
 %%WWWDIR%%/templates/show_xspf_player.inc.php
 %%WWWDIR%%/templates/sidebar.inc.php
+%%WWWDIR%%/templates/sidebar_admin.inc.php
+%%WWWDIR%%/templates/sidebar_browse.inc.php
+%%WWWDIR%%/templates/sidebar_home.inc.php
+%%WWWDIR%%/templates/sidebar_localplay.inc.php
+%%WWWDIR%%/templates/sidebar_preferences.inc.php
 %%WWWDIR%%/templates/subnavbar.inc.php
 %%WWWDIR%%/test.php
-%%WWWDIR%%/themes/burgundy/images/ampache-dark-bg.gif
-%%WWWDIR%%/themes/burgundy/images/ampache-light-bg.gif
-%%WWWDIR%%/themes/burgundy/images/ampache-mid.gif
-%%WWWDIR%%/themes/burgundy/images/ampache.gif
-%%WWWDIR%%/themes/burgundy/images/blank-pixel.gif
-%%WWWDIR%%/themes/burgundy/images/blankalbum.gif
-%%WWWDIR%%/themes/burgundy/images/blankalbum.jpg
-%%WWWDIR%%/themes/burgundy/templates/default.css
-%%WWWDIR%%/themes/burgundy/theme.cfg.php
-%%WWWDIR%%/themes/classic/images/ampache-dark-bg.gif
-%%WWWDIR%%/themes/classic/images/ampache-light-bg.gif
-%%WWWDIR%%/themes/classic/images/ampache-mid.gif
-%%WWWDIR%%/themes/classic/images/ampache.gif
-%%WWWDIR%%/themes/classic/images/bg_login_0.jpg
-%%WWWDIR%%/themes/classic/images/bg_login_1.jpg
+%%WWWDIR%%/themes/classic/images/ajax-loader.gif
+%%WWWDIR%%/themes/classic/images/ampache.png
+%%WWWDIR%%/themes/classic/images/bg_login.jpg
 %%WWWDIR%%/themes/classic/images/blank-pixel.gif
 %%WWWDIR%%/themes/classic/images/blankalbum.gif
 %%WWWDIR%%/themes/classic/images/bottom.gif
@@ -394,50 +450,80 @@
 %%WWWDIR%%/themes/classic/images/bottomright.gif
 %%WWWDIR%%/themes/classic/images/left.gif
 %%WWWDIR%%/themes/classic/images/right.gif
+%%WWWDIR%%/themes/classic/images/rightbar_top.jpg
 %%WWWDIR%%/themes/classic/images/sidebar_top.jpg
 %%WWWDIR%%/themes/classic/images/top.gif
 %%WWWDIR%%/themes/classic/images/topleft.gif
 %%WWWDIR%%/themes/classic/images/topright.gif
 %%WWWDIR%%/themes/classic/templates/default.css
 %%WWWDIR%%/themes/classic/theme.cfg.php
-%%WWWDIR%%/themes/greyblock/images/ampache-dark-bg.gif
-%%WWWDIR%%/themes/greyblock/images/ampache-light-bg.gif
-%%WWWDIR%%/themes/greyblock/images/ampache-mid.gif
-%%WWWDIR%%/themes/greyblock/images/ampache.gif
-%%WWWDIR%%/themes/greyblock/images/blank-pixel.gif
-%%WWWDIR%%/themes/greyblock/images/blankalbum.gif
-%%WWWDIR%%/themes/greyblock/templates/default.css
-%%WWWDIR%%/themes/greyblock/theme.cfg.php
-%%WWWDIR%%/tv.php
+%%WWWDIR%%/themes/greysme/images/ajax-loader.gif
+%%WWWDIR%%/themes/greysme/images/ampache.png
+%%WWWDIR%%/themes/greysme/images/ampache_back.gif
+%%WWWDIR%%/themes/greysme/images/ampache_menu.gif
+%%WWWDIR%%/themes/greysme/images/back-box.gif
+%%WWWDIR%%/themes/greysme/images/background.jpg
+%%WWWDIR%%/themes/greysme/images/blankalbum.gif
+%%WWWDIR%%/themes/greysme/images/box_bottom.png
+%%WWWDIR%%/themes/greysme/images/box_top.png
+%%WWWDIR%%/themes/greysme/images/button_back.png
+%%WWWDIR%%/themes/greysme/images/button_back2.png
+%%WWWDIR%%/themes/greysme/images/curl.gif
+%%WWWDIR%%/themes/greysme/images/icons/icon_add.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_admin.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_all.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_batch_download.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_browse.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_delete.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_download.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_edit.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_home.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_logout.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_playlist_add.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_random.png
+%%WWWDIR%%/themes/greysme/images/icons/icon_volumeup.png
+%%WWWDIR%%/themes/greysme/images/list_back-old.png
+%%WWWDIR%%/themes/greysme/images/list_back.png
+%%WWWDIR%%/themes/greysme/images/overlay.png
+%%WWWDIR%%/themes/greysme/images/puce.gif
+%%WWWDIR%%/themes/greysme/images/punaise-bl.gif
+%%WWWDIR%%/themes/greysme/images/punaise-br.gif
+%%WWWDIR%%/themes/greysme/images/punaise-tl.gif
+%%WWWDIR%%/themes/greysme/images/ratings/star_rating.gif
+%%WWWDIR%%/themes/greysme/images/ratings/x.gif
+%%WWWDIR%%/themes/greysme/images/ratings/x_off.gif
+%%WWWDIR%%/themes/greysme/images/sort_off.gif
+%%WWWDIR%%/themes/greysme/images/sort_on.gif
+%%WWWDIR%%/themes/greysme/templates/default.css
+%%WWWDIR%%/themes/greysme/theme.cfg.php
 %%WWWDIR%%/update.php
-@dirrm %%WWWDIR%%/themes/greyblock/templates
-@dirrm %%WWWDIR%%/themes/greyblock/images
-@dirrm %%WWWDIR%%/themes/greyblock
+%%WWWDIR%%/util.php
+@dirrm %%WWWDIR%%/themes/greysme/templates
+@dirrm %%WWWDIR%%/themes/greysme/images/ratings
+@dirrm %%WWWDIR%%/themes/greysme/images/icons
+@dirrm %%WWWDIR%%/themes/greysme/images
+@dirrm %%WWWDIR%%/themes/greysme
 @dirrm %%WWWDIR%%/themes/classic/templates
 @dirrm %%WWWDIR%%/themes/classic/images
 @dirrm %%WWWDIR%%/themes/classic
-@dirrm %%WWWDIR%%/themes/burgundy/templates
-@dirrm %%WWWDIR%%/themes/burgundy/images
-@dirrm %%WWWDIR%%/themes/burgundy
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/templates
 @dirrm %%WWWDIR%%/sql
 @dirrm %%WWWDIR%%/server
 @dirrm %%WWWDIR%%/play
 @dirrm %%WWWDIR%%/modules/xmlrpc
-@dirrm %%WWWDIR%%/modules/vauth
 @dirrm %%WWWDIR%%/modules/validatemail
+@dirrm %%WWWDIR%%/modules/prototype
 @dirrm %%WWWDIR%%/modules/plugins
 @dirrm %%WWWDIR%%/modules/mpd
 @dirrm %%WWWDIR%%/modules/localplay
 @dirrm %%WWWDIR%%/modules/kajax
 @dirrm %%WWWDIR%%/modules/infotools
-@dirrm %%WWWDIR%%/modules/id3/helperapps
-@dirrm %%WWWDIR%%/modules/id3/getid3/helperapps
-@dirrm %%WWWDIR%%/modules/id3/getid3
-@dirrm %%WWWDIR%%/modules/id3
 @dirrm %%WWWDIR%%/modules/httpq
 @dirrm %%WWWDIR%%/modules/horde
+@dirrm %%WWWDIR%%/modules/getid3/docs
+@dirrm %%WWWDIR%%/modules/getid3
+@dirrm %%WWWDIR%%/modules/flash/Original
 @dirrm %%WWWDIR%%/modules/flash
 @dirrm %%WWWDIR%%/modules/captcha
 @dirrm %%WWWDIR%%/modules/archive
@@ -452,26 +538,27 @@
 @dirrm %%WWWDIR%%/locale/nl_NL
 @dirrm %%WWWDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/it_IT
-@dirrm %%WWWDIR%%/locale/is_IS/LC_MESSAGES
-@dirrm %%WWWDIR%%/locale/is_IS
 @dirrm %%WWWDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/fr_FR
 @dirrm %%WWWDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/es_ES
 @dirrm %%WWWDIR%%/locale/en_GB/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/en_GB
+@dirrm %%WWWDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/el_GR
 @dirrm %%WWWDIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/de_DE
+@dirrm %%WWWDIR%%/locale/ca_CA/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ca_CA
 @dirrm %%WWWDIR%%/locale/base
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/lib/class
 @dirrm %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/images/ratings
 @dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/download
 @dirrm %%WWWDIR%%/docs
-@dirrmtry %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/bin
 @dirrm %%WWWDIR%%/admin
+@dirrmtry %%WWWDIR%%/config
 @dirrmtry %%WWWDIR%%
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%
