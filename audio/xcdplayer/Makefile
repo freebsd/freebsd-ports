@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD player for X
 
 USE_IMAKE=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps xaw
 MAN1=		xcdplayer.1
 
 PLIST_FILES=	bin/xcdplayer lib/X11/app-defaults/XCdplayer

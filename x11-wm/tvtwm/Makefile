@@ -18,7 +18,7 @@ COMMENT=	Twm with a virtual desktop
 
 WRKSRC=		${WRKDIR}/tvtwm
 USE_IMAKE=	yes
-USE_XORG=	xbitmaps xpm
+USE_XORG=	xbitmaps xpm xmu
 MAN1=		tvtwm.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/tvtwm

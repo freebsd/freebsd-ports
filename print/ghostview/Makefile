@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 front-end for ghostscript, the GNU postscript previewer
 
 USE_IMAKE=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps xaw
 MAN1=		ghostview.1
 
 post-install:

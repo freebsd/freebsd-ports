@@ -19,7 +19,7 @@ COMMENT=	X11 based fractal landscape generator
 NO_WRKSUBDIR=	yes
 
 USE_IMAKE=	yes
-USE_XORG=	xbitmaps
+USE_XORG=	xbitmaps x11 xext
 MAN6=		xmountains.6
 PLIST_FILES=	bin/xmountains
 
