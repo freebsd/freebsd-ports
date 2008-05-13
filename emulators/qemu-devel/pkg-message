@@ -77,9 +77,25 @@ and one for 6 and 5(?) is here:
 or larger on i386 hosts you need to increase the kern.maxdsiz tunable
 in loader.conf(5) since the default is 512 MB, and qemu needs memory for
 itself also.
-- kqemu seems to be broken on amd64 SMP hosts atm (causing the host
-to panic), if this affects you you can either use an UP host kernel as a
-workaround or disable kqemu.
+- if you use kqemu make sure your kqemu.ko is always in sync with your
+kernel (like with any kld installed outside of base), i.e.  rebuild its
+port whenever you update the kernel - especially if you are switching
+branches or are following a -stable or even -current branch!
+- you can enable autoloading of kqemu (and aio) at boot by adding a line
+	kqemu_enable=YES
+to /etc/rc.conf
+- kqemu liked to panic the host on amd64 SMP until before 1.3.0.p11_6
+(revision 1.25 of /usr/ports/emulators/kqemu-kmod/Makefile), so if your
+host is such you might want to make sure your kqemu-kmod port is new enough.
+(and don't forget to reload it...)
+- also remember that on amd64 you need to run the amd64 (x86_64) system
+emulation if you want to use kqemu, i.e. run qemu-system-x86_64 instead of
+qemu (the latter only emulates a 32 bit system.)  Unfortunately there can
+still be guests that don't run correctly in the amd64 emulation even when
+they do run in the 32 bit one, the same is true about kqemu and -kernel-kqemu
+on amd64 - not much you can do about that other than help debugging (k)qemu's
+amd64 emulation... (well or falling back to unaccellerated, possibly 32 bit
+qemu/leaving out -kernel-kqemu if its that what's causing the problems.)
 - qemu now uses aio at least for ide dma, so if you get `Invalid system call'
 crashes that is because aio is not (kld)loaded.
 - The default configuration location (qemu-ifup script etc.) has been
