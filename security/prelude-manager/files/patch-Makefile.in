@@ -1,19 +1,19 @@
---- Makefile.in.orig	Tue Mar 28 19:04:43 2006
-+++ Makefile.in	Wed Mar 29 09:32:01 2006
-@@ -710,17 +710,8 @@
+--- Makefile.in.orig	2008-04-28 13:56:31.000000000 +0200
++++ Makefile.in	2008-04-29 11:30:33.000000000 +0200
+@@ -927,17 +927,8 @@
  	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_run_dir);
  	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_scheduler_dir);
  	$(INSTALL) -d -m 700 $(DESTDIR)$(manager_failover_dir);
--	@if test -f $(DESTDIR)$(configdir)/prelude-manager.conf; then                                                  \
--		$(INSTALL) -m 600 $(top_srcdir)/prelude-manager.conf $(DESTDIR)$(configdir)/prelude-manager.conf-dist; \
--		echo "********************************************************************************";     		\
--		echo;											     		\
--		echo "$(DESTDIR)$(configdir)/prelude-manager.conf already exist...";                                   \
--		echo "Installing default configuration in $(DESTDIR)$(configdir)/prelude-manager.conf-dist";           \
--		echo;                                                                                        		\
--		echo "********************************************************************************";     		\
--	else                                                                                                 		\
--		$(INSTALL) -m 600 $(top_srcdir)/prelude-manager.conf $(DESTDIR)$(configdir)/;                          \
+-	@if test -f $(DESTDIR)$(configdir)/prelude-manager.conf; then                                                    \
+-		$(INSTALL) -m 600 $(top_builddir)/prelude-manager.conf $(DESTDIR)$(configdir)/prelude-manager.conf-dist; \
+-		echo "********************************************************************************";     		 \
+-		echo;											     		 \
+-		echo "$(DESTDIR)$(configdir)/prelude-manager.conf already exist...";                                     \
+-		echo "Installing default configuration in $(DESTDIR)$(configdir)/prelude-manager.conf-dist";             \
+-		echo;                                                                                        		 \
+-		echo "********************************************************************************";     		 \
+-	else                                                                                                 		 \
+-		$(INSTALL) -m 600 $(top_builddir)/prelude-manager.conf $(DESTDIR)$(configdir)/;                          \
 -	fi                                                                                                   
 +	$(INSTALL) -m 600 $(top_srcdir)/prelude-manager.conf $(DESTDIR)$(configdir)/prelude-manager.conf-dist
 +
