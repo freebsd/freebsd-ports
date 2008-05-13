@@ -163,11 +163,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/File/Tail.pm
 %%SLIMDIR%%/CPAN/File/Temp.pm
 %%SLIMDIR%%/CPAN/File/Which.pm
-%%SLIMDIR%%/CPAN/GD.pm
-%%SLIMDIR%%/CPAN/GD/Image.pm
-%%SLIMDIR%%/CPAN/GD/Polygon.pm
-%%SLIMDIR%%/CPAN/GD/Polyline.pm
-%%SLIMDIR%%/CPAN/GD/Simple.pm
 %%SLIMDIR%%/CPAN/HTML/Entities.pm
 %%SLIMDIR%%/CPAN/HTML/Filter.pm
 %%SLIMDIR%%/CPAN/HTML/Form.pm
@@ -2493,7 +2488,6 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/CPAN/HTTP/Cookies
 @dirrm %%SLIMDIR%%/CPAN/HTTP
 @dirrm %%SLIMDIR%%/CPAN/HTML
-@dirrm %%SLIMDIR%%/CPAN/GD
 @dirrm %%SLIMDIR%%/CPAN/File/Spec
 @dirrm %%SLIMDIR%%/CPAN/File/Find
 @dirrm %%SLIMDIR%%/CPAN/File
