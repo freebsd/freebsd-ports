@@ -309,6 +309,7 @@
     SUBDIR += healthd
     SUBDIR += heartbeat
     SUBDIR += heirloom
+    SUBDIR += hf
     SUBDIR += highlnk
     SUBDIR += hilite
     SUBDIR += hourglass
