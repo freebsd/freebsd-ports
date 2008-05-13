@@ -7,6 +7,32 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20080513:
+  AFFECTS: users of secutity/amavisd-new
+  AUTHOR: scheidell@secnap.net
+
+  Amavisd-new 2.6.0 introduces several incompatibilities with prior versions.
+  If you are upgrading from 2.5.4 or earlier, you will need to update your
+  sql schema.  If you have third party programs that access sql tables, you
+  will need to update those also.
+
+COMPATIBILITY WITH 2.5.4
+
+- when using SQL for logging (e.g. for a pen pals feature) or for
+  quarantining, SQL tables tables maddr, msgs, msgrcpt and quarantine need
+  to be extended by a new field 'partition_tag';  see below for details;
+
+- when SQL logging (pen pals) or SQL lookups are used, one can choose a
+  binary or a character data type for fields users.email, mailaddr.email,
+  and maddr.email; now may be a good opportunity to change a data type
+  to binary (string of bytes);  see below for details;
+
+- when using SQL for logging, a default for $sql_clause{'upd_msg'}
+  has changed, so if a configuration file replaces this SQL clause
+  by a non-default setting, it needs to be updated;
+
+  Full information in /usr/local/share/doc/amavisd-new/RELEASE_NOTES
+
+20080513:
   AFFECTS: users of audio/ampache
   AUTHOR: jadawin@FreeBSD.org
 
