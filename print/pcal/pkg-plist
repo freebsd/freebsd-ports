@@ -4,6 +4,7 @@ libexec/pcal.pl
 %%EXAMPLESDIR%%/calendar_au.txt
 %%EXAMPLESDIR%%/calendar_de.txt
 %%EXAMPLESDIR%%/calendar_ee.txt
+%%EXAMPLESDIR%%/calendar_es.txt
 %%EXAMPLESDIR%%/calendar_fi.txt
 %%EXAMPLESDIR%%/calendar_fr.txt
 %%EXAMPLESDIR%%/calendar_gr.txt
@@ -11,6 +12,8 @@ libexec/pcal.pl
 %%EXAMPLESDIR%%/calendar_nl.txt
 %%EXAMPLESDIR%%/calendar_no.txt
 %%EXAMPLESDIR%%/calendar_nz.txt
+%%EXAMPLESDIR%%/calendar_pl.txt
+%%EXAMPLESDIR%%/calendar_sk.txt
 %%EXAMPLESDIR%%/calendar_uk.txt
 %%EXAMPLESDIR%%/calendar_us.txt
 %%EXAMPLESDIR%%/fonttest_arabic
@@ -31,6 +34,5 @@ libexec/pcal.pl
 %%EXAMPLESDIR%%/fonttest_latin9
 %%EXAMPLESDIR%%/fonttest_roman8
 %%EXAMPLESDIR%%/fonttest_thai
-%%EXAMPLESDIR%%/moon98
 %%EXAMPLESDIR%%/pcal-cfg.txt
 @dirrm %%EXAMPLESDIR%%
