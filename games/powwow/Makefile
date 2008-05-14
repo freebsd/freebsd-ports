@@ -19,6 +19,12 @@ CONFIGURE_ARGS+=	--enable-bsd
 
 MAN6=		powwow.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800034
+BROKEN=		does not compile
+.endif
+
 pre-build:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/defines.h \
 		${WRKSRC}/list.c ${WRKSRC}/main.c ${WRKSRC}/cmd2.c ${WRKSRC}/beam.c
@@ -30,4 +36,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/powwow.doc ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/powwow.help ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
