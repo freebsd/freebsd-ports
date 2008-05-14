@@ -25,6 +25,10 @@ MLINKS=		star.1 ustar.1
 
 .include <bsd.port.pre.mk>
 
+if ${OSVERSION} >= 800032
+BROKEN=		does not compile
+.endif
+
 post-extract:
 .if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
 	@${LN} -sf i386-freebsd-cc.rul \
