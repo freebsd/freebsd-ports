@@ -1,0 +1,22 @@
+MUSCLE is multiple alignment software for protein and nucleotide sequences.
+The name stands for multiple sequence comparison by log-expectation.
+
+A range of options is provided that give you the choice of optimizing
+accuracy, speed, or some compromise between the two. Default parameters are
+those that give the best average accuracy in the published tests. MUSCLE
+can achieve both better average accuracy and better speed than CLUSTALW or
+T-Coffee, depending on the chosen options.
+
+Citation:
+
+Edgar, R. C. (2004) MUSCLE: multiple sequence alignment with high accuracy
+and high throughput. Nucleic Acids Research 32(5): 1792-1797.
+
+Edgar, R. C. (2004) MUSCLE: a multiple sequence alignment method with
+reduced time and space complexity. BMC Bioinformatics 5(1): 113.
+
+The NAR paper gives only a brief overview of the algorithm and
+implementation details. For a full discussion of the method and many of
+the non-default options that it offers, please see the BMC paper.
+
+WWW: http://www.drive5.com/muscle/
