@@ -18,7 +18,7 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME?=	gnometarget intlhack
+USE_GNOME?=	gnometarget intlhack pkgconfig
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
