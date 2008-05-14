@@ -7,7 +7,7 @@
 
 PORTNAME=	freenet6
 PORTVERSION=	2.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.go6.net/4105/file.asp?file_id=80&foo=/
 DISTNAME=	tspc-${PORTVERSION}-src
@@ -26,6 +26,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	freenet6.sh pkg-message
 EXTRA_PATCHES=	${FILESDIR}/patch5-template::freebsd.sh
 MAKE_ARGS=	target=freebsd installdir=${PREFIX}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700000
+EXTRA_PATCHES+=	patch7-plstform__freebsd__tsp_local.c
+.endif
 
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
@@ -53,4 +59,4 @@ post-patch:
 		-e "s|template=linux|template=tspc-freebsd|g" \
 		${WRKSRC}/man/man5/tspc.conf.5
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
