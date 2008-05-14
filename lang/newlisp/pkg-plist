@@ -1,12 +1,14 @@
 bin/newlisp
 %%GUISERV%%bin/newlisp-edit
 bin/newlispdoc
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/CodePatterns.html
 %%GUISERV%%%%PORTDOCS%%%%DOCSDIR%%/guiserver/guiserver.lsp.html
 %%GUISERV%%%%PORTDOCS%%%%DOCSDIR%%/guiserver/index.html
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CodePatterns.html
+%%PORTDOCS%%%%DOCSDIR%%/ExpressionEvaluation.html
+%%PORTDOCS%%%%DOCSDIR%%/MemoryManagement.html
 %%PORTDOCS%%%%DOCSDIR%%/manual_frame.html
-%%PORTDOCS%%%%DOCSDIR%%/newLISP-9.2-Release.html
+%%PORTDOCS%%%%DOCSDIR%%/newLISP-9.3-Release.html
 %%PORTDOCS%%%%DOCSDIR%%/newLISPdoc.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_index.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_manual.html
@@ -27,7 +29,6 @@ bin/newlispdoc
 %%PORTDOCS%%%%EXAMPLESDIR%%/udp-server.lsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/upload.cgi
 %%PORTDOCS%%%%EXAMPLESDIR%%/upload.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/url-file.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/xmlrpc.cgi
 %%GUISERV%%%%DATADIR%%/guiserver.jar
 %%GUISERV%%%%DATADIR%%/guiserver.lsp
@@ -43,6 +44,8 @@ bin/newlispdoc
 %%GUISERV%%%%DATADIR%%/guiserver/html-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/image-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/mouse-demo.lsp
+%%GUISERV%%%%DATADIR%%/guiserver/move-resize-demo.lsp
+%%GUISERV%%%%DATADIR%%/guiserver/pinballs-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/properties-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/rotation-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/shapes-demo.lsp
@@ -54,9 +57,11 @@ bin/newlispdoc
 %%GUISERV%%%%DATADIR%%/guiserver/widgets-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/word-count.lsp
 %%DATADIR%%/modules/cgi.lsp
+%%DATADIR%%/modules/crypto.lsp
 %%DATADIR%%/modules/ftp.lsp
 %%GMP%%%%DATADIR%%/modules/gmp.lsp
 %%DATADIR%%/modules/infix.lsp
+%%MYSQL51%%%%DATADIR%%/modules/mysql51.lsp
 %%MYSQL5%%%%DATADIR%%/modules/mysql5.lsp
 %%MYSQL4%%%%DATADIR%%/modules/mysql.lsp
 %%DATADIR%%/modules/odbc.lsp
