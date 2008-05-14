@@ -6,30 +6,26 @@
 #
 
 PORTNAME=	flow-extract
-PORTVERSION=	2.4
+PORTVERSION=	2.61
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://security.uchicago.edu/tools/net-forensics/files/
-DISTNAME=	flowextract-${PORTVERSION}
-EXTRACT_SUFX=	.cpio.gz
+MASTER_SITES=	http://security.uchicago.edu/tools/net-forensics/
+DISTNAME=	flow-extract-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cisco NetFlow awk-like extracting tool
 
 BUILD_DEPENDS=	flow-cat:${PORTSDIR}/net-mgmt/flow-tools
 
-EXTRACT_AFTER_ARGS=	| ${CPIO} -idmu
+MAN1=		flow-extract.1
+PLIST_FILES=	bin/flow-extract
 
-post-patch:	patch-makefile
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-patch-makefile:
-		@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-			${WRKSRC}/Makefile
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
 
 do-install:
 		@${INSTALL_PROGRAM}	${WRKSRC}/flow-extract ${PREFIX}/bin
 		@${INSTALL_MAN}		${WRKSRC}/flow-extract.1 ${PREFIX}/man/man1
-
-MAN1=		flow-extract.1
-PLIST_FILES=	bin/flow-extract
 
 .include <bsd.port.mk>
