@@ -20,6 +20,12 @@ USE_GMAKE=	yes
 MAKE_ENV=	MAKEPROG=${GMAKE} CCOM=${CC}
 MAN1=		srmt.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800032
+BROKEN=		does not compile
+.endif
+
 post-extract:
 .if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
 	@${LN} -sf i386-freebsd-cc.rul \
@@ -43,4 +49,4 @@ do-install:
 	fi
 	@${CHMOD} u+s ${PREFIX}/sbin/srmt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
