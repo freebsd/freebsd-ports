@@ -12,7 +12,7 @@ CATEGORIES=	security
 #MASTER_SITES=	# http://download.bitdefender.com/freebsd/${BDREL}/final/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.2-fbsd${BDREL}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	BitDefender Console Antivirus for FreeBSD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
