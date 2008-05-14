@@ -25,7 +25,7 @@ MLINKS=		star.1 ustar.1
 
 .include <bsd.port.pre.mk>
 
-if ${OSVERSION} >= 800032
+.if ${OSVERSION} >= 800032
 BROKEN=		does not compile
 .endif
 
