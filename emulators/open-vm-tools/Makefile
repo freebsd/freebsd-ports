@@ -15,11 +15,12 @@ MASTER_SITES=		SF
 MAINTAINER=		mbr@freebsd.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
-RELEASE_DATE=		2008.03.19
-BUILD_VER=		82724
+RELEASE_DATE=		2008.05.02
+BUILD_VER=		90473
 
 GNU_CONFIGURE=		yes
 
+CONFIGURE_ARGS+=	--without-procps
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
 .else
