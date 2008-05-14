@@ -5,7 +5,7 @@
  	$(INSTALL) -c -m 644 $(srcdir)/doc/unbound-host.1 $(mandir)/man1
  	$(INSTALL) -c -m 644 $(srcdir)/doc/libunbound.3 $(mandir)/man3
 -	if test ! -e $(configfile); then $(INSTALL) -d `dirname $(configfile)`; $(INSTALL) -c -m 644 $(srcdir)/doc/example.conf $(configfile); fi
-+	$(INSTALL) -d `dirname $(configfile)`; $(INSTALL) -c -m 644 $(srcdir)/doc/example.conf $(configfile).sample; fi
++	$(INSTALL) -d `dirname $(configfile)`; $(INSTALL) -c -m 644 $(srcdir)/doc/example.conf $(configfile).sample
  	$(LIBTOOL) --mode=install cp $(srcdir)/libunbound/unbound.h $(includedir)/unbound.h
  	$(LIBTOOL) --mode=install cp libunbound.la $(libdir)
  	$(LIBTOOL) --mode=finish $(libdir)
