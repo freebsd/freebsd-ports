@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	searchstatus
-PORTVERSION=	1.18
-DISTVERSIONSUFFIX=	-fx+fl
+PORTVERSION=	1.24
+DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
 MAINTAINER=	lapo@lapo.it
@@ -16,7 +16,7 @@ COMMENT=	Displays Google PageRank, Alexa popularity and other stats
 XPI_NUM=	321
 XPI_ID=		{d57c9ff1-6389-48fc-b770-f78bd89b6e8a}
 XPI_FILES=	chrome/searchstatus.jar install.js install.rdf \
-		readme.txt chrome.manifest
+		installjs.old2 readme.txt chrome.manifest
 XPI_DIRS=	chrome
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
