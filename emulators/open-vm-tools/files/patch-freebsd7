@@ -36,32 +36,8 @@
        } else if (strcmp(key, "noexec") == 0) { // allow program execution?
           *flags |= MS_NOEXEC;
           LOG("Setting mount option for program execution off\n");
---- modules/freebsd/vmxnet/net_compat.h.orig	2008-03-19 08:49:47.000000000 +0100
-+++ modules/freebsd/vmxnet/net_compat.h	2008-03-27 18:30:45.000000000 +0100
-@@ -132,7 +132,11 @@
-    #define VXN_IF_FREE(softc)   if_free((softc)->arpcom.ac_ifp)
- 
-    #define VXN_SC2IFP(softc)    ((softc)->arpcom.ac_ifp)
-+#if __FreeBSD_version >= 700000
-+   #define VXN_SC2ENADDR(softc) ((softc)->vxn_enaddr)
-+#else
-    #define VXN_SC2ENADDR(softc) ((softc)->arpcom._ac_enaddr)
-+#endif
- 
-    #define VXN_PCIR_MAPS        PCIR_BARS
- 
 --- modules/freebsd/vmxnet/if_vxn.c.orig	2008-03-19 08:49:47.000000000 +0100
 +++ modules/freebsd/vmxnet/if_vxn.c	2008-03-27 18:33:12.000000000 +0100
-@@ -108,6 +108,9 @@
-    Vmxnet2_TxRingEntry     *vxn_tx_ring;
-    int                      vxn_tx_pending;
-    int                      vxn_rings_allocated;
-+#if __FreeBSD_version >= 700000
-+   u_char                   vxn_enaddr[ETHER_ADDR_LEN];
-+#endif
-    uint32                   vxn_max_tx_frags;
- 
-    struct mbuf             *vxn_tx_buffptr[VMXNET2_MAX_NUM_TX_BUFFERS];
 @@ -299,11 +302,20 @@
     }
  #ifdef VXN_MPSAFE
