@@ -18,19 +18,25 @@ bin/atunes
 %%DATADIR%%/lib/jna-examples.jar
 %%DATADIR%%/lib/jna.jar
 %%DATADIR%%/lib/log4j-1.2.13.jar
+%%DATADIR%%/lib/lucene-core-2.3.1.jar
 %%DATADIR%%/lib/oro.jar
 %%DATADIR%%/lib/substance-swingx.jar
 %%DATADIR%%/lib/substance.jar
 %%DATADIR%%/lib/swingx.jar
-%%DATADIR%%/lib/xpp3_min-1.1.3.4.O.jar
-%%DATADIR%%/lib/xstream-1.2.2.jar
+%%DATADIR%%/lib/xpp3_min-1.1.4c.jar
+%%DATADIR%%/lib/xstream-1.3.jar
 %%DATADIR%%/license.txt
 %%DATADIR%%/log4j.properties
 %%DATADIR%%/lyricsEngines.properties
+%%DATADIR%%/presets.properties
+%%DATADIR%%/settings/extendedLog.properties
+%%DATADIR%%/settings/log4j.properties
+%%DATADIR%%/settings/lyricsEngines.properties
+%%DATADIR%%/settings/preset_radios.xml
+%%DATADIR%%/settings/presets.properties
 %%DATADIR%%/shortcutSpec.xml
 %%DATADIR%%/translations/MainBundle.properties
 %%DATADIR%%/translations/MainBundle_ar.properties
-%%DATADIR%%/translations/MainBundle_ar.properties.utf8
 %%DATADIR%%/translations/MainBundle_cs.properties
 %%DATADIR%%/translations/MainBundle_de.properties
 %%DATADIR%%/translations/MainBundle_el.properties
@@ -42,6 +48,7 @@ bin/atunes
 %%DATADIR%%/translations/MainBundle_ja.properties
 %%DATADIR%%/translations/MainBundle_nl.properties
 %%DATADIR%%/translations/MainBundle_no.properties
+%%DATADIR%%/translations/MainBundle_pl.properties
 %%DATADIR%%/translations/MainBundle_pt.properties
 %%DATADIR%%/translations/MainBundle_pt_BR.properties
 %%DATADIR%%/translations/MainBundle_ru.properties
@@ -49,6 +56,10 @@ bin/atunes
 %%DATADIR%%/translations/MainBundle_tr.properties
 %%DATADIR%%/translations/MainBundle_zh.properties
 %%DATADIR%%/translations/MainBundle_zh_TW.properties
+%%DATADIR%%/translations/PacksPanel_deu.xml
+%%DATADIR%%/translations/PacksPanel_fra.xml
+%%DATADIR%%/translations/PacksPanel_ita.xml
+%%DATADIR%%/translations/PacksPanel_spa.xml
 %%DATADIR%%/translations/flag_ar.png
 %%DATADIR%%/translations/flag_cs.png
 %%DATADIR%%/translations/flag_de.png
@@ -61,6 +72,7 @@ bin/atunes
 %%DATADIR%%/translations/flag_ja.png
 %%DATADIR%%/translations/flag_nl.png
 %%DATADIR%%/translations/flag_no.png
+%%DATADIR%%/translations/flag_pl.png
 %%DATADIR%%/translations/flag_pt.png
 %%DATADIR%%/translations/flag_pt_BR.png
 %%DATADIR%%/translations/flag_ru.png
@@ -69,6 +81,7 @@ bin/atunes
 %%DATADIR%%/translations/flag_zh.png
 %%DATADIR%%/translations/flag_zh_TW.png
 @dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/settings
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
