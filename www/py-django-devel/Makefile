@@ -19,7 +19,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
-SNAPSHOT=	20080404
+SNAPSHOT=	20080514
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

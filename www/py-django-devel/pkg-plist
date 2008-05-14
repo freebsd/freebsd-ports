@@ -276,6 +276,7 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/arrow-down.gif
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/arrow-up.gif
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/changelist-bg.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/changelist-bg_rtl.gif
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/chooser-bg.gif
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/chooser_stacked-bg.gif
 %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/default-bg-reverse.gif
@@ -1194,6 +1195,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/db/backends/oracle/introspection.py
 %%PYTHON_SITELIBDIR%%/django/db/backends/oracle/introspection.pyc
 %%PYTHON_SITELIBDIR%%/django/db/backends/oracle/introspection.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/query.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/query.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/query.pyo
 %%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/__init__.py
 %%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/__init__.pyo
@@ -1254,6 +1258,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/__init__.py
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/proxy.py
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/proxy.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/proxy.pyo
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/related.py
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/related.pyc
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/related.pyo
@@ -1275,12 +1282,33 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/db/models/query.py
 %%PYTHON_SITELIBDIR%%/django/db/models/query.pyc
 %%PYTHON_SITELIBDIR%%/django/db/models/query.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/query_utils.py
+%%PYTHON_SITELIBDIR%%/django/db/models/query_utils.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/query_utils.pyo
 %%PYTHON_SITELIBDIR%%/django/db/models/related.py
 %%PYTHON_SITELIBDIR%%/django/db/models/related.pyc
 %%PYTHON_SITELIBDIR%%/django/db/models/related.pyo
 %%PYTHON_SITELIBDIR%%/django/db/models/signals.py
 %%PYTHON_SITELIBDIR%%/django/db/models/signals.pyc
 %%PYTHON_SITELIBDIR%%/django/db/models/signals.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/constants.py
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/constants.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/constants.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/datastructures.py
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/datastructures.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/datastructures.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/query.py
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/query.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/query.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/subqueries.py
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/subqueries.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/subqueries.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/where.py
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/where.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/sql/where.pyo
 %%PYTHON_SITELIBDIR%%/django/db/transaction.py
 %%PYTHON_SITELIBDIR%%/django/db/transaction.pyc
 %%PYTHON_SITELIBDIR%%/django/db/transaction.pyo
@@ -1530,6 +1558,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/utils/translation/trans_real.py
 %%PYTHON_SITELIBDIR%%/django/utils/translation/trans_real.pyc
 %%PYTHON_SITELIBDIR%%/django/utils/translation/trans_real.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/tree.py
+%%PYTHON_SITELIBDIR%%/django/utils/tree.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/tree.pyo
 %%PYTHON_SITELIBDIR%%/django/utils/tzinfo.py
 %%PYTHON_SITELIBDIR%%/django/utils/tzinfo.pyc
 %%PYTHON_SITELIBDIR%%/django/utils/tzinfo.pyo
@@ -1602,6 +1633,7 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/http
 @dirrm %%PYTHON_SITELIBDIR%%/django/forms
 @dirrm %%PYTHON_SITELIBDIR%%/django/dispatch
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/models/sql
 @dirrm %%PYTHON_SITELIBDIR%%/django/db/models/fields
 @dirrm %%PYTHON_SITELIBDIR%%/django/db/models
 @dirrm %%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3
