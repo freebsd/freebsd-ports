@@ -1,6 +1,6 @@
---- src/sim/cstat.cc	2003-06-25 17:38:24.000000000 +0200
-+++ src/sim/cstat.cc	2004-11-19 12:23:03.000000000 +0100
-@@ -252,8 +252,31 @@
+--- src/sim/cstat.cc.orig	2006-10-21 16:44:55.000000000 +0200
++++ src/sim/cstat.cc	2008-04-06 14:42:30.000000000 +0200
+@@ -370,8 +370,31 @@
  
  void cWeightedStdDev::collect2(double val, double weight)
  {
@@ -33,13 +33,13 @@
  }
  
  void cWeightedStdDev::clearResult()
-@@ -264,18 +287,18 @@
+@@ -382,18 +405,18 @@
  
  double cWeightedStdDev::variance() const
  {
--    throw new cException(this, "variance()/stddev() not implemented");
+-    throw new cRuntimeError(this, "variance()/stddev() not implemented");
 +    // Lars Westerhoff
- 
+-
 -    // if (sum_weights==0)
 -    //   return 0.0;
 -    // else
@@ -50,6 +50,7 @@
 -    //   else
 -    //       return devsqr;
 -    //}
++
 +    if (sum_weights==0)
 +        return 0.0;
 +    else

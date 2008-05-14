@@ -6,106 +6,139 @@
 #
 
 PORTNAME=	omnetpp
-PORTVERSION=	2.3p1
-PORTREVISION=	3
+PORTVERSION=	3.3
 CATEGORIES=	science
 MASTER_SITES=	http://www.omnetpp.org/download/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bkoenig@cs.tu-berlin.de
+MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	A discrete event simulation environment
 
-USE_BISON=	build
+LIB_DEPENDS=	BLT24:${PORTSDIR}/x11-toolkits/blt
 
-TCL_VERSION?=	tcl8.4
-TK_VERSION?=	tk8.4
-
-TCL_NODOT=	${TCL_VERSION:S/.//}
-TK_NODOT=	${TK_VERSION:S/.//}
-
-LIB_DEPENDS=	${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT} \
-		${TK_NODOT}:${PORTSDIR}/x11-toolkits/${TK_NODOT} \
-		expat:${PORTSDIR}/textproc/expat2
-
-.include <bsd.port.pre.mk>
-
-COMPONENTS=	libs progs
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget libxml libxslt pkgconfig
+USE_PERL5=	yes
+USE_TCL=	yes
+USE_TK=		84+
 
 USE_LDCONFIG=	yes
-HAS_CONFIGURE=	yes
+
+TCL_VER_NODOT=	${TCL_VER:S/.//}
+TK_VER_NODOT=	${TK_VER:S/.//}
 
 LIB_FILES=	cmdenv envir nedxml sim_std tkenv
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGUREUSER=	${WRKSRC}/configure.user
+PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
+PLIST=		${WRKDIR}/pkg-plist
 
-post-extract:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/src/gned/ebnf.tab.cc ${WRKSRC}/src/gned/ebnf.y \
-		${WRKSRC}/src/nedc/ebnf.tab.c ${WRKSRC}/src/nedc/ebnf.y \
-		${WRKSRC}/src/nedxml/ned.tab.c ${WRKSRC}/src/nedxml/ned.y
+INCLDIR=	${PREFIX}/include/${PORTNAME}
+INCLDIR_REL=	${INCLDIR:S,^${PREFIX}/,,}
+
+OPTIONS=	MAGICK "Install ImageMagick for EPS-JPG conversion" ON \
+		GRAPHVIZ "Install Graphviz for generating diagrams" ON \
+		DOXYGEN "Install Doxygen to create the API reference" ON \
+		GIFTRANS "Make the background of diagrams transparent" ON
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MAGICK)
+depend+=	convert:${PORTSDIR}/graphics/ImageMagick
+.endif
+
+.if defined(WITH_GRAPHVIZ)
+depend+=	dot:${PORTSDIR}/graphics/graphviz
+.endif
+
+.if defined(WITH_DOXYGEN)
+depend+=	doxygen:${PORTSDIR}/devel/doxygen
+.endif
+
+.if defined(WITH_GIFTRANS)
+depend+=	giftrans:${PORTSDIR}/graphics/giftrans
+.endif
+
+BUILD_DEPENDS+=	${depend}
+RUN_DEPENDS+=	${depend}
 
 pre-configure:
-.if defined(CFLAGS)
-	@${REINPLACE_CMD} -e 's,-O3 -DNDEBUG=1,${CFLAGS},' ${WRKSRC}/configure.user
-.endif
-	@${ECHO} "OMNETPP_ROOT=${PREFIX}" >> ${CONFIGUREUSER}
-	@${ECHO} "OMNETPP_GNED_DIR=${DATADIR}/gned" >> ${CONFIGUREUSER}
-	@${ECHO} "OMNETPP_PLOVE_DIR=${DATADIR}/plove" >> ${CONFIGUREUSER}
-	@${ECHO} "OMNETPP_TKENV_DIR=${DATADIR}/tkenv" >> ${CONFIGUREUSER}
-	@${ECHO} "OMNETPP_BITMAP_PATH=${DATADIR}/bitmaps" >> ${CONFIGUREUSER}
-	@${ECHO} "TK_CFLAGS=\"-I${LOCALBASE}/include -I${LOCALBASE}/include/${TCL_VERSION} -I${LOCALBASE}/include/${TK_VERSION}\"" >> ${CONFIGUREUSER}
-	@${ECHO} "TK_LIBS=\"-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lX11 -l${TCL_NODOT} -l${TK_NODOT}\"" >> ${CONFIGUREUSER}
-	@${ECHO} "EXPAT_CFLAGS=\"-I${LOCALBASE}/include\"" >> ${CONFIGUREUSER}
-	@${ECHO} "EXPAT_LIBS=\"-L${LOCALBASE}/lib -lexpat\"" >> ${CONFIGUREUSER}
-	@${ECHO} "WISH=wish${TK_VERSION}" | ${SED} 's,tk,,' >> ${CONFIGUREUSER}
+	@${REINPLACE_CMD} \
+		-e 's,-O2 -DNDEBUG=1,${CFLAGS} -fPIC,' \
+		-e 's,^#MSGC,MSGC,' \
+		${WRKSRC}/configure.user
+	@${ECHO} "CC=${CC}" >> ${CONFIGUREUSER}
+	@${ECHO} "CXX=${CXX}" >> ${CONFIGUREUSER}
 
-post-configure:
-.if defined(COMPONENTS)
-	@${REINPLACE_CMD} -e 's,libs progs samples tutorials,${COMPONENTS},' \
-		${WRKSRC}/Makefile
+	@${ECHO} "OMNETPP_BITMAP_PATH=${DATADIR}/bitmaps" >> ${CONFIGUREUSER}
+	@${ECHO} "TK_CFLAGS=\"-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl${TCL_VER} -I${LOCALBASE}/include/tk${TK_VER}\"" >> ${CONFIGUREUSER}
+	@${ECHO} "TK_LIBS=\"-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lX11 -ltcl${TCL_VER_NODOT} -ltk${TK_VER_NODOT}\"" >> ${CONFIGUREUSER}
+	@${ECHO} "LIBXML_CFLAGS=\"`${PKG_CONFIG} --cflags libxml-2.0`\"" >> ${CONFIGUREUSER}
+	@${ECHO} "LIBXML_LIBS=\"`${PKG_CONFIG} --libs libxml-2.0`\"" >> ${CONFIGUREUSER}
+	@${ECHO} "WISH=wish${TK_VER}" >> ${CONFIGUREUSER}
+
+pre-install:
+	@${CP} pkg-plist ${PLIST}
+	@(cd ${WRKSRC}; \
+		${FIND} -s include -type f | ${SED} "s,^include,${INCLDIR_REL}," >> ${PLIST}; \
+		${FIND} -s -d include -type d | ${SED} "s,^include,@dirrm ${INCLDIR_REL}," >> ${PLIST}; \
+	)
+	@(cd ${WRKSRC}; \
+		${FIND} -s bitmaps -type f | ${SED} "s,^,%%DATADIR%%/," >> ${PLIST}; \
+		${FIND} -s -d bitmaps -type d | ${SED} "s,^,@dirrm %%DATADIR%%/," >> ${PLIST} \
+	)
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC}; \
+		${FIND} -s doc/ -type f | ${SED} "s,^doc/,%%DOCSDIR%%/," >> ${PLIST}; \
+		${FIND} -s -d doc/ -type d | ${SED} "s,^doc/,@dirrm %%DOCSDIR%%/," >> ${PLIST} \
+	)
 .endif
+	@${ECHO} "%%DATADIR%%/neddoc.xsl" >> ${PLIST}
+	@${ECHO} "%%DATADIR%%/neddocproc.pl" >> ${PLIST}
+	@${ECHO} "@dirrm %%DATADIR%%" >> ${PLIST}
 
 do-install:
-	@${REINPLACE_CMD} -e 's,${WRKSRC}/include,${PREFIX}/include/${PORTNAME},' \
-		${WRKSRC}/bin/opp_makemake
-	@${REINPLACE_CMD} -e 's,${WRKSRC}/lib,${PREFIX}/lib,' \
-		${WRKSRC}/bin/opp_makemake
-	@${REINPLACE_CMD} -e 's,${WRKSRC}/doc,${DOCSDIR},' \
-		${WRKSRC}/bin/opp_makemake
-	@${REINPLACE_CMD} -e 's,${WRKSRC}/src,${DATADIR},' \
-		${WRKSRC}/bin/plove
-	@${MKDIR} ${PREFIX}/include/${PORTNAME} \
-  		${DATADIR}/bitmaps ${DATADIR}/gned ${DATADIR}/plove ${DATADIR}/tkenv
-	@${RM} ${WRKSRC}/bin/opp_makemake.bak
+	@${MKDIR} ${DATADIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/gned ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/nedc ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/nedtool ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/plove ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/seedtool ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/scalars ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/opp_* ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/plove ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/splitvec ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/bin/neddoc.xsl ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/bin/neddoc.xsl ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/bin/neddocproc.pl ${DATADIR}
+	@${REINPLACE_CMD} -i '' \
+		-e 's,${WRKSRC}/bin,${PREFIX}/bin,' \
+		-e 's,${WRKSRC}/include,${INCLDIR},' \
+		-e 's,${WRKSRC}/lib,${PREFIX}/lib,' \
+		${PREFIX}/bin/opp_makemake
+	@${REINPLACE_CMD} -i '' \
+		-e 's,^\(.NEDDOC.* = "\).*/\(.*";\),\1${DATADIR}/\2,' \
+		${PREFIX}/bin/opp_neddoc
 .for file in ${LIB_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/lib/*.${PORTVERSION} ${PREFIX}/lib
-	@${LS} ${PREFIX}/lib/lib${file}.so.${PORTVERSION} | ${SED} s/.${PORTVERSION}// | ${XARGS} -I% ${LN} -s %.${PORTVERSION} %
+	@${LN} -s lib${file}.so.${PORTVERSION} ${PREFIX}/lib/lib${file}.so
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/bitmaps/* ${DATADIR}/bitmaps
-	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/include/doxy.cfg ${PREFIX}/include/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/src/gned/*.tcl ${DATADIR}/gned
-	@${INSTALL_DATA} ${WRKSRC}/src/plove/*.tcl ${DATADIR}/plove
-	@${INSTALL_DATA} ${WRKSRC}/src/plove/*.sh ${DATADIR}/plove
-	@${INSTALL_DATA} ${WRKSRC}/src/plove/demo.vec ${DATADIR}/plove
-	@${INSTALL_DATA} ${WRKSRC}/src/tkenv/*.tcl ${DATADIR}/tkenv
+	@(cd ${WRKSRC}/include;\
+	${FIND} . -type d -exec ${MKDIR} ${INCLDIR}/{} \; ;\
+	${FIND} . -type f | ${XARGS} -I% ${INSTALL_DATA} % ${INCLDIR}/% \
+	)
+	@(cd ${WRKSRC}/bitmaps;\
+	${FIND} . -type d -exec ${MKDIR} ${DATADIR}/bitmaps/{} \; ;\
+	${FIND} . -type f | ${XARGS} -I% ${INSTALL_DATA} % ${DATADIR}/bitmaps/% \
+	)
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC}/doc;\
+	${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; ;\
+	${FIND} . -type f | ${XARGS} -I% ${INSTALL_DATA} % ${DOCSDIR}/% \
+	)
+.endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/doc/* ${DOCSDIR}
-	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} 444
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
