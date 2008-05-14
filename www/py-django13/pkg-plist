@@ -479,8 +479,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/formtools/preview.py
 %%PYTHON_SITELIBDIR%%/django/contrib/formtools/preview.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/formtools/preview.pyo
-%%PYTHON_SITELIBDIR%%/django/contrib/formtools/templates/formtools/form.html
-%%PYTHON_SITELIBDIR%%/django/contrib/formtools/templates/formtools/preview.html
 %%PYTHON_SITELIBDIR%%/django/contrib/humanize/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/humanize/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/humanize/__init__.pyo
@@ -1153,8 +1151,6 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/humanize/templatetags
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/humanize
-@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/formtools/templates/formtools
-@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/formtools/templates
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/formtools
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/flatpages
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/csrf
