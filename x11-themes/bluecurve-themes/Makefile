@@ -40,12 +40,11 @@ do-install:	# empty
 
 .else					# master port
 
-PORTVERSION=	5.0.11
-PORTREVISION=	3
+PORTVERSION=	7.0.0
 CATEGORIES=	x11-themes
-MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX:S|$|:fedora|} ${MASTER_SITE_LOCAL:S|$|:local|}
-MASTER_SITE_SUBDIR=	development/source/SRPMS/:fedora jylefort/:local
-DISTFILES=	redhat-artwork-${PORTVERSION}-1.fc7.src.rpm:fedora,local
+MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
+MASTER_SITE_SUBDIR=	../releases/7/Fedora/source/SRPMS/
+DISTFILES=	redhat-artwork-${PORTVERSION}-9.fc7.src.rpm
 
 EXTRACT_DEPENDS+=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
