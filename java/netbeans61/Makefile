@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	netbeans
-PORTVERSION=	6.0.1
+PORTVERSION=	6.1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.netbeans.org/netbeans/6.0/final/zip/
-
-DISTNAME=	netbeans-${PORTVERSION}-200801291616-ml
+MASTER_SITES=	http://download.netbeans.org/netbeans/6.1/final/zip/
+DISTNAME=	netbeans-${PORTVERSION}-200804211638
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
@@ -30,7 +29,7 @@ post-patch:
 	@${RM} ${WRKSRC}/etc/netbeans.conf.orig
 	@${REINPLACE_CMD} -e "s@%%GREP%%@${GREP}@" \
 		-e "s@%%GCONFTOOL%%@${LOCALBASE}/bin/gconftool-2@" \
-		${WRKSRC}/platform7/lib/nbexec
+		${WRKSRC}/platform8/lib/nbexec
 
 do-configure:
 	@${REINPLACE_CMD} 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/etc/netbeans.conf

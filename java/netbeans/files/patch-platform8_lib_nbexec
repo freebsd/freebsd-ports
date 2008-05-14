@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- platform7/lib/nbexec.orig
-+++ platform7/lib/nbexec
-@@ -253,7 +253,7 @@
+--- platform8/lib/nbexec.orig
++++ platform8/lib/nbexec
+@@ -270,7 +270,7 @@
  # detect system http proxy setting
  
  detect_gnome_proxy () {
@@ -12,7 +12,7 @@ $FreeBSD$
      if [ -x  $gconftool ] ; then
          proxy_mode=`$gconftool --get /system/proxy/mode 2>/dev/null`
          if [ "$proxy_mode" = "manual" ] ; then
-@@ -282,18 +282,18 @@
+@@ -299,18 +299,18 @@
  detect_kde_proxy () {
      kioslaverc="${HOME}/.kde/share/config/kioslaverc"
      if [ -f $kioslaverc ] ; then
@@ -35,7 +35,7 @@ $FreeBSD$
                  http_proxy_tmp="DIRECT"
                  return 0
              fi
-@@ -314,14 +314,14 @@
+@@ -331,14 +331,14 @@
  close
  EOF
  
