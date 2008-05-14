@@ -8532,6 +8532,7 @@ nipper		ports/net-mgmt/nipper
 nitpicker	ports/net-mgmt/nitpicker
 nitrogen	ports/sysutils/nitrogen
 njam		ports/games/njam
+njplot		ports/biology/njplot
 njs		ports/lang/njs
 nl-acroread8	ports/print/nl-acroread8
 nl-aspell	ports/textproc/nl-aspell
