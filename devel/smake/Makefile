@@ -28,6 +28,10 @@ PLIST_SUB=	RULESUSED="${RULEUSED}"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800032
+BROKEN=		Does not compile
+.endif
+
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not build on sparc64
 .endif
