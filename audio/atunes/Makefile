@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atunes
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	audio java
 MASTER_SITES=	SF
 DISTNAME=	aTunes_${PORTVERSION}
@@ -55,12 +55,13 @@ DESKTOP_ENTRIES="aTunes" \
 
 INSTALL_FILES=	aTunes.ico aTunes.jar build.properties changelog.txt \
 		extendedLog.properties license.txt log4j.properties \
-		lyricsEngines.properties shortcutSpec.xml
+		lyricsEngines.properties presets.properties shortcutSpec.xml
 
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/translations
 	@${MKDIR} ${DATADIR}/lib
+	@${MKDIR} ${DATADIR}/settings
 	${INSTALL_SCRIPT} ${WRKDIR}/atunes ${PREFIX}/bin
 .for file in ${INSTALL_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}/${file}
@@ -68,6 +69,8 @@ do-install:
 	cd ${WRKSRC} && ${FIND} translations -type f -exec ${INSTALL_DATA} {} \
 		${DATADIR}/{} \;
 	cd ${WRKSRC} && ${FIND} lib -type f -name "*.jar" -exec ${INSTALL_DATA} {} \
+		${DATADIR}/{} \;
+	cd ${WRKSRC} && ${FIND} settings -type f -exec ${INSTALL_DATA} {} \
 		${DATADIR}/{} \;
 
 .include <bsd.port.post.mk>
