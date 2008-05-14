@@ -18,6 +18,8 @@ LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion \
 		apr-1.2:${PORTSDIR}/devel/apr \
 		neon.26:${PORTSDIR}/www/neon26
 
+BROKEN=		conflicting dependencies
+
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_NOEGGINFO=yes
