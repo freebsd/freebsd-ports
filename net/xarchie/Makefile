@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 front-end program for the archie network search service
 
-DEPRICATED=	No servers active anymore
+DEPRECATED=	No servers active anymore
 EXPIRATION_DATE=2008-06-01
 
 USE_IMAKE=	yes

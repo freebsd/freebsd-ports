@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prospero client for the archie service
 
-DEPRICATED=	No servers active anymore
+DEPRECATED=	No servers active anymore
 EXPIRATION_DATE=2008-06-01
 
 WRKSRC=		${WRKDIR}/archie-1.4.1-FIX
