@@ -8,7 +8,7 @@ POST-DEINSTALL)
 	echo "===> post-deinstallation information for $1:"
 	echo ""
 	echo "     Note:"
-	echo "     Squid related user accounts and groups were not removed."
+	echo "     Unbound related user accounts and groups were not removed."
 	echo ""
 	echo "     To remove the 'unbound' user and the 'unbound' group which were"
 	echo "     created by a default installation of this package, run"
