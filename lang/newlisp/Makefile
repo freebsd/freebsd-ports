@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	newlisp
-PORTVERSION=	9.2.0
+PORTVERSION=	9.3.0
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -24,16 +24,18 @@ MAN1=	newlisp.1 newlispdoc.1
 
 REINPLACE_ARGS=	-i ""
 
-MODULES=	cgi ftp infix odbc pop3 postscript smtp stat unix \
+MODULES=	cgi crypto ftp infix odbc pop3 postscript smtp stat unix \
 		xmlrpc-client zlib
 
-DOCS=		CHANGES CodePatterns.html newLISP-9.2-Release.html \
+DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
+		MemoryManagement.html newLISP-9.3-Release.html \
 		manual_frame.html newLISPdoc.html \
 		newlisp_index.html newlisp_manual.html \
 
 OPTIONS=	GMP	"Enable GMP math library support" off \
-		MYSQL4	"Build with mysql4 support" off \
-		MYSQL5	"Build with mysql5 support" off \
+		MYSQL4	"Build with MySQL 4.1.x support" off \
+		MYSQL5	"Build with mysql 5.0.x support" off \
+		MYSQL51	"Build with mysql 5.1.x support" off \
 		SQLITE	"Build with sqlite support" off \
 		GUISERV "Install GUI server (in JAVA)" off
 
@@ -67,6 +69,15 @@ MODULES+=	mysql5
 PLIST_SUB+=	MYSQL5=""
 .else
 PLIST_SUB+=	MYSQL5="@comment "
+.endif
+
+.if defined(WITH_MYSQL51)
+USE_MYSQL=yes
+WITH_MYSQL_VER=	51
+MODULES+=	mysql51
+PLIST_SUB+=	MYSQL51=""
+.else
+PLIST_SUB+=	MYSQL51="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
@@ -108,6 +119,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		"s,/usr/local/mysql/lib/(libmysqlclient.)dylib,${LOCALBASE}/lib/mysql/\1so.${MYSQL${MYSQL_VER}_LIBVER}," \
 		${WRKSRC}/modules/mysql5.lsp
+	@${REINPLACE_CMD} -E -e \
+		"s,/usr/local/mysql/lib/(libmysqlclient.)dylib,${LOCALBASE}/lib/mysql/\1so.${MYSQL${MYSQL_VER}_LIBVER}," \
+		${WRKSRC}/modules/mysql51.lsp
 	@${REINPLACE_CMD} -E -e \
 		"s,/usr/local/lib/(libsqlite)3.so,${LOCALBASE}/lib/\1${_SQLITE_VER}.so," \
 		${WRKSRC}/modules/sqlite3.lsp
