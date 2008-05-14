@@ -41,6 +41,7 @@ share/awk/zerofile.awk
 %%NLS%%share/locale/sv/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gawk.mo
 @dirrm share/awk
 @dirrm libexec/awk
 @dirrmtry share/locale/rw/LC_MESSAGES
