@@ -1,0 +1,5 @@
+cf is a filter that reads files or stdin and replaces numeric
+timestamps found at the beginning of each line with a formated time
+and date time and date.
+
+WWW: http://ee.lbl.gov/
