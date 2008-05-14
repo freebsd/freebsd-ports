@@ -13,9 +13,11 @@ lib/libidn.so.16
 libdata/pkgconfig/libidn.pc
 share/emacs/site-lisp/idna.el
 share/emacs/site-lisp/punycode.el
+%%NLS%%share/locale/cs/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/da/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/de/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/libidn.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libidn.mo
