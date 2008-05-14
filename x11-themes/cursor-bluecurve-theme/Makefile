@@ -14,15 +14,10 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gdk-pixbuf-2.0.pc:${PORTSDIR}/x11-
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
-BROKEN=		Incorrect pkg-plist and unfetchable
-DEPRECATED=		"${BROKEN}"
-EXPIRATION_DATE=	2007-11-02
-
 THEMES=		Bluecurve Bluecurve-inverse LBluecurve LBluecurve-inverse
 
 .for t in ${THEMES}
 BC_HIERS+=	${WRKSRC}/art/cursor/${t}/${t}:${PREFIX}/lib/X11/icons/${t}/cursors
-PLIST_DIRS+=	lib/X11/icons/${t}/cursors lib/X11/icons/${t}
 .endfor
 
 post-patch:
