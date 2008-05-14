@@ -1,0 +1,35 @@
+--- Makefile.orig	Fri Sep  9 07:26:04 2005
++++ Makefile	Tue Dec 20 18:50:33 2005
+@@ -9,28 +9,14 @@
+ # On OSX, using -static gives the error "ld: can't locate file for: -lcrt0.o",
+ # this is fixed by deleting "-static" from the LDLIBS line.
+ 
+-CFLAGS = -O3 -funroll-loops -Winline -DNDEBUG=1
+-LDLIBS = -lm -static
+-# LDLIBS = -lm
+-
+-OBJ = .o
+-EXE =
+-
+-RM = rm -f
+-CP = cp
+-
+-GPP = g++
+-LD = $(GPP) $(CFLAGS)
+-CPP = $(GPP) -c $(CFLAGS) 
++CC = g++
++CXXFLAGS += -O3 -funroll-loops -Winline -DNDEBUG=1
++LDLIBS = -lm -lkvm
+ 
+ all: muscle
+ 
+ CPPSRC = $(sort $(wildcard *.cpp))
+ CPPOBJ	= $(subst .cpp,.o,$(CPPSRC))
+ 
+-$(CPPOBJ): %.o: %.cpp
+-	$(CPP) $< -o $@
+-
+ muscle: $(CPPOBJ)
+-	$(LD) -o muscle $(CPPOBJ) $(LDLIBS)
+-	strip muscle
++	$(LINK.o) -o $@ $^ $(LDLIBS)
