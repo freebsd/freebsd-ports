@@ -23,7 +23,7 @@ PLIST_FILES=	bin/hf
 
 MAN1=		hf.1
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 # Only install hf
 do-install:
