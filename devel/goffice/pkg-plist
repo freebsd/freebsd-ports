@@ -297,7 +297,6 @@ libdata/pkgconfig/libgoffice-0.6.pc
 %%DOCSDIR%%/goffice-GogGuru.html
 %%DOCSDIR%%/goffice-GogPlotEngine.html
 %%DOCSDIR%%/goffice-GogTool.html
-%%DOCSDIR%%/goffice-Ranges.html
 %%DOCSDIR%%/goffice-Units.html
 %%DOCSDIR%%/goffice-go-plugin.html
 %%DOCSDIR%%/goffice.devhelp
