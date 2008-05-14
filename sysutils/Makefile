@@ -361,6 +361,7 @@
     SUBDIR += kshutdown
     SUBDIR += ksynaptics
     SUBDIR += lavaps
+    SUBDIR += lbl-cf
     SUBDIR += lbl-hf
     SUBDIR += lcdproc
     SUBDIR += ldap-account-manager
