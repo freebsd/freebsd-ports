@@ -52,6 +52,7 @@
     SUBDIR += muscle
     SUBDIR += nab
     SUBDIR += ncbi-toolkit
+    SUBDIR += njplot
     SUBDIR += ortep3
     SUBDIR += p5-AcePerl
     SUBDIR += p5-Bio-ASN1-EntrezGene
