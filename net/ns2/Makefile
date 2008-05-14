@@ -6,29 +6,23 @@
 #
 
 PORTNAME=	ns
-PORTVERSION=	2.30
+PORTVERSION=	2.33
 CATEGORIES=	net
-MASTER_SITES=	http://www.isi.edu/nsnam/dist/
-DISTNAME=	ns-src-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	nsnam
 
 MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Discrete event simulator for networking research
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
-RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 
 MAN1=		ns.1
 MANCOMPRESSED=	no
 
-WRKSRC=		${WRKDIR}/ns-${PORTVERSION}
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
-MAKE_ARGS+=	"LDFLAGS=${LDFLAGS}"
-
-ALL_TARGET=
-
-.include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4 --x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
+USE_GMAKE=	yes
+USE_TK=		84
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/src/local/Tcl-1.0 \\|${LOCALBASE}/include/tclcl \\|g' \
@@ -37,8 +31,8 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ns ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ns.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/ns.1 ${MANPREFIX}/man/man1
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tcl/ex/*.tcl ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
