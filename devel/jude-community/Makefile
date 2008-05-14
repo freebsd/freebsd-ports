@@ -7,6 +7,7 @@
 
 PORTNAME=	jude-community
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
@@ -15,22 +16,28 @@ MAINTAINER=	mistral@imasy.or.jp
 COMMENT=	A Java/UML Object-Oriented Design Tool
 
 USE_ZIP=	yes
-USE_JAVA=	yes
 
 # Export HTML function can be used with JDK 1.4 only.
 # (But it can work with JDK 1.5 + copying JDK 1.4 tools.jar to ${DATADIR})
+OPTIONS=	EXPORT_HTML "Enable Exporting HTML function (needs JDK1.4)" Off
+
+.include <bsd.port.pre.mk>
+
 # In case you are going to use JDK1.5+ in Japanese environment, make sure
 # you have prepared following command to avoid from font problem:
-# ln -s /usr/local/lib/X11/fonts/TrueType \
-#     /usr/local/diablo-jdk1.5.0/jre/lib/fonts/fallback
-.if !defined(WITHOUT_EXPORT_HTML)
+# ln -s ${LOCALBASE}/lib/X11/fonts/TrueType \
+#     ${LOCALBASE}/diablo-jdk1.5.0/jre/lib/fonts/fallback
+.if defined(WITH_EXPORT_HTML)
 JAVA_VERSION=	1.4
 .else
 JAVA_VERSION=	1.4+
 .endif
 
+USE_JAVA=	yes
 JAVA_OS=	native
 NO_BUILD=	yes
+
+.include "${PORTSDIR}/Mk/bsd.java.mk"
 
 RESTRICTED=	See http://jude.change-vision.com/jude-web/notes/ProductLicenseAgreement.html
 
@@ -46,7 +53,7 @@ DATA_FILES=	${PORTNAME}.jar jude-api.jar jude-gui_en.properties_org \
 .for file in ${DATA_FILES}
 PLIST_FILES+=	share/${PORTNAME}/${file}
 .endfor
-.if !defined(WITHOUT_EXPORT_HTML)
+.if defined(WITH_EXPORT_HTML)
 PLIST_FILES+=	share/${PORTNAME}/tools.jar
 .endif
 PLIST_DIRS=	share/${PORTNAME}/template/project \
@@ -57,8 +64,6 @@ PLIST_DIRS=	share/${PORTNAME}/template/project \
 PORTDOCS+=	README-e.txt README.txt ReleaseNote-e.html ReleaseNote.html \
 		ProductInformation.txt
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=		needs you to fetch manually the distribution file\
@@ -78,7 +83,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/jude ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/mozilla ${DATADIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATA_FILES}" ${DATADIR})
-.if !defined(WITHOUT_EXPORT_HTML)
+.if defined(WITH_EXPORT_HTML)
 	# ExportHTML needs lib/tools.jar of JDK1.4
 	${LN} -s ${JAVA_HOME}/lib/tools.jar ${DATADIR}
 .endif
