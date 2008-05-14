@@ -32,7 +32,7 @@ load_rc_config $name
 : ${xorp_hardkill_enable=false}
 
 required_files=${xorp_config_boot}
-command=%%PREFIX%%bin/xorp_rtrmgr
+command=%%PREFIX%%/bin/xorp_rtrmgr
 command_args="-b ${xorp_config_boot}"
 pidfile=${xorp_rtrmgr_pidfile}
 sig_stop=INT
