@@ -41,4 +41,8 @@ do-install:
 IGNORE=		needs API available in FreeBSD 6.X and later
 .endif
 
+.if ${OSVERSION} >= 800036
+BROKEN=		does not compile
+.endif
+
 .include <bsd.port.post.mk>
