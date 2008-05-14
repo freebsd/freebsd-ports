@@ -7,7 +7,7 @@
 
 PORTNAME=	freenet6
 PORTVERSION=	2.1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.go6.net/4105/file.asp?file_id=80&foo=/
 DISTNAME=	tspc-${PORTVERSION}-src
@@ -30,7 +30,7 @@ MAKE_ARGS=	target=freebsd installdir=${PREFIX}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 700000
-EXTRA_PATCHES+=	patch7-plstform__freebsd__tsp_local.c
+EXTRA_PATCHES+=	${FILESDIR}/patch7-plstform__freebsd__tsp_local.c
 .endif
 
 do-install:

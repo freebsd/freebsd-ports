@@ -1,6 +1,5 @@
-diff --unified=5 /usr/gnu/fbsd/ports/net/freenet6/work/tspc2/platform/freebsd/tsp_local.c.\~1\~ /usr/gnu/fbsd/ports/net/freenet6/work/tspc2/platform/freebsd/tsp_local.c
---- /usr/gnu/fbsd/ports/net/freenet6/work/tspc2/platform/freebsd/tsp_local.c.~1~	2004-03-30 23:27:35.000000000 +0200
-+++ /usr/gnu/fbsd/ports/net/freenet6/work/tspc2/platform/freebsd/tsp_local.c	2007-07-11 13:40:26.000000000 +0200
+--- platform/freebsd/tsp_local.c.orig	2004-03-30 23:27:35.000000000 +0200
++++ platform/freebsd/tsp_local.c	2007-07-11 13:40:26.000000000 +0200
 @@ -74,21 +74,16 @@
  /* freebsd specific to setup an env variable */
  
