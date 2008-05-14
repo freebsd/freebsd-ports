@@ -36,16 +36,24 @@ CONFIGURE_ARGS?=	--enable-shared
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
 			CFLAGS="${CFLAGS}"
 MAKE_ARGS=		INSTALL="${INSTALL}"
-KRB5_KRB4_COMPAT?=	NO
-KRB5_DOC?=		YES
 
-.if defined(KRB5_DOC) && ${KRB5_DOC} == "YES"
+OPTIONS=		KRB5_RENAME_FTP "Rename ftp to kftp" off \
+			KRB5_RENAME_TELNET "Rename telnet to ktelnet" off \
+			KRB5_RENAME_RLOGIN "Rename rlogin to krlogin" off \
+			KRB5_RENAME_RSH "Rename rsh to krsh" off \
+			KRB5_RENAME_RCP "Rename rcp to krcp" off \
+			KRB5_KRB4_COMPAT "Build and install krb4 compatibility" off \
+			KRB5_DOC "Build and install krb5 documentation" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_KRB5_DOC)
 BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/texinfo \
 			dvips:${PORTSDIR}/print/dvipsk-tetex
 INFO=			krb425 krb5-admin krb5-install krb5-user
 .endif
 
-.if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
+.if !defined(WITH_KRB5_KRB4_COMPAT)
 CONFIGURE_ARGS+=	--without-krb4
 PLIST_SUB+=		KRB4="@comment "
 .else
@@ -59,16 +67,63 @@ PREFIX=			${KRB5_HOME}
 MAN1=			krb5-send-pr.1 krb5-config.1 kpasswd.1 klist.1 \
 			kinit.1 kdestroy.1 ksu.1 sclient.1 rsh.1 rcp.1 \
 			rlogin.1 ftp.1 telnet.1 kerberos.1 kvno.1 compile_et.1
-.if defined(KRB5_KRB4_COMPAT) && ${KRB5_KRB4_COMPAT} != "NO"
-MAN1+=			krb524init.1 v4rcp.1
-.endif
 MAN5=			kdc.conf.5 krb5.conf.5 .k5login.5
 MAN8=			krb5kdc.8 kadmin.8 kadmin.local.8 kdb5_util.8 \
 			ktutil.8 kadmind.8 kprop.8 kpropd.8 sserver.8 \
 			kshd.8 klogind.8 login.krb5.8 ftpd.8 telnetd.8 \
 			k5srvutil.8
-.if defined(KRB5_KRB4_COMPAT) && ${KRB5_KRB4_COMPAT} != "NO"
+.if defined(WITH_KRB5_KRB4_COMPAT)
 MAN8+=			krb524d.8
+.endif
+
+.if defined(WITH_KRB5_RENAME_FTP)
+MAN1:=			${MAN1:C/ftp/kftp/}
+MAN8:=			${MAN8:C/ftp/kftp/}
+PROGRAM_TRANSFORM_NAME+=	s/^ftp/kftp/;
+PLIST_SUB+=		FTP_PROG="kftp"
+.else
+PLIST_SUB+=		FTP_PROG="ftp"
+.endif
+
+.if defined(WITH_KRB5_RENAME_TELNET)
+MAN1:=			${MAN1:C/telnet/ktelnet/}
+MAN8:=			${MAN8:C/telnet/ktelnet/}
+PROGRAM_TRANSFORM_NAME+=	s/^telnet/ktelnet/;
+PLIST_SUB+=		TELNET_PROG="ktelnet"
+.else
+PLIST_SUB+=		TELNET_PROG="telnet"
+.endif
+
+.if defined(WITH_KRB5_RENAME_RLOGIN)
+MAN1:=			${MAN1:C/rlogin/krlogin/}
+PROGRAM_TRANSFORM_NAME+=	s/^rlogin/krlogin/;
+PLIST_SUB+=		RLOGIN_PROG="krlogin"
+.else
+PLIST_SUB+=		RLOGIN_PROG="rlogin"
+.endif
+
+.if defined(WITH_KRB5_RENAME_RSH)
+MAN1:=			${MAN1:C/rsh/krsh/}
+PROGRAM_TRANSFORM_NAME+=	s/^rsh/krsh/;
+PLIST_SUB+=		RSH_PROG="krsh"
+.else
+PLIST_SUB+=		RSH_PROG="rsh"
+.endif
+
+.if defined(WITH_KRB5_RENAME_RCP)
+MAN1:=			${MAN1:C/rcp/krcp/}
+PROGRAM_TRANSFORM_NAME+=	s/^rcp/krcp/;
+PLIST_SUB+=		RCP_PROG="krcp"
+.else
+PLIST_SUB+=		RCP_PROG="rcp"
+.endif
+
+.if defined(WITH_KRB5_KRB4_COMPAT)
+MAN1+=			krb524init.1 v4rcp.1
+.endif
+
+.if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
+CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 .endif
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
@@ -79,8 +134,6 @@ HTML_DOCS=		ftp.html kdestroy.html kinit.html klist.html \
 			kpasswd.html krb425.html krb5-admin.html \
 			krb5-install.html krb5-user.html ksu.html \
 			rcp.html rlogin.html rsh.html telnet.html
-
-.include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	CPPFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}"
 

@@ -1,5 +1,5 @@
 bin/compile_et
-bin/ftp
+bin/%%FTP_PROG%%
 bin/gss-client
 bin/kdestroy
 bin/kinit
@@ -9,12 +9,12 @@ bin/krb5-config
 %%KRB4%%bin/krb524init
 bin/ksu
 bin/kvno
-bin/rcp
-bin/rlogin
-bin/rsh
+bin/%%RCP_PROG%%
+bin/%%RLOGIN_PROG%%
+bin/%%RSH_PROG%%
 bin/sclient
 bin/sim_client
-bin/telnet
+bin/%%TELNET_PROG%%
 bin/uuclient
 %%KRB4%%bin/v4rcp
 include/com_err.h
@@ -72,7 +72,7 @@ lib/libkrb5support.so
 lib/libkrb5support.so.0
 lib/krb5/plugins/kdb/db2.so
 lib/krb5/plugins/preauth/pkinit.so
-sbin/ftpd
+sbin/%%FTP_PROG%%d
 sbin/gss-server
 sbin/k5srvutil
 sbin/kadmin
@@ -90,7 +90,7 @@ sbin/ktutil
 sbin/login.krb5
 sbin/sim_server
 sbin/sserver
-sbin/telnetd
+sbin/%%TELNET_PROG%%d
 sbin/uuserver
 share/doc/krb5/README.FreeBSD
 share/et/et_c.awk
