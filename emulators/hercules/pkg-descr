@@ -7,6 +7,6 @@ Jaeger designed and implemented many of the advanced features of Hercules,
 including dynamic reconfiguration, integrated console, interpretive execution
 and z/Architecture support. 
 
-WWW: http://www.conmicro.cx/hercules/
+WWW: http://www.hercules-390.org/
 
 -phk@FreeBSD.org
