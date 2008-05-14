@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keynav
-DISTVERSION=	20080501
+DISTVERSION=	20080509
 CATEGORIES=	x11
 MASTER_SITES=	http://www.semicomplete.com/files/keynav/ \
 		http://www.atarininja.org/~wxs/distfiles/
