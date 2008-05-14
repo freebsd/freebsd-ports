@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	System for detecting Network Intruders in real-time
 
+CONFLICTS=	sysutils/lbl-cf-1.* sysutils/lbl-hf-1.*
+
 OPTIONS=	GPG "Support encrypted email" Off \
 		DOCS "Install documentation (not recommended)" Off
 
