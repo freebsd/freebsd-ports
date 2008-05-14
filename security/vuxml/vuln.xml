@@ -34,6 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f49ba347-2190-11dd-907c-001c2514716c">
+    <topic>django -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>py23-django</name>
+	<name>py24-django</name>
+	<name>py25-django</name>
+	<range><lt>0.96.2</lt></range>
+      </package>
+      <package>
+	<name>py23-django-devel</name>
+	<name>py24-django-devel</name>
+	<name>py25-django-devel</name>
+	<range><lt>20080511</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django project reports:</p>
+	<blockquote cite="http://www.djangoproject.com/weblog/2008/may/14/security/">
+	  <p>The Django administration application will, when accessed by
+	    a user who is not sufficiently authenticated, display a login
+	    form and ask the user to provide the necessary credentials
+	    before displaying the requested page. This form will be submitted
+	    to the URL the user attempted to access, by supplying the current
+	    request path as the value of the form's "action" attribute.</p>
+	  <p>The value of the request path was not being escaped, creating an
+	    opportunity for a cross-site scripting (XSS) attack by leading a
+	    user to a URL which contained URL-encoded HTML and/or JavaScript
+	    in the request path.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.djangoproject.com/weblog/2008/may/14/security/</url>
+    </references>
+    <dates>
+      <discovery>2008-05-10</discovery>
+      <entry>2008-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="633716fa-1f8f-11dd-b143-0211d880e350">
     <topic>vorbis-tools -- Speex header processing vulnerability</topic>
     <affects>
