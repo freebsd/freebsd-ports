@@ -41,6 +41,7 @@ libdata/pkgconfig/libgsasl.pc
 %%NLS%%share/locale/pl/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/libgsasl.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libgsasl.mo
