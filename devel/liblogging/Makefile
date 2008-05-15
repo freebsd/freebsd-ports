@@ -6,35 +6,19 @@
 #
 
 PORTNAME=	liblogging
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.1
 CATEGORIES=	devel
-MASTER_SITES=	SF http://download.adiscon.com/
+MASTER_SITES=	CENKES http://download.rsyslog.com/liblogging/
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Easy to use system logging library
 
-USE_DOS2UNIX=	yes
 USE_LDCONFIG=	yes
-USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/src
-MAKEFILE=	makefile
-CFLAGS+=	-fPIC
-PLIST_FILES=	include/${PORTNAME}.h include/${PORTNAME}-config.h include/srAPI.h \
-		include/syslogmessage.h lib/${PORTNAME}.so lib/${PORTNAME}.so.0
-
-post-extract:
-	@${MV} ${WRKSRC}/config.h ${WRKSRC}/${PORTNAME}-config.h
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|config\.h|${PORTNAME}-config.h|' ${WRKSRC}/*.[ch] \
-		${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e 's|\.a|.so|g;s|[(]AR[)] cru|{CC} ${CFLAGS} -shared -o|'\
-		${WRKSRC}/${MAKEFILE}
-
-do-install:
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTNAME}.h ${PORTNAME}-config.h \
-		srAPI.h syslogmessage.h ${PREFIX}/include/
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.so ${PREFIX}/lib/
-	@${LN} -sf ${PORTNAME}.so ${PREFIX}/lib/${PORTNAME}.so.0
+	@${REINPLACE_CMD} -e '/^pkgconfigdir =/s|=.*| \
+		= ${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
