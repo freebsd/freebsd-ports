@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jrdesktop
-PORTVERSION=	0.2.0011
+PORTVERSION=	0.2.0012
 CATEGORIES=	net java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -19,7 +19,7 @@ JAVA_VERSION=	1.6+
 USE_ANT=	yes
 USE_ZIP=	yes
 
-WRKSRC=	${WRKDIR}/${PORTNAME}/src
+WRKSRC=	${WRKDIR}/src
 
 PLIST_FILES=	%%JAVAJARDIR%%/jrdesktop.jar \
 		bin/jrdesktop-server \
