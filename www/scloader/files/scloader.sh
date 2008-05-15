@@ -1,3 +1,3 @@
 #! /bin/sh
 
-exec "%%JAVA%%" -jar "%%JAVAJARDIR%%/scloader.jar" $@
+exec "%%JAVA%%" -mx512m -jar "%%JAVAJARDIR%%/scloader.jar" $@
