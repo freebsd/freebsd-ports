@@ -495,7 +495,6 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/definitive-guide.png
 %%PORTDOCS%%%%DOCSDIR%%/images/difference.png
 %%PORTDOCS%%%%DOCSDIR%%/images/dogwaffle.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/donate.png
 %%PORTDOCS%%%%DOCSDIR%%/images/examples.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/frame.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/fuzzy-magick.png
@@ -510,6 +509,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/navy.png
 %%PORTDOCS%%%%DOCSDIR%%/images/networkredux.png
 %%PORTDOCS%%%%DOCSDIR%%/images/piechart.png
+%%PORTDOCS%%%%DOCSDIR%%/images/project-support.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/radial-gradient.png
 %%PORTDOCS%%%%DOCSDIR%%/images/reconstruct.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/red-ball.png
