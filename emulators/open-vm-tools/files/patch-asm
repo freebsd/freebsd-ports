@@ -27,3 +27,23 @@
         "mov   %%edx, %%eax\n\t"   // Get hi(multiplicand)
         "test  %%eax, %%eax\n\t"   // Check sign of multiplicand
         "jl    0f\n\t"             // Go if negative
+--- modules/freebsd/vmhgfs/vm_basic_asm_x86_64.h.orig	2008-05-15 19:25:31.000000000 +0200
++++ modules/freebsd/vmhgfs/vm_basic_asm_x86_64.h	2008-05-15 19:25:52.000000000 +0200
+@@ -162,7 +162,7 @@
+    uint64 result, dummy;
+    const uint64 multiplier64 = multiplier;
+ 
+-   asm("mulq    %3      \n\t"
++   __asm("mulq    %3      \n\t"
+        "shrdq   %1, %0  \n\t"
+        : "=a" (result),
+          "=d" (dummy)
+@@ -221,7 +221,7 @@
+    int64 result, dummy;
+    const int64 multiplier64 = multiplier;
+ 
+-   asm("imulq   %3      \n\t"
++   __asm("imulq   %3      \n\t"
+        "shrdq   %1, %0  \n\t"
+        : "=a" (result),
+          "=d" (dummy)
