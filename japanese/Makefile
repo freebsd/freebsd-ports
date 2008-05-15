@@ -254,6 +254,7 @@
     SUBDIR += p5-Encode-EUCJPMS
     SUBDIR += p5-FormValidator-Simple-Plugin-Number-Phone-JP
     SUBDIR += p5-Jcode
+    SUBDIR += p5-Lingua-JA-Kana
     SUBDIR += p5-Lingua-JA-Numbers
     SUBDIR += p5-Lingua-JA-Summarize-Extract
     SUBDIR += p5-Mail-SpamAssassin
