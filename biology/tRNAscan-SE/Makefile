@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tRNAscan-SE
-PORTVERSION=	1.21
+PORTVERSION=	1.23
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.genetics.wustl.edu/pub/eddy/software/
 EXTRACT_SUFX=	.tar.Z
