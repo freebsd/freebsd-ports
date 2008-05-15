@@ -1,6 +1,7 @@
 bin/railroad
 %%GEM_CACHE%%
 %%GEM_SPEC%%
+%%GEM_LIB_DIR%%/lib/railroad/aasm_diagram.rb
 %%GEM_LIB_DIR%%/lib/railroad/models_diagram.rb
 %%GEM_LIB_DIR%%/lib/railroad/app_diagram.rb
 %%GEM_LIB_DIR%%/lib/railroad/controllers_diagram.rb
@@ -12,6 +13,7 @@ bin/railroad
 %%GEM_LIB_DIR%%/README
 %%GEM_LIB_DIR%%/bin/railroad
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/files/lib/railroad/aasm_diagram_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/railroad/models_diagram_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/railroad/app_diagram_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/railroad/controllers_diagram_rb.html
@@ -21,19 +23,23 @@ bin/railroad
 %%GEM_DOC_DIR%%/rdoc/files/COPYING.html
 %%GEM_DOC_DIR%%/rdoc/classes/OptionsStruct.src/M000001.html
 %%GEM_DOC_DIR%%/rdoc/classes/OptionsStruct.src/M000002.html
-%%GEM_DOC_DIR%%/rdoc/classes/AppDiagram.src/M000003.html
-%%GEM_DOC_DIR%%/rdoc/classes/AppDiagram.src/M000004.html
-%%GEM_DOC_DIR%%/rdoc/classes/DiagramGraph.src/M000005.html
-%%GEM_DOC_DIR%%/rdoc/classes/DiagramGraph.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/AasmDiagram.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/AasmDiagram.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/AppDiagram.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/AppDiagram.src/M000006.html
 %%GEM_DOC_DIR%%/rdoc/classes/DiagramGraph.src/M000007.html
 %%GEM_DOC_DIR%%/rdoc/classes/DiagramGraph.src/M000008.html
 %%GEM_DOC_DIR%%/rdoc/classes/DiagramGraph.src/M000009.html
 %%GEM_DOC_DIR%%/rdoc/classes/DiagramGraph.src/M000010.html
-%%GEM_DOC_DIR%%/rdoc/classes/ModelsDiagram.src/M000011.html
-%%GEM_DOC_DIR%%/rdoc/classes/ModelsDiagram.src/M000012.html
-%%GEM_DOC_DIR%%/rdoc/classes/ControllersDiagram.src/M000013.html
-%%GEM_DOC_DIR%%/rdoc/classes/ControllersDiagram.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/DiagramGraph.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/DiagramGraph.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/DiagramGraph.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/ModelsDiagram.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/ModelsDiagram.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/ControllersDiagram.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/ControllersDiagram.src/M000017.html
 %%GEM_DOC_DIR%%/rdoc/classes/OptionsStruct.html
+%%GEM_DOC_DIR%%/rdoc/classes/AasmDiagram.html
 %%GEM_DOC_DIR%%/rdoc/classes/AppDiagram.html
 %%GEM_DOC_DIR%%/rdoc/classes/DiagramGraph.html
 %%GEM_DOC_DIR%%/rdoc/classes/ModelsDiagram.html
@@ -51,6 +57,7 @@ bin/railroad
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/ModelsDiagram.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/DiagramGraph.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/AppDiagram.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/AasmDiagram.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/OptionsStruct.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/railroad
