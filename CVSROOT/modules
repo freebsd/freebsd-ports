@@ -5491,6 +5491,7 @@ ja-p5-DateTime-Format-Japanese	ports/japanese/p5-DateTime-Format-Japanese
 ja-p5-Encode-EUCJPMS	ports/japanese/p5-Encode-EUCJPMS
 ja-p5-FormValidator-Simple-Plugin-Number-Phone-JP	ports/japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP
 ja-p5-Jcode	ports/japanese/p5-Jcode
+ja-p5-Lingua-JA-Kana	ports/japanese/p5-Lingua-JA-Kana
 ja-p5-Lingua-JA-Numbers	ports/japanese/p5-Lingua-JA-Numbers
 ja-p5-Lingua-JA-Summarize-Extract	ports/japanese/p5-Lingua-JA-Summarize-Extract
 ja-p5-Mail-SpamAssassin	ports/japanese/p5-Mail-SpamAssassin
