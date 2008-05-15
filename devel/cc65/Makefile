@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cc65
-PORTVERSION=	2.11.0
+PORTVERSION=	2.12.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
 		http://www.funet.fi/pub/cbm/programming/cc65/ \
@@ -29,10 +29,11 @@ post-patch:
 #
 # CFLAGS safety
 #
-	@(${FIND} ${WRKSRC}/ -name gcc.mak -type f|${XARGS} ${REINPLACE_CMD} -E\
-		-e "s,=[[:space:]]*-g -O2 -Wall -W(.*),+=\1,"\
-		-e "s,=[[:space:]]*-g -O2 -Wall(.*),+=\1,"\
-		-e "s,=[[:space:]]*-O2 -g -Wall -W(.*),+=\1,"\
+	@(${FIND} ${WRKSRC}/ -name gcc.mak -type f|${XARGS} ${REINPLACE_CMD} -E \
+		-e "s,=[[:space:]]*-g -O2 -Wall -W(.*),+=\1," \
+		-e "s,=[[:space:]]*-g -O2 -Wall(.*),+=\1," \
+		-e "s,=[[:space:]]*-O2 -g -Wall -W(.*),+=\1," \
+		-e "s,-std=c89,-std=c99,g" \
 		-e "s,CC[[:space:]]*=.*,#&,")
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e "s,(install:.*)install-docs(.*)$,\1\2," \
