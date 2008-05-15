@@ -1,0 +1,13 @@
+#!/bin/sh
+
+JRDESKTOP_JAR=%%JAVAJARDIR%%/jrdesktop.jar
+
+if [ $# -ne 5 ]; then
+    echo "Usage:"
+    echo "  $0 server-address server-port username password ssl-enabled"
+    echo "where:"
+    echo "  <ssl-enabled>       = true for a secured connection"
+    exit 1
+fi
+
+%%JAVA%% -jar ${JRDESKTOP_JAR} -viewer $1 $2 $3 $4 $5

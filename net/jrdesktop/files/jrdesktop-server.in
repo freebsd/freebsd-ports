@@ -1,0 +1,14 @@
+#!/bin/sh
+
+JRDESKTOP_JAR=%%JAVAJARDIR%%/jrdesktop.jar
+
+if [ $# -ne 5 ]; then
+    echo "Usage:"
+    echo "  $0 port username password ssl-enabled multihome-enabled"
+    echo "where:"
+    echo "  <ssl-enabled>       = true for a secured connection"
+    echo "  <multihome-enabled> = true if server has multiple IP addresses"
+    exit 1
+fi
+
+%%JAVA%% -jar ${JRDESKTOP_JAR} -server $1 $2 $3 $4 $5 $6
