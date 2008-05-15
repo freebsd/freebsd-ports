@@ -1,6 +1,7 @@
 bin/tome
 %%DATADIR%%/apex/.cvsignore
 %%DATADIR%%/apex/delete.me
+%%DATADIR%%/apex/scores.raw
 %%DATADIR%%/bone/bone001.012
 %%DATADIR%%/bone/bone004.001
 %%DATADIR%%/bone/bone004.002
@@ -454,6 +455,7 @@ bin/tome
 @dirrm %%DATADIR%%/scpt
 @dirrm %%DATADIR%%/save
 @dirrm %%DATADIR%%/pref
+@dirrm %%DATADIR%%/plot
 @dirrm %%DATADIR%%/patch
 @dirrm %%DATADIR%%/note
 @dirrm %%DATADIR%%/mods
