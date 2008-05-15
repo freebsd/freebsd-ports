@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	0.4.11
+PORTVERSION=	0.4.12
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	multimedia
@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--with-doc=no
 
 OPTIONS=	FFMPEG	"Install ffmpeg for re-encoding" off \
 		MPLAYER	"Install mplayer as video player" off \
-		RSSATOM "Enable extraction videos from RSS/Atom feeds" on \
+		NEWT	"Use devel/newt instead of bundled module" off \
 		SQLITE3 "Install sqlite3 for caching visited URLs" off \
 		VLC	"Install vlc as video player" off \
 		XCLIP	"Install xclip (read URLs from clipboard)" off
@@ -50,6 +50,17 @@ RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
+.if defined(WITH_NEWT)
+PLIST_SUB+=	OPTNEWT="@comment "
+CONFIGURE_ARGS+=	--with-newt=no
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+RUN_DEPENDS+=	newt${PYTHON_PKGNAMESUFFIX}>=0.51.0_4:${PORTSDIR}/devel/newt
+.else
+PLIST_SUB+=	OPTNEWT=""
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR} $${CPPFLAGS}" LDFLAGS="-L${LOCALBASE}/lib $${LDFLAGS} -L${PYTHON_LIBDIR}" SLANG_LIBS="-lncurses -lslang"
+.endif
+
 .if defined(WITH_SQLITE3)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.5.2_1:${PORTSDIR}/databases/py-sqlite3
 .endif
@@ -60,15 +71,6 @@ RUN_DEPENDS+=	vlc:${PORTSDIR}/multimedia/vlc
 
 .if defined(WITH_XCLIP)
 RUN_DEPENDS+=	xclip:${PORTSDIR}/x11/xclip
-.endif
-
-.if defined(WITH_RSSATOM)
-PLIST_SUB+=	OPTRSSATOM=""
-LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR} $${CPPFLAGS}" LDFLAGS="-L${LOCALBASE}/lib $${LDFLAGS} -L${PYTHON_LIBDIR}" SLANG_LIBS="-lncurses -lslang"
-.else
-PLIST_SUB+=	OPTRSSATOM="@comment "
-CONFIGURE_ARGS+=	--with-newt=no
 .endif
 
 .include <bsd.port.post.mk>
