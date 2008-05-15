@@ -5858,6 +5858,7 @@ jpgtn		ports/graphics/jpgtn
 jpilot		ports/palm/jpilot
 jpilot-db	ports/palm/jpilot-db
 jps		ports/sysutils/jps
+jrdesktop	ports/net/jrdesktop
 jrefentry	ports/textproc/jrefentry
 jrobin		ports/databases/jrobin
 jrtplib		ports/devel/jrtplib
