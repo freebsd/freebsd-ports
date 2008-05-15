@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Lingua/JA/Kana.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Kana/.packlist
+@dirrmtry %%SITE_PERL%%/Lingua/JA
+@dirrmtry %%SITE_PERL%%/Lingua
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Kana
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
