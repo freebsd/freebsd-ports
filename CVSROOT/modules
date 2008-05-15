@@ -18009,7 +18009,6 @@ xorg-fonts-type1	ports/x11-fonts/xorg-fonts-type1
 xorg-libraries	ports/x11/xorg-libraries
 xorg-macros	ports/devel/xorg-macros
 xorg-nestserver	ports/x11-servers/xorg-nestserver
-xorg-printserver	ports/x11-servers/xorg-printserver
 xorg-protos	ports/x11/xorg-protos
 xorg-server	ports/x11-servers/xorg-server
 xorg-server-snap	ports/x11-servers/xorg-server-snap

@@ -10,7 +10,6 @@
     SUBDIR += x2x
     SUBDIR += xorg-dmx
     SUBDIR += xorg-nestserver
-    SUBDIR += xorg-printserver
     SUBDIR += xorg-server
     SUBDIR += xorg-server-snap
     SUBDIR += xorg-vfbserver
