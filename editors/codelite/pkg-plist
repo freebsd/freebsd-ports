@@ -1,0 +1,92 @@
+bin/CodeLite
+bin/le_dos2unix.sh
+bin/le_exec.sh
+bin/le_killproc.sh
+bin/ctags-le
+%%DATADIR%%/config/debuggers.xml
+%%DATADIR%%/config/debuggers.xml.gtk
+%%DATADIR%%/config/build_settings.xml
+%%DATADIR%%/config/codelite.xml.default
+%%DATADIR%%/config/codelite.layout.default
+%%DATADIR%%/config/liteeditor.xml.mac
+%%DATADIR%%/config/accelerators.conf.default
+%%DATADIR%%/debuggers/Debugger.so
+%%DATADIR%%/templates/projects/vc-executable/vc-executable.project
+%%DATADIR%%/templates/projects/executable/main.cpp
+%%DATADIR%%/templates/projects/executable/executable.project
+%%DATADIR%%/templates/projects/vc-static-lib/vc-static-lib.project
+%%DATADIR%%/templates/projects/dynamic-library/dynamic-library.project
+%%DATADIR%%/templates/projects/static-library/static-library.project
+%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/dynamic-library-wx-enabled.project
+%%DATADIR%%/templates/projects/vc-dynamic-library/vc-dynamic-library.project
+%%DATADIR%%/templates/projects/static-library-wx-enabled/static-library-wx-enabled.project
+%%DATADIR%%/templates/gizmos/wxmain.project.wizard
+%%DATADIR%%/templates/gizmos/mainframe.cpp.wizard
+%%DATADIR%%/templates/gizmos/app.cpp.wizard
+%%DATADIR%%/templates/gizmos/plugin.h.wizard
+%%DATADIR%%/templates/gizmos/main.cpp.wizard
+%%DATADIR%%/templates/gizmos/app.h.wizard
+%%DATADIR%%/templates/gizmos/liteeditor-plugin.project.wizard
+%%DATADIR%%/templates/gizmos/mainframe.h.wizard
+%%DATADIR%%/templates/gizmos/wxproject.project.wizard
+%%DATADIR%%/templates/gizmos/plugin.cpp.wizard
+%%DATADIR%%/plugins/CodeFormatter.so
+%%DATADIR%%/plugins/Subversion.so
+%%DATADIR%%/plugins/ReferenceAnalyser.so
+%%DATADIR%%/plugins/cscope.so
+%%DATADIR%%/plugins/Gizmos.so
+%%DATADIR%%/rc/menu.xrc
+%%DATADIR%%/lexers/Default/lexer_cpp.xml
+%%DATADIR%%/lexers/Default/lexer_script.xml
+%%DATADIR%%/lexers/Default/lexer_properties.xml
+%%DATADIR%%/lexers/Default/lexer_perl.xml
+%%DATADIR%%/lexers/Default/lexer_makefile.xml
+%%DATADIR%%/lexers/Default/lexer_lua.xml
+%%DATADIR%%/lexers/Default/lexer_java.xml
+%%DATADIR%%/lexers/Default/lexer_inno.xml
+%%DATADIR%%/lexers/Default/lexer_html.xml
+%%DATADIR%%/lexers/Default/lexer_diff.xml
+%%DATADIR%%/lexers/Default/lexer_default.xml
+%%DATADIR%%/lexers/Default/lexer_xml.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_cpp.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_script.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_properties.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_perl.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_makefile.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_lua.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_java.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_inno.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_html.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_diff.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_default.xml
+%%DATADIR%%/lexers/BlackTheme/lexer_xml.xml
+%%DATADIR%%/images/cubes.png
+%%DATADIR%%/images/help_earth.png
+%%DATADIR%%/images/plugin_not_ok.png
+%%DATADIR%%/images/plugin_ok.png
+%%DATADIR%%/images/splashscreen.png
+%%DATADIR%%/index.html
+%%DATADIR%%/astyle.sample
+%%DATADIR%%/svnreport.html
+share/applications/codelite.desktop
+@dirrm %%DATADIR%%/templates/projects/vc-static-lib
+@dirrm %%DATADIR%%/templates/projects/vc-executable
+@dirrm %%DATADIR%%/templates/projects/vc-dynamic-library
+@dirrm %%DATADIR%%/templates/projects/static-library-wx-enabled
+@dirrm %%DATADIR%%/templates/projects/static-library
+@dirrm %%DATADIR%%/templates/projects/executable
+@dirrm %%DATADIR%%/templates/projects/dynamic-library-wx-enabled
+@dirrm %%DATADIR%%/templates/projects/dynamic-library
+@dirrm %%DATADIR%%/templates/projects
+@dirrm %%DATADIR%%/templates/gizmos
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/rc
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/lexers/Default
+@dirrm %%DATADIR%%/lexers/BlackTheme
+@dirrm %%DATADIR%%/lexers
+@dirrm %%DATADIR%%/debuggers
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
