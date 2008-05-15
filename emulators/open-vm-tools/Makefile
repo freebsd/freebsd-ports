@@ -7,7 +7,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		emulators
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 MASTER_SITES=		SF
@@ -40,7 +40,13 @@ CONFIGURE_ARGS+=	--without-dnet
 BUILD_DEPENDS=		${LOCALBASE}/lib/libdnet.so:${PORTSDIR}/net/libdnet
 .endif
 
-USE_RC_SUBR=		vmware-guestd.sh
+.if defined(WITHOUT_ICU)
+CONFIGURE_ARGS+=	--without-icu
+.else
+BUILD_DEPENDS=		${LOCALBASE}/lib/libicuuc.so:${PORTSDIR}/devel/icu
+.endif
+
+USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
 
 .include <bsd.port.pre.mk>
 
@@ -68,6 +74,7 @@ post-install:
 .if ${OSREL} >= 6
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmhgfs.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmhgfs.ko
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
+	@-kldxref ${PREFIX}/lib/vmware-tools/modules/drivers 2>/dev/null
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/freebsd/poweroff-vm-default ${PREFIX}/share/vmware-tools/poweroff-vm-default
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/freebsd/poweron-vm-default ${PREFIX}/share/vmware-tools/poweron-vm-default

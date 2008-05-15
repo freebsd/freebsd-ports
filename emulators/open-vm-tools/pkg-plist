@@ -6,6 +6,7 @@ lib/vmware-tools/modules/drivers/vmmemctl.ko
 lib/vmware-tools/modules/drivers/vmxnet.ko
 %%FIVEONLY%%lib/vmware-tools/modules/drivers/vmhgfs.ko
 %%FIVEONLY%%lib/vmware-tools/modules/drivers/vmblock.ko
+@exec kldxref %D/lib/vmware-tools/modules/drivers 2>/dev/null || true
 share/vmware-tools/poweroff-vm-default
 share/vmware-tools/poweron-vm-default
 share/vmware-tools/resume-vm-default
@@ -15,6 +16,7 @@ sbin/vmware-checkvm
 %%FIVEONLY%%sbin/vmware-hgfsmounter
 sbin/vmware-xferlogs
 @dirrm share/vmware-tools
+@unexec if test -f %D/lib/vmware-tools/modules/drivers/linker.hints; then rm -f %D/lib/vmware-tools/modules/drivers/linker.hints; fi
 @dirrmtry lib/vmware-tools/modules/drivers
 @dirrmtry lib/vmware-tools/modules/input
 @unexec if test -f %D/share/vmware-tools/tools.conf; then rm -f %D/share/vmware-tools/tools.conf; fi
