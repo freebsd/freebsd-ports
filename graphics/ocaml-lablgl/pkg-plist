@@ -97,6 +97,7 @@ lib/ocaml/stublibs/dlllablgl.so
 lib/ocaml/stublibs/dlllablglut.so
 lib/ocaml/stublibs/dlltogl.so
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/lablglut/README
 %%EXAMPLESDIR%%/lablglut/caml-images/ChangeLog
 %%EXAMPLESDIR%%/lablglut/caml-images/OCamlMakefile
 %%EXAMPLESDIR%%/lablglut/caml-images/main.ml
@@ -137,4 +138,3 @@ lib/ocaml/stublibs/dlltogl.so
 @dirrmtry lib/ocaml/stublibs
 @dirrm lib/ocaml/lablGL
 @dirrmtry lib/ocaml
-
