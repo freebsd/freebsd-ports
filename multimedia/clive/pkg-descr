@@ -4,8 +4,18 @@ websites. clive is written in Python and is cross-platform.
 
 Main features:
 
-    - Video extraction
-    - Integration and re-encoding with 'ffmpeg'
-    - Player integration with a 3rd party software
+    - Proxy support; option and http_proxy environment setting
+    - Youtube log-in support with flagged-content override
+    - High/low-quality support where applicable (e.g. Youtube)
+    - Chaining with a 3rd party player software for playing
+    - Chaining with ffmpeg for subsequent re-encoding
+    - URL caching; re-fetch video page only when necessary
+    - Gzip compressed video page data transfers
+    - Integration with X clipboard (with xclip)
+    - RSS/Atom parsing with video selection interface
+    - Continue partially downloaded files
+    - Recall last URL batch
+    - Supports UNIX pipes
+    - URL batch support
 
 WWW:	http://home.gna.org/clive/
