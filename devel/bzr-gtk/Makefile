@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bzr-gtk
-PORTVERSION=	0.93.0
+PORTVERSION=	0.94.0
 CATEGORIES=	devel
-MASTER_SITES=	http://phanatic.hu/bzr-gtk/
+MASTER_SITES=	http://samba.org/~jelmer/bzr/
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	GTK interface to Bazaar-NG VCS
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cair
 USE_PYTHON=	2.4+
 USE_GNOME=	pygtk2
 USE_PYDISTUTILS=	yes
+INSTALLS_ICONS=	yes
 
 OPTIONS=	GTKSOURCE "GTKSourceview support" OFF
 
