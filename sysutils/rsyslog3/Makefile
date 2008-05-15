@@ -16,7 +16,10 @@ MAN8=	rsyslogd.8
 MAN5=	rsyslog.conf.5
 
 CONFIGURE_ARGS+=--enable-klog --disable-static --enable-mail \
-		--enable-imfile --enable-imtemplate --enable-openssl \
+		--enable-imfile --enable-imtemplate --enable-openssl
+.ifdef WITH_DEBUG
+CONFIGURE_ARGS+=--enable-rtinst --enable-debug
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
