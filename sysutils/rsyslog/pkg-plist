@@ -48,7 +48,6 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_php_syslog_ng.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_recording_pri.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_stunnel.html
-%%PORTDOCS%%%%DOCSDIR%%/status.html
 %%PORTDOCS%%%%DOCSDIR%%/syslog-protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/version_naming.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
