@@ -4,6 +4,7 @@ etc/ocp.ini.default
 @exec [ -f %B/ocp.ini ] || cp %B/%f %B/ocp.ini
 lib/ocp/arctar.so
 lib/ocp/arczip.so
+lib/ocp/aytype.so
 lib/ocp/compat.so
 lib/ocp/cphelper.so
 lib/ocp/cphlpif.so
@@ -17,9 +18,11 @@ lib/ocp/devsoss.so
 lib/ocp/devwmix.so
 lib/ocp/devwmixf.so
 lib/ocp/devwnone.so
+lib/ocp/flacptype.so
 lib/ocp/framelock.so
 lib/ocp/fstypes.so
 lib/ocp/hardware.so
+lib/ocp/keyhelp.so
 lib/ocp/libocp.so
 lib/ocp/load669.so
 lib/ocp/loadams.so
@@ -30,29 +33,28 @@ lib/ocp/loadokt.so
 lib/ocp/loadptm.so
 lib/ocp/loads3m.so
 lib/ocp/loadult.so
-lib/ocp/medialib.so
 lib/ocp/mchasm.so
 lib/ocp/mcpbase.so
+lib/ocp/medialib.so
 lib/ocp/mixclip.so
 %%ADPLUG%%lib/ocp/opltype.so
 lib/ocp/pfilesel.so
+lib/ocp/playay.so
+lib/ocp/playflac.so
 lib/ocp/playgmd.so
 lib/ocp/playgmi.so
 lib/ocp/playit.so
 lib/ocp/playmp2.so
 lib/ocp/playogg.so
-lib/ocp/aytype.so
-lib/ocp/playay.so
 %%ADPLUG%%lib/ocp/playopl.so
 lib/ocp/playsid.so
-lib/ocp/sidtype.so
 lib/ocp/playwav.so
 lib/ocp/playxm.so
 lib/ocp/plrbase.so
 lib/ocp/poutput.so
 lib/ocp/sets.so
+lib/ocp/sidtype.so
 lib/ocp/smpbase.so
-%%DATADIR%%/ocp.pak
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
@@ -60,6 +62,7 @@ lib/ocp/smpbase.so
 %%PORTDOCS%%%%DOCSDIR%%/KEYBOARD_REMAPS
 %%PORTDOCS%%%%DOCSDIR%%/SUID
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-@dirrm lib/ocp
+%%DATADIR%%/ocp.pak
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/ocp

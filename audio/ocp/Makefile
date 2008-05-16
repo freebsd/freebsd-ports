@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ocp
-PORTVERSION=	0.1.13
-PORTREVISION=	6
+PORTVERSION=	0.1.15
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.lunafish.org/ocp/ \
 		CRITICAL
@@ -15,16 +14,24 @@ MASTER_SITES=	http://stian.lunafish.org/ocp/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The legendary Open Cubic Player
 
-LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
+LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
+		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		sidplay.1:${PORTSDIR}/audio/libsidplay
+		sidplay.1:${PORTSDIR}/audio/libsidplay \
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 ONLY_FOR_ARCHS=	i386
 
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnometarget
+USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
+		CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-dir-suffix="" \
+		--libdir=${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -32,25 +39,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-L${LOCALBASE}/lib
 CXXFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
-		CXXFLAGS="${CXXFLAGS} ${CPPFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
-
-CONFIGURE_ARGS=	--with-dir-suffix="" \
-		--libdir=${LOCALBASE}/lib
-
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 
 PFILES=		configure cpiface/cpianal.c cpiface/cpidots.c \
 		cpiface/cpiface.c cpiface/cpigraph.c cpiface/cpiinst.c \
-		cpiface/cpikube.c cpiface/cpilinks.c cpiface/cpimsg.c \
-		cpiface/cpiphase.c cpiface/cpiscope.c cpiface/cpitrack.c \
-		cpiface/mcpedit.c cpiface/volctrl.c filesel/cphlpfs.c \
-		filesel/pfilesel.c filesel/pfilesel.c.bak help/cphelper.c \
-		medialib/medialib.c playcda/cdapplay.c stuff/poutput-curses.c \
-		stuff/poutput-dga.c stuff/poutput-keyboard.c \
+		cpiface/cpikeyhelp.c cpiface/cpikube.c cpiface/cpilinks.c \
+		cpiface/cpimsg.c cpiface/cpiphase.c cpiface/cpiscope.c \
+		cpiface/cpitrack.c cpiface/mcpedit.c cpiface/volctrl.c \
+		filesel/cphlpfs.c filesel/pfilesel.c help/cphelper.c \
+		medialib/medialib.c playcda/cdapplay.c stuff/console.c \
+		stuff/poutput-curses.c stuff/poutput-keyboard.c \
 		stuff/poutput-vcsa.c stuff/poutput-x11.c
 
 .include <bsd.port.pre.mk>
@@ -104,17 +102,15 @@ pre-everything::
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/^if test/s|==|=|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/etc/.*\.cfg|${TIMIDITY_CFG}|' \
+		${WRKSRC}/playgmi/gmitimidity.c
+
 .if defined(WITH_DEBUG)
 	@${REINPLACE_CMD} -e 's|/\*\ \(#define\ LD_DEBUG\ 1\)\ \*/|\1|' \
 		${WRKSRC}/config.h.in
 .endif
-	@${REINPLACE_CMD} -e 's|stdint\.h|inttypes\.h|' ${WRKSRC}/types.h
-	@${REINPLACE_CMD} -e 's|/etc/.*\.cfg|${TIMIDITY_CFG}|' \
-		${WRKSRC}/playgmi/gmitimidity.c
-# conflicts with fnmatch.h from security/heimdal
-	@${REINPLACE_CMD} -e 's|<\(fnmatch.h\)>|"/usr/include/\1"|' \
-		${WRKSRC}/filesel/adb.c \
-		${WRKSRC}/filesel/pfilesel.c
 
 .if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
 # use ncursesw from ports
@@ -138,7 +134,15 @@ do-install:
 .endif
 
 	${MKDIR} ${PREFIX}/lib/ocp
-	${INSTALL_DATA} ${WRKSRC}/*.so ${PREFIX}/lib/ocp
+.for d in . cpiface dev devp devs devw filesel help medialib playay playflac \
+	playgmd playgmi playit playmp2 playogg playsid playwav playxm stuff
+	${INSTALL_DATA} ${WRKSRC}/${d}/*.so ${PREFIX}/lib/ocp
+.endfor
+.if defined(WITH_ADPLUG)
+.for d in playopl
+	${INSTALL_DATA} ${WRKSRC}/${d}/*.so ${PREFIX}/lib/ocp
+.endfor
+.endif
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
