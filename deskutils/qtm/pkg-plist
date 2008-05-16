@@ -1,5 +1,9 @@
 bin/qtm
 share/applications/qtm.desktop
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/icons/qtm-logo1.png
 @dirrmtry share/icons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
