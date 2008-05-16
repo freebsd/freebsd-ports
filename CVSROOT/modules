@@ -5665,6 +5665,7 @@ jacal		ports/math/jacal
 jack		ports/audio/jack
 jack-keyboard	ports/audio/jack-keyboard
 jack-rack	ports/audio/jack-rack
+jack-smf-utils	ports/audio/jack-smf-utils
 jad		ports/java/jad
 jade		ports/textproc/jade
 jadetex		ports/print/jadetex
