@@ -24,6 +24,8 @@ LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 		dv.4:${PORTSDIR}/multimedia/libdv \
 		xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26
 
+BROKEN=		bad plist
+
 USE_GNOME=	gnomehack gnometarget glib20
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
