@@ -399,6 +399,12 @@
 %%WWWDIR%%/lang/dutch.php
 %%WWWDIR%%/lang/english.php
 %%WWWDIR%%/lang/english_gb.php
+%%WWWDIR%%/lang/estonian.php
+%%WWWDIR%%/lang/serbian.php
+%%WWWDIR%%/lang/serbian.php
+%%WWWDIR%%/lang/serbian_cy.php
+%%WWWDIR%%/lang/welsh.php
+%%WWWDIR%%/lang/latvian.php
 %%WWWDIR%%/lang/finnish.php
 %%WWWDIR%%/lang/french.php
 %%WWWDIR%%/lang/galician.php
