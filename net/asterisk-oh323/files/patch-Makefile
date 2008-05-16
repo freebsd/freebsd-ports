@@ -1,10 +1,10 @@
---- Makefile.orig	Fri Sep  9 17:03:53 2005
-+++ Makefile	Thu Apr 13 13:52:00 2006
+--- Makefile.orig	2008-03-20 16:49:39.000000000 +0200
++++ Makefile	2008-03-20 17:58:09.000000000 +0200
 @@ -41,7 +41,7 @@
  # Install everything under this directory. If this is empty, then everything
  # will be installed under /
  #
--DESTDIR=
+-DESTDIR=/root/src/asterisk-oh323/debian-420641/slash
 +DESTDIR=$(PREFIX)
  
  #
@@ -13,8 +13,8 @@
  # compile asterisk-oh323. Do not use the installed library of your
  # distribution. It won't work.
  #
--PWLIBDIR=/usr/src/pwlib
-+PWLIBDIR?=/usr/src/pwlib
+-PWLIBDIR=/root/src/asterisk-oh323/debian-420641/pwlib
++PWLIBDIR?=/root/src/asterisk-oh323/debian-420641/pwlib
  
  #
  # Set OPENH323LIBDIR variable to the directory containing the sources of
@@ -22,32 +22,23 @@
  # compile asterisk-oh323. Do not use the installed library of your
  # distribution. It won't work.
  #
--OPENH323DIR=/usr/src/openh323
-+OPENH323DIR?=/usr/src/openh323
+-OPENH323DIR=/root/src/asterisk-oh323/debian-420641/openh323
++OPENH323DIR?=/root/src/asterisk-oh323/debian-420641/openh323
  
  #
  # Set ASTERISKINCDIR variable to the directory containing the include files of
  # Asterisk PBX.
  #
--ASTERISKINCDIR=/usr/src/asterisk/include
+-ASTERISKINCDIR=/root/src/asterisk-oh323/debian-420641/slash/include
 +ASTERISKINCDIR=$(LOCALBASE)/include
  
  #
  # Set ASTERISKMODDIR variable to the directory where ASTERISK's modules reside.
-@@ -75,7 +75,7 @@
- #
- # Note: This directory is created under $DESTDIR.
- #
--ASTERISKMODDIR=/usr/lib/asterisk/modules
-+ASTERISKMODDIR=/lib/asterisk/modules
- 
- #
- # Set ASTERISKETCDIR variable to the directory where ASTERISK's configuration
 @@ -93,7 +93,7 @@
  #
  # Note: This directory is created under $DESTDIR.
  #
--OH323WRAPLIBDIR=/usr/local/lib
+-OH323WRAPLIBDIR=/usr/lib
 +OH323WRAPLIBDIR=/lib
  
  #

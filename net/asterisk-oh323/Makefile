@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	asterisk-oh323
-PORTVERSION=	0.7.3
-PORTREVISION=	4
+PORTVERSION=	0.7.3.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.inaccessnetworks.com/projects/asterisk-oh323/download/
+MASTER_SITES=	http://www.b2bua.org/chrome/site/
 
 MAINTAINER=	bamby@sippysoft.com
 COMMENT=	A H.323 support module for the Asterisk soft PBX
 
-BUILD_DEPENDS= 	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk12
+BUILD_DEPENDS= 	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk
 LIB_DEPENDS= 	pt_r.1:${PORTSDIR}/devel/pwlib\
 	    	h323_r.1:${PORTSDIR}/net/openh323
 
@@ -27,9 +26,15 @@ MAKE_ENV=	MKDIR="${MKDIR}" \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on amd64 or sparc64
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
 .endif
+
+pre-configure:
+	if ${GREP} -sq fixup_codecs ${LOCALBASE}/include/asterisk/channel.h; \
+	then \
+		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/codecnego.diff; \
+	fi
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
