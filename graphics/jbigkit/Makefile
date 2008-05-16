@@ -14,15 +14,17 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Lossless compression for bi-level images such as scanned pages, faxes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
-
+MAKE_ENV+=	CC="${CC}"
 USE_LDCONFIG=	yes
 
 MAN1=	jbgtopbm.1 pbmtojbg.1
 
+DOCSDIR?=	${PREFIX}/share/doc/jbig
+
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/jbig
-	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.doc ${PREFIX}/share/doc/jbig
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.doc ${DOCSDIR}
 .endif
 
 post-build test:
