@@ -346,6 +346,7 @@
     SUBDIR += kludge3d
     SUBDIR += kooka
     SUBDIR += kphotoalbum
+    SUBDIR += kradview
     SUBDIR += kudu
     SUBDIR += kuickshow
     SUBDIR += l2p
