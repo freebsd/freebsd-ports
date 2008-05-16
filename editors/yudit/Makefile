@@ -7,6 +7,7 @@
 
 PORTNAME=	yudit
 PORTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		SUNSITE/apps/editors/X
@@ -14,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-lingual unicode text editor with TTF support
+
+CONFLICTS=	uniconvertor-[0-9]*
 
 USE_XORG=	x11
 USE_GNOME=	gnometarget

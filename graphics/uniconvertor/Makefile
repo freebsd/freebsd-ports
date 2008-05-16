@@ -7,12 +7,15 @@
 
 PORTNAME=	uniconvertor
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://sk1project.org/downloads/uniconvertor/v${PORTVERSION}/ \
 		http://www.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Universal vector graphics translator
+
+CONFLICTS=	yudit-[0-9]*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
