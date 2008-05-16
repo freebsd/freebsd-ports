@@ -1888,6 +1888,7 @@
     SUBDIR += pecl-htscanner
     SUBDIR += pecl-inclued
     SUBDIR += pecl-json
+    SUBDIR += pecl-mcve
     SUBDIR += pecl-operator
     SUBDIR += pecl-params
     SUBDIR += pecl-runkit
