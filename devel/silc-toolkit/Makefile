@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.7
 CATEGORIES=	devel ipv6 net security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -24,7 +24,7 @@ MASTER_SITE_SUBDIR=	toolkit/sources
 PKGNAMESUFFIX=	-toolkit
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Secure Internet Live Conferencing (SILC) network toolkit
 
 USE_AUTOTOOLS=	libtool:15
@@ -42,17 +42,12 @@ CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX} \
 CONFIGURE_ENV=	CFLAGS+="${CFLAGS}" \
 		CPPFLAGS+="${CPPFLAGS}"
 USE_LDCONFIG=	yes
-PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
-
-INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 
 .ifndef(WITH_PTHREADS)
 CONFIGURE_ARGS+=	--without-pthreads
 .else
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
 .endif
-
-MAN1=		silc.1
 
 pre-everything::
 .ifndef(WITHOUT_IPV6)
@@ -85,9 +80,6 @@ CONFIGURE_ARGS+=	--disable-asm
 .endif
 
 post-patch:
-.ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${PERL} -pi -e 's/ ?(-g)? -O2//' ${WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/lib/Makefile.in
 
