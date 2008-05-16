@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcltls
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6
 CATEGORIES=	devel tcl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tls
@@ -17,11 +17,10 @@ COMMENT=	SSL extensions for TCL; dynamicly loadable
 
 LIB_DEPENDS+=	tcl${TCLVND}:${PORTSDIR}/lang/tcl${TCLVND}
 
-MANUAL_PACKAGE_BUILD=Self-tests fail/hang
+USE_TCL=	83+
+USE_OPENSSL=	yes
 
-USE_OPENSSL=	Yes
-
-WRKSRC=	${WRKDIR}/tls${PORTVERSION:R}
+WRKSRC=	${WRKDIR}/tls${PORTVERSION}
 
 PLIST_SUB+=	TCL_VER=${TCL_VER} DISTNAME="${DISTNAME}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
@@ -32,7 +31,8 @@ MAKE_ENV=	TCL_VER=${TCL_VER} MKDIR="${MKDIR}" \
 		SHLIB_NAME=libtls.so.1 \
 		PORTVERSION="${PORTVERSION}" SED="${SED}"
 REINPLACE_ARGS=	-i ""
-ALL_TARGET=	all
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu` all
+PLIST_SUB=	TLS_VERSION=${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} -e \
@@ -48,11 +48,20 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tls.htm ${PREFIX}/share/doc/tls/
 .endif
 
-post-build test:
+post-build:
+	#
+	#
+	# Please, try performing `make test' now and report any failures
+	# to the ${PORTNAME} developers:
+	#	http://sourceforge.net/tracker/?group_id=13248&atid=113248
+	# and/or ${MAINTAINER}.
+	#
+	#
+
+test:
 	cd ${WRKSRC}/tests && env TCL_LIBRARY="${WRKSRC}" \
 		tclsh${TCL_VER} all.tcl
 
-TCL_VER?=	8.4
 TCLVND=		${TCL_VER:S/.//}
 
 .include <bsd.port.mk>
