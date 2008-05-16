@@ -10,8 +10,8 @@
 -INCLUDEPATH       += ../3rdparty/liborigin
 -INCLUDEPATH       += ../3rdparty/gsl/include
 -INCLUDEPATH       += ../3rdparty/zlib123/include
-+unix:INCLUDEPATH += $$(LOCALBASE)/include/qwt
-+unix:INCLUDEPATH += $$(LOCALBASE)/include/qwtplot3d-qt4
++unix:INCLUDEPATH += $$LOCALBASE/include/qwt
++unix:INCLUDEPATH += $$LOCALBASE/include/qwtplot3d-qt4
  
  ##################### 3rd PARTY LIBRARIES SECTION ###########################
  #!!! Warning: You must modify these paths according to your computer settings
@@ -32,21 +32,10 @@
 -#unix:LIBS         += -lgsl -lgslcblas
 +unix:LIBS         += -lqwt
 +unix:LIBS         += -lgsl -lgslcblas
-+unix:LIBS         += -L$$(LOCALBASE)/lib -lqwtplot3d-qt4 -lz
++unix:LIBS         += -L$$LOCALBASE/lib -lqwtplot3d-qt4 -lz
  
  ##################### Windows ###############################################
  
-@@ -124,8 +116,8 @@
-                   translations/qtiplot_ja.ts \
-                   translations/qtiplot_sv.ts
- 
--system(lupdate -verbose qtiplot.pro)
--system(lrelease -verbose qtiplot.pro)
-+#system(lupdate -verbose qtiplot.pro)
-+#system(lrelease -verbose qtiplot.pro)
- 
- translations.files += translations/qtiplot_de.qm \
-                   translations/qtiplot_es.qm \
 @@ -435,6 +427,7 @@
  ##################### Default: muParser v1.28 #################
  

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.5
+DISTVERSION=	0.9.6
 CATEGORIES=	math science
 MASTER_SITES=	http://soft.proindependent.com/src/
 
@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc_build qmake_build opengl svg qt3support network assistantclient
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
+QMAKE_ARGS+=	-unix -recursive LOCALBASE=${LOCALBASE}
 USE_DOS2UNIX=	*.pro
 MAN1=		qtiplot.1
 
@@ -65,9 +65,6 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 .if defined(WITH_PYTHON)
 	@${REINPLACE_CMD} -e \
-		's|loadInitFile("qtiplotrc")|loadInitFile("${DATADIR}/qtiplotrc")|' \
-		${WRKSRC}/${PORTNAME}/src/PythonScripting.cpp
-	@${REINPLACE_CMD} -e \
 		'/^sys.path.append/s|"\."|"${DATADIR}"|' \
 		${WRKSRC}/${PORTNAME}/qtiplotrc.py
 	@${REINPLACE_CMD} -e \
@@ -91,7 +88,7 @@ do-configure:
 .if !defined(WITHOUT_NLS)
 	@(cd ${WRKSRC}/qtiplot && ${LOCALBASE}/bin/lrelease-qt4 qtiplot.pro)
 .endif
-	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} -recursive)
+	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS})
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
@@ -109,6 +106,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fitPlugins/libfitRational1.so.1.0.0 \
 				${DATADIR}/fitPlugins/libfitRational1.so
 	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${DATADIR}/qtiplot.png
+	${INSTALL_DATA} ${WRKSRC}/qtiplot/qti_wordlist.txt ${DATADIR}
 .if defined(WITH_PYTHON)
 .for s in qtiplotrc.py qtiUtil.py
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s} ${DATADIR}/${s}
