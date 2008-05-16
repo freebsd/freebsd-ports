@@ -6,9 +6,13 @@
 #
 
 PORTNAME=	streamripper
-PORTVERSION=	1.62.3
+PORTVERSION=	1.63.1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		http://gd.tuwien.ac.at/hci/cdk/:cdk
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
+		cdk-${CDK_VERSION}.tgz:cdk
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Splits SHOUTcast stream into tracks
@@ -19,19 +23,23 @@ LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 OPTIONS=	FAAD "Include FAAD mpeg4 codec support" on \
 		VORBIS "Include Ogg Vorbis codec support" on
 
-USE_GNOME=	gnometarget
+USE_GNOME=	glib20 gnometarget
 USE_ICONV=	yes
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--without-included-libmad \
 		--without-included-tre \
-		--with-included-argv
-CFLAGS+=	-DANSI_PROTOTYPES
+		--with-included-argv \
+		--with-included-cdk
 
 MAN1=		streamripper.1
 PLIST_FILES=	bin/streamripper
+
+CFLAGS+=	-DANSI_PROTOTYPES
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-Lcdk-${CDK_VERSION} -L${LOCALBASE}/lib
+
+CDK_VERSION=	5.0-20060507
 
 .include <bsd.port.pre.mk>
 
@@ -47,9 +55,21 @@ CONFIGURE_ARGS+=	--without-ogg
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
+post-extract:
+	@cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/cdk-${CDK_VERSION}.tgz ${EXTRACT_AFTER_ARGS}
+
 post-patch:
 	@${REINPLACE_CMD} -e '/if test/s|==|=|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+
+pre-configure:
+	@cd ${WRKSRC}/cdk-${CDK_VERSION} && ${SETENV} CC="${CC}" \
+		CFLAGS="${CFLAGS}" ${SH} ./configure
+
+pre-build:
+	@cd ${WRKSRC}/cdk-${CDK_VERSION} && ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/streamripper ${PREFIX}/bin
