@@ -1,16 +1,10 @@
-
-$FreeBSD$
-
---- wrapper/wrapper.cxx
-+++ wrapper/wrapper.cxx
-@@ -133,10 +133,6 @@
- 	{
- 		WRAPTRACE(4, "Starting...");
- 		PTrace::Initialise(log_lev, log_file);
--#ifdef P_HAS_IPV6
--		if (PIPSocket::IsIpAddressFamilyV6Supported())
--			PIPSocket::SetDefaultIpAddressFamilyV6();
--#endif
- 		endPoint = new WrapH323EndPoint(prefixes, prefix_num);
- 		//gkServer = new WrapGatekeeperServer((H323EndPoint &)*endPoint);
- 		gkServer = NULL;
+--- wrapper/wrapper.cxx.orig	2008-03-20 17:35:37.000000000 +0200
++++ wrapper/wrapper.cxx	2008-03-20 17:35:50.000000000 +0200
+@@ -31,6 +31,7 @@
+ /* INCLUDE FILES ********************************************************/
+ 
+ #include <ptlib.h>
++#include <ptlib/sound.h>
+ #include <h323.h>
+ #include <h323pdu.h>
+ #include <mediafmt.h>

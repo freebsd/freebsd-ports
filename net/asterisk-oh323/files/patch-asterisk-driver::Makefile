@@ -1,6 +1,17 @@
---- asterisk-driver/Makefile.orig	Fri Sep  9 16:35:25 2005
-+++ asterisk-driver/Makefile	Thu Apr 13 14:22:51 2006
-@@ -40,9 +40,9 @@
+
+$FreeBSD$
+
+--- asterisk-driver/Makefile.orig
++++ asterisk-driver/Makefile
+@@ -34,23 +34,23 @@
+ ifndef SKIP_SUFFIX
+ 	ifeq ($(OH323STAT),1)
+ 		ifeq ($(OH323BUILDTYPE),debug) # Static, debug
+-			LIBPTPATH=$(word 1,$(shell ls $(PWLIBDIR)/lib/libpt*_d_s.a))
++			LIBPTPATH=$(word 1,$(shell ls $(SYSLIBDIR)/libpt*_d_s.a))
+ 		else                           # Static, opt
+-			LIBPTPATH=$(word 1,$(shell ls $(PWLIBDIR)/lib/libpt*_r_s.a))
++			LIBPTPATH=$(word 1,$(shell ls $(SYSLIBDIR)/libpt*_r_s.a))
  		endif
  	else
  		ifeq ($(OH323BUILDTYPE),debug) # Shared, debug
@@ -12,7 +23,30 @@
  		endif
  	endif
  	LIBPTNAME=$(subst lib,,$(basename $(notdir $(LIBPTPATH))))
-@@ -69,12 +69,12 @@
+ else
+ 	ifeq ($(OH323STAT),1)
+-		LIBPTPATH=$(word 1,$(shell ls $(PWLIBDIR)/lib/$(LIBPT_BASE).a))
++		LIBPTPATH=$(word 1,$(shell ls $(SYSLIBDIR)/$(LIBPT_BASE).a))
+ 	else
+-		LIBPTPATH=$(word 1,$(shell ls $(PWLIBDIR)/lib/$(LIBPT_BASE).so))
++		LIBPTPATH=$(word 1,$(shell ls $(SYSLIBDIR)/$(LIBPT_BASE).so))
+ 	endif
+ 	LIBPTNAME=$(subst lib,,$(basename $(notdir $(LIBPTPATH))))
+ endif
+@@ -59,42 +59,42 @@
+ ifndef SKIP_SUFFIX
+ 	ifeq ($(OH323STAT),1)
+ 		ifeq ($(OH323BUILDTYPE),debug)   # Static, debug
+-			LIBH323PATH=$(word 1,$(shell ls $(OPENH323DIR)/lib/libh323*_d_s.a))
++			LIBH323PATH=$(word 1,$(shell ls $(SYSLIBDIR)/libh323*_d_s.a))
+ 		else
+ 			ifeq ($(OH323BUILDTYPE),opt) # Static, opt
+-				LIBH323PATH=$(word 1,$(shell ls $(OPENH323DIR)/lib/libh323*_r_s.a))
++				LIBH323PATH=$(word 1,$(shell ls $(SYSLIBDIR)/libh323*_r_s.a))
+ 			else                         # Static, opt, no trace
+-				LIBH323PATH=$(word 1,$(shell ls $(OPENH323DIR)/lib/libh323*_n_s.a))
++				LIBH323PATH=$(word 1,$(shell ls $(SYSLIBDIR)/libh323*_n_s.a))
+ 			endif
  		endif
  	else
  		ifeq ($(OH323BUILDTYPE),debug)   # Shared, debug
@@ -28,7 +62,17 @@
  			endif
  		endif
  	endif
-@@ -90,7 +90,7 @@
+ 	LIBH323NAME=$(subst lib,,$(basename $(notdir $(LIBH323PATH))))
+ else
+ 	ifeq ($(OH323STAT),1)
+-		LIBH323PATH=$(word 1,$(shell ls $(OPENH323DIR)/lib/$(LIBH323_BASE).a))
++		LIBH323PATH=$(word 1,$(shell ls $(SYSLIBDIR)/$(LIBH323_BASE).a))
+ 	else
+-		LIBH323PATH=$(word 1,$(shell ls $(OPENH323DIR)/lib/$(LIBH323_BASE).so))
++		LIBH323PATH=$(word 1,$(shell ls $(SYSLIBDIR)/$(LIBH323_BASE).so))
+ 	endif
+ 	LIBH323NAME=$(subst lib,,$(basename $(notdir $(LIBH323PATH))))
+ endif
  LIBH323=$(LIBH323NAME)
  
  ifndef SKIP_EXTLIBS
@@ -37,23 +81,40 @@
  endif
  
  CFLAGS += -pipe -Wstrict-prototypes -Wmissing-prototypes \
-@@ -110,14 +110,15 @@
+-		-Wmissing-declarations -D_REENTRANT -D_GNU_SOURCE -fPIC -g -O6 \
++		-Wmissing-declarations -D_REENTRANT -D_GNU_SOURCE -fPIC -g \
+ 		-fomit-frame-pointer -DAST_MODULE=\"chan_oh323.so\"
  
- install:
- 	if [ ! -d $(DESTDIR)$(ASTERISKMODDIR) ]; then \
--		$(INSTALL) -d $(DESTDIR)$(ASTERISKMODDIR); \
-+		$(MKDIR) $(DESTDIR)$(ASTERISKMODDIR); \
+ DRVDEPS=$(shell ls *.h)
+@@ -151,19 +151,27 @@
+ 	@if [ ! -f "$(LIBH323PATH)" ]; then \
+ 		echo "ERROR: No OPENH323 library found!"; exit 1; \
  	fi
--	$(INSTALL) $(TARGET) $(DESTDIR)$(ASTERISKMODDIR)
-+	$(BSD_INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(ASTERISKMODDIR)
- 	if [ ! -d $(DESTDIR)$(ASTERISKETCDIR) ]; then \
--		$(INSTALL) -d $(DESTDIR)$(ASTERISKETCDIR); \
-+		$(MKDIR) $(DESTDIR)$(ASTERISKETCDIR); \
- 	fi
-+	$(BSD_INSTALL_DATA) oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf.sample; \
- 	if [ ! -f $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf ]; then \
--		$(INSTALL) -m 0644 oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf; \
-+		$(BSD_INSTALL_DATA) oh323.conf.sample $(DESTDIR)$(ASTERISKETCDIR)/oh323.conf; \
- 	fi
- 	@echo
- 	@echo " +----------   Asterisk-oh323 Installation Complete   ----------+ "
++ifeq ($(OH323NOWRAP),1)
++	$(CC) -shared -Xlinker -x -g -o $@ $(TARGET_OBJ) \
++	../wrapper/*.o \
++	-L$(SYSLIBDIR) -l$(LIBH323) \
++	-L$(SYSLIBDIR) -l$(LIBPT) \
++	-lstdc++ $(EXTLIBS)
++else
+ ifeq ($(OH323STAT),1)
+ 	$(CC) -shared -Xlinker -x -g -o $@ $(TARGET_OBJ) \
+ 	-L../wrapper -loh323wrap_s \
+-	-L$(OPENH323DIR)/lib -l$(LIBH323) \
+-	-L$(PWLIBDIR)/lib -l$(LIBPT) \
++	-L$(SYSLIBDIR) -l$(LIBH323) \
++	-L$(SYSLIBDIR) -l$(LIBPT) \
+ 	-lstdc++ $(EXTLIBS)
+ else
+ 	$(CC) -shared -Xlinker -x -g -o $@ $(TARGET_OBJ) \
+ 	-L../wrapper -loh323wrap \
+-	-L$(OPENH323DIR)/lib -l$(LIBH323) \
+-	-L$(PWLIBDIR)/lib -l$(LIBPT) \
++	-L$(SYSLIBDIR) -l$(LIBH323) \
++	-L$(SYSLIBDIR) -l$(LIBPT) \
+ 	-lstdc++ $(EXTLIBS)
+ endif
++endif
+ 
+ %.o: %.c $(DRVDEPS)
+ 	$(CC) $(CFLAGS) $(ASTERISKINCLUDE) -c -o $@ $<
