@@ -204,6 +204,8 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/game/cannontop.png
 %%DATADIR%%/gfx/game/colon.png
 %%DATADIR%%/gfx/game/credits.png
+%%DATADIR%%/gfx/game/crumbFollowing.png
+%%DATADIR%%/gfx/game/crumbLost.png
 %%DATADIR%%/gfx/game/cypher1.png
 %%DATADIR%%/gfx/game/cypher2.png
 %%DATADIR%%/gfx/game/desimilator.png
@@ -222,6 +224,7 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/game/orderIcon4.tga
 %%DATADIR%%/gfx/game/plasmapistol.blend.tga
 %%DATADIR%%/gfx/game/plasmarifle.blend.tga
+%%DATADIR%%/gfx/game/question.png
 %%DATADIR%%/gfx/game/rifle.png
 %%DATADIR%%/gfx/game/rocket.png
 %%DATADIR%%/gfx/game/rocketlauncher.png
