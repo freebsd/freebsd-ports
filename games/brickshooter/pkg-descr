@@ -1,0 +1,6 @@
+brickshooter is a small puzzle game for linux, where you'll have
+to clear the central area from different colored bricks. Three or
+more same colored bricks that touch will vanish. You can shoot
+bricks into the playing field from the fringes.
+
+WWW: http://bilious.homelinux.org/~paxed/brickshooter/
