@@ -7,6 +7,7 @@
 
 PORTNAME=	silky
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	SF \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	silky
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and easy to use graphical, os-independent SILC client
 
-LIB_DEPENDS=	silcclient-1.0.4:${PORTSDIR}/devel/silc-toolkit
+LIB_DEPENDS=	silcclient-1.1:${PORTSDIR}/devel/silc-toolkit
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 GNU_CONFIGURE=	yes

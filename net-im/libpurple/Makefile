@@ -8,7 +8,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.4.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pidgin
@@ -125,7 +125,7 @@ CONFIGURE_ARGS+=	--enable-cyrus-sasl
 .endif
 
 .if defined(WITH_SILC)
-LIB_DEPENDS+=		silcclient-1.0.4:${PORTSDIR}/devel/silc-toolkit
+LIB_DEPENDS+=		silcclient-1.1:${PORTSDIR}/devel/silc-toolkit
 CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc \
 			--with-silc-libs=${LOCALBASE}/lib
 PLIST_SUB+=		SILC=""
