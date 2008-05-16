@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- main/Makefile.orig
-+++ main/Makefile
+--- main/Makefile.orig	2008-01-29 19:43:41.000000000 +0200
++++ main/Makefile	2008-03-13 13:57:48.000000000 +0200
 @@ -102,8 +102,8 @@
  	cd editline && test -f config.h || CFLAGS="$(PTHREAD_CFLAGS) $(subst $(ASTTOPDIR),../../,$(ASTCFLAGS:-Werror=))" LDFLAGS="$(ASTLDFLAGS)" ./configure --build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM) --with-ncurses=$(NCURSES_DIR) --with-curses=$(CURSES_DIR) --with-termcap=$(TERMCAP_DIR) --with-tinfo=$(TINFO_DIR)
  	$(MAKE) -C editline libedit.a
