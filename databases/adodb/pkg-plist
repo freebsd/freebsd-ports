@@ -13,6 +13,7 @@
 %%ADODB_DIR%%/adodb-perf.inc.php
 %%ADODB_DIR%%/adodb-php4.inc.php
 %%ADODB_DIR%%/adodb-time.inc.php
+%%ADODB_DIR%%/adodb-time.zip
 %%ADODB_DIR%%/adodb-xmlschema.inc.php
 %%ADODB_DIR%%/adodb-xmlschema03.inc.php
 %%ADODB_DIR%%/adodb.inc.php
