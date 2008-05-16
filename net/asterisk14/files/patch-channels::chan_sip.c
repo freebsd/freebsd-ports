@@ -1,6 +1,6 @@
---- channels/chan_sip.c.orig	Mon Dec 24 11:59:46 2007
-+++ channels/chan_sip.c	Mon Dec 24 11:58:47 2007
-@@ -493,7 +493,7 @@
+--- channels/chan_sip.c.orig	2008-03-18 16:42:59.000000000 +0200
++++ channels/chan_sip.c	2008-03-18 17:08:34.000000000 +0200
+@@ -495,7 +495,7 @@
  #define DEFAULT_MOHINTERPRET    "default"
  #define DEFAULT_MOHSUGGEST      ""
  #define DEFAULT_VMEXTEN 	"asterisk"
@@ -9,16 +9,7 @@
  #define DEFAULT_NOTIFYMIME 	"application/simple-message-summary"
  #define DEFAULT_MWITIME 	10
  #define DEFAULT_ALLOWGUEST	TRUE
-@@ -3985,6 +3985,8 @@
- 	ast_codec_pref_remove2(&tmp->nativeformats, ~i->usercapability);
- 	fmt = ast_codec_pref_index_audio(&tmp->nativeformats, 0);
- 
-+	pbx_builtin_setvar_helper(tmp, "SIP_CODEC_USED", ast_getformatname(fmt));
-+
- 	/* If we have a prefcodec setting, we have an inbound channel that set a 
- 	   preferred format for this call. Otherwise, we check the jointcapability
- 	   We also check for vrtp. If it's not there, we are not allowed do any video anyway.
-@@ -15845,6 +15847,9 @@
+@@ -15873,6 +15881,9 @@
  	char *ext, *host;
  	char tmp[256];
  	char *dest = data;
@@ -26,9 +17,9 @@
 +	char *md5secret = NULL;
 +	char *authname = NULL;
  
- 	if (!(p = sip_alloc(NULL, NULL, 0, SIP_INVITE))) {
- 		ast_log(LOG_ERROR, "Unable to build sip pvt data for '%s' (Out of memory or socket error)\n", (char *)data);
-@@ -15866,6 +15871,17 @@
+ 	oldformat = format;
+ 	if (!(format &= ((AST_FORMAT_MAX_AUDIO << 1) - 1))) {
+@@ -15903,6 +15914,17 @@
  	if (host) {
  		*host++ = '\0';
  		ext = tmp;
@@ -46,7 +37,7 @@
  	} else {
  		ext = strchr(tmp, '/');
  		if (ext) 
-@@ -15898,6 +15914,14 @@
+@@ -15933,6 +15955,14 @@
  		ast_string_field_set(p, username, ext);
  		ast_string_field_free(p, fullcontact);
  	}
