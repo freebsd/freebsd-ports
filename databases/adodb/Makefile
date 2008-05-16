@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	4.96a
+PORTVERSION=	4.98
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	adodb
@@ -37,6 +37,9 @@ PLIST_SUB+=	TESTS=
 .else
 PLIST_SUB+=	TESTS="@comment "
 .endif
+
+post-patch:
+	@cd ${WRKSRC}; ${RM} -f cute_icons_for_site/Thumbs.db
 
 do-install:
 	@${MKDIR} ${PREFIX}/${ADODB_DIR}
