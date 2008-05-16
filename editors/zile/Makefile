@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	2.2.56
+PORTVERSION=	2.2.59
 CATEGORIES=	editors
-MASTER_SITES=	SF
+MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small emacs-like text editor
