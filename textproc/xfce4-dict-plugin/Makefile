@@ -5,22 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xfce4-dict-plugin
-PORTVERSION=	0.2.1
-PORTREVISION=	3
+PORTNAME=	xfce4-dict
+PORTVERSION=	0.4.0
 CATEGORIES=	textproc xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+PKGNAMESUFFIX=	-plugin
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Xfce Plugin for searching for the translation or explanation of a word
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv panel
+MAN1=		xfce4-dict.1
 
 .include <bsd.port.mk>
