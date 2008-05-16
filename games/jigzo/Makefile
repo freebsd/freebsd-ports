@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jigzo
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/jigzo/ \
 		http://www.amdmi3.ru/distfiles/

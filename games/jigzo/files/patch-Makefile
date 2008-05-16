@@ -1,5 +1,5 @@
---- Makefile.orig	2008-04-03 01:16:52.000000000 +0400
-+++ Makefile	2008-04-03 13:45:02.000000000 +0400
+--- Makefile.orig	2008-05-07 02:26:41.000000000 +0400
++++ Makefile	2008-05-07 04:10:55.000000000 +0400
 @@ -19,7 +19,7 @@
  ARCH_OK = yes
  endif
@@ -13,7 +13,7 @@
  # Variables
  #
  
--CXXFLAGS = -O2 $(ARCHCXXFLAGS) -DENABLE_SOUND
+-CXXFLAGS = -g $(ARCHCXXFLAGS) -DENABLE_SOUND
 -LDFLAGS = -O2 $(ARCHLDFLAGS)
 +STRIP = strip
 +APP = jigzo
