@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	deco
-PORTVERSION=	0.8.1
+PORTVERSION=	1.0
 CATEGORIES=	archivers
 MASTER_SITES=	http://hartlich.com/deco/download/
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	A script to extract various archive file formats
+COMMENT=	A program to extract various archive file formats
 
 RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc \
 		arj:${PORTSDIR}/archivers/arj \
@@ -27,7 +27,6 @@ RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc \
 		flac:${PORTSDIR}/audio/flac
 
 NO_BUILD=	yes
-USE_GMAKE=	yes
 
 CONFLICTS=	deco-[0-9]*
 
