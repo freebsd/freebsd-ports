@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtm
-PORTVERSION=	0.5.8.2
+PORTVERSION=	0.6.0.1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/catkin
 
@@ -18,8 +18,8 @@ BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui rcc network xml moc_build qmake_build uic_build
 
+MANCOMPRESSED=	yes
 MAN1=		qtm.1
-PORTDOCS=	Changelog INSTALL README
 
 pre-build:
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} cmake . \
@@ -33,7 +33,7 @@ pre-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
+.for doc in Changelog INSTALL README
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
