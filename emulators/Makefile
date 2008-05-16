@@ -112,6 +112,7 @@
     SUBDIR += ods2reader
     SUBDIR += openmsx
     SUBDIR += open-vm-tools
+    SUBDIR += open-vm-tools-nox11
     SUBDIR += osmose
     SUBDIR += p-interp
     SUBDIR += pcemu
