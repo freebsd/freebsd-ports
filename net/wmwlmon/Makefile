@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmwlmon
-PORTVERSION=	0.9
-PORTREVISION=	4
+PORTVERSION=	1.0
 CATEGORIES=	net windowmaker
 MASTER_SITES=	http://www.nazgul.ch/dev/ \
 		http://dougbarton.us/Downloads/
@@ -29,7 +28,7 @@ IGNORE=		needs WLAN infrastructure from 6.0-RELEASE or newer
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-wl.c ${PATCHDIR}/extra-patch-wmwlmon.1
 pre-everything::
 	@${ECHO_CMD} "==========================================================="
-	@${ECHO_CMD} "On FreeBSD > 700052 there is no wi(4) support in {PORTNAME}"
+	@${ECHO_CMD} "On FreeBSD > 700052 there is no wi(4) support in ${PORTNAME}"
 	@${ECHO_CMD} "==========================================================="
 .endif
 
