@@ -6,34 +6,26 @@
 #
 
 PORTNAME=	libdockapp
-PORTVERSION=	0.6.1
-PORTREVISION=	3
+PORTVERSION=	0.6.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://solfertje.student.utwente.nl/~dalroi/libdockapp/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard library for Window Maker dock apps
 
-WRKSRC=		${WRKDIR}/${PORTNAME:S/^lib//}-${PORTVERSION}
-
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_XORG=	xext xpm
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--without-font --without-examples
 USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fonts/dockapp
 .for file in fonts.alias fonts.dir *.pcf.gz
 	${INSTALL_DATA} ${WRKSRC}/fonts/${file} ${PREFIX}/lib/X11/fonts/dockapp
 .endfor
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for file in README
 	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
