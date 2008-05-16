@@ -29,7 +29,7 @@ CPPS	+=	${OLESS:S/^/${.CURDIR}\/oless\//} ${JPGS}
 
 SRCS	=	${CPPS:T:Nejpeg.c}
 
-CXXFLAGS+=	-fno-rtti -fno-exceptions ${HAVES}
+CXXFLAGS+=	-fno-rtti -fno-exceptions -fno-strict-aliasing ${HAVES}
 LDADD	+=	-L${LOCALBASE}/lib -lm -lstdc++
 
 .PATH: ${CPPS:H}
