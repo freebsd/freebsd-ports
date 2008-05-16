@@ -1,6 +1,5 @@
 bin/openalchemist
-share/games/openalchemist/skins/aqua.zip
-share/games/openalchemist/skins/brushed.zip
-@dirrm share/games/openalchemist/skins
-@dirrm share/games/openalchemist
-@dirrmtry share/games
+%%DATADIR%%/skins/aqua.zip
+%%DATADIR%%/skins/brushed.zip
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%
