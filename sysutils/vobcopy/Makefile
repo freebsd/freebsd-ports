@@ -8,7 +8,8 @@
 PORTNAME=	vobcopy
 PORTVERSION=	1.1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://lpn.rnbhq.org/download/
+MASTER_SITES=	http://vobcopy.org/download/ \
+		CRITICAL
 
 MAINTAINER=	josh@tcbug.org
 COMMENT=	Decrypts and copies DVD .vob files
