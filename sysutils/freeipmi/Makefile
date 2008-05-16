@@ -6,11 +6,11 @@
 #
 # Available KNOBs:
 #
-# WITH_DEBUG   - Build binaries suitable for debugging with gdb(1).
+# WITH_DEBUG   - Enable debugging features.
 #
 
 PORTNAME=	freeipmi
-PORTVERSION=	0.5.6
+PORTVERSION=	0.6.2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/ \
 	ftp://ftp.riss-telecom.ru/pub/mirrors/ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
@@ -29,11 +29,8 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 	PTHREAD_LIBS=-pthread
 CONFIGURE_ARGS+=	--disable-init-scripts --disable-logrotate-config \
 	--disable-logdir --localstatedir=/var \
-	--with-ipmipower-config-file=${PREFIX}/etc/ipmipower.conf \
 	--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache \
-	--with-ipmi-monitoring-sensor-config-file=${PREFIX}/etc/ipmi_monitoring_sensors.conf \
-	--with-ipmidetect-config-file=${PREFIX}/etc/ipmidetect.conf \
-	--with-ipmidetectd-config-file=${PREFIX}/etc/ipmidetectd.conf
+	--sysconfdir=${PREFIX}/etc/${PORTNAME}
 USE_LDCONFIG=	yes
 NOT_FOR_ARCHS=	ia64 sparc64 alpha
 PLIST_SUB+=	FREEIPMI_SHLIBVER=${FREEIPMI_SHLIBVER} \
@@ -41,24 +38,26 @@ PLIST_SUB+=	FREEIPMI_SHLIBVER=${FREEIPMI_SHLIBVER} \
 	IPMIDETECT_SHLIBVER=${IPMIDETECT_SHLIBVER} \
 	IPMIMONITORING_SHLIBVER=${IPMIMONITORING_SHLIBVER} \
 	CACHE_DIR=${CACHE_DIR} LOG_DIR=${LOG_DIR} RUN_DIR=${RUN_DIR}
-MAN3+=	libipmiconsole.3 libipmimonitoring.3 libipmidetect.3
+MAN3+=	libipmiconsole.3 libipmimonitoring.3 libipmidetect.3 \
+	libfreeipmi.3
 MAN5+=	ipmipower.conf.5 bmc-config.conf.5 ipmiconsole.conf.5 \
 	ipmidetect.conf.5 ipmidetectd.conf.5
+MAN7+=	freeipmi.7
 MAN8+=	bmc-watchdog.8 ipmipower.8 ipmi-raw.8 ipmi-sel.8 \
 	ipmi-sensors.8 ipmi-locate.8 bmc-info.8 ipmiping.8 \
 	rmcpping.8 bmc-config.8 ipmiconsole.8 \
 	ipmi-fru.8 pef-config.8 ipmimonitoring.8 ipmi-chassis.8 \
-	ipmidetect.8 ipmidetectd.8
+	ipmidetect.8 ipmidetectd.8 ipmi-oem.8 ipmi-sensors-config.8
 INFO+=		freeipmi-faq
 PORTDOCS=	*
 
 CACHE_DIR?=	/var/db/${PORTNAME}
 LOG_DIR=	/var/log/${PORTNAME}
 RUN_DIR=	/var/lib/${PORTNAME}
-FREEIPMI_SHLIBVER=	5
+FREEIPMI_SHLIBVER=	6
 IPMICONSOLE_SHLIBVER=	2
 IPMIDETECT_SHLIBVER=	0
-IPMIMONITORING_SHLIBVER=	1
+IPMIMONITORING_SHLIBVER=	2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
