@@ -1,27 +1,27 @@
-bin/crename
 bin/deco
-bin/symlinktarget
-%%DATADIR%%/7z
-%%DATADIR%%/a
-%%DATADIR%%/ace
-%%DATADIR%%/ape
+%%DATADIR%%/7z/extract
+%%DATADIR%%/a/extract
+%%DATADIR%%/ace|[c0-9][0-9][0-9]/extract
+%%DATADIR%%/ace|[c0-9][0-9][0-9]/permissions
+%%DATADIR%%/ape/extract
 %%DATADIR%%/ar
-%%DATADIR%%/arc
-%%DATADIR%%/arj
+%%DATADIR%%/arc/extract
+%%DATADIR%%/arj/extract
 %%DATADIR%%/ark
-%%DATADIR%%/bz2
-%%DATADIR%%/cab
+%%DATADIR%%/bz2/extract
+%%DATADIR%%/cab/extract
 %%DATADIR%%/cbr
 %%DATADIR%%/cbz
-%%DATADIR%%/cpio
-%%DATADIR%%/deb
+%%DATADIR%%/cpio/extract
+%%DATADIR%%/deb/extract
+%%DATADIR%%/deb/subdirectory
 %%DATADIR%%/ear
-%%DATADIR%%/flac
-%%DATADIR%%/gz
+%%DATADIR%%/flac/extract
+%%DATADIR%%/gz/extract
 %%DATADIR%%/jar
-%%DATADIR%%/lha
+%%DATADIR%%/lha/extract
 %%DATADIR%%/lzh
-%%DATADIR%%/lzma
+%%DATADIR%%/lzma/extract
 %%DATADIR%%/odc
 %%DATADIR%%/odf
 %%DATADIR%%/odg
@@ -38,17 +38,20 @@ bin/symlinktarget
 %%DATADIR%%/otp
 %%DATADIR%%/ots
 %%DATADIR%%/ott
+%%DATADIR%%/part[0-9]+\.rar
 %%DATADIR%%/pk3
 %%DATADIR%%/pk4
-%%DATADIR%%/rar
-%%DATADIR%%/rpm
-%%DATADIR%%/shn
+%%DATADIR%%/rar|[rst][0-9][0-9]/extract
+%%DATADIR%%/rar|[rst][0-9][0-9]/permissions
+%%DATADIR%%/rpm/extract
+%%DATADIR%%/rpm/subdirectory
+%%DATADIR%%/shn/extract
 %%DATADIR%%/sue
-%%DATADIR%%/tar
-%%DATADIR%%/tar.bz2
-%%DATADIR%%/tar.gz
-%%DATADIR%%/tar.lzma
-%%DATADIR%%/tar.z
+%%DATADIR%%/tar/extract
+%%DATADIR%%/tar\.bz2/extract
+%%DATADIR%%/tar\.gz/extract
+%%DATADIR%%/tar\.lzma/extract
+%%DATADIR%%/tar\.z
 %%DATADIR%%/taz
 %%DATADIR%%/tbz
 %%DATADIR%%/tgz
@@ -56,6 +59,29 @@ bin/symlinktarget
 %%DATADIR%%/wsz
 %%DATADIR%%/xpi
 %%DATADIR%%/z
-%%DATADIR%%/zip
-%%DATADIR%%/zoo
+%%DATADIR%%/zip/extract
+%%DATADIR%%/zoo/extract
+@dirrm %%DATADIR%%/zoo
+@dirrm %%DATADIR%%/zip
+@dirrm %%DATADIR%%/tar\.lzma
+@dirrm %%DATADIR%%/tar\.gz
+@dirrm %%DATADIR%%/tar\.bz2
+@dirrm %%DATADIR%%/tar
+@dirrm %%DATADIR%%/shn
+@dirrm %%DATADIR%%/rpm
+@dirrm %%DATADIR%%/rar|[rst][0-9][0-9]
+@dirrm %%DATADIR%%/lzma
+@dirrm %%DATADIR%%/lha
+@dirrm %%DATADIR%%/gz
+@dirrm %%DATADIR%%/flac
+@dirrm %%DATADIR%%/deb
+@dirrm %%DATADIR%%/cpio
+@dirrm %%DATADIR%%/cab
+@dirrm %%DATADIR%%/bz2
+@dirrm %%DATADIR%%/arj
+@dirrm %%DATADIR%%/arc
+@dirrm %%DATADIR%%/ape
+@dirrm %%DATADIR%%/ace|[c0-9][0-9][0-9]
+@dirrm %%DATADIR%%/a
+@dirrm %%DATADIR%%/7z
 @dirrm %%DATADIR%%
