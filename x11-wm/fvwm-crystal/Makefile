@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fvwm-crystal
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.gna.org/fvwm-crystal/${PORTVERSION}/
 
@@ -20,6 +20,9 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 MAKE_ENV=	prefix="${PREFIX}" addondir="${DOCSDIR}/addons"
+
+MAN1=	ApplicationDatabase.1 CrystalRoxHOWTO.1 FVWMCrystalFAQ.1 \
+	KeyboardBindings.1 MouseBindings.1 Tips.1
 
 OPTIONS=	ROX "Rox-filer support" on \
 		IMAGEMAGICK "Window thumbnails and screenshots support" on \

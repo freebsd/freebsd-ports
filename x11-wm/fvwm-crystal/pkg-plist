@@ -1,124 +1,166 @@
 bin/fvwm-crystal
 bin/fvwm-crystal.apps
+bin/fvwm-crystal.generate-menu
+bin/fvwm-crystal.infoline
+bin/fvwm-crystal.mplayer-wrapper
 bin/fvwm-crystal.wallpaper
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/15~doom3~DOOM_III
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/15~quake3~Quake_III_Arena
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/15~quake4~Quake_IV
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/15~ut2004~Unreal_Tournament_2004
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/18~et~Enemy_Territory
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/18~q3ut3~Q3A:_Urban_Terror
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/20~xqf~XQF
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~bzflag~bzFlag
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~lxdoom~LxDoom
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~nexuiz~Nexuiz
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~quake2~Quake_II
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~ut~Unreal_Tournament
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~wolfmp~RTCW_Multiplayer
-%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~wolfsp~Return_to_Castle_Wolfenstein
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/20~frozen-bubble~Frozen_Bubble
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/20~supertux~SuperTux
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~armagetron~Armagetron
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~gltron~GLTron
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~gnibbles~Nibbles
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~gnome-stones~Stones
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~icebreaker~IceBreaker
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~jumpnbump-menu~Jump'N'Bump
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~kbounce~KBounce
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~kgoldrunner~KGoldrunner
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~ksnake~KSnake
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~ktron~KTron
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~lbreakout2~LBreakout2
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~liquidwar~LiquidWar
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~moagg~Moagg
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~neverball~Neverball
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~neverputt~Neverputt
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~njam~Njam
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~ppracer~PlanetPenguin_Racer
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~snake~Snake
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~torcs~Torcs
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~trackballs~Trackballs
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~trophy~Trophy
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~worm~Worm
-%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~xmoto~X-Moto
-%%DATADIR%%/fvwm/Applications/20~Games/Board/~eboard~Eboard
-%%DATADIR%%/fvwm/Applications/20~Games/Board/~gtkboard~GTKBoard
-%%DATADIR%%/fvwm/Applications/20~Games/Board/~gweled~Gweled
-%%DATADIR%%/fvwm/Applications/20~Games/Board/~kbackgammon~KBackgammon
-%%DATADIR%%/fvwm/Applications/20~Games/Board/~kenolaba~Kenolaba
-%%DATADIR%%/fvwm/Applications/20~Games/Board/~kmahjongg~KMahjongg
-%%DATADIR%%/fvwm/Applications/20~Games/Board/~kreversi~KReversi
-%%DATADIR%%/fvwm/Applications/20~Games/Board/~kshisen~Shisen-Sho
-%%DATADIR%%/fvwm/Applications/20~Games/Board/~mahjongg~Mahjongg
-%%DATADIR%%/fvwm/Applications/20~Games/Board/~xboard~XBoard
-%%DATADIR%%/fvwm/Applications/20~Games/Board/~xmahjongg~xMahjongg
-%%DATADIR%%/fvwm/Applications/20~Games/Card/~blackjack~Blackjack
-%%DATADIR%%/fvwm/Applications/20~Games/Card/~kpat~KPat
-%%DATADIR%%/fvwm/Applications/20~Games/Card/~kpoker~KPoker
-%%DATADIR%%/fvwm/Applications/20~Games/Card/~lskat~Lieutenant_Skat
-%%DATADIR%%/fvwm/Applications/20~Games/Card/~sol~Aisle_Riot
-%%DATADIR%%/fvwm/Applications/20~Games/Card/~xpat2~xPat2
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~blackboxgame~Black_Box
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~bridges~Bridges
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~cube~Cube
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~dominosa~Dominosa
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~fifteen~Fifteen
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~flipgame~Flip
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~guess~Guess
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~inertia~Inertia
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~lightup~Light_Up
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~loopy~Loopy
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~map~Map
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~mines~Mines
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~netgame~Net
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~netslide~Netslide
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~pattern~Pattern
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~pegs~Pegs
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~rect~Rectangles
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~samegame~Same_Game
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~sixteen~Sixteen
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~slant~Slant
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~solo~Solo
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~tents~Tents
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~twiddle~Twiddle
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~untangle~Untangle
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~atomix~Atomix
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~enigma~Enigma
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gataxx~Ataxx
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~glines~gLines
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnect~gNect
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnobots2~GnoBots2
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnomine~GnoMine
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnotravex~Tetravex
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnotski~Klotski
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnudoku~GNUDoku
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gtali~Tali
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~iagno~Iagno
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~katomic~KAtomic
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~kblackbox~KBlackBox
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~kjumpingcube~KJumpingCube
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~klickety~Klickety
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~klines~Kolor_Lines
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~kmines~KMines
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~knetwalk~KNetWalk
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~ksame~SameGame
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~ksokoban~KSokoban
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~kwin4~KWin4
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~lmarbles~LMarbles
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~pathological~Pathological
-%%DATADIR%%/fvwm/Applications/20~Games/Logic/~same-gnome~Same_Game
-%%DATADIR%%/fvwm/Applications/20~Games/Others/~BillardGL~BillardGL
-%%DATADIR%%/fvwm/Applications/20~Games/Others/~billard-gl~BillardGL
-%%DATADIR%%/fvwm/Applications/20~Games/Others/~dosbox~DOSBox
-%%DATADIR%%/fvwm/Applications/20~Games/Others/~foobillard~FooBillard
-%%DATADIR%%/fvwm/Applications/20~Games/Others/~kolf~Kolf
-%%DATADIR%%/fvwm/Applications/20~Games/Others/~ktuberling~KTuberling
-%%DATADIR%%/fvwm/Applications/20~Games/Others/~pydance~PyDance
-%%DATADIR%%/fvwm/Applications/20~Games/RPG/20~el~Eternal_Lands
-%%DATADIR%%/fvwm/Applications/20~Games/RPG/~adom~ADOM
-%%DATADIR%%/fvwm/Applications/20~Games/RPG/~diablo2~Diablo_II
-%%DATADIR%%/fvwm/Applications/20~Games/RPG/~falconseye~Falcon's_Eye
-%%DATADIR%%/fvwm/Applications/20~Games/RPG/~gnome-mud~Gnome_MUD
-%%DATADIR%%/fvwm/Applications/20~Games/RPG/~nwn~Neverwinter_Nights
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Application database.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/Crystal ROX! HOWTO.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/Keyboard bindings.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/Mouse bindings.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/Tips.txt
+%%PORTDOCS%%%%DOCSDIR%%/addons/Sytem-documentation-browser.READNE
+%%PORTDOCS%%%%DOCSDIR%%/addons/Xresources
+%%PORTDOCS%%%%DOCSDIR%%/addons/Xsession
+%%PORTDOCS%%%%DOCSDIR%%/addons/fvwm-crystal.desktop
+%%PORTDOCS%%%%DOCSDIR%%/addons/fvwm-crystal.lesspipe.sh
+%%PORTDOCS%%%%DOCSDIR%%/addons/fvwm.vim
+%%PORTDOCS%%%%DOCSDIR%%/addons/session
+%%PORTDOCS%%%%DOCSDIR%%/addons/session-management.README
+%%PORTDOCS%%%%DOCSDIR%%/addons/sudo
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/15~doom3~DOOM_III
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/15~quake3~Quake_III_Arena
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/15~quake4~Quake_IV
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/15~ut2003~Unreal_Tournament_2003
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/15~ut2004~Unreal_Tournament_2004
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/18~et~Enemy_Territory
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/18~q3ut3~Q3A:_Urban_Terror
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/20~xqf~XQF
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/25~circuslinux~Circus_Linux
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/~bzflag~bzFlag
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/~lxdoom~LxDoom
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/~nexuiz~Nexuiz
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/~quake2~Quake_II
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/~ut~Unreal_Tournament
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/~wolfmp~RTCW_Multiplayer
+%%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/~wolfsp~Return_to_Castle_Wolfenstein
+%%DATADIR%%/fvwm/Applications/20~Games/20~Block_Games/20~crack-attack~Crack_Attack!
+%%DATADIR%%/fvwm/Applications/20~Games/20~Block_Games/~bastet~Bastard_Tetris
+%%DATADIR%%/fvwm/Applications/20~Games/20~Block_Games/~gnometris~GnomeTris
+%%DATADIR%%/fvwm/Applications/20~Games/20~Block_Games/~kfouleggs~KFoulEggs
+%%DATADIR%%/fvwm/Applications/20~Games/20~Block_Games/~ksirtet~KSirtet
+%%DATADIR%%/fvwm/Applications/20~Games/20~Block_Games/~ksmiletris~KSmileTris
+%%DATADIR%%/fvwm/Applications/20~Games/20~Block_Games/~ltris~LTris
+%%DATADIR%%/fvwm/Applications/20~Games/20~Block_Games/~netris~Netris
+%%DATADIR%%/fvwm/Applications/20~Games/20~Block_Games/~netris~Netris_Server
+%%DATADIR%%/fvwm/Applications/20~Games/20~Block_Games/~tod~tod
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/20~frozen-bubble~Frozen_Bubble
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/20~supertux~SuperTux
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~armagetron~Armagetron
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~gltron~GLTron
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~gnibbles~Nibbles
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~gnome-stones~Stones
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~icebreaker~IceBreaker
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~jumpnbump-menu~Jump'N'Bump
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~kbounce~KBounce
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~kgoldrunner~KGoldrunner
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~ksnake~KSnake
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~ktron~KTron
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~lbreakout2~LBreakout2
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~lbreakout~LBreakout
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~liquidwar~LiquidWar
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~moagg~Moagg
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~neverball~Neverball
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~neverputt~Neverputt
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~njam~Njam
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~ppracer~PlanetPenguin_Racer
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~pydance~PyDance
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~rocksndiamonds~Rocks'n'Diamonds
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~snake~Snake
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~torcs~Torcs
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~trackballs~Trackballs
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~trophy~Trophy
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~worm~Worm
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games/~xmoto~X-Moto
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~BillardGL~BillardGL
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~billard-gl~BillardGL
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~eboard~Eboard
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~foobillard~FooBillard
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~gtkboard~GTKBoard
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~gweled~Gweled
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~kbackgammon~KBackgammon
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~kenolaba~Kenolaba
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~kmahjongg~KMahjongg
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~kolf~Kolf
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~kreversi~KReversi
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~kshisen~Shisen-Sho
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~mahjongg~Mahjongg
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~xboard~XBoard
+%%DATADIR%%/fvwm/Applications/20~Games/Board_Games/~xmahjongg~xMahjongg
+%%DATADIR%%/fvwm/Applications/20~Games/Card_Games/~blackjack~Blackjack
+%%DATADIR%%/fvwm/Applications/20~Games/Card_Games/~kpat~KPat
+%%DATADIR%%/fvwm/Applications/20~Games/Card_Games/~kpoker~KPoker
+%%DATADIR%%/fvwm/Applications/20~Games/Card_Games/~lskat~Lieutenant_Skat
+%%DATADIR%%/fvwm/Applications/20~Games/Card_Games/~sol~Aisle_Riot
+%%DATADIR%%/fvwm/Applications/20~Games/Card_Games/~xpat2~xPat2
+%%DATADIR%%/fvwm/Applications/20~Games/Emulators/~dosbox~DOSBox
+%%DATADIR%%/fvwm/Applications/20~Games/Kids_Games/~ktuberling~KTuberling
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~blackboxgame~Black_Box
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~bridges~Bridges
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~cube~Cube
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~dominosa~Dominosa
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~fifteen~Fifteen
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~flipgame~Flip
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~guess~Guess
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~inertia~Inertia
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~lightup~Light_Up
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~loopy~Loopy
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~map~Map
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~mines~Mines
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~netgame~Net
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~netslide~Netslide
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~pattern~Pattern
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~pegs~Pegs
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~rect~Rectangles
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~samegame~Same_Game
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~sixteen~Sixteen
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~slant~Slant
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~solo~Solo
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~tents~Tents
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~twiddle~Twiddle
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection/~untangle~Untangle
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~atomix~Atomix
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~enigma~Enigma
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~gataxx~Ataxx
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~glines~gLines
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~gnect~gNect
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~gnobots2~GnoBots2
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~gnomine~GnoMine
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~gnotravex~Tetravex
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~gnotski~Klotski
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~gnudoku~GNUDoku
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~gtali~Tali
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~iagno~Iagno
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~katomic~KAtomic
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~kblackbox~KBlackBox
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~kjumpingcube~KJumpingCube
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~klickety~Klickety
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~klines~Kolor_Lines
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~kmines~KMines
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~knetwalk~KNetWalk
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~ksame~SameGame
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~ksokoban~KSokoban
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~kwin4~KWin4
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~lmarbles~LMarbles
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~pathological~Pathological
+%%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/~same-gnome~Same_Game
+%%DATADIR%%/fvwm/Applications/20~Games/Role_Playing/20~el~Eternal_Lands
+%%DATADIR%%/fvwm/Applications/20~Games/Role_Playing/~adom~ADOM
+%%DATADIR%%/fvwm/Applications/20~Games/Role_Playing/~diablo2~Diablo_II
+%%DATADIR%%/fvwm/Applications/20~Games/Role_Playing/~falconseye~Falcon's_Eye
+%%DATADIR%%/fvwm/Applications/20~Games/Role_Playing/~fallout2~Fallout_2
+%%DATADIR%%/fvwm/Applications/20~Games/Role_Playing/~fallout~Fallout
+%%DATADIR%%/fvwm/Applications/20~Games/Role_Playing/~gnome-mud~Gnome_MUD
+%%DATADIR%%/fvwm/Applications/20~Games/Role_Playing/~nwn~Neverwinter_Nights
 %%DATADIR%%/fvwm/Applications/20~Games/Shooters/~Maelstrom~Maelstrom
 %%DATADIR%%/fvwm/Applications/20~Games/Shooters/~abuse~Abuse
 %%DATADIR%%/fvwm/Applications/20~Games/Shooters/~barrage~Barrage
@@ -134,202 +176,532 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/Applications/20~Games/Shooters/~xevil~XEvil
 %%DATADIR%%/fvwm/Applications/20~Games/Shooters/~xpilot~XPilot
 %%DATADIR%%/fvwm/Applications/20~Games/Shooters/~xrick~Rick_Dangerous
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/20~netpanzer~NetPanzer
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/20~openttd~OpenTTD
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/20~starcraft~StarCraft
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/20~wesnoth~The_Battle_For_Wesnoth
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~atanks~Atanks
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~atlantik~Atlantik
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~castle-combat~Castle_Combat
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~civclient~FreeCiv_Client
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~civserver~FreeCiv_Server
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~kbattleship~KBattleship
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~konquest~Konquest
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~lgeneral~LGeneral
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~lincity-ng~LinCity
-%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~scorched3d~Scorched3D
-%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/20~crack-attack~Crack_Attack!
-%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~bastet~Bastard_Tetris
-%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~gnometris~GnomeTris
-%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~kfouleggs~KFoulEggs
-%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~ksirtet~KSirtet
-%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~ksmiletris~KSmileTris
-%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~ltris~LTris
-%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~netris~Netris
-%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~netris~Netris_Server
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/20~netpanzer~NetPanzer
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/20~openttd~OpenTTD
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/20~starcraft~StarCraft
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/20~wesnoth~The_Battle_For_Wesnoth
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/~atanks~Atanks
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/~atlantik~Atlantik
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/~castle-combat~Castle_Combat
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/~civclient~FreeCiv_Client
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/~civserver~FreeCiv_Server
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/~kbattleship~KBattleship
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/~konquest~Konquest
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/~lgeneral~LGeneral
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/~lincity-ng~LinCity
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/~scorched3d~Scorched3D
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games/~xlincity~xlincity
+%%DATADIR%%/fvwm/Applications/20~Games/~blinken~blinKen
+%%DATADIR%%/fvwm/Applications/Development/Debuggers/~ddd~DDD
+%%DATADIR%%/fvwm/Applications/Development/Debuggers/~insight~Insight
+%%DATADIR%%/fvwm/Applications/Development/Debuggers/~kdbg~KDbg
+%%DATADIR%%/fvwm/Applications/Development/Documentation/~assistant~Qt_help
+%%DATADIR%%/fvwm/Applications/Development/Documentation/~devhelp~Gnome_Dev_Help
+%%DATADIR%%/fvwm/Applications/Development/Documentation/~kdevassistant~KDevelop_Assistant
+%%DATADIR%%/fvwm/Applications/Development/Documentation/~qtdemo~qtdemo
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Antennas/~antennavis~AntennAvis
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Antennas/~xnec2c~xnec2c
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Chipmunksystem/~Until~Until
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Chipmunksystem/~analog~Analog
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Chipmunksystem/~diglog~Diglog
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Chipmunksystem/~loged~Loged
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Geda/10~geda~Geda
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Geda/10~nghelp~Help_ngspice
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Geda/~gattrib~Gattrib
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Geda/~gerbv~Gerbv
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Geda/~gschem~Gschem
+%%DATADIR%%/fvwm/Applications/Development/Electronics/Geda/~gwave~Gwave
+%%DATADIR%%/fvwm/Applications/Development/Electronics/~gspeakers~gspeakers
+%%DATADIR%%/fvwm/Applications/Development/Electronics/~kicad~Kicad
+%%DATADIR%%/fvwm/Applications/Development/Electronics/~klogic~klogic
+%%DATADIR%%/fvwm/Applications/Development/Electronics/~oregano~Oregano
+%%DATADIR%%/fvwm/Applications/Development/Electronics/~pcb~pcb
+%%DATADIR%%/fvwm/Applications/Development/Electronics/~qucs~qucs
+%%DATADIR%%/fvwm/Applications/Development/Electronics/~xcircuit~xcircuit
 %%DATADIR%%/fvwm/Applications/Development/IDE/20~anjuta~Anjuta
 %%DATADIR%%/fvwm/Applications/Development/IDE/20~eclipse~Eclipse
 %%DATADIR%%/fvwm/Applications/Development/IDE/20~kdevelop3~kDevelop
 %%DATADIR%%/fvwm/Applications/Development/IDE/20~kdevelop~kDevelop
 %%DATADIR%%/fvwm/Applications/Development/IDE/20~monodevelop~MonoDevelop
-%%DATADIR%%/fvwm/Applications/Development/IDE/~bluefish~Bluefish
 %%DATADIR%%/fvwm/Applications/Development/IDE/~conglomerate~Conglomerate
+%%DATADIR%%/fvwm/Applications/Development/IDE/~designer~Qt_designer
 %%DATADIR%%/fvwm/Applications/Development/IDE/~eric~Eric
-%%DATADIR%%/fvwm/Applications/Development/IDE/~glade-2~Glade
+%%DATADIR%%/fvwm/Applications/Development/IDE/~glade-2~Glade-2
+%%DATADIR%%/fvwm/Applications/Development/IDE/~glade~Glade
 %%DATADIR%%/fvwm/Applications/Development/IDE/~idle~IDLE
-%%DATADIR%%/fvwm/Applications/Development/IDE/~nvu~Nvu
+%%DATADIR%%/fvwm/Applications/Development/IDE/~kdevdesigner~KDevelop_Designer
+%%DATADIR%%/fvwm/Applications/Development/IDE/~linguist~Qt_linguist
 %%DATADIR%%/fvwm/Applications/Development/IDE/~pida~Pida
+%%DATADIR%%/fvwm/Applications/Development/IDE/~qtconfig~Qt_config
 %%DATADIR%%/fvwm/Applications/Development/IDE/~quanta~Quanta+
-%%DATADIR%%/fvwm/Applications/Development/IDE/~rapidsvn~RapidSVN
-%%DATADIR%%/fvwm/Applications/Development/Text_editors/18~gvim~gViM
-%%DATADIR%%/fvwm/Applications/Development/Text_editors/18~kvim~kViM
-%%DATADIR%%/fvwm/Applications/Development/Text_editors/20~cream~ViM_Cream
-%%DATADIR%%/fvwm/Applications/Development/Text_editors/20~emacs~Emacs
-%%DATADIR%%/fvwm/Applications/Development/Text_editors/20~xemacs~XEmacs
-%%DATADIR%%/fvwm/Applications/Development/Text_editors/~gedit~gEdit
-%%DATADIR%%/fvwm/Applications/Development/Text_editors/~kate~Kate
-%%DATADIR%%/fvwm/Applications/Development/Text_editors/~kedit~kEdit
-%%DATADIR%%/fvwm/Applications/Development/Text_editors/~mousepad~Mousepad
-%%DATADIR%%/fvwm/Applications/Development/Text_editors/~scite~Scite
-%%DATADIR%%/fvwm/Applications/Development/Text_editors/~teaed~Tea_for_Linux
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~firefox~Firefox
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~flock~Flock
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~konqueror~Konqueror
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~mozilla-firefox~Firefox
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~mozilla-suite~Mozilla_Suite
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~opera~Opera
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~dillo~Dillo
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~elinks~ELinks
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~epiphany~Epiphany
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~galeon~Galeon
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~links2~Links2
-%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~lynx~Lynx
-%%DATADIR%%/fvwm/Applications/Internet/13~Email/16~evolution~Evolution
-%%DATADIR%%/fvwm/Applications/Internet/13~Email/16~kmail~kMail
-%%DATADIR%%/fvwm/Applications/Internet/13~Email/18~mozilla-thunderbird~Thunderbird
-%%DATADIR%%/fvwm/Applications/Internet/13~Email/18~thunderbird~Thunderbird
-%%DATADIR%%/fvwm/Applications/Internet/13~Email/19~fetchmail~Fetch_new_mail
-%%DATADIR%%/fvwm/Applications/Internet/13~Email/20~mutt~Mutt
-%%DATADIR%%/fvwm/Applications/Internet/13~Email/20~pine~Pine
-%%DATADIR%%/fvwm/Applications/Internet/13~Email/~balsa~Balsa
-%%DATADIR%%/fvwm/Applications/Internet/13~Email/~sylpheed-claws~Sylpheed-Claws
-%%DATADIR%%/fvwm/Applications/Internet/13~Email/~sylpheed-gtk2~Sylpheed-GTK2
-%%DATADIR%%/fvwm/Applications/Internet/13~Email/~sylpheed~Sylpheed
-%%DATADIR%%/fvwm/Applications/Internet/7~RSS_readers/20~snownews~SnowNews
-%%DATADIR%%/fvwm/Applications/Internet/7~RSS_readers/~akregator~Akregator
-%%DATADIR%%/fvwm/Applications/Internet/7~RSS_readers/~liferea~Liferea
-%%DATADIR%%/fvwm/Applications/Internet/7~RSS_readers/~straw~Straw
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~amule~aMule
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~azureus~Azureus
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~btdownloadgui.py~BitTorrent_GUI
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~btdownloadgui~BitTorrent_GUI
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~d4x~Downloader_for_X
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~gftp~gFTP
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~giFTcurs~giFTcurs
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~giFToxic~giFToxic
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~gtk-gnutella~GTK_Gnutella
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~kmldonkey~kMLDonkey
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~ktorrent~kTorrent
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~mlgui~MLDonkey
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~qtorrent~QTorrent
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~valknut~Valknut
-%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~xmule~xMule
-%%DATADIR%%/fvwm/Applications/Internet/IM/10~gaim~Gaim
-%%DATADIR%%/fvwm/Applications/Internet/IM/10~gg2~GNU_Gadu
-%%DATADIR%%/fvwm/Applications/Internet/IM/10~kadu~Kadu
-%%DATADIR%%/fvwm/Applications/Internet/IM/10~kopete~Kopete
-%%DATADIR%%/fvwm/Applications/Internet/IM/10~tleenx2~TleenX2
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~gabber~Gabber
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~gajim~Gajim
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~gossip~Gossip
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~kf~kf
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~psi~Psi
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~sim~SIM
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~tkabber~Tkabber
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/10~TeamSpeak~TeamSpeak
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/10~teamspeak~TeamSpeak
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/~gizmo~Gizmo
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/~ihu~I_Hear_U
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/~kphone~kPhone
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/~linphone~LinPhone
-%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/~skype~Skype
-%%DATADIR%%/fvwm/Applications/Internet/IM/~centericq~CenterICQ
-%%DATADIR%%/fvwm/Applications/Internet/IM/~ekg2~EKG2
-%%DATADIR%%/fvwm/Applications/Internet/IM/~ekg~EKG
-%%DATADIR%%/fvwm/Applications/Internet/IM/~licq~lICQ
-%%DATADIR%%/fvwm/Applications/Internet/IM/~linpopup~LinPopup
-%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~BitchX~BitchX
-%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~epic4~Epic4
-%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~irssi~Irssi
-%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~kvirc~kvIRC
-%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~weechat-curses~WeeChat
-%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~xchat~X_Chat
-%%DATADIR%%/fvwm/Applications/Internet/Others/~kppp~kPPP
-%%DATADIR%%/fvwm/Applications/Internet/Usenet/10~slrn-pl~slrn-pl
-%%DATADIR%%/fvwm/Applications/Internet/Usenet/10~slrn~slrn
-%%DATADIR%%/fvwm/Applications/Internet/Usenet/~knode~kNode
-%%DATADIR%%/fvwm/Applications/Internet/Usenet/~pan~Pan
-%%DATADIR%%/fvwm/Applications/Multimedia/10~Mixers/~alsamixer~ALSA_Mixer
-%%DATADIR%%/fvwm/Applications/Multimedia/10~Mixers/~aumix~Aumix
-%%DATADIR%%/fvwm/Applications/Multimedia/10~Mixers/~gnome-alsamixer~GNOME_Alsamixer
-%%DATADIR%%/fvwm/Applications/Multimedia/10~Mixers/~kmix~kMix
-%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/20~blender~Blender
-%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/20~gimp~GIMP
-%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/20~inkscape~Inkscape
-%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/20~pixel32~Pixel32
-%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~dia~Dia
-%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~qcad~qCAD
-%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~sodipodi~Sodipodi
-%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~tuxpaint~TuxPaint
-%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~wings3d~Wings_3D
-%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~xfig~XFig
-%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~xsane~XSane
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/15~glurp~Glurp
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/15~gmpc~gMPC
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/15~pygmy~Pygmy
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/15~xmms~XMMS
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/15~zinf~Zinf
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/20~amarok~amaroK
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/20~beep-media-player~Beep_Media_Player
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/20~bmp~Beep_Media_Player
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/20~quodlibet~Quod_Libet
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/~cmus~C_Music_Player
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/~goobox~Goobox
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/~rhythmbox~Rhythmbox
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~ardour~Ardour
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~audacity~Audacity
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~easytag~EasyTag
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~exfalso~Ex_Falso
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~grip~Grip
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~hydrogen~Hydrogen
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~lmms~LMMS
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~qjackctl~QJackCtl
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~sound-juicer~Sound_Juicer
-%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~sweep~Sweep
-%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/20~f-spot~F-Spot
-%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~digikam~DigiKam
-%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~gcolor2~gColor2
-%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~gpaint~gPaint
-%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~gqview~GQview
-%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~gthumb~gThumb
-%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~gwenview~Gwenview
-%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~kpaint~kPaint
-%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~kview~kView
-%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~qcomicbook~QComicBook
-%%DATADIR%%/fvwm/Applications/Multimedia/Tools/~ipodder~iPodder
-%%DATADIR%%/fvwm/Applications/Multimedia/Tools/~streamtuner~StreamTuner
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_players/~gmplayer~MPlayer
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_players/~gxine~gXINE
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_players/~realplayer~RealPlayer
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_players/~totem~Totem
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_players/~xine~XINE
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/20~monotheka~Monotheka
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/20~nvtv~nVidia_TV-Out
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/20~tvtime~TVTime
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/20~xawtv~xawTV
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/20~zapping~Zapping
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/~acidrip~AcidRip
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/~avidemux~AVIdemux
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/~cinelerra~Cinelerra
-%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/~gcfilms~GCfilms
-%%DATADIR%%/fvwm/Applications/Office/DTP/20~scribus~Scribus
-%%DATADIR%%/fvwm/Applications/Office/DTP/~kile~Kile
-%%DATADIR%%/fvwm/Applications/Office/DTP/~lyx~LyX
-%%DATADIR%%/fvwm/Applications/Office/GNOME_Office/~abiword~Abiword
-%%DATADIR%%/fvwm/Applications/Office/GNOME_Office/~gnumeric~Gnumeric
+%%DATADIR%%/fvwm/Applications/Development/IDE/~vtcl~Visual_Tcl
+%%DATADIR%%/fvwm/Applications/Development/Java/~bsh.Console~BeanShell_Prompt
+%%DATADIR%%/fvwm/Applications/Development/Java/~kjscmd~kjscmd
+%%DATADIR%%/fvwm/Applications/Development/Revision_Control/~cervisia~Cervisia
+%%DATADIR%%/fvwm/Applications/Development/Revision_Control/~lincvs~lincvs
+%%DATADIR%%/fvwm/Applications/Development/Revision_Control/~rapidsvn~RapidSVN
+%%DATADIR%%/fvwm/Applications/Development/Revision_Control/~tkcvs~tkcvs
+%%DATADIR%%/fvwm/Applications/Development/Web_Development/~bluefish~Bluefish
+%%DATADIR%%/fvwm/Applications/Development/Web_Development/~klinkstatus~klinkstatus
+%%DATADIR%%/fvwm/Applications/Development/Web_Development/~nvu~Nvu
+%%DATADIR%%/fvwm/Applications/Development/~kdiff3~kdiff3
+%%DATADIR%%/fvwm/Applications/Graphics/2D_Graphics/20~gimp~GIMP
+%%DATADIR%%/fvwm/Applications/Graphics/2D_Graphics/20~pixel32~Pixel32
+%%DATADIR%%/fvwm/Applications/Graphics/2D_Graphics/~gnome-iconedit~gnome_iconedit
+%%DATADIR%%/fvwm/Applications/Graphics/2D_Graphics/~kolourpaint~kolourpaint
+%%DATADIR%%/fvwm/Applications/Graphics/2D_Graphics/~tuxpaint~TuxPaint
+%%DATADIR%%/fvwm/Applications/Graphics/2D_Graphics/~xpaint~xpaint
+%%DATADIR%%/fvwm/Applications/Graphics/3D_Graphics/20~blender~Blender
+%%DATADIR%%/fvwm/Applications/Graphics/3D_Graphics/~wings3d~Wings_3D
+%%DATADIR%%/fvwm/Applications/Graphics/3D_Graphics/~wings~wings
+%%DATADIR%%/fvwm/Applications/Graphics/Engineering/~dia~Dia
+%%DATADIR%%/fvwm/Applications/Graphics/Photography/20~f-spot~F-Spot
+%%DATADIR%%/fvwm/Applications/Graphics/Photography/~digikam~DigiKam
+%%DATADIR%%/fvwm/Applications/Graphics/Photography/~gpaint~gPaint
+%%DATADIR%%/fvwm/Applications/Graphics/Photography/~kpaint~kPaint
+%%DATADIR%%/fvwm/Applications/Graphics/Scanning/~xsane~XSane
+%%DATADIR%%/fvwm/Applications/Graphics/Vector_Graphics/20~inkscape~Inkscape
+%%DATADIR%%/fvwm/Applications/Graphics/Vector_Graphics/~qcad~qCAD
+%%DATADIR%%/fvwm/Applications/Graphics/Vector_Graphics/~sodipodi~Sodipodi
+%%DATADIR%%/fvwm/Applications/Graphics/Vector_Graphics/~xfig~XFig
+%%DATADIR%%/fvwm/Applications/Graphics/Viewers/~eeyes~ee
+%%DATADIR%%/fvwm/Applications/Graphics/Viewers/~gimv~gimageview
+%%DATADIR%%/fvwm/Applications/Graphics/Viewers/~gqview~GQview
+%%DATADIR%%/fvwm/Applications/Graphics/Viewers/~gthumb~gThumb
+%%DATADIR%%/fvwm/Applications/Graphics/Viewers/~gwenview~Gwenview
+%%DATADIR%%/fvwm/Applications/Graphics/Viewers/~kuickshow~kuickshow
+%%DATADIR%%/fvwm/Applications/Graphics/Viewers/~kview~kView
+%%DATADIR%%/fvwm/Applications/Graphics/Viewers/~qcomicbook~QComicBook
+%%DATADIR%%/fvwm/Applications/Graphics/Viewers/~showfoto~showfoto
+%%DATADIR%%/fvwm/Applications/Graphics/Viewers/~showimg~showimg
+%%DATADIR%%/fvwm/Applications/Graphics/Viewers/~xv~xv
+%%DATADIR%%/fvwm/Applications/Graphics/~gcolor2~gColor2
+%%DATADIR%%/fvwm/Applications/Graphics/~kcolorchooser~KColorChooser
+%%DATADIR%%/fvwm/Applications/Graphics/~kcoloredit~kcoloredit
+%%DATADIR%%/fvwm/Applications/Knowledge/Astronomy/~basket~Basket
+%%DATADIR%%/fvwm/Applications/Knowledge/Astronomy/~celestia~Celestia
+%%DATADIR%%/fvwm/Applications/Knowledge/Astronomy/~kstars~KStars
+%%DATADIR%%/fvwm/Applications/Knowledge/Astronomy/~stellarium~Stellarium
+%%DATADIR%%/fvwm/Applications/Knowledge/Astronomy/~xephem~xephem
+%%DATADIR%%/fvwm/Applications/Knowledge/Languages/~khangman~KHangMan
+%%DATADIR%%/fvwm/Applications/Knowledge/Languages/~klettres~KLettres
+%%DATADIR%%/fvwm/Applications/Knowledge/Math/~fung-calc~fung-calc
+%%DATADIR%%/fvwm/Applications/Knowledge/Math/~kig~Kig
+%%DATADIR%%/fvwm/Applications/Knowledge/Math/~kmplot~kmplot
+%%DATADIR%%/fvwm/Applications/Knowledge/Math/~koctave3~koctave
+%%DATADIR%%/fvwm/Applications/Knowledge/Physics/~kalzium~Kalzium
+%%DATADIR%%/fvwm/Applications/Knowledge/Physics/~lightspeed~lightspeed
+%%DATADIR%%/fvwm/Applications/Knowledge/~freemind~FreeMind
+%%DATADIR%%/fvwm/Applications/Knowledge/~ktouch~kTouch
+%%DATADIR%%/fvwm/Applications/Knowledge/~tomboy~Tomboy
+%%DATADIR%%/fvwm/Applications/Knowledge/~zim~Zim
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Audio-Video_Editing/~bcast~Broadcast_2000
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Audio-Video_Editing/~cinelerra~Cinelerra
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Databases/20~monotheka~Monotheka
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Databases/~gcfilms~GCfilms
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/10~gnomebaker~GnomeBaker
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/10~graveman~Graveman
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/10~k3b~K3B
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/15~bonfire~Bonfire
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/15~brasero~Brasero
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/~acidrip~AcidRip
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/~dvdrip~DVDRip
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/~gcdmaster~Gnome_CD Master
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/~gcombust~gcombust
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/~grip~Grip
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/~jack~Jack_The_Ripper
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/~kaudiocreator~kaudiocreator
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/~ripperX~ripperX
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/~serpentine~Serpentine
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/~sound-juicer~Sound_Juicer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning/~xcdroast~XCDRoast
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/~cinepaint~cinepaint
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/10~glmix~glmix
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/Other/~alsamixerguis~alsamixerguis
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/Other/~alsamixergui~alsamixergui
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/Other/~aumix~Aumix
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/Other/~gamix~gAmix
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/Other/~gnome-volume-control~Gnome-volume-control
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/Other/~kamix~kamix
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/Other/~psmix2~psmix
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/~alsamixer~ALSA_Mixer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/~aumix~Aumix
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/~gnome-alsamixer~GNOME_Alsamixer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/~jackeq~jackeq
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/~jackminimix~Jackminimix
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/~jackmix~jackmix
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/~kmix~kMix
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Audio-Video_Editing/Other/~audacity~Audacity
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Audio-Video_Editing/Other/~glame~gLame
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Audio-Video_Editing/Other/~gnusound~gnusound
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Audio-Video_Editing/Other/~rezound~reZound
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Audio-Video_Editing/Other/~sweep~Sweep
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Audio-Video_Editing/~mhwaveedit~mhwaveedit
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Audio-Video_Editing/~snd-ls~snd-ls
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Audio-Video_Editing/~snd~snd
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Audio-Video_Editing/~traverso~traverso
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Composition/~jmax~jmax
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Composition/~lmms~LMMS
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Composition/~pd~pd
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Composition/~protux~protux
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Composition/~spiralsynthmodular~Spiralmodular
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Composition/~wired~wired
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Dj/~djplay~Djplay
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Dj/~fweelin~Freewheeling
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/10~lash_panel~Lash_panel
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/10~lash_save_button~Lash_save_button
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/10~lashd~Lash_deamon
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/15~glashctl~GLashCtl
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/10~humanizer~Alsa_MIDI_humanizer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/10~qmidiroute~qmidiroute
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/20~timidity~Timidity_Server_Start
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/20~timidity~Timidity_Server_Stop
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/~alsa-patch-bay~Alsa_patch_bay
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/~kmidimon~kmidimon
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/~kontroll~kontroll
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/~mcontrol~mcontrol
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/~qmidiarp~qmidiarp
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/~sfc~Sound_Font_Combi
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/~simplesysexxer~Simple_Sysex_xer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/~smurf~smurf
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI/~swami~swami
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/Other/~artscontrol~artscontrol
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/Other/~aseqview~aseqview
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/Other/~kaconnect~kaconnect
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/Other/~kasound~kasound
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/Other/~qlo10k1~qlo10k1
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/~ghostess~ghostess_Oscilloscope
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/~jaaa~jaaa
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/~jack-dssi-host~Oscilloscope
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/~jack-patch-bay~jack_patch_bay
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/~patchage~patchage
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/~qjackconnect~qjackconnect
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/~qjackctl~QJackCtl
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/~qloud~qloud
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/MIDI/~jsynthlib~jsynthlib
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/MIDI/~kmid~kmid
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/MIDI/~timidity~Timidity
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/MIDI/~vkeybd~Virtual_keyboard
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Mp3/~easytag~EasyTag
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Mp3/~exfalso~Ex_Falso
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Mp3/~kid3~kid3
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Mp3/~madman~madman
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Mp3/~qmbtagger~qmbtagger
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Notation/10~denemo~Denemo
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Notation/10~lilycomp~lilycomp
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Notation/10~noteedit~noteedit
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Notation/20~solfege~Solfege
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Notation/~ScoreReadingTrainer~Score_Reading_Trainer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Notation/~kguitar~Kguitar
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Notation/~tkabc~tclabc
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Notation/~tuxguitar~Tux_Guitar
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/15~glurp~Glurp
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/15~gmpc~gMPC
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/15~pygmy~Pygmy
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/15~xmms~XMMS
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/15~zinf~Zinf
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/20~amarok~amaroK
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/20~beep-media-player~Beep_Media_Player
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/20~bmp~Beep_Media_Player
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/20~quodlibet~Quod_Libet
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/20~sonata~Sonata
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/25~alsaplayer~Alsaplayer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/25~alsaplayer~Alsaplayer_jack
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~albumart-qt~albumart
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~aqualung~aqualung_jack
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~audacious~Audacious
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~cmus~C_Music_Player
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~cplay~cPlay
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~ddj~Digitaldj
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~gnome-cd~gnome-cd-player
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~goobox~Goobox
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~gqmpeg~gqmpeg
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~kscd~kscd
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~listen~listen
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~lplayer~Longplayer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~mocp~Music_On_Console
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~ncmpc~ncmpc
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~prokyon3~prokyon_3
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~pympd~PyMPD
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~rhythmbox~Rhythmbox
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~sonata~Sonata
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~squelch~squelch
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~workman~workman
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players/~yammi~yammi
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Radios/~gnomoradio~gnomoradio
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Radios/~gradio~gradio
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Radios/~ipodder~iPodder
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Radios/~streamtuner~StreamTuner
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording/Other/~audacity~audacity
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording/Other/~gnome-sound-recorder~gnome-sound-recorder
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording/Other/~gramofile~gramofile
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording/Other/~krecord~Krecord
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording/Other/~krec~krec
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording/~ardour~Ardour
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording/~jack_capture~Jack_capture
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording/~jamin~jamin
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording/~timemachine~timemachine
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording/~tkeca.tcl~Tkeca
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Rhythm/Other/~gmorgan~gmorgan
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Rhythm/Other/~gneutronica~gneutronica
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Rhythm/Other/~gtick~gtick
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Rhythm/Other/~psindustrializer~psindustrializer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Rhythm/Other/~trommler~trommler
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Rhythm/~ldrum~ldrum
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Rhythm/~tk707~Tk707
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Rythm/~hydrogen~Hydrogen
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Samplers/10~slconsole~SooperLooper_console
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Samplers/10~slgui~SooperLooper_gui
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Samplers/10~sooperlooper~sooperlooper_server
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Samplers/Other/~simsam~simsam
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Samplers/~chionic~chionic
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Samplers/~linuxsampler~linuxsampler
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Samplers/~qsampler~qsampler
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Samplers/~specimen~specimen
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Samplers/~terminatorX~terminatorX
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/10~museseq~MuseSeq
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/10~qtractor~qtractor
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/10~rosegarden~rosegarden
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/10~seq24~Seq24
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/Other/~freebirth~freebirth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/Other/~freecycle~freecycle
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/Other/~ggseq~Gungirl_Sequencer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/~dino~dino
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/~frinika~frinika
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/~jackbeat~jackbeat
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/~kluppe~kluppe
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/~lmms~lmms
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/Other/~gnuitar~gnuitar
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~ceres~Ceres
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~creox~creox
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~ecamegapedal~ecamegapedal
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~freqtweak~Freqtweak
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~ghostess~ghostess-Convolve_1ch
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~ghostess~ghostess-Convolve_2ch
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~ghostess~ghostess-Convolve_4ch
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~ghostess~ghostess-Convolve_6ch
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~jack-dssi-host~Convolve_1ch
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~jack-dssi-host~Convolve_2ch
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~jack-dssi-host~Convolve_4ch
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~jack-dssi-host~Convolve_6ch
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~jack-rack~jack-rack
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~louderbox~louderbox
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~reverbed~Tap-reverbed
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/~tapiir~Tapiir
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Processing/~gwc~gwc
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Processing/~mammut~mammut
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Processing/~sonic-visualiser~sonic-visualiser
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Processing/~soundconverter~Sound_converter
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Processing/~wavbreaker~wavbreaker
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Processing/~wavesurfer~wavesurfer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Streaming/~darksnow~Darksnow
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Streaming/~gmpc~gmpc
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Streaming/~gstreamer-properties~gstreamer-properties
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Streaming/~gstreamripperx~gstreamripper
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Streaming/~idjc~idjc
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Streaming/~kmp~kmp
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Streaming/~kstreamripper~kstreamripper
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Streaming/~muse~muse
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~Hammond module
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~Hammond_B3
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~arp_2600
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~arp_axxe
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~arp_odyssey
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~fender_rhodes_bass_piano
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~fender_rhodes_stage_73
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~juno-6
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~mini moog
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~moog_memory
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~moog_voyager
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~oberheim_OB-X
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~oberheim_OB-Xa
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~prophet-10
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~prophet-5
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~prophet-5_chorus
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~vox_continental
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol/~startBristol~yamaha_DX-7
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Other/~artsbuilder~artsbuilder
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Other/~galan~gAlan
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~RTSynth-jack~RTSynth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~aeolus~aeolus
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~amSynth~amSynth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~ams~AlsaModularSynth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~beast~BEAST
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~fst~CheezeMachine_demo
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~ghostess~ghostess_Hexter_DX7
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~ghostess~ghostess_Sineshaper
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~ghostess~ghostess_TB303
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~ghostess~ghostess_W-Synth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~ghostess~ghostess_WhySynth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~ghostess~ghostess_XSynth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~horgand~horgand
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~jack-dssi-host~Hexter_DX7
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~jack-dssi-host~Sineshaper
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~jack-dssi-host~TB303
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~jack-dssi-host~W-Synth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~jack-dssi-host~WhySynth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~jack-dssi-host~XSynth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~lash_synth~Lash_Synth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~mx44~MX44
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~om_gtk~Om_gtk
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~om~Om_server
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~qsynth~qsynth
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/~zynaddsubfx~ZynaddsubFX
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Trackers/~cheesetracker_qt~CheeseTracker
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Trackers/~soundtracker~Soundtracker
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Trackers/~tutka~tutka
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Tuners/Jack/~fmit~fmit
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Tuners/~gtkguitune~gtkguitune
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Tuners/~k3guitune~k3guitune
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Tuners/~lingot~lingot
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Tuners/~pitchtune~pitchtune
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Tuners/~tuneroid~tuneroid
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/Other/~extace~Extace
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/~bitmeter~bitmeter
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/~bitscope~bitscope
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/~meterbridge~Meterbridge_st?r?o
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/~meterbridge~Meterbridge_stéréo
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/~meterbridge~meterbridge_4ch
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/~meterbridge~meterbridge_8ch
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/~meterbridge~meterbridge_Jellyfish
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/~meterbridge~meterbridge_mono
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/~meterbridge~meterbridge_oscillo
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/~meterbridge~meterbridge_ppm
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/~meterbridge~meterbrige_analog
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Audio-Video_Editing/~avidemux~AVIdemux
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Audio-Video_Editing/~kdenlive~kdenlive
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Audio-Video_Editing/~kino~Kino
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Players/~gmplayer~MPlayer
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Players/~gtv~GTV
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Players/~gxine~gXINE
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Players/~kmplayer~kMPlayer
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Players/~realplayer~RealPlayer
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Players/~realplay~RealPlayer
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Players/~totem~Totem
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Players/~xine~XINE
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/TV/10~alevt~alevt
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/TV/10~xdtv~xdtv
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/TV/20~kdetv~kdetv
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/TV/20~nvtv~nVidia_TV-Out
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/TV/20~tvtime~TVTime
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/TV/20~xawtv~xawTV
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/TV/20~zapping~Zapping
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/TV/~nuvedit~NuppelVideo
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Video_Effects/~effectv~effectv
+%%DATADIR%%/fvwm/Applications/Multimedia/Video/Video_Effects/~freej~freej
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/20~firefox~Firefox
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/20~flock~Flock
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/20~mozilla-firefox~Firefox
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/20~mozilla-suite~Mozilla_Suite
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/20~opera~Opera
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/25~konqueror~Konqueror
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/30~iceape~IceApe
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/30~iceweasel~IceWeasel
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/~dillo~Dillo
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/~elinks~ELinks
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/~epiphany~Epiphany
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/~galeon~Galeon
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/~links2~Links2
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/~lynx~Lynx
+%%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers/~seamonkey~Seamonkey
+%%DATADIR%%/fvwm/Applications/Network/13~Email/16~evolution~Evolution
+%%DATADIR%%/fvwm/Applications/Network/13~Email/16~kmail~kMail
+%%DATADIR%%/fvwm/Applications/Network/13~Email/18~mozilla-thunderbird~Thunderbird
+%%DATADIR%%/fvwm/Applications/Network/13~Email/18~thunderbird~Thunderbird
+%%DATADIR%%/fvwm/Applications/Network/13~Email/19~fetchmail~Fetch_new_mail
+%%DATADIR%%/fvwm/Applications/Network/13~Email/20~icedove~IceDove
+%%DATADIR%%/fvwm/Applications/Network/13~Email/20~mutt~Mutt
+%%DATADIR%%/fvwm/Applications/Network/13~Email/20~pine~Pine
+%%DATADIR%%/fvwm/Applications/Network/13~Email/~balsa~Balsa
+%%DATADIR%%/fvwm/Applications/Network/13~Email/~claws-mail~Claws_Mail
+%%DATADIR%%/fvwm/Applications/Network/13~Email/~sylpheed-claws~Sylpheed-Claws
+%%DATADIR%%/fvwm/Applications/Network/13~Email/~sylpheed-gtk2~Sylpheed-GTK2
+%%DATADIR%%/fvwm/Applications/Network/13~Email/~sylpheed~Sylpheed
+%%DATADIR%%/fvwm/Applications/Network/5~Telephony/10~TeamSpeak~TeamSpeak
+%%DATADIR%%/fvwm/Applications/Network/5~Telephony/~ekiga~Ekiga
+%%DATADIR%%/fvwm/Applications/Network/5~Telephony/~gizmo~Gizmo
+%%DATADIR%%/fvwm/Applications/Network/5~Telephony/~ihu~I_Hear_U
+%%DATADIR%%/fvwm/Applications/Network/5~Telephony/~kphone~kPhone
+%%DATADIR%%/fvwm/Applications/Network/5~Telephony/~linphone~LinPhone
+%%DATADIR%%/fvwm/Applications/Network/5~Telephony/~skype~Skype
+%%DATADIR%%/fvwm/Applications/Network/5~Telephony/~twinkle~Twinkle
+%%DATADIR%%/fvwm/Applications/Network/7~News/10~slrn-pl~slrn-pl
+%%DATADIR%%/fvwm/Applications/Network/7~News/10~slrn~slrn
+%%DATADIR%%/fvwm/Applications/Network/7~News/20~snownews~SnowNews
+%%DATADIR%%/fvwm/Applications/Network/7~News/~akregator~Akregator
+%%DATADIR%%/fvwm/Applications/Network/7~News/~bnr2~bnr2
+%%DATADIR%%/fvwm/Applications/Network/7~News/~knode~kNode
+%%DATADIR%%/fvwm/Applications/Network/7~News/~liferea~Liferea
+%%DATADIR%%/fvwm/Applications/Network/7~News/~pan~Pan
+%%DATADIR%%/fvwm/Applications/Network/7~News/~straw~Straw
+%%DATADIR%%/fvwm/Applications/Network/Dial-up/~kppp~kPPP
+%%DATADIR%%/fvwm/Applications/Network/File_Transfer/~d4x~Downloader_for_X
+%%DATADIR%%/fvwm/Applications/Network/File_Transfer/~gftp~gFTP
+%%DATADIR%%/fvwm/Applications/Network/File_Transfer/~grsync~Grsync
+%%DATADIR%%/fvwm/Applications/Network/File_Transfer/~gwget2~Download_Manager
+%%DATADIR%%/fvwm/Applications/Network/IRC_Clients/~BitchX~BitchX
+%%DATADIR%%/fvwm/Applications/Network/IRC_Clients/~epic4~Epic4
+%%DATADIR%%/fvwm/Applications/Network/IRC_Clients/~irssi~Irssi
+%%DATADIR%%/fvwm/Applications/Network/IRC_Clients/~kvirc~kvIRC
+%%DATADIR%%/fvwm/Applications/Network/IRC_Clients/~weechat-curses~WeeChat
+%%DATADIR%%/fvwm/Applications/Network/IRC_Clients/~xchat-2~X_Chat
+%%DATADIR%%/fvwm/Applications/Network/IRC_Clients/~xchat~X_Chat
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/10~gaim~Gaim
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/10~gg2~GNU_Gadu
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/10~kadu~Kadu
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/10~kopete~Kopete
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/10~tleenx2~TleenX2
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/20~Jabber/~gabber~Gabber
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/20~Jabber/~gajim~Gajim
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/20~Jabber/~gossip~Gossip
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/20~Jabber/~kf~kf
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/20~Jabber/~mcabber~MCabber
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/20~Jabber/~psi~Psi
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/20~Jabber/~sim~SIM
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/20~Jabber/~tkabber~Tkabber
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/~amsn~AMSN
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/~centericq~CenterICQ
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/~ekg2~EKG2
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/~ekg~EKG
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/~licq~lICQ
+%%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/~linpopup~LinPopup
+%%DATADIR%%/fvwm/Applications/Network/P2P/~amule~aMule
+%%DATADIR%%/fvwm/Applications/Network/P2P/~apollon~Apollon
+%%DATADIR%%/fvwm/Applications/Network/P2P/~azureus~Azureus
+%%DATADIR%%/fvwm/Applications/Network/P2P/~btdownloadgui.py~BitTorrent_GUI
+%%DATADIR%%/fvwm/Applications/Network/P2P/~btdownloadgui~BitTorrent_GUI
+%%DATADIR%%/fvwm/Applications/Network/P2P/~deluge-torrent~Deluge_Torrent
+%%DATADIR%%/fvwm/Applications/Network/P2P/~deluge~Deluge_Torrent
+%%DATADIR%%/fvwm/Applications/Network/P2P/~giFTcurs~giFTcurs
+%%DATADIR%%/fvwm/Applications/Network/P2P/~giFToxic~giFToxic
+%%DATADIR%%/fvwm/Applications/Network/P2P/~giftui~giFTui
+%%DATADIR%%/fvwm/Applications/Network/P2P/~gtk-gnutella~GTK_Gnutella
+%%DATADIR%%/fvwm/Applications/Network/P2P/~kmldonkey~kMLDonkey
+%%DATADIR%%/fvwm/Applications/Network/P2P/~ktorrent~kTorrent
+%%DATADIR%%/fvwm/Applications/Network/P2P/~mlgui~MLDonkey
+%%DATADIR%%/fvwm/Applications/Network/P2P/~qtorrent~QTorrent
+%%DATADIR%%/fvwm/Applications/Network/P2P/~valknut~Valknut
+%%DATADIR%%/fvwm/Applications/Network/P2P/~xmule~xMule
+%%DATADIR%%/fvwm/Applications/Network/Remote_Access/~knetattach~KNetAttach
+%%DATADIR%%/fvwm/Applications/Network/Webcam/~SDLcam~SDLcam
+%%DATADIR%%/fvwm/Applications/Network/Webcam/~camorama~camorama
+%%DATADIR%%/fvwm/Applications/Network/Webcam/~gqcam~gqcam
+%%DATADIR%%/fvwm/Applications/Office/Calendars/~korganizer~kOrganizer
+%%DATADIR%%/fvwm/Applications/Office/Contact_Management/~balsa-ab~Balsa_Address_Book
+%%DATADIR%%/fvwm/Applications/Office/Contact_Management/~dlume~Dlume
+%%DATADIR%%/fvwm/Applications/Office/Contact_Management/~kaddressbook~kAddressBook
+%%DATADIR%%/fvwm/Applications/Office/Contact_Management/~kontact~Kontact
+%%DATADIR%%/fvwm/Applications/Office/Contact_Management/~rubrica~Rubrica
+%%DATADIR%%/fvwm/Applications/Office/Contact_Management/~wyrd~Wyrd
+%%DATADIR%%/fvwm/Applications/Office/Dictionaries/10~gaiksaurus~Aiksaurus
+%%DATADIR%%/fvwm/Applications/Office/Dictionaries/~stardict~StarDict
+%%DATADIR%%/fvwm/Applications/Office/Dictionaries/~wnb~Worldnet
+%%DATADIR%%/fvwm/Applications/Office/Dictionaries/~ydpdict~YDP_Dictionary
+%%DATADIR%%/fvwm/Applications/Office/Finance/~qtstalker~QTStalker
 %%DATADIR%%/fvwm/Applications/Office/KOffice/10~kword~kWord
 %%DATADIR%%/fvwm/Applications/Office/KOffice/~karbon~Karbon
 %%DATADIR%%/fvwm/Applications/Office/KOffice/~kchart~kChart
+%%DATADIR%%/fvwm/Applications/Office/KOffice/~kexi~kexi
 %%DATADIR%%/fvwm/Applications/Office/KOffice/~kformula~kFormula
 %%DATADIR%%/fvwm/Applications/Office/KOffice/~kivio~Kivio
 %%DATADIR%%/fvwm/Applications/Office/KOffice/~koshell~kOffice
@@ -347,69 +719,91 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oodraw~OpenOffice.org_Draw
 %%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~ooffice2~OpenOffice.org_Suite
 %%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~ooffice~OpenOffice.org_Suite
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oofromtemplate2~OpenOffice.org
 %%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~ooimpress2~OpenOffice.org_Impress
 %%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~ooimpress~OpenOffice.org_Impress
 %%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oomath2~OpenOffice.org_Math
 %%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oomath~OpenOffice.org_Math
 %%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oopadmin2~OpenOffice.org_Printer_Admin
 %%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oopadmin~OpenOffice.org_Printer_Admin
-%%DATADIR%%/fvwm/Applications/Office/PIM/~balsa-ab~Balsa_Address_Book
-%%DATADIR%%/fvwm/Applications/Office/PIM/~dlume~Dlume
-%%DATADIR%%/fvwm/Applications/Office/PIM/~jpilot~J-Pilot
-%%DATADIR%%/fvwm/Applications/Office/PIM/~kaddressbook~kAddressBook
-%%DATADIR%%/fvwm/Applications/Office/PIM/~kontact~Kontact
-%%DATADIR%%/fvwm/Applications/Office/PIM/~korganizer~kOrganizer
-%%DATADIR%%/fvwm/Applications/Office/PIM/~kpilot~kPilot
-%%DATADIR%%/fvwm/Applications/Office/PIM/~rubrica~Rubrica
-%%DATADIR%%/fvwm/Applications/Office/PIM/~wyrd~Wyrd
+%%DATADIR%%/fvwm/Applications/Office/PDA/~jpilot~J-Pilot
+%%DATADIR%%/fvwm/Applications/Office/PDA/~kpilot~kPilot
+%%DATADIR%%/fvwm/Applications/Office/Publishing/20~scribus~Scribus
+%%DATADIR%%/fvwm/Applications/Office/Publishing/~kile~Kile
+%%DATADIR%%/fvwm/Applications/Office/Publishing/~lyx~LyX
+%%DATADIR%%/fvwm/Applications/Office/Spreadsheets/~gnumeric~Gnumeric
 %%DATADIR%%/fvwm/Applications/Office/Viewers/~acroread~AcroRead
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~cbrpager~cbrpager
 %%DATADIR%%/fvwm/Applications/Office/Viewers/~djview~DjVu_Viewer
 %%DATADIR%%/fvwm/Applications/Office/Viewers/~evince~Evince
 %%DATADIR%%/fvwm/Applications/Office/Viewers/~gv~GhostView
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~kchmviewer~Kchmviewer
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~kdvi~kdvi
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~kghostview~kghostview
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~kpdf~kpdf
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~kviewshell~kviewshell
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~xchm~xchm
 %%DATADIR%%/fvwm/Applications/Office/Viewers/~xpdf~xPDF
-%%DATADIR%%/fvwm/Applications/Other/CD_burning/10~gnomebaker~GnomeBaker
-%%DATADIR%%/fvwm/Applications/Other/CD_burning/10~graveman~Graveman
-%%DATADIR%%/fvwm/Applications/Other/CD_burning/10~k3b~K3B
-%%DATADIR%%/fvwm/Applications/Other/CD_burning/~xcdroast~XCDRoast
-%%DATADIR%%/fvwm/Applications/Other/Knowledge/~basket~Basket
-%%DATADIR%%/fvwm/Applications/Other/Knowledge/~celestia~Celestia
-%%DATADIR%%/fvwm/Applications/Other/Knowledge/~freemind~FreeMind
-%%DATADIR%%/fvwm/Applications/Other/Knowledge/~ktouch~kTouch
-%%DATADIR%%/fvwm/Applications/Other/Knowledge/~stardict~StarDict
-%%DATADIR%%/fvwm/Applications/Other/Knowledge/~stellarium~Stellarium
-%%DATADIR%%/fvwm/Applications/Other/Knowledge/~tomboy~Tomboy
-%%DATADIR%%/fvwm/Applications/Other/Knowledge/~ydpdict~YDP_Dictionary
-%%DATADIR%%/fvwm/Applications/Other/Knowledge/~zim~Zim
-%%DATADIR%%/fvwm/Applications/Other/Security/~gpass~gPass
-%%DATADIR%%/fvwm/Applications/Other/Security/~gpa~GNU_Privacy_Assistant
-%%DATADIR%%/fvwm/Applications/Other/Security/~revelation~Revelation
-%%DATADIR%%/fvwm/Applications/Other/Security/~seahorse~Seahorse
-%%DATADIR%%/fvwm/Applications/Other/Security/~zsafe~zSafe
-%%DATADIR%%/fvwm/Applications/System/Configuration/10~drakconf~Mandrivia_Control_Center
-%%DATADIR%%/fvwm/Applications/System/Configuration/10~gnome-control-center~GNOME_Control_Center
-%%DATADIR%%/fvwm/Applications/System/Configuration/10~kcontrol~KDE_Control_Center
-%%DATADIR%%/fvwm/Applications/System/Configuration/~aptitude~Aptitude
-%%DATADIR%%/fvwm/Applications/System/Configuration/~aptsh~AptSh
-%%DATADIR%%/fvwm/Applications/System/Configuration/~gconf-editor~GConf_Editor
-%%DATADIR%%/fvwm/Applications/System/Configuration/~nvidia-settings~nVidia_Settings
-%%DATADIR%%/fvwm/Applications/System/Configuration/~porthole~Porthole
-%%DATADIR%%/fvwm/Applications/System/Configuration/~smart~Smart
-%%DATADIR%%/fvwm/Applications/System/Configuration/~synaptic~Synaptic
-%%DATADIR%%/fvwm/Applications/System/File_managers/10~mc~Midnight_Commander
-%%DATADIR%%/fvwm/Applications/System/File_managers/15~nautilus~Nautilus
-%%DATADIR%%/fvwm/Applications/System/File_managers/15~tuxcmd~TuxCommander
-%%DATADIR%%/fvwm/Applications/System/File_managers/20~rox~ROX-Filer
-%%DATADIR%%/fvwm/Applications/System/File_managers/~filerunner~FileRunner
-%%DATADIR%%/fvwm/Applications/System/File_managers/~gentoo~Gentoo
-%%DATADIR%%/fvwm/Applications/System/File_managers/~konqueror~Konqueror
-%%DATADIR%%/fvwm/Applications/System/File_managers/~krusader~Krusader
-%%DATADIR%%/fvwm/Applications/System/File_managers/~xfe~X_File_Explorer
-%%DATADIR%%/fvwm/Applications/System/File_managers/~xnc~X_Northern_Captain
-%%DATADIR%%/fvwm/Applications/System/Others/~mysqlcc~MySQLCC
-%%DATADIR%%/fvwm/Applications/System/Others/~nessus~Nessus
-%%DATADIR%%/fvwm/Applications/System/Others/~qps~qps
-%%DATADIR%%/fvwm/Applications/System/Others/~qtstalker~QTStalker
-%%DATADIR%%/fvwm/Applications/System/Others/~vmware~VMware
+%%DATADIR%%/fvwm/Applications/Office/Word_Processors/~abiword~Abiword
+%%DATADIR%%/fvwm/Applications/Settings/Desktop_Settings/10~drakconf~Mandrivia_Control_Center
+%%DATADIR%%/fvwm/Applications/Settings/Desktop_Settings/10~gnome-control-center~GNOME_Control_Center
+%%DATADIR%%/fvwm/Applications/Settings/Desktop_Settings/10~kcontrol~KDE_Control_Center
+%%DATADIR%%/fvwm/Applications/Settings/Desktop_Settings/~beryl-settings~Beryl_Settings Manager
+%%DATADIR%%/fvwm/Applications/Settings/Desktop_Settings/~emerald-theme-manager~Emerald-Theme-Manager
+%%DATADIR%%/fvwm/Applications/Settings/Desktop_Settings/~gconf-editor~GConf_Editor
+%%DATADIR%%/fvwm/Applications/Settings/Desktop_Settings/~gksu~Login_Window
+%%DATADIR%%/fvwm/Applications/Settings/Desktop_Settings/~gtk-chtheme~gtk-chtheme
+%%DATADIR%%/fvwm/Applications/Settings/Desktop_Settings/~switch2~Gtk-theme-switch
+%%DATADIR%%/fvwm/Applications/Settings/Desktop_Settings/~xfce4-menueditor~xfce4-menueditor
+%%DATADIR%%/fvwm/Applications/Settings/Hardware_Settings/~gparted~GParted
+%%DATADIR%%/fvwm/Applications/Settings/Hardware_Settings/~k3bsetup~K3bSetup
+%%DATADIR%%/fvwm/Applications/Settings/Hardware_Settings/~nvidia-settings~nVidia_Settings
+%%DATADIR%%/fvwm/Applications/Settings/Hardware_Settings/~qtparted~QTParted
+%%DATADIR%%/fvwm/Applications/Settings/Package_Managers/~aptitude~Aptitude
+%%DATADIR%%/fvwm/Applications/Settings/Package_Managers/~aptsh~AptSh
+%%DATADIR%%/fvwm/Applications/Settings/Package_Managers/~poldek~Poldek
+%%DATADIR%%/fvwm/Applications/Settings/Package_Managers/~porthole~Porthole
+%%DATADIR%%/fvwm/Applications/Settings/Package_Managers/~synaptic~Synaptic
+%%DATADIR%%/fvwm/Applications/Settings/Printing/~cups-config~Cups-Config
+%%DATADIR%%/fvwm/Applications/Settings/Printing/~kcmshell~Printers
+%%DATADIR%%/fvwm/Applications/Settings/~ControlPanel~Java_Control Panel 1.5
+%%DATADIR%%/fvwm/Applications/Settings/~smart~Smart
+%%DATADIR%%/fvwm/Applications/System/Documentation/~khelpcenter~khelpcenter
+%%DATADIR%%/fvwm/Applications/System/Documentation/~tkinfo~tkinfo
+%%DATADIR%%/fvwm/Applications/System/Documentation/~tkman~tkman
+%%DATADIR%%/fvwm/Applications/System/Documentation/~yelp~Gnome_Yelp
+%%DATADIR%%/fvwm/Applications/System/File_Managers/10~mc~Midnight_Commander
+%%DATADIR%%/fvwm/Applications/System/File_Managers/15~nautilus~Nautilus
+%%DATADIR%%/fvwm/Applications/System/File_Managers/15~tuxcmd~TuxCommander
+%%DATADIR%%/fvwm/Applications/System/File_Managers/20~rox~ROX-Filer
+%%DATADIR%%/fvwm/Applications/System/File_Managers/~filerunner~FileRunner
+%%DATADIR%%/fvwm/Applications/System/File_Managers/~gentoo~Gentoo
+%%DATADIR%%/fvwm/Applications/System/File_Managers/~konqueror~Konqueror
+%%DATADIR%%/fvwm/Applications/System/File_Managers/~krusader~Krusader
+%%DATADIR%%/fvwm/Applications/System/File_Managers/~thunar~Thunar
+%%DATADIR%%/fvwm/Applications/System/File_Managers/~xfe~X_File_Explorer
+%%DATADIR%%/fvwm/Applications/System/File_Managers/~xnc~X_Northern_Captain
+%%DATADIR%%/fvwm/Applications/System/Monitors/~gkrellm2~Gkrellm2
+%%DATADIR%%/fvwm/Applications/System/Monitors/~gnome-system-monitor~GNOME_System_Monitor
+%%DATADIR%%/fvwm/Applications/System/Monitors/~gtop~gtop
+%%DATADIR%%/fvwm/Applications/System/Monitors/~hardinfo~HardInfo
+%%DATADIR%%/fvwm/Applications/System/Monitors/~htop~hTop
+%%DATADIR%%/fvwm/Applications/System/Monitors/~kinfocenter~KInfoCenter
+%%DATADIR%%/fvwm/Applications/System/Monitors/~ksysguard~KSysGuard
+%%DATADIR%%/fvwm/Applications/System/Monitors/~qps~qps
+%%DATADIR%%/fvwm/Applications/System/Monitors/~wavemon~WaveMon
+%%DATADIR%%/fvwm/Applications/System/Monitors/~wireshark~WireShark
+%%DATADIR%%/fvwm/Applications/System/Monitors/~xtraceroute~Xtraceroute
+%%DATADIR%%/fvwm/Applications/System/Security/~MyPasswordSafe~MyPasswordSafe
+%%DATADIR%%/fvwm/Applications/System/Security/~fwbuilder~FWBuilder
+%%DATADIR%%/fvwm/Applications/System/Security/~gpass~gPass
+%%DATADIR%%/fvwm/Applications/System/Security/~gpa~GNU_Privacy_Assistant
+%%DATADIR%%/fvwm/Applications/System/Security/~klamav~klamav
+%%DATADIR%%/fvwm/Applications/System/Security/~kuser~kuser
+%%DATADIR%%/fvwm/Applications/System/Security/~nessus~Nessus
+%%DATADIR%%/fvwm/Applications/System/Security/~revelation~Revelation
+%%DATADIR%%/fvwm/Applications/System/Security/~seahorse~Seahorse
+%%DATADIR%%/fvwm/Applications/System/Security/~zsafe~zSafe
 %%DATADIR%%/fvwm/Applications/System/Terminals/~Eterm~Eterm
 %%DATADIR%%/fvwm/Applications/System/Terminals/~aterm~Aterm
 %%DATADIR%%/fvwm/Applications/System/Terminals/~gnome-terminal~GNOME_Terminal
@@ -417,8 +811,54 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/Applications/System/Terminals/~mrxvt~MRxvt
 %%DATADIR%%/fvwm/Applications/System/Terminals/~multi-gnome-terminal~Multi_GNOME_Terminal
 %%DATADIR%%/fvwm/Applications/System/Terminals/~urxvt~URxvt
+%%DATADIR%%/fvwm/Applications/System/Terminals/~vte~vte
 %%DATADIR%%/fvwm/Applications/System/Terminals/~xfce4-terminal~XFCE4_Terminal
+%%DATADIR%%/fvwm/Applications/System/Terminals/~xfterm4~XFCE_4_Terminal
 %%DATADIR%%/fvwm/Applications/System/Terminals/~xterm~XTerm
+%%DATADIR%%/fvwm/Applications/System/~mysqlcc~MySQLCC
+%%DATADIR%%/fvwm/Applications/System/~vmware~VMware
+%%DATADIR%%/fvwm/Applications/Utilities/Archiving/~ark~Ark
+%%DATADIR%%/fvwm/Applications/Utilities/Archiving/~file-roller~File-roller
+%%DATADIR%%/fvwm/Applications/Utilities/Archiving/~guitar~Guitar
+%%DATADIR%%/fvwm/Applications/Utilities/Archiving/~karchiver~Karchiver
+%%DATADIR%%/fvwm/Applications/Utilities/Archiving/~kpackage~kpackage
+%%DATADIR%%/fvwm/Applications/Utilities/Archiving/~xarchiver~Xarchiver
+%%DATADIR%%/fvwm/Applications/Utilities/Calculators/~calcoo~calcoo
+%%DATADIR%%/fvwm/Applications/Utilities/Calculators/~kcalc~kcalc
+%%DATADIR%%/fvwm/Applications/Utilities/File_Tools/~gtk-splitter~Gtk-splitter
+%%DATADIR%%/fvwm/Applications/Utilities/File_Tools/~kfilereplace~kfilereplace
+%%DATADIR%%/fvwm/Applications/Utilities/File_Tools/~kfind~kfind
+%%DATADIR%%/fvwm/Applications/Utilities/File_Tools/~kompare~kompare
+%%DATADIR%%/fvwm/Applications/Utilities/File_Tools/~krename~krename
+%%DATADIR%%/fvwm/Applications/Utilities/Printing/~kdeprintfax~kdeprintfax
+%%DATADIR%%/fvwm/Applications/Utilities/Printing/~kjobviewer~kjobviewer
+%%DATADIR%%/fvwm/Applications/Utilities/Printing/~kprinter~kprinter
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/18~gvim~gViM
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/18~kvim~kViM
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/20~cream~ViM_Cream
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/20~emacs~Emacs
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/20~xemacs~XEmacs
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/~emacs.emacs-21~GNU_Emacs 21
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/~gedit~gEdit
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/~kate~Kate
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/~kate~Kate_w_En_spell
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/~kedit~kEdit
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/~mousepad~Mousepad
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/~nedit~nedit
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/~scite~Scite
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/~teaed~Tea_for_Linux
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Editors/~xjed~xjed
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Tools/~fontforge~fontforge
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Tools/~gucharmap~gucharmap
+%%DATADIR%%/fvwm/Applications/Utilities/Text_Tools/~kcharselect~kcharselect
+%%DATADIR%%/fvwm/Applications/Utilities/~glxgears~glxgears
+%%DATADIR%%/fvwm/Applications/Utilities/~kfloppy~kfloppy
+%%DATADIR%%/fvwm/Applications/Utilities/~kmouth~kmouth
+%%DATADIR%%/fvwm/Applications/Utilities/~ksayit~ksayit
+%%DATADIR%%/fvwm/Applications/Utilities/~ksnapshot~ksnapshot
+%%DATADIR%%/fvwm/Applications/Utilities/~xclock~xclock
+%%DATADIR%%/fvwm/Applications/Utilities/~xvidcap~xvidcap
+%%DATADIR%%/fvwm/Applications/Utilities/~xwine~XWine
 %%DATADIR%%/fvwm/colorsets/CIOS.cs
 %%DATADIR%%/fvwm/colorsets/Clear.cs
 %%DATADIR%%/fvwm/colorsets/CrystalZono.cs
@@ -437,10 +877,13 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/colorsets/colorset-definition
 %%DATADIR%%/fvwm/components/Standard
 %%DATADIR%%/fvwm/components/apps/FvwmMiniConsole
+%%DATADIR%%/fvwm/components/apps/GNOME-Settings-Daemon
 %%DATADIR%%/fvwm/components/apps/Nautilus
+%%DATADIR%%/fvwm/components/apps/OpenOffice.org
 %%DATADIR%%/fvwm/components/apps/QuakeConsole
 %%DATADIR%%/fvwm/components/apps/ROX-Filer
 %%DATADIR%%/fvwm/components/apps/XScreenSaver
+%%DATADIR%%/fvwm/components/bindings/Application-Ardour
 %%DATADIR%%/fvwm/components/bindings/Desktop-MMB-EdgeScroll
 %%DATADIR%%/fvwm/components/bindings/Desktop-MMB-TogglePanels
 %%DATADIR%%/fvwm/components/bindings/Desktop-PageSwitch-Horizontal
@@ -510,6 +953,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/components/functions/About
 %%DATADIR%%/fvwm/components/functions/Clear-FVWM-Settings
 %%DATADIR%%/fvwm/components/functions/Colorsets
+%%DATADIR%%/fvwm/components/functions/Debug-Functions
 %%DATADIR%%/fvwm/components/functions/Desktop-Pager
 %%DATADIR%%/fvwm/components/functions/Developer-Menu
 %%DATADIR%%/fvwm/components/functions/EWMH-BaseStruts
@@ -531,6 +975,8 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/components/functions/Icon-Thumbnails
 %%DATADIR%%/fvwm/components/functions/Keyboard-Modifiers
 %%DATADIR%%/fvwm/components/functions/Menu-Position
+%%DATADIR%%/fvwm/components/functions/Mixer-amixer
+%%DATADIR%%/fvwm/components/functions/Mixer-audacious
 %%DATADIR%%/fvwm/components/functions/Mixer-aumix
 %%DATADIR%%/fvwm/components/functions/Mixer-cdcd
 %%DATADIR%%/fvwm/components/functions/Mixer-cmus
@@ -538,12 +984,18 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/components/functions/Mixer-quodlibet
 %%DATADIR%%/fvwm/components/functions/Mixer-xmms
 %%DATADIR%%/fvwm/components/functions/Mixer-xmms2
+%%DATADIR%%/fvwm/components/functions/Music-alsaplayer
+%%DATADIR%%/fvwm/components/functions/Music-audacious
 %%DATADIR%%/fvwm/components/functions/Music-cdcd
 %%DATADIR%%/fvwm/components/functions/Music-cmus
+%%DATADIR%%/fvwm/components/functions/Music-mocp
 %%DATADIR%%/fvwm/components/functions/Music-mpd
+%%DATADIR%%/fvwm/components/functions/Music-mplayer
 %%DATADIR%%/fvwm/components/functions/Music-quodlibet
 %%DATADIR%%/fvwm/components/functions/Music-xmms
 %%DATADIR%%/fvwm/components/functions/Music-xmms2
+%%DATADIR%%/fvwm/components/functions/NotificationAreaManager-stalonetray
+%%DATADIR%%/fvwm/components/functions/NotificationAreaManager-trayer
 %%DATADIR%%/fvwm/components/functions/Numpad
 %%DATADIR%%/fvwm/components/functions/PPick
 %%DATADIR%%/fvwm/components/functions/Preferences
@@ -561,11 +1013,13 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/components/functions/Window-Rearrange
 %%DATADIR%%/fvwm/components/functions/Window-Remember-ClickToFocus
 %%DATADIR%%/fvwm/components/functions/Window-Remember-SloppyFocus
+%%DATADIR%%/fvwm/components/functions/Window-Ring
 %%DATADIR%%/fvwm/components/functions/Window-SetPlacementPolicy
 %%DATADIR%%/fvwm/components/scripts/FvwmScript-AcpiBatt
 %%DATADIR%%/fvwm/components/scripts/FvwmScript-Clock
 %%DATADIR%%/fvwm/components/scripts/FvwmScript-Clock-24h
 %%DATADIR%%/fvwm/components/scripts/FvwmScript-Clock-24h-small_date
+%%DATADIR%%/fvwm/components/scripts/FvwmScript-Clock-small
 %%DATADIR%%/fvwm/components/scripts/FvwmScript-Clock-small_date
 %%DATADIR%%/fvwm/components/scripts/FvwmScript-CpuFreq
 %%DATADIR%%/fvwm/components/scripts/FvwmScript-CpuTemp
@@ -785,6 +1239,19 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-options-down.png
 %%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-options.png
 %%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-title.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/Colorsets
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/README
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/Theme.os2
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/Theme.windows
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/window-arrows.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/window-close.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/window-empty.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/window-iconify.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/window-maximize.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue/window-options.png
 %%DATADIR%%/fvwm/decorations/Crystal/CIOS/Colorsets
 %%DATADIR%%/fvwm/decorations/Crystal/CIOS/README
 %%DATADIR%%/fvwm/decorations/Crystal/CIOS/Theme.fvwm-crystal
@@ -1512,18 +1979,16 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/decorations/Winter/Default/window-inactive-options.png
 %%DATADIR%%/fvwm/decorations/Winter/Default/window-inactive-title.png
 %%DATADIR%%/fvwm/icons/Default/16x16/fvwm-crystal/fvwm-crystal.png
+%%DATADIR%%/fvwm/icons/Default/16x16/fvwm-crystal/media-eject.png
 %%DATADIR%%/fvwm/icons/Default/16x16/fvwm-crystal/media-playback-start.png
 %%DATADIR%%/fvwm/icons/Default/16x16/fvwm-crystal/media-skip-forward.png
 %%DATADIR%%/fvwm/icons/Default/16x16/fvwm-crystal/window-list.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/BitchX.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/Eterm.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/Maelstrom.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/TeamSpeak.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/abiword.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/abuse.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/acidrip.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/acroread.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/adom.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/akregator.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/alsamixer.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/amarok.png
@@ -1538,6 +2003,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/aterm.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/atlantik.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/atomix.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/audacious.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/audacity.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/aumix.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/avidemux.png
@@ -1555,12 +2021,13 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/blobwars.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/bluefish.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/bmp.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/bonfire.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/brasero.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/bridges.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/btdownloadgui.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/btdownloadgui.py.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/bzflag.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/castle-combat.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/cat_default.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/celestia.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/centericq.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/chromium.png
@@ -1576,16 +2043,14 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/dcgui.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/debian.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/default.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/deluge-torrent.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/deluge.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/dia.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/diablo2.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/digikam.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/dillo.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/djview.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/dlume.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/dominosa.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/doom.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/doom3.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/dosbox.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/drakconf.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/easytag.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/eboard.png
@@ -1593,6 +2058,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/egoboo.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/ekg.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/ekg2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ekiga.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/el.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/elinks.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/emacs.png
@@ -1600,7 +2066,6 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/epic4.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/epiphany.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/eric.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/et.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/evince.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/evolution.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/exfalso.png
@@ -1609,14 +2074,13 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/fetchmail.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/fifteen.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/filerunner.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/firefox.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/flipgame.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/flock.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/foobillard.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/freeciv.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/freemind.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/frozen-bubble.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/fvwm-crystal.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/fwbuilder.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/gabber.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/gaim.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/gajim.png
@@ -1633,6 +2097,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/gg2.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/giFTcurs.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/giFToxic.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/giftui.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/gimp.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/gizmo.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/glade-2.png
@@ -1677,9 +2142,13 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/gweled.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/gwenview.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/gxine.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/hardinfo.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/htop.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/hydrogen.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/iagno.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/icebreaker.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/icedove.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/iceweasel.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/idle.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/ihu.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/inertia.png
@@ -1711,6 +2180,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/kfouleggs.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/kgoldrunner.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/kile.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kinfocenter.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/kivio.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/kjumpingcube.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/klickety.png
@@ -1793,10 +2263,6 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/monotheka.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/moon-buggy.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/mousepad.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/mozilla-firefox.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/mozilla-suite.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/mozilla-thunderbird.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/mozilla.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/mplayer.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/mrxvt.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/multi-gnome-terminal.png
@@ -1812,11 +2278,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/neverputt.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/nexuiz.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/njam.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/nvidia-settings.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/nvidia.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/nvtv.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/nvu.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/nwn.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/oobase.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/oobase2.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/oocalc.png
@@ -1835,20 +2297,18 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/oowriter2.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/openoffice.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/openttd.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/opera.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/pan.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/pathological.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/pattern.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/pegs.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/pida.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/pine.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/pingus.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/pixel32.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/porthole.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/ppracer.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/psi.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/pydance.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/pygmy.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pympd.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/pysol.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/python.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/q3ut3.png
@@ -1858,14 +2318,9 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/qps.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/qtorrent.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/qtstalker.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/quake.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/quake2.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/quake3.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/quake4.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/quanta.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/quodlibet.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/rapidsvn.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/realplayer.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/rect.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/revelation.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/rhythmbox.png
@@ -1879,7 +2334,6 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/seahorse.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/sim.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/sixteen.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/skype.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/slant.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/slrn-pl.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/slrn.png
@@ -1889,8 +2343,8 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/sodipodi.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/sol.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/solo.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/sonata.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/sound-juicer.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/starcraft.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/stardict.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/starfighter.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/stellarium.png
@@ -1903,9 +2357,8 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/sylpheed.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/synaptic.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/teaed.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/teamspeak.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/tents.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/thunderbird.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/thunar.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/tkabber.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/tleenx2.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/tomboy.png
@@ -1917,19 +2370,16 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/tuxpaint.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/tvtime.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/twiddle.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/twinkle.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/ubuntu.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/untangle.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/urxvt.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/ut.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/ut2004.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/valknut.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/vim.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/vmware.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/weechat-curses.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/wesnoth.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/wings3d.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/wolfmp.png
-%%DATADIR%%/fvwm/icons/Default/22x22/apps/wolfsp.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/wireshark.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/worm.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/wyrd.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/xawtv.png
@@ -1960,17 +2410,22 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/zim.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/zinf.png
 %%DATADIR%%/fvwm/icons/Default/22x22/apps/zsafe.png
-%%DATADIR%%/fvwm/icons/Default/22x22/categories/Configuration.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Audio-Video.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Audio.png
 %%DATADIR%%/fvwm/icons/Default/22x22/categories/Development.png
 %%DATADIR%%/fvwm/icons/Default/22x22/categories/GNOME.png
 %%DATADIR%%/fvwm/icons/Default/22x22/categories/Games.png
-%%DATADIR%%/fvwm/icons/Default/22x22/categories/Internet.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Graphics.png
 %%DATADIR%%/fvwm/icons/Default/22x22/categories/KDE.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Knowledge.png
 %%DATADIR%%/fvwm/icons/Default/22x22/categories/Multimedia.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Network.png
 %%DATADIR%%/fvwm/icons/Default/22x22/categories/Office.png
-%%DATADIR%%/fvwm/icons/Default/22x22/categories/Other.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Settings.png
 %%DATADIR%%/fvwm/icons/Default/22x22/categories/System.png
 %%DATADIR%%/fvwm/icons/Default/22x22/categories/Terminals.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Utilities.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Video.png
 %%DATADIR%%/fvwm/icons/Default/22x22/categories/directory.png
 %%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/applications-development.png
 %%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/applications.png
@@ -2009,12 +2464,9 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/BitchX.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/Eterm.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/Maelstrom.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/TeamSpeak.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/abiword.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/abuse.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/acidrip.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/acroread.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/adom.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/akregator.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/alsamixer.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/amarok.png
@@ -2046,6 +2498,8 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/blobwars.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/bluefish.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/bmp.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/bonfire.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/brasero.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/bridges.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/btdownloadgui.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/btdownloadgui.py.png
@@ -2066,16 +2520,14 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/dcgui.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/debian.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/default.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/deluge-torrent.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/deluge.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/dia.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/diablo2.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/digikam.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/dillo.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/djview.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/dlume.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/dominosa.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/doom.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/doom3.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/dosbox.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/drakconf.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/easytag.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/eboard.png
@@ -2083,6 +2535,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/egoboo.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/ekg.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/ekg2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ekiga.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/el.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/elinks.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/emacs.png
@@ -2090,7 +2543,6 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/epic4.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/epiphany.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/eric.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/et.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/evince.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/evolution.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/exfalso.png
@@ -2099,14 +2551,13 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/fetchmail.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/fifteen.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/filerunner.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/firefox.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/flipgame.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/flock.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/foobillard.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/freeciv.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/freemind.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/frozen-bubble.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/fvwm-crystal.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/fwbuilder.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/gabber.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/gaim.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/gajim.png
@@ -2123,6 +2574,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/gg2.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/giFTcurs.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/giFToxic.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/giftui.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/gimp.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/gizmo.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/glade-2.png
@@ -2167,9 +2619,13 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/gweled.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/gwenview.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/gxine.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/hardinfo.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/htop.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/hydrogen.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/iagno.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/icebreaker.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/icedove.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/iceweasel.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/idle.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/ihu.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/inertia.png
@@ -2201,6 +2657,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/kfouleggs.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/kgoldrunner.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/kile.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kinfocenter.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/kivio.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/kjumpingcube.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/klickety.png
@@ -2283,10 +2740,6 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/monotheka.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/moon-buggy.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/mousepad.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/mozilla-firefox.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/mozilla-suite.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/mozilla-thunderbird.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/mozilla.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/mplayer.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/mrxvt.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/multi-gnome-terminal.png
@@ -2302,11 +2755,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/neverputt.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/nexuiz.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/njam.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/nvidia-settings.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/nvidia.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/nvtv.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/nvu.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/nwn.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/oobase.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/oobase2.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/oocalc.png
@@ -2325,20 +2774,18 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/oowriter2.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/openoffice.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/openttd.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/opera.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/pan.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/pathological.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/pattern.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/pegs.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/pida.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/pine.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/pingus.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/pixel32.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/porthole.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/ppracer.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/psi.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/pydance.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/pygmy.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pympd.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/pysol.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/python.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/q3ut3.png
@@ -2348,14 +2795,9 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/qps.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/qtorrent.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/qtstalker.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/quake.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/quake2.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/quake3.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/quake4.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/quanta.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/quodlibet.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/rapidsvn.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/realplayer.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/rect.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/revelation.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/rhythmbox.png
@@ -2369,7 +2811,6 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/seahorse.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/sim.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/sixteen.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/skype.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/slant.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/slrn-pl.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/slrn.png
@@ -2379,8 +2820,8 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/sodipodi.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/sol.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/solo.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/sonata.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/sound-juicer.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/starcraft.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/stardict.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/starfighter.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/stellarium.png
@@ -2393,9 +2834,8 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/sylpheed.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/synaptic.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/teaed.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/teamspeak.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/tents.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/thunderbird.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/thunar.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/tkabber.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/tleenx2.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/tomboy.png
@@ -2407,19 +2847,16 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/tuxpaint.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/tvtime.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/twiddle.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/twinkle.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/ubuntu.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/untangle.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/urxvt.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/ut.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/ut2004.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/valknut.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/vim.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/vmware.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/weechat-curses.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/wesnoth.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/wings3d.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/wolfmp.png
-%%DATADIR%%/fvwm/icons/Default/32x32/apps/wolfsp.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/wireshark.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/worm.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/wyrd.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/xawtv.png
@@ -2450,17 +2887,22 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/zim.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/zinf.png
 %%DATADIR%%/fvwm/icons/Default/32x32/apps/zsafe.png
-%%DATADIR%%/fvwm/icons/Default/32x32/categories/Configuration.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Audio-Video.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Audio.png
 %%DATADIR%%/fvwm/icons/Default/32x32/categories/Development.png
 %%DATADIR%%/fvwm/icons/Default/32x32/categories/GNOME.png
 %%DATADIR%%/fvwm/icons/Default/32x32/categories/Games.png
-%%DATADIR%%/fvwm/icons/Default/32x32/categories/Internet.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Graphics.png
 %%DATADIR%%/fvwm/icons/Default/32x32/categories/KDE.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Knowledge.png
 %%DATADIR%%/fvwm/icons/Default/32x32/categories/Multimedia.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Network.png
 %%DATADIR%%/fvwm/icons/Default/32x32/categories/Office.png
-%%DATADIR%%/fvwm/icons/Default/32x32/categories/Other.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Settings.png
 %%DATADIR%%/fvwm/icons/Default/32x32/categories/System.png
 %%DATADIR%%/fvwm/icons/Default/32x32/categories/Terminals.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Utilities.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Video.png
 %%DATADIR%%/fvwm/icons/Default/32x32/categories/directory.png
 %%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/applications-development.png
 %%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/applications.png
@@ -2499,7 +2941,6 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/Eterm.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/abiword.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/acidrip.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/acroread.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/akregator.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/amarok.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/anjuta.png
@@ -2521,6 +2962,8 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/blender.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/bluefish.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/bmp.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/bonfire.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/brasero.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/bridges.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/castle-combat.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/celestia.png
@@ -2534,11 +2977,11 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/dia.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/dlume.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/dominosa.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/doom.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/doom3.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/drakconf.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/easytag.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/eboard.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/eclipse.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ekiga.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/el.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/emacs.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/enigma.png
@@ -2547,12 +2990,11 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/exfalso.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/f-spot.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/fifteen.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/firefox.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/flipgame.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/flock.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/foobillard.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/frozen-bubble.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/fvwm-crystal.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/fwbuilder.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/gajim.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/galeon.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/gataxx.png
@@ -2597,6 +3039,8 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/hydrogen.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/iagno.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/icebreaker.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/icedove.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/iceweasel.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/ihu.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/inertia.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/ipodder.png
@@ -2670,8 +3114,6 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/monodevelop.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/monotheka.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/mousepad.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/mozilla-firefox.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/mozilla-thunderbird.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/mplayer.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/mrxvt.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/multi-gnome-terminal.png
@@ -2699,16 +3141,14 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/pattern.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/pegs.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/pida.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/pixel32.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/porthole.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/ppracer.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/pydance.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/pygmy.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/pympd.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/qtstalker.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/quake4.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/quanta.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/quodlibet.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/realplayer.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/rect.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/rubrica.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/same-gnome.png
@@ -2723,6 +3163,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/sodipodi.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/sol.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/solo.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/sonata.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/sound-juicer.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/stardict.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/straw.png
@@ -2731,19 +3172,19 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/synaptic.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/teaed.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/tents.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/thunderbird.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/thunar.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/tomboy.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/totem.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/tuxcmd.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/tvtime.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/twiddle.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/twinkle.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/ubuntu.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/untangle.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/urxvt.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/ut2004.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/vim.png
-%%DATADIR%%/fvwm/icons/Default/48x48/apps/vmware.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/wesnoth.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/wireshark.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/wyrd.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/xawtv.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/xemacs.png
@@ -2758,17 +3199,22 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/ydpdict.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/zapping.png
 %%DATADIR%%/fvwm/icons/Default/48x48/apps/zim.png
-%%DATADIR%%/fvwm/icons/Default/48x48/categories/Configuration.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Audio-Video.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Audio.png
 %%DATADIR%%/fvwm/icons/Default/48x48/categories/Development.png
 %%DATADIR%%/fvwm/icons/Default/48x48/categories/GNOME.png
 %%DATADIR%%/fvwm/icons/Default/48x48/categories/Games.png
-%%DATADIR%%/fvwm/icons/Default/48x48/categories/Internet.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Graphics.png
 %%DATADIR%%/fvwm/icons/Default/48x48/categories/KDE.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Knowledge.png
 %%DATADIR%%/fvwm/icons/Default/48x48/categories/Multimedia.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Network.png
 %%DATADIR%%/fvwm/icons/Default/48x48/categories/Office.png
-%%DATADIR%%/fvwm/icons/Default/48x48/categories/Other.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Settings.png
 %%DATADIR%%/fvwm/icons/Default/48x48/categories/System.png
 %%DATADIR%%/fvwm/icons/Default/48x48/categories/Terminals.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Utilities.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Video.png
 %%DATADIR%%/fvwm/icons/Default/48x48/categories/directory.png
 %%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/applications-development.png
 %%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/applications.png
@@ -2808,8 +3254,12 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/locale/de_DE.UTF-8/LC_MESSAGES/fvwm-crystal.po
 %%DATADIR%%/fvwm/locale/de_DE/LC_MESSAGES/fvwm-crystal.mo
 %%DATADIR%%/fvwm/locale/de_DE/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/locale/es_ES.UTF-8/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/es_ES.UTF-8/LC_MESSAGES/fvwm-crystal.po
 %%DATADIR%%/fvwm/locale/es_ES/LC_MESSAGES/fvwm-crystal.mo
 %%DATADIR%%/fvwm/locale/es_ES/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/locale/fr_FR.UTF-8/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/fr_FR.UTF-8/LC_MESSAGES/fvwm-crystal.po
 %%DATADIR%%/fvwm/locale/hu_HU/LC_MESSAGES/fvwm-crystal.mo
 %%DATADIR%%/fvwm/locale/hu_HU/LC_MESSAGES/fvwm-crystal.po
 %%DATADIR%%/fvwm/locale/pl_PL.UTF-8/LC_MESSAGES/fvwm-crystal.mo
@@ -2833,6 +3283,9 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/preferences/LastChoosenRecipe
 %%DATADIR%%/fvwm/preferences/LastChoosenWallpaper
 %%DATADIR%%/fvwm/preferences/LastChoosenWindowDecoration
+%%DATADIR%%/fvwm/preferences/NotificationArea-Width
+%%DATADIR%%/fvwm/preferences/NotificationAreaManager
+%%DATADIR%%/fvwm/preferences/NotificationAreaWidth
 %%DATADIR%%/fvwm/preferences/PrivilegedTerminals
 %%DATADIR%%/fvwm/preferences/QuakeConsoleHeight
 %%DATADIR%%/fvwm/preferences/QuakeConsoleTerminal
@@ -2847,6 +3300,8 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/recipes/Nebulae
 %%DATADIR%%/fvwm/recipes/Old School
 %%DATADIR%%/fvwm/recipes/SideLine
+%%DATADIR%%/fvwm/recipes/SilentHacker
+%%DATADIR%%/fvwm/recipes/Thin
 %%DATADIR%%/fvwm/recipes/TopDown
 %%DATADIR%%/fvwm/recipes/TopLine
 %%DATADIR%%/fvwm/scripts/FvwmMPD/FvwmApplet-MpdAddSong
@@ -2856,30 +3311,10 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/scripts/FvwmMPD/listsongs.sh
 %%DATADIR%%/fvwm/scripts/FvwmMPD/parseplaylist.sh
 %%DATADIR%%/fvwm/scripts/FvwmMPD/stripnames.py
+%%DATADIR%%/fvwm/scripts/speed_value
 %%DATADIR%%/fvwm/wallpapers/fvwm-crystal-bright1-1024x768.jpg
 %%DATADIR%%/fvwm/wallpapers/fvwm-crystal-dark1-1024x768.jpg
 %%DATADIR%%/fvwm/wallpapers/fvwm-crystal-dark2-1024x768.jpg
-%%PORTDOCS%%%%DOCSDIR%%/addons/Xresources
-%%PORTDOCS%%%%DOCSDIR%%/addons/Xsession
-%%PORTDOCS%%%%DOCSDIR%%/addons/fvwm-crystal.desktop
-%%PORTDOCS%%%%DOCSDIR%%/addons/fvwm.vim
-%%PORTDOCS%%%%DOCSDIR%%/addons/sudo
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/Application database.txt
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/Crystal ROX! HOWTO.txt
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/Keyboard bindings.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/Mouse bindings.txt
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/Tips.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/addons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/fvwm/wallpapers
 @dirrm %%DATADIR%%/fvwm/scripts/FvwmMPD
 @dirrm %%DATADIR%%/fvwm/scripts
@@ -2899,7 +3334,11 @@ bin/fvwm-crystal.wallpaper
 @dirrm %%DATADIR%%/fvwm/locale/pl_PL
 @dirrm %%DATADIR%%/fvwm/locale/hu_HU/LC_MESSAGES
 @dirrm %%DATADIR%%/fvwm/locale/hu_HU
+@dirrm %%DATADIR%%/fvwm/locale/fr_FR.UTF-8/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/fr_FR.UTF-8
 @dirrm %%DATADIR%%/fvwm/locale/es_ES/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/es_ES.UTF-8/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/es_ES.UTF-8
 @dirrm %%DATADIR%%/fvwm/locale/es_ES
 @dirrm %%DATADIR%%/fvwm/locale/de_DE/LC_MESSAGES
 @dirrm %%DATADIR%%/fvwm/locale/de_DE.UTF-8/LC_MESSAGES
@@ -2976,6 +3415,7 @@ bin/fvwm-crystal.wallpaper
 @dirrm %%DATADIR%%/fvwm/decorations/Crystal/DarkGreen
 @dirrm %%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop
 @dirrm %%DATADIR%%/fvwm/decorations/Crystal/CrystalZono
+@dirrm %%DATADIR%%/fvwm/decorations/Crystal/CIOS-blue
 @dirrm %%DATADIR%%/fvwm/decorations/Crystal/CIOS
 @dirrm %%DATADIR%%/fvwm/decorations/Crystal
 @dirrm %%DATADIR%%/fvwm/decorations/Clearlooks/Olive
@@ -3003,57 +3443,134 @@ bin/fvwm-crystal.wallpaper
 @dirrm %%DATADIR%%/fvwm/components/apps
 @dirrm %%DATADIR%%/fvwm/components
 @dirrm %%DATADIR%%/fvwm/colorsets
+@dirrm %%DATADIR%%/fvwm/Applications/Utilities/Text_Tools
+@dirrm %%DATADIR%%/fvwm/Applications/Utilities/Text_Editors
+@dirrm %%DATADIR%%/fvwm/Applications/Utilities/Printing
+@dirrm %%DATADIR%%/fvwm/Applications/Utilities/File_Tools
+@dirrm %%DATADIR%%/fvwm/Applications/Utilities/Calculators
+@dirrm %%DATADIR%%/fvwm/Applications/Utilities/Archiving
+@dirrm %%DATADIR%%/fvwm/Applications/Utilities
 @dirrm %%DATADIR%%/fvwm/Applications/System/Terminals
-@dirrm %%DATADIR%%/fvwm/Applications/System/Others
-@dirrm %%DATADIR%%/fvwm/Applications/System/File_managers
-@dirrm %%DATADIR%%/fvwm/Applications/System/Configuration
+@dirrm %%DATADIR%%/fvwm/Applications/System/Security
+@dirrm %%DATADIR%%/fvwm/Applications/System/Monitors
+@dirrm %%DATADIR%%/fvwm/Applications/System/File_Managers
+@dirrm %%DATADIR%%/fvwm/Applications/System/Documentation
 @dirrm %%DATADIR%%/fvwm/Applications/System
-@dirrm %%DATADIR%%/fvwm/Applications/Other/Security
-@dirrm %%DATADIR%%/fvwm/Applications/Other/Knowledge
-@dirrm %%DATADIR%%/fvwm/Applications/Other/CD_burning
-@dirrm %%DATADIR%%/fvwm/Applications/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Settings/Printing
+@dirrm %%DATADIR%%/fvwm/Applications/Settings/Package_Managers
+@dirrm %%DATADIR%%/fvwm/Applications/Settings/Hardware_Settings
+@dirrm %%DATADIR%%/fvwm/Applications/Settings/Desktop_Settings
+@dirrm %%DATADIR%%/fvwm/Applications/Settings
+@dirrm %%DATADIR%%/fvwm/Applications/Office/Word_Processors
 @dirrm %%DATADIR%%/fvwm/Applications/Office/Viewers
-@dirrm %%DATADIR%%/fvwm/Applications/Office/PIM
+@dirrm %%DATADIR%%/fvwm/Applications/Office/Spreadsheets
+@dirrm %%DATADIR%%/fvwm/Applications/Office/Publishing
+@dirrm %%DATADIR%%/fvwm/Applications/Office/PDA
 @dirrm %%DATADIR%%/fvwm/Applications/Office/OpenOffice.org
 @dirrm %%DATADIR%%/fvwm/Applications/Office/KOffice
-@dirrm %%DATADIR%%/fvwm/Applications/Office/GNOME_Office
-@dirrm %%DATADIR%%/fvwm/Applications/Office/DTP
+@dirrm %%DATADIR%%/fvwm/Applications/Office/Finance
+@dirrm %%DATADIR%%/fvwm/Applications/Office/Dictionaries
+@dirrm %%DATADIR%%/fvwm/Applications/Office/Contact_Management
+@dirrm %%DATADIR%%/fvwm/Applications/Office/Calendars
 @dirrm %%DATADIR%%/fvwm/Applications/Office
-@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Video_tools
-@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Video_players
-@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Tools
-@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Image_tools
-@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools
-@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio_players
-@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors
-@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/10~Mixers
+@dirrm %%DATADIR%%/fvwm/Applications/Network/Webcam
+@dirrm %%DATADIR%%/fvwm/Applications/Network/Remote_Access
+@dirrm %%DATADIR%%/fvwm/Applications/Network/P2P
+@dirrm %%DATADIR%%/fvwm/Applications/Network/Instant_Messaging/20~Jabber
+@dirrm %%DATADIR%%/fvwm/Applications/Network/Instant_Messaging
+@dirrm %%DATADIR%%/fvwm/Applications/Network/IRC_Clients
+@dirrm %%DATADIR%%/fvwm/Applications/Network/File_Transfer
+@dirrm %%DATADIR%%/fvwm/Applications/Network/Dial-up
+@dirrm %%DATADIR%%/fvwm/Applications/Network/7~News
+@dirrm %%DATADIR%%/fvwm/Applications/Network/5~Telephony
+@dirrm %%DATADIR%%/fvwm/Applications/Network/13~Email
+@dirrm %%DATADIR%%/fvwm/Applications/Network/10~Web_Browsers
+@dirrm %%DATADIR%%/fvwm/Applications/Network
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Video/Video_Effects
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Video/TV
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Video/Players
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Video/Audio-Video_Editing
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Video
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Vu-Meters
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Tuners/Jack
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Tuners
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Trackers
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers/Bristol
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Synthetizers
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Streaming
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Processing
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sound_Effects
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Sequencers
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Samplers/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Samplers
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Rythm
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Rhythm/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Rhythm
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Recording
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Radios
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Players
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Notation
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Mp3
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/MIDI
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering/MIDI
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Engineering
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Dj
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Composition
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Audio-Video_Editing/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/Audio-Video_Editing
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio/10~Mixers
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Disc_Burning
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Databases
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video/Audio-Video_Editing
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio-Video
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio
 @dirrm %%DATADIR%%/fvwm/Applications/Multimedia
-@dirrm %%DATADIR%%/fvwm/Applications/Internet/Usenet
-@dirrm %%DATADIR%%/fvwm/Applications/Internet/Others
-@dirrm %%DATADIR%%/fvwm/Applications/Internet/IRC_clients
-@dirrm %%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice
-@dirrm %%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber
-@dirrm %%DATADIR%%/fvwm/Applications/Internet/IM
-@dirrm %%DATADIR%%/fvwm/Applications/Internet/File_sharing
-@dirrm %%DATADIR%%/fvwm/Applications/Internet/7~RSS_readers
-@dirrm %%DATADIR%%/fvwm/Applications/Internet/13~Email
-@dirrm %%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers
-@dirrm %%DATADIR%%/fvwm/Applications/Internet
-@dirrm %%DATADIR%%/fvwm/Applications/Development/Text_editors
+@dirrm %%DATADIR%%/fvwm/Applications/Knowledge/Physics
+@dirrm %%DATADIR%%/fvwm/Applications/Knowledge/Math
+@dirrm %%DATADIR%%/fvwm/Applications/Knowledge/Languages
+@dirrm %%DATADIR%%/fvwm/Applications/Knowledge/Astronomy
+@dirrm %%DATADIR%%/fvwm/Applications/Knowledge
+@dirrm %%DATADIR%%/fvwm/Applications/Graphics/Viewers
+@dirrm %%DATADIR%%/fvwm/Applications/Graphics/Vector_Graphics
+@dirrm %%DATADIR%%/fvwm/Applications/Graphics/Scanning
+@dirrm %%DATADIR%%/fvwm/Applications/Graphics/Photography
+@dirrm %%DATADIR%%/fvwm/Applications/Graphics/Engineering
+@dirrm %%DATADIR%%/fvwm/Applications/Graphics/3D_Graphics
+@dirrm %%DATADIR%%/fvwm/Applications/Graphics/2D_Graphics
+@dirrm %%DATADIR%%/fvwm/Applications/Graphics
+@dirrm %%DATADIR%%/fvwm/Applications/Development/Web_Development
+@dirrm %%DATADIR%%/fvwm/Applications/Development/Revision_Control
+@dirrm %%DATADIR%%/fvwm/Applications/Development/Java
 @dirrm %%DATADIR%%/fvwm/Applications/Development/IDE
+@dirrm %%DATADIR%%/fvwm/Applications/Development/Electronics/Geda
+@dirrm %%DATADIR%%/fvwm/Applications/Development/Electronics/Chipmunksystem
+@dirrm %%DATADIR%%/fvwm/Applications/Development/Electronics/Antennas
+@dirrm %%DATADIR%%/fvwm/Applications/Development/Electronics
+@dirrm %%DATADIR%%/fvwm/Applications/Development/Documentation
+@dirrm %%DATADIR%%/fvwm/Applications/Development/Debuggers
 @dirrm %%DATADIR%%/fvwm/Applications/Development
-@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Tetris-like
-@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Strategy
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Strategy_Games
 @dirrm %%DATADIR%%/fvwm/Applications/20~Games/Shooters
-@dirrm %%DATADIR%%/fvwm/Applications/20~Games/RPG
-@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Others
-@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection
-@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Logic
-@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Card
-@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Board
-@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Arcade
-@dirrm %%DATADIR%%/fvwm/Applications/20~Games/20~FPP
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Role_Playing
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Logic_Games/Portable_Puzzle_Collection
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Logic_Games
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Kids_Games
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Emulators
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Card_Games
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Board_Games
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Arcade_Games
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/20~Block_Games
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games
 @dirrm %%DATADIR%%/fvwm/Applications/20~Games
 @dirrm %%DATADIR%%/fvwm/Applications
 @dirrm %%DATADIR%%/fvwm
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/addons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
