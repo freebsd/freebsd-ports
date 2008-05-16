@@ -291,6 +291,7 @@
 %%SERENDIPITY%%/bundled-libs/docs/WordsSmashedTogether.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/free links.wiki.txt
 %%SERENDIPITY%%/bundled-libs/docs/stylesheet.css
+%%SERENDIPITY%%/bundled-libs/serendipity_generateFTPChecksums.php
 %%SERENDIPITY%%/bundled-libs/tests/README
 %%SERENDIPITY%%/comment.php
 %%SERENDIPITY%%/deployment/archives/.ignore
@@ -1659,20 +1660,10 @@
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_banner.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_banner_fluid.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default_a.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default_h.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage_a.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage_h.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout_a.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout_h.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal_a.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal_h.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog_a.png
-%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog_h.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_footer.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_infopane.png
 %%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_infopane_fluid.png
