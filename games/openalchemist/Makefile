@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openalchemist
-PORTVERSION=	0.2
+PORTVERSION=	0.2.2
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -18,10 +18,11 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib
 
 USE_GNOME=	pkgconfig
-MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		DATADIR="${DATADIR}"
 
 # Allow relocation of skins (by default, must be in the skins/ sub-dir)
 post-patch:
-	@${REINPLACE_CMD} -E -e 's|CL_System::get_exe_path\(\) \+ "skins/|"${PREFIX}/share/games/${PORTNAME}/skins/|g' ${WRKSRC}/src/*.cpp
+	@${REINPLACE_CMD} -E -e 's|CL_System::get_exe_path\(\) \+ "skins/|"${DATADIR}/skins/|g' ${WRKSRC}/src/*.cpp
 
 .include <bsd.port.mk>
