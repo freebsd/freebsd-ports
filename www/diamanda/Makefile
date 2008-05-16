@@ -14,6 +14,11 @@ DISTNAME=	${PORTNAME}-${SNAPSHOT}
 MAINTAINER=	oleg@ht-systems.ru
 COMMENT=	A set of useful Django applications
 
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/__init__.py:${PORTSDIR}/www/py-django \
+		${PYTHON_SITELIBDIR}/stripogram/__init__.py:${PORTSDIR}/textproc/py-stripogram \
+		${PYTHON_SITELIBDIR}/polib.py:${PORTSDIR}/devel/py-polib \
+		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+
 SNAPSHOT=	2007.04.26
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
@@ -23,16 +28,6 @@ NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 SUB_FILES=	pkg-message
-
-RUN_DEPENDS+=\
-${PYTHON_SITELIBDIR}/Django-0.96.1-py${PYTHON_DEFAULT_VERSION:S/python//}.egg-info:${PORTSDIR}/www/py-django
-#'cause diamanda release currently doesn't work with django-devel branch
-RUN_DEPENDS+=\
-${PYTHON_SITELIBDIR}/stripogram/__init__.py:${PORTSDIR}/textproc/py-stripogram
-RUN_DEPENDS+=\
-${PYTHON_SITELIBDIR}/polib.py:${PORTSDIR}/devel/py-polib
-RUN_DEPENDS+=\
-${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 .include <bsd.port.pre.mk>
 
