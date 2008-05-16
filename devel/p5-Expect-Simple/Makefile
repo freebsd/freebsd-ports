@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	Expect-Simple
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Wrapper around the Expect module
 
 BUILD_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MAN3=	Expect::Simple.3
+MAN3=		Expect::Simple.3
 
 PERL_CONFIGURE=	5.8.0+
 
