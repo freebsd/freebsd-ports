@@ -1,20 +1,11 @@
---- spserver/spexecutor.cpp.orig	Wed Aug 22 22:04:05 2007
-+++ spserver/spexecutor.cpp	Thu Aug 23 07:33:20 2007
-@@ -14,7 +14,7 @@
- #include "spexecutor.hpp"
- #include "spthreadpool.hpp"
- 
--#include "config.h"
-+//#include "config.h"
- #include "event_msgqueue.h"
- 
- SP_Task :: ~SP_Task()
-@@ -67,7 +67,7 @@
+--- spserver/spexecutor.cpp.orig	2008-05-16 09:42:34.000000000 +0800
++++ spserver/spexecutor.cpp	2008-05-16 09:42:57.000000000 +0800
+@@ -64,7 +64,7 @@
  	int ret = pthread_create( &thread, &attr, reinterpret_cast<void*(*)(void*)>(eventLoop), this );
  	pthread_attr_destroy( &attr );
  	if( 0 == ret ) {
--		syslog( LOG_NOTICE, "[ex@%s] Thread #%ld has been created for executor", tag, thread );
-+		syslog( LOG_NOTICE, "[ex@%s] Thread #%ld has been created for executor", tag, (long)thread );
+-		sp_syslog( LOG_NOTICE, "[ex@%s] Thread #%ld has been created for executor", tag, thread );
++		sp_syslog( LOG_NOTICE, "[ex@%s] Thread #%ld has been created for executor", tag, (long)thread );
  	} else {
- 		syslog( LOG_WARNING, "[ex@%s] Unable to create a thread for executor", tag );
+ 		sp_syslog( LOG_WARNING, "[ex@%s] Unable to create a thread for executor", tag );
  	}

@@ -11,12 +11,14 @@ include/spserver/splfserver.hpp
 include/spserver/spmsgblock.hpp
 include/spserver/spmsgdecoder.hpp
 include/spserver/spopenssl.hpp
+include/spserver/spporting.hpp
 include/spserver/sprequest.hpp
 include/spserver/spresponse.hpp
 include/spserver/spserver.hpp
 include/spserver/spsession.hpp
 include/spserver/spthreadpool.hpp
 include/spserver/sputils.hpp
+include/spserver/spwin32port.hpp
 lib/libspopenssl.so
 lib/libspopenssl.so.1
 lib/libspserver.so
