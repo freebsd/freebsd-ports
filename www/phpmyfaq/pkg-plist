@@ -667,6 +667,7 @@
 %%WWWDIR%%/install/update.php
 %%WWWDIR%%/instantresponse.php
 %%WWWDIR%%/lang/language_ar.php
+%%WWWDIR%%/lang/language_bn.php
 %%WWWDIR%%/lang/language_cs.php
 %%WWWDIR%%/lang/language_cy.php
 %%WWWDIR%%/lang/language_da.php
@@ -698,6 +699,7 @@
 %%WWWDIR%%/lang/language_th.php
 %%WWWDIR%%/lang/language_tr.php
 %%WWWDIR%%/lang/language_tw.php
+%%WWWDIR%%/lang/language_uk.php
 %%WWWDIR%%/lang/language_vi.php
 %%WWWDIR%%/lang/language_zh.php
 %%WWWDIR%%/mailsend2friend.php
