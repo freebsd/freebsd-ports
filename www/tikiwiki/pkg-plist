@@ -14,7 +14,6 @@
 %%WWWDIR%%/commxmlrpc.php
 %%WWWDIR%%/copyright.txt
 %%WWWDIR%%/copyrights.php
-%%WWWDIR%%/db/Makefile
 %%WWWDIR%%/db/README.txt
 %%WWWDIR%%/db/_htaccess
 %%WWWDIR%%/db/case_patch.php
@@ -39,13 +38,6 @@
 %%WWWDIR%%/db/tiki-secdb_1.9_mysql.sql
 %%WWWDIR%%/db/tiki.sql
 %%WWWDIR%%/db/tiki_1.8to1.9.sql
-%%WWWDIR%%/db/tiki_ddl.sql
-%%WWWDIR%%/db/tiki_mysql.sql
-%%WWWDIR%%/db/tiki_oracle.err.sql
-%%WWWDIR%%/db/tiki_oracle.sql
-%%WWWDIR%%/db/tiki_postgresql.sql
-%%WWWDIR%%/db/tiki_sqlite.sql
-%%WWWDIR%%/db/tiki_sybase.sql
 %%WWWDIR%%/display_banner.php
 %%WWWDIR%%/doc/99_tiki-apache.conf
 %%WWWDIR%%/doc/htaccess
@@ -829,6 +821,7 @@
 %%WWWDIR%%/lang/uk/index.php
 %%WWWDIR%%/lang/uk/language.php
 %%WWWDIR%%/lib/Babelfish.php
+%%WWWDIR%%/lib/twversion.class.php
 %%WWWDIR%%/lib/Date/Calc.php
 %%WWWDIR%%/lib/Date/Human.php
 %%WWWDIR%%/lib/Date/TimeZone.php
