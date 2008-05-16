@@ -1,11 +1,63 @@
---- tools/Makefile.in.orig	Sun May 14 18:30:04 2006
-+++ tools/Makefile.in	Sun May 14 18:31:02 2006
-@@ -297,7 +297,7 @@
+This patch is mostly a patch for Squid bug #2346; the default location of the
+cachemgr.cgi configuration file was not correctly passed to the preprocessor
+during compilation.
+
+--- tools/Makefile.in.orig	2008-05-10 16:54:15.000000000 +0200
++++ tools/Makefile.in	2008-05-10 16:56:22.000000000 +0200
+@@ -61,7 +61,7 @@
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ libexecPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS)
+-am_cachemgr__CGIEXT__OBJECTS = cachemgr.$(OBJEXT)
++am_cachemgr__CGIEXT__OBJECTS = cachemgr__CGIEXT_-cachemgr.$(OBJEXT)
+ cachemgr__CGIEXT__OBJECTS = $(am_cachemgr__CGIEXT__OBJECTS)
+ cachemgr__CGIEXT__LDADD = $(LDADD)
+ am__DEPENDENCIES_1 =
+@@ -318,7 +318,7 @@
+ SUBDIRS = 
+ squidclient_SOURCES = squidclient.cc
+ cachemgr__CGIEXT__SOURCES = cachemgr.cc
+-cachemgr__CGIEXT__CFLAGS = -DDEFAULT_CACHEMGR_CONFIG=\"$(DEFAULT_CACHEMGR_CONFIG)\" $(AM_CFLAGS)
++cachemgr__CGIEXT__CXXFLAGS = -DDEFAULT_CACHEMGR_CONFIG=\"$(DEFAULT_CACHEMGR_CONFIG)\" $(AM_CFLAGS)
+ LDADD = -L../lib -lmiscutil $(XTRA_LIBS)
  EXTRA_DIST = \
  	cachemgr.conf
+@@ -440,7 +440,7 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
  
--DEFAULT_CACHEMGR_CONFIG = $(sysconfdir)/cachemgr.conf
-+DEFAULT_CACHEMGR_CONFIG = $(sysconfdir)/cachemgr.conf.default
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cachemgr.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cachemgr__CGIEXT_-cachemgr.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/squidclient.Po@am__quote@
  
- # Don't automatically uninstall config files
- #	@if test -f $(DESTDIR)$(DEFAULT_CONFIG_FILE) ; then \
+ .cc.o:
+@@ -467,6 +467,20 @@
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCXX_FALSE@	$(LTCXXCOMPILE) -c -o $@ $<
+ 
++cachemgr__CGIEXT_-cachemgr.o: cachemgr.cc
++@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cachemgr__CGIEXT__CXXFLAGS) $(CXXFLAGS) -MT cachemgr__CGIEXT_-cachemgr.o -MD -MP -MF "$(DEPDIR)/cachemgr__CGIEXT_-cachemgr.Tpo" -c -o cachemgr__CGIEXT_-cachemgr.o `test -f 'cachemgr.cc' || echo '$(srcdir)/'`cachemgr.cc; \
++@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/cachemgr__CGIEXT_-cachemgr.Tpo" "$(DEPDIR)/cachemgr__CGIEXT_-cachemgr.Po"; else rm -f "$(DEPDIR)/cachemgr__CGIEXT_-cachemgr.Tpo"; exit 1; fi
++@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='cachemgr.cc' object='cachemgr__CGIEXT_-cachemgr.o' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cachemgr__CGIEXT__CXXFLAGS) $(CXXFLAGS) -c -o cachemgr__CGIEXT_-cachemgr.o `test -f 'cachemgr.cc' || echo '$(srcdir)/'`cachemgr.cc
++
++cachemgr__CGIEXT_-cachemgr.obj: cachemgr.cc
++@am__fastdepCXX_TRUE@	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cachemgr__CGIEXT__CXXFLAGS) $(CXXFLAGS) -MT cachemgr__CGIEXT_-cachemgr.obj -MD -MP -MF "$(DEPDIR)/cachemgr__CGIEXT_-cachemgr.Tpo" -c -o cachemgr__CGIEXT_-cachemgr.obj `if test -f 'cachemgr.cc'; then $(CYGPATH_W) 'cachemgr.cc'; else $(CYGPATH_W) '$(srcdir)/cachemgr.cc'; fi`; \
++@am__fastdepCXX_TRUE@	then mv -f "$(DEPDIR)/cachemgr__CGIEXT_-cachemgr.Tpo" "$(DEPDIR)/cachemgr__CGIEXT_-cachemgr.Po"; else rm -f "$(DEPDIR)/cachemgr__CGIEXT_-cachemgr.Tpo"; exit 1; fi
++@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='cachemgr.cc' object='cachemgr__CGIEXT_-cachemgr.obj' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cachemgr__CGIEXT__CXXFLAGS) $(CXXFLAGS) -c -o cachemgr__CGIEXT_-cachemgr.obj `if test -f 'cachemgr.cc'; then $(CYGPATH_W) 'cachemgr.cc'; else $(CYGPATH_W) '$(srcdir)/cachemgr.cc'; fi`
++
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+ 
+@@ -835,6 +849,8 @@
+ $(OBJS): $(top_srcdir)/include/version.h ../include/autoconf.h
+ 
+ install-data-local:
++	@echo "$(INSTALL_DATA) $(srcdir)/cachemgr.conf $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG).default"; \
++	$(INSTALL_DATA) $(srcdir)/cachemgr.conf $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG).default;
+ 	@if test -f $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG) ; then \
+ 	        echo "$@ will not overwrite existing $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG)" ; \
+ 	else \

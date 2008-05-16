@@ -63,6 +63,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -425,10 +426,6 @@ pre-su-install:
 	    ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-# Create cachemgr.conf.default manually since Squid-3's install routine
-# unfortunately fails to do so (as it did in the old 2.5 days...):
-	${INSTALL_DATA} ${WRKSRC}/tools/cachemgr.conf \
-	    ${PREFIX}/etc/squid/cachemgr.conf.default
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/helpers/basic_auth/DB/passwd.sql ${EXAMPLESDIR}
