@@ -1,13 +1,14 @@
-A windowmanager based on aewm++.
+The Pek Window Manager is written by Claes Nasten, the code is based
+on the aewm++ window manager, but it has evolved enough that it no
+longer resembles aewm++ at all.
+It has a much expanded feature-set, including window grouping (similar
+to ion, pwm, or fluxbox), autoproperties, xinerama, keygrabber that
+supports keychains, and much more.
 
-Here is a compact list of changes between the originial aewm++-1.1.16 code and 
-pekwm, pekwms code is also alot restructured and reformatted.
+o Lightweight and Unobtrusive, a window manager shouldn't be noticed. 
+o Very configurable, we all work and think in different ways. 
+o Automatic properties, for all the lazy people, make things appear as
+  they should when starting applications. 
+o Chainable Keygrabber, usability for everyone.
 
-    * Possibility to group windows in a single frame
-    * Configurable keygrabber
-    * Configurable rootmenu
-    * Configration file
-    * Xinerama support
-    * "Smart" window placement
-    * Basic pixmap theming, with configurable buttons
-    * Some nifty extra bugs! ;)
+WWW: https://projects.pekdon.net/projects/3
