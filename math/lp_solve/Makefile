@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	lp_solve
-PORTVERSION=	${PORTMAJOR_VER}.0.10
+PORTVERSION=	${PORTMAJOR_VER}.0.12
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} # http://groups.yahoo.com/group/lp_solve/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lpsolve
 DISTNAME=	${PORTNAME}_${PORTVERSION}_source
 
@@ -19,10 +19,12 @@ PORTMAJOR_VER=	5.5
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTMAJOR_VER}
 USE_LDCONFIG=	yes
 
-.if ${MACHINE_ARCH} == "sparc64"
-PICFLAG?=       -fPIC
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+PICFLAG?=	-fPIC
 .else
-PICFLAG?=       -fpic
+PICFLAG?=	-fpic
 .endif
 
 pre-build:
@@ -51,4 +53,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lpsolve55/liblpsolve55.so ${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/liblpsolve55.so ${PREFIX}/lib/liblpsolve55.so.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
