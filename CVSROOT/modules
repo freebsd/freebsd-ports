@@ -8811,6 +8811,7 @@ open-beagle	ports/devel/open-beagle
 open-cobol	ports/lang/open-cobol
 open-motif	ports/x11-toolkits/open-motif
 open-vm-tools	ports/emulators/open-vm-tools
+open-vm-tools-nox11	ports/emulators/open-vm-tools-nox11
 openacs		ports/www/openacs
 openacs-dotlrn	ports/www/openacs-dotlrn
 openal		ports/audio/openal
