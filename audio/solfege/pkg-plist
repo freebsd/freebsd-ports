@@ -182,6 +182,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/help/C/gpl.html
 %%DATADIR%%/help/C/harmonicinterval-module.html
 %%DATADIR%%/help/C/harmonicinterval.html
+%%DATADIR%%/help/C/idbyname-cadences.html
 %%DATADIR%%/help/C/idbyname-chords.html
 %%DATADIR%%/help/C/idbyname-intonation.html
 %%DATADIR%%/help/C/idbyname-module.html
@@ -521,6 +522,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/help/fr/gpl.html
 %%DATADIR%%/help/fr/harmonicinterval-module.html
 %%DATADIR%%/help/fr/harmonicinterval.html
+%%DATADIR%%/help/fr/idbyname-cadences.html
 %%DATADIR%%/help/fr/idbyname-chords.html
 %%DATADIR%%/help/fr/idbyname-intonation.html
 %%DATADIR%%/help/fr/idbyname-module.html
@@ -538,6 +540,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/help/fr/music-theory.html
 %%DATADIR%%/help/fr/nameinterval-module.html
 %%DATADIR%%/help/fr/nameinterval.html
+%%DATADIR%%/help/fr/one-big-page.html
 %%DATADIR%%/help/fr/online-resources.html
 %%DATADIR%%/help/fr/preferences-window.html
 %%DATADIR%%/help/fr/rhythm-module.html
@@ -588,6 +591,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/help/nb/gpl.html
 %%DATADIR%%/help/nb/harmonicinterval-module.html
 %%DATADIR%%/help/nb/harmonicinterval.html
+%%DATADIR%%/help/nb/idbyname-cadences.html
 %%DATADIR%%/help/nb/idbyname-chords.html
 %%DATADIR%%/help/nb/idbyname-intonation.html
 %%DATADIR%%/help/nb/idbyname-module.html
@@ -605,6 +609,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/help/nb/music-theory.html
 %%DATADIR%%/help/nb/nameinterval-module.html
 %%DATADIR%%/help/nb/nameinterval.html
+%%DATADIR%%/help/nb/one-big-page.html
 %%DATADIR%%/help/nb/online-resources.html
 %%DATADIR%%/help/nb/preferences-window.html
 %%DATADIR%%/help/nb/rhythm-module.html
@@ -654,6 +659,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/help/pt_BR/gpl.html
 %%DATADIR%%/help/pt_BR/harmonicinterval-module.html
 %%DATADIR%%/help/pt_BR/harmonicinterval.html
+%%DATADIR%%/help/pt_BR/idbyname-cadences.html
 %%DATADIR%%/help/pt_BR/idbyname-chords.html
 %%DATADIR%%/help/pt_BR/idbyname-intonation.html
 %%DATADIR%%/help/pt_BR/idbyname-module.html
@@ -671,6 +677,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/help/pt_BR/music-theory.html
 %%DATADIR%%/help/pt_BR/nameinterval-module.html
 %%DATADIR%%/help/pt_BR/nameinterval.html
+%%DATADIR%%/help/pt_BR/one-big-page.html
 %%DATADIR%%/help/pt_BR/online-resources.html
 %%DATADIR%%/help/pt_BR/preferences-window.html
 %%DATADIR%%/help/pt_BR/rhythm-module.html
@@ -722,6 +729,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/help/tr/gpl.html
 %%DATADIR%%/help/tr/harmonicinterval-module.html
 %%DATADIR%%/help/tr/harmonicinterval.html
+%%DATADIR%%/help/tr/idbyname-cadences.html
 %%DATADIR%%/help/tr/idbyname-chords.html
 %%DATADIR%%/help/tr/idbyname-intonation.html
 %%DATADIR%%/help/tr/idbyname-module.html
@@ -739,6 +747,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/help/tr/music-theory.html
 %%DATADIR%%/help/tr/nameinterval-module.html
 %%DATADIR%%/help/tr/nameinterval.html
+%%DATADIR%%/help/tr/one-big-page.html
 %%DATADIR%%/help/tr/online-resources.html
 %%DATADIR%%/help/tr/preferences-window.html
 %%DATADIR%%/help/tr/rhythm-module.html
