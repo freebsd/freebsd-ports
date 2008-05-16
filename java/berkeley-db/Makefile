@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	je
-PORTVERSION=	3.2.13
-PORTREVISION=	1
+PORTVERSION=	3.2.76
 CATEGORIES=	java databases
 MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 		http://download-east.oracle.com/berkeley-db/	\
@@ -59,7 +58,7 @@ post-build:	test
 .else
 post-build:
 	#
-	# Doing `make test' now might be useful (if time-consuming)
+	# Doing `make test' now might be useful (if time-consuming).
 	# Please, review the reported failures (if any) and consider
 	# reporting them via
 	# 	http://forums.oracle.com/forums/forum.jspa?forumID=273
