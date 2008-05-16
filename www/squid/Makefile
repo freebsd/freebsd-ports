@@ -76,6 +76,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.6.20
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
