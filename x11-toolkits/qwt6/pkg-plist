@@ -5,6 +5,7 @@ include/qwt/qwt_abstract_slider.h
 include/qwt/qwt_analog_clock.h
 include/qwt/qwt_array.h
 include/qwt/qwt_arrow_button.h
+include/qwt/qwt_clipper.h
 include/qwt/qwt_color_map.h
 include/qwt/qwt_compass.h
 include/qwt/qwt_compass_rose.h
@@ -24,6 +25,8 @@ include/qwt/qwt_knob.h
 include/qwt/qwt_layout_metrics.h
 include/qwt/qwt_legend.h
 include/qwt/qwt_legend_item.h
+include/qwt/qwt_legend_itemmanager.h
+include/qwt/qwt_magnifier.h
 include/qwt/qwt_math.h
 include/qwt/qwt_paint_buffer.h
 include/qwt/qwt_painter.h
@@ -43,6 +46,7 @@ include/qwt/qwt_plot_panner.h
 include/qwt/qwt_plot_picker.h
 include/qwt/qwt_plot_printfilter.h
 include/qwt/qwt_plot_rasteritem.h
+include/qwt/qwt_plot_scaleitem.h
 include/qwt/qwt_plot_spectrogram.h
 include/qwt/qwt_plot_svgitem.h
 include/qwt/qwt_plot_zoomer.h
@@ -66,6 +70,8 @@ include/qwt/qwt_valuelist.h
 include/qwt/qwt_wheel.h
 lib/libqwt.so
 lib/libqwt.so.5
+lib/libqwt.so.5.1
+lib/libqwt.so.5.1.0
 %%DESIGNER_PLUGIN%%lib/qt4/plugins/designer/libqwt_designer_plugin.so
 %%PORTDOCS%%%%DOCSDIR%%/analogclock.png
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
@@ -121,6 +127,8 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_c_pointer_data__inherit__graph.map
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_c_pointer_data__inherit__graph.md5
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_c_pointer_data__inherit__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_clipper-members.html
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_clipper.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_color_map-members.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_color_map.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_color_map__inherit__graph.map
@@ -240,6 +248,11 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_legend_item__inherit__graph.map
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_legend_item__inherit__graph.md5
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_legend_item__inherit__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_legend_item_manager-members.html
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_legend_item_manager.html
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_legend_item_manager__inherit__graph.map
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_legend_item_manager__inherit__graph.md5
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_legend_item_manager__inherit__graph.png
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_linear_color_map-members.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_linear_color_map.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_linear_color_map__coll__graph.map
@@ -264,6 +277,11 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_log10_scale_engine__inherit__graph.map
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_log10_scale_engine__inherit__graph.md5
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_log10_scale_engine__inherit__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_magnifier-members.html
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_magnifier.html
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_magnifier__inherit__graph.map
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_magnifier__inherit__graph.md5
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_magnifier__inherit__graph.png
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_math_m_l_text_engine-members.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_math_m_l_text_engine.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_math_m_l_text_engine__coll__graph.map
@@ -378,6 +396,9 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_grid__inherit__graph.png
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_item-members.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_item.html
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_item__coll__graph.map
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_item__coll__graph.md5
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_item__coll__graph.png
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_item__inherit__graph.map
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_item__inherit__graph.md5
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_item__inherit__graph.png
@@ -385,6 +406,12 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_layout.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_magnifier-members.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_magnifier.html
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_magnifier__coll__graph.map
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_magnifier__coll__graph.md5
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_magnifier__coll__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_magnifier__inherit__graph.map
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_magnifier__inherit__graph.md5
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_magnifier__inherit__graph.png
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_marker-members.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_marker.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_marker__coll__graph.map
@@ -419,6 +446,14 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_raster_item__inherit__graph.map
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_raster_item__inherit__graph.md5
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_raster_item__inherit__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_scale_item-members.html
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_scale_item.html
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_scale_item__coll__graph.map
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_scale_item__coll__graph.md5
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_scale_item__coll__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_scale_item__inherit__graph.map
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_scale_item__inherit__graph.md5
+%%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_scale_item__inherit__graph.png
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_spectrogram-members.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_spectrogram.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_plot_spectrogram__coll__graph.map
@@ -572,61 +607,13 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/form_2.png
 %%PORTDOCS%%%%DOCSDIR%%/formula.repository
 %%PORTDOCS%%%%DOCSDIR%%/functions.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x62.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x63.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x64.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x65.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x66.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x67.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x68.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x69.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x6b.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x6c.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x6d.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x6e.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x6f.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x70.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x71.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x72.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x73.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x74.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x75.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x76.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x77.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x78.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x79.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x7a.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_enum.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_func.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x62.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x63.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x64.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x65.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x66.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x67.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x68.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x69.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x6b.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x6c.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x6d.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x6e.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x6f.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x70.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x71.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x72.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x73.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x74.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x75.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x76.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x77.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x78.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x79.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x7a.html
-%%PORTDOCS%%%%DOCSDIR%%/functions_func_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_rela.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_type.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/globals_type.html
 %%PORTDOCS%%%%DOCSDIR%%/graph.png
 %%PORTDOCS%%%%DOCSDIR%%/graph_legend.dot
 %%PORTDOCS%%%%DOCSDIR%%/graph_legend.html
@@ -731,6 +718,9 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/inherit__graph__37.map
 %%PORTDOCS%%%%DOCSDIR%%/inherit__graph__37.md5
 %%PORTDOCS%%%%DOCSDIR%%/inherit__graph__37.png
+%%PORTDOCS%%%%DOCSDIR%%/inherit__graph__38.map
+%%PORTDOCS%%%%DOCSDIR%%/inherit__graph__38.md5
+%%PORTDOCS%%%%DOCSDIR%%/inherit__graph__38.png
 %%PORTDOCS%%%%DOCSDIR%%/inherit__graph__4.map
 %%PORTDOCS%%%%DOCSDIR%%/inherit__graph__4.md5
 %%PORTDOCS%%%%DOCSDIR%%/inherit__graph__4.png
@@ -764,6 +754,8 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/qwt__array_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__arrow__button_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__arrow__button_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/qwt__clipper_8cpp-source.html
+%%PORTDOCS%%%%DOCSDIR%%/qwt__clipper_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__color__map_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__color__map_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__compass_8cpp-source.html
@@ -786,6 +778,10 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/qwt__double__range_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__double__rect_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__double__rect_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/qwt__double__rect_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/qwt__double__rect_8h__incl.map
+%%PORTDOCS%%%%DOCSDIR%%/qwt__double__rect_8h__incl.md5
+%%PORTDOCS%%%%DOCSDIR%%/qwt__double__rect_8h__incl.png
 %%PORTDOCS%%%%DOCSDIR%%/qwt__dyngrid__layout_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__dyngrid__layout_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__event__pattern_8cpp-source.html
@@ -801,6 +797,9 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/qwt__legend_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__legend__item_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__legend__item_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/qwt__legend__itemmanager_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/qwt__magnifier_8cpp-source.html
+%%PORTDOCS%%%%DOCSDIR%%/qwt__magnifier_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__math_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__math_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__mathml__text__engine_8cpp-source.html
@@ -824,6 +823,10 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__curve_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__dict_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__dict_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/qwt__plot__dict_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/qwt__plot__dict_8h__incl.map
+%%PORTDOCS%%%%DOCSDIR%%/qwt__plot__dict_8h__incl.md5
+%%PORTDOCS%%%%DOCSDIR%%/qwt__plot__dict_8h__incl.png
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__grid_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__grid_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__item_8cpp-source.html
@@ -843,6 +846,8 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__printfilter_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__rasteritem_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__rasteritem_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/qwt__plot__scaleitem_8cpp-source.html
+%%PORTDOCS%%%%DOCSDIR%%/qwt__plot__scaleitem_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__spectrogram_8cpp-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__spectrogram_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/qwt__plot__svgitem_8cpp-source.html
@@ -902,6 +907,7 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/todo.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%DESIGNER_PLUGIN%%@dirrmtry lib/plugins/designer
-%%DESIGNER_PLUGIN%%@dirrmtry lib/plugins
+%%DESIGNER_PLUGIN%%@dirrmtry lib/qt4/plugins/designer
+%%DESIGNER_PLUGIN%%@dirrmtry lib/qt4/plugins
+%%DESIGNER_PLUGIN%%@dirrmtry lib/qt4
 @dirrm include/qwt

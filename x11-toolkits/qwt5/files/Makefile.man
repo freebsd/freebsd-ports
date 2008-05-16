@@ -6,6 +6,7 @@ MAN3=	QwtAbstractScale.3 \
 	QwtArrayData.3 \
 	QwtArrowButton.3 \
 	QwtCPointerData.3 \
+	QwtClipper.3 \
 	QwtColorMap.3 \
 	QwtCompass.3 \
 	QwtCompassMagnetNeedle.3 \
@@ -28,9 +29,11 @@ MAN3=	QwtAbstractScale.3 \
 	QwtKnob.3 \
 	QwtLegend.3 \
 	QwtLegendItem.3 \
+	QwtLegendItemManager.3 \
 	QwtLinearColorMap.3 \
 	QwtLinearScaleEngine.3 \
 	QwtLog10ScaleEngine.3 \
+	QwtMagnifier.3 \
 	QwtMathMLTextEngine.3 \
 	QwtMetricsMap.3 \
 	QwtPainter.3 \
@@ -56,6 +59,7 @@ MAN3=	QwtAbstractScale.3 \
 	QwtPlotPicker.3 \
 	QwtPlotPrintFilter.3 \
 	QwtPlotRasterItem.3 \
+	QwtPlotScaleItem.3 \
 	QwtPlotSpectrogram.3 \
 	QwtPlotSvgItem.3 \
 	QwtPlotZoomer.3 \
