@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	star
-DISTVERSION=	1.5a87
+DISTVERSION=	1.5
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.berlios.de/pub/star/alpha/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Unique standard tape archiver with many enhancements
@@ -18,9 +18,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/smake:${PORTSDIR}/devel/smake
 CONFLICTS=	star-1.4*
 LATEST_LINK=	star-devel
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.a.*//g}
-
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
+USE_ICONV=	yes
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		star.1
