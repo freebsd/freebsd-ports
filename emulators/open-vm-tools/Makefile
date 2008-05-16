@@ -37,13 +37,13 @@ CONFLICTS=		vmware-guestd* vmware-tools*
 .if defined(WITHOUT_DNET)
 CONFIGURE_ARGS+=	--without-dnet
 .else
-BUILD_DEPENDS=		${LOCALBASE}/lib/libdnet.so:${PORTSDIR}/net/libdnet
+LIB_DEPENDS+=		dnet:${PORTSDIR}/net/libdnet
 .endif
 
 .if defined(WITHOUT_ICU)
 CONFIGURE_ARGS+=	--without-icu
 .else
-BUILD_DEPENDS=		${LOCALBASE}/lib/libicuuc.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu
 .endif
 
 USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
