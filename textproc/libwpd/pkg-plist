@@ -8,6 +8,7 @@ include/libwpd-0.8/libwpd/WPXProperty.h
 include/libwpd-0.8/libwpd/WPXPropertyList.h
 include/libwpd-0.8/libwpd/WPXPropertyListVector.h
 include/libwpd-0.8/libwpd/WPXStream.h
+include/libwpd-0.8/libwpd/WPXStreamImplementation.h
 include/libwpd-0.8/libwpd/WPXString.h
 include/libwpd-0.8/libwpd/libwpd.h
 include/libwpd-0.8/libwpd/libwpd_types.h
