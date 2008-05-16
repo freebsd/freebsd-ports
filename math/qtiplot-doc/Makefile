@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qtiplot-doc
-PORTVERSION=	0.9.5
+DISTVERSION=	0.9.6
 CATEGORIES=	math
 MASTER_SITES=	http://soft.proindependent.com/src/
-DISTNAME=	qtiplot-${PORTVERSION}
+DISTNAME=	qtiplot-${DISTVERSION}
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	The QtiPlot Handbook
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
 
 USE_BZIP2=	yes
 DATADIR=	${PREFIX}/share/qtiplot/manual
-WRKSRC=		${WRKDIR}/qtiplot-${PORTVERSION}/manual
+WRKSRC=		${WRKDIR}/${DISTNAME}/manual
 
 post-patch:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e "s:/usr/local:${LOCALBASE}:g" \
