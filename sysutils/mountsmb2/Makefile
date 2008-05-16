@@ -8,37 +8,32 @@
 PORTNAME=	mountsmb2
 PORTVERSION=	0.90.2
 CATEGORIES=	sysutils net
-MASTER_SITES=	ftp://ftp.granch.ru/pub/other/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lippe
 
 MAINTAINER=	achilov-rn@askd.ru
 COMMENT=	SMB/CIFS shares mounting scripts to do it at login
 
 RUN_DEPENDS=	nbtscan:${PORTSDIR}/net-mgmt/nbtscan \
-		sudo:${PORTSDIR}/security/sudo \
-
-.if !exists(/usr/bin/host)
-RUN_DEPENDS+=	host:${PORTSDIR}/dns/bind9
-.endif
+		sudo:${PORTSDIR}/security/sudo
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
+EXAMPLES=	sudoers .login .nsmbrc .mssmbrc nsmb.conf
+SCRIPTS=	smb2nsmbrc mountsmb2
+
+SUB_FILES=	pkg-message
+
 do-install:
-
-.for i in smb2nsmbrc mountsmb2
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin
-.endfor
+	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/,} ${PREFIX}/bin
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,} ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
-	-@${MKDIR} ${EXAMPLESDIR}
-
-.for i in sudoers .login .nsmbrc .mssmbrc nsmb.conf
-	${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}
-.endfor
-
-	-@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.FreeBSD ${DOCSDIR}
-
-	@${SED} -e "s,%%EXAMPLESDIR%%,${EXAMPLESDIR},g" ${PKGMESSAGE}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README.FreeBSD ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
