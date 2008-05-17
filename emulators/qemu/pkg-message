@@ -95,6 +95,17 @@ they do run in the 32 bit one, the same is true about kqemu and -kernel-kqemu
 on amd64 - not much you can do about that other than help debugging (k)qemu's
 amd64 emulation... (well or falling back to unaccellerated, possibly 32 bit
 qemu/leaving out -kernel-kqemu if its that what's causing the problems.)
+- qemu's network boot roms (-boot n) have a bug when bootfiles sizes are a
+multiple of blksize, if this affects you (like with FreeBSD's /boot/pxeboot)
+you can do like
+	cp /boot/pxeboot pxeboot-qemu && chmod +w pxeboot-qemu && echo >>pxeboot-qemu
+and then use pxeboot-qemu.  Actually you need latest -stable or -current
+btx code (from after 7.0 was released) because of the real mode boot problem,
+so use at least pxeboot from there.  And I just did that for the pxeboot
+extracted out of
+	ftp://ftp.freebsd.org/pub/FreeBSD/snapshots/200805/7.0-STABLE-200805-i386-bootonly.iso
+and placed it here:
+	http://people.freebsd.org/~nox/qemu/pxeboot-qemu
 - qemu now uses aio at least for ide dma, so if you get `Invalid system call'
 crashes that is because aio is not (kld)loaded.
 - The default configuration location (qemu-ifup script etc.) has been
