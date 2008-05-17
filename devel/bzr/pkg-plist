@@ -746,6 +746,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_break_lock.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_break_lock.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_break_lock.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_check.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_check.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_check.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_commit.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_commit.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_commit.pyo
@@ -779,6 +782,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_push.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_push.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_push.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_reconcile.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_reconcile.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_reconcile.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_history.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_history.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/branch_implementations/test_revision_history.pyo
@@ -851,6 +857,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/test_fetch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/test_fetch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/test_fetch.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/test_interrepository.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/test_interrepository.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/test_interrepository.pyo
@@ -1723,6 +1732,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/xml7.py
 %%PYTHON_SITELIBDIR%%/bzrlib/xml7.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/xml7.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/xml8.py
+%%PYTHON_SITELIBDIR%%/bzrlib/xml8.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/xml8.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.py
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.pyo
