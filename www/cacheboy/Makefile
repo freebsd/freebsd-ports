@@ -75,13 +75,13 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	cacheboy
-DISTVERSION=	0.PRE4
-PORTREVISION=	3
+DISTVERSION=	0.PRE6
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	CACHEBOY_0.PRE4
+DISTNAME=	CACHEBOY_0.PRE6
 # EXTRACT_SUFX=	.tar.gz
-DIST_SUBDIR=	CACHEBOY_0.PRE4
+DIST_SUBDIR=	CACHEBOY_0.PRE6
 
 MAINTAINER=	adrian@freebsd.org
 COMMENT=	HTTP Caching Proxy (Squid Derivative)
@@ -349,8 +349,8 @@ SQUID_LANGUAGES?=	Armenian Azerbaijani Bulgarian Catalan Czech Danish \
 			Hebrew Hungarian Italian Japanese Korean Lithuanian \
 			Polish Portuguese Romanian Russian-1251 Russian-koi8-r \
 			Serbian Simplify_Chinese Slovak Spanish Swedish \
-			Traditional_Chinese Turkish
-SQUID_DEFAULT_LANG?=	English
+			Traditional_Chinese Turkish NewEnglish
+SQUID_DEFAULT_LANG?=	NewEnglish
 CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 			--enable-default-err-language=${SQUID_DEFAULT_LANG}
 
