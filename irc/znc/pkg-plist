@@ -37,6 +37,7 @@ lib/znc/partyline.so
 lib/znc/perform.so
 lib/znc/raw.so
 lib/znc/sample.so
+%%SASL%%lib/znc/saslauth.so
 lib/znc/savebuff.so
 lib/znc/schat.so
 lib/znc/shell.so
@@ -112,3 +113,26 @@ lib/znc/webadmin.so
 %%DATADIR%%/webadmin/skins/ice/img/favicon.ico
 %%DATADIR%%/webadmin/skins/ice/img/linkbg.jpg
 %%DATADIR%%/webadmin/skins/ice/img/pagebg.gif
+@dirrm %%DATADIR%%/webadmin/skins/ice/img
+@dirrm %%DATADIR%%/webadmin/skins/ice/css
+@dirrm %%DATADIR%%/webadmin/skins/ice.de/img
+@dirrm %%DATADIR%%/webadmin/skins/ice.de/css
+@dirrm %%DATADIR%%/webadmin/skins/ice.de
+@dirrm %%DATADIR%%/webadmin/skins/ice
+@dirrm %%DATADIR%%/webadmin/skins/graphiX/img
+@dirrm %%DATADIR%%/webadmin/skins/graphiX/css
+@dirrm %%DATADIR%%/webadmin/skins/graphiX.de/img
+@dirrm %%DATADIR%%/webadmin/skins/graphiX.de/css
+@dirrm %%DATADIR%%/webadmin/skins/graphiX.de
+@dirrm %%DATADIR%%/webadmin/skins/graphiX
+@dirrm %%DATADIR%%/webadmin/skins/default/img
+@dirrm %%DATADIR%%/webadmin/skins/default/css
+@dirrm %%DATADIR%%/webadmin/skins/default.de/img
+@dirrm %%DATADIR%%/webadmin/skins/default.de/css
+@dirrm %%DATADIR%%/webadmin/skins/default.de
+@dirrm %%DATADIR%%/webadmin/skins/default
+@dirrm %%DATADIR%%/webadmin/skins
+@dirrm %%DATADIR%%/webadmin
+@dirrm %%DATADIR%%
+@dirrm lib/znc
+@dirrm include/znc
