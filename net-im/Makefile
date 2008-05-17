@@ -109,6 +109,7 @@
     SUBDIR += pidgin-libnotify
     SUBDIR += pidgin-manualsize
     SUBDIR += pidgin-rhythmbox
+    SUBDIR += pidgin-twitter
     SUBDIR += pork
     SUBDIR += psi
     SUBDIR += psi-gentoo
