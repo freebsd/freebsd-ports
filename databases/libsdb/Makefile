@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://siag.nu/pub/libsdb/ \
 		http://siag.nu/pub/libsdb/
 DISTNAME=	sdb-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Simple database library
 
 HAS_CONFIGURE=	yes
