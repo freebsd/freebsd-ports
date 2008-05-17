@@ -7924,7 +7924,7 @@ mod_dav		ports/www/mod_dav
 mod_domaintree	ports/www/mod_domaintree
 mod_dtcl	ports/www/mod_dtcl
 mod_encoding	ports/www/mod_encoding
-mod_evasive20	ports/www/mod_evasive20
+mod_evasive	ports/www/mod_evasive
 mod_extract_forwarded	ports/www/mod_extract_forwarded
 mod_extract_forwarded2	ports/www/mod_extract_forwarded2
 mod_fastcgi	ports/www/mod_fastcgi
