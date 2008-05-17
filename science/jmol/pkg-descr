@@ -1,0 +1,9 @@
+Jmol is a Java molecular viewer for
+three-dimensional chemical structures.
+Features include reading a variety
+of file types and output from quantum
+chemistry programs, and animation of
+multi-frame files and computed normal
+modes from quantum programs.
+
+WWW:  http://sourceforge.net/projects/jmol/

@@ -62,6 +62,7 @@
     SUBDIR += hdf5
     SUBDIR += ics
     SUBDIR += isaac-cfd
+    SUBDIR += jmol
     SUBDIR += kmovisto
     SUBDIR += kst
     SUBDIR += lamprop
