@@ -10,7 +10,7 @@ graphs include a year of baselined information.  New RRDTOOL graphs
 may be designed with user-configured BPF expressions a la tcpdump.
 Reports and logging for top talkers are also included.
 
-WWW: http://ourmon.cat.pdx.edu/ourmon/
+WWW: http://ourmon.sourceforge.net
 
 Created by: Jim Binkley <jrb@cs.pdx.edu>
 FreeBSD Port by: Charlie Schluting <manos@cs.pdx.edu>
