@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/ \
-		https://launchpad.net/bzr/1.4/${PORTVERSION}/+download/
+		https://launchpad.net/bzr/1.5/${PORTVERSION}/+download/
 DISTNAME=	bzr-${PORTVERSION}
 
 MAINTAINER=	fullermd@over-yonder.net
