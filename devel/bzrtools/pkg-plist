@@ -40,6 +40,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/graph.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/graph.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/graph.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/heads.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/heads.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/heads.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/hunk_selector.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/hunk_selector.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/hunk_selector.pyo

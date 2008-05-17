@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bzrtools
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	devel
 MASTER_SITES=	https://code.launchpad.net/bzrtools/stable/${PORTVERSION}/+download/
 
