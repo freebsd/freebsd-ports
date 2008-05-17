@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Bot-BasicBot
-PORTVERSION=	0.7
+PORTVERSION=	0.65
 CATEGORIES=	irc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/T/TO/TOMI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Simple irc bot baseclass
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
