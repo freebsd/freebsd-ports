@@ -7,6 +7,7 @@
 
 PORTNAME=	msn-proxy
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -26,7 +27,7 @@ MSNPROXYWWW=	ajax.inc.php al.inc.php bl.inc.php chat-to.php chat.php \
 		default.array.status.inc.php fl.inc.php group.inc.php \
 		header.inc.php index.php mysql.inc.php save_contact_op.php \
 		save_default_op.php save_msg.php save_user_op.php user.php \
-		view-to.php view.php
+		view-to.php view.php user.inc.php
 MSNPROXYIMG=	ausente.gif block.gif notinlist.png ocupado.gif offline.gif \
 		online.gif send_im.gif webcam.png
 

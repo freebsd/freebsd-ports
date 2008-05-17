@@ -26,6 +26,7 @@ bin/msn-proxy
 %%WWWDIR%%/save_msg.php
 %%WWWDIR%%/save_user_op.php
 %%WWWDIR%%/user.php
+%%WWWDIR%%/user.inc.php
 %%WWWDIR%%/view-to.php
 %%WWWDIR%%/view.php
 %%WWWDIR%%/imagens/ausente.gif
