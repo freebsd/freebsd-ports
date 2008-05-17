@@ -63,10 +63,11 @@ do-extract:
 	${TAR} -zxf redhat-artwork-${PORTVERSION}.tar.gz
 
 .if defined(BC_HIERS)
-
+.if !exists(${PLIST})
 PLIST=		${WRKDIR}/pkg-plist
 
 pre-install: bc-generate-plist
+.endif
 
 bc-generate-plist:
 	@${RM} -f ${PLIST}
