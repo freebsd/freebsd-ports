@@ -31,7 +31,6 @@ USE_GNUSTEP_CAIRO=	yes
 USE_GNUSTEP_SYSTEM_LIBS+=	\
 	TrackerKit:deskutils/etoile-trackerkit \
 	ServicesBarKit:deskutils/etoile-servicesbarkit \
-	IconKit:x11-themes/etoile-iconkit \
 	ExtendedWorkspace:deskutils/etoile-extendedworkspacekit \
 	XWindowServerKit:x11/etoile-xwindowserverkit \
 	WorkspaceCommKit:sysutils/etoile-system \
@@ -41,6 +40,7 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	SQLClient:databases/sqlclient \
 	UnitKit:devel/etoile-unitkit \
 	BookmarkKit:www/etoile-bookmarkkit \
+	IconKit:x11-themes/etoile-iconkit \
 	RSSKit:www/etoile-rsskit \
 	PopplerKit:graphics/popplerkit \
 	OgreKit:textproc/etoile-ogrekit \

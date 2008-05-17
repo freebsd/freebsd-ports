@@ -35,7 +35,6 @@ USE_GNUSTEP_SYSTEM_LIBS+=	\
 	TrackerKit:deskutils/etoile-trackerkit \
 	ExtendedWorkspace:deskutils/etoile-extendedworkspacekit \
 	ServicesBarKit:deskutils/etoile-servicesbarkit \
-	IconKit:x11-themes/etoile-iconkit \
 	XWindowServerKit:x11/etoile-xwindowserverkit \
 	WorkspaceCommKit:sysutils/etoile-system \
 
@@ -58,6 +57,7 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	GSKrab:x11/gskrab \
 	UnitKit:devel/etoile-unitkit \
 	BookmarkKit:www/etoile-bookmarkkit \
+	IconKit:x11-themes/etoile-iconkit \
 	RSSKit:www/etoile-rsskit \
 	Encore:devel/fortytwo-encore \
 	BDB:databases/fortytwo-bdb \
