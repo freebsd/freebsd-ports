@@ -27,6 +27,7 @@ USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS+=	autoconf:261 aclocal:19 automake:19
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GCC=	3.4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -35,7 +36,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 .if ${OSVERSION} >= 800000
 IGNORE=	FreeBSD 8.0 is supported yet
 .elif ${OSVERSION} >= 700000
-BROKEN=		does not compile
 PLIST_SUB+=	RELENG_5="@comment "
 PLIST_SUB+=	RELENG_6="@comment "
 PLIST_SUB+=	RELENG_7=""
