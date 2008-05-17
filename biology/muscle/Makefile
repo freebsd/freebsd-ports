@@ -24,6 +24,8 @@ DISTFILES+=	${file}:docs
 MAINTAINER=	mzaki@biol.s.u-tokyo.ac.jp
 COMMENT=	MUltiple Sequence Comparison by Log-Expectation
 
+FETCH_ARGS=	-A
+
 USE_GMAKE=	yes
 USE_DOS2UNIX=	*.cpp
 
