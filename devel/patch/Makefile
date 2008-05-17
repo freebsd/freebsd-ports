@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	patch
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	GNU patch utility
 
 GNU_CONFIGURE=	yes
