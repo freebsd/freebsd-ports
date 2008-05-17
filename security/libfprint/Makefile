@@ -25,6 +25,10 @@ USE_GNOME=	glib20 pkgconfig
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-FreeBSD5
+.endif
+
 CONFIGURE_ENV+=	CRYPTO_CFLAGS=-I${OPENSSLINC} \
 		CRYPTO_LIBS=-lcrypto \
 		CFLAGS="${CFLAGS} -DHAVE_MEMMEM"
