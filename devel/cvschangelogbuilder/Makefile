@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cvschangelogb
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	Utility to generate changelogs and reports from a CVS repository
 
 RUN_DEPENDS=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
