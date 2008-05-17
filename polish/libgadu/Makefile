@@ -6,6 +6,7 @@
 
 PORTNAME=	libgadu
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	polish net
 MASTER_SITES=	http://toxygen.net/libgadu/files/
@@ -23,16 +24,26 @@ CONFIGURE_ARGS=		--enable-shared --disable-static
 
 USE_LDCONFIG=		yes
 
+OPTIONS=	OPENSSL "Build with OPENSSL support" on
+
 PLIST_FILES=	include/libgadu.h \
 		lib/libgadu.la \
 		lib/libgadu.so \
 		lib/libgadu.so.3 \
 		libdata/pkgconfig/libgadu.pc
 
-OPTIONS=	OPENSSL "Build with OPENSSL support" on
+.include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_OPENSSL)
+.if defined(WITH_OPENSSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+.else
 CONFIGURE_ARGS+=	--without-openssl
 .endif
 
-.include <bsd.port.mk>
+pre-install:
+
+.if defined(WITH_OPENSSL)
+	@${REINPLACE_CMD} -e 's|openssl| |g' ${WRKSRC}/pkgconfig/libgadu.pc
+.endif
+
+.include <bsd.port.post.mk>
