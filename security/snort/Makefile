@@ -7,6 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
@@ -23,7 +24,8 @@ OPTIONS=	DYNAMIC "Enable dynamic plugin support" on \
 		MYSQL "Enable MySQL support" off \
 		ODBC "Enable ODBC support" off \
 		POSTGRESQL "Enable PostgreSQL support" off \
-		PRELUDE "Enable Prelude NIDS integration" off
+		PRELUDE "Enable Prelude NIDS integration" off \
+		PERPROFILE "Enable Performance Profiling" off
 
 USE_RC_SUBR=	snort.sh
 SUB_FILES=	pkg-message
@@ -122,6 +124,10 @@ PLIST_SUB+=		PRELUDE=""
 .else
 CONFIGURE_ARGS+=	--disable-prelude
 PLIST_SUB+=		PRELUDE="@comment "
+.endif
+
+.if defined(WITH_PERPROFILE)
+CONFIGURE_ARGS+=	--enable-perfprofiling
 .endif
 
 post-patch:
