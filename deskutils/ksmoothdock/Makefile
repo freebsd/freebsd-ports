@@ -12,15 +12,16 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_automake-1.9
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	A dock program for KDE with smooth zooming
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_KDELIBS_VER=	3
+USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 
 pre-configure:
 	@cd ${WRKSRC}/admin && ${RM} -f ltmain.sh && ${CP} -f ${LTMAIN} .
