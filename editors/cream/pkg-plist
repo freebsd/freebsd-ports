@@ -39,7 +39,6 @@ share/applications/cream.desktop
 %%PORTDOCS%%%%DOCSDIR%%/docs/WINDOWS.txt
 share/pixmaps/cream.png
 share/pixmaps/cream.svg
-%%VIMRUNTIME%%/cream/EasyHtml.vim
 %%VIMRUNTIME%%/cream/EnhancedCommentify.vim
 %%VIMRUNTIME%%/cream/Rndm.vim
 %%VIMRUNTIME%%/cream/calendar.vim
@@ -57,6 +56,7 @@ share/pixmaps/cream.svg
 %%VIMRUNTIME%%/cream/cream-colors-dawn.vim
 %%VIMRUNTIME%%/cream/cream-colors-default.vim
 %%VIMRUNTIME%%/cream/cream-colors-inkpot.vim
+%%VIMRUNTIME%%/cream/cream-colors-matrix.vim
 %%VIMRUNTIME%%/cream/cream-colors-navajo-night.vim
 %%VIMRUNTIME%%/cream/cream-colors-navajo.vim
 %%VIMRUNTIME%%/cream/cream-colors-night.vim
@@ -125,6 +125,7 @@ share/pixmaps/cream.svg
 %%VIMRUNTIME%%/cream/addons/cream-encrypt-algorithmic.vim
 %%VIMRUNTIME%%/cream/addons/cream-encrypt-h4x0r.vim
 %%VIMRUNTIME%%/cream/addons/cream-encrypt-hexme.vim
+%%VIMRUNTIME%%/cream/addons/cream-encrypt-gpg.vim
 %%VIMRUNTIME%%/cream/addons/cream-encrypt-rot13.vim
 %%VIMRUNTIME%%/cream/addons/cream-helptags.vim
 %%VIMRUNTIME%%/cream/addons/cream-highlight-ctrlchars.vim
