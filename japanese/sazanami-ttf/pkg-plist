@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%DATADIR%%/sazanami-mincho.ttf
 %%DATADIR%%/sazanami-gothic.ttf
+@dirrm %%DATADIR%%
 %%LOCAL_FONTSDIR%%/TrueType/sazanami-mincho.ttf
 %%LOCAL_FONTSDIR%%/TrueType/sazanami-gothic.ttf
 @dirrmtry %%LOCAL_FONTSDIR%%/TrueType

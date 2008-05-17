@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%DATADIR%%/kochi-mincho-subst.ttf
 %%DATADIR%%/kochi-gothic-subst.ttf
+@dirrm %%DATADIR%%
 %%LOCAL_FONTSDIR%%/TrueType/kochi-mincho-subst.ttf
 %%LOCAL_FONTSDIR%%/TrueType/kochi-gothic-subst.ttf
 @dirrmtry %%LOCAL_FONTSDIR%%/TrueType
