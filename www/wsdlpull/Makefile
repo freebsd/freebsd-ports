@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	wsdlpull
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	www
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	C++ WSDL Parser
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
@@ -33,8 +33,8 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/wsdlpull.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/wsdlpull.html ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
