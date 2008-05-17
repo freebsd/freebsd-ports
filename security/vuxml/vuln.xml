@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f5a76faf-244c-11dd-b143-0211d880e350">
+    <topic>libvorbis -- various security issues</topic>
+    <affects>
+      <package>
+	<name>libvorbis</name>
+	<range><lt>1.2.0_2,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Red Hat reports:</p>
+	<blockquote cite="https://rhn.redhat.com/errata/RHSA-2008-0270.html">
+	  <p>Will Drewry of the Google Security Team reported several
+	    flaws in the way libvorbis processed audio data. An
+	    attacker could create a carefully crafted [Vorbis] audio file
+	    in such a way that it could cause an application linked
+	    with libvorbis to crash, or execute arbitrary code when
+	    it was opened.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1419</cvename>
+      <cvename>CVE-2008-1420</cvename>
+      <cvename>CVE-2008-1423</cvename>
+      <url>https://rhn.redhat.com/errata/RHSA-2008-0270.html</url>
+    </references>
+    <dates>
+      <discovery>2008-05-14</discovery>
+      <entry>2008-05-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f49ba347-2190-11dd-907c-001c2514716c">
     <topic>django -- XSS vulnerability</topic>
     <affects>
