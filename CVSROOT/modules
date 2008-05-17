@@ -12814,6 +12814,7 @@ pidgin-manualsize	ports/net-im/pidgin-manualsize
 pidgin-musictracker	ports/audio/pidgin-musictracker
 pidgin-otr	ports/security/pidgin-otr
 pidgin-rhythmbox	ports/net-im/pidgin-rhythmbox
+pidgin-twitter	ports/net-im/pidgin-twitter
 pidof		ports/sysutils/pidof
 piewm		ports/x11-wm/piewm
 pikdev		ports/devel/pikdev
