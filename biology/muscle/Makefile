@@ -21,7 +21,7 @@ DISTFILES+=	${file}:docs
 .endfor
 .endif
 
-MAINTAINER=	mzaki@biol.s.u-tokyo.ac.jp
+MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	MUltiple Sequence Comparison by Log-Expectation
 
 FETCH_ARGS=	-A
