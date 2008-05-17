@@ -1,0 +1,4 @@
+vchkuser is a helper program so qmail-smtpd can accept only true users
+(or alias) from vpopmail database.
+
+WWW: http://vchkuser.sourceforge.net
