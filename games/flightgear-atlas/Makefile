@@ -24,6 +24,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/include/simgear/version.h:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
+BROKEN=		Does not build
+
 GNU_CONFIGURE=	yes
 USE_GL=		yes
 
