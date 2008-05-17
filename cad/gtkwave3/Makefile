@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkwave3
-PORTVERSION=	3.1.9
+PORTVERSION=	3.1.10
 CATEGORIES=	cad
 MASTER_SITES=	http://home.nc.rr.com/gtkwave/
 DISTNAME=	gtkwave-${PORTVERSION}
