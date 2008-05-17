@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/njplot/archive/
 
-MAINTAINER=	mzaki@biol.s.u-tokyo.ac.jp
+MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Phylogenetic tree drawing program capable of interactive manipulation
 
 .ifndef (WITHOUT_X11)

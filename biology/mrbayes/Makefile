@@ -10,7 +10,7 @@ PORTVERSION=	3.1.2
 CATEGORIES=	biology
 MASTER_SITES=	SF
 
-MAINTAINER=	mzaki@biol.s.u-tokyo.ac.jp
+MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Bayesian inference of phylogeny
 
 USE_GMAKE=	yes
