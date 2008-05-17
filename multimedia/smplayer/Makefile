@@ -6,51 +6,38 @@
 #
 
 PORTNAME=	smplayer
-DISTVERSION=	0.5.21
+DISTVERSION=	0.6.0
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${DISTVERSION}final
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT?=	A complete front-end based on QT3 for mplayer
+COMMENT=	A complete front-end based on QT4 for mplayer
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		${LOCALBASE}/share/smplayer/themes:${PORTSDIR}/multimedia/smplayer-themes
 
-.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-qt4"
 USE_QT_VER=	4
-QT_COMPONENTS=	qt3support corelib gui qmake_build moc_build uic_build uic3_build porting_build opengl
-
-ALL_TARGET=	prep src/smplayer
-.else
-USE_QT_VER=	3
-
-CONFLICTS?=	smplayer-qt4-[0-9]*
-
-BUILD_DEPENDS+=	qmake:${PORTSDIR}/devel/qmake
-
-QMAKE=		${QT_PREFIX}/bin/qmake
-
-MAKE_ENV+=	QTDIR=${QT_PREFIX} \
-		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build uic_build \
+		uic3_build porting_build opengl linguist
 
 ALL_TARGET=	src/smplayer
 
-.if defined(WITH_KDE)
-USE_KDELIBS_VER=3
-MAKE_ARGS+=	KDE_SUPPORT=1
-.endif
-.endif
-
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	Changelog Configurable_shortcuts.txt Install.txt \
-		Copying.txt Not_so_obvious_things.txt Translations.txt \
-		Icon_themes.txt Readme.txt
+MAN1=		smplayer.1
+MANCOMPRESSED=	yes
+
+PORTDOCS=	Changelog Copying.txt Install.txt Not_so_obvious_things.txt \
+		Readme.txt Release_notes.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|qmake|${QMAKE}|g' \
+		-e 's|lrelease|${QT_PREFIX}/bin/lrelease-qt4|g' \
 		-e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' \
+		-e 's,/share/man,/man,g' \
 		${WRKSRC}/Makefile
 
 post-install:

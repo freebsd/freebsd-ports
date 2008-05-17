@@ -15529,7 +15529,6 @@ smokeping	ports/net-mgmt/smokeping
 smpeg		ports/multimedia/smpeg
 smpeg-xmms	ports/multimedia/smpeg-xmms
 smplayer	ports/multimedia/smplayer
-smplayer-qt4	ports/multimedia/smplayer-qt4
 smplayer-themes	ports/multimedia/smplayer-themes
 smproxy		ports/x11/smproxy
 sms_client	ports/comms/sms_client
