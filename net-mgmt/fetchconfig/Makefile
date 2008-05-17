@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	fetchconfig
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	salexanov@gmail.com
 COMMENT=	Perl script for retrieving configuration of various network devices
