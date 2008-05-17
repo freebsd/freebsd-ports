@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	autoconf
-PORTVERSION=	2.61
-PORTREVISION=	2
+PORTVERSION=	2.62
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
 DISTNAME=	autoconf-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	Automatically configure source code on many Un*x platforms (2.61)
+COMMENT=	Automatically configure source code on many Un*x platforms (2.62)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		autoconf-wrapper:${PORTSDIR}/devel/autoconf-wrapper
 
-BUILD_VERSION=	2.61
+BUILD_VERSION=	2.62
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
-LATEST_LINK=	autoconf261
+LATEST_LINK=	autoconf262
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes

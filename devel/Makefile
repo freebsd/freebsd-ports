@@ -66,6 +66,7 @@
     SUBDIR += autoconf-wrapper
     SUBDIR += autoconf213
     SUBDIR += autoconf261
+    SUBDIR += autoconf262
     SUBDIR += autodia
     SUBDIR += autodist
     SUBDIR += autogen
