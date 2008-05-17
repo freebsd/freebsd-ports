@@ -1,0 +1,7 @@
+pidgin-twitter is a pidgin plugin to help twittering via pidgin. This
+plugin translates any @username and the sender name to the link to the
+user respectively. pidgin-twitter also can play a sound when an
+incoming message contains any recipient name or sender name which is
+listed in the each dedicated lists.
+
+WWW: http://www.honeyplanet.jp/download.html
