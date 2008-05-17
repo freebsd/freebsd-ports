@@ -5836,6 +5836,7 @@ jlj		ports/deskutils/jlj
 jmba		ports/mail/jmba
 jmf		ports/java/jmf
 jmk-x11-fonts	ports/x11-fonts/jmk-x11-fonts
+jmol		ports/science/jmol
 jmp		ports/java/jmp
 jmusic		ports/audio/jmusic
 jode		ports/java/jode
