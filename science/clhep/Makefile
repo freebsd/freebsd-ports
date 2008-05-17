@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clhep
-PORTVERSION=	2.0.3.2
+PORTVERSION=	2.0.3.3
 CATEGORIES=	science
 MASTER_SITES=	http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/distributions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
