@@ -646,6 +646,7 @@ autoconf-archive	ports/devel/autoconf-archive
 autoconf-wrapper	ports/devel/autoconf-wrapper
 autoconf213	ports/devel/autoconf213
 autoconf261	ports/devel/autoconf261
+autoconf262	ports/devel/autoconf262
 autocutsel	ports/deskutils/autocutsel
 autodia		ports/devel/autodia
 autodist	ports/devel/autodist
