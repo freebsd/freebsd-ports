@@ -6,28 +6,30 @@
 #
 
 PORTNAME=	flightgear-atlas
-PORTVERSION=	0.3.0
-PORTREVISION=	6
+PORTVERSION=	0.3.0.20080504
 CATEGORIES=	games
-MASTER_SITES=	SF/atlas
+MASTER_SITES=	http://contribs.martymac.com/FreeBSD-ports/distfiles/ \
+		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	Atlas-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A map viewer for use with the FlightGear flight simulator
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/include/simgear/version.h:${PORTSDIR}/devel/simgear
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		glut.4:${PORTSDIR}/graphics/libglut
+		curl.4:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/include/simgear/version.h:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
-BROKEN=		Does not build
+USE_AUTOTOOLS=	aclocal:19 autoheader:261 automake:15 autoconf:261
+AUTOMAKE_ARGS=	--add-missing
 
 GNU_CONFIGURE=	yes
-USE_GL=		yes
+USE_XORG=	ice sm x11 xext xi xt xmu
+USE_GL=	gl glu glut
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib
@@ -35,8 +37,9 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-fgbase="${LOCALBASE}/share/FlightGear"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lpthread||' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|^base_LIBS="$$LIBS"|base_LIBS="$$LIBS ${PTHREAD_LIBS}"|' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|^AC_CHECK_LIB(pthread, pthread_exit)||' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|-lpthread||' ${WRKSRC}/src/Makefile.am
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/AtlasPalette ${LOCALBASE}/share/FlightGear
