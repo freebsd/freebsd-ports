@@ -5,24 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mod_dosevasive20
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTNAME=	mod_evasive
+PORTVERSION=	1.10.1
 CATEGORIES=	www security
-MASTER_SITES=	http://www.nuclearelephant.com/projects/dosevasive/ \
+MASTER_SITES=	http://www.zdziarski.com/projects/mod_evasive/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/
-DISTNAME=	mod_dosevasive_${PORTVERSION}
+DISTNAME=	mod_evasive_${PORTVERSION}
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	kiwi@oav.net
-COMMENT=	An Apache 2 module to try to protect HTTP DoS or DDoS attacks
+COMMENT=	An Apache module to try to protect the HTTP Server from DoS/DDoS attacks
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 WANT_APACHE=	2
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
-WRKSRC=		${WRKDIR}/mod_dosevasive
+WRKSRC=		${WRKDIR}/mod_evasive
 
 PORTDOCS=	LICENSE README test.pl
 
@@ -31,8 +30,8 @@ PORTDOCS=	LICENSE README test.pl
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/bin/mail|/usr/bin/mail|g" \
-		${WRKSRC}/mod_dosevasive.c ${WRKSRC}/mod_dosevasive20.c \
-		${WRKSRC}/mod_dosevasiveNSAPI.c
+		${WRKSRC}/mod_evasive.c ${WRKSRC}/mod_evasive20.c \
+		${WRKSRC}/mod_evasiveNSAPI.c
 
 post-install:
 .if !defined (NOPORTDOCS)
