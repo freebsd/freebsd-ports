@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080517:
+  AFFECTS: users of multimedia/smplayer-*
+  AUTHOR: miwi@FreeBSD.org
+
+  The slave port multimedia/smplayer-qt4 has been removed
+  with the upgrade of multimedia/smplayer to 0.6.0, qt3 is
+  no longer supported. They are now fully integrated into
+  multimedia/smplayer.
+
+  Please uninstall multimedia/smplayer-qt4 port before
+  upgrading multimedia/smplayer to version 0.6.0 or higher.
+
 20080513:
   AFFECTS: users of secutity/amavisd-new
   AUTHOR: scheidell@secnap.net
