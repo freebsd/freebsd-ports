@@ -6,6 +6,7 @@
 
 PORTNAME=	ourmon
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 DISTNAME=	ourmon281
@@ -29,7 +30,7 @@ USE_RC_SUBR=	ourmon
 
 .include <bsd.port.pre.mk>
 
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} "==================================================="
 	@${ECHO_MSG} "ATTENTION: Do not install startup script during"
 	@${ECHO_MSG} "interactive steps, use the created by port instead."
