@@ -18,6 +18,8 @@ DISTFILES=	${PORTNAME}_source_${PORTVERSION}.7z:ezquake \
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Modern QuakeWorld client
 
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip \
+		7z:${PORTSDIR}/archivers/p7zip
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		png.5:${PORTSDIR}/graphics/png
