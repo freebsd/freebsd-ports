@@ -78,6 +78,7 @@
 %%SITE_PERL%%/IkiWiki.pm
 %%SITE_PERL%%/IkiWiki/CGI.pm
 %%SITE_PERL%%/IkiWiki/Plugin/aggregate.pm
+%%SITE_PERL%%/IkiWiki/Plugin/amazon_s3.pm
 %%SITE_PERL%%/IkiWiki/Plugin/anonok.pm
 %%SITE_PERL%%/IkiWiki/Plugin/brokenlinks.pm
 %%SITE_PERL%%/IkiWiki/Plugin/calendar.pm
@@ -116,6 +117,8 @@
 %%SITE_PERL%%/IkiWiki/Plugin/pagestats.pm
 %%SITE_PERL%%/IkiWiki/Plugin/pagetemplate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/passwordauth.pm
+%%SITE_PERL%%/IkiWiki/Plugin/pingee.pm
+%%SITE_PERL%%/IkiWiki/Plugin/pinger.pm
 %%SITE_PERL%%/IkiWiki/Plugin/poll.pm
 %%SITE_PERL%%/IkiWiki/Plugin/polygen.pm
 %%SITE_PERL%%/IkiWiki/Plugin/postsparkline.pm
