@@ -4837,6 +4837,7 @@ hs-x11-ghc	ports/x11/hs-x11-ghc
 hsb-aspell	ports/textproc/hsb-aspell
 hsetroot	ports/graphics/hsetroot
 hsftp		ports/ftp/hsftp
+hso-kmod	ports/comms/hso-kmod
 hsqldb		ports/databases/hsqldb
 htdig		ports/textproc/htdig
 htdump		ports/www/htdump
