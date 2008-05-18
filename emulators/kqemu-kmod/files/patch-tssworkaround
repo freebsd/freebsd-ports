@@ -32,7 +32,7 @@ Index: kqemu-freebsd.c
 +    unsigned cpuid = PCPU_GET(cpuid);
 +    struct user_segment_descriptor *newgdt = gdt;
 +
-+    if (mp_ncpus <= 1 || kerngdtbase != (unsigned long)&gdt)
++    if (mp_ncpus <= 1 || kerngdtbase != (unsigned long)gdt)
 +	/* UP host or gdt already moved, nothing to do */
 +	return;
 +    if (cpuid) {
@@ -48,7 +48,7 @@ Index: kqemu-freebsd.c
 +	    kqemu_gdts = &gdt[NGDT];
 +	++kqemu_gdts_used;
 +	newgdt = &kqemu_gdts[NGDT * (cpuid - 1)];
-+	bcopy(&gdt, newgdt, NGDT * sizeof(gdt[0]));
++	bcopy(gdt, newgdt, NGDT * sizeof(gdt[0]));
 +	kqemu_r_newgdt.rd_limit = NGDT * sizeof(gdt[0]) - 1;
 +	kqemu_r_newgdt.rd_base = (long) newgdt;
 +    } else {
@@ -63,7 +63,7 @@ Index: kqemu-freebsd.c
 +	lgdt(&kqemu_r_newgdt);
 +	wrmsr(MSR_GSBASE, (u_int64_t)&__pcpu[cpuid]);
 +	wrmsr(MSR_KGSBASE, curthread->td_pcb->pcb_gsbase);
-+	wrmsr(MSR_FSBASE, 0);
++	wrmsr(MSR_FSBASE, curthread->td_pcb->pcb_fsbase);
 +    }
 +    ltr(gsel_tss);
 +}
