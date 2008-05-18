@@ -16,6 +16,12 @@ COMMENT=	User space caching library
 
 USE_LDCONFIG=	yes
 
+.if defined(NO_PROFILE) || defined(NOPROFILE)
+PLIST_SUB+=	PROFLIB="@comment "
+.else
+PLIST_SUB+=	PROFLIB=""
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
 
