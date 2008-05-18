@@ -6,12 +6,12 @@
 
 PORTNAME=	aspathtree
 PORTVERSION=	4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://ipv6.niif.hu/~mohacsi/downloads/
 DISTNAME=	ASpath-tree-v${PORTVERSION}
 
-MAINTAINER=	Janos.Mohacsi@bsd.hu
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Checks IPv6 routes' stability and correctness on IPv6 internet
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \

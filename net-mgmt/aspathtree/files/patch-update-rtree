@@ -1,5 +1,8 @@
---- update-rtree.orig	Thu Apr 17 15:58:12 2003
-+++ update-rtree	Sun Apr 27 02:01:49 2003
+
+$FreeBSD$
+
+--- update-rtree.orig
++++ update-rtree
 @@ -1,13 +1,13 @@
 -#!/usr/local/bin/perl
 +#!%%PATHPERLBIN%%
@@ -37,7 +40,7 @@
  	if ($DEBUG) {open(LOGFILE, "> $LOGDIR/runlog.txt"); close(LOGFILE)}
  	&log_it_and_die("ERROR in configuration file: parameter SITENAME not set!")   unless ($SITENAME);
  	&log_it_and_die("ERROR in configuration file: parameter ROUTER = \"$ROUTER\" not acceptable!") if ($ROUTER && !grep(/^$ROUTER$/, ("CISCO", "JUNIPER" , "ZEBRA", "ZEBRA93")));
-@@ -134,7 +135,7 @@
+@@ -134,13 +135,13 @@
  	}
  	unless ($WHOISLINK)     {$WHOISLINK = "http://whois.6bone.net/cgi-bin/whois"}
  	unless ($DATADIR)       {$DATADIR = "$HOMEDIR/data"}
@@ -46,7 +49,14 @@
  	unless ($FILTEROUT)     {$FILTEROUT = 0}
  	$ICONS = "./icons";
  	$WARNINGTIME = 5;
-@@ -199,13 +200,13 @@
+ 	$HISTORYPERIOD = 24;
+ 	$RIPEWHOISLINK         = "http://www.ripe.net/perl/whois?form_type=simple&full_query_string=&searchtext=-s+ARIN%2CAPNIC%2CRIPE";
+-	$VER = "v.4.2";
++	$VER = "v.4.2 modif 6NET";
+ 	$logtext .= "  Configuration file: $file.\n";
+ 	$logtext .= "  HOMEDIR = $HOMEDIR\n";
+ 	$logtext .= "  Parser = ";
+@@ -199,28 +200,28 @@
  	$logtext .= "  LASTRUNFILE = \"$LASTRUNFILE\"\n";
  	$logtext .= "  PTLASHISTORYDIR = \"$PTLASHISTORYDIR\" ";
  	if (-e "$PTLASHISTORYDIR") {$logtext .= "(ok)\n"}
@@ -62,8 +72,11 @@
 +	else {mkdir("$HOMEDIR/history/completetree", 0775); $logtext .= "(created)\n"}
  	$logtext .= "  OLDASPATHSFILE = \"$OLDASPATHSFILE\"\n";
  	$logtext .= "  OLDDATEFILE = \"$OLDDATEFILE\"\n";
- 	if ($MORETREES) {
-@@ -215,12 +216,12 @@
+-	if ($MORETREES) {
++	if ($NOMORETREES) {
+ 		$OLDOTHASPATHSFILE     = "$HOMEDIR/history/othertree/aspaths.txt";
+ 		$OLDOTHDATEFILE        = "$HOMEDIR/history/othertree/lastchangedate.txt";
+ 		$OLDBBASPATHSFILE      = "$HOMEDIR/history/bbtree/bbaspaths.txt";
  		$OLDBBDATEFILE         = "$HOMEDIR/history/bbtree/lastchangedate.txt";
  		$logtext .= "  BB tree dir = \"$HOMEDIR/history/bbtree\" ";
  		if (-e "$HOMEDIR/history/bbtree") {$logtext .= "(ok)\n"}
@@ -78,7 +91,16 @@
  		$logtext .= "  OLDOTHASPATHSFILE = \"$OLDOTHASPATHSFILE\"\n";
  		$logtext .= "  OLDOTHDATEFILE = \"$OLDOTHDATEFILE\"\n";
  	} else {
-@@ -246,7 +247,7 @@
+@@ -236,7 +237,7 @@
+ 	$logtext .= "  OUTPUTCOMPLETE = \"$OUTPUTCOMPLETE\"\n";
+ 	$OUTPUTBB      = "$HTMLDIR_LOCAL/bgp-page-backbone.html";
+ 	$OUTPUTIANA    = "$HTMLDIR_LOCAL/bgp-page-otherIANA.html";
+-	if ($MORETREES) {
++	if ($NOMORETREES) {
+ 		$logtext .= "  OUTPUTBB = \"$OUTPUTBB\"\n";
+ 		$logtext .= "  OUTPUTIANA = \"$OUTPUTIANA\"\n";
+ 	}
+@@ -246,12 +247,12 @@
  		$CHANGESDIR            = "$HTMLDIR_LOCAL/changes";
  		$logtext .= "  CHANGESDIR = \"$CHANGESDIR\" ";
  		if (-e "$CHANGESDIR") {$logtext .= "(ok)\n"}
@@ -87,6 +109,12 @@
  		$OUTPUTCOMPLETECHANGES     = "$CHANGESDIR/bgp-page-complete-changes.html";
  		$logtext .= "  OUTPUTCOMPLETECHANGES = \"$OUTPUTCOMPLETECHANGES\"\n";
  		$OUTPUTBBCHANGES   = "$CHANGESDIR/bgp-page-backbone-changes.html";
+ 		$OUTPUTIANACHANGES = "$CHANGESDIR/bgp-page-otherIANAchanges.html";
+-		if ($MORETREES) {
++		if ($NOMORETREES) {
+ 			$logtext .= "  OUTPUTBBCHANGES = \"$OUTPUTBBCHANGES\"\n";
+ 			$logtext .= "  OUTPUTIANACHANGES = \"$OUTPUTIANACHANGES\"\n";
+ 		}
 @@ -260,19 +261,19 @@
  	$DETAILDIRCO           = "$DETAILDIR/complete";
  	$logtext .= "  DETAILDIR = \"$DETAILDIR\" ";
@@ -96,8 +124,9 @@
  	$logtext .= "  DETAILDIRCO = \"$DETAILDIRCO\" ";
  	if (-e "$DETAILDIRCO") {$logtext .= "(ok)\n"}
 -	else {mkdir("$DETAILDIRCO", 0777); $logtext .= "(created)\n"}
+-	if ($MORETREES) {
 +	else {mkdir("$DETAILDIRCO", 0775); $logtext .= "(created)\n"}
- 	if ($MORETREES) {
++	if ($NOMORETREES) {
  		$DETAILDIRBB   = "$DETAILDIR/backbone";
  		$DETAILDIRIANA = "$DETAILDIR/otherIANA";
  		$logtext .= "  DETAILDIRBB = \"$DETAILDIRBB\" ";
@@ -128,11 +157,12 @@
  	if (-d $HTMLDIR) {
 -		unless (-e "$HTMLDIR/details") {mkdir("$HTMLDIR/details", 0777); $logtext .= "  $HTMLDIR/details created.\n"}
 -		unless (-e "$HTMLDIR/details/complete") {mkdir("$HTMLDIR/details/complete", 0777); $logtext .= "  $HTMLDIR/details/complete created.\n"}
-+		unless (-e "$HTMLDIR/details") {mkdir("$HTMLDIR/details", 0775); $logtext .= "  $HTMLDIR/details created.\n"}
-+		unless (-e "$HTMLDIR/details/complete") {mkdir("$HTMLDIR/details/complete", 0775); $logtext .= "  $HTMLDIR/details/complete created.\n"}
- 		if ($MORETREES) {
+-		if ($MORETREES) {
 -			unless (-e "$HTMLDIR/details/backbone") {mkdir("$HTMLDIR/details/backbone", 0777); $logtext .= "  $HTMLDIR/details/backbone created.\n"}
 -			unless (-e "$HTMLDIR/details/otherIANA") {mkdir("$HTMLDIR/details/otherIANA", 0777); $logtext .= "  $HTMLDIR/details/otherIANA created.\n"}
++		unless (-e "$HTMLDIR/details") {mkdir("$HTMLDIR/details", 0775); $logtext .= "  $HTMLDIR/details created.\n"}
++		unless (-e "$HTMLDIR/details/complete") {mkdir("$HTMLDIR/details/complete", 0775); $logtext .= "  $HTMLDIR/details/complete created.\n"}
++		if ($NOMORETREES) {
 +			unless (-e "$HTMLDIR/details/backbone") {mkdir("$HTMLDIR/details/backbone", 0775); $logtext .= "  $HTMLDIR/details/backbone created.\n"}
 +			unless (-e "$HTMLDIR/details/otherIANA") {mkdir("$HTMLDIR/details/otherIANA", 0775); $logtext .= "  $HTMLDIR/details/otherIANA created.\n"}
  		} else {
@@ -151,3 +181,12 @@
  			system("cp $ICONSDIR/* $HTMLDIR/icons");
  			$logtext .= "  $HTMLDIR/icons created and template icons copied.\n";
  		}
+@@ -312,7 +313,7 @@
+ 
+ 	$INDEXPAGE = "bgp.html";
+ 	$LINKDIR               = "details/complete";
+-	if ($MORETREES) {
++	if ($NOMORETREES) {
+ 		$LINKDIRBB     = "details/backbone";
+ 		$LINKDIRIANA   = "details/otherIANA";
+ 	}
