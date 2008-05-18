@@ -57,6 +57,7 @@ lib/libgcin-im-client.so.1
 %%DATADIR%%/table/s2t.dat
 %%DATADIR%%/table/simplex.gtab
 %%DATADIR%%/table/symbol-table
+%%DATADIR%%/table/symbols.gtab
 %%DATADIR%%/table/t2s.dat
 %%DATADIR%%/table/tsin-1.src
 %%DATADIR%%/table/tsin32
@@ -98,6 +99,7 @@ share/icons/gcin/sakura.png
 share/icons/gcin/scj.png
 share/icons/gcin/shuangpin.png
 share/icons/gcin/simplex.png
+share/icons/gcin/symbols.png
 share/icons/gcin/taiwan.png
 share/icons/gcin/telecode.png
 share/icons/gcin/tsin.png
