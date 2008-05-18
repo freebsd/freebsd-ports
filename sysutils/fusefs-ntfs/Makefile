@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_ICONV=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
