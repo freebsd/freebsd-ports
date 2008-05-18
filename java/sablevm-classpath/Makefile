@@ -8,7 +8,7 @@
 
 PORTNAME=	sablevm-classpath
 PORTVERSION=	1.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sablevm
@@ -18,10 +18,11 @@ COMMENT=	Classpath of SableVM
 
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 
-OPTIONS=	GTK2 "Enable Gtk+ AWT peer" ON \
+OPTIONS=	ZIP "Compress class library" ON \
+		GTK2 "Enable Gtk+ AWT peer" ON \
 		CAIRO "Use Cairo based Graphics2D" OFF
 
-CONFLICTS=	classpath-*
+CONFLICTS=	classpath-[0-9]*
 
 USE_XORG=	x11 ice xtst sm
 GNU_CONFIGURE=	yes
@@ -33,6 +34,16 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include -L${PREFIX}/lib -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_ZIP)
+CONFIGURE_ARGS+=	--with-compressed-classes=no
+PLIST_SUB+=		WITHOUT_ZIP=""
+.else
+CONFIGURE_ARGS+=	--with-compressed-classes=zip
+BUILD_DEPENDS+=		zip:${PORTSDIR}/archivers/zip
+PLIST_SUB+=		WITHOUT_ZIP="@comment "
+PLIST_FILES+=		${DATADIR_REL}/libclasspath.jar ${DATADIR_REL}/resources.jar
+.endif
 
 .if defined(WITHOUT_GTK2)
 CONFIGURE_ARGS+=	--disable-gtk-peer
