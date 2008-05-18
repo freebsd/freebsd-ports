@@ -273,6 +273,7 @@
     SUBDIR += duplo
     SUBDIR += dwarfdump
     SUBDIR += dyncall
+    SUBDIR += e00compr
     SUBDIR += e4graph
     SUBDIR += e_dbus
     SUBDIR += ebnf2yacc
