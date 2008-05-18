@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.6.3
-PORTREVISION=	1
+PORTVERSION=	3.7.1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
 		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
@@ -21,7 +20,7 @@ MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
 		http://lftp.cybermirror.org/ \
 		http://lftp.cybermirror.org/old/
 
-MAINTAINER=	fm@cross-road.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shell-like command line ftp client
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
