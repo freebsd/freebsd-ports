@@ -1,6 +1,6 @@
---- gtk/Makefile.in.orig	Wed Jan  3 21:36:56 2007
-+++ gtk/Makefile.in	Wed Jan  3 21:38:08 2007
-@@ -364,15 +364,15 @@
+--- gtk/Makefile.in.orig	2008-05-17 12:42:10.000000000 +0900
++++ gtk/Makefile.in	2008-05-18 22:12:18.000000000 +0900
+@@ -427,15 +427,15 @@
  $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
  	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
  install-moduleLTLIBRARIES: $(module_LTLIBRARIES)
@@ -9,8 +9,8 @@
 -	@list='$(module_LTLIBRARIES)'; for p in $$list; do \
 -	  if test -f $$p; then \
 -	    f=$(am__strip_dir) \
--	    echo " $(LIBTOOL) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(moduledir)/$$f'"; \
--	    $(LIBTOOL) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(moduledir)/$$f"; \
+-	    echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(moduledir)/$$f'"; \
+-	    $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(moduledir)/$$f"; \
 -	  else :; fi; \
 -	done
 +@GTK2_TRUE@	@$(NORMAL_INSTALL)
@@ -18,8 +18,8 @@
 +@GTK2_TRUE@	@list='$(module_LTLIBRARIES)'; for p in $$list; do \
 +@GTK2_TRUE@	  if test -f $$p; then \
 +@GTK2_TRUE@	    f=$(am__strip_dir) \
-+@GTK2_TRUE@	    echo " $(LIBTOOL) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(moduledir)/$$f'"; \
-+@GTK2_TRUE@	    $(LIBTOOL) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(moduledir)/$$f"; \
++@GTK2_TRUE@	    echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(moduledir)/$$f'"; \
++@GTK2_TRUE@	    $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(moduledir)/$$f"; \
 +@GTK2_TRUE@	  else :; fi; \
 +@GTK2_TRUE@	done
  
