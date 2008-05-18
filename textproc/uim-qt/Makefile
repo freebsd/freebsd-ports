@@ -33,6 +33,7 @@ IGNORE=		requires X11
 .endif
 
 do-build:
+	(cd ${WRKSRC}/uim && ${SETENV} ${MAKE_ENV} ${GMAKE} libuim-counted-init.la)
 	(cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${GMAKE})
 
 do-install:
