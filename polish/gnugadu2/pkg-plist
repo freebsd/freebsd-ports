@@ -40,6 +40,7 @@ lib/libgg2_core.so
 lib/libgg2_core.so.2
 libdata/pkgconfig/gg2_core.pc
 %%DBUS:%%share/dbus-1/services/org.freedesktop.im.GG.service
+share/applications/gg2.desktop
 share/gg2/pixmaps/arrow.png
 share/gg2/pixmaps/away.png
 share/gg2/pixmaps/emoticon.gif
@@ -321,9 +322,9 @@ share/gg2/themes/vblue2.theme
 share/gg2/themes/vgreen2.theme
 share/gg2/themes/vred2.theme
 share/gg2/themes/white2.theme
+share/icons/hicolor/48x48/apps/gg2.png
 share/locale/nl/LC_MESSAGES/gg2.mo
 share/locale/pl/LC_MESSAGES/gg2.mo
-share/pixmaps/gg2.png
 @dirrm share/gg2/themes
 @dirrm share/gg2/sounds
 @dirrm share/gg2/pixmaps/icons/rozgwiazda
@@ -336,8 +337,4 @@ share/pixmaps/gg2.png
 @dirrm share/gg2/pixmaps
 @dirrm share/gg2
 @dirrm lib/gg2
-%%GNOME:%%@cwd %%LOCALBASE%%
-%%GNOME:%%share/gnome/apps/Internet/gg2.desktop
-%%GNOME:%%share/pixmaps/gg2.png
-%%KDE:%%@cwd %%LOCALBASE%%
-%%KDE:%%share/applnk/Internet/gg2.desktop
+@dirrmtry share/applications
