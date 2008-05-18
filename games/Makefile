@@ -215,6 +215,7 @@
     SUBDIR += exmars
     SUBDIR += exult
     SUBDIR += ezquake
+    SUBDIR += f1spirit-remake
     SUBDIR += falconseye
     SUBDIR += farblazer
     SUBDIR += fargoal

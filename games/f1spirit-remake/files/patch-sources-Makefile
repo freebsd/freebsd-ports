@@ -1,0 +1,16 @@
+--- sources/Makefile.orig	2005-11-03 09:49:06.000000000 +0300
++++ sources/Makefile	2008-05-15 00:16:20.000000000 +0400
+@@ -19,11 +19,11 @@
+ all: f1s
+ 
+ %.o: %.cpp
+-	c++ -c -g3 -O3 $< -o $@ `sdl-config --cflags` -I/usr/local/include/SDL
++	${CXX} ${CXXFLAGS} -c $< -o $@ `${SDL_CONFIG} --cflags`
+ 
+ # dynamically linked binary:
+ f1s: $(OBJS)
+-	c++ $^ -o $@ `sdl-config --libs` `curl-config --libs` -lSDL_net -lSDL_image -lSDL_mixer -lSDL_sound -lSDL_sound -lGL -lGLU -I/usr/local/include/SDL
++	${CXX} $^ -o $@ `${SDL_CONFIG} --libs` `curl-config --libs` -lSDL_net -lSDL_image -lSDL_mixer -lSDL_sound -lGL -lGLU
+ 
+ clean:
+ 	rm -f f1s

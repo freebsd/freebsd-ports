@@ -1,0 +1,303 @@
+bin/f1s
+%%DATADIR%%/demos/demo1.rpl
+%%DATADIR%%/demos/demo2.rpl
+%%DATADIR%%/demos/demo3.rpl
+%%DATADIR%%/demos/demo4.rpl
+%%DATADIR%%/demos/demo5.rpl
+%%DATADIR%%/demos/demo6.rpl
+%%DATADIR%%/designs/f1/popolon.car
+%%DATADIR%%/designs/f1/popolon2.car
+%%DATADIR%%/designs/rally/fastest.car
+%%DATADIR%%/designs/stock/fastest.car
+%%DATADIR%%/f1spirit2.cfg
+%%DATADIR%%/graphics/brake-1.png
+%%DATADIR%%/graphics/brake-2.png
+%%DATADIR%%/graphics/brake-3.png
+%%DATADIR%%/graphics/car-endurance-1-side.png
+%%DATADIR%%/graphics/car-endurance-1-top.png
+%%DATADIR%%/graphics/car-endurance-2-side.png
+%%DATADIR%%/graphics/car-endurance-2-top.png
+%%DATADIR%%/graphics/car-endurance-3-side.png
+%%DATADIR%%/graphics/car-endurance-3-top.png
+%%DATADIR%%/graphics/car-f1-1-side.png
+%%DATADIR%%/graphics/car-f1-1-top.png
+%%DATADIR%%/graphics/car-f1-2-side.png
+%%DATADIR%%/graphics/car-f1-2-top.png
+%%DATADIR%%/graphics/car-f1-3-side.png
+%%DATADIR%%/graphics/car-f1-3-top.png
+%%DATADIR%%/graphics/car-f3-1-side.png
+%%DATADIR%%/graphics/car-f3-1-top.png
+%%DATADIR%%/graphics/car-f3-2-side.png
+%%DATADIR%%/graphics/car-f3-2-top.png
+%%DATADIR%%/graphics/car-f3-3-side.png
+%%DATADIR%%/graphics/car-f3-3-top.png
+%%DATADIR%%/graphics/car-f3000-1-side.png
+%%DATADIR%%/graphics/car-f3000-1-top.png
+%%DATADIR%%/graphics/car-f3000-2-side.png
+%%DATADIR%%/graphics/car-f3000-2-top.png
+%%DATADIR%%/graphics/car-f3000-3-side.png
+%%DATADIR%%/graphics/car-f3000-3-top.png
+%%DATADIR%%/graphics/car-rally-1-side.png
+%%DATADIR%%/graphics/car-rally-1-top.png
+%%DATADIR%%/graphics/car-rally-2-side.png
+%%DATADIR%%/graphics/car-rally-2-top.png
+%%DATADIR%%/graphics/car-rally-3-side.png
+%%DATADIR%%/graphics/car-rally-3-top.png
+%%DATADIR%%/graphics/car-stock-1-side.png
+%%DATADIR%%/graphics/car-stock-1-top.png
+%%DATADIR%%/graphics/car-stock-2-side.png
+%%DATADIR%%/graphics/car-stock-2-top.png
+%%DATADIR%%/graphics/car-stock-3-side.png
+%%DATADIR%%/graphics/car-stock-3-top.png
+%%DATADIR%%/graphics/cars-endurance.png
+%%DATADIR%%/graphics/cars-f1.png
+%%DATADIR%%/graphics/cars-f3.png
+%%DATADIR%%/graphics/cars-f3000.png
+%%DATADIR%%/graphics/cars-rally.png
+%%DATADIR%%/graphics/cars-stock.png
+%%DATADIR%%/graphics/cloud1.png
+%%DATADIR%%/graphics/cloud1w.png
+%%DATADIR%%/graphics/cloud2.png
+%%DATADIR%%/graphics/cloud2w.png
+%%DATADIR%%/graphics/cloud3.png
+%%DATADIR%%/graphics/cloud3w.png
+%%DATADIR%%/graphics/damage.png
+%%DATADIR%%/graphics/disclaimer.jpg
+%%DATADIR%%/graphics/end.png
+%%DATADIR%%/graphics/endurance/Thumbs.db
+%%DATADIR%%/graphics/endurance/extras.png
+%%DATADIR%%/graphics/endurance/lroad-chicane.png
+%%DATADIR%%/graphics/endurance/rroad-chicane.png
+%%DATADIR%%/graphics/engine-1.png
+%%DATADIR%%/graphics/engine-2.png
+%%DATADIR%%/graphics/engine-3.png
+%%DATADIR%%/graphics/engine-4.png
+%%DATADIR%%/graphics/engine-5.png
+%%DATADIR%%/graphics/engine-6.png
+%%DATADIR%%/graphics/extras.png
+%%DATADIR%%/graphics/f1-brazil/Thumbs.db
+%%DATADIR%%/graphics/f1-brazil/grass.png
+%%DATADIR%%/graphics/f1-france/Thumbs.db
+%%DATADIR%%/graphics/f1-france/isle.png
+%%DATADIR%%/graphics/f1-france/lroad-chicane.png
+%%DATADIR%%/graphics/f1-france/road3.png
+%%DATADIR%%/graphics/f1-france/rroad-chicane.png
+%%DATADIR%%/graphics/f1-portugal/Thumbs.db
+%%DATADIR%%/graphics/f1-portugal/extras.png
+%%DATADIR%%/graphics/f1-sanmarino/Thumbs.db
+%%DATADIR%%/graphics/f1-sanmarino/grass.png
+%%DATADIR%%/graphics/f1-westgermany/Thumbs.db
+%%DATADIR%%/graphics/f1-westgermany/isle.png
+%%DATADIR%%/graphics/f1-westgermany/lroad-chicane.png
+%%DATADIR%%/graphics/f1-westgermany/rroad-chicane.png
+%%DATADIR%%/graphics/f3/Thumbs.db
+%%DATADIR%%/graphics/f3/extras.png
+%%DATADIR%%/graphics/f3/isle.png
+%%DATADIR%%/graphics/f3/lfences.png
+%%DATADIR%%/graphics/f3/rfences.png
+%%DATADIR%%/graphics/flag0.png
+%%DATADIR%%/graphics/flag1.png
+%%DATADIR%%/graphics/font-unicode-alpha.png
+%%DATADIR%%/graphics/gamestart1.png
+%%DATADIR%%/graphics/gamestart2.png
+%%DATADIR%%/graphics/gear-1.png
+%%DATADIR%%/graphics/gear-2.png
+%%DATADIR%%/graphics/gear-3.png
+%%DATADIR%%/graphics/hud/Thumbs.db
+%%DATADIR%%/graphics/hud/fuel.png
+%%DATADIR%%/graphics/hud/hud_damage.png
+%%DATADIR%%/graphics/hud/hud_fixed_1.png
+%%DATADIR%%/graphics/hud/hud_fixed_2.png
+%%DATADIR%%/graphics/hud/hud_fixed_3.png
+%%DATADIR%%/graphics/hud/hud_fixed_3_sidefuel.png
+%%DATADIR%%/graphics/hud/hud_fixed_4.png
+%%DATADIR%%/graphics/hud/hud_gears.png
+%%DATADIR%%/graphics/hud/hud_rpm_1.png
+%%DATADIR%%/graphics/hud/hud_rpm_10.png
+%%DATADIR%%/graphics/hud/hud_rpm_11.png
+%%DATADIR%%/graphics/hud/hud_rpm_2.png
+%%DATADIR%%/graphics/hud/hud_rpm_3.png
+%%DATADIR%%/graphics/hud/hud_rpm_4.png
+%%DATADIR%%/graphics/hud/hud_rpm_5.png
+%%DATADIR%%/graphics/hud/hud_rpm_6.png
+%%DATADIR%%/graphics/hud/hud_rpm_7.png
+%%DATADIR%%/graphics/hud/hud_rpm_8.png
+%%DATADIR%%/graphics/hud/hud_rpm_9.png
+%%DATADIR%%/graphics/hud/hud_speed_font.png
+%%DATADIR%%/graphics/hud/hud_time_font.png
+%%DATADIR%%/graphics/hud/minihud_fuel.png
+%%DATADIR%%/graphics/konami1.jpg
+%%DATADIR%%/graphics/konami2.png
+%%DATADIR%%/graphics/laps.png
+%%DATADIR%%/graphics/locked.png
+%%DATADIR%%/graphics/menu_background.jpg
+%%DATADIR%%/graphics/minimap-car.png
+%%DATADIR%%/graphics/minimap-enemycar.png
+%%DATADIR%%/graphics/rally/Thumbs.db
+%%DATADIR%%/graphics/rally/crowd.png
+%%DATADIR%%/graphics/rally/extras.png
+%%DATADIR%%/graphics/rally/lroad-chicane.png
+%%DATADIR%%/graphics/rally/road1.png
+%%DATADIR%%/graphics/rally/road3.png
+%%DATADIR%%/graphics/rally/rock.png
+%%DATADIR%%/graphics/rally/rroad-chicane.png
+%%DATADIR%%/graphics/rally/tiles.png
+%%DATADIR%%/graphics/rally/walls.png
+%%DATADIR%%/graphics/rpm.png
+%%DATADIR%%/graphics/scoreboard.png
+%%DATADIR%%/graphics/semaphore.png
+%%DATADIR%%/graphics/signs.png
+%%DATADIR%%/graphics/smallfont-unicode-alpha.png
+%%DATADIR%%/graphics/splash640x480.jpg
+%%DATADIR%%/graphics/stock/Thumbs.db
+%%DATADIR%%/graphics/stock/arrows.png
+%%DATADIR%%/graphics/stock/crowd.png
+%%DATADIR%%/graphics/stock/fences.png
+%%DATADIR%%/graphics/stock/lroad-chicane.png
+%%DATADIR%%/graphics/stock/lroad.png
+%%DATADIR%%/graphics/stock/pit.png
+%%DATADIR%%/graphics/stock/road-lines.png
+%%DATADIR%%/graphics/stock/road1.png
+%%DATADIR%%/graphics/stock/road2.png
+%%DATADIR%%/graphics/stock/road3.png
+%%DATADIR%%/graphics/stock/rroad-chicane.png
+%%DATADIR%%/graphics/stock/rroad.png
+%%DATADIR%%/graphics/stock/tiles.png
+%%DATADIR%%/graphics/suspension-1.png
+%%DATADIR%%/graphics/suspension-2.png
+%%DATADIR%%/graphics/suspension-3.png
+%%DATADIR%%/graphics/title1-a-alpha.png
+%%DATADIR%%/graphics/title1-b-alpha.png
+%%DATADIR%%/graphics/title1-c-alpha.png
+%%DATADIR%%/graphics/title1-d-alpha.png
+%%DATADIR%%/graphics/title2-alpha.png
+%%DATADIR%%/graphics/track-previews/Thumbs.db
+%%DATADIR%%/graphics/track-previews/endurance.png
+%%DATADIR%%/graphics/track-previews/f1-1.png
+%%DATADIR%%/graphics/track-previews/f1-10.png
+%%DATADIR%%/graphics/track-previews/f1-11.png
+%%DATADIR%%/graphics/track-previews/f1-12.png
+%%DATADIR%%/graphics/track-previews/f1-13.png
+%%DATADIR%%/graphics/track-previews/f1-14.png
+%%DATADIR%%/graphics/track-previews/f1-15.png
+%%DATADIR%%/graphics/track-previews/f1-16.png
+%%DATADIR%%/graphics/track-previews/f1-2.png
+%%DATADIR%%/graphics/track-previews/f1-3.png
+%%DATADIR%%/graphics/track-previews/f1-4.png
+%%DATADIR%%/graphics/track-previews/f1-5.png
+%%DATADIR%%/graphics/track-previews/f1-6.png
+%%DATADIR%%/graphics/track-previews/f1-7.png
+%%DATADIR%%/graphics/track-previews/f1-8.png
+%%DATADIR%%/graphics/track-previews/f1-9.png
+%%DATADIR%%/graphics/track-previews/f3.png
+%%DATADIR%%/graphics/track-previews/f3000.png
+%%DATADIR%%/graphics/track-previews/micro.png
+%%DATADIR%%/graphics/track-previews/oval.png
+%%DATADIR%%/graphics/track-previews/rally.png
+%%DATADIR%%/graphics/track-previews/stock.png
+%%DATADIR%%/sound/endurance/WS_FTP.LOG
+%%DATADIR%%/sound/endurance/car_brake.ogg
+%%DATADIR%%/sound/endurance/car_pass.ogg
+%%DATADIR%%/sound/endurance/car_running.ogg
+%%DATADIR%%/sound/endurance/music.ogg
+%%DATADIR%%/sound/endurance/tire_squeal.ogg
+%%DATADIR%%/sound/f1/WS_FTP.LOG
+%%DATADIR%%/sound/f1/car_brake.ogg
+%%DATADIR%%/sound/f1/car_pass.ogg
+%%DATADIR%%/sound/f1/car_running.ogg
+%%DATADIR%%/sound/f1/music.ogg
+%%DATADIR%%/sound/f1/tire_squeal.ogg
+%%DATADIR%%/sound/f3/WS_FTP.LOG
+%%DATADIR%%/sound/f3/car_brake.ogg
+%%DATADIR%%/sound/f3/car_pass.ogg
+%%DATADIR%%/sound/f3/car_running.ogg
+%%DATADIR%%/sound/f3/tire_squeal.ogg
+%%DATADIR%%/sound/f3000/WS_FTP.LOG
+%%DATADIR%%/sound/f3000/car_brake.ogg
+%%DATADIR%%/sound/f3000/car_pass.ogg
+%%DATADIR%%/sound/f3000/car_running.ogg
+%%DATADIR%%/sound/f3000/music.ogg
+%%DATADIR%%/sound/f3000/tire_squeal.ogg
+%%DATADIR%%/sound/game_ending.ogg
+%%DATADIR%%/sound/game_menu.ogg
+%%DATADIR%%/sound/game_next.ogg
+%%DATADIR%%/sound/game_start.ogg
+%%DATADIR%%/sound/game_title.ogg
+%%DATADIR%%/sound/menu_cursor.ogg
+%%DATADIR%%/sound/menu_select.ogg
+%%DATADIR%%/sound/pause.ogg
+%%DATADIR%%/sound/rally/WS_FTP.LOG
+%%DATADIR%%/sound/rally/car_hit1.ogg
+%%DATADIR%%/sound/rally/car_pass.ogg
+%%DATADIR%%/sound/rally/car_running.ogg
+%%DATADIR%%/sound/rally/music.ogg
+%%DATADIR%%/sound/stock/WS_FTP.LOG
+%%DATADIR%%/sound/stock/car_brake.ogg
+%%DATADIR%%/sound/stock/car_finish.ogg
+%%DATADIR%%/sound/stock/car_fuel.ogg
+%%DATADIR%%/sound/stock/car_hit1.ogg
+%%DATADIR%%/sound/stock/car_hit2.ogg
+%%DATADIR%%/sound/stock/car_hit3.ogg
+%%DATADIR%%/sound/stock/car_hit4.ogg
+%%DATADIR%%/sound/stock/car_pass.ogg
+%%DATADIR%%/sound/stock/car_running.ogg
+%%DATADIR%%/sound/stock/curbs.ogg
+%%DATADIR%%/sound/stock/music.ogg
+%%DATADIR%%/sound/stock/semaphore_high.ogg
+%%DATADIR%%/sound/stock/semaphore_low.ogg
+%%DATADIR%%/sound/stock/tire_squeal.ogg
+%%DATADIR%%/sound/stock/water_splash.ogg
+%%DATADIR%%/sound/wrong.ogg
+%%DATADIR%%/tracks/endurance.f1t
+%%DATADIR%%/tracks/extras/micro.f1t
+%%DATADIR%%/tracks/extras/oval.f1t
+%%DATADIR%%/tracks/f1-australia.f1t
+%%DATADIR%%/tracks/f1-austria.f1t
+%%DATADIR%%/tracks/f1-belgium.f1t
+%%DATADIR%%/tracks/f1-brazil.f1t
+%%DATADIR%%/tracks/f1-france.f1t
+%%DATADIR%%/tracks/f1-greatbritain.f1t
+%%DATADIR%%/tracks/f1-hungary.f1t
+%%DATADIR%%/tracks/f1-italy.f1t
+%%DATADIR%%/tracks/f1-japan.f1t
+%%DATADIR%%/tracks/f1-mexico.f1t
+%%DATADIR%%/tracks/f1-monaco.f1t
+%%DATADIR%%/tracks/f1-portugal.f1t
+%%DATADIR%%/tracks/f1-sanmarino.f1t
+%%DATADIR%%/tracks/f1-spain.f1t
+%%DATADIR%%/tracks/f1-usa.f1t
+%%DATADIR%%/tracks/f1-westgermany.f1t
+%%DATADIR%%/tracks/f3.f1t
+%%DATADIR%%/tracks/f3000.f1t
+%%DATADIR%%/tracks/rally.f1t
+%%DATADIR%%/tracks/stock.f1t
+@dirrm %%DATADIR%%/tracks/extras
+@dirrm %%DATADIR%%/tracks
+@dirrm %%DATADIR%%/sound/stock
+@dirrm %%DATADIR%%/sound/rally
+@dirrm %%DATADIR%%/sound/f3000
+@dirrm %%DATADIR%%/sound/f3
+@dirrm %%DATADIR%%/sound/f1
+@dirrm %%DATADIR%%/sound/endurance
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/graphics/track-previews
+@dirrm %%DATADIR%%/graphics/stock
+@dirrm %%DATADIR%%/graphics/rally
+@dirrm %%DATADIR%%/graphics/hud
+@dirrm %%DATADIR%%/graphics/f3
+@dirrm %%DATADIR%%/graphics/f1-westgermany
+@dirrm %%DATADIR%%/graphics/f1-sanmarino
+@dirrm %%DATADIR%%/graphics/f1-portugal
+@dirrm %%DATADIR%%/graphics/f1-france
+@dirrm %%DATADIR%%/graphics/f1-brazil
+@dirrm %%DATADIR%%/graphics/endurance
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%/designs/stock
+@dirrm %%DATADIR%%/designs/rally
+@dirrm %%DATADIR%%/designs/f3000
+@dirrm %%DATADIR%%/designs/f3
+@dirrm %%DATADIR%%/designs/f1
+@dirrm %%DATADIR%%/designs/endurance
+@dirrm %%DATADIR%%/designs
+@dirrm %%DATADIR%%/demos
+@dirrm %%DATADIR%%
