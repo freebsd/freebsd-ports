@@ -683,6 +683,7 @@ avalon-framework	ports/devel/avalon-framework
 avalon-logkit	ports/java/avalon-logkit
 avanor		ports/games/avanor
 avarice		ports/devel/avarice
+avce00		ports/devel/avce00
 avcheck		ports/security/avcheck
 avenger		ports/mail/avenger
 avida		ports/biology/avida
