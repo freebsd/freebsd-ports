@@ -512,6 +512,7 @@
     SUBDIR += p5-User
     SUBDIR += p5-arclog
     SUBDIR += p5-mogilefs-server
+    SUBDIR += p5-reslog
     SUBDIR += paicc
     SUBDIR += pax-utils
     SUBDIR += pcfclock
