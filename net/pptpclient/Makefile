@@ -5,17 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=		pptpclient
-PORTVERSION=		1.7.1
-CATEGORIES=		net
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pptpclient
-DISTNAME=		pptp-${PORTVERSION}
+PORTNAME=	pptpclient
+PORTVERSION=	1.7.2
+CATEGORIES=	net
+MASTER_SITES=	SF
+DISTNAME=	pptp-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
 
-MAN8=	pptp.8
+USE_PERL5=	yes
+
+MAN8=		pptp.8
 
 .include <bsd.port.pre.mk>
 
