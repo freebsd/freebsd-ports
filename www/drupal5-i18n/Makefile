@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	i18n
-DISTVERSION=	5.x-2.1
+DISTVERSION=	5.x-2.3
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	An internationalisation module for the Drupal CMS
