@@ -15,6 +15,8 @@ COMMENT=	Tools to handle Short Message Service
 
 LIB_DEPENDS=	mm:${PORTSDIR}/devel/mm
 
+CONFLICTS=	smstools-3.*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 USE_RC_SUBR=	smsd.sh

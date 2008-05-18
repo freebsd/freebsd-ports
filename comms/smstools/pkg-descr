@@ -1,8 +1,6 @@
-SMS server tools , utils to handle a sms gateway
+The SMS Server Tools send and receive short messages through GSM modems or 
+mobile phones.
 
-for more info see authors site at:
+This is the original version 2.x maintained by Stefan Frings.
 
 WWW: http://smstools.meinemullemaus.de/
-
-- Benny
-bennyk@wax.dk
