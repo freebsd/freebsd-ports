@@ -19,6 +19,6 @@ lib/liblftp-tasks.a
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lftp.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lftp.mo
 @dirrm %%DATADIR%%
-
