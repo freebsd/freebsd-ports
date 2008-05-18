@@ -15540,6 +15540,7 @@ smproxy		ports/x11/smproxy
 sms_client	ports/comms/sms_client
 smssend		ports/misc/smssend
 smstools	ports/comms/smstools
+smstools3	ports/comms/smstools3
 smtp-gated	ports/mail/smtp-gated
 smtpclient	ports/mail/smtpclient
 smtpd		ports/mail/smtpd
