@@ -7,28 +7,28 @@
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/ggadu
 DISTNAME=	gg2-${PORTVERSION}
 
 MAINTAINER=	smyru@heron.pl
-COMMENT=	GTK2 based Gadu-Gadu client for X11
+COMMENT=	Gadu-Gadu IM network client
 
 LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile
 
-BROKEN=		Does not configure
-
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_PERL5=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USE_XORG=	x11 xaw ice
+USE_PERL5=	yes
+USE_XORG=	x11 xaw ice xscrnsaver
 WANT_GNOME=	yes
+# there is a header conflict here, that breaks build
 CONFLICTS=	qhacc-[0-9]*
 
 CONFIGURE_ARGS=	--disable-esdtest \
@@ -153,29 +153,14 @@ CONFIGURE_ARGS+=	--without-xosd
 PLIST_SUB+=	XOSD:="@comment "
 .endif
 
-.if (${HAVE_GNOME:Mgnomehier}!="")
-PLIST_SUB+=	GNOME:=""
-.else
-PLIST_SUB+=	GNOME:="@comment "
-.endif
-.if exists(${LOCALBASE}/lib/libkdecore.so)
-PLIST_SUB+=	KDE:=""
-.else
-PLIST_SUB+=	KDE:="@comment "
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/gg2.desktop
-	@${REINPLACE_CMD} -e 's| -ldl|| ; s|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/lib/Makefile.in
+	@${REINPLACE_CMD} -e 's,=.*},=${PREFIX},' ${WRKSRC}/src/plugins/dbus/org.freedesktop.im.GG.service
+	@${REINPLACE_CMD} -e 's, -ldl,, ; s,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' ${WRKSRC}/lib/Makefile.in
+	@${REINPLACE_CMD} -e 's,(datadir)/pixmaps,(datadir)/icons/hicolor/48x48/apps,' ${WRKSRC}/pixmaps/Makefile.in
 
 post-install:
-.if (${HAVE_GNOME:Mgnomehier}!="")
-	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${LOCALBASE}/share/gnome/apps/Internet
-	${LN} -sf ${PREFIX}/share/pixmaps/gg2.png ${LOCALBASE}/share/pixmaps
-.endif
-.if exists(${LOCALBASE}/lib/libkdecore.so)
-	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${LOCALBASE}/share/applnk/Internet
-.endif
+	@${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${PREFIX}/share/applications/
 
 # vim: set ts=8 sw=8:
 .include <bsd.port.post.mk>
