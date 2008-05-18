@@ -1,0 +1,7 @@
+E00Compr is an Open Source ANSI-C library to compress and uncompress
+Arc/Info Export (E00) files. It can be easily plugged into existing E00
+translators to add support for compressed E00 files simply by replacing
+the existing translator's read/write function by the E00ReadNextLine()
+and E00WriteNextLine() functions provided by the library.
+
+WWW: http://avce00.maptools.org/e00compr/
