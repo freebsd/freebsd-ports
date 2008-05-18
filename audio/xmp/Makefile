@@ -15,6 +15,7 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A player for many different Amiga and PC module formats
 
 USE_GMAKE=	yes
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
