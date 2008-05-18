@@ -2361,6 +2361,7 @@ dyncall		ports/devel/dyncall
 dzip		ports/archivers/dzip
 e		ports/math/e
 e-uae		ports/emulators/e-uae
+e00compr	ports/devel/e00compr
 e16utils	ports/x11-wm/e16utils
 e17-module-bling	ports/x11/e17-module-bling
 e17-module-calendar	ports/x11/e17-module-calendar
