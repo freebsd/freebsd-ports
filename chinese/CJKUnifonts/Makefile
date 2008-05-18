@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	CJKUnifonts
-PORTVERSION=	0.1.20060928
-PORTREVISION=	1
+PORTVERSION=	0.2.20080216.1
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	ftp://yilan.twbbs.org/distfiles/:uming \
+MASTER_SITES=	LOCAL/chinsan/fonts/:uming \
 		http://ftp.debian.org/debian/pool/main/t/ttf-arphic-uming/:uming \
-		ftp://yilan.twbbs.org/distfiles/:ukai \
+		LOCAL/chinsan/fonts/:ukai \
 		http://ftp.debian.org/debian/pool/main/t/ttf-arphic-ukai/:ukai
 PKGNAMEPREFIX=	zh-
 DISTFILES=	ttf-arphic-uming_${PORTVERSION}.orig.tar.gz:uming \
@@ -24,12 +23,12 @@ DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-TTF=		ukai.ttf uming.ttf
+TTF=		ukai.ttc uming.ttc
 
 do-install:
 	@${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ttf-arphic-ukai-${PORTVERSION}/ukai.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ttf-arphic-uming-${PORTVERSION}/uming.ttf ${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/ukai.ttc ${FONTSDIR}
+	${INSTALL_DATA} ${WRKDIR}/uming.ttc ${FONTSDIR}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/chinese/ttfm/Makefile.ttf"

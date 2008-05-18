@@ -3,9 +3,20 @@ These fonts are chinese Unicode fonts which include the following charsets:
  - GB2312-80
  - HKSCS-2004
  - ISO8859-1,2,3,4,7,9,10,13,14,15
- - Bopomofo Extended for Minnan and Hakka
+ - Bopomofo Extended for Minnan and Hakka, Minnan (Unicode 5.0) and their
+   MBE variants.
 
-The missing glyphs for GBK, Japanese and Korean are under development, 
-every release contains more glyphs.
+Partly support is implemented for:
+CNS 11643
+GBK
+GB18030
+Japanese
+Korean
 
-WWW: http://www.freedesktop.org/wiki/Software_2fCJKUnifonts
+This font is under development, new glyphs for the partly supported charsets
+are constantly added.
+
+This font is a TrueType Collection containing 4 flavors, namely
+CN, HK, TW and TW MBE.
+
+WWW: http://www.freedesktop.org/wiki/Software/CJKUnifonts
