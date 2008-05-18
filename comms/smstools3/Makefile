@@ -1,0 +1,81 @@
+# New ports collection makefile for:   	smstools3
+# Date created:                        	2008-05-18
+# Whom:                                	Martin Matuska <mm@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	smstools
+PORTVERSION=	3.1
+CATEGORIES=	comms
+MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
+DISTNAME=	smstools3-${PORTVERSION}
+
+MAINTAINER=	mm@FreeBSD.org
+COMMENT=	SMS Gateway software for GSM modems and mobile phones
+
+LIB_DEPENDS=	mm:${PORTSDIR}/devel/mm
+
+CONFLICTS=	smstools-2.*
+
+WRKSRC=		${WRKDIR}/smstools3
+USE_GMAKE=	yes
+USE_RC_SUBR=	smsd
+SPOOLDIR?=	/var/spool/sms
+PLIST_SUB+=	PREFIX="${PREFIX}" \
+		SPOOLDIR="${SPOOLDIR}"
+
+DOCS=		alarmhandler.html blacklist.html book.html compiling.html \
+		configure.html configure2.html costs.html eventhandler.html \
+		faq.html fileformat.html gpl.html gpl_de.html \
+		hardwarecomp.html history3.html index.html license.html \
+		links.html localizing.html references.html run.html \
+		softwarecomp.html statformat.html statusmonitor.html \
+		support.gif support.html udh.html windows.html
+
+SLIDESHOW=	blacklist.gif eventhandler.gif logfile.gif modem.gif \
+		move_l.gif move_r.gif page1.html page2.html page2.jpg \
+		page2b.html page3.html page4.html page5.html page6.html \
+		page7.html page8.html queue.gif sms.gif smstools3-small.jpg \
+		statistic.gif status.gif support.gif
+
+EXAMPLES=	.procmailrc .qmailrc language-ISO-8859-15.fi \
+		language-UTF-8.fi operator_logo1.sms operator_logo2.sms \
+		received_report.sms received_sms.sms send_sms.sms \
+		send_sms_unicode.sms smsd.conf.easy smsd.conf.full \
+		smsd.conf.non-root
+
+SCRIPTS=	checkhandler-utf-8 email2sms eventhandler-utf-8 hex2bin \
+		hex2dec mysmsd pkill regular_run sendsms sms2html sms2unicode \
+		sms2xml sms3 smsevent smsresend smstest.php sql_demo \
+		unicode2sms
+
+post-patch:
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/install.sh \
+		${WRKSRC}/src/smsd_cfg.c
+	@${REINPLACE_CMD} 's|/dev/ttyS0|/dev/cuad0|g' \
+		${WRKSRC}/examples/smsd.conf.easy \
+		${WRKSRC}/examples/smsd.conf.full \
+		${WRKSRC}/examples/smsd.conf.non-root
+
+post-install:
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/scripts/,} ${DATADIR}
+.for FILE in sendsms sms2html sms2unicode unicode2sms
+	@${LN} -s ${DATADIR}/${FILE} ${PREFIX}/bin/${FILE}
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/examples/smsd.conf.easy ${PREFIX}/etc/smsd.conf.sample
+	@if [ ! -f ${PREFIX}/etc/smsd.conf ]; then \
+		${CP} ${PREFIX}/etc/smsd.conf.sample ${PREFIX}/etc/smsd.conf; \
+	fi
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/slideshow
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
+	@${INSTALL_DATA} ${SLIDESHOW:S,^,${WRKSRC}/doc/slideshow/,} \
+		${DOCSDIR}/slideshow
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/examples/,} ${EXAMPLESDIR}/
+.endif
+.include <bsd.port.mk>
