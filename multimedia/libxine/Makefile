@@ -58,6 +58,7 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		GNOMEVFS2 "Enable GnomeVFS2 support" off \
 		PULSEAUDIO "Enable PulseAudio support" off \
 		XVMC "Enable XvMC support" off \
+		XCB "Enable XCB support" off \
 		SMB "Enable SMB protocol support" off \
 		AALIB "Enable aalib support" off \
 		IMAGEMAGICK "Enable ImageMagick support" off \
@@ -133,6 +134,14 @@ PLIST_SUB+=	WITH_XVMC=""
 .else
 CONFIGURE_ARGS+=	--disable-xvmc
 PLIST_SUB+=	WITH_XVMC="@comment "
+.endif
+
+.if defined(WITH_XCB)
+LIB_DEPENDS+=	xcb.1:${PORTSDIR}/x11/libxcb
+PLIST_SUB+=	WITH_XCB=""
+.else
+PLIST_SUB+=	WITH_XCB="@comment "
+CONFIGURE_ARGS+=	--without-xcb
 .endif
 
 .if defined(WITH_SMB)
