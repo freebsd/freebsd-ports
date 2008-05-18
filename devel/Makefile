@@ -81,6 +81,7 @@
     SUBDIR += autotools
     SUBDIR += avalon-framework
     SUBDIR += avarice
+    SUBDIR += avce00
     SUBDIR += avltree
     SUBDIR += avr-binutils
     SUBDIR += avr-gcc

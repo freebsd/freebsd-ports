@@ -1,0 +1,9 @@
+AVCE00 is an Open Source ANSI-C library that makes Arc/Info (binary) Vector
+Coverages appear as E00! It allows you to read and write binary coverages
+just as if they were E00 files.
+
+The C library can be easily plugged into existing E00 translators to add
+support for binary coverages simply by replacing your existing translator's
+read/write function with the functions provided by the library.
+
+WWW: http://avce00.maptools.org/avce00/
