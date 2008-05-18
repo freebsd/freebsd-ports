@@ -510,6 +510,7 @@
     SUBDIR += p5-Unix-Processors
     SUBDIR += p5-Unix-Syslog
     SUBDIR += p5-User
+    SUBDIR += p5-arclog
     SUBDIR += p5-mogilefs-server
     SUBDIR += paicc
     SUBDIR += pax-utils

@@ -1,0 +1,12 @@
+arclog archives the log files monthly. It strips off log entries that
+belongs to previous months, and then compresses and saves them to archived
+files named logfile.yyyymm.gz.
+
+Currently, arclog supports Apache access log, Syslog, NTP, Apache 1 SSL
+engine log and my own bracketed, modified ISO date/time log file formats,
+and gzip and bzip2 compression methods. Several software projects log (or
+can log) in a format compatible with the Apache access log, like CUPS,
+ProFTPD, Pure-FTPd... etc., and arclog can archive their Apache-like log
+files, too.
+
+WWW: http://search.cpan.org/dist/arclog/
