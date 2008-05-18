@@ -2343,6 +2343,7 @@ dviselect	ports/print/dviselect
 dvisvg		ports/print/dvisvg
 dvorak7min	ports/misc/dvorak7min
 dvorakng	ports/misc/dvorakng
+dvtm		ports/sysutils/dvtm
 dvts		ports/multimedia/dvts
 dwarfdump	ports/devel/dwarfdump
 dwatch		ports/sysutils/dwatch
