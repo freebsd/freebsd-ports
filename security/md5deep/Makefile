@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	md5deep
-PORTVERSION=	2.0.1
+PORTVERSION=	3.0
 CATEGORIES=	security
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}-001
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Program to compute various message digests recursively
@@ -17,11 +16,11 @@ COMMENT=	Program to compute various message digests recursively
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-MAN1=		md5deep.1
+MAN1=		md5deep.1 hashdeep.1
 MLINKS=		md5deep.1 sha1deep.1 md5deep.1 sha256deep.1 \
 		md5deep.1 whirlpooldeep.1 md5deep.1 tigerdeep.1
 
-PLIST_FILES=	bin/md5deep bin/sha1deep bin/sha256deep \
+PLIST_FILES=	bin/hashdeep bin/md5deep bin/sha1deep bin/sha256deep \
 		bin/whirlpooldeep bin/tigerdeep
 
 .include <bsd.port.mk>
