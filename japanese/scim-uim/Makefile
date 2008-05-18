@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scim-uim
-PORTVERSION=	0.1.4
-PORTREVISION=	8
+PORTVERSION=	0.2.0
 CATEGORIES=	japanese
 MASTER_SITES=	SF \
 		http://freedesktop.org/~suzhe/sources/
@@ -20,7 +19,6 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	uim:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	lthack
 USE_ICONV=	yes
 USE_GMAKE=	yes
@@ -31,16 +29,11 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 .include <bsd.port.pre.mk>
 
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-aa ${FILESDIR}/extra-patch-ab
 .if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/stlport" \
-		LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-4-stable
+IGNORE=		does not build on FreeBSD < 5.x
 .else
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
 post-install:
