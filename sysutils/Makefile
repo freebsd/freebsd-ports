@@ -162,6 +162,7 @@
     SUBDIR += dvdimagecmp
     SUBDIR += dvdisaster
     SUBDIR += dvdtape
+    SUBDIR += dvtm
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
     SUBDIR += ecore-config
