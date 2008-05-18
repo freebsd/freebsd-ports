@@ -21,7 +21,7 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	sbin/ftp-proxy
 USE_RC_SUBR=	ftp-proxy
 
-CFLAGS+=	-I${PREFIX}/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
