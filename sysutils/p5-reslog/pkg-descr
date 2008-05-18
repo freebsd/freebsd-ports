@@ -1,0 +1,12 @@
+reslog resolves IPs in Apache(8) log files. The result can then be analyzed
+by another program, like Analog. You can think of it as a replacement of the
+Apache(8) HostNameLookups directive, in the sense that it resolves client
+IPs altogether once a day.
+
+Resolving takes long time. This is mainly caused by resolving: Network
+packets may be filtered by firewalls; DNS servers may not be correctly
+configured; may not be up working; may sit in slow network sections; may be
+old slow machines; may have traffic jam... etc. All these reasons are out of
+our control.
+
+WWW: http://search.cpan.org/dist/reslog/
