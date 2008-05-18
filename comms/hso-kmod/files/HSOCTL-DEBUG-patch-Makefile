@@ -1,0 +1,9 @@
+--- Makefile.orig	2008-05-14 14:18:53.751411172 +0200
++++ Makefile	2008-05-14 14:19:01.497294028 +0200
+@@ -1,5 +1,5 @@
+ SRCS=	hsoctl.c
+ PROG=	hsoctl
+-CFLAGS+=	-g
++#CFLAGS+=	-g
+ 
+ .include <bsd.prog.mk>

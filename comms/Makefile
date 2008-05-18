@@ -45,6 +45,7 @@
     SUBDIR += hcfmdm
     SUBDIR += hcidump
     SUBDIR += hf
+    SUBDIR += hso-kmod
     SUBDIR += hylafax
     SUBDIR += ib-kmod
     SUBDIR += java-commapi
