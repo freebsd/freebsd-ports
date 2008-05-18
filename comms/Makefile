@@ -112,6 +112,7 @@
     SUBDIR += seyon
     SUBDIR += sms_client
     SUBDIR += smstools
+    SUBDIR += smstools3
     SUBDIR += snooper
     SUBDIR += soundmodem
     SUBDIR += spandsp
