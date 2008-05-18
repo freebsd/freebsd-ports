@@ -1,6 +1,14 @@
---- src/scim_uim_imengine.cpp.orig	Mon Aug  8 12:08:34 2005
-+++ src/scim_uim_imengine.cpp	Mon Mar 26 17:12:57 2007
-@@ -823,39 +823,6 @@
+--- src/scim_uim_imengine.cpp.orig	2005-08-08 12:08:34.000000000 +0900
++++ src/scim_uim_imengine.cpp	2008-05-18 16:02:49.000000000 +0900
+@@ -33,6 +33,7 @@
+ #endif
+ 
+ #include <scim.h>
++#include <uim-util.h>
+ #include "scim_uim_imengine.h"
+ 
+ #define scim_module_init uim_LTX_scim_module_init
+@@ -823,39 +824,6 @@
      }
  }
  
