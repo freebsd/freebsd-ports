@@ -43,7 +43,7 @@ PLIST_DIRS=		share/nbc \
 post-depends:
 .if exists(${LOCALBASE}/bin/fpc)
 FPC_VER!=	${LOCALBASE}/bin/fpc -iV
-FPC_REQVER!=	${ECHO_CMD} $$(expr ${FPC_VER:C/^[^\.]*\.//} \>= ${FPC_MINVER:C/^[^\.]*\.//})
+FPC_REQVER!=	${ECHO_CMD} $$(${EXPR} ${FPC_VER:C/^[^\.]*\.//} \>= ${FPC_MINVER:C/^[^\.]*\.//})
 
 .if (${FPC_REQVER} != 1)
 IGNORE=	requires fpc ${FPC_MINVER} or above. Please upgrade
