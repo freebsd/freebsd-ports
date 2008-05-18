@@ -1,13 +1,5 @@
 --- update-mime-database.c.orig	2007-07-02 04:00:13.000000000 -0500
 +++ update-mime-database.c	2008-01-28 23:42:30.000000000 -0600
-@@ -54,6 +54,7 @@
- 	"model",
- 	"multipart",
- 	"x-epoc",
-+	"x-content",
- };
- 
- /* Represents a MIME type */
 @@ -445,7 +446,8 @@
  		}
  	}
