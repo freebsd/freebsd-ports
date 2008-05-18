@@ -5,26 +5,27 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cvstrac
-PORTVERSION=	2.0.0
+PORTNAME?=	cvstrac
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvstrac.org/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	cvstrac-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Web-Based Bug And Patch-Set Tracking System For CVS
+MAINTAINER=	glarkin@sourcehosting.net
+COMMENT?=	Web-Based Bug And Patch-Set Tracking System For CVS
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/cvstrac-${PORTVERSION}
 USE_SQLITE=	yes
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 
-MAKE_ARGS=	SRCDIR=${WRKSRC} PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
+MAKE_ARGS+=	SRCDIR=${WRKSRC} PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 
 NOMAN=
-PLIST_FILES=	bin/cvstrac
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cvstrac ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

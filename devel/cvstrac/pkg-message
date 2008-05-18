@@ -1,5 +1,5 @@
-This port will install the cvstrac binary in ${PREFIX}/bin. Please follow
-the detailed installation instructions in the CVSTrac Wiki at
-http://www.cvstrac.org/cvstrac/wiki?p=CvstracInstallation for
-information on how to get CVSTrac up and running in your preferred
+
+Please follow the detailed installation instructions in the CVSTrac
+Wiki at http://www.cvstrac.org/cvstrac/wiki?p=CvstracInstallation
+for information on how to get CVSTrac up and running in your preferred
 configuration.
