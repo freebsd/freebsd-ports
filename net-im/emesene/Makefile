@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	emesene
-PORTVERSION=	0.20070820
+PORTVERSION=	1.0
 CATEGORIES=	net-im python
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-r801
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	MSN Messenger client
+MAINTAINER=	acm@FreeBSD.org
+COMMENT=	A MSN Messenger client writen in python
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
-
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	pygtk2
 REINPLACE_ARGS=	-i ""
+
+PLIST=		${WRKDIR}/pkg-plist
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DESKTOP_ENTRIES="${PORTNAME}" \
 		"${COMMENT}" \
@@ -32,20 +32,34 @@ DESKTOP_ENTRIES="${PORTNAME}" \
 		"Network;InstantMessaging;GTK;" \
 		"false"
 
+post-extract:
+	@cd ${WRKSRC} && \
+		${RM} -f GPL LGPL README
+
 post-patch:
-	@${CHMOD} a+x ${WRKSRC}/emesene
-	@${REINPLACE_CMD} -e \
-		's:Controller.py:${DATADIR}/Controller.py:' ${WRKSRC}/emesene
-	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/${PORTNAME}.sh
-	@${ECHO_CMD} 'cd ${DATADIR}&&exec ./${PORTNAME}' >> ${WRKDIR}/${PORTNAME}.sh
+	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${PORTNAME}
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}
 
+	@${ECHO_CMD} "cd ${DATADIR} || exit 1" >> ${WRKDIR}/run.sh
+	@${ECHO_CMD} "exec ${PYTHON_CMD} ./${PORTNAME}" >> ${WRKDIR}/run.sh
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@cd ${WRKSRC} && \
+		${FIND}  * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
+			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
+	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
+	@${ECHO_CMD} "bin/${PORTNAME}" >> ${PLIST}
+
 do-install:
-	@${INSTALL} -d ${DATADIR}/
-	@${CP} -R ${WRKSRC}/ ${DATADIR}/
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && \
+		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+
+	${INSTALL_SCRIPT} ${WRKDIR}/run.sh ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
