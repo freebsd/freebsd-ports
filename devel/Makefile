@@ -404,6 +404,7 @@
     SUBDIR += gindent
     SUBDIR += gio-fam-backend
     SUBDIR += git
+    SUBDIR += gittrac
     SUBDIR += glade2
     SUBDIR += glade3
     SUBDIR += glademm
