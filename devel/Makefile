@@ -2034,6 +2034,7 @@
     SUBDIR += py-ice
     SUBDIR += py-instant
     SUBDIR += py-istring
+    SUBDIR += py-jcc
     SUBDIR += py-json-py
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
