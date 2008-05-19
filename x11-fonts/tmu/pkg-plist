@@ -1,0 +1,7 @@
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/fonts.scale
+%%FONTSDIR%%/tmu.ttf
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || true
+@unexec rm -f %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || true
+@unexec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || true
+@dirrm %%FONTSDIR%%
