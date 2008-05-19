@@ -7,8 +7,8 @@
 #
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.4.1
-PORTREVISION?=	2
+PORTVERSION=	2.4.2
+PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pidgin
@@ -23,7 +23,8 @@ USE_GNOME?=	gnomeprefix gnomehack intlhack glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
 		--disable-consoleui \
-		--with-dynamic_prpls=${PRPL_MODULES}
+		--with-dynamic_prpls=${PRPL_MODULES} \
+		--disable-nm
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		PTHREAD_LIB="${PTHREAD_LIBS}"
@@ -82,6 +83,7 @@ GCONF_SCHEMAS=	purple.schemas
 .if defined(WITH_GTKUI) && ${HAVE_GNOME:Mevolutiondataserver}!=""
 USE_GNOME+=		evolutiondataserver
 PLIST_SUB+=		EVO=""
+CONFIGURE_ARGS+=	--enable-gevolution
 .else
 CONFIGURE_ARGS+=	--disable-gevolution
 PLIST_SUB+=		EVO="@comment not installed: "
@@ -95,6 +97,7 @@ CONFIGURE_ARGS+=--disable-gstreamer
 
 .if defined(WITH_GTKUI) && !defined(WITHOUT_CAP)
 LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+CONFIGURE_ARGS+=--enable-cap
 PLIST_SUB+=	CAP=""
 .else
 CONFIGURE_ARGS+=--disable-cap
@@ -162,6 +165,7 @@ CONFIGURE_ARGS+=	--with-tclconfig=${LOCALBASE}/lib/tcl${TCLTK_VER} \
 CFLAGS+=		-I${LOCALBASE}/include/tk${TCLTK_VER} -I${LOCALBASE}/include/tcl${TCLTK_VER}
 PLIST_SUB+=		TCL:=""
 .else
+CONFIGURE_ARGS+=	--disable-tcl
 PLIST_SUB+=		TCL:="@comment not installed: "
 .endif
 
