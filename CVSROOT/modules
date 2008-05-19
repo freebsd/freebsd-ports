@@ -12329,6 +12329,7 @@ pear-Net_DNSBL	ports/net/pear-Net_DNSBL
 pear-Net_Dict	ports/net/pear-Net_Dict
 pear-Net_FTP	ports/ftp/pear-Net_FTP
 pear-Net_Finger	ports/net/pear-Net_Finger
+pear-Net_Gearman	ports/devel/pear-Net_Gearman
 pear-Net_Geo	ports/net/pear-Net_Geo
 pear-Net_GeoIP	ports/net/pear-Net_GeoIP
 pear-Net_IMAP	ports/mail/pear-Net_IMAP
@@ -12597,7 +12598,6 @@ photo_gallery	ports/www/photo_gallery
 photoclip	ports/graphics/photoclip
 photopc		ports/graphics/photopc
 php-Auth_OpenID	ports/security/php-Auth_OpenID
-php-Net_Gearman	ports/devel/php-Net_Gearman
 php-dbg2	ports/devel/php-dbg2
 php-dyn		ports/www/php-dyn
 php-gtk		ports/x11-toolkits/php-gtk
