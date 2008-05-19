@@ -1,0 +1,19 @@
+The Tibetan & Himalayan Digital Library releases the Unicode character
+based Tibetan Machine Uni OpenType font for writing Tibetan, Dzongkha
+and Ladakhi in dbu-can script with full support for the Sanskrit
+combinations found in chos skad texts.
+
+This font is based on the Tibetan Machine font originally designed and
+developed by Tony Duff of the Tibetan Computer Company over many
+years, the rights of which were purchased from him by the Trace
+Foundation in order to make it freely available under the terms of the
+Gnu General Public License.
+
+OpenType tables and more than 2,000 additional glyphs were added to
+the original font by Nathaniel Garson and Christopher Fynn under the
+auspices of THDL. This new OpenType version of the font contains
+almost 4,000 glyphs and can generate over 20,000 different
+combinations.
+
+WWW: http://www.thdl.org/tools/fonts/
+Author: Tony Duff
