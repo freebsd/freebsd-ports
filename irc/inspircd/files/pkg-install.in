@@ -1,0 +1,109 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+PATH=/usr/sbin:/usr/bin:/bin ; export PATH
+
+inspircd_usr=%%INSPIRCD_USR%%
+inspircd_uid=%%INSPIRCD_UID%%
+inspircd_grp=%%INSPIRCD_GRP%%
+inspircd_gid=%%INSPIRCD_GID%%
+inspircd_name=%%PORTNAME%%
+etcdir=%%ETCDIR%%
+
+inspircd_gcos="IRC daemon"
+inspircd_home=/nonexistent
+inspircd_shell=/sbin/nologin
+
+create_group() {
+    local user uid group gid gcos home shell
+
+    user=$1
+    uid=$2
+    group=$3
+    gid=$4
+    gcos=$5
+    home=$6
+    shell=$7
+
+    if pw groupadd -n $group -g $gid ; then
+	echo "===> Group $group created"
+    else
+	cat <<-EOERRORMSG
+	*** Failed to create the $group group.
+
+	Please add the $user user and $group group
+	manually with the commands:
+
+	    pw groupadd -n $group -g $gid
+	    pw useradd -n $user -u $uid -g $group -c "$gcos" \\
+	        -d $home -s $shell -h -
+
+	and retry installing this package.
+	EOERRORMSG
+	exit 1
+    fi
+}
+
+
+create_user() {
+    local user uid group gid gcos home shell
+
+    user=$1
+    uid=$2
+    group=$3
+    gid=$4
+    gcos=$5
+    home=$6
+    shell=$7
+
+    if pw useradd -n $user -u $uid -g $group -c "$gcos" -d $home \
+	-s $shell -h - ; then
+	echo "===> Created $user user"
+    else
+	cat <<-EOERRORMSG
+	*** Failed to create the $user user.
+
+	Please add the $user user manually with the command:
+
+	    pw useradd -n $user -u $uid -g $group -c "$gcos" \\
+		        -d $home -s $shell -h -
+
+	and retry installing this package.
+	EOERRORMSG
+	exit 1
+    fi
+}
+
+
+case $2 in
+    PRE-INSTALL)
+
+        # Create the inspircd user and group if they do not already exist
+
+        if pw user show -n $inspircd_usr >/dev/null 2>&1 ; then
+	    echo "===> Using pre-existing user $inspircd_usr"
+	else
+	    if ! pw group show -n $inspircd_grp >/dev/null 2>&1 ; then
+		create_group $inspircd_usr $inspircd_uid $inspircd_grp \
+		    $inspircd_gid "$inspircd_gcos" $inspircd_home      \
+		    $inspircd_shell
+	    fi
+	    create_user $inspircd_usr $inspircd_uid $inspircd_grp \
+		$inspircd_gid "$inspircd_gcos" $inspircd_home     \
+	        $inspircd_shell
+	fi
+	;;
+
+    POST-INSTALL)
+
+	# Make sure access to the etc dir is limited to $inspircd_grp
+	chmod 750 $etcdir
+	chgrp $inspircd_grp $etcdir
+	;;
+esac
+
+#
+# That's All Folks!
+#

@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable %%PORTNAME%%:
+#
+# %%PORTNAME%%_enable="YES"
+#
+# Other rc.conf variables:
+#
+# %%PORTNAME%%_config="%%ETCDIR%%/%%PORTNAME%%.conf"
+#                          -- path to config file
+# %%PORTNAME%%_pidfile="%%INSPIRCD_RUN%%/%%PORTNAME%%.pid"
+#                          -- location of pidfile: must match setting
+#                             in ${%%PORTNAME%%_conffile}
+# %%PORTNAME%%_user="%%INSPIRCD_USR%%"
+#                          -- user to run %%PORTNAME%% as
+# %%PORTNAME%%_group="%%INSPIRCD_GRP%%"
+#                          -- group to run %%PORTNAME%% as
+# %%PORTNAME%%_logfile="%%INSPIRCD_LOG%%"
+#                          -- file %%PORTNAME%% writes logs to
+#
+. /etc/rc.subr
+
+name=%%PORTNAME%%
+rcvar=`set_rcvar`
+
+load_rc_config ${name}
+
+: ${%%PORTNAME%%_enable="NO"}
+: ${%%PORTNAME%%_config="%%ETCDIR%%/%%PORTNAME%%.conf"}
+: ${%%PORTNAME%%_pidfile="%%INSPIRCD_RUN%%/%%PORTNAME%%.pid"}
+: ${%%PORTNAME%%_flags=""}
+: ${%%PORTNAME%%_user="%%INSPIRCD_USR%%"}
+: ${%%PORTNAME%%_group="%%INSPIRCD_GRP%%"}
+: ${%%PORTNAME%%_logfile="%%INSPIRCD_LOG%%"}
+
+command=%%PREFIX%%/bin/%%PORTNAME%%
+pidfile=${%%PORTNAME%%_pidfile}
+required_files=${%%PORTNAME%%_config}
+start_precmd=%%PORTNAME%%_prestart
+
+%%PORTNAME%%_prestart ()
+{
+    piddir=$(dirname ${%%PORTNAME%%_pidfile})
+    if [ ! -d ${piddir} ]; then
+        mkdir -m 755 -p ${piddir}
+        chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${piddir}
+    fi
+    logdir=$(dirname ${%%PORTNAME%%_logfile})
+    if [ ! -d ${logdir} ]; then
+        mkdir -m 755 -p ${logdir}
+        chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${logdir}
+    fi
+}
+
+case "${%%PORTNAME%%_flags}" in
+    *--config\ *)
+    echo "Warning \$%%PORTNAME%%_flags includes --config option." \
+        "Please use \$%%PORTNAME%%_config instead."
+    ;;
+    *--logfile\ *)
+    echo "Warning \$%%PORTNAME%%_flags includes --logfile option." \
+         "Please use \$%%PORTNAME%%_logfile instead."
+    ;;
+    *)
+    %%PORTNAME%%_flags="${%%PORTNAME%%_flags} --logfile ${%%PORTNAME%%_logfile} --config ${%%PORTNAME%%_config}"
+    ;;
+esac
+
+run_rc_command "$1"
