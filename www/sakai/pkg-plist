@@ -1,0 +1,1268 @@
+tomcat5.5/ECLv1.txt
+tomcat5.5/common/lib/log4j-1.2.8.jar
+tomcat5.5/common/lib/sakai-dav-common-2.4.1.jar
+tomcat5.5/common/lib/sakai-util-log-2.4.1.jar
+tomcat5.5/components/000sakai-portal-service-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/000sakai-portal-service-pack/WEB-INF/components.xml
+tomcat5.5/components/000sakai-portal-service-pack/WEB-INF/lib/sakai-portal-service-impl-2.4.1.jar
+tomcat5.5/components/osp-common-component/META-INF/MANIFEST.MF
+tomcat5.5/components/osp-common-component/WEB-INF/components.xml
+tomcat5.5/components/osp-common-component/WEB-INF/lib/commons-codec-1.2.jar
+tomcat5.5/components/osp-common-component/WEB-INF/lib/osp-common-impl-2.4.1.jar
+tomcat5.5/components/osp-common-component/WEB-INF/lib/sakai-metaobj-impl-2.4.1.jar
+tomcat5.5/components/osp-common-component/WEB-INF/lib/sakai-metaobj-tool-lib-2.4.1.jar
+tomcat5.5/components/osp-common-component/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/osp-glossary-component/META-INF/MANIFEST.MF
+tomcat5.5/components/osp-glossary-component/WEB-INF/components.xml
+tomcat5.5/components/osp-glossary-component/WEB-INF/lib/commons-codec-1.2.jar
+tomcat5.5/components/osp-glossary-component/WEB-INF/lib/osp-common-impl-2.4.1.jar
+tomcat5.5/components/osp-glossary-component/WEB-INF/lib/osp-glossary-impl-2.4.1.jar
+tomcat5.5/components/osp-glossary-component/WEB-INF/lib/sakai-metaobj-impl-2.4.1.jar
+tomcat5.5/components/osp-glossary-component/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/osp-integration-component/META-INF/MANIFEST.MF
+tomcat5.5/components/osp-integration-component/WEB-INF/components.xml
+tomcat5.5/components/osp-integration-component/WEB-INF/lib/commons-codec-1.2.jar
+tomcat5.5/components/osp-integration-component/WEB-INF/lib/osp-common-impl-2.4.1.jar
+tomcat5.5/components/osp-integration-component/WEB-INF/lib/osp-integration-impl-2.4.1.jar
+tomcat5.5/components/osp-integration-component/WEB-INF/lib/sakai-metaobj-impl-2.4.1.jar
+tomcat5.5/components/osp-integration-component/WEB-INF/lib/sakai-metaobj-tool-lib-2.4.1.jar
+tomcat5.5/components/osp-integration-component/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/osp-matrix-component/META-INF/MANIFEST.MF
+tomcat5.5/components/osp-matrix-component/WEB-INF/components.xml
+tomcat5.5/components/osp-matrix-component/WEB-INF/lib/commons-codec-1.2.jar
+tomcat5.5/components/osp-matrix-component/WEB-INF/lib/osp-common-impl-2.4.1.jar
+tomcat5.5/components/osp-matrix-component/WEB-INF/lib/osp-matrix-impl-2.4.1.jar
+tomcat5.5/components/osp-matrix-component/WEB-INF/lib/sakai-metaobj-impl-2.4.1.jar
+tomcat5.5/components/osp-matrix-component/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/osp-migration-component/META-INF/MANIFEST.MF
+tomcat5.5/components/osp-migration-component/WEB-INF/components.xml
+tomcat5.5/components/osp-migration-component/WEB-INF/lib/commons-codec-1.2.jar
+tomcat5.5/components/osp-migration-component/WEB-INF/lib/osp-common-impl-2.4.1.jar
+tomcat5.5/components/osp-migration-component/WEB-INF/lib/osp-migration-impl-2.4.1.jar
+tomcat5.5/components/osp-migration-component/WEB-INF/lib/sakai-metaobj-impl-2.4.1.jar
+tomcat5.5/components/osp-migration-component/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/osp-portal-component/META-INF/MANIFEST.MF
+tomcat5.5/components/osp-portal-component/WEB-INF/components.xml
+tomcat5.5/components/osp-portal-component/WEB-INF/lib/osp-portal-impl-2.4.1.jar
+tomcat5.5/components/osp-portal-component/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/osp-presentation-component/META-INF/MANIFEST.MF
+tomcat5.5/components/osp-presentation-component/WEB-INF/components.xml
+tomcat5.5/components/osp-presentation-component/WEB-INF/lib/commons-codec-1.2.jar
+tomcat5.5/components/osp-presentation-component/WEB-INF/lib/osp-common-impl-2.4.1.jar
+tomcat5.5/components/osp-presentation-component/WEB-INF/lib/osp-common-tool-lib-2.4.1.jar
+tomcat5.5/components/osp-presentation-component/WEB-INF/lib/osp-presentation-impl-2.4.1.jar
+tomcat5.5/components/osp-presentation-component/WEB-INF/lib/sakai-metaobj-impl-2.4.1.jar
+tomcat5.5/components/osp-presentation-component/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/osp-presentation-component/WEB-INF/lib/websphinx-0.5.jar
+tomcat5.5/components/osp-reports-components/META-INF/MANIFEST.MF
+tomcat5.5/components/osp-reports-components/WEB-INF/components.xml
+tomcat5.5/components/osp-reports-components/WEB-INF/lib/commons-codec-1.2.jar
+tomcat5.5/components/osp-reports-components/WEB-INF/lib/osp-common-impl-2.4.1.jar
+tomcat5.5/components/osp-reports-components/WEB-INF/lib/osp-reports-component-shared-2.4.1.jar
+tomcat5.5/components/osp-reports-components/WEB-INF/lib/sakai-metaobj-impl-2.4.1.jar
+tomcat5.5/components/osp-reports-components/WEB-INF/lib/sakai-metaobj-tool-lib-2.4.1.jar
+tomcat5.5/components/osp-reports-components/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/osp-warehouse-component/META-INF/MANIFEST.MF
+tomcat5.5/components/osp-warehouse-component/WEB-INF/assignment-components.xml
+tomcat5.5/components/osp-warehouse-component/WEB-INF/components.xml
+tomcat5.5/components/osp-warehouse-component/WEB-INF/glossary-components.xml
+tomcat5.5/components/osp-warehouse-component/WEB-INF/guidance-components.xml
+tomcat5.5/components/osp-warehouse-component/WEB-INF/lib/commons-codec-1.2.jar
+tomcat5.5/components/osp-warehouse-component/WEB-INF/lib/osp-common-impl-2.4.1.jar
+tomcat5.5/components/osp-warehouse-component/WEB-INF/lib/osp-warehouse-impl-2.4.1.jar
+tomcat5.5/components/osp-warehouse-component/WEB-INF/matrix-components.xml
+tomcat5.5/components/osp-warehouse-component/WEB-INF/presentation-components.xml
+tomcat5.5/components/osp-warehouse-component/WEB-INF/resource-components.xml
+tomcat5.5/components/osp-warehouse-component/WEB-INF/scaffolding-components.xml
+tomcat5.5/components/osp-warehouse-component/WEB-INF/wizard-components.xml
+tomcat5.5/components/osp-wizard-components/META-INF/MANIFEST.MF
+tomcat5.5/components/osp-wizard-components/WEB-INF/components.xml
+tomcat5.5/components/osp-wizard-components/WEB-INF/lib/commons-codec-1.2.jar
+tomcat5.5/components/osp-wizard-components/WEB-INF/lib/osp-common-impl-2.4.1.jar
+tomcat5.5/components/osp-wizard-components/WEB-INF/lib/osp-glossary-impl-2.4.1.jar
+tomcat5.5/components/osp-wizard-components/WEB-INF/lib/osp-wizard-impl-2.4.1.jar
+tomcat5.5/components/osp-wizard-components/WEB-INF/lib/sakai-metaobj-impl-2.4.1.jar
+tomcat5.5/components/osp-wizard-components/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-alias-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-alias-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-alias-pack/WEB-INF/lib/sakai-alias-impl-2.4.1.jar
+tomcat5.5/components/sakai-alias-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-alias-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-alias-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-alias-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-announcement-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-announcement-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-announcement-pack/WEB-INF/lib/sakai-announcement-impl-2.4.1.jar
+tomcat5.5/components/sakai-announcement-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-announcement-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-announcement-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-announcement-pack/WEB-INF/lib/sakai-message-impl-2.4.1.jar
+tomcat5.5/components/sakai-announcement-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-archive-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-archive-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-archive-pack/WEB-INF/lib/commons-codec-1.3.jar
+tomcat5.5/components/sakai-archive-pack/WEB-INF/lib/sakai-archive-impl-2.4.1.jar
+tomcat5.5/components/sakai-archive-pack/WEB-INF/lib/sakai-archive-impl2-2.4.1.jar
+tomcat5.5/components/sakai-archive-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-assignment-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-assignment-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-assignment-pack/WEB-INF/lib/poi-2.5.1.jar
+tomcat5.5/components/sakai-assignment-pack/WEB-INF/lib/sakai-assignment-impl-2.4.1.jar
+tomcat5.5/components/sakai-assignment-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-assignment-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-assignment-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-assignment-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-authz-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-authz-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-authz-pack/WEB-INF/lib/sakai-authz-impl-2.4.1.jar
+tomcat5.5/components/sakai-authz-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-authz-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-authz-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-calendar-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-calendar-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-calendar-pack/WEB-INF/lib/avalon-framework-20020627.jar
+tomcat5.5/components/sakai-calendar-pack/WEB-INF/lib/batik-1.5-fop-0.20-5.jar
+tomcat5.5/components/sakai-calendar-pack/WEB-INF/lib/fop-0.20.5.jar
+tomcat5.5/components/sakai-calendar-pack/WEB-INF/lib/sakai-calendar-impl-2.4.1.jar
+tomcat5.5/components/sakai-calendar-pack/WEB-INF/lib/sakai-calendar-util-2.4.1.jar
+tomcat5.5/components/sakai-calendar-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-calendar-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-calendar-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-chat-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-chat-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-chat-pack/WEB-INF/lib/sakai-chat-impl-2.4.1.jar
+tomcat5.5/components/sakai-chat-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-chat-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-chat-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-chat-pack/WEB-INF/lib/sakai-message-impl-2.4.1.jar
+tomcat5.5/components/sakai-chat-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-citations-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-citations-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-citations-pack/WEB-INF/lib/sakai-citations-impl-2.4.1.jar
+tomcat5.5/components/sakai-citations-pack/WEB-INF/lib/sakai-content-util-2.4.1.jar
+tomcat5.5/components/sakai-citations-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-citations-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-citations-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-citations-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-cluster-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-cluster-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-cluster-pack/WEB-INF/lib/sakai-cluster-impl-2.4.1.jar
+tomcat5.5/components/sakai-common-components/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-common-components/WEB-INF/components.xml
+tomcat5.5/components/sakai-common-components/WEB-INF/lib/commons-beanutils-1.7.0.jar
+tomcat5.5/components/sakai-common-components/WEB-INF/lib/concurrent-1.3.4.jar
+tomcat5.5/components/sakai-common-components/WEB-INF/lib/sakai-common-composite-component-2.4.1.jar
+tomcat5.5/components/sakai-comp-help/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject/component/app/help/DefaultGlossary.class
+tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject/component/app/help/HelpManagerImpl$1.class
+tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject/component/app/help/HelpManagerImpl$2.class
+tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject/component/app/help/HelpManagerImpl$3.class
+tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject/component/app/help/HelpManagerImpl$4.class
+tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject/component/app/help/HelpManagerImpl.class
+tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject/component/app/help/RestConfigurationImpl.class
+tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject/component/app/help/SizedList.class
+tomcat5.5/components/sakai-comp-help/WEB-INF/components.xml
+tomcat5.5/components/sakai-comp-help/WEB-INF/lib/lucene-1.4.3.jar
+tomcat5.5/components/sakai-comp-scheduler/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-comp-scheduler/WEB-INF/components.xml
+tomcat5.5/components/sakai-component-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-component-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-component-pack/WEB-INF/lib/sakai-component-impl-2.4.1.jar
+tomcat5.5/components/sakai-component-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-content-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-content-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-content-pack/WEB-INF/lib/commons-codec-1.3.jar
+tomcat5.5/components/sakai-content-pack/WEB-INF/lib/sakai-content-impl-2.4.1.jar
+tomcat5.5/components/sakai-content-pack/WEB-INF/lib/sakai-content-util-2.4.1.jar
+tomcat5.5/components/sakai-content-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-content-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-content-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-content-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-courier-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-courier-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-courier-pack/WEB-INF/lib/sakai-courier-impl-2.4.1.jar
+tomcat5.5/components/sakai-courier-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-coursemanagement-hibernate-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-coursemanagement-hibernate-pack/WEB-INF/components-demo.xml
+tomcat5.5/components/sakai-coursemanagement-hibernate-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-coursemanagement-hibernate-pack/WEB-INF/lib/sakai-coursemanagement-hibernate-impl-2.4.1.jar
+tomcat5.5/components/sakai-db-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-db-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-db-pack/WEB-INF/lib/sakai-db-impl-2.4.1.jar
+tomcat5.5/components/sakai-discussion-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-discussion-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-discussion-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-discussion-pack/WEB-INF/lib/sakai-discussion-impl-2.4.1.jar
+tomcat5.5/components/sakai-discussion-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-discussion-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-discussion-pack/WEB-INF/lib/sakai-message-impl-2.4.1.jar
+tomcat5.5/components/sakai-discussion-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-email-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-email-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-email-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-email-pack/WEB-INF/lib/sakai-email-impl-2.4.1.jar
+tomcat5.5/components/sakai-email-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-email-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-email-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-entity-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-entity-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-entity-pack/WEB-INF/lib/sakai-entity-impl-2.4.1.jar
+tomcat5.5/components/sakai-entity-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-event-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-event-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-event-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-event-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-event-pack/WEB-INF/lib/sakai-event-impl-2.4.1.jar
+tomcat5.5/components/sakai-event-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-gradebook-service-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/classes/hsqldb/sakai_gradebook_post_schemaupdate.sql
+tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/classes/mysql/sakai_gradebook_post_schemaupdate.sql
+tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/classes/oracle/sakai_gradebook_post_schemaupdate.sql
+tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/lib/sakai-gradebook-service-impl-2.4.1.jar
+tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/lib/xstream-1.2.1.jar
+tomcat5.5/components/sakai-gradebooksample-grade-converter/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-gradebooksample-grade-converter/WEB-INF/classes/org/sakaiproject/gradebooksample/CourseGradesToSpreadsheetConverterSample.class
+tomcat5.5/components/sakai-gradebooksample-grade-converter/WEB-INF/components.xml
+tomcat5.5/components/sakai-import/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-import/WEB-INF/components.xml
+tomcat5.5/components/sakai-import/WEB-INF/lib/activation-1.0.2.jar
+tomcat5.5/components/sakai-import/WEB-INF/lib/jaxen-1.0-FCS-full.jar
+tomcat5.5/components/sakai-import/WEB-INF/lib/sakai-archive-import-2.4.1.jar
+tomcat5.5/components/sakai-import/WEB-INF/lib/sakai-common-cartridge-2.4.1.jar
+tomcat5.5/components/sakai-import/WEB-INF/lib/sakai-import-announcement-2.4.1.jar
+tomcat5.5/components/sakai-import/WEB-INF/lib/sakai-import-content-2.4.1.jar
+tomcat5.5/components/sakai-import/WEB-INF/lib/sakai-import-impl-2.4.1.jar
+tomcat5.5/components/sakai-import/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-import/WEB-INF/lib/saxpath-1.0-FCS.jar
+tomcat5.5/components/sakai-mailarchive-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-mailarchive-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-mailarchive-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-mailarchive-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-mailarchive-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-mailarchive-pack/WEB-INF/lib/sakai-mailarchive-impl-2.4.1.jar
+tomcat5.5/components/sakai-mailarchive-pack/WEB-INF/lib/sakai-message-impl-2.4.1.jar
+tomcat5.5/components/sakai-mailarchive-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-memory-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-memory-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-memory-pack/WEB-INF/lib/concurrent-1.3.4.jar
+tomcat5.5/components/sakai-memory-pack/WEB-INF/lib/sakai-memory-impl-2.4.1.jar
+tomcat5.5/components/sakai-messageforums-components/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-messageforums-components/WEB-INF/components.xml
+tomcat5.5/components/sakai-messageforums-components/WEB-INF/lib/commons-beanutils-1.7.0.jar
+tomcat5.5/components/sakai-messageforums-components/WEB-INF/lib/commons-codec-1.3.jar
+tomcat5.5/components/sakai-messageforums-components/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-messageforums-components/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-messageforums-components/WEB-INF/lib/sakai-messageforums-component-impl-2.4.1.jar
+tomcat5.5/components/sakai-messageforums-components/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-metaobj-component/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/components.xml
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/datasource-config.xml
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/home-config.xml
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/lib/commons-codec-1.2.jar
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/lib/sakai-content-util-2.4.1.jar
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/lib/sakai-metaobj-impl-2.4.1.jar
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/property-config.xml
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/repository-config.xml
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/repository-config_old.xml
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/repository-web-config.xml
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/shared-config.xml
+tomcat5.5/components/sakai-metaobj-component/WEB-INF/shared-web-config.xml
+tomcat5.5/components/sakai-news-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-news-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-news-pack/WEB-INF/lib/commons-codec-1.3.jar
+tomcat5.5/components/sakai-news-pack/WEB-INF/lib/jdom-1.0.jar
+tomcat5.5/components/sakai-news-pack/WEB-INF/lib/rome-0.8.jar
+tomcat5.5/components/sakai-news-pack/WEB-INF/lib/rome-fetcher-0.7.jar
+tomcat5.5/components/sakai-news-pack/WEB-INF/lib/sakai-news-impl-2.4.1.jar
+tomcat5.5/components/sakai-news-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-osid-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-osid-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-osid-pack/WEB-INF/lib/okiRegistry-2005-10-19.jar
+tomcat5.5/components/sakai-osid-pack/WEB-INF/lib/okiSearchAdjusters-2005-10-19.jar
+tomcat5.5/components/sakai-osid-pack/WEB-INF/lib/sakai-osid-impl-2.4.1.jar
+tomcat5.5/components/sakai-podcasts-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-podcasts-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-podcasts-pack/WEB-INF/lib/itunes-0.3.jar
+tomcat5.5/components/sakai-podcasts-pack/WEB-INF/lib/jdom-1.0.jar
+tomcat5.5/components/sakai-podcasts-pack/WEB-INF/lib/rome-0.8.jar
+tomcat5.5/components/sakai-podcasts-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-podcasts-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-podcasts-pack/WEB-INF/lib/sakai-podcasts-impl-2.4.1.jar
+tomcat5.5/components/sakai-podcasts-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-poll-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-poll-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-poll-pack/WEB-INF/hibernate-hbms.xml
+tomcat5.5/components/sakai-poll-pack/WEB-INF/lib/sakai-poll-dao-impl-2.4.1.jar
+tomcat5.5/components/sakai-poll-pack/WEB-INF/lib/sakai-poll-logic-impl-2.4.1.jar
+tomcat5.5/components/sakai-poll-pack/WEB-INF/spring-hibernate.xml
+tomcat5.5/components/sakai-portal-render-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-portal-render-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-portal-render-pack/WEB-INF/lib/commons-codec-1.3.jar
+tomcat5.5/components/sakai-portal-render-pack/WEB-INF/lib/sakai-portal-render-impl-2.4.1.jar
+tomcat5.5/components/sakai-portal-render-pack/WEB-INF/lib/sakai-portal-util-2.4.1.jar
+tomcat5.5/components/sakai-portal-render-pack/WEB-INF/lib/sakai-tool-util-2.4.1.jar
+tomcat5.5/components/sakai-portal-render-pack/WEB-INF/lib/sakai-user-util-2.4.1.jar
+tomcat5.5/components/sakai-portal-render-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-postem-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-postem-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-postem-pack/WEB-INF/lib/sakai-postem-impl-2.4.1.jar
+tomcat5.5/components/sakai-presence-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-presence-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-presence-pack/WEB-INF/lib/sakai-presence-impl-2.4.1.jar
+tomcat5.5/components/sakai-presence-pack/WEB-INF/lib/sakai-privacy-api-2.4.1.jar
+tomcat5.5/components/sakai-presentation-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-presentation-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-presentation-pack/WEB-INF/lib/sakai-presentation-impl-2.4.1.jar
+tomcat5.5/components/sakai-privacy-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-privacy-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-privacy-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-privacy-pack/WEB-INF/lib/sakai-privacy-impl-2.4.1.jar
+tomcat5.5/components/sakai-privacy-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-profile-components/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-profile-components/WEB-INF/components.xml
+tomcat5.5/components/sakai-provider-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-provider-pack/WEB-INF/components-demo.xml
+tomcat5.5/components/sakai-provider-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-provider-pack/WEB-INF/lib/sakai-coursemanagement-authz-provider-impl-2.4.1.jar
+tomcat5.5/components/sakai-provider-pack/WEB-INF/lib/sakai-coursemanagement-cm-provider-impl-2.4.1.jar
+tomcat5.5/components/sakai-provider-pack/WEB-INF/lib/sakai-sample-provider-2.4.1.jar
+tomcat5.5/components/sakai-provider-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-rights-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-rights-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-rights-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-rights-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-rights-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-rights-pack/WEB-INF/lib/sakai-rights-impl-2.4.1.jar
+tomcat5.5/components/sakai-rights-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-roster-components/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-roster-components/WEB-INF/components.xml
+tomcat5.5/components/sakai-rwiki-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/META-INF/services/org.radeox.macro.Macro
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/ehcache.xml
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/hsqldb/migrateTo20051017.sql
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/hsqldb/migrateTo20051026.sql
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/hsqldb/migrateTo20051107.sql
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/mysql/migrateTo20051017.sql
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/mysql/migrateTo20051026.sql
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/mysql/migrateTo20051107.sql
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/oracle/migrateTo20051017.sql
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/oracle/migrateTo20051026.sql
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/oracle/migrateTo20051107.sql
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/coreDaoComponents.xml
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/coreServiceComponents.xml
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/datamigrationComponents.xml
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/avalon-framework-api-4.2.0.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/avalon-framework-impl-4.2.0.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-awt-util-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-bridge-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-css-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-dom-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-ext-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-extension-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-gui-util-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-gvt-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-parser-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-rasterizer-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-script-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-svg-dom-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-svggen-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-svgpp-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-transcoder-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-ttf2svg-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-util-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/batik-xml-1.6.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/commons-io-1.1.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/fop-20070301.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/sakai-radeox-2.4.1.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/sakai-rwiki-impl-2.4.1.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/sakai-rwiki-util-2.4.1.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/sakai-util-api-2.4.1.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/xalan-2.6.0.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/xercesImpl-2.6.2.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/xmlParserAPIs-2.6.2.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib/xmlgraphics-commons-1.1.jar
+tomcat5.5/components/sakai-rwiki-pack/WEB-INF/messagingComponents.xml
+tomcat5.5/components/sakai-samigo-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches/SAK-1659.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches/SAK-1894.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches/SAK-2179.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches/SAK-2360.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches/SAK-2862.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches/SAK-4134.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches/SAK-4136.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches/SAK-4396.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches/SAK-4427.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches/SAK-5564.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches/SAK-5595.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/sakai_samigo.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/sakai_samigo_tables_v2_1_2.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/sakai_samigo_tables_v2_2.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/sakai_samigo_tables_v2_3.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/sakai_samigo_tables_v2_4.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-1659.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-1894.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-2179.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-2360.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-2753.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-2862.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-4134.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-4136.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-4396.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-4427.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-5564.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-5595.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-6790.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches/SAK-8727.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/sakai_samigo.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/sakai_samigo_tables_v2_1_2.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/sakai_samigo_tables_v2_2.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/sakai_samigo_tables_v2_3.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/sakai_samigo_tables_v2_4.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/02_migrateData_v1_to_v1_5_oracle.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-1659.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-1894.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-2179.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-2360.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-2862.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-4134.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-4136.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-4396.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-4427.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-5564.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-5595.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-6790.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches/SAK-8727.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/sakai_samigo.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/sakai_samigo_tables_v2_1_2.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/sakai_samigo_tables_v2_2.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/sakai_samigo_tables_v2_3.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/sakai_samigo_tables_v2_4.sql
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/org/sakaiproject/tool/assessment/shared/SakaiBootStrap.class
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/lib/imsqti-1.2.jar
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/lib/jsr173_1.0_api.jar
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/lib/sakai-samlite-impl-2.4.1.jar
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/lib/xbean-2.2.jar
+tomcat5.5/components/sakai-samigo-pack/WEB-INF/testbeans.xml
+tomcat5.5/components/sakai-sample-impl-access-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-sample-impl-access-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-sample-impl-access-pack/WEB-INF/lib/sakai-sample-impl-access-impl-2.4.1.jar
+tomcat5.5/components/sakai-sample-impl-access-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-search-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-search-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-search-pack/WEB-INF/contentAdapterComponents.xml
+tomcat5.5/components/sakai-search-pack/WEB-INF/coreSearchComponents.xml
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/commons-codec-1.3.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/commons-httpclient-3.0.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/commons-id-0.1-dev.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/jtidy-4aug2000r7-dev.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/lucene-core-1.9.1.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/lucene-misc-1.9.1.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/pdfbox-0.7.1.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/poi-3.0-alpha3-20070301.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/poi-scratchpad-3.0-alpha3-20070301.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/sakai-rwiki-util-2.4.1.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/sakai-search-impl-2.4.1.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-search-pack/WEB-INF/messageAdapterComponents.xml
+tomcat5.5/components/sakai-search-pack/WEB-INF/rwikiAdapterComponents.xml
+tomcat5.5/components/sakai-sections-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-sections-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-sections-pack/WEB-INF/lib/sakai-sections-impl-2.4.1.jar
+tomcat5.5/components/sakai-site-manage-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-site-manage-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-site-manage-pack/WEB-INF/lib/sakai-site-manage-impl-2.4.1.jar
+tomcat5.5/components/sakai-site-manage-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-site-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-site-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-site-pack/WEB-INF/lib/concurrent-1.3.4.jar
+tomcat5.5/components/sakai-site-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-site-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-site-pack/WEB-INF/lib/sakai-site-impl-2.4.1.jar
+tomcat5.5/components/sakai-site-pack/WEB-INF/lib/sakai-tool-util-2.4.1.jar
+tomcat5.5/components/sakai-site-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-syllabus-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-syllabus-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-syllabus-pack/WEB-INF/lib/commons-codec-1.3.jar
+tomcat5.5/components/sakai-syllabus-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-syllabus-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-syllabus-pack/WEB-INF/lib/sakai-syllabus-impl-2.4.1.jar
+tomcat5.5/components/sakai-syllabus-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-tool-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-tool-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-tool-pack/WEB-INF/lib/concurrent-1.3.4.jar
+tomcat5.5/components/sakai-tool-pack/WEB-INF/lib/sakai-tool-impl-2.4.1.jar
+tomcat5.5/components/sakai-tool-pack/WEB-INF/lib/sakai-tool-util-2.4.1.jar
+tomcat5.5/components/sakai-tool-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-user-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-user-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-user-pack/WEB-INF/lib/sakai-db-storage-2.4.1.jar
+tomcat5.5/components/sakai-user-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-user-pack/WEB-INF/lib/sakai-user-impl-2.4.1.jar
+tomcat5.5/components/sakai-user-pack/WEB-INF/lib/sakai-user-util-2.4.1.jar
+tomcat5.5/components/sakai-user-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-usermembership-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-usermembership-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-usermembership-pack/WEB-INF/lib/sakai-usermembership-impl-2.4.1.jar
+tomcat5.5/components/sakai-usermembership-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-util-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-util-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-util-pack/WEB-INF/lib/commons-id-0.1-dev.jar
+tomcat5.5/components/sakai-util-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-util-pack/WEB-INF/lib/sakai-util-impl-2.4.1.jar
+tomcat5.5/components/sakai-web-pack/META-INF/MANIFEST.MF
+tomcat5.5/components/sakai-web-pack/WEB-INF/components.xml
+tomcat5.5/components/sakai-web-pack/WEB-INF/lib/commons-codec-1.3.jar
+tomcat5.5/components/sakai-web-pack/WEB-INF/lib/sakai-entity-util-2.4.1.jar
+tomcat5.5/components/sakai-web-pack/WEB-INF/lib/sakai-event-util-2.4.1.jar
+tomcat5.5/components/sakai-web-pack/WEB-INF/lib/sakai-util-2.4.1.jar
+tomcat5.5/components/sakai-web-pack/WEB-INF/lib/sakai-web-impl-2.4.1.jar
+tomcat5.5/licenses/LGPL2.1.license.txt
+tomcat5.5/licenses/MIT.license.txt
+tomcat5.5/licenses/OKI-SPRING-HIBERNATE.license.txt
+tomcat5.5/licenses/OkiSID.license.txt
+tomcat5.5/licenses/activation.license.txt
+tomcat5.5/licenses/aopalliance.license.txt
+tomcat5.5/licenses/apache1.1.license.txt
+tomcat5.5/licenses/apache2.0.license.txt
+tomcat5.5/licenses/avalon-framework-cvs-20020806.license.txt
+tomcat5.5/licenses/axis.license.txt
+tomcat5.5/licenses/batik.license.txt
+tomcat5.5/licenses/catalina-5.5.9.license.txt
+tomcat5.5/licenses/cglib-full-2.0.1.license.txt
+tomcat5.5/licenses/commons-beanutils-1.6.1.license.txt
+tomcat5.5/licenses/commons-codec-1.2.license.txt
+tomcat5.5/licenses/commons-collections-2.1.license.txt
+tomcat5.5/licenses/commons-dbcp-1.1.license.txt
+tomcat5.5/licenses/commons-digester-1.5.license.txt
+tomcat5.5/licenses/commons-discovery-0.2.license.txt
+tomcat5.5/licenses/commons-fileupload-1.0.license.txt
+tomcat5.5/licenses/commons-id-0.1-dev.license.txt
+tomcat5.5/licenses/commons-jxpath-1.1.license.txt
+tomcat5.5/licenses/commons-lang-1.0.1.license.txt
+tomcat5.5/licenses/commons-logging-1.0.3.license.txt
+tomcat5.5/licenses/commons-pool-1.1.license.txt
+tomcat5.5/licenses/commons-resources.license.txt
+tomcat5.5/licenses/commons-validator-1.0.2.license.txt
+tomcat5.5/licenses/concurrent-1.3.4.html
+tomcat5.5/licenses/concurrent.license.txt
+tomcat5.5/licenses/cornerstone.license.txt
+tomcat5.5/licenses/creative-commons-2.5.license.txt
+tomcat5.5/licenses/db-ojb-1.0.rc6.license.txt
+tomcat5.5/licenses/dnsjava-1.2.3.license.txt
+tomcat5.5/licenses/dom4j.license.txt
+tomcat5.5/licenses/ehcache.license.txt
+tomcat5.5/licenses/excaliber.license.txt
+tomcat5.5/licenses/fop.license.txt
+tomcat5.5/licenses/hibernate-2.1.license.txt
+tomcat5.5/licenses/hibernate.pdf
+tomcat5.5/licenses/hsqldb-1.7.2RC6b.license.txt
+tomcat5.5/licenses/htmlLib.license.txt
+tomcat5.5/licenses/htmlarea.license.txt
+tomcat5.5/licenses/isorelax.20030108.license.txt
+tomcat5.5/licenses/jakarta-oro-2.0.7.license.txt
+tomcat5.5/licenses/james.license.txt
+tomcat5.5/licenses/jasper-compiler.license.txt
+tomcat5.5/licenses/jasper-runtime.license.txt
+tomcat5.5/licenses/java2html.license.txt
+tomcat5.5/licenses/jaxen-full.license.txt
+tomcat5.5/licenses/jboss-j2ee.license.txt
+tomcat5.5/licenses/jdbc2_0-stdext.license.txt
+tomcat5.5/licenses/jdom.license.txt
+tomcat5.5/licenses/jing.license.txt
+tomcat5.5/licenses/jsf-api.license.txt
+tomcat5.5/licenses/jsf-impl.license.txt
+tomcat5.5/licenses/jsp-api.license.txt
+tomcat5.5/licenses/jstl.license.txt
+tomcat5.5/licenses/jta.license.txt
+tomcat5.5/licenses/junit-3.8.1.license.txt
+tomcat5.5/licenses/ldap.txt
+tomcat5.5/licenses/log4j-1.2.8.license.txt
+tomcat5.5/licenses/logkit.license.txt
+tomcat5.5/licenses/lucene.license.txt
+tomcat5.5/licenses/mx4j.license.txt
+tomcat5.5/licenses/myfaces.license.txt
+tomcat5.5/licenses/naming-common.license.txt
+tomcat5.5/licenses/naming-factory.license.txt
+tomcat5.5/licenses/naming-java.license.txt
+tomcat5.5/licenses/naming-resources.license.txt
+tomcat5.5/licenses/odmg-3.0.license.txt
+tomcat5.5/licenses/okiOSID-2.0.license.txt
+tomcat5.5/licenses/oro.license.txt
+tomcat5.5/licenses/poi.license.txt
+tomcat5.5/licenses/saxpath.license.txt
+tomcat5.5/licenses/servlet.license.txt
+tomcat5.5/licenses/spring.license.txt
+tomcat5.5/licenses/standard.license.txt
+tomcat5.5/licenses/struts-1.1.license.txt
+tomcat5.5/licenses/struts-legacy.license.txt
+tomcat5.5/licenses/stxx-1.3.license.txt
+tomcat5.5/licenses/sun-u.c.license.pdf
+tomcat5.5/licenses/velocity.license.txt
+tomcat5.5/licenses/xalan-2.5.2.license.txt
+tomcat5.5/licenses/xercesImpl-2.5.0.license.txt
+tomcat5.5/licenses/xml-apis.license.txt
+tomcat5.5/licenses/xmlform.license.txt
+tomcat5.5/licenses/xpp3-1.1.3.4.G.license.txt
+tomcat5.5/server/lib/sakai-dav-server-2.4.1.jar
+tomcat5.5/shared/lib/OkiOSID-2.0.jar
+tomcat5.5/shared/lib/activation-1.0.2.jar
+tomcat5.5/shared/lib/antlr-2.7.6rc1.jar
+tomcat5.5/shared/lib/castor-1.0.jar
+tomcat5.5/shared/lib/cglib-nodep-2.1_3.jar
+tomcat5.5/shared/lib/commons-collections-3.1.jar
+tomcat5.5/shared/lib/commons-dbcp-1.2.1.jar
+tomcat5.5/shared/lib/commons-fileupload-1.1.1.jar
+tomcat5.5/shared/lib/commons-io-1.2.jar
+tomcat5.5/shared/lib/commons-lang-2.1.jar
+tomcat5.5/shared/lib/commons-logging-1.0.4.jar
+tomcat5.5/shared/lib/commons-math-1.0.jar
+tomcat5.5/shared/lib/commons-pool-1.3.jar
+tomcat5.5/shared/lib/cql-java-0.7.jar
+tomcat5.5/shared/lib/dom4j-1.6.1.jar
+tomcat5.5/shared/lib/ehcache-1.2.4.jar
+tomcat5.5/shared/lib/hibernate-3.1.3.jar
+tomcat5.5/shared/lib/hsqldb-1.8.0.5.jar
+tomcat5.5/shared/lib/jaxen-1.1-beta-10.jar
+tomcat5.5/shared/lib/jdbc2_0-stdext-h2.1.8.jar
+tomcat5.5/shared/lib/jdom-1.0.jar
+tomcat5.5/shared/lib/jstl-1.1.2.jar
+tomcat5.5/shared/lib/jta-h2.1.8.jar
+tomcat5.5/shared/lib/mail-1.3.1.jar
+tomcat5.5/shared/lib/osp-common-api-2.4.1.jar
+tomcat5.5/shared/lib/osp-glossary-api-2.4.1.jar
+tomcat5.5/shared/lib/osp-integration-api-2.4.1.jar
+tomcat5.5/shared/lib/osp-matrix-api-2.4.1.jar
+tomcat5.5/shared/lib/osp-migration-api-2.4.1.jar
+tomcat5.5/shared/lib/osp-portal-api-2.4.1.jar
+tomcat5.5/shared/lib/osp-presentation-api-2.4.1.jar
+tomcat5.5/shared/lib/osp-reports-api-2.4.1.jar
+tomcat5.5/shared/lib/osp-warehouse-api-2.4.1.jar
+tomcat5.5/shared/lib/osp-wizard-api-2.4.1.jar
+tomcat5.5/shared/lib/pluto-container-1.1.2.jar
+tomcat5.5/shared/lib/pluto-descriptor-api-1.1.2.jar
+tomcat5.5/shared/lib/pluto-descriptor-impl-1.1.2.jar
+tomcat5.5/shared/lib/pluto-taglib-1.1.2.jar
+tomcat5.5/shared/lib/portlet-api-1.0.jar
+tomcat5.5/shared/lib/quartz-1.5.2.jar
+tomcat5.5/shared/lib/sakai-alias-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-announcement-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-announcement-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-archive-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-assignment-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-assignment-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-authz-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-calendar-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-calendar-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-chat-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-chat-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-citations-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-citations-util-2.4.1.jar
+tomcat5.5/shared/lib/sakai-citations-web2bridge-2.4.1.jar
+tomcat5.5/shared/lib/sakai-citations-xserver-2.4.1.jar
+tomcat5.5/shared/lib/sakai-cluster-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-common-composite-component-data-2.4.1.jar
+tomcat5.5/shared/lib/sakai-common-edu-person-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-common-manager-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-common-type-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-comp-shared-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-comp-shared-scheduler-2.4.1.jar
+tomcat5.5/shared/lib/sakai-component-2.4.1.jar
+tomcat5.5/shared/lib/sakai-component-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-content-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-content-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-content-lock-hbm-2.4.1.jar
+tomcat5.5/shared/lib/sakai-contentreview-logic-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-contentreview-model-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-contentreview-service-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-courier-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-coursemanagement-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-coursemanagement-hibernate-model-2.4.1.jar
+tomcat5.5/shared/lib/sakai-db-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-db-ext-2.4.1.jar
+tomcat5.5/shared/lib/sakai-discussion-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-discussion-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-email-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-entity-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-event-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-gradebook-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-gradebook-service-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-gradebook-service-hibernate-2.4.1.jar
+tomcat5.5/shared/lib/sakai-help-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-help-content-2.4.1.jar
+tomcat5.5/shared/lib/sakai-import-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-mailarchive-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-mailarchive-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-mailtool-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-memory-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-message-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-messageforums-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-messageforums-hbm-2.4.1.jar
+tomcat5.5/shared/lib/sakai-messageforums-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-metaobj-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-news-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-podcasts-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-podcasts-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-poll-hbm-2.4.1.jar
+tomcat5.5/shared/lib/sakai-poll-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-poll-logic-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-poll-model-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-portal-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-portal-render-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-postem-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-postem-hbm-2.4.1.jar
+tomcat5.5/shared/lib/sakai-postem-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-presence-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-presentation-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-presentation-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-privacy-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-privacy-hbm-2.4.1.jar
+tomcat5.5/shared/lib/sakai-profile-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-profile-component-shared-2.4.1.jar
+tomcat5.5/shared/lib/sakai-rights-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-roster-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-roster-component-shared-2.4.1.jar
+tomcat5.5/shared/lib/sakai-roster-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-rwiki-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-rwiki-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-rwiki-model-2.4.1.jar
+tomcat5.5/shared/lib/sakai-samigo-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-samigo-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-samigo-hibernate-2.4.1.jar
+tomcat5.5/shared/lib/sakai-samigo-services-2.4.1.jar
+tomcat5.5/shared/lib/sakai-scheduler-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-search-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-search-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-search-model-2.4.1.jar
+tomcat5.5/shared/lib/sakai-sections-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-sections-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-sections-model-2.4.1.jar
+tomcat5.5/shared/lib/sakai-site-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-site-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-site-manage-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-site-manage-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-syllabus-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-syllabus-hbm-2.4.1.jar
+tomcat5.5/shared/lib/sakai-syllabus-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-tool-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-tool-servlet-2.4.1.jar
+tomcat5.5/shared/lib/sakai-user-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-usermembership-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-usermembership-help-2.4.1.jar
+tomcat5.5/shared/lib/sakai-util-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-util-id-hbm-2.4.1.jar
+tomcat5.5/shared/lib/sakai-velocity-tool-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-web-api-2.4.1.jar
+tomcat5.5/shared/lib/sakai-web-help-2.4.1.jar
+tomcat5.5/shared/lib/spring-1.2.8.jar
+tomcat5.5/webapps/access.war
+tomcat5.5/webapps/authn.war
+tomcat5.5/webapps/courier.war
+tomcat5.5/webapps/dav.war
+tomcat5.5/webapps/library.war
+tomcat5.5/webapps/mailtool.war
+tomcat5.5/webapps/mercury.war
+tomcat5.5/webapps/osp-common-tool.war
+tomcat5.5/webapps/osp-glossary-tool.war
+tomcat5.5/webapps/osp-jsf-example.war
+tomcat5.5/webapps/osp-jsf-resource.war
+tomcat5.5/webapps/osp-matrix-tool.war
+tomcat5.5/webapps/osp-portal-tool.war
+tomcat5.5/webapps/osp-portal.war
+tomcat5.5/webapps/osp-presentation-tool.war
+tomcat5.5/webapps/osp-reports-tool.war
+tomcat5.5/webapps/osp-wizard-tool.war
+tomcat5.5/webapps/podcasts.war
+tomcat5.5/webapps/portal-render.war
+tomcat5.5/webapps/portal.war
+tomcat5.5/webapps/sakai-alias-tool.war
+tomcat5.5/webapps/sakai-announcement-tool.war
+tomcat5.5/webapps/sakai-archive-tool.war
+tomcat5.5/webapps/sakai-assignment-tool.war
+tomcat5.5/webapps/sakai-authz-tool.war
+tomcat5.5/webapps/sakai-axis.war
+tomcat5.5/webapps/sakai-blogger-tool.war
+tomcat5.5/webapps/sakai-calendar-summary-tool.war
+tomcat5.5/webapps/sakai-calendar-tool.war
+tomcat5.5/webapps/sakai-chat-tool.war
+tomcat5.5/webapps/sakai-citations-tool.war
+tomcat5.5/webapps/sakai-content-tool.war
+tomcat5.5/webapps/sakai-discussion-tool.war
+tomcat5.5/webapps/sakai-fck-connector.war
+tomcat5.5/webapps/sakai-gradebook-testservice.war
+tomcat5.5/webapps/sakai-gradebook-tool.war
+tomcat5.5/webapps/sakai-help-tool.war
+tomcat5.5/webapps/sakai-jsf-example.war
+tomcat5.5/webapps/sakai-jsf-resource.war
+tomcat5.5/webapps/sakai-login-tool.war
+tomcat5.5/webapps/sakai-mailarchive-james.war
+tomcat5.5/webapps/sakai-mailarchive-tool.war
+tomcat5.5/webapps/sakai-memory-tool.war
+tomcat5.5/webapps/sakai-message-tool.war
+tomcat5.5/webapps/sakai-messageforums-tool.war
+tomcat5.5/webapps/sakai-metaobj-tool.war
+tomcat5.5/webapps/sakai-news-tool.war
+tomcat5.5/webapps/sakai-osid-unit-test.war
+tomcat5.5/webapps/sakai-podcasts.war
+tomcat5.5/webapps/sakai-poll-tool.war
+tomcat5.5/webapps/sakai-postem-tool.war
+tomcat5.5/webapps/sakai-presence-tool.war
+tomcat5.5/webapps/sakai-presentation-tool.war
+tomcat5.5/webapps/sakai-profile-tool.war
+tomcat5.5/webapps/sakai-rights-tool.war
+tomcat5.5/webapps/sakai-roster-tool.war
+tomcat5.5/webapps/sakai-rutgers-linktool.war
+tomcat5.5/webapps/sakai-rwiki-tool.war
+tomcat5.5/webapps/sakai-sample-tool-jsf.war
+tomcat5.5/webapps/sakai-sample-tool-servlet.war
+tomcat5.5/webapps/sakai-scheduler-tool.war
+tomcat5.5/webapps/sakai-search-tool.war
+tomcat5.5/webapps/sakai-sections-tool.war
+tomcat5.5/webapps/sakai-site-manage-tool.war
+tomcat5.5/webapps/sakai-site-pageorder-helper.war
+tomcat5.5/webapps/sakai-site-tool.war
+tomcat5.5/webapps/sakai-syllabus-tool.war
+tomcat5.5/webapps/sakai-tool-tool-su.war
+tomcat5.5/webapps/sakai-user-tool-admin-prefs.war
+tomcat5.5/webapps/sakai-user-tool-prefs.war
+tomcat5.5/webapps/sakai-user-tool.war
+tomcat5.5/webapps/sakai-usermembership-tool.war
+tomcat5.5/webapps/sakai-web-tool.war
+tomcat5.5/webapps/samigo.war
+tomcat5.5/webapps/savecite.war
+tomcat5.5/webapps/tool.war
+tomcat5.5/webapps/web.war
+@dirrm tomcat5.5/licenses
+@dirrm tomcat5.5/components/sakai-web-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-web-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-web-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-web-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-web-pack/META-INF
+@dirrm tomcat5.5/components/sakai-web-pack
+@dirrm tomcat5.5/components/sakai-util-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-util-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-util-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-util-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-util-pack/META-INF
+@dirrm tomcat5.5/components/sakai-util-pack
+@dirrm tomcat5.5/components/sakai-usermembership-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-usermembership-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-usermembership-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-usermembership-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-usermembership-pack/META-INF
+@dirrm tomcat5.5/components/sakai-usermembership-pack
+@dirrm tomcat5.5/components/sakai-user-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-user-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-user-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-user-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-user-pack/META-INF
+@dirrm tomcat5.5/components/sakai-user-pack
+@dirrm tomcat5.5/components/sakai-tool-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-tool-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-tool-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-tool-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-tool-pack/META-INF
+@dirrm tomcat5.5/components/sakai-tool-pack
+@dirrm tomcat5.5/components/sakai-syllabus-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-syllabus-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-syllabus-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-syllabus-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-syllabus-pack/META-INF
+@dirrm tomcat5.5/components/sakai-syllabus-pack
+@dirrm tomcat5.5/components/sakai-site-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-site-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-site-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-site-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-site-pack/META-INF
+@dirrm tomcat5.5/components/sakai-site-pack
+@dirrm tomcat5.5/components/sakai-site-manage-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-site-manage-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-site-manage-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-site-manage-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-site-manage-pack/META-INF
+@dirrm tomcat5.5/components/sakai-site-manage-pack
+@dirrm tomcat5.5/components/sakai-sections-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-sections-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-sections-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-sections-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-sections-pack/META-INF
+@dirrm tomcat5.5/components/sakai-sections-pack
+@dirrm tomcat5.5/components/sakai-search-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-search-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-search-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-search-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-search-pack/META-INF
+@dirrm tomcat5.5/components/sakai-search-pack
+@dirrm tomcat5.5/components/sakai-sample-impl-access-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-sample-impl-access-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-sample-impl-access-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-sample-impl-access-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-sample-impl-access-pack/META-INF
+@dirrm tomcat5.5/components/sakai-sample-impl-access-pack
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/org/sakaiproject/tool/assessment/shared
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/org/sakaiproject/tool/assessment
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/org/sakaiproject/tool
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/org/sakaiproject
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/org
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle/patches
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/oracle
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql/patches
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/mysql
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb/patches
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes/hsqldb
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-samigo-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-samigo-pack/META-INF
+@dirrm tomcat5.5/components/sakai-samigo-pack
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/oracle
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/mysql
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle/hsqldb
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model/bundle
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki/model
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai/rwiki
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret/sakai
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam/caret
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac/cam
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk/ac
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/uk
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/META-INF/services
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes/META-INF
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-rwiki-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-rwiki-pack/META-INF
+@dirrm tomcat5.5/components/sakai-rwiki-pack
+@dirrm tomcat5.5/components/sakai-roster-components/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-roster-components/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-roster-components/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-roster-components/WEB-INF
+@dirrm tomcat5.5/components/sakai-roster-components/META-INF
+@dirrm tomcat5.5/components/sakai-roster-components
+@dirrm tomcat5.5/components/sakai-rights-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-rights-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-rights-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-rights-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-rights-pack/META-INF
+@dirrm tomcat5.5/components/sakai-rights-pack
+@dirrm tomcat5.5/components/sakai-provider-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-provider-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-provider-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-provider-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-provider-pack/META-INF
+@dirrm tomcat5.5/components/sakai-provider-pack
+@dirrm tomcat5.5/components/sakai-profile-components/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-profile-components/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-profile-components/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-profile-components/WEB-INF
+@dirrm tomcat5.5/components/sakai-profile-components/META-INF
+@dirrm tomcat5.5/components/sakai-profile-components
+@dirrm tomcat5.5/components/sakai-privacy-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-privacy-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-privacy-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-privacy-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-privacy-pack/META-INF
+@dirrm tomcat5.5/components/sakai-privacy-pack
+@dirrm tomcat5.5/components/sakai-presentation-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-presentation-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-presentation-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-presentation-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-presentation-pack/META-INF
+@dirrm tomcat5.5/components/sakai-presentation-pack
+@dirrm tomcat5.5/components/sakai-presence-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-presence-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-presence-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-presence-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-presence-pack/META-INF
+@dirrm tomcat5.5/components/sakai-presence-pack
+@dirrm tomcat5.5/components/sakai-postem-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-postem-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-postem-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-postem-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-postem-pack/META-INF
+@dirrm tomcat5.5/components/sakai-postem-pack
+@dirrm tomcat5.5/components/sakai-portal-render-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-portal-render-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-portal-render-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-portal-render-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-portal-render-pack/META-INF
+@dirrm tomcat5.5/components/sakai-portal-render-pack
+@dirrm tomcat5.5/components/sakai-poll-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-poll-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-poll-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-poll-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-poll-pack/META-INF
+@dirrm tomcat5.5/components/sakai-poll-pack
+@dirrm tomcat5.5/components/sakai-podcasts-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-podcasts-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-podcasts-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-podcasts-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-podcasts-pack/META-INF
+@dirrm tomcat5.5/components/sakai-podcasts-pack
+@dirrm tomcat5.5/components/sakai-osid-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-osid-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-osid-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-osid-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-osid-pack/META-INF
+@dirrm tomcat5.5/components/sakai-osid-pack
+@dirrm tomcat5.5/components/sakai-news-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-news-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-news-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-news-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-news-pack/META-INF
+@dirrm tomcat5.5/components/sakai-news-pack
+@dirrm tomcat5.5/components/sakai-metaobj-component/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-metaobj-component/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-metaobj-component/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-metaobj-component/WEB-INF
+@dirrm tomcat5.5/components/sakai-metaobj-component/META-INF
+@dirrm tomcat5.5/components/sakai-metaobj-component
+@dirrm tomcat5.5/components/sakai-messageforums-components/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-messageforums-components/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-messageforums-components/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-messageforums-components/WEB-INF
+@dirrm tomcat5.5/components/sakai-messageforums-components/META-INF
+@dirrm tomcat5.5/components/sakai-messageforums-components
+@dirrm tomcat5.5/components/sakai-memory-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-memory-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-memory-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-memory-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-memory-pack/META-INF
+@dirrm tomcat5.5/components/sakai-memory-pack
+@dirrm tomcat5.5/components/sakai-mailarchive-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-mailarchive-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-mailarchive-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-mailarchive-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-mailarchive-pack/META-INF
+@dirrm tomcat5.5/components/sakai-mailarchive-pack
+@dirrm tomcat5.5/components/sakai-import/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-import/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-import/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-import/WEB-INF
+@dirrm tomcat5.5/components/sakai-import/META-INF
+@dirrm tomcat5.5/components/sakai-import
+@dirrm tomcat5.5/components/sakai-gradebooksample-grade-converter/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-gradebooksample-grade-converter/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-gradebooksample-grade-converter/WEB-INF/classes/org/sakaiproject/gradebooksample
+@dirrm tomcat5.5/components/sakai-gradebooksample-grade-converter/WEB-INF/classes/org/sakaiproject
+@dirrm tomcat5.5/components/sakai-gradebooksample-grade-converter/WEB-INF/classes/org
+@dirrm tomcat5.5/components/sakai-gradebooksample-grade-converter/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-gradebooksample-grade-converter/WEB-INF
+@dirrm tomcat5.5/components/sakai-gradebooksample-grade-converter/META-INF
+@dirrm tomcat5.5/components/sakai-gradebooksample-grade-converter
+@dirrm tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/classes/oracle
+@dirrm tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/classes/mysql
+@dirrm tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/classes/hsqldb
+@dirrm tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-gradebook-service-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-gradebook-service-pack/META-INF
+@dirrm tomcat5.5/components/sakai-gradebook-service-pack
+@dirrm tomcat5.5/components/sakai-event-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-event-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-event-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-event-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-event-pack/META-INF
+@dirrm tomcat5.5/components/sakai-event-pack
+@dirrm tomcat5.5/components/sakai-entity-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-entity-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-entity-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-entity-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-entity-pack/META-INF
+@dirrm tomcat5.5/components/sakai-entity-pack
+@dirrm tomcat5.5/components/sakai-email-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-email-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-email-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-email-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-email-pack/META-INF
+@dirrm tomcat5.5/components/sakai-email-pack
+@dirrm tomcat5.5/components/sakai-discussion-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-discussion-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-discussion-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-discussion-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-discussion-pack/META-INF
+@dirrm tomcat5.5/components/sakai-discussion-pack
+@dirrm tomcat5.5/components/sakai-db-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-db-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-db-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-db-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-db-pack/META-INF
+@dirrm tomcat5.5/components/sakai-db-pack
+@dirrm tomcat5.5/components/sakai-coursemanagement-hibernate-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-coursemanagement-hibernate-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-coursemanagement-hibernate-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-coursemanagement-hibernate-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-coursemanagement-hibernate-pack/META-INF
+@dirrm tomcat5.5/components/sakai-coursemanagement-hibernate-pack
+@dirrm tomcat5.5/components/sakai-courier-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-courier-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-courier-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-courier-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-courier-pack/META-INF
+@dirrm tomcat5.5/components/sakai-courier-pack
+@dirrm tomcat5.5/components/sakai-content-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-content-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-content-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-content-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-content-pack/META-INF
+@dirrm tomcat5.5/components/sakai-content-pack
+@dirrm tomcat5.5/components/sakai-component-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-component-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-component-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-component-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-component-pack/META-INF
+@dirrm tomcat5.5/components/sakai-component-pack
+@dirrm tomcat5.5/components/sakai-comp-scheduler/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-comp-scheduler/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-comp-scheduler/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-comp-scheduler/WEB-INF
+@dirrm tomcat5.5/components/sakai-comp-scheduler/META-INF
+@dirrm tomcat5.5/components/sakai-comp-scheduler
+@dirrm tomcat5.5/components/sakai-comp-help/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-comp-help/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject/component/app/help
+@dirrm tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject/component/app
+@dirrm tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject/component
+@dirrm tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org/sakaiproject
+@dirrm tomcat5.5/components/sakai-comp-help/WEB-INF/classes/org
+@dirrm tomcat5.5/components/sakai-comp-help/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-comp-help/WEB-INF
+@dirrm tomcat5.5/components/sakai-comp-help/META-INF
+@dirrm tomcat5.5/components/sakai-comp-help
+@dirrm tomcat5.5/components/sakai-common-components/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-common-components/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-common-components/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-common-components/WEB-INF
+@dirrm tomcat5.5/components/sakai-common-components/META-INF
+@dirrm tomcat5.5/components/sakai-common-components
+@dirrm tomcat5.5/components/sakai-cluster-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-cluster-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-cluster-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-cluster-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-cluster-pack/META-INF
+@dirrm tomcat5.5/components/sakai-cluster-pack
+@dirrm tomcat5.5/components/sakai-citations-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-citations-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-citations-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-citations-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-citations-pack/META-INF
+@dirrm tomcat5.5/components/sakai-citations-pack
+@dirrm tomcat5.5/components/sakai-chat-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-chat-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-chat-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-chat-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-chat-pack/META-INF
+@dirrm tomcat5.5/components/sakai-chat-pack
+@dirrm tomcat5.5/components/sakai-calendar-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-calendar-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-calendar-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-calendar-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-calendar-pack/META-INF
+@dirrm tomcat5.5/components/sakai-calendar-pack
+@dirrm tomcat5.5/components/sakai-authz-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-authz-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-authz-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-authz-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-authz-pack/META-INF
+@dirrm tomcat5.5/components/sakai-authz-pack
+@dirrm tomcat5.5/components/sakai-assignment-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-assignment-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-assignment-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-assignment-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-assignment-pack/META-INF
+@dirrm tomcat5.5/components/sakai-assignment-pack
+@dirrm tomcat5.5/components/sakai-archive-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-archive-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-archive-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-archive-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-archive-pack/META-INF
+@dirrm tomcat5.5/components/sakai-archive-pack
+@dirrm tomcat5.5/components/sakai-announcement-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-announcement-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-announcement-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-announcement-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-announcement-pack/META-INF
+@dirrm tomcat5.5/components/sakai-announcement-pack
+@dirrm tomcat5.5/components/sakai-alias-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/sakai-alias-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/sakai-alias-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/sakai-alias-pack/WEB-INF
+@dirrm tomcat5.5/components/sakai-alias-pack/META-INF
+@dirrm tomcat5.5/components/sakai-alias-pack
+@dirrm tomcat5.5/components/osp-wizard-components/WEB-INF/tld
+@dirrm tomcat5.5/components/osp-wizard-components/WEB-INF/lib
+@dirrm tomcat5.5/components/osp-wizard-components/WEB-INF/classes
+@dirrm tomcat5.5/components/osp-wizard-components/WEB-INF
+@dirrm tomcat5.5/components/osp-wizard-components/META-INF
+@dirrm tomcat5.5/components/osp-wizard-components
+@dirrm tomcat5.5/components/osp-warehouse-component/WEB-INF/tld
+@dirrm tomcat5.5/components/osp-warehouse-component/WEB-INF/lib
+@dirrm tomcat5.5/components/osp-warehouse-component/WEB-INF/classes
+@dirrm tomcat5.5/components/osp-warehouse-component/WEB-INF
+@dirrm tomcat5.5/components/osp-warehouse-component/META-INF
+@dirrm tomcat5.5/components/osp-warehouse-component
+@dirrm tomcat5.5/components/osp-reports-components/WEB-INF/tld
+@dirrm tomcat5.5/components/osp-reports-components/WEB-INF/lib
+@dirrm tomcat5.5/components/osp-reports-components/WEB-INF/classes
+@dirrm tomcat5.5/components/osp-reports-components/WEB-INF
+@dirrm tomcat5.5/components/osp-reports-components/META-INF
+@dirrm tomcat5.5/components/osp-reports-components
+@dirrm tomcat5.5/components/osp-presentation-component/WEB-INF/tld
+@dirrm tomcat5.5/components/osp-presentation-component/WEB-INF/lib
+@dirrm tomcat5.5/components/osp-presentation-component/WEB-INF/classes
+@dirrm tomcat5.5/components/osp-presentation-component/WEB-INF
+@dirrm tomcat5.5/components/osp-presentation-component/META-INF
+@dirrm tomcat5.5/components/osp-presentation-component
+@dirrm tomcat5.5/components/osp-portal-component/WEB-INF/tld
+@dirrm tomcat5.5/components/osp-portal-component/WEB-INF/lib
+@dirrm tomcat5.5/components/osp-portal-component/WEB-INF/classes
+@dirrm tomcat5.5/components/osp-portal-component/WEB-INF
+@dirrm tomcat5.5/components/osp-portal-component/META-INF
+@dirrm tomcat5.5/components/osp-portal-component
+@dirrm tomcat5.5/components/osp-migration-component/WEB-INF/tld
+@dirrm tomcat5.5/components/osp-migration-component/WEB-INF/lib
+@dirrm tomcat5.5/components/osp-migration-component/WEB-INF/classes
+@dirrm tomcat5.5/components/osp-migration-component/WEB-INF
+@dirrm tomcat5.5/components/osp-migration-component/META-INF
+@dirrm tomcat5.5/components/osp-migration-component
+@dirrm tomcat5.5/components/osp-matrix-component/WEB-INF/tld
+@dirrm tomcat5.5/components/osp-matrix-component/WEB-INF/lib
+@dirrm tomcat5.5/components/osp-matrix-component/WEB-INF/classes
+@dirrm tomcat5.5/components/osp-matrix-component/WEB-INF
+@dirrm tomcat5.5/components/osp-matrix-component/META-INF
+@dirrm tomcat5.5/components/osp-matrix-component
+@dirrm tomcat5.5/components/osp-integration-component/WEB-INF/tld
+@dirrm tomcat5.5/components/osp-integration-component/WEB-INF/lib
+@dirrm tomcat5.5/components/osp-integration-component/WEB-INF/classes
+@dirrm tomcat5.5/components/osp-integration-component/WEB-INF
+@dirrm tomcat5.5/components/osp-integration-component/META-INF
+@dirrm tomcat5.5/components/osp-integration-component
+@dirrm tomcat5.5/components/osp-glossary-component/WEB-INF/tld
+@dirrm tomcat5.5/components/osp-glossary-component/WEB-INF/lib
+@dirrm tomcat5.5/components/osp-glossary-component/WEB-INF/classes
+@dirrm tomcat5.5/components/osp-glossary-component/WEB-INF
+@dirrm tomcat5.5/components/osp-glossary-component/META-INF
+@dirrm tomcat5.5/components/osp-glossary-component
+@dirrm tomcat5.5/components/osp-common-component/WEB-INF/tld
+@dirrm tomcat5.5/components/osp-common-component/WEB-INF/lib
+@dirrm tomcat5.5/components/osp-common-component/WEB-INF/classes
+@dirrm tomcat5.5/components/osp-common-component/WEB-INF
+@dirrm tomcat5.5/components/osp-common-component/META-INF
+@dirrm tomcat5.5/components/osp-common-component
+@dirrm tomcat5.5/components/000sakai-portal-service-pack/WEB-INF/tld
+@dirrm tomcat5.5/components/000sakai-portal-service-pack/WEB-INF/lib
+@dirrm tomcat5.5/components/000sakai-portal-service-pack/WEB-INF/classes
+@dirrm tomcat5.5/components/000sakai-portal-service-pack/WEB-INF
+@dirrm tomcat5.5/components/000sakai-portal-service-pack/META-INF
+@dirrm tomcat5.5/components/000sakai-portal-service-pack
+@dirrm tomcat5.5/components

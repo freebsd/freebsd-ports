@@ -1208,6 +1208,7 @@
     SUBDIR += rubygem-taggable
     SUBDIR += rubygem-thin
     SUBDIR += runsomebrowser
+    SUBDIR += sakai
     SUBDIR += samidare
     SUBDIR += sams
     SUBDIR += sarg

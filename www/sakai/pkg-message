@@ -1,0 +1,18 @@
+================================
+To start Sakai correctly, please
+set the variable JAVA_OPTS with:
+
+JAVA_OPTS="-server -Xms768m -Xmx768m 
+-XX:PermSize=128m -XX:MaxPermSize=256m 
+-XX:NewSize=192m -XX:MaxNewSize=384m"
+
+Now you should start your Tomcat
+server and browse with:
+   http://your-server:8180/portal
+
+Login into the Sakai system with
+the user/admin and password/admin
+to configure and setup the system.
+
+More information please visit:
+http://www.sakaiproject.org
