@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fig2sxd
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	graphics converters
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	Convert .xfig files to the OpenOffice draw format
 USE_GMAKE=	yes
 USE_GCC=	3.4+
 
-WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		fig2sxd.1
 PLIST_FILES=	bin/fig2sxd
