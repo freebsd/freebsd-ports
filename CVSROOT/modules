@@ -15964,6 +15964,7 @@ svn_load_dirs	ports/devel/svn_load_dirs
 svndelta	ports/devel/svndelta
 svnkit		ports/devel/svnkit
 svnmailer	ports/mail/svnmailer
+svntrac		ports/devel/svntrac
 svr4_base	ports/emulators/svr4_base
 sw-aspell	ports/textproc/sw-aspell
 swaks		ports/mail/swaks
