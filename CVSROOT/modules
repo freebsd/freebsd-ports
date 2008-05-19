@@ -3816,6 +3816,7 @@ gio-fam-backend	ports/devel/gio-fam-backend
 giram		ports/graphics/giram
 gish-demo	ports/games/gish-demo
 git		ports/misc/git
+gittrac		ports/devel/gittrac
 gj		ports/java/gj
 gjdoc		ports/java/gjdoc
 gkermit		ports/comms/gkermit
