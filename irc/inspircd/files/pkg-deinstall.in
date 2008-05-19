@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+inspircd_usr=%%INSPIRCD_USR%%
+inspircd_grp=%%INSPIRCD_GRP%%
+etcdir=%%ETCDIR%%
+inspircd_name=%%PORTNAME%%
+
+case $2 in
+    POST-DEINSTALL)
+
+    cat <<EOMSG
+
+The $inspircd_name port has been deleted.  If you are not
+upgrading and don't intend to use $inspircd_name any more
+then you may wish to delete the $inspircd_usr account,
+and the $inspircd_grp group together with the configuration
+directory ${etcdir}; which can be done with the
+following commands:
+
+    # pw userdel -n $inspircd_usr
+    # rm -rf $etcdir
+EOMSG
+    echo
+    ;;
+esac
+
+#
+# That's All Folks!
+#
