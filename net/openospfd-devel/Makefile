@@ -22,6 +22,9 @@ COMMENT=	Free implementation of the Open Shortest Path First Protocol
 
 LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
 
+DEPRECATED=	Port hasn't been updated in a while, use net/openospfd instead
+EXPIRATION_DATE=2008-06-19
+
 CONFLICTS=	zebra-0* quagga-0*
 
 SNAPSHOT=	20060516
