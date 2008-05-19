@@ -48,8 +48,8 @@ upgrades.
   AFFECTS: users of audio/ampache
   AUTHOR: jadawin@FreeBSD.org
 
-  Ampache 3.4 uses a different config parser. Unfortunately the new parser 
-  is unable to read old config files. You must run php 
+  Ampache 3.4 uses a different config parser. Unfortunately the new parser
+  is unable to read old config files. You must run php
   ${WWWDIR}/bin/migrate_config.inc from the command line.
 
 20080508:
@@ -134,7 +134,7 @@ upgrades.
 20080405:
   AFFECTS: users of sysutils/tracker
   AUTHOR: ahze@FreeBSD.org
-  
+
   The sysutils/tracker port is now a meta port and tracker is now split into
   separate ports to allow non-GNOME users to install tracker without pulling
   in GNOME components. To upgrade please use the directions below.
