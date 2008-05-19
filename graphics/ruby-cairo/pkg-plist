@@ -30,5 +30,5 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/agg
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-%%PORTDOCS%%@dirrm %%RUBY_SITELIBDIR%%/cairo/context
-%%PORTDOCS%%@dirrm %%RUBY_SITELIBDIR%%/cairo
+@dirrm %%RUBY_SITELIBDIR%%/cairo/context
+@dirrm %%RUBY_SITELIBDIR%%/cairo

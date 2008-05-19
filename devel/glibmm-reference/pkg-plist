@@ -1,7 +1,7 @@
-lib/glibmm-%%API_VERSION%%/proc/doxygen_to_devhelp.xsl
-share/devhelp/books/glibmm-%%API_VERSION%%/glibmm-%%API_VERSION%%.devhelp
-@dirrmtry share/devhelp/books/glibmm-%%API_VERSION%%
-@dirrmtry share/devhelp/books
-@dirrmtry share/devhelp
-@dirrmtry lib/glibmm-%%API_VERSION%%/proc
-@dirrmtry lib/glibmm-%%API_VERSION%%
+%%PORTDOCS%%lib/glibmm-%%API_VERSION%%/proc/doxygen_to_devhelp.xsl
+%%PORTDOCS%%share/devhelp/books/glibmm-%%API_VERSION%%/glibmm-%%API_VERSION%%.devhelp
+%%PORTDOCS%%@dirrmtry share/devhelp/books/glibmm-%%API_VERSION%%
+%%PORTDOCS%%@dirrmtry share/devhelp/books
+%%PORTDOCS%%@dirrmtry share/devhelp
+%%PORTDOCS%%@dirrmtry lib/glibmm-%%API_VERSION%%/proc
+%%PORTDOCS%%@dirrmtry lib/glibmm-%%API_VERSION%%
