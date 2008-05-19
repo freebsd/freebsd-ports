@@ -7,8 +7,9 @@
 
 PORTNAME=	c4
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES+=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/perforce/utils/c4/
+MASTER_SITES=	http://public.perforce.com/public/perforce/utils/c4/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
@@ -21,10 +22,12 @@ MAN1=		c4.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/c4 ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/c4.1 ${PREFIX}/man/man1/
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/c4.pdf ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/c4.ps ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
