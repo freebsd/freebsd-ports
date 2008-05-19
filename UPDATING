@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080519:
+  AFFECTS: users of irc/bitlbee
+  AUTHOR: brix@FreeBSD.org
+
+  The default installation is now configured for running bitlbee as
+  user 'bitlbee'.  Make sure any existing configuration files are
+  readable by that user.
+
 20080517:
   AFFECTS: users of multimedia/smplayer-*
   AUTHOR: miwi@FreeBSD.org
