@@ -15070,6 +15070,7 @@ safestr		ports/devel/safestr
 sagasu		ports/textproc/sagasu
 sage		ports/graphics/sage
 saint		ports/security/saint
+sakai		ports/www/sakai
 salias		ports/misc/salias
 sam		ports/editors/sam
 sam2p		ports/graphics/sam2p
