@@ -5,8 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
+DISTVERSION=	${PORTVERSION}-${PORTREVISION}
 PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTREVISION=	2	# cvs snapshot from 2008-05-19 14:00
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 DIST_SUBDIR=	tinderbox
