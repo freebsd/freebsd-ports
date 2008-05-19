@@ -18,6 +18,8 @@ COMMENT=	The mnoGoSearch Bindings for php51+
 
 BUILD_DEPENDS=	indexer:${PORTSDIR}/www/mnogosearch
 
+BROKEN=		does not compile
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
