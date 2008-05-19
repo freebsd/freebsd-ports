@@ -1,5 +1,5 @@
---- hald/freebsd/addons/addon-storage.c.orig	2008-03-17 17:25:16.000000000 -0400
-+++ hald/freebsd/addons/addon-storage.c	2008-03-31 04:41:55.000000000 -0400
+--- hald/freebsd/addons/addon-storage.c.orig	2008-05-07 19:24:04.000000000 -0400
++++ hald/freebsd/addons/addon-storage.c	2008-05-19 02:18:59.000000000 -0400
 @@ -36,17 +36,23 @@
  #include "../libprobe/hfp.h"
  #include "../libprobe/hfp-cdrom.h"
@@ -26,7 +26,7 @@
  /* see MMC-3 Working Draft Revision 10 */
  static boolean
  hf_addon_storage_cdrom_eject_pressed (HFPCDROM *cdrom)
-@@ -144,19 +150,114 @@ hf_addon_storage_update (void)
+@@ -144,18 +150,49 @@ hf_addon_storage_update (void)
  	}
      }
  
@@ -36,11 +36,12 @@
    return has_media;
  }
  
-+static boolean
+ static boolean
+-poll_for_media (void)
 +poll_for_media (boolean check_only, boolean force)
-+{
-+  boolean has_media;
-+
+ {
+   boolean has_media;
+ 
 +  if (check_lock_state)
 +    {
 +      boolean should_poll;
@@ -72,35 +73,23 @@
 +  if (! force && polling_disabled)
 +    goto skip_check;
 +
-+  has_media = hf_addon_storage_update();
+   has_media = hf_addon_storage_update();
 +  if (check_only)
 +    return has_media;
 +
-+  if (has_media != addon.had_media)
-+    {
-+      /*
-+       * FIXME: if the media was removed, we should force-unmount
-+       * all its child volumes (see linux2/addons/addon-storage.c).
-+       * However, currently (FreeBSD 6.0) umount -f is broken and
-+       * can cause kernel panics. When I tried to umount -f a
-+       * flash card after removing it, it failed with EAGAIN. It
-+       * continued to fail after I inserted the card. The system
-+       * then hung while rebooting and did not unmount my other
-+       * filesystems.
-+       */
-+
-+      libhal_device_rescan(hfp_ctx, hfp_udi, &hfp_error);
-+      dbus_error_free(&hfp_error);
-+      addon.had_media = has_media;
-+
-+      return TRUE;
-+    }
+   if (has_media != addon.had_media)
+     {
+       /*
+@@ -175,20 +212,33 @@ poll_for_media (void)
+ 
+       return TRUE;
+     }
 +
 +skip_check:
 +
-+  return FALSE;
-+}
-+
+   return FALSE;
+ }
+ 
  static void
 -update_proc_title (const char *device, boolean polling_enabled)
 +update_proc_title (const char *device)
@@ -114,9 +103,10 @@
 +    setproctitle("no polling on %s because it is locked by HAL", device);
 +  else
 +    setproctitle("%s", device);
-+}
-+
-+static DBusHandlerResult
+ }
+ 
+ static DBusHandlerResult
+-filter_function (DBusConnection *connection, DBusMessage *message, void *user_data)
 +dbus_filter_function (DBusConnection *connection, DBusMessage *message, void *user_data)
 +{
 +  check_lock_state = TRUE;
@@ -126,29 +116,19 @@
 +
 +static DBusHandlerResult
 +direct_filter_function (DBusConnection *connection, DBusMessage *message, void *user_data)
-+{
-+  if (dbus_message_is_method_call(message,
-+			  	  "org.freedesktop.Hal.Device.Storage.Removable",
-+				  "CheckForMedia"))
-+    {
-+      DBusMessage *reply;
-+      dbus_bool_t had_effect;
-+
-+      hfp_info("Forcing poll for media becusse CheckForMedia() was called");
-+
-+      had_effect = poll_for_media(FALSE, TRUE);
-+
-+      reply = dbus_message_new_method_return (message);
-+      dbus_message_append_args(reply, DBUS_TYPE_BOOLEAN, &had_effect, DBUS_TYPE_INVALID);
-+      dbus_connection_send(connection, reply, NULL);
-+      dbus_message_unref(reply);
-+    }
-+
-+  return DBUS_HANDLER_RESULT_HANDLED;
- }
+ {
+   if (dbus_message_is_method_call(message,
+ 			  	  "org.freedesktop.Hal.Device.Storage.Removable",
+@@ -199,7 +249,7 @@ filter_function (DBusConnection *connect
  
- int
-@@ -166,8 +267,9 @@ main (int argc, char **argv)
+       hfp_info("Forcing poll for media becusse CheckForMedia() was called");
+ 
+-      had_effect = poll_for_media();
++      had_effect = poll_for_media(FALSE, TRUE);
+ 
+       reply = dbus_message_new_method_return (message);
+       dbus_message_append_args(reply, DBUS_TYPE_BOOLEAN, &had_effect, DBUS_TYPE_INVALID);
+@@ -217,8 +267,9 @@ main (int argc, char **argv)
    char *removable;
    char *bus;
    char *driver;
@@ -159,17 +139,17 @@
  
    if (! hfp_init(argc, argv))
      goto end;
-@@ -200,69 +302,86 @@ main (int argc, char **argv)
+@@ -251,16 +302,41 @@ main (int argc, char **argv)
    addon.is_scsi_removable = (! strcmp(bus, "scsi") ||
      (! strcmp(bus, "usb") && (! strcmp(driver, "da") || ! strcmp(driver, "sa") ||
      ! strcmp(driver, "cd")))) && ! strcmp(removable, "true");
 -  addon.had_media = hf_addon_storage_update();
 +  addon.had_media = poll_for_media(TRUE, FALSE);
-+
-+  if (! libhal_device_addon_is_ready(hfp_ctx, hfp_udi, &hfp_error))
-+    goto end;
-+  dbus_error_free(&hfp_error);
-+
+ 
+   if (! libhal_device_addon_is_ready(hfp_ctx, hfp_udi, &hfp_error))
+     goto end;
+   dbus_error_free(&hfp_error);
+ 
 +  syscon = dbus_bus_get(DBUS_BUS_SYSTEM, &hfp_error);
 +  dbus_error_free(&hfp_error);
 +  assert(syscon != NULL);
@@ -194,29 +174,16 @@
 +  hfp_free(filter_str);
 +
 +  dbus_connection_add_filter(syscon, dbus_filter_function, NULL, NULL);
- 
++
    connection = libhal_ctx_get_dbus_connection(hfp_ctx);
    assert(connection != NULL);
-+  dbus_connection_set_exit_on_disconnect(connection, 0);
+   dbus_connection_set_exit_on_disconnect(connection, 0);
+-  dbus_connection_add_filter(connection, filter_function, NULL, NULL);
 +  dbus_connection_add_filter(connection, direct_filter_function, NULL, NULL);
  
--  while (TRUE)
-+  if (! libhal_device_claim_interface(hfp_ctx,
-+			 	      hfp_udi,
-+				      "org.freedesktop.Hal.Device.Storage.Removable",
-+				      "    <method name=\"CheckForMedia\">\n"
-+				      "      <arg name=\"call_had_sideeffect\" direction=\"out\" type=\"b\"/>\n"
-+				      "    </method>\n",
-+				      &hfp_error))
-     {
--      boolean has_media;
-+      hfp_critical("Cannot claim interface 'org.freedesktop.Hal.Device.Storage.Removable'");
-+      goto end;
-+    }
-+  dbus_error_free(&hfp_error);
- 
-+  while (TRUE)
-+    {
+   if (! libhal_device_claim_interface(hfp_ctx,
+ 			 	      hfp_udi,
+@@ -280,40 +356,32 @@ main (int argc, char **argv)
        /* process dbus traffic until update interval has elapsed */
        while (TRUE)
  	{
@@ -238,7 +205,7 @@
  	      if (timeout.tv_sec < 0) /* current time went backwards */
  		timeout = addon.update_interval;
  
--	      dbus_connection_read_write(connection, timeout.tv_sec * 1000 + timeout.tv_usec / 1000);
+-	      dbus_connection_read_write_dispatch(connection, timeout.tv_sec * 1000 + timeout.tv_usec / 1000);
 -	      if (! dbus_connection_get_is_connected(connection))
 +	      dbus_connection_read_write_dispatch(connection, (int) ((timeout.tv_sec * 1000 + timeout.tv_nsec / 1000000) / 2));
 +	      dbus_connection_read_write_dispatch(syscon, (int) ((timeout.tv_sec * 1000 + timeout.tv_nsec / 1000000) / 2));
@@ -256,24 +223,7 @@
 -
 -      if (should_poll)
 -        {
--          has_media = hf_addon_storage_update();
--          if (has_media != addon.had_media)
--	    {
--	      /*
--	       * FIXME: if the media was removed, we should force-unmount
--	       * all its child volumes (see linux2/addons/addon-storage.c).
--	       * However, currently (FreeBSD 6.0) umount -f is broken and
--	       * can cause kernel panics. When I tried to umount -f a
--	       * flash card after removing it, it failed with EAGAIN. It
--	       * continued to fail after I inserted the card. The system
--	       * then hung while rebooting and did not unmount my other
--	       * filesystems.
--	       */
--
--	      libhal_device_rescan(hfp_ctx, hfp_udi, &hfp_error);
--	      dbus_error_free(&hfp_error);
--	      addon.had_media = has_media;
--	    }
+-          poll_for_media();
 -        }
 -      else
 -        {
