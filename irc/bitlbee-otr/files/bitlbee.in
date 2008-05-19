@@ -14,7 +14,7 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 : ${bitlbee_enable="NO"}
-: ${bitlbee_user="nobody"}
+: ${bitlbee_user="%%BITLBEEUSER%%"}
 : ${bitlbee_config="%%PREFIX%%/etc/bitlbee/bitlbee.conf"}
 : ${bitlbee_flags=""}
 
