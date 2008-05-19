@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	4.25
+PORTVERSION=	4.28
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -16,6 +16,9 @@ COMMENT=	A GNU Linear Programming Kit
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
 
+OPTIONS=	IODBC	"Enable MathProg iodbc support" Off \
+		MYSQL	"Enable MathProg mysql support" Off
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -24,10 +27,36 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.ifdef(WITH_IODBC || WITH_MYSQL)
+CONFIGURE_ARGS+=	--enable-dl=dlfcn
+.else
+CONFIGURE_ARGS+=	--disable-dl
+.endif
+
+.ifdef(WITH_IODBC)
+CONFIGURE_ARGS+=	--enable-odbc
+LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
+.else
+CONFIGURE_ARGS+=	--disable-odbc
+.endif
+
+.ifdef(WITH_MYSQL)
+CONFIGURE_ARGS+=	--enable-mysql
+USE_MYSQL=		yes
+.else
+CONFIGURE_ARGS+=	--disable-mysql
+.endif
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	bench.txt bench1.txt glpk.ps glpk_faq.txt gmpl.ps \
-		gomory.djvu opb.txt
+		gomory.djvu opb.txt tables.txt
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s;\/usr\/include\/mysql;${LOCALBASE}\/include\/mysql;g" \
+	${WRKSRC}/configure
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/
@@ -40,4 +69,4 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
