@@ -1,0 +1,17 @@
+#!/bin/sh -
+#
+# $FreeBSD$
+#
+
+BITLBEEUSER=%%BITLBEEUSER%%
+BITLBEEGROUP=%%BITLBEEGROUP%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+  if /usr/sbin/pw group show "${BITLBEEGROUP}" 2>&1 >/dev/null; then
+    echo "You should manually remove the \"${BITLBEEGROUP}\" group."
+  fi
+
+  if /usr/sbin/pw user show "${BITLBEEUSER}" 2>&1 >/dev/null; then
+    echo "You should manually remove the \"${BITLBEEUSER}\" user."
+  fi
+fi

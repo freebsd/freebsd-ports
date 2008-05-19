@@ -7,8 +7,11 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://get.bitlbee.org/src/
+MASTER_SITES=	http://get.bitlbee.org/src/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	brix
 
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	An IRC to other chat networks gateway
@@ -31,6 +34,24 @@ OPTIONS=	MSN "Enable MSN protocol support" On \
 		IPV6 "Compile IPV6 support" On
 
 CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
+
+BITLBEEUSER?=	bitlbee
+BITLBEEGROUP?=	bitlbee
+BITLBEEDIR?=	/nonexistent
+
+BITLBEEUID=	914
+BITLBEEGID=	${BITLBEEUID}
+
+PLIST_SUB=	BITLBEEUSER=${BITLBEEUSER} \
+		BITLBEEGROUP=${BITLBEEGROUP}
+
+SUB_LIST+=	BITLBEEUSER=${BITLBEEUSER} \
+		BITLBEEGROUP=${BITLBEEGROUP} \
+		BITLBEEDIR=${BITLBEEDIR} \
+		BITLBEEUID=${BITLBEEUID} \
+		BITLBEEGID=${BITLBEEGID}
+
+SUB_FILES+=	pkg-install pkg-deinstall
 
 .include <bsd.port.pre.mk>
 
@@ -69,11 +90,12 @@ post-patch:
 		${WRKSRC}/doc/bitlbee.8
 
 pre-install:
-	${MKDIR} ${PREFIX}/etc/bitlbee
-	${MKDIR} -m 0700 /var/db/bitlbee
-	${CHOWN} nobody:nobody /var/db/bitlbee
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	${MKDIR} ${PREFIX}/etc/bitlbee
+	${MKDIR} -m 0700 /var/db/bitlbee
+	${CHOWN} -R ${BITLBEEUSER}:${BITLBEEGROUP} /var/db/bitlbee
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/doc/@} ${DOCSDIR}
