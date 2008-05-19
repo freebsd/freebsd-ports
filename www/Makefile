@@ -1449,6 +1449,7 @@
     SUBDIR += xpi-inline-google-definitions
     SUBDIR += xpi-joga
     SUBDIR += xpi-jsview
+    SUBDIR += xpi-leechblock
     SUBDIR += xpi-linkification
     SUBDIR += xpi-locale-switcher
     SUBDIR += xpi-menueditor

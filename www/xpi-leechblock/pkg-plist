@@ -1,0 +1,30 @@
+%%XPI_XPIDIR%%/chrome/content/browser.js
+%%XPI_XPIDIR%%/chrome/content/browser.xul
+%%XPI_XPIDIR%%/chrome/content/extensions.js
+%%XPI_XPIDIR%%/chrome/content/extensions.xul
+%%XPI_XPIDIR%%/chrome/content/lockdown.js
+%%XPI_XPIDIR%%/chrome/content/lockdown.xul
+%%XPI_XPIDIR%%/chrome/content/options.js
+%%XPI_XPIDIR%%/chrome/content/options.xul
+%%XPI_XPIDIR%%/chrome/content/stats.js
+%%XPI_XPIDIR%%/chrome/content/stats.xul
+%%XPI_XPIDIR%%/chrome/content/utils.js
+%%XPI_XPIDIR%%/chrome/locale/en-US/blocked.html
+%%XPI_XPIDIR%%/chrome/locale/en-US/leechblock.dtd
+%%XPI_XPIDIR%%/chrome/locale/it-IT/blocked.html
+%%XPI_XPIDIR%%/chrome/locale/it-IT/leechblock.dtd
+%%XPI_XPIDIR%%/chrome/locale/it-IT/leechblock.properties
+%%XPI_XPIDIR%%/chrome/skin/leechblock32.png
+%%XPI_XPIDIR%%/chrome/skin/leechblock64.png
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/defaults/preferences/leechblock.js
+%%XPI_XPIDIR%%/history.txt
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/locale/it-IT
+@dirrm %%XPI_XPIDIR%%/chrome/locale
+@dirrm %%XPI_XPIDIR%%/chrome/skin
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
