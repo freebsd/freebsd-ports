@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	Net_Gearman
-PORTVERSION=	0.0.4
-CATEGORIES=	devel
-MASTER_SITES=	http://bugs.joestump.net/code/Net_Gearman/
-PKGNAMEPREFIX=	php-
-EXTRACT_SUFX=	.tgz
+PORTVERSION=	0.1.1
+CATEGORIES=	devel pear
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Gearman client libraray for PHP
 
-RUN_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:${PORTSDIR}/devel/pear
+BUILD_DEPENDS=	${LOCALBASE}/share/pear/PEAR.php:${PORTSDIR}/devel/pear
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-NO_BUILD=	yes
-USE_PHP=	yes
+USE_PHP=	mbstring
 
-do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/Net ${DATADIR}
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+FILES=		Net/Gearman/Client.php Net/Gearman/Connection.php Net/Gearman/Exception.php \
+		Net/Gearman/Job.php Net/Gearman/Manager.php Net/Gearman/Set.php \
+		Net/Gearman/Task.php Net/Gearman/Worker.php \
+		Net/Gearman/Job/Common.php Net/Gearman/Job/Exception.php
+EXAMPLES=	SQL.php Sum.php tasks.php worker.php
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
+
+.include <bsd.port.post.mk>
