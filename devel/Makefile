@@ -2360,6 +2360,7 @@
     SUBDIR += svn_load_dirs
     SUBDIR += svndelta
     SUBDIR += svnkit
+    SUBDIR += svntrac
     SUBDIR += swig11
     SUBDIR += swig13
     SUBDIR += synfig
