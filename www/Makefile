@@ -1456,6 +1456,7 @@
     SUBDIR += xpi-mousegestures
     SUBDIR += xpi-mozex
     SUBDIR += xpi-mrtech-local-install
+    SUBDIR += xpi-neo-diggler
     SUBDIR += xpi-no-referrer
     SUBDIR += xpi-noscript
     SUBDIR += xpi-num2web
@@ -1470,6 +1471,7 @@
     SUBDIR += xpi-searchstatus
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-sessionmanager
+    SUBDIR += xpi-speed-dial
     SUBDIR += xpi-statusbarclock
     SUBDIR += xpi-stumbleupon
     SUBDIR += xpi-stylish
