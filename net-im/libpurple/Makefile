@@ -151,6 +151,7 @@ PLIST_SUB+=	SAMETIME=""
 PRPL_MODULES:=	${PRPL_MODULES},sametime
 .else
 PLIST_SUB+=	SAMETIME="@comment not installed: "
+CONFIGURE_ARGS+=--disable-meanwhile
 .endif
 
 .if defined(WITH_TCLTK)
