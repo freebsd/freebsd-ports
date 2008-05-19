@@ -26,9 +26,14 @@ USE_LDCONFIG=	yes
 
 MAN3=		vstr.3 vstr_const.3
 
-.pre-configure:
+post-patch:
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's| Documentation||' ${WRKSRC}/Makefile.in
+.endif
+
+post-install:
+.if defined(NOPORTDOCS)
+	cd ${WRKSRC}/Documentation && ${GMAKE} install-man3
 .endif
 
 regression-test:
