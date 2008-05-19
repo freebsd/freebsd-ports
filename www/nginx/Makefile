@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.5.36
+PORTVERSION=	0.6.31
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -16,6 +16,7 @@ MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
 OPTIONS=	DEBUG "Enable nginx debugging" off \
+		GOOGLE_PERFTOOLS "Enable google perftools module" off \
 		HTTP_MODULE "Enable HTTP module" on \
 		HTTP_ADDITION_MODULE "Enable http_addition module" off \
 		HTTP_DAV_MODULE "Enable http_webdav module" off \
@@ -64,6 +65,11 @@ CONFIGURE_ARGS+=--with-debug
 STRIP=		#do not strip if nginx with debug information
 .endif
 
+.if defined(WITH_GOOGLE_PERFTOOLS)
+LIB_DEPENDS+=	profiler.0:${PORTSDIR}/devel/google-perftools
+CONFIGURE_ARGS+=--with-google_perftools_module
+.endif
+
 .if defined(WITH_HTTP_MODULE)
 CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
@@ -109,7 +115,7 @@ PKGNAMESUFFIX+=	-nopcre
 CONFIGURE_ARGS+=--without-http_rewrite_module \
 		--without-pcre
 .else
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
 .if defined(WITH_WWW)
