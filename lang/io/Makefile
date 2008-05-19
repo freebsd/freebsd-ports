@@ -6,86 +6,59 @@
 #
 
 PORTNAME=	io
-PORTVERSION=	0.0.2006.05.02
-PORTREVISION=	4
+PORTVERSION=	0.0.2008.01.20
 CATEGORIES=	lang
 MASTER_SITES=	http://io.urbanape.com/release/ \
 		http://www.sigusr1.org/~steve/
-DISTNAME=	IoFull-${PORTVERSION:S/0.0.//:S/./-/g}
+DISTNAME=	Io-${PORTVERSION:S/0.0.//:S/./-/g}
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Small prototype-based programming language
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		event-1.3e:${PORTSDIR}/devel/libevent
-
 USE_GMAKE=	yes
+CFLAGS+=	-fPIC
+USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/release/${DISTNAME}/
-MAKE_ENV=	INCS="-I${LOCALBASE}/include" LIBLOCAL="-L${LOCALBASE}/lib"
-BINDINGS_DEACTIVATE=	Font Image ObjcBridge OpenGL SGML SQLite SQLite3
+WRKSRC=		${WRKDIR}/${DISTNAME}
+MAKE_ENV=	INSTALL_PREFIX="${PREFIX}"
+
+# All addons that do not require extra dependencies
+# Additional addons may be added as separate ports with some
+# makefile hacking in a manner similar to Qt4 ports
+DEFAULT_ADDONS=	AsyncRequest Blowfish Box CGI ContinuedFraction Curses \
+		EditLine Flux Fnmatch LZO Loki MD5 NetworkAdapter \
+		NotificationCenter Random Range Rational ReadLine SHA1 \
+		SqlDatabase Syslog SystemCall Thread User Zlib
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64 or sparc64
-.endif
-
-pre-patch:
-	${FIND} ${WRKSRC} -name '.DS_Store*' -delete
-
-	cd ${WRKSRC}/libs && for mod in *; do \
-		if [ $$mod != "zlib" ]; then \
-			${RM} -fr $$mod; \
+post-patch:
+	@cd ${WRKSRC}/addons && for addon in *; do \
+		if ! ${ECHO_CMD} ${DEFAULT_ADDONS} | ${GREP} $$addon > /dev/null; then \
+			${RM} -fr $$addon; \
 		fi; \
 	done
-	cd ${WRKSRC}/bindings; ${RM} -fr ${BINDINGS_DEACTIVATE}
 
-	for mkf in `${FIND} ${WRKSRC} -iname Makefile`; do \
-		${REINPLACE_CMD} \
-			-e 's,^CFLAGS.*$$,CFLAGS+=-g $${INCS} $${INCLUDE},g' \
-			-e 's,^\(LFLAGS.*\)$$,\1 $${LIBLOCAL},g' \
-			-e 's,^CC=\(.*\)$$,CC?=\1,g' \
-			$$mkf; \
-	done
+	@${REINPLACE_CMD} -e 's|CFLAGS = $$(OPTIMIZE)|CFLAGS +=|' \
+		${WRKSRC}/Makefile.lib
+	@${REINPLACE_CMD} -e '/CC = gcc/ d' \
+		${WRKSRC}/libs/basekit/source/simd_cph/test/Makefile
+	@${REINPLACE_CMD} -e '/cp _build\/dll\/.*\/bin/ d' ${WRKSRC}/Makefile
 
-	${REINPLACE_CMD} \
-		-e 's,^\( *options := "\).*$$,\1${CFLAGS} -I${LOCALBASE}/include -DSANE_POPEN -DIOBINDINGS",' \
-		-e 's,\( -lIoVM\), -L${LOCALBASE}/lib \1 -lncurses ,' \
-		${WRKSRC}/_build.io
-
-	${ECHO_CMD} 'Binding clone do (dependsOnLib("z"))' \
-		> ${WRKSRC}/bindings/Zlib/_build.io
-
-post-patch:
-	${FIND} ${WRKSRC} -name '*.orig' -delete
-
-do-install:
-.for fname in vm/io2c vm/io binaries/ioDesktop binaries/ioServer
-	${INSTALL_PROGRAM} ${WRKSRC}/${fname} ${PREFIX}/bin
-.endfor
-
-	${INSTALL_DATA} ${WRKSRC}/vm/_libs/libIoVM.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/bindings/*/*.a ${PREFIX}/lib
-
-.for incldir in . SkipDB base
-	${MKDIR} ${PREFIX}/include/io/${incldir}
-	${INSTALL_DATA} ${WRKSRC}/vm/_include/${incldir}/*.h ${PREFIX}/include/io/${incldir}
-.endfor
+post-install:
+	${MKDIR} ${PREFIX}/include/io
+	${INSTALL_DATA} ${WRKSRC}/_build/headers/* ${PREFIX}/include/io
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${TAR} -C ${WRKSRC}/_docs -cf - . | ${TAR} -C ${DOCSDIR} -xf -
-	@${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-
-.for subdir in ioCode sampleCode docgen unitTests
-	${MKDIR} ${EXAMPLESDIR}/${subdir}
-	${TAR} -C ${WRKSRC}/vm/_${subdir} -cf - . | \
-		${TAR} -C ${EXAMPLESDIR}/${subdir} -xf -
-.endfor
-	@${FIND} ${EXAMPLESDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
