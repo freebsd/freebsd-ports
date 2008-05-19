@@ -7,7 +7,7 @@
 
 PORTNAME=	Cache-Memcached-XS
 PORTVERSION=	0.01
-CATEGORIES=	databases
+CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 

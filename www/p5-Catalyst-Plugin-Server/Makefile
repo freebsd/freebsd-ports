@@ -7,7 +7,7 @@
 
 PORTNAME=	Catalyst-Plugin-Server
 PORTVERSION=	0.24
-CATEGORIES=	www devel
+CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 

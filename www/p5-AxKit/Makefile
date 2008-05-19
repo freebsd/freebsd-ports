@@ -7,7 +7,7 @@
 
 PORTNAME=	AxKit
 PORTVERSION=	1.6.2
-CATEGORIES=	www
+CATEGORIES=	www perl5
 MASTER_SITES=	http://www.axkit.org/download/
 PKGNAMEPREFIX=	p5-
 

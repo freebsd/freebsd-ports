@@ -7,7 +7,7 @@
 
 PORTNAME=	Plucene-Analysis-CJKAnalyzer
 PORTVERSION=	0.02
-CATEGORIES=	textproc
+CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/X/XE/XERN
 PKGNAMEPREFIX=	p5-
