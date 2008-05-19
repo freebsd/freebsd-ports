@@ -1848,6 +1848,7 @@
     SUBDIR += pear-HTML_TreeMenu
     SUBDIR += pear-I18N
     SUBDIR += pear-Math_Fraction
+    SUBDIR += pear-Net_Gearman
     SUBDIR += pear-OLE
     SUBDIR += pear-PEAR_Info
     SUBDIR += pear-PEAR_PackageFileManager
@@ -1908,7 +1909,6 @@
     SUBDIR += perlconsole
     SUBDIR += perltidy
     SUBDIR += pharmacy
-    SUBDIR += php-Net_Gearman
     SUBDIR += php-dbg2
     SUBDIR += php-xdebug
     SUBDIR += php4-dio
