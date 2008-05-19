@@ -1,7 +1,7 @@
 # ex:ts=4
 #
 # $MBSDlabs: portmk/bsd.ocaml.mk,v 1.18 2006/08/06 18:47:23 stas Exp $
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.ocaml.mk,v 1.2 2008-04-19 17:46:02 miwi Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.ocaml.mk,v 1.3 2008-05-19 07:05:35 stas Exp $
 #
 # bsd.ocaml.mk - Support for the Objective Caml language packages
 #
@@ -20,6 +20,8 @@
 # USE_OCAML_LDCONFIG	-	Set if your port installs shared libraries
 #				into ocaml site-lib dir. OCaml ld.conf file
 #				will be automatically processed.
+# USE_OCAMLFIND_PLIST	-	Add contents of findlib target directories
+#				automatically.
 # USE_OCAML_WASH	-	Set if your port wants to automatically
 #				purge shared Ocaml dirs on uninstall. It's
 #				useful when installing to non-standard PREFIX
@@ -122,6 +124,10 @@ pre-install-script:
 . if !target(ocaml-findlib)
 ocaml-findlib:
 .  for DIR in ${OCAML_PKGDIRS}
+.   if defined(USE_OCAMLFIND_PLIST)
+	@${FIND} ${PREFIX}/${OCAML_SITELIBDIR}/${DIR}/ -type f -print | ${SED} -e \
+		's,^${PREFIX}/,,' >> ${TMPPLIST}
+.   endif
 	@${ECHO_CMD} "@unexec rmdir %D/${OCAML_SITELIBDIR}/${DIR} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${OCAMLFIND} remove ${DIR} 2>/dev/null" \
 		>> ${TMPPLIST}
