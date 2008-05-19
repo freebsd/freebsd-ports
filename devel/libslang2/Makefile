@@ -76,7 +76,9 @@ post-patch:
 	@${REINPLACE_CMD} -E 's,doc/slsh,doc/slang/v\@slang_major_version\@,' \
 		${WRKSRC}/slsh/Makefile.in
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's, install-docs,,g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's, install[_-]docs,,g; /MKINSDIR.*DEST_SLSH_DOC_DIR/d' \
+		${WRKSRC}/src/Makefile.in \
+		${WRKSRC}/slsh/Makefile.in
 .endif
 
 .include <bsd.port.post.mk>
