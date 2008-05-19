@@ -24,6 +24,7 @@ PIDGIN_SLAVE=	yes
 WITH_CONSOLEUI=	yes
 
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-gtkui
+CONFIGURE_ARGS=	--disable-gtkui \
+		--disable-nm
 
 .include "${MASTERDIR}/Makefile"

@@ -75,6 +75,8 @@ lib/pidgin/notify.la
 lib/pidgin/notify.so
 lib/pidgin/relnot.la
 lib/pidgin/relnot.so
+lib/pidgin/sendbutton.la
+lib/pidgin/sendbutton.so
 lib/pidgin/spellchk.la
 lib/pidgin/spellchk.so
 lib/pidgin/ticker.la
@@ -444,6 +446,8 @@ share/pixmaps/pidgin/status/48/log-out.png
 share/pixmaps/pidgin/status/48/offline.png
 share/pixmaps/pidgin/status/48/person.png
 share/pixmaps/pidgin/status/48/rtl/extended-away.png
+share/pixmaps/pidgin/status/48/rtl/login.png
+share/pixmaps/pidgin/status/48/rtl/logout.png
 share/pixmaps/pidgin/toolbar/16/change-bgcolor.png
 share/pixmaps/pidgin/toolbar/16/change-fgcolor.png
 share/pixmaps/pidgin/toolbar/16/emote-select.png

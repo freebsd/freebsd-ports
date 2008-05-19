@@ -28,7 +28,8 @@ WITH_GTKUI=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gtk20
 WANT_GNOME=	yes
-CONFIGURE_ARGS=	--disable-consoleui
+CONFIGURE_ARGS=	--disable-consoleui \
+		--disable-nm
 
 post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
