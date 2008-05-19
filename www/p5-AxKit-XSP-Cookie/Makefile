@@ -7,7 +7,7 @@
 
 PORTNAME=	AxKit-XSP-Cookie
 PORTVERSION=	1.41
-CATEGORIES=	www
+CATEGORIES=	www perl5
 MASTER_SITES=	http://www.cpan.org/authors/id/M/MS/MSERGEANT/
 PKGNAMEPREFIX=	p5-
 

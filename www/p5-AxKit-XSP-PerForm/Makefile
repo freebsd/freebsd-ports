@@ -7,7 +7,7 @@
 
 PORTNAME=	AxKit-XSP-PerForm
 PORTVERSION=	1.83
-CATEGORIES=	www
+CATEGORIES=	www perl5
 MASTER_SITES=	http://www.cpan.org/authors/id/M/MS/MSERGEANT/
 PKGNAMEPREFIX=	p5-
 

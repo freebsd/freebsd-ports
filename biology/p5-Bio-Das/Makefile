@@ -7,7 +7,7 @@
 
 PORTNAME=	Bio-Das
 PORTVERSION=	1.07
-CATEGORIES=	biology
+CATEGORIES=	biology perl5
 MASTER_SITES=	http://www.biodas.org/download/Bio::Das/ \
 		CPAN
 PKGNAMEPREFIX=	p5-

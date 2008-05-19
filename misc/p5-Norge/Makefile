@@ -7,7 +7,7 @@
 
 PORTNAME=	Norge
 PORTVERSION=	1.08
-CATEGORIES=	misc textproc
+CATEGORIES=	misc textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 

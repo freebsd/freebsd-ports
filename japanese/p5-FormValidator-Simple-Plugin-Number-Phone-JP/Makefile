@@ -7,7 +7,7 @@
 
 PORTNAME=	FormValidator-Simple-Plugin-Number-Phone-JP
 PORTVERSION=	0.02
-CATEGORIES=	japanese
+CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 
 MAINTAINER=	kuriyama@FreeBSD.org

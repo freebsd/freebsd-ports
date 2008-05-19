@@ -7,7 +7,7 @@
 
 PORTNAME=	usb
 PORTVERSION=	0.21
-CATEGORIES=	devel
+CATEGORIES=	devel perl5
 MASTER_SITES=	http://search.cpan.org/CPAN/authors/id/G/GW/GWADEJ/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 PKGNAMEPREFIX=	p5-
