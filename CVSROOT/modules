@@ -13679,6 +13679,7 @@ py-irclib	ports/irc/py-irclib
 py-istring	ports/devel/py-istring
 py-jabber	ports/net-im/py-jabber
 py-jaxml	ports/textproc/py-jaxml
+py-jcc		ports/devel/py-jcc
 py-jonpy	ports/www/py-jonpy
 py-json-py	ports/devel/py-json-py
 py-karaoke	ports/audio/py-karaoke
