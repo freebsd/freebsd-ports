@@ -1,0 +1,13 @@
+-------------------------------------------------------------
+GvGen is installed. 
+
+For a quick start:
+    - read the user_guide.tex.lyx
+    - create dot file ./yourgraph.py > gourgraph.dot
+    - generate graph dot -Tpng yourgraph.dot > yourgraph.png
+
+Generate your graph require the graphics/graphviz port to be
+installed.
+
+Review the ChangeLog document in the documentation directory.
+-------------------------------------------------------------

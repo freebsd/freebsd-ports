@@ -630,6 +630,7 @@
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
     SUBDIR += py-graphviz
+    SUBDIR += py-gvgen
     SUBDIR += py-imaging
     SUBDIR += py-ming
     SUBDIR += py-opengl
