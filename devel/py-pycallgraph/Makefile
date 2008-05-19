@@ -22,7 +22,7 @@ USE_PYDISTUTILS=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-.if !defined(NOPORTEXANPLES)
+.if !defined(NOPORTEXAMPLES)
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} ${WRKSRC}/examples/* ${EXAMPLESDIR}
