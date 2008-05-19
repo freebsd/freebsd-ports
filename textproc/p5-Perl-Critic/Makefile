@@ -8,6 +8,7 @@
 
 PORTNAME=	Perl-Critic
 PORTVERSION=	1.08.2
+PORTREVISION=	1
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +24,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-Lis
 		${SITE_PERL}/PPI.pm:${PORTSDIR}/textproc/p5-PPI \
 		${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy \
 		${SITE_PERL}/String/Format.pm:${PORTSDIR}/textproc/p5-String-Format \
+		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
+		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/${PERL_ARCH}/Readonly.pm:${PORTSDIR}/devel/p5-Readonly
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
