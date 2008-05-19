@@ -15,7 +15,6 @@ COMMENT=	BitTorrent Client written in C++ (development version)
 
 BUILD_DEPENDS=	libtorrent-devel=0.12.2:${PORTSDIR}/net-p2p/libtorrent-devel
 RUN_DEPENDS=	libtorrent-devel=0.12.2:${PORTSDIR}/net-p2p/libtorrent-devel
-LIB_DEPENDS=	# empty
 
 MASTERDIR=	${.CURDIR}/../rtorrent
 MD5_FILE=	${.CURDIR}/distinfo

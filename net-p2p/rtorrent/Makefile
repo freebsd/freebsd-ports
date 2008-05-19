@@ -16,17 +16,15 @@ MASTER_SITE_SUBDIR=	flz/rtorrent/
 MAINTAINER?=	flz@FreeBSD.org
 COMMENT?=	BitTorrent Client written in C++
 
-LIB_DEPENDS?=	# empty
-
 BUILD_DEPENDS?=	libtorrent=0.11.9:${PORTSDIR}/net-p2p/libtorrent
 RUN_DEPENDS?=	libtorrent=0.11.9:${PORTSDIR}/net-p2p/libtorrent
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
+LIB_DEPENDS?=	curl.4:${PORTSDIR}/ftp/curl
 
 CONFLICTS?=	rtorrent-devel-[0-9]*
 
 MAN1=		rtorrent.1
 
-USE_GCC=	3.4+
+USE_GCC?=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
