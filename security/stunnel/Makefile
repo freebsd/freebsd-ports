@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.22
+PORTVERSION=	4.24
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
@@ -19,7 +19,6 @@ COMMENT=	SSL encryption wrapper for standard network daemons
 USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	YES
 USE_RC_SUBR=	stunnel
-WRKSRC=		${WRKDIR}/${PORTNAME}-4.22
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
