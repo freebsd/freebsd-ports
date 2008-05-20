@@ -35,6 +35,10 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+LIB_DEPENDS+=  edit.6:${PORTSDIR}/devel/libedit
+.endif
+
 post-patch:
 	@cd ${WRKSRC}/addons && for addon in *; do \
 		if ! ${ECHO_CMD} ${DEFAULT_ADDONS} | ${GREP} $$addon > /dev/null; then \
