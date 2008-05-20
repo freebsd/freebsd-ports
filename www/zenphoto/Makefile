@@ -4,14 +4,14 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.zenphoto.org/files/
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A simpler web photo gallery
 
-USE_PHP=	mysql gd session
+USE_PHP=	mysql gd session mbstring
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
@@ -29,6 +29,8 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR} \
 		"! -name README.html ! -name License.txt")
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${CHMOD} 644 ${WWWDIR}/albums/*.png
+	${CHMOD} 644 ${WWWDIR}/albums/*.jpg
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
