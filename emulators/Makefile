@@ -114,6 +114,7 @@
     SUBDIR += mupen64plus-input
     SUBDIR += mupen64plus-rice
     SUBDIR += mupen64plus-rsp
+    SUBDIR += mupen64plus-sdlaudio
     SUBDIR += nonpareil
     SUBDIR += o2em
     SUBDIR += ods2reader
