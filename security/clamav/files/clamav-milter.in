@@ -27,6 +27,7 @@ required_dirs=%%DBDIR%%
 required_files=%%PREFIX%%/etc/clamd.conf
 
 start_precmd=start_precmd
+start_postcmd=start_postcmd
 
 start_precmd()
 {
@@ -56,12 +57,18 @@ start_precmd()
 	fi
 }
 
+start_postcmd()
+{
+	/bin/chmod ${clamav_milter_socket_mode} ${clamav_milter_socket}
+}
+
 # read settings, set default values
 load_rc_config $name
 : ${clamav_milter_enable="NO"}
 : ${clamav_milter_socket="%%CLAMAV_MILTER_SOCKET%%"}
 : ${clamav_milter_flags="--postmaster-only --local --outgoing --timeout=0 --max-children=50"}
 : ${clamav_milter_socktimeout="60"}
+: ${clamav_milter_socket_mode="755"}
 
 : ${clamav_clamd_socket="%%CLAMAV_CLAMD_SOCKET%%"}
 : ${clamav_clamd_enable="NO"}
