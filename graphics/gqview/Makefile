@@ -7,7 +7,7 @@
 
 PORTNAME=	gqview
 PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,6 +44,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$$(datadir)/doc/gqview-$$(VERSION)/html|${DOCSDIR}/html|g' \
 		${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's| -r %F||' \
+		${WRKSRC}/gqview.desktop
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gqview.desktop ${PREFIX}/share/gnome/apps/Graphics
