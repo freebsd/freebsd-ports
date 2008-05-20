@@ -1,0 +1,10 @@
+--- terminal.c.orig	2008-05-01 21:02:39.000000000 +0400
++++ terminal.c	2008-05-01 21:03:50.000000000 +0400
+@@ -819,6 +819,7 @@
+ 			add_to_str(&a, &l, m);						\
+ 			m[1] = '4';							\
+ 			m[2] = ((attrib >> 3) & 7) + '0';				\
++			if (m[2]!='0')							\
+ 			add_to_str(&a, &l, m);						\
+ 		} else if (getcompcode(attrib & 7) < getcompcode(attrib >> 3 & 7))	\
+ 			add_to_str(&a, &l, ";7");					\
