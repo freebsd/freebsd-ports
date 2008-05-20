@@ -134,12 +134,31 @@ bin/vultureseye
 %%DATADIR%%/vultureseye
 %%DATADIR%%/vultureseye.ico
 %%DATADIR%%/vultureseye.png
-@dirrm %%DATADIR%%/sound
+@exec mkdir -p %D/%%DATADIR%%/save
+@exec chown games:games %D/%%DATADIR%%
+@exec chown games:games %D/%%DATADIR%%/config
+@exec chown games:games %D/%%DATADIR%%/fonts
+@exec chown games:games %D/%%DATADIR%%/manual
+@exec chown games:games %D/%%DATADIR%%/manual/img
+@exec chown games:games %D/%%DATADIR%%/music
+@exec chown games:games %D/%%DATADIR%%/graphics
+@exec chown games:games %D/%%DATADIR%%/save
+@exec chown games:games %D/%%DATADIR%%/sound
+@exec chmod 775 %D/%%DATADIR%%
+@exec chmod 775 %D/%%DATADIR%%/config
+@exec chmod 775 %D/%%DATADIR%%/fonts
+@exec chmod 775 %D/%%DATADIR%%/manual
+@exec chmod 775 %D/%%DATADIR%%/manual/img
+@exec chmod 775 %D/%%DATADIR%%/music
+@exec chmod 775 %D/%%DATADIR%%/graphics
+@exec chmod 775 %D/%%DATADIR%%/save
+@exec chmod 775 %D/%%DATADIR%%/sound
+@dirrmtry %%DATADIR%%/sound
 @dirrmtry %%DATADIR%%/save
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/manual/img
-@dirrm %%DATADIR%%/manual
-@dirrm %%DATADIR%%/graphics
-@dirrm %%DATADIR%%/fonts
+@dirrmtry %%DATADIR%%/music
+@dirrmtry %%DATADIR%%/manual/img
+@dirrmtry %%DATADIR%%/manual
+@dirrmtry %%DATADIR%%/graphics
+@dirrmtry %%DATADIR%%/fonts
 @dirrmtry %%DATADIR%%/config
 @dirrmtry %%DATADIR%%
