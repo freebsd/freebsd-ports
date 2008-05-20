@@ -7,9 +7,15 @@
 
 PORTNAME=	links
 DISTVERSION=	2.1pre36
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
+
+PATCH_SITES=	ftp://ftp.linux.ee/pub/gentoo/distfiles/distfiles/ \
+		ftp://ftp.osuosl.org/pub/blfs/conglomeration/links/ \
+		ftp://ftp.ntua.gr/pub/linux/gentoo/distfiles/
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER?=	demon@FreeBSD.org
 COMMENT=	Lynx-like text WWW browser
@@ -27,7 +33,9 @@ USE_BZIP2=	yes
 
 OPTIONS=	SVGALIB "non-X11 graphics support" off \
 		DIRECTFB "directfb driver support" off \
-		X11 "X11 graphics support" on
+		X11 "X11 graphics support" on \
+		UTF8 "With gentoo utf-8 patch" on \
+		TRANS "Hack for background transparency" off
 
 .include <bsd.port.pre.mk>
 
@@ -59,6 +67,16 @@ USE_XORG=	x11 xproto
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x
+.endif
+
+.if defined(WITH_UTF8)
+PATCHFILES=	links-2.1pre33-utf8.diff.bz2
+pre-configure:
+		pwd && cd ${WRKSRC}/intl && ./gen-intl && ./synclang && cd ..
+.endif
+
+.if defined(WITH_TRANS)
+EXTRA_PATCHES+=		${FILESDIR}/extra-terminal.c.diff
 .endif
 
 MAN1=		links.1
