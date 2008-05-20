@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+# PROVIDE: pcap_agent
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable pcap_agent:
+# pcap_agent_enable (bool):     Set to YES to enable pcap_agent
+#                               Default: NO
+# pcap_agent_conf (str):        Pcap_agent configuration file
+#                               Default: %%PREFIX%%/etc/%%SGUILDIR%%/pcap_agent.conf
+# pcap_agent_flags (str):       Default: -D
+#
+
+. %%RC_SUBR%%
+
+load_rc_config pcap_agent
+
+#set defaults
+pcap_agent_enable=${pcap_agent_enable:-"NO"}
+pcap_agent_conf=${pcap_agent_conf:-"%%PREFIX%%/etc/%%SGUILDIR%%/pcap_agent.conf"}
+pcap_agent_flags=${pcap_agent_flags:-"-D"}
+
+name="pcap_agent"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/%%SGUILDIR%%/pcap_agent.tcl"
+command_args="-c ${pcap_agent_conf} ${pcap_agent_flags}"
+procname="%%PREFIX%%/bin/tclsh8.4"
+pidfile="/var/run/${name}.pid"
+check_pidfile="${pidfile} ${procname} /bin/sh"
+
+run_rc_command "$1"
