@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	motion
-PORTVERSION=	3.2.9
-PORTREVISION=	1
+PORTVERSION=	3.2.10
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 PATCH_SITES=	http://www.lavrsen.dk/twiki/pub/Motion/FreeBSDPatch/
-PATCHFILES=	motion-3.2.9-2.port-freebsd.diff.gz
+PATCHFILES=	motion-3.2.10.port-freebsd.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ack@telefonica.net
@@ -36,18 +35,25 @@ USE_GCC=	3.4+
 MAN1=		motion.1
 PORTDOCS=	CHANGELOG CREDITS README.FreeBSD README \
 		motion_guide.html
-EXAMPLES=	motion-dist.conf motion.init-FreeBSD.sh thread1.conf \
-		thread2.conf thread3.conf thread4.conf
+EXAMPLES=	motion-dist.conf thread1.conf thread2.conf \
+		thread3.conf thread4.conf
 
-OPTIONS=	BKTR "Support for TV Capture cards" on \
+OPTIONS=	PWCBSD "PWCBSD based Webcams (disables BKTR)" off \
+		BKTR "Support for TV Capture cards" on \
 		LINUXTHREADS "Use LinuxThreads" off
 
 MAKE_ENV+=	CC="${CC}"
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_BKTR)
+.if !defined(WITH_BKTR) && !defined(WITH_PWCBSD)
 CFLAGS+=	-DWITHOUT_V4L
+.endif
+
+.if defined(WITH_PWCBSD)
+CONFIGURE_ARGS=	--with-pwcbsd
+BUILD_DEPENDS+=	v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
+RUN_DEPENDS+=	/boot/modules/pwc.ko:${PORTSDIR}/multimedia/pwcbsd
 .endif
 
 .if defined(WITH_LINUXTHREADS) || ${OSVERSION} < 504000
@@ -59,10 +65,14 @@ post-install:
 .if !exists(${PREFIX}/etc/motion.conf)
 	${INSTALL_DATA} ${PREFIX}/etc/motion.conf.sample ${PREFIX}/etc/motion.conf
 .endif
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.init-FreeBSD.sh ${PREFIX}/etc/rc.d/${PORTNAME}
 	${MKDIR} ${EXAMPLESDIR}
+
+.if !defined(NOPORTEXAMPLES)
 .for f in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
 .endfor
+.endif
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -74,6 +84,12 @@ post-install:
 .if defined(WITH_BKTR)
 	@${ECHO_MSG} "==============================================================================="
 	@${ECHO_MSG} "Please make sure you have bktr(4) kernel support."
+	@${ECHO_MSG} "==============================================================================="
+.endif
+
+.if defined(WITH_PWCBSD)
+	@${ECHO_MSG} "==============================================================================="
+	@${ECHO_MSG} "Please make sure you have pwcbsd compiled with mmap support."
 	@${ECHO_MSG} "==============================================================================="
 .endif
 
