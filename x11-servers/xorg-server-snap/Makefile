@@ -25,6 +25,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base.xml:${PORTSDIR}/x11/xkeyboard
 CONFLICTS=	XFree86-Server-*
 
 IGNORE=		is outdated
+DEPRECATED=	Port hasn't been used since the switch to modular releases
+EXPIRATION_DATE=2008-06-20
 
 XORG_CAT=	xserver
 
