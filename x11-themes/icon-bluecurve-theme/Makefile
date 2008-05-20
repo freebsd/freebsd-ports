@@ -14,9 +14,6 @@ BUILD_DEPENDS=	icon-slicer:${PORTSDIR}/graphics/icon-slicer \
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
-EXTRA_PATCHES=	${WRKDIR}/redhat-artwork-5.0.5-add-dirs-to-bluecurve-theme-index.patch
-PATCH_STRIP=	-p1
-
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
