@@ -7,7 +7,7 @@
 
 PORTNAME=	kgtk
 PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://source.antisupport.com/kgtk/ \
 		http://home.freeuk.com/cpdrummond/
@@ -49,8 +49,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/opt-patch-kgtk-wrapper \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| -ldl||' ${WRKSRC}/gtk2/CMakeLists.txt ${WRKSRC}/qt3/CMakeLists.txt ${WRKSRC}/qt4/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' ${WRKSRC}/mangled.sh
+	@${REINPLACE_CMD} -e 's| -ldl||' ${WRKSRC}/gtk2/CMakeLists.txt \
+		${WRKSRC}/qt3/CMakeLists.txt ${WRKSRC}/qt4/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' ${WRKSRC}/qt3/kqt3-wrapper.cmake \
+		${WRKSRC}/gtk2/kgtk2-wrapper.cmake ${WRKSRC}/qt4/kqt4-wrapper.cmake \
+		${WRKSRC}/mangled.sh ${WRKSRC}/kdialogd-wrapper ${WRKSRC}/kgtk-wrapper
 	@${CP} ${PATCHDIR}/ru.po ${WRKSRC}/kdialogd3/po/
 pre-configure:
 	@${MKDIR} ${WRKSRC}/${CMAKE_BUILD_DIR}
