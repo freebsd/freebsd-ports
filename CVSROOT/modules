@@ -5938,6 +5938,7 @@ kanatest	ports/games/kanatest
 kannel		ports/www/kannel
 kappdock	ports/x11-wm/kappdock
 kaptain		ports/devel/kaptain
+kaputa		ports/x11-fonts/kaputa
 karamba		ports/deskutils/karamba
 kardsgt		ports/games/kardsgt
 kasablanca	ports/ftp/kasablanca
