@@ -6,38 +6,33 @@
 #
 
 PORTNAME=	flightgear-mb339-pan
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	games
 MASTER_SITES=	http://hcilab.uniud.it/pan/downloads/
 DISTNAME=	MB339-PAN
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A simulation of the MB-339 PAN aerobatic jet
 
 RUN_DEPENDS=	${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
-
-BROKEN=		Size mismatch
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 RESTRICTED=	Redistribution prohibited
-PLIST=		${WRKDIR}/.plist
+PLIST=		${WRKDIR}/.pkg-plist
 
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKSRC} && \
+	${FIND} * -type d -empty | ${SORT} \
+		| ${SED} -e 's|^|@exec ${MKDIR} share/FlightGear/Aircraft/|' >> ${PLIST} && \
 	${FIND} * -type f | ${SORT} \
 		| ${SED} -e 's|^|share/FlightGear/Aircraft/|' >> ${PLIST} && \
-	${FIND} -d * -type d \
+	${FIND} * -type d | ${SORT} -r \
 		| ${SED} -e 's|^|@dirrm share/FlightGear/Aircraft/|' >> ${PLIST}
 
 do-install:
-	cd ${WRKSRC} && \
-	${FIND} * -type d -exec \
-		${MKDIR} "${PREFIX}/share/FlightGear/Aircraft/{}" \; && \
-	${FIND} * -type f -exec \
-		${INSTALL_DATA} "{}" "${PREFIX}/share/FlightGear/Aircraft/{}" \;
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} \* ${PREFIX}/share/FlightGear/Aircraft/)
 
 .include <bsd.port.mk>
