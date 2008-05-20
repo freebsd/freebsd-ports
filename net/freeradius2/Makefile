@@ -99,7 +99,7 @@ CONFIGURE_ARGS+=	--with-pic
 
 # Parse ${PORTSDIR}/UIDs and GIDs for the defaults
 USER!=	${GREP} -E '^${USER}:' ${PORTSDIR}/UIDs | \
-		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
+		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*)::0:0:([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
 GROUP!=	${GREP} -E '^${GROUP}:' ${PORTSDIR}/GIDs | \
 		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):$$/GROUP="\1" GID="\3"/'
 

@@ -56,7 +56,7 @@ OPTIONS=	TCLTHREAD "Depend on tclthread" on \
 
 # Parse ${PORTSDIR}/UIDs and GIDs for the defaults
 USER!=	${GREP} -E '^${OPENACS_USER}:' ${PORTSDIR}/UIDs | \
-		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
+		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*)::0:0:([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
 GROUP!=	${GREP} -E '^${OPENACS_GROUP}:' ${PORTSDIR}/GIDs | \
 		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):$$/GROUP="\1" GID="\3"/'
 
