@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20080519:
+  AFFECTS: users of www/nginx and www/nginx-devel
+  AUTHOR: osa@FreeBSD.org
+
+  Nginx version lines have been changed: 0.5 -> 0.6 for stable and
+  0.6 -> 0.7 for development version.  Make sure your configuration
+  files are compatible with the new viersion.
+
+20080519:
   AFFECTS: users of irc/bitlbee
   AUTHOR: brix@FreeBSD.org
 
