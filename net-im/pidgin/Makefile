@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pidgin
-PORTREVISION=	0
+PORTREVISION=	1
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Pidgin multi-protocol messaging client (GTK+ UI)
@@ -27,6 +27,7 @@ WITH_GTKUI=	yes
 
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gtk20
+USE_XORG=	xscrnsaver
 WANT_GNOME=	yes
 CONFIGURE_ARGS=	--disable-consoleui \
 		--disable-nm
