@@ -1,5 +1,5 @@
---- qmHandle.old	Tue Aug  7 17:32:57 2007
-+++ qmHandle	Tue Aug  7 17:34:55 2007
+--- qmHandle.orig	2007-07-20 02:03:45.000000000 -0300
++++ qmHandle	2008-05-20 15:20:39.000000000 -0300
 @@ -26,13 +26,17 @@
  # ### Be sure to uncomment only ONE of each variable declarations ###
  
@@ -27,7 +27,7 @@
 -my ($pidcmd) = 'pidof qmail-send';
 +#my ($pidcmd) = 'pidof qmail-send';
 +# This is for FreeBSD with a standard qmail installation:
-+my ($pidcmd) = 'ps -U qmails | grep qmail-send | cut -s -d " " -f 1';
++my ($pidcmd) = 'pgrep qmail-send';
 +
  
  ####################  USER CONFIGURATION END  ####################
