@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20080221
+PORTVERSION=	20080520
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -23,7 +23,7 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		ARJ "Enable arj archives support" On \
 		LHA "Enable lha archives support" On \
 		UNZOO "Enable zoo archives support" On \
-		UNRAR "Enable rar archives support" Off \
+		UNRAR "Enable rar archives support" On \
 		MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
 		ICONV "Enable ICONV support" Off \
@@ -33,6 +33,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
+USE_GMAKE=	yes
 
 PORTDOCS=	*
 
@@ -53,7 +54,6 @@ CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--disable-dependency-tracking \
 		--enable-experimental
 CPPFLAGS+=	-I${LOCALBASE}/include \
-		-I../libclamav \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib \
 		${PTHREAD_LIBS}
@@ -112,11 +112,6 @@ CONFIGURE_ARGS+=	--enable-gethostbyname_r
 # force to use -lthr until it's not fixed.
 .if ${OSVERSION} >= 601000
 PTHREAD_LIBS=	-lthr
-# Maybe the port is broken for
-# FreeBSD 5.2.1 since -lc_r
-# and -pthread have both issues there.
-.elif ${OSVERSION} == 502010
-PTHREAD_LIBS=	-pthread
 .else
 PTHREAD_LIBS=	-lpthread
 .endif
