@@ -1,0 +1,23 @@
+###############################################################################
+
+The mupen64plus emulator was installed
+
+1) If you have installed/upgraded any new plugins or are upgrading from a 
+previous version of Mupen64Plus, please note that in order for these changes to 
+take effect, you -must- backup and then remove ~/.mupen64plus first. After you 
+have removed the directory, run 'mupen64plus' to re-create it. Then, manually 
+copy back your save files/other data you need from the backup if necessary.
+
+2) This port install gui or no-gui version of Mupen64Plus
+
+   Run gui or no-gui version
+
+   # mupen64plus
+
+3) You can see an use manual about mupen64plus at
+
+  # %%DOCSDIR%%/readme.pdf
+
+4) Enjoy it ;)
+
+###############################################################################
