@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -68,7 +69,7 @@ CONFLICTS=	clamav-devel-[0-9]*
 CLAMAVUSER?=	clamav
 CLAMAVGROUP?=	clamav
 
-CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd
+CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd.sock
 CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
 
 SUB_FILES=	pkg-install pkg-deinstall
@@ -138,16 +139,18 @@ CONFIGURE_ARGS+=--without-iconv
 
 .if defined(WITH_MILTER)
 USE_RC_SUBR+=	clamav-milter
-.if defined(WITH_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
+. if defined(WITH_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
 USE_OPENLDAP=	yes
 LDFLAGS+=	-lldap
-.endif
-.if !exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
+. endif
+
+. if !exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
 CONFIGURE_ARGS+=	--with-sendmail=${LOCALBASE}/sbin/sendmail
-.else
+. else
 CONFIGURE_ARGS+=	--with-sendmail=/usr/sbin/sendmail
-.endif
+. endif
+
 CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER=""
 .else
