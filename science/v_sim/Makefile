@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	v_sim
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	science
 MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
 
