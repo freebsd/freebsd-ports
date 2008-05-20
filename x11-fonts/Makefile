@@ -81,6 +81,7 @@
     SUBDIR += intlfonts
     SUBDIR += jmk-x11-fonts
     SUBDIR += junicode
+    SUBDIR += kaputa
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
     SUBDIR += libFS
