@@ -20,7 +20,7 @@ RUN_DEPENDS=	${DATADIR}/config/scourge.cfg:${PORTSDIR}/games/scourge-data
 
 USE_AUTOTOOLS=	autoconf:261:env automake:19:env
 USE_GL=		gl
-USE_SDL=	sdl mixer net ttf
+USE_SDL=	sdl image mixer net ttf
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_LIBS}
