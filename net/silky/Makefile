@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	silky
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and easy to use graphical, os-independent SILC client
 
+DEPRECATED=	This port is broken with newer silc-toolkit version.
+EXPIRATION_DATE=	2008-07-20
+
 LIB_DEPENDS=	silcclient-1.1:${PORTSDIR}/devel/silc-toolkit
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
