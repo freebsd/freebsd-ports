@@ -1,0 +1,13 @@
+--- po/Makefile.in.in.bak	2008-05-18 00:27:52.000000000 +0200
++++ po/Makefile.in.in	2008-05-18 00:27:06.000000000 +0200
+@@ -38,8 +38,8 @@
+ # In automake >= 1.10, @mkdir_p@ is derived from ${MKDIR_P}, which is defined
+ # either as "/path/to/mkdir -p" or ".../install-sh -c -d". For these automake
+ # versions, $(mkinstalldirs) and $(install_sh) are unused.
+-mkinstalldirs = $(SHELL) @install_sh@ -d
+-install_sh = $(SHELL) @install_sh@
++mkinstalldirs = @install_sh@ -d
++install_sh = @install_sh@
+ MKDIR_P = @MKDIR_P@
+ mkdir_p = @mkdir_p@
+ 
