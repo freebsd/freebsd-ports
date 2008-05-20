@@ -110,6 +110,7 @@
     SUBDIR += mupen64plus-base
     SUBDIR += mupen64plus-dummyaudio
     SUBDIR += mupen64plus-glide
+    SUBDIR += mupen64plus-gln64
     SUBDIR += nonpareil
     SUBDIR += o2em
     SUBDIR += ods2reader
