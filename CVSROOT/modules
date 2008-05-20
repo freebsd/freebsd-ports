@@ -8226,6 +8226,7 @@ mupen64-sound	ports/emulators/mupen64-sound
 mupen64-tr64	ports/emulators/mupen64-tr64
 mupen64plus-base	ports/emulators/mupen64plus-base
 mupen64plus-dummyaudio	ports/emulators/mupen64plus-dummyaudio
+mupen64plus-glide	ports/emulators/mupen64plus-glide
 murrine-configurator	ports/x11-themes/murrine-configurator
 muscle		ports/biology/muscle
 muse		ports/sysutils/muse
