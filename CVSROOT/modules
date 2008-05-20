@@ -8232,6 +8232,7 @@ mupen64plus-input	ports/emulators/mupen64plus-input
 mupen64plus-rice	ports/emulators/mupen64plus-rice
 mupen64plus-rsp	ports/emulators/mupen64plus-rsp
 mupen64plus-sdlaudio	ports/emulators/mupen64plus-sdlaudio
+mupen64plus-sdlinput	ports/emulators/mupen64plus-sdlinput
 murrine-configurator	ports/x11-themes/murrine-configurator
 muscle		ports/biology/muscle
 muse		ports/sysutils/muse
