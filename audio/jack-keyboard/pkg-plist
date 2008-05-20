@@ -1,0 +1,4 @@
+bin/jack-keyboard
+share/pixmaps/jack-keyboard.png
+share/applications/jack-keyboard.desktop
+@dirrmtry share/applications
