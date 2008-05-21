@@ -24,7 +24,7 @@ MASTER_SITE_SUBDIR=	toolkit/sources
 PKGNAMESUFFIX=	-toolkit
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	nevans@talkpoint.com
 COMMENT=	Secure Internet Live Conferencing (SILC) network toolkit
 
 USE_AUTOTOOLS=	libtool:15
@@ -42,6 +42,10 @@ CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX} \
 CONFIGURE_ENV=	CFLAGS+="${CFLAGS}" \
 		CPPFLAGS+="${CPPFLAGS}"
 USE_LDCONFIG=	yes
+
+.if defined(NOPORTDOCS)
+PLIST_SUB+=	PORTDOCS="@comment "
+.endif
 
 .ifndef(WITH_PTHREADS)
 CONFIGURE_ARGS+=	--without-pthreads
@@ -80,6 +84,10 @@ CONFIGURE_ARGS+=	--disable-asm
 .endif
 
 post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -E -e 's|^(install-data-hook:).*|\1|' \
+		${WRKSRC}/doc/Makefile.in ${WRKSRC}/lib/Makefile.in
+.endif
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/lib/Makefile.in
 
