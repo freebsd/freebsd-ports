@@ -1,5 +1,5 @@
---- raop_play/aexcl_lib.h~	Thu Jul 28 04:43:17 2005
-+++ raop_play/aexcl_lib.h	Fri Aug 12 09:28:23 2005
+--- raop_play/aexcl_lib.h.orig	2005-12-16 23:17:01.000000000 +0900
++++ raop_play/aexcl_lib.h	2008-05-08 21:52:26.000000000 +0900
 @@ -1,5 +1,5 @@
  #include <stdio.h>
 -#include <asm/types.h>
@@ -17,3 +17,11 @@
  
  BEGIN_C_DECLS
  
+@@ -75,7 +78,6 @@
+ 		}
+ 		n=n<<1;
+ 	}
+-	newsize=newsize;
+ 	np=realloc(*p,newsize);
+ 	if(!np){
+ 		ERRMSG("%s: realloc failed: %s\n",func,strerror(errno));
