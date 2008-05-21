@@ -8,7 +8,7 @@
 
 PORTNAME=	evolution-exchange
 PORTVERSION=	2.22.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -60,6 +60,9 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
 .if exists(${LOCALBASE}/include/mapi.h)
 IGNORE=	does not build with ${LOCALBASE}/include/mapi.h exists in system, run pkg_info -W ${LOCALBASE}/include/mapi.h to find the offending port and uninstall it, then install ${PORTNAME} and reinstall port
 .endif
+
+post-extract:
+	@${RM} -f ${WRKSRC}/storage/*.server
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g' \
