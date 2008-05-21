@@ -7,6 +7,7 @@
 
 PORTNAME=	sguil-server
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sguil
@@ -63,11 +64,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:exec tclsh:exec ${TCLSH_CMD}:g' ${WRKSRC}/server/${f}
 .endfor
 
-pre-su-install:
+pre-install:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-pre-install:
+.endif
+	@${MKDIR} ${PREFIX}/etc/${SGUILDIR}
 	@${MKDIR} ${PREFIX}/lib/${SGUILDIR}
 	@${MKDIR} ${PREFIX}/share/${SGUILDIR}
 	@${MKDIR} /var/run/${SGUILDIR}
@@ -88,12 +90,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/server/sql_scripts/${f} ${PREFIX}/share/${SGUILDIR}/${f}
 .endfor
 post-install:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-	@${SETENV} PKG_PREFIX=${PREFIX} && PORTSDIR=${PORTSDIR} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 	@${CAT} ${PKGMESSAGE}
 
