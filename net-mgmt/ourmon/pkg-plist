@@ -250,20 +250,6 @@ mrourmon/src/ircfr/ircscan.c
 mrourmon/src/ircfr/interfaces.c
 mrourmon/src/ircfr/config.h
 mrourmon/src/README
-mrourmon/bin/mklogdir.sh
-mrourmon/bin/omupdate.sh
-mrourmon/bin/batchipall.sh
-mrourmon/bin/batchip.sh
-mrourmon/bin/monbackup.pl
-mrourmon/bin/daily.pl
-mrourmon/bin/wormtolog.pl
-mrourmon/bin/ombatchsyn.pl
-mrourmon/bin/ombatchipsrc.pl
-mrourmon/bin/ombatchip.pl
-mrourmon/bin/irc.pl
-mrourmon/bin/tcpworm.pl
-mrourmon/bin/omupdate.pl
-mrourmon/bin/ourmon
 mrourmon/etc/cbpfexamples.conf
 mrourmon/etc/README
 mrourmon/etc/ourmon.conf
@@ -278,7 +264,6 @@ mrourmon/INSTALL
 mrourmon/ACKS
 mrourmon/uninstall.txt
 mrourmon/README
-mrourmon/web.pages
 mrourmon/CHANGES
 mrourmon/VERSION
 mrourmon/README.linux
@@ -297,4 +282,5 @@ mrourmon/ubuntudep.sh
 @dirrmtry mrourmon/scripts
 @dirrmtry mrourmon/tmp
 @dirrmtry mrourmon/rrddata
+@dirrmtry mrourmon/logs
 @dirrmtry mrourmon
