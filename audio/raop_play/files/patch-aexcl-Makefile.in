@@ -1,5 +1,5 @@
---- aexcl/Makefile.in.orig	Fri Dec 16 23:17:00 2005
-+++ aexcl/Makefile.in	Thu Jul  6 16:32:41 2006
+--- aexcl/Makefile.in.orig	2005-12-16 23:17:00.000000000 +0900
++++ aexcl/Makefile.in	2008-05-08 21:29:43.000000000 +0900
 @@ -2,6 +2,7 @@
  CC = @CC@
  CXX = @CXX@
@@ -8,7 +8,12 @@
  LIBS = @LIBS@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
-@@ -17,8 +18,8 @@
+@@ -12,13 +13,12 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+ TARGET=aexcl_play
+-GLIB_SUBST=1 # remove this line, if you want to use libglib-2.0
+ DESTDIR =
  
  CXXFLAGS += -Wall -D_GNU_SOURCE -I../raop_play -I../rendezvous
  GLIB = glib-2.0
@@ -19,7 +24,7 @@
  
  ifdef GLIB_SUBST
    GLIB_SUBST_OBJ = ipod/glibsubst.o
-@@ -29,8 +30,8 @@
+@@ -29,8 +29,8 @@
  
  all: $(TARGET)
  
