@@ -466,6 +466,7 @@
     SUBDIR += postfix-policyd-sf
     SUBDIR += postfix-policyd-spf
     SUBDIR += postfix-policyd-weight
+    SUBDIR += postfix-postfwd
     SUBDIR += postfix1
     SUBDIR += postfix21
     SUBDIR += postfix22
