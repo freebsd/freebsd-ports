@@ -15996,7 +15996,6 @@ swfmill		ports/graphics/swfmill
 swftools	ports/graphics/swftools
 swhplugins	ports/audio/swhplugins
 swi-pl		ports/lang/swi-pl
-swig11		ports/devel/swig11
 swig13		ports/devel/swig13
 swiggle		ports/www/swiggle
 swish++		ports/www/swish++

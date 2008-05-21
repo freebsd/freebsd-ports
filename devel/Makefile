@@ -2362,7 +2362,6 @@
     SUBDIR += svndelta
     SUBDIR += svnkit
     SUBDIR += svntrac
-    SUBDIR += swig11
     SUBDIR += swig13
     SUBDIR += synfig
     SUBDIR += sysconftool

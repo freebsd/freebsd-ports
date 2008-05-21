@@ -3478,3 +3478,4 @@ x11-servers/xorg-printserver||2008-05-15|Has expired, software is obsolete
 www/mod_evasive20|www/mod_evasive|2008-05-17|No reason to have the 20 in the name, so remove it.
 multimedia/smplayer-qt4||2008-05-17|Functionality is now included in smplayer.
 devel/php-Net_Gearman|devel/pear-Net_Gearman|2008-05-19|Now it is a pear module
+devel/swig11||2008-05-21|Has expired: use devel/swig13 instead, last release of 1.1 was 8 years ago
