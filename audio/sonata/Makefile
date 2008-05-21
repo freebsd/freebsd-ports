@@ -7,7 +7,7 @@
 
 PORTNAME=	sonata
 PORTVERSION=	1.5.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,8 @@ COMMENT=	An elegant music player for MPD
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/mpd.py:${PORTSDIR}/audio/py-mpd
+		${PYTHON_SITELIBDIR}/mpd.py:${PORTSDIR}/audio/py-mpd \
+		${PYTHON_SITELIBDIR}/dbus/__init__.py::${PORTSDIR}/devel/py-dbus
 
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
