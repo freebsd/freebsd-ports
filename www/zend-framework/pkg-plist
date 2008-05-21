@@ -13,6 +13,7 @@
 %%DATADIR%%/demos/Zend/Gdata/YouTubeVideoBrowser/interface.html
 %%DATADIR%%/demos/Zend/Gdata/YouTubeVideoBrowser/video_browser.css
 %%DATADIR%%/demos/Zend/Gdata/YouTubeVideoBrowser/video_browser.js
+%%DATADIR%%/demos/Zend/Locale/AllLanguages.php
 %%DATADIR%%/demos/Zend/Mail/SimpleMailer.php
 %%DATADIR%%/demos/Zend/Mail/maildir/maildir.tar
 %%DATADIR%%/demos/Zend/Mail/mbox/INBOX
@@ -2446,6 +2447,18 @@
 %%DATADIR%%/tests/Zend/Service/Flickr/AllTests.php
 %%DATADIR%%/tests/Zend/Service/Flickr/OfflineTest.php
 %%DATADIR%%/tests/Zend/Service/Flickr/OnlineTest.php
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosBasic-result_427883923.response
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosBasic-result_427883924.response
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosBasic-result_427883929.response
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosBasic-result_427883930.response
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosBasic-result_427884394.response
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosBasic-result_427884398.response
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosBasic-result_427884401.response
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosBasic-result_427884403.response
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosBasic-result_427887192.response
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosBasic-result_428222530.response
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosBasic.response
+%%DATADIR%%/tests/Zend/Service/Flickr/_files/testGroupPoolGetPhotosExceptionGroupIdInvalid.response
 %%DATADIR%%/tests/Zend/Service/Flickr/_files/testTagSearchBasic-result_427883923.response
 %%DATADIR%%/tests/Zend/Service/Flickr/_files/testTagSearchBasic-result_427883924.response
 %%DATADIR%%/tests/Zend/Service/Flickr/_files/testTagSearchBasic-result_427883929.response
@@ -2623,6 +2636,7 @@
 %%DATADIR%%/tests/Zend/View/Helper/FormMultiCheckboxTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormPasswordTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormRadioTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormResetTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormSelectTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormSubmitTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormTest.php
@@ -3170,6 +3184,7 @@
 @dirrm %%DATADIR%%/demos/Zend/Mail/mbox
 @dirrm %%DATADIR%%/demos/Zend/Mail/maildir
 @dirrm %%DATADIR%%/demos/Zend/Mail
+@dirrm %%DATADIR%%/demos/Zend/Locale
 @dirrm %%DATADIR%%/demos/Zend/Gdata/YouTubeVideoBrowser
 @dirrm %%DATADIR%%/demos/Zend/Gdata
 @dirrm %%DATADIR%%/demos/Zend/Feeds
