@@ -1,0 +1,802 @@
+--- windows/MenuProc.c	2001-01-12 02:21:49.000000000 -0500
++++ windows/MenuProc.c	2008-05-21 19:27:38.000000000 -0400
+@@ -264,5 +264,5 @@
+ 		wPrevSel = (WORD)LBoxAPI(hMenu32,LBA_GETDATA,(LPARAM)&mnis);
+ 		if ((wSel == wPrevSel) || (wSel == (WORD)-1)) {
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return TRUE;
+ 		}
+@@ -280,5 +280,5 @@
+ 		if (!((lFlags & MF_POPUP) &&
+ 			!(lFlags & (MF_GRAYED|MF_DISABLED|MF_SEPARATOR)))) {
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return TRUE;
+ 		}
+@@ -290,9 +290,9 @@
+ 		ClientToScreen(hWnd,&pt);
+ 		SetRect(&rcRect,pt.x,pt.y,0,0);
+-		RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		RELEASELBOXINFO(hMenu32);
+ 		return CreatePopup(hWnd,lptps,(HMENU)(UINT)wItemID,wSel,&rcRect,TRUE);
+ 	    }
+ 	    else {
+-		RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		RELEASELBOXINFO(hMenu32);
+ 
+ 		ClientToScreen(hWnd,&pt);
+@@ -332,5 +332,5 @@
+ 			SendMessage(hWndTmp,LB_SETCURSEL,
+ 					(WPARAM)-1,0L);
+-			RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);
++			RELEASELBOXINFO(hPopupMenu32);
+ 			return TRUE;
+ 		    }
+@@ -344,5 +344,5 @@
+ 		    if (!((lFlags & MF_POPUP) &&
+ 			!(lFlags & (MF_GRAYED|MF_DISABLED|MF_SEPARATOR)))) {
+-		        RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);
++		        RELEASELBOXINFO(hPopupMenu32);
+ 			return TRUE;
+ 		    }
+@@ -358,5 +358,5 @@
+ 		    SetRect(&rcRect,pt.x,pt.y,0,0);
+ 
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);
++		    RELEASELBOXINFO(hPopupMenu32);
+ 		    return CreatePopup(hWnd,lptps,(HMENU)(UINT)wItemID,
+ 					wSel,&rcRect,TRUE);
+@@ -409,8 +409,8 @@
+ 		if (wPrevSel == (WORD)-1) {
+ 		    if (wSel == (WORD)-1) {
+-		        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		        RELEASELBOXINFO(hMenu32);
+ 			return TRUE;
+ 		    } else if (!(lptps->uiFlags & LSF_CAPTUREACTIVE))  {
+-		        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		        RELEASELBOXINFO(hMenu32);
+ 			return InternalMenuProc(hWnd,uiMsg,wParam,lParam);
+ 		    }
+@@ -420,5 +420,5 @@
+ 		if (wSel == (WORD)-1) {
+ 		    SetWindowWord(hWnd,TP_STATUS,1);
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return TRUE;
+ 		}
+@@ -450,10 +450,10 @@
+ 			ClientToScreen(hWnd,&pt);
+ 			SetRect(&rcRect,pt.x,pt.y,0,0);
+-		        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		        RELEASELBOXINFO(hMenu32);
+ 
+ 			return CreatePopup(hWnd,lptps,(HMENU)(UINT)wItemID,
+ 					wSel,&rcRect,TRUE);
+ 		    }
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return TRUE;
+ 		}
+@@ -475,5 +475,5 @@
+ 		    SetWindowWord(hWnd,TP_STATUS,1);
+ 		    lptps->uiFlags |= PSF_POPSELKILLED;
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return TRUE;
+ 		}
+@@ -497,5 +497,5 @@
+ 		    }
+ 		    SetWindowWord(hWnd,TP_STATUS,1);
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return TRUE;
+ 		}
+@@ -539,5 +539,5 @@
+ 		    if (!(lFlags & MF_POPUP) ||
+ 			    (lFlags & (MF_GRAYED|MF_DISABLED|MF_SEPARATOR))) {
+-		        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		        RELEASELBOXINFO(hMenu32);
+ 			return TRUE;
+ 		    }
+@@ -552,5 +552,5 @@
+ 
+ 			lptps->wPopupFlags[nPopupHit] |= PSF_POPSELKILLED;
+-			RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++			RELEASELBOXINFO(hMenu32);
+ 			return TRUE;
+ 		    }
+@@ -566,6 +566,6 @@
+ 		    ClientToScreen(hPopup,&pt);
+ 		    SetRect(&rcRect,pt.x,pt.y,0,0);
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);
++		    RELEASELBOXINFO(hMenu32);
++		    RELEASELBOXINFO(hPopupMenu32);
+ 		    return CreatePopup(hWnd,lptps,(HMENU)(UINT)wItemID,wSel,&rcRect,TRUE);
+ 		}
+@@ -606,5 +606,5 @@
+ 		if (wSel == (WORD)-1) {
+ 		    SetWindowWord(hWnd,TP_STATUS,1);
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return 0;
+ 		}
+@@ -614,5 +614,5 @@
+ 			SetWindowWord(hWnd,TP_STATUS,1);
+ 			lptps->uiFlags &= ~PSF_POPSELKILLED;
+-			RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++			RELEASELBOXINFO(hMenu32);
+ 			return 0;
+ 		    }
+@@ -637,5 +637,5 @@
+ 				GET_WM_COMMAND_MPS(wItemID,0,0));
+ 			SetWindowWord(hWnd,TP_STATUS,1);
+-			RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++			RELEASELBOXINFO(hMenu32);
+ 			return 0;
+ 		    }
+@@ -643,5 +643,5 @@
+ 			SetPopupMenuSel(lptps->hWndOwner,lptps->hPopups[0],0,
+ 				(lFlags & MF_SYSMENU)|MF_MOUSESELECT);
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return 0;
+ 		}
+@@ -656,5 +656,5 @@
+ 			SetWindowWord(hWnd,TP_STATUS,1);
+ 			ChangeMBSelection(hWnd,hMenu32,lptps,wPrevSel,(WORD)-1);
+-			RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++			RELEASELBOXINFO(hMenu32);
+ 			return 0;
+ 		    }
+@@ -662,5 +662,5 @@
+ 		else if (!hPopup) {
+ 		    if(hMenu32)
+-		    	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    	RELEASELBOXINFO(hMenu32);
+ 		    return 0;
+ 		}
+@@ -682,5 +682,5 @@
+ 					(lFlags & MF_SYSMENU)|MF_MOUSESELECT);
+ 		    if(hMenu32)
+-		      RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		      RELEASELBOXINFO(hMenu32);
+ 		    return TRUE;
+ 		}
+@@ -721,9 +721,9 @@
+ 			SetWindowWord(hWnd,TP_STATUS,1);
+ 		    }
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);		    
++		    RELEASELBOXINFO(hPopupMenu32);		    
+ 		}
+ 	    }
+ 	    if(hMenu32)
+-	    	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    	RELEASELBOXINFO(hMenu32);
+ 	    return 0;
+ 
+@@ -743,5 +743,5 @@
+ 		GetClientRect(hWnd, &rcRect);
+ 		if (!PtInRect(&rcRect,pt)) {
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return 0;
+ 		}
+@@ -752,5 +752,5 @@
+ 		lFlags = LBoxAPI(hMenu32,LBA_MODIFYITEM,(LPARAM)&mnis);
+ 		if (!(lFlags & (MF_POPUP|MF_BITMAP))) {
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return FALSE;
+ 		}
+@@ -759,5 +759,5 @@
+ 		wItemID = LBoxAPI(hMenu32,LBA_MODIFYITEM,(LPARAM)&mnis);
+ 		if (!(hPopupMenu32 = GETMENUINFO(wItemID))) {
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return FALSE;
+ 		}
+@@ -765,5 +765,5 @@
+ 		if (hPopupMenu32a) {
+ 		    if (hPopupMenu32a != hPopupMenu32)
+-		      RELEASELBOXINFO((LPLISTBOXINFO) hPopupMenu32a);
++		      RELEASELBOXINFO( hPopupMenu32a);
+ 		    lptps->uiFlags &= ~LSF_BUTTONDOWN;
+ 		    ChangeMBSelection(hWnd,hMenu32,lptps,wSel,(WORD)-1);
+@@ -775,10 +775,10 @@
+ 			PostMessage(lptps->hWndOwner,WM_COMMAND,
+ 				GET_WM_COMMAND_MPS(SC_CLOSE,0,0));
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);
++		    RELEASELBOXINFO(hMenu32);
++		    RELEASELBOXINFO(hPopupMenu32);
+ 		    return TRUE;
+ 		}
+ 		else {
+-		  RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		  RELEASELBOXINFO(hMenu32);
+ 		  return FALSE;
+ 		}
+@@ -792,8 +792,8 @@
+ 				(WPARAM)SC_CLOSE,lParam);
+ 		SetWindowWord(hWnd,TP_STATUS,1);
+-		RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		RELEASELBOXINFO(hMenu32);
+ 		return TRUE;
+ 	    }
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    RELEASELBOXINFO(hMenu32);
+ 	    return 0;
+ 
+@@ -816,5 +816,5 @@
+ 		lFlags |= MF_SYSMENU;
+ 	    if (lFlags < 0) {
+-	        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	        RELEASELBOXINFO(hMenu32);
+ 		return 1;
+ 	    }
+@@ -835,5 +835,5 @@
+ 				GET_WM_COMMAND_MPS(wItemID,0,0));
+ 		SetWindowWord(hWnd,TP_STATUS,1);
+-		RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		RELEASELBOXINFO(hMenu32);
+ 		return 0;
+ 	    }
+@@ -848,5 +848,5 @@
+ 		SetPopupMenuSel(lptps->hWndOwner,
+ 			lptps->hPopups[0],0,lFlags & MF_SYSMENU);
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    RELEASELBOXINFO(hMenu32);
+ 	    return 0;
+ 
+@@ -867,12 +867,12 @@
+ 		hPopupMenu32 = GETMENUINFO(hPopupMenu);
+ 		if (!hPopupMenu32) {
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return 1;
+ 		}
+-		RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		RELEASELBOXINFO(hMenu32);
+ 		hMenu32 = hPopupMenu32;
+ 	    }
+ 	    else if (!(lptps->uiFlags & TP_MENUBAR)) {
+-	            RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	            RELEASELBOXINFO(hMenu32);
+ 		    return 1;
+ 	    }
+@@ -913,5 +913,5 @@
+ 		    if (lFlags & (MF_GRAYED|MF_DISABLED))
+ 			return 0;
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    mnis.lpItemData = (LPSTR)&rcRect;
+ 		    mnis.wAction = LCA_GET|LCA_RECT;
+@@ -942,5 +942,5 @@
+ 	    else {
+ 		if (lFlags & (MF_GRAYED|MF_DISABLED)) {
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return 0;
+ 		}
+@@ -978,5 +978,5 @@
+ 		}
+ 	    }
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    RELEASELBOXINFO(hMenu32);
+ 	    return 0;
+ 
+@@ -994,5 +994,5 @@
+ 		case VK_RIGHT:
+ 		    if (!(lptps->uiFlags & TP_MENUBAR)) {
+-		        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		        RELEASELBOXINFO(hMenu32);
+ 			return 0;
+ 		    }
+@@ -1022,6 +1022,6 @@
+ 				GET_WM_MENUSELECT_MPS(wItemID,LOWORD(lFlags),
+ 							hMenu));
+-			RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
+-			RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);
++			RELEASELBOXINFO(hMenu32);
++			RELEASELBOXINFO(hPopupMenu32);
+ 			return 0;
+ 		    }
+@@ -1061,6 +1061,6 @@
+ 					lptps->hPopups[lptps->nPopups-1],
+ 					0,lFlags & MF_SYSMENU);
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);
++			    RELEASELBOXINFO(hMenu32);
++			    RELEASELBOXINFO(hPopupMenu32);
+ 			    return 0;
+ 			}
+@@ -1071,5 +1071,5 @@
+ 		    wPrevSel = (WORD)LBoxAPI(hMenu32,LBA_GETDATA,(LPARAM)&mnis);
+ 		    if (wPrevSel == (WORD)-1) {
+-		        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		        RELEASELBOXINFO(hMenu32);
+ 			return 0;
+ 		    }
+@@ -1096,5 +1096,5 @@
+ 		    if (!((lFlags & MF_POPUP) &&
+ 			!(lFlags & (MF_GRAYED|MF_DISABLED|MF_SEPARATOR)))) {
+-		        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		        RELEASELBOXINFO(hMenu32);
+ 			return 0;
+ 		    }
+@@ -1110,5 +1110,5 @@
+ 			SetPopupMenuSel(lptps->hWndOwner,lptps->hPopups[0],
+ 					0,lFlags & MF_SYSMENU);
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return 0;
+ 		case VK_RETURN:
+@@ -1117,10 +1117,10 @@
+ 		    wPrevSel = (WORD)LBoxAPI(hMenu32,LBA_GETDATA,(LPARAM)&mnis);
+ 		    if (wPrevSel == (WORD)-1) {
+-		        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		        RELEASELBOXINFO(hMenu32);
+ 			return 0;
+ 		    }
+ 		    if (lptps->nPopups == 0) {	/* item on menubar */
+ 			if (!(lptps->uiFlags & TP_MENUBAR)) {
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++			    RELEASELBOXINFO(hMenu32);
+ 			    return 0;
+ 			}
+@@ -1132,5 +1132,5 @@
+ 			    lFlags |= MF_SYSMENU;
+ 			if (lFlags & (MF_GRAYED|MF_DISABLED)) {
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++			    RELEASELBOXINFO(hMenu32);
+ 			    return 0;
+ 			}
+@@ -1172,6 +1172,6 @@
+ 			wSel = (WORD)SendMessage(hPopup,LB_GETCURSEL,0,0L);
+ 			if (wSel == (WORD)LB_ERR) {
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);
++			    RELEASELBOXINFO(hMenu32);
++			    RELEASELBOXINFO(hPopupMenu32);
+ 			    return 0;
+ 			}
+@@ -1203,5 +1203,5 @@
+ 					lptps->hPopups[lptps->nPopups-1],
+ 					0,lFlags & MF_SYSMENU);
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);
++			    RELEASELBOXINFO(hPopupMenu32);
+ 			}
+ 			else {
+@@ -1221,5 +1221,5 @@
+ 			}
+ 		    }
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return 0;
+ 		case VK_UP:
+@@ -1227,5 +1227,5 @@
+ 		    if (lptps->nPopups == 0) {
+ 			if (!(lptps->uiFlags & TP_MENUBAR)) {
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++			    RELEASELBOXINFO(hMenu32);
+ 			    return 0;
+ 			}
+@@ -1235,5 +1235,5 @@
+ 					(LPARAM)&mnis);
+ 		        if (wPrevSel == (WORD)-1) {
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++			    RELEASELBOXINFO(hMenu32);
+ 			    return 0;
+ 			}
+@@ -1250,5 +1250,5 @@
+ 				(LPARAM)&mnis);
+ 			if (!(lFlags & MF_POPUP)) {
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++			    RELEASELBOXINFO(hMenu32);
+ 			    /*  FIX_ME  hPopupMenu32 as well?? */
+ 			    return 0;
+@@ -1272,6 +1272,6 @@
+ 			wPrevSel = (WORD)SendMessage(hPopup,LB_GETCURSEL,0,0L);
+ 			if (wPrevSel == (WORD)LB_ERR) {
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
+-			    RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);
++			    RELEASELBOXINFO(hMenu32);
++			    RELEASELBOXINFO(hPopupMenu32);
+ 			    return 0;
+ 			}
+@@ -1306,7 +1306,7 @@
+ 			SetPopupMenuSel(lptps->hWndOwner,hPopup,wSel,
+ 					lFlags & MF_SYSMENU);
+-			RELEASELBOXINFO((LPLISTBOXINFO)hPopupMenu32);
++			RELEASELBOXINFO(hPopupMenu32);
+ 		    }
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return 0;
+ 		case VK_ESCAPE:
+@@ -1333,5 +1333,5 @@
+ 			SetWindowWord(hWnd,TP_STATUS,1);
+ 		    }
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    return 0;
+ 		default:
+@@ -1357,5 +1357,5 @@
+ 	    hMenu32 = GETMENUINFO((HMENU)wParam);
+ 	    DrawPopupMenuItem(hMenu32,lptps->hWndOwner,lpdis);
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    RELEASELBOXINFO(hMenu32);
+ 	    return 0L;
+ 
+@@ -1373,10 +1373,10 @@
+ 		    lFlags = LBoxAPI(hMenu32,LBA_MODIFYITEM,(LPARAM)&mnis);
+ 		    if (lFlags < 0) {
+-			RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++			RELEASELBOXINFO(hMenu32);
+ 			return 0;
+ 		    }
+ 		    lpmis->itemHeight = rcRect.bottom - rcRect.top;
+ 		    lpmis->itemWidth = rcRect.right - rcRect.left;
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 	    }
+ 	    return 0L;
+@@ -1408,5 +1408,5 @@
+ 		lFlags = LBoxAPI(hMenu32,LBA_MODIFYITEM,(LPARAM)&mnis);
+ 		if (lFlags < 0) {
+-		    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++		    RELEASELBOXINFO(hMenu32);
+ 		    break;
+ 		}
+@@ -1417,5 +1417,5 @@
+ 		    lFlags |= MF_SYSMENU;
+ 
+-	        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	        RELEASELBOXINFO(hMenu32);
+ 
+ 		return SendMessage(lptps->hWndOwner,WM_MENUSELECT,
+@@ -1447,5 +1447,5 @@
+ 		    if (wSel != (WORD)-1)
+ 			ChangeMBSelection(hWnd,hMenu32,lptps,wSel,(WORD)-1);
+-	    	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    	    RELEASELBOXINFO(hMenu32);
+ 		}
+ 	    }
+@@ -1528,9 +1528,9 @@
+ 		(LPVOID)hMenu32)))  {
+         if (hMenu32)
+-	  RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	  RELEASELBOXINFO(hMenu32);
+ 	return FALSE;
+     }
+     if (hMenu32)
+-      RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++      RELEASELBOXINFO(hMenu32);
+     lptps->nPopups++;
+     SetWindowID(lptps->hPopups[n],hPopup);
+@@ -1889,5 +1889,5 @@
+         InternalMenuProc(hWndMenu,MM_MENUINIT,(WPARAM)i,0L);
+     }
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    RELEASELBOXINFO(hMenu32);
+ }
+ 
+--- windows/GdiDC.h	1999-11-16 01:35:55.000000000 -0500
++++ windows/GdiDC.h	2008-05-21 19:18:25.000000000 -0400
+@@ -134,7 +134,4 @@
+ } DCCACHE;
+ 
+-extern DCCACHE *TWIN_DCCache;
+-extern int TWIN_DCCacheSize;
+-
+ #define	GETHDC32	GETDCINFO
+ #define	GETHDC16(h32)	(HDC)((h32)->ObjHead.hObj)
+--- windows/MenuAPI.c	2001-01-13 03:47:52.000000000 -0500
++++ windows/MenuAPI.c	2008-05-21 19:30:30.000000000 -0400
+@@ -122,5 +122,5 @@
+ 
+     bResult = LBoxAPI(hMenu32,LBA_DESTROY,0);
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    RELEASELBOXINFO(hMenu32);
+     return bResult;
+ }
+@@ -171,5 +171,5 @@
+ 	    if (lFlags == (LONG)-1) {
+ 	        if (hMenu32 != hMenu32orig)
+-		  RELEASELBOXINFO((LPLISTBOXINFO)hMenu32); 
++		  RELEASELBOXINFO(hMenu32); 
+ 		return FALSE;
+ 	    }
+@@ -228,5 +228,5 @@
+     rc = (BOOL)LBoxAPI(hMenu32,uiAction,(LPARAM)&mis);
+     if (hMenu32 != hMenu32orig)
+-      RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++      RELEASELBOXINFO(hMenu32);
+     return rc;
+ }
+@@ -282,5 +282,5 @@
+ 			uiPosition,uiFlags,uiIDNewItem,lpNewItem,
+ 			LBA_INSERTITEM);
+-	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	RELEASELBOXINFO(hMenu32);
+     }
+     APISTR((LF_APIRET,"InsertMenu: returns BOOL %d\n",bResult));
+@@ -321,5 +321,5 @@
+ 			lpmenuinfo->dwTypeData, opcode);
+ 
+-    	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    	RELEASELBOXINFO(hMenu32);
+ 
+     	APISTR((LF_APIRET,"InsertMenuItem: returns BOOL %d\n",rc));
+@@ -337,5 +337,5 @@
+     	bResult = ModifyMenuEx(hMenu32,(UINT)-1,uiFlags,uiIDNewItem,lpNewItem,
+ 			LBA_APPENDITEM);
+-    	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    	RELEASELBOXINFO(hMenu32);
+     }
+     APISTR((LF_APIRET,"AppendMenu: returns BOOL %d\n",bResult));
+@@ -355,5 +355,5 @@
+ 			uiPosition,uiFlags,uiIDNewItem,lpNewItem,
+ 			LBA_MODIFYITEM);
+-    	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    	RELEASELBOXINFO(hMenu32);
+     }
+     APISTR((LF_APIRET,"ModifyMenu: returns BOOL %d\n",bResult));
+@@ -375,5 +375,5 @@
+ 				idItem,NULL,LBA_REMOVEITEM);
+ 	}
+-	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	RELEASELBOXINFO(hMenu32);
+     }
+     return bResult;
+@@ -394,5 +394,5 @@
+ 				uiFlags,idItem,NULL, LBA_DELETEITEM);
+ 	}
+-	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	RELEASELBOXINFO(hMenu32);
+     }
+     return bResult;
+@@ -453,5 +453,5 @@
+ 	if (lFlags < 0) {
+ 	    if (hMenu32 != hMenu32orig)
+-	      RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	      RELEASELBOXINFO(hMenu32);
+ 	    return -1;
+ 	}
+@@ -471,9 +471,9 @@
+     if (LBoxAPI(hMenu32,LBA_MODIFYITEM,(LPARAM)&mis) < 0) {
+         if (hMenu32 != hMenu32orig)
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    RELEASELBOXINFO(hMenu32);
+ 	return -1;
+     }
+     if (hMenu32 != hMenu32orig)
+-      RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++      RELEASELBOXINFO(hMenu32);
+     return (LOWORD(lFlags) & uiMask);
+ }
+@@ -490,5 +490,5 @@
+ 	retcode = (BOOL)ChangeMIFlags(hMenu32,
+ 		uiIDEnableItem, uiEnable,MF_DISABLED);
+-	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	RELEASELBOXINFO(hMenu32);
+     }
+     return retcode;
+@@ -505,5 +505,5 @@
+     	rc = (BOOL)ChangeMIFlags(hMenu32, 
+ 		uiIDCheckItem,uiCheck,MF_CHECKED);
+-    	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    	RELEASELBOXINFO(hMenu32);
+     }
+     return rc;
+@@ -520,5 +520,5 @@
+     	bResult = (BOOL)ChangeMIFlags(hMenu32, 
+ 	       uiIDHiliteItem,uiHilite,MF_HILITE);
+-    	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    	RELEASELBOXINFO(hMenu32);
+     }
+     return bResult;
+@@ -799,5 +799,5 @@
+     WinFree((LPSTR)lpColumnData);
+ 
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    RELEASELBOXINFO(hMenu32);
+ 
+     return MAKELONG((WORD)nMenuWidth,(WORD)nMenuHeight);
+@@ -917,5 +917,5 @@
+ 
+     ReleaseDC(hWndMenu,hDC);
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    RELEASELBOXINFO(hMenu32);
+ }
+ 
+@@ -1045,5 +1045,5 @@
+ 
+     ReleaseDC(hWndMenu,hDC);
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    RELEASELBOXINFO(hMenu32);
+     return ((wLine+1)*wItemHeight + 1);
+ }
+@@ -1175,10 +1175,10 @@
+     if (hMenu == SetWindowMenu(hWnd, hMenu)) {
+ 	if(hMenu32)
+-        	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++        	RELEASELBOXINFO(hMenu32);
+ 	return TRUE;
+     }
+     if (!(hWndMenu = GetWindowFrame(hWnd))) {
+ 	if(hMenu32)
+-        	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++        	RELEASELBOXINFO(hMenu32);
+ 	return FALSE;
+     }
+@@ -1192,5 +1192,5 @@
+ 	}
+ 	//no free required, hMenu == 0
+-	//RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	//RELEASELBOXINFO(hMenu32);
+ 	//return TRUE;
+     }
+@@ -1198,5 +1198,5 @@
+ 	lptps = (LPTRACKPOPUPSTRUCT)WinMalloc(sizeof(TRACKPOPUPSTRUCT));
+ 	if (!lptps) {
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    RELEASELBOXINFO(hMenu32);
+ 	    return FALSE;
+ 	}
+@@ -1215,5 +1215,5 @@
+ 
+     if(hMenu32)
+-    	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    	RELEASELBOXINFO(hMenu32);
+ 
+     return TRUE;
+@@ -1255,5 +1255,5 @@
+     uiItemID = (UINT)LBoxAPI(hMenu32,LBA_MODIFYITEM,(LPARAM)&mis);
+ 
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    RELEASELBOXINFO(hMenu32);
+ 
+     if (IsMenu((HMENU)uiItemID))
+@@ -1278,5 +1278,5 @@
+     nCount = (int)LBoxAPI(hMenu32,LBA_GETDATA,(LPARAM)&mis);
+ 
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    RELEASELBOXINFO(hMenu32);
+     return nCount;
+ }
+@@ -1303,5 +1303,5 @@
+     rc = (UINT)LBoxAPI(hMenu32,LBA_MODIFYITEM,(LPARAM)&mis);
+ 
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    RELEASELBOXINFO(hMenu32);
+     return rc;
+ }
+@@ -1326,15 +1326,15 @@
+     if (((LONG)lpItemString != (LONG)-1) && HIWORD(lpItemString)) {
+ 	strncpy(lpString,lpItemString,nMaxCount);
+-	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	RELEASELBOXINFO(hMenu32);
+ 	return strlen(lpString);
+     }
+ 
+     if (lpItemString == NULL || !HIWORD(lpItemString)) {
+-        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++        RELEASELBOXINFO(hMenu32);
+ 	return 0;
+     }
+ 
+     if (uiFlags & MF_BYPOSITION) {
+-        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++        RELEASELBOXINFO(hMenu32);
+ 	return 0;
+     }
+@@ -1342,12 +1342,12 @@
+     hMenu32a = TWIN_FindMenuItem(hMenu32,uiIDItem);
+     if (!hMenu32a) {
+-        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++        RELEASELBOXINFO(hMenu32);
+         return 0;
+     }
+     hMenu = ((LPOBJHEAD)hMenu32a)->hObj;
+     if (hMenu32a != hMenu32)
+-      RELEASELBOXINFO((LPLISTBOXINFO)hMenu32a);
++      RELEASELBOXINFO(hMenu32a);
+ 
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    RELEASELBOXINFO(hMenu32);
+     return GetMenuString(hMenu,uiIDItem,lpString,nMaxCount,uiFlags);
+ }
+@@ -1371,20 +1371,20 @@
+     if (lpItemData == (LPSTR)-1) {
+ 	if (uiFlags & MF_BYPOSITION) {
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    RELEASELBOXINFO(hMenu32);
+ 	    return lpItemData;
+ 	}
+ 	hMenu32a = TWIN_FindMenuItem(hMenu32,uiItem);
+ 	if (!hMenu32a) {
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    RELEASELBOXINFO(hMenu32);
+ 	    return lpItemData;
+ 	}
+ 	hMenu = ((LPOBJHEAD)hMenu32a)->hObj;
+ 	if (hMenu32a != hMenu32) {
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32a);
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    RELEASELBOXINFO(hMenu32a);
++	    RELEASELBOXINFO(hMenu32);
+ 	    return GetMenuItemData(hMenu,uiItem,uiFlags);
+ 	}
+     }
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    RELEASELBOXINFO(hMenu32);
+     return lpItemData;
+ }
+@@ -1409,5 +1409,5 @@
+         HMENU32 hMenu32orig = hMenu32;
+ 	if (uiFlags & MF_BYPOSITION) {
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    RELEASELBOXINFO(hMenu32);
+ 	    return (UINT)-1;
+ 	}
+@@ -1416,15 +1416,15 @@
+ 
+ 	if (!hMenu32) {
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32orig);
++	    RELEASELBOXINFO(hMenu32orig);
+ 	    return (UINT)-1;
+ 	}
+ 	hMenu = ((LPOBJHEAD)hMenu32)->hObj;
+ 	if (hMenu32 != hMenu32orig)
+-	  RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	  RELEASELBOXINFO(hMenu32);
+ 
+-	RELEASELBOXINFO((LPLISTBOXINFO)hMenu32orig);
++	RELEASELBOXINFO(hMenu32orig);
+ 	return GetMenuState(hMenu,uiID,uiFlags);
+     }
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++    RELEASELBOXINFO(hMenu32);
+     return (UINT)(lFlags & ~MF_BYPOSITION);
+ }
+@@ -1450,10 +1450,10 @@
+     if (lFlags < 0) { 
+ 	if (uiFlags & MF_BYPOSITION)  {
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
++	    RELEASELBOXINFO(hMenu32);
+ 	    return FALSE;
+ 	}
+ 	hMenu32 = TWIN_FindMenuItem(hMenu32,uiItem);
+ 	if (!hMenu32) {
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32orig);
++	    RELEASELBOXINFO(hMenu32orig);
+ 	    return FALSE;
+ 	}
+@@ -1462,6 +1462,6 @@
+ 	if (lFlags < 0) {
+ 	    if (hMenu32 != hMenu32orig)
+-	      RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
+-	    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32orig);
++	      RELEASELBOXINFO(hMenu32);
++	    RELEASELBOXINFO(hMenu32orig);
+ 	    return FALSE;
+ 	}
+@@ -1473,11 +1473,11 @@
+     if (LBoxAPI(hMenu32,LBA_MODIFYITEM,(LPARAM)&mis) < 0) {
+         if (hMenu32 != hMenu32orig)
+-	  RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
+-        RELEASELBOXINFO((LPLISTBOXINFO)hMenu32orig);
++	  RELEASELBOXINFO(hMenu32);
++        RELEASELBOXINFO(hMenu32orig);
+ 	return FALSE;
+     }
+     if (hMenu32 != hMenu32orig)
+-      RELEASELBOXINFO((LPLISTBOXINFO)hMenu32);
+-    RELEASELBOXINFO((LPLISTBOXINFO)hMenu32orig);
++      RELEASELBOXINFO(hMenu32);
++    RELEASELBOXINFO(hMenu32orig);
+     return TRUE;
+ }
