@@ -6,50 +6,33 @@
 #
 
 PORTNAME=	libdisasm
-PORTVERSION=	0.21
-PORTREVISION=	1
+PORTVERSION=	0.23
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bastard
-DISTNAME=	libdisasm-0.21-pre3
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lboehne@damogran.de
-COMMENT=	The Bastard Disassembly Environment x86 disassembler library
+MAINTAINER=	bf2006a@yahoo.com
+COMMENT=	The Bastard Disassembly Environment x86 disassembler library and CLI
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
-post-patch:
-	${REINPLACE_CMD} -e 's, make, gmake,' ${WRKSRC}/Makefile
-
-.if !defined(NOPORTDOCS)
-DOCSDIR=	${DATADIR}/doc
-DOCS=	libdisasm.txt
+.ifndef(NOPORTDOCS)
+PORTDOCS=	libdisasm.txt
 .endif
 
+MAN1=	x86dis.1
 MAN3=	x86_disasm.3 x86_format_insn.3 x86_init.3
 MAN7=	libdisasm.7
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/libdisasm/libdisasm.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libdisasm/libdisasm.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libdisasm/libdis.h ${PREFIX}/include
-	${MKDIR} ${DATADIR}/data
-	${INSTALL_DATA} ${WRKSRC}/libdisasm/ia32_opcode.dat ${DATADIR}/data
-.if !defined(NOPORTDOCS)
-.for i in ${DOCS}
+post-install:
+.ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 .endif
-.for i in ${MAN3}
-	${INSTALL_MAN} ${WRKSRC}/man/${i} ${PREFIX}/man/man3
-.endfor
-.for i in ${MAN7}
-	${INSTALL_MAN} ${WRKSRC}/man/${i} ${PREFIX}/man/man7
-.endfor
 
 .include <bsd.port.mk>
