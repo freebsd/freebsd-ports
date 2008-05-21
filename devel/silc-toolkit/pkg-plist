@@ -1586,9 +1586,9 @@ libdata/pkgconfig/silcclient.pc
 %%PORTDOCS%%%%DOCSDIR%%-toolkit/tutorial/README
 %%PORTDOCS%%%%DOCSDIR%%-toolkit/tutorial/mybot/README
 %%PORTDOCS%%%%DOCSDIR%%-toolkit/tutorial/mybot/mybot.c
-@dirrm %%PORTDOCS%%%%DOCSDIR%%-toolkit/tutorial/mybot
-@dirrm %%PORTDOCS%%%%DOCSDIR%%-toolkit/tutorial
-@dirrm %%PORTDOCS%%%%DOCSDIR%%-toolkit/toolkit
-@dirrm %%PORTDOCS%%%%DOCSDIR%%-toolkit
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-toolkit/tutorial/mybot
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-toolkit/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-toolkit/toolkit
+%%PORTDOCS%%@dirrm %%DOCSDIR%%-toolkit
 @dirrmtry lib/silcsim
 @dirrmtry include/silc
