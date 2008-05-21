@@ -14,6 +14,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Foreign Function Interface
 
+DEPRECATED=	Use devel/libffi instead
+EXPIRATION_DATE=	2007-06-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
