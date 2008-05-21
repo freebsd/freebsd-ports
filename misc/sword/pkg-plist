@@ -10,6 +10,7 @@ bin/mod2osis
 bin/mod2vpl
 bin/mod2zmod
 bin/osis2mod
+bin/tei2mod
 bin/vpl2mod
 bin/vs2osisref
 bin/xml2gbs
@@ -160,7 +161,7 @@ include/sword/zld.h
 include/sword/zstr.h
 include/sword/ztext.h
 include/sword/zverse.h
-lib/libsword-1.5.10.so
+lib/libsword-1.5.11.so
 lib/libsword.a
 lib/libsword.la
 lib/libsword.so
@@ -190,6 +191,8 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/fa-utf8.conf
 %%DATADIR%%/locales.d/fi-utf8.conf
 %%DATADIR%%/locales.d/fi.conf
+%%DATADIR%%/locales.d/fr_abbrev-utf8.conf
+%%DATADIR%%/locales.d/fr_abbrev.conf
 %%DATADIR%%/locales.d/fr-utf8.conf
 %%DATADIR%%/locales.d/fr.conf
 %%DATADIR%%/locales.d/he-utf8.conf
@@ -198,6 +201,7 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/id.conf
 %%DATADIR%%/locales.d/it-utf8.conf
 %%DATADIR%%/locales.d/it.conf
+%%DATADIR%%/locales.d/ja.conf
 %%DATADIR%%/locales.d/ko-utf8.conf
 %%DATADIR%%/locales.d/ko.conf
 %%DATADIR%%/locales.d/ko_abbrev-utf8.conf
