@@ -21,7 +21,9 @@ CONFIGURE_ARGS=	--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
+.if !defined(NOPORTDOCS)
 MAN1=		v_sim.1
+.endif
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
@@ -56,11 +58,11 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|-pedantic-errors||' \
 	    	${WRKSRC}/src/extraGtkFunctions/Makefile.in
 .if defined(WITHOUT_NLS)
-	${REINPLACE_CMD} -e 's|etc 	po 	Documentation|etc 	Documentation|'	\
+	${REINPLACE_CMD} -e 's|	po ||'	\
 		${WRKSRC}/Makefile.in
 .endif
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|Documentation 	pixmaps 	examples|pixmaps|'	\
+	${REINPLACE_CMD} -e 's|Documentation||;s|pixmaps \\|pixmaps|;s|examples$$||'	\
 		${WRKSRC}/Makefile.in
 .endif
 
