@@ -31,34 +31,74 @@
 %%WWWDIR%%/dijit/_editor/html.js
 %%WWWDIR%%/dijit/_editor/nls/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/ar/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/ar/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/ar/commands.js
 %%WWWDIR%%/dijit/_editor/nls/commands.js
+%%WWWDIR%%/dijit/_editor/nls/cs/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/cs/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/cs/commands.js
+%%WWWDIR%%/dijit/_editor/nls/da/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/da/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/da/commands.js
+%%WWWDIR%%/dijit/_editor/nls/de/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/de/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/de/commands.js
+%%WWWDIR%%/dijit/_editor/nls/el/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/el/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/el/commands.js
+%%WWWDIR%%/dijit/_editor/nls/es/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/es/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/es/commands.js
+%%WWWDIR%%/dijit/_editor/nls/fi/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/fi/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/fi/commands.js
+%%WWWDIR%%/dijit/_editor/nls/fr/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/fr/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/fr/commands.js
-%%WWWDIR%%/dijit/_editor/nls/gr/FontChoice.js
-%%WWWDIR%%/dijit/_editor/nls/gr/LinkDialog.js
-%%WWWDIR%%/dijit/_editor/nls/gr/commands.js
+%%WWWDIR%%/dijit/_editor/nls/he/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/he/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/he/commands.js
+%%WWWDIR%%/dijit/_editor/nls/hu/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/hu/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/hu/commands.js
+%%WWWDIR%%/dijit/_editor/nls/it/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/it/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/it/commands.js
+%%WWWDIR%%/dijit/_editor/nls/ja/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/ja/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/ja/commands.js
+%%WWWDIR%%/dijit/_editor/nls/ko/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/ko/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/ko/commands.js
+%%WWWDIR%%/dijit/_editor/nls/nb/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/nb/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/nb/commands.js
+%%WWWDIR%%/dijit/_editor/nls/nl/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/nl/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/nl/commands.js
+%%WWWDIR%%/dijit/_editor/nls/pl/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/pl/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/pl/commands.js
+%%WWWDIR%%/dijit/_editor/nls/pt-pt/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/pt-pt/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/pt-pt/commands.js
+%%WWWDIR%%/dijit/_editor/nls/pt/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/pt/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/pt/commands.js
+%%WWWDIR%%/dijit/_editor/nls/ru/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/ru/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/ru/commands.js
+%%WWWDIR%%/dijit/_editor/nls/sv/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/sv/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/sv/commands.js
+%%WWWDIR%%/dijit/_editor/nls/tr/FontChoice.js
+%%WWWDIR%%/dijit/_editor/nls/tr/LinkDialog.js
+%%WWWDIR%%/dijit/_editor/nls/tr/commands.js
+%%WWWDIR%%/dijit/_editor/nls/zh-tw/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/zh-tw/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/zh-tw/commands.js
+%%WWWDIR%%/dijit/_editor/nls/zh/FontChoice.js
 %%WWWDIR%%/dijit/_editor/nls/zh/LinkDialog.js
 %%WWWDIR%%/dijit/_editor/nls/zh/commands.js
 %%WWWDIR%%/dijit/_editor/plugins/AlwaysShowToolbar.js
@@ -138,21 +178,33 @@
 %%WWWDIR%%/dijit/form/_Spinner.js
 %%WWWDIR%%/dijit/form/nls/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/Textarea.js
+%%WWWDIR%%/dijit/form/nls/ar/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/ar/Textarea.js
+%%WWWDIR%%/dijit/form/nls/ar/validate.js
 %%WWWDIR%%/dijit/form/nls/cs/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/cs/Textarea.js
 %%WWWDIR%%/dijit/form/nls/cs/validate.js
+%%WWWDIR%%/dijit/form/nls/da/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/da/Textarea.js
+%%WWWDIR%%/dijit/form/nls/da/validate.js
 %%WWWDIR%%/dijit/form/nls/de/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/de/Textarea.js
 %%WWWDIR%%/dijit/form/nls/de/validate.js
+%%WWWDIR%%/dijit/form/nls/el/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/el/Textarea.js
+%%WWWDIR%%/dijit/form/nls/el/validate.js
 %%WWWDIR%%/dijit/form/nls/es/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/es/Textarea.js
 %%WWWDIR%%/dijit/form/nls/es/validate.js
+%%WWWDIR%%/dijit/form/nls/fi/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/fi/Textarea.js
+%%WWWDIR%%/dijit/form/nls/fi/validate.js
 %%WWWDIR%%/dijit/form/nls/fr/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/fr/Textarea.js
 %%WWWDIR%%/dijit/form/nls/fr/validate.js
-%%WWWDIR%%/dijit/form/nls/gr/ComboBox.js
-%%WWWDIR%%/dijit/form/nls/gr/Textarea.js
-%%WWWDIR%%/dijit/form/nls/gr/validate.js
+%%WWWDIR%%/dijit/form/nls/he/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/he/Textarea.js
+%%WWWDIR%%/dijit/form/nls/he/validate.js
 %%WWWDIR%%/dijit/form/nls/hu/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/hu/Textarea.js
 %%WWWDIR%%/dijit/form/nls/hu/validate.js
@@ -165,17 +217,31 @@
 %%WWWDIR%%/dijit/form/nls/ko/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/ko/Textarea.js
 %%WWWDIR%%/dijit/form/nls/ko/validate.js
+%%WWWDIR%%/dijit/form/nls/nb/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/nb/Textarea.js
+%%WWWDIR%%/dijit/form/nls/nb/validate.js
+%%WWWDIR%%/dijit/form/nls/nl/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/nl/Textarea.js
+%%WWWDIR%%/dijit/form/nls/nl/validate.js
 %%WWWDIR%%/dijit/form/nls/pl/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/pl/Textarea.js
 %%WWWDIR%%/dijit/form/nls/pl/validate.js
+%%WWWDIR%%/dijit/form/nls/pt-pt/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/pt-pt/Textarea.js
+%%WWWDIR%%/dijit/form/nls/pt-pt/validate.js
 %%WWWDIR%%/dijit/form/nls/pt/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/pt/Textarea.js
 %%WWWDIR%%/dijit/form/nls/pt/validate.js
 %%WWWDIR%%/dijit/form/nls/ru/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/ru/Textarea.js
 %%WWWDIR%%/dijit/form/nls/ru/validate.js
+%%WWWDIR%%/dijit/form/nls/sv/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/sv/Textarea.js
+%%WWWDIR%%/dijit/form/nls/sv/validate.js
+%%WWWDIR%%/dijit/form/nls/tr/ComboBox.js
+%%WWWDIR%%/dijit/form/nls/tr/Textarea.js
+%%WWWDIR%%/dijit/form/nls/tr/validate.js
 %%WWWDIR%%/dijit/form/nls/validate.js
-%%WWWDIR%%/dijit/form/nls/zh-cn/validate.js
 %%WWWDIR%%/dijit/form/nls/zh-tw/ComboBox.js
 %%WWWDIR%%/dijit/form/nls/zh-tw/Textarea.js
 %%WWWDIR%%/dijit/form/nls/zh-tw/validate.js
@@ -207,23 +273,33 @@
 %%WWWDIR%%/dijit/layout/templates/TabContainer.html
 %%WWWDIR%%/dijit/layout/templates/TooltipDialog.html
 %%WWWDIR%%/dijit/layout/templates/_TabButton.html
-%%WWWDIR%%/dijit/nls/Textarea.js
+%%WWWDIR%%/dijit/nls/ar/common.js
+%%WWWDIR%%/dijit/nls/ar/loading.js
 %%WWWDIR%%/dijit/nls/common.js
 %%WWWDIR%%/dijit/nls/cs/common.js
 %%WWWDIR%%/dijit/nls/cs/loading.js
+%%WWWDIR%%/dijit/nls/da/common.js
+%%WWWDIR%%/dijit/nls/da/loading.js
 %%WWWDIR%%/dijit/nls/de/common.js
 %%WWWDIR%%/dijit/nls/de/loading.js
 %%WWWDIR%%/dijit/nls/dijit-all_ROOT.js
+%%WWWDIR%%/dijit/nls/dijit-all_ar.js
 %%WWWDIR%%/dijit/nls/dijit-all_cs.js
+%%WWWDIR%%/dijit/nls/dijit-all_da.js
 %%WWWDIR%%/dijit/nls/dijit-all_de-de.js
 %%WWWDIR%%/dijit/nls/dijit-all_de.js
+%%WWWDIR%%/dijit/nls/dijit-all_el.js
 %%WWWDIR%%/dijit/nls/dijit-all_en-gb.js
 %%WWWDIR%%/dijit/nls/dijit-all_en-us.js
 %%WWWDIR%%/dijit/nls/dijit-all_en.js
 %%WWWDIR%%/dijit/nls/dijit-all_es-es.js
 %%WWWDIR%%/dijit/nls/dijit-all_es.js
+%%WWWDIR%%/dijit/nls/dijit-all_fi-fi.js
+%%WWWDIR%%/dijit/nls/dijit-all_fi.js
 %%WWWDIR%%/dijit/nls/dijit-all_fr-fr.js
 %%WWWDIR%%/dijit/nls/dijit-all_fr.js
+%%WWWDIR%%/dijit/nls/dijit-all_he-il.js
+%%WWWDIR%%/dijit/nls/dijit-all_he.js
 %%WWWDIR%%/dijit/nls/dijit-all_hu.js
 %%WWWDIR%%/dijit/nls/dijit-all_it-it.js
 %%WWWDIR%%/dijit/nls/dijit-all_it.js
@@ -231,20 +307,30 @@
 %%WWWDIR%%/dijit/nls/dijit-all_ja.js
 %%WWWDIR%%/dijit/nls/dijit-all_ko-kr.js
 %%WWWDIR%%/dijit/nls/dijit-all_ko.js
+%%WWWDIR%%/dijit/nls/dijit-all_nl-nl.js
+%%WWWDIR%%/dijit/nls/dijit-all_nl.js
+%%WWWDIR%%/dijit/nls/dijit-all_no.js
 %%WWWDIR%%/dijit/nls/dijit-all_pl.js
 %%WWWDIR%%/dijit/nls/dijit-all_pt-br.js
+%%WWWDIR%%/dijit/nls/dijit-all_pt-pt.js
 %%WWWDIR%%/dijit/nls/dijit-all_pt.js
 %%WWWDIR%%/dijit/nls/dijit-all_ru.js
+%%WWWDIR%%/dijit/nls/dijit-all_sv.js
+%%WWWDIR%%/dijit/nls/dijit-all_tr.js
 %%WWWDIR%%/dijit/nls/dijit-all_xx.js
 %%WWWDIR%%/dijit/nls/dijit-all_zh-cn.js
 %%WWWDIR%%/dijit/nls/dijit-all_zh-tw.js
 %%WWWDIR%%/dijit/nls/dijit-all_zh.js
+%%WWWDIR%%/dijit/nls/el/common.js
+%%WWWDIR%%/dijit/nls/el/loading.js
 %%WWWDIR%%/dijit/nls/es/common.js
 %%WWWDIR%%/dijit/nls/es/loading.js
+%%WWWDIR%%/dijit/nls/fi/common.js
+%%WWWDIR%%/dijit/nls/fi/loading.js
 %%WWWDIR%%/dijit/nls/fr/common.js
 %%WWWDIR%%/dijit/nls/fr/loading.js
-%%WWWDIR%%/dijit/nls/gr/common.js
-%%WWWDIR%%/dijit/nls/gr/loading.js
+%%WWWDIR%%/dijit/nls/he/common.js
+%%WWWDIR%%/dijit/nls/he/loading.js
 %%WWWDIR%%/dijit/nls/hu/common.js
 %%WWWDIR%%/dijit/nls/hu/loading.js
 %%WWWDIR%%/dijit/nls/it/common.js
@@ -254,14 +340,22 @@
 %%WWWDIR%%/dijit/nls/ko/common.js
 %%WWWDIR%%/dijit/nls/ko/loading.js
 %%WWWDIR%%/dijit/nls/loading.js
+%%WWWDIR%%/dijit/nls/nb/common.js
+%%WWWDIR%%/dijit/nls/nb/loading.js
+%%WWWDIR%%/dijit/nls/nl/common.js
+%%WWWDIR%%/dijit/nls/nl/loading.js
 %%WWWDIR%%/dijit/nls/pl/common.js
 %%WWWDIR%%/dijit/nls/pl/loading.js
+%%WWWDIR%%/dijit/nls/pt-pt/common.js
+%%WWWDIR%%/dijit/nls/pt-pt/loading.js
 %%WWWDIR%%/dijit/nls/pt/common.js
 %%WWWDIR%%/dijit/nls/pt/loading.js
 %%WWWDIR%%/dijit/nls/ru/common.js
 %%WWWDIR%%/dijit/nls/ru/loading.js
 %%WWWDIR%%/dijit/nls/sv/common.js
 %%WWWDIR%%/dijit/nls/sv/loading.js
+%%WWWDIR%%/dijit/nls/tr/common.js
+%%WWWDIR%%/dijit/nls/tr/loading.js
 %%WWWDIR%%/dijit/nls/zh-tw/common.js
 %%WWWDIR%%/dijit/nls/zh-tw/loading.js
 %%WWWDIR%%/dijit/nls/zh/common.js
@@ -1018,19 +1112,28 @@
 %%WWWDIR%%/dojo/io/iframe.js
 %%WWWDIR%%/dojo/io/script.js
 %%WWWDIR%%/dojo/jaxer.js
+%%WWWDIR%%/dojo/nls/ar/colors.js
 %%WWWDIR%%/dojo/nls/colors.js
 %%WWWDIR%%/dojo/nls/cs/colors.js
+%%WWWDIR%%/dojo/nls/da/colors.js
 %%WWWDIR%%/dojo/nls/de/colors.js
+%%WWWDIR%%/dojo/nls/el/colors.js
 %%WWWDIR%%/dojo/nls/es/colors.js
+%%WWWDIR%%/dojo/nls/fi/colors.js
 %%WWWDIR%%/dojo/nls/fr/colors.js
-%%WWWDIR%%/dojo/nls/gr/colors.js
+%%WWWDIR%%/dojo/nls/he/colors.js
 %%WWWDIR%%/dojo/nls/hu/colors.js
 %%WWWDIR%%/dojo/nls/it/colors.js
 %%WWWDIR%%/dojo/nls/ja/colors.js
 %%WWWDIR%%/dojo/nls/ko/colors.js
+%%WWWDIR%%/dojo/nls/nb/colors.js
+%%WWWDIR%%/dojo/nls/nl/colors.js
 %%WWWDIR%%/dojo/nls/pl/colors.js
+%%WWWDIR%%/dojo/nls/pt-pt/colors.js
 %%WWWDIR%%/dojo/nls/pt/colors.js
 %%WWWDIR%%/dojo/nls/ru/colors.js
+%%WWWDIR%%/dojo/nls/sv/colors.js
+%%WWWDIR%%/dojo/nls/tr/colors.js
 %%WWWDIR%%/dojo/nls/zh-tw/colors.js
 %%WWWDIR%%/dojo/nls/zh/colors.js
 %%WWWDIR%%/dojo/number.js
@@ -2199,7 +2302,29 @@
 %%WWWDIR%%/dojox/widget/Wizard/Wizard.css.commented.css
 %%WWWDIR%%/dojox/widget/Wizard/Wizard.html
 %%WWWDIR%%/dojox/widget/nls/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/ar/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/cs/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/da/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/de/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/el/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/es/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/fi/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/fr/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/he/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/hu/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/it/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/ja/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/ko/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/nb/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/nl/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/pl/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/pt-pt/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/pt/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/ru/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/sv/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/tr/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/zh-tw/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/zh/Wizard.js
 %%WWWDIR%%/dojox/widget/tests/_tags.json
 %%WWWDIR%%/dojox/widget/tests/demo_FisheyeList-orig.html
 %%WWWDIR%%/dojox/widget/tests/demo_FisheyeList.html
@@ -2315,7 +2440,29 @@
 @dirrm %%WWWDIR%%/dojox/wire
 @dirrm %%WWWDIR%%/dojox/widget/tests/images
 @dirrm %%WWWDIR%%/dojox/widget/tests
+@dirrm %%WWWDIR%%/dojox/widget/nls/zh-tw
+@dirrm %%WWWDIR%%/dojox/widget/nls/zh
+@dirrm %%WWWDIR%%/dojox/widget/nls/tr
 @dirrm %%WWWDIR%%/dojox/widget/nls/sv
+@dirrm %%WWWDIR%%/dojox/widget/nls/ru
+@dirrm %%WWWDIR%%/dojox/widget/nls/pt-pt
+@dirrm %%WWWDIR%%/dojox/widget/nls/pt
+@dirrm %%WWWDIR%%/dojox/widget/nls/pl
+@dirrm %%WWWDIR%%/dojox/widget/nls/nl
+@dirrm %%WWWDIR%%/dojox/widget/nls/nb
+@dirrm %%WWWDIR%%/dojox/widget/nls/ko
+@dirrm %%WWWDIR%%/dojox/widget/nls/ja
+@dirrm %%WWWDIR%%/dojox/widget/nls/it
+@dirrm %%WWWDIR%%/dojox/widget/nls/hu
+@dirrm %%WWWDIR%%/dojox/widget/nls/he
+@dirrm %%WWWDIR%%/dojox/widget/nls/fr
+@dirrm %%WWWDIR%%/dojox/widget/nls/fi
+@dirrm %%WWWDIR%%/dojox/widget/nls/es
+@dirrm %%WWWDIR%%/dojox/widget/nls/el
+@dirrm %%WWWDIR%%/dojox/widget/nls/de
+@dirrm %%WWWDIR%%/dojox/widget/nls/da
+@dirrm %%WWWDIR%%/dojox/widget/nls/cs
+@dirrm %%WWWDIR%%/dojox/widget/nls/ar
 @dirrm %%WWWDIR%%/dojox/widget/nls
 @dirrm %%WWWDIR%%/dojox/widget/Wizard
 @dirrm %%WWWDIR%%/dojox/widget/Toaster
@@ -2542,18 +2689,27 @@
 @dirrm %%WWWDIR%%/dojo/resources
 @dirrm %%WWWDIR%%/dojo/nls/zh-tw
 @dirrm %%WWWDIR%%/dojo/nls/zh
+@dirrm %%WWWDIR%%/dojo/nls/tr
+@dirrm %%WWWDIR%%/dojo/nls/sv
 @dirrm %%WWWDIR%%/dojo/nls/ru
+@dirrm %%WWWDIR%%/dojo/nls/pt-pt
 @dirrm %%WWWDIR%%/dojo/nls/pt
 @dirrm %%WWWDIR%%/dojo/nls/pl
+@dirrm %%WWWDIR%%/dojo/nls/nl
+@dirrm %%WWWDIR%%/dojo/nls/nb
 @dirrm %%WWWDIR%%/dojo/nls/ko
 @dirrm %%WWWDIR%%/dojo/nls/ja
 @dirrm %%WWWDIR%%/dojo/nls/it
 @dirrm %%WWWDIR%%/dojo/nls/hu
-@dirrm %%WWWDIR%%/dojo/nls/gr
+@dirrm %%WWWDIR%%/dojo/nls/he
 @dirrm %%WWWDIR%%/dojo/nls/fr
+@dirrm %%WWWDIR%%/dojo/nls/fi
 @dirrm %%WWWDIR%%/dojo/nls/es
+@dirrm %%WWWDIR%%/dojo/nls/el
 @dirrm %%WWWDIR%%/dojo/nls/de
+@dirrm %%WWWDIR%%/dojo/nls/da
 @dirrm %%WWWDIR%%/dojo/nls/cs
+@dirrm %%WWWDIR%%/dojo/nls/ar
 @dirrm %%WWWDIR%%/dojo/nls
 @dirrm %%WWWDIR%%/dojo/io
 @dirrm %%WWWDIR%%/dojo/dnd
@@ -2619,38 +2775,54 @@
 @dirrm %%WWWDIR%%/dijit/resources
 @dirrm %%WWWDIR%%/dijit/nls/zh-tw
 @dirrm %%WWWDIR%%/dijit/nls/zh
+@dirrm %%WWWDIR%%/dijit/nls/tr
 @dirrm %%WWWDIR%%/dijit/nls/sv
 @dirrm %%WWWDIR%%/dijit/nls/ru
+@dirrm %%WWWDIR%%/dijit/nls/pt-pt
 @dirrm %%WWWDIR%%/dijit/nls/pt
 @dirrm %%WWWDIR%%/dijit/nls/pl
+@dirrm %%WWWDIR%%/dijit/nls/nl
+@dirrm %%WWWDIR%%/dijit/nls/nb
 @dirrm %%WWWDIR%%/dijit/nls/ko
 @dirrm %%WWWDIR%%/dijit/nls/ja
 @dirrm %%WWWDIR%%/dijit/nls/it
 @dirrm %%WWWDIR%%/dijit/nls/hu
-@dirrm %%WWWDIR%%/dijit/nls/gr
+@dirrm %%WWWDIR%%/dijit/nls/he
 @dirrm %%WWWDIR%%/dijit/nls/fr
+@dirrm %%WWWDIR%%/dijit/nls/fi
 @dirrm %%WWWDIR%%/dijit/nls/es
+@dirrm %%WWWDIR%%/dijit/nls/el
 @dirrm %%WWWDIR%%/dijit/nls/de
+@dirrm %%WWWDIR%%/dijit/nls/da
 @dirrm %%WWWDIR%%/dijit/nls/cs
+@dirrm %%WWWDIR%%/dijit/nls/ar
 @dirrm %%WWWDIR%%/dijit/nls
 @dirrm %%WWWDIR%%/dijit/layout/templates
 @dirrm %%WWWDIR%%/dijit/layout
 @dirrm %%WWWDIR%%/dijit/form/templates
 @dirrm %%WWWDIR%%/dijit/form/nls/zh-tw
-@dirrm %%WWWDIR%%/dijit/form/nls/zh-cn
 @dirrm %%WWWDIR%%/dijit/form/nls/zh
+@dirrm %%WWWDIR%%/dijit/form/nls/tr
+@dirrm %%WWWDIR%%/dijit/form/nls/sv
 @dirrm %%WWWDIR%%/dijit/form/nls/ru
+@dirrm %%WWWDIR%%/dijit/form/nls/pt-pt
 @dirrm %%WWWDIR%%/dijit/form/nls/pt
 @dirrm %%WWWDIR%%/dijit/form/nls/pl
+@dirrm %%WWWDIR%%/dijit/form/nls/nl
+@dirrm %%WWWDIR%%/dijit/form/nls/nb
 @dirrm %%WWWDIR%%/dijit/form/nls/ko
 @dirrm %%WWWDIR%%/dijit/form/nls/ja
 @dirrm %%WWWDIR%%/dijit/form/nls/it
 @dirrm %%WWWDIR%%/dijit/form/nls/hu
-@dirrm %%WWWDIR%%/dijit/form/nls/gr
+@dirrm %%WWWDIR%%/dijit/form/nls/he
 @dirrm %%WWWDIR%%/dijit/form/nls/fr
+@dirrm %%WWWDIR%%/dijit/form/nls/fi
 @dirrm %%WWWDIR%%/dijit/form/nls/es
+@dirrm %%WWWDIR%%/dijit/form/nls/el
 @dirrm %%WWWDIR%%/dijit/form/nls/de
+@dirrm %%WWWDIR%%/dijit/form/nls/da
 @dirrm %%WWWDIR%%/dijit/form/nls/cs
+@dirrm %%WWWDIR%%/dijit/form/nls/ar
 @dirrm %%WWWDIR%%/dijit/form/nls
 @dirrm %%WWWDIR%%/dijit/form
 @dirrm %%WWWDIR%%/dijit/demos/nihao/nls/zh
@@ -2667,18 +2839,27 @@
 @dirrm %%WWWDIR%%/dijit/_editor/plugins
 @dirrm %%WWWDIR%%/dijit/_editor/nls/zh-tw
 @dirrm %%WWWDIR%%/dijit/_editor/nls/zh
+@dirrm %%WWWDIR%%/dijit/_editor/nls/tr
+@dirrm %%WWWDIR%%/dijit/_editor/nls/sv
 @dirrm %%WWWDIR%%/dijit/_editor/nls/ru
+@dirrm %%WWWDIR%%/dijit/_editor/nls/pt-pt
 @dirrm %%WWWDIR%%/dijit/_editor/nls/pt
 @dirrm %%WWWDIR%%/dijit/_editor/nls/pl
+@dirrm %%WWWDIR%%/dijit/_editor/nls/nl
+@dirrm %%WWWDIR%%/dijit/_editor/nls/nb
 @dirrm %%WWWDIR%%/dijit/_editor/nls/ko
 @dirrm %%WWWDIR%%/dijit/_editor/nls/ja
 @dirrm %%WWWDIR%%/dijit/_editor/nls/it
 @dirrm %%WWWDIR%%/dijit/_editor/nls/hu
-@dirrm %%WWWDIR%%/dijit/_editor/nls/gr
+@dirrm %%WWWDIR%%/dijit/_editor/nls/he
 @dirrm %%WWWDIR%%/dijit/_editor/nls/fr
+@dirrm %%WWWDIR%%/dijit/_editor/nls/fi
 @dirrm %%WWWDIR%%/dijit/_editor/nls/es
+@dirrm %%WWWDIR%%/dijit/_editor/nls/el
 @dirrm %%WWWDIR%%/dijit/_editor/nls/de
+@dirrm %%WWWDIR%%/dijit/_editor/nls/da
 @dirrm %%WWWDIR%%/dijit/_editor/nls/cs
+@dirrm %%WWWDIR%%/dijit/_editor/nls/ar
 @dirrm %%WWWDIR%%/dijit/_editor/nls
 @dirrm %%WWWDIR%%/dijit/_editor
 @dirrm %%WWWDIR%%/dijit/_base
