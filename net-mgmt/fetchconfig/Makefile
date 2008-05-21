@@ -7,6 +7,7 @@
 
 PORTNAME=	fetchconfig
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SAVANNAH
 
@@ -22,7 +23,7 @@ NO_BUILD=	yes
 MODULES=	model/Abstract.pm model/CiscoCAT.pm model/CiscoIOS.pm \
 		model/Dell.pm model/Detector.pm model/FortiGate.pm \
 		model/Parks.pm model/ProCurve.pm model/Riverstone.pm \
-		model/Terayon.pm Constants.pm Logger.pm
+		model/DmSwitch.pm model/Terayon.pm Constants.pm Logger.pm
 PORTDOCS=	CHANGES README device_table.example
 
 post-patch:
