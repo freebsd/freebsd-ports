@@ -36,4 +36,9 @@ you may need to perform the following steps.
    when you install b2evolution.
    If you lose it, you will have to delete the database tables and reinstall.
 
+   If you upgrade from b2evolution version 1.x.y you may need to upgrade 
+   your database as described at
+
+   http://manual.b2evolution.net/Upgrade_from_an_older_version
+
 ==================================================================
