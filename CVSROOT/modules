@@ -3469,6 +3469,7 @@ funnelweb	ports/devel/funnelweb
 funnyboat	ports/games/funnyboat
 fuse		ports/emulators/fuse
 fusefs-chironfs	ports/sysutils/fusefs-chironfs
+fusefs-cryptofs	ports/sysutils/fusefs-cryptofs
 fusefs-curlftpfs	ports/sysutils/fusefs-curlftpfs
 fusefs-encfs	ports/sysutils/fusefs-encfs
 fusefs-funionfs	ports/sysutils/fusefs-funionfs
