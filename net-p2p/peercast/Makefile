@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A peer-to-peer network for broadcasting and listening to streams
 
-FORBIDDEN=	arbitrary code execution, http://www.securityfocus.com/bid/28986
+FORBIDDEN=	arbitrary code execution, http://www.vuxml.org/freebsd/402ae710-26a2-11dd-ae05-825f4c35000a.html
 
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
