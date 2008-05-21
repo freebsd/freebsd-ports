@@ -3,10 +3,10 @@ bin/appcfg.py
 bin/dev_appserver.py
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/VERSION
-%%DATADIR%%/appcfg.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/guestbook/app.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demos/guestbook/guestbook.py
+%%DATADIR%%/VERSION
+%%DATADIR%%/appcfg.py
 %%DATADIR%%/dev_appserver.py
 %%DATADIR%%/google/__init__.py
 %%DATADIR%%/google/appengine/__init__.py
