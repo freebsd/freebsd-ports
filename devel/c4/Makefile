@@ -22,7 +22,7 @@ MAN1=		c4.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/c4 ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/c4.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/c4.1 ${MAN1PREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
