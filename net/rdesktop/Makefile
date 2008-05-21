@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rdesktop
-PORTVERSION=	1.5.0
-PORTREVISION?=	3
-CATEGORIES=	net comms
+PORTVERSION=	1.6.0
+PORTREVISION?=	0
+CATEGORIES=	net comms ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -21,6 +21,10 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 DOCS=		doc/AUTHORS doc/TODO doc/*.txt
 MAN1=		rdesktop.1
+
+.if !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--with-ipv6
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdesktop ${PREFIX}/bin
