@@ -12,7 +12,7 @@ bin/virtualenv
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/refresh-support-files.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/refresh-support-files.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/refresh-support-files.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/support-files/setuptools-0.6c7-py2.5.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/support-files/setuptools-%%PYEASYINSTALL_VER%%-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/support-files/virtualenv.bash
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.pyc

@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # $FreeBSD$
 
+ARGS=(${VIRTUALENVARGS})
+NEWPYTHONENV="${ARGS[$((${#ARGS[*]} - 1))]}"
+
 if [ ! -d ${NEWPYTHONENV} ]; then
-	%%PYTHON_CMD%% %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.py ${NEWPYTHONENV}
+	%%PYTHON_CMD%% %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.py ${VIRTUALENVARGS}
 fi
 
 if [ -f ${NEWPYTHONENV}/bin/activate ]; then
 	source ${NEWPYTHONENV}/bin/activate
 fi
-
