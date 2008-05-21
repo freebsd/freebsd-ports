@@ -1,7 +1,12 @@
 @comment $FreeBSD$
 bin/awesome
 bin/awesome-client
+bin/awesome-menu
 bin/awesome-message
+%%DATADIR%%/icons/awesome16.png
+%%DATADIR%%/icons/awesome32.png
+%%DATADIR%%/icons/awesome48.png
+%%DATADIR%%/icons/awesome64.png
 %%DATADIR%%/icons/layouts/dwindle.png
 %%DATADIR%%/icons/layouts/dwindlew.png
 %%DATADIR%%/icons/layouts/floating.png
