@@ -142,6 +142,7 @@ LIB_DEPENDS+=	avahi-core.5:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	BONJOUR=""
 PRPL_MODULES:=	${PRPL_MODULES},bonjour
 .else
+CONFIGURE_ARGS+=--disable-avahi
 PLIST_SUB+=	BONJOUR="@comment not installed: "
 .endif
 
