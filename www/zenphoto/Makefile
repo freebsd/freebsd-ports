@@ -29,8 +29,14 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR} \
 		"! -name README.html ! -name License.txt")
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	${CHMOD} 644 ${WWWDIR}/albums/*.png
-	${CHMOD} 644 ${WWWDIR}/albums/*.jpg
+.if exists(${WWWDIR}/albums/zen-logo.jpg)
+	${CHMOD} 644 ${WWWDIR}/albums/zen-logo.jpg
+.endif
+.if (exists(${WWWDIR}/albums/multimediaDefault.png) && \
+	exists(${WWWDIR}/albums/videoDefault.png))
+	${CHMOD} 644 ${WWWDIR}/albums/videoDefault.png
+	${CHMOD} 644 ${WWWDIR}/albums/multimediaDefault.png
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
