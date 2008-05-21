@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.0
+PORTVERSION=	1.0.2
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	googleappengine
-DISTNAME=	${PORTNAME:S|-|_|}
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
+DISTNAME=	${PORTNAME:S|-|_|}_${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Development tools for Google App Engine (SDK)
@@ -22,6 +21,8 @@ NO_BUILD=	yes
 
 USE_PYTHON=	2.5+
 USE_ZIP=	yes
+
+WRKSRC=	${WRKDIR}/${PORTNAME:S,-,_,}
 
 FIND_FILES=	${WRKSRC} -type f -name "*.py" -print0
 FIND_FILES_BAK=	${WRKSRC} -type f -and \( -name "*.orig" -or -name "*.bak" \)
