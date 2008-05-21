@@ -13247,6 +13247,7 @@ postfix-gps-devel	ports/mail/postfix-gps-devel
 postfix-policyd-sf	ports/mail/postfix-policyd-sf
 postfix-policyd-spf	ports/mail/postfix-policyd-spf
 postfix-policyd-weight	ports/mail/postfix-policyd-weight
+postfix-postfwd	ports/mail/postfix-postfwd
 postfix1	ports/mail/postfix1
 postfix21	ports/mail/postfix21
 postfix22	ports/mail/postfix22
