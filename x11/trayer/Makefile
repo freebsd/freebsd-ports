@@ -7,7 +7,7 @@
 
 PORTNAME=	trayer
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/t/trayer
@@ -34,8 +34,8 @@ post-patch:
 		${WRKSRC}/Makefile.common
 
 post-install:
-	${MKDIR} ${DOCSDIR}
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
