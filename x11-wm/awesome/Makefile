@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
@@ -25,6 +25,7 @@ USE_XORG=	x11 xft xext xinerama xt xrandr xproto
 
 MAN1=		awesome.1 \
 		awesome-client.1 \
+		awesome-menu.1 \
 		awesome-message.1
 MAN5=		awesomerc.5
 PORTDOCS=	AUTHORS LICENSE README STYLE UPGRADE
