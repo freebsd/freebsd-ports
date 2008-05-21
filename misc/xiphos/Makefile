@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomesword
 PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
 
 RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell \
-		${LOCALBASE}/lib/libsword-1.5.10.so:${PORTSDIR}/misc/sword
+		${LOCALBASE}/lib/libsword-1.5.11.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GETTEXT=	yes
