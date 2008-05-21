@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	b2evolution
-PORTVERSION=	1.10.3
+PORTVERSION=	2.4.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	evocms
@@ -20,7 +20,7 @@ PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 USE_ZIP=	YES
 USE_DOS2UNIX=	YES
 
-B2EVO_DATE?=	2007-11-01
+B2EVO_DATE?=	stable-2008-04-27
 USE_PHP=	mysql pcre session xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
@@ -30,6 +30,7 @@ WRKSRC=		${WRKDIR}/${TMPDIR}
 B2EVO_URL?=	b2evo
 B2EVO_DIR?=	www/${B2EVO_URL}
 PLIST=		${WRKDIR}/pkg-plist
+WARNING=	${PKGDIR}/pkg-warning
 
 OPTIONS=	LOCAL_DB_SERVER "Want to use local MySQL server?" on
 
@@ -39,6 +40,9 @@ OPTIONS=	LOCAL_DB_SERVER "Want to use local MySQL server?" on
 USE_MYSQL=	YES
 RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 .endif
+
+pre-everything::
+	@${SH} ${WARNING}
 
 pre-install:
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
