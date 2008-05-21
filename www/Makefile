@@ -484,7 +484,6 @@
     SUBDIR += mysqlphp2postgres
     SUBDIR += nanoblogger
     SUBDIR += nd
-    SUBDIR += neon
     SUBDIR += neon26
     SUBDIR += neon28
     SUBDIR += neonpp
