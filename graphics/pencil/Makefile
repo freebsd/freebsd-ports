@@ -34,6 +34,12 @@ USE_XORG=	xi xrender xrandr xfixes xcursor xinerama xext x11 xau xdmcp \
 USE_GL=		gl glu
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile
+.endif
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} -unix PREFIX=${PREFIX} \
@@ -54,4 +60,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
