@@ -15,7 +15,7 @@ PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/xml/update/${PORTVERSION:R}/
+PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION:R}/
 PATCHFILES=	patch.4.6.21.1
 PATCH_DIST_STRIP=	-d ..
 # * patch.4.6.21.1: -----------------------------------------------------------
@@ -24,6 +24,7 @@ PATCH_DIST_STRIP=	-d ..
 
 # I allow matthias.andree@gmx.de and all freebsd committer to do changes
 # to this package.
+
 MAINTAINER=	gslin@gslin.org
 COMMENT=	The Berkeley DB package, revision 4.6
 
