@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- libgst/Makefile.in.orig	Tue Nov 22 01:19:02 2005
-+++ libgst/Makefile.in	Fri Dec 16 23:18:14 2005
-@@ -307,7 +307,7 @@
+--- libgst/Makefile.in.orig	2008-05-16 12:56:06.000000000 +0200
++++ libgst/Makefile.in	2008-05-16 12:56:15.000000000 +0200
+@@ -319,7 +319,7 @@
+ CLEANFILES = genprims$(EXEEXT) genbc$(EXEEXT) genvm$(EXEEXT)
+ 
  # definitions for libgst.la
- libgst_la_LIBADD = $(top_builddir)/lib-src/library.la \
- 	$(top_builddir)/libffi/libffi.la @LIBSNPRINTFV@ @LIBREADLINE@ \
--	@LIBGMP@ $(am__append_3)
-+	@LIBGMP@ -lexecinfo $(am__append_3)
- libgst_la_DEPENDENCIES = $(top_builddir)/lib-src/library.la \
- 	$(top_builddir)/libffi/libffi.la @LIBSNPRINTFV@ \
- 	$(am__append_4)
+-libgst_la_LIBADD = $(top_builddir)/lib-src/library.la \
++libgst_la_LIBADD = $(top_builddir)/lib-src/library.la -lexecinfo \
+ 	$(LIBSIGSEGV) $(LIBFFI) $(LIBSNPRINTFV) $(LIBREADLINE) $(LIBGMP)
+ 
+ libgst_la_DEPENDENCIES = $(top_builddir)/lib-src/library.la @LIBSNPRINTFV@
