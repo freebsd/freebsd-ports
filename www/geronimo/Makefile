@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	geronimo
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.1
 CATEGORIES=	www devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	geronimo/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${WEBSERVER}-jee5-${PORTVERSION}-bin
+DISTNAME=	${PORTNAME}-${WEBSERVER}-javaee5-${PORTVERSION}-bin
 
 MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	Open-source Java EE 5 application server
@@ -40,43 +40,20 @@ WEBSERVER=	jetty6
 WEBSERVER=	tomcat6
 .endif
 
-MAJOR_VER=	${PORTVERSION:S/.0.2//}
-APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION:S/.0.2//}
+MAJOR_VER=	${PORTVERSION:C/\..*//}
+APP_HOME?=	${PREFIX}/${PKGBASE}${MAJOR_VER}
 LOG_DIR=	${APP_HOME}/var/log
 APP_TITLE=	Geronimo
-APP_SHORTNAME=	geronimo${MAJOR_VER:S/.0.2//}
+APP_SHORTNAME=	geronimo${MAJOR_VER}
 GERONIMO_USER?=	www
 GERONIMO_GROUP?=www
 GERONIMO_OUT=	${LOG_DIR}/geronimo.out
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/${PORTNAME}-${WEBSERVER}-jee5-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-bin//}
 JAR_FILE=	bin/server.jar
-WEBPATHV=	${WEBSERVER}
-WEBPATHNV=	jetty
-TCOMMENT=	"@comment "
-JCOMMENT=	"@comment "
-.if ${WEBSERVER} != "jetty6"
-WEBPATHV=	tomcat
-WEBPATHNV=	tomcat
-TCOMMENT=
-.else
-WEBPATHNV=	jetty
-JCOMMENT=
-.endif
-PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} \
-		WWWOWN=${TOMCAT_USER} \
-		WWWGRP=${TOMCAT_GROUP} \
-		PVER=${PORTVERSION} \
-		WEBPATHV=${WEBPATHV} \
-		WEBPATHNV=${WEBPATHNV} \
-		WEBPATHV=${WEBPATHV} \
-		WEBPATHNV=${WEBPATHNV} \
-		TCOMMENT=${TCOMMENT} \
-		JCOMMENT=${JCOMMENT} \
-		JCOMMENTD=${JCOMMENTD} \
-		TCOMMENTD=${TCOMMENTD}
 LATEST_LINK=	${APP_SHORTNAME}
+PLIST_FILES=	${GERONIMO_OUT:S,^${PREFIX}/,,}
 
 SUB_LIST=	GERONIMO_HOME=${APP_HOME} \
 		APP_SHORTNAME=${APP_SHORTNAME} \
@@ -108,34 +85,15 @@ pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@${ECHO_MSG} -n ">> Creating destination directory..."
-	@${MKDIR} ${APP_HOME}
-	@${MKDIR} ${LOG_DIR}
-	@${MKDIR} ${APP_HOME}/deploy
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} ">> Copying files to destination directory..."
-	@${CP} -R ${WRKSRC}/* ${APP_HOME}
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} -n ">> Creating log files..."
-	@${INSTALL} -m 664 -o ${GERONIMO_USER} -g ${GERONIMO_GROUP} /dev/null ${GERONIMO_OUT}
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} -n ">> Creating symlink to tools.jar..."
-	@${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/lib/tools.jar
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} -n ">> Fixing ownership settings..."
-	@${CHOWN} -R ${GERONIMO_USER}:${GERONIMO_GROUP} ${APP_HOME}/lib ${APP_HOME}/var \
-		${APP_HOME}/schema ${APP_HOME}/lib ${APP_HOME}/repository
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} -n ">> Fixing permissions..."
-	@${CHMOD} 755 `${FIND} ${APP_HOME} -type d`
-	@${ECHO_MSG} " [ DONE ]"
-
+	${MKDIR} ${APP_HOME} && ${CHOWN} ${GERONIMO_USER}:${GERONIMO_GROUP} ${APP_HOME}
+	@(cd ${WRKSRC} && ${FIND} . |\
+		 ${CPIO} -pdmu -R ${GERONIMO_USER}:${GERONIMO_GROUP} ${APP_HOME})
+	${INSTALL} -o ${GERONIMO_USER} -g ${GERONIMO_GROUP} -m 0644 /dev/null ${GERONIMO_OUT}
 post-install:
 	@${ECHO_MSG} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
+	@${FIND} -s ${WRKSRC} -not -type d | \
+		 ${SED} -ne 's,^${WRKSRC},${APP_HOME:S,${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${FIND} -s -d ${WRKSRC} -type d | \
+		 ${SED} -ne 's,^${WRKSRC},@dirrm ${APP_HOME:S,${PREFIX}/,,},p' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
