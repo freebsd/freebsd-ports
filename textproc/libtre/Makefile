@@ -8,6 +8,7 @@
 
 PORTNAME=	libtre
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://laurikari.net/tre/ \
 		${MASTER_SITE_LOCAL}
@@ -17,20 +18,15 @@ DISTNAME=	tre-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight fully POSIX compliant regexp matching library
 
-CONFLICTS=	glimpse-4*	# agrep(1)
-
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+= --enable-static --disable-agrep
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		agrep.1
-MANCOMPRESSED=	no
 
 OPTIONS=	NLS "native language support" off \
 		OPTIMIZED_CFLAGS "append optimization flags to CFLAGS" off
