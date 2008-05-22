@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	palm
 MASTER_SITES=	SF/synce
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@logvinov.com
 COMMENT=	Gnome VFS module for WinCE devices
 
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2

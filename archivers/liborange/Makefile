@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@logvinov.com
 COMMENT=	Extract Microsoft Cabinet files from self-extracting installers
 
 LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce \
