@@ -18,15 +18,17 @@ COMMENT=	An Apache module to try to protect the HTTP Server from DoS/DDoS attack
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-WANT_APACHE=	2
+USE_APACHE=	1.3+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
-WRKSRC=		${WRKDIR}/mod_evasive
 
 PORTDOCS=	LICENSE README test.pl
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
+
+.if ${APACHE_VERSION} != "13"
+MODULENAME=	${PORTNAME}20
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/bin/mail|/usr/bin/mail|g" \
