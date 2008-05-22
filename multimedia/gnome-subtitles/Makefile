@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome-subtitles
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +14,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	marcin@studio4plus.com
 COMMENT=	Subtitle editor with video preview
 
-BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
+LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
+BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
+		${LOCALBASE}/lib/sublib/sublib.dll:${PORTSDIR}/multimedia/sublib
+RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
+		${LOCALBASE}/lib/sublib/sublib.dll:${PORTSDIR}/multimedia/sublib
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 gnomedocutils
