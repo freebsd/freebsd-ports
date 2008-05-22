@@ -15,7 +15,7 @@ MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Foreign Function Interface
 
 DEPRECATED=	Use devel/libffi instead
-EXPIRATION_DATE=	2007-06-01
+EXPIRATION_DATE=	2008-06-01
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
