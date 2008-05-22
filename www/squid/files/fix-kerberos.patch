@@ -1,0 +1,103 @@
+This file contains a test for the presence of krb5-config;
+it is needed to make the squid_kerb_auth helper program
+compile against newer versions of Heimdal. See also
+files/patch-helpers-negotiate_auth-squid_kerb_auth-Makefile.in.
+
+In order to have it applied before the icap26-boostrap.patch it is
+not merged into patch-configure. See the port's Makefile for further
+explanation.
+
+--- configure.orig	2008-04-25 21:49:52.000000000 +0200
++++ configure	2008-05-17 19:15:24.000000000 +0200
+@@ -753,6 +753,9 @@
+ NTLM_AUTH_HELPERS
+ DIGEST_AUTH_HELPERS
+ NEGOTIATE_AUTH_HELPERS
++KRB5CONFIG
++KERBLIBS
++KERBINC
+ EXTERNAL_ACL_HELPERS
+ CPP
+ GREP
+@@ -5591,6 +5594,62 @@
+ fi
+ 
+ 
++
++
++if `echo "$NEGOTIATE_AUTH_HELPERS" | grep -q squid_kerb_auth`; then
++    # Extract the first word of "krb5-config", so it can be a program name with args.
++set dummy krb5-config; ac_word=$2
++{ echo "$as_me:$LINENO: checking for $ac_word" >&5
++echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
++if test "${ac_cv_path_KRB5CONFIG+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  case $KRB5CONFIG in
++  [\\/]* | ?:[\\/]*)
++  ac_cv_path_KRB5CONFIG="$KRB5CONFIG" # Let the user override the test with a path.
++  ;;
++  *)
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $PATH
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++  for ac_exec_ext in '' $ac_executable_extensions; do
++  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
++    ac_cv_path_KRB5CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++    break 2
++  fi
++done
++done
++IFS=$as_save_IFS
++
++  test -z "$ac_cv_path_KRB5CONFIG" && ac_cv_path_KRB5CONFIG="false"
++  ;;
++esac
++fi
++KRB5CONFIG=$ac_cv_path_KRB5CONFIG
++if test -n "$KRB5CONFIG"; then
++  { echo "$as_me:$LINENO: result: $KRB5CONFIG" >&5
++echo "${ECHO_T}$KRB5CONFIG" >&6; }
++else
++  { echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6; }
++fi
++
++
++    if test -z "$KRB5CONFIG"; then
++	{ { echo "$as_me:$LINENO: error: sorry" >&5
++echo "$as_me: error: sorry" >&2;}
++   { (exit need krb5-config to determine compilation settings); exit need krb5-config to determine compilation settings; }; }
++    else
++	KERBLIBS=`$KRB5CONFIG --libs gssapi`
++	KERBINC=`$KRB5CONFIG --cflags`
++
++
++    fi
++fi
++
+ # Check whether --enable-ntlm-fail-open was given.
+ if test "${enable_ntlm_fail_open+set}" = set; then
+   enableval=$enable_ntlm_fail_open;  if test "$enableval" = "yes" ; then
+@@ -27733,6 +27792,9 @@
+ NTLM_AUTH_HELPERS!$NTLM_AUTH_HELPERS$ac_delim
+ DIGEST_AUTH_HELPERS!$DIGEST_AUTH_HELPERS$ac_delim
+ NEGOTIATE_AUTH_HELPERS!$NEGOTIATE_AUTH_HELPERS$ac_delim
++KRB5CONFIG!$KRB5CONFIG$ac_delim
++KERBLIBS!$KERBLIBS$ac_delim
++KERBINC!$KERBINC$ac_delim
+ EXTERNAL_ACL_HELPERS!$EXTERNAL_ACL_HELPERS$ac_delim
+ CPP!$CPP$ac_delim
+ GREP!$GREP$ac_delim
+@@ -27784,7 +27846,7 @@
+ LTLIBOBJS!$LTLIBOBJS$ac_delim
+ _ACEOF
+ 
+-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 89; then
++  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 92; then
+     break
+   elif $ac_last_try; then
+     { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
