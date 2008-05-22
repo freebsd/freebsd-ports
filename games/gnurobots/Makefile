@@ -6,36 +6,29 @@
 #
 
 PORTNAME=	gnurobots
-PORTVERSION=	1.0D
-PORTREVISION=	3
+PORTVERSION=	1.1.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	gnurobots
+MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU diversion wherein Scheme-coded robots explore a world
 
 LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 
-GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm
+USE_GNOME=	gnometarget glib20
+GNU_CONFIGURE=	yes
 
-pre-patch:
-	${CP} ${WRKSRC}/getopt/getopt.h ${WRKSRC}/include
-	${CP} ${WRKSRC}/getopt/getopt.c ${WRKSRC}/src
-	${CP} ${WRKSRC}/getopt/getopt1.c ${WRKSRC}/src
-
-do-install:
-	${MKDIR} ${PREFIX}/share/gnurobots/maps ${PREFIX}/share/gnurobots/scheme \
-		${PREFIX}/share/doc/gnurobots
-	${INSTALL_PROGRAM} ${WRKSRC}/src/robots ${PREFIX}/bin/gnurobots
-	${INSTALL_PROGRAM} ${WRKSRC}/src/robots_logfile ${PREFIX}/bin/gnurobots_logfile
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xrobots ${PREFIX}/bin/xgnurobots
-	${INSTALL_DATA} ${WRKSRC}/maps/* ${PREFIX}/share/gnurobots/maps/
-	${INSTALL_DATA} ${WRKSRC}/scheme/* ${PREFIX}/share/gnurobots/scheme/
-	${INSTALL_MAN} ${WRKSRC}/doc/* ${PREFIX}/share/doc/gnurobots/
+post-patch:
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in AUTHORS ChangeLog NEWS README THANKS doc/Robots-HOWTO doc/contrib
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
