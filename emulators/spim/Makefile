@@ -7,55 +7,49 @@
 #
 
 PORTNAME=	spim
-PORTVERSION=	7.2.1
-PORTREVISION=	3
+PORTVERSION=	7.3
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
+MASTER_SITES=	http://pages.cs.wisc.edu/~larus/SPIM/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIPS32 Simulator
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+OPTIONS=	GUI "Graphical user interface" on
 
+BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}
+
+ALL_TARGET=	${PORTNAME}
 MAN1=		spim.1
 
 PORTDOCS=	cycle.ps.gz spim.ps.gz SPIM.html
 PLIST_FILES=	bin/spim %%DATADIR%%/exceptions.s
 PLIST_DIRS=	%%DATADIR%%
 
-OPTIONS=	GUI "Graphical user interface" on
-
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GUI)
+.if !defined(WITHOUT_GUI)
 USE_XORG=	x11 xaw
 BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake
 PLIST_FILES+=	bin/xspim
 MAN1+=		xspim.1
 .endif
 
-do-configure:
-
-do-build:
-	cd ${WRKSRC}/spim && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
-.if defined(WITH_GUI)
-	cd ${WRKSRC}/xspim && ${XMKMF} && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE}
+post-build:
+.if !defined(WITHOUT_GUI)
+	@(cd ${WRKSRC}/xspim && ${XMKMF} && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE})
 .endif
 
 do-install:
-	cd ${WRKSRC}/spim && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
-		${INSTALL_TARGET}
-.if defined(WITH_GUI)
-	cd ${WRKSRC}/xspim && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
-		${INSTALL_TARGET}
-	${INSTALL_MAN} ${WRKSRC}/Documentation/xspim.man ${PREFIX}/man/man1/xspim.1
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/spim ${PREFIX}/bin/spim
+	${INSTALL_MAN} ${WRKSRC}/Documentation/spim.man ${MANPREFIX}/man/man1/spim.1
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/CPU/exceptions.s ${DATADIR}/exceptions.s
+.if !defined(WITHOUT_GUI)
+	${INSTALL_PROGRAM} ${WRKSRC}/xspim/xspim ${PREFIX}/bin/xspim
+	${INSTALL_MAN} ${WRKSRC}/Documentation/xspim.man ${MANPREFIX}/man/man1/xspim.1
 .endif
-
-post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Documentation/TeX/cycle.ps ${DOCSDIR}

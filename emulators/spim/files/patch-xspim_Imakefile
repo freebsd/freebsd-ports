@@ -1,32 +1,37 @@
---- xspim/Imakefile.orig	Mon Aug 29 02:28:15 2005
-+++ xspim/Imakefile	Mon Jul 17 14:24:25 2006
-@@ -33,15 +33,15 @@
+--- xspim/Imakefile.orig	2006-08-29 11:23:19.000000000 +0900
++++ xspim/Imakefile	2008-04-23 00:58:19.000000000 +0900
+@@ -33,13 +33,13 @@
  #
  
  # Full path for the directory that will hold the executable files:
 -BIN_DIR = /usr/local/bin
 +BIN_DIR = ${PREFIX}/bin
  
- # Full path for the directory that will hold the man files:
--MAN_DIR = /usr/local/share/man1
-+MAN_DIR = ${PREFIX}/share/man1
+ # Full path for the directory that will hold the exception handler:
+-EXCEPTION_DIR = /usr/local/lib
++EXCEPTION_DIR = ${PREFIX}/share/spim
  
- # Full path for the exception handler file:
--#EXCEPTION_PATH = /usr/local/lib/exceptions.s
-+EXCEPTION_PATH = ${PREFIX}/share/spim/exceptions.s
- # Use this path for testing:
--EXCEPTION_PATH = $(CPU_DIR)/exceptions.s
-+#EXCEPTION_PATH = $(CPU_DIR)/exceptions.s
+ # Full path for the directory that will hold the man files:
+-MAN_DIR = /usr/man/mann
++MAN_DIR = ${PREFIX}/man/man1
+ 
  
  # If you have flex, use it instead of lex.  If you use flex, define this
- # variable and set LEXFLAGS.
-@@ -119,9 +119,6 @@
- NormalProgramTarget(xspim_sub,$(XOBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+@@ -91,7 +91,7 @@
+ DEPLIBS = XawClientDepLibs
+ LOCALLIBS = XawClientLibs
+ 
+-CDEBUGFLAGS = -g
++#CDEBUGFLAGS = -g
+ 
+ INCLUDES = -I. -I$(CPU_DIR)
+ 
+@@ -113,7 +113,7 @@
+ 	./Configure
  
  InstallProgram(xspim,$(BIN_DIR))
--InstallManPage(xspim,$(MAN_DIR))
--InstallNonExec($(EXCEPTION_DIR)/exceptions.s,$(EXCEPTION_PATH))
--
+-InstallNonExec($(CPU_DIR)/exceptions.s,$(EXCEPTION_DIR))
++#InstallNonExec($(CPU_DIR)/exceptions.s,$(EXCEPTION_DIR))
+ #InstallManPage($(DOC_DIR)/xspim,$(MAN_DIR))
  
- y.tab.h: y.tab.c
  
