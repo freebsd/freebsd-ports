@@ -109,7 +109,7 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.17
+PORTVERSION=	1.5.18
 PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
@@ -438,10 +438,11 @@ pre-patch::
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-ifdef
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
+IGNORE=	The WITH_MUTT_MBOX_HOOK_PATCH does not work at the moment.
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.17.sidebar.20071102.txt
+SIDEBAR_PATCH=	patch-1.5.18.sidebar.20080517.txt
 DISTFILES+=	${SIDEBAR_PATCH}:tchan
 XML_NEEDED=	yes
 pre-patch::
@@ -549,7 +550,7 @@ pre-install:
 
 post-install:
 	@${ECHO} > ${PKGMESSAGE}
-	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
+	${INSTALL_DATA} ${WRKSRC}/doc/Muttrc ${PREFIX}/etc/Muttrc.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
