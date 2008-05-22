@@ -49,91 +49,99 @@
 %%PYTHON_SITELIBDIR%%/Gnuplot/utils.py
 %%PYTHON_SITELIBDIR%%/Gnuplot/utils.pyc
 %%PYTHON_SITELIBDIR%%/Gnuplot/utils.pyo
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/ANNOUNCE.txt.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/ANNOUNCE.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/CREDITS.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/Errors.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/Errors/DataError.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/Errors/Error.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/Errors/OptionError.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/LICENSE.txt.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/Errors.py/DataError.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/Errors.py/Error.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/Errors.py/OptionError.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/Gnuplot.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/LICENSE.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/NEWS.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems/Func.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems/PlotItem.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems/_FileItem.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems/_InlineFileItem.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems/_TempFileItem.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems/_unset.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/README.txt.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/TODO.txt.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems.py/Func.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems.py/PlotItem.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems.py/_FileItem.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems.py/_InlineFileItem.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems.py/_NewFileItem.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/PlotItems.py/_unset.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/README.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/RELEASES.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/TODO.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/_Gnuplot.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/_Gnuplot/Gnuplot.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/_Gnuplot/_GnuplotFile.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/__init__.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/_Gnuplot.py/Gnuplot.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/_Gnuplot.py/_GnuplotFile.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/demo.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/funcutils.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/Miscellaneous_Events.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/Standard_Suite.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/application.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/bounds.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/closeable.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/document.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/floating.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/gnuplot_Suite.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/graph.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/index.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/modal.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/modified.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/name.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/odds_and_ends.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/picture.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/position.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/resizable.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/titled.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/visible.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/window.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/zoomable.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites/zoomed.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/Miscellaneous_Events.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/Standard_Suite.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/application.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/bounds.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/closeable.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/document.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/floating.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/gnuplot_Suite.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/graph.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/index.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/modal.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/modified.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/name.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/odds_and_ends.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/picture.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/position.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/resizable.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/titled.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/visible.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/window.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/zoomable.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gnuplot_Suites.py/zoomed.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_cygwin.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_cygwin/GnuplotOpts.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_cygwin/GnuplotProcess.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_cygwin.py/GnuplotOpts.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_cygwin.py/GnuplotProcess.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_java.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_java.py/GnuplotOpts.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_java.py/GnuplotProcess.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_java.py/OutputProcessor.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_mac.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_mac/GnuplotOpts.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_mac/GnuplotProcess.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_mac/_GNUPLOT.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_mac.py/GnuplotOpts.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_mac.py/GnuplotProcess.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_mac.py/_GNUPLOT.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_macosx.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_macosx/GnuplotOpts.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_macosx/GnuplotProcess.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_macosx.py/GnuplotOpts.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_macosx.py/GnuplotProcess.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_unix.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_unix/GnuplotOpts.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_unix/GnuplotProcess.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_unix.py/GnuplotOpts.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_unix.py/GnuplotProcess.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_win32.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_win32/GnuplotOpts.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_win32/GnuplotProcess.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_win32.py/GnuplotOpts.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/gp_win32.py/GnuplotProcess.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/index.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/setup.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs/Arg.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs/ArgOneParam.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs/BareStringArg.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs/BooleanArg.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs/KeywordArg.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs/KeywordOrBooleanArg.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs/MutuallyExclusiveArgs.html
-%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs/StringArg.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs.py/Arg.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs.py/ArgOneParam.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs.py/BareStringArg.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs.py/BooleanArg.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs.py/KeywordArg.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs.py/KeywordOrBooleanArg.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs.py/MutuallyExclusiveArgs.html
+%%PORTDOCS%%%%DOCSDIR%%/Gnuplot/termdefs.py/StringArg.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/test.html
 %%PORTDOCS%%%%DOCSDIR%%/Gnuplot/utils.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/termdefs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gp_win32
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gp_unix
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gp_macosx
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gp_mac
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gp_cygwin
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gnuplot_Suites
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/_Gnuplot
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/PlotItems
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/Errors
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/termdefs.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gp_win32.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gp_unix.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gp_macosx.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gp_mac.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gp_java.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gp_cygwin.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/gnuplot_Suites.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/_Gnuplot.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/PlotItems.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot/Errors.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Gnuplot
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Gnuplot
