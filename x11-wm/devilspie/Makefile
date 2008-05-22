@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	devilspie
-PORTVERSION=	0.20.2
-PORTREVISION=	2
+PORTVERSION=	0.22
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.burtonini.com/computing/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A window manipulation tool
 
-USE_GNOME=	libwnck
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnometarget libwnck
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		devilspie.1
 PORTDOCS=	AUTHORS NEWS README TODO
+PLIST_FILES=	bin/devilspie \
+		share/locale/de/LC_MESSAGES/devilspie.mo
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||' \
