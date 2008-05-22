@@ -7,15 +7,19 @@ etc/bash_completion.d/darcs
 %%SERVER%%share/darcs/xslt/browse.xslt
 %%SERVER%%share/darcs/xslt/common.xslt
 %%SERVER%%share/darcs/xslt/errors.xslt
+%%SERVER%%share/darcs/xslt/errors.xml
 %%SERVER%%share/darcs/xslt/patches.xslt
 %%SERVER%%share/darcs/xslt/repos.xslt
 %%SERVER%%share/darcs/xslt/rss.xslt
 %%SERVER%%share/darcs/xslt/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_new
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_old
+%%PORTDOCS%%%%DOCSDIR%%/manual/WARNINGS
 %%PORTDOCS%%%%DOCSDIR%%/manual/contents.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/crossref.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/darcs.css
 %%PORTDOCS%%%%DOCSDIR%%/manual/darcs.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/darcs.pdf
 %%PORTDOCS%%%%DOCSDIR%%/manual/darcs.ps
 %%PORTDOCS%%%%DOCSDIR%%/manual/footnode.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/images.aux
@@ -40,7 +44,18 @@ etc/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/manual/img23.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/img24.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/img25.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img26.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img27.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img28.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img29.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/img3.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img30.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img31.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img32.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img33.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img34.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img35.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/img36.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/img4.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/img5.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/img6.png
@@ -63,11 +78,12 @@ etc/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/manual/node7.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node8.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node9.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/nx_grp_g.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/patch-theory.pdf
 %%PORTDOCS%%%%DOCSDIR%%/manual/prev.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/prev_g.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/up.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/up_g.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/WARNINGS
 @dirrm etc/bash_completion.d
 %%SERVER%%@dirrmtry etc/darcs
 %%SERVER%%@dirrmtry www/cgi-bin
