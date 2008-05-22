@@ -16417,6 +16417,7 @@ tnef		ports/converters/tnef
 tnef2txt	ports/textproc/tnef2txt
 tnftp		ports/ftp/tnftp
 tnftpd		ports/ftp/tnftpd
+tnl		ports/games/tnl
 tnt		ports/devel/tnt
 tochnog		ports/cad/tochnog
 todo		ports/deskutils/todo
