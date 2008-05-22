@@ -23,6 +23,8 @@ PLIST_FILES=	bin/mcpp    \
 		lib/libmcpp.so.2	\
 		lib/libmcpp.a	\
 		lib/libmcpp.la	\
+		include/mcpp_lib.h \
+		include/mcpp_out.h \
 		share/doc/mcpp/LICENSE  \
 		share/doc/mcpp/NEWS     \
 		share/doc/mcpp/README   \
