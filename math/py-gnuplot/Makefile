@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	py-gnuplot
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	math python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnuplot-py
+MASTER_SITES=	SF/gnuplot-py
 DISTNAME=	gnuplot-py-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to gnuplot plotting program
 
-BUILD_DEPENDS=	${PYNUMERIC}
+BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		${PYNUMERIC}
+		${PYNUMPY}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -26,9 +24,8 @@ PYDISTUTILS_PKGNAME=	gnuplot-py
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/py-gnuplot
-	cd ${WRKSRC}/doc && ${TAR} -chf - * | \
-		${TAR} --unlink -xf - -C ${PREFIX}/share/doc/py-gnuplot
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
