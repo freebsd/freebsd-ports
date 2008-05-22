@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@logvinov.com
 COMMENT=	Decompress data compressed with PKWARE Data Compression Library
 
 USE_AUTOTOOLS=	libtool:15
