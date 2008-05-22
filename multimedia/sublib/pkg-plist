@@ -1,0 +1,4 @@
+lib/sublib/sublib.dll
+libdata/pkgconfig/sublib.pc
+@dirrmtry lib/sublib
+@dirrmtry lib/pkgconfig

@@ -1,0 +1,8 @@
+SubLib is a library that eases the development of subtitling applications. It
+supports the most common text-based subtitle formats and allows for subtitle
+editing, conversion and synchronization.
+
+SubLib is written in C# and can be used in platforms like Mono or .NET
+Framework.
+
+WWW: http://sublib.sourceforge.net/

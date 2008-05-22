@@ -1,0 +1,29 @@
+# New ports collection makefile for:	sublib
+# Date created:				12 May 2008
+# Whom:				Marcin Simonides <marcin@studio4plus.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sublib
+PORTVERSION=	0.9
+CATEGORIES=	multimedia textproc
+MASTER_SITES=	SF
+
+MAINTAINER=	marcin@studio4plus.com
+COMMENT=	Subtitle handling library for .NET/Mono
+
+BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
+RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
+
+USE_ZIP=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnomehack
+
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
+.include <bsd.port.post.mk>
