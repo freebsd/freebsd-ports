@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sakai
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 CATEGORIES=	www java
-MASTER_SITES=	http://source.sakaiproject.org/release/2.4.1/sakai_2-4-1/
-DISTNAME=	${PORTNAME}-bin_2-4-1
+MASTER_SITES=	http://source.sakaiproject.org/release/2.5.0/sakai-2-5-0/
+DISTNAME=	${PORTNAME}-bin-2-5-0
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Sakai is an online Collaboration and Learning Environment
@@ -20,7 +20,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/${PORTNAME}-bin-${PORTVERSION}
 TOMCAT=		${PREFIX}/tomcat5.5
 TOMCATOWN=	www
 TOMCATGRP=	www
