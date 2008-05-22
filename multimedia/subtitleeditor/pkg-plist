@@ -13,6 +13,7 @@ bin/subtitleeditor
 %%DATADIR%%/glade/dialog-spell-checking.glade
 %%DATADIR%%/glade/dialog-split-document.glade
 %%DATADIR%%/glade/dialog-style-editor.glade
+%%DATADIR%%/glade/dialog-view-manager.glade
 %%DATADIR%%/glade/subtitleeditor.glade
 %%DATADIR%%/menubar.xml
 %%DATADIR%%/subtitleeditor.svg
@@ -23,14 +24,17 @@ share/icons/hicolor/32x32/apps/subtitleeditor.png
 share/icons/hicolor/scalable/apps/subtitleeditor.svg
 share/locale/ca/LC_MESSAGES/subtitleeditor.mo
 share/locale/cs/LC_MESSAGES/subtitleeditor.mo
+share/locale/da/LC_MESSAGES/subtitleeditor.mo
 share/locale/es/LC_MESSAGES/subtitleeditor.mo
 share/locale/fr/LC_MESSAGES/subtitleeditor.mo
 share/locale/hu/LC_MESSAGES/subtitleeditor.mo
 share/locale/it/LC_MESSAGES/subtitleeditor.mo
 share/locale/nl/LC_MESSAGES/subtitleeditor.mo
 share/locale/pl/LC_MESSAGES/subtitleeditor.mo
+share/locale/pt/LC_MESSAGES/subtitleeditor.mo
 share/locale/pt_BR/LC_MESSAGES/subtitleeditor.mo
 share/locale/pt_PT/LC_MESSAGES/subtitleeditor.mo
+share/locale/zh_CN/LC_MESSAGES/subtitleeditor.mo
 @dirrmtry %%DESKTOPDIR%%
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
