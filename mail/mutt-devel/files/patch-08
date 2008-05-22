@@ -1,5 +1,5 @@
---- Muttrc.orig	Sat May 13 08:30:44 2000
-+++ Muttrc	Sat May 13 08:32:05 2000
+--- doc/Muttrc.orig	Sat May 13 08:30:44 2000
++++ doc/Muttrc	Sat May 13 08:32:05 2000
 @@ -629,6 +629,7 @@
  # Type: boolean
  # Default: yes

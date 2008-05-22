@@ -1,32 +1,34 @@
---- doc/Makefile.am.orig	Wed Jun 13 10:15:07 2007
-+++ doc/Makefile.am	Wed Jun 13 10:17:15 2007
-@@ -41,7 +41,7 @@
- all:
- 	$(MAKE) makedoc-all
+--- doc/Makefile.am.orig	2008-01-30 05:26:50.000000000 +0100
++++ doc/Makefile.am	2008-05-19 19:24:02.000000000 +0200
+@@ -45,7 +45,7 @@
  
--makedoc-all: mutt.1 muttrc.man manual.html stamp-doc-chunked manual.txt
+ all: makedoc-all
+ 
+-makedoc-all: mutt.1 muttrc.man manual.html stamp-doc-rc stamp-doc-chunked manual.txt
 +makedoc-all: mutt.1 muttrc.man
  
  install-data-local: makedoc-all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -62,9 +62,6 @@
+@@ -67,9 +67,6 @@
  		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
  	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir)
 -	-for f in $(HTML_DOCFILES) ; do \
 -		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; \
 -	done
- 
- uninstall-local:
- 	for f in mutt.1 mutt_dotlock.1 flea.1 muttbug.1 ; do \
-@@ -81,9 +78,7 @@
+ 	$(INSTALL) -m 644 Muttrc $(DESTDIR)$(sysconfdir)/Muttrc.dist
+ 	-if [ -f $(DESTDIR)$(pkgdatadir)/Muttrc ] ; then \
+ 		mv $(DESTDIR)$(pkgdatadir)/Muttrc* $(DESTDIR)$(sysconfdir) ; \
+@@ -100,10 +97,8 @@
  
  check:
- manual.txt: manual.html
--	-lynx -dump -nolist -with_backspaces $^ > $@ || \
--	w3m -dump $^ > $@ || \
--	elinks -dump -no-numbering -no-references $^ > $@
-+	-lynx -dump -nolist -with_backspaces manual.html > $@
+ manual.txt: manual.html db-cleanup.xsl
+-	-xsltproc --nonet -o manual-txt.html $(srcdir)/db-cleanup.xsl manual.html || cp manual.html manual-txt.html
+-	-lynx -dump -nolist -with_backspaces manual-txt.html > $@ || \
+-	w3m -dump manual-txt.html > $@ || \
+-	elinks -dump -no-numbering -no-references manual-txt.html > $@
++	-xsltproc --nonet -o manual-txt.out $(srcdir)/db-cleanup.xsl manual.html || cp manual.html manual-txt.out
++	-lynx -dump -nolist -with_backspaces manual-txt.out > $@
  
- manual.html: $(srcdir)/html.xsl stamp-doc-xml
- 	-xsltproc --nonet -o $@ $(srcdir)/html.xsl manual.xml
+ Muttrc: stamp-doc-rc
+ 
