@@ -1,0 +1,34 @@
+@comment $FreeBSD$
+bin/sqlmap
+%%PYTHON_SITELIBDIR%%/sqlmap/option.py
+%%PYTHON_SITELIBDIR%%/sqlmap/google.py
+%%PYTHON_SITELIBDIR%%/sqlmap/resume.py
+%%PYTHON_SITELIBDIR%%/sqlmap/settings.py
+%%PYTHON_SITELIBDIR%%/sqlmap/injection.py
+%%PYTHON_SITELIBDIR%%/sqlmap/query.py
+%%PYTHON_SITELIBDIR%%/sqlmap/request.py
+%%PYTHON_SITELIBDIR%%/sqlmap/blind.py
+%%PYTHON_SITELIBDIR%%/sqlmap/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/dump.py
+%%PYTHON_SITELIBDIR%%/sqlmap/progress.py
+%%PYTHON_SITELIBDIR%%/sqlmap/smdict.py
+%%PYTHON_SITELIBDIR%%/sqlmap/common.py
+%%PYTHON_SITELIBDIR%%/sqlmap/union.py
+%%PYTHON_SITELIBDIR%%/sqlmap/parser.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/mysql.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/postgresql.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/oracle.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/mssqlserver.py
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDATA%%%%DATADIR%%/txt/fuzz_vectors.txt
+%%PORTDATA%%%%DATADIR%%/txt/user-agents.txt
+%%PORTDATA%%@dirrm %%DATADIR%%/txt
+%%PORTDATA%%@dirrm %%DATADIR%%
