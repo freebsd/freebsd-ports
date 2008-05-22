@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mcpp
-PORTVERSION=	2.7
+PORTVERSION=	2.7.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -14,10 +14,15 @@ MAINTAINER=	kmatsui@t3.rim.or.jp
 COMMENT=	Alternative C/C++ preprocessor
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}	\
+		--enable-mcpplib
 MAN1=		mcpp.1
 
 PLIST_FILES=	bin/mcpp    \
+		lib/libmcpp.so	\
+		lib/libmcpp.so.2	\
+		lib/libmcpp.a	\
+		lib/libmcpp.la	\
 		share/doc/mcpp/LICENSE  \
 		share/doc/mcpp/NEWS     \
 		share/doc/mcpp/README   \
