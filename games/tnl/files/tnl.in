@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# CEGUI creates CEGUI.log in ./, so chdir to /tmp to not pollute user's homedir
+
+cd /tmp
+%%PREFIX%%/bin/tnl-bin
