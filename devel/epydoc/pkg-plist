@@ -378,6 +378,7 @@ bin/epydocgui
 %%PORTDOCS%%%%DOCSDIR%%/examples/redirect.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/sre-module.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/sre-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/sre.Scanner-class.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/sre_constants.error-class.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/term-index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/toc-epytext_example-module.html
