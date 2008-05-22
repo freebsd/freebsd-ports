@@ -76,7 +76,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.6.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -247,6 +247,15 @@ CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 CONFIGURE_ARGS+=	--enable-negotiate-auth-helpers="squid_kerb_auth"
 libexec+=	squid_kerb_auth
 .endif
+# XXX: this is a bit misleading: this patch fixes compilation of
+#      squid_kerb_auth on 8-CURRENT after the import of Heimdal 1.1 and
+#      it needs to be applied before the ICAP bootstrap patch in any case
+#      because the ICAP patch relies on changes to the configure script
+#      that are made by this patch. Because patches are applied in alphabe-
+#      tical order, sneak it in front of the ICAP bootstrap patch by (ab)using
+#      EXTRA_PATCHES: (Note: this patch is a no-op in the NO_KERBEROS case and
+#      should not break compilation in this case.)
+EXTRA_PATCHES+=	${PATCHDIR}/fix-kerberos.patch
 
 # Storage schemes:
 
