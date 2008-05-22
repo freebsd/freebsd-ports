@@ -16,8 +16,6 @@ COMMENT=	A a multi-purpose desktop calculator (backend library)
 
 LIB_DEPENDS=	cln.5:${PORTSDIR}/math/cln
 
-BROKEN=		does not configure with new cln
-
 USE_GNOME=	glib20 gnomehack gnometarget intlhack libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -26,5 +24,7 @@ USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|docs||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's/^GMSGFMT = @GMSGFMT@/GMSGFMT = msgfmt/' ${WRKSRC}/po/Makefile.in.in
+	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
