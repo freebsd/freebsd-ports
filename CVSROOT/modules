@@ -15921,6 +15921,7 @@ subcalc		ports/net-mgmt/subcalc
 subclipse	ports/devel/subclipse
 subcommander	ports/devel/subcommander
 subconv		ports/multimedia/subconv
+sublib		ports/multimedia/sublib
 subtitlecomposer	ports/multimedia/subtitlecomposer
 subtitleeditor	ports/multimedia/subtitleeditor
 subtitleoffsetmodifier	ports/multimedia/subtitleoffsetmodifier
