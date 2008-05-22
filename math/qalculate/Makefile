@@ -25,4 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/^GMSGFMT = @GMSGFMT@/GMSGFMT = msgfmt/' ${WRKSRC}/po/Makefile.in.in
+
 .include <bsd.port.mk>
