@@ -101,6 +101,7 @@
     SUBDIR += parchive
     SUBDIR += pbzip2
     SUBDIR += pear-File_Archive
+    SUBDIR += pear-PHP_Archiv
     SUBDIR += pecl-bz2
     SUBDIR += pecl-lzf
     SUBDIR += pecl-phar
