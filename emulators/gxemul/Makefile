@@ -6,27 +6,22 @@
 #
 
 PORTNAME=	gxemul
-PORTVERSION=	0.4.6.2
-PORTREVISION=	1
+PORTVERSION=	0.4.6.3
 CATEGORIES=	emulators
-MASTER_SITES=	http://gavare.se/gxemul/src/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jkoshy
+MASTER_SITES=	SF \
+		http://gavare.se/gxemul/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Instruction-level machine emulator
 
+OPTIONS=	X11	 "X11 support" on
+
 HAS_CONFIGURE=	yes
 ALL_TARGET=	build
 
-PLIST_FILES=	bin/gxemul
 MAN1=		gxemul.1
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
-
-OPTIONS=	X11	 "X11 support" on
+PLIST_FILES=	bin/gxemul
 
 .include <bsd.port.pre.mk>
 
@@ -38,8 +33,9 @@ USE_XORG=	x11
 
 post-patch:
 	@${REINPLACE_CMD} -Ee \
-		's|/usr/X11R6|${LOCALBASE}|g; s|-O[0-9]?||g; s|-f[a-zA-Z-]+||g' \
-		${WRKSRC}/configure
+		's|/usr/X11R6|${LOCALBASE}|g; \
+		 s|-O[0-9]?||g; \
+		 s|-f[a-zA-Z-]+||g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gxemul ${PREFIX}/bin
