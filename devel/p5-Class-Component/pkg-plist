@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Class/Component/Component/Autocall/SingletonMethod.pm
 %%SITE_PERL%%/Class/Component/Component/Autocall/InjectMethod.pm
 %%SITE_PERL%%/Class/Component/Component/Autocall/Autoload.pm
+%%SITE_PERL%%/Class/Component/Component/Moosenize.pm
 %%SITE_PERL%%/Class/Component/Component/Plaggerize/Log.pm
 %%SITE_PERL%%/Class/Component/Component/Plaggerize/PluginLoader.pm
 %%SITE_PERL%%/Class/Component/Component/Plaggerize/ConfigLoader.pm

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Component
-PORTVERSION=	0.15
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +24,7 @@ PERL_CONFIGURE=	Yes
 
 MAN3=	Class::Component::Component::Plaggerize.3 \
 	Class::Component.3 \
-	Class::Component::Plugin.3
+	Class::Component::Plugin.3 \
+	Class::Component::Component::Moosenize.3
 
 .include <bsd.port.mk>
