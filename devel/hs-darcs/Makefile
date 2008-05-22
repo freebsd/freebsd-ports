@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	1.0.9
+PORTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://darcs.net/
 
@@ -24,9 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		CFLAGS=""
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-ALL_TARGET=	darcs darcs.1
 INSTALL_TARGET=	installbin
-USE_AUTOTOOLS=	autoconf:261:env
 
 .include <bsd.port.pre.mk>
 
@@ -45,6 +43,7 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base
+ALL_TARGET+=	doc/manual/darcs.ps doc/manual/patch-theory.pdf doc/manual/index.html
 INSTALL_TARGET+=	installdocs
 .endif
 
@@ -56,12 +55,6 @@ post-patch:
 		s|darcs/cgi.conf|darcs/cgi.conf.sample|' \
 		${WRKSRC}/${MAKEFILE}
 .endif
-
-pre-configure:
-	@(cd ${WRKSRC} && ${AUTORECONF})
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|$${prefix}|${PREFIX}|' ${WRKSRC}/cgi/darcs.cgi
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/darcs
