@@ -8,7 +8,7 @@
 
 PORTNAME=	sablevm-classpath
 PORTVERSION=	1.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sablevm
@@ -37,11 +37,11 @@ CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include -L${PREFIX}/lib -I${LOCALBASE}/includ
 
 .if defined(WITHOUT_ZIP)
 CONFIGURE_ARGS+=	--with-compressed-classes=no
-PLIST_SUB+=		WITHOUT_ZIP=""
+PLIST_SUB+=		WITHOUT_ZIP="" WITH_ZIP="@comment "
 .else
 CONFIGURE_ARGS+=	--with-compressed-classes=zip
 BUILD_DEPENDS+=		zip:${PORTSDIR}/archivers/zip
-PLIST_SUB+=		WITHOUT_ZIP="@comment "
+PLIST_SUB+=		WITHOUT_ZIP="@comment " WITH_ZIP=""
 PLIST_FILES+=		${DATADIR_REL}/libclasspath.jar ${DATADIR_REL}/resources.jar
 .endif
 
