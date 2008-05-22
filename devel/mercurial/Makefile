@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://hg.intevation.org/files/
+MASTER_SITES=	http://www.selenic.com/mercurial/release/
 
 MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	A fast, lightweight source control management system
