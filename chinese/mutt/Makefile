@@ -9,7 +9,7 @@
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
-REVISEDATE=	20060703
+REVISEDATE=	20080522
 PORTREVISION=	${REVISEDATE}
 
 # XXX: Currently PORTREVISION assignment is not perfect. It needs to
@@ -18,14 +18,12 @@ PORTREVISION=	${REVISEDATE}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	The Mongrel of Mail User Agents with Chinese support
 
-PATCH_SITES=	${MASTER_SITE_LOCAL:S/$/:tw/}
-PATCH_SITE_SUBDIR=	rafan/chinese/:tw
-TW_PATCH_VERSION=	1.5.16-${REVISEDATE}
-PATCHFILES=	${PKGNAMEPREFIX}mutt-${TW_PATCH_VERSION}.diff.gz:tw
-
 LIB_DEPENDS+=	hz.0:${PORTSDIR}/chinese/autoconvert
 
 CFLAGS+=	-D_DONT_USE_CTYPE_INLINE_
+LDFLAGS+=	-lhz
+
+EXTRA_PATCHES+=	${.CURDIR}/files/patch-*
 
 WITH_MUTT_LOCALES_FIX=	yes
 WITH_MUTT_NCURSES=	yes
@@ -37,7 +35,9 @@ WITHOUT_MUTT_COMPRESSED_FOLDERS=yes
 .endif
 MUTT_SLAVE_HTML_PAGES=	1
 
-MD5_FILE=	${.CURDIR}/distinfo
 PKGMESSAGE=	${.CURDIR}/pkg-message
+
+post-patch::
+	@${REINPLACE_CMD} -e '/^mutt_SOURCES/s/\\$$/ myiconv.c \\/' ${WRKSRC}/Makefile.am
 
 .include "${MASTERDIR}/Makefile"
