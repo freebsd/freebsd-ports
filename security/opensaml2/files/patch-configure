@@ -1,6 +1,6 @@
---- configure.orig	Mon Feb 12 12:13:21 2007
-+++ configure	Mon Feb 12 12:13:27 2007
-@@ -20574,8 +20574,12 @@
+--- configure.orig	2008-05-22 19:38:26.000000000 +1000
++++ configure	2008-05-22 19:39:17.000000000 +1000
+@@ -20575,8 +20575,12 @@
  fi;
      SSLLIBS="$SSLLIBS -lssl -lcrypto"
  else
