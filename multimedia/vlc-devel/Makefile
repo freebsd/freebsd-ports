@@ -21,7 +21,7 @@ MASTER_SITES=	http://nightlies.videolan.org/build/source/trunk-${DISTVERSION:S/0
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.9.0.//}
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=     funman@videolan.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
