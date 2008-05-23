@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzmautils
-PORTVERSION=	4.32.5
+PORTVERSION=	4.32.6
 CATEGORIES=	archivers
 MASTER_SITES=	http://tukaani.org/lzma/
 DISTNAME=	lzma-${PORTVERSION}
@@ -27,5 +27,8 @@ MLINKS=		lzma.1 unlzma.1 \
 		lzgrep.1 lzegrep.1 \
 		lzgrep.1 lzfgrep.1 \
 		lzmore.1 lzless.1
+
+test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>
