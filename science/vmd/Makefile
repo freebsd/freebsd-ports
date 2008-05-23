@@ -15,7 +15,7 @@ DISTFILES=		${VMD_DIST} \
 			${TACHYON_DIST}:tachyon \
 			${STRIDE_DIST}:stride
 
-MAINTAINER=		sangwoos@gmail.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A molecular visualization program
 
 BUILD_DEPENDS=		makedepend:${PORTSDIR}/devel/makedepend \
