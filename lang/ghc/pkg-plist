@@ -1358,6 +1358,39 @@ bin/runhaskell
 %%GHC_LIBDIR_REL%%/package.conf
 %%GHC_LIBDIR_REL%%/template-hsc.h
 %%GHC_LIBDIR_REL%%/unlit
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/Cabal/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/HUnit/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/QuickCheck/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/array/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/base/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/bytestring/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/cgi/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/containers/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/directory/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/fgl/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/haskell-src/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/haskell98/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/hpc/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/html/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/mtl/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/network/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/old-locale/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/old-time/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/packedstring/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/parallel/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/parsec/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/pretty/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/process/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/random/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/readline/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/regex-base/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/regex-compat/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/regex-posix/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/stm/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/template-haskell/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/time/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/unix/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/libraries/xhtml/LICENSE
 @dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional
 @dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict
 @dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset
@@ -1523,6 +1556,42 @@ bin/runhaskell
 @exec mkdir -p %D/%%GHC_LIBDIR_REL%%/cabal
 @dirrm %%GHC_LIBDIR_REL%%/cabal
 @exec mkdir -p %D/%%DOCSDIR_REL%%/cabal
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/xhtml
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/unix
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/time
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/template-haskell
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/stm
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/regex-posix
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/regex-compat
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/regex-base
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/readline
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/random
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/process
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/pretty
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/parsec
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/parallel
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/packedstring
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/old-time
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/old-locale
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/network
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/mtl
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/html
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/hpc
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/haskell98
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/haskell-src
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/fgl
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/directory
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/containers
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/cgi
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/bytestring
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/base
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/array
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/QuickCheck
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/HUnit
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries/Cabal
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/libraries
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%/cabal
+%%NOPORTDOCS%%@dirrm %%DOCSDIR%%
 @exec if [ -f %D/%%GHC_LIBDIR_REL%%/package.conf.old ]; then rm -f %D/%%GHC_LIBDIR_REL%%/package.conf.old || /usr/bin/true; fi
 @unexec /bin/rm -f %D/%%GHC_LIBDIR_REL%%/package.conf || /usr/bin/true
 @unexec if [ -f %D/%%GHC_LIBDIR_REL%%/package.conf.old ]; then rm -f %D/%%GHC_LIBDIR_REL%%/package.conf.old || /usr/bin/true; fi
