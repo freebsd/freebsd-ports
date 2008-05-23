@@ -43,7 +43,8 @@ OPTIONS=		KRB5_RENAME_FTP "Rename ftp to kftp" off \
 			KRB5_RENAME_RSH "Rename rsh to krsh" off \
 			KRB5_RENAME_RCP "Rename rcp to krcp" off \
 			KRB5_KRB4_COMPAT "Build and install krb4 compatibility" off \
-			KRB5_DOC "Build and install krb5 documentation" on
+			KRB5_DOC "Build and install krb5 documentation" on \
+			WANT_HTML "Want HTML documentation too" on
 
 .include <bsd.port.pre.mk>
 
@@ -128,7 +129,6 @@ CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-WANT_HTML?=		YES
 HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc
 HTML_DOCS=		ftp.html kdestroy.html kinit.html klist.html \
 			kpasswd.html krb425.html krb5-admin.html \
@@ -160,7 +160,7 @@ pre-build:
 .endif
 
 post-build:
-.if defined(KRB5_DOC) && ${KRB5_DOC} == "YES"
+.if defined(WITH_KRB5_DOC)
 	@cd ${WRKSRC}/../doc && \
 	${MAKE} all
 .endif
@@ -168,7 +168,7 @@ post-build:
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/krb5
 # html documentation
-.if defined(KRB5_DOC) && ${KRB5_DOC} == "YES" && defined(WANT_HTML) && ${WANT_HTML} == "YES"
+.if defined(WITH_KRB5_DOC) && defined(WITH_WANT_HTML)
 	for html in ${HTML_DOC_DIR}/*.html; do \
 		${INSTALL_MAN} $${html} ${PREFIX}/share/doc/krb5; \
 		${ECHO_CMD} share/doc/krb5/`${BASENAME} $${html}` >> ${TMPPLIST}; \
@@ -176,7 +176,7 @@ post-install:
 .endif
 	${ECHO_CMD} @dirrm share/doc/krb5 >> ${TMPPLIST}
 # handle info files
-.if defined(KRB5_DOC) && ${KRB5_DOC} == "YES"
+.if defined(WITH_KRB5_DOC)
 .for info in ${INFO}
 	${INSTALL_MAN} ${WRKSRC}/../doc/${info}.info ${PREFIX}/info/${info}.info
 .endfor
