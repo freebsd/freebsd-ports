@@ -121,6 +121,7 @@
     SUBDIR += staticcharge
     SUBDIR += tinystats
     SUBDIR += totd
+    SUBDIR += udns
     SUBDIR += unbound
     SUBDIR += updatedd
     SUBDIR += vizone
