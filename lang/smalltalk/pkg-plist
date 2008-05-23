@@ -47,17 +47,17 @@ lib/smalltalk/zlib.a
 lib/smalltalk/zlib.la
 lib/smalltalk/zlib.so
 libdata/pkgconfig/gnu-smalltalk.pc
-libexec/smalltalk/deb
-libexec/smalltalk/lslR
-libexec/smalltalk/mailfs
-libexec/smalltalk/patchfs
-libexec/smalltalk/uar
-libexec/smalltalk/urar
-libexec/smalltalk/uzoo
-libexec/smalltalk/ulha
-libexec/smalltalk/ucpio
-libexec/smalltalk/utar
-libexec/smalltalk/uzip
+libexec/smalltalk/vfs/deb
+libexec/smalltalk/vfs/lslR
+libexec/smalltalk/vfs/mailfs
+libexec/smalltalk/vfs/patchfs
+libexec/smalltalk/vfs/uar
+libexec/smalltalk/vfs/urar
+libexec/smalltalk/vfs/uzoo
+libexec/smalltalk/vfs/ulha
+libexec/smalltalk/vfs/ucpio
+libexec/smalltalk/vfs/utar
+libexec/smalltalk/vfs/uzip
 var/lib/smalltalk/gst.im
 share/aclocal/gst.m4
 share/aclocal/gst-package.m4
@@ -298,9 +298,10 @@ share/emacs/site-lisp/smalltalk-mode.el
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
 @dirrm lib/smalltalk
+@dirrm libexec/smalltalk/vfs
 @dirrm libexec/smalltalk
 @dirrm var/lib/smalltalk
-@dirrm var/lib
-@dirrm var
+@dirrmtry var/lib
+@dirrmtry var
 @exec mkdir -p %D/include/snprintfv
 @dirrmtry include/snprintfv
