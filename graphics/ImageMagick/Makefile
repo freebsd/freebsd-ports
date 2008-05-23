@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.4.1-3
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -49,7 +50,8 @@ LDFLAGS=	-L${LOCALBASE}/lib
 PLIST_SUB+=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS=	X11				"X11 support" on \
-		IMAGEMAGICK_TESTS	"Run bundled self-tests after build" off \
+		IMAGEMAGICK_TESTS	"Run bundled self-tests after build" on \
+		IMAGEMAGICK_OPENMP	"Enable OpenMP for SMP" off \
 		IMAGEMAGICK_PERL		"Perl support" on \
 		IMAGEMAGICK_MODULES		"Modules support (broken)" off \
 		IMAGEMAGICK_BZLIB		"Bzlib support" on \
@@ -82,6 +84,12 @@ IGNORE=		requires newer version of ghostscript
 CONFIGURE_ARGS+=	--enable-hdri
 .else
 CONFIGURE_ARGS+=	--disable-hdri
+.endif
+
+.if defined(WITH_IMAGEMAGICK_OPENMP)
+CONFIGURE_ARGS+=	--enable-openmp
+.else
+CONFIGURE_ARGS+=	--disable-openmp
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK_PERL)
