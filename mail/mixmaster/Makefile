@@ -7,6 +7,7 @@
 
 PORTNAME=	mixmaster
 PORTVERSION=	2.9.1
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		ftp://ftp.erisiandiscord.de/pub/misc/
@@ -18,8 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	wolf@priori.net
 COMMENT=	A cryptographically secure anonymous remailer
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
-		ncurses:${PORTSDIR}/devel/ncurses
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 USE_PERL5=	yes
 USE_OPENSSL=	yes
@@ -38,6 +38,10 @@ MIXMASTER_FILES=	${WRKDIST}/conf/* ${WRKDIST}/README ${WRKDIR}/allpingers.txt
 MIXMASTER_SCRIPTS=	${WRKDIR}/mixmaster-update.pl
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
+LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
+.endif
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
