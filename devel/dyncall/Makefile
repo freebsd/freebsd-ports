@@ -6,18 +6,19 @@
 #
 
 PORTNAME=		dyncall
-PORTVERSION=		0.1
+PORTVERSION=		0.2
 CATEGORIES=		devel
-MASTER_SITES=		http://www.dyncall.org/r0.1/
+MASTER_SITES=		http://www.dyncall.org/r0.2/
 
 MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		Highly dynamic multi-platform foreign function call interface library
 
+MAN3=			dyncall.3
 HAS_CONFIGURE=		yes
 
 MAKEFILE=		${WRKSRC}/BSDmakefile
 
-# There is no install target in the BSD makefile of version 0.1 of the dyncall library, so
+# There is no install target in the BSD makefile of version 0.2 of the dyncall library, so
 # install it manually.
 
 do-install:
@@ -31,5 +32,8 @@ do-install:
 	${CP} ${WRKSRC}/dynload/dynload.h           ${PREFIX}/include/dynload.h
 	${CP} ${WRKSRC}/dyncall/libdyncall_s.a      ${PREFIX}/lib/libdyncall_s.a
 	${CP} ${WRKSRC}/dynload/libdynload_s.a      ${PREFIX}/lib/libdynload_s.a
+.for f3 in ${MAN3}
+	${INSTALL_MAN} ${WRKSRC}/doc/${f3} ${MAN3PREFIX}/man/man3
+.endfor
 
 .include <bsd.port.mk>
