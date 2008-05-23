@@ -3,7 +3,7 @@ file headers in tar archive files in various ways.
 
 The reason the tardy program was written was because the author wanted to
 "spruce up" tar files before posting them to the net, mostly to remove
-artefacts of the development environment, without introducing more.
+artifacts of the development environment, without introducing more.
 
 The tardy program was designed to allow you to alter certain characteristics
 of files after they have been included in the tar file. Among them are:

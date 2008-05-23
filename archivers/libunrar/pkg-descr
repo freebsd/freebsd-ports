@@ -2,6 +2,6 @@
     RAR uncompression algorithm. UnRAR requires very small volume of
     memory to operate.
     UnRAR library can be used by other programs to extract RAR archives.
-    This package containe small fixes from the http://mcmcc.bat.ru/clamav/.
+    This package contains small fixes from the http://mcmcc.bat.ru/clamav/.
 
 WWW: http://www.rarsoft.com/
