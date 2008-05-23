@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fwbuilder
-PORTVERSION=	2.1.17
+PORTVERSION=	2.1.19
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}/fwbuilder/
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -39,9 +39,11 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 MAN1=		fwbuilder.1 \
 		fwblookup.1 \
 		fwbedit.1 \
+		fwb_iosacl.1 \
 		fwb_ipt.1 \
 		fwb_ipf.1 \
 		fwb_ipfw.1 \
+		fwb_pix.1 \
 		fwb_pf.1
 
 .if !defined(NOPORTDOCS)

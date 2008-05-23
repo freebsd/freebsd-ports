@@ -1,7 +1,9 @@
+bin/fwb_iosacl
 bin/fwb_ipf
 bin/fwb_ipfw
 bin/fwb_ipt
 bin/fwb_pf
+bin/fwb_pix
 bin/fwbedit
 bin/fwblookup
 bin/fwbuilder
