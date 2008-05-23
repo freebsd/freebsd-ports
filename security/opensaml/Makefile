@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	opensaml
-DISTVERSION=	1.1b
+DISTVERSION=	1.1.1
 CATEGORIES=	security
-MASTER_SITES=	http://shibboleth.internet2.edu/downloads/
+MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/${DISTVERSION}/
 
-MAINTAINER=	tonymaher@optusnet.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source implentation of SAML
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
@@ -18,16 +18,10 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		xml-security-c.13:${PORTSDIR}/security/apache-xml-security-c
 
-BROKEN=		does not compile
-
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.1
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^pkgdocdir.*=.*,pkgdocdir = ${DOCSDIR},' \
@@ -36,4 +30,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s,doc ,,' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
