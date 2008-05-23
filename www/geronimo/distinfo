@@ -1,3 +1,6 @@
 MD5 (geronimo-tomcat6-javaee5-2.1.1-bin.tar.gz) = 0f9ff4ebff8463b272eee2088cd462b9
 SHA256 (geronimo-tomcat6-javaee5-2.1.1-bin.tar.gz) = 4cfb4e587e7696534c715c44b0e8f6e93ff9a09f2c6ecfe8776b2fd6f61334c2
 SIZE (geronimo-tomcat6-javaee5-2.1.1-bin.tar.gz) = 75859221
+MD5 (geronimo-jetty6-javaee5-2.1.1-bin.tar.gz) = 3200b4e8c0541021ef76305ea2516b28
+SHA256 (geronimo-jetty6-javaee5-2.1.1-bin.tar.gz) = 9afd12065cdee7e5bb303ea6f3408c4818bfcda470b358e144bc13e55bdae43f
+SIZE (geronimo-jetty6-javaee5-2.1.1-bin.tar.gz) = 74659000
