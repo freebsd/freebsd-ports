@@ -4,7 +4,7 @@ cross-platform packaging and deployment a breeze for Perl programmers.
 Notable features include:
 
 * Turn your Perl programs into ready-to-run executables
-* Pack scripts and requered libraries with a binary loader
+* Pack scripts and required libraries with a binary loader
 * Put PAR files into @INC to avoid version conflicts
 * Works with remote URL as well as local files
 * Supports XS modules and DATA sections

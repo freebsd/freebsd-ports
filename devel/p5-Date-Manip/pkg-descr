@@ -28,7 +28,7 @@
        Among other things, Date::Manip allow you to:
 
        1.  Enter a date and be able to choose any format
-           conveniant
+           convenient
 
        2.  Compare two dates, entered in widely different formats
            to determine which is earlier

@@ -1,6 +1,6 @@
 The TimeDate distribution replaces earlier GetDate distribution, which was
 only a date parser. The date parser contained in this distribution
-is far superior to the yacc based parser, and a *lot* fatser.
+is far superior to the yacc based parser, and a *lot* faster.
 
 The parser contained here will only parse absolute dates, if you want a date
 parser that can parse relative dates then take a look at the

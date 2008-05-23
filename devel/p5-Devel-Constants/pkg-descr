@@ -1,6 +1,6 @@
 Declaring constants is very convenient for writing programs, but as
 they're often inlined by Perl, retrieving their symbolic names can be
-tricky.  This is made worse with lowlevel modules that use constants for
+tricky.  This is made worse with low level modules that use constants for
 bit-twiddling.
 
 Devel::Constants makes this much more manageable.

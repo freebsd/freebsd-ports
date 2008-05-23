@@ -1,6 +1,6 @@
 Perl has changed over time, gaining new features, new functions, increasing its
 flexibility, and reducing the impact on the C namespace environment (reduced
-pollution). The header file, typicaly ppport.h, written by this module attempts
+pollution). The header file, typically ppport.h, written by this module attempts
 to bring some of the newer Perl features to older versions of Perl, so that you
 can worry less about keeping track of old releases, but users can still reap
 the benefit.

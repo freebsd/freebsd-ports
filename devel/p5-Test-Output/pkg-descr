@@ -1,5 +1,5 @@
 Test::Output provides a simple interface for testing output sent to
-STDOUT or STDERR. A number of different utilies are included to try
+STDOUT or STDERR. A number of different utilities are included to try
 and be as flexible as possible to the tester.
 
 Originally this module was designed not to have external requirements,

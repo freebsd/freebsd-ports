@@ -7,7 +7,7 @@ An "iterator" is an object, represented as a code block that generates the
 you need a value to operate on, you pull it from the iterator. If it 
 depends on other iterators, it pulls values from them when it needs to. 
 Iterators can be chained together (see Iterator::Util for functions that 
-help you do just that), queueing up work to be done but not actually doing 
+help you do just that), queuing up work to be done but not actually doing 
 it until a value is needed at the front end of the chain. At that time, 
 one data value is pulled through the chain.
 

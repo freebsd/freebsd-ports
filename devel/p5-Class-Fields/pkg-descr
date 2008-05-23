@@ -1,7 +1,7 @@
 Set of modules:
 
 * Class::Fields - inspect the fields of a class
-* Class::Fields::Fuxor - low level manipuation of object data members
+* Class::Fields::Fuxor - low level manipulation of object data members
 * private - add private data members to Perl classes
 * protected - "private" data fields which are inherited by child classes
 * public - add public data members to Perl classes

@@ -1,5 +1,5 @@
 This module provides tracking of objects, for the purpose of detecting
-memory leaks due to circular references or innappropriate caching
+memory leaks due to circular references or inappropriate caching
 schemes.
 
 Object tracking can be enabled on a per object basis or globally.  Any

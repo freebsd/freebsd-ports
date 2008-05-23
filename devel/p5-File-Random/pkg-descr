@@ -1,6 +1,6 @@
 This module simplifies the routine job of selecting a random file. (As you 
 can find at CGI scripts).  It's done, because it's boring (and 
-errorprone), always to write something like
+error prone), always to write something like
 
   my @files = (<*.*>);
   my $randf = $files[rand @files];

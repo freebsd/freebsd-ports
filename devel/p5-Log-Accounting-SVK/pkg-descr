@@ -1,6 +1,6 @@
 This module make use of Algorithm::Accounting and SVK to do 
 simple accounting of any SVK repository. The installed 
-svn-accounting.pl script demostrate a simple use to this module, 
+svn-accounting.pl script demonstrate a simple use to this module, 
 you may try:
 
   svk-accounting.pl //

@@ -2,8 +2,8 @@ This module collection manages coroutines. Coroutines are similar to
 threads but don't run in parallel.
 
 In this module, coroutines are defined as "callchain + lexical variables
-+ @_ + $_ + $@ + $^W + C stack), that is, a coroutine has it's own
-callchain, it's own set of lexicals and it's own set of perl's most
++ @_ + $_ + $@ + $^W + C stack), that is, a coroutine has its own
+callchain, its own set of lexicals and its own set of perl's most
 important global variables.
 
 Author: Marc Lehmann <pcg@goof.com>

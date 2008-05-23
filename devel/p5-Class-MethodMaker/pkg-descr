@@ -1,4 +1,4 @@
-from the readme:
+from the README:
 
 This module solves the problem of having to write a bazillion get/set
 methods that are all the same. The argument to 'use' is a hash whose keys
