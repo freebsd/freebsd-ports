@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config-Model/.packlist
 %%SITE_PERL%%/Config/Model.pm
 %%SITE_PERL%%/Config/Model/AnyId.pm
 %%SITE_PERL%%/Config/Model/AnyThing.pm

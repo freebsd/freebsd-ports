@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	0.622
+PORTVERSION=	0.623
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN SF
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,7 @@ RUN_DEPENDS=	p5-Error>0:${PORTSDIR}/lang/p5-Error \
 		p5-Test-Simple>=0.74:${PORTSDIR}/devel/p5-Test-Simple
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN1=		config-edit.1
 MAN3=		Config::Model.3 Config::Model::AnyId.3 \
