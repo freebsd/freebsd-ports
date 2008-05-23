@@ -16717,6 +16717,7 @@ udesc_dump	ports/sysutils/udesc_dump
 udfclient	ports/sysutils/udfclient
 udis86		ports/devel/udis86
 udmsearch	ports/www/udmsearch
+udns		ports/dns/udns
 udpcast		ports/mbone/udpcast
 udptunnel	ports/net/udptunnel
 udunits		ports/science/udunits
