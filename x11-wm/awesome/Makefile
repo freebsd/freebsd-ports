@@ -7,6 +7,7 @@
 
 PORTNAME=	awesome
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
@@ -21,6 +22,8 @@ LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
 
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
+USE_EFL=	imlib2
+USE_GNOME=	pango
 USE_XORG=	x11 xft xext xinerama xt xrandr xproto
 
 MAN1=		awesome.1 \
