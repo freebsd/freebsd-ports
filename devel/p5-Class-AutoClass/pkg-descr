@@ -1,7 +1,7 @@
 Class::AutoClass => similar to Class::MakeMethods, provides support for:
   - automatically generating mutator methods for simple values,
   - allows for automatic attribute initialization and default value
-	initilaization, 
+	initialization, 
   - object initialization is handled correctly (in top-down order), even
 	in the presence of multiple inheritance
 

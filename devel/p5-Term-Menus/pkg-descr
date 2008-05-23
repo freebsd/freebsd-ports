@@ -5,7 +5,7 @@ forward and backward navigation, single or multiple selection
 capabilities, dynamic item creation and customized banners. All this
 power is simple to implement with a straight forward and very
 intuitive configuration hash structure that mirrors the actual menu
-architechture needed by the application. A separate configuration file
+architecture needed by the application. A separate configuration file
 is optional. Term::Menus is cross platform compatible.
 
 WWW:	http://search.cpan.org/dist/Term-Menus/

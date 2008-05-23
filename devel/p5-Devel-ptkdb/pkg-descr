@@ -9,7 +9,7 @@ Features include:
 To debug a script using ptkdb invoke perl like this:
 	perl -d:ptkdb myscript.pl
 
-ptkdb can easily be used to debug CGI scripts if your webserver box is
+ptkdb can easily be used to debug CGI scripts if your web server box is
 capable of running Perl/Tk applications. Just change the shebang line of your
 scripts to:
 	#! /usr/bin/perl -w -d:ptkdb

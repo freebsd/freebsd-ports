@@ -7,7 +7,7 @@ on a per-host basis, or even using an environment variable.
 By default a win.ini style of configuration is used, but this can
 be overridden and an XML based configuration is also included. The
 access mechanism can also be overridden, the setting don't have to
-come from a file, but (maybe) from a website. You'll have to write
+come from a file, but (maybe) from a web site. You'll have to write
 your own there, though.
 
 WWW: http://search.cpan.org/dist/Config-Setting/

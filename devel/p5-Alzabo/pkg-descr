@@ -1,5 +1,5 @@
 Alzabo is a suite of modules with two core functions. Its first use is as a
-data modelling tool. Through either a schema creation GUI, a perl program, or
+data modeling tool. Through either a schema creation GUI, a perl program, or
 reverse engineering, you can create a set objects to represent a schema.
 
 Its second function is as an RDBMS to object mapping system. Once you have

@@ -14,9 +14,9 @@ Get a new Config::IniFiles object with the *new* method:
 Optional named parameters may be specified after the configuration file
 name. See the *new* in the METHODS section, below.
 
-INI files consist of a number of sections, each preceeded with the
+INI files consist of a number of sections, each preceded with the
 section name in square brackets. Parameters are specified in each section
-as Name=Value. Any spaces around the equals sign will be i gnored, and the
+as Name=Value. Any spaces around the equals sign will be ignored, and the
 value extends to the end of the line.
 
 WWW: http://search.cpan.org/dist/Config-IniFiles/

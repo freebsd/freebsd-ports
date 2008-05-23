@@ -1,7 +1,7 @@
 Releasing a new version of software takes a lot of steps... finding
 the next version number (and making sure you didn't already use that
 version number before), making sure your changelog is updated, making
-sure your "make dist" results in a tarball that builds, commiting
+sure your "make dist" results in a tarball that builds, committing
 changes (with updated version number), tagging, and uploading the
 tarball somewhere.
 

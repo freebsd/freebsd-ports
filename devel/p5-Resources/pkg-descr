@@ -7,7 +7,7 @@ quantities or attributes of interest.
 Resources can be loaded from or saved to resource files. Methods are
 provided to search, modify and create resources.  Packages use resources to
 hardwire in their code the default values for their attributes, along with
-documentation for the attibutes themselves.
+documentation for the attributes themselves.
 
 Packages inherit resources when subclassed, and the resource names are
 updated dynamically to reflect a class hierarchy.

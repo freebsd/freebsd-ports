@@ -3,7 +3,7 @@ environment of an author of a CPAN module (or more precisely: a user of the
 ExtUtils::MakeMaker module). It makes sure that any changes to the required
 modules specified in the Makefile.PL are automatically reflected in the
 appropriate text file and in the appropriate source files (either
-explicitely or implicitely specified).
+explicitly or implicitly specified).
 
 It takes the information given with the PREREQ_PM parameter and by default
 writes this to the README file, as well as to the POD of the file specified

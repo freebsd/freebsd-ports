@@ -4,7 +4,7 @@ well as removing all the Pure Perl from the More.pm, I was able to
 gain a lot of speed out of the module. Essentially, though, the core
 of the module is exactly as that of Clone::More.
 
-You will see that by useing Benchmark::cmpthese, I ran a simple
+You will see that by using Benchmark::cmpthese, I ran a simple
 comparison between Storable::dclone, Clone::More::clone, and
 Clone::Fast::clone. You will (should) begin to see the reason why I
 loaded this module along side of Clone::More.

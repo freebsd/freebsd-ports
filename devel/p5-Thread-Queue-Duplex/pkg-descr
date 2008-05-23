@@ -1,6 +1,6 @@
 A mapped queue, similar to Thread::Queue, except that as elements
 are queued, they are assigned unique identifiers, which are used
-to identify responses returned from the dequeueing thread. This
+to identify responses returned from the dequeuing thread. This
 class provides a simple RPC-like mechanism between multiple client
 and server threads, so that a single server thread can safely
 multiplex requests from multiple client threads. Note that simplex

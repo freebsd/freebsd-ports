@@ -8,7 +8,7 @@ into the hash like this:
 
   my $val = $h{qr/key/};
 
-exists and delete also do regex matching. In the case of delete all vlaues 
+exists and delete also do regex matching. In the case of delete all values 
 matching your regex key will be deleted from the hash.
 
 WWW: http://search.cpan.org/dist/Tie-Hash-Regex

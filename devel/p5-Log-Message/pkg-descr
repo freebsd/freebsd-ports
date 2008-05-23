@@ -5,7 +5,7 @@ a timestamp and a stack trace, but some can be filled in by the user, like
 a tag by which to identify it or group it, and a level at which to handle 
 the message (for example, log it, or die with it)
 
-Log::Message also provides a powerfull way of searching through items by 
+Log::Message also provides a powerful way of searching through items by 
 regexes on messages, tags and level.
 
 WWW: http://search.cpan.org/dist/Log-Message

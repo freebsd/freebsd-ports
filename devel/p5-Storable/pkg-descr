@@ -1,6 +1,6 @@
 The Storable package brings you persistency for your perl data
 structures containing SCALAR, ARRAY, HASH or REF objects, i.e. anything
-that can be convenientely stored to disk and retrieved at a later time.
+that can be conveniently stored to disk and retrieved at a later time.
 
 It can be used in the regular procedural way by calling store with a
 reference to the object to store, and providing a file name. The routine

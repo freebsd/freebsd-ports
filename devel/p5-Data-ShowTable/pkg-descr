@@ -11,5 +11,5 @@ input (except for HTML).  Individual or ranges of columns may be selected
 for display, either by name or by index.
 
 In other words, showtable is a data formatting program.  Using the '-html'
-option, showtable can accept ASCII tablular data and format it appropriately
+option, showtable can accept ASCII tabular data and format it appropriately
 for display through a Web-browser.
