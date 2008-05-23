@@ -1,0 +1,6 @@
+include/udns.h
+lib/libudns.a
+lib/libudns.so
+lib/libudns.so.0
+bin/dnsget
+bin/rblcheck
