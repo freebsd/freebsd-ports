@@ -73,6 +73,13 @@ DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 GHC_LIBDIR_REL=	lib/ghc-${GHC_VERSION}
 PORTDOCS=	*
 
+# hack to register LICENSE files without portdocs
+.if defined(NOPORTDOCS)
+PLIST_SUB+=		NOPORTDOCS=""
+.else
+PLIST_SUB+=		NOPORTDOCS="@comment "
+.endif
+
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} GHC_LIBDIR_REL=${GHC_LIBDIR_REL} DOCSDIR_REL=${DOCSDIR_REL}
 
 .if defined(WITHOUT_PROFILE)
