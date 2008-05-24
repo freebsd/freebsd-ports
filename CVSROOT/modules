@@ -8457,6 +8457,7 @@ nethack34	ports/games/nethack34
 nethack34-gnome	ports/games/nethack34-gnome
 nethack34-nox11	ports/games/nethack34-nox11
 nethack34-qt	ports/games/nethack34-qt
+netherearth	ports/games/netherearth
 nethirc		ports/irc/nethirc
 netio		ports/benchmarks/netio
 netleak		ports/net-mgmt/netleak
