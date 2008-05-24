@@ -17,6 +17,7 @@
     SUBDIR += boinc-simap
     SUBDIR += chemeq
     SUBDIR += clustalw
+    SUBDIR += consed
     SUBDIR += crimap
     SUBDIR += distribfold
     SUBDIR += dna-qc
