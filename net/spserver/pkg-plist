@@ -6,6 +6,9 @@ include/spserver/sphandler.hpp
 include/spserver/sphttp.hpp
 include/spserver/sphttpmsg.hpp
 include/spserver/spiochannel.hpp
+include/spserver/spiocpdispatcher.hpp
+include/spserver/spiocpevent.hpp
+include/spserver/spiocpserver.hpp
 include/spserver/spioutils.hpp
 include/spserver/splfserver.hpp
 include/spserver/spmsgblock.hpp
@@ -16,8 +19,11 @@ include/spserver/sprequest.hpp
 include/spserver/spresponse.hpp
 include/spserver/spserver.hpp
 include/spserver/spsession.hpp
+include/spserver/spthread.hpp
 include/spserver/spthreadpool.hpp
 include/spserver/sputils.hpp
+include/spserver/spwin32buffer.hpp
+include/spserver/spwin32iocp.hpp
 include/spserver/spwin32port.hpp
 lib/libspopenssl.so
 lib/libspopenssl.so.1
