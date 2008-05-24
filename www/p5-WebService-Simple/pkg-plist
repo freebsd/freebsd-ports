@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Simple/.packlist
+%%SITE_PERL%%/WebService/Simple.pm
+%%SITE_PERL%%/WebService/Simple/Parser.pm
+%%SITE_PERL%%/WebService/Simple/Response.pm
+%%SITE_PERL%%/WebService/Simple/Parser/JSON.pm
+%%SITE_PERL%%/WebService/Simple/Parser/XML/Lite.pm
+%%SITE_PERL%%/WebService/Simple/Parser/XML/LibXML.pm
+%%SITE_PERL%%/WebService/Simple/Parser/XML/Simple.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
+@dirrmtry %%SITE_PERL%%/WebService/Simple/Parser/XML
+@dirrmtry %%SITE_PERL%%/WebService/Simple/Parser
+@dirrmtry %%SITE_PERL%%/WebService/Simple
+@dirrmtry %%SITE_PERL%%/WebService
