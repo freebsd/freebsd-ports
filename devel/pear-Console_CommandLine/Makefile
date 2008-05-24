@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Console_CommandLine
-PORTVERSION=	0.2.1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -21,7 +21,8 @@ FILES=		CommandLine.php CommandLine/Action.php CommandLine/Command.php\
 		CommandLine/Outputter.php CommandLine/Result.php CommandLine/Argument.php \
 		CommandLine/Exception.php CommandLine/Option.php CommandLine/XmlParser.php \
 		CommandLine/Action/Callback.php CommandLine/Action/Counter.php \
-		CommandLine/Action/Help.php CommandLine/Action/StoreArray.php \
+		CommandLine/Action/Help.php CommandLine/Action/Password.php \
+		CommandLine/Action/StoreArray.php \
 		CommandLine/Action/StoreFalse.php CommandLine/Action/StoreFloat.php \
 		CommandLine/Action/StoreInt.php CommandLine/Action/StoreString.php \
 		CommandLine/Action/StoreTrue.php CommandLine/Action/Version.php \
@@ -30,11 +31,19 @@ FILES=		CommandLine.php CommandLine/Action.php CommandLine/Command.php\
 DATA=		xmlschema.rng
 EXAMPLES=	ex1.php ex2.php ex2.xml
 _EXAMPLESDIR=	docs/examples
-TESTS=		console_commandline_addargument.phpt console_commandline_parse_1.phpt \
-		console_commandline_parse_4.phpt tests.inc.php console_commandline_addcommand.phpt \
-		console_commandline_parse_2.phpt console_commandline_parse_5.phpt \
-		console_commandline_addoption.phpt console_commandline_parse_3.phpt \
-		console_commandline_parse_6.phpt
+TESTS=		AllTests.php console_commandline_accept.phpt \
+		console_commandline_addargument.phpt \
+		console_commandline_addcommand.phpt \
+		console_commandline_addoption.phpt \
+		console_commandline_fromxmlfile.phpt \
+		console_commandline_fromxmlstring.phpt \
+		console_commandline_parse_1.phpt console_commandline_parse_2.phpt \
+		console_commandline_parse_3.phpt console_commandline_parse_4.phpt \
+		console_commandline_parse_5.phpt console_commandline_parse_6.phpt \
+		console_commandline_parse_7.phpt console_commandline_parse_8.phpt \
+		console_commandline_parse_9.phpt console_commandline_parse_10.phpt \
+		console_commandline_parse_11.phpt console_commandline_parse_12.phpt \
+		test.xml tests.inc.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
