@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTVERSION=	0.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -19,6 +18,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		curl.4:${PORTSDIR}/ftp/curl
 
+CONFLICTS=	gnash-devel-[0-9]*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -26,9 +27,8 @@ WANT_SDL=	yes
 WANT_GNOME=	yes
 WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
+USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
 USE_AUTOTOOLS=	libltdl:15
-
-PLUGIN_DIR=	${PREFIX}/lib/browser_plugins
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -37,23 +37,22 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
-		--with-plugindir="${PLUGIN_DIR}"
+		--with-npapi-plugindir="${PREFIX}/lib/browser_plugins" \
+		--with-kde-pluginprefix="${PREFIX}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
-MAN1=		gnash.1
+MAN1=		cygnal.1 gnash.1 gprocessor.1 soldumper.1 dumpshm.1
 
 OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		CYGNAL		"Enable Cygnal media server" off \
-		GTK		"GUI: GTK (required for FF plugin)" on \
+		GTK		"GUI: GTK (required for Mozilla/Firefox plugin)" on \
 		KDE		"GUI: KDE (required for Konqueror plugin)" off \
 		AGG		"Renderer: AGG" on \
-		OPENGL		"Renderer: OpenGL" off \
+		OPENGL		"Renderer: OpenGL (broken)" off \
 		CAIRO		"Renderer: Cairo (experimental)" off \
 		FFMPEG		"Media handler: ffmpeg (+SDL sound output)" on \
-		GSTREAMER	"Media handler: GStreamer" off \
-		MAD		"Media handler: MAD (+SDL sound output)" off  \
-		DEBUGLOG	"Leave logfile in current directory on every run" off
+		GSTREAMER	"Media handler: GStreamer" off
 
 .include <bsd.port.pre.mk>
 
@@ -67,6 +66,7 @@ CONFIGURE_ARGS+=	--disable-nsapi
 
 .if defined(WITH_KDE) && !defined(WITHOUT_PLUGIN)
 PLIST_SUB+=	KONQPLUGIN=""
+USE_LDCONFIG+=	${PREFIX}/lib/kde3
 .else
 PLIST_SUB+=	KONQPLUGIN="@comment "
 CONFIGURE_ARGS+=	--disable-kparts
@@ -111,10 +111,12 @@ PLIST_SUB+=	KDE=""
 # 5.5/6.2 EOL. We could also include bsd.kde.mk here, but that's much more
 # likely to bring more trouble
 LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs3
-CONFIGURE_ARGS+=--with-qt-incl="${LOCALBASE}/include" \
-		--with-qt-lib="${LOCALBASE}/lib"
 .else
 PLIST_SUB+=	KDE="@comment "
+.endif
+
+.if ${GNASH_GUIS} == ""
+IGNORE=		needs at least one GUI enabled. Please rerun 'make config' and enable GTK, KDE or both GUIs
 .endif
 
 CONFIGURE_ARGS+=	--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
@@ -144,32 +146,43 @@ IGNORE=			can't be built with multiple or without renderers enabled. Please reru
 #
 # Media handler options processing
 #
-.if defined(WITH_FFMPEG) && !defined(WITH_GSTREAMER) && !defined(WITH_MAD)
+.if defined(WITH_FFMPEG) && !defined(WITH_GSTREAMER)
 LIB_DEPENDS+=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-media=ffmpeg
 USE_SDL+=		sdl
-.elif !defined(WITH_FFMPEG) && defined(WITH_GSTREAMER) && !defined(WITH_MAD)
+.elif !defined(WITH_FFMPEG) && defined(WITH_GSTREAMER)
 USE_GSTREAMER=		yes
 CONFIGURE_ARGS+=	--enable-media=gst
-.elif !defined(WITH_FFMPEG) && !defined(WITH_GSTREAMER) && defined(WITH_MAD)
-LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/libmad
-CONFIGURE_ARGS+=	--enable-media=mad
-USE_SDL+=		sdl
-.elif !defined(WITH_FFMPEG) && !defined(WITH_GSTREAMER) && !defined(WITH_MAD)
+.elif !defined(WITH_FFMPEG) && !defined(WITH_GSTREAMER)
 CONFIGURE_ARGS+=	--enable-media=none
 .else
-IGNORE=			can't be built with multiple media handlers enabled. Please rerun 'make config' and leave one or none of them (ffmpeg|gstreamer|mad)
+IGNORE=			can't be built with multiple media handlers enabled. Please rerun 'make config' and leave one or none of them (ffmpeg|gstreamer)
+.endif
+
+pre-everything::
+.if defined(WITH_OPENGL)
+	@${ECHO_CMD} "OpenGL support is currently broken (Gnash hangs using 100% CPU). Use at your own risk"
+	@sleep 3
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^PTHREAD_[A-Z]*=/ d' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/test/ s|==|=|; s|== x|= x|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^LIBS = |&$${INTLLIBS} |' \
+		${WRKSRC}/utilities/Makefile.in ${WRKSRC}/cygnal/Makefile.in
+	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
 		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
-.if !defined(WITH_DEBUGLOG)
-	@${REINPLACE_CMD} -e 's|gnash-dbg.log|/dev/null|' \
-		${WRKSRC}/libbase/rc.cpp ${WRKSRC}/libbase/log.h
+
+.if !defined(WITHOUT_PLUGIN)
+post-install:
+.if defined(WITH_GTK)
+	@cd ${INSTALL_WRKSRC}/plugin && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
+.endif
+.if defined(WITH_KDE)
+	@cd ${INSTALL_WRKSRC}/plugin/klash && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install-plugin
+.endif
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,43 +1,49 @@
+bin/dumpshm
 bin/gnash
-bin/gparser
 bin/gprocessor
+bin/soldumper
 %%GTK%%bin/gtk-gnash
 %%KDE%%bin/kde-gnash
 %%CYGNAL%%bin/cygnal
 %%FFPLUGIN%%lib/browser_plugins/libgnashplugin.so
-%%KONQPLUGIN%%lib/kde3/libklashpart.so
-%%KONQPLUGIN%%lib/kde3/libklashpart.a
-%%KONQPLUGIN%%lib/kde3/libklashpart.la
-lib/gnash/libgnashamf-0.8.1.so
-lib/gnash/libgnashamf.a
-lib/gnash/libgnashamf.la
-lib/gnash/libgnashamf.so
-lib/gnash/libgnashbackend-0.8.1.so
-lib/gnash/libgnashbackend.a
-lib/gnash/libgnashbackend.la
-lib/gnash/libgnashbackend.so
-lib/gnash/libgnashbase-0.8.1.so
-lib/gnash/libgnashbase.a
-lib/gnash/libgnashbase.la
-lib/gnash/libgnashbase.so
-lib/gnash/libgnashgeo-0.8.1.so
-lib/gnash/libgnashgeo.a
-lib/gnash/libgnashgeo.la
-lib/gnash/libgnashgeo.so
-lib/gnash/libgnashserver-0.8.1.so
-lib/gnash/libgnashserver.a
-lib/gnash/libgnashserver.la
-lib/gnash/libgnashserver.so
-%%DATADIR%%/GnashG.png
-%%DATADIR%%/gnash_128_96.ico
 %%KONQPLUGIN%%share/apps/klash/pluginsinfo
 %%KONQPLUGIN%%share/apps/klash/klashpartui.rc
 %%KONQPLUGIN%%share/services/klash_part.desktop
-share/locale/cs/gnash.mo
-share/locale/de/gnash.mo
-share/locale/es/gnash.mo
-share/locale/fr/gnash.mo
-share/locale/it/gnash.mo
+%%KONQPLUGIN%%lib/kde3/libklashpart.a
+%%KONQPLUGIN%%lib/kde3/libklashpart.so
+%%KONQPLUGIN%%lib/kde3/libklashpart.la
+lib/gnash/libgnashamf-0.8.2.so
+lib/gnash/libgnashamf.a
+lib/gnash/libgnashamf.la
+lib/gnash/libgnashamf.so
+lib/gnash/libgnashbase-0.8.2.so
+lib/gnash/libgnashbase.a
+lib/gnash/libgnashbase.la
+lib/gnash/libgnashbase.so
+lib/gnash/libgnashmedia-0.8.2.so
+lib/gnash/libgnashmedia.a
+lib/gnash/libgnashmedia.la
+lib/gnash/libgnashmedia.so
+lib/gnash/libgnashserver-0.8.2.so
+lib/gnash/libgnashserver.a
+lib/gnash/libgnashserver.la
+lib/gnash/libgnashserver.so
+%%DOCSDIR%%/gnashuser.html
+%%DOCSDIR%%/images/car_crash.png
+%%DOCSDIR%%/images/rtmp.png
+%%DOCSDIR%%/gnashref.html
+%%DATADIR%%/GnashG.png
+%%DATADIR%%/gnash_128_96.ico
+share/locale/cs/LC_MESSAGES/gnash.mo
+share/locale/de/LC_MESSAGES/gnash.mo
+share/locale/es/LC_MESSAGES/gnash.mo
+share/locale/fi/LC_MESSAGES/gnash.mo
+share/locale/fr/LC_MESSAGES/gnash.mo
+share/locale/it/LC_MESSAGES/gnash.mo
+share/locale/sv/LC_MESSAGES/gnash.mo
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%
 @dirrm lib/gnash
-@dirrmtry lib/browser_plugins
+%%KONQPLUGIN%%@dirrm share/apps/klash
+%%FFPLUGIN%%@dirrmtry lib/browser_plugins
