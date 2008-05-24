@@ -12608,6 +12608,7 @@ phase		ports/x11-themes/phase
 phat		ports/x11-toolkits/phat
 phatbeat	ports/audio/phatbeat
 phc		ports/lang/phc
+phd2fasta	ports/biology/phd2fasta
 phex		ports/net-p2p/phex
 phluid		ports/x11-wm/phluid
 pho		ports/graphics/pho
