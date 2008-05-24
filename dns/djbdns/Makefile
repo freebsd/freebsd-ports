@@ -14,6 +14,12 @@ MASTER_SITES=	http://cr.yp.to/djbdns/ \
 DISTNAME=	djbdns-${DJBDNS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
+MAINTAINER?=	roam@FreeBSD.org
+COMMENT?=	A collection of secure and reliable DNS tools
+
+RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
+		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
+
 OPTIONS=	DUMPCACHE	"persistent cache for dnscache" off \
 		IPV6		"IPv6 support by Felix von Leitner" off \
 		IGNOREIP	"ignoreip2 patch by Russell Nelson" off \
@@ -91,12 +97,6 @@ PATCH_DIST_STRIP=	-p1
 
 DJBDNS_VER=	1.05
 DJBDNS_V6_VER=	test14
-
-MAINTAINER?=	roam@FreeBSD.org
-COMMENT?=	A collection of secure and reliable DNS tools
-
-RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
-		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
