@@ -1,0 +1,7 @@
+The wmanager-addons package contains a couple of helper shell scripts and
+manual pages for the x11/wmanager window manager selector.  They were
+originally part of the Debian wmanager package, but have later been ported
+to other operating systems.
+
+Author:	Peter Pentchev <roam@ringlet.net>
+WWW:	http://devel.ringlet.net/x11/wmanager-addons/
