@@ -7,7 +7,7 @@
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
-PORTREVISION?=	11
+PORTREVISION?=	12
 CATEGORIES?=	dns
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://cr.yp.to/djbdns/
@@ -100,8 +100,6 @@ RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
-
-RESTRICTED=	Forbidden to redistribute - we have patches to the distribution.
 
 .if defined(WITH_IPV6)
 PLIST_SUB+=	WITH_IPV6=""
