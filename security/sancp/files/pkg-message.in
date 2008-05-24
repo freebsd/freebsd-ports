@@ -20,18 +20,9 @@ sancp.conf has been altered (you used sancp for something else) a
 new conf file, named sguil-sancp.conf-sample will be installed in the
 %%PREFIX%%/etc directory.  You should use that one for sguil.
 
-Some of the configuration options for sancp are:
+All of the configuration options for sancp are documented in the 
+startup script in %%PREFIX%%/etc/rc.d (don't forget to specify interface
+in /etc/rc.conf)
 
--? or -h  this help screen
--c <filename>  specify the configuration/rules filename
--d <directory>  specify the directory for output files
--i <device>  set the network device to listen on (default: 'any')
--g <gid>   set a group identity
--u <uid>   set a user identity
--D (daemon) forks, prints msgs to syslog only and overrides -C option
--F <bpf filename>  file containing a bpf filter expression, overrides (alternative to -B)
--V  display version
-
-If you're running sguil, you probably want to use the following flags:
+If you're running sguil, you probably want to use at least the following flags:
 sancp_flags="-D -P -R -u sancp -g sancp -d /var/log/sancp"
-(don't forget to specify the conf file and interface as well)
