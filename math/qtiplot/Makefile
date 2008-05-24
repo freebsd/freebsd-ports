@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.6
+DISTVERSION=	0.9.6.2
 CATEGORIES=	math science
-MASTER_SITES=	http://soft.proindependent.com/src/
+MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An Origin clone for data analysis and scientific plotting
@@ -78,6 +78,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/lib/qtiplot/plugins|${DATADIR}/fitPlugins|' \
 		${WRKSRC}/qtiplot/src/ApplicationWindow.cpp
+	@${REINPLACE_CMD} -e '/^system(lupdate/d; /^system(lrelease/d' \
+		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .if defined(WITH_DEBUG)
 	@${REINPLACE_CMD} -e \
 		"/^CONFIG.*release/s|release|debug|" \
