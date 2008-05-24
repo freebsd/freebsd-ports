@@ -1,7 +1,6 @@
 @unexec [ ! -f /var/jabberd/pid/router.pid ] || %D/etc/rc.d/jabberd stop || true
 bin/c2s
 bin/jabberd
-bin/resolver
 bin/router
 bin/s2s
 bin/sm
@@ -9,8 +8,6 @@ bin/sm
 etc/jabberd/c2s.xml.dist
 @unexec if cmp -s %D/etc/jabberd/jabberd.cfg %D/etc/jabberd/jabberd.cfg.dist; then rm -f %D/etc/jabberd/jabberd.cfg; fi
 etc/jabberd/jabberd.cfg.dist
-@unexec if cmp -s %D/etc/jabberd/resolver.xml %D/etc/jabberd/resolver.xml.dist; then rm -f %D/etc/jabberd/resolver.xml; fi
-etc/jabberd/resolver.xml.dist
 @unexec if cmp -s %D/etc/jabberd/router-filter.xml %D/etc/jabberd/router-filter.xml.dist; then rm -f %D/etc/jabberd/router-filter.xml; fi
 etc/jabberd/router-filter.xml.dist
 @unexec if cmp -s %D/etc/jabberd/router-users.xml %D/etc/jabberd/router-users.xml.dist; then rm -f %D/etc/jabberd/router-users.xml; fi

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.1.24.1
+PORTVERSION=	2.2.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -16,7 +16,8 @@ COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		gsasl.11:${PORTSDIR}/security/gsasl \
-		idn.16:${PORTSDIR}/dns/libidn
+		idn.16:${PORTSDIR}/dns/libidn \
+		udns.0:${PORTSDIR}/dns/udns
 
 OPTIONS=	MYSQL "Support MySQL (storage/auth/reg)" on \
 		POSTGRESQL "Support PostgreSQL (storage/auth/reg)" off \
@@ -37,7 +38,7 @@ USE_RC_SUBR=	jabberd
 USE_LDCONFIG=	${PREFIX}/lib/jabberd
 CONFIGURE_ARGS+=	--localstatedir=/var \
 		--sysconfdir=${PREFIX}/etc/jabberd \
-		--enable-ssl --enable-mio=poll --enable-sasl=gsasl \
+		--enable-ssl --enable-mio=poll \
 		--with-extra-include-path="${LOCALBASE}/include ${EIP}" \
 		--with-extra-library-path="${LOCALBASE}/lib ${ELP}"
 
@@ -161,7 +162,7 @@ SUB_LIST+=	REQUIRE="${_REQUIRE}"
 SUB_LIST+=	REQUIRE="LOGIN"
 .endif
 
-MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
+MAN8=		c2s.8 jabberd.8 router.8 s2s.8 sm.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"-lsqlite3|"-lsqlite3 ${PTHREAD_LIBS}|g' \
