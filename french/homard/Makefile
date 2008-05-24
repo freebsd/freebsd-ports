@@ -7,7 +7,7 @@
 
 PORTNAME=	homard
 DISTVERSION=	8.11-1
-DISTVERSIONSUFFIX=	.${ARCH}
+DISTVERSIONSUFFIX=	.i386
 CATEGORIES=	french cad linux
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 
@@ -21,7 +21,7 @@ RESTRICTED=	The free downloading of HOMARD software is only allowed for coupling
 		with Code_Aster. For any other use, a license agreement is requested.\
 		Please contact HOMARD project: <homard@edf.fr>.
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_LINUX=	yes
 USE_PYTHON=	yes
