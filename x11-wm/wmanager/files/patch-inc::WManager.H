@@ -1,6 +1,7 @@
---- inc/WManager.H.orig	Mon Nov 15 00:28:36 1999
-+++ inc/WManager.H	Sun Nov  2 02:38:20 2003
-@@ -80,10 +80,10 @@
+diff -urN -urN -x .svn ../vendor/wmanager/inc/WManager.H ./inc/WManager.H
+--- ../vendor/wmanager/inc/WManager.H	2007-12-11 12:42:04.000000000 +0200
++++ ./inc/WManager.H	2007-12-17 16:00:13.000000000 +0200
+@@ -80,17 +80,17 @@
    
  private:
    Interface* _Interface;
@@ -13,3 +14,12 @@
  
    void
    _TokenizeAndAddToBrowser(char* entry);
+ 
+   char*
+-  _CutString(char* str,
+-	     char* sub);
++  _CutString(const char* str,
++	     const char* sub);
+ };
+ 
+ #endif // WManager_H

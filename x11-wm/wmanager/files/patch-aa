@@ -1,11 +1,15 @@
 
 $FreeBSD$
 
---- Makefile.orig	Mon Nov 15 00:29:24 1999
-+++ Makefile	Sat Oct 26 06:02:46 2002
-@@ -29,17 +29,21 @@
+diff -urN -urN -x .svn ../vendor/wmanager/Makefile ./Makefile
+--- ../vendor/wmanager/Makefile	2007-12-11 12:42:04.000000000 +0200
++++ ./Makefile	2008-05-21 18:21:47.000000000 +0300
+@@ -28,39 +28,39 @@
+ # make settings
  SHELL     = /bin/sh
  MAKEFLAGS = --print-directory
++PREFIX    ?= /usr/local
++LOCALBASE ?= /usr/local
  
 +# base settings
 +bindir	= $(PREFIX)/bin
@@ -18,8 +22,13 @@ $FreeBSD$
 -CXX       = g++ 
 -CXXFLAGS  = -I$(incdir) -O2 -Wall -pedantic #-DDEBUG=1 -g3
 -
-+CXX      ?= g++
-+CXXFLAGS+= -I$(fltkinc) -I$(incdir) $(PTHREAD_CFLAGS) #-DDEBUG=1 -g3
++CXX		?= g++
++CXXFLAGS_WARN	?= -Wall -W
++CXXFLAGS_OPT	?= -O2 -fno-strict-aliasing -pipe
++#CXXFLAGS_DBG	?= -g -DDEBUG
++CXXFLAGS_DBG	?=
++CXXFLAGS	?= ${CXXFLAGS_WARN} ${CXXFLAGS_DBG} ${CXXFLAGS_OPT}
++CXXFLAGS	+= -I${fltkinc} -I${incdir} ${PTHREAD_CFLAGS}
  
  # linker settings
 -LD        = g++
@@ -27,12 +36,17 @@ $FreeBSD$
 -LDDIRS    = -L/usr/X11R6/lib -L/usr/lib -L/usr/local/lib
 -
 +LD        = $(CXX)
-+LDFLAGS   = -lGL -lfltk -lXext -lX11 -lm $(PTHREAD_LIBS)
++LDFLAGS   ?= -lGL -lfltk -lXext -lX11 -lm ${PTHREAD_LIBS}
 +LDDIRS    = -L$(x11lib)
  
  # install settings
- INSTALL       = /usr/bin/install
-@@ -50,17 +54,6 @@
+-INSTALL       = /usr/bin/install
+-INSTALL_FLAGS = --strip
++INSTALL       ?= install
++STRIP         ?= -s
+ 
+ 
+ # documentation tool
  DOCTOOL      = perceps
  DOCTOOL_FLAGS = -a -b -f -h -m -r
  
@@ -50,7 +64,7 @@ $FreeBSD$
  # documentational files for developer
  docdir    = ./doc
  templates = $(docdir)/templates
-@@ -82,8 +75,7 @@
+@@ -82,8 +82,7 @@
  # project version
  VERSION = 0.1.1
  
@@ -60,3 +74,12 @@ $FreeBSD$
  
  wmanager: $(OBJ)
  	$(LD) -o $@ $^ $(LDDIRS) $(LDFLAGS) 
+@@ -92,7 +91,7 @@
+ 	$(LD) -o wmanager $^ $(LDDIRS) $(LDFLAGS) -static
+ 
+ install: wmanager
+-	$(INSTALL) $< $(bindir)/$<
++	$(INSTALL) $(STRIP) $< ${DESTDIR}$(bindir)/$<
+ 
+ clean:
+ 	@rm -f $(OBJ) wmanager
