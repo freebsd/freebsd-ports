@@ -509,6 +509,7 @@
     SUBDIR += nethack34-gnome
     SUBDIR += nethack34-nox11
     SUBDIR += nethack34-qt
+    SUBDIR += netherearth
     SUBDIR += netpanzer
     SUBDIR += netpanzer-data
     SUBDIR += netrek-BRMH-bin
