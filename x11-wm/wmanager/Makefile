@@ -26,6 +26,14 @@ MAKE_ENV=	CXX="${CXX}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+OPTIONS=	ADDONS "Install the helper scripts and manpages" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ADDONS)
+RUN_DEPENDS+=	wmanager-loop:${PORTSDIR}/x11-wm/wmanager-addons
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmanager ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -38,4 +46,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/.xinitrc ${EXAMPLESDIR}/xinitrc_sample
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
