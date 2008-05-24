@@ -1,11 +1,11 @@
---- python/tests/Makefile.in.orig	2008-01-22 15:51:51.000000000 -0500
-+++ python/tests/Makefile.in	2008-01-22 15:52:12.000000000 -0500
-@@ -259,7 +259,7 @@ sysconfdir = @sysconfdir@
+--- python/tests/Makefile.in.orig	2008-05-23 22:41:49.000000000 -0500
++++ python/tests/Makefile.in	2008-05-23 22:42:12.000000000 -0500
+@@ -270,7 +270,7 @@
  target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
--EXAMPLE_DIR = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)/examples
-+EXAMPLE_DIR = $(datadir)/examples/py-libxml2
+-exampledir = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)/examples
++exampledir = $(datadir)/examples/py-libxml2
+ dist_example_DATA = $(PYTESTS) $(XMLS)
  PYTESTS = \
      build.py	\
-     attribs.py	\

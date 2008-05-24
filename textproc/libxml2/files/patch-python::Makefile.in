@@ -1,15 +1,15 @@
---- python/Makefile.in.orig	2008-01-22 15:50:22.000000000 -0500
-+++ python/Makefile.in	2008-01-22 15:50:22.000000000 -0500
-@@ -313,7 +313,7 @@ INCLUDES = \
+--- python/Makefile.in.orig	2008-05-23 22:39:11.000000000 -0500
++++ python/Makefile.in	2008-05-23 22:40:42.000000000 -0500
+@@ -322,7 +322,7 @@
  	-I$(top_builddir)/include \
  	-I$(top_builddir)/$(subdir)
  
--DOCS_DIR = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)
-+DOCS_DIR = $(datadir)/doc/py-libxml2
+-docsdir = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)
++docsdir = $(datadir)/doc/py-libxml2
  # libxml2class.txt is generated
- DOCS = ${srcdir}/TODO
+ dist_docs_DATA = TODO
  EXTRA_DIST = \
-@@ -330,7 +330,7 @@ EXTRA_DIST = \
+@@ -335,7 +335,7 @@
  
  libxml2mod_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ -module -avoid-version 
  @WITH_PYTHON_TRUE@mylibs = \
@@ -17,4 +17,4 @@
 +@WITH_PYTHON_TRUE@	-lxml2
  
  @WITH_PYTHON_TRUE@python_LTLIBRARIES = libxml2mod.la
- @WITH_PYTHON_TRUE@libxml2mod_la_SOURCES = libxml.c types.c libxml2-py.c
+ @WITH_PYTHON_TRUE@libxml2mod_la_SOURCES = libxml.c types.c
