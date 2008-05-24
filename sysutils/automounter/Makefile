@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	automounter
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bsdadminscripts
@@ -26,7 +26,7 @@ MAN8=		automounter.8
 .endif
 
 plist: patch
-		cd ${WRKSRC}; ./list.sh -nodoc > ${PLIST}
+		@cd ${WRKSRC}; ./list.sh -nodoc > ${PLIST}
 
 do-install:
 		@cd ${WRKSRC}; ./install.sh -prefix=${PREFIX} ${NOPORTDOCS}
