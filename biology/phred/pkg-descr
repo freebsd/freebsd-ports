@@ -1,0 +1,24 @@
+Phred reads DNA sequencer trace data, calls bases, assigns quality values
+to the bases, and writes the base calls and quality values to output files.
+
+Trace data is read from chromatogram files in the SCF, ABI, and EST formats,
+even if they were compressed using gzip, bzip2, or UNIX compress.
+Quality values are written to FASTA format files or PHD files, which can be
+used by the Phrap sequence assembly program in order to increase the accuracy
+of the assembled sequence.
+
+Base calling and quality value accuracies tested for:
+  ABI models 373, 377, and 3700
+  Molecular Dynamics MegaBACE
+  LI-COR 4000
+
+Base calling accuracies tested for:
+  ABI model 3100
+  Beckman CEQ
+
+It contains also a data evaluation program called 'daev'.
+See DAEV.DOC for more information.
+
+You must obtain the tarball via e-mail to build. See the web site below.
+
+WWW: http://www.phrap.org/phredphrapconsed.html

@@ -1,0 +1,21 @@
+Phrap is a program for assembling shotgun DNA sequence data.
+Among other features, it allows use of the entire read and not just the
+trimmed high quality part, it uses a combination of user-supplied and
+internally computed data quality information to improve assembly accuracy
+in the presence of repeats, it constructs the contig sequence as a mosaic
+of the highest quality read segments rather than a consensus, it provides
+extensive assembly information to assist in trouble-shooting assembly
+problems, and it handles large datasets.
+
+This package also contains Swat and Cross_match.
+Swat is a program for searching one or more DNA or protein query sequences
+against a sequence database, using (an efficient implementation of) the
+Smith-Waterman-Gotoh algorithm.
+Cross_Match is a general-purpose utility based on Swat for comparing any
+two sets of DNA sequences, and it can be used to:
+* produce vector-masked versions of a set of reads
+* compare a set of cDNA sequences to a set of cosmids
+* compare contigs found by two altanative assembly procedures to each other
+* compare phrap contigs to the final edited cosmid sequence.
+
+WWW: http://www.phrap.org/phredphrapconsed.html
