@@ -7,26 +7,23 @@
 #
 
 PORTNAME=	gtkspell
-PORTVERSION=	2.0.11
-PORTREVISION?=	6
+PORTVERSION=	2.0.13
+PORTREVISION?=	0
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://gtkspell.sourceforge.net/download/
-DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GTK+ 2 spell checking component
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	pspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
 
-USE_AUTOTOOLS=	libtool:15
-USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk20
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomeprefix gnomehack gtk20 intlhack
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
