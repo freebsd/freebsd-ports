@@ -996,6 +996,7 @@
     SUBDIR += p5-WebService-CIA
     SUBDIR += p5-WebService-ISBNDB
     SUBDIR += p5-WebService-NoPaste
+    SUBDIR += p5-WebService-Simple
     SUBDIR += p5-WebService-Technorati
     SUBDIR += p5-WebService-YouTube
     SUBDIR += p5-Xango
