@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080524:
+  AFFECTS: users of net-im/jabberd
+  AUTHOR: mm@FreeBSD.org
+
+  Starting with version 2.2.0, resolver is now built in the S2S component.
+  Jabberd configuration files require updating.
+
+  jabberd.cfg: resolver component must be removed
+  s2s.xml: <lookup> section must be added (see s2s.xml.dist)
+  resolver.xml: may be deleted (file not required anymore)
+
 20080519:
   AFFECTS: users of www/nginx and www/nginx-devel
   AUTHOR: osa@FreeBSD.org
