@@ -538,6 +538,7 @@ asclock		ports/x11-clocks/asclock
 asclock-gtk	ports/x11-clocks/asclock-gtk
 asclock-xlib	ports/x11-clocks/asclock-xlib
 ascpu		ports/sysutils/ascpu
+asdlgen		ports/devel/asdlgen
 asedit		ports/editors/asedit
 asfiles		ports/x11-fm/asfiles
 asfrecorder	ports/net/asfrecorder
