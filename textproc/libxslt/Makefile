@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	1.1.22
-PORTREVISION?=	1
+PORTVERSION=	1.1.24
+PORTREVISION?=	0
 CATEGORIES?=	textproc gnome
-MASTER_SITES=	GNOME \
-		ftp://fr.rpmfind.net/pub/libxml/
+MASTER_SITES=	ftp://fr.rpmfind.net/pub/libxml/ \
+		ftp://gd.tuwien.ac.at/pub/libxml/ \
+		ftp://xmlsoft.org/libxml2/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org

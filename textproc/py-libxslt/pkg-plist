@@ -1,9 +1,9 @@
-lib/%%PYTHON_VERSION%%/site-packages/libxslt.py
-lib/%%PYTHON_VERSION%%/site-packages/libxslt.pyc
-lib/%%PYTHON_VERSION%%/site-packages/libxslt.pyo
-lib/%%PYTHON_VERSION%%/site-packages/libxsltmod.a
-lib/%%PYTHON_VERSION%%/site-packages/libxsltmod.la
-lib/%%PYTHON_VERSION%%/site-packages/libxsltmod.so
+%%PYTHON_SITELIBDIR%%/libxslt.py
+%%PYTHON_SITELIBDIR%%/libxslt.pyc
+%%PYTHON_SITELIBDIR%%/libxslt.pyo
+%%PYTHON_SITELIBDIR%%/libxsltmod.a
+%%PYTHON_SITELIBDIR%%/libxsltmod.la
+%%PYTHON_SITELIBDIR%%/libxsltmod.so
 %%DOCSDIR%%/TODO
 %%EXAMPLESDIR%%/basic.py
 %%EXAMPLESDIR%%/exslt.py

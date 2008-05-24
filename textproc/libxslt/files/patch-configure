@@ -1,6 +1,11 @@
---- configure.orig	Mon Jan 15 19:34:30 2007
-+++ configure	Mon Jan 15 19:37:48 2007
-@@ -21663,7 +21663,7 @@
+--- configure.orig	2008-05-24 00:09:57.000000000 -0500
++++ configure	2008-05-24 00:10:20.000000000 -0500
+@@ -22284,11 +22284,12 @@
+     fi
+     if test "$PYTHON_VERSION" != ""
+     then
++	with_python=`$PYTHON -c "import sys; print sys.exec_prefix"`
+ 	if test -r $with_python/include/python$PYTHON_VERSION/Python.h -a \
  	   -d $with_python/lib/python$PYTHON_VERSION/site-packages
  	then
  	    PYTHON_INCLUDES=$with_python/include/python$PYTHON_VERSION
