@@ -1,0 +1,7 @@
+bin/2d-rewriter
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/life.rules
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/life1.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/life2.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sierpinski.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/srloop.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

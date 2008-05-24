@@ -3,6 +3,7 @@
 
     COMMENT = Scientific ports
 
+    SUBDIR += 2d-rewriter
     SUBDIR += 2dhf
     SUBDIR += InsightToolkit
     SUBDIR += abinit
