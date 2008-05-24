@@ -12820,6 +12820,7 @@ phpwiki		ports/www/phpwiki
 phpwiki13	ports/www/phpwiki13
 phrap		ports/biology/phrap
 phraze		ports/misc/phraze
+phred		ports/biology/phred
 phylip		ports/biology/phylip
 physcalc	ports/math/physcalc
 physfs		ports/devel/physfs
