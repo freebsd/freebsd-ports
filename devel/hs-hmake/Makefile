@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hmake
-PORTVERSION=	3.13
-PORTREVISION=	1
+PORTVERSION=	3.14
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/hmake/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/ \
