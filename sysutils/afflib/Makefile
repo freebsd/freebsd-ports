@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afflib
-PORTVERSION=	3.1.3
+PORTVERSION=	3.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.afflib.org/downloads/
 
@@ -18,10 +18,12 @@ LIB_DEPENDS=	fuse:${PORTSDIR}/sysutils/fusefs-libs \
  		expat:${PORTSDIR}/textproc/expat2 \
 		curl:${PORTSDIR}/ftp/curl
 
+USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 USE_ICONV =	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS=	--enable-s3=yes
 CONFIGURE_ENV=	CPPFLAGS='-DFUSE_USE_VERSION=26' \
