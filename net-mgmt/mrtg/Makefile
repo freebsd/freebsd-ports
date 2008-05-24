@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.15.2
+PORTVERSION=	2.16.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -18,20 +18,29 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	The multi-router traffic grapher
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
+RUN_DEPENDS=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
 
 USE_PERL5=	YES
 MAKE_ENV+=	PERL=${PERL}
+MRTG_USER?=	mrtg
+MRTG_GROUP?=	mrtg
+MRTG_UID?=	279
+MRTG_GID?=	279
+MRTG_RUNDIR?=   /var/run/mrtg
 
 USE_RC_SUBR=	mrtg_daemon.sh
-SUB_LIST+=	PERL=${PERL}
+SUB_FILES=	pkg-install pkg-message
+SUB_LIST=	ETCDIR=${ETCDIR} \
+		MRTG_USER=${MRTG_USER} \
+		MRTG_GROUP=${MRTG_GROUP} \
+		MRTG_UID=${MRTG_UID} \
+		MRTG_GID=${MRTG_GID} \
+		MRTG_RUNDIR=${MRTG_RUNDIR}
 
 GNU_CONFIGURE=	YES
-
 CONFIGURE_ENV=	PERL=${PERL}
 
 MAN1=		cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
@@ -39,52 +48,66 @@ MAN1=		cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
 		mrtg-nw-guide.1 mrtg-reference.1 mrtg-rrd.1 mrtg-squid.1 \
 		mrtg-unix-guide.1 mrtg-webserver.1 mrtg.1 mrtglib.1
 
-OPTIONS=	IPV6 "Enable IPv6 support" OFF
+DOCS=		CHANGES COPYRIGHT MANIFEST README
+EXAMPLES=	cfgmaker.pod indexmaker.pod mrtg-contrib.pod mrtg-faq.pod \
+		mrtg-forum.pod mrtg-ipv6.pod mrtg-logfile.pod mrtg-mibhelp.pod \
+		mrtg-nt-guide.pod mrtg-nw-guide.pod mrtg-reference.pod \
+		mrtg-rrd.pod mrtg-squid.pod mrtg-unix-guide.pod mrtg.pod \
+		mrtg-webserver.pod mrtglib.pod cfgmaker.txt indexmaker.txt \
+		mrtg-contrib.txt mrtg-faq.txt mrtg-forum.txt mrtg-ipv6.txt \
+		mrtg-logfile.txt mrtg-mibhelp.txt mrtg-nt-guide.txt \
+		mrtg-nw-guide.txt mrtg-reference.txt mrtg-rrd.txt \
+		mrtg-squid.txt mrtg-unix-guide.txt mrtg-webserver.txt \
+		mrtg.txt mrtglib.txt mrtg-l.png mrtg-m.png mrtg-r.png \
+		mrtg-ti.png mrtg-l.gif mrtg-m.gif mrtg-r.gif
+IMAGES=		favicon.ico mrtg-l.gif mrtg-l.png mrtg-m.gif mrtg-m.png \
+		mrtg-r.gif mrtg-r.png mrtg-ti.gif mrtg-ti.png
+SCRIPTS=	cfgmaker indexmaker mrtg
+
+OPTIONS=	IPV6 "Enable IPv6 support" OFF \
+		SNMP "Enable use of SNMPv3" OFF
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_IPV6)
 RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 .endif
+.if defined(WITH_SNMP)
+RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+.else
+RUN_DEPENDS+=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
+.endif
 
 post-patch:
 	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
 
-pre-install:
-		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+pre-configure:
+	${SED} -e 's,%%MRTG_USER%%,${MRTG_USER},g;' \
+		-e 's,%%MRTG_GROUP%%,${MRTG_GROUP},g;' \
+		-e 's,%%MRTG_UID%%,${MRTG_UID},g;' \
+		-e 's,%%MRTG_GID%%,${MRTG_GID},g;' \
+		-e 's,%%MRTG_RUNDIR%%,${MRTG_RUNDIR},g;' \
+		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	${SETENV} @PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
+		PRE-INSTALL
 
 do-install:
-		${MKDIR} -m 755 ${ETCDIR}
-		${MKDIR} -m 755 ${DATADIR}
 .if !defined(NOPORTDOCS)
-		${MKDIR} -m 755 ${DOCSDIR}
-		for file in CHANGES COPYRIGHT MANIFEST README \
-			doc/*.pod doc/*.txt doc/*.png ; do \
-			${INSTALL_DATA} ${WRKSRC}/$$file ${DOCSDIR}; \
-		done
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${MKDIR} ${EXAMPLESDIR}/doc ${EXAMPLESDIR}/images
+	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/doc/,} ${EXAMPLESDIR}/doc/
+	@${INSTALL_DATA} ${IMAGES:S,^,${WRKSRC}/images/,} ${EXAMPLESDIR}/images/
 .endif
-		${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg ${ETCDIR}/mrtg.cfg.sample
-		${INSTALL_DATA} ${WRKSRC}/images/* ${DATADIR}
-		${INSTALL_DATA} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
-		${INSTALL_DATA} ${WRKSRC}/lib/mrtg2/*.pm ${SITE_PERL}
-		${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${PREFIX}/bin/
-		for file in mrtg cfgmaker indexmaker; do \
-			${INSTALL_SCRIPT} ${WRKSRC}/bin/$$file ${PREFIX}/bin/; \
-		done
+	@${MKDIR} ${ETCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg ${ETCDIR}/mrtg.cfg.sample
+	@${INSTALL_DATA} ${MAN1:S,^,${WRKSRC}/doc/,} ${MAN1PREFIX}/man/man1
+	@${CP} -p ${WRKSRC}/lib/mrtg2/*.pm ${SITE_PERL}/
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/bin/,} ${PREFIX}/bin
 
 post-install:
-		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if !defined(BATCH)
-	@${ECHO} ""
-	@${ECHO} "############################################################################"
-	@${ECHO} "# Please create a MRTG config file in ${ETCDIR}                  #"
-	@${ECHO} "# A configuration file can be automatically generated with cfgmaker        #"
-	@${ECHO} "# A sample configuration file is installed as mrtg.cfg.sample              #"
-	@${ECHO} "#                                                                          #"
-	@${ECHO} "# To enable MRTG in daemon mode, put the following to your /etc/rc.conf or #"
-	@${ECHO} "# /etc/rc.conf.local file:                                                 #"
-	@${ECHO} "#      mrtg_daemon_enable=\"YES\"                                            #"
-	@${ECHO} "############################################################################"
-.endif
+	@${SETENV} @PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

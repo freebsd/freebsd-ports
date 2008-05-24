@@ -1,0 +1,8 @@
+############################################################################
+# Please create a MRTG config file in %%ETCDIR%%                  #
+# A configuration file can be automatically generated with cfgmaker        #
+# A sample configuration file is installed as mrtg.cfg.sample              #
+#                                                                          #
+# To enable MRTG in daemon mode, put the following to your /etc/rc.conf:   #
+#      mrtg_daemon_enable="YES"                                            #
+############################################################################
