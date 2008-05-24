@@ -17234,6 +17234,7 @@ wmScoreBoard	ports/misc/wmScoreBoard
 wmakerconf	ports/x11-wm/wmakerconf
 wmalbum		ports/audio/wmalbum
 wmanager	ports/x11-wm/wmanager
+wmanager-addons	ports/x11-wm/wmanager-addons
 wmapm		ports/sysutils/wmapm
 wmapmload	ports/sysutils/wmapmload
 wmapp		ports/x11-toolkits/wmapp
