@@ -1565,6 +1565,7 @@ connectfive	ports/games/connectfive
 conquest	ports/games/conquest
 cons		ports/devel/cons
 cons-test	ports/devel/cons-test
+consed		ports/biology/consed
 conserver	ports/comms/conserver
 conserver-com	ports/comms/conserver-com
 consolehm	ports/sysutils/consolehm
