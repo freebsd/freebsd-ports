@@ -53,6 +53,7 @@
     SUBDIR += arm-rtems-objc
     SUBDIR += aros-sdk
     SUBDIR += as31
+    SUBDIR += asdlgen
     SUBDIR += asis
     SUBDIR += asis-gpl
     SUBDIR += asl
