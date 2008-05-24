@@ -834,6 +834,7 @@
     SUBDIR += vdrift
     SUBDIR += vdrift-data
     SUBDIR += vectoroids
+    SUBDIR += vegastrike-data
     SUBDIR += viruskiller
     SUBDIR += volleyball
     SUBDIR += vor
