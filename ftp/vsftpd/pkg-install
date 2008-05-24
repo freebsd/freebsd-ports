@@ -16,7 +16,7 @@ if ! pw groupshow operator >/dev/null; then
 fi
 
 if ! pw usershow ftp >/dev/null; then
-	if pw useradd ftp -g operator -u 14 -h - -d /var/ftp -s /nonexistent -c "Annonymus Ftp"; then
+	if pw useradd ftp -g operator -u 14 -h - -d /var/ftp -s /nonexistent -c "Anonymous Ftp"; then
 		echo "Added user ftp for vsftpd"
 	else
 		echo "Failed to add user ftp as gid 14" >&2
