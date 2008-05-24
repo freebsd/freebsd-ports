@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haddock-docs
-PORTVERSION=	2.0.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/haddock/dist/
 PKGNAMEPREFIX=	hs-
