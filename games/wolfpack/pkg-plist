@@ -160,7 +160,6 @@ etc/wolfpack/schedule
 %%DATADIR%%/info.nr/follow
 %%DATADIR%%/info.nr/force
 %%DATADIR%%/info.nr/fortify
-%%DATADIR%%/info.nr/fuel
 %%DATADIR%%/info.nr/give
 %%DATADIR%%/info.nr/grind
 %%DATADIR%%/info.nr/harden
