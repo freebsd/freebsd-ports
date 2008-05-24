@@ -28,6 +28,7 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 		scr2txt:${PORTSDIR}/textproc/scr2txt \
 		tidy:${PORTSDIR}/www/tidy \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
+		peps:${PORTSDIR}/graphics/peps \
 		${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		${LOCALBASE}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
 		${LOCALBASE}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
@@ -42,7 +43,8 @@ RUN_DEPENDS=	fixrtf:${PORTSDIR}/textproc/fixrtf \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENJADE) || ${ARCH} != "i386"
-RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
+RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade \
+		onsgmls:${PORTSDIR}/textproc/opensp
 .else
 RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
 .endif
