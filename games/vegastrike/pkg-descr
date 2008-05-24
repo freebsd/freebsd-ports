@@ -1,0 +1,15 @@
+Vega Strike is an OpenSource 3d Space Simulator. Work is proceeding
+on both the Vega Strike game engine and a Vega Strike Universe game
+data set. Both engine and data are in a playable state, but still
+under development. Each release serves as a beta for both engine
+and data.
+
+The project goal is, at version 1.0, is to be a generic space
+simulator. Currently developed features include:
+
+* Trading
+* Exploration
+* Plenty of shoot 'em up action
+* Preliminary multiplayer Deathmatch (testing server only)
+
+WWW: http://vegastrike.sourceforge.net
