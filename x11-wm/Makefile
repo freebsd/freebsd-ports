@@ -134,6 +134,7 @@
     SUBDIR += wm2
     SUBDIR += wmakerconf
     SUBDIR += wmanager
+    SUBDIR += wmanager-addons
     SUBDIR += wmconfig
     SUBDIR += wmcp
     SUBDIR += wmg
