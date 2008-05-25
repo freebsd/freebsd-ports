@@ -23,6 +23,8 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
 
+BROKEN=		does not compile
+
 RESTRICTED=	GPL3
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
@@ -49,10 +51,6 @@ BREAKS_IF_PEDANTIC=	yes
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		does not link
-.endif
 
 .if defined(WITHOUT_GNUSTEP_FAKEMAIN)
 .if !exists(/proc/curproc)
