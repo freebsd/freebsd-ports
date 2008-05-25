@@ -7,46 +7,55 @@
 
 PORTNAME=	vlgothic
 PORTVERSION=	20080429
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://vinelinux.org/~daisuke/vlgothic/
 DISTNAME=	VLGothic-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Free Japanese TrueType fonts named 'VLGothic'
 
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-WRKSRC=		${WRKDIR}/VLGothic
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-
-PLIST_SUB=	FONTSDIR="${FONTSDIR_REL}"
-
-FONTSDIR=	${PREFIX}/lib/X11/fonts/vlgothic
-FONTSDIR_REL=	${FONTSDIR:S,${PREFIX}/,,}
-
-TTF_FILES=	VL-PGothic-Regular.ttf VL-Gothic-Regular.ttf
-DOC_FILES=	Changelog LICENSE LICENSE.en LICENSE_E.mplus LICENSE_J.mplus \
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-install
+SUB_FILES=	pkg-install
+SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
+PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
+		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
+PORTDOCS=	Changelog LICENSE LICENSE.en LICENSE_E.mplus LICENSE_J.mplus \
 		README README.sazanami README_J.mplus
+WRKSRC=		${WRKDIR}/VLGothic
+
+LOCAL_FONTSDIR=	share/fonts
+X_FONTSDIR=	lib/X11/fonts
 
 do-install:
-	@${MKDIR} ${FONTSDIR}
-.for file in ${TTF_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${FONTSDIR}
-.endfor
-	@${MKDIR} ${PREFIX}/etc/fonts/conf.d
-	${INSTALL_DATA} ${FILESDIR}/63-vlgothic.conf \
-			${PREFIX}/etc/fonts/conf.d
+	${MKDIR} ${DATADIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${DATADIR}
+	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TrueType/
+	${LN} -s -f ${DATADIR}/*.ttf \
+		${LOCALBASE}/${LOCAL_FONTSDIR}/TrueType/
+	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TrueType
+	${LN} -s -f ${DATADIR}/*.ttf \
+		${LOCALBASE}/${X_FONTSDIR}/TrueType/
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-vlgothic.conf \
+		${FILESDIR}/62-fonts-vlgothic.conf \
+		${PREFIX}/etc/fonts/conf.avail
+	${LN} -s -f ../conf.avail/20-unhint-vlgothic.conf \
+		${PREFIX}/etc/fonts/conf.d/20-unhint-vlgothic.conf
+	${LN} -s -f ../conf.avail/62-fonts-vlgothic.conf \
+		${PREFIX}/etc/fonts/conf.d/62-fonts-vlgothic.conf
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 post-install:
-	${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
+	${LOCALBASE}/bin/fc-cache -f -v ${LOCALBASE}/${X_FONTSDIR}/TrueType
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
