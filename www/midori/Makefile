@@ -7,6 +7,7 @@
 
 PORTNAME=	midori
 PORTVERSION=	0.0.18
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://software.twotoasts.de/media/${PORTNAME}/
 
