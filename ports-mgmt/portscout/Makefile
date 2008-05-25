@@ -7,6 +7,7 @@
 
 PORTNAME=	portscout
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
 		http://www.atarininja.org/~wxs/distfiles/		\
@@ -19,6 +20,9 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 
 PORTDOCS=	README
+
+PATCHFILES=	portscout-0.7.4-fixsql.diff
+PATCH_SITES=	${MASTER_SITES}
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI	\
 		${SITE_PERL}/Proc/Queue.pm:${PORTSDIR}/devel/p5-Proc-Queue	\
