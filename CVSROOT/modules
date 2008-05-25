@@ -15435,6 +15435,7 @@ simplog		ports/www/simplog
 simscan		ports/mail/simscan
 simulavr	ports/devel/simulavr
 since		ports/misc/since
+sineshaper	ports/audio/sineshaper
 sinfp		ports/security/sinfp
 sing		ports/net-mgmt/sing
 siod		ports/lang/siod
