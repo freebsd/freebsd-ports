@@ -25,6 +25,9 @@ USE_XLIB=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 RESTRICTED=	Redistribution is not permitted in any form. You must request access permission via e-mail to get the tarball. Free for academic use.
+.if defined(PACKAGE_BUILDING)
+IGNORE=		distribution files must be obtained via the authors
+.endif
 
 NO_WRKSUBDIR=	yes
 
