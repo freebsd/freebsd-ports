@@ -2329,6 +2329,16 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dread-lich.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-attack.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-defend.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-ne-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-ne-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-ne-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-ne-4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-ne-5.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-se-1.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-se-2.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-se-3.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-se-4.png
+%%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat-se-5.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/dreadbat.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/skeletonrider-attack1.png
 %%DATADIR%%/data/campaigns/Under_the_Burning_Suns/images/units/undead/skeletonrider-attack2.png
@@ -2805,6 +2815,7 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/core/images/items/storm-trident.png
 %%DATADIR%%/data/core/images/items/straw-bale1.png
 %%DATADIR%%/data/core/images/items/straw-bale2.png
+%%DATADIR%%/data/core/images/maps/mainmenu.jpg
 %%DATADIR%%/data/core/images/maps/mainmenu.png
 %%DATADIR%%/data/core/images/maps/wesnoth-httt.jpg
 %%DATADIR%%/data/core/images/maps/wesnoth.png
@@ -5208,8 +5219,23 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/core/images/units/elves-wood/shyde-healing8.png
 %%DATADIR%%/data/core/images/units/elves-wood/shyde-healing9.png
 %%DATADIR%%/data/core/images/units/elves-wood/shyde.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-defend-1.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-defend-2.png
 %%DATADIR%%/data/core/images/units/elves-wood/sorceress-defend.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-magic-1.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-magic-2.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-magic-3.png
 %%DATADIR%%/data/core/images/units/elves-wood/sorceress-magic.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-melee-attack-1.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-melee-attack-2.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-melee-attack-3.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-melee-attack-4.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-melee-attack-5.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-melee-attack-6.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-melee-attack-7.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-melee-attack-8.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-melee-attack-9.png
+%%DATADIR%%/data/core/images/units/elves-wood/sorceress-melee-attack-10.png
 %%DATADIR%%/data/core/images/units/elves-wood/sorceress-melee.png
 %%DATADIR%%/data/core/images/units/elves-wood/sorceress.png
 %%DATADIR%%/data/core/images/units/elves-wood/sylph-defend.png
@@ -5878,6 +5904,7 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/core/images/units/human-outlaws/ranger-sword-attack1.png
 %%DATADIR%%/data/core/images/units/human-outlaws/ranger-sword-attack2.png
 %%DATADIR%%/data/core/images/units/human-outlaws/ranger-sword-attack3.png
+%%DATADIR%%/data/core/images/units/human-outlaws/ranger-sword-attack4.png
 %%DATADIR%%/data/core/images/units/human-outlaws/ranger-sword-defend-1.png
 %%DATADIR%%/data/core/images/units/human-outlaws/ranger-sword-defend-2.png
 %%DATADIR%%/data/core/images/units/human-outlaws/ranger-sword.png
@@ -6575,6 +6602,10 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/core/images/units/undead-skeletal/banebow-bow-attack-4.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/banebow-bow-defend.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/banebow-bow.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/banebow-melee-attack-1.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/banebow-melee-attack-2.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/banebow-melee-attack-3.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/banebow-melee-attack-4.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/banebow-melee-attack.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/banebow-melee-defend-1.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/banebow-melee-defend-2.png
@@ -6585,6 +6616,10 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/core/images/units/undead-skeletal/bone-shooter-bow-attack-4.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/bone-shooter-bow-defend.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/bone-shooter-bow.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/bone-shooter-melee-attack-1.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/bone-shooter-melee-attack-2.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/bone-shooter-melee-attack-3.png
+%%DATADIR%%/data/core/images/units/undead-skeletal/bone-shooter-melee-attack-4.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/bone-shooter-melee-attack.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/bone-shooter-melee-defend-1.png
 %%DATADIR%%/data/core/images/units/undead-skeletal/bone-shooter-melee-defend-2.png
@@ -8083,6 +8118,7 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 %%DOCSDIR%%/manual/manual.it.html
 %%DOCSDIR%%/manual/manual.pl.html
 %%DOCSDIR%%/manual/manual.ru.html
+%%DOCSDIR%%/manual/manual.tr.html
 %%DOCSDIR%%/manual/manual.sv.html
 %%DOCSDIR%%/manual/manual.txt
 %%DOCSDIR%%/manual/manual.zh_CN.html
@@ -8356,6 +8392,8 @@ share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 @dirrmtry man/nl
 @dirrmtry man/sk/man6
 @dirrmtry man/sk
+@dirrmtry man/sr@latin/man6
+@dirrmtry man/sr@latin
 @dirrmtry man/zh_CN/man6
 @dirrmtry man/zh_CN
 share/applications/wesnoth.desktop
