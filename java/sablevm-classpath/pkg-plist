@@ -30,6 +30,8 @@ lib/sablevm-classpath/libjavautil.so
 %%GTK2%%lib/sablevm-classpath/libjawtgnu.la
 %%GTK2%%lib/sablevm-classpath/libjawtgnu.so
 lib/security/classpath.security
+%%WITH_ZIP%%%%DATADIR%%/libclasspath.jar
+%%WITH_ZIP%%%%DATADIR%%/resources.jar
 %%WITHOUT_ZIP%%%%DATADIR%%/META-INF/services/javax.sound.midi.spi.MidiDeviceProvider
 %%WITHOUT_ZIP%%%%DATADIR%%/META-INF/services/javax.xml.parsers.DocumentBuilderFactory
 %%WITHOUT_ZIP%%%%DATADIR%%/META-INF/services/javax.xml.parsers.SAXParserFactory
@@ -5602,7 +5604,7 @@ lib/security/classpath.security
 %%WITHOUT_ZIP%%@dirrm %%DATADIR%%/gnu
 %%WITHOUT_ZIP%%@dirrm %%DATADIR%%/META-INF/services
 %%WITHOUT_ZIP%%@dirrm %%DATADIR%%/META-INF
-%%WITHOUT_ZIP%%@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%
 @dirrmtry lib/security
 @dirrm lib/sablevm-classpath
 %%WITH_ZIP%%@dirrm lib/sablevm/lib
