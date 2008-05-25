@@ -19,6 +19,8 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 USE_XORG=	x11 xext
 USE_GL=		gl
 USE_GMAKE=	yes
@@ -37,6 +39,7 @@ RUN_DEPENDS+=	wmanager-loop:${PORTSDIR}/x11-wm/wmanager-addons
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmanager ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
+	${SED} -e "s@%%DOCSDIR%%@${DOCSDIR}@; s@%%EXAMPLESDIR%%@${EXAMPLESDIR}@" ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${MKDIR} ${DOCSDIR}
 .for file in FAQ HISTORY INSTALL NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
@@ -44,6 +47,8 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/.wmanagerrc ${EXAMPLESDIR}/wmanagerrc_sample
 	${INSTALL_DATA} ${WRKSRC}/.xinitrc ${EXAMPLESDIR}/xinitrc_sample
+.else
+	${RM} -f ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
