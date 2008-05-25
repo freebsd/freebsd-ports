@@ -599,6 +599,7 @@
     SUBDIR += sidplay2
     SUBDIR += sidplayer
     SUBDIR += simplemod
+    SUBDIR += sineshaper
     SUBDIR += slimserver
     SUBDIR += slimserver-dynamicplaylist
     SUBDIR += slimserver-dynamictransition
