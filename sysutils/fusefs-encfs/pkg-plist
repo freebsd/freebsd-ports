@@ -1,49 +1,75 @@
 bin/encfs
 bin/encfsctl
 bin/encfssh
-lib/libencfs.so.2
-lib/libencfs.so
 lib/libencfs.a
 lib/libencfs.la
-share/locale/bg/LC_MESSAGES/encfs.mo
-share/locale/da/LC_MESSAGES/encfs.mo
-share/locale/de/LC_MESSAGES/encfs.mo
-share/locale/es/LC_MESSAGES/encfs.mo
-share/locale/es_ES/LC_MESSAGES/encfs.mo
-share/locale/fr/LC_MESSAGES/encfs.mo
-share/locale/he/LC_MESSAGES/encfs.mo
-share/locale/hr/LC_MESSAGES/encfs.mo
-share/locale/hu/LC_MESSAGES/encfs.mo
-share/locale/id/LC_MESSAGES/encfs.mo
-share/locale/it/LC_MESSAGES/encfs.mo
-share/locale/ja/LC_MESSAGES/encfs.mo
-share/locale/nb/LC_MESSAGES/encfs.mo
-share/locale/nl/LC_MESSAGES/encfs.mo
-share/locale/pt_BR/LC_MESSAGES/encfs.mo
-share/locale/pt_PT/LC_MESSAGES/encfs.mo
-share/locale/ru/LC_MESSAGES/encfs.mo
-share/locale/sv/LC_MESSAGES/encfs.mo
-share/locale/tr/LC_MESSAGES/encfs.mo
-share/locale/ca/LC_MESSAGES/encfs.mo
-share/locale/cs/LC_MESSAGES/encfs.mo
-share/locale/de_CH/LC_MESSAGES/encfs.mo
-share/locale/de_DE/LC_MESSAGES/encfs.mo
-share/locale/fi/LC_MESSAGES/encfs.mo
-share/locale/fr_FR/LC_MESSAGES/encfs.mo
-share/locale/hu_HU/LC_MESSAGES/encfs.mo
-share/locale/ko/LC_MESSAGES/encfs.mo
-share/locale/pl/LC_MESSAGES/encfs.mo
-share/locale/pt/LC_MESSAGES/encfs.mo
-share/locale/ro/LC_MESSAGES/encfs.mo
-share/locale/te/LC_MESSAGES/encfs.mo
-share/locale/es_PE/LC_MESSAGES/encfs.mo
-@dirrmtry share/locale/hu_HU/LC_MESSAGES
-@dirrmtry share/locale/hu_HU
-@dirrmtry share/locale/de_CH/LC_MESSAGES
-@dirrmtry share/locale/de_CH
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/es_PE/LC_MESSAGES
-@dirrmtry share/locale/es_PE
+lib/libencfs.so
+lib/libencfs.so.4
+%%NLS%%share/locale/ar/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/be/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/da/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/de/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/de_CH/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/de_DE/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/el/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/es/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/es_ES/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/es_PE/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/et/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/he/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/id/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/it/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/nds/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/te/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/encfs.mo
+%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_HK
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/nds/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nds
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/es_PE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es_PE
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
+%%NLS%%@dirrmtry share/locale/de_CH/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_CH

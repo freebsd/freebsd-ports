@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	encfs
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://arg0.net/users/vgough/download/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	fusefs-
-DISTNAME=	encfs-${PORTVERSION}-1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	An encrypted pass-through FUSE filesystem
 
-LIB_DEPENDS=	rlog:${PORTSDIR}/devel/rlog
+LIB_DEPENDS=	rlog:${PORTSDIR}/devel/rlog \
+		boost_serialization:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 
@@ -25,12 +24,19 @@ WRKSRC=		${WRKDIR}/encfs-${PORTVERSION}
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization
+CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 CFLAGS+=	${PTHREAD_LIBS} -liconv
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
 USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 MAN1=		encfs.1 encfsctl.1
 
