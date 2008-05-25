@@ -375,6 +375,7 @@
     SUBDIR += uim-canna
     SUBDIR += uim-prime
     SUBDIR += uim-tomoe-gtk
+    SUBDIR += umefont
     SUBDIR += vera-fpw
     SUBDIR += vflib
     SUBDIR += vftool
