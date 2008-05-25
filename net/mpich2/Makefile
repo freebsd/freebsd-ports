@@ -135,6 +135,13 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/src/mpe2/src/slog2sdk/trace_sample/libtool.m4
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${THREAD2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${LOCALBASE2FIX:S|^|${WRKSRC}/|}
+.for fin in Makefile.in src/mpe2/sbin/mpeinstall.in
+. if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's|%%PORTDOCS%%|#|' ${WRKSRC}/${fin}
+. else
+	${REINPLACE_CMD} -e 's|%%PORTDOCS%%||' ${WRKSRC}/${fin}
+. endif
+.endfor
 
 post-configure:
 	${REINPLACE_CMD} -e 's|$${exec_prefix}|${PREFIX}|g;	\

@@ -1,14 +1,15 @@
 @comment "PREFIX set to %D/mpich2."
 bin/check_callstack
-%%JAVA%%bin/clog2TOslog2
+@comment SLOG-2 tools are not installed if NOPORTDOCS is set
+%%PORTDOCS%%%%JAVA%%bin/clog2TOslog2
 bin/clog2_join
 bin/clog2_print
-%%JAVA%%bin/clog2print
+%%PORTDOCS%%%%JAVA%%bin/clog2print
 bin/clog2_repair
-%%JAVA%%bin/clogTOslog2
-%%JAVA%%bin/clogprint
-%%JAVA%%bin/jumpshot
-%%JAVA%%bin/logconvertor
+%%PORTDOCS%%%%JAVA%%bin/clogTOslog2
+%%PORTDOCS%%%%JAVA%%bin/clogprint
+%%PORTDOCS%%%%JAVA%%bin/jumpshot
+%%PORTDOCS%%%%JAVA%%bin/logconvertor
 %%PM_MPD%%bin/mpd
 %%PM_MPD%%bin/mpd.py
 %%PM_MPD%%bin/mpd.pyc
@@ -91,16 +92,16 @@ bin/mpif90
 %%PM_MPD%%bin/mpirun.pyo
 bin/parkill
 %%PM_SMPD%%bin/smpd
-%%JAVA%%bin/rlogTOslog2
-%%JAVA%%bin/rlog_check_timeorder
-%%JAVA%%bin/rlog_print
-%%JAVA%%bin/rlogprint
-%%JAVA%%bin/slog2filter
-%%JAVA%%bin/slog2navigator
-%%JAVA%%bin/slog2print
-%%JAVA%%bin/slog2updater
-%%JAVA%%bin/traceTOslog2.in
-%%JAVA%%bin/traceprint.in
+%%PORTDOCS%%%%JAVA%%bin/rlogTOslog2
+%%PORTDOCS%%%%JAVA%%bin/rlog_check_timeorder
+%%PORTDOCS%%%%JAVA%%bin/rlog_print
+%%PORTDOCS%%%%JAVA%%bin/rlogprint
+%%PORTDOCS%%%%JAVA%%bin/slog2filter
+%%PORTDOCS%%%%JAVA%%bin/slog2navigator
+%%PORTDOCS%%%%JAVA%%bin/slog2print
+%%PORTDOCS%%%%JAVA%%bin/slog2updater
+%%PORTDOCS%%%%JAVA%%bin/traceTOslog2.in
+%%PORTDOCS%%%%JAVA%%bin/traceprint.in
 etc/mpe_callstack_ldflags.conf
 etc/mpe_f77env.conf
 etc/mpe_f77env.conf.in
@@ -179,14 +180,14 @@ lib/mpe_prof.o
 %%JAVA%%lib/slog2update205to206.jar
 %%JAVA%%lib/traceTOslog2.jar
 %%JAVA%%lib/traceprint.jar
-%%JAVA%%lib/trace_rlog/libTraceInput.la
-%%JAVA%%lib/trace_rlog/libTraceInput.so
+%%PORTDOCS%%%%JAVA%%lib/trace_rlog/libTraceInput.la
+%%PORTDOCS%%%%JAVA%%lib/trace_rlog/libTraceInput.so
 sbin/mpecheckinstall
 sbin/mpetestexec
 sbin/mpetestexeclog
 sbin/mpetestlink
 sbin/mpeuninstall
-%%JAVA%%share/barrier.rlog
+%%PORTDOCS%%%%JAVA%%share/barrier.rlog
 %%PORTDOCS%%%%DOCSDIR%%/index.htm
 %%PORTDOCS%%%%DOCSDIR%%/install.pdf
 %%PORTDOCS%%%%JAVA%%%%DOCSDIR%%/jumpshot-4/html/About24.png
@@ -725,8 +726,8 @@ share/examples_logging/pthread_allreduce.c
 share/examples_logging/pthread_sendrecv.c
 share/examples_logging/pthread_sendrecv_user.c
 share/examples_logging/srtest.c
-%%JAVA%%share/fpilog.clog
-%%JAVA%%share/fpilog.slog2
+%%PORTDOCS%%%%JAVA%%share/fpilog.clog
+%%PORTDOCS%%%%JAVA%%share/fpilog.slog2
 @dirrm share/examples_logging
 %%X11%%@dirrm share/examples_graphics
 @dirrm share/examples_collchk
@@ -739,11 +740,11 @@ share/examples_logging/srtest.c
 %%PORTDOCS%%@dirrm share/doc
 @dirrm share
 @dirrm sbin
-@dirrm man/man4
-@dirrm man/man3
-@dirrm man/man1
-@dirrm man
-%%JAVA%%@dirrm lib/trace_rlog
+%%PORTDOCS%%@dirrm man/man4
+%%PORTDOCS%%@dirrm man/man3
+%%PORTDOCS%%@dirrm man/man1
+%%PORTDOCS%%@dirrm man
+%%PORTDOCS%%%%JAVA%%@dirrm lib/trace_rlog
 @dirrm lib
 @dirrm include
 @dirrm etc
