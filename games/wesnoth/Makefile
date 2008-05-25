@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -36,7 +35,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN6=		wesnoth.6
-MANLANG=	"" ca_ES@valencia cs de fr gl_ES it ja nl sk sv zh_CN
+MANLANG=	"" ca_ES@valencia cs de fr gl_ES it ja nl sk sr@latin sv zh_CN
 
 OPTIONS=	CAMPAIGN "Enable campaign server" On \
 		EDITOR	"Enable map editor"  On \
