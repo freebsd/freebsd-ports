@@ -1560,6 +1560,7 @@ confregdecode	ports/net-mgmt/confregdecode
 conglomerate	ports/editors/conglomerate
 conkeror	ports/www/conkeror
 conky		ports/sysutils/conky
+conky-awesome		ports/sysutils/conky-awesome
 connect4	ports/games/connect4
 connectfive	ports/games/connectfive
 conquest	ports/games/conquest
