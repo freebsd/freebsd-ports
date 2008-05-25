@@ -370,7 +370,6 @@
     SUBDIR += today
     SUBDIR += tomoe
     SUBDIR += trac
-    SUBDIR += truetypefonts
     SUBDIR += typist
     SUBDIR += uim-anthy
     SUBDIR += uim-canna
