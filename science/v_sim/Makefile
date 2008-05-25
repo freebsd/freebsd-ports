@@ -62,7 +62,11 @@ pre-configure:
 		${WRKSRC}/Makefile.in
 .endif
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|Documentation||;s|pixmaps \\|pixmaps|;s|examples$$||'	\
+	${REINPLACE_CMD} -e 's|Documentation||'	\
+		${WRKSRC}/Makefile.in
+.endif
+.if defined(NOPORTEXAMPLES)
+	${REINPLACE_CMD} -e 's|pixmaps \\|pixmaps|;s|examples$$||'	\
 		${WRKSRC}/Makefile.in
 .endif
 

@@ -125,22 +125,22 @@ bin/v_sim
 %%PORTDOCS%%%%DOCSDIR%%/licence.fr.txt
 %%PORTDOCS%%%%DOCSDIR%%/pot2surf_help
 %%PORTDOCS%%%%DOCSDIR%%/readme
-%%PORTDOCS%%%%EXAMPLESDIR%%/aluminium.d3
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo-browser.tar.gz
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.ascii
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.d3
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.xyz
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo_spin.d3
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo_spin.spin
-%%PORTDOCS%%%%EXAMPLESDIR%%/density-sih4.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/diff.ascii
-%%PORTDOCS%%%%EXAMPLESDIR%%/diff.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/nq-netcdf.cdl
-%%PORTDOCS%%%%EXAMPLESDIR%%/nq-netcdf.nc
-%%PORTDOCS%%%%EXAMPLESDIR%%/planes.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/silane.nc
-%%PORTDOCS%%%%EXAMPLESDIR%%/test_isosurfaces.ascii
-%%PORTDOCS%%%%EXAMPLESDIR%%/test_isosurfaces.surf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aluminium.d3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo-browser.tar.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.ascii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.d3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.xyz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_spin.d3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo_spin.spin
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/density-sih4.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diff.ascii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diff.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nq-netcdf.cdl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nq-netcdf.nc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/planes.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/silane.nc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_isosurfaces.ascii
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_isosurfaces.surf
 %%NLS%%share/locale/fr/LC_MESSAGES/v_sim.mo
 share/pixmaps/v_sim.16.png
 share/pixmaps/v_sim.32.png
@@ -193,7 +193,7 @@ share/pixmaps/v_sim.xpm
 %%DATADIR%%/v_sim.res
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/APIreference/v_sim
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/APIreference
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
