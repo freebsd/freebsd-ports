@@ -12,13 +12,16 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	novel@FreeBSD.org
-COMMENT=	An advanced, highly configurable system monitor for X
+MAINTAINER?=	novel@FreeBSD.org
+COMMENT?=	An advanced, highly configurable system monitor for X
+
+CONFLICTS?=	conky-awesome-[0-9]*
+SLAVEDIRS=	sysutils/conky-awesome
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 xext xdamage
-USE_GNOME=	pkgconfig
+USE_XORG?=	x11 xext xdamage
+USE_GNOME?=	pkgconfig
 USE_ICONV=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-proc-uptime \
