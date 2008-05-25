@@ -15,6 +15,9 @@ MAINTAINER=	mzaki@biol.s.u-tokyo.ac.jp
 COMMENT=	A converter from output files of Phred/Consed to FASTA files
 
 RESTRICTED=	Redistribution is not permitted in any form. You must request the tarball via e-mail. Free for academic use.
+.if defined(PACKAGE_BUILDING)
+IGNORE=		distribution files must be obtained via the authors
+.endif
 
 NO_WRKSUBDIR=	yes
 
