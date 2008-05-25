@@ -1,0 +1,103 @@
+--- Makefile.in.orig	2008-04-05 00:03:17.000000000 +0200
++++ Makefile.in	2008-05-25 15:00:09.000000000 +0200
+@@ -187,53 +187,53 @@
+ 	${MAKE} install-local
+ 	$(INSTALL_DATA) src/include/mpi.h ${DESTDIR}${includedir}/mpi.h
+ 	$(INSTALL_DATA) lib/lib${MPILIBNAME}.a ${DESTDIR}${libdir}/lib${MPILIBNAME}.a
+-	if [ ! -d ${DESTDIR}${docdir} ] ; then $(MKDIR_P) ${DESTDIR}${docdir} ; fi
+-	@if test -d $(srcdir)/www && cd $(srcdir)/www ; then \
+-	 for name in * ; do \
+-	  if [ "$$name" = "*" ] ; then continue ; fi ; \
+-	  if [ -f $$name ] ; then \
+-	    echo "$(INSTALL_DATA) $$name ${DESTDIR}${htmldir}/$$name" ; \
+-	    $(INSTALL_DATA) $$name ${DESTDIR}${htmldir}/$$name ; \
+-	  elif [ -d $$name ] ; then \
+-	    if [ ! -d ${DESTDIR}${htmldir}/$$name ] ; then $(MKDIR_P) ${DESTDIR}${htmldir}/$$name ; fi ;\
+-	    ( cd $$name && for name2 in * ; do \
+-	        if [ "$$name2" = "*" ] ; then continue ; fi ; \
+-	        if [ -f $$name2 ] ; then \
+-	            echo "$(INSTALL_DATA) $$name2 ${DESTDIR}${htmldir}/$$name/$$name2" ; \
+-	            $(INSTALL_DATA) $$name2 ${DESTDIR}${htmldir}/$$name/$$name2 ; \
+-	        elif [ -d $$name2 ] ; then  \
+-	            echo "cp -rp $$name2 ${DESTDIR}${htmldir}/$$name" ; \
+-	            cp -rp $$name2 ${DESTDIR}${htmldir}/$$name ; \
+-	        fi \
+-	    done ) ; \
+-	  else \
+-	    echo "Unknown file type for $$name" ; \
+-	  fi ; \
+-	 done ; \
+-	fi
+-	@if test -d $(srcdir)/man && cd $(srcdir)/man ; then \
+-	 for name in * ; do \
+-	  if [ "$$name" = "*" ] ; then continue ; fi ; \
+-	  if [ -f $$name ] ; then \
+-	    echo "$(INSTALL_DATA) $$name ${DESTDIR}${mandir}/$$name" ; \
+-	    $(INSTALL_DATA) $$name ${DESTDIR}${mandir}/$$name ; \
+-	  elif [ -d $$name ] ; then \
+-	    if [ ! -d ${DESTDIR}${mandir}/$$name ] ; then $(MKDIR_P) ${DESTDIR}${mandir}/$$name ; fi ;\
+-	    ( cd $$name && for name2 in * ; do \
+-	        if [ "$$name2" = "*" ] ; then continue ; fi ; \
+-	        if [ -f $$name2 ] ; then \
+-	            echo "$(INSTALL_DATA) $$name2 ${DESTDIR}${mandir}/$$name/$$name2" ; \
+-	            $(INSTALL_DATA) $$name2 ${DESTDIR}${mandir}/$$name/$$name2 ; \
+-	        elif [ -d $$name2 ] ; then  \
+-	            echo "cp -rp $$name2 ${DESTDIR}${mandir}/$$name" ; \
+-	            cp -rp $$name2 ${DESTDIR}${mandir}/$$name ; \
+-	        fi \
+-	    done ) ; \
+-	  else \
+-	    echo "Unknown file type for $$name" ; \
+-	  fi ; \
+-	 done ; \
+-	fi
++%%PORTDOCS%%	if [ ! -d ${DESTDIR}${docdir} ] ; then $(MKDIR_P) ${DESTDIR}${docdir} ; fi
++%%PORTDOCS%%	@if test -d $(srcdir)/www && cd $(srcdir)/www ; then \
++%%PORTDOCS%%	 for name in * ; do \
++%%PORTDOCS%%	  if [ "$$name" = "*" ] ; then continue ; fi ; \
++%%PORTDOCS%%	  if [ -f $$name ] ; then \
++%%PORTDOCS%%	    echo "$(INSTALL_DATA) $$name ${DESTDIR}${htmldir}/$$name" ; \
++%%PORTDOCS%%	    $(INSTALL_DATA) $$name ${DESTDIR}${htmldir}/$$name ; \
++%%PORTDOCS%%	  elif [ -d $$name ] ; then \
++%%PORTDOCS%%	    if [ ! -d ${DESTDIR}${htmldir}/$$name ] ; then $(MKDIR_P) ${DESTDIR}${htmldir}/$$name ; fi ;\
++%%PORTDOCS%%	    ( cd $$name && for name2 in * ; do \
++%%PORTDOCS%%	        if [ "$$name2" = "*" ] ; then continue ; fi ; \
++%%PORTDOCS%%	        if [ -f $$name2 ] ; then \
++%%PORTDOCS%%	            echo "$(INSTALL_DATA) $$name2 ${DESTDIR}${htmldir}/$$name/$$name2" ; \
++%%PORTDOCS%%	            $(INSTALL_DATA) $$name2 ${DESTDIR}${htmldir}/$$name/$$name2 ; \
++%%PORTDOCS%%	        elif [ -d $$name2 ] ; then  \
++%%PORTDOCS%%	            echo "cp -rp $$name2 ${DESTDIR}${htmldir}/$$name" ; \
++%%PORTDOCS%%	            cp -rp $$name2 ${DESTDIR}${htmldir}/$$name ; \
++%%PORTDOCS%%	        fi \
++%%PORTDOCS%%	    done ) ; \
++%%PORTDOCS%%	  else \
++%%PORTDOCS%%	    echo "Unknown file type for $$name" ; \
++%%PORTDOCS%%	  fi ; \
++%%PORTDOCS%%	 done ; \
++%%PORTDOCS%%	fi
++%%PORTDOCS%%	@if test -d $(srcdir)/man && cd $(srcdir)/man ; then \
++%%PORTDOCS%%	 for name in * ; do \
++%%PORTDOCS%%	  if [ "$$name" = "*" ] ; then continue ; fi ; \
++%%PORTDOCS%%	  if [ -f $$name ] ; then \
++%%PORTDOCS%%	    echo "$(INSTALL_DATA) $$name ${DESTDIR}${mandir}/$$name" ; \
++%%PORTDOCS%%	    $(INSTALL_DATA) $$name ${DESTDIR}${mandir}/$$name ; \
++%%PORTDOCS%%	  elif [ -d $$name ] ; then \
++%%PORTDOCS%%	    if [ ! -d ${DESTDIR}${mandir}/$$name ] ; then $(MKDIR_P) ${DESTDIR}${mandir}/$$name ; fi ;\
++%%PORTDOCS%%	    ( cd $$name && for name2 in * ; do \
++%%PORTDOCS%%	        if [ "$$name2" = "*" ] ; then continue ; fi ; \
++%%PORTDOCS%%	        if [ -f $$name2 ] ; then \
++%%PORTDOCS%%	            echo "$(INSTALL_DATA) $$name2 ${DESTDIR}${mandir}/$$name/$$name2" ; \
++%%PORTDOCS%%	            $(INSTALL_DATA) $$name2 ${DESTDIR}${mandir}/$$name/$$name2 ; \
++%%PORTDOCS%%	        elif [ -d $$name2 ] ; then  \
++%%PORTDOCS%%	            echo "cp -rp $$name2 ${DESTDIR}${mandir}/$$name" ; \
++%%PORTDOCS%%	            cp -rp $$name2 ${DESTDIR}${mandir}/$$name ; \
++%%PORTDOCS%%	        fi \
++%%PORTDOCS%%	    done ) ; \
++%%PORTDOCS%%	  else \
++%%PORTDOCS%%	    echo "Unknown file type for $$name" ; \
++%%PORTDOCS%%	  fi ; \
++%%PORTDOCS%%	 done ; \
++%%PORTDOCS%%	fi
+ 	if [ -s src/mpi/romio/include/mpiof.h ] ; then $(INSTALL_DATA) src/mpi/romio/include/mpiof.h ${DESTDIR}${includedir}/mpiof.h ; fi
+ 	if [ -s src/mpi/romio/include/mpio.h ] ; then $(INSTALL_DATA) src/mpi/romio/include/mpio.h ${DESTDIR}${includedir}/mpio.h ; fi
+ 	if [ -s lib/lib${MPIFLIBNAME}.a ] ; then $(INSTALL_DATA) lib/lib${MPIFLIBNAME}.a ${DESTDIR}${libdir}/lib${MPIFLIBNAME}.a ; fi

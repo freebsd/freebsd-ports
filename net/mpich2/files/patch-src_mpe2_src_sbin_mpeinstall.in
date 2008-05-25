@@ -1,0 +1,31 @@
+--- ./src/mpe2/sbin/mpeinstall.in.orig	2007-11-28 22:51:40.000000000 +0100
++++ ./src/mpe2/sbin/mpeinstall.in	2008-05-25 16:45:21.000000000 +0200
+@@ -529,17 +529,17 @@
+ # ie INSTALL $top_srcdir/doc  $docdir
+ #    INSTALL $top_srcdir/man  $mandir
+ #    INSTALL $top_srcdir/html $htmldir
+-for type in doc man html ; do
+-    typename=${type}dir
+-    eval typevalue=\$"$typename"
+-    if [ -d $top_srcdir/$type ] ; then
+-        if [ ! -d $DESTDIR$typevalue ] ; then
+-            MkDir $typevalue
+-        fi
+-        echo "Installing $pkgname $type to $DESTDIR$typevalue"
+-        InstallDirRecur $top_srcdir/$type $typevalue $MODE
+-    fi
+-done
++%%PORTDOCS%%for type in doc man html ; do
++%%PORTDOCS%%    typename=${type}dir
++%%PORTDOCS%%    eval typevalue=\$"$typename"
++%%PORTDOCS%%    if [ -d $top_srcdir/$type ] ; then
++%%PORTDOCS%%        if [ ! -d $DESTDIR$typevalue ] ; then
++%%PORTDOCS%%            MkDir $typevalue
++%%PORTDOCS%%        fi
++%%PORTDOCS%%        echo "Installing $pkgname $type to $DESTDIR$typevalue"
++%%PORTDOCS%%        InstallDirRecur $top_srcdir/$type $typevalue $MODE
++%%PORTDOCS%%    fi
++%%PORTDOCS%%done
+ 
+ # Remove old uninstall file
+ if [ "$appendUninstall" = 0 -a -f $UNINSTALLFILE ] ; then
