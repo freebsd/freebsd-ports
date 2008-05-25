@@ -42,7 +42,6 @@ PLIST_SUB+=		WITHOUT_ZIP="" WITH_ZIP="@comment "
 CONFIGURE_ARGS+=	--with-compressed-classes=zip
 BUILD_DEPENDS+=		zip:${PORTSDIR}/archivers/zip
 PLIST_SUB+=		WITHOUT_ZIP="@comment " WITH_ZIP=""
-PLIST_FILES+=		${DATADIR_REL}/libclasspath.jar ${DATADIR_REL}/resources.jar
 .endif
 
 .if defined(WITHOUT_GTK2)
