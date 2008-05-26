@@ -5,7 +5,6 @@ bin/pygmentize
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/pygmentize
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/__init__.pyc
@@ -37,6 +36,9 @@ bin/pygmentize
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/formatters/html.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/formatters/html.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/formatters/html.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/formatters/img.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/formatters/img.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/formatters/img.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/formatters/latex.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/formatters/latex.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/formatters/latex.pyo
@@ -127,6 +129,9 @@ bin/pygmentize
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/borland.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/borland.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/borland.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/bw.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/bw.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/bw.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/colorful.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/colorful.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles/colorful.pyo
@@ -172,14 +177,6 @@ bin/pygmentize
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/util.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/formatters
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/filters
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTDOCS%%%%DOCSDIR%%/api.html
 %%PORTDOCS%%%%DOCSDIR%%/authors.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog.html
@@ -201,3 +198,10 @@ bin/pygmentize
 %%PORTDOCS%%%%DOCSDIR%%/tokens.html
 %%PORTDOCS%%%%DOCSDIR%%/unicode.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/styles
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/lexers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/formatters
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments/filters
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pygments
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
