@@ -1,0 +1,44 @@
+# Change references from GNU Public License to GNU General Public
+# License, where that is meant (closes: #102142)
+#
+# Patch by Tollef Fog Heen <tfheen@debian.org>
+diff -Nur DEVEL-CVS DEVEL-CVS
+--- DEVEL-CVS	2005-09-01 20:46:54.000000000 +0800
++++ DEVEL-CVS	2006-02-26 22:40:36.000000000 +0800
+@@ -7,7 +7,8 @@
+ Policies regarding the CVS source repository:
+ 
+ By checking items into the repository, developers agree to permit
+-distribution of such items under the terms of the GNU Public License.
++distribution of such items under the terms of the GNU General Public
++License.
+ 
+ ----------------------------------------------------------------------
+ Procedure for dealing with people who want to be developers:
+diff -Nur doc/cvsclient.texi doc/cvsclient.texi
+--- doc/cvsclient.texi	2006-02-26 22:40:35.000000000 +0800
++++ doc/cvsclient.texi	2006-02-26 22:40:37.000000000 +0800
+@@ -54,7 +54,7 @@
+ user documentation, @file{cvs.texinfo}, for that information.  The
+ protocol is non-proprietary (anyone who wants to is encouraged to
+ implement it) and an implementation, known as CVS, is available under
+-the GNU Public License.  The CVS distribution, containing this
++the GNU General Public License.  The CVS distribution, containing this
+ implementation, @file{cvs.texinfo}, and a copy (possibly more or less up
+ to date than what you are reading now) of this document,
+ @file{cvsclient.texi}, can be found at the usual GNU FTP sites, with a
+diff -Nur HACKING HACKING
+--- HACKING	2005-09-25 08:36:08.000000000 +0800
++++ HACKING	2006-02-26 22:42:15.000000000 +0800
+@@ -403,8 +403,9 @@
+ for each issue.  Use context diffs or unidiffs for patches.
+ 
+ Include words like "I grant permission to distribute this patch under
+-the terms of the GNU Public License" with your patch.  By sending a
+-patch to bug-cvs@nongnu.org, you implicitly grant this permission.
++the terms of the GNU General Public License" with your patch.  By
++sending a patch to bug-cvs@nongnu.org, you implicitly grant this
++permission.
+ 
+ Submitting a patch to bug-cvs is the way to reach the people who have
+ signed up to receive such submissions (including CVS developers), but

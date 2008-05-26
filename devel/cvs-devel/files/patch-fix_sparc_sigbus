@@ -1,0 +1,30 @@
+diff -Nur src/update.c src/update.c
+--- src/update.c	2005-09-22 20:49:17.000000000 +0200
++++ src/update.c	2006-12-15 01:35:54.000000000 +0100
+@@ -58,7 +58,7 @@
+ static int patch_file (struct file_info *finfo,
+                        Vers_TS *vers_ts, 
+                        int *docheckout, struct stat *file_info,
+-                       unsigned char *checksum);
++                       md5_uint32 *checksum);
+ static void patch_file_write (void *, const char *, size_t);
+ #endif
+ static int merge_file (struct file_info *finfo, Vers_TS *vers);
+@@ -723,7 +723,7 @@
+ 		{
+ 		    int docheckout;
+ 		    struct stat file_info;
+-		    unsigned char checksum[16];
++		    md5_uint32 checksum[4];
+ 
+ 		    retval = patch_file (finfo,
+ 					 vers, &docheckout,
+@@ -1511,7 +1511,7 @@
+  */
+ static int
+ patch_file (struct file_info *finfo, Vers_TS *vers_ts, int *docheckout,
+-	    struct stat *file_info, unsigned char *checksum)
++	    struct stat *file_info, md5_uint32 *checksum)
+ {
+     char *backup;
+     char *file1;

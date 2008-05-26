@@ -1,30 +1,25 @@
-# New ports collection makefile for:	cvs+ipv6
-# Date created:	Tue Jul 23 11:24:24 JST 2002
-# Whom:		sumikawa
+# New ports collection makefile for:	cvs-devel
+# Date created:				Wed, 14 Nov 2007 00:21:45 +0530
+# Whom:					Balwinder S Dheeman <bdheeman@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cvs
-PORTVERSION=	1.11.17
-PORTREVISION=	1
+PORTVERSION=	1.12.13
+PORTREVISION=	8
 CATEGORIES=	devel ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	non-gnu/${PORTNAME}/source/stable/${PORTVERSION}
-PKGNAMESUFFIX=	+ipv6
+MASTER_SITE_SUBDIR=	non-gnu/${PORTNAME}/source/feature/${PORTVERSION}
+PKGNAMESUFFIX=	-devel
 
-PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	${DISTNAME}-v6-20040610.diff.gz
-PATCH_DIST_STRIP=	-p1
-
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	bdheeman@gmail.com
 COMMENT=	IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 
-CONFLICTS=	cvsnt-[12]*
+CONFLICTS=	cvsnt-[12]* cvs+ipv6-[12]*
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-#USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 --without-gssapi \
 		--with-editor="vi" \
 		--with-tmpdir="/tmp"
@@ -35,16 +30,17 @@ MAN8=		cvsbug.8
 INFO=		cvs cvsclient
 
 CVS_SITE?=	:pserver:anoncvs@anoncvs.jp.FreeBSD.org:/home/ncvs
-CVS_VER?=	v${PORTVERSION:S/./_/g}
+CVS_VER?=	v${PORTVERSION:S//_/g}
 
 post-patch:
-	${REINPLACE_CMD} 's/${PORTVERSION:S/./\./g}/&+IPv6/g' ${WRKSRC}/configure
+	${REINPLACE_CMD} 's/${PORTVERSION:S/./\./g}/&-devel/g' \
+		${WRKSRC}/configure
 	@${CP} ${FILESDIR}/missing ${WRKSRC}
 
-replace:
+post-install:
 .for f in cvs cvsbug
-	${MV} /usr/bin/${f} /usr/bin/${f}.orig
-	${CP} -p ${PREFIX}/bin/${f} /usr/bin/
+	-${MV} ${PREFIX:S/\/local//}/bin/${f} ${PREFIX:S/\/local//}/bin/${f}.orig
+	-${CP} -p ${PREFIX}/bin/${f} ${PREFIX:S/\/local//}/bin
 .endfor
 
 generate-patch:

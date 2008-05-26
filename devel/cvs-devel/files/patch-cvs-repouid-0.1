@@ -1,0 +1,111 @@
+# 
+# cvs-repouid patch for controlling pserver access.  See
+# README.Debian for details.
+#
+# Original patch by Wichert Akkerman <wakkerma@debian.org>, fixes by
+# Steve McIntyre <steve@einval.com> with help from Alberto Garcia
+# <agarcia@igalia.com>
+diff -Nur src/cvs.h src/cvs.h
+--- src/cvs.h	2005-10-02 23:17:20.000000000 +0800
++++ src/cvs.h	2006-02-26 22:08:16.000000000 +0800
+@@ -145,6 +145,13 @@
+ #define CVSADM_TEMPLATE "CVS/Template"
+ #endif /* USE_VMS_FILENAMES */
+ 
++/* Global configuration file mapping repositories to uids. This can be
++   used instead of getting the unix user. This is prevents a security
++   problem where anyone with commit access can basically become any
++   user on the machine. Combined with the insecure pserver that is a
++   problem waiting to happen.  */
++#define CVS_REPOUIDFILE "/etc/cvs-repouids"
++
+ /* This is the special directory which we use to store various extra
+    per-directory information in the repository.  It must be the same as
+    CVSADM to avoid creating a new reserved directory name which users cannot
+diff -Nur src/server.c src/server.c
+--- src/server.c	2005-09-28 23:25:59.000000000 +0800
++++ src/server.c	2006-02-26 22:08:16.000000000 +0800
+@@ -6570,6 +6570,12 @@
+ 	exit (EXIT_FAILURE);
+     }
+ 
++    if (pw->pw_uid == 0)
++    {
++        printf("error 0: root not allowed\n");
++        exit (EXIT_FAILURE);
++    }
++
+ #if HAVE_INITGROUPS
+     if (initgroups (pw->pw_name, pw->pw_gid) < 0
+ #  ifdef EPERM
+@@ -6667,6 +6673,51 @@
+ }
+ #endif
+ 
++static char*
++global_repo_uid(const char* repository)
++{
++    FILE *fp;
++    char *linebuf = NULL;
++    size_t linebuf_len;
++    int found_it = 0;
++    size_t repolen = strlen (repository);
++    char *user;
++
++    fp = fopen (CVS_REPOUIDFILE, "r");
++    if (fp == NULL)
++    {
++        if (!existence_error (errno))
++            error (0, errno, "cannot open %s", CVS_REPOUIDFILE);
++        return NULL;
++    }
++
++    while (getline (&linebuf, &linebuf_len, fp) >= 0)
++    {
++        if ((strncmp (linebuf, repository, repolen) == 0)
++            && (linebuf[repolen] == ':'))
++        {
++            found_it = 1;
++            break;
++        }
++    }
++
++    if (ferror (fp))
++        error (0, errno, "cannot read %s", CVS_REPOUIDFILE);
++    if (fclose (fp) < 0)
++        error (0, errno, "cannot close %s", CVS_REPOUIDFILE);
++
++    if (!found_it) {
++        free (linebuf);
++        return NULL;
++    }
++
++    strtok (linebuf + repolen, "\n");
++    user = xstrdup (linebuf + repolen + 1);
++    free (linebuf);
++
++    return user;
++}
++
+ #ifdef AUTH_SERVER_SUPPORT
+ 
+ extern char *crypt (const char *, const char *);
+@@ -6738,7 +6789,7 @@
+     /* If found_it, then linebuf contains the information we need. */
+     if (found_it)
+     {
+-	char *found_password, *host_user_tmp;
++	char *found_password, *host_user_tmp, *user_override;
+ 	char *non_cvsuser_portion;
+ 
+ 	/* We need to make sure lines such as
+@@ -6805,6 +6856,9 @@
+ 	    /* Give host_user_ptr permanent storage. */
+ 	    *host_user_ptr = xstrdup (host_user_tmp);
+ 	    retval = 1;
++        user_override = global_repo_uid (repository);
++        if (user_override)
++            *host_user_ptr = user_override;
+ 	}
+ 	else
+ 	{

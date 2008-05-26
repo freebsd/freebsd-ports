@@ -1,0 +1,34 @@
+# Apply patch from 120042, which only tries to parse pserver, gserver
+# and kserver methods when doing cvs login.  (closes: #120042).
+#
+# Patch from Horms <horms@vergenet.net>
+diff -Nur src/login.c src/login.c
+--- src/login.c	2006-02-26 22:10:42.000000000 +0800
++++ src/login.c	2006-02-26 22:25:14.000000000 +0800
+@@ -200,11 +200,21 @@
+ 	    return NULL;
+ 	}
+ 	*p = ' ';
+-	tmp_root_canonical = normalize_cvsroot (tmp_root);
+-	if (strcmp (cvsroot_canonical, tmp_root_canonical) == 0)
+-	    password = p + 1;
+-
+-	free (tmp_root_canonical);
++	switch (tmp_root->method)
++	{
++	    case gserver_method:
++	    case pserver_method:
++#ifdef HAVE_KERBEROS
++	    case kserver_method:
++#endif /* HAVE_KERBEROS */
++		tmp_root_canonical = normalize_cvsroot (tmp_root);
++		if (strcmp (cvsroot_canonical, tmp_root_canonical) == 0)
++	    	    password = p + 1;
++		free (tmp_root_canonical);
++		break;
++	    default:
++		break;
++	}
+     }
+ 
+     return password;

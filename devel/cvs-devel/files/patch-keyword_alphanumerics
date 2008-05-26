@@ -1,0 +1,27 @@
+# Fix keyword handling to accept alphanumerics, not just alphabetics.
+# Thanks to Branden Robinson for this fix.
+diff -Nur src/rcs.c src/rcs.c
+--- src/rcs.c	2005-09-28 23:25:59.000000000 +0800
++++ src/rcs.c	2006-02-26 17:58:32.000000000 +0800
+@@ -3680,13 +3680,18 @@
+ 	srch_len -= (srch_next + 1) - srch;
+ 	srch = srch_next + 1;
+ 
+-	/* Look for the first non alphabetic character after the '$'.  */
++    /*
++     * Accept alphanumerics, not just alphabetics.  XFree86, anyone?
++     * Branden Robinson  Sat,  7 Sep 2002 02:04:59 -0500
++     */
++
++    /* Look for the first non alphanumeric character after the '$'.  */
+ 	send = srch + srch_len;
+ 	for (s = srch; s < send; s++)
+-	    if (! isalpha ((unsigned char) *s))
++	    if (! isalnum ((unsigned char) *s))
+ 		break;
+ 
+-	/* If the first non alphabetic character is not '$' or ':',
++	/* If the first non alphanumeric character is not '$' or ':',
+            then this is not an RCS keyword.  */
+ 	if (s == send || (*s != '$' && *s != ':'))
+ 	    continue;
