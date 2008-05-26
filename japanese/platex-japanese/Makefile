@@ -1,4 +1,4 @@
-# New ports collection makefile for:	latex-japanese
+# New ports collection makefile for:	platex-japanese
 # Date created:		2007-11-19
 # Whom:			Koji Yokota <yokota@res.otaru-uc.ac.jp>
 #
@@ -7,15 +7,16 @@
 
 PORTNAME=	japanese
 PORTVERSION=	1.3
+PORTREVIISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	language/japanese
-PKGNAMEPREFIX=	latex-
+PKGNAMEPREFIX=	platex-
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	latex
 
 MAINTAINER=	yokota@res.otaru-uc.ac.jp
-COMMENT=	LaTeX package that literally provides japanese option to babel
+COMMENT=	pLaTeX package that literally provides japanese option to babel
 
 BUILD_DEPENDS=	${LOCALBASE}/share/texmf:${PORTSDIR}/print/teTeX-texmf \
 		ptex:${PORTSDIR}/japanese/ptex \

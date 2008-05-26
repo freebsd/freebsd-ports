@@ -3481,3 +3481,4 @@ devel/php-Net_Gearman|devel/pear-Net_Gearman|2008-05-19|Now it is a pear module
 devel/swig11||2008-05-21|Has expired: use devel/swig13 instead, last release of 1.1 was 8 years ago
 japanese/truetypefonts||2008-05-25|Removed due to copyright problem
 japanese/kochi-cidfonts||2008-05-25|Removed due to copyright problem
+japanese/latex-japanese|japanese/platex-japanese|2008-05-26|Works only with platex

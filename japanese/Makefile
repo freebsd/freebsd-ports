@@ -166,7 +166,6 @@
     SUBDIR += kterm
     SUBDIR += kterm16c
     SUBDIR += lambdamoo
-    SUBDIR += latex-japanese
     SUBDIR += latex2html
     SUBDIR += leafrogue
     SUBDIR += less
@@ -275,6 +274,7 @@
     SUBDIR += php_doc
     SUBDIR += plain2
     SUBDIR += plan
+    SUBDIR += platex-japanese
     SUBDIR += platex-jsclasses
     SUBDIR += platex-otf
     SUBDIR += platex209
