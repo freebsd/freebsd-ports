@@ -29,7 +29,7 @@ IGNORE=		only for 5.3 and above
 EXTRA_PATCHES+=	${FILESDIR}/pf34-Makefile
 .endif
 
-if ${OSVERSION} < 700000
+.if ${OSVERSION} < 700000
 BROKEN=		does not compile
 .endif
 
