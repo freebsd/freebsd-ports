@@ -61,6 +61,7 @@ share/gvfs/mounts/sftp.mount
 share/gvfs/mounts/trash.mount
 share/locale/ar/LC_MESSAGES/gvfs.mo
 share/locale/be@latin/LC_MESSAGES/gvfs.mo
+share/locale/bg/LC_MESSAGES/gvfs.mo
 share/locale/bn_IN/LC_MESSAGES/gvfs.mo
 share/locale/ca/LC_MESSAGES/gvfs.mo
 share/locale/cs/LC_MESSAGES/gvfs.mo
@@ -104,10 +105,11 @@ share/locale/vi/LC_MESSAGES/gvfs.mo
 share/locale/zh_CN/LC_MESSAGES/gvfs.mo
 share/locale/zh_HK/LC_MESSAGES/gvfs.mo
 share/locale/zh_TW/LC_MESSAGES/gvfs.mo
-@dirrm %%DATADIR%%/mounts
-@dirrm %%DATADIR%%
+@dirrm share/gvfs/mounts
+@dirrm share/gvfs
 @dirrm include/gvfs-client/gvfs
 @dirrm include/gvfs-client
+@dirrmtry etc/profile.d
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/mr/LC_MESSAGES
