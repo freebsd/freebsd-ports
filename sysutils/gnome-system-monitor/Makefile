@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	gnome-system-monitor
-PORTVERSION=	2.22.1
-PORTREVISION=	1
+PORTVERSION=	2.22.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
-DISTNAME=	gnome-system-monitor-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
