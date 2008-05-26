@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gtk-engines2
-PORTVERSION=	2.14.1
+PORTVERSION=	2.14.2
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -22,7 +22,7 @@ CONFLICTS=	gtk-smooth-engine-[0-9]* clearlooks-[0-9]*
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gtk20 intlhack ltasneededhack
-USE_GETTEXT=	yes
+#USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
