@@ -18446,6 +18446,7 @@ zephulor	ports/games/zephulor
 zeroer		ports/sysutils/zeroer
 zeroinstall-injector	ports/devel/zeroinstall-injector
 zerowait-httpd	ports/www/zerowait-httpd
+zfs-replicate	ports/sysutils/zfs-replicate
 zgv		ports/graphics/zgv
 zh-BBMan	ports/chinese/BBMan
 zh-CJKUnifonts	ports/chinese/CJKUnifonts
