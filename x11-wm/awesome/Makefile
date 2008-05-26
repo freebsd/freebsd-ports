@@ -34,6 +34,11 @@ MAN5=		awesomerc.5
 PORTDOCS=	AUTHORS LICENSE README STYLE UPGRADE
 PORTEXAMPLES=	awesomerc
 
+post-patch:
+	@${REINPLACE_CMD} -e 's, "$$(DESTDIR)$$(docdir)";,;,g' \
+			  -e 's,\([[:space:]]\)install-docDATA ,\1,g' \
+		${WRKSRC}/Makefile.in
+
 post-configure:
 	@${REINPLACE_CMD} -E '/^awesome_(message_)?LDADD/s/$$/ -liconv/g; \
 			      /^doc_DATA/s/=.*$$/=/g' \
