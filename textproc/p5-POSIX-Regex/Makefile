@@ -6,21 +6,17 @@
 #
 
 PORTNAME=	POSIX-Regex
-PORTVERSION=	0.89
+PORTVERSION=	0.90.6
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OO interface for the gnu regex engine
 
 PERL_CONFIGURE=	yes
-USE_GCC=	3.2+
 
 MAN3=		POSIX::Regex.3
-
-post-patch:
-	${PERL} -pi -e 's/REG_NOERROR/0/g' ${WRKSRC}/Regex.xs
 
 .include <bsd.port.pre.mk>
 
