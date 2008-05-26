@@ -76,7 +76,7 @@
 
 PORTNAME=	cacheboy
 DISTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	CACHEBOY_1.0
@@ -154,7 +154,7 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_SOCKET_FAILURE ERR_TOO_BIG ERR_UNSUP_REQ \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
 
-libexec=	cachemgr.cgi digest_pw_auth diskd-daemon \
+libexec=	cachemgr.cgi digest_pw_auth diskd-daemon logfile-daemon \
 		ip_user_check \
 		msnt_auth ncsa_auth ntlm_auth \
 		pam_auth smb_auth smb_auth.sh squid_db_auth squid_session \
