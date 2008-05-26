@@ -102,6 +102,9 @@
 %%PYTHON_SITELIBDIR%%/cherrypy/test/modpy.py
 %%PYTHON_SITELIBDIR%%/cherrypy/test/modpy.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/test/modpy.pyo
+%%PYTHON_SITELIBDIR%%/cherrypy/test/modwsgi.py
+%%PYTHON_SITELIBDIR%%/cherrypy/test/modwsgi.pyc
+%%PYTHON_SITELIBDIR%%/cherrypy/test/modwsgi.pyo
 %%PYTHON_SITELIBDIR%%/cherrypy/test/static/dirback.jpg
 %%PYTHON_SITELIBDIR%%/cherrypy/test/static/index.html
 %%PYTHON_SITELIBDIR%%/cherrypy/test/style.css
@@ -141,6 +144,9 @@
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_proxy.py
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_proxy.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_proxy.pyo
+%%PYTHON_SITELIBDIR%%/cherrypy/test/test_refleaks.py
+%%PYTHON_SITELIBDIR%%/cherrypy/test/test_refleaks.pyc
+%%PYTHON_SITELIBDIR%%/cherrypy/test/test_refleaks.pyo
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_routes.py
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_routes.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/test/test_routes.pyo
@@ -226,10 +232,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/custom_error.html
 %%PORTDOCS%%%%DOCSDIR%%/pdf_file.pdf
-@dirrm %%PYTHON_SITELIBDIR%%/cherrypy/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/cherrypy/wsgiserver
+%%PORTEXAMPLES%%@dirrm %%PYTHON_SITELIBDIR%%/cherrypy/tutorial
 @dirrm %%PYTHON_SITELIBDIR%%/cherrypy/test/static
 @dirrm %%PYTHON_SITELIBDIR%%/cherrypy/test
-%%PORTEXAMPLES%%@dirrm %%PYTHON_SITELIBDIR%%/cherrypy/tutorial
-@dirrm %%PYTHON_SITELIBDIR%%/cherrypy/wsgiserver
+@dirrm %%PYTHON_SITELIBDIR%%/cherrypy/lib
 @dirrm %%PYTHON_SITELIBDIR%%/cherrypy
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

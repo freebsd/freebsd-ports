@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cherrypy
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	www python
-MASTER_SITES=	http://download.cherrypy.org/cherrypy/${PORTVERSION}/
+MASTER_SITES=	http://download.cherrypy.org/cherrypy/${PORTVERSION}/ \
+		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	CherryPy-${PORTVERSION:C/\.b$/beta/}
 
