@@ -42,6 +42,21 @@ PLIST_SUB=	SKYPEDIR=${SKYPEDIR}
 
 .include <bsd.port.pre.mk>
 
+pre-fetch:
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"* * * * * * * * * * * * * * * * * * * * * * * * * * * *"
+	@${ECHO_MSG}	"ATTENTION!"
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"Skype requires at least linux_base-fc6"
+	@${ECHO_MSG}	"which is NOT default at this time."
+	@${ECHO_MSG}	"If you don't have that version or above installed,"
+	@${ECHO_MSG}	"hit 'control c' now!"
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"Please read ${PORTSDIR}/UPDATING 20080318"
+	@${ECHO_MSG}	"for update and install instructions."
+	@${ECHO_MSG}	"* * * * * * * * * * * * * * * * * * * * * * * * * * * *"
+	@${ECHO_MSG}	""
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|Exec=skype|Exec=skype --resources=${PREFIX}/${SKYPEDIR}|' \
 		${WRKSRC}/skype.desktop
