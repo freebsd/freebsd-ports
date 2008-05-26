@@ -10,7 +10,7 @@ PORTVERSION=	2.0.b20060323
 CATEGORIES=	devel haskell java
 MASTER_SITES=	http://moby.cs.uchicago.edu/downloads/ \
 		ftp://mirror.free.de/http/moby.cs.uchicago.edu/downloads/
-DISTNAME=	asdlGen
+DISTFILES=	asdlGen.tar.gz
 
 MAINTAINER=	joemann@beefree.free.de
 COMMENT=	Interoperable serializers for C,C++,Haskell,Icon,Java,ML
