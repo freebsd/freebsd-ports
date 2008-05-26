@@ -1,10 +1,10 @@
---- src/Makefile.in.dist	Sun Jul 10 03:52:02 2005
-+++ src/Makefile.in	Thu Nov 10 16:54:24 2005
-@@ -61,6 +61,7 @@
- 	jwhois-http.$(OBJEXT)
- jwhois_OBJECTS = $(am_jwhois_OBJECTS)
- jwhois_LDADD = $(LDADD)
+--- src/Makefile.in.dist	2007-07-01 17:56:14.000000000 +0900
++++ src/Makefile.in	2008-05-26 13:46:50.000000000 +0900
+@@ -231,6 +231,7 @@
+          -DLOCALEDIR="\"$(localedir)\""
+ 
+ jwhois_LDADD = $(top_srcdir)/gl/libgnu.a
 +jwhois_LDFLAGS = $(LDFLAGS) $(LTLIBINTL)
- DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
+ AM_CFLAGS = $(jwhois_CFLAGS)
+ INCLUDES = -I$(top_srcdir)/include -I$(top_srcdir)/intl -I$(top_srcdir)/gl
+ all: all-am
