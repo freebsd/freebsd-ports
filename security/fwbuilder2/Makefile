@@ -50,4 +50,8 @@ MAN1=		fwbuilder.1 \
 PORTDOCS=	*
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if defined(NOPORTDOCS)
+BROKEN=		NOPORTDOCS is incomplete in this port
+.endif
+.include <bsd.port.post.mk>
