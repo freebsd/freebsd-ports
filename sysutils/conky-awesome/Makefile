@@ -17,7 +17,7 @@ PATCHDIR=	${.CURDIR}/files
 CONFLICTS=	conky-[0-9]*
 
 USE_XORG=
-USE_GNOME=
+USE_GNOME=		pkgconfig
 CONFIGURE_ARGS+=	--disable-x11
 
 .include "${MASTERDIR}/Makefile"
