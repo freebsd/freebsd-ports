@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nsm-console
-PORTVERSION=	0.3
+PORTVERSION=	0.7
 CATEGORIES=	security
-MASTER_SITES=	http://navi.eight7.org/~hinmanm/files/
+MASTER_SITES=	http://writequit.org/projects/nsm-console/files/
 
 MAINTAINER=	cherry@trombik.org
 COMMENT=	A framework for performing analysis on packat capture files
@@ -28,17 +28,11 @@ OPTIONS=	TSHARK		"Install tshark" on \
 			PADS		"Install pads" on \
 			FL0P		"Install fl0p" on \
 			CHAOSREADER	"Install chaosreader" on \
-			ARGUS		"Install argus" on
-NSM_LIBFILES=	command_manager.rb \
-	command_manager.rb \
-	commands.rb \
-	encodelib.rb \
-	history.rb \
-	logging.rb \
-	nsm_category.rb \
-	nsm_console.rb \
-	nsm_helper.rb \
-	nsm_module.rb
+			ARGUS		"Install argus" on \
+			TCPICK		"Install tcpick" on \
+			TCPTRACE	"Install tcptrace" on \
+			FOREMOST	"Install foremost" on \
+			CHAOSREADER	"Install chaosreader" on
 NSM_DOC=	CHANGELOG TODO
 
 .include <bsd.port.pre.mk>
@@ -81,21 +75,39 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/fl0p:${PORTSDIR}/security/fl0p
 RUN_DEPENDS+=	${LOCALBASE}/bin/chaosreader:${PORTSDIR}/security/chaosreader
 .endif
 .if defined(WITH_ARGUS)
-RUN_DEPENDS+=	${LOCALBASE}/bin/ra:${PORTSDIR}/net-mgmt/argus-clients \
-	${LOCALBASE}/sbin/argus:${PORTSDIR}/net-mgmt/argus
+RUN_DEPENDS+=	${LOCALBASE}/bin/ra:${PORTSDIR}/net-mgmt/argus3-clients \
+	${LOCALBASE}/sbin/argus:${PORTSDIR}/net-mgmt/argus3
+.endif
+.if defined(WITH_TCPICK)
+RUN_DEPENDS+=	${LOCALBASE}/bin/tcpick:${PORTSDIR}/net/tcpick
+.endif
+.if defined(WITH_TCPTRACE)
+RUN_DEPENDS+=	${LOCALBASE}/bin/tcptrace:${PORTSDIR}/net/tcptrace
+.endif
+.if defined(WITH_FOREMOST)
+RUN_DEPENDS+=	${LOCALBASE}/bin/foremost:${PORTSDIR}/sysutils/foremost
+.endif
+.if defined(WITH_CHAOSREADER)
+RUN_DEPENDS+=	${LOCALBASE}/bin/chaosreader:${PORTSDIR}/security/chaosreader
 .endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/nsm
 
 do-install:
-	${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
-.for F in ${NSM_LIBFILES}
-	${INSTALL_DATA} ${WRKSRC}/lib/${F} ${RUBY_SITELIBDIR}/${PORTNAME}
-.endfor
+	@${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
+	@( cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${RUBY_SITELIBDIR}/${PORTNAME} )
+	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .for D in modules
-	cd ${WRKSRC} && ${FIND} ${D} -type d -exec ${MKDIR} ${DATADIR}/{} ";"
-	cd ${WRKSRC} && ${FIND} ${D} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} ";"
+	@${MKDIR} ${DATADIR}/${D}
+	@( cd ${WRKSRC}/${D} && ${COPYTREE_SHARE} . ${DATADIR}/${D} )
+	@${FIND} ${DATADIR} -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/nsm ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
