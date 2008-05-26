@@ -1,0 +1,11 @@
+--- fMSX/Unix/Makefile.orig	2008-01-28 19:29:59.000000000 +0000
++++ fMSX/Unix/Makefile	2008-05-26 05:52:08.000000000 +0000
+@@ -10,7 +10,7 @@
+ all:    fmsx
+ 
+ fmsx:	Makefile $(OBJECTS)
+-	$(CC) -o $@ $(CFLAGS) $(OBJECTS) $(LIBS)
++	$(CC) -L%%LOCALBASE%%/lib -o $@ $(CFLAGS) $(OBJECTS) $(LIBS)
+ 
+ clean:
+ 	rm -f $(OBJECTS)

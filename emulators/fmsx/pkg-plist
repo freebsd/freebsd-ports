@@ -1,7 +1,5 @@
 bin/fmsx
 bin/fmsx.bin
-bin/fmsx-rddsk
-bin/fmsx-wrdsk
 %%DATADIR%%/CYRILLIC.FNT
 %%DATADIR%%/ITALIC.FNT
 %%DATADIR%%/MSX.ROM
