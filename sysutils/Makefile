@@ -820,6 +820,7 @@
     SUBDIR += xwlans
     SUBDIR += yawho
     SUBDIR += zeroer
+    SUBDIR += zfs-replicate
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
 
