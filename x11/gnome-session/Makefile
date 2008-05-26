@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	gnome-session
-PORTVERSION=	2.22.1.1
+PORTVERSION=	2.22.2
 CATEGORIES=	x11 gnome
-MASTER_SITES=	${MASTER_SITE_GNOME} \
+MASTER_SITES=	GNOME \
 		http://www.marcuscom.com/downloads/:local
-MASTER_SITE_SUBDIR=	sources/gnome-session/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${SPLASHES}:local
 DIST_SUBDIR=	gnome2
