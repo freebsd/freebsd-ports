@@ -1,5 +1,5 @@
---- src/orca/orca.in.orig	2008-05-01 16:52:27.000000000 -0500
-+++ src/orca/orca.in	2008-05-01 16:57:15.000000000 -0500
+--- src/orca/orca.in.orig	2008-05-26 16:22:08.000000000 -0500
++++ src/orca/orca.in	2008-05-26 16:25:53.000000000 -0500
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -42,12 +42,15 @@
      then
          cleanup
      else
-@@ -270,7 +270,7 @@
+@@ -270,9 +270,9 @@
          # erroneously types an illegal command line argument, the
          # help text is emitted and the other orca is not killed.
          #
--        if [ `egrep -c "\-s|\-g|\-t|\-n|\-u|\-e|\-d" <<< $ARGS` -eq 0 ]
-+        if [ `echo $ARGS | egrep -c "\-s|\-g|\-t|\-n|\-u|\-e|\-d"` -eq 0 ]
+-        if [ `egrep -c "\-s|\-g|\-n|\-u|\-e|\-d" <<< $ARGS` -eq 0 ]
++        if [ `echo $ARGS | egrep -c "\-s|\-g|\-n|\-u|\-e|\-d"` -eq 0 ]
          then
-             runOrca "NO_CLEANUP"
-         else
+-            if [ `egrep -c "\-t" <<< $ARGS` -eq 0 ]
++            if [ `echo $ARGS | egrep -c "\-t"` -eq 0 ]
+             then
+                 runOrca "NO_CLEANUP"
+             else
