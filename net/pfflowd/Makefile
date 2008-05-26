@@ -6,31 +6,32 @@
 #
 
 PORTNAME=	pfflowd
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.mindrot.org/files/pfflowd/
 
-MAINTAINER=	thompsa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert pfsync states to NetFlow datagrams
+
+USE_RC_SUBR=	${PORTNAME}
 
 MAN8=		pfflowd.8
 
-PLIST_FILES=	sbin/pfflowd \
-		etc/rc.d/pfflowd.sh.sample
+PLIST_FILES=	sbin/pfflowd
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502106
-IGNORE=		"Only for 5.3 and above"
+IGNORE=		only for 5.3 and above
 .endif
 
 .if ${OSVERSION} < 502119
 EXTRA_PATCHES+=	${FILESDIR}/pf34-Makefile
 .endif
 
-post-patch:
-	${SED} -e 's|@@PREFIX@@|${PREFIX}|g' < ${FILESDIR}/pfflowd.sh.sample \
-		> ${WRKSRC}/pfflowd.sh.sample
+if ${OSVERSION} < 700000
+BROKEN=		does not compile
+.endif
 
 pre-build:
 	${CAT} ${FILESDIR}/pidfile.h > ${WRKSRC}/pidfile.h
@@ -39,6 +40,5 @@ pre-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pfflowd ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/pfflowd.8 ${PREFIX}/man/man8
-	${INSTALL_SCRIPT} ${WRKSRC}/pfflowd.sh.sample ${PREFIX}/etc/rc.d/pfflowd.sh.sample
 
 .include <bsd.port.post.mk>
