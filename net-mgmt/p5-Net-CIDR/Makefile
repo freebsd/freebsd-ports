@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to manipulate IPv4/IPv6 netblocks in CIDR notation
 
 PERL_CONFIGURE=	yes
