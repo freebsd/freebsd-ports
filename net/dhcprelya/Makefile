@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhcprelya
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net
 MASTER_SITES=	http://people.yandex-team.ru/~sem/
 
