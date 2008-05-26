@@ -1750,6 +1750,7 @@ cuttlefish	ports/graphics/cuttlefish
 cvc3		ports/math/cvc3
 cvm		ports/security/cvm
 cvs+ipv6		ports/devel/cvs+ipv6
+cvs-devel		ports/devel/cvs-devel
 cvs-syncmail	ports/devel/cvs-syncmail
 cvs2cl		ports/devel/cvs2cl
 cvs2darcs	ports/devel/cvs2darcs
