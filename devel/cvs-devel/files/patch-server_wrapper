@@ -1,0 +1,51 @@
+#
+# Added patch to support cvs -W ! - clears all wrappers (patch also
+# forwarded to CVS people) #3374
+#
+# Patch by Michael Alan Dorman <mdorman@lot49.med.miami.edu>
+diff -Nur src/wrapper.c src/wrapper.c
+--- src/wrapper.c	2005-09-04 08:27:44.000000000 +0800
++++ src/wrapper.c	2006-02-26 22:26:53.000000000 +0800
+@@ -86,7 +86,7 @@
+        move this to a per-connection data structure, or better yet
+        think about a cleaner solution.  */
+     static int wrap_setup_already_done = 0;
+-    char *homedir;
++    char *homedir = NULL;
+ 
+     if (wrap_setup_already_done != 0)
+         return;
+@@ -107,6 +107,11 @@
+ 	free (file);
+     }
+ 
++#ifdef SERVER_SUPPORT
++    if (!server_active)
++#endif
++    {
++
+     /* Then add entries found in home dir, (if user has one) and file
+        exists.  */
+     homedir = get_homedir ();
+@@ -115,6 +120,8 @@
+        hand it might be obnoxious to complain when CVS will function
+        just fine without .cvswrappers (and many users won't even know what
+        .cvswrappers is).  */
++    }
++    
+     if (homedir != NULL)
+     {
+ 	char *file = strcat_filename_onto_homedir (homedir, CVSDOTWRAPPER);
+@@ -339,6 +346,12 @@
+     if (!line || line[0] == '#')
+ 	return;
+ 
++    /* Allows user to declare all wrappers null and void */
++    if ( line[0] == '!') {
++      wrap_kill ( );
++      return;
++    }
++
+     memset (&e, 0, sizeof(e));
+ 
+ 	/* Search for the wild card */

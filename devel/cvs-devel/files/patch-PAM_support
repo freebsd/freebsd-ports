@@ -1,0 +1,144 @@
+#
+# Add in extra PAM options compared to upstream's own PAM code:
+# * Add an extra option PamAuth to control use of PAM separately from
+#   SystemAuth
+# * Add support for DefaultPamUser - try that if the specified
+#   user does not exist
+#
+# Patch by Steve McIntyre <steve@einval.com>
+diff -Nur doc/cvs.texinfo doc/cvs.texinfo
+--- doc/cvs.texinfo	2005-09-23 03:02:53.000000000 +0100
++++ doc/cvs.texinfo	2006-05-19 23:50:10.000000000 +0100
+@@ -2662,8 +2662,18 @@
+ system has PAM (Pluggable Authentication Modules)
+ and your @sc{cvs} server executable was configured to
+ use it at compile time (using @code{./configure --enable-pam} - see the
+-INSTALL file for more).  In this case, PAM will be consulted instead.
+-This means that @sc{cvs} can be configured to use any password
++INSTALL file for more).  In this case, PAM may be
++consulted first (or instead). The
++"fallback" behaviour can be controlled using the two
++variables @code{PamAuth} and @code{SystemAuth}. On a
++Debian system, @code{PamAuth} defaults to @code{yes}
++and @code{SystemAuth} to @code{no} - after all, PAM can
++supports passwd file lookups itself. Changing these is
++possible by setting @code{PamAuth=no} and
++@code{SystemAuth=yes} in the @sc{cvs} @file{config}
++file, @pxref{config}).
++
++Use of PAM means that @sc{cvs} can be configured to use any password
+ authentication source PAM can be configured to use (possibilities
+ include a simple UNIX password, NIS, LDAP, and others) in its
+ global configuration file (usually @file{/etc/pam.conf}
+@@ -2691,7 +2701,7 @@
+ cvs	session	    required	pam_unix.so
+ @end example
+ 
+-The the equivalent @file{/etc/pam.d/cvs} would contain
++The equivalent @file{/etc/pam.d/cvs} would contain
+ 
+ @example
+ auth	    required	pam_unix.so
+@@ -2715,6 +2725,13 @@
+ feature should not be used if you may not have control of the name
+ @sc{cvs} will be invoked as.
+ 
++If you wish to use PAM for authentication, and details
++of your users are not available using getpwnam(), you
++may set a default name for the account on the server
++that will be used after authentication. To do this,
++either set @code{DefaultPamUser=user} in the @sc{cvs}
++@file{config} file, @pxref{config}.
++
+ Be aware, also, that falling back to system
+ authentication might be a security risk: @sc{cvs}
+ operations would then be authenticated with that user's
+diff -Nur src/parseinfo.c src/parseinfo.c
+--- src/parseinfo.c	2005-09-06 05:40:37.000000000 +0100
++++ src/parseinfo.c	2006-05-19 22:46:00.000000000 +0100
+@@ -303,8 +303,12 @@
+                                                           */
+ #endif /* PROXY_SUPPORT */
+ #ifdef AUTH_SERVER_SUPPORT
+-    new->system_auth = true;
++    new->system_auth = false;
+ #endif /* AUTH_SERVER_SUPPORT */
++#ifdef HAVE_PAM
++    new->PamAuth = true;
++    new->DefaultPamUser = NULL;
++#endif
+ 
+     return new;
+ }
+@@ -696,6 +700,13 @@
+ 	    readSizeT (infopath, "MaxCompressionLevel", p,
+ 		       &retval->MaxCompressionLevel);
+ #endif /* SERVER_SUPPORT */
++#ifdef HAVE_PAM
++    else if (!strcmp (line, "DefaultPamUser"))
++        retval->DefaultPamUser = xstrdup(p);
++	else if (!strcmp (line, "PamAuth"))
++	    readBool (infopath, "PamAuth", p,
++		      &retval->PamAuth);
++#endif
+ 	else
+ 	    /* We may be dealing with a keyword which was added in a
+ 	       subsequent version of CVS.  In that case it is a good idea
+diff -Nur src/parseinfo.h src/parseinfo.h
+--- src/parseinfo.h	2005-09-05 04:03:38.000000000 +0100
++++ src/parseinfo.h	2006-05-19 22:40:31.000000000 +0100
+@@ -59,6 +59,10 @@
+ #ifdef PRESERVE_PERMISSIONS_SUPPORT
+     bool preserve_perms;
+ #endif /* PRESERVE_PERMISSIONS_SUPPORT */
++#ifdef HAVE_PAM
++    char *DefaultPamUser;
++    bool PamAuth;
++#endif
+ };
+ 
+ bool parse_error (const char *, unsigned int);
+diff -Nur src/server.c src/server.c
+--- src/server.c	2005-09-28 16:25:59.000000000 +0100
++++ src/server.c	2006-05-20 00:45:14.000000000 +0100
+@@ -6919,6 +6919,15 @@
+     {
+         pam_stage = "get pam user";
+         retval = pam_get_item (pamh, PAM_USER, (const void **)username);
++        if ((retval != PAM_SUCCESS) && (NULL != config->DefaultPamUser))
++        {
++            /* An issue with using pam is that the host may well not have
++               a local user entry to match the authenticated user. If this
++               has failed, optionally fall back to a specified local
++               username */
++            *username = xstrdup(config->DefaultPamUser);
++            retval = PAM_SUCCESS;
++        }
+     }
+ 
+     if (retval != PAM_SUCCESS)
+@@ -7022,7 +7031,11 @@
+ 
+     assert (rc == 0);
+ 
++#ifdef HAVE_PAM
++    if (!config->system_auth && !config->PamAuth)
++#else
+     if (!config->system_auth)
++#endif
+     {
+ 	/* Note that the message _does_ distinguish between the case in
+ 	   which we check for a system password and the case in which
+@@ -7037,9 +7050,10 @@
+ 
+     /* No cvs password found, so try /etc/passwd. */
+ #ifdef HAVE_PAM
+-    if (check_pam_password (&username, password))
++    if ( (config->PamAuth && check_pam_password (&username, password)) ||
++         (config->system_auth && check_system_password (username, password)))
+ #else /* !HAVE_PAM */
+-    if (check_system_password (username, password))
++	if (config->system_auth && check_system_password (username, password))
+ #endif /* HAVE_PAM */
+ 	host_user = xstrdup (username);
+     else

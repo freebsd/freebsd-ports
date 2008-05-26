@@ -1,0 +1,31 @@
+# Don't make history and val-tags files world-writable when creating a
+# new repository. (Closes: #125892)
+#
+# Author unknown, probably Eric Gillespie, Jr. <epg@debian.org>
+diff -Nur src/mkmodules.c src/mkmodules.c
+--- src/mkmodules.c	2005-05-25 04:59:01.000000000 +0800
++++ src/mkmodules.c	2006-02-26 22:27:55.000000000 +0800
+@@ -1249,11 +1249,6 @@
+ 	fp = xfopen (info, "w");
+ 	if (fclose (fp) < 0)
+ 	    error (1, errno, "cannot close %s", info);
+- 
+-        /* Make the new history file world-writeable, since every CVS
+-           user will need to be able to write to it.  We use chmod()
+-           because xchmod() is too shy. */
+-        chmod (info, 0666);
+     }
+ 
+     /* Make an empty val-tags file to prevent problems creating it later.  */
+@@ -1267,11 +1262,6 @@
+ 	fp = xfopen (info, "w");
+ 	if (fclose (fp) < 0)
+ 	    error (1, errno, "cannot close %s", info);
+- 
+-        /* Make the new val-tags file world-writeable, since every CVS
+-           user will need to be able to write to it.  We use chmod()
+-           because xchmod() is too shy. */
+-        chmod (info, 0666);
+     }
+ 
+     free (info);

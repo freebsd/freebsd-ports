@@ -1,0 +1,108 @@
+diff -Nur src/cvs.h src/cvs.h
+--- src/cvs.h	2006-08-19 00:05:38.000000000 +0100
++++ src/cvs.h	2006-08-19 00:05:41.000000000 +0100
+@@ -177,6 +177,7 @@
+ #define	CVSROOTADM_LOGINFO	"loginfo"
+ #define	CVSROOTADM_MODULES	"modules"
+ #define CVSROOTADM_NOTIFY	"notify"
++#define CVSROOTADM_OPTIONS	"options"
+ #define CVSROOTADM_PASSWD	"passwd"
+ #define CVSROOTADM_POSTADMIN	"postadmin"
+ #define CVSROOTADM_POSTPROXY	"postproxy"
+@@ -506,6 +507,7 @@
+ char *strcat_filename_onto_homedir (const char *, const char *);
+ char *cvs_temp_name (void);
+ FILE *cvs_temp_file (char **filename);
++void parseopts (const char *root);
+ 
+ int ls (int argc, char *argv[]);
+ int unlink_file (const char *f);
+diff -Nur src/main.c src/main.c
+--- src/main.c	2006-08-19 00:05:38.000000000 +0100
++++ src/main.c	2006-08-19 00:08:14.000000000 +0100
+@@ -1108,6 +1108,8 @@
+ 		   CVSROOT/config file to fix the broken one!  */
+ 		if (config) free_config (config);
+ 		config = parse_config (current_parsed_root->directory, NULL);
++		/* Now is a convenient time to read CVSROOT/options */
++		parseopts(current_parsed_root->directory);
+ 
+ 		/* Can set TMPDIR in the environment if necessary now, since
+ 		 * if it was set in config, we now know it.
+@@ -1482,5 +1484,63 @@
+     exit (EXIT_FAILURE);
+ }
+ 
++void
++parseopts(root)
++    const char *root;
++{
++    char path[PATH_MAX];
++    int save_errno;
++    char buf[1024];
++    const char *p;
++    char *q;
++    FILE *fp;
++
++    if (root == NULL) {
++        printf("no CVSROOT in parseopts\n");
++        return;
++    }
++    p = strchr (root, ':');
++    if (p)
++        p++;
++    else
++        p = root;
++    if (p == NULL) {
++        printf("mangled CVSROOT in parseopts\n");
++        return;
++    }
++    (void) sprintf (path, "%s/%s/%s", p, CVSROOTADM, CVSROOTADM_OPTIONS);
++    if ((fp = fopen(path, "r")) != NULL) {
++        while (fgets(buf, sizeof buf, fp) != NULL) {
++            if (buf[0] == '#')
++                continue;
++            q = strrchr(buf, '\n');
++            if (q)
++                *q = '\0';
++
++            if (!strncmp(buf, "tag=", 4)) {
++                char *what;
++                char *rcs_localid;
++
++                rcs_localid = buf + 4;
++                RCS_setlocalid(path, 0, &config->keywords, rcs_localid);
++            }
++            if (!strncmp(buf, "tagexpand=", 10)) {
++                char *what;
++                char *rcs_incexc;
++
++                rcs_incexc = buf + 10;
++                RCS_setincexc(&config->keywords, rcs_incexc);
++            }
++            /*
++             * OpenBSD has a "umask=" and "dlimit=" command, we silently
++             * ignore them here since they are not much use to us.  cvsumask
++             * defaults to 002 already, and the dlimit (data size limit)
++             * should really be handled elsewhere (eg: login.conf).
++             */
++        }
++        fclose(fp);
++    }
++}
++
+ /* vim:tabstop=8:shiftwidth=4
+  */
+diff -Nur src/server.c src/server.c
+--- src/server.c	2006-08-19 00:05:38.000000000 +0100
++++ src/server.c	2006-08-19 00:05:41.000000000 +0100
+@@ -985,6 +985,9 @@
+ 		     config->MaxCompressionLevel);
+     }
+ 
++    /* Now is a good time to read CVSROOT/options too. */
++    parseopts(current_parsed_root->directory);
++
+     path = xmalloc (strlen (current_parsed_root->directory)
+ 		   + sizeof (CVSROOTADM)
+ 		   + 2);

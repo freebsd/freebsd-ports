@@ -1,0 +1,15 @@
+# Make rcs2log use POSIX 1003.1-2001 compliant `sort'. Closes: #368909
+# Patch taken from http://cvs.pld.org.pl/SOURCES/cvs-POSIX.patch?rev=1.1 ,
+# Thanks to the PLD Team.
+diff -Nur contrib/rcs2log.sh.orig contrib/rcs2log.sh
+--- contrib/rcs2log.sh.orig	2006-05-26 15:16:54.000000000 +0800
++++ contrib/rcs2log.sh	2006-05-26 15:16:35.000000000 +0800
+@@ -649,7 +649,7 @@
+ # Sort the log entries, first by date+time (in reverse order),
+ # then by author, then by log entry, and finally by file name and revision
+ # (just in case).
+-sort -t"$SOH" +2 -4r +4 +0 |
++sort -t"$SOH" -k 3,4r -k 5 -k 1 |
+ 
+ # Finally, reformat the sorted log entries.
+ $AWK -F"$SOH" '

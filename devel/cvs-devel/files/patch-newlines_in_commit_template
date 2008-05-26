@@ -1,0 +1,32 @@
+# Change commit template so that there are two newlines at the
+# beginning.  (closes: #102624)
+#
+# Patch from Tollef Fog Heen <tfheen@debian.org>
+diff -Nur src/logmsg.c src/logmsg.c
+--- src/logmsg.c	2005-09-04 08:27:44.000000000 +0800
++++ src/logmsg.c	2006-02-26 17:57:28.000000000 +0800
+@@ -264,6 +264,11 @@
+ 	}
+     }
+ 
++    if (!*messagep)
++    {
++      (void) fprintf (fp, "\n");
++    }
++
+     (void) fprintf (fp,
+   "%s----------------------------------------------------------------------\n",
+ 		    CVSEDITPREFIX);
+@@ -349,7 +354,11 @@
+ 	*messagep = NULL;
+     }
+ 
+-    if (pre_stbuf.st_mtime == post_stbuf.st_mtime || *messagep == NULL)
++    if (pre_stbuf.st_mtime == post_stbuf.st_mtime || 
++        *messagep == NULL ||
++        (*messagep)[0] == '\0' ||
++        strcmp (*messagep, "\n") == 0 ||
++        strcmp (*messagep, "\n\n") == 0)
+     {
+ 	for (;;)
+ 	{
