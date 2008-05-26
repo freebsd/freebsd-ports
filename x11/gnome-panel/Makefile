@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	gnome-panel
-PORTVERSION=	2.22.1.3
+PORTVERSION=	2.22.2
 PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-MASTER_SITE_SUBDIR=	sources/gnome-panel/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
