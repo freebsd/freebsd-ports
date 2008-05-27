@@ -3482,3 +3482,4 @@ devel/swig11||2008-05-21|Has expired: use devel/swig13 instead, last release of 
 japanese/truetypefonts||2008-05-25|Removed due to copyright problem
 japanese/kochi-cidfonts||2008-05-25|Removed due to copyright problem
 japanese/latex-japanese|japanese/platex-japanese|2008-05-26|Works only with platex
+ports-mgmt/newportsversioncheck||2008-05-27|Obsoleted by portscout
