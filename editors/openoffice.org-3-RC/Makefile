@@ -24,7 +24,9 @@ DISTFILES+=	gpc231.tar.Z:gpc
 EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	openoffice@FreeBSD.org
-COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
+COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
+
+IGNORE=		this version is the same as openoffice.org-3 port (BEA300_m2)
 
 .if defined(WITH_CWS)
 PORTNAME:=	openoffice.org-${WITH_CWS}
