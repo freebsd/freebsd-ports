@@ -1,8 +1,8 @@
 bin/my-default-printer
+bin/system-config-printer
 bin/system-config-printer-applet
 etc/dbus-1/system.d/newprinternotification.conf
 etc/xdg/autostart/redhat-print-applet.desktop
-sbin/system-config-printer
 share/applications/redhat-manage-print-jobs.desktop
 share/applications/redhat-my-default-printer.desktop
 share/applications/redhat-system-config-printer.desktop
@@ -57,7 +57,7 @@ share/locale/si/LC_MESSAGES/system-config-printer.mo
 share/locale/sk/LC_MESSAGES/system-config-printer.mo
 share/locale/sl/LC_MESSAGES/system-config-printer.mo
 share/locale/sr/LC_MESSAGES/system-config-printer.mo
-share/locale/sr@Latn/LC_MESSAGES/system-config-printer.mo
+share/locale/sr@latin/LC_MESSAGES/system-config-printer.mo
 share/locale/sv/LC_MESSAGES/system-config-printer.mo
 share/locale/ta/LC_MESSAGES/system-config-printer.mo
 share/locale/te/LC_MESSAGES/system-config-printer.mo
@@ -73,6 +73,7 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 %%DATADIR%%/contextmenu.py
 %%DATADIR%%/cupshelpers.py
 %%DATADIR%%/debug.py
+%%DATADIR%%/errordialogs.py
 %%DATADIR%%/gtk_label_autowrap.py
 %%DATADIR%%/gtk_treeviewtooltips.py
 %%DATADIR%%/icons/i-network-printer.png
@@ -117,6 +118,8 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/my/LC_MESSAGES
@@ -132,5 +135,7 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
 @dirrmtry share/applications
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
+@dirrm etc/xdg/autostart
+@dirrm etc/xdg
+@dirrm etc/dbus-1/system.d
+@dirrm etc/dbus-1
