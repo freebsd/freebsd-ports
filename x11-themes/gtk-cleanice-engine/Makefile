@@ -15,7 +15,7 @@ DISTNAME=	gtk-engines-cleanice-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz \
 		${THEME}.tar.gz
 
-MAINTAINER=	philip@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simplistic GTK+ 2.x theme engine
 
 GNU_CONFIGURE=	yes
