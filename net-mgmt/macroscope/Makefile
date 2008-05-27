@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/macroscope/ \
 MAINTAINER=	white_raven@users.berlios.de
 COMMENT=	User and IP traffic management with Web interface
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2 \
 		odbc:${PORTSDIR}/databases/unixODBC \
 		pcap:${PORTSDIR}/net/libpcap
@@ -22,13 +21,7 @@ LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2 \
 USE_RC_SUBR=	macroscope
 USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
-
-CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
-		-DCMAKE_C_COMPILER:STRING="${CC}" \
-		-DCMAKE_C_FLAGS:STRING="${CFLAGS}" \
-		-DCMAKE_CXX_COMPILER:STRING="${CXX}" \
-		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \
-		-DCMAKE_INSTALL_PREFIX=${PREFIX}
+USE_CMAKE=	yes
 
 OPTIONS=	MYSQL		"With MySQL support" on \
 		FIREBIRD	"With Firebird support" off
@@ -55,8 +48,8 @@ USE_FIREBIRD=	yes
 BROKEN=		Does not compile
 .endif
 
-do-configure:
-	@(cd ${WRKSRC}; \
-	${LOCALBASE}/bin/cmake ${CMAKE_ARGS} .)
+post-patch:
+	@${REINPLACE_CMD} -e 's|".*\.c\.in"|"${FILESDIR}/CheckTypeSize.c.in"|' \
+	${WRKSRC}/builds/cmake/CheckTypeSize.cmake
 
 .include <bsd.port.post.mk>

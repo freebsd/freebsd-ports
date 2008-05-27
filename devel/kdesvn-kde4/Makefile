@@ -6,27 +6,18 @@
 
 PORTNAME=	kdesvn
 PORTVERSION=	0.14.1
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/${PORTVERSION:R}.x/
 
 MAINTAINER=	yuanjue@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-
-WRKSRC=		${WRKDIR}/${DISTNAME}-build
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
-
-CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
-		-DCMAKE_C_COMPILER:STRING='${CC}' \
-		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
-		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \
-		-DCMAKE_INSTALL_PREFIX=${PREFIX}
-
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr-svn \
 		svn_client-1:${PORTSDIR}/devel/subversion \
 		neon:${PORTSDIR}/www/neon26
 
+USE_CMAKE=	yes
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_LDCONFIG=	yes
@@ -50,9 +41,5 @@ post-extract:
 	${RM} -f ${PATCH_WRKSRC}/doc/CMakeLists.txt
 	${ECHO} "ADD_SUBDIRECTORY(man)" > ${PATCH_WRKSRC}/doc/CMakeLists.txt
 .endif
-
-do-configure:
-	@(cd ${WRKSRC}; \
-	${LOCALBASE}/bin/cmake ${CMAKE_ARGS} ${PATCH_WRKSRC})
 
 .include <bsd.port.mk>

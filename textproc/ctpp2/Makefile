@@ -13,11 +13,7 @@ MASTER_SITES=	http://ctpp.havoc.ru/download/
 MAINTAINER=	reki@reki.ru
 COMMENT=	C++ library to use templates in C/C++ projects, version 2
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-
+USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-
-do-configure:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/cmake ${WRKSRC}
 
 .include <bsd.port.mk>

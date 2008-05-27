@@ -14,14 +14,7 @@ MASTER_SITES=	http://offload1.icculus.org/${PORTNAME}/downloads/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library to provide abstract access to various archives
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-
-CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
-		-DCMAKE_C_COMPILER:STRING='${CC}' \
-		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
-		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \
-		-DCMAKE_INSTALL_PREFIX=${PREFIX}
-
+USE_CMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 NO_LATEST_LINK=	yes
@@ -39,9 +32,5 @@ post-patch:
 
 	@${REINPLACE_CMD} -e 's|\(define SIZEOF_INT\) 4|\1 (LONG_BIT/8)|g' \
 		${WRKSRC}/platform/unix.c
-
-do-configure::
-	@(cd ${WRKSRC}; \
-	${LOCALBASE}/bin/cmake ${CMAKE_ARGS} ${PATCH_WRKSRC})
 
 .include <bsd.port.mk>

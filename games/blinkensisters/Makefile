@@ -15,18 +15,12 @@ DISTNAME=	LostPixels-${PORTVERSION}-source
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Parallax-style 2D scrolling platform game
 
-BUILD_DEPENDS=	${CMAKE}:${PORTSDIR}/devel/cmake
-
-CMAKE?=		${LOCALBASE}/bin/cmake
-
 USE_SDL=	sdl image ttf
 WRKSRC=		${WRKDIR}//blinkensisters/lostpixels/game/software
+USE_CMAKE=	yes
 
-CMAKE_DEFS=	-DCMAKE_C_COMPILER:STRING="${CC}" \
-		-DCMAKE_C_FLAGS:STRING="${CFLAGS} -I${LOCALBASE}/include" \
-		-DCMAKE_CXX_COMPILER:STRING="${CXX}" \
-		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS} -I${LOCALBASE}/include" \
-		-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX}
+CFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	SOUND	"Build with souns support" on \
 		NETWORK	"Build with network support" on
@@ -51,8 +45,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|share/blinkensisters|${DATADIR:S,${PREFIX}/,,}|; \
 		s|share/doc/blinkensisters|${DOCSDIR:S,${PREFIX}/,,}|' \
 		${WRKSRC}/CMakeLists.txt
-
-do-configure:
-	cd ${WRKSRC} && ${CMAKE} . ${CMAKE_DEFS}
 
 .include <bsd.port.post.mk>

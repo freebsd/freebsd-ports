@@ -17,10 +17,10 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD organizer for KDE
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-
 USE_KDEBASE_VER=	3
 USE_SQLITE=	yes
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' \
@@ -31,8 +31,5 @@ post-patch:
 		>> ${WRKSRC}/libkatalog/CMakeLists.txt
 	@${ECHO_CMD} 'macro_add_compile_flags( katalogxml "-fPIC" )' \
 		>> ${WRKSRC}/xml_backend/libkatalogxml/CMakeLists.txt
-
-do-configure:
-	@cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/cmake .
 
 .include <bsd.port.mk>

@@ -15,17 +15,12 @@ DISTNAME=	vtkmpeg2encode
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	VTK MPEG2 encoding library
 
-BUILD_DEPENDS=	cmake>=2.2:${PORTSDIR}/devel/cmake
-
 NO_CDROM=	the MPEG2 format and all software that uses it is subject to patent restrictions
 NO_PACKAGE=	${NO_CDROM}
 
-CMAKE?=		${LOCALBASE}/bin/cmake
-CMAKE_DEFS+=	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX}	\
-		-DCMAKE_C_FLAGS:STRING="${CFLAGS}"	\
-		-DBUILD_SHARED_LIBS:BOOL=ON
-
+USE_CMAKE=	yes
 USE_LDCONFIG=	yes
+CMAKE_ARGS?=	-DBUILD_SHARED_LIBS:BOOL=ON
 
 MAN3=		vtkmpeg2encode.3
 
@@ -43,9 +38,6 @@ PLIST_FILES=	lib/${MPEGLIB}.so.${PORTVERSION} \
 		include/vtk-5.0/mpeg2enc.h \
 		include/vtk-5.0/mpeg2enc_config.h \
 		include/vtk-5.0/vlc.h
-
-do-configure:
-	cd ${WRKSRC} && ${CMAKE} . ${CMAKE_DEFS}
 
 post-build:
 	${MV} ${WRKSRC}/${MPEGLIB}.so ${WRKSRC}/${MPEGLIB}.so.${PORTVERSION}

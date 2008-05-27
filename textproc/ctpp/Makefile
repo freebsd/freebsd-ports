@@ -15,12 +15,8 @@ MASTER_SITE_SUBDIR=	miwi
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to use templates in C/C++ projects
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-
+USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-
-do-configure:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/cmake ${WRKSRC}
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libctpp-st.a ${PREFIX}/lib/libctpp.a

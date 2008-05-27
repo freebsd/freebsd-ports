@@ -2521,6 +2521,7 @@ include/InsightToolkit/Utilities/vxl/vcl/vcl_utility.txx
 include/InsightToolkit/Utilities/vxl/vcl/vcl_valarray.h
 include/InsightToolkit/Utilities/vxl/vcl/vcl_vector.h
 include/InsightToolkit/Utilities/vxl/vcl/vcl_vector.txx
+include/InsightToolkit/Utilities/vxl/vcl/vcl_where_root_dir.h
 include/InsightToolkit/Utilities/vxl/vcl/win32-vc60/vcl_cmath.h
 include/InsightToolkit/Utilities/vxl/vcl/win32-vc60/vcl_complex.h
 include/InsightToolkit/Utilities/vxl/vcl/win32-vc60/vcl_cstdarg.h

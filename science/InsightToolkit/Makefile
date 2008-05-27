@@ -7,6 +7,7 @@
 
 PORTNAME=	InsightToolkit
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	science biology
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	itk
@@ -14,18 +15,14 @@ MASTER_SITE_SUBDIR=	itk
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	Insight Toolkit
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-
 OPTIONS=	EXAMPLES "Build examples (very time consuming)" off \
 		TESTING  "Build testing programs (very time consuming)" off
 
 USE_LDCONFIG=	${PREFIX}/lib/InsightToolkit
 NO_PACKAGE=	License does not allow redistribution of binaries
-BUILD_WRKSRC=	${WRKSRC}/Build
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
-		-DBUILD_SHARED_LIBS:BOOL=ON
+USE_CMAKE=	yes
+CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON
 
 SUB_FILES=	pkg-message
 
@@ -38,10 +35,6 @@ CMAKE_ARGS+=	"-DBUILD_EXAMPLES:BOOL=OFF"
 .if !defined(WITH_TESTING)
 CMAKE_ARGS+=	"-DBUILD_TESTING:BOOL=OFF"
 .endif
-
-pre-build:
-	@${MKDIR} ${BUILD_WRKSRC}
-	@cd ${BUILD_WRKSRC} && cmake ${CMAKE_ARGS} ..
 
 post-install:
 	@for lib in ${PREFIX}/lib/InsightToolkit/*.so ; do \

@@ -14,8 +14,8 @@ MASTER_SITES=	http://cdrkit.org/releases/ \
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Command-line CD/DVD writing suite
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 USE_ICONV=	yes
 
 MAN1=		cdda2ogg.1 devdump.1 dirsplit.1 genisoimage.1 icedax.1 \
@@ -32,9 +32,7 @@ BROKEN=		does not compile
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/include/AddSchilyBits.cmake ${WRKSRC}/3rd-party/dirsplit/CMakeLists.txt
-
-do-configure:
-	@(cd ${WRKSRC}; ${LOCALBASE}/bin/cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_C_FLAGS:STRING="${CFLAGS} -I./libparanoia -I${LOCALBASE}/include -L${LOCALBASE}/lib" -DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib")
+	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/include/AddSchilyBits.cmake \
+	    ${WRKSRC}/3rd-party/dirsplit/CMakeLists.txt
 
 .include <bsd.port.post.mk>

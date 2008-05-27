@@ -14,21 +14,14 @@ MASTER_SITES=	http://www.fontmatrix.net/archives/
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	A graphical font manager
 
-BUILD_DEPENDS=	${CMAKE}:${PORTSDIR}/devel/cmake
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_QT_VER=	4
 QT_COMPONENTS=	gui svg network moc_build uic_build rcc_build qmake_build linguist_build
 INSTALLS_ICONS=	yes
-MAKE_ENV+=	VERBOSE=1
 
-CMAKE?=		${LOCALBASE}/bin/cmake
-CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
-		-DCMAKE_C_COMPILER:STRING="${CC}" \
-		-DCMAKE_CXX_COMPILER:STRING="${CXX}" \
-		-DCMAKE_C_FLAGS:STRING="${CFLAGS}" \
-		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \
-		-DCMAKE_EXE_LINKER_FLAGS=${PTHREAD_LIBS}
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 
 OPTIONS=	FONTFORGE "With FontForge editor" off
 
@@ -48,8 +41,5 @@ pre-configure:
 	cd ${WRKSRC}/src/messages && \
 		${LOCALBASE}/bin/lupdate-qt4 -noobsolete ../ -ts *.ts && \
 		${LOCALBASE}/bin/lrelease-qt4 *.ts
-
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${CMAKE} ${CMAKE_ARGS}
 
 .include <bsd.port.post.mk>
