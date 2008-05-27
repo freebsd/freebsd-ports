@@ -20,11 +20,10 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	IPv6 enabled cvs.  You can use IPv6 connection when using pserver
 
-CONFLICTS=	cvsnt-[12]*
+CONFLICTS=	cvsnt-[12]* cvs-devel-[12]*
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-#USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 --without-gssapi \
 		--with-editor="vi" \
 		--with-tmpdir="/tmp"
