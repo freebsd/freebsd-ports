@@ -158,6 +158,7 @@
     SUBDIR += drupal5-views
     SUBDIR += drupal5-workflow_ng
     SUBDIR += drupal6
+    SUBDIR += drupal6-nice_menus
     SUBDIR += dtse
     SUBDIR += dummyflash
     SUBDIR += eaccelerator
