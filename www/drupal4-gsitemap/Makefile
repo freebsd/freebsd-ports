@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 MAINTAINER=	nick@foobar.org
 COMMENT=	Produces Google/sitemaps.org compliant XML WWW site maps
 
-DRUPAL_MODULE=	yes
+DRUPAL4_MODULE=	yes
 MODULE_FILES=	gsitemap.install gsitemap.module
 DOC_FILES=	INSTALL.txt LICENSE.txt README.txt
 

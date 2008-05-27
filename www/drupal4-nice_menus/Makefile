@@ -14,7 +14,7 @@ MASTER_SITE=	http://ftp.osuosl.org/pub/drupal/files/projects/
 MAINTAINER=	nick@foobar.org
 COMMENT=	CSS / Javascript pull-down menus for Drupal
 
-DRUPAL_MODULE=	yes
+DRUPAL4_MODULE=	yes
 MODULE_FILES=	arrow-down.png arrow-left.png arrow-right.png \
 		nice_menus.css nice_menus.js nice_menus.module
 DOC_FILES=	LICENSE.txt README.txt

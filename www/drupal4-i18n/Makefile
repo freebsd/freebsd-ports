@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	pav/drupal
 MAINTAINER=	nick@foobar.org
 COMMENT=	An internationalisation module for the Drupal CMS
 
-DRUPAL_MODULE=	yes
+DRUPAL4_MODULE=	yes
 DRUPAL_MODSUBDIR=	i18n
 MODULE_FILES=	translation.module i18n.module i18n.install i18n.inc \
 		i18nprofile/i18nprofile.install \
