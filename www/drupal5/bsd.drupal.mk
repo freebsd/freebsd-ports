@@ -1,18 +1,14 @@
 # $FreeBSD$
 #
 
-# Make sure we cannot define both DRUPAL4_MODULE and DRUPAL5_MODULE
-.if defined(DRUPAL4_MODULE) && defined(DRUPAL5_MODULE)
-BROKEN=		cannot define both DRUPAL4_MODULE and DRUPAL5_MODULE in module Makefile
+# Make sure we cannot define any combination of DRUPAL{4,5,6}
+.if (defined(DRUPAL4_MODULE) && defined(DRUPAL5_MODULE)) || (defined(DRUPAL4_MODULE) && defined(DRUPAL6_MODULE)) || (defined(DRUPAL5_MODULE) && defined(DRUPAL6_MODULE))
+BROKEN=		cannot define a combination of DRUPAL4_MODULE, DRUPAL5_MODULE and DRUPAL6_MODULE
 .endif
 
 # Make sure DRUPAL_MODULE is defined.  If no DRUPAL*_module defined, then define DRUPAL4_MODULE
-.if defined(DRUPAL4_MODULE) || defined(DRUPAL5_MODULE)
+.if defined(DRUPAL4_MODULE) || defined(DRUPAL5_MODULE) || defined(DRUPAL6_MODULE)
 DRUPAL_MODULE?=	yes
-.else
-.if defined(DRUPAL_MODULE)
-DRUPAL4_MODULE=	yes
-.endif
 .endif
 
 .if defined(DRUPAL_MODULE)
@@ -20,25 +16,26 @@ DRUPAL_MODTYPE=	modules
 .endif
 
 # Make sure DRUPAL_PORT is defined.  If no DRUPAL*_module defined, then define DRUPAL4_PORT
-.if defined(DRUPAL4_PORT) || defined(DRUPAL5_PORT)
+.if defined(DRUPAL4_PORT) || defined(DRUPAL5_PORT) || defined(DRUPAL6_PORT)
 DRUPAL_PORT?=	yes
-.else
-.if defined(DRUPAL_PORT)
-DRUPAL4_PORT=	yes
-.endif
 .endif
 
 # Make sure DRUPAL_THEME is defined
-.if defined(DRUPAL5_THEME)
+.if defined(DRUPAL5_THEME) || defined(DRUPAL6_THEME)
 DRUPAL_THEME?=	yes
 DRUPAL_MODTYPE=	themes
 .endif
 
+.if defined(DRUPAL6_MODULE) || defined(DRUPAL6_PORT) || defined(DRUPAL6_THEME)
+DRUPAL_BASE?=   www/drupal6
+.else
 .if defined(DRUPAL5_MODULE) || defined(DRUPAL5_PORT) || defined(DRUPAL5_THEME)
 DRUPAL_BASE?=	www/drupal5
 .else
 DRUPAL_BASE?=	www/drupal4
 .endif
+.endif
+
 DRUPAL_DIR=	${PREFIX}/${DRUPAL_BASE}
 DRUPAL_DOCSDIR?=	${PREFIX}/${DRUPAL_BASE}/doc
 PLIST_SUB+=	DRUPAL_BASE=${DRUPAL_BASE}
@@ -63,6 +60,16 @@ DRUPAL_MODDIR?= ${DRUPAL_BASE}/${DRUPAL_MODTYPE}
 .if defined(DRUPAL5_MODULE) || defined (DRUPAL5_THEME)
 PKGNAMEPREFIX=	drupal5-
 DRUPAL_VERSION?=	5.0
+.if defined(DRUPAL_MODSUBDIR)
+DRUPAL_MODDIR?= ${DRUPAL_BASE}/sites/all/${DRUPAL_MODTYPE}/${DRUPAL_MODSUBDIR}
+.else
+DRUPAL_MODDIR?= ${DRUPAL_BASE}/sites/all/${DRUPAL_MODTYPE}/${PORTNAME}
+.endif
+.endif
+
+.if defined(DRUPAL6_MODULE) || defined (DRUPAL6_THEME)
+PKGNAMEPREFIX=	drupal6-
+DRUPAL_VERSION?=	6.0
 .if defined(DRUPAL_MODSUBDIR)
 DRUPAL_MODDIR?= ${DRUPAL_BASE}/sites/all/${DRUPAL_MODTYPE}/${DRUPAL_MODSUBDIR}
 .else
@@ -106,7 +113,7 @@ PLIST_SUB+=	DRUPAL_MODDIR=${DRUPAL_MODDIR}
 PLIST_FILES+=	${MODULE_FILES:C|^|%%DRUPAL_MODDIR%%/|}
 PLIST_FILES+=	${MODULE_CONF_FILES:C|^|%%DRUPAL_MODDIR%%/|:C|$|-dist|}
 PLIST_DIRS+=	${MODULE_DIRS:C|^|%%DRUPAL_MODDIR%%/|}
-.if defined(DRUPAL5_MODULE) || defined(DRUPAL5_THEME)
+.if defined(DRUPAL5_MODULE) || defined(DRUPAL5_THEME)  || defined(DRUPAL6_MODULE) || defined(DRUPAL6_THEME)
 PLIST_DIRS+=	${DRUPAL_MODDIR}
 .endif
 .if defined(DRUPAL_MODSUBDIR)
@@ -119,7 +126,7 @@ PLIST_DIRS+=	%%DOCSDIR%%
 .endif
 
 do-install:
-.if defined(DRUPAL5_MODULE) || defined(DRUPAL5_THEME)
+.if defined(DRUPAL5_MODULE) || defined(DRUPAL5_THEME) || defined(DRUPAL6_MODULE) || defined(DRUPAL6_THEME)
 	@${MKDIR} ${DRUPAL_MODDIR:C|^|${PREFIX}/|}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${DRUPAL_MODDIR:C|^|${PREFIX}/|}
 .endif
