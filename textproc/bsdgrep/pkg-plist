@@ -1,0 +1,10 @@
+@exec /bin/ln -s %%PREFIX%%/bin/grep %%PREFIX%%/bin/bsdgrep
+@exec /bin/ln -s /usr/bin/grep %%PREFIX%%/bin/gnugrep
+bin/bsdgrep
+bin/egrep
+bin/fgrep
+bin/gnugrep
+bin/grep
+bin/zgrep
+bin/zegrep
+bin/zfgrep
