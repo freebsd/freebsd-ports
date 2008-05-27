@@ -11,7 +11,7 @@ CATEGORIES=	irc net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	srvx
 
-MAINTAINER=	weaseal@users.sourceforge.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Srvx IRC services
 
 GNU_CONFIGURE=		yes
