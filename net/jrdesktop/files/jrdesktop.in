@@ -1,0 +1,5 @@
+#!/bin/sh
+
+JRDESKTOP_JAR=%%JAVAJARDIR%%/jrdesktop.jar
+
+%%JAVA%% -jar ${JRDESKTOP_JAR} display

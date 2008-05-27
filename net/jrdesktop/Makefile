@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jrdesktop
-PORTVERSION=	0.2.0012
+PORTVERSION=	0.2.0020
 CATEGORIES=	net java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -19,19 +19,17 @@ JAVA_VERSION=	1.6+
 USE_ANT=	yes
 USE_ZIP=	yes
 
-WRKSRC=	${WRKDIR}/src
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	%%JAVAJARDIR%%/jrdesktop.jar \
-		bin/jrdesktop-server \
-		bin/jrdesktop-viewer
+		bin/jrdesktop
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/jrdesktop.jar ${JAVAJARDIR}
-	${INSTALL_SCRIPT} ${FILESDIR}/jrdesktop-server.in ${PREFIX}/bin/jrdesktop-server
-	${INSTALL_SCRIPT} ${FILESDIR}/jrdesktop-viewer.in ${PREFIX}/bin/jrdesktop-viewer
+	${INSTALL_SCRIPT} ${FILESDIR}/jrdesktop.in ${PREFIX}/bin/jrdesktop
 
 post-install:
 	${REINPLACE_CMD} -i "" -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|;s|%%JAVA%%|${JAVA}|' \
-	    ${PREFIX}/bin/jrdesktop-server ${PREFIX}/bin/jrdesktop-viewer
+	    ${PREFIX}/bin/jrdesktop
 
 .include <bsd.port.mk>
