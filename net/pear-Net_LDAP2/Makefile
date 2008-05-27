@@ -1,31 +1,31 @@
-# Ports collection makefile for:  pear-Net_LDAP
-# Date created:			  26 June 2004
-# Whom:				  Gerrit Beine (<tux@pinguru.net>)
+# Ports collection makefile for:  pear-Net_LDAP2
+# Date created:			  04 May 2004
+# Whom:				  Wen Heping <wenheping@gmail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	Net_LDAP
-DISTVERSION=	1.1.1
+PORTNAME=	Net_LDAP2
+DISTVERSION=	2.0.0RC2
 CATEGORIES=	net pear
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	OO interface for searching and manipulating LDAP-entries
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 USE_PHP=	ldap
 CATEGORY=	Net
-FILES=		LDAP.php LDAP/LDIF.php \
-		LDAP/Entry.php LDAP/Filter.php LDAP/RootDSE.php \
-		LDAP/Schema.php LDAP/Search.php LDAP/Util.php
+FILES=		LDAP2.php LDAP2/LDIF.php \
+		LDAP2/Entry.php LDAP2/Filter.php LDAP2/RootDSE.php \
+		LDAP2/Schema.php LDAP2/Search.php LDAP2/Util.php
 DOCS=		README.txt RootDSE.txt Schema.txt utf8.txt manual.html
 _DOCSDIR=	doc
-TESTS=		AllTests.php Net_LDAPTest.php \
-		Net_LDAP_EntryTest.php Net_LDAP_FilterTest.php \
-		Net_LDAP_RootDSETest.php Net_LDAP_SearchTest.php \
-		Net_LDAP_UtilTest.php Net_LDAP_LDIFTest.php \
+TESTS=		AllTests.php Net_LDAP2Test.php \
+		Net_LDAP2_EntryTest.php Net_LDAP2_FilterTest.php \
+		Net_LDAP2_RootDSETest.php Net_LDAP2_SearchTest.php \
+		Net_LDAP2_UtilTest.php Net_LDAP2_LDIFTest.php \
 		ldapconfig.ini.dist ldapldifconfig.ini.dist \
 		ldif_data/changes.ldif ldif_data/malformed_encoding.ldif \
 		ldif_data/malformed_syntax.ldif ldif_data/malformed_wrapping.ldif \
