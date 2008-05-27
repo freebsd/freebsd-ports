@@ -533,7 +533,6 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 	http://ftp.unina.it/pub/linux/GNOME/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/gnome/%SUBDIR%/ \
-	http://rpmfind.net/linux/gnome.org/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
