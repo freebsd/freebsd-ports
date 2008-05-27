@@ -646,6 +646,7 @@
     SUBDIR += pear-Net_IPv6
     SUBDIR += pear-Net_Ident
     SUBDIR += pear-Net_LDAP
+    SUBDIR += pear-Net_LDAP2
     SUBDIR += pear-Net_MAC
     SUBDIR += pear-Net_NNTP
     SUBDIR += pear-Net_POP3
