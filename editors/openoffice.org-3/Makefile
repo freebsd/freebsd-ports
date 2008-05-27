@@ -1,3 +1,4 @@
+
 # New ports collection makefile for: OpenOffice.org
 # Date created:		28 February 2002
 # Whom:                 Martin Blapp
@@ -7,7 +8,6 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
-PORTREVISION?=	5
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
@@ -24,7 +24,7 @@ DISTFILES+=	gpc231.tar.Z:gpc
 EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	openoffice@FreeBSD.org
-COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
+COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
 .if defined(WITH_CWS)
 PORTNAME:=	openoffice.org-${OOOVERSION}-${WITH_CWS}
@@ -32,7 +32,7 @@ DISTFILES+=	${CWSARCHIVE}:cws
 .endif
 CWSARCHIVE=	${WITH_CWS}.tar.gz
 
-OOOVERSION=	2.4.0
+OOOVERSION=	3.0.0.b
 NO_LATEST_LINK=	yes
 USE_GNOME=	desktopfileutils gtk20
 MOZILLA_VERSION=	1.7.5
@@ -46,7 +46,7 @@ USE_GNOME+=	libidl
 USE_KDELIBS_VER=	3
 .endif
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
-		xi xt xcursor xdamage xcomposite xfixes 
+		xi xt xcursor xdamage xcomposite xfixes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
@@ -77,21 +77,22 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		12
-OOOTAG?=		OOH680_m${MILESTONE}
+MILESTONE?=		2
+OOOTAG?=		BEA300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
+OOODIR=			openoffice.org3
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
 EXECBASE?=		openoffice.org-${OOOVERSION}
 .if defined(WITH_CWS)
 INSTALLATION_BASEDIR=	openoffice.org-${OOOVERSION}-${WITH_CWS}
 EXECBASE=		openoffice.org-${OOOVERSION}-${WITH_CWS}
 .endif
-DIST_SUBDIR=		openoffice.org2
+DIST_SUBDIR=		openoffice.org3
 SIMPLEOSVER=		${OSREL:C/\.//g}
 .if ${ARCH} == amd64
-PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}X86-64
+PACKAGE_BASENAME=	OOo_Dev_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}X86-64
 .else
-PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}Intel
+PACKAGE_BASENAME=	OOo_Dev_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}Intel
 .endif
 
 LOCALIZED_LANG?=	en-US
@@ -121,7 +122,8 @@ OOOCXX=		${CXX}
 .endif
 CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
 		CPPFLAGS="-I${LOCALBASE}/include"	\
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PATH=${WRKSRC}/solenv/bin:$$PATH
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
@@ -129,7 +131,9 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gpatch:${PORTSDIR}/devel/patch \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bash:${PORTSDIR}/shells/bash \
-		imake:${PORTSDIR}/devel/imake
+		imake:${PORTSDIR}/devel/imake \
+		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf #i85469#
+
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 .if !defined(WITH_GPC)
 LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
@@ -141,7 +145,8 @@ WRKSRC?=		${WRKDIR}/${OOOTAG}
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
-NUMOFPROCESSES?=	1
+MAXPROCESSES?=	1
+MAXMODULES?=	1
 
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
@@ -194,15 +199,14 @@ post-extract:
 .if !defined(WITHOUT_MOZILLA)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
 .endif
+pre-configure:
+#Workaround for gperf. #i85469#
+	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-# PR:84786 #i53289#
-.if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
-.else
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; dmake"
-.endif
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAXMODULES} --all --html --dontgraboutput -- -P${MAXPROCESSES}"
+
 .if ${LOCALIZED_LANG} == "alllangs"
 	@${MAKE} languagepack
 .endif
@@ -222,7 +226,7 @@ do-install:
 		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/bsd/install/$$i ;\
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
-	@cd ${WRKDIR}/tmp/opt/openoffice* ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
+	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 .else
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
 	@${RM} -Rf ${WRKDIR}/tmp
@@ -232,14 +236,15 @@ do-install:
 		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/$$i ; \
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
-	@cd ${WRKDIR}/tmp/opt/openoffice* ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
+	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 .endif
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${CP} ${FILESDIR}/openoffice.org-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
+			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
+			-e 's#%%OOODIR%%#${OOODIR}#g' \
 			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice.org-wrapper
@@ -259,16 +264,16 @@ post-install:
 	@cd ${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d | ${SORT} -r | \
 		${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
 	@${REINPLACE_CMD} -e '/^Exec/s/printeradmin/spadmin/' \
-			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
+			${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop
 	@for app in base calc draw impress math printeradmin writer; do \
 		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
 			-e "s/^Icon.*/Icon=${EXECBASE}-$${app}.png/" \
-		${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/$${app}.desktop ; \
+		${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/$${app}.desktop ; \
 	done
-	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
+	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop.bak
 	@${RM} -f ${DESKTOPDIR}/${EXECBASE}
 	@${MKDIR} ${DESKTOPDIR}
-	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
+	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg \
 			${DESKTOPDIR}/${EXECBASE}
 	@${ECHO_CMD} "share/applications/${EXECBASE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
@@ -296,7 +301,7 @@ post-install:
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
-			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
+			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
 			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
 			${PKGMESSAGE}
 	@${ECHO_CMD}
