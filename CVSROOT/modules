@@ -12395,6 +12395,7 @@ pear-PHP_CompatInfo	ports/devel/pear-PHP_CompatInfo
 pear-PHP_Parser	ports/devel/pear-PHP_Parser
 pear-PHP_ParserGenerator	ports/devel/pear-PHP_ParserGenerator
 pear-PHP_Shell	ports/shells/pear-PHP_Shell
+pear-PHP_UML	ports/devel/pear-PHP_UML
 pear-Pager	ports/devel/pear-Pager
 pear-PhpDocumentor	ports/devel/pear-PhpDocumentor
 pear-SOAP	ports/net/pear-SOAP
