@@ -1,4 +1,4 @@
-Net Ldap is a clone of Perls Net::LDAP object interface to
+Net_Ldap2 is a clone of Perls Net::LDAP object interface to
 ldapservers. It does not contain all of Net::LDAPs features,
 but has:
 * A simple OO-interface to connections, searches and entries.
@@ -6,4 +6,6 @@ but has:
 * Simple modification, deletion and creation of ldapentries.
 * Support for schema handling.
 
-WWW: http://pear.php.net/package/Net_LDAP/
+Net_LDAP2 is the successor of Net_LDAP.
+
+WWW: http://pear.php.net/package/Net_LDAP2/
