@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diff
-PORTVERSION=	20080422
+PORTVERSION=	20080526
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
@@ -18,10 +18,13 @@ COMMENT=	BSD-licensed version of diff from OpenBSD
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MANCOMPRESSED=	yes
 MAN1=		diff.1
-PLIST_FILES=	bin/diff
 
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
 		CATDIR="${MANPREFIX}/man/man"
+
+post-install:
+	${LN} -s ${PREFIX}/bin/diff ${PREFIX}/bin/bsddiff
+	${LN} -s /usr/bin/diff ${PREFIX}/bin/gnudiff
 
 .include <bsd.port.mk>
