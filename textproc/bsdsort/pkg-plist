@@ -1,0 +1,5 @@
+@exec /bin/ln -s %%PREFIX%%/bin/sort %%PREFIX%%/bin/bsdsort
+@exec /bin/ln -s /usr/bin/sort %%PREFIX%%/bin/gnusort
+bin/bsdsort
+bin/gnusort
+bin/sort
