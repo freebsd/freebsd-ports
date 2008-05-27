@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="555ac165-2bee-11dd-bbdc-00e0815b8da8">
+    <topic>spamdyke -- open relay</topic>
+    <affects>
+      <package>
+	<name>spamdyke</name>
+	<range><lt>3.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Spamdyke Team reports:</p>
+	<blockquote cite="http://www.spamdyke.org/documentation/Changelog.txt">
+	  <p>Fixed smtp_filter() to reject the DATA command if no valid
+	  recipients have been specified.  Otherwise, a specific scenario could
+	  result in every spamdyke installation being used as an open relay.
+	  If the remote server connects and gives one or more recipients that
+	  are rejected (for relaying or blacklisting), then gives the DATA
+	  command, spamdyke will ignore all other commands, assuming that
+	  message data is being transmitted.  However, because all of the
+	  recipients were rejected, qmail will reject the DATA command.  From
+	  that point on, the remote server can give as many recipients as it
+	  likes and spamdyke will ignore them all -- they will not be filtered
+	  at all.  After that, the remote server can give the DATA command and
+	  send the actual message data.  Because spamdyke is controlling
+	  relaying, the RELAYCLIENT environment variable is set and qmail won't
+	  check for relaying either.  Thanks to Mirko Buffoni for reporting
+	  this one.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.spamdyke.org/documentation/Changelog.txt</url>
+    </references>
+    <dates>
+      <discovery>2008-05-21</discovery>
+      <entry>2008-05-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="402ae710-26a2-11dd-ae05-825f4c35000a">
     <topic>peercast -- arbitrary code execution</topic>
     <affects>
