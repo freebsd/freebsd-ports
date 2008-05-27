@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grep
-PORTVERSION=	20080422
+PORTVERSION=	20080526
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
@@ -23,10 +23,13 @@ MLINKS=		grep.1 egrep.1 \
 		grep.1 zgrep.1 \
 		grep.1 zegrep.1 \
 		grep.1 zfgrep.1
-PLIST_FILES=	bin/grep bin/egrep bin/fgrep bin/zgrep bin/zegrep bin/zfgrep
 
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
 		CATDIR="${MANPREFIX}/man/man"
+
+post-install:
+	${LN} -s ${PREFIX}/bin/grep ${PREFIX}/bin/bsdgrep
+	${LN} -s /usr/bin/grep ${PREFIX}/bin/gnugrep
 
 .include <bsd.port.mk>
