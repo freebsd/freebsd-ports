@@ -18,8 +18,9 @@ DISTFILES=	lemmatizer2-2.0.1.tar.gz \
 MAINTAINER=	reki@reki.ru
 COMMENT=	Russian / German / English lemmatizer library
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+
+USE_CMAKE=	yes
 
 DB_DIR?=	/var/db/lemmatizer
 
@@ -34,9 +35,6 @@ pre-fetch:
 	@${ECHO} "      DB_DIR=directory        Set alternate directory for database files"
 	@${ECHO} "                              (default is /var/db/lemmatizer)"
 	@${ECHO} ""
-
-do-configure:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/cmake ${WRKSRC}
 
 post-extract:
 	@cd ${WRKDIR} && ${CP} -r Dicts ${WRKSRC}

@@ -24,9 +24,6 @@ bin/AstroMenace
 %%DATADIR%%/DATA/SCRIPT/my_aimode_7.xml
 %%DATADIR%%/gamedata.vfs
 %%DATADIR%%/gamelang.vfs
-%%DATADIR%%/gamelang_de.vfs
-%%DATADIR%%/gamelang_en.vfs
-%%DATADIR%%/gamelang_ru.vfs
 @dirrm %%DATADIR%%/DATA/SCRIPT
 @dirrm %%DATADIR%%/DATA
 @dirrm %%DATADIR%%

@@ -14,13 +14,11 @@ MASTER_SITES=	ftp://dl.cihar.com/gammu/releases/ \
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	GNU All Mobile Management Utilities
 
-BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
-CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
-		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
-		-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
+CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 
+USE_CMAKE=	yes
 USE_GNOME=	pkgconfig
 
 .if defined(NOPORTDOCS)
@@ -30,14 +28,10 @@ MAN1=		gammu.1 gammu-config.1 jadmaker.1
 PORTDOCS=	*
 .endif
 
-do-configure:
-	@(cd ${WRKSRC}; \
-	${LOCALBASE}/bin/cmake ${CMAKE_ARGS})
-	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
-
 .include <bsd.port.pre.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -e 's@ -Wno-pointer-sign@@g' ${WRKSRC}/CMakeLists.txt
 .endif

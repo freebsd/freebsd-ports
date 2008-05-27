@@ -16,7 +16,6 @@ DISTNAME?=	vtk-${PORTVERSION}
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	The Visualization Toolkit
 
-BUILD_DEPENDS=	cmake>=2.2:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
@@ -44,9 +43,7 @@ VTK_KITS=	Common Filtering GenericFiltering Graphics \
 SUB_FILES=	pkg-message vtk.3
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-PATCH_WRKSRC=	${WRKDIR}/VTK
-WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-build
-
+USE_CMAKE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
@@ -59,22 +56,13 @@ MAN3=		vtk.3
 
 .include <bsd.port.pre.mk>
 
-CMAKE?=		${LOCALBASE}/bin/cmake
+CMAKE_USE_PTHREAD=	yes
+CMAKE_SOURCE_PATH=	../VTK
 CXXFLAGS+=	-Wno-deprecated
-CMAKE_DEFS+=	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
+CMAKE_ARGS+=	${VTKSRCDIR} \
 		-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DBUILD_DOCUMENTATION:BOOL=ON \
 		-DBUILD_TESTING:BOOL=OFF \
-		-DCMAKE_BUILD_TYPE:STRING=Release \
-		-DCMAKE_SHARED_LINKER_FLAGS:STRING="${LINKERFLAGS}" \
-		-DCMAKE_EXE_LINKER_FLAGS:STRING="${LINKERFLAGS} ${PTHREAD_LIBS}" \
-		-DCMAKE_THREAD_LIBS:STRING="${PTHREAD_LIBS}"\
-		-DCMAKE_USE_PTHREADS:BOOL=ON \
-		-DCMAKE_C_COMPILER:STRING='${CC}' \
-		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
-		-DCMAKE_C_FLAGS:STRING="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
-		-DCMAKE_VERBOSE_MAKEFILE:BOOL=OFF \
 		-DVTK_USE_RENDERING:BOOL=ON \
 		-DVTK_USE_HYBRID:BOOL=ON \
 		-DVTK_USE_PARALLEL:BOOL=ON \
@@ -96,19 +84,16 @@ CMAKE_DEFS+=	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 .if defined(WITH_VTKMPEG2)
 LIB_DEPENDS+=	vtkMPEG2Encode.5:${PORTSDIR}/multimedia/vtkmpeg2encode
 PLIST_FILES+=	include/vtk-5.0/vtkMPEG2Writer.h
-CMAKE_DEFS+=	-DvtkMPEG2Encode_INCLUDE_PATH=${LOCALBASE}/include/vtk-5.0 \
+CMAKE_ARGS+=	-DvtkMPEG2Encode_INCLUDE_PATH=${LOCALBASE}/include/vtk-5.0 \
 		-DvtkMPEG2Encode_LIBRARIES=vtkMPEG2Encode \
 		-DVTK_USE_PATENTED:BOOL=ON \
 		-DVTK_USE_MPEG2_ENCODER:BOOL=ON
 .endif
 
 post-extract:
-	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
+		${MKDIR} ${WRKSRC}
+		${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${VTKSRCDIR}/Hybrid/vtkVRMLImporter.cxx
-
-do-configure:
-	${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && ${CMAKE} ${VTKSRCDIR} ${CMAKE_DEFS}
 
 # FSL links directly to libQVTKWidgetPlugin.so, so put it in a standard
 # library directory.

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orgi	2008-05-21 13:40:34.000000000 +0200
++++ CMakeLists.txt	2008-05-21 13:41:09.000000000 +0200
+@@ -1,6 +1,8 @@
+ PROJECT (gtk-qt-engine)
+ INCLUDE (UsePkgConfig)
+ 
++cmake_minimum_required(VERSION 2.4.8)
++
+ # Find KDE
+ FIND_PACKAGE(KDE3 REQUIRED)
+ 

@@ -16,8 +16,6 @@ DISTNAME=	KGtk-${PORTVERSION}
 MAINTAINER=	citycat4@ngs.ru
 COMMENT=	Daemon to use KDE dialogs in GTK applications
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-
 SUB_FILES=	pkg-message
 
 OPTIONS=	UNICODE "System locale is utf-8" off
@@ -26,11 +24,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_KDEBASE_VER=3
+USE_CMAKE=	yes
 
-CMAKE_PREFIX=	${LOCALBASE}
-CMAKE_BUILD_DIR=build3
-BUILD_WRKSRC=	${WRKSRC}/${CMAKE_BUILD_DIR}
-INSTALL_WRKSRC=	${WRKSRC}/${CMAKE_BUILD_DIR}
+WRKSRC=		${WRKDIR}/${DISTNAME}/build
+CMAKE_SOURCE_PATH=	..
 
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
@@ -48,25 +45,22 @@ EXTRA_PATCHES+=	${PATCHDIR}/opt-patch-kgtk-wrapper \
 		${PATCHDIR}/opt-patch-gtk2__kgtk2-wrapper.cmake
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's| -ldl||' ${WRKSRC}/gtk2/CMakeLists.txt \
-		${WRKSRC}/qt3/CMakeLists.txt ${WRKSRC}/qt4/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' ${WRKSRC}/qt3/kqt3-wrapper.cmake \
-		${WRKSRC}/gtk2/kgtk2-wrapper.cmake ${WRKSRC}/qt4/kqt4-wrapper.cmake \
-		${WRKSRC}/mangled.sh ${WRKSRC}/kdialogd-wrapper ${WRKSRC}/kgtk-wrapper
-	@${CP} ${PATCHDIR}/ru.po ${WRKSRC}/kdialogd3/po/
-pre-configure:
-	@${MKDIR} ${WRKSRC}/${CMAKE_BUILD_DIR}
+post-extract:
+	${MKDIR} ${WRKSRC}
 
-do-configure:
-	@cd ${WRKSRC}/${CMAKE_BUILD_DIR} && \
-		${CMAKE_PREFIX}/bin/cmake .. \
-		-DCMAKE_INSTALL_DIR=${PREFIX} \
-		-DQT_INCLUDE_DIR=${QT_PREFIX}/include \
-		-DCMAKE_CXX_FLAGS=-I${LOCALBASE}/include \
-		-DCMAKE_EXE_LINKER_FLAGS=${PTHREAD_LIBS} \
-		-DCMAKE_INSTALL_PREFIX=${PREFIX}
+post-patch:
+	@${REINPLACE_CMD} -e 's| -ldl||' ${WRKSRC}/../gtk2/CMakeLists.txt \
+		${WRKSRC}/../qt3/CMakeLists.txt ${WRKSRC}/../qt4/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' ${WRKSRC}/../qt3/kqt3-wrapper.cmake \
+		${WRKSRC}/../gtk2/kgtk2-wrapper.cmake ${WRKSRC}/../qt4/kqt4-wrapper.cmake \
+		${WRKSRC}/../mangled.sh ${WRKSRC}/../kdialogd-wrapper ${WRKSRC}/../kgtk-wrapper
+	@${CP} ${PATCHDIR}/ru.po ${WRKSRC}/../kdialogd3/po/
+
+post-configure:
+	@${REINPLACE_CMD} -e '/pofiles/ s|\.\./||' \
+	${WRKSRC}/kdialogd3/po/CMakeFiles/pofiles.dir/build.make
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+	
 .include <bsd.port.post.mk>

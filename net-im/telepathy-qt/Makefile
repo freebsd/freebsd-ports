@@ -13,19 +13,13 @@ MASTER_SITE_SUBDIR=	tapioca-voip
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Framework for VoIP and IP applications
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
-CMAKE?=		${LOCALBASE}/bin/cmake
-CMAKE_ARGS=	-DCMAKE_BUILD_TYPE=DEBUG \
-		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
-		-DCMAKE_C_COMPILER:STRING='${CC}' \
-		-DCMAKE_C_FLAGS:STRING="${CFLAGS}" \
-		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
-		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}"
+USE_CMAKE=	yes
+CMAKE_SOURCE_PATH=	..
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake uic moc rcc xml dbus
 USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
 
 post-extract:
 	${MKDIR} ${WRKSRC}
@@ -34,8 +28,5 @@ post-patch:
 	${REINPLACE_CMD} -e \
 		"s,$${LIB_INSTALL_DIR}/pkgconfig,data/pkgconfig,g"\
 		${WRKSRC}/../CMakeLists.txt
-
-do-configure:
-	cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${CMAKE} ${CMAKE_ARGS} ..
 
 .include <bsd.port.mk>

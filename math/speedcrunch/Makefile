@@ -14,15 +14,11 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A desktop calculator for power users
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build gui
-CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
-		-DCMAKE_C_COMPILER:STRING='${CC}' \
-		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
-		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS} ${PTHREAD_LIBS}" \
-		-DCMAKE_INSTALL_PREFIX=${PREFIX}
+USE_CMAKE=	yes
+CMAKE_SOURCE_PATH=	src
+CMAKE_USE_PTHREAD=	yes
 
 MYPORTDOCS=	COPYING ChangeLog HACKING.txt INSTALL.txt LISEZMOI PACKAGERS README \
 		TRANSLATORS doc/man.docbook doc/speedcrunch.docbook
@@ -50,10 +46,6 @@ post-patch:
 		${WRKSRC}/src/settings.h
 	@${REINPLACE_CMD} -e 's|crunch\"|speedcrunch\"|g' \
 		${WRKSRC}/src/main.cpp
-
-pre-build:
-	@(cd ${WRKSRC};	\
-	${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake ${CMAKE_ARGS} ${WRKSRC}/src)
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/speedcrunch ${PREFIX}/bin

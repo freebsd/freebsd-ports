@@ -18,21 +18,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Brain teasers, puzzle and memory games for kids in one pack
 
-BUILD_DEPENDS=	${CMAKE}:${PORTSDIR}/devel/cmake
-
-CMAKE?=		${LOCALBASE}/bin/cmake
-
+USE_CMAKE=	yes
 USE_ZIP=	yes
 USE_SDL=	sdl mixer image
 USE_GL=		yes
-
-CMAKE_DEFS=	-DCMAKE_EXE_LINKER_FLAGS:STRING="${LINKERFLAGS} ${PTHREAD_LIBS}" \
-		-DCMAKE_THREAD_LIBS:STRING="${PTHREAD_LIBS}"\
-		-DCMAKE_USE_PTHREADS:BOOL=ON \
-		-DCMAKE_C_COMPILER:STRING="${CC}" \
-		-DCMAKE_CXX_COMPILER:STRING="${CXX}" \
-		-DCMAKE_C_FLAGS:STRING="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS} ${PTHREAD_CFLAGS}"
 
 WRKSRC=		${WRKDIR}/MemonixSourceCode
 
@@ -45,9 +34,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/strcpy(ProgrammDir,/ s|\./|${DATADIR}/|' \
 		 ${WRKSRC}/src/Main.cpp
-
-do-configure:
-	cd ${WRKSRC} && ${CMAKE} . ${CMAKE_DEFS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Memonix ${PREFIX}/bin

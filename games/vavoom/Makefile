@@ -13,14 +13,11 @@ MASTER_SITES=	SF
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
-CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-		-DCMAKE_C_COMPILER:STRING="${CC}" \
-		-DCMAKE_CXX_COMPILER:STRING="${CXX}"
+USE_CMAKE=	yes
 
 OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
 		FLAC "Enable FLAC support" off \
@@ -128,9 +125,6 @@ post-patch:
 	@cd ${WRKSRC} && ${SH} fixunix.sh
 	@${REINPLACE_CMD} -e 's|$$\* $${IWADDIR}|-iwaddir ${DMDIR} $$*|' \
 		${WRKSRC}/source/CMakeLists.txt
-
-pre-build:
-	@cd ${WRKSRC} && cmake ${CMAKE_ARGS} .
 
 post-install:
 .if !defined(NOPORTDOCS)

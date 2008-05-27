@@ -15,12 +15,11 @@ EXTRACT_SUFX=	.tbz2
 MAINTAINER=	mgrooms@shrew.net
 COMMENT=	Shrew Soft IKE daemon and client tools
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BISON=	build
 USE_OPENSSL=	yes
+USE_CMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -33,8 +32,6 @@ OPTIONS=	QTGUI		"Enable QT client front end applications" on \
 MAN1=		ikea.1 ikec.1
 MAN5=		iked.conf.5
 MAN8=		iked.8
-
-CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
@@ -77,9 +74,6 @@ post-patch:
 
 	@sleep 3
 .endif
-
-do-configure:
-	@cd ${BUILD_WRKSRC}; cmake ${CMAKE_ARGS} .
 
 post-build:
 # QT 3.3 UIC (User Interface Compiler) creates these, so remove them.

@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.paraview.org/files/v2.4/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ParaView is a powerful scientific data visualization application
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -25,32 +24,8 @@ LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/${DISTNAME}-build
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
-PLIST_SUB+=	VERMAJORMINOR=2.4
-CMAKE2INST=	Utilities/ParaViewConfig.cmake ParaViewConfig.cmake \
-		ParaViewLibraryDepends.cmake cmake_install.cmake
-MAKE_ENV=	CC="${CC}" \
-		CXX="${CXX}"
-LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|vtkpng|png|g' \
-		${WRKDIR}/paraview-${PORTVERSION}/GUI/Widgets/CMakeLists.txt
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
-		${WRKDIR}/paraview-${PORTVERSION}/Utilities/TclTk/tk*/unix/configure
-
-do-configure:
-	${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && \
-	${LOCALBASE}/bin/cmake ../${DISTNAME} \
-		-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
-		-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		-DPARAVIEW_USE_SYSTEM_HDF5=1 \
+USE_CMAKE=	yes
+CMAKE_ARGS+=	-DPARAVIEW_USE_SYSTEM_HDF5=1 \
 		-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_PNG="ON" \
 		-DVTK_USE_SYSTEM_JPEG="ON" \
@@ -60,6 +35,28 @@ do-configure:
 		-DVTK_USE_SYSTEM_EXPAT="ON" \
 		-DVTK_USE_X="ON" \
 		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T=1
+
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}/build
+CMAKE_SOURCE_PATH=	..
+
+PLIST_SUB+=	VERMAJORMINOR=2.4
+CMAKE2INST=	Utilities/ParaViewConfig.cmake ParaViewConfig.cmake \
+		ParaViewLibraryDepends.cmake cmake_install.cmake
+MAKE_ENV=	CC="${CC}" \
+		CXX="${CXX}"
+LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
+
+post-extract:
+	${MKDIR} ${WRKSRC}
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's|vtkpng|png|g' \
+		${WRKDIR}/paraview-${PORTVERSION}/GUI/Widgets/CMakeLists.txt
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
+		${WRKDIR}/paraview-${PORTVERSION}/Utilities/TclTk/tk*/unix/configure
 
 post-install:
 .for c2f in ${CMAKE2INST}
