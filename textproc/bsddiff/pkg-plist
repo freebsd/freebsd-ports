@@ -1,0 +1,5 @@
+@exec /bin/ln -s %%PREFIX%%/bin/diff %%PREFIX%%/bin/bsddiff
+@exec /bin/ln -s /usr/bin/diff %%PREFIX%%/bin/gnudiff
+bin/bsddiff
+bin/diff
+bin/gnudiff
