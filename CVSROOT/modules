@@ -2281,6 +2281,7 @@ drupal5-ubrowser	ports/www/drupal5-ubrowser
 drupal5-views	ports/www/drupal5-views
 drupal5-workflow_ng	ports/www/drupal5-workflow_ng
 drupal6		ports/www/drupal6
+drupal6-nice_menus	ports/www/drupal6-nice_menus
 drweb		ports/security/drweb
 drweb-postfix	ports/security/drweb-postfix
 drweb-qmail	ports/security/drweb-qmail
