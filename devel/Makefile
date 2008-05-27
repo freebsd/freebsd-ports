@@ -1864,6 +1864,7 @@
     SUBDIR += pear-PHP_CompatInfo
     SUBDIR += pear-PHP_Parser
     SUBDIR += pear-PHP_ParserGenerator
+    SUBDIR += pear-PHP_UML
     SUBDIR += pear-Pager
     SUBDIR += pear-PhpDocumentor
     SUBDIR += pear-Structures_DataGrid
