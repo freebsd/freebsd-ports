@@ -48,6 +48,7 @@ sbin/popfile.sh
 %%DATADIR%%/languages/Nihongo.msg
 %%DATADIR%%/languages/Norsk.msg
 %%DATADIR%%/languages/Polish.msg
+%%DATADIR%%/languages/Portugues-do-Brasil.msg
 %%DATADIR%%/languages/Portugues.msg
 %%DATADIR%%/languages/Russian.msg
 %%DATADIR%%/languages/Slovak.msg
@@ -56,48 +57,6 @@ sbin/popfile.sh
 %%DATADIR%%/languages/Turkce.msg
 %%DATADIR%%/languages/Ukrainian.msg
 %%DATADIR%%/license
-%%DATADIR%%/manual/e_filter1.gif
-%%DATADIR%%/manual/e_filter2.gif
-%%DATADIR%%/manual/e_filter3.gif
-%%DATADIR%%/manual/e_filter4.gif
-%%DATADIR%%/manual/e_popfile1.gif
-%%DATADIR%%/manual/e_popfile2.gif
-%%DATADIR%%/manual/e_popfile3.gif
-%%DATADIR%%/manual/en/email.html
-%%DATADIR%%/manual/en/firewalls.html
-%%DATADIR%%/manual/en/firsttime.html
-%%DATADIR%%/manual/en/installing.html
-%%DATADIR%%/manual/en/manual.html
-%%DATADIR%%/manual/en/multiple.html
-%%DATADIR%%/manual/en/proxies.html
-%%DATADIR%%/manual/en/spa.html
-%%DATADIR%%/manual/en/training.html
-%%DATADIR%%/manual/o_filter1.gif
-%%DATADIR%%/manual/o_filter2.gif
-%%DATADIR%%/manual/o_filter3.gif
-%%DATADIR%%/manual/o_filter4.gif
-%%DATADIR%%/manual/o_filter5.gif
-%%DATADIR%%/manual/o_filter6.gif
-%%DATADIR%%/manual/o_popfile1.gif
-%%DATADIR%%/manual/o_popfile2.gif
-%%DATADIR%%/manual/o_popfile3.gif
-%%DATADIR%%/manual/oe_filter1.gif
-%%DATADIR%%/manual/oe_filter2.gif
-%%DATADIR%%/manual/oe_filter3.gif
-%%DATADIR%%/manual/oe_filter4.gif
-%%DATADIR%%/manual/oe_filter5.gif
-%%DATADIR%%/manual/oe_popfile1.gif
-%%DATADIR%%/manual/oe_popfile2.gif
-%%DATADIR%%/manual/oe_popfile3.gif
-%%DATADIR%%/manual/oe_popfile4.gif
-%%DATADIR%%/manual/p_filter1.gif
-%%DATADIR%%/manual/p_filter2.gif
-%%DATADIR%%/manual/p_filter3.gif
-%%DATADIR%%/manual/p_filter4.gif
-%%DATADIR%%/manual/p_popfile1.gif
-%%DATADIR%%/manual/p_popfile2.gif
-%%DATADIR%%/manual/p_popfile3.gif
-%%DATADIR%%/manual/zonealaram.gif
 %%DATADIR%%/otto.gif
 %%DATADIR%%/otto.png
 %%DATADIR%%/pipe.pl
@@ -246,8 +205,6 @@ sbin/popfile.sh
 @dirrm %%DATADIR%%/skins/coolblue
 @dirrm %%DATADIR%%/skins/blue
 @dirrm %%DATADIR%%/skins
-@dirrm %%DATADIR%%/manual/en
-@dirrm %%DATADIR%%/manual
 @dirrm %%DATADIR%%/languages
 @dirrm %%DATADIR%%/UI
 @dirrm %%DATADIR%%/Services/IMAP
