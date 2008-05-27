@@ -310,6 +310,7 @@ akode-plugins-jack	ports/audio/akode-plugins-jack
 akode-plugins-mpc	ports/audio/akode-plugins-mpc
 akode-plugins-mpeg	ports/audio/akode-plugins-mpeg
 akode-plugins-oss	ports/audio/akode-plugins-oss
+akode-plugins-pulseaudio	ports/audio/akode-plugins-pulseaudio
 akode-plugins-resampler	ports/audio/akode-plugins-resampler
 akode-plugins-xiph	ports/audio/akode-plugins-xiph
 akpop3d		ports/mail/akpop3d
