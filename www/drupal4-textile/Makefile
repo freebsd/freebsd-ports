@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	brooks
 MAINTAINER=	nick@foobar.org
 COMMENT=	Textile markup module for Drupal
 
-DRUPAL_MODULE=	yes
+DRUPAL4_MODULE=	yes
 MODULE_DIRS=	textilephp
 MODULE_FILES=	textile.module textilephp/Textile.php DrupalTextile.inc
 DOC_DIRS=	textilephp/doc textilephp

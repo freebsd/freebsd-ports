@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	pav/drupal
 MAINTAINER=	nick@foobar.org
 COMMENT=	Access control system for the Drupal based on Taxonomy classification
 
-DRUPAL_MODULE=	yes
+DRUPAL4_MODULE=	yes
 MODULE_FILES=	taxonomy_access.install taxonomy_access.module taxonomy_access_admin.inc
 DOC_FILES=	INSTALL.txt LICENSE.txt README.txt UPDATE.txt
 

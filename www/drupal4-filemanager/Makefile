@@ -13,7 +13,7 @@ CATEGORIES=	www security
 MAINTAINER=	nick@foobar.org
 COMMENT=	A full featured file management API for Drupal modules
 
-DRUPAL_MODULE=	yes
+DRUPAL4_MODULE=	yes
 MODULE_FILES=	filemanager.install filemanager.module
 DOC_DIRS=	doc
 DOC_FILES=	LICENSE.txt README.txt CREDITS INSTALL doc/filemanager.php
