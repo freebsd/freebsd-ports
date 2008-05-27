@@ -11,6 +11,8 @@ share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/imgs/roxterm_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/imgs/sflogo.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+share/locale/en/LC_MESSAGES/roxterm.mo
+share/locale/en_GB/LC_MESSAGES/roxterm.mo
 share/icons/hicolor/scalable/apps/roxterm.svg
 %%DATADIR%%/Config/Colours/GTK
 %%DATADIR%%/Config/Shortcuts/Default
