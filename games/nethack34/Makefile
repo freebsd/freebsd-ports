@@ -44,9 +44,8 @@ GRAPHICS=	GNOME_GRAPHICS
 .elif ${PKGNAMESUFFIX} == "-nox11"
 GRAPHICS=	# none
 .if defined(WITH_MENUCOLORS)
-PATCHFILES+=	nh343-menucolor_jilles.diff
-PATCH_SITES+=	http://www.stack.nl/~jilles/games/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis|}
+PATCHFILES+=	nh343-menucolor.diff
+PATCH_SITES+=	http://bilious.homelinux.org/~paxed/nethack/
 PATCH_DIST_STRIP=	-p1
 CFLAGS+=	-DMENU_COLOR_REGEX_POSIX
 .endif
