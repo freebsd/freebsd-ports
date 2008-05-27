@@ -195,6 +195,33 @@ share/gnome/help/gnome-access-guide/fr/figures/tabbed_section.png
 share/gnome/help/gnome-access-guide/fr/figures/text_box.png
 share/gnome/help/gnome-access-guide/fr/figures/tree.png
 share/gnome/help/gnome-access-guide/fr/gnome-access-guide.xml
+share/gnome/help/gnome-access-guide/hu/figures/accessx.png
+share/gnome/help/gnome-access-guide/hu/figures/bouncekeys.png
+share/gnome/help/gnome-access-guide/hu/figures/button.png
+share/gnome/help/gnome-access-guide/hu/figures/check_box.png
+share/gnome/help/gnome-access-guide/hu/figures/dropdown_combination_box.png
+share/gnome/help/gnome-access-guide/hu/figures/dropdown_list_box.png
+share/gnome/help/gnome-access-guide/hu/figures/mousekeys.png
+share/gnome/help/gnome-access-guide/hu/figures/move_object_arrows.png
+share/gnome/help/gnome-access-guide/hu/figures/move_object_before.png
+share/gnome/help/gnome-access-guide/hu/figures/move_object_jump.png
+share/gnome/help/gnome-access-guide/hu/figures/move_object_push.png
+share/gnome/help/gnome-access-guide/hu/figures/radio_button.png
+share/gnome/help/gnome-access-guide/hu/figures/slider.png
+share/gnome/help/gnome-access-guide/hu/figures/slowkeys.png
+share/gnome/help/gnome-access-guide/hu/figures/spin_box.png
+share/gnome/help/gnome-access-guide/hu/figures/stickyaltlatch.png
+share/gnome/help/gnome-access-guide/hu/figures/stickyaltlock.png
+share/gnome/help/gnome-access-guide/hu/figures/stickyctrllatch.png
+share/gnome/help/gnome-access-guide/hu/figures/stickyctrllock.png
+share/gnome/help/gnome-access-guide/hu/figures/stickyshiftlatch.png
+share/gnome/help/gnome-access-guide/hu/figures/stickyshiftlock.png
+share/gnome/help/gnome-access-guide/hu/figures/stickywindowlatch.png
+share/gnome/help/gnome-access-guide/hu/figures/stickywindowlock.png
+share/gnome/help/gnome-access-guide/hu/figures/tabbed_section.png
+share/gnome/help/gnome-access-guide/hu/figures/text_box.png
+share/gnome/help/gnome-access-guide/hu/figures/tree.png
+share/gnome/help/gnome-access-guide/hu/gnome-access-guide.xml
 share/gnome/help/gnome-access-guide/it/figures/accessx.png
 share/gnome/help/gnome-access-guide/it/figures/bouncekeys.png
 share/gnome/help/gnome-access-guide/it/figures/button.png
@@ -1723,6 +1750,7 @@ share/omf/gnome-access-guide/gnome-access-guide-en_GB.omf
 share/omf/gnome-access-guide/gnome-access-guide-es.omf
 share/omf/gnome-access-guide/gnome-access-guide-fi.omf
 share/omf/gnome-access-guide/gnome-access-guide-fr.omf
+share/omf/gnome-access-guide/gnome-access-guide-hu.omf
 share/omf/gnome-access-guide/gnome-access-guide-it.omf
 share/omf/gnome-access-guide/gnome-access-guide-oc.omf
 share/omf/gnome-access-guide/gnome-access-guide-pt.omf
@@ -1818,6 +1846,8 @@ share/omf/user-guide/user-guide-zh_CN.omf
 @dirrm share/gnome/help/gnome-access-guide/oc
 @dirrm share/gnome/help/gnome-access-guide/it/figures
 @dirrm share/gnome/help/gnome-access-guide/it
+@dirrm share/gnome/help/gnome-access-guide/hu/figures
+@dirrm share/gnome/help/gnome-access-guide/hu
 @dirrm share/gnome/help/gnome-access-guide/fr/figures
 @dirrm share/gnome/help/gnome-access-guide/fr
 @dirrm share/gnome/help/gnome-access-guide/fi/figures
