@@ -37,7 +37,7 @@ USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--with-mesa-source=${WRKDIR}/Mesa-7.0.1 \
 		--disable-dmx --disable-xvfb --disable-xnest --disable-xprint \
-		--localstatedir=/var
+		--localstatedir=/var --without-dtrace
 
 MAN1=		Xorg.1 \
 		Xserver.1 \
