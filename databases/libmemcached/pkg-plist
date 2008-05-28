@@ -9,6 +9,7 @@ include/libmemcached/libmemcached_config.h
 include/libmemcached/memcached.h
 include/libmemcached/memcached.hh
 include/libmemcached/memcached_constants.h
+include/libmemcached/memcached_get.h
 include/libmemcached/memcached_result.h
 include/libmemcached/memcached_server.h
 include/libmemcached/memcached_storage.h
