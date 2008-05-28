@@ -18,6 +18,7 @@ COMMENT=	Network grep
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 ALL_TARGET=	ngrep
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-pcap-restart
