@@ -15,6 +15,7 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyzes javascript code looking for bugs and signs of poor quality
 
+ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 MAKEFILE=	Makefile.ref
