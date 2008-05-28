@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fbd7aa81-2cc1-11dd-8cfb-00e0815b8da8">
+    <topic>Nagios -- Cross Site Scripting Vulnerability</topic>
+    <affects>
+      <package>
+	<name>nagios</name>
+	<range><lt>2.12</lt></range>
+      </package>
+      <package>
+	<name>nagios-devel</name>
+	<range><lt>3.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/30283">
+	  <p>A vulnerability has been reported in Nagios, which can be
+	  exploited by malicious people to conduct cross-site scripting
+	  attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+       <bid>29140</bid>
+       <cvename>CVE-2007-5803</cvename>
+       <url>http://secunia.com/advisories/30283</url>
+    </references>
+    <dates>
+      <discovery>2008-05-20</discovery>
+      <entry>2008-05-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="555ac165-2bee-11dd-bbdc-00e0815b8da8">
     <topic>spamdyke -- open relay</topic>
     <affects>
