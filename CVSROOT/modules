@@ -15316,6 +15316,7 @@ ser		ports/net/ser
 ser2net		ports/comms/ser2net
 serendipity	ports/www/serendipity
 serendipity-devel	ports/www/serendipity-devel
+serf		ports/www/serf
 serialmail	ports/mail/serialmail
 serialoverip	ports/comms/serialoverip
 serpentine	ports/sysutils/serpentine
