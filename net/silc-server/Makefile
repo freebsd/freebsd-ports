@@ -60,10 +60,10 @@ pre-everything::
 .endif
 
 post-patch:
-.ifdef(NOPORTDOCS)
+.ifdef(NOPORTEXAMPLES)
 	@${REINPLACE_CMD} -E -e \
-		's/(install-data-hook:.*)example-install/\1/' \
-		${WRKSRC}/Makefile.in
+		'/examples-install.*\\/d' \
+		${WRKSRC}/apps/silcd/Makefile.in
 .endif
 	@${REINPLACE_CMD} -e 's/--libtool-enable-shared//' \
 		${WRKSRC}/lib/silccrypt/Makefile.in
