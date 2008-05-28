@@ -1,0 +1,15 @@
+excerpt from README.txt:
+
+xjoypad allows an USB joypad (probably a USB joystick, too) to be used
+with games on linux (probably other unix-like operating systems too).
+This is done by mapping the joypad events to X keyboard events which
+are sent to the window currently having the focus. Therefore only
+keyboard-controlled games are currently supported by xjoypad. xjoypad
+was written to add joypad support to the playstation emulator epsxe.
+
+This is the Linux version.
+
+WWW: http://members.chello.at/erich.kitzmueller/ammoq/download.html
+
+- Timothy Beyer
+beyert@cs.ucr.edu

@@ -78,6 +78,7 @@
     SUBDIR += linux-winetools
     SUBDIR += linux_base-fc4
     SUBDIR += linux_base-fc6
+    SUBDIR += linux-xjoypad
     SUBDIR += linux_base-f7
     SUBDIR += linux_base-f8
     SUBDIR += linux_base-gentoo-stage1

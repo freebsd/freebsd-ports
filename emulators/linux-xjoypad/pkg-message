@@ -1,0 +1,11 @@
+===============================================================================
+To activate the default joystick to key mapping, run the command
+
+xjoypad -device /dev/input/js[device-id] &
+
+where [device-id] depends on whether you are using using a standard game pad or
+a usb game pad (it's probably going to be /dev/input/js0)
+
+note that the -device switch is incorrectly stated as -devicefilename
+in the documentation
+===============================================================================
