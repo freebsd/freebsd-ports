@@ -48,7 +48,7 @@ XPROTO_LIBS=	-L${LOCALBASE}/lib
 
 post-install:
 	@${ECHO_MSG} ''
-	@${CAT} ${.CURDIR}/pkg-message
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ''
 
 .include <bsd.port.mk>
