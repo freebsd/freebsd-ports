@@ -1,0 +1,7 @@
+The serf library is a C-based HTTP client library built upon the
+Apache Portable Runtime (APR) library. It multiplexes connections,
+running the read/write communication asynchronously. Memory copies
+and transformations are kept to a minimum to provide high
+performance operation.
+
+WWW: http://serf.googlecode.com

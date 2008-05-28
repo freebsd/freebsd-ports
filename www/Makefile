@@ -1224,6 +1224,7 @@
     SUBDIR += selenium
     SUBDIR += serendipity
     SUBDIR += serendipity-devel
+    SUBDIR += serf
     SUBDIR += servlet-api
     SUBDIR += session2
     SUBDIR += shttpd
