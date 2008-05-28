@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtypist
-PORTVERSION=	2.7
-PORTREVISION=	1
+PORTVERSION=	2.8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,10 +15,7 @@ COMMENT=	Interactive typing tutor
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CONFIG_SHELL="${SH}" \
-		EMACS=no
+CONFIGURE_ENV=	EMACS=no
 
 INFO=		gtypist
 MAN1=		gtypist.1 typefortune.1
@@ -31,5 +27,8 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/typefortune ${PREFIX}/bin
 
 .include <bsd.port.mk>
