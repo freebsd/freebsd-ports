@@ -6,4 +6,6 @@ lib/libserf-0.so.0
 lib/libserf-0.so
 lib/libserf-0.la
 lib/libserf-0.a
+%%PORTDOCS%%%%DOCSDIR%%/design-guide.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/serf-0
