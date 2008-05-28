@@ -3,6 +3,7 @@ lib/audacious/Container/m3u.so
 lib/audacious/Container/pls.so
 %%XSPFPLUGIN%%lib/audacious/Container/xspf.so
 lib/audacious/Effect/audiocompress.so
+lib/audacious/Effect/crystalizer.so
 lib/audacious/Effect/ladspa.so
 lib/audacious/Effect/echo.so
 lib/audacious/Effect/sndstretch.so

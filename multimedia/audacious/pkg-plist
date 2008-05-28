@@ -1,6 +1,7 @@
 bin/audacious
 %%WITH_DBUS%%bin/audtool
 %%WITH_DBUS%%include/audacious/audctrl.h
+include/audacious/audconfig.h
 include/audacious/auddrct.h
 include/audacious/configdb.h
 include/audacious/custom_uri.h
@@ -9,7 +10,6 @@ include/audacious/dbus-service.h
 include/audacious/discovery.h
 include/audacious/eventqueue.h
 include/audacious/flow.h
-include/audacious/formatter.h
 include/audacious/hook.h
 include/audacious/i18n.h
 include/audacious/id3tag.h
