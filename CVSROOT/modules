@@ -5886,6 +5886,7 @@ jruby		ports/lang/jruby
 jsap		ports/devel/jsap
 jsch		ports/net/jsch
 jsdk		ports/java/jsdk
+jsl		ports/devel/jsl
 jslice		ports/graphics/jslice
 jsmath		ports/math/jsmath
 jsmath-fonts	ports/math/jsmath-fonts
