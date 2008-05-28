@@ -44,6 +44,7 @@ share/locale/bn_IN/LC_MESSAGES/nautilus.mo
 share/locale/br/LC_MESSAGES/nautilus.mo
 share/locale/bs/LC_MESSAGES/nautilus.mo
 share/locale/ca/LC_MESSAGES/nautilus.mo
+share/locale/ca@valencia/LC_MESSAGES/nautilus.mo
 share/locale/cs/LC_MESSAGES/nautilus.mo
 share/locale/cy/LC_MESSAGES/nautilus.mo
 share/locale/da/LC_MESSAGES/nautilus.mo
@@ -240,6 +241,8 @@ share/pixmaps/nautilus/thumbnail_frame.png
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
