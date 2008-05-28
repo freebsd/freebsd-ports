@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	keynav
-DISTVERSION=	20080509
+DISTVERSION=	20080522
 CATEGORIES=	x11
-MASTER_SITES=	http://www.semicomplete.com/files/keynav/ \
-		http://www.atarininja.org/~wxs/distfiles/
+MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Quickly select a portion of the screen using minimal keystrokes
