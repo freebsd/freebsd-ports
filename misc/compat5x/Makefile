@@ -32,6 +32,8 @@ TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
 USE_LDCONFIG=	${TARGET_DIR}
 
+EXTRACT_PRESERVE_OWNERSHIP=	yes	# Files in archive have scfg-flag set
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000
