@@ -25,7 +25,7 @@
 #				  to determine if the version of perl is high enough,
 #				  whether a particular dependency is needed, etc.
 # PERL_ARCH		- Directory name of architecture dependent libraries
-#				  (value: ${ARCH}-freebsd).
+#				  (value: mach).
 # PERL_PORT		- Name of the perl port that is installed
 #				  (value: perl5)
 # SITE_PERL		- Directory name where site specific perl packages go.
