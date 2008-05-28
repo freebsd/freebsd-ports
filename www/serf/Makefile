@@ -18,7 +18,6 @@ COMMENT=	Serf HTTP client library
 LIB_DEPENDS+=	apr:${PORTSDIR}/devel/apr
 
 PROJECTHOST=	serf
-PORTDOCS=	design-guide.txt
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -27,8 +26,8 @@ CONFIGURE_ARGS+=	--with-apr=${PREFIX}/bin/apr-1-config \
 			--with-apr-util=${PREFIX}/bin/apu-1-config
 
 post-install:
-	${MKDIR} ${DOCSDIR}
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/design-guide.txt ${DOCSDIR}
 .endif
 
