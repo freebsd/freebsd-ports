@@ -1,10 +1,10 @@
---- src/audacious/Makefile.orig	2008-03-13 23:19:27.000000000 +0100
-+++ src/audacious/Makefile	2008-03-15 19:27:56.000000000 +0100
-@@ -146,15 +146,8 @@
+--- src/audacious/Makefile.orig	2008-05-24 00:00:34.000000000 +0200
++++ src/audacious/Makefile	2008-05-28 19:12:10.000000000 +0200
+@@ -150,15 +150,8 @@
  
  include ../../buildsys.mk
  
--ifdef USE_DBUS
+-ifeq ($(USE_DBUS),yes)
 -CPPFLAGS += -I../libaudclient
 -DBUS_BINDINGS = dbus-server-bindings.h dbus-client-bindings.h
 -LIBS += -L../libaudclient -laudclient
@@ -13,33 +13,28 @@
 -pre-depend: ${DBUS_BINDINGS}
 -
 -CPPFLAGS += -DHAVE_CONFIG_H		\
-+CPPFLAGS =  -I.. -I../..		\
-+	    -DHAVE_CONFIG_H		\
- 	    ${MOWGLI_CFLAGS}		\
- 	    ${GTK_CFLAGS}		\
- 	    ${BEEP_DEFINES}		\
-@@ -167,21 +160,29 @@
- 	    -D_AUDACIOUS_CORE		\
- 	    -I../libSAD			\
- 	    -I../libeggsmclient		\
--	    -I.. -I../..		\
- 	    -I./intl
++CPPFLAGS = -I.. -I../..			\
++		-DHAVE_CONFIG_H			\
+ 		${MOWGLI_CFLAGS}		\
+ 		${GLIB_CFLAGS}			\
+ 		${GTHREAD_CFLAGS}		\
+@@ -173,10 +166,9 @@
+ 		-D_AUDACIOUS_CORE		\
+ 		-I../libSAD				\
+ 		${EGGSM_CFLAGS}			\
+-		-I.. -I../..			\
+ 		-I./intl
  
--LIBS += ${LDADD}		\
-+LIBS  = ${LDADD}		\
- 	${LIBINTL}		\
- 	${samplerate_LIBS}	\
- 	../libguess/libguess.a	\
- 	../libSAD/libSAD.a	\
- 	../libeggsmclient/libeggsmclient.a ${SM_LIBS} \
- 	${GTK_LIBS}		\
-+	${GLIB_LIBS}		\
- 	${DBUS_LIBS}		\
- 	${MOWGLI_LIBS}		\
- 	${LIBMCS_LIBS}		\
- 	${REGEX_LIBS}
+-LIBS += ${LDADD}						\
++LIBS = ${LDADD}						\
+ 		${LIBINTL}						\
+ 		${SAMPLERATE_LIBS}				\
+ 		../libguess/libguess.a			\
+@@ -190,6 +182,14 @@
+ 		${LIBMCS_LIBS}					\
+ 		${REGEX_LIBS}
  
-+ifdef USE_DBUS
++ifeq ($(USE_DBUS),yes)
 +CPPFLAGS += -I../libaudclient
 +DBUS_BINDINGS = dbus-server-bindings.h dbus-client-bindings.h
 +LIBS += -L../libaudclient -laudclient
