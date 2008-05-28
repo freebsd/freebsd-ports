@@ -17,6 +17,8 @@ COMMENT=	Looks at the icmp messages received by the host
 
 ALL_TARGET=
 MAN1=		icmpinfo.1
+PLIST_FILES=	bin/icmpinfo share/doc/icmpinfo/README
+PLIST_DIRS=	share/doc/icmpinfo
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icmpinfo ${PREFIX}/bin
