@@ -529,6 +529,7 @@
     SUBDIR += jline
     SUBDIR += jrtplib
     SUBDIR += jsap
+    SUBDIR += jsl
     SUBDIR += jsmin
     SUBDIR += json-c
     SUBDIR += jtag
