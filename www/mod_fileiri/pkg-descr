@@ -1,0 +1,15 @@
+mod_fileiri implements http IRIs for directories/files, i.e.
+if accepts URIs with non-ASCII characters encoded in UTF-8 and
+converts them to the legacy encoding used in the file system
+(which can be specified per directory, or even finer if necessary
+(although that's a real hack)).
+
+What is more, it continues to accept requests in the legacy
+encoding specified, and redirects them to the correct UTF-8
+form, which then returns the actual document (without looping).
+
+There is also a backwards mode, which does redirects from
+URIs in a specified legacy encoding to UTF-8 if the directory/
+filenames are in UTF-8.
+
+WWW: http://www.w3.org/2003/06/mod_fileiri/
