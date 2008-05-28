@@ -1,0 +1,12 @@
+diff -urN -x .svn ../../vendor/xvkbd/xvkbd.man ./xvkbd.man
+--- ../../vendor/xvkbd/xvkbd.man	2008-05-28 23:43:41.000000000 +0300
++++ ./xvkbd.man	2008-05-29 00:13:19.000000000 +0300
+@@ -116,7 +116,7 @@
+ and you can enter the remaining characters of the selected word
+ by clicking one of the words in the list.
+ .PP
+-The dictionary (list of words) file is \fB/usr/dict/words\fP by default,
++The dictionary (list of words) file is \fB/usr/share/dict/words\fP by default,
+ but it can be changed by \fB-dict\fP option or \fBxvkbd.dictFile\fP resouce.
+ 
+ .SH "    Main Menu"
