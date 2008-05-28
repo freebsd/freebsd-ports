@@ -1,7 +1,6 @@
 bin/kb
 bin/kb_bin
-sbin/kb_server
-etc/rc.d/kbserver
+bin/kb_server
 %%DATADIR%%/CALL_FD.LST
 %%DATADIR%%/CALL_LIB.LST
 %%DATADIR%%/CALL_SS.LST
@@ -12,4 +11,14 @@ etc/rc.d/kbserver
 %%DATADIR%%/HELPFD.LST
 %%DATADIR%%/SECTION.LST
 %%DATADIR%%/STATE.LST
+share/pixmaps/kb/icons/kb-icon.png
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README_BSD
+%%PORTDOCS%%%%DOCSDIR%%/README_KINKS
+%%PORTDOCS%%%%DOCSDIR%%/README_SRC
+%%PORTDOCS%%%%DOCSDIR%%/README_TIPS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/pixmaps/kb/icons
+@dirrm share/pixmaps/kb
 @dirrm %%DATADIR%%

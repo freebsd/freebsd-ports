@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kb
-PORTVERSION=	7.09
-PORTREVISION=	1
+PORTVERSION=	8.04
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.db.net/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -16,34 +15,50 @@ DISTFILES=	kb_src-${PORTVERSION}.tar.gz kb_inst-${PORTVERSION}.tar.gz
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio contest logger
 
+USE_XLIB=	yes
 USE_GNOME=	libgnome gtk20 libbonobo
 NO_WRKSUBDIR=	yes
 PKGMESSAGE=	${FILESDIR}/pkg_message
 
+MAN1=		kb.1
+
+DESKTOP_ENTRIES="KB" \
+		"Kick Butt logger" \
+		"${PREFIX}/share/pixmaps/kb/icons/kb-icon.png" \
+		"kb" \
+		"" \
+		true
+
 pre-configure:
 	@${CP}	${FILESDIR}/Makefile ${WRKSRC}
-.if exists(/usr/include/dev/speaker/speaker.h)
-	@${REINPLACE_CMD} -e 's|-UBSDSOUND|-DBSDSOUND="<dev/speaker/speaker.h>"|' ${WRKSRC}/Makefile
-.elif  exists(/usr/include/machine/speaker.h)
-	@${REINPLACE_CMD} -e 's|-UBSDSOUND|-DBSDSOUND="<machine/speaker.h>"|' ${WRKSRC}/Makefile
+.if !exists(/usr/include/dev/speaker/speaker.h)
+	@${REINPLACE_CMD} -e 's|-DSPKR|-DOLDSPKR|' ${WRKSRC}/Makefile
 .endif
-	@${RM}	${WRKSRC}/kb_server
-	@${RM}	${WRKSRC}/kb
-	@${CP}	${FILESDIR}/bsd_bells.c ${WRKSRC}
 
 do-install:
-	@${INSTALL_SCRIPT}	${FILESDIR}/kbserver ${LOCALBASE}/etc/rc.d
 	${INSTALL_SCRIPT}	${FILESDIR}/kb ${LOCALBASE}/bin
 	${INSTALL_PROGRAM}	${WRKSRC}/kb ${LOCALBASE}/bin/kb_bin
-	${INSTALL_PROGRAM}	${WRKSRC}/kb_server ${LOCALBASE}/sbin
+	${INSTALL_PROGRAM}	${WRKSRC}/kb_server ${LOCALBASE}/bin
+	${INSTALL_DATA}		${FILESDIR}/kb.1 ${MANPREFIX}/man/man1
 	${MKDIR}		${DATADIR}
-.for f in ${WRKSRC}/COUNTY.CQP ${WRKSRC}/DEFAULT.INI \
-	${WRKSRC}/CALL_LIB.LST ${WRKSRC}/CALL_SS.LST \
-	${WRKSRC}/CALL_FD.LST  ${WRKSRC}/HELP.LST \
-	${WRKSRC}/COUNTRY.LST ${WRKSRC}/HELPFD.LST \
-	${WRKSRC}/SECTION.LST ${WRKSRC}/STATE.LST
+.for f in COUNTY.CQP DEFAULT.INI CALL_LIB.LST CALL_SS.LST \
+	CALL_FD.LST  HELP.LST COUNTRY.LST HELPFD.LST \
+	SECTION.LST STATE.LST
 	${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
 .endfor
-	@${CAT}	${PKGMESSAGE}
+	${MKDIR} ${PREFIX}/share/pixmaps/kb/icons
+	${INSTALL_DATA} ${FILESDIR}/kb-icon.png \
+		${PREFIX}/share/pixmaps/kb/icons/kb-icon.png
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA}	${FILESDIR}/README_TIPS ${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/kb_bsd/README_BSD ${DOCSDIR}
+.for f in LICENSE README README_KINKS README_SRC
+	${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
+.endfor
+.endif
+	@${ECHO} ""
+	@${ECHO} "Docs are in ${DOCSDIR} pay particular attention to README_BSD"
+	@${ECHO} ""
 
 .include <bsd.port.mk>
