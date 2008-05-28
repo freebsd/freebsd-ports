@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xdotool
-DISTVERSION=	20070903
-PORTREVISION=	1
+DISTVERSION=	20080527
 CATEGORIES=	x11
 MASTER_SITES=	http://www.semicomplete.com/files/xdotool/ \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -23,5 +22,8 @@ PLIST_FILES=	bin/xdotool
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdotool ${PREFIX}/bin
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,-Wno-missing-field-initializers,,' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
