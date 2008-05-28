@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-settings-daemon
-PORTVERSION=	2.22.1
+PORTVERSION=	2.22.2.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
