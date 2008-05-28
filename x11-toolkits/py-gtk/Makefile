@@ -7,7 +7,7 @@
 
 PORTNAME=	py-gtk
 PORTVERSION=	0.6.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python/1.4
@@ -48,12 +48,6 @@ post-install:
 	${FIND} ${EG_DST_DIR} -type f -print | ${XARGS} ${CHMOD} 0444
 	${MKDIR} ${PREFIX}/share/doc/py-gtk
 	${INSTALL_DATA} ${WRKSRC}/MAPPING ${PREFIX}/share/doc/py-gtk
-.else
-PLIST=		${WRKDIR}/PLIST.nodocs
-pre-install:
-	${RM} -f ${PLIST}
-	${GREP} -E -v '^(@dirrm )?(share/examples/)|(share/doc/)'       \
-		${PKGDIR}/pkg-plist > ${PLIST}
 .endif
 
 .include <bsd.port.mk>
