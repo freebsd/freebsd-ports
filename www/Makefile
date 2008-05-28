@@ -401,6 +401,7 @@
     SUBDIR += mod_extract_forwarded2
     SUBDIR += mod_fastcgi
     SUBDIR += mod_fcgid
+    SUBDIR += mod_fileiri
     SUBDIR += mod_filter
     SUBDIR += mod_geoip
     SUBDIR += mod_geoip2
