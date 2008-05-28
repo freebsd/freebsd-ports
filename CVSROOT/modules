@@ -7946,6 +7946,7 @@ mod_extract_forwarded	ports/www/mod_extract_forwarded
 mod_extract_forwarded2	ports/www/mod_extract_forwarded2
 mod_fastcgi	ports/www/mod_fastcgi
 mod_fcgid	ports/www/mod_fcgid
+mod_fileiri	ports/www/mod_fileiri
 mod_filter	ports/www/mod_filter
 mod_geoip	ports/www/mod_geoip
 mod_geoip2	ports/www/mod_geoip2
