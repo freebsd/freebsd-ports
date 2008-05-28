@@ -1,9 +1,6 @@
 @comment $FreeBSD$
 bin/xmlif
 bin/xmlto
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/format/docbook/awt
 %%DATADIR%%/format/docbook/dvi
 %%DATADIR%%/format/docbook/fo
@@ -21,9 +18,14 @@ bin/xmlto
 %%DATADIR%%/format/docbook/htmlhelp
 %%DATADIR%%/format/docbook/javahelp
 @dirrm %%DATADIR%%/format/docbook
+%%PASSIVETEX%%%%DATADIR%%/format/fo/awt
 %%PASSIVETEX%%%%DATADIR%%/format/fo/dvi
+%%PASSIVETEX%%%%DATADIR%%/format/fo/mif
+%%PASSIVETEX%%%%DATADIR%%/format/fo/pcl
 %%PASSIVETEX%%%%DATADIR%%/format/fo/pdf
 %%PASSIVETEX%%%%DATADIR%%/format/fo/ps
+%%PASSIVETEX%%%%DATADIR%%/format/fo/svg
+%%PASSIVETEX%%%%DATADIR%%/format/fo/txt
 %%PASSIVETEX%%@dirrm %%DATADIR%%/format/fo
 @dirrm %%DATADIR%%/format
 %%DATADIR%%/xmlto.mak
