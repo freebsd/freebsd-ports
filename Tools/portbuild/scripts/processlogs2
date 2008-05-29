@@ -36,10 +36,10 @@ else
     size=$(/bin/ls -sk $log.log | awk '{print $1}')
     echo -n "$size KB" >>$of
     echo -n "</td><td valign=\"top\">" >>$of
-    dir=$(sed -n -e '4p' $log.log | awk '{print $3}' | sed -e 's,^/[^/]*/[^/]*/,,')
+    dir=$(sed -n -e '5p' $log.log | awk '{print $3}' | sed -e 's,^/[^/]*/[^/]*/,,')
     echo -n "<a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$dir\">$dir</a>" >>$of
     echo -n "</td><td valign=\"top\">" >>$of
-    maint=$(sed -n -e '3p' $log.log | awk '{print $3}')
+    maint=$(sed -n -e '4p' $log.log | awk '{print $3}')
     maints="$maints $maint"
     echo -n "<a href=\"mailto:$maint\">$maint</a>" >>$of
     echo "</td><td valign=\"top\">" >>$of
