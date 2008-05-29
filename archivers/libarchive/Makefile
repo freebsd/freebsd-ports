@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	2.4.17
+PORTVERSION=	2.5.4b
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
@@ -24,7 +24,7 @@ PLIST_FILES=	bin/bsdtar \
 		lib/libarchive.a \
 		lib/libarchive.la \
 		lib/libarchive.so \
-		lib/libarchive.so.6
+		lib/libarchive.so.7
 
 MANCOMPRESSED=	no
 MAN1=		bsdtar.1
