@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomesword
-PORTVERSION=	2.3.3
-PORTREVISION=	2
+PORTVERSION=	2.3.4
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF
 
@@ -20,12 +19,12 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gal2 gtkhtml3 intlhack gnomedocutils
+USE_GNOME=	gnomehack gnomeprefix gnometarget gal2 gtkhtml3 gnomelibs intlhack gnomedocutils
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--enable-gtkhtml
+CONFIGURE_ARGS+=	--enable-gtkhtml --enable-exporter
 
 post-install:
 .if !defined(NOPORTDOCS)
