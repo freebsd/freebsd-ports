@@ -8,7 +8,7 @@
 
 PORTNAME=	sniffit
 PORTVERSION=	0.3.7b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	sniffit.0.3.7.beta
