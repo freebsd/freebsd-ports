@@ -24,9 +24,11 @@ WRKSRC=		${WRKDIR}/${UNIQUENAME}-${PORTVERSION}
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
+.if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.mk>
