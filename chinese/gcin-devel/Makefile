@@ -7,6 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
@@ -57,7 +58,8 @@ pre-patch:
 		s,/usr/share,$$prefix/share,; s,libdir)\/gcin,libdir),; \
 		143,150 d; \
 		s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,' \
+	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,; \
+	  	210,211 d; 215,216 d;' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \
 		${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
