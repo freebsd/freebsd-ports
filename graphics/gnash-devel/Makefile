@@ -176,9 +176,9 @@ pre-configure:
 		${WRKSRC}/utilities/Makefile.in ${WRKSRC}/cygnal/Makefile.in
 	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
+		s|/lib64|/lib|g; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
-		    s|/lib64|/lib|g; \
-		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
+	${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
 
 .if !defined(WITHOUT_PLUGIN)
 post-install:
