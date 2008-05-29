@@ -122,6 +122,7 @@ Z=`ident ${dir}/Makefile | grep 'FreeBSD:' | sed 's/^[ \t]*//'`
 
 if [ $phase = 1 ]; then
 
+  # note: if you change this header, also change processonelog and processlogs2
   cd $dir || exit 1
   echo "building for: $(uname -mr)"
   echo "maintained by: $(make maintainer)"
