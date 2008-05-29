@@ -1,4 +1,3 @@
-
 %%SITE_PERL%%/PPI.pm
 %%SITE_PERL%%/PPI/Cache.pm
 %%SITE_PERL%%/PPI/Document.pm
@@ -21,6 +20,7 @@
 %%SITE_PERL%%/PPI/Statement/End.pm
 %%SITE_PERL%%/PPI/Statement/Expression.pm
 %%SITE_PERL%%/PPI/Statement/Include.pm
+%%SITE_PERL%%/PPI/Statement/Include/Perl6.pm
 %%SITE_PERL%%/PPI/Statement/Null.pm
 %%SITE_PERL%%/PPI/Statement/Package.pm
 %%SITE_PERL%%/PPI/Statement/Scheduled.pm
@@ -91,6 +91,7 @@
 @dirrm %%SITE_PERL%%/PPI/Token/Quote
 @dirrm %%SITE_PERL%%/PPI/Token/Number
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI
+@dirrmtry %%SITE_PERL%%/PPI/Statement/Include
 @dirrmtry %%SITE_PERL%%/PPI/Statement
 @dirrmtry %%SITE_PERL%%/PPI/Structure
 @dirrmtry %%SITE_PERL%%/PPI/Exception
