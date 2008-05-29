@@ -1,3 +1,3 @@
 sbin/sniffit
-share/doc/sniffit/README.FIRST
-@dirrm share/doc/sniffit
+%%PORTDOCS%%share/doc/sniffit/README.FIRST
+%%PORTDOCS%%@dirrm share/doc/sniffit
