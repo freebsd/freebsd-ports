@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	0.8.2
+DISTVERSION=	20080515
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
+# gnashdev.org is slower
+MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
+		http://www.gnashdev.org/dev_snapshots/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	GNU Flash movie player
@@ -18,17 +20,18 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		curl.4:${PORTSDIR}/ftp/curl
 
-CONFLICTS=	gnash-devel-[0-9]*
+CONFLICTS=	gnash-[0-9]*
 
-USE_BZIP2=	yes
+EXTRACT_SUFX=	.tar.tgz
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 WANT_GNOME=	yes
+USE_GCC=	4.2+
 WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:15 automake:19:env autoheader:261:env autoconf:261:env aclocal:19:env libtool:15:env
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -39,6 +42,8 @@ CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
 		--with-npapi-plugindir="${PREFIX}/lib/browser_plugins" \
 		--with-kde-pluginprefix="${PREFIX}"
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.3
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
@@ -165,12 +170,14 @@ pre-everything::
 	@sleep 3
 .endif
 
-post-patch:
+pre-configure:
+	@(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./autogen.sh)
 	@${REINPLACE_CMD} -e 's|^LIBS = |&$${INTLLIBS} |' \
 		${WRKSRC}/utilities/Makefile.in ${WRKSRC}/cygnal/Makefile.in
 	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
+		    s|/lib64|/lib|g; \
 		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
 
 .if !defined(WITHOUT_PLUGIN)
