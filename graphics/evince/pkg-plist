@@ -219,8 +219,8 @@ share/locale/id/LC_MESSAGES/evince.mo
 share/locale/it/LC_MESSAGES/evince.mo
 share/locale/ja/LC_MESSAGES/evince.mo
 share/locale/ka/LC_MESSAGES/evince.mo
-share/locale/ko/LC_MESSAGES/evince.mo
 share/locale/kn/LC_MESSAGES/evince.mo
+share/locale/ko/LC_MESSAGES/evince.mo
 share/locale/ku/LC_MESSAGES/evince.mo
 share/locale/lt/LC_MESSAGES/evince.mo
 share/locale/lv/LC_MESSAGES/evince.mo
@@ -241,9 +241,9 @@ share/locale/pt_BR/LC_MESSAGES/evince.mo
 share/locale/ro/LC_MESSAGES/evince.mo
 share/locale/ru/LC_MESSAGES/evince.mo
 share/locale/rw/LC_MESSAGES/evince.mo
+share/locale/si/LC_MESSAGES/evince.mo
 share/locale/sk/LC_MESSAGES/evince.mo
 share/locale/sl/LC_MESSAGES/evince.mo
-share/locale/si/LC_MESSAGES/evince.mo
 share/locale/sq/LC_MESSAGES/evince.mo
 share/locale/sr/LC_MESSAGES/evince.mo
 share/locale/sr@Latn/LC_MESSAGES/evince.mo
@@ -328,13 +328,13 @@ share/omf/evince/evince-zh_CN.omf
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/applications
 @dirrm lib/evince/backends
 @dirrm lib/evince
 @dirrm include/evince-2.20/evince
 @dirrm include/evince-2.20
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
