@@ -1,3 +1,6 @@
 MD5 (usermin-1.350.tar.gz) = effd793d41f2786adf5ebe2c32f58edd
 SHA256 (usermin-1.350.tar.gz) = 426f2de8b418d0f1b88f899227db3d01cddbe33a03f61684690511c95e15a6a4
 SIZE (usermin-1.350.tar.gz) = 5553492
+MD5 (spam-1.350-1.wbm.gz) = f1128c6edd9a4c116f794232d95b4181
+SHA256 (spam-1.350-1.wbm.gz) = fa2a1dfc274196a9912e0ced45e01c857e1fc6eb8c716158f63aae6646a4dd00
+SIZE (spam-1.350-1.wbm.gz) = 116723
