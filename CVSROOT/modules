@@ -10977,6 +10977,7 @@ p5-Net-Whois-RIPE	ports/net/p5-Net-Whois-RIPE
 p5-Net-Whois-Raw	ports/net/p5-Net-Whois-Raw
 p5-Net-Write	ports/net/p5-Net-Write
 p5-Net-XMPP	ports/net-im/p5-Net-XMPP
+p5-Net-XMPP2	ports/net-im/p5-Net-XMPP2
 p5-Net-XWhois	ports/net/p5-Net-XWhois
 p5-Net-YASA	ports/textproc/p5-Net-YASA
 p5-Net-Yadis	ports/net/p5-Net-Yadis
