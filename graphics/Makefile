@@ -235,6 +235,7 @@
     SUBDIR += gltt
     SUBDIR += gmt
     SUBDIR += gnash
+    SUBDIR += gnash-devel
     SUBDIR += gnofract4d
     SUBDIR += gnomecanvas
     SUBDIR += gnomeiconedit
