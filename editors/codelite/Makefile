@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codelite
-DISTVERSION=	r1528
+DISTVERSION=	r${SVN_REVISION}
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gahr
@@ -24,11 +24,13 @@ WX_UNICODE=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 
+SVN_REVISION=	1599
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
@@ -37,6 +39,12 @@ RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 post-patch:
 	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g' \
 	    ${WRKSRC}/configure ${WRKSRC}/makefile.base
+	${REINPLACE_CMD} -e 's|$${cur_rev}|${SVN_REVISION}|' \
+		${WRKSRC}/le_makerevision.sh
+.if ${ARCH} == "amd64"
+	${REINPLACE_CMD} -e 's|-Wall|-fPIC -Wall|g' \
+		${WRKSRC}/configure ${WRKSRC}/makefile.base
+.endif
 
 do-install:
 	${MKDIR} ${DATADIR}
