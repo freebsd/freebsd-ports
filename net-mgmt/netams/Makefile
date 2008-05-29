@@ -47,6 +47,10 @@ MAN8=		netams.8 flowprobe.8 netamsctl.8
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		does not compile
+.endif
+
 PLIST_FILES+=	etc/netams.conf.sample \
 		libexec/netams \
 		sbin/flowprobe \
