@@ -2,7 +2,7 @@
 
 of=extras.html.new
 
-if [ -e .stamp -a $(echo $(find . -newer .stamp -type f -name '*.log' 2>/dev/null | wc -l)) = "0" ]; then exit; fi
+if [ \! -e .force -a -e .stamp -a $(echo $(find . -newer .stamp -type f -name '*.log' 2>/dev/null | wc -l)) = "0" ]; then exit; fi
 
 echo "<html><head><title>List of files and directories that do not match their mtree description</title>" >$of
 echo "<h1>List of files and directories that do not match their mtree description</h1>" >>$of
