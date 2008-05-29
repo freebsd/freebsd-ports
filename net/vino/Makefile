@@ -8,6 +8,7 @@
 
 PORTNAME=	vino
 PORTVERSION=	2.22.2
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,6 +21,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel
+USE_XORG=	xtst
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 GNU_CONFIGURE=	yes
