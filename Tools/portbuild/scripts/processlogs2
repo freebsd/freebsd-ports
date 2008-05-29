@@ -8,6 +8,7 @@ echo "<html><head><title>List of files and directories that do not match their m
 echo "<h1>List of files and directories that do not match their mtree description</h1>" >>$of
 echo "</head><body>" >>$of
 
+rm -f .force
 touch .stamp
 
 find . -name '*.log' | xargs grep -l '^list of.*file' | sort | sed -e 's/^..//' > .tmp
