@@ -29,7 +29,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-SNAPSHOT=	r6090
+SNAPSHOT=	r6129
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on \
 		FLTK_CAIRO "Use cairo as graphics backend" off \
@@ -86,9 +86,10 @@ example_apps=	ansiwidget arc bitmap boxtype browser button buttons cairo \
 		file_chooser fonts fractals fullscreen gl_overlay glpuzzle \
 		hello image inactive input keyboard label line_style list \
 		list_visuals mandelbrot menu message monitors navigation \
-		output pack pixmap progress qubix resizable resizealign \
+		output pack pixmap progress qubix radio resizable resizealign \
 		scroll shape sizes symbols tabs threads tile timer \
 		utf valuators wizard
+example_data=	demo.menu
 example_img=	images/ulon.bmp
 PORTEXAMPLES=	*
 .else
@@ -117,6 +118,9 @@ post-install:
 	${MKDIR} ${EXAMPLESDIR}/images
 	for f in ${example_apps} ; do \
 	    ${INSTALL_PROGRAM} ${WRKSRC}/test/$${f} ${EXAMPLESDIR} ; \
+	done
+	for f in ${example_data} ; do \
+	    ${INSTALL_DATA} ${WRKSRC}/test/$${f} ${EXAMPLESDIR} ; \
 	done
 	for f in ${example_img} ; do \
 	    ${INSTALL_DATA} ${WRKSRC}/test/$${f} ${EXAMPLESDIR}/images ; \
