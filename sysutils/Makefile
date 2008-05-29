@@ -458,6 +458,7 @@
     SUBDIR += nctop
     SUBDIR += ndir
     SUBDIR += netdump-server
+    SUBDIR += netident
     SUBDIR += nitrogen
     SUBDIR += no-login
     SUBDIR += npadmin
