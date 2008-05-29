@@ -6,6 +6,7 @@
 
 PORTNAME=	jfbterm
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ac.auone-net.jp/~baba/jfbterm/ \
 		http://chirashi-no-ura.net/files/
@@ -17,13 +18,13 @@ COMMENT=	Multilanguage can be displayed on the console
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/unifont.pcf.gz:${PORTSDIR}/sysutils/gnu-unifont
 
-ONLY_FOR_ARCHS=	i386
 USE_ICONV=	yes
 USE_GNOME=	pkgconfig
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:261 automake:14
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		--mandir="${LOCALBASE}/man"
