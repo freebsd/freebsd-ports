@@ -12641,6 +12641,7 @@ php-screw	ports/www/php-screw
 php-sqlite3	ports/databases/php-sqlite3
 php-sqlrelay	ports/databases/php-sqlrelay
 php-suhosin	ports/security/php-suhosin
+php-tclink	ports/finance/php-tclink
 php-templates	ports/www/php-templates
 php-xdebug	ports/devel/php-xdebug
 php4		ports/lang/php4
