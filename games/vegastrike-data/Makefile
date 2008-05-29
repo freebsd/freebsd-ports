@@ -21,6 +21,10 @@ NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+.if defined(PACKAGE_BUILDING)
+IGNORE=		ignore on pointyhat
+.endif
+
 post-patch:
 	@${RM} -rf ${WRKSRC}/bin ${WRKSRC}/I* ${WRKSRC}/.vsinstall.sh.swp
 	@${FIND} ${WRKSRC} -name "Makefile.am" -delete
