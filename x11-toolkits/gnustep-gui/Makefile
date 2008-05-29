@@ -23,8 +23,6 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
 
-BROKEN=		does not compile
-
 RESTRICTED=	GPL3
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
@@ -50,15 +48,13 @@ MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 BREAKS_IF_PEDANTIC=	yes
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITHOUT_GNUSTEP_FAKEMAIN)
 .if !exists(/proc/curproc)
 IGNORE=		requires procfs mounted to build or run, for details see procfs(5)
 .endif
 .endif
 
-.if !defined(WITHOUT_PORTAUDIO2) || !defined(WITHOUT_PORTAUDIO)
+.if !defined(WITHOUT_PORTAUDIO2) && !defined(WITHOUT_PORTAUDIO)
 LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio2
 CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 ${PTHREAD_CFLAGS}
 CFLAGS+=	${PTHREAD_CFLAGS}
@@ -91,6 +87,12 @@ pre-configure:
 .endfor
 .if !defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e "s|doc=no|doc=yes|" ${WRKSRC}/GNUmakefile
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		missing threading functions
 .endif
 
 .include <bsd.port.post.mk>
