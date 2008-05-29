@@ -17,6 +17,8 @@ COMMENT=	Advanced build system for GNU Make
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
+BROKEN=		bad plist
+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 MAKEPLUS_HOME=	${WRKSRC}
