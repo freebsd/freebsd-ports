@@ -21,16 +21,13 @@ PLIST_FILES=	sbin/pfflowd
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502106
+.if ${OSVERSION} < 502119
 IGNORE=		only for 5.3 and above
 .endif
 
-.if ${OSVERSION} < 502119
-EXTRA_PATCHES+=	${FILESDIR}/pf34-Makefile
-.endif
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
+.if ${OSVERSION} < 700049
+MAKE_ENV+=	OLD_PFSYNC=1
+EXTRA_PATCHES+=	${FILESDIR}/pf37-pfflowd.c
 .endif
 
 pre-build:

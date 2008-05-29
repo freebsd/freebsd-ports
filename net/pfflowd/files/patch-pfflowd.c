@@ -23,23 +23,3 @@
  
  	_exit(0);
  }
-@@ -366,7 +368,9 @@
- 				strlcat(dst_s, pbuf, sizeof(dst_s));
- 			}
- 
-+#ifndef OLD_PFSYNC
- 			syslog(LOG_DEBUG, "IFACE %s", st[i].ifname); 
-+#endif
- 			syslog(LOG_DEBUG, "GWY %s", rt_s); 
- 			syslog(LOG_DEBUG, "FLOW proto %d direction %d", 
- 			    st[i].proto, st[i].direction);
-@@ -538,7 +542,9 @@
- 				strlcat(dst_s, pbuf, sizeof(dst_s));
- 			}
- 
-+#ifndef OLD_PFSYNC
- 			syslog(LOG_DEBUG, "IFACE %s", st[i].ifname); 
-+#endif
- 			syslog(LOG_DEBUG, "GWY %s", rt_s); 
- 			syslog(LOG_DEBUG, "FLOW proto %d direction %d", 
- 			    st[i].proto, st[i].direction);
