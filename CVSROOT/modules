@@ -8469,6 +8469,7 @@ nethack34-nox11	ports/games/nethack34-nox11
 nethack34-qt	ports/games/nethack34-qt
 netherearth	ports/games/netherearth
 nethirc		ports/irc/nethirc
+netident	ports/sysutils/netident
 netio		ports/benchmarks/netio
 netleak		ports/net-mgmt/netleak
 netmap		ports/net/netmap
