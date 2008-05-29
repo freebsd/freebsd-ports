@@ -13,12 +13,13 @@ rcvar=`set_rcvar`
 
 load_rc_config "$name"
 : ${hobbit_client_enable:="NO"}
+: ${hobbit_client_flags:=""}
 
 command="%%PREFIX%%/www/hobbit/client/runclient.sh"
-start_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh start"
-stop_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh stop"
-status_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh status"
-reload_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh restart"
+start_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh ${hobbit_client_flags} start"
+stop_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh ${hobbit_client_flags} stop"
+status_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh ${hobbit_client_flags} status"
+reload_cmd="%%PREFIX%%/www/hobbit/client/runclient.sh ${hobbit_client_flags} restart"
 pidfile="%%PREFIX%%/www/hobbit/client/logs/clientlaunch.`hostname`.pid"
 
 run_rc_command "$1"
