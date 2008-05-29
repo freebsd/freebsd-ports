@@ -1156,6 +1156,7 @@ ca-roots	ports/security/ca-roots
 ca_root_nss	ports/security/ca_root_nss
 cabextract	ports/archivers/cabextract
 cacao		ports/java/cacao
+cacheboy	ports/www/cacheboy
 cacti		ports/net-mgmt/cacti
 cacti-spine	ports/net-mgmt/cacti-spine
 cadaver		ports/www/cadaver
