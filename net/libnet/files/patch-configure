@@ -1,0 +1,80 @@
+
+--- configure.orig	2004-03-02 04:02:37.000000000 +0800
++++ configure	2008-04-29 11:48:34.000000000 +0800
+@@ -3852,38 +3852,10 @@
+ echo "$as_me:$LINENO: checking link-layer packet interface type" >&5
+ echo $ECHO_N "checking link-layer packet interface type... $ECHO_C" >&6
+ 
+-if test -r /dev/bpf0 ; then
+-    LIBOBJS="$LIBOBJS libnet_link_bpf.$ac_objext"
+-    echo "$as_me:$LINENO: result: found bpf" >&5
++#if test -r /dev/bpf0 ; then
++LIBOBJS="$LIBOBJS libnet_link_bpf.$ac_objext"
++echo "$as_me:$LINENO: result: bpf has been here evar since da world began ..." >&5
+ echo "${ECHO_T}found bpf" >&6
+-elif test -r /usr/include/net/pfilt.h ; then
+-    LIBOBJS="$LIBOBJS libnet_link_pf.$ac_objext"
+-    echo "$as_me:$LINENO: result: found pf" >&5
+-echo "${ECHO_T}found pf" >&6
+-elif test -r /dev/nit ; then
+-    LIBOBJS="$LIBOBJS libnet_link_snit.$ac_objext"
+-    echo "$as_me:$LINENO: result: found snit" >&5
+-echo "${ECHO_T}found snit" >&6
+-elif test -r /usr/include/sys/net/nit.h ; then
+-    LIBOBJS="$LIBOBJS libnet_link_nit.$ac_objext"
+-    echo "$as_me:$LINENO: result: found nit" >&5
+-echo "${ECHO_T}found nit" >&6
+-elif test -r /usr/include/net/raw.h ; then
+-    LIBOBJS="$LIBOBJS libnet_link_snoop.$ac_objext"
+-    echo "$as_me:$LINENO: result: found snoop" >&5
+-echo "${ECHO_T}found snoop" >&6
+-elif test -r /usr/include/sys/dlpi.h ; then
+-    LIBOBJS="$LIBOBJS libnet_link_dlpi.$ac_objext"
+-    echo "$as_me:$LINENO: result: found dlpi" >&5
+-echo "${ECHO_T}found dlpi" >&6
+-    cat >>confdefs.h <<\_ACEOF
+-#define HAVE_DLPI 1
+-_ACEOF
+-
+-elif test -r /usr/include/linux/socket.h ; then
+-    LIBOBJS="$LIBOBJS libnet_link_linux.$ac_objext"
+-    echo "$as_me:$LINENO: result: found linux primitives" >&5
+-echo "${ECHO_T}found linux primitives" >&6
+ 
+     echo "$as_me:$LINENO: checking for packet socket (PF_SOCKET)" >&5
+ echo $ECHO_N "checking for packet socket (PF_SOCKET)... $ECHO_C" >&6
+@@ -3987,32 +3959,6 @@
+ 
+     echo "$as_me:$LINENO: result: $ac_cv_libnet_linux_procfs" >&5
+ echo "${ECHO_T}$ac_cv_libnet_linux_procfs" >&6
+-    if test $ac_cv_libnet_linux_procfs = yes ; then
+-
+-cat >>confdefs.h <<\_ACEOF
+-#define HAVE_LINUX_PROCFS 1
+-_ACEOF
+-
+-    fi
+-elif test -c /dev/bpf0 ; then           # check again in case not readable
+-    LIBOBJS="$LIBOBJS libnet_link_bpf.$ac_objext"
+-    echo "$as_me:$LINENO: result: found bpf" >&5
+-echo "${ECHO_T}found bpf" >&6
+-elif test -c /dev/nit ; then            # check again in case not readable
+-    LIBOBJS="$LIBOBJS libnet_link_snit.$ac_objext"
+-    echo "$as_me:$LINENO: result: found snit" >&5
+-echo "${ECHO_T}found snit" >&6
+-elif test "$target_os" = "cygwin" ; then
+-     LIBOBJS="$LIBOBJS libnet_link_win32.$ac_objext"
+-     echo "$as_me:$LINENO: result: found win32 wpcap" >&5
+-echo "${ECHO_T}found win32 wpcap" >&6
+-else
+-    LIBOBJS="$LIBOBJS libnet_link_none.$ac_objext"
+-    { echo "$as_me:$LINENO: WARNING: could not find a link-layer packet interface" >&5
+-echo "$as_me: WARNING: could not find a link-layer packet interface" >&2;}
+-    { echo "$as_me:$LINENO: WARNING: link-layer packet injection will not be available" >&5
+-echo "$as_me: WARNING: link-layer packet injection will not be available" >&2;}
+-fi
+ 
+ echo -n "scanning available packet construction modules: "
+ for dir in src/*build*c ; do
+
+
