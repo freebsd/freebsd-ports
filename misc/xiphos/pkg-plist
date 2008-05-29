@@ -146,6 +146,7 @@ share/gnome/help/gnomesword/fr/studypad.xml
 %%DATADIR%%/bookmarks.glade
 %%DATADIR%%/editor_note.xml
 %%DATADIR%%/editor_studypad.xml
+%%DATADIR%%/export-dialog.glade
 %%DATADIR%%/logo.png
 %%DATADIR%%/module-manager.glade
 %%DATADIR%%/navbar_versekey.glade
