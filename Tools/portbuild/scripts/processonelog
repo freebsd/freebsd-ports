@@ -16,6 +16,8 @@ indexdir=$(realpath $indexdir)
 errordir=$(realpath $errordir)
 indexfilename=$indexdir/INDEX
 
+HEADER_LINES=7
+
 portname=$(basename $filename .log.bz2)
 if [ "${portname}" = "${filename}" ]; then
     cat=cat
@@ -26,10 +28,10 @@ portname=$(basename $portname .log)
 
 affected=$(($(grep -cF $portname < $indexfilename) -1))
 logsize=$(/bin/ls -sk $errordir/$filename | awk '{print $1}')
-dir=$(${cat} $errordir/$filename | head -6 | grep '^port directory:' | awk '{print $3}' | \
+dir=$(${cat} $errordir/$filename | head -$HEADER_LINES | grep '^port directory:' | awk '{print $3}' | \
 		sed -e 's,^/[^/]*/[^/]*/,,')
-maintainer=$(${cat} $errordir/$filename | head -6 | grep '^maintained by' | awk '{print $3}')
-datetime=$(${cat} $errordir/$filename | head -6 | grep '^build started at' | \
+maintainer=$(${cat} $errordir/$filename | head -$HEADER_LINES | grep '^maintained by' | awk '{print $3}')
+datetime=$(${cat} $errordir/$filename | head -$HEADER_LINES | grep '^build started at' | \
 		sed -e 's/build started at ...//' | tr ' ' '_' )
 
 # now try to classify the type of error found in the file.
