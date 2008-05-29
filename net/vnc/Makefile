@@ -7,7 +7,7 @@
 
 PORTNAME=	vnc
 PORTVERSION=	4.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/:vnc
 DISTNAME=	vnc-4_1_2-unixsrc
@@ -49,7 +49,8 @@ DISTFILES+=	X430src-1.tgz:x \
 		X430src-3.tgz:x
 
 RUN_DEPENDS+=	xauth:${PORTSDIR}/x11/xauth \
-		${LOCALBASE}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${X_FONTS_MISC_PORT}
+		${LOCALBASE}/lib/X11/fonts/misc/6x13-ISO8859-1.pcf.gz:${X_FONTS_MISC_PORT} \
+		${X11BASE}/lib/X11/fonts/misc/fonts.alias:${X_FONTS_ALIAS_PORT}
 
 USE_PERL5=	yes
 
