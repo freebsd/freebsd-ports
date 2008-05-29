@@ -8385,6 +8385,7 @@ nbaudit		ports/security/nbaudit
 nbc		ports/lang/nbc
 nbd-server	ports/net/nbd-server
 nbench		ports/benchmarks/nbench
+nbfc		ports/lang/nbfc
 nbosd		ports/sysutils/nbosd
 nbsmtp		ports/mail/nbsmtp
 nbtscan		ports/net-mgmt/nbtscan
