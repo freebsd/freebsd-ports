@@ -100,6 +100,7 @@
     SUBDIR += p5-Net-OSCAR
     SUBDIR += p5-Net-Stomp
     SUBDIR += p5-Net-XMPP
+    SUBDIR += p5-Net-XMPP2
     SUBDIR += p5-POE-Component-Client-MSN
     SUBDIR += pebrot
     SUBDIR += pidgin
