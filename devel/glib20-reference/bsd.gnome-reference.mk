@@ -50,10 +50,12 @@ make-descr:
 do-install:
 .  if !defined(NOPORTDOCS)
 .    for d in ${BOOKS}
-	${MKDIR} ${DOCSDIR}/${d}
-	cd ${REFERENCE_SRC}/${d}/html && \
-	${FIND} * -type d ! -empty -exec ${MKDIR} "${DOCSDIR}/${d}/{}" \; && \
-	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/${d}/{}" \;
+	if [ -d ${REFERENCE_SRC}/${d}/html ]; then \
+		${MKDIR} ${DOCSDIR}/${d}; \
+		cd ${REFERENCE_SRC}/${d}/html && \
+		${FIND} * -type d ! -empty -exec ${MKDIR} "${DOCSDIR}/${d}/{}" \; && \
+		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/${d}/{}" \; ; \
+	fi
 .    endfor
 .  endif
 .endif
