@@ -34,7 +34,5 @@
 %%FONTSDIR%%/verdanai.ttf
 %%FONTSDIR%%/verdanaz.ttf
 %%FONTSDIR%%/webdings.ttf
-%%DOCSDIR%%/LICENSE
-@dirrm %%DOCSDIR%%
 @dirrm %%FONTSDIR%%
 @exec %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
