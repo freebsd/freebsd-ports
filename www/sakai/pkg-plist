@@ -1095,8 +1095,6 @@ tomcat5.5/webapps/savecite.war
 tomcat5.5/webapps/tool.war
 tomcat5.5/webapps/web.war
 tomcat5.5/webapps/xsl-portal.war
-@dirrm tomcat5.5/shared/lib
-@dirrm tomcat5.5/shared
 @dirrm tomcat5.5/licenses
 @dirrm tomcat5.5/components/sakai-web-pack/WEB-INF/lib
 @dirrm tomcat5.5/components/sakai-web-pack/WEB-INF

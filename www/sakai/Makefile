@@ -7,6 +7,7 @@
 
 PORTNAME=	sakai
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://source.sakaiproject.org/release/2.5.0/sakai-2-5-0/
 DISTNAME=	${PORTNAME}-bin-2-5-0
@@ -30,8 +31,8 @@ TOMCAT_DIR=	${PREFIX}/tomcat5.5
 LIC_DOC=	ECLv1.txt
 
 do-install:
-	cd ${WRKSRC}/webapps && ${FIND} . -type d -exec ${INSTALL} -d \
-		-g ${TOMCATGRP} -o ${TOMCATOWN} -m 755 ${WEBAPPDIR}/{} \;
+#	cd ${WRKSRC}/webapps && ${FIND} . -type d -exec ${INSTALL} -d \
+#		-g ${TOMCATGRP} -o ${TOMCATOWN} -m 755 ${WEBAPPDIR}/{} \;
 	cd ${WRKSRC}/webapps && ${FIND} . -type f -exec ${INSTALL} -g \
 		${TOMCATGRP} -o ${TOMCATOWN} -m 444 {} ${WEBAPPDIR}/{} \;
 
