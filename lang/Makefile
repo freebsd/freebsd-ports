@@ -164,6 +164,7 @@
     SUBDIR += munger
     SUBDIR += nawk
     SUBDIR += nbc
+    SUBDIR += nbfc
     SUBDIR += neko
     SUBDIR += nesasm
     SUBDIR += newlisp
