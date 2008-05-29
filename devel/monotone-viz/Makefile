@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://oandrieu.nerim.net/monotone-viz/
 
-MAINTAINER=	master@preved.cn
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual interface for Monotone VCS with revision graphs
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
