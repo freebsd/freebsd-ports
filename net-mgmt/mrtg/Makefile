@@ -7,6 +7,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.16.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -29,11 +30,11 @@ MRTG_USER?=	mrtg
 MRTG_GROUP?=	mrtg
 MRTG_UID?=	279
 MRTG_GID?=	279
-MRTG_RUNDIR?=   /var/run/mrtg
+MRTG_RUNDIR?=	/var/run/mrtg
 
 USE_RC_SUBR=	mrtg_daemon.sh
 SUB_FILES=	pkg-install pkg-message
-SUB_LIST=	ETCDIR=${ETCDIR} \
+SUB_LIST=	PERL=${PERL} \
 		MRTG_USER=${MRTG_USER} \
 		MRTG_GROUP=${MRTG_GROUP} \
 		MRTG_UID=${MRTG_UID} \
