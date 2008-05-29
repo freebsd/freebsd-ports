@@ -13,6 +13,7 @@ MASTER_SITES=	http://dri.freedesktop.org/libdrm/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
