@@ -1,6 +1,6 @@
---- com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java.orig	Sat Feb  3 18:34:39 2007
-+++ com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java	Sat Feb  3 18:37:03 2007
-@@ -55,7 +55,7 @@
+--- com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java.orig	2007-03-01 23:39:40.000000000 -0500
++++ com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java	2008-05-29 13:45:17.000000000 -0400
+@@ -57,7 +57,7 @@
  	public boolean 
  	hasBufferedRead() 
  	{

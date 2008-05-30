@@ -1,6 +1,6 @@
---- org/gudy/azureus2/platform/unix/ScriptBeforeStartup.java.orig	2007-10-13 16:57:39.000000000 -0400
-+++ org/gudy/azureus2/platform/unix/ScriptBeforeStartup.java	2007-10-13 16:58:03.000000000 -0400
-@@ -136,6 +136,7 @@
+--- org/gudy/azureus2/platform/unix/ScriptBeforeStartup.java.orig	2007-12-06 16:43:38.000000000 +0100
++++ org/gudy/azureus2/platform/unix/ScriptBeforeStartup.java	2008-05-30 16:21:32.000000000 +0200
+@@ -139,6 +139,7 @@
  						return false;
  					}
  				});

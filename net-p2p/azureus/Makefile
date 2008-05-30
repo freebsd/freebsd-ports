@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	azureus
-PORTVERSION=	3.0.5.0
+PORTVERSION=	3.0.5.2
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
 DISTNAME=	Azureus_${PORTVERSION}_source
@@ -72,7 +72,8 @@ RUN_DEPENDS+=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
 # Use at your own risk, I've just had it around and decided to share.
 .if defined(WITH_EXTRAHACK)
 EXTRA_PATCHES+=	\
-	${PATCHDIR}/extra-patch-com__aelitis__azureus__core__networkmanager__impl__TransportHelperFilterStream.java
+	${PATCHDIR}/extra-patch-com__aelitis__azureus__core__networkmanager__impl__TransportHelperFilterStream.java \
+	${PATCHDIR}/extra-patch-com__aelitis__azureus__core__networkmanager__impl__TransportHelperFilterTransparent.java
 .endif
 
 CLASSPATH=.
