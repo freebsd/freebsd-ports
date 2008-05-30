@@ -1,20 +1,11 @@
---- org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java.orig	Sun Sep 24 16:18:49 2006
-+++ org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java	Sun Sep 24 16:19:07 2006
+--- org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java.orig	2007-03-07 16:49:08.000000000 +0100
++++ org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java	2008-05-30 16:19:10.000000000 +0200
 @@ -19,7 +19,7 @@
   */
  package org.gudy.azureus2.platform.macosx.access.jnilib;
  
 -import org.eclipse.swt.internal.carbon.AEDesc;
-+// import org.eclipse.swt.internal.carbon.AEDesc;
++//import org.eclipse.swt.internal.carbon.AEDesc;
  
- import org.gudy.azureus2.core3.util.Debug;
+ import org.gudy.azureus2.core3.util.*;
  
-@@ -42,7 +42,7 @@
- 		}
- 	}
- 
--	public static final native int AEGetParamDesc(int theAppleEvent, int theAEKeyword, int desiredType, AEDesc result);
-+//	public static final native int AEGetParamDesc(int theAppleEvent, int theAEKeyword, int desiredType, AEDesc result);
- 
- 	public static final native String getVersion();
- 	
