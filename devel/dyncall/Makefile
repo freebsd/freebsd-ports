@@ -21,6 +21,12 @@ MAKEFILE=		${WRKSRC}/BSDmakefile
 # There is no install target in the BSD makefile of version 0.2 of the dyncall library, so
 # install it manually.
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install
+.endif
+
 do-install:
 	${CP} ${WRKSRC}/dyncall/dyncall.h           ${PREFIX}/include/dyncall.h
 	${CP} ${WRKSRC}/dyncall/dyncall_callf.h     ${PREFIX}/include/dyncall_callf.h
@@ -36,4 +42,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${f3} ${MAN3PREFIX}/man/man3
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
