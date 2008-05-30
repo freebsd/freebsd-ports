@@ -1,12 +1,12 @@
---- configure.orig	2008-03-26 17:49:33.000000000 +0800
-+++ configure	2008-03-30 13:32:41.000000000 +0800
-@@ -255,6 +255,9 @@
-       DL_LIB=''
-       CRYPT_LIB=''
-       MODULES="all.so new.so"
-+      CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
-+      LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-+      ROOT_GROUP="wheel"
-     ;;
-   esac
- }
+--- configure.orig	2008-05-24 08:37:25.515872840 +0200
++++ configure	2008-05-24 08:38:44.943843155 +0200
+@@ -220,7 +220,8 @@
+   MODULEDIR="\$(LIBDIR)/vlock/modules"
+ 
+   CC=gcc
+-  DEFAULT_CFLAGS="-O2 -Wall -W -pedantic -std=gnu99"
++  #DEFAULT_CFLAGS="-O2 -Wall -W -pedantic -std=gnu99"
++  DEFAULT_CFLAGS="-pedantic -std=gnu99"
+   DEBUG_CFLAGS="-O0 -g -Wall -W -pedantic -std=gnu99"
+   CFLAGS="${DEFAULT_CFLAGS}"
+   LD=ld
