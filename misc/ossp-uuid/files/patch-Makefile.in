@@ -1,15 +1,15 @@
---- Makefile.in.orig	Mon Jul 31 15:20:03 2006
-+++ Makefile.in	Wed Aug  2 17:55:11 2006
-@@ -61,7 +61,7 @@
+--- Makefile.in.orig	2008-02-21 09:56:57.000000000 +0200
++++ Makefile.in	2008-05-30 13:28:33.000000000 +0300
+@@ -62,7 +62,7 @@
  PHP         = @PHP@
  PG_CONFIG   = @PG_CONFIG@
  
 -LIB_NAME    = libuuid.la
 +LIB_NAME    = libuuid.a
- LIB_OBJS    = uuid.lo uuid_md5.lo uuid_sha1.lo uuid_prng.lo uuid_mac.lo uuid_ui64.lo uuid_ui128.lo uuid_str.lo
+ LIB_OBJS    = uuid.lo uuid_md5.lo uuid_sha1.lo uuid_prng.lo uuid_mac.lo uuid_time.lo uuid_ui64.lo uuid_ui128.lo uuid_str.lo
  
  DCE_NAME    = libuuid_dce.la
-@@ -225,12 +225,12 @@
+@@ -226,12 +226,12 @@
  	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(prefix)
  	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(bindir)
  	$(SHTOOL) mkdir -f -p -m 755 $(DESTDIR)$(includedir)
