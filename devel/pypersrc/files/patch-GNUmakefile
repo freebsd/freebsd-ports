@@ -26,21 +26,3 @@
  ifeq ($(PROFILE),1)
  CC_FLAGS		+= -pg -O0
  LD_FLAGS		+= -pg -O0
-@@ -111,13 +105,14 @@
- 	$(LD) -o $@ $(LD_FLAGS) $(CC_OBJS) $(LD_LIB_FLAGS) $(LIBS)
- 
- $(OUT_DIR)/%.o:  $(CC_SRC_DIR)/%.cc  $(HH_SRCS)
--	$(CC) -c -o $@ $(CC_FLAGS) $(subst $(OUT_DIR)/,$(CC_SRC_DIR)/,$<)
-+	$(CXX) -c -o $@ $(CC_FLAGS) $(subst $(OUT_DIR)/,$(CC_SRC_DIR)/,$<)
- 
- $(CTAGS_LIB): $(CTAGS_SRC_DIR)/config.status $(CTAGS_SRCS)
--	make -C $(CTAGS_SRC_DIR) $(MAKECMDGOALS)
-+	$(MAKE) -C $(CTAGS_SRC_DIR) $(MAKECMDGOALS)
- 
- $(CTAGS_SRC_DIR)/config.status:
--	cd $(CTAGS_SRC_DIR) && ./configure
-+	cd $(CTAGS_SRC_DIR) && CC="$(CC)" CXX="$(CXX)" CFLAGS="$(CFLAGS)" \
-+		CPPFLAGS="$(CPPFLAGS)" LDFLAGS="$(LDFLAGS)" ./configure
- 
- define CAT_PYTHON
- 	$(PYTHON) $(TOOLS_DIR)/check.py -tabs $^
