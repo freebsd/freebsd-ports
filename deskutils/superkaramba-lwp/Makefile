@@ -5,13 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=		lwp
-PORTVERSION=		14.8
-PORTREVISION=		1
+PORTVERSION=		15.0
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.message.co.nz/~matt-sarah/ \
-			http://www.uber1337.nl/~liquidweather/ \
-			http://liquidweather.net/ \
-			http://liquidweather.innetrex.net/
+			http://liquidweather.net/
 PKGNAMEPREFIX=		superkaramba-
 EXTRACT_SUFX=		.skz
 
@@ -42,7 +39,7 @@ PLIST_SUB=		LWPVER=${DISTFILES}
 post-extract:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
 		test_gui.py
-	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|14.7|14.8|' maindata.xml
+	@cd ${WRKSRC} && ${RM} *~ splash/digikam3.db
 
 pre-install:
 	@cd ${WRKSRC} && zip -qr ${DISTFILES} *
