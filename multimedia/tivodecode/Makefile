@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tivodecode
-DISTVERSION=	0.1.4
+DISTVERSION=	0.2pre4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -14,12 +14,9 @@ MAINTAINER=	mhsin@mhsin.org
 COMMENT=	Converts .TiVo files to normal MPEG files
 
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
-post-patch:
-	${REINPLACE_CMD} -e 's/CFLAGS=/CFLAGS+=/' ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/objects.dir/tivodecode ${PREFIX}/bin
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
