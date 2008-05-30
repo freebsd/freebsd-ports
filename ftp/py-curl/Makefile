@@ -1,19 +1,19 @@
 # New ports collection makefile for:	py-curl
 # Date created:				2 July 2001
-# Whom:					Hye-Shik Chang <perky@python.or.kr>
+# Whom:					Hye-Shik Chang
 #
 # $FreeBSD$
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.16.1
+PORTVERSION=	7.16.4
 CATEGORIES=	ftp python
 MASTER_SITES=	http://pycurl.sourceforge.net/download/ \
 		http://pycurl.sourceforge.net/download/00-OLD-VERSIONS/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to libcurl
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
