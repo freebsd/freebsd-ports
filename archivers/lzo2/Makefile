@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lzo2
-PORTVERSION=	2.02
-PORTREVISION=	1
+PORTVERSION=	2.03
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/ \
@@ -19,10 +18,13 @@ MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Portable speedy, lossless data compression library
 
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
+
+post-build:
+	cd ${WRKSRC} && ${MAKE} test
 
 post-install:
 .if !defined(NOPORTDOCS)
