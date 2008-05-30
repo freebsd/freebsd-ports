@@ -11389,6 +11389,7 @@ p5-Sledge-SessionManager-CookieStore	ports/www/p5-Sledge-SessionManager-CookieSt
 p5-Sledge-Template-Expr	ports/www/p5-Sledge-Template-Expr
 p5-Smart-Comments	ports/devel/p5-Smart-Comments
 p5-Snort-Rule	ports/security/p5-Snort-Rule
+p5-Socket	ports/net/p5-Socket
 p5-Socket-Multicast6	ports/net/p5-Socket-Multicast6
 p5-Socket6	ports/net/p5-Socket6
 p5-Socks	ports/net/p5-Socks
