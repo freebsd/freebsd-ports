@@ -6,29 +6,27 @@
 #
 
 PORTNAME=	gnocl
-PORTVERSION=	0.9.90
+PORTVERSION=	0.9.91
 PORTREVISION=	3
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF/gnocl
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GTK+ and Gnome extension for Tcl
-
-BUILD_DEPENDS=	${LOCALBASE}/include/tcl8.4/tcl.h:${PORTSDIR}/lang/tcl84
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_GNOME=	gtk20
+USE_TCL=	84
 USE_LDCONFIG=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/src
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 
-USE_GNOME=	gtk20
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on sparc64 or ia64"
+BROKEN=		Does not compile on sparc64 or ia64
 .endif
 
 .if ${ARCH} == amd64
@@ -82,6 +80,13 @@ post-patch:
 .if defined(WITHOUT_GNOMEVFS2)
 	${REINPLACE_CMD} -e 's=^USE_VFS=#USE_VFS=' ${BUILD_WRKSRC}/Makefile
 .endif
+	${FIND} ${WRKSRC}/demos -name "*.tcl" | ${XARGS} \
+		${REINPLACE_CMD} -i "" -e 's|tclsh|${TCLSH}|g; \
+		s|package require Gnocl|load ${PREFIX}/lib/libgnocl.so.1; package require Gnocl|g; \
+		s|package require GnoclCanvas|load ${PREFIX}/lib/libgnoclCanvas.so.1; package require GnoclCanvas|g; \
+		s|package require GnoclGconf|load ${PREFIX}/lib/libgnoclGconf.so.1; package require GnoclGconf|g; \
+		s|package require GnoclGnome|load ${PREFIX}/lib/libgnoclGnome.so.1; package require GnoclGnome|g; \
+		s|package require GnoclVFS|load ${PREFIX}/lib/libgnoclVFS.so.1; package require GnoclVFS|g'
 
 do-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/gnocl.so ${PREFIX}/lib/libgnocl.so.1
@@ -97,5 +102,15 @@ do-install:
 	if ${TEST} -f ${BUILD_WRKSRC}/gnoclVFS.so; then \
 		${INSTALL_DATA} ${BUILD_WRKSRC}/gnoclVFS.so ${PREFIX}/lib/libgnoclVFS.so.1; \
 	fi; \
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d ${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${INSTALL} -d ${EXAMPLESDIR}
+	(cd ${WRKSRC}/demos && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+.endif
 
 .include <bsd.port.post.mk>
