@@ -420,7 +420,6 @@ aolserver-nssha1	ports/security/aolserver-nssha1
 aolserver-nszlib	ports/archivers/aolserver-nszlib
 aolserver-xotcl	ports/www/aolserver-xotcl
 aop		ports/games/aop
-ap-utils	ports/net-mgmt/ap-utils
 apache-ant	ports/devel/apache-ant
 apache-contrib	ports/www/apache-contrib
 apache-forrest	ports/www/apache-forrest
@@ -886,7 +885,6 @@ binkd		ports/net/binkd
 bins		ports/www/bins
 binup		ports/sysutils/binup
 bioapi		ports/security/bioapi
-bioapitool	ports/security/bioapitool
 biococoa	ports/biology/biococoa
 biojava		ports/biology/biojava
 biology-blast	ports/biology/blast
@@ -1907,7 +1905,6 @@ dcetest		ports/security/dcetest
 dcfldd		ports/sysutils/dcfldd
 dcl		ports/science/dcl
 dclib		ports/net-p2p/dclib
-dclibc		ports/net-p2p/dclibc
 dclock		ports/x11-clocks/dclock
 dcraw		ports/graphics/dcraw
 dctc		ports/net-p2p/dctc
@@ -12323,7 +12320,6 @@ pear-HTTP_FloodControl	ports/www/pear-HTTP_FloodControl
 pear-HTTP_Header	ports/www/pear-HTTP_Header
 pear-HTTP_Request	ports/www/pear-HTTP_Request
 pear-HTTP_Server	ports/www/pear-HTTP_Server
-pear-HTTP_Session	ports/www/pear-HTTP_Session
 pear-HTTP_Session2	ports/www/pear-HTTP_Session2
 pear-HTTP_Upload	ports/www/pear-HTTP_Upload
 pear-I18N	ports/devel/pear-I18N
@@ -17757,7 +17753,6 @@ xfce4-wm-themes	ports/misc/xfce4-wm-themes
 xfce4-wmdock-plugin	ports/x11/xfce4-wmdock-plugin
 xfce4-xfapplet-plugin	ports/x11/xfce4-xfapplet-plugin
 xfce4-xkb-plugin	ports/deskutils/xfce4-xkb-plugin
-xfce4-xmms-controller-plugin	ports/multimedia/xfce4-xmms-controller-plugin
 xfce4-xmms-plugin	ports/multimedia/xfce4-xmms-plugin
 xfd		ports/x11/xfd
 xfe		ports/x11-fm/xfe

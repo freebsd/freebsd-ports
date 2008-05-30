@@ -39,7 +39,6 @@
     SUBDIR += beecrypt
     SUBDIR += bfbtester
     SUBDIR += bioapi
-    SUBDIR += bioapitool
     SUBDIR += bjorb
     SUBDIR += blocksshd
     SUBDIR += borzoi

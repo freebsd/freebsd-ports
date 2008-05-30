@@ -3483,3 +3483,8 @@ japanese/truetypefonts||2008-05-25|Removed due to copyright problem
 japanese/kochi-cidfonts||2008-05-25|Removed due to copyright problem
 japanese/latex-japanese|japanese/platex-japanese|2008-05-26|Works only with platex
 ports-mgmt/newportsversioncheck||2008-05-27|Obsoleted by portscout
+net-p2p/dclibc||2008-05-30|Has expired: Abandoned, not used, website disappeared
+net-mgmt/ap-utils||2008-05-30|Has expired: Does not work with gcc4.2; appears to be abandoned
+multimedia/xfce4-xmms-controller-plugin||2008-05-30|Has expired: Project is dead
+www/pear-HTTP_Session||2008-05-30|Has expired: Use www/pear-HTTP_Session2 instead
+security/bioapitool||2008-05-30|Has expired: All functionallity of this tools has been merged with pam_bsdbioapi
