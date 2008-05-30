@@ -478,8 +478,10 @@ include/brlcad/dm_xvars.h
 include/brlcad/fb.h
 include/brlcad/fbio.h
 include/brlcad/fbserv_obj.h
+include/brlcad/ged.h
 include/brlcad/libtermio.h
 include/brlcad/light.h
+include/brlcad/magic.h
 include/brlcad/mater.h
 include/brlcad/missing.h
 include/brlcad/nmg.h
@@ -493,7 +495,6 @@ include/brlcad/plastic.h
 include/brlcad/plot3.h
 include/brlcad/raytrace.h
 include/brlcad/redblack.h
-include/brlcad/regex.h
 include/brlcad/rtgeom.h
 include/brlcad/rtprivate.h
 include/brlcad/rtserver.h
@@ -510,7 +511,6 @@ include/brlcad/vector_x86.h
 include/brlcad/vfont-if.h
 include/brlcad/vmath.h
 include/brlcad/wdb.h
-include/debug.h
 include/fixpt.h
 include/itcl.h
 include/itclDecls.h
@@ -609,7 +609,6 @@ include/openNURBS/opennurbs_workspace.h
 include/openNURBS/opennurbs_x.h
 include/openNURBS/opennurbs_xform.h
 include/openNURBS/opennurbs_zlib.h
-include/qray.h
 include/rb_internals.h
 include/tie/adrt.h
 include/tie/adrt_struct.h
@@ -652,6 +651,7 @@ include/tie/tienet_master.h
 include/tie/tienet_slave.h
 include/tie/tienet_util.h
 include/tie/umath.h
+include/uce-dirent.h
 lib/blt2.4/ZoomStack.itcl
 lib/blt2.4/dd_protocols/dd-color.tcl
 lib/blt2.4/dd_protocols/dd-file.tcl
@@ -772,6 +772,10 @@ lib/libfft.a
 lib/libfft.la
 lib/libfft.so
 lib/libfft.so.19
+lib/libged.a
+lib/libged.la
+lib/libged.so
+lib/libged.so.19
 lib/libitcl.a
 lib/libitcl.la
 lib/libitcl.so
@@ -964,6 +968,22 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/doc/rounding.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/sun.txt
 %%DATADIR%%/%%PORTVERSION%%/doc/tube.txt
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/README
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/lollipop.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed.xml
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0001.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0002.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0003.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0004.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0005.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0006.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0007.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0008.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0009.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0010.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0011.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_0012.png
+%%DATADIR%%/%%PORTVERSION%%/docbook/oed/oed_examples.asc
 %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes/Rel5.0/Summary/activem.gif
 %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes/Rel5.0/Summary/activep.gif
 %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes/Rel5.0/Summary/collapse.gif
@@ -1253,6 +1273,11 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/tex-html.tcl
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/shaders/camo.html
 %%DATADIR%%/%%PORTVERSION%%/html/manuals/small-eagleCAD.gif
+%%DATADIR%%/%%PORTVERSION%%/nirt/csv-gap.nrt
+%%DATADIR%%/%%PORTVERSION%%/nirt/csv.nrt
+%%DATADIR%%/%%PORTVERSION%%/nirt/default.nrt
+%%DATADIR%%/%%PORTVERSION%%/nirt/gap1.nrt
+%%DATADIR%%/%%PORTVERSION%%/nirt/gap2.nrt
 %%DATADIR%%/%%PORTVERSION%%/pix/bldg391.log
 %%DATADIR%%/%%PORTVERSION%%/pix/bldg391.pix
 %%DATADIR%%/%%PORTVERSION%%/pix/m35.log
@@ -1797,6 +1822,7 @@ libdata/pkgconfig/wdb.pc
 @dirrm %%DATADIR%%/%%PORTVERSION%%/plugins/archer
 @dirrm %%DATADIR%%/%%PORTVERSION%%/plugins
 @dirrm %%DATADIR%%/%%PORTVERSION%%/pix
+@dirrm %%DATADIR%%/%%PORTVERSION%%/nirt
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/shaders
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged/animmate
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/manuals/mged
@@ -1812,6 +1838,8 @@ libdata/pkgconfig/wdb.pc
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes/Rel5.0
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html/ReleaseNotes
 @dirrm %%DATADIR%%/%%PORTVERSION%%/html
+@dirrm %%DATADIR%%/%%PORTVERSION%%/docbook/oed
+@dirrm %%DATADIR%%/%%PORTVERSION%%/docbook
 @dirrm %%DATADIR%%/%%PORTVERSION%%/doc/legal
 @dirrm %%DATADIR%%/%%PORTVERSION%%/doc/book
 @dirrm %%DATADIR%%/%%PORTVERSION%%/doc
