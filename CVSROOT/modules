@@ -4756,6 +4756,7 @@ himenobench	ports/benchmarks/himenobench
 hinfo		ports/net/hinfo
 hinventory-client	ports/www/hinventory-client
 hinversi	ports/games/hinversi
+hippo-canvas	ports/x11-toolkits/hippo-canvas
 histring	ports/misc/histring
 hk_classes	ports/databases/hk_classes
 hlextract	ports/archivers/hlextract
