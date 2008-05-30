@@ -1,0 +1,14 @@
+%%PYTHON_SITELIBDIR%%/extended_threading/__init__.py
+%%PYTHON_SITELIBDIR%%/extended_threading/slock.py
+%%PYTHON_SITELIBDIR%%/extended_threading/slock.pyc
+%%PYTHON_SITELIBDIR%%/extended_threading/srlock.py
+%%PYTHON_SITELIBDIR%%/extended_threading/srlock.pyc
+%%PYTHON_SITELIBDIR%%/extended_threading/lockholder.py
+%%PYTHON_SITELIBDIR%%/extended_threading/lockholder.pyc
+%%PYTHON_SITELIBDIR%%/extended_threading/inheritable.py
+%%PYTHON_SITELIBDIR%%/extended_threading/inheritable.pyc
+%%PYTHON_SITELIBDIR%%/extended_threading/rwlock.py
+%%PYTHON_SITELIBDIR%%/extended_threading/rwlock.pyc
+%%PYTHON_SITELIBDIR%%/extended_threading/rwrlock.py
+%%PYTHON_SITELIBDIR%%/extended_threading/rwrlock.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/extended_threading/

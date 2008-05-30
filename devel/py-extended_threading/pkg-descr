@@ -1,0 +1,6 @@
+This port provides extra threading options including:
+
+* Subclassable thread-related classes (such as locks)
+* Read/Write locks
+
+WWW: http://www.var-dev.net

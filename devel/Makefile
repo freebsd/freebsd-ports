@@ -2020,6 +2020,7 @@
     SUBDIR += py-elementtree
     SUBDIR += py-epsilon
     SUBDIR += py-event
+    SUBDIR += py-extended_threading
     SUBDIR += py-extremes
     SUBDIR += py-ez_xml
     SUBDIR += py-ezpyinline
