@@ -7,6 +7,7 @@
 
 PORTNAME=	fmsx
 PORTVERSION=	3.5.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ahttp://www.mavetju.org/download/adopted/:code \
 		http://fms.komkon.org/fMSX/:code \
@@ -24,7 +25,7 @@ COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
 USE_XORG=	xi x11
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_DOS2UNIX=	EMULib/NetUnix.c
+USE_DOS2UNIX=	EMULib/NetUnix.c EMULib/Rules.Unix
 RESTRICTED=	Legal status of distributed ROM images unclear
 WRKSRC=		${WRKDIR}
 
@@ -37,7 +38,8 @@ OPTIONS=	BPP8 "With BPP8" Off \
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
-		${WRKSRC}/fMSX/Unix/Makefile
+		${WRKSRC}/fMSX/Unix/Makefile \
+		${WRKSRC}/EMULib/Rules.Unix
 
 #post-patch:
 .ifdef(WITH_BPP32) || defined(PACKAGE_BUILDING) || defined(BATCH)
