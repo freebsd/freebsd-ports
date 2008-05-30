@@ -1,5 +1,5 @@
---- admin/cvs.sh.orig	Sat Sep 29 17:52:39 2007
-+++ admin/cvs.sh	Mon Oct  1 03:23:11 2007
+--- admin/cvs.sh.orig	2008-01-08 01:30:21.000000000 +0900
++++ admin/cvs.sh	2008-05-26 21:47:50.000000000 +0900
 @@ -29,66 +29,9 @@
  
  check_autotool_versions()
@@ -43,7 +43,7 @@
 -    echo "*** KDE requires automake $required_automake_version"
 -    exit 1
 -    ;;
--  automake*1.6.* | automake*1.7* | automake*1.8* | automake*1.9*)
+-  automake*1.6.* | automake*1.7* | automake*1.8* | automake*1.9* | automake*1.10*)
 -    echo "*** $AUTOMAKE_STRING found."
 -    UNSERMAKE=no
 -    ;;
