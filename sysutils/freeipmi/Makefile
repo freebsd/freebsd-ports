@@ -7,10 +7,15 @@
 # Available KNOBs:
 #
 # WITH_DEBUG   - Enable debugging features.
+# WITH_IOPERM  - Use i386_set_ioperm(2) instead of io(4) to gain access
+#                to I/O ports (i386 only). Note: there is a bug in
+#                FreeBSD 5 before 5.5-RELEASE that causes SIGBUS to the
+#                process sometimes when i386_set_ioperm is used (PR
+#                84842).
 #
 
 PORTNAME=	freeipmi
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/ \
 	ftp://ftp.riss-telecom.ru/pub/mirrors/ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
@@ -67,12 +72,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 BROKEN=	missing getpw*_r functions in this FreeBSD release
 .endif
 
-# Use i386_set_ioperm(2) instead of io(4) to gain access to I/O
-# ports. Note: there is a bug in FreeBSD 5 before 5.5-RELEASE that
-# causes SIGBUS to the process sometimes when i386_set_ioperm is used
-# (PR 84842).
-.if ${ARCH} == "i386" && defined(WITH_IOPERM)
+.if defined(WITH_IOPERM)
+.if ${ARCH} == "i386"
 CPPFLAGS+=	-DUSE_IOPERM
+.else
+BROKEN=	IOPERM option is only available on i386 and You are building for ${ARCH}
+.endif
 .endif
 
 .if defined(WITH_DEBUG)
