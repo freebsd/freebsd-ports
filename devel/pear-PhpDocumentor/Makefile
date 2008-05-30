@@ -1255,7 +1255,7 @@ RUN_DEPENDS+=	${PEARDIR}/XML/Beautifier.php:${PORTSDIR}/textproc/pear-XML_Beauti
 
 post-patch:
 .for file in ${SUBFILES}
-	@${REINPLACE_CMD} -e 's|VER|${PORTVERSION}|g ; \
+	@${REINPLACE_CMD} -e 's|@VER@|${PORTVERSION}|g ; \
 		 s|@PEAR-DIR@|${PEARDIR}|g ; \
 		 s|@DATA-DIR@|${DATADIR:S,/${PORTNAME}$,,}|g ; \
 		 s|@WEB-DIR@|${DATADIR:S,/${PORTNAME}$,,}|g ; \
