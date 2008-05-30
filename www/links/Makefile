@@ -7,7 +7,7 @@
 
 PORTNAME=	links
 DISTVERSION=	2.1pre36
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--without-svgalib
 .endif
 
 .ifdef(WITH_DIRECTFB)
-LIB_DEPENDS+=		libdirectfb:${PORTSDIR}/devel/directfb
+LIB_DEPENDS+=		directfb-1.1.1:${PORTSDIR}/devel/directfb
 CONFIGURE_ARGS+=	--with-directfb
 .else
 CONFIGURE_ARGS+=	--without-directfb

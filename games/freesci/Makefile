@@ -7,7 +7,7 @@
 
 PORTNAME=	freesci
 PORTVERSION=	0.3.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games emulators
 MASTER_SITES=	http://www-plan.cs.colorado.edu/creichen/${PORTNAME}/ \
 		http://teksolv.de/~jameson/
@@ -45,7 +45,7 @@ CFLAGS+=	-ffast-math
 .if ${HAVE_SDL:Msdl}!=""
 WITH_SDL=	yes
 .endif
-.if exists(${LOCALBASE}/lib/libdirectfb-0.9.so.16)
+.if exists(${LOCALBASE}/lib/libdirectfb-1.1.so.1)
 WITH_DIRECTFB=	yes
 .endif
 .if exists(${LOCALBASE}/lib/libggi.so.2)
@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=	--without-sdl
 .endif
 
 .if defined(WITH_DIRECTFB) && !defined(WITHOUT_DIRECTFB)
-LIB_DEPENDS+=	directfb-0.9.16:${PORTSDIR}/devel/directfb
+LIB_DEPENDS+=	directfb-1.1.1:${PORTSDIR}/devel/directfb
 CONFIGURE_ARGS+=	--with-directfb-include=${LOCALBASE}/include/directfb \
 			--with-directfb-libraries=${LOCALBASE}/lib
 .else
