@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ply
-PORTVERSION=	2.3
+PORTVERSION=	2.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.dabeaz.com/ply/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,11 +18,13 @@ COMMENT=	Python Lex-Yacc
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/ply.html ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/example/ ${EXAMPLESDIR}
 .endif
