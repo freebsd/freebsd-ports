@@ -1,17 +1,17 @@
 bin/chmsee
 share/applications/chmsee.desktop
-share/chmsee/chmsee-splash.png
-share/chmsee/chmsee.glade
-share/chmsee/chmsee-icon.png
-share/chmsee/book-open.png
-share/chmsee/book-closed.png
-share/chmsee/default-prefs.js
-share/chmsee/helpdoc.png
-share/chmsee/hide-pane.png
-share/chmsee/show-pane.png
+%%DATADIR%%/book-closed.png
+%%DATADIR%%/book-open.png
+%%DATADIR%%/chmsee-icon.png
+%%DATADIR%%/chmsee-splash.png
+%%DATADIR%%/chmsee.glade
+%%DATADIR%%/default-prefs.js
+%%DATADIR%%/helpdoc.png
+%%DATADIR%%/hide-pane.png
+%%DATADIR%%/show-pane.png
+share/locale/zh_CN/LC_MESSAGES/chmsee.mo
 share/mime-info/chmsee.keys
 share/mime-info/chmsee.mime
 share/pixmaps/chmsee-icon.png
-share/locale/zh_CN/LC_MESSAGES/chmsee.mo
-@dirrm share/chmsee
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
