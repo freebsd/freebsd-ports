@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="04c6187d-2d8f-11dd-98c9-00163e000016">
+    <topic>linux-flashplugin -- unspecified remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><ge>9.0r115</ge><lt>9.0r124</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://blogs.adobe.com/psirt/">
+	  <p>An exploit appears to be taking advantage of a known
+	    vulnerability, reported by Mark Dowd of the ISS X-Force and wushi
+	    of team509, that was resolved in Flash Player 9.0.124.0
+	    (CVE-2007-0071). This exploit does NOT appear to include a new,
+	    unpatched vulnerability as has been reported elsewhere - customers
+	    with Flash Player 9.0.124.0 should not be vulnerable to this
+	    exploit.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>29386</bid>
+      <cvename>CVE-2007-0071</cvename>
+      <url>http://blogs.adobe.com/psirt/</url>
+    </references>
+    <dates>
+      <discovery>2008-05-27</discovery>
+      <entry>2008-05-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fbd7aa81-2cc1-11dd-8cfb-00e0815b8da8">
     <topic>Nagios -- Cross Site Scripting Vulnerability</topic>
     <affects>
