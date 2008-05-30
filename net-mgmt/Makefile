@@ -11,7 +11,6 @@
     SUBDIR += airport
     SUBDIR += angst
     SUBDIR += annextools
-    SUBDIR += ap-utils
     SUBDIR += argus
     SUBDIR += argus-clients
     SUBDIR += argus-monitor

@@ -251,7 +251,6 @@
     SUBDIR += xawtv
     SUBDIR += xdvshow
     SUBDIR += xfce4-media
-    SUBDIR += xfce4-xmms-controller-plugin
     SUBDIR += xfce4-xmms-plugin
     SUBDIR += xfmedia-remote-plugin
     SUBDIR += xine
