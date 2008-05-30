@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vlock
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	security
 MASTER_SITES=	http://cthulhu.c3d2.de/~toidinamai/vlock/archive/
 
@@ -21,10 +21,12 @@ CONFIGURE_ARGS=	--enable-plugins --enable-pam \
 		--with-modules="${VLOCKMODULES}" \
 		--with-scripts="${VLOCKSCRIPTS}" \
 		VLOCK_GROUP="${VLOCKGRP}" \
-		VLOCK_MODE="0750"
-CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
+		VLOCK_MODE="0750" \
+		EXTRA_CFLAGS="-I${LOCALBASE}/include" \
+		EXTRA_LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=	VLOCKSCRIPTS "Install sample hook scripts" off \
+OPTIONS=	ROOTPWD "Enable unlock using root password" on \
+		VLOCKSCRIPTS "Install sample hook scripts" off \
 		CACASAVER "Enable libcaca screensaver" off
 
 MANLANG=	""
@@ -41,6 +43,12 @@ VLOCKGRP=	vlock
 VLOCKGID=	129
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_ROOTPWD)
+CONFIGURE_ARGS+=	--enable-root-password
+.else
+CONFIGURE_ARGS+=	--disable-root-password
+.endif
 
 .if !defined(WITHOUT_VLOCKSCRIPTS)
 VLOCKSCRIPTS+=	amarok.sh example_script.sh mplayer.sh
