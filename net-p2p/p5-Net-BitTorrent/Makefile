@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	Net-BitTorrent
-PORTVERSION=	0.015
+PORTVERSION=	0.022
 CATEGORIES=	net-p2p perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITE_SUBDIR=	../../authors/id/S/SA/SANKO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	BitTorrent peer-to-peer protocol class
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA \
 		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
+		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
+		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_ARGS=	</dev/null
 PERL_MODBUILD=	yes
 
 MAN3=		Net::BitTorrent.3 \
-		Net::BitTorrent::FAQ.3 \
-		Net::BitTorrent::PeerID.3 \
 		Net::BitTorrent::Session.3 \
 		Net::BitTorrent::Session::File.3 \
 		Net::BitTorrent::Session::Peer.3 \

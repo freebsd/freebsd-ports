@@ -1,7 +1,5 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/Net/BitTorrent.pm
-%%SITE_PERL%%/Net/BitTorrent/FAQ.pod
-%%SITE_PERL%%/Net/BitTorrent/PeerID.pod
 %%SITE_PERL%%/Net/BitTorrent/Session.pm
 %%SITE_PERL%%/Net/BitTorrent/Session/File.pm
 %%SITE_PERL%%/Net/BitTorrent/Session/Peer.pm
