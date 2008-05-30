@@ -71,7 +71,7 @@ include/qwt/qwt_wheel.h
 lib/libqwt.so
 lib/libqwt.so.5
 lib/libqwt.so.5.1
-lib/libqwt.so.5.1.0
+lib/libqwt.so.5.1.1
 %%DESIGNER_PLUGIN%%lib/qt4/plugins/designer/libqwt_designer_plugin.so
 %%PORTDOCS%%%%DOCSDIR%%/analogclock.png
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
