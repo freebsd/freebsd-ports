@@ -26,8 +26,8 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/agrep ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/agrep.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/agrep
-	@${INSTALL_MAN} ${WRKSRC}/agrep.algorithms ${PREFIX}/share/doc/agrep
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/agrep.algorithms ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
