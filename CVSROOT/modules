@@ -1983,6 +1983,7 @@ denyhosts	ports/security/denyhosts
 deputy		ports/devel/deputy
 deskbar-applet	ports/deskutils/deskbar-applet
 deskmenu	ports/x11/deskmenu
+desktop-data-model	ports/net/desktop-data-model
 desktop-file-utils	ports/devel/desktop-file-utils
 desktopbsd-tools	ports/sysutils/desktopbsd-tools
 desmume		ports/emulators/desmume
