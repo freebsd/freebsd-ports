@@ -636,6 +636,7 @@
     SUBDIR += py-ming
     SUBDIR += py-opengl
     SUBDIR += py-paint
+    SUBDIR += py-poppler
     SUBDIR += py-pydot
     SUBDIR += py-pyproj
     SUBDIR += py-qt4-svg
