@@ -9,7 +9,7 @@ etc/noattach.patterns-dist
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/noattach.patterns
-%%PORTDOCS%%%%EXAMPLESDIR%%/noattach.patterns.johncon
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/noattach.patterns
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/noattach.patterns.johncon
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

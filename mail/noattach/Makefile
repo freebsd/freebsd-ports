@@ -46,10 +46,12 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/noattach.8 ${PREFIX}/man/man8/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${EXAMPLESDIR}
 .for i in ${DOCSFILES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
 .for i in ${SAMPLEFILES}
 	${INSTALL_DATA} ${WRKSRC}/examples/${i} ${EXAMPLESDIR}/
 .endfor

@@ -70,7 +70,7 @@ post-patch:
 		${WRKSRC}/suck_config.h.sed > ${WRKSRC}/suck_config.h
 .endif
 
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 .for i in ${EX_SCRIPTS}

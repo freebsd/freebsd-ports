@@ -8,7 +8,7 @@
 PORTNAME=	ifmail
 PORTVERSION=	2.15
 PORTREVISION=	5
-CATEGORIES=	news
+CATEGORIES=	news comms
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/fido
 
@@ -50,6 +50,8 @@ post-install:
 .for i in ifcico ifgate iflib
 	${INSTALL_DATA} ${WRKSRC}/${i}/README ${DOCSDIR}/README.${i}
 .endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/misc -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
 .endif

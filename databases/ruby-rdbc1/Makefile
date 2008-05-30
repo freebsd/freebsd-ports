@@ -28,9 +28,11 @@ NO_BUILD=	yes
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
+.endif
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 	${CP} -R ${WRKSRC}/doc/en/* ${RUBY_MODDOCDIR}/
 	${CP} -R ${WRKSRC}/doc/ja/* ${RUBY_MODDOCDIR}/ja/

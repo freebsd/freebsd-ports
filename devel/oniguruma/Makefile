@@ -37,12 +37,14 @@ post-configure:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/onig-config ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}/
 	${MKDIR} ${DOCSDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

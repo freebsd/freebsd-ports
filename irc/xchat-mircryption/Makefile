@@ -29,14 +29,10 @@ WRKSRC=		${WRKDIR}/src/xchat/
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
-PLIST_DIRS=	\
-		%%EXAMPLESDIR%%
-PLIST_FILES=	\
-		lib/xchat/plugins/mircryption.so \
-		%%EXAMPLESDIR%%/mcps_masterkey_on_start.pl
+PLIST_FILES=	lib/xchat/plugins/mircryption.so
 
-PORTDOCS=	\
-		README.txt
+PORTDOCS=	README.txt
+PORTEXAMPLES=	mcps_masterkey_on_start.pl
 
 post-patch:
 # \r\n -> \n
@@ -71,9 +67,11 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mircryption.so \
 		${PREFIX}/lib/xchat/plugins
 # script
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_SCRIPT} \
 		${WRKSRC}/extras/mcps_masterkey_on_start.pl \
 		${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>

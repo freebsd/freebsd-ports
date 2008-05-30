@@ -157,61 +157,61 @@ libexec/fidogate/sumcrc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/gatebau
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/aliases
-%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/areas
-%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/bounce.down
-%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/bounce.insecure
-%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/bounce.noto
-%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/bounce.restricted
-%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/fidogate.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/hosts
-%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/packing
-%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/passwd
-%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/routing
-%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/aliases
-%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/areas
-%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/areas.bbs
-%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/fareas.bbs
-%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/fidogate.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/hosts
-%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/packing
-%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/passwd
-%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/routing
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/areas
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/areas.bbs
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/fidogate.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/newsfeeds
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/packing
-%%PORTDOCS%%%%EXAMPLESDIR%%/point/routing
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/aliases
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/areas
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/areas.bbs
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/fareas.bbs
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/fidogate.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/hosts
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/newsfeeds.fidogate
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/packing
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/passwd
-%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/routing
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/README.WIN32
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/aliases
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/areas
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/areas.bbs
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/config.make
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/fareas.bbs
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/fidogate.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/hosts
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/packing
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/passwd
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/routing
-%%PORTDOCS%%%%EXAMPLESDIR%%/win32/test-win32
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/morannon
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/orodruin
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/point
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rpm
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/win32
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/aliases
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/areas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/bounce.down
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/bounce.insecure
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/bounce.noto
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/bounce.restricted
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/fidogate.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/hosts
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/packing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/passwd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morannon/routing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/aliases
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/areas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/areas.bbs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/fareas.bbs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/fidogate.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/hosts
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/packing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/passwd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orodruin/routing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/areas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/areas.bbs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/fidogate.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/newsfeeds
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/packing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/point/routing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/aliases
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/areas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/areas.bbs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/fareas.bbs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/fidogate.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/hosts
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/newsfeeds.fidogate
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/packing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/passwd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpm/routing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/README.WIN32
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/aliases
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/areas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/areas.bbs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/config.make
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/fareas.bbs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/fidogate.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/hosts
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/packing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/passwd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/routing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/win32/test-win32
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/morannon
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/orodruin
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/point
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rpm
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/win32
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
