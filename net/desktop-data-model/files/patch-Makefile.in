@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2008-05-28 02:49:32.000000000 +0530
++++ Makefile.in	2008-05-28 02:49:38.000000000 +0530
+@@ -210,7 +210,7 @@
+ test_static_file_parser_OBJECTS =  \
+ 	$(am_test_static_file_parser_OBJECTS)
+ test_static_file_parser_DEPENDENCIES = libddm-1.la libddm-test.la
+-DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/config
++DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/config -I%%LOCALBASE%%/include
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__depfiles_maybe = depfiles
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \

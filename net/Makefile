@@ -102,6 +102,7 @@
     SUBDIR += dante
     SUBDIR += datapipe
     SUBDIR += delegate
+    SUBDIR += desktop-data-model
     SUBDIR += despoof
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
