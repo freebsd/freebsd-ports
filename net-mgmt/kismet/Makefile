@@ -87,7 +87,7 @@ post-extract:
 		${WRKSRC}/configure
 
 post-install:
-.ifndef(NOPORTDOC)
+.ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
@@ -98,7 +98,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${GMAP}-0.1/mapfiles/wep.png ${DATADIR}/${GMAP}/mapfiles/wep.png
 	${INSTALL_DATA} ${WRKSRC}/${GMAP}-0.1/mapfiles/open.png ${DATADIR}/${GMAP}/mapfiles/open.png
 	${INSTALL_DATA} ${WRKSRC}/${GMAP}-0.1/mapfiles/wpa.png ${DATADIR}/${GMAP}/mapfiles/wpa.png
-.ifndef(NOPORTDOC)
+.ifndef(NOPORTDOCS)
 	@${INSTALL_DATA} ${WRKSRC}/${GMAP}-0.1/README.txt ${DOCSDIR}/${GMAP}
 	@${CAT} ${PKGMESSAGE}
 .endif
