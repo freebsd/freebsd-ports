@@ -4,6 +4,7 @@
 %%WWWDIR%%/extensions/AMSmath.js
 %%WWWDIR%%/extensions/AMSsymbols.js
 %%WWWDIR%%/extensions/HTML.js
+%%WWWDIR%%/extensions/autobold.js
 %%WWWDIR%%/extensions/bbox.js
 %%WWWDIR%%/extensions/boldsymbol.js
 %%WWWDIR%%/extensions/double-click.js
@@ -15,6 +16,7 @@
 %%WWWDIR%%/extensions/moreArrows.js
 %%WWWDIR%%/extensions/newcommand.js
 %%WWWDIR%%/extensions/underset-overset.js
+%%WWWDIR%%/extensions/verb.js
 %%WWWDIR%%/jsMath-BaKoMa-fonts.js
 %%WWWDIR%%/jsMath-autoload.html
 %%WWWDIR%%/jsMath-controls.html
@@ -28,6 +30,7 @@
 %%WWWDIR%%/jsMath-global-controls.html
 %%WWWDIR%%/jsMath-global.html
 %%WWWDIR%%/jsMath-loader-omniweb4.js
+%%WWWDIR%%/jsMath-loader-post.html
 %%WWWDIR%%/jsMath-loader.html
 %%WWWDIR%%/jsMath-msie-mac.js
 %%WWWDIR%%/jsMath-old-browsers.js
@@ -53,9 +56,9 @@
 %%WWWDIR%%/uncompressed/jsMath-fallback-symbols.js
 %%WWWDIR%%/uncompressed/jsMath-fallback-unix.js
 %%WWWDIR%%/uncompressed/jsMath.js
-@dirrm %%WWWDIR%%/easy
-@dirrm %%WWWDIR%%/extensions
-@dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/test
 @dirrm %%WWWDIR%%/uncompressed
-@dirrmtry %%WWWDIR%%
+@dirrm %%WWWDIR%%/test
+@dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/extensions
+@dirrm %%WWWDIR%%/easy
+@dirrm %%WWWDIR%%

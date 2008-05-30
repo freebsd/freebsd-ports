@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	jsMath
-PORTVERSION=	3.4f
+PORTVERSION=	3.5
 CATEGORIES=	math www
 MASTER_SITES=	SFE
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Javascript tool for including mathematics in web pages
