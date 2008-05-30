@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mugshot
-PORTVERSION=	1.1.58
-PORTREVISION=	1
+PORTVERSION=	1.1.95
 CATEGORIES=	net
 MASTER_SITES=	http://download.mugshot.org/client/sources/linux/
 
@@ -15,17 +14,23 @@ MAINTAINER=	wahjava@gmail.com
 COMMENT=	The official client for Mugshot network
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg:install \
-		Xss.1:${PORTSDIR}/x11/xorg-libraries:install
+		Xss.1:${PORTSDIR}/x11/xorg-libraries:install \
+		dbus-1.3:${PORTSDIR}/devel/dbus \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		cairo.2:${PORTSDIR}/graphics/cairo \
+		hippocanvas-1.0:${PORTSDIR}/x11-toolkits/hippo-canvas \
+		ddm-1.0:${PORTSDIR}/net/desktop-data-model
 BUILD_DEPENDS=	${PKGCONFIG_LOCAL_BASE}/dbus-1.pc:${PORTSDIR}/devel/dbus:install \
 		${PKGCONFIG_LOCAL_BASE}/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib:install \
 		${PKGCONFIG_LOCAL_BASE}/loudmouth-1.0.pc:${PORTSDIR}/net-im/loudmouth:install \
 		${PKGCONFIG_LOCAL_BASE}/cairo.pc:${PORTSDIR}/graphics/cairo:install \
 		${PKGCONFIG_LOCAL_BASE}/libcurl.pc:${PORTSDIR}/ftp/curl:install \
 		${LOCALBASE}/include/firefox/caps/nsIScriptSecurityManager.h:${PORTSDIR}/www/firefox:install \
-		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre:install \
 		${LOCALBASE}/lib/firefox/xpidl:${PORTSDIR}/www/firefox:install \
 		${LOCALBASE}/include/X11/extensions/scrnsaver.h:${PORTSDIR}/x11/xorg-libraries:install \
-		dbus>=1.0.2:${PORTSDIR}/devel/dbus:install
+		dbus>=1.0.2:${PORTSDIR}/devel/dbus:install \
+		${PKGCONFIG_LOCAL_BASE}/hippo-canvas-1.pc:${PORTSDIR}/x11-toolkits/hippo-canvas:install \
+		${PKGCONFIG_LOCAL_BASE}/ddm-1.pc:${PORTSDIR}/net/desktop-data-model:install
 
 USE_GNOME=	gnomehack gconf2 glib20 gtk20 pango gnomevfs2 gnomedesktop
 GNU_CONFIGURE=	yes
