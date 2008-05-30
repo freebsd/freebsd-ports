@@ -41,9 +41,11 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Source/obj/librigs.so $(RUBY_SITEARCHLIBDIR)/
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/Examples/* ${RUBY_MODEXAMPLESDIR}/
+.endif
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ChangeLog NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
