@@ -18,6 +18,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/cache.py
 %%PYTHON_SITELIBDIR%%/logilab/common/cache.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/cache.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/changelog.py
+%%PYTHON_SITELIBDIR%%/logilab/common/changelog.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/changelog.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/clcommands.py
 %%PYTHON_SITELIBDIR%%/logilab/common/clcommands.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/clcommands.pyo
