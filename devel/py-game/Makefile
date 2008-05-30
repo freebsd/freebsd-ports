@@ -24,8 +24,17 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	pygame
 PYDISTUTILS_PKGVERSION=	1.8.0release
 
+SDLNOX11=	sdl-nox11-[0-9]*
+
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+
+pre-configure:
+	@invalid=`${PKG_INFO} -I ${SDLNOX11:C/.+/'&'/} 2>/dev/null | ${AWK} '{print $$1}`
+	@if [ ! -z "$$invalid" ]; then \
+		${ECHO_MSG} "${PKGNAME} is marked as broken: devel/sdl12 needs to be built with X11 support enabled."; \
+		exit 1; \
+	fi
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config.py
