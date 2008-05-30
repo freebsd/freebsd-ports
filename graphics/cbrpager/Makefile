@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cbrpager
-PORTVERSION=	0.9.15
+PORTVERSION=	0.9.16
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -19,6 +19,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_FILES=	bin/cbrpager share/locale/es/LC_MESSAGES/cbrpager.mo
+PLIST_FILES=	bin/cbrpager \
+		share/locale/es/LC_MESSAGES/cbrpager.mo \
+		share/locale/fr/LC_MESSAGES/cbrpager.mo
 
 .include <bsd.port.mk>
