@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	idnits
-PORTVERSION=	2.03.9
+PORTVERSION=	2.08.10
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/idnits/
 EXTRACT_SUFX=	.tgz
@@ -16,6 +16,10 @@ COMMENT=	Looks for problems in internet draft formatting
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	YES
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^#!/bin/bash|#!${LOCALBASE}/bin/bash|g' \
+		${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
