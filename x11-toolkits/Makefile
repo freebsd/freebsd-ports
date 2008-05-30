@@ -85,6 +85,7 @@
     SUBDIR += gtkunique
     SUBDIR += gtoolkit
     SUBDIR += guile-gtk
+    SUBDIR += hippo-canvas
     SUBDIR += hs-frantk
     SUBDIR += hs-glut-ghc
     SUBDIR += hs-gtk2hs
