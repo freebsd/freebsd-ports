@@ -34,11 +34,13 @@ do-install:
 .for f in ${MODULES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}/
 .endfor
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
+.endif
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/

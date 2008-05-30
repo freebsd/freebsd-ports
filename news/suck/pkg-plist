@@ -2,16 +2,16 @@ bin/lmove
 bin/rpost
 bin/suck
 bin/testhost
-%%PORTDOCS%%share/examples/suck/get.news.generic
-%%PORTDOCS%%share/examples/suck/get.news.inn
-%%PORTDOCS%%share/examples/suck/perl_kill.pl
-%%PORTDOCS%%share/examples/suck/perl_xover.pl
-%%PORTDOCS%%share/examples/suck/post_filter.pl
-%%PORTDOCS%%share/examples/suck/put.news
-%%PORTDOCS%%share/examples/suck/put.news.pl
-%%PORTDOCS%%share/examples/suck/put.news.sm
-%%PORTDOCS%%share/examples/suck/put.news.sm.pl
-%%PORTDOCS%%share/examples/suck/suckkillfile.sample
-%%PORTDOCS%%share/examples/suck/sucknewsrc.sample
-%%PORTDOCS%%share/examples/suck/suckothermsgs.sample
-%%PORTDOCS%%@dirrm share/examples/suck
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get.news.generic
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get.news.inn
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl_kill.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perl_xover.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/post_filter.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/put.news
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/put.news.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/put.news.sm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/put.news.sm.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/suckkillfile.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sucknewsrc.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/suckothermsgs.sample
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

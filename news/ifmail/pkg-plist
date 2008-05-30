@@ -20,162 +20,162 @@ libexec/ifmail/nlpatch
 %%PORTDOCS%%%%DOCSDIR%%/README.ifgate
 %%PORTDOCS%%%%DOCSDIR%%/README.iflib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/Areas
-%%PORTDOCS%%%%EXAMPLESDIR%%/DEBUG
-%%PORTDOCS%%%%EXAMPLESDIR%%/FAQ
-%%PORTDOCS%%%%EXAMPLESDIR%%/FILES
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/TODO
-%%PORTDOCS%%%%EXAMPLESDIR%%/cnews/batchparms
-%%PORTDOCS%%%%EXAMPLESDIR%%/cnews/sys
-%%PORTDOCS%%%%EXAMPLESDIR%%/config
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/abbs2nf/AREAS.BBS
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/abbs2nf/Areas
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/abbs2nf/abbs2nf.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/a2dbm
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/HISTORY
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/areafix.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/areaqueue.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/config
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/help
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/passwords
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/restricted
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/uplinks
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07-jv10/areafix.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/areafix-0.6.02/areafix
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/cnews-msgids
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/edalias
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/edalias.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/fdpass/NOTICE
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/fdpass/fdpass.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/fdpass/session.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/fido.daily
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/ifinfo
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/ifinfo.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/ifman
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/ifpoll
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/ifreq
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/iftelnetd/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/iftelnetd/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/iftelnetd/iftelnetd.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/iftelnetd/inetd.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/iftelnetd/services
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/install.russian.koi8
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/ldbm
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/lmsgid
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/mmdf/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/mmdf/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/mmdf/config.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/mmdf/fidonet.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/mmdf/fidonet.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/mmdf/route.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/mmdf/route.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/mmdf/version.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/mmdf/xxx
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/news_via_mail/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/news_via_mail/mail2news.sh
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/news_via_mail/news2mail.awk
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/sumlog
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/Changelog
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/checker.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/config.pli
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/config/Areas
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/config/Config
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/config/Nodes
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/config/Postings
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/config/Processor
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/config/TRICBBS.frm
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/config/Trigger
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/config/global.hdr
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/config/group_L.hdr
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/crc32.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/getdate.pli
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/lister.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/makeconfig.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/poster.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/process_tics.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/purge_history.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/readtick.pli
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/tic/sequencer.pli
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/MAKE.CONFIG
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/areas
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/config
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/crc.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/ctlfiles.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/feeds
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/felist
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/ftn.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/hacks.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/help
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/make_machdep.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/makeflock.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/misc.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/outaltkoi8
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/passwd
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/queuemail.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/restricted
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/semaphore.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/u-attach.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/u-fix.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/u-tic.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/contrib/u-tic/xfutil.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/exim/exim.template
-%%PORTDOCS%%%%EXAMPLESDIR%%/getnodelist
-%%PORTDOCS%%%%EXAMPLESDIR%%/ifmail.gif
-%%PORTDOCS%%%%EXAMPLESDIR%%/inn/newsfeeds
-%%PORTDOCS%%%%EXAMPLESDIR%%/inn/send-ifmail
-%%PORTDOCS%%%%EXAMPLESDIR%%/inouttabs/cp895__cp437
-%%PORTDOCS%%%%EXAMPLESDIR%%/inouttabs/cp895__iso-8859-2
-%%PORTDOCS%%%%EXAMPLESDIR%%/inouttabs/iso-8859-2__cp895
-%%PORTDOCS%%%%EXAMPLESDIR%%/inouttabs/fidom2iso
-%%PORTDOCS%%%%EXAMPLESDIR%%/inouttabs/fidomazovia
-%%PORTDOCS%%%%EXAMPLESDIR%%/inouttabs/ibmpc-latin1
-%%PORTDOCS%%%%EXAMPLESDIR%%/inouttabs/iso2fidom
-%%PORTDOCS%%%%EXAMPLESDIR%%/inouttabs/latin1-ibmpc
-%%PORTDOCS%%%%EXAMPLESDIR%%/inouttabs/outaltkoi8
-%%PORTDOCS%%%%EXAMPLESDIR%%/inouttabs/outkoi8alt
-%%PORTDOCS%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-bosman
-%%PORTDOCS%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-butler
-%%PORTDOCS%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-selig
-%%PORTDOCS%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-srtxg/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-srtxg/ifmail.mc
-%%PORTDOCS%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-srtxg/fnet.m4
-%%PORTDOCS%%%%EXAMPLESDIR%%/sendmail/sendmail.cf-1
-%%PORTDOCS%%%%EXAMPLESDIR%%/sendmail/sendmail.cf-2
-%%PORTDOCS%%%%EXAMPLESDIR%%/smail/ftnpaths
-%%PORTDOCS%%%%EXAMPLESDIR%%/smail/routers
-%%PORTDOCS%%%%EXAMPLESDIR%%/smail/transports
-%%PORTDOCS%%%%EXAMPLESDIR%%/tcp/inetd.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/tcp/services
-%%PORTDOCS%%%%EXAMPLESDIR%%/zmailer/routes
-%%PORTDOCS%%%%EXAMPLESDIR%%/zmailer/scheduler.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/zmailer/sm.conf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cnews
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib/abbs2nf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib/areafix-0.5.07
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib/areafix-0.5.07-jv10
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib/areafix-0.6.02
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib/mmdf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib/tic/config
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib/tic
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib/u-tic
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib/news_via_mail
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib/fdpass
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib/iftelnetd
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/contrib
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/exim
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/inn
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/inouttabs
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/sendmail/ifmail.m4-srtxg
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/sendmail
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/smail
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tcp
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/zmailer
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Areas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/DEBUG
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/FAQ
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/FILES
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TODO
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cnews/batchparms
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cnews/sys
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/abbs2nf/AREAS.BBS
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/abbs2nf/Areas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/abbs2nf/abbs2nf.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/a2dbm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/HISTORY
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/areafix.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/areaqueue.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/help
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/passwords
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/restricted
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07/uplinks
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/areafix-0.5.07-jv10/areafix.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/areafix-0.6.02/areafix
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/cnews-msgids
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/edalias
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/edalias.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/fdpass/NOTICE
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/fdpass/fdpass.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/fdpass/session.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/fido.daily
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/ifinfo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/ifinfo.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/ifman
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/ifpoll
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/ifreq
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/iftelnetd/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/iftelnetd/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/iftelnetd/iftelnetd.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/iftelnetd/inetd.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/iftelnetd/services
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/install.russian.koi8
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/ldbm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/lmsgid
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/mmdf/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/mmdf/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/mmdf/config.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/mmdf/fidonet.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/mmdf/fidonet.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/mmdf/route.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/mmdf/route.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/mmdf/version.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/mmdf/xxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/news_via_mail/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/news_via_mail/mail2news.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/news_via_mail/news2mail.awk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/sumlog
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/Changelog
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/checker.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/config.pli
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/config/Areas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/config/Config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/config/Nodes
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/config/Postings
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/config/Processor
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/config/TRICBBS.frm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/config/Trigger
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/config/global.hdr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/config/group_L.hdr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/crc32.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/getdate.pli
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/lister.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/makeconfig.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/poster.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/process_tics.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/purge_history.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/readtick.pli
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/tic/sequencer.pli
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/MAKE.CONFIG
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/areas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/crc.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/ctlfiles.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/feeds
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/felist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/ftn.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/hacks.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/help
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/make_machdep.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/makeflock.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/misc.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/outaltkoi8
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/passwd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/queuemail.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/restricted
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/semaphore.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/u-attach.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/u-fix.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/u-tic.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/u-tic/xfutil.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exim/exim.template
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getnodelist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ifmail.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inn/newsfeeds
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inn/send-ifmail
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inouttabs/cp895__cp437
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inouttabs/cp895__iso-8859-2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inouttabs/iso-8859-2__cp895
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inouttabs/fidom2iso
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inouttabs/fidomazovia
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inouttabs/ibmpc-latin1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inouttabs/iso2fidom
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inouttabs/latin1-ibmpc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inouttabs/outaltkoi8
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inouttabs/outkoi8alt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-bosman
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-butler
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-selig
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-srtxg/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-srtxg/ifmail.mc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail/ifmail.m4-srtxg/fnet.m4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail/sendmail.cf-1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendmail/sendmail.cf-2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smail/ftnpaths
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smail/routers
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smail/transports
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp/inetd.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp/services
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/routes
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/scheduler.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmailer/sm.conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cnews
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/abbs2nf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/areafix-0.5.07
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/areafix-0.5.07-jv10
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/areafix-0.6.02
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/mmdf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/tic/config
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/tic
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/u-tic
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/news_via_mail
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/fdpass
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib/iftelnetd
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contrib
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/exim
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inn
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inouttabs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sendmail/ifmail.m4-srtxg
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sendmail
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/smail
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tcp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/zmailer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ; echo "ifcico		60179/tcp  #ifcico server (ifmail)") > /etc/services
 @unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^ifcico /etc/services.bak ) > /etc/services

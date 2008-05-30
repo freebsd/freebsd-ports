@@ -25,9 +25,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/convertxdccfile ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/WHATSNEW ${DOCSDIR}/
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/dynip.sh ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/iroffer.cron ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/sample.config ${EXAMPLESDIR}/

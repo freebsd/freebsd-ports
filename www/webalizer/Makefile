@@ -193,10 +193,6 @@ post-install:
 .for i in ${DOC1}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
-	${MKDIR} ${EXAMPLESDIR}
-.for i in msfree.png sample.conf webalizer.png
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}/${i}
-.endfor
 .if defined(WITH_GEOIP)
 	${MKDIR} ${DOCSDIR}/geolizer
 .for i in ${DOC2}
@@ -204,6 +200,12 @@ post-install:
 		${DOCSDIR}/geolizer/${i}
 .endfor
 .endif
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+.for i in msfree.png sample.conf webalizer.png
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}/${i}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>

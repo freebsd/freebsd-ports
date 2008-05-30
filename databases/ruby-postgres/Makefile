@@ -28,9 +28,11 @@ DOCS_EN=	ChangeLog README doc/postgres.html
 DOCS_JA=	README.ja doc/postgres.jp.html
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/../sample/*.rb ${RUBY_MODEXAMPLESDIR}/
+.endif
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/../${f} ${RUBY_MODDOCDIR}/

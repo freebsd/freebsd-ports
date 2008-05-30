@@ -56,6 +56,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/doc -cf - ${DOCLIST} | ${TAR} -C ${DOCSDIR} -xf -
+.endif
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/examples -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
 .endif
