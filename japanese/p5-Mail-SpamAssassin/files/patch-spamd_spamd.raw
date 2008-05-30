@@ -1,0 +1,11 @@
+--- spamd/spamd.raw.orig	2008-04-24 09:50:46.000000000 +0200
++++ spamd/spamd.raw	2008-04-24 09:52:55.000000000 +0200
+@@ -2075,7 +2075,7 @@
+   if ( $opt{'user-config'} ) {
+     my $prefsfrom = $username;  # the one passed, NOT $opt{username}
+ 
+-    if ($prefsfrom eq $suidto) {
++    if ($prefsfrom eq $suidto || $opt{'vpopmail'}) {
+       $userdir = $suiddir;      # reuse the already-looked-up info
+     } else {
+       $userdir = (getpwnam($prefsfrom))[7];
