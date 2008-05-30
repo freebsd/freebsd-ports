@@ -10,6 +10,9 @@ lib/scons-%%SCONS_VER%%/SCons/Action.pyo
 lib/scons-%%SCONS_VER%%/SCons/Builder.py
 lib/scons-%%SCONS_VER%%/SCons/Builder.pyc
 lib/scons-%%SCONS_VER%%/SCons/Builder.pyo
+lib/scons-%%SCONS_VER%%/SCons/CacheDir.py
+lib/scons-%%SCONS_VER%%/SCons/CacheDir.pyc
+lib/scons-%%SCONS_VER%%/SCons/CacheDir.pyo
 lib/scons-%%SCONS_VER%%/SCons/Conftest.py
 lib/scons-%%SCONS_VER%%/SCons/Conftest.pyc
 lib/scons-%%SCONS_VER%%/SCons/Conftest.pyo
@@ -46,18 +49,6 @@ lib/scons-%%SCONS_VER%%/SCons/Node/Python.pyo
 lib/scons-%%SCONS_VER%%/SCons/Node/__init__.py
 lib/scons-%%SCONS_VER%%/SCons/Node/__init__.pyc
 lib/scons-%%SCONS_VER%%/SCons/Node/__init__.pyo
-lib/scons-%%SCONS_VER%%/SCons/Optik/__init__.py
-lib/scons-%%SCONS_VER%%/SCons/Optik/__init__.pyc
-lib/scons-%%SCONS_VER%%/SCons/Optik/__init__.pyo
-lib/scons-%%SCONS_VER%%/SCons/Optik/errors.py
-lib/scons-%%SCONS_VER%%/SCons/Optik/errors.pyc
-lib/scons-%%SCONS_VER%%/SCons/Optik/errors.pyo
-lib/scons-%%SCONS_VER%%/SCons/Optik/option.py
-lib/scons-%%SCONS_VER%%/SCons/Optik/option.pyc
-lib/scons-%%SCONS_VER%%/SCons/Optik/option.pyo
-lib/scons-%%SCONS_VER%%/SCons/Optik/option_parser.py
-lib/scons-%%SCONS_VER%%/SCons/Optik/option_parser.pyc
-lib/scons-%%SCONS_VER%%/SCons/Optik/option_parser.pyo
 lib/scons-%%SCONS_VER%%/SCons/Options/BoolOption.py
 lib/scons-%%SCONS_VER%%/SCons/Options/BoolOption.pyc
 lib/scons-%%SCONS_VER%%/SCons/Options/BoolOption.pyo
@@ -139,24 +130,24 @@ lib/scons-%%SCONS_VER%%/SCons/Scanner/Prog.pyo
 lib/scons-%%SCONS_VER%%/SCons/Scanner/__init__.py
 lib/scons-%%SCONS_VER%%/SCons/Scanner/__init__.pyc
 lib/scons-%%SCONS_VER%%/SCons/Scanner/__init__.pyo
+lib/scons-%%SCONS_VER%%/SCons/Script/Interactive.py
+lib/scons-%%SCONS_VER%%/SCons/Script/Interactive.pyc
+lib/scons-%%SCONS_VER%%/SCons/Script/Interactive.pyo
 lib/scons-%%SCONS_VER%%/SCons/Script/Main.py
 lib/scons-%%SCONS_VER%%/SCons/Script/Main.pyc
 lib/scons-%%SCONS_VER%%/SCons/Script/Main.pyo
+lib/scons-%%SCONS_VER%%/SCons/Script/SConsOptions.py
+lib/scons-%%SCONS_VER%%/SCons/Script/SConsOptions.pyc
+lib/scons-%%SCONS_VER%%/SCons/Script/SConsOptions.pyo
 lib/scons-%%SCONS_VER%%/SCons/Script/SConscript.py
 lib/scons-%%SCONS_VER%%/SCons/Script/SConscript.pyc
 lib/scons-%%SCONS_VER%%/SCons/Script/SConscript.pyo
 lib/scons-%%SCONS_VER%%/SCons/Script/__init__.py
 lib/scons-%%SCONS_VER%%/SCons/Script/__init__.pyc
 lib/scons-%%SCONS_VER%%/SCons/Script/__init__.pyo
-lib/scons-%%SCONS_VER%%/SCons/Sig/MD5.py
-lib/scons-%%SCONS_VER%%/SCons/Sig/MD5.pyc
-lib/scons-%%SCONS_VER%%/SCons/Sig/MD5.pyo
-lib/scons-%%SCONS_VER%%/SCons/Sig/TimeStamp.py
-lib/scons-%%SCONS_VER%%/SCons/Sig/TimeStamp.pyc
-lib/scons-%%SCONS_VER%%/SCons/Sig/TimeStamp.pyo
-lib/scons-%%SCONS_VER%%/SCons/Sig/__init__.py
-lib/scons-%%SCONS_VER%%/SCons/Sig/__init__.pyc
-lib/scons-%%SCONS_VER%%/SCons/Sig/__init__.pyo
+lib/scons-%%SCONS_VER%%/SCons/Sig.py
+lib/scons-%%SCONS_VER%%/SCons/Sig.pyc
+lib/scons-%%SCONS_VER%%/SCons/Sig.pyo
 lib/scons-%%SCONS_VER%%/SCons/Subst.py
 lib/scons-%%SCONS_VER%%/SCons/Subst.pyc
 lib/scons-%%SCONS_VER%%/SCons/Subst.pyo
@@ -172,6 +163,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/BitKeeper.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/CVS.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/CVS.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/CVS.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/FortranCommon.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/FortranCommon.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/FortranCommon.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/JavaCommon.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/JavaCommon.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/JavaCommon.pyo
@@ -250,6 +244,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/f90.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/f95.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/f95.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/f95.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/filesystem.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/filesystem.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/filesystem.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/fortran.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/fortran.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/fortran.pyo
@@ -265,6 +262,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/gas.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/gcc.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/gcc.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/gcc.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/gfortran.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/gfortran.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/gfortran.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/gnulink.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/gnulink.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/gnulink.pyo
@@ -298,6 +298,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/ilink.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/ilink32.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/ilink32.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/ilink32.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/install.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/install.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/install.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/intelc.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/intelc.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/intelc.pyo
@@ -355,6 +358,36 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/mwld.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/nasm.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/nasm.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/nasm.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/__init__.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/__init__.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/__init__.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/ipk.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/ipk.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/ipk.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/msi.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/msi.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/msi.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/rpm.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/rpm.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/rpm.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/src_tarbz2.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/src_tarbz2.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/src_tarbz2.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/src_targz.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/src_targz.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/src_targz.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/src_zip.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/src_zip.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/src_zip.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/tarbz2.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/tarbz2.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/tarbz2.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/targz.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/targz.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/targz.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/zip.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/zip.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/packaging/zip.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/pdf.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/pdf.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/pdf.pyo
@@ -373,6 +406,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/rmic.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/rpcgen.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/rpcgen.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/rpcgen.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/rpm.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/rpm.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/rpm.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/sgiar.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/sgiar.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/sgiar.pyo
@@ -394,6 +430,15 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/sunc++.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/suncc.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/suncc.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/suncc.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/sunf77.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/sunf77.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/sunf77.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/sunf90.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/sunf90.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/sunf90.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/sunf95.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/sunf95.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/sunf95.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/sunlink.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/sunlink.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/sunlink.pyo
@@ -409,6 +454,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/tex.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/tlib.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/tlib.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/tlib.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/wix.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/wix.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/wix.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/yacc.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/yacc.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/yacc.pyo
@@ -418,6 +466,24 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/zip.pyo
 lib/scons-%%SCONS_VER%%/SCons/Util.py
 lib/scons-%%SCONS_VER%%/SCons/Util.pyc
 lib/scons-%%SCONS_VER%%/SCons/Util.pyo
+lib/scons-%%SCONS_VER%%/SCons/Variables/BoolVariable.py
+lib/scons-%%SCONS_VER%%/SCons/Variables/BoolVariable.pyc
+lib/scons-%%SCONS_VER%%/SCons/Variables/BoolVariable.pyo
+lib/scons-%%SCONS_VER%%/SCons/Variables/EnumVariable.py
+lib/scons-%%SCONS_VER%%/SCons/Variables/EnumVariable.pyc
+lib/scons-%%SCONS_VER%%/SCons/Variables/EnumVariable.pyo
+lib/scons-%%SCONS_VER%%/SCons/Variables/ListVariable.py
+lib/scons-%%SCONS_VER%%/SCons/Variables/ListVariable.pyc
+lib/scons-%%SCONS_VER%%/SCons/Variables/ListVariable.pyo
+lib/scons-%%SCONS_VER%%/SCons/Variables/PackageVariable.py
+lib/scons-%%SCONS_VER%%/SCons/Variables/PackageVariable.pyc
+lib/scons-%%SCONS_VER%%/SCons/Variables/PackageVariable.pyo
+lib/scons-%%SCONS_VER%%/SCons/Variables/PathVariable.py
+lib/scons-%%SCONS_VER%%/SCons/Variables/PathVariable.pyc
+lib/scons-%%SCONS_VER%%/SCons/Variables/PathVariable.pyo
+lib/scons-%%SCONS_VER%%/SCons/Variables/__init__.py
+lib/scons-%%SCONS_VER%%/SCons/Variables/__init__.pyc
+lib/scons-%%SCONS_VER%%/SCons/Variables/__init__.pyo
 lib/scons-%%SCONS_VER%%/SCons/Warnings.py
 lib/scons-%%SCONS_VER%%/SCons/Warnings.pyc
 lib/scons-%%SCONS_VER%%/SCons/Warnings.pyo
@@ -430,15 +496,30 @@ lib/scons-%%SCONS_VER%%/SCons/compat/__init__.pyo
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_UserString.py
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_UserString.pyc
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_UserString.pyo
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_hashlib.py
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_hashlib.pyc
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_hashlib.pyo
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_itertools.py
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_itertools.pyc
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_itertools.pyo
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_optparse.py
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_optparse.pyc
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_optparse.pyo
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets.py
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets.pyc
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets.pyo
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets15.py
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets15.pyc
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets15.pyo
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_shlex.py
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_shlex.pyc
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_shlex.pyo
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_subprocess.py
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_subprocess.pyc
 lib/scons-%%SCONS_VER%%/SCons/compat/_scons_subprocess.pyo
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_textwrap.py
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_textwrap.pyc
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_textwrap.pyo
 lib/scons-%%SCONS_VER%%/SCons/compat/builtins.py
 lib/scons-%%SCONS_VER%%/SCons/compat/builtins.pyc
 lib/scons-%%SCONS_VER%%/SCons/compat/builtins.pyo
@@ -451,15 +532,14 @@ lib/scons-%%SCONS_VER%%/SCons/dblite.pyo
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.py
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyc
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyo
-%%NO_EGG%%lib/scons-%%SCONS_VER%%/scons-%%SCONS_VER%%-py2.5.egg-info
 @dirrm lib/scons-%%SCONS_VER%%/SCons/compat
+@dirrm lib/scons-%%SCONS_VER%%/SCons/Variables
+@dirrm lib/scons-%%SCONS_VER%%/SCons/Tool/packaging
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Tool
-@dirrm lib/scons-%%SCONS_VER%%/SCons/Sig
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Script
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Scanner
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Platform
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Options
-@dirrm lib/scons-%%SCONS_VER%%/SCons/Optik
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Node
 @dirrm lib/scons-%%SCONS_VER%%/SCons
 @dirrm lib/scons-%%SCONS_VER%%
