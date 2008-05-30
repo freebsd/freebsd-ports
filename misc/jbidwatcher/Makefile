@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jbidwatcher
-DISTVERSION=	2.0beta2
+DISTVERSION=	2.0beta3
 CATEGORIES=	misc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.jbidwatcher.com/rdl/
