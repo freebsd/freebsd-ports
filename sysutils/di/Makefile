@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	di
-PORTVERSION=	4.12
+PORTVERSION=	4.13
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gentoo.com/di/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/
@@ -31,6 +31,10 @@ USE_PERL5_BUILD=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|zoneid_t|zoneId_t|g" ${WRKSRC}/di.c
+
+pre-configure:
+	@${CHMOD} +x ${WRKSRC}/Build
+	@${CHMOD} +x ${WRKSRC}/features/turnoffnls.sh
 
 do-configure:
 	(cd ${WRKSRC}; \
