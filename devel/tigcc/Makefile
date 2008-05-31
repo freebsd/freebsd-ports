@@ -7,7 +7,7 @@
 
 PORTNAME=	tigcc
 PORTVERSION=	0.96.b8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=		${MASTER_SITE_GCC:S/$/:gcc/} \
 			${MASTER_SITE_GNU:S/$/:gas/} \
@@ -123,6 +123,8 @@ post-install:
 	@${CP} -R ${WRKSRC}/tigcc/tigcclib/doc/html ${DOCSDIR}/
 	@${LN} -s ./html ${DOCSDIR}/tigcclib
 	@${CP} ${WRKSRC}/tigcc/tigcclib/doc/converter/tigccdoc ${PREFIX}/tigcc/bin/
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${CP} ${WRKSRC}/tigcc/tigcclib/examples/* ${EXAMPLESDIR}/
 .endif
