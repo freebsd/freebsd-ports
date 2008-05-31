@@ -7,6 +7,7 @@
 
 PORTNAME=	emelfm2
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://emelfm2.net/rel/
 
@@ -30,6 +31,9 @@ OPTIONS=	DEBUG	"Enable debugging messages" off \
 		TRACKER	"Enable the tracker plugin" off \
 		HAL	"Enable HAL support" off \
 		NLS	"Enable gettext support" on
+
+DOCFILES=	ACTIONS CONFIGURATION CREDITS GPL HACKING INSTALL LGPL NEWS \
+		README SPEC TODO USAGE WARNING help.txt
 
 .include <bsd.port.pre.mk>
 
@@ -85,6 +89,14 @@ LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 post-patch:
 	@${REINPLACE_CMD} -e 's|blksize_t buf_size =|__int32_t buf_size =|g' \
  		${WRKSRC}/src/filesystem/e2_fs.c
+.endif
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOCFILES}
+	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
