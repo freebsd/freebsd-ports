@@ -6,6 +6,7 @@
 
 PORTNAME=	ikiwiki
 PORTVERSION=	2.47
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -51,6 +52,7 @@ PLIST_SUB=	W3M="@comment "
 .endif
 
 post-patch:
+	@${RM} ${WRKSRC}/IkiWiki/Plugin/passwordauth.pm.orig
 	@${REINPLACE_CMD} -e "s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
 	@${RM} ${WRKSRC}/IkiWiki/Plugin/mdwn.pm.bak
