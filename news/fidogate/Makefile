@@ -44,6 +44,11 @@ pre-configure:
 	@${PERL5} -pi -e "s/OWNER.*= news/OWNER		= ${FIDOGATE_RUNAS}/" \
 		${WRKSRC}/config.make
 .endif
+.if defined(NOPORTDOCS)
+	@${PERL5} -pi -e "s/test doc/test/" ${WRKSRC}/Makefile
+	@${PERL5} -pi -e "s/run www/run/" ${WRKSRC}/scripts/Makefile
+	@${PERL5} -pi -e "s/cp ANNOUNCE/#cp ANNOUNCE/" ${WRKSRC}/Makefile
+.endif
 
 pre-install:
 	${MKDIR} ${PREFIX}/libexec/fidogate
