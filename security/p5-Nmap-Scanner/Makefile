@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Nmap-Scanner
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Perform and manipulate nmap scans using perl
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
+		${SITE_PERL}/Class/Generate.pm:${PORTSDIR}/devel/p5-Class-Generate \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
+		nmap:${PORTSDIR}/security/nmap
+RUN_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
+		${SITE_PERL}/Class/Generate.pm:${PORTSDIR}/devel/p5-Class-Generate \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		nmap:${PORTSDIR}/security/nmap
 
 PERL_CONFIGURE=	yes
@@ -31,7 +36,9 @@ MAN3=		Nmap::Scanner.3 Nmap::Scanner::Address.3 \
 		Nmap::Scanner::OS::TCPTSSequence.3 Nmap::Scanner::OS::Uptime.3 \
 		Nmap::Scanner::Port.3 Nmap::Scanner::RunStats.3 \
 		Nmap::Scanner::RunStats::Finished.3 Nmap::Scanner::ScanInfo.3 \
-		Nmap::Scanner::Scanner.3 Nmap::Scanner::Service.3
+		Nmap::Scanner::Scanner.3 Nmap::Scanner::Service.3 \
+		Nmap::Scanner::OS::Fingerprint.3 Nmap::Scanner::Distance.3 \
+		Nmap::Scanner::Task.3 Nmap::Scanner::TaskProgress.3
 
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
