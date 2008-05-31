@@ -10,7 +10,7 @@ PORTNAME=	gtksourceview-sharp
 PORTVERSION=	0.11
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://go-mono.com/sources/gtksourceview-sharp-2.0/
+MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/gtksourceview-sharp-2.0/
 DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
