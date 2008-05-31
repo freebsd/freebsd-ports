@@ -1,0 +1,31 @@
+--- fortran/config/commence.in.orig	Thu Jul 12 21:28:40 2007
++++ fortran/config/commence.in	Thu Jul 12 21:33:56 2007
+@@ -47,7 +47,7 @@
+ RM=rm -f
+ CP=cp
+ INSTALL=@INSTALL@
+-INSTALL_PROGRAM=@INSTALL_PROGRAM@
++INSTALL_PROGRAM=@INSTALL_SCRIPT@
+ INSTALL_DATA=@INSTALL_DATA@
+ PARALLEL=@PARALLEL@
+ RUNSERIAL=@RUNSERIAL@
+@@ -62,7 +62,7 @@
+ bindir=@bindir@
+ libdir=@libdir@
+ includedir=@includedir@
+-docdir=@exec_prefix@/doc
++docdir=@exec_prefix@/share
+ PUB_LIB=$(LIB)
+ 
+ ## Shared libraries
+@@ -85,8 +85,8 @@
+ ## Optional variables. We must declare them here because Irix pmake
+ ## complains if it sees a reference to a variable which has never been
+ ## defined. The main makefile is free to redefine these to something else.
+-DOCDIR=$(docdir)
+-EXAMPLEDIR=$(docdir)/hdf5/examples/fortran
++DOCDIR=$(docdir)/doc/hdf5
++EXAMPLEDIR=$(docdir)/examples/hdf5/fortran
+ LIB=
+ LIB_SRC=
+ LIB_OBJ=

@@ -1,0 +1,23 @@
+--- fortran/config/freebsd.orig	Thu Jul 12 21:23:06 2007
++++ fortran/config/freebsd	Thu Jul 12 21:25:09 2007
+@@ -27,3 +27,20 @@
+ 
+ # Figure out compiler flags
+ . $srcdir/config/gnu-flags
++
++#
++# HDF5 integers
++#
++# 	R_LARGE is the number of digits for the bigest integer supported.
++#	R_INTEGER is the number of digits in INTEGER
++#
++# (for the Linux architechture)
++#
++R_LARGE=18
++R_INTEGER=9
++HADDR_T='SELECTED_INT_KIND(R_LARGE)'
++HSIZE_T='SELECTED_INT_KIND(R_LARGE)'
++HSSIZE_T='SELECTED_INT_KIND(R_LARGE)'
++HID_T='SELECTED_INT_KIND(R_INTEGER)'
++SIZE_T='SELECTED_INT_KIND(R_INTEGER)'
++OBJECT_NAMELEN_DEFAULT_F=-1

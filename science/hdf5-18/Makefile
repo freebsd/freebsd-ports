@@ -8,6 +8,7 @@
 
 PORTNAME=	hdf5
 PORTVERSION=	1.6.7
+PORTREVISION=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current16/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/prev-releases/ \
@@ -34,6 +35,16 @@ ALL_TARGET=	lib progs
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_FORTRAN)
+LIBTOOLFILES+=		fortran/configure
+USE_FORTRAN=		yes
+CONFIGURE_ENV+=		F9X=${FC}
+CONFIGURE_ARGS+=	--enable-fortran
+PLIST_SUB+=		FORTRAN=""
+.else
+PLIST_SUB+=		FORTRAN="@comment "
+.endif
+
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ${ARCH}
 .endif
@@ -48,7 +59,7 @@ post-patch:
 		-e 's|\(version_type=freebsd\)-.*|\1-elf|g' \
 			${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
 .if defined(NOPORTEXAMPLES)
-.for i in . c++ hl
+.for i in . c++ hl fortran
 	@${REINPLACE_CMD} \
 		-e 's,\((cd examples && $$(MAKE) $$@) || exit 1;\),#\1,g' \
 			${WRKSRC}/${i}/Makefile.in
