@@ -7,4 +7,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/test1.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Math/example.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Math
