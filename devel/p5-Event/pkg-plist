@@ -17,6 +17,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Event.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Event.so
 %%PORTDOCS%%%%DOCSDIR%%/Tutorial.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/MANIFEST
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Event
