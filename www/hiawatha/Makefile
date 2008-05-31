@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	6.3
+PORTVERSION=	6.7
 CATEGORIES=	www
 MASTER_SITES=	http://hiawatha.leisink.org/files/
 
@@ -26,11 +26,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var webrootdir=${WWWDIR}
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-OPTIONS=	SSL "Support for Secure Sockets Layer (SSL)" On \
+OPTIONS=	COMMAND "Enable the Hiawatha CommandChannel" Off \
 		CACHE "Internal file caching support" On \
+		IPV6 "Enable IPv6 Support" Off \
+		SSL "Support for Secure Sockets Layer (SSL)" On \
 		REWRITE "Enable URL rewriting" On \
-		COMMAND "Enable the Hiawatha CommandChannel" Off \
-		IPV6 "Enable IPv6 Support" Off
+		XSLT "XSLT support" Off
 
 .include <bsd.port.pre.mk>
 
@@ -52,6 +53,10 @@ CONFIGURE_ARGS+=	--enable-command
 
 .if !defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if defined(WITH_XSLT)
+CONFIGURE_ARGS+=	--enable-xslt
 .endif
 
 post-install:
