@@ -11085,6 +11085,7 @@ p5-POE-Component-Generic	ports/net/p5-POE-Component-Generic
 p5-POE-Component-IKC	ports/devel/p5-POE-Component-IKC
 p5-POE-Component-IRC	ports/irc/p5-POE-Component-IRC
 p5-POE-Component-IRC-Object	ports/irc/p5-POE-Component-IRC-Object
+p5-POE-Component-IRC-Plugin-Bollocks	ports/irc/p5-POE-Component-IRC-Plugin-Bollocks
 p5-POE-Component-Jabber	ports/net/p5-POE-Component-Jabber
 p5-POE-Component-JobQueue	ports/devel/p5-POE-Component-JobQueue
 p5-POE-Component-LaDBI	ports/databases/p5-POE-Component-LaDBI
