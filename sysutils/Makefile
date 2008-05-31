@@ -489,6 +489,7 @@
     SUBDIR += p5-Fuse-Simple
     SUBDIR += p5-LJ-Cache
     SUBDIR += p5-LJ-TextMessage
+    SUBDIR += p5-Lchown
     SUBDIR += p5-MogileFS-Client
     SUBDIR += p5-MogileFS-Utils
     SUBDIR += p5-Probe-Perl
