@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Filter-CBC
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,12 +19,13 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p
 		${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
 PERL_CONFIGURE=	yes
 
 MAN3=		Filter::CBC.3
 
 post-install:
-.ifndef(NOPORTDOCS)
+.ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
