@@ -7,7 +7,7 @@
 
 PORTNAME=	tgif2tex
 PORTVERSION=	2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	print
 MASTER_SITES=	http://www.cs.hiroshima-u.ac.jp/~nakano/tgif2tex/
 
@@ -16,7 +16,8 @@ COMMENT=	Converting texts in figure by tgif to LaTeX commands
 
 USE_PERL5_RUN=	yes
 
-DOCSRC=		how-to-use.aux how-to-use.dvi \
+PLIST_FILES=	bin/tgif2tex
+PORTDOCS= 	how-to-use.aux how-to-use.dvi \
 		how-to-use.log how-to-use.ps how-to-use.tex \
 		example.obj example.tex \
 		original.dps original.tps \
@@ -31,14 +32,14 @@ DOCSRC=		how-to-use.aux how-to-use.dvi \
 do-build:
 	${REINPLACE_CMD} \
 		-e "s,%%LOCALBASE%%,${LOCALBASE}," \
+		-e "s,^#!/usr/bin/perl,#!${PERL}," \
 		${WRKSRC}/tgif2tex
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tgif2tex ${PREFIX}/bin/tgif2tex
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCSRC} ${DOCSDIR};
-	${INSTALL_DATA} ${FILESDIR}/00readme ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

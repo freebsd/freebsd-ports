@@ -1,6 +1,6 @@
---- tgif2tex.orig	Fri Nov 28 20:53:07 2003
-+++ tgif2tex	Sat Jul 30 20:31:46 2005
-@@ -44,11 +44,14 @@
+--- tgif2tex.orig	2003-11-28 20:53:07.000000000 +0900
++++ tgif2tex	2008-05-31 18:28:11.000000000 +0900
+@@ -44,11 +44,13 @@
  # Aug 5, 2002  font size bug fixed (Version 2.12)
  # Aug 5, 2002  bug in handling BOX fixed (Version 2.13 thanks Mr. Tsuchimura)
  
@@ -9,7 +9,6 @@
 -$tgif_command='/usr/X11R6/bin/tgif';
 -$pnm_command='/usr/bin/gs -sDEVICE=pnmraw -sOutputFile=- -sNOPAUSE -dBATCH -q -r400';
 -$convert_command='/usr/bin/pnmcrop | /usr/bin/pnmmargin -white 10 | /usr/bin/convert - ';
-+$LOCALBASE='%%LOCALBASE%%';
 +$LOCALBASE='%%LOCALBASE%%';
 +
 +$latex_command="${LOCALBASE}/bin/platex";	# latex command in your site.
@@ -20,7 +19,7 @@
  
  $version='tgif2tex version 2.13';
  $copyright='Copyright (C) 1994-2003 Koji Nakano';
-@@ -106,8 +109,8 @@
+@@ -106,8 +108,8 @@
  $slitex=0;                      # 1 if slitex
  $pt='11pt';
  $size18=0;
