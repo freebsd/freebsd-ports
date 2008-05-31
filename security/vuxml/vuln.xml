@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="09066828-2ef1-11dd-a0d8-0016d325a0ed">
+    <topic>ikiwiki -- empty password security hole</topic>
+    <affects>
+      <package>
+	<name>ikiwiki</name>
+	<range><ge>1.34</ge><lt>2.47_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ikiwiki development team reports:</p>
+	<blockquote cite="http://ikiwiki.info/security/#index33h2">
+	  <p>This hole allowed ikiwiki to accept logins using empty
+	  passwords to openid accounts that didn't use a password.</p>
+	<p>Upgrading to ikiwiki 2.48 immediatly is recommended if your wiki
+	  allows both password and openid logins.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://ikiwiki.info/security/#index33h2</url>
+    </references>
+    <dates>
+      <discovery>2008-05-30</discovery>
+      <entry>2008-05-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="04c6187d-2d8f-11dd-98c9-00163e000016">
     <topic>linux-flashplugin -- unspecified remote code execution vulnerability</topic>
     <affects>
