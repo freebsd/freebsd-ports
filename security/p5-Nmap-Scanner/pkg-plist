@@ -1,38 +1,42 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap/Scanner/.packlist
 %%SITE_PERL%%/Nmap/Scanner.pm
-%%SITE_PERL%%/Nmap/Scanner/Address.pm
+%%SITE_PERL%%/Nmap/Scanner/Service.pm
+%%SITE_PERL%%/Nmap/Scanner/TaskProgress.pm
 %%SITE_PERL%%/Nmap/Scanner/Backend.pm
+%%SITE_PERL%%/Nmap/Scanner/Util.pm
+%%SITE_PERL%%/Nmap/Scanner/Port.pm
+%%SITE_PERL%%/Nmap/Scanner/Distance.pm
+%%SITE_PERL%%/Nmap/Scanner/Hosts.pm
+%%SITE_PERL%%/Nmap/Scanner/PortList.pm
+%%SITE_PERL%%/Nmap/Scanner/ScanInfo.pm
+%%SITE_PERL%%/Nmap/Scanner/NmapRun.pm
+%%SITE_PERL%%/Nmap/Scanner/OS.pm
+%%SITE_PERL%%/Nmap/Scanner/Host.pm
+%%SITE_PERL%%/Nmap/Scanner/ExtraPorts.pm
+%%SITE_PERL%%/Nmap/Scanner/Hostname.pm
+%%SITE_PERL%%/Nmap/Scanner/Scanner.pm
+%%SITE_PERL%%/Nmap/Scanner/Task.pm
+%%SITE_PERL%%/Nmap/Scanner/HostList.pm
+%%SITE_PERL%%/Nmap/Scanner/RunStats.pm
+%%SITE_PERL%%/Nmap/Scanner/Address.pm
+%%SITE_PERL%%/Nmap/Scanner/OS/PortUsed.pm
+%%SITE_PERL%%/Nmap/Scanner/OS/TCPSequence.pm
+%%SITE_PERL%%/Nmap/Scanner/OS/Uptime.pm
+%%SITE_PERL%%/Nmap/Scanner/OS/Class.pm
+%%SITE_PERL%%/Nmap/Scanner/OS/Fingerprint.pm
+%%SITE_PERL%%/Nmap/Scanner/OS/Match.pm
+%%SITE_PERL%%/Nmap/Scanner/OS/TCPTSSequence.pm
+%%SITE_PERL%%/Nmap/Scanner/OS/IPIdSequence.pm
 %%SITE_PERL%%/Nmap/Scanner/Backend/Processor.pm
 %%SITE_PERL%%/Nmap/Scanner/Backend/Results.pm
 %%SITE_PERL%%/Nmap/Scanner/Backend/XML.pm
-%%SITE_PERL%%/Nmap/Scanner/ExtraPorts.pm
-%%SITE_PERL%%/Nmap/Scanner/Host.pm
-%%SITE_PERL%%/Nmap/Scanner/HostList.pm
-%%SITE_PERL%%/Nmap/Scanner/Hostname.pm
-%%SITE_PERL%%/Nmap/Scanner/Hosts.pm
-%%SITE_PERL%%/Nmap/Scanner/NmapRun.pm
-%%SITE_PERL%%/Nmap/Scanner/OS.pm
-%%SITE_PERL%%/Nmap/Scanner/OS/Class.pm
-%%SITE_PERL%%/Nmap/Scanner/OS/IPIdSequence.pm
-%%SITE_PERL%%/Nmap/Scanner/OS/Match.pm
-%%SITE_PERL%%/Nmap/Scanner/OS/PortUsed.pm
-%%SITE_PERL%%/Nmap/Scanner/OS/TCPSequence.pm
-%%SITE_PERL%%/Nmap/Scanner/OS/TCPTSSequence.pm
-%%SITE_PERL%%/Nmap/Scanner/OS/Uptime.pm
-%%SITE_PERL%%/Nmap/Scanner/Port.pm
-%%SITE_PERL%%/Nmap/Scanner/PortList.pm
-%%SITE_PERL%%/Nmap/Scanner/RunStats.pm
-%%SITE_PERL%%/Nmap/Scanner/RunStats/Finished.pm
-%%SITE_PERL%%/Nmap/Scanner/ScanInfo.pm
-%%SITE_PERL%%/Nmap/Scanner/Scanner.pm
-%%SITE_PERL%%/Nmap/Scanner/Service.pm
-%%SITE_PERL%%/Nmap/Scanner/Util.pm
 %%SITE_PERL%%/Nmap/Scanner/Util/BannerScanner.pm
-@dirrm %%SITE_PERL%%/Nmap/Scanner/Backend
-@dirrm %%SITE_PERL%%/Nmap/Scanner/OS
-@dirrm %%SITE_PERL%%/Nmap/Scanner/RunStats
-@dirrm %%SITE_PERL%%/Nmap/Scanner/Util
-@dirrm %%SITE_PERL%%/Nmap/Scanner
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap/Scanner
-@dirrmtry %%SITE_PERL%%/Nmap
+%%SITE_PERL%%/Nmap/Scanner/RunStats/Finished.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap/Scanner
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap
+@dirrmtry %%SITE_PERL%%/Nmap/Scanner/Util
+@dirrmtry %%SITE_PERL%%/Nmap/Scanner/RunStats
+@dirrmtry %%SITE_PERL%%/Nmap/Scanner/OS
+@dirrmtry %%SITE_PERL%%/Nmap/Scanner/Backend
+@dirrmtry %%SITE_PERL%%/Nmap/Scanner
+@dirrmtry %%SITE_PERL%%/Nmap
