@@ -7,6 +7,7 @@
 
 PORTNAME=	mp3unicode
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -26,4 +27,11 @@ MAN1=		mp3unicode.1
 PLIST_FILES=	bin/mp3unicode
 PORTDOCS=	COPYING README
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-configure:
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e '/^install-data-am/s|install-dist_docDATA||' ${WRKSRC}/Makefile.in
+.endif
+
+.include <bsd.port.post.mk>
