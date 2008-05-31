@@ -7,6 +7,7 @@
 
 PORTNAME=	Pod-Parser
 PORTVERSION=	1.35
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,4 +28,10 @@ post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
 	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} {} \;
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500808
+BUILD_DEPENDS+=	p5-Test-Simple>=0.60:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
