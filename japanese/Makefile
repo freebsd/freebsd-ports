@@ -206,7 +206,6 @@
     SUBDIR += mobileimap
     SUBDIR += monafonts
     SUBDIR += monafonts-ttf
-    SUBDIR += motoya-ttfonts
     SUBDIR += mozilla-jlp
     SUBDIR += mplusfonts
     SUBDIR += msdosfs
