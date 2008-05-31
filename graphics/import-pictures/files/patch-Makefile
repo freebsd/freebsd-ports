@@ -1,0 +1,9 @@
+--- ../../import-pictures-1.4/Makefile	2007-02-18 22:14:32.000000000 +0100
++++ Makefile	2008-05-07 10:38:19.000000000 +0200
+@@ -3,3 +3,6 @@
+ 
+ 
+ all: import-pictures.1 import-pictures.html
++
++install:
++

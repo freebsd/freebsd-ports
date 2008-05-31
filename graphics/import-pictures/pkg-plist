@@ -1,0 +1,3 @@
+bin/import-pictures
+%%PORTDOCS%%%%DOCSDIR%%/import-pictures.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
