@@ -101,6 +101,8 @@
 %%ZOPEPRODUCTDIR%%/Formulator/tests/__init__.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/tests/framework.py
 %%ZOPEPRODUCTDIR%%/Formulator/tests/framework.pyc
+%%ZOPEPRODUCTDIR%%/Formulator/tests/layer.py
+%%ZOPEPRODUCTDIR%%/Formulator/tests/layer.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/tests/runalltests.py
 %%ZOPEPRODUCTDIR%%/Formulator/tests/runalltests.pyc
 %%ZOPEPRODUCTDIR%%/Formulator/tests/test_Form.py
