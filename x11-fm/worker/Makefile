@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	worker
-PORTVERSION=	2.16.1
-PORTREVISION=	1
+PORTVERSION=	2.16.3
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/worker/downloads/
 
@@ -25,6 +24,14 @@ MAN1=		worker.1
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--disable-libxpkmaster
+OPTIONS=	XFT "Enable experimental xft support" Off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_XFT)
+USE_XORG+=	xft
+CONFIGURE_ARGS+=	--enable-xft
+.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
@@ -36,4 +43,4 @@ post-patch:
 		${WRKSRC}/scripts/${f}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
