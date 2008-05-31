@@ -31,10 +31,10 @@ make_xlfd()
 	_poc=$5
 
 	case "${_poc}:${_enc}" in
-	p:jisx0201.1976-*)	PFIX="fp=y:bw=0.5" ;;
-	c:jisx0201.1976-*)	PFIX="fp=n:bw=0.5" ;;
-	p:*)			PFIX="fp=y" ;;
-	c:*)			PFIX="fp=n" ;;
+	p:jisx0201.1976-*)	PFIX="bw=0.5" ;;
+	c:jisx0201.1976-*)	PFIX="bw=0.5" ;;
+	p:*)			PFIX="" ;;
+	c:*)			PFIX="" ;;
 	esac
 
 	set --	"${ROMA}"	medium-r \
