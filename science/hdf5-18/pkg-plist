@@ -5,6 +5,7 @@ bin/h5cc
 bin/h5debug
 bin/h5diff
 bin/h5dump
+%%FORTRAN%%bin/h5fc
 bin/h5import
 bin/h5jam
 bin/h5ls
@@ -78,8 +79,25 @@ include/H5Zpublic.h
 include/H5api_adpt.h
 include/H5cxx_pubconf.h
 include/H5pubconf.h
+%%FORTRAN%%include/H5pubconf_fortran.h
 include/H5public.h
 include/hdf5.h
+%%FORTRAN%%lib/h5a.mod
+%%FORTRAN%%lib/h5d.mod
+%%FORTRAN%%lib/h5e.mod
+%%FORTRAN%%lib/h5f.mod
+%%FORTRAN%%lib/h5fortran_flags.mod
+%%FORTRAN%%lib/h5fortran_types.mod
+%%FORTRAN%%lib/h5g.mod
+%%FORTRAN%%lib/h5global.mod
+%%FORTRAN%%lib/h5i.mod
+%%FORTRAN%%lib/h5lib.mod
+%%FORTRAN%%lib/h5p.mod
+%%FORTRAN%%lib/h5r.mod
+%%FORTRAN%%lib/h5s.mod
+%%FORTRAN%%lib/h5t.mod
+%%FORTRAN%%lib/h5z.mod
+%%FORTRAN%%lib/hdf5.mod
 lib/libhdf5.a
 lib/libhdf5.la
 lib/libhdf5.settings
@@ -87,6 +105,9 @@ lib/libhdf5.so
 lib/libhdf5.so.0
 lib/libhdf5_cpp.a
 lib/libhdf5_cpp.la
+%%FORTRAN%%lib/libhdf5_fortran.a
+%%FORTRAN%%lib/libhdf5_fortran.la
+%%FORTRAN%%lib/libhdf5_fortran.settings
 lib/libhdf5_hl.a
 lib/libhdf5_hl.la
 lib/libhdf5_hl.so
@@ -128,6 +149,21 @@ lib/libhdf5_hl.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/h5_select.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/h5_write.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c/ph5example.c
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/attrexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/compound.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/dsetexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/fileexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/groupexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/grpdsetexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/grpit.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/grpsexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/hyperslab.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/mountexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/refobjexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/refregexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/rwdsetexample.f90
+%%FORTRAN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fortran/selectele.f90
+%%FORTRAN%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fortran
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
