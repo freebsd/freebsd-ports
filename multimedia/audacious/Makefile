@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious
 PORTVERSION=	1.5.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
@@ -33,7 +33,7 @@ LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs \
 PORTDOCS=	README AUTHORS NEWS
 
 OPTIONS=	CHARSET	"Build with automatic charset detection" off \
-		DBUS	"Build with dbus support" off \
+		DBUS	"Build with dbus support" on \
 		GNOME	"Build with gconf support" off \
 		NLS	"Native Language Support" on \
 		XML	"Build with xml support" on \
