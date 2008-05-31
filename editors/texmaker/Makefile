@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	texmaker
-PORTVERSION=	1.6
+PORTVERSION=	1.7.1
 PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
@@ -22,7 +22,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc qmake rcc uic
+QT_COMPONENTS=	gui moc_build qmake_build rcc_build uic_build
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
@@ -43,6 +43,10 @@ RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv
 .if !defined(WITHOUT_XPDF)
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,^\(utilities.path =\).*,\1 ${DATADIR},' \
+		${WRKSRC}/texmaker.pro
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \

@@ -1,9 +1,10 @@
---- ./texmaker.pro.orig	Fri Jun 15 14:03:47 2007
-+++ ./texmaker.pro	Thu Jul  5 01:08:44 2007
-@@ -139,16 +139,26 @@
+--- ./texmaker.pro.orig	2008-04-23 17:30:45.000000000 +0400
++++ ./texmaker.pro	2008-05-26 22:12:38.000000000 +0400
+@@ -161,16 +161,26 @@
+ 	utilities/fr_FR.dic \
  	utilities/AUTHORS \
  	utilities/COPYING \
- 	utilities/CHANGELOG.txt \
+-	utilities/CHANGELOG.txt \
 -	utilities/texmaker16x16.png \
 -	utilities/texmaker22x22.png \
 -	utilities/texmaker32x32.png \
@@ -11,8 +12,8 @@
 -	utilities/texmaker64x64.png \
 -	utilities/texmaker128x128.png \
 -	utilities/texmaker.desktop \
--	utilities/texmaker.svg \
- 	utilities/xpdf_texmaker_sh.txt
+-	utilities/texmaker.svg
++	utilities/CHANGELOG.txt
  INSTALLS += utilities
 +icon16.path = $${PREFIX}/share/icons/hicolor/16x16/apps
 +icon16.files= utilities/texmaker16x16.png
