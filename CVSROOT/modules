@@ -5074,6 +5074,7 @@ imlib2_loaders	ports/graphics/imlib2_loaders
 imm		ports/mbone/imm
 imp-interpreter	ports/lang/imp-interpreter
 impact		ports/cad/impact
+import-pictures	ports/graphics/import-pictures
 impress		ports/editors/impress
 imspector	ports/net-im/imspector
 imwheel		ports/x11/imwheel
