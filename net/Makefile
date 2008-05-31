@@ -437,6 +437,7 @@
     SUBDIR += p5-AddressBook
     SUBDIR += p5-Amazon-SQS-Simple
     SUBDIR += p5-Apache2-SOAP
+    SUBDIR += p5-BBS-Client
     SUBDIR += p5-BBS-UserInfo
     SUBDIR += p5-BBS-UserInfo-Maple3
     SUBDIR += p5-BBS-UserInfo-Maple3itoc
