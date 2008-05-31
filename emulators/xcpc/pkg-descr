@@ -1,0 +1,17 @@
+Xcpc is a portable Amstrad CPC464/CPC664/CPC6128 Emulator written in C.
+It is designed to run on any POSIX system (Linux/BSD/UNIX-like OSes).
+
+Implemented Features:
+
+    * Athena GUI (selected at compilation time)
+    * Motif* GUI (selected at compilation time)
+    * Floppy disk images support (*.dsk)
+    * Snapshot memory images support (*.sna)
+    * Drag and Drop support (*.dsk, *.sna)
+    * Keyboard emulation (QWERTY, AZERTY)
+    * Joystick emulation (numeric keypad, numlock disabled)
+    * Almost full CRTC-6845 / GateArray emulation
+    * Adaptative frame-rate
+
+Author: Olivier Poncet <ponceto@noos.fr>
+WWW: http://xcpc.sourceforge.net/

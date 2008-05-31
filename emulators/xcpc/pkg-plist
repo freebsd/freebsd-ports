@@ -1,0 +1,10 @@
+bin/xcpc
+share/applications/xcpc.desktop
+share/pixmaps/xcpc.xpm
+%%DATADIR%%/roms/amsdos.rom
+%%DATADIR%%/roms/cpc464.rom
+%%DATADIR%%/roms/cpc6128.rom
+%%DATADIR%%/roms/cpc664.rom
+@dirrm %%DATADIR%%/roms
+@dirrm %%DATADIR%%
+@dirrmtry share/applications

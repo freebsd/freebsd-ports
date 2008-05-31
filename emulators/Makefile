@@ -188,6 +188,7 @@
     SUBDIR += wine-doors
     SUBDIR += x48
     SUBDIR += xbraitenberg
+    SUBDIR += xcpc
     SUBDIR += xgngeo
     SUBDIR += xgs
     SUBDIR += xhomer
