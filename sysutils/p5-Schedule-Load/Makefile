@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Schedule-Load
-PORTVERSION=	3.051
+PORTVERSION=	3.052
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-H
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 		${SITE_PERL}/${PERL_ARCH}/Unix/Processors.pm:${PORTSDIR}/sysutils/p5-Unix-Processors \
-		${SITE_PERL}/IPC/PidStat.pm:${PORTSDIR}/devel/p5-IPC-Locker
+		${SITE_PERL}/IPC/PidStat.pm:${PORTSDIR}/devel/p5-IPC-Locker \
+		${SITE_PERL}/IPC/PidStat.pm:${PORTSDIR}/devel/p5-IPC-Locker \
+		${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
