@@ -17573,6 +17573,7 @@ xcompmgr	ports/x11-wm/xcompmgr
 xconq		ports/games/xconq
 xconsole	ports/x11/xconsole
 xcoral		ports/editors/xcoral
+xcpc		ports/emulators/xcpc
 xcpustate	ports/sysutils/xcpustate
 xcruise		ports/x11-fm/xcruise
 xcubes		ports/games/xcubes
