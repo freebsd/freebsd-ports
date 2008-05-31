@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	formulator
-PORTVERSION=	1.11.1
+PORTVERSION=	1.11.3
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.infrae.com/download/Formulator/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
@@ -23,6 +23,9 @@ DIST_SUBDIR=	zope
 ZOPEPRODUCTNAME=	Formulator
 
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
+
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
