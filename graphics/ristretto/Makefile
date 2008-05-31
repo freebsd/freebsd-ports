@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ristretto
-PORTVERSION=	0.0.19
+PORTVERSION=	0.0.20
 CATEGORIES=	graphics xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 
