@@ -14,8 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A Generic Perl Event Loop
 
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+
 PERL_CONFIGURE=	yes
-DOCS=		Tutorial.pdf
+DOCS=		ANNOUNCE ChangeLog INSTALL MANIFEST README TODO Tutorial.pdf
 
 MAN3=		Event.3 Event::MakeMaker.3 Event::generic.3
 
@@ -23,9 +25,7 @@ post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${DOCSDIR}
-.for DOCFILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
