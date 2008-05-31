@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	5.76
+PORTVERSION=	5.78
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,11 +27,11 @@ PERL_CONFIGURE=	yes
 MAN3=		POE::Component::IRC.3 \
 		POE::Component::IRC::Common.3 \
 		POE::Component::IRC::Constants.3 \
-		POE::Component::IRC::Pipeline.3 \
 		POE::Component::IRC::Plugin.3 \
 		POE::Component::IRC::Plugin::AutoJoin.3 \
 		POE::Component::IRC::Plugin::BotAddressed.3 \
 		POE::Component::IRC::Plugin::BotTraffic.3 \
+		POE::Component::IRC::Plugin::DCC.3 \
 		POE::Component::IRC::Plugin::CTCP.3 \
 		POE::Component::IRC::Plugin::Connector.3 \
 		POE::Component::IRC::Plugin::Console.3 \
@@ -61,8 +61,7 @@ MAN3=		POE::Component::IRC.3 \
 		POE::Filter::IRC::Compat.3
 
 post-install:
-.ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>  Installing examples for ${PKGNAME}"
+.ifndef(NOPORTEXAMPLES)
 	@${INSTALL} -d ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
 .endif

@@ -6,7 +6,6 @@
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/Disconnecting.pm
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/Resolver.pm
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/Translator.pm
-%%SITE_PERL%%/POE/Component/IRC/Pipeline.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/AutoJoin.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/BotAddressed.pm
@@ -16,6 +15,7 @@
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Connector.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Console.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/CycleEmpty.pm
+%%SITE_PERL%%/POE/Component/IRC/Plugin/DCC.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/FollowTail.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/ISupport.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Logger.pm
@@ -34,17 +34,17 @@
 %%SITE_PERL%%/POE/Filter/IRC.pm
 %%SITE_PERL%%/POE/Filter/IRC/Compat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/.packlist
-%%EXAMPLESDIR%%/aimproxy.pl
-%%EXAMPLESDIR%%/dcctest.pl
-%%EXAMPLESDIR%%/dicebot.pl
-%%EXAMPLESDIR%%/eliza.pl
-%%EXAMPLESDIR%%/ircproxy.pl
-%%EXAMPLESDIR%%/logger.pl
-%%EXAMPLESDIR%%/moo.pl
-%%EXAMPLESDIR%%/rot13_multi.pl
-%%EXAMPLESDIR%%/simpleclient.pl
-%%EXAMPLESDIR%%/tinyurl.pl
-@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/aimproxy.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dcctest.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dicebot.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eliza.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircproxy.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logger.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/moo.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rot13_multi.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simpleclient.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tinyurl.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
