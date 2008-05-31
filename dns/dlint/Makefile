@@ -9,7 +9,7 @@
 PORTNAME=	dlint
 PORTVERSION=	1.4.0
 CATEGORIES=	dns
-MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/dns/
+MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/dns/
 DISTNAME=	dlint${PORTVERSION}
 
 MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
