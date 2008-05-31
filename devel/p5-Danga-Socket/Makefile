@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Danga-Socket
-PORTVERSION=	1.57
+PORTVERSION=	1.58
 CATEGORIES=	devel net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,9 @@ COMMENT=	Event loop and event-driven async socket base class
 BUILD_DEPENDS=	${SITE_PERL}/Sys/Syscall.pm:${PORTSDIR}/devel/p5-Sys-Syscall \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/${PERL_ARCH}/IO/KQueue.pm:${PORTSDIR}/devel/p5-IO-KQueue \
-		${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource
+		${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource \
+		${SITE_PERL}/${PERL_ARCH}/IO/Poll.pm:${PORTSDIR}/devel/p5-IO \
+		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
