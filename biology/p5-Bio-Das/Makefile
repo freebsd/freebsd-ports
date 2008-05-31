@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Das
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	biology perl5
 MASTER_SITES=	http://www.biodas.org/download/Bio::Das/ \
 		CPAN
