@@ -31,6 +31,10 @@ share/icons/hicolor/scalable/apps/texmaker.svg
 %%DATADIR%%/doc7.png
 %%DATADIR%%/doc8.png
 %%DATADIR%%/doc9.png
+%%DATADIR%%/en_GB.aff
+%%DATADIR%%/en_GB.dic
+%%DATADIR%%/fr_FR.aff
+%%DATADIR%%/fr_FR.dic
 %%DATADIR%%/latexhelp.html
 %%DATADIR%%/next.gif
 %%DATADIR%%/next_d.gif
@@ -38,14 +42,10 @@ share/icons/hicolor/scalable/apps/texmaker.svg
 %%DATADIR%%/prev_d.gif
 %%DATADIR%%/psheader.txt
 %%DATADIR%%/style.css
-%%DATADIR%%/texmaker_de.qm
 %%DATADIR%%/texmaker_fr.qm
-%%DATADIR%%/texmaker_ru.qm
-%%DATADIR%%/texmaker_zh.qm
 %%DATADIR%%/up.gif
 %%DATADIR%%/up_d.gif
 %%DATADIR%%/usermanual_en.html
 %%DATADIR%%/usermanual_fr.html
-%%DATADIR%%/xpdf_texmaker_sh.txt
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
