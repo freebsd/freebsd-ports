@@ -11,4 +11,10 @@ MNAME=	gssapi
 MTYPES=	im om
 
 .include "${.CURDIR}/../rsyslog3/bsd.rsyslog.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
