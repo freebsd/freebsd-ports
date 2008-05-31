@@ -16,6 +16,7 @@ COMMENT=	Blog management application based on Qt 4
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui rcc network xml moc_build qmake_build uic_build
 USE_CMAKE=	yes
+CMAKE_USE_PTHREAD= yes
 CMAKE_ARGS+=	-DMANPAGE_DIRECTORY="${MANPREFIX}/man/man1"
 
 MANCOMPRESSED=	yes
