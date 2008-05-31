@@ -48,8 +48,9 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://ikiwiki.info/security/#index33h2">
 	  <p>This hole allowed ikiwiki to accept logins using empty
 	  passwords to openid accounts that didn't use a password.</p>
-	<p>Upgrading to ikiwiki 2.48 immediatly is recommended if your wiki
-	  allows both password and openid logins.</p>
+	<p>Upgrading to a non-vulnerable ikiwiki version immediatly is
+	  recommended if your wiki allows both password and openid
+	  logins.</p>
 	</blockquote>
       </body>
     </description>
