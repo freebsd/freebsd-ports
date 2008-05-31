@@ -3488,3 +3488,4 @@ net-mgmt/ap-utils||2008-05-30|Has expired: Does not work with gcc4.2; appears to
 multimedia/xfce4-xmms-controller-plugin||2008-05-30|Has expired: Project is dead
 www/pear-HTTP_Session||2008-05-30|Has expired: Use www/pear-HTTP_Session2 instead
 security/bioapitool||2008-05-30|Has expired: All functionallity of this tools has been merged with pam_bsdbioapi
+japanese/motoya-ttfonts||2008-05-31|Removed because of extremely restrictive license
