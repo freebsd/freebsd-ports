@@ -60,6 +60,7 @@
     SUBDIR += ktrack
     SUBDIR += libfec
     SUBDIR += libirman
+    SUBDIR += libsyncml
     SUBDIR += libticables
     SUBDIR += libticables2
     SUBDIR += libticalcs2
