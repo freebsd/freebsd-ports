@@ -24,7 +24,7 @@ SOURCE=		FFFF3 FragmentProgram FragmentProgramARB10 GPUProgram \
 		PixelBuffer VertexProgram VertexProgramATI VertexProgramNV \
 		extensions vpext
 
-CXXFLAGS+=	-I${LOCALBASE}/include/GL -D__linux__ -I${LOCALBASE}/include/ \
+CXXFLAGS+=	-I${LOCALBASE}/include/GL -D__linux__  -msse -msse2 -m3dnow -I${LOCALBASE}/include/ \
 		${PTHREAD_CFLAGS} 
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lglut -lGL -lXext -lX11 -lXmu \
 		 -lGLU -lm
@@ -43,10 +43,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
