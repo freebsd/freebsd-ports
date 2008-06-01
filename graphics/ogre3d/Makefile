@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ogre3d
-PORTVERSION=	1.4.7
-PORTREVISION=	3
+PORTVERSION=	1.4.8
+PORTREVISION=	0
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=ogre
-DISTNAME=	ogre-linux_osx-v${PORTVERSION:S/./-/g}
+DISTNAME=	ogre-v${PORTVERSION:S/./-/g}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A scene-oriented, flexible 3D engine written in C++
@@ -20,10 +20,10 @@ LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
 		CEGUIBase.1:${PORTSDIR}/graphics/cegui \
 		IL.1:${PORTSDIR}/graphics/devil
 
-WRKSRC=		${WRKDIR}/ogrenew
+WRKSRC=		${WRKDIR}/ogre
 CONFIGURE_ARGS=	--disable-cg --program-transform-name= --enable-static \
 		--with-cppunit-prefix=/nonexistent --disable-freeimage
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -DNDEBUG" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -DNDEBUG" \
 		ZZIPLIB_CFLAGS="-I${LOCALBASE}/include" \
 		ZZIPLIB_LIBS="-L${LOCALBASE}/lib -lzzip"
 GNU_CONFIGURE=	YES
@@ -41,7 +41,7 @@ post-patch:
 		s|sdl-config|${SDL_CONFIG}|g; \
 		s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|"-lIL|"-L${LOCALBASE}/lib -lIL|g; \
-		s|-lGL -lGLU|-L${LOCALBASE}/lib &|g; \
+		s|-lGL -lGLU|-L${X11BASE}/lib &|g; \
 		s|" == "x|" = "x|g; \
 		s|-lfreeimage|-L${LOCALBASE}/lib &|g' \
 		${WRKSRC}/configure

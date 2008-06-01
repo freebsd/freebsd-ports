@@ -236,11 +236,11 @@ lib/OGRE/RenderSystem_GL.so
 lib/libCEGUIOgreRenderer.a
 lib/libCEGUIOgreRenderer.la
 lib/libCEGUIOgreRenderer.so
-lib/libCEGUIOgreRenderer-1.4.7.so
+lib/libCEGUIOgreRenderer-1.4.8.so
 lib/libOgreMain.a
 lib/libOgreMain.la
 lib/libOgreMain.so
-lib/libOgreMain-1.4.7.so
+lib/libOgreMain-1.4.8.so
 libdata/pkgconfig/CEGUI-OGRE.pc
 libdata/pkgconfig/OGRE.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
