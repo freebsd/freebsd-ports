@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zope29
-PORTVERSION=	2.9.7
-PORTREVISION=	1
+PORTVERSION=	2.9.9
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
@@ -19,18 +18,10 @@ COMMENT=	An object-based web application platform
 
 USE_PYTHON=	2.4
 USE_RC_SUBR=	${PORTNAME}.sh zeo29.sh
-LATEST_LINK=	zope29
 
-# Note: the notes that follow reflect the decisions of prior maintainers
-# of this port. IOW, don't blame me if you don't like the way it's done.
-# Exceptions to this are marked as such.
-
-# Change these, if you like, via the environment.
 ZOPE_USER?=		www
 WEBBASEDIR?=		www
 SZOPEBASEDIR?=		${WEBBASEDIR}/Zope29
-
-# Do not change anything below this line.
 
 .if defined(INSTANCENAME)
 ZOPEINSTANCENAME=	${INSTANCENAME}
@@ -73,12 +64,15 @@ post-configure:
 		-e 's,^.*LN.*PYTHON.*$$,,g' \
 		${WRKSRC}/${MAKEFILE}
 
+post-build:
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
+
 post-install:
 	${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in \
 		${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
 
 	${MKDIR} ${ZOPEBASEDIR}/Products
-	${CP} ${FILESDIR}/Products_00readme-freebsd.txt \
+	${INSTALL_DATA} ${FILESDIR}/Products_00readme-freebsd.txt \
 		${ZOPEBASEDIR}/Products/00readme-freebsd.txt
 
 .for d in lib bin doc skel Products
@@ -110,6 +104,6 @@ zeo:
 	@${CAT} ${WRKDIR}/zeo_message
 
 pre-package:
-	${CP} ${WRKDIR}/package-pkg-message ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKDIR}/package-pkg-message ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -1,34 +1,63 @@
 %%ZOPEBASEDIR%%/Products/00readme-freebsd.txt
 %%ZOPEBASEDIR%%/bin/README.txt
 %%ZOPEBASEDIR%%/bin/analyze.py
+%%ZOPEBASEDIR%%/bin/analyze.pyc
 %%ZOPEBASEDIR%%/bin/check_catalog.py
+%%ZOPEBASEDIR%%/bin/check_catalog.pyc
 %%ZOPEBASEDIR%%/bin/checkbtrees.py
+%%ZOPEBASEDIR%%/bin/checkbtrees.pyc
 %%ZOPEBASEDIR%%/bin/compilezpy.py
+%%ZOPEBASEDIR%%/bin/compilezpy.pyc
 %%ZOPEBASEDIR%%/bin/copyzopeskel.py
+%%ZOPEBASEDIR%%/bin/copyzopeskel.pyc
 %%ZOPEBASEDIR%%/bin/decompilezpy.py
+%%ZOPEBASEDIR%%/bin/decompilezpy.pyc
 %%ZOPEBASEDIR%%/bin/fsdump.py
+%%ZOPEBASEDIR%%/bin/fsdump.pyc
 %%ZOPEBASEDIR%%/bin/fsrefs.py
+%%ZOPEBASEDIR%%/bin/fsrefs.pyc
 %%ZOPEBASEDIR%%/bin/fstail.py
+%%ZOPEBASEDIR%%/bin/fstail.pyc
 %%ZOPEBASEDIR%%/bin/fstest.py
+%%ZOPEBASEDIR%%/bin/fstest.pyc
 %%ZOPEBASEDIR%%/bin/load_site.py
+%%ZOPEBASEDIR%%/bin/load_site.pyc
 %%ZOPEBASEDIR%%/bin/migrate.py
+%%ZOPEBASEDIR%%/bin/migrate.pyc
 %%ZOPEBASEDIR%%/bin/mkzeoinstance.py
+%%ZOPEBASEDIR%%/bin/mkzeoinstance.pyc
 %%ZOPEBASEDIR%%/bin/mkzopeinstance.py
+%%ZOPEBASEDIR%%/bin/mkzopeinstance.pyc
 %%ZOPEBASEDIR%%/bin/netspace.py
+%%ZOPEBASEDIR%%/bin/netspace.pyc
 %%ZOPEBASEDIR%%/bin/parsezeolog.py
+%%ZOPEBASEDIR%%/bin/parsezeolog.pyc
 %%ZOPEBASEDIR%%/bin/reindex_catalog.py
+%%ZOPEBASEDIR%%/bin/reindex_catalog.pyc
 %%ZOPEBASEDIR%%/bin/repozo.py
+%%ZOPEBASEDIR%%/bin/repozo.pyc
 %%ZOPEBASEDIR%%/bin/requestprofiler.py
+%%ZOPEBASEDIR%%/bin/requestprofiler.pyc
 %%ZOPEBASEDIR%%/bin/space.py
+%%ZOPEBASEDIR%%/bin/space.pyc
 %%ZOPEBASEDIR%%/bin/test.py
+%%ZOPEBASEDIR%%/bin/test.pyc
 %%ZOPEBASEDIR%%/bin/timeout.py
+%%ZOPEBASEDIR%%/bin/timeout.pyc
 %%ZOPEBASEDIR%%/bin/zeopack.py
+%%ZOPEBASEDIR%%/bin/zeopack.pyc
 %%ZOPEBASEDIR%%/bin/zeoqueue.py
+%%ZOPEBASEDIR%%/bin/zeoqueue.pyc
 %%ZOPEBASEDIR%%/bin/zeoreplay.py
+%%ZOPEBASEDIR%%/bin/zeoreplay.pyc
 %%ZOPEBASEDIR%%/bin/zeoserverlog.py
+%%ZOPEBASEDIR%%/bin/zeoserverlog.pyc
 %%ZOPEBASEDIR%%/bin/zeoup.py
+%%ZOPEBASEDIR%%/bin/zeoup.pyc
 %%ZOPEBASEDIR%%/bin/zodbload.py
+%%ZOPEBASEDIR%%/bin/zodbload.pyc
 %%ZOPEBASEDIR%%/bin/zpasswd.py
+%%ZOPEBASEDIR%%/bin/zpasswd.pyc
 %%ZOPEBASEDIR%%/doc/CHANGES.txt
 %%ZOPEBASEDIR%%/doc/CREDITS.txt
 %%ZOPEBASEDIR%%/doc/DEBUGGING.txt
@@ -715,7 +744,6 @@
 %%ZOPEBASEDIR%%/lib/python/OFS/subscribers.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/OFS/tests/events.zcml
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/mime.types-1
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/mime.types-2
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/test.gif
@@ -889,6 +917,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/resource.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/resource.zcml
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/resource_ftest.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/resource_subdir/resource.html
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/resource_subdir/resource.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/seagull.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Five/browser/tests/security.pt
@@ -5367,6 +5396,8 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/component/tests/test_registration.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/component/tests/test_site.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/component/tests/test_site.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/component/tests/test_vocabulary.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/component/tests/test_vocabulary.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/component/tests/views.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/component/tests/views.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/component/vocabulary.py
@@ -5723,6 +5754,7 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/configure.zcml
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/filerepresentation.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/filerepresentation.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/folder/filerepresentation.txt
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/folder.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/folder.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/fssync/__init__.py
@@ -8640,6 +8672,8 @@
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/testbrowser-ftesting.zcml
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/testing.py
 %%ZOPEBASEDIR%%/lib/python/zope/testbrowser/testing.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/tests.py
+%%ZOPEBASEDIR%%/lib/python/zope/testbrowser/tests.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testing/__init__.py
 %%ZOPEBASEDIR%%/lib/python/zope/testing/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/testing/cleanup.py
@@ -9547,8 +9581,8 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl
-@dirrm %%ZOPEBASEDIR%%/lib/python
-@dirrm %%ZOPEBASEDIR%%/lib
+@dirrmtry %%ZOPEBASEDIR%%/lib/python
+@dirrmtry %%ZOPEBASEDIR%%/lib
 @dirrm %%ZOPEBASEDIR%%/doc
 @dirrm %%ZOPEBASEDIR%%/bin
 @dirrmtry %%ZOPEBASEDIR%%/Products
