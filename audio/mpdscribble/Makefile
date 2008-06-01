@@ -7,6 +7,7 @@
 
 PORTNAME=	mpdscribble
 PORTVERSION=	0.2.12
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.frob.nl/projects/scribble/
 
@@ -18,6 +19,9 @@ LIB_DEPENDS=	soup:${PORTSDIR}/devel/libsoup22
 GNU_CONFIGURE=	yes
 
 MAN1=		mpdscribble.1
-PLIST_FILES=	bin/mpdscribble
+PLIST_FILES=	bin/mpdscribble bin/mpdscribble-setup
+
+post-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${PREFIX}/bin/mpdscribble-setup
 
 .include <bsd.port.mk>
