@@ -5,23 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=	koctave3
-PORTVERSION=	0.65
-PORTREVISION=	5
+PORTNAME=	koctave
+PORTVERSION=	0.70
 CATEGORIES=	math kde
-MASTER_SITES=	http://lehmann.in-berlin.de/bsd/
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org	
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	KDEGUI for octave
 
 RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
 
-USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 
-CONFIGURE_ARGS+=--program-transform-name=koctave3
+post-patch:
+	${REINPLACE_CMD} -e '/kde_appsdir/s|applnk||g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e '/kde_appsdir/s|Applications|applications/kde|g' \
+		-e '/kde_appsdir/s|share/||g' ${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
+		${WRKSRC}/src/prefs.cpp ${WRKSRC}/src/koctave.cpp
 
 .include <bsd.port.mk>
