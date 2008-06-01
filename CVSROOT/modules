@@ -13650,6 +13650,7 @@ py-epsilon	ports/devel/py-epsilon
 py-event	ports/devel/py-event
 py-excelerator	ports/textproc/py-excelerator
 py-exif		ports/graphics/py-exif
+py-exiv2	ports/graphics/py-exiv2
 py-expat	ports/textproc/py-expat
 py-extended_threading	ports/devel/py-extended_threading
 py-extremes	ports/devel/py-extremes
