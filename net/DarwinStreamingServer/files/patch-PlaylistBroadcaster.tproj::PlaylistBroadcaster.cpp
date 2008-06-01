@@ -1,18 +1,15 @@
---- PlaylistBroadcaster.tproj/PlaylistBroadcaster.cpp.orig	Sat Mar 12 08:24:54 2005
-+++ PlaylistBroadcaster.tproj/PlaylistBroadcaster.cpp	Sat Feb 10 04:04:32 2007
-@@ -229,9 +229,9 @@
- 
-     sgProgramName = argv[0];
+--- PlaylistBroadcaster.tproj/PlaylistBroadcaster.cpp.orig	2008-05-06 08:29:00.000000000 +0900
++++ PlaylistBroadcaster.tproj/PlaylistBroadcaster.cpp	2008-06-01 18:07:58.000000000 +0900
+@@ -231,7 +231,7 @@
  #ifdef __Win32__
--    while ((anOption = getopt(argc, argv, "vhdcpbDtai:fe:" )) != EOF)
-+    while ((anOption = getopt(argc, argv, "vhdcpbDtai:fe:" )) != -1)
+     while ((anOption = getopt(argc, argv, "vhdcpbDtai:fe:" )) != EOF)
  #else
 -    while ((anOption = getopt(argc, argv, "vhdcpbDls:tai:fe:" )) != EOF)
 +    while ((anOption = getopt(argc, argv, "vhdcpbDls:tai:fe:" )) != -1)
  #endif
      {
          
-@@ -2077,7 +2077,7 @@
+@@ -2082,7 +2082,7 @@
  
  struct sigaction act;
      

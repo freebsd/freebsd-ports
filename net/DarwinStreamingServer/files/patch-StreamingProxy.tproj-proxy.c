@@ -1,6 +1,6 @@
---- StreamingProxy.tproj/proxy.c.orig	Sat Feb 10 04:02:08 2007
-+++ StreamingProxy.tproj/proxy.c	Sat Feb 10 04:02:33 2007
-@@ -203,7 +203,7 @@
+--- StreamingProxy.tproj/proxy.c.orig	2008-05-06 08:28:57.000000000 +0900
++++ StreamingProxy.tproj/proxy.c	2008-06-01 18:10:57.000000000 +0900
+@@ -204,7 +204,7 @@
  {
      int i, j;
      int     numOptions = 0; // num command line options spec'd

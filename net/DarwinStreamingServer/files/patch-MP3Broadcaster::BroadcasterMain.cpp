@@ -1,5 +1,5 @@
---- MP3Broadcaster/BroadcasterMain.cpp.orig	Sat Mar 12 08:24:54 2005
-+++ MP3Broadcaster/BroadcasterMain.cpp	Sat Feb 10 03:54:31 2007
+--- MP3Broadcaster/BroadcasterMain.cpp.orig	2008-05-06 08:28:57.000000000 +0900
++++ MP3Broadcaster/BroadcasterMain.cpp	2008-06-01 18:05:51.000000000 +0900
 @@ -85,7 +85,7 @@
      char* config = NULL;
      char* playList = NULL;
@@ -22,8 +22,8 @@
  
  struct sigaction act;
      
--#if defined(sun) || defined(i386) || defined(__MacOSX__) || defined(__sgi__) || defined(__osf__) || defined(__hpux__)
-+#if defined(sun) || defined(i386) || defined(__MacOSX__) || defined(__sgi__) || defined(__osf__) || defined(__hpux__) || defined(__amd64__)
+-#if defined(sun) || defined(i386) || defined(__MacOSX__) || defined(__sgi__) || defined(__osf__) || defined(__hpux__) || defined(__linuxppc__)
++#if defined(sun) || defined(i386) || defined(__MacOSX__) || defined(__sgi__) || defined(__osf__) || defined(__hpux__) || defined(__linuxppc__) || defined(__amd64__)
      sigemptyset(&act.sa_mask);
      act.sa_flags = 0;
      act.sa_handler = (void(*)(int))&SignalEventHandler;
