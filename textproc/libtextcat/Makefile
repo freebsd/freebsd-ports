@@ -32,8 +32,10 @@ post-install:
 	(cd ${WRKSRC}/langclass/LM &&		\
 	${FIND} . -name "*.lm" -exec ${INSTALL_DATA} "{}" "${DATADIR}/LM/{}" \;)
 	${INSTALL_DATA} ${WRKSRC}/langclass/conf.txt "${DATADIR}"
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 regression-test:
 	(cd ${WRKSRC}/langclass/ &&		\
