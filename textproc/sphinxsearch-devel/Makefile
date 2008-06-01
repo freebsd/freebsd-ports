@@ -8,11 +8,14 @@
 # this port.  You need a patched version of mysql server for that.
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	0.9.8.r1065
+DISTVERSION=	0.9.8-rc2
+PORTEPOCH=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://www.sphinxsearch.com/downloads/
 PKGNAMESUFFIX?=	-devel
-DISTNAME=	sphinx-0.9.8-svn-r1065
+DISTNAME=	sphinx-0.9.8-rc2
+
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Sphinx Full-Text Search Engine
@@ -53,8 +56,11 @@ SUB_LIST+=	PORTNAME=${PORTNAME}     \
 SUB_FILES+=	pkg-install pkg-deinstall
 
 .if !defined(NOPORTDOCS)
-EXAMPLES=	example.sql api/sphinxapi.php api/test.php api/test2.php
 DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+EXAMPLES=	example.sql api/sphinxapi.php api/test.php api/test2.php
 .endif
 
 .include <bsd.port.pre.mk>
