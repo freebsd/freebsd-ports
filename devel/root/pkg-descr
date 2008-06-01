@@ -1,5 +1,5 @@
 ROOT stand for "<R>OOTs <O>bject-<O>riented <T>echnologies" - it is an object
-oriented data anlaysis framework written in C++. ROOT has its origin at the
+oriented data analysis framework written in C++. ROOT has its origin at the
 Centre Europeenne pour la Recherche Nucleaire (CERN) and is a cross platform
 tool well-known to high energy physicists, but it's also used in a wide range
 of other data analysis applications. The system consists of the C/C++
@@ -8,7 +8,7 @@ hundreds of classes, which provides functionalities u.a. for:
 
  - Data Histogram and Minimization Operations
  - Linear Algebra, Matrix and Vector Operations
- - Tree, Ntuple and other Data Containers/Stuctures
+ - Tree, Ntuple and other Data Containers/Structures
  - 2D Graphics, 3D Graphics and Detector Geometry Modeling
  - Graphical User Interface
  - Operating System and Networking Interface

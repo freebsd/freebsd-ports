@@ -7,7 +7,7 @@ forms are "context diffs" and "unidiffs".
   cdiffreverse   reverses a context diff.
   udiffreverse   reverses a unidiff.
 
-cd2ud is decicated to David S. Miller "context diffs make my head spin".
+cd2ud is dedicated to David S. Miller "context diffs make my head spin".
 
 - George Reid
 greid@ukug.uk.freebsd.org

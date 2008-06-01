@@ -1,4 +1,4 @@
-To paraphase the README:
+To paraphrase the README:
 
 This is a Python language binding for the ORBit2 CORBA implementation.
 It aims to take advantage of new features found in ORBit2 to make

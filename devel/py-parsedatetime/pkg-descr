@@ -6,13 +6,13 @@ parsedatetime is able to parse, for example, the following:
     * 25 Aug 2008
     * Aug 25 5pm
     * 5pm August 25
-    * next saturday
+    * next Saturday
     * tomorrow
-    * next thursday at 4pm
+    * next Thursday at 4pm
     * at 4pm
     * eod
     * tomorrow eod
-    * eod tuesday
+    * eod Tuesday
     * eoy
     * eom
     * in 5 minutes

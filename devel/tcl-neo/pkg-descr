@@ -2,7 +2,7 @@ Part of the NewWebScript an Apache module that allows webpage
 developers to embed Tcl code into their HTML, creating webpages
 with active content.
 
-This part is a general purpose part of NWS adding many convinience
+This part is a general purpose part of NWS adding many convenience
 commands and procedures, including operating with serial devices,
 Berkeley DB2, and some client/server databases (Oracle, Postgres --
 if you have those installed).

@@ -13,7 +13,7 @@ Features :
 HTML_Template_ITX :
 With this class you get the full power of the phplib template class.
 You may have one file with blocks in it but you have as well one main file
-and multiple files one for each block. This is quite usefull when you have
+and multiple files one for each block. This is quite useful when you have
 user configurable websites. Using blocks not in the main template allows
 you to modify some parts of your layout easily.
 

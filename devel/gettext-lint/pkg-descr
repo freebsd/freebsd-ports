@@ -4,7 +4,7 @@ building tool.
 
 This package includes:
     * POFileStatus - PO file validator and status reporting
-    * POFileChecker - searchs for common mistakes in PO files
+    * POFileChecker - searches for common mistakes in PO files
     * POTFileChecker - searches for common mistakes in POT files
     * POFileConsistency - PO file consistency checks
     * POFileConsistencyShell - PO file consistency checks, interactive mode

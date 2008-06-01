@@ -13,7 +13,7 @@ threads are managed by a priority- and event-based non-preemptive
 scheduler. The intention is that this way one can achieve better
 portability and run-time performance than with preemptive scheduling.
 The event facility allows threads to wait until various types of events
-occur, including pending I/O on filedescriptors, asynchronous signals,
+occur, including pending I/O on file descriptors, asynchronous signals,
 elapsed timers, pending I/O on message ports, thread and process
 termination, and even customized callback functions.
 

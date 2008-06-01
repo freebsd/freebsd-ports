@@ -1,5 +1,5 @@
 px is a wrapper around p4. It provides all the functionality of p4
-(defering work to it) plus it extends some standard p4 commands and
+(deferring work to it) plus it extends some standard p4 commands and
 adds a few new ones. If you are a Perforce user you might find these
 extensions useful.
 

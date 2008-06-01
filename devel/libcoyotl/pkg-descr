@@ -3,7 +3,7 @@ in many of my programs, but which aren't "big enough" to warrant
 an individual library.
 
 Key features of Coyotl include:
- -- A polymorphic collection of the best psuedorandom number generators,
+ -- A polymorphic collection of the best pseudorandom number generators,
     including the Mersenne Twister and Marsaglia's favorites.
  -- Utilities for floating-point numbers, including additional functions
     for trigonometry, least common multiple, greatest common denominator,

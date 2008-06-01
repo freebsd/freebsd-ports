@@ -1,4 +1,4 @@
-This is the library needed to YTNEF aaplication
+This is the library needed to YTNEF application
 
 This program decodes those annoying application/ms-tnef MIME attachments that
 Microsoft mail servers helpfully use to encapsulate your already MIME encoded

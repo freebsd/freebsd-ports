@@ -1,5 +1,5 @@
 Truc is a web-based tool for requirement and use case tracking.
-It has fileupload, discussions, version control, use case
+It has file upload, discussions, version control, use case
 history, build and release management. It supports assignment
 of requirements & use cases to releases and filtering over all
 fields.

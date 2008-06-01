@@ -8,7 +8,7 @@ pace. ZenTest only works with Ruby and Test::Unit.
 unit_diff is a command-line filter to diff expected results from 
 actual results and allow you to quickly see exactly what is wrong.
 
-autotest is a continous testing facility meant to be used during
+autotest is a continuous testing facility meant to be used during
 development. As soon as you save a file, autotest will run the
 corresponding dependent tests.
 

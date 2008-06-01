@@ -1,5 +1,5 @@
 ExtLib is a project aiming at providing a complete - yet small -
-standard library for the OCaml programming langage. The purpose of
+standard library for the OCaml programming language. The purpose of
 this library is to add new functions to OCaml Standard Library
 modules, to modify some functions in order to get better performances
 or more safety (tail-recursive) but also to provide new modules which

@@ -1,7 +1,7 @@
 FGA is a simple yet powerful implementation of a general genetic algorithm, and
 provides many types of crossover and selection procedures.
 
-It is suitable to solve mathematical problems such as combinatorical
+It is suitable to solve mathematical problems such as combinatorial
 optimization ones, as well as to build artificial life simulations.
 
 Written in C++, the library is released under the terms of the GNU Lesser

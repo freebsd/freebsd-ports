@@ -7,7 +7,7 @@ refers to irrelevant data present in a message being classified. Bayesian Noise
 Reduction dubs irrelevant text in order to provide cleaner classification and
 is implemented as a pre-filter to existing language classification functions.
 
-BNR is used in Dspam (mail/dspam, mail/dspam-devel - the ports don't depent on
+BNR is used in Dspam (mail/dspam, mail/dspam-devel - the ports don't depend on
 this one)
 
 See www for white-paper and presentation.

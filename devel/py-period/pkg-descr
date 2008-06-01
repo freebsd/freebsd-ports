@@ -1,4 +1,4 @@
-This is an early version of a basic time period checking libary for Python.
+This is an early version of a basic time period checking library for Python.
 It is in part inspired by perl's Time::Period module and the time class
 mechanism of Cfengine.
 

@@ -10,7 +10,7 @@ compatible files without the need of any other external software.
     * All standard cell's border-styles and colors.
     * Three basic type of cells:
           o Blank.
-          o Label. The text in labels can be formated in all standard styles.
+          o Label. The text in labels can be formatted in all standard styles.
           o Number. All standard number-formats are supported.
     * Merged cells.
     * Handling of cells using ranges.

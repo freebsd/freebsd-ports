@@ -5,7 +5,7 @@ poll(2), which require lengthy preparation and bookkeeping to use.  With
 kevent(2), a list of file descriptors or other object to monitor is passed
 in once, and the system returns a notification when the object triggers a 
 filter, such as 'ready to read data' for file descriptors.  See the 
-manpages for details.
+man pages for details.
 
 This Python module provides a C module and supporting Python script to
 use these functions in a object-oriented manner.

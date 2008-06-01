@@ -1,5 +1,5 @@
 FSF gcc for cross-target development. This port brings C, C++ and
-Objective C compillers with all target libraries (libstdc++, libsupc++,
+Objective C compilers with all target libraries (libstdc++, libsupc++,
 libobjc, libssp, libgcc). Gloss and libc layer are provided through
 newlib embedded C library.
 

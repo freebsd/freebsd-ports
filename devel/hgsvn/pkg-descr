@@ -6,7 +6,7 @@ latest changes from the SVN server, manage private branches, submit
 patches to project maintainers, etc.  And of course you have fast
 local operations like "hg log", "hg annotate"...
 
-Currenly two scripts are provided:
+Currently two scripts are provided:
 
  * hgimportsvn initializes an SVN checkout which is also a
    Mercurial repository.
