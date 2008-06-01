@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080601:
+  AFFECTS: users of www/ikiwiki
+  AUTHOR: brix@FreeBSD.org
+
+  If password based logins is enabled in ikiwiki, those passwords were
+  stored in cleartext in the userdb.  To guard against exposing users'
+  passwords, ikiwiki 2.48 and later use strong (blowfish) hashes for
+  storing passwords.
+
+  To hash existing passwords, update to ikiwiki-2.48 and run the
+  following command for each of your ikiwiki src dirs:
+
+  ikiwiki-transition hashpassword /path/to/your/wiki/srcdir
+
 20080524:
   AFFECTS: users of net-im/jabberd
   AUTHOR: mm@FreeBSD.org
