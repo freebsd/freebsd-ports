@@ -463,6 +463,7 @@
     SUBDIR += tkman
     SUBDIR += tkregexp
     SUBDIR += tkrunit
+    SUBDIR += tmux
     SUBDIR += toilet
     SUBDIR += tpp
     SUBDIR += translate
