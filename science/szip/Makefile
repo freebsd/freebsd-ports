@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	szip
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	science archivers
-MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/szip/${PORTVERSION}/src/:src \
+MASTER_SITES=	ftp://ftp.hdfgroup.org/lib-external/szip/2.1/src/:src \
 		http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/:doc
 PKGNAMEPREFIX=	hdf-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 		${DOCFILE}:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Lossless compression library for scientific data
 
 USE_AUTOTOOLS=	libtool:15
