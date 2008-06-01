@@ -28,16 +28,8 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INFO=		automake-${BUILD_VERSION}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo --no-split"
-.else
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
-.endif
+INFO=		automake-${BUILD_VERSION}
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/*.info
@@ -49,4 +41,4 @@ pre-su-install:
 	@${MKDIR} ${PREFIX}/share/automake-${BUILD_VERSION}
 	@${MKDIR} ${PREFIX}/share/aclocal-${BUILD_VERSION}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
