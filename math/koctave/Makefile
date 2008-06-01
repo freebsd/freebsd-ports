@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	math kde
 MASTER_SITES=	http://lehmann.in-berlin.de/bsd/
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	ports@FreeBSD.org	
 COMMENT=	KDEGUI for octave
 
 RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
