@@ -26,15 +26,28 @@ CONFIGURE_ARGS=	--disable-cg --program-transform-name= --enable-static \
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -DNDEBUG" \
 		ZZIPLIB_CFLAGS="-I${LOCALBASE}/include" \
 		ZZIPLIB_LIBS="-L${LOCALBASE}/lib -lzzip"
+
+OPTIONS=	GTK	"Use GTK instead of Xt gui"	off
+
 GNU_CONFIGURE=	YES
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
-#USE_GCC=	3.4
 USE_GNOME=	gnomehack
 USE_GMAKE=	YES
 USE_SDL=	sdl
 USE_XORG=	xaw
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GTK)
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=--with-gui=gtk
+PLIST_SUB+=	WITH_GTK=""
+.else
+CONFIGURE_ARGS+=--with-gui=Xt
+PLIST_SUB+=	WITH_GTK="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
@@ -77,4 +90,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
