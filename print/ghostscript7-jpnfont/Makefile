@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript7-jpnfont
 PORTVERSION=	7.07
-CATEGORIES=	japanese print
+CATEGORIES=	print japanese
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 

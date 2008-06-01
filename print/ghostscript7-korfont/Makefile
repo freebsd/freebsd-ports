@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript7-korfont
 PORTVERSION=	7.07
-CATEGORIES=	korean print
+CATEGORIES=	print korean
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
