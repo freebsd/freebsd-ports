@@ -31,6 +31,7 @@
 %%SITE_PERL%%/Net/XMPP2/Ext/Pubsub.pm
 %%SITE_PERL%%/Net/XMPP2/Ext/RegisterForm.pm
 %%SITE_PERL%%/Net/XMPP2/Ext/Registration.pm
+%%SITE_PERL%%/Net/XMPP2/Ext/VCard.pm
 %%SITE_PERL%%/Net/XMPP2/Ext/Version.pm
 %%SITE_PERL%%/Net/XMPP2/Extendable.pm
 %%SITE_PERL%%/Net/XMPP2/IM/Account.pm

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-XMPP2
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	net-im perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An implementation of the XMPP Protocol
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
@@ -58,6 +58,7 @@ MAN3=		Net::XMPP2.3 \
 		Net::XMPP2::Ext::Pubsub.3 \
 		Net::XMPP2::Ext::RegisterForm.3 \
 		Net::XMPP2::Ext::Registration.3 \
+		Net::XMPP2::Ext::VCard.3 \
 		Net::XMPP2::Ext::Version.3 \
 		Net::XMPP2::Extendable.3 \
 		Net::XMPP2::IM::Account.3 \
