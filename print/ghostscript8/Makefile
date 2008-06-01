@@ -12,7 +12,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
 		http://www.humblesoft.com/pub/:epag
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs
-PKGNAMESUFFIX=	-gpl
 DISTNAME=	${PORTNAME:S,8$,,}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gs_srcs ${EPAG_SRCS}:epag
 DIST_SUBDIR=	${PORTNAME:S,8$,,}
