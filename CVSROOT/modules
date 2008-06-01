@@ -15969,6 +15969,7 @@ subtitleoffsetmodifier	ports/multimedia/subtitleoffsetmodifier
 subtitleripper	ports/multimedia/subtitleripper
 subtools	ports/multimedia/subtools
 subversion	ports/devel/subversion
+subversion-freebsd	ports/devel/subversion-freebsd
 subversion-perl	ports/devel/subversion-perl
 subversion-python	ports/devel/subversion-python
 subversion-ruby	ports/devel/subversion-ruby
