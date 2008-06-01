@@ -16453,6 +16453,7 @@ tmpreaper	ports/sysutils/tmpreaper
 tmpwatch	ports/sysutils/tmpwatch
 tmsnc		ports/net-im/tmsnc
 tmu		ports/x11-fonts/tmu
+tmux		ports/misc/tmux
 tmw		ports/games/tmw
 tn-aspell	ports/textproc/tn-aspell
 tn5250		ports/net/tn5250
