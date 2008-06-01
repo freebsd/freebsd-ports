@@ -7,66 +7,55 @@
 #
 
 PORTNAME=	flock
-DISTVERSION=	0.7
-PORTREVISION=	7
+DISTVERSION=	1.1.1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-# http://ftp.osuosl.org/pub/${PORTNAME}/source/${PORTVERSION}/:flock
-MASTER_SITE_SUBDIR=	ahze
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
-		clucene-flock-3${EXTRACT_SUFX}
+MASTER_SITES=	http://ftp.osuosl.org/pub/${PORTNAME}/releases/${PORTVERSION}/ \
+		http://flock.vo.llnwd.net/o23/archive/${PORTNAME}/releases/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
-		jasper.4:${PORTSDIR}/graphics/jasper
+BUILD_DEPENDS=	nss>=3.11.2:${PORTSDIR}/security/nss
+LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 MOZILLA_NAME=	Flock
-CLUCENE_WRKSRC=	${WRKDIR}/clucene
+
+WRKSRC?=	${WRKDIR}/${PORTNAME}/mozilla
 WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
+EXTRA_CFLAGS=	-O2
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 WANT_PERL=	yes
-
-CPPFLAGS=	-I${WRKDIR}/local/include
-LDFLAGS=	-L${WRKDIR}/local/lib
-
 GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/icons
 
-FLOCK_ICON=		${MOZILLA}.xpm
+FLOCK_ICON=	${MOZILLA}.xpm
 FLOCK_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
-CONFIGURE_ARGS=	--with-clucene-prefix=${WRKDIR}/local
-MOZ_OPTIONS=	--enable-application=browser \
+MOZ_OPTIONS=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
+		--enable-application=browser \
 		--enable-system-cairo	\
 		--enable-official-branding \
-		--enable-canvas
+		--enable-canvas	\
+		--with-system-nss \
+		--with-clucene-prefix=${LOCALBASE} \
+		--with-ffmpeg-prefix=${LOCALBASE}
 
+SYSTEM_PREFS=		${FAKEDIR}/lib/${MOZILLA}/defaults/pref/${PORTNAME}.js
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 
 OPTIONS=	SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
+GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
-.if ${ARCH} == "amd64"
-BROKEN=		Does not build on amd64
-.endif
-
-.if ${ARCH}=="alpha" || ${ARCH}=="ia64"
-IGNORE=	core dumps on ${ARCH}
-.endif
-
-.if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
-IGNORE=	core dumps on ${ARCH}, need kern.osreldate>=601101
+.if ${ARCH} == "sparc64" && ${OSVERSION} < 601101
+IGNORE=	does not run, update to 6.2-RELEASE or newer
 .endif
 
 .if ${OSVERSION} >= 600000
@@ -78,13 +67,14 @@ post-extract::
 		-e 's|@MOZILLA_NAME@|${MOZILLA_NAME}|' \
 		<${FILESDIR}/flock.desktop.in >${WRKDIR}/${MOZILLA}.desktop
 
-pre-build:
-	@(cd ${CLUCENE_WRKSRC} && ${SETENV} LIBS="-lcompat" \
-		CC="${CC}" CXX="${CXX}" \
-		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-		INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \./configure --prefix=${WRKDIR}/local --disable-shared)
-	@(cd ${CLUCENE_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all)
-	@(cd ${CLUCENE_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
+		${WRKSRC}/storage/build/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/security/manager/ssl/src/Makefile.in
+	@${FIND} ${WRKSRC} -name all.js | ${XARGS} ${REINPLACE_CMD} -e \
+		'/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
+		/dom.disable_window_open_feature.toolbar/s/false/true/'
 
 pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLIST}
