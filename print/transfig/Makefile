@@ -29,12 +29,4 @@ MAKE_ARGS+=	INSTALLFLAGS="${COPY}" \
 		INSTDATFLAGS="${_SHROWNGRP} -m ${SHAREMODE}" \
 		INSTMANFLAGS="${_MANOWNGRP} -m ${MANMODE}"
 
-pre-everything::
-.if !defined(WITH_GHOSTSCRIPT_GNU)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_GNU=yes to use"
-	@${ECHO_MSG} "      GNU Postscript interpreter instead of GPL one"
-	@${ECHO_MSG} ""
-.endif
-
 .include <bsd.port.mk>
