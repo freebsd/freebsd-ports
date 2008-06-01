@@ -24,5 +24,7 @@ pre-configure:
 	cd ${WRKSRC}/intl && ./synclang
 
 IGNORE=		does not work at runtime
+DEPRECATED=	has been ignored for 15 months
+EXPIRATION_DATE=2008-07-01
 
 .include "${MASTERDIR}/Makefile"
