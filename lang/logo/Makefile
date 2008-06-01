@@ -16,13 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Harvey's logo language interpreter
 
 .if defined(EMACS_LOGO_MODE)
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
+USE_EMACS=	yes
 .endif
+
 .if defined(WITH_FULL_DOCS)
 .undef NOPORTDOCS
-
-BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX \
-		ps2pdf:${PORTSDIR}/${GHOSTSCRIPT_PORT}
+BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX-base
+USE_GHOSTSCRIPT=yes
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
