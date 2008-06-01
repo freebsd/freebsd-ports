@@ -1,7 +1,7 @@
 	Kimwitu++ is the successor to Kimwitu. Like Kimwitu, it is a tool for
 processing trees (i.e. terms). It is a meta tool: Kimwitu++ can be used for
 generating software - especially when building compilers.  Kimwitu++ has its own
-input language, which allows the definition fo the tree structure and of
+input language, which allows the definition of the tree structure and of
 functions operating on the tree. It uses the input to generate a number of C++
 files, which are then bound to a program using the C++ compiler.
 	Kimwitu++ can be easily combined with parser generators like lex and

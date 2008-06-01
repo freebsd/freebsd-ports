@@ -11,9 +11,9 @@ A C++ library, separated in 2 parts:
 
 * Some classes for the X-windows system (basing on gtkmm (previously
   known as Gtk--)) like:
-  o An entry field to enter filenames (with completion, analogue to modern
+  o An entry field to enter file names (with completion, analogue to modern
     browsers),
-  o Formatted entry fields (with validy check),
+  o Formatted entry fields (with validity check),
   o A ListBox to display files (with an icon based on the type of the file),
   o A base-class for Applications
 

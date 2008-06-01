@@ -7,7 +7,7 @@ Dia is a program to make diagrams (ports/graphics/dia)
    - User-defined output directory. 
    - Stereotype handling: interfaces, abstract classes. 
    - "Import" and "include" based on the parent classes, the type of
-     attributes and return type of methods iff they're declared in the same
+     attributes and return type of methods if they're declared in the same
      diagram. 
    - Support for JavaBeans(tm): will create automagically methods to access
      and modify each attribute. 

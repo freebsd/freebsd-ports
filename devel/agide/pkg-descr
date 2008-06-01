@@ -7,7 +7,7 @@ supports:
   * Browsing files
   * Debugging a program while displaying source code
 
-Instead of forming a monolitic application Agide provides
+Instead of forming a monolithic application Agide provides
 interfaces to plugin existing tools.  Currently plugins for Vim
 and gdb are operational.  You can add your own plugins.
 

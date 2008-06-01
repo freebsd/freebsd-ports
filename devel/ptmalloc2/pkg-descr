@@ -1,5 +1,5 @@
 ptmalloc is the original version of the malloc that was later included
-in GNU libc.  Under some circumsntaces, notably with pthreads and
+in GNU libc.  Under some circumstances, notably with pthreads and
 excessive calls to realloc, it performs significantly better than
 FreeBSD malloc.  This version is *not* GPL or LGPL:
 

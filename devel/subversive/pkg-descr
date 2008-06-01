@@ -8,7 +8,7 @@ The main use cases, which are familiar to CVS users, are:
     * Repository browsing
     * Check-out
     * Synchronization
-    * Commiting
+    * Committing
     * Update
     * Resolving conflicts
     * Adding to the list of ignored resources

@@ -3,7 +3,7 @@ This generator was born from a simple statement: YACC is to complex to use
 in simple cases (calculators, configuration files, small programming
 languages, ...).
 
-TPG can very simply write parsers that are usefull for most every day needs
+TPG can very simply write parsers that are useful for most every day needs
 (even if it can't make your coffee). With a very clear and simple syntax, you
 can write an attributed grammar that is translated into a recursive descendant
 parser. TPG generated code is very closed to the original grammar. This means

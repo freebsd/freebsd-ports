@@ -1,4 +1,4 @@
-Jakarta Commons Chain of Responsiblity library.
+Jakarta Commons Chain of Responsibility library.
 
 The Chain API models a computation as a series of "commands" that can be
 combined into a "chain". The API for a command consists of a single method

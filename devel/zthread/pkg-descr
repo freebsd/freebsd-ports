@@ -7,7 +7,7 @@ Paraphrasing the website:
 
   ZThread features interruptible Thread and Runnable objects for C++, control
   objects and implementations of concurrency design patterns.  This includes
-  semaphores, mutexes, condition variabes as well as other more complex
+  semaphores, mutexes, condition variables as well as other more complex
   components.
 
 ZThread implementations are provided for POSIX and Win32 platforms.

@@ -9,7 +9,7 @@ to your app, ${NAME:-default} style environment variable
 substitution for arguments, and on-the-fly inclusion of additional
 config files. Some behaviour can be toggled with flags at runtime.
 To keep dotconf from printing out warnings, you can install your
-own customized errorhandler.
+own customized error handler.
 
 WWW: http://www.azzit.de/dotconf/
 

@@ -6,6 +6,6 @@ pointer" representation, allowing the transparent use of Haskell or C code to
 manipulate the strings.
 
 Data.ByteString is written in Haskell98 + the foreign function interface and
-cpp. It has been tested succesfully with GHC 6.4 and 6.5, and hugs March 2005.
+cpp. It has been tested successfully with GHC 6.4 and 6.5, and hugs March 2005.
 
 WWW: http://www.cse.unsw.edu.au/~dons/fps.html

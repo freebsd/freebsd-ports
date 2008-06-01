@@ -4,7 +4,7 @@ shortcomings of the traditional lex/yacc combination.
 It has unique features like automatic derivation of depth grammar,
 production of the derivation tree including it's C interface,
 preservation of full source information and pretty printing to
-faciliate source-source translation, persistence to aid rapid
+facilitate source-source translation, persistence to aid rapid
 interpreter writing. 
 
 For application in contemporary computing environments, it supports

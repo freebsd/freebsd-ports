@@ -10,7 +10,7 @@ depends on LibGII for input purposes.
 
 The main purpose of this LibGII release is to accompany our LibGGI
 release, but you're still very welcome to use LibGII as a standalone
-library for your non-LibGGI applications. Also you might be interrested in
+library for your non-LibGGI applications. Also you might be interested in
 the mhub utility found in the demos directory. mhub is a mouse event repeater
 and converter. See mhub(1) and the libgii(7) and input-<target>(7) manual pages
 for more info.

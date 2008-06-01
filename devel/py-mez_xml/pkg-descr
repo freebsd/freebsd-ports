@@ -1,4 +1,4 @@
-mez_xml is a templte engine. It generates a Python template module for a
+mez_xml is a template engine. It generates a Python template module for a
 XML or XHTML file.
 
 Mercurial Repository:

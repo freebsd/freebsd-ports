@@ -1,5 +1,5 @@
 SILC Toolkit is a package intended for software developers
-who would like to develope their own SILC based applications
+who would like to develop their own SILC based applications
 or help in the development of the SILC.
 
 The Toolkit includes SILC Protocol Core library, SILC Crypto library,

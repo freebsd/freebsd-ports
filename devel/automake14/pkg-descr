@@ -1,4 +1,4 @@
-This is the legacy 1.4 version of automake.  It is explictly for use with
+This is the legacy 1.4 version of automake.  It is explicitly for use with
 older software packages that are not buildable with the current automake.
 
 Automake is an experimental Makefile generator.  It was inspired by

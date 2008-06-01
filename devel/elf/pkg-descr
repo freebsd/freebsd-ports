@@ -1,4 +1,4 @@
-ELF is a commandline based ELF header analyzer. This tool
+ELF is a command line based ELF header analyzer. This tool
 allows you to easily parse the ehdr of ELF object files
 into a human readable format (and various other formats).
 This is a very good source of both source code (for people

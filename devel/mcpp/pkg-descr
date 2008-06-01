@@ -7,7 +7,7 @@ MCPP is especially useful for debugging a source program which use
 complicated macros and also useful for checking portability of a source.
 
 Though mcpp could be built as a replacement of GCC's resident
-proprocessor or as a stand-alone program withoug using library build of
+preprocessor or as a stand-alone program without using library build of
 mcpp, this package installs a program named 'mcpp' which links shared
 library of libmcpp and behaves independent from GCC.
 

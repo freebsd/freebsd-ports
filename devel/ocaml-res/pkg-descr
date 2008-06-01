@@ -1,5 +1,5 @@
 This OCaml-library consists of a set of modules which implement
-automatically resizing (= reallocating) datastructures that consume
+automatically resizing (= reallocating) data structures that consume
 a contiguous part of memory. This allows appending and removing of
 elements to/from arrays (both boxed and unboxed), strings (-> buffers),
 bit strings and weak arrays while still maintaining fast constant-time

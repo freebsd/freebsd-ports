@@ -1,7 +1,7 @@
 ixlib is a small c++ tools library based upon the standard template
 library. It provides
 
-  - a javascript interperter
+  - a javascript interpreter
   - an exception handling framework
   - garbage collection
   - automatic array management

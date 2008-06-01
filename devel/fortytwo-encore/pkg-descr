@@ -1,10 +1,10 @@
 Encore is a set of utility classes written in Objective-C for GNUstep and
-Mac OS X.  The motivation of writting these classes was driven by
+Mac OS X.  The motivation of writing these classes was driven by
 implementing the projects BDB and FT. The classes may be useful for other
 projects as well.
 
 The classes include
-  - logging:  A flexible logging mechanism similiar to log4j. Supports
+  - logging:  A flexible logging mechanism similar to log4j. Supports
     logging levels, logging contexts, different output channels per context,
     configuration per xml, ...
     
