@@ -9669,6 +9669,7 @@ p5-Crypt-DH	ports/security/p5-Crypt-DH
 p5-Crypt-DSA	ports/security/p5-Crypt-DSA
 p5-Crypt-Dining	ports/security/p5-Crypt-Dining
 p5-Crypt-ECB	ports/security/p5-Crypt-ECB
+p5-Crypt-Eksblowfish	ports/security/p5-Crypt-Eksblowfish
 p5-Crypt-Enigma	ports/security/p5-Crypt-Enigma
 p5-Crypt-GCrypt	ports/security/p5-Crypt-GCrypt
 p5-Crypt-GOST	ports/security/p5-Crypt-GOST
