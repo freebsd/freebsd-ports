@@ -32,7 +32,7 @@ RESTRICTED=	Toute personne chargeant le logiciel GIBI s'engage à ne\
 		l'utiliser qu'en couplage avec le logiciel Code_Aster. Pour\
 		tout autre usage, un droit de licence est nécessaire.
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_LINUX=	yes
 REINPLACE_ARGS=	-i ""
