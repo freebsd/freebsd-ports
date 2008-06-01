@@ -1,0 +1,10 @@
+--- lib/ap_search.c.orig	Tue May  4 11:18:09 2004
++++ lib/ap_search.c	Fri Jul 30 22:29:37 2004
+@@ -34,6 +34,7 @@
+ #include <sys/socket.h>
+ #endif
+ 
++#include <sys/socket.h>
+ #include <net/if.h>
+ #include <sys/time.h>
+ #include <errno.h>

@@ -1,0 +1,14 @@
+bin/ap-config
+bin/ap-mrtg
+bin/ap-gl
+sbin/ap-trapd
+%%NLS%%share/locale/fr/LC_MESSAGES/ap-utils.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/ap-utils.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/ap-utils.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/ap-utils.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/ap-utils.mo
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/Ovislink-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/HARDWARE-NOTES
+%%PORTDOCS%%%%DOCSDIR%%/README.ap-gl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
