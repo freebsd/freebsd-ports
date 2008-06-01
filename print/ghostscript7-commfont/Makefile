@@ -7,6 +7,7 @@
 
 PORTNAME=	ghostscript7-commfont
 PORTVERSION=	7.07
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
