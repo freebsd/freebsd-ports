@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libwfut
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	worldforge
@@ -18,10 +17,14 @@ COMMENT=	WorldForge update library
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		curl.4:${PORTSDIR}/ftp/curl
 
+CONFIGURE_ARGS+=--without-python
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
-USE_GCC=	3.4
+#USE_GCC=	3.4
 USE_LDCONFIG=	yes
 MAN1=		wfut.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/ python//g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
