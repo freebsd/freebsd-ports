@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ember
-PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTVERSION=	0.5.2
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -18,7 +17,7 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.4.7.so:${PORTSDIR}/graphics/ogre3d
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.4.8.so:${PORTSDIR}/graphics/ogre3d
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		eris-1.3:${PORTSDIR}/devel/eris \
@@ -26,11 +25,11 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut \
-		wfut-0.1.0:${PORTSDIR}/devel/libwfut
+		wfut-0.2:${PORTSDIR}/devel/libwfut
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-transform-name= --disable-cppunit --enable-debug
-CONFIGURE_ENV+=	LUA_LIBS="-L${PREFIX}/lib/lua50 -llua" \
-		LUA_CFLAGS="-I${PREFIX}/include/lua50"
+CONFIGURE_ENV+=	LUA_LIBS="-L${LUA_LIBDIR} -llua" \
+		LUA_CFLAGS="-I${LUA_INCDIR}"
 USE_SDL=	sdl
 GNU_CONFIGURE=	YES
 USE_LDCONFIG=	YES
@@ -54,8 +53,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS =.*|& $${SDL_CFLAGS} -I${LOCALBASE}/include|g' \
 		${WRKSRC}/src/framework/Makefile.in
 	@${REINPLACE_CMD} -e 's|<SDL/|<|g' \
-		${WRKSRC}/src/components/ogre/OgreSetup.cpp \
 		${WRKSRC}/src/framework/scrap.c
+	@${REINPLACE_CMD} -e 's|<SDL/|<|g; \
+		s|sighandler_t|sig_t|g; \
+		s|_NSIG|NSIG|g' \
+		${WRKSRC}/src/components/ogre/OgreSetup.cpp
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/src/components/ogre/SceneManagers/EmberPagingSceneManager/src/filetutils.cpp
 	@${REINPLACE_CMD} -e 's|	install-dist_docDATA |	|g'  ${WRKSRC}/Makefile.in
