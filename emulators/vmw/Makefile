@@ -38,10 +38,4 @@ do-install:
 	@cd ${WRKSRC}/.. && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		not supported, CLOCK_REALTIME needed
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

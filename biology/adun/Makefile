@@ -54,10 +54,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's|GNUSTEP_HOME./..GNUSTEP_USER_DIR_TOOLS|GNUSTEP_LOCAL_TOOLS|' \
 		${WRKSRC}/GNUmakefile.postamble
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		not enough math functions
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
