@@ -5,15 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ghostscript-gnu-commfont
+PORTNAME=	ghostscript7-commfont
 PORTVERSION=	7.07
-PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	Common files for GNU Ghostscript CJK font support
+MAINTAINER=	doceng@FreeBSD.org
+COMMENT=	Common files for Ghostscript 7.x CJK font support
 
 BUILD_DEPENDS=	${CMAPDIR}/ac15/cid2code.txt:${PORTSDIR}/print/adobe-cmaps
 RUN_DEPENDS=	${CMAPDIR}/ac15/cid2code.txt:${PORTSDIR}/print/adobe-cmaps
@@ -26,11 +25,10 @@ PLIST_SUB=	GS_RESDIR="${GS_RESDIR}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 DEPENDS_ARGS+=	-DA4
 # set these forcibly
-USE_GHOSTSCRIPT=	yes
-WITH_GHOSTSCRIPT_GNU=	yes
+USE_GHOSTSCRIPT=7
 
-CONFLICTS=	ghostscript-gpl-[0-9]* \
-		ghostscript-gpl-nox11-[0-9]*
+CONFLICTS=	ghostscript8-[0-9]* \
+		ghostscript8-nox11-[0-9]*
 
 CMAPDIR?=	${LOCALBASE}/share/fonts/adobe-cmaps
 GS_RESDIR?=	share/ghostscript/Resource

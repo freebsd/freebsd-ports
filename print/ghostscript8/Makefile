@@ -5,27 +5,27 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ghostscript
+PORTNAME=	ghostscript8
 PORTVERSION=	8.62
-PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
 		http://www.humblesoft.com/pub/:epag
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs
 PKGNAMESUFFIX=	-gpl
+DISTNAME=	${PORTNAME:S,8$,,}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gs_srcs ${EPAG_SRCS}:epag
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME:S,8$,,}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GPL Postscript interpreter
+MAINTAINER=	doceng@FreeBSD.org
+COMMENT=	Ghostscript 8.x PostScript interpreter
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME:S,8,,}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
-CONFLICTS=	gambc-[0-9]* ghostscript-gnu-[0-9]* ghostscript-gnu-*-[0-9]*
+CONFLICTS=	gambc-[0-9]* ghostscript7-[0-9]* ghostscript7-*-[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -53,6 +53,7 @@ PLIST_SUB=	GS_VERSION="${PORTVERSION}" \
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR} PORTVERSION=${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+DATADIR=	${PREFIX}/share/${PORTNAME:S,8$,,}
 
 OPTIONS=	A4SIZE	"Set A4 (not Letter) as a default paper size"	off \
 		FONTCONFIG	"fontconfig support"	on \
@@ -151,6 +152,7 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
 CONFIGURE_ARGS+=--without-x
 .endif
 
+_ICONV_ARG=	no
 .if defined(WITH_GS_oprp) \
 	|| defined(WITH_GS_opvp)
 . if defined(WITHOUT_ICONV)
@@ -159,10 +161,11 @@ CONFIGURE_ARGS+=--without-x
 . undef WITH_GS_opvp
 . else
 USE_ICONV=	yes
-CONFIGURE_ARGS+=--with-libiconv=gnu
+_ICONV_ARG=	gnu
 EXTRALIBS+=	-liconv
 . endif
 .endif
+CONFIGURE_ARGS+=--with-libiconv=${_ICONV_ARG}
 
 .if !defined(WITH_LETTERSIZE)
 .if defined(A4) || defined(WITH_A4SIZE)
