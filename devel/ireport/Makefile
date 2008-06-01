@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	2.0.5
+PORTVERSION=	3.0.0
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,9 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper					\
 		${JAVALIBDIR}/jasperreports.jar:${PORTSDIR}/databases/jasperreports	\
 		${JAVALIBDIR}/commons-dbcp.jar:${PORTSDIR}/java/jakarta-commons-dbcp	\
 		${JAVALIBDIR}/commons-math.jar:${PORTSDIR}/math/jakarta-commons-math	\
-		${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool
+		${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool	\
+		${JAVALIBDIR}/commons-codec.jar:${PORTSDIR}/java/jakarta-commons-codec	\
+		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
@@ -45,16 +47,17 @@ JARFILES=	JasperBabylon-1.0.0.jar LICENSE.asm-attr.txt LICENSE.asm.txt	\
 		barbecue-1.5-beta1.jar cglib-2.1.jar cincom-jr-xmla.jar		\
 		commons-javaflow-20060411.jar commons-vfs-1.0.jar		\
 		ehcache-1.1.jar eigenbase-properties.jar eigenbase-resgen.jar	\
-		eigenbase-xom.jar flexdock-0.4.1.jar groovy-all-1.0.jar		\
-		hibernate3.jar iReport.jar jasperreports-extensions-1.3.1.jar	\
-		jasperreports-flash-2.0.5.jar javacup.jar jdt-compiler-3.1.1.jar\
-		jpa.jar js_activation-1.1.jar js_axis-1.4patched.jar		\
-		js_commons-discovery-0.2.jar js_jasperserver-common-ws-2.1.0.jar\
-		js_jasperserver-ireport-plugin-2.1.0.jar js_jaxrpc.jar		\
+		eigenbase-xom.jar flexdock-0.4.1.jar groovy-all-1.5.5.jar	\
+		hibernate3.jar iReport.jar iTextAsian.jar			\
+		jasperreports-extensions-1.3.1.jar jasperreports-flash-2.0.5.jar\
+		javacup.jar jdt-compiler-3.1.1.jar jpa.jar js_activation-1.1.jar\
+		js_axis-1.4patched.jar js_commons-discovery-0.2.jar		\
+		js_jasperserver-common-ws-3.0.0.jar				\
+		js_jasperserver-ireport-plugin-3.0.0.jar js_jaxrpc.jar		\
 		js_mail-1.4.jar js_wsdl4j-1.5.1.jar jsmoothgen-ant-0.9.7.jar	\
 		jta.jar jxl-2.6.jar microba-0.4.1-bin.jar			\
 		mondrian-2.3.2.8944.jar nsisant-1.1.jar png-encoder-1.5.jar	\
-		rex-20070125.jar saaj-api-1.3.jar servlet.jar spring-2.0-m2.jar	\
+		rex-20080421.jar saaj-api-1.3.jar servlet.jar spring-2.0-m2.jar	\
 		spring-context-2.0-m2.jar spring-hibernate3-2.0-m2.jar		\
 		sqleonardo-2007.03.jar swingx-2007_05_13.jar toniclf.jar	\
 		xml-apis-ext.jar
@@ -66,20 +69,20 @@ CLSSPTH=	JasperBabylon-1.0.0 antlr asm-attrs asm barbecue-1.5-beta1	\
 		batik-anim batik-awt-util batik-bridge batik-css batik-dom	\
 		batik-ext batik-gvt batik-parser batik-script batik-svg-dom	\
 		batik-svggen batik-util batik-xml bsh cglib-2.1 cincom-jr-xmla	\
-		commons-beanutils commons-collections commons-dbcp		\
-		commons-digester commons-javaflow-20060411 commons-logging	\
-		commons-logging-api commons-math commons-pool commons-vfs-1.0	\
-		dom4j ehcache-1.1 eigenbase-properties eigenbase-resgen		\
-		eigenbase-xom flexdock-0.4.1 groovy-all-1.0 hibernate3 iReport	\
-		itext bcel jasperreports jasperreports-extensions-1.3.1		\
-		jasperreports-flash-2.0.5 javacup jaxen-full jcmdline jcommon	\
-		jdt-compiler-3.1.1 jfreechart jpa js_activation-1.1		\
-		js_axis-1.4patched js_commons-discovery-0.2			\
-		js_jasperserver-common-ws-2.1.0					\
-		js_jasperserver-ireport-plugin-2.1.0 js_jaxrpc js_mail-1.4	\
+		commons-beanutils commons-codec commons-collections commons-dbcp\
+		commons-digester commons-httpclient commons-javaflow-20060411	\
+		commons-logging commons-logging-api commons-math commons-pool	\
+		commons-vfs-1.0 dom4j ehcache-1.1 eigenbase-properties		\
+		eigenbase-resgen eigenbase-xom flexdock-0.4.1 groovy-all-1.5.5	\
+		hibernate3 iReport iTextAsian itext bcel jasperreports		\
+		jasperreports-extensions-1.3.1 jasperreports-flash-2.0.5 javacup\
+		jaxen-full jcmdline jcommon jdt-compiler-3.1.1 jfreechart jpa	\
+		js_activation-1.1 js_axis-1.4patched js_commons-discovery-0.2	\
+		js_jasperserver-common-ws-3.0.0					\
+		js_jasperserver-ireport-plugin-3.0.0 js_jaxrpc js_mail-1.4	\
 		js_wsdl4j-1.5.1 jsmoothgen-ant-0.9.7 jta jxl-2.6 log4j looks	\
 		microba-0.4.1-bin mondrian-2.3.2.8944 mysql-connector-java	\
-		nsisant-1.1 png-encoder-1.5 poi postgresql rex-20070125		\
+		nsisant-1.1 png-encoder-1.5 poi postgresql rex-20080421		\
 		saaj-api-1.3 servlet spring-2.0-m2 spring-context-2.0-m2	\
 		spring-hibernate3-2.0-m2 sqleonardo-2007.03 swingx-2007_05_13	\
 		tinylaf toniclf xalan xercesImpl xml-apis xml-apis-ext		\
