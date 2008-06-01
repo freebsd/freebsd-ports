@@ -379,6 +379,7 @@
     SUBDIR += p5-Crypt-DSA
     SUBDIR += p5-Crypt-Dining
     SUBDIR += p5-Crypt-ECB
+    SUBDIR += p5-Crypt-Eksblowfish
     SUBDIR += p5-Crypt-Enigma
     SUBDIR += p5-Crypt-GCrypt
     SUBDIR += p5-Crypt-GOST

@@ -1,0 +1,18 @@
+Eksblowfish is a variant of the Blowfish cipher, modified to make the
+key setup very expensive.  ("Eks" stands for "expensive key
+schedule".)  This doesn't make it significantly cryptographically
+stronger, but is intended to hinder brute-force attacks.  It also
+makes it unsuitable for any application requiring key agility.  It was
+designed by Niels Provos and David Mazieres for password hashing in
+OpenBSD.
+
+Eksblowfish is a parameterised (family-keyed) cipher.  It takes a cost
+parameter that controls how expensive the key scheduling is.  It also
+takes a family key, known as the "salt".  Cost and salt parameters
+together define a cipher family.  Within each family, a key determines
+an encryption function in the usual way.
+
+This distribution also includes an implementation of "bcrypt", the
+Unix crypt() password hashing algorithm based on Eksblowfish.
+
+WWW: http://search.cpan.org/dist/Crypt-Eksblowfish/
