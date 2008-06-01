@@ -17,7 +17,10 @@ COMMENT=	A set of utilities to configure and monitor wireless access points
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=	yes
-CONFIGURE_ENV=	LDFLAGS="-lintl -L${LOCALBASE}/lib"
+USE_ICONV=	yes
+CONFIGURE_ENV=	LDFLAGS="-lintl -L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8
 
 .if !defined(WITHOUT_NLS)
@@ -27,12 +30,6 @@ PLIST_SUB+=	NLS=""
 BROKEN=		Does not build without gettext
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
 .endif
 
 post-patch:
@@ -45,4 +42,4 @@ post-install:
 		${INSTALL_DATA} FAQ Ovislink-HOWTO.html HARDWARE-NOTES README.ap-gl ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
