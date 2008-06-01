@@ -5,10 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ghostscript
-PORTVERSION=	${GS_VERSION}
-PORTREVISION=	${GS_REVISION}
-PORTEPOCH=	${GS_EPOCH}
+PORTNAME=	ghostscript7
+PORTVERSION=	7.07
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
@@ -23,14 +21,14 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs${GS_VERSION:S/.//}/:gs_srcs
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs${PORTVERSION:S/.//}/:gs_srcs
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,ports_jp_gs \
 			gimp-print/:gprint \
 			bjc250gs/:bjc250 \
 			./:ports_jp \
 			arved/:eplaser
-PKGNAMESUFFIX=	-gnu
-DISTFILES=	${GS_SRCS}:gs_srcs \
+DISTNAME=	${PORTNAME:S,7$,,}-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gs_srcs \
 		${HP8XX_SRCS}:hp8xx \
 		${PCL3_SRCS}:pcl3 \
 		${DJ970_SRCS}:dj970 \
@@ -50,10 +48,10 @@ DISTFILES=	${GS_SRCS}:gs_srcs \
 		${LX5000_SRCS}:lx5000 \
 		${LEX7000_SRCS}:lx5000
 DIST_SUBDIR=	ghostscript
-EXTRACT_ONLY=	${GS_SRCS}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GNU Postscript interpreter
+MAINTAINER=	doceng@FreeBSD.org
+COMMENT=	Ghostscript 7.x PostScript interpreter
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
@@ -61,14 +59,15 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print
 
 # normazile WRKSRC so things like cups-pstoraster may work
 WRKSRC=		${WRKDIR}/${PORTNAME}
+DATADIR=	${PREFIX}/share/${PORTNAME:S,7$,,}
 
-CONFLICTS=	gambc-* ghostscript-gpl-*
+CONFLICTS=	gambc-* ghostscript8-*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}"
-PLIST_SUB=	GS_VERSION="${GS_VERSION}"
+PLIST_SUB=	GS_VERSION="${PORTVERSION}"
 
 SCRIPTS_ENV=	GS_DRIVERS_LIST="${GS_DRIVERS_LIST}" \
 		WITHOUT_X11="${WITHOUT_X11}" \
@@ -93,10 +92,10 @@ XCFLAGS+=	-DA4
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
-CONFLICTS+=	ghostscript-gnu-[0-9]*
+CONFLICTS+=	ghostscript7-[0-9]*
 .else
 USE_XORG=	xt xext
-CONFLICTS+=	ghostscript-gnu-nox11-*
+CONFLICTS+=	ghostscript7-nox11-[0-9]*
 .endif
 
 .if defined(WITH_SVGALIB)
@@ -116,8 +115,6 @@ PLIST_SUB+=	SHLIB="" SHLIB_VER="${SHLIB_VER}"
 ALL_TARGET=	all pcl3opts
 PLIST_SUB+=	SHLIB="@comment "
 .endif
-
-GS_SRCS=	${DISTNAME}${EXTRACT_SUFX}
 
 # Additional Drivers:
 
@@ -244,7 +241,6 @@ LEX7000_SRCS=	gs6.0.lexmark7000.patch
 CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 		stc740ih.upp stc740p.upp stc740pl.upp
 
-.include "Makefile.inc"
 .include <bsd.port.pre.mk>
 .SILENT:
 
@@ -344,7 +340,7 @@ post-patch:
 		${WRKSRC}/lib/gs_res.ps
 # for DMPRT driver
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g ; \
-		 s|%%GS_VERSION%%|${GS_VERSION}|g' \
+		 s|%%PORTVERSION%%|${PORTVERSION}|g' \
 			${WRKSRC}/src/dmp_site.ps
 
 # here we apply the modifications necessary to build the 3rd party drivers
@@ -532,7 +528,7 @@ post-install:
 .endfor
 # other pcl3 stuff, which might be interesting for runtime
 	${ECHO_MSG} ">>>   creating ${PCL3} destdir ..."
-	${MKDIR} ${DATADIR}/${GS_VERSION}/${PCL3}
+	${MKDIR} ${DATADIR}/${PORTVERSION}/${PCL3}
 	${ECHO_MSG} ">>>   installing files in ${PCL3} destdir ..."
 .for i in NEWS BUGS README lib/example.mcf lib/if-pcl3 ps/calign.ps \
 	ps/dumppdd.ps ps/levels-test.ps ps/margins-A4.ps \
@@ -540,13 +536,13 @@ post-install:
 	ps/margins-EnvDLRotated.ps ps/margins-Letter.ps \
 	ps/margins-LetterRotated.ps
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
-		${DATADIR}/${GS_VERSION}/${PCL3}
+		${DATADIR}/${PORTVERSION}/${PCL3}
 .endfor
 # for DMPRT driver
 	${ECHO_MSG} ">>>   installing ${DMPRT} resources ..."
 .for i in dmp_init.ps dmp_site.ps escp_24.src
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DATADIR}/${GS_VERSION}/lib
+		${DATADIR}/${PORTVERSION}/lib
 .endfor
 # for EPAG driver
 	${ECHO_MSG} ">>>   installing ${EPAG} utility in bindir ..."
@@ -555,94 +551,94 @@ post-install:
 	${ECHO_MSG} ">>> installing contributed UPP profiles ..."
 .for i in ${CONTRIB_UPP}
 	${INSTALL_DATA} ${FILESDIR}/${i} \
-		${DATADIR}/${GS_VERSION}/lib
+		${DATADIR}/${PORTVERSION}/lib
 .endfor
 #
 # now NOPORTDOCS dependend stuff
 #
 .if !defined(NOPORTDOCS)
 	${ECHO_MSG} ">>> installing PORTDOC stuff ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}
 # for PCL3 driver
 	${ECHO_MSG} ">>>   installing ${PCL3} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${PCL3}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${PCL3}
 .for i in NEWS doc/gs-pcl3.html doc/how-to-report.txt doc/pcl3opts.html
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${PCL3}
+		${DOCSDIR}/${PORTVERSION}/${PCL3}
 .endfor
 # for MD2K driver
 	${ECHO_MSG} ">>>   installing ${MD2K} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${MD2K}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${MD2K}
 .for i in README.jis
 	${INSTALL_DATA} ${WRKSRC}/${MD2K_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${MD2K}
+		${DOCSDIR}/${PORTVERSION}/${MD2K}
 .endfor
 # for ALPS driver
 	${ECHO_MSG} ">>>   installing ${ALPS} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${ALPS}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${ALPS}
 .for i in README.gdevalps
 	${INSTALL_DATA} ${WRKSRC}/${ALPS_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${ALPS}
+		${DOCSDIR}/${PORTVERSION}/${ALPS}
 .endfor
 # for BJ10V driver
 	${ECHO_MSG} ">>>   installing ${BJ10V} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${BJ10V}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${BJ10V}
 .for i in gdev10v.jis
 	${INSTALL_DATA} ${WRKSRC}/${BJ10V_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${BJ10V}
+		${DOCSDIR}/${PORTVERSION}/${BJ10V}
 .endfor
 # for LIPS driver
 	${ECHO_MSG} ">>>   installing ${LIPS} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${LIPS}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${LIPS}
 .for i in Gdevlips.htm
 	${INSTALL_DATA} ${WRKSRC}/${LIPS_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${LIPS}
+		${DOCSDIR}/${PORTVERSION}/${LIPS}
 .endfor
 # for DMPRT driver
 	${ECHO_MSG} ">>>   installing ${DMPRT} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${DMPRT}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${DMPRT}
 .for i in gdevdmpr.sj
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DOCSDIR}/${GS_VERSION}/${DMPRT}
+		${DOCSDIR}/${PORTVERSION}/${DMPRT}
 .endfor
 # for EPAG driver
 	${ECHO_MSG} ">>>   installing ${EPAG} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${EPAG}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${EPAG}
 .for i in ert.txt gdevepag.txt ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${EPAG_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${EPAG}
+		${DOCSDIR}/${PORTVERSION}/${EPAG}
 .endfor
 .for i in psprint gsepagif.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/${EPAG_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${EPAG}
+		${DOCSDIR}/${PORTVERSION}/${EPAG}
 .endfor
 # for EPLASER driver
 	${ECHO_MSG} ">>>   installing ${EPLASER} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${EPLASER}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${EPLASER}
 .for i in readme-eplaser-705.euc
 	${INSTALL_DATA} ${WRKSRC}/${EPLASER_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${EPLASER}
+		${DOCSDIR}/${PORTVERSION}/${EPLASER}
 .endfor
 # for MJC driver
 	${ECHO_MSG} ">>>   installing ${MJC} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${MJC}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${MJC}
 .for i in MJ700V2C.FAQ README.mjc README.mje README.noz cpem.doc
 	${INSTALL_DATA} ${WRKSRC}/${MJC_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${MJC}
+		${DOCSDIR}/${PORTVERSION}/${MJC}
 .endfor
 # for GDI driver
 	${ECHO_MSG} ">>>   installing ${GDI} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${GDI}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${GDI}
 .for i in README
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DOCSDIR}/${GS_VERSION}/${GDI}
+		${DOCSDIR}/${PORTVERSION}/${GDI}
 .endfor
 # for LXM3200 driver
 	${ECHO_MSG} ">>>   installing ${LXM3200} docs ..."
-	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${LXM3200}
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${LXM3200}
 .for i in README RELEASE_NOTES Z12-Z31-QuickSetup
 	${INSTALL_DATA} ${WRKSRC}/${LXM3200_NAME}/${i} \
-		${DOCSDIR}/${GS_VERSION}/${LXM3200}
+		${DOCSDIR}/${PORTVERSION}/${LXM3200}
 .endfor
 .endif
 	${ECHO_MSG} "> post-installation tasks completed."

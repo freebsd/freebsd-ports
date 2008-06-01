@@ -7,6 +7,6 @@
 
 WITHOUT_X11=	yes
 
-MASTERDIR=	${.CURDIR}/../ghostscript-gnu
+MASTERDIR=	${.CURDIR}/../ghostscript7
 
 .include        "${MASTERDIR}/Makefile"

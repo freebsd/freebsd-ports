@@ -2,9 +2,9 @@ Ghostscript is the well-known PostScript interpreter which is available for
 all common and most esoteric platforms and supports many different printers
 and some displays.
 
-Versions entitled "GNU Ghostscript" are distributed with the GNU General
-Public License, which allows free use, and free copying and redistribution
-under certain conditions (including, in some cases, commercial distribution).
+This is distributed with the GNU General Public License, which allows
+free use, and free copying and redistribution under certain conditions
+(including, in some cases, commercial distribution).
 
 This is the older version 7, for those that can't (or don't want to) use
 the newer Ghostscript version 8.

@@ -5,24 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ghostscript-gnu-korfont
+PORTNAME=	ghostscript7-korfont
 PORTVERSION=	7.07
-PORTREVISION=	3
 CATEGORIES=	korean print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	Korean font support for GNU Ghostscript
+MAINTAINER=	doceng@FreeBSD.org
+COMMENT=	Korean font support for Ghostscript 7.x
 
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/CIDFont/Munhwa-Regular:${PORTSDIR}/korean/munhwafonts-cid \
-		${LOCALBASE}/share/ghostscript/Resource/CIDFont/HYSMyeongJo-Medium:${PORTSDIR}/print/ghostscript-gnu-commfont
+		${LOCALBASE}/share/ghostscript/Resource/CIDFont/HYSMyeongJo-Medium:${PORTSDIR}/print/ghostscript7-commfont
 
 # set these forcibly
-WITH_GHOSTSCRIPT_GNU=	yes
-USE_GHOSTSCRIPT_RUN=	yes
-NO_BUILD=	yes
-DEPENDS_ARGS+=	-DA4
+USE_GHOSTSCRIPT_RUN=	7
+NO_BUILD=		yes
+DEPENDS_ARGS+=		-DA4
 
 do-install:
 	@${DO_NADA}
