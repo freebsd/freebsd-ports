@@ -624,6 +624,7 @@
     SUBDIR += py-chart
     SUBDIR += py-editobj
     SUBDIR += py-exif
+    SUBDIR += py-exiv2
     SUBDIR += py-freeimagepy
     SUBDIR += py-gd
     SUBDIR += py-gdchart
