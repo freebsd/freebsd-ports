@@ -1447,6 +1447,7 @@
     SUBDIR += p5-Module-Release
     SUBDIR += p5-Module-Reload
     SUBDIR += p5-Module-Reload-Sel
+    SUBDIR += p5-Module-Runtime
     SUBDIR += p5-Module-ScanDeps
     SUBDIR += p5-Module-Starter
     SUBDIR += p5-Module-Starter-PBP
