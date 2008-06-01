@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# PROVIDE jftpgw
+# PROVIDE: jftpgw
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON
 # KEYWORD: shutdown
