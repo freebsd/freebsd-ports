@@ -1,4 +1,4 @@
-# New ports collection makefile for:	subversion-freebsd
+# New ports collection makefile for:	subversion-devel
 # Date created:				29 May 2008
 # Whom:					dougb@FreeBSD.org
 #
@@ -6,20 +6,21 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.5.0.rc7
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX?=	-devel
 DISTNAME=	${PORTNAME}-1.5.0-rc7
 DIST_SUBDIR=	subversion
 
 MAINTAINER=	lev@freebsd.org
-COMMENT=	Version control system with FreeBSD Project repo customizations
+COMMENT?=	Prerelease version of the Subversion version control system
 
 NO_PACKAGE=	No binary packages of release candidates
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-CONFLICTS?=	subversion-[0-9]* subversion-perl-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]*
+CONFLICTS?=	subversion-[0-9]* subversion-perl-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]* subversion-freebsd-[0-9]*
 
 USE_LDCONFIG=	yes
 
@@ -37,8 +38,8 @@ MAN8=		svnserve.8
 
 TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 
-OPTIONS=	SERF	"High-performance lib for access over http" off \
-		NEON	"Older, stable http access (precludes serf)" off \
+OPTIONS=	NEON	"WebDAV/Delta-V repo access via libneon" on \
+		SERF	"Experimental WebDAV/Delta-V via libserf" off \
 		ASVN		"Build and install Archive SVN (asvn)" off \
 		PERL		"Perl bindings" off \
 		PYTHON		"Python bindings" off \
