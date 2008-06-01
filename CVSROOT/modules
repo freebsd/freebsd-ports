@@ -2367,6 +2367,7 @@ dynamips	ports/emulators/dynamips
 dynamips-devel	ports/emulators/dynamips-devel
 dynamite	ports/archivers/dynamite
 dyncall		ports/devel/dyncall
+dzen2		ports/x11/dzen2
 dzip		ports/archivers/dzip
 e		ports/math/e
 e-uae		ports/emulators/e-uae
