@@ -11926,6 +11926,7 @@ p5-XML-AutoWriter	ports/textproc/p5-XML-AutoWriter
 p5-XML-Canonical	ports/textproc/p5-XML-Canonical
 p5-XML-Catalog	ports/textproc/p5-XML-Catalog
 p5-XML-Clean	ports/textproc/p5-XML-Clean
+p5-XML-Code	ports/textproc/p5-XML-Code
 p5-XML-Compile	ports/textproc/p5-XML-Compile
 p5-XML-Compile-SOAP	ports/net/p5-XML-Compile-SOAP
 p5-XML-Compile-SOAP-Daemon	ports/net/p5-XML-Compile-SOAP-Daemon
