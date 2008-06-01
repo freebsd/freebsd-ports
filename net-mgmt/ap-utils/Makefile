@@ -9,14 +9,10 @@ PORTNAME=	ap-utils
 PORTVERSION=	1.4.1
 PORTREVISION=	2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=`	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	david@catwhisker.org
 COMMENT=	A set of utilities to configure and monitor wireless access points
-
-DEPRECATED=		Does not work with gcc4.2; appears to be abandoned
-EXPIRATION_DATE=	2008-04-07
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
