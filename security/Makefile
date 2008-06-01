@@ -335,6 +335,7 @@
     SUBDIR += p5-Authen-NTLM
     SUBDIR += p5-Authen-PAAS
     SUBDIR += p5-Authen-PAM
+    SUBDIR += p5-Authen-Passphrase
     SUBDIR += p5-Authen-PluggableCaptcha
     SUBDIR += p5-Authen-Radius
     SUBDIR += p5-Authen-SASL

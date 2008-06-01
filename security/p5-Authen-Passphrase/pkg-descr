@@ -1,0 +1,13 @@
+This is the base class for a system of objects that encapsulate
+passphrases.  An object of this type is a passphrase recogniser: its
+job is to recognise whether an offered passphrase is the right one.
+For security, such passphrase recognisers usually do not themselves
+know the passphrase they are looking for; they can merely recognise it
+when they see it.  There are many schemes in use to achieve this
+effect, and the intent of this class is to provide a consistent
+interface to them all, hiding the details.
+
+The CPAN package Authen::Passphrase contains implementations of
+several specific passphrase schemes in addition to the base class.
+
+WWW: http://search.cpan.org/dist/Authen-Passphrase/

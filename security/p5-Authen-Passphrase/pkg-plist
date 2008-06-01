@@ -1,0 +1,24 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Passphrase/.packlist
+%%SITE_PERL%%/Authen/Passphrase.pm
+%%SITE_PERL%%/Authen/Passphrase/AcceptAll.pm
+%%SITE_PERL%%/Authen/Passphrase/BigCrypt.pm
+%%SITE_PERL%%/Authen/Passphrase/BlowfishCrypt.pm
+%%SITE_PERL%%/Authen/Passphrase/Clear.pm
+%%SITE_PERL%%/Authen/Passphrase/Crypt16.pm
+%%SITE_PERL%%/Authen/Passphrase/DESCrypt.pm
+%%SITE_PERL%%/Authen/Passphrase/EggdropBlowfish.pm
+%%SITE_PERL%%/Authen/Passphrase/LANManager.pm
+%%SITE_PERL%%/Authen/Passphrase/LANManagerHalf.pm
+%%SITE_PERL%%/Authen/Passphrase/MD5Crypt.pm
+%%SITE_PERL%%/Authen/Passphrase/MySQL323.pm
+%%SITE_PERL%%/Authen/Passphrase/MySQL41.pm
+%%SITE_PERL%%/Authen/Passphrase/NTHash.pm
+%%SITE_PERL%%/Authen/Passphrase/NetscapeMail.pm
+%%SITE_PERL%%/Authen/Passphrase/PHPass.pm
+%%SITE_PERL%%/Authen/Passphrase/RejectAll.pm
+%%SITE_PERL%%/Authen/Passphrase/SaltedDigest.pm
+%%SITE_PERL%%/Authen/Passphrase/VMSPurdy.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Passphrase
+@dirrm %%SITE_PERL%%/Authen/Passphrase
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
+@dirrmtry %%SITE_PERL%%/Authen
