@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	psearch
-PORTVERSION=	1.2
+PORTVERSION=	2.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.maxlor.com/files/
 
-MAINTAINER=	benlutz@datacomm.ch
+MAINTAINER=	mail@maxlor.com
 COMMENT=	An utility for searching the FreeBSD Ports Collection
-
-USE_PYTHON_RUN=	yes
-NO_BUILD=	yes
 
 MAN1=		psearch.1
 PLIST_FILES=	bin/psearch
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/psearch ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/psearch ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/psearch.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
