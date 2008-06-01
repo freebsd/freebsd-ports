@@ -1,4 +1,4 @@
 bin/mg
-share/doc/mg/README
-share/doc/mg/tutorial
-@dirrm share/doc/mg
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
