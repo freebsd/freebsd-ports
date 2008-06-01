@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope210
-PORTVERSION=	2.10.5
+PORTVERSION=	2.10.6
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
@@ -19,17 +19,9 @@ COMMENT=	An object-based web application platform
 USE_PYTHON=	2.4
 USE_RC_SUBR=	${PORTNAME} zeo210
 
-# Note: the notes that follow reflect the decisions of prior maintainers
-# of this port. IOW, don't blame me if you don't like the way it's done.
-# Exceptions to this are marked as such.
-
-# Change these, if you like, via the environment.
 ZOPE_USER?=		www
 WEBBASEDIR?=		www
 SZOPEBASEDIR?=		${WEBBASEDIR}/Zope210
-USE_GETTEXT=	yes
-
-# Do not change anything below this line.
 
 .if defined(INSTANCENAME)
 ZOPEINSTANCENAME=	${INSTANCENAME}
