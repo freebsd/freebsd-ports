@@ -9,6 +9,7 @@
 
 PORTNAME=	sphinxsearch
 DISTVERSION=	0.9.8-rc2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://www.sphinxsearch.com/downloads/
@@ -116,7 +117,7 @@ install-docs:
 .endif
 
 install-examples:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for example in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${example} ${EXAMPLESDIR}
