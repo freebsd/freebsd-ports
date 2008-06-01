@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	kplayer
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	multimedia kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Movie player based on mplayer
@@ -20,8 +18,11 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
+USE_GETTEXT=	yes
+USE_PERL5_BUILD=yes
+USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15
 
-USE_AUTOTOOLS=	libtool:15
+pre-configure:
+	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${SH} admin/cvs.sh dist)
 
 .include <bsd.port.mk>
