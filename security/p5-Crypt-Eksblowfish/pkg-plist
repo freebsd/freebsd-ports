@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Eksblowfish.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Eksblowfish/Bcrypt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Eksblowfish/Blowfish.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Eksblowfish/Family.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Eksblowfish/Subkeyed.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Eksblowfish/Uklblowfish.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Eksblowfish/Eksblowfish.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Eksblowfish/Eksblowfish.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Eksblowfish
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/Eksblowfish
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt
