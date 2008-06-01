@@ -89,10 +89,4 @@ pre-configure:
 	${REINPLACE_CMD} -e "s|doc=no|doc=yes|" ${WRKSRC}/GNUmakefile
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-IGNORE=		missing threading functions
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

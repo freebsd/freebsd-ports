@@ -44,9 +44,8 @@ do-configure:
 .if !defined(WITHOUT_PTHREADS) && defined(WITH_PTHREADS)
 # dirty hack to force mod_ruby.so linked with lpthread.so, otherwise unresolved
 # symbols happen
-.if ${OSVERSION} >= 502102
 	@${REINPLACE_CMD} -e 's|-pthread|-pthread -lpthread|' ${WRKSRC}/Makefile
-.endif
+
 PKGNAMESUFFIX=	-pthreads
 .endif
 
