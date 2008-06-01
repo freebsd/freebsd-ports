@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -170,6 +171,7 @@ post-patch:
 		${WRKSRC}/utilities/Makefile.in ${WRKSRC}/cygnal/Makefile.in
 	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
+		s|/lib64|/lib|g; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure \
 		${WRKSRC}/macros/libslist ${WRKSRC}/macros/incllist
 
