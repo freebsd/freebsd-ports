@@ -6,6 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.5.0.rc7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/
 PKGNAMESUFFIX=	-freebsd
@@ -43,7 +44,7 @@ MAN8=		svnserve.8
 TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 
 OPTIONS=	SERF	"High-performance lib for access over http" off \
-		NEON	"Older, stable http access (precludes serf)" off \
+		NEON	"Older, stable http access (precludes serf)" on \
 		ASVN		"Build and install Archive SVN (asvn)" off \
 		PERL		"Perl bindings" off \
 		PYTHON		"Python bindings" off \
