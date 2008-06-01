@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cegui
-PORTVERSION=	0.5.0b
-PORTREVISION=	2
+PORTVERSION=	0.6.0
+PORTREVISION=	0
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=crayzedsgui
@@ -25,10 +25,10 @@ CONFIGURE_ARGS=	--enable-toluacegui --disable-irrlicht-renderer \
 		--disable-corona --enable-devil --disable-freeimage --disable-silly \
 		--disable-libxml --disable-xerces-c --disable-expat
 
-CONFIGURE_ENV+=	Lua_LIBS="-L${LOCALBASE}/lib/lua50 -llua -llualib -lm" \
-		Lua_CFLAGS="-I${LOCALBASE}/include/lua50" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/lua50" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/lua50"
+CONFIGURE_ENV+=	Lua_LIBS="-L${LUA_LIBDIR} -llua -llualib -lm" \
+		Lua_CFLAGS="-I${LUA_INCDIR}" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}"
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GL=		yes
@@ -43,15 +43,16 @@ post-patch:
 	@${REINPLACE_CMD} -e ' \
 		s|"-lILU.*"|"-lm -L${LOCALBASE}/lib -lILU -lIL $$LIBS"|g; \
 		s|-lpthread|${PTHREAD_LIBS}|g; \
+		s|CEGUI_LUA_VER=..|CEGUI_LUA_VER=${USE_LUA:S/.//}|g; \
 		s|DevIL_CFLAGS=.*|DevIL_CFLAGS="-DUSE_DEVIL_LIBRARY -I${LOCALBASE}/include"|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/SUBDIRS/ s| Samples||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|__linux__)|& \|\| defined(__FreeBSD__)|g' \
 		${WRKSRC}/include/CEGUIDynamicModule.h \
-		${WRKSRC}/src/CEGUIDynamicModule.cpp
-	@${REINPLACE_CMD} -e 's|(linux)|& \|\| defined(__FreeBSD__)|g' \
-		${WRKSRC}/Samples/common/src/CEGuiSample.cpp
-	@${REINPLACE_CMD} -e 's|INCLUDES = |&-I${LOCALBASE}/include/lua50 |' \
+		${WRKSRC}/src/CEGUIDynamicModule.cpp \
+		${WRKSRC}/Samples/common/src/CEGuiSample.cpp \
+		${WRKSRC}/src/CEGUISystem.cpp
+	@${REINPLACE_CMD} -e 's|INCLUDES = |&-I${LOCALBASE}/include/lua51 |' \
 		${WRKSRC}/ScriptingModules/CEGUILua/tolua++bin/Makefile.in \
 		${WRKSRC}/ScriptingModules/CEGUILua/LuaScriptModule/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|ILvoid|void|g' \

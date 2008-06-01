@@ -52,12 +52,14 @@ include/CEGUI/CEGUIScheme.h
 include/CEGUI/CEGUISchemeManager.h
 include/CEGUI/CEGUIScheme_xmlHandler.h
 include/CEGUI/CEGUIScriptModule.h
+include/CEGUI/CEGUIScriptWindowHelper.h
 include/CEGUI/CEGUISingleton.h
 include/CEGUI/CEGUISize.h
 include/CEGUI/CEGUISlotFunctorBase.h
 include/CEGUI/CEGUIString.h
 include/CEGUI/CEGUISubscriberSlot.h
 include/CEGUI/CEGUISystem.h
+include/CEGUI/CEGUITask.h
 include/CEGUI/CEGUITextUtils.h
 include/CEGUI/CEGUITexture.h
 include/CEGUI/CEGUIUDim.h
@@ -100,6 +102,7 @@ include/CEGUI/elements/CEGUIEditboxProperties.h
 include/CEGUI/elements/CEGUIFrameWindow.h
 include/CEGUI/elements/CEGUIFrameWindowProperties.h
 include/CEGUI/elements/CEGUIGUISheet.h
+include/CEGUI/elements/CEGUIGroupBox.h
 include/CEGUI/elements/CEGUIItemEntry.h
 include/CEGUI/elements/CEGUIItemEntryProperties.h
 include/CEGUI/elements/CEGUIItemListBase.h
@@ -150,6 +153,9 @@ include/CEGUI/elements/CEGUITitlebar.h
 include/CEGUI/elements/CEGUITitlebarProperties.h
 include/CEGUI/elements/CEGUITooltip.h
 include/CEGUI/elements/CEGUITooltipProperties.h
+include/CEGUI/elements/CEGUITree.h
+include/CEGUI/elements/CEGUITreeItem.h
+include/CEGUI/elements/CEGUITreeProperties.h
 include/CEGUI/falagard/CEGUIFalComponentBase.h
 include/CEGUI/falagard/CEGUIFalDimensions.h
 include/CEGUI/falagard/CEGUIFalEnums.h
@@ -196,6 +202,13 @@ lib/libCEGUItoluapp.so
 lib/libCEGUItoluapp.so.1
 libdata/pkgconfig/CEGUI-OPENGL.pc
 libdata/pkgconfig/CEGUI.pc
+share/CEGUI/XMLRefSchema/CEGUIConfig.xsd
+share/CEGUI/XMLRefSchema/Falagard.xsd
+share/CEGUI/XMLRefSchema/Font.xsd
+share/CEGUI/XMLRefSchema/GUILayout.xsd
+share/CEGUI/XMLRefSchema/GUIScheme.xsd
+share/CEGUI/XMLRefSchema/Imageset.xsd
+share/CEGUI/XMLRefSchema/Readme.txt
 @dirrm include/CEGUI/falagard
 @dirrm include/CEGUI/elements
 @dirrm include/CEGUI/XMLParserModules/TinyXMLParser
@@ -206,3 +219,5 @@ libdata/pkgconfig/CEGUI.pc
 @dirrm include/CEGUI/ImageCodecModules/DevILImageCodec
 @dirrm include/CEGUI/ImageCodecModules
 @dirrm include/CEGUI
+@dirrm share/CEGUI/XMLRefSchema
+@dirrm share/CEGUI
