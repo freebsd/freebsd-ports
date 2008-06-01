@@ -10,21 +10,28 @@ PORTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.antcom.de/gtick/download/ CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A metronome application
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USE_GETTEXT=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=		gtick.1
+MAN1=	gtick.1
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' ${WRKSRC}/src/dsp.c
-	@${REINPLACE_CMD} -e 's|-O3||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
