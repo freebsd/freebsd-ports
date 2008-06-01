@@ -1,6 +1,7 @@
 bin/qtpasswd
 bin/MP3Broadcaster
 bin/PlaylistBroadcaster
+bin/StreamingLoadTool
 sbin/DarwinStreamingServer
 sbin/streamingadminserver.pl
 libexec/StreamingServerModules/QTSSRefMovieModule
@@ -89,6 +90,7 @@ libexec/StreamingServerModules/QTSSHomeDirectoryModule
 %%DATADIR%%/AdminHtml/images/weight_up_arrow.gif
 %%DATADIR%%/AdminHtml/images/whitepixel.gif
 %%DATADIR%%/AdminHtml/images/wieght_down_arrow.gif
+%%DATADIR%%/AdminHtml/includes/DarwinDragWidget.js
 %%DATADIR%%/AdminHtml/includes/DarwinListbox.js
 %%DATADIR%%/AdminHtml/includes/draglib.js
 %%DATADIR%%/AdminHtml/includes/encode_unicode.js
@@ -147,6 +149,9 @@ etc/streaming/relayconfig.xml-dist
 @unexec if cmp -s %D/etc/streaming/streamingserver.xml %D/etc/streaming/streamingserver.xml-dist; then rm -f %D/etc/streaming/streamingserver.xml; fi
 etc/streaming/streamingserver.xml-dist
 @exec [ ! -f %B/streamingserver.xml ] && cp %B/%f %B/streamingserver.xml
+@unexec if cmp -s %D/etc/streaming/streamingloadtool.conf %D/etc/streaming/streamingloadtool.conf-dist; then rm -f %D/etc/streaming/streamingloadtool.conf; fi
+etc/streaming/streamingloadtool.conf-dist
+@exec [ ! -f %B/streamingloadtool.conf ] && cp %B/%f %B/streamingloadtool.conf
 @dirrm %%DATADIR%%/AdminHtml/includes
 @dirrm %%DATADIR%%/AdminHtml/images
 @dirrm %%DATADIR%%/AdminHtml/html_en

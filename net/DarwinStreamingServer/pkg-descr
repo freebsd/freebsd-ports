@@ -3,4 +3,5 @@ streaming QuickTime data to clients across the Internet using the industry
 standard RTP and RTSP protocols. It is based on the same code as Apple's
 QuickTime Streaming Server.
 
+WWW: http://dss.macosforge.org/
 WWW: http://developer.apple.com/darwin/projects/streaming/

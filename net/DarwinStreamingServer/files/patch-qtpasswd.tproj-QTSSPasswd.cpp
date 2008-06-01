@@ -1,6 +1,6 @@
---- qtpasswd.tproj/QTSSPasswd.cpp.orig	Fri May 20 04:03:22 2005
-+++ qtpasswd.tproj/QTSSPasswd.cpp	Sat Feb 10 04:05:38 2007
-@@ -720,7 +720,7 @@
+--- qtpasswd.tproj/QTSSPasswd.cpp.orig	2008-05-06 08:28:58.000000000 +0900
++++ qtpasswd.tproj/QTSSPasswd.cpp	2008-06-01 18:11:56.000000000 +0900
+@@ -723,7 +723,7 @@
      extern int optind;
  
  	/* Read command line arguments */

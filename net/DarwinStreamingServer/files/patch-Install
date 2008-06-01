@@ -1,5 +1,5 @@
---- Install.orig	Fri May 27 18:55:01 2005
-+++ Install	Wed Jan 10 01:05:07 2007
+--- Install.orig	2008-03-26 09:42:51.000000000 +0900
++++ Install	2008-06-01 18:02:09.000000000 +0900
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -22,7 +22,7 @@
  
  ## CHANGE PERL PATH IN streamingadminserver.pl AND parse_xml.cgi ##
  
-@@ -207,29 +209,29 @@
+@@ -209,29 +211,29 @@
      fi              
  
  	echo copying "DarwinStreamingServer" to "/usr/local/sbin/DarwinStreamingServer"
@@ -58,11 +58,11 @@
 +	if [ -e /usr/local/libexec/StreamingServerModules/QTSSHomeDirectoryModule ]; then
  		echo copying "createuserstreamingdir" to "/usr/local/bin/createuserstreamingdir"
 -		cp -f createuserstreamingdir $INSTALLROOT/usr/local/bin/
-+		${BSD_INSTALL_PROGRAM} createuserstreamingdir $INSTALLROOT/usr/local/bin/
++		${BSD_INSTALL_PROGRAM} createuserstreamingdir /usr/local/bin/
  	fi
  	
  	if [ ! -d /etc/streaming ]; then
-@@ -237,44 +239,53 @@
+@@ -239,32 +241,41 @@
  		mkdir -p /etc/streaming
  	fi
  	
@@ -117,27 +117,21 @@
 +	#${BSD_INSTALL_DATA} streamingadminserver.pem /etc/streaming/streamingadminserver.pem
  	#chmod 400 /etc/streaming/streamingadminserver.pem
  
--	if [ ! -d /var/streaming ]; then
--		echo creating "/var/streaming" directory
--		mkdir -p /var/streaming
-+	if [ ! -d ${DATADIR} ]; then
-+		echo creating "${DATADIR}" directory
-+		mkdir -p ${DATADIR}
+ 	if [ ! -d /var/streaming ]; then
+@@ -273,10 +284,10 @@
  	fi
  	
--	echo copying "readme.txt" to "/var/streaming/readme.txt"
+ 	echo copying "readme.txt" to "/var/streaming/readme.txt"
 -	cp -f readme.txt /var/streaming/readme.txt
-+	echo copying "readme.txt" to "${DATADIR}/readme.txt"
-+	${BSD_INSTALL_DATA} readme.txt ${DATADIR}/readme.txt
++	${BSD_INSTALL_DATA} readme.txt /var/streaming/readme.txt
  	
--	echo copying "3rdPartyAcknowledgements.rtf" to "/var/streaming/3rdPartyAcknowledgements.rtf"
+ 	echo copying "3rdPartyAcknowledgements.rtf" to "/var/streaming/3rdPartyAcknowledgements.rtf"
 -	cp -f 3rdPartyAcknowledgements.rtf /var/streaming/3rdPartyAcknowledgements.rtf
-+	echo copying "3rdPartyAcknowledgements.rtf" to "${DATADIR}/3rdPartyAcknowledgements.rtf"
-+	${BSD_INSTALL_DATA} 3rdPartyAcknowledgements.rtf ${DATADIR}/3rdPartyAcknowledgements.rtf
++	${BSD_INSTALL_DATA} 3rdPartyAcknowledgements.rtf /var/streaming/3rdPartyAcknowledgements.rtf
  	
  	if [ ! -d /var/streaming/logs ]; then
  		echo creating "/var/streaming/logs" directory
-@@ -290,70 +301,72 @@
+@@ -292,70 +303,81 @@
  		echo creating "/var/streaming/playlists" directory
  		mkdir -p /var/streaming/playlists
  	fi
@@ -190,6 +184,13 @@
 -	cp -f streamingloadtool.conf /etc/streaming/
 +	echo copying "streamingloadtool.conf" to "/etc/streaming/streamingloadtool.conf-dist"
 +	${BSD_INSTALL_DATA} streamingloadtool.conf /etc/streaming/streamingloadtool.conf-dist
++
++	if [ ! -e /etc/streaming/streamingloadtool.conf ]; then
++		echo;echo copying "streamingloadtool.conf" to "/etc/streaming/streamingloadtool.conf"
++		${BSD_INSTALL_DATA} streamingloadtool.conf /etc/streaming/streamingloadtool.conf
++		chown qtss /etc/streaming/streamingloadtool.conf
++		chmod 600 /etc/streaming/streamingloadtool.conf
++	fi
  fi
  	
  	#WebAdmin install
@@ -209,17 +210,17 @@
  	fi
  	echo copying Admin HTML to "/var/streaming/AdminHtml" directory
 -	cp -f -r AdminHtml /var/streaming/
-+	tar -cf - AdminHtml | tar -xf - -C ${DATADIR}
++	pax -rwpe AdminHtml /var/streaming/
  	
  
  	chown -R -f qtss /var/streaming/
  	chown -R -f qtss /etc/streaming/
  	chown -R -f qtss /usr/local/movies/
  
--	echo;echo "Launching streamingadminserver.pl"
--	/usr/local/sbin/streamingadminserver.pl
-+#	echo;echo "Launching streamingadminserver.pl"
-+#	/usr/local/sbin/streamingadminserver.pl
++if false; then
+ 	echo;echo "Launching streamingadminserver.pl"
+ 	/usr/local/sbin/streamingadminserver.pl
++fi
  	
  	echo;echo Installation Complete
  
@@ -227,7 +228,7 @@
  	# Setup for DSS
  	# Prompts for a username and password
  	# that can be used to administer the server
-@@ -416,6 +429,7 @@
+@@ -418,6 +440,7 @@
  	chown -R -f qtss /etc/streaming/
  	
  	echo Setup Complete!
