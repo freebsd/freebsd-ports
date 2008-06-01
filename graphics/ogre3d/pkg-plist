@@ -1,6 +1,8 @@
 bin/OgreMaterialUpgrade
 bin/OgreMeshUpgrade
 bin/OgreXMLConverter
+%%WITH_GTK%%include/OGRE/gtk/OgreConfigDialogImp.h
+%%WITH_GTK%%include/OGRE/gtk/OgreErrorDialogImp.h
 include/OGRE/GLX/OgreConfigDialogImp.h
 include/OGRE/GLX/OgreErrorDialogImp.h
 include/OGRE/GLX/OgreTimerImp.h
@@ -247,6 +249,7 @@ libdata/pkgconfig/OGRE.pc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm include/OGRE/GLX
+%%WITH_GTK%%@dirrm include/OGRE/gtk
 @dirrm include/OGRE
 @dirrm lib/OGRE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
