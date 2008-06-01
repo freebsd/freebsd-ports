@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="90db9983-2f53-11dd-a0d8-0016d325a0ed">
+    <topic>ikiwiki -- cleartext passwords</topic>
+    <affects>
+      <package>
+	<name>ikiwiki</name>
+	<range><lt>2.48</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ikiwiki development team reports:</p>
+	<blockquote cite="http://ikiwiki.info/security/#index32h2">
+	  <p>Until version 2.48, ikiwiki stored passwords in cleartext in
+	  the userdb. That risks exposing all users' passwords if the file
+	  is somehow exposed. To pre-emtively guard against that, current
+	  versions of ikiwiki store password hashes (using Eksblowfish).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://ikiwiki.info/security/#index32h2</url>
+    </references>
+    <dates>
+      <discovery>2008-05-30</discovery>
+      <entry>2008-06-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="09066828-2ef1-11dd-a0d8-0016d325a0ed">
     <topic>ikiwiki -- empty password security hole</topic>
     <affects>
