@@ -77,13 +77,6 @@ esac
 			pw usershow ${sguil_user}
 		fi
 	fi
-	for dir in %%SGUILDIR%%/certs ; do
-	if [ ! -d  ${confdir}/${dir} ]; then
-		echo "Creating ${confdir}/${dir} ...."
-		install -d -o ${sguil_user} -g ${sguil_group} \
-			-m 0750 ${confdir}/${dir}
-	fi
-	done
 	for dir in %%PREFIX%%/lib/%%SGUILDIR%% /var/run/%%SGUILDIR%% ; do
 	if [ ! -d ${dir} ]; then
 		echo "Creating ${dir} ...."
@@ -123,6 +116,13 @@ esac
 	echo "Would you like to create certs now? (y for yes, n for no)"; read ans
 	case "$ans" in
 	    y*|Y*)
+		for dir in %%SGUILDIR%%/certs ; do
+		if [ ! -d  ${confdir}/${dir} ]; then
+			echo "Creating ${confdir}/${dir} ...."
+			install -d -o ${sguil_user} -g ${sguil_group} \
+				-m 0750 ${confdir}/${dir}
+		fi
+		done
 		echo -e "\033[1mFirst we need to create a password-protected CA cert."
 		echo ""
 		echo -e "\033[0m(The Common Name should be the FQHN of your squil server.)"
