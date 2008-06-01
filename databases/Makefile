@@ -372,6 +372,7 @@
     SUBDIR += pgadmin3-12
     SUBDIR += pgbouncer
     SUBDIR += pgcluster
+    SUBDIR += pgfouine
     SUBDIR += pgpool
     SUBDIR += pgpool-II
     SUBDIR += pgpoolAdmin
