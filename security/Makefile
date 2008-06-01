@@ -328,6 +328,7 @@
     SUBDIR += p5-Authen-Bitcard
     SUBDIR += p5-Authen-Captcha
     SUBDIR += p5-Authen-CyrusSASL
+    SUBDIR += p5-Authen-DecHpwd
     SUBDIR += p5-Authen-Htpasswd
     SUBDIR += p5-Authen-Krb5
     SUBDIR += p5-Authen-Libwrap
