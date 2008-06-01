@@ -9,7 +9,9 @@ PORTNAME=	DarwinStreamingServer
 PORTVERSION=	6.0.3
 PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	http://dss.macosforge.org/downloads/
+MASTER_SITES=	http://dss.macosforge.org/downloads/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     nork
 DISTNAME=	DarwinStreamingSrvr${PORTVERSION}-Source
 EXTRACT_SUFX=	.tar
 
