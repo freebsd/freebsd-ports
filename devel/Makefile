@@ -2359,6 +2359,7 @@
     SUBDIR += subclipse
     SUBDIR += subcommander
     SUBDIR += subversion
+    SUBDIR += subversion-freebsd
     SUBDIR += subversion-perl
     SUBDIR += subversion-python
     SUBDIR += subversion-ruby
