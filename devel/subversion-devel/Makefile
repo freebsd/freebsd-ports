@@ -1,25 +1,25 @@
-# New ports collection makefile for:	subversion
-# Date created:				10 September 2001
-# Whom:					rooneg@electricjellyfish.net
+# New ports collection makefile for:	subversion-freebsd
+# Date created:				29 May 2008
+# Whom:					dougb@FreeBSD.org
 #
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.4.6
-PORTREVISION?=	1
+PORTVERSION=	1.5.0.rc7
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
-		http://svnbook.red-bean.com/en/${PORTVERSION:R}/:book
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
+MASTER_SITES=	http://subversion.tigris.org/downloads/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-1.5.0-rc7
 DIST_SUBDIR=	subversion
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lev@freebsd.org
-COMMENT=	Version control system
+COMMENT=	Version control system with FreeBSD Project repo customizations
 
-CONFLICTS?=	subversion-perl-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]*
+NO_PACKAGE=	No binary packages of release candidates
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+
+CONFLICTS?=	subversion-[0-9]* subversion-perl-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]*
 
 USE_LDCONFIG=	yes
 
@@ -37,18 +37,18 @@ MAN8=		svnserve.8
 
 TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 
-OPTIONS=	PERL		"Perl bindings" off \
+OPTIONS=	SERF	"High-performance lib for access over http" off \
+		NEON	"Older, stable http access (precludes serf)" off \
+		ASVN		"Build and install Archive SVN (asvn)" off \
+		PERL		"Perl bindings" off \
 		PYTHON		"Python bindings" off \
 		RUBY		"Ruby bindings" off \
 		JAVA		"Java (JavaHL) bindings" off \
+		BDB		"db4 repository backend" off \
 		MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
 		APACHE2_APR	"Use APR from Apache 2.X" off \
-		NEON		"WebDAV/Delta-V repository access module" on \
-		BDB		"db4 repository backend" on \
-		ASVN		"Build and install Archive SVN (asvn)" off \
-		MAINTAINER_DEBUG	"Build debug version" off \
 		SVNSERVE_WRAPPER	"Enable svnserve wrapper" off \
-		BOOK		"Install the Subversion Book" off
+		MAINTAINER_DEBUG	"Build debug version" off
 
 .include <bsd.port.pre.mk>
 
@@ -81,13 +81,14 @@ CONFIGURE_ARGS+=--enable-maintainer-mode \
 CFLAGS+=	-g
 .endif
 
-.if !defined(WITHOUT_NEON)
-LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon26
+.if defined(WITH_NEON)
+LIB_DEPENDS+=		neon.26:${PORTSDIR}/www/neon26
 CONFIGURE_ARGS+=	--with-neon=${LOCALBASE}
-PLIST_SUB+=		WITHOUT_NEON=""
-.else
-CONFIGURE_ARGS+=	--without-neon
-PLIST_SUB+=		WITHOUT_NEON="@comment "
+PLIST_SUB+=		NEON="" SERF="@comment "
+.elif defined(WITH_SERF)
+LIB_DEPENDS+=		serf-0.0:${PORTSDIR}/www/serf
+CONFIGURE_ARGS+=	--with-serf=${LOCALBASE} --without-neon
+PLIST_SUB+=		NEON="@comment " SERF=""
 .endif
 
 .if defined(WITHOUT_BDB)
@@ -151,7 +152,7 @@ BROKEN="Java bindings are supported only on FreeBSD 5.3 or newer"
 .endif
 
 .if !defined(SWIG_BINDINGS)
-CONFIGURE_ARGS+=	--without-swig --disable-swig-bindings
+CONFIGURE_ARGS+=	--without-swig
 .endif
 
 .if defined(WITH_MOD_DAV_SVN)
@@ -226,110 +227,6 @@ PLIST_SUB+=	ASVN="@comment "
 SCRIPTS=
 
 SCRIPTS_DATA=
-
-pre-everything::
-	@${ECHO_MSG} ""
-.if defined(WITHOUT_NEON)
-	@${ECHO_MSG} "WebDAV/Delta-V repository access module disabled."
-.else
-	@${ECHO_MSG} "WebDAV/Delta-V repository access module enabled."
-	@${ECHO_MSG} "To disable it define WITHOUT_NEON"
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITHOUT_BDB)
-	@${ECHO_MSG} "db4 repository backend disabled."
-.else
-	@${ECHO_MSG} "db4 repository backend enabled."
-	@${ECHO_MSG} "To disable it define WITHOUT_BDB"
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_MAINTAINER_DEBUG)
-	@${ECHO_MSG} "Build debug version."
-.else
-	@${ECHO_MSG} "You can enable debug build by defining WITH_MAINTAINER_DEBUG."
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_PERL)
-	@${ECHO_MSG} "Build with perl bindings."
-	@${ECHO_MSG} "Be sure, that apr library and perl both uses OR not uses threads in same time."
-.else
-	@${ECHO_MSG} "You can enable perl bindings by defining WITH_PERL"
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_PYTHON)
-	@${ECHO_MSG} "Build with Python bindings."
-.else
-	@${ECHO_MSG} "You can enable Python bindings by defining WITH_PYTHON."
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_RUBY)
-	@${ECHO_MSG} "Build with Ruby bindings."
-.else
-	@${ECHO_MSG} "You can enable Ruby bindings by defining WITH_RUBY."
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_JAVA)
-	@${ECHO_MSG} "Build with Java (JavaHL) bindings."
-.else
-	@${ECHO_MSG} "You can enable Java bindings by defining WITH_JAVA."
-	@${ECHO_MSG} "You should have apr built with threads for Java support!"
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_MOD_DAV_SVN)
-	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
-.else
-	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
-	@${ECHO_MSG} "by defining WITH_MOD_DAV_SVN.  This option implies"
-	@${ECHO_MSG} "the WITH_APACHE2_APR option."
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_APACHE2_APR)
-	@${ECHO_MSG} "Using APR from ${APACHE_PORT}.  If you have the devel/apr"
-	@${ECHO_MSG} "port/package installed, you may need to remove it."
-.else
-	@${ECHO_MSG} "You can link subversion against the APR built with"
-	@${ECHO_MSG} "the ${APACHE_PORT} port, rather than the devel/apr port,"
-	@${ECHO_MSG} "by defining WITH_APACHE2_APR."
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_SVNSERVE_WRAPPER)
-	@${ECHO_MSG} "svnserve wrapper enabled."
-.else
-	@${ECHO_MSG} "You can install the svnserve wrapper (sets umask 002)"
-	@${ECHO_MSG} "by defining WITH_SVNSERVE_WRAPPER."
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_REPOSITORY_CREATION)
-	@${ECHO_MSG} "I will create (or use, if it exists) \"${SVNGROUP}\" group."
-	@${ECHO_MSG} "Make sure that all committers are its members."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Repository will be created at '${SVNREPOS}' with group '${SVNGROUP}'."
-	@${ECHO_MSG} "Type of repository will be '${SVNFSTYPE}'."
-	@${ECHO_MSG} "You could change these settings by defining SVNREPOS, SVNGROUP and SVNFSTYPE."
-.else
-	@${ECHO_MSG} "You can have the repository created for you by defining"
-	@${ECHO_MSG} "WITH_REPOSITORY_CREATION."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Make sure that:"
-	@${ECHO_MSG} "* all your svn users are members of a common group"
-	@${ECHO_MSG} "* this group is the group id of the db/ and locks/"
-	@${ECHO_MSG} "  subdirectories of your repository"
-	@${ECHO_MSG} "* the above subdirectories are writable by this group"
-.endif
-	@${ECHO_MSG} ""
-.if !defined(NOPORTDOCS) && defined(WITH_BOOK)
-	@${ECHO_MSG} "Subversion Book will be installed."
-.else
-	@${ECHO_MSG} "You can install the Subversion Book by defining WITH_BOOK."
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_ASVN)
-	@${ECHO_MSG} "asvn will be installed"
-.else
-	@${ECHO_MSG} "You can install asvn from contrib by defining WITH_ASVN"
-.endif
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}}"
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/neon
