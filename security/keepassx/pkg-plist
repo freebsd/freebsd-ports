@@ -1,43 +1,78 @@
-bin/keepass
-share/keepass/license.html
-share/keepass/i18n/keepass-de_DE.qm
-share/keepass/i18n/keepass-fr_FR.qm
-share/keepass/icons/clientic.png
-share/keepass/icons/i18n.png
-share/keepass/icons/keepassx.png
-share/keepass/icons/key.png
-share/keepass/icons/ok.png
-share/keepass/icons/search.png
-share/keepass/icons/settings.png
-share/keepass/icons/nuvola/32x32/actions/configure.png
-share/keepass/icons/nuvola/32x32/actions/edit.png
-share/keepass/icons/nuvola/32x32/actions/edit_add.png
-share/keepass/icons/nuvola/32x32/actions/editcopy.png
-share/keepass/icons/nuvola/32x32/actions/editdelete.png
-share/keepass/icons/nuvola/32x32/actions/exit.png
-share/keepass/icons/nuvola/32x32/actions/fileclose.png
-share/keepass/icons/nuvola/32x32/actions/fileexport.png
-share/keepass/icons/nuvola/32x32/actions/filenew.png
-share/keepass/icons/nuvola/32x32/actions/fileopen.png
-share/keepass/icons/nuvola/32x32/actions/filesave.png
-share/keepass/icons/nuvola/32x32/actions/filesaveas.png
-share/keepass/icons/nuvola/32x32/actions/find.png
-share/keepass/icons/nuvola/32x32/actions/help.png
-share/keepass/icons/nuvola/32x32/actions/identity.png
-share/keepass/icons/nuvola/32x32/actions/klipper_dock.png
-share/keepass/icons/nuvola/32x32/actions/reload.png
-share/keepass/icons/nuvola/32x32/actions/run.png
-share/keepass/icons/nuvola/32x32/apps/ktouch.png
-share/keepass/icons/nuvola/32x32/filesystems/desktop.png
-share/keepass/icons/nuvola/32x32/filesystems/folder.png
-share/keepass/icons/nuvola/32x32/filesystems/folder_home.png
-share/keepass/icons/nuvola/32x32/filesystems/network_local.png
-share/keepass/icons/nuvola/32x32/filesystems/trashcan_full.png
-@dirrm share/keepass/icons/nuvola/32x32/filesystems
-@dirrm share/keepass/icons/nuvola/32x32/apps
-@dirrm share/keepass/icons/nuvola/32x32/actions
-@dirrm share/keepass/icons/nuvola/32x32
-@dirrm share/keepass/icons/nuvola
-@dirrm share/keepass/icons
-@dirrm share/keepass/i18n
-@dirrm share/keepass
+bin/keepassx
+share/applications/keepassx.desktop
+%%DATADIR%%/doc/css/style.css
+%%DATADIR%%/doc/images/headerbackground.png
+%%DATADIR%%/doc/images/logo.png
+%%DATADIR%%/doc/index.html
+%%DATADIR%%/doc/keepassx.adp
+%%DATADIR%%/icons/alarmclock.png
+%%DATADIR%%/icons/appsettings.png
+%%DATADIR%%/icons/autotype.png
+%%DATADIR%%/icons/bookmark.png
+%%DATADIR%%/icons/bookmark_add.png
+%%DATADIR%%/icons/bookmark_del.png
+%%DATADIR%%/icons/bookmark_edit.png
+%%DATADIR%%/icons/bookmark_folder.png
+%%DATADIR%%/icons/bookmark_this.png
+%%DATADIR%%/icons/clientic.png
+%%DATADIR%%/icons/clock.png
+%%DATADIR%%/icons/cloneentry.png
+%%DATADIR%%/icons/copypwd.png
+%%DATADIR%%/icons/copyusername.png
+%%DATADIR%%/icons/dbsearch.png
+%%DATADIR%%/icons/dbsettings.png
+%%DATADIR%%/icons/delete.png
+%%DATADIR%%/icons/deleteentry.png
+%%DATADIR%%/icons/deletegroup.png
+%%DATADIR%%/icons/dice.png
+%%DATADIR%%/icons/document.png
+%%DATADIR%%/icons/down.png
+%%DATADIR%%/icons/editentry.png
+%%DATADIR%%/icons/editgroup.png
+%%DATADIR%%/icons/exit.png
+%%DATADIR%%/icons/expired.png
+%%DATADIR%%/icons/fileclose.png
+%%DATADIR%%/icons/filedelete.png
+%%DATADIR%%/icons/filenew.png
+%%DATADIR%%/icons/fileopen.png
+%%DATADIR%%/icons/filesave.png
+%%DATADIR%%/icons/filesaveas.png
+%%DATADIR%%/icons/filesavedisabled.png
+%%DATADIR%%/icons/generator.png
+%%DATADIR%%/icons/groupsearch.png
+%%DATADIR%%/icons/help.png
+%%DATADIR%%/icons/i18n.png
+%%DATADIR%%/icons/keepassx.png
+%%DATADIR%%/icons/keepassx_large.png
+%%DATADIR%%/icons/keepassx_locked.png
+%%DATADIR%%/icons/key.png
+%%DATADIR%%/icons/lock.png
+%%DATADIR%%/icons/manual.png
+%%DATADIR%%/icons/newentry.png
+%%DATADIR%%/icons/newgroup.png
+%%DATADIR%%/icons/ok.png
+%%DATADIR%%/icons/openurl.png
+%%DATADIR%%/icons/pwd_hide.png
+%%DATADIR%%/icons/pwd_show.png
+%%DATADIR%%/icons/restore.png
+%%DATADIR%%/icons/search.png
+%%DATADIR%%/icons/swap.png
+%%DATADIR%%/icons/templates.png
+%%DATADIR%%/icons/text_block.png
+%%DATADIR%%/icons/text_bold.png
+%%DATADIR%%/icons/text_center.png
+%%DATADIR%%/icons/text_italic.png
+%%DATADIR%%/icons/text_left.png
+%%DATADIR%%/icons/text_right.png
+%%DATADIR%%/icons/text_under.png
+%%DATADIR%%/icons/trashcan.png
+%%DATADIR%%/icons/up.png
+%%DATADIR%%/license.html
+share/pixmaps/keepassx.xpm
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/i18n
+@dirrm %%DATADIR%%/doc/images
+@dirrm %%DATADIR%%/doc/css
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%
+@dirrmtry share/applications

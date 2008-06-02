@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	KeePassX
-PORTVERSION=	0.2.2
-PORTREVISION=	3
+PORTVERSION=	0.3.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -15,10 +14,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Cross Platform Password Manager
 
-WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
+DATADIR=	${PREFIX}/share/${PORTNAME:L}
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build uic_build qt3support_build corelib gui xml
+QT_COMPONENTS=	qmake_build moc_build uic_build qt3support_build rcc_build \
+		corelib gui xml
 HAS_CONFIGURE=	yes
 USE_XORG=	xt inputproto xtst xrender xrandr xfixes xcursor\
 		xext x11 sm ice xi
