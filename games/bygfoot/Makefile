@@ -7,13 +7,17 @@
 
 PORTNAME=	bygfoot
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Football (soccer) management game
+
+# needed to save/load games
+RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		unzip:${PORTSDIR}/archivers/unzip
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
