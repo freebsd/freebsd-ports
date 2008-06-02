@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Device-SerialPort
-PORTVERSION=	1.003001
+PORTVERSION=	1.040000
 CATEGORIES=	comms perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A perl5 module for simple serial port control
