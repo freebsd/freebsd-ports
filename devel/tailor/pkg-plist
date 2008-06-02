@@ -20,6 +20,12 @@ bin/tailor
 %%PYTHON_SITELIBDIR%%/vcpx/repository/__init__.py
 %%PYTHON_SITELIBDIR%%/vcpx/repository/__init__.pyc
 %%PYTHON_SITELIBDIR%%/vcpx/repository/__init__.pyo
+%%PYTHON_SITELIBDIR%%/vcpx/repository/aegis/__init__.py
+%%PYTHON_SITELIBDIR%%/vcpx/repository/aegis/__init__.pyc
+%%PYTHON_SITELIBDIR%%/vcpx/repository/aegis/__init__.pyo
+%%PYTHON_SITELIBDIR%%/vcpx/repository/aegis/target.py
+%%PYTHON_SITELIBDIR%%/vcpx/repository/aegis/target.pyc
+%%PYTHON_SITELIBDIR%%/vcpx/repository/aegis/target.pyo
 %%PYTHON_SITELIBDIR%%/vcpx/repository/arx.py
 %%PYTHON_SITELIBDIR%%/vcpx/repository/arx.pyc
 %%PYTHON_SITELIBDIR%%/vcpx/repository/arx.pyo
@@ -107,5 +113,6 @@ bin/tailor
 @dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository/p4
 @dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository/git
 @dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository/darcs
+@dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository/aegis
 @dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository
 @dirrm %%PYTHON_SITELIBDIR%%/vcpx

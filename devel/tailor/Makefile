@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tailor
-PORTVERSION=	0.9.31
+PORTVERSION=	0.9.34
 CATEGORIES=	devel python
 MASTER_SITES=	http://darcs.arstecnica.it/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	aryeh.friedmian@gmail.com
 COMMENT=	Migrates changesets between version control systems
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
