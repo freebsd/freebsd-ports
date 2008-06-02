@@ -14,14 +14,17 @@ MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Netgraph IP accounting
 
+.ifndef PACKAGE_BUILDING
 NO_PACKAGE=	"Depends on kernel"
+.endif
 
 OPTIONS=	MEM_ZONE "Use UMA zone allocator (>= 5.x only)" on
 
-PLIST_SUB+=	KMODDIR=${KMODDIR}
+KMODDIR=	/boot/modules
+PLIST_SUB+=	KMODDIR=${KMODDIR:S!^/!!}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ENV=	BINDIR="${PREFIX}/sbin"
+MAKE_ENV=	BINDIR="${PREFIX}/sbin" KMODDIR=${KMODDIR}
 
 MAN8=		ipacctctl.8
 MANLANG=	ru.KOI8-R
