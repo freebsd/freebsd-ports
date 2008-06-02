@@ -131,7 +131,9 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/doc/es/EmbeddedObjects.lyx
 %%DATADIR%%/doc/es/Extended.lyx
 %%DATADIR%%/doc/es/FAQ.lyx
+%%DATADIR%%/doc/es/Formula-numbering.lyx
 %%DATADIR%%/doc/es/Intro.lyx
+%%DATADIR%%/doc/es/Math.lyx
 %%DATADIR%%/doc/es/TOC.lyx
 %%DATADIR%%/doc/es/Tutorial.lyx
 %%DATADIR%%/doc/es/UserGuide.lyx
@@ -163,6 +165,7 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/doc/fr/EmbeddedObjects.lyx
 %%DATADIR%%/doc/fr/Extended.lyx
 %%DATADIR%%/doc/fr/FAQ.lyx
+%%DATADIR%%/doc/fr/Formula-numbering.lyx
 %%DATADIR%%/doc/fr/Intro.lyx
 %%DATADIR%%/doc/fr/Math.lyx
 %%DATADIR%%/doc/fr/TOC.lyx
@@ -192,6 +195,8 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/doc/it/TOC.lyx
 %%DATADIR%%/doc/it/Tutorial.lyx
 %%DATADIR%%/doc/it/UserGuide.lyx
+%%DATADIR%%/doc/it/clipart/it_footnoteQt4.png
+%%DATADIR%%/doc/it/clipart/it_referenceQt4.png
 %%DATADIR%%/doc/nb/Intro.lyx
 %%DATADIR%%/doc/nb/TOC.lyx
 %%DATADIR%%/doc/nl/Intro.lyx
@@ -261,9 +266,6 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/examples/de/serienbrief2.lyx
 %%DATADIR%%/examples/de/serienbrief3.lyx
 %%DATADIR%%/examples/de/splash.lyx
-%%DATADIR%%/examples/de/serienbrief1.lyx
-%%DATADIR%%/examples/de/serienbrief2.lyx
-%%DATADIR%%/examples/de/serienbrief3.lyx
 %%DATADIR%%/examples/docbook_article.lyx
 %%DATADIR%%/examples/es/ItemizeBullets.lyx
 %%DATADIR%%/examples/es/ejemplo_con_lyx.lyx
@@ -283,7 +285,6 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/examples/fr/Minipage.lyx
 %%DATADIR%%/examples/fr/exemple_brut.lyx
 %%DATADIR%%/examples/fr/exemple_lyxifie.lyx
-%%DATADIR%%/examples/fr/mathed.lyx
 %%DATADIR%%/examples/fr/multicol.lyx
 %%DATADIR%%/examples/fr/simplecv.lyx
 %%DATADIR%%/examples/fr/splash.lyx
@@ -428,7 +429,6 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/images/math/Re.xpm
 %%DATADIR%%/images/math/Rrightarrow.xpm
 %%DATADIR%%/images/math/Rsh.xpm
-%%DATADIR%%/images/math/Vert.xpm
 %%DATADIR%%/images/math/Vvdash.xpm
 %%DATADIR%%/images/math/acute.xpm
 %%DATADIR%%/images/math/aleph.xpm
@@ -901,6 +901,8 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/images/math/vec.xpm
 %%DATADIR%%/images/math/vee.xpm
 %%DATADIR%%/images/math/veebar.xpm
+%%DATADIR%%/images/math/vert.xpm
+%%DATADIR%%/images/math/vert2.xpm
 %%DATADIR%%/images/math/vphantom.xpm
 %%DATADIR%%/images/math/wedge.xpm
 %%DATADIR%%/images/math/widehat.xpm
@@ -1018,6 +1020,7 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/layouts/arab-article.layout
 %%DATADIR%%/layouts/armenian-article.layout
 %%DATADIR%%/layouts/article.layout
+%%DATADIR%%/layouts/article-beamer.layout
 %%DATADIR%%/layouts/beamer.layout
 %%DATADIR%%/layouts/book.layout
 %%DATADIR%%/layouts/broadway.layout
@@ -1084,6 +1087,7 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/layouts/revtex.layout
 %%DATADIR%%/layouts/revtex4.layout
 %%DATADIR%%/layouts/scrartcl.layout
+%%DATADIR%%/layouts/scrarticle-beamer.layout
 %%DATADIR%%/layouts/scrbook.layout
 %%DATADIR%%/layouts/scrclass.inc
 %%DATADIR%%/layouts/scrlettr.layout
@@ -1178,6 +1182,9 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/scripts/convertDefault.py
 %%DATADIR%%/scripts/convertDefault.pyc
 %%DATADIR%%/scripts/convertDefault.pyo
+%%DATADIR%%/scripts/csv2lyx.py
+%%DATADIR%%/scripts/csv2lyx.pyc
+%%DATADIR%%/scripts/csv2lyx.pyo
 %%DATADIR%%/scripts/date.py
 %%DATADIR%%/scripts/date.pyc
 %%DATADIR%%/scripts/date.pyo
@@ -1290,6 +1297,7 @@ share/pixmaps/lyx.xpm
 @dirrm %%DATADIR%%/doc/pl
 @dirrm %%DATADIR%%/doc/nl
 @dirrm %%DATADIR%%/doc/nb
+@dirrm %%DATADIR%%/doc/it/clipart
 @dirrm %%DATADIR%%/doc/it
 @dirrm %%DATADIR%%/doc/hu
 @dirrm %%DATADIR%%/doc/he

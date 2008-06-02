@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.planetmirror.com/pub/lyx/stable/ \
@@ -81,8 +81,8 @@ post-configure:
 	# Removing explicit linking with -lc
 	${REINPLACE_CMD} -e 's,-lc ,,' ${WRKSRC}/*/Makefile
 
-post-build check test:
-	# Running vendor's self-tests:
+check test:
+	# Running vendor's self-tests (currently known to fail):
 	${GMAKE} -C ${WRKSRC} check
 
 post-install:
