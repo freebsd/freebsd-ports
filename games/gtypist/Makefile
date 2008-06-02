@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtypist
-PORTVERSION=	2.8
+PORTVERSION=	2.8.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,8 +27,5 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/typefortune ${PREFIX}/bin
 
 .include <bsd.port.mk>
