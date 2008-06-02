@@ -28,13 +28,14 @@ USE_BZIP2=	yes
 DIST_SUBDIR=	jed
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
-MAKE_ENV+=	DEST_DOC_DIR=${DOCSDIR}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PORTDOCS=	*
+MAKE_ENV+=	DEST_DOC_DIR=${DOCSDIR}
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	JED_DOC_FILES="" \
 		JED_DOC_TXT_FILES="" \
+		JED_DOC_HLP_FILES="" \
 		JED_DOC_MAN_FILES=""
 .endif
 
@@ -62,6 +63,10 @@ post-patch:
 			  -e 's,\.\./info/\*,,' \
 			  -e 's,^\(JED_DOC_.*FILES\) =,\1 \?=,g' \
 		${WRKSRC}/src/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/MKINSDIR.*DEST_DOC_DIR/d' \
+		${WRKSRC}/src/Makefile.in
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's,\(.usr.bin.install\) *-c,\1 -s -m 555,' \
