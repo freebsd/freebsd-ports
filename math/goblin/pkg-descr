@@ -18,4 +18,4 @@ optimization problems:
 The library also includes methods for NP-hard problems, namely TSP, ATSP,
 stable sets and graph colouring.
 
-WWW: http://www.math.uni-augsburg.de/opt/goblin.html
+WWW: http://goblin2.sourceforge.net/
