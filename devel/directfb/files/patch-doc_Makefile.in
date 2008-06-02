@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	2008-06-02 14:05:50.000000000 +0200
++++ docs/Makefile.in	2008-06-02 14:05:58.000000000 +0200
+@@ -681,7 +681,7 @@
+ @HAVE_MAN2HTML_TRUE@	rm -f $(HTMLMANS)
+ 
+ @HAVE_MAN2HTML_TRUE@%.html: %
+-@HAVE_MAN2HTML_TRUE@	$(MAN2HTML) $* > $@
++@HAVE_MAN2HTML_TRUE@	$(MAN2HTML) < $* > $@
+ 
+ @HAVE_MAN2HTML_FALSE@all-local:
+ 
