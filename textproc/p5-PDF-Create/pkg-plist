@@ -2,6 +2,7 @@
 %%SITE_PERL%%/PDF/Create/Page.pm
 %%SITE_PERL%%/PDF/Create/Outline.pm
 %%SITE_PERL%%/PDF/sample.pl
+%%SITE_PERL%%/PDF/sample-cgi.pl
 %%SITE_PERL%%/PDF/Create.pm
 %%SITE_PERL%%/PDF/Image/GIFImage.pm
 %%SITE_PERL%%/PDF/Image/JPEGImage.pm
