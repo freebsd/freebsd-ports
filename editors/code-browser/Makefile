@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	code-browser
-PORTVERSION=	3.0
+PORTVERSION=	3.2
 CATEGORIES=	editors
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,6 +19,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
+
+DATADIR=	${PREFIX}/share/${PORTNAME}-3
 
 PORTDOCS=	code-browser.chm doc.css doc.html
 PLIST_FILES=	bin/code-browser \
