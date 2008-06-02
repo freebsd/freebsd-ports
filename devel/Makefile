@@ -607,7 +607,6 @@
     SUBDIR += libevocosm
     SUBDIR += libexecinfo
     SUBDIR += libffi
-    SUBDIR += libffi-devel
     SUBDIR += libfs++
     SUBDIR += libftdi
     SUBDIR += libg++
