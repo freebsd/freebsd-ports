@@ -1,0 +1,19 @@
+--- tix/unix/Makefile.in.orig	2008-06-02 14:38:17.000000000 +0200
++++ tix/unix/Makefile.in	2008-06-02 14:38:53.000000000 +0200
+@@ -66,6 +66,7 @@
+ INSTALL		=	@SRC_DIR@/install.sh -c
+ INSTALL_PROGRAM =	@INSTALL_PROGRAM@
+ INSTALL_DATA	=	@INSTALL_DATA@
++INSTALL_SCRIPT	=	@INSTALL_SCRIPT@
+ SRC_DIR		=	@SRC_DIR@
+ INC_DIR		=	@SRC_DIR@/generic
+ UNIX_DIR	=	@SRC_DIR@/unix
+@@ -140,7 +141,7 @@
+ 		fi; \
+ 	    done;
+ 	@echo "installing the tixindex program for building tclIndex for Tix scripts"
+-	@cd $(TOOLS_DIR); $(INSTALL_PROGRAM) tixindex $(DESTDIR)$(BIN_DIR)/tixindex
++	@cd $(TOOLS_DIR); $(INSTALL_SCRIPT) tixindex $(DESTDIR)$(BIN_DIR)/tixindex
+ 
+ install-headers:
+ 	@for i in $(INCLUDE_DIR); \

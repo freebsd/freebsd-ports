@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sourcenav
-PORTVERSION=	5.1.4
-PORTREVISION=	9
+DISTVERSION=	5.2b2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -24,16 +23,15 @@ USE_GMAKE=	yes
 USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
-USE_TCL=	83
-USE_TK=		83
 
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-EXTRA_PATCHES+=	${FILESDIR}/FreeBSD6-cdefs.h
-.endif
+post-patch:
+	${REINPLACE_CMD} -e 's|-fwritable-strings||g' \
+	    ${WRKSRC}/snavigator/configure \
+	    ${WRKSRC}/tix/unix/tk8.3/Makefile.in
 
 post-install:
 	@${LN} -s ${PREFIX}/bin/snavigator ${PREFIX}/../bin
