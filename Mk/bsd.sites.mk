@@ -460,6 +460,7 @@ MASTER_SITE_GCC+=	\
 
 .if !defined(IGNORE_MASTER_SITE_GENTOO)
 MASTER_SITE_GENTOO+=	\
+	http://ftp.roedu.net/pub/mirrors/gentoo.org/%SUBDIR%/ \
 	http://distro.ibiblio.org/pub/linux/distributions/gentoo/%SUBDIR%/ \
 	http://csociety-ftp.ecn.purdue.edu/pub/gentoo/%SUBDIR%/ \
 	http://gentoo.mirrors.pair.com/%SUBDIR%/ \
