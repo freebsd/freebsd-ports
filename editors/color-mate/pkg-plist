@@ -120,14 +120,14 @@ lib/xemacs/site-packages/lisp/color-mate/theme/Xdefaults.cpp
 lib/xemacs/site-packages/lisp/color-mate/theme/color-mate-theme-compile.el
 lib/xemacs/site-packages/lisp/color-mate/theme/theme_build.sh
 lib/xemacs/site-packages/pkginfo/MANIFEST.color-mate
-%%DOCSDIR%%/Customize.txt
-%%DOCSDIR%%/Dot.emacs.default.in
-%%DOCSDIR%%/Q_and_A.color-mate
-%%DOCSDIR%%/QuickStart.color-mate
-%%DOCSDIR%%/README.color-mate.eng
-%%DOCSDIR%%/README.color-mate.jp
-%%DOCSDIR%%/README.kanakan-cursor.eng
-%%DOCSDIR%%/README.kanakan-cursor.jp
+%%PORTDOCS%%%%DOCSDIR%%/Customize.txt
+%%PORTDOCS%%%%DOCSDIR%%/Dot.emacs.default.in
+%%PORTDOCS%%%%DOCSDIR%%/Q_and_A.color-mate
+%%PORTDOCS%%%%DOCSDIR%%/QuickStart.color-mate
+%%PORTDOCS%%%%DOCSDIR%%/README.color-mate.eng
+%%PORTDOCS%%%%DOCSDIR%%/README.color-mate.jp
+%%PORTDOCS%%%%DOCSDIR%%/README.kanakan-cursor.eng
+%%PORTDOCS%%%%DOCSDIR%%/README.kanakan-cursor.jp
 @dirrm share/emacs/site-lisp/color-mate/contrib
 @dirrm share/emacs/site-lisp/color-mate/kanakan-cursor
 @dirrm share/emacs/site-lisp/color-mate/theme
