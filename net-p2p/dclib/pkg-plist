@@ -6,6 +6,7 @@ include/dclib/cdcproto.h
 include/dclib/cdownloadmanager.h
 include/dclib/cdownloadqueue.h
 include/dclib/cencrypt.h
+include/dclib/cfilehasher.h
 include/dclib/cfilemanager.h
 include/dclib/chttp.h
 include/dclib/chublistmanager.h
@@ -26,7 +27,6 @@ include/dclib/core/clist.h
 include/dclib/core/clisten.h
 include/dclib/core/clogfile.h
 include/dclib/core/cmanager.h
-include/dclib/core/cmd5.h
 include/dclib/core/cobject.h
 include/dclib/core/cplugin.h
 include/dclib/core/csingleton.h
@@ -49,6 +49,7 @@ include/dclib/csharelist.h
 include/dclib/ctransfer.h
 include/dclib/cuserlist.h
 include/dclib/cutils.h
+include/dclib/dclib-ssl-use.h
 include/dclib/dclib.h
 include/dclib/dcobject.h
 include/dclib/dcos.h
@@ -62,8 +63,6 @@ lib/libdc.la
 lib/libdc.so
 lib/libdc.so.0
 libdata/pkgconfig/dclib.pc
-@dirrm share/dclib/plugin
-@dirrm share/dclib
-@dirrm include/dclib/hash
 @dirrm include/dclib/core
+@dirrm include/dclib/hash
 @dirrm include/dclib
