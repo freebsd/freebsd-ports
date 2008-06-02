@@ -8,6 +8,7 @@
 
 PORTNAME=	code-browser
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -36,7 +37,7 @@ PLIST_DIRS=	%%DATADIR%%/config-optional \
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS=		i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	does not build on ${ARCH}; signal 11 errors during build
 
 .if ${ARCH} != "i386"
