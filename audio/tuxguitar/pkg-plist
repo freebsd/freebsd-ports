@@ -1,6 +1,7 @@
 bin/tuxguitar
 lib/libtuxguitar-oss-jni.so
 share/pixmaps/tuxguitar.xpm
+share/applications/tuxguitar.desktop
 %%DATADIR%%/tuxguitar.jar
 %%DATADIR%%/tuxguitar.tg
 %%DATADIR%%/scales/scales.xml
@@ -12,13 +13,16 @@ share/pixmaps/tuxguitar.xpm
 %%DATADIR%%/lang/messages_fr.properties
 %%DATADIR%%/lang/messages_hu.properties
 %%DATADIR%%/lang/messages_it.properties
+%%DATADIR%%/lang/messages_nl.properties
 %%DATADIR%%/lang/messages_pl.properties
 %%DATADIR%%/lang/messages_pt.properties
+%%DATADIR%%/lang/messages_ru.properties
 %%DATADIR%%/lang/messages_sr.properties
 %%DATADIR%%/lang/messages_sv.properties
+%%DATADIR%%/lang/messages_uk.properties
 %%DATADIR%%/lang/messages_zh_TW.properties
-%%DATADIR%%/plugins/tuxguitar.jar
 %%DATADIR%%/plugins/tuxguitar-compat.jar
+%%DATADIR%%/plugins/tuxguitar-converter.jar
 %%DATADIR%%/plugins/tuxguitar-ascii.jar
 %%DATADIR%%/plugins/tuxguitar-gtp.jar
 %%DATADIR%%/plugins/tuxguitar-musicxml.jar
@@ -499,6 +503,7 @@ share/pixmaps/tuxguitar.xpm
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%
 @dirrmtry share/pixmaps
+@dirrmtry share/applications
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE

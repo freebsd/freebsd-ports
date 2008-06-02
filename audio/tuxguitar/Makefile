@@ -1,3 +1,4 @@
+# ex: ts=8
 # New ports collection makefile for:   tuxguitar
 # Date created:        26 April 2007
 # Whom:                Pietro Cerutti (gahr@gahr.ch)
@@ -6,7 +7,7 @@
 #
 
 PORTNAME=	tuxguitar
-DISTVERSION=	1.0-rc3
+DISTVERSION=	1.0-rc4
 CATEGORIES=	audio java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
@@ -16,11 +17,13 @@ COMMENT=	A Multitrack tablature editor and player
 
 BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
-		ant:${PORTSDIR}/devel/apache-ant
+		ant:${PORTSDIR}/devel/apache-ant \
+		gcj42:${PORTSDIR}/lang/gcc42-withgcjawt
 RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext
 
-MAKE_ENV=	"JAVALIBDIR=${JAVALIBDIR}" "PREFIX=${PREFIX}"
+MAKE_ENV=	"PREFIX=${PREFIX}" "INSTALL_DOC_DIR=${DOCSDIR}" \
+		"INSTALL_SHARE_DIR=${DATADIR}"
 
 USE_JAVA=	yes
 USE_GMAKE=	yes
@@ -36,10 +39,8 @@ USE_GECKO=	mozilla firefox seamonkey
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
-PLUGINS=	TuxGuitar TuxGuitar-compat TuxGuitar-ascii TuxGuitar-gtp \
-		TuxGuitar-musicxml TuxGuitar-ptb TuxGuitar-tef TuxGuitar-pdf \
-		TuxGuitar-midi TuxGuitar-tray TuxGuitar-lilypond TuxGuitar-jsa \
-		TuxGuitar-oss
+PLUGINS=	ascii compat converter gtp jsa lilypond midi musicxml \
+		oss pdf ptb tef tray
 
 SUB_FILES=	tuxguitar
 SUB_LIST=	DATADIR=${DATADIR} \
@@ -48,20 +49,42 @@ SUB_LIST=	DATADIR=${DATADIR} \
 		GECKO=${GECKO}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|executable="make"|executable="${GMAKE}"|g' \
-	    ${WRKSRC}/TuxGuitar-oss/build.xml \
-	    ${WRKSRC}/TuxGuitar-CoreAudio/build.xml
+	${REINPLACE_CMD} -e 's|linux|freebsd|;s|JAVA_VERS|JAVA_PORT_VERSION|g; \
+		/TuxGuitar-alsa/d' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e \
+		's|%%LOCALBASE%%|${LOCALBASE}|g; \
+		 s|%%JAVAJARDIR%%|${JAVAJARDIR}|g; \
+		 s|%%PREFIX%%|${PREFIX}|g; \
+		 s|%%DATADIR%%|${DATADIR}|g; \
+		 s|%%DISTVERSION%%|${DISTVERSION}|g; \
+		 s|%%DOCSDIR%%|${DOCSDIR}|g' \
+		${WRKSRC}/TuxGuitar/build.properties
+	${REINPLACE_CMD} -e 's|$${path.swt}|${JAVALIBDIR}/swt.jar|g' \
+		${WRKSRC}/TuxGuitar-lilypond/build.xml \
+		${WRKSRC}/TuxGuitar-midi/build.xml \
+		${WRKSRC}/TuxGuitar-pdf/build.xml \
+		${WRKSRC}/TuxGuitar-tray/build.xml \
+		${WRKSRC}/TuxGuitar-converter/build.xml \
+		${WRKSRC}/TuxGuitar-jsa/build.xml \
+		${WRKSRC}/TuxGuitar-oss/build.xml
+	${REINPLACE_CMD} -e 's|$${lib.swt.jar}|${JAVALIBDIR}/swt.jar|g' \
+		${WRKSRC}/TuxGuitar/build.xml
+	${REINPLACE_CMD} -e 's|$${path.itext}|${JAVALIBDIR}/itext.jar|g' \
+		${WRKSRC}/TuxGuitar-pdf/build.xml
+	${REINPLACE_CMD} -e 's|gcj|${LOCALBASE}/bin/gcj42|g' \
+	    ${WRKSRC}/TuxGuitar-oss/jni/GNUmakefile
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${INSTALL} -d ${DATADIR}
+	${INSTALL} -d ${DATADIR}/plugins
 	# Main program and plugins
 	${INSTALL_SCRIPT} ${WRKDIR}/tuxguitar ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/TuxGuitar/tuxguitar.jar ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/misc/*.tg ${DATADIR}
-	${MKDIR} ${DATADIR}/plugins
-	${INSTALL_DATA} ${WRKSRC}/TuxGuitar-oss/libtuxguitar-oss-jni.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/TuxGuitar-oss/jni/libtuxguitar-oss-jni.so ${PREFIX}/lib
 .for p in ${PLUGINS}
-	${INSTALL_DATA} ${WRKSRC}/${p}/*.jar ${DATADIR}/plugins
+	${INSTALL_DATA} ${WRKSRC}/TuxGuitar-${p}/tuxguitar-${p}.jar ${DATADIR}/plugins
 .endfor
 	# Inline documentation
 	cd ${WRKSRC}/TuxGuitar/share/help &&   ${COPYTREE_SHARE} \* ${DATADIR}/help
@@ -70,10 +93,15 @@ do-install:
 	cd ${WRKSRC}/TuxGuitar/share/skins &&  ${COPYTREE_SHARE} \* ${DATADIR}/skins
 
 	# XPM icon
+	${INSTALL} -d ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/misc/tuxguitar.xpm ${PREFIX}/share/pixmaps
 
-	# MAN page
+	# Desktop entry
+	${INSTALL} -d ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/misc/tuxguitar.desktop ${PREFIX}/share/applications
+
 .if !defined(WITHOUT_MAN)
+	# MAN page
 	${INSTALL_MAN} ${WRKSRC}/misc/tuxguitar.1 ${MANPREFIX}/man/man1
 .endif
 
