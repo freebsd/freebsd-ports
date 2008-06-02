@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	menhir
-PORTVERSION=	20070215
-PORTREVISION=	1
+PORTVERSION=	20071212
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 
@@ -16,10 +15,16 @@ COMMENT=	LR(1) parser generator for OCaml
 
 USE_GMAKE=	yes
 USE_OCAML=	yes
+USE_OCAML_FINDLIB=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
-MAKE_ENV+=	DOCSDIR="${DOCSDIR}" OCAML_SITELIBDIR="${PREFIX}/${OCAML_SITELIBDIR}"
-
+INSTALL_TARGET=	install
+MAKE_ENV+=	mandir="${MANPREFIX}/man/man1"
 MAN1=		menhir.1
+
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET+=	docinstall
+DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
+MAKE_ENV+=	docdir="${DOCSDIR}"
+.endif
 
 .include <bsd.port.mk>

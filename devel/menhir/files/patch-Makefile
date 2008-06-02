@@ -1,24 +1,35 @@
---- Makefile.orig	Thu Feb 15 11:03:08 2007
-+++ Makefile	Mon Mar  5 12:25:21 2007
-@@ -50,9 +50,9 @@
+--- Makefile.orig	2007-12-12 17:44:32.000000000 +0100
++++ Makefile	2008-04-25 12:12:02.000000000 +0200
+@@ -20,10 +20,10 @@
+   $(error Please define PREFIX)
+ endif
  
- EXECUTABLE      := menhir
- bindir          := ${PREFIX}/bin
--docdir		:= ${PREFIX}/share/doc/$(EXECUTABLE)
--libdir	        := ${PREFIX}/share/$(EXECUTABLE)
+-bindir          := ${PREFIX}/bin
+-docdir		:= ${PREFIX}/share/doc/menhir
+-libdir	        := ${PREFIX}/share/menhir
 -mandir          := ${PREFIX}/share/man/man1
-+docdir		:= ${DOCSDIR}
-+libdir	        := ${OCAML_SITELIBDIR}/${EXECUTABLE}
-+mandir          := ${PREFIX}/man/man1
++bindir          ?= ${PREFIX}/bin
++docdir		?= ${PREFIX}/share/doc/menhir
++libdir	        ?= ${PREFIX}/share/menhir
++mandir          ?= ${PREFIX}/share/man/man1
  MANS            := menhir.1
  DOCS            := manual.pdf demos
  LIBS            := standard.mly
-@@ -75,7 +75,7 @@
- # during bootstrap stage one.
+@@ -52,13 +52,15 @@
+ install:
+ 	mkdir -p $(bindir)
+ 	mkdir -p $(libdir)
+-	mkdir -p $(docdir)
+ 	mkdir -p $(mandir)
+ 	install menhir $(bindir)
+ 	install -m 644 $(LIBS) $(libdir)
+-	cp -r $(DOCS) $(docdir)
+ 	cp -r $(MANS) $(mandir)
  
- stdlib.ml:
--	echo "let path = \"${PREFIX}/share/menhir\"" > stdlib.ml
-+	echo "let path = \"${OCAML_SITELIBDIR}/menhir\"" > stdlib.ml
- 
- # ----------------------------------------------------------------------------
- # Installation.
++docinstall:
++	mkdir -p $(docdir)
++	cp -r $(DOCS) $(docdir)
++
+ uninstall:
+ 	rm -rf $(bindir)/menhir
+ 	rm -rf $(libdir)
