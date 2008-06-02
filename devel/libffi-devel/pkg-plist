@@ -1,6 +1,0 @@
-include/ffi.h
-include/ffitarget.h
-lib/libffi.a
-lib/libffi.la
-lib/libffi.so
-lib/libffi.so.4
