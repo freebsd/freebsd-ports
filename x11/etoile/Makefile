@@ -7,6 +7,7 @@
 
 PORTNAME=	etoile
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -52,8 +53,8 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	MultimediaKit:multimedia/etoile-multimediakit \
 	EtoileUI:deskutils/etoile-ui \
 	DistributedView:deskutils/etoile-distributedview \
-
-#	InspectorKit:deskutils/etoile-inspectorkit \
+	InspectorKit:deskutils/etoile-inspectorkit \
+	OPMLKit:textproc/etoile-opmlkit \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
@@ -71,6 +72,8 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	Azalea:x11-wm/etoile-azalea \
 	AZDock:x11-wm/etoile-azdock \
 	AZBackground:x11-themes/etoile-azbackground \
+	AZSwitch:x11-wm/etoile-azswitch \
+	Login:x11-wm/etoile-login \
 
 USE_GNUSTEP_LOCAL_APPS+=	\
 	DictionaryReader:deskutils/etoile-dictionaryreader \

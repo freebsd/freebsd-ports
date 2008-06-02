@@ -7,6 +7,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	1.14.3
+PORTREVISION=	1
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -76,8 +77,8 @@ USE_GNUSTEP_LOCAL_LIBS+=	\
 	MultimediaKit:multimedia/etoile-multimediakit \
 	EtoileUI:deskutils/etoile-ui \
 	DistributedView:deskutils/etoile-distributedview \
-
-#	InspectorKit:deskutils/etoile-inspectorkit \
+	InspectorKit:deskutils/etoile-inspectorkit \
+	OPMLKit:textproc/etoile-opmlkit \
 
 USE_GNUSTEP_SYSTEM_BUNDLES+=	\
 	EtoileMenus:x11-themes/etoile-etoilemenus \
@@ -114,6 +115,8 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	AZBackground:x11-themes/etoile-azbackground \
 	ClipBook:deskutils/gworkspace-clipbook \
 	MDFinder:deskutils/gworkspace-gwmetadata \
+	AZSwitch:x11-wm/etoile-azswitch \
+	Login:x11-wm/etoile-login \
 
 USE_GNUSTEP_LOCAL_APPS+=	\
 	Gomoku:games/gomoku.app \
