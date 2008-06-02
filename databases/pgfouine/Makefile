@@ -8,7 +8,8 @@
 PORTNAME=	pgfouine
 PORTVERSION=	1.0
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1334/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1334/ \
+		http://pgfouine.projects.postgresql.org/releases/
 
 MAINTAINER=	pea@raveland.org
 COMMENT=	PostgreSQL log analyzer
