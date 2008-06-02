@@ -1,0 +1,6 @@
+HLA, the High-Level Assembler lets you write true low-level code
+while enjoying the benefits of high-level language programming.
+
+This port uses the Linux version of the HLA Standard Library.
+
+WWW: http://webster.cs.ucr.edu/AsmTools/HLA/

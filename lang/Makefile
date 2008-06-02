@@ -110,6 +110,7 @@
     SUBDIR += guile
     SUBDIR += harbour
     SUBDIR += haskell-mode.el
+    SUBDIR += hla
     SUBDIR += hope
     SUBDIR += huc
     SUBDIR += hugs
