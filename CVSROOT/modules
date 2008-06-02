@@ -4762,6 +4762,7 @@ hinversi	ports/games/hinversi
 hippo-canvas	ports/x11-toolkits/hippo-canvas
 histring	ports/misc/histring
 hk_classes	ports/databases/hk_classes
+hla		ports/lang/hla
 hlextract	ports/archivers/hlextract
 hlfl		ports/security/hlfl
 hllib		ports/games/hllib
