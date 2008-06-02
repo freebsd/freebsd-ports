@@ -24,6 +24,7 @@ COMMENT=	A network file distribution/synchronization utility
 
 USE_RC_SUBR=	rsyncd.sh
 SUB_LIST=	NAME=rsyncd
+USE_PERL5_BUILD=yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
@@ -61,13 +62,11 @@ CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
 .endif
 
 .if defined(WITH_FLAGS)
-USE_PERL5_BUILD=yes
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/fileflags.diff
 .endif
 
 .if defined(WITH_ACL)
-USE_PERL5_BUILD=yes
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
 .endif
