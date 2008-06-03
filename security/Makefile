@@ -719,6 +719,7 @@
     SUBDIR += sqlmap
     SUBDIR += sqlninja
     SUBDIR += squidclam
+    SUBDIR += squidclamav
     SUBDIR += srm
     SUBDIR += srp
     SUBDIR += sscep
