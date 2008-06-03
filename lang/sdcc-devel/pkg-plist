@@ -18,70 +18,70 @@ bin/sdcclib
 bin/sdcpp
 %%UCSIM%%%%HC08%%bin/shc08
 %%UCSIM%%%%Z80%%bin/sz80
-%%DOCSDIR%%/INSTALL.txt
-%%DOCSDIR%%/README.txt
-%%DOCSDIR%%/TININative.txt
-%%Z80%%%%DOCSDIR%%/aslink/README
-%%Z80%%%%DOCSDIR%%/aslink/abstra.doc
-%%Z80%%%%DOCSDIR%%/aslink/appendk.txt
-%%Z80%%%%DOCSDIR%%/aslink/asmlnk.doc
-%%Z80%%%%DOCSDIR%%/aslink/asxhtm.html
-%%Z80%%%%DOCSDIR%%/aslink/format.txt
-%%DOCSDIR%%/avr/avr_design.txt
-%%DOCSDIR%%/builtins.txt
-%%DOCSDIR%%/choices.txt
-%%DOCSDIR%%/libdoc.txt
-%%DOCSDIR%%/macro-sys-design.txt
-%%DOCSDIR%%/random-notes.txt
-%%UCSIM%%%%DOCSDIR%%/ucsim/UCsim.jpg
-%%UCSIM%%%%DOCSDIR%%/ucsim/analyzer.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/burst.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/chip.fig
-%%UCSIM%%%%DOCSDIR%%/ucsim/chip.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/cmd.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/cmd_bp.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/cmd_dump.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/cmd_exec.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/cmd_general.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/cmd_memory.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/cmd_removed.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/cmd_set.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/commref.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/cpu-mem.fig
-%%UCSIM%%%%DOCSDIR%%/ucsim/cpu-mem.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/cpu-mem.jpg
-%%UCSIM%%%%DOCSDIR%%/ucsim/cpu.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/cpu.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/cpu_types.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/decoded.fig
-%%UCSIM%%%%DOCSDIR%%/ucsim/decoded.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/decoded.jpg
-%%UCSIM%%%%DOCSDIR%%/ucsim/index.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/interrupt.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/interrupt.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/invoke.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/memory.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/mulcons.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/new.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/obsolete.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/post.jpg
-%%UCSIM%%%%DOCSDIR%%/ucsim/serial.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/serial1.fig
-%%UCSIM%%%%DOCSDIR%%/ucsim/serial1.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/serial2.fig
-%%UCSIM%%%%DOCSDIR%%/ucsim/serial2.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/share-chip.fig
-%%UCSIM%%%%DOCSDIR%%/ucsim/share-chip.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/syntax.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/term_cpuopt.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/term_cpuopt.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/timers.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/timers.html
-%%UCSIM%%%%DOCSDIR%%/ucsim/wins.gif
-%%UCSIM%%%%DOCSDIR%%/ucsim/wins.html
-%%DOCSDIR%%/z80/Makefile
-%%DOCSDIR%%/z80/README
-%%DOCSDIR%%/z80/combined_i186_z80_design.tex
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TININative.txt
+%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/README
+%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/abstra.doc
+%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/appendk.txt
+%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/asmlnk.doc
+%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/asxhtm.html
+%%Z80%%%%PORTDOCS%%%%DOCSDIR%%/aslink/format.txt
+%%PORTDOCS%%%%DOCSDIR%%/avr/avr_design.txt
+%%PORTDOCS%%%%DOCSDIR%%/builtins.txt
+%%PORTDOCS%%%%DOCSDIR%%/choices.txt
+%%PORTDOCS%%%%DOCSDIR%%/libdoc.txt
+%%PORTDOCS%%%%DOCSDIR%%/macro-sys-design.txt
+%%PORTDOCS%%%%DOCSDIR%%/random-notes.txt
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/UCsim.jpg
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/analyzer.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/burst.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/chip.fig
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/chip.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cmd.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cmd_bp.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cmd_dump.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cmd_exec.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cmd_general.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cmd_memory.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cmd_removed.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cmd_set.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/commref.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cpu-mem.fig
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cpu-mem.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cpu-mem.jpg
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cpu.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cpu.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/cpu_types.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/decoded.fig
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/decoded.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/decoded.jpg
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/index.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/interrupt.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/interrupt.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/invoke.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/memory.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/mulcons.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/new.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/obsolete.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/post.jpg
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/serial.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/serial1.fig
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/serial1.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/serial2.fig
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/serial2.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/share-chip.fig
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/share-chip.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/syntax.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/term_cpuopt.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/term_cpuopt.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/timers.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/timers.html
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/wins.gif
+%%UCSIM%%%%PORTDOCS%%%%DOCSDIR%%/ucsim/wins.html
+%%PORTDOCS%%%%DOCSDIR%%/z80/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/z80/README
+%%PORTDOCS%%%%DOCSDIR%%/z80/combined_i186_z80_design.tex
 %%DATADIR%%/include/80c51xa.h
 %%DATADIR%%/include/asm/default/features.h
 %%DATADIR%%/include/asm/ds390/features.h
@@ -140,6 +140,7 @@ bin/sdcpp
 %%MCS51%%%%DATADIR%%/include/mcs51/at89x051.h
 %%MCS51%%%%DATADIR%%/include/mcs51/at89x51.h
 %%MCS51%%%%DATADIR%%/include/mcs51/at89x52.h
+%%MCS51%%%%DATADIR%%/include/mcs51/cc1110.h
 %%MCS51%%%%DATADIR%%/include/mcs51/cc2430.h
 %%MCS51%%%%DATADIR%%/include/mcs51/cc2510fx.h
 %%MCS51%%%%DATADIR%%/include/mcs51/compiler.h
@@ -258,6 +259,7 @@ bin/sdcpp
 %%PIC16%%%%DATADIR%%/include/pic16/limits.h
 %%PIC16%%%%DATADIR%%/include/pic16/malloc.h
 %%PIC16%%%%DATADIR%%/include/pic16/math.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic16devices.txt
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f1220.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f1320.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2220.h
@@ -267,15 +269,19 @@ bin/sdcpp
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2331.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f242.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2420.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f2423.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2431.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2455.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f248.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f2480.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f24j10.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f252.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2520.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f2523.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2525.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2550.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f258.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f2580.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2585.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f25j10.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f2620.h
@@ -289,15 +295,19 @@ bin/sdcpp
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4331.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f442.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4420.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f4423.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4431.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4455.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f448.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f4480.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f44j10.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f452.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4520.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f4523.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4525.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4550.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f458.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f4580.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4585.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f45j10.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4620.h
@@ -305,10 +315,12 @@ bin/sdcpp
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4682.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f4685.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f6520.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f6585.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f6620.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f6680.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f6720.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f8520.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18f8585.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f8620.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f8680.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f8720.h
@@ -350,6 +362,8 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_autobaud.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_bp.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_bp.rel
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_calloc.asm
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_calloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_decdptr.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_decdptr.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_divsint.asm
@@ -360,6 +374,8 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_divuint.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_divulong.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_divulong.rel
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_free.asm
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_free.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_fs2schar.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_fs2schar.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_fs2sint.asm
@@ -434,6 +450,8 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_logexpf.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_ltoa.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_ltoa.rel
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_malloc.asm
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_malloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_memcmp.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_memcmp.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_memcpy.asm
@@ -454,6 +472,8 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_mulint.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_mullong.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_mullong.rel
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_realloc.asm
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_realloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_schar2fs.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_schar2fs.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/_ser.asm
@@ -518,8 +538,6 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/atanf.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/bpx.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/bpx.rel
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/calloc.asm
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/calloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/ceilf.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/ceilf.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/cosf.asm
@@ -536,8 +554,6 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/fabsf.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/floorf.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/floorf.rel
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/free.asm
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/free.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/frexpf.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/frexpf.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/gets.asm
@@ -557,8 +573,6 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/log10f.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/logf.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/logf.rel
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/malloc.asm
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/malloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/memcpyx.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/modff.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/modff.rel
@@ -579,8 +593,6 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/puts.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/rand.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/rand.rel
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/realloc.asm
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/realloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/rtc390.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/ser_ir.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds390/ser_ir.rel
@@ -619,6 +631,8 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_autobaud.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_bp.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_bp.rel
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_calloc.asm
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_calloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_decdptr.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_decdptr.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_divsint.asm
@@ -629,6 +643,8 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_divuint.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_divulong.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_divulong.rel
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_free.asm
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_free.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_fs2schar.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_fs2schar.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_fs2sint.asm
@@ -703,6 +719,8 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_logexpf.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_ltoa.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_ltoa.rel
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_malloc.asm
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_malloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_memcmp.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_memcmp.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_memcpy.asm
@@ -723,6 +741,8 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_mulint.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_mullong.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_mullong.rel
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_realloc.asm
+%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_realloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_schar2fs.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_schar2fs.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/_ser.asm
@@ -787,8 +807,6 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/atanf.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/bpx.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/bpx.rel
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/calloc.asm
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/calloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/ceilf.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/ceilf.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/cosf.asm
@@ -806,8 +824,6 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/fabsf.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/floorf.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/floorf.rel
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/free.asm
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/free.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/frexpf.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/frexpf.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/gets.asm
@@ -825,8 +841,6 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/log10f.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/logf.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/logf.rel
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/malloc.asm
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/malloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/memcpyx.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/modff.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/modff.rel
@@ -846,8 +860,6 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/puts.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/rand.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/rand.rel
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/realloc.asm
-%%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/realloc.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/ser_ir.asm
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/ser_ir.rel
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/serial.asm
@@ -881,10 +893,14 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_atoi.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_atol.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_atol.o
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_calloc.asm
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_calloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_divslong.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_divslong.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_divulong.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_divulong.o
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_free.asm
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_free.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_fs2schar.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_fs2schar.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_fs2sint.asm
@@ -935,6 +951,8 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_itoa.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_ltoa.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_ltoa.o
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_malloc.asm
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_malloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_memcmp.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_memcmp.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_memcpy.asm
@@ -949,6 +967,8 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_modulong.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_mullong.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_mullong.o
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_realloc.asm
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_realloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_schar2fs.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_schar2fs.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/_sint2fs.asm
@@ -1005,8 +1025,6 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/atan2f.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/atanf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/atanf.o
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/calloc.asm
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/calloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/ceilf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/ceilf.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/cosf.asm
@@ -1026,8 +1044,6 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/fabsf.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/floorf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/floorf.o
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/free.asm
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/free.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/frexpf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/frexpf.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/fstubs.o
@@ -1043,8 +1059,6 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/log10f.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/logf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/logf.o
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/malloc.asm
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/malloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/modff.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/modff.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/mul.o
@@ -1058,8 +1072,6 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/puts.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/rand.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/rand.o
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/realloc.asm
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/realloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/shift.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/sincosf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/sincosf.o
@@ -1090,12 +1102,16 @@ bin/sdcpp
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_atoi.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_atol.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_atol.rel
+%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_calloc.asm
+%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_calloc.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_divsint.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_divsint.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_divslong.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_divslong.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_divuint.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_divulong.rel
+%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_free.asm
+%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_free.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_fs2schar.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_fs2schar.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_fs2sint.asm
@@ -1148,6 +1164,8 @@ bin/sdcpp
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_itoa.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_ltoa.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_ltoa.rel
+%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_malloc.asm
+%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_malloc.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_memcmp.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_memcmp.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_memcpy.asm
@@ -1166,6 +1184,8 @@ bin/sdcpp
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_modulong.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_mulint.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_mullong.rel
+%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_realloc.asm
+%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_realloc.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_ret.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_schar2fs.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/_schar2fs.rel
@@ -1225,8 +1245,6 @@ bin/sdcpp
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/atan2f.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/atanf.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/atanf.rel
-%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/calloc.asm
-%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/calloc.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/ceilf.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/ceilf.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/cosf.asm
@@ -1243,8 +1261,6 @@ bin/sdcpp
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/fabsf.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/floorf.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/floorf.rel
-%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/free.asm
-%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/free.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/frexpf.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/frexpf.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/gets.asm
@@ -1258,8 +1274,6 @@ bin/sdcpp
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/log10f.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/logf.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/logf.rel
-%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/malloc.asm
-%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/malloc.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/modff.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/modff.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/powf.asm
@@ -1270,8 +1284,6 @@ bin/sdcpp
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/puts.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/rand.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/rand.rel
-%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/realloc.asm
-%%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/realloc.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/sincosf.asm
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/sincosf.rel
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/sincoshf.asm
@@ -1304,6 +1316,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_autobaud.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_bp.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_bp.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_calloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_calloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_decdptr.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_decdptr.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_divsint.asm
@@ -1314,6 +1328,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_divuint.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_divulong.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_divulong.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_free.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_free.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_fs2schar.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_fs2schar.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_fs2sint.asm
@@ -1388,6 +1404,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_logexpf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_ltoa.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_ltoa.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_malloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_malloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_memcmp.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_memcmp.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_memcpy.asm
@@ -1408,6 +1426,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_mulint.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_mullong.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_mullong.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_realloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_realloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_schar2fs.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_schar2fs.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/_ser.asm
@@ -1472,8 +1492,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/atanf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/bpx.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/bpx.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/calloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/calloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/ceilf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/ceilf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/cosf.asm
@@ -1500,8 +1518,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/fabsf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/floorf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/floorf.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/free.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/free.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/frexpf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/frexpf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/gets.asm
@@ -1518,8 +1534,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/log10f.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/logf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/logf.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/malloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/malloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/mcs51.lib
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/modff.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/modff.rel
@@ -1539,8 +1553,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/puts.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/rand.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/rand.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/realloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/realloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/ser_ir.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/ser_ir.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/serial.asm
@@ -1577,6 +1589,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_autobaud.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_bp.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_bp.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_calloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_calloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_decdptr.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_decdptr.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_divsint.asm
@@ -1587,6 +1601,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_divuint.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_divulong.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_divulong.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_free.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_free.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_fs2schar.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_fs2schar.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_fs2sint.asm
@@ -1661,6 +1677,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_logexpf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_ltoa.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_ltoa.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_malloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_malloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_memcmp.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_memcmp.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_memcpy.asm
@@ -1681,6 +1699,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_mulint.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_mullong.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_mullong.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_realloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_realloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_schar2fs.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_schar2fs.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/_ser.asm
@@ -1745,8 +1765,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/atanf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/bpx.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/bpx.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/calloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/calloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/ceilf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/ceilf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/cosf.asm
@@ -1773,8 +1791,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/fabsf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/floorf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/floorf.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/free.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/free.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/frexpf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/frexpf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/gets.asm
@@ -1791,8 +1807,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/log10f.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/logf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/logf.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/malloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/malloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/mcs51.lib
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/modff.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/modff.rel
@@ -1812,8 +1826,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/puts.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/rand.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/rand.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/realloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/realloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/ser_ir.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/ser_ir.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/medium/serial.asm
@@ -1921,6 +1933,8 @@ bin/sdcpp
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f877.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f877a.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f88.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f886.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f887.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f913.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f914.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f916.lib
@@ -1940,12 +1954,16 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2431.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2455.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f248.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2480.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f24j10.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f252.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2520.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2525.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2550.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f258.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2580.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2585.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f25j10.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2620.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f2682.lib
@@ -1958,21 +1976,27 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4431.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4455.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f448.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4480.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f44j10.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f452.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4520.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4525.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4550.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f458.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4580.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4585.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f45j10.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4620.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4682.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f4685.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6520.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6620.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f6720.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8520.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8620.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/libio18f8720.lib
@@ -1988,15 +2012,19 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2331.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f242.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2420.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2423.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2431.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2455.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f248.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2480.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f24j10.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f252.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2520.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2523.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2525.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2550.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f258.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2580.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f25j10.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f2620.lib
@@ -2010,15 +2038,19 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4331.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f442.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4420.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4423.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4431.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4455.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f448.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4480.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f44j10.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f452.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4520.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4523.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4525.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4550.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f458.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4580.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f45j10.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4620.lib
@@ -2026,10 +2058,12 @@ bin/sdcpp
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4682.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f4685.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f6520.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f6585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f6620.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f6680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f6720.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f8520.lib
+%%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f8585.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f8620.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f8680.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/pic18f8720.lib
@@ -2043,6 +2077,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_autobaud.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_bp.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_bp.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_calloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_calloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_decdptr.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_decdptr.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_divsint.asm
@@ -2053,6 +2089,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_divuint.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_divulong.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_divulong.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_free.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_free.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_fs2schar.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_fs2schar.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_fs2sint.asm
@@ -2127,6 +2165,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_logexpf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_ltoa.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_ltoa.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_malloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_malloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_memcmp.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_memcmp.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_memcpy.asm
@@ -2147,6 +2187,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_mulint.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_mullong.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_mullong.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_realloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_realloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_schar2fs.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_schar2fs.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/_ser.asm
@@ -2211,8 +2253,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/atanf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/bpx.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/bpx.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/calloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/calloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/ceilf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/ceilf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/cosf.asm
@@ -2239,8 +2279,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/fabsf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/floorf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/floorf.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/free.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/free.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/frexpf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/frexpf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/gets.asm
@@ -2257,8 +2295,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/log10f.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/logf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/logf.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/malloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/malloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/mcs51.lib
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/modff.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/modff.rel
@@ -2278,8 +2314,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/puts.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/rand.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/rand.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/realloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/realloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/ser_ir.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/ser_ir.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small/serial.asm
@@ -2316,6 +2350,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_autobaud.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_bp.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_bp.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_calloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_calloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_decdptr.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_decdptr.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_divsint.asm
@@ -2326,6 +2362,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_divuint.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_divulong.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_divulong.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_free.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_free.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_fs2schar.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_fs2schar.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_fs2sint.asm
@@ -2400,6 +2438,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_logexpf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_ltoa.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_ltoa.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_malloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_malloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_memcmp.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_memcmp.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_memcpy.asm
@@ -2420,6 +2460,8 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_mulint.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_mullong.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_mullong.rel
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_realloc.asm
+%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_realloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_schar2fs.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_schar2fs.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/_ser.asm
@@ -2484,8 +2526,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/atanf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/bpx.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/bpx.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/calloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/calloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/ceilf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/ceilf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/cosf.asm
@@ -2512,8 +2552,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/fabsf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/floorf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/floorf.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/free.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/free.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/frexpf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/frexpf.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/gets.asm
@@ -2530,8 +2568,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/log10f.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/logf.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/logf.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/malloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/malloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/mcs51.lib
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/modff.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/modff.rel
@@ -2551,8 +2587,6 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/puts.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/rand.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/rand.rel
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/realloc.asm
-%%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/realloc.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/ser_ir.asm
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/ser_ir.rel
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/serial.asm
@@ -2585,10 +2619,14 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_atoi.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_atol.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_atol.o
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_calloc.asm
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_calloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_divslong.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_divslong.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_divulong.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_divulong.o
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_free.asm
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_free.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_fs2schar.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_fs2schar.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_fs2sint.asm
@@ -2639,6 +2677,8 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_itoa.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_ltoa.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_ltoa.o
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_malloc.asm
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_malloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_memcmp.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_memcmp.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_memcpy.asm
@@ -2653,6 +2693,8 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_modulong.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_mullong.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_mullong.o
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_realloc.asm
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_realloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_schar2fs.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_schar2fs.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/_sint2fs.asm
@@ -2709,8 +2751,6 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/atan2f.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/atanf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/atanf.o
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/calloc.asm
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/calloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/ceilf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/ceilf.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/cosf.asm
@@ -2730,8 +2770,6 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/fabsf.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/floorf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/floorf.o
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/free.asm
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/free.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/frexpf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/frexpf.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/fstubs.o
@@ -2746,8 +2784,6 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/log10f.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/logf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/logf.o
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/malloc.asm
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/malloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/modff.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/modff.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/mul.o
@@ -2760,8 +2796,6 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/puts.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/rand.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/rand.o
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/realloc.asm
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/realloc.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/shift.o
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/sincosf.asm
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/sincosf.o
@@ -2798,11 +2832,17 @@ bin/sdcpp
 %%DEVLIB%%%%Z80%%@dirrm %%DATADIR%%/lib/gbz80
 %%DEVLIB%%%%DS390%%@dirrm %%DATADIR%%/lib/ds400
 %%DEVLIB%%%%DS390%%@dirrm %%DATADIR%%/lib/ds390
+%%DEVLIB%%@exec mkdir -p %D/%%DATADIR%%/lib
 %%DEVLIB%%@dirrm %%DATADIR%%/lib
+@exec mkdir -p %D/%%DATADIR%%/include/z80
 @dirrm %%DATADIR%%/include/z80
+@exec mkdir -p %D/%%DATADIR%%/include/pic16
 @dirrm %%DATADIR%%/include/pic16
+@exec mkdir -p %D/%%DATADIR%%/include/pic
 @dirrm %%DATADIR%%/include/pic
+@exec mkdir -p %D/%%DATADIR%%/include/mcs51
 @dirrm %%DATADIR%%/include/mcs51
+@exec mkdir -p %D/%%DATADIR%%/include/hc08
 @dirrm %%DATADIR%%/include/hc08
 @dirrm %%DATADIR%%/include/asm/z80
 @dirrm %%DATADIR%%/include/asm/pic16
@@ -2814,8 +2854,8 @@ bin/sdcpp
 @dirrm %%DATADIR%%/include/asm
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/z80
-%%UCSIM%%@dirrm %%DOCSDIR%%/ucsim
-@dirrm %%DOCSDIR%%/avr
-%%Z80%%@dirrm %%DOCSDIR%%/aslink
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/z80
+%%UCSIM%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ucsim
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/avr
+%%Z80%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/aslink
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
