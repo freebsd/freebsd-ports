@@ -12623,6 +12623,7 @@ pgcalc		ports/math/pgcalc
 pgcluster	ports/databases/pgcluster
 pgen		ports/mail/pgen
 pgfouine	ports/databases/pgfouine
+pgloader	ports/databases/pgloader
 pglogd		ports/www/pglogd
 pgp		ports/security/pgp
 pgp6		ports/security/pgp6
