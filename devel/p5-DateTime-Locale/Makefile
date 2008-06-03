@@ -8,6 +8,7 @@
 PORTNAME=	DateTime-Locale
 PORTVERSION=	0.40.01
 DISTVERSION=	${PORTVERSION:C/\.(..)$/\1/}
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,8 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Localization support for DateTime
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils
 
 PERL_MODBUILD=	yes
 
