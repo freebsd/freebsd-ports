@@ -8892,6 +8892,7 @@ openglad	ports/games/openglad
 openh323	ports/net/openh323
 openhbci	ports/finance/openhbci
 openjade	ports/textproc/openjade
+openjazz	ports/games/openjazz
 openjit		ports/java/openjit
 openjpeg	ports/graphics/openjpeg
 openldap23-client	ports/net/openldap23-client
