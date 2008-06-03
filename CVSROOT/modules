@@ -2808,6 +2808,7 @@ evfs		ports/devel/evfs
 evidence	ports/x11-fm/evidence
 evieext		ports/x11/evieext
 evilfinder	ports/games/evilfinder
+evilvte		ports/x11-toolkits/evilvte
 evilwm		ports/x11-wm/evilwm
 evince		ports/graphics/evince
 evolution	ports/mail/evolution
