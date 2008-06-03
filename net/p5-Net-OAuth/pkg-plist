@@ -1,10 +1,19 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Net/OAuth
+%%SITE_PERL%%/Net/OAuth.pm
 %%SITE_PERL%%/Net/OAuth/AccessTokenRequest.pm
+%%SITE_PERL%%/Net/OAuth/AccessTokenResponse.pm
+%%SITE_PERL%%/Net/OAuth/Message.pm
 %%SITE_PERL%%/Net/OAuth/ProtectedResourceRequest.pm
 %%SITE_PERL%%/Net/OAuth/Request.pm
 %%SITE_PERL%%/Net/OAuth/RequestTokenRequest.pm
+%%SITE_PERL%%/Net/OAuth/RequestTokenResponse.pm
+%%SITE_PERL%%/Net/OAuth/Response.pm
 %%SITE_PERL%%/Net/OAuth/SignatureMethod/HMAC_SHA1.pm
 %%SITE_PERL%%/Net/OAuth/SignatureMethod/PLAINTEXT.pm
 %%SITE_PERL%%/Net/OAuth/SignatureMethod/RSA_SHA1.pm
+%%SITE_PERL%%/Net/OAuth/UserAuthRequest.pm
+%%SITE_PERL%%/Net/OAuth/UserAuthResponse.pm
 @dirrm %%SITE_PERL%%/Net/OAuth/SignatureMethod
 @dirrm %%SITE_PERL%%/Net/OAuth
 @dirrmtry %%SITE_PERL%%/Net
