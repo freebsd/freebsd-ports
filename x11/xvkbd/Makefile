@@ -7,6 +7,7 @@
 
 PORTNAME=	xvkbd
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://homepage3.nifty.com/tsato/xvkbd/
 
