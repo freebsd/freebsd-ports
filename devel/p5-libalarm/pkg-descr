@@ -1,0 +1,4 @@
+This module is an attempt to enhance Perl's built-in
+alarm/$SIG{ALRM} functionality.
+
+WWW: http://search.cpan.org/~johnsca/libalarm-1.0/
