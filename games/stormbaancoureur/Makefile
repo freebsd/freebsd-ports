@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	stormbaancoureur
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	games
-MASTER_SITES=	http://bram.creative4vision.nl/sturmbahnfahrer/download/ \
+MASTER_SITES=	http://bram.creative4vision.nl/stormbaancoureur/download/ \
 		http://www.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@amdmi3.ru
