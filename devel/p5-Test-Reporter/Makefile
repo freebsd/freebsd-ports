@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Test-Reporter
-PORTVERSION=	1.38
+PORTVERSION=	1.40.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Sends test results to cpan-testers@perl.org
@@ -23,6 +23,12 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		cpantest.1
-MAN3=		Test::Reporter.3
+MAN3=		Test::Reporter.3 \
+		Test::Reporter::Transport.3 \
+		Test::Reporter::Transport::File.3 \
+		Test::Reporter::Transport::HTTPGateway.3 \
+		Test::Reporter::Transport::Mail::Send.3 \
+		Test::Reporter::Transport::Net::SMTP.3 \
+		Test::Reporter::Transport::Net::SMTP::TLS.3
 
 .include <bsd.port.mk>
