@@ -1,0 +1,7 @@
+Intense 2D space shooter like Space-Invaders, but not quite. It
+uses OpenGL and includes particle effects.
+
+The objective is to shoot the aliens before they reach the bottom
+of the screen.
+
+WWW: http://dusted.dk/?view=linux-game-simplevaders
