@@ -1,7 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/.packlist
 %%SITE_PERL%%/POE.pm
-%%SITE_PERL%%/POE/API/Ctl.pm
-%%SITE_PERL%%/POE/API/ResLoader.pm
 %%SITE_PERL%%/POE/Component.pm
 %%SITE_PERL%%/POE/Component/Client/TCP.pm
 %%SITE_PERL%%/POE/Component/Server/TCP.pm
@@ -35,7 +33,6 @@
 %%SITE_PERL%%/POE/Queue/Array.pm
 %%SITE_PERL%%/POE/Resource.pm
 %%SITE_PERL%%/POE/Resource/Aliases.pm
-%%SITE_PERL%%/POE/Resource/Controls.pm
 %%SITE_PERL%%/POE/Resource/Events.pm
 %%SITE_PERL%%/POE/Resource/Extrefs.pm
 %%SITE_PERL%%/POE/Resource/FileHandles.pm
