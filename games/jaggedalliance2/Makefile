@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ja2
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	games
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
 		http://ja2.dragonriders.de/files/
