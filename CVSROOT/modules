@@ -15536,6 +15536,7 @@ skyeye		ports/emulators/skyeye
 skype		ports/net/skype
 skype-devel	ports/net/skype-devel
 skype12		ports/net/skype12
+skystar2	ports/net/skystar2
 skytemplate	ports/www/skytemplate
 skytools	ports/databases/skytools
 skyutils	ports/misc/skyutils
