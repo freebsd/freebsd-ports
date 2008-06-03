@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	thinkingrock
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	deskutils java
 MASTER_SITES=	SF
-DISTNAME=	tr-${PORTVERSION}.epsilon
+DISTNAME=	tr-${PORTVERSION}
 
 MAINTAINER=	beat@chruetertee.ch
 COMMENT=	Application for collecting and processing your thoughts
 
-USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
@@ -22,18 +21,21 @@ NO_BUILD=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${RM} ${WRKSRC}/bin/thinkingrock.exe
-	@${RM} ${WRKSRC}/bin/thinkingrock_w.exe
-	@${RM} ${WRKSRC}/bin/thinkingrock.orig
-	@${RM} ${WRKSRC}/bin/xdg-email.orig
-	@${RM} ${WRKSRC}/bin/xdg-open.orig
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/bin/tr
+	@${RM} ${WRKSRC}/install.html~
+	@${RM} ${WRKSRC}/bin/tr.bak
+	@${RM} ${WRKSRC}/bin/tr.orig
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PORTNAME}
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/${PORTNAME}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${PORTNAME}
-	@${LN} -sf ${PREFIX}/${PORTNAME}/bin/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	@${LN} -sf ${PREFIX}/${PORTNAME}/bin/tr ${PREFIX}/bin/${PORTNAME}
+	@${LN} -sf ${PREFIX}/${PORTNAME}/bin/xdg-email ${PREFIX}/bin/xdg-email
+	@${LN} -sf ${PREFIX}/${PORTNAME}/bin/xdg-open ${PREFIX}/bin/xdg-open
 	@${ECHO} bin/${PORTNAME} >> ${TMPPLIST}
+	@${ECHO} bin/xdg-email >> ${TMPPLIST}
+	@${ECHO} bin/xdg-open >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} . ! -type d) | ${SORT} | ${SED} "s|^.|${PORTNAME}|" >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} . -type d) | ${SORT} -r | ${SED} "s|^.|@dirrm ${PORTNAME}|" >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} . -type d -empty) | ${SORT} -r | ${SED} "s|^.|@exec mkdir -p ${PORTNAME}|" >> ${TMPPLIST}
