@@ -39,5 +39,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	${FIND} ${WRKSRC} -name "Makefile.*" | ${XARGS} \
 	    ${REINPLACE_CMD} -e 's|dclib-0.3/||g'
+	${REINPLACE_CMD} -e 's|-0.3||g' ${WRKSRC}/dclib.pc.in
 
 .include <bsd.port.mk>
