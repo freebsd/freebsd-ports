@@ -1,3 +1,4 @@
+# ex: ts=8
 # New ports collection makefile for:	sourcenav
 # Date created:			23 July 2000
 # Whom:				Donald Burr <dburr@FreeBSD.ORG>
@@ -7,6 +8,7 @@
 
 PORTNAME=	sourcenav
 DISTVERSION=	5.2b2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -22,7 +24,10 @@ USE_BISON=	build
 USE_GMAKE=	yes
 USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 NO_MTREE=	yes
+
+.include "Makefile.man"
 
 SUB_FILES=	pkg-message
 
@@ -34,7 +39,6 @@ post-patch:
 	    ${WRKSRC}/tix/unix/tk8.3/Makefile.in
 
 post-install:
-	@${LN} -s ${PREFIX}/bin/snavigator ${PREFIX}/../bin
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
