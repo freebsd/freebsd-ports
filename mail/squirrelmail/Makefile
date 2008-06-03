@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	squirrelmail
-PORTVERSION=	1.4.13
+PORTVERSION=	1.4.15
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		all_locales-1.4.9-20070106${EXTRACT_SUFX}
+		all_locales-1.4.13-20071220${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	simond@irrelevant.org
+MAINTAINER=	tabthorpe@freebsd.org
 COMMENT=	A webmail system which accesses mail over IMAP
 
 USE_PHP=	session mhash gettext mbstring pcre openssl xml
