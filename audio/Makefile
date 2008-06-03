@@ -206,6 +206,7 @@
     SUBDIR += glurp
     SUBDIR += gmidimonitor
     SUBDIR += gmixer
+    SUBDIR += gmm
     SUBDIR += gmpc
     SUBDIR += gmpc-autoplaylist
     SUBDIR += gmpc-extraplaylist
