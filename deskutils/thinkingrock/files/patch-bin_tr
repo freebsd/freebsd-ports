@@ -1,0 +1,22 @@
+--- bin/tr.orig	2008-05-31 03:33:36.000000000 +0200
++++ bin/tr	2008-06-02 21:52:26.000000000 +0200
+@@ -4,7 +4,7 @@
+ # resolve symlinks
+ #
+ 
+-PRG=$0
++PRG=%%PREFIX%%/thinkingrock/bin/tr
+ 
+ while [ -h "$PRG" ]; do
+     ls=`ls -ld "$PRG"`
+@@ -17,7 +17,9 @@
+ done
+ 
+ progdir=`dirname "$PRG"`
+-APPNAME=`basename "$0"`
++APPNAME=tr
++
++cd $progdir
+ 
+ if [ -f "$progdir/../etc/$APPNAME".conf ] ; then
+     . "$progdir/../etc/$APPNAME".conf
