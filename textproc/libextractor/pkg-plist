@@ -1,8 +1,11 @@
 bin/extract
 include/extractor.h
+info/extractor.info
 lib/libextractor.la
 lib/libextractor.so
 lib/libextractor.so.2
+lib/libextractor/libextractor_applefile.la
+lib/libextractor/libextractor_applefile.so
 lib/libextractor/libextractor_asf.la
 lib/libextractor/libextractor_asf.so
 lib/libextractor/libextractor_deb.la
@@ -15,6 +18,8 @@ lib/libextractor/libextractor_exiv2.la
 lib/libextractor/libextractor_exiv2.so
 lib/libextractor/libextractor_filename.la
 lib/libextractor/libextractor_filename.so
+lib/libextractor/libextractor_flv.la
+lib/libextractor/libextractor_flv.so
 lib/libextractor/libextractor_gif.la
 lib/libextractor/libextractor_gif.so
 lib/libextractor/libextractor_hash_md5.la
@@ -93,7 +98,6 @@ lib/libextractor/libextractor_split.la
 lib/libextractor/libextractor_split.so
 lib/libextractor/libextractor_tar.la
 lib/libextractor/libextractor_tar.so
-lib/libextractor/libextractor_thumbnail.so
 lib/libextractor/libextractor_tiff.la
 lib/libextractor/libextractor_tiff.so
 lib/libextractor/libextractor_translit.la
@@ -105,6 +109,7 @@ lib/libextractor/libextractor_zip.so
 lib/pkgconfig/libextractor.pc
 share/locale/de/LC_MESSAGES/libextractor.mo
 share/locale/ga/LC_MESSAGES/libextractor.mo
+share/locale/nl/LC_MESSAGES/libextractor.mo
 share/locale/ro/LC_MESSAGES/libextractor.mo
 share/locale/rw/LC_MESSAGES/libextractor.mo
 share/locale/sv/LC_MESSAGES/libextractor.mo
