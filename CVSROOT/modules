@@ -15476,6 +15476,7 @@ simian		ports/devel/simian
 simlib		ports/science/simlib
 simplemod	ports/audio/simplemod
 simpletest	ports/devel/simpletest
+simplevaders	ports/games/simplevaders
 simplicity	ports/java/simplicity
 simplog		ports/www/simplog
 simscan		ports/mail/simscan
