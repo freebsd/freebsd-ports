@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	socketpipe
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.spinellis.gr/sw/unix/socketpipe/ \
 		http://www.dmst.aueb.gr/dds/sw/unix/socketpipe/
