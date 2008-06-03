@@ -1,0 +1,21 @@
+The SVGFig package lets you draw mathematical figures in Scalable
+Vector Graphics format (SVG), using the Python language.
+
+As a tool, its usefulness lies somewhere between freehand drawing
+programs, which don't give you quantitative control over your figures,
+and traditional plotting packages, which fit your data into a prescribed
+template. SVGFig allows you to draw anything you can express in Python.
+
+SVGFig is particularly suited to handle non-linear geometries. All
+lines, including the coordinate axis, curve if passed through a
+non-linear coordinate transformation, and coordinate systems can be
+nested in trees. This generalizes all the tools necessary for making
+plots, so it is easy to create polar plots of radial data, Hammer-Aitoff
+projections of the sky, translations in hyperbolic spaces, or experiment
+with new representations.
+
+SVGFig also maintains a convenient representation of SVG images as
+Python constructs, so you can load graphics from SVG files, dissect
+them, manipulate them with an automated script, and save them in batch.
+
+WWW: http://code.google.com/p/svgfig/
