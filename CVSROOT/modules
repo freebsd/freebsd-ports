@@ -3962,6 +3962,7 @@ gmime2-sharp	ports/mail/gmime2-sharp
 gmimms		ports/multimedia/gmimms
 gmines		ports/games/gmines
 gmixer		ports/audio/gmixer
+gmm		ports/audio/gmm
 gmp-ecm		ports/math/gmp-ecm
 gmpc		ports/audio/gmpc
 gmpc-autoplaylist	ports/audio/gmpc-autoplaylist
