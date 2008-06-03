@@ -37,6 +37,7 @@ tinderbox/scripts/pnohang.c
 tinderbox/scripts/portbuild
 tinderbox/scripts/rawenv.dist
 tinderbox/scripts/setup.sh
+tinderbox/scripts/tbkill.sh
 tinderbox/scripts/tc
 tinderbox/scripts/tinderbox-mysql.schema
 tinderbox/scripts/tinderbox-pgsql.schema

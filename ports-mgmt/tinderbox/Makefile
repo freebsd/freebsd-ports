@@ -5,9 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-DISTVERSION=	${PORTVERSION}-${PORTREVISION}
-PORTVERSION=	2.4.2
-PORTREVISION=	2	# cvs snapshot from 2008-05-19 14:00
+#DISTVERSION=	${PORTVERSION}-${PORTREVISION}
+PORTVERSION=	2.4.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 DIST_SUBDIR=	tinderbox
@@ -121,6 +120,9 @@ post-patch:
 		${WRKSRC}/lib/setup-mysql.sh
 	@${RM} ${WRKSRC}/lib/setup-mysql.sh.bak
 .endif
+	@${RM} ${WRKSRC}/buildscript.orig
+	@${RM} ${WRKSRC}/www-exp/core/TinderboxDS.php.orig
+	@${RM} ${WRKSRC}/www-exp/module/moduleBuildPorts.php.orig
 
 do-install:
 	${MKDIR} ${PREFIX}/tinderbox/scripts

@@ -1,0 +1,27 @@
+--- ./buildscript.orig	2008-06-03 15:17:08.000000000 +0300
++++ ./buildscript	2008-06-03 15:20:37.000000000 +0300
+@@ -103,6 +103,12 @@
+ 
+ L=$(echo ${LOCALBASE} | sed 's,^/,,')
+ X=$(echo ${X11BASE} | sed 's,^/,,')
++ 
++NOD=$(echo ${NOPORTDOCS} | sed 's,^/,,')
++NOE=$(echo ${NOPORTEXAMPLES} | sed 's,^/,,')
++NPD=$(echo ${NOPORTDATA} | sed 's,^/,,')
++Z=`ident ${dir}/Makefile | grep 'FreeBSD:' | sed 's/^[ \t]*//'`
++
+ 
+ if [ $phase = 1 ]; then
+ 
+@@ -110,6 +116,11 @@
+   echo "maintained by: $(make maintainer)"
+   echo "building for:  $(uname -rm)"
+   echo "port directory: ${dir}"
++
++  echo "Makefile ident: ${Z}"
++  echo "prefixes: LOCALBASE=${L} X11BASE=${X}"
++  echo "NO* env vars: NOPORTDOCS=${NOD} NOPORTEXAMPLES=${NOE} NOPORTDATA=${NPD}"
++
+   echo "build started at $(date)"
+ 
+   echo "FETCH_DEPENDS=${FD}"
