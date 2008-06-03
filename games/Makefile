@@ -720,6 +720,7 @@
     SUBDIR += sfbol
     SUBDIR += shaaft
     SUBDIR += shootingstar
+    SUBDIR += simplevaders
     SUBDIR += six
     SUBDIR += sjeng
     SUBDIR += sl
