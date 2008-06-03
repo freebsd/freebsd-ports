@@ -16633,6 +16633,7 @@ trio		ports/devel/trio
 tripwire	ports/security/tripwire
 tripwire-131	ports/security/tripwire-131
 tripwire12	ports/security/tripwire12
+trix		ports/net-im/trix
 trn		ports/news/trn
 trn4		ports/news/trn4
 trojka		ports/games/trojka
