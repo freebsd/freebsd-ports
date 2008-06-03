@@ -8837,6 +8837,7 @@ oniguruma	ports/devel/oniguruma
 oniguruma4	ports/devel/oniguruma4
 onion-fec	ports/net/onion-fec
 onis		ports/irc/onis
+online-desktop	ports/net/online-desktop
 ontv		ports/deskutils/ontv
 onyx		ports/lang/onyx
 oo2c		ports/lang/oo2c
