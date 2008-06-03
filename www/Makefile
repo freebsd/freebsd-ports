@@ -197,6 +197,7 @@
     SUBDIR += flickcurl
     SUBDIR += flock
     SUBDIR += flood
+    SUBDIR += fluxbb
     SUBDIR += fluxcms
     SUBDIR += fnord
     SUBDIR += formication

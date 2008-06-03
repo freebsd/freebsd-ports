@@ -1,0 +1,125 @@
+%%WWWDIR%%/admin_bans.php
+%%WWWDIR%%/admin_categories.php
+%%WWWDIR%%/admin_censoring.php
+%%WWWDIR%%/admin_forums.php
+%%WWWDIR%%/admin_groups.php
+%%WWWDIR%%/admin_index.php
+%%WWWDIR%%/admin_loader.php
+%%WWWDIR%%/admin_maintenance.php
+%%WWWDIR%%/admin_options.php
+%%WWWDIR%%/admin_permissions.php
+%%WWWDIR%%/admin_prune.php
+%%WWWDIR%%/admin_ranks.php
+%%WWWDIR%%/admin_reports.php
+%%WWWDIR%%/admin_users.php
+%%WWWDIR%%/cache/.htaccess
+%%WWWDIR%%/cache/index.html
+%%WWWDIR%%/delete.php
+%%WWWDIR%%/edit.php
+%%WWWDIR%%/extern.php
+%%WWWDIR%%/footer.php
+%%WWWDIR%%/header.php
+%%WWWDIR%%/help.php
+%%WWWDIR%%/img/avatars/index.html
+%%WWWDIR%%/img/index.html
+%%WWWDIR%%/img/smilies/big_smile.png
+%%WWWDIR%%/img/smilies/cool.png
+%%WWWDIR%%/img/smilies/hmm.png
+%%WWWDIR%%/img/smilies/index.html
+%%WWWDIR%%/img/smilies/lol.png
+%%WWWDIR%%/img/smilies/mad.png
+%%WWWDIR%%/img/smilies/neutral.png
+%%WWWDIR%%/img/smilies/roll.png
+%%WWWDIR%%/img/smilies/sad.png
+%%WWWDIR%%/img/smilies/smile.png
+%%WWWDIR%%/img/smilies/tongue.png
+%%WWWDIR%%/img/smilies/wink.png
+%%WWWDIR%%/img/smilies/yikes.png
+%%WWWDIR%%/include/cache.php
+%%WWWDIR%%/include/common.php
+%%WWWDIR%%/include/common_admin.php
+%%WWWDIR%%/include/dblayer/common_db.php
+%%WWWDIR%%/include/dblayer/index.html
+%%WWWDIR%%/include/dblayer/mysql.php
+%%WWWDIR%%/include/dblayer/mysqli.php
+%%WWWDIR%%/include/dblayer/pgsql.php
+%%WWWDIR%%/include/dblayer/sqlite.php
+%%WWWDIR%%/include/email.php
+%%WWWDIR%%/include/functions.php
+%%WWWDIR%%/include/parser.php
+%%WWWDIR%%/include/search_idx.php
+%%WWWDIR%%/include/template/admin.tpl
+%%WWWDIR%%/include/template/help.tpl
+%%WWWDIR%%/include/template/index.html
+%%WWWDIR%%/include/template/main.tpl
+%%WWWDIR%%/include/template/maintenance.tpl
+%%WWWDIR%%/include/template/redirect.tpl
+%%WWWDIR%%/index.php
+%%WWWDIR%%/install.php
+%%WWWDIR%%/lang/index.html
+%%WWWDIR%%/lang/English/common.php
+%%WWWDIR%%/lang/English/delete.php
+%%WWWDIR%%/lang/English/forum.php
+%%WWWDIR%%/lang/English/help.php
+%%WWWDIR%%/lang/English/index.html
+%%WWWDIR%%/lang/English/index.php
+%%WWWDIR%%/lang/English/login.php
+%%WWWDIR%%/lang/English/misc.php
+%%WWWDIR%%/lang/English/post.php
+%%WWWDIR%%/lang/English/prof_reg.php
+%%WWWDIR%%/lang/English/profile.php
+%%WWWDIR%%/lang/English/register.php
+%%WWWDIR%%/lang/English/search.php
+%%WWWDIR%%/lang/English/stopwords.txt
+%%WWWDIR%%/lang/English/topic.php
+%%WWWDIR%%/lang/English/userlist.php
+%%WWWDIR%%/lang/English/mail_templates/activate_email.tpl
+%%WWWDIR%%/lang/English/mail_templates/activate_password.tpl
+%%WWWDIR%%/lang/English/mail_templates/form_email.tpl
+%%WWWDIR%%/lang/English/mail_templates/index.html
+%%WWWDIR%%/lang/English/mail_templates/new_reply.tpl
+%%WWWDIR%%/lang/English/mail_templates/new_reply_full.tpl
+%%WWWDIR%%/lang/English/mail_templates/welcome.tpl
+%%WWWDIR%%/login.php
+%%WWWDIR%%/misc.php
+%%WWWDIR%%/moderate.php
+%%WWWDIR%%/plugins/AMP_Example.php
+%%WWWDIR%%/plugins/index.html
+%%WWWDIR%%/post.php
+%%WWWDIR%%/profile.php
+%%WWWDIR%%/register.php
+%%WWWDIR%%/search.php
+%%WWWDIR%%/style/Cobalt.css
+%%WWWDIR%%/style/Lithium.css
+%%WWWDIR%%/style/Mercury.css
+%%WWWDIR%%/style/Oxygen.css
+%%WWWDIR%%/style/Radium.css
+%%WWWDIR%%/style/Sulfur.css
+%%WWWDIR%%/style/imports/Cobalt_cs.css
+%%WWWDIR%%/style/imports/Lithium_cs.css
+%%WWWDIR%%/style/imports/Mercury_cs.css
+%%WWWDIR%%/style/imports/Oxygen_cs.css
+%%WWWDIR%%/style/imports/Radium_cs.css
+%%WWWDIR%%/style/imports/Sulfur_cs.css
+%%WWWDIR%%/style/imports/base.css
+%%WWWDIR%%/style/imports/base_admin.css
+%%WWWDIR%%/style/imports/index.html
+%%WWWDIR%%/style/imports/minmax.js
+%%WWWDIR%%/style/index.html
+%%WWWDIR%%/userlist.php
+%%WWWDIR%%/viewforum.php
+%%WWWDIR%%/viewtopic.php
+@dirrm %%WWWDIR%%/style/imports
+@dirrm %%WWWDIR%%/style
+@dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/lang/English/mail_templates
+@dirrm %%WWWDIR%%/lang/English
+@dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/include/template
+@dirrm %%WWWDIR%%/include/dblayer
+@dirrm %%WWWDIR%%/include
+@dirrm %%WWWDIR%%/img/smilies
+@dirrm %%WWWDIR%%/img/avatars
+@dirrm %%WWWDIR%%/img
+@dirrm %%WWWDIR%%/cache
+@dirrm %%WWWDIR%%
