@@ -865,6 +865,7 @@ bidiv		ports/textproc/bidiv
 bidwatcher	ports/misc/bidwatcher
 biew		ports/editors/biew
 biffer		ports/mail/biffer
+bigboard	ports/misc/bigboard
 biggles		ports/math/biggles
 bigloo		ports/lang/bigloo
 bigreqsproto	ports/x11/bigreqsproto
