@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phylip
-PORTVERSION=	3.66
-PORTREVISION=	2
+PORTVERSION=	3.67
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/ \
@@ -18,9 +17,10 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Phylogeny Inference Package
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 USE_XORG=	x11 xaw xt
+USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/src
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 MAKE_ARGS=	CC="${CC} ${CFLAGS}" \
 		DC="${CC} -DX -I${LOCALBASE}/include ${CFLAGS}" \
@@ -28,17 +28,12 @@ MAKE_ARGS=	CC="${CC} ${CFLAGS}" \
 
 PORTDOCS=	*
 
-do-install:
-	@cd ${BUILD_WRKSRC} && ${MAKE} install
-
+post-install:
 	@cd ${WRKSRC}/exe && \
 		${FIND} . -not -type d -not -name 'font*' -exec ${INSTALL_PROGRAM} "{}" "${PREFIX}/bin/{}" \;
-
 	${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/exe && \
 		${FIND} . -not -type d -name 'font*' -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-
-post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc && \
