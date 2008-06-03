@@ -5,7 +5,7 @@
 
 #
 # PROVIDE: freenet6
-# REQUIRE: NETWORKING netif
+# REQUIRE: NETWORKING netif named
 # BEFORE: ip6addrctl
 # KEYWORD: shutdown
 #
