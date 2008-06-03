@@ -58,14 +58,14 @@ The following walkthrough is the tinderbox environment setup:
   - Comment out the lines after "for www", and uncomment the lines "for www-exp".
 
 - Edit the file %%PREFIX%%/tinderbox/scripts/www-exp/inc_ds.php
-  (copy from inc_ds.php-dist)
+  (copy from inc_ds.php.dist)
 
   - $DB_HOST should be localhost
   - $DB_DRIVER should be pgsql
   - $DB_USER should be tinderbox
 
 - Edit the file %%PREFIX%%/tinderbox/scripts/www-exp/inc_tinderbox.php
-  (copy from inc_tinderbox.php-dist)
+  (copy from inc_tinderbox.php.dist)
 
   - $rootdir should be %%PREFIX%%/tinderbox
   - $wwwrooturi should be /tb
@@ -75,9 +75,11 @@ The following walkthrough is the tinderbox environment setup:
 The following walkthrough is the initial tinderbox population setup
 and should be executed in %%PREFIX%%/tinderbox/scripts.
 
+- ./tc init
+
 - Create a jail. A jail is a chrooted version of the FreeBSD operating
-  system, for example 6.0-RELEASE or 5.4-RELEASE:
-  ./create Jail -j 5.4 -d "FreeBSD 5.4-RELEASE" -t RELENG_5_4_0_RELEASE -u CVSUP
+  system, for example 7-STABLE or 7.0-RELEASE:
+  ./create Jail -j 7 -d "FreeBSD 7.0-RELEASE" -t RELENG_7_0_0_RELEASE -u CVSUP
   You can have multiple jails on a single machine.
   This takes a while.
 
@@ -86,7 +88,7 @@ and should be executed in %%PREFIX%%/tinderbox/scripts.
   This takes a while.
 
 - And then link the two together in a build:
-  ./create Build -b 5.4-FreeBSD -j 5.4 -p FreeBSD -d "5.4-RELEASE with FreeBSD ports tree"
+  ./create Build -b 7.0-FreeBSD -j 7 -p FreeBSD -d "7.0-RELEASE with FreeBSD ports tree"
 
 The following walkthrough is the webserver setup:
 
