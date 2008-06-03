@@ -33,6 +33,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libdc=${LOCALBASE} \
 		--x-libraries=${LOCALBASE}/lib \
 		--x-includes=${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
