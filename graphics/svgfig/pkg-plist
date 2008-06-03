@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/svgfig.py
+%%PYTHON_SITELIBDIR%%/svgfig.pyo
+%%PYTHON_SITELIBDIR%%/svgfig.pyc
+@dirrmtry %%PYTHON_SITELIBDIR%%
