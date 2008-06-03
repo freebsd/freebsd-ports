@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.4.9
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -102,7 +101,7 @@ do-install:
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/conkyrc.sample ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/conky.conf ${EXAMPLESDIR}/conkyrc.sample
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
