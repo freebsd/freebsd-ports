@@ -25,6 +25,12 @@ USE_ANT=	yes
 
 USE_ZIP=	yes
 
+USE_DOS2UNIX=	\
+org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java \
+org/gudy/azureus2/platform/unix/ScriptBeforeStartup.java \
+com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java \
+com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterTransparent.java
+
 NO_WRKSUBDIR=	yes
 
 JARFILE=	${PORTNAME}.jar
