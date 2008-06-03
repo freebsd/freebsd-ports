@@ -1,0 +1,14 @@
+%%PYTHON_SITELIBDIR%%/pycdf/__init__.py
+%%PYTHON_SITELIBDIR%%/pycdf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pycdf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pycdf/_pycdfext.so
+%%PYTHON_SITELIBDIR%%/pycdf/pycdf.py
+%%PYTHON_SITELIBDIR%%/pycdf/pycdf.pyc
+%%PYTHON_SITELIBDIR%%/pycdf/pycdf.pyo
+%%PYTHON_SITELIBDIR%%/pycdf/pycdfext.py
+%%PYTHON_SITELIBDIR%%/pycdf/pycdfext.pyc
+%%PYTHON_SITELIBDIR%%/pycdf/pycdfext.pyo
+%%PYTHON_SITELIBDIR%%/pycdf/pycdfext_array.py
+%%PYTHON_SITELIBDIR%%/pycdf/pycdfext_array.pyc
+%%PYTHON_SITELIBDIR%%/pycdf/pycdfext_array.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pycdf
