@@ -1,0 +1,59 @@
+bin/pgloader
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/csvreader.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/db.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/lo.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/logger.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/options.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/options.py.bak
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/pgloader.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/reader.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/textreader.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/tools.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/reformat/README
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/reformat/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/reformat/mysql.py
+%%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/pgloader.1.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/allcols/allcols.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/allcols/allcols.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clob/clob.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clob/clob.out
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clob/clob.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cluttered/cluttered.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cluttered/cluttered.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csv/csv.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/csv/csv.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/errors/errors.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/errors/errors.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/parallel.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel/parallel.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partial/partial.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partial/partial.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgloader.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reformat/reformat.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reformat/reformat.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/serial.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/serial/serial.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/udc/udc.data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/udc/udc.sql
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/udc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/serial
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/reformat
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/partial
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/parallel
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/errors
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csv
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cluttered
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clob
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/allcols
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/pgloader/reformat
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/pgloader
