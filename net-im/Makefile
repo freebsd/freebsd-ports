@@ -142,6 +142,7 @@
     SUBDIR += tkabber-devel
     SUBDIR += tkabber-plugins
     SUBDIR += tmsnc
+    SUBDIR += trix
     SUBDIR += vicq
     SUBDIR += vqcc-gtk
     SUBDIR += xfce4-messenger-plugin
