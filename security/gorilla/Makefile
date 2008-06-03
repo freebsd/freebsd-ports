@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.fpx.de/fp/Software/Gorilla/download/
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password Gorilla is cross-platform Password Manager
 
 LIB_DEPENDS=	itcl.3:${PORTSDIR}/lang/itcl

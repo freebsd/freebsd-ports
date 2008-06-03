@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lineak
 DIST_SUBDIR=	lineak
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configure lineakd through a KDE interface
 
 LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
