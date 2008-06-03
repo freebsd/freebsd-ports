@@ -12,7 +12,8 @@ COMMENT=	An advanced, highly configurable system monitor (configured for x11-wm/
 
 MASTERDIR=	${.CURDIR}/../conky
 DESCR=		${.CURDIR}/pkg-descr
-PATCHDIR=	${.CURDIR}/files
+
+EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 CONFLICTS=	conky-[0-9]*
 
