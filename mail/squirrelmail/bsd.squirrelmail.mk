@@ -1,6 +1,6 @@
 # $FreeBSD$
 #
-# $GKHeader: squirrelmail/bsd.squirrelmail.mk,v 1.14 2008/05/29 13:00:54 tabthorpe Exp $
+# $GKHeader: squirrelmail/bsd.squirrelmail.mk,v 1.16 2008/06/03 15:10:08 tabthorpe Exp $
 #
 # Common code for squirrelmail plugins.
 #
@@ -62,7 +62,7 @@ do-install:
 
 post-install:
 .ifndef WITHOUT_ACTIVATE
-.if exists( ${SQUIRRELDIR}/config/conf.pl )
+.if exists( ${SQUIRRELDIR}/config/conf.php )
 	@${ECHO_CMD} "Activating plug-in in SquirrelMail"
 	${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}
 .endif
