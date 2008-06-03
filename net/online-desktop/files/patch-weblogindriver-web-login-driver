@@ -1,0 +1,8 @@
+--- weblogindriver/web-login-driver~	2008-04-23 23:06:43.000000000 +0530
++++ weblogindriver/web-login-driver	2008-06-02 04:55:00.000000000 +0530
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/env python
+ 
+ import os,sys,re,logging,urlparse,base64
+ 
