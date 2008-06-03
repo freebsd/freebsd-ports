@@ -548,6 +548,7 @@
     SUBDIR += openastromenace
     SUBDIR += opencity
     SUBDIR += openglad
+    SUBDIR += openjazz
     SUBDIR += openmortal
     SUBDIR += openttd
     SUBDIR += openyahtzee

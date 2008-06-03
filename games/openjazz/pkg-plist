@@ -1,0 +1,4 @@
+bin/openjazz
+bin/openjazz-bin
+%%DATADIR%%/openjazz.000
+@dirrm %%DATADIR%%
