@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080603:
+  AFFECTS: users of editors/emacs
+  AUTHOR: Yasuhiro KIMURA <yasu@utahime.org>
+
+  The port (editors/emacs) is updated to 22.2 and some of emacs lisp
+  directories are changed. So you should reinstall all ports depending on
+  this one. Run something like:
+
+  # portupgrade -fr emacs
+
 20080601:
   AFFECTS: users of www/ikiwiki
   AUTHOR: brix@FreeBSD.org
