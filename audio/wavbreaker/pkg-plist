@@ -7,8 +7,8 @@ share/icons/hicolor/22x22/apps/wavbreaker.png
 share/icons/hicolor/24x24/apps/wavbreaker.png
 share/icons/hicolor/48x48/apps/wavbreaker.png
 share/icons/hicolor/scalable/apps/wavbreaker.svg
-share/locale/de/LC_MESSAGES/wavbreaker.mo
-share/locale/fr/LC_MESSAGES/wavbreaker.mo
-share/locale/pt/LC_MESSAGES/wavbreaker.mo
+%%NLS%%share/locale/de/LC_MESSAGES/wavbreaker.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/wavbreaker.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/wavbreaker.mo
 share/pixmaps/wavbreaker.png
 @dirrmtry share/applications
