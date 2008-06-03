@@ -12,7 +12,7 @@ CATEGORIES=	math kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=labplot
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LabPlot : Data analysis and visualisation
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \

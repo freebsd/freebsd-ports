@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AM/AMBS/${PORTNAME}
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for parsing and processing BibTeX data files
 
 GNU_CONFIGURE=	yes

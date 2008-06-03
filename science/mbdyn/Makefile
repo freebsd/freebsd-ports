@@ -10,7 +10,7 @@ PORTVERSION=	1.2.7
 CATEGORIES=	science
 MASTER_SITES=	http://www.aero.polimi.it/~masarati/Download/mbdyn/
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A MultiBody Dynamics analysis system
 
 LIB_DEPENDS=	umfpack:${PORTSDIR}/math/suitesparse

@@ -36,7 +36,7 @@ DISTFILES=	${PORTNAME}/source/Makefile \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}.tar.gz
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce beautiful listings of source code with LaTeX
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
