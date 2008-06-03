@@ -1,0 +1,11 @@
+--- Makefile.in	2008-04-25 00:52:28.000000000 +0530
++++ Makefile.in2	2008-05-28 11:32:38.000000000 +0530
+@@ -114,7 +114,7 @@
+ binSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+ presessionSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+ SCRIPTS = $(bin_SCRIPTS) $(presession_SCRIPTS)
+-DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/config
++DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/config -I%%LOCALBASE%%/include
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \

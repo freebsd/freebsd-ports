@@ -411,6 +411,7 @@
     SUBDIR += omnitty
     SUBDIR += onenetd
     SUBDIR += onion-fec
+    SUBDIR += online-desktop
     SUBDIR += opal
     SUBDIR += openam
     SUBDIR += openbgpd

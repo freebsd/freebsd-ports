@@ -1,0 +1,101 @@
+bin/ddm-viewer
+bin/od-autostart
+bin/od-mailto
+bin/od-reset
+bin/od-session
+bin/od-start-im
+bin/online-prefs-sync-daemon
+bin/web-login-driver
+lib/pidgin/libdbus-api-plugin.la
+lib/pidgin/libdbus-api-plugin.so
+%%PYTHON_SITELIBDIR%%/ddm/AbstractModel.py
+%%PYTHON_SITELIBDIR%%/ddm/AbstractModel.pyc
+%%PYTHON_SITELIBDIR%%/ddm/AbstractModel.pyo
+%%PYTHON_SITELIBDIR%%/ddm/DataModel.py
+%%PYTHON_SITELIBDIR%%/ddm/DataModel.pyc
+%%PYTHON_SITELIBDIR%%/ddm/DataModel.pyo
+%%PYTHON_SITELIBDIR%%/ddm/NotificationSet.py
+%%PYTHON_SITELIBDIR%%/ddm/NotificationSet.pyc
+%%PYTHON_SITELIBDIR%%/ddm/NotificationSet.pyo
+%%PYTHON_SITELIBDIR%%/ddm/Query.py
+%%PYTHON_SITELIBDIR%%/ddm/Query.pyc
+%%PYTHON_SITELIBDIR%%/ddm/Query.pyo
+%%PYTHON_SITELIBDIR%%/ddm/Resource.py
+%%PYTHON_SITELIBDIR%%/ddm/Resource.pyc
+%%PYTHON_SITELIBDIR%%/ddm/Resource.pyo
+%%PYTHON_SITELIBDIR%%/ddm/TwistedModel.py
+%%PYTHON_SITELIBDIR%%/ddm/TwistedModel.pyc
+%%PYTHON_SITELIBDIR%%/ddm/TwistedModel.pyo
+%%PYTHON_SITELIBDIR%%/ddm/__init__.py
+%%PYTHON_SITELIBDIR%%/ddm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ddm/__init__.pyo
+%%PYTHON_SITELIBDIR%%/nssdecrypt.la
+%%PYTHON_SITELIBDIR%%/nssdecrypt.so
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/__init__.py
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/firefox.py
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/firefox.pyc
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/firefox.pyo
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/fsutil.py
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/fsutil.pyc
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/fsutil.pyo
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/ggadget.py
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/ggadget.pyc
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/ggadget.pyo
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/gnomepanel.py
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/gnomepanel.pyc
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/gnomepanel.pyo
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/mozembed_wrap.py
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/mozembed_wrap.pyc
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/mozembed_wrap.pyo
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/odpanel.py
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/odpanel.pyc
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/odpanel.pyo
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/widget.py
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/widget.pyc
+%%PYTHON_SITELIBDIR%%/pyonlinedesktop/widget.pyo
+share/applications/flickr.desktop
+share/applications/gmail.desktop
+share/applications/google-calendar.desktop
+share/applications/google-docs.desktop
+share/applications/google-reader.desktop
+share/dbus-1/services/org.gnome.WebLoginDriver.service
+share/gnome/autostart/online-desktop-autostart.desktop
+share/gnome/autostart/online-prefs-sync.desktop
+share/gnome/online-desktop.session
+share/icons/hicolor/16x16/apps/flickr.png
+share/icons/hicolor/16x16/apps/gmail.png
+share/icons/hicolor/16x16/apps/google-calendar.png
+share/icons/hicolor/16x16/apps/google-docs.png
+share/icons/hicolor/16x16/apps/google-reader.png
+share/icons/hicolor/16x16/apps/picasa.png
+share/icons/hicolor/16x16/apps/yahoo-mail.png
+share/icons/hicolor/22x22/apps/flickr.png
+share/icons/hicolor/22x22/apps/gmail.png
+share/icons/hicolor/22x22/apps/google-docs.png
+share/icons/hicolor/22x22/apps/google-reader.png
+share/icons/hicolor/22x22/apps/picasa.png
+share/icons/hicolor/22x22/apps/yahoo-mail.png
+share/icons/hicolor/48x48/apps/flickr.png
+share/icons/hicolor/48x48/apps/gmail.png
+share/icons/hicolor/48x48/apps/google-docs.png
+share/icons/hicolor/48x48/apps/google-reader.png
+share/icons/hicolor/48x48/apps/picasa.png
+share/icons/hicolor/48x48/apps/yahoo-mail.png
+share/online-desktop/autostart/bigboard.desktop
+share/online-desktop/autostart/browser.desktop
+share/online-desktop/autostart/im.desktop
+share/online-desktop/presession/panel-config.py
+share/online-prefs-sync/online-prefs-sync.synclist
+share/xsessions/online-desktop.desktop
+@dirrmtry lib/locale
+@dirrmtry lib/pidgin
+@dirrmtry share/xsessions
+@dirrm share/online-prefs-sync
+@dirrm share/online-desktop/presession
+@dirrm share/online-desktop/gconf.xml.online-desktop
+@dirrm share/online-desktop/autostart
+@dirrm share/online-desktop
+@dirrm %%PYTHON_SITELIBDIR%%/pyonlinedesktop
+@dirrm %%PYTHON_SITELIBDIR%%/ddm
