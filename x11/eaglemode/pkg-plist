@@ -3,6 +3,7 @@ lib/eaglemode/README
 lib/eaglemode/bin/eaglemode
 lib/eaglemode/bin/emSendMiniIpc
 lib/eaglemode/bin/emShowStdDlg
+lib/eaglemode/doc/html/ChangeLog.html
 lib/eaglemode/doc/html/GeneralUserGuide.html
 lib/eaglemode/doc/html/InstallAndStart.html
 lib/eaglemode/doc/html/License.html
@@ -15,6 +16,7 @@ lib/eaglemode/doc/html/images/MouseFunc2.png
 lib/eaglemode/doc/html/images/MouseFunc3.png
 lib/eaglemode/doc/html/images/emFileManOverview.png
 lib/eaglemode/doc/html/index.html
+lib/eaglemode/doc/ps/ChangeLog.ps
 lib/eaglemode/doc/ps/GeneralUserGuide.ps
 lib/eaglemode/doc/ps/InstallAndStart.ps
 lib/eaglemode/doc/ps/License.ps
@@ -136,6 +138,7 @@ lib/eaglemode/etc/emFileMan/Commands/StructuredText/Xpdf.pl
 lib/eaglemode/etc/emFileMan/Commands/Terminal.pl
 lib/eaglemode/etc/emMain/CreateInitialBookmarks.pl
 lib/eaglemode/etc/emMain/VcFiles/AboutEagleMode.emFileLink
+lib/eaglemode/etc/emMain/VcFiles/ChangeLog.emFileLink
 lib/eaglemode/etc/emMain/VcFiles/Chess1.silchess
 lib/eaglemode/etc/emMain/VcFiles/Clock1.emClock
 lib/eaglemode/etc/emMain/VcFiles/Clock2.emClock
@@ -162,6 +165,7 @@ lib/eaglemode/etc/emMain/VcFiles/TestPanel.emTestPanel
 lib/eaglemode/etc/emMain/VcFiles/emFileManCustomization.emFileLink
 lib/eaglemode/etc/emMain/VcFiles/emFileManUserGuide.emFileLink
 lib/eaglemode/etc/emMain/VcItems/AboutEagleMode.emVcItem
+lib/eaglemode/etc/emMain/VcItems/ChangeLog.emVcItem
 lib/eaglemode/etc/emMain/VcItems/Chess1.emVcItem
 lib/eaglemode/etc/emMain/VcItems/Clock1.emVcItem
 lib/eaglemode/etc/emMain/VcItems/Clock2.emVcItem

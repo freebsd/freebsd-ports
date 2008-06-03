@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.70.0
+PORTVERSION=	0.70.1
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -32,10 +32,6 @@ BUILD_ARGS+=	${lib}-inc-dir="${LOCALBASE}/include" \
 OPTIONS=	XINE "Video playback support through libxine" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000 
-BROKEN=		does not build
-.endif
 
 .if !defined(WITHOUT_XINE)
 LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
