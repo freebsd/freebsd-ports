@@ -15804,6 +15804,7 @@ squid		ports/www/squid
 squid30		ports/www/squid30
 squid_radius_auth	ports/www/squid_radius_auth
 squidclam	ports/security/squidclam
+squidclamav	ports/security/squidclamav
 squidclients	ports/www/squidclients
 squidguard	ports/www/squidguard
 squidpurge	ports/www/squidpurge
