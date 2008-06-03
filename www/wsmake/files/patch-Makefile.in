@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2008-06-03 21:19:34.000000000 +0200
++++ Makefile.in	2008-06-03 21:20:28.000000000 +0200
+@@ -154,7 +154,7 @@
+ MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure \
+ 			config.log config.status $(AUX_DIST)
+ 
+-EXTRA_INSTALL = README NEWS ChangeLog TODO THANKS
++@DOCS_TRUE@EXTRA_INSTALL = README NEWS ChangeLog TODO THANKS
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs

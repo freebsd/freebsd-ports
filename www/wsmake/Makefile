@@ -6,19 +6,25 @@
 #
 
 PORTNAME=	wsmake
-PORTVERSION=	0.6.4
+PORTVERSION=	0.7.901
 CATEGORIES=	www
 MASTER_SITES=	SFE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Software for production and maintenance of web sites
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-gwsmake=no --enable-iswmake=no
 
-PLIST_FILES=	bin/wsmake
+.include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,void\*,char\*,g' ${WRKSRC}/libwsmake/wsUtil.cpp
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--enable-docs=no
+.else
+INFO=	wsmake iwsmake gwsmake
+MAN1=	wsmake.1
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
