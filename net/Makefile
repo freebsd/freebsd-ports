@@ -859,6 +859,7 @@
     SUBDIR += skype
     SUBDIR += skype-devel
     SUBDIR += skype12
+    SUBDIR += skystar2
     SUBDIR += sl2tps
     SUBDIR += slbd
     SUBDIR += slirp
