@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	File-HStore
-PORTVERSION=	0.09
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,8 +19,5 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Dig
 PERL_CONFIGURE=	yes
 
 MAN3=		File::HStore.3
-
-post-patch:
-		@${RM} ${WRKSRC}/lib/File/HStore.pm.orig
 
 .include <bsd.port.mk>
