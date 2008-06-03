@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Alarm/_TieSIG.pm
+%%SITE_PERL%%/Alarm/Concurrent.pm
+%%SITE_PERL%%/Alarm/Queued.pm
+@dirrmtry %%SITE_PERL%%/Alarm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/libalarm/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libalarm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
