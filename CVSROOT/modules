@@ -3141,6 +3141,7 @@ fluctuate	ports/biology/fluctuate
 fluidsynth	ports/audio/fluidsynth
 fluidsynth-dssi	ports/audio/fluidsynth-dssi
 flux-art	ports/x11-themes/flux-art
+fluxbb		ports/www/fluxbb
 fluxbg		ports/x11/fluxbg
 fluxbox		ports/x11-wm/fluxbox
 fluxbox-sid-pack	ports/x11-themes/fluxbox-sid-pack
