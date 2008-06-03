@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20080206
-PORTREVISION=	1
+PORTVERSION=	20080602
 CATEGORIES=	games
 MASTER_SITES=	http://wiki.eduke32.com/stuff/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX}
@@ -21,7 +20,9 @@ USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}_src_${PORTVERSION}/${PORTNAME}
 
-OPTIONS=	MIDI "Enable MIDI support" on
+OPTIONS=	MIDI		"Enable MIDI support"			On \
+		TIMIDITYPLUS	"Use Timidity++ instead of Timidity"	Off \
+		VORBIS		"Enable Ogg Vorbis support"		On
 
 .include "${.CURDIR}/../duke3d-data/Makefile.include"
 
@@ -31,11 +32,22 @@ OPTIONS=	MIDI "Enable MIDI support" on
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
-.if !defined(WITHOUT_MIDI)
+.if defined(WITH_MIDI)
+.if defined(WITH_TIMIDITYPLUS)
+RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity++
+.else
 RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity
+.endif
+.endif
+
+.if defined(WITH_VORBIS)
+LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 post-patch:
+.if defined(WITHOUT_VORBIS)
+	@${REINPLACE_CMD} -e '/LIBS+= -lvorbis/d' ${WRKSRC}/Makefile
+.endif
 .if ${ARCH} != "i386"
 	@${REINPLACE_CMD} -Ee 's|^(NOASM =).*|\1 1|' ${WRKSRC}/Makefile
 .endif
@@ -47,6 +59,7 @@ post-patch:
 		${WRKSRC}/Makefile \
 		${WRKSRC}/../build/Makefile \
 		${WRKSRC}/../build/Makefile.shared
+	@${REINPLACE_CMD} -e 's|LINUX|BSD|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/share/games/eduke32|${DN3DDIR}|' \
 		${WRKSRC}/source/game.c ${WRKSRC}/source/astub.c
 
