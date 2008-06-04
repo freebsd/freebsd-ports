@@ -1,5 +1,5 @@
 Bicom is a data compressor in the PPM family.  It is freely available and
-Open Source.  It's most unique characteristic, is that compression with
+Open Source.  Its most unique characteristic is that compression with
 bicom is completely bijective -- any file is a possible bicom output that
 can be decompressed, and then recompressed back to its original form.  Of
 course, any file is also a possible bicom input that can be compressed,
