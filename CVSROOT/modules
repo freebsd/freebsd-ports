@@ -8957,6 +8957,7 @@ openvas-client	ports/security/openvas-client
 openvas-libnasl	ports/security/openvas-libnasl
 openvas-libraries	ports/security/openvas-libraries
 openvas-plugins	ports/security/openvas-plugins
+openvas-server	ports/security/openvas-server
 openverse	ports/net/openverse
 openvmps	ports/net-mgmt/openvmps
 openvpn		ports/security/openvpn
