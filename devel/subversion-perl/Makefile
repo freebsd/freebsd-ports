@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-perl
 
 MAINTAINER=	autrijus@autrijus.org
 COMMENT=	Version control system with Perl bindings
-CONFLICTS=      subversion-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]*
+CONFLICTS=      subversion-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]* subversion-devel-[0-9]* subversion-freebsd-[0-9]*
 
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
