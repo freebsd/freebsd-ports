@@ -9,7 +9,7 @@ PORTNAME=	s5
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.meyerweb.com/eric/tools/s5/v/${PORTVERSION}/
+MASTER_SITES=	http://meyerweb.com/eric/tools/s5/v/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	roam@FreeBSD.org
