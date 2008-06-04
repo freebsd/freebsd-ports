@@ -7,7 +7,7 @@
 
 PORTNAME=	drac
 PORTVERSION=	1.12
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
 		ftp://ftp.parodius.com/pub/umanitoba/ \
@@ -29,8 +29,10 @@ LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 NO_WRKSUBDIR=	yes
 USE_RC_SUBR=	dracd.sh
 
+.if !defined(NOPORTDOCS)
 MAN3=		dracauth.3
 MAN1=		rpc.dracd.1
+.endif
 
 .include <bsd.port.pre.mk>
 
