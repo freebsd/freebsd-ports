@@ -1,10 +1,17 @@
 @comment $FreeBSD$
 bin/sqlcli
 bin/sqldeveloper
+%%DATADIR%%/BC4J/lib/adf-share-base.jar
+%%DATADIR%%/BC4J/lib/adf-share-ca.jar
+%%DATADIR%%/BC4J/lib/db-ca.jar
+%%DATADIR%%/dvt/lib/dvt-jclient.jar
+%%DATADIR%%/dvt/lib/dvt-utils.jar
 %%DATADIR%%/icon.png
 %%DATADIR%%/ide/bin/edt.properties
 %%DATADIR%%/ide/bin/encodings.xml
-%%DATADIR%%/ide/bin/launcher.dll
+%%DATADIR%%/ide/bin/ide.boot
+%%DATADIR%%/ide/bin/ide.conf
+%%DATADIR%%/ide/bin/jdk.conf
 %%DATADIR%%/ide/bin/launcher.sh
 %%DATADIR%%/ide/bin/product-launcher.template
 %%DATADIR%%/ide/doc/extension/bundle.xsd
@@ -14,6 +21,8 @@ bin/sqldeveloper
 %%DATADIR%%/ide/doc/extension/update.xsd
 %%DATADIR%%/ide/extensions/oracle.ide.ceditor.jar
 %%DATADIR%%/ide/extensions/oracle.ide.db.jar
+%%DATADIR%%/ide/extensions/oracle.ide.dependency.jar
+%%DATADIR%%/ide/extensions/oracle.ide.diffmerge.jar
 %%DATADIR%%/ide/extensions/oracle.ide.externaltools.jar
 %%DATADIR%%/ide/extensions/oracle.ide.files.jar
 %%DATADIR%%/ide/extensions/oracle.ide.gallery.jar
@@ -23,21 +32,25 @@ bin/sqldeveloper
 %%DATADIR%%/ide/extensions/oracle.ide.jar
 %%DATADIR%%/ide/extensions/oracle.ide.log.jar
 %%DATADIR%%/ide/extensions/oracle.ide.navigator.jar
+%%DATADIR%%/ide/extensions/oracle.ide.peek.jar
 %%DATADIR%%/ide/extensions/oracle.ide.replace.jar
 %%DATADIR%%/ide/extensions/oracle.ide.runner.jar
+%%DATADIR%%/ide/extensions/oracle.ide.searchbar.jar
+%%DATADIR%%/ide/extensions/oracle.ide.vhv.jar
 %%DATADIR%%/ide/extensions/oracle.ide.webbrowser.jar
 %%DATADIR%%/ide/extensions/oracle.ide.webupdate.jar
 %%DATADIR%%/ide/extensions/oracle.ideimpl.apple.jar
+%%DATADIR%%/ide/lib/annotations.jar
 %%DATADIR%%/ide/lib/audit-boot.jar
 %%DATADIR%%/ide/lib/dafjava.jar
-%%DATADIR%%/ide/lib/dafrt.jar
+%%DATADIR%%/ide/lib/dbapi-impl.jar
 %%DATADIR%%/ide/lib/dbapi.jar
 %%DATADIR%%/ide/lib/dbtransfer.jar
+%%DATADIR%%/ide/lib/deploy-rt-boot.jar
 %%DATADIR%%/ide/lib/expression-builder.jar
+%%DATADIR%%/ide/lib/google-collect-snapshot-20071022.jar
 %%DATADIR%%/ide/lib/ide-boot.jar
-%%DATADIR%%/ide/lib/ide.jar
 %%DATADIR%%/ide/lib/ideimpl.jar
-%%DATADIR%%/ide/lib/idenative.dll
 %%DATADIR%%/ide/lib/idert.jar
 %%DATADIR%%/ide/lib/indexing-migrator-boot.jar
 %%DATADIR%%/ide/lib/indexing-rt-boot.jar
@@ -45,37 +58,53 @@ bin/sqldeveloper
 %%DATADIR%%/ide/lib/javax-ide.jar
 %%DATADIR%%/ide/lib/oicons.jar
 %%DATADIR%%/ide/lib/oj-compiler-boot.jar
-%%DATADIR%%/ide/lib/patches/idert-patch.jar
-%%DATADIR%%/ide/lib/resourcebundle.jar
+%%DATADIR%%/ide/lib/oj-formatter-boot.jar
 %%DATADIR%%/ide/lib/uic.jar
 %%DATADIR%%/ide/processor-plugins/oracle.jdbc-driver-locator.jar
 %%DATADIR%%/ide/src/javax-ide-src.zip
+%%DATADIR%%/ide/themes/creating_themes.html
+%%DATADIR%%/ide/themes/fusionblue.jar
+%%DATADIR%%/ide/themes/sizingmargins.png
+%%DATADIR%%/j2ee/home/lib/activation.jar
+%%DATADIR%%/j2ee/home/lib/el-ri.jar
 %%DATADIR%%/j2ee/home/lib/pcl.jar
-%%DATADIR%%/jdbc/lib/ojdbc14.jar
-%%DATADIR%%/jdbc/lib/ojdbc14dms.jar
-%%DATADIR%%/jdev/bin/ide.boot
-%%DATADIR%%/jdev/bin/ide.conf
-%%DATADIR%%/jdev/bin/jdk.conf
+%%DATADIR%%/j2ee/home/lib/servlet.jar
+%%DATADIR%%/jdbc/lib/classes15.jar
+%%DATADIR%%/jdbc/lib/ojdbc5.jar
 %%DATADIR%%/jdev/bin/version.properties
 %%DATADIR%%/jdev/doc/extension/extension.xsd
-%%DATADIR%%/jdev/extensions/oracle.ide.audit.jar
 %%DATADIR%%/jdev/extensions/oracle.ide.db.explorer.jar
 %%DATADIR%%/jdev/extensions/oracle.ide.feedback.jar
-%%DATADIR%%/jdev/extensions/oracle.ide.xmlef.jar
 %%DATADIR%%/jdev/extensions/oracle.javacore.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.cvs.jar
 %%DATADIR%%/jdev/extensions/oracle.jdeveloper.db.connection.jar
-%%DATADIR%%/jdev/extensions/oracle.jdeveloper.db.sqlplus.jar
-%%DATADIR%%/jdev/extensions/oracle.onlinedb.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.db.debug.probe.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.history.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/jna.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/svnClientAdapter-src.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/svnClientAdapter.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/svnjavahl.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/svnkit.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/svnkitsrc.zip
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/trilead.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.vcs.jar
+%%DATADIR%%/jdev/lib/javacore.jar
 %%DATADIR%%/jdev/lib/jdev-rt.jar
 %%DATADIR%%/jdev/lib/jdev.jar
 %%DATADIR%%/jdev/lib/jdkver.jar
 %%DATADIR%%/jdev/lib/jprof.jar
+%%DATADIR%%/jdev/lib/jsch.jar
+%%DATADIR%%/jdev/lib/ocvs.jar
 %%DATADIR%%/jdev/lib/ojc.jar
+%%DATADIR%%/jdev/lib/xml-compare.jar
 %%DATADIR%%/jdev/lib/xmleditor.jar
-%%DATADIR%%/jlib/help4.jar
+%%DATADIR%%/jlib/dbui4.jar
+%%DATADIR%%/jlib/help-share.jar
 %%DATADIR%%/jlib/inspect4.jar
 %%DATADIR%%/jlib/jdev-cm.jar
 %%DATADIR%%/jlib/jewt4.jar
+%%DATADIR%%/jlib/ohj.jar
 %%DATADIR%%/jlib/ojmisc.jar
 %%DATADIR%%/jlib/oracle_ice.jar
 %%DATADIR%%/jlib/orai18n-collation.jar
@@ -87,11 +116,14 @@ bin/sqldeveloper
 %%DATADIR%%/jlib/share.jar
 %%DATADIR%%/jlib/xmlef.jar
 %%DATADIR%%/lib/classgen.jar
+%%DATADIR%%/lib/java/api/jaxb-api.jar
+%%DATADIR%%/lib/java/api/jsr173_api.jar
 %%DATADIR%%/lib/java/shared/oracle.javatools/11.1.1.0.0/javamodel-rt.jar
 %%DATADIR%%/lib/java/shared/oracle.javatools/11.1.1.0.0/javatools-nodeps.jar
-%%DATADIR%%/lib/mfcdao.dll
+%%DATADIR%%/lib/java/shared/sun.jaxb/2.0/jaxb-impl.jar
+%%DATADIR%%/lib/java/shared/sun.jaxb/2.0/jaxb-xjc.jar
+%%DATADIR%%/lib/java/shared/sun.jaxb/2.0/jaxb1-impl.jar
 %%DATADIR%%/lib/oraclexsql.jar
-%%DATADIR%%/lib/registry.dll
 %%DATADIR%%/lib/xml.jar
 %%DATADIR%%/lib/xmlcomp.jar
 %%DATADIR%%/lib/xmlcomp2.jar
@@ -101,6 +133,7 @@ bin/sqldeveloper
 %%DATADIR%%/lib/xsqlserializers.jar
 %%DATADIR%%/lib/xsu12.jar
 %%DATADIR%%/rdbms/jlib/ojdi.jar
+%%DATADIR%%/rdbms/jlib/xdb.jar
 %%DATADIR%%/sqldeveloper/bin/jdk.conf
 %%DATADIR%%/sqldeveloper/bin/logging-debug.conf
 %%DATADIR%%/sqldeveloper/bin/logging.conf
@@ -114,38 +147,41 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper.conf
 %%DATADIR%%/sqldeveloper/bin/version.properties
 %%DATADIR%%/sqldeveloper/doc/sqldeveloper_help.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dbdev.oviewer.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dbdev.snippet.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.migration.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.migration.msaccess.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.migration.mysql5.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.migration.sqlserver2005.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.sqlformatter.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.sqlworksheet.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.thirdparty.access.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.thirdparty.mysql.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dbtools.thirdparty.sqlserver.jar
+%%DATADIR%%/sqldeveloper/doc/sqldevtips.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.extras.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.filenavigator.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.msaccess.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.mysql5.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.sqlserver2005.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.sybase12.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.sybase15.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.core.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.gui.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.msaccess.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.mysql.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.sqlserver.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.sybase.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.oviewer.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.report.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.searchbar.jar
-%%DATADIR%%/sqldeveloper/lib/TimingFramework.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.snippet.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.sqlworksheet.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.thirdparty.access.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.thirdparty.mysql.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.thirdparty.sqlserver.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.thirdparty.sybase.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.timesten.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.tuning.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.xmlschema.jar
+%%DATADIR%%/sqldeveloper/lib/SQLinForm.jar
 %%DATADIR%%/sqldeveloper/lib/antlr.jar
-%%DATADIR%%/sqldeveloper/lib/bigraphbean-nls.zip
-%%DATADIR%%/sqldeveloper/lib/bigraphbean.jar
-%%DATADIR%%/sqldeveloper/lib/dbui4.jar
-%%DATADIR%%/sqldeveloper/lib/jdevnative.dll
 %%DATADIR%%/sqldeveloper/lib/jle2.jar
 %%DATADIR%%/sqldeveloper/lib/jline-0.9.9.jar
-%%DATADIR%%/sqldeveloper/lib/oracle.dbtools.logging.jar
+%%DATADIR%%/sqldeveloper/lib/oracle.sqldeveloper.utils.jar
 %%DATADIR%%/sqldeveloper/lib/poi-2.5.1-final-20040804.jar
 %%DATADIR%%/sqldeveloper/lib/stringtemplate.jar
-%%DATADIR%%/sqldeveloper/lib/xdb.jar
 %%DATADIR%%/sqldeveloper/searchengines/SQLDevForum.png
 %%DATADIR%%/sqldeveloper/searchengines/SQLDevForum.src
 %%DATADIR%%/sqldeveloper/searchengines/asktom.png
@@ -158,10 +194,15 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/searchengines/oradocs.src
 %%DATADIR%%/sqldeveloper/searchengines/oradocs102vbook.png
 %%DATADIR%%/sqldeveloper/searchengines/oradocs102vbook.src
+%%DATADIR%%/sqldeveloper/searchengines/oradocs11vbook.png
+%%DATADIR%%/sqldeveloper/searchengines/oradocs11vbook.src
 %%DATADIR%%/sqldeveloper/searchengines/oradocs92vbook.png
 %%DATADIR%%/sqldeveloper/searchengines/oradocs92vbook.src
 %%DATADIR%%/sqldeveloper/searchengines/searchoraclecom.png
 %%DATADIR%%/sqldeveloper/searchengines/searchoraclecom.src
+%%DATADIR%%/timingframework/TimingFramework.jar
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+@dirrm %%DATADIR%%/timingframework
 @dirrm %%DATADIR%%/sqldeveloper/searchengines
 @dirrm %%DATADIR%%/sqldeveloper/lib
 @dirrm %%DATADIR%%/sqldeveloper/extensions
@@ -170,13 +211,17 @@ bin/sqldeveloper
 @dirrm %%DATADIR%%/sqldeveloper
 @dirrm %%DATADIR%%/rdbms/jlib
 @dirrm %%DATADIR%%/rdbms
+@dirrm %%DATADIR%%/lib/java/shared/sun.jaxb/2.0
+@dirrm %%DATADIR%%/lib/java/shared/sun.jaxb
 @dirrm %%DATADIR%%/lib/java/shared/oracle.javatools/11.1.1.0.0
 @dirrm %%DATADIR%%/lib/java/shared/oracle.javatools
 @dirrm %%DATADIR%%/lib/java/shared
+@dirrm %%DATADIR%%/lib/java/api
 @dirrm %%DATADIR%%/lib/java
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/jlib
 @dirrm %%DATADIR%%/jdev/lib
+@dirrm %%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion
 @dirrm %%DATADIR%%/jdev/extensions
 @dirrm %%DATADIR%%/jdev/doc/extension
 @dirrm %%DATADIR%%/jdev/doc
@@ -187,13 +232,18 @@ bin/sqldeveloper
 @dirrm %%DATADIR%%/j2ee/home/lib
 @dirrm %%DATADIR%%/j2ee/home
 @dirrm %%DATADIR%%/j2ee
+@dirrm %%DATADIR%%/ide/themes
 @dirrm %%DATADIR%%/ide/src
 @dirrm %%DATADIR%%/ide/processor-plugins
-@dirrm %%DATADIR%%/ide/lib/patches
 @dirrm %%DATADIR%%/ide/lib
 @dirrm %%DATADIR%%/ide/extensions
 @dirrm %%DATADIR%%/ide/doc/extension
 @dirrm %%DATADIR%%/ide/doc
 @dirrm %%DATADIR%%/ide/bin
 @dirrm %%DATADIR%%/ide
+@dirrm %%DATADIR%%/dvt/lib
+@dirrm %%DATADIR%%/dvt
+@dirrm %%DATADIR%%/BC4J/lib
+@dirrm %%DATADIR%%/BC4J
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

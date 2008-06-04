@@ -1,27 +1,27 @@
 # New ports collection makefile for:	sqldeveloper
-# Date created:	       			16 January 2008
-# Whom:		       			jjuanino@gmail.com
+# Date created:				16 January 2008
+# Whom:					jjuanino@gmail.com
 #
 # $FreeBSD$
 #
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	1.2.1.3213
+PORTVERSION=	1.5.0.53.38
+DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
-PKGNAMESUFFIX=	-no-jre
-DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
+DISTNAME=	${PORTNAME}-5338${DISTVERSIONSUFFIX}
 DIST_SUBDIR=	oracle
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Graphical tool for database development
 
-RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_ZIP=	yes
 USE_JAVA=	yes
 
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.5
 
 NO_BUILD=	yes
 
@@ -31,7 +31,13 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
+OPTIONS=	MYSQL "Enable connection to MySQL databases" off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_MYSQL)
+RUN_DEPENDS+=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
+.endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
 ECHO_MSG=		${PRINTF} %b
@@ -39,7 +45,7 @@ ECHO_MSG=		${PRINTF} %b
 IGNORE+=		\n\n-=< MARKED AS IGNORED: >=-\n
 IGNORE+=		\n
 IGNORE+=		Due to Oracle license restrictions, you must fetch the source \n
-IGNORE+=		distribution manually.  Please access  \n
+IGNORE+=		distribution manually.	Please access  \n
 IGNORE+=		http://www.oracle.com/technology/software/products/sql/index.html \n
 IGNORE+=		with a web browser and follow the link for the \n
 IGNORE+=		\"${DISTFILES}\".  \n
@@ -53,9 +59,10 @@ IGNORE+=		and then restart this installation\n\n
 
 do-install:
 	@${REINPLACE_CMD} -e 's|%DATADIR%|${DATADIR}|' \
+			  -e 's|%JAVA_HOME%|${JAVA_HOME}|' \
 	    ${WRKSRC}/sqldeveloper.sh \
 	    ${WRKSRC}/sqlcli
-	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' \
+	@${REINPLACE_CMD} -e 's|/bin/bash|/usr/local/bin/bash|' \
 	    ${WRKSRC}/sqldeveloper.sh \
 	    ${WRKSRC}/sqlcli \
 	    ${WRKSRC}/ide/bin/launcher.sh \
@@ -66,14 +73,18 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/sqlcli ${PREFIX}/bin/sqlcli
 	@${ECHO_MSG} " [ DONE ]"
 
-.for d in ide j2ee jdbc jdev jlib lib rdbms sqldeveloper
+.for d in BC4J dvt ide j2ee jdbc jdev jlib lib rdbms sqldeveloper timingframework
 	@${ECHO_MSG} -n ">> Installing data directory '${d}'..."
-	@cd ${WRKSRC} && ${FIND} ${d} -type d -exec ${MKDIR} ${DATADIR}/\{} \;
+	@cd ${WRKSRC} && ${FIND} ${d} -type d \
+		-not -path "jdev/extensions/oracle.jdeveloper.subversion/licenses" \
+		-exec ${MKDIR} ${DATADIR}/\{} \;
 	@cd ${WRKSRC} && ${FIND} ${d} -type f \
-	    	-not -name "*.orig" \
-	    	-not -name "*.exe" \
-	    	-not -name "*.bat" \
-	    	-not -name "*.bak" \
+		-not -name "*.orig" \
+		-not -name "*.exe" \
+		-not -name "*.bat" \
+		-not -name "*.bak" \
+		-not -name "*.dll" \
+		-not -path "jdev/extensions/oracle.jdeveloper.subversion/licenses/*" \
 		-exec ${INSTALL_DATA} \{} ${DATADIR}/\{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
@@ -81,6 +92,13 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing icon ..."
 	@${INSTALL_DATA} ${WRKSRC}/icon.png ${DATADIR}/icon.png
 	@${ECHO_MSG} " [ DONE ]"
+
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} -n ">> Installing port docs ..."
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/readme.txt ${DOCSDIR}
+	@${ECHO_MSG} " [ DONE ]"
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
