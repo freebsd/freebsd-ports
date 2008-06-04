@@ -7,7 +7,7 @@ non-computer experts.
 The storage format is the well known TAR format, whereby the data is still 
 stored in compressed format (bzip2 or gzip).
 
-It also includes a german, french, italian, slovak and russian translation for 
-the user interface and an english, french and german handbook.
+It also includes a German, French, Italian, Slovak and Russian translation for 
+the user interface and an English, French and German handbook.
 
 WWW:	http://www.kde-apps.org/content/show.php?content=44998
