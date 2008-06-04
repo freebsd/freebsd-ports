@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dbview
-PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTVERSION=	1.0.4
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/database/proprietary
@@ -20,8 +19,11 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=		dbview.1
 DOCS=		README dBASE
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/db_dump.c
+post-patch:
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|; \
+	    s|<endian.h>|<sys/endian.h>|; \
+	    /byteswap/d' \
+	    ${WRKSRC}/db_dump.c
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dbview ${PREFIX}/bin
