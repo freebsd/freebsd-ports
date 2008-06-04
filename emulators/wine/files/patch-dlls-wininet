@@ -1,0 +1,80 @@
+From: Alexandre Julliard <julliard@winehq.org>
+Date: Mon, 2 Jun 2008 10:14:37 +0000 (+0200)
+Subject: wininet: Include openssl/ssl.h before Windows headers.
+X-Git-Url: http://source.winehq.org/git/wine.git/?a=commitdiff_plain;h=7c616799894faa48ee3277bc276a39bed55780e0
+
+wininet: Include openssl/ssl.h before Windows headers.
+---
+
+diff --git a/dlls/wininet/internet.h b/dlls/wininet/internet.h
+index 2645686..43b8d8e 100644
+--- dlls/wininet/internet.h
++++ dlls/wininet/internet.h
+@@ -38,18 +38,6 @@
+ # include <sys/types.h>
+ # include <netinet/in.h>
+ #endif
+-#ifdef HAVE_OPENSSL_SSL_H
+-#define DSA __ssl_DSA  /* avoid conflict with commctrl.h */
+-#undef FAR
+-/* avoid conflict with wincrypt.h */
+-#undef PKCS7_SIGNER_INFO
+-#undef X509_NAME
+-#undef X509_CERT_PAIR
+-# include <openssl/ssl.h>
+-#undef FAR
+-#define FAR do_not_use_this_in_wine
+-#undef DSA
+-#endif
+ #ifdef HAVE_SYS_SOCKET_H
+ # include <sys/socket.h>
+ #endif
+@@ -69,12 +57,10 @@ typedef struct
+ {
+     BOOL useSSL;
+     int socketFD;
+-#ifdef HAVE_OPENSSL_SSL_H
+-    SSL *ssl_s;
++    void *ssl_s;
+     char *peek_msg;
+     char *peek_msg_mem;
+     size_t peek_len;
+-#endif
+ } WININET_NETCONNECTION;
+ 
+ static inline LPWSTR WININET_strdupW( LPCWSTR str )
+diff --git a/dlls/wininet/netconnection.c b/dlls/wininet/netconnection.c
+index 9cd7917..f55fbf2 100644
+--- dlls/wininet/netconnection.c
++++ dlls/wininet/netconnection.c
+@@ -23,6 +23,7 @@
+ #include "config.h"
+ #include "wine/port.h"
+ 
++#include <sys/types.h>
+ #ifdef HAVE_POLL_H
+ #include <poll.h>
+ #endif
+@@ -42,6 +43,22 @@
+ #ifdef HAVE_SYS_IOCTL_H
+ # include <sys/ioctl.h>
+ #endif
++#include <time.h>
++#ifdef HAVE_NETDB_H
++# include <netdb.h>
++#endif
++#ifdef HAVE_NETINET_IN_H
++# include <netinet/in.h>
++#endif
++#ifdef HAVE_OPENSSL_SSL_H
++# include <openssl/ssl.h>
++#undef FAR
++#undef DSA
++#endif
++#ifdef HAVE_SYS_SOCKET_H
++# include <sys/socket.h>
++#endif
++
+ #include <stdarg.h>
+ #include <stdlib.h>
+ #include <string.h>
