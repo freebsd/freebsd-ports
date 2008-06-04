@@ -207,6 +207,7 @@ share/locale/sl_SI/LC_MESSAGES/filezilla.mo
 share/locale/sv/LC_MESSAGES/filezilla.mo
 share/locale/th_TH/LC_MESSAGES/filezilla.mo
 share/locale/tr/LC_MESSAGES/filezilla.mo
+share/locale/uk_UA/LC_MESSAGES/filezilla.mo
 share/locale/vi_VN/LC_MESSAGES/filezilla.mo
 share/locale/zh_CN/LC_MESSAGES/filezilla.mo
 share/locale/zh_TW/LC_MESSAGES/filezilla.mo
@@ -231,8 +232,8 @@ share/pixmaps/filezilla.png
 @dirrmtry share/locale/vi_VN
 @dirrmtry share/locale/uz/LC_MESSAGES
 @dirrmtry share/locale/uz
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
+@dirrmtry share/locale/uk_UA/LC_MESSAGES
+@dirrmtry share/locale/uk_UA
 @dirrmtry share/locale/tk/LC_MESSAGES
 @dirrmtry share/locale/tk
 @dirrmtry share/locale/th_TH/LC_MESSAGES
