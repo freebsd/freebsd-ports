@@ -1,0 +1,11 @@
+--- nessus/Makefile.orig	2008-04-27 10:55:40.000000000 +0900
++++ nessus/Makefile	2008-04-27 10:56:19.000000000 +0900
+@@ -12,7 +12,7 @@
+ NESSUSCLIENT=OpenVAS-Client
+ 
+ # Add some specific Windows compile options for Cygwin
+-SYSTEM:=$(shell uname -o)
++SYSTEM:=$(shell uname -s)
+ ifeq ($(SYSTEM), Cygwin)
+ CFLAGS+=-mms-bitfields
+ LDFLAGS+=-mwindows
