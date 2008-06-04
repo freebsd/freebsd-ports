@@ -18,7 +18,8 @@ USE_GNOME=	gnomehack gnometarget gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
 CONFIGURE_ARGS=	--disable-alsa
 INSTALLS_ICONS=	yes
 
