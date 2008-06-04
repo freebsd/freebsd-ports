@@ -4,8 +4,8 @@
 %%SITE_PERL%%/PDF/sample.pl
 %%SITE_PERL%%/PDF/sample-cgi.pl
 %%SITE_PERL%%/PDF/Create.pm
-%%SITE_PERL%%/PDF/Image/GIFImage.pm
-%%SITE_PERL%%/PDF/Image/JPEGImage.pm
+%%SITE_PERL%%/PDF/Image/GIF.pm
+%%SITE_PERL%%/PDF/Image/JPEG.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/Create
 @dirrm %%SITE_PERL%%/PDF/Create
 @dirrm %%SITE_PERL%%/PDF/Image
