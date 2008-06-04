@@ -1,0 +1,11 @@
+--- openvas-libraries.tmpl.in.orig	2008-04-26 22:46:43.000000000 +0900
++++ openvas-libraries.tmpl.in	2008-04-26 22:47:03.000000000 +0900
+@@ -45,7 +45,7 @@
+ 
+ libsdir=${rootdir}/libs
+ top_builddir = @PWDD@
+-include= -I. -I$(rootdir)/include
++include= -I. -I$(rootdir)/include -I$(includedir)
+ lib_dir=@libdir@
+ USE_CIPHER=@cipher_cflags@
+ INSTALL=@INSTALL@

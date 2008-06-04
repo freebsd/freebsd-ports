@@ -1,0 +1,36 @@
+@comment $FreeBSD$
+bin/libopenvas-config
+lib/libopenvas.so.1
+lib/libopenvas.so
+lib/libopenvas.la
+lib/libopenvas.a
+lib/libopenvas_hg.so.1
+lib/libopenvas_hg.so
+lib/libopenvas_hg.la
+lib/libopenvas_hg.a
+
+include/openvas/hosts_gatherer.h
+include/openvas/hg_utils.h
+include/openvas/libopenvas.h
+include/openvas/libvers.h
+include/openvas/getopt.h
+include/openvas/arglists.h
+include/openvas/bpf_share.h
+include/openvas/ftp_funcs.h
+include/openvas/harglists.h
+include/openvas/kb.h
+include/openvas/network.h
+include/openvas/pcap_openvas.h
+include/openvas/plugutils.h
+include/openvas/popen.h
+include/openvas/proctitle.h
+include/openvas/rand.h
+include/openvas/resolve.h
+include/openvas/scanners_utils.h
+include/openvas/services1.h
+include/openvas/share_fd.h
+include/openvas/store.h
+include/openvas/system.h
+include/openvas/www_funcs.h
+
+@dirrm include/openvas
