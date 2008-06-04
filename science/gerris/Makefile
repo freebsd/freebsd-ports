@@ -20,7 +20,7 @@ PATCHFILES=		gerris-0.6-patch-1.gz:sf,odunkl \
 			gerris-0.6-patch-2.gz:odunkl
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=		odunkl@gmx.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A scientific CFD simulator
 
 LIB_DEPENDS=		gts.5:${PORTSDIR}/graphics/gts
