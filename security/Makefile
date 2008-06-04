@@ -314,6 +314,7 @@
     SUBDIR += openssl-beta
     SUBDIR += openssl-stable
     SUBDIR += openvas-client
+    SUBDIR += openvas-libnasl
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
     SUBDIR += openvpn-auth-ldap
