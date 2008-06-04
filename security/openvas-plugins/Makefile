@@ -1,0 +1,37 @@
+# New ports collection makefile for:	openvas-plugins
+# Date created:		2008-04-27
+# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	openvas-plugins
+PORTVERSION=	1.0.0
+CATEGORIES=	security
+MASTER_SITES=	http://wald.intevation.org/frs/download.php/412/
+
+MAINTAINER=	cherry@trombik.org
+COMMENT=	Plugins for OpenVAS
+
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
+		openvasd:${PORTSDIR}/security/openvas-server
+LIB_DEPENDS=	openvas.1:${PORTSDIR}/security/openvas-libraries \
+		openvasnasl.1:${PORTSDIR}/security/openvas-libnasl \
+		gnutls.26:${PORTSDIR}/security/gnutls
+RUN_DEPENDS=	openvasd:${PORTSDIR}/security/openvas-server
+
+GNU_CONFIGURE=	yes
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+MAN1=		openvas-build.1
+
+.include "${.CURDIR}/../../security/openvas-server/Makefile.common"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|' \
+		${WRKSRC}/plugins/3com_hub/Makefile
+
+.include <bsd.port.mk>
