@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.7
 CATEGORIES=	databases
-MASTER_SITES=	SF
+MASTER_SITES=	http://tokyocabinet.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern implementation of DBM
@@ -25,8 +25,7 @@ MAN3=		tcadb.3 tcbdb.3 tchdb.3 tcutil.3 tokyocabinet.3
 DOCS=		COPYING ChangeLog README THANKS
 BINS=		tcamgr tcatest tcbmgr tcbmttest tcbtest tchmgr tchmttest \
 		tchtest tcucodec tcumttest tcutest
-LIBS=		libtokyocabinet.a libtokyocabinet.so libtokyocabinet.so.3 \
-		libtokyocabinet.so.3.1.0
+LIBS=		libtokyocabinet.a
 INCLUDES=	tcbdb.h tchdb.h tcutil.h
 
 OPTIONS=	DEBUG "Debugging support" off \
@@ -37,8 +36,7 @@ OPTIONS=	DEBUG "Debugging support" off \
 		SWAB "Swapping byte-orders build" off \
 		UYIELD "Detecting race conditions" off \
 		ZLIB "Disable ZLIB compression" off \
-		PTHREAD "Disable POSIX thread support" off \
-		SHARED "Avoid to build shared libraries" off
+		PTHREAD "Disable POSIX thread support" off
 
 .include <bsd.port.pre.mk>
 
@@ -86,8 +84,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${EXAMPLESDIR}/)
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${DOCSDIR}/)
 .endif
 .for i in ${LIBS}
 	@${CP} ${WRKSRC}/${i} ${PREFIX}/lib/
