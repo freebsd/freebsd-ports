@@ -45,8 +45,7 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS NEWS README
+.for file in NEWS
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
