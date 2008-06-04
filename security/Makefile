@@ -316,6 +316,7 @@
     SUBDIR += openvas-client
     SUBDIR += openvas-libnasl
     SUBDIR += openvas-libraries
+    SUBDIR += openvas-plugins
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
     SUBDIR += openvpn-auth-ldap
