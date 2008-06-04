@@ -18,6 +18,8 @@ COMMENT=	True Type Font to Postscript Type 1 Converter with chinese maps
 
 RUN_DEPENDS=	ttf2pt1:${PORTSDIR}/print/ttf2pt1
 
+MAKE_ARGS=	INSTDIR="${PREFIX}"
+
 NO_BUILD=	yes
 
 .include <bsd.port.mk>
