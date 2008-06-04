@@ -8953,6 +8953,7 @@ openuniverse	ports/astro/openuniverse
 openupsd	ports/sysutils/openupsd
 openvanilla-framework	ports/textproc/openvanilla-framework
 openvanilla-modules	ports/textproc/openvanilla-modules
+openvas-client	ports/security/openvas-client
 openverse	ports/net/openverse
 openvmps	ports/net-mgmt/openvmps
 openvpn		ports/security/openvpn
