@@ -32,10 +32,7 @@ USE_RC_SUBR=	dracd.sh
 MAN3=		dracauth.3
 MAN1=		rpc.dracd.1
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500018
 MAKE_ARGS+=	-DWITH_TI_RPC
-.endif
 
 pre-everything::
 	@${ECHO_MSG} "============================================================="
