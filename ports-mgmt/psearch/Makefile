@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psearch
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.maxlor.com/files/
 
