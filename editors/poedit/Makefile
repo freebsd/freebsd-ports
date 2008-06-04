@@ -38,10 +38,6 @@ LDFLAGS=	-L${BDB_LIB_DIR} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000 && ${ARCH} == i386
-BROKEN=	Does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's/for version in .*;/for version in ${BDB_VER};/ ; \
