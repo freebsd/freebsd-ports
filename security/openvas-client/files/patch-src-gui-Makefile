@@ -1,0 +1,11 @@
+--- src/gui/Makefile.orig	2008-04-27 10:56:55.000000000 +0900
++++ src/gui/Makefile	2008-04-27 10:57:17.000000000 +0900
+@@ -42,7 +42,7 @@
+ CFLAGS+=-Wall
+ 
+ # Add some specific Windows compile options for Cygwin
+-SYSTEM:=$(shell uname -o)
++SYSTEM:=$(shell uname -s)
+ ifeq ($(SYSTEM), Cygwin)
+ CFLAGS+=-mms-bitfields
+ LDFLAGS+=-mwindows
