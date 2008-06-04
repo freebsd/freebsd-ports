@@ -1,0 +1,33 @@
+# New ports collection makefile for:	openvas-libnasl
+# Date created:		2008-04-27
+# Whom:			Tomoyuki Sakurai <cherry@trombik.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	openvas-libnasl
+PORTVERSION=	1.0.0
+CATEGORIES=	security
+MASTER_SITES=	http://wald.intevation.org/frs/download.php/406/
+
+MAINTAINER=	cherry@trombik.org
+COMMENT=	NASL libraries for OpenVAS
+
+LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
+		gnutls.26:${PORTSDIR}/security/gnutls \
+		gpg-error.0:${PORTSDIR}/security/libgpg-error \
+		gpgme.17:${PORTSDIR}/security/gpgme \
+		openvas.1:${PORTSDIR}/security/openvas-libraries \
+		openvas_hg.1:${PORTSDIR}/security/openvas-libraries \
+		tasn1.3:${PORTSDIR}/security/libtasn1
+
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USE_ICONV=	yes
+USE_BISON=	build
+
+MAN1=		openvas-libnasl-config.1 openvas-nasl.1
+
+.include "${.CURDIR}/../../security/openvas-server/Makefile.common"
+
+.include <bsd.port.mk>
