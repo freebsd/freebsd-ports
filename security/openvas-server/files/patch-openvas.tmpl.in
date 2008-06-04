@@ -1,0 +1,11 @@
+--- openvas.tmpl.in.orig	2008-04-27 00:54:18.000000000 +0900
++++ openvas.tmpl.in	2008-04-27 00:54:45.000000000 +0900
+@@ -36,7 +36,7 @@
+ srcdir=${rootdir}/src
+ libsdir=${rootdir}/libs
+ top_builddir = @PWDD@
+-include= -I. -I$(rootdir)/include  
++include= -I. -I$(rootdir)/include -I$(includedir)
+ INSTALL=@INSTALL@
+ INSTALL_DIR=@INSTALL_DIR@
+ installuser=@installuser@
