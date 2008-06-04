@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd March 19, 2008
+.Dd May 4, 2008
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -46,17 +46,10 @@ Common Flags:
 .Ar Multiple full names/paths from either of the above
 .Nm
 .Op Common Flags
-.Ar glob pattern from /var/db/pkg
+.Ar glob pattern of directories from /var/db/pkg
 .Pp
-PLEASE NOTE: Even if there is only one match, and even if you use
-.Fl u ,
-you will still be prompted to confirm what port you want to update.
-This is a feature.
-Thus if you are specifying multiple ports on a command line
-you should specify the full name from
-.Pa /var/db/pkg
-or
-.Pa [/usr/ports/]foo/bar .
+PLEASE NOTE: Glob patterns now update every port that matches.
+This is a change from pre-version-2.3 behavior.
 .Pp
 .Nm
 .Op Common Flags
@@ -121,7 +114,9 @@ option exists to accomplish this.
 .Pp
 By default
 .Nm
-will first recurse through the port to update
+updates the port you specify on the command line
+whether there is a new version for it or not.
+It will first recurse through the port
 and all of its dependencies (if any) to handle
 any port OPTIONS via the 'make config' interface.
 You will be presented with an OPTIONS dialog if
@@ -245,6 +240,8 @@ prevents the recursive 'make config' (overrides
 .Fl -force-config )
 .It Fl H
 hide details of the port build and install in a log file
+.It Fl K
+prevents 'make clean' from being run after building
 .It Fl b
 create and keep a backup package of an installed port
 .It Fl g
@@ -373,7 +370,7 @@ are set to the full package name string and version
 of the existing package being replaced, if any.
 .Sh FILES
 .Bl -tag -width "1234" -compact
-.It Pa /etc/portmaster.rc
+.It Pa /usr/local/etc/portmaster.rc
 .It Pa $HOME/.portmasterrc
 Optional system and user configuration files.
 The variables set in the script's getopts routine
@@ -382,6 +379,20 @@ These files will be read by the parent
 .Nm
 process, and all variables
 in them will be exported.
+Take a look at the getopts routine in the script to see
+what values you may be interested in setting.
+.Pp
+PLEASE NOTE: In versions before 2.3
+.Pa /etc/portmaster.rc
+was recommended.
+However placing this file in LOCALBASE is the correct
+thing to do.
+In future versions of
+.Nm
+support for
+.Pa /etc/portmaster.rc
+will be removed.
+.Pp
 .It Pa /var/db/pkg/*/+IGNOREME
 If this file exists, several things will happen:
 .Bl -tag -width F1
@@ -538,9 +549,9 @@ to do a complete reinstallation of all your ports:
 .Xr make 1 ,
 .Xr pkg_delete 1 ,
 .Xr su 1 ,
-.Xr sudo 1 ,
 .Xr ports 7 ,
-.Xr ldconfig 8
+.Xr ldconfig 8 ,
+.Xr sudo 8
 .Sh AUTHORS
 This
 manual page was written by
