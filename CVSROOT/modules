@@ -8954,6 +8954,7 @@ openupsd	ports/sysutils/openupsd
 openvanilla-framework	ports/textproc/openvanilla-framework
 openvanilla-modules	ports/textproc/openvanilla-modules
 openvas-client	ports/security/openvas-client
+openvas-libnasl	ports/security/openvas-libnasl
 openverse	ports/net/openverse
 openvmps	ports/net-mgmt/openvmps
 openvpn		ports/security/openvpn
