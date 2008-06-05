@@ -60,7 +60,6 @@
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/API.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.html
-%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000049.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000050.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000051.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000052.html
@@ -81,9 +80,9 @@
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000067.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000068.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/DL/Driver.src/M000070.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.html
-%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000032.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000033.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000034.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000035.html
@@ -100,9 +99,10 @@
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000046.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000047.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Driver/Native/Driver.src/M000049.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/EmptyException.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Error.html
-%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Error.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Error.src/M000032.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Exception.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Exception.src/M000131.html
 %%GEM_DOC_DIR%%/rdoc/classes/SQLite3/Exception.src/M000132.html
@@ -198,7 +198,7 @@
 %%GEM_DOC_DIR%%/rdoc/classes/String.html
 %%GEM_DOC_DIR%%/rdoc/classes/String.src/M000001.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
-%%GEM_DOC_DIR%%/rdoc/files/README.html
+%%GEM_DOC_DIR%%/rdoc/files/README_rdoc.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/constants_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/database_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/sqlite3/driver/dl/api_rb.html
@@ -217,7 +217,7 @@
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
-%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/README.rdoc
 %%GEM_LIB_DIR%%/doc/faq/faq.html
 %%GEM_LIB_DIR%%/doc/faq/faq.rb
 %%GEM_LIB_DIR%%/doc/faq/faq.yml
