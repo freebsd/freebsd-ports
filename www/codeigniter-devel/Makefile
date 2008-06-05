@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://codeigniter.com/download_files/
 DISTNAME=	CodeIgniter_${PORTVERSION}
@@ -27,7 +27,8 @@ CI_CONF_DIR=	${CI_SYS_DIR}/application/config
 # These are all user-configurable files that we'll install
 # a .sample copy for each.
 CI_CONF_FILES=	index.php ${CI_CONF_DIR}/autoload.php \
-		${CI_CONF_DIR}/config.php ${CI_CONF_DIR}/database.php \
+		${CI_CONF_DIR}/config.php ${CI_CONF_DIR}/constants.php \
+		${CI_CONF_DIR}/database.php \
 		${CI_CONF_DIR}/hooks.php ${CI_CONF_DIR}/mimes.php \
 		${CI_CONF_DIR}/routes.php ${CI_CONF_DIR}/smileys.php \
 		${CI_CONF_DIR}/user_agents.php
