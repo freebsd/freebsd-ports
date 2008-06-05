@@ -3,5 +3,8 @@
 You have just installed the Dojo Toolkit Shrinksafe, a
 Javascript code compressor.
 
+Type "dojo-shrinksafe -help" to view the available program
+options.
+
 Full documentation with usage examples is found at
 http://dojotoolkit.org/docs/shrinksafe/.
