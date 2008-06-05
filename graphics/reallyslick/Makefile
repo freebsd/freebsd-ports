@@ -18,16 +18,16 @@ COMMENT=	OpenGL screensaver collection
 
 LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
 
-BROKEN=		does not compile
-
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15:env
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include `Magick-config --cflags`
+LDFLAGS+=	-L${LOCALBASE}/lib `Magick-config --libs`
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 MAN1=	biof.1 busyspheres.1 colorfire.1 cyclone.1 euphoria.1 fieldlines.1 flocks.1 \
 	flux.1 helios.1 hufo_smoke.1 hufo_tunnel.1 lattice.1 matrixview.1 \
