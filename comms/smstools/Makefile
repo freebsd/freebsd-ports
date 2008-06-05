@@ -53,7 +53,4 @@ post-install:
 .endif
 	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/scripts/,} ${PREFIX}/bin
 
-#post-install:
-	@${INSTALL_DATA} ${WRKSRC}/examples/smsd.conf.easy ${PREFIX}/etc/smsd.conf
-
 .include <bsd.port.mk>
