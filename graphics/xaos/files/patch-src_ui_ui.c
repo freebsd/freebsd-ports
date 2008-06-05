@@ -1,11 +1,11 @@
---- src/ui/ui.c.orig	Sun Nov 12 22:49:51 2006
-+++ src/ui/ui.c	Wed Jul  4 22:43:49 2007
-@@ -1207,7 +1207,7 @@
-     )
- #endif
+--- ./src/ui/ui.c.orig	2008-05-22 00:23:37.000000000 +0400
++++ ./src/ui/ui.c	2008-06-04 22:36:27.000000000 +0400
+@@ -1243,7 +1243,7 @@
+ #ifdef USE_LOCALEPATH
+     localepath)
  #else
--			  "/usr/share/locale")
-+			  PREFIX "/share/locale")
+-    "/usr/share/locale")
++    PREFIX "/share/locale")
+ #endif
  #ifdef DEBUG
      )
- #endif

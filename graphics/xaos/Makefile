@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xaos
-PORTVERSION=	3.3
-CATEGORIES=	graphics
+PORTVERSION=	3.4
+CATEGORIES=	graphics math
 MASTER_SITES=	SF
 DISTNAME=	XaoS-${PORTVERSION}
 
@@ -16,27 +16,25 @@ COMMENT=	A real-time fractal browser for X11 and ASCII terminals
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_XORG=	x11 xt x11 xau xdmcp xext
-USE_GETTEXT=	yes
+USE_XORG=	x11 xau xdmcp xext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261
 
-OPTIONS=	PTHREAD "Enable experimental SMP support" off
+OPTIONS=	PTHREAD "Enable SMP support (experimental)" off \
+		NLS "Native Language Support" on
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-aa-driver=no --with-dga-driver=no \
 		--with-ggi-driver=no --with-svga-driver=no \
-		--with-included-gettext=yes \
-		--with-x --with-png=yes \
-		--with-mit-shm=yes \
 		--with-sffe=no
 
 MAN6=		xaos.6
 INFO=		xaos
 
 PLIST_SUB+=	XAOSDIR="share/XaoS"
+
 DESKTOP_ENTRIES="XaoS" "Fractal zoomer" "" "xaos" "" false
 
 .include <bsd.port.pre.mk>

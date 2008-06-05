@@ -1,6 +1,6 @@
---- src/include/aconfig.h.in.orig	Wed Jul  4 22:26:52 2007
-+++ src/include/aconfig.h.in	Wed Jul  4 22:26:58 2007
-@@ -55,4 +55,5 @@
+--- ./src/include/aconfig.h.in.orig	2008-05-22 00:23:37.000000000 +0400
++++ ./src/include/aconfig.h.in	2008-06-04 22:29:31.000000000 +0400
+@@ -56,4 +56,5 @@
  #undef SIZEOF_LONG
  #undef HAVE_GETTEXT
  #undef NO_MALLOC_H
