@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pgloader
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1679/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1814/
 
 MAINTAINER=	pea@raveland.org
 COMMENT=	Import CSV data and Large Object to PostgreSQL
