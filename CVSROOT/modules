@@ -6349,6 +6349,7 @@ kphotoalbum	ports/graphics/kphotoalbum
 kpicframer	ports/games/kpicframer
 kpictorial	ports/games/kpictorial
 kplayer		ports/multimedia/kplayer
+kpogre		ports/databases/kpogre
 kpopup		ports/net-im/kpopup
 kports		ports/ports-mgmt/kports
 kprof		ports/devel/kprof
