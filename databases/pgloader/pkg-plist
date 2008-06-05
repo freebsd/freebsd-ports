@@ -10,13 +10,16 @@ lib/%%PYTHON_VERSION%%/site-packages/pgloader/pgloader.py
 lib/%%PYTHON_VERSION%%/site-packages/pgloader/reader.py
 lib/%%PYTHON_VERSION%%/site-packages/pgloader/textreader.py
 lib/%%PYTHON_VERSION%%/site-packages/pgloader/tools.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/fixedreader.py
 lib/%%PYTHON_VERSION%%/site-packages/pgloader/reformat/README
 lib/%%PYTHON_VERSION%%/site-packages/pgloader/reformat/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/pgloader/reformat/mysql.py
+lib/%%PYTHON_VERSION%%/site-packages/pgloader/reformat/pgtime.py
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO.txt
 %%PORTDOCS%%%%DOCSDIR%%/pgloader.1.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel.sections.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/allcols/allcols.data
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/allcols/allcols.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/clob/clob.data
@@ -26,6 +29,8 @@ lib/%%PYTHON_VERSION%%/site-packages/pgloader/reformat/mysql.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cluttered/cluttered.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csv/csv.data
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/csv/csv.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fixed/fixed.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fixed/fixed.data
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errors/errors.data
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errors/errors.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parallel.conf
@@ -42,6 +47,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pgloader/reformat/mysql.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/simple.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udc/udc.data
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udc/udc.sql
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/fixed
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/udc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/serial
