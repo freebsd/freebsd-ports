@@ -1,0 +1,5 @@
+bin/spybye
+bin/spybye2html
+share/spybye/bad_patterns
+share/spybye/good_patterns
+@dirrm share/spybye
