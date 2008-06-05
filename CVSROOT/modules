@@ -10613,6 +10613,7 @@ p5-Log-Agent	ports/devel/p5-Log-Agent
 p5-Log-Agent-Logger	ports/devel/p5-Log-Agent-Logger
 p5-Log-Dispatch	ports/devel/p5-Log-Dispatch
 p5-Log-Dispatch-Config	ports/devel/p5-Log-Dispatch-Config
+p5-Log-Dispatch-Configurator-YAML	ports/devel/p5-Log-Dispatch-Configurator-YAML
 p5-Log-Dispatch-Email-EmailSend	ports/devel/p5-Log-Dispatch-Email-EmailSend
 p5-Log-Dispatch-FileRotate	ports/devel/p5-Log-Dispatch-FileRotate
 p5-Log-Dispatch-FileShared	ports/devel/p5-Log-Dispatch-FileShared
