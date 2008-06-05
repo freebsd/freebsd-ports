@@ -475,6 +475,7 @@ arc		ports/archivers/arc
 arcconf		ports/sysutils/arcconf
 archie		ports/net/archie
 archivemail	ports/mail/archivemail
+archivers_deco	ports/archivers/deco
 archivers_rvm	ports/archivers/rvm
 archmage	ports/textproc/archmage
 archmbox	ports/mail/archmbox
@@ -1957,7 +1958,6 @@ de-wordpress	ports/german/wordpress
 deal		ports/games/deal
 deb2targz	ports/archivers/deb2targz
 decibel		ports/net-im/decibel
-archivers_deco	ports/archivers/deco
 deco		ports/misc/deco
 decomment	ports/sysutils/decomment
 decss		ports/www/decss
@@ -2367,7 +2367,6 @@ dynamag		ports/x11/dynamag
 dynamechs	ports/graphics/dynamechs
 dynamips	ports/emulators/dynamips
 dynamips-devel	ports/emulators/dynamips-devel
-dynamite	ports/archivers/dynamite
 dyncall		ports/devel/dyncall
 dzen2		ports/x11/dzen2
 dzip		ports/archivers/dzip
@@ -6688,6 +6687,7 @@ libdvdnav	ports/multimedia/libdvdnav
 libdvdplay	ports/multimedia/libdvdplay
 libdvdread	ports/multimedia/libdvdread
 libdwarf	ports/devel/libdwarf
+libdynamite	ports/archivers/libdynamite
 libebml		ports/textproc/libebml
 libecc		ports/security/libecc
 libelf		ports/devel/libelf
