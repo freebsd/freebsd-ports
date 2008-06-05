@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Thu Dec 23 15:03:41 2004
-+++ src/Makefile.in	Thu Dec 23 15:06:20 2004
-@@ -834,7 +834,7 @@
+--- src/Makefile.in.orig	2008-05-23 15:54:07.000000000 +0200
++++ src/Makefile.in	2008-05-28 16:41:23.857301294 +0200
+@@ -1217,7 +1217,7 @@
  
  info-am:
  
