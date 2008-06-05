@@ -449,6 +449,7 @@
     SUBDIR += postgresql83-client
     SUBDIR += postgresql83-server
     SUBDIR += postgresql_autodoc
+    SUBDIR += powerarchitect
     SUBDIR += ptop
     SUBDIR += puredb
     SUBDIR += pxlib
