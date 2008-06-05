@@ -1,0 +1,13 @@
+SpyBye is a tool to help web masters determine if their web pages
+are hosting browser exploits that can infect visiting users with
+malware. It functions as an HTTP proxy server and intercepts all
+browser requests. SpyBye uses a few simple rules to determine if
+embedded links on your web page are harmlesss, unknown or maybe
+even dangerous.
+
+SpyBye analyzes all downloads in the background and provides you
+with a warning notification whenever it encounters content that
+is potentially malicious. At that point, you can click on the link
+in the notification and receive a more detailed analysis of the web page.
+
+WWW: http://www.spybye.org/

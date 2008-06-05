@@ -1,0 +1,34 @@
+# New ports collection makefile for:	spybye
+# Date created:				23 May 2008
+# Whom:					pauls
+#
+# $FreeBSD$
+#
+
+PORTNAME=	spybye
+PORTVERSION=	0.3
+CATEGORIES=	security www
+MASTER_SITES=	http://www.monkey.org/~provos/
+
+MAINTAINER=	pauls@utdallas.edu
+COMMENT=	A web proxy to detect malware
+
+BUILD_DEPENDS=	event_rpcgen.py:${PORTSDIR}/devel/libevent
+
+OPTIONS=	CLAMAV "Enable CLAMAV support" off
+
+USE_RC_SUBR=	spybye.sh
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+MAN1=		spybye.1
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_CLAMAV)
+LIB_DEPENDS+=	clamav:${PORTSDIR}/security/clamav
+CONFIGURE_ARGS+=	--with-libclamav=${PREFIX}/bin
+.endif
+
+.include <bsd.port.post.mk>
