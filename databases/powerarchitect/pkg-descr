@@ -1,0 +1,10 @@
+[ excerpt from developer's www site ]
+
+The Power*Architect is a user-friendly data modeling tool created by data
+warehouse designers, and has many unique features geared specifically for the
+data warehouse architect. It allows users to reverse-engineer existing
+databases, perform data profiling on source databases, and auto-generate ETL
+metadata.
+
+Plus, the Power*Architect has the ability to take snapshots of database
+structures, allowing users to design DW data models while working offline.
