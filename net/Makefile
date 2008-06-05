@@ -708,6 +708,7 @@
     SUBDIR += pppoa
     SUBDIR += ppptraf
     SUBDIR += pptpclient
+    SUBDIR += ptpd
     SUBDIR += prosearch
     SUBDIR += proxy-connect
     SUBDIR += proxy-suite
