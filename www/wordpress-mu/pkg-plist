@@ -12,16 +12,33 @@
 %%WWWDIR%%/wp-admin/admin-functions.php
 %%WWWDIR%%/wp-admin/admin-header.php
 %%WWWDIR%%/wp-admin/admin.php
+%%WWWDIR%%/wp-admin/async-upload.php
 %%WWWDIR%%/wp-admin/bookmarklet.php
 %%WWWDIR%%/wp-admin/categories.php
 %%WWWDIR%%/wp-admin/comment.php
+%%WWWDIR%%/wp-admin/css/colors-classic-rtl.css
+%%WWWDIR%%/wp-admin/css/colors-classic.css
+%%WWWDIR%%/wp-admin/css/colors-fresh-rtl.css
+%%WWWDIR%%/wp-admin/css/colors-fresh.css
+%%WWWDIR%%/wp-admin/css/dashboard-rtl.css
+%%WWWDIR%%/wp-admin/css/dashboard.css
+%%WWWDIR%%/wp-admin/css/global.css
+%%WWWDIR%%/wp-admin/css/ie-rtl.css
+%%WWWDIR%%/wp-admin/css/ie.css
 %%WWWDIR%%/wp-admin/css/install-rtl.css
 %%WWWDIR%%/wp-admin/css/install.css
+%%WWWDIR%%/wp-admin/css/login-rtl.css
+%%WWWDIR%%/wp-admin/css/login.css
+%%WWWDIR%%/wp-admin/css/media-rtl.css
+%%WWWDIR%%/wp-admin/css/media.css
+%%WWWDIR%%/wp-admin/css/mu.css
+%%WWWDIR%%/wp-admin/css/theme-editor-rtl.css
+%%WWWDIR%%/wp-admin/css/theme-editor.css
 %%WWWDIR%%/wp-admin/css/upload-rtl.css
-%%WWWDIR%%/wp-admin/css/upload.css
 %%WWWDIR%%/wp-admin/css/widgets-rtl.css
 %%WWWDIR%%/wp-admin/css/widgets.css
 %%WWWDIR%%/wp-admin/custom-header.php
+%%WWWDIR%%/wp-admin/edit-attachment-rows.php
 %%WWWDIR%%/wp-admin/edit-category-form.php
 %%WWWDIR%%/wp-admin/edit-comments.php
 %%WWWDIR%%/wp-admin/edit-form-advanced.php
@@ -33,26 +50,36 @@
 %%WWWDIR%%/wp-admin/edit-page-form.php
 %%WWWDIR%%/wp-admin/edit-pages.php
 %%WWWDIR%%/wp-admin/edit-post-rows.php
+%%WWWDIR%%/wp-admin/edit-tag-form.php
+%%WWWDIR%%/wp-admin/edit-tags.php
 %%WWWDIR%%/wp-admin/edit.php
 %%WWWDIR%%/wp-admin/export.php
-%%WWWDIR%%/wp-admin/images/box-bg-left.gif
-%%WWWDIR%%/wp-admin/images/box-bg-right.gif
-%%WWWDIR%%/wp-admin/images/box-bg.gif
-%%WWWDIR%%/wp-admin/images/box-butt-left.gif
-%%WWWDIR%%/wp-admin/images/box-butt-right.gif
-%%WWWDIR%%/wp-admin/images/box-butt.gif
-%%WWWDIR%%/wp-admin/images/box-head-left.gif
-%%WWWDIR%%/wp-admin/images/box-head-right.gif
-%%WWWDIR%%/wp-admin/images/box-head.gif
+%%WWWDIR%%/wp-admin/images/align-center.png
+%%WWWDIR%%/wp-admin/images/align-left.png
+%%WWWDIR%%/wp-admin/images/align-none.png
+%%WWWDIR%%/wp-admin/images/align-right.png
 %%WWWDIR%%/wp-admin/images/browse-happy.gif
+%%WWWDIR%%/wp-admin/images/bubble_bg.gif
+%%WWWDIR%%/wp-admin/images/comment-grey-bubble.png
+%%WWWDIR%%/wp-admin/images/comment-pill.gif
+%%WWWDIR%%/wp-admin/images/comment-stalk-classic.gif
+%%WWWDIR%%/wp-admin/images/comment-stalk-fresh.gif
+%%WWWDIR%%/wp-admin/images/comment-stalk-rtl.gif
+%%WWWDIR%%/wp-admin/images/date-button.gif
 %%WWWDIR%%/wp-admin/images/fade-butt.png
-%%WWWDIR%%/wp-admin/images/heading-bg.gif
-%%WWWDIR%%/wp-admin/images/login-bkg-bottom.gif
-%%WWWDIR%%/wp-admin/images/login-bkg-tile.gif
 %%WWWDIR%%/wp-admin/images/logo-ghost.png
-%%WWWDIR%%/wp-admin/images/notice.gif
-%%WWWDIR%%/wp-admin/images/toggle.gif
+%%WWWDIR%%/wp-admin/images/logo-login.gif
+%%WWWDIR%%/wp-admin/images/media-button-gallery.gif
+%%WWWDIR%%/wp-admin/images/media-button-image.gif
+%%WWWDIR%%/wp-admin/images/media-button-music.gif
+%%WWWDIR%%/wp-admin/images/media-button-other.gif
+%%WWWDIR%%/wp-admin/images/media-button-video.gif
+%%WWWDIR%%/wp-admin/images/media-buttons.gif
+%%WWWDIR%%/wp-admin/images/tail.gif
+%%WWWDIR%%/wp-admin/images/toggle-arrow-rtl.gif
+%%WWWDIR%%/wp-admin/images/toggle-arrow.gif
 %%WWWDIR%%/wp-admin/images/wordpress-logo.png
+%%WWWDIR%%/wp-admin/images/xit.gif
 %%WWWDIR%%/wp-admin/import.php
 %%WWWDIR%%/wp-admin/import/blogger.php
 %%WWWDIR%%/wp-admin/import/blogware.php
@@ -70,10 +97,20 @@
 %%WWWDIR%%/wp-admin/import/wp-cat2tag.php
 %%WWWDIR%%/wp-admin/includes/admin.php
 %%WWWDIR%%/wp-admin/includes/bookmark.php
+%%WWWDIR%%/wp-admin/includes/class-ftp-pure.php
+%%WWWDIR%%/wp-admin/includes/class-ftp-sockets.php
+%%WWWDIR%%/wp-admin/includes/class-ftp.php
+%%WWWDIR%%/wp-admin/includes/class-pclzip.php
+%%WWWDIR%%/wp-admin/includes/class-wp-filesystem-direct.php
+%%WWWDIR%%/wp-admin/includes/class-wp-filesystem-ftpext.php
+%%WWWDIR%%/wp-admin/includes/class-wp-filesystem-ftpsockets.php
 %%WWWDIR%%/wp-admin/includes/comment.php
+%%WWWDIR%%/wp-admin/includes/dashboard.php
+%%WWWDIR%%/wp-admin/includes/export.php
 %%WWWDIR%%/wp-admin/includes/file.php
 %%WWWDIR%%/wp-admin/includes/image.php
 %%WWWDIR%%/wp-admin/includes/import.php
+%%WWWDIR%%/wp-admin/includes/media.php
 %%WWWDIR%%/wp-admin/includes/misc.php
 %%WWWDIR%%/wp-admin/includes/mu.php
 %%WWWDIR%%/wp-admin/includes/plugin.php
@@ -84,19 +121,31 @@
 %%WWWDIR%%/wp-admin/includes/theme.php
 %%WWWDIR%%/wp-admin/includes/update.php
 %%WWWDIR%%/wp-admin/includes/upgrade.php
-%%WWWDIR%%/wp-admin/includes/upload.php
 %%WWWDIR%%/wp-admin/includes/user.php
+%%WWWDIR%%/wp-admin/includes/widgets.php
 %%WWWDIR%%/wp-admin/index-extra.php
 %%WWWDIR%%/wp-admin/index.php
 %%WWWDIR%%/wp-admin/install-helper.php
+%%WWWDIR%%/wp-admin/js/blog-switch.js
 %%WWWDIR%%/wp-admin/js/cat.js
 %%WWWDIR%%/wp-admin/js/categories.js
+%%WWWDIR%%/wp-admin/js/comment.js
+%%WWWDIR%%/wp-admin/js/common.js
 %%WWWDIR%%/wp-admin/js/custom-fields.js
-%%WWWDIR%%/wp-admin/js/dbx-admin-key.js
 %%WWWDIR%%/wp-admin/js/edit-comments.js
-%%WWWDIR%%/wp-admin/js/link-cat.js
+%%WWWDIR%%/wp-admin/js/editor.js
+%%WWWDIR%%/wp-admin/js/forms.js
+%%WWWDIR%%/wp-admin/js/link.js
+%%WWWDIR%%/wp-admin/js/media-upload.js
+%%WWWDIR%%/wp-admin/js/page.js
+%%WWWDIR%%/wp-admin/js/password-strength-meter.js
+%%WWWDIR%%/wp-admin/js/post.js
+%%WWWDIR%%/wp-admin/js/postbox.js
+%%WWWDIR%%/wp-admin/js/slug.js
+%%WWWDIR%%/wp-admin/js/tags.js
 %%WWWDIR%%/wp-admin/js/upload.js
 %%WWWDIR%%/wp-admin/js/users.js
+%%WWWDIR%%/wp-admin/js/widgets.js
 %%WWWDIR%%/wp-admin/js/xfn.js
 %%WWWDIR%%/wp-admin/link-add.php
 %%WWWDIR%%/wp-admin/link-category.php
@@ -104,6 +153,8 @@
 %%WWWDIR%%/wp-admin/link-manager.php
 %%WWWDIR%%/wp-admin/link-parse-opml.php
 %%WWWDIR%%/wp-admin/link.php
+%%WWWDIR%%/wp-admin/media-upload.php
+%%WWWDIR%%/wp-admin/media.php
 %%WWWDIR%%/wp-admin/menu-header.php
 %%WWWDIR%%/wp-admin/menu.php
 %%WWWDIR%%/wp-admin/moderation.php
@@ -122,13 +173,13 @@
 %%WWWDIR%%/wp-admin/plugins.php
 %%WWWDIR%%/wp-admin/post-new.php
 %%WWWDIR%%/wp-admin/post.php
-%%WWWDIR%%/wp-admin/profile-update.php
 %%WWWDIR%%/wp-admin/profile.php
 %%WWWDIR%%/wp-admin/rtl.css
 %%WWWDIR%%/wp-admin/setup-config.php
 %%WWWDIR%%/wp-admin/sidebar.php
 %%WWWDIR%%/wp-admin/themes.php
 %%WWWDIR%%/wp-admin/update-links.php
+%%WWWDIR%%/wp-admin/update.php
 %%WWWDIR%%/wp-admin/upgrade-functions.php
 %%WWWDIR%%/wp-admin/upgrade.php
 %%WWWDIR%%/wp-admin/upload.php
@@ -151,6 +202,8 @@
 %%WWWDIR%%/wp-config-sample.php
 %%WWWDIR%%/wp-content/blogs.php
 %%WWWDIR%%/wp-content/index.php
+%%WWWDIR%%/wp-content/mu-plugins/index.php
+%%WWWDIR%%/wp-content/plugins/index.php
 %%WWWDIR%%/wp-content/themes/classic/comments-popup.php
 %%WWWDIR%%/wp-content/themes/classic/comments.php
 %%WWWDIR%%/wp-content/themes/classic/footer.php
@@ -164,12 +217,12 @@
 %%WWWDIR%%/wp-content/themes/default/404.php
 %%WWWDIR%%/wp-content/themes/default/archive.php
 %%WWWDIR%%/wp-content/themes/default/archives.php
-%%WWWDIR%%/wp-content/themes/default/attachment.php
 %%WWWDIR%%/wp-content/themes/default/comments-popup.php
 %%WWWDIR%%/wp-content/themes/default/comments.php
 %%WWWDIR%%/wp-content/themes/default/footer.php
 %%WWWDIR%%/wp-content/themes/default/functions.php
 %%WWWDIR%%/wp-content/themes/default/header.php
+%%WWWDIR%%/wp-content/themes/default/image.php
 %%WWWDIR%%/wp-content/themes/default/images/audio.jpg
 %%WWWDIR%%/wp-content/themes/default/images/header-img.php
 %%WWWDIR%%/wp-content/themes/default/images/kubrickbg-ltr.jpg
@@ -198,6 +251,7 @@
 %%WWWDIR%%/wp-content/themes/home/functions.php
 %%WWWDIR%%/wp-content/themes/home/header.php
 %%WWWDIR%%/wp-content/themes/home/home.php
+%%WWWDIR%%/wp-content/themes/home/image.php
 %%WWWDIR%%/wp-content/themes/home/images/audio.jpg
 %%WWWDIR%%/wp-content/themes/home/images/header-img.php
 %%WWWDIR%%/wp-content/themes/home/images/kubrickbg-ltr.jpg
@@ -228,6 +282,7 @@
 %%WWWDIR%%/wp-includes/category-template.php
 %%WWWDIR%%/wp-includes/category.php
 %%WWWDIR%%/wp-includes/class-IXR.php
+%%WWWDIR%%/wp-includes/class-phpass.php
 %%WWWDIR%%/wp-includes/class-phpmailer.php
 %%WWWDIR%%/wp-includes/class-pop3.php
 %%WWWDIR%%/wp-includes/class-smtp.php
@@ -250,7 +305,24 @@
 %%WWWDIR%%/wp-includes/functions.php
 %%WWWDIR%%/wp-includes/general-template.php
 %%WWWDIR%%/wp-includes/gettext.php
-%%WWWDIR%%/wp-includes/images/bullet_arrow_down.gif
+%%WWWDIR%%/wp-includes/images/audio.png
+%%WWWDIR%%/wp-includes/images/crystal/archive.png
+%%WWWDIR%%/wp-includes/images/crystal/audio.png
+%%WWWDIR%%/wp-includes/images/crystal/code.png
+%%WWWDIR%%/wp-includes/images/crystal/default.png
+%%WWWDIR%%/wp-includes/images/crystal/document.png
+%%WWWDIR%%/wp-includes/images/crystal/interactive.png
+%%WWWDIR%%/wp-includes/images/crystal/license.txt
+%%WWWDIR%%/wp-includes/images/crystal/spreadsheet.png
+%%WWWDIR%%/wp-includes/images/crystal/text.png
+%%WWWDIR%%/wp-includes/images/crystal/video.png
+%%WWWDIR%%/wp-includes/images/css.png
+%%WWWDIR%%/wp-includes/images/default.png
+%%WWWDIR%%/wp-includes/images/doc.png
+%%WWWDIR%%/wp-includes/images/exe.png
+%%WWWDIR%%/wp-includes/images/html.png
+%%WWWDIR%%/wp-includes/images/js.png
+%%WWWDIR%%/wp-includes/images/pdf.png
 %%WWWDIR%%/wp-includes/images/rss.png
 %%WWWDIR%%/wp-includes/images/smilies/icon_arrow.gif
 %%WWWDIR%%/wp-includes/images/smilies/icon_biggrin.gif
@@ -274,22 +346,29 @@
 %%WWWDIR%%/wp-includes/images/smilies/icon_surprised.gif
 %%WWWDIR%%/wp-includes/images/smilies/icon_twisted.gif
 %%WWWDIR%%/wp-includes/images/smilies/icon_wink.gif
+%%WWWDIR%%/wp-includes/images/swf.png
+%%WWWDIR%%/wp-includes/images/tar.png
+%%WWWDIR%%/wp-includes/images/text.png
+%%WWWDIR%%/wp-includes/images/video.png
 %%WWWDIR%%/wp-includes/images/wlw/wp-comments.png
 %%WWWDIR%%/wp-includes/images/wlw/wp-icon.png
 %%WWWDIR%%/wp-includes/images/wlw/wp-watermark.png
 %%WWWDIR%%/wp-includes/images/wordpress-mu.png
+%%WWWDIR%%/wp-includes/images/zip.png
 %%WWWDIR%%/wp-includes/js/autosave.js
 %%WWWDIR%%/wp-includes/js/colorpicker.js
 %%WWWDIR%%/wp-includes/js/crop/cropper.css
 %%WWWDIR%%/wp-includes/js/crop/cropper.js
 %%WWWDIR%%/wp-includes/js/crop/marqueeHoriz.gif
 %%WWWDIR%%/wp-includes/js/crop/marqueeVert.gif
-%%WWWDIR%%/wp-includes/js/dbx.js
-%%WWWDIR%%/wp-includes/js/fat.js
 %%WWWDIR%%/wp-includes/js/jquery/interface.js
+%%WWWDIR%%/wp-includes/js/jquery/jquery.color.js
+%%WWWDIR%%/wp-includes/js/jquery/jquery.dimensions.min.js
 %%WWWDIR%%/wp-includes/js/jquery/jquery.form.js
 %%WWWDIR%%/wp-includes/js/jquery/jquery.js
-%%WWWDIR%%/wp-includes/js/list-manipulation.js
+%%WWWDIR%%/wp-includes/js/jquery/jquery.schedule.js
+%%WWWDIR%%/wp-includes/js/jquery/suggest.js
+%%WWWDIR%%/wp-includes/js/jquery/ui.tabs.js
 %%WWWDIR%%/wp-includes/js/prototype.js
 %%WWWDIR%%/wp-includes/js/quicktags.js
 %%WWWDIR%%/wp-includes/js/scriptaculous/MIT-LICENSE
@@ -303,175 +382,147 @@
 %%WWWDIR%%/wp-includes/js/scriptaculous/sound.js
 %%WWWDIR%%/wp-includes/js/scriptaculous/unittest.js
 %%WWWDIR%%/wp-includes/js/scriptaculous/wp-scriptaculous.js
+%%WWWDIR%%/wp-includes/js/swfupload/handlers.js
+%%WWWDIR%%/wp-includes/js/swfupload/plugins/swfupload.cookies.js
+%%WWWDIR%%/wp-includes/js/swfupload/plugins/swfupload.documentready.js
+%%WWWDIR%%/wp-includes/js/swfupload/plugins/swfupload.graceful_degradation.js
+%%WWWDIR%%/wp-includes/js/swfupload/plugins/swfupload.queue.js
+%%WWWDIR%%/wp-includes/js/swfupload/swfupload.js
+%%WWWDIR%%/wp-includes/js/swfupload/swfupload_f9.swf
+%%WWWDIR%%/wp-includes/js/thickbox/loadingAnimation.gif
+%%WWWDIR%%/wp-includes/js/thickbox/tb-close.png
+%%WWWDIR%%/wp-includes/js/thickbox/thickbox.css
+%%WWWDIR%%/wp-includes/js/thickbox/thickbox.js
 %%WWWDIR%%/wp-includes/js/tinymce/blank.htm
-%%WWWDIR%%/wp-includes/js/tinymce/langs/en.js
+%%WWWDIR%%/wp-includes/js/tinymce/langs/wp-langs.php
 %%WWWDIR%%/wp-includes/js/tinymce/license.txt
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/autosave/editor_plugin.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/autosave/editor_plugin_src.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/autosave/langs/en.js
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/autosave/readme.txt
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/directionality/editor_plugin.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/directionality/images/ltr.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/directionality/images/rtl.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/directionality/langs/en.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/css/inlinepopup.css
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/fullscreen/editor_plugin.js
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/fullscreen/fullscreen.htm
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/editor_plugin.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/images/spacer.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/images/window_close.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/images/window_maximize.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/images/window_minimize.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/images/window_resize.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/jscripts/mcwindows.js
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/img/alert.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/img/button.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/img/buttons.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/img/confirm.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/img/corners.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/img/drag.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/img/horizontal.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/window.css
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/template.htm
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/css/content.css
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/css/media.css
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/editor_plugin.js
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/img/flash.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/img/flv_player.swf
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/img/quicktime.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/img/realmedia.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/img/shockwave.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/img/trans.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/img/windowsmedia.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/js/embed.js
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/js/media.js
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/media/media.htm
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/blank.htm
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/css/blank.css
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/css/pasteword.css
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/editor_plugin.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/images/pastetext.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/images/pasteword.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/images/selectall.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/jscripts/pastetext.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/jscripts/pasteword.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/langs/en.js
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/js/pastetext.js
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/js/pasteword.js
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/pastetext.htm
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/pasteword.htm
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes/HttpClient.class.php
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes/TinyGoogleSpell.class.php
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes/TinyPspell.class.php
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes/TinyPspellShell.class.php
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/safari/blank.htm
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/safari/editor_plugin.js
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes/GoogleSpell.php
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes/PSpell.php
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes/PSpellShell.php
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes/SpellChecker.php
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes/utils/JSON.php
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes/utils/Logger.php
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/config.php
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/css/content.css
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/css/spellchecker.css
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/editor_plugin.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/images/spellchecker.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/images/wline.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/langs/en.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/tinyspell.php
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/img/wline.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/includes/general.php
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/rpc.php
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/css/content.css
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/editor_plugin.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/images/help.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/images/more.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/images/more_bug.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/images/page.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/images/page_bug.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/images/toolbars.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/langs/en.js
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/help.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/more.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/more_bug.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/page.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/page_bug.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/toolbars.gif
+%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img/trans.gif
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/popups.css
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/wordpress.css
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wphelp/editor_plugin.js
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wphelp/images/help.gif
-%%WWWDIR%%/wp-includes/js/tinymce/plugins/wphelp/langs/en.js
 %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/about.htm
 %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/anchor.htm
 %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/charmap.htm
 %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/color_picker.htm
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/css/colorpicker.css
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/css/editor_content.css
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/css/editor_popup.css
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/css/editor_ui.css
 %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/editor_template.js
 %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/image.htm
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/anchor.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/anchor_symbol.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/backcolor.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/bold.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/bold_de_se.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/bold_es.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/bold_fr.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/bold_ru.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/bold_tw.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/browse.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/bullist.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/button_menu.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/buttons.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/cancel_button_bg.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/center.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/charmap.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/cleanup.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/close.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/code.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/color.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/colors.jpg
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/copy.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/custom_1.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/cut.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/forecolor.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/full.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/help.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/hr.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/image.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/indent.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/insert_button_bg.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/italic.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/italic_de_se.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/italic_es.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/italic_ru.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/italic_tw.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/justifycenter.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/justifyfull.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/justifyleft.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/justifyright.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/left.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/link.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/menu_check.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/newdocument.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/numlist.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/opacity.png
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/outdent.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/paste.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/redo.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/removeformat.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/right.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/separator.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/spacer.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/statusbar_resize.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/strikethrough.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/sub.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/sup.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/table.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/table_delete_col.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/table_delete_row.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/table_insert_col_after.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/table_insert_col_before.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/table_insert_row_after.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/table_insert_row_before.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/underline.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/underline_es.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/underline_fr.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/underline_ru.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/underline_tw.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/undo.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/unlink.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/visualaid.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/xp/tab_bg.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/xp/tab_end.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/xp/tab_sel_bg.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/xp/tab_sel_end.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/xp/tabs_bg.gif
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/jscripts/about.js
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/jscripts/anchor.js
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/jscripts/charmap.js
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/jscripts/color_picker.js
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/jscripts/image.js
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/jscripts/link.js
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/jscripts/source_editor.js
-%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/langs/en.js
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/img/colorpicker.jpg
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/img/fm.gif
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/img/gotmoxie.png
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/img/icons.gif
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/img/sflogo.png
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/js/about.js
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/js/anchor.js
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/js/charmap.js
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/js/color_picker.js
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/js/image.js
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/js/link.js
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/js/source_editor.js
 %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/link.htm
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/default/content.css
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/default/dialog.css
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/default/img/buttons.png
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/default/img/items.gif
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/default/img/menu_arrow.gif
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/default/img/menu_check.gif
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/default/img/progress.gif
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/default/img/tabs.gif
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/default/ui.css
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/o2k7/content.css
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/o2k7/dialog.css
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/o2k7/img/button_bg.png
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/o2k7/img/button_bg_black.png
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/o2k7/img/button_bg_silver.png
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/o2k7/ui.css
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/o2k7/ui_black.css
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/o2k7/ui_silver.css
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/content.css
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/dialog.css
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/img/butt2.png
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/img/button_bg.png
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/img/down_arrow.gif
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/img/fade-butt.png
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/img/separator.gif
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/img/tabs.gif
+%%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/ui.css
 %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/source_editor.htm
 %%WWWDIR%%/wp-includes/js/tinymce/tiny_mce.js
 %%WWWDIR%%/wp-includes/js/tinymce/tiny_mce_config.php
-%%WWWDIR%%/wp-includes/js/tinymce/tiny_mce_gzip.php
+%%WWWDIR%%/wp-includes/js/tinymce/tiny_mce_ext.js
 %%WWWDIR%%/wp-includes/js/tinymce/tiny_mce_popup.js
 %%WWWDIR%%/wp-includes/js/tinymce/utils/editable_selects.js
 %%WWWDIR%%/wp-includes/js/tinymce/utils/form_utils.js
 %%WWWDIR%%/wp-includes/js/tinymce/utils/mclayer.js
 %%WWWDIR%%/wp-includes/js/tinymce/utils/mctabs.js
 %%WWWDIR%%/wp-includes/js/tinymce/utils/validate.js
+%%WWWDIR%%/wp-includes/js/tinymce/wordpress.css
 %%WWWDIR%%/wp-includes/js/tinymce/wp-mce-help.php
 %%WWWDIR%%/wp-includes/js/tw-sack.js
+%%WWWDIR%%/wp-includes/js/wp-ajax-response.js
 %%WWWDIR%%/wp-includes/js/wp-ajax.js
+%%WWWDIR%%/wp-includes/js/wp-lists.js
 %%WWWDIR%%/wp-includes/kses.php
 %%WWWDIR%%/wp-includes/l10n.php
 %%WWWDIR%%/wp-includes/link-template.php
 %%WWWDIR%%/wp-includes/locale.php
+%%WWWDIR%%/wp-includes/media.php
 %%WWWDIR%%/wp-includes/pluggable.php
 %%WWWDIR%%/wp-includes/plugin.php
 %%WWWDIR%%/wp-includes/post-template.php
@@ -483,6 +534,7 @@
 %%WWWDIR%%/wp-includes/rss-functions.php
 %%WWWDIR%%/wp-includes/rss.php
 %%WWWDIR%%/wp-includes/script-loader.php
+%%WWWDIR%%/wp-includes/shortcodes.php
 %%WWWDIR%%/wp-includes/streams.php
 %%WWWDIR%%/wp-includes/taxonomy.php
 %%WWWDIR%%/wp-includes/template-loader.php
@@ -508,47 +560,55 @@
 %%WWWDIR%%/wpmu-settings.php
 %%WWWDIR%%/xmlrpc.php
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/utils
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/langs
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/jscripts
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images/xp
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/images
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/css
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme/img
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/wp_theme
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/o2k7/img
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/o2k7
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/default/img
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins/default
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/skins
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/js
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced/img
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes/advanced
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/themes
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wphelp/langs
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wphelp/images
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wphelp
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/langs
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/images
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/js
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/img
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress/css
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/wordpress
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/langs
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/images
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/includes
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/img
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/css
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes/utils
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker/classes
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/spellchecker
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/langs
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/jscripts
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/images
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/safari
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/js
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste/css
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/paste
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/jscripts
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/images
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/css
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/media/js
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/media/img
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/media/css
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/media
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2/img
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins/clearlooks2
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups/skins
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/inlinepopups
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/directionality/langs
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/directionality/images
+@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/fullscreen
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/directionality
-@dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/autosave/langs
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins/autosave
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/plugins
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce/langs
 @dirrm %%WWWDIR%%/wp-includes/js/tinymce
+@dirrm %%WWWDIR%%/wp-includes/js/thickbox
+@dirrm %%WWWDIR%%/wp-includes/js/swfupload/plugins
+@dirrm %%WWWDIR%%/wp-includes/js/swfupload
 @dirrm %%WWWDIR%%/wp-includes/js/scriptaculous
 @dirrm %%WWWDIR%%/wp-includes/js/jquery
 @dirrm %%WWWDIR%%/wp-includes/js/crop
 @dirrm %%WWWDIR%%/wp-includes/js
 @dirrm %%WWWDIR%%/wp-includes/images/wlw
 @dirrm %%WWWDIR%%/wp-includes/images/smilies
+@dirrm %%WWWDIR%%/wp-includes/images/crystal
 @dirrm %%WWWDIR%%/wp-includes/images
 @dirrm %%WWWDIR%%/wp-includes
 @dirrm %%WWWDIR%%/wp-content/themes/home/images

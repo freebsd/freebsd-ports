@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	1.3.3
+PORTVERSION=	1.5.1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://mu.wordpress.org/
