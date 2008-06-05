@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/HTML/ContentExtractor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/ContentExtractor/.packlist
+@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/ContentExtractor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML
