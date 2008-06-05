@@ -1,0 +1,15 @@
+*** /dev/null	Wed Jun  4 14:07:15 2008
+--- Makefile	Wed Jun  4 14:07:49 2008
+***************
+*** 0 ****
+--- 1,10 ----
++ #
++ # Makefile for uftp client and server
++ #
++ all: uftp uftpd
++ 
++ uftp: uftp.c
++ 	${CC} ${CFLAGS} -o $@ $< -lm
++ 
++ uftpd: uftpd.c
++ 	${CC} ${CFLAGS} -o $@ $< -lm

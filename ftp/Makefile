@@ -101,6 +101,7 @@
     SUBDIR += tnftp
     SUBDIR += tnftpd
     SUBDIR += twoftpd
+    SUBDIR += uftp
     SUBDIR += urlgfe
     SUBDIR += vsftpd
     SUBDIR += waiho
