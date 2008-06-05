@@ -9,6 +9,7 @@ lib/liblftp-tasks.a
 %%DATADIR%%/import-ncftp
 %%DATADIR%%/import-netscape
 %%DATADIR%%/verify-file
+@dirrm %%DATADIR%%
 %%NLS%%share/locale/de/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/es/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/lftp.mo
@@ -21,4 +22,5 @@ lib/liblftp-tasks.a
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lftp.mo
-@dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_HK

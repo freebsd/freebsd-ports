@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
 		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
@@ -20,7 +20,7 @@ MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
 		http://lftp.cybermirror.org/ \
 		http://lftp.cybermirror.org/old/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Shell-like command line ftp client
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
@@ -48,20 +48,25 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
 .endif
 
 .if defined(WITH_GNUTLS)
-CONFIGURE_ARGS+=	--with-gnutls
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--with-gnutls
+.else
+CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl
+.else
+CONFIGURE_ARGS+=	--without-openssl
 .endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-nls
+CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 

@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Fri May 23 15:22:56 2003
-+++ ltmain.sh	Thu May 27 12:50:36 2004
-@@ -5425,10 +5425,12 @@
+--- build-aux/ltmain.sh.orig	2007-12-29 12:41:13.000000000 +0100
++++ build-aux/ltmain.sh	2008-05-28 16:41:23.818197162 +0200
+@@ -6058,10 +6058,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
