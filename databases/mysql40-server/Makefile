@@ -72,7 +72,7 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 
 .if ${OSVERSION} >= 700000
-IGNORE=		obsolete and does not build with gcc4.2; use mysql 5 or later
+USE_GCC=	3.4
 .endif
 .if defined(BUILD_OPTIMIZED)
 CFLAGS+=	-O3 -fno-omit-frame-pointer -fno-gcse
