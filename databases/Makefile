@@ -97,6 +97,7 @@
     SUBDIR += kinterbasdb
     SUBDIR += kmysqladmin
     SUBDIR += knoda
+    SUBDIR += kpogre
     SUBDIR += ksqlanalyzer
     SUBDIR += ksqlshell
     SUBDIR += libdbi
