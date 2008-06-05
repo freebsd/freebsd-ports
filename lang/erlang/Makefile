@@ -52,7 +52,7 @@ USE_TK_RUN=	yes
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_RC_SUBR=    epmd.sh
+USE_RC_SUBR=	epmd.sh
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 REINPLACE_ARGS=	-i
