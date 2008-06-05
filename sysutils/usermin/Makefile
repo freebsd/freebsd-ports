@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	webadmin/:sf \
 			olgeni/:up
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${USERMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-FETCH_CMD?=	/usr/bin/fetch -pRr
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Web-based interface for performing some user tasks
@@ -24,6 +23,7 @@ COMMENT=	Web-based interface for performing some user tasks
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM
 
+FETCH_CMD?=	/usr/bin/fetch -pRr
 NO_BUILD=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	usermin.sh
