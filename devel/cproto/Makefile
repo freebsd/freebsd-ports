@@ -8,6 +8,7 @@
 
 PORTNAME=	cproto
 PORTVERSION=	4.7f
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/cproto/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
