@@ -20,6 +20,8 @@ COMMENT=	A database design tool for the Eclipse development environment
 
 RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070208/feature.xml:${PORTSDIR}/java/eclipse-gef
 
+BROKEN=		The URL to manually fetch the DISTFILES gives a 404
+
 RESTRICTED=	License agreement is required to download.
 
 NO_BUILD=	yes
