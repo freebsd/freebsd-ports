@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/4.0/source/
 
-MAINTAINER=	rzinkov@gmail.com
+MAINTAINER=	pmn@bakarika.net
 COMMENT=	Gambit programming system where the compiler generates portable C code
 
 CONFLICTS=	ghostscript-gpl-* ghostscript-gnu-*
