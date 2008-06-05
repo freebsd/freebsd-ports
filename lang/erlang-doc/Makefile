@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.erlang.org/documentation/doc-5.6.2/pdf/:release \
 		http://www.sics.se/~joe/thesis/:joe \
 		http://www.st.se/telecom/eng/projects/:stse \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=     olgeni/:local
+MASTER_SITE_SUBDIR=	olgeni/:local
 DISTFILES=	appmon-2.1.9.pdf:release \
 		asn1-1.5.1.pdf:release \
 		common_test-1.3.1.pdf:release \
