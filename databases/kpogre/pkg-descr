@@ -1,0 +1,14 @@
+KPoGre is administration tool for PostgreSQL database system that
+runs on KDE. It uses libpqxx library. Main features:
+ 
+ * Browsing through PostgreSQL system catalog
+ * Wizards for create, modify and drop database objects
+ * Wizards for database administration tasks (backup, restore, vacuum,
+analyze)
+ * Wizards for changing access privileges
+ * SQL Query/result windows, for editing and executing SQL statements
+and viewing result
+ * Datatable windows for edit database tables content
+ * Executor windows for run database functions
+
+WWW:	http://kpogre.sourceforge.net/
