@@ -12,7 +12,7 @@ bin/smsevent
 bin/smsresend
 bin/sql_demo
 bin/unicode2sms
-etc/smsd.conf
+etc/smsd.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/alarmhandler.html
 %%PORTDOCS%%%%DOCSDIR%%/blacklist.html
 %%PORTDOCS%%%%DOCSDIR%%/book.html
