@@ -16803,6 +16803,7 @@ ufoai		ports/games/ufoai
 ufoai-data	ports/games/ufoai-data
 ufraw		ports/graphics/ufraw
 ufs_copy	ports/sysutils/ufs_copy
+uftp		ports/ftp/uftp
 uhexen		ports/games/uhexen
 uhexen2		ports/games/uhexen2
 uhexen2-extras	ports/games/uhexen2-extras
