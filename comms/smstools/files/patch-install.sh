@@ -14,7 +14,7 @@
  
  echo "Installing config file"
 -copy examples/smsd.conf.easy /etc/smsd.conf
-+copy examples/smsd.conf.easy %%PREFIX%%/etc/smsd.conf
++copy examples/smsd.conf.easy %%PREFIX%%/etc/smsd.conf.sample
  
  echo "Creating minimum spool directories"
  makedir $SPOOLDIR
