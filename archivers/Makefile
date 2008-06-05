@@ -18,7 +18,6 @@
     SUBDIR += deco
     SUBDIR += deutex
     SUBDIR += dpkg
-    SUBDIR += dynamite
     SUBDIR += dzip
     SUBDIR += ecm
     SUBDIR += epkg
@@ -49,6 +48,7 @@
     SUBDIR += libarchive
     SUBDIR += libcabinet
     SUBDIR += libcomprex
+    SUBDIR += libdynamite
     SUBDIR += liblzxcomp
     SUBDIR += libmspack
     SUBDIR += libunrar

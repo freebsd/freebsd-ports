@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	dynamite
-PORTVERSION=	0.1
+PORTNAME=	libdynamite
+PORTVERSION=	0.1.1
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
 MAINTAINER=	ports@logvinov.com
@@ -16,7 +16,9 @@ COMMENT=	Decompress data compressed with PKWARE Data Compression Library
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
+USE_GNOME=	gnomehack gnometarget
 USE_LDCONFIG=	yes
+
+MAN1=		dynamite.1
 
 .include <bsd.port.mk>
