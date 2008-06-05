@@ -11962,6 +11962,7 @@ p5-XML-Elemental	ports/textproc/p5-XML-Elemental
 p5-XML-Encoding	ports/textproc/p5-XML-Encoding
 p5-XML-FOAF	ports/textproc/p5-XML-FOAF
 p5-XML-Feed		ports/textproc/p5-XML-Feed
+p5-XML-FeedPP	ports/textproc/p5-XML-FeedPP
 p5-XML-Filter-BufferText	ports/textproc/p5-XML-Filter-BufferText
 p5-XML-Filter-DOMFilter-LibXML	ports/textproc/p5-XML-Filter-DOMFilter-LibXML
 p5-XML-Filter-DetectWS	ports/textproc/p5-XML-Filter-DetectWS
