@@ -21,6 +21,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/general/ancillary_classes.html
 %%PORTDOCS%%%%DOCSDIR%%/general/autoloader.html
 %%PORTDOCS%%%%DOCSDIR%%/general/caching.html
+%%PORTDOCS%%%%DOCSDIR%%/general/common_functions.html
 %%PORTDOCS%%%%DOCSDIR%%/general/controllers.html
 %%PORTDOCS%%%%DOCSDIR%%/general/core_classes.html
 %%PORTDOCS%%%%DOCSDIR%%/general/creating_libraries.html
@@ -36,12 +37,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/general/profiling.html
 %%PORTDOCS%%%%DOCSDIR%%/general/quick_reference.html
 %%PORTDOCS%%%%DOCSDIR%%/general/requirements.html
+%%PORTDOCS%%%%DOCSDIR%%/general/reserved_names.html
 %%PORTDOCS%%%%DOCSDIR%%/general/routing.html
 %%PORTDOCS%%%%DOCSDIR%%/general/scaffolding.html
 %%PORTDOCS%%%%DOCSDIR%%/general/security.html
 %%PORTDOCS%%%%DOCSDIR%%/general/urls.html
 %%PORTDOCS%%%%DOCSDIR%%/general/views.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/array_helper.html
+%%PORTDOCS%%%%DOCSDIR%%/helpers/compatibility_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/cookie_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/date_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/directory_helper.html
@@ -50,7 +53,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/helpers/file_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/form_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/html_helper.html
-%%PORTDOCS%%%%DOCSDIR%%/helpers/index.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/inflector_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/path_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/security_helper.html
@@ -89,6 +91,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_154.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_160.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_161.html
+%%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_162.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_b11.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrading.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/benchmark.html
@@ -138,6 +141,9 @@
 @unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php has not been removed"; fi
 %%WWWDIR%%/%%CI_CONF_DIR%%/config.php.sample
 @exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php ]; then cp -p %D/%F %B/config.php; fi
+@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php has not been removed"; fi
+%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/constants.php ]; then cp -p %D/%F %B/constants.php; fi
 @unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php has not been removed"; fi
 %%WWWDIR%%/%%CI_CONF_DIR%%/database.php.sample
 @exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php ]; then cp -p %D/%F %B/database.php; fi
@@ -226,6 +232,7 @@
 %%WWWDIR%%/system/fonts/index.html
 %%WWWDIR%%/system/fonts/texb.ttf
 %%WWWDIR%%/system/helpers/array_helper.php
+%%WWWDIR%%/system/helpers/compatibility_helper.php
 %%WWWDIR%%/system/helpers/cookie_helper.php
 %%WWWDIR%%/system/helpers/date_helper.php
 %%WWWDIR%%/system/helpers/directory_helper.php
