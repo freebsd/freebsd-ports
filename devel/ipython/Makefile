@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/ \
 		${MASTER_SITE_LOCAL} \
@@ -19,10 +19,28 @@ COMMENT=	An enhanced Interactive Python shell
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/misc/py-pexpect
 
+post-patch:
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e "s#('data', docdirbase, docfiles),# #g" ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e "s#('data', pjoin(docdirbase, 'manual'),manfiles),# #g" ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e "s#('data', pjoin(docdirbase, 'manual/_static'),manstatic),# #g" ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e "s#('data',pjoin(docdirbase, 'extensions'),igridhelpfiles),# #g" ${WRKSRC}/setup.py
+.endif
+
+.if defined(NOPORTEXAMPLES)
+	${REINPLACE_CMD} -e "s#('data', pjoin(docdirbase, 'examples'),examfiles),# #g" ${WRKSRC}/setup.py
+.endif
+
+.if defined(NOPORTEXAMPLES)
+	${REINPLACE_CMD} -e "s#('data', manpagebase, manpages),# #g" ${WRKSRC}/setup.py
+.else
 MAN1=		ipython.1 pycolor.1
 MANCOMPRESSED=	yes
+.endif
 
+.ifndef	NOPORTDOCS
 PORTDOCS=	*
+.endif
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
