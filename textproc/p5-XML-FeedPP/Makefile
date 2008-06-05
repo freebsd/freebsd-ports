@@ -1,0 +1,24 @@
+# New ports collection makefile for:	XML-FeedPP
+# Date created:				29 May 2008
+# Whom:					Oleg Mamontov <oleg@mamontov.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	XML-FeedPP
+PORTVERSION=	0.35
+CATEGORIES=	textproc perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	oleg@mamontov.net
+COMMENT=	Get an RSS file and parse it
+
+RUN_DEPENDS=	p5-XML-TreePP>=0.33:${PORTSDIR}/textproc/p5-XML-TreePP
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		XML::FeedPP.3
+
+.include <bsd.port.mk>
