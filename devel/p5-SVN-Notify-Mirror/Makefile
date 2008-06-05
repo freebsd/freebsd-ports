@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Notify-Mirror
-PORTVERSION=	0.037
+PORTVERSION=	0.038
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -26,15 +26,15 @@ OPTIONS=	CONFIG "Enable YAML syntax for post-commit hook" Off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CONFIG)
-BUILD_DEPENDS+=	${SITE_PERL}/SVN/Notify/Config.pm:${PORTSDIR}/devel/p5-SVN-Notify-Config
+BUILD_DEPENDS+=	p5-SVN-Notify-Config>=0.0906:${PORTSDIR}/devel/p5-SVN-Notify-Config
 .endif
 
 .if defined(WITH_SSH)
-BUILD_DEPENDS+=	${SITE_PERL}/Net/SSH.pm:${PORTSDIR}/net/p5-Net-SSH
+BUILD_DEPENDS+=	p5-Net-SSH>=0.08:${PORTSDIR}/net/p5-Net-SSH
 .endif
 
 .if defined(WITH_RSYNC)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/File/Rsync.pm:${PORTSDIR}/net/p5-File-Rsync
+BUILD_DEPENDS+=	p5-File-Rsync>=0.42:${PORTSDIR}/net/p5-File-Rsync
 .endif
 
 PERL_MODBUILD=	yes
