@@ -11,7 +11,7 @@ CATEGORIES=	irc ruby
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	david+ports@bushong.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby IRC bot similar to infobot
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
