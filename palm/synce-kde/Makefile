@@ -6,9 +6,9 @@
 
 PORTNAME=	synce-kde
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	palm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
 MAINTAINER=	araujo@FreeBSD.org
@@ -17,7 +17,7 @@ COMMENT=	SynCE KDE Utilities
 LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce \
 		rapi.2:${PORTSDIR}/palm/synce-librapi2 \
 		rra.0:${PORTSDIR}/palm/synce-rra \
-		dynamite.0:${PORTSDIR}/archivers/dynamite \
+		dynamite.0:${PORTSDIR}/archivers/libdynamite \
 		orange.0:${PORTSDIR}/archivers/orange \
 		unshield.0:${PORTSDIR}/archivers/unshield
 

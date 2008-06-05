@@ -7,9 +7,9 @@
 
 PORTNAME=	orange
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION= 	2
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
 MAINTAINER=	ports@logvinov.com
@@ -17,7 +17,7 @@ COMMENT=	Extract Microsoft Cabinet files from self-extracting installers
 
 LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce \
 		rapi.2:${PORTSDIR}/palm/synce-librapi2 \
-		dynamite.0:${PORTSDIR}/archivers/dynamite \
+		dynamite.0:${PORTSDIR}/archivers/libdynamite \
 		unshield.0:${PORTSDIR}/archivers/unshield
 
 USE_AUTOTOOLS=	libtool:15
