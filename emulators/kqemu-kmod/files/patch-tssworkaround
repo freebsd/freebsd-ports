@@ -83,20 +83,21 @@ Index: common/kernel.c
  #endif
      
  #ifdef PROFILE
-@@ -1188,6 +1191,13 @@
-             apic_restore_nmi(s, apic_nmi_mask);
+@@ -1096,6 +1099,14 @@
+             apic_nmi_mask = apic_save_and_disable_nmi(s);
          }
-         profile_record(s);
+ 
 +#ifdef __FreeBSD__
 +#ifdef __x86_64__
 +        spin_lock(&g->lock);
++        asm volatile ("sgdt %0" : : "m" (s->kernel_gdt));
 +        kqemu_tss_fixup(s->kernel_gdt.base);
 +        spin_unlock(&g->lock);
 +#endif
 +#endif
- 
-         if (s->mon_req == MON_REQ_IRQ) {
-             struct kqemu_exception_regs *r;
+         /* load breakpoint registers and avoid setting them if in the
+            monitor address space. We suppose that no breakpoints are
+            set by the host OS for this process */
 Index: kqemu-kernel.h
 @@ -48,4 +48,10 @@
  
