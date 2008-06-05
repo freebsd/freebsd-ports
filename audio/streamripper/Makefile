@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	streamripper
-PORTVERSION=	1.63.1
+PORTVERSION=	1.63.4
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://gd.tuwien.ac.at/hci/cdk/:cdk
