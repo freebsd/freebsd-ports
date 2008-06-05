@@ -13359,6 +13359,7 @@ povchem		ports/biology/povchem
 povray		ports/graphics/povray
 povray31	ports/graphics/povray31
 poweradmin	ports/dns/poweradmin
+powerarchitect	ports/databases/powerarchitect
 powerdns	ports/dns/powerdns
 powerdns-devel	ports/dns/powerdns-devel
 powerdns-recursor	ports/dns/powerdns-recursor
