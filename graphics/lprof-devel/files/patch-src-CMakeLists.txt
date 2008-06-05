@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2008-02-20 00:01:32.000000000 +0300
++++ src/CMakeLists.txt	2008-05-24 05:13:22.000000000 +0400
+@@ -129,7 +129,7 @@
+ 
+ # Normally these are set for us. Since we're overriding the normal include path we've got to add them ourselves, but it's
+ # probably a good idea to be explicit about what we use anyway.
+-SET(lprof_qt_incs "${QT_INCLUDE_DIR};${QT_QT_INCLUDE_DIR};${QT_QTCORE_INCLUDE_DIR};${QT_QTGUI_INCLUDE_DIR};${QT_QTSVG_INCLUDE_DIR};${QT_QT3SUPPORT_INCLUDE_DIR};${QT_QTASSISTANT_INCLUDE_DIR}")
++SET(lprof_qt_incs "${QT_QT_INCLUDE_DIR};${QT_QTCORE_INCLUDE_DIR};${QT_QTGUI_INCLUDE_DIR};${QT_QT3SUPPORT_INCLUDE_DIR};${QT_QTASSISTANT_INCLUDE_DIR};${QT_INCLUDE_DIR}")
+ 
+ 
+ IF(NOT LIBVIGRAIMPEX_FOUND)
