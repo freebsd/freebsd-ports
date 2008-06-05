@@ -15803,6 +15803,7 @@ springgraph	ports/graphics/springgraph
 sprinkle	ports/net/sprinkle
 spruce		ports/mail/spruce
 spserver	ports/net/spserver
+spybye		ports/security/spybye
 sql-ledger	ports/finance/sql-ledger
 sqlcached	ports/databases/sqlcached
 sqlclient	ports/databases/sqlclient
