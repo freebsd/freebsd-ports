@@ -7,8 +7,9 @@
 
 PORTNAME=	smstools
 PORTVERSION=	2.2.20
+PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	http://www.meinemullemaus.de/smstools/packages/
+MASTER_SITES=	http://smstools.meinemullemaus.de/packages/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to handle Short Message Service
@@ -39,7 +40,7 @@ SCRIPTS=	email2sms hex2bin hex2dec mysmsd sendsms sms sms2html \
 		sms2unicode sms2xml smsevent smsresend sql_demo unicode2sms
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/install.sh
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/install.sh ${WRKSRC}/src/smsd_cfg.c
 
 post-install:
 .if !defined(NOPORTDOCS)
