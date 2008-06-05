@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	atutor
-PORTVERSION=	1.6
+DISTVERSION=	1.6.0.1
 CATEGORIES=	www
-MASTER_SITES=	http://superb-west.dl.sourceforge.net/sourceforge/atutor/
-DISTNAME=	ATutor-${DISTVERSION}
+MASTER_SITES=	SF
+DISTNAME=	ATutor-1.6-pl1
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An Open Source Web-based Learning Content Management System (LCMS)
