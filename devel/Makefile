@@ -1405,6 +1405,7 @@
     SUBDIR += p5-Log-Agent-Logger
     SUBDIR += p5-Log-Dispatch
     SUBDIR += p5-Log-Dispatch-Config
+    SUBDIR += p5-Log-Dispatch-Configurator-YAML
     SUBDIR += p5-Log-Dispatch-Email-EmailSend
     SUBDIR += p5-Log-Dispatch-FileRotate
     SUBDIR += p5-Log-Dispatch-FileShared
