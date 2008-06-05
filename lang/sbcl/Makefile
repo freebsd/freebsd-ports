@@ -9,16 +9,16 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.16
-PORTREVISION=	1
+PORTVERSION=	1.0.17
+PORTREVISION=	0
 CATEGORIES=	lang lisp
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
+MASTER_SITE_SUBDIR=	sbcl
 DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Common Lisp development system derived from the CMU CL system
-
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/*
 
 # More platforms are supported, but on Linux.
 ONLY_FOR_ARCHS=	i386 amd64
@@ -35,6 +35,14 @@ MAN1=		sbcl.1
 INFO=		asdf sbcl
 INFODIR=	${PREFIX}/${INFO_PATH}
 
+OSVER_MAJOR=	${OSVERSION:C/([0-9]).*/\1/}
+
+# Empty dirs in distribution to keep
+EMPTY_DIRS=	sb-posix/test-lab sb-posix/alien \
+		sb-bsd-sockets/alien sb-posix/alien
+
+DYNAMIC_SPACE_SIZE?=	512
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -47,25 +55,42 @@ PLIST_SUB+=	I386_ONLY="@comment "
 .if defined(WITH_SBCL) && exists(${LOCALBASE}/bin/sbcl)
 LISP_CMD=	""
 .else
-BOOT_VERSION=	1.0.6
-.if make(makesum)
-BOOT_ARCH_OS_LIST=	x86-freebsd x86-64-freebsd
-.elif ${ARCH} == "i386"
-BOOT_ARCH_OS_LIST=	x86-freebsd
-LISP_EXTRA_ARG=	--dynamic-space-size 512
-.elif ${ARCH} == "amd64"
-BOOT_ARCH_OS_LIST=	x86-64-freebsd
-LISP_EXTRA_ARG=
-.endif
-.for BOOT_ARCH_OS in ${BOOT_ARCH_OS_LIST}
+BOOT_VERSION=	1.0.17
+
+. if make(makesum)
+BOOT_ARCH_OS_LIST=	amd64-freebsd8 amd64-freebsd7 amd64-freebsd6 \
+			i386-freebsd8 i386-freebsd7 i386-freebsd6
+. else
+BOOT_ARCH_OS_LIST=	${ARCH}-freebsd${OSVER_MAJOR}
+. endif
+
+. if ${ARCH} == "i386"
+LISP_EXTRA_ARG=	--dynamic-space-size ${DYNAMIC_SPACE_SIZE}
+. endif
+
+. for BOOT_ARCH_OS in ${BOOT_ARCH_OS_LIST}
 BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH_OS}
-DISTFILES:=	${DISTFILES} ${BOOT_DISTNAME}-binary${EXTRACT_SUFX}
-.endfor
+DISTFILES:=	${DISTFILES} ${BOOT_DISTNAME}-binary${EXTRACT_SUFX}:binaries
+. endfor
 LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core ${LISP_EXTRA_ARG} --disable-debugger --userinit /dev/null --sysinit /dev/null"
-.if ${OSVERSION} >= 600000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.5:${PORTSDIR}/misc/compat5x
-.endif
-.endif
+
+.endif # defined(WITH_SBCL)
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "---------------------------------------------------------"
+	@${ECHO_MSG} "You might need to increase memory limits in order to"
+	@${ECHO_MSG} "build SBCL."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can use the DYNAMIC_SPACE_SIZE knob to tweak the size"
+	@${ECHO_MSG} "of SBCL dynamically allocated memory."
+	@${ECHO_MSG} "---------------------------------------------------------"
+	@${ECHO_MSG}
+
+post-extract:
+.for DIR in ${EMPTY_DIRS}
+	@${TOUCH} ${WRKSRC}/contrib/${DIR}/.keep_me
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|(CFLAGS =) .*|\1 ${CFLAGS}|' \
@@ -88,14 +113,10 @@ do-install:
 		INFO_DIR=${INFODIR} ${SH} install.sh)
 	@${RMDIR} ${DOCSDIR}/html
 
+post-install:
+	@${TOUCH} ${PREFIX}/lib/sbcl/site-systems/.keep_me
+
 test:	build
 	(cd ${WRKSRC}/tests && ${SH} run-tests.sh)
-
-.if defined(WITH_THREADS) && ${OSVERSION} < 600000
-pre-everything::
-	@${ECHO_MSG} "====>"
-	@${ECHO_MSG} "====> WARNING: Current threading support is very unstable on FreeBSD 5.x."
-	@${ECHO_MSG} "====>"
-.endif
 
 .include <bsd.port.post.mk>

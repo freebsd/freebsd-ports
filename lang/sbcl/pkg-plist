@@ -38,6 +38,7 @@ lib/sbcl/sb-bsd-sockets/Makefile
 lib/sbcl/sb-bsd-sockets/NEWS
 lib/sbcl/sb-bsd-sockets/TODO
 lib/sbcl/sb-bsd-sockets/a.out
+lib/sbcl/sb-bsd-sockets/alien/.keep_me
 lib/sbcl/sb-bsd-sockets/constants.fasl
 lib/sbcl/sb-bsd-sockets/constants.lisp
 lib/sbcl/sb-bsd-sockets/constants.lisp-temp
@@ -84,20 +85,20 @@ lib/sbcl/sb-cltl2/tests.fasl
 lib/sbcl/sb-cltl2/tests.lisp
 lib/sbcl/sb-cover/.cvsignore
 lib/sbcl/sb-cover/Makefile
+lib/sbcl/sb-cover/cover.fasl
 lib/sbcl/sb-cover/cover.lisp
 lib/sbcl/sb-cover/sb-cover.asd
-lib/sbcl/sb-cover/sb-cover.texinfo
-lib/sbcl/sb-cover/test-data-1.lisp
-lib/sbcl/sb-cover/test-data-2.lisp
-lib/sbcl/sb-cover/tests.lisp
-lib/sbcl/sb-cover/cover.fasl
-lib/sbcl/sb-cover/tests.fasl
 lib/sbcl/sb-cover/sb-cover.fasl
+lib/sbcl/sb-cover/sb-cover.texinfo
 lib/sbcl/sb-cover/test-data-1.fasl
+lib/sbcl/sb-cover/test-data-1.lisp
 lib/sbcl/sb-cover/test-data-2.fasl
+lib/sbcl/sb-cover/test-data-2.lisp
 lib/sbcl/sb-cover/test-data-3.fasl
 lib/sbcl/sb-cover/test-data-3.lisp
 lib/sbcl/sb-cover/test-passed
+lib/sbcl/sb-cover/tests.fasl
+lib/sbcl/sb-cover/tests.lisp
 lib/sbcl/sb-executable/sb-executable.fasl
 lib/sbcl/sb-grovel/.cvsignore
 lib/sbcl/sb-grovel/Makefile
@@ -129,6 +130,7 @@ lib/sbcl/sb-posix/Makefile
 lib/sbcl/sb-posix/README
 lib/sbcl/sb-posix/TODO
 lib/sbcl/sb-posix/a.out
+lib/sbcl/sb-posix/alien/.keep_me
 lib/sbcl/sb-posix/constants.fasl
 lib/sbcl/sb-posix/constants.lisp
 lib/sbcl/sb-posix/constants.lisp-temp
@@ -146,6 +148,7 @@ lib/sbcl/sb-posix/posix-tests.lisp
 lib/sbcl/sb-posix/sb-posix.asd
 lib/sbcl/sb-posix/sb-posix.fasl
 lib/sbcl/sb-posix/sb-posix.texinfo
+lib/sbcl/sb-posix/test-lab/.keep_me
 lib/sbcl/sb-posix/test-passed
 lib/sbcl/sb-rotate-byte/.cvsignore
 lib/sbcl/sb-rotate-byte/Makefile
@@ -211,14 +214,14 @@ lib/sbcl/sb-simple-streams/test-data.tmp
 lib/sbcl/sb-simple-streams/test-passed
 lib/sbcl/sb-sprof/sb-sprof.fasl
 lib/sbcl/sbcl.core
-@exec mkdir -p %D/lib/sbcl/site-systems
-@exec mkdir -p %D/lib/sbcl/sb-posix/test-lab
+lib/sbcl/site-systems/.keep_me
 @dirrm %%DOCSDIR%%
 @dirrm lib/sbcl/site-systems
 @dirrm lib/sbcl/sb-sprof
 @dirrm lib/sbcl/sb-simple-streams
 @dirrm lib/sbcl/sb-rt
 @dirrm lib/sbcl/sb-rotate-byte
+@dirrm lib/sbcl/sb-posix/alien
 @dirrm lib/sbcl/sb-posix/test-lab
 @dirrm lib/sbcl/sb-posix
 @dirrm lib/sbcl/sb-md5
@@ -227,6 +230,7 @@ lib/sbcl/sbcl.core
 @dirrm lib/sbcl/sb-executable
 @dirrm lib/sbcl/sb-cover
 @dirrm lib/sbcl/sb-cltl2
+@dirrm lib/sbcl/sb-bsd-sockets/alien
 @dirrm lib/sbcl/sb-bsd-sockets
 @dirrm lib/sbcl/sb-aclrepl
 @dirrm lib/sbcl/asdf-install
