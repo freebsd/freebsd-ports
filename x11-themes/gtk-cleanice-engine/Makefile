@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	gtk-cleanice-engine
-PORTVERSION=	2.4.0
-PORTREVISION=	5
+PORTVERSION=	2.4.1
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	elysium-project
+MASTER_SITES=	SF/elysium-project
 DISTNAME=	gtk-engines-cleanice-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz \
 		${THEME}.tar.gz
@@ -18,29 +16,24 @@ DISTFILES=	${DISTNAME}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simplistic GTK+ 2.x theme engine
 
-GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gtk20
+USE_GNOME=	gnomehack gnometarget gtk20
+USE_AUTOTOOLS=	libtool:15
 
 THEME=		cleanice-theme-1.2.7
 THEMEDIR=	${WRKDIR}/${THEME}/Theme
 
 post-install:
-	${MKDIR} ${PREFIX}/share/themes/CleanIce/gtk-2.0
-	${MKDIR} ${PREFIX}/share/themes/CleanIce/metacity-1
-	${MKDIR} ${PREFIX}/share/themes/CleanIce-Dark/gtk-2.0
+	@${MKDIR} ${PREFIX}/share/themes/CleanIce
 	${INSTALL_DATA} ${THEMEDIR}/cleanice/index.theme \
 		${PREFIX}/share/themes/CleanIce
+	@${MKDIR} ${PREFIX}/share/themes/CleanIce/gtk-2.0
 	${INSTALL_DATA} ${THEMEDIR}/cleanice/gtkrc \
 		${PREFIX}/share/themes/CleanIce/gtk-2.0
+	@${MKDIR} ${PREFIX}/share/themes/CleanIce/metacity-1
 	${INSTALL_DATA} ${THEMEDIR}/cleanice/metacity-theme-1.xml \
 		${PREFIX}/share/themes/CleanIce/metacity-1
+	@${MKDIR} ${PREFIX}/share/themes/CleanIce-Dark/gtk-2.0
 	${INSTALL_DATA} ${THEMEDIR}/cleanice-dark/gtkrc \
 		${PREFIX}/share/themes/CleanIce-Dark/gtk-2.0
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700029
-BROKEN=		Incorrect objformat handling
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
