@@ -1,0 +1,4 @@
+This is a port of ptpd, the Precision Time Protocol, which is an
+implementation of IEEE 1588.
+
+WWW: http://ptpd.sourceforge.net/
