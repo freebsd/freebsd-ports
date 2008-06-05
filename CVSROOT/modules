@@ -10293,6 +10293,7 @@ p5-HTML-CTPP2	ports/textproc/p5-HTML-CTPP2
 p5-HTML-CalendarMonthSimple	ports/www/p5-HTML-CalendarMonthSimple
 p5-HTML-Chunks	ports/www/p5-HTML-Chunks
 p5-HTML-Clean	ports/www/p5-HTML-Clean
+p5-HTML-ContentExtractor	ports/www/p5-HTML-ContentExtractor
 p5-HTML-Copy	ports/textproc/p5-HTML-Copy
 p5-HTML-Diff	ports/www/p5-HTML-Diff
 p5-HTML-Display	ports/www/p5-HTML-Display
