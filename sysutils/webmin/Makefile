@@ -25,7 +25,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-USE_RC_SUBR=    webmin.sh
+USE_RC_SUBR=	webmin.sh
 SUB_LIST=	PERL5=${PERL}
 
 WEBMIN_MODULES=
