@@ -507,6 +507,7 @@
     SUBDIR += p5-Net-IPTrie
     SUBDIR += p5-Net-Ident
     SUBDIR += p5-Net-Interface
+    SUBDIR += p5-Net-Jaiku
     SUBDIR += p5-Net-Jifty
     SUBDIR += p5-Net-LDAP-Express
     SUBDIR += p5-Net-LDAP-LDAPhash
