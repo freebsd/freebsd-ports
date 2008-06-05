@@ -1,8 +1,16 @@
---- snd-file.c.orig	Mon Sep 18 12:09:20 2000
-+++ snd-file.c	Fri Oct  6 17:34:16 2000
-@@ -1,3 +1,5 @@
-+#include <sys/param.h>
-+#include <sys/mount.h>
- #include "snd.h"
+--- snd-file.c.orig	2008-04-05 00:09:20.000000000 +0900
++++ snd-file.c	2008-04-27 02:22:44.000000000 +0900
+@@ -13,11 +13,11 @@
+   #include <sys/statvfs.h>
+ #endif
  
- #if defined(NEXT) || defined(HAVE_SYS_DIR_H)
+-#if __bsdi__ || HAVE_SYS_PARAM_H
++#if __bsdi__ || __FreeBSD__ || HAVE_SYS_PARAM_H
+   #include <sys/param.h>
+ #endif
+ 
+-#if (HAVE_SYS_MOUNT_H && MUS_MAC_OSX) || __bsdi__ || MUS_NETBSD
++#if (HAVE_SYS_MOUNT_H && MUS_MAC_OSX) || __bsdi__ || __FreeBSD__ || MUS_NETBSD
+   #include <sys/mount.h>
+ #endif
+ 

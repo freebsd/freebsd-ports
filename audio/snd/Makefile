@@ -5,170 +5,142 @@
 # $FreeBSD$
 #
 
-PORTNAME=		snd
-PORTVERSION=		7.8
-PORTREVISION=		10
-CATEGORIES=		audio
-MASTER_SITES=		SF
+PORTNAME=	snd
+PORTVERSION=	9.10
+CATEGORIES=	audio
+MASTER_SITES=	SF
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Multitracking sound editor and utilities
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Multitracking sound editor and utilities
 
-LIB_DEPENDS=		gsl.12:${PORTSDIR}/math/gsl
+OPTIONS=	ESD	"Use Enlightened Sound Daemon"		on  \
+		FFTW3	"Use FFTW"				on  \
+		GSL	"Use GNU Scientific Library"		on  \
+		GUILE	"Use Guile as the extension language"	on  \
+		LADSPA	"Include support for LADSPA plugins"	on  \
+		NLS	"Native Language Support"		on  \
+		RUBY	"Use Ruby as the extension language"	off \
+		X11	"Make Snd with Gtk+ graphics support"	on
 
-ALL_TARGET=		audinfo snd sndinfo sndplay sndrecord sndsine
-CONFIGURE_ARGS=		--with-float-samples \
-			--with-multifile
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS}"
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-float-samples
 MAKEFILE=	makefile
+ALL_TARGET=	audinfo snd snd-info sndplay sndrecord
 
 MAN1=		snd.1
 
-OPTIONS=	ESD		"output through enlightened sound daemon" on \
-		GUILE		"use Guile" on \
-		RUBY		"use Ruby as the extension language" on \
-		NLS             "Native Language Support"       on
-
-PLIST=		${WRKDIR}/plist
-PLIST_FILES=	share/examples/snd/DotEmacs
-PLIST_DIRS=	share/examples/snd
-WRKSRC=		${WRKDIR}/snd-7
-
-.if !defined(NOPORTDOCS)
-PLIST_FILES+=	share/doc/snd/tutorial/files/.snd \
-		share/doc/snd/tutorial/files/misc.scm.txt \
-		share/doc/snd/tutorial/files/misc.scm.txt~ \
-		share/doc/snd/tutorial/README \
-		share/doc/snd/tutorial/1_intro_and_build_snd.html~
-.endif
-
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--with-no-gui
-.else
-CONFIGURE_ARGS+=	--with-gtk \
-			--with-gtkrc-colors \
-			--with-float-samples
-USE_GNOME=	gtk20
-USE_XORG=	x11
-.endif
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_ESD)
-CONFIGURE_ARGS+=	--with-esd
-RUN_DEPENDS+=		esd:${PORTSDIR}/audio/esound
-.endif
-
-.if !defined(WITHOUT_RUBY)
-CONFIGURE_ARGS+=	--with-ruby
-RUN_DEPENDS+=		ruby:${PORTSDIR}/lang/ruby18
-.endif
-
-.if !defined(WITHOUT_GUILE)
-LIB_DEPENDS+=		guile.18:${PORTSDIR}/lang/guile
-.if !defined(WITHOUT_X11)
-LIB_DEPENDS+=		guilegtk-1.2:${PORTSDIR}/x11-toolkits/guile-gtk
-.endif
-.else
-CONFIGURE_ARGS+=	--without-guile
-.endif
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_FILES+=	share/locale/de/LC_MESSAGES/snd.mo
-.else
-CONFIGURE_ARGS+=--disable-nls
-.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		does not compile on sparc64
 .endif
 
-post-build:
-	${MV} ${WRKSRC}/sndinfo ${WRKSRC}/snd-info
+.if !defined(WITHOUT_ESD)
+USE_GNOME+=	esound
+CONFIGURE_ARGS+=	--with-esd
+.endif
 
-pre-install:
-	@${ECHO_CMD} "" > ${PLIST}
-.if !defined(WITHOUT_X11)
-	${ECHO_CMD} lib/X11/app-defaults/Snd.ad >> ${PLIST}
-	${ECHO_CMD} share/examples/snd/Snd.gtkrc >> ${PLIST}
+.if !defined(WITHOUT_FFTW3)
+LIB_DEPENDS+=	fftw3.4:${PORTSDIR}/math/fftw3
+.else
+CONFIGURE_ARGS+=	--without-fftw
 .endif
-.for i in audinfo snd snd-info sndplay sndrecord sndsine
-	${ECHO_CMD} bin/${i} >> ${PLIST}
-.endfor
-.if !defined(NOPORTDOCS)
-.for i in COPYING HISTORY.Snd README.Snd TODO.Snd
-	${ECHO_CMD} share/doc/snd/${i} >> ${PLIST}
-.endfor
-	${FIND} ${WRKDIR} -name '*.html' | \
-		${SED} -e "s:^${WRKSRC}/:share/doc/snd/:g" >> ${PLIST}
-	${FIND} ${WRKDIR} -name '*.png' | \
-		${SED} -e "s:^${WRKSRC}/:share/doc/snd/:g" >> ${PLIST}
-	${FIND} ${WRKDIR} -name '*.jpg' | \
-		${SED} -e "s:^${WRKSRC}/:share/doc/snd/:g" >> ${PLIST}
-.for ii in	share/doc/snd/tutorial/images/jpg \
-		share/doc/snd/tutorial/images \
-		share/doc/snd/tutorial/files \
-		share/doc/snd/tutorial \
-		share/doc/snd
-	${ECHO_CMD} @dirrm ${ii} >> ${PLIST}
-.endfor
+
+.if !defined(WITHOUT_GSL)
+LIB_DEPENDS+=	gsl.12:${PORTSDIR}/math/gsl
+.else
+CONFIGURE_ARGS+=	--without-gsl
 .endif
+
 .if !defined(WITHOUT_GUILE)
-	${FIND} ${WRKSRC} -name '*.scm' | \
-		${SED} -e "s:^${WRKSRC}/:share/snd/:g" >> ${PLIST}
-	${ECHO_CMD} "share/snd/dlp/README" >> ${PLIST}
-	${ECHO_CMD} "@dirrm share/snd/sndins/samples" >> ${PLIST}
-	${ECHO_CMD} "@dirrm share/snd/sndins" >> ${PLIST}
-	${ECHO_CMD} "@dirrm share/snd/tools" >> ${PLIST}
-	${ECHO_CMD} "@dirrm share/snd/dlp" >> ${PLIST}
-	${ECHO_CMD} "@dirrm share/snd" >> ${PLIST}
+LIB_DEPENDS+=	guile.18:${PORTSDIR}/lang/guile
+PLIST_SUB+=	GUILE=""
+.else
+CONFIGURE_ARGS+=	--without-guile
+PLIST_SUB+=	GUILE="@comment "
 .endif
+
+.if !defined(WITHOUT_LADSPA)
+BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+.else
+CONFIGURE_ARGS+=	--without-ladspa
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined(WITH_RUBY)
+USE_RUBY=	yes
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+CONFIGURE_ARGS+=	--with-ruby
+.endif
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	--with-no-gui                                   
+PLIST_SUB+=	X11="@comment "
+.else
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=	--with-gtk
+PLIST_SUB+=	X11=""
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^ _Complex| Vaiolate _Complex|g ; \
+		 s|-O2 -I|-I|g ; \
+		 s|LDFLAGS -ldl|LDFLAGS|g' ${WRKSRC}/configure
+.for i in makefile.in makefile.no-gettext
+	@${REINPLACE_CMD} -e 's|^sndinfo:|snd-info:|g ; \
+		 s|-o sndinfo|-o snd-info|g' ${WRKSRC}/${i}
+.endfor
 
 do-install:
-# Only "snd" is an X11 command.
-.for i in audinfo snd snd-info sndplay sndrecord sndsine
+.for i in audinfo snd snd-info sndplay sndrecord
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/snd.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/snd.1 ${MANPREFIX}/man/man1/
 .if !defined(WITHOUT_X11)
 	${INSTALL_DATA} ${WRKSRC}/Snd.ad ${PREFIX}/lib/X11/app-defaults/
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in COPYING HISTORY.Snd README.Snd TODO.Snd
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/DotEmacs ${EXAMPLESDIR}
-.if !defined(WITHOUT_X11)
-	${INSTALL_DATA} ${WRKSRC}/Snd.gtkrc ${EXAMPLESDIR}
 .endif
 .if !defined(WITHOUT_NLS)
 	${INSTALL_DATA} ${WRKSRC}/po/de.gmo \
 		${PREFIX}/share/locale/de/LC_MESSAGES/snd.mo
 .endif
-.if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.png ${DOCSDIR}
-	cd ${WRKSRC} && ${PAX} -r -w tutorial ${DOCSDIR}
-.endif
 .if !defined(WITHOUT_GUILE)
 	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${DATADIR}/dlp
-	@${MKDIR} ${DATADIR}/tools
-	@${MKDIR} ${DATADIR}/sndins
-	@${MKDIR} ${DATADIR}/sndins/samples
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/dlp/*.scm ${DATADIR}/dlp
-	${INSTALL_DATA} ${WRKSRC}/dlp/README ${DATADIR}/dlp
+	@${MKDIR} ${DATADIR}/tools
 	${INSTALL_DATA} ${WRKSRC}/tools/*.scm ${DATADIR}/tools
+	@${MKDIR} ${DATADIR}/sndins/samples
 	${INSTALL_DATA} ${WRKSRC}/sndins/samples/*.scm ${DATADIR}/sndins/samples
+.endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in HISTORY.Snd README.Snd TODO.Snd
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/pix
+	${INSTALL_DATA} ${WRKSRC}/pix/*.png ${DOCSDIR}/pix
+	cd ${WRKSRC} && ${PAX} -r -w tutorial ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/DotEmacs ${EXAMPLESDIR}
+.if !defined(WITHOUT_X11)
+	${INSTALL_DATA} ${WRKSRC}/Snd.gtkrc ${EXAMPLESDIR}
+.endif
 .endif
 
 .include <bsd.port.post.mk>
