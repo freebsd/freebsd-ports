@@ -7,7 +7,7 @@
 
 PORTNAME=	ocrad
 PORTVERSION=	0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,6 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO INSTALL
 EXAMPLES=	test.pbm test.txt
-INFO=		ocrad
 MAN1=		ocrad.1
 
 do-install:
@@ -33,7 +32,6 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/ocrad.info ${PREFIX}/${INFO_PATH}/
 	${INSTALL_MAN} ${WRKSRC}/doc/ocrad.1 ${MAN1PREFIX}/man/man1/
 .endif
 .if !defined(NOPORTEXAMPLES)
