@@ -7,6 +7,7 @@
 
 PORTNAME=	rlpr
 PORTVERSION=	2.06
+PORTREVISION=	1
 CATEGORIES=	print net
 MASTER_SITES=	http://truffula.com/rlpr/
 
