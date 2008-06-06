@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	169.12
+DISTVERSION?=	173.14.05
 PORTREVISION?=	0			# For consistency with slave ports
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -36,12 +36,7 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 # you need to use legacy driver version and install one of corresponding
 # `x11/nvidia-driver-71xx' or `x11/nvidia-driver-96xx' slave ports.
 #
-# NVidia played it tricky with their versioning scheme once again.  To make
-# stable and legacy versions comparable, employ some sad ugly hackery: assign
-# NVVERSION for slave ports independently of master.  Hopefully, this is a
-# temporary measure and will go away soon.
-#
-NVVERSION?=	${DISTVERSION:S/.//g}00
+NVVERSION=	${DISTVERSION:S/.//g}
 
 .include <bsd.port.pre.mk>
 
@@ -127,7 +122,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's/afterinstall/dontexecute/' ${WRKSRC}/Makefile
 
 pre-su-install:
-# XXX This port silently assumes PREFIX == X11BASE XXX
+# XXX This port silently assumes PREFIX == LOCALBASE XXX
 	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
 # xorg-server-1.4 installs its own ${LOCALBASE}/lib/xorg/modules/libwfb.so,
 # so back it up so it can be later restored similarly to what NVidia does:
