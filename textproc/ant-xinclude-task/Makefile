@@ -7,7 +7,7 @@
 
 PORTNAME=	xinclude-task
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc java
 MASTER_SITES=	http://people.freebsd.org/~znerd/xinclude-task/
 PKGNAMEPREFIX=	ant-

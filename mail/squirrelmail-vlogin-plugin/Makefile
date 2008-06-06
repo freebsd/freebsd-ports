@@ -6,6 +6,7 @@
 
 PORTNAME=		vlogin
 PORTVERSION=		3.9.2
+PORTREVISION=	1
 CATEGORIES=		mail www
 MASTER_SITES=		http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=		squirrelmail-

@@ -7,6 +7,7 @@
 
 PORTNAME=	kismet
 PORTVERSION=	200805.r1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/
 DISTNAME=	kismet-2008-05-R1

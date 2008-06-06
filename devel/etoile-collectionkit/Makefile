@@ -7,6 +7,7 @@
 
 PORTNAME=	collectionkit
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	devel gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-

@@ -7,6 +7,7 @@
 
 PORTNAME=	pybaz
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://code.aaronbentley.com/pybaz/releases/
 

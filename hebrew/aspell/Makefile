@@ -7,6 +7,7 @@
 
 PORTNAME=	aspell
 DISTVERSION=	6-he-1.0-0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	hebrew textproc
 

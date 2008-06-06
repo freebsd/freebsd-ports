@@ -7,6 +7,7 @@
 
 PORTNAME=		shrinksafe
 PORTVERSION=		1.1.1
+PORTREVISION=	1
 CATEGORIES=		www java
 MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/ \
 			LOCAL/beech

@@ -7,7 +7,7 @@
 
 PORTNAME=		root
 PORTVERSION=		5.02.00
-PORTREVISION=		3
+PORTREVISION=	4
 CATEGORIES=		devel science math
 MASTER_SITES=		ftp://root.cern.ch/root/
 DISTNAME=		${PORTNAME}_v${PORTVERSION}.source

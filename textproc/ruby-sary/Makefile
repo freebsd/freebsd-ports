@@ -7,6 +7,7 @@
 
 PORTNAME=	sary
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://sary.sourceforge.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

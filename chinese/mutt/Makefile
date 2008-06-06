@@ -6,6 +6,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../mail/mutt-devel

@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	4.0.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www java
 MASTER_SITES=	http://distfiles.coredump.cn/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/liukang/

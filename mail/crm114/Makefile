@@ -9,6 +9,7 @@ PORTVERSION=	20080326
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://crm114.sourceforge.net/tarballs/
 # Oliver Eikemeier recommended the following construction

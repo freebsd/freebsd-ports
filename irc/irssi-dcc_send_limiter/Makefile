@@ -7,6 +7,7 @@
 
 PORTNAME=	dcc_send_limiter
 PORTVERSION=	0.8.10
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://svn.irssi.org/repos/modules/trunk/ \
 		http://utenti.gufi.org/~drizzt/codes/irssi-dcc_send_limiter/

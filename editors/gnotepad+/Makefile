@@ -7,7 +7,7 @@
 
 PORTNAME=	gnotepad+
 PORTVERSION=	1.3.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors www gnome
 MASTER_SITES=	SF/gnotepad
 .if !defined(NOPORTDOCS)

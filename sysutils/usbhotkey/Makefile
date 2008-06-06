@@ -7,6 +7,7 @@
 
 PORTNAME=		usbhotkey
 PORTVERSION=		0.3.1
+PORTREVISION=	1
 CATEGORIES=		sysutils
 MASTER_SITES=		SF/usbhotkey
 

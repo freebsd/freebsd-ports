@@ -7,6 +7,7 @@
 
 PORTNAME=	textmail
 PORTVERSION=	20070803
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://raf.org/textmail/ CENKES
 

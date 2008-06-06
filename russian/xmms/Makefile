@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	xmms
+PORTREVISION=	1
 CATEGORIES=	russian
 
 MAINTAINER=	be9-ml@be9.ru

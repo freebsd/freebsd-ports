@@ -7,6 +7,7 @@
 
 PORTNAME=	chatroom
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	skylord@vt.net.ru

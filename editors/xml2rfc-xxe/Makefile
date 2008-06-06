@@ -7,7 +7,7 @@
 
 PORTNAME=	xml2rfc-xxe
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.fenron.com/~fenner/ietf/
 PKGNAMESUFFIX=	-${XXE_VERSION}

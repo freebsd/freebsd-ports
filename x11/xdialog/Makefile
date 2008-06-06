@@ -8,7 +8,7 @@
 
 PORTNAME=	xdialog
 PORTVERSION=	2.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://thgodef.nerim.net/xdialog/ \
   		LOCAL/chinsan

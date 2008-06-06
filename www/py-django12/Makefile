@@ -7,6 +7,7 @@
 
 PORTNAME=	django
 PORTVERSION=	0.96.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION:R}/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/

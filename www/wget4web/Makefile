@@ -6,6 +6,7 @@
 
 PORTNAME=	wget4web
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www ftp
 MASTER_SITES=	http://irodov.nm.ru/wget4web/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

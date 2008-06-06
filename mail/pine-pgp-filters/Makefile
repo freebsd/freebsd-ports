@@ -7,6 +7,7 @@
 
 PORTNAME=	pine-pgp-filters
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	http://dougbarton.us/PGP/scripts/ppf/ \
 		${MASTER_SITE_LOCAL}

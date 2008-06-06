@@ -7,7 +7,7 @@
 
 PORTNAME=	gajim
 PORTVERSION=	20080309
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel

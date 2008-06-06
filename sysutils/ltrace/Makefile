@@ -8,6 +8,7 @@
 
 PORTNAME=	ltrace
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cs.huji.ac.il/~bla/ports/
 

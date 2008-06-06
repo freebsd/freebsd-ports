@@ -7,7 +7,7 @@
 
 PORTNAME=	pike72
 PORTVERSION=	7.2.570
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.oav.net/pike/7.2/unofficial/ \
 		ftp://ftp.us.caudium.net/pub/pike/7.2/unofficial/ 

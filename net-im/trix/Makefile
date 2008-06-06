@@ -7,6 +7,7 @@
 
 PORTNAME=	trix
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	pascalamsg@gmail.com

@@ -8,7 +8,7 @@
 
 PORTNAME=	extrackt
 PORTVERSION=	20080223
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 

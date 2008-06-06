@@ -7,7 +7,7 @@
 
 PORTNAME=	pyDict
 PORTVERSION=	0.2.6.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/chinsan/pyDict/ \
 		http://www.525183.com/freebsd/pyDict/ \

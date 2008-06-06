@@ -7,7 +7,7 @@
 
 PORTNAME=	sysdeo
 PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	http://www.sysdeo.com/sysdeo/content/download/393/4930/file/
 PKGNAMEPREFIX=	eclipse-

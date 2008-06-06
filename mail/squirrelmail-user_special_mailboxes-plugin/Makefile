@@ -7,6 +7,7 @@
 
 PORTNAME=	user_special_mailboxes
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=	squirrelmail-

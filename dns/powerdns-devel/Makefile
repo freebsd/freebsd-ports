@@ -7,6 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	3.0.${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://svn.powerdns.com/snapshots/${REVISION}/
 PKGNAMESUFFIX=	-devel

@@ -7,6 +7,7 @@
 
 PORTNAME=	ganttproject
 DISTVERSION=	2.1-m2
+PORTREVISION=	1
 CATEGORIES=	deskutils java
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.zip

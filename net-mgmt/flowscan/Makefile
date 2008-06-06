@@ -7,7 +7,7 @@
 
 PORTNAME=	flowscan
 PORTVERSION=	1.006
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/
 DISTFILES=	FlowScan-${PORTVERSION}.tar.gz

@@ -7,7 +7,7 @@
 
 PORTNAME=	mywiki
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://debian.uni-essen.de/misc/GNUstep/Apps/MyLibrary/
 DISTNAME=	MyWiki-${PORTVERSION}

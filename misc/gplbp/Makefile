@@ -7,7 +7,7 @@
 
 PORTNAME=	gplbp
 PORTVERSION=	0.92
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.stampede.org/skibum/gplbp/ \
 		http://freebsd.unixfreunde.de/sources/

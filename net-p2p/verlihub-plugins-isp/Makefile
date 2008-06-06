@@ -7,6 +7,7 @@
 
 PORTNAME=	isp
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	skylord@vt.net.ru

@@ -7,7 +7,7 @@
 
 PORTNAME=	beep-media-player
 PORTVERSION=	0.9.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	SF/beepmp

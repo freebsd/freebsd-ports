@@ -7,7 +7,7 @@
 
 PORTNAME=	xmlpull
 PORTVERSION=	1.1.3.4a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc java
 MASTER_SITES=	http://voodoo.bawue.com/download/ \
 		http://www.xmlpull.org/v1/download/

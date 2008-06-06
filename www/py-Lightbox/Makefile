@@ -7,6 +7,7 @@
 
 PORTNAME=	Lightbox
 PORTVERSION=	2.0.p1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://files.turbogears.org/eggs/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

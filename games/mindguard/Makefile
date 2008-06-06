@@ -7,7 +7,7 @@
 
 PORTNAME=	mindguard
 PORTVERSION=	0.0.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://zapatopi.net/mindguard/
 EXTRACT_SUFX=	.tgz

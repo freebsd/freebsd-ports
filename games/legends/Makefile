@@ -7,7 +7,7 @@
 
 PORTNAME=	legends
 PORTVERSION=	0.4.1.43
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://legendsthegame.net/files/:game \
 		http://legendsthegame.net/files/maps/:maps

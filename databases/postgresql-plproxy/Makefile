@@ -7,6 +7,7 @@
 
 PORTNAME=	plproxy
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1355/
 PKGNAMEPREFIX=	postgresql-

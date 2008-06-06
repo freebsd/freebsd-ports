@@ -7,6 +7,7 @@
 
 PORTNAME=	scriptaculous
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://files.turbogears.org/eggs/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

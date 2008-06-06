@@ -7,6 +7,7 @@
 
 PORTNAME=	bigloo
 PORTVERSION=	3.0c.4
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp-sop.inria.fr/mimosa/fp/Bigloo/ \
 		ftp://kaolin.unice.fr/pub/Bigloo/

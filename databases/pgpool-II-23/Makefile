@@ -7,7 +7,7 @@
 
 PORTNAME=	pgpool-II
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1521/
 

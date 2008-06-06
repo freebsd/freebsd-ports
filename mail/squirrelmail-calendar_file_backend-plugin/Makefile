@@ -6,6 +6,7 @@
 
 PORTNAME=		calendar_file_backend
 PORTVERSION=		1.0
+PORTREVISION=	1
 CATEGORIES=		mail www
 MASTER_SITES=		http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=		squirrelmail-

@@ -7,6 +7,7 @@
 
 PORTNAME=	bookmarkkit
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	www gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-

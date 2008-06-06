@@ -7,6 +7,7 @@
 
 PORTNAME=	javaservicewrapper
 PORTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	SF/wrapper
 DISTNAME=	wrapper_${PORTVERSION}_src

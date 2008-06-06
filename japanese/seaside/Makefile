@@ -7,6 +7,7 @@
 
 PORTNAME=	seaside
 DISTVERSION=	070930-sq38
+PORTREVISION=	1
 CATEGORIES=	japanese lang
 MASTER_SITES=	ftp://swikis.ddo.jp/SeasideJ/
 DISTNAME=	Seaside-JPatched${DISTVERSION}

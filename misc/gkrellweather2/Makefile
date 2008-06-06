@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellweather
 PORTVERSION=	2.0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc geography
 MASTER_SITES=	http://makovick.googlepages.com/
 EXTRACT_SUFX=	.tgz

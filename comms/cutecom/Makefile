@@ -6,7 +6,7 @@
 
 PORTNAME=	cutecom
 PORTVERSION=	0.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://cutecom.sourceforge.net/
 

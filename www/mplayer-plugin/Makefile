@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www multimedia
 MASTER_SITES=	SF/mplayerplug-in
 

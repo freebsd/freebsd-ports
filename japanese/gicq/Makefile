@@ -7,7 +7,7 @@
 
 PORTNAME=	gicq
 PORTVERSION=	0.33
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese net
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.korsoft.com/pub/gicq/

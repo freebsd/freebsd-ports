@@ -7,7 +7,7 @@
 
 PORTNAME=	gemcal
 PORTVERSION=	20051120
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.quickhack.net/mhc/arc/
 DISTNAME=	mhc-current-snap${PORTVERSION}

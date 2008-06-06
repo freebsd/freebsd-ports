@@ -6,7 +6,7 @@
 
 PORTNAME=	mod_auth_pgsql
 PORTVERSION=	0.9.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql/dist/
 

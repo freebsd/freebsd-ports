@@ -7,7 +7,7 @@
 
 PORTNAME=	manedit
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://wolfpack.twu.net/users/wolfpack/ \
 		http://distro.ibiblio.org/pub/linux/distributions/amigolinux/download/Applications/Editors/manedit-0.8.1/

@@ -5,6 +5,7 @@
 
 PORTNAME=	irssi-xmpp
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://cybione.org/src/irssi-xmpp/
 

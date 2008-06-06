@@ -7,7 +7,7 @@
 
 PORTNAME=	jomp
 PORTVERSION=	1.0b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java parallel
 MASTER_SITES=	http://www2.epcc.ed.ac.uk/computing/research_activities/jomp/download/
 DISTNAME=	${PORTNAME}${PORTVERSION}

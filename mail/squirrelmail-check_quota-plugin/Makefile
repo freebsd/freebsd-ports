@@ -7,6 +7,7 @@
 
 PORTNAME=	check-quota
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=	squirrelmail-

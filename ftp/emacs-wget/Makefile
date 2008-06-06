@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs-wget
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	ftp www elisp
 MASTER_SITES=	http://pop-club.hp.infoseek.co.jp/emacs/emacs-wget/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	luascript
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	skylord@vt.net.ru

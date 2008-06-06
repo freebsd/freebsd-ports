@@ -7,7 +7,7 @@
 
 PORTNAME=	jetspeed
 PORTVERSION=	1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www java
 MASTER_SITES=	http://www.apache.org/dist/portals/jetspeed-1/
 #MASTER_SITE_SUBDIR=jetspeed/binaries

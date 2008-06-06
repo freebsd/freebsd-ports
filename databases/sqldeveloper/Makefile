@@ -8,6 +8,7 @@
 PORTNAME=	sqldeveloper
 PORTVERSION=	1.5.0.53.38
 DISTVERSIONSUFFIX=-no-jre
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
 DISTNAME=	${PORTNAME}-5338${DISTVERSIONSUFFIX}

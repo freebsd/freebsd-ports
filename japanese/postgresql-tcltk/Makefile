@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese databases tcl
 PKGNAMESUFFIX=	-tcltk
 

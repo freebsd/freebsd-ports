@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkimageview
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	CENKES
 # http://trac.bjourne.webfactional.com/

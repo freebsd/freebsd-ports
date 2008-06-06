@@ -7,6 +7,7 @@
 
 PORTNAME=	moodriver
 PORTVERSION=	0.20.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://files.backtrace.info/releases/moodriver/
 

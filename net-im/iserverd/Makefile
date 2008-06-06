@@ -7,7 +7,7 @@
 
 PORTNAME=	iserverd
 PORTVERSION=	2.5.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://iserverd.khstu.ru/download/
 

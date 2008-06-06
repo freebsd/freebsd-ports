@@ -8,6 +8,7 @@
 
 PORTNAME=	axel
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://alioth.debian.org/frs/download.php/2287/

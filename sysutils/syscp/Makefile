@@ -7,6 +7,7 @@
 
 PORTNAME=	syscp
 PORTVERSION=	1.2.19
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://nuernburg.files.syscp.org/releases/tgz/ \
 		http://canada.files.syscp.org/releases/tgz/ \

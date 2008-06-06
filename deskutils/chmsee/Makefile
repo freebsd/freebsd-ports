@@ -7,6 +7,7 @@
 
 PORTNAME=	chmsee
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://download.gro.clinux.org/chmsee/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	servlet-api
 PORTVERSION=	2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www java
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/maven2/javax/servlet/servlet-api/2.5/ \
 		http://repo1.maven.org/maven2/javax/servlet/servlet-api/2.5/

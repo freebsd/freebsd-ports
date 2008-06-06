@@ -7,7 +7,7 @@
 
 PORTNAME=	bugmenot
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://extensions.roachfiend.com/
 DISTNAME=	${PORTNAME}

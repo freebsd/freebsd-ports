@@ -7,7 +7,7 @@
 
 PORTNAME=	qdevelop
 PORTVERSION=	0.23.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde
 MASTER_SITES=	http://qdevelop.org/download/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/

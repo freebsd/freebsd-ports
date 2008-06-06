@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlobject
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://pypi.python.org/packages/source/S/SQLObject/ \
 		${MASTER_SITE_LOCAL} \

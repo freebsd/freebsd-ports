@@ -7,6 +7,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	security net-im kde
 MASTER_SITES=	http://kopete-otr.follefuder.org/
 PKGNAMEPREFIX=	kopete-

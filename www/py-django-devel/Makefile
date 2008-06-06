@@ -7,6 +7,7 @@
 
 PORTNAME=	django
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/ \
 		${MASTER_SITE_LOCAL}

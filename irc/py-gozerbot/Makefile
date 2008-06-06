@@ -7,6 +7,7 @@
 
 PORTNAME=	gozerbot
 PORTVERSION=	0.8.0.4
+PORTREVISION=	1
 CATEGORIES=	irc python
 MASTER_SITES=	http://gozerbot.org/media/tarball/ \
 		${MASTER_SITE_GOOGLE_CODE}

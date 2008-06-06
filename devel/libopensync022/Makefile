@@ -7,7 +7,7 @@
 
 PORTNAME=	libopensync
 PORTVERSION=	0.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opensync.org/attachment/wiki/download/
 EXTRACT_SUFX=	.tar.bz2\?rev=\&format=raw

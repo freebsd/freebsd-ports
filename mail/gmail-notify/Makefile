@@ -7,6 +7,7 @@
 
 PORTNAME=	gmail-notify
 PORTVERSION=	1.6.1.1
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	SF
 

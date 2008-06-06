@@ -7,7 +7,7 @@
 
 PORTNAME=	nsmcrypt
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 MASTER_SITES=	http://www.aolserver.cz/download/
 PKGNAMEPREFIX=	aolserver-

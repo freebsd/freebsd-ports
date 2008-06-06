@@ -7,6 +7,7 @@
 
 PORTNAME=	rdiff-backup
 PORTVERSION=	1.1.15
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:S/$/:savannah/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}

@@ -8,7 +8,7 @@
 
 PORTNAME=	snownews
 PORTVERSION=	1.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://kiza.kcore.de/software/snownews/download/
 

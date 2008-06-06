@@ -7,7 +7,7 @@
 
 PORTNAME=	util-concurrent
 PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/current/
 PKGNAMEPREFIX=	java-

@@ -8,6 +8,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	0.0.30549
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nightly.webkit.org/files/trunk/src/
 PKGNAMESUFFIX=	-gtk2

@@ -7,6 +7,7 @@
 
 PORTNAME=	spam-buttons
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=	squirrelmail-

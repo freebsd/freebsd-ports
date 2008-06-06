@@ -7,7 +7,7 @@
 
 PORTNAME=	dali
 PORTVERSION=	4.1b
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_GET_E} \
 		ftp://ftp.springdaemons.com/pub/snapshots/e17/

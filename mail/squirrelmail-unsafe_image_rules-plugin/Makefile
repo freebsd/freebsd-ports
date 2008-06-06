@@ -7,6 +7,7 @@
 
 PORTNAME=	unsafe_image_rules
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=	squirrelmail-

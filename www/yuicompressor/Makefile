@@ -7,6 +7,7 @@
 
 PORTNAME=	yuicompressor
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.julienlecomte.net/yuicompressor/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	dwdiff
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://os.ghalkes.nl/dist/
 EXTRACT_SUFX=	.tgz

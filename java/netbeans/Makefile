@@ -7,6 +7,7 @@
 
 PORTNAME=	netbeans
 PORTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/6.1/final/zip/
 DISTNAME=	netbeans-${PORTVERSION}-200804211638

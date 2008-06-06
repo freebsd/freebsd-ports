@@ -7,7 +7,7 @@
 
 PORTNAME=	sipxpbx
 PORTVERSION=	3.6.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 

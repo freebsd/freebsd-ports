@@ -7,7 +7,7 @@
 
 PORTNAME=	lopster
 PORTVERSION=	1.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://lopster.sourceforge.net/download/

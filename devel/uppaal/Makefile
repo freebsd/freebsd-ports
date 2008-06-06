@@ -7,7 +7,7 @@
 
 PORTNAME=	uppaal
 PORTVERSION=	4.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java linux
 
 MAINTAINER=	timbob@bigpond.com

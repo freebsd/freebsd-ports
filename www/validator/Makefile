@@ -7,6 +7,7 @@
 
 PORTNAME=	validator
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/

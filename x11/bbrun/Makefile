@@ -7,7 +7,7 @@
 
 PORTNAME=	bbrun
 PORTVERSION=	1.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 

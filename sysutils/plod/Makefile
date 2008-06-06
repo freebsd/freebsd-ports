@@ -7,7 +7,7 @@
 
 PORTNAME=	plod
 PORTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.far2wise.net/plod/
 

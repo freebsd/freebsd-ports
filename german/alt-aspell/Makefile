@@ -7,6 +7,7 @@
 
 PORTNAME=	alt-aspell
 DISTVERSION=	6-de-20030222-1
+PORTREVISION=	1
 CATEGORIES=	german textproc
 
 MAINTAINER=	ports@FreeBSD.org

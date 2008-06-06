@@ -7,7 +7,7 @@
 
 PORTNAME=	postgresql
 PKGNAMESUFFIX=	-contrib
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org

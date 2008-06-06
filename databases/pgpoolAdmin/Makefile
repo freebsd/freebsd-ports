@@ -7,6 +7,7 @@
 
 PORTNAME=	pgpoolAdmin
 PORTVERSION=	2.0.0.b1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1503/
 DISTNAME=	${PORTNAME}-2.0.0-beta1

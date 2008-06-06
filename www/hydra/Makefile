@@ -8,7 +8,7 @@
 
 PORTNAME=	hydra
 PORTVERSION=	0.1.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
 		ftp://ftp.hellug.gr/pub/software/hydra/

@@ -6,7 +6,7 @@
 
 PORTNAME=	kpdftool
 PORTVERSION=	0.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print kde
 MASTER_SITES=	http://www.yuanjue.net/download/
 

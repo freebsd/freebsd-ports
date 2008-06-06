@@ -7,6 +7,7 @@
 
 PORTNAME=	tnl
 PORTVERSION=	071111
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://tnlgame.net/downloads/tnl/${PORTVERSION}/ \
 		http://www.amdmi3.ru/distfiles/

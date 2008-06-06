@@ -7,6 +7,7 @@
 
 PORTNAME=	openproj
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF
 

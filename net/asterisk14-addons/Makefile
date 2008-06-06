@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk-addons
 PORTVERSION=	1.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/releases/
 

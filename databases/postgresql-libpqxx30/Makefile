@@ -7,6 +7,7 @@
 
 PORTNAME=	libpqxx
 PORTVERSION=	2.6.9
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://thaiopensource.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	software/libpqxx

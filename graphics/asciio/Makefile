@@ -7,6 +7,7 @@
 
 PORTNAME=	asciio
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.switch.ch/ftp/mirror/CPAN/authors/id/N/NK/NKH/ \
 		CRITICAL

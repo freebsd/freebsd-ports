@@ -7,6 +7,7 @@
 
 PORTNAME=	kio_locate
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://arminstraub.com/downloads/kio-locate/
 DISTNAME=	kio-locate_${PORTVERSION}

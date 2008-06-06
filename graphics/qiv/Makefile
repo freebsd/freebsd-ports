@@ -8,7 +8,7 @@
 
 PORTNAME=	qiv
 PORTVERSION=	2.1.p12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.klografx.net/qiv/download/ \
 		http://www.carpetsmoker.net/distfiles/ \

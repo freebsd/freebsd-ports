@@ -7,6 +7,7 @@
 
 PORTNAME=	sublib
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	multimedia textproc
 MASTER_SITES=	SF
 

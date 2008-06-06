@@ -7,8 +7,8 @@
 
 PORTNAME=	torrentvolve
 DISTVERSION=	1.4-beta
+PORTREVISION=	2
 CATEGORIES=	net-p2p java www
-PORTREVISION=	1
 MASTER_SITES=	SF
 
 MAINTAINER=	alepulver@FreeBSD.org

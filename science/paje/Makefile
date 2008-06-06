@@ -7,7 +7,7 @@
 
 PORTNAME=	paje
 PORTVERSION=	1.97
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science gnustep
 MASTER_SITES=	http://download.forge.objectweb.org/paje/ \
 		http://download.zh.forge.objectweb.org/paje/

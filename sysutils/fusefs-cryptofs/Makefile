@@ -7,6 +7,7 @@
 
 PORTNAME=	cryptofs
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://reboot.animeirc.de/cryptofs/
 PKGNAMEPREFIX=	fusefs-

@@ -7,7 +7,7 @@
 
 PORTNAME=		kkbswitch
 PORTVERSION=		1.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=		sysutils kde
 MASTER_SITES=		SF/kkbswitch
 

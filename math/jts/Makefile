@@ -7,6 +7,7 @@
 
 PORTNAME=	jts
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	math databases
 MASTER_SITES=	http://www.vividsolutions.com/Jts/bin/
 

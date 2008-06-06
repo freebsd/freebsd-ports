@@ -7,7 +7,7 @@
 
 PORTNAME=	popplerkit
 PORTVERSION=	0.0.${SNAPSHOT}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/PopplerKit/
 DISTNAME=	PopplerKit-${SNAPSHOT}

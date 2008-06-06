@@ -7,7 +7,7 @@
 
 PORTNAME=	msa
 PORTVERSION=	0.5.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://republika.pl/kunik/msa/dl/
 PKGNAMEPREFIX=	xmms-

@@ -7,6 +7,7 @@
 
 PORTNAME=	turbosetup
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/2.3/T/${PYTURBOSETUP}/ \
 		http://nivi.interfree.it/distfiles/${PYTURBOSETUP}/

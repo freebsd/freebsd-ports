@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-daemon
 
 COMMENT=	A free BitTorrent daemon written from scratch in C

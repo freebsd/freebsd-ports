@@ -7,7 +7,7 @@
 
 PORTNAME=	tornado
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://kiza.kcore.de/software/tornado/download/
 

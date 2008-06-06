@@ -7,7 +7,7 @@
 
 PORTNAME=		libspf-alt
 PORTVERSION=		0.4.0
-PORTREVISION=		1
+PORTREVISION=	2
 CATEGORIES=		mail
 MASTER_SITES=		http://libspf2.org/spf/
 DISTNAME=		libspf_alt-${PORTVERSION}

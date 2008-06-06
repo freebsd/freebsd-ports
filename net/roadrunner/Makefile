@@ -7,7 +7,7 @@
 
 PORTNAME=	roadrunner
 PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.codefactory.se/pub/RoadRunner/source/roadrunner/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

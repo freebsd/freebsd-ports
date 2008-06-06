@@ -7,6 +7,7 @@
 
 PORTNAME=	libsyncml
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://libsyncml.opensync.org/download/releases/${PORTVERSION}/ \
 		http://mirror.roe.ch/dist/${PORTNAME}/

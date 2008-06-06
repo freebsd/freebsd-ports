@@ -7,6 +7,7 @@
 
 PORTNAME=	evilfinder
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://lcamtuf.coredump.cx/
 DISTNAME=	ef

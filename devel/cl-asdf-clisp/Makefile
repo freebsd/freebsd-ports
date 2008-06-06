@@ -6,7 +6,7 @@
 
 PORTNAME=	asdf
 PORTVERSION=	2003.05.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://www.henrik-motakef.de/freebsd-distfiles/asdf/
 PKGNAMEPREFIX=	cl-

@@ -7,6 +7,7 @@
 
 PORTNAME=	powerarchitect
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	http://power-architect.googlecode.com/files/
 DISTNAME=	Architect-generic-jdbc-${PORTVERSION}

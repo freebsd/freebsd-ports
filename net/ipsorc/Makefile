@@ -7,7 +7,7 @@
 
 PORTNAME=	ipsorc
 PORTVERSION=	1.7.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	http://ipv42.net/distfiles/ipsorc/ \
 		http://sorcerer.mirrors.pair.com/sources/ipsorcery/${PORTVERSION}/

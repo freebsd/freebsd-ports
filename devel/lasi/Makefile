@@ -7,6 +7,7 @@
 
 PORTNAME=	lasi
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.unifont.org/lasi/download/
 

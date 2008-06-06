@@ -8,6 +8,7 @@
 PORTNAME=	compiz-bcop
 PORTVERSION=	0.6.0
 #PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 

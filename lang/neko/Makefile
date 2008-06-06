@@ -7,7 +7,7 @@
 
 PORTNAME=	neko
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://nekovm.org/_media/
 

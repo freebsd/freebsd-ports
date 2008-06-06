@@ -7,7 +7,7 @@
 
 PORTNAME=	jflex
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.jflex.de/:jflexde \
 		http://jflex.sourceforge.net/jar/devel/:jflexsf

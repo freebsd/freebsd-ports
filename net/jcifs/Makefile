@@ -8,6 +8,7 @@
 
 PORTNAME=	jcifs
 PORTVERSION=	1.2.19
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://jcifs.samba.org/src/

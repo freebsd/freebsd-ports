@@ -7,7 +7,7 @@
 
 PORTNAME=	remember.el
 PORTVERSION=	1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://download.gna.org/remember-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/

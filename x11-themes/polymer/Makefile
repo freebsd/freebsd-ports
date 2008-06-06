@@ -7,7 +7,7 @@
 
 PORTNAME=	polymer
 PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://static.int.pl/~mig21/dev/releases/polymer/ \
 		${MASTER_SITE_LOCAL}

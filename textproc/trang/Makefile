@@ -7,7 +7,7 @@
 
 PORTNAME=	trang
 PORTVERSION=	2003.06.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.thaiopensource.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}

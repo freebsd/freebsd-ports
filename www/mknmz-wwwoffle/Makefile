@@ -7,6 +7,7 @@
 
 PORTNAME=	mknmz-wwwoffle
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	www databases textproc
 MASTER_SITES=	http://www.naney.org/comp/distrib/mknmz-wwwoffle/archive/
 

@@ -6,7 +6,7 @@
 #
 
 PORTVERSION=	0.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-sdlinput
 
 COMMENT=	Blight's SDL input plugin for Mupen64

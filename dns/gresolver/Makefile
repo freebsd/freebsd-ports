@@ -7,7 +7,7 @@
 
 PORTNAME=	gresolver
 PORTVERSION=	0.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://jodrell.net/files/gresolver/
 

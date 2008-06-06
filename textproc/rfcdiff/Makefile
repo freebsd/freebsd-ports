@@ -6,6 +6,7 @@
 
 PORTNAME=	rfcdiff
 PORTVERSION=	1.33
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/${PORTNAME}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

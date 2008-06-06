@@ -7,7 +7,7 @@
 
 PORTNAME=	garith
 PORTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.cnm-vra.com/micah/garith/ CENKES
 # Latest version (2.3.1) does not build with gtk 1.2.10

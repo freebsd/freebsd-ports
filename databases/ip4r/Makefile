@@ -7,6 +7,7 @@
 
 PORTNAME=	ip4r
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1581/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	enlightenment-theme-Ganymede
 PORTVERSION=	0.16.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	enlightenment

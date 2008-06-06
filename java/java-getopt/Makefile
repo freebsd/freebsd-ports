@@ -7,7 +7,7 @@
 
 PORTNAME=	getopt
 PORTVERSION=	1.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.urbanophile.com/pub/arenn/software/sources/
 PKGNAMEPREFIX=	java-

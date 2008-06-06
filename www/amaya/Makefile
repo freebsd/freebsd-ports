@@ -7,7 +7,7 @@
 
 PORTNAME=	amaya
 PORTVERSION=	9.55
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \

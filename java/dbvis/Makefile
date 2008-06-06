@@ -7,6 +7,7 @@
 
 PORTNAME=	dbvis
 PORTVERSION=	6.0.6
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.dbvis.com/product_download/dbvis/media/
 DISTNAME=	dbvis_unix_${PORTVERSION:S/./_/g}

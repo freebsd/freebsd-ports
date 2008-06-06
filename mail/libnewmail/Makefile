@@ -7,7 +7,7 @@
 
 PORTNAME=	libnewmail
 PORTVERSION=	0.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	mail
 MASTER_SITES=	http://0pointer.de/lennart/projects/libnewmail/ \
 		http://www.stud.uni-hamburg.de/~lennart/projects/libnewmail/

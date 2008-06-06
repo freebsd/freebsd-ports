@@ -5,6 +5,7 @@
 
 PORTNAME=	irssi-xmpp
 PORTVERSION=	20071214
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/irssi-xmpp-snapshot/
 PKGNAMESUFFIX=	-devel

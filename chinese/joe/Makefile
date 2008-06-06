@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	chinese editors
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}

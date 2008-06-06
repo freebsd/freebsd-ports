@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkcomm
 PORTVERSION=	0.6.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	korean comms
 MASTER_SITES=	http://download.kldp.net/gtkcomm/
 

@@ -9,6 +9,7 @@ PORTNAME=	rhino
 DISTVERSION=	1_7R1
 #PORTREVISION=	0
 #PORTEPOCH=	0
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/js/:rhino \
 		http://java.sun.com/products/jfc/tsc/articles/treetable2/downloads/:swingex \

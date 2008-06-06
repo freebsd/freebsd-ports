@@ -7,7 +7,7 @@
 
 PORTNAME=	nextgo
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/
 DISTNAME=	NeXTGo-${PORTVERSION}

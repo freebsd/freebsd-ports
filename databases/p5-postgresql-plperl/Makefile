@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 PKGNAMESUFFIX=	-plperl
 

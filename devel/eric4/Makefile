@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	devel python
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 

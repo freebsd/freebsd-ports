@@ -7,6 +7,7 @@
 
 PORTNAME=	login
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-

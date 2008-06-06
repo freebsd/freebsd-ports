@@ -8,7 +8,7 @@
 
 PORTNAME=	takara
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		${MASTER_SITE_GET_E}

@@ -7,7 +7,7 @@
 
 PORTNAME=	ironpython
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
 DISTNAME=	IronPython-1.0.1-Src

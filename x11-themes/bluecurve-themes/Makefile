@@ -10,6 +10,7 @@
 # port" section below.
 
 PORTNAME?=	bluecurve-themes
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	ports@FreeBSD.org

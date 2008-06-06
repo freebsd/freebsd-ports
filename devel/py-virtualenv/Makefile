@@ -8,6 +8,7 @@
 PORTNAME=	virtualenv
 PORTVERSION=	1.1
 #PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://pypi.python.org/packages/source/v/virtualenv/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

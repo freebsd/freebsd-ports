@@ -7,6 +7,7 @@
 
 PORTNAME=	netbeans55
 PORTVERSION=	5.5.1
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/download/5_5_1/fcs/200704122300/
 DISTNAME=	netbeans-5_5_1

@@ -8,7 +8,7 @@
 
 PORTNAME=	electric-ng
 PORTVERSION=	8.06
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	cad java
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.staticfreesoft.com/:1

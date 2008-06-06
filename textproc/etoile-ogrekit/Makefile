@@ -7,6 +7,7 @@
 
 PORTNAME=	ogrekit
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	textproc gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-

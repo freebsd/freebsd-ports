@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-backgrounds
 PORTVERSION=	2.22.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

@@ -7,6 +7,7 @@
 
 PORTNAME=	exiv2
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://tilloy.net/dev/pyexiv2/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

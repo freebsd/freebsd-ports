@@ -7,6 +7,7 @@
 
 PORTNAME=	colt
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	science java
 MASTER_SITES=	http://acs.lbl.gov/~hoschek/colt-download/releases/
 

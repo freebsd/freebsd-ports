@@ -7,7 +7,7 @@
 
 PORTNAME=	gtimer
 PORTVERSION=	1.1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.k5n.us/files/ \
 		http://www.cknudsen.com/gtimer/

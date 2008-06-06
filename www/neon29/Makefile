@@ -7,6 +7,7 @@
 
 PORTNAME=	neon28
 PORTVERSION=	0.28.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/ \
 		http://keyserver.kjsl.com/~jharris/distfiles/

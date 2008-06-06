@@ -8,6 +8,7 @@
 PORTNAME=	seccure
 PORTVERSION=	0.3
 PORTEVISION=	1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://point-at-infinity.org/seccure/
 

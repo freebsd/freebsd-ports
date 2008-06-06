@@ -7,7 +7,7 @@
 
 PORTNAME=	objcunit
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnustep
 MASTER_SITES=	http://xanthippe.dyndns.org/Zipper/
 PKGNAMEPREFIX=	gnustep-

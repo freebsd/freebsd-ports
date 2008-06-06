@@ -8,6 +8,7 @@
 
 PORTNAME=	oregano
 PORTVERSION=	0.69.0
+PORTREVISION=	1
 CATEGORIES=	cad gnome
 MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/86/
 

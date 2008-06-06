@@ -7,6 +7,7 @@
 
 PORTNAME=	evolution-rss
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://gnome.eu.org/
 

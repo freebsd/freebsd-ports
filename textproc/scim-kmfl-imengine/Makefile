@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-kmfl-imengine
 PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://anthesphoria.net/files/distribution/

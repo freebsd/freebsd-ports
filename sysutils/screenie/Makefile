@@ -7,6 +7,7 @@
 
 PORTNAME=	screenie
 PORTVERSION=	1.30.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://pubwww.fhzh.ch/~mgloor/data/ \
 		CRITICAL

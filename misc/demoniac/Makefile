@@ -8,7 +8,7 @@
 
 PORTNAME=	demoniac
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.calodox.scene.org/demoniac/files/
 

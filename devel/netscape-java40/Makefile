@@ -7,7 +7,7 @@
 
 PORTNAME=	netscape-java40
 PORTVERSION=	1999.11.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	http://opendx.npaci.edu/libs/
 DISTNAME=	${PORTNAME}
