@@ -22,7 +22,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	SF
 .if !defined(NOPORTDOCS)
@@ -102,6 +102,8 @@ PLIST_SUB+=		NO_STATIC=""
 
 .if defined(WITH_ZSH_MULTIBYTE)
 CONFIGURE_ARGS+=	--enable-multibyte
+.else
+CONFIGURE_ARGS+=	--disable-multibyte
 .endif
 
 .if ${OSVERSION} >= 503000
