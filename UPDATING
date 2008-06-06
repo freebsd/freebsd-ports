@@ -54,7 +54,6 @@ upgrades.
 
   ikiwiki-transition hashpassword /path/to/your/wiki/srcdir
 
->>>>>>> 1.638
 20080524:
   AFFECTS: users of net-im/jabberd
   AUTHOR: mm@FreeBSD.org
