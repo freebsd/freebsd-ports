@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080605:
+  AFFECTS: users of devel/gettext (ie: YOU)
+  AUTHOR: ade@FreeBSD.org
+
+  As a result of the upgrade to gettext-0.17, the shared library version
+  of libintl has changed, so you will need to rebuild all ports that
+  depend on gettext:
+  
+  # portupgrade -rf gettext
+  # portmaster -r gettext
+
+  Given the scope and sheer number of dependent ports, it may be more
+  advisable to simply blow away all existing install ports (after
+  keeping any local configuration changes), and rebuilding from scratch.
+  
+
 20080603:
   AFFECTS: users of editors/emacs
   AUTHOR: Yasuhiro KIMURA <yasu@utahime.org>
