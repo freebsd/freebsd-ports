@@ -12,7 +12,7 @@ PORTEPOCH=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 DISTNAME=	CImg-${DISTVERSION}
-DIST_SUBDIR=	${PKGNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION},${PORTEPOCH}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The C++ Template Image Processing Library
@@ -43,19 +43,19 @@ LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png		\
 		Magick:${PORTSDIR}/graphics/ImageMagick	\
 		fftw3:${PORTSDIR}/math/fftw3
 ALL_TARGET=	oFreeBSD
-.else
+. else
 ALL_TARGET=	dFreeBSD
 . endif
 
-.if !defined(WITHOUT_GM)
+. if !defined(WITHOUT_GM)
 RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
-.endif
-.if !defined(WITHOUT_MEDCON)
+. endif
+. if !defined(WITHOUT_MEDCON)
 RUN_DEPENDS+=	medcon:${PORTSDIR}/graphics/xmedcon
-.endif
-.if !defined(WITHOUT_FFMPEG)
+. endif
+. if !defined(WITHOUT_FFMPEG)
 RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
-.endif
+. endif
 
 DOCBASE=	CHANGES.txt README.txt
 DOCREFS=	CImg.doxygen CImg_documentation.h CImg_reference.pdf chat.shtml	\
@@ -63,12 +63,12 @@ DOCREFS=	CImg.doxygen CImg_documentation.h CImg_reference.pdf chat.shtml	\
 		header_reference.html img index.shtml links.shtml news.shtml	\
 		reference screenshots.shtml
 .else
-NOBUILD=	yes
+NO_BUILD=	yes
 .endif
 
 pre-configure:
-	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 .if !defined(NOPORTDOCS)
+	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	${GREP} -lR 'img/' ${BUILD_WRKSRC} |	\
 		${XARGS} ${REINPLACE_CMD} -e 's|"img/|"${EXAMPLESDIR}/img/|g'
 	${REINPLACE_CMD} -e 's|make|${GMAKE}|' ${BUILD_WRKSRC}/Makefile
@@ -85,14 +85,18 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/CImg.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/CImg_demo ${PREFIX}/bin
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOCBASE:S|^|${WRKSRC}/|} ${DOCSDIR}
 . for doc in ${DOCREFS}
 	${CP} -R ${WRKSRC}/documentation/${doc} ${DOCSDIR}
 . endfor
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	@(cd ${EXAMPLESDIR} && ${GMAKE} clean)
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} ${EXAMPLESDIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 	${FIND} ${DOCSDIR} ${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 .endif
 
