@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.4.1-3
-PORTREVISION=	1
+DISTVERSION=	6.4.1-5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -37,7 +36,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --without-dps
 USE_LDCONFIG=	yes
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
 		animate.1 conjure.1 compare.1 composite.1 convert.1 display.1 \
