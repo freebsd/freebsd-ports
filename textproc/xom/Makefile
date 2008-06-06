@@ -7,7 +7,7 @@
 
 PORTNAME=	xom
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.cafeconleche.org/XOM/

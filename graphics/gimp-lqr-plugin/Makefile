@@ -7,6 +7,7 @@
 
 PORTNAME=	gimp-lqr-plugin
 DISTVERSION=	0.4.0-4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://liquidrescale.wikidot.com/local--files/en:download-page/ \
 		http://www.amdmi3.ru/distfiles/

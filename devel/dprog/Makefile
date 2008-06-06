@@ -8,7 +8,7 @@
 
 PORTNAME=	dprog
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.daimi.au.dk/~mailund/dprog/download/
 

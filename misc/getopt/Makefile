@@ -7,6 +7,7 @@
 
 PORTNAME=	getopt
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://software.frodo.looijaard.name/getopt/files/
 

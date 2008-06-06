@@ -7,6 +7,7 @@
 
 PORTNAME=	sudoku
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/Sudoku/
 PKGNAMEPREFIX=	gnustep-

@@ -8,7 +8,7 @@
 
 PORTNAME=	libx3dtk
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://artis.imag.fr/Members/Yannick.Legoc/X3D/libs/
 DISTNAME=	X3DToolKit-${PORTVERSION:R}.${PORTVERSION:E}

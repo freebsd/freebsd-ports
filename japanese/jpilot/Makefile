@@ -7,6 +7,7 @@
 
 MASTERDIR=	${.CURDIR}/../../palm/jpilot
 
+PORTREVISION=	1
 CATEGORIES=	japanese
 
 MAINTAINER=	sumikawa@FreeBSD.org

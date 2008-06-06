@@ -7,7 +7,7 @@
 
 PORTNAME=	le-unit
 PORTVERSION=	12.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-

@@ -6,7 +6,7 @@
 #   $MCom: ports/graphics/gstreamer-plugins-cairo/Makefile,v 1.6 2008/03/19 14:05:34 ahze Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 COMMENT=	Gstreamer vector graphics plugin

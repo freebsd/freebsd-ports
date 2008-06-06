@@ -7,6 +7,7 @@
 
 PORTNAME=	migrate
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://dose.se/distfiles/migrate/

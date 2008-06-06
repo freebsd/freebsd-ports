@@ -7,7 +7,7 @@
 
 PORTNAME=	jumpgis-postgis
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics databases java geography
 MASTER_SITES=	http://postgis.refractions.net/download/
 DISTNAME=	postgisdriver-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	hudson
 PORTVERSION=	1.218
+PORTREVISION=	1
 CATEGORIES=	www java devel
 MASTER_SITES=	https://hudson.dev.java.net/files/documents/2402/97742/
 DISTNAME=	hudson

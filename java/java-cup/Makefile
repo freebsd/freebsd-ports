@@ -7,7 +7,7 @@
 
 PORTNAME=	cup
 PORTVERSION=	11.a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://www2.cs.tum.edu/projects/cup/ \
 		http://mirrors.mcdermottroe.com/www2.cs.tum.edu/projects/cup/ 

@@ -7,6 +7,7 @@
 
 PORTNAME=	squirrelmail-tmda-plugin
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 DISTNAME=	tmdatools 1.0.2 1.4.2 \(stable\)

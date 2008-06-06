@@ -7,6 +7,7 @@
 
 PORTNAME=	flex-sdk
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	#
 DISTFILES=	flex_sdk_2_hf1.zip

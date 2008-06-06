@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	converters
 
 MASTERDIR=	${.CURDIR}/../../lang/php4

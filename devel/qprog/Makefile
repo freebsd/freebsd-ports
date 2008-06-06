@@ -6,6 +6,7 @@
 
 PORTNAME=	qprog
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://bfoz.net/projects/${PORTNAME}/release/
 DISTNAME=	QProg_${PORTVERSION}

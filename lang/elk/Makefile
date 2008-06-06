@@ -7,7 +7,7 @@
 
 PORTNAME=	elk
 PORTVERSION=	3.99.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://sam.zoy.org/elk/
 

@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	german
 
 MAINTAINER=	fehlner@gmx.de

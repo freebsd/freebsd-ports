@@ -7,6 +7,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.3.8
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/ \
 		ftp://alpha.gnu.org/gnu/gnutls/

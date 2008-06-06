@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	muttprint
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	russian print
 
 MAINTAINER=	ports@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	E-buttons
 PORTVERSION=	0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 EXTRACT_SUFX=	.tgz

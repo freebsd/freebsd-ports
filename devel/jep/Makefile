@@ -7,6 +7,7 @@
 
 PORTNAME=	jep
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	devel java python
 MASTER_SITES=	SF/jepp
 

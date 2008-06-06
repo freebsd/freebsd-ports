@@ -7,7 +7,7 @@
 
 PORTNAME=	timers
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://triq.net/gkrellm_timers/ \
 		http://depot.fsck.ch/mirror/distfiles/

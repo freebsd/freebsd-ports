@@ -7,7 +7,7 @@
 
 PORTNAME=	jdom
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	java textproc
 MASTER_SITES=	http://www.jdom.org/dist/source/

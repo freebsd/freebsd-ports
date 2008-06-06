@@ -7,6 +7,7 @@
 
 PORTNAME=	svnkit
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://svnkit.com/
 DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone

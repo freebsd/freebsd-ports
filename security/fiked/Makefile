@@ -7,7 +7,7 @@
 
 PORTNAME=	fiked
 PORTVERSION=	0.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://dragon.roe.ch/bitsnpieces/fiked/ \
 		http://mirror.roe.ch/dist/fiked/

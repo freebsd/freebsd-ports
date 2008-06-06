@@ -7,6 +7,7 @@
 
 PORTNAME=	email2trac
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	ftp://ftp.sara.nl/pub/outgoing/
 PKGNAMEPREFIX=	trac-

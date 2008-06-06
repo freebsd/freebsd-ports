@@ -6,7 +6,7 @@
 #   $MCom: ports/devel/gnome2-hacker-tools/Makefile,v 1.45 2007/09/19 23:27:28 marcus Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-hacker-tools
 

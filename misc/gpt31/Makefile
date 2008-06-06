@@ -7,7 +7,7 @@
 
 PORTNAME=	gpt
 PORTVERSION=	3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc archivers devel parallel
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/aces/gpt/releases/gpt-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

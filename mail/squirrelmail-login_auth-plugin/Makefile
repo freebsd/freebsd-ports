@@ -6,6 +6,7 @@
 
 PORTNAME=		squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
 PORTVERSION=		2.0
+PORTREVISION=	1
 CATEGORIES=		mail www
 MASTER_SITES=		http://www.squirrelmail.org/plugins/ \
 					http://alkoholix.tallence.de/www.squirrelmail.org/plugins/

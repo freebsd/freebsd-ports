@@ -7,6 +7,7 @@
 
 PORTNAME=	forbid
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	skylord@vt.net.ru

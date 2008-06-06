@@ -7,7 +7,7 @@
 
 PORTNAME=	chinput
 PORTVERSION=	3.0.2.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://ftp.jaist.ac.jp/pub/FreeBSD/distfiles/ \
 		http://www.gtlib.gatech.edu/pub/FreeBSD/distfiles/

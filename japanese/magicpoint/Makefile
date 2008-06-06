@@ -8,6 +8,7 @@
 MASTERDIR=	${.CURDIR}/../../misc/magicpoint
 COMMENT=	An X11-based presentation tool, configured with vflib support
 
+PORTREVISION=	1
 CATEGORIES=	japanese
 
 MAINTAINER=	mita@jp.FreeBSD.org

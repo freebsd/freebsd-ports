@@ -6,7 +6,7 @@
 #    $MCom: ports/graphics/gstreamer-plugins-swfdec/Makefile,v 1.5 2008/03/19 14:05:35 ahze Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 COMMENT=	Gstreamer flash redering plugin

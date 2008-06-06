@@ -11,7 +11,7 @@
 
 PORTNAME=	dillo
 PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/
 

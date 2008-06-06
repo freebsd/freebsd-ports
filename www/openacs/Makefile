@@ -7,6 +7,7 @@
 
 PORTNAME?=	openacs
 DISTVERSION?=	5.4.2b1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
 EXTRACT_SUFX=	.tgz?revision_id=${DIST_REV_ID}

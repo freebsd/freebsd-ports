@@ -7,6 +7,7 @@
 
 PORTNAME=	openvas-libraries
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/419/
 

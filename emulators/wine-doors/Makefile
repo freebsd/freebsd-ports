@@ -7,6 +7,7 @@
 
 PORTNAME=	wine-doors
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.wine-doors.org/releases/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	decurs
 PORTVERSION=	0.55.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	http://varg.dyndns.org/psi/files/
 

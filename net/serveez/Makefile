@@ -8,7 +8,7 @@
 
 PORTNAME=	serveez
 PORTVERSION=	0.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net devel
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/GNU/serveez/ \
 		http://www.textsure.net/~ela/download/

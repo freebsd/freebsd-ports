@@ -7,7 +7,7 @@
 
 PORTNAME=	makeplus
 PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/_file/
 

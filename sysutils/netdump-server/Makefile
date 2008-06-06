@@ -6,6 +6,7 @@
 
 PORTNAME=	netdump-server
 PORTVERSION=	0.7.7
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 DISTNAME=	netdump-${PORTVERSION}

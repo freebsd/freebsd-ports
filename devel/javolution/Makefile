@@ -7,6 +7,7 @@
 
 PORTNAME=	javolution
 PORTVERSION=	5.2.4
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://javolution.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin

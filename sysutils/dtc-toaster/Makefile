@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMESUFFIX=  -toaster
 
 MAINTAINER=     scrappy@freebsd.org

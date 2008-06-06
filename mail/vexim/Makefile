@@ -6,6 +6,7 @@
 
 PORTNAME=	vexim
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://silverwraith.com/vexim/
 DISTNAME=	${PORTNAME}${PORTVERSION}

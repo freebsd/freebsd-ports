@@ -7,6 +7,7 @@
 
 PORTNAME=	libleaftag
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	devel deskutils
 MASTER_SITES=	http://releases.chipx86.com/leaftag/libleaftag/
 

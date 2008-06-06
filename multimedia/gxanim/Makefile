@@ -7,7 +7,7 @@
 
 PORTNAME=	gxanim
 PORTVERSION=	0.50
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rswarren.com/code/
 DISTNAME=	GXAnim-${PORTVERSION}

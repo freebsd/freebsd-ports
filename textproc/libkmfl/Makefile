@@ -7,6 +7,7 @@
 
 PORTNAME=	libkmfl
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://anthesphoria.net/files/distribution/

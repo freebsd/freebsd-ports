@@ -7,6 +7,7 @@
 
 PORTNAME=	mooseekd
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://files.backtrace.info/releases/mooseekd/
 

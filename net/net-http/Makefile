@@ -8,6 +8,7 @@
 
 PORTNAME=	net-http
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	net scheme
 # mastersite disappeared around September 2002
 MASTER_SITES=	# http://evan.prodromou.san-francisco.ca.us/software/net-http/

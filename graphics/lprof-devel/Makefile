@@ -7,6 +7,7 @@
 
 PORTNAME=	lprof
 PORTVERSION=	20080514
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel

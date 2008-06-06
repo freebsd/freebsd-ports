@@ -7,6 +7,7 @@
 
 PORTNAME=	red5
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.nielsenaa.com/red5-installers/   \
 		http://www.red5.fr/release/0.7.0/war/

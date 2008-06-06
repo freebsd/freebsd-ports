@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	japanese
 
 MAINTAINER=	nokubi@ff.iij4u.or.jp

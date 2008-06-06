@@ -7,7 +7,7 @@
 
 PORTNAME=	jumpgis
 PORTVERSION=	1.1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics java geography
 MASTER_SITES=	http://www.jump-project.org/downloads/jump/:main \
 		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/:main,extra

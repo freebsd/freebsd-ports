@@ -8,6 +8,7 @@
 
 PORTNAME=	ggz-sdl-games
 PORTVERSION=	${GGZ_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw

@@ -7,7 +7,7 @@
 
 PORTNAME=	gfaim
 PORTVERSION=	0.30
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	french
 MASTER_SITES=	http://freeperso.free.fr/ \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	nitrogen
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://l3ib.org/nitrogen/files/ \
 		http://www.sourcefiles.org/Toys/Candy/

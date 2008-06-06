@@ -7,7 +7,7 @@
 
 PORTNAME=	javaview-lite
 PORTVERSION=	3.95
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math java graphics
 MASTER_SITES=	http://www.javaview.de/download/data/
 DISTFILES=	javaview.zip jv_models.zip jv_tutor.zip

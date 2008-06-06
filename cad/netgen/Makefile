@@ -7,7 +7,7 @@
 
 PORTNAME=	netgen
 PORTVERSION=	4.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	http://www.hpfem.jku.at/cgi/download.cgi?ID=
 DISTNAME=	ngs${PORTVERSION:S/.//g}

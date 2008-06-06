@@ -7,7 +7,7 @@
 
 PORTNAME=	nocatauth-server
 PORTVERSION=	0.82
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://nocat.net/download/NoCatAuth/
 DISTNAME=	NoCatAuth-${PORTVERSION}

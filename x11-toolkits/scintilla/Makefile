@@ -7,7 +7,7 @@
 
 PORTNAME=	scintilla
 PORTVERSION=	1.76
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF \
 		http://www.scintilla.org/

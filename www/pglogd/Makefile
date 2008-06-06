@@ -7,7 +7,7 @@
 
 PORTNAME=	pglogd
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www databases
 MASTER_SITES=	http://digitalstratum.com/download/
 

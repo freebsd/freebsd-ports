@@ -8,7 +8,7 @@
 
 PORTNAME=	bison
 PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.freenet.org.nz/python/pybison/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

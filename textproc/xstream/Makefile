@@ -7,7 +7,7 @@
 
 PORTNAME=	xstream
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc java
 MASTER_SITES=	http://dist.codehaus.org/xstream/distributions/
 

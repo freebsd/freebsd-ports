@@ -7,6 +7,7 @@
 
 PORTNAME=	subtitleeditor
 PORTVERSION=	0.21.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.21/
 

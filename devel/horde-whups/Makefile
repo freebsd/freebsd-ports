@@ -7,6 +7,7 @@
 
 PORTNAME=	whups
 PORTVERSION=	0.0.20080228
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	LOCAL/beech \
 		http://www.alaskaparadise.com/freebsd/

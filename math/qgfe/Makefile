@@ -8,7 +8,7 @@
 
 PORTNAME=	qgfe
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.xm1math.net/qgfe/
 

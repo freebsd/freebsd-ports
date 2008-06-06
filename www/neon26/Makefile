@@ -7,6 +7,7 @@
 
 PORTNAME=	neon26
 PORTVERSION=	0.26.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/ \
 		http://keyserver.kjsl.com/~jharris/distfiles/

@@ -7,7 +7,7 @@
 
 PORTNAME=	sakai
 PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	http://source.sakaiproject.org/release/2.5.0/sakai-2-5-0/
 DISTNAME=	${PORTNAME}-bin-2-5-0

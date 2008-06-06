@@ -7,6 +7,7 @@
 
 PORTNAME=	spectools
 PORTVERSION=	200710.r2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/
 DISTNAME=	spectools-2007-10-R2

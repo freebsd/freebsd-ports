@@ -7,6 +7,7 @@
 
 PORTNAME=	crow
 PORTVERSION=	2.11.3
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	SF/crow-designer
 

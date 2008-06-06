@@ -7,6 +7,7 @@
 
 PORTNAME=	irssi-themes
 PORTVERSION=	20071213
+PORTREVISION=	1
 CATEGORIES=	x11-themes irc
 MASTER_SITES=	http://www.irssi.org/themefiles/ \
 		CRITICAL

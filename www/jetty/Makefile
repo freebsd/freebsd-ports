@@ -7,6 +7,7 @@
 
 PORTNAME=	jetty
 DISTVERSION=	6.1.7
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/jetty/${PKGNAME}/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	kcube
 PORTVERSION=	0.61
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.tuxed.de/kcube/download/
 

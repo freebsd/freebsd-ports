@@ -7,7 +7,7 @@
 
 PORTNAME=	rbison
 PORTVERSION=	0.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

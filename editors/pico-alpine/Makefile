@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pico-alpine
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	editors
 DISTNAME=	alpine-${PORTVERSION}
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	lfhex
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://stoopidsimple.com/files/ \
 		http://home.earthlink.net/~eyekode/data/

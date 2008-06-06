@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-doc-utils
 PORTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 

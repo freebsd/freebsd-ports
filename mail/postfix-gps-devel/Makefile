@@ -7,7 +7,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	1.004
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	http://mimo.gn.apc.org/gps/
 PKGNAMEPREFIX=	postfix-

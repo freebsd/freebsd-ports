@@ -6,6 +6,7 @@
 
 PORTNAME=		calcurse
 PORTVERSION=		2.1
+PORTREVISION=	1
 CATEGORIES=		deskutils
 MASTER_SITES=		ftp://ftp2.culot.org/culot/
 

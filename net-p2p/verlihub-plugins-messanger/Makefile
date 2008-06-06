@@ -7,6 +7,7 @@
 
 PORTNAME=	messanger
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	skylord@vt.net.ru

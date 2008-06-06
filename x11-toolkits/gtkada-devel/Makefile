@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	20060615
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://sitola.fi.muni.cz/~hopet/gtkada/
 PKGNAMESUFFIX=	-devel

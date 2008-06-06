@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlalchemy
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://pypi.python.org/packages/source/S/SQLAlchemy/ \

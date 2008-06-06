@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	chinese
 
 MAINTAINER=	rafan@FreeBSD.org

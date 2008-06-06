@@ -7,7 +7,7 @@
 
 PORTNAME=	sipxtacklib
 PORTVERSION=	3.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net java
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	jdic
 PORTVERSION=	20061102
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits java
 MASTER_SITES=	https://jdic.dev.java.net/files/documents/880/43269/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

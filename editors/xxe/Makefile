@@ -7,7 +7,7 @@
 
 PORTNAME=	xxe
 PORTVERSION=	${XXE_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	editors java
 MASTER_SITES=	http://www.xmlmind.net/xmleditor/_download/
 PKGNAMESUFFIX=	-perso

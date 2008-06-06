@@ -7,6 +7,7 @@
 
 PORTNAME=	libdbi-drivers
 DISTVERSION=	0.8.3-1
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	SF
 

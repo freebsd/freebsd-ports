@@ -7,6 +7,7 @@
 
 PORTNAME=	tgwebservices
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/T/${PYTGWEBSERVICES}/ \
 		LOCAL/nivit/${PYTGWEBSERVICES}/

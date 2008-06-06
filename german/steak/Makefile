@@ -7,7 +7,7 @@
 
 PORTNAME=	steak
 PORTVERSION=	1.7.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	german
 MASTER_SITES=	SF \
 		http://www.tm.informatik.uni-frankfurt.de/%7Erazi/steak/program/

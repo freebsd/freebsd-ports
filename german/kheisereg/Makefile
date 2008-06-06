@@ -6,7 +6,7 @@
 
 PORTNAME=		kheisereg
 PORTVERSION=		0.8
-PORTREVISION=		3
+PORTREVISION=	4
 CATEGORIES=		german kde
 MASTER_SITES=		http://www.gantz-edv.de/kheisereg/
 

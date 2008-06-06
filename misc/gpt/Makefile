@@ -7,7 +7,7 @@
 
 PORTNAME=	gpt
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc archivers devel parallel
 MASTER_SITES=	ftp://ftp.globus.org/pub/gt4/4.0/4.0.0/gpt/
 DISTNAME=	gpt-${PORTVERSION}autotools2004-src

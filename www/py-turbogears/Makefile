@@ -7,6 +7,7 @@
 
 PORTNAME=	TurboGears
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://files.turbogears.org/eggs/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnusget
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://edge.pp.ru/gnusget/ \
 		http://fb.roolz.org/gnusget/ \

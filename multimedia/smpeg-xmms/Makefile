@@ -7,7 +7,7 @@
 
 PORTNAME=	smpeg-xmms
 PORTVERSION=	0.3.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://www.xmms.org/files/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/%SUBDIR%/

@@ -7,6 +7,7 @@
 
 PORTNAME=	mantissa
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	net www python
 MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

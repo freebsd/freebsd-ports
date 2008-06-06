@@ -7,7 +7,7 @@
 
 PORTNAME=	wdfs
 PORTVERSION=	1.4.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://noedler.de/projekte/wdfs/
 PKGNAMEPREFIX=	fusefs-

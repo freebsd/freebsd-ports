@@ -7,6 +7,7 @@
 
 PORTNAME=	liblqr-1
 DISTVERSION=	0.1.0-1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://liblqr.wikidot.com/local--files/en:download-page/ \
 		http://www.amdmi3.ru/distfiles/

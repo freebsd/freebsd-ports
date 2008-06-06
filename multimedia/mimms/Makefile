@@ -7,6 +7,7 @@
 
 PORTNAME=	mimms
 DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia net
 MASTER_SITES=	http://download.savannah.gnu.org/releases/mimms/ \
 		http://ftp.cc.uoc.gr/mirrors/nongnu.org/mimms/ \

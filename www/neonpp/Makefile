@@ -7,6 +7,7 @@
 
 PORTNAME=	neonpp
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://files.backtrace.info/releases/neonpp/ \
 		${MASTER_SITE_LOCAL}

@@ -7,7 +7,7 @@
 
 PORTNAME=		kgpg
 PORTVERSION=		1.0.0
-PORTREVISION=		7
+PORTREVISION=	8
 CATEGORIES=		security kde
 MASTER_SITES=		http://developer.kde.org/~kgpg/src/
 

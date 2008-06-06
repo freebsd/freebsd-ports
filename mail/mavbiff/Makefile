@@ -7,7 +7,7 @@
 
 PORTNAME=	mavbiff
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mavetju.org/download/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	beryl-settings-bindings
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.beryl-project.org/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}

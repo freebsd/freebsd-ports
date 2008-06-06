@@ -7,6 +7,7 @@
 
 PORTNAME=	scythia
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://scythia.free.fr/file/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/

@@ -7,6 +7,7 @@
 
 PORTNAME=	buzztard
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	gstreamer-plugins-

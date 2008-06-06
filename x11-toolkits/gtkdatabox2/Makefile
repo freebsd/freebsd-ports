@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkdatabox2
 PORTVERSION=	0.8.2.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.eudoxos.de/gtk/gtkdatabox/download/
 DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}

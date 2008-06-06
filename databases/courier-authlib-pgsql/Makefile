@@ -8,6 +8,7 @@
 PKGNAMESUFFIX=	-pgsql
 
 COMMENT=	PostgreSQL support for the Courier authentication library
+PORTREVISION=	1
 CATEGORIES=	databases mail
 
 MASTERDIR=	${.CURDIR}/../../security/courier-authlib

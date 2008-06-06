@@ -7,6 +7,7 @@
 
 PORTNAME=	subclipse
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/39522/
 DISTNAME=	site-${PORTVERSION}

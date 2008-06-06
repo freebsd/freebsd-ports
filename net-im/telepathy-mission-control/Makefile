@@ -7,6 +7,7 @@
 
 PORTNAME=	telepathy-mission-control
 PORTVERSION=	4.65
+PORTREVISION=	1
 CATEGORIES=	net-im devel
 MASTER_SITES=	SF/mission-control
 

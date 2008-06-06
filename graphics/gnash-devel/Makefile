@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 DISTVERSION=	20080515
+PORTREVISION=	1
 CATEGORIES=	graphics
 # gnashdev.org is slower
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \

@@ -8,6 +8,7 @@
 
 PORTNAME=	genmenu
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://gtk.no/archive/genmenu/
 

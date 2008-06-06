@@ -7,7 +7,7 @@
 
 PORTNAME=	katapult
 PORTVERSION=	0.3.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://superb-east.dl.sourceforge.net/sourceforge/katapult/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig

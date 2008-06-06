@@ -7,6 +7,7 @@
 
 PORTNAME=	keepalived
 PORTVERSION=	1.1.11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cultdeadsheep.org/~clement/FreeBSD/ipvs/
 DISTNAME=	${PORTNAME}-FreeBSD-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	flex_compiler_shell
 PORTVERSION=	0.20070123
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://download.macromedia.com/pub/labs/flex_compiler_shell/
 DISTNAME=	flex_compiler_shell_012307

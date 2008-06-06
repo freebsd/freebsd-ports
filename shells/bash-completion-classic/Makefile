@@ -7,7 +7,7 @@
 
 PORTNAME=	bash-completion
 PORTVERSION=	20060301
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	http://www.caliban.org/files/bash/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	nc6
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.deepspace6.net/pub/ds6/sources/nc6/ \
 		http://ftp.deepspace6.net/pub/ds6/sources/nc6/

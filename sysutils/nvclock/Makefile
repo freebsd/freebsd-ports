@@ -7,6 +7,7 @@
 
 PORTNAME=	nvclock
 DISTVERSION=	0.8b2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.linuxhardware.org/nvclock/ \
 		http://www.kerneled.com/freebsd/ports/

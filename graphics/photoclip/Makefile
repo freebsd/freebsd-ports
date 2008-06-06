@@ -7,7 +7,7 @@
 
 PORTNAME=	photoclip
 PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.vaisburd.net/PhotoClip/ \
 		${MASTER_SITE_GNUSTEP_CH}

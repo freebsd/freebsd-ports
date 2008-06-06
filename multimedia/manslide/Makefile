@@ -7,6 +7,7 @@
 
 PORTNAME=	manslide
 DISTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://www.mandrivalinux-online.eu/manslide/
 

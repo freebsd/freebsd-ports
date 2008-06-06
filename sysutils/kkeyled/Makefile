@@ -6,7 +6,7 @@
 
 PORTNAME=	kkeyled
 PORTVERSION=	0.8.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 

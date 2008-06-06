@@ -7,7 +7,7 @@
 
 PORTNAME=	jdictionary-fre-hun
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	french hungarian textproc
 DISTNAME=	Smart_French_Hungarian-1_0.jar
 

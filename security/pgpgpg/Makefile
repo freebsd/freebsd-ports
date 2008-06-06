@@ -7,7 +7,7 @@
 
 PORTNAME=	pgpgpg
 PORTVERSION=	0.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 		ftp://ftp.gnupg.org/gcrypt/historic/ \

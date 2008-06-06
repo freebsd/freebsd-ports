@@ -7,6 +7,7 @@
 
 PORTNAME=	quilt
 PORTVERSION=	0.46
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.savannah.gnu.org/releases/quilt/
 

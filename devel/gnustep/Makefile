@@ -11,6 +11,7 @@ PORTVERSION=	1.15.3
 .else
 PORTVERSION=	1.14.3
 .endif
+PORTREVISION=	1
 CATEGORIES=	devel lang gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty

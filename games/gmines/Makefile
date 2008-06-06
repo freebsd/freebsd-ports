@@ -7,7 +7,7 @@
 
 PORTNAME=	gmines
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GMines/
 DISTNAME=	GMines

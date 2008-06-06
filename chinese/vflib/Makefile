@@ -7,7 +7,7 @@
 
 PORTNAME=	vflib
 PORTVERSION=	${VFLIB_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/VFlib2/ \
 		ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/

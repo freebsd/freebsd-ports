@@ -7,6 +7,7 @@
 
 PORTNAME=	jigsaw
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GPuzzle2/
 DISTNAME=	Jigsaw

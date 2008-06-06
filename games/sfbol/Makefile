@@ -6,7 +6,7 @@
 
 PORTNAME=	sfbol
 PORTVERSION=	4.37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games java
 MASTER_SITES=	http://www.sfbonline.com/programs/
 DISTNAME=	install40

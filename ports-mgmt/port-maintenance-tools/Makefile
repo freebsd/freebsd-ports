@@ -7,6 +7,7 @@
 
 PORTNAME=	port-maintenance-tools
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# empty

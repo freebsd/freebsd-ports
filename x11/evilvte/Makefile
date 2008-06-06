@@ -7,6 +7,7 @@
 
 PORTNAME=	evilvte
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.calno.com/${PORTNAME}/ \
 		LOCAL/chinsan/${PORTNAME}/

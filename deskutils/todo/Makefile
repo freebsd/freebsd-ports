@@ -8,6 +8,7 @@
 
 PORTNAME=	todo
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://todotxt.com/library/todo.sh/
 DISTNAME=	todo.sh

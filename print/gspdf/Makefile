@@ -7,7 +7,7 @@
 
 PORTNAME=	gspdf
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print gnustep
 MASTER_SITES=	http://www.gnustep.it/enrico/gspdf/
 

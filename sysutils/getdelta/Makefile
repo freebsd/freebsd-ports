@@ -7,7 +7,7 @@
 
 PORTNAME=	getdelta
 PORTVERSION=	0.7.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://132.207.4.160/distfiles/ \

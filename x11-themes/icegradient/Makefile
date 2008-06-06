@@ -7,7 +7,7 @@
 
 PORTNAME=	icegradient
 PORTVERSION=	200012290259
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes
 MASTER_SITES=	ftp://ftp.themes.org/pub/themes/gtk/ \
 		${MASTER_SITE_LOCAL}

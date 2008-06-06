@@ -7,6 +7,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	2.2.10
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 

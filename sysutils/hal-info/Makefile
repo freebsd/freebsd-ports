@@ -8,6 +8,7 @@
 
 PORTNAME=	hal-info
 PORTVERSION=	20080508
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 

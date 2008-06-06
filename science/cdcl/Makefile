@@ -7,6 +7,7 @@
 
 PORTNAME=	cdcl
 PORTVERSION=	5.3.3
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/
 DISTNAME=	dcl-${PORTVERSION}-C

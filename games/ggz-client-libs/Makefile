@@ -8,6 +8,7 @@
 
 PORTNAME=	ggz-client-libs
 PORTVERSION=	${GGZ_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw

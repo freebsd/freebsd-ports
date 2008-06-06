@@ -7,7 +7,7 @@
 
 PORTNAME=	looks
 PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.jgoodies.com/download/libraries/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}

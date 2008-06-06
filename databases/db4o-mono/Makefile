@@ -8,6 +8,7 @@
 
 PORTNAME=	db4o
 PORTVERSION=	${REALVERSION}.20
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.db4o.com/downloads/
 PKGNAMESUFFIX=	-mono

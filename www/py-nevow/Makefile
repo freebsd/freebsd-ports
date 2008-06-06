@@ -7,7 +7,7 @@
 
 PORTNAME=	nevow
 PORTVERSION=	0.9.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python devel
 MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

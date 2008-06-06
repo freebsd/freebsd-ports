@@ -7,6 +7,7 @@
 
 PORTNAME=	system
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-

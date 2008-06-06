@@ -7,6 +7,7 @@
 
 PORTNAME=	structuresynth
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	StructureSynth-Source-v${PORTVERSION}

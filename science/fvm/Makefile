@@ -7,6 +7,7 @@
 
 PORTNAME=	fvm
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}

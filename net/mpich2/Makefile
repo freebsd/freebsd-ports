@@ -7,6 +7,7 @@
 
 PORTNAME=	mpich2
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/

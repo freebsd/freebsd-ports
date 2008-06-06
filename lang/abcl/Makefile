@@ -7,7 +7,7 @@
 
 PORTNAME=	abcl
 DISTVERSION=	0.0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://armedbear.org/
 

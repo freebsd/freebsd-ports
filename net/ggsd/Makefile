@@ -7,7 +7,7 @@
 
 PORTNAME=	ggsd
 PORTVERSION=	0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	ggsd

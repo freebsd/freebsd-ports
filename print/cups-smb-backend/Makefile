@@ -7,6 +7,7 @@
 
 PORTNAME=	cups-smb-backend
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty

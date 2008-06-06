@@ -7,6 +7,7 @@
 
 PORTNAME=	hercules
 PORTVERSION=	3.05
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.hercules-390.org/
 

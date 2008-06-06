@@ -7,7 +7,7 @@
 
 PORTNAME=	ecb
 PORTVERSION=	2.32
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dryice.name/computer/FreeBSD/distfiles/

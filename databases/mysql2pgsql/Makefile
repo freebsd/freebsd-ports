@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql2pgsql
 PORTVERSION=	20010527
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.rot13.org/~dpavlin/projects/sql/
 DISTNAME=	${PORTNAME}

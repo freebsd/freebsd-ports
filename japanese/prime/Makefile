@@ -7,7 +7,7 @@
 
 PORTNAME=	prime
 DISTVERSION=	1.0.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	http://prime.sourceforge.jp/src/
 

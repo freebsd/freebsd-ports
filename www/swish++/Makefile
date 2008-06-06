@@ -8,6 +8,7 @@
 
 PORTNAME=	swish++
 PORTVERSION=	6.1.5
+PORTREVISION=	1
 CATEGORIES=	www textproc
 MASTER_SITES=	SF/swishplusplus
 

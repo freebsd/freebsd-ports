@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	gnomecanvas
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 
 COMMENT=	A graphics library for GNOME

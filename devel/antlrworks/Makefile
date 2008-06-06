@@ -6,7 +6,7 @@
 
 PORTNAME=	antlrworks
 PORTVERSION=	1.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/

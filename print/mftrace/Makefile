@@ -8,7 +8,7 @@
 
 PORTNAME=	mftrace
 PORTVERSION=	1.2.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/chinsan \
 		http://lilypond.org/download/sources/mftrace/

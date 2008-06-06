@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-taskmanager
 PORTVERSION=	0.4.0.r2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://xfce4-taskmanager.nebulon.de/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
