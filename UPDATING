@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20080605:
+  AFFECTS: users of audio/paman and audio/pavucontrol
+  AUTHOR: lippe@FreeBSD.org
+
+  paman was renamed to pavucontrol, but these are two projects differents.
+  paman is an GTK frontend to PulseAudio and pavucontrol is GTK based volume
+  control tool to PulseAudio.
+
+20080605:
   AFFECTS: users of devel/gettext (ie: YOU)
   AUTHOR: ade@FreeBSD.org
 
@@ -46,6 +54,7 @@ upgrades.
 
   ikiwiki-transition hashpassword /path/to/your/wiki/srcdir
 
+>>>>>>> 1.638
 20080524:
   AFFECTS: users of net-im/jabberd
   AUTHOR: mm@FreeBSD.org
