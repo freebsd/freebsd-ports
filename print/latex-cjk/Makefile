@@ -30,7 +30,7 @@ USE_FREETYPE=	yes
 MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \
 		hbf2gf.1 sjisconv.1
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	TEXMFMAIN=${LOCALBASE}/share/texmf
 
 INSTALL_DIR=	${INSTALL} -d -m 0755 -o root -g wheel
