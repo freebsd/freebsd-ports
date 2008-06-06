@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.16.0
-PORTREVISION=	1
+PORTVERSION=	2.16.2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
 		ftp://ftp.nstu.ru/pub/sources/nettools/monitoring/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@logvinov.com
 COMMENT=	The multi-router traffic grapher
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
@@ -32,7 +31,7 @@ MRTG_UID?=	279
 MRTG_GID?=	279
 MRTG_RUNDIR?=	/var/run/mrtg
 
-USE_RC_SUBR=	mrtg_daemon.sh
+USE_RC_SUBR=	mrtg_daemon
 SUB_FILES=	pkg-install pkg-message
 SUB_LIST=	PERL=${PERL} \
 		MRTG_USER=${MRTG_USER} \
@@ -80,16 +79,16 @@ RUN_DEPENDS+=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 .endif
 
 post-patch:
-	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
+	@${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
 
 pre-configure:
-	${SED} -e 's,%%MRTG_USER%%,${MRTG_USER},g;' \
+	@${SED} -e 's,%%MRTG_USER%%,${MRTG_USER},g;' \
 		-e 's,%%MRTG_GROUP%%,${MRTG_GROUP},g;' \
 		-e 's,%%MRTG_UID%%,${MRTG_UID},g;' \
 		-e 's,%%MRTG_GID%%,${MRTG_GID},g;' \
 		-e 's,%%MRTG_RUNDIR%%,${MRTG_RUNDIR},g;' \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	${SETENV} @PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
+	@${SETENV} @PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
 		PRE-INSTALL
 
 do-install:
