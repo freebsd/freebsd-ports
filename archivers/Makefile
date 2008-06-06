@@ -48,6 +48,7 @@
     SUBDIR += libarchive
     SUBDIR += libcabinet
     SUBDIR += libcomprex
+    SUBDIR += libdynamite
     SUBDIR += liblzxcomp
     SUBDIR += libmspack
     SUBDIR += libunrar
