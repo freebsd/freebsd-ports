@@ -28,6 +28,9 @@ MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 PLIST_FILES=	bin/aldo
 MAN1=	aldo.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|1.10|1.10.1|g' ${WRKSRC}/aclocal.m4
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/aldo ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/aldo.1 ${MANPREFIX}/man/man1

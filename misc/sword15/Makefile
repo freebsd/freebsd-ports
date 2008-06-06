@@ -37,6 +37,7 @@ pre-everything::
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|1.10|1.10.1|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.am
 	@@${REINPLACE_CMD} -e 's|:=|=|' ${WRKSRC}/Makefile.am \

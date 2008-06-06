@@ -415,8 +415,6 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
 @dirrmtry share/locale/nn/LC_MESSAGES
 @dirrmtry share/locale/nn
 @dirrmtry share/locale/mr/LC_MESSAGES

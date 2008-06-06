@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	libtool
-PORTVERSION=	1.5.24
+PORTVERSION=	1.5.26
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
@@ -15,7 +15,7 @@ DISTNAME=	libtool-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 COMMENT?=	Generic shared library support script
 
-GNU_CONFIGURE=	 yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --disable-ltdl-install
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

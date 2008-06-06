@@ -24,6 +24,9 @@ AUTOFILES=	depcomp install-sh missing
 PORTDOCS=	README
 PLIST_FILES=	bin/dnswall
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|1.10|1.10.1|g' ${WRKSRC}/aclocal.m4
+
 pre-configure:
 .for f in ${AUTOFILES}
 	@${RM} ${WRKSRC}/${f}
