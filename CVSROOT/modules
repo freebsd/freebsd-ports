@@ -12168,6 +12168,7 @@ pam_pseudo	ports/security/pam_pseudo
 pam_pwdfile	ports/security/pam_pwdfile
 pam_require	ports/security/pam_require
 pam_smb		ports/security/pam_smb
+paman		ports/audio/paman
 paml		ports/biology/paml
 pamsfs		ports/security/pamsfs
 pamtester	ports/security/pamtester
