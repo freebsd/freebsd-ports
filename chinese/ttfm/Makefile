@@ -18,6 +18,8 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
+MAKE_ARGS=	FREETYPE_BASE=${LOCALBASE:Q}
+
 PORTDOCS=	README USAGE
 MAN1=		ttfm.sh.1
 
@@ -25,7 +27,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
 		-e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/modules/gscjk.ttfm \
-		${WRKSRC}/modules/xttfm.ttfm
+		${WRKSRC}/modules/xttfm.ttfm \
+		${WRKSRC}/ttfm.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttfinfo ${PREFIX}/bin/
