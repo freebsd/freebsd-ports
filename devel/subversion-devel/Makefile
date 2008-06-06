@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.5.0.rc7
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/
 PKGNAMESUFFIX?=	-devel
