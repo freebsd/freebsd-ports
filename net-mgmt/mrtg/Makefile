@@ -14,7 +14,7 @@ MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
 		ftp://ftp.nstu.ru/pub/sources/nettools/monitoring/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	mrtg@subnets.ru
 COMMENT=	The multi-router traffic grapher
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
