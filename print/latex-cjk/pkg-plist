@@ -68,28 +68,30 @@ bin/sjispdflatex
 %%PORTDOCS%%%%DOCSDIR%%/ruby.txt
 %%PORTDOCS%%%%DOCSDIR%%/thaifont.txt
 %%PORTDOCS%%%%DOCSDIR%%/vertical.txt
+%%PORTDOCS%%%%DOCSDIR%%/xCJK.txt
 share/emacs/site-lisp/CJK/cjkspace.el
 share/emacs/site-lisp/CJK/cjktilde.el
 share/emacs/site-lisp/CJK/emacs/cjk-enc.el
 share/emacs/site-lisp/CJK/emacs/thai-word.el
 share/emacs/site-lisp/CJK/mule-2.3/cjk-enc.el
-%%EXAMPLESDIR%%/Big5.tex
-%%EXAMPLESDIR%%/Big5vert.tex
-%%EXAMPLESDIR%%/CEF_test.tex
-%%EXAMPLESDIR%%/CJKbabel.tex
-%%EXAMPLESDIR%%/CJKfntef.tex
-%%EXAMPLESDIR%%/CJKmixed.tex
-%%EXAMPLESDIR%%/CJKutf8.tex
-%%EXAMPLESDIR%%/GB.tex
-%%EXAMPLESDIR%%/JIS.tex
-%%EXAMPLESDIR%%/KS.tex
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/SJIS.tex
-%%EXAMPLESDIR%%/UTF8.tex
-%%EXAMPLESDIR%%/muletest.tex
-%%EXAMPLESDIR%%/py_test.tex
-%%EXAMPLESDIR%%/rubytest.tex
-%%EXAMPLESDIR%%/thai.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Big5.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Big5vert.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CEF_test.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CJKbabel.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CJKfntef.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CJKmixed.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CJKutf8.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/GB.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/JIS.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/KS.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SJIS.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UTF8.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/muletest.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/py_test.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rubytest.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/thai.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xCJK.tex
 share/texmf/fonts/sfd/Big5.sfd
 share/texmf/fonts/sfd/EUC.sfd
 share/texmf/fonts/sfd/SJIS.sfd
@@ -1673,6 +1675,7 @@ share/texmf/tex/latex/CJK/GB/c21song.fd
 share/texmf/tex/latex/CJK/JIS/EUC-JP.bdg
 share/texmf/tex/latex/CJK/JIS/EUC-JP.chr
 share/texmf/tex/latex/CJK/JIS/EUC-JP.enc
+share/texmf/tex/latex/CJK/JIS/EUC-JPdnp.enc
 share/texmf/tex/latex/CJK/JIS/JIS.cap
 share/texmf/tex/latex/CJK/JIS/JIS.cpx
 share/texmf/tex/latex/CJK/JIS/JISdnp.enc
@@ -1792,6 +1795,8 @@ share/texmf/tex/latex/CJK/UTF8/ja.cpx
 share/texmf/tex/latex/CJK/UTF8/ko-Hang.cpx
 share/texmf/tex/latex/CJK/UTF8/ko-Hang2.cpx
 share/texmf/tex/latex/CJK/UTF8/ko-Hani.cpx
+share/texmf/tex/latex/CJK/UTF8/xUTF8.chr
+share/texmf/tex/latex/CJK/UTF8/xUTF8.enc
 share/texmf/tex/latex/CJK/UTF8/zh-Hans.cpx
 share/texmf/tex/latex/CJK/UTF8/zh-Hant.cpx
 share/texmf/tex/latex/CJK/extended.chr
@@ -1812,6 +1817,9 @@ share/texmf/tex/latex/CJK/thai/c90enc.def
 share/texmf/tex/latex/CJK/thai/c90gar.fd
 share/texmf/tex/latex/CJK/thai/c90nrsr.fd
 share/texmf/tex/latex/CJK/thai/thaicjk.ldf
+share/texmf/tex/latex/CJK/xCJK.sty
+share/texmf/tex/latex/CJK/xpmC.chr
+share/texmf/tex/latex/CJK/xpmC.enc
 %%CCMAP%%share/texmf/tex/latex/CJK/ccmap/ccmap.sty
 %%CCMAP%%share/texmf/tex/latex/CJK/ccmap/makecmap.tex
 %%CCMAP%%share/texmf/tex/latex/CJK/ccmap/make.sh
@@ -2401,7 +2409,7 @@ share/texmf/tex/latex/CJK/thai/thaicjk.ldf
 @dirrm share/emacs/site-lisp/CJK/emacs
 @dirrm share/emacs/site-lisp/CJK/mule-2.3
 @dirrm share/emacs/site-lisp/CJK
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm share/texmf/fonts/tfm/CJK/arb5kai
 @dirrm share/texmf/fonts/tfm/CJK/arb5sung
 @dirrm share/texmf/fonts/tfm/CJK/argbkai

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	latex-cjk
-PORTVERSION=	4.7.0
-PORTREVISION=	1
+PORTVERSION=	4.8.0
 CATEGORIES=	print chinese japanese korean
 MASTER_SITES=	http://cjk.ffii.org/ \
 		ftp://freebsd.csie.ntu.edu.tw/users/rafan/
@@ -72,18 +71,23 @@ post-patch:
 	# be compatible with Debian
 	@${CP} -p ${WRKSRC}/texinput/Bg5/c00kai.fd ${WRKSRC}/texinput/Bg5/c00bkai.fd
 	@${REINPLACE_CMD} -e 's,c00kai.fd,c00bkai.fd,; s,{kai},{bkai},' ${WRKSRC}/texinput/Bg5/c00bkai.fd
-	@${FIND} -E ${WRKSRC} -regex '.*.(orig|bak)' -delete
+.if defined(WITH_CCMAP)
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' ${WRKDIR}/ccmap/make.sh
+.endif
+	@${FIND} -E ${WRKSRC} ${WRKDIR}/ccmap -regex '.*.(orig|bak)' -delete
 
 pre-su-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${RM} -fr ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
-	${RM} -fr ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples ${EXAMPLESDIR}
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+.endif
 
 # Install Arphic fonts for Type 3 or DVIPDFMx
 	@${ECHO_CMD} "Generating Arphic fonts' TFM files..."
@@ -114,8 +118,7 @@ post-install:
 .if !defined(WITHOUT_CCMAP)
 	@${ECHO_CMD} "Installing ccmap..."
 	${LOCALBASE}/bin/mktexlsr
-	cd ${WRKDIR}/ccmap && ${SH} make.sh
-	${CP} -R ${WRKDIR}/ccmap ${CJKDIR}/
+	cd ${WRKDIR}/ccmap && ${SH} make.sh && ${COPYTREE_SHARE} \* ${CJKDIR}/ccmap
 .endif
 
 # Install Arphic fonts in Unicode separation for Type 3 or DVIPDFMx
