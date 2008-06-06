@@ -1884,6 +1884,7 @@ dblatex		ports/textproc/dblatex
 dbmail		ports/mail/dbmail
 dbmail20	ports/mail/dbmail20
 dbmail21	ports/mail/dbmail21
+dbmail23	ports/mail/dbmail23
 dbmetrix	ports/databases/dbmetrix
 dbow		ports/databases/dbow
 dboxfe		ports/emulators/dboxfe
