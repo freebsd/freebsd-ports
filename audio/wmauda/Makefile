@@ -7,6 +7,7 @@
 
 PORTNAME=	wmauda
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.netswarm.net/misc/
 

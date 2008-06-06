@@ -6,6 +6,7 @@
 
 PORTNAME=	lastfm
 PORTVERSION=	1.13.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://petherton.pwp.blueyonder.co.uk/SlimServer/
 MASTER_SITE_SUBDIR=	${PORTNAME}

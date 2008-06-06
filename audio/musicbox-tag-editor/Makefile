@@ -8,7 +8,7 @@
 
 PORTNAME=		musicbox-tag-editor
 PORTVERSION=		0.2.3
-PORTREVISION=		8
+PORTREVISION=	9
 CATEGORIES=		audio
 MASTER_SITES=		SF/musicbox
 DISTNAME=		musicbox-${PORTVERSION}

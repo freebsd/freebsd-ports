@@ -7,7 +7,7 @@
 
 PORTNAME=	xmmsctrl
 PORTVERSION=	1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://user.it.uu.se/~adavid/utils/ \
 		http://distro.ibiblio.org/pub/linux/distributions/pdaxrom/src/ \

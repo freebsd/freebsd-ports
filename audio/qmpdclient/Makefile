@@ -7,6 +7,7 @@
 
 PORTNAME=	qmpdclient
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://havtknut.tihlde.org/qmpdclient/files/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz

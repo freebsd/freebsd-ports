@@ -7,7 +7,7 @@
 
 PORTNAME=	biojava
 DISTVERSION=	1.5-beta2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	biology java
 MASTER_SITES=	http://www.biojava.org/download/bj15b/all/:source	\

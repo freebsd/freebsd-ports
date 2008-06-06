@@ -7,6 +7,7 @@
 
 PORTNAME=	libmpd
 PORTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/gmpc-0.15.5/ \
 		http://download.gna.org/kanicule/freebsd/distfiles/

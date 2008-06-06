@@ -7,6 +7,7 @@
 
 PORTNAME=	artemis
 PORTVERSION=	9
+PORTREVISION=	1
 CATEGORIES=	biology java
 MASTER_SITES=	http://www.sanger.ac.uk/Software/Artemis/v${PORTVERSION}/ \
 		ftp://ftp.sanger.ac.uk/pub/pathogens/software/artemis/v${PORTVERSION}/

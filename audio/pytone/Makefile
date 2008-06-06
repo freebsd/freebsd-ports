@@ -7,6 +7,7 @@
 
 PORTNAME=	pytone
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.luga.de/pytone/download/ \
 		http://redundancy.redundancy.org/mirror/

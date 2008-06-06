@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	audio perl5
 PKGNAMEPREFIX=	p5-
 

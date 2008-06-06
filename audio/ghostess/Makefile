@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostess
 PORTVERSION=	20061127
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://home.jps.net/~musound/
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	5.27
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	jack-keyboard
 DISTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://pin.if.uz.zgora.pl/~trasz/jack-keyboard/ \
 		${MASTER_SITE_LOCAL}

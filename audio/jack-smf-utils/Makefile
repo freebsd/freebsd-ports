@@ -7,6 +7,7 @@
 
 PORTNAME=	jack-smf-utils
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://pin.if.uz.zgora.pl/~trasz/jack-smf-utils/ \
 		${MASTER_SITE_LOCAL}

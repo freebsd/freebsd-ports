@@ -7,6 +7,7 @@
 
 PORTNAME=	madplay
 PORTVERSION=	0.15.2b
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.mars.org/pub/mpeg/

@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmvolume
 PORTVERSION=	0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
 DISTNAME=	volume-${PORTVERSION}

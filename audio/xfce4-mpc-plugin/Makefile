@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-mpc-plugin
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4

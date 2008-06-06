@@ -7,7 +7,7 @@
 
 PORTNAME=	ecamegapedal
 PORTVERSION=	0.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 

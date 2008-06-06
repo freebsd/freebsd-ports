@@ -7,7 +7,7 @@
 
 PORTNAME=	nightfall
 PORTVERSION=	1.62
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	http://www.la-samhna.de/nightfall/ CENKES
 

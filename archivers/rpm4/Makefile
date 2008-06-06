@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/
