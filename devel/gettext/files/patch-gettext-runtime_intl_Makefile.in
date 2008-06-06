@@ -1,16 +1,16 @@
---- gettext-runtime/intl/Makefile.in.orig	Mon Nov 27 09:02:00 2006
-+++ gettext-runtime/intl/Makefile.in	Sun Dec  3 17:48:38 2006
-@@ -78,3 +78,3 @@
+--- gettext-runtime/intl/Makefile.in.orig	2007-11-04 21:21:12.000000000 +0000
++++ gettext-runtime/intl/Makefile.in	2007-12-12 03:28:44.000000000 +0000
+@@ -79,3 +79,3 @@
  DEFS = -DLOCALEDIR=\"$(localedir)\" -DLOCALE_ALIAS_PATH=\"$(aliaspath)\" \
 --DLIBDIR=\"$(libdir)\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL \
 +-DLIBDIR=\"$(prefix)/libdata\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL \
  -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"$(libdir)\" -DNO_XMALLOC \
-@@ -191,3 +191,3 @@
+@@ -195,3 +195,3 @@
  	  $(CC) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS) $(LDFLAGS) -o $@ \
--	  $(OBJECTS) @LTLIBICONV@ @INTL_MACOSX_LIBS@ $(LIBS) @LTLIBTHREAD@ -lc \
+-	  $(OBJECTS) @LTLIBICONV@ @INTL_MACOSX_LIBS@ $(LIBS) @LTLIBTHREAD@ @LTLIBC@ \
 +	  $(OBJECTS) @LTLIBICONV@ @INTL_MACOSX_LIBS@ $(LIBS) @LTLIBTHREAD@ \
- 	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
-@@ -346,18 +346,2 @@
+ 	  $(OBJECTS_RES_@WOE32@) \
+@@ -369,18 +369,2 @@
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
 -	  test @GLIBC21@ != no || $(mkdir_p) $(DESTDIR)$(libdir); \
 -	  temp=$(DESTDIR)$(libdir)/t-charset.alias; \
@@ -29,7 +29,7 @@
 -	    fi; \
 -	  fi; \
  	  $(mkdir_p) $(DESTDIR)$(localedir); \
-@@ -447,5 +431,5 @@
+@@ -472,5 +456,5 @@
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
 -	  if test -f $(DESTDIR)$(libdir)/charset.alias; then \
 -	    temp=$(DESTDIR)$(libdir)/t-charset.alias; \

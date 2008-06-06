@@ -36,7 +36,7 @@ lib/libgettextlib.so
 lib/libgettextpo.a
 lib/libgettextpo.la
 lib/libgettextpo.so
-lib/libgettextpo.so.3
+lib/libgettextpo.so.4
 lib/libgettextsrc.la
 lib/libgettextsrc-%%VERSION%%.so
 lib/libgettextsrc.so
@@ -56,6 +56,7 @@ share/aclocal/iconv.m4
 share/aclocal/intdiv0.m4
 share/aclocal/intl.m4
 share/aclocal/intldir.m4
+share/aclocal/intlmacosx.m4
 share/aclocal/intmax.m4
 share/aclocal/inttypes-pri.m4
 share/aclocal/inttypes_h.m4
@@ -64,7 +65,6 @@ share/aclocal/lib-ld.m4
 share/aclocal/lib-link.m4
 share/aclocal/lib-prefix.m4
 share/aclocal/lock.m4
-share/aclocal/longdouble.m4
 share/aclocal/longlong.m4
 share/aclocal/nls.m4
 share/aclocal/po.m4
@@ -73,7 +73,6 @@ share/aclocal/progtest.m4
 share/aclocal/size_max.m4
 share/aclocal/stdint_h.m4
 share/aclocal/uintmax_t.m4
-share/aclocal/ulonglong.m4
 share/aclocal/visibility.m4
 share/aclocal/wchar_t.m4
 share/aclocal/wint_t.m4
@@ -122,33 +121,6 @@ share/aclocal/xsize.m4
 %%PORTDOCS%%%%DOCSDIR%%/gettext_25.html
 %%PORTDOCS%%%%DOCSDIR%%/gettext_foot.html
 %%PORTDOCS%%%%DOCSDIR%%/gettext_toc.html
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/AllNames.html
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/gnu.gettext.GettextResource.html
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/blue-ball-small.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/blue-ball.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/class-index.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/constructor-index.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/constructors.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/cyan-ball-small.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/cyan-ball.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/error-index.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/exception-index.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/green-ball-small.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/green-ball.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/interface-index.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/magenta-ball-small.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/magenta-ball.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/method-index.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/methods.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/package-index.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/red-ball-small.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/red-ball.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/variable-index.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/variables.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/yellow-ball-small.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/yellow-ball.gif
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/packages.html
-%%PORTDOCS%%%%DOCSDIR%%/javadoc1/tree.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc2/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc2/deprecated-list.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc2/gnu/gettext/GettextResource.html
@@ -197,6 +169,7 @@ share/emacs/site-lisp/po-mode.el
 %%DATADIR%%/intl/l10nflist.c
 %%DATADIR%%/intl/langprefs.c
 %%DATADIR%%/intl/libgnuintl.h.in
+%%DATADIR%%/intl/libintl.rc
 %%DATADIR%%/intl/loadinfo.h
 %%DATADIR%%/intl/loadmsgcat.c
 %%DATADIR%%/intl/localcharset.c
@@ -225,6 +198,8 @@ share/emacs/site-lisp/po-mode.el
 %%DATADIR%%/intl/relocatable.c
 %%DATADIR%%/intl/relocatable.h
 %%DATADIR%%/intl/textdomain.c
+%%DATADIR%%/intl/tsearch.c
+%%DATADIR%%/intl/tsearch.h
 %%DATADIR%%/intl/vasnprintf.c
 %%DATADIR%%/intl/vasnprintf.h
 %%DATADIR%%/intl/vasnwprintf.h
@@ -256,6 +231,12 @@ share/emacs/site-lisp/po-mode.el
 %%DATADIR%%/projects/TP/trigger
 %%DATADIR%%/projects/index
 %%DATADIR%%/projects/team-address
+%%DATADIR%%/styles/po-default.css
+%%DATADIR%%/styles/po-emacs-x.css
+%%DATADIR%%/styles/po-emacs-xterm.css
+%%DATADIR%%/styles/po-emacs-xterm16.css
+%%DATADIR%%/styles/po-emacs-xterm256.css
+%%DATADIR%%/styles/po-vim.css
 share/locale/be/LC_MESSAGES/gettext-runtime.mo
 share/locale/be/LC_MESSAGES/gettext-tools.mo
 share/locale/ca/LC_MESSAGES/gettext-runtime.mo
@@ -277,6 +258,7 @@ share/locale/es/LC_MESSAGES/gettext-runtime.mo
 share/locale/es/LC_MESSAGES/gettext-tools.mo
 share/locale/et/LC_MESSAGES/gettext-runtime.mo
 share/locale/et/LC_MESSAGES/gettext-tools.mo
+share/locale/eu/LC_MESSAGES/gettext-tools.mo
 share/locale/fi/LC_MESSAGES/gettext-runtime.mo
 share/locale/fi/LC_MESSAGES/gettext-tools.mo
 share/locale/fr/LC_MESSAGES/gettext-runtime.mo
@@ -293,12 +275,12 @@ share/locale/ja/LC_MESSAGES/gettext-tools.mo
 share/locale/ko/LC_MESSAGES/gettext-runtime.mo
 share/locale/ko/LC_MESSAGES/gettext-tools.mo
 share/locale/locale.alias
+share/locale/nb/LC_MESSAGES/gettext-runtime.mo
+share/locale/nb/LC_MESSAGES/gettext-tools.mo
 share/locale/nl/LC_MESSAGES/gettext-runtime.mo
 share/locale/nl/LC_MESSAGES/gettext-tools.mo
 share/locale/nn/LC_MESSAGES/gettext-runtime.mo
 share/locale/nn/LC_MESSAGES/gettext-tools.mo
-share/locale/no/LC_MESSAGES/gettext-runtime.mo
-share/locale/no/LC_MESSAGES/gettext-tools.mo
 share/locale/pl/LC_MESSAGES/gettext-runtime.mo
 share/locale/pl/LC_MESSAGES/gettext-tools.mo
 share/locale/pt/LC_MESSAGES/gettext-runtime.mo
@@ -328,6 +310,7 @@ share/locale/zh_CN/LC_MESSAGES/gettext-tools.mo
 share/locale/zh_HK/LC_MESSAGES/gettext-runtime.mo
 share/locale/zh_TW/LC_MESSAGES/gettext-runtime.mo
 share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
+@dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/projects/TP
 @dirrm %%DATADIR%%/projects/KDE
 @dirrm %%DATADIR%%/projects/GNOME
@@ -339,8 +322,6 @@ share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc2/gnu/gettext
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc2/gnu
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc1/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/build-aux
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/csharpdoc

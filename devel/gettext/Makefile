@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	0.16.1
-PORTREVISION=	3
+PORTVERSION=	0.17
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -33,10 +33,10 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-MAN1=		autopoint.1 gettext.1 gettextize.1 msgattrib.1 msgcat.1 \
-		msgcmp.1 msgcomm.1 msgconv.1 msgen.1 msgexec.1 \
+MAN1=		autopoint.1 envsubst.1 gettext.1 gettextize.1 msgattrib.1 \
+		msgcat.1 msgcmp.1 msgcomm.1 msgconv.1 msgen.1 msgexec.1 \
 		msgfilter.1 msgfmt.1 msggrep.1 msginit.1 msgmerge.1 \
-		msgunfmt.1 msguniq.1 ngettext.1 xgettext.1 envsubst.1
+		msgunfmt.1 msguniq.1 ngettext.1 recode-sr-latin.1 xgettext.1
 MAN3=		bind_textdomain_codeset.3 bindtextdomain.3 dcgettext.3 \
 		dcngettext.3 dgettext.3 dngettext.3 gettext.3 ngettext.3 \
 		textdomain.3
