@@ -23,7 +23,7 @@ upgrades.
   depend on gettext:
   
   # portupgrade -rf gettext
-  # portmaster -r gettext
+  # portmaster -r gettext\*
 
   Given the scope and sheer number of dependent ports, it may be more
   advisable to simply blow away all existing install ports (after
