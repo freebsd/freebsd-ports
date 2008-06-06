@@ -7,7 +7,7 @@
 
 PORTNAME=	ncmpc
 PORTVERSION=	0.11.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://hem.bredband.net/kaw/ncmpc/files/ \
 		http://mercury.chem.pitt.edu/~shank/

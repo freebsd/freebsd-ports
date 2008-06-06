@@ -7,6 +7,7 @@
 
 PORTNAME=	gtkhirad
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	audio chinese gnome
 MASTER_SITES=	http://pcman.sayya.org/gtkhirad/
 

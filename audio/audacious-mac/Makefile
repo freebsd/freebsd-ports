@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious-mac
 PORTVERSION=	0.3.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.netswarm.net/misc/
 

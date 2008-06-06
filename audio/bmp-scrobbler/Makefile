@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bmp-scrobbler
-PORTREVISION=	4
+PORTREVISION=	5
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	BMP plugin for Audioscrobbler.com

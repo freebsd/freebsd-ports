@@ -6,7 +6,7 @@
 
 PORTNAME=	snett
 PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio ruby
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/snett/
 

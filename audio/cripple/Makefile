@@ -7,7 +7,7 @@
 
 PORTNAME=	cripple
 PORTVERSION=	0.06b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.vortex.prodigynet.co.uk/${PORTNAME}/
 

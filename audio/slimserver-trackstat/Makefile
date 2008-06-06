@@ -7,6 +7,7 @@
 
 PORTNAME=	trackstat
 PORTVERSION=	1.40.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://erland.homeip.net/download/do/downloadapplication?name=slimserver-trackstat&filename=/
 PKGNAMEPREFIX=	slimserver-

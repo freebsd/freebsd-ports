@@ -7,7 +7,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	3.0.6
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.tpnet.pl/vol/d4/ftp.rpm.org/rpm/dist/rpm-3.0.x/ \
 		http://www.stttelkom.ac.id/staf/TBH/distfiles/

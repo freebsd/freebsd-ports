@@ -7,6 +7,7 @@
 
 PORTNAME=	javatar
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	archivers java
 MASTER_SITES=	http://www.gjt.org/download/time/java/tar/ \
 		ftp://ftp.gjt.org/pub/time/java/tar/

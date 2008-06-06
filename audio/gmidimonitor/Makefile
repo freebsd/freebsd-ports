@@ -7,6 +7,7 @@
 
 PORTNAME=	gmidimonitor
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	audio
 # WARNING: the path below changes with every release.  It's not enough to change
 # the version number above.

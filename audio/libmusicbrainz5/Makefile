@@ -7,7 +7,7 @@
 
 PORTNAME=	libmusicbrainz3
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
     		http://uk.musicbrainz.org/pub/musicbrainz/

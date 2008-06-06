@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkgep
 PORTVERSION=	0.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://finarfinek.republika.pl/download/
 

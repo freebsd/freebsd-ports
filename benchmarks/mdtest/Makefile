@@ -7,7 +7,7 @@
 
 PORTNAME=	mdtest
 PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.llnl.gov/icc/lc/siop/downloads/
 

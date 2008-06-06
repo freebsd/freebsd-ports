@@ -6,8 +6,8 @@
 
 PORTNAME=	boinc-einsteinathome
 PORTVERSION=	4.18
+PORTREVISION=	2
 PORTEPOCH=	2
-PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://einstein.phys.uwm.edu/app_test/FreeBSD/
 DISTNAME=	einstein_S5R3_${PORTVERSION}_i386-unknown-freebsd

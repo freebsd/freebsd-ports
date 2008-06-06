@@ -7,6 +7,7 @@
 
 PORTNAME=	makeself
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.megastep.org/makeself/
 EXTRACT_SUFX=	.run

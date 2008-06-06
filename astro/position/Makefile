@@ -7,7 +7,7 @@
 
 PORTNAME=	position
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro gnustep
 MASTER_SITES=	http://www.gnustep.it/enrico/position/
 
