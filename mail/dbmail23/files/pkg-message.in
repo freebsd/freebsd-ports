@@ -1,0 +1,8 @@
+
+NOTE FOR ADMINS UPGRADING FROM 2.2.X -> 2.3 :
+
+	*) Update database using a script
+	   %%DATADIR%%/mysql/2_2_5-2_3_0.mysql (if you're using MySQL)
+	   %%DATADIR%%/postgresql/2_2_5-2_3_0.pgsql (PostgreSQL)
+	   %%DATADIR%%/sqlite/2_2_5-2_3_0.sqlite (SQLite3)
+	*) Run `dbmail-util -by'

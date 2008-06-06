@@ -1,0 +1,16 @@
+--- src/dbmail.h.in.orig	Mon Feb  4 17:37:40 2008
++++ src/dbmail.h.in	Tue Feb  5 19:45:09 2008
+@@ -72,6 +72,13 @@
+ #include <time.h>
+ #include <termios.h>
+ #include <unistd.h>
++#undef PACKAGE
++#undef PACKAGE_BUGREPORT
++#undef PACKAGE_NAME
++#undef PACKAGE_STRING
++#undef PACKAGE_TARNAME
++#undef PACKAGE_VERSION
++#undef VERSION
+ #include <mhash.h>
+ 
+ #ifdef AUTHLDAP
