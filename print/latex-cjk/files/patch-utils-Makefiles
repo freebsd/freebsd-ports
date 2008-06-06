@@ -20,7 +20,7 @@
 +
 +hbf2gf_build:
 +	$(CHMOD) +x hbf2gf/config.guess hbf2gf/config.sub hbf2gf/configure
-+	(cd hbf2gf; ./configure --prefix=$(PREFIX) --with-kpathsea-lib=$(LOCALBASE)/lib --with-kpathsea-include=$(LOCALBASE)/include; $(MAKE) all)
++	(cd hbf2gf; ./configure --prefix=$(PREFIX) --mandir=$(MANPREFIX)/man --with-kpathsea-lib=$(LOCALBASE)/lib --with-kpathsea-include=$(LOCALBASE)/include; $(MAKE) all)
 +
 +all: hbf2gf_build
 +	$(MAKE) -C Bg5conv $@

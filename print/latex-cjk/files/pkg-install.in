@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LOCALBASE=/usr/local
+LOCALBASE="%%LOCALBASE%%"
 
 PATH=/bin:/usr/bin:${LOCALBASE}/bin; export PATH
 
