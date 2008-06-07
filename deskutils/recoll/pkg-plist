@@ -26,6 +26,7 @@ share/icons/hicolor/48x48/apps/recoll.png
 %%DATADIR%%/filters/rclps
 %%DATADIR%%/filters/rclrtf
 %%DATADIR%%/filters/rclscribus
+%%DATADIR%%/filters/rclsvg
 %%DATADIR%%/filters/rclsoff
 %%DATADIR%%/filters/rcltex
 %%DATADIR%%/filters/rcluncomp
