@@ -2889,6 +2889,7 @@ ezmlm		ports/mail/ezmlm
 ezmlm-idx	ports/mail/ezmlm-idx
 ezmlm-web	ports/mail/ezmlm-web
 ezquake		ports/games/ezquake
+ezradius	ports/net-mgmt/ezradius
 ezstream	ports/audio/ezstream
 ezxml		ports/textproc/ezxml
 f-prot		ports/security/f-prot
