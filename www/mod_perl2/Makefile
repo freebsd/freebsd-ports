@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	2.0.3
-PORTREVISION=	3
+PORTVERSION=	2.0.4
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
@@ -42,7 +41,7 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		Apache2::Directive.3 Apache2::Filter.3 Apache2::FilterRec.3 \
 		Apache2::HookRun.3 Apache2::Log.3 Apache2::MPM.3 \
 		Apache2::Module.3 Apache2::PerlSections.3 Apache2::Process.3 \
-		Apache2::Reload.3 Apache2::RequestIO.3 Apache2::RequestRec.3 \
+		Apache2::RequestIO.3 Apache2::RequestRec.3 \
 		Apache2::RequestUtil.3 Apache2::Resource.3 \
 		Apache2::Response.3 Apache2::ServerRec.3 \
 		Apache2::ServerUtil.3 Apache2::SizeLimit.3 Apache2::Status.3 \
@@ -59,12 +58,13 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		ModPerl::PerlRunPrefork.3 ModPerl::Registry.3 \
 		ModPerl::RegistryBB.3 ModPerl::RegistryCooker.3 \
 		ModPerl::RegistryLoader.3 ModPerl::RegistryPrefork.3 \
-		ModPerl::Util.3 mod_perl2.3 Apache2::ConnectionUtil.3
+		ModPerl::Util.3 mod_perl2.3 Apache2::ConnectionUtil.3 \
+		APR::ThreadRWLock.3
 
 .include <bsd.port.pre.mk>
-
 .if exists(${LOCALBASE}/include/apr-1/apr.h)
-APR_H=		${LOCALBASE}/include/apr-1/apr.h
+
+APR_l=		${LOCALBASE}/include/apr-1/apr.h
 .elif exists(${LOCALBASE}/include/apr/apr.h)
 APR_H=		${LOCALBASE}/include/apr/apr.h
 .endif
@@ -81,8 +81,16 @@ PLIST_SUB+=	THREADMUTEX=""
 PLIST_SUB+=	THREADMUTEX="@comment "
 .endif
 
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "Note, Aapche(2)::Reload was mistakenly ommited from ${PORTVERSION}"
+	@${ECHO} "cd ${PORTSDIR}/www/p5-Apache-Reload ; ${MAKE} install"
+	@${ECHO} "After installing mod_perl"
+	@${ECHO} "This will be fixed in the next version...."
+	@${ECHO} ""
+
 pre-configure:
-	${RM} ${WRKSRC}/ModPerl-Registry/lib/ModPerl/RegistryCooker.pm.orig
+	${RM} ${WRKSRC}/lib/ModPerl/BuildMM.pm.orig
 
 post-install:
 	${MKDIR} ${PREFIX}/${APACHEINCLUDEDIR}/modules/perl
