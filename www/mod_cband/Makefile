@@ -9,7 +9,8 @@ PORTNAME=	mod_cband
 PORTVERSION=	0.9.7.5
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://cband.linux.pl/download/
+MASTER_SITES=	http://cband.linux.pl/download/ \
+		http://www.sfr-fresh.com/unix/privat/
 DISTNAME=	${PORTNAME:C/_/-/}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	apache2
