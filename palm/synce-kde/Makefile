@@ -11,7 +11,7 @@ CATEGORIES=	palm
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SynCE KDE Utilities
 
 LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce \
