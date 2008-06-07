@@ -2199,6 +2199,14 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .endif
 .endif
 
+.if defined(USE_CMAKE)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.cmake.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.cmake.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.cmake.mk"
+.endif
+.endif
+
 .if exists(${PORTSDIR}/../Makefile.inc)
 .include "${PORTSDIR}/../Makefile.inc"
 USE_SUBMAKE=	yes
