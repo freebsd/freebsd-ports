@@ -2,13 +2,13 @@
 +++ gettext-runtime/intl-java/Makefile.in	Tue Jan 30 20:02:41 2007
 @@ -464,5 +464,5 @@
  
--all-local: all-classes all-javadoc1 all-javadoc2
--install-data-local: install-classes install-javadoc1 install-javadoc2
--installdirs-local: installdirs-classes installdirs-javadoc1 installdirs-javadoc2
+-all-local: all-classes all-javadoc2
+-install-data-local: install-classes install-javadoc2
+-installdirs-local: installdirs-classes installdirs-javadoc2
 +all-local: all-classes
 +install-data-local: install-classes
 +installdirs-local: installdirs-classes
- uninstall-local: uninstall-classes uninstall-javadoc1 uninstall-javadoc2
+ uninstall-local: uninstall-classes uninstall-javadoc2
 
 --- gettext-runtime/intl-csharp/Makefile.in.orig	Mon May 23 04:23:39 2005
 +++ gettext-runtime/intl-csharp/Makefile.in	Tue Jan 30 20:11:08 2007
