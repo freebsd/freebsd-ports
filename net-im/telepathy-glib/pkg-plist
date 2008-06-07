@@ -111,6 +111,12 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-proxy-subclass.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-proxy-tp-properties.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-proxy.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-run.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-contactlist.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-group.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-media.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-roomlist.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-text.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel-tubes.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-channel.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-connection-manager.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-connection.html
