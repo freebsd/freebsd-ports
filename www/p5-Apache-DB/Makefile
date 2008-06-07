@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Apache-DB
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Debugging and profiling tools for mod_perl
 
 PERL_CONFIGURE=	yes
