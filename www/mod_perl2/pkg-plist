@@ -126,7 +126,6 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/PerlSections.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/PerlSections/Dump.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Process.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Reload.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/RequestIO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/RequestRec.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/RequestUtil.pm
