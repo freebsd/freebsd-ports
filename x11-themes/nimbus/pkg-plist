@@ -1335,6 +1335,7 @@ share/icons/nimbus/24x24/places/blockdev.png
 share/icons/nimbus/24x24/places/bookmark-missing.png
 share/icons/nimbus/24x24/places/bookmark.png
 share/icons/nimbus/24x24/places/desktop.png
+share/icons/nimbus/24x24/places/distributor-logo.png
 share/icons/nimbus/24x24/places/emptytrash.png
 share/icons/nimbus/24x24/places/file.png
 share/icons/nimbus/24x24/places/folder-drag-accept.png
@@ -1351,6 +1352,7 @@ share/icons/nimbus/24x24/places/gnome-fs-share.png
 share/icons/nimbus/24x24/places/gnome-fs-smb.png
 share/icons/nimbus/24x24/places/gnome-fs-ssh.png
 share/icons/nimbus/24x24/places/gnome-fs-trash-empty.png
+share/icons/nimbus/24x24/places/gnome-main-menu.png
 share/icons/nimbus/24x24/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/24x24/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/24x24/places/gnome-mime-x-directory-smb-workgroup.png
@@ -1360,8 +1362,10 @@ share/icons/nimbus/24x24/places/gtk-network.png
 share/icons/nimbus/24x24/places/network-server.png
 share/icons/nimbus/24x24/places/network-workgroup.png
 share/icons/nimbus/24x24/places/network_local.png
+share/icons/nimbus/24x24/places/novell-button.png
 share/icons/nimbus/24x24/places/redhat-network-server.png
 share/icons/nimbus/24x24/places/server.png
+share/icons/nimbus/24x24/places/start-here.png
 share/icons/nimbus/24x24/places/stock_folder.png
 share/icons/nimbus/24x24/places/trashcan_empty.png
 share/icons/nimbus/24x24/places/user-desktop.png

@@ -6,8 +6,7 @@
 #    $MCom: ports/x11-themes/nimbus/Makefile,v 1.7 2008/03/18 19:01:43 ahze Exp $
 
 PORTNAME=	nimbus
-PORTVERSION=	0.0.12
-PORTREVISION=	1
+PORTVERSION=	0.0.16
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://dlc.sun.com/osol/jds/downloads/extras/
 
