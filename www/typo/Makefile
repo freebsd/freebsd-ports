@@ -7,6 +7,7 @@
 
 PORTNAME=	typo
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,8 @@ MAINTAINER=	jw@innerewut.de
 COMMENT=	An absolutely minimal weblogging engine powered by rails
 
 RUN_DEPENDS=	rails:${PORTSDIR}/www/rubygem-rails \
-		redcloth:${PORTSDIR}/www/rubygem-redcloth
+		redcloth:${PORTSDIR}/www/rubygem-redcloth \
+		rails-app-installer-setup:${PORTSDIR}/www/rubygem-rails-app-installer
 
 NO_BUILD=	yes
 
