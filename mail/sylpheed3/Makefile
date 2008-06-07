@@ -104,11 +104,13 @@ MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
-		s|-lresolv||g; s|-lpisock\"|-liconv &|g; ' ${WRKSRC}/configure
+		s|-lresolv||g; s|-lpisock\"|-liconv &|g; \
+		s|libs gtkspell-2\.0`|& -laspell|g;' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g' \
 		${WRKSRC}/libsylph/procmime.c
 
-	# to prevent breaking cc of ldif.c because of a base64.h in PREFIX/include
+# to prevent breaking cc of ldif.c because of a base64.h in PREFIX/include
 	@${REINPLACE_CMD} -e 's|^\(DEFS.*\.\.\)$$|\1 -I../libsylph|' \
 		${WRKSRC}/src/Makefile.in
 
