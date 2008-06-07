@@ -39,6 +39,7 @@ command="%%PREFIX%%/bin/mysqld_safe"
 command_args="--defaults-extra-file=${mysql_dbdir}/my.cnf --user=${mysql_user} --datadir=${mysql_dbdir} --pid-file=${pidfile} ${mysql_args} > /dev/null &"
 procname="%%PREFIX%%/libexec/mysqld"
 start_precmd="${name}_prestart"
+start_postcmd="${name}_poststart"
 mysql_install_db="%%PREFIX%%/bin/mysql_install_db"
 mysql_install_db_args="--ldata=${mysql_dbdir}"
 
@@ -58,6 +59,16 @@ mysql_prestart()
 	else
 		return 0
 	fi
+}
+
+mysql_poststart()
+{
+	local timeout=15
+	while [ ! -f "${pidfile}" -a ${timeout} -gt 0 ]; do
+		timeout=$(( timeout - 1 ))
+		sleep 1
+	done
+	return 0
 }
 
 run_rc_command "$1"
