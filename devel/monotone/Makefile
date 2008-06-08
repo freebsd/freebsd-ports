@@ -7,7 +7,7 @@
 
 PORTNAME=	monotone
 PORTVERSION=	0.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
@@ -31,8 +31,12 @@ CONFIGURE_ARGS+=	--with-system-pcre
 PLIST_FILES=	bin/mtn share/zsh/site-functions/_mtn \
 		"@unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true" \
 		"@dirrmtry share/zsh"
+.if !defined(NO_INSTALL_MANPAGES)
 INFO=		monotone
-PORTDOCS=	NEWS UPGRADE monotone.html
+.endif
+.if !defined(NOPORTDOCS)
+PORTDOCS=	NEWS UPGRADE monotone.html texinfo.css
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +59,12 @@ PLIST_FILES+=	share/locale/de/LC_MESSAGES/monotone.mo \
 
 post-extract:
 	@${RM} -f ${WRKSRC}/monotone.info*
+
+post-patch:
+	${REINPLACE_CMD} -e '/^install-data-am:/s/ install-htmlDATA//' ${WRKSRC}/Makefile.in
+.if defined(NO_INSTALL_MANPAGES)
+	${REINPLACE_CMD} -e '/^install-data-am:/s/ install-info-am//' ${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/share/zsh/site-functions
