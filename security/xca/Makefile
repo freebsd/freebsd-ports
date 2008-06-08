@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xca
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTVERSION=	0.6.4
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	mark@foster.cc
 COMMENT=	Graphical certification authority
@@ -28,7 +26,7 @@ MANCOMPRESSED=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I${LOCALBASE}/include -I${QT_PREFIX}/include/Qt" > ${WRKSRC}/Local.mak
+	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I${QT_PREFIX}/include/Qt -I${LOCALBASE}/include" > ${WRKSRC}/Local.mak
 	@echo "CFLAGS= ${CFLAGS} -Wall -ggdb" >> ${WRKSRC}/Local.mak
 	@echo "LDFLAGS= ${LDFLAGS} -L${LOCALBASE}/lib" >> ${WRKSRC}/Local.mak
 	@echo "LIBS= -lQtGui ${PTHREAD_LIBS} -lcrypto" >> ${WRKSRC}/Local.mak
