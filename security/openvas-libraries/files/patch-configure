@@ -1,6 +1,16 @@
 --- configure.orig	2008-03-27 03:57:28.000000000 +0900
-+++ configure	2008-04-26 22:00:22.000000000 +0900
-@@ -8136,7 +8136,7 @@
++++ configure	2008-06-06 09:42:17.000000000 +0900
+@@ -6343,7 +6343,8 @@
+ 
+ freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+-  version_type=freebsd-$objformat
++  # recent FreeBSD only supports elf. objformat was removed from FreeBSD 7
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so $libname.so'
+@@ -8136,7 +8137,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +19,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -8192,7 +8192,7 @@
+@@ -8192,7 +8193,7 @@
  { echo "$as_me:$LINENO: result: $ac_cv_lib_resolv___dn_expand" >&5
  echo "${ECHO_T}$ac_cv_lib_resolv___dn_expand" >&6; }
  if test $ac_cv_lib_resolv___dn_expand = yes; then
@@ -18,7 +28,7 @@
  else
    { { echo "$as_me:$LINENO: error: you need to install resolve library with development files" >&5
  echo "$as_me: error: you need to install resolve library with development files" >&2;}
-@@ -8290,11 +8290,11 @@
+@@ -8290,11 +8291,11 @@
  #ifdef __cplusplus
  extern "C"
  #endif
@@ -32,7 +42,7 @@
    ;
    return 0;
  }
-@@ -12909,7 +12909,7 @@
+@@ -12909,7 +12910,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS

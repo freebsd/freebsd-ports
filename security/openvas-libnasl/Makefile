@@ -29,6 +29,6 @@ USE_BISON=	build
 
 MAN1=		openvas-libnasl-config.1 openvas-nasl.1
 
-.include "${.CURDIR}/../../security/openvas-server/Makefile.common"
+.include "${.CURDIR}/../../security/openvas-libraries/Makefile.common"
 
 .include <bsd.port.mk>

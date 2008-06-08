@@ -1,11 +1,14 @@
---- openvas-libraries.tmpl.in.orig	2008-04-26 22:46:43.000000000 +0900
-+++ openvas-libraries.tmpl.in	2008-04-26 22:47:03.000000000 +0900
-@@ -45,7 +45,7 @@
+honor CPPFLAGS and LDFLAGS
+--- openvas-libraries.tmpl.in.orig	2008-03-21 06:00:30.000000000 +0900
++++ openvas-libraries.tmpl.in	2008-04-27 17:27:45.000000000 +0900
+@@ -62,8 +62,9 @@
+ DEBUG_SSL = @debug_ssl@
  
- libsdir=${rootdir}/libs
- top_builddir = @PWDD@
--include= -I. -I$(rootdir)/include
-+include= -I. -I$(rootdir)/include -I$(includedir)
- lib_dir=@libdir@
- USE_CIPHER=@cipher_cflags@
- INSTALL=@INSTALL@
+ # Some defines you may want to modify
++CPPFLAGS=@CPPFLAGS@
+ DEFS=@DEFS@ $(DEBUG_SSL) $(USE_CIPHER) $(DEBUG)
+-LDFLAGS=
++LDFLAGS=@LDFLAGS@
+ 
+ # Your C compiler
+ CC=@CC@

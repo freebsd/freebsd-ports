@@ -27,7 +27,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAN1=		openvas-build.1
 
-.include "${.CURDIR}/../../security/openvas-server/Makefile.common"
+.include "${.CURDIR}/../../security/openvas-libraries/Makefile.common"
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		does not compile
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
@@ -35,4 +40,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|' \
 		${WRKSRC}/plugins/3com_hub/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

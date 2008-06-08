@@ -17,12 +17,13 @@ COMMENT=	Libraries for OpenVAS
 LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
 
 LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 MAN1=		libopenvas-config.1
 
-.include "${.CURDIR}/../../security/openvas-server/Makefile.common"
+.include "${.CURDIR}/Makefile.common"
 
 .include <bsd.port.mk>
