@@ -1,11 +1,16 @@
---- Makefile.in.orig	Sat Jul  8 23:14:41 2006
-+++ Makefile.in	Sat Jul  8 23:14:48 2006
-@@ -209,7 +209,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
+--- Makefile.in.orig	2008-02-01 22:31:31.000000000 +0900
++++ Makefile.in	2008-05-06 02:26:40.000000000 +0900
+@@ -270,11 +270,11 @@
  target_alias = @target_alias@
--DIRS = win32 src lib newlib example tools tutorial README_FILES
-+DIRS = src lib newlib example tools tutorial README_FILES
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-DIRS = win32 intl src data lib newlib example tools tutorial README_FILES po
++DIRS = intl src data lib newlib example tools tutorial README_FILES po
  SUBDIRS = ${DIRS} @DOC@
  DIST_SUBDIRS = ${DIRS} doc
- EXTRA_DIST = autogen.sh globalconst.h README.cvs README.win32
+ INTLTOOL_FILES = intltool-extract.in intltool-merge.in  intltool-update.in
+-EXTRA_DIST = config.rpath globalconst.h README.cvs README.win32 icon-theme-installer $(INTLTOOL_FILES)
++EXTRA_DIST = config.rpath globalconst.h README.cvs icon-theme-installer $(INTLTOOL_FILES)
+ DISTCLEANFILES = configure.lineno intltool-extract intltool-merge intltool-update po/.intltool-merge-cache
+ MAINTAINERCLEANFILES = $(INTLTOOL_FILES)
+ ACLOCAL_AMFLAGS = -I m4
