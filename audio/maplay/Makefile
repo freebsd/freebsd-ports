@@ -27,8 +27,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/maplay ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/maplay
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/maplay
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
