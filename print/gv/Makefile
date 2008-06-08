@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gv
-PORTVERSION=	3.6.3
-PORTREVISION=	2
+PORTVERSION=	3.6.4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +21,6 @@ USE_XORG=	xpm ice sm xext xmu x11
 USE_GHOSTSCRIPT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/X11
 
 MAN1=		gv.1
@@ -36,8 +34,5 @@ PLIST_FILES=	bin/gv \
 		lib/X11/gv/gv_user_res.dat \
 		lib/X11/app-defaults/GV
 PLIST_DIRS=	lib/X11/gv
-
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
