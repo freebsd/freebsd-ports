@@ -916,7 +916,6 @@ share/icons/worldforge/ember.png
 @dirrm etc/ember
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-
 @dirrm share/ember/carpenter/blockspec
 @dirrm share/ember/carpenter/blueprints
 @dirrm share/ember/carpenter/modelblockspecs
@@ -1305,3 +1304,6 @@ share/icons/worldforge/ember.png
 @dirrm share/ember/user/particle
 @dirrm share/ember/user
 @dirrm share/ember
+@dirrmtry share/icons/worldforge
+@dirrmtry share/icons
+
