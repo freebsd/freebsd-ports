@@ -7,7 +7,7 @@
 
 PORTNAME=	wmcpuload
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 
