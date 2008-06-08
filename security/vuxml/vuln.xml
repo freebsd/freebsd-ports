@@ -5510,9 +5510,6 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>xpdf</name>
-	<name>zh-xpdf</name>
-	<name>ja-xpdf</name>
-	<name>ko-xpdf</name>
 	<range><lt>3.02_2</lt></range>
       </package>
       <package>
