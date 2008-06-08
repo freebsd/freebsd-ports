@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sid-milter
-PORTVERSION=	0.2.14
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sid-milter
@@ -19,7 +18,8 @@ RESTRICTED=	may incorporate intellectual property, possible patent issues
 
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		sid-filter.8
-DOCSFILES=	INSTALL KNOWNBUGS LICENSE README README-SenderID RELEASE_NOTES
+DOCSFILES=	FEATURES INSTALL KNOWNBUGS LICENSE README README-SenderID \
+		RELEASE_NOTES rfc4406.txt rfc4407.txt rfc4408.txt
 INSTALL_WRKSRC=	${WRKSRC}/sid-filter
 PLIST_FILES=	libexec/sid-filter
 PORTDOCS=	${DOCSFILES}
@@ -61,6 +61,11 @@ pre-configure:
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${SITE} > ${WCONF}/site.config.m4
+.if defined(WITH_NH_MFROM)
+	${ECHO_CMD} \
+		'APPENDDEF(`confENVDEF'\'', `-D_FFR_NH_MFROM'\'')' \
+		>> ${WCONF}/site.config.m4
+.endif
 
 post-install:
 .if defined(WITHOUT_RC_NG)
