@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
-DISTNAME=	etoile-${PORTVERSION}
+DISTNAME=	etoile-0.2
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project UnitKit test framework on GNUstep
