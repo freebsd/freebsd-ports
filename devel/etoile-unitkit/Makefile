@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	unitkit
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	1.1
+PORTREVISION=	2
 CATEGORIES=	devel gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
