@@ -40,10 +40,12 @@ do-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/omake.sh ${PREFIX}/bin/omake
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${FILESDIR}/${doc} ${DOCSDIR}
 .endfor
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 activate:

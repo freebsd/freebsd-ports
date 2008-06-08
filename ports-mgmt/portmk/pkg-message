@@ -8,7 +8,7 @@ To build a port with the classic bsd.port.mk version, do
 
   omake <... other args ...>
 
-Documentation is available at
+Unless you defined NOPORTDOCS, documentation is available at
 
   %%DOCSDIR%%/ReadMe
 
