@@ -23,6 +23,7 @@
     SUBDIR += mtoolsfm
     SUBDIR += mucommander
     SUBDIR += nautilus
+    SUBDIR += pbi-thumbnailer
     SUBDIR += pcmanfm
     SUBDIR += py-nautilus
     SUBDIR += rox-filer

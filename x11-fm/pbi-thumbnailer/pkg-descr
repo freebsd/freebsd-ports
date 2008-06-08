@@ -1,0 +1,3 @@
+Pbi-thumbnailer is a tool that integrates with Nautilus, and produces
+thumbnails for PC-BSD installer (PBI) files.  PBIs may contain custom icons,
+and this tool will show those icons instead of the generic executable icon.
