@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.0-rc3
-PORTREVISION=	1
+DISTVERSION=	1.0-rc4
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SFE \
@@ -18,8 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
@@ -43,7 +41,16 @@ USE_XORG=	xpm
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	On
+
 .include <bsd.port.pre.mk>
+
+.ifdef WITHOUT_CUPS
+CONFIGURE_ARGS+=	--without-cups
+.else
+CONFIGURE_ARGS+=	--with-cups
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+.endif
 
 .if ${OSVERSION} < 602000
 IGNORE=		fails to properly work on versions of FreeBSD before 6.2 (due to problems with threading support)
