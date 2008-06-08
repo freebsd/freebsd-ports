@@ -18,6 +18,10 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 PORTDOCS=	*
 
+.if defined(NOPORTDOCS)
+IGNORE=		installs *only* documentation, unset NOPORTDOCS
+.endif
+
 do-install:
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
