@@ -1,4 +1,0 @@
-CONFIGURE_ARGS+=	--includedir=${LOCALBASE}/include \
-			--localstatedir=${PREFIX}/openvas \
-			--sharedstatedir=${PREFIX}/openvas/com \
-			--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

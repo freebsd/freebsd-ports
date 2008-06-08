@@ -20,6 +20,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 
-.include "${.CURDIR}/../../security/openvas-server/Makefile.common"
+.include "${.CURDIR}/../../security/openvas-libraries/Makefile.common"
 
 .include <bsd.port.mk>
