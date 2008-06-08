@@ -7,6 +7,7 @@
 
 PORTNAME=	chartdirector
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES?=	graphics
 MASTER_SITES=	http://download2.advsofteng.com/
 PKGNAMEPREFIX?=	php5-
@@ -66,10 +67,10 @@ do-install:
 	@${MKDIR} ${PREFIX}/etc/php
 	@${ECHO_CMD} extension=${PHP_CHARTDIR_DLL} \
 		>> ${PREFIX}/etc/php/extensions.ini
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE.TXT ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/cdphpdoc
 	@${MKDIR} ${DOCSDIR}/cdphpdoc/images
 	@${INSTALL_DATA} ${WRKSRC}/doc/cdphp.htm ${DOCSDIR}
