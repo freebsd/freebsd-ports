@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		dmidecode:${PORTSDIR}/sysutils/dmidecode \
 		lspci:${PORTSDIR}/sysutils/pciutils
 
+BROKEN=		Interactive
+
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
