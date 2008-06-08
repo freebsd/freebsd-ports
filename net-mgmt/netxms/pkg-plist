@@ -3,6 +3,7 @@
 %%SERVER%%bin/nxadm
 %%AGENT%%bin/nxagentd
 %%SERVER%%bin/nxagentd
+%%CLIENT%%bin/nxalarm
 %%CLIENT%%bin/nxcmd
 %%SERVER%%bin/nxdbmgr
 %%CLIENT%%bin/nxevent
@@ -12,6 +13,7 @@
 %%CLIENT%%bin/nxpush
 %%CLIENT%%bin/nxreport
 %%SERVER%%bin/nxscript
+%%CLIENT%%bin/nxsms
 %%SERVER%%bin/nxsnmpget
 %%SERVER%%bin/nxsnmpset
 %%SERVER%%bin/nxsnmpwalk
@@ -193,15 +195,18 @@ lib/libnetxms.so.0
 %%SERVER%%%%DATADIR%%/mibs/NOKIA-IPSO-SYSTEM-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/OPTIMUX-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/OSPF-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/P-BRIDGE-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/PerfHist-TC-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/PowerNet-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/Printer-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/Q-BRIDGE-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/RAPID-CITY.txt
 %%SERVER%%%%DATADIR%%/mibs/RFC-1212.txt
 %%SERVER%%%%DATADIR%%/mibs/RFC-1215.txt
 %%SERVER%%%%DATADIR%%/mibs/RFC1155-SMI.txt
 %%SERVER%%%%DATADIR%%/mibs/RFC1213-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/RMON-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/RMON2-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/RS-232-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/S5-CHASSIS-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/S5-CHASSIS-TRAP-MIB.txt
@@ -229,6 +234,7 @@ lib/libnetxms.so.0
 %%SERVER%%%%DATADIR%%/mibs/SYNOPTICS-COMMON-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/SYNOPTICS-ROOT-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/TCP-MIB.txt
+%%SERVER%%%%DATADIR%%/mibs/TOKEN-RING-RMON-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/TUNNEL-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/UCD-DISKIO-MIB.txt
 %%SERVER%%%%DATADIR%%/mibs/UCD-DLMOD-MIB.txt

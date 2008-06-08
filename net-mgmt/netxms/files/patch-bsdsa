@@ -1,0 +1,25 @@
+--- ./src/agent/subagents/freebsd/system.cpp.bak	2008-05-14 11:48:15.000000000 +0400
++++ ./src/agent/subagents/freebsd/system.cpp	2008-05-30 12:46:14.000000000 +0400
+@@ -21,7 +21,10 @@
+ **/
+ 
+ #undef _XOPEN_SOURCE
++
++#if __FreeBSD__ < 5
+ #define _SYS_LOCK_PROFILE_H_	/* prevent include of sys/lock_profile.h which can be C++ incompatible) */
++#endif
+ 
+ #include <nms_common.h>
+ #include <nms_agent.h>
+@@ -31,7 +34,11 @@
+ #include <sys/sysctl.h>
+ #include <sys/utsname.h>
+ #include <sys/param.h>
++
++#if __FreeBSD__ < 5
+ #include <sys/proc.h>
++#endif
++
+ #include <sys/user.h>
+ #include <fcntl.h>
+ #include <kvm.h>
