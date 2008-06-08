@@ -12231,6 +12231,7 @@ pavumeter	ports/audio/pavumeter
 pawm		ports/x11-wm/pawm
 pax-utils	ports/sysutils/pax-utils
 pbasic		ports/lang/pbasic
+pbi-thumbnailer	ports/x11-fm/pbi-thumbnailer
 pbnc		ports/net/pbnc
 pbnj		ports/security/pbnj
 pbzip2		ports/archivers/pbzip2
