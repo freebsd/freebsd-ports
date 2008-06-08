@@ -9,7 +9,7 @@ PORTNAME=	jetty
 DISTVERSION=	6.1.7
 PORTREVISION=	1
 CATEGORIES=	www java
-MASTER_SITES=	http://dist.codehaus.org/jetty/${PKGNAME}/
+MASTER_SITES=	http://dist.codehaus.org/jetty/${PORTNAME}-${DISTVERSION}/
 
 MAINTAINER=	jbq@caraldi.com
 COMMENT=	Full-featured web server implemented entirely in java
