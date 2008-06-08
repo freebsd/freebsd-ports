@@ -7,6 +7,7 @@
 
 PORTNAME=	gsm
 PORTVERSION=	1.0.12
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://kbs.cs.tu-berlin.de/~jutta/gsm/ \
 		ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \

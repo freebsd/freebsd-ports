@@ -1,6 +1,6 @@
 bin/toast
-@exec ln -sf %F %B/tcat
-@exec ln -sf %F %B/untoast
+@exec ln -sf %f %B/tcat
+@exec ln -sf %f %B/untoast
 @rmtry bin/tcat
 @rmtry bin/untoast
 include/gsm.h
