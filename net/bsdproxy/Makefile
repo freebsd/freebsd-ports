@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bsdproxy
-PORTVERSION=	0.03
-PORTREVISION=	1
+PORTVERSION=	0.04
 CATEGORIES=	net
 MASTER_SITES=	http://daveb.net/bsdproxy/
 
@@ -16,8 +15,9 @@ COMMENT=	A TCP proxy, demonstrating use of the kevent(2)/kqueue(2) API
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib12
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-DOCS=		README
+DOCS=		ChangeLog README
 
 .if !defined(NOPORTDOCS)
 post-install:
