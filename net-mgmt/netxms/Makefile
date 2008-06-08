@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	netxms
-PORTVERSION=	0.2.19
+PORTVERSION=	0.2.21
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.netxms.org/download/
+MASTER_SITES=	SF
 
 MAINTAINER=	samflanker@gmail.com
 COMMENT=	NetXMS - network monitoring system
@@ -18,13 +18,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
+USE_ICONV=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	SERVER "Install NetXMS server & agent" off\
-		CLIENT "Install NetXMS client" off \
-		AGENT "Install NetXMS agent" off \
+		CLIENT "Install NetXMS client" on \
+		AGENT "Install NetXMS agent" on \
 		NXHTTPD "Install web-interface" off \
 		MYSQL "Enable MySQL support" off \
 		PGSQL "Enable PostgreSQL support" off \
@@ -90,6 +91,7 @@ USE_RC_SUBR+=	nxhttpd
 CONFIGURE_ARGS+=	--with-nxhttpd
 PLIST_SUB+=	NXHTTPD=""
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+USE_PERL5=	yes
 .else
 PLIST_SUB+=	NXHTTPD="@comment "
 .endif

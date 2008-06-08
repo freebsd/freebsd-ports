@@ -25,6 +25,6 @@ load_rc_config $name
 
 command="%%PREFIX%%/bin/netxmsd"
 required_files="%%PREFIX%%/etc/netxmsd.conf"
-command_args="--config %%PREFIX%%/etc/netxmsd.conf --check-db"
+command_args="-c %%PREFIX%%/etc/netxmsd.conf -d -e"
 
 run_rc_command "$1"
