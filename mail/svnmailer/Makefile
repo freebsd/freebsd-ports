@@ -11,7 +11,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	http://storage.perlig.de/${PORTNAME}/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A tool to post subversion repository commit information
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/subversion-python
