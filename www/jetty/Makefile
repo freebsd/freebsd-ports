@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jetty
-DISTVERSION=	6.1.7
-PORTREVISION=	1
+DISTVERSION=	6.1.9
 CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/jetty/${PORTNAME}-${DISTVERSION}/
 
