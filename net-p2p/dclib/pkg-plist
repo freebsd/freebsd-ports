@@ -62,6 +62,8 @@ lib/libdc.a
 lib/libdc.la
 lib/libdc.so
 lib/libdc.so.0
+@dirrmtry lib/dclib/plugin
+@dirrmtry lib/dclib
 libdata/pkgconfig/dclib.pc
 @dirrm include/dclib/core
 @dirrm include/dclib/hash
