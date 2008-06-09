@@ -54,6 +54,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include \
 LDFLAGS+=	-L${LOCALBASE}/lib \
 		${PTHREAD_LIBS}
 
+# This port has a problem with -pthread,
+# force to use -lthr until it's not fixed.
+PTHREAD_LIBS=	-lthr
+
 MAN1=		clamconf.1 \
 		clamscan.1 \
 		freshclam.1 \
@@ -97,14 +101,6 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 
 .include <bsd.port.pre.mk>
-
-# This port has a problem with -pthread,
-# force to use -lthr until it's not fixed.
-.if ${OSVERSION} >= 601000
-PTHREAD_LIBS=	-lthr
-.else
-PTHREAD_LIBS=	-lpthread
-.endif
 
 .if defined(WITH_ARC)
 RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
