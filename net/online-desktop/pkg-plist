@@ -86,6 +86,8 @@ share/icons/hicolor/48x48/apps/yahoo-mail.png
 share/online-desktop/autostart/bigboard.desktop
 share/online-desktop/autostart/browser.desktop
 share/online-desktop/autostart/im.desktop
+share/online-desktop/gconf.path
+share/online-desktop/gconf.xml.online-desktop/%gconf-tree.xml
 share/online-desktop/presession/panel-config.py
 share/online-prefs-sync/online-prefs-sync.synclist
 share/xsessions/online-desktop.desktop
