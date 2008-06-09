@@ -1838,6 +1838,7 @@
     SUBDIR += pear-Date_Holidays_Brazil
     SUBDIR += pear-Date_Holidays_Denmark
     SUBDIR += pear-Date_Holidays_Discordian
+    SUBDIR += pear-Date_Holidays_EnglandWales
     SUBDIR += pear-Event_Dispatcher
     SUBDIR += pear-FSM
     SUBDIR += pear-HTML_BBCodeParser
