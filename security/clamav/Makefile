@@ -47,6 +47,7 @@ CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--disable-clamav \
 		--enable-bigstack \
 		--enable-readdir_r \
+		--enable-gethostbyname_r \
 		--disable-dependency-tracking
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}
@@ -96,12 +97,6 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 601103
-CONFIGURE_ARGS+=	--disable-gethostbyname_r
-.else
-CONFIGURE_ARGS+=	--enable-gethostbyname_r
-.endif
 
 # This port has a problem with -pthread,
 # force to use -lthr until it's not fixed.
