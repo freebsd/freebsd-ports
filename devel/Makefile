@@ -1840,6 +1840,7 @@
     SUBDIR += pear-Date_Holidays_Discordian
     SUBDIR += pear-Date_Holidays_EnglandWales
     SUBDIR += pear-Date_Holidays_Germany
+    SUBDIR += pear-Date_Holidays_Iceland
     SUBDIR += pear-Event_Dispatcher
     SUBDIR += pear-FSM
     SUBDIR += pear-HTML_BBCodeParser
