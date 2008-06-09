@@ -7,6 +7,7 @@
 
 PORTNAME=	Ocsinventory
 PORTVERSION=	0.0.9.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://nana.rulezlan.org/~goneri/ocsinventory-agent/
 PKGNAMESUFFIX=	-Agent
@@ -22,10 +23,9 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		dmidecode:${PORTSDIR}/sysutils/dmidecode \
 		lspci:${PORTSDIR}/sysutils/pciutils
 
-BROKEN=		Interactive
-
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
+IS_INTERACTIVE=	yes
 
 MAN1=		ocsinventory-agent.1
 
