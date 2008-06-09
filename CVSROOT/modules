@@ -12327,6 +12327,7 @@ pear-Date_Holidays_Brazil	ports/devel/pear-Date_Holidays_Brazil
 pear-Date_Holidays_Denmark	ports/devel/pear-Date_Holidays_Denmark
 pear-Date_Holidays_Discordian	ports/devel/pear-Date_Holidays_Discordian
 pear-Date_Holidays_EnglandWales	ports/devel/pear-Date_Holidays_EnglandWales
+pear-Date_Holidays_Germany	ports/devel/pear-Date_Holidays_Germany
 pear-Event_Dispatcher	ports/devel/pear-Event_Dispatcher
 pear-FSM	ports/devel/pear-FSM
 pear-File	ports/sysutils/pear-File
