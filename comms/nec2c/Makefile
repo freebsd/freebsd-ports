@@ -7,6 +7,7 @@
 # http://ftp-mirror.internap.com/pub/FreeBSD/distfiles/nec2c/nec2c.tar.gz
 # http://ftp.cerias.purdue.edu/pub/os/FreeBSD/distfiles/nec2c/nec2c.tar.gz
 #
+
 PORTNAME=	nec2c
 PORTVERSION=	.9
 CATEGORIES=	comms hamradio
@@ -17,27 +18,24 @@ DISTNAME=	nec2c
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Used to calculate antenna patterns useful to ham radio
 
-#
-# both libccm and files/carg.c can "go away" once libc is filled in
-# with missing posix complex functions.
-#
 LIB_DEPENDS=	ccm:${PORTSDIR}/math/ccmath
 
 post-patch:
 	${CP} ${FILESDIR}/carg.c  ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nec2c ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/nec2c ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/Input/*.nec ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/Input/*.NEC ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${ECHO} ""
 	@${ECHO} "nec2c docs installed in ${DOCSDIR}"
-	@${ECHO} "nec2c sample Input files installed in ${EXAMPLESDIR}"
-	@${ECHO} ""
 .endif
-
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Input/*.nec ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Input/*.NEC ${EXAMPLESDIR}
+	@${ECHO} "nec2c sample Input files installed in ${EXAMPLESDIR}"
+.endif
+	@${ECHO} ""
 .include <bsd.port.mk>
