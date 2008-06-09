@@ -1,0 +1,5 @@
+share/pear/Date/Holidays/Driver/USA.php
+share/pear/packages/pear-Date_Holidays_USA-0.1.0/package.xml
+share/pear/tests/Date_Holidays_USA/Date_Holidays_Driver_USA_TestSuite.php
+@dirrm share/pear/tests/Date_Holidays_USA
+@dirrm share/pear/packages/pear-Date_Holidays_USA-0.1.0
