@@ -2,7 +2,7 @@
 %%SITE_PERL%%/Class/Workflow.pm
 %%SITE_PERL%%/Class/Workflow.pmc
 %%SITE_PERL%%/Class/Workflow/Context.pm
-%%SITE_PERL%%/Class/Workflow/Environment.pm
+%%SITE_PERL%%/Class/Workflow/Cookbook.pod
 %%SITE_PERL%%/Class/Workflow/Instance.pm
 %%SITE_PERL%%/Class/Workflow/Instance/Simple.pm
 %%SITE_PERL%%/Class/Workflow/State.pm

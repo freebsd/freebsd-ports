@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Workflow
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Lightweight workflow system
 
-BUILD_DEPENDS=	${SITE_PERL}/Moose.pm:${PORTSDIR}/devel/p5-Moose \
-		${SITE_PERL}/${PERL_ARCH}/Set/Object.pm:${PORTSDIR}/devel/p5-Set-Object \
+BUILD_DEPENDS=	p5-Moose>=0.37:${PORTSDIR}/devel/p5-Moose \
+		p5-Set-Object>=1.19:${PORTSDIR}/devel/p5-Set-Object \
 		${SITE_PERL}/Data/Compare.pm:${PORTSDIR}/devel/p5-Data-Compare \
 		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::Workflow.3 Class::Workflow::Context.3 \
-		Class::Workflow::Environment.3 Class::Workflow::Instance.3 \
+		Class::Workflow::Cookbook.3 Class::Workflow::Instance.3 \
 		Class::Workflow::Instance::Simple.3 Class::Workflow::State.3 \
 		Class::Workflow::State::AcceptHooks.3 \
 		Class::Workflow::State::AutoApply.3 \
