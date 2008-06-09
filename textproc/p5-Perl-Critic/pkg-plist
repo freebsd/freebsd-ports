@@ -2,7 +2,6 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic.pm
 %%SITE_PERL%%/Perl/Critic/Config.pm
 %%SITE_PERL%%/Perl/Critic/DEVELOPER.pod
-%%SITE_PERL%%/Perl/Critic/Defaults.pm
 %%SITE_PERL%%/Perl/Critic/Document.pm
 %%SITE_PERL%%/Perl/Critic/Exception.pm
 %%SITE_PERL%%/Perl/Critic/Exception/AggregateConfiguration.pm
@@ -19,6 +18,9 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Exception/Fatal/Generic.pm
 %%SITE_PERL%%/Perl/Critic/Exception/Fatal/Internal.pm
 %%SITE_PERL%%/Perl/Critic/Exception/Fatal/PolicyDefinition.pm
+%%SITE_PERL%%/Perl/Critic/Exception/IO.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Parse.pm
+%%SITE_PERL%%/Perl/Critic/OptionsProcessor.pm
 %%SITE_PERL%%/Perl/Critic/Policy.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitBooleanGrep.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitComplexMappings.pm
@@ -48,6 +50,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitCStyleForLoops.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitCascadingIfElse.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitDeepNests.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitLabelsWithSpecialBlockNames.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitMutatingListFunctions.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitNegativeExpressionsInUnlessAndUntilConditions.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitPostfixControls.pm
@@ -123,6 +126,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitInterpolationOfLiterals.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitLeadingZeros.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitLongChainsOfMethodCalls.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitMagicNumbers.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitMismatchedOperators.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitMixedBooleanOperators.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitNoisyQuotes.pm
@@ -138,11 +142,13 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitPackageVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitPerl4PackageNames.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitPunctuationVars.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitUnusedVariables.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProtectPrivateVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/RequireInitializationForLocalVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/RequireLexicalLoopIterators.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/RequireLocalizedPunctuationVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/RequireNegativeIndices.pm
+%%SITE_PERL%%/Perl/Critic/PolicyConfig.pm
 %%SITE_PERL%%/Perl/Critic/PolicyFactory.pm
 %%SITE_PERL%%/Perl/Critic/PolicyListing.pm
 %%SITE_PERL%%/Perl/Critic/PolicyParameter.pm
@@ -157,11 +163,13 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Statistics.pm
 %%SITE_PERL%%/Perl/Critic/TestUtils.pm
 %%SITE_PERL%%/Perl/Critic/Theme.pm
+%%SITE_PERL%%/Perl/Critic/ThemeListing.pm
 %%SITE_PERL%%/Perl/Critic/UserProfile.pm
 %%SITE_PERL%%/Perl/Critic/Utils.pm
 %%SITE_PERL%%/Perl/Critic/Utils/Constants.pm
 %%SITE_PERL%%/Perl/Critic/Utils/DataConversion.pm
 %%SITE_PERL%%/Perl/Critic/Utils/McCabe.pm
+%%SITE_PERL%%/Perl/Critic/Utils/POD.pm
 %%SITE_PERL%%/Perl/Critic/Utils/PPI.pm
 %%SITE_PERL%%/Perl/Critic/Utils/PPIRegexp.pm
 %%SITE_PERL%%/Perl/Critic/Violation.pm

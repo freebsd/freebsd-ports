@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.08.2
-PORTREVISION=	1
+PORTVERSION=	1.08.4
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +25,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-Lis
 		${SITE_PERL}/String/Format.pm:${PORTSDIR}/textproc/p5-String-Format \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/${PERL_ARCH}/Readonly.pm:${PORTSDIR}/devel/p5-Readonly
+		${SITE_PERL}/${PERL_ARCH}/Readonly.pm:${PORTSDIR}/devel/p5-Readonly \
+		p5-version>=0:${PORTSDIR}/devel/p5-version
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
@@ -35,7 +35,6 @@ MAN1=	perlcritic.1
 MAN3=	Perl::Critic.3 \
 	Perl::Critic::Config.3 \
 	Perl::Critic::DEVELOPER.3 \
-	Perl::Critic::Defaults.3 \
 	Perl::Critic::Document.3 \
 	Perl::Critic::Exception.3 \
 	Perl::Critic::Exception::AggregateConfiguration.3 \
@@ -52,6 +51,9 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Exception::Fatal::Generic.3 \
 	Perl::Critic::Exception::Fatal::Internal.3 \
 	Perl::Critic::Exception::Fatal::PolicyDefinition.3 \
+	Perl::Critic::Exception::IO.3 \
+	Perl::Critic::Exception::Parse.3 \
+	Perl::Critic::OptionsProcessor.3 \
 	Perl::Critic::Policy.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitBooleanGrep.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitComplexMappings.3 \
@@ -81,6 +83,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitCStyleForLoops.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitCascadingIfElse.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitDeepNests.3 \
+	Perl::Critic::Policy::ControlStructures::ProhibitLabelsWithSpecialBlockNames.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitMutatingListFunctions.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitNegativeExpressionsInUnlessAndUntilConditions.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitPostfixControls.3 \
@@ -156,6 +159,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitInterpolationOfLiterals.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitLeadingZeros.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitLongChainsOfMethodCalls.3 \
+	Perl::Critic::Policy::ValuesAndExpressions::ProhibitMagicNumbers.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitMismatchedOperators.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitMixedBooleanOperators.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitNoisyQuotes.3 \
@@ -171,11 +175,13 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Variables::ProhibitPackageVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitPerl4PackageNames.3 \
 	Perl::Critic::Policy::Variables::ProhibitPunctuationVars.3 \
+	Perl::Critic::Policy::Variables::ProhibitUnusedVariables.3 \
 	Perl::Critic::Policy::Variables::ProtectPrivateVars.3 \
 	Perl::Critic::Policy::Variables::RequireInitializationForLocalVars.3 \
 	Perl::Critic::Policy::Variables::RequireLexicalLoopIterators.3 \
 	Perl::Critic::Policy::Variables::RequireLocalizedPunctuationVars.3 \
 	Perl::Critic::Policy::Variables::RequireNegativeIndices.3 \
+	Perl::Critic::PolicyConfig.3 \
 	Perl::Critic::PolicyFactory.3 \
 	Perl::Critic::PolicyListing.3 \
 	Perl::Critic::PolicyParameter.3 \
@@ -190,13 +196,15 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Statistics.3 \
 	Perl::Critic::TestUtils.3 \
 	Perl::Critic::Theme.3 \
+	Perl::Critic::ThemeListing.3 \
 	Perl::Critic::UserProfile.3 \
 	Perl::Critic::Utils.3 \
 	Perl::Critic::Utils::Constants.3 \
 	Perl::Critic::Utils::DataConversion.3 \
 	Perl::Critic::Utils::McCabe.3 \
-	Perl::Critic::Utils::PPIRegexp.3 \
+	Perl::Critic::Utils::POD.3 \
 	Perl::Critic::Utils::PPI.3 \
+	Perl::Critic::Utils::PPIRegexp.3 \
 	Perl::Critic::Violation.3
 
 .include <bsd.port.mk>
