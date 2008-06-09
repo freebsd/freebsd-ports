@@ -1846,6 +1846,7 @@
     SUBDIR += pear-Date_Holidays_Norway
     SUBDIR += pear-Date_Holidays_PHPdotNet
     SUBDIR += pear-Date_Holidays_Romania
+    SUBDIR += pear-Date_Holidays_Slovenia
     SUBDIR += pear-Event_Dispatcher
     SUBDIR += pear-FSM
     SUBDIR += pear-HTML_BBCodeParser
