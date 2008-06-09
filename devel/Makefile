@@ -1835,6 +1835,7 @@
     SUBDIR += pear-Date
     SUBDIR += pear-Date_Holidays
     SUBDIR += pear-Date_Holidays_Austria
+    SUBDIR += pear-Date_Holidays_Brazil
     SUBDIR += pear-Event_Dispatcher
     SUBDIR += pear-FSM
     SUBDIR += pear-HTML_BBCodeParser
