@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skystar2
-PORTVERSION=	10
+PORTVERSION=	11
 CATEGORIES=	net
 MASTER_SITES=	http://paradox.org.ua/ \
 		http://lissyara.su/patch/skystar2/
@@ -30,6 +30,7 @@ pre-fetch:
 .endif
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/etc/channels.conf.dist ${PREFIX}/etc/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
