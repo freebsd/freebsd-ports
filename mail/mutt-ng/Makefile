@@ -16,6 +16,9 @@ DISTNAME=	muttng-${PORTVERSION}
 MAINTAINER=	josh@tcbug.org
 COMMENT=	A fork of the mutt with the goal to incorporate all the patches
 
+DEPRECATED=	Abandonware by upstream maintainers. Use mail/mutt-devel
+EXPIRATION_DATE=2008-07-09
+
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
