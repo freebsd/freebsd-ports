@@ -7,7 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
@@ -82,9 +82,6 @@ CONFIGURE_ARGS+=	--enable-flexresp \
 .endif
 
 .if defined(WITH_FLEXRESP2)
-BROKEN=			FLEXRESP2 patch file does not incorporate cleanly
-PATCH_SITES+=		http://cerberus.sourcefire.com/~jeff/archives/snort/sp_respond2/
-PATCHFILES+=		sp_respond2.diff.gz
 BUILD_DEPENDS+=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
 			libdnet*>=1.10_1:${PORTSDIR}/net/libdnet
 CONFIGURE_ARGS+=	--enable-flexresp2 \
