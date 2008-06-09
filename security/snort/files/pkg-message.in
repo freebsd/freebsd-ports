@@ -1,6 +1,6 @@
 =========================================================================
 Snort uses rcNG startup script and must be enabled via /etc/rc.conf
-Please see %%PREFIX%%/etc/rc.d/snort.sh 
+Please see %%PREFIX%%/etc/rc.d/snort
 for list of available variables and their description.
 Configuration files are located in %%PREFIX%%/etc/snort directory.
 
