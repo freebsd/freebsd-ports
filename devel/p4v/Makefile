@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p4v
-PORTVERSION=	2007.3.151553
+PORTVERSION=	2007.3.155579
 CATEGORIES=	devel
 MASTER_SITES=	\
 	http://filehost.perforce.com/perforce/r07.3/bin.freebsd60x86${MACHINE_ARCH:Mamd64:S/^amd/_/}/
