@@ -1,0 +1,6 @@
+share/pear/Date/Holidays/Driver/Iceland.php
+share/pear/packages/pear-Date_Holidays_Iceland-0.1.0/package.xml
+share/pear/tests/Date_Holidays_Iceland/AllTests.php
+share/pear/tests/Date_Holidays_Iceland/Date_Holidays_Driver_Iceland_TestSuite.php
+@dirrm share/pear/packages/pear-Date_Holidays_Iceland-0.1.0
+@dirrm share/pear/tests/Date_Holidays_Iceland/
