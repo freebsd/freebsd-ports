@@ -28,7 +28,7 @@ USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 		xxf86vm xaw7 xmu xpm xext pixman xtrans
 
 CONFIGURE_ARGS=	--disable-dmx --disable-xnest --disable-xorg --disable-xprint \
-		--localstatedir=/var
+		--localstatedir=/var --without-dtrace
 
 PLIST_FILES=	bin/Xvfb
 MAN1=		Xvfb.1

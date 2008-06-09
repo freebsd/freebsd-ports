@@ -29,7 +29,7 @@ USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
 		xau dmx xtst xres pixman xtrans
 		
 CONFIGURE_ARGS=	--disable-xprint --disable-xvfb --disable-xorg --disable-xnest \
-		--enable-dmx --localstatedir=/var
+		--enable-dmx --localstatedir=/var --without-dtrace
 
 MAN1=		Xdmx.1 dmxtodmx.1 vdltodmx.1 xdmxconfig.1
 
