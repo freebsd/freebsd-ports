@@ -1,12 +1,12 @@
-# New ports collection makefile for:	db46
-# Date created:		2007-07-26
+# New ports collection makefile for:	db47
+# Date created:		2008-06-23
 # Whom:			Gea-Suan Lin <gslin@gslin.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	db46
-PORTVERSION=	4.6.21.1
+PORTNAME=	db47
+PORTVERSION=	4.7.25.0
 CATEGORIES=	databases
 MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
 		http://download-east.oracle.com/berkeley-db/ \
@@ -15,18 +15,11 @@ PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION:R}/
-PATCHFILES=	patch.4.6.21.1
-PATCH_DIST_STRIP=	-d ..
-# * patch.4.6.21.1: -----------------------------------------------------------
-# Fixes a race condition between checkpoint and DB->close which can result in
-# the checkpoint thread self-deadlocking. [#15692]
-
 # I allow matthias.andree@gmx.de and all freebsd committer to do changes
 # to this package.
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	The Berkeley DB package, revision 4.6
+COMMENT=	The Berkeley DB package, revision 4.7
 
 BDBVER=		${PORTVERSION:R:R}
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 --enable-cxx \
