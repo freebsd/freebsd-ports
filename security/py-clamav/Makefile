@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.4.0
-PORTREVISION=	3
+PORTVERSION=	0.4.1
 CATEGORIES=	security python
 MASTER_SITES=	http://xael.org/norman/python/pyclamav/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,8 +28,6 @@ DOCSDIR?=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR?=	${PREFIX}/share/examples/py-${PORTNAME}
 
 PORTDOCS=	*
-
-BROKEN=	Doesn't build with clamav-0.93
 
 post-install:
 .if !defined(NOPORTDOCS)
