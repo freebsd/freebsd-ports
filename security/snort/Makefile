@@ -7,6 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
