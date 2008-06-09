@@ -7,6 +7,7 @@
 
 PORTNAME=	phylip
 PORTVERSION=	3.67
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/ \
@@ -16,6 +17,8 @@ MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Phylogeny Inference Package
+
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_XORG=	x11 xaw xt
 USE_GMAKE=	yes
