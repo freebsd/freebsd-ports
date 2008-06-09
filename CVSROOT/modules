@@ -12332,6 +12332,7 @@ pear-Date_Holidays_Iceland	ports/devel/pear-Date_Holidays_Iceland
 pear-Date_Holidays_Ireland	ports/devel/pear-Date_Holidays_Ireland
 pear-Date_Holidays_Netherlands	ports/devel/pear-Date_Holidays_Netherlands
 pear-Date_Holidays_Norway	ports/devel/pear-Date_Holidays_Norway
+pear-Date_Holidays_PHPdotNet	ports/devel/pear-Date_Holidays_PHPdotNet
 pear-Event_Dispatcher	ports/devel/pear-Event_Dispatcher
 pear-FSM	ports/devel/pear-FSM
 pear-File	ports/sysutils/pear-File
