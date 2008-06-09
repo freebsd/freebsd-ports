@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	logtools
-PORTVERSION=	0.13c
+PORTVERSION=	0.13d
 CATEGORIES=	www
 MASTER_SITES=	http://www.coker.com.au/logtools/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Useful tools to deal with CLF files (Common Log File format)
 
 GNU_CONFIGURE=	yes
