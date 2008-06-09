@@ -34,10 +34,6 @@ PORTDOCS=	INSTALL README README_TEST
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502105
-IGNORE=		pf is only in 5.x and newer
-.endif
-
 do-install:
 	@${MKDIR} ${PFW_PREFIX}
 	${INSTALL_DATA} ${WRKSRC}/include.inc.php ${PFW_PREFIX}
