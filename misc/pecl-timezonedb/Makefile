@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timezonedb
-DISTVERSION=	2007.11
+DISTVERSION=	2008.3
 CATEGORIES=	misc
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
