@@ -8,7 +8,8 @@
 PORTNAME=	logtools
 PORTVERSION=	0.13d
 CATEGORIES=	www
-MASTER_SITES=	http://www.coker.com.au/logtools/
+MASTER_SITES=	http://www.coker.com.au/logtools/ \
+  		LOCAL/chinsan/logtools/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chinsan@FreeBSD.org
