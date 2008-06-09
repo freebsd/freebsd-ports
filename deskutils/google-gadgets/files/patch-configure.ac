@@ -1,0 +1,19 @@
+
+$FreeBSD$
+
+--- configure.ac.orig
++++ configure.ac
+@@ -325,6 +325,13 @@
+     GGL_PLATFORM_SHORT=\"linux\"
+     GGL_PLATFORM=\"linux\"
+     ;;
++  *freebsd* )
++    ggl_host_type=freebsd
++    PREDEFINED_MACROS="$PREDEFINED_MACROS -DGGL_HOST_LINUX=1"
++    build_linux_system_framework=yes
++    GGL_PLATFORM_SHORT=\"freebsd\"
++    GGL_PLATFORM=\"freebsd\"
++    ;;
+   *solaris* )
+     ggl_host_type=solaris
+     PREDEFINED_MACROS="$PREDEFINED_MACROS -DGGL_HOST_SOLARIS=1"
