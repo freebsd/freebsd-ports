@@ -1,0 +1,6 @@
+share/pear/Date/Holidays/Driver/EnglandWales.php
+share/pear/packages/pear-Date_Holidays_EnglandWales-0.1.0/package.xml
+share/pear/tests/Date_Holidays_EnglandWales/AllTests.php
+share/pear/tests/Date_Holidays_EnglandWales/Date_Holidays_Driver_EnglandWales_TestSuite.php
+@dirrm share/pear/tests/Date_Holidays_EnglandWales
+@dirrm share/pear/packages/pear-Date_Holidays_EnglandWales-0.1.0
