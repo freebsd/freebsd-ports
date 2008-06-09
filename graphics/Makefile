@@ -737,6 +737,7 @@
     SUBDIR += svg2png
     SUBDIR += svg2swf
     SUBDIR += svgalib
+    SUBDIR += svgfig
     SUBDIR += svgviewer
     SUBDIR += swfdec
     SUBDIR += swfmill
