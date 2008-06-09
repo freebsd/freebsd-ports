@@ -12336,6 +12336,7 @@ pear-Date_Holidays_PHPdotNet	ports/devel/pear-Date_Holidays_PHPdotNet
 pear-Date_Holidays_Romania	ports/devel/pear-Date_Holidays_Romania
 pear-Date_Holidays_Slovenia	ports/devel/pear-Date_Holidays_Slovenia
 pear-Date_Holidays_Sweden	ports/devel/pear-Date_Holidays_Sweden
+pear-Date_Holidays_UNO	ports/devel/pear-Date_Holidays_UNO
 pear-Event_Dispatcher	ports/devel/pear-Event_Dispatcher
 pear-FSM	ports/devel/pear-FSM
 pear-File	ports/sysutils/pear-File
