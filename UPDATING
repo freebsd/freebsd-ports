@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080609:
+  AFFECTS: users of devel/pear-Date_Holidays
+  AUTHOR: tabthorpe@FreeBSD.org
+
+  pear-Date_Holidays has been split into multiple subports. If you want
+  a specific geographic region, look at devel/pear-Date_Holidays_*
+
 20080605:
   AFFECTS: users of audio/paman and audio/pavucontrol
   AUTHOR: lippe@FreeBSD.org
