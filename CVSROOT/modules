@@ -4234,6 +4234,7 @@ goocanvas	ports/graphics/goocanvas
 google-appengine	ports/www/google-appengine
 google-ctemplate	ports/textproc/google-ctemplate
 google-earth	ports/astro/google-earth
+google-gadgets	ports/deskutils/google-gadgets
 google-perftools	ports/devel/google-perftools
 google-sitemapgen	ports/www/google-sitemapgen
 google-sparsehash	ports/devel/google-sparsehash
