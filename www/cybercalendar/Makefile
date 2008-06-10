@@ -14,6 +14,8 @@ DISTNAME=	CyberCalendar_${PORTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	CyberCalendar is a web based calendar program written in perl
 
+BROKEN=	does not fetch
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
