@@ -1,0 +1,13 @@
+include/eventxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c-way.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/functor-way.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mixed-way.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prio-test.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-eof.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-time.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-weof.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trivial.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wrapped-functor-way.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
