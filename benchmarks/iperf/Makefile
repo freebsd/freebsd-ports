@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	iperf
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	benchmarks ipv6
-MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf2.0/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mnag@FreeBSD.org
@@ -19,6 +17,7 @@ COMMENT=	A tool to measure maximum TCP and UDP bandwidth
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/iperf
+MAN1=		iperf.1
 PORTDOCS=	*
 
 OPTIONS=	IPV6	"Enable support to IPv6" 	on \
