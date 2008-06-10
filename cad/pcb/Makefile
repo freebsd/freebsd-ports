@@ -7,6 +7,7 @@
 
 PORTNAME=	pcb
 PORTVERSION=	20080202
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
@@ -45,7 +46,7 @@ USE_TK_RUN=	yes
 CONFIGURE_ARGS+=	--with-gui=lesstif
 CONFIGURE_ENV+=		WISH=${WISH}
 .else
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 desktopfileutils
 USE_TK_RUN=	yes
 CONFIGURE_ARGS+=	--with-gui=gtk
 CONFIGURE_ENV+=		WISH=${WISH}
