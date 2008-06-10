@@ -10,6 +10,14 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20080523:
+AUTHOR: flz@FreeBSD.org
+
+  * By default, ports-mgmt/pkg_install now sets up a wrapper to use ports
+    pkg_install (when installed) instead of base when the former is more
+    recent. This can be disabled in the options menu, or with the
+    WITHOUT_WRAPPER knob.
+
 20080414:
 AUTHOR: pav@FreeBSD.org
 
