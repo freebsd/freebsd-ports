@@ -22,7 +22,8 @@ OPTIONS=	CJK "Treat CJK ambiguous characters as full width" OFF \
 		INFO "Build and install info documentation" ON \
 		MAN "Build and install man pages" ON \
 		NETHACK "Enable nethack-style messages" ON \
-		XTERM_256 "Enable support for 256 colour xterm" OFF
+		XTERM_256 "Enable support for 256 colour xterm" OFF \
+		HOSTINLOCKED "Print user@host in locked message" OFF
 
 NO_PACKAGE=	Tends to loop using 100% CPU when used from package - perhaps it hard-codes information about the build host
 
@@ -60,6 +61,10 @@ CFLAGS+=	-DNONETHACK
 # treat CJK ambiguous characters as full width via option "cjkwidth"
 .if defined(WITH_CJK)
 EXTRA_PATCHES+=	${FILESDIR}/opt-cjkwidth
+.endif
+
+.if defined(WITH_HOSTINLOCKED)
+EXTRA_PATCHES+= ${FILESDIR}/opt-hostinlocked
 .endif
 
 post-patch:
