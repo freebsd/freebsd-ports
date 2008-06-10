@@ -6,19 +6,21 @@
 #
 
 PORTNAME=		pkg_install
-PORTVERSION=		20080411
+PORTVERSION=		20080530
 CATEGORIES=		ports-mgmt
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			http://people.FreeBSD.org/~flz/distfiles/pkg_install/
 MASTER_SITE_SUBDIR=	flz/pkg_install
 
-MAINTAINER=		portmgr@freebsd.org
-COMMENT=		FreeBSD -CURRENT version of the pkg tools for older system releases
+MAINTAINER=		portmgr@FreeBSD.org
+COMMENT=		FreeBSD -STABLE version of the package tools
 
 MANCOMPRESSED=		yes
 
 MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
 			pkg_info.1 pkg_updating.1 pkg_version.1
+
+OPTIONS=		WRAPPER "Use ports version instead of base if more recent" on
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +35,12 @@ pre-configure:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%MANPREFIX%%,${MANPREFIX},g' \
 		${FILESDIR}/Makefile.inc > ${WRKDIR}/Makefile.inc
+
+# This enables the wrapper 
+.if !defined(WITHOUT_WRAPPER)
+post-install:
+	${ECHO} "${PORTVERSION} ${PREFIX}/sbin" > /var/db/${PORTNAME}.conf
+.endif
 
 deinstall:
 	@if ${PKG_INFO} -e ${PKGNAME}; then \
