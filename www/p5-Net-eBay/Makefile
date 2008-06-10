@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-eBay
-PORTVERSION=	0.42
+PORTVERSION=	0.48
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ COMMENT=	Perl Interface to XML based eBay API
 BUILD_DEPENDS=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS+=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 BUILD_DEPENDS+=	${SITE_PERL}/XML/Dumper.pm:${PORTSDIR}/textproc/p5-XML-Dumper
+BUILD_DEPENDS+=	${SITE_PERL}/DateTime/Precise.pm:${PORTSDIR}/devel/p5-DateTime-Precise
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -28,13 +29,13 @@ MAN3=		Net::eBay.3
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/examples
-	${MV} ${WRKSRC}/*.pl ${WRKSRC}/examples
+	${MV} ${WRKSRC}/*.pl ${WRKSRC}/examples/
 
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
