@@ -229,5 +229,6 @@ post-patch:
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[$$][(]top_builddir[)]/libpurple/libpurple.la|${LOCALBASE}/lib/libpurple.la|g'
 .endif
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH}
 
 .include <bsd.port.post.mk>
