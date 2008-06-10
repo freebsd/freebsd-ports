@@ -1439,6 +1439,7 @@
     SUBDIR += p5-Module-Info
     SUBDIR += p5-Module-Info-File
     SUBDIR += p5-Module-Install
+    SUBDIR += p5-Module-List
     SUBDIR += p5-Module-Load
     SUBDIR += p5-Module-Load-Conditional
     SUBDIR += p5-Module-Loaded
