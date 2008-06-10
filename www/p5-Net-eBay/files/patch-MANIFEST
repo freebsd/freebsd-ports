@@ -1,17 +1,25 @@
---- MANIFEST.orig	Thu Mar 15 22:25:15 2007
-+++ MANIFEST	Sat Aug 25 19:01:03 2007
-@@ -7,14 +7,3 @@ lib/Net/eBay.pm
+--- MANIFEST.orig	2008-06-08 17:27:22.000000000 +0400
++++ MANIFEST	2008-06-08 17:22:48.000000000 +0400
+@@ -7,22 +7,3 @@ lib/Net/eBay.pm
  t/00-load.t
  t/pod-coverage.t
  t/pod.t
 -ebay-add-item.pl
+-ebay-api-usage.pl
+-ebay-end-item-early.pl
+-ebay-get-all-bidders.pl
 -ebay-get-categories.pl
--ebay-official-time.pl
--ebay-validate-test-user.pl
+-ebay-get-high-bidders.pl
+-ebay-get-item-transactions.pl
+-ebay-get-item.pl
 -ebay-get-my-selling.pl
+-ebay-get-my-sold.pl
 -ebay-get-seller-list.pl
 -ebay-get-suggested-categories.pl
--ebay-search.pl
--ebay-revise-item.pl
--ebay-get-item.pl
+-ebay-get-user-contact.pl
+-ebay-get-user-feedback.pl
 -ebay-leave-feedback.pl
+-ebay-official-time.pl
+-ebay-revise-item.pl
+-ebay-search.pl
+-ebay-validate-test-user.pl
