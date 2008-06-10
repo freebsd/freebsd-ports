@@ -10804,6 +10804,7 @@ p5-Module-Find	ports/devel/p5-Module-Find
 p5-Module-Info	ports/devel/p5-Module-Info
 p5-Module-Info-File	ports/devel/p5-Module-Info-File
 p5-Module-Install	ports/devel/p5-Module-Install
+p5-Module-List	ports/devel/p5-Module-List
 p5-Module-Load	ports/devel/p5-Module-Load
 p5-Module-Load-Conditional	ports/devel/p5-Module-Load-Conditional
 p5-Module-Loaded	ports/devel/p5-Module-Loaded
