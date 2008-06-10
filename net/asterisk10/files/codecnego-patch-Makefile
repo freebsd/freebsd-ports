@@ -1,5 +1,8 @@
---- Makefile.orig	2008-04-08 14:50:57.000000000 +0300
-+++ Makefile	2008-04-08 14:52:01.000000000 +0300
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
 @@ -129,7 +129,7 @@
    ASTMANDIR=$(mandir)
  ifneq ($(findstring BSD,$(OSARCH)),)
@@ -39,10 +42,10 @@
  	$(MAKE) -C sounds install
  
  update: 
-@@ -433,45 +433,45 @@
+@@ -433,47 +433,47 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
- bininstall: _all
+ installdirs:
 -	mkdir -p $(DESTDIR)$(MODULES_DIR)
 -	mkdir -p $(DESTDIR)$(ASTSBINDIR)
 -	mkdir -p $(DESTDIR)$(ASTETCDIR)
@@ -54,7 +57,6 @@
 -	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/tmp
 -	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/meetme
 -	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/monitor
--	$(INSTALL) -m 755 main/asterisk $(DESTDIR)$(ASTSBINDIR)/
 +	$(MKDIR) $(DESTDIR)$(MODULES_DIR)
 +	$(MKDIR) $(DESTDIR)$(ASTSBINDIR)
 +	$(MKDIR) $(DESTDIR)$(ASTETCDIR)
@@ -66,6 +68,9 @@
 +	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/tmp
 +	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/meetme
 +	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/monitor
+ 
+ bininstall: _all installdirs $(SUBDIRS_INSTALL)
+-	$(INSTALL) -m 755 main/asterisk $(DESTDIR)$(ASTSBINDIR)/
 +	$(BSD_INSTALL_PROGRAM) main/asterisk $(DESTDIR)$(ASTSBINDIR)/
  	$(LN) -sf asterisk $(DESTDIR)$(ASTSBINDIR)/rasterisk
 -	$(INSTALL) -m 755 contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
@@ -73,8 +78,10 @@
 +	$(BSD_INSTALL_SCRIPT) contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
 +	$(BSD_INSTALL_SCRIPT) contrib/scripts/autosupport $(DESTDIR)$(ASTSBINDIR)/
  	if [ ! -f $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ]; then \
- 		cat contrib/scripts/safe_asterisk | sed 's|__ASTERISK_SBIN_DIR__|$(ASTSBINDIR)|;s|__ASTERISK_VARRUN_DIR__|$(ASTVARRUNDIR)|;' > $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ;\
- 		chmod 755 $(DESTDIR)$(ASTSBINDIR)/safe_asterisk;\
+-		cat contrib/scripts/safe_asterisk | sed 's|__ASTERISK_SBIN_DIR__|$(ASTSBINDIR)|;s|__ASTERISK_VARRUN_DIR__|$(ASTVARRUNDIR)|;' > $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ;\
+-		chmod 755 $(DESTDIR)$(ASTSBINDIR)/safe_asterisk;\
++		cat contrib/scripts/safe_asterisk | sed 's|__ASTERISK_SBIN_DIR__|$(ASTSBINDIR)|;s|__ASTERISK_VARRUN_DIR__|$(ASTVARRUNDIR)|;' > contrib/scripts/safe_asterisk.out;\
++		${BSD_INSTALL_SCRIPT} contrib/scripts/safe_asterisk.out $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ;\
  	fi
 -	$(INSTALL) -d $(DESTDIR)$(ASTHEADERDIR)
 -	$(INSTALL) -m 644 include/asterisk.h $(DESTDIR)$(includedir)
@@ -105,26 +112,26 @@
 +	$(MKDIR) $(DESTDIR)$(ASTMANDIR)/man8
 +	$(BSD_INSTALL_DATA) keys/iaxtel.pub $(DESTDIR)$(ASTDATADIR)/keys
 +	$(BSD_INSTALL_DATA) keys/freeworlddialup.pub $(DESTDIR)$(ASTDATADIR)/keys
-+	$(BSD_INSTALL_DATA) doc/asterisk.8 $(DESTDIR)$(ASTMANDIR)/man8
-+	$(BSD_INSTALL_DATA) contrib/scripts/astgenkey.8 $(DESTDIR)$(ASTMANDIR)/man8
-+	$(BSD_INSTALL_DATA) contrib/scripts/autosupport.8 $(DESTDIR)$(ASTMANDIR)/man8
-+	$(BSD_INSTALL_DATA) contrib/scripts/safe_asterisk.8 $(DESTDIR)$(ASTMANDIR)/man8
++	$(BSD_INSTALL_MAN) doc/asterisk.8 $(DESTDIR)$(ASTMANDIR)/man8
++	$(BSD_INSTALL_MAN) contrib/scripts/astgenkey.8 $(DESTDIR)$(ASTMANDIR)/man8
++	$(BSD_INSTALL_MAN) contrib/scripts/autosupport.8 $(DESTDIR)$(ASTMANDIR)/man8
++	$(BSD_INSTALL_MAN) contrib/scripts/safe_asterisk.8 $(DESTDIR)$(ASTMANDIR)/man8
  	if [ -f contrib/firmware/iax/iaxy.bin ] ; then \
 -		$(INSTALL) -m 644 contrib/firmware/iax/iaxy.bin $(DESTDIR)$(ASTDATADIR)/firmware/iax/iaxy.bin; \
 +		$(BSD_INSTALL_DATA) contrib/firmware/iax/iaxy.bin $(DESTDIR)$(ASTDATADIR)/firmware/iax/iaxy.bin; \
  	fi
  
  $(SUBDIRS_INSTALL):
-@@ -505,7 +505,7 @@
+@@ -507,7 +507,7 @@
  	@exit 1
  endif
  
--install: badshell datafiles bininstall $(SUBDIRS_INSTALL)
-+install: badshell datafiles bininstall $(SUBDIRS_INSTALL) samples
+-install: badshell datafiles bininstall
++install: badshell datafiles bininstall samples
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
  	fi
-@@ -543,31 +543,23 @@
+@@ -545,31 +545,23 @@
  upgrade: bininstall
  
  adsi:
@@ -164,7 +171,7 @@
  		( \
  		echo "[directories]" ; \
  		echo "astetcdir => $(ASTETCDIR)" ; \
-@@ -653,20 +645,23 @@
+@@ -655,20 +647,23 @@
  		echo "; Default: strict"; \
  		echo ";"; \
  		echo ";translation_algorithm = strict"; \
@@ -192,7 +199,7 @@
  	done
  	@echo " +--------- Asterisk Web Voicemail ----------+"  
  	@echo " +                                           +"
-@@ -693,10 +688,10 @@
+@@ -695,10 +690,10 @@
  
  __rpm: include/asterisk/version.h include/asterisk/buildopts.h spec
  	rm -rf /tmp/asterisk ; \
