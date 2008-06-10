@@ -8,6 +8,7 @@
 
 PORTNAME=	afnix
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/%SUBDIR%/ \
 		ftp://ftp.stack.nl/pub/users/johans/afnix/
@@ -30,7 +31,7 @@ PORTDOCS=	*
 AFNIX_VERSION=	${PORTVERSION:S,.,-,g}
 PLIST_SUB=	PORTVER=${PORTVERSION:R}
 
-MAN1=	adp::afnix.1 amd::afnix.1 axc::afnix.1 axd::afnix.1 \
+MAN1=	axc::afnix.1 axd::afnix.1 \
 	axi::afnix.1 axl::afnix.1 axs::afnix.1
 MAN3=	gfx::afnix.3 net::afnix.3 nwg::afnix.3 pim::afnix.3 \
 	sio::afnix.3 sps::afnix.3 sys::afnix.3 txt::afnix.3 xml::afnix.3
