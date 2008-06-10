@@ -7,6 +7,7 @@
 
 PORTNAME=	phpmp
 PORTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mercury.chem.pitt.edu/~shank/
 DISTNAME=	phpMp-${PORTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A web interface for music player daemon
 
 NO_BUILD=	YES
-USE_PHP=	sockets
+USE_PHP=	pcre sockets
 
 PHPMP?=		www/phpmp
 PLIST_SUB+=	PHPMP=${PHPMP}
