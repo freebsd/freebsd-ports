@@ -36,7 +36,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-pcb-footprint.svg
 share/icons/hicolor/scalable/mimetypes/application-x-pcb-layout.svg
 share/icons/hicolor/scalable/mimetypes/application-x-pcb-netlist.svg
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/pcb.mo
-@dirrmtry share/locale/fr_FR/LC_MESSAGES
 share/mime/application/x-excellon.xml
 share/mime/application/x-gerber.xml
 share/mime/application/x-pcb-footprint.xml
