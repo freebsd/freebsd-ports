@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	3.0.707
+PORTVERSION=	3.0.708
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://dmr.ath.cx/net/darkstat/
 
-MAINTAINER=	emil@cs.rmit.edu.au
+MAINTAINER=	emikulic@gmail.com
 COMMENT=	Network statistics gatherer and reporter
 
 USE_RC_SUBR=	darkstat

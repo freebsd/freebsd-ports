@@ -18,11 +18,14 @@
 # darkstat_pidname="darkstat.pid"
 # darkstat_dropuser="nobody"
 # darkstat_flags=""
+#
 #   - examples: [ --no-promisc ] [ --no-dns ] [ -p port ]
 #     [ -b bindaddr ] [ -f filter ] [ -l network/netmask ]
 #     [ --daylog filename ] [ --import filename ] [ --export filename ]
+#     [ --hosts-max count ] [ --hosts-keep count ] [ --ports-max count ]
+#     [ --ports-keep count ] [ --highest-port port ]
 #
-#   - DON'T pass -i, --chroot, --pidfile, or --user here
+#   - DON'T pass -i, -r, --chroot, --pidfile, or --user here
 #
 # Please refer to the darkstat(1) manual page for full documentation.
 
