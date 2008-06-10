@@ -69,18 +69,18 @@
  		} else if (!strcasecmp(v->name, "rtptimeout")) {
  			if ((sscanf(v->value, "%d", &global_rtptimeout) != 1) || (global_rtptimeout < 0)) {
  				ast_log(LOG_WARNING, "'%s' is not a valid RTP hold time at line %d.  Using default.\n", v->value, v->lineno);
---- configs/sip.conf.sample.orig	2008-03-12 17:57:19.000000000 +0200
-+++ configs/sip.conf.sample	2008-03-12 18:13:03.000000000 +0200
+--- configs/sip.conf.sample.orig	2008-04-25 08:53:52.000000000 -0700
++++ configs/sip.conf.sample	2008-06-10 00:45:37.000000000 -0700
 @@ -53,6 +53,12 @@
  				; and multiline formatted headers for strict
  				; SIP compatibility (defaults to "no")
  
-+;rtp_force_dtmf_relay=no	; Enable RFC2833 DTMFs to be sent even if peer 
++;rtp_force_dtmf_relay=no	; Enable RFC2833 DTMFs to be sent even if peer
 +				; hasn't announced support for it. Default: no
 +
 +;rtp_force_dtmf_relay_pt=101	; RTP payload type value for enforced RFC2833
 +				; DTMFs. Default: 101
 +
- ; See doc/README.tos for a description of these parameters.
+ ; See doc/ip-tos.txt for a description of these parameters.
  ;tos_sip=cs3                    ; Sets TOS for SIP packets.
  ;tos_audio=ef                   ; Sets TOS for RTP audio packets.

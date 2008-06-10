@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.19.2
-PORTREVISION=	1
+PORTVERSION=	1.4.20.1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -51,6 +50,7 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		JABBER		"Enable Jabber and Gtalk support" on \
 		SQLITE          "Enable SQLITE support" on \
 		CODEC_PATCH	"Apply codec negotiation patch" off \
+		ILBC		"Enable iLBC codec" off \
 		MISC_PATCHES	"Apply additional patches" off
 
 .include <bsd.port.pre.mk>
@@ -159,6 +159,13 @@ CONFIGURE_ARGS+= --with-sqlite
 LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2
 .endif
 
+.if defined(WITHOUT_ILBC)
+PLIST_SUB+=	WITH_ILBC="@comment "
+.else
+PLIST_SUB+=	WITH_ILBC=""
+EXTRA_PATCHES+=	${PATCHDIR}/ilbc_enable.diff
+.endif
+
 .if defined(WITH_CODEC_PATCH)
 PATCHFILES=	asterisk-1.4.19-codec-negotiation-20080408.diff.gz
 PATCH_SITES=	http://b2bua.org/chrome/site/
@@ -171,12 +178,16 @@ EXTRA_PATCHES+=	${PATCHDIR}/nocodecnego-patch-Makefile
 EXTRA_PATCHES+=	${PATCHDIR}/dtmf_debug.diff
 EXTRA_PATCHES+=	${PATCHDIR}/feature_disconnect.diff
 EXTRA_PATCHES+=	${PATCHDIR}/sip_force_callid.diff
+EXTRA_PATCHES+=	${PATCHDIR}/sip_set_auth.diff
 .if defined(WITH_CODEC_PATCH)
 EXTRA_PATCHES+=	${PATCHDIR}/rtp_force_dtmf-codecnego.diff
 .else
 EXTRA_PATCHES+=	${PATCHDIR}/rtp_force_dtmf-nocodecnego.diff
 .endif
 .endif
+
+post-extract:
+	${MKDIR} ${WRKSRC}/codecs/ilbc
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample

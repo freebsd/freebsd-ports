@@ -295,6 +295,7 @@ lib/asterisk/modules/codec_adpcm.so
 lib/asterisk/modules/codec_alaw.so
 lib/asterisk/modules/codec_g726.so
 lib/asterisk/modules/codec_gsm.so
+%%WITH_ILBC%%lib/asterisk/modules/codec_ilbc.so
 lib/asterisk/modules/codec_lpc10.so
 lib/asterisk/modules/codec_speex.so
 lib/asterisk/modules/codec_ulaw.so
