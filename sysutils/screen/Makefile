@@ -7,7 +7,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		http://komquats.com/distfiles/ \
@@ -64,6 +64,7 @@ EXTRA_PATCHES+=	${FILESDIR}/opt-cjkwidth
 
 post-patch:
 	@${RM} ${WRKSRC}/doc/screen.info*
+	@${REINPLACE_CMD} -e 's|/dev/ptmx|/nonexistent|' ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
