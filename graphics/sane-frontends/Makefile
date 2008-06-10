@@ -35,10 +35,6 @@ OPTIONS=	GTK1 "GTK1 support (Default is GTK2)" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700042
-IGNORE=		has a broken dependency
-.endif
-
 .if defined(WITH_GTK1)
 USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=	--disable-gtk2
