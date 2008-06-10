@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dvipdfmx
-PORTVERSION=	20070409
+PORTVERSION=	20080607
 CATEGORIES=	print
-MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/release/
+MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/latest/
 DIST_SUBDIR=	dvipdfmx
 
 MAINTAINER=	matusita@FreeBSD.org
@@ -21,30 +21,26 @@ RUN_DEPENDS=	${ADOBECMAPDIR}/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
 		kpsepath:${PORTSDIR}/print/teTeX-base
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datadir=${LOCALBASE}/${TEXMFDIR}
-PLIST_SUB=	DVIPDFMDIR=${DVIPDFMDIR} \
+CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share
+PLIST_SUB=	DVIPDFMXDIR=${DVIPDFMXDIR} \
 		FONTMAPDIR=${FONTMAPDIR} \
+		GLYPHMAPDIR=${GLYPHMAPDIR} \
 		FONTCMAPDIR=${FONTCMAPDIR} \
 		MKTEXLSR=${MKTEXLSR} \
 		ADOBECMAPDIR=${ADOBECMAPDIR}
 
 TEXMFDIR=	share/texmf
-DVIPDFMDIR=	${TEXMFDIR}/dvipdfm
-FONTMAPDIR=	${TEXMFDIR}/fonts/map/dvipdfm
-FONTCMAPDIR=	${TEXMFDIR}/fonts/cmap/dvipdfm
+DVIPDFMXDIR=	${TEXMFDIR}/dvipdfmx
+FONTMAPDIR=	${TEXMFDIR}/fonts/map/dvipdfmx
+GLYPHMAPDIR=	${TEXMFDIR}/fonts/map/glyphlist
+FONTCMAPDIR=	${TEXMFDIR}/fonts/cmap
 ADOBECMAPDIR=	${LOCALBASE}/share/fonts/adobe-cmaps
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
 post-install:
-	${MV} ${PREFIX}/${TEXMFDIR}/dvipdfm/glyphlist.txt \
-		${LOCALBASE}/${FONTMAPDIR}/glyphlist.txt
 	${MKDIR} ${LOCALBASE}/${FONTCMAPDIR}
-	${INSTALL_DATA} ${FILESDIR}/cid-x.map.in \
-		${LOCALBASE}/${FONTMAPDIR}/cid-x.map
 	${LN} -s -f ${ADOBECMAPDIR} \
 		${LOCALBASE}/${FONTCMAPDIR}/adobe-cmaps
-	${LN} -s -f ${PREFIX}/${DVIPDFMDIR}/CMap \
-		${LOCALBASE}/${FONTCMAPDIR}/
 	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
 
 .include <bsd.port.mk>
