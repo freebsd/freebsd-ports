@@ -6,6 +6,7 @@
 
 PORTNAME=	cduce
 PORTVERSION=	0.5.2.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cduce.org/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/cduce/
@@ -28,9 +29,9 @@ OPTIONS=	OCURL		"Enable url support via ftp/ocaml-ocurl" Off \
 
 USE_GMAKE=	yes
 ALL_TARGET=	all
-INSTALL_TARGET=	install
+INSTALL_TARGET=	install_bin install_lib
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-ocamlopt --with-cgi --without-netclient --without-pxp_wlex
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-ocamlopt --with-cgi --without-netclient --without-pxp_wlex --docdir=${DOCSDIR}
 SITELIBDIR=	${LOCALBASE}/${OCAML_SITELIBDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME:R}
 
@@ -68,7 +69,6 @@ CONFIGURE_ARGS+=	--mliface=`cd ${PORTSDIR}/lang/ocaml; ${MAKE} -V WRKSRC`
 .endif
 
 .if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/${PORTNAME}
 ALL_TARGET+=		doc
 INSTALL_TARGET+=	install_doc
 PORTDOCS=		*
@@ -80,6 +80,11 @@ post-install:
 	@${ECHO_CMD} "* You choose Expat as XML parser, you may encounter some error *"
 	@${ECHO_CMD} "* when loading XML files with external DTD.                    *"
 	@${ECHO_CMD} "****************************************************************"
+.endif
+.if defined(NOPORTDOCS)
+. for i in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/doc/${i} ${MANPREFIX}/man/man${i:E}/
+. endfor
 .endif
 
 .include <bsd.port.post.mk>
