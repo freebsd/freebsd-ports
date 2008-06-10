@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Harness
-PORTVERSION=	3.10
+PORTVERSION=	3.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -42,6 +42,9 @@ MAN3=		App::Prove.3 \
 		TAP::Parser::Result::Unknown.3 \
 		TAP::Parser::Result::Version.3 \
 		TAP::Parser::Result::YAML.3 \
+		TAP::Parser::Scheduler.3 \
+		TAP::Parser::Scheduler::Job.3 \
+		TAP::Parser::Scheduler::Spinner.3 \
 		TAP::Parser::Source.3 \
 		TAP::Parser::Source::Perl.3 \
 		TAP::Parser::Utils.3 \
