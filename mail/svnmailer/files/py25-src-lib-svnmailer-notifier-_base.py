@@ -1,40 +1,40 @@
---- src/lib/svnmailer/notifier/_base.py.orig	Mon Apr 17 14:29:06 2006
-+++ src/lib/svnmailer/notifier/_base.py	Mon Oct  8 15:36:25 2007
-@@ -345,7 +345,6 @@
-             @return: The two encodings
-             @rtype: C{tuple} of C{str}
+--- src/lib/svnmailer/notifier/_base.py.orig	2005-09-25 14:51:23.000000000 +0000
++++ src/lib/svnmailer/notifier/_base.py	2007-08-20 17:29:23.000000000 +0000
+@@ -376,7 +376,6 @@
+             :return: The two encodings (``('enc1', 'enc2')``)
+             :rtype: ``tuple``
          """
 -        from encodings import exceptions
  
          enc1 = enc2 = default
          if not change.wasAdded() or change.wasCopied():
-@@ -353,7 +352,7 @@
+@@ -384,7 +383,7 @@
                  enc1 = self._getContentEncoding(
                      change.getBasePath(), change.getBaseRevision()
                  )
 -            except exceptions.LookupError:
 +            except LookupError:
-                 # fall back
+                 """ fall back """
                  pass
  
-@@ -364,7 +363,7 @@
+@@ -395,7 +394,7 @@
                  enc2 = self._getContentEncoding(
                      change.path, change.revision
                  )
 -            except exceptions.LookupError:
 +            except LookupError:
-                 # fall back
+                 """ fall back """
                  pass
  
-@@ -389,7 +388,6 @@
-             @exception encodings.exception.LookupError: The specified encoding
-                 is not implemented or no encoding was specified
+@@ -423,7 +422,6 @@
+                 The specified encoding is not implemented or no encoding
+                 was specified
          """
 -        from encodings import exceptions
  
          # first try the svn:mime-type
          enc = self.getEncodingFromMimeType(path, revision)
-@@ -427,7 +425,7 @@
+@@ -461,7 +459,7 @@
              codecs.lookup(enc)
              return enc
  

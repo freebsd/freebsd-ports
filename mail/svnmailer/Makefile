@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svnmailer
-PORTVERSION=	1.0.8
+DISTVERSION=	1.1.0-dev-r1373
 CATEGORIES=	mail python
 MASTER_SITES=	http://storage.perlig.de/${PORTNAME}/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -16,11 +16,12 @@ COMMENT=	A tool to post subversion repository commit information
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/subversion-python
 
+USE_BZIP2=	YES
 USE_PYTHON=		2.3+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
-PORTDOCS=	index.html perlig.css perlig.jpg perlig_docs.css \
-		perlig_offline.css right.gif up.gif
+MAN1=		svn-mailer.1
 
 .include <bsd.port.pre.mk>
 
@@ -29,14 +30,14 @@ pre-patch:
 EXTRA_PATCHES=	${FILESDIR}/py25-src-lib-svnmailer-notifier-_base.py
 .endif
 
+.if defined(NOPORTDOCS)
+PYDISTUTILS_INSTALLARGS+=	--no-install-docs
+.else
+PORTDOCS=	*
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "1s|^.*|#!${PYTHON_CMD}|" ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e "1s|^.*|#!${PYTHON_CMD}|" ${WRKSRC}/src/svn-mailer
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/docs; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>
