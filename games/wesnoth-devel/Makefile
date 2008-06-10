@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
 MASTER_SITE_SUBDIR=	wesnoth
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
-		freetype.9:${PORTSDIR}/print/freetype2
-
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
+
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=	image mixer net
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 WANT_GNOME=	yes
-USE_GETTEXT=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
@@ -36,12 +34,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN6=		wesnoth.6
-MANLANG=	"" ca_ES@valencia cs de fr gl_ES it ja nl sk sr@latin sv zh_CN
+MANLANG=	"" ca_ES@valencia cs da de es fr gl_ES hu it ja
+MANLANG+=	lt nl pl sk sr sr@latin sv tr zh_CN
 
 OPTIONS=	CAMPAIGN "Enable campaign server" On \
 		EDITOR	"Enable map editor"  On \
+		NLS	"Enable localization" On \
 		SERVER "Enable server" On \
 		TOOLS "Enable extra tools for artists and translators" On
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -62,6 +64,14 @@ MAN6+=			wesnoth_editor.6
 PLIST_SUB+=		EDITOR=""
 .endif
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.else
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.endif
+
 .if defined(WITHOUT_SERVER)
 PLIST_SUB+=		SERVER="@comment "
 .else
@@ -76,8 +86,6 @@ PLIST_SUB+=		TOOLS="@comment "
 CONFIGURE_ARGS+=	--enable-tools
 PLIST_SUB+=		TOOLS=""
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|[$$][{]datarootdir[}]/icons|${LOCALBASE}/share/pixmaps|' \
