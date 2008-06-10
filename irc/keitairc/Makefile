@@ -7,7 +7,7 @@
 
 PORTNAME=	keitairc
 PORTVERSION=	1.33
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR= ${PORTNAME}/27571
@@ -19,6 +19,8 @@ COMMENT=IRC proxy for mobilephone that have a web interface
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unicode/Japanese.pm:${PORTSDIR}/japanese/p5-Unicode-Japanese \
 		${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC \
+		${SITE_PERL}/POE/Component/Pluggable.pm:${PORTSDIR}/devel/p5-POE
+-Component-Pluggable \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Proc/Daemon.pm:${PORTSDIR}/devel/p5-Proc-Daemon \
