@@ -8,22 +8,33 @@
 
 PORTNAME=	eventxx
 PORTVERSION=	1.0
-PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.llucax.com.ar/~luca/eventxx/releases/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.FreeBSD.org/~gahr/distfiles/
+MASTER_SITE_SUBDIR=	gahr
+DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A C++ wrapper for libevent
 
 LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
 
-BROKEN=		does not fetch
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 
-PLIST_FILES=	include/eventxx
+post-extract:
+	${REINPLACE_CMD} -e 's|-I..|-I.. -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
+	    ${WRKSRC}/test/Makefile
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/eventxx ${PREFIX}/include
+
+post-install:
+.if !defined(NOPORTEXAMPLES)
+	${INSTALL} -d ${EXAMPLESDIR}
+	(cd ${WRKSRC}/test && ${COPYTREE_SHARE} \*.cpp ${EXAMPLESDIR})
+	${INSTALL_DATA} ${WRKSRC}/test/Makefile ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
