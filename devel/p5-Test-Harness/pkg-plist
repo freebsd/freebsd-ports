@@ -25,6 +25,9 @@
 %%SITE_PERL%%/TAP/Parser/Result/Unknown.pm
 %%SITE_PERL%%/TAP/Parser/Result/Version.pm
 %%SITE_PERL%%/TAP/Parser/Result/YAML.pm
+%%SITE_PERL%%/TAP/Parser/Scheduler.pm
+%%SITE_PERL%%/TAP/Parser/Scheduler/Job.pm
+%%SITE_PERL%%/TAP/Parser/Scheduler/Spinner.pm
 %%SITE_PERL%%/TAP/Parser/Source.pm
 %%SITE_PERL%%/TAP/Parser/Source/Perl.pm
 %%SITE_PERL%%/TAP/Parser/Utils.pm
@@ -35,6 +38,7 @@
 @dirrmtry %%SITE_PERL%%/Test
 @dirrmtry %%SITE_PERL%%/TAP/Parser/YAMLish
 @dirrmtry %%SITE_PERL%%/TAP/Parser/Source
+@dirrmtry %%SITE_PERL%%/TAP/Parser/Scheduler
 @dirrmtry %%SITE_PERL%%/TAP/Parser/Result
 @dirrmtry %%SITE_PERL%%/TAP/Parser/Iterator
 @dirrmtry %%SITE_PERL%%/TAP/Parser
