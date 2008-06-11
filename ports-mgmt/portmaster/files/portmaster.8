@@ -536,7 +536,8 @@ to do a complete reinstallation of all your ports:
 .Dl "3. portmaster --clean-distfiles-all"
 .Dl "4. portmaster -Faf"
 .Dl "5. pkg_delete '*'"
-.Dl "6. Manually check through /usr/local to make sure it is really"
+.Dl "6. rm -rf /usr/local/lib/compat/pkg"
+.Dl "7. Manually check through /usr/local to make sure it is really"
 .Dl "   empty"
 .Pp
 .Dl "Now look at the list you generated in the first step and install"
