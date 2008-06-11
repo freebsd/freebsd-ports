@@ -1,0 +1,107 @@
+lib/libgluegen-rt.so
+lib/libjogl.so
+lib/libjogl_awt.so
+%%JAVAJARDIR%%/gluegen-rt.jar
+%%JAVAJARDIR%%/jogl.jar
+%%PORTDOCS%%%%DATADIR%%/UserGuide.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/Animator.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/BufferUtil.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/FileUtil.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/FPSAnimator.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/Gamma.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/GLUT.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/ImageUtil.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/JOGLAppletLauncher.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/Screenshot.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/StreamUtil.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/TGAWriter.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/TileRenderer.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/Overlay.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/TextRenderer.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/TextRenderer.DefaultRenderDelegate.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/TextRenderer.RenderDelegate.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/TextureRenderer.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/package-frame.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/package-summary.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/j2d/package-tree.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/Texture.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/TextureCoords.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/TextureData.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/TextureData.Flusher.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/TextureIO.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/DDSImage.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/DDSImage.ImageInfo.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/SGIImage.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/TextureProvider.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/TextureWriter.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/TGAImage.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/TGAImage.Header.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/package-frame.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/package-summary.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/spi/package-tree.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/package-frame.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/package-summary.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/texture/package-tree.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/package-frame.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/package-summary.html
+%%PORTDOCS%%%%DATADIR%%/com/sun/opengl/util/package-tree.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/AbstractGraphicsConfiguration.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/AbstractGraphicsDevice.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/AWTGraphicsConfiguration.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/AWTGraphicsDevice.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/ComponentEvents.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/DebugGL.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/DefaultGLCapabilitiesChooser.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GL.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLAutoDrawable.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLCanvas.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLCapabilities.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLCapabilitiesChooser.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLContext.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLDrawable.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLDrawableFactory.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLJPanel.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLEventListener.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLException.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/GLPbuffer.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/Threading.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/TraceGL.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLU.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLUnurbs.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLUquadric.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLUtessellator.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLUtessellatorCallback.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/GLUtessellatorCallbackAdapter.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/package-frame.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/package-summary.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/glu/package-tree.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/package-frame.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/package-summary.html
+%%PORTDOCS%%%%DATADIR%%/javax/media/opengl/package-tree.html
+%%PORTDOCS%%%%DATADIR%%/package-list
+%%PORTDOCS%%%%DATADIR%%/overview-frame.html
+%%PORTDOCS%%%%DATADIR%%/constant-values.html
+%%PORTDOCS%%%%DATADIR%%/serialized-form.html
+%%PORTDOCS%%%%DATADIR%%/resources/inherit.gif
+%%PORTDOCS%%%%DATADIR%%/overview-tree.html
+%%PORTDOCS%%%%DATADIR%%/index-all.html
+%%PORTDOCS%%%%DATADIR%%/deprecated-list.html
+%%PORTDOCS%%%%DATADIR%%/allclasses-frame.html
+%%PORTDOCS%%%%DATADIR%%/allclasses-noframe.html
+%%PORTDOCS%%%%DATADIR%%/index.html
+%%PORTDOCS%%%%DATADIR%%/overview-summary.html
+%%PORTDOCS%%%%DATADIR%%/help-doc.html
+%%PORTDOCS%%%%DATADIR%%/stylesheet.css
+@dirrm %%DATADIR%%/com/sun/opengl/util/j2d
+@dirrm %%DATADIR%%/com/sun/opengl/util/texture/spi
+@dirrm %%DATADIR%%/com/sun/opengl/util/texture
+@dirrm %%DATADIR%%/com/sun/opengl/util
+@dirrm %%DATADIR%%/com/sun/opengl
+@dirrm %%DATADIR%%/com/sun
+@dirrm %%DATADIR%%/com
+@dirrm %%DATADIR%%/javax/media/opengl/glu
+@dirrm %%DATADIR%%/javax/media/opengl
+@dirrm %%DATADIR%%/javax/media
+@dirrm %%DATADIR%%/javax
+@dirrm %%DATADIR%%/resources
+@dirrm %%DATADIR%%

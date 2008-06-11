@@ -1,0 +1,96 @@
+--- gluegen/make/gluegen-cpptasks.xml.orig	2008-02-08 20:47:30.000000000 +1100
++++ gluegen/make/gluegen-cpptasks.xml	2008-05-27 22:25:42.000000000 +1000
+@@ -30,6 +30,8 @@
+    - configuration is exactly as specified.
+    - 
+    -   isFreeBSD
++   -   isFreeBSDamd64
++   -   isFreeBSDx86
+    -   isHPUX
+    -   isIA64
+    -   isLinux
+@@ -88,6 +90,7 @@
+    -   compiler.cfg.win32.msvc
+    -   compiler.cfg.macosx
+    -   compiler.cfg.freebsd
++   -   compiler.cfg.freebsd.amd64
+    -   compiler.cfg.hpux
+    -   linker.cfg.linux
+    -   linker.cfg.linux.amd64
+@@ -158,6 +161,25 @@
+     <condition property="isFreeBSD">
+       <os name="FreeBSD" />
+     </condition>
++    <condition property="isFreeBSDamd64">
++      <and>
++        <istrue value="${isFreeBSD}" />
++        <or>
++          <os arch="AMD64" />
++          <os arch="amd64" />
++          <os arch="x86_64" />
++        </or>
++      </and>
++    </condition>
++    <condition property="isFreeBSDx86">
++      <and>
++        <istrue value="${isFreeBSD}" />
++        <or>
++          <os arch="i386" />
++          <os arch="x86" />
++        </or>
++      </and>
++    </condition>
+     <condition property="isHPUX">
+       <os name="HP-UX" />
+     </condition>
+@@ -235,6 +257,8 @@
+     </condition>
+ 
+     <echo message="FreeBSD=${isFreeBSD}" />
++    <echo message="FreeBSDamd64=${isFreeBSDamd64}" />
++    <echo message="FreeBSDx86=${isFreeBSDx86}" />
+     <echo message="HPUX=${isHPUX}" />
+     <echo message="IA64=${isIA64}" />
+     <echo message="Linux=${isLinux}" />
+@@ -253,10 +277,16 @@
+     <echo message="X11=${isX11}" />
+   </target>
+ 
+-  <target name="gluegen.cpptasks.detect.os.freebsd" unless="gluegen.cpptasks.detected.os" if="isFreeBSD">
++  <target name="gluegen.cpptasks.detect.os.freebsd.x86" unless="gluegen.cpptasks.detected.os" if="isFreeBSDx86">
+     <property name="os.and.arch" value="freebsd-i586" />
+   </target>
+ 
++  <target name="gluegen.cpptasks.detect.os.freebsd.amd64" unless="gluegen.cpptasks.detected.os" if="isFreeBSDamd64">
++    <property name="os.and.arch" value="freebsd-amd64" />
++  </target>
++
++  <target name="gluegen.cpptasks.detect.os.freebsd" depends="gluegen.cpptasks.detect.os.freebsd.amd64,gluegen.cpptasks.detect.os.freebsd.x86" unless="gluegen.cpptasks.detected.os" />
++
+   <target name="gluegen.cpptasks.detect.os.hpux" unless="gluegen.cpptasks.detected.os" if="isHPUX">
+     <property name="os.and.arch" value="hpux-hppa" />
+   </target>
+@@ -466,6 +496,10 @@
+ 
+     <compiler id="compiler.cfg.freebsd" name="gcc">
+     </compiler>
++    <compiler id="compiler.cfg.freebsd.amd64" name="gcc">
++      <compilerarg value="-fPIC"/>
++    </compiler>
++
+ 
+     <compiler id="compiler.cfg.hpux" name="aCC">
+       <!-- Interpret source as ANSI C89 (not C++) -->
+@@ -496,6 +530,12 @@
+     <linker id="linker.cfg.linux.amd64" name="gcc">
+     </linker>
+ 
++    <linker id="linker.cfg.freebsd" name="gcc">
++    </linker>
++
++    <linker id="linker.cfg.freebsd.amd64" name="gcc">
++    </linker>
++
+     <linker id="linker.cfg.solaris" name="suncc">
+     </linker>
+ 

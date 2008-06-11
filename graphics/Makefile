@@ -319,6 +319,7 @@
     SUBDIR += jdraw
     SUBDIR += jgraph
     SUBDIR += jhead
+    SUBDIR += jogl
     SUBDIR += jp2a
     SUBDIR += jpatch
     SUBDIR += jpeg
