@@ -18,19 +18,19 @@ bin/ratecal1
 bin/ratetry
 bin/reffreq
 etc/calibrations.samp
-%%DATADIR%%/hf-examplefiles/fix.01
-%%DATADIR%%/hf-examplefiles/fix.02
-%%DATADIR%%/hf-examplefiles/fix.03
-%%DATADIR%%/hf-examplefiles/fix.04
-%%DATADIR%%/hf-examplefiles/fix.05
-%%DATADIR%%/hf-examplefiles/fix.06
-%%DATADIR%%/hf-examplefiles/fix.07
-%%DATADIR%%/hf-examplefiles/fix.08
-%%DATADIR%%/hf-examplefiles/fix.09
-%%DATADIR%%/hf-examplefiles/fix.10
-%%DATADIR%%/hf-examplefiles/fix.11
-%%DATADIR%%/hf-examplefiles/fix.12
-%%DATADIR%%/hf-examplefiles/gag
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.01
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.02
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.03
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.04
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.05
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.06
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.07
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.08
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.09
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.10
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.11
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.12
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gag
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/DE-HF-HOWTO.txt
@@ -48,6 +48,5 @@ etc/calibrations.samp
 %%PORTDOCS%%%%DOCSDIR%%/pactor.ps
 %%PORTDOCS%%%%DOCSDIR%%/pactor.txt
 %%PORTDOCS%%%%DOCSDIR%%/pactor_statediag.fig
-@dirrm %%DATADIR%%/hf-examplefiles
-@dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
