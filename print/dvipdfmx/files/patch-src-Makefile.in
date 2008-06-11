@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2008-06-11 00:21:30.000000000 +0900
++++ src/Makefile.in	2008-05-23 09:04:11.000000000 +0900
+@@ -1517,7 +1517,7 @@
+
+
+ install-exec-hook:
+-	cd $(DESTDIR)$(bindir) && rm -f ebb && $(LN_S) dvipdfmx ebb
++	cd $(DESTDIR)$(bindir) && rm -f ebb-dvipdfmx && $(LN_S) dvipdfmx ebb-dvipdfmx
+ 	cd $(DESTDIR)$(bindir) && rm -f extractbb && $(LN_S) dvipdfmx extractbb
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

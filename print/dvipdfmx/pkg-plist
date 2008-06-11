@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 bin/dvipdfmx
-bin/ebb
+bin/ebb-dvipdfmx
 bin/extractbb
 %%DVIPDFMXDIR%%/dvipdfmx.cfg
 @dirrm %%DVIPDFMXDIR%%
