@@ -7,7 +7,7 @@
 
 PORTNAME=	hf
 PORTVERSION=	0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hfterm
@@ -33,26 +33,18 @@ post-configure:
 	${WRKSRC}/hfkernel/Makefile
 
 post-install:
-	${MKDIR} ${DATADIR}
-	${MKDIR} ${DATADIR}/hf-examplefiles
-.for d in ${WRKSRC}/doc/hf-examplefiles/fix.01 \
-	${WRKSRC}/doc/hf-examplefiles/fix.02 \
-	${WRKSRC}/doc/hf-examplefiles/fix.03 \
-	${WRKSRC}/doc/hf-examplefiles/fix.04 \
-	${WRKSRC}/doc/hf-examplefiles/fix.05 \
-	${WRKSRC}/doc/hf-examplefiles/fix.06 \
-	${WRKSRC}/doc/hf-examplefiles/fix.07 \
-	${WRKSRC}/doc/hf-examplefiles/fix.08 \
-	${WRKSRC}/doc/hf-examplefiles/fix.09 \
-	${WRKSRC}/doc/hf-examplefiles/fix.10 \
-	${WRKSRC}/doc/hf-examplefiles/fix.11 \
-	${WRKSRC}/doc/hf-examplefiles/fix.12 \
+	@${ECHO} ""
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+.for d in ${WRKSRC}/doc/hf-examplefiles/fix.[0-1]*[0-9]* \
 	${WRKSRC}/doc/hf-examplefiles/gag
-	${INSTALL_DATA} ${WRKSRC}/${d} ${DATADIR}/hf-examplefiles
+	@${INSTALL_DATA} ${WRKSRC}/${d} ${EXAMPLESDIR}
 .endfor
+	@${ECHO} "hf examples installed in ${EXAMPLESDIR}"
+.endif
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for d in ${WRKSRC}/doc/AUTHORS ${WRKSRC}/doc/ChangeLog \
 	${WRKSRC}/doc/DE-HF-HOWTO.txt ${WRKSRC}/doc/HF-HOWTO.txt \
 	${WRKSRC}/doc/INSTALL ${WRKSRC}/doc/LIESMICH \
@@ -62,11 +54,10 @@ post-install:
 	${WRKSRC}/doc/lfconv.jpg ${WRKSRC}/doc/mt63.txt \
 	${WRKSRC}/doc/pactor.ps ${WRKSRC}/doc/pactor.txt \
 	${WRKSRC}/doc/pactor_statediag.fig
-	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
 .endfor
-	@${ECHO} ""
 	@${ECHO} "hf docs installed in ${DOCSDIR}"
-	@${ECHO} ""
 .endif
+	@${ECHO} ""
 
 .include <bsd.port.mk>
