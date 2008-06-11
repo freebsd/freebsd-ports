@@ -1,0 +1,9 @@
+The JOGL project hosts the development version of the Java Binding for
+the OpenGL API (JSR-231), and is designed to provide hardware-
+supported 3D graphics to applications written in Java.  JOGL provides
+full access to the APIs in the OpenGL 2.0 specification as well as
+nearly all vendor extensions, and integrates with the AWT and Swing
+widget sets.  It is part of a suite of open-source technologies
+initiated by the Game Technology Group at Sun Microsystems.
+
+WWW: https://jogl.dev.java.net/
