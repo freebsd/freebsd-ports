@@ -10,7 +10,7 @@ fi
 
 arch=$1
 branch=$2
-if [ "x$branch" != x5 -a "x$branch" != x6-exp -a "x$branch" != x6-exp2 -a "x$branch" != x6 -a "x$branch" != x7 -a "x$branch" != x7-exp -a "x$branch" != x8 -a "x$branch" != x8-exp ]; then
+if [ "x$branch" != x6-exp -a "x$branch" != x6-exp2 -a "x$branch" != x6 -a "x$branch" != x7 -a "x$branch" != x7-exp -a "x$branch" != x8 -a "x$branch" != x8-exp ]; then
   usage
 fi
 
@@ -35,10 +35,7 @@ elif [ ${ftp} = "1" ]; then
     cd ${here}
 fi
 
-tmpdir=${here}/tmp
-
-# just in case
-umount -f ${tmpdir}/usr/src 2>/dev/null
+tmpdir=${here}/bindist/tmp
 
 # Clean up ${tmpdir}
 rm -rf ${tmpdir} 2>/dev/null
@@ -50,15 +47,12 @@ mkdir -p ${tmpdir}
 
 # Set up the tmpdir directory hierarchy
 cd ${tmpdir}
-mtree -deU -f ${here}/src/etc/mtree/BSD.root.dist -p ${tmpdir}/
-mtree -deU -f ${here}/src/etc/mtree/BSD.var.dist -p ${tmpdir}/var
-mtree -deU -f ${here}/src/etc/mtree/BSD.usr.dist -p ${tmpdir}/usr
 
 # Copy the files into the tmpdir.  Use an existing built world, or the ftp
 # files.
 if [ "${ftp}" = 0 ]; then
     (cd ${worlddir}; find -dx . | \
-	grep -v -E '^./usr/(X11R6|local|obj|opt|ports|src)' | \
+	grep -v -E '^./usr/(local|obj|opt|ports|src)' | \
 	grep -v '^./home' | \
 	grep -v '^./var/db/pkg' | \
 	cpio -dump ${tmpdir})
@@ -71,14 +65,16 @@ fi
 cd ${tmpdir}
 
 # Customize the tmpdir
-rm -rf $(cat ${here}/bindist/delete)
-mkdir -p $(cat ${here}/bindist/dirlist)
+if [ -s "${here}/bindist/delete" ]; then
+  sed -e "s,^,${tmpdir},," ${here}/bindist/delete | xargs rm -rf
+fi
+if [ -s "${here}/bindist/dirlist" ]; then
+  cat "${here}/bindist/dirlist" | xargs mkdir -p 
+fi
 (cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir})
 
 # Post-processing of installed world
 date '+%Y%m%d' > var/db/port.mkversion
-rm -f kernel.GENERIC
-mkdir ${tmpdir}/var/run
 
 # Create the tarballs
 mkdir -p ${here}/tarballs
@@ -89,6 +85,7 @@ else
   gen=0
 fi
 newgen=$((${gen}+1))
+echo ${newgen} > ${here}/tarballs/.gen
 
 cd ${tmpdir}
 tar cf ${here}/tarballs/bindist.tar.new .
