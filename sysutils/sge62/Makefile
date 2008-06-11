@@ -7,10 +7,9 @@
 
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/169/:src \
-		http://gridengine.sunsource.net/download/SGE61/:bin \
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/174/:src \
+		http://gridengine.sunsource.net/download/SGE62/:bin \
 		${MASTER_SITE_LOCAL}:src,bin
 MASTER_SITE_SUBDIR=	brooks
 DISTNAME=	ge-V${SGE_RELEASE:S/.//}_TAG-src
@@ -35,7 +34,7 @@ OPTIONS=	BDB "Use DB based spooler" on \
 		QSH "Enable qsh (requires xterm on exec hosts)" on
 
 LATEST_LINK=	sge61
-CONFLICTS=	sge-6.[02-9]* sge-5* sgeee-[0-9]* sge-0.*
+CONFLICTS=	sge-6.[013-9]* sge-5* sgeee-[0-9]* sge-0.*
 
 NOT_FOR_ARCHS=	alpha
 
@@ -48,8 +47,8 @@ SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
 SGE_BUILD_ARCH=	FREEBSD_${ARCH:U}
-SGE_RELEASE=	6.1u4
-SGE_VERSION=	${SGE_RELEASE:S/u/./}
+SGE_RELEASE=	6.2beta
+SGE_VERSION=	${SGE_RELEASE:S/u/./:S/beta/.b/}
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
 PLIST_SUB+=	SGE_BASE=${SGE_BASE}
@@ -70,7 +69,6 @@ INST_PROGS=	man common \
 		sge_qmaster \
 		sge_execd \
 		sge_shadowd \
-		sge_schedd \
 		sge_shepherd \
 		sge_coshepherd \
 		qstat \
@@ -128,8 +126,8 @@ QMON=		noqmon
 
 post-extract:
 	@cd ${WRKDIR} && ${TAR} xf ${DISTDIR}/ge-${SGE_RELEASE}-common.tar.gz \*.jar
-	@${CP} ${WRKDIR}/lib/drmaa.jar ${WRKSRC}/classes/
 	@${MKDIR} ${WRKSRC}/classes/juti
+	@${CP} ${WRKDIR}/lib/drmaa.jar ${WRKSRC}/classes/
 	@${CP} ${WRKDIR}/lib/juti.jar ${WRKSRC}/classes/juti/
 	@${MKDIR} ${WRKSRC}/libs/jgdi/build
 	@${CP} ${WRKDIR}/lib/jgdi.jar ${WRKSRC}/libs/jgdi/build/

@@ -23,7 +23,6 @@
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/sge_coshepherd
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/sge_execd
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/sge_qmaster
-%%SGE_BASE%%/bin/%%SGE_ARCH%%/sge_schedd
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/sge_shadowd
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/sge_shepherd
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/sgepasswd
@@ -44,9 +43,12 @@
 %%QMON%%%%SGE_BASE%%/catman/cat/cat1/qmon.1
 %%SGE_BASE%%/catman/cat/cat1/qping.1
 %%SGE_BASE%%/catman/cat/cat1/qquota.1
+%%SGE_BASE%%/catman/cat/cat1/qrdel.1
 %%SGE_BASE%%/catman/cat/cat1/qresub.1
 %%SGE_BASE%%/catman/cat/cat1/qrls.1
 %%SGE_BASE%%/catman/cat/cat1/qrsh.1
+%%SGE_BASE%%/catman/cat/cat1/qrstat.1
+%%SGE_BASE%%/catman/cat/cat1/qrsub.1
 %%SGE_BASE%%/catman/cat/cat1/qselect.1
 %%SGE_BASE%%/catman/cat/cat1/qsh.1
 %%SGE_BASE%%/catman/cat/cat1/qstat.1
@@ -125,11 +127,13 @@
 %%SGE_BASE%%/catman/cat/cat5/user.5
 %%SGE_BASE%%/catman/cat/cat5/usermapping.5
 %%SGE_BASE%%/catman/cat/cat8/SGE_Helper_Service.exe.8
+%%SGE_BASE%%/catman/cat/cat8/sge_ca.8
 %%SGE_BASE%%/catman/cat/cat8/sge_execd.8
 %%SGE_BASE%%/catman/cat/cat8/sge_qmaster.8
 %%SGE_BASE%%/catman/cat/cat8/sge_schedd.8
 %%SGE_BASE%%/catman/cat/cat8/sge_shadowd.8
 %%SGE_BASE%%/catman/cat/cat8/sge_shepherd.8
+%%SGE_BASE%%/catman/cat/cat8/sge_st.8
 %%SGE_BASE%%/ckpt/README.cpr
 %%SGE_BASE%%/ckpt/README.cray
 %%SGE_BASE%%/ckpt/checkpoint_command
@@ -163,7 +167,6 @@
 %%SGE_BASE%%/examples/drmaa/howto5.c
 %%SGE_BASE%%/examples/drmaa/howto6.c
 %%SGE_BASE%%/examples/jobs/array_submitter.sh
-%%SGE_BASE%%/examples/jobs/hello.bat
 %%SGE_BASE%%/examples/jobs/jobnet_submitter.sh
 %%SGE_BASE%%/examples/jobs/pascal.sh
 %%SGE_BASE%%/examples/jobs/pminiworm.sh
@@ -171,19 +174,16 @@
 %%SGE_BASE%%/examples/jobs/sleeper.sh
 %%SGE_BASE%%/examples/jobs/step_A_array_submitter.sh
 %%SGE_BASE%%/examples/jobs/step_B_array_submitter.sh
-%%SGE_BASE%%/examples/jobs/worker.exe
 %%SGE_BASE%%/examples/jobs/worker.sh
 %%SGE_BASE%%/examples/jobsbin/%%SGE_ARCH%%/work
 %%SGE_BASE%%/include/drmaa.h
 %%SGE_BASE%%/inst_sge
 %%SGE_BASE%%/install_execd
 %%SGE_BASE%%/install_qmaster
-%%SGE_BASE%%/lib/drmaa-0.5.jar
 %%SGE_BASE%%/lib/drmaa.jar
 %%QMON%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libXltree.so
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libcrypto.so
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libdrmaa.so
-%%SGE_BASE%%/lib/%%SGE_ARCH%%/libdrmaa.so.0.95
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libdrmaa.so.1.0
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libjuti.so
 %%BDB_SPOOL%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libspoolb.so
@@ -229,6 +229,7 @@
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/21cal.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/21cal_ins.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/aclask.xpm
+%%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_ar.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_browser.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_calendar.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_ckpt.xpm
@@ -311,6 +312,7 @@
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/stdoutput_ins.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/str.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/time.xpm
+%%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/toolbar_ar.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/toolbar_browser.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/toolbar_calendar.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/toolbar_ckpt.xpm
@@ -364,9 +366,16 @@
 %%SGE_BASE%%/util/install_modules/inst_schedd_high.conf
 %%SGE_BASE%%/util/install_modules/inst_schedd_max.conf
 %%SGE_BASE%%/util/install_modules/inst_schedd_normal.conf
+%%SGE_BASE%%/util/install_modules/inst_st.sh
 %%SGE_BASE%%/util/install_modules/inst_template.conf
 %%SGE_BASE%%/util/install_modules/inst_update.sh
+%%SGE_BASE%%/util/jaas.config.template
+%%SGE_BASE%%/util/java.policy.template
+%%SGE_BASE%%/util/jmxremote.access
+%%SGE_BASE%%/util/jmxremote.password
 %%SGE_BASE%%/util/logchecker.sh
+%%SGE_BASE%%/util/logging.properties.template
+%%SGE_BASE%%/util/management.properties.template
 %%SGE_BASE%%/util/qtask
 %%SGE_BASE%%/util/rctemplates/darwin_template
 %%SGE_BASE%%/util/rctemplates/sgebdb_template
@@ -435,18 +444,30 @@
 %%SGE_BASE%%/util/resources/pe/make.sge_pqs_api
 %%SGE_BASE%%/util/resources/schemas/qhost/qhost.xsd
 %%SGE_BASE%%/util/resources/schemas/qquota/qquota.xsd
+%%SGE_BASE%%/util/resources/schemas/qrstat/qrstat.xsd
 %%SGE_BASE%%/util/resources/schemas/qstat/detailed_job_info.xsd
 %%SGE_BASE%%/util/resources/schemas/qstat/message.xsd
 %%SGE_BASE%%/util/resources/schemas/qstat/qstat.xsd
 %%SGE_BASE%%/util/resources/starter_methods/settaskid.sh
+%%SGE_BASE%%/util/resources/usersets/arusers
 %%SGE_BASE%%/util/resources/usersets/deadlineusers
 %%SGE_BASE%%/util/resources/usersets/defaultdepartment
+%%SGE_BASE%%/util/rmiconsole.policy
 %%SGE_BASE%%/util/setfileperm.sh
 %%SGE_BASE%%/util/sgeCA/renew_all_certs.csh
 %%SGE_BASE%%/util/sgeCA/sge_ca
 %%SGE_BASE%%/util/sgeCA/sge_ca.cnf
 %%SGE_BASE%%/util/sgeCA/sge_ssl.cnf
 %%SGE_BASE%%/util/sgeCA/sge_ssl_template.cnf
+%%SGE_BASE%%/util/sgeSMF/bdb_template.xml
+%%SGE_BASE%%/util/sgeSMF/execd_template.xml
+%%SGE_BASE%%/util/sgeSMF/qmaster_template.xml
+%%SGE_BASE%%/util/sgeSMF/sge_smf.sh
+%%SGE_BASE%%/util/sgeSMF/sge_smf_support.sh
+%%SGE_BASE%%/util/sgeSMF/shadowd_template.xml
+%%SGE_BASE%%/util/sgeST/sge_st
+%%SGE_BASE%%/util/sgeST/sge_st_settings.sh
+%%SGE_BASE%%/util/sgeST/st_settings.sh
 %%SGE_BASE%%/util/sge_aliases
 %%SGE_BASE%%/util/sge_request
 %%SGE_BASE%%/util/sgeremoterun
@@ -813,10 +834,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/logfile-trimming.asc
 @dirrm %%SGE_BASE%%/utilbin/%%SGE_ARCH%%
 @dirrm %%SGE_BASE%%/utilbin
+@dirrm %%SGE_BASE%%/util/sgeST
+@dirrm %%SGE_BASE%%/util/sgeSMF
 @dirrm %%SGE_BASE%%/util/sgeCA
 @dirrm %%SGE_BASE%%/util/resources/usersets
 @dirrm %%SGE_BASE%%/util/resources/starter_methods
 @dirrm %%SGE_BASE%%/util/resources/schemas/qstat
+@dirrm %%SGE_BASE%%/util/resources/schemas/qrstat
 @dirrm %%SGE_BASE%%/util/resources/schemas/qquota
 @dirrm %%SGE_BASE%%/util/resources/schemas/qhost
 @dirrm %%SGE_BASE%%/util/resources/schemas
