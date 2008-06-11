@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	maruku
-PORTVERSION=	0.5.8
+PORTVERSION=	0.5.9
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 

@@ -16,6 +16,7 @@ bin/marutex
 %%GEM_LIB_DIR%%/lib/maruku/textile2.rb
 %%GEM_LIB_DIR%%/lib/maruku/toc.rb
 %%GEM_LIB_DIR%%/lib/maruku/version.rb
+%%GEM_LIB_DIR%%/lib/maruku/ext/div.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math/elements.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math/latex_fix.rb
@@ -64,8 +65,11 @@ bin/marutex
 %%GEM_LIB_DIR%%/docs/markdown_syntax.html
 %%GEM_LIB_DIR%%/docs/maruku.html
 %%GEM_LIB_DIR%%/docs/proposal.html
+%%GEM_LIB_DIR%%/tests/bugs/abbrev.md
 %%GEM_LIB_DIR%%/tests/bugs/code_in_links.md
 %%GEM_LIB_DIR%%/tests/bugs/complex_escaping.md
+%%GEM_LIB_DIR%%/tests/bugs/html.md
+%%GEM_LIB_DIR%%/tests/bugs/links.md
 %%GEM_LIB_DIR%%/tests/diagrams/diagrams.md
 %%GEM_LIB_DIR%%/tests/math/syntax.md
 %%GEM_LIB_DIR%%/tests/math_usage/document.md
@@ -167,6 +171,9 @@ bin/marutex
 %%GEM_LIB_DIR%%/tests/unittest/attributes/attributes.md
 %%GEM_LIB_DIR%%/tests/unittest/attributes/circular.md
 %%GEM_LIB_DIR%%/tests/unittest/attributes/default.md
+%%GEM_LIB_DIR%%/tests/unittest/divs/div1.md
+%%GEM_LIB_DIR%%/tests/unittest/divs/div2.md
+%%GEM_LIB_DIR%%/tests/unittest/divs/div3_nest.md
 %%GEM_LIB_DIR%%/tests/unittest/encoding/iso-8859-1.md
 %%GEM_LIB_DIR%%/tests/unittest/encoding/utf-8.md
 %%GEM_LIB_DIR%%/tests/unittest/math/equations.md
@@ -206,6 +213,7 @@ bin/marutex
 @dirrm %%GEM_LIB_DIR%%/tests/unittest/notyet
 @dirrm %%GEM_LIB_DIR%%/tests/unittest/math
 @dirrm %%GEM_LIB_DIR%%/tests/unittest/encoding
+@dirrm %%GEM_LIB_DIR%%/tests/unittest/divs
 @dirrm %%GEM_LIB_DIR%%/tests/unittest/attributes
 @dirrm %%GEM_LIB_DIR%%/tests/unittest
 @dirrm %%GEM_LIB_DIR%%/tests/s5
