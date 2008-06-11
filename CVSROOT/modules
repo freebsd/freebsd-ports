@@ -15427,6 +15427,7 @@ sfslite-noopt	ports/devel/sfslite-noopt
 sgb		ports/devel/sgb
 sge60		ports/sysutils/sge60
 sge61		ports/sysutils/sge61
+sge62		ports/sysutils/sge62
 sgf2tex		ports/print/sgf2tex
 sgifonts	ports/x11-fonts/sgifonts
 sgl		ports/devel/sgl
