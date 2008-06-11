@@ -178,10 +178,9 @@ safe_exit () {
 		esac
 
 		case "$INSTALLED_LIST" in
-		*:*:)	IFS=':'
-			echo "===>>> The following actions were performed:"
-			for f in $INSTALLED_LIST; do echo "	$f" ; done ;;
-		*:)	echo "===>>> ${ilist%:} complete" ; echo '' ;;
+		*\\n\\t*) echo "===>>> The following actions were performed:"
+			echo -e $INSTALLED_LIST ;;
+		*\\n)	echo "===>>> $ilist complete" ; echo '' ;;
 		esac
 	else
 		[ -n "$grep_deps" ] && pm_unlink $grep_deps
@@ -194,6 +193,8 @@ safe_exit () {
 		fi
 		[ -z "$NO_BACKUP" -a -z "$BACKUP" ] &&
 			echo "NB_DELETE='$NB_DELETE'" >> $IPC_SAVE
+		[ -n "$PM_MULTI_BUILT" ] &&
+			echo "PM_MULTI_BUILT='$PM_MULTI_BUILT'" >> $IPC_SAVE
 		if [ -n "$INTERACTIVE_UPDATE" ]; then
 			echo "INTERACTIVE_YES='$INTERACTIVE_YES'" >> $IPC_SAVE
 			echo "INTERACTIVE_NO='$INTERACTIVE_NO'" >> $IPC_SAVE
@@ -780,6 +781,11 @@ check_for_updates () {
 			fi ;;
 		esac
 		# Outdent
+			elif [ -n "$PM_MULTI_PORTS" ]; then
+				case "$PM_MULTI_PORTS" in
+				*:${iport}:*)	do_update=do_update7 ;;
+				*:${origin}:*)	do_update=do_update8 ;;
+				esac
 			elif [ -n "$LIST_PLUS" ]; then
 				check_state
 				return 0
@@ -1451,7 +1457,6 @@ dependency_check () {
 		# Do this first to catch out of date dependencies
 		if [ -n "$CONFIG_ONLY" ]; then
 		    case "$CONFIG_SEEN_LIST" in *:${origin}:*) continue ;; esac
-		    CONFIG_SEEN_LIST="${CONFIG_SEEN_LIST}${origin}:"
 		fi
 
 		[ -z "$URB_YES" ] &&
@@ -1536,6 +1541,12 @@ create_master_rb_list () {
 }
 
 multiport () {
+	# Global
+	PM_MULTI_PORTS=':' ; PM_MULTI_BUILT=':'
+	export PM_MULTI_PORTS PM_MULTI_BUILT
+
+	local port portlist
+
 	# Quick check of the command line arguments
 	for port in $@; do
 		port=${port#$pdb/}
@@ -1547,7 +1558,13 @@ multiport () {
 			    fail "$pdb/$port does not exist"
 			;;
 		esac
+		portlist="${portlist}\t${port}\n"
+		PM_MULTI_PORTS="${PM_MULTI_PORTS}${port}:"
 	done
+
+	echo "===>>> Working on multiple ports:"
+	echo -e $portlist
+
 	if [ -n "$CONFIG_ONLY" ]; then
 		for port in $@; do
 			($0 $ARGS $port) || fail "Update for $port failed"
@@ -1560,6 +1577,8 @@ multiport () {
 		echo ''
 	fi
 	for port in $@; do
+		case "$PM_MULTI_BUILT" in *:${port}:*) continue ;; esac
+
 		case "$port" in
 		*/*)	;;	# Ok to proceed
 		*)	# If an installed version does not exist at this
@@ -1744,7 +1763,11 @@ if [ -z "$REPLACE_ORIGIN" ]; then
 		glob_dirs=`find $pdb -maxdepth 1 -type d -name ${argv%\*}\*`
 		case "$glob_dirs" in
 		*\*|'')	echo '' ; no_valid_port ;;
-		*)	multiport $glob_dirs
+		# Match a newline in multiple responses from find
+		*'
+'*)			multiport $glob_dirs ;;
+		$pdb/*)	upg_port=${glob_dirs#$pdb/} ;;
+		*)	echo '' ; no_valid_port ;;
 		esac
 	fi
 else
@@ -1829,6 +1852,9 @@ if [ -e "$pdb/$upg_port/+IGNOREME" ]; then
 fi
 
 # START
+
+# Should only be reached for multiport already built as a dependency
+case "$CONFIG_SEEN_LIST" in *:${portdir}:*) safe_exit ;; esac
 
 pm_cd $pd/$portdir || no_valid_port
 
@@ -2220,7 +2246,10 @@ if [ "$$" -ne "$PARENT_PID" -o -n "$UPDATE_REQ_BYS" ]; then
 	echo "===>>> $ilist succeeded" ; echo ''
 fi
 
-INSTALLED_LIST="${INSTALLED_LIST}$ilist:"
+[ -n "$PM_MULTI_BUILT" ] &&
+	PM_MULTI_BUILT="${PM_MULTI_BUILT}${new_port}:${portdir}:"
+
+INSTALLED_LIST="${INSTALLED_LIST}\t${ilist}\n"
 [ -e "$pdb/$new_port/+DISPLAY" ] && DISPLAY_LIST="${DISPLAY_LIST}$new_port "
 CUR_DEPS="${CUR_DEPS}${new_port}:${portdir}:"
 
