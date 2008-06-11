@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	liberation-fonts-ttf
-PORTVERSION=	3
-PORTREVISION=	1
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://www.redhat.com/f/fonts/
+DISTNAME=	liberation-fonts
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Liberation fonts from Red Hat to replace MS TTF fonts
@@ -17,7 +18,6 @@ COMMENT=	Liberation fonts from Red Hat to replace MS TTF fonts
 BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-WRKSRC=		${WRKDIR}/liberation-fonts-0.2
 USE_XORG=	x11
 
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
