@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-OpenID-Consumer
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	net security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
@@ -26,5 +27,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::OpenID::Association.3 Net::OpenID::ClaimedIdentity.3 \
 		Net::OpenID::Consumer.3 Net::OpenID::VerifiedIdentity.3
+
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
 
 .include <bsd.port.mk>
