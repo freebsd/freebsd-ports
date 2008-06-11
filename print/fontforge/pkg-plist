@@ -100,6 +100,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/Big5.txt
 %%PORTDOCS%%%%DOCSDIR%%/BitmapView.png
 %%PORTDOCS%%%%DOCSDIR%%/BoldHiraDA.png
+%%PORTDOCS%%%%DOCSDIR%%/BottomSerif.png
 %%PORTDOCS%%%%DOCSDIR%%/Bperspective.png
 %%PORTDOCS%%%%DOCSDIR%%/C1.png
 %%PORTDOCS%%%%DOCSDIR%%/C10.png
@@ -142,12 +143,11 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/EforeTtf.png
 %%PORTDOCS%%%%DOCSDIR%%/Ehinted.png
 %%PORTDOCS%%%%DOCSDIR%%/EhintedTtf.png
-%%PORTDOCS%%%%DOCSDIR%%/Encodings.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/Eperspective.png
 %%PORTDOCS%%%%DOCSDIR%%/FVHMetrics.png
 %%PORTDOCS%%%%DOCSDIR%%/FVVMetrics.png
+%%PORTDOCS%%%%DOCSDIR%%/FlatSerif.png
 %%PORTDOCS%%%%DOCSDIR%%/FontDisplay.png
-%%PORTDOCS%%%%DOCSDIR%%/FontForge.css
 %%PORTDOCS%%%%DOCSDIR%%/FontForgeSplash.png
 %%PORTDOCS%%%%DOCSDIR%%/FontImage.png
 %%PORTDOCS%%%%DOCSDIR%%/FontSample.png
@@ -173,9 +173,11 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/InsertTxtDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/ItalicCompCaslon.png
 %%PORTDOCS%%%%DOCSDIR%%/ItalicCompGalliard.png
+%%PORTDOCS%%%%DOCSDIR%%/ItalicDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/KernPairs.png
 %%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LinearGradient.png
+%%PORTDOCS%%%%DOCSDIR%%/ListeDesGlyphes.nam
 %%PORTDOCS%%%%DOCSDIR%%/MATH-Constants.png
 %%PORTDOCS%%%%DOCSDIR%%/MATH-Exten.png
 %%PORTDOCS%%%%DOCSDIR%%/MATH-GlyphConstructed.png
@@ -189,7 +191,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/MATH-VertVariants.png
 %%PORTDOCS%%%%DOCSDIR%%/MacFeatName.png
 %%PORTDOCS%%%%DOCSDIR%%/MacMapping.png
-%%PORTDOCS%%%%DOCSDIR%%/MacOSX.html
 %%PORTDOCS%%%%DOCSDIR%%/MassRename.png
 %%PORTDOCS%%%%DOCSDIR%%/MetricsView-features.png
 %%PORTDOCS%%%%DOCSDIR%%/MetricsView.png
@@ -197,16 +198,11 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/NoPointHint.png
 %%PORTDOCS%%%%DOCSDIR%%/OFL-FAQ-Unofficial-fr.html
 %%PORTDOCS%%%%DOCSDIR%%/OFL-FAQ-Unofficial-vi.html
-%%PORTDOCS%%%%DOCSDIR%%/OFL-FAQ-vi.html
 %%PORTDOCS%%%%DOCSDIR%%/OFL-Unofficial-el.html
 %%PORTDOCS%%%%DOCSDIR%%/OFL-Unofficial-fr.html
 %%PORTDOCS%%%%DOCSDIR%%/OFL-Unofficial-pl.html
 %%PORTDOCS%%%%DOCSDIR%%/OFL-Unofficial-vi.html
 %%PORTDOCS%%%%DOCSDIR%%/OFL-Unofficial.html
-%%PORTDOCS%%%%DOCSDIR%%/OFL-el.html
-%%PORTDOCS%%%%DOCSDIR%%/OFL-fr.html
-%%PORTDOCS%%%%DOCSDIR%%/OFL-pl.html
-%%PORTDOCS%%%%DOCSDIR%%/OFL-vi.html
 %%PORTDOCS%%%%DOCSDIR%%/OutlineInline.png
 %%PORTDOCS%%%%DOCSDIR%%/PageSetup.png
 %%PORTDOCS%%%%DOCSDIR%%/PathToBind.png
@@ -223,6 +219,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/Shades4.png
 %%PORTDOCS%%%%DOCSDIR%%/ShadowWireframe.png
 %%PORTDOCS%%%%DOCSDIR%%/ShowGridFit.png
+%%PORTDOCS%%%%DOCSDIR%%/SmallcapsDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/Spacem_1.png
 %%PORTDOCS%%%%DOCSDIR%%/Spacem_2.png
 %%PORTDOCS%%%%DOCSDIR%%/Sti.png
@@ -232,6 +229,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/Sti5.png
 %%PORTDOCS%%%%DOCSDIR%%/Sti6.png
 %%PORTDOCS%%%%DOCSDIR%%/Styles.html
+%%PORTDOCS%%%%DOCSDIR%%/SubSuperDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/Sxi.png
 %%PORTDOCS%%%%DOCSDIR%%/Sxiti.png
 %%PORTDOCS%%%%DOCSDIR%%/Sxiti2.png
@@ -260,6 +258,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/VerticalMetrics.png
 %%PORTDOCS%%%%DOCSDIR%%/a_dieresis_macron.png
 %%PORTDOCS%%%%DOCSDIR%%/a_with_anchor.png
+%%PORTDOCS%%%%DOCSDIR%%/aItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/aacutebase.png
 %%PORTDOCS%%%%DOCSDIR%%/aacutemid.png
 %%PORTDOCS%%%%DOCSDIR%%/accented.html
@@ -303,7 +302,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/bvtools.png
 %%PORTDOCS%%%%DOCSDIR%%/cap-height.png
 %%PORTDOCS%%%%DOCSDIR%%/changelog.html
-%%PORTDOCS%%%%DOCSDIR%%/charinfo-akhn.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-comment.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-comp.png
 %%PORTDOCS%%%%DOCSDIR%%/charinfo-counters.png
@@ -376,9 +374,9 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/diffs.html
 %%PORTDOCS%%%%DOCSDIR%%/display.html
 %%PORTDOCS%%%%DOCSDIR%%/displaygroups.png
-%%PORTDOCS%%%%DOCSDIR%%/document.nvd
 %%PORTDOCS%%%%DOCSDIR%%/donate.png
 %%PORTDOCS%%%%DOCSDIR%%/doublestruck-B.png
+%%PORTDOCS%%%%DOCSDIR%%/eItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/editcvt.png
 %%PORTDOCS%%%%DOCSDIR%%/editexample-fr.html
 %%PORTDOCS%%%%DOCSDIR%%/editexample.html
@@ -412,13 +410,11 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/expandstroke.png
 %%PORTDOCS%%%%DOCSDIR%%/extrema-poi.png
 %%PORTDOCS%%%%DOCSDIR%%/f+i.png
+%%PORTDOCS%%%%DOCSDIR%%/fItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/faqFS.html
 %%PORTDOCS%%%%DOCSDIR%%/faqFrame.html
 %%PORTDOCS%%%%DOCSDIR%%/featsetdlg.png
-%%PORTDOCS%%%%DOCSDIR%%/feature-tag-pair.png
-%%PORTDOCS%%%%DOCSDIR%%/feature-tag-pos.png
-%%PORTDOCS%%%%DOCSDIR%%/feature-tag-sub.png
 %%PORTDOCS%%%%DOCSDIR%%/featurefile.html
 %%PORTDOCS%%%%DOCSDIR%%/ff-history.html
 %%PORTDOCS%%%%DOCSDIR%%/ffanvil16.png
@@ -442,29 +438,14 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/findprobs-random.png
 %%PORTDOCS%%%%DOCSDIR%%/findprobs-refs.png
 %%PORTDOCS%%%%DOCSDIR%%/findprobs.png
-%%PORTDOCS%%%%DOCSDIR%%/flags/BrasilFlag.png
-%%PORTDOCS%%%%DOCSDIR%%/flags/English.gif
-%%PORTDOCS%%%%DOCSDIR%%/flags/GermanFlag.png
-%%PORTDOCS%%%%DOCSDIR%%/flags/Greece.png
-%%PORTDOCS%%%%DOCSDIR%%/flags/MalgasyFlag.gif
-%%PORTDOCS%%%%DOCSDIR%%/flags/Nisshoki-Japan.png
-%%PORTDOCS%%%%DOCSDIR%%/flags/Polish.png
-%%PORTDOCS%%%%DOCSDIR%%/flags/RussianFlag.png
-%%PORTDOCS%%%%DOCSDIR%%/flags/StarsStripes.gif
-%%PORTDOCS%%%%DOCSDIR%%/flags/Tricolor.gif
-%%PORTDOCS%%%%DOCSDIR%%/flags/UnionJack.gif
-%%PORTDOCS%%%%DOCSDIR%%/flags/VietnamFlag.png
-%%PORTDOCS%%%%DOCSDIR%%/flags/taiwan.png
 %%PORTDOCS%%%%DOCSDIR%%/floating-A.png
 %%PORTDOCS%%%%DOCSDIR%%/fontcompdlg.png
 %%PORTDOCS%%%%DOCSDIR%%/fontcompresults.png
 %%PORTDOCS%%%%DOCSDIR%%/fontforge-themes.html
 %%PORTDOCS%%%%DOCSDIR%%/fontimage.html
-%%PORTDOCS%%%%DOCSDIR%%/fontinfo-anchors.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-charsets.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-cid.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-comment.png
-%%PORTDOCS%%%%DOCSDIR%%/fontinfo-context.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-gasp.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-general.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-layers.png
@@ -474,10 +455,8 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-markclasses.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-panose.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-private.png
-%%PORTDOCS%%%%DOCSDIR%%/fontinfo-ps.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-psuid.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-size.png
-%%PORTDOCS%%%%DOCSDIR%%/fontinfo-statemach.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-subsup.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-tex.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfmetrics.png
@@ -553,6 +532,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/k4.png
 %%PORTDOCS%%%%DOCSDIR%%/k5.png
 %%PORTDOCS%%%%DOCSDIR%%/k6.png
+%%PORTDOCS%%%%DOCSDIR%%/ka-change.png
 %%PORTDOCS%%%%DOCSDIR%%/kanjichar.png
 %%PORTDOCS%%%%DOCSDIR%%/kanjifont.png
 %%PORTDOCS%%%%DOCSDIR%%/kappa_iota-context.png
@@ -578,7 +558,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/l8.png
 %%PORTDOCS%%%%DOCSDIR%%/l9.png
 %%PORTDOCS%%%%DOCSDIR%%/lang-dlg.png
-%%PORTDOCS%%%%DOCSDIR%%/langdlg.png
 %%PORTDOCS%%%%DOCSDIR%%/latinBaseline.png
 %%PORTDOCS%%%%DOCSDIR%%/latinHangBaseline.png
 %%PORTDOCS%%%%DOCSDIR%%/latinNormalBaseline.png
@@ -587,13 +566,13 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/lcani.gif
 %%PORTDOCS%%%%DOCSDIR%%/lcdigits.png
 %%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/locale.html
 %%PORTDOCS%%%%DOCSDIR%%/logo3.gif
 %%PORTDOCS%%%%DOCSDIR%%/lookup-metadata.png
 %%PORTDOCS%%%%DOCSDIR%%/lookups.html
 %%PORTDOCS%%%%DOCSDIR%%/lparen-108.png
 %%PORTDOCS%%%%DOCSDIR%%/lparen-174.png
 %%PORTDOCS%%%%DOCSDIR%%/mac-install.html
+%%PORTDOCS%%%%DOCSDIR%%/mItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/macFeatureSetting.png
 %%PORTDOCS%%%%DOCSDIR%%/macfeature.png
 %%PORTDOCS%%%%DOCSDIR%%/macformats.html
@@ -640,7 +619,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/oldchangelog.html
 %%PORTDOCS%%%%DOCSDIR%%/openfont.png
 %%PORTDOCS%%%%DOCSDIR%%/otherlinks.html
-%%PORTDOCS%%%%DOCSDIR%%/ott1.png
 %%PORTDOCS%%%%DOCSDIR%%/ott2.png
 %%PORTDOCS%%%%DOCSDIR%%/ott2_5.png
 %%PORTDOCS%%%%DOCSDIR%%/ott3.png
@@ -681,12 +659,10 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/prefs-sync.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs-tt.png
 %%PORTDOCS%%%%DOCSDIR%%/prefs.html
-%%PORTDOCS%%%%DOCSDIR%%/print.html
 %%PORTDOCS%%%%DOCSDIR%%/privatekey.png
 %%PORTDOCS%%%%DOCSDIR%%/privatekeymenu.png
 %%PORTDOCS%%%%DOCSDIR%%/problems.html
 %%PORTDOCS%%%%DOCSDIR%%/python.html
-%%PORTDOCS%%%%DOCSDIR%%/pythonscripts.html
 %%PORTDOCS%%%%DOCSDIR%%/quadbezier.gif
 %%PORTDOCS%%%%DOCSDIR%%/quadbezier.png
 %%PORTDOCS%%%%DOCSDIR%%/quadraticspline.gif
@@ -699,7 +675,9 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/rgetinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/rparen-108.png
 %%PORTDOCS%%%%DOCSDIR%%/rparen-174.png
+%%PORTDOCS%%%%DOCSDIR%%/rplprocess.png
 %%PORTDOCS%%%%DOCSDIR%%/rplref.png
+%%PORTDOCS%%%%DOCSDIR%%/rplsansserifs.png
 %%PORTDOCS%%%%DOCSDIR%%/rplserifs.png
 %%PORTDOCS%%%%DOCSDIR%%/ruler.png
 %%PORTDOCS%%%%DOCSDIR%%/running.html
@@ -709,10 +687,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/scripting-alpha.html
 %%PORTDOCS%%%%DOCSDIR%%/scripting-tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/scripting.html
-%%PORTDOCS%%%%DOCSDIR%%/scriptlist-pulldown.png
-%%PORTDOCS%%%%DOCSDIR%%/scriptlist.png
 %%PORTDOCS%%%%DOCSDIR%%/scriptnotes.html
-%%PORTDOCS%%%%DOCSDIR%%/scriptsdlg.png
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/selectbyatt.html
 %%PORTDOCS%%%%DOCSDIR%%/selections.html
@@ -735,7 +710,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/spironextconstraint.png
 %%PORTDOCS%%%%DOCSDIR%%/spiropointinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/spiroprevconstraint.png
-%%PORTDOCS%%%%DOCSDIR%%/splash.png
 %%PORTDOCS%%%%DOCSDIR%%/splinefont.html
 %%PORTDOCS%%%%DOCSDIR%%/splines.gif
 %%PORTDOCS%%%%DOCSDIR%%/src.html
@@ -780,31 +754,31 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/tutorial-zh_TW-hover.png
 %%PORTDOCS%%%%DOCSDIR%%/tutorial-zh_TW.png
 %%PORTDOCS%%%%DOCSDIR%%/twolines.png
-%%PORTDOCS%%%%DOCSDIR%%/typofeat.html
+%%PORTDOCS%%%%DOCSDIR%%/u432Italic.png
+%%PORTDOCS%%%%DOCSDIR%%/u433Italic.png
+%%PORTDOCS%%%%DOCSDIR%%/ucEItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/uitranslationnotes.html
 %%PORTDOCS%%%%DOCSDIR%%/uninstall.html
+%%PORTDOCS%%%%DOCSDIR%%/vItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/validation.html
 %%PORTDOCS%%%%DOCSDIR%%/validation.png
 %%PORTDOCS%%%%DOCSDIR%%/viewmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/views.html
 %%PORTDOCS%%%%DOCSDIR%%/vms-install.html
+%%PORTDOCS%%%%DOCSDIR%%/wItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/wacom.html
 %%PORTDOCS%%%%DOCSDIR%%/windowmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/x-height.png
+%%PORTDOCS%%%%DOCSDIR%%/xItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/xim.html
 %%PORTDOCS%%%%DOCSDIR%%/xres.html
-%%PORTDOCS%%%%DATADIR%%/Adobe-CNS1-4.cidmap
-%%PORTDOCS%%%%DATADIR%%/Adobe-GB1-4.cidmap
-%%PORTDOCS%%%%DATADIR%%/Adobe-Identity-0.cidmap
-%%PORTDOCS%%%%DATADIR%%/Adobe-Japan1-6.cidmap
-%%PORTDOCS%%%%DATADIR%%/Adobe-Japan2-0.cidmap
-%%PORTDOCS%%%%DATADIR%%/Adobe-Korea1-2.cidmap
 %%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.a
 %%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.la
 %%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.lai
 %%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.o
 %%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.so
 %%NO_PLUGINS%%%%DATADIR%%/plugins/gb12345.so.0
+%%DATADIR%%/python/excepthook.py
 share/locale/de/LC_MESSAGES/FontForge.mo
 share/locale/el/LC_MESSAGES/FontForge.mo
 share/locale/en_GB/LC_MESSAGES/FontForge.mo
@@ -818,7 +792,7 @@ share/locale/vi/LC_MESSAGES/FontForge.mo
 share/locale/zh_CN/LC_MESSAGES/FontForge.mo
 share/locale/zh_TW/LC_MESSAGES/FontForge.mo
 %%NO_PLUGINS%%@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/python
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/flags
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm include/fontforge

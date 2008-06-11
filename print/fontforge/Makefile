@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20080429
-PORTREVISION=	1
+PORTVERSION=	20080607
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -105,8 +104,10 @@ post-extract:
 	for doc in ${DOCFILES} ; \
 		do ${TAR} -xjC ${WRKDIR}/html -f ${DISTDIR}/$${doc} ; \
 	done
-	${TAR} -xzC ${WRKSRC}/cidmap -f ${WRKDIR}/html/cidmaps.tgz
-	${RM} ${WRKDIR}/html/cidmaps.tgz
+# The 20080607 version of fontforge's documentation doesn't contain the cidmaps,
+#  but I'm leaving this here just in case they are added back in a later version.
+#	${TAR} -xzC ${WRKSRC}/cidmap -f ${WRKDIR}/html/cidmaps.tgz
+#	${RM} ${WRKDIR}/html/cidmaps.tgz
 .endif
 
 post-patch:
@@ -125,9 +126,10 @@ post-install:
 	(cd ${WRKSRC}/plugins; ${INSTALL_DATA} .libs/* ${PREFIX}/share/fontforge/plugins )
 .endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/flags
+# Ditto the above note in post-extract for these comments
+#	${MKDIR} ${DOCSDIR}/flags
 	${INSTALL_DATA} ${WRKDIR}/html/*.* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/html/flags/*.* ${DOCSDIR}/flags
+#	${INSTALL_DATA} ${WRKDIR}/html/flags/*.* ${DOCSDIR}/flags
 .endif
 
 .include <bsd.port.mk>
