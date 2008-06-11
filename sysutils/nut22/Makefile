@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
+#PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -19,15 +19,20 @@ COMMENT=	Network UPS Tools
 USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+USE_GNOME=	pkgconfig
 
 NUT_USER?=	uucp
 NUT_GROUP?=	uucp
 STATEDIR?=	/var/db/nut
 
-OPTIONS=	USB		"USB support"	on \
+OPTIONS=	SERIAL		"SERIAL support"	on \
+		USB		"USB support"	on \
 		SNMP		"SNMP support"	on \
+		NEON		"NEON XML/HTTP support"	on \
+		HAL		"HAL support"	off \
 		IPV6		"IPV6 support"  on \
-		LIBUPSCLIENT	"Include the libupsclient library"	off \
+		DEVEL		"Install header files"	off \
 		CGI		"Web CGI interface"	off \
 
 USE_RC_SUBR=	nut.sh nut_upsmon.sh nut_upslog.sh
@@ -36,14 +41,9 @@ PLIST_SUB+=	STATEDIR=${STATEDIR}
 
 MAN5=		ups.conf.5 upsd.conf.5 upsd.users.5 upsmon.conf.5 \
 		upssched.conf.5
-MAN8=		al175.8 apcsmart.8 bcmxcp.8 belkin.8 belkinunv.8 \
-		bestuferrups.8 bestups.8 bestfcom.8 cpsups.8 cyberpower.8 \
-		dummy-ups.8 etapro.8 everups.8 gamatronic.8 genericups.8 \
-		isbmex.8 liebert.8 masterguard.8 megatec.8 metasys.8 \
-		mge-shut.8 mge-utalk.8 nitram.8 nutupsdrv.8 oneac.8 optiups.8 \
-		powercom.8 powerpanel.8 rhino.8 safenet.8 solis.8 tripplite.8 \
-		tripplitesu.8 upsc.8 upscmd.8 upscode2.8 upsd.8 upsdrvctl.8 \
-		upslog.8 upsmon.8 upsrw.8 upssched.8 victronups.8
+
+MAN8=		nutupsdrv.8 upsc.8 upscmd.8 upsd.8 upsdrvctl.8 \
+		upslog.8 upsmon.8 upsrw.8 upssched.8
 
 PORTDOCS=	*
 
@@ -57,6 +57,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-statepath=${STATEDIR} \
 		--with-altpidpath=${STATEDIR} \
 		--with-pidpath=${STATEDIR} \
+		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
 		--with-linux-hiddev=no \
 		--with-user=${NUT_USER} \
 		--with-group=${NUT_GROUP}
@@ -65,24 +66,33 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 MAN5+=		hosts.conf.5 upsset.conf.5 upsstats.html.5
 MAN8+=		upsset.cgi.8 upsstats.cgi.8 upsimage.cgi.8
-.if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
-CGIDIR?=	share/apache/cgi-bin
-WWWDIR?=	share/apache/htdocs
-.else
-CGIDIR?=	www/cgi-bin
-WWWDIR?=	www/data
-.endif
-CONFIGURE_ARGS+=	--with-cgi --with-cgipath=${PREFIX}/${CGIDIR}/nut \
-			--with-htmlpath=${PREFIX}/${WWWDIR}/nut \
+CGIDIR?=	${PREFIX}/www/cgi-bin/${PORTNAME}
+CGIDIR_REL?=	${CGIDIR:S,^${PREFIX}/,,}
+CONFIGURE_ARGS+=	--with-cgi --with-cgipath=${CGIDIR} \
+			--with-htmlpath=${WWWDIR} \
 			--with-gd-includes=-I${PREFIX}/include \
 			--with-gd-libs="-L${PREFIX}/lib -lgd"
 PLIST_SUB+=	NUT_CGI=""
-PLIST_SUB+=	WWWDIR="${WWWDIR}"
-PLIST_SUB+=	CGIDIR="${CGIDIR}"
+PLIST_SUB+=	CGIDIR="${CGIDIR_REL}"
 PLIST_SUB+=	CGIETCDIR="etc/nut/"
 .else
 CONFIGURE_ARGS+=	--without-cgi
 PLIST_SUB+=	NUT_CGI="@comment "
+.endif
+
+.if !defined(WITHOUT_SERIAL)
+CONFIGURE_ARGS+=	--with-serial
+MAN8+=		al175.8 apcsmart.8 bcmxcp.8 belkin.8 belkinunv.8 \
+		bestuferrups.8 bestups.8 bestfcom.8 cpsups.8 cyberpower.8 \
+		dummy-ups.8 etapro.8 everups.8 gamatronic.8 genericups.8 \
+		isbmex.8 liebert.8 masterguard.8 megatec.8 metasys.8 \
+		mge-shut.8 mge-utalk.8 nitram.8 nutupsdrv.8 oneac.8 optiups.8 \
+		powercom.8 powerpanel.8 rhino.8 safenet.8 solis.8 tripplite.8 \
+		tripplitesu.8 upscode2.8 victronups.8
+PLIST_SUB+=	NUT_SERIAL=""
+.else
+CONFIGURE_ARGS+=	--without-serial
+PLIST_SUB+=	NUT_SERIAL="@comment "
 .endif
 
 .if !defined(WITHOUT_USB)
@@ -105,23 +115,47 @@ CONFIGURE_ARGS+=	--without-snmp
 PLIST_SUB+=	NUT_SNMP="@comment "
 .endif
 
+.if !defined(WITHOUT_NEON)
+LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon26
+CONFIGURE_ARGS+=	--with-neonxml
+MAN8+=		netxml-ups.8
+PLIST_SUB+=	NUT_NEON=""
+.else
+CONFIGURE_ARGS+=	--without-neonxml
+PLIST_SUB+=	NUT_NEON="@comment "
+.endif
+
+.if defined(WITH_HAL)
+. if defined(WITHOUT_USB)
+BROKEN=		HAL is only usable with USB support enabled. Run 'make config' again!
+. endif
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+CONFIGURE_ARGS+=	--with-hal
+#MAN8+=
+PLIST_SUB+=	NUT_HAL=""
+.else
+CONFIGURE_ARGS+=	--without-hal
+PLIST_SUB+=	NUT_HAL="@comment "
+.endif
+
 .if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--with-ipv6
 .else
 CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
-.if defined(WITH_LIBUPSCLIENT)
-CONFIGURE_ARGS+=	--with-lib --enable-pkg-config \
-			--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
+.if defined(WITH_DEVEL)
+CONFIGURE_ARGS+=	--with-dev
+MAN3+=		upscli_connect.3 upscli_disconnect.3 upscli_fd.3 \
+		upscli_get.3 upscli_list_next.3 upscli_list_start.3 \
+		upscli_readline.3 upscli_sendline.3 upscli_splitaddr.3 \
+		upscli_splitname.3 upscli_ssl.3 upscli_strerror.3 \
+		upscli_upserror.3 upsclient.3
 
-MAN3+=		upscli_connect.3 upscli_disconnect.3 upscli_readline.3 \
-		upscli_sendline.3 upscli_splitname.3 upscli_strerror.3
-
-PLIST_SUB+=	NUT_LIB=""
+PLIST_SUB+=	NUT_DEVEL=""
 .else
-CONFIGURE_ARGS+=	--without-lib
-PLIST_SUB+=	NUT_LIB="@comment "
+CONFIGURE_ARGS+=	--without-dev
+PLIST_SUB+=	NUT_DEVEL="@comment "
 .endif
 
 pre-install:
