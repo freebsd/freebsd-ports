@@ -14,6 +14,3 @@ especially for the to file.  If passed a file handle, it is not closed
 when copy returns, files opened by copy are closed.
 
 WWW: http://search.cpan.org/dist/File-NCopy/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
