@@ -1,39 +1,36 @@
 #!/bin/sh
 
-if [ $# != 1 ]; then
-  echo "usage: $0 branch"
+if [ $# -lt 2 ]; then
+  echo "usage: $0 arch branch"
   exit 1
 fi
 
 # configurable variables
 pb=/var/portbuild
 
-. ${pb}/portbuild.conf
+arch=$1
+branch=$2
 
-unset DISPLAY
+yesreally=0
+dryrun=-n
+if [ "$3" = "-yesreally" ]; then
+  yesreally=1
+  dryrun=
+fi
 
-branch=$1
-shift
+distdir=${pb}/${arch}/${branch}/distfiles/
+log=${pb}/${arch}/${branch}/logs/.distfiles
 
-# copy one distfile to remote host
-cpdistfile () {
-  tar -C distfiles -cf - $1 | ssh $ftpsite -l $user tar -C $distfiledir --unlink -xvf -
-}
+if [ -e ${distdir}/.pbtmp ]; then
+  echo "${distdir} has not been processed!"
+  exit 1
+fi
 
-echo "================================================"
-echo "md5 generation started at $(date)"
+rsync ${dryrun} -r -v -l -t --exclude RESTRICTED/ ${pb}/${arch}/${branch}/distfiles/ portmgr@ftp-master:w/ports/distfiles/ | tee ${log}
 
-cd $pb/${branch}/bak/distfiles
-find . -type f | sort | xargs md5 > ../../md5-2
-
-echo "================================================"
-echo "copying started at $(date)"
-
-cd $pb/${branch}/bak
-for i in $(diff ../md5 ../md5-2 | grep '^>' | sed -e 's^.*(\./^^' -e 's/).*//'); do
-  cpdistfile $i
-done
-mv ../md5-2 ../md5
-
-echo "================================================"
-echo "all done at $(date)"
+num=$(wc -l ${log} | awk '{print $1}')
+if [ "$yesreally" = "0" ]; then
+  echo "--> Will transfer ${num} files - make sure this is what you want and rerun '$0 $* -yesreally'"
+else
+  echo "--> Transferred ${num} files - results in ${log}"
+fi
