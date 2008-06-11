@@ -137,5 +137,3 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 @dirrmtry share/applications
 @dirrm etc/xdg/autostart
 @dirrm etc/xdg
-@dirrm etc/dbus-1/system.d
-@dirrm etc/dbus-1
