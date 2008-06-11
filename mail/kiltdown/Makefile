@@ -25,12 +25,6 @@ MY_CONFIGURE_ARGS+=	-qtinc ${LOCALBASE}/include -qtlib ${LOCALBASE}/lib
 MY_CONFIGURE_ARGS+=	-dbinc ${LOCALBASE}/include/db3 -dblib ${LOCALBASE}/lib
 BUILD_ENV+=		PATH=${PATH}:${LOCALBASE}/bin
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-patch:
 	@${MV} ${WRKSRC}/configs/bsd-generic ${WRKSRC}/configs/bsd-generic.sed
 	${SED} \
@@ -46,4 +40,4 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kiltdown/kiltdown ${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
