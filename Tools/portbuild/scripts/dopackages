@@ -18,7 +18,7 @@ errorexit () {
 }
 
 usage () {
-  echo "usage: [-continue] [-incremental] [-restart] [-nofinish] [-finish] [-ftp] [-cdrom] [-nobuild] [-noindex] [-noduds] [-norestr] [-nocvs] [-noportscvs] [-noplistcheck] [-distfiles] [-fetch-original] [-trybroken] branch date"
+  echo "usage: [-continue] [-incremental] [-restart] [-nofinish] [-finish] [-ftp] [-cdrom] [-nobuild] [-noindex] [-noduds] [-norestr] [-nocvs] [-noportscvs] [-noplistcheck] [-nodistfiles] [-fetch-original] [-trybroken] branch date"
   errorexit 1
 }
 
@@ -176,7 +176,7 @@ restart=0
 cont=0
 finish=0
 nofinish=0
-dodistfiles=0
+dodistfiles=1
 fetch_orig=0
 trybroken=0
 incremental=0
@@ -211,8 +211,8 @@ while [ $# -gt 2 ]; do
     x-ftp)
       ftp=1
       ;;
-    x-distfiles)
-      dodistfiles=1
+    x-nodistfiles)
+      dodistfiles=0
       ;;
     x-fetch-original)
       fetch_orig=1
@@ -298,6 +298,8 @@ if [ "$skipstart" = 0 ]; then
     cvs -qR update -PAd
     # XXX Check for conflicts
     date > ${pb}/${arch}/${branch}/cvsdone
+  else
+    rm -f ${pb}/${arch}/${branch}/cvsdone
   fi
 
   if [ "$nocvs" = 0 ]; then
@@ -382,8 +384,12 @@ if [ "$skipstart" = 0 ]; then
   ln -sf ${newlogs} ${pb}/${arch}/${branch}/logs
   
   echo "error logs in ${newerrors}"
-  cp -p ${pb}/${arch}/${branch}/cvsdone ${newerrors}/cvsdone
-  cp -p ${pb}/${arch}/${branch}/cvsdone ${newlogs}/cvsdone
+  if [ -f "${pb}/${arch}/${branch}/cvsdone" ]; then
+    cp -p ${pb}/${arch}/${branch}/cvsdone ${newerrors}/cvsdone
+    cp -p ${pb}/${arch}/${branch}/cvsdone ${newlogs}/cvsdone
+  else
+    rm -f ${newerrors}/cvsdone ${newlogs}/cvsdone
+  fi
   cp -p ${pb}/${arch}/${branch}/duds ${newerrors}/duds
   cp -p ${pb}/${arch}/${branch}/duds ${newlogs}/duds
   cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${newerrors}/INDEX
@@ -588,9 +594,7 @@ if [ "$nofinish" = 0 ]; then
   echo "================================================"
   echo "started at $(date)"
   cd ${pb}/${arch}
-  ${scripts}/dodistfiles ${pb}/${arch}/${branch}/distfiles
-  rm -rf ${pb}/${arch}/${branch}/distfiles/.pbtmp
-  rm -f ${pb}/${arch}/${branch}/distfiles/.done
+  ${scripts}/dodistfiles ${arch} ${branch}
 
   # Always delete restricted distfiles
   echo "deleting restricted distfiles"
