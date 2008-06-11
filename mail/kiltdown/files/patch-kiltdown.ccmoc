@@ -5,7 +5,7 @@
                                               mainToolBar, NULL);
                  } else {
 -                    button = new QToolButton(NULL,
-+                    button = new QToolButton((const QIconSet &)NULL,
++                    button = new QToolButton(QPixmap(),
                                               label ? QString(label) : QString::null,
                                               QString::null,
                                               this, mainToolBarData[i].member,
