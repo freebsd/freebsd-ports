@@ -19,6 +19,8 @@ COMMENT=	Pysdl_mixer is a python interface to SDL's sdl_mixer
 BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal
 
+BROKEN=		does not compile
+
 DIST_SUBDIR=	python
 USE_SDL=	sdl mixer
 USE_PYTHON=	yes
