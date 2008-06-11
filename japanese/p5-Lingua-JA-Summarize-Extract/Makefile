@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-JA-Summarize-Extract
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	japanese textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	ja-p5-
