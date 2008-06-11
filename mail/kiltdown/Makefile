@@ -25,6 +25,9 @@ MY_CONFIGURE_ARGS+=	-qtinc ${LOCALBASE}/include -qtlib ${LOCALBASE}/lib
 MY_CONFIGURE_ARGS+=	-dbinc ${LOCALBASE}/include/db3 -dblib ${LOCALBASE}/lib
 BUILD_ENV+=		PATH=${PATH}:${LOCALBASE}/bin
 
+NOT_FOR_ARCHS=	amd64 sparc64
+NOT_FOR_ARCHS_REASON=	assumes 32-bit sized pointers
+
 post-patch:
 	@${MV} ${WRKSRC}/configs/bsd-generic ${WRKSRC}/configs/bsd-generic.sed
 	${SED} \
