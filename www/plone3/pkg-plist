@@ -2716,12 +2716,15 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/__init__.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/betas.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/betas.pyc
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/final_three1x.py
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/final_three1x.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three0_beta1/actions.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three0_beta1/componentregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three0_beta1/jsregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three0_beta1/kssregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three0_beta1/metadata.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three0_beta1/portlets.xml
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three11_three12/jsregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/overrides.zcml
 %%ZOPEPRODUCTDIR%%/CMFPlone/patches/__init__.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/patches/__init__.pyc
@@ -6318,8 +6321,6 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/tests/test_i18n.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/admix.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/admix.pyc
-%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/chart.py
-%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/chart.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/create.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/create.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/fillmsgstr.py
@@ -6328,6 +6329,8 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/filter.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/i18ngenerate.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/i18ngenerate.pyc
+%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/list.py
+%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/list.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/rebuild-pot.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/rebuild-pot.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/relocate.py
@@ -6340,6 +6343,8 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/setprojid.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/sync.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/sync.pyc
+%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/table.py
+%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/table.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/utils.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/utils.pyc
 %%ZOPEPRODUCTDIR%%/PluggableAuthService/COPYRIGHT.txt
@@ -7337,6 +7342,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-it.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-ja.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-ja.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-manual.pot
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-nl.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-nl.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-pl.mo
@@ -7355,6 +7361,8 @@
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sr-Latn.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sr.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sv.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sv.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-tr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-tr.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-uk.mo
@@ -7380,10 +7388,15 @@
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-eu.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-fr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-fr.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-hu.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-hu.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-it.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-it.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-ja.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-ja.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-manual.pot
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-nl.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-nl.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pl.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pl.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pt-br.mo
@@ -7392,6 +7405,8 @@
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pt.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-sk.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-sk.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-sv.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-sv.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-tr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-tr.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-uk.mo
@@ -7423,10 +7438,13 @@
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-fr.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-he.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-he.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-hu.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-hu.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-it.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-it.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-ja.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-ja.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-manual.pot
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-nl.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-nl.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-pl.mo
@@ -7539,6 +7557,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/tools/related-type.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/tools/related.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/tools/search-node.jspx
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/tools/searchrelate.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/tools/test.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/tools/tree.jspx
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/wire.kupu
@@ -7722,6 +7741,8 @@
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/test_browserSupportsKupu.pyc
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/test_html2captioned.py
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/test_html2captioned.pyc
+%%ZOPEPRODUCTDIR%%/kupu/plone/tests/test_i18n.py
+%%ZOPEPRODUCTDIR%%/kupu/plone/tests/test_i18n.pyc
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/test_librarymanager.py
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/test_librarymanager.pyc
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/test_links.py
@@ -10027,12 +10048,15 @@
 %%ZOPELIBPYTHONDIR%%/plone/intelligenttext/transforms.pyc
 %%ZOPELIBPYTHONDIR%%/plone/keyring/__init__.py
 %%ZOPELIBPYTHONDIR%%/plone/keyring/__init__.pyc
+%%ZOPELIBPYTHONDIR%%/plone/keyring/configure.zcml
 %%ZOPELIBPYTHONDIR%%/plone/keyring/interfaces.py
 %%ZOPELIBPYTHONDIR%%/plone/keyring/interfaces.pyc
 %%ZOPELIBPYTHONDIR%%/plone/keyring/keymanager.py
 %%ZOPELIBPYTHONDIR%%/plone/keyring/keymanager.pyc
 %%ZOPELIBPYTHONDIR%%/plone/keyring/keyring.py
 %%ZOPELIBPYTHONDIR%%/plone/keyring/keyring.pyc
+%%ZOPELIBPYTHONDIR%%/plone/keyring/profiles/default/componentregistry.xml
+%%ZOPELIBPYTHONDIR%%/plone/keyring/profiles/default/metadata.xml
 %%ZOPELIBPYTHONDIR%%/plone/keyring/tests/__init__.py
 %%ZOPELIBPYTHONDIR%%/plone/keyring/tests/__init__.pyc
 %%ZOPELIBPYTHONDIR%%/plone/keyring/tests/testKeymanager.py
@@ -10183,6 +10207,7 @@
 %%ZOPELIBPYTHONDIR%%/plone/protect/interfaces.pyc
 %%ZOPELIBPYTHONDIR%%/plone/protect/postonly.py
 %%ZOPELIBPYTHONDIR%%/plone/protect/postonly.pyc
+%%ZOPELIBPYTHONDIR%%/plone/protect/profiles/default/metadata.xml
 %%ZOPELIBPYTHONDIR%%/plone/protect/tests/__init__.py
 %%ZOPELIBPYTHONDIR%%/plone/protect/tests/__init__.pyc
 %%ZOPELIBPYTHONDIR%%/plone/protect/tests/case.py
@@ -10403,6 +10428,8 @@
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/session/plugins
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/session
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/protect/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/protect/profiles/default
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/protect/profiles
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/protect
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/portlets
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/portlet/static/tests
@@ -10422,6 +10449,8 @@
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/locking/browser
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/locking
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/keyring/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/keyring/profiles/default
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/keyring/profiles
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/keyring
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/intelligenttext
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tests
@@ -10614,8 +10643,6 @@
 @dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss/browser
 @dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss
 @dirrm %%ZOPELIBPYTHONDIR%%/archetypes
-@dirrm %%ZOPELIBPYTHONDIR%%
-@dirrm www/Zope210/lib
 @dirrm %%ZOPEPRODUCTDIR%%/validation/validators
 @dirrm %%ZOPEPRODUCTDIR%%/validation/tests
 @dirrm %%ZOPEPRODUCTDIR%%/validation/interfaces
@@ -11049,6 +11076,7 @@
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/profiles/default
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/profiles
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/patches
+@dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three11_three12
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles/three0_beta1
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1/profiles
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_1
