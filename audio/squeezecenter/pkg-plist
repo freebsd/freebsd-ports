@@ -1,9 +1,9 @@
 bin/softsqueeze
 @unexec if cmp -s %D/%%SLIMDIR%%/convert.conf %D/%%SLIMDIR%%/convert.conf.sample; then rm -f %D/%%SLIMDIR%%/convert.conf; fi
 @unexec if cmp -s %D/%%SLIMDIR%%/types.conf %D/%%SLIMDIR%%/types.conf.sample; then rm -f %D/%%SLIMDIR%%/types.conf; fi
-%%DOCSDIR%%/Changelog.html
-%%DOCSDIR%%/Installation.txt
-%%DOCSDIR%%/License.txt
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.html
+%%PORTDOCS%%%%DOCSDIR%%/Installation.txt
+%%PORTDOCS%%%%DOCSDIR%%/License.txt
 %%SLIMDIR%%/CPAN/Algorithm/C3.pm
 %%SLIMDIR%%/CPAN/Archive/Zip.pm
 %%SLIMDIR%%/CPAN/Archive/Zip/Archive.pm
@@ -2541,7 +2541,7 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/CPAN
 @dirrmtry %%SLIMDIR%%/Plugins
 @dirrmtry %%SLIMDIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rm -rf /var/db/squeezecenter/cache > /dev/null 2>&1 || true
 @dirrmtry /var/db/squeezecenter/playlists
 @dirrmtry /var/db/squeezecenter
