@@ -88,7 +88,12 @@ post-patch: .SILENT
 .endif
 # Correct prototypes to fix the build with FreeBSD AGP support
 .if ${NVVERSION} >= 1690700
-	${REINPLACE_CMD} -e '337,338s/(/(nv_stack_t *, /' \
+	${REINPLACE_CMD} -e '406,407s/(/(nv_stack_t *, /' \
+		${WRKSRC}/src/nv-freebsd.h
+.endif
+# Do not implement certain pmap API functions on systems that have them
+.if ${NVVERSION} == 1731405
+	${REINPLACE_CMD} -E 's,if( __FreeBSD_version )(< 700055),if\1< 602110 ||\1>= 700000 \&\&\1\2,' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
 .if defined(WITH_FREEBSD_AGP)
