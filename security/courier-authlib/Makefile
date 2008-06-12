@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.60.2
+PORTVERSION=	0.60.4
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -182,8 +182,9 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g' \
-		-e 's|^\(INSTALL_STRIP_PROGRAM=\).*$$|\1"$${INSTALL_PROGRAM} -s"|' \
+	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g;  \
+		s|^\(INSTALL_STRIP_PROGRAM=\).*$$|\1"$${INSTALL_PROGRAM} -s"| ; \
+		s|mysql_connect|mysql_real_connect|g' \
 		${WRKSRC}/*/configure \
 		${WRKSRC}/configure
 .for subdir in ${REMOVE_SUBDIRS}
