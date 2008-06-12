@@ -1,4 +1,4 @@
-bin/s5-blank
+bin/s5
 %%DATADIR%%/features.html
 %%DATADIR%%/filemap.html
 %%DATADIR%%/pix/mememe01.png
