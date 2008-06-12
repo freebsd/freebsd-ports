@@ -122,7 +122,7 @@ kill_bad_children () {
 }
 
 safe_exit () {
-	local files p f
+	local files p f show_list
 
 	if [ "$$" -eq "$PARENT_PID" ]; then
 		[ -n "$DI_FILES" -o -n "$FETCH_ONLY" ] && kill_bad_children
@@ -177,10 +177,18 @@ safe_exit () {
 			;;
 		esac
 
-		case "$INSTALLED_LIST" in
-		*\\n\\t*) echo "===>>> The following actions were performed:"
+		if [ -n "$UPDATE_ALL" ]; then
+			show_list=all
+		else
+			case "$INSTALLED_LIST" in
+			*\\n\\t*)	show_list=all ;;
+			*\\n)		show_list=one ;;
+			esac
+		fi
+		case "$show_list" in
+		all)	echo "===>>> The following actions were performed:"
 			echo -e $INSTALLED_LIST ;;
-		*\\n)	echo "===>>> $ilist complete" ; echo '' ;;
+		one)	echo "===>>> $ilist complete" ; echo '' ;;
 		esac
 	else
 		[ -n "$grep_deps" ] && pm_unlink $grep_deps
@@ -1666,11 +1674,11 @@ all_config () {
 
 		check_exclude $iport || continue
 
-		CONFIG_SEEN_LIST="${CONFIG_SEEN_LIST}${origin}:"
-
 		DEPTH=
 		check_for_updates $iport $origin || fail 'Update failed'
 		[ -e "$NO_DEP_UPDATES" ] || unset NO_DEP_UPDATES
+
+		CONFIG_SEEN_LIST="${CONFIG_SEEN_LIST}${origin}:"
 	done
 }
 	ports_by_category
