@@ -6,6 +6,6 @@ lib/ici4/ici4core1.ici
 lib/ici4/ici4core2.ici
 lib/ici4/ici4core3.ici
 lib/libici4.a
-%%DOCSDIR%%4/ici.pdf
+%%PORTDOCS%%%%DOCSDIR%%4/ici.pdf
 @dirrm %%DOCSDIR%%4
 @dirrm lib/ici4

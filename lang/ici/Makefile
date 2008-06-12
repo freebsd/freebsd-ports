@@ -7,6 +7,7 @@
 
 PORTNAME=	ici
 PORTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.zeta.org.au/~atrn/ici/distfiles/
 
