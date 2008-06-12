@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gcc4
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	llvm-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}.2-${PORTVERSION}.source
+DISTNAME=	${PKGNAMEPREFIX}gcc-4.2-${PORTVERSION}.source
 
-MAINTAINER=	emil@cs.rmit.edu.au
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A gcc4 frontend for LLVM
 
 BUILD_DEPENDS=	llc:${PORTSDIR}/devel/llvm
@@ -23,23 +22,25 @@ USE_BISON=	build
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
-ONLY_FOR_ARCHS=	i386 amd64
 
 GCC_VER=	4.2.1
-WRKSRC=		${WRKDIR}/${DISTNAME}/build
-TARGLIB=	${PREFIX}/lib/gcc-llvm-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/gcc-/gcc/}/obj
+TARGLIB=	${PREFIX}/lib/llvm-gcc-${PORTVERSION}
 CONFIGURE_SCRIPT=	../configure
-CONFIGURE_ARGS=	--enable-llvm=${LOCALBASE}\
-		--enable-languages=c,c++\
-		--disable-nls\
-		--with-system-zlib\
-		--with-libiconv-prefix=${LOCALBASE}\
-		--program-prefix=llvm-\
-		--libdir=${TARGLIB}\
-		--with-gxx-include-dir=${TARGLIB}/include/c++\
-		--libexecdir=${TARGLIB}\
+CONFIGURE_ARGS=	--enable-llvm=${LOCALBASE} \
+		--enable-languages=c,c++ \
+		--disable-nls \
+		--with-system-zlib \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--program-prefix=llvm- \
+		--libdir=${TARGLIB} \
+		--with-gxx-include-dir=${TARGLIB}/include/c++ \
+		--libexecdir=${TARGLIB} \
 		--infodir=${PREFIX}/llvm-gcc
-PLIST_SUB=	GCC_VER=${GCC_VER}\
+.if defined(MAINTAINER_MODE)
+CONFIGURE_ARGS+=	--enable-checking
+.endif
+PLIST_SUB=	GCC_VER=${GCC_VER} \
 		GNU_HOST=${CONFIGURE_TARGET}
 INFO=		llvm-gcc/cpp \
 		llvm-gcc/cppinternals \
@@ -49,21 +50,17 @@ INFO=		llvm-gcc/cpp \
 		llvm-gcc/libgomp
 MAN1=		llvm-cpp.1 llvm-g++.1 llvm-gcc.1 llvm-gcov.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--disable-shared
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKSRC}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,LLVMBASEPATH/Release/bin/llc,LLVMBASEPATH/bin/llc,'\
-	   	 ${WRKSRC}/../gcc/configure\
-		 ${WRKSRC}/../libcpp/configure
-	@${REINPLACE_CMD}\
-	    -e 's,LLVMBINPATH = .*,LLVMBINPATH = @LLVMBASEPATH@/bin,'\
-	    -e 's,LLVMSRCDIR := .*,LLVMSRCDIR = @LLVMBASEPATH@,'\
-	    	${WRKSRC}/../gcc/Makefile.in
-
 post-install:
-	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
-	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///}
@@ -74,14 +71,5 @@ post-install:
 	fi
 .endfor
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--disable-shared
-.else
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-.endif
 
 .include <bsd.port.post.mk>
