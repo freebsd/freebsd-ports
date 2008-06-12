@@ -1,8 +1,6 @@
 @comment $FreeBSD$
 bin/openvas-build
 sbin/openvas-nvt-sync
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 
 lib/openvas/plugins/12planet_chat_server_xss.nasl
 lib/openvas/plugins/3com_hub.nes
@@ -3520,5 +3518,5 @@ lib/openvas/plugins_factory/libtool
 lib/openvas/plugins_factory/openvas.tmpl
 
 @dirrm lib/openvas/plugins_factory
-@dirrm lib/openvas/plugins
-@dirrm lib/openvas
+@dirrmtry lib/openvas/plugins
+@dirrmtry lib/openvas
