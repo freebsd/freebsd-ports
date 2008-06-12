@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd May 4, 2008
+.Dd June 12, 2008
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -379,8 +379,6 @@ These files will be read by the parent
 .Nm
 process, and all variables
 in them will be exported.
-Take a look at the getopts routine in the script to see
-what values you may be interested in setting.
 .Pp
 PLEASE NOTE: In versions before 2.3
 .Pa /etc/portmaster.rc
@@ -392,6 +390,54 @@ In future versions of
 support for
 .Pa /etc/portmaster.rc
 will be removed.
+.Pp
+Here are examples of variables that are likely to be useful,
+along with their related options.
+.Pp
+.Bd -literal
+# Sample portmaster rc file.
+# Place in $HOME/.portmasterrc or /usr/local/etc/portmaster.rc
+#
+# Do not create temporary backup packages before pkg_delete (-B)
+# NO_BACKUP=Bopt
+#
+# Always save the backup packages of the old port (-b)
+# BACKUP=bopt
+#
+# Make and save a package of the new port (-g)
+# MAKE_PACKAGE=gopt
+#
+# Do not preclean the port's build directory (-C)
+# DONT_PRE_CLEAN=Copt
+#
+# Do not clean the port's build directory after installation (-K)
+# DONT_POST_CLEAN=Kopt
+#
+# Never search for stale distfiles to delete (-D)
+# DONT_SCRUB_DISTFILES=Dopt
+#
+# Always delete stale distfiles without prompting (-d)
+# ALWAYS_SCRUB_DISTFILES=dopt
+#
+# Do not run 'make config' for ports that need updating (-G)
+# (This unsets --force-config)
+# NO_RECURSIVE_CONFIG=Gopt
+#
+# Hide the build and install processes in a log file (-H)
+# HIDE_BUILD=Hopt
+#
+# Arguments to pass to make (-m)
+# PM_MAKE_ARGS='-DFORCE_PKG_REGISTER'
+#
+# Recurse through every dependency, and child dependencies (-t)
+# RECURSE_THOROUGH=topt
+#
+# Be verbose (-v)
+# PM_VERBOSE=
+#
+# Save copies of old shared libraries (recommended) (-w)
+# SAVE_SHARED=wopt
+.Ed
 .Pp
 .It Pa /var/db/pkg/*/+IGNOREME
 If this file exists, several things will happen:
