@@ -105,7 +105,7 @@ post-patch:
 		${WRKSRC}/src/procmime.c
 
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac po intl src manual faq$$|SUBDIRS = ac po intl src|g' \
+	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac m4 po intl src manual faq$$|SUBDIRS = ac m4 po intl src|g' \
 		${WRKSRC}/Makefile.in
 .else
 .for i in ${MAKEFILES}
