@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.6.22
-PORTREVISION=	1
+PORTVERSION=	0.6.26
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -29,11 +28,6 @@ CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		LIBS="-L../common -L${LOCALBASE}/lib" \
 		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
 
-MAN1=		gnokii.1 sendsms.1
-MAN8=		gnokiid.8 mgnokiidev.8
-PORTDOCS=	*
-
-INSTALL_TARGET=	install-binaries install-docs install-includes
 PKGDEINSTALL=	${PKGINSTALL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -43,6 +37,12 @@ FIXPREFIX=	Docs/man/gnokiid.8 Docs/DataCalls-QuickStart Docs/README \
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+MAN1=		gnokii.1 sendsms.1
+MAN8=		gnokiid.8 mgnokiidev.8
+PORTDOCS=	*
+.endif
 
 .if exists(${LOCALBASE}/lib/libical.so)
 WITH_ICAL=	yes
@@ -84,6 +84,7 @@ CONFIGURE_ARGS+=	--disable-libpcsclite
 PLIST_SUB+=	SMSD='@comment '
 PLIST_SUB+=	PGM='@comment '
 PLIST_SUB+=	MSM='@comment '
+CONFIGURE_ARGS+=	--disable-smsd
 .else
 PLIST_SUB+=	SMSD=''
 MAN8+=		smsd.8
@@ -101,11 +102,6 @@ WITH_PGSQL=	yes
 .else
 PLIST_SUB+=	PGM='@comment '
 .endif
-.if defined(SMSD_WITH_GLIB1)
-USE_GNOME+=	glib12
-.else
-USE_GNOME+=	glib20
-.endif
 .endif
 
 .if defined(WITHOUT_X11)
@@ -113,9 +109,11 @@ CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11='@comment '
 .else
 USE_XORG=	xpm
-USE_GNOME+=	gtk20 gnomelibs
+USE_GNOME+=	gtk20 libgnome
 PLIST_SUB+=	X11=''
-MAN1+=	xgnokii.1
+.if !defined(NOPORTDOCS)
+MAN1+=		xgnokii.1
+.endif
 .endif
 
 .if !defined(WITHOUT_NLS)
@@ -137,12 +135,6 @@ pre-fetch:
 	@${ECHO} "always compiled in."
 	@${ECHO}
 .endif
-.if !defined(SMSD_WITH_GLIB1)
-	@${ECHO}
-	@${ECHO} "smsd defaults to using glib2, if you'd rather link with glib1
-	@${ECHO} "define SMSD_WITH_GLIB1=yes"
-	@${ECHO}
-.endif
 
 post-patch:
 .for f in ${FIXPREFIX}
@@ -155,24 +147,24 @@ post-patch:
 	@${REINPLACE_CMD} -E -e "s:^(#ifdef.*)__OpenBSD__:\1__FreeBSD__:" \
 		${WRKSRC}/${f}
 .endfor
-	@${REINPLACE_CMD} -e '/pkgconfig/d' ${WRKSRC}/xgnokii/Makefile
-.if defined(SMSD_WITH_GLIB1)
-	@cd ${WRKSRC} && ${PATCH} -s <${PATCHDIR}/smsd-Makefile-WITH_GLIB.diff
-.endif
 # fix test conditions on configure
 	@${REINPLACE_CMD} -E \
 		-e 's|([[:space:]]+test[[:space:]]+.+)==([[:space:]]+"yes")|\1=\2|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${MV} ${WRKSRC}/Docs/man/xgnokii.1x ${WRKSRC}/Docs/man/xgnokii.1
 
 post-build:
 .if defined(WITH_SMSD)
 .if defined(WITH_MYSQL)
-	@${REINPLACE_CMD} -e 's/^DB_LIBS := libfile.la$$/DB_LIBS = libfile.la libmysql.la/' ${WRKSRC}/smsd/Makefile
+	@${REINPLACE_CMD} -e 's/^#libsmsd_mysql_la_SOURCES/libsmsd_mysql_la_SOURCES/' ${WRKSRC}/smsd/Makefile.in
+	@${REINPLACE_CMD} -e 's/^#libsmsd_mysql_la_LDFLAGS/libsmsd_mysql_la_LDFLAGS/' ${WRKSRC}/smsd/Makefile.in
+	@${REINPLACE_CMD} -e 's/^#libsmsd_mysql_la_LIBADD/libsmsd_mysql_la_LIBADD/' ${WRKSRC}/smsd/Makefile.in
 .endif
 .if defined(WITH_PGSQL)
-	@${REINPLACE_CMD} -e 's/^DB_LIBS := libfile.la$$/DB_LIBS = libfile.la libpq.la/' -e 's/^DB_LIBS = libfile.la libmysql.la$$/DB_LIBS = libfile.la libpq.la libmysql.la/' ${WRKSRC}/smsd/Makefile
+	@${REINPLACE_CMD} -e 's/^#libsmsd_pq_la_SOURCES/libsmsd_pq_la_SOURCES/' ${WRKSRC}/smsd/Makefile.in
+	@${REINPLACE_CMD} -e 's/^#libsmsd_pq_la_LDFLAGS/libsmsd_pq_la_LDFLAGS/' ${WRKSRC}/smsd/Makefile.in
+	@${REINPLACE_CMD} -e 's/^#libsmsd_pq_la_LIBADD/libsmsd_pq_la_LIBADD/' ${WRKSRC}/smsd/Makefile.in
 .endif
-	@cd ${WRKSRC}/smsd && ${GMAKE} all
 .endif
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
@@ -183,7 +175,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/xgnokii/xgnokii.pc ${PREFIX}/libdata/pkgconfig
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC} && ${GMAKE} install-docs)
+	@(cd ${WRKSRC}/Docs && ${GMAKE} install)
 .endif
 	${INSTALL_DATA} ${WRKSRC}/Docs/sample/gnokiirc \
 		${PREFIX}/etc/gnokiirc.sample

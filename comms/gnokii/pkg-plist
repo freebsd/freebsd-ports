@@ -20,7 +20,7 @@ include/gnokii/wappush.h
 lib/libgnokii.a
 lib/libgnokii.la
 lib/libgnokii.so
-lib/libgnokii.so.9
+lib/libgnokii.so.12
 libdata/pkgconfig/gnokii.pc
 libdata/pkgconfig/xgnokii.pc
 sbin/gnokiid
@@ -41,24 +41,20 @@ sbin/mgnokiidev
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnokii.mo
 %%SMSD%%share/smsd/README
 %%SMSD%%share/smsd/action
-%%SMSD%%lib/smsd/libfile.a
-%%SMSD%%lib/smsd/libfile.la
-%%SMSD%%lib/smsd/libfile.so
-%%MSM%%lib/smsd/libmysql.a
-%%MSM%%lib/smsd/libmysql.la
-%%MSM%%lib/smsd/libmysql.so
+%%SMSD%%lib/smsd/libsmsd_file.a
+%%SMSD%%lib/smsd/libsmsd_file.la
+%%SMSD%%lib/smsd/libsmsd_file.so
+%%MSM%%lib/smsd/libsmsd_mysql.a
+%%MSM%%lib/smsd/libsmsd_mysql.la
+%%MSM%%lib/smsd/libsmsd_mysql.so
 %%MSM%%share/smsd/sms.tables.mysql.sql
-%%PGM%%lib/smsd/libpq.a
-%%PGM%%lib/smsd/libpq.la
-%%PGM%%lib/smsd/libpq.so
+%%PGM%%lib/smsd/libsmsd_pq.a
+%%PGM%%lib/smsd/libsmsd_pq.la
+%%PGM%%lib/smsd/libsmsd_pq.so
 %%PGM%%share/smsd/sms.tables.pq.sql
 %%SMSD%%@dirrm lib/smsd
 %%SMSD%%@dirrm share/smsd
 %%X11%%share/applications/xgnokii.desktop
-%%X11%%share/xgnokii/help/C
-%%X11%%share/xgnokii/help/POSIX
-%%X11%%share/xgnokii/help/en_US/COPYING
-%%X11%%share/xgnokii/help/en_US/CREDITS
 %%X11%%share/xgnokii/help/en_US/faq.html
 %%X11%%share/xgnokii/help/en_US/firmware/firmware.html
 %%X11%%share/xgnokii/help/en_US/index.html
@@ -77,7 +73,6 @@ sbin/mgnokiidev
 %%X11%%share/xgnokii/help/en_US/netmon/nm_5110.png
 %%X11%%share/xgnokii/help/en_US/netmon/nm_9110.png
 %%X11%%share/xgnokii/help/en_US/netmon/tip.png
-%%X11%%share/xgnokii/help/en_US/sample/gnokiirc
 %%X11%%share/xgnokii/help/en_US/styl.css
 %%X11%%share/xgnokii/help/pl_PL/calendar.html
 %%X11%%share/xgnokii/help/pl_PL/contacts.html
@@ -120,48 +115,8 @@ sbin/mgnokiidev
 %%X11%%share/xgnokii/help/pl_PL/sms.html
 %%X11%%share/xgnokii/help/pl_PL/speeddial.html
 %%X11%%share/xgnokii/help/pl_PL/xkeyb.html
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/calendar
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/contacts
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/dtmf
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/main
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/netmon/gsm
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/sms
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/speeddial
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/xkeyb
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/cables
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/irda
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/calendar
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/contacts
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/dtmf
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/main
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/netmon
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/sms
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/speeddial
-%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/xkeyb
-%%X11%%@exec mkdir -p %D/share/doc/gnokii/sample/vCard
-%%X11%%@dirrm share/xgnokii/help/en_US/cables
-%%X11%%@dirrm share/xgnokii/help/en_US/calendar
-%%X11%%@dirrm share/xgnokii/help/en_US/contacts
-%%X11%%@dirrm share/xgnokii/help/en_US/dtmf
 %%X11%%@dirrm share/xgnokii/help/en_US/firmware
-%%X11%%@dirrm share/xgnokii/help/en_US/irda
-%%X11%%@dirrm share/xgnokii/help/en_US/main
-%%X11%%@dirrm share/xgnokii/help/en_US/netmon/gsm
 %%X11%%@dirrm share/xgnokii/help/en_US/netmon
-%%X11%%@dirrm share/xgnokii/help/en_US/sms
-%%X11%%@dirrm share/xgnokii/help/en_US/speeddial
-%%X11%%@dirrm share/xgnokii/help/en_US/windows/calendar
-%%X11%%@dirrm share/xgnokii/help/en_US/windows/contacts
-%%X11%%@dirrm share/xgnokii/help/en_US/windows/dtmf
-%%X11%%@dirrm share/xgnokii/help/en_US/windows/main
-%%X11%%@dirrm share/xgnokii/help/en_US/windows/netmon
-%%X11%%@dirrm share/xgnokii/help/en_US/windows/sms
-%%X11%%@dirrm share/xgnokii/help/en_US/windows/speeddial
-%%X11%%@dirrm share/xgnokii/help/en_US/windows/xkeyb
-%%X11%%@dirrm share/xgnokii/help/en_US/windows
-%%X11%%@dirrm share/xgnokii/help/en_US/xkeyb
-%%X11%%@dirrm share/xgnokii/help/en_US/sample
 %%X11%%@dirrm share/xgnokii/help/en_US
 %%X11%%@dirrm share/xgnokii/help/pl_PL/netmon/gsm
 %%X11%%@dirrm share/xgnokii/help/pl_PL/netmon
