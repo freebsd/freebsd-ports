@@ -3,6 +3,7 @@ bin/gccas
 bin/gccld
 bin/llc
 bin/lli
+bin/llvmc2
 bin/llvm-ar
 bin/llvm-as
 bin/llvm-bcanalyzer
@@ -16,22 +17,16 @@ bin/llvm-nm
 bin/llvm-prof
 bin/llvm-ranlib
 bin/llvm-stub
-bin/llvm-upgrade
-bin/llvm2cpp
-bin/llvmc
 bin/opt
-etc/llvm/c
-etc/llvm/c++
-etc/llvm/cpp
-etc/llvm/cxx
-etc/llvm/ll
-etc/llvm/st
 include/llvm-c/Analysis.h
 include/llvm-c/BitReader.h
 include/llvm-c/BitWriter.h
 include/llvm-c/Core.h
 include/llvm-c/ExecutionEngine.h
 include/llvm-c/LinkTimeOptimizer.h
+include/llvm-c/Transforms/Scalar.h
+include/llvm-c/Target.h
+include/llvm-c/lto.h
 include/llvm/ADT/APFloat.h
 include/llvm/ADT/APInt.h
 include/llvm/ADT/APSInt.h
@@ -46,6 +41,7 @@ include/llvm/ADT/HashExtras.h
 include/llvm/ADT/ImmutableMap.h
 include/llvm/ADT/ImmutableSet.h
 include/llvm/ADT/IndexedMap.h
+include/llvm/ADT/IntrusiveRefCntPtr.h
 include/llvm/ADT/OwningPtr.h
 include/llvm/ADT/PostOrderIterator.h
 include/llvm/ADT/SCCIterator.h
@@ -81,6 +77,7 @@ include/llvm/Analysis/FindUsedTypes.h
 include/llvm/Analysis/Interval.h
 include/llvm/Analysis/IntervalIterator.h
 include/llvm/Analysis/IntervalPartition.h
+include/llvm/Analysis/LibCallSemantics.h
 include/llvm/Analysis/LoadValueNumbering.h
 include/llvm/Analysis/LoopInfo.h
 include/llvm/Analysis/LoopPass.h
@@ -142,12 +139,14 @@ include/llvm/CodeGen/MachineInstrBuilder.h
 include/llvm/CodeGen/MachineJumpTableInfo.h
 include/llvm/CodeGen/MachineLocation.h
 include/llvm/CodeGen/MachineLoopInfo.h
+include/llvm/CodeGen/MachineMemOperand.h
 include/llvm/CodeGen/MachineModuleInfo.h
 include/llvm/CodeGen/MachineOperand.h
 include/llvm/CodeGen/MachinePassRegistry.h
 include/llvm/CodeGen/MachineRegisterInfo.h
 include/llvm/CodeGen/MachineRelocation.h
 include/llvm/CodeGen/Passes.h
+include/llvm/CodeGen/PseudoSourceValue.h
 include/llvm/CodeGen/RegAllocRegistry.h
 include/llvm/CodeGen/RegisterCoalescer.h
 include/llvm/CodeGen/RegisterScavenging.h
@@ -216,6 +215,7 @@ include/llvm/Support/CommandLine.h
 include/llvm/Support/Compiler.h
 include/llvm/Support/ConstantRange.h
 include/llvm/Support/DOTGraphTraits.h
+include/llvm/Support/DataFlow.h
 include/llvm/Support/DataTypes.h
 include/llvm/Support/Debug.h
 include/llvm/Support/Dwarf.h
@@ -224,9 +224,9 @@ include/llvm/Support/ELF.h
 include/llvm/Support/FileUtilities.h
 include/llvm/Support/GetElementPtrTypeIterator.h
 include/llvm/Support/GraphWriter.h
+include/llvm/Support/IRBuilder.h
 include/llvm/Support/InstIterator.h
 include/llvm/Support/InstVisitor.h
-include/llvm/Support/LLVMBuilder.h
 include/llvm/Support/LeakDetector.h
 include/llvm/Support/ManagedStatic.h
 include/llvm/Support/Mangler.h
@@ -252,7 +252,6 @@ include/llvm/System/DynamicLibrary.h
 include/llvm/System/Host.h
 include/llvm/System/IncludeFile.h
 include/llvm/System/LICENSE.TXT
-include/llvm/System/MappedFile.h
 include/llvm/System/Memory.h
 include/llvm/System/Mutex.h
 include/llvm/System/Path.h
@@ -260,7 +259,6 @@ include/llvm/System/Process.h
 include/llvm/System/Program.h
 include/llvm/System/Signals.h
 include/llvm/System/TimeValue.h
-include/llvm/Target/MRegisterInfo.h
 include/llvm/Target/SubtargetFeature.h
 include/llvm/Target/TargetAsmInfo.h
 include/llvm/Target/TargetData.h
@@ -275,6 +273,7 @@ include/llvm/Target/TargetMachOWriterInfo.h
 include/llvm/Target/TargetMachine.h
 include/llvm/Target/TargetMachineRegistry.h
 include/llvm/Target/TargetOptions.h
+include/llvm/Target/TargetRegisterInfo.h
 include/llvm/Target/TargetSubtarget.h
 include/llvm/Transforms/IPO.h
 include/llvm/Transforms/IPO/InlinerPass.h
@@ -300,6 +299,7 @@ lib/LLVMARM.o
 lib/LLVMAlpha.o
 lib/LLVMCBackend.o
 lib/LLVMCellSPU.o
+lib/LLVMCppBackend.o
 lib/LLVMExecutionEngine.o
 lib/LLVMHello.a
 lib/LLVMHello.la
@@ -331,7 +331,6 @@ lib/libLLVMTarget.a
 lib/libLLVMTransformUtils.a
 lib/libLLVMipa.a
 lib/libLLVMipo.a
-lib/libLLVMlto.a
 %%DOCSDIR%%/html.tar.gz
 %%DOCSDIR%%/html/AliasAnalysis.html
 %%DOCSDIR%%/html/BitCodeFormat.html
@@ -355,9 +354,6 @@ lib/libLLVMlto.a
 %%DOCSDIR%%/html/CommandGuide/llvm-nm.html
 %%DOCSDIR%%/html/CommandGuide/llvm-prof.html
 %%DOCSDIR%%/html/CommandGuide/llvm-ranlib.html
-%%DOCSDIR%%/html/CommandGuide/llvm-upgrade.html
-%%DOCSDIR%%/html/CommandGuide/llvm2cpp.html
-%%DOCSDIR%%/html/CommandGuide/llvmc.html
 %%DOCSDIR%%/html/CommandGuide/llvmgcc.html
 %%DOCSDIR%%/html/CommandGuide/llvmgxx.html
 %%DOCSDIR%%/html/CommandGuide/manpage.css
@@ -371,6 +367,7 @@ lib/libLLVMlto.a
 %%DOCSDIR%%/html/ExceptionHandling.html
 %%DOCSDIR%%/html/ExtendingLLVM.html
 %%DOCSDIR%%/html/FAQ.html
+%%DOCSDIR%%/html/GCCFEBuildInstrs.html
 %%DOCSDIR%%/html/GarbageCollection.html
 %%DOCSDIR%%/html/GetElementPtr.html
 %%DOCSDIR%%/html/GettingStarted.html
@@ -401,6 +398,24 @@ lib/libLLVMlto.a
 %%DOCSDIR%%/html/img/venusflytrap.jpg
 %%DOCSDIR%%/html/index.html
 %%DOCSDIR%%/html/llvm.css
+%%DOCSDIR%%/html/tutorial/JITTutorial1.html
+%%DOCSDIR%%/html/tutorial/JITTutorial2.html
+%%DOCSDIR%%/html/tutorial/LangImpl1.html
+%%DOCSDIR%%/html/tutorial/LangImpl2.html
+%%DOCSDIR%%/html/tutorial/LangImpl3.html
+%%DOCSDIR%%/html/tutorial/LangImpl4.html
+%%DOCSDIR%%/html/tutorial/LangImpl5.html
+%%DOCSDIR%%/html/tutorial/LangImpl6.html
+%%DOCSDIR%%/html/tutorial/LangImpl7.html
+%%DOCSDIR%%/html/tutorial/LangImpl8.html
+%%DOCSDIR%%/html/tutorial/OCamlLangImpl1.html
+%%DOCSDIR%%/html/tutorial/OCamlLangImpl2.html
+%%DOCSDIR%%/html/tutorial/OCamlLangImpl3.html
+%%DOCSDIR%%/html/tutorial/OCamlLangImpl4.html
+%%DOCSDIR%%/html/tutorial/OCamlLangImpl5.html
+%%DOCSDIR%%/html/tutorial/OCamlLangImpl6.html
+%%DOCSDIR%%/html/tutorial/OCamlLangImpl7.html
+%%DOCSDIR%%/html/tutorial/index.html
 %%DOCSDIR%%/ps/bugpoint.ps
 %%DOCSDIR%%/ps/llc.ps
 %%DOCSDIR%%/ps/lli.ps
@@ -416,9 +431,6 @@ lib/libLLVMlto.a
 %%DOCSDIR%%/ps/llvm-nm.ps
 %%DOCSDIR%%/ps/llvm-prof.ps
 %%DOCSDIR%%/ps/llvm-ranlib.ps
-%%DOCSDIR%%/ps/llvm-upgrade.ps
-%%DOCSDIR%%/ps/llvm2cpp.ps
-%%DOCSDIR%%/ps/llvmc.ps
 %%DOCSDIR%%/ps/llvmgcc.ps
 %%DOCSDIR%%/ps/llvmgxx.ps
 %%DOCSDIR%%/ps/opt.ps
@@ -439,10 +451,11 @@ lib/libLLVMlto.a
 @dirrm include/llvm/Analysis
 @dirrm include/llvm/ADT
 @dirrm include/llvm-c
+@dirrm include/llvm-c/Transforms
 @dirrm include/llvm
-@dirrm etc/llvm
 @dirrm %%DOCSDIR%%/ps
 @dirrm %%DOCSDIR%%/html/img
+@dirrm %%DOCSDIR%%/html/tutorial
 @dirrm %%DOCSDIR%%/html/CommandGuide
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
