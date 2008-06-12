@@ -4,8 +4,8 @@
  uninstall-info-am:
  install-dist_htmlDATA: $(dist_html_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(htmldir)" || $(mkdir_p) "$(DESTDIR)$(htmldir)"
-+	test -z "$(dist_html_DATA)" -o -z "$(htmldir)" || $(mkdir_p) "$(DESTDIR)$(htmldir)"
+-	test -z "$(htmldir)" || $(MKDIR_P) "$(DESTDIR)$(htmldir)"
++	test -z "$(dist_html_DATA)" -o -z "$(htmldir)" || $(MKDIR_P) "$(DESTDIR)$(htmldir)"
  	@list='$(dist_html_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f=$(am__strip_dir) \
@@ -13,8 +13,8 @@
  	done
  install-nodist_htmlDATA: $(nodist_html_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(htmldir)" || $(mkdir_p) "$(DESTDIR)$(htmldir)"
-+	test -z "$(nodist_html_DATA)" -o -z "$(htmldir)" || $(mkdir_p) "$(DESTDIR)$(htmldir)"
+-	test -z "$(htmldir)" || $(MKDIR_P) "$(DESTDIR)$(htmldir)"
++	test -z "$(nodist_html_DATA)" -o -z "$(htmldir)" || $(MKDIR_P) "$(DESTDIR)$(htmldir)"
  	@list='$(nodist_html_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f=$(am__strip_dir) \
