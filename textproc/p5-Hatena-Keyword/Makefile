@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Hatena-Keyword
-PORTVERSION=	0.04
-PORTREVISION=	1
+PORTVERSION=	0.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/N/NA/NAOYA
@@ -16,16 +15,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	Extract Hatena Keywords in a string
 
-BUILD_DEPENDS=	${SITE_PERL}/RPC/XML.pm:${PORTSDIR}/net/p5-RPC-XML \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/Class/ErrorHandler.pm:${PORTSDIR}/devel/p5-Class-ErrorHandler \
-		${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+BUILD_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache \
+		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
+		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode \
+		p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML \
+		p5-Storable>=0:${PORTSDIR}/devel/p5-Storable \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Hatena::Keyword.3
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
