@@ -805,6 +805,7 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_cache.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_categories.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_checkin.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.com_comments.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_config.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_contact.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_contact.menu.ini
@@ -836,6 +837,7 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_weblinks.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_weblinks.menu.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_wrapper.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.com_zine.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_components.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.mod_custom.ini
@@ -1454,6 +1456,7 @@
 %%WWWDIR%%/configuration.php-dist
 %%WWWDIR%%/htaccess.txt
 %%WWWDIR%%/images/M_images/arrow.png
+%%WWWDIR%%/images/M_images/arrow_rtl.png
 %%WWWDIR%%/images/M_images/blank.png
 %%WWWDIR%%/images/M_images/con_address.png
 %%WWWDIR%%/images/M_images/con_fax.png
@@ -1748,12 +1751,9 @@
 %%WWWDIR%%/installation/installer/views/index.html
 %%WWWDIR%%/installation/installer/views/install/index.html
 %%WWWDIR%%/installation/installer/views/install/view.php
-%%WWWDIR%%/installation/language/af-ZA/af-ZA.ini
-%%WWWDIR%%/installation/language/af-ZA/af-ZA.xml
-%%WWWDIR%%/installation/language/af-ZA/index.html
-%%WWWDIR%%/installation/language/ar-DZ/ar-DZ.ini
-%%WWWDIR%%/installation/language/ar-DZ/ar-DZ.xml
-%%WWWDIR%%/installation/language/ar-DZ/index.html
+%%WWWDIR%%/installation/language/be-BY/be-BY.ini
+%%WWWDIR%%/installation/language/be-BY/be-BY.xml
+%%WWWDIR%%/installation/language/be-BY/index.html
 %%WWWDIR%%/installation/language/bg-BG/bg-BG.ini
 %%WWWDIR%%/installation/language/bg-BG/bg-BG.xml
 %%WWWDIR%%/installation/language/bg-BG/index.html
@@ -1763,6 +1763,9 @@
 %%WWWDIR%%/installation/language/bs-BA/bs-BA.ini
 %%WWWDIR%%/installation/language/bs-BA/bs-BA.xml
 %%WWWDIR%%/installation/language/bs-BA/index.html
+%%WWWDIR%%/installation/language/ca-ES/ca-ES.ini
+%%WWWDIR%%/installation/language/ca-ES/ca-ES.xml
+%%WWWDIR%%/installation/language/ca-ES/index.html
 %%WWWDIR%%/installation/language/cs-CZ/cs-CZ.ini
 %%WWWDIR%%/installation/language/cs-CZ/cs-CZ.xml
 %%WWWDIR%%/installation/language/cs-CZ/index.html
@@ -1805,9 +1808,6 @@
 %%WWWDIR%%/installation/language/he-IL/he-IL.ini
 %%WWWDIR%%/installation/language/he-IL/he-IL.xml
 %%WWWDIR%%/installation/language/he-IL/index.html
-%%WWWDIR%%/installation/language/hi-IN/hi-IN.ini
-%%WWWDIR%%/installation/language/hi-IN/hi-IN.xml
-%%WWWDIR%%/installation/language/hi-IN/index.html
 %%WWWDIR%%/installation/language/hr-HR/hr-HR.ini
 %%WWWDIR%%/installation/language/hr-HR/hr-HR.xml
 %%WWWDIR%%/installation/language/hr-HR/index.html
@@ -1821,6 +1821,9 @@
 %%WWWDIR%%/installation/language/ja-JP/index.html
 %%WWWDIR%%/installation/language/ja-JP/ja-JP.ini
 %%WWWDIR%%/installation/language/ja-JP/ja-JP.xml
+%%WWWDIR%%/installation/language/ko-KR/index.html
+%%WWWDIR%%/installation/language/ko-KR/ko-KR.ini
+%%WWWDIR%%/installation/language/ko-KR/ko-KR.xml
 %%WWWDIR%%/installation/language/lo-LA/index.html
 %%WWWDIR%%/installation/language/lo-LA/lo-LA.ini
 %%WWWDIR%%/installation/language/lo-LA/lo-LA.xml
@@ -1851,6 +1854,9 @@
 %%WWWDIR%%/installation/language/ru-RU/index.html
 %%WWWDIR%%/installation/language/ru-RU/ru-RU.ini
 %%WWWDIR%%/installation/language/ru-RU/ru-RU.xml
+%%WWWDIR%%/installation/language/sd-PK/index.html
+%%WWWDIR%%/installation/language/sd-PK/sd-PK.ini
+%%WWWDIR%%/installation/language/sd-PK/sd-PK.xml
 %%WWWDIR%%/installation/language/sk-SK/index.html
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.ini
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.xml
@@ -1863,12 +1869,15 @@
 %%WWWDIR%%/installation/language/sv-SE/index.html
 %%WWWDIR%%/installation/language/sv-SE/sv-SE.ini
 %%WWWDIR%%/installation/language/sv-SE/sv-SE.xml
+%%WWWDIR%%/installation/language/sy-IQ/index.html
+%%WWWDIR%%/installation/language/sy-IQ/sy-IQ.ini
+%%WWWDIR%%/installation/language/sy-IQ/sy-IQ.xml
+%%WWWDIR%%/installation/language/ta-LK/index.html
+%%WWWDIR%%/installation/language/ta-LK/ta-LK.ini
+%%WWWDIR%%/installation/language/ta-LK/ta-LK.xml
 %%WWWDIR%%/installation/language/th-TH/index.html
 %%WWWDIR%%/installation/language/th-TH/th-TH.ini
 %%WWWDIR%%/installation/language/th-TH/th-TH.xml
-%%WWWDIR%%/installation/language/tr-TR/index.html
-%%WWWDIR%%/installation/language/tr-TR/tr-TR.ini
-%%WWWDIR%%/installation/language/tr-TR/tr-TR.xml
 %%WWWDIR%%/installation/language/uk-UA/index.html
 %%WWWDIR%%/installation/language/uk-UA/uk-UA.ini
 %%WWWDIR%%/installation/language/uk-UA/uk-UA.xml
@@ -2166,6 +2175,7 @@
 %%WWWDIR%%/libraries/joomla/html/editor.php
 %%WWWDIR%%/libraries/joomla/html/html.php
 %%WWWDIR%%/libraries/joomla/html/html/behavior.php
+%%WWWDIR%%/libraries/joomla/html/html/content.php
 %%WWWDIR%%/libraries/joomla/html/html/email.php
 %%WWWDIR%%/libraries/joomla/html/html/form.php
 %%WWWDIR%%/libraries/joomla/html/html/grid.php
@@ -2200,6 +2210,7 @@
 %%WWWDIR%%/libraries/joomla/html/parameter/element/text.php
 %%WWWDIR%%/libraries/joomla/html/parameter/element/textarea.php
 %%WWWDIR%%/libraries/joomla/html/parameter/element/timezones.php
+%%WWWDIR%%/libraries/joomla/html/parameter/element/usergroup.php
 %%WWWDIR%%/libraries/joomla/html/parameter/index.html
 %%WWWDIR%%/libraries/joomla/html/toolbar.php
 %%WWWDIR%%/libraries/joomla/html/toolbar/button.php
@@ -2472,6 +2483,7 @@
 %%WWWDIR%%/libraries/tcpdf/images/index.html
 %%WWWDIR%%/libraries/tcpdf/index.html
 %%WWWDIR%%/libraries/tcpdf/tcpdf.php
+%%WWWDIR%%/libraries/tcpdf/unicode_data.php
 %%WWWDIR%%/logs/index.html
 %%WWWDIR%%/media/index.html
 %%WWWDIR%%/media/system/css/calendar-jos.css
@@ -3543,6 +3555,7 @@
 %%WWWDIR%%/templates/system/css/general.css
 %%WWWDIR%%/templates/system/css/index.html
 %%WWWDIR%%/templates/system/css/offline.css
+%%WWWDIR%%/templates/system/css/offline_rtl.css
 %%WWWDIR%%/templates/system/css/system.css
 %%WWWDIR%%/templates/system/css/toolbar.css
 %%WWWDIR%%/templates/system/error.php
@@ -3922,12 +3935,14 @@
 @dirrm %%WWWDIR%%/installation/language/zh-TW
 @dirrm %%WWWDIR%%/installation/language/vi-VN
 @dirrm %%WWWDIR%%/installation/language/uk-UA
-@dirrm %%WWWDIR%%/installation/language/tr-TR
 @dirrm %%WWWDIR%%/installation/language/th-TH
+@dirrm %%WWWDIR%%/installation/language/ta-LK
+@dirrm %%WWWDIR%%/installation/language/sy-IQ
 @dirrm %%WWWDIR%%/installation/language/sv-SE
 @dirrm %%WWWDIR%%/installation/language/sr-RS
 @dirrm %%WWWDIR%%/installation/language/sr-ME
 @dirrm %%WWWDIR%%/installation/language/sk-SK
+@dirrm %%WWWDIR%%/installation/language/sd-PK
 @dirrm %%WWWDIR%%/installation/language/ru-RU
 @dirrm %%WWWDIR%%/installation/language/ro-RO
 @dirrm %%WWWDIR%%/installation/language/pt-PT
@@ -3938,11 +3953,11 @@
 @dirrm %%WWWDIR%%/installation/language/lv-LV
 @dirrm %%WWWDIR%%/installation/language/lt-LT
 @dirrm %%WWWDIR%%/installation/language/lo-LA
+@dirrm %%WWWDIR%%/installation/language/ko-KR
 @dirrm %%WWWDIR%%/installation/language/ja-JP
 @dirrm %%WWWDIR%%/installation/language/it-IT
 @dirrm %%WWWDIR%%/installation/language/hu-HU
 @dirrm %%WWWDIR%%/installation/language/hr-HR
-@dirrm %%WWWDIR%%/installation/language/hi-IN
 @dirrm %%WWWDIR%%/installation/language/he-IL
 @dirrm %%WWWDIR%%/installation/language/fr-FR
 @dirrm %%WWWDIR%%/installation/language/fi-FI
@@ -3957,11 +3972,11 @@
 @dirrm %%WWWDIR%%/installation/language/de-AT
 @dirrm %%WWWDIR%%/installation/language/da-DK
 @dirrm %%WWWDIR%%/installation/language/cs-CZ
+@dirrm %%WWWDIR%%/installation/language/ca-ES
 @dirrm %%WWWDIR%%/installation/language/bs-BA
 @dirrm %%WWWDIR%%/installation/language/bn-IN
 @dirrm %%WWWDIR%%/installation/language/bg-BG
-@dirrm %%WWWDIR%%/installation/language/ar-DZ
-@dirrm %%WWWDIR%%/installation/language/af-ZA
+@dirrm %%WWWDIR%%/installation/language/be-BY
 @dirrm %%WWWDIR%%/installation/language
 @dirrm %%WWWDIR%%/installation/installer/views/install
 @dirrm %%WWWDIR%%/installation/installer/views
