@@ -1,0 +1,12 @@
+--- xgnokii/Makefile.in.orig   2008-02-23 17:19:30.000000000 +0100
++++ xgnokii/Makefile.in        2008-02-23 17:19:58.000000000 +0100
+@@ -351,7 +351,8 @@
+ #FIXME install help
+ HELP_DIR = docs/help
+ pkgconfig_DATA = xgnokii.pc
+-pkgconfigdir = $(libdir)/pkgconfig
++libdatadir = $(libdir)data
++pkgconfigdir = $(libdatadir)/pkgconfig
+ desktop_in_files = xgnokii.desktop.in
+ desktopdir = $(datadir)/applications
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
