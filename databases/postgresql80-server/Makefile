@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.0.15
-PORTREVISION?=	1
+PORTVERSION?=	8.0.17
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -39,10 +38,14 @@ GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
+		--enable-thread-safety \
 		--with-docdir=${DOCSDIR}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
@@ -80,8 +83,6 @@ OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
 OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal kerberos support" off
 OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
-OPTIONS+=	LIBC_R "Link w/ libc_r, used by plpython (server)" off
-OPTIONS+=	THREADSAFE "make libpq thread safe" off
 #  to run regression tests:
 OPTIONS+=	TESTS "Allows the use of a \"check\" target (server)" off
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
@@ -107,7 +108,7 @@ USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-8015-icu-xx-2008-01-08.diff.gz:icu
+PATCHFILES+=	pg-8015-icu-xx-2008-06-11.diff.gz:icu
 .  endif
 
 PATCH_DIST_STRIP=-p1
@@ -170,14 +171,6 @@ CONFIGURE_ARGS+=--with-krb5
 EXTRA_PATCHES=	${FILESDIR}/regresspatch-src-test-regress-pgregress-sh
 .  endif
 
-.  if defined(WITH_THREADSAFE)
-CONFIGURE_ARGS+=--enable-thread-safety
-.  endif
-
-.  if defined(SERVER_ONLY) && defined(WITH_LIBC_R)
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-.  endif
 .endif # !SLAVE_ONLY
 
 .if defined(CLIENT_ONLY)

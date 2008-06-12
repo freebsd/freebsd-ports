@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.19
-PORTREVISION?=	1
+PORTVERSION?=	7.4.21
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -81,7 +80,7 @@ OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
 OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal kerberos support" off
 OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
-OPTIONS+=	LIBC_R "Link w/ libc_r, used by plpython (server)" off
+OPTIONS+=	PTHREAD "Link w/ libc_r, used by plpython (server)" off
 #  to run regression tests:
 OPTIONS+=	TESTS "Allows the use of a \"check\" target (server)" off
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
