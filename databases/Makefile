@@ -31,6 +31,7 @@
     SUBDIR += db44
     SUBDIR += db45
     SUBDIR += db46
+    SUBDIR += db47
     SUBDIR += db4o-mono
     SUBDIR += dbXML
     SUBDIR += dbconnect
