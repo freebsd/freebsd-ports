@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF/.packlist
 %%SITE_PERL%%/Font/TTF.pm
 %%SITE_PERL%%/Font/TTF/AATKern.pm
@@ -9,6 +10,7 @@
 %%SITE_PERL%%/Font/TTF/Coverage.pm
 %%SITE_PERL%%/Font/TTF/Cvt_.pm
 %%SITE_PERL%%/Font/TTF/Delta.pm
+%%SITE_PERL%%/Font/TTF/Dumper.pm
 %%SITE_PERL%%/Font/TTF/EBDT.pm
 %%SITE_PERL%%/Font/TTF/EBLC.pm
 %%SITE_PERL%%/Font/TTF/Fdsc.pm
@@ -21,6 +23,7 @@
 %%SITE_PERL%%/Font/TTF/GSUB.pm
 %%SITE_PERL%%/Font/TTF/Glyf.pm
 %%SITE_PERL%%/Font/TTF/Glyph.pm
+%%SITE_PERL%%/Font/TTF/GrFeat.pm
 %%SITE_PERL%%/Font/TTF/Hdmx.pm
 %%SITE_PERL%%/Font/TTF/Head.pm
 %%SITE_PERL%%/Font/TTF/Hhea.pm
@@ -45,6 +48,7 @@
 %%SITE_PERL%%/Font/TTF/Mort/Subtable.pm
 %%SITE_PERL%%/Font/TTF/Name.pm
 %%SITE_PERL%%/Font/TTF/OS_2.pm
+%%SITE_PERL%%/Font/TTF/OTTags.pm
 %%SITE_PERL%%/Font/TTF/OldCmap.pm
 %%SITE_PERL%%/Font/TTF/OldMort.pm
 %%SITE_PERL%%/Font/TTF/PCLT.pm
@@ -54,7 +58,6 @@
 %%SITE_PERL%%/Font/TTF/Prop.pm
 %%SITE_PERL%%/Font/TTF/Segarr.pm
 %%SITE_PERL%%/Font/TTF/Table.pm
-%%SITE_PERL%%/Font/TTF/Tags.pm
 %%SITE_PERL%%/Font/TTF/Ttc.pm
 %%SITE_PERL%%/Font/TTF/Ttopen.pm
 %%SITE_PERL%%/Font/TTF/Useall.pm
