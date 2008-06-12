@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	0.11.2
-PORTREVISION=	1
+PORTVERSION=	0.11.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gpodder
@@ -17,7 +16,8 @@ MAINTAINER=	chess@chessgriffin.com
 COMMENT=	A GTK2 podcast aggregrator written in Python
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
-		convert:${PORTSDIR}/graphics/ImageMagick
+		convert:${PORTSDIR}/graphics/ImageMagick \
+		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
 		wget:${PORTSDIR}/ftp/wget \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
