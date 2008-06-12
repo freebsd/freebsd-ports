@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.08.4
+PORTVERSION=	1.08.5
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -91,6 +91,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnreachableCode.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUntilBlocks.3 \
 	Perl::Critic::Policy::Documentation::PodSpelling.3 \
+	Perl::Critic::Policy::Documentation::RequirePackageMatchesPodName.3 \
 	Perl::Critic::Policy::Documentation::RequirePodAtEnd.3 \
 	Perl::Critic::Policy::Documentation::RequirePodSections.3 \
 	Perl::Critic::Policy::ErrorHandling::RequireCarping.3 \

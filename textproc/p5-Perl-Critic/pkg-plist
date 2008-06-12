@@ -58,6 +58,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUnreachableCode.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUntilBlocks.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/PodSpelling.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePackageMatchesPodName.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodAtEnd.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodSections.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCarping.pm
