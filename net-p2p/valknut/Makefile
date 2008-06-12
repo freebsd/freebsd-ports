@@ -9,7 +9,7 @@
 
 PORTNAME=	valknut
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	wxdcgui
@@ -26,7 +26,7 @@ WRKSRC=	${WRKDIR}/${DISTNAME}
 MAN1=	valknut.1
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network qt3support
+QT_COMPONENTS=	corelib gui network qt3support moc uic rcc linguist
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
@@ -36,7 +36,8 @@ CONFIGURE_ARGS=	--with-libdc=${LOCALBASE} \
 		--x-includes=${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
+		RCC="${LOCALBASE}/bin/rcc" LRELEASE="${LOCALBASE}/bin/lrelease-qt4"
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
