@@ -7,7 +7,7 @@
 
 PORTNAME=	openvas-plugins
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/412/
 
@@ -19,7 +19,9 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
 LIB_DEPENDS=	openvas.1:${PORTSDIR}/security/openvas-libraries \
 		openvasnasl.1:${PORTSDIR}/security/openvas-libnasl \
 		gnutls.26:${PORTSDIR}/security/gnutls
-RUN_DEPENDS=	openvasd:${PORTSDIR}/security/openvas-server
+RUN_DEPENDS=	openvasd:${PORTSDIR}/security/openvas-server \
+	${LOCALBASE}/bin/gmd5sum:${PORTSDIR}/sysutils/coreutils \
+	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
 
 GNU_CONFIGURE=	yes
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
@@ -27,8 +29,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAN1=		openvas-build.1
 
-.include "${.CURDIR}/../../security/openvas-libraries/Makefile.common"
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/security/openvas-libraries/Makefile.common"
 
 .if ${ARCH} != "i386"
 BROKEN=		does not compile
