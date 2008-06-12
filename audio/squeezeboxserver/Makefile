@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	squeezecenter
-PORTVERSION=	7.0.0
-PORTREVISION=	5
+PORTVERSION=	7.0.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SqueezeCenter_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-7.0-noCPAN
@@ -209,11 +208,9 @@ build-plist:
 .for _CONF in ${CONFFILES}
 	@${ECHO} '@unexec if cmp -s %D/%%SLIMDIR%%/${_CONF} %D/%%SLIMDIR%%/${_CONF}.sample; then rm -f %D/%%SLIMDIR%%/${_CONF}; fi' >> ${PLIST}
 .endfor
-.if !defined(NOPORTDOCS)
 	@${FIND} ${TMP_DOCSDIR} -type f | \
-	    ${SED} -e 's|${TMP_DOCSDIR}|%%DOCSDIR%%|' | \
+	    ${SED} -e 's|${TMP_DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
 	    ${SORT} >> ${PLIST}
-.endif
 	@${FIND} ${TMP_SLIMDIR}/* -type f | \
 	    ${SED} -e 's|${TMP_SLIMDIR}|%%SLIMDIR%%|' | \
 	    ${SORT} >> ${PLIST}
@@ -226,11 +223,9 @@ build-plist:
 	    ${SORT} -r >> ${PLIST}
 	echo "@dirrmtry %%SLIMDIR%%/Plugins" >> ${PLIST}
 	echo "@dirrmtry %%SLIMDIR%%" >> ${PLIST}
-.if !defined(NOPORTDOCS)
 	@${FIND} ${TMP_DOCSDIR} -type d | \
-	    ${SED} -e 's|${TMP_DOCSDIR}|@dirrm %%DOCSDIR%%|' | \
+	    ${SED} -e 's|${TMP_DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
-.endif
 	@${ECHO} '@unexec rm -rf ${SLIMDBDIR}/cache > /dev/null 2>&1 || true' >> ${PLIST}
 	@${ECHO} '@dirrmtry ${SLIMDBDIR}/playlists' >> ${PLIST}
 	@${ECHO} '@dirrmtry ${SLIMDBDIR}' >> ${PLIST}
