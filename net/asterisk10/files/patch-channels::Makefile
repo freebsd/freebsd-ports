@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- channels/Makefile.orig
 +++ channels/Makefile
-@@ -26,8 +26,8 @@
+@@ -32,8 +32,8 @@
  endif
  
  ifeq ($(OSARCH),FreeBSD)
@@ -14,7 +14,7 @@ $FreeBSD$
    CHANH323LIB=-pthread
  endif
  
-@@ -72,12 +72,12 @@
+@@ -78,12 +78,13 @@
  h323/libchanh323.a h323/Makefile.ast:
  	$(CMD_PREFIX) $(MAKE) -C h323
  	$(CMD_PREFIX) rm -f ../main/asterisk
@@ -24,6 +24,7 @@ $FreeBSD$
 -	$(CMD_PREFIX) echo
 -	$(CMD_PREFIX) echo "***************************************************************"
 -	$(CMD_PREFIX) exit 1
++	$(CMD_PREFIX) $(MAKE) -C . chan_h323.so
 +#	$(CMD_PREFIX) echo "***************************************************************"
 +#	$(CMD_PREFIX) echo
 +#	$(CMD_PREFIX) echo "********** Re-run 'make' to pick up H.323 parameters **********"
@@ -32,4 +33,17 @@ $FreeBSD$
 +#	$(CMD_PREFIX) exit 1
  endif
  
- gentone: gentone.c
+ dist-clean::
+@@ -113,8 +114,12 @@
+ else
+ chan_h323.so: chan_h323.o h323/libchanh323.a
+ 	$(ECHO_PREFIX) echo "   [LD] $^ -> $@"
++ifeq ($(OSARCH),FreeBSD)
++	$(CMD_PREFIX) $(CXX) $(PTHREAD_CFLAGS) $(ASTLDFLAGS) $(SOLINK) $(H323LDFLAGS) -o $@ $< h323/libchanh323.a $(H323LDLIBS)
++else
+ 	$(CMD_PREFIX) $(CXX) $(PTHREAD_CFLAGS) $(ASTLDFLAGS) $(SOLINK) -o $@ $< h323/libchanh323.a $(CHANH323LIB) -L$(PWLIBDIR)/lib $(PTLIB) -L$(OPENH323DIR)/lib $(H323LIB) -L/usr/lib -lcrypto -lssl -lexpat
+ endif
++endif
+ 
+ chan_misdn.o: ASTCFLAGS+=-Imisdn
+ 

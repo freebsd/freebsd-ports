@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.20.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -37,6 +38,7 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \
 		OSVERSION=${OSVERSION} \
+		NOISY_BUILD=YES \
 		CXX="${CXX}"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 
@@ -167,7 +169,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/ilbc_enable.diff
 .endif
 
 .if defined(WITH_CODEC_PATCH)
-PATCHFILES=	asterisk-1.4.19-codec-negotiation-20080408.diff.gz
+PATCHFILES=	asterisk-1.4.20.1-codec-negotiation-20080610.diff.gz
 PATCH_SITES=	http://b2bua.org/chrome/site/
 EXTRA_PATCHES+=	${PATCHDIR}/codecnego-patch-Makefile
 .else
@@ -188,6 +190,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/rtp_force_dtmf-nocodecnego.diff
 
 post-extract:
 	${MKDIR} ${WRKSRC}/codecs/ilbc
+	${FIND} ${WRKSRC} -name '*.d' -delete
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
