@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.3.1
-PORTREVISION?=	1
+DISTVERSION?=	8.3.3
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -108,7 +107,7 @@ USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-831-icu-xx-2008-03-17.diff.gz:icu
+PATCHFILES+=	pg-833-icu-xx-2008-06-11.diff.gz:icu
 .  endif
 
 PATCH_DIST_STRIP=-p1
