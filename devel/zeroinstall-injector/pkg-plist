@@ -1,6 +1,7 @@
 bin/0alias
 bin/0launch
 bin/0store
+bin/0store-secure-add
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/0launch-gui
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/README
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/ZeroInstall-GUI.xml
@@ -10,9 +11,6 @@ bin/0store
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/cache.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/cache.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/cache.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/checking.py
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/checking.pyc
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/checking.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/combo_compat.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/combo_compat.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/combo_compat.pyo
@@ -22,9 +20,6 @@ bin/0store
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/dialog.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/dialog.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/dialog.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/download_box.py
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/download_box.pyc
-%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/download_box.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/freshness.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/freshness.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/freshness.pyo
@@ -40,6 +35,9 @@ bin/0store
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/impl_list.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/impl_list.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/impl_list.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/main.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/main.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/main.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/mainwindow.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/mainwindow.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/mainwindow.pyo
@@ -55,6 +53,7 @@ bin/0store
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/trust_box.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/trust_box.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/trust_box.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui/zero-install.glade
 %%PYTHON_SITELIBDIR%%/zeroinstall/__init__.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/__init__.pyo
@@ -76,9 +75,6 @@ bin/0store
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/background.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/background.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/background.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall/injector/basedir.py
-%%PYTHON_SITELIBDIR%%/zeroinstall/injector/basedir.pyc
-%%PYTHON_SITELIBDIR%%/zeroinstall/injector/basedir.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/cli.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/cli.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/cli.pyo
@@ -88,6 +84,9 @@ bin/0store
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/download.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/download.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/download.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/fetch.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/fetch.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/fetch.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/gpg.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/gpg.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/gpg.pyo
@@ -118,15 +117,24 @@ bin/0store
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/selections.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/selections.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/selections.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/solver.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/solver.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/injector/solver.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/trust.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/trust.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/trust.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/writer.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/writer.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/injector/writer.pyo
-%%PYTHON_SITELIBDIR%%/zeroinstall/support.py
-%%PYTHON_SITELIBDIR%%/zeroinstall/support.pyc
-%%PYTHON_SITELIBDIR%%/zeroinstall/support.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/support/__init__.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/support/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/support/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/support/basedir.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/support/basedir.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/support/basedir.pyo
+%%PYTHON_SITELIBDIR%%/zeroinstall/support/tasks.py
+%%PYTHON_SITELIBDIR%%/zeroinstall/support/tasks.pyc
+%%PYTHON_SITELIBDIR%%/zeroinstall/support/tasks.pyo
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/__init__.py
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/__init__.pyo
@@ -144,8 +152,9 @@ bin/0store
 %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore/unpack.pyo
 share/applications/zeroinstall-zero2desktop.desktop
 share/pixmaps/zeroinstall-zero2desktop.png
+@dirrm share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/zerostore
+@dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/support
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/injector
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall/0launch-gui
 @dirrm %%PYTHON_SITELIBDIR%%/zeroinstall
-@dirrmtry share/applications
