@@ -3426,6 +3426,7 @@ frikqcc		ports/games/frikqcc
 frink		ports/devel/frink
 frodo		ports/emulators/frodo
 frontbase	ports/databases/frontbase
+frontbase-jdbc	ports/databases/frontbase-jdbc
 frontline	ports/graphics/frontline
 frost		ports/net-p2p/frost
 frostwire	ports/net-p2p/frostwire
