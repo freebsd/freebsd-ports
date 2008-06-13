@@ -38,7 +38,7 @@ SCRIPTS_ENV+=	USE_LDAP=yes
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if ${OSVERSION} >= 800034 || (${OSVERSION} >= 700109 && ${OSVERSION} < 800000)
+.if ${OSVERSION} >= 800034 || (${OSVERSION} >= 700109 && ${OSVERSION} < 800000) || (${OSVERSION} >= 603103 && ${OSVERSION} < 700000)
 BROKEN=		does not compile
 .endif
 
