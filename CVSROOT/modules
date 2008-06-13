@@ -4893,6 +4893,7 @@ httpgrabber	ports/www/httpgrabber
 httping		ports/net/httping
 httplog		ports/sysutils/httplog
 httprint	ports/security/httprint
+httpry		ports/net/httpry
 httptunnel	ports/www/httptunnel
 httrack		ports/www/httrack
 htx		ports/converters/htx
