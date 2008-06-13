@@ -8,10 +8,9 @@
 
 PORTNAME=	nanoblogger
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small weblog engine written in Bash for the command line
@@ -24,13 +23,17 @@ SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/nb
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/plugins/entry/format/markdown.sh
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/plugins/page/format/markdown.sh
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nb ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/nb.conf ${PREFIX}/etc/nb.conf.sample
 	${MKDIR} ${DATADIR}
 .for data in default lang lib moods plugins
-	${CP} -R ${WRKSRC}/${data} ${DATADIR}
+	${MKDIR} ${DATADIR}/${data} && \
+		( cd ${WRKSRC}/${data} && \
+			${COPYTREE_SHARE} \* ${DATADIR}/${data} "! -name *.orig ! -name *.bak" )
 .endfor
 	${CP} ${WRKSRC}/welcome-to-nb.txt ${DATADIR}
 
