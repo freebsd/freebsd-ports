@@ -7,13 +7,13 @@
 
 PORTNAME=	emc2
 PORTVERSION=	2.15
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math science
 MASTER_SITES=	http://www-c.inria.fr/gamma/cdrom/ftp/emc2/ \
 		http://www-rocq1.inria.fr/gamma/cdrom/ftp/emc2/
+DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
-DISTFILES=	${PORTNAME}${EXTRACT_SUFX}	\
-		${PORTNAME}-doc-en.ps.gz ${PORTNAME}-doc-fr.ps.gz
+DISTFILES+=	${PORTNAME}-doc-en.ps.gz ${PORTNAME}-doc-fr.ps.gz
 EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 .endif
 
@@ -37,10 +37,12 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DOCSDIR}
-.for doc in ${PORTNAME}-doc-en.ps.gz ${PORTNAME}-doc-fr.ps.gz
-	@${INSTALL_DATA} ${DISTDIR}/${doc} ${DOCSDIR}
-.endfor
+	@${GZCAT} ${DISTDIR}/${PORTNAME}-doc-en.ps.gz > ${DOCSDIR}/${PORTNAME}-en.ps
+	@${GZCAT} ${DISTDIR}/${PORTNAME}-doc-fr.ps.gz > ${DOCSDIR}/${PORTNAME}-fr.ps
 	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	@${ECHO_MSG} "===>  Examples installed in ${EXAMPLESDIR}."
 .endif
