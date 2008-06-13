@@ -450,8 +450,8 @@ lib/libLLVMipo.a
 @dirrm include/llvm/Assembly
 @dirrm include/llvm/Analysis
 @dirrm include/llvm/ADT
-@dirrm include/llvm-c
 @dirrm include/llvm-c/Transforms
+@dirrm include/llvm-c
 @dirrm include/llvm
 @dirrm %%DOCSDIR%%/ps
 @dirrm %%DOCSDIR%%/html/img
