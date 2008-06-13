@@ -1,8 +1,8 @@
---- install.sh.orig	Thu May 10 12:01:53 2007
-+++ install.sh	Fri May 25 12:47:45 2007
-@@ -805,10 +805,9 @@
+--- install.sh.orig	2008-06-11 15:33:00.000000000 -0500
++++ install.sh	2008-06-12 21:04:22.000000000 -0500
+@@ -832,10 +832,9 @@
      case "${machine}:${os}" in
- 	x86:Linux|x86_64:Linux|x86:AnyBSD|x86_64:AnyBSD|x86:OpenBSD)
+ 	x86:Linux|x86_64:Linux|x86:AnyBSD|x86_64:AnyBSD|x86:OpenBSD|x86:QNX)
  	    wrapper_ibmjava="
 -	    IBMJava2-142/jre \\
 -	    IBMJava2-141/jre \\
@@ -14,7 +14,7 @@
  	    wrapper_sunjava_machine="i386"
  	;;
  
-@@ -838,10 +837,19 @@
+@@ -865,10 +864,19 @@
  		error 'os'
  	;;
      esac
@@ -35,7 +35,7 @@
  # Required for Session Management
  case \$0 in /*) OPERA_SCRIPT_PATH=\$0;; *) OPERA_SCRIPT_PATH=`/bin/pwd`/\$0;; esac
  export OPERA_SCRIPT_PATH
-@@ -901,6 +909,10 @@
+@@ -928,8 +936,12 @@
  OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
  export OPERA_LD_PRELOAD
  
@@ -44,23 +44,15 @@
 +export OPERA_PERSONALDIR
 +
  # Native Java enviroment
- if test -f \"\${OPERA_PERSONALDIR}/javapath.txt\"; then
-     INIJAVA=\`cat \${OPERA_PERSONALDIR}/javapath.txt\`
-@@ -908,8 +920,8 @@
- fi
+-for d in \"\$OPERA_PERSONALDIR\" \"\$HOME/.opera\"
++for d in \"\$OPERA_PERSONALDIR\" \"\$HOME/.linux-opera\"
+ do if test -f \"\$d/javapath.txt\"
+    then
+       INIJAVA=\`cat \"\$d/javapath.txt\"\`
+@@ -950,85 +962,17 @@
  
- if test ! \"\${OPERA_JAVA_DIR}\"; then
--    if test -f \"\${HOME}/.opera/javapath.txt\"; then
--        INIJAVA=\`cat \${HOME}/.opera/javapath.txt\`
-+    if test -f \"\${OPERA_PERSONALDIR}/javapath.txt\"; then
-+        INIJAVA=\`cat \${OPERA_PERSONALDIR}/javapath.txt\`
-         if test -f \"\${INIJAVA}/libjava.so\"; then OPERA_JAVA_DIR=\"\${INIJAVA}\"; fi
-     fi
- fi
-@@ -924,69 +936,16 @@
- 
- if test ! \"\${OPERA_JAVA_DIR}\"; then
- 
+ if test ! \"\${OPERA_JAVA_DIR}\"
+ then
 -    PREFIXES=\"
 -	/usr
 -	/usr/java
@@ -70,16 +62,25 @@
 +    PREFIXES=\"%%LOCALBASE%%\"
  
      for SUNJAVA in \\
+-	java-6-sun \\
+-	java-6-sun-1.6.0.00 \\
+-	java-1.5.0-sun \\
+-	java-1.5.0-sun-1.5.0.09 \\
+-	java-1.5.0-sun-1.5.0.09/jre \\
+-	java-1.5.0-sun-1.5.0.08 \\
+-	java-1.5.0-sun-1.5.0.08/jre \\
+-	java-1.5.0-sun-1.5.0.07 \\
+-	java-1.5.0-sun-1.5.0.07/jre \\
 -	java-1.5.0-sun-1.5.0.06 \\
 -	java-1.5.0-sun-1.5.0.06/jre \\
--	java-1.5.0-sun-1.5.0.05 \\
--	java-1.5.0-sun-1.5.0.05/jre \\
--	java-1.5.0-sun-1.5.0.04 \\
--	java-1.5.0-sun-1.5.0.04/jre \\
 -	jre1.5.0_06 \\
 -	jdk1.5.0_06/jre \\
+-	java-1.5.0-sun-1.5.0.05 \\
+-	java-1.5.0-sun-1.5.0.05/jre \\
 -	jre1.5.0_05 \\
 -	jdk1.5.0_05/jre \\
+-	java-1.5.0-sun-1.5.0.04 \\
+-	java-1.5.0-sun-1.5.0.04/jre \\
 -	jre1.5.0_04 \\
 -	jdk1.5.0_04/jre \\
 -	jre1.5.0_03 \\
@@ -88,6 +89,7 @@
 -	jdk1.5.0_02/jre \\
 -	jre1.5.0_01 \\
 -	jdk1.5.0_01/jre \\
+-	jdk1.5.0/jre \\
 -	j2re1.4.2_06 \\
 -	j2sdk1.4.2_06/jre \\
 -	j2re1.4.2_04 \\
@@ -125,6 +127,12 @@
 -	jdk1.2/jre \\
 -	jre \\
 -	java \\
+-	jdk1.3.1/jre \\
+-	jdk1.4.2/jre \\
+-	jdk1.5.0/jre \\
+-	jdk1.6.0/jre \\
+-	diablo-jre1.5.0 \\
+-	diablo-jdk1.5.0/jre \\
 +	linux-blackdown-jdk1.3.1/jre \\
 +	linux-blackdown-jdk1.4.1/jre \\
 +	linux-blackdown-jdk1.4.2/jre \\
@@ -132,10 +140,11 @@
 +	linux-sun-jdk1.4.1/jre \\
 +	linux-sun-jdk1.4.2/jre \\
 +	linux-sun-jdk1.5.0/jre \\
++	linux-sun-jdk1.6.0/jre \\
  	; do
- 	for PREFIX in \${PREFIXES}; do
- 	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -1037,11 +996,7 @@
+ 	for PREFIX in \${PREFIXES}
+ 	do d=\"\$PREFIX/\$SUNJAVA/lib/$wrapper_sunjava_machine\"
+@@ -1082,11 +1026,7 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -148,7 +157,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1063,13 +1018,6 @@
+@@ -1108,13 +1048,6 @@
  done"
  
  case "${os}" in
@@ -162,7 +171,7 @@
      SunOS)
  wrapper_contain="${wrapper_contain}
  
-@@ -1098,7 +1046,7 @@
+@@ -1143,7 +1076,7 @@
  };
  
  // Opera package classes get all permissions
@@ -171,158 +180,166 @@
  	permission java.security.AllPermission;
  };
  
-@@ -1167,7 +1115,7 @@
+@@ -1260,12 +1193,12 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
+-    md5check Manifest.md5
++    #md5check Manifest.md5
+     part_install "`manifest_path operapluginwrapper`" "$exec_dir" Binaries
+     manifest_contains operapluginwrapper-native && part_install "`manifest_path operapluginwrapper-native`" "$exec_dir" Binaries
+     manifest_contains operapluginwrapper-ia32-linux && part_install "`manifest_path operapluginwrapper-ia32-linux`" "$exec_dir" Binaries
+     part_install "`manifest_path LICENSE`" "$doc_dir" Documentation
+-    part_install "`manifest_path man1/opera.1`" "$man_dir" "Manual page"
++    part_install "`manifest_path man1/linux-opera.1`" "$man_dir" "Manual page"
+ 
+     share_src="`manifest_path 'html40_entities\.dtd'`"
+     part_install "$share_src" "$share_dir" "Shared resources"
+@@ -1274,76 +1207,20 @@
+     mkdir $mkdirv $mkdirp $plugin_dir/
+ 
+     # Wrapper
 -    backup ${wrapper_dir}/opera opera
 +    #backup ${wrapper_dir}/opera opera
- 
-     # Executable
-     debug_msg 1 "Executable"
-@@ -1201,7 +1149,7 @@
+     debug_msg 1 "Wrapper"
+     mkdir $mkdirv $mkdirp $wrapper_dir/
  
      #cp $cpv $cpf wrapper.sh $wrapper_dir/opera
      generate_wrapper
 -    chmod $chmodv 755 $wrapper_dir/opera
 +    chmod $chmodv 755 $wrapper_dir/linux-opera
  
-     # Manual page
-     debug_msg 1 "Manual page"
-@@ -1210,7 +1158,7 @@
-     chmod $chmodv 755 ${man_dir}
-     mkdir $mkdirv $mkdirp ${man_dir}/man1
-     chmod $chmodv 755 ${man_dir}/man1
--    cp $cpv $cpf man/opera.1 ${man_dir}/man1
-+    cp $cpv $cpf man/opera.1 ${man_dir}/man1/linux-opera.1
- 
-     # Documentation
-     debug_msg 1 "Documentation"
-@@ -1242,13 +1190,6 @@
- 	mkdir $mkdirv $mkdirp $share_dir/ini/
- 	chmod $chmodv 755 $share_dir/ini
- 	cp $cpv $cpf $cpR ini/* $share_dir/ini/
--	if test -f $share_dir/ini/pluginpath.ini
--	then (
--	    echo
--	    echo '; locally installed:'
--	    echo "${str_localdirplugin}=1"
--	    ) >> $share_dir/ini/pluginpath.ini
--	fi
-     fi
- 
-     mkdir $mkdirv $mkdirp $share_dir/locale/
-@@ -1340,43 +1281,11 @@
- 
-     if test -z "${OPERADESTDIR}"
+     if test -z "$OPERADESTDIR"
      then
 -	# System wide configuration files
--	config_dir="/etc"
+-	case $os in AnyBSD|OpenBSD) config_dir="/usr/local/etc";; *) config_dir="/etc";; esac
+-	# TODO: work out what's going on here and replace with something that sets OPERA_ROOTPREFS to where they went !
 -	if can_write_to "$config_dir"
 -	then
--	    echo
--	    echo "System wide configuration files:"
--	    echo "  $config_dir/opera6rc"
--	    echo "  $config_dir/opera6rc.fixed"
--	    echo " would be ignored if installed with the prefix \"$prefix\"."
--	    if con_firm "Do you want to install them in $config_dir"
+-	    warn
+-	    warn "System wide configuration files:"
+-	    warn "  $config_dir/opera6rc"
+-	    warn "  $config_dir/opera6rc.fixed"
+-	    warn " would be ignored if installed with the prefix \"$prefix\"."
+-	    bool_config=1
+-	    if [ "$flag_mode" = '--interactive' ]
+-	    then con_firm "Do you want to install them in $config_dir" || bool_config=0
+-	    else warn "Installing in default location $config_dir instead."
+-	    fi
+-
+-	    if [ $bool_config -eq 1 ]
 -	    then
--		backup $config_dir/opera6rc opera6rc config
--		backup $config_dir/opera6rc.fixed opera6rc.fixed config
--		cp $cpv $cpf config/opera6rc $config_dir
--		cp $cpv $cpf config/opera6rc.fixed $config_dir
+-		if [ -f "$config_dir/opera6rc" ]
+-		then
+-		    if [ "$flag_mode" = '--interactive' ] && con_firm "$config_dir/opera6rc exists: over-write it ?"
+-		    then
+-			backup $config_dir/opera6rc opera6rc config
+-			cp $cpv $cpf etc/opera6rc $config_dir
+-		    fi
+-		else cp $cpv $cpf etc/opera6rc $config_dir
+-		fi
+-		if [ -f "$config_dir/opera6rc.fixed" ]
+-		then
+-		    if [ "$flag_mode" = '--interactive' ] && con_firm "$config_dir/opera6rc.fixed exists: over-write it ?"
+-		    then
+-			backup $config_dir/opera6rc.fixed opera6rc.fixed config
+-			cp $cpv $cpf etc/opera6rc.fixed $config_dir
+-		    fi
+-		else cp $cpv $cpf etc/opera6rc.fixed $config_dir
+-		fi
 -	    fi
 -	else
--	    echo
--	    echo "User \"${USERNAME}\" does not have write access to $config_dir"
--	    echo " System wide configuration files:"
--	    echo "  $config_dir/opera6rc"
--	    echo "  $config_dir/opera6rc.fixed"
--	    echo " were not installed."
+-	    warn
+-	    warn "User \"${USERNAME}\" does not have write access to $config_dir"
+-	    warn " System wide configuration files:"
+-	    warn "  $config_dir/opera6rc"
+-	    warn "  $config_dir/opera6rc.fixed"
+-	    warn " were not installed."
 -	fi
 -
  	# Shorcuts and Icons
  	bool_icons=1 # install icons by default
- 
 -	if test "${flag_mode}" = "--force" -o "${flag_mode}" = "--prefix="
 -	then
--	    echo
--	    echo "Shortcut icons will be ignored if installed with the prefix \"$prefix\"."
--	    con_firm "Do you want to (try to) install them in default locations" || bool_icons=0
+-	    warn
+-	    warn "Shortcut icons would be ignored if installed with the prefix \"$prefix\"."
+-	    if [ "$flag_mode" = "--force" ]
+-	    then warn "Installing them in default locations."
+-	    else bool_icons=0; warn "Ignoring them; menus shall lack nice icons."
+-	    fi
 -	fi
 -
- 	if test "${bool_icons}" -ne 0
+ 	if test "$bool_icons" -ne 0
 -	then xdg
 +	then icons
  	fi
  
      fi # OPERADESTDIR
-@@ -1428,19 +1337,19 @@
-     # arg1 = location
-     # arg2 = type
- 
--    desktop_file="${1}/opera.desktop"
-+    desktop_file="${1}/linux-opera.desktop"
-     desktop_contain='[Desktop Entry]'
- 
-     if test ${2}; then
- 	if test "${2}" = "xdg"; then
- 	    desktop_contain="${desktop_contain}
+@@ -1392,21 +1269,21 @@
+     echo '[Desktop Entry]'
+     if test -z "$1"
+     then cat <<EOF
+-Name=Opera
+-Exec=opera
+-Icon=opera.xpm
++Name=Opera (linux version)
++Exec=linux-opera
++Icon=linux-opera.xpm
+ Terminal=false
+ EOF
+     else
+ 	if test "$1" = "xdg"
+ 	then cat <<EOF
  Version=1.0
--TryExec=opera"
-+TryExec=linux-opera"
+-TryExec=opera
++TryExec=linux-opera
+ EOF
  	fi
- 
- 	desktop_contain="${desktop_contain}
+ 	cat <<EOF
  Encoding=UTF-8
 -Name=Opera
 +Name=Opera (linux version)
  Name[af]=opera
  Name[eo]=Opero
  Name[zu]=I Opera
-@@ -1464,7 +1373,7 @@
+@@ -1430,7 +1307,7 @@
  GenericName[ven]=Buronza ya Webu
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
 -Exec=opera %u
 +Exec=linux-opera %u
- Terminal=false"
+ Terminal=false
+ EOF
  
- # Application is not a category, according to
-@@ -1479,25 +1388,26 @@
- 	if test "${2}" = "xdg"; then
- 	    desktop_contain="${desktop_contain}
+@@ -1446,15 +1323,16 @@
+ 	if test "$1" = "xdg"
+ 	then cat <<EOF
  Categories=Application;Qt;Network;WebBrowser;X-Ximian-Main;X-Ximian-Toplevel
--Icon=opera.png"
-+Icon=linux-opera.png"
- 	else
- 	    desktop_contain="${desktop_contain}
--Icon=opera"
-+Icon=linux-opera"
- 	fi
- 
- 	desktop_contain="${desktop_contain}
- MimeType=text/html;text/xml;application/xhtml+xml"
-     else
- 	desktop_contain="${desktop_contain}
--Name=Opera
--Exec=opera
--Icon=opera.xpm
-+Name=Opera (linux version)
-+Exec=linux-opera
+-Icon=opera.png
 +Icon=linux-opera.png
- Terminal=0"
+ EOF
+-	else echo 'Icon=opera'
++	else echo 'Icon=linux-opera'
+ 	fi
+ 	echo 'MimeType=text/html;text/xml;application/xhtml+xml'
      fi
- 
-     desktop_contain="${desktop_contain}
+     cat <<EOF
  Comment=Web Browser
--Type=Application"
-+Type=Application
-+Categories=Application;Network;WebBrowser;"
+ Type=Application
++Categories=Application;Network;WebBrowser;
+ EOF
+ }
  
-     echo "${desktop_contain}" > ${desktop_file}
-     chmod $chmodv 644 ${desktop_file}
-@@ -1528,55 +1438,28 @@
+@@ -1462,7 +1340,7 @@
+ {
+     # arg1 = location
+     # arg2 = type
+-    desktop_content $2 > "$1/opera.desktop" && chmod $chmodv 644 "$1/opera.desktop"
++    desktop_content $2 > "$1/linux-opera.desktop" && chmod $chmodv 644 "$1/linux-opera.desktop"
+ }
+ 
+ generate_mdk_menu()
+@@ -1487,51 +1365,26 @@
  
      debug_msg 0 "in icons()"
  
@@ -331,60 +348,54 @@
 -	if test -w /usr/share
 -	then
 -	    mkdir $mkdirv $mkdirp /usr/share/icons/
--	    chmod $chmodv 755 /usr/share/icons
--	    cp $cpv $share_dir/images/opera.xpm /usr/share/icons/opera.xpm
+-	    cp $cpv $share_src/pixmaps/opera.xpm /usr/share/icons/opera.xpm
 -	fi
 -    elif test -w /usr/share/icons
--    then cp $cpv $share_dir/images/opera.xpm /usr/share/icons/opera.xpm
+-    then cp $cpv $share_src/pixmaps/opera.xpm /usr/share/icons/opera.xpm
 -    fi
 -
 -    if test ! -d /usr/share/pixmaps
--    then
--	if test -w /usr/share
--	then
--	    mkdir $mkdirv $mkdirp /usr/share/pixmaps/
--	    chmod $chmodv 755 /usr/share/pixmaps
--	    cp $cpv $share_dir/images/opera.xpm /usr/share/pixmaps/opera.xpm
--	fi
--    elif test -w /usr/share/pixmaps/
--    then cp $cpv $share_dir/images/opera.xpm /usr/share/pixmaps/opera.xpm
--    fi
--
--    if test ! -d /etc/X11/wmconfig/
 +    if test ! -d %%LOCALBASE%%/share/pixmaps/
+     then
+-	if test -w /usr/share
++	if test -w %%LOCALBASE%%/share
+ 	then
+-	    mkdir $mkdirv $mkdirp /usr/share/pixmaps/
+-	    cp $cpv $share_src/pixmaps/opera.xpm /usr/share/pixmaps/opera.xpm
++	    mkdir $mkdirv $mkdirp %%LOCALBASE%%/share/pixmaps/
++	    cp $cpv usr/share/icons/hicolor/48x48/apps/opera.png %%LOCALBASE%%/share/pixmaps/linux-opera.png
+ 	fi
+-    elif test -w /usr/share/pixmaps/
+-    then cp $cpv $share_src/pixmaps/opera.xpm /usr/share/pixmaps/opera.xpm
++    elif test -w %%LOCALBASE%%/share/pixmaps/
++    then cp $cpv usr/share/icons/hicolor/48x48/apps/opera.png %%LOCALBASE%%/share/pixmaps/linux-opera.png
+     fi
+ 
+-    if test ! -d /etc/X11/wmconfig/
++    if test ! -d %%LOCALBASE%%/share/applications/
      then
 -	if test -w /etc/X11
 +	if test -w %%LOCALBASE%%/share
  	then
 -	    mkdir $mkdirv $mkdirp /etc/X11/wmconfig/
--	    chmod $chmodv 755 /etc/X11/wmconfig
 -	    generate_wmconfig /etc/X11/wmconfig
-+	    mkdir $mkdirv $mkdirp %%LOCALBASE%%/share/pixmaps/
-+	    chmod $chmodv 755 %%LOCALBASE%%/share/pixmaps
-+	    cp $cpv $share_dir/images/opera_48x48.png %%LOCALBASE%%/share/pixmaps/linux-opera.png
- 	fi
+-	fi
 -    elif test -w /etc/X11/wmconfig/
 -    then generate_wmconfig /etc/X11/wmconfig
-+    elif test -w %%LOCALBASE%%/share/pixmaps/
-+    then cp $cpv $share_dir/images/opera_48x48.png %%LOCALBASE%%/share/pixmaps/linux-opera.png
-     fi
- 
+-    fi
+-
 -    if test -d /etc/X11/applnk/
-+    if test ! -d %%LOCALBASE%%/share/applications/
-     then
+-    then
 -	if test ! -d /etc/X11/applnk/Internet/
-+	if test -w %%LOCALBASE%%/share
- 	then
+-	then
 -	    if test -w /etc/X11/applnk
 -	    then
 -		mkdir $mkdirv $mkdirp /etc/X11/applnk/Internet/
--		chmod $chmodv 755 /etc/X11/applnk/Internet
 -		generate_desktop /etc/X11/applnk/Internet
 -	    fi
 -	elif test -w /etc/X11/applnk/Internet
 -	then generate_desktop /etc/X11/applnk/Internet
 +	    mkdir $mkdirv $mkdirp %%LOCALBASE%%/share/applications/
-+	    chmod $chmodv 755 %%LOCALBASE%%/share/applications
 +	    generate_desktop %%LOCALBASE%%/share/applications
  	fi
 +    elif test -w %%LOCALBASE%%/share/applications
