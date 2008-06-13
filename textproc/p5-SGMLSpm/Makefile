@@ -7,6 +7,7 @@
 
 PORTNAME=	SGMLSpm
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	SGMLS
@@ -20,10 +21,24 @@ USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-pre-su-install:
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
-
 INSTALL_TARGET=	install PERL5DIR=${SITE_PERL} SPECDIR=${EXAMPLESDIR}
+
+.ifndef(NOPORTDOCS)
+PORTDOCS=       *
+INSTALL_TARGET+=docs install_html HTMLDIR=${DOCSDIR}
+.endif
+.ifdef(NOPORTEXAMPLES)
+EXTRA_PATCHES=	${PATCHDIR}/noportexamples-patch-Makefile
+.endif
+
+pre-su-install:
+.ifndef(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.endif
+.ifndef(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+.endif
+
 .ifndef(NOPORTDOCS)
 PORTDOCS=	*
 INSTALL_TARGET+=docs install_html HTMLDIR=${DOCSDIR}

@@ -2,6 +2,6 @@ bin/sgmlspl
 %%SITE_PERL%%/SGMLS.pm
 %%SITE_PERL%%/SGMLS/Output.pm
 %%SITE_PERL%%/SGMLS/Refs.pm
-%%EXAMPLESDIR%%/skel.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/skel.pl
 @dirrm %%SITE_PERL%%/SGMLS
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
