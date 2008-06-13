@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	FreeImage${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An open source graphics library
 
 WRKSRC=		${WRKDIR}/FreeImage
@@ -22,10 +22,9 @@ USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qoa
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	include/FreeImage.h \
+		lib/libfreeimage.a \
+		lib/libfreeimage.so \
+		lib/libfreeimage.so.3
 
-.if ${ARCH} == "amd64"
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
