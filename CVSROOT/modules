@@ -9760,6 +9760,7 @@ p5-Cvs		ports/devel/p5-Cvs
 p5-DBD-AnyData	ports/databases/p5-DBD-AnyData
 p5-DBD-CSV	ports/databases/p5-DBD-CSV
 p5-DBD-Excel	ports/databases/p5-DBD-Excel
+p5-DBD-FrontBase	ports/databases/p5-DBD-FrontBase
 p5-DBD-Google	ports/databases/p5-DBD-Google
 p5-DBD-InterBase	ports/databases/p5-DBD-InterBase
 p5-DBD-LDAP	ports/databases/p5-DBD-LDAP
