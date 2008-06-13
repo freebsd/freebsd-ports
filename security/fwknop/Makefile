@@ -8,6 +8,7 @@
 
 PORTNAME=	fwknop
 PORTVERSION=	1.8.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.cipherdyne.org/fwknop/download/
 
@@ -32,6 +33,7 @@ MAN8=		fwknop.8 fwknopd.8 knopmd.8 knopwatchd.8
 MANCOMPRESSED=	yes
 
 NO_BUILD=	yes
+IS_INTERACTIVE=	yes
 USE_PERL5_BUILD=yes
 
 post-patch:
