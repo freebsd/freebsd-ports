@@ -3517,6 +3517,7 @@ fvwm95-i18n	ports/x11-wm/fvwm95-i18n
 fwanalog	ports/security/fwanalog
 fwbuilder	ports/security/fwbuilder
 fwipe		ports/security/fwipe
+fwknop		ports/security/fwknop
 fwlogwatch	ports/security/fwlogwatch
 fwtk		ports/security/fwtk
 fxscintilla	ports/x11-toolkits/fxscintilla
