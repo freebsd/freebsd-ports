@@ -1390,6 +1390,7 @@
     SUBDIR += webkit-gtk2
     SUBDIR += weblint
     SUBDIR += weblint++
+    SUBDIR += webobjects
     SUBDIR += webredirect
     SUBDIR += webreport
     SUBDIR += webresolve
