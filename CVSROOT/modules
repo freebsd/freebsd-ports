@@ -8881,6 +8881,7 @@ openam		ports/net/openam
 openarena	ports/games/openarena
 openastromenace	ports/games/openastromenace
 openbabel	ports/science/openbabel
+openbase-jdbc	ports/databases/openbase-jdbc
 openbgpd	ports/net/openbgpd
 openbox		ports/x11-wm/openbox
 openbox-themes	ports/x11-themes/openbox-themes
