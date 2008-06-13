@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Calendar-Japanese-Era
-PORTVERSION=	0.07
+PORTVERSION=	0.08000
 CATEGORIES=	japanese devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	ja-p5-
@@ -15,6 +15,7 @@ MAINTAINER=	markun@onohara.to
 COMMENT=	DateTime Extension for Japanese Eras
 
 BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
