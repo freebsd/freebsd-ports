@@ -1,0 +1,11 @@
+JTOpen is the open source version of the IBM Toolbox for Java
+licensed program product.  The IBM Toolbox for Java is a library
+of Java classes supporting the client/server and internet programming
+models to a system running OS/400 or i5/OS. The classes can be used
+by Java applets, servlets, and applications to easily access OS/400
+and i5/OS data and resources.
+
+The Toolbox does not require additional client support over and
+above what is provided by the Java Virtual Machine and TCP/IP.
+
+WWW:	http://jt400.sourceforge.net/
