@@ -7,13 +7,14 @@
 
 PORTNAME=	bamg
 PORTVERSION=	0.68
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math science
 MASTER_SITES=	http://pauillac.inria.fr/cdrom/ftp/bamg/	\
 		http://www-rocq1.inria.fr/gamma/cdrom/ftp/bamg/	\
 		http://ftp.tuniv.szczecin.pl/pub/Linux/Scilab/INRIA/Gamma/bamg/
-.if !defined(NOPORTDOCS)
-DISTFILES=	${PORTNAME}${EXTRACT_SUFX} ${PORTNAME}.ps.gz
+DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
+.ifndef(NOPORTDOCS)
+DISTFILES+=	${PORTNAME}.ps.gz
 EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 .endif
 
@@ -30,17 +31,17 @@ USE_GMAKE=	yes
 ALL_TARGET=	world
 INSTALL_TARGET=	install-world
 
-MAKE_ENV=	CXX=${CXX} HOSTTYPE=${HOSTTYPE}
-
 BINS=		bamg bamg-g cvmsh2 drawbdmesh
 EXDIRS=		NACA012 quadloop square test
 
 .include <bsd.port.pre.mk>
 
-HOSTTYPE!=	${UNAME} -s
+.pre-configure:
+HOSTTYPE=	${UNAME} -s
+MAKE_ENV=       CXX=${CXX} HOSTTYPE=${${HOSTTYPE}}
 
 post-patch:
-	@${MV} ${WRKSRC}/FLAG.linux ${WRKSRC}/FLAG.${HOSTTYPE}
+	@${MV} ${WRKSRC}/FLAG.linux ${WRKSRC}/FLAG.${${HOSTTYPE}}
 	@${MV} ${WRKSRC}/FLAG.linux.orig ${WRKSRC}/FLAG.linux
 
 post-install:
@@ -49,7 +50,7 @@ post-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/bamg.ps.gz ${DOCSDIR}
+	@${GZCAT} ${DISTDIR}/${PORTNAME}.ps.gz > ${DOCSDIR}/${PORTNAME}.ps
 	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
 .for exdir in ${EXDIRS}
 	@${MKDIR} ${EXAMPLESDIR}/${exdir}

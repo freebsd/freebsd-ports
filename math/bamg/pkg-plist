@@ -2,33 +2,33 @@ bin/bamg
 bin/bamg-g
 bin/cvmsh2
 bin/drawbdmesh
-%%PORTDOCS%%%%DOCSDIR%%/bamg.ps.gz
-%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/ad.sh
-%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/adap.sh
-%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/adap.sh-g
-%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/data
-%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/data-orign
-%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/naca.awk
-%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/plot.fv
-%%PORTDOCS%%%%EXAMPLESDIR%%/NACA012/plot.fv-1
-%%PORTDOCS%%%%EXAMPLESDIR%%/quadloop/dotest.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/square/circle_g.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/square/doadapt
-%%PORTDOCS%%%%EXAMPLESDIR%%/square/dotest
-%%PORTDOCS%%%%EXAMPLESDIR%%/square/l_g.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/square/octogone_g.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/square/square_g.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/square/square_raf_ani_g.mtr
-%%PORTDOCS%%%%EXAMPLESDIR%%/square/square_raf_g.msh
-%%PORTDOCS%%%%EXAMPLESDIR%%/square/square_raf_g.mtr
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/dotest-o.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/dotest.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/dotest1.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/dotest2.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/test/dotest3.pl
+%%PORTDOCS%%%%DOCSDIR%%/bamg.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NACA012/ad.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NACA012/adap.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NACA012/adap.sh-g
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NACA012/data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NACA012/data-orign
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NACA012/naca.awk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NACA012/plot.fv
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NACA012/plot.fv-1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quadloop/dotest.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/square/circle_g.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/square/doadapt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/square/dotest
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/square/l_g.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/square/octogone_g.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/square/square_g.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/square/square_raf_ani_g.mtr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/square/square_raf_g.msh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/square/square_raf_g.mtr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/dotest-o.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/dotest.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/dotest1.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/dotest2.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test/dotest3.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/NACA012
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/quadloop
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/square
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/test
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/NACA012
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/quadloop
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/square
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
