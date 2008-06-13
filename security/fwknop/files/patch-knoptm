@@ -1,0 +1,20 @@
+--- knoptm.orig        2007-11-21 20:59:13.000000000 +0200
++++ knoptm     2007-11-21 21:03:43.000000000 +0200
+@@ -35,7 +35,7 @@
+ # $Id: knoptm 771 2007-09-15 13:52:22Z mbr $
+ #
+ 
+-use lib '/usr/lib/fwknop';
++use lib '%%PREFIX%%/lib/fwknop';
+ use Unix::Syslog qw(:subs :macros);
+ use Net::IPv4Addr qw(ipv4_in_network);
+ use IO::Socket;
+@@ -46,7 +46,7 @@
+ use Getopt::Long;
+ use strict;
+ 
+-my $config_file  = '/etc/fwknop/fwknop.conf';
++my $config_file  = '%%PREFIX%%/etc/fwknop/fwknop.conf';
+ my $user_rc_file = '';
+ 
+ my $version = '1.8.2';

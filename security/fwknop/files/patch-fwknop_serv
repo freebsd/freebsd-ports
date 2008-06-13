@@ -1,0 +1,11 @@
+--- fwknop_serv.orig   2007-11-21 20:59:13.000000000 +0200
++++ fwknop_serv        2007-11-21 21:02:08.000000000 +0200
+@@ -22,7 +22,7 @@
+ use POSIX;
+ use strict;
+ 
+-my $config_file = '/etc/fwknop/fwknop.conf';
++my $config_file = '%%PREFIX%%/etc/fwknop/fwknop.conf';
+ my %config = ();
+ 
+ my @required_vars = qw(

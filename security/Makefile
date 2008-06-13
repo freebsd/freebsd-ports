@@ -150,6 +150,7 @@
     SUBDIR += fwanalog
     SUBDIR += fwbuilder
     SUBDIR += fwipe
+    SUBDIR += fwknop
     SUBDIR += fwlogwatch
     SUBDIR += fwtk
     SUBDIR += gag

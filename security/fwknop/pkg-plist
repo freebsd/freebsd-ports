@@ -1,0 +1,44 @@
+bin/fwknop
+sbin/fwknop_serv
+sbin/fwknopd
+sbin/knopmd
+sbin/knoptm
+sbin/knopwatchd
+
+etc/fwknop/access.conf
+etc/fwknop/fwknop.conf
+etc/fwknop/pf.os
+etc/rc.d/fwknop
+
+lib/fwknop/NetPacket.pm
+lib/fwknop/NetPacket/ARP.pm
+lib/fwknop/NetPacket/Ethernet.pm
+lib/fwknop/NetPacket/ICMP.pm
+lib/fwknop/NetPacket/IGMP.pm
+lib/fwknop/NetPacket/IP.pm
+lib/fwknop/NetPacket/TCP.pm
+lib/fwknop/NetPacket/UDP.pm
+lib/fwknop/i386-freebsd-64int/auto/NetPacket/.packlist
+lib/fwknop/i386-freebsd-64int/perllocal.pod
+lib/fwknop/lib/perl5/5.8.8/man/man3/NetPacket.3
+lib/fwknop/lib/perl5/5.8.8/man/man3/NetPacket::ARP.3
+lib/fwknop/lib/perl5/5.8.8/man/man3/NetPacket::Ethernet.3
+lib/fwknop/lib/perl5/5.8.8/man/man3/NetPacket::ICMP.3
+lib/fwknop/lib/perl5/5.8.8/man/man3/NetPacket::IGMP.3
+lib/fwknop/lib/perl5/5.8.8/man/man3/NetPacket::IP.3
+lib/fwknop/lib/perl5/5.8.8/man/man3/NetPacket::TCP.3
+lib/fwknop/lib/perl5/5.8.8/man/man3/NetPacket::UDP.3
+
+@dirrm lib/fwknop/lib/perl5/5.8.8/man/man3
+@dirrm lib/fwknop/lib/perl5/5.8.8/man
+@dirrm lib/fwknop/lib/perl5/5.8.8
+@dirrm lib/fwknop/lib/perl5
+@dirrm lib/fwknop/lib
+@dirrm lib/fwknop/i386-freebsd-64int/auto/NetPacket
+@dirrm lib/fwknop/i386-freebsd-64int/auto
+@dirrm lib/fwknop/i386-freebsd-64int
+@dirrm lib/fwknop/NetPacket
+@dirrm lib/fwknop
+@dirrm etc/fwknop/archive
+@dirrm etc/fwknop
+

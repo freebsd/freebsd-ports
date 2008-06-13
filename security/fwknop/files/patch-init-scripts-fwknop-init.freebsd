@@ -1,0 +1,18 @@
+--- init-scripts/fwknop-init.freebsd.orig	2007-06-01 02:55:08.000000000 +0000
++++ init-scripts/fwknop-init.freebsd	2008-06-13 02:47:25.000000000 +0000
+@@ -14,13 +14,13 @@
+ fwknop_start()
+ {
+ 	echo "Starting fwknop."
+-	/usr/sbin/fwknopd
++	%%PREFIX%%/sbin/fwknopd
+ }
+ 
+ fwknop_stop()
+ {
+ 	echo "Stopping fwknop."
+-	/usr/sbin/fwknopd --Kill
++	%%PREFIX%%/sbin/fwknopd --Kill
+ }
+ 
+ load_rc_config $name

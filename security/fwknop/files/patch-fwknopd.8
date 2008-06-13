@@ -1,0 +1,112 @@
+--- fwknopd.8.orig     2007-11-21 20:59:13.000000000 +0200
++++ fwknopd.8  2007-11-21 21:02:20.000000000 +0200
+@@ -26,7 +26,7 @@
+ and
+ .B access.conf
+ within the
+-.B /etc/fwknop
++.B %%PREFIX%%/etc/fwknop
+ directory, and configuration variables within these files are desribed below.
+ .SH OPTIONS
+ .TP
+@@ -34,7 +34,7 @@
+ When run in server mode
+ .B fwknop
+ references the file
+-.B /etc/fwknop/fwknop.conf
++.B %%PREFIX%%/etc/fwknop/fwknop.conf
+ for various run-time configuration
+ variables.  The path to this file can be changed through the use of the
+ .B --config
+@@ -42,7 +42,7 @@
+ .TP
+ .BR \-i "\fR,\fP " \-\^\-intf\ \<interface>
+ Manually specify interface on which to sniff, e.g. "-i eth0".  This option
+-is not usually needed because the PCAP_INTF keyword in /etc/fwknop/fwknop.conf
++is not usually needed because the PCAP_INTF keyword in %%PREFIX%%/etc/fwknop/fwknop.conf
+ file defines the sniffing interface.
+ .TP
+ .BR \-\^\-fw-list
+@@ -80,32 +80,32 @@
+ .BR \-V "\fR,\fP " \-\^\-Version
+ Display version information and exit.
+ .SH FILES
+-.B /etc/fwknop/fwknop.conf
++.B %%PREFIX%%/etc/fwknop/fwknop.conf
+ .RS
+ The main configuration file for
+ .B fwknop.
+ .RE
+ 
+-.B /etc/fwknop/access.conf
++.B %%PREFIX%%/etc/fwknop/access.conf
+ .RS
+ Defines all knock sequences and access control directives.
+ .RE
+ 
+-.B /etc/fwknop/pf.os
++.B %%PREFIX%%/etc/fwknop/pf.os
+ .RS
+ Defines p0f signatures used by fwknop.
+ .RE
+ .SH FWKNOP CONFIG AND ACCESS VARIABLES
+ .B fwknop
+ references the file
+-.B /etc/fwknop/fwknop.conf
++.B %%PREFIX%%/etc/fwknop/fwknop.conf
+ for configuration variables such as the path to the firewall logfile,
+ the sleep interval fwknop uses to check for new log messages, and
+ paths to system binaries, etc.  The
+ .B fwknop
+ config file does not define any access control directives; they are
+ located in the file
+-.B /etc/fwknop/access.conf.
++.B %%PREFIX%%/etc/fwknop/access.conf.
+ Access control directives define encryption keys and level of access that
+ is granted to an fwknop client that has generated the appropriate encrypted
+ message.  This file is referenced for this information when run in either
+@@ -116,7 +116,7 @@
+ legacy knock sequence) will be accepted.  The string "ANY" is also
+ accepted if a valid authorization packet should be honored from any source
+ IP.  Every authorization stanza in
+-.B /etc/fwknop/access.conf
++.B %%PREFIX%%/etc/fwknop/access.conf
+ definition must start with the SOURCE keyword.  Networks can be
+ specified in either CIDR (e.g. "192.168.10.0/24") or regular (e.g.
+ "192.168.10.0/255.255.255.0") notation, and individual IP addresses
+@@ -178,7 +178,7 @@
+ on the client, but each fwknopd server should have its own gpg key that is
+ generated specifically for fwknop communications.  The reason for this is
+ that the decryption password for the server key must be placed within the
+-.B /etc/fwknop/access.conf
++.B %%PREFIX%%/etc/fwknop/access.conf
+ file for fwknopd to function (it has to be able to decrypt SPA messages that
+ have been encrypted with the server's public key).  For more information on
+ using fwknop with GnuPG keys, see the following link:
+@@ -204,7 +204,7 @@
+ Define the path to the GnuPG directory to be used by the
+ .B fwknopd
+ server.  If this keyword is not specified within
+-.B /etc/fwknop/access.conf
++.B %%PREFIX%%/etc/fwknop/access.conf
+ then fwknopd will default to using the /root/.gnupg directory for the server key(s).
+ .TP
+ .B FW_ACCESS_TIMEOUT: <seconds>
+@@ -235,7 +235,7 @@
+ "Linux:2.4::Linux 2.4/2.6" or "OpenBSD:3.0-3.5::OpenBSD 3.0-3.5"
+ before a knock sequence will be accepted.  The fingerprints are listed
+ in
+-.B /etc/fwknop/pf.os.
++.B %%PREFIX%%/etc/fwknop/pf.os.
+ Note that the corresponding knock sequence must utilize the tcp protocol
+ (this is only be an issue for shared sequences since encrypted sequences
+ use tcp by default) since OS fingerprinting requires tcp syn packets.
+@@ -281,7 +281,7 @@
+ starting at a default port of 61000.  This value can be changed
+ through the use of the PORT_OFFSET variable.  The PORT_OFFSET
+ is optional and will be set to 61000 by fwknop if it is not specified
+-in /etc/fwknop/access.conf.
++in %%PREFIX%%/etc/fwknop/access.conf.
+ .TP
+ .B MIN_TIME_DIFF: <seconds>
+ Set the minimum number of seconds that must pass between successive

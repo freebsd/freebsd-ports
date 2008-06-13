@@ -1,0 +1,20 @@
+--- fwknop.orig        2007-11-21 20:59:13.000000000 +0200
++++ fwknop     2007-11-21 21:01:29.000000000 +0200
+@@ -37,7 +37,7 @@
+ # $Id: fwknop 586 2006-11-04 20:45:49Z mbr $
+ #
+ 
+-use lib '/usr/lib/fwknop';
++use lib '%%PREFIX%%/lib/fwknop';
+ use Crypt::CBC;
+ use Net::IPv4Addr qw(ipv4_in_network);
+ use Net::Ping::External qw(ping);
+@@ -975,7 +975,7 @@
+         } else {
+             print
+ "[+] Enter an encryption key. This key must match a key in the file\n",
+-"    /etc/fwknop/access.conf on the remote system.\n\n" unless $quiet;
++"    %%PREFIX%%/etc/fwknop/access.conf on the remote system.\n\n" unless $quiet;
+         }
+         my $try = 0;
+         my $max_tries = 20;
