@@ -1,0 +1,26 @@
+bin/httpry
+%%EXTRASCRIPTS%%bin/httpry-scripts/parse_log.pl
+%%EXTRASCRIPTS%%bin/httpry-scripts/rotate_log.pl
+%%EXTRASCRIPTS%%bin/httpry-scripts/process_logs
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/db_dump.mysql
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/find_proxies.pm
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/db_dump.cfg
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/content_analysis.pm
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/hostnames.pm
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/search_terms.pm
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/find_proxies.cfg
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/log_summary.pm
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/xml_output.css
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/hostnames.cfg
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/xml_output.pm
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/xml_output.cfg
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/db_dump.pm
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/content_analysis.cfg
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/search_terms.cfg
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/sample_plugin.pm
+%%EXTRASCRIPTS%%bin/httpry-scripts/plugins/log_summary.cfg
+%%PORTDOCS%%%%DOCSDIR%%/perl-tools
+%%PORTDOCS%%%%DOCSDIR%%/format-string
+%%EXTRASCRIPTS%%@dirrm bin/httpry-scripts/plugins
+%%EXTRASCRIPTS%%@dirrm bin/httpry-scripts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
