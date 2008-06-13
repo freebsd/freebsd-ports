@@ -343,6 +343,7 @@
     SUBDIR += jkill
     SUBDIR += jps
     SUBDIR += jtop
+    SUBDIR += jtopen
     SUBDIR += k3b
     SUBDIR += k8temp
     SUBDIR += kcpuload

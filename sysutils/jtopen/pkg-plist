@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+%%JAVAJARDIR%%/composer.jar
+%%JAVAJARDIR%%/jt400.jar
+%%JAVAJARDIR%%/jt400Proxy.jar
+%%JAVAJARDIR%%/jt400Servlet.jar
+%%JAVAJARDIR%%/jui400.jar
+%%JAVAJARDIR%%/outputwriters.jar
+%%JAVAJARDIR%%/reportwriter.jar
+%%JAVAJARDIR%%/tes.jar
+%%JAVAJARDIR%%/uitools.jar
+%%JAVAJARDIR%%/util400.jar
+%%PORTDOCS%%%%DOCSDIR%%/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/readme.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
