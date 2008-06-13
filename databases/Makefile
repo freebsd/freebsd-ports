@@ -67,6 +67,7 @@
     SUBDIR += freetds
     SUBDIR += freetds-msdblib
     SUBDIR += frontbase
+    SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
     SUBDIR += gauche-gdbm
     SUBDIR += gbib
