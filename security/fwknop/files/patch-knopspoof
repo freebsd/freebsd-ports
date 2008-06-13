@@ -1,0 +1,11 @@
+--- knopspoof.orig     2007-11-21 20:59:13.000000000 +0200
++++ knopspoof  2007-11-21 21:03:35.000000000 +0200
+@@ -36,7 +36,7 @@
+ # $Id: knopspoof 346 2005-09-13 02:23:08Z mbr $
+ #
+ 
+-use lib '/usr/lib/fwknop';
++use lib '%%PREFIX%%/lib/fwknop';
+ use Net::RawIP;
+ use strict;
+ 

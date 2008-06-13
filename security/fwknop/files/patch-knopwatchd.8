@@ -1,0 +1,15 @@
+--- knopwatchd.8.orig  2007-11-21 20:59:13.000000000 +0200
++++ knopwatchd.8       2007-11-21 21:03:49.000000000 +0200
+@@ -11,10 +11,10 @@
+ and fwknop are running on the box.  If any of the three daemons
+ have died, knopwatchd will restart the daemon and notify each
+ email address listed in the EMAIL_ADDRESSES variable (see
+-/etc/fwknop/knopwatchd.conf) that the daemon has been restarted.
++%%PREFIX%%/fwknop/knopwatchd.conf) that the daemon has been restarted.
+ .B knopwatchd
+ uses the knopwatchd.conf configuration file which by default is
+-located at /etc/fwknop/knopwatchd.conf, but a different path can be specified
++located at %%PREFIX%%/etc/fwknop/knopwatchd.conf, but a different path can be specified
+ on the command line.
+ 
+ .SH SEE ALSO

@@ -1,0 +1,20 @@
+--- fwknopd.orig       2007-11-21 20:59:13.000000000 +0200
++++ fwknopd    2007-11-21 21:02:31.000000000 +0200
+@@ -40,7 +40,7 @@
+ # $Id: fwknopd 583 2006-11-04 20:43:01Z mbr $
+ #
+ 
+-use lib '/usr/lib/fwknop';
++use lib '%%PREFIX%%/lib/fwknop';
+ use Crypt::CBC;
+ use Unix::Syslog qw(:subs :macros);
+ use Net::IPv4Addr qw(ipv4_in_network);
+@@ -59,7 +59,7 @@
+ use Getopt::Long;
+ use strict;
+ 
+-my $config_file = '/etc/fwknop/fwknop.conf';
++my $config_file = '%%PREFIX%%/etc/fwknop/fwknop.conf';
+ 
+ my $version = '1.8.3';
+ my $revision_svn = '$Revision: 809 $';
