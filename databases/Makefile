@@ -66,6 +66,7 @@
     SUBDIR += fpc-sqlite
     SUBDIR += freetds
     SUBDIR += freetds-msdblib
+    SUBDIR += frontbase
     SUBDIR += gadfly
     SUBDIR += gauche-gdbm
     SUBDIR += gbib
