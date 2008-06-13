@@ -1407,6 +1407,7 @@
     SUBDIR += wml
     SUBDIR += wnews
     SUBDIR += woadaptor
+    SUBDIR += woadaptor-cgi
     SUBDIR += wordpress
     SUBDIR += wordpress-mu
     SUBDIR += wsdlpull
