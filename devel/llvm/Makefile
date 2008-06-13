@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -26,7 +27,7 @@ USE_PERL5_BUILD=yes
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 .else
-CONFIGURE_FLAGS+=	--enable-optimized
+CONFIGURE_ARGS+=	--enable-optimized
 .endif
 
 MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
