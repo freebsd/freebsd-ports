@@ -17469,6 +17469,7 @@ wmxss		ports/x11/wmxss
 wmymail		ports/mail/wmymail
 wmzazof		ports/sysutils/wmzazof
 wnews		ports/www/wnews
+woadaptor	ports/www/woadaptor
 wol		ports/net/wol
 wolf3d		ports/games/wolf3d
 wolfpack	ports/games/wolfpack
