@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	snownews
-PORTVERSION=	1.5.7
-PORTREVISION=	2
+PORTVERSION=	1.5.9
 CATEGORIES=	www
 MASTER_SITES=	http://kiza.kcore.de/software/snownews/download/
 
@@ -58,11 +57,10 @@ pre-everything::
 	@${ECHO_MSG} " "
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|#!/usr/bin/perl|#!${PERL}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS+=|g' ${WRKSRC}/platform_settings
-	@${REINPLACE_CMD} -e 's|^PREFIX|#PREFIX|' ${WRKSRC}/platform_settings
+	@${REINPLACE_CMD} -e 's|#!/usr/local/bin/perl|#!${PERL}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|make|${GMAKE}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/Makefile
 .if defined(WITHOUT_NLS)
 	${REINPLACE_CMD} -e 's/ install-locales / /g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's/ locales$$//g' ${WRKSRC}/Makefile

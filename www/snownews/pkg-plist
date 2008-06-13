@@ -1,7 +1,7 @@
 %%OPML%%bin/opml2snow
 %%OPML%%bin/snow2opml
 bin/snownews
-bin/snowsync
+%%NLS%%share/locale/be@latin/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/de/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/es/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/snownews.mo
@@ -11,9 +11,17 @@ bin/snowsync
 %%NLS%%share/locale/pl/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/snownews.mo
+%%NLS%%share/locale/se/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/snownews.mo
+%%NLS%%share/locale/uk_UA/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/snownews.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/snownews.mo
+@dirrmtry share/locale/uk_UA/LC_MESSAGES
+@dirrmtry share/locale/uk_UA
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrmtry man/fr/man1
 @dirrmtry man/fr
 @dirrmtry man/de/man1
