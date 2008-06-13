@@ -17274,6 +17274,7 @@ webkit-gtk2	ports/www/webkit-gtk2
 weblint		ports/www/weblint
 weblint++	ports/www/weblint++
 webmin		ports/sysutils/webmin
+webobjects	ports/www/webobjects
 webredirect	ports/www/webredirect
 webreport	ports/www/webreport
 webresolve	ports/www/webresolve
