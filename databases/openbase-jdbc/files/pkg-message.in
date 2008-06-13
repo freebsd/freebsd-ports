@@ -1,0 +1,7 @@
+
+OpenBase JDBC support installed!
+
+OpenBaseJDBC.jar resides in
+%%JAVAJARDIR%%/OpenBaseJDBC.jar
+Add this to your CLASSPATH!
+

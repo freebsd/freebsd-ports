@@ -188,6 +188,7 @@
     SUBDIR += namazu2
     SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3
+    SUBDIR += openbase-jdbc
     SUBDIR += opendbx
     SUBDIR += oracle7-client
     SUBDIR += oracle8-client
