@@ -16525,6 +16525,7 @@ tmux		ports/misc/tmux
 tmw		ports/games/tmw
 tn-aspell	ports/textproc/tn-aspell
 tn5250		ports/net/tn5250
+tn5250j		ports/net/tn5250j
 tnef		ports/converters/tnef
 tnef2txt	ports/textproc/tnef2txt
 tnftp		ports/ftp/tnftp
