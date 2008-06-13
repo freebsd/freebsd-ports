@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	safecat
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	sysutils mail
-MASTER_SITES=	http://budney.homeunix.net:8080/users/budney/linux/software/safecat/ \
+MASTER_SITES=	http://jeenyus.net/~budney/linux/software/safecat/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file
 
