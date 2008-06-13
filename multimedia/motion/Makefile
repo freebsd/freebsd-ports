@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	motion
-PORTVERSION=	3.2.10
+PORTVERSION=	3.2.10.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 PATCH_SITES=	http://www.lavrsen.dk/twiki/pub/Motion/FreeBSDPatch/
-PATCHFILES=	motion-3.2.10.port-freebsd.diff.gz
+PATCHFILES=	motion-3.2.10.1.port-freebsd.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ack@telefonica.net
