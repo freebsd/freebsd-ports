@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Install
-PORTVERSION=	0.72
+PORTVERSION=	0.75
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -40,7 +40,8 @@ MAN3=		inc::Module::Install.3 \
 		Module::Install::Makefile.3 \
     		Module::Install::PAR.3 \
 		Module::Install::Philosophy.3 \
-		Module::Install::Share.3
+		Module::Install::Share.3 \
+		Module::Install::With.3
 
 .include <bsd.port.pre.mk>
 
