@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="022baf71-38e6-11dd-8d34-00e0815b8da8">
+    <topic>Courier Authentication Library -- SQL Injection</topic>
+    <affects>
+      <package>
+	<name>courier-authlib</name>
+	<range><lt>0.60.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/30591/">
+	  <p>A vulnerability has been reported in the Courier Authentication
+	  Library, which can be exploited by malicious people to conduct SQL
+	  injection attacks.</p>
+	  <p>Input passed via e.g. the username to the library is not properly
+	  sanitised before being used in SQL queries. This can be exploited to
+	  manipulate SQL queries by injecting arbitrary SQL code and e.g.
+	  potentially bypass authentication.</p>
+	  <p>Successful exploitation requires that a MySQL database is used for
+	  authentication and that a Non-Latin character set is selected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/30591/</url>
+    </references>
+    <dates>
+      <discovery>2008-06-10</discovery>
+      <entry>2008-06-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="90db9983-2f53-11dd-a0d8-0016d325a0ed">
     <topic>ikiwiki -- cleartext passwords</topic>
     <affects>
