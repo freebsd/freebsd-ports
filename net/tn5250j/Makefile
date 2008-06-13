@@ -1,0 +1,58 @@
+# New ports collection makefile for:	tn5250j
+# Date created:		2008-06-12
+# Whom:			Marcin Cieslak <saper@SYSTEM.PL>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	tn5250j
+PORTVERSION=	0.6.0
+CATEGORIES=	net java
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+
+MAINTAINER=	saper@SYSTEM.PL
+COMMENT=	A 5250 terminal emulator for the AS/400 written in Java
+
+BUILD_DEPENDS=	${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail \
+		${JYTHON_JAR}:${PORTSDIR}/lang/jython \
+		${JAVAJARDIR}/jt400.jar:${PORTSDIR}/sysutils/jtopen
+RUN_DEPENDS=	${JAVAJARDIR}/itext.jar:${PORTSDIR}/devel/itext \
+		${JAVAJARDIR}/log4j.jar:${PORTSDIR}/devel/log4j
+
+USE_ZIP=	yes
+USE_ANT=	yes
+USE_JAVA=	1.3+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_DOS2UNIX=	build.xml
+
+ALL_TARGET=	package
+MAKE_ENV+=	CLASSPATH=${JYTHON_PREFIX}
+MAKE_ARGS+=	-Dlib.dir=${JAVALIBDIR}
+
+JYTHON_VER?=	22
+JYTHON_PREFIX?=	${LOCALBASE}/lib/jython${JYTHON_VER}
+JYTHON_JAR=	${JYTHON_PREFIX}/jython.jar
+
+DOC_FILES=	CHANGELOG.txt applet.txt filetransfers.txt readme.txt antbuild.txt\
+		 e-mail.txt macros.txt scripting.txt
+
+SUB_FILES=	tn5250j
+SUB_LIST=	JYTHON_JAR=${JYTHON_JAR}
+
+.include <bsd.port.pre.mk>
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/tn5250j ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/build/tn5250j.jar ${JAVAJARDIR}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for d in ${DOC_FILES}
+	${INSTALL_MAN} ${WRKSRC}/src/${d} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>
