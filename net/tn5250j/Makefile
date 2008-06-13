@@ -7,6 +7,7 @@
 
 PORTNAME=	tn5250j
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +18,8 @@ COMMENT=	A 5250 terminal emulator for the AS/400 written in Java
 
 BUILD_DEPENDS=	${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail \
 		${JYTHON_JAR}:${PORTSDIR}/lang/jython \
-		${JAVAJARDIR}/jt400.jar:${PORTSDIR}/sysutils/jtopen
-RUN_DEPENDS=	${JAVAJARDIR}/itext.jar:${PORTSDIR}/devel/itext \
+		${JAVAJARDIR}/jt400.jar:${PORTSDIR}/sysutils/jtopen \
+		${JAVAJARDIR}/itext.jar:${PORTSDIR}/devel/itext \
 		${JAVAJARDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 
 USE_ZIP=	yes
