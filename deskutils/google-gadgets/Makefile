@@ -20,7 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus \
 		${LOCALBASE}/libdata/pkgconfig/libxml-2.0.pc:${PORTSDIR}/textproc/libxml2 \
 		${LOCALBASE}/libdata/pkgconfig/firefox-gtkmozembed.pc:${PORTSDIR}/www/firefox \
 		${LOCALBASE}/libdata/pkgconfig/cairo.pc:${PORTSDIR}/graphics/cairo \
-		${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc:${PORTSDIR}/graphics/librsvg2
+		${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc:${PORTSDIR}/graphics/librsvg2 \
+		zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
@@ -33,9 +34,13 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -Wno-deprecated-declarations" CPPFLAGS="-I${LOCALBASE}/include -Wno-deprecated-declarations" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-qt-host --enable-ltdl-install=no
-USE_AUTOTOOLS=	libtool:15:env autoconf:261:env automake:110:env aclocal:110:env
+USE_AUTOTOOLS=	libtool:15:env autoconf:261:env automake:110:env aclocal:110:env libltdl:15
+
+OPTIONS=	DEBUGGING	"Enable debug output on runtime"	on
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUGGING)
 CONFIGURE_ARGS+=	--enable-debug
@@ -47,4 +52,4 @@ post-patch:
 pre-configure:
 	@cd ${WRKSRC} && ${SH} autotools/bootstrap.sh && ${CP} ${AUTOMAKE_DIR}/mkinstalldirs libltdl/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
