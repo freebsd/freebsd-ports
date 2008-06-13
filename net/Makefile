@@ -931,6 +931,7 @@
     SUBDIR += tinyfugue
     SUBDIR += tinyldap
     SUBDIR += tn5250
+    SUBDIR += tn5250j
     SUBDIR += tptest
     SUBDIR += traceroute
     SUBDIR += traff
