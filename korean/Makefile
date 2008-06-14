@@ -37,6 +37,7 @@
     SUBDIR += johabfonts
     SUBDIR += kaistfonts
     SUBDIR += kde3-i18n
+    SUBDIR += ko.TeX-fonts-base
     SUBDIR += libhangul
     SUBDIR += linuxdoc-sgml
     SUBDIR += man-doc
