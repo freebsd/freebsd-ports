@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	Unicode-Unihan
-DISTVERSION=	0.03
+DISTVERSION=	0.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/D/DA/DANKOGAI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	The Unihan Data Base 5.0.0
+COMMENT=	The Unihan Data Base 5.1.0
 
 PERL_CONFIGURE=	yes
 
