@@ -5,11 +5,11 @@ etc/nb.conf.sample
 @exec mkdir -p %D/share/nanoblogger/default/parts
 @exec mkdir -p %D/share/nanoblogger/default/cache
 @exec mkdir -p %D/share/nanoblogger/default/plugins
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/nanoblogger.html
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/nanoblogger.html
 %%DATADIR%%/default/articles/example.txt
 %%DATADIR%%/default/atom.xml
 %%DATADIR%%/default/blog.conf
