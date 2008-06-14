@@ -278,6 +278,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	queue.3 \
 	random.3 \
 	rb.3 \
+	re.3 \
 	regexp.3 \
 	registry.3 \
 	release_handler.3 \
@@ -308,6 +309,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	snmpa_mpd.3 \
 	snmpa_network_interface.3 \
 	snmpa_network_interface_filter.3 \
+	snmpa_notification_delivery_info_receiver.3 \
 	snmpa_notification_filter.3 \
 	snmpa_supervisor.3 \
 	snmpc.3 \
