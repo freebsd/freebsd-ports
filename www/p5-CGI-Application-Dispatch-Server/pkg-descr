@@ -1,0 +1,4 @@
+CGI::Application::Dispatch::Server
+A simple HTTP server for developing apps that use CGI::Application::Dispatch
+
+WWW: http://search.cpan.org/~markstos/CGI-Application-Dispatch-Server-0.52/
