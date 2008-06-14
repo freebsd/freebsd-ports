@@ -33,6 +33,8 @@ DESKTOP_ENTRIES="GNUitar" \
 		"" \
 		true
 
+.include <bsd.port.pre.mk>
+
 pre-fetch:
 	@${CAT} pkg-message
 
@@ -61,4 +63,4 @@ post-install:
 	@${CHMOD} u+s ${PREFIX}/bin/gnuitar
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
