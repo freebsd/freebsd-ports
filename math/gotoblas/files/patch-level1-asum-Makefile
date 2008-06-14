@@ -1,11 +1,11 @@
---- level1/asum/Makefile.orig	Sun Jan 21 11:17:30 2007
-+++ level1/asum/Makefile	Sun Jan 21 11:17:35 2007
+--- level1/asum/Makefile.orig	2008-03-22 03:55:49.000000000 +0900
++++ level1/asum/Makefile	2008-06-14 13:13:02.000000000 +0900
 @@ -8,7 +8,7 @@
- ZOBJS	= dzasumf.o
- XOBJS	= qxasumf.o
+ ZOBJS	= dzasumf.$(SUFFIX)
+ XOBJS	= qxasumf.$(SUFFIX)
  
 -ifeq ($(ARCH), X86)
 +ifeq ($(GARCH), X86)
- SBLASOBJS	=  sasum.o
- DBLASOBJS	=  dasum.o
- QBLASOBJS	=  qasum.o
+ SBLASOBJS	=  sasum.$(SUFFIX)
+ DBLASOBJS	=  dasum.$(SUFFIX)
+ QBLASOBJS	=  qasum.$(SUFFIX)
