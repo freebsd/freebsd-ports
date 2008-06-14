@@ -9341,6 +9341,7 @@ p5-CDDB-File	ports/audio/p5-CDDB-File
 p5-CDDB_get	ports/audio/p5-CDDB_get
 p5-CGI-Ajax	ports/www/p5-CGI-Ajax
 p5-CGI-Application	ports/www/p5-CGI-Application
+p5-CGI-Application-Dispatch	ports/www/p5-CGI-Application-Dispatch
 p5-CGI-Application-Plugin-AnyTemplate	ports/www/p5-CGI-Application-Plugin-AnyTemplate
 p5-CGI-Application-Plugin-AutoRunmode	ports/www/p5-CGI-Application-Plugin-AutoRunmode
 p5-CGI-Application-Plugin-DBH	ports/www/p5-CGI-Application-Plugin-DBH
