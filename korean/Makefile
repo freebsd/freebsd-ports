@@ -39,6 +39,7 @@
     SUBDIR += kde3-i18n
     SUBDIR += ko.TeX
     SUBDIR += ko.TeX-fonts-base
+    SUBDIR += ko.TeX-fonts-extra
     SUBDIR += libhangul
     SUBDIR += linuxdoc-sgml
     SUBDIR += man-doc

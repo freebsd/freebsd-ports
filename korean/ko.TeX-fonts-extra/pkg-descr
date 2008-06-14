@@ -1,0 +1,6 @@
+ko.TeX is a collection of LaTeX packages made by Koaunghi Un, Dohyun Kim 
+and Kangsoo Kim to replace HLaTeX and Hangul-ucs.
+
+ko.TeX-fonts-extra contains extra fonts.
+
+WWW: http://project.ktug.or.kr/ko.TeX/
