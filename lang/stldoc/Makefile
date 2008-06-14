@@ -15,7 +15,6 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The STL reference manual by SGI
 
 NO_BUILD=	yes
-PORTDOCS=	*
 
 do-install:
 	@${MKDIR} ${DOCSDIR}
