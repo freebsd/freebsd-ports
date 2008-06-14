@@ -34,6 +34,7 @@
     SUBDIR += bibtool
     SUBDIR += bidiv
     SUBDIR += bn-aspell
+    SUBDIR += bomstrip
     SUBDIR += br-aspell
     SUBDIR += british-ispell
     SUBDIR += bsddiff
