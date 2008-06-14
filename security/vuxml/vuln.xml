@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c4ba95b2-39ce-11dd-98c9-00163e000016">
+    <topic>moinmoin -- superuser privilege escalation</topic>
+    <affects>
+      <package>
+	<name>moinmoin</name>
+	<range><lt>1.6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MoinMoin team reports:</p>
+	<blockquote cite="http://hg.moinmo.in/moin/1.6/rev/f405012e67af">
+	  <p>A check in the userform processing was not working as expected and
+	    could be abused for ACL and superuser privilege escalation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>2008-1937</cvename>
+      <url>http://hg.moinmo.in/moin/1.6/rev/f405012e67af</url>
+    </references>
+    <dates>
+      <discovery>2008-04-20</discovery>
+      <entry>2008-06-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="022baf71-38e6-11dd-8d34-00e0815b8da8">
     <topic>Courier Authentication Library -- SQL Injection</topic>
     <affects>
