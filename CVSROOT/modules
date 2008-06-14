@@ -1013,6 +1013,7 @@ bomberclone	ports/games/bomberclone
 bomberinstinct	ports/games/bomberinstinct
 bombermaze	ports/games/bombermaze
 bomns		ports/games/bomns
+bomstrip	ports/textproc/bomstrip
 bonk		ports/audio/bonk
 bonnie		ports/benchmarks/bonnie
 bonnie++	ports/benchmarks/bonnie++
