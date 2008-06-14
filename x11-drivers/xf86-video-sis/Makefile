@@ -13,6 +13,8 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org sis display driver
 
+CONFLICTS=	xf86-video-sis-intel-[0-9]*
+
 USE_GL=		gl
 
 XORG_CAT=	driver
