@@ -1,0 +1,25 @@
+# New ports collection makefile for:	schroedinger
+# Date created:		2008-06-14
+# Whom:			Gea-Suan Lin <gslin@gslin.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	schroedinger
+PORTVERSION=	1.0.3
+CATEGORIES=	multimedia
+MASTER_SITES=	http://www.diracvideo.org/download/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	gslin@gslin.org
+COMMENT=	High-speed Dirac codec
+
+LIB_DEPENDS=	oil:${PORTSDIR}/devel/liboil
+
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's|^pkgconfigdir=.*|pkgconfigdir="\\$$(prefix)/libdata/pkgconfig"|' ${WRKSRC}/configure
+
+.include <bsd.port.mk>
