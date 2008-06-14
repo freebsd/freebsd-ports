@@ -7,6 +7,7 @@
 
 PORTNAME=	skystar2
 PORTVERSION=	11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://paradox.org.ua/ \
 		http://lissyara.su/patch/skystar2/
@@ -20,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 SYSDIR?=	${SRC_BASE}/sys
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
+PORTDOCS=	readme
 
 pre-fetch:
 .if !exists(${SYSDIR}/Makefile)
@@ -32,5 +34,11 @@ pre-fetch:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/etc/channels.conf.dist ${PREFIX}/etc/
 	@${CAT} ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
