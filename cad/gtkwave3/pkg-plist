@@ -1,0 +1,24 @@
+bin/ghwdump
+bin/gtkwave
+bin/lxt2miner
+bin/lxt2vcd
+bin/mvl2lxt
+bin/mvl2vcd
+bin/rtlbrowse
+bin/shmidcat
+bin/tex2vcd
+bin/tla2vcd
+bin/twinwave
+bin/vcd2lxt
+bin/vcd2lxt2
+bin/vcd2vzt
+bin/vermin
+bin/vzt2vcd
+bin/vztminer
+%%DOCSDIR%%/gtkwave.odt
+%%EXAMPLESDIR%%/des.sav
+%%EXAMPLESDIR%%/des.script
+%%EXAMPLESDIR%%/des.v
+%%EXAMPLESDIR%%/des.vzt
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
