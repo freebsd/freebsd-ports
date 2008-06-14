@@ -7,7 +7,7 @@
 
 PORTNAME=	yaws
 PORTVERSION=	1.76
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -22,6 +22,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/yaws-${PORTVERSION}
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 MAN1=		yaws.1
 MAN5=		yaws.conf.5 yaws_api.5 yaws_soap_lib.5
@@ -29,10 +30,6 @@ MAN5=		yaws.conf.5 yaws_api.5 yaws_soap_lib.5
 APPDIR=${PREFIX}/lib/erlang/lib/yaws-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
 
 post-extract:
 	@${FIND} ${WRKSRC} -name .empty | ${XARGS} ${RM}
@@ -63,7 +60,6 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/www/yaws
 	@${INSTALL_MAN} ${WRKSRC}/man/*.1 ${MANPREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/man/*.5 ${MANPREFIX}/man/man5
-	@${MKDIR} /var/log/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/yaws.pdf ${DOCSDIR}
