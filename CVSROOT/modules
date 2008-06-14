@@ -6225,6 +6225,7 @@ knowit		ports/deskutils/knowit
 knowlan		ports/net-mgmt/knowlan
 knowledgekit	ports/www/knowledgekit
 knutclient	ports/sysutils/knutclient
+ko-ko.TeX-fonts-base	ports/korean/ko.TeX-fonts-base
 ko-FreeWnn-lib	ports/korean/FreeWnn-lib
 ko-FreeWnn-server	ports/korean/FreeWnn-server
 ko-a2ps		ports/korean/a2ps
