@@ -17786,6 +17786,7 @@ xf86-video-s3virge	ports/x11-drivers/xf86-video-s3virge
 xf86-video-savage	ports/x11-drivers/xf86-video-savage
 xf86-video-siliconmotion	ports/x11-drivers/xf86-video-siliconmotion
 xf86-video-sis	ports/x11-drivers/xf86-video-sis
+xf86-video-sis-intel	ports/x11-drivers/xf86-video-sis-intel
 xf86-video-sunffb	ports/x11-drivers/xf86-video-sunffb
 xf86-video-tdfx	ports/x11-drivers/xf86-video-tdfx
 xf86-video-tga	ports/x11-drivers/xf86-video-tga
