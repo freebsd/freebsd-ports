@@ -50,12 +50,6 @@ LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .endif
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
-PLIST_FILES=	bin/muse \
-		share/locale/es/LC_MESSAGES/muse.mo \
-		share/locale/it/LC_MESSAGES/muse.mo
 MAN1=		muse.1
 
 post-patch:
