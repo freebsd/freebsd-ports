@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmicrohttpd
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://gnunet.org/libmicrohttpd/download/
 
@@ -16,11 +16,12 @@ COMMENT=	C library for embedding HTTP server functionality
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	lib/libmicrohttpd.so.3 \
+PLIST_FILES=	lib/libmicrohttpd.so.4 \
 		lib/libmicrohttpd.la \
 		lib/libmicrohttpd.so \
 		lib/libmicrohttpd.a \
-		include/microhttpd.h
+		include/microhttpd.h \
+		info/microhttpd.info
 
 MAN3=		libmicrohttpd.3
 
