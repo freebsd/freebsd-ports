@@ -202,6 +202,7 @@
     SUBDIR += rox-videothumbnail
     SUBDIR += ruby-flvtool2
     SUBDIR += sabbu
+    SUBDIR += schroedinger
     SUBDIR += shell-fm
     SUBDIR += smilutils
     SUBDIR += smpeg
