@@ -7,6 +7,7 @@
 
 PORTNAME=	lha
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	archivers ruby
 MASTER_SITES=	http://arton.no-ip.info/data/lhalib/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,6 +25,7 @@ RUBY_EXTCONF=	ext/extconf.rb
 CONFIGURE_ARGS=	--rubyprog=${RUBY}
 
 EXAMPLES=	test/test.rb
+RUBY_SHEBANG_FILES=	${EXAMPLES}
 
 post-install:
 .if !defined(NOPORTDOCS)
