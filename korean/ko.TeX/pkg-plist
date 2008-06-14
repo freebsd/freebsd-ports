@@ -1,0 +1,144 @@
+bin/euc-bookmark.pl
+bin/hbibtex
+bin/hmakeindex
+bin/hypua2jamo.pl
+bin/insertjamofiller.pl
+bin/jamo2hypua.pl
+bin/komkindex.pl
+bin/ttf2kotexfont.pl
+%%PORTDOCS%%%%DOCSDIR%%/ChangLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/VERSION
+%%PORTDOCS%%%%DOCSDIR%%/manifest.txt
+%%PORTDOCS%%%%DOCSDIR%%/news-0.1.0.txt
+share/texmf-local/bibtex/bst/kotex/euc/halpha.bst
+share/texmf-local/doc/latex/kotex/COMPILE
+share/texmf-local/doc/latex/kotex/KS.HAN.tex
+share/texmf-local/doc/latex/kotex/KS.HAN.u.tex
+share/texmf-local/doc/latex/kotex/backmatters.tex
+share/texmf-local/doc/latex/kotex/biblio.tex
+share/texmf-local/doc/latex/kotex/euc-guide-u.tex
+share/texmf-local/doc/latex/kotex/fig/allowbreak-dhucs.pdf
+share/texmf-local/doc/latex/kotex/fig/fntexp.pdf
+share/texmf-local/doc/latex/kotex/fig/fntnormal.pdf
+share/texmf-local/doc/latex/kotex/fig/kotexhist.jpg
+share/texmf-local/doc/latex/kotex/fig/linebreaktest.pdf
+share/texmf-local/doc/latex/kotex/fig/oblivoirtree.pdf
+share/texmf-local/doc/latex/kotex/fig/testdhucsallowbreak.pdf
+share/texmf-local/doc/latex/kotex/generateeucfiles.bat
+share/texmf-local/doc/latex/kotex/generateeucfiles.sh
+share/texmf-local/doc/latex/kotex/hbname-u.tex
+share/texmf-local/doc/latex/kotex/kotexguide-k.bib
+share/texmf-local/doc/latex/kotex/kotexguide.bib
+share/texmf-local/doc/latex/kotex/kotexguide.sty
+share/texmf-local/doc/latex/kotex/kotexguide.tex
+share/texmf-local/doc/latex/kotex/kotexguidebody-utf.tex
+share/texmf-local/doc/latex/kotex/utf-guide.tex
+share/texmf-local/doc/latex/kotex/writinghdoc.tex
+share/texmf-local/fonts/sfd/UCS2.sfd
+share/texmf-local/fonts/sfd/UKS-UCS2.sfd
+share/texmf-local/makeindex/kotex/euc/hglo.ist
+share/texmf-local/makeindex/kotex/euc/hind.ist
+share/texmf-local/makeindex/kotex/utf/kotex.ist
+share/texmf-local/scripts/kotex/perl/euc-bookmark.pl
+share/texmf-local/scripts/kotex/perl/hypua2jamo.pl
+share/texmf-local/scripts/kotex/perl/insertjamofiller.pl
+share/texmf-local/scripts/kotex/perl/jamo2hypua.pl
+share/texmf-local/scripts/kotex/perl/komkindex.pl
+share/texmf-local/scripts/kotex/perl/ttf2kotexfont.pl
+share/texmf-local/tex/latex/kotex/euc/contrib/hangulfn.sty
+share/texmf-local/tex/latex/kotex/euc/contrib/hbname-k.tex
+share/texmf-local/tex/latex/kotex/euc/contrib/hfntk.sty
+share/texmf-local/tex/latex/kotex/euc/contrib/showhkeys.sty
+share/texmf-local/tex/latex/kotex/euc/contrib/showhtags.sty
+share/texmf-local/tex/latex/kotex/euc/contrib/third-party/ganasection.sty
+share/texmf-local/tex/latex/kotex/euc/contrib/third-party/hitshape.sty
+share/texmf-local/tex/latex/kotex/euc/contrib/third-party/hlatex-interword.sty
+share/texmf-local/tex/latex/kotex/euc/contrib/third-party/hsectsty.sty
+share/texmf-local/tex/latex/kotex/euc/contrib/third-party/hsetspace.sty
+share/texmf-local/tex/latex/kotex/euc/contrib/third-party/myulem.sty
+share/texmf-local/tex/latex/kotex/euc/hangul.sty
+share/texmf-local/tex/latex/kotex/euc/hfont.sty
+share/texmf-local/tex/latex/kotex/euc/hfont.tex
+share/texmf-local/tex/latex/kotex/euc/josa.tab
+share/texmf-local/tex/latex/kotex/euc/konames-euc.tex
+share/texmf-local/tex/latex/kotex/euc/kosections-euc.tex
+share/texmf-local/tex/latex/kotex/euc/kotex-euc.sty
+share/texmf-local/tex/latex/kotex/kotex.cfg
+share/texmf-local/tex/latex/kotex/kotex.sty
+share/texmf-local/tex/latex/kotex/utf/contrib/dhucs-cmap.sty
+share/texmf-local/tex/latex/kotex/utf/contrib/dhucs-enumerate.sty
+share/texmf-local/tex/latex/kotex/utf/contrib/dhucs-enumitem.sty
+share/texmf-local/tex/latex/kotex/utf/contrib/dhucs-gremph.sty
+share/texmf-local/tex/latex/kotex/utf/contrib/dhucs-interword.sty
+share/texmf-local/tex/latex/kotex/utf/contrib/dhucs-paralist.sty
+share/texmf-local/tex/latex/kotex/utf/contrib/dhucs-sectsty.sty
+share/texmf-local/tex/latex/kotex/utf/contrib/dhucs-setspace.sty
+share/texmf-local/tex/latex/kotex/utf/contrib/dhucs-trivcj.sty
+share/texmf-local/tex/latex/kotex/utf/contrib/dhucsfn.sty
+share/texmf-local/tex/latex/kotex/utf/dhucs.sty
+share/texmf-local/tex/latex/kotex/utf/hanja_hg.tab
+share/texmf-local/tex/latex/kotex/utf/hfontspec.default
+share/texmf-local/tex/latex/kotex/utf/hjcom_hg.tab
+share/texmf-local/tex/latex/kotex/utf/hjexa_hg.tab
+share/texmf-local/tex/latex/kotex/utf/konames-utf.tex
+share/texmf-local/tex/latex/kotex/utf/kosections-utf.tex
+share/texmf-local/tex/latex/kotex/utf/lucenc.dfu
+share/texmf-local/tex/latex/kotex/utf/midkor/LUCobat.fd
+share/texmf-local/tex/latex/kotex/utf/midkor/LUCogul.fd
+share/texmf-local/tex/latex/kotex/utf/midkor/dhucs-midkor.sty
+share/texmf-local/tex/latex/kotex/utf/midkor/jmodcomp.tab
+share/texmf-local/tex/latex/kotex/utf/midkor/jmotopua.tab
+share/texmf-local/tex/latex/kotex/utf/midkor/jsotojmo.tab
+share/texmf-local/tex/latex/kotex/utf/midkor/oldhanyang4e.cmap
+share/texmf-local/tex/latex/kotex/utf/midkor/oldhanyang4f.cmap
+share/texmf-local/tex/latex/kotex/utf/midkor/oldhanyang50.cmap
+share/texmf-local/tex/latex/kotex/utf/midkor/oldhanyang51.cmap
+share/texmf-local/tex/latex/kotex/utf/midkor/oldhanyang52.cmap
+share/texmf-local/tex/latex/kotex/utf/midkor/oldhanyang53.cmap
+share/texmf-local/tex/latex/kotex/utf/midkor/oldhanyang54.cmap
+share/texmf-local/tex/latex/kotex/utf/oblivoir/10_5.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/fapapersize.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/hfontsel.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/hfontspec.obut
+share/texmf-local/tex/latex/kotex/utf/oblivoir/memhangul/memhangul-patch.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/memhangul/memhangul-ucs.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/memhangul/memucs-enumerate.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/memhangul/memucs-gremph.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/memhangul/memucs-interword.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/memhangul/memucs-setspace.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/ob-koreanappendix.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/ob-nokoreanappendix.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/ob-toclof.sty
+share/texmf-local/tex/latex/kotex/utf/oblivoir/oblivoir.cls
+share/texmf-local/tex/latex/kotex/utf/tex4ht/dhucs.4ht
+share/texmf-local/tex/latex/kotex/utf/tex4ht/dhucs.cfg
+share/texmf-local/tex/latex/kotex/utf/tex4ht/kosections-utf.4ht
+share/texmf-local/tex/plain/kotex/hangulcweb.tex
+share/texmf-local/tex/plain/kotex/kotexplain.tex
+@exec %%TEXHASH%%
+@dirrm share/texmf-local/tex/plain/kotex
+@dirrmtry share/texmf-local/tex/latex/kotex/utf/unfonts
+@dirrm share/texmf-local/tex/latex/kotex/utf/tex4ht
+@dirrm share/texmf-local/tex/latex/kotex/utf/oblivoir/memhangul
+@dirrm share/texmf-local/tex/latex/kotex/utf/oblivoir
+@dirrm share/texmf-local/tex/latex/kotex/utf/midkor
+@dirrm share/texmf-local/tex/latex/kotex/utf/contrib
+@dirrmtry share/texmf-local/tex/latex/kotex/utf
+@dirrmtry share/texmf-local/tex/latex/kotex/euc/unfonts
+@dirrm share/texmf-local/tex/latex/kotex/euc/contrib/third-party
+@dirrm share/texmf-local/tex/latex/kotex/euc/contrib
+@dirrmtry share/texmf-local/tex/latex/kotex/euc
+@dirrmtry share/texmf-local/tex/latex/kotex
+@dirrm share/texmf-local/scripts/kotex/perl
+@dirrm share/texmf-local/scripts/kotex
+@dirrm share/texmf-local/makeindex/kotex/utf
+@dirrm share/texmf-local/makeindex/kotex/euc
+@dirrm share/texmf-local/makeindex/kotex
+@dirrm share/texmf-local/doc/latex/kotex/fig
+@dirrm share/texmf-local/doc/latex/kotex
+@dirrm share/texmf-local/bibtex/bst/kotex/euc
+@dirrm share/texmf-local/bibtex/bst/kotex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec %%TEXHASH%%
