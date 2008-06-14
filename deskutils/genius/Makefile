@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	genius
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME \
 		http://ftp.5z.com/pub/genius/
@@ -30,10 +29,4 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500018 || exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
