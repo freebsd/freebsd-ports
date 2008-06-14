@@ -61,6 +61,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/color_reset.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/colorize.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/colors.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/compose_mask.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/composite.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/composite_layers.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/comtasks.html
