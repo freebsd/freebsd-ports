@@ -75,7 +75,7 @@ PATCHFILES+=	${PORTNAME}-${PORTVERSION}-rtems4.8-20071104.diff
 
 .if !defined(TGTARCH) || !defined(TGTABI)
 PKGNAMEPREFIX=	cross-
-IGNORE=		you should define TGRARCH and TGTABI to build port
+IGNORE=		you should define TGTARCH and TGTABI to build port
 .endif
 
 #
