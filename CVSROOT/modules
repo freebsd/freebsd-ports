@@ -11207,6 +11207,7 @@ p5-PayflowPro	ports/finance/p5-PayflowPro
 p5-Penguin	ports/devel/p5-Penguin
 p5-Penguin-Easy	ports/devel/p5-Penguin-Easy
 p5-Perl-Critic	ports/textproc/p5-Perl-Critic
+p5-Perl-Critic-Bangs	ports/textproc/p5-Perl-Critic-Bangs
 p5-Perl-MinimumVersion	ports/textproc/p5-Perl-MinimumVersion
 p5-Perl-Version	ports/devel/p5-Perl-Version
 p5-Perl6-Builtins	ports/devel/p5-Perl6-Builtins
