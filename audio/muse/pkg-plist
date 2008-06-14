@@ -1,0 +1,12 @@
+bin/muse
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/KNOWN-BUGS
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/USAGE
+share/locale/es/LC_MESSAGES/muse.mo
+share/locale/it/LC_MESSAGES/muse.mo
+@dirrm %%DOCSDIR%%
