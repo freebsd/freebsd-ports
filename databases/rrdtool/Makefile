@@ -7,6 +7,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.2.26
+PORTREVISION=	1
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -16,6 +17,8 @@ COMMENT=	Round Robin Database Tools
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		png.5:${PORTSDIR}/graphics/png
+
+CONFLICTS=	rrdtool-1.0*
 
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
