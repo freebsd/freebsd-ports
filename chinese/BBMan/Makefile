@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-src-v${PORTVERSION:S,.,-,g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BBMan is a BBS client for X Window System
 
+DEPRECATED=	Abandonware by upstream maintainer
+EXPIRATION_DATE=2008-07-14
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_ZIP=	yes
 USE_WX=		2.4
