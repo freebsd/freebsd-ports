@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gotoblas
-PORTVERSION=	1.23
+PORTVERSION=	1.26
 CATEGORIES=	math
 MASTER_SITES=	#empty
 DISTNAME=	GotoBLAS-${PORTVERSION}
@@ -85,9 +85,9 @@ do-fetch:
 	@${ECHO_CMD} "and put it to ${DISTDIR}."
 .endif
 
-#Honor F77 and CC, but this makes Makefile.rule bit dirtier
+#Honor FC and CC, but this makes Makefile.rule bit dirtier
 pre-build:
-	@${REINPLACE_CMD} -e "s+%%F77%%+${F77}+" -e "s+%%CC%%+${CC}+" ${WRKSRC}/Makefile.rule
+	@${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" -e "s+%%CC%%+${CC}+" ${WRKSRC}/Makefile.rule
 
 do-build:
 	${MKDIR} ${WRKDIR}/lib

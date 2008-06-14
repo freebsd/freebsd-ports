@@ -1,6 +1,15 @@
---- Makefile.rule.orig	2008-01-31 01:03:08.000000000 +0900
-+++ Makefile.rule	2008-02-20 17:02:26.000000000 +0900
-@@ -169,12 +169,12 @@
+--- Makefile.rule.orig	2008-05-13 02:50:54.000000000 +0900
++++ Makefile.rule	2008-06-14 13:27:28.000000000 +0900
+@@ -114,7 +114,7 @@
+ MACHINE =
+ OSNAME  =
+ PGCPATH =
+-ARCH =
++GARCH =
+ SUBARCH =
+ ARCHSUBDIR =
+ CONFIG =
+@@ -201,7 +201,7 @@
  endif
  
  ifndef F_COMPILER
@@ -9,96 +18,107 @@
  I_DONT_HAVE_FC = 1
  endif
  
+@@ -245,7 +245,7 @@
+ endif
+ 
  ifeq ($(C_COMPILER), GNU)
 -COMPILER     = gcc
 +COMPILER     = %%CC%%
  CCOMMON_OPT += -Wall
- ifneq ($(OSNAME), CYGWIN_NT)
+ ifeq ($(SUPPORTED_DYNLIB), YES)
  CCOMMON_OPT += -fPIC 
-@@ -190,12 +190,12 @@
+@@ -262,7 +262,7 @@
  endif
  
  ifeq ($(C_COMPILER), INTEL)
 -COMPILER     = icc
-+COMPILER     =  %%CC%%
++COMPILER     = %%CC%%
+ ifeq ($(SUPPORTED_DYNLIB), YES)
  CCOMMON_OPT += -fPIC 
+ endif
+@@ -294,7 +294,7 @@
  endif
  
  ifeq ($(F_COMPILER), G77)
 -COMPILER_F77 = g77
-+COMPILER_F77 = %%F77%%
++COMPILER_F77 = %%FC%%
  BU	     = _
  CCOMMON_OPT += -DF_INTERFACE_F2C -DNEED_F2CCONV
  FCOMMON_OPT += -Wall
-@@ -212,7 +212,7 @@
+@@ -311,7 +311,7 @@
  endif
  
  ifeq ($(F_COMPILER), G95)
 -COMPILER_F77 = g95
-+COMPILER_F77 = %%F77%%
++COMPILER_F77 = %%FC%%
  BU	     = _
  CCOMMON_OPT += -DF_INTERFACE_F2C
  FCOMMON_OPT += -Wall #  -fno-underscoring
-@@ -230,11 +230,12 @@
+@@ -328,10 +328,12 @@
  endif
  
  ifeq ($(F_COMPILER), GFORTRAN)
 -COMPILER_F77 = gfortran
-+COMPILER_F77 = %%F77%%
++COMPILER_F77 = %%FC%%
  BU	     = _
  CCOMMON_OPT += -DF_INTERFACE_GFORT
  FCOMMON_OPT += -Wall
--# EXTRALIB    += -lgfortran
-+GCCPATH = $(shell dirname `%%F77%% -print-libgcc-file-name`)
++GCCPATH = $(shell dirname `%%FC%% -print-libgcc-file-name`)
 +EXTRALIB    += -L$(GCCPATH)/../../../ -lgfortran
- ifneq ($(OSNAME), CYGWIN_NT)
+ ifeq ($(SUPPORTED_DYNLIB), YES)
  FCOMMON_OPT += -fPIC 
  endif
-@@ -252,7 +253,7 @@
+@@ -349,7 +351,7 @@
  endif
  
  ifeq ($(F_COMPILER), INTEL)
 -COMPILER_F77 = ifort
-+COMPILER_F77 = %%F77%%
++COMPILER_F77 = %%FC%%
  BU	     = _
  CCOMMON_OPT += -DF_INTERFACE_F2C
- FCOMMON_OPT += -fPIC
-@@ -304,11 +305,9 @@
- endif
- endif
+ ifeq ($(SUPPORTED_DYNLIB), YES)
+@@ -404,7 +406,7 @@
  
--ifneq ($(OSNAME), CYGWIN_NT)
+ ifneq ($(OSNAME), CYGWIN_NT)
  ifdef SMP
--PTHREADLIB += -lpthread
--FEXTRALIB  += -lpthread
--endif
-+PTHREADLIB += ${PTHREAD_LIBS}
-+FEXTRALIB  += ${PTHREAD_CFLAGS}
+-EXTRALIB   += -lpthread
++EXTRALIB   += ${PTHREAD_LIBS}
+ endif
  endif
  
- ifeq ($(F_COMPILER), PATHSCALE)
-@@ -370,7 +369,7 @@
- GETARCH_CC	 = gcc
+@@ -477,8 +479,8 @@
+ GETARCH_SCRIPT	 = ./getarch
  endif
  
--ARCH        := $(shell (cd $(TOPDIR); ./getarch 0 $(GETARCH_CC) $(GETARCH_FLAGS)))
-+GARCH       := $(shell (cd $(TOPDIR); ./getarch 0 $(GETARCH_CC) $(GETARCH_FLAGS)))
- SUBARCH     := $(shell (cd $(TOPDIR); ./getarch 1 $(GETARCH_CC) $(GETARCH_FLAGS)))
- ARCHSUBDIR  := $(shell (cd $(TOPDIR); ./getarch 2 $(GETARCH_CC) $(GETARCH_FLAGS)))
- CONFIG      := $(shell (cd $(TOPDIR); ./getarch 3 $(GETARCH_CC) $(GETARCH_FLAGS)))
-@@ -459,11 +458,11 @@
- FPFLAGS    = $(COMMON_OPT) $(FCOMMON_OPT) $(COMMON_PROF)
+-ifndef ARCH
+-ARCH        := $(shell (cd $(TOPDIR); $(GETARCH_SCRIPT) 0 $(GETARCH_CC) $(GETARCH_FLAGS)))
++ifndef GARCH
++GARCH        := $(shell (cd $(TOPDIR); $(GETARCH_SCRIPT) 0 $(GETARCH_CC) $(GETARCH_FLAGS)))
+ endif
+ ifndef SUBARCH
+ SUBARCH     := $(shell (cd $(TOPDIR); $(GETARCH_SCRIPT) 1 $(GETARCH_CC) $(GETARCH_FLAGS)))
+@@ -613,11 +615,11 @@
+ endif
  
  ifndef SMP
--LIBNAME		= $(LIBPREFIX)_$(LIBSUBARCH)$(REVISION).a
--LIBNAME_P	= $(LIBPREFIX)_$(LIBSUBARCH)$(REVISION)_p.a
+-LIBNAME		= $(LIBPREFIX)_$(LIBSUBARCH)$(REVISION).$(LIBSUFFIX)
+-LIBNAME_P	= $(LIBPREFIX)_$(LIBSUBARCH)$(REVISION)_p.$(LIBSUFFIX)
 +LIBNAME		= $(LIBPREFIX)$(REVISION).a
 +LIBNAME_P	= $(LIBPREFIX)$(REVISION)_p.a
  else
--LIBNAME		= $(LIBPREFIX)_$(LIBSUBARCH)p$(REVISION).a
--LIBNAME_P	= $(LIBPREFIX)_$(LIBSUBARCH)p$(REVISION)_p.a
+-LIBNAME		= $(LIBPREFIX)_$(LIBSUBARCH)p$(REVISION).$(LIBSUFFIX)
+-LIBNAME_P	= $(LIBPREFIX)_$(LIBSUBARCH)p$(REVISION)_p.$(LIBSUFFIX)
 +LIBNAME		= $(LIBPREFIX)p$(REVISION).a
 +LIBNAME_P	= $(LIBPREFIX)p$(REVISION)_p.a
  endif
  
- LIBSONAME    = $(LIBNAME:.a=.so)
+ LIBSONAME    = $(LIBNAME:.$(LIBSUFFIX)=.so)
+@@ -637,7 +639,7 @@
+ export MACHINE
+ export OSNAME
+ export PGCPATH
+-export ARCH
++export GARCH
+ export SUBARCH
+ export ARCHSUBDIR
+ export CONFIG
