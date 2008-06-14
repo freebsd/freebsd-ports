@@ -1,0 +1,4 @@
+CGI::Application::Dispatch
+Dispatch requests to CGI::Application based objects
+
+WWW: http://search.cpan.org/~wonko/CGI-Application-Dispatch-2.12/
