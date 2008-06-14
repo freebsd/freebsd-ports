@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eyed3
-PORTVERSION=	0.6.15
+PORTVERSION=	0.6.16
 CATEGORIES=	audio python
 MASTER_SITES=	http://eyed3.nicfit.net/releases/ \
 		http://depot.fsck.ch/mirror/distfiles/
