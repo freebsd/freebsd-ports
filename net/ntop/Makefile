@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
-BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
+BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		png.5:${PORTSDIR}/graphics/png
