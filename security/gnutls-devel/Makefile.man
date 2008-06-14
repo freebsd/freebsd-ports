@@ -287,14 +287,17 @@ MAN3=	\
 	gnutls_protocol_set_priority.3 \
 	gnutls_psk_allocate_client_credentials.3 \
 	gnutls_psk_allocate_server_credentials.3 \
+	gnutls_psk_client_get_hint.3 \
 	gnutls_psk_free_client_credentials.3 \
 	gnutls_psk_free_server_credentials.3 \
+	gnutls_psk_netconf_derive_key.3 \
 	gnutls_psk_server_get_username.3 \
 	gnutls_psk_set_client_credentials.3 \
 	gnutls_psk_set_client_credentials_function.3 \
 	gnutls_psk_set_params_function.3 \
 	gnutls_psk_set_server_credentials_file.3 \
 	gnutls_psk_set_server_credentials_function.3 \
+	gnutls_psk_set_server_credentials_hint.3 \
 	gnutls_psk_set_server_dh_params.3 \
 	gnutls_psk_set_server_params_function.3 \
 	gnutls_record_check_pending.3 \
