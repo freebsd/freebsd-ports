@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcstar
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	misc
 MASTER_SITES=	http://download.gna.org/gcstar/ \
 		http://djdomics.free.fr/distfiles/
@@ -25,15 +24,20 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2/Spell.pm:${PORTSDIR}/devel/p5-Gtk2-Spell \
-		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime
+		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		${SITE_PERL}/${PERL_ARCH}/Gnome2/VFS.pm:${PORTSDIR}/x11-toolkits/p5-Gnome2-VFS \
+		${SITE_PERL}/${PERL_ARCH}/Net/FreeDB.pm:${PORTSDIR}/audio/p5-Net-FreeDB
 
 MAN1=		gcstar.1
 MANCOMPRESSED=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5_RUN=	yes
 
-do-build:
-		@${DO_NADA}
+NO_BUILD=	yes
+
+post-patch:
+	@${FIND} ${WRKSRC}/ -name '*.orig' -delete
+
 do-install:
 		${PERL} ${WRKSRC}/install --prefix ${PREFIX}
 
