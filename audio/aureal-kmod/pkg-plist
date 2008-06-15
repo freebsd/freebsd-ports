@@ -1,7 +1,8 @@
-etc/rc.d/aureal.sh.sample
-@unexec `if [ -e /bin/chflags ]; then echo /bin/chflags; else echo /usr/bin/chflags; fi` noschg %D/lib/au88x0/snd_au88?0.ko
-@rmtry lib/au88x0/linker.hints
-lib/au88x0/snd_au8810.ko
-lib/au88x0/snd_au8820.ko
-lib/au88x0/snd_au8830.ko
-@dirrm lib/au88x0
+@unexec `if [ -e /bin/chflags ]; then echo /bin/chflags; else echo /usr/bin/chflags; fi` noschg %D/%%KMODDIR%%/snd_au88?0.ko
+@unexec kldxref %D/%%KMODDIR%%
+@unexec rm -f %D/%%KMODDIR%%/linker.hints
+%%KMODDIR%%/snd_au8810.ko
+%%KMODDIR%%/snd_au8820.ko
+%%KMODDIR%%/snd_au8830.ko
+@dirrmtry %%KMODDIR%%
+@dirrmtry modules
