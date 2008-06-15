@@ -4,7 +4,6 @@
 #
 # $FreeBSD$
 
-PORTREVISION=	3
 PKGNAMESUFFIX=	-freebsd
 
 COMMENT=	Version control system with FreeBSD Project repo customizations
@@ -14,9 +13,10 @@ MASTERDIR=	${.CURDIR}/../subversion-devel
 DESCR=		${.CURDIR}/pkg-descr
 
 # Patches required for use with the FreeBSD Project repository only
-PATCH_SITES=		${MASTER_SITE_LOCAL}
+PATCH_SITES=		${MASTER_SITE_LOCAL} \
+			http://people.freebsd.org/~peter/
 PATCH_SITE_SUBDIR=	peter
-PATCHFILES+=		svn_hacks_1.0.diff
+PATCHFILES+=		svn_hacks_1.1.diff
 
 CONFLICTS?=	subversion-[0-9]* subversion-perl-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]* subversion-devel-[0-9]*
 
