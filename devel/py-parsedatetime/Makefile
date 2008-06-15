@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	parsedatetime
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.6
 CATEGORIES=	devel python
 MASTER_SITES=	http://code-bear.com/code/parsedatetime/ \
 		CHEESESHOP \
@@ -16,24 +16,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python module for parsing 'human readable' date/time expressions
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
-
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-
-PYDISTUTILS_BUILD_TARGET=	bdist_egg
-PYDISTUTILS_INSTALL_TARGET=	easy_install
-PYDISTUTILS_INSTALLARGS=	-O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${PARSEDATETIME_EGG}
-
-PARSEDATETIME_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
-
-PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PARSEDATETIME_EGG=${PARSEDATETIME_EGG} \
-		PARSEDATETIME_EGG_VER="${PORTNAME}==${PORTVERSION}"
+USE_PYDISTUTILS=	easy_install
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}

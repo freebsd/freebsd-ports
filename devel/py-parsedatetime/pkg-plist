@@ -1,8 +1,4 @@
-@unexec %%EASY_INSTALL_CMD%% -q -m -S %D/%%PYTHON_SITELIBDIR%% %%PARSEDATETIME_EGG_VER%%
-%%PYTHON_SITELIBDIR%%/%%PARSEDATETIME_EGG%%
-@exec %%EASY_INSTALL_CMD%% -q -N -S %D/%%PYTHON_SITELIBDIR%% %%PARSEDATETIME_EGG_VER%%
-%%PORTDOCS%%%%DOCSDIR%%/PyICU-module.html
-%%PORTDOCS%%%%DOCSDIR%%/PyICU-pysrc.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTDOCS%%%%DOCSDIR%%/class-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/crarr.png
 %%PORTDOCS%%%%DOCSDIR%%/epydoc.css
@@ -56,7 +52,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/parsedatetime.tests.TestUnits-module.html
 %%PORTDOCS%%%%DOCSDIR%%/parsedatetime.tests.TestUnits-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/parsedatetime.tests.TestUnits.test-class.html
-%%PORTDOCS%%%%DOCSDIR%%/toc-PyICU-module.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-everything.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-parsedatetime-module.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-parsedatetime.parsedatetime-module.html
