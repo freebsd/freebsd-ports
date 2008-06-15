@@ -7,7 +7,7 @@
 
 PORTNAME=	vgb
 PORTVERSION=	3.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/VGB/
@@ -37,6 +37,10 @@ do-install:
 
 .if ${OSVERSION} < 502100
 IGNORE=		does not work for FreeBSD versions prior to 5.2.1R
+.endif
+
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 
 .include <bsd.port.post.mk>
