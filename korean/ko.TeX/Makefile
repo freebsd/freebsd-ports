@@ -7,6 +7,7 @@
 
 PORTNAME=	ko.TeX
 PORTVERSION=	0.1.0.20071215
+PORTREVISION=	1
 CATEGORIES=	korean print
 MASTER_SITES=	http://ftp.ktug.or.kr/KTUG/ko.TeX/current/
 DISTNAME=	ko.tex-macro-20071215
