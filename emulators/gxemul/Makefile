@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gxemul
-PORTVERSION=	0.4.6.3
+PORTVERSION=	0.4.6.5
 CATEGORIES=	emulators
-MASTER_SITES=	SF \
+MASTER_SITES=	http://gxemul.sourceforge.net/src/ \
 		http://gavare.se/gxemul/src/
 
 MAINTAINER=	ports@FreeBSD.org
