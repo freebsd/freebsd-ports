@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://rekudos.net/download/
 
-MAINTAINER=	stone@tainet.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple AMaViS statistics generator based on rrdtool
 
 RUN_DEPENDS=	${SITE_PERL}/mach/RRDs.pm:${PORTSDIR}/databases/rrdtool
