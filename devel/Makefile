@@ -2105,6 +2105,7 @@
     SUBDIR += py-protocols
     SUBDIR += py-protocols-devel
     SUBDIR += py-psyco
+    SUBDIR += py-ptrace
     SUBDIR += py-px
     SUBDIR += py-pycallgraph
     SUBDIR += py-pydasm
