@@ -666,6 +666,7 @@ share/doc/HTML/es/amarok/analyzer.png
 share/doc/HTML/es/amarok/browser_choice.png
 share/doc/HTML/es/amarok/buttons.png
 share/doc/HTML/es/amarok/collection.png
+share/doc/HTML/es/amarok/common
 share/doc/HTML/es/amarok/config.docbook
 share/doc/HTML/es/amarok/config_appearance.png
 share/doc/HTML/es/amarok/config_collection.png
@@ -683,6 +684,8 @@ share/doc/HTML/es/amarok/dynamic_settings.png
 share/doc/HTML/es/amarok/equalizer.png
 share/doc/HTML/es/amarok/faq.docbook
 share/doc/HTML/es/amarok/file_browser.png
+share/doc/HTML/es/amarok/index.cache.bz2
+share/doc/HTML/es/amarok/index.docbook
 share/doc/HTML/es/amarok/logo.png
 share/doc/HTML/es/amarok/media_device.png
 share/doc/HTML/es/amarok/menubar.png
