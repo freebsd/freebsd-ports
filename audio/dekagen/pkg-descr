@@ -6,7 +6,7 @@ tag. dekagen uses dialog for a user interface that is intended to be
 "intuitive".
 
 Music data is read from CDs using cdda2wav, cdparanoia, dagrab, or tosha, and
-stored on your harddisk in wav-format. Note that this will have an excessive
+stored on your hard disk in wav-format. Note that this will have an excessive
 need of disk space. After this, the wav-data is converted into MP3 format
 using 8hz-mp3, bladeenc, l3enc, lame, mp3enc, or notlame, or into Ogg-Vorbis
 format using oggenc. This will take a while. To avoid manual naming and

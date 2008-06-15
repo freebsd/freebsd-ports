@@ -6,7 +6,7 @@ compare encoders and settings, it also has a batch file mode. The batch file
 mode allows you to use mp3stat as a script utility instead of gui, for use in
 your own programs and or scripts. The batch mode can trivially be extended to
 give just as much info as the gui version but now defaults to a configurable
-output of 3 pieces of info, name, runtime, avgerage bitrate. The batch mode
+output of 3 pieces of info, name, runtime, average bitrate. The batch mode
 can take mp3s and oggs in the same directory but it cannot (not yet at least)
 recursively run into subdirectories.
 

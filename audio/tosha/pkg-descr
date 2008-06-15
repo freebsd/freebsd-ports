@@ -1,5 +1,5 @@
 tosha reads CD-DA (digital audio) and CD-XA (digital video)
-tracks and writes them to the harddisk.  Several audio formats
+tracks and writes them to the hard disk.  Several audio formats
 are supported:  raw PCM (little-endian and big-endian byte
 order), WAV / RIFF, AIFF and Sun AU.
 

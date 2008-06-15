@@ -2,7 +2,7 @@ This package includes two programs for adjusting sound mixers:  xmixer, which
 uses the Athena toolkit, and xgmixer, based on GTK+.  From the README:
 
     Features:
-     * For every device which is supported by the soundcard you can
+     * For every device which is supported by the sound card you can
        change the volume via a slider. Unsupported devices are not shown.
      * Select the input device(s) for recording.
      * On startup a configuration file is read which restores device

@@ -6,7 +6,7 @@ mini, iPod photo, iPod shuffle, iPod nano, and iPod video.  It allows you to:
     your iPod including playcounts, ratings, and on-the-go playlists)
   * Add MP3, WAV, M4A (non-protected AAC), M4B (audio book), and podcast
     files (single files, directories or existing playlists) to the iPod
-  * Browse the contents of your local harddisk by album/artist/genre
+  * Browse the contents of your local hard disk by album/artist/genre
   * Create and modify playlists, including smart playlists
   * Choose the charset the ID3 tags are encoded in from within gtkpod
   * Extract tag information (artist, album, title, etc.) from the filename

@@ -1,6 +1,6 @@
 Cdparanoia  is a  Compact  Disc Digital  Audio  (CDDA) extraction  tool,
 commonly known on the net as a 'ripper'.
-Cdparanoia is a  bit different than most other CDDA  extration tools. It
+Cdparanoia is a bit different than most other CDDA  extraction tools. It
 contains few-to-no  'extra' features, concentrating only  on the ripping
 process and  knowing as much  as possible about the  hardware performing
 it. Cdparanoia will read correct, rock-solid audio data from inexpensive
