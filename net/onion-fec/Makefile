@@ -12,7 +12,7 @@ CATEGORIES=	net java
 MASTER_SITES=	http://onionnetworks.com/downloads/
 PKGNAMEPREFIX=	onion-
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Forward Error Correction (FEC) library from OnionNetworks
 
 BUILD_DEPENDS=	\

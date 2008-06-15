@@ -15,7 +15,7 @@ DISTNAME=	python-xmltv-${PORTVERSION}
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python module that provides access to XMLTV TV listings
 
 USE_PYTHON=		yes
