@@ -7,7 +7,7 @@
 
 PORTNAME=	libidn
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
@@ -40,6 +40,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(AUTOMAKE)|${TRUE}|' \
 			-e 's|imagesdir = $$(infodir)|imagesdir = $$(docdir)|' \
 		${WRKSRC}/doc/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|install-data-am: install-imagesDATA install-info-am install-man|install-data-am: install-info-am install-man|' \
+		${WRKSRC}/doc/Makefile.in
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
