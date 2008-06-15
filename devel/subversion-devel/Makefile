@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.5.0.rc7
-PORTREVISION?=	2
+PORTVERSION=	1.5.0.r11
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/
 PKGNAMESUFFIX?=	-devel
-DISTNAME=	${PORTNAME}-1.5.0-rc7
+DISTNAME=	${PORTNAME}-1.5.0-rc11
 DIST_SUBDIR=	subversion
 
 MAINTAINER=	lev@freebsd.org
