@@ -1,6 +1,15 @@
 bin/ayttm
 bin/ayttm_streamer_wrapper.sh
 etc/ayttmrc
+include/ayttm/yahoo2.h
+include/ayttm/yahoo2_callbacks.h
+include/ayttm/yahoo2_types.h
+include/ayttm/yahoo_fn.h
+include/ayttm/yahoo_httplib.h
+include/ayttm/yahoo_list.h
+lib/ayttm/aim-oscar.a
+lib/ayttm/aim-oscar.la
+lib/ayttm/aim-oscar.so
 lib/ayttm/aim-toc.a
 lib/ayttm/aim-toc.la
 lib/ayttm/aim-toc.so
@@ -10,6 +19,9 @@ lib/ayttm/autotrans.so
 lib/ayttm/aycryption.a
 lib/ayttm/aycryption.la
 lib/ayttm/aycryption.so
+lib/ayttm/custmsg.a
+lib/ayttm/custmsg.la
+lib/ayttm/custmsg.so
 lib/ayttm/icq-toc.a
 lib/ayttm/icq-toc.la
 lib/ayttm/icq-toc.so
@@ -37,6 +49,9 @@ lib/ayttm/irc.so
 lib/ayttm/jabber.a
 lib/ayttm/jabber.la
 lib/ayttm/jabber.so
+lib/ayttm/lj.a
+lib/ayttm/lj.la
+lib/ayttm/lj.so
 lib/ayttm/middle.a
 lib/ayttm/middle.la
 lib/ayttm/middle.so
@@ -61,6 +76,8 @@ lib/ayttm/video_capture.so
 lib/ayttm/yahoo2.a
 lib/ayttm/yahoo2.la
 lib/ayttm/yahoo2.so
+share/applications/ayttm.desktop
+share/applnk/Internet/ayttm.desktop
 %%DATADIR%%/smileys/Console Smileys/aysmile.rc
 %%DATADIR%%/smileys/Console Smileys/blank.xpm
 %%DATADIR%%/smileys/Console Smileys/blush.xpm
@@ -95,9 +112,14 @@ lib/ayttm/yahoo2.so
 %%DATADIR%%/sounds/BuddyLeave.au
 %%DATADIR%%/sounds/Receive.au
 %%DATADIR%%/sounds/Send.au
+share/pixmaps/ayttm.png
+@dirrmtry share/applnk/Internet
+@dirrmtry share/applnk
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/smileys/Giles Smileys
 @dirrm %%DATADIR%%/smileys/Console Smileys
 @dirrm %%DATADIR%%/smileys
 @dirrm %%DATADIR%%
 @dirrm lib/ayttm
+@dirrm include/ayttm

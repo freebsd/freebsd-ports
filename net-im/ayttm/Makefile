@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ayttm
-PORTVERSION=	0.4.6.17
-PORTREVISION=	6
+PORTVERSION=	0.5.0.45
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
@@ -17,68 +16,48 @@ COMMENT=	A "chat" program that combines AIM, ICQ, and Yahoo! Chat into one
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		jasper.4:${PORTSDIR}/graphics/jasper \
-		gpgme03.9:${PORTSDIR}/security/gpgme03 \
+		gpgme.17:${PORTSDIR}/security/gpgme \
 		pspell.16:${PORTSDIR}/textproc/aspell
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+OPTIONS=	ARTS   "Enable aRts support"   off \
+		ESOUND "Enable EsounD support" off
 
-USE_XORG=	xpm
 USE_BZIP2=	yes
-USE_GCC=	3.4
-WANT_GNOME=	yes
-USE_GNOME=	gdkpixbuf gnometarget
+USE_XORG=	xpm xscrnsaver
+USE_GNOME=	gnometarget gtk20
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-smtp --enable-jasper-filter
+CONFIGURE_ARGS=	--enable-oscar --disable-workwizu --enable-smtp --enable-lj
 
 MAN1=		ayttm.1
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mesound}!=""
-USE_GNOME+=	esound
-PKGNAMESUFFIX=	-esound
-PLIST_SUB+=	ESOUND=""
-.else
-CONFIGURE_ARGS+=	--disable-esd
-PLIST_SUB+=	ESOUND="@comment "
-.endif
-
-.if defined(WITH_LIBARTS)
-LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/libarts
-PLIST_SUB+=	LIBARTS=""
+.if defined(WITH_ARTS)
+LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
 .else
 CONFIGURE_ARGS+=	--disable-arts
-PLIST_SUB+=	LIBARTS="@comment "
 .endif
 
-.if !defined(WITHOUT_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-CONFIGURE_ARGS+=	--enable-xft
-CPPFLAGS+=	`freetype-config --cflags`
-LDFLAGS+=	`freetype-config --libs`
+.if defined(WITH_ESOUND)
+USE_GNOME+=	esound
+.else
+CONFIGURE_ARGS+=	--disable-esd
 .endif
-
-pre-everything::
-	@${ECHO_MSG} "Ayttm has the following tunable option(s):"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITHOUT_GNOME=esound	Truns off EsounD support"
-	@${ECHO_MSG} "	WITH_LIBARTS=yes	Turns on libArts support"
-	@${ECHO_MSG} "	WITHOUT_XFT=yes		Turns off Xft support"
-	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
-		 s|-pthread|${PTHREAD_CFLAGS:S/"//g}|g; \
-		 s|gpgme-config|gpgme03-config|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|= pixmaps|=|g ; \
-		 s|^Utilities|#Utilities|g ; \
-		 s|^gnome|#gnome|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-L/usr/local/lib||g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g ; \
+		 /CFLAGS=/s|-pthread|${PTHREAD_CFLAGS}|g ; \
+		 /LIBS=/s|-L/usr/X11R6/lib||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|/gnome/apps/Internet|/applications|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|-L/usr/local/lib/pth/||g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>
