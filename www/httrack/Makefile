@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.42.1
+DISTVERSION=	3.42-2
 CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/ \
 		http://sunpoet.net/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Easy-to-use offline browser utility and website copier
