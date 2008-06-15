@@ -1,41 +1,64 @@
-# This patch makes the following changes:
-#
-#	- -ldb -> -ldb3
-#	- db3 include files in include/db3, not include
-#
-# As far as I can tell, both of these are FreeBSDisms, so this patch
-# should not be submitted to the vendor.
-
---- ../dist/configure~	Sun Feb 10 23:08:14 2002
-+++ ../dist/configure	Sun Feb 10 23:08:11 2002
-@@ -10676,17 +10676,17 @@
- saveLDFLAGS="$LDFLAGS"
- if test "x$with_db3" != "x"; then
- 	LDFLAGS="-L$with_db3/lib $LDFLAGS"
--	CFLAGS="-I$with_db3/include $CFLAGS"
-+	CFLAGS="-I$with_db3/include/db3 $CFLAGS"
- fi;
+--- ../dist/configure.orig	2007-11-18 08:43:54.000000000 -0800
++++ ../dist/configure	2008-06-15 11:35:32.000000000 -0700
+@@ -19433,10 +19433,10 @@ fi
  
--echo $ac_n "checking for db_create in -ldb""... $ac_c" 1>&6
--echo "configure:10684: checking for db_create in -ldb" >&5
-+echo $ac_n "checking for db_create in -ldb3""... $ac_c" 1>&6
-+echo "configure:10684: checking for db_create in -ldb3" >&5
- ac_lib_var=`echo db'_'db_create | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-ldb  $LIBS"
-+LIBS="-ldb3  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 10692 "configure"
- #include "confdefs.h"
-@@ -10835,7 +10835,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS=" /usr/local/share/libtool/ltmain.sh"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++LIBTOOL='$(SHELL) /usr/local/bin/libtool'
+ 
+ # Prevent multiple expansion
+ 
+@@ -27631,6 +27631,8 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <stdlib.h>
++#include <stdio.h>
+ main(){char buf[20]; exit(sprintf(buf, "XXX") != 3);}
+ _ACEOF
+ rm -f conftest$ac_exeext
+@@ -28624,7 +28626,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <stdio.h>
+-int fprintf ();
++/*int fprintf ();*/
+ 
+ int
+ main ()
+@@ -28755,18 +28757,19 @@ fi
+ SAVELDFLAGS="$LDFLAGS"
+ if test "x$with_db_prefix" != "x"; then
+ 	LDFLAGS="-L$with_db_prefix/lib $LDFLAGS"
+-	CPPFLAGS="-I$with_db_prefix/include $CPPFLAGS"
++	CPPFLAGS="-I$with_db_prefix/include/db3 $CPPFLAGS"
+ fi
+ if test "$with_db_type" != db1; then
+ 	SAVELIBS="$LIBS"
+ 
+-	LIBS="$LIBS -ldb"
++	LIBS="$LIBS -ldb3"
+ 	cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/stddef.h>
+ #include <db.h>
+ int
+ main ()
+@@ -28958,7 +28961,7 @@ _ACEOF
  	dl_src=../common/dldb.c
  	LIBS="-ldl $LIBS"
  else
 -	LIBS="-ldb $LIBS"
 +	LIBS="-ldb3 $LIBS"
- 	if test "X$with_db3" != "X"; then
- 		LDFLAGS="`echo $with_db3/lib | sed "$LRscript"` $LDFLAGS"
+ 	if test "X$with_db_prefix" != "X"; then
+ 		LDFLAGS="`echo $with_db_prefix/lib | sed "$LRscript"` $LDFLAGS"
  	fi

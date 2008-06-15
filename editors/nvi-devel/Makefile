@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	nvi
-PORTVERSION=	1.81.5
-PORTREVISION=	4
+PORTVERSION=	1.81.6
+PORTREVISION=	0
 CATEGORIES=	editors
-MASTER_SITES=	http://193.190.253.81/~skimo/nvi/devel/ \
+MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/ \
+		http://193.190.253.81/~skimo/nvi/devel/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd
 
@@ -23,26 +24,16 @@ USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
 USE_AUTOTOOLS=		libtool:15
 USE_LDCONFIG=		yes
-CONFIGURE_ARGS+=	--with-db3=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-db-prefix=${LOCALBASE}
 CONFIGURE_SCRIPT=	../dist/configure
 MAN1=			ex.1 vi.1 view.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-EXTRA_PATCHES+=	\
-		files/extra-patch-cl-cl.h \
-		files/extra-patch-cl-cl_funcs.c \
-		files/extra-patch-cl-cl_screen.c \
-		files/extra-patch-common-db.c \
-		files/extra-patch-common-key.c \
-		files/extra-patch-common-mem.h \
-		files/extra-patch-vi-v_txt.c
-.endif
 
 # XXX: nvi doesn't really need sys/select.h, but I don't think the
 # build should break when it includes it (this happens on RELENG_4;
 # sys/select.h is effectively empty on -current).
+pre-configure:
+	@${CHMOD} +rwx ${WRKSRC}/${CONFIGURE_SCRIPT}
+
 post-configure:
 	${ECHO_CMD} "#undef HAVE_SYS_SELECT_H" >> ${WRKSRC}/config.h
 
@@ -52,4 +43,4 @@ post-install:
 	${RM} ${PREFIX}/man/cat1/${__p}.0
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
