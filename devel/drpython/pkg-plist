@@ -1,4 +1,7 @@
 bin/drpython
+%%PYTHON_SITELIBDIR%%/drpython/__init__.py
+%%PYTHON_SITELIBDIR%%/drpython/__init__.pyc
+%%PYTHON_SITELIBDIR%%/drpython/__init__.pyo
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Check Syntax.png
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Close All Documents.png
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/16/Close All Other Documents.png
@@ -111,6 +114,7 @@ bin/drpython
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Fold All.png
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Go To.png
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Help.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Import All.png
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Indent.png
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Insert Regular Expression.png
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/Last Document.png
@@ -165,6 +169,8 @@ bin/drpython
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/list.png
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/new directory.png
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/24/up.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/drAdvanced.png
+%%PYTHON_SITELIBDIR%%/drpython/bitmaps/drBeginner.png
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/drpython.ico
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/drpython.png
 %%PYTHON_SITELIBDIR%%/drpython/bitmaps/install.wizard.png
@@ -229,6 +235,9 @@ bin/drpython
 %%PYTHON_SITELIBDIR%%/drpython/drGetKeyDialog.py
 %%PYTHON_SITELIBDIR%%/drpython/drGetKeyDialog.pyc
 %%PYTHON_SITELIBDIR%%/drpython/drGetKeyDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drHtmlBrowser.py
+%%PYTHON_SITELIBDIR%%/drpython/drHtmlBrowser.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drHtmlBrowser.pyo
 %%PYTHON_SITELIBDIR%%/drpython/drKeywords.py
 %%PYTHON_SITELIBDIR%%/drpython/drKeywords.pyc
 %%PYTHON_SITELIBDIR%%/drpython/drKeywords.pyo
@@ -241,6 +250,9 @@ bin/drpython
 %%PYTHON_SITELIBDIR%%/drpython/drOpenImportedModuleDialog.py
 %%PYTHON_SITELIBDIR%%/drpython/drOpenImportedModuleDialog.pyc
 %%PYTHON_SITELIBDIR%%/drpython/drOpenImportedModuleDialog.pyo
+%%PYTHON_SITELIBDIR%%/drpython/drPDB.py
+%%PYTHON_SITELIBDIR%%/drpython/drPDB.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drPDB.pyo
 %%PYTHON_SITELIBDIR%%/drpython/drPluginDialog.py
 %%PYTHON_SITELIBDIR%%/drpython/drPluginDialog.pyc
 %%PYTHON_SITELIBDIR%%/drpython/drPluginDialog.pyo
@@ -333,6 +345,9 @@ bin/drpython
 %%PYTHON_SITELIBDIR%%/drpython/drpython.pyc
 %%PYTHON_SITELIBDIR%%/drpython/drpython.pyo
 %%PYTHON_SITELIBDIR%%/drpython/drpython.pyw
+%%PYTHON_SITELIBDIR%%/drpython/drpython_wx26.py
+%%PYTHON_SITELIBDIR%%/drpython/drpython_wx26.pyc
+%%PYTHON_SITELIBDIR%%/drpython/drpython_wx26.pyo
 %%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/PrintEndOfLineCharactersInPrompt.py
 %%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/PrintEndOfLineCharactersInPrompt.pyc
 %%PYTHON_SITELIBDIR%%/drpython/examples/DrScript/PrintEndOfLineCharactersInPrompt.pyo
