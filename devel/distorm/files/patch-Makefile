@@ -1,0 +1,22 @@
+--- Makefile.orig	2008-05-12 02:39:48.081089220 -0400
++++ Makefile	2008-05-13 03:48:02.113028254 -0400
+@@ -5,8 +5,7 @@
+ TARGET	= libdistorm64.so
+ COBJS	= ../../src/x86defs.o ../../src/wstring.o ../../src/textdefs.o ../../src/prefix.o ../../src/operands.o ../../src/insts.o ../../src/instructions.o ../../src/distorm.o ../../src/decoder.o
+ PYOBJS	= ../../src/x86defs.o ../../src/wstring.o ../../src/textdefs.o ../../src/pydistorm.o ../../src/prefix.o ../../src/operands.o ../../src/insts.o ../../src/instructions.o ../../src/decoder.o
+-CC	= gcc
+-CFLAGS	= -O2 -Wall -fPIC -DSUPPORT_64BIT_OFFSET -D_DLL
++CFLAGS	+= -fPIC -DSUPPORT_64BIT_OFFSET -D_DLL
+ 
+ all: clib py
+ 
+@@ -15,7 +14,8 @@
+ 
+ clib: ${COBJS}
+ 	${CC} ${CFLAGS} ${VERSION} ${COBJS} -fPIC -shared -o ${TARGET}
+-	ar rs ../../distorm64.a ${COBJS}
++	ar rs libdistorm64.a ${COBJS}
++	${CC} ${CFLAGS} -o disasm ../../linuxproj/main.c libdistorm64.a
+ 
+ py: ${PYOBJS}
+ 	${CC} ${CFLAGS} ${VERSION} ${PYOBJS} -fPIC -shared -o ${TARGET}
