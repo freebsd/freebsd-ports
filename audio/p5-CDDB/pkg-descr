@@ -1,6 +1,6 @@
 The CDDB module implements a Perl class for communicating with an
 audio compact disc database through the CDDBP protocol. It allows
-quering the database and submitting new entries to it via e-mail
+querying the database and submitting new entries to it via e-mail
 (the Mail::Internet and Mail::Header modules are required for
 submitting, but their absence won't affect other functions). Unlike
 its analogs, CDDB.pm doesn't try to read a disc in your CD-ROM by

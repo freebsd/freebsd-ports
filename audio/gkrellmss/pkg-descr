@@ -4,7 +4,7 @@ audio channels as an oscilloscope trace.
 
 There are two buttons to the left of the VU Meter which select an
 oscope horizontal sweep speed ranging from 100 microseconds (usec)
-per division to 50 miliseconds (msec) per division. There are 5
+per division to 50 milliseconds (msec) per division. There are 5
 horizontal divisions, so a trace sweep time can range from 500 usec
 (1/2000 sec) to 250 msec (1/4 sec). The oscope trace is triggered
 by a positive zero crossing audio signal to give nice stable
