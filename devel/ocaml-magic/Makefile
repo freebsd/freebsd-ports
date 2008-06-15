@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	OCaml-Magic-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OCaml binding for libmagic(3)
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml

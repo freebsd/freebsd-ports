@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net java security
 MASTER_SITES=	SF
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pure Java implementation of SSH2
 
 USE_ZIP=	yes

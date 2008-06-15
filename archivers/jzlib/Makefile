@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	archivers java
 MASTER_SITES=	http://www.jcraft.com/jzlib/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A re-implementation of zlib in pure Java
 
 USE_JAVA=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://codeville.org/download/
 DISTNAME=	Codeville-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An "anarchic" control version system without unnecessary re-merges
 
 USE_PYTHON=	yes
