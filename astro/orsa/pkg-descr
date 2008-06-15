@@ -3,7 +3,7 @@ computations. Asteroids, comets, artificial satellites, Solar and extra-Solar
 planetary systems can be accurately reproduced, simulated, and analyzed.
 
 Features
-    * se of JPL ephemeris files for accurate planets positions
+    * use of JPL ephemeris files for accurate planets positions
     * Qt-based graphical user interface
     * advanced 2D plotting tool and 3D OpenGL viewer
     * import asteroids and comets from all the known databases (MPC, JPL,
