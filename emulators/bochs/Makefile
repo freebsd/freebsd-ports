@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	2.3.6
-PORTREVISION=	1
+PORTVERSION=	2.3.7
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
@@ -18,13 +17,14 @@ COMMENT=	An IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-docbook
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=	CDROM "Enable CDROM support" on \
+OPTIONS=	AES "Enable support of AES CPU extensions" off \
+		CDROM "Enable CDROM support" on \
 		CLGD54XX "Enable Cirrus Logic GD54xx video card" off \
 		DEBUGGER "Enable debugger and disassembler support" off \
 		DEBUGGER_X86 "Enable x86 hardware debugger" off \
@@ -55,9 +55,12 @@ OPTIONS=	CDROM "Enable CDROM support" on \
 		WX "Use WxWidgets display interface" off \
 		X11 "Use X11 display interface" on \
 		X86_64 "Enable AMD x86-64 support" off \
-		XPM "Enable XPM library support" off
+		XPM "Enable XPM library support" off \
+		XSAVE "Enable support of XSAVE/XRSTOR CPU extensions" off
 
 CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 MANCOMPRESSED=	yes
 MAN1=		bochs.1 bochs-dlx.1 bxcommit.1 bximage.1
@@ -69,6 +72,10 @@ SUB_FILES=	pkg-message
 
 .if defined(WITHOUT_TERM) && defined(WITHOUT_WX) && defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--with-nogui
+.endif
+
+.if defined(WITH_AES)
+CONFIGURE_ARGS+=--enable-aes
 .endif
 
 .if defined(WITHOUT_CDROM)
@@ -163,8 +170,9 @@ CONFIGURE_ARGS+=--with-sdl
 CONFIGURE_ARGS+=--enable-show-ips
 .endif
 
-.if defined(WITH_SSE4)
+.if defined(WITH_SSE4) || defined(WITH_AES) || defined(WITH_XSAVE)
 CONFIGURE_ARGS+=--enable-sse=4 --enable-sse-extension
+WITH_CPU_LEVEL=	6
 .endif
 
 .if defined(WITH_SVGA)
@@ -206,7 +214,12 @@ CONFIGURE_ARGS+=--enable-x86-64
 
 .if defined(WITH_XPM)
 USE_XORG=	xpm
-CONFIGURE_ARGS+=--with-xpm
+.else
+CONFIGURE_ARGS+=--disable-xpm
+.endif
+
+.if defined(WITH_XSAVE)
+CONFIGURE_ARGS+=--enable-xsave
 .endif
 
 .if defined(WITH_CPU_LEVEL)
@@ -256,10 +269,8 @@ post-patch:
 		 ${WRKSRC}/doc/docbook/user/user.dbk ${WRKSRC}/doc/man/*.[15]
 	@${REINPLACE_CMD} -Ee 's|/usr/(include/vga\.h)|${LOCALBASE}/\1|' \
 		${WRKSRC}/gui/svga.cc
-.if defined(WITH_SVGA)
-	@${REINPLACE_CMD} -e 's|-lvga -lvgagl|@LDFLAGS@ &|' \
+	@${REINPLACE_CMD} -Ee 's|(^LOCAL_CXXFLAGS.+=)|\1 @CPPFLAGS@|' \
 		${WRKSRC}/gui/Makefile.in
-.endif
 
 post-install:
 .if defined(WITH_PLUGINS)
