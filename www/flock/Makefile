@@ -55,6 +55,10 @@ OPTIONS=	SMB "Enable smb:// URI support using gnomevfs" off
 
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
+.if ${ARCH} != "i386"
+BROKEN=	does not compile
+.endif
+
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 601101
 IGNORE=	does not run, update to 6.2-RELEASE or newer
 .endif
