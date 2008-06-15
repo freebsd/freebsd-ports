@@ -7,7 +7,7 @@
 
 PORTNAME=	aureal-kmod
 PORTVERSION=	1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio kld
 MASTER_SITES=	http://www.matey.org/au88x0/
 DISTNAME=	au88x0-${PORTVERSION}_${DISTREVISION}
@@ -22,11 +22,19 @@ SRCPREFIX?=	/usr/src
 STRAYFILES=	au88x0.h au88x0.c asp10.o asp20.o asp30.o
 DISTREVISION=	4
 
+KMODDIR=	${PREFIX}/modules/au88x0
+KMODDIR_REL=	${KMODDIR:S%${PREFIX}/%%}
+
+USE_RC_SUBR=	aureal
+SUB_FILES=	pkg-message
+SUB_LIST=	KMODDIR=${KMODDIR} RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
+
+PLIST_SUB=	KMODDIR=${KMODDIR_REL}
+
 WRKSRC=		${WRKDIR}
 
-PKGMESSAGE=	${WRKSRC}/.MESSAGE
-
 MAKE_ENV=	WRKSRC="${WRKSRC}"
+MAKE_ARGS=	KMODDIR="${KMODDIR}"
 
 # Make sure kernel sources are present before going any further
 .if ! exists(${SRCPREFIX}/sys/dev/sound/pcm/sound.c)
@@ -51,14 +59,9 @@ pre-fetch:
 .endfor
 
 pre-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
-		${PKGMESSAGE}
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/aureal.sh > \
-		${WRKDIR}/aureal.sh.sample
-	${MKDIR} ${PREFIX}/lib/au88x0
+	${MKDIR} ${KMODDIR}
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/aureal.sh.sample ${PREFIX}/etc/rc.d
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
