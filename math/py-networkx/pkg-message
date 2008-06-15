@@ -1,0 +1,4 @@
+----------------------------------------------------------
+It is better if you also install py-numpy, py-graphviz and
+py-matplotlib so you can use all features of py-networkx.
+----------------------------------------------------------
