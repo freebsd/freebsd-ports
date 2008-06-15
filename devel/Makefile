@@ -257,6 +257,7 @@
     SUBDIR += directfb
     SUBDIR += distcc
     SUBDIR += distel
+    SUBDIR += distorm
     SUBDIR += ditrack
     SUBDIR += dits
     SUBDIR += djgpp-binutils
