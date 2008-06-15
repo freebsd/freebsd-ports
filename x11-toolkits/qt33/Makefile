@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.8
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -29,6 +29,7 @@ CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
 		xfmail-1.5.5_[1-2]
 
 USE_BZIP2=	yes
+USE_XORG=	xinerama sm inputproto xi
 REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
