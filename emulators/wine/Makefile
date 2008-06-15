@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.0-rc4
+DISTVERSION=	1.0-rc5
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SFE \
@@ -41,7 +41,8 @@ USE_XORG=	xpm
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	On
+OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	On \
+		HAL	"Use HAL (Hardware Abstraction Layer)"		Off
 
 .include <bsd.port.pre.mk>
 
@@ -52,6 +53,13 @@ CONFIGURE_ARGS+=	--with-cups
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 .endif
 
+.ifdef WITH_HAL
+CONFIGURE_ARGS+=	--with-hal
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+.else
+CONFIGURE_ARGS+=	--without-hal
+.endif
+
 .if ${OSVERSION} < 602000
 IGNORE=		fails to properly work on versions of FreeBSD before 6.2 (due to problems with threading support)
 .endif
@@ -59,6 +67,7 @@ IGNORE=		fails to properly work on versions of FreeBSD before 6.2 (due to proble
 post-patch:
 .if ${OSVERSION} < 700041
 	${REINPLACE_CMD} 's/-lpthread/-lthr/g' ${WRKSRC}/configure
+	${REINPLACE_CMD} '/ac_hal_libs=/s/"$$/ -lthr"/' ${WRKSRC}/configure
 .endif
 
 pre-build:
