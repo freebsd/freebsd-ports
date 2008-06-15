@@ -21,7 +21,7 @@ MAN6=		powwow.6
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800034
+.if ${OSVERSION} >= 800034 || (${OSVERSION} >= 700109 && ${OSVERSION} < 800000) || (${OSVERSION} >= 603103 && ${OSVERSION} < 700000)
 BROKEN=		does not compile
 .endif
 
