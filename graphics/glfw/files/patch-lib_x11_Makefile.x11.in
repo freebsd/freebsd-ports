@@ -1,0 +1,13 @@
+--- lib/x11/Makefile.x11.in.orig	2007-07-01 11:46:46.000000000 +0200
++++ lib/x11/Makefile.x11.in	2008-06-15 00:35:56.000000000 +0200
+@@ -29,8 +29,8 @@
+ 	$(INSTALL) -c -m 644 libglfw.a $(PREFIX)/lib/libglfw.a
+ 	$(INSTALL) -d $(PREFIX)/include/GL
+ 	$(INSTALL) -c -m 644 ../../include/GL/glfw.h $(PREFIX)/include/GL/glfw.h
+-	$(INSTALL) -d $(PREFIX)/lib/pkgconfig
+-	$(INSTALL) -c -m 644 libglfw.pc $(PREFIX)/lib/pkgconfig/libglfw.pc
++	$(INSTALL) -d $(PREFIX)/libdata/pkgconfig
++	$(INSTALL) -c -m 644 libglfw.pc $(PREFIX)/libdata/pkgconfig/libglfw.pc
+ 
+ 
+ ##########################################################################
