@@ -1,7 +1,9 @@
 bin/dvdcpy
 %%GUI_SUPPORT%%bin/ogmrip
-%%SRT_SUPPORT%%bin/srtutil
 %%SRT_SUPPORT%%bin/subp2pgm
+%%SRT_SUPPORT%%bin/subp2png
+%%SRT_SUPPORT%%bin/subp2tiff
+%%SRT_SUPPORT%%bin/subptools
 %%THEORA_SUPPORT%%bin/theoraenc
 include/ogmdvd/ogmdvd-audio.h
 %%GUI_SUPPORT%%include/ogmdvd/ogmdvd-chapter-list.h
@@ -12,6 +14,8 @@ include/ogmdvd/ogmdvd-disc.h
 include/ogmdvd/ogmdvd-enums.h
 %%GUI_SUPPORT%%include/ogmdvd/ogmdvd-gtk.h
 include/ogmdvd/ogmdvd-labels.h
+include/ogmdvd/ogmdvd-parser.h
+include/ogmdvd/ogmdvd-reader.h
 include/ogmdvd/ogmdvd-stream.h
 include/ogmdvd/ogmdvd-subp.h
 %%GUI_SUPPORT%%include/ogmdvd/ogmdvd-title-chooser-widget.h
@@ -29,7 +33,7 @@ include/ogmjob/ogmjob-pipeline.h
 include/ogmjob/ogmjob-queue.h
 include/ogmjob/ogmjob-spawn.h
 include/ogmjob/ogmjob.h
-include/ogmrip/ogmrip-audio.h
+include/ogmrip/ogmrip-audio-codec.h
 %%GUI_SUPPORT%%include/ogmrip/ogmrip-chapter-list.h
 include/ogmrip/ogmrip-chapters.h
 %%GUI_SUPPORT%%include/ogmrip/ogmrip-chooser-list.h
@@ -42,15 +46,17 @@ include/ogmrip/ogmrip-file.h
 include/ogmrip/ogmrip-fs.h
 %%GUI_SUPPORT%%include/ogmrip/ogmrip-gtk.h
 %%GUI_SUPPORT%%include/ogmrip/ogmrip-helper.h
+include/ogmrip/ogmrip-lavc.h
 %%GUI_SUPPORT%%include/ogmrip/ogmrip-marshal.h
 include/ogmrip/ogmrip-mplayer.h
+%%GUI_SUPPORT%%include/ogmrip/ogmrip-options-plugin.h
 include/ogmrip/ogmrip-plugin.h
 %%GUI_SUPPORT%%include/ogmrip/ogmrip-preferences.h
 %%GUI_SUPPORT%%include/ogmrip/ogmrip-source-chooser-widget.h
 %%GUI_SUPPORT%%include/ogmrip/ogmrip-source-chooser.h
-include/ogmrip/ogmrip-subp.h
+include/ogmrip/ogmrip-subp-codec.h
 include/ogmrip/ogmrip-version.h
-include/ogmrip/ogmrip-video.h
+include/ogmrip/ogmrip-video-codec.h
 include/ogmrip/ogmrip.h
 %%GUI_SUPPORT%%lib/libogmdvd-gtk.a
 %%GUI_SUPPORT%%lib/libogmdvd-gtk.la
@@ -68,6 +74,10 @@ lib/libogmjob.so.0
 %%GUI_SUPPORT%%lib/libogmrip-gtk.la
 %%GUI_SUPPORT%%lib/libogmrip-gtk.so
 %%GUI_SUPPORT%%lib/libogmrip-gtk.so.0
+lib/libogmrip-lavc.a
+lib/libogmrip-lavc.la
+lib/libogmrip-lavc.so
+lib/libogmrip-lavc.so.0
 lib/libogmrip-mplayer.a
 lib/libogmrip-mplayer.la
 lib/libogmrip-mplayer.so
@@ -76,54 +86,60 @@ lib/libogmrip.a
 lib/libogmrip.la
 lib/libogmrip.so
 lib/libogmrip.so.0
-%%FAAC_SUPPORT%%lib/ogmrip/audio-codecs/libogmrip-aac.a
-%%FAAC_SUPPORT%%lib/ogmrip/audio-codecs/libogmrip-aac.la
-%%FAAC_SUPPORT%%lib/ogmrip/audio-codecs/libogmrip-aac.so
-lib/ogmrip/audio-codecs/libogmrip-acopy.a
-lib/ogmrip/audio-codecs/libogmrip-acopy.la
-lib/ogmrip/audio-codecs/libogmrip-acopy.so
-lib/ogmrip/audio-codecs/libogmrip-mp3.a
-lib/ogmrip/audio-codecs/libogmrip-mp3.la
-lib/ogmrip/audio-codecs/libogmrip-mp3.so
-lib/ogmrip/audio-codecs/libogmrip-vorbis.a
-lib/ogmrip/audio-codecs/libogmrip-vorbis.la
-lib/ogmrip/audio-codecs/libogmrip-vorbis.so
-lib/ogmrip/audio-codecs/libogmrip-wav.a
-lib/ogmrip/audio-codecs/libogmrip-wav.la
-lib/ogmrip/audio-codecs/libogmrip-wav.so
-lib/ogmrip/containers/libogmrip-avi.a
-lib/ogmrip/containers/libogmrip-avi.la
-lib/ogmrip/containers/libogmrip-avi.so
-%%MATROSKA_SUPPORT%%lib/ogmrip/containers/libogmrip-mkv.a
-%%MATROSKA_SUPPORT%%lib/ogmrip/containers/libogmrip-mkv.la
-%%MATROSKA_SUPPORT%%lib/ogmrip/containers/libogmrip-mkv.so
-%%LAVF_SUPPORT%%lib/ogmrip/containers/libogmrip-mov.a
-%%LAVF_SUPPORT%%lib/ogmrip/containers/libogmrip-mov.la
-%%LAVF_SUPPORT%%lib/ogmrip/containers/libogmrip-mov.so
-%%LAVF_SUPPORT%%lib/ogmrip/containers/libogmrip-mp4.a
-%%LAVF_SUPPORT%%lib/ogmrip/containers/libogmrip-mp4.la
-%%LAVF_SUPPORT%%lib/ogmrip/containers/libogmrip-mp4.so
-lib/ogmrip/containers/libogmrip-ogg.a
-lib/ogmrip/containers/libogmrip-ogg.la
-lib/ogmrip/containers/libogmrip-ogg.so
-%%SRT_SUPPORT%%lib/ogmrip/subp-codecs/libogmrip-srt.a
-%%SRT_SUPPORT%%lib/ogmrip/subp-codecs/libogmrip-srt.la
-%%SRT_SUPPORT%%lib/ogmrip/subp-codecs/libogmrip-srt.so
-lib/ogmrip/subp-codecs/libogmrip-vobsub.a
-lib/ogmrip/subp-codecs/libogmrip-vobsub.la
-lib/ogmrip/subp-codecs/libogmrip-vobsub.so
-lib/ogmrip/video-codecs/libogmrip-lavc.a
-lib/ogmrip/video-codecs/libogmrip-lavc.la
-lib/ogmrip/video-codecs/libogmrip-lavc.so
-%%THEORA_SUPPORT%%lib/ogmrip/video-codecs/libogmrip-theora.a
-%%THEORA_SUPPORT%%lib/ogmrip/video-codecs/libogmrip-theora.la
-%%THEORA_SUPPORT%%lib/ogmrip/video-codecs/libogmrip-theora.so
-%%X264_SUPPORT%%lib/ogmrip/video-codecs/libogmrip-x264.a
-%%X264_SUPPORT%%lib/ogmrip/video-codecs/libogmrip-x264.la
-%%X264_SUPPORT%%lib/ogmrip/video-codecs/libogmrip-x264.so
-lib/ogmrip/video-codecs/libogmrip-xvid.a
-lib/ogmrip/video-codecs/libogmrip-xvid.la
-lib/ogmrip/video-codecs/libogmrip-xvid.so
+%%FAAC_SUPPORT%%lib/ogmrip/audio-plugins/libogmrip-aac.a
+%%FAAC_SUPPORT%%lib/ogmrip/audio-plugins/libogmrip-aac.la
+%%FAAC_SUPPORT%%lib/ogmrip/audio-plugins/libogmrip-aac.so
+lib/ogmrip/audio-plugins/libogmrip-acopy.a
+lib/ogmrip/audio-plugins/libogmrip-acopy.la
+lib/ogmrip/audio-plugins/libogmrip-acopy.so
+lib/ogmrip/audio-plugins/libogmrip-mp3.a
+lib/ogmrip/audio-plugins/libogmrip-mp3.la
+lib/ogmrip/audio-plugins/libogmrip-mp3.so
+lib/ogmrip/audio-plugins/libogmrip-vorbis.a
+lib/ogmrip/audio-plugins/libogmrip-vorbis.la
+lib/ogmrip/audio-plugins/libogmrip-vorbis.so
+lib/ogmrip/audio-plugins/libogmrip-wav.a
+lib/ogmrip/audio-plugins/libogmrip-wav.la
+lib/ogmrip/audio-plugins/libogmrip-wav.so
+lib/ogmrip/container-plugins/libogmrip-avi.a
+lib/ogmrip/container-plugins/libogmrip-avi.la
+lib/ogmrip/container-plugins/libogmrip-avi.so
+%%MATROSKA_SUPPORT%%lib/ogmrip/container-plugins/libogmrip-mkv.a
+%%MATROSKA_SUPPORT%%lib/ogmrip/container-plugins/libogmrip-mkv.la
+%%MATROSKA_SUPPORT%%lib/ogmrip/container-plugins/libogmrip-mkv.so
+lib/ogmrip/container-plugins/libogmrip-mov.a
+lib/ogmrip/container-plugins/libogmrip-mov.la
+lib/ogmrip/container-plugins/libogmrip-mov.so
+%%MP4_SUPPORT%%lib/ogmrip/container-plugins/libogmrip-mp4.a
+%%MP4_SUPPORT%%lib/ogmrip/container-plugins/libogmrip-mp4.la
+%%MP4_SUPPORT%%lib/ogmrip/container-plugins/libogmrip-mp4.so
+lib/ogmrip/container-plugins/libogmrip-ogg.a
+lib/ogmrip/container-plugins/libogmrip-ogg.la
+lib/ogmrip/container-plugins/libogmrip-ogg.so
+%%GUI_SUPPORT%%lib/ogmrip/options-plugins/libogmrip-lavc-options.a
+%%GUI_SUPPORT%%lib/ogmrip/options-plugins/libogmrip-lavc-options.la
+%%GUI_SUPPORT%%lib/ogmrip/options-plugins/libogmrip-lavc-options.so
+%%GUI_SUPPORT%%lib/ogmrip/options-plugins/libogmrip-x264-options.a
+%%GUI_SUPPORT%%lib/ogmrip/options-plugins/libogmrip-x264-options.la
+%%GUI_SUPPORT%%lib/ogmrip/options-plugins/libogmrip-x264-options.so
+%%SRT_SUPPORT%%lib/ogmrip/subp-plugins/libogmrip-srt.a
+%%SRT_SUPPORT%%lib/ogmrip/subp-plugins/libogmrip-srt.la
+%%SRT_SUPPORT%%lib/ogmrip/subp-plugins/libogmrip-srt.so
+lib/ogmrip/subp-plugins/libogmrip-vobsub.a
+lib/ogmrip/subp-plugins/libogmrip-vobsub.la
+lib/ogmrip/subp-plugins/libogmrip-vobsub.so
+lib/ogmrip/video-plugins/libogmrip-lavc-mpeg4.a
+lib/ogmrip/video-plugins/libogmrip-lavc-mpeg4.la
+lib/ogmrip/video-plugins/libogmrip-lavc-mpeg4.so
+%%THEORA_SUPPORT%%lib/ogmrip/video-plugins/libogmrip-theora.a
+%%THEORA_SUPPORT%%lib/ogmrip/video-plugins/libogmrip-theora.la
+%%THEORA_SUPPORT%%lib/ogmrip/video-plugins/libogmrip-theora.so
+lib/ogmrip/video-plugins/libogmrip-x264.a
+lib/ogmrip/video-plugins/libogmrip-x264.la
+lib/ogmrip/video-plugins/libogmrip-x264.so
+lib/ogmrip/video-plugins/libogmrip-xvid.a
+lib/ogmrip/video-plugins/libogmrip-xvid.la
+lib/ogmrip/video-plugins/libogmrip-xvid.so
 libdata/pkgconfig/ogmdvd-gtk.pc
 libdata/pkgconfig/ogmdvd.pc
 libdata/pkgconfig/ogmjob.pc
@@ -134,22 +150,29 @@ share/locale/ca/LC_MESSAGES/ogmrip.mo
 share/locale/cs/LC_MESSAGES/ogmrip.mo
 share/locale/de/LC_MESSAGES/ogmrip.mo
 share/locale/fr/LC_MESSAGES/ogmrip.mo
-share/locale/pl/LC_MESSAGES/ogmrip.mo
 share/locale/sv/LC_MESSAGES/ogmrip.mo
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-crop.glade
+%%GUI_SUPPORT%%%%DATADIR%%/ogmrip-lavc.glade
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-main.glade
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-options.glade
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-pref.glade
+%%GUI_SUPPORT%%%%DATADIR%%/ogmrip-profile-editor.glade
+%%GUI_SUPPORT%%%%DATADIR%%/ogmrip-profiles.glade
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-progress.glade
+%%GUI_SUPPORT%%%%DATADIR%%/ogmrip-simple-editor.glade
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-spell.glade
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-ui.xml
+%%GUI_SUPPORT%%%%DATADIR%%/ogmrip-x264.glade
+%%GUI_SUPPORT%%%%DATADIR%%/profiles/profiles.xml
 %%GUI_SUPPORT%%share/pixmaps/ogmrip.png
+%%GUI_SUPPORT%%@dirrm %%DATADIR%%/profiles
 %%GUI_SUPPORT%%@dirrm %%DATADIR%%
 %%GUI_SUPPORT%%@dirrmtry share/applications
-@dirrm lib/ogmrip/video-codecs
-@dirrm lib/ogmrip/subp-codecs
-@dirrm lib/ogmrip/containers
-@dirrm lib/ogmrip/audio-codecs
+@dirrm lib/ogmrip/video-plugins
+@dirrm lib/ogmrip/subp-plugins
+%%GUI_SUPPORT%%@dirrm lib/ogmrip/options-plugins
+@dirrm lib/ogmrip/container-plugins
+@dirrm lib/ogmrip/audio-plugins
 @dirrm lib/ogmrip
 @dirrm include/ogmrip
 @dirrm include/ogmjob
