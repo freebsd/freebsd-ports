@@ -166,6 +166,7 @@ lib/libspamc.so.0
 %%DATADIR%%/60_whitelist_spf.cf
 %%DATADIR%%/60_whitelist_subject.cf
 %%DATADIR%%/72_active.cf
+%%DATADIR%%/72_removed.cf
 %%DATADIR%%/languages
 %%DATADIR%%/sa-update-pubkey.txt
 %%DATADIR%%/user_prefs.template
