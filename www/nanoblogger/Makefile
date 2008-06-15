@@ -30,11 +30,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nb ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/nb.conf ${PREFIX}/etc/nb.conf.sample
 	${MKDIR} ${DATADIR}
-.for data in default lang lib moods plugins
+.for data in lang lib moods plugins
 	${MKDIR} ${DATADIR}/${data} && \
 		( cd ${WRKSRC}/${data} && \
 			${COPYTREE_SHARE} \* ${DATADIR}/${data} "! -name *.orig ! -name *.bak" )
 .endfor
+	${MKDIR} ${DATADIR}/default && \
+		${CP} -R ${WRKSRC}/default ${DATADIR}/
 	${CP} ${WRKSRC}/welcome-to-nb.txt ${DATADIR}
 
 post-install:
