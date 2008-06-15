@@ -34,6 +34,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="800e8bd5-3acb-11dd-8842-001302a18722">
+    <topic>xorg -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<range><lt>1.4.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthieu Herrb of X.Org reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/xorg/2008-June/036026.html">
+	  <p>Several vulnerabilities have been found in the server-side code
+	    of some extensions in the X Window System. Improper validation of
+	    client-provided data can cause data corruption.</p>
+	  <p>Exploiting these overflows will crash the X server or,
+	    under certain circumstances allow the execution of arbitray machine
+	    code.</p>
+	  <p>When the X server is running with root privileges (which is the case
+	    for the Xorg server and for most kdrive based servers), these
+	    vulnerabilities can thus also be used to raise privileges.</p>
+	  <p>All these vulnerabilities, to be exploited successfully, require either
+	    an already established connection to a running X server (and normally
+	    running X servers are only accepting authenticated connections), or a
+	    shell access with a valid user on the machine where the vulnerable
+	    server is installed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-1377</cvename>
+      <cvename>CVE-2008-1379</cvename>
+      <cvename>CVE-2008-2360</cvename>
+      <cvename>CVE-2008-2361</cvename>
+      <cvename>CVE-2008-2362</cvename>
+      <url>http://lists.freedesktop.org/archives/xorg/2008-June/036026.html</url>
+      <url>http://secunia.com/advisories/30627/</url>
+    </references>
+    <dates>
+      <discovery>2008-06-11</discovery>
+      <entry>2008-06-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c4ba95b2-39ce-11dd-98c9-00163e000016">
     <topic>moinmoin -- superuser privilege escalation</topic>
     <affects>
