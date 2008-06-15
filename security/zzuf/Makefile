@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zzuf
-PORTVERSION=	0.10
+PORTVERSION=	0.12
 CATEGORIES=	security
-MASTER_SITES=	http://sam.zoy.org/zzuf/
+MASTER_SITES=	http://libcaca.zoy.org/files/zzuf/
 
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	Transparent application input fuzzer
@@ -18,6 +18,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
 MAN1=	zzuf.1
+MAN3=	libzzuf.3
 
 post-install:
 	@${RM} -f ${PREFIX}/lib/zzuf/libzzuf.la
