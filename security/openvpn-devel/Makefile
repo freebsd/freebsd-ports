@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1_rc7
-PORTREVISION=	1
+DISTVERSION=	2.1_rc8
 CATEGORIES=	security net
-MASTER_SITES=	http://openvpn.net/release/
+MASTER_SITES=	https://secure.openvpn.net/beta/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	matthias.andree@gmx.de
@@ -82,6 +81,8 @@ post-install:
 	&& ${FIND} easy-rsa sample-config-files sample-scripts -depth \
 	| ${GREP} -v easy-rsa/Windows \
 	| ${CPIO} -pdmu ${DOCSDIR} )
+.else
+	-@${RMDIR} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
