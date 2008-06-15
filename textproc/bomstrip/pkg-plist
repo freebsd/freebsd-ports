@@ -5,6 +5,7 @@ bin/bomstrip-files
 %%DATADIR%%/source/bomstrip.bf
 %%DATADIR%%/source/bomstrip.c
 %%DATADIR%%/source/bomstrip.cpp
+%%DATADIR%%/source/bomstrip.fs
 %%DATADIR%%/source/bomstrip.hs
 %%DATADIR%%/source/bomstrip.ocaml
 %%DATADIR%%/source/bomstrip.ook
