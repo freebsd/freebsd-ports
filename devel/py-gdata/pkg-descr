@@ -3,14 +3,17 @@ writing data on the web.
 
 Each of the following Google services provides a Google data API:
 
-    * Base
-    * Blogger
-    * Calendar
-    * Picasa Web Albums
-    * Spreadsheets
-    * Google Apps Provisioning
-    * Code Search
-    * Notebook
+	* Base
+	* Blogger
+	* Calendar
+	* Picasa Web Albums
+	* Spreadsheets
+	* Documents List
+	* Contacts
+	* YouTube
+	* Google Apps Provisioning
+	* Code Search
+	* Notebook 
 
 The GData Python Client Library provides a library and source code that
 make it easy to access data through Google Data APIs.

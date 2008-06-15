@@ -22,6 +22,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/base/service.py
 %%PYTHON_SITELIBDIR%%/gdata/base/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/base/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/blogger/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/blogger/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/blogger/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/blogger/service.py
+%%PYTHON_SITELIBDIR%%/gdata/blogger/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/blogger/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.pyo
@@ -79,6 +85,13 @@
 %%PYTHON_SITELIBDIR%%/gdata/urlfetch.py
 %%PYTHON_SITELIBDIR%%/gdata/urlfetch.pyc
 %%PYTHON_SITELIBDIR%%/gdata/urlfetch.pyo
+%%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/youtube/service.py
+%%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/youtube/service.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/youtube
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/spreadsheet
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/photos
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/media
@@ -88,6 +101,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/contacts
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/codesearch
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/blogger
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/base
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps
 @dirrm %%PYTHON_SITELIBDIR%%/gdata
