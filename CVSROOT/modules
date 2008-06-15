@@ -2095,6 +2095,7 @@ distcache	ports/security/distcache
 distcache-devel	ports/security/distcache-devel
 distcc		ports/devel/distcc
 distel		ports/devel/distel
+distorm		ports/devel/distorm
 distribfold	ports/biology/distribfold
 ditrack		ports/devel/ditrack
 dits		ports/devel/dits
