@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	urwid
-PORTVERSION=	0.9.8.1
+PORTVERSION=	0.9.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://excess.org/urwid/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
