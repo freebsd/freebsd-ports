@@ -36,7 +36,8 @@ post-patch:
 		-e "s,-std=c89,-std=c99,g" \
 		-e "s,CC[[:space:]]*=.*,#&,")
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -E -e "s,(install:.*)install-docs(.*)$$,\1\2," \
+	@${REINPLACE_CMD} -E -e "s,(install:.*)install-docs(.*)$$,\1\2," \
+		-e '/\(MKDIR\)[[:space:]]+\$$\(CC65DOC\)/d' \
 		${WRKSRC}/make/gcc.mak
 .endif
 
