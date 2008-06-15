@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	glfw
-PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTVERSION=	2.6
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -15,26 +14,31 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable framework for OpenGL development
 
 USE_BZIP2=	yes
-USE_XORG=	x11 xxf86vm xext
+USE_XORG=	x11 xxf86vm xext xrandr
 USE_GL=		yes
+USE_LDCONFIG=	yes
 ALL_TARGET=	x11
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+INSTALL_TARGET=	x11-install
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|' ${WRKSRC}/compile.sh
 
 do-configure:
 	@(cd ${WRKSRC} &&		\
 	${SETENV} CC="${CC}"		\
 		  CFLAGS="${CFLAGS}"	\
-		  PTHREAD_LIBS="${PTHREAD_LIBS}" ./compile.sh)
+		  PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" ${SH} compile.sh)
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/x11/libglfw.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/include/GL/glfw.h ${PREFIX}/include/GL
-
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/lib/x11/libglfw.so ${PREFIX}/lib/libglfw.so.0
+	${LN} -sf ${PREFIX}/lib/libglfw.so.0 ${PREFIX}/lib/libglfw.so
+.ifndef (NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/Makefile.x11 ${EXAMPLESDIR}/makefile
 	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.tga ${EXAMPLESDIR}
-
+.endif
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.pdf ${DOCSDIR}
