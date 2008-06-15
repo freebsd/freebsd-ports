@@ -6,34 +6,45 @@
 #
 
 PORTNAME=	distorm
-PORTVERSION=	1.7.23
+PORTVERSION=	1.7.29
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.ragestorm.net/distorm/ \
 		http://www.damogran.de/ports/distorm/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-pkg${PORTVERSION}
+DISTFILES=	${PORTNAME}64-pkg${PORTVERSION}.tar.bz2 \
+		diSlib64.py
+EXTRACT_ONLY=	${PORTNAME}64-pkg${PORTVERSION}.tar.bz2
 
-MAINTAINER=	lboehne@damogran.de
-COMMENT=	Fast x86 and x86-64 disassembler library for python
+MAINTAINER=	bf2006a@yahoo.com
+COMMENT=	Fast x86 and x86-64 disassembler library with Python interface
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 
+MAKE_ENV+=	CC=${CC}
 WRKSRC=		${WRKDIR}/distorm/build/linux
+ALL_TARGET=	py
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/distorm.so \
+		bin/diSlib64.py
 
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-distorm
-DOCS=		distorm.html qa.txt vol1.html vol2.html
+PORTDOCS=	distorm.html qa.txt vol1.html vol2.html
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e s,XXPYTHON_LIBDIRXX,${PYTHON_LIBDIR}, ${WRKDIR}/distorm/build/linux/Makefile
-	${REINPLACE_CMD} -e s,python2.4,${PYTHON_VERSION}, ${WRKDIR}/distorm/src/pydistorm.h
+	${REINPLACE_CMD} -e 's,python2.4,${PYTHON_VERSION},' ${WRKDIR}/distorm/src/pydistorm.h
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/distorm.so ${PYTHON_SITELIBDIR}
+	${ECHO_CMD} '#!'${PYTHON_CMD} | ${CAT} - ${DISTDIR}/diSlib64.py \
+	> ${WRKDIR}/diSlib64.py
+	${INSTALL_SCRIPT} ${WRKDIR}/diSlib64.py ${PREFIX}/bin
 
 .if !defined(NOPORTDOCS)
-pre-install:
+post-install:
 	${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKDIR}/distorm/doc/${f} ${DOCSDIR}
 .endfor
 .endif

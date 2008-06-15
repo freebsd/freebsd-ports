@@ -1,22 +1,21 @@
---- Makefile.orig	Sat Jun  3 19:24:48 2006
-+++ Makefile	Wed Jan 10 12:45:23 2007
+--- Makefile.orig	2008-05-12 02:39:48.081089220 -0400
++++ Makefile	2008-05-13 03:58:39.453527116 -0400
 @@ -5,8 +5,7 @@
  TARGET	= libdistorm64.so
  COBJS	= ../../src/x86defs.o ../../src/wstring.o ../../src/textdefs.o ../../src/prefix.o ../../src/operands.o ../../src/insts.o ../../src/instructions.o ../../src/distorm.o ../../src/decoder.o
  PYOBJS	= ../../src/x86defs.o ../../src/wstring.o ../../src/textdefs.o ../../src/pydistorm.o ../../src/prefix.o ../../src/operands.o ../../src/insts.o ../../src/instructions.o ../../src/decoder.o
 -CC	= gcc
--CFLAGS	= -O2 -Wall -fPIC
-+CFLAGS+= -fPIC -I${LOCALBASE}/include
+-CFLAGS	= -O2 -Wall -fPIC -DSUPPORT_64BIT_OFFSET -D_DLL
++CFLAGS	+= -fPIC -DSUPPORT_64BIT_OFFSET -D_DLL -I${LOCALBASE}/include
  
  all: clib py
  
-@@ -21,8 +20,7 @@
- 	${CC} ${CFLAGS} ${VERSION} ${PYOBJS} -fPIC -shared -o ${TARGET}
+@@ -18,7 +17,7 @@
+ 	ar rs ../../distorm64.a ${COBJS}
+ 
+ py: ${PYOBJS}
+-	${CC} ${CFLAGS} ${VERSION} ${PYOBJS} -fPIC -shared -o ${TARGET}
++	${CC} ${CFLAGS} ${VERSION} ${PYOBJS} -fPIC -shared -o distorm.so
  
  install: libdistorm64.so
--	install -s ${TARGET} /usr/local/lib
--	@echo "... running ldconfig might be smart ..."
-+	${INSTALL} -s libdistorm64.so XXPYTHON_LIBDIRXX/lib-dynload/distorm.so
- 
- .c.o:
- 	${CC} ${CFLAGS} ${VERSION} -c $< -o $@
+ 	install -s ${TARGET} /usr/local/lib
