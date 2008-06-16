@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	Devel-StackTrace
-PORTVERSION=	1.18
+PORTVERSION=	1.19.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Stack trace and stack trace frame objects
@@ -19,11 +20,4 @@ PERL_MODBUILD=	yes
 
 MAN3=		Devel::StackTrace.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
