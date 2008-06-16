@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	jalbum
-PORTVERSION=	7.3.1
-PORTREVISION=	1
+PORTVERSION=	8.0.9
 CATEGORIES=	graphics java
 MASTER_SITES=	http://jalbum.net/download/
-DISTNAME=	JAlbum${PORTVERSION}
+DISTNAME=	Jalbum${PORTVERSION}
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Web photo album generator
@@ -23,9 +22,10 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
-# breaks with the linux jvm
+JAVA_VERSION=	1.5+
+# Only works with native bsdjava (breaks with linux and diablo versions)
 JAVA_OS=	native
+JAVA_VENDOR=	bsdjava
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	jalbum.sh
