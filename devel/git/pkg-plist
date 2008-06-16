@@ -209,8 +209,6 @@ share/git-core/templates/info/exclude
 @dirrmtry lib/xemacs/site-lisp
 @dirrmtry lib/xemacs
 @dirrm share/emacs/site-lisp/git
-@dirrmtry share/emacs/site-lisp
-@dirrmtry share/emacs
 %%GUI%%@dirrm share/gitk/lib/msgs
 %%GUI%%@dirrm share/gitk/lib
 %%GUI%%@dirrm share/gitk
