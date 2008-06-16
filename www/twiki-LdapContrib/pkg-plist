@@ -1,0 +1,27 @@
+%%TWDIR%%/data/TWiki/LdapContrib.txt
+%%TWDIR%%/lib/TWiki/Client/LdapApacheLogin.pm
+%%TWDIR%%/lib/TWiki/Contrib/LdapContrib/Config.spec
+%%TWDIR%%/lib/TWiki/Contrib/LdapContrib/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Contrib/LdapContrib/MANIFEST
+%%TWDIR%%/lib/TWiki/Contrib/LdapContrib/build.pl
+%%TWDIR%%/lib/TWiki/Contrib/LdapContrib.pm
+%%TWDIR%%/lib/TWiki/LoginManager/LdapApacheLogin.pm
+%%TWDIR%%/lib/TWiki/Users/LdapUser.pm
+%%TWDIR%%/lib/TWiki/Users/LdapUserMapping.pm
+%%TWDIR%%/lib/ldap.cfg
+%%TWDIR%%/pub/TWiki/LdapContrib/TWikiDotPm-4.1.2.patch
+%%TWDIR%%/pub/TWiki/LdapContrib/wikiringlogo40x40.png
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Client
+@dirrm %%TWDIR%%/lib/TWiki/Contrib/LdapContrib
+@dirrm %%TWDIR%%/lib/TWiki/Contrib
+@dirrm %%TWDIR%%/lib/TWiki/LoginManager
+@dirrm %%TWDIR%%/lib/TWiki/Users
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/LdapContrib
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki
