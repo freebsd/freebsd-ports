@@ -16781,6 +16781,7 @@ twig		ports/www/twig
 twiki		ports/www/twiki
 twiki-BehaviourContrib	ports/www/twiki-BehaviourContrib
 twiki-BlogAddOn	ports/www/twiki-BlogAddOn
+twiki-BugzillaLinkPlugin	ports/www/twiki-BugzillaLinkPlugin
 twiki-ClassicSkin	ports/www/twiki-ClassicSkin
 twiki-CommentPlugin	ports/www/twiki-CommentPlugin
 twiki-EditTablePlugin	ports/www/twiki-EditTablePlugin
