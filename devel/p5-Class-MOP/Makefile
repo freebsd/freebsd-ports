@@ -7,6 +7,7 @@
 
 PORTNAME=	Class-MOP
 PORTVERSION=	0.54
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,8 +39,10 @@ post-extract:
 	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
 
 post-install:
+.ifndef(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
 .include <bsd.port.mk>
