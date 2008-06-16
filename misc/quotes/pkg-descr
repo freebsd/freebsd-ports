@@ -4,7 +4,6 @@ expensive in Europe. It has the capability of emailing these
 to you at so and so time designated by a crontab entry for its
 automailing program. This entire package is based on Perl.
 
-WWW: http://www.iae.nl/users/grimaldo/OpenSoft/quotes.shtml
 Author: D. Emilio Grimaldo Tunon <grimaldo@panama.iaehv.nl>
 
 --Dima
