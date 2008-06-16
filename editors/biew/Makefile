@@ -6,57 +6,49 @@
 #
 
 PORTNAME=	biew
-PORTVERSION=	5.6.2
+PORTVERSION=	5.6.4
 CATEGORIES=	editors
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Binary vIEWer + editor for binary, hexadecimal and dis-asm modes
+COMMENT=	Binary file viewer and editor
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
-
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--cc="${CC}" --ld="${CC}" --prefix="${PREFIX}"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-
-PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
-		file_ini.ru licence.en licence.ru release.txt unix.txt
+MAKEFILE=	makefile
 
 PLIST_FILES=	bin/biew \
 		share/biew/assembly.skn \
 		share/biew/biew.hlp \
 		share/biew/golded.skn \
 		share/biew/insight.skn \
-		share/biew/standard.skn \
-
+		share/biew/standard.skn
 PLIST_DIRS=	share/biew
 
-.include <bsd.port.pre.mk>
+MAN1=		biew.1
+PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
+		file_ini.ru licence.en licence.ru release.txt unix.txt
 
-OST_CFLAGS=	${CFLAGS} -DPREFIX="\'\"${PREFIX}\"\'"
-MAKEFILE=	makefile
-
-MAKE_ARGS+=	HOST_CFLAGS="${HOST_CFLAGS}" CC="${CC}" LD="${CC}" \
-		TARGET_OS=unix TARGET_SCREEN_LIB=curses \
-		USE_MOUSE=y
-
-.if ${ARCH} != "i386"
-MAKE_ARGS+=	TARGET_PLATFORM=generic
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' ${WRKSRC}/configure
 
 post-build:
-	@ ${LN} -sf ../../biewlib ${WRKSRC}/tools/biewhlp/biewlib
-	cd ${WRKSRC}/tools/biewhlp; ${GMAKE} ${MAKE_ARGS}
-	@ ${LN} -sf ../../biewlib ${WRKSRC}/tools/lzss/biewlib
-	cd ${WRKSRC}/tools/lzss; ${GMAKE} ${MAKE_ARGS}
-	@ (cd ${WRKSRC}/hlp;${LN} -sf ../tools/biewhlp/biewhlp ./;\
-	${LN} -sf ../tools/lzss/lzss ./;./biewhlp biewhlp.prj)
+	${LN} -sf ../../biewlib ${WRKSRC}/tools/biewhlp/biewlib
+	cd ${WRKSRC}/tools/biewhlp && ${GMAKE} ${MAKE_ARGS}
+	${LN} -sf ../../biewlib ${WRKSRC}/tools/lzss/biewlib
+	cd ${WRKSRC}/tools/lzss && ${GMAKE} ${MAKE_ARGS}
+	(cd ${WRKSRC}/hlp; ${LN} -sf ../tools/biewhlp/biewhlp; \
+	${LN} -sf ../tools/lzss/lzss; ./biewhlp biewhlp.prj)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/biew ${PREFIX}/bin
-	@ ${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/bin_rc/skn/*.skn ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/hlp/biew.hlp ${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/biew.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
@@ -64,4 +56,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
