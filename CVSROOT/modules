@@ -16788,6 +16788,7 @@ twiki-EmptyPlugin	ports/www/twiki-EmptyPlugin
 twiki-InterwikiPlugin	ports/www/twiki-InterwikiPlugin
 twiki-JSCalendarContrib	ports/www/twiki-JSCalendarContrib
 twiki-LdapContrib	ports/www/twiki-LdapContrib
+twiki-LdapNgPlugin	ports/www/twiki-LdapNgPlugin
 twiki-MailerContrib	ports/www/twiki-MailerContrib
 twiki-PatternSkin	ports/www/twiki-PatternSkin
 twiki-PreferencesPlugin	ports/www/twiki-PreferencesPlugin
