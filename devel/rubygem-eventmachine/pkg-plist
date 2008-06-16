@@ -1,99 +1,103 @@
 %%GEM_CACHE%%
 %%GEM_SPEC%%
-%%GEM_LIB_DIR%%/tests/test_httpclient.rb
-%%GEM_LIB_DIR%%/tests/test_exc.rb
-%%GEM_LIB_DIR%%/tests/test_running.rb
-%%GEM_LIB_DIR%%/tests/test_ltp2.rb
-%%GEM_LIB_DIR%%/tests/test_basic.rb
-%%GEM_LIB_DIR%%/tests/test_smtpclient.rb
-%%GEM_LIB_DIR%%/tests/test_send_file.rb
-%%GEM_LIB_DIR%%/tests/test_next_tick.rb
-%%GEM_LIB_DIR%%/tests/test_eventables.rb
-%%GEM_LIB_DIR%%/tests/test_spawn.rb
-%%GEM_LIB_DIR%%/tests/test_servers.rb
-%%GEM_LIB_DIR%%/tests/test_hc.rb
-%%GEM_LIB_DIR%%/tests/test_kb.rb
-%%GEM_LIB_DIR%%/tests/test_futures.rb
-%%GEM_LIB_DIR%%/tests/test_ltp.rb
-%%GEM_LIB_DIR%%/tests/test_httpclient2.rb
-%%GEM_LIB_DIR%%/tests/testem.rb
-%%GEM_LIB_DIR%%/tests/test_timers.rb
-%%GEM_LIB_DIR%%/tests/test_ud.rb
-%%GEM_LIB_DIR%%/tests/test_smtpserver.rb
-%%GEM_LIB_DIR%%/tests/test_pure.rb
-%%GEM_LIB_DIR%%/tests/test_epoll.rb
 %%GEM_LIB_DIR%%/tests/test_errors.rb
+%%GEM_LIB_DIR%%/tests/test_spawn.rb
+%%GEM_LIB_DIR%%/tests/test_httpclient2.rb
+%%GEM_LIB_DIR%%/tests/test_kb.rb
+%%GEM_LIB_DIR%%/tests/test_ltp2.rb
+%%GEM_LIB_DIR%%/tests/test_next_tick.rb
+%%GEM_LIB_DIR%%/tests/test_send_file.rb
+%%GEM_LIB_DIR%%/tests/test_futures.rb
+%%GEM_LIB_DIR%%/tests/test_sasl.rb
+%%GEM_LIB_DIR%%/tests/test_defer.rb
+%%GEM_LIB_DIR%%/tests/test_timers.rb
+%%GEM_LIB_DIR%%/tests/test_smtpclient.rb
+%%GEM_LIB_DIR%%/tests/test_ltp.rb
+%%GEM_LIB_DIR%%/tests/test_processes.rb
+%%GEM_LIB_DIR%%/tests/test_ud.rb
+%%GEM_LIB_DIR%%/tests/test_servers.rb
+%%GEM_LIB_DIR%%/tests/test_running.rb
+%%GEM_LIB_DIR%%/tests/test_exc.rb
+%%GEM_LIB_DIR%%/tests/test_pure.rb
+%%GEM_LIB_DIR%%/tests/test_basic.rb
+%%GEM_LIB_DIR%%/tests/test_eventables.rb
+%%GEM_LIB_DIR%%/tests/test_epoll.rb
+%%GEM_LIB_DIR%%/tests/testem.rb
+%%GEM_LIB_DIR%%/tests/test_hc.rb
+%%GEM_LIB_DIR%%/tests/test_httpclient.rb
+%%GEM_LIB_DIR%%/tests/test_smtpserver.rb
 %%GEM_LIB_DIR%%/lib/jeventmachine.rb
 %%GEM_LIB_DIR%%/lib/eventmachine.rb
-%%GEM_LIB_DIR%%/lib/pr_eventmachine.rb
-%%GEM_LIB_DIR%%/lib/evma.rb
-%%GEM_LIB_DIR%%/lib/eventmachine_version.rb
-%%GEM_LIB_DIR%%/lib/em/streamer.rb
-%%GEM_LIB_DIR%%/lib/em/eventable.rb
-%%GEM_LIB_DIR%%/lib/em/messages.rb
-%%GEM_LIB_DIR%%/lib/em/future.rb
-%%GEM_LIB_DIR%%/lib/em/deferrable.rb
-%%GEM_LIB_DIR%%/lib/em/spawnable.rb
-%%GEM_LIB_DIR%%/lib/protocols/line_and_text.rb
-%%GEM_LIB_DIR%%/lib/protocols/httpclient.rb
-%%GEM_LIB_DIR%%/lib/protocols/linetext2.rb
-%%GEM_LIB_DIR%%/lib/protocols/smtpclient.rb
-%%GEM_LIB_DIR%%/lib/protocols/stomp.rb
-%%GEM_LIB_DIR%%/lib/protocols/header_and_content.rb
-%%GEM_LIB_DIR%%/lib/protocols/saslauth.rb
-%%GEM_LIB_DIR%%/lib/protocols/tcptest.rb
-%%GEM_LIB_DIR%%/lib/protocols/httpcli2.rb
-%%GEM_LIB_DIR%%/lib/protocols/buftok.rb
-%%GEM_LIB_DIR%%/lib/protocols/smtpserver.rb
 %%GEM_LIB_DIR%%/lib/evma/reactor.rb
-%%GEM_LIB_DIR%%/lib/evma/protocol.rb
-%%GEM_LIB_DIR%%/lib/evma/container.rb
 %%GEM_LIB_DIR%%/lib/evma/factory.rb
 %%GEM_LIB_DIR%%/lib/evma/callback.rb
+%%GEM_LIB_DIR%%/lib/evma/container.rb
+%%GEM_LIB_DIR%%/lib/evma/protocol.rb
+%%GEM_LIB_DIR%%/lib/protocols/tcptest.rb
+%%GEM_LIB_DIR%%/lib/protocols/httpcli2.rb
+%%GEM_LIB_DIR%%/lib/protocols/header_and_content.rb
+%%GEM_LIB_DIR%%/lib/protocols/saslauth.rb
+%%GEM_LIB_DIR%%/lib/protocols/stomp.rb
+%%GEM_LIB_DIR%%/lib/protocols/linetext2.rb
+%%GEM_LIB_DIR%%/lib/protocols/smtpserver.rb
+%%GEM_LIB_DIR%%/lib/protocols/line_and_text.rb
+%%GEM_LIB_DIR%%/lib/protocols/buftok.rb
+%%GEM_LIB_DIR%%/lib/protocols/httpclient.rb
+%%GEM_LIB_DIR%%/lib/protocols/smtpclient.rb
+%%GEM_LIB_DIR%%/lib/pr_eventmachine.rb
+%%GEM_LIB_DIR%%/lib/eventmachine_version.rb
+%%GEM_LIB_DIR%%/lib/em/messages.rb
+%%GEM_LIB_DIR%%/lib/em/streamer.rb
+%%GEM_LIB_DIR%%/lib/em/eventable.rb
+%%GEM_LIB_DIR%%/lib/em/processes.rb
+%%GEM_LIB_DIR%%/lib/em/deferrable.rb
+%%GEM_LIB_DIR%%/lib/em/future.rb
+%%GEM_LIB_DIR%%/lib/em/spawnable.rb
+%%GEM_LIB_DIR%%/lib/evma.rb
 %%GEM_LIB_DIR%%/lib/rubyeventmachine.so
-%%GEM_LIB_DIR%%/ext/em.cpp
-%%GEM_LIB_DIR%%/ext/ssl.cpp
-%%GEM_LIB_DIR%%/ext/files.cpp
-%%GEM_LIB_DIR%%/ext/binder.cpp
-%%GEM_LIB_DIR%%/ext/sigs.cpp
-%%GEM_LIB_DIR%%/ext/em.h
-%%GEM_LIB_DIR%%/ext/ssl.h
-%%GEM_LIB_DIR%%/ext/files.h
-%%GEM_LIB_DIR%%/ext/binder.h
-%%GEM_LIB_DIR%%/ext/sigs.h
-%%GEM_LIB_DIR%%/ext/eventmachine.h
-%%GEM_LIB_DIR%%/ext/epoll.cpp
-%%GEM_LIB_DIR%%/ext/project.h
-%%GEM_LIB_DIR%%/ext/page.cpp
-%%GEM_LIB_DIR%%/ext/eventmachine_cpp.h
-%%GEM_LIB_DIR%%/ext/emwin.cpp
-%%GEM_LIB_DIR%%/ext/epoll.h
-%%GEM_LIB_DIR%%/ext/page.h
-%%GEM_LIB_DIR%%/ext/emwin.h
-%%GEM_LIB_DIR%%/ext/rubymain.cpp
-%%GEM_LIB_DIR%%/ext/extconf.rb
 %%GEM_LIB_DIR%%/ext/cmain.cpp
+%%GEM_LIB_DIR%%/ext/eventmachine_cpp.h
+%%GEM_LIB_DIR%%/ext/binder.h
+%%GEM_LIB_DIR%%/ext/sigs.cpp
+%%GEM_LIB_DIR%%/ext/eventmachine.h
+%%GEM_LIB_DIR%%/ext/sigs.h
 %%GEM_LIB_DIR%%/ext/ed.cpp
-%%GEM_LIB_DIR%%/ext/cplusplus.cpp
-%%GEM_LIB_DIR%%/ext/kb.cpp
+%%GEM_LIB_DIR%%/ext/em.cpp
+%%GEM_LIB_DIR%%/ext/page.cpp
+%%GEM_LIB_DIR%%/ext/ssl.h
+%%GEM_LIB_DIR%%/ext/page.h
+%%GEM_LIB_DIR%%/ext/project.h
+%%GEM_LIB_DIR%%/ext/epoll.h
+%%GEM_LIB_DIR%%/ext/binder.cpp
 %%GEM_LIB_DIR%%/ext/ed.h
+%%GEM_LIB_DIR%%/ext/epoll.cpp
+%%GEM_LIB_DIR%%/ext/files.h
+%%GEM_LIB_DIR%%/ext/cplusplus.cpp
+%%GEM_LIB_DIR%%/ext/emwin.cpp
+%%GEM_LIB_DIR%%/ext/em.h
+%%GEM_LIB_DIR%%/ext/rubymain.cpp
 %%GEM_LIB_DIR%%/ext/pipe.cpp
+%%GEM_LIB_DIR%%/ext/files.cpp
+%%GEM_LIB_DIR%%/ext/ssl.cpp
+%%GEM_LIB_DIR%%/ext/extconf.rb
+%%GEM_LIB_DIR%%/ext/kb.cpp
+%%GEM_LIB_DIR%%/ext/emwin.h
 %%GEM_LIB_DIR%%/ext/mkmf.log
 %%GEM_LIB_DIR%%/ext/Makefile
-%%GEM_LIB_DIR%%/ext/em.o
-%%GEM_LIB_DIR%%/ext/ssl.o
-%%GEM_LIB_DIR%%/ext/files.o
-%%GEM_LIB_DIR%%/ext/binder.o
+%%GEM_LIB_DIR%%/ext/cmain.o
 %%GEM_LIB_DIR%%/ext/sigs.o
-%%GEM_LIB_DIR%%/ext/epoll.o
+%%GEM_LIB_DIR%%/ext/ed.o
+%%GEM_LIB_DIR%%/ext/em.o
 %%GEM_LIB_DIR%%/ext/page.o
+%%GEM_LIB_DIR%%/ext/binder.o
+%%GEM_LIB_DIR%%/ext/epoll.o
+%%GEM_LIB_DIR%%/ext/cplusplus.o
 %%GEM_LIB_DIR%%/ext/emwin.o
 %%GEM_LIB_DIR%%/ext/rubymain.o
-%%GEM_LIB_DIR%%/ext/cmain.o
-%%GEM_LIB_DIR%%/ext/ed.o
-%%GEM_LIB_DIR%%/ext/cplusplus.o
-%%GEM_LIB_DIR%%/ext/kb.o
 %%GEM_LIB_DIR%%/ext/pipe.o
+%%GEM_LIB_DIR%%/ext/files.o
+%%GEM_LIB_DIR%%/ext/ssl.o
+%%GEM_LIB_DIR%%/ext/kb.o
 %%GEM_LIB_DIR%%/ext/rubyeventmachine.so
 %%GEM_LIB_DIR%%/README
 %%GEM_LIB_DIR%%/RELEASE_NOTES
@@ -111,31 +115,32 @@
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_DOC_DIR%%/rdoc/files/lib/jeventmachine_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/eventmachine_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/pr_eventmachine_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/evma_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/eventmachine_version_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/em/streamer_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/em/eventable_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/em/messages_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/em/future_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/em/deferrable_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/em/spawnable_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/line_and_text_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/httpclient_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/linetext2_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/smtpclient_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/stomp_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/header_and_content_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/saslauth_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/tcptest_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/httpcli2_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/buftok_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/smtpserver_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/evma/reactor_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/evma/protocol_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/evma/container_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/evma/factory_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/evma/callback_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/evma/container_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/evma/protocol_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/tcptest_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/httpcli2_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/header_and_content_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/saslauth_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/stomp_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/linetext2_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/smtpserver_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/line_and_text_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/buftok_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/httpclient_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/protocols/smtpclient_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/pr_eventmachine_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/eventmachine_version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/em/messages_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/em/streamer_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/em/eventable_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/em/processes_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/em/deferrable_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/em/future_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/em/spawnable_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/evma_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/README.html
 %%GEM_DOC_DIR%%/rdoc/files/RELEASE_NOTES.html
 %%GEM_DOC_DIR%%/rdoc/files/COPYING.html
@@ -228,37 +233,37 @@
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SASLauth.src/M000077.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SASLauth.src/M000078.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SASLauth.src/M000079.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000080.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000081.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000082.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000083.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000084.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000085.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000086.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp/Message.src/M000087.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp/Message.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src/M000093.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp/Message.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp/Message.src/M000095.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp/Message.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000089.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000090.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000091.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000092.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000093.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000094.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src/M000095.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/TcpConnectTester.src/M000096.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/TcpConnectTester.src/M000097.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/TcpConnectTester.src/M000098.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/TcpConnectTester.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SASLauthclient.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SASLauthclient.src/M000097.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SASLauthclient.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient.src/M000099.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient.src/M000100.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient.src/M000101.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient.src/M000102.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient.src/M000103.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient.src/M000104.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient.src/M000105.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient.src/M000106.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000107.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000108.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000109.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/TcpConnectTester.src/M000106.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/TcpConnectTester.src/M000107.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/TcpConnectTester.src/M000108.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/TcpConnectTester.src/M000109.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000110.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000111.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000112.html
@@ -276,9 +281,9 @@
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000124.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000125.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000126.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000127.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000128.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000129.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000127.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000128.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src/M000129.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000130.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000131.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000132.html
@@ -309,18 +314,18 @@
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000157.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000158.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000159.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HeaderAndContentProtocol.src/M000160.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HeaderAndContentProtocol.src/M000161.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HeaderAndContentProtocol.src/M000162.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000160.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000161.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src/M000162.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HeaderAndContentProtocol.src/M000163.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HeaderAndContentProtocol.src/M000164.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineAndTextProtocol.src/M000165.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineAndTextProtocol.src/M000166.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineAndTextProtocol.src/M000167.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HeaderAndContentProtocol.src/M000165.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HeaderAndContentProtocol.src/M000166.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HeaderAndContentProtocol.src/M000167.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineAndTextProtocol.src/M000168.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000169.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000170.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000171.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineAndTextProtocol.src/M000169.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineAndTextProtocol.src/M000170.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineAndTextProtocol.src/M000171.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000172.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000173.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000174.html
@@ -329,29 +334,30 @@
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000177.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000178.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000179.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000180.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000181.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000182.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000180.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000181.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.src/M000182.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000183.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000184.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000185.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000186.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000187.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000188.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000189.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000190.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.src/M000191.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2/Request.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SASLauth.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/TcpConnectTester.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SASLauthclient.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/TcpConnectTester.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HeaderAndContentProtocol.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineAndTextProtocol.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient2.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000189.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000190.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000191.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000192.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000193.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000194.html
@@ -359,42 +365,42 @@
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000196.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000197.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000198.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DatagramObject.src/M000199.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DatagramObject.src/M000200.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DatagramObject.src/M000201.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000199.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000200.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Deferrable.src/M000201.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DatagramObject.src/M000202.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DatagramObject.src/M000203.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPClient.src/M000204.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPClient.src/M000205.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPClient.src/M000206.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DatagramObject.src/M000204.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DatagramObject.src/M000205.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DatagramObject.src/M000206.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPClient.src/M000207.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPClient.src/M000208.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Selectable.src/M000209.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Selectable.src/M000210.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Selectable.src/M000211.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPClient.src/M000209.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPClient.src/M000210.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPClient.src/M000211.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Selectable.src/M000212.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Selectable.src/M000213.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Selectable.src/M000214.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Selectable.src/M000215.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/LoopbreakReader.src/M000216.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/LoopbreakReader.src/M000217.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaKeyboard.src/M000218.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaKeyboard.src/M000219.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaKeyboard.src/M000220.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Selectable.src/M000216.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Selectable.src/M000217.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Selectable.src/M000218.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/LoopbreakReader.src/M000219.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/LoopbreakReader.src/M000220.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaKeyboard.src/M000221.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/YieldBlockFromSpawnedProcess.src/M000222.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/YieldBlockFromSpawnedProcess.src/M000223.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.src/M000224.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.src/M000225.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.src/M000226.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.src/M000227.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.src/M000228.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000229.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000230.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000231.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000232.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000233.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000234.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaKeyboard.src/M000222.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaKeyboard.src/M000223.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaKeyboard.src/M000224.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/YieldBlockFromSpawnedProcess.src/M000225.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/YieldBlockFromSpawnedProcess.src/M000226.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DeferrableChildProcess.src/M000227.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DeferrableChildProcess.src/M000228.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DeferrableChildProcess.src/M000229.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.src/M000230.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.src/M000231.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.src/M000232.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.src/M000233.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.src/M000234.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000235.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000236.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000237.html
@@ -403,27 +409,28 @@
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000240.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000241.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000242.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/SpawnedProcess.src/M000243.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/SpawnedProcess.src/M000246.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/PeriodicTimer.src/M000247.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/PeriodicTimer.src/M000248.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/PeriodicTimer.src/M000249.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/PeriodicTimer.src/M000250.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUDPSocket.src/M000251.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUDPSocket.src/M000252.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUDPSocket.src/M000253.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUDPSocket.src/M000254.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.src/M000255.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.src/M000256.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.src/M000257.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.src/M000258.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.src/M000259.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000260.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000261.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000262.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000263.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000264.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000265.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000243.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000244.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000245.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000246.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000247.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src/M000248.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/SpawnedProcess.src/M000249.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/SpawnedProcess.src/M000252.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/PeriodicTimer.src/M000253.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/PeriodicTimer.src/M000254.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/PeriodicTimer.src/M000255.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/PeriodicTimer.src/M000256.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUDPSocket.src/M000257.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUDPSocket.src/M000258.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUDPSocket.src/M000259.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUDPSocket.src/M000260.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.src/M000261.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.src/M000262.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.src/M000263.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.src/M000264.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.src/M000265.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EM.src/M000287.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000266.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000267.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000268.html
@@ -438,26 +445,32 @@
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000277.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000278.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000279.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EM.src/M000280.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/FileStreamer.src/M000281.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/FileStreamer.src/M000282.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.src/M000283.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.src/M000284.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.src/M000285.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.src/M000286.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.src/M000287.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000288.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000289.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000290.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000291.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000292.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000293.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000294.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000280.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000281.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000282.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000283.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000284.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000285.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src/M000286.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/FileStreamer.src/M000288.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/FileStreamer.src/M000289.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.src/M000290.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.src/M000291.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.src/M000292.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.src/M000293.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.src/M000294.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000295.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000296.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000297.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Timer.src/M000298.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Timer.src/M000299.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000298.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000299.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000300.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000301.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000302.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000303.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src/M000304.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Timer.src/M000305.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Timer.src/M000306.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Eventable.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/UuidGenerator.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols.html
@@ -468,52 +481,53 @@
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/LoopbreakReader.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaKeyboard.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/YieldBlockFromSpawnedProcess.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DeferrableChildProcess.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/SpawnedProcess.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/PeriodicTimer.html
-%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EM.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUDPSocket.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Error.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.html
+%%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EM.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DefaultDeferrable.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/FileStreamer.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Timer.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/ProtocolFactory.src/M000300.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.src/M000301.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.src/M000302.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.src/M000303.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.src/M000304.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.src/M000305.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpSocket.src/M000306.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/StreamProtocol.src/M000307.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/StreamProtocol.src/M000308.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/Protocol.src/M000309.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/Protocol.src/M000310.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/Protocol.src/M000311.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/Protocol.src/M000312.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/Reactor.src/M000313.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/Reactor.src/M000314.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpServerFactory.src/M000315.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpServerFactory.src/M000316.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/DatagramProtocol.src/M000317.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/DatagramProtocol.src/M000318.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/ProtocolFactory.src/M000307.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.src/M000308.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.src/M000309.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.src/M000310.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.src/M000311.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.src/M000312.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/StreamProtocol.src/M000313.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/StreamProtocol.src/M000314.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/Protocol.src/M000315.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/Protocol.src/M000316.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/Protocol.src/M000317.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/Protocol.src/M000318.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpSocket.src/M000319.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/Reactor.src/M000320.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/Reactor.src/M000321.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpServerFactory.src/M000322.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpServerFactory.src/M000323.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/DatagramProtocol.src/M000324.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/DatagramProtocol.src/M000325.html
 %%GEM_DOC_DIR%%/rdoc/classes/Evma/ProtocolFactory.html
 %%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpSocket.html
-%%GEM_DOC_DIR%%/rdoc/classes/Evma/ContainerHasObject.html
 %%GEM_DOC_DIR%%/rdoc/classes/Evma/StreamProtocol.html
 %%GEM_DOC_DIR%%/rdoc/classes/Evma/Protocol.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/ContainerHasObject.html
+%%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpSocket.html
 %%GEM_DOC_DIR%%/rdoc/classes/Evma/Reactor.html
 %%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpServerFactory.html
 %%GEM_DOC_DIR%%/rdoc/classes/Evma/DatagramProtocol.html
 %%GEM_DOC_DIR%%/rdoc/classes/Evma/UnsupportedCallback.html
 %%GEM_DOC_DIR%%/rdoc/classes/Evma/UnknownTarget.html
-%%GEM_DOC_DIR%%/rdoc/classes/BufferedTokenizer.html
 %%GEM_DOC_DIR%%/rdoc/classes/IO.html
+%%GEM_DOC_DIR%%/rdoc/classes/BufferedTokenizer.html
 %%GEM_DOC_DIR%%/rdoc/classes/EventMachine.html
 %%GEM_DOC_DIR%%/rdoc/classes/Evma.html
 %%GEM_DOC_DIR%%/rdoc/fr_file_index.html
@@ -522,18 +536,18 @@
 %%GEM_DOC_DIR%%/rdoc/index.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
 @dirrm %%GEM_LIB_DIR%%/ext
-@dirrm %%GEM_LIB_DIR%%/lib/evma
-@dirrm %%GEM_LIB_DIR%%/lib/protocols
 @dirrm %%GEM_LIB_DIR%%/lib/em
+@dirrm %%GEM_LIB_DIR%%/lib/protocols
+@dirrm %%GEM_LIB_DIR%%/lib/evma
 @dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%/tests
 @dirrm %%GEM_LIB_DIR%%
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Evma/DatagramProtocol.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpServerFactory.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Evma/Reactor.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpSocket.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Evma/Protocol.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Evma/StreamProtocol.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Evma/TcpSocket.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Evma/Container.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Evma/ProtocolFactory.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Evma
@@ -541,14 +555,15 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/StreamObject.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXServer.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/FileStreamer.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EM.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Connection.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EM.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUNIXClient.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaUDPSocket.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/PeriodicTimer.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/SpawnedProcess.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Reactor.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaTCPServer.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/DeferrableChildProcess.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/YieldBlockFromSpawnedProcess.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/EvmaKeyboard.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/LoopbreakReader.src
@@ -563,12 +578,13 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HeaderAndContentProtocol.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpServer.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SmtpClient.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/TcpConnectTester.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/HttpClient.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SASLauthclient.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp/Message.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/Stomp.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/LineText2.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols/SASLauth.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/Protocols
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine/UuidGenerator.src
@@ -577,9 +593,9 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/EventMachine.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/BufferedTokenizer.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/evma
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/protocols
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/em
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/protocols
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/evma
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
 @dirrm %%GEM_DOC_DIR%%/rdoc
