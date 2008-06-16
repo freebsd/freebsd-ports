@@ -6,10 +6,10 @@
 
 PORTNAME=	freetds
 PORTVERSION=	0.64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	ALPHA/freetds/stable
+MASTER_SITE_SUBDIR=	ALPHA/${PORTNAME}/stable
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library
@@ -55,6 +55,10 @@ PLIST_SUB+=	ODBC="@comment "
 CONFIGURE_ARGS+=	--enable-msdblib
 .endif
 
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES=	${PATCHDIR}/noportdocs-patch-doc__Makefile.in
+.endif
+
 post-extract:
 	@cd ${WRKSRC} && ${LN} -s freetds.conf freetds.conf.dist
 	@cd ${WRKSRC} && ${LN} -s locales.conf locales.conf.dist
@@ -67,10 +71,6 @@ post-patch:
 		 s|/locales.conf|/locales.conf.dist|g ; \
 		 s|/pool.conf|/pool.conf.dist|g ; \
 		 s| common.h||g'
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "s|\(install-data-am:\).*|\1 install-man|g" \
-		${WRKSRC}/doc/Makefile.in
-.endif
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/freetds
