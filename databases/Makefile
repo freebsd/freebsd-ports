@@ -339,6 +339,7 @@
     SUBDIR += p5-Tie-DBI
     SUBDIR += p5-Time-Piece-MySQL
     SUBDIR += p5-hp200lx-db
+    SUBDIR += p5-mysql-genocide
     SUBDIR += p5-postgresql-plperl
     SUBDIR += p5-qdbm
     SUBDIR += p5-sqlrelay

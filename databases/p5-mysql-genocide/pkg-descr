@@ -1,0 +1,6 @@
+mysql-genocide helps you play with big MySQL processlists. It can filter it
+using different criterias like execution time, query type, user or regexp
+matching of the SQL query etc. Actions can then be peformed on the result
+like killing, sorting or generating statistics.
+
+WWW: http://search.cpan.org/dist/mysql-genocide/
