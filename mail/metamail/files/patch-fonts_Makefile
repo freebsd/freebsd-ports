@@ -17,7 +17,7 @@
 +	mkdir -p ${PREFIX}/lib/metamail/fonts
 +	install -c heb6x13.${FONTSUFFIX} heb8x13.${FONTSUFFIX} \
 +		heb8x13B.${FONTSUFFIX} fonts.alias ${PREFIX}/lib/metamail/fonts
-+	if [ -d /usr/X11R6 ]; then mkfontdir ${PREFIX}/lib/metamail/fonts ; fi
++	mkfontdir ${PREFIX}/lib/metamail/fonts
  
  clean:
  	rm -f heb6x13.${FONTSUFFIX} heb8x13.${FONTSUFFIX} heb8x13B.${FONTSUFFIX}  shownonascii mailto-hebrew fonts.dir
