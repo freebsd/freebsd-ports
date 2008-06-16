@@ -1,0 +1,7 @@
+%%RUBY_SITEARCHLIBDIR%%/statgrab.so
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.mkdn
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby

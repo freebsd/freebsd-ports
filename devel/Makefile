@@ -2277,6 +2277,7 @@
     SUBDIR += ruby-setup.rb
     SUBDIR += ruby-sexp
     SUBDIR += ruby-slang
+    SUBDIR += ruby-statgrab
     SUBDIR += ruby-strongtyping
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-term-ansicolor
