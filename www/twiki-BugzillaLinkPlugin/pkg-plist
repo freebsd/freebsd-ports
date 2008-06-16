@@ -1,0 +1,20 @@
+%%TWDIR%%/data/TWiki/BugzillaLinkPlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/BugzillaLinkPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/BugzillaLinkPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/BugzillaLinkPlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/BugzillaLinkPlugin.pm
+%%TWDIR%%/pub/TWiki/BugzillaLinkPlugin/bug.gif
+%%TWDIR%%/pub/TWiki/BugzillaLinkPlugin/bug_small.gif
+%%TWDIR%%/pub/TWiki/BugzillaLinkPlugin/bug_small.png
+%%TWDIR%%/pub/TWiki/BugzillaLinkPlugin/bug_small_white.png
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/BugzillaLinkPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/BugzillaLinkPlugin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki
