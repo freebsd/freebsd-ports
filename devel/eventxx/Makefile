@@ -9,17 +9,16 @@
 PORTNAME=	eventxx
 PORTVERSION=	1.0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.FreeBSD.org/~gahr/distfiles/
+MASTER_SITES=	http://proj.llucax.com.ar/home/eventxx/releases/
 MASTER_SITE_SUBDIR=	gahr
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	A C++ wrapper for libevent
 
 LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_BUILD=	yes
 
