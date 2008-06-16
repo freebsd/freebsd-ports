@@ -1,5 +1,14 @@
 --- tirc.1.orig	Sun Aug 22 14:56:21 1999
 +++ tirc.1	Sun Aug 22 14:56:40 1999
+@@ -178,7 +178,7 @@ TIRC doesn't have a restrictive novice m
+ because it isn't meant to be used by lusers.
+ .LP
+ If the user is keyboard-idle (no input) for a certain time (default is
+-48 hours), the client will exit with ``User idle limit exceeded''.  This
++1 week), the client will exit with ``User idle limit exceeded''.  This
+ is to prevent forgotten clients running for very long times.  The limit
+ is compiled into and cannot be changed at runtime (see tirc.h if you really
+ want to change it).
 @@ -618,7 +618,7 @@
  .br
  .SH FILES
