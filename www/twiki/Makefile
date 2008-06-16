@@ -7,6 +7,7 @@
 
 PORTNAME=	twiki
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/ \

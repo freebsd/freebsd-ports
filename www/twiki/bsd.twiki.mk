@@ -89,7 +89,7 @@ make-port:
 	echo '.include <bsd.port.mk>' >> Makefile &&\
 	wrksrc=`make -V WRKSRC` &&\
 	make make-dist &&\
-	mv work/*bz2 ${_DISTDIR}/ &&\
+	mv `make -V WRKDIR`/*bz2 ${_DISTDIR}/ &&\
 	make makesum create-plist &&\
 	page="$$wrksrc/data/TWiki/$$nnam.txt" &&\
 	if [ -e $$page ]; then \
