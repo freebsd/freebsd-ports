@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	quotes
-PORTVERSION=	1.7.2
+DISTVERSION=	1.7-2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.externet.hu/.lib/disk6/linuxberg/files/console/office/ \
 		ftp://ftp.waseda.ac.jp/.u7/ports/distfiles/ \
 		http://freebsd.unixfreunde.de/sources/
-DISTNAME=	${PORTNAME}-1.7-2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quote, currency, and Slashdot headline fetcher based on Perl
@@ -33,7 +33,10 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/quotes.txt ${DOCSDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/QuExample.pm ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@ ${MKDIR} ${EXAMPLESDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/QuExample.pm ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
