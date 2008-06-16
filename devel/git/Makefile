@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Distributed source code management tool
 
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
