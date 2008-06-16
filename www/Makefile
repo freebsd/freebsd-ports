@@ -1341,6 +1341,7 @@
     SUBDIR += twiki-EmptyPlugin
     SUBDIR += twiki-InterwikiPlugin
     SUBDIR += twiki-JSCalendarContrib
+    SUBDIR += twiki-LdapContrib
     SUBDIR += twiki-MailerContrib
     SUBDIR += twiki-PatternSkin
     SUBDIR += twiki-PreferencesPlugin
