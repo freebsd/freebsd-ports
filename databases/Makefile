@@ -529,6 +529,7 @@
     SUBDIR += ruby-dbd_sqlite
     SUBDIR += ruby-dbdbd
     SUBDIR += ruby-dbi
+    SUBDIR += ruby-frontbase
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-interbase
     SUBDIR += ruby-memcache
