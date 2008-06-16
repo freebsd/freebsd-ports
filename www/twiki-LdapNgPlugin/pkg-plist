@@ -1,0 +1,14 @@
+%%TWDIR%%/data/TWiki/LdapNgPlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/LdapNgPlugin/Core.pm
+%%TWDIR%%/lib/TWiki/Plugins/LdapNgPlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/LdapNgPlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/LdapNgPlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/LdapNgPlugin.pm
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/LdapNgPlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki
