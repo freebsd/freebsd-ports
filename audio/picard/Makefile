@@ -7,7 +7,7 @@
 
 PORTNAME=	picard
 DISTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/
@@ -16,8 +16,9 @@ MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Next generation MusicBrainz Tagger
 
 LIB_DEPENDS=	ofa.0:${PORTSDIR}/audio/libofa \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-RUN_DEPENDS=    py*-mutagen>=0:${PORTSDIR}/audio/py-mutagen \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
+		discid.2:${PORTSDIR}/audio/libdiscid
+RUN_DEPENDS=	py*-mutagen>=0:${PORTSDIR}/audio/py-mutagen \
 		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
 		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		py*-qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
@@ -30,5 +31,7 @@ USE_PYDISTUTILS=yes
 post-patch:
 	@${REINPLACE_CMD} '/with-libofa/s|False|True|;\
 		/with-avcodec/s|False|True|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|libdiscid.so.0|libdiscid.so.2|g' \
+		${WRKSRC}/picard/disc.py
 
 .include <bsd.port.mk>
