@@ -15035,6 +15035,7 @@ ruby-slang	ports/devel/ruby-slang
 ruby-smf	ports/audio/ruby-smf
 ruby-spread	ports/net/ruby-spread
 ruby-sqlite	ports/databases/ruby-sqlite
+ruby-statgrab	ports/devel/ruby-statgrab
 ruby-strongtyping	ports/devel/ruby-strongtyping
 ruby-svg	ports/graphics/ruby-svg
 ruby-sysvipc	ports/devel/ruby-sysvipc
