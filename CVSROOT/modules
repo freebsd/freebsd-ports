@@ -12118,6 +12118,7 @@ p5-ming		ports/graphics/p5-ming
 p5-mixin	ports/devel/p5-mixin
 p5-mocked	ports/devel/p5-mocked
 p5-mogilefs-server	ports/sysutils/p5-mogilefs-server
+p5-mysql-genocide	ports/databases/p5-mysql-genocide
 p5-openxpki	ports/security/p5-openxpki
 p5-openxpki-client	ports/security/p5-openxpki-client
 p5-openxpki-client-cli	ports/security/p5-openxpki-client-cli
