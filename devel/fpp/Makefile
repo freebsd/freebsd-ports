@@ -24,10 +24,10 @@ MAN1=		fpp.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/fpp
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/fpp
-	${INSTALL_MAN} ${WRKSRC}/fpp_spec ${PREFIX}/share/doc/fpp
-	${INSTALL_MAN} ${WRKSRC}/fpp_license.ps ${PREFIX}/share/doc/fpp
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/fpp_spec ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/fpp_license.ps ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
