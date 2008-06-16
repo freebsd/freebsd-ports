@@ -14456,6 +14456,7 @@ quodlibet	ports/multimedia/quodlibet
 quoted		ports/net/quoted
 quotes		ports/misc/quotes
 quranref	ports/misc/quranref
+qutim		ports/net-im/qutim
 qvplay		ports/graphics/qvplay
 qvwm		ports/x11-wm/qvwm
 qwdtools	ports/games/qwdtools
