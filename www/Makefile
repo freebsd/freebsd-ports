@@ -1335,6 +1335,7 @@
     SUBDIR += twiki
     SUBDIR += twiki-BehaviourContrib
     SUBDIR += twiki-BlogAddOn
+    SUBDIR += twiki-BugzillaLinkPlugin
     SUBDIR += twiki-ClassicSkin
     SUBDIR += twiki-CommentPlugin
     SUBDIR += twiki-EditTablePlugin
