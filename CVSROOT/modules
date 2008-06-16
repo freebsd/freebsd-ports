@@ -6458,6 +6458,7 @@ lasso		ports/security/lasso
 last.fm		ports/audio/last.fm
 latd		ports/net/latd
 latex		ports/print/latex
+latex-aa	ports/print/latex-aa
 latex-arydshln	ports/print/latex-arydshln
 latex-auto-greek	ports/print/latex-auto-greek
 latex-beamer	ports/print/latex-beamer
