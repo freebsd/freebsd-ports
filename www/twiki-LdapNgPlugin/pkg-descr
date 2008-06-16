@@ -1,0 +1,5 @@
+LdapNgPlugin provides an interface to query an LDAP directory and
+display the results in a TWiki topic.
+
+Author: Michael Daum
+WWW: http://twiki.org/cgi-bin/view/Plugins/LdapNgPlugin
