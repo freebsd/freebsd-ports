@@ -1,0 +1,14 @@
+--- cc/cc/Makefile.in.orig	2008-05-19 22:38:04.000000000 -0700
++++ cc/cc/Makefile.in	2008-06-16 07:49:59.000000000 -0700
+@@ -53,8 +53,9 @@ install:
+ 	fi
+ 	test -z "${DESTDIR}$(mandir)/man1" || mkdir -p "${DESTDIR}$(mandir)/man1"
+ 	${INSTALL} cc.1 ${DESTDIR}${mandir}/man1/${DEST}.1
+-	test -z "$(PCCINCDIR)" || mkdir -p "$(PCCINCDIR)"
+-	test -z "$(PCCLIBDIR)" || mkdir -p "$(PCCLIBDIR)"
++	# Don't make unused empty directories for no reason.
++	#test -z "$(PCCINCDIR)" || mkdir -p "$(PCCINCDIR)"
++	#test -z "$(PCCLIBDIR)" || mkdir -p "$(PCCLIBDIR)"
+ 
+ clean:
+ 	/bin/rm -f  $(OBJS) ${DEST}
