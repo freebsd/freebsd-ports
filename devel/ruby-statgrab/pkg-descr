@@ -1,0 +1,4 @@
+Statgrab for Ruby contains a set of Ruby bindings to the libstatgrab
+portable system statistics library.
+
+WWW: http://statgrab.rubyforge.org/
