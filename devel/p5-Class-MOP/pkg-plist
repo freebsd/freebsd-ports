@@ -15,15 +15,15 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Package.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/metaclass.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/ArrayBasedStorage.pod
-%%PORTDOCS%%%%EXAMPLESDIR%%/AttributesWithHistory.pod
-%%PORTDOCS%%%%EXAMPLESDIR%%/C3MethodDispatchOrder.pod
-%%PORTDOCS%%%%EXAMPLESDIR%%/ClassEncapsulatedAttributes.pod
-%%PORTDOCS%%%%EXAMPLESDIR%%/InsideOutClass.pod
-%%PORTDOCS%%%%EXAMPLESDIR%%/InstanceCountingClass.pod
-%%PORTDOCS%%%%EXAMPLESDIR%%/LazyClass.pod
-%%PORTDOCS%%%%EXAMPLESDIR%%/Perl6Attribute.pod
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ArrayBasedStorage.pod
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/AttributesWithHistory.pod
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/C3MethodDispatchOrder.pod
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ClassEncapsulatedAttributes.pod
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/InsideOutClass.pod
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/InstanceCountingClass.pod
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LazyClass.pod
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Perl6Attribute.pod
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method
