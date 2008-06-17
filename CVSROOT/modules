@@ -10830,6 +10830,7 @@ p5-Module-Loaded	ports/devel/p5-Module-Loaded
 p5-Module-Pluggable	ports/devel/p5-Module-Pluggable
 p5-Module-Pluggable-Fast	ports/devel/p5-Module-Pluggable-Fast
 p5-Module-Pluggable-Ordered	ports/devel/p5-Module-Pluggable-Ordered
+p5-Module-Recursive-Require	ports/devel/p5-Module-Recursive-Require
 p5-Module-Refresh	ports/devel/p5-Module-Refresh
 p5-Module-Release	ports/devel/p5-Module-Release
 p5-Module-Reload	ports/devel/p5-Module-Reload
