@@ -458,6 +458,7 @@ libexec/gimp/2.2/plug-ins/xpm
 libexec/gimp/2.2/plug-ins/xwd
 libexec/gimp/2.2/plug-ins/zealouscrop
 share/aclocal/gimp-2.0.m4
+%%GNOME%%share/application-registry/gimp.applications
 share/applications/gimp.desktop
 share/doc/gimp/libgimp/GimpAspectPreview.html
 share/doc/gimp/libgimp/GimpBrushSelectButton.html
@@ -1094,24 +1095,24 @@ share/gimp/brushes/Calligraphic-Brush-1.vbr
 share/gimp/brushes/Calligraphic-Brush-2.vbr
 share/gimp/brushes/Calligraphic-Brush-3.vbr
 share/gimp/brushes/Circle-1.vbr
-share/gimp/brushes/Circle-3.vbr
-share/gimp/brushes/Circle-5.vbr
-share/gimp/brushes/Circle-7.vbr
-share/gimp/brushes/Circle-9.vbr
 share/gimp/brushes/Circle-11.vbr
 share/gimp/brushes/Circle-13.vbr
 share/gimp/brushes/Circle-15.vbr
 share/gimp/brushes/Circle-17.vbr
 share/gimp/brushes/Circle-19.vbr
-share/gimp/brushes/Circle-Fuzzy-3.vbr
-share/gimp/brushes/Circle-Fuzzy-5.vbr
-share/gimp/brushes/Circle-Fuzzy-7.vbr
-share/gimp/brushes/Circle-Fuzzy-9.vbr
+share/gimp/brushes/Circle-3.vbr
+share/gimp/brushes/Circle-5.vbr
+share/gimp/brushes/Circle-7.vbr
+share/gimp/brushes/Circle-9.vbr
 share/gimp/brushes/Circle-Fuzzy-11.vbr
 share/gimp/brushes/Circle-Fuzzy-13.vbr
 share/gimp/brushes/Circle-Fuzzy-15.vbr
 share/gimp/brushes/Circle-Fuzzy-17.vbr
 share/gimp/brushes/Circle-Fuzzy-19.vbr
+share/gimp/brushes/Circle-Fuzzy-3.vbr
+share/gimp/brushes/Circle-Fuzzy-5.vbr
+share/gimp/brushes/Circle-Fuzzy-7.vbr
+share/gimp/brushes/Circle-Fuzzy-9.vbr
 share/gimp/brushes/Diagonal-Star-11.vbr
 share/gimp/brushes/Diagonal-Star-17.vbr
 share/gimp/brushes/Diagonal-Star-25.vbr
@@ -1611,16 +1612,16 @@ share/gimp/themes/Default/images/preferences/folders-interp-22.png
 share/gimp/themes/Default/images/preferences/folders-interp.png
 share/gimp/themes/Default/images/preferences/folders-modules-22.png
 share/gimp/themes/Default/images/preferences/folders-modules.png
-share/gimp/themes/Default/images/preferences/folders-palettes.png
 share/gimp/themes/Default/images/preferences/folders-palettes-22.png
+share/gimp/themes/Default/images/preferences/folders-palettes.png
 share/gimp/themes/Default/images/preferences/folders-patterns-22.png
 share/gimp/themes/Default/images/preferences/folders-patterns.png
 share/gimp/themes/Default/images/preferences/folders-plug-ins-22.png
 share/gimp/themes/Default/images/preferences/folders-plug-ins.png
 share/gimp/themes/Default/images/preferences/folders-scripts-22.png
 share/gimp/themes/Default/images/preferences/folders-scripts.png
-share/gimp/themes/Default/images/preferences/folders-themes.png
 share/gimp/themes/Default/images/preferences/folders-themes-22.png
+share/gimp/themes/Default/images/preferences/folders-themes.png
 share/gimp/themes/Default/images/preferences/folders-tool-plug-ins-22.png
 share/gimp/themes/Default/images/preferences/folders-tool-plug-ins.png
 share/gimp/themes/Default/images/preferences/folders-tools-22.png
@@ -1653,8 +1654,6 @@ share/gimp/themes/Default/images/stock-question-64.png
 share/gimp/themes/Default/images/stock-warning-64.png
 share/gimp/themes/Small/gtkrc
 share/gimp/tips/gimp-tips.xml
-%%GNOME%%share/application-registry/gimp.applications
-%%GNOME%%share/mime-info/gimp.keys
 share/icons/hicolor/16x16/apps/gimp.png
 share/icons/hicolor/22x22/apps/gimp.png
 share/icons/hicolor/24x24/apps/gimp.png
@@ -1668,6 +1667,12 @@ share/locale/ar/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ar/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ar/LC_MESSAGES/gimp20-tips.mo
 share/locale/ar/LC_MESSAGES/gimp20.mo
+share/locale/be/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/be/LC_MESSAGES/gimp20-python.mo
+share/locale/be/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/be/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/be/LC_MESSAGES/gimp20-tips.mo
+share/locale/be/LC_MESSAGES/gimp20.mo
 share/locale/bg/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/bg/LC_MESSAGES/gimp20-python.mo
 share/locale/bg/LC_MESSAGES/gimp20-script-fu.mo
@@ -1680,6 +1685,12 @@ share/locale/ca/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ca/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ca/LC_MESSAGES/gimp20-tips.mo
 share/locale/ca/LC_MESSAGES/gimp20.mo
+share/locale/ca@valencia/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/ca@valencia/LC_MESSAGES/gimp20-python.mo
+share/locale/ca@valencia/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/ca@valencia/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/ca@valencia/LC_MESSAGES/gimp20-tips.mo
+share/locale/ca@valencia/LC_MESSAGES/gimp20.mo
 share/locale/cs/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/cs/LC_MESSAGES/gimp20-python.mo
 share/locale/cs/LC_MESSAGES/gimp20-script-fu.mo
@@ -1818,12 +1829,12 @@ share/locale/ja/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ja/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ja/LC_MESSAGES/gimp20-tips.mo
 share/locale/ja/LC_MESSAGES/gimp20.mo
-share/locale/km/LC_MESSAGES/gimp20.mo
 share/locale/km/LC_MESSAGES/gimp20-libgimp.mo
-share/locale/km/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/km/LC_MESSAGES/gimp20-python.mo
 share/locale/km/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/km/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/km/LC_MESSAGES/gimp20-tips.mo
+share/locale/km/LC_MESSAGES/gimp20.mo
 share/locale/ko/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ko/LC_MESSAGES/gimp20-python.mo
 share/locale/ko/LC_MESSAGES/gimp20-script-fu.mo
@@ -1866,6 +1877,12 @@ share/locale/nl/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/nl/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/nl/LC_MESSAGES/gimp20-tips.mo
 share/locale/nl/LC_MESSAGES/gimp20.mo
+share/locale/nn/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/nn/LC_MESSAGES/gimp20-python.mo
+share/locale/nn/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/nn/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/nn/LC_MESSAGES/gimp20-tips.mo
+share/locale/nn/LC_MESSAGES/gimp20.mo
 share/locale/oc/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/oc/LC_MESSAGES/gimp20-python.mo
 share/locale/oc/LC_MESSAGES/gimp20-script-fu.mo
@@ -1992,6 +2009,7 @@ share/locale/zh_TW/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-tips.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20.mo
+%%GNOME%%share/mime-info/gimp.keys
 @dirrm share/gimp/tips
 @dirrm share/gimp/themes/Small
 @dirrm share/gimp/themes/Default/images/preferences
@@ -2050,8 +2068,6 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/tt/LC_MESSAGES
 @dirrmtry share/locale/tt
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -2060,3 +2076,5 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrmtry share/locale/km
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia

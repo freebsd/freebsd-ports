@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gimp-app
-DISTVERSION=	2.4.5
-PORTREVISION?=	2
+DISTVERSION=	2.4.6
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -34,12 +34,15 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
+CONFLICTS=	gimp-app-devel-[0-9]*
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_XORG=	xpm xmu xext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME+=	gnomehack intltool intlhack gtk20 libartlgpl2 ltverhack desktopfileutils
+USE_GNOME+=	gnomehack intltool intlhack gtk20 libartlgpl2 ltverhack \
+		desktopfileutils
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
@@ -56,6 +59,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
 
 .if !defined(GIMP_SLAVE)
+WANT_GNOME=	yes
+
 OPTIONS?=	DEBUG "debugging" off \
 		DBUS "D-BUS support" on \
 		GNOMEVFS "Use GNOME VFS for the URI plug-in" on \
@@ -142,11 +147,13 @@ post-patch:
 
 post-install:
 .if !defined(GIMP_SLAVE)
-.if ${HAVE_GNOME:Mgnomehier}!="" || defined(WITH_GNOME)
+.  if ${HAVE_GNOME:Mgnomehier}!="" || defined(WITH_GNOME)
 	${MKDIR} ${PREFIX}/share/mime-info ${PREFIX}/share/application-registry
-	${INSTALL_DATA} ${WRKSRC}/desktop/gimp.applications ${PREFIX}/share/application-registry
-	${INSTALL_DATA} ${WRKSRC}/desktop/gimp.keys ${PREFIX}/share/mime-info
-.endif
+	${INSTALL_DATA} ${WRKSRC}/desktop/gimp.applications \
+		${PREFIX}/share/application-registry
+	${INSTALL_DATA} ${WRKSRC}/desktop/gimp.keys \
+		${PREFIX}/share/mime-info
+.  endif
 .endif
 	@-update-desktop-database
 
