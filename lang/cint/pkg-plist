@@ -287,17 +287,17 @@ lib/cint/stl/utility.h
 lib/cint/stl/valarray
 lib/cint/stl/vector
 lib/cint/stl/vector.h
-share/doc/cint/bytecode.txt
-share/doc/cint/cint.txt
-share/doc/cint/cintapi.txt
-share/doc/cint/extlib.txt
-share/doc/cint/ifdef.txt
-share/doc/cint/limitati.txt
-share/doc/cint/limitnum.txt
-share/doc/cint/makecint.txt
-share/doc/cint/message.txt
-share/doc/cint/ref.txt
-@dirrm share/doc/cint
+%%DOCSDIR%%/bytecode.txt
+%%DOCSDIR%%/cint.txt
+%%DOCSDIR%%/cintapi.txt
+%%DOCSDIR%%/extlib.txt
+%%DOCSDIR%%/ifdef.txt
+%%DOCSDIR%%/limitati.txt
+%%DOCSDIR%%/limitnum.txt
+%%DOCSDIR%%/makecint.txt
+%%DOCSDIR%%/message.txt
+%%DOCSDIR%%/ref.txt
+@dirrm %%DOCSDIR%%
 @dirrm lib/cint/stl
 @dirrm lib/cint/main
 @dirrm lib/cint/lib/prec_stl
