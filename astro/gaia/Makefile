@@ -19,6 +19,8 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+BROKEN=		does not build, scons problem
+
 USE_BZIP2=	yes
 USE_SCONS=	yes
 SCONS_BUILDENV=	${SCONS_ENV}
