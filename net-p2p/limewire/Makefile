@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	4.18.1
-PORTREVISION=	1
+PORTVERSION=	4.18.2
 PORTEPOCH=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	http://www10.limewire.com/download/
@@ -34,12 +33,12 @@ post-extract:
 		${MV} README.txt ..
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}/
 	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/* ${DATADIR}
+	${CP} -R ${WRKSRC}/* ${DATADIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/README.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/README.txt ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
