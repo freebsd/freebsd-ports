@@ -9,7 +9,7 @@ PORTNAME=	fbcmd
 PORTVERSION=	0.5.1
 PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://darkshed.feuersenger.net/files/c_cpp/fbcmd/
+MASTER_SITES=	http://darkshed.net/files/c_cpp/fbcmd/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A commandline utility for controlling fluxbox
