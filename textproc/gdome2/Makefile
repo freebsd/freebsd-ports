@@ -7,7 +7,7 @@
 
 PORTNAME=	gdome2
 PORTVERSION=	0.8.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://gdome2.cs.unibo.it/tarball/
 
@@ -27,9 +27,14 @@ USE_LDCONFIG=	yes
 MAN1=	gdome-config.1
 
 post-patch:
+.ifndef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e \
 		's,^(HTML_DIR *= *).*,\1\$$(prefix)/share/doc,' \
 		${WRKSRC}/gtk-doc/Makefile.in
+.else
+	@${REINPLACE_CMD} '/gtk-doc/d' ${WRKSRC}/Makefile.in
+.endif
+
 	@${FIND} ${WRKSRC} -type f -and \
 		'(' -name '*.[ch]' -or -name '*.xml' ')' | \
 		${XARGS} ${REINPLACE_CMD} -e ' \
