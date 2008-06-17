@@ -14777,6 +14777,7 @@ rtorrent	ports/net-p2p/rtorrent
 rtorrent-devel	ports/net-p2p/rtorrent-devel
 rtpbreak	ports/net/rtpbreak
 rtpmon		ports/mbone/rtpmon
+rtpproxy	ports/net/rtpproxy
 rtptools	ports/mbone/rtptools
 rtty		ports/sysutils/rtty
 ru-apache13	ports/russian/apache13
