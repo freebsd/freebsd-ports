@@ -11,6 +11,7 @@
     SUBDIR += chmview
     SUBDIR += cmios9
     SUBDIR += cocot
+    SUBDIR += compface
     SUBDIR += convmv
     SUBDIR += dosunix
     SUBDIR += dumpasn1
