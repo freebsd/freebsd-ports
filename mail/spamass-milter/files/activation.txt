@@ -6,11 +6,11 @@ In order to activate spamass-milter, follow these steps:
 
 2. If you didn't activate spamd (the SpamAssassin daemon), do so now:
 
-	%%PREFIX%%/etc/rc.d/sa-spamd.sh start
+	%%PREFIX%%/etc/rc.d/sa-spamd start
 
 3. Activate spamass-milter:
 
-	%%PREFIX%%/etc/rc.d/spamass-milter.sh start
+	%%PREFIX%%/etc/rc.d/spamass-milter start
 
 4. Backup your sendmail.cf (in /etc/mail).
 
