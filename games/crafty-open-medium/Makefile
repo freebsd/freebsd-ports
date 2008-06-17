@@ -24,12 +24,6 @@ USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 CONFLICTS=	crafty-open-enormous-* crafty-open-large-*
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		dumps core during builds
-.endif
-
 do-build:
 	@${ECHO_MSG} '================================================================'
 	@${ECHO_MSG} 'Ignore warnings about illegal moves.  These warnings are normal.'
@@ -42,4 +36,4 @@ do-install:
 	${CHOWN} nobody:nogroup ${PREFIX}/lib/crafty/book.bin
 	${CHMOD} 664 ${PREFIX}/lib/crafty/book.bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
