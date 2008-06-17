@@ -1346,6 +1346,7 @@
     SUBDIR += twiki-LdapContrib
     SUBDIR += twiki-LdapNgPlugin
     SUBDIR += twiki-MailerContrib
+    SUBDIR += twiki-MathModePlugin
     SUBDIR += twiki-PatternSkin
     SUBDIR += twiki-PreferencesPlugin
     SUBDIR += twiki-RenderListPlugin

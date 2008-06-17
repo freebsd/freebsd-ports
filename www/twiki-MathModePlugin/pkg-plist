@@ -1,0 +1,19 @@
+%%TWDIR%%/data/TWiki/MathModePlugin.txt
+%%TWDIR%%/lib/TWiki/Plugins/MathModePlugin/Core.pm
+%%TWDIR%%/lib/TWiki/Plugins/MathModePlugin/DEPENDENCIES
+%%TWDIR%%/lib/TWiki/Plugins/MathModePlugin/MANIFEST
+%%TWDIR%%/lib/TWiki/Plugins/MathModePlugin/build.pl
+%%TWDIR%%/lib/TWiki/Plugins/MathModePlugin.pm
+%%TWDIR%%/pub/TWiki/MathModePlugin/latex2img
+%%TWDIR%%/pub/TWiki/MathModePlugin/wikiringlogo40x40.png
+@dirrm %%TWDIR%%/data/TWiki
+@dirrm %%TWDIR%%/data
+@dirrm %%TWDIR%%/lib/TWiki/Plugins/MathModePlugin
+@dirrm %%TWDIR%%/lib/TWiki/Plugins
+@dirrm %%TWDIR%%/lib/TWiki
+@dirrm %%TWDIR%%/lib
+@dirrm %%TWDIR%%/pub/TWiki/MathModePlugin
+@dirrm %%TWDIR%%/pub/TWiki
+@dirrm %%TWDIR%%/pub
+@dirrm %%TWDIR%%
+@dirrmtry share/twiki
