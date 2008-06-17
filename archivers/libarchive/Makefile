@@ -48,4 +48,7 @@ PLIST_FILES+=		bin/bsdcpio
 MAN1+=			bsdcpio.1
 .endif
 
+regression-test:
+	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check)
+
 .include <bsd.port.post.mk>
