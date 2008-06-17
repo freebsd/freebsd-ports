@@ -18,7 +18,7 @@ upgrades.
   AFFECTS: users of mail/dkim-milter
   AUTHOR: Hirohisa Yamaguchi <umq@ueo.co.jp>
 
-  Most of the command line options are now can be set in configure files.
+  Most of the command line options can now be set in configure files.
   So the default values (such as milterdkim_socket) are changed to blank.
   Upgrading users should check the values both in rc.conf and 
   dkim-filter.conf.
