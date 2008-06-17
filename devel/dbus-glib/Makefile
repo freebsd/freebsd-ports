@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dbus
-PORTVERSION=	0.74
-PORTREVISION=	1
+PORTVERSION=	0.76
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-glib/
 PKGNAMESUFFIX=	-glib
@@ -33,8 +32,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 PLIST_SUB=	VERSION="1.0"
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-
-pre-build:
-	@${CP} ${FILESDIR}/dbus-bus-introspect.xml ${WRKSRC}/tools
 
 .include <bsd.port.mk>
