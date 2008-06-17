@@ -1544,7 +1544,6 @@ compat3x	ports/misc/compat3x
 compat4x	ports/misc/compat4x
 compat5x	ports/misc/compat5x
 compat6x	ports/misc/compat6x
-compface	ports/converters/compface
 compiz		ports/x11-wm/compiz
 compiz-bcop	ports/devel/compiz-bcop
 compiz-fusion	ports/x11-wm/compiz-fusion

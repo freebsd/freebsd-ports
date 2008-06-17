@@ -1,5 +1,0 @@
-Compface provides utilities and a library for converting to
-and from the X-Face format, a 48x48 bitmap format used to
-carry thumbnails of email authors in a mail header.
-
-WWW:	http://ftp.xemacs.org/pub/xemacs/aux/
