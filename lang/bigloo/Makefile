@@ -45,12 +45,6 @@ post-configure:
 	@${FIND} ${WRKSRC} -name "bigloo_config.h" | ${XARGS} \
 		${REINPLACE_CMD} -e 's/BGL_HAVE_SENDFILE 1/BGL_HAVE_SENDFILE 0/'
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/manuals/bigloo.man ${MANPREFIX}/man/man1/${MAN1}
 	${INSTALL_DATA} ${WRKSRC}/manuals/bigloo.info ${PREFIX}/${INFO_PATH}
@@ -63,4 +57,4 @@ post-install:
 test: build
 	@(cd ${WRKSRC}; ${GMAKE} test)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
