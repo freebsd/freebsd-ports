@@ -16,9 +16,9 @@ include/skstream-0.3/skstream/skpoll.h
 include/skstream-0.3/skstream/sasproto.h
 @dirrm include/skstream-0.3/skstream
 @dirrm include/skstream-0.3
-%%DOCSDIR%%/README
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README.FreeSockets
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeSockets
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
