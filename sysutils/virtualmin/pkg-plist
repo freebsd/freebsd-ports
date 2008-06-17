@@ -10,6 +10,7 @@ lib/webmin/virtual-server/backup.pl
 lib/webmin/virtual-server/backup_config.pl
 lib/webmin/virtual-server/backup_form.cgi
 lib/webmin/virtual-server/backup_sched.cgi
+lib/webmin/virtual-server/backups-lib.pl
 lib/webmin/virtual-server/bw-template
 lib/webmin/virtual-server/bw.pl
 lib/webmin/virtual-server/bwgraph.cgi
@@ -17,6 +18,7 @@ lib/webmin/virtual-server/cert_form.cgi
 lib/webmin/virtual-server/change-password.pl
 lib/webmin/virtual-server/change_users.cgi
 lib/webmin/virtual-server/check.cgi
+lib/webmin/virtual-server/clam-wrapper.pl
 lib/webmin/virtual-server/collect-lib.pl
 lib/webmin/virtual-server/collectinfo.pl
 lib/webmin/virtual-server/config
@@ -27,6 +29,8 @@ lib/webmin/virtual-server/config_info.pl
 lib/webmin/virtual-server/create-domain.pl
 lib/webmin/virtual-server/create-user.pl
 lib/webmin/virtual-server/createvirtualminmodule.sh
+lib/webmin/virtual-server/cron_chooser.cgi
+lib/webmin/virtual-server/cron_select.cgi
 lib/webmin/virtual-server/csr.cgi
 lib/webmin/virtual-server/defaultacl
 lib/webmin/virtual-server/delete-domain.pl
@@ -35,11 +39,13 @@ lib/webmin/virtual-server/delete_admins.cgi
 lib/webmin/virtual-server/delete_aliases.cgi
 lib/webmin/virtual-server/delete_databases.cgi
 lib/webmin/virtual-server/delete_domain.cgi
+lib/webmin/virtual-server/delete_scheds.cgi
 lib/webmin/virtual-server/delete_tmpls.cgi
 lib/webmin/virtual-server/delete_users.cgi
 lib/webmin/virtual-server/disable-domain.pl
 lib/webmin/virtual-server/disable-feature.pl
 lib/webmin/virtual-server/disable-limit.pl
+lib/webmin/virtual-server/disable_clamd.cgi
 lib/webmin/virtual-server/disable_domain.cgi
 lib/webmin/virtual-server/domain-template
 lib/webmin/virtual-server/domain_form.cgi
@@ -65,6 +71,7 @@ lib/webmin/virtual-server/edit_newlocal.cgi
 lib/webmin/virtual-server/edit_newquotacheck.cgi
 lib/webmin/virtual-server/edit_newsharedips.cgi
 lib/webmin/virtual-server/edit_newshells.cgi
+lib/webmin/virtual-server/edit_newsv.cgi
 lib/webmin/virtual-server/edit_newtmpl.cgi
 lib/webmin/virtual-server/edit_newupdate.cgi
 lib/webmin/virtual-server/edit_newupgrade.cgi
@@ -73,6 +80,7 @@ lib/webmin/virtual-server/edit_newvalidate.cgi
 lib/webmin/virtual-server/edit_pass.cgi
 lib/webmin/virtual-server/edit_plugconfig.cgi
 lib/webmin/virtual-server/edit_rfile.cgi
+lib/webmin/virtual-server/edit_spam.cgi
 lib/webmin/virtual-server/edit_spf.cgi
 lib/webmin/virtual-server/edit_tmpl.cgi
 lib/webmin/virtual-server/edit_user.cgi
@@ -80,6 +88,7 @@ lib/webmin/virtual-server/edit_vfile.cgi
 lib/webmin/virtual-server/enable-domain.pl
 lib/webmin/virtual-server/enable-feature.pl
 lib/webmin/virtual-server/enable-limit.pl
+lib/webmin/virtual-server/enable_clamd.cgi
 lib/webmin/virtual-server/enable_domain.cgi
 lib/webmin/virtual-server/expframe_form.cgi
 lib/webmin/virtual-server/feature-dir.pl
@@ -89,9 +98,11 @@ lib/webmin/virtual-server/feature-logrotate.pl
 lib/webmin/virtual-server/feature-mail.pl
 lib/webmin/virtual-server/feature-mysql.pl
 lib/webmin/virtual-server/feature-postgres.pl
+lib/webmin/virtual-server/feature-spam.pl
 lib/webmin/virtual-server/feature-ssl.pl
 lib/webmin/virtual-server/feature-unix.pl
 lib/webmin/virtual-server/feature-virt.pl
+lib/webmin/virtual-server/feature-virus.pl
 lib/webmin/virtual-server/feature-web.pl
 lib/webmin/virtual-server/feature-webalizer.pl
 lib/webmin/virtual-server/feature-webmin.pl
@@ -154,6 +165,7 @@ lib/webmin/virtual-server/help/qmailfiles.html
 lib/webmin/virtual-server/help/qmailquota.html
 lib/webmin/virtual-server/help/realname.de.html
 lib/webmin/virtual-server/help/realname.html
+lib/webmin/virtual-server/help/spam.html
 lib/webmin/virtual-server/help/spf.html
 lib/webmin/virtual-server/help/spf_a.html
 lib/webmin/virtual-server/help/spf_all.html
@@ -179,6 +191,7 @@ lib/webmin/virtual-server/help/usermailbox.html
 lib/webmin/virtual-server/help/username.html
 lib/webmin/virtual-server/help/virtualinterface.de.html
 lib/webmin/virtual-server/help/virtualinterface.html
+lib/webmin/virtual-server/help/virus.html
 lib/webmin/virtual-server/help/web.de.html
 lib/webmin/virtual-server/help/web.html
 lib/webmin/virtual-server/help/webalizer.fr.html
@@ -254,6 +267,8 @@ lib/webmin/virtual-server/lang/en
 lib/webmin/virtual-server/lang/es
 lib/webmin/virtual-server/lang/fi
 lib/webmin/virtual-server/lang/fr
+lib/webmin/virtual-server/lang/nl
+lib/webmin/virtual-server/lang/ru_RU
 lib/webmin/virtual-server/lang/tr
 lib/webmin/virtual-server/lang/zh_CN
 lib/webmin/virtual-server/lang/zh_CN.UTF-8
@@ -263,9 +278,12 @@ lib/webmin/virtual-server/list-features.pl
 lib/webmin/virtual-server/list_admins.cgi
 lib/webmin/virtual-server/list_aliases.cgi
 lib/webmin/virtual-server/list_databases.cgi
+lib/webmin/virtual-server/list_sched.cgi
 lib/webmin/virtual-server/list_users.cgi
 lib/webmin/virtual-server/local-template
 lib/webmin/virtual-server/log_parser.pl
+lib/webmin/virtual-server/lookup-domain-daemon.pl
+lib/webmin/virtual-server/lookup-domain.pl
 lib/webmin/virtual-server/mass_aedit.cgi
 lib/webmin/virtual-server/mass_aedit_form.cgi
 lib/webmin/virtual-server/migrate-domain.pl
@@ -275,6 +293,7 @@ lib/webmin/virtual-server/migration-cpanel.pl
 lib/webmin/virtual-server/migration-ensim.pl
 lib/webmin/virtual-server/migration-plesk.pl
 lib/webmin/virtual-server/modify-domain.pl
+lib/webmin/virtual-server/modify-spam.pl
 lib/webmin/virtual-server/module.info
 lib/webmin/virtual-server/move.cgi
 lib/webmin/virtual-server/move_form.cgi
@@ -294,15 +313,24 @@ lib/webmin/virtual-server/newfeatures-all/3.55/4-collectinfo
 lib/webmin/virtual-server/newfeatures-all/3.56/2-pleskram
 lib/webmin/virtual-server/newfeatures-all/3.56/4-idn
 lib/webmin/virtual-server/newfeatures-all/3.56/5-ftpchroot
+lib/webmin/virtual-server/newfeatures-all/3.58/1-showpass
+lib/webmin/virtual-server/newfeatures-all/3.58/3-managelinks
+lib/webmin/virtual-server/newfeatures-all/3.58/4-apilog
+lib/webmin/virtual-server/newfeatures-all/3.58/7-backupowners
+lib/webmin/virtual-server/newfeatures-all/3.58/7-backupsched
+lib/webmin/virtual-server/newfeatures-all/3.58/8-dutch
+lib/webmin/virtual-server/newfeatures-all/3.58/9-dbhosts
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
 lib/webmin/virtual-server/newfeatures-gpl/3.56/1-customfields
+lib/webmin/virtual-server/newfeatures-gpl/3.58/10-spamvirus
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
 lib/webmin/virtual-server/postinstall.pl
 lib/webmin/virtual-server/postsave.cgi
+lib/webmin/virtual-server/procmail-logger.pl
 lib/webmin/virtual-server/proxy_form.cgi
 lib/webmin/virtual-server/quotacheck.cgi
 lib/webmin/virtual-server/remote.cgi
@@ -316,6 +344,7 @@ lib/webmin/virtual-server/save_admin.cgi
 lib/webmin/virtual-server/save_afile.cgi
 lib/webmin/virtual-server/save_alias.cgi
 lib/webmin/virtual-server/save_database.cgi
+lib/webmin/virtual-server/save_dbhosts.cgi
 lib/webmin/virtual-server/save_dbpass.cgi
 lib/webmin/virtual-server/save_domain.cgi
 lib/webmin/virtual-server/save_exclude.cgi
@@ -333,20 +362,25 @@ lib/webmin/virtual-server/save_newip.cgi
 lib/webmin/virtual-server/save_newlocal.cgi
 lib/webmin/virtual-server/save_newsharedips.cgi
 lib/webmin/virtual-server/save_newshells.cgi
+lib/webmin/virtual-server/save_newsv.cgi
 lib/webmin/virtual-server/save_newupdate.cgi
 lib/webmin/virtual-server/save_newuser.cgi
 lib/webmin/virtual-server/save_pass.cgi
 lib/webmin/virtual-server/save_plugconfig.cgi
 lib/webmin/virtual-server/save_proxy.cgi
 lib/webmin/virtual-server/save_rfile.cgi
+lib/webmin/virtual-server/save_spam.cgi
 lib/webmin/virtual-server/save_spf.cgi
 lib/webmin/virtual-server/save_tmpl.cgi
 lib/webmin/virtual-server/save_user.cgi
 lib/webmin/virtual-server/save_vfile.cgi
 lib/webmin/virtual-server/search.cgi
 lib/webmin/virtual-server/seen_newfeatures.cgi
+lib/webmin/virtual-server/set-spam.pl
 lib/webmin/virtual-server/showpass.cgi
 lib/webmin/virtual-server/simple-lib.pl
+lib/webmin/virtual-server/spamclear.pl
+lib/webmin/virtual-server/spamconfig.pl
 lib/webmin/virtual-server/start_feature.cgi
 lib/webmin/virtual-server/stop_feature.cgi
 lib/webmin/virtual-server/subdomain-template
@@ -364,6 +398,8 @@ lib/webmin/virtual-server/virtual_feature_api.pl
 lib/webmin/virtual-server/vui-lib.pl
 lib/webmin/virtual-server/warnbw-template
 lib/webmin/virtual-server/writelogs.pl
+@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.59
+@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.58
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.57
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.56
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.55
@@ -371,6 +407,8 @@ lib/webmin/virtual-server/writelogs.pl
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.53
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm lib/webmin/virtual-server/newfeatures-gpl
+@dirrm lib/webmin/virtual-server/newfeatures-all/3.59
+@dirrm lib/webmin/virtual-server/newfeatures-all/3.58
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.57
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.56
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.55
@@ -378,10 +416,10 @@ lib/webmin/virtual-server/writelogs.pl
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.53
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.52
 @dirrm lib/webmin/virtual-server/newfeatures-all
-@dirrm lib/webmin/virtual-server/IDNA
 @dirrm lib/webmin/virtual-server/lang
 @dirrm lib/webmin/virtual-server/images
 @dirrm lib/webmin/virtual-server/help
+@dirrm lib/webmin/virtual-server/IDNA
 @dirrm lib/webmin/virtual-server
 @dirrmtry lib/webmin
 @exec [ -e %D/etc/webmin/virtual-server ] || mkdir %D/etc/webmin/virtual-server
