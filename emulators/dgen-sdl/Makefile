@@ -23,4 +23,7 @@ GNU_CONFIGURE=	yes
 MAN1=		dgen.1 tobin.1
 MAN5=		dgenrc.5
 
+DEPRECATED=	Website gone, fetching locations gone, no release since 2003
+EXPIRATION_DATE=2008-09-17
+
 .include <bsd.port.mk>
