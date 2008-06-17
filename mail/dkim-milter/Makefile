@@ -13,17 +13,16 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.5.5
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	Domainkeys Identified Mail (DKIM) milter
 
 USE_RC_SUBR=	milter-dkim.sh
 USE_OPENSSL=	yes
+USE_LDCONFIG=	yes
 
 .if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
 WITH_SENDMAIL_BASE=	yes
@@ -52,10 +51,10 @@ PLIST_FILES=	etc/mail/dkim-filter.conf.sample include/dkim.h \
 PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
-		draft-hoffman-dac-vbr-02.txt draft-ietf-dkim-deployment-01.txt \
+		draft-hoffman-dac-vbr-03.txt draft-ietf-dkim-deployment-01.txt \
 		draft-ietf-dkim-overview-09.txt draft-ietf-dkim-ssp-03.txt \
-		draft-kucherawy-sender-auth-header-14.txt \
-		rfc4686.txt rfc4871.txt rfc5016.txt
+		draft-kucherawy-dkim-reporting-02.txt draft-kucherawy-sender-auth-header-14.txt \
+		draft-shafranovich-feedback-report-04.txt rfc4686.txt rfc4871.txt rfc5016.txt
 .if !defined(NOPORTDOCS)
 LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/overview.html \
@@ -91,15 +90,16 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_options.html \
 		${DOCSDIR_REL}/libdkim/dkim_param_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_policy.html \
+		${DOCSDIR_REL}/libdkim/dkim_policy_getreportinfo.html \
 		${DOCSDIR_REL}/libdkim/dkim_policy_syntax.html \
 		${DOCSDIR_REL}/libdkim/dkim_policy_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_presult.html \
 		${DOCSDIR_REL}/libdkim/dkim_pstate.html \
 		${DOCSDIR_REL}/libdkim/dkim_query_t.html \
-		${DOCSDIR_REL}/libdkim/dkim_reportinfo.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_dns_callback.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_final.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_key_lookup.html \
+		${DOCSDIR_REL}/libdkim/dkim_set_margin.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_policy_lookup.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_prescreen.html \
 		${DOCSDIR_REL}/libdkim/dkim_set_signature_handle.html \
@@ -115,9 +115,11 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_geterrorstr.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_getflags.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_getkeysize.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_getreportinfo.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_getselector.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_getsignalg.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_getsigntime.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_hdrsigned.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_ignore.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_process.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_syntax.html \

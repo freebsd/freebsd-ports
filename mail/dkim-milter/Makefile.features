@@ -11,10 +11,6 @@
 SITE_SUB+=	-e '/-D_FFR_ANTICIPATE_SENDMAIL_MUNGE/s|^dnl ||'
 .endif
 
-.if defined(WITH_AUTHSERV_JOBID) && !defined(WITHOUT_AUTHSERV_JOBID)
-SITE_SUB+=	-e '/-D_FFR_AUTHSERV_JOBID/s|^dnl ||'
-.endif
-
 .if defined(WITH_BODYLENGTH_DB) && !defined(WITHOUT_BODYLENGTH_DB)
 SITE_SUB+=	-e '/-D_FFR_BODYLENGTH_DB/s|^dnl ||'
 .endif
