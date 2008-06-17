@@ -7,12 +7,9 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.81.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/ \
-		http://193.190.253.81/~skimo/nvi/devel/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dd
+MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development snapshot of the world-renown nvi editor
@@ -20,25 +17,23 @@ COMMENT=	Development snapshot of the world-renown nvi editor
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
+CONFLICTS=	nvi-m17n-*
+
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
 USE_AUTOTOOLS=		libtool:15
 USE_LDCONFIG=		yes
-CONFIGURE_ARGS+=	--with-db-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-db-prefix=${LOCALBASE} \
+			--program-prefix=n
 CONFIGURE_SCRIPT=	../dist/configure
-MAN1=			ex.1 vi.1 view.1
+MAN1=			nex.1 nvi.1 nview.1
 
-# XXX: nvi doesn't really need sys/select.h, but I don't think the
-# build should break when it includes it (this happens on RELENG_4;
-# sys/select.h is effectively empty on -current).
-pre-configure:
-	@${CHMOD} +rwx ${WRKSRC}/${CONFIGURE_SCRIPT}
-
-post-configure:
-	${ECHO_CMD} "#undef HAVE_SYS_SELECT_H" >> ${WRKSRC}/config.h
+# configure is 555, so you can't do a "make configure" as non-root.
+post-patch:
+	@${CHMOD} 755 ${WRKSRC}/../dist/configure
 
 post-install:
-.for __p in ex vi view
+.for __p in nex nvi nview
 	@# XXX: Hack the Makefile in the distribution so this isn't necessary.
 	${RM} ${PREFIX}/man/cat1/${__p}.0
 .endfor

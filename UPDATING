@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080617:
+  AFFECTS: users of editors/nvi-devel
+  AUTHOR: Wesley Shields <wxs@FreeBSD.org>
+
+  editors/nvi-devel has been changed to install nvi, nex, and nview as
+  to not conflict with editors/2bsd-vi.  Please note the new names if
+  you use this port.
+
 20080616:
   AFFECTS: users of mail/dkim-milter
   AUTHOR: Hirohisa Yamaguchi <umq@ueo.co.jp>

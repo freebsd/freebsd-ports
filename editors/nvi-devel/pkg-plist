@@ -1,6 +1,6 @@
-bin/ex
-bin/vi
-bin/view
+bin/nex
+bin/nvi
+bin/nview
 lib/libvi.a
 lib/libvi.la
 lib/libvi.so
