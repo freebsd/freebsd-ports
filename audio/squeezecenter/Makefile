@@ -7,10 +7,10 @@
 
 PORTNAME=	squeezecenter
 PORTVERSION=	7.0.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SqueezeCenter_v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-7.0-noCPAN
-DIST_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brooks@FreeBSD.org
@@ -29,7 +29,7 @@ OPTIONS=	CLASSIC "Default to the Classic skin" off \
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-WRKSRC=	${WRKDIR}/squeezecenter-7.0-17793-noCPAN
+WRKSRC=	${WRKDIR}/squeezecenter-${PORTVERSION}-noCPAN
 
 BUILD_DEPENDS+=	${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder \
@@ -93,6 +93,8 @@ CONFFILES=	convert.conf types.conf
 EXCEPTFILES=	${DOCFILES} \
 		${CONFFILES} \
 		CPAN/GD.pm \
+		CPAN/JSON/XS/Boolean.pm \
+		CPAN/JSON/XS.pm \
 		CPAN/Template.pm \
 		CPAN/XML/Parser.pm \
 		MySQL/errmsg.txt \
@@ -100,7 +102,6 @@ EXCEPTFILES=	${DOCFILES} \
 EXCEPTDIRS=	Bin \
 		CPAN/arch \
 		CPAN/Compress \
-		CPAN/JSON \
 		CPAN/GD \
 		CPAN/Template \
 		CPAN/XML/Parser \
@@ -116,20 +117,6 @@ SUB_LIST=	PERL=${PERL} \
 		SLIMUSER=${SLIMUSER} \
 		SLIMGROUP=${SLIMGROUP} \
 		CONFFILES="${CONFFILES}"
-
-JSON_FIXUP_FILES=	Slim/Control/Queries.pm \
-			Slim/Networking/SqueezeNetwork.pm \
-			Slim/Networking/SqueezeNetwork/Stats.pm \
-			Slim/Networking/SqueezeNetwork/PrefSync.pm \
-			Slim/Networking/SqueezeNetwork/Players.pm \
-			Slim/Plugin/AudioScrobbler/Plugin.pm \
-			Slim/Plugin/Live365/ProtocolHandler.pm \
-			Slim/Plugin/Pandora/ProtocolHandler.pm \
-			Slim/Plugin/RPC/Plugin.pm \
-			Slim/Plugin/RhapsodyDirect/ProtocolHandler.pm \
-			Slim/Plugin/Slacker/ProtocolHandler.pm \
-			Slim/Web/Cometd.pm \
-			Slim/Web/JSONRPC.pm \
 
 pre-fetch:
 .if !defined(SLIMDIR)
@@ -158,10 +145,6 @@ post-patch:
 		${WRKSRC}/Slim/Web/HTTP.pm \
 		${WRKSRC}/scanner.pl \
 		${WRKSRC}/slimserver.pl
-	cd ${WRKSRC} && ${REINPLACE_CMD} \
-	    -e 's/to_json/encode_json/' \
-	    -e 's/from_json/decode_json/' \
-	    ${JSON_FIXUP_FILES}
 
 do-build:
 	@${MKDIR} -m 0755 ${TMP_SLIMDIR}
