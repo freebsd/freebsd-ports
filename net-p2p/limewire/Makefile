@@ -7,6 +7,7 @@
 
 PORTNAME=	limewire
 PORTVERSION=	4.18.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	http://www10.limewire.com/download/
@@ -15,11 +16,11 @@ DISTNAME=	LimeWireOther
 MAINTAINER=	armitage@smartwifi.com.ph
 COMMENT=	A Java based Gnutella client
 
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+#RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
-USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+#USE_JAVA=	yes
+#JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/LimeWire
 
@@ -33,7 +34,7 @@ post-extract:
 		${MV} README.txt ..
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}/
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${DATADIR}
 	${CP} -R ${WRKSRC}/* ${DATADIR}/
 .if !defined(NOPORTDOCS)
