@@ -44,8 +44,8 @@ post-patch:
 # do not install docs
 .ifdef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e \
-		's|^(install-data-am.+)install-gsubeditdocDATA|\1|'
-		\ ${WRKSRC}/Makefile.in
+		's|^(install-data-am.+)install-gsubeditdocDATA|\1|' \
+			${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
