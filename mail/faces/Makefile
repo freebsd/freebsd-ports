@@ -12,7 +12,7 @@ PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wahjava@gmail.com
 COMMENT=	Visual mail, user and print face server
 
 OPTIONS=	X11 "X11/GTK support" on	\
