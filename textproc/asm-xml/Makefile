@@ -15,8 +15,6 @@ COMMENT=	Very fast XML parser and decoder written in pure assembler
 
 BUILD_DEPENDS=	fasm:${PORTSDIR}/lang/fasm
 
-BROKEN=		Does not build on amd64
-
 ONLY_FOR_ARCHS=	i386 amd64
 USE_DOS2UNIX=	YES
 
