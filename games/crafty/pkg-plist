@@ -1,10 +1,10 @@
 bin/crafty
 lib/crafty/books.bin
 lib/crafty/crafty.hlp
-share/doc/crafty/crafty.doc.ascii
-share/doc/crafty/crafty.doc.ps
-share/doc/crafty/bitmaps.tgz
-share/doc/crafty/sound.zip
-@dirrm share/doc/crafty
+%%PORTDOCS%%share/doc/crafty/crafty.doc.ascii
+%%PORTDOCS%%share/doc/crafty/crafty.doc.ps
+%%PORTDOCS%%share/doc/crafty/bitmaps.tgz
+%%PORTDOCS%%share/doc/crafty/sound.zip
+%%PORTDOCS%%@dirrm share/doc/crafty
 @dirrm lib/crafty/cpf
 @dirrm lib/crafty
