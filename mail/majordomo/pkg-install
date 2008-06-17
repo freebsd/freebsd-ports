@@ -32,15 +32,19 @@ PRE-INSTALL|ADDUSER)
 	;;
 POST-INSTALL)
 	# Add misc empty dirs, correct permissions
-	for dir in tmp lists/test-l.archive lists/test-l-digest.archive digests/test-l-digest doc; do
+	for dir in tmp lists/test-l.archive lists/test-l-digest.archive digests/test-l-digest; do
 		mkdir -p ${PKG_PREFIX}/majordomo/$dir
 	done
 	chown -R majordom:majordom ${PKG_PREFIX}/majordomo
 	chmod 700 ${PKG_PREFIX}/majordomo/tmp
 	chmod 755 ${PKG_PREFIX}/majordomo
-	for dir in digests lists/*.archive digests/test-l-digest doc; do
+	for dir in digests lists/*.archive digests/test-l-digest; do
 		chmod 775 ${PKG_PREFIX}/majordomo/$dir
 	done
+	if [ x"${NOPORTDOCS}" = x ]; then
+		mkdir -p ${PKG_PREFIX}/majordomo/doc
+		chmod 775 ${PKG_PREFIX}/majordomo/doc
+	fi
 	chmod 755 ${PKG_PREFIX}/majordomo/lists ${PKG_PREFIX}/majordomo
 	;;
 esac
