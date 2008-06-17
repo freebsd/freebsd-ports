@@ -16799,6 +16799,7 @@ twiki-JSCalendarContrib	ports/www/twiki-JSCalendarContrib
 twiki-LdapContrib	ports/www/twiki-LdapContrib
 twiki-LdapNgPlugin	ports/www/twiki-LdapNgPlugin
 twiki-MailerContrib	ports/www/twiki-MailerContrib
+twiki-MathModePlugin	ports/www/twiki-MathModePlugin
 twiki-PatternSkin	ports/www/twiki-PatternSkin
 twiki-PreferencesPlugin	ports/www/twiki-PreferencesPlugin
 twiki-RenderListPlugin	ports/www/twiki-RenderListPlugin
