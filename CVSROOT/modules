@@ -6226,9 +6226,6 @@ knowit		ports/deskutils/knowit
 knowlan		ports/net-mgmt/knowlan
 knowledgekit	ports/www/knowledgekit
 knutclient	ports/sysutils/knutclient
-ko-ko.TeX	ports/korean/ko.TeX
-ko-ko.TeX-fonts-base	ports/korean/ko.TeX-fonts-base
-ko-ko.TeX-fonts-extra	ports/korean/ko.TeX-fonts-extra
 ko-FreeWnn-lib	ports/korean/FreeWnn-lib
 ko-FreeWnn-server	ports/korean/FreeWnn-server
 ko-a2ps		ports/korean/a2ps
@@ -6262,6 +6259,9 @@ ko-imhangul	ports/korean/imhangul
 ko-johabfonts	ports/korean/johabfonts
 ko-kaistfonts	ports/korean/kaistfonts
 ko-kde3-i18n	ports/korean/kde3-i18n
+ko-ko.TeX	ports/korean/ko.TeX
+ko-ko.TeX-fonts-base	ports/korean/ko.TeX-fonts-base
+ko-ko.TeX-fonts-extra	ports/korean/ko.TeX-fonts-extra
 ko-libhangul	ports/korean/libhangul
 ko-linuxdoc-sgml	ports/korean/linuxdoc-sgml
 ko-man-doc	ports/korean/man-doc
@@ -6938,6 +6938,7 @@ libopensync	ports/devel/libopensync
 libopensync022	ports/devel/libopensync022
 liboping	ports/net/liboping
 libopkele	ports/devel/libopkele
+liborange	ports/archivers/liborange
 liborigin	ports/math/liborigin
 libosip		ports/net/libosip
 libosip2	ports/net/libosip2
@@ -9009,7 +9010,6 @@ oracle7-client	ports/databases/oracle7-client
 oracle8-client	ports/databases/oracle8-client
 oracle_odbc_driver	ports/databases/oracle_odbc_driver
 orage		ports/deskutils/orage
-orange		ports/archivers/orange
 orbital_eunuchs_sniper	ports/games/orbital_eunuchs_sniper
 orbitcpp	ports/devel/orbitcpp
 orca		ports/graphics/orca

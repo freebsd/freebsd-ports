@@ -1,5 +1,5 @@
---- lib/inno.h.orig	Mon Sep  8 17:17:28 2003
-+++ lib/inno.h	Mon Jan 10 05:07:47 2005
+--- lib/inno.h.orig	2008-05-22 15:55:23.000000000 +1000
++++ lib/inno.h	2008-05-22 15:57:49.000000000 +1000
 @@ -3,7 +3,7 @@
  #define __inno_h__
  
@@ -9,7 +9,7 @@
  #include <stdio.h>
  #include <zlib.h>
  
-@@ -100,7 +100,7 @@
+@@ -99,7 +99,7 @@
    uint32_t NumUninstallDeleteEntries; 
    uint32_t NumRunEntries; 
    uint32_t NumUninstallRunEntries;  
@@ -18,7 +18,7 @@
  } TSetupHeader;
  
  #define SETUP_HEADER_SIZE   0xd9
-@@ -144,9 +144,9 @@
+@@ -143,9 +143,9 @@
  
  typedef struct
  {
@@ -31,7 +31,7 @@
  } TSetupVersionData;
  
  #if 0
-@@ -173,12 +173,12 @@
+@@ -172,12 +172,12 @@
      char* InstallFontName;
      char* Components; 
      char* Tasks;
@@ -47,21 +47,3 @@
  #if 0
      Options: set of (foConfirmOverwrite, foUninsNeverUninstall, foRestartReplace,
        foDeleteAfterInstall, foRegisterServer, foRegisterTypeLib, foSharedFile,
-@@ -191,7 +191,7 @@
- #endif
- } TSetupFileEntry;
- 
--P typedef struct
-+typedef struct
- {
-   uint32_t FirstDisk;
-   uint32_t LastDisk;
-@@ -202,7 +202,7 @@
-   uint32_t Date;
-   uint32_t FileVersionMS;
-   uint32_t FileVersionLS;
--} TSetupFileLocationEntry;
-+} P TSetupFileLocationEntry;
- 
- #define SETUP_FILE_LOCATION_ENTRY_SIZE  0x29
- 

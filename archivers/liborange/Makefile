@@ -5,26 +5,68 @@
 # $FreeBSD$
 #
 
-PORTNAME=	orange
-PORTVERSION=	0.3
-PORTREVISION= 	2
+PORTNAME=	liborange
+PORTVERSION=	0.3.2
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
 MAINTAINER=	ports@logvinov.com
-COMMENT=	Extract Microsoft Cabinet files from self-extracting installers
+COMMENT=	Library to extract CAB files from self-extracting installers
 
-LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce \
-		rapi.2:${PORTSDIR}/palm/synce-librapi2 \
-		dynamite.0:${PORTSDIR}/archivers/libdynamite \
-		unshield.0:${PORTSDIR}/archivers/unshield
+OPTIONS=	LIBSYNCE	"Build with libsynce support"			on \
+		LIBDYNAMITE	"Build with libdynamite support"		on \
+		LIBUNSHIELD	"Build with libunshield support"		on \
+		INNO		"Build with expermential Inno Setup support"	off \
+		VISE		"Build with expermential VISE support"		off \
+		MSI		"Build with expermential MSI support"		off
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
-CONFIGURE_ARGS=	--with-libsynce=${LOCALBASE}
+USE_GNOME=	gnomehack gnometarget
 USE_ICONV=	yes
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+MAN1=		orange.1
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_LIBSYNCE)
+CONFIGURE_ARGS+=	--without-libsynce
+.else
+LIB_DEPENDS+=		synce.0:${PORTSDIR}/palm/synce-libsynce
+CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
+.endif
+
+.if !defined(WITH_LIBDYNAMITE)
+CONFIGURE_ARGS+=	--without-libdynamite
+.else
+LIB_DEPENDS+=		dynamite.0:${PORTSDIR}/archivers/libdynamite
+CONFIGURE_ARGS+=	--with-libdynamite=${LOCALBASE}
+.endif
+
+.if !defined(WITH_LIBUNSHIELD)
+CONFIGURE_ARGS+=	--without-libunshield
+.else
+LIB_DEPENDS+=		unshield.0:${PORTSDIR}/archivers/unshield
+CONFIGURE_ARGS+=	--with-libunshield=${LOCALBASE}
+.endif
+
+.if defined(WITH_INNO)
+CONFIGURE_ARGS+=	--enable-inno
+.endif
+
+.if defined(WITH_VISE)
+CONFIGURE_ARGS+=	--enable-vise
+.endif
+
+.if defined(WITH_MSI)
+CONFIGURE_ARGS+=	--enable-msi --with-libgsf
+LIB_DEPENDS+=		gsf-1.114:${PORTSDIR}/devel/libgsf
+.endif
+
+.include <bsd.port.post.mk>

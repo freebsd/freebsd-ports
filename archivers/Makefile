@@ -51,6 +51,7 @@
     SUBDIR += libdynamite
     SUBDIR += liblzxcomp
     SUBDIR += libmspack
+    SUBDIR += liborange
     SUBDIR += libunrar
     SUBDIR += libzip
     SUBDIR += linux-par2cmdline
@@ -70,7 +71,6 @@
     SUBDIR += nulib
     SUBDIR += nwreckdum
     SUBDIR += ocaml-zip
-    SUBDIR += orange
     SUBDIR += p5-Archive-Any
     SUBDIR += p5-Archive-Extract
     SUBDIR += p5-Archive-Tar
