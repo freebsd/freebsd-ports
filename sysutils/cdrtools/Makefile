@@ -7,7 +7,7 @@
 
 PORTNAME=	cdrtools
 PORTVERSION?=	2.01
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
@@ -97,6 +97,8 @@ post-patch:
 #	@${REINPLACE_CMD} -E -e \
 #		's|#define.+INSERT_YOUR_EMAIL_ADDRESS_HERE|& "${MAINTAINER}"|' \
 #		${WRKSRC}/cdrecord/cdrecord.c
+	@${CHMOD} u+w ${WRKSRC}/mkisofs/Makefile
+	@${ECHO} GCCOPTOPT=-O0 >> ${WRKSRC}/mkisofs/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/${CDRTLSTARGET}/cdda2wav \
