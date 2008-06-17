@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.unixuser.org/~euske/${PORTNAME}/ \
 		ftp://ftp.rewt.org.uk/pub/distfiles/
 
-MAINTAINER=	joe@joeholden.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VNC Session Recorder to SWF Flash (Movie) format
 
 USE_XORG=	xmu x11 xi xaw

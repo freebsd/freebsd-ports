@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	joe@joeholden.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DSP library and software FAX machine
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
