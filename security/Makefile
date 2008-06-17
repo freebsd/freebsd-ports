@@ -90,7 +90,6 @@
     SUBDIR += cryptstring
     SUBDIR += cutlass
     SUBDIR += cvm
-    SUBDIR += cyrus-sasl
     SUBDIR += cyrus-sasl2
     SUBDIR += cyrus-sasl2-ldapdb
     SUBDIR += cyrus-sasl2-saslauthd
