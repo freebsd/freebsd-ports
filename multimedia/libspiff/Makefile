@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libspiff
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	ed@FreeBSD.org
 COMMENT=	An XSPF parsing library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
