@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sada
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	joe@joeholden.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script to turn ``cvs log'' output into HTML
 
 PLIST_FILES=	bin/cvs2html

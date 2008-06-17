@@ -12,7 +12,7 @@ MASTER_SITES=	http://druglord.freelsd.org/ezbounce/files/ \
 		ftp://ftp.rewt.org.uk/pub/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	joe@joeholden.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A highly configurable IRC Proxy
 
 GNU_CONFIGURE=	yes
