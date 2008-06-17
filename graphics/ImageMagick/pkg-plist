@@ -1352,6 +1352,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/import.html
 %%PORTDOCS%%%%DOCSDIR%%/www/index.html
 %%PORTDOCS%%%%DOCSDIR%%/www/install-source.html
+%%PORTDOCS%%%%DOCSDIR%%/www/jp2.html
 %%PORTDOCS%%%%DOCSDIR%%/www/license.html
 %%PORTDOCS%%%%DOCSDIR%%/www/links.html
 %%PORTDOCS%%%%DOCSDIR%%/www/magick-core.html
