@@ -1,0 +1,10 @@
+--- Makefile.in.old	2008-06-16 00:14:07.000000000 -0300
++++ Makefile.in	2008-06-16 00:14:12.000000000 -0300
+@@ -74,7 +74,6 @@
+ 		$(RM) -rf `cat .fname` .fname
+ 
+ install: 	$(NAMEEXE) $(UNNAMEEXE) $(LIBNAME)
+-		$(INSTALL_PROGRAM) -d $(BINDIR) $(LIBDIR) $(MAN1DIR) $(MAN3DIR) $(INCLUDEDIR)
+ 		$(INSTALL_PROGRAM) $(srcdir)/$(NAMEEXE) $(EXECUTABLE) 
+ 		-chmod 0755 $(EXECUTABLE)
+ 		-strip $(EXECUTABLE)
