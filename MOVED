@@ -3489,3 +3489,4 @@ security/bioapitool||2008-05-30|Has expired: All functionallity of this tools ha
 japanese/motoya-ttfonts||2008-05-31|Removed because of extremely restrictive license
 devel/libffi-devel||2008-06-02|Has expired: Use devel/libffi instead
 www/mod_auth_pwcheck||2008-06-17|Depends on expired port, website disappeared
+security/cyrus-sasl||2008-06-17|Has expired: Unsupported, please move to cyrus-sasl2
