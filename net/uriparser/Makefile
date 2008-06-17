@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	uriparser
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	ed@FreeBSD.org
 COMMENT=	URI parsing library
 
 GNU_CONFIGURE=	yes
