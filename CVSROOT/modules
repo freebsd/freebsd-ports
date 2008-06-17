@@ -9448,6 +9448,7 @@ p5-Catalyst-Model-CDBI-Sweet	ports/www/p5-Catalyst-Model-CDBI-Sweet
 p5-Catalyst-Model-DBIC	ports/www/p5-Catalyst-Model-DBIC
 p5-Catalyst-Model-DBIC-Plain	ports/www/p5-Catalyst-Model-DBIC-Plain
 p5-Catalyst-Model-DBIC-Schema	ports/www/p5-Catalyst-Model-DBIC-Schema
+p5-Catalyst-Model-DynamicAdaptor	ports/www/p5-Catalyst-Model-DynamicAdaptor
 p5-Catalyst-Model-Oryx	ports/www/p5-Catalyst-Model-Oryx
 p5-Catalyst-Model-XML-Feed	ports/www/p5-Catalyst-Model-XML-Feed
 p5-Catalyst-Model-Xapian	ports/www/p5-Catalyst-Model-Xapian
