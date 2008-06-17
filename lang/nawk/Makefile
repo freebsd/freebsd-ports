@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	nawk
-PORTVERSION=	20070501
+PORTVERSION=	20071023
 CATEGORIES=	lang
-MASTER_SITES=	http://cm.bell-labs.com/cm/cs/who/bwk/
+MASTER_SITES=	http://www.cs.princeton.edu/~bwk/btl.mirror/
 DISTNAME=	awk
 DIST_SUBDIR=	${PORTNAME}
 
