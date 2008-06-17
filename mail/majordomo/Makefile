@@ -7,7 +7,7 @@
 
 PORTNAME=	majordomo
 PORTVERSION=	1.94.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		ftp://ftp.sgi.com/other/majordomo/1.94.5/ \
@@ -30,6 +30,8 @@ INSTALL_TARGET=	install install-wrapper
 MAN1=		approve.1 bounce-remind.1 digest.1
 MAN8=		majordomo.8
 PKGMESSAGE=	${FILESDIR}/post-install-notes
+
+DOCSDIR=	${PREFIX}/${PORTNAME}/doc
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
@@ -63,7 +65,7 @@ post-configure:
 	fi
 
 post-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} NOPORTDOCS=${NOPORTDOCS} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .for file in ${MAN1}
 	@ ${INSTALL_MAN} ${WRKSRC}/Doc/man/${file} ${PREFIX}/man/man1
 .endfor
@@ -72,13 +74,13 @@ post-install:
 .endfor
 	@ ${LN} -sf archive2.pl ${PREFIX}/majordomo/archive
 .if !defined(NOPORTDOCS)
-	@ for f in Changelog FUTURE INSTALL LICENSE NEWLIST README; do \
-		${INSTALL_DATA} ${WRKSRC}/$$f ${PREFIX}/majordomo/doc; \
+	 for f in Changelog FUTURE INSTALL LICENSE NEWLIST README; do \
+		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
-	@ for f in FAQ README.sequencer list-owner-info majordomo-faq.html majordomo.lisa6.ps majordomo.ora; do \
-		${INSTALL_DATA} ${WRKSRC}/Doc/$$f ${PREFIX}/majordomo/doc; \
+	 for f in FAQ README.sequencer list-owner-info majordomo-faq.html majordomo.lisa6.ps majordomo.ora; do \
+		${INSTALL_DATA} ${WRKSRC}/Doc/$$f ${DOCSDIR}; \
 	done
-	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/majordomo/doc
+	 ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${DOCSDIR}
 .endif
 	@ ${INSTALL_DATA} ${WRKSRC}/aliases.majordomo \
 		${PREFIX}/majordomo/aliases.majordomo-sample
