@@ -19,6 +19,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	${PREFIX}/lib/cint
 ALL_TARGET=
 MAN1=		cint.1 makecint.1
 
@@ -29,7 +30,7 @@ do-install:
 	cd ${WRKSRC} && ${SH} tool/INSTALLBIN\
 	    --bindir=${PREFIX}/bin\
 	    --libdir=${PREFIX}/lib/cint\
-	    --docdir=${PREFIX}/share/doc/cint\
+	    --docdir=${DOCSDIR} \
 	    --mandir=${MANPREFIX}/man
 
 .include <bsd.port.mk>
