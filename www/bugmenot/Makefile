@@ -18,6 +18,7 @@ COMMENT=	${GECKO} extension to bypass compulsory web registration
 
 BROKEN=		Unfetchable
 DEPRECATED=	1.4 seems the latest version installable with seamonkey, but it does not work
+EXPIRATION_DATE=2008-08-17
 
 PLIST_FILES=	%%MOZDIR%%/chrome/bugmenot.jar
 
