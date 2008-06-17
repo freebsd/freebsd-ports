@@ -7,7 +7,7 @@
 
 PORTNAME=	gauche
 PORTVERSION=	0.8.13	# Keep databases/gauche-gdbm in sync with this
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,21 +26,26 @@ GAUCHE_ENCODING?=	utf-8
 # breaks in ext/uvecor.c on some locales
 MAKE_ENV=	LANG=C
 
-INFOSECTION=	The Algorithmic Language Scheme
+#INFOSECTION=	The Algorithmic Language Scheme
 
-MAN1=		gosh.1 \
-		gauche-config.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-threads=${GAUCHE_THREADS} \
 		--enable-multibyte=${GAUCHE_ENCODING} \
 		--with-slib=${LOCALBASE}/share/slib \
 		--with-iconv=${LOCALBASE}
 PLIST_SUB=	VERSION="${PORTVERSION}" \
-		TARGET="${CONFIGURE_TARGET}" \
-		INFOSECTION="${INFOSECTION}"
+		TARGET="${CONFIGURE_TARGET}"
+
+#		INFOSECTION="${INFOSECTION}"
+
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+
+MAN1=		gosh.1 gauche-config.1
+
+.if !defined(NOPORTDOCS)
 INFO=		gauche-refe gauche-refj
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -63,8 +68,8 @@ post-install:
 	${TOUCH} ${DOCSDIR}/.keepme
 	${MKDIR} ${EXAMPLESDIR}
 	${TOUCH} ${EXAMPLESDIR}/.keepme
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1/
+.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/doc/*.info ${WRKSRC}/doc/*.info-[1-7] ${PREFIX}/info/
 .endif
 
