@@ -6,20 +6,15 @@
 #
 
 PORTNAME=	vile
-PORTVERSION=	9.6e
+PORTVERSION=	9.7
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/ \
 		ftp://invisible-island.net/vile/ \
 		ftp://ftp.phred.org/pub/vile/
-DISTNAME=	vile-9.6
+DISTNAME=	vile-9.7
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	${MASTER_SITES:S,vile/,vile/patches/,g}
-PATCHFILES=	vile-9.6a.patch.gz \
-		vile-9.6b.patch.gz \
-		vile-9.6c.patch.gz \
-		vile-9.6d.patch.gz \
-		vile-9.6e.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs.  a vi "workalike", with many additional features
@@ -57,15 +52,15 @@ PLIST=		${PKGDIR}/pkg-plist.perl+filt
 .endif
 
 pre-configure:
-.if ! defined(WITH_ICONV)
+.if !defined(WITH_ICONV)
 	@${ECHO_MSG} "Choose the option ICONV if you want to make a vile which includes"
 	@${ECHO_MSG} "ICONV functionality"
 .endif
-.if ! defined(WITH_PERL)
+.if !defined(WITH_PERL)
 	@${ECHO_MSG} "Choose the option PERL if you want to make a vile which includes"
 	@${ECHO_MSG} "PERL functionality"
 .endif
-.if ! defined(WITH_FILTERS)
+.if !defined(WITH_FILTERS)
 	@${ECHO_MSG} "Choose the option FILTERS if you want to make a vile which will"
 	@${ECHO_MSG} "dynamically load filters as needed."
 .endif

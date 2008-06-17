@@ -46,11 +46,9 @@ lib/vile/vile-nr-filt.so
 lib/vile/vile-pas-filt.so
 lib/vile/vile-perl-filt.so
 lib/vile/vile-php-filt.so
-lib/vile/vile-pl-filt.so
 lib/vile/vile-pot-filt.so
 lib/vile/vile-ps-filt.so
 lib/vile/vile-py-filt.so
-lib/vile/vile-rb-filt.so
 lib/vile/vile-rc-filt.so
 lib/vile/vile-rcs-filt.so
 lib/vile/vile-rexx-filt.so
@@ -77,16 +75,16 @@ lib/vile/vile-xml-filt.so
 lib/vile/vile-xres-filt.so
 lib/vile/vile-xs-filt.so
 lib/vile/vile-yacc-filt.so
-share/doc/vile/Vileserv.doc
-share/doc/vile/config.doc
-share/doc/vile/dir.doc
-share/doc/vile/filters.doc
-share/doc/vile/macros.doc
-share/doc/vile/menus.doc
-share/doc/vile/modes.doc
-share/doc/vile/oleauto.doc
-share/doc/vile/perl.doc
-share/doc/vile/visvile.doc
+%%PORTDOCS%%share/doc/vile/Vileserv.doc
+%%PORTDOCS%%share/doc/vile/config.doc
+%%PORTDOCS%%share/doc/vile/dir.doc
+%%PORTDOCS%%share/doc/vile/filters.doc
+%%PORTDOCS%%share/doc/vile/macros.doc
+%%PORTDOCS%%share/doc/vile/menus.doc
+%%PORTDOCS%%share/doc/vile/modes.doc
+%%PORTDOCS%%share/doc/vile/oleauto.doc
+%%PORTDOCS%%share/doc/vile/perl.doc
+%%PORTDOCS%%share/doc/vile/visvile.doc
 share/vile/ada.keywords
 share/vile/as.keywords
 share/vile/as386.keywords
@@ -156,6 +154,7 @@ share/vile/palettes.rc
 share/vile/pas.keywords
 share/vile/pc.keywords
 share/vile/perl.keywords
+share/vile/scheme.keywords
 share/vile/perl/Breadcrumbs.pm
 share/vile/perl/CaptHook.pm
 share/vile/perl/Glob2re.pm
@@ -224,5 +223,5 @@ share/vile/yacc.keywords
 @dirrm share/vile/perl
 @dirrm share/vile/macros
 @dirrm share/vile
-@dirrm share/doc/vile
+@dirrmtry share/doc/vile
 @dirrm lib/vile
