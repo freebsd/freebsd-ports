@@ -47,11 +47,9 @@ lib/xvile/vile-mms-filt
 lib/xvile/vile-nr-filt
 lib/xvile/vile-perl-filt
 lib/xvile/vile-php-filt
-lib/xvile/vile-pl-filt
 lib/xvile/vile-pot-filt
 lib/xvile/vile-ps-filt
 lib/xvile/vile-py-filt
-lib/xvile/vile-rb-filt
 lib/xvile/vile-rc-filt
 lib/xvile/vile-rcs-filt
 lib/xvile/vile-rexx-filt
@@ -79,17 +77,17 @@ lib/xvile/vile-xres-filt
 lib/xvile/vile-xs-filt
 lib/xvile/vile-yacc-filt
 @dirrm lib/xvile
-share/doc/xvile/Vileserv.doc
-share/doc/xvile/config.doc
-share/doc/xvile/dir.doc
-share/doc/xvile/filters.doc
-share/doc/xvile/macros.doc
-share/doc/xvile/menus.doc
-share/doc/xvile/modes.doc
-share/doc/xvile/oleauto.doc
-share/doc/xvile/perl.doc
-share/doc/xvile/visvile.doc
-@dirrm share/doc/xvile
+%%PORTDOCS%%share/doc/xvile/Vileserv.doc
+%%PORTDOCS%%share/doc/xvile/config.doc
+%%PORTDOCS%%share/doc/xvile/dir.doc
+%%PORTDOCS%%share/doc/xvile/filters.doc
+%%PORTDOCS%%share/doc/xvile/macros.doc
+%%PORTDOCS%%share/doc/xvile/menus.doc
+%%PORTDOCS%%share/doc/xvile/modes.doc
+%%PORTDOCS%%share/doc/xvile/oleauto.doc
+%%PORTDOCS%%share/doc/xvile/perl.doc
+%%PORTDOCS%%share/doc/xvile/visvile.doc
+@dirrmtry share/doc/xvile
 share/xvile/vile/perl/Vile/Exporter.pm
 share/xvile/vile/perl/Vile/Manual.pm
 share/xvile/vile/perl/Breadcrumbs.pm
@@ -189,6 +187,7 @@ share/xvile/vile/rexx.keywords
 share/xvile/vile/rpm.keywords
 share/xvile/vile/rtf.keywords
 share/xvile/vile/sccs.keywords
+share/xvile/vile/scheme.keywords
 share/xvile/vile/sh.keywords
 share/xvile/vile/sml.keywords
 share/xvile/vile/spell.rc
