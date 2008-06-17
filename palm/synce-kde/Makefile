@@ -6,7 +6,7 @@
 
 PORTNAME=	synce-kde
 PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	palm
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
@@ -18,7 +18,7 @@ LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce \
 		rapi.2:${PORTSDIR}/palm/synce-librapi2 \
 		rra.0:${PORTSDIR}/palm/synce-rra \
 		dynamite.0:${PORTSDIR}/archivers/libdynamite \
-		orange.0:${PORTSDIR}/archivers/orange \
+		orange.0:${PORTSDIR}/archivers/liborange \
 		unshield.0:${PORTSDIR}/archivers/unshield
 
 RUN_DEPENDS+=	synce-serial-start:${PORTSDIR}/palm/synce-serial

@@ -7,7 +7,7 @@
 
 PORTNAME=	wine-doors
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.wine-doors.org/releases/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/${PYLXML_EGG}:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtksourceview.so:${PORTSDIR}/x11-toolkits/py-gnome-desktop \
 		bash:${PORTSDIR}/shells/bash \
 		cabextract:${PORTSDIR}/archivers/cabextract \
-		orange:${PORTSDIR}/archivers/orange \
+		orange:${PORTSDIR}/archivers/liborange \
 		unzip:${PORTSDIR}/archivers/unzip \
 		wine:${PORTSDIR}/emulators/wine
 
