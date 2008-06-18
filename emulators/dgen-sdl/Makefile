@@ -9,9 +9,9 @@ PORTNAME=	dgen-sdl
 PORTVERSION=	1.23
 PORTREVISION=	4
 CATEGORIES=	emulators
-MASTER_SITES=	http://pknet.com/~joe/
+MASTER_SITES=	http://src4.narod.ru/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	A wonderful Sega Genesis/MegaDrive emulator
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
@@ -22,8 +22,5 @@ GNU_CONFIGURE=	yes
 
 MAN1=		dgen.1 tobin.1
 MAN5=		dgenrc.5
-
-DEPRECATED=	Website gone, fetching locations gone, no release since 2003
-EXPIRATION_DATE=2008-09-17
 
 .include <bsd.port.mk>
