@@ -93,10 +93,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-BROKEN=		Does not compile on amd64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
