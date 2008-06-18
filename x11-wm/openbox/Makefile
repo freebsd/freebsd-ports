@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	3.4.6.1
-PORTREVISION=	1
+PORTVERSION=	3.4.7.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://offload1.icculus.org/openbox/releases/
 
