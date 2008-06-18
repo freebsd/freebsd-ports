@@ -1,5 +1,6 @@
 bin/freecol
 %%DATADIR%%/FreeCol.jar
+%%DATADIR%%/freecol.xpm
 %%DATADIR%%/data/audio/sfx/02IllegalMove.wav
 %%DATADIR%%/data/audio/sfx/03LoadCargo.wav
 %%DATADIR%%/data/audio/sfx/04SellCargo.wav
@@ -617,7 +618,9 @@ bin/freecol
 %%DATADIR%%/data/maps/america-large.fsg
 %%DATADIR%%/data/maps/america-large.png
 %%DATADIR%%/data/strings/FreeColMessages.properties
+%%DATADIR%%/data/strings/FreeColMessages_af.properties
 %%DATADIR%%/data/strings/FreeColMessages_ar.properties
+%%DATADIR%%/data/strings/FreeColMessages_bg.properties
 %%DATADIR%%/data/strings/FreeColMessages_br.properties
 %%DATADIR%%/data/strings/FreeColMessages_cs_CZ.properties
 %%DATADIR%%/data/strings/FreeColMessages_da.properties
@@ -626,12 +629,17 @@ bin/freecol
 %%DATADIR%%/data/strings/FreeColMessages_el.properties
 %%DATADIR%%/data/strings/FreeColMessages_en_GB.properties
 %%DATADIR%%/data/strings/FreeColMessages_en_US.properties
+%%DATADIR%%/data/strings/FreeColMessages_eo.properties
 %%DATADIR%%/data/strings/FreeColMessages_es_ES.properties
 %%DATADIR%%/data/strings/FreeColMessages_fa.properties
 %%DATADIR%%/data/strings/FreeColMessages_fi.properties
 %%DATADIR%%/data/strings/FreeColMessages_fr.properties
 %%DATADIR%%/data/strings/FreeColMessages_hu.properties
+%%DATADIR%%/data/strings/FreeColMessages_is.properties
 %%DATADIR%%/data/strings/FreeColMessages_it_IT.properties
+%%DATADIR%%/data/strings/FreeColMessages_jv.properties
+%%DATADIR%%/data/strings/FreeColMessages_km.properties
+%%DATADIR%%/data/strings/FreeColMessages_ml.properties
 %%DATADIR%%/data/strings/FreeColMessages_nb_NO.properties
 %%DATADIR%%/data/strings/FreeColMessages_nds.properties
 %%DATADIR%%/data/strings/FreeColMessages_nl.properties
@@ -643,8 +651,11 @@ bin/freecol
 %%DATADIR%%/data/strings/FreeColMessages_pt_BR.properties
 %%DATADIR%%/data/strings/FreeColMessages_pt_PT.properties
 %%DATADIR%%/data/strings/FreeColMessages_ru.properties
+%%DATADIR%%/data/strings/FreeColMessages_sma.properties
 %%DATADIR%%/data/strings/FreeColMessages_sq.properties
 %%DATADIR%%/data/strings/FreeColMessages_sv_SE.properties
+%%DATADIR%%/data/strings/FreeColMessages_te.properties
+%%DATADIR%%/data/strings/FreeColMessages_uk.properties
 %%DATADIR%%/jars/higlayout.jar
 %%DATADIR%%/jars/jsr173_1.0_api.jar
 %%DATADIR%%/jars/wstx-lgpl-4.0pr1.jar

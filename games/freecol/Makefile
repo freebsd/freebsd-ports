@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freecol
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.7.4
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +21,8 @@ JAVA_VERSION=	1.5+
 
 PORTDOCS=	*
 
+DESKTOP_ENTRIES="FreeCol" "${COMMENT}" "${DATADIR}/freecol.xpm" "freecol" "Game;ArcadeGame;" false
+
 post-patch:
 	@${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/freecol
@@ -30,6 +31,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/freecol ${PREFIX}/bin/
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/FreeCol.jar ${DATADIR}/
+	@${INSTALL_DATA} ${WRKSRC}/freecol.xpm ${DATADIR}/
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR}/)
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} jars ${DATADIR}/)
 .if !defined(NOPORTDOCS)
