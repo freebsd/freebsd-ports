@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	nas
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.9.1
 CATEGORIES=	audio
-MASTER_SITES=	http://nas.codebrilliance.com/nas/
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Network Audio System
 
 USE_IMAKE=	yes
+USE_XORG=	x11 xext xt xau sm ice xp xpm xmu xaw
 USE_LDCONFIG=	yes
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
