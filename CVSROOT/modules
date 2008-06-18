@@ -360,7 +360,6 @@ amarok		ports/audio/amarok
 amarok-fs	ports/audio/amarok-fs
 amaterus	ports/x11-wm/amaterus
 amavis-stats	ports/security/amavis-stats
-amavisd		ports/security/amavisd
 amavisd-milter	ports/security/amavisd-milter
 amavisd-new	ports/security/amavisd-new
 amaya		ports/www/amaya
