@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gavl
-PORTVERSION=	0.2.5
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gmerlin
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -21,34 +21,24 @@ USE_GNOME=	pkgconfig gnometarget gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--without-cpuflags
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--without-cpuflags --without-doxygen
 
 PORTDOCS=	README
 
+OPTIONS=	OPTIMIZED_CFLAGS "Additional optimizations" off
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 504000
-EXTRA_PATCHES=	${PATCHDIR}/gavl-mix.c-patch \
-		${PATCHDIR}/gavl-c-_cmix_c.c-patch
-.endif
-
-pre-everything::
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===>  Enable Optimized CFLAGS by defining"
-	@${ECHO_MSG} "===>   WITH_OPTIMIZED_CFLAGS"
-	@${ECHO_MSG} "===>"
+.if defined(WITH_OPTIMIZED_CFLAGS) && ${ARCH} == i386 && ${OSVERSION} < 700000
+# Build fails on FreeBSD-6.3 i386 with optimized cflags with gcc 3.4
+USE_GCC=	4.2+
 .endif
 
 post-patch:
-# No llrintf in freebsd (yet)
-.if ${OSVERSION} < 504000
-	@${REINPLACE_CMD} -e 's|llrintf|rintf|g' \
-		${WRKSRC}/gavl/c/*.*
-.endif
-	@${REINPLACE_CMD} -e 's|CFLAGS="-Wall|CFLAGS="${CFLAGS} -Wall|g' \
-		${WRKSRC}/configure
+	# This is possibly wrong, but benchmark does not affect library functionality, so
+	@${REINPLACE_CMD} -e 's|CLOCK_PROCESS_CPUTIME_ID|CLOCK_PROF|g' \
+		${WRKSRC}/src/benchmark.c
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e \
 	's|-O3 -funroll-all-loops -fomit-frame-pointer -ffast-math||g' \
