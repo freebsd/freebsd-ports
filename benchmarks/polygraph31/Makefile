@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	polygraph31
-PORTVERSION=	3.0.6
+PORTVERSION=	3.1.5
 CATEGORIES=	benchmarks www
-MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/ \
-				http://people.bsdgroup.de/~as/freebsd/distfiles/
+MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
 DISTNAME=	${PORTNAME:S/31//}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	as@bsdgroup.de
+MAINTAINER=	adrian@freebsd.org
 COMMENT=	A benchmarking tool for Web proxies
 
 GNU_CONFIGURE=	YES
