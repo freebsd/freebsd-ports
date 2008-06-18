@@ -7,7 +7,7 @@
 
 PORTNAME=	pcb
 PORTVERSION=	20080202
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	X11 interactive printed circuit board layout system
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+RUN_DEPENDS=	m4>=1.4.11:${PORTSDIR}/devel/m4
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 GNU_CONFIGURE=	yes
