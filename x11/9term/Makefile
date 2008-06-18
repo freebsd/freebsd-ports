@@ -18,6 +18,9 @@ COMMENT=	An X11 program which emulates a plan9 window
 # needs library and private header, but not during runtime
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/editors/sam:build
 
+DEPRECATED=	depends on expired port
+EXPIRATION_DATE=2008-07-18
+
 NO_WRKSUBDIR=	yes
 USE_XORG=	x11
 MAKE_ENV=	SAMDIR=${WRKDIRPREFIX}${.CURDIR}/../../editors/sam/work
