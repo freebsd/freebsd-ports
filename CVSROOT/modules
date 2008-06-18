@@ -11036,7 +11036,6 @@ p5-Net-XMPP2	ports/net-im/p5-Net-XMPP2
 p5-Net-XWhois	ports/net/p5-Net-XWhois
 p5-Net-YASA	ports/textproc/p5-Net-YASA
 p5-Net-Yadis	ports/net/p5-Net-Yadis
-p5-Net-Z3950	ports/net/p5-Net-Z3950
 p5-Net-Z3950-SimpleServer	ports/net/p5-Net-Z3950-SimpleServer
 p5-Net-Z3950-ZOOM	ports/net/p5-Net-Z3950-ZOOM
 p5-Net-eBay	ports/www/p5-Net-eBay
