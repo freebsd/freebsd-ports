@@ -1,0 +1,9 @@
+--- Makefile.linux	2005-11-30 11:17:14.000000000 +0800
++++ Makefile.linux	2008-05-24 22:14:34.000000000 +0800
+@@ -1,5 +1,5 @@
+ all:
+-	gcc *.c -o wavegain -DHAVE_CONFIG_H -lm -lsndfile
++	gcc *.c -o wavegain -DHAVE_CONFIG_H -lm -lsndfile -L/usr/local/lib
+ 
+ install:
+ 	install -d /usr/bin/
