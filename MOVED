@@ -3503,3 +3503,4 @@ net/apache-soap|||2008-06-18|Has expired: Development has been ceased, supersede
 net/archie|||2008-06-18|Has expired: No servers active anymore
 net/xarchie|||2008-06-18|Has expired: No servers active anymore
 net/p5-Net-Z3950|||2008-06-18|Has expired: does not compile with yaz 3.x, deprecated in favor of ZOOM-Perl (net/p5-Net-Z3950-ZOOM)
+net/vls|||2008-06-18|Has expired: Does not build with current libdvbpsi. Development has been moved to multimedia/vlc

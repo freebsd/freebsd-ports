@@ -971,7 +971,6 @@
     SUBDIR += versuch
     SUBDIR += vinagre
     SUBDIR += vino
-    SUBDIR += vls
     SUBDIR += vnc
     SUBDIR += vnc2swf
     SUBDIR += vncreflector
