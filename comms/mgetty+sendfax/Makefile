@@ -17,6 +17,8 @@ COMMENT=	Handle external logins, send and receive faxes
 
 USE_PERL5=	yes
 
+CONFLICTS=	netpbm-[0-9]*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" prefix=${PREFIX} -f
 ALL_TARGET=	noident all
