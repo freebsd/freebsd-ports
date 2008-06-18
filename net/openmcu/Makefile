@@ -38,8 +38,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/openh323
 
 .if ${ARCH} == sparc64
 BROKEN=		Does not install
-.elif ${ARCH} == "amd64" && ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
 .endif
 
 pre-install:
