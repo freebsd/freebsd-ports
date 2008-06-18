@@ -5,7 +5,7 @@
 PKGNAME=$1
 ACTION=$2
 
-PATH="${PKG_PREFIX}/bin:/usr/local/bin:/usr/bin:${PATH}"
+PATH="${PKG_PREFIX}/bin:${LOCALBASE}/bin:/usr/bin:${PATH}"
 
 SETENV=env
 TEXHASH=texhash
