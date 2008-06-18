@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	aacplusenc
-PORTVERSION=	0.16.3
+PORTVERSION=	0.17
 CATEGORIES=	audio
-MASTER_SITES=	http://teknoraver.campuslife.it/software/mp4tools/
+MASTER_SITES=	http://teknoraver.net/software/mp4tools/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	aacPlus v2 command-line encoder
@@ -17,9 +17,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
-
-# produces broken encodes in 64-bit mode
-ONLY_FOR_ARCHS=	i386
 
 PLIST_FILES=	bin/aacplusenc
 
