@@ -10,7 +10,7 @@ PORTNAME=	libgdiplus
 PORTVERSION=	1.2.5
 PORTREVISION=	3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://go-mono.com/sources/${PORTNAME}/
+MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	GDI+ API for System.Windows.Forms in Mono
