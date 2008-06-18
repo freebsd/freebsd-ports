@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	--enable-djbfft
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" || ${ARCH} == "powerpc"
 CFLAGS+=	-fPIC
 .endif
 
