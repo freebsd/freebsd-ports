@@ -571,7 +571,6 @@
     SUBDIR += p5-Net-Write
     SUBDIR += p5-Net-XWhois
     SUBDIR += p5-Net-Yadis
-    SUBDIR += p5-Net-Z3950
     SUBDIR += p5-Net-Z3950-SimpleServer
     SUBDIR += p5-Net-Z3950-ZOOM
     SUBDIR += p5-Net-ext
