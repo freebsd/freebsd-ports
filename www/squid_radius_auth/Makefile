@@ -17,7 +17,7 @@ PATCH_SITES=	http://www.exeonline.com/downloads/
 PATCHFILES=	squid_radius_freebsd.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	myntric@exeonline.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RADIUS authenticator for squid proxy 2.5 and later
 
 MAN8=		squid_radius_auth.8
