@@ -7,6 +7,7 @@
 
 PORTNAME=	megacli
 PORTVERSION=	1.01.40
+PORTREVISION=	1
 CATEGORIES=	sysutils linux
 MASTER_SITES=	http://www.lsi.com/support/downloads/megaraid/miscellaneous/linux/
 PKGNAMEPREFIX=	linux-

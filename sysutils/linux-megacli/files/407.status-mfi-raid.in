@@ -67,7 +67,7 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 			E=-1; S=-1; D=-1; s=-1; mec=-1; oec=-1; pfc=-1; lpfeqn=-1;
 			state="";
 		}
-		/^Enclosure Number:/ { E=$3; }
+		/^Enclosure (Number|Device ID):/ { E=$3; }
 		/^Slot Number:/ { S=$3; }
 		/^Device Id:/ { D=$3; }
 		/^Sequence Number:/ { s=$3; }
@@ -127,12 +127,11 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 			}
 		}
 	'
-	echo
-	echo "BBU Information:"
+	# Print BBU Information, if we found something
 	${megacli} -AdpBbuCmd -a${ctrl} | \
 	awk '
 		BEGIN {
-			type=""; temp=-1; isok=-1; rsoc=-1; asoc=-1;
+			type=""; temp=-1; isok="-"; rsoc=-1; asoc=-1;
 			rc=-1; cc=-1; me=-1;
 		}
 		/^BatteryType:/ { type=$2; }
@@ -144,13 +143,15 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 		/^Cycle Count:/ { cc=$3; }
 		/^Max Error:/ { me=$3; }
 		END {
-			printf "TYPE TEMP OK   RSOC  ASOC  RC   CC    ME\n";
-			printf "%-4s %-2d C %-4s %-5d %-5d %-5d %-5d %-2d\n",
+			if (type == "") { exit 0 };
+			printf "\nBBU Information:\n"
+			printf "TYPE  TEMP  OK   RSOC  ASOC      RC   CC  ME\n";
+			printf "%-5s  %2dC  %-3s %4d%% %4d%% %4dmAh %4d %2d%%\n",
 				type, temp, isok, rsoc, asoc, rc, cc, me;
 
 		}
 	'
-	echo 
+	echo
 
 	# Give very long outputs.
 	case "$daily_status_mfi_raid_verbose" in
