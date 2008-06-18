@@ -39,7 +39,7 @@
   */
  
 -#define MIN_UNIX_UID 500	/**/
-+#define MIN_UNIX_UID 1000	/**/
++#define MIN_UNIX_UID %%MINUID%%	/**/
  
  
  /* If IGNORE_CASE is defined, the login given is checked in two different

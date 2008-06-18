@@ -7,6 +7,7 @@
 
 PORTNAME=	pwauth
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.unixpapa.com/software/
 
@@ -21,10 +22,11 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIB="-lcrypt -lpam"
 .include <bsd.port.pre.mk>
 
 WWWUID!=	${ID} -u ${WWWOWN}
+MINUID?=	1000
 
 post-patch:
 	@${REINPLACE_CMD} "s/%%UIDS%%/${WWWUID}/ ; \
-		s/%%MINUID%%/1000/" ${WRKSRC}/config.h
+		s/%%MINUID%%/${MINUID}/" ${WRKSRC}/config.h
 
 do-install:
 	-@${MKDIR} -p ${PREFIX}/bin
