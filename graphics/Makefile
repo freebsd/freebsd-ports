@@ -293,6 +293,7 @@
     SUBDIR += icontact
     SUBDIR += icoutils
     SUBDIR += ida
+    SUBDIR += iiview
     SUBDIR += ilmbase
     SUBDIR += imageindex
     SUBDIR += imagesort
