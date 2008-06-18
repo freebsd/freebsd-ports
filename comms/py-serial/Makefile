@@ -7,6 +7,7 @@
 
 PORTNAME=	serial
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	comms python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyserial
@@ -22,5 +23,16 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 PYDISTUTILS_PKGNAME=	pyserial
+PORTDOCS=	*.txt
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/*.txt ${DOCSDIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
+
 
 .include <bsd.port.mk>

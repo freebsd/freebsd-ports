@@ -13,4 +13,17 @@
 %%PYTHON_SITELIBDIR%%/serial/serialwin32.py
 %%PYTHON_SITELIBDIR%%/serial/serialwin32.pyc
 %%PYTHON_SITELIBDIR%%/serial/serialwin32.pyo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/enhancedserial.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/miniterm.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scan.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/setup_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tcp_serial_redirect.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_advanced.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_high_load.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxSerialConfigDialog.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxSerialConfigDialog.wxg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxTerminal.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wxTerminal.wxg
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/serial
