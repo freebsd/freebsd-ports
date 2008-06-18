@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uncrustify
-PORTVERSION=	0.46
+PORTVERSION=	0.47
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -16,6 +16,8 @@ COMMENT=	Highly configurable source code beautifier
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+MAN1=		uncrustify.1
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
