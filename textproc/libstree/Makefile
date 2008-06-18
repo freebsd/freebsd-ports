@@ -8,7 +8,7 @@
 PORTNAME=	libstree
 PORTVERSION=	0.4.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.cl.cam.ac.uk/~cpk25/downloads/
+MASTER_SITES=	http://www.icir.org/christian/downloads/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Generic Suffix Tree Library
