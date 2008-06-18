@@ -19,6 +19,7 @@ BUILD_DEPENDS=	llc:${PORTSDIR}/devel/llvm
 
 GNU_CONFIGURE=	yes
 USE_BISON=	build
+USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
