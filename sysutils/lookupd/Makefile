@@ -8,7 +8,7 @@ PORTNAME=	lookupd
 PORTVERSION=	0.3.c
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.rsu.ru/~bushman/lookupd/downloads/
+MASTER_SITES=	http://sfedu.ru/~bushman/lookupd/downloads/
 
 MAINTAINER=	bushman@rsu.ru
 COMMENT=	Lookupd daemon - IPC nsswitch implementation with system-wide caching
@@ -26,10 +26,6 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500112
-IGNORE=		is only supported on FreeBSD 5.1 or later
-.endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
