@@ -516,7 +516,6 @@
     SUBDIR += p5-Yahoo-BBAuth
     SUBDIR += p5-openxpki
     SUBDIR += p5-openxpki-client
-    SUBDIR += p5-openxpki-client-cli
     SUBDIR += p5-openxpki-client-html-mason
     SUBDIR += p5-openxpki-client-scep
     SUBDIR += p5-openxpki-deployment
