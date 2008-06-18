@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-places-plugin
-PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTVERSION=	1.1.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
