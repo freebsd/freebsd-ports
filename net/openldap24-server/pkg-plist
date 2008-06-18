@@ -60,6 +60,10 @@ etc/openldap/DB_CONFIG.example
 %%BACK_SHELL%%libexec/openldap/back_shell-2.4.so.2
 %%BACK_SHELL%%libexec/openldap/back_shell.la
 %%BACK_SHELL%%libexec/openldap/back_shell.so
+%%BACK_SOCK%%libexec/openldap/back_sock-2.4.so
+%%BACK_SOCK%%libexec/openldap/back_sock-2.4.so.2
+%%BACK_SOCK%%libexec/openldap/back_sock.la
+%%BACK_SOCK%%libexec/openldap/back_sock.so
 %%BACK_SQL%%libexec/openldap/back_sql-2.4.so
 %%BACK_SQL%%libexec/openldap/back_sql-2.4.so.2
 %%BACK_SQL%%libexec/openldap/back_sql.la

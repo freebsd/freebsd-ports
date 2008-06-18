@@ -48,6 +48,7 @@ OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
 		PERL "With Perl backend" off \
 		RELAY "With Relay backend" off \
 		SHELL "With Shell backend (disables threading)" off \
+		SOCK "With Sock backend" off \
 		ODBC "With SQL backend" off \
 		RLOOKUPS "With reverse lookups of client hostnames" off \
 		SLP "With SLPv2 (RFC 2608) support" off \
@@ -350,6 +351,13 @@ PLIST_SUB+=		BACK_SHELL=${BACKEND_PLIST}
 .else
 PLIST_SUB+=		BACK_SHELL="@comment "
 WANT_OPENLDAP_THREADS=	yes
+.endif
+
+.if defined(WITH_SOCK)
+CONFIGURE_ARGS+=	--enable-sock=${BACKEND_ENABLE}
+PLIST_SUB+=		BACK_SOCK=${BACKEND_PLIST}
+.else
+PLIST_SUB+=		BACK_SOCK="@comment "
 .endif
 
 .if defined(WITH_PERL)
