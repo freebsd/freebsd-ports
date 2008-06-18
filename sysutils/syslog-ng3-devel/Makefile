@@ -10,11 +10,12 @@ PORTVERSION=	2.0.9
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/2.0/src/
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	ivan.lago@ifom-ieo-campus.it
 COMMENT=	A powerful syslogd replacement
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet 
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog
 
 MAN5=		syslog-ng.conf.5
@@ -24,7 +25,6 @@ USE_RC_SUBR=	syslog-ng.sh
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_GCC=	3.3+
-NO_LATEST_LINK=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
