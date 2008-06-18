@@ -1,11 +1,11 @@
 %%SITE_PERL%%/POE/Component/IRC.pm
 %%SITE_PERL%%/POE/Component/IRC/Common.pm
 %%SITE_PERL%%/POE/Component/IRC/Constants.pm
-%%SITE_PERL%%/POE/Component/IRC/Cookbook.pm
-%%SITE_PERL%%/POE/Component/IRC/Cookbook/BasicBot.pm
-%%SITE_PERL%%/POE/Component/IRC/Cookbook/Disconnecting.pm
-%%SITE_PERL%%/POE/Component/IRC/Cookbook/Resolver.pm
-%%SITE_PERL%%/POE/Component/IRC/Cookbook/Translator.pm
+%%SITE_PERL%%/POE/Component/IRC/Cookbook.pod
+%%SITE_PERL%%/POE/Component/IRC/Cookbook/BasicBot.pod
+%%SITE_PERL%%/POE/Component/IRC/Cookbook/Disconnecting.pod
+%%SITE_PERL%%/POE/Component/IRC/Cookbook/Resolver.pod
+%%SITE_PERL%%/POE/Component/IRC/Cookbook/Translator.pod
 %%SITE_PERL%%/POE/Component/IRC/Plugin.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/AutoJoin.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/BotAddressed.pm
@@ -24,7 +24,7 @@
 %%SITE_PERL%%/POE/Component/IRC/Plugin/PlugMan.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Proxy.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Whois.pm
-%%SITE_PERL%%/POE/Component/IRC/Projects.pm
+%%SITE_PERL%%/POE/Component/IRC/Projects.pod
 %%SITE_PERL%%/POE/Component/IRC/Qnet.pm
 %%SITE_PERL%%/POE/Component/IRC/Qnet/State.pm
 %%SITE_PERL%%/POE/Component/IRC/State.pm
