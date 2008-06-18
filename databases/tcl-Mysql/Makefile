@@ -7,7 +7,7 @@
 
 PORTNAME=	${TCL_NODOT}-sql
 PORTVERSION=	20000114
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases tcl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl-sql
@@ -29,6 +29,8 @@ MAKE_ARGS+=	SHLIB_NAME=${LIB_NAME} ${PLIST_SUB}
 REINPLACE_ARGS=	-i ""
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
+DOCSDIR?=	${PREFIX}/share/doc/tcl-MySQL
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,^int ,static int ,' ${WRKSRC}/sql.cc
 
@@ -41,9 +43,9 @@ do-install:
 		{load ${SQL_DIR}/${LIB_NAME} sql}" \
 		> ${SQL_DIR}/pkgIndex.tcl
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/tcl-MySQL/
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${WRKSRC}/docs/*.txt \
-		${PREFIX}/share/doc/tcl-MySQL/
+		${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
