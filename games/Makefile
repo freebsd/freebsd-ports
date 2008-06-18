@@ -589,6 +589,7 @@
     SUBDIR += pipenightdreams
     SUBDIR += pipepanic
     SUBDIR += planeshift
+    SUBDIR += plee-the-bear
     SUBDIR += plonx
     SUBDIR += pmars
     SUBDIR += pmars-sdl
