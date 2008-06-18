@@ -1007,7 +1007,6 @@
     SUBDIR += wol
     SUBDIR += wping
     SUBDIR += x11vnc
-    SUBDIR += xarchie
     SUBDIR += xbone
     SUBDIR += xbone-gui
     SUBDIR += xboxproxy
