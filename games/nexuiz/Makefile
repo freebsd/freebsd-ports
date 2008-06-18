@@ -40,7 +40,7 @@ PLIST_SUB+=	MAPPACK="@comment "
 .endif
 
 .if !(defined(WITHOUT_CLIENT) && defined(WITHOUT_SDL_CLIENT))
-# Loads libraries on run-time, thus RUN_DEPENDS
+# Loads libraries at run-time, thus RUN_DEPENDS
 RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		${LOCALBASE}/lib/libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		${LOCALBASE}/lib/libpng.so:${PORTSDIR}/graphics/png \
@@ -71,9 +71,11 @@ PLIST_SUB+=	SERVER=""
 PLIST_SUB+=	SERVER="@comment "
 .endif
 
-post-patch:
+post-extract:
 	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20080511.zip \
 		-d ${WRKDIR}/Nexuiz/sources
+
+post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' ${WRKSRC}/${MAKEFILE}
 
 do-build:
