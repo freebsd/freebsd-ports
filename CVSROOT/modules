@@ -13082,6 +13082,7 @@ playgsf		ports/audio/playgsf
 playmidi	ports/audio/playmidi
 plb		ports/net/plb
 plconfig	ports/sysutils/plconfig
+plee-the-bear	ports/games/plee-the-bear
 plib		ports/x11-toolkits/plib
 plman		ports/math/plman
 pload		ports/net/pload
