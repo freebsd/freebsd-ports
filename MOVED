@@ -3506,3 +3506,4 @@ net/p5-Net-Z3950|||2008-06-18|Has expired: does not compile with yaz 3.x, deprec
 net/vls|||2008-06-18|Has expired: Does not build with current libdvbpsi. Development has been moved to multimedia/vlc
 net-mgmt/nsc|||2008-06-18|Has expired: Project abandoned
 security/amavisd|||2008-06-18|Has expired: depends on misc/compat3x, which has security problems; old version
+games/linux-goodway|||2008-06-18|A tool for a port that was removed
