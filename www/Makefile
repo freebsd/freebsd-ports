@@ -1363,6 +1363,7 @@
     SUBDIR += twiki-TwistyContrib
     SUBDIR += twiki-TwistyPlugin
     SUBDIR += twiki-WysiwygPlugin
+    SUBDIR += twill
     SUBDIR += typo
     SUBDIR += typo3
     SUBDIR += udmsearch
