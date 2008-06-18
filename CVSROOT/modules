@@ -16364,6 +16364,7 @@ tetradraw	ports/editors/tetradraw
 tetrinet	ports/games/tetrinet
 tetrinet-x	ports/games/tetrinet-x
 tetrons		ports/games/tetrons
+tetzle		ports/games/tetzle
 tex		ports/print/tex
 tex-omegaware-old	ports/print/tex-omegaware-old
 tex-texmflocal	ports/print/tex-texmflocal
