@@ -78,13 +78,8 @@ LAPACK=		-llapack
 .endif
 
 .if !defined(WITHOUT_UMFPACK)
-. if exists(${LOCALBASE}/include/AMD/amd.h)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libamd.a:${PORTSDIR}/math/umfpack
-AMDINC=		-I${LOCALBASE}/include/AMD
-. else
 LIB_DEPENDS+=	amd.1:${PORTSDIR}/math/suitesparse
 AMDINC=		-I${LOCALBASE}/include/suitesparse
-. endif
 .endif
 
 pre-everything::
