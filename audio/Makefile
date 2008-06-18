@@ -316,6 +316,7 @@
     SUBDIR += k3bmonkeyaudioplugin
     SUBDIR += kexis
     SUBDIR += kid3
+    SUBDIR += kirocker
     SUBDIR += kmp
     SUBDIR += ksmp3play
     SUBDIR += ladspa
