@@ -3499,3 +3499,4 @@ games/linux-x-plane-net-installer|||2008-06-18|Has expired: unfetchable
 japanese/vje30|||2008-06-18|Has expired: depends on forbidden port misc/compat3x
 math/sc|||2008-06-18|Has expired: distfile disappeared
 math/umfpack|||2008-06-18|Has expired: Outdated subset of math/suitesparse
+net/apache-soap|||2008-06-18|Has expired: Development has been ceased, superseded by www/axis.
