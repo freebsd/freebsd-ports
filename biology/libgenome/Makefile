@@ -10,7 +10,7 @@ PORTNAME=	libgenome
 PORTVERSION=	0.5.2
 PORTREVISION=	1
 CATEGORIES=	biology
-MASTER_SITES=	http://www.cs.wisc.edu/~darling/libgenome/releases/
+MASTER_SITES=	http://pages.cs.wisc.edu/~darling/libgenome/releases/
 DISTNAME=	libGenome-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
