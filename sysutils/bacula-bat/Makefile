@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-PKGNAMESUFFIX=  -bat
+PKGNAMESUFFIX=	-bat
 
 COMMENT=	The network backup solution (GUI)
 
@@ -28,7 +28,7 @@ MASTERDIR=	${.CURDIR}/../../sysutils/bacula-server
 PLIST=		${.CURDIR}/pkg-plist
 
 CONFIGURE_ARGS+=--enable-bat \
-		--with-qwt={$PREFIX}/lib \
+		--with-qwt=${LOCALBASE}/lib \
 		--disable-build-dird \
 		--disable-build-stored \
 		--enable-client-only
@@ -43,6 +43,7 @@ do-install:
 	# Install config files and preserve existing ones
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat      ${PREFIX}/sbin
 	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${PREFIX}/etc/bat.conf.sample
-	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1          ${PREFIX}/man/man1/bat.1.gz
+	${GZIP_CMD} ${WRKSRC}/manpages/bat.1
+	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1.gz          ${PREFIX}/man/man1/
 
 .include "${MASTERDIR}/Makefile"
