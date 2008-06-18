@@ -1,0 +1,5 @@
+This is a binary port of the MBROLA speech synthesizer, which uses
+"a time-domain algorithm with outstanding diphone smoothing
+capabilities."  It requires Linux compatibility.
+
+WWW:	http://www.tcts.fpms.ac.be/synthesis/
