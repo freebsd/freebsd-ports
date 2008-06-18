@@ -21,6 +21,6 @@ USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
 USE_GMAKE=	yes
 
-BROKEN=		Does not run (No video mode large enough for 676550817x676551540)
+IGNORE=		Does not run (No video mode large enough for 676550817x676551540)
 
 .include <bsd.port.mk>
