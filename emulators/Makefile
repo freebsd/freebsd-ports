@@ -75,7 +75,6 @@
     SUBDIR += linux-vmware-toolbox4
     SUBDIR += linux-vmware-toolbox5
     SUBDIR += linux-vmware-toolbox6
-    SUBDIR += linux-winetools
     SUBDIR += linux_base-fc4
     SUBDIR += linux_base-fc6
     SUBDIR += linux-xjoypad
