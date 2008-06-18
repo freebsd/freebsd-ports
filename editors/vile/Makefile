@@ -34,6 +34,7 @@ CONFIGURE_ARGS+=	--with-iconv
 USE_ICONV=	yes
 .else
 CONFIGURE_ARGS+=	--without-iconv
+CONFIGURE_ARGS+=	--without-locale
 .endif
 
 .if defined(WITH_PERL)
