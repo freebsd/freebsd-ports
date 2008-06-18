@@ -7,14 +7,13 @@
 #
 
 PORTNAME=	gnucap
-PORTVERSION=	2007.03.29
+PORTVERSION=	2008.06.08
 CATEGORIES=	cad
-MASTER_SITES=	http://www.gnucap.org/devel/ \
-		http://www.geda.seul.org/dist/
+MASTER_SITES=	http://www.gnucap.org/devel/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	stas@FreeBSD.org
-COMMENT=	The Gnu Circuit Analysis Package
+COMMENT=	The GNU Circuit Analysis Package
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

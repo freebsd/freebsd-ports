@@ -1,4 +1,4 @@
-GnuCap is the Gnu Circuit Analysis Package.
+GnuCap is the GNU Circuit Analysis Package.
 
 The primary component is a general purpose circuit simulator. It performs
 nonlinear dc and transient analyses, fourier analysis, and ac analysis. It is

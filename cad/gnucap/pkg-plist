@@ -4,7 +4,6 @@ bin/gnucap-modelgen
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/acs-tutorial
 %%DOCSDIR%%/history
-%%DOCSDIR%%/manual/gnucap-man.pdf
 %%DOCSDIR%%/relnotes.029
 %%DOCSDIR%%/relnotes.030
 %%DOCSDIR%%/relnotes.031
@@ -54,5 +53,4 @@ bin/gnucap-modelgen
 %%EXAMPLESDIR%%/runall.out
 %%EXAMPLESDIR%%/sc18.ckt
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%/manual
 @dirrm %%DOCSDIR%%
