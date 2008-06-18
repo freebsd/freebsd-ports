@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openmovieeditor
-PORTVERSION=	0.0.20080209
-PORTREVISION=	1
+PORTVERSION=	0.0.20080523
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -20,18 +19,18 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		quicktime.0:${PORTSDIR}/multimedia/libquicktime \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		jack.0:${PORTSDIR}/audio/jack \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		portaudio.2:${PORTSDIR}/audio/portaudio2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmpeg3.a:${PORTSDIR}/multimedia/libmpeg3
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include"
+USE_GNOME=	glib20
+CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib"
 
 PORTDOCS=	*
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' \
-		${WRKSRC}/src/portaudio/pa_unix_oss.c
 
 .if !defined(NOPORTDOCS)
 post-install:
