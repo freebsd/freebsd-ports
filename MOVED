@@ -3496,6 +3496,5 @@ audio/mbrola||2008-06-18|Has expired: relies on forbidden port misc/compat3x; la
 emulators/linux-winetools|||2008-06-18|Has expired: very old, discontinued, and replaced by emulators/wine-doors
 games/linux-x-plane||2008-06-18|Relies on expired, unfetchable installer port
 games/linux-x-plane-net-installer|||2008-06-18|Has expired: unfetchable
-japanese/lynx|||2008-06-18|Has expired: Leaves behind config file on deinstall
 japanese/vje30|||2008-06-18|Has expired: depends on forbidden port misc/compat3x
 math/sc|||2008-06-18|Has expired: distfile disappeared
