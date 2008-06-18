@@ -770,6 +770,7 @@
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
     SUBDIR += tetrons
+    SUBDIR += tetzle
     SUBDIR += textmaze
     SUBDIR += thevalley
     SUBDIR += thudboard

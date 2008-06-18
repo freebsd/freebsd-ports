@@ -1,0 +1,32 @@
+# New ports collection makefile for:	tetzle
+# Date created:		12 Jun 2008
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	tetzle
+PORTVERSION=	1.0
+CATEGORIES=	games
+MASTER_SITES=	http://gottcode.org/tetzle/ \
+		http://www.amdmi3.ru/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+
+MAINTAINER=	amdmi3@amdmi3.ru
+COMMENT=	Jigsaw puzzle with tetrominoes
+
+USE_BZIP2=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui moc opengl qmake rcc xml
+INSTALLS_ICONS=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
+		PREFIX=${PREFIX} -spec ${QMAKESPEC} tetzle.pro
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tetzle ${PREFIX}/bin
+
+.include <bsd.port.mk>
