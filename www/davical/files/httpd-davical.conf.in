@@ -1,0 +1,11 @@
+# Settings for davical
+#
+
+Alias /davical "%%PREFIX%%/www/davical/htdocs"
+
+<Directory "%%PREFIX%%/www/davical/htdocs">
+	Options Indexes FollowSymLinks MultiViews
+	AllowOverride All
+	Order allow,deny
+	Allow from all
+</Directory>
