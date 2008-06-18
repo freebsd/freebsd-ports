@@ -1,0 +1,7 @@
+WaveGain is a program that applies ReplayGain to wave files.
+The FreeBSD port of WaveGain is with a patch from gnormalize
+whose author is Claudio Fernandes de Souza Rodrigues.
+
+The author of WaveGain is John Edwards.
+
+WWW: http://www.rarewares.org/others.html

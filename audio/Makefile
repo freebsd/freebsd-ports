@@ -685,6 +685,7 @@
     SUBDIR += waon
     SUBDIR += wav2cdr
     SUBDIR += wavbreaker
+    SUBDIR += wavegain
     SUBDIR += waveplay
     SUBDIR += wavpack
     SUBDIR += wavplay
