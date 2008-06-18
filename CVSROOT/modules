@@ -8669,7 +8669,6 @@ nrpe		ports/net-mgmt/nrpe
 nrpe2		ports/net-mgmt/nrpe2
 nrpep		ports/net-mgmt/nrpep
 ns		ports/net/ns
-nsc		ports/net-mgmt/nsc
 nsc2ke		ports/math/nsc2ke
 nsca		ports/net-mgmt/nsca
 nsca-client	ports/net-mgmt/nsca-client
