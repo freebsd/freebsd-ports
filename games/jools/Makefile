@@ -8,7 +8,7 @@ PORTNAME=	jools
 PORTVERSION=	0.20
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/jools/
+MASTER_SITES=	http://pessimization.com/software/jools/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Addictive jewel-swapping puzzle game
