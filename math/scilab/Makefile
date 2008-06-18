@@ -67,14 +67,6 @@ BLAS_LIBS?=	-llapack -lblas
 .endif
 MAKE_ENV+=	BLAS_LIBS="-L${LOCALBASE}/lib ${BLAS_LIBS}"
 
-# Scilab broken with GCC 3.3 on FreeBSD 5.3
-.if ${OSVERSION} >= 503000 && ${OSVERSION} < 600000
-#USE_GCC=	3.2 #override FC and F77
-BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
-CC=		gcc32
-CXX=		g++32
-.endif
-
 WANT_FORTRAN=yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 RUN_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
@@ -82,9 +74,8 @@ F77=		gfortran42
 FC=		gfortran42
 CONFIGURE_ARGS+=	--with-gfortran
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102 || ${ARCH} == "ia64" || \
-	${ARCH} == "sparc64" || ${ARCH} == "amd64" && ${OSVERSION} >= 700000
-BROKEN=		does not compile on alpha 5.x, ia64, sparc64 or amd64 -CURRENT
+.if ${ARCH} == "alpha" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		does not compile on alpha 5.x, ia64, sparc64
 .endif
 
 post-patch:
