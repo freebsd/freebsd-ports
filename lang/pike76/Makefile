@@ -91,10 +91,6 @@ USE_PERL5=	YES
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 700019
-BROKEN=	Does not compile
-.endif
-
 .if defined(WITHOUT_RELOCATABLE_DUMPED_MODULES)
 CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
 .else
