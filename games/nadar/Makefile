@@ -9,7 +9,7 @@ PORTNAME=	nadar
 PORTVERSION=	2.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://download.vector.co.jp/pack/unix/game/action/
+MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/game/action/
 
 MAINTAINER=	hsakai@m8.ffn.ne.jp
 COMMENT=	A network tank battle game
