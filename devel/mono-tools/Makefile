@@ -10,7 +10,7 @@ PORTNAME=	mono-tools
 PORTVERSION=	1.2.4
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://go-mono.com/sources/${PORTNAME}/
+MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Documentation browser for Mono and Mono libraries

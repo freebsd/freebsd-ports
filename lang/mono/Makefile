@@ -10,7 +10,7 @@ PORTNAME=	mono
 PORTVERSION=	1.2.5.1
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://go-mono.com/sources/${PORTNAME}/
+MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	An open source implementation of .NET Development Framework
