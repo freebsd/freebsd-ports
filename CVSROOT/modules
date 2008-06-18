@@ -12125,7 +12125,6 @@ p5-mogilefs-server	ports/sysutils/p5-mogilefs-server
 p5-mysql-genocide	ports/databases/p5-mysql-genocide
 p5-openxpki	ports/security/p5-openxpki
 p5-openxpki-client	ports/security/p5-openxpki-client
-p5-openxpki-client-cli	ports/security/p5-openxpki-client-cli
 p5-openxpki-client-html-mason	ports/security/p5-openxpki-client-html-mason
 p5-openxpki-client-scep	ports/security/p5-openxpki-client-scep
 p5-openxpki-deployment	ports/security/p5-openxpki-deployment
