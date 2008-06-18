@@ -376,7 +376,6 @@
     SUBDIR += vera-fpw
     SUBDIR += vflib
     SUBDIR += vftool
-    SUBDIR += vje30
     SUBDIR += vlgothic
     SUBDIR += w3m
     SUBDIR += w3m-img
