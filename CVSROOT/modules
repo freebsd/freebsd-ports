@@ -5454,6 +5454,7 @@ ja-lookup	ports/japanese/lookup
 ja-lookup-emacs21	ports/japanese/lookup-emacs21
 ja-ls		ports/japanese/jls
 ja-lsd-fpw	ports/japanese/lsd-fpw
+ja-lynx		ports/japanese/lynx
 ja-lynx-current	ports/japanese/lynx-current
 ja-lyx		ports/japanese/lyx
 ja-lyx-doc	ports/japanese/lyx-doc
