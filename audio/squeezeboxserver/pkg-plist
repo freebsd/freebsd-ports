@@ -143,13 +143,13 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Devel/InnerPackage.pm
 %%SLIMDIR%%/CPAN/Digest/SHA1.pm
 %%SLIMDIR%%/CPAN/Digest/base.pm
-%%SLIMDIR%%/CPAN/Encode/Detect/Detector.pm
 %%SLIMDIR%%/CPAN/Error.pm
 %%SLIMDIR%%/CPAN/Exporter/Lite.pm
 %%SLIMDIR%%/CPAN/File/BOM.pm
 %%SLIMDIR%%/CPAN/File/Find/Rule.pm
 %%SLIMDIR%%/CPAN/File/Listing.pm
 %%SLIMDIR%%/CPAN/File/Next.pm
+%%SLIMDIR%%/CPAN/File/ReadBackwards.pm
 %%SLIMDIR%%/CPAN/File/Slurp.pm
 %%SLIMDIR%%/CPAN/File/Spec.pm
 %%SLIMDIR%%/CPAN/File/Spec/Cygwin.pm
@@ -160,7 +160,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/File/Spec/Unix.pm
 %%SLIMDIR%%/CPAN/File/Spec/VMS.pm
 %%SLIMDIR%%/CPAN/File/Spec/Win32.pm
-%%SLIMDIR%%/CPAN/File/Tail.pm
 %%SLIMDIR%%/CPAN/File/Temp.pm
 %%SLIMDIR%%/CPAN/File/Which.pm
 %%SLIMDIR%%/CPAN/HTML/Entities.pm
@@ -193,6 +192,7 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Imager.pm
 %%SLIMDIR%%/CPAN/Imager/Color.pm
 %%SLIMDIR%%/CPAN/Imager/Font.pm
+%%SLIMDIR%%/CPAN/JSON/XS/VersionOneAndTwo.pm
 %%SLIMDIR%%/CPAN/LWP.pm
 %%SLIMDIR%%/CPAN/LWP/Authen/Basic.pm
 %%SLIMDIR%%/CPAN/LWP/Authen/Digest.pm
@@ -322,11 +322,18 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Net/HTTPS.pm
 %%SLIMDIR%%/CPAN/Net/IP.pm
 %%SLIMDIR%%/CPAN/Net/UPnP.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/AV/Container.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/AV/Content.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/AV/Item.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/AV/MediaServer.pm
 %%SLIMDIR%%/CPAN/Net/UPnP/ActionResponse.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/ControlPoint.pm
 %%SLIMDIR%%/CPAN/Net/UPnP/Device.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/GW/Gateway.pm
 %%SLIMDIR%%/CPAN/Net/UPnP/HTTP.pm
 %%SLIMDIR%%/CPAN/Net/UPnP/HTTPResponse.pm
 %%SLIMDIR%%/CPAN/Net/UPnP/QueryResponse.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/Service.pm
 %%SLIMDIR%%/CPAN/Number/Compare.pm
 %%SLIMDIR%%/CPAN/PAR.pm
 %%SLIMDIR%%/CPAN/PAR/Dist.pm
@@ -635,6 +642,8 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/XML/XSPF/Base.pm
 %%SLIMDIR%%/CPAN/XML/XSPF/Track.pm
 %%SLIMDIR%%/CPAN/enum.pm
+%%SLIMDIR%%/CPAN/version.pm
+%%SLIMDIR%%/CPAN/version/vpp.pm
 %%SLIMDIR%%/Changelog1.html
 %%SLIMDIR%%/Changelog2.html
 %%SLIMDIR%%/Changelog3.html
@@ -643,14 +652,14 @@ bin/softsqueeze
 %%SLIMDIR%%/Changelog6.html
 %%SLIMDIR%%/Changelog7.html
 %%SLIMDIR%%/Firmware/receiver.version
-%%SLIMDIR%%/Firmware/receiver_22.bin
+%%SLIMDIR%%/Firmware/receiver_23.bin
 %%SLIMDIR%%/Firmware/squeezebox.version
 %%SLIMDIR%%/Firmware/squeezebox2.version
-%%SLIMDIR%%/Firmware/squeezebox2_86.bin
+%%SLIMDIR%%/Firmware/squeezebox2_88.bin
 %%SLIMDIR%%/Firmware/squeezebox_10.bin
 %%SLIMDIR%%/Firmware/squeezebox_40.bin
 %%SLIMDIR%%/Firmware/transporter.version
-%%SLIMDIR%%/Firmware/transporter_36.bin
+%%SLIMDIR%%/Firmware/transporter_37.bin
 %%SLIMDIR%%/Graphics/CODE2000.HTM
 %%SLIMDIR%%/Graphics/CODE2000.TTF
 %%SLIMDIR%%/Graphics/FreeSans.ttf
@@ -844,14 +853,6 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/docs/input.html
 %%SLIMDIR%%/HTML/EN/html/docs/plugins.html
 %%SLIMDIR%%/HTML/EN/html/docs/protocol.html
-%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html
-%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.da
-%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.de
-%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.es
-%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.fr
-%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.he
-%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.it
-%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.nl
 %%SLIMDIR%%/HTML/EN/html/docs/remote.html
 %%SLIMDIR%%/HTML/EN/html/docs/remote.html.da
 %%SLIMDIR%%/HTML/EN/html/docs/remote.html.de
@@ -1507,6 +1508,7 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/Nokia770/html/images/playlist_symbol_active.gif
 %%SLIMDIR%%/HTML/Nokia770/html/images/playnext.gif
 %%SLIMDIR%%/HTML/Nokia770/html/images/power.png
+%%SLIMDIR%%/HTML/Nokia770/html/images/power_off.png
 %%SLIMDIR%%/HTML/Nokia770/html/images/power_symbol.gif
 %%SLIMDIR%%/HTML/Nokia770/html/images/prev.gif
 %%SLIMDIR%%/HTML/Nokia770/html/images/prev_active.gif
@@ -1630,30 +1632,6 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/xml/status_header.html
 %%SLIMDIR%%/HTML/xml/status_list.html
 %%SLIMDIR%%/HTML/xml/status_noclients.html
-%%SLIMDIR%%/HTML/xmlTelCanto/_xml_song.html
-%%SLIMDIR%%/HTML/xmlTelCanto/_xml_song_full.html
-%%SLIMDIR%%/HTML/xmlTelCanto/browse_list_empty.html
-%%SLIMDIR%%/HTML/xmlTelCanto/browse_playlist.html
-%%SLIMDIR%%/HTML/xmlTelCanto/browsedb.html
-%%SLIMDIR%%/HTML/xmlTelCanto/browsedb_list.html
-%%SLIMDIR%%/HTML/xmlTelCanto/browsedb_pwdlist.html
-%%SLIMDIR%%/HTML/xmlTelCanto/browsetree.html
-%%SLIMDIR%%/HTML/xmlTelCanto/browsetree_list.html
-%%SLIMDIR%%/HTML/xmlTelCanto/browsetree_pwdlist.html
-%%SLIMDIR%%/HTML/xmlTelCanto/hitlist.html
-%%SLIMDIR%%/HTML/xmlTelCanto/hitlist_list.html
-%%SLIMDIR%%/HTML/xmlTelCanto/html/slimserver_xml.dtd
-%%SLIMDIR%%/HTML/xmlTelCanto/include.html
-%%SLIMDIR%%/HTML/xmlTelCanto/pagebarheader.html
-%%SLIMDIR%%/HTML/xmlTelCanto/playlist.html
-%%SLIMDIR%%/HTML/xmlTelCanto/search.html
-%%SLIMDIR%%/HTML/xmlTelCanto/select_option.html
-%%SLIMDIR%%/HTML/xmlTelCanto/songinfo.html
-%%SLIMDIR%%/HTML/xmlTelCanto/status.html
-%%SLIMDIR%%/HTML/xmlTelCanto/status_header.html
-%%SLIMDIR%%/HTML/xmlTelCanto/status_list.html
-%%SLIMDIR%%/HTML/xmlTelCanto/status_noclients.html
-%%SLIMDIR%%/HTML/xmlTelCanto/vssver.scc
 %%SLIMDIR%%/IR/Default.map
 %%SLIMDIR%%/IR/Front_Panel.ir
 %%SLIMDIR%%/IR/Slim_Devices_Remote.ir
@@ -1893,9 +1871,6 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/PreventStandby/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/PreventStandby/install.xml
 %%SLIMDIR%%/Slim/Plugin/PreventStandby/strings.txt
-%%SLIMDIR%%/Slim/Plugin/RPC/Plugin.pm
-%%SLIMDIR%%/Slim/Plugin/RPC/install.xml
-%%SLIMDIR%%/Slim/Plugin/RPC/strings.txt
 %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN/plugins/RS232/settings/basic.html
 %%SLIMDIR%%/Slim/Plugin/RS232/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/RS232/Settings.pm
@@ -1939,6 +1914,11 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/install.xml
 %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Sirius/HTML/EN/plugins/Sirius/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/Sirius/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Sirius/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/Sirius/install.xml
+%%SLIMDIR%%/Slim/Plugin/Sirius/strings.txt
 %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/Default/html/images/btn_slacker_ban.gif
 %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/Default/html/images/btn_slacker_fav.gif
 %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/Default/html/images/btn_slacker_fav_on.gif
@@ -2174,6 +2154,13 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/Default
 @dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/Slacker
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sirius/HTML/EN/plugins/Sirius/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sirius/HTML/EN/plugins/Sirius/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sirius/HTML/EN/plugins/Sirius
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sirius/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sirius/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sirius/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sirius
 @dirrm %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/HTML/EN/plugins/ShoutcastBrowser/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/HTML/EN/plugins/ShoutcastBrowser/html
 @dirrm %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/HTML/EN/plugins/ShoutcastBrowser
@@ -2229,7 +2216,6 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/RS232
-@dirrm %%SLIMDIR%%/Slim/Plugin/RPC
 @dirrm %%SLIMDIR%%/Slim/Plugin/PreventStandby
 @dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/settings
 @dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/html/images
@@ -2360,8 +2346,6 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/SQL
 @dirrm %%SLIMDIR%%/MySQL
 @dirrm %%SLIMDIR%%/IR
-@dirrm %%SLIMDIR%%/HTML/xmlTelCanto/html
-@dirrm %%SLIMDIR%%/HTML/xmlTelCanto
 @dirrm %%SLIMDIR%%/HTML/xml/html
 @dirrm %%SLIMDIR%%/HTML/xml
 @dirrm %%SLIMDIR%%/HTML/Touch/html
@@ -2426,6 +2410,7 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/HTML
 @dirrm %%SLIMDIR%%/Graphics
 @dirrm %%SLIMDIR%%/Firmware
+@dirrm %%SLIMDIR%%/CPAN/version
 @dirrm %%SLIMDIR%%/CPAN/XML/XSPF
 @dirrm %%SLIMDIR%%/CPAN/XML/SAX/PurePerl/Reader
 @dirrm %%SLIMDIR%%/CPAN/XML/SAX/PurePerl
@@ -2459,6 +2444,8 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/CPAN/POE
 @dirrm %%SLIMDIR%%/CPAN/PAR
 @dirrm %%SLIMDIR%%/CPAN/Number
+@dirrm %%SLIMDIR%%/CPAN/Net/UPnP/GW
+@dirrm %%SLIMDIR%%/CPAN/Net/UPnP/AV
 @dirrm %%SLIMDIR%%/CPAN/Net/UPnP
 @dirrm %%SLIMDIR%%/CPAN/Net/HTTP
 @dirrm %%SLIMDIR%%/CPAN/Net/DNS/Resolver
@@ -2479,6 +2466,8 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/CPAN/LWP/Protocol
 @dirrm %%SLIMDIR%%/CPAN/LWP/Authen
 @dirrm %%SLIMDIR%%/CPAN/LWP
+@dirrm %%SLIMDIR%%/CPAN/JSON/XS
+@dirrm %%SLIMDIR%%/CPAN/JSON
 @dirrm %%SLIMDIR%%/CPAN/Imager
 @dirrm %%SLIMDIR%%/CPAN/IO
 @dirrm %%SLIMDIR%%/CPAN/I18N/LangTags
@@ -2492,8 +2481,6 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/CPAN/File/Find
 @dirrm %%SLIMDIR%%/CPAN/File
 @dirrm %%SLIMDIR%%/CPAN/Exporter
-@dirrm %%SLIMDIR%%/CPAN/Encode/Detect
-@dirrm %%SLIMDIR%%/CPAN/Encode
 @dirrm %%SLIMDIR%%/CPAN/Digest
 @dirrm %%SLIMDIR%%/CPAN/Devel
 @dirrm %%SLIMDIR%%/CPAN/Date
