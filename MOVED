@@ -3494,3 +3494,5 @@ converters/compface|mail/faces|2008-06-17|Removed in favour to mail/faces.
 security/p5-openxpki-client-cli||2008-06-18|Has expired: no longer supported. Use p5-openxpki-client-html-mason instead
 audio/mbrola||2008-06-18|Has expired: relies on forbidden port misc/compat3x; last release 2000
 emulators/linux-winetools|||2008-06-18|Has expired: very old, discontinued, and replaced by emulators/wine-doors
+games/linux-x-plane||2008-06-18|Relies on expired, unfetchable installer port
+games/linux-x-plane-net-installer|||2008-06-18|Has expired: unfetchable
