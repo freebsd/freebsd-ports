@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GCC=	4.2+
 CFLAGS+=	-I${LOCALBASE}/include/dssi
 USE_AUTOTOOLS=	autoconf:261 automake:110:env libtool:15
 
