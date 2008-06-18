@@ -1,4 +1,6 @@
 bin/yfklog
+libexec/yfksubs.pl
+share/pixmaps/yfklog.png
 %%DATADIR%%/config
 %%DATADIR%%/cty.dat
 %%DATADIR%%/db_calls.sql
@@ -6,24 +8,24 @@ bin/yfklog
 %%DATADIR%%/db_config.sql
 %%DATADIR%%/db_log.sql
 %%DATADIR%%/db_log.sqlite
-%%DATADIR%%/yfksubs.pl
 %%DATADIR%%/zweckform3421.lab
 %%DATADIR%%/zweckform3475.lab
 %%DATADIR%%/zweckform3657.lab
-%%EXAMPLESDIR%%/clubs/README
-%%EXAMPLESDIR%%/clubs/hsc2sql.awk
-%%EXAMPLESDIR%%/clubs/hscmember.txt
-%%EXAMPLESDIR%%/onlinelog/README
-%%EXAMPLESDIR%%/onlinelog/search.php
-%%EXAMPLESDIR%%/onlinelog/test.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clubs/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clubs/hsc2sql.awk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clubs/hscmember.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/onlinelog/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/onlinelog/search.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/onlinelog/test.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASENOTES
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%/clubs
-@dirrm %%EXAMPLESDIR%%/onlinelog
-@dirrm %%EXAMPLESDIR%%
+%%PORTDATA%%@dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clubs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/onlinelog
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

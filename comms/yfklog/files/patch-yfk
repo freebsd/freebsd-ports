@@ -1,0 +1,11 @@
+--- yfk.orig	2008-06-17 17:34:44.000000000 -0400
++++ yfk	2008-06-17 17:36:27.000000000 -0400
+@@ -28,7 +28,7 @@
+ 
+ my $prefix="/usr";		
+ 
+-require "$prefix/share/yfklog/yfksubs.pl";	
++require "$prefix/libexec/yfksubs.pl";	
+ import yfksubs;
+ 
+ our $yfkver = '0.3.5';	# Program Version
