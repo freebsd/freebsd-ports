@@ -8,6 +8,7 @@
 PORTNAME=	cint
 PORTVERSION=	5.16.19
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://root.cern.ch/root/
 
@@ -23,14 +24,18 @@ USE_LDCONFIG=	${PREFIX}/lib/cint
 ALL_TARGET=
 MAN1=		cint.1 makecint.1
 
+INSTALL_ARGS=	--bindir=${PREFIX}/bin  \
+		--libdir=${PREFIX}/lib/cint \
+		--mandir=${PREFIX}/man
+
+.if !defined(NOPORTDOCS)
+INSTALL_ARGS+=	--docdir=${DOCSDIR}
+.endif
+
 do-configure:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/bash configure __have_the_proper_shell@
 
 do-install:
-	cd ${WRKSRC} && ${SH} tool/INSTALLBIN\
-	    --bindir=${PREFIX}/bin\
-	    --libdir=${PREFIX}/lib/cint\
-	    --docdir=${DOCSDIR} \
-	    --mandir=${MANPREFIX}/man
+	cd ${WRKSRC} && ${LOCALBASE}/bin/bash tool/INSTALLBIN ${INSTALL_ARGS}
 
 .include <bsd.port.mk>
