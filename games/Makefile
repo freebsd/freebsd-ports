@@ -438,7 +438,6 @@
     SUBDIR += linux-enemyterritory-omni-bot
     SUBDIR += linux-enemyterritory-shrub
     SUBDIR += linux-enemyterritory-tce
-    SUBDIR += linux-goodway
     SUBDIR += linux-nerogame
     SUBDIR += linux-nwnclient
     SUBDIR += linux-nwserver
