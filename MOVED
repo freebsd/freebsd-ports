@@ -3498,3 +3498,4 @@ games/linux-x-plane||2008-06-18|Relies on expired, unfetchable installer port
 games/linux-x-plane-net-installer|||2008-06-18|Has expired: unfetchable
 japanese/vje30|||2008-06-18|Has expired: depends on forbidden port misc/compat3x
 math/sc|||2008-06-18|Has expired: distfile disappeared
+math/umfpack|||2008-06-18|Has expired: Outdated subset of math/suitesparse
