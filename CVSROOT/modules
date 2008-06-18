@@ -16814,6 +16814,7 @@ twiki-TopicVarsPlugin	ports/www/twiki-TopicVarsPlugin
 twiki-TwistyContrib	ports/www/twiki-TwistyContrib
 twiki-TwistyPlugin	ports/www/twiki-TwistyPlugin
 twiki-WysiwygPlugin	ports/www/twiki-WysiwygPlugin
+twill		ports/www/twill
 twin		ports/emulators/twin
 twinkle		ports/net/twinkle
 twitch		ports/games/twitch
