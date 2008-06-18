@@ -12,7 +12,6 @@ MAN1=	auconvert.1 \
 	aurecord.1 \
 	auscope.1 \
 	autool.1 \
-	auvoxware.1 \
 	auwave.1 \
 	checkmail.1 \
 	issndfile.1 \
