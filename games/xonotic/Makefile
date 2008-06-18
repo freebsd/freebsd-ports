@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nexuiz
-PORTVERSION=	2.4
-PORTREVISION=	1
+PORTVERSION=	2.4.2
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -16,14 +15,14 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
-NO_PACKAGE=	Package will be 455MB, set FORCE_PACKAGE if you really want to build it
+NO_PACKAGE=	Package will be 468MB, set FORCE_PACKAGE if you really want to build it
 
 USE_ZIP=	yes
-USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
-MAKEFILE=	makefile
-MAKE_ARGS=	CC="${CC}" OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops"
+MAKEFILE=	BSDmakefile
+MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" CC="${CC}" \
+		OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops"
 ALL_TARGET=	#
 
 OPTIONS=	CLIENT		"Build GLX client"		on \
@@ -72,14 +71,13 @@ PLIST_SUB+=	SERVER=""
 PLIST_SUB+=	SERVER="@comment "
 .endif
 
-post-extract:
-	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20080229.zip \
+post-patch:
+	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20080511.zip \
 		-d ${WRKDIR}/Nexuiz/sources
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' ${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -E 's,(fs_basedir\, )"",\1"${DATADIR}",' ${WRKSRC}/fs.c
 
 do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 do-install:
