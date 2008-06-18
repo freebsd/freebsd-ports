@@ -7652,7 +7652,6 @@ mbox2mdir	ports/mail/mbox2mdir
 mboxcheck-applet	ports/mail/mboxcheck-applet
 mboxgrep	ports/mail/mboxgrep
 mboxstats	ports/mail/mboxstats
-mbrola		ports/audio/mbrola
 mbrolavox	ports/audio/mbrolavox
 mbrowse		ports/net-mgmt/mbrowse
 mbuffer		ports/misc/mbuffer
