@@ -7,6 +7,7 @@
 
 PORTNAME=	fhourstones
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://homepages.cwi.nl/~tromp/c4/
 DISTNAME=	Fhourstones
