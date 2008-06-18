@@ -1,0 +1,165 @@
+share/doc/DAViCal/config/debug-config.php
+share/doc/DAViCal/config/example-administration.yml
+share/doc/DAViCal/config/example-config.php
+share/doc/DAViCal/config/other-config.php
+share/doc/DAViCal/docs/api/phpdoc.ini
+share/doc/DAViCal/docs/website/images/logo.gif
+share/doc/DAViCal/docs/website/inc/page-footer.php
+share/doc/DAViCal/docs/website/inc/page-header.php
+share/doc/DAViCal/docs/website/inc/page-middle.php
+share/doc/DAViCal/docs/website/clients/iCal-screenshot.png
+share/doc/DAViCal/docs/website/clients/Chandler-dialog1.png
+share/doc/DAViCal/docs/website/clients/Chandler-dialog2.png
+share/doc/DAViCal/docs/website/clients/Chandler-dialog3.png
+share/doc/DAViCal/docs/website/clients/Chandler-icon.png
+share/doc/DAViCal/docs/website/clients/Chandler-screenshot.png
+share/doc/DAViCal/docs/website/clients/Evolution-details.php
+share/doc/DAViCal/docs/website/clients/Evolution-dialog1.png
+share/doc/DAViCal/docs/website/clients/Evolution-icon.png
+share/doc/DAViCal/docs/website/clients/Evolution-screenshot.png
+share/doc/DAViCal/docs/website/clients/Interoperability-details.php
+share/doc/DAViCal/docs/website/clients/Mozilla-details.php
+share/doc/DAViCal/docs/website/clients/Mozilla-dialog1.png
+share/doc/DAViCal/docs/website/clients/Mozilla-dialog2.png
+share/doc/DAViCal/docs/website/clients/Mozilla-dialog3.png
+share/doc/DAViCal/docs/website/clients/iCal-dialog.png
+share/doc/DAViCal/docs/website/clients/Mozilla-icon.png
+share/doc/DAViCal/docs/website/clients/Mozilla-screenshot.png
+share/doc/DAViCal/docs/website/clients/Mulberry-details.php
+share/doc/DAViCal/docs/website/clients/Mulberry-dialog1.png
+share/doc/DAViCal/docs/website/clients/Mulberry-dialog2.png
+share/doc/DAViCal/docs/website/clients/Mulberry-icon.png
+share/doc/DAViCal/docs/website/clients/Mulberry-screenshot.png
+share/doc/DAViCal/docs/website/clients/Other-details.php
+share/doc/DAViCal/docs/website/clients/iCal-details.php
+share/doc/DAViCal/docs/website/clients/iCal-icon.png
+share/doc/DAViCal/docs/website/clients/Chandler-details.php
+share/doc/DAViCal/docs/website/installation.php
+share/doc/DAViCal/docs/website/style.css
+share/doc/DAViCal/docs/website/administration.php
+share/doc/DAViCal/docs/website/wikiheader.css
+share/doc/DAViCal/docs/website/clients.php
+share/doc/DAViCal/docs/website/index.php
+share/doc/DAViCal/scripts/po/extract.pl
+share/doc/DAViCal/scripts/po/rebuild-translations.sh
+share/doc/DAViCal/dba/patches/1.2.2.sql
+share/doc/DAViCal/dba/patches/1.1.11.sql
+share/doc/DAViCal/dba/patches/1.1.11a.sql
+share/doc/DAViCal/dba/patches/1.1.12.sql
+share/doc/DAViCal/dba/patches/1.1.12a.sql
+share/doc/DAViCal/dba/patches/1.1.2.sql
+share/doc/DAViCal/dba/patches/1.1.3.sql
+share/doc/DAViCal/dba/patches/1.1.4.sql
+share/doc/DAViCal/dba/patches/1.1.5.sql
+share/doc/DAViCal/dba/patches/1.1.6.sql
+share/doc/DAViCal/dba/patches/1.1.7.sql
+share/doc/DAViCal/dba/patches/1.1.8.sql
+share/doc/DAViCal/dba/patches/1.1.9.sql
+share/doc/DAViCal/dba/patches/1.2.1.sql
+share/doc/DAViCal/dba/patches/1.1.10.sql
+share/doc/DAViCal/dba/windows/awl-tables.sql
+share/doc/DAViCal/dba/windows/create-database.bat
+share/doc/DAViCal/dba/windows/rscds.sql
+share/doc/DAViCal/dba/windows/schema-management.sql
+share/doc/DAViCal/dba/appuser_permissions.txt
+share/doc/DAViCal/dba/create-database.sh
+share/doc/DAViCal/dba/davical.sql
+share/doc/DAViCal/dba/base-data.sql
+share/doc/DAViCal/dba/rrule_functions.sql
+share/doc/DAViCal/dba/sample-data.sql
+share/doc/DAViCal/dba/supported_locales.sql
+share/doc/DAViCal/dba/update-rscds-database
+share/doc/DAViCal/dba/caldav_functions.sql
+share/doc/DAViCal/httpd-davical.conf
+share/doc/DAViCal/README
+share/doc/DAViCal/INSTALL
+www/davical/htdocs/images/down.gif
+www/davical/htdocs/images/up.gif
+www/davical/htdocs/css/browse.css
+www/davical/htdocs/js/browse.js
+www/davical/htdocs/help.php
+www/davical/htdocs/index.php
+www/davical/htdocs/relationship_types.php
+www/davical/htdocs/roles.php
+www/davical/htdocs/rscds.css
+www/davical/htdocs/tools.php
+www/davical/htdocs/users.php
+www/davical/htdocs/caldav.php
+www/davical/htdocs/usr.php
+www/davical/htdocs/collection.php
+www/davical/htdocs/freebusy.php
+www/davical/inc/test-RRULE.php
+www/davical/inc/CalDAVRequest.php
+www/davical/inc/HTTPAuthSession.php
+www/davical/inc/RRule.php
+www/davical/inc/RSCDSSession.php
+www/davical/inc/RSCDSUser.php
+www/davical/inc/always.php
+www/davical/inc/always.php.in
+www/davical/inc/auth-functions.php
+www/davical/inc/caldav-DELETE.php
+www/davical/inc/caldav-GET.php
+www/davical/inc/caldav-LOCK.php
+www/davical/inc/caldav-MKCALENDAR.php
+www/davical/inc/caldav-OPTIONS.php
+www/davical/inc/caldav-PROPFIND.php
+www/davical/inc/caldav-PROPPATCH.php
+www/davical/inc/caldav-PUT-functions.php
+www/davical/inc/caldav-PUT.php
+www/davical/inc/caldav-REPORT-calquery.php
+www/davical/inc/caldav-REPORT-freebusy.php
+www/davical/inc/caldav-REPORT-multiget.php
+www/davical/inc/caldav-REPORT-principal.php
+www/davical/inc/caldav-REPORT.php
+www/davical/inc/caldav-client.php
+www/davical/inc/check_UTF8.php
+www/davical/inc/davical_configuration_missing.php
+www/davical/inc/drivers_ldap.php
+www/davical/inc/drivers_squid_pam.php
+www/davical/inc/freebusy-GET.php
+www/davical/inc/interactive-page.php
+www/davical/inc/other_translated_strings.php
+www/davical/inc/page-footer.php
+www/davical/inc/page-header.php
+www/davical/inc/CalDAVPrincipal.php
+www/davical/inc/vEvent.php
+www/davical/inc/AuthPlugin.php
+www/davical/inc/AuthPlugins.php
+www/davical/inc/DataEntry.php
+www/davical/inc/DataUpdate.php
+www/davical/inc/EMail.php
+www/davical/inc/MenuSet.php
+www/davical/inc/PgQuery.php
+www/davical/inc/Session.php
+www/davical/inc/Translation.php
+www/davical/inc/User.php
+www/davical/inc/Validation.php
+www/davical/inc/XMLElement.php
+www/davical/inc/classBrowser.php
+www/davical/inc/iCalendar.php
+www/davical/inc/AWLUtilities.php
+www/davical/dba/awl-tables.sql
+www/davical/dba/grant-on-all-tables.sh
+www/davical/dba/schema-management.sql
+www/davical/config/config.php
+@dirrm share/doc/DAViCal/config
+@dirrm share/doc/DAViCal/docs/api
+@dirrm share/doc/DAViCal/docs/website/images
+@dirrm share/doc/DAViCal/docs/website/inc
+@dirrm share/doc/DAViCal/docs/website/clients
+@dirrm share/doc/DAViCal/docs/website
+@dirrm share/doc/DAViCal/docs
+@dirrm share/doc/DAViCal/scripts/po
+@dirrm share/doc/DAViCal/scripts
+@dirrm share/doc/DAViCal/dba/patches
+@dirrm share/doc/DAViCal/dba/windows
+@dirrm share/doc/DAViCal/dba
+@dirrm share/doc/DAViCal
+@dirrm www/davical/htdocs/images
+@dirrm www/davical/htdocs/css
+@dirrm www/davical/htdocs/js
+@dirrm www/davical/htdocs
+@dirrm www/davical/inc
+@dirrm www/davical/dba
+@dirrm www/davical/config
+@dirrm www/davical

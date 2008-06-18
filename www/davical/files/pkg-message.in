@@ -1,0 +1,28 @@
+To complete the installation of DAViCal:
+
+1. Create the database user:
+
+	createuser -U pgsql -S --no-createdb --no-createrole general
+
+2. Create DAViCal's database
+
+	su pgsql %%PREFIX%%/share/doc/DAViCal/dba/create-database.sh
+
+3. Fix permissions
+
+	psql -U pgsql davical -c "grant all on \
+	awl_db_revision, caldav_data, calendar_item, collection, \
+	dav_resource, dav_resource_type, freebusy_ticket, \
+	group_member, locks, principal, principal_type, privilege, \
+	property, relationship, relationship_type, role_member, \
+	roles, session, supported_locales, time_zone, tmp_password, \
+	usr, usr_setting, dav_id_seq, dav_resource_type_resource_type_id_seq, \
+	principal_principal_id_seq, principal_type_principal_type_id_seq, \
+	relationship_type_rt_id_seq, roles_role_no_seq, \
+	session_session_id_seq, usr_user_no_seq \
+	to general;"
+
+	psql -U pgsql davical -c "grant all on database davical to general;"
+
+6. Enable in apache by copying the httpd-davical.conf from the
+documentation directory to the Apache Include directory and restart Apache. 
