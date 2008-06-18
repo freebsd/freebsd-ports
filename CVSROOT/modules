@@ -7339,8 +7339,6 @@ linux-vmware-toolbox5	ports/emulators/linux-vmware-toolbox5
 linux-vmware-toolbox6	ports/emulators/linux-vmware-toolbox6
 linux-vsound	ports/audio/linux-vsound
 linux-warsow	ports/games/linux-warsow
-linux-x-plane	ports/games/linux-x-plane
-linux-x-plane-net-installer	ports/games/linux-x-plane-net-installer
 linux-xerces-c2	ports/textproc/linux-xerces-c2
 linux-xjoypad	ports/emulators/linux-xjoypad
 linux-xmovie		ports/multimedia/linux-xmovie
