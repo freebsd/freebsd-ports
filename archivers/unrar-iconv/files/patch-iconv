@@ -58,9 +58,9 @@
  #ifndef GUI
      case '?' :
        OutHelp();
-@@ -964,7 +920,11 @@
-     MCHelpCmdT,MCHelpCmdV,MCHelpCmdX,MCHelpSw,MCHelpSwm,MCHelpSwAC,MCHelpSwAD,
-     MCHelpSwAP,MCHelpSwAVm,MCHelpSwCm,MCHelpSwCFGm,MCHelpSwCL,MCHelpSwCU,
+@@ -938,7 +982,11 @@
+     MCHelpSwm,MCHelpSwAC,MCHelpSwAD,MCHelpSwAP,
+     MCHelpSwCm,MCHelpSwCFGm,MCHelpSwCL,MCHelpSwCU,
      MCHelpSwDH,MCHelpSwEP,MCHelpSwEP3,MCHelpSwF,MCHelpSwIDP,MCHelpSwIERR,
 -    MCHelpSwINUL,MCHelpSwIOFF,MCHelpSwKB,MCHelpSwN,MCHelpSwNa,MCHelpSwNal,
 +    MCHelpSwINUL,MCHelpSwIOFF,MCHelpSwKB,
@@ -68,7 +68,7 @@
 +    MCHelpSwLA,MCHelpSwLL,MCHelpSwLO,
 +#endif
 +    MCHelpSwN,MCHelpSwNa,MCHelpSwNal,
-     MCHelpSwOp,MCHelpSwOm,MCHelpSwOC,MCHelpSwOR,MCHelpSwOW,MCHelpSwP,
+     MCHelpSwO,MCHelpSwOC,MCHelpSwOR,MCHelpSwOW,MCHelpSwP,
      MCHelpSwPm,MCHelpSwR,MCHelpSwRI,MCHelpSwSL,MCHelpSwSM,MCHelpSwTA,
      MCHelpSwTB,MCHelpSwTN,MCHelpSwTO,MCHelpSwTS,MCHelpSwU,MCHelpSwVUnr,
 --- global.hpp	Tue Oct  4 11:57:54 2005
