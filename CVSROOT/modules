@@ -472,7 +472,6 @@ ar-koffice-i18n	ports/arabic/koffice-i18n
 ar-libitl	ports/arabic/libitl
 arc		ports/archivers/arc
 arcconf		ports/sysutils/arcconf
-archie		ports/net/archie
 archivemail	ports/mail/archivemail
 archivers_deco	ports/archivers/deco
 archivers_rvm	ports/archivers/rvm
