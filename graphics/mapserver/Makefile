@@ -6,11 +6,11 @@
 #
 
 PORTNAME=		mapserver
-PORTVERSION=		5.0.2
+PORTVERSION=		5.0.3
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		wenheping@gmail.com
 COMMENT=		System for developing web-based GIS applications
 
 LIB_DEPENDS=		gd.4:${PORTSDIR}/graphics/gd \
