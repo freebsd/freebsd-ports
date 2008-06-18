@@ -1857,6 +1857,7 @@ datadraw	ports/devel/datadraw
 datapipe	ports/net/datapipe
 dataplot	ports/graphics/dataplot
 datedif		ports/misc/datedif
+davical		ports/www/davical
 dazuko		ports/security/dazuko
 db		ports/databases/db
 db2		ports/databases/db2
