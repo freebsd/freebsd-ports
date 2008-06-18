@@ -32,4 +32,5 @@ include/svnqt-qt4/wc.hpp
 lib/libsvnqt-qt4.so
 lib/libsvnqt-qt4.so.4
 lib/libsvnqt-qt4.so.4.1.0
+share/pixmaps/qsvn.png
 @dirrm include/svnqt-qt4

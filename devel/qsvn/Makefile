@@ -8,7 +8,7 @@
 PORTNAME=	qsvn
 DISTVERSION=	0.6.1
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.anrichter.net/projects/qsvn/chrome/site/
 
@@ -24,6 +24,13 @@ USE_CMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-DESKTOP_ENTRIES="QSvn" "SVN client" "" "qsvn" "" false
+DESKTOP_ENTRIES="QSvn" "SVN client" "qsvn.png" "qsvn" "" false
+
+# Fix build when qt3 is installed
+post-patch:
+	${REINPLACE_CMD} -e 's:<\(q.*h\):<Qt/\1:' ${WRKSRC}/svnqt/*pp
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/images/qsvn.png ${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
