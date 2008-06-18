@@ -5054,6 +5054,7 @@ iiimf-server	ports/textproc/iiimf-server
 iiimf-x		ports/textproc/iiimf-x
 iiimf-x-lib	ports/textproc/iiimf-x-lib
 iip		ports/irc/iip
+iiview		ports/graphics/iiview
 ija		ports/news/ija
 ike		ports/security/ike
 ike-scan	ports/security/ike-scan
