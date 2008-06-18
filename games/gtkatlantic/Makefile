@@ -9,7 +9,7 @@ PORTNAME=	gtkatlantic
 PORTVERSION=	0.4.2
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://gtkatlantic.gradator.net/downloads/v0.4/
+MASTER_SITES=	http://download.tuxfamily.org/gtkatlantic/downloads/v0.4/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	GtkAtlantic is a game like Monopoly(tm)
