@@ -13,7 +13,7 @@ MASTER_SITES=	http://ftp.us.sinuspl.net/pub/src/ \
 		http://ftp.uni-erlangen.de/pub/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mail@andr.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AMR encoder/decoder for Mbuni MMS Gateway (www.mbuni.org)
 
 MAN1=		amrdecoder.1 amrencoder.1
