@@ -1,8 +1,8 @@
 bin/cdpr
-%%PORTDOCS%%%%DATADIR%%/cdprs.php
-%%PORTDOCS%%%%DATADIR%%/cdprs.cgi
-%%PORTDOCS%%%%DATADIR%%/cdpr.conf
+%%DATADIR%%/cdprs.php
+%%DATADIR%%/cdprs.cgi
+%%DATADIR%%/cdpr.conf
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.cdprs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%
