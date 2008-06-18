@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	japanese lang tk
 MASTER_SITES=	ftp://ftp.nist.gov/mel/div826/subject/expect/old/
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated scripter based on Japanized tcl/tk
 
 LIB_DEPENDS=	tk80jp.1:${PORTSDIR}/japanese/tk80

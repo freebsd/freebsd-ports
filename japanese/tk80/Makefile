@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
 PATCHFILES=	${PORTNAME}${PORTVERSION}jp1.7.patch.gz
 
-MAINTAINER=	taguchi@iij.ad.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical toolkit for Japanized TCL, version 8.0
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80

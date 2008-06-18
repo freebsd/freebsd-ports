@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}p2
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
 PATCHFILES=	${PORTNAME}${PORTVERSION}jp-patch.gz
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanized Tcl (Tool Command Language)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
