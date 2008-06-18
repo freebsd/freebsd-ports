@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gxine
-PORTVERSION=	0.5.902
-PORTREVISION=	1
+PORTVERSION=	0.5.903
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	xine
@@ -25,6 +24,7 @@ USE_XORG=	x11 xaw ice
 MAKE_ARGS+=	LDFLAGS=-shared-libgcc
 CNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-hal
+CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_ICONS=	yes
 
 MANLANG=	"" de es
@@ -32,13 +32,21 @@ MAN1=		gxine.1 gxine_client.1
 MANCOMPRESSED=	no
 
 OPTIONS=	MOZILLA_PLUGIN "Install Mozilla plugin" on \
+		GNOME "Enable Gnome integration" off \
 		DBUS "Enable dbus support" on \
-		LIRC "Enable lirc support" off
+		LIRC "Enable lirc support" off \
+		XCB "Enable XCB support" off
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
 CFLAGS+=	-O2
+.endif
+
+.if defined(WITH_GNOME)
+USE_GNOME+=	gnomevfs2 libgnomeui
+.else
+CONFIGURE_ARGS+=--disable-integration-wizard
 .endif
 
 .if !defined(WITHOUT_DBUS)
@@ -77,11 +85,19 @@ CONFIGURE_ARGS+=--disable-libjs
 PLIST_SUB+=	MOZILLA_PLUGIN=""
 .endif
 
+.if defined(WITH_XCB)
+LIB_DEPENDS+=	xcb.1:${PORTSDIR}/x11/libxcb
+.else
+CONFIGURE_ARGS+=--without-xcb
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -e "/^mkdir_p/s:@mkdir_p@:${MKDIR}:" \
 		${WRKSRC}/po/Makefile.in.in
 	@${REINPLACE_CMD} -e "/^mkdir_p/s:@mkdir_p@:${MKDIR}:" \
 		${WRKSRC}/misc/po/Makefile.in.in
+	@${REINPLACE_CMD} -e "s:@MAKE_PNG_TRUE@:#:g" \
+		${WRKSRC}/pixmaps/Makefile.in
 
 post-install:
 .if !defined(WITHOUT_MOZILLA_PLUGIN)
