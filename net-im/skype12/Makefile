@@ -30,7 +30,7 @@ OPTIONS=	NVIDIA_GL "Enable Nvidia Support" off
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 700000
-BROKEN=	Legacy version, Use net/skype
+IGNORE=	Legacy version, Use net/skype
 .endif
 
 .if defined(WITH_NVIDIA_GL)
