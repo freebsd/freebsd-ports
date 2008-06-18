@@ -179,7 +179,6 @@
     SUBDIR += lookup
     SUBDIR += lookup-emacs21
     SUBDIR += lsd-fpw
-    SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += lyx
     SUBDIR += lyx-doc
