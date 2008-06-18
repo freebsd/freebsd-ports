@@ -37,7 +37,7 @@ MAN1=		gnome-commander.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700000 && ${ARCH} == "amd64"
-BROKEN=		Does not run on amd64 and 7.X or greater
+IGNORE=		Does not run on amd64 and 7.X or greater
 .endif
 
 .include <bsd.port.post.mk>
