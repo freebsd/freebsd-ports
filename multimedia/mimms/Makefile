@@ -6,39 +6,30 @@
 #
 
 PORTNAME=	mimms
-DISTVERSION=	2.0.1
-PORTREVISION=	1
+DISTVERSION=	3.2.1
 CATEGORIES=	multimedia net
-MASTER_SITES=	http://download.savannah.gnu.org/releases/mimms/ \
-		http://ftp.cc.uoc.gr/mirrors/nongnu.org/mimms/ \
-		http://dl.sv.gnu.org/releases/mimms/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	Download streams using the MMS protocol
 
 LIB_DEPENDS=	mms.0:${PORTSDIR}/net/libmms
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_BZIP2=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake corelib moc uic
 
-PLIST_FILES=	bin/mimms
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+
+PYDISTUTILS_PKGVERSION=	3.2
 
 MAN1=		mimms.1
-PORTDOCS=	AUTHORS ChangeLog COPYING README
+PORTDOCS=	AUTHORS COPYING NEWS README
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
-		${WRKSRC}/mimms.pro
+	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' ${WRKSRC}/setup.py
 
-do-configure:
-	@cd ${WRKSRC} \
-	&&  ${SETENV} ${MAKE_ENV} ${QMAKE} -spec ${QMAKESPEC}
-
-do-install:
-	@${INSTALL_MAN} ${WRKSRC}/mimms.1 ${PREFIX}/man/man1
-	@${INSTALL_PROGRAM} ${WRKSRC}/mimms ${PREFIX}/bin
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
