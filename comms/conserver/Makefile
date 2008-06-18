@@ -8,7 +8,7 @@
 
 PORTNAME=	conserver
 PORTVERSION=	8.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.physics.purdue.edu/pub/pundits/ \
 		http://www.komquats.com/distfiles/ \
@@ -30,6 +30,7 @@ DEFAULTHOST?=	localhost
 DEFAULTPORT?=	782
 MAKE_ENV+=	DEFAULTHOST="${DEFAULTHOST}" DEFAULTPORT="${DEFAULTPORT}"
 #PKGMESSAGE=	${WRKDIR}/MESSAGE
+USE_RC_SUBR=	conserver.sh
 
 do-build:
 	${REINPLACE_CMD} -e 's:/usr/local/lib:${PREFIX}/etc:g'  \
@@ -64,10 +65,6 @@ do-install:
 	    ${PREFIX}/man/man8/autologin.8  \
 	    ${PREFIX}/man/man8/conserver.8  \
 	    ${PREFIX}/man/man8/console.8
-.if !exists(${PREFIX}/etc/rc.d/conserver.sh)
-	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/conserver.sh startup file."
-	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/conserver.sh ${PREFIX}/etc/rc.d
-.endif
 	@#	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
