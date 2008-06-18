@@ -16,7 +16,6 @@
     SUBDIR += acx100
     SUBDIR += adasockets
     SUBDIR += aget
-    SUBDIR += apache-soap
     SUBDIR += apinger
     SUBDIR += archie
     SUBDIR += arp-sk
