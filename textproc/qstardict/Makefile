@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qstardict
-PORTVERSION=	0.12.7
-PORTREVISION=	1
+PORTVERSION=	0.12.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
@@ -19,10 +18,11 @@ USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml qmake_build uic_build moc_build rcc_build
 QMAKE_ARGS+=	 -recursive SEPARATE_TRANSLATIONS=1
+USE_DOS2UNIX=	qstardict.pri
 
 DICPATH=	${PREFIX}/share/stardict/dic
 
-PORTDOCS=	AUTHORS COPYNG ChangeLog INSTALL README THANKS
+PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README THANKS
 
 OPTIONS=	DBUS "Enable D-BUS support" on
 
@@ -44,6 +44,8 @@ LIB_DEPENDS+=	QtDBus.4:${PORTSDIR}/devel/dbus-qt4
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" \
 		${WRKSRC}/qstardict.pri
+	@${REINPLACE_CMD} -e "/^INSTALLS/s|docs||g" \
+		${WRKSRC}/qstardict.pro
 	@${REINPLACE_CMD} -e "s|/usr/share/stardict/dic|${DICPATH}|g" \
 		${WRKSRC}/plugins/stardict/stardict.cpp
 
