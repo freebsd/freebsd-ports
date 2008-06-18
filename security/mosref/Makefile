@@ -34,10 +34,4 @@ post-install:
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} vm-implementation.tex vm-implementation.pdf ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		Segfault during build on !i386
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
