@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	structuresynth
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	StructureSynth-Source-v${PORTVERSION}
@@ -17,32 +16,28 @@ COMMENT=	Rule-based 3D structure generator
 
 USE_ZIP=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake corelib gui opengl moc rcc
+QT_COMPONENTS=	qmake corelib gui opengl moc rcc xml
 
-WRKSRC=		${WRKDIR}/source/trunk
+WRKSRC=		${WRKDIR}/structuresynth
+
+post-extract:
+	${MV} ${WRKDIR}/"Structure Synth Source Code" ${WRKDIR}/structuresynth
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"Examples"|"${DATADIR}/Examples"|; \
 		s|"Misc"|"${DATADIR}/Misc"|' ${WRKSRC}/MainWindow.cpp
 
 do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -project
+	@${ECHO_CMD} "QT+=opengl xml" >> ${WRKSRC}/structuresynth.pro
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		-project
-	@${ECHO_CMD} "QT+=opengl" >> ${WRKSRC}/trunk.pro
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		-spec ${QMAKESPEC} trunk.pro
+		-spec ${QMAKESPEC} structuresynth.pro
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/trunk ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/structuresynth ${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${DATADIR}/Examples
 	${INSTALL_DATA} ${WRKSRC}/Examples/*.es ${DATADIR}/Examples
 	${MKDIR} ${DATADIR}/Misc
 	${INSTALL_DATA} ${WRKSRC}/Misc/* ${DATADIR}/Misc
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=	Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
