@@ -7,7 +7,7 @@
 
 PORTNAME=	squeezecenter
 PORTVERSION=	7.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SqueezeCenter_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -102,6 +102,7 @@ EXCEPTFILES=	${DOCFILES} \
 EXCEPTDIRS=	Bin \
 		CPAN/arch \
 		CPAN/Compress \
+		CPAN/Encode \
 		CPAN/GD \
 		CPAN/Template \
 		CPAN/XML/Parser \
