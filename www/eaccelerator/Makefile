@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	eaccelerator
-DISTVERSION=	0.9.5.2
-PORTREVISION=	1
+PORTVERSION=	0.9.5.3
 CATEGORIES=	www
-MASTER_SITES=	http://bart.eaccelerator.net/source/${DISTVERSION}/
+MASTER_SITES=	http://bart.eaccelerator.net/source/${PORTVERSION}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An opcode cache for PHP with encoder and loader
