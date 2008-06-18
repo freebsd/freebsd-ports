@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A Restricted Secure SHell only for sftp or/and scp
 
-BROKEN=		Does not work with rsync 3
+IGNORE=		Does not work with rsync 3
 DEPRECATED=	No longer maintained upstream
 EXPIRATION_DATE=	2008-08-21
 
