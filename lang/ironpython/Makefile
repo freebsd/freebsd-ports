@@ -9,7 +9,7 @@ PORTNAME=	ironpython
 PORTVERSION=	1.0.1
 PORTREVISION=	2
 CATEGORIES=	lang python
-MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
+MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 DISTNAME=	IronPython-1.0.1-Src
 
 MAINTAINER=	perky@FreeBSD.org

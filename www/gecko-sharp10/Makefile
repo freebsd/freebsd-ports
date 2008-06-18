@@ -10,7 +10,7 @@ PORTNAME=	gecko-sharp
 PORTVERSION=	0.6
 PORTREVISION=	11
 CATEGORIES=	www
-MASTER_SITES=	http://go-mono.com/sources/gecko-sharp/
+MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/gecko-sharp/
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono bindings for embeding mozilla

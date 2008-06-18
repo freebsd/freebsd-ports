@@ -10,7 +10,7 @@ PORTNAME=	gecko-sharp
 PORTVERSION=	0.12
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://www.go-mono.com/sources/gecko-sharp-2.0/
+MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/gecko-sharp-2.0/
 DISTNAME=	gecko-sharp-2.0-${PORTVERSION}
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
