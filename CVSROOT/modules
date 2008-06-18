@@ -6174,6 +6174,7 @@ kinterbasdb	ports/databases/kinterbasdb
 kio_locate	ports/deskutils/kio_locate
 kio_p7zip	ports/archivers/kio_p7zip
 kipi-plugins	ports/graphics/kipi-plugins
+kirocker	ports/audio/kirocker
 kismet		ports/net-mgmt/kismet
 kisomandel	ports/graphics/kisomandel
 kissd		ports/net/kissd
