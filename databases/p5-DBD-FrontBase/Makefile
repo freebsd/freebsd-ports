@@ -1,19 +1,19 @@
 # New ports collection makefile for:	DBD::FrontBase
 # Date created:		19 Jul 2007
-# Whom:			Mitchell Smith <mjs@onthenet.com.au>
+# Whom:			Mitchell Smith <mjs@bur.st>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	DBD-FrontBase
-PORTVERSION=	1.37
+PORTVERSION=	1.39
 CATEGORIES=	databases perl5
 MASTER_SITES+=	http://www.frontbase.com/download/perl/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	DBD-FB-${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	q@onthenet.com.au
+MAINTAINER=	mjs@bur.st
 COMMENT=	DBI driver for FrontBase RDBMS server
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \

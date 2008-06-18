@@ -1,5 +1,5 @@
---- ../DBD-FB-1.37.orig/Makefile.PL	Wed Nov  1 19:44:28 2006
-+++ Makefile.PL	Fri Jul 20 14:31:09 2007
+--- Makefile.PL.orig	2008-05-26 16:19:52.000000000 +1000
++++ Makefile.PL	2008-05-26 16:20:12.000000000 +1000
 @@ -13,37 +13,10 @@
  
  my $os = $^O;
@@ -36,8 +36,8 @@
 -    die "Unable to find Frontbase\nplease set environment variable FRONTBASE_HOME\n";
 -}
 +#
-+# The FreeBSD port of FrontBase puts the libs in an unexpected location.
-+# The test for the FrontBase lib dir has been removed.
++# The FreeBSD port for FrontBase puts the libraries in an unexpected location and causes the Makefile to die.  As we know
++# that the package is installed at this point, the test for the libraries has been removed.
 +#
  
  print "Configuring for ",$os, "\n";
