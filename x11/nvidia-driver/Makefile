@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	173.14.05
+DISTVERSION?=	173.14.09
 PORTREVISION?=	0			# For consistency with slave ports
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -92,7 +92,7 @@ post-patch: .SILENT
 		${WRKSRC}/src/nv-freebsd.h
 .endif
 # Do not implement certain pmap API functions on systems that have them
-.if ${NVVERSION} == 1731405
+.if ${NVVERSION} >= 1731405
 	${REINPLACE_CMD} -E 's,if( __FreeBSD_version )(< 700055),if\1< 602110 ||\1>= 700000 \&\&\1\2,' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
