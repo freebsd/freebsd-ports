@@ -45,10 +45,12 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${ALL_TARGET} ${PREFIX}/bin/bnbt
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
+.endif
 
 post-install:
 	@${MKDIR} /var/log/${PORTNAME}
