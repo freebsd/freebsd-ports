@@ -9,6 +9,7 @@ PORTNAME=	readlink
 PORTVERSION=	20010616
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dd
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dereference a symbolic link and print the name of the target
