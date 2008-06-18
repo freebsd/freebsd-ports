@@ -312,6 +312,7 @@
     SUBDIR += tex-texmflocal
     SUBDIR += texinfo
     SUBDIR += texpower
+    SUBDIR += texvc
     SUBDIR += tgif2tex
     SUBDIR += tipograf
     SUBDIR += tr2latex
