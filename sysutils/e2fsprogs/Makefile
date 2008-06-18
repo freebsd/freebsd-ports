@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.40.10
-PORTREVISION?=	1
+PORTVERSION=	1.40.11
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,11 +22,8 @@ CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
 		--with-cc='${CC}' --with-linker='${LD}' \
 		--with-ccopts='${CFLAGS}' \
 		--with-root-prefix='${PREFIX}'
-# for unknown reasons, the assembly bitops cause SIGSEGV.
-# _EXT2_USE_C_VERSIONS_ uses C bitops, these appear to work fine.
 CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/lib \
-		-I${LOCALBASE}/include -D_EXT2_USE_C_VERSIONS_'
-
+		-I${LOCALBASE}/include'
 MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 
 OPTIONS=	NLS "Enable national language support" on
