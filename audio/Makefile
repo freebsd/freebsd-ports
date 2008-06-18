@@ -391,7 +391,6 @@
     SUBDIR += malint
     SUBDIR += maplay
     SUBDIR += mbox
-    SUBDIR += mbrola
     SUBDIR += mbrolavox
     SUBDIR += mctoolame-decoder
     SUBDIR += mctoolame-encoder
