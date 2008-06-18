@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	texinfo
-PORTVERSION=	4.8
-PORTREVISION=	6
+PORTVERSION=	4.11
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A typeset documentation system with multiple format output
-
-USE_GETTEXT=	yes
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -24,7 +21,7 @@ INSTALL_TARGET=	install install-tex
 PKGDEINSTALL=	${PKGINSTALL}
 
 MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMFLOCAL}
-CONFIGURE_ARGS= \
+CONFIGURE_ARGS=	\
 		--without-included-gettext
 CONFIGURE_ENV=	\
 		CPPFLAGS="-I${LOCALBASE}/lib" \
@@ -39,8 +36,21 @@ PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL}
 
 TEXMFLOCAL=	share/texmf-local
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
+post-patch:
+	${CHMOD} 755 ${WRKSRC}/build-aux/install-sh
+
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
+	@${SETENV} PKG_PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} ${SH} \
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

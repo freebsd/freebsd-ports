@@ -5,30 +5,32 @@ bin/makeinfo
 bin/texi2dvi
 bin/texi2pdf
 bin/texindex
-share/locale/cs/LC_MESSAGES/texinfo.mo
-share/locale/da/LC_MESSAGES/texinfo.mo
-share/locale/de/LC_MESSAGES/texinfo.mo
-share/locale/de_AT/LC_MESSAGES/texinfo.mo
-share/locale/eo/LC_MESSAGES/texinfo.mo
-share/locale/fr/LC_MESSAGES/texinfo.mo
-share/locale/he/LC_MESSAGES/texinfo.mo
-share/locale/hr/LC_MESSAGES/texinfo.mo
-share/locale/ja/LC_MESSAGES/texinfo.mo
-share/locale/nb/LC_MESSAGES/texinfo.mo
-share/locale/nl/LC_MESSAGES/texinfo.mo
-share/locale/no/LC_MESSAGES/texinfo.mo
-share/locale/pl/LC_MESSAGES/texinfo.mo
-share/locale/ro/LC_MESSAGES/texinfo.mo
-share/locale/ru/LC_MESSAGES/texinfo.mo
-share/locale/sv/LC_MESSAGES/texinfo.mo
-share/locale/tr/LC_MESSAGES/texinfo.mo
-share/locale/zh_CN/LC_MESSAGES/texinfo.mo
-share/locale/zh_TW/LC_MESSAGES/texinfo.mo
+bin/pdftexi2dvi
+%%NLS%%share/locale/cs/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/da/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/de/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/de_AT/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/he/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/no/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/texinfo.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/texinfo.mo
 %%DATADIR%%/texinfo.cat
 %%DATADIR%%/texinfo.dtd
 %%DATADIR%%/texinfo.xsl
-%%TEXMFLOCAL%%/pdftex/plain/misc/pdfcolor.tex
-%%TEXMFLOCAL%%/tex/generic/dvips/epsf.tex
 %%TEXMFLOCAL%%/tex/texinfo/texinfo.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-cs.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-de.tex
@@ -40,13 +42,14 @@ share/locale/zh_TW/LC_MESSAGES/texinfo.mo
 %%TEXMFLOCAL%%/tex/texinfo/txi-no.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-pl.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-pt.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-ru.tex
+%%TEXMFLOCAL%%/tex/texinfo/txi-sr.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-tr.tex
-@dirrm %%TEXMFLOCAL%%/tex/texinfo
-@dirrmtry %%TEXMFLOCAL%%/tex/generic/dvips
+%%TEXMFLOCAL%%/tex/texinfo/txi-uk.tex
+%%TEXMFLOCAL%%/tex/generic/epsf/epsf.tex
+@dirrmtry %%TEXMFLOCAL%%/tex/generic/epsf
 @dirrmtry %%TEXMFLOCAL%%/tex/generic
+@dirrm %%TEXMFLOCAL%%/tex/texinfo
 @dirrmtry %%TEXMFLOCAL%%/tex
-@dirrmtry %%TEXMFLOCAL%%/pdftex/plain/misc
-@dirrmtry %%TEXMFLOCAL%%/pdftex/plain
-@dirrmtry %%TEXMFLOCAL%%/pdftex
 @dirrmtry %%TEXMFLOCAL%%
 @dirrm %%DATADIR%%
