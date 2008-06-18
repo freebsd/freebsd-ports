@@ -15,7 +15,6 @@
     SUBDIR += altivore
     SUBDIR += amap
     SUBDIR += amavis-stats
-    SUBDIR += amavisd
     SUBDIR += amavisd-milter
     SUBDIR += amavisd-new
     SUBDIR += aolserver-nsencrypt
