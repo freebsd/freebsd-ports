@@ -7,7 +7,7 @@
 
 PORTNAME=	synaptics
 PORTVERSION=	0.14.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://web.telia.com/~u89404340/touchpad/files/:synaptics
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:synaptics \
@@ -23,14 +23,10 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-X11VERSION!=	${MAKE} -C `${MAKE} -f bsd.port.mk -VX_SERVER_PORT` \
-			-VPORTVERSION
-
 MASTER_SITES+=	ftp://ftp.freedesktop.org/pub/xorg/individual/xserver/:x11 \
                 http://xorg.freedesktop.org/releases/individual/xserver/:x11
 DIST_SUBDIR=	xorg/xserver
-X_DISTFILES=	xorg-server-${X11VERSION}.tar.bz2
-PLIST_SUB+=	XORG="" XFREE86="@comment "
+X_DISTFILES=	xorg-server-1.4.2.tar.bz2
 EXTRA_PATCHES=	${FILESDIR}/extra-xorg-server-1.4
 
 post-patch:
