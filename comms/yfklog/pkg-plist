@@ -28,4 +28,4 @@ share/pixmaps/yfklog.png
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clubs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/onlinelog
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%
