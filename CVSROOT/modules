@@ -17264,6 +17264,7 @@ watchdog	ports/sysutils/watchdog
 watchfolder	ports/sysutils/watchfolder
 wav2cdr		ports/audio/wav2cdr
 wavbreaker	ports/audio/wavbreaker
+wavegain	ports/audio/wavegain
 waveplay	ports/audio/waveplay
 wavpack		ports/audio/wavpack
 wavplay		ports/audio/wavplay
