@@ -7233,7 +7233,6 @@ linux-gdk-pixbuf	ports/graphics/linux-gdk-pixbuf
 linux-geepee32	ports/emulators/linux-geepee32
 linux-gid	ports/cad/linux-gid
 linux-glib2	ports/devel/linux-glib2
-linux-goodway	ports/games/linux-goodway
 linux-gspca-kmod	ports/multimedia/linux-gspca-kmod
 linux-gtk	ports/x11-toolkits/linux-gtk
 linux-gtk-bluecurve-theme	ports/x11-themes/linux-gtk-bluecurve-theme
