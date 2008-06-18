@@ -169,7 +169,6 @@ include/irssi/src/lib-config/module.h
 %%DATADIR%%/help/eval
 %%DATADIR%%/help/exec
 %%DATADIR%%/help/flushbuffer
-%%DATADIR%%/help/flushbuffers
 %%DATADIR%%/help/format
 %%DATADIR%%/help/hash
 %%DATADIR%%/help/help
