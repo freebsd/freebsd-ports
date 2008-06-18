@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	http://getgnash.org/packages/releases/ \
+		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	amdmi3@amdmi3.ru
@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
 WANT_GNOME=	yes
+USE_GCC=	4.2+	# triggers compiler error on gcc 3.4
 WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
@@ -40,6 +41,11 @@ CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
 		--with-npapi-plugindir="${PREFIX}/lib/browser_plugins" \
 		--with-kde-pluginprefix="${PREFIX}"
+
+GNASHVER=	${DISTVERSION}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${GNASHVER}
+PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
@@ -167,8 +173,6 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^LIBS = |&$${INTLLIBS} |' \
-		${WRKSRC}/utilities/Makefile.in ${WRKSRC}/cygnal/Makefile.in
 	@${REINPLACE_CMD} -e '/^PTHREAD_[LC][IF]*=/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
 		s|/lib64|/lib|g; \
