@@ -58,16 +58,10 @@ MAN7=	wml_barebone.7 \
 	wml_std_html401.7 wml_std_wai10.7 wml_std_xhtml10.7 \
 	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		Build fails on amd64 or ia64 (needs to build shared libraries with -fPIC)
-.endif
-
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
 test:
 	@cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
