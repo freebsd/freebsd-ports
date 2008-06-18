@@ -12955,6 +12955,7 @@ pidgin-rhythmbox	ports/net-im/pidgin-rhythmbox
 pidgin-twitter	ports/net-im/pidgin-twitter
 pidof		ports/sysutils/pidof
 piewm		ports/x11-wm/piewm
+pigz		ports/archivers/pigz
 pikdev		ports/devel/pikdev
 pike72		ports/lang/pike72
 pike76		ports/lang/pike76
