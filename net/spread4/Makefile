@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	spread
-PORTVERSION=	3.17.3
+PORTVERSION=	3.17.4
 CATEGORIES=	net perl5
-MASTER_SITES=	http://www.cnds.jhu.edu/download/noformdown/ \
-		http://www.roughtrade.net/distfiles/
+MASTER_SITES=	http://www.edu-linux.org/down/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
