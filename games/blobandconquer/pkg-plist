@@ -250,6 +250,7 @@ bin/blobAndConquer
 %%DATADIR%%/gfx/gui/upArrow.png
 %%DATADIR%%/gfx/md2/spiderBlob.md2
 %%DATADIR%%/gfx/md2/tris.md2
+%%DATADIR%%/gfx/primitive/altSwitch.primitive
 %%DATADIR%%/gfx/primitive/bioMechBlob.primitive
 %%DATADIR%%/gfx/primitive/bioTank1.primitive
 %%DATADIR%%/gfx/primitive/bioTank2.primitive
@@ -442,6 +443,8 @@ bin/blobAndConquer
 %%DATADIR%%/textures/desert/.keep_me
 %%DATADIR%%/textures/game/AIUnit.png
 %%DATADIR%%/textures/game/LifeCrystal.png
+%%DATADIR%%/textures/game/altSwitch1.png
+%%DATADIR%%/textures/game/altSwitch2.png
 %%DATADIR%%/textures/game/aquaBlob.png
 %%DATADIR%%/textures/game/arrow.png
 %%DATADIR%%/textures/game/babySpiderBlob.png
