@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Vpopmaild
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	net mail pear
 
 MAINTAINER=	wenheping@gmail.com
