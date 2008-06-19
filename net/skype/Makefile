@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	2.0.0.68
+PORTVERSION=	2.0.0.72
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
