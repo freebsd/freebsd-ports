@@ -17,7 +17,7 @@ POST-INSTALL CONFIGURATION FOR ELGG
       Allow from all
    </Directory>
 
-3) Visit your Moodle site with a browser (i.e.,
+3) Visit your Elgg site with a browser (i.e.,
    http://your.server.com/elgg/), and you should
    be taken to the install.php script, which will lead
    you through creating a config.php file and then
