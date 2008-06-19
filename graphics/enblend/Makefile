@@ -6,35 +6,41 @@
 #
 
 PORTNAME=	enblend
-PORTVERSION=	3.0
-PORTREVISION=	2
+PORTVERSION=	3.1.r20080615
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	vd/enblend
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	A tool for image blending with multiresolution splines
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/pool/pool.hpp:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/pool/pool.hpp:${PORTSDIR}/devel/boost \
+		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		lcms:${PORTSDIR}/graphics/lcms \
 		xmi.1:${PORTSDIR}/graphics/plotutils \
 		tiff.4:${PORTSDIR}/graphics/tiff
+RUN_DEPENDS=	OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 
-USE_GNOME=	gnometarget
+USE_BZIP2=	yes
+
+USE_AUTOTOOLS=	automake:110:env autoconf:262:env
+
+# GCC 4.2 has some problems, see
+# http://groups.google.com/group/hugin-ptx/browse_thread/thread/725b1581c9889e37/50abe3387d61541a#50abe3387d61541a
+USE_GCC=	4.3+
 USE_GL=		glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=		enblend.1
-PLIST_FILES=	bin/enblend
+MAN1=		enblend.1 enfuse.1
+PLIST_FILES=	bin/enblend bin/enfuse
 
-CPPFLAGS=	-I${WRKSRC}/src/vigra_impex -I${WRKSRC}/include \
-		-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-ffast-math||g ; \
-		 s|-g -O3||g' ${WRKSRC}/src/Makefile.in
+# run autotools
+pre-configure:
+	cd ${WRKSRC} && ${MAKE} -f Makefile.cvs
 
 .include <bsd.port.mk>
