@@ -27,7 +27,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo	\
 		jpeg.9:${PORTSDIR}/graphics/jpeg	\
 		png.5:${PORTSDIR}/graphics/png
 
-USE_XORG=	xft x11 xrender
+USE_XORG=	xft x11 xrender xaw
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared --enable-xft --enable-gl \
 		--enable-xrender --enable-cairo --with-x --enable-pthread \
@@ -56,8 +56,6 @@ PLIST_SUB+=	ARCH=${ARCH}
 PLTPATCHES=	# none yet for this version
 
 .include <bsd.port.pre.mk>
-
-BROKEN=		Fails to install (signal 11)
 
 .if defined(WITH_CGC)
 ALL_TARGET=		both
