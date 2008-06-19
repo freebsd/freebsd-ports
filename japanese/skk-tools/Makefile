@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	skk-tools
-PORTVERSION=	1.1
-PORTREVISION=	6
+PORTVERSION=	1.3.1
+#PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/tools/ \
@@ -18,7 +18,6 @@ DISTNAME=	skktools-${PORTVERSION}
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=Jisyo-tools for the SKK Japanese-input software
 
-USE_BZIP2=	yes
 .if defined(WITHOUT_GNOME)
 CONFIGURE_ARGS=	--without-skkdic-expr2
 .else
