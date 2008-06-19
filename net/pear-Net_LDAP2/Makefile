@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_LDAP2
-DISTVERSION=	2.0.0RC2
+DISTVERSION=	2.0.0RC3
 CATEGORIES=	net pear
 
 MAINTAINER=	wenheping@gmail.com
