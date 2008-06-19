@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cache_Lite
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 PORTEPOCH=	1
 CATEGORIES=	sysutils www pear
 
@@ -27,6 +27,7 @@ TESTS=		Cache_Lite_classical.phpt Cache_Lite_automaticCleaning.phpt \
 		Cache_Lite_error3.phpt Cache_Lite_memorycache.phpt \
 		Cache_Lite_Output_classical.phpt Cache_Lite_serialization.phpt \
 		Cache_Lite_lifetime.phpt pearbug513.phpt pearbug7618.phpt \
+		pearbug13693.phpt \
 		cache_lite_base.inc cache_lite_file_base.inc \
 		cache_lite_function_base.inc cache_lite_output_base.inc \
 		callcache.inc tmpdir.inc bench.php bench2.php bench3.php readme
