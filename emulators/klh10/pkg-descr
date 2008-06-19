@@ -1,8 +1,6 @@
 This is a port of Kenneth L. Harrenstien's KLH10 DEC PDP-10 mainframe
 emulator.
 
-For information about PDP-10 see WWW: http://www.inwap.com/pdp10/
-
 This port currently only builds klh10 in the ksits configuration for
 running MIT Incompatible Timesharing System (ITS.)  Future release
 will configure KLH10 for additional systems.
@@ -20,3 +18,5 @@ incoming TCP connections and require root privileges.  You take your
 chances running this in the default configuration.  Consider using a
 firewall to limit access to klh-10.  See the pub-its/adm directory for
 firewall documentation.
+
+WWW: http://www.inwap.com/pdp10/
