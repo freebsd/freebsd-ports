@@ -7,9 +7,9 @@
 
 PORTNAME=	kxgenerator
 PORTVERSION=	0.3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 kde
-MASTER_SITES=	http://dp0154.debowypark.waw.pl/kxgenerator/data/download/
+MASTER_SITES=	http://dp0154.debowypark.waw.pl/
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	KDE utility to configure the X server
@@ -21,10 +21,10 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 
-pre-configure:
-.for i in properties.h main.cpp
-	@${REINPLACE_CMD} -e "s:/usr/lib/xorg:${LOCALBASE}/lib:g"	\
-		${WRKSRC}/src/${i}
-.endfor
+DEPRECATED=	Project abandoned
+
+post-patch:
+	cd ${WRKSRC}/src && ${REINPLACE_CMD} -e "s:/usr:${LOCALBASE}:g" \
+		properties.h main.cpp
 
 .include <bsd.port.mk>
