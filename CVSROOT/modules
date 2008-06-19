@@ -18200,7 +18200,6 @@ xorg-macros	ports/devel/xorg-macros
 xorg-nestserver	ports/x11-servers/xorg-nestserver
 xorg-protos	ports/x11/xorg-protos
 xorg-server	ports/x11-servers/xorg-server
-xorg-server-snap	ports/x11-servers/xorg-server-snap
 xorg-vfbserver	ports/x11-servers/xorg-vfbserver
 xoris		ports/graphics/xoris
 xorp		ports/net/xorp

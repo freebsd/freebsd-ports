@@ -12,7 +12,6 @@
     SUBDIR += xorg-dmx
     SUBDIR += xorg-nestserver
     SUBDIR += xorg-server
-    SUBDIR += xorg-server-snap
     SUBDIR += xorg-vfbserver
 
 .include <bsd.port.subdir.mk>
