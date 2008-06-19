@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_LDAP
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	net pear
 
 MAINTAINER=	gerrit.beine@gmx.de
