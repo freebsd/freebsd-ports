@@ -138,6 +138,33 @@
  #else
  static struct sgttyb MyTtyStateIn, MyTtyStateOut;
  #endif
+@@ -2385,9 +2397,9 @@
+ SaveTtyState() {
+     /* Bogus -- would like a good portable way to reset the terminal state here */
+ #if !defined(AMIGA) && !defined(MSDOS)
+-#ifdef SYSV
+-    ioctl(fileno(stdin), TCGETA, &MyTtyStateIn);
+-    ioctl(fileno(stdout), TCGETA, &MyTtyStateOut);
++#if 1
++    tcgetattr(fileno(stdin), &MyTtyStateIn);
++    tcgetattr(fileno(stdout), &MyTtyStateOut);
+ #else
+     gtty(fileno(stdin), &MyTtyStateIn);
+     gtty(fileno(stdout), &MyTtyStateOut);
+@@ -2398,10 +2410,10 @@
+ 
+ RestoreTtyState() {
+ #if !defined(AMIGA) && !defined(MSDOS)
+-#ifdef SYSV
++#if 1
+     if (HasSavedTtyState) {
+-        ioctl(fileno(stdout), TCSETA, &MyTtyStateOut);
+-        ioctl(fileno(stdin), TCSETA, &MyTtyStateIn);
++        tcsetattr(fileno(stdout), TCSANOW, &MyTtyStateOut);
++        tcsetattr(fileno(stdin), TCSANOW, &MyTtyStateIn);
+     }
+ #else
+     if (HasSavedTtyState) {
 @@ -2681,15 +2693,15 @@
  
  StartRawStdin() {
