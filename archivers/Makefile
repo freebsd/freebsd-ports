@@ -52,6 +52,7 @@
     SUBDIR += liblzxcomp
     SUBDIR += libmspack
     SUBDIR += liborange
+    SUBDIR += librtfcomp
     SUBDIR += libunrar
     SUBDIR += libzip
     SUBDIR += linux-par2cmdline
