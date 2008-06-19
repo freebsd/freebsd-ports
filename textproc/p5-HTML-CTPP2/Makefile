@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-CTPP2
-PORTVERSION=	2.1.1
+PORTVERSION=	2.3.0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,6 @@ MAINTAINER=	reki@reki.ru
 COMMENT=	Perl interface module to CTPP2 library
 
 LIB_DEPENDS=	ctpp2:${PORTSDIR}/textproc/ctpp2
-
-BROKEN=		does not compile
 
 PERL_CONFIGURE=	yes
 
