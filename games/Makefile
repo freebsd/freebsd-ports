@@ -148,6 +148,7 @@
     SUBDIR += criticalmass
     SUBDIR += crossfire-client
     SUBDIR += crossfire-server
+    SUBDIR += crrcsim
     SUBDIR += cryptoslam
     SUBDIR += csmash
     SUBDIR += ctris
