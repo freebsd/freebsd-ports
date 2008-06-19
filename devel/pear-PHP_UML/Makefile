@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_UML
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.4
 CATEGORIES=	devel
 
 MAINTAINER=	wenheping@gmail.com
@@ -27,8 +27,8 @@ DOCS=		LOGICIELS_A_UTILISER_AVEC_PHP_UML \
 		README SOFTWARES_TO_USE_WITH_PHP_UML \
 		TODO argouml.png bouml.png rational_rose.png
 EXAMPLES=	example1_rational_rose.png example2_bouml.png \
-		example3_argouml.png test1.php test2.php \
-		test3.php test4.php test5_cs.php \
+		example3_argouml.png test1.php.txt test2.php.txt \
+		test3.php.txt test4.php.txt test5_cs.php.txt \
 		test_to_run.php test_with_api.php
 TESTS=		UmlParserTest.php UmlXmiTest.php \
 		suite/EMOF_test_sample.php \
