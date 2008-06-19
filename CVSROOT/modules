@@ -8940,7 +8940,6 @@ openoffice.org-2-devel	ports/editors/openoffice.org-2-devel
 openoffice.org-3-RC	ports/editors/openoffice.org-3-RC
 openoffice.org-3-devel	ports/editors/openoffice.org-3-devel
 openospfd	ports/net/openospfd
-openospfd-devel	ports/net/openospfd-devel
 openpbx.org	ports/net/openpbx.org
 openproducer	ports/graphics/openproducer
 openproj	ports/deskutils/openproj
