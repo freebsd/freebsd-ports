@@ -12599,6 +12599,7 @@ pecl-rar	ports/archivers/pecl-rar
 pecl-runkit	ports/devel/pecl-runkit
 pecl-shape	ports/devel/pecl-shape
 pecl-spl_types	ports/devel/pecl-spl_types
+pecl-spread	ports/devel/pecl-spread
 pecl-sqlite	ports/databases/pecl-sqlite
 pecl-ssh2	ports/security/pecl-ssh2
 pecl-statgrab	ports/devel/pecl-statgrab
