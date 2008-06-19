@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_NNTP
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0
 PORTEPOCH=	1
 CATEGORIES=	net news pear
 
@@ -23,7 +23,7 @@ FILES=		NNTP/Client.php NNTP/Header.php NNTP/Message.php \
 EXAMPLES=	demo/article.php demo/common.inc.php demo/config.inc.php demo/footer.inc.php \
 		demo/group.php demo/groups.php demo/header.inc.php demo/index.php demo/style.css \
 		phpdoc/authenticate.php phpdoc/connect.php phpdoc/constructor.php phpdoc/getDescriptions.php \
-		phpdoc/getGroups.php phpdoc/getOverview.php phpdoc/getOverview.php phpdoc/selectArticle.php \
+		phpdoc/getGroups.php phpdoc/getOverview.php phpdoc/selectArticle.php \
 		phpdoc/selectGroup.php phpdoc/selectNextArticle.php phpdoc/selectPreviousArticle.php
 
 _EXAMPLESDIR=	docs/examples/
