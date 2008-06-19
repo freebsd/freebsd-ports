@@ -6,35 +6,40 @@
 #
 
 PORTNAME=	libopensync
-PORTVERSION=	0.31
-PORTREVISION=	1
+PORTVERSION=	0.36
 CATEGORIES=	devel
-MASTER_SITES=	http://www.opensync.org/attachment/wiki/download/
-DISTNAME=	libopensync-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz2\?rev=\&format=raw
+MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@logvinov.com
 COMMENT=	A PIM data synchronization framework
+
+BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
+LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
 CONFLICTS=	libopensync-0.22*
 
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
-
 USE_BZIP2=	yes
+USE_CMAKE=	yes
+CMAKE_ARGS+=	-Wno-dev
+CMAKE_USE_PTHREAD=	yes
 USE_GNOME=	glib20 libxml2
+USE_PYTHON=	yes
 USE_LDCONFIG=	yes
-USE_SCONS=	yes
-SCONS_ARGS=	prefix=${PREFIX}
+
+.include <bsd.port.pre.mk>
+
+SWIG_VER!=	cd ${PORTSDIR}/devel/swig13 && ${MAKE} -V PORTVERSION
+SWIG_DATADIR!=	cd ${PORTSDIR}/devel/swig13 && ${MAKE} -V DATADIR
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|install_lib, 'pkgconfig'|install_prefix, 'libdata', 'pkgconfig'|" ${WRKSRC}/SConstruct
-	@${REINPLACE_CMD} \
-		-e 's|gthread-2.0|gthread-2.0 pthread|' \
-		-e 's|vnum="%d.%d.%d" % ([^)]*)|vnum="%d" % (config["major"])|' \
-		${WRKSRC}/opensync/SConscript
+	@${REINPLACE_CMD} -e "s|\$${LIB_INSTALL_DIR}/pkgconfig|${PREFIX}/libdata/pkgconfig|" \
+		-e "s|FIND_PACKAGE( SWIG|FIND_PACKAGE( SWIG REQUIRED|" \
+		-e "/FIND_PACKAGE( Check )/d" ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e "s|/usr/local/share/swig1.3|${SWIG_DATADIR}/${SWIG_VER}|g" \
+		${WRKSRC}/cmake/modules/FindSWIG.cmake
 
 post-install:
-	@${LN} -sf ${LOCALBASE}/lib/libopensync.so ${LOCALBASE}/lib/libopensync.so.1
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

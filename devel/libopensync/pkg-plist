@@ -1,36 +1,44 @@
-bin/osplugin
 bin/osyncbinary
 bin/osyncdump
 include/opensync-1.0/opensync/archive/opensync_archive.h
+include/opensync-1.0/opensync/client/opensync_client.h
+include/opensync-1.0/opensync/client/opensync_client_proxy.h
 include/opensync-1.0/opensync/data/opensync_change.h
 include/opensync-1.0/opensync/data/opensync_data.h
-include/opensync-1.0/opensync/engine/opensync_engine.h
+include/opensync-1.0/opensync/db/opensync_db.h
+include/opensync-1.0/opensync/engine/opensync_mapping_engine.h
 include/opensync-1.0/opensync/engine/opensync_obj_engine.h
 include/opensync-1.0/opensync/engine/opensync_status.h
-include/opensync-1.0/opensync/file.h
-include/opensync-1.0/opensync/format/opensync_converter.h
-include/opensync-1.0/opensync/format/opensync_filter.h
+include/opensync-1.0/opensync/engine/opensync_engine.h
+include/opensync-1.0/opensync/format/opensync_time.h
 include/opensync-1.0/opensync/format/opensync_format_env.h
 include/opensync-1.0/opensync/format/opensync_objformat.h
-include/opensync-1.0/opensync/format/opensync_time.h
+include/opensync-1.0/opensync/format/opensync_filter.h
+include/opensync-1.0/opensync/format/opensync_converter.h
 include/opensync-1.0/opensync/group/opensync_group.h
 include/opensync-1.0/opensync/group/opensync_group_env.h
 include/opensync-1.0/opensync/group/opensync_member.h
-include/opensync-1.0/opensync/helper/opensync_anchor.h
 include/opensync-1.0/opensync/helper/opensync_hashtable.h
+include/opensync-1.0/opensync/helper/opensync_anchor.h
 include/opensync-1.0/opensync/ipc/opensync_message.h
 include/opensync-1.0/opensync/ipc/opensync_queue.h
 include/opensync-1.0/opensync/ipc/opensync_serializer.h
-include/opensync-1.0/opensync/mapping/opensync_mapping.h
 include/opensync-1.0/opensync/mapping/opensync_mapping_entry.h
+include/opensync-1.0/opensync/mapping/opensync_mapping.h
 include/opensync-1.0/opensync/mapping/opensync_mapping_table.h
 include/opensync-1.0/opensync/mapping/opensync_mapping_view.h
-include/opensync-1.0/opensync/merger/opensync_capabilities.h
-include/opensync-1.0/opensync/merger/opensync_capability.h
 include/opensync-1.0/opensync/merger/opensync_merger.h
-include/opensync-1.0/opensync/merger/opensync_xmlfield.h
+include/opensync-1.0/opensync/merger/opensync_capability.h
+include/opensync-1.0/opensync/merger/opensync_capabilities.h
 include/opensync-1.0/opensync/merger/opensync_xmlfieldlist.h
+include/opensync-1.0/opensync/merger/opensync_xmlfield.h
 include/opensync-1.0/opensync/merger/opensync_xmlformat.h
+include/opensync-1.0/opensync/plugin/opensync_plugin.h
+include/opensync-1.0/opensync/plugin/opensync_sink.h
+include/opensync-1.0/opensync/plugin/opensync_plugin_env.h
+include/opensync-1.0/opensync/plugin/opensync_plugin_info.h
+include/opensync-1.0/opensync/version/opensync_version.h
+include/opensync-1.0/opensync/opensync.h
 include/opensync-1.0/opensync/opensync-archive.h
 include/opensync-1.0/opensync/opensync-client.h
 include/opensync-1.0/opensync/opensync-context.h
@@ -41,6 +49,7 @@ include/opensync-1.0/opensync/opensync-format.h
 include/opensync-1.0/opensync/opensync-group.h
 include/opensync-1.0/opensync/opensync-helper.h
 include/opensync-1.0/opensync/opensync-ipc.h
+include/opensync-1.0/opensync/opensync_list.h
 include/opensync-1.0/opensync/opensync-mapping.h
 include/opensync-1.0/opensync/opensync-merger.h
 include/opensync-1.0/opensync/opensync-module.h
@@ -49,41 +58,46 @@ include/opensync-1.0/opensync/opensync-serializer.h
 include/opensync-1.0/opensync/opensync-support.h
 include/opensync-1.0/opensync/opensync-time.h
 include/opensync-1.0/opensync/opensync-version.h
-include/opensync-1.0/opensync/opensync.h
-include/opensync-1.0/opensync/opensync_list.h
-include/opensync-1.0/opensync/opensync_xml.h
-include/opensync-1.0/opensync/plugin/opensync_plugin.h
-include/opensync-1.0/opensync/plugin/opensync_plugin_env.h
-include/opensync-1.0/opensync/plugin/opensync_plugin_info.h
-include/opensync-1.0/opensync/plugin/opensync_sink.h
-include/opensync-1.0/opensync/version/opensync_version.h
+include/opensync-1.0/opensync/file.h
 lib/libopensync.so
 lib/libopensync.so.1
-lib/opensync/formats/libdata.so
-lib/opensync/formats/libfile.so
-lib/opensync/formats/libxmlformat-doc.so
-lib/opensync/formats/libxmlformat.so
+lib/libopensync.so.1.0.0
+lib/opensync-1.0/formats/file.so
+lib/opensync-1.0/formats/plain.so
+lib/opensync-1.0/formats/xmlformat.so
+lib/opensync-1.0/formats/xmlformat-doc.so
+lib/opensync-1.0/osplugin
 libdata/pkgconfig/opensync-1.0.pc
-libdata/pkgconfig/osengine-1.0.pc
-share/opensync/capabilities/file-sync.xml
-share/opensync/capabilities/syncml-nokia-7650.xml
-share/opensync/descriptions/miscellaneous.xml
-share/opensync/descriptions/syncml-nokia.xml
-share/opensync/schemas/descriptions.xsd
-share/opensync/schemas/xmlformat-calendar.xsd
-share/opensync/schemas/xmlformat-common.xsd
-share/opensync/schemas/xmlformat-contact.xsd
-share/opensync/schemas/xmlformat-event.xsd
-share/opensync/schemas/xmlformat-note.xsd
-share/opensync/schemas/xmlformat-todo.xsd
-@dirrm share/opensync/schemas
-@dirrm share/opensync/descriptions
-@dirrm share/opensync/capabilities
-@dirrm share/opensync
-@dirrm lib/opensync/formats
-@dirrm lib/opensync
+share/opensync-1.0/capabilities/syncml-nokia-7650.xml
+share/opensync-1.0/capabilities/reference.xml
+share/opensync-1.0/descriptions/syncml-nokia.xml
+share/opensync-1.0/descriptions/reference.xml
+share/opensync-1.0/schemas/xmlformat-contact.xsd
+share/opensync-1.0/schemas/plugin_config.xsd
+share/opensync-1.0/schemas/descriptions.xsd
+share/opensync-1.0/schemas/xmlformat-event.xsd
+share/opensync-1.0/schemas/xmlformat-note.xsd
+share/opensync-1.0/schemas/xmlformat-todo.xsd
+share/opensync-1.0/schemas/xmlformat-common.xsd
+share/opensync-1.0/schemas/xmlformat-calendar.xsd
+share/opensync-1.0/cmake/modules/OpenSyncPlatforms.cmake
+share/opensync-1.0/cmake/modules/OpenSyncPackaging.cmake
+share/opensync-1.0/cmake/modules/OpenSyncTesting.cmake
+share/opensync-1.0/cmake/modules/OpenSyncPlugin.cmake
+share/opensync-1.0/cmake/modules/OpenSyncInternal.cmake
+%%PYTHON_SITELIBDIR%%/_opensync.so
+%%PYTHON_SITELIBDIR%%/opensync.py
+@dirrm share/opensync-1.0/schemas
+@dirrm share/opensync-1.0/descriptions
+@dirrm share/opensync-1.0/cmake/modules
+@dirrm share/opensync-1.0/cmake
+@dirrm share/opensync-1.0/capabilities
+@dirrm share/opensync-1.0
+@dirrmtry lib/opensync-1.0/formats
+@dirrmtry lib/opensync-1.0
 @dirrm include/opensync-1.0/opensync/version
 @dirrm include/opensync-1.0/opensync/plugin
+@dirrmtry include/opensync-1.0/opensync/module
 @dirrm include/opensync-1.0/opensync/merger
 @dirrm include/opensync-1.0/opensync/mapping
 @dirrm include/opensync-1.0/opensync/ipc
@@ -91,7 +105,9 @@ share/opensync/schemas/xmlformat-todo.xsd
 @dirrm include/opensync-1.0/opensync/group
 @dirrm include/opensync-1.0/opensync/format
 @dirrm include/opensync-1.0/opensync/engine
+@dirrm include/opensync-1.0/opensync/db
 @dirrm include/opensync-1.0/opensync/data
+@dirrm include/opensync-1.0/opensync/client
 @dirrm include/opensync-1.0/opensync/archive
 @dirrm include/opensync-1.0/opensync
 @dirrm include/opensync-1.0
