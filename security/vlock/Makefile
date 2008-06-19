@@ -65,6 +65,9 @@ PLIST_SUB+=	PL_CACASAVER=""
 PLIST_SUB+=	PL_CACASAVER="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lncurses|-lm|' ${WRKSRC}/modules/Makefile
+
 pre-install:
 	if ! pw groupshow ${VLOCKGRP}; then pw groupadd ${VLOCKGRP} -g ${VLOCKGID}; fi
 
