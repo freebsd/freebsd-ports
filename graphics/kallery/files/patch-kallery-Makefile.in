@@ -1,0 +1,11 @@
+--- kallery/Makefile.in.orig	2008-05-28 18:26:48.683668332 +0200
++++ kallery/Makefile.in	2008-05-28 18:27:18.705733147 +0200
+@@ -380,7 +380,7 @@
+ 	imagethumbpage.cpp targetpath.cpp descsourcepage.cpp imageoptionspage.cpp \
+ 	htmloptionspage.cpp imagehtmlpage.cpp lastpage.cpp kimagehtmlpage.cpp kdescsourcepage.cpp kimageoptionspage.cpp khtmloptionspage.cpp kthumbsourcepage.cpp ktargetpath.cpp kselectsourcespage.cpp klastpage.cpp kimagethumbpage.cpp kfirstpage.cpp
+ 
+-kallery_LDADD = -lMagick $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
++kallery_LDADD = $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
+ xdg_apps_DATA = kallery.desktop
+ imagesdir = ${kde_datadir}/kallery/images
+ images_DATA = kallery.png back.png next.png prev.png
