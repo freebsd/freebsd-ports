@@ -130,8 +130,8 @@ REPOSITORY
 # checkout common files from the repository
 co_common()
 {
-	log "getting CVSROOT/modules, ports/MOVED and ports/LEGAL from repository"
-	${PCVS} co CVSROOT/modules ports/MOVED ports/LEGAL
+	log "getting ports/MOVED and ports/LEGAL from repository"
+	${PCVS} co ports/MOVED ports/LEGAL
 }
 
 # check if some ports depend on the given port
@@ -317,20 +317,6 @@ check_LEGAL()
 	done
 }
 
-# remove port's entry from CVSROOT/modules
-edit_modules()
-{
-	cat=${1}
-	port=${2}
-
-	log "${cat}/${port}: removing from CVSROOT/modules"
-
-	portesc=`escape ${port}`
-
-	${SED} -e "/^(ports_)?(..-)?${portesc}[[:space:]]+ports\/${cat}\/${portesc}\$/d" \
-		CVSROOT/modules
-}
-
 # add port's entry to ports/MOVED
 edit_MOVED()
 {
@@ -401,7 +387,7 @@ diff()
 
 	diffout=${codir}/diff
 
-	${PCVS} diff -u CVSROOT/modules ports > ${diffout} 2>&1 || :
+	${PCVS} diff -u ports > ${diffout} 2>&1 || :
 
 	read -p "hit <enter> to view cvs diff output" dummy
 
@@ -414,12 +400,12 @@ diff()
 commit()
 {
 	log "running cvs update"
-	${PCVS} up CVSROOT/modules ports 2>&1 |${PAGER:-less}
+	${PCVS} up ports 2>&1 |${PAGER:-less}
 
 	answer=`ask "do you want to commit?"`
 
 	if [ "${answer}" = "y" ] ; then
-		${PCVS} ci CVSROOT/modules ports
+		${PCVS} ci ports
 	fi
 }
 
@@ -528,8 +514,6 @@ for catport in $* ; do
 	check_LEGAL ${catport} ${pkgname}
 
 	# everything seems ok, edit the files
-
-	edit_modules ${cat} ${port}
 
 	edit_MOVED ${catport}
 
