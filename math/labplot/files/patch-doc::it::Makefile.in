@@ -1,6 +1,6 @@
---- doc/it/Makefile.in.orig	Mon Sep 26 18:50:26 2005
-+++ doc/it/Makefile.in	Mon Sep 26 18:51:19 2005
-@@ -481,7 +481,7 @@
+--- ./doc/it/Makefile.in.orig	2008-01-12 12:42:50.000000000 +0300
++++ ./doc/it/Makefile.in	2008-06-15 03:01:03.000000000 +0400
+@@ -496,7 +496,7 @@
  	fi
  	$(INSTALL_DATA) index.docbook $(DESTDIR)/$(kde_htmldir)/it/LabPlot/index.docbook
  	rm -f $(DESTDIR)/$(kde_htmldir)/it/LabPlot/small_pics
