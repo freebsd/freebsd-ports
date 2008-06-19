@@ -34,11 +34,16 @@ SUB_FILES=	pkg-message
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 600000
-LIB_DEPENDS+=  c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 
 .if !exists(/usr/src/sys/kern)
 IGNORE=		requires system source for installing kqemu, the accelerator that provides native CPU speed in Win4BSD.  Please install the system sources in /usr/src (e.g. using sysinstall), and run make again
+.endif
+
+SCHED_NAME!=	${SYSCTL} -n kern.sched.name
+.if ${SCHED_NAME} != "4BSD"
+IGNORE=		requires the traditional 4BSD scheduler. Please rebuild your kernel with options SCHED_4BSD, and run make again
 .endif
 
 post-patch:
