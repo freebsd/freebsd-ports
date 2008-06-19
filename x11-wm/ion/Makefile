@@ -9,7 +9,7 @@ PORTNAME=	ion
 PORTVERSION=	20020207
 PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://modeemi.cs.tut.fi/~tuomov/dl/
+MASTER_SITES=	http://modeemi.fi/~tuomov/dl/archives/
 
 MAINTAINER=	ricci@cs.utah.edu
 COMMENT=	A window manager with a text-editorish, keyboard friendly interface
