@@ -13,6 +13,7 @@ libdata/pkgconfig/opencdk.pc
 %%PORTDOCS%%%%DOCSDIR%%/opencdk-api.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/basic.c
+%%EXAMPLESDIR%%/exp-key.gpg
 %%EXAMPLESDIR%%/newkey.gpg
 %%EXAMPLESDIR%%/photo-key.gpg
 %%EXAMPLESDIR%%/plain-test-pubenc-part.gpg
