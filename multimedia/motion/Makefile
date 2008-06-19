@@ -35,7 +35,7 @@ USE_GCC=	3.4+
 MAN1=		motion.1
 PORTDOCS=	CHANGELOG CREDITS README.FreeBSD README \
 		motion_guide.html
-EXAMPLES=	motion-dist.conf thread1.conf thread2.conf \
+PORTEXAMPLES=	motion-dist.conf thread1.conf thread2.conf \
 		thread3.conf thread4.conf
 
 OPTIONS=	PWCBSD "PWCBSD based Webcams (disables BKTR)" off \
@@ -66,12 +66,13 @@ post-install:
 	${INSTALL_DATA} ${PREFIX}/etc/motion.conf.sample ${PREFIX}/etc/motion.conf
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.init-FreeBSD.sh ${PREFIX}/etc/rc.d/${PORTNAME}
-	${MKDIR} ${EXAMPLESDIR}
 
 .if !defined(NOPORTEXAMPLES)
-.for f in ${EXAMPLES}
+	${MKDIR} ${EXAMPLESDIR}
+.for f in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
 .endfor
+	@${ECHO_MSG} "===> Examples are installed in ${EXAMPLESDIR}."
 .endif
 
 .if !defined(NOPORTDOCS)
@@ -79,6 +80,7 @@ post-install:
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
+	@${ECHO_MSG} "===> Docs are installed in ${DOCSDIR}."
 .endif
 
 .if defined(WITH_BKTR)
