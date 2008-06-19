@@ -10,7 +10,7 @@ PORTNAME=	ion-2
 PORTVERSION=	20040729
 PORTREVISION=	3
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
+MASTER_SITES=	http://modeemi.fi/~tuomov/dl/archives/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiling tabbed window manager
