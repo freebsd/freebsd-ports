@@ -9,7 +9,7 @@ PORTNAME=	sccmilter
 PORTVERSION=	0.95.7
 PORTREVISION=	1
 CATEGORIES=	mail sysutils
-MASTER_SITES=	http://openoffice.nextmail.ru/ \
+MASTER_SITES=	http://openoffice.mirahost.ru/fileZ/ports/ \
 		http://citycat4.land.ru/
 
 MAINTAINER=	achilov-rn@askd.ru
