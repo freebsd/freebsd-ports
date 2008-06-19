@@ -5,7 +5,7 @@ annex/sbin/spy
 annex/sbin/tms_convert
 annex/sbin/tms_dbm
 annex/sbin/na
-annex/sbin/rtelnet
+%%RTELNET%%annex/sbin/rtelnet
 @dirrm annex/sbin
 annex/snmp/xylo-anx.mib
 annex/snmp/xylo-callmgmt.mib
