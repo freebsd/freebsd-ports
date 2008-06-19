@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_SMTP
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	net mail www pear
 
 MAINTAINER=	bg1tpt@gmail.com
