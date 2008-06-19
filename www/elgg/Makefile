@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elgg
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
@@ -16,7 +16,7 @@ COMMENT=	Blogging and social networking platform
 
 USE_PHP=	gd gettext
 USE_GETTEXT=	yes
-WRKSRC=		${WRKDIR}/elgg-0.9.1
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS=	MYSQL   "Add support for a MySQL database server" ON \
 		PGSQL   "Add support for a PostgreSQL database server" Off \

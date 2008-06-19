@@ -1,4 +1,5 @@
 %%WWWDIR%%/.htaccess
+%%WWWDIR%%/.gitignore
 %%WWWDIR%%/allpostsfeed.php
 %%WWWDIR%%/allpostssummary.php
 %%WWWDIR%%/auth/internal/lib.php
@@ -296,6 +297,7 @@
 %%WWWDIR%%/lib/elgglib.php
 %%WWWDIR%%/lib/engine.php
 %%WWWDIR%%/lib/filelib.php
+%%WWWDIR%%/lib/global.js
 %%WWWDIR%%/lib/html2text.php
 %%WWWDIR%%/lib/iconslib.php
 %%WWWDIR%%/lib/kses.php
@@ -512,6 +514,7 @@
 %%WWWDIR%%/mod/commentwall/postgres7.sql
 %%WWWDIR%%/mod/commentwall/replyto.php
 %%WWWDIR%%/mod/commentwall/template
+%%WWWDIR%%/mod/commentwall/walltowall.php
 %%WWWDIR%%/mod/community/INSTALL
 %%WWWDIR%%/mod/community/LICENSE
 %%WWWDIR%%/mod/community/README
@@ -3225,7 +3228,6 @@
 @dirrm %%WWWDIR%%/mod/commentwall/images
 @dirrm %%WWWDIR%%/mod/commentwall/lib
 @dirrm %%WWWDIR%%/mod/commentwall
-@dirrm %%WWWDIR%%/mod/community/languages
 @dirrm %%WWWDIR%%/mod/community/lib
 @dirrm %%WWWDIR%%/mod/community/templates
 @dirrm %%WWWDIR%%/mod/community
