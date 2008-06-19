@@ -3,8 +3,10 @@
 %%SITE_PERL%%/WWW/Myspace.pm
 %%SITE_PERL%%/WWW/Myspace/Comment.pm
 %%SITE_PERL%%/WWW/Myspace/FriendChanges.pm
+%%SITE_PERL%%/WWW/Myspace/FriendRequest.pm
 %%SITE_PERL%%/WWW/Myspace/Message.pm
 %%SITE_PERL%%/WWW/Myspace/MyBase.pm
+%%SITE_PERL%%/WWW/Myspace/Promoter.pm
 bin/approve_friends
 bin/comment_myspace
 bin/message_group
