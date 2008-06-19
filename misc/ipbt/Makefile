@@ -15,6 +15,8 @@ MAINTAINER=	matt_mills@btopenworld.com
 COMMENT=	A high-tech ttyrec player with improvements over ttyplay
 
 BROKEN=		Size mismatch
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 MAN1=		ipbt.1
 

@@ -23,6 +23,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of Perl bindings for the Qt toolkit
 
 BROKEN=		Configure fails
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_AUTOTOOLS=	libtool:15
 USE_GL=		yes

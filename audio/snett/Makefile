@@ -22,6 +22,9 @@ USE_RAKE=	yes
 NO_BUILD=	yes
 
 BROKEN=	Not updated to the DrJekyll clientlib API
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
+
 do-install:
 	@cd ${WRKSRC} && ${RAKE_BIN} PREFIX=${PREFIX}/ ${INSTALL_TARGET}
 

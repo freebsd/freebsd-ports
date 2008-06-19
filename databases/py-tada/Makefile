@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BROKEN=		Unfetchable
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

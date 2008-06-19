@@ -17,6 +17,8 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		happy:${PORTSDIR}/devel/hs-happy
 
 BROKEN=		Does not build
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src
 MAKE_ARGS=	GHC=ghc INSTALL_PATH='\"${DATADIR}/\"'

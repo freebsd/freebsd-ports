@@ -17,6 +17,8 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_PHP=	yes
 USE_PHPIZE=	yes

@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/mpich/bin/mpicc:${PORTSDIR}/net/mpich
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BROKEN=		fails to link
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 PERL_CONFIGURE=	yes
 CC=		${PREFIX}/mpich/bin/mpicc

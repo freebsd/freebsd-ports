@@ -25,6 +25,8 @@ RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
 		wget:${PORTSDIR}/ftp/wget
 
 BROKEN=		Incorrect handling of user addition
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 ONLY_FOR_ARCHS= i386
 USE_BZIP2=	yes

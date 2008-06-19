@@ -22,6 +22,8 @@ COMMENT?=	A Kenosis enabled, distributed BitTorrent
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/kenosis/__init__.py:${PORTSDIR}/net-p2p/py-kenosis
 
 BROKEN=		fails to install
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

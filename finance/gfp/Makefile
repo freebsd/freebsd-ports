@@ -17,6 +17,8 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Personal finances administration software
 
 BROKEN=		Does not build
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_ZIP=	yes
 USE_JAVA=	yes

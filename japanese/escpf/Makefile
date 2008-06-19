@@ -14,6 +14,8 @@ MAINTAINER=	mita@jp.FreeBSD.org
 COMMENT=	Text filters for ESC/P, ESC/Page and ESC/PS printers
 
 BROKEN=		Unfetchable
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 DOCDIR=		${PREFIX}/share/doc/escpf
 LINES?=		66

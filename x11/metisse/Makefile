@@ -20,6 +20,8 @@ LIB_DEPENDS=	Nucleo.0:${PORTSDIR}/x11-toolkits/nucleo
 RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
 
 BROKEN=		Does not compile
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_BZIP2=	yes
 PATCH_STRIP=	-p1

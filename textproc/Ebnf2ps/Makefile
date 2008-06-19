@@ -18,6 +18,8 @@ COMMENT=	Generate EPS/FIG diagrams from EBNF/yacc/bison grammars
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 BROKEN=		Does not build
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes

@@ -23,6 +23,8 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Community enhanced/bug fixed version of OpenOffice.org
 
 BROKEN=		Size mismatch
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 IGNORE=		Waiting for 2.3.
 
 DESCR=		${.CURDIR}/pkg-descr

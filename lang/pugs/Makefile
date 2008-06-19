@@ -16,6 +16,8 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Perl6 Implementation
 
 BROKEN=		This version does not build with current ghc
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
 		${SITE_PERL}/Pugs/Emitter/Perl6/Perl5.pm:${PORTSDIR}/lang/p5-v6 \

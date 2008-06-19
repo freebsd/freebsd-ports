@@ -16,5 +16,7 @@ GST_PLUGIN=	swfdec
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
 BROKEN=		Does not compile
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 .include "${MASTERDIR}/Makefile"

@@ -21,6 +21,9 @@ USE_PYDISTUTILS=	yes
 USE_GNOME=	pygtk2
 
 BROKEN=	Not updated to the DrJekyl clientlib API
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

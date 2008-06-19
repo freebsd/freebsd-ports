@@ -20,6 +20,8 @@ BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
 BROKEN=		Does not build
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 DOC_FILES=	ses-example.ses ses-readme.txt \
 		ses-coverage.el testcover.el unsafep-coverage.el

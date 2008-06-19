@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ERC is an Emacs InternetRelayChat client
 
 BROKEN=		Conflicting dependencies
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_EMACS=	yes
 

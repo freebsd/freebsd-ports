@@ -24,6 +24,8 @@ RUN_DEPENDS+= gjdoc:${PORTSDIR}/java/gjdoc
 RUN_DEPENDS+= ecj:${PORTSDIR}/java/ecj-bootstrap
 
 BROKEN=		leaves egg file behind on deinstall
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 GCJVER=41
 GNU_CONFIGURE=	yes

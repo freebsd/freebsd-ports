@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Has title bars, shading, resizing, automatic placement, window list
 
 BROKEN=		Checksum mismatch
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--xroot=${LOCALBASE}
