@@ -9,10 +9,10 @@ PORTNAME=	xmms-gdancer
 PORTVERSION=	0.4.6
 PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.figz.com/gdancer/files/
+MASTER_SITES=	http://www.travisemslander.com/gdancer/files/
 DISTNAME=	gdancer-$(PORTVERSION)
 
-MAINTAINER=	netchild@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS Visualization plugin, displays dancing figures
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
