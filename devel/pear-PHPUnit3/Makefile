@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHPUnit
-PORTVERSION=	3.2.19
+PORTVERSION=	3.2.20
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 
@@ -295,6 +295,8 @@ TESTS=		Extensions/Database/DataSet/AllTests.php \
 		Extensions/Database/_files/XmlDataSets/DeleteAllOperationTest.xml \
 		Extensions/Database/_files/XmlDataSets/DeleteOperationResult.xml \
 		Extensions/Database/_files/XmlDataSets/DeleteOperationTest.xml \
+		Extensions/Database/_files/XmlDataSets/EmptyTableInsertResult.xml \
+		Extensions/Database/_files/XmlDataSets/EmptyTableInsertTest.xml \
 		Extensions/Database/_files/XmlDataSets/FilteredTestComparison.xml \
 		Extensions/Database/_files/XmlDataSets/FilteredTestFixture.xml \
 		Extensions/Database/_files/XmlDataSets/FlatXmlDataSet.xml \
