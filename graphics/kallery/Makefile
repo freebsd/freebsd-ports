@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	kallery
-PORTVERSION=	1.0.7a
-PORTREVISION=	9
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics www kde
 MASTER_SITES=	http://kallery.kdewebdev.org/releases/
 
 MAINTAINER=	metrol@metrol.net
 COMMENT=	An image gallery generator for KDE
 
-LIB_DEPENDS=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
-
-BROKEN=		does not build
+LIB_DEPENDS=	MagickCore.1:${PORTSDIR}/graphics/ImageMagick
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
+INSTALLS_ICONS=	yes
 
 post-patch:
 .if !defined(NOPORTDOCS)
