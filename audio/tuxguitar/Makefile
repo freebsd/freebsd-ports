@@ -8,7 +8,7 @@
 
 PORTNAME=	tuxguitar
 DISTVERSION=	1.0-rc4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
@@ -30,6 +30,7 @@ USE_JAVA=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 JAVA_VERSION=	1.4+
+JAVA_VENDOR=	bsdjava sun ibm blackdown
 
 .if !defined(WITHOUT_MAN)
 MAN1=		tuxguitar.1
