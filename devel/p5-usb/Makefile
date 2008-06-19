@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-usb
 # Date created:		2007-05-05
-# Whom:			Jason Bacon <bacon@smithers.neuro.mcw.edu>
+# Whom:			Jason Bacon <jwbacon@tds.net>
 #
 # $FreeBSD$
 #
@@ -8,12 +8,12 @@
 PORTNAME=	usb
 PORTVERSION=	0.21
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://search.cpan.org/CPAN/authors/id/G/GW/GWADEJ/ \
+MASTER_SITES=	CPAN/Device \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Device-USB-${PORTVERSION}
 
-MAINTAINER=	bacon@smithers.neuro.mcw.edu
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Perl wrapper for libusb
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/5.8.8/Inline.pm:${PORTSDIR}/devel/p5-Inline
