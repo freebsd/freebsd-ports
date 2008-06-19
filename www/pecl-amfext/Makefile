@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	amfext
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.teslacore.it/projects/amfext/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	miwi
+MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
-EXTRACT_SUFX=	.zip
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
 MAINTAINER=	meritus@innervision.pl
@@ -20,7 +18,6 @@ COMMENT=	Implements encoding and decoding of AMF and AMF3 messages
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-USE_ZIP=	yes
 PHP_MODNAME=	amf
 
 CONFIGURE_ARGS=	--enable-amf
