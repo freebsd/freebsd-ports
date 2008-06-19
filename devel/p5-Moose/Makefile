@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.40
+PORTVERSION=	0.50
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
+MASTER_SITE_SUBDIR=	../by-authors/id/S/SA/SARTAK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -17,8 +17,7 @@ COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
-	p5-Class-MOP>=0.53:${PORTSDIR}/devel/p5-Class-MOP \
-	p5-Sub-Name>=0.02:${PORTSDIR}/devel/p5-Sub-Name \
+	p5-Class-MOP>=0.59:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
 
@@ -35,6 +34,15 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Recipe5.3 \
 	Moose::Cookbook::Recipe6.3 \
 	Moose::Cookbook::Recipe7.3 \
+	Moose::Cookbook::Recipe9.3 \
+	Moose::Cookbook::Recipe10.3 \
+	Moose::Cookbook::Recipe21.3 \
+	Moose::Cookbook::Recipe22.3 \
+	Moose::Cookbook::Snack::ArrayRef.3 \
+	Moose::Cookbook::Snack::BUILD.3 \
+	Moose::Cookbook::Snack::HashRef.3 \
+	Moose::Cookbook::Snack::Keywords.3 \
+	Moose::Cookbook::Snack::Perl5ObjsVsMooseObjs.3 \
 	Moose::Cookbook::Snack::Types.3 \
 	Moose::Cookbook::WTF.3 \
 	Moose::Meta::Attribute.3 \
@@ -42,6 +50,7 @@ MAN3=	Moose.3 \
 	Moose::Meta::Instance.3 \
 	Moose::Meta::Method.3 \
 	Moose::Meta::Method::Accessor.3 \
+	Moose::Meta::Method::Augmented.3 \
 	Moose::Meta::Method::Constructor.3 \
 	Moose::Meta::Method::Destructor.3 \
 	Moose::Meta::Method::Overriden.3 \
@@ -58,9 +67,11 @@ MAN3=	Moose.3 \
 	Moose::Meta::TypeCoercion::Union.3 \
 	Moose::Meta::TypeConstraint.3 \
 	Moose::Meta::TypeConstraint::Class.3 \
+	Moose::Meta::TypeConstraint::Enum.3 \
 	Moose::Meta::TypeConstraint::Parameterizable.3 \
 	Moose::Meta::TypeConstraint::Parameterized.3 \
 	Moose::Meta::TypeConstraint::Registry.3 \
+	Moose::Meta::TypeConstraint::Role.3 \
 	Moose::Meta::TypeConstraint::Union.3 \
 	Moose::Object.3 \
 	Moose::Role.3 \
