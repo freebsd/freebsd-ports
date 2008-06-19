@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.junoplay.com/files/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A snake game with 8 levels
 
 GNU_CONFIGURE=	yes

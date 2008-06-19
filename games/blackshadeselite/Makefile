@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/blackshadeselite/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Psychic Bodyguard FPS - protect the VIP
 
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \

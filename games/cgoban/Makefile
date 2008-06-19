@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	cgoban1
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Internet Go Server client and game editor
 
 USE_GMAKE=	yes

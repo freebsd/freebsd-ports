@@ -15,7 +15,7 @@ MASTER_SITES=	http://zevv.nl/code/game/ \
 DISTNAME=	game-src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A simple tetris-like game
 
 USE_SDL=	sdl image mixer

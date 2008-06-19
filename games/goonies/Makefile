@@ -14,7 +14,7 @@ MASTER_SITES=	http://goonies.jorito.net/download/ \
 DISTNAME=	${PORTNAME}_r${PORTVERSION:C/\./-/g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Remake of the 8 bit classic game 'The Goonies'
 
 USE_GMAKE=	yes

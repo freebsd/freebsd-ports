@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open source color profiler
 
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \

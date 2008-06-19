@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	vegastrike-source-${PORTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Opensource 3D space simulator
 
 RUN_DEPENDS=	${DATADIR}/vegastrike.ico:${PORTSDIR}/games/vegastrike-data

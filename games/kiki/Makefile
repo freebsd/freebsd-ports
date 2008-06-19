@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Kiki the nanobot is a 3-D puzzle game
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

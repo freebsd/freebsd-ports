@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		http://horus.comlab.uni-rostock.de/flynn/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A tiny system load meter for gkrellm
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2

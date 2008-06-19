@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simulation of falling sand and other materials
 
 USE_ZIP=	yes

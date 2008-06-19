@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	construo
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A fun construction toy
 
 GNU_CONFIGURE=	yes

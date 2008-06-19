@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyODE-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Python bindings for The Open Dynamics Engine
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode

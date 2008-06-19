@@ -12,7 +12,7 @@ MASTER_SITES=	http://mordred.dir.bg/biniax/ \
 		http://www.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-fullsrc
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Original logic game with arcade and tactics modes
 
 USE_SDL=	sdl mixer image

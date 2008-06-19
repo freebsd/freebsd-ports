@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://bram.creative4vision.nl/stormbaancoureur/download/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simulated obstacle course for automobiles
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

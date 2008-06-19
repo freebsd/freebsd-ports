@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Capitalize strings ("to WORK AS titles" becomes "To Work as Titles")
 
 PERL_CONFIGURE=	yes

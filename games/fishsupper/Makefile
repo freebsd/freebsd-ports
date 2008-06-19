@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Guide a cat across a series of rivers, jumping from log to log
 
 GNU_CONFIGURE=	yes

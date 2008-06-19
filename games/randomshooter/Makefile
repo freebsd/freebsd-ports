@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/
 DISTNAME=	randomshooter-${DISTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A simple shoot'em up with online scoring and replays
 
 USE_GMAKE=	yes

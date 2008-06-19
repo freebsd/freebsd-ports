@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		ftp://ftp.45.free.net/pub/catdoc/
 #		${MASTER_SITE_TEX_CTAN:S/$/support\/catdoc\//}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	MS Word/Excel converter to plain ASCII or TeX. TK viewer included
 
 GNU_CONFIGURE=	yes

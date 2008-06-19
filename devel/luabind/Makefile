@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library that helps you create bindings between C++ and Lua
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/python/detail/is_xxx.hpp:${PORTSDIR}/devel/boost-python

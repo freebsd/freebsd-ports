@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://bilious.homelinux.org/~paxed/brickshooter/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Push blocks on to the playing field, match block colors to remove them
 
 USE_SDL=	sdl mixer image

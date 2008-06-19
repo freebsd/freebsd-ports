@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A GUI for testing CD/DVD quality and transfer rate
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

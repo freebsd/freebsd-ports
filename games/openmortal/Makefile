@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A parody of the once popular coin-up fighting game, Mortal Kombat
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

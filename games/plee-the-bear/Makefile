@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-light
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D platform jump and run game
 
 LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost

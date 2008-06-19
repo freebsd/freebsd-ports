@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ospace
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	On-line strategy game
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game

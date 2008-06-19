@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	pouetChess_0.11_src
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An open-source 3D chess game
 
 USE_SDL=	sdl image

@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A screen capture utility that utilizes Imlib2
 
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib

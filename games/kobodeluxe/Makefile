@@ -13,7 +13,7 @@ MASTER_SITES=	http://olofson.net/kobodl/download/ \
 		http://www.amdmi3.ru/distfiles/
 DISTNAME=	KoboDeluxe-${DISTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An SDL port of the scrolling game XKobo
 
 USE_BZIP2=	yes

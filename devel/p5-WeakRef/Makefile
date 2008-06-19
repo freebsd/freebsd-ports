@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/L/LU/LUKKA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An API to the Perl weak references
 
 PERL_CONFIGURE=	yes

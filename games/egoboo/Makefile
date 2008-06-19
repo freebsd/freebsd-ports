@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME:S/-/-data-/}${EXTRACT_SUFX}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A 3D dungeon crawling adventure in the spirit of NetHack
 
 USE_SDL=	sdl ttf mixer image

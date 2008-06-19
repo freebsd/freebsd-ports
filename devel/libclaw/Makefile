@@ -10,7 +10,7 @@ PORTVERSION=	1.5.2b
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ Library Absolutely Wonderful
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

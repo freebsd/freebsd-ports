@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://qt.osdn.org.ua/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Qt-version of the NetWalk game
 
 USE_QT_VER=	4

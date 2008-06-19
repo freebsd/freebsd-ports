@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/hangman/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Challenge your spelling skills in the old western style
 
 GNU_CONFIGURE=	yes

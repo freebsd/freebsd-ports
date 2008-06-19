@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A computer game visualizing quantum mechanics
 
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \

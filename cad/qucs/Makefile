@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	cad science
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical circuit design and simulation tool
 
 USE_QT_VER=	3

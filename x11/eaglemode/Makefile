@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic zoomable user environment
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

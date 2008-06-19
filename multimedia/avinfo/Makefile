@@ -13,7 +13,7 @@ MASTER_SITES=	http://shounen.ru/soft/avinfo/ \
 		http://www.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A utility for displaying AVI header information
 
 WRKSRC=		${WRKDIR}/src

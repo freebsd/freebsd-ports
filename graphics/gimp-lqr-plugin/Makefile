@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://liquidrescale.wikidot.com/local--files/en:download-page/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Liquid rescale GIMP plug-in
 
 LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app \

@@ -12,7 +12,7 @@ MASTER_SITES=	http://gottcode.org/tetzle/ \
 		http://www.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Jigsaw puzzle with tetrominoes
 
 USE_BZIP2=	yes

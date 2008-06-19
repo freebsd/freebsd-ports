@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A rewritten engine for Flashback
 
 USE_BZIP2=	yes

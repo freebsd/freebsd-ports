@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-linux-src-${PORTVERSION}5${EXTRACT_SUFX} \
 		${PORTNAME}-linux-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tomato-smashing, Q-Bert style
 
 WRKSRC=		${WRKDIR}/tomatoes-${PORTVERSION}5

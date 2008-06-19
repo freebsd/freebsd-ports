@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	interlogic
 DISTNAME=	interLOGIC-src-${PORTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Move colored balls through the maze connecting it with each other
 
 USE_SDL=	image sdl

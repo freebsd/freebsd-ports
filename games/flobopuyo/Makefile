@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ios-software.com/flobopuyo/ \
 		http://www.amdmi3.ru/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the famous PuyoPuyo
 
 USE_BISON=	build

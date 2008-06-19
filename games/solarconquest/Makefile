@@ -15,7 +15,7 @@ MASTER_SITES=	http://games.sajthelper.com/ \
 MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	SolarConquest
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Space 2D action game with plenty of shooting
 
 USE_SDL=	sdl mixer image

@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${PORTNAME}-data-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game destined to improve the knowledge of Andalusia
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

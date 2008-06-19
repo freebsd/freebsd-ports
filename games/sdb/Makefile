@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://sdb.gamecreation.org/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic overhead shooter
 
 USE_SDL=	mixer image sdl

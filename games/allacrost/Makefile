@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	allacrost_demo_source_${PORTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A single player 2D role-playing game
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libluabind.a:${PORTSDIR}/devel/luabind

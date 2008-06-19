@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ri-li
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Drive a toy wood train in many levels - snake-like arcade game
 
 USE_AUTOTOOLS=	automake:19

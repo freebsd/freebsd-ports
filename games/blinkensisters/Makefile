@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	LostPixels-${PORTVERSION}-source
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Parallax-style 2D scrolling platform game
 
 USE_SDL=	sdl image ttf

@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A side scrolling shooter game starring a steamboat on the sea
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game

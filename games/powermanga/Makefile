@@ -13,7 +13,7 @@ MASTER_SITES=	http://linux.tlk.fr/games/Powermanga/download/ \
 		http://www.amdmi3.ru/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An arcade 2D shoot-em-up
 
 USE_XORG=	xext xxf86dga

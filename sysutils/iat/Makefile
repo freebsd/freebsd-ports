@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Converter of many types of CD-ROM image file formats into ISO-9660
 
 USE_BZIP2=	yes

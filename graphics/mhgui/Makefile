@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	makehuman
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GUI widget library for MakeHuman
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
