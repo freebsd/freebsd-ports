@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyx12
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,6 +33,6 @@ SUB_FILES=	pkg-deinstall
 post-install:
 	${WRKSRC}/bin/x12_build_pkl.py ${PREFIX}/share/pyx12/map/
 	cd ${WRKSRC}/bin && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
-	cd ${WRKSRC}/bin && ${INSTALL_MAN} ${MAN5} ${MAN1PREFIX}/man/man5
+	cd ${WRKSRC}/bin && ${INSTALL_MAN} ${MAN5} ${MAN5PREFIX}/man/man5
 
 .include <bsd.port.mk>
