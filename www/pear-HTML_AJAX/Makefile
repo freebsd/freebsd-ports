@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_AJAX
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	www devel pear
 
 MAINTAINER=	numisemis@yahoo.com
@@ -37,6 +37,7 @@ EXAMPLES=	guestbook/auto_server.php \
 		support/livesearch.class.php \
 		support/post_tester.php \
 		support/test.class.php \
+		support/test.xml \
 		support/test2.class.php \
 		support/testHaa.class.php \
 		support/xml.class.php \
@@ -76,6 +77,17 @@ EXAMPLES=	guestbook/auto_server.php \
 		xmlserver.php \
 		xml_usage.php
 _EXAMPLESDIR=	examples
+
+DATA=		Alias.js IframeXHR.js clientPool.js \
+		Compat.js Loading.js dhtmlHistory.js \
+		Dispatcher.js Main.js HTML_AJAX.js \
+		Queue.js util.js HTML_AJAX_lite.js \
+		Request.js HttpClient.js \
+		behavior/behavior.js behavior/cssQuery-p.js \
+		serializer/JSON.js serializer/haSerializer.js\
+		serializer/UrlSerializer.js serializer/phpSerializer.js
+
+_DATADIR=	js
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
