@@ -1,6 +1,6 @@
---- Makefile.freebsd.orig	Sun Jul 15 16:09:28 2007
-+++ Makefile.freebsd	Wed Jul 18 20:23:58 2007
-@@ -3,18 +3,18 @@
+--- Makefile.freebsd.orig	2007-07-15 17:09:28.000000000 +0300
++++ Makefile.freebsd	2008-05-13 11:56:53.000000000 +0300
+@@ -3,18 +3,14 @@
  # Edit the following section to adjust the options
  # to fit into your operating system / distribution
  #######################################################
@@ -8,21 +8,34 @@
 -CC=/usr/bin/gcc
 -CFLAGS=-I. -I/usr/X11R6/include -I/usr/local/include/freetype2 -I/usr/local/include/freetype2/config -I/usr/local/include/libpng -I/usr/local/include -I/usr/include
 -LDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib -lXft -lX11 -lfreetype -lXrender -lfontconfig -lpng -lz -lm -lcrypt -lXmu -lpng -ljpeg
-+CXX?=/usr/bin/g++
-+CC?=/usr/bin/gcc
-+CFLAGS+=-I${LOCALBASE}/include `freetype-config --cflags` `libpng-config --cflags`
-+LDFLAGS=-L${LOCALBASE}/lib `freetype-config --libs` `libpng-config --libs` -lXft -lX11 -lXrender -lfontconfig -lz -lm -lcrypt -lXmu -ljpeg
- CUSTOM=-DNEEDS_BASENAME
- .ifdef(USE_PAM)
-   LDFLAGS+= -lpam
-   CUSTOM+= -DUSE_PAM
- .endif
+-CUSTOM=-DNEEDS_BASENAME
+-.ifdef(USE_PAM)
+-  LDFLAGS+= -lpam
+-  CUSTOM+= -DUSE_PAM
+-.endif
 -PREFIX=/usr
 -CFGDIR=/etc
 -MANDIR=/usr/share/man
++CXX?=/usr/bin/g++
++CC?=/usr/bin/gcc
++CFLAGS+=-I${LOCALBASE}/include `freetype-config --cflags` `libpng-config --cflags`
++LDFLAGS=-L${LOCALBASE}/lib `freetype-config --libs` `libpng-config --libs` -lXft -lX11 -lXrender -lfontconfig -lz -lm -lcrypt -lXmu -ljpeg -lpam
++CUSTOM=-DNEEDS_BASENAME -DUSE_PAM
 +PREFIX?=${LOCALBASE}
 +CFGDIR=$(PREFIX)/etc
 +MANDIR=$(MANPREFIX)/man
  DESTDIR=
  #######################################################
+ 
+@@ -24,10 +20,7 @@
+ DEFINES=-DPACKAGE=\"$(NAME)\" -DVERSION=\"$(VERSION)\" \
+ 		-DPKGDATADIR=\"$(PREFIX)/share/slim\" -DSYSCONFDIR=\"$(CFGDIR)\"
+ 
+-OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o panel.o
+-.ifdef USE_PAM
+-  OBJECTS+=PAM.o 
+-.endif
++OBJECTS=jpeg.o png.o main.o image.o numlock.o cfg.o switchuser.o app.o panel.o PAM.o 
+ 
+ all: slim
  
