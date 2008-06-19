@@ -1,4 +1,4 @@
-# New ports collection makefile for:	pecl-ssh2
+# New ports collection makefile for:	pecl-svn
 # Date created:			20051220
 # Whom:				Alex Kiesel <kiesel@schlund.de>
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	svn
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
