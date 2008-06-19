@@ -7,7 +7,7 @@
 
 PORTNAME=	socks5
 PORTVERSION=	1.0.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net security
 MASTER_SITES=	http://freeware.sgi.com/source/socks5/
 DISTNAME=	socks5-v1.0r11
