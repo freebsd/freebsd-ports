@@ -10,7 +10,7 @@
 
 PORTNAME=	rxvt
 PORTVERSION=	2.6.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	x11
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ COMMENT=	A low memory usage xterm replacement that supports color
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
+CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-ttygid \
 		--with-xpm --enable-xpm-background --enable-transparency \
 		--with-xpm-includes=${LOCALBASE}/include/X11 \
 		--with-xpm-library=${LOCALBASE}/lib
