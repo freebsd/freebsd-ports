@@ -29,6 +29,8 @@ OPTIONS+=	FOX14 "FOX1.4 support (FOX1.6 by default)" off
 
 .if defined(WITH_FOX10)
 BROKEN=		does not compile
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 FOX_LIB_VER=	1.0.0
 LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox10

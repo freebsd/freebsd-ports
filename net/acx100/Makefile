@@ -60,6 +60,8 @@ IGNORE=		This port requires newer kernel sources that include /sys/dev/owi/if_ie
 
 .if ${OSVERSION} >= 601104
 BROKEN=		Does not compile on FreeBSD >= 6.x
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 .endif
 
 .include <bsd.port.post.mk>

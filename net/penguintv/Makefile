@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/p
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BROKEN=		leaves egg file behind on deinstall
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 WRKSRC=		${WRKDIR}/PenguinTV-${PORTVERSION}
 

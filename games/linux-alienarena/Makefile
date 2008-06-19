@@ -18,6 +18,8 @@ COMMENT=	Alien Arena 2006 (Linux version)
 RUN_DEPENDS=	${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
 
 BROKEN=		needs missing/outdated Linux dependencies (need new linux_compat port and FreeBSD 7); use native instead for now
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_ZIP=	yes
 USE_LINUX=	yes

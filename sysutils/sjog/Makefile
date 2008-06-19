@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userland daemon for Sony Vaio Jog Dial
 
 BROKEN=		Does not build
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 ONLY_FOR_ARCHS=	i386
 USE_AUTOTOOLS=	automake:14 autoconf:213

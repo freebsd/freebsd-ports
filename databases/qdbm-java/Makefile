@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	-java
 COMMENT=	Java API for QDBM
 
 BROKEN=		fails to install
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 SLAVEPORT=	java
 

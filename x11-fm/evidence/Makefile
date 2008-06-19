@@ -18,6 +18,8 @@ BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 BROKEN=		Does not compile
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_FAM=	yes
 USE_GMAKE=	yes

@@ -21,6 +21,8 @@ RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 		qt4-sqlite-plugin>=0:${PORTSDIR}/databases/qt4-sqlite3-plugin
 
 BROKEN=		checksum fails
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DCMAKE_C_COMPILER:STRING='${CC}' \

@@ -26,6 +26,8 @@ USE_LDCONFIG=	yes
 PLIST=		${.CURDIR}/pkg-plist
 
 BROKEN=	Fails to configure (can not find ecore-config)
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 XMMS2_SLAVE=	ruby-ecore
 

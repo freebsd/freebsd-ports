@@ -21,6 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/lisp:${PORTSDIR}/lang/cmucl
 NO_BUILD=	yes
 
 BROKEN=		Does not compile (dumps core)
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 pre-install:
 	(cd ${WRKDIR}/screamer && ${LOCALBASE}/bin/lisp -eval '(load "${FILESDIR}/build.lisp")')

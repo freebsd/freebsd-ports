@@ -11,6 +11,8 @@ PKGNAMESUFFIX=  -toaster
 MAINTAINER=     scrappy@freebsd.org
 
 BROKEN=		Conflicting MySQL dependencies
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 CONFLICTS=      dtc-[0-9]*
 

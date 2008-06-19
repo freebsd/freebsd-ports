@@ -16,6 +16,8 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
 
 BROKEN=		does not compile with new speex
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 BUILD_DEPENDS=	\
 		pkg-config:${PORTSDIR}/devel/pkg-config

@@ -17,6 +17,8 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A declarative debugger for Haskell 98
 
 BROKEN=		Does not build with recent GHC
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

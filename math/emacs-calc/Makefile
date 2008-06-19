@@ -20,6 +20,8 @@ RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 INFO=		calc
 

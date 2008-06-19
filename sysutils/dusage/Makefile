@@ -17,6 +17,8 @@ MAINTAINER=	CPE1704TKS@bellsouth.net
 COMMENT=	Report about disk space in use, change since last run, etc
 
 BROKEN=		Unfetchable
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 NO_BUILD=	yes
 USE_PERL5=	yes

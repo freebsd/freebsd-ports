@@ -17,6 +17,8 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Tcl/Tk binding for Haskell
 
 BROKEN=		Needs updating to build with latest GHC
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 BUILD_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}

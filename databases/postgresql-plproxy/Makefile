@@ -18,6 +18,8 @@ COMMENT=	PL/Proxy is database partitioning system
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
 BROKEN=		Does not build
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_PGSQL=	yes
 USE_GMAKE=	yes

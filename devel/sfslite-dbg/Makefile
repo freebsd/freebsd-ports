@@ -12,5 +12,7 @@ LIB_DEPENDS+=	 dmalloc:${PORTSDIR}/devel/dmalloc
 PKG_INSTALL=     ${MASTERDIR}/pkg-install
 
 BROKEN=		does not install
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 .include "${MASTERDIR}/Makefile"

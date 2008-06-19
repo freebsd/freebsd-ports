@@ -17,6 +17,8 @@ COMMENT=	A bomberman-like multiplayer game
 LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib
 
 BROKEN=		Does not compile with the newer clanCore
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

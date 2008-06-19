@@ -19,6 +19,8 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/artwiz-fonts:${PORTSDIR}/x11-fonts/artwiz-fonts
 
 BROKEN=		Does not compile
+#DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 DEPRECATED=	"Development ceased"
 

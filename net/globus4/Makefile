@@ -24,6 +24,8 @@ BUILD_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 
 BROKEN=		Does not build
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 INSTALLER=	${DISTNAME}${EXTRACT_SUFX}
 BUNDLE_SUFX=	.tar.gz

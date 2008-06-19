@@ -27,6 +27,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		CEGUIBase.0:${PORTSDIR}/graphics/cegui
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

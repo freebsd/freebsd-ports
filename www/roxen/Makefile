@@ -19,6 +19,8 @@ PKGMESSAGE=     ${WRKSRC}/MESSAGE
 STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/roxen.sh.sample
 
 BROKEN=		does not configure
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" ${FILESDIR}/roxen.sh.in > \

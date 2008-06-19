@@ -23,6 +23,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk/Gdk/ImlibImage.pm:${PORTSDIR}/x11-too
 		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 BROKEN=		fails to install
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 USE_GNOME=	gnomelibs
 PERL_CONFIGURE=	yes

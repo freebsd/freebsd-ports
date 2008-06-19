@@ -18,6 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler and base libs of Polytechnique Montreal Modula-3 distribution
 
 BROKEN=		does not build
+DEPRECATED=	Has been broken for more than 6 months
+EXPIRATION_DATE=2008-09-19
 
 DIST_SUBDIR=	pm3
 WRKSRC=		${WRKDIR}/pm3-base-${PORTVERSION}
