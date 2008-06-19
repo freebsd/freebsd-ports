@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # PROVIDE: spampd
-# REQUIRE: login
+# REQUIRE: LOGIN
 # BEFORE: mail
 # KEYWORD: shutdown
 #
