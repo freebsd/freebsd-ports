@@ -4535,7 +4535,6 @@ gtkam		ports/graphics/gtkam
 gtkatlantic	ports/games/gtkatlantic
 gtkballs	ports/games/gtkballs
 gtkbe		ports/x11-themes/gtkbe
-gtkcairo	ports/graphics/gtkcairo
 gtkchtheme	ports/x11/gtkchtheme
 gtkdatabox2	ports/x11-toolkits/gtkdatabox2
 gtkdiff		ports/textproc/gtkdiff
