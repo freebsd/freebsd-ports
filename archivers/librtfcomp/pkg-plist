@@ -1,0 +1,10 @@
+bin/fromrtf
+bin/testrtf
+bin/tortf
+include/rtfcomp/rtfcomp.h
+include/rtfcomp/errors.h
+lib/librtfcomp.a
+lib/librtfcomp.la
+lib/librtfcomp.so
+lib/librtfcomp.so.0
+@dirrm include/rtfcomp
