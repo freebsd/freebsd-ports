@@ -117,6 +117,7 @@
     SUBDIR += ppmd
     SUBDIR += ppmd-7z
     SUBDIR += ppunpack
+    SUBDIR += py-librtfcomp
     SUBDIR += py-lzma
     SUBDIR += py-tarfile
     SUBDIR += rar
