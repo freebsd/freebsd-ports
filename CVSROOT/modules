@@ -16020,6 +16020,7 @@ stonx		ports/emulators/stonx
 stormbaancoureur	ports/games/stormbaancoureur
 stow		ports/sysutils/stow
 stowES		ports/sysutils/stowES
+stp		ports/math/stp
 str		ports/devel/str
 strace		ports/devel/strace
 stransball2	ports/games/stransball2
