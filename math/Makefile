@@ -366,6 +366,7 @@
     SUBDIR += spooles-mpich
     SUBDIR += ss
     SUBDIR += stepulator
+    SUBDIR += stp
     SUBDIR += suitesparse
     SUBDIR += superlu
     SUBDIR += superlu_mt
