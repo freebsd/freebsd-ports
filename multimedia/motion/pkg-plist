@@ -3,9 +3,3 @@ bin/motion
 etc/motion.conf.sample
 @exec [ -f %B/motion.conf ] || cp %B/%f %B/motion.conf
 etc/rc.d/motion
-%%EXAMPLESDIR%%/motion-dist.conf
-%%EXAMPLESDIR%%/thread1.conf
-%%EXAMPLESDIR%%/thread2.conf
-%%EXAMPLESDIR%%/thread3.conf
-%%EXAMPLESDIR%%/thread4.conf
-@dirrm %%EXAMPLESDIR%%
