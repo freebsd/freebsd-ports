@@ -21,16 +21,22 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 
 PLIST_FILES=	bin/biew \
-		share/biew/assembly.skn \
-		share/biew/biew.hlp \
-		share/biew/golded.skn \
-		share/biew/insight.skn \
-		share/biew/standard.skn
-PLIST_DIRS=	share/biew
+		%%DATADIR%%/assembly.skn \
+		%%DATADIR%%/biew.hlp \
+		%%DATADIR%%/golded.skn \
+		%%DATADIR%%/insight.skn \
+		%%DATADIR%%/standard.skn
+PLIST_DIRS=	%%DATADIR%%
 
 MAN1=		biew.1
 PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
 		file_ini.ru licence.en licence.ru release.txt unix.txt
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' ${WRKSRC}/configure
@@ -56,4 +62,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
