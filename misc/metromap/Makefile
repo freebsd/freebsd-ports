@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://metromap.antex.ru/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A simple application for finding paths in different subways maps
 
 USE_PYTHON=	yes

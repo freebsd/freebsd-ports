@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://liblqr.wikidot.com/local--files/en:download-page/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An easy to use C/C++ seam carving library
 
 GNU_CONFIGURE=	yes

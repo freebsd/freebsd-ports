@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/connectfive
 DISTNAME=	connectFive
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Place five pieces in a row on a 3d board
 
 MAKEFILE=	Makefile.linux

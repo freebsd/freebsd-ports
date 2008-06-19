@@ -12,7 +12,7 @@ MASTER_SITES=	http://user.ecc.u-tokyo.ac.jp/~g650192/glsfcave/ \
 		http://www.amdmi3.ru/distfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Control a ribbon to avoid hitting walls
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

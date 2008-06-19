@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sharp3d
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D modeller for organic shapes
 
 LIB_DEPENDS=	gtkglextmm-x11-1.2.0:${PORTSDIR}/x11-toolkits/gtkglextmm \

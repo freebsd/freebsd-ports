@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.rogoyski.com/adam/programs/hexedit/ \
 		http://www.amdmi3.ru/distfiles/
 DISTNAME=	hexedit-${PORTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Full screen text mode Hex editor using the [n]curses library
 
 GNU_CONFIGURE=	yes

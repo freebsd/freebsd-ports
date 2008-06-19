@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Application for parametrical modeling of 3D humanoid characters
 
 LIB_DEPENDS=	animorph.0:${PORTSDIR}/graphics/animorph \

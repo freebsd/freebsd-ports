@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.users.waitrose.com/~thunor/pipepanic/dload/ \
 MASTER_SITE_SUBDIR=	ehaupt
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A pipe connecting game using libSDL
 
 USE_SDL=	sdl

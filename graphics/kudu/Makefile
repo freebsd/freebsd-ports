@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A 3D skeletal animation tool, powered by GTK+ and OpenGL
 
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext

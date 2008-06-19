@@ -13,7 +13,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.xbill.org/download/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Save your computers from the evil clutches of Bill
 
 GNU_CONFIGURE=	yes

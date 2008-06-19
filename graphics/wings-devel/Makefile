@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A polygon mesh modeler written in Erlang
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \

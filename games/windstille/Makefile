@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS CENKES
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Classic 2D jump-n-shoot game
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \

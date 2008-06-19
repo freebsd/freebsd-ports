@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gamediameter
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arcade-style game with elements of economy and adventure
 
 BUILD_DEPENDS=	guichan>=0.7.1:${PORTSDIR}/devel/guichan

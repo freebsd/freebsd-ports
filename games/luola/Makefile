@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		nostalgia-1.1${EXTRACT_SUFX}
 DIST_SUBDIR=	luola
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Multiplayer Cave-flying game
 
 GNU_CONFIGURE=	yes

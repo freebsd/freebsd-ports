@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://samm.kiev.ua/bruteblock/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Software for blocking bruteforce attacks with ipfw
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

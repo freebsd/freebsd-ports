@@ -13,7 +13,7 @@ MASTER_SITES=	http://spring.clan-sy.com/dl/ \
 		http://www.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	TA Spring is a project aiming to create a new RTS
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \

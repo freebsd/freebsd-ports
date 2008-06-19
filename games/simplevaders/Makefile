@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://dusted.dk/download/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A Space-Invaders like 2D space shooter
 
 USE_BZIP2=	yes

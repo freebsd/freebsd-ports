@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	blobAndConquer-${DISTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A somewhat violent 3D action game
 
 USE_SDL=	sdl mixer image ttf

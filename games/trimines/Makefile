@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.freewebs.com/trimines/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Mine sweeper game that uses triangles instead of squares
 
 USE_SDL=	sdl

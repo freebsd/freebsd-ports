@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://download.gnu.org.ua/pub/release/cflow/
 DISTNAME=	cflow-${PORTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tool to chart control flow within the C program
 
 CONFLICTS=	cflow-[0-9]*

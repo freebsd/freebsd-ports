@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.emma-soft.com/games/amoebax/download/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cute and addictive Puyo Puyo like game
 
 USE_BZIP2=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Platform game featuring buggers equipped with weapons
 
 USE_PYTHON_BUILD=	yes

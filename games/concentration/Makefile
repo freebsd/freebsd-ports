@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/concentration/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Find all matching pairs of icons as fast as possible
 
 GNU_CONFIGURE=	yes

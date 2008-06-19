@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		http://www.braingames.getput.com/f1spirit/downloads/
 DISTNAME=	f1spirit-linux
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Remake of classic F1 Spirit racing game
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl

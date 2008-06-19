@@ -14,7 +14,7 @@ MASTER_SITES=	http://wormsofprey.org/download/ \
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
 		${PORTNAME}data-${DATAVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free real-time Worms game
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend

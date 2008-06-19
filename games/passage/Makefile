@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/hcsoftware
 DISTNAME=	Passage_v${PORTVERSION}_UnixSource
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An experimental video game by Jason Rohrer
 
 USE_SDL=	sdl

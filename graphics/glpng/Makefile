@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.wyatt100.freeserve.co.uk/ \
 		http://www.amdmi3.ru/distfiles/
 DISTNAME=	glpng
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library to easily load PNG files as an OpenGL textures
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

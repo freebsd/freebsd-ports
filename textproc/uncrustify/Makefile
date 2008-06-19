@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Highly configurable source code beautifier
 
 GNU_CONFIGURE=	yes

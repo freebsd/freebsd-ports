@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		http://braingames.bugreport.nl/stransball2/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:C/\.//}-linux
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A sequel to Transball and Transball 2 THRUST-type games
 
 LIB_DEPENDS=	SGE.0:${PORTSDIR}/devel/sdl_sge

@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	StructureSynth-Source-v${PORTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Rule-based 3D structure generator
 
 USE_ZIP=	yes

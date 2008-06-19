@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	pmt
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An optimizer for PNG files
 
 USE_BZIP2=	yes

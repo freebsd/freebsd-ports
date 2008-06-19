@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/volleyball/descargas/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A game similar to GNU Arcade Volleyball
 
 USE_SDL=	sdl image mixer

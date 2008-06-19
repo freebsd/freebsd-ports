@@ -15,7 +15,7 @@ DISTNAME=	TnL-source-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME:S/source/data/}${EXTRACT_SUFX}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Futuristic action flight simulator and realtime strategy game
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiovmall.so:${PORTSDIR}/lang/io

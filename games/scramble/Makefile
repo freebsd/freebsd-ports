@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/scramble/ \
 		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	From 6 letters you are to create as many words as you can
 
 GNU_CONFIGURE=	yes

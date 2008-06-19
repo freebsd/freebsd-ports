@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 PKGNAMESUFFIX=	-data
 DISTNAME=	vegastrike-linux-${PORTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Vega Strike data files
 
 USE_BZIP2=	yes

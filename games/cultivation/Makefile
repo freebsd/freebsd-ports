@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	Cultivation_${PORTVERSION}_UnixSource
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Unique game of conflict and cooperation in a gardening community
 
 LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio \

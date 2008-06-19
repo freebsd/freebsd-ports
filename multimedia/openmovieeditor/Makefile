@@ -10,7 +10,7 @@ PORTVERSION=	0.0.20080523
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple non-linear movie editor
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \

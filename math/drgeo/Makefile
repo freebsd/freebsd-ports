@@ -12,7 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ofset
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A GTK interactive geometry sofware
 
 LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
