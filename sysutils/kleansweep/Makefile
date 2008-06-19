@@ -7,20 +7,29 @@
 
 PORTNAME=	kleansweep
 PORTVERSION=	0.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://linux.bydg.org/~yogin/
 
 MAINTAINER=	thomas.sander@gmx.de
 COMMENT=	KleanSweep allows you to reclaim disk space by finding unneeded files
 
-BROKEN=		does not compile (scons failure)
-
 USE_BZIP2=	yes
-USE_SCONS=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
+
+post-extract:
+	(cd ${WRKSRC} && ${TAR} xzf admin/scons-mini.tar.bz2)
+
+do-configure:
+	(cd ${WRKSRC} && ./scons configure prefix=${PREFIX})
+
+do-build:
+	(cd ${WRKSRC} && ./scons)
+
+do-install:
+	(cd ${WRKSRC} && ./scons install)
 
 .include <bsd.port.mk>
