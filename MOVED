@@ -3507,3 +3507,4 @@ net/vls|||2008-06-18|Has expired: Does not build with current libdvbpsi. Develop
 net-mgmt/nsc|||2008-06-18|Has expired: Project abandoned
 security/amavisd|||2008-06-18|Has expired: depends on misc/compat3x, which has security problems; old version
 games/linux-goodway|||2008-06-18|A tool for a port that was removed
+graphics/gtkcairo|||2008-06-19|Unused, unfetchable, obsolete

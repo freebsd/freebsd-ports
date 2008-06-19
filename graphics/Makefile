@@ -271,7 +271,6 @@
     SUBDIR += gstreamer-plugins-swfdec
     SUBDIR += gthumb
     SUBDIR += gtkam
-    SUBDIR += gtkcairo
     SUBDIR += gtkdps
     SUBDIR += gtkfig
     SUBDIR += gtkgraph
