@@ -7,6 +7,7 @@
 
 PORTNAME=	lapack
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/
 DISTFILES=	lapack-${PORTVERSION}.tgz manpages-${PORTVERSION}.tgz
@@ -44,9 +45,6 @@ BLAS=	-L${LOCALBASE}/lib -lblas
 
 pre-fetch:
 	@${ECHO} "You can override FC and FFLAGS on the command line."
-.if !defined(ENABLE_TESTING) || ${ENABLE_TESTING} != "YES"
-	@${ECHO} "Set ENABLE_TESTING to YES to enable testing and timing."
-.endif
 
 .include "${FILESDIR}/manpages"
 
@@ -101,5 +99,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/manpages/man/manl/[d-l]*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${WRKSRC}/manpages/man/manl/[m-s]*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${WRKSRC}/manpages/man/manl/[t-z]*.l ${PREFIX}/man/manl
+
+regression-test: build
+	@${ECHO_CMD} "Testing static lapack library"
+	cd ${WRKSRC}/TESTING ; ${MAKE} ${.MAKEFLAGS} ARCH=ar
 
 .include <bsd.port.post.mk>
