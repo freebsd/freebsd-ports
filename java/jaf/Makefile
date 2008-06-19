@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	jaf
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	java devel
 MASTER_SITES=	#
-DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}-fr
+DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}
 
 MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	JavaBeansTM Activation Framework
@@ -22,7 +21,7 @@ JAVA_VERSION=	1.4+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 NO_CDROM=	See the license
-DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=jaf-1.1-fr-oth-JPR&SiteId=JSC&TransactionId=noreg
+DOWNLOAD_URL=	https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=jaf-1.1.1-fcs-oth-JPR@CDS-CDS_Developer
 
 .if !defined(NOPORTDOCS)
 DOCFILES1=	JAF-1.1.pdf JAF-1.1.ps JAF-1.1-changes.txt javadocs
