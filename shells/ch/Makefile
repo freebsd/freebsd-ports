@@ -7,7 +7,7 @@
 
 PORTNAME=	ch
 PORTVERSION=	5.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	http://www.softintegration.com/download/software/release/FreeBSD/
 DISTNAME=	chstandard-${PORTVERSION}.freebsd5.1
@@ -34,6 +34,7 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${TAR} zxf ${WRKSRC}/ch.bin -C ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${CHOWN} -R -h ${BINOWN}:${BINGRP} ${DATADIR}
 
 post-install:
 	@if ${GREP} -q '${PREFIX}/bin/ch' /etc/shells; then ${TRUE}; else \
