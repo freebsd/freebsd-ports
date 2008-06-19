@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nvidia-settings
-PORTVERSION=	1.0
-PORTREVISION=	15
+PORTVERSION=	173.14.09
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_NVIDIA:S,$,XFree86/${PORTNAME}/,} \
-		${MASTER_SITE_LOCAL:S,$,bland/,}
+MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings/ \
+		ftp://download1.nvidia.com/XFree86/nvidia-settings/
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Display Control Panel for X NVidia driver
@@ -28,6 +27,8 @@ MAKE_ENV=	ROOT=${PREFIX} \
 		X11R6_LIB_DIR=${LOCALBASE}/lib \
 		X11R6_INC_DIR=${LOCALBASE}/include \
 		LDFLAGS="${PTHREAD_LIBS}"
+
+WRKSRC=		${WRKDIR}/nvidia-settings-1.0
 
 pre-build:
 	cd ${WRKSRC}/src/libXNVCtrl; \
