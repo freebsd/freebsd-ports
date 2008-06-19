@@ -7,19 +7,21 @@
 
 PORTNAME=	liborigin
 PORTVERSION=	20070926
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	Tools for importing OriginLab .OPJ files
 
-CONFLICTS=	LabPlot-[0-9]*
+CONFLICTS=	LabPlot-1.5.*
 
 PLIST_FILES=	bin/opj2dat \
-		include/OPJFile.h \
-		include/tree.hh \
+		include/${PORTNAME}/OPJFile.h \
+		include/${PORTNAME}/tree.hh \
 		lib/liborigin.so \
 		lib/liborigin.so.0
+PLIST_DIRS=	include/${PORTNAME}
 
 USE_LDCONFIG=	yes
 
@@ -31,8 +33,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/opj2dat ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/OPJFile.h ${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/tree.hh ${PREFIX}/include/
+	${MKDIR} ${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/OPJFile.h ${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/tree.hh ${PREFIX}/include/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/liborigin.so.0.0.3 ${PREFIX}/lib/liborigin.so.0
 	${LN} -fs ${PREFIX}/lib/liborigin.so.0 ${PREFIX}/lib/liborigin.so
 
