@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gozerbot
-PORTVERSION=	0.8.0.4
-PORTREVISION=	1
+PORTVERSION=	0.8.1.1
 CATEGORIES=	irc python
 MASTER_SITES=	http://gozerbot.org/media/tarball/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -26,9 +25,6 @@ OPTIONS=	XMPP  "Jabber functions" off \
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 MAN1=		gozerbot.1
-DOCS=BASIC COLLECTIVE FAQ FLEET FLOW JABBER \
-	OPER PROGRAMPLUGIN RELAY RSS \
-	THNX TOURDECODE UDP UPGRADE USER WEBSERVER
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 
@@ -37,10 +33,8 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+	${CP} ${WRKSRC}/README ${DOCSDIR}
 .endif
 	@${INSTALL_MAN} ${WRKSRC}/man/gozerbot.1.FreeBSD ${PREFIX}/man/man1/gozerbot.1
 
