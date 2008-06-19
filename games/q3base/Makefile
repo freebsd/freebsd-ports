@@ -14,6 +14,9 @@ MASTER_SITES=		http://quake3.quakesrc.org/files/quake3/q3base/
 MAINTAINER=		ed@fxq.nl
 COMMENT=		Quake III Arena fork using SDL
 
+DEPRECATED=		Project gone, website defaced
+EXPIRATION_DATE=	2008-07-19
+
 USE_BZIP2=		yes
 USE_SDL=		sdl net
 
