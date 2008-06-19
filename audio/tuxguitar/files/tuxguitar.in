@@ -1,7 +1,9 @@
 #! /bin/sh
 
 PACKAGE_MAIN=org.herac.tuxguitar.gui.TGMain
-ARGS=%%DATADIR%%/tuxguitar.tg
+
+if [ "$1" ]; then ARGS=$1
+else ARGS=%%DATADIR%%/tuxguitar.tg; fi
 
 CLASSPATH=${CLASSPATH}
 CLASSPATH=${CLASSPATH}:%%DATADIR%%
@@ -18,4 +20,4 @@ MOZILLA_FIVE_HOME=%%PREFIX%%/lib/%%GECKO%% java ${SWT_HACK} \
 						${JAVA_FLAGS} \
 						-cp ${CLASSPATH} \
 						${PACKAGE_MAIN} \
-						%%DATADIR%%/tuxguitar.tg
+						"${ARGS}"
