@@ -3,4 +3,4 @@ with packet streams as if they were working with a source code
 debugger. Users can list, inspect, modify, and retransmit any packet
 from captured files as well as work with live packet capture.
 
-WWW: pktdbg.sf.net
+WWW: http://pktdbg.sf.net/

@@ -6,4 +6,4 @@ Many of the features and their usage are demonstrated in the
 navigator_demo package, which you can import with the name
 'navigator_demo.zexp' from the Zope management interface.
 
-WWW:	http://www.zope.org/Members/jonas/ZNavigator/
+WWW: http://www.zope.org/Members/jonas/ZNavigator/
