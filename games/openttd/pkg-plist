@@ -1,16 +1,10 @@
 bin/openttd
-%%DATADIR%%/data/2ccmap.grf
-%%DATADIR%%/data/airports.grf
-%%DATADIR%%/data/autorail.grf
-%%DATADIR%%/data/canalsw.grf
-%%DATADIR%%/data/dosdummy.grf
-%%DATADIR%%/data/elrailsw.grf
-%%DATADIR%%/data/nsignalsw.grf
-%%DATADIR%%/data/openttd.grf
+%%DATADIR%%/data/generictrams_v0.4.grf
+%%DATADIR%%/data/openttdd.grf
+%%DATADIR%%/data/openttdw.grf
 %%DATADIR%%/data/opntitle.dat
-%%DATADIR%%/data/trkfoundw.grf
 @dirrm %%DATADIR%%/data
-%%DATADIR%%/lang/american.lng
+%%DATADIR%%/lang/afrikaans.lng
 %%DATADIR%%/lang/brazilian_portuguese.lng
 %%DATADIR%%/lang/bulgarian.lng
 %%DATADIR%%/lang/catalan.lng
@@ -19,6 +13,7 @@ bin/openttd
 %%DATADIR%%/lang/danish.lng
 %%DATADIR%%/lang/dutch.lng
 %%DATADIR%%/lang/english.lng
+%%DATADIR%%/lang/english_US.lng
 %%DATADIR%%/lang/esperanto.lng
 %%DATADIR%%/lang/estonian.lng
 %%DATADIR%%/lang/finnish.lng
@@ -34,6 +29,7 @@ bin/openttd
 %%DATADIR%%/lang/norwegian_bokmal.lng
 %%DATADIR%%/lang/norwegian_nynorsk.lng
 %%DATADIR%%/lang/origveh.lng
+%%DATADIR%%/lang/piglatin.lng
 %%DATADIR%%/lang/polish.lng
 %%DATADIR%%/lang/portuguese.lng
 %%DATADIR%%/lang/romanian.lng
@@ -47,14 +43,43 @@ bin/openttd
 %%DATADIR%%/lang/turkish.lng
 %%DATADIR%%/lang/ukrainian.lng
 @dirrm %%DATADIR%%/lang
+%%DATADIR%%/scripts/autoexec.scr.example
+%%DATADIR%%/scripts/on_client.scr.example
+%%DATADIR%%/scripts/on_dedicated.scr.example
+%%DATADIR%%/scripts/on_server.scr.example
+%%DATADIR%%/scripts/pre_dedicated.scr.example
+%%DATADIR%%/scripts/pre_server.scr.example
+%%DATADIR%%/scripts/readme.txt
+@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%
+share/icons/hicolor/16x16/apps/openttd.png
+share/icons/hicolor/32x32/apps/openttd.png
+share/icons/hicolor/48x48/apps/openttd.png
+share/icons/hicolor/64x64/apps/openttd.png
+share/icons/hicolor/128x128/apps/openttd.png
+share/icons/hicolor/256x256/apps/openttd.png
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+%%PORTDOCS%%%%DOCSDIR%%/32bpp.txt
 %%PORTDOCS%%%%DOCSDIR%%/HOWTO_compile_lang_files.txt
-%%PORTDOCS%%%%DOCSDIR%%/Howto_compile_lng_files_from_CLI.txt
 %%PORTDOCS%%%%DOCSDIR%%/Manual.txt
 %%PORTDOCS%%%%DOCSDIR%%/elrail.svg
 %%PORTDOCS%%%%DOCSDIR%%/elrail_tile.png
 %%PORTDOCS%%%%DOCSDIR%%/elrail_track.png
 %%PORTDOCS%%%%DOCSDIR%%/landscape.html
+%%PORTDOCS%%%%DOCSDIR%%/landscape_externals.html
 %%PORTDOCS%%%%DOCSDIR%%/landscape_grid.html
 %%PORTDOCS%%%%DOCSDIR%%/multiplayer.txt
 %%PORTDOCS%%%%DOCSDIR%%/ottd-colour-palette.gif
