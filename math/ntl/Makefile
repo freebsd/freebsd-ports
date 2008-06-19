@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ntl
-PORTVERSION=	5.4
+PORTVERSION=	5.4.2
 PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
-MAINTAINER=	matthiasb@acm.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Victor Shoup's Number Theory Library
 
 # ntl is faster with libgmp4, but you can disable it
