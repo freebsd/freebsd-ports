@@ -7,7 +7,7 @@
 
 PORTNAME=	annextools
 PORTVERSION=	10.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://www142.nortelnetworks.com/pub/swcode/remacc/microannex_xl/
 DISTNAME=	R10.0B-R2.3
@@ -21,6 +21,14 @@ WRKSRC=		${WRKDIR}/src
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - src
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800039
+PLIST_SUB+=	RTELNET=""
+.else
+PLIST_SUB+=	RTELNET="@comment "
+.endif
+
 post-extract:
 	${FIND} ${WRKDIR}/src -type d -exec ${CHMOD} u+w \{\} \;
 
@@ -33,7 +41,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/erpcd/tms_convert ${PREFIX}/annex/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/erpcd/tms_dbm ${PREFIX}/annex/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/na/na ${PREFIX}/annex/sbin
+.if ${OSVERSION} < 800039
 	${INSTALL_PROGRAM} ${WRKSRC}/rtelnet/rtelnet ${PREFIX}/annex/sbin
+.endif
 	${INSTALL_DATA} ${WRKSRC}/snmp/xylo-anx.mib ${PREFIX}/annex/snmp
 	${INSTALL_DATA} ${WRKSRC}/snmp/xylo-callmgmt.mib ${PREFIX}/annex/snmp
 	${INSTALL_DATA} ${WRKSRC}/snmp/xylo-modem.mib ${PREFIX}/annex/snmp
@@ -54,4 +64,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/misc/rotary ${PREFIX}/annex/examples
 	${INSTALL_DATA} ${WRKSRC}/examples/misc/termcap ${PREFIX}/annex/examples
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
