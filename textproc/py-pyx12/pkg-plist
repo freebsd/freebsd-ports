@@ -31,6 +31,7 @@ bin/xmlx12
 %%PYTHON_SITELIBDIR%%/pyx12/x12xml_idtagqual.py
 %%PYTHON_SITELIBDIR%%/pyx12/x12xml_simple.py
 %%PYTHON_SITELIBDIR%%/pyx12/xmlwriter.py
+%%PYTHON_SITELIBDIR%%/pyx12/xmlx12_idtag.py
 %%PYTHON_SITELIBDIR%%/pyx12/xmlx12_simple.py
 %%PYTHON_SITELIBDIR%%/pyx12/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/pyx12/tests/codes.py
@@ -73,6 +74,7 @@ bin/xmlx12
 %%PYTHON_SITELIBDIR%%/pyx12/x12xml_idtagqual.pyc
 %%PYTHON_SITELIBDIR%%/pyx12/x12xml_simple.pyc
 %%PYTHON_SITELIBDIR%%/pyx12/xmlwriter.pyc
+%%PYTHON_SITELIBDIR%%/pyx12/xmlx12_idtag.pyc
 %%PYTHON_SITELIBDIR%%/pyx12/xmlx12_simple.pyc
 %%PYTHON_SITELIBDIR%%/pyx12/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyx12/tests/codes.pyc
@@ -115,6 +117,7 @@ bin/xmlx12
 %%PYTHON_SITELIBDIR%%/pyx12/x12xml_idtagqual.pyo
 %%PYTHON_SITELIBDIR%%/pyx12/x12xml_simple.pyo
 %%PYTHON_SITELIBDIR%%/pyx12/xmlwriter.pyo
+%%PYTHON_SITELIBDIR%%/pyx12/xmlx12_idtag.pyo
 %%PYTHON_SITELIBDIR%%/pyx12/xmlx12_simple.pyo
 %%PYTHON_SITELIBDIR%%/pyx12/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pyx12/tests/codes.pyo
@@ -151,6 +154,7 @@ etc/pyx12.conf.xml.sample
 %%DATADIR%%/test/test_x12file.py
 %%DATADIR%%/test/test_x12xml_idtag.py
 %%DATADIR%%/test/test_xmlwriter.py
+%%DATADIR%%/test/files/820.loops.txt
 %%DATADIR%%/test/files/834_lui_id.997.base
 %%DATADIR%%/test/files/834_lui_id.txt
 %%DATADIR%%/test/files/835_test.xsl
@@ -186,6 +190,8 @@ etc/pyx12.conf.xml.sample
 %%DATADIR%%/test/files/ordinal.xml.simple
 %%DATADIR%%/test/files/per_repeat.997.base
 %%DATADIR%%/test/files/per_repeat.txt
+%%DATADIR%%/test/files/repeat_init_seg.997.base
+%%DATADIR%%/test/files/repeat_init_seg.txt
 %%DATADIR%%/test/files/simple1.997.base
 %%DATADIR%%/test/files/simple1.txt
 %%DATADIR%%/test/files/trailer_errors.997.base
@@ -200,11 +206,11 @@ etc/pyx12.conf.xml.sample
 %%DATADIR%%/map/271.4010.X092.A1.xml
 %%DATADIR%%/map/276.4010.X093.A1.xml
 %%DATADIR%%/map/277.4010.X093.A1.xml
-%%DATADIR%%/map/277.4020.X104.xml
 %%DATADIR%%/map/277U.4010.X070.xml
 %%DATADIR%%/map/278.4010.X094.27.A1.xml
 %%DATADIR%%/map/278.4010.X094.A1.xml
 %%DATADIR%%/map/820.4010.X061.A1.xml
+%%DATADIR%%/map/830.4010.PS.xml
 %%DATADIR%%/map/834.4010.X095.A1.xml
 %%DATADIR%%/map/835.4010.X091.A1.xml
 %%DATADIR%%/map/837.4010.X096.A1.xml
@@ -221,11 +227,11 @@ etc/pyx12.conf.xml.sample
 %%DATADIR%%/map/271.4010.X092.A1.pkl
 %%DATADIR%%/map/276.4010.X093.A1.pkl
 %%DATADIR%%/map/277.4010.X093.A1.pkl
-%%DATADIR%%/map/277.4020.X104.pkl
 %%DATADIR%%/map/277U.4010.X070.pkl
 %%DATADIR%%/map/278.4010.X094.27.A1.pkl
 %%DATADIR%%/map/278.4010.X094.A1.pkl
 %%DATADIR%%/map/820.4010.X061.A1.pkl
+%%DATADIR%%/map/830.4010.PS.pkl
 %%DATADIR%%/map/834.4010.X095.A1.pkl
 %%DATADIR%%/map/835.4010.X091.A1.pkl
 %%DATADIR%%/map/837.4010.X096.A1.pkl
