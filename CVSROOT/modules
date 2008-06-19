@@ -1674,6 +1674,7 @@ crosspad	ports/misc/crosspad
 crossvc		ports/devel/crossvc
 crow		ports/devel/crow
 crp		ports/www/crp
+crrcsim		ports/games/crrcsim
 crw		ports/graphics/crw
 cryptcat	ports/net/cryptcat
 cryptix-jce	ports/java/cryptix-jce
