@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.4.8
-PORTREVISION=	1
+PORTVERSION=	2.5.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/
 
