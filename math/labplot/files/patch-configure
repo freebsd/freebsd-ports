@@ -1,0 +1,11 @@
+--- ./configure.orig	2008-06-15 03:01:04.000000000 +0400
++++ ./configure	2008-06-15 03:12:39.000000000 +0400
+@@ -12426,7 +12426,7 @@
+ #error "Your system version of liborigin is too old!"
+ #endif
+ EOF
+-			${CXX} -c liborigin-test.cpp
++			${CXX} ${CPPFLAGS} -c liborigin-test.cpp
+ 			if test $? -eq 0; then
+ 				LIBORIGIN_LDFLAGS="-lorigin"
+ 				LIBORIGIN="yes"
