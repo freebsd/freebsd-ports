@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_URL2
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	net www pear
 
 MAINTAINER=	bg1tpt@gmail.com
