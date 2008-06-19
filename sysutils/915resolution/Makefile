@@ -6,6 +6,7 @@
 
 PORTNAME=	915resolution
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.geocities.com/stomljen/ \
@@ -17,16 +18,9 @@ COMMENT=	Resolution tool for Intel i915 video cards
 
 USE_RC_SUBR=	915resolution.sh
 
-PLIST_FILES=	sbin/915resolution
-PORTDOCS=	README.txt chipset_info.txt
-
-ONLY_FOR_ARCHS=	i386
+DOCS=		README.txt LICENSE.txt chipset_info.txt changes.log
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600034
-BROKEN=		Does not build
-.endif
 
 do-build:
 	cd ${WRKSRC} && \
@@ -35,10 +29,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/915resolution ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
-	${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m ${BINMODE} -d ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>

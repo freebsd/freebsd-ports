@@ -1,0 +1,6 @@
+sbin/915resolution
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/chipset_info.txt
+%%PORTDOCS%%%%DOCSDIR%%/changes.log
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
