@@ -62,7 +62,10 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/ispell|g' \
 		${WRKSRC}/plugins/squirrelspell/sqspell_config.php
-	@${RM} ${WRKSRC}/plugins/squirrelspell/sqspell_config.php.bak
+	@${REINPLACE_CMD} -e 's|/usr/bin/fortune|/usr/games/fortune|g' \
+		${WRKSRC}/plugins/fortune/fortune_functions.php
+	@${RM} ${WRKSRC}/plugins/squirrelspell/sqspell_config.php.bak \
+		${WRKSRC}/plugins/fortune/fortune_functions.php.bak
 
 # Rearrange the documentation
 do-build:
