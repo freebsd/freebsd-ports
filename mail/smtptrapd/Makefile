@@ -8,9 +8,9 @@
 PORTNAME=	smtptrapd
 PORTVERSION=	1.5
 CATEGORIES=	mail
-MASTER_SITES=	http://smtptrapd.inodes.org/
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	RFC 2821 compliant SMTP service that always returns a 4xx soft error
 
 CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
