@@ -7,6 +7,7 @@
 
 PORTNAME=	tetzle
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/tetzle/ \
 		http://www.amdmi3.ru/distfiles/
@@ -18,6 +19,7 @@ COMMENT=	Jigsaw puzzle with tetrominoes
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc opengl qmake rcc xml
+WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
