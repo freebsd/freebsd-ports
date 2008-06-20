@@ -1,1 +1,1 @@
-%%PYTHON_SITELIBDIR%%/TracCustomFieldAdmin-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
+%%PYTHON_SITELIBDIR%%/TracCustomFieldAdmin-%%EGGVERSION%%-py%%PYTHONVERSION%%.egg
