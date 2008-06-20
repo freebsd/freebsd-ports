@@ -1,6 +1,17 @@
---- tools/jabberd.in.orig	Wed Jun 22 22:32:05 2005
-+++ tools/jabberd.in	Sat Oct  7 16:27:19 2006
-@@ -28,8 +28,7 @@
+--- tools/jabberd.in.orig	2008-05-22 17:36:30.000000000 +0200
++++ tools/jabberd.in	2008-06-20 13:24:34.000000000 +0200
+@@ -1,9 +1,4 @@
+-#!/bin/sh
+-#-*-Perl-*-
+-
+-exec perl -w -x $0 "$@"
+-
+-#!perl
++#!%%PERL%%
+ 
+ ##############################################################################
+ #
+@@ -27,8 +22,7 @@
  my $Bin = "@bindir@";
  my $VERSION = "@VERSION@";
  my $config_dir = "@sysconfdir@";
@@ -10,7 +21,7 @@
  my $debug = 0;
  my $daemon = 0;
  my $select = IO::Select->new();
-@@ -43,13 +42,20 @@
+@@ -42,13 +36,20 @@
  # Process the command line arguments
  #-----------------------------------------------------------------------------
  my %opts;
@@ -32,7 +43,7 @@
  
  $debug = 1 if exists($opts{D});
  $daemon = 1 if exists($opts{b});
-@@ -123,6 +129,7 @@
+@@ -113,6 +114,7 @@
      &debug("jabberd","stdout","debug on\n");
      &debug("jabberd","stdout","version($VERSION)\n");
      &debug("jabberd","stdout","config_dir($config_dir)\n");
