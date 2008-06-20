@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
 MAINTAINER=	ports@logvinov.com
-COMMENT=	LZRTF compression library
+COMMENT?=	LZRTF compression library
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
