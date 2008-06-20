@@ -22,21 +22,25 @@ jabberd_user=${jabberd_user-"%%JABBER_USER%%"}
 
 name="jabberd"
 rcvar=`set_rcvar`
+command_interpreter="%%PERL%%"
 command="${prefix}/bin/jabberd"
-command_args="&"
-procname="${prefix}/bin/router"
+command_args="-b"
+stop_postcmd=jabberd_post_stopcmd
 
 load_rc_config $name
 
-pidfile="${jabberd_chdir}/router.pid"
+jabberd_post_stopcmd()
+{
+	for file in c2s resolver router s2s sm; do
+		rm -f ${jabberd_chdir}/$file.pid
+	done
+}
 
 case "$1" in
-	stop|faststop|onestop)
-		echo "Stopping Jabber2"
-		killall -u ${jabberd_user} jabberd c2s resolver router s2s sm
-		for file in c2s resolver router s2s sm; do
-			rm -f ${jabberd_chdir}/$file.pid
-		done
+	forcestop)
+		echo "Stopping jabberd."
+		killall -u ${jabberd_user} c2s resolver router s2s sm
+		jabberd_post_stopcmd
 	;;
 	*)
 		run_rc_command "$1"

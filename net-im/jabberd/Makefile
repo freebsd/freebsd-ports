@@ -7,7 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -33,6 +33,7 @@ OPTIONS=	MYSQL "Support MySQL (storage/auth/reg)" on \
 		REQUIRES "Add backend requires to startup script" off
 
 GNU_CONFIGURE=	yes
+USE_PERL5_RUN=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
 USE_RC_SUBR=	jabberd
@@ -53,7 +54,8 @@ JABBER_RUNDIR=	"/var/jabberd"
 SUB_LIST+=	JABBER_USER=${JABBER_USER} JABBER_UID=${JABBER_UID} \
 		JABBER_GROUP=${JABBER_GROUP} JABBER_GID=${JABBER_GID} \
 		JABBER_ETCDIR="${JABBER_ETCDIR}" \
-		JABBER_RUNDIR="${JABBER_RUNDIR}"
+		JABBER_RUNDIR="${JABBER_RUNDIR}" \
+		PERL="${PERL}"
 
 SUB_FILES+=	pkg-install pkg-deinstall
 
@@ -168,6 +170,8 @@ MAN8=		c2s.8 jabberd.8 router.8 s2s.8 sm.8
 post-patch:
 	@${REINPLACE_CMD} -e 's|"-lsqlite3|"-lsqlite3 ${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%PERL%%|${PERL}|g' \
+		${WRKSRC}/tools/jabberd.in
 
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
