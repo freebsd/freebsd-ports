@@ -1,6 +1,9 @@
-This port contains the Shrew Soft ike daemon and client tools. The
-software supports ike v1 communications between two gateways or a
-a client and a gateway.
+This port contains the Shrew Soft IKE daemon and client tools. The
+software supports IKE V1 communications with an emphasis on client
+functionality. It was orginally designed to compliment a gateway
+running the ipsec-tools racoon daemon. The latest version offers a
+high level of compatibility with Cisco, Juniper, Zywall, Fortigate
+and many other commercial IPsec VPN gateways.
 
 For more information please visit ...
 
