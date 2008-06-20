@@ -47,6 +47,8 @@ bin/pdftexi2dvi
 %%TEXMFLOCAL%%/tex/texinfo/txi-tr.tex
 %%TEXMFLOCAL%%/tex/texinfo/txi-uk.tex
 %%TEXMFLOCAL%%/tex/generic/epsf/epsf.tex
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
 @dirrmtry %%TEXMFLOCAL%%/tex/generic/epsf
 @dirrmtry %%TEXMFLOCAL%%/tex/generic
 @dirrm %%TEXMFLOCAL%%/tex/texinfo
