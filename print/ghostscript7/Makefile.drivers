@@ -1,0 +1,296 @@
+# $FreeBSD$
+
+OPTIONS_GS_DEFAULT_ON=	on
+OPTIONS_GS_DEFAULT_OFF=	off
+
+.if !defined(WITHOUT_X11)
+OPTIONS_X11_DEFAULT=	on
+.else
+OPTIONS_X11_DEFAULT=	off
+.endif
+
+.if !defined(WITH_SVGALIB)
+OPTIONS_SVGALIB_DEFAULT=	off
+.else
+OPTIONS_SVGALIB_DEFAULT=	on
+.endif
+
+.if !defined(WITHOUT_ICONV)
+OPTIONS_ICONV_DEFAULT=	on
+.else
+OPTIONS_ICONV_DEFAULT=	off
+.endif
+
+.if make(makesum)
+OPTIONS_X11_DEFAULT=	on
+OPTIONS_SVGALIB_DEFAULT=on
+OPTIONS_GS_DEFAULT_ON=	on
+OPTIONS_GS_DEFAULT_OFF=	on
+.endif
+
+OPTIONS_X11= \
+GS_x11		"D: X Window System version 11, release >=4"	${OPTIONS_X11_DEFAULT} \
+GS_x11alpha	"D: X Window System masquer. alpha capability"	${OPTIONS_X11_DEFAULT} \
+GS_x11cmyk	"D: X Window System masquer. 1bit/plane CMYK"	${OPTIONS_X11_DEFAULT} \
+GS_x11cmyk2	"D: X Window System 2-bit-per-plane CMYK"	${OPTIONS_X11_DEFAULT} \
+GS_x11cmyk4	"D: X Window System 4-bit-per-plane CMYK"	${OPTIONS_X11_DEFAULT} \
+GS_x11cmyk8	"D: X Window System 8-bit-per-plane CMYK"	${OPTIONS_X11_DEFAULT} \
+GS_x11gray2	"D: X Window System 2-bit gray-scale"	${OPTIONS_X11_DEFAULT} \
+GS_x11gray4	"D: X Window System 4-bit gray-scale"	${OPTIONS_X11_DEFAULT} \
+GS_x11mono	"D: X Window System masquer. black-and-white"	${OPTIONS_X11_DEFAULT} \
+GS_x11rg16x	"D: X Window System G5/B5/R6 pixel layout"	${OPTIONS_X11_DEFAULT} \
+GS_x11rg32x	"D: X Window System G11/B10/R11 pixel layout"	${OPTIONS_X11_DEFAULT}
+
+OPTIONS_SVGALIB= \
+GS_lvga256	"D: SVGAlib, 256-color VGA modes"	${OPTIONS_SVGALIB_DEFAULT} \
+GS_vgalib	"D: SVGAlib, 16-color VGA modes"	${OPTIONS_SVGALIB_DEFAULT}
+
+OPTIONS+=	${OPTIONS_X11}
+OPTIONS+=	${OPTIONS_SVGALIB}
+
+OPTIONS+=	\
+GS_md2k		"D: ALPS MD-2000/2010/4000/1300/1500/5000"	${OPTIONS_GS_DEFAULT_ON} \
+GS_md5k		"D: ALPS MD-5000 Eco Mode"	${OPTIONS_GS_DEFAULT_ON} \
+GS_md50Mono	"D: ALPS MD-5000 Monochrome"	${OPTIONS_GS_DEFAULT_ON} \
+GS_md50Eco	"D: ALPS MD-5000 Eco Mode"	${OPTIONS_GS_DEFAULT_ON} \
+GS_md1xMono	"D: ALPS MD-1x00 Monochrome"	${OPTIONS_GS_DEFAULT_ON} \
+GS_appledmp	"D: Apple Dot Matrix Printer/Imagewriter"	${OPTIONS_GS_DEFAULT_ON} \
+GS_iwhi		"D: Apple Imagewriter, high-resolution mode"	${OPTIONS_GS_DEFAULT_ON} \
+GS_iwlo		"D: Apple Imagewriter, low-resolution mode"	${OPTIONS_GS_DEFAULT_ON} \
+GS_iwlq		"D: Apple Imagewriter LQ in 320x216dpi mode"	${OPTIONS_GS_DEFAULT_ON} \
+GS_hl7x0	"D: Brother HL-720/730/760(=PCL), MFC6550MC"	${OPTIONS_GS_DEFAULT_ON} \
+GS_hl1240	"D: Brother HL-1030/1240"	${OPTIONS_GS_DEFAULT_ON} \
+GS_hl1250	"D: Brother HL-1050/1070/1250/1270N"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bj10e	"D: Canon BJ-10e"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bj10v	"D: Canon BJ-10v"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bj10vh	"D: Canon BJ-10v, high-mergin"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bj200	"D: Canon BJ-200/BJC-240(mono)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bjc600	"D: Canon BJC-600/4xxx/70, StyleWriter 2x00"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bjc800	"D: Canon BJC-240/800"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bjccmyk	"D: Canon BJC-210/240/250/265/1000"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bjccolor	"D: Canon BJC-210/240/250/265/1000 truecolor"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bjcgray	"D: Canon BJC-210/240/250/265/1000 grayscale"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bjcmono	"D: Canon BJC-210/240/250/265/1000 monochrome"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lbp8		"D: Canon LBP-8II"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lbp1310	"D: Canon LBP-1310"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lbp1510	"D: Canon LBP-1510"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lbp1610	"D: Canon LBP-1610"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lbp1710	"D: Canon LBP-1710"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lbp1810	"D: Canon LBP-1810"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lbp1910	"D: Canon LBP-1910"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lips2p	"D: Canon LIPS II+"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lips3	"D: Canon LIPS III"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lips4	"D: Canon LIPS IV"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bjc880j	"D: Canon LIPS IVc, BJC-680J/880J"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lips4v	"D: Canon LIPS IV, vector output mode"	${OPTIONS_GS_DEFAULT_ON} \
+GS_m8510	"D: C.Itoh M8510 printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_coslw2p	"D: CoStar LabelWriter II II/Plus"	${OPTIONS_GS_DEFAULT_ON} \
+GS_coslwxl	"D: CoStar LabelWriter XL"	${OPTIONS_GS_DEFAULT_ON} \
+GS_stp		"D: Configurable Canon/Epson/Lexmark/HP driver"	${OPTIONS_GS_DEFAULT_ON} \
+GS_uniprint	"D: Configurable ESC/P,ESC/P2,HP-RTL/PCL,P2X"	${OPTIONS_GS_DEFAULT_ON} \
+GS_dmprt	"D: Configurable dot matrix printer driver"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lj250	"D: DEC LJ250 Companion color printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_declj250	"D: DEC LJ250 driver (alternate)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ap3250	"D: Epson ActionPrinter 3250"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epson	"D: Epson dot matrix, 9/24-pin"	${OPTIONS_GS_DEFAULT_ON} \
+GS_eps9mid	"D: Epson 9-pin, interleaved lines, medium res"	${OPTIONS_GS_DEFAULT_ON} \
+GS_eps9high	"D: Epson 9-pin, interleaved lines, triple res"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8000	"D: Epson LP-8000 line printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epag		"D: Epson ESC/Page laser printer (generic)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_escpage	"D: Epson ESC/Page laser printer (generic)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp2000	"D: Epson LP-2000/3000/7000/7000G laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_alc8600	"D: Epson AL-C8600 color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_alc8500	"D: Epson AL-C8500 color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_alc2000	"D: Epson AL-C2000 color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_alc4000	"D: Epson AL-C4000 color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_alc1900	"D: Epson AL-C1900 color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_alc4100	"D: Epson AL-C4100 color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp9800c	"D: Epson LP-9800C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp9000c	"D: Epson LP-9000C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp9500c	"D: Epson LP-9500C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8800c	"D: Epson LP-8800C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8300c	"D: Epson LP-8300C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8500c	"D: Epson LP-8500C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp3000c	"D: Epson LP-3000C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8200c	"D: Epson LP-8200C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8000c	"D: Epson LP-8000C color laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epl6100	"D: Epson EPL-6100 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epl5900	"D: Epson EPL-5900 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epl5800	"D: Epson EPL-5800 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epl2050	"D: Epson EPL-N2050 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epl2050p	"D: Epson EPL-N2050+ laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epl2120	"D: Epson EPL-N2120 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epl2500	"D: Epson EPL-N2500 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epl2750	"D: Epson EPL-N2750 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp9000b	"D: Epson LP-9000B laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp2500	"D: Epson LP-2500 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp9100	"D: Epson LP-9100(R) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp7900	"D: Epson LP-7900(R) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp7500	"D: Epson LP-7500(R) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp2400	"D: Epson LP-2400 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp2200	"D: Epson LP-2200 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp9400	"D: Epson LP-9400(R) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8900	"D: Epson LP-8900(R) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8700	"D: Epson LP-8700(R) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8100	"D: Epson LP-8100(R) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp7700	"D: Epson LP-7700(R) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8600f	"D: Epson LP-8600FX(N) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8400f	"D: Epson LP-8400FX(N) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8300f	"D: Epson LP-8300F laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp1900	"D: Epson LP-1900(N) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp9600s	"D: Epson LP-9600S laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp9300	"D: Epson LP-9300 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp9600	"D: Epson LP-9600 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp8600	"D: Epson LP-8600FX(N) laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp1800	"D: Epson LP-1800 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lq850	"D: Epson LQ-850 (360x360, emul on Canon BJ300)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epsonc	"D: Epson LQ-2550, Fujitsu 3400/2400/1200 color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_mjc180	"D: Epson MachJet series 180dpi, CMYK"	${OPTIONS_GS_DEFAULT_ON} \
+GS_mjc360	"D: Epson MachJet series 360dpi, CMYK"	${OPTIONS_GS_DEFAULT_ON} \
+GS_mjc720	"D: Epson MachJet series 720dpi, CMYK"	${OPTIONS_GS_DEFAULT_ON} \
+GS_mj500c	"D: Epson MachJet MJ-500C 360dpi, CMY/mono"	${OPTIONS_GS_DEFAULT_ON} \
+GS_st800	"D: Epson Stylus 800 printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_stcolor	"D: Epson Stylus Color and II/IIs/1500"	${OPTIONS_GS_DEFAULT_ON} \
+GS_photoex	"D: Epson Stylus Color Photo/Photo EX/Photo 700"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lp2563	"D: HP 2563B line printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_dnj650c	"D: HP DesignJet 650C"	${OPTIONS_GS_DEFAULT_ON} \
+GS_deskjet	"D: HP DeskJet and DeskJet Plus"	${OPTIONS_GS_DEFAULT_ON} \
+GS_djet500	"D: HP DeskJet 500 (for DeskJet 600 use -r600)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdeskjet	"D: HP DeskJet 500C (1b/px)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_djet500c	"D: HP DeskJet 500C (alternative)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdjcolor	"D: HP DeskJet 500C/540C (24b/px)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdjmono	"D: HP DeskJet 500/510/520/540C (mono)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdj500	"D: HP DeskJet 500/540C (same as cdjcolor)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdj550	"D: HP DeskJet 550C/560C/660C/660Cse"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdj670	"D: HP DeskJet 670/690"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdj850	"D: HP DeskJet 850/855/870/1100"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdj880	"D: HP DeskJet 880"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdj890	"D: HP DeskJet 890"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdj1600	"D: HP DeskJet 1600"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cdj970	"D: HP DeskJet 970CXi"	${OPTIONS_GS_DEFAULT_ON} \
+GS_laserjet	"D: HP LaserJet"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ljetplus	"D: HP LaserJet Plus"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ljet2p	"D: HP LaserJet IId/IIp/III* (TIFF compression)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ljet3	"D: HP LaserJet III* (Delta Row compression)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ljet3d	"D: HP LaserJet IIID (duplex capability)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ljet4	"D: HP LaserJet 4/5L/5P (not real LJ5), 600dpi"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ljet4d	"D: HP LaserJet 4 (duplex + 600dpi)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lj4dith	"D: HP LaserJet 4 (Floyd-Steinberg dithering)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cljet5	"D: HP LaserJet 5/5M Color (new)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cljet5c	"D: HP LaserJet 5/5M Color Simple"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cljet5pr	"D: HP LaserJet 5/5M Color (old)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lj5mono	"D: HP LaserJet 5/6 (PCL5/PCL XL), bitmap"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lj5gray	"D: HP LaserJet 5/6 gray-scale bitmap"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pj		"D: HP PaintJet XL driver"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pjetxl	"D: HP PaintJet XL driver (alternate)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pjxl		"D: HP PaintJet XL color printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_paintjet	"D: HP PaintJet color printer (alternate)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pjxl300	"D: HP PaintJet XL300, DeskJet 1200C, CopyJet"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pxlmono	"D: HP PCL XL mono (LaserJet 5/6 family)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pxlcolor	"D: HP PCL XL color (Color LaserJet 4500/5000)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pcl3		"D: HP PCL 3+ (generic)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ijs		"D: HP Inkjet and other raster devices"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ibmpro	"D: IBM 9-pin Proprinter"	${OPTIONS_GS_DEFAULT_ON} \
+GS_jetp3852	"D: IBM Jetprinter ink-jet color (Model \#3852)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_imagen	"D: Imagen ImPress printers"	${OPTIONS_GS_DEFAULT_ON} \
+GS_fs600	"D: Kyocera FS-600 (600 dpi)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lxm5700m	"D: Lexmark 5700 monotone"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lxm3200	"D: Lexmark 3200/Z12/Z22/Z31/Z32"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lx5000	"D: Lexmark 5000/Z51/Z82"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lex2050	"D: Lexmark 2050"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lex3200	"D: Lexmark 3200"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lex5700	"D: Lexmark 5700"	${OPTIONS_GS_DEFAULT_ON} \
+GS_lex7000	"D: Lexmark 7000"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cp50		"D: Mitsubishi CP50 color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_necp6	"D: NEC PinWriter P6/P6+/P60 (360x360)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_npdl		"D: NEC Printer Description Language"	${OPTIONS_GS_DEFAULT_ON} \
+GS_oce9050	"D: OCE 9050 printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_oki182	"D: Okidata MicroLine 182"	${OPTIONS_GS_DEFAULT_ON} \
+GS_okiibm	"D: Okidata MicroLine IBM-compatible printers"	${OPTIONS_GS_DEFAULT_ON} \
+GS_atx23	"D: Practical Automation ATX-23"	${OPTIONS_GS_DEFAULT_ON} \
+GS_atx24	"D: Practical Automation ATX-24"	${OPTIONS_GS_DEFAULT_ON} \
+GS_atx38	"D: Practical Automation ATX-38"	${OPTIONS_GS_DEFAULT_ON} \
+GS_r4081	"D: Ricoh 4081 laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_rpdl		"D: Ricoh Printer Description Language"	${OPTIONS_GS_DEFAULT_ON} \
+GS_gdi		"D: Samsung SmartGDI laser printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_sj48		"D: StarJet 48 inkjet printer"	${OPTIONS_GS_DEFAULT_ON} \
+GS_t4693d2	"D: Tektronix 4693d color, 2b/RGB"	${OPTIONS_GS_DEFAULT_ON} \
+GS_t4693d4	"D: Tektronix 4693d color, 4b/RGB"	${OPTIONS_GS_DEFAULT_ON} \
+GS_t4693d8	"D: Tektronix 4693d color, 8b/RGB"	${OPTIONS_GS_DEFAULT_ON} \
+GS_tek4696	"D: Tektronix 4695/4696 inkjet plotter"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bmpmono	"D: BMP Monochrome"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bmpgray	"D: BMP 8-bit gray"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bmp16	"D: BMP 4-bit EGA/VGA"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bmp256	"D: BMP 8-bit 256-color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bmp16m	"D: BMP 24-bit"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bmp32b	"D: BMP 32-bit pseudo-.BMP"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bmpsep1	"D: BMP Separated 1-bit CMYK"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bmpsep8	"D: BMP Separated 8-bit CMYK"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ccr		"D: CalComp Raster format"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cgmmono	"D: CGM Monochrome -- LOW LEVEL OUTPUT ONLY"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cgm8		"D: CGM 8-bit 256-color -- DITTO"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cgm24	"D: CGM 24-bit color -- DITTO"	${OPTIONS_GS_DEFAULT_ON} \
+GS_cif		"D: CIF file format for VLSI"	${OPTIONS_GS_DEFAULT_ON} \
+GS_dfaxhigh	"D: DigiBoard, DigiFAX (high res)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_dfaxlow	"D: DigiFAX (normal res)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_faxg3	"D: Group 3 FAX (EOL + no header/EOD)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_faxg32d	"D: Group 3 2-D FAX (EOL + no header/EOD)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_faxg4	"D: Group 4 FAX (EOL + no header/EOD)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_miff24	"D: ImageMagick MIFF, 24-bit direct color, RLE"	${OPTIONS_GS_DEFAULT_ON} \
+GS_inferno	"D: Inferno bitmaps"	${OPTIONS_GS_DEFAULT_ON} \
+GS_jpeg		"D: JPEG format, RGB output"	${OPTIONS_GS_DEFAULT_ON} \
+GS_jpeggray	"D: JPEG format, gray output"	${OPTIONS_GS_DEFAULT_ON} \
+GS_mgrmono	"D: MGR devices 1-bit monochrome"	${OPTIONS_GS_DEFAULT_ON} \
+GS_mgrgray2	"D: MGR devices 2-bit gray scale"	${OPTIONS_GS_DEFAULT_ON} \
+GS_mgrgray4	"D: MGR devices 4-bit gray scale"	${OPTIONS_GS_DEFAULT_ON} \
+GS_mgrgray8	"D: MGR devices 8-bit gray scale"	${OPTIONS_GS_DEFAULT_ON} \
+GS_mgr4		"D: MGR devices 4-bit (VGA) color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_mgr8		"D: MGR devices 8-bit color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pcxmono	"D: PCX, 1-bit monochrome"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pcxgray	"D: PCX, 8-bit gray scale"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pcx16	"D: PCX, 4-bit planar EGA/VGA color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pcx256	"D: PCX, 8-bit chunky color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pcx24b	"D: PCX, 24-bit color 3x8-bit planes"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pcxcmyk	"D: PCX, 4-bit chunky CMYK color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pdfwrite	"D: Portable Document Format"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bit		"D: Plain bits, monochrome"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bitrgb	"D: Plain bits, RGB"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bitcmyk	"D: Plain bits, CMYK"	${OPTIONS_GS_DEFAULT_ON} \
+GS_plan9bm	"D: Plan 9 bitmap format"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pam		"D: Portable Arbitrary Map file"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pbm		"D: Portable Bitmap, plain"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pbmraw	"D: Portable Bitmap, raw"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pgm		"D: Portable Graymap, plain"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pgmraw	"D: Portable Graymap, raw"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pgnm		"D: Portable Graymap, plain (PBM opt)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pgnmraw	"D: Portable Graymap, raw (PBM opt)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pnm		"D: Portable Pixmap, plain RGB (PGM/PBM opt)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pnmraw	"D: Portable Pixmap, raw RGB (PGM/PBM opt)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ppm		"D: Portable Pixmap, plain RGB"	${OPTIONS_GS_DEFAULT_ON} \
+GS_ppmraw	"D: Portable Pixmap, raw RGB"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pkm		"D: Portable inKmap, plain (4b CMYK=>RGB)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pkmraw	"D: Portable inKmap, raw (4b CMYK=>RGB)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pksm		"D: Portable Separated map, plain (4b CMYK=>4p)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pksmraw	"D: Portable Separated map, raw (4b CMYK=>4p)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pngmono	"D: PNG (Portable Network Graphics) Mono"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pnggray	"D: PNG 8-bit Gray"	${OPTIONS_GS_DEFAULT_ON} \
+GS_png16	"D: PNG 4-bit Color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_png256	"D: PNG 8-bit Color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_png16m	"D: PNG 24-bit Color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pngalpha	"D: PNG 32-bit RGBA Color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_psmono	"D: PostScript (Level 1) monochrome image"	${OPTIONS_GS_DEFAULT_ON} \
+GS_psgray	"D: PostScript (Level 1) 8-bit gray image"	${OPTIONS_GS_DEFAULT_ON} \
+GS_psrgb	"D: PostScript (Level 2) 24-bit color image"	${OPTIONS_GS_DEFAULT_ON} \
+GS_pswrite	"D: PostScript (like PostScript Distiller)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_epswrite	"D: Encapsulated PostScript"	${OPTIONS_GS_DEFAULT_ON} \
+GS_sgirgb	"D: SGI RGB pixmap format"	${OPTIONS_GS_DEFAULT_ON} \
+GS_sunhmono	"D: Harlequin variant of 1-bit Sun raster file"	${OPTIONS_GS_DEFAULT_ON} \
+GS_tiffcrle	"D: TIFF CCITT RLE 1 dim (G3 FAX with no EOL)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_tiffg3	"D: TIFF Group 3 FAX (with EOL)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_tiffg32d	"D: TIFF Group 3 2-D FAX"	${OPTIONS_GS_DEFAULT_ON} \
+GS_tiffg4	"D: TIFF Group 4 FAX"	${OPTIONS_GS_DEFAULT_ON} \
+GS_tiff12nc	"D: TIFF 12-bit RGB, no compress"	${OPTIONS_GS_DEFAULT_ON} \
+GS_tiff24nc	"D: TIFF 24-bit RGB, no compress, NeXT format"	${OPTIONS_GS_DEFAULT_ON} \
+GS_tifflzw	"D: TIFF LZW,      tag = 5,     mono"	${OPTIONS_GS_DEFAULT_ON} \
+GS_tiffpack	"D: TIFF PackBits, tag = 32773, mono"	${OPTIONS_GS_DEFAULT_ON} \
+GS_bbox		"D: Bounding box output"	${OPTIONS_GS_DEFAULT_ON}
