@@ -17,6 +17,8 @@ COMMENT=	Library for reading and editing audio meta data
 BUILD_DEPENDS=	taglib-config:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		does not build with taglib 1.5
+
 USE_ICONV=	YES
 PERL_CONFIGURE=	5.8.3+
 CONFIGURE_ARGS+=	CC="${CXX}" LD="${CXX}"
