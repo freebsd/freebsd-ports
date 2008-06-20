@@ -397,6 +397,7 @@ System/Library/Headers/AppKit/NSFontManager.h
 System/Library/Headers/AppKit/NSFontPanel.h
 System/Library/Headers/AppKit/NSForm.h
 System/Library/Headers/AppKit/NSFormCell.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/AppKit/NSGlyphGenerator.h
 System/Library/Headers/AppKit/NSGraphics.h
 System/Library/Headers/AppKit/NSGraphicsContext.h
 System/Library/Headers/AppKit/NSHelpManager.h
