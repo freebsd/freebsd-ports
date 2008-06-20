@@ -20,6 +20,7 @@
     SUBDIR += ask
     SUBDIR += asmail
     SUBDIR += assp
+    SUBDIR += atmail
     SUBDIR += autorespond
     SUBDIR += autosig
     SUBDIR += avenger
