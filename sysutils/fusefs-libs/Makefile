@@ -6,7 +6,7 @@
 
 PORTNAME=	fusefs
 PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse
@@ -21,6 +21,7 @@ CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
+USE_ICONV=	yes
 CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 TXT_DOCS=	how-fuse-works \
