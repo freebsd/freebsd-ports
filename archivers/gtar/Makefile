@@ -59,7 +59,7 @@ post-patch:
 	@${TOUCH} -r ${WRKSRC}/configure.orig ${WRKSRC}/configure
 	@${TOUCH} ${WRKSRC}/doc/tar.info* ${WRKSRC}/stamp-vti
 
-test: build
-	@cd ${WRKSRC} && ${MAKE} check
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.post.mk>

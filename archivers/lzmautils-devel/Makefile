@@ -28,7 +28,7 @@ MLINKS=		lzma.1 unlzma.1 \
 		lzgrep.1 lzfgrep.1 \
 		lzmore.1 lzless.1
 
-test: build
+regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>
