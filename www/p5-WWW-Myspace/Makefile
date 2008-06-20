@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Myspace
-PORTVERSION=	0.81
+PORTVERSION=	0.82
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-P
 		p5-Spiffy>=0.24:${PORTSDIR}/devel/p5-Spiffy \
 		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS=	${RUN_DEPENDS}
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 # inherited from p5-Locale-SubCountry
 PERL_CONFIGURE=	5.8.4+
@@ -33,9 +32,7 @@ MAN1=		approve_friends.1 comment_myspace.1 \
 		message_group.1
 MAN3=		WWW::Myspace.3 WWW::Myspace::Comment.3 \
 		WWW::Myspace::FriendChanges.3 \
-		WWW::Myspace::Message.3 WWW::Myspace::MyBase.3 \
-		WWW::Myspace::Promoter.3 \
-		WWW::Myspace::FriendRequest.3
+		WWW::Myspace::Message.3 WWW::Myspace::MyBase.3
 
 
 .include <bsd.port.mk>
