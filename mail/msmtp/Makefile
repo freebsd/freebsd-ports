@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	1.4.14
-PORTREVISION=	1
+PORTVERSION=	1.4.15
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	msmtp
@@ -35,7 +34,7 @@ CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 .if defined(WITH_GNUTLS) || defined(WITH_OPENSSL)
-RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 .endif
 
 .if defined(WITH_GSASL)
