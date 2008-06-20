@@ -1,0 +1,10 @@
+JTiger is a unit test framework and tools for the Java 2 Platform. The
+framework provides a useful abstraction on which to write unit test
+fixtures and unit test cases. JTiger tools provide functionality
+that is often desired in software unit testing environments. JTiger
+development encourages Test Driven Development, though it doesn't
+mandate it, and any unit testing software development technique
+is sufficient.
+
+
+WWW:   http://www.jtiger.org

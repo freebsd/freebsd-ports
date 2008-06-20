@@ -125,6 +125,7 @@
     SUBDIR += jode
     SUBDIR += jomp
     SUBDIR += jsdk
+    SUBDIR += jtiger
     SUBDIR += jump
     SUBDIR += junit
     SUBDIR += kaffe
