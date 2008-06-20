@@ -32,7 +32,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\(defined(__WIN32__) && \)\(!defined(log2)\)|\2|' \
 		${WRKSRC}/src/mapgen/mapmaker.cpp
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|docs||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/install-data-am/ s|install-docsDATA||' \
+		${WRKSRC}/docs/Makefile.in
 .endif
 
 .include <bsd.port.mk>
