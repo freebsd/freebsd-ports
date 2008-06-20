@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_MAC
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	net pear
 
 MAINTAINER=	bg1tpt@gmail.com
