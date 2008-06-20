@@ -2,9 +2,9 @@ include/darts.h
 libexec/darts/darts
 libexec/darts/mkdarts
 @dirrm libexec/darts
-%%PORTDOCS%%%%EXAMPLESDIR%%/darts.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/mkdarts.cpp
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/darts.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mkdarts.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
