@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openfire
-PORTVERSION=	3.5.1
-PORTREVISION=	1
+PORTVERSION=	3.5.2
 CATEGORIES=	net-im java
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
@@ -17,6 +16,7 @@ COMMENT=	Openfire (formerly Wildfire) is an enterprise instant messaging server
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
 
+USE_LDCONFIG=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
