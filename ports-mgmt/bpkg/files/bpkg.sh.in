@@ -47,303 +47,7 @@ missing() {
 }
 
 main() {
-	root
-	if [ -z "$pkg" ]; then
-		echo "bpkg: you didn't specify any package to install/upgrade"
-		exit 0
-	fi
-
-	echo "Available in ports:"
-	for e in $pkg; do
-		cd /usr/ports && make search path=/$e.* | awk '/Port/ /Path/ { print $0 "\n" }' 
-	done
-
-	for z in $pkg; do
-		pkg_install=`cd /usr/ports && make search path=/$z.* | grep Path | cut -d/ -f4,5`
-
-		for e in $pkg_install; do
-			e_stripped=`echo $e | cut -d/ -f2`
-			e_installed=`grep $e$ /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
-
-			if [ -z "$e_installed" ]; then
-				echo -n "Do you want to install new $e? [y] "
-			else
-				echo -n "Do you want to upgrade installed $e_installed? [y] "
-			fi
-			read key
-			case $key in
-				n) ;;
-				*) 
-				if [ ! -z "$e_installed" ]; then
-					echo -n "Creating backup package in /usr/obj/$e_installed.tbz... "
-					cd /usr/obj/ && pkg_create -b $e_installed
-					echo "Done."
-				fi
-
-				# Fetch and install binary package
-
-				echo ""
-				if [ ! -z "$e_installed" ]; then
-					touch /root/ports.lst
-					if [ ! -z "`grep $e /root/ports.lst`" ]; then
-						echo "It seems you installed this package using ports."
-						echo "It is strongly recommended to upgrade it using also ports."
-						echo -n "Do you want to cancel this binary upgrade process? [y] "
-						read key
-						case $key in
-							n) 
-							sed -i '' s,$e,,g /root/ports.lst 1>/dev/null 2>&1;;
-							*) ;;
-						esac
-					fi
-
-					echo "Upgrading installed package:"
-					pkg_delete -f $e_installed 1>/dev/null 2>&1
-					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
-						echo "*** cannot proceed without first removing the package ***"
-					fi
-					pkg_add -r $e_stripped
-				else
-					echo "Installing new package:"
-					pkg_add -r $e_stripped
-				fi;;
-			esac
-		done
-	done
-}
-
-pkg_latest() {
-	root
-	if [ -z "$pkg" ]; then
-		echo "bpkg: you didn't specify any package to install/upgrade"
-		exit 0
-	fi
-
-	echo "Available in ports:"
-	for e in $pkg; do
-		cd /usr/ports && make search path=/$e.* | awk '/Port/ /Path/ { print $0 "\n" }' 
-	done
-
-	for z in $pkg; do
-		pkg_install=`cd /usr/ports && make search path=/$z.* | grep Path | cut -d/ -f4,5`
-
-		for e in $pkg_install; do
-			e_stripped=`echo $e | cut -d/ -f2`
-			e_installed=`grep $e$ /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
-
-			if [ -z "$e_installed" ]; then
-				echo -n "Do you want to install new $e? [y] "
-			else
-				echo -n "Do you want to upgrade installed $e_installed? [y] "
-			fi
-			read key
-			case $key in
-				n) ;;
-				*) 
-				arch=`uname -m`
-				setenv PACKAGESITE ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/
-
-				if [ ! -z "$e_installed" ]; then
-					echo -n "Creating backup package in /usr/obj/$e_installed.tbz... "
-					cd /usr/obj/ && pkg_create -b $e_installed
-					echo "Done."
-				fi
-
-				# Fetch and install binary package
-
-				echo ""
-				if [ ! -z "$e_installed" ]; then
-					touch /root/ports.lst
-					if [ ! -z "`grep $e /root/ports.lst`" ]; then
-						echo "It seems you installed this package using ports."
-						echo "It is strongly recommended to upgrade it using also ports."
-						echo -n "Do you want to cancel this binary upgrade process? [y] "
-						read key
-						case $key in
-							n) 
-							sed -i '' s,$e,,g /root/ports.lst 1>/dev/null 2>&1;;
-							*)
-							unsetenv PACKAGESITE;;
-						esac
-					fi
-
-					echo "Upgrading installed package:"
-					pkg_delete -f $e_installed 1>/dev/null 2>&1
-					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
-						echo "*** cannot proceed without first removing the package ***"
-					fi
-					pkg_add -r $e_stripped
-					unsetenv PACKAGESITE
-				else
-					echo "Installing new package:"
-					pkg_add -r $e_stripped
-					unsetenv PACKAGESITE
-				fi;;
-			esac
-		done
-	done
-}
-
-simulation() {
-	root
-	if [ -z "$pkg" ]; then
-		echo "bpkg: you didn't specify any package to install/upgrade"
-		exit 0
-	fi
-
-	echo "Available in ports:"
-	for e in $pkg; do
-		cd /usr/ports && make search path=/$e.* | awk '/Port/ /Path/ { print $0 "\n" }' 
-	done
-
-	for z in $pkg; do
-		pkg_install=`cd /usr/ports && make search path=/$z.* | grep Path | cut -d/ -f4,5`
-
-		for e in $pkg_install; do
-			e_stripped=`echo $e | cut -d/ -f2`
-			e_installed=`grep $e$ /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
-
-			if [ -z "$e_installed" ]; then
-				echo -n "Do you want to install new $e? [y] "
-			else
-				echo -n "Do you want to upgrade installed $e_installed? [y] "
-			fi
-			read key
-			case $key in
-				n) ;;
-				*) 
-				if [ ! -z "$e_installed" ]; then
-					echo -n "Creating backup package in /usr/obj/$e_installed.tbz... "
-					cd /usr/obj/ && pkg_create -b $e_installed
-					echo "Done."
-				fi
-
-				# Fetch and install binary package
-
-				echo ""
-				if [ ! -z "$e_installed" ]; then
-					echo "Upgrading installed package:"
-					pkg_delete -n $e_installed 1>/dev/null 2>&1
-					pkg_add -rn $e_stripped
-				else
-					echo "Installing new package:"
-					pkg_add -rn $e_stripped
-				fi;;
-			esac
-		done
-	done
-}
-
-build_port() {
-	root
-	if [ -z "$pkg" ]; then
-		echo "bpkg: you didn't specify any package to install/upgrade"
-		exit 0
-	fi
-
-	echo "Available in ports:"
-	for e in $pkg; do
-		cd /usr/ports && make search path=/$e.* | awk '/Port/ /Path/ { print $0 "\n" }' 
-	done
-
-	for z in $pkg; do
-		pkg_install=`cd /usr/ports && make search path=/$z.* | grep Path | cut -d/ -f4,5`
-
-		for e in $pkg_install; do
-			e_stripped=`echo $e | cut -d/ -f2`
-			e_installed=`grep $e$ /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
-
-			if [ -z "$e_installed" ]; then
-				echo -n "Do you want to install new $e? [y] "
-			else
-				echo -n "Do you want to upgrade installed $e_installed? [y] "
-			fi
-			read key
-			case $key in
-				n) ;;
-				*)
-				if [ ! -z "$e_installed" ]; then
-					echo -n "Creating backup package in /usr/obj/$e_installed.tbz... "
-					cd /usr/obj/ && pkg_create -b $e_installed
-					echo "Done."
-				fi
-
-				# Install from port (source)
-
-				echo ""
-				if [ ! -z "$e_installed" ]; then
-					echo "Upgrading installed port:"
-					touch /root/ports.lst
-					[ -z "`grep $e /root/ports.lst`" ] && echo $e >> /root/ports.lst
-					pkg_delete -f $e_installed 1>/dev/null 2>&1
-					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
-						echo "*** cannot proceed without first removing the package ***"
-					fi
-				else
-					echo "Installing new port:"
-					touch /root/ports.lst
-					echo $e >> /root/ports.lst
-				fi
-
-				echo -n "Do you want to explicitly set config options now? [n] "
-				read key2
-				case $key2 in
-					y) echo -n "Recursive? [n] "
-					read key
-					case $key in
-						y) cd /usr/ports/$e && make config-recursive
-						cd /usr/ports/$e && make install clean;;
-						*) cd /usr/ports/$e && make config
-						cd /usr/ports/$e && make install clean;;
-					esac;;
-
-					*) cd /usr/ports/$e && make install clean;;
-				esac;;
-			esac
-		done
-	done
-}
-
-all() {
-	root
-	echo ""
-	echo -n "Do you want to upgrade all installed packages using binary packages? (interactive mode) [y] "
-	read key
-
-	case $key in
-		n) echo "Upgrading all ports:"
-		all=`pkg_info -aoq`
-		pkg_delete -ifa 
-	   	for e in $all; do
-	   		cd /usr/ports/$e && make install clean
-	   	done
-	   	exit 0;;
-		*) echo "Upgrading all packages:"
-	   	all=`ls -l /var/db/pkg/ | awk '{print $9}' | sed 's/\(.*\)-.*/\1/g' | awk '{ORS=" " ;print}'`
-	   	pkg_delete -ifa && pkg_add -r $all
-	   	exit 0;;
-	esac
-}
-
-all_non-interactive() {
-	root
-	echo ""
-	echo -n "Do you want to upgrade all installed packages using binary packages? (non-interactive mode) [y] "
-	read key
-
-	case $key in
-		n) echo "Upgrading all ports:"
-		all=`pkg_info -aoq`
-		pkg_delete -fa
-	   	for e in $all; do
-	   		cd /usr/ports/$e && make install clean
-	   	done
-	   	exit 0;;
-		*) echo "Upgrading all packages:"
-	   	all=`ls -l /var/db/pkg/ | awk '{print $9}' | sed 's/\(.*\)-.*/\1/g' | awk '{ORS=" " ;print}'`
-	   	pkg_delete -fa && pkg_add -r $all
-	   	exit 0;;
-	esac
+	help
 }
 
 pkg_info-xI() {
@@ -376,7 +80,7 @@ pkg_info-xL() {
 				pkg_info -L `grep $i /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5` 
 			done	
 		else
-			echo "bpkg: no installed packages match $e"
+			echo "bpkg: no installed ports match $e"
 		fi
 	done
 	exit 0
@@ -385,7 +89,7 @@ pkg_info-xL() {
 pkg_inf() {
 	echo -e "\033[33m*** installed ***\033[0m"
 	pkg_info 
-	echo "***`pkg_info | wc -l` packages installed     ***"
+	echo "***`pkg_info | wc -l` ports installed     ***"
 	exit 0
 }
 
@@ -401,7 +105,7 @@ pkg_info-xs() {
 				pkg_info -s `grep $i /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5` 
 			done	
 		else
-			echo "bpkg: no installed packages match $e"
+			echo "bpkg: no installed ports match $e"
 		fi
 	done
 	exit 0
@@ -450,7 +154,7 @@ pkg_info-xg() {
 				pkg_info -g `grep $i /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5` 
 			done	
 		else
-			echo "bpkg: no installed packages match $e"
+			echo "bpkg: no installed ports match $e"
 		fi
 	done
 	exit 0
@@ -494,28 +198,28 @@ pkg_info-xk() {
 				pkg_info -k `grep $i /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5` 
 			done	
 		else
-			echo "bpkg: no installed packages match $e"
+			echo "bpkg: no installed ports match $e"
 		fi
 	done
 	exit 0
 }
 
 pkg_info-xD() {
-	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
-
-		if [ ! -z "$info" ]; then
-			for i in $info; do
-				echo -e "\033[33m*** installed ***\033[0m"
-				echo "$i: `grep $i /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`" 
-				echo ""
-				pkg_info -D `grep $i /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5` 
-			done	
-		else
-			echo "bpkg: no installed packages match $e"
-		fi
-	done
-	exit 0
+        for e in $pkg; do
+                info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+                
+                if [ ! -z "$info" ]; then
+                        for i in $info; do
+                                echo -e "\033[33m*** installed ***\033[0m"
+                                echo "$i: `grep $i /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`"
+                                echo ""
+                                pkg_info -D `grep $i /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
+                        done 
+                else
+                        echo "bpkg: no installed ports match $e"
+                fi
+        done
+        exit 0
 }
 
 pkg_info-x() {
@@ -547,7 +251,7 @@ pkg_info-x() {
 pkg_ver() {
 	echo -e "\033[33m*** installed ***\033[0m"
 	pkg_version -Iv
-	echo "***`pkg_info | wc -l` packages installed     ***"
+	echo "***`pkg_info | wc -l` ports installed     ***"
 	exit 0
 }
 
@@ -603,7 +307,7 @@ make_search_info() {
 	exit 0
 }
 
-pkg_find() {
+pkg_ftp() {
 	arch=`uname -m`
 	sys=`uname -r | cut -d- -f1,2 | tr '[:upper:]' '[:lower:]'`
 
@@ -626,45 +330,6 @@ pkg_latestftp() {
 	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/ < /tmp/bpkg.tmp
 	rm /tmp/bpkg.tmp
 	exit 0
-}
-
-pkg_delete-xr() {
-	root
-	z=`pkg_info -xoQ $pkg 2>/dev/null`
-
-	if [ -z "$z" ]; then
-        	echo "bpkg: no installed packages match pattern(s)"
-		exit 0
-	fi
-
-	echo -e "\033[33m*** installed ***\033[0m"
-	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
-	touch /root/ports.lst
-	for e in $pkg; do 
-		sed -i '' s,.*$e,,g /root/ports.lst 1>/dev/null 2>&1
-	done
-	echo ""
-	echo -n "Do you want to use recursive removal? [n] "
-	read key
-
-	case $key in
-        	y) echo -n "Do you want to use force removal? [n] "
-		read key2
-		case $key2 in
-			y) pkg_delete -xrfi $pkg
-			exit 0;;
-			*) pkg_delete -xri $pkg
-			exit 0;;
-		esac;;
-		*) echo -n "Do you want to use force removal? [n] "
-		read key2
-		case $key2 in
-			y) pkg_delete -xf $pkg
-			exit 0;;
-			*) pkg_delete -x $pkg
-			exit 0;;
-		esac;;
-	esac
 }
 
 pkg_clean() {
@@ -695,7 +360,7 @@ pkg_backup() {
 	z=`pkg_info -xoQ $pkg 2>/dev/null`
 
 	if [ -z "$z" ]; then
-        	echo "bpkg: no installed packages match pattern(s)"
+        	echo "bpkg: no installed ports match pattern(s)"
 		exit 0
 	fi
 
@@ -710,7 +375,7 @@ pkg_backup() {
 pkg_time() {
 	echo "Packages (date of installation):"
 	/bin/ls -lUTt /var/db/pkg/ | awk -F' ' '{ print $6,$7,$8,$9,$10 }' | cut -d/ -f1,5 
-	echo "***`pkg_info | wc -l` packages installed     ***"
+	echo "***`pkg_info | wc -l` ports installed     ***"
 	exit 0
 }
 
@@ -824,81 +489,12 @@ make_config() {
 	exit 0
 }
 
-make_depends() {
-	root
-	if [ -z "$pkg" ]; then
-		echo "bpkg: you didn't specify any package to install/upgrade"
-		exit 0
-	fi
-
-	echo "Available in ports:"
-	for i in $pkg; do
-		cd /usr/ports && make search path=/$e.* | awk '/Port/ /Path/ { print $0 "\n" }' 
-	done
-
-	for z in $pkg; do
-		pkg_install=`cd /usr/ports && make search path=/$z.* | grep Path | cut -d/ -f4,5`
-
-		for e in $pkg_install; do
-			e_stripped=`echo $e | cut -d/ -f2`
-			e_installed=`grep $e$ /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
-
-			if [ -z "$e_installed" ]; then
-				echo -n "Do you want to install new $e? [y] "
-			else
-				echo -n "Do you want to upgrade installed $e_installed? [y] "
-			fi
-			read key
-			case $key in
-				n) ;;
-				*) 
-				if [ ! -z "$e_installed" ]; then
-					echo -n "Creating backup package in /usr/obj/$e_installed.tbz... "
-					cd /usr/obj/ && pkg_create -b $e_installed
-					echo "Done."
-				fi
-
-				echo ""
-				if [ ! -z "$e_installed" ]; then
-					echo "Upgrading installed port and all dependencies:"
-					pkg_delete -f $e_installed 1>/dev/null 2>&1
-					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
-						echo "*** cannot proceed without first removing the package ***"
-						exit 0
-					fi
-				else
-					echo "Installing new port and all dependencies:"
-				fi
-
-				echo -n "Do you want to explicitly set config options now? [n] "
-				read key2
-				case $key2 in
-					y) echo -n "Recursive? [n] "
-					read key
-					case $key in
-						y) cd /usr/ports/$e && make config-recursive
-						cd /usr/ports/$e && make depends && make install clean
-						exit 0;;
-						*) cd /usr/ports/$e && make config
-						cd /usr/ports/$e && make depends && make install clean
-						exit 0;;
-					esac;;
-
-					*) cd /usr/ports/$e && make depends && make install clean
-					exit 0;;
-				esac
-	   			exit 0;;
-			esac
-		done
-	done
-}
-
 make_ldd() {
 	for e in $pkg; do
 		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
 	
 		if [ -z "$info" ]; then
-			echo "bpkg: no installed packages match $e"
+			echo "bpkg: no installed ports match $e"
 		else
 			for i in $info; do
 				echo -e "\033[33m*** installed ***\033[0m"
@@ -1109,8 +705,8 @@ make_ldd_all() {
 help() {
 	echo "bpkg version `pkg_info -xI bpkg | cut -d- -f2 | cut -d' ' -f1`" 
 	echo ""
-	echo "Usage: bpkg [-bBdDeEfFgiIjkLmMnoOpqQrsSwz] pkg-name ..."
-	echo "       bpkg [-aAcChltvZ]"
+	echo "Usage: bpkg [-bdefgiIjkLmMoOpqQrsSwz] pkg-name ..."
+	echo "       bpkg [-cChltvZ]"
 	echo ""
 	echo "Please see the bpkg(8) man page for more information"
 	echo ""
@@ -1120,24 +716,16 @@ help() {
 # End of functions
 ################################################################################
 
-while getopts b:B:d:D:e:E:f:F:g:i:I:j:k:L:m:M:n:o:O:p:q:Q:r:s:S:w:z:aAcChltvZ opts; do
+while getopts b:d:e:f:g:i:I:j:k:L:m:M:o:O:p:q:Q:r:s:S:w:z:cChltvZ opts; do
 	case $opts in
 		b) pkg=$OPTARG
-		   build_port;;
-		B) pkg=$OPTARG
-		   pkg_backup;;	
+		   pkg_backup;;
 		d) pkg=$OPTARG
-		   pkg_delete-xr;;
-		D) pkg=$OPTARG
 		   pkg_info-x;;
 		e) pkg=$OPTARG
 		   make_config;;
-		E) pkg=$OPTARG
-		   make_depends;;
 		f) pkg=$OPTARG
 		   pkg_info-xf;;
-		F) pkg=$OPTARG
-		   pkg_find;;
 		g) pkg=$OPTARG
 		   pkg_info-xg;;
 		i) pkg=$OPTARG
@@ -1154,8 +742,6 @@ while getopts b:B:d:D:e:E:f:F:g:i:I:j:k:L:m:M:n:o:O:p:q:Q:r:s:S:w:z:aAcChltvZ op
 		   pkg_makefile;;
 		M) pkg=$OPTARG
 		   pkg_info-xD;;
-		n) pkg=$OPTARG
-		   simulation;;
 		o) pkg=$OPTARG
 		   make_showc;;
 		O) pkg=$OPTARG
@@ -1163,7 +749,7 @@ while getopts b:B:d:D:e:E:f:F:g:i:I:j:k:L:m:M:n:o:O:p:q:Q:r:s:S:w:z:aAcChltvZ op
 		p) pkg=$OPTARG
 		   pkg_path;;
 		q) pkg=$OPTARG
-		   pkg_latest;;
+		   pkg_ftp;;
 		Q) pkg=$OPTARG
 		   pkg_latestftp;;
 		r) pkg=$OPTARG
@@ -1176,8 +762,6 @@ while getopts b:B:d:D:e:E:f:F:g:i:I:j:k:L:m:M:n:o:O:p:q:Q:r:s:S:w:z:aAcChltvZ op
 		   pkg_which-;;
 		z) pkg=$OPTARG
 		   make_ldd;;
-		a) all;;
-		A) all_non-interactive;;
 		c) pkg_clean;;
 		C) pkg_clean2;;
 		h) help;;

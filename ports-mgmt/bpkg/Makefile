@@ -8,13 +8,13 @@
 #
 
 PORTNAME=	bpkg
-PORTVERSION=	1.7.3
+PORTVERSION=	2.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	andy.kosela@gmail.com
-COMMENT=	Simple tool for managing FreeBSD packages/ports
+COMMENT=	Simple tool for displaying information about ports
 
 NO_BUILD=	yes
 SUB_FILES=	bpkg.sh
