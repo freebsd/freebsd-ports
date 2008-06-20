@@ -15,7 +15,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Preferences manager for the Openbox window manager
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		obparser.16:${PORTSDIR}/x11-wm/openbox
+		obparser.21:${PORTSDIR}/x11-wm/openbox
 
 USE_GNOME=	gnomehier gnometarget libglade2
 GNU_CONFIGURE=	yes
