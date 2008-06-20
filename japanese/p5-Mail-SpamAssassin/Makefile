@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.2.4
-PORTREVISION=	5
+PORTVERSION=	3.2.5
 CATEGORIES=	japanese mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${PATCH_SITES}
@@ -37,8 +36,7 @@ BUILD_DEPENDS=	p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/mach/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
-		${SITE_PERL}/mach/Text/MeCab.pm:${PORTSDIR}/japanese/p5-Text-MeCab
+		${SITE_PERL}/mach/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect
 
 CONFLICTS=	p5-Mail-SpamAssassin-[0-9]*
 
