@@ -11,8 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	keramida
-DISTNAME=       ${PORTNAME}-cvs-2008.03.08.07.56.12
-USE_BZIP2=	yes
+DISTNAME=	${PORTNAME}-cvs-2008.06.06.08.01.29
 
 MAINTAINER=	keramida@ceid.upatras.gr
 COMMENT=	GNU editing macros
@@ -33,6 +32,9 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
+
+USE_BZIP2=	yes
+INSTALLS_ICONS=	yes
 
 EMACS_VER=	23.0.60
 SNAPSHOT=	20080308

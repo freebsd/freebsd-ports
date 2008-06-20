@@ -1,6 +1,6 @@
---- doc/lispintro/Makefile.in.orig	2008-01-02 14:45:47.000000000 +0200
-+++ doc/lispintro/Makefile.in	2008-01-02 14:41:21.000000000 +0200
-@@ -34,7 +34,7 @@
+--- doc/lispintro/Makefile.in.orig	2008-05-16 08:49:09.000000000 +0300
++++ doc/lispintro/Makefile.in	2008-06-06 19:05:25.000000000 +0300
+@@ -33,7 +33,7 @@
  INFO_TARGETS = ${infodir}/eintr
  DVI_TARGETS = emacs-lisp-intro.dvi
  
@@ -9,11 +9,12 @@
  TEXI2DVI = texi2dvi
  DVIPS = dvips
  
-@@ -66,7 +66,6 @@
+@@ -65,7 +65,7 @@
  
  maintainer-clean: distclean
  	rm -f *.aux *.cps *.fns *.kys *.pgs *.vrs *.toc
 -	cd $(infodir); rm -f eintr eintr-[1-9]
++	cd $(infodir); rm -f eintr
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
