@@ -1,8 +1,8 @@
 ============================================================
-You'll have to add /usr/X11R6/lib/X11/fonts/freefont
+You'll have to add /usr/local/lib/X11/fonts/freefont
 to your X font path by either:
 
-$ xset fp+ /usr/X11R6/lib/X11/fonts/freefont
+$ xset fp+ /usr/local/lib/X11/fonts/freefont
 $ xset fp rehash
 
 or by adding it to your X-server configuration file (usually
