@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-gui
 .if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	0.13.2
+PORTVERSION=	0.14.0
 .else
 PORTVERSION=	0.12.2
 .endif
