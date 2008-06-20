@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	2d-rewriter
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	science
 MASTER_SITES=	http://www.crowdeduniverse.org/distfiles/
 
