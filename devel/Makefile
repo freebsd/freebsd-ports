@@ -2131,6 +2131,7 @@
     SUBDIR += py-rlcompleter2
     SUBDIR += py-ro
     SUBDIR += py-roxlib
+    SUBDIR += py-rtree
     SUBDIR += py-ruledispatch
     SUBDIR += py-sendfile
     SUBDIR += py-setuptools
