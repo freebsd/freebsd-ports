@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dokeos
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.dokeos.com/download/
 
@@ -15,7 +15,7 @@ COMMENT=	Dokeos is an elearning and course management web application
 
 USE_PHP=	mysql session gd pcre zlib
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OPTIONS=	LDAP "Use LDAP" off
 
 .if defined(WITH_LDAP)
