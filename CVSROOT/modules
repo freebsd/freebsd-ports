@@ -51,5 +51,73 @@ rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
 taginfo		CVSROOT taginfo
 
+# Ports categories
+ports_Mk	ports/Mk
+ports_Templates	ports/Templates
+ports_Tools	ports/Tools
+ports_accessibility	ports/accessibility
+ports_arabic	ports/arabic
+ports_archivers	ports/archivers
+ports_astro	ports/astro
+ports_audio	ports/audio
+ports_benchmarks	ports/benchmarks
+ports_biology	ports/biology
+ports_cad	ports/cad
+ports_chinese	ports/chinese
+ports_comms	ports/comms
+ports_converters	ports/converters
+ports_databases	ports/databases
+ports_deskutils	ports/deskutils
+ports_devel	ports/devel
+ports_dns	ports/dns
+ports_editors	ports/editors
+ports_emulators	ports/emulators
+ports_finance	ports/finance
+ports_french	ports/french
+ports_ftp	ports/ftp
+ports_games	ports/games
+ports_german	ports/german
+ports_graphics	ports/graphics
+ports_hebrew	ports/hebrew
+ports_hungarian	ports/hungarian
+ports_irc	ports/irc
+ports_japanese	ports/japanese
+ports_java	ports/java
+ports_korean	ports/korean
+ports_lang	ports/lang
+ports_mail	ports/mail
+ports_math	ports/math
+ports_mbone	ports/mbone
+ports_misc	ports/misc
+ports_multimedia	ports/multimedia
+ports_net	ports/net
+ports_net_im	ports/net-im
+ports_net_mgmt	ports/net-mgmt
+ports_net_p2p	ports/net-p2p
+ports_news	ports/news
+ports_palm	ports/palm
+ports_polish	ports/polish
+ports_ports-mgmt	ports/ports-mgmt
+ports_portuguese	ports/portuguese
+ports_print	ports/print
+ports_russian	ports/russian
+ports_science	ports/science
+ports_security	ports/security
+ports_shells	ports/shells
+ports_sysutils	ports/sysutils
+ports_textproc	ports/textproc
+ports_ukrainian	ports/ukrainian
+ports_vietnamese	ports/vietnamese
+ports_www	ports/www
+ports_x11	ports/x11
+ports_x11_clocks	ports/x11-clocks
+ports_x11_drivers	ports/x11-drivers
+ports_x11_fm	ports/x11-fm
+ports_x11_fonts	ports/x11-fonts
+ports_x11_servers	ports/x11-servers
+ports_x11_themes	ports/x11-themes
+ports_x11_toolkits	ports/x11-toolkits
+ports_x11_wm	ports/x11-wm
+
 # !!MERGE!! (Magic marker, do not delete or reorder!)
 
