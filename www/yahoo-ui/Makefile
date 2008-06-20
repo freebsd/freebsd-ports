@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yahoo
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	yui
@@ -21,9 +21,15 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/yui
 NO_BUILD=	yes
 
-OPTIONS=	APACHE	"Configure for Apache-2.x" off
+OPTIONS=	APACHE	"Configure for Apache-2.x" off \
+		MINIMAL "Do not install documentation and examples" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_MINIMAL)
+NOPORTDOCS=	yes
+NOPORTEXAMPLES=	yes
+.endif
 
 .if defined(WITH_APACHE)
 USE_APACHE=	2.0+
@@ -33,6 +39,18 @@ PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
 
 CONF=		yui.conf
 SUB_FILES+=	pkg-message ${CONF}
+
+.if defined(NOPORTDOCS)
+SUB_LIST+=	HASHMARK1=\#
+.else
+SUB_LIST+=	HASHMARK1=
+.endif
+
+.if defined(NOPORTEXAMPLES)
+SUB_LIST+=	HASHMARK2=\#
+.else
+SUB_LIST+=	HASHMARK2=
+.endif
 .else
 PLIST_SUB+=	NOAPACHE="@comment "
 .endif
@@ -40,13 +58,13 @@ PLIST_SUB+=	NOAPACHE="@comment "
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "assets build index.html \
 		tests" ${WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
 		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
 		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 

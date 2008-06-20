@@ -1,5 +1,5 @@
-Alias /yahoo/docs %%DOCSDIR%%
-Alias /yahoo/examples %%EXAMPLESDIR%%
+%%HASHMARK1%%Alias /yahoo/docs %%DOCSDIR%%
+%%HASHMARK2%%Alias /yahoo/examples %%EXAMPLESDIR%%
 Alias /yahoo %%WWWDIR%%
 
 <Location /yahoo>
