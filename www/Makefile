@@ -164,6 +164,7 @@
     SUBDIR += dtse
     SUBDIR += dummyflash
     SUBDIR += eaccelerator
+    SUBDIR += efront
     SUBDIR += eldav.el
     SUBDIR += elgg
     SUBDIR += elinks
