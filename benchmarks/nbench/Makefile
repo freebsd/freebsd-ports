@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	nbench
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.tux.org/~mayer/linux/
 DISTNAME=	${PORTNAME}-byte-${PORTVERSION}
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	BYTE Magazine's native benchmarks
 
 ALL_TARGET=	# empty
