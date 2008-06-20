@@ -7,6 +7,7 @@
 
 PORTNAME=	prokyon3
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		mad.2:${PORTSDIR}/audio/libmad \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		tag.5:${PORTSDIR}/audio/taglib
+		tag.6:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
 
 USE_XORG=	x11 xft
