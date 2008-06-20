@@ -1,4 +1,4 @@
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%NOAPACHE%%%%CONFDIR%%/yui.conf
 %%PORTDOCS%%%%DOCSDIR%%/Anim.js.html
 %%PORTDOCS%%%%DOCSDIR%%/AnimMgr.js.html
 %%PORTDOCS%%%%DOCSDIR%%/ArrayAssert.js.html
@@ -64,6 +64,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/Panel.js.html
 %%PORTDOCS%%%%DOCSDIR%%/PieChart.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Profiler.js.html
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RecordSet.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Region.js.html
 %%PORTDOCS%%%%DOCSDIR%%/RootNode.js.html
@@ -659,6 +660,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_nestedheaders.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_nestedheaders_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_nestedheaders_log.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_row_coloring.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_row_coloring_clean.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_row_coloring_log.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowadddelete.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowadddelete_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/dt_rowadddelete_log.html
@@ -1307,6 +1311,7 @@
 %%WWWDIR%%/build/assets/skins/sam/split-button-arrow.png
 %%WWWDIR%%/build/assets/skins/sam/sprite.png
 %%WWWDIR%%/build/assets/skins/sam/tabview.css
+%%WWWDIR%%/build/assets/skins/sam/transparent.gif
 %%WWWDIR%%/build/assets/skins/sam/treeview-loading.gif
 %%WWWDIR%%/build/assets/skins/sam/treeview-sprite.gif
 %%WWWDIR%%/build/assets/skins/sam/treeview.css
@@ -1402,6 +1407,7 @@
 %%WWWDIR%%/build/datatable/assets/skins/sam/datatable.css
 %%WWWDIR%%/build/datatable/assets/skins/sam/dt-arrow-dn.png
 %%WWWDIR%%/build/datatable/assets/skins/sam/dt-arrow-up.png
+%%WWWDIR%%/build/datatable/assets/skins/sam/transparent.gif
 %%WWWDIR%%/build/datatable/datatable-beta-debug.js
 %%WWWDIR%%/build/datatable/datatable-beta-min.js
 %%WWWDIR%%/build/datatable/datatable-beta.js
@@ -1630,7 +1636,6 @@
 %%WWWDIR%%/tests/yuiloader_config.html
 %%WWWDIR%%/tests/yuiloader_rollup.html
 %%WWWDIR%%/tests/yuitest.html
-%%NOAPACHE%%%%CONFDIR%%/yui.conf
 @dirrm %%WWWDIR%%/tests/assets
 @dirrm %%WWWDIR%%/tests
 @dirrm %%WWWDIR%%/build/yuitest/assets/skins/sam
@@ -1796,6 +1801,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatable/assets/img
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatable/assets/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatable/assets/html
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatable/assets/css
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatable/assets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/datatable
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cookie
@@ -1815,9 +1821,12 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/base
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autocomplete/assets/php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autocomplete/assets/js
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autocomplete/assets/css
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autocomplete/assets
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autocomplete
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/animation
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/assets
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/datatable/assets/css
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/autocomplete/assets/css
