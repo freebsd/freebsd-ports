@@ -159,11 +159,11 @@ lib/libggadget-gtk-1.0.so.0
 libdata/pkgconfig/libggadget-1.0.pc
 libdata/pkgconfig/libggadget-dbus-1.0.pc
 libdata/pkgconfig/libggadget-gtk-1.0.pc
-share/google-gadgets/google-gadget-browser.gg
-share/google-gadgets/igoogle-gadget.gg
-share/google-gadgets/resources.gg
-share/google-gadgets/rss-gadget.gg
-@dirrm share/google-gadgets
+%%DATADIR%%/google-gadget-browser.gg
+%%DATADIR%%/igoogle.gg
+%%DATADIR%%/resources.gg
+%%DATADIR%%/rss.gg
+@dirrm %%DATADIR%%
 @dirrm lib/google-gadgets/modules
 @dirrm lib/google-gadgets/include/ggadget
 @dirrm lib/google-gadgets/include
