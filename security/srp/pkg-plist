@@ -26,7 +26,7 @@ sbin/telnetd
 %%PORTDOCS%%%%DOCSDIR%%/draft-altman-rfc2942bis-00.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-altman-rfc2944bis-01.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-altman-telnet-fwdx-02.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-tls-srp-05.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-tls-srp-13.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-tn3270e-telnet-tls-05.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2941.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2942.txt
