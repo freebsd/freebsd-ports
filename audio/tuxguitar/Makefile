@@ -30,7 +30,7 @@ USE_JAVA=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 JAVA_VERSION=	1.4+
-JAVA_VENDOR=	bsdjava sun ibm blackdown
+JAVA_VENDOR=	bsdjava sun blackdown
 
 .if !defined(WITHOUT_MAN)
 MAN1=		tuxguitar.1
