@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	srp
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	security net
 MASTER_SITES=	http://srp.stanford.edu/source/
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Secure Remote Password protocol library, TELNET, and FTP
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* heimdal-[0-9]*
