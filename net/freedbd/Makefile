@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	net audio
 MASTER_SITES=	http://rink.nu/downloads/projects/
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	rink@FreeBSD.org
 COMMENT=	A lightweight daemon for answering FreeDB queries
 
 GNU_CONFIGURE=	yes

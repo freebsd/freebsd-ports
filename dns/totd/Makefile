@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	ed@FreeBSD.org
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 
 USE_RC_SUBR=	totd

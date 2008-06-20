@@ -11,7 +11,7 @@ PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.cs.ru.nl/pub/vb/
 
-MAINTAINER=		ed@fxq.nl
+MAINTAINER=		ed@FreeBSD.org
 COMMENT=		Data-structure library used by the Elan Programming Environment
 
 USE_AUTOTOOLS=	libtool:15

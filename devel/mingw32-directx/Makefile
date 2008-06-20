@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.libsdl.org/extras/win32/cygwin/
 PKGNAMEPREFIX=	mingw32-
 DISTNAME=	${PORTNAME}-devel
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	ed@FreeBSD.org
 COMMENT=	DirectX header files for use with MinGW
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \

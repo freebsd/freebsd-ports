@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=		games
 MASTER_SITES=		http://quake3.quakesrc.org/files/quake3/q3base/
 
-MAINTAINER=		ed@fxq.nl
+MAINTAINER=		ed@FreeBSD.org
 COMMENT=		Quake III Arena fork using SDL
 
 DEPRECATED=		Project gone, website defaced
