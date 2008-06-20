@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xbox-linux
 EXTRACT_SUFX=		.tbz2
 
-MAINTAINER=		ed@fxq.nl
+MAINTAINER=		ed@FreeBSD.org
 COMMENT=		BIOS flash utility for the Microsoft Xbox
 
 # Xbox is i386

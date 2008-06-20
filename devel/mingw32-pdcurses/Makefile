@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	mingw32-
 DISTNAME=	PDCurses-${PORTVERSION}
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Curses and Panel terminal library for Windows
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \

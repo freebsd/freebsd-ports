@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	games
 MASTER_SITES=	http://rink.nu/downloads/projects/
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	rink@FreeBSD.org
 COMMENT=	A utility to solve Sudoku puzzles
 
 USE_GMAKE=	yes

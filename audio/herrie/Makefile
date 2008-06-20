@@ -13,7 +13,7 @@ MASTER_SITES=	http://herrie.info/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
 		http://www.stack.nl/~ed/projects/herrie/distfiles/
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	ed@FreeBSD.org
 COMMENT=	A small command line interface music player
 
 HAS_CONFIGURE=	yes

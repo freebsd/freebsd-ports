@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://home.arcor.de/bernhard.baier/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	ed@FreeBSD.org
 COMMENT=	C and C++ code obfuscator
 
 USE_ZIP=	yes

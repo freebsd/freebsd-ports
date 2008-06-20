@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.ru.nl/pub/vb/
 DISTNAME=	${PORTNAME}-1.7
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Compiler for the Elan Programming Environment
 
 LIB_DEPENDS=	dcg:${PORTSDIR}/devel/mimir

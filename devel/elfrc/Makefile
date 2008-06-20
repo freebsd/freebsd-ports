@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://ktown.kde.org/~frerich/
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Resource compiler for ELF systems
 
 PLIST_FILES=	bin/elfrc
