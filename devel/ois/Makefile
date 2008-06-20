@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	wgois
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	amdmi3@amdmi3.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Object Oriented Input System
 
 GNU_CONFIGURE=	yes
