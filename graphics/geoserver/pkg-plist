@@ -642,7 +642,6 @@ lib/geoserver/webapps/geoserver/WEB-INF/pages/layouts/featureTypesLayout.jsp
 lib/geoserver/webapps/geoserver/WEB-INF/pages/layouts/mainLayout.jsp
 lib/geoserver/webapps/geoserver/WEB-INF/pages/locator.jsp
 lib/geoserver/webapps/geoserver/WEB-INF/pages/loginEditor.jsp
-lib/geoserver/webapps/geoserver/WEB-INF/pages/mainPreview.html
 lib/geoserver/webapps/geoserver/WEB-INF/pages/mainPreviewData.html
 lib/geoserver/webapps/geoserver/WEB-INF/pages/mapPreview.jsp
 lib/geoserver/webapps/geoserver/WEB-INF/pages/menuator.jsp
