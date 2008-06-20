@@ -2264,15 +2264,20 @@
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/insertdatetime/langs/de.js
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/insertdatetime/langs/en.js
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/insertdatetime/readme.txt
+%%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/blank.htm
+%%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/css/blank.css
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/css/glossaryrefs.css
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/css/latex.css
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/editor_plugin.js
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/editor_plugin_src.js
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/images/empty.gif
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/images/latex.gif
+%%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/images/pastelatex.gif
+%%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/jscripts/pastelatex.js
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/langs/de.js
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/langs/en.js
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/latex.php
+%%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/pastelatex.htm
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/popup.htm
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/readme.txt
 %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/tpl.latex.html
@@ -2739,6 +2744,7 @@
 %%WWWDIR%%/Services/Tracking/classes/class.ilLearningProgress.php
 %%WWWDIR%%/Services/Tracking/classes/class.ilLearningProgressBaseGUI.php
 %%WWWDIR%%/Services/Tracking/classes/class.ilLearningProgressGUI.php
+%%WWWDIR%%/Services/Tracking/classes/class.ilObjUserTrackingAccess.php
 %%WWWDIR%%/Services/Tracking/classes/class.ilObjUserTracking.php
 %%WWWDIR%%/Services/Tracking/classes/class.ilObjUserTrackingGUI.php
 %%WWWDIR%%/Services/Tracking/classes/class.ilOnlineTracking.php
@@ -4746,6 +4752,7 @@
 @dirrm  %%WWWDIR%%/Services/RTE/tiny_mce/plugins/insertdatetime
 @dirrm  %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/css
 @dirrm  %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/images
+@dirrm  %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/jscripts
 @dirrm  %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex/langs
 @dirrm  %%WWWDIR%%/Services/RTE/tiny_mce/plugins/latex
 @dirrm  %%WWWDIR%%/Services/RTE/tiny_mce/plugins/layer/images
