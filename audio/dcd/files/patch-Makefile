@@ -1,0 +1,38 @@
+--- Makefile.orig	2003-08-28 03:44:07.000000000 +0200
++++ Makefile	2008-06-20 21:57:34.000000000 +0200
+@@ -1,11 +1,11 @@
+ ## This is the makefile for dcd, dave's cd player.
+ 
+ # Select your compiler; gcc is probably just fine.
+-CC = gcc
++#CC = gcc
+ 
+ # Prefix for installing dcd. `make install' will put files in PREFIX/bin
+ # and PREFIX/man/man1 .
+-PREFIX = /usr
++#PREFIX = /usr
+ 
+ # Where should dcd store its process ID? (relative to ~)
+ # This is the default, which you probably don't need to change.
+@@ -21,7 +21,7 @@
+ # with that, you don't even need to uncomment the next line.
+ # CDROM = /dev/cdrom
+ # Or, if you use devfs, uncomment this line:
+-CDROM = /dev/cdroms/cdrom0
++CDROM = /dev/cdrom
+ 
+ 
+ 
+@@ -94,10 +94,10 @@
+ all: ${PROGS}
+ 
+ .c.o: ${SRCS}
+-	$(CC) -c $(CFLAGS) ${EXTRA_CFLAGS} -I/usr/local/include $< -o $@
++	$(CC) -c $(CFLAGS) ${EXTRA_CFLAGS} -I${LOCALBASE}/include $< -o $@
+ 
+ ${PROGS}: ${OBJECTS}
+-	${CC} ${CFLAGS} ${EXTRA_CFLAGS} *.o ${EXTRA_LFLAGS} -o dcd 
++	${CC} ${CFLAGS} ${EXTRA_CFLAGS} *.o ${EXTRA_LFLAGS} -L${LOCALBASE}/lib -lcdaudio -o dcd 
+ 
+ clean:;
+ 	-${RM} *.o ${PROGS}

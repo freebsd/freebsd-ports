@@ -109,6 +109,7 @@
     SUBDIR += dagrab
     SUBDIR += dap
     SUBDIR += darkice
+    SUBDIR += dcd
     SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += dino
