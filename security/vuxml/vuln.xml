@@ -153,14 +153,14 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/30591/">
 	  <p>A vulnerability has been reported in the Courier Authentication
-	  Library, which can be exploited by malicious people to conduct SQL
-	  injection attacks.</p>
+	    Library, which can be exploited by malicious people to conduct SQL
+	    injection attacks.</p>
 	  <p>Input passed via e.g. the username to the library is not properly
-	  sanitised before being used in SQL queries. This can be exploited to
-	  manipulate SQL queries by injecting arbitrary SQL code and e.g.
-	  potentially bypass authentication.</p>
+	    sanitised before being used in SQL queries. This can be exploited to
+	    manipulate SQL queries by injecting arbitrary SQL code and e.g.
+	    potentially bypass authentication.</p>
 	  <p>Successful exploitation requires that a MySQL database is used for
-	  authentication and that a Non-Latin character set is selected.</p>
+	    authentication and that a Non-Latin character set is selected.</p>
 	</blockquote>
       </body>
     </description>
@@ -186,9 +186,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The ikiwiki development team reports:</p>
 	<blockquote cite="http://ikiwiki.info/security/#index32h2">
 	  <p>Until version 2.48, ikiwiki stored passwords in cleartext in
-	  the userdb. That risks exposing all users' passwords if the file
-	  is somehow exposed. To pre-emtively guard against that, current
-	  versions of ikiwiki store password hashes (using Eksblowfish).</p>
+	    the userdb. That risks exposing all users' passwords if the file
+	    is somehow exposed. To pre-emtively guard against that, current
+	    versions of ikiwiki store password hashes (using Eksblowfish).</p>
 	</blockquote>
       </body>
     </description>
@@ -214,10 +214,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The ikiwiki development team reports:</p>
 	<blockquote cite="http://ikiwiki.info/security/#index33h2">
 	  <p>This hole allowed ikiwiki to accept logins using empty
-	  passwords to openid accounts that didn't use a password.</p>
-	<p>Upgrading to a non-vulnerable ikiwiki version immediatly is
-	  recommended if your wiki allows both password and openid
-	  logins.</p>
+	    passwords to openid accounts that didn't use a password.</p>
+	  <p>Upgrading to a non-vulnerable ikiwiki version immediatly is
+	    recommended if your wiki allows both password and openid
+	    logins.</p>
 	</blockquote>
       </body>
     </description>
@@ -281,8 +281,8 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/30283">
 	  <p>A vulnerability has been reported in Nagios, which can be
-	  exploited by malicious people to conduct cross-site scripting
-	  attacks.</p>
+	    exploited by malicious people to conduct cross-site scripting
+	    attacks.</p>
 	</blockquote>
       </body>
     </description>
@@ -310,20 +310,20 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Spamdyke Team reports:</p>
 	<blockquote cite="http://www.spamdyke.org/documentation/Changelog.txt">
 	  <p>Fixed smtp_filter() to reject the DATA command if no valid
-	  recipients have been specified.  Otherwise, a specific scenario could
-	  result in every spamdyke installation being used as an open relay.
-	  If the remote server connects and gives one or more recipients that
-	  are rejected (for relaying or blacklisting), then gives the DATA
-	  command, spamdyke will ignore all other commands, assuming that
-	  message data is being transmitted.  However, because all of the
-	  recipients were rejected, qmail will reject the DATA command.  From
-	  that point on, the remote server can give as many recipients as it
-	  likes and spamdyke will ignore them all -- they will not be filtered
-	  at all.  After that, the remote server can give the DATA command and
-	  send the actual message data.  Because spamdyke is controlling
-	  relaying, the RELAYCLIENT environment variable is set and qmail won't
-	  check for relaying either.  Thanks to Mirko Buffoni for reporting
-	  this one.</p>
+	    recipients have been specified.  Otherwise, a specific scenario could
+	    result in every spamdyke installation being used as an open relay.
+	    If the remote server connects and gives one or more recipients that
+	    are rejected (for relaying or blacklisting), then gives the DATA
+	    command, spamdyke will ignore all other commands, assuming that
+	    message data is being transmitted.  However, because all of the
+	    recipients were rejected, qmail will reject the DATA command.  From
+	    that point on, the remote server can give as many recipients as it
+	    likes and spamdyke will ignore them all -- they will not be filtered
+	    at all.  After that, the remote server can give the DATA command and
+	    send the actual message data.  Because spamdyke is controlling
+	    relaying, the RELAYCLIENT environment variable is set and qmail won't
+	    check for relaying either.  Thanks to Mirko Buffoni for reporting
+	    this one.</p>
 	</blockquote>
       </body>
     </description>
@@ -347,9 +347,9 @@ Note:  Please add new entries to the beginning of this file.
      <description>
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	  <p>Nico Golde discovered that PeerCast, a P2P audio and
-          video streaming server, is vulnerable to a buffer overflow
-          in the HTTP Basic Authentication code, allowing a remote
-          attacker to crash PeerCast or execure arbitrary code.</p>
+	    video streaming server, is vulnerable to a buffer overflow
+	    in the HTTP Basic Authentication code, allowing a remote
+	    attacker to crash PeerCast or execure arbitrary code.</p>
 	</body>
      </description>
      <references>
