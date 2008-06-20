@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdpa-gmp
-PORTVERSION=	7.1.0
+PORTVERSION=	7.1.1
 CATEGORIES=	math
 MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTFILES=	${SRCFILE} ${MANUALFILE}
@@ -18,8 +18,8 @@ COMMENT=	Multi pricision arithmetic version of math/sdpa
 
 .include <bsd.port.pre.mk>
 
-SRCDATE=	20080410
-MANDATE=	20080410
+SRCDATE=	20080618
+MANDATE=	20080618
 SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
 MANUALFILE=	sdpa.${PORTVERSION}.manual.${MANDATE}.pdf
 GNU_CONFIGURE=	yes
