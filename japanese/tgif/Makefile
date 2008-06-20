@@ -7,12 +7,12 @@
 
 PORTNAME=	tgif-resource
 PORTVERSION=	4.1.45
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese graphics
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	mita@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese Resource and Configuration for TGIF
 
 RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif \
