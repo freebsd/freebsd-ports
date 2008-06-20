@@ -12,9 +12,10 @@ CATEGORIES=	x11
 DISTNAME=	# intentionally left blank
 EXTRACT_SUFX=	# intentionally left blank
 
-RUN_DEPENDS=	xorg-server:${PORTSDIR}/x11-servers/xorg-server
-
 MAINTAINER=	x11@FreeBSD.org
+COMMENT=	Wrapper for xorg server
+
+RUN_DEPENDS=	Xorg:${PORTSDIR}/x11-servers/xorg-server
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/Xwrapper
