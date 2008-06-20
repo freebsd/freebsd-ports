@@ -16,4 +16,4 @@ Total number of rules can be substantially decreased by using
 sets and defining patterns using variables.
 
 Required run time environment is a minimal X window system installation
-on an POSIX-compatible system (*BSD/Linux/Mac OS X/Cygwin/...).
+on a POSIX-compatible system (*BSD/Linux/Mac OS X/Cygwin/...).
