@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.0.26-rc
+DISTVERSION=	0.2.1.1-alpha
 CATEGORIES=	security net
 MASTER_SITES=	http://www.torproject.org/dist/ \
-		http://mirror.onionland.org/dist/
+		http://tor.cypherpunks.at/dist/ \
+		http://tor.depthstrike.com/dist/ \
+		http://tor.boinc.ch/dist/ \
+		http://tor.anonymity.cn/dist/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	peter.thoenen@yahoo.com
@@ -25,6 +28,7 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 
 OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
 		CELLPOOL "memory pool allocator for cells" on \
+		GEOIP "track country data" off \
 		TCMALLOC "use the tcmalloc memory allocation library" off \
 		THREADS "multi-threading support" on \
 		TRANSPARENT "transparent proxy support" on \
@@ -50,6 +54,12 @@ CONFIGURE_ARGS+=	--disable-buf-freelists
 CONFIGURE_ARGS+=	--enable-cell-pool
 .else
 CONFIGURE_ARGS+=	--disable-cell-pool
+.endif
+
+.if defined(WITH_GEOIP)
+CONFIGURE_ARGS+=	--enable-geoip-stats
+.else
+CONFIGURE_ARGS+=	--disable-geoip-stats
 .endif
 
 .if defined(WITH_TCMALLOC)
