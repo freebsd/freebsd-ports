@@ -151,6 +151,7 @@
     SUBDIR += ffe
     SUBDIR += fi-aspell
     SUBDIR += filepp
+    SUBDIR += fileshuffle
     SUBDIR += fist
     SUBDIR += fixrtf
     SUBDIR += fldiff

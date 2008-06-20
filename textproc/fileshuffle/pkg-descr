@@ -1,0 +1,5 @@
+shuffle, as its name implies, shuffles the lines of its input (either
+standard input, or the named files) into random order. It is in a
+sense the very inverse of sort(1)).
+
+WWW:    http://www.eskimo.com/~scs/src/#shuffle
