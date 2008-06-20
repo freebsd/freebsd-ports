@@ -1,5 +1,5 @@
---- /dev/null	Sat Nov 25 10:03:22 2006
-+++ setup.py	Wed Oct 11 02:08:24 2006
+--- /dev/null	2008-06-11 11:33:00.000000000 +0400
++++ setup.py	2008-06-11 11:38:41.000000000 +0400
 @@ -0,0 +1,22 @@
 +#!/usr/bin/env python
 +
@@ -10,15 +10,15 @@
 +
 +setup( # Distribution meta-data
 +    name = "dynagen",
-+    version = "0.4.4",
++    version = "0.11.0",
 +    description = "A frontend for dynamips",
 +    author = "Greg Anuzelli",
 +    author_email = "dynagen@gmail.com",
 +    url = "http://sourceforge.net/projects/dyna-gen",
 +
-+    #py_modules = [ 'console', 'dynamips_lib']
-+    py_modules = [ 'configobj', 'console', 'dynamips_lib',
-+       'validate']
++    py_modules = ['confConsole','configobj','console','dynamips_lib',
++	'pemu_lib', 'pemubin', 'pemuwrapper',
++	'validate']
 +)
 +
 +print "If you have installed the modules, copy dynagen to some "
