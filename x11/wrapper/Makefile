@@ -7,14 +7,15 @@
 
 PORTNAME=	wrapper
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 DISTNAME=	# intentionally left blank
 EXTRACT_SUFX=	# intentionally left blank
 
-MAINTAINER=	ports@FreeBSD.org
+RUN_DEPENDS=	xorg-server:${PORTSDIR}/x11-servers/xorg-server
 
-CONFLICTS=	XFree86-3.3.6*
+MAINTAINER=	x11@FreeBSD.org
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/Xwrapper
 USE_XORG=	x11
