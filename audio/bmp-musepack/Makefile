@@ -6,7 +6,7 @@
 
 PORTNAME=	musepack
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://files.musepack.net/linux/plugins/
 PKGNAMEPREFIX=	bmp-
