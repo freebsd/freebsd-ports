@@ -15,9 +15,11 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
+.if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
+BUILD_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
+.endif
 .if defined(MAINTAINER_MODE)
-BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c        \
-		runtest:${PORTSDIR}/misc/dejagnu
+BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
 GNU_CONFIGURE=	yes
@@ -46,8 +48,7 @@ post-install:
 	@${RM} ${PREFIX}/bin/.dir \
 	   ${PREFIX}/lib/.dir
 
-regression-test:
+regression-test: build
 	(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)
-
 
 .include <bsd.port.mk>
