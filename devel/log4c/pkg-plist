@@ -1,10 +1,9 @@
-bin/application_1
-bin/application_2
 bin/log4c-config
 etc/log4crc.sample
 include/log4c.h
 include/log4c/appender.h
 include/log4c/appender_type_mmap.h
+include/log4c/appender_type_rollingfile.h
 include/log4c/appender_type_stream.h
 include/log4c/appender_type_stream2.h
 include/log4c/appender_type_syslog.h
@@ -22,14 +21,12 @@ include/log4c/location_info.h
 include/log4c/logging_event.h
 include/log4c/priority.h
 include/log4c/rc.h
+include/log4c/rollingpolicy.h
+include/log4c/rollingpolicy_type_sizewin.h
 include/log4c/version.h
 lib/liblog4c.a
 lib/liblog4c.la
 lib/liblog4c.so
-lib/liblog4c.so.2
-lib/liblog4c_examples.a
-lib/liblog4c_examples.la
-lib/liblog4c_examples.so
-lib/liblog4c_examples.so.0
+lib/liblog4c.so.4
 share/aclocal/log4c.m4
 @dirrm include/log4c
