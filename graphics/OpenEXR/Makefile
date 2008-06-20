@@ -33,12 +33,14 @@ test check:	build
 
 .include <bsd.port.pre.mk>
 
-.if defined(PACKAGE_BUILDING)
-.if ${ARCH} != sparc64 || ${OSVERSION} >= 700055
-.if ${ARCH} != amd64 || ${OSVERSION} < 800000
-pre-install:	test
-.endif
-.endif
-.endif
+# IlmImfTest hangs indefinitely
+#
+#.if defined(PACKAGE_BUILDING)
+#.if ${ARCH} != sparc64 || ${OSVERSION} >= 700055
+#.if ${ARCH} != amd64 || ${OSVERSION} < 800000
+#pre-install:	test
+#.endif
+#.endif
+#.endif
 
 .include <bsd.port.post.mk>
