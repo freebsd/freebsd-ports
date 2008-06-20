@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Aircraft/ \
 		ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Aircraft/ \
 		http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Aircraft/ \
-		http://flightgear.mxchange.org/pub/fgfs/Aircraft/ \
 		http://ftp3.linux.kiev.ua/pub/fgfs/Aircraft/
 DISTFILES=	707_20060324.zip \
 		737-300_20071217.zip \
