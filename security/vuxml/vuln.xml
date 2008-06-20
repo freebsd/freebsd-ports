@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="168190df-3e9a-11dd-87bc-000ea69a5213">
+    <topic>fetchmail -- potential crash in -v -v verbose mode</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><lt>6.3.8_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2008-01.txt">
+	  <p>Gunter Nau reported fetchmail crashing on some messages; further
+	    debugging by Petr Uzel and Petr Cerny at Novell/SUSE Czech Republic
+	    dug up that this happened when fetchmail was trying to print, in
+	    -v -v verbose level, headers exceeding 2048 bytes. In this
+	    situation, fetchmail would resize the buffer and fill in further
+	    parts of the message, but forget to reinitialize its va_list
+	    typed source pointer, thus reading data from a garbage address found
+	    on the stack at addresses above the function arguments the caller
+	    passed in; usually that would be the caller's stack frame.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2711</cvename>
+      <url>http://fetchmail.berlios.de/fetchmail-SA-2008-01.txt</url>
+    </references>
+    <dates>
+      <discovery>2008-06-13</discovery>
+      <entry>2008-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="800e8bd5-3acb-11dd-8842-001302a18722">
     <topic>xorg -- multiple vulnerabilities</topic>
     <affects>
