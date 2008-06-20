@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	re2c
-PORTVERSION=	0.13.3
+PORTVERSION=	0.13.4
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Compile regular expression to C (much faster final code than flex)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GCC=	3.3+
 
 MAN1=		re2c.1
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
