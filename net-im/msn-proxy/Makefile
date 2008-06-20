@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	msn-proxy
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -16,25 +15,49 @@ COMMENT=	Messenger proxy/control daemon
 
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
 
-USE_MYSQL=	yes
+OPTIONS+=	MYSQL		"Use MySQL database version" off
+OPTIONS+=	PGSQL		"Use Postgresql (pgsql) database version" on
 
-SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOCS=		INSTALL
 MSNPROXYWWW=	ajax.inc.php al.inc.php bl.inc.php chat-to.php chat.php \
 		conf.php default.array.cmd.inc.php default.array.option.inc.php \
 		default.array.status.inc.php fl.inc.php group.inc.php \
-		header.inc.php index.php mysql.inc.php save_contact_op.php \
-		save_default_op.php save_msg.php save_user_op.php user.php \
-		view-to.php view.php user.inc.php
+		header.inc.php index.php save_contact_op.php save_default_op.php \
+		save_msg.php save_user_op.php user.php view-to.php view.php \
+		user.inc.php
 MSNPROXYIMG=	ausente.gif block.gif notinlist.png ocupado.gif offline.gif \
 		online.gif send_im.gif webcam.png
 
 WANT_PHP_WEB=	yes
-USE_PHP=	mysql session
+USE_PHP=	session sockets
 MAKE_ARGS=	SYSCONFDIR=$(DESTDIR)${PREFIX}/etc/msn-proxy \
-			BINDIR=$(DESTDIR)${PREFIX}/bin
+		BINDIR=$(DESTDIR)${PREFIX}/bin
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PGSQL)
+DISTVERSIONSUFFIX=	-pgsql
+MSNPROXYWWW+=		pgsql.inc.php
+SUB_FILES=		pkg-message-pgsql
+USE_PGSQL=		yes
+USE_PHP+=		pgsql
+PLIST_SUB+=		PGSQL=""
+.else
+PLIST_SUB+=		PGSQL="@comment "
+.endif
+
+.if defined(WITH_MYSQL)
+DISTVERSIONSUFFIX=	-mysql
+MSNPROXYWWW+=		mysql.inc.php
+SUB_FILES=		pkg-message-mysql
+USE_MYSQL=		yes
+USE_PHP+=		mysql
+PLIST_SUB+=		MYSQL=""
+.else
+PLIST_SUB+=		MYSQL="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/config.h
@@ -56,4 +79,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
