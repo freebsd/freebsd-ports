@@ -1,0 +1,6 @@
+AtMail is an open source webmail client written in PHP.
+It aims to provide a elegant Ajax webmail client for existing
+IMAP mailservers, with less bloat and a focus on an intuitive,
+simple user interface.
+
+WWW: http://atmail.org/
