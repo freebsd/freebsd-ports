@@ -87,6 +87,7 @@
     SUBDIR += p5-POE-Component-IRC-Plugin-RSS-Headlines
     SUBDIR += p5-POE-Component-Server-IRC
     SUBDIR += p5-POE-Filter-IRCD
+    SUBDIR += p5-Parse-IRC
     SUBDIR += party
     SUBDIR += pear-Net_SmartIRC
     SUBDIR += pircbot

@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Parse/IRC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/IRC/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/IRC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse
+@dirrmtry %%SITE_PERL%%/Parse
