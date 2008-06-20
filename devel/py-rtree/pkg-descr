@@ -1,0 +1,5 @@
+py-rtree is R-Tree spatial index for Python GIS. Whether for in-memory feature
+stores, Plone content, or whatever -- py-rtree is  an index to speed up the
+search for objects that intersect with a spatial bounding box.
+
+WWW:   http://trac.gispython.org/projects/PCL/wiki/Rtree
