@@ -9,7 +9,7 @@ PORTNAME=	qemu
 PORTVERSION=	0.9.1
 PORTREVISION=	9
 CATEGORIES=	emulators
-MASTER_SITES=	http://fabrice.bellard.free.fr/qemu/:release \
+MASTER_SITES=	http://bellard.org/qemu/:release \
 		http://qemu.org/:release \
 		http://people.freebsd.org/~maho/qemu/:misc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
