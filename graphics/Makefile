@@ -616,6 +616,7 @@
     SUBDIR += pqiv
     SUBDIR += preview
     SUBDIR += price
+    SUBDIR += processing
     SUBDIR += proj
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
