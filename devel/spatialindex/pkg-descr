@@ -1,0 +1,17 @@
+This package provides a general framework for developing spatial indices.
+Currently it defines generic interfaces, provides simple main memory and
+disk based storage managers and a robust implementation of an R*-tree, an
+MVR-tree and a TPR-tree.
+
+Supported Features:
+	* Generic main memory and disk based storage managers.
+	* R*-tree index (also supports linear and quadratic splitting).
+	* MVR-tree index (a.k.a. PPR-tree).
+	* TPR-tree index.
+	* Advanced query capabilities, using Strategy and Visitor patterns.
+	* Arbitrary shaped range queries, by defining generic geometry interfaces.
+	* Large parameterization capabilities, including dimensionality,
+	  fill factor, node capacity, etc.
+	* STR packing / bulk loading.
+
+WWW:   http://trac.gispython.org/projects/SpatialIndex/wiki

@@ -2376,6 +2376,7 @@
     SUBDIR += sparc-rtems-gcc
     SUBDIR += sparc-rtems-gdb
     SUBDIR += sparc-rtems-objc
+    SUBDIR += spatialindex
     SUBDIR += spdict
     SUBDIR += spin
     SUBDIR += splint
