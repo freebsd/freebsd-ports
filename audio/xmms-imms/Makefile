@@ -7,7 +7,7 @@
 
 PORTNAME=	imms
 PORTVERSION=	1.2a
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	xmms-
@@ -21,7 +21,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		fftw3f.4:${PORTSDIR}/math/fftw3-float \
-		tag.5:${PORTSDIR}/audio/taglib
+		tag.6:${PORTSDIR}/audio/taglib
 
 BROKEN=		does not configure
 

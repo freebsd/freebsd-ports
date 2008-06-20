@@ -7,14 +7,14 @@
 
 PORTNAME=	mp3unicode
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	ID3 tags charset converter
 
-LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib/
+LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib/
 
 USE_BZIP2=	yes
 USE_ICONV=	yes

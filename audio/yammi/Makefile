@@ -7,7 +7,7 @@
 
 PORTNAME=	yammi
 PORTVERSION=	1.2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A QT-based music manager with fuzzy search
 
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		tag.5:${PORTSDIR}/audio/taglib
+		tag.6:${PORTSDIR}/audio/taglib
 
 OPTIONS=	XMMS "XMMS backend support" off
 
