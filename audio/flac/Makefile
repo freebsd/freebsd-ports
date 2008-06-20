@@ -51,7 +51,7 @@ pre-patch:
 post-build:
 	${REINPLACE_CMD} 's:%%PREFIX%%:${PREFIX}:' ${WRKSRC}/man/flac.1
 
-test: build
+regression-test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.post.mk>
