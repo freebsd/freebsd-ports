@@ -865,6 +865,7 @@
     SUBDIR += ocamlweb
     SUBDIR += ode
     SUBDIR += ode-devel
+    SUBDIR += ois
     SUBDIR += omake
     SUBDIR += omniNotify
     SUBDIR += omniORB

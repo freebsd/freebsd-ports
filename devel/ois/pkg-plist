@@ -1,0 +1,20 @@
+include/OIS/OIS.h
+include/OIS/OISConfig.h
+include/OIS/OISEffect.h
+include/OIS/OISEvents.h
+include/OIS/OISException.h
+include/OIS/OISFactoryCreator.h
+include/OIS/OISForceFeedback.h
+include/OIS/OISInputManager.h
+include/OIS/OISInterface.h
+include/OIS/OISJoyStick.h
+include/OIS/OISKeyboard.h
+include/OIS/OISMouse.h
+include/OIS/OISObject.h
+include/OIS/OISPrereqs.h
+lib/libOIS-1.2.0.so
+lib/libOIS.a
+lib/libOIS.la
+lib/libOIS.so
+libdata/pkgconfig/OIS.pc
+@dirrm include/OIS
