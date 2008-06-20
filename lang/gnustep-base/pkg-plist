@@ -17,6 +17,7 @@ System/Library/Documentation/man/man1/sfparse.1.gz
 System/Library/Documentation/man/man1/xmlparse.1.gz
 System/Library/Documentation/man/man8/gdomap.8.gz
 System/Library/Headers/Foundation/Foundation.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/Foundation/FoundationErrors.h
 System/Library/Headers/Foundation/GSMime.h
 System/Library/Headers/Foundation/GSXML.h
 System/Library/Headers/Foundation/NSAffineTransform.h
