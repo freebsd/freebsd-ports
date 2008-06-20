@@ -7,11 +7,14 @@
 %%WWWDIR%%/documentation/default.css
 %%WWWDIR%%/documentation/dependencies.html
 %%WWWDIR%%/documentation/index.html
+%%WWWDIR%%/documentation/install_red5.txt
 %%WWWDIR%%/documentation/installation_guide.html
 %%WWWDIR%%/documentation/license.html
 %%WWWDIR%%/documentation/license.txt
 %%WWWDIR%%/documentation/readme.html
+%%WWWDIR%%/dokeos_license.txt
 %%WWWDIR%%/favicon.ico
+%%WWWDIR%%/home/faq.html
 %%WWWDIR%%/home/home_menu.html
 %%WWWDIR%%/home/home_news.html
 %%WWWDIR%%/home/home_notice.html
@@ -41,6 +44,12 @@
 %%WWWDIR%%/main/admin/exemple.xml
 %%WWWDIR%%/main/admin/index.php
 %%WWWDIR%%/main/admin/languages.php
+%%WWWDIR%%/main/admin/ldap_form_add_users_group.php
+%%WWWDIR%%/main/admin/ldap_import_students.php
+%%WWWDIR%%/main/admin/ldap_import_students_to_session.php
+%%WWWDIR%%/main/admin/ldap_synchro.php
+%%WWWDIR%%/main/admin/ldap_users_list.php
+%%WWWDIR%%/main/admin/ldap_users_synchro.php
 %%WWWDIR%%/main/admin/resume_session.php
 %%WWWDIR%%/main/admin/session_add.php
 %%WWWDIR%%/main/admin/session_course_edit.php
@@ -62,6 +71,8 @@
 %%WWWDIR%%/main/admin/user_add.php
 %%WWWDIR%%/main/admin/user_edit.php
 %%WWWDIR%%/main/admin/user_export.php
+%%WWWDIR%%/main/admin/user_fields.php
+%%WWWDIR%%/main/admin/user_fields_add.php
 %%WWWDIR%%/main/admin/user_import.php
 %%WWWDIR%%/main/admin/user_information.php
 %%WWWDIR%%/main/admin/user_list.php
@@ -158,15 +169,23 @@
 %%WWWDIR%%/main/auth/lostPassword.php
 %%WWWDIR%%/main/auth/lost_password.lib.php
 %%WWWDIR%%/main/auth/my_progress.php
+%%WWWDIR%%/main/auth/openid/login.php
+%%WWWDIR%%/main/auth/openid/openid.conf.php
+%%WWWDIR%%/main/auth/openid/openid.lib.php
+%%WWWDIR%%/main/auth/openid/whatis.php
+%%WWWDIR%%/main/auth/openid/xrds.lib.php
 %%WWWDIR%%/main/auth/profile.php
 %%WWWDIR%%/main/blog/blog.php
 %%WWWDIR%%/main/blog/blog_admin.php
 %%WWWDIR%%/main/blog/calendar.php
+%%WWWDIR%%/main/blog/download.php
 %%WWWDIR%%/main/blog/tbl_change.js
 %%WWWDIR%%/main/calendar/agenda.inc.php
 %%WWWDIR%%/main/calendar/agenda.php
 %%WWWDIR%%/main/calendar/calendar.php
+%%WWWDIR%%/main/calendar/ical_export.php
 %%WWWDIR%%/main/calendar/index.html
+%%WWWDIR%%/main/calendar/myagenda.inc.php
 %%WWWDIR%%/main/calendar/myagenda.php
 %%WWWDIR%%/main/calendar/print.php
 %%WWWDIR%%/main/calendar/tbl_change.js
@@ -180,8 +199,132 @@
 %%WWWDIR%%/main/chat/footer_frame.inc.php
 %%WWWDIR%%/main/chat/header_frame.inc.php
 %%WWWDIR%%/main/chat/index.html
+%%WWWDIR%%/main/conference/api.php
+%%WWWDIR%%/main/conference/audiopost.php
+%%WWWDIR%%/main/conference/checksession.php
+%%WWWDIR%%/main/conference/classroom.swf
+%%WWWDIR%%/main/conference/get_translation.lib.php
 %%WWWDIR%%/main/conference/index.php
-%%WWWDIR%%/main/conference/liveconf.php
+%%WWWDIR%%/main/conference/player2.swf
+%%WWWDIR%%/main/conference/recorder2.swf
+%%WWWDIR%%/main/conference/resources/themes/darkblue/background.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/background2.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/backgroundsanspied.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/button_quit.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down_back.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down_close.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down_color.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down_colorline.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down_letter.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down_line.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down_newfile.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down_next.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down_paint.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down_point.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_down_underline.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over.swf
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over_back.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over_close.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over_color.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over_colorline.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over_letter.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over_line.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over_newfile.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over_next.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over_paint.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over_point.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_over_underline.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up.swf
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up_back.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up_close.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up_color.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up_colorline.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up_letter.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up_line.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up_newfile.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up_next.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up_paint.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up_point.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menudraw_up_underline.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menupointer.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/menuseperator.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/messagebox_info.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/mix_record.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/next.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/tabbutton_dn_lf.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/tabbutton_dn_mid.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/tabbutton_dn_re.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/tabbutton_mo_lf.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/tabbutton_mo_mid.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/tabbutton_mo_re.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/tabbutton_up_lf.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/tabbutton_up_mid.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/tabbutton_up_re.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/buttons/top.png
+%%WWWDIR%%/main/conference/resources/themes/darkblue/splash.swf
+%%WWWDIR%%/main/conference/resources/themes/grey/background.png
+%%WWWDIR%%/main/conference/resources/themes/grey/backgroundstuff.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/button_quit.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down_back.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down_close.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down_color.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down_colorline.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down_letter.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down_line.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down_newfile.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down_next.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down_paint.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down_point.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_down_underline.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over.swf
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over_back.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over_close.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over_color.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over_colorline.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over_letter.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over_line.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over_newfile.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over_next.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over_paint.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over_point.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_over_underline.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up.swf
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up_back.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up_close.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up_color.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up_colorline.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up_letter.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up_line.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up_newfile.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up_next.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up_paint.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up_point.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menudraw_up_underline.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menupointer.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/menuseperator.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/messagebox_info.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/mix_record.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/next.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/tabbutton_dn_lf.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/tabbutton_dn_mid.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/tabbutton_dn_re.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/tabbutton_mo_lf.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/tabbutton_mo_mid.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/tabbutton_mo_re.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/tabbutton_up_lf.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/tabbutton_up_mid.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/tabbutton_up_re.png
+%%WWWDIR%%/main/conference/resources/themes/grey/buttons/top.png
+%%WWWDIR%%/main/conference/resources/themes/grey/splash.swf
+%%WWWDIR%%/main/conference/testpost.php
+%%WWWDIR%%/main/conference/videoconference.html
+%%WWWDIR%%/main/conference/videoconference.php
 %%WWWDIR%%/main/course_description/index.php
 %%WWWDIR%%/main/course_home/2column.php
 %%WWWDIR%%/main/course_home/3column.php
@@ -234,6 +377,10 @@
 %%WWWDIR%%/main/css/academica/default.css
 %%WWWDIR%%/main/css/academica/frames.css
 %%WWWDIR%%/main/css/academica/images/alert.jpg
+%%WWWDIR%%/main/css/academica/images/bar_1.gif
+%%WWWDIR%%/main/css/academica/images/bar_1m.gif
+%%WWWDIR%%/main/css/academica/images/bar_1r.gif
+%%WWWDIR%%/main/css/academica/images/bar_1u.gif
 %%WWWDIR%%/main/css/academica/images/bg.jpg
 %%WWWDIR%%/main/css/academica/images/bglogin.jpg
 %%WWWDIR%%/main/css/academica/images/bgloginconf.jpg
@@ -250,102 +397,280 @@
 %%WWWDIR%%/main/css/academica/images/thindivider.jpg
 %%WWWDIR%%/main/css/academica/images/tinydivider.jpg
 %%WWWDIR%%/main/css/academica/images/vertdivider.jpg
+%%WWWDIR%%/main/css/academica/learnpath.css
 %%WWWDIR%%/main/css/academica/print.css
-%%WWWDIR%%/main/css/baby/course.css
-%%WWWDIR%%/main/css/baby/default.css
-%%WWWDIR%%/main/css/baby/frames.css
-%%WWWDIR%%/main/css/baby/images/alert.jpg
-%%WWWDIR%%/main/css/baby/images/bg.jpg
-%%WWWDIR%%/main/css/baby/images/bgheader.jpg
-%%WWWDIR%%/main/css/baby/images/bglogin.jpg
-%%WWWDIR%%/main/css/baby/images/bgloginconf.jpg
-%%WWWDIR%%/main/css/baby/images/divider.jpg
-%%WWWDIR%%/main/css/baby/images/divider2.jpg
-%%WWWDIR%%/main/css/baby/images/dropbox.jpg
-%%WWWDIR%%/main/css/baby/images/headerform.jpg
-%%WWWDIR%%/main/css/baby/images/headerform2.jpg
-%%WWWDIR%%/main/css/baby/images/headerform3.jpg
-%%WWWDIR%%/main/css/baby/images/headertables.jpg
-%%WWWDIR%%/main/css/baby/images/line.jpg
-%%WWWDIR%%/main/css/baby/images/shadowheader.jpg
-%%WWWDIR%%/main/css/baby/images/systemenouvelles.gif
-%%WWWDIR%%/main/css/baby/images/tables.jpg
-%%WWWDIR%%/main/css/baby/images/thindivider.jpg
-%%WWWDIR%%/main/css/baby/images/tinydivider.jpg
-%%WWWDIR%%/main/css/baby/images/vertdivider.jpg
-%%WWWDIR%%/main/css/baby/print.css
-%%WWWDIR%%/main/css/corporativa/course.css
-%%WWWDIR%%/main/css/corporativa/default.css
-%%WWWDIR%%/main/css/corporativa/frames.css
-%%WWWDIR%%/main/css/corporativa/images/alert.jpg
-%%WWWDIR%%/main/css/corporativa/images/bg.jpg
-%%WWWDIR%%/main/css/corporativa/images/bglogin.jpg
-%%WWWDIR%%/main/css/corporativa/images/bgloginconf.jpg
-%%WWWDIR%%/main/css/corporativa/images/divider.jpg
-%%WWWDIR%%/main/css/corporativa/images/divider2.jpg
-%%WWWDIR%%/main/css/corporativa/images/divider3.jpg
-%%WWWDIR%%/main/css/corporativa/images/dropbox.jpg
-%%WWWDIR%%/main/css/corporativa/images/headerbg.jpg
-%%WWWDIR%%/main/css/corporativa/images/headerform.jpg
-%%WWWDIR%%/main/css/corporativa/images/headertables.jpg
-%%WWWDIR%%/main/css/corporativa/images/line.jpg
-%%WWWDIR%%/main/css/corporativa/images/shadowup.jpg
-%%WWWDIR%%/main/css/corporativa/images/systemenouvelles.jpg
-%%WWWDIR%%/main/css/corporativa/images/thindivider.png
-%%WWWDIR%%/main/css/corporativa/images/tinydivider.png
-%%WWWDIR%%/main/css/corporativa/images/vertdivider.jpg
-%%WWWDIR%%/main/css/corporativa/print.css
-%%WWWDIR%%/main/css/default/chat.css
-%%WWWDIR%%/main/css/default/course.css
-%%WWWDIR%%/main/css/default/default.css
-%%WWWDIR%%/main/css/default/frames.css
-%%WWWDIR%%/main/css/default/images/blankheader.png
-%%WWWDIR%%/main/css/default/images/colabheader.png
-%%WWWDIR%%/main/css/default/images/file_important.png
-%%WWWDIR%%/main/css/default/images/footer_dokeos.png
-%%WWWDIR%%/main/css/default/images/footer_template.png
-%%WWWDIR%%/main/css/default/images/forum_template.png
-%%WWWDIR%%/main/css/default/images/list_icon_template.png
-%%WWWDIR%%/main/css/default/images/pointerheader.png
-%%WWWDIR%%/main/css/default/images/practicerheader.png
-%%WWWDIR%%/main/css/default/images/readerheader.png
-%%WWWDIR%%/main/css/default/images/repeat_template.png
-%%WWWDIR%%/main/css/default/images/subunit_list_icon.png
-%%WWWDIR%%/main/css/default/images/teacherheader.png
-%%WWWDIR%%/main/css/default/images/thinkerheader.png
-%%WWWDIR%%/main/css/default/images/vertdivider_template.jpg
-%%WWWDIR%%/main/css/default/images/writerheader.png
-%%WWWDIR%%/main/css/default/index.html
-%%WWWDIR%%/main/css/default/learnpath.css
-%%WWWDIR%%/main/css/default/online.css
-%%WWWDIR%%/main/css/default/print.css
-%%WWWDIR%%/main/css/default/scorm.css
-%%WWWDIR%%/main/css/default/screen.css
-%%WWWDIR%%/main/css/default_with_tabs/chat.css
-%%WWWDIR%%/main/css/default_with_tabs/course.css
-%%WWWDIR%%/main/css/default_with_tabs/default.css
-%%WWWDIR%%/main/css/default_with_tabs/frames.css
-%%WWWDIR%%/main/css/default_with_tabs/index.html
-%%WWWDIR%%/main/css/default_with_tabs/learnpath.css
-%%WWWDIR%%/main/css/default_with_tabs/online.css
-%%WWWDIR%%/main/css/default_with_tabs/print.css
-%%WWWDIR%%/main/css/default_with_tabs/scorm.css
-%%WWWDIR%%/main/css/default_with_tabs/screen.css
-%%WWWDIR%%/main/css/dokeosgrey/course.css
-%%WWWDIR%%/main/css/dokeosgrey/default.css
-%%WWWDIR%%/main/css/dokeosgrey/frames.css
-%%WWWDIR%%/main/css/dokeosgrey/print.css
+%%WWWDIR%%/main/css/academica/scorm.css
+%%WWWDIR%%/main/css/academica/scormfs.css
+%%WWWDIR%%/main/css/baby_orange/course.css
+%%WWWDIR%%/main/css/baby_orange/default.css
+%%WWWDIR%%/main/css/baby_orange/frames.css
+%%WWWDIR%%/main/css/baby_orange/images/alert.jpg
+%%WWWDIR%%/main/css/baby_orange/images/bar_1.gif
+%%WWWDIR%%/main/css/baby_orange/images/bar_1m.gif
+%%WWWDIR%%/main/css/baby_orange/images/bar_1r.gif
+%%WWWDIR%%/main/css/baby_orange/images/bar_1u.gif
+%%WWWDIR%%/main/css/baby_orange/images/bg.jpg
+%%WWWDIR%%/main/css/baby_orange/images/bgheader.jpg
+%%WWWDIR%%/main/css/baby_orange/images/bglogin.jpg
+%%WWWDIR%%/main/css/baby_orange/images/bgloginconf.jpg
+%%WWWDIR%%/main/css/baby_orange/images/divider.jpg
+%%WWWDIR%%/main/css/baby_orange/images/divider2.jpg
+%%WWWDIR%%/main/css/baby_orange/images/dropbox.jpg
+%%WWWDIR%%/main/css/baby_orange/images/headerform.jpg
+%%WWWDIR%%/main/css/baby_orange/images/headerform2.jpg
+%%WWWDIR%%/main/css/baby_orange/images/headerform3.jpg
+%%WWWDIR%%/main/css/baby_orange/images/headertables.jpg
+%%WWWDIR%%/main/css/baby_orange/images/line.jpg
+%%WWWDIR%%/main/css/baby_orange/images/shadowheader.jpg
+%%WWWDIR%%/main/css/baby_orange/images/systemenouvelles.gif
+%%WWWDIR%%/main/css/baby_orange/images/tables.jpg
+%%WWWDIR%%/main/css/baby_orange/images/thindivider.jpg
+%%WWWDIR%%/main/css/baby_orange/images/tinydivider.jpg
+%%WWWDIR%%/main/css/baby_orange/images/vertdivider.jpg
+%%WWWDIR%%/main/css/baby_orange/learnpath.css
+%%WWWDIR%%/main/css/baby_orange/print.css
+%%WWWDIR%%/main/css/baby_orange/scorm.css
+%%WWWDIR%%/main/css/baby_orange/scormfs.css
+%%WWWDIR%%/main/css/corporate/course.css
+%%WWWDIR%%/main/css/corporate/default.css
+%%WWWDIR%%/main/css/corporate/frames.css
+%%WWWDIR%%/main/css/corporate/images/bar_1.gif
+%%WWWDIR%%/main/css/corporate/images/bar_1m.gif
+%%WWWDIR%%/main/css/corporate/images/bar_1r.gif
+%%WWWDIR%%/main/css/corporate/images/bar_1u.gif
+%%WWWDIR%%/main/css/corporate/learnpath.css
+%%WWWDIR%%/main/css/corporate/print.css
+%%WWWDIR%%/main/css/corporate/scorm.css
+%%WWWDIR%%/main/css/corporate/scormfs.css
+%%WWWDIR%%/main/css/cosmic_campus/default.css
+%%WWWDIR%%/main/css/cosmic_campus/images/fondoHeader3.jpg
+%%WWWDIR%%/main/css/cosmic_campus/images/fondoNav.jpg
+%%WWWDIR%%/main/css/cosmic_campus/images/footer.jpg
+%%WWWDIR%%/main/css/cosmic_campus/images/header.jpg
+%%WWWDIR%%/main/css/cosmic_campus/images/outer.png
+%%WWWDIR%%/main/css/cosmic_campus/images/tab.png
+%%WWWDIR%%/main/css/cosmic_campus/images/tabCurrent.png
+%%WWWDIR%%/main/css/cosmic_campus/images/tabHover.png
+%%WWWDIR%%/main/css/cosmic_campus/learnpath.css
+%%WWWDIR%%/main/css/cosmic_campus/print.css
+%%WWWDIR%%/main/css/cosmic_campus/scorm.css
+%%WWWDIR%%/main/css/cosmic_campus/scormfs.css
+%%WWWDIR%%/main/css/dokeos_classic/chat.css
+%%WWWDIR%%/main/css/dokeos_classic/course.css
+%%WWWDIR%%/main/css/dokeos_classic/default.css
+%%WWWDIR%%/main/css/dokeos_classic/frames.css
+%%WWWDIR%%/main/css/dokeos_classic/images/bar_1.gif
+%%WWWDIR%%/main/css/dokeos_classic/images/bar_1m.gif
+%%WWWDIR%%/main/css/dokeos_classic/images/bar_1r.gif
+%%WWWDIR%%/main/css/dokeos_classic/images/bar_1u.gif
+%%WWWDIR%%/main/css/dokeos_classic/index.html
+%%WWWDIR%%/main/css/dokeos_classic/learnpath.css
+%%WWWDIR%%/main/css/dokeos_classic/online.css
+%%WWWDIR%%/main/css/dokeos_classic/print.css
+%%WWWDIR%%/main/css/dokeos_classic/scorm.css
+%%WWWDIR%%/main/css/dokeos_classic/scormfs.css
+%%WWWDIR%%/main/css/dokeos_classic/screen.css
+%%WWWDIR%%/main/css/dokeos_classic_2D/chat.css
+%%WWWDIR%%/main/css/dokeos_classic_2D/course.css
+%%WWWDIR%%/main/css/dokeos_classic_2D/default.css
+%%WWWDIR%%/main/css/dokeos_classic_2D/frames.css
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/bar_1.gif
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/bar_1m.gif
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/bar_1r.gif
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/bar_1u.gif
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/blankheader.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/colabheader.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/file_important.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/footer_dokeos.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/footer_template.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/forum_template.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/list_icon_template.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/pointerheader.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/practicerheader.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/readerheader.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/repeat_template.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/subunit_list_icon.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/teacherheader.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/thinkerheader.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/vertdivider_template.jpg
+%%WWWDIR%%/main/css/dokeos_classic_2D/images/writerheader.png
+%%WWWDIR%%/main/css/dokeos_classic_2D/index.html
+%%WWWDIR%%/main/css/dokeos_classic_2D/learnpath.css
+%%WWWDIR%%/main/css/dokeos_classic_2D/online.css
+%%WWWDIR%%/main/css/dokeos_classic_2D/print.css
+%%WWWDIR%%/main/css/dokeos_classic_2D/scorm.css
+%%WWWDIR%%/main/css/dokeos_classic_2D/scormfs.css
+%%WWWDIR%%/main/css/dokeos_classic_2D/screen.css
 %%WWWDIR%%/main/css/index.html
+%%WWWDIR%%/main/css/medical/default.css
+%%WWWDIR%%/main/css/medical/images/bar_1.gif
+%%WWWDIR%%/main/css/medical/images/bar_1m.gif
+%%WWWDIR%%/main/css/medical/images/bar_1r.gif
+%%WWWDIR%%/main/css/medical/images/bar_1u.gif
+%%WWWDIR%%/main/css/medical/images/default.css
+%%WWWDIR%%/main/css/medical/images/fondoHeader3.jpg
+%%WWWDIR%%/main/css/medical/images/fondoNav.jpg
+%%WWWDIR%%/main/css/medical/images/footer.jpg
+%%WWWDIR%%/main/css/medical/images/header.jpg
+%%WWWDIR%%/main/css/medical/images/tab_right.gif
+%%WWWDIR%%/main/css/medical/learnpath.css
+%%WWWDIR%%/main/css/medical/scorm.css
+%%WWWDIR%%/main/css/medical/scormfs.css
+%%WWWDIR%%/main/css/public_admin/course.css
+%%WWWDIR%%/main/css/public_admin/default.css
+%%WWWDIR%%/main/css/public_admin/frames.css
+%%WWWDIR%%/main/css/public_admin/images/TGSS_header.jpg
+%%WWWDIR%%/main/css/public_admin/images/bar_1.gif
+%%WWWDIR%%/main/css/public_admin/images/bar_1m.gif
+%%WWWDIR%%/main/css/public_admin/images/bar_1r.gif
+%%WWWDIR%%/main/css/public_admin/images/bar_1u.gif
+%%WWWDIR%%/main/css/public_admin/images/default.css
+%%WWWDIR%%/main/css/public_admin/images/fondoFooter.jpg
+%%WWWDIR%%/main/css/public_admin/images/fondoHeader2.jpg
+%%WWWDIR%%/main/css/public_admin/images/fondoHeader3.jpg
+%%WWWDIR%%/main/css/public_admin/images/fondoNav.jpg
+%%WWWDIR%%/main/css/public_admin/images/footer.jpg
+%%WWWDIR%%/main/css/public_admin/images/logoMouse.jpg
+%%WWWDIR%%/main/css/public_admin/images/salir.gif
+%%WWWDIR%%/main/css/public_admin/images/tab_right.gif
+%%WWWDIR%%/main/css/public_admin/images/tab_right.jpg
+%%WWWDIR%%/main/css/public_admin/learnpath.css
+%%WWWDIR%%/main/css/public_admin/print.css
+%%WWWDIR%%/main/css/public_admin/scorm.css
+%%WWWDIR%%/main/css/public_admin/scormfs.css
+%%WWWDIR%%/main/css/silver_line/course.css
+%%WWWDIR%%/main/css/silver_line/default.css
+%%WWWDIR%%/main/css/silver_line/frames.css
+%%WWWDIR%%/main/css/silver_line/images/alert.jpg
+%%WWWDIR%%/main/css/silver_line/images/bar_1.gif
+%%WWWDIR%%/main/css/silver_line/images/bar_1m.gif
+%%WWWDIR%%/main/css/silver_line/images/bar_1r.gif
+%%WWWDIR%%/main/css/silver_line/images/bar_1u.gif
+%%WWWDIR%%/main/css/silver_line/images/bg.jpg
+%%WWWDIR%%/main/css/silver_line/images/bglogin.jpg
+%%WWWDIR%%/main/css/silver_line/images/bgloginconf.jpg
+%%WWWDIR%%/main/css/silver_line/images/divider.jpg
+%%WWWDIR%%/main/css/silver_line/images/divider2.jpg
+%%WWWDIR%%/main/css/silver_line/images/divider3.jpg
+%%WWWDIR%%/main/css/silver_line/images/dropbox.jpg
+%%WWWDIR%%/main/css/silver_line/images/headerbg.jpg
+%%WWWDIR%%/main/css/silver_line/images/headerform.jpg
+%%WWWDIR%%/main/css/silver_line/images/headertables.jpg
+%%WWWDIR%%/main/css/silver_line/images/line.jpg
+%%WWWDIR%%/main/css/silver_line/images/shadowup.jpg
+%%WWWDIR%%/main/css/silver_line/images/systemenouvelles.jpg
+%%WWWDIR%%/main/css/silver_line/images/thindivider.png
+%%WWWDIR%%/main/css/silver_line/images/tinydivider.png
+%%WWWDIR%%/main/css/silver_line/images/vertdivider.jpg
+%%WWWDIR%%/main/css/silver_line/learnpath.css
+%%WWWDIR%%/main/css/silver_line/print.css
+%%WWWDIR%%/main/css/silver_line/scorm.css
+%%WWWDIR%%/main/css/silver_line/scormfs.css
+%%WWWDIR%%/main/css/sober_brown/course.css
+%%WWWDIR%%/main/css/sober_brown/default.css
+%%WWWDIR%%/main/css/sober_brown/frames.css
+%%WWWDIR%%/main/css/sober_brown/images/bar_1.gif
+%%WWWDIR%%/main/css/sober_brown/images/bar_1m.gif
+%%WWWDIR%%/main/css/sober_brown/images/bar_1r.gif
+%%WWWDIR%%/main/css/sober_brown/images/bar_1u.gif
+%%WWWDIR%%/main/css/sober_brown/images/fondoFooter.jpg
+%%WWWDIR%%/main/css/sober_brown/images/fondoHeader3.jpg
+%%WWWDIR%%/main/css/sober_brown/images/fondoNav.jpg
+%%WWWDIR%%/main/css/sober_brown/images/footer.jpg
+%%WWWDIR%%/main/css/sober_brown/images/header.jpg
+%%WWWDIR%%/main/css/sober_brown/images/tab_right.gif
+%%WWWDIR%%/main/css/sober_brown/images/tab_right.jpg
+%%WWWDIR%%/main/css/sober_brown/learnpath.css
+%%WWWDIR%%/main/css/sober_brown/print.css
+%%WWWDIR%%/main/css/sober_brown/scorm.css
+%%WWWDIR%%/main/css/sober_brown/scormfs.css
 %%WWWDIR%%/main/default_course_document/audio/ListeningComprehension.mp3
 %%WWWDIR%%/main/default_course_document/flash/ArtefactsInRMI.swf
 %%WWWDIR%%/main/default_course_document/flash/PonderationOfMrSignal.swf
 %%WWWDIR%%/main/default_course_document/flash/SpinEchoSequence.swf
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.board.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.book.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.book_highlight.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.bookcase.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.computer.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.emot_happy.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.emot_neutral.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.emot_sad.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.emot_wink.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.female.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.geometry.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.homework.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.idea.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.interaction.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.logo_dokeos.png
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.male.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.maths.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.mechanism.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.mouse.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.newspaper.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.note.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.pencil.png
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.presentation.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.redlight.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.science.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.servicesgather.png
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.silhouette.png
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.speech.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.time.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.tutorial.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.twopeople.png
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.world.jpg
+%%WWWDIR%%/main/default_course_document/images/.thumbs/.write.jpg
 %%WWWDIR%%/main/default_course_document/images/board.jpg
 %%WWWDIR%%/main/default_course_document/images/book.jpg
 %%WWWDIR%%/main/default_course_document/images/book_highlight.jpg
 %%WWWDIR%%/main/default_course_document/images/bookcase.jpg
-%%WWWDIR%%/main/default_course_document/images/calendar.jpg
 %%WWWDIR%%/main/default_course_document/images/computer.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.accident_1.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.alaska_chart.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.argandgaussplane.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.asus-eee-pc.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.bandgap_dv.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.barbitursyra.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.brain.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.chainette_formule.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.coccidioides.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.constitution_1.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.distance.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.dokeos_stones.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.dokeos_stones_external.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.elearning_project.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.europecouncilorange200_1.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.europemap.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.gearbox.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.halleffect.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.head_olfactory_nerve.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.lightbulb.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.matching_electric_1.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.oilwell.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.pc.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.piano.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.precession.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.pythagore.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.radiograph.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.receiver.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.spectre.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.synapse.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.tetralogy.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.velocity.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.waterloo.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs/.yalta_1.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/accident_1.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/alaska_chart.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/animated/.thumbs/.anim_corriolis.gif
+%%WWWDIR%%/main/default_course_document/images/diagrams/animated/.thumbs/.anim_electrolysis.gif
+%%WWWDIR%%/main/default_course_document/images/diagrams/animated/.thumbs/.anim_japanese.gif
+%%WWWDIR%%/main/default_course_document/images/diagrams/animated/.thumbs/.anim_loco.gif
+%%WWWDIR%%/main/default_course_document/images/diagrams/animated/.thumbs/.anim_pendul.gif
+%%WWWDIR%%/main/default_course_document/images/diagrams/animated/.thumbs/.anim_rome.gif
+%%WWWDIR%%/main/default_course_document/images/diagrams/animated/.thumbs/.anim_twostroke.gif
+%%WWWDIR%%/main/default_course_document/images/diagrams/animated/.thumbs/.anim_wave_frequency.gif
+%%WWWDIR%%/main/default_course_document/images/diagrams/animated/.thumbs/.anim_yugoslavia.gif
 %%WWWDIR%%/main/default_course_document/images/diagrams/animated/anim_corriolis.gif
 %%WWWDIR%%/main/default_course_document/images/diagrams/animated/anim_electrolysis.gif
 %%WWWDIR%%/main/default_course_document/images/diagrams/animated/anim_japanese.gif
@@ -356,48 +681,85 @@
 %%WWWDIR%%/main/default_course_document/images/diagrams/animated/anim_wave_frequency.gif
 %%WWWDIR%%/main/default_course_document/images/diagrams/animated/anim_yugoslavia.gif
 %%WWWDIR%%/main/default_course_document/images/diagrams/argandgaussplane.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/asus-eee-pc.jpg
 %%WWWDIR%%/main/default_course_document/images/diagrams/bandgap_dv.jpg
 %%WWWDIR%%/main/default_course_document/images/diagrams/barbitursyra.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/bottom_arrow.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/brain.png
 %%WWWDIR%%/main/default_course_document/images/diagrams/chainette_formule.jpg
 %%WWWDIR%%/main/default_course_document/images/diagrams/coccidioides.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/constitution_1.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/distance.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/dokeos_stones.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/dokeos_stones_external.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/elearning_project.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/europecouncilorange200_1.png
 %%WWWDIR%%/main/default_course_document/images/diagrams/europemap.jpg
 %%WWWDIR%%/main/default_course_document/images/diagrams/gearbox.jpg
 %%WWWDIR%%/main/default_course_document/images/diagrams/halleffect.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/head_olfactory_nerve.png
 %%WWWDIR%%/main/default_course_document/images/diagrams/lightbulb.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/matching_electric_1.png
 %%WWWDIR%%/main/default_course_document/images/diagrams/oilwell.jpg
 %%WWWDIR%%/main/default_course_document/images/diagrams/pc.jpg
 %%WWWDIR%%/main/default_course_document/images/diagrams/piano.jpg
 %%WWWDIR%%/main/default_course_document/images/diagrams/precession.jpg
 %%WWWDIR%%/main/default_course_document/images/diagrams/pythagore.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/radiograph.png
 %%WWWDIR%%/main/default_course_document/images/diagrams/receiver.jpg
 %%WWWDIR%%/main/default_course_document/images/diagrams/spectre.jpg
 %%WWWDIR%%/main/default_course_document/images/diagrams/synapse.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/tetralogy.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/top_arrow.png
 %%WWWDIR%%/main/default_course_document/images/diagrams/velocity.jpg
+%%WWWDIR%%/main/default_course_document/images/diagrams/waterloo.png
+%%WWWDIR%%/main/default_course_document/images/diagrams/yalta_1.png
 %%WWWDIR%%/main/default_course_document/images/emot_happy.jpg
 %%WWWDIR%%/main/default_course_document/images/emot_neutral.jpg
 %%WWWDIR%%/main/default_course_document/images/emot_sad.jpg
 %%WWWDIR%%/main/default_course_document/images/emot_wink.jpg
 %%WWWDIR%%/main/default_course_document/images/female.jpg
-%%WWWDIR%%/main/default_course_document/images/floppy.jpg
 %%WWWDIR%%/main/default_course_document/images/geometry.jpg
-%%WWWDIR%%/main/default_course_document/images/group.jpg
-%%WWWDIR%%/main/default_course_document/images/hal.jpg
 %%WWWDIR%%/main/default_course_document/images/homework.jpg
 %%WWWDIR%%/main/default_course_document/images/idea.jpg
 %%WWWDIR%%/main/default_course_document/images/interaction.jpg
-%%WWWDIR%%/main/default_course_document/images/japanese.jpg
-%%WWWDIR%%/main/default_course_document/images/keyboard.jpg
-%%WWWDIR%%/main/default_course_document/images/linux.jpg
+%%WWWDIR%%/main/default_course_document/images/logo_dokeos.png
 %%WWWDIR%%/main/default_course_document/images/male.jpg
 %%WWWDIR%%/main/default_course_document/images/maths.jpg
 %%WWWDIR%%/main/default_course_document/images/mechanism.jpg
 %%WWWDIR%%/main/default_course_document/images/mouse.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.anim_pointing_left.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.anim_pointing_right.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.anim_practicing.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.anim_reading.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.anim_teaching.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.anim_thinking.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.anim_writing.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.collaborating.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.collaborative.png
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.collaborative_big.png
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.group.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.mr_dokeosleft.png
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.pointing_left.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.pointing_right.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.practicing.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.reading.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.teaching.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.thinking.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs/.writing.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/anim_pointing_left.jpg
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/anim_pointing_right.jpg
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/anim_practicing.jpg
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/anim_reading.jpg
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/anim_teaching.jpg
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/anim_thinking.jpg
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/anim_writing.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/.thumbs/.creativeAnim.gif
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/.thumbs/.pointerAnim.gif
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/.thumbs/.practicerAnim.gif
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/.thumbs/.readerAnim.gif
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/.thumbs/.teacherAnim.gif
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/.thumbs/.thinkerAnim.gif
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/creativeAnim.gif
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/pointerAnim.gif
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/practicerAnim.gif
@@ -405,7 +767,10 @@
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/teacherAnim.gif
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/thinkerAnim.gif
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/collaborating.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/collaborative.png
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/collaborative_big.png
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/group.jpg
+%%WWWDIR%%/main/default_course_document/images/mr_dokeos/mr_dokeosleft.png
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/pointing_left.jpg
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/pointing_right.jpg
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/practicing.jpg
@@ -415,14 +780,26 @@
 %%WWWDIR%%/main/default_course_document/images/mr_dokeos/writing.jpg
 %%WWWDIR%%/main/default_course_document/images/newspaper.jpg
 %%WWWDIR%%/main/default_course_document/images/note.jpg
-%%WWWDIR%%/main/default_course_document/images/planet.jpg
+%%WWWDIR%%/main/default_course_document/images/pencil.png
 %%WWWDIR%%/main/default_course_document/images/presentation.jpg
 %%WWWDIR%%/main/default_course_document/images/redlight.jpg
 %%WWWDIR%%/main/default_course_document/images/science.jpg
-%%WWWDIR%%/main/default_course_document/images/search.jpg
+%%WWWDIR%%/main/default_course_document/images/servicesgather.png
+%%WWWDIR%%/main/default_course_document/images/silhouette.png
+%%WWWDIR%%/main/default_course_document/images/small/00.png
+%%WWWDIR%%/main/default_course_document/images/small/01.png
+%%WWWDIR%%/main/default_course_document/images/small/02.png
+%%WWWDIR%%/main/default_course_document/images/small/03.png
+%%WWWDIR%%/main/default_course_document/images/small/04.png
+%%WWWDIR%%/main/default_course_document/images/small/05.png
+%%WWWDIR%%/main/default_course_document/images/small/06.png
+%%WWWDIR%%/main/default_course_document/images/small/07.png
+%%WWWDIR%%/main/default_course_document/images/small/08.png
+%%WWWDIR%%/main/default_course_document/images/small/09.png
 %%WWWDIR%%/main/default_course_document/images/small/accessibilty.jpg
 %%WWWDIR%%/main/default_course_document/images/small/agenda.jpg
 %%WWWDIR%%/main/default_course_document/images/small/annoncement.jpg
+%%WWWDIR%%/main/default_course_document/images/small/arrow.png
 %%WWWDIR%%/main/default_course_document/images/small/attach.jpg
 %%WWWDIR%%/main/default_course_document/images/small/board.jpg
 %%WWWDIR%%/main/default_course_document/images/small/bookcase.jpg
@@ -472,14 +849,45 @@
 %%WWWDIR%%/main/default_course_document/images/small/videoconference.jpg
 %%WWWDIR%%/main/default_course_document/images/small/work.jpg
 %%WWWDIR%%/main/default_course_document/images/speech.jpg
-%%WWWDIR%%/main/default_course_document/images/teacher.jpg
 %%WWWDIR%%/main/default_course_document/images/time.jpg
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_case.png
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_chair.png
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_face.png
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_glasses.png
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_join_hands.png
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_join_left.png
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_points_left.png
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_points_right.png
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_reads.png
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_smile.png
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_standing.png
+%%WWWDIR%%/main/default_course_document/images/trainer/.thumbs/.trainer_staring.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_case.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_chair.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_face.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_glasses.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_join_hands.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_join_left.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_points_left.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_points_right.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_reads.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_smile.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_standing.png
+%%WWWDIR%%/main/default_course_document/images/trainer/trainer_staring.png
 %%WWWDIR%%/main/default_course_document/images/tutorial.jpg
-%%WWWDIR%%/main/default_course_document/images/wallet.jpg
-%%WWWDIR%%/main/default_course_document/images/wikipedia.jpg
-%%WWWDIR%%/main/default_course_document/images/work.jpg
+%%WWWDIR%%/main/default_course_document/images/twopeople.png
 %%WWWDIR%%/main/default_course_document/images/world.jpg
 %%WWWDIR%%/main/default_course_document/images/write.jpg
+%%WWWDIR%%/main/default_course_document/themes/elegant.css
+%%WWWDIR%%/main/default_course_document/themes/images/help.png
+%%WWWDIR%%/main/default_course_document/themes/img/certificate_black.jpg
+%%WWWDIR%%/main/default_course_document/themes/img/certificate_blue.jpg
+%%WWWDIR%%/main/default_course_document/themes/img/certificate_contemporain.jpg
+%%WWWDIR%%/main/default_course_document/themes/img/certificate_grey.jpg
+%%WWWDIR%%/main/default_course_document/themes/img/certificate_yellow.jpg
+%%WWWDIR%%/main/default_course_document/themes/img/help.png
+%%WWWDIR%%/main/default_course_document/themes/img/puce.png
+%%WWWDIR%%/main/default_course_document/themes/img/puce_hover.png
 %%WWWDIR%%/main/default_course_document/video/example.flv
 %%WWWDIR%%/main/document/create_document.php
 %%WWWDIR%%/main/document/document.inc.php
@@ -520,6 +928,7 @@
 %%WWWDIR%%/main/exercice/exercise.class.php
 %%WWWDIR%%/main/exercice/exercise.lib.php
 %%WWWDIR%%/main/exercice/exercise_admin.php
+%%WWWDIR%%/main/exercice/exercise_result.class.php
 %%WWWDIR%%/main/exercice/exercise_result.php
 %%WWWDIR%%/main/exercice/exercise_show.php
 %%WWWDIR%%/main/exercice/export/exercise_import.inc.php
@@ -560,9 +969,11 @@
 %%WWWDIR%%/main/exercice/unique_answer.class.php
 %%WWWDIR%%/main/external_module/external_module.php
 %%WWWDIR%%/main/external_module/index.html
+%%WWWDIR%%/main/forum/download.php
 %%WWWDIR%%/main/forum/editpost.php
 %%WWWDIR%%/main/forum/forumconfig.inc.php
 %%WWWDIR%%/main/forum/forumfunction.inc.php
+%%WWWDIR%%/main/forum/forumsearch.php
 %%WWWDIR%%/main/forum/iframe_thread.php
 %%WWWDIR%%/main/forum/index.php
 %%WWWDIR%%/main/forum/newthread.php
@@ -574,6 +985,62 @@
 %%WWWDIR%%/main/forum/viewthread_nested.inc.php
 %%WWWDIR%%/main/forum/viewthread_threaded.inc.php
 %%WWWDIR%%/main/garbage/index.html
+%%WWWDIR%%/main/gradebook/exercise_jump.php
+%%WWWDIR%%/main/gradebook/gradebook.php
+%%WWWDIR%%/main/gradebook/gradebook_add_cat.php
+%%WWWDIR%%/main/gradebook/gradebook_add_eval.php
+%%WWWDIR%%/main/gradebook/gradebook_add_link.php
+%%WWWDIR%%/main/gradebook/gradebook_add_link_select_course.php
+%%WWWDIR%%/main/gradebook/gradebook_add_result.php
+%%WWWDIR%%/main/gradebook/gradebook_add_user.php
+%%WWWDIR%%/main/gradebook/gradebook_edit_cat.php
+%%WWWDIR%%/main/gradebook/gradebook_edit_eval.php
+%%WWWDIR%%/main/gradebook/gradebook_edit_link.php
+%%WWWDIR%%/main/gradebook/gradebook_edit_result.php
+%%WWWDIR%%/main/gradebook/gradebook_flatview.php
+%%WWWDIR%%/main/gradebook/gradebook_scoring_system.php
+%%WWWDIR%%/main/gradebook/gradebook_statistics.php
+%%WWWDIR%%/main/gradebook/gradebook_view_result.php
+%%WWWDIR%%/main/gradebook/index.html
+%%WWWDIR%%/main/gradebook/lib/be.inc.php
+%%WWWDIR%%/main/gradebook/lib/be/abstractlink.class.php
+%%WWWDIR%%/main/gradebook/lib/be/category.class.php
+%%WWWDIR%%/main/gradebook/lib/be/dropboxlink.class.php
+%%WWWDIR%%/main/gradebook/lib/be/evallink.class.php
+%%WWWDIR%%/main/gradebook/lib/be/evaluation.class.php
+%%WWWDIR%%/main/gradebook/lib/be/exerciselink.class.php
+%%WWWDIR%%/main/gradebook/lib/be/gradebookitem.class.php
+%%WWWDIR%%/main/gradebook/lib/be/index.html
+%%WWWDIR%%/main/gradebook/lib/be/learnpathlink.class.php
+%%WWWDIR%%/main/gradebook/lib/be/linkfactory.class.php
+%%WWWDIR%%/main/gradebook/lib/be/result.class.php
+%%WWWDIR%%/main/gradebook/lib/be/studentpublicationlink.class.php
+%%WWWDIR%%/main/gradebook/lib/fe/catform.class.php
+%%WWWDIR%%/main/gradebook/lib/fe/dataform.class.php
+%%WWWDIR%%/main/gradebook/lib/fe/displaygradebook.php
+%%WWWDIR%%/main/gradebook/lib/fe/evalform.class.php
+%%WWWDIR%%/main/gradebook/lib/fe/exportgradebook.php
+%%WWWDIR%%/main/gradebook/lib/fe/flatviewtable.class.php
+%%WWWDIR%%/main/gradebook/lib/fe/gradebooktable.class.php
+%%WWWDIR%%/main/gradebook/lib/fe/index.html
+%%WWWDIR%%/main/gradebook/lib/fe/linkaddeditform.class.php
+%%WWWDIR%%/main/gradebook/lib/fe/linkform.class.php
+%%WWWDIR%%/main/gradebook/lib/fe/resulttable.class.php
+%%WWWDIR%%/main/gradebook/lib/fe/scoredisplayform.class.php
+%%WWWDIR%%/main/gradebook/lib/fe/userform.class.php
+%%WWWDIR%%/main/gradebook/lib/fe/usertable.class.php
+%%WWWDIR%%/main/gradebook/lib/flatview_data_generator.class.php
+%%WWWDIR%%/main/gradebook/lib/gradebook_data_generator.class.php
+%%WWWDIR%%/main/gradebook/lib/gradebook_functions.inc.php
+%%WWWDIR%%/main/gradebook/lib/gradebook_functions_users.inc.php
+%%WWWDIR%%/main/gradebook/lib/index.html
+%%WWWDIR%%/main/gradebook/lib/results_data_generator.class.php
+%%WWWDIR%%/main/gradebook/lib/scoredisplay.class.php
+%%WWWDIR%%/main/gradebook/lib/user_data_generator.class.php
+%%WWWDIR%%/main/gradebook/open_document.php
+%%WWWDIR%%/main/gradebook/print.css
+%%WWWDIR%%/main/gradebook/user_info.php
+%%WWWDIR%%/main/gradebook/user_stats.php
 %%WWWDIR%%/main/group/group.php
 %%WWWDIR%%/main/group/group_category.php
 %%WWWDIR%%/main/group/group_creation.php
@@ -582,6 +1049,7 @@
 %%WWWDIR%%/main/group/group_space.php
 %%WWWDIR%%/main/group/index.html
 %%WWWDIR%%/main/help/allowed_html_tags.php
+%%WWWDIR%%/main/help/faq.php
 %%WWWDIR%%/main/help/help.php
 %%WWWDIR%%/main/help/index.html
 %%WWWDIR%%/main/img/0.gif
@@ -594,6 +1062,7 @@
 %%WWWDIR%%/main/img/add_na.gif
 %%WWWDIR%%/main/img/add_user.gif
 %%WWWDIR%%/main/img/add_user_big.gif
+%%WWWDIR%%/main/img/add_user_field_howto.png
 %%WWWDIR%%/main/img/adduser.gif
 %%WWWDIR%%/main/img/admins.gif
 %%WWWDIR%%/main/img/agenda.gif
@@ -638,6 +1107,10 @@
 %%WWWDIR%%/main/img/bmp.gif
 %%WWWDIR%%/main/img/bug.gif
 %%WWWDIR%%/main/img/bug_gray.gif
+%%WWWDIR%%/main/img/bullet_blue.gif
+%%WWWDIR%%/main/img/bullet_green.gif
+%%WWWDIR%%/main/img/bullet_orange.gif
+%%WWWDIR%%/main/img/bullet_red.gif
 %%WWWDIR%%/main/img/buoy.gif
 %%WWWDIR%%/main/img/c.gif
 %%WWWDIR%%/main/img/calendar_add.gif
@@ -666,6 +1139,7 @@
 %%WWWDIR%%/main/img/comment.gif
 %%WWWDIR%%/main/img/comment_bubble.gif
 %%WWWDIR%%/main/img/commentquestion.gif
+%%WWWDIR%%/main/img/completed.gif
 %%WWWDIR%%/main/img/conf.gif
 %%WWWDIR%%/main/img/conf_na.gif
 %%WWWDIR%%/main/img/copy.gif
@@ -683,11 +1157,13 @@
 %%WWWDIR%%/main/img/deluser.gif
 %%WWWDIR%%/main/img/deplacer.gif
 %%WWWDIR%%/main/img/deplacer_fichier.gif
+%%WWWDIR%%/main/img/deplacer_fichier_na.gif
 %%WWWDIR%%/main/img/doc.gif
 %%WWWDIR%%/main/img/doc_word.gif
 %%WWWDIR%%/main/img/documents.gif
 %%WWWDIR%%/main/img/documents_na.gif
 %%WWWDIR%%/main/img/dokeos.gif
+%%WWWDIR%%/main/img/dokeos_logo_certif.png
 %%WWWDIR%%/main/img/dokeosgrey/tab_left.gif
 %%WWWDIR%%/main/img/dokeosgrey/tab_left_active.gif
 %%WWWDIR%%/main/img/dokeosgrey/tab_left_hover.gif
@@ -696,12 +1172,14 @@
 %%WWWDIR%%/main/img/dokeosgrey/tab_right_hover.gif
 %%WWWDIR%%/main/img/dossier.gif
 %%WWWDIR%%/main/img/down.gif
+%%WWWDIR%%/main/img/down_na.gif
 %%WWWDIR%%/main/img/download_manager.gif
 %%WWWDIR%%/main/img/dropbox.gif
 %%WWWDIR%%/main/img/dropbox_na.gif
 %%WWWDIR%%/main/img/dropdown.gif
 %%WWWDIR%%/main/img/edit.gif
 %%WWWDIR%%/main/img/edit_group.gif
+%%WWWDIR%%/main/img/edit_na.gif
 %%WWWDIR%%/main/img/edu_miscellaneous.gif
 %%WWWDIR%%/main/img/email.gif
 %%WWWDIR%%/main/img/email.png
@@ -716,9 +1194,16 @@
 %%WWWDIR%%/main/img/exit.png
 %%WWWDIR%%/main/img/explorer.gif
 %%WWWDIR%%/main/img/export.png
+%%WWWDIR%%/main/img/export_high_fade.png
+%%WWWDIR%%/main/img/export_low_fade.png
 %%WWWDIR%%/main/img/external.gif
 %%WWWDIR%%/main/img/external_inactive.gif
 %%WWWDIR%%/main/img/external_na.gif
+%%WWWDIR%%/main/img/faded_blue_horizontal.png
+%%WWWDIR%%/main/img/faded_grey.png
+%%WWWDIR%%/main/img/faded_grey2.png
+%%WWWDIR%%/main/img/faded_grey3.png
+%%WWWDIR%%/main/img/failed.gif
 %%WWWDIR%%/main/img/file.gif
 %%WWWDIR%%/main/img/file_flash.gif
 %%WWWDIR%%/main/img/file_flash_small.gif
@@ -762,6 +1247,7 @@
 %%WWWDIR%%/main/img/forum_new.gif
 %%WWWDIR%%/main/img/forum_new_small.gif
 %%WWWDIR%%/main/img/forumgroup.gif
+%%WWWDIR%%/main/img/forumgroupnew.gif
 %%WWWDIR%%/main/img/forumpost.gif
 %%WWWDIR%%/main/img/forumpostnew.gif
 %%WWWDIR%%/main/img/forumthread.gif
@@ -790,6 +1276,9 @@
 %%WWWDIR%%/main/img/gallery/teacher.png
 %%WWWDIR%%/main/img/gallery/thinker.png
 %%WWWDIR%%/main/img/gif.gif
+%%WWWDIR%%/main/img/gradebook_add.gif
+%%WWWDIR%%/main/img/gradebook_eval_not_empty.gif
+%%WWWDIR%%/main/img/gradebook_remove.gif
 %%WWWDIR%%/main/img/group.gif
 %%WWWDIR%%/main/img/group_add.gif
 %%WWWDIR%%/main/img/group_add_big.gif
@@ -801,6 +1290,7 @@
 %%WWWDIR%%/main/img/help.gif
 %%WWWDIR%%/main/img/home.gif
 %%WWWDIR%%/main/img/home_small.gif
+%%WWWDIR%%/main/img/homework.gif
 %%WWWDIR%%/main/img/hotpotatoes.jpg
 %%WWWDIR%%/main/img/hotspot.gif
 %%WWWDIR%%/main/img/html.gif
@@ -854,6 +1344,7 @@
 %%WWWDIR%%/main/img/image.png
 %%WWWDIR%%/main/img/images_gallery.gif
 %%WWWDIR%%/main/img/import.png
+%%WWWDIR%%/main/img/incomplete.gif
 %%WWWDIR%%/main/img/index.html
 %%WWWDIR%%/main/img/info.gif
 %%WWWDIR%%/main/img/info2.gif
@@ -866,6 +1357,7 @@
 %%WWWDIR%%/main/img/introduction.gif
 %%WWWDIR%%/main/img/invisible.gif
 %%WWWDIR%%/main/img/invisible_LP_list.gif
+%%WWWDIR%%/main/img/invisible_na.gif
 %%WWWDIR%%/main/img/join.gif
 %%WWWDIR%%/main/img/joinbottom.gif
 %%WWWDIR%%/main/img/joint.gif
@@ -875,6 +1367,7 @@
 %%WWWDIR%%/main/img/kaboodleloop_gray.gif
 %%WWWDIR%%/main/img/kcmdf.gif
 %%WWWDIR%%/main/img/kcmdf_big.gif
+%%WWWDIR%%/main/img/khelpcenter.gif
 %%WWWDIR%%/main/img/korganizer.gif
 %%WWWDIR%%/main/img/ktip.gif
 %%WWWDIR%%/main/img/l.gif
@@ -894,6 +1387,7 @@
 %%WWWDIR%%/main/img/links_ad_na.gif
 %%WWWDIR%%/main/img/links_na.gif
 %%WWWDIR%%/main/img/linksnew.gif
+%%WWWDIR%%/main/img/linphone.gif
 %%WWWDIR%%/main/img/lock.gif
 %%WWWDIR%%/main/img/lockthread.gif
 %%WWWDIR%%/main/img/login_as.gif
@@ -920,6 +1414,7 @@
 %%WWWDIR%%/main/img/lp_link.png
 %%WWWDIR%%/main/img/lp_quiz.gif
 %%WWWDIR%%/main/img/lp_quiz.png
+%%WWWDIR%%/main/img/lp_quiz_na.gif
 %%WWWDIR%%/main/img/lp_rightarrow.gif
 %%WWWDIR%%/main/img/lp_stats.gif
 %%WWWDIR%%/main/img/lp_student_publication.gif
@@ -939,6 +1434,7 @@
 %%WWWDIR%%/main/img/message_normal.gif
 %%WWWDIR%%/main/img/message_normal.png
 %%WWWDIR%%/main/img/message_warning.png
+%%WWWDIR%%/main/img/messagebox_warning.gif
 %%WWWDIR%%/main/img/mid.gif
 %%WWWDIR%%/main/img/minus.gif
 %%WWWDIR%%/main/img/minusbottom.gif
@@ -958,6 +1454,7 @@
 %%WWWDIR%%/main/img/next.png
 %%WWWDIR%%/main/img/nolines_minus.gif
 %%WWWDIR%%/main/img/nolines_plus.gif
+%%WWWDIR%%/main/img/notattempted.gif
 %%WWWDIR%%/main/img/npage.gif
 %%WWWDIR%%/main/img/odg.gif
 %%WWWDIR%%/main/img/odp.gif
@@ -968,10 +1465,12 @@
 %%WWWDIR%%/main/img/oogie.gif
 %%WWWDIR%%/main/img/open_answer.gif
 %%WWWDIR%%/main/img/opendir.gif
+%%WWWDIR%%/main/img/openid_small_logo.png
 %%WWWDIR%%/main/img/page.gif
 %%WWWDIR%%/main/img/page.png
 %%WWWDIR%%/main/img/page_end.gif
 %%WWWDIR%%/main/img/parent.gif
+%%WWWDIR%%/main/img/passed.gif
 %%WWWDIR%%/main/img/passwordprotected.png
 %%WWWDIR%%/main/img/path_help.gif
 %%WWWDIR%%/main/img/pdf.gif
@@ -983,6 +1482,7 @@
 %%WWWDIR%%/main/img/plus.gif
 %%WWWDIR%%/main/img/plusbottom.gif
 %%WWWDIR%%/main/img/posticon.gif
+%%WWWDIR%%/main/img/postit.png
 %%WWWDIR%%/main/img/powerpoint.gif
 %%WWWDIR%%/main/img/powerpoint_big.gif
 %%WWWDIR%%/main/img/powerpoint_small.gif
@@ -1043,6 +1543,7 @@
 %%WWWDIR%%/main/img/search.gif
 %%WWWDIR%%/main/img/search_na.gif
 %%WWWDIR%%/main/img/send_mail.gif
+%%WWWDIR%%/main/img/send_mail_checked.gif
 %%WWWDIR%%/main/img/sendzip.gif
 %%WWWDIR%%/main/img/sessions.gif
 %%WWWDIR%%/main/img/setting_false.gif
@@ -1072,6 +1573,7 @@
 %%WWWDIR%%/main/img/students.gif
 %%WWWDIR%%/main/img/submit_file.gif
 %%WWWDIR%%/main/img/subscribe.gif
+%%WWWDIR%%/main/img/succeeded.gif
 %%WWWDIR%%/main/img/survey.gif
 %%WWWDIR%%/main/img/survey_na.gif
 %%WWWDIR%%/main/img/survey_publish.gif
@@ -1093,12 +1595,14 @@
 %%WWWDIR%%/main/img/test_add_limit.gif
 %%WWWDIR%%/main/img/tool_delete.gif
 %%WWWDIR%%/main/img/top.gif
+%%WWWDIR%%/main/img/tutorial.gif
 %%WWWDIR%%/main/img/txt.gif
 %%WWWDIR%%/main/img/uncheck.gif
 %%WWWDIR%%/main/img/undelete.gif
 %%WWWDIR%%/main/img/unknown.jpg
 %%WWWDIR%%/main/img/unlock.gif
 %%WWWDIR%%/main/img/up.gif
+%%WWWDIR%%/main/img/up_na.gif
 %%WWWDIR%%/main/img/upload.gif
 %%WWWDIR%%/main/img/user_info.gif
 %%WWWDIR%%/main/img/valves.gif
@@ -1114,6 +1618,7 @@
 %%WWWDIR%%/main/img/view_more_stats.gif
 %%WWWDIR%%/main/img/visible.gif
 %%WWWDIR%%/main/img/visible_LP_list.gif
+%%WWWDIR%%/main/img/visible_na.gif
 %%WWWDIR%%/main/img/visio.gif
 %%WWWDIR%%/main/img/visio_meeting.gif
 %%WWWDIR%%/main/img/visio_meeting_na.gif
@@ -1124,6 +1629,7 @@
 %%WWWDIR%%/main/img/winamp.gif
 %%WWWDIR%%/main/img/wizard.gif
 %%WWWDIR%%/main/img/wizard_gray.gif
+%%WWWDIR%%/main/img/wizard_gray_small.gif
 %%WWWDIR%%/main/img/wizard_small.gif
 %%WWWDIR%%/main/img/woogie.gif
 %%WWWDIR%%/main/img/word.gif
@@ -1161,7 +1667,18 @@
 %%WWWDIR%%/main/inc/lib/document.lib.php
 %%WWWDIR%%/main/inc/lib/events.lib.inc.php
 %%WWWDIR%%/main/inc/lib/export.lib.inc.php
+%%WWWDIR%%/main/inc/lib/ezpdf/class.ezpdf.php
+%%WWWDIR%%/main/inc/lib/ezpdf/class.pdf.php
+%%WWWDIR%%/main/inc/lib/ezpdf/fonts/Courier-Bold.afm
+%%WWWDIR%%/main/inc/lib/ezpdf/fonts/Courier-BoldOblique.afm
+%%WWWDIR%%/main/inc/lib/ezpdf/fonts/Courier-Oblique.afm
+%%WWWDIR%%/main/inc/lib/ezpdf/fonts/Courier.afm
+%%WWWDIR%%/main/inc/lib/ezpdf/fonts/php_Courier-Bold.afm
+%%WWWDIR%%/main/inc/lib/ezpdf/fonts/php_Courier-BoldOblique.afm
+%%WWWDIR%%/main/inc/lib/ezpdf/fonts/php_Courier-Oblique.afm
+%%WWWDIR%%/main/inc/lib/ezpdf/fonts/php_Courier.afm
 %%WWWDIR%%/main/inc/lib/fckeditor.lib.php
+%%WWWDIR%%/main/inc/lib/fckeditor/FreeSans.ttf
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/css/behaviors/disablehandles.htc
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/css/behaviors/hiddenfield.gif
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/css/behaviors/hiddenfield.htc
@@ -1246,18 +1763,26 @@
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Certificate_of_completion.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Comparison.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Course_preface.png
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Cover.png
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Dedicace.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Diagram_explained.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Flash_animation_page.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Frequently_asked_questions.png
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Glossary.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Picture.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Resources.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Table.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Teacher_explaining.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Text.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Video.png
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/Video_fullscreen.png
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/bloom.png
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/img_left_encadred.png
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/intro.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/template1.gif
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/template2.gif
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/template3.gif
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/text_img_centered.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/thumb1.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/thumb2.png
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/dialog/fck_template/images/thumb3.png
@@ -1280,6 +1805,7 @@
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/fckblank.html
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/fckdebug.html
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/fckdialog.html
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/fckdialogframe.html
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/fckdocument.html
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/fckeditor.html
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/fckeditor.original.html
@@ -1360,15 +1886,6 @@
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/browser/default/images/spacer.gif
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/browser/default/js/common.js
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/browser/default/js/fckxml.js
-%%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/asp/class_upload.asp
-%%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/asp/config.asp
-%%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/asp/io.asp
-%%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/asp/upload.asp
-%%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/aspx/upload.aspx
-%%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/cfm/config.cfm
-%%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/cfm/upload.cfm
-%%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/lasso/config.lasso
-%%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/lasso/upload.lasso
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/php/config.php
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/php/upload.php
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/php/util.php
@@ -1554,6 +2071,14 @@
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/Video/lang/en.js
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/Video/videos.gif
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/loader.class.php
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/mimetex/fckplugin.js
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/mimetex/jquery.js
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/mimetex/lang/de.js
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/mimetex/lang/en.js
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/mimetex/lang/es.js
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/mimetex/lang/fr.js
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/mimetex/mimetex.gif
+%%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/mimetex/mimetex.html
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/placeholder/fck_placeholder.html
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/placeholder/fckplugin.js
 %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/placeholder/lang/de.js
@@ -1825,12 +2350,13 @@
 %%WWWDIR%%/main/inc/lib/fileManage.lib.php
 %%WWWDIR%%/main/inc/lib/fileUpload.lib.php
 %%WWWDIR%%/main/inc/lib/flv_player/player_flv_mini.swf
-%%WWWDIR%%/main/inc/lib/flv_player/src.zip
 %%WWWDIR%%/main/inc/lib/formvalidator/Element/calendar_popup.php
 %%WWWDIR%%/main/inc/lib/formvalidator/Element/datepicker.php
+%%WWWDIR%%/main/inc/lib/formvalidator/Element/datepickerdate.php
 %%WWWDIR%%/main/inc/lib/formvalidator/Element/html_editor.php
 %%WWWDIR%%/main/inc/lib/formvalidator/Element/receivers.php
 %%WWWDIR%%/main/inc/lib/formvalidator/Element/select_language.php
+%%WWWDIR%%/main/inc/lib/formvalidator/Element/select_theme.php
 %%WWWDIR%%/main/inc/lib/formvalidator/Element/tbl_change.js.php
 %%WWWDIR%%/main/inc/lib/formvalidator/FormValidator.class.php
 %%WWWDIR%%/main/inc/lib/formvalidator/Rule/Date.php
@@ -1841,7 +2367,12 @@
 %%WWWDIR%%/main/inc/lib/formvalidator/Rule/Username.php
 %%WWWDIR%%/main/inc/lib/formvalidator/Rule/UsernameAvailable.php
 %%WWWDIR%%/main/inc/lib/formvalidator/Rule/allowed_tags.inc.php
+%%WWWDIR%%/main/inc/lib/getid3/getid3.php
+%%WWWDIR%%/main/inc/lib/getid3/module.audio-video.flv.php
+%%WWWDIR%%/main/inc/lib/getid3/readme.txt
 %%WWWDIR%%/main/inc/lib/groupmanager.lib.php
+%%WWWDIR%%/main/inc/lib/icalcreator/iCalcreator.class.php
+%%WWWDIR%%/main/inc/lib/icalcreator/lgpl.txt
 %%WWWDIR%%/main/inc/lib/image.lib.php
 %%WWWDIR%%/main/inc/lib/import.lib.php
 %%WWWDIR%%/main/inc/lib/index.html
@@ -1880,6 +2411,7 @@
 %%WWWDIR%%/main/inc/lib/mp3player/is_autostart.as.php
 %%WWWDIR%%/main/inc/lib/mp3player/player_mp3.fla
 %%WWWDIR%%/main/inc/lib/mp3player/player_mp3.swf
+%%WWWDIR%%/main/inc/lib/mp3player/readme.txt
 %%WWWDIR%%/main/inc/lib/online.inc.php
 %%WWWDIR%%/main/inc/lib/pclzip/gnu-lgpl.txt
 %%WWWDIR%%/main/inc/lib/pclzip/index.html
@@ -1941,12 +2473,24 @@
 %%WWWDIR%%/main/inc/lib/pear/HTML/QuickForm/xbutton.php
 %%WWWDIR%%/main/inc/lib/pear/HTML/Table.php
 %%WWWDIR%%/main/inc/lib/pear/HTML/Table/Storage.php
+%%WWWDIR%%/main/inc/lib/pear/OLE/ChainedBlockStream.php
+%%WWWDIR%%/main/inc/lib/pear/OLE/OLE.php
+%%WWWDIR%%/main/inc/lib/pear/OLE/PPS.php
+%%WWWDIR%%/main/inc/lib/pear/OLE/PPS/File.php
+%%WWWDIR%%/main/inc/lib/pear/OLE/PPS/Root.php
 %%WWWDIR%%/main/inc/lib/pear/PEAR.php
 %%WWWDIR%%/main/inc/lib/pear/Pager/Common.php
 %%WWWDIR%%/main/inc/lib/pear/Pager/HtmlWidgets.php
 %%WWWDIR%%/main/inc/lib/pear/Pager/Jumping.php
 %%WWWDIR%%/main/inc/lib/pear/Pager/Pager.php
 %%WWWDIR%%/main/inc/lib/pear/Pager/Sliding.php
+%%WWWDIR%%/main/inc/lib/pear/Spreadsheet_Excel_Writer/Writer.php
+%%WWWDIR%%/main/inc/lib/pear/Spreadsheet_Excel_Writer/Writer/BIFFwriter.php
+%%WWWDIR%%/main/inc/lib/pear/Spreadsheet_Excel_Writer/Writer/Format.php
+%%WWWDIR%%/main/inc/lib/pear/Spreadsheet_Excel_Writer/Writer/Parser.php
+%%WWWDIR%%/main/inc/lib/pear/Spreadsheet_Excel_Writer/Writer/Validator.php
+%%WWWDIR%%/main/inc/lib/pear/Spreadsheet_Excel_Writer/Writer/Workbook.php
+%%WWWDIR%%/main/inc/lib/pear/Spreadsheet_Excel_Writer/Writer/Worksheet.php
 %%WWWDIR%%/main/inc/lib/phpmailer/ChangeLog.txt
 %%WWWDIR%%/main/inc/lib/phpmailer/LICENSE
 %%WWWDIR%%/main/inc/lib/phpmailer/README
@@ -1988,10 +2532,14 @@
 %%WWWDIR%%/main/inc/lib/ppt2png/DocumentConverter.java
 %%WWWDIR%%/main/inc/lib/ppt2png/DokeosConverter.class
 %%WWWDIR%%/main/inc/lib/ppt2png/DokeosConverter.java
+%%WWWDIR%%/main/inc/lib/ppt2png/DokeosDocumentFormatRegistry.class
+%%WWWDIR%%/main/inc/lib/ppt2png/DokeosDocumentFormatRegistry.java
 %%WWWDIR%%/main/inc/lib/ppt2png/DokeosSocketOfficeConnection.class
 %%WWWDIR%%/main/inc/lib/ppt2png/DokeosSocketOfficeConnection.java
 %%WWWDIR%%/main/inc/lib/ppt2png/OogieDocumentConverter.class
 %%WWWDIR%%/main/inc/lib/ppt2png/OogieDocumentConverter.java
+%%WWWDIR%%/main/inc/lib/ppt2png/StringOperation.class
+%%WWWDIR%%/main/inc/lib/ppt2png/StringOperation.java
 %%WWWDIR%%/main/inc/lib/ppt2png/WoogieDocumentConverter.class
 %%WWWDIR%%/main/inc/lib/ppt2png/WoogieDocumentConverter.java
 %%WWWDIR%%/main/inc/lib/ppt2png/commons-cli-1.0.jar
@@ -1999,21 +2547,18 @@
 %%WWWDIR%%/main/inc/lib/ppt2png/edtftpj-1.5.2.jar
 %%WWWDIR%%/main/inc/lib/ppt2png/java_uno.jar
 %%WWWDIR%%/main/inc/lib/ppt2png/java_uno_accessbridge.jar
-%%WWWDIR%%/main/inc/lib/ppt2png/jodconverter-2.2.0.jar
-%%WWWDIR%%/main/inc/lib/ppt2png/jodconverter-cli-2.2.0.jar
-%%WWWDIR%%/main/inc/lib/ppt2png/juh-2.2.0.jar
-%%WWWDIR%%/main/inc/lib/ppt2png/juh.jar
-%%WWWDIR%%/main/inc/lib/ppt2png/jurt-2.2.0.jar
-%%WWWDIR%%/main/inc/lib/ppt2png/jurt.jar
+%%WWWDIR%%/main/inc/lib/ppt2png/jodconverter-2.2.1.jar
+%%WWWDIR%%/main/inc/lib/ppt2png/jodconverter-cli-2.2.1.jar
+%%WWWDIR%%/main/inc/lib/ppt2png/juh-2.3.0.jar
+%%WWWDIR%%/main/inc/lib/ppt2png/jurt-2.3.0.jar
 %%WWWDIR%%/main/inc/lib/ppt2png/jut.jar
 %%WWWDIR%%/main/inc/lib/ppt2png/launch_ppt2png.sh
 %%WWWDIR%%/main/inc/lib/ppt2png/oogie.jar
-%%WWWDIR%%/main/inc/lib/ppt2png/ridl-2.2.0.jar
+%%WWWDIR%%/main/inc/lib/ppt2png/ridl-2.3.0.jar
 %%WWWDIR%%/main/inc/lib/ppt2png/ridl.jar
-%%WWWDIR%%/main/inc/lib/ppt2png/slf4j-api-1.4.0.jar
-%%WWWDIR%%/main/inc/lib/ppt2png/slf4j-jdk14-1.4.0.jar
-%%WWWDIR%%/main/inc/lib/ppt2png/unoil-2.2.0.jar
-%%WWWDIR%%/main/inc/lib/ppt2png/unoil.jar
+%%WWWDIR%%/main/inc/lib/ppt2png/slf4j-api-1.4.3.jar
+%%WWWDIR%%/main/inc/lib/ppt2png/slf4j-jdk14-1.4.3.jar
+%%WWWDIR%%/main/inc/lib/ppt2png/unoil-2.3.0.jar
 %%WWWDIR%%/main/inc/lib/ppt2png/xstream-1.2.2.jar
 %%WWWDIR%%/main/inc/lib/security.lib.php
 %%WWWDIR%%/main/inc/lib/session_handler.class.php
@@ -2083,15 +2628,18 @@
 %%WWWDIR%%/main/install/migrate-db-1.8.0-1.8.2-pre.sql
 %%WWWDIR%%/main/install/migrate-db-1.8.2-1.8.3-pre.sql
 %%WWWDIR%%/main/install/migrate-db-1.8.3-1.8.4-pre.sql
+%%WWWDIR%%/main/install/migrate-db-1.8.4-1.8.5-pre.sql
 %%WWWDIR%%/main/install/setting_current_data.csv
 %%WWWDIR%%/main/install/setting_option_data.csv
 %%WWWDIR%%/main/install/update-db-1.6.x-1.8.0.inc.php
 %%WWWDIR%%/main/install/update-db-1.8.0-1.8.2.inc.php
 %%WWWDIR%%/main/install/update-db-1.8.2-1.8.3.inc.php
 %%WWWDIR%%/main/install/update-db-1.8.3-1.8.4.inc.php
+%%WWWDIR%%/main/install/update-db-1.8.4-1.8.5.inc.php
 %%WWWDIR%%/main/install/update-db-scorm-1.6.x-1.8.0.inc.php
 %%WWWDIR%%/main/install/update-files-1.6.x-1.8.0.inc.php
 %%WWWDIR%%/main/install/update-files-1.8.3-1.8.4.inc.php
+%%WWWDIR%%/main/install/update-files-1.8.4-1.8.5.inc.php
 %%WWWDIR%%/main/install/update_courses.php
 %%WWWDIR%%/main/install/update_db.inc.php
 %%WWWDIR%%/main/install/update_files.inc.php
@@ -2116,6 +2664,7 @@
 %%WWWDIR%%/main/lang/arabic/external_module.inc.php
 %%WWWDIR%%/main/lang/arabic/forum.inc.php
 %%WWWDIR%%/main/lang/arabic/forum_admin.inc.php
+%%WWWDIR%%/main/lang/arabic/gradebook.inc.php
 %%WWWDIR%%/main/lang/arabic/group.inc.php
 %%WWWDIR%%/main/lang/arabic/help.inc.php
 %%WWWDIR%%/main/lang/arabic/hotspot.inc.php
@@ -2133,6 +2682,7 @@
 %%WWWDIR%%/main/lang/arabic/messages.inc.php
 %%WWWDIR%%/main/lang/arabic/myagenda.inc.php
 %%WWWDIR%%/main/lang/arabic/notification.inc.php
+%%WWWDIR%%/main/lang/arabic/online_meeting.inc.php
 %%WWWDIR%%/main/lang/arabic/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/arabic/phpbb.inc.php
 %%WWWDIR%%/main/lang/arabic/registration.inc.php
@@ -2142,10 +2692,113 @@
 %%WWWDIR%%/main/lang/arabic/scormdocument.inc.php
 %%WWWDIR%%/main/lang/arabic/slideshow.inc.php
 %%WWWDIR%%/main/lang/arabic/survey.inc.php
+%%WWWDIR%%/main/lang/arabic/survey_answer.inc.php
 %%WWWDIR%%/main/lang/arabic/tracking.inc.php
 %%WWWDIR%%/main/lang/arabic/trad4all.inc.php
 %%WWWDIR%%/main/lang/arabic/userInfo.inc.php
+%%WWWDIR%%/main/lang/arabic/videoconf.inc.php
+%%WWWDIR%%/main/lang/arabic/wcag.inc.php
+%%WWWDIR%%/main/lang/arabic/wiki.inc.php
 %%WWWDIR%%/main/lang/arabic/work.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/accessibility.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/admin.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/agenda.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/announcements.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/bbimport.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/blog.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/chat.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/course_description.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/course_home.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/course_info.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/coursebackup.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/courses.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/create_course.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/document.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/dropbox.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/exercice.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/external_module.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/forum.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/gradebook.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/group.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/help.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/hotspot.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/import.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/index.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/install.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/learnpath.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/link.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/md_document.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/md_link.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/md_mix.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/md_scorm.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/messages.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/myagenda.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/notification.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/online_meeting.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/registration.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/scorm.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/scormdocument.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/slideshow.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/survey.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/survey_answer.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/tracking.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/trad4all.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/userInfo.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/videoconf.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/wcag.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/wiki.inc.php
+%%WWWDIR%%/main/lang/arabic_unicode/work.inc.php
+%%WWWDIR%%/main/lang/asturian/accessibility.inc.php
+%%WWWDIR%%/main/lang/asturian/admin.inc.php
+%%WWWDIR%%/main/lang/asturian/agenda.inc.php
+%%WWWDIR%%/main/lang/asturian/announcements.inc.php
+%%WWWDIR%%/main/lang/asturian/bbimport.inc.php
+%%WWWDIR%%/main/lang/asturian/blog.inc.php
+%%WWWDIR%%/main/lang/asturian/chat.inc.php
+%%WWWDIR%%/main/lang/asturian/course_description.inc.php
+%%WWWDIR%%/main/lang/asturian/course_home.inc.php
+%%WWWDIR%%/main/lang/asturian/course_info.inc.php
+%%WWWDIR%%/main/lang/asturian/coursebackup.inc.php
+%%WWWDIR%%/main/lang/asturian/courses.inc.php
+%%WWWDIR%%/main/lang/asturian/create_course.inc.php
+%%WWWDIR%%/main/lang/asturian/document.inc.php
+%%WWWDIR%%/main/lang/asturian/dropbox.inc.php
+%%WWWDIR%%/main/lang/asturian/exercice.inc.php
+%%WWWDIR%%/main/lang/asturian/external_module.inc.php
+%%WWWDIR%%/main/lang/asturian/forum.inc.php
+%%WWWDIR%%/main/lang/asturian/gradebook.inc.php
+%%WWWDIR%%/main/lang/asturian/group.inc.php
+%%WWWDIR%%/main/lang/asturian/help.inc.php
+%%WWWDIR%%/main/lang/asturian/hotspot.inc.php
+%%WWWDIR%%/main/lang/asturian/import.inc.php
+%%WWWDIR%%/main/lang/asturian/index.inc.php
+%%WWWDIR%%/main/lang/asturian/install.inc.php
+%%WWWDIR%%/main/lang/asturian/learnpath.inc.php
+%%WWWDIR%%/main/lang/asturian/link.inc.php
+%%WWWDIR%%/main/lang/asturian/md_document.inc.php
+%%WWWDIR%%/main/lang/asturian/md_link.inc.php
+%%WWWDIR%%/main/lang/asturian/md_mix.inc.php
+%%WWWDIR%%/main/lang/asturian/md_scorm.inc.php
+%%WWWDIR%%/main/lang/asturian/messages.inc.php
+%%WWWDIR%%/main/lang/asturian/myagenda.inc.php
+%%WWWDIR%%/main/lang/asturian/notification.inc.php
+%%WWWDIR%%/main/lang/asturian/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/asturian/registration.inc.php
+%%WWWDIR%%/main/lang/asturian/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/asturian/scorm.inc.php
+%%WWWDIR%%/main/lang/asturian/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/asturian/scormdocument.inc.php
+%%WWWDIR%%/main/lang/asturian/slideshow.inc.php
+%%WWWDIR%%/main/lang/asturian/survey.inc.php
+%%WWWDIR%%/main/lang/asturian/tracking.inc.php
+%%WWWDIR%%/main/lang/asturian/trad4all.inc.php
+%%WWWDIR%%/main/lang/asturian/userInfo.inc.php
+%%WWWDIR%%/main/lang/asturian/videoconf.inc.php
+%%WWWDIR%%/main/lang/asturian/wiki.inc.php
+%%WWWDIR%%/main/lang/asturian/work.inc.php
 %%WWWDIR%%/main/lang/bosnian/accessibility.inc.php
 %%WWWDIR%%/main/lang/bosnian/admin.inc.php
 %%WWWDIR%%/main/lang/bosnian/agenda.inc.php
@@ -2165,6 +2818,7 @@
 %%WWWDIR%%/main/lang/bosnian/external_module.inc.php
 %%WWWDIR%%/main/lang/bosnian/forum.inc.php
 %%WWWDIR%%/main/lang/bosnian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/bosnian/gradebook.inc.php
 %%WWWDIR%%/main/lang/bosnian/group.inc.php
 %%WWWDIR%%/main/lang/bosnian/help.inc.php
 %%WWWDIR%%/main/lang/bosnian/hotspot.inc.php
@@ -2182,6 +2836,7 @@
 %%WWWDIR%%/main/lang/bosnian/messages.inc.php
 %%WWWDIR%%/main/lang/bosnian/myagenda.inc.php
 %%WWWDIR%%/main/lang/bosnian/notification.inc.php
+%%WWWDIR%%/main/lang/bosnian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/bosnian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/bosnian/phpbb.inc.php
 %%WWWDIR%%/main/lang/bosnian/registration.inc.php
@@ -2191,9 +2846,13 @@
 %%WWWDIR%%/main/lang/bosnian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/bosnian/slideshow.inc.php
 %%WWWDIR%%/main/lang/bosnian/survey.inc.php
+%%WWWDIR%%/main/lang/bosnian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/bosnian/tracking.inc.php
 %%WWWDIR%%/main/lang/bosnian/trad4all.inc.php
 %%WWWDIR%%/main/lang/bosnian/userInfo.inc.php
+%%WWWDIR%%/main/lang/bosnian/videoconf.inc.php
+%%WWWDIR%%/main/lang/bosnian/wcag.inc.php
+%%WWWDIR%%/main/lang/bosnian/wiki.inc.php
 %%WWWDIR%%/main/lang/bosnian/work.inc.php
 %%WWWDIR%%/main/lang/brazilian/accessibility.inc.php
 %%WWWDIR%%/main/lang/brazilian/admin.inc.php
@@ -2214,6 +2873,7 @@
 %%WWWDIR%%/main/lang/brazilian/external_module.inc.php
 %%WWWDIR%%/main/lang/brazilian/forum.inc.php
 %%WWWDIR%%/main/lang/brazilian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/brazilian/gradebook.inc.php
 %%WWWDIR%%/main/lang/brazilian/group.inc.php
 %%WWWDIR%%/main/lang/brazilian/help.inc.php
 %%WWWDIR%%/main/lang/brazilian/hotspot.inc.php
@@ -2231,6 +2891,7 @@
 %%WWWDIR%%/main/lang/brazilian/messages.inc.php
 %%WWWDIR%%/main/lang/brazilian/myagenda.inc.php
 %%WWWDIR%%/main/lang/brazilian/notification.inc.php
+%%WWWDIR%%/main/lang/brazilian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/brazilian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/brazilian/phpbb.inc.php
 %%WWWDIR%%/main/lang/brazilian/registration.inc.php
@@ -2240,9 +2901,13 @@
 %%WWWDIR%%/main/lang/brazilian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/brazilian/slideshow.inc.php
 %%WWWDIR%%/main/lang/brazilian/survey.inc.php
+%%WWWDIR%%/main/lang/brazilian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/brazilian/tracking.inc.php
 %%WWWDIR%%/main/lang/brazilian/trad4all.inc.php
 %%WWWDIR%%/main/lang/brazilian/userInfo.inc.php
+%%WWWDIR%%/main/lang/brazilian/videoconf.inc.php
+%%WWWDIR%%/main/lang/brazilian/wcag.inc.php
+%%WWWDIR%%/main/lang/brazilian/wiki.inc.php
 %%WWWDIR%%/main/lang/brazilian/work.inc.php
 %%WWWDIR%%/main/lang/bulgarian/accessibility.inc.php
 %%WWWDIR%%/main/lang/bulgarian/admin.inc.php
@@ -2263,6 +2928,7 @@
 %%WWWDIR%%/main/lang/bulgarian/external_module.inc.php
 %%WWWDIR%%/main/lang/bulgarian/forum.inc.php
 %%WWWDIR%%/main/lang/bulgarian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/bulgarian/gradebook.inc.php
 %%WWWDIR%%/main/lang/bulgarian/group.inc.php
 %%WWWDIR%%/main/lang/bulgarian/help.inc.php
 %%WWWDIR%%/main/lang/bulgarian/hotspot.inc.php
@@ -2280,6 +2946,7 @@
 %%WWWDIR%%/main/lang/bulgarian/messages.inc.php
 %%WWWDIR%%/main/lang/bulgarian/myagenda.inc.php
 %%WWWDIR%%/main/lang/bulgarian/notification.inc.php
+%%WWWDIR%%/main/lang/bulgarian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/bulgarian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/bulgarian/phpbb.inc.php
 %%WWWDIR%%/main/lang/bulgarian/registration.inc.php
@@ -2289,9 +2956,13 @@
 %%WWWDIR%%/main/lang/bulgarian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/bulgarian/slideshow.inc.php
 %%WWWDIR%%/main/lang/bulgarian/survey.inc.php
+%%WWWDIR%%/main/lang/bulgarian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/bulgarian/tracking.inc.php
 %%WWWDIR%%/main/lang/bulgarian/trad4all.inc.php
 %%WWWDIR%%/main/lang/bulgarian/userInfo.inc.php
+%%WWWDIR%%/main/lang/bulgarian/videoconf.inc.php
+%%WWWDIR%%/main/lang/bulgarian/wcag.inc.php
+%%WWWDIR%%/main/lang/bulgarian/wiki.inc.php
 %%WWWDIR%%/main/lang/bulgarian/work.inc.php
 %%WWWDIR%%/main/lang/catalan/accessibility.inc.php
 %%WWWDIR%%/main/lang/catalan/admin.inc.php
@@ -2312,6 +2983,7 @@
 %%WWWDIR%%/main/lang/catalan/external_module.inc.php
 %%WWWDIR%%/main/lang/catalan/forum.inc.php
 %%WWWDIR%%/main/lang/catalan/forum_admin.inc.php
+%%WWWDIR%%/main/lang/catalan/gradebook.inc.php
 %%WWWDIR%%/main/lang/catalan/group.inc.php
 %%WWWDIR%%/main/lang/catalan/help.inc.php
 %%WWWDIR%%/main/lang/catalan/hotspot.inc.php
@@ -2329,6 +3001,7 @@
 %%WWWDIR%%/main/lang/catalan/messages.inc.php
 %%WWWDIR%%/main/lang/catalan/myagenda.inc.php
 %%WWWDIR%%/main/lang/catalan/notification.inc.php
+%%WWWDIR%%/main/lang/catalan/online_meeting.inc.php
 %%WWWDIR%%/main/lang/catalan/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/catalan/phpbb.inc.php
 %%WWWDIR%%/main/lang/catalan/registration.inc.php
@@ -2338,9 +3011,13 @@
 %%WWWDIR%%/main/lang/catalan/scormdocument.inc.php
 %%WWWDIR%%/main/lang/catalan/slideshow.inc.php
 %%WWWDIR%%/main/lang/catalan/survey.inc.php
+%%WWWDIR%%/main/lang/catalan/survey_answer.inc.php
 %%WWWDIR%%/main/lang/catalan/tracking.inc.php
 %%WWWDIR%%/main/lang/catalan/trad4all.inc.php
 %%WWWDIR%%/main/lang/catalan/userInfo.inc.php
+%%WWWDIR%%/main/lang/catalan/videoconf.inc.php
+%%WWWDIR%%/main/lang/catalan/wcag.inc.php
+%%WWWDIR%%/main/lang/catalan/wiki.inc.php
 %%WWWDIR%%/main/lang/catalan/work.inc.php
 %%WWWDIR%%/main/lang/croatian/accessibility.inc.php
 %%WWWDIR%%/main/lang/croatian/admin.inc.php
@@ -2361,6 +3038,7 @@
 %%WWWDIR%%/main/lang/croatian/external_module.inc.php
 %%WWWDIR%%/main/lang/croatian/forum.inc.php
 %%WWWDIR%%/main/lang/croatian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/croatian/gradebook.inc.php
 %%WWWDIR%%/main/lang/croatian/group.inc.php
 %%WWWDIR%%/main/lang/croatian/help.inc.php
 %%WWWDIR%%/main/lang/croatian/hotspot.inc.php
@@ -2378,6 +3056,7 @@
 %%WWWDIR%%/main/lang/croatian/messages.inc.php
 %%WWWDIR%%/main/lang/croatian/myagenda.inc.php
 %%WWWDIR%%/main/lang/croatian/notification.inc.php
+%%WWWDIR%%/main/lang/croatian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/croatian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/croatian/phpbb.inc.php
 %%WWWDIR%%/main/lang/croatian/registration.inc.php
@@ -2387,9 +3066,13 @@
 %%WWWDIR%%/main/lang/croatian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/croatian/slideshow.inc.php
 %%WWWDIR%%/main/lang/croatian/survey.inc.php
+%%WWWDIR%%/main/lang/croatian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/croatian/tracking.inc.php
 %%WWWDIR%%/main/lang/croatian/trad4all.inc.php
 %%WWWDIR%%/main/lang/croatian/userInfo.inc.php
+%%WWWDIR%%/main/lang/croatian/videoconf.inc.php
+%%WWWDIR%%/main/lang/croatian/wcag.inc.php
+%%WWWDIR%%/main/lang/croatian/wiki.inc.php
 %%WWWDIR%%/main/lang/croatian/work.inc.php
 %%WWWDIR%%/main/lang/czech/accessibility.inc.php
 %%WWWDIR%%/main/lang/czech/admin.inc.php
@@ -2410,6 +3093,7 @@
 %%WWWDIR%%/main/lang/czech/external_module.inc.php
 %%WWWDIR%%/main/lang/czech/forum.inc.php
 %%WWWDIR%%/main/lang/czech/forum_admin.inc.php
+%%WWWDIR%%/main/lang/czech/gradebook.inc.php
 %%WWWDIR%%/main/lang/czech/group.inc.php
 %%WWWDIR%%/main/lang/czech/help.inc.php
 %%WWWDIR%%/main/lang/czech/hotspot.inc.php
@@ -2425,6 +3109,7 @@
 %%WWWDIR%%/main/lang/czech/messages.inc.php
 %%WWWDIR%%/main/lang/czech/myagenda.inc.php
 %%WWWDIR%%/main/lang/czech/notification.inc.php
+%%WWWDIR%%/main/lang/czech/online_meeting.inc.php
 %%WWWDIR%%/main/lang/czech/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/czech/phpbb.inc.php
 %%WWWDIR%%/main/lang/czech/registration.inc.php
@@ -2434,9 +3119,13 @@
 %%WWWDIR%%/main/lang/czech/scormdocument.inc.php
 %%WWWDIR%%/main/lang/czech/slideshow.inc.php
 %%WWWDIR%%/main/lang/czech/survey.inc.php
+%%WWWDIR%%/main/lang/czech/survey_answer.inc.php
 %%WWWDIR%%/main/lang/czech/tracking.inc.php
 %%WWWDIR%%/main/lang/czech/trad4all.inc.php
 %%WWWDIR%%/main/lang/czech/userInfo.inc.php
+%%WWWDIR%%/main/lang/czech/videoconf.inc.php
+%%WWWDIR%%/main/lang/czech/wcag.inc.php
+%%WWWDIR%%/main/lang/czech/wiki.inc.php
 %%WWWDIR%%/main/lang/czech/work.inc.php
 %%WWWDIR%%/main/lang/danish/accessibility.inc.php
 %%WWWDIR%%/main/lang/danish/admin.inc.php
@@ -2457,6 +3146,7 @@
 %%WWWDIR%%/main/lang/danish/external_module.inc.php
 %%WWWDIR%%/main/lang/danish/forum.inc.php
 %%WWWDIR%%/main/lang/danish/forum_admin.inc.php
+%%WWWDIR%%/main/lang/danish/gradebook.inc.php
 %%WWWDIR%%/main/lang/danish/group.inc.php
 %%WWWDIR%%/main/lang/danish/help.inc.php
 %%WWWDIR%%/main/lang/danish/hotspot.inc.php
@@ -2474,6 +3164,7 @@
 %%WWWDIR%%/main/lang/danish/messages.inc.php
 %%WWWDIR%%/main/lang/danish/myagenda.inc.php
 %%WWWDIR%%/main/lang/danish/notification.inc.php
+%%WWWDIR%%/main/lang/danish/online_meeting.inc.php
 %%WWWDIR%%/main/lang/danish/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/danish/phpbb.inc.php
 %%WWWDIR%%/main/lang/danish/registration.inc.php
@@ -2483,10 +3174,62 @@
 %%WWWDIR%%/main/lang/danish/scormdocument.inc.php
 %%WWWDIR%%/main/lang/danish/slideshow.inc.php
 %%WWWDIR%%/main/lang/danish/survey.inc.php
+%%WWWDIR%%/main/lang/danish/survey_answer.inc.php
 %%WWWDIR%%/main/lang/danish/tracking.inc.php
 %%WWWDIR%%/main/lang/danish/trad4all.inc.php
 %%WWWDIR%%/main/lang/danish/userInfo.inc.php
+%%WWWDIR%%/main/lang/danish/videoconf.inc.php
+%%WWWDIR%%/main/lang/danish/wcag.inc.php
+%%WWWDIR%%/main/lang/danish/wiki.inc.php
 %%WWWDIR%%/main/lang/danish/work.inc.php
+%%WWWDIR%%/main/lang/dari/accessibility.inc.php
+%%WWWDIR%%/main/lang/dari/admin.inc.php
+%%WWWDIR%%/main/lang/dari/agenda.inc.php
+%%WWWDIR%%/main/lang/dari/announcements.inc.php
+%%WWWDIR%%/main/lang/dari/bbimport.inc.php
+%%WWWDIR%%/main/lang/dari/blog.inc.php
+%%WWWDIR%%/main/lang/dari/chat.inc.php
+%%WWWDIR%%/main/lang/dari/course_description.inc.php
+%%WWWDIR%%/main/lang/dari/course_home.inc.php
+%%WWWDIR%%/main/lang/dari/course_info.inc.php
+%%WWWDIR%%/main/lang/dari/coursebackup.inc.php
+%%WWWDIR%%/main/lang/dari/courses.inc.php
+%%WWWDIR%%/main/lang/dari/create_course.inc.php
+%%WWWDIR%%/main/lang/dari/document.inc.php
+%%WWWDIR%%/main/lang/dari/dropbox.inc.php
+%%WWWDIR%%/main/lang/dari/exercice.inc.php
+%%WWWDIR%%/main/lang/dari/external_module.inc.php
+%%WWWDIR%%/main/lang/dari/forum.inc.php
+%%WWWDIR%%/main/lang/dari/gradebook.inc.php
+%%WWWDIR%%/main/lang/dari/group.inc.php
+%%WWWDIR%%/main/lang/dari/help.inc.php
+%%WWWDIR%%/main/lang/dari/hotspot.inc.php
+%%WWWDIR%%/main/lang/dari/import.inc.php
+%%WWWDIR%%/main/lang/dari/index.inc.php
+%%WWWDIR%%/main/lang/dari/install.inc.php
+%%WWWDIR%%/main/lang/dari/learnpath.inc.php
+%%WWWDIR%%/main/lang/dari/link.inc.php
+%%WWWDIR%%/main/lang/dari/md_document.inc.php
+%%WWWDIR%%/main/lang/dari/md_link.inc.php
+%%WWWDIR%%/main/lang/dari/md_mix.inc.php
+%%WWWDIR%%/main/lang/dari/md_scorm.inc.php
+%%WWWDIR%%/main/lang/dari/messages.inc.php
+%%WWWDIR%%/main/lang/dari/myagenda.inc.php
+%%WWWDIR%%/main/lang/dari/notification.inc.php
+%%WWWDIR%%/main/lang/dari/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/dari/registration.inc.php
+%%WWWDIR%%/main/lang/dari/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/dari/scorm.inc.php
+%%WWWDIR%%/main/lang/dari/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/dari/scormdocument.inc.php
+%%WWWDIR%%/main/lang/dari/slideshow.inc.php
+%%WWWDIR%%/main/lang/dari/survey.inc.php
+%%WWWDIR%%/main/lang/dari/tracking.inc.php
+%%WWWDIR%%/main/lang/dari/trad4all.inc.php
+%%WWWDIR%%/main/lang/dari/userInfo.inc.php
+%%WWWDIR%%/main/lang/dari/videoconf.inc.php
+%%WWWDIR%%/main/lang/dari/wiki.inc.php
+%%WWWDIR%%/main/lang/dari/work.inc.php
 %%WWWDIR%%/main/lang/dutch/accessibility.inc.php
 %%WWWDIR%%/main/lang/dutch/admin.inc.php
 %%WWWDIR%%/main/lang/dutch/agenda.inc.php
@@ -2506,6 +3249,7 @@
 %%WWWDIR%%/main/lang/dutch/external_module.inc.php
 %%WWWDIR%%/main/lang/dutch/forum.inc.php
 %%WWWDIR%%/main/lang/dutch/forum_admin.inc.php
+%%WWWDIR%%/main/lang/dutch/gradebook.inc.php
 %%WWWDIR%%/main/lang/dutch/group.inc.php
 %%WWWDIR%%/main/lang/dutch/help.inc.php
 %%WWWDIR%%/main/lang/dutch/hotspot.inc.php
@@ -2523,6 +3267,7 @@
 %%WWWDIR%%/main/lang/dutch/messages.inc.php
 %%WWWDIR%%/main/lang/dutch/myagenda.inc.php
 %%WWWDIR%%/main/lang/dutch/notification.inc.php
+%%WWWDIR%%/main/lang/dutch/online_meeting.inc.php
 %%WWWDIR%%/main/lang/dutch/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/dutch/phpbb.inc.php
 %%WWWDIR%%/main/lang/dutch/registration.inc.php
@@ -2536,7 +3281,58 @@
 %%WWWDIR%%/main/lang/dutch/tracking.inc.php
 %%WWWDIR%%/main/lang/dutch/trad4all.inc.php
 %%WWWDIR%%/main/lang/dutch/userInfo.inc.php
+%%WWWDIR%%/main/lang/dutch/videoconf.inc.php
+%%WWWDIR%%/main/lang/dutch/wcag.inc.php
+%%WWWDIR%%/main/lang/dutch/wiki.inc.php
 %%WWWDIR%%/main/lang/dutch/work.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/accessibility.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/admin.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/agenda.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/announcements.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/bbimport.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/blog.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/chat.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/course_description.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/course_home.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/course_info.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/coursebackup.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/courses.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/create_course.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/document.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/dropbox.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/exercice.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/external_module.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/forum.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/gradebook.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/group.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/help.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/hotspot.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/import.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/index.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/install.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/learnpath.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/link.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/md_document.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/md_link.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/md_mix.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/md_scorm.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/messages.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/myagenda.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/notification.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/registration.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/scorm.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/scormdocument.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/slideshow.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/survey.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/tracking.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/trad4all.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/userInfo.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/videoconf.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/wiki.inc.php
+%%WWWDIR%%/main/lang/dutch_corporate/work.inc.php
 %%WWWDIR%%/main/lang/english/accessibility.inc.php
 %%WWWDIR%%/main/lang/english/admin.inc.php
 %%WWWDIR%%/main/lang/english/agenda.inc.php
@@ -2556,6 +3352,7 @@
 %%WWWDIR%%/main/lang/english/external_module.inc.php
 %%WWWDIR%%/main/lang/english/forum.inc.php
 %%WWWDIR%%/main/lang/english/forum_admin.inc.php
+%%WWWDIR%%/main/lang/english/gradebook.inc.php
 %%WWWDIR%%/main/lang/english/group.inc.php
 %%WWWDIR%%/main/lang/english/help.inc.php
 %%WWWDIR%%/main/lang/english/hotspot.inc.php
@@ -2573,6 +3370,7 @@
 %%WWWDIR%%/main/lang/english/messages.inc.php
 %%WWWDIR%%/main/lang/english/myagenda.inc.php
 %%WWWDIR%%/main/lang/english/notification.inc.php
+%%WWWDIR%%/main/lang/english/online_meeting.inc.php
 %%WWWDIR%%/main/lang/english/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/english/phpbb.inc.php
 %%WWWDIR%%/main/lang/english/registration.inc.php
@@ -2586,7 +3384,9 @@
 %%WWWDIR%%/main/lang/english/tracking.inc.php
 %%WWWDIR%%/main/lang/english/trad4all.inc.php
 %%WWWDIR%%/main/lang/english/userInfo.inc.php
+%%WWWDIR%%/main/lang/english/videoconf.inc.php
 %%WWWDIR%%/main/lang/english/wcag.inc.php
+%%WWWDIR%%/main/lang/english/wiki.inc.php
 %%WWWDIR%%/main/lang/english/work.inc.php
 %%WWWDIR%%/main/lang/english_org/admin.inc.php
 %%WWWDIR%%/main/lang/english_org/agenda.inc.php
@@ -2602,6 +3402,7 @@
 %%WWWDIR%%/main/lang/english_org/dropbox.inc.php
 %%WWWDIR%%/main/lang/english_org/exercice.inc.php
 %%WWWDIR%%/main/lang/english_org/external_module.inc.php
+%%WWWDIR%%/main/lang/english_org/gradebook.inc.php
 %%WWWDIR%%/main/lang/english_org/group.inc.php
 %%WWWDIR%%/main/lang/english_org/help.inc.php
 %%WWWDIR%%/main/lang/english_org/htmlarea.js.php
@@ -2642,6 +3443,7 @@
 %%WWWDIR%%/main/lang/esperanto/external_module.inc.php
 %%WWWDIR%%/main/lang/esperanto/forum.inc.php
 %%WWWDIR%%/main/lang/esperanto/forum_admin.inc.php
+%%WWWDIR%%/main/lang/esperanto/gradebook.inc.php
 %%WWWDIR%%/main/lang/esperanto/group.inc.php
 %%WWWDIR%%/main/lang/esperanto/help.inc.php
 %%WWWDIR%%/main/lang/esperanto/hotspot.inc.php
@@ -2659,6 +3461,7 @@
 %%WWWDIR%%/main/lang/esperanto/messages.inc.php
 %%WWWDIR%%/main/lang/esperanto/myagenda.inc.php
 %%WWWDIR%%/main/lang/esperanto/notification.inc.php
+%%WWWDIR%%/main/lang/esperanto/online_meeting.inc.php
 %%WWWDIR%%/main/lang/esperanto/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/esperanto/phpbb.inc.php
 %%WWWDIR%%/main/lang/esperanto/registration.inc.php
@@ -2668,9 +3471,13 @@
 %%WWWDIR%%/main/lang/esperanto/scormdocument.inc.php
 %%WWWDIR%%/main/lang/esperanto/slideshow.inc.php
 %%WWWDIR%%/main/lang/esperanto/survey.inc.php
+%%WWWDIR%%/main/lang/esperanto/survey_answer.inc.php
 %%WWWDIR%%/main/lang/esperanto/tracking.inc.php
 %%WWWDIR%%/main/lang/esperanto/trad4all.inc.php
 %%WWWDIR%%/main/lang/esperanto/userInfo.inc.php
+%%WWWDIR%%/main/lang/esperanto/videoconf.inc.php
+%%WWWDIR%%/main/lang/esperanto/wcag.inc.php
+%%WWWDIR%%/main/lang/esperanto/wiki.inc.php
 %%WWWDIR%%/main/lang/esperanto/work.inc.php
 %%WWWDIR%%/main/lang/euskera/accessibility.inc.php
 %%WWWDIR%%/main/lang/euskera/admin.inc.php
@@ -2691,6 +3498,7 @@
 %%WWWDIR%%/main/lang/euskera/external_module.inc.php
 %%WWWDIR%%/main/lang/euskera/forum.inc.php
 %%WWWDIR%%/main/lang/euskera/forum_admin.inc.php
+%%WWWDIR%%/main/lang/euskera/gradebook.inc.php
 %%WWWDIR%%/main/lang/euskera/group.inc.php
 %%WWWDIR%%/main/lang/euskera/help.inc.php
 %%WWWDIR%%/main/lang/euskera/hotspot.inc.php
@@ -2706,6 +3514,7 @@
 %%WWWDIR%%/main/lang/euskera/messages.inc.php
 %%WWWDIR%%/main/lang/euskera/myagenda.inc.php
 %%WWWDIR%%/main/lang/euskera/notification.inc.php
+%%WWWDIR%%/main/lang/euskera/online_meeting.inc.php
 %%WWWDIR%%/main/lang/euskera/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/euskera/phpbb.inc.php
 %%WWWDIR%%/main/lang/euskera/registration.inc.php
@@ -2715,9 +3524,13 @@
 %%WWWDIR%%/main/lang/euskera/scormdocument.inc.php
 %%WWWDIR%%/main/lang/euskera/slideshow.inc.php
 %%WWWDIR%%/main/lang/euskera/survey.inc.php
+%%WWWDIR%%/main/lang/euskera/survey_answer.inc.php
 %%WWWDIR%%/main/lang/euskera/tracking.inc.php
 %%WWWDIR%%/main/lang/euskera/trad4all.inc.php
 %%WWWDIR%%/main/lang/euskera/userInfo.inc.php
+%%WWWDIR%%/main/lang/euskera/videoconf.inc.php
+%%WWWDIR%%/main/lang/euskera/wcag.inc.php
+%%WWWDIR%%/main/lang/euskera/wiki.inc.php
 %%WWWDIR%%/main/lang/euskera/work.inc.php
 %%WWWDIR%%/main/lang/finnish/accessibility.inc.php
 %%WWWDIR%%/main/lang/finnish/admin.inc.php
@@ -2738,6 +3551,7 @@
 %%WWWDIR%%/main/lang/finnish/external_module.inc.php
 %%WWWDIR%%/main/lang/finnish/forum.inc.php
 %%WWWDIR%%/main/lang/finnish/forum_admin.inc.php
+%%WWWDIR%%/main/lang/finnish/gradebook.inc.php
 %%WWWDIR%%/main/lang/finnish/group.inc.php
 %%WWWDIR%%/main/lang/finnish/help.inc.php
 %%WWWDIR%%/main/lang/finnish/hotspot.inc.php
@@ -2755,6 +3569,7 @@
 %%WWWDIR%%/main/lang/finnish/messages.inc.php
 %%WWWDIR%%/main/lang/finnish/myagenda.inc.php
 %%WWWDIR%%/main/lang/finnish/notification.inc.php
+%%WWWDIR%%/main/lang/finnish/online_meeting.inc.php
 %%WWWDIR%%/main/lang/finnish/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/finnish/phpbb.inc.php
 %%WWWDIR%%/main/lang/finnish/registration.inc.php
@@ -2764,9 +3579,13 @@
 %%WWWDIR%%/main/lang/finnish/scormdocument.inc.php
 %%WWWDIR%%/main/lang/finnish/slideshow.inc.php
 %%WWWDIR%%/main/lang/finnish/survey.inc.php
+%%WWWDIR%%/main/lang/finnish/survey_answer.inc.php
 %%WWWDIR%%/main/lang/finnish/tracking.inc.php
 %%WWWDIR%%/main/lang/finnish/trad4all.inc.php
 %%WWWDIR%%/main/lang/finnish/userInfo.inc.php
+%%WWWDIR%%/main/lang/finnish/videoconf.inc.php
+%%WWWDIR%%/main/lang/finnish/wcag.inc.php
+%%WWWDIR%%/main/lang/finnish/wiki.inc.php
 %%WWWDIR%%/main/lang/finnish/work.inc.php
 %%WWWDIR%%/main/lang/french/accessibility.inc.php
 %%WWWDIR%%/main/lang/french/admin.inc.php
@@ -2787,6 +3606,7 @@
 %%WWWDIR%%/main/lang/french/external_module.inc.php
 %%WWWDIR%%/main/lang/french/forum.inc.php
 %%WWWDIR%%/main/lang/french/forum_admin.inc.php
+%%WWWDIR%%/main/lang/french/gradebook.inc.php
 %%WWWDIR%%/main/lang/french/group.inc.php
 %%WWWDIR%%/main/lang/french/help.inc.php
 %%WWWDIR%%/main/lang/french/hotspot.inc.php
@@ -2804,6 +3624,7 @@
 %%WWWDIR%%/main/lang/french/messages.inc.php
 %%WWWDIR%%/main/lang/french/myagenda.inc.php
 %%WWWDIR%%/main/lang/french/notification.inc.php
+%%WWWDIR%%/main/lang/french/online_meeting.inc.php
 %%WWWDIR%%/main/lang/french/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/french/phpbb.inc.php
 %%WWWDIR%%/main/lang/french/registration.inc.php
@@ -2817,6 +3638,9 @@
 %%WWWDIR%%/main/lang/french/tracking.inc.php
 %%WWWDIR%%/main/lang/french/trad4all.inc.php
 %%WWWDIR%%/main/lang/french/userInfo.inc.php
+%%WWWDIR%%/main/lang/french/videoconf.inc.php
+%%WWWDIR%%/main/lang/french/wcag.inc.php
+%%WWWDIR%%/main/lang/french/wiki.inc.php
 %%WWWDIR%%/main/lang/french/work.inc.php
 %%WWWDIR%%/main/lang/french_KM/admin.inc.php
 %%WWWDIR%%/main/lang/french_KM/agenda.inc.php
@@ -2831,6 +3655,7 @@
 %%WWWDIR%%/main/lang/french_KM/dropbox.inc.php
 %%WWWDIR%%/main/lang/french_KM/exercice.inc.php
 %%WWWDIR%%/main/lang/french_KM/external_module.inc.php
+%%WWWDIR%%/main/lang/french_KM/gradebook.inc.php
 %%WWWDIR%%/main/lang/french_KM/group.inc.php
 %%WWWDIR%%/main/lang/french_KM/help.inc.php
 %%WWWDIR%%/main/lang/french_KM/htmlarea.js.php
@@ -2864,6 +3689,7 @@
 %%WWWDIR%%/main/lang/french_corporate/dropbox.inc.php
 %%WWWDIR%%/main/lang/french_corporate/exercice.inc.php
 %%WWWDIR%%/main/lang/french_corporate/external_module.inc.php
+%%WWWDIR%%/main/lang/french_corporate/gradebook.inc.php
 %%WWWDIR%%/main/lang/french_corporate/group.inc.php
 %%WWWDIR%%/main/lang/french_corporate/help.inc.php
 %%WWWDIR%%/main/lang/french_corporate/htmlarea.js.php
@@ -2897,6 +3723,7 @@
 %%WWWDIR%%/main/lang/french_org/dropbox.inc.php
 %%WWWDIR%%/main/lang/french_org/exercice.inc.php
 %%WWWDIR%%/main/lang/french_org/external_module.inc.php
+%%WWWDIR%%/main/lang/french_org/gradebook.inc.php
 %%WWWDIR%%/main/lang/french_org/group.inc.php
 %%WWWDIR%%/main/lang/french_org/help.inc.php
 %%WWWDIR%%/main/lang/french_org/htmlarea.js.php
@@ -2918,6 +3745,54 @@
 %%WWWDIR%%/main/lang/french_org/trad4all.inc.php
 %%WWWDIR%%/main/lang/french_org/userInfo.inc.php
 %%WWWDIR%%/main/lang/french_org/work.inc.php
+%%WWWDIR%%/main/lang/french_unicode/accessibility.inc.php
+%%WWWDIR%%/main/lang/french_unicode/admin.inc.php
+%%WWWDIR%%/main/lang/french_unicode/agenda.inc.php
+%%WWWDIR%%/main/lang/french_unicode/announcements.inc.php
+%%WWWDIR%%/main/lang/french_unicode/bbimport.inc.php
+%%WWWDIR%%/main/lang/french_unicode/blog.inc.php
+%%WWWDIR%%/main/lang/french_unicode/chat.inc.php
+%%WWWDIR%%/main/lang/french_unicode/course_description.inc.php
+%%WWWDIR%%/main/lang/french_unicode/course_home.inc.php
+%%WWWDIR%%/main/lang/french_unicode/course_info.inc.php
+%%WWWDIR%%/main/lang/french_unicode/coursebackup.inc.php
+%%WWWDIR%%/main/lang/french_unicode/courses.inc.php
+%%WWWDIR%%/main/lang/french_unicode/create_course.inc.php
+%%WWWDIR%%/main/lang/french_unicode/document.inc.php
+%%WWWDIR%%/main/lang/french_unicode/dropbox.inc.php
+%%WWWDIR%%/main/lang/french_unicode/exercice.inc.php
+%%WWWDIR%%/main/lang/french_unicode/external_module.inc.php
+%%WWWDIR%%/main/lang/french_unicode/forum.inc.php
+%%WWWDIR%%/main/lang/french_unicode/gradebook.inc.php
+%%WWWDIR%%/main/lang/french_unicode/group.inc.php
+%%WWWDIR%%/main/lang/french_unicode/help.inc.php
+%%WWWDIR%%/main/lang/french_unicode/hotspot.inc.php
+%%WWWDIR%%/main/lang/french_unicode/import.inc.php
+%%WWWDIR%%/main/lang/french_unicode/index.inc.php
+%%WWWDIR%%/main/lang/french_unicode/install.inc.php
+%%WWWDIR%%/main/lang/french_unicode/learnpath.inc.php
+%%WWWDIR%%/main/lang/french_unicode/link.inc.php
+%%WWWDIR%%/main/lang/french_unicode/md_document.inc.php
+%%WWWDIR%%/main/lang/french_unicode/md_link.inc.php
+%%WWWDIR%%/main/lang/french_unicode/md_mix.inc.php
+%%WWWDIR%%/main/lang/french_unicode/md_scorm.inc.php
+%%WWWDIR%%/main/lang/french_unicode/messages.inc.php
+%%WWWDIR%%/main/lang/french_unicode/myagenda.inc.php
+%%WWWDIR%%/main/lang/french_unicode/notification.inc.php
+%%WWWDIR%%/main/lang/french_unicode/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/french_unicode/registration.inc.php
+%%WWWDIR%%/main/lang/french_unicode/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/french_unicode/scorm.inc.php
+%%WWWDIR%%/main/lang/french_unicode/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/french_unicode/scormdocument.inc.php
+%%WWWDIR%%/main/lang/french_unicode/slideshow.inc.php
+%%WWWDIR%%/main/lang/french_unicode/survey.inc.php
+%%WWWDIR%%/main/lang/french_unicode/tracking.inc.php
+%%WWWDIR%%/main/lang/french_unicode/trad4all.inc.php
+%%WWWDIR%%/main/lang/french_unicode/userInfo.inc.php
+%%WWWDIR%%/main/lang/french_unicode/videoconf.inc.php
+%%WWWDIR%%/main/lang/french_unicode/wiki.inc.php
+%%WWWDIR%%/main/lang/french_unicode/work.inc.php
 %%WWWDIR%%/main/lang/friulian/accessibility.inc.php
 %%WWWDIR%%/main/lang/friulian/admin.inc.php
 %%WWWDIR%%/main/lang/friulian/agenda.inc.php
@@ -2936,6 +3811,7 @@
 %%WWWDIR%%/main/lang/friulian/exercice.inc.php
 %%WWWDIR%%/main/lang/friulian/external_module.inc.php
 %%WWWDIR%%/main/lang/friulian/forum.inc.php
+%%WWWDIR%%/main/lang/friulian/gradebook.inc.php
 %%WWWDIR%%/main/lang/friulian/group.inc.php
 %%WWWDIR%%/main/lang/friulian/help.inc.php
 %%WWWDIR%%/main/lang/friulian/hotspot.inc.php
@@ -2951,6 +3827,7 @@
 %%WWWDIR%%/main/lang/friulian/messages.inc.php
 %%WWWDIR%%/main/lang/friulian/myagenda.inc.php
 %%WWWDIR%%/main/lang/friulian/notification.inc.php
+%%WWWDIR%%/main/lang/friulian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/friulian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/friulian/registration.inc.php
 %%WWWDIR%%/main/lang/friulian/resourcelinker.inc.php
@@ -2959,9 +3836,13 @@
 %%WWWDIR%%/main/lang/friulian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/friulian/slideshow.inc.php
 %%WWWDIR%%/main/lang/friulian/survey.inc.php
+%%WWWDIR%%/main/lang/friulian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/friulian/tracking.inc.php
 %%WWWDIR%%/main/lang/friulian/trad4all.inc.php
 %%WWWDIR%%/main/lang/friulian/userInfo.inc.php
+%%WWWDIR%%/main/lang/friulian/videoconf.inc.php
+%%WWWDIR%%/main/lang/friulian/wcag.inc.php
+%%WWWDIR%%/main/lang/friulian/wiki.inc.php
 %%WWWDIR%%/main/lang/friulian/work.inc.php
 %%WWWDIR%%/main/lang/galician/accessibility.inc.php
 %%WWWDIR%%/main/lang/galician/admin.inc.php
@@ -2982,6 +3863,7 @@
 %%WWWDIR%%/main/lang/galician/external_module.inc.php
 %%WWWDIR%%/main/lang/galician/forum.inc.php
 %%WWWDIR%%/main/lang/galician/forum_admin.inc.php
+%%WWWDIR%%/main/lang/galician/gradebook.inc.php
 %%WWWDIR%%/main/lang/galician/group.inc.php
 %%WWWDIR%%/main/lang/galician/help.inc.php
 %%WWWDIR%%/main/lang/galician/hotspot.inc.php
@@ -2999,6 +3881,7 @@
 %%WWWDIR%%/main/lang/galician/messages.inc.php
 %%WWWDIR%%/main/lang/galician/myagenda.inc.php
 %%WWWDIR%%/main/lang/galician/notification.inc.php
+%%WWWDIR%%/main/lang/galician/online_meeting.inc.php
 %%WWWDIR%%/main/lang/galician/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/galician/phpbb.inc.php
 %%WWWDIR%%/main/lang/galician/registration.inc.php
@@ -3008,9 +3891,13 @@
 %%WWWDIR%%/main/lang/galician/scormdocument.inc.php
 %%WWWDIR%%/main/lang/galician/slideshow.inc.php
 %%WWWDIR%%/main/lang/galician/survey.inc.php
+%%WWWDIR%%/main/lang/galician/survey_answer.inc.php
 %%WWWDIR%%/main/lang/galician/tracking.inc.php
 %%WWWDIR%%/main/lang/galician/trad4all.inc.php
 %%WWWDIR%%/main/lang/galician/userInfo.inc.php
+%%WWWDIR%%/main/lang/galician/videoconf.inc.php
+%%WWWDIR%%/main/lang/galician/wcag.inc.php
+%%WWWDIR%%/main/lang/galician/wiki.inc.php
 %%WWWDIR%%/main/lang/galician/work.inc.php
 %%WWWDIR%%/main/lang/german/accessibility.inc.php
 %%WWWDIR%%/main/lang/german/admin.inc.php
@@ -3031,6 +3918,7 @@
 %%WWWDIR%%/main/lang/german/external_module.inc.php
 %%WWWDIR%%/main/lang/german/forum.inc.php
 %%WWWDIR%%/main/lang/german/forum_admin.inc.php
+%%WWWDIR%%/main/lang/german/gradebook.inc.php
 %%WWWDIR%%/main/lang/german/group.inc.php
 %%WWWDIR%%/main/lang/german/help.inc.php
 %%WWWDIR%%/main/lang/german/hotspot.inc.php
@@ -3048,6 +3936,7 @@
 %%WWWDIR%%/main/lang/german/messages.inc.php
 %%WWWDIR%%/main/lang/german/myagenda.inc.php
 %%WWWDIR%%/main/lang/german/notification.inc.php
+%%WWWDIR%%/main/lang/german/online_meeting.inc.php
 %%WWWDIR%%/main/lang/german/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/german/phpbb.inc.php
 %%WWWDIR%%/main/lang/german/registration.inc.php
@@ -3057,9 +3946,13 @@
 %%WWWDIR%%/main/lang/german/scormdocument.inc.php
 %%WWWDIR%%/main/lang/german/slideshow.inc.php
 %%WWWDIR%%/main/lang/german/survey.inc.php
+%%WWWDIR%%/main/lang/german/survey_answer.inc.php
 %%WWWDIR%%/main/lang/german/tracking.inc.php
 %%WWWDIR%%/main/lang/german/trad4all.inc.php
 %%WWWDIR%%/main/lang/german/userInfo.inc.php
+%%WWWDIR%%/main/lang/german/videoconf.inc.php
+%%WWWDIR%%/main/lang/german/wcag.inc.php
+%%WWWDIR%%/main/lang/german/wiki.inc.php
 %%WWWDIR%%/main/lang/german/work.inc.php
 %%WWWDIR%%/main/lang/greek/accessibility.inc.php
 %%WWWDIR%%/main/lang/greek/admin.inc.php
@@ -3080,6 +3973,7 @@
 %%WWWDIR%%/main/lang/greek/external_module.inc.php
 %%WWWDIR%%/main/lang/greek/forum.inc.php
 %%WWWDIR%%/main/lang/greek/forum_admin.inc.php
+%%WWWDIR%%/main/lang/greek/gradebook.inc.php
 %%WWWDIR%%/main/lang/greek/group.inc.php
 %%WWWDIR%%/main/lang/greek/help.inc.php
 %%WWWDIR%%/main/lang/greek/hotspot.inc.php
@@ -3097,6 +3991,7 @@
 %%WWWDIR%%/main/lang/greek/messages.inc.php
 %%WWWDIR%%/main/lang/greek/myagenda.inc.php
 %%WWWDIR%%/main/lang/greek/notification.inc.php
+%%WWWDIR%%/main/lang/greek/online_meeting.inc.php
 %%WWWDIR%%/main/lang/greek/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/greek/phpbb.inc.php
 %%WWWDIR%%/main/lang/greek/registration.inc.php
@@ -3106,9 +4001,13 @@
 %%WWWDIR%%/main/lang/greek/scormdocument.inc.php
 %%WWWDIR%%/main/lang/greek/slideshow.inc.php
 %%WWWDIR%%/main/lang/greek/survey.inc.php
+%%WWWDIR%%/main/lang/greek/survey_answer.inc.php
 %%WWWDIR%%/main/lang/greek/tracking.inc.php
 %%WWWDIR%%/main/lang/greek/trad4all.inc.php
 %%WWWDIR%%/main/lang/greek/userInfo.inc.php
+%%WWWDIR%%/main/lang/greek/videoconf.inc.php
+%%WWWDIR%%/main/lang/greek/wcag.inc.php
+%%WWWDIR%%/main/lang/greek/wiki.inc.php
 %%WWWDIR%%/main/lang/greek/work.inc.php
 %%WWWDIR%%/main/lang/hebrew/accessibility.inc.php
 %%WWWDIR%%/main/lang/hebrew/admin.inc.php
@@ -3129,6 +4028,7 @@
 %%WWWDIR%%/main/lang/hebrew/external_module.inc.php
 %%WWWDIR%%/main/lang/hebrew/forum.inc.php
 %%WWWDIR%%/main/lang/hebrew/forum_admin.inc.php
+%%WWWDIR%%/main/lang/hebrew/gradebook.inc.php
 %%WWWDIR%%/main/lang/hebrew/group.inc.php
 %%WWWDIR%%/main/lang/hebrew/help.inc.php
 %%WWWDIR%%/main/lang/hebrew/hotspot.inc.php
@@ -3144,6 +4044,7 @@
 %%WWWDIR%%/main/lang/hebrew/messages.inc.php
 %%WWWDIR%%/main/lang/hebrew/myagenda.inc.php
 %%WWWDIR%%/main/lang/hebrew/notification.inc.php
+%%WWWDIR%%/main/lang/hebrew/online_meeting.inc.php
 %%WWWDIR%%/main/lang/hebrew/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/hebrew/phpbb.inc.php
 %%WWWDIR%%/main/lang/hebrew/registration.inc.php
@@ -3153,9 +4054,13 @@
 %%WWWDIR%%/main/lang/hebrew/scormdocument.inc.php
 %%WWWDIR%%/main/lang/hebrew/slideshow.inc.php
 %%WWWDIR%%/main/lang/hebrew/survey.inc.php
+%%WWWDIR%%/main/lang/hebrew/survey_answer.inc.php
 %%WWWDIR%%/main/lang/hebrew/tracking.inc.php
 %%WWWDIR%%/main/lang/hebrew/trad4all.inc.php
 %%WWWDIR%%/main/lang/hebrew/userInfo.inc.php
+%%WWWDIR%%/main/lang/hebrew/videoconf.inc.php
+%%WWWDIR%%/main/lang/hebrew/wcag.inc.php
+%%WWWDIR%%/main/lang/hebrew/wiki.inc.php
 %%WWWDIR%%/main/lang/hebrew/work.inc.php
 %%WWWDIR%%/main/lang/hungarian/accessibility.inc.php
 %%WWWDIR%%/main/lang/hungarian/admin.inc.php
@@ -3176,6 +4081,7 @@
 %%WWWDIR%%/main/lang/hungarian/external_module.inc.php
 %%WWWDIR%%/main/lang/hungarian/forum.inc.php
 %%WWWDIR%%/main/lang/hungarian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/hungarian/gradebook.inc.php
 %%WWWDIR%%/main/lang/hungarian/group.inc.php
 %%WWWDIR%%/main/lang/hungarian/help.inc.php
 %%WWWDIR%%/main/lang/hungarian/hotspot.inc.php
@@ -3193,6 +4099,7 @@
 %%WWWDIR%%/main/lang/hungarian/messages.inc.php
 %%WWWDIR%%/main/lang/hungarian/myagenda.inc.php
 %%WWWDIR%%/main/lang/hungarian/notification.inc.php
+%%WWWDIR%%/main/lang/hungarian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/hungarian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/hungarian/phpbb.inc.php
 %%WWWDIR%%/main/lang/hungarian/registration.inc.php
@@ -3202,9 +4109,13 @@
 %%WWWDIR%%/main/lang/hungarian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/hungarian/slideshow.inc.php
 %%WWWDIR%%/main/lang/hungarian/survey.inc.php
+%%WWWDIR%%/main/lang/hungarian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/hungarian/tracking.inc.php
 %%WWWDIR%%/main/lang/hungarian/trad4all.inc.php
 %%WWWDIR%%/main/lang/hungarian/userInfo.inc.php
+%%WWWDIR%%/main/lang/hungarian/videoconf.inc.php
+%%WWWDIR%%/main/lang/hungarian/wcag.inc.php
+%%WWWDIR%%/main/lang/hungarian/wiki.inc.php
 %%WWWDIR%%/main/lang/hungarian/work.inc.php
 %%WWWDIR%%/main/lang/index.html
 %%WWWDIR%%/main/lang/indonesian/accessibility.inc.php
@@ -3226,6 +4137,7 @@
 %%WWWDIR%%/main/lang/indonesian/external_module.inc.php
 %%WWWDIR%%/main/lang/indonesian/forum.inc.php
 %%WWWDIR%%/main/lang/indonesian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/indonesian/gradebook.inc.php
 %%WWWDIR%%/main/lang/indonesian/group.inc.php
 %%WWWDIR%%/main/lang/indonesian/help.inc.php
 %%WWWDIR%%/main/lang/indonesian/hotspot.inc.php
@@ -3243,6 +4155,7 @@
 %%WWWDIR%%/main/lang/indonesian/messages.inc.php
 %%WWWDIR%%/main/lang/indonesian/myagenda.inc.php
 %%WWWDIR%%/main/lang/indonesian/notification.inc.php
+%%WWWDIR%%/main/lang/indonesian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/indonesian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/indonesian/phpbb.inc.php
 %%WWWDIR%%/main/lang/indonesian/registration.inc.php
@@ -3252,9 +4165,13 @@
 %%WWWDIR%%/main/lang/indonesian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/indonesian/slideshow.inc.php
 %%WWWDIR%%/main/lang/indonesian/survey.inc.php
+%%WWWDIR%%/main/lang/indonesian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/indonesian/tracking.inc.php
 %%WWWDIR%%/main/lang/indonesian/trad4all.inc.php
 %%WWWDIR%%/main/lang/indonesian/userInfo.inc.php
+%%WWWDIR%%/main/lang/indonesian/videoconf.inc.php
+%%WWWDIR%%/main/lang/indonesian/wcag.inc.php
+%%WWWDIR%%/main/lang/indonesian/wiki.inc.php
 %%WWWDIR%%/main/lang/indonesian/work.inc.php
 %%WWWDIR%%/main/lang/italian/accessibility.inc.php
 %%WWWDIR%%/main/lang/italian/admin.inc.php
@@ -3275,6 +4192,7 @@
 %%WWWDIR%%/main/lang/italian/external_module.inc.php
 %%WWWDIR%%/main/lang/italian/forum.inc.php
 %%WWWDIR%%/main/lang/italian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/italian/gradebook.inc.php
 %%WWWDIR%%/main/lang/italian/group.inc.php
 %%WWWDIR%%/main/lang/italian/help.inc.php
 %%WWWDIR%%/main/lang/italian/hotspot.inc.php
@@ -3292,6 +4210,7 @@
 %%WWWDIR%%/main/lang/italian/messages.inc.php
 %%WWWDIR%%/main/lang/italian/myagenda.inc.php
 %%WWWDIR%%/main/lang/italian/notification.inc.php
+%%WWWDIR%%/main/lang/italian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/italian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/italian/phpbb.inc.php
 %%WWWDIR%%/main/lang/italian/registration.inc.php
@@ -3301,9 +4220,13 @@
 %%WWWDIR%%/main/lang/italian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/italian/slideshow.inc.php
 %%WWWDIR%%/main/lang/italian/survey.inc.php
+%%WWWDIR%%/main/lang/italian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/italian/tracking.inc.php
 %%WWWDIR%%/main/lang/italian/trad4all.inc.php
 %%WWWDIR%%/main/lang/italian/userInfo.inc.php
+%%WWWDIR%%/main/lang/italian/videoconf.inc.php
+%%WWWDIR%%/main/lang/italian/wcag.inc.php
+%%WWWDIR%%/main/lang/italian/wiki.inc.php
 %%WWWDIR%%/main/lang/italian/work.inc.php
 %%WWWDIR%%/main/lang/japanese/accessibility.inc.php
 %%WWWDIR%%/main/lang/japanese/admin.inc.php
@@ -3324,6 +4247,7 @@
 %%WWWDIR%%/main/lang/japanese/external_module.inc.php
 %%WWWDIR%%/main/lang/japanese/forum.inc.php
 %%WWWDIR%%/main/lang/japanese/forum_admin.inc.php
+%%WWWDIR%%/main/lang/japanese/gradebook.inc.php
 %%WWWDIR%%/main/lang/japanese/group.inc.php
 %%WWWDIR%%/main/lang/japanese/help.inc.php
 %%WWWDIR%%/main/lang/japanese/hotspot.inc.php
@@ -3341,6 +4265,7 @@
 %%WWWDIR%%/main/lang/japanese/messages.inc.php
 %%WWWDIR%%/main/lang/japanese/myagenda.inc.php
 %%WWWDIR%%/main/lang/japanese/notification.inc.php
+%%WWWDIR%%/main/lang/japanese/online_meeting.inc.php
 %%WWWDIR%%/main/lang/japanese/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/japanese/phpbb.inc.php
 %%WWWDIR%%/main/lang/japanese/registration.inc.php
@@ -3350,10 +4275,65 @@
 %%WWWDIR%%/main/lang/japanese/scormdocument.inc.php
 %%WWWDIR%%/main/lang/japanese/slideshow.inc.php
 %%WWWDIR%%/main/lang/japanese/survey.inc.php
+%%WWWDIR%%/main/lang/japanese/survey_answer.inc.php
 %%WWWDIR%%/main/lang/japanese/tracking.inc.php
 %%WWWDIR%%/main/lang/japanese/trad4all.inc.php
 %%WWWDIR%%/main/lang/japanese/userInfo.inc.php
+%%WWWDIR%%/main/lang/japanese/videoconf.inc.php
+%%WWWDIR%%/main/lang/japanese/wcag.inc.php
+%%WWWDIR%%/main/lang/japanese/wiki.inc.php
 %%WWWDIR%%/main/lang/japanese/work.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/accessibility.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/admin.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/agenda.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/announcements.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/bbimport.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/blog.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/chat.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/course_description.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/course_home.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/course_info.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/coursebackup.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/courses.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/create_course.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/document.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/dropbox.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/exercice.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/external_module.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/forum.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/gradebook.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/group.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/help.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/hotspot.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/import.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/index.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/install.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/learnpath.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/link.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/md_document.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/md_link.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/md_mix.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/md_scorm.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/messages.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/myagenda.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/notification.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/online_meeting.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/registration.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/scorm.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/scormdocument.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/slideshow.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/survey.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/survey_answer.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/tracking.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/trad4all.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/userInfo.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/videoconf.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/wcag.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/wiki.inc.php
+%%WWWDIR%%/main/lang/japanese_unicode/work.inc.php
 %%WWWDIR%%/main/lang/korean/accessibility.inc.php
 %%WWWDIR%%/main/lang/korean/admin.inc.php
 %%WWWDIR%%/main/lang/korean/agenda.inc.php
@@ -3373,6 +4353,7 @@
 %%WWWDIR%%/main/lang/korean/external_module.inc.php
 %%WWWDIR%%/main/lang/korean/forum.inc.php
 %%WWWDIR%%/main/lang/korean/forum_admin.inc.php
+%%WWWDIR%%/main/lang/korean/gradebook.inc.php
 %%WWWDIR%%/main/lang/korean/group.inc.php
 %%WWWDIR%%/main/lang/korean/help.inc.php
 %%WWWDIR%%/main/lang/korean/hotspot.inc.php
@@ -3388,6 +4369,7 @@
 %%WWWDIR%%/main/lang/korean/messages.inc.php
 %%WWWDIR%%/main/lang/korean/myagenda.inc.php
 %%WWWDIR%%/main/lang/korean/notification.inc.php
+%%WWWDIR%%/main/lang/korean/online_meeting.inc.php
 %%WWWDIR%%/main/lang/korean/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/korean/phpbb.inc.php
 %%WWWDIR%%/main/lang/korean/registration.inc.php
@@ -3397,9 +4379,13 @@
 %%WWWDIR%%/main/lang/korean/scormdocument.inc.php
 %%WWWDIR%%/main/lang/korean/slideshow.inc.php
 %%WWWDIR%%/main/lang/korean/survey.inc.php
+%%WWWDIR%%/main/lang/korean/survey_answer.inc.php
 %%WWWDIR%%/main/lang/korean/tracking.inc.php
 %%WWWDIR%%/main/lang/korean/trad4all.inc.php
 %%WWWDIR%%/main/lang/korean/userInfo.inc.php
+%%WWWDIR%%/main/lang/korean/videoconf.inc.php
+%%WWWDIR%%/main/lang/korean/wcag.inc.php
+%%WWWDIR%%/main/lang/korean/wiki.inc.php
 %%WWWDIR%%/main/lang/korean/work.inc.php
 %%WWWDIR%%/main/lang/latvian/accessibility.inc.php
 %%WWWDIR%%/main/lang/latvian/admin.inc.php
@@ -3420,6 +4406,7 @@
 %%WWWDIR%%/main/lang/latvian/external_module.inc.php
 %%WWWDIR%%/main/lang/latvian/forum.inc.php
 %%WWWDIR%%/main/lang/latvian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/latvian/gradebook.inc.php
 %%WWWDIR%%/main/lang/latvian/group.inc.php
 %%WWWDIR%%/main/lang/latvian/help.inc.php
 %%WWWDIR%%/main/lang/latvian/hotspot.inc.php
@@ -3435,6 +4422,7 @@
 %%WWWDIR%%/main/lang/latvian/messages.inc.php
 %%WWWDIR%%/main/lang/latvian/myagenda.inc.php
 %%WWWDIR%%/main/lang/latvian/notification.inc.php
+%%WWWDIR%%/main/lang/latvian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/latvian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/latvian/phpbb.inc.php
 %%WWWDIR%%/main/lang/latvian/registration.inc.php
@@ -3444,10 +4432,65 @@
 %%WWWDIR%%/main/lang/latvian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/latvian/slideshow.inc.php
 %%WWWDIR%%/main/lang/latvian/survey.inc.php
+%%WWWDIR%%/main/lang/latvian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/latvian/tracking.inc.php
 %%WWWDIR%%/main/lang/latvian/trad4all.inc.php
 %%WWWDIR%%/main/lang/latvian/userInfo.inc.php
+%%WWWDIR%%/main/lang/latvian/videoconf.inc.php
+%%WWWDIR%%/main/lang/latvian/wcag.inc.php
+%%WWWDIR%%/main/lang/latvian/wiki.inc.php
 %%WWWDIR%%/main/lang/latvian/work.inc.php
+%%WWWDIR%%/main/lang/lithuanian/accessibility.inc.php
+%%WWWDIR%%/main/lang/lithuanian/admin.inc.php
+%%WWWDIR%%/main/lang/lithuanian/agenda.inc.php
+%%WWWDIR%%/main/lang/lithuanian/announcements.inc.php
+%%WWWDIR%%/main/lang/lithuanian/bbimport.inc.php
+%%WWWDIR%%/main/lang/lithuanian/blog.inc.php
+%%WWWDIR%%/main/lang/lithuanian/chat.inc.php
+%%WWWDIR%%/main/lang/lithuanian/course_description.inc.php
+%%WWWDIR%%/main/lang/lithuanian/course_home.inc.php
+%%WWWDIR%%/main/lang/lithuanian/course_info.inc.php
+%%WWWDIR%%/main/lang/lithuanian/coursebackup.inc.php
+%%WWWDIR%%/main/lang/lithuanian/courses.inc.php
+%%WWWDIR%%/main/lang/lithuanian/create_course.inc.php
+%%WWWDIR%%/main/lang/lithuanian/document.inc.php
+%%WWWDIR%%/main/lang/lithuanian/dropbox.inc.php
+%%WWWDIR%%/main/lang/lithuanian/exercice.inc.php
+%%WWWDIR%%/main/lang/lithuanian/external_module.inc.php
+%%WWWDIR%%/main/lang/lithuanian/forum.inc.php
+%%WWWDIR%%/main/lang/lithuanian/gradebook.inc.php
+%%WWWDIR%%/main/lang/lithuanian/group.inc.php
+%%WWWDIR%%/main/lang/lithuanian/help.inc.php
+%%WWWDIR%%/main/lang/lithuanian/hotspot.inc.php
+%%WWWDIR%%/main/lang/lithuanian/import.inc.php
+%%WWWDIR%%/main/lang/lithuanian/index.inc.php
+%%WWWDIR%%/main/lang/lithuanian/install.inc.php
+%%WWWDIR%%/main/lang/lithuanian/learnpath.inc.php
+%%WWWDIR%%/main/lang/lithuanian/link.inc.php
+%%WWWDIR%%/main/lang/lithuanian/md_document.inc.php
+%%WWWDIR%%/main/lang/lithuanian/md_link.inc.php
+%%WWWDIR%%/main/lang/lithuanian/md_mix.inc.php
+%%WWWDIR%%/main/lang/lithuanian/md_scorm.inc.php
+%%WWWDIR%%/main/lang/lithuanian/messages.inc.php
+%%WWWDIR%%/main/lang/lithuanian/myagenda.inc.php
+%%WWWDIR%%/main/lang/lithuanian/notification.inc.php
+%%WWWDIR%%/main/lang/lithuanian/online_meeting.inc.php
+%%WWWDIR%%/main/lang/lithuanian/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/lithuanian/registration.inc.php
+%%WWWDIR%%/main/lang/lithuanian/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/lithuanian/scorm.inc.php
+%%WWWDIR%%/main/lang/lithuanian/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/lithuanian/scormdocument.inc.php
+%%WWWDIR%%/main/lang/lithuanian/slideshow.inc.php
+%%WWWDIR%%/main/lang/lithuanian/survey.inc.php
+%%WWWDIR%%/main/lang/lithuanian/survey_answer.inc.php
+%%WWWDIR%%/main/lang/lithuanian/tracking.inc.php
+%%WWWDIR%%/main/lang/lithuanian/trad4all.inc.php
+%%WWWDIR%%/main/lang/lithuanian/userInfo.inc.php
+%%WWWDIR%%/main/lang/lithuanian/videoconf.inc.php
+%%WWWDIR%%/main/lang/lithuanian/wcag.inc.php
+%%WWWDIR%%/main/lang/lithuanian/wiki.inc.php
+%%WWWDIR%%/main/lang/lithuanian/work.inc.php
 %%WWWDIR%%/main/lang/macedonian/accessibility.inc.php
 %%WWWDIR%%/main/lang/macedonian/admin.inc.php
 %%WWWDIR%%/main/lang/macedonian/agenda.inc.php
@@ -3467,6 +4510,7 @@
 %%WWWDIR%%/main/lang/macedonian/external_module.inc.php
 %%WWWDIR%%/main/lang/macedonian/forum.inc.php
 %%WWWDIR%%/main/lang/macedonian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/macedonian/gradebook.inc.php
 %%WWWDIR%%/main/lang/macedonian/group.inc.php
 %%WWWDIR%%/main/lang/macedonian/help.inc.php
 %%WWWDIR%%/main/lang/macedonian/hotspot.inc.php
@@ -3482,6 +4526,7 @@
 %%WWWDIR%%/main/lang/macedonian/messages.inc.php
 %%WWWDIR%%/main/lang/macedonian/myagenda.inc.php
 %%WWWDIR%%/main/lang/macedonian/notification.inc.php
+%%WWWDIR%%/main/lang/macedonian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/macedonian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/macedonian/phpbb.inc.php
 %%WWWDIR%%/main/lang/macedonian/registration.inc.php
@@ -3491,9 +4536,13 @@
 %%WWWDIR%%/main/lang/macedonian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/macedonian/slideshow.inc.php
 %%WWWDIR%%/main/lang/macedonian/survey.inc.php
+%%WWWDIR%%/main/lang/macedonian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/macedonian/tracking.inc.php
 %%WWWDIR%%/main/lang/macedonian/trad4all.inc.php
 %%WWWDIR%%/main/lang/macedonian/userInfo.inc.php
+%%WWWDIR%%/main/lang/macedonian/videoconf.inc.php
+%%WWWDIR%%/main/lang/macedonian/wcag.inc.php
+%%WWWDIR%%/main/lang/macedonian/wiki.inc.php
 %%WWWDIR%%/main/lang/macedonian/work.inc.php
 %%WWWDIR%%/main/lang/malay/accessibility.inc.php
 %%WWWDIR%%/main/lang/malay/admin.inc.php
@@ -3514,6 +4563,7 @@
 %%WWWDIR%%/main/lang/malay/external_module.inc.php
 %%WWWDIR%%/main/lang/malay/forum.inc.php
 %%WWWDIR%%/main/lang/malay/forum_admin.inc.php
+%%WWWDIR%%/main/lang/malay/gradebook.inc.php
 %%WWWDIR%%/main/lang/malay/group.inc.php
 %%WWWDIR%%/main/lang/malay/help.inc.php
 %%WWWDIR%%/main/lang/malay/hotspot.inc.php
@@ -3531,6 +4581,7 @@
 %%WWWDIR%%/main/lang/malay/messages.inc.php
 %%WWWDIR%%/main/lang/malay/myagenda.inc.php
 %%WWWDIR%%/main/lang/malay/notification.inc.php
+%%WWWDIR%%/main/lang/malay/online_meeting.inc.php
 %%WWWDIR%%/main/lang/malay/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/malay/phpbb.inc.php
 %%WWWDIR%%/main/lang/malay/registration.inc.php
@@ -3540,9 +4591,13 @@
 %%WWWDIR%%/main/lang/malay/scormdocument.inc.php
 %%WWWDIR%%/main/lang/malay/slideshow.inc.php
 %%WWWDIR%%/main/lang/malay/survey.inc.php
+%%WWWDIR%%/main/lang/malay/survey_answer.inc.php
 %%WWWDIR%%/main/lang/malay/tracking.inc.php
 %%WWWDIR%%/main/lang/malay/trad4all.inc.php
 %%WWWDIR%%/main/lang/malay/userInfo.inc.php
+%%WWWDIR%%/main/lang/malay/videoconf.inc.php
+%%WWWDIR%%/main/lang/malay/wcag.inc.php
+%%WWWDIR%%/main/lang/malay/wiki.inc.php
 %%WWWDIR%%/main/lang/malay/work.inc.php
 %%WWWDIR%%/main/lang/norwegian/accessibility.inc.php
 %%WWWDIR%%/main/lang/norwegian/admin.inc.php
@@ -3563,6 +4618,7 @@
 %%WWWDIR%%/main/lang/norwegian/external_module.inc.php
 %%WWWDIR%%/main/lang/norwegian/forum.inc.php
 %%WWWDIR%%/main/lang/norwegian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/norwegian/gradebook.inc.php
 %%WWWDIR%%/main/lang/norwegian/group.inc.php
 %%WWWDIR%%/main/lang/norwegian/help.inc.php
 %%WWWDIR%%/main/lang/norwegian/hotspot.inc.php
@@ -3580,6 +4636,7 @@
 %%WWWDIR%%/main/lang/norwegian/messages.inc.php
 %%WWWDIR%%/main/lang/norwegian/myagenda.inc.php
 %%WWWDIR%%/main/lang/norwegian/notification.inc.php
+%%WWWDIR%%/main/lang/norwegian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/norwegian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/norwegian/phpbb.inc.php
 %%WWWDIR%%/main/lang/norwegian/registration.inc.php
@@ -3589,10 +4646,62 @@
 %%WWWDIR%%/main/lang/norwegian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/norwegian/slideshow.inc.php
 %%WWWDIR%%/main/lang/norwegian/survey.inc.php
+%%WWWDIR%%/main/lang/norwegian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/norwegian/tracking.inc.php
 %%WWWDIR%%/main/lang/norwegian/trad4all.inc.php
 %%WWWDIR%%/main/lang/norwegian/userInfo.inc.php
+%%WWWDIR%%/main/lang/norwegian/videoconf.inc.php
+%%WWWDIR%%/main/lang/norwegian/wcag.inc.php
+%%WWWDIR%%/main/lang/norwegian/wiki.inc.php
 %%WWWDIR%%/main/lang/norwegian/work.inc.php
+%%WWWDIR%%/main/lang/pashto/accessibility.inc.php
+%%WWWDIR%%/main/lang/pashto/admin.inc.php
+%%WWWDIR%%/main/lang/pashto/agenda.inc.php
+%%WWWDIR%%/main/lang/pashto/announcements.inc.php
+%%WWWDIR%%/main/lang/pashto/bbimport.inc.php
+%%WWWDIR%%/main/lang/pashto/blog.inc.php
+%%WWWDIR%%/main/lang/pashto/chat.inc.php
+%%WWWDIR%%/main/lang/pashto/course_description.inc.php
+%%WWWDIR%%/main/lang/pashto/course_home.inc.php
+%%WWWDIR%%/main/lang/pashto/course_info.inc.php
+%%WWWDIR%%/main/lang/pashto/coursebackup.inc.php
+%%WWWDIR%%/main/lang/pashto/courses.inc.php
+%%WWWDIR%%/main/lang/pashto/create_course.inc.php
+%%WWWDIR%%/main/lang/pashto/document.inc.php
+%%WWWDIR%%/main/lang/pashto/dropbox.inc.php
+%%WWWDIR%%/main/lang/pashto/exercice.inc.php
+%%WWWDIR%%/main/lang/pashto/external_module.inc.php
+%%WWWDIR%%/main/lang/pashto/forum.inc.php
+%%WWWDIR%%/main/lang/pashto/gradebook.inc.php
+%%WWWDIR%%/main/lang/pashto/group.inc.php
+%%WWWDIR%%/main/lang/pashto/help.inc.php
+%%WWWDIR%%/main/lang/pashto/hotspot.inc.php
+%%WWWDIR%%/main/lang/pashto/import.inc.php
+%%WWWDIR%%/main/lang/pashto/index.inc.php
+%%WWWDIR%%/main/lang/pashto/install.inc.php
+%%WWWDIR%%/main/lang/pashto/learnpath.inc.php
+%%WWWDIR%%/main/lang/pashto/link.inc.php
+%%WWWDIR%%/main/lang/pashto/md_document.inc.php
+%%WWWDIR%%/main/lang/pashto/md_link.inc.php
+%%WWWDIR%%/main/lang/pashto/md_mix.inc.php
+%%WWWDIR%%/main/lang/pashto/md_scorm.inc.php
+%%WWWDIR%%/main/lang/pashto/messages.inc.php
+%%WWWDIR%%/main/lang/pashto/myagenda.inc.php
+%%WWWDIR%%/main/lang/pashto/notification.inc.php
+%%WWWDIR%%/main/lang/pashto/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/pashto/registration.inc.php
+%%WWWDIR%%/main/lang/pashto/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/pashto/scorm.inc.php
+%%WWWDIR%%/main/lang/pashto/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/pashto/scormdocument.inc.php
+%%WWWDIR%%/main/lang/pashto/slideshow.inc.php
+%%WWWDIR%%/main/lang/pashto/survey.inc.php
+%%WWWDIR%%/main/lang/pashto/tracking.inc.php
+%%WWWDIR%%/main/lang/pashto/trad4all.inc.php
+%%WWWDIR%%/main/lang/pashto/userInfo.inc.php
+%%WWWDIR%%/main/lang/pashto/videoconf.inc.php
+%%WWWDIR%%/main/lang/pashto/wiki.inc.php
+%%WWWDIR%%/main/lang/pashto/work.inc.php
 %%WWWDIR%%/main/lang/persian/accessibility.inc.php
 %%WWWDIR%%/main/lang/persian/admin.inc.php
 %%WWWDIR%%/main/lang/persian/agenda.inc.php
@@ -3612,6 +4721,7 @@
 %%WWWDIR%%/main/lang/persian/external_module.inc.php
 %%WWWDIR%%/main/lang/persian/forum.inc.php
 %%WWWDIR%%/main/lang/persian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/persian/gradebook.inc.php
 %%WWWDIR%%/main/lang/persian/group.inc.php
 %%WWWDIR%%/main/lang/persian/help.inc.php
 %%WWWDIR%%/main/lang/persian/hotspot.inc.php
@@ -3629,6 +4739,7 @@
 %%WWWDIR%%/main/lang/persian/messages.inc.php
 %%WWWDIR%%/main/lang/persian/myagenda.inc.php
 %%WWWDIR%%/main/lang/persian/notification.inc.php
+%%WWWDIR%%/main/lang/persian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/persian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/persian/phpbb.inc.php
 %%WWWDIR%%/main/lang/persian/registration.inc.php
@@ -3638,9 +4749,13 @@
 %%WWWDIR%%/main/lang/persian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/persian/slideshow.inc.php
 %%WWWDIR%%/main/lang/persian/survey.inc.php
+%%WWWDIR%%/main/lang/persian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/persian/tracking.inc.php
 %%WWWDIR%%/main/lang/persian/trad4all.inc.php
 %%WWWDIR%%/main/lang/persian/userInfo.inc.php
+%%WWWDIR%%/main/lang/persian/videoconf.inc.php
+%%WWWDIR%%/main/lang/persian/wcag.inc.php
+%%WWWDIR%%/main/lang/persian/wiki.inc.php
 %%WWWDIR%%/main/lang/persian/work.inc.php
 %%WWWDIR%%/main/lang/polish/accessibility.inc.php
 %%WWWDIR%%/main/lang/polish/admin.inc.php
@@ -3661,6 +4776,7 @@
 %%WWWDIR%%/main/lang/polish/external_module.inc.php
 %%WWWDIR%%/main/lang/polish/forum.inc.php
 %%WWWDIR%%/main/lang/polish/forum_admin.inc.php
+%%WWWDIR%%/main/lang/polish/gradebook.inc.php
 %%WWWDIR%%/main/lang/polish/group.inc.php
 %%WWWDIR%%/main/lang/polish/help.inc.php
 %%WWWDIR%%/main/lang/polish/hotspot.inc.php
@@ -3678,6 +4794,7 @@
 %%WWWDIR%%/main/lang/polish/messages.inc.php
 %%WWWDIR%%/main/lang/polish/myagenda.inc.php
 %%WWWDIR%%/main/lang/polish/notification.inc.php
+%%WWWDIR%%/main/lang/polish/online_meeting.inc.php
 %%WWWDIR%%/main/lang/polish/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/polish/phpbb.inc.php
 %%WWWDIR%%/main/lang/polish/registration.inc.php
@@ -3687,9 +4804,13 @@
 %%WWWDIR%%/main/lang/polish/scormdocument.inc.php
 %%WWWDIR%%/main/lang/polish/slideshow.inc.php
 %%WWWDIR%%/main/lang/polish/survey.inc.php
+%%WWWDIR%%/main/lang/polish/survey_answer.inc.php
 %%WWWDIR%%/main/lang/polish/tracking.inc.php
 %%WWWDIR%%/main/lang/polish/trad4all.inc.php
 %%WWWDIR%%/main/lang/polish/userInfo.inc.php
+%%WWWDIR%%/main/lang/polish/videoconf.inc.php
+%%WWWDIR%%/main/lang/polish/wcag.inc.php
+%%WWWDIR%%/main/lang/polish/wiki.inc.php
 %%WWWDIR%%/main/lang/polish/work.inc.php
 %%WWWDIR%%/main/lang/portuguese/accessibility.inc.php
 %%WWWDIR%%/main/lang/portuguese/admin.inc.php
@@ -3710,6 +4831,7 @@
 %%WWWDIR%%/main/lang/portuguese/external_module.inc.php
 %%WWWDIR%%/main/lang/portuguese/forum.inc.php
 %%WWWDIR%%/main/lang/portuguese/forum_admin.inc.php
+%%WWWDIR%%/main/lang/portuguese/gradebook.inc.php
 %%WWWDIR%%/main/lang/portuguese/group.inc.php
 %%WWWDIR%%/main/lang/portuguese/help.inc.php
 %%WWWDIR%%/main/lang/portuguese/hotspot.inc.php
@@ -3727,6 +4849,7 @@
 %%WWWDIR%%/main/lang/portuguese/messages.inc.php
 %%WWWDIR%%/main/lang/portuguese/myagenda.inc.php
 %%WWWDIR%%/main/lang/portuguese/notification.inc.php
+%%WWWDIR%%/main/lang/portuguese/online_meeting.inc.php
 %%WWWDIR%%/main/lang/portuguese/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/portuguese/phpbb.inc.php
 %%WWWDIR%%/main/lang/portuguese/registration.inc.php
@@ -3736,9 +4859,13 @@
 %%WWWDIR%%/main/lang/portuguese/scormdocument.inc.php
 %%WWWDIR%%/main/lang/portuguese/slideshow.inc.php
 %%WWWDIR%%/main/lang/portuguese/survey.inc.php
+%%WWWDIR%%/main/lang/portuguese/survey_answer.inc.php
 %%WWWDIR%%/main/lang/portuguese/tracking.inc.php
 %%WWWDIR%%/main/lang/portuguese/trad4all.inc.php
 %%WWWDIR%%/main/lang/portuguese/userInfo.inc.php
+%%WWWDIR%%/main/lang/portuguese/videoconf.inc.php
+%%WWWDIR%%/main/lang/portuguese/wcag.inc.php
+%%WWWDIR%%/main/lang/portuguese/wiki.inc.php
 %%WWWDIR%%/main/lang/portuguese/work.inc.php
 %%WWWDIR%%/main/lang/romanian/accessibility.inc.php
 %%WWWDIR%%/main/lang/romanian/admin.inc.php
@@ -3759,6 +4886,7 @@
 %%WWWDIR%%/main/lang/romanian/external_module.inc.php
 %%WWWDIR%%/main/lang/romanian/forum.inc.php
 %%WWWDIR%%/main/lang/romanian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/romanian/gradebook.inc.php
 %%WWWDIR%%/main/lang/romanian/group.inc.php
 %%WWWDIR%%/main/lang/romanian/help.inc.php
 %%WWWDIR%%/main/lang/romanian/hotspot.inc.php
@@ -3774,6 +4902,7 @@
 %%WWWDIR%%/main/lang/romanian/messages.inc.php
 %%WWWDIR%%/main/lang/romanian/myagenda.inc.php
 %%WWWDIR%%/main/lang/romanian/notification.inc.php
+%%WWWDIR%%/main/lang/romanian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/romanian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/romanian/phpbb.inc.php
 %%WWWDIR%%/main/lang/romanian/registration.inc.php
@@ -3783,9 +4912,13 @@
 %%WWWDIR%%/main/lang/romanian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/romanian/slideshow.inc.php
 %%WWWDIR%%/main/lang/romanian/survey.inc.php
+%%WWWDIR%%/main/lang/romanian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/romanian/tracking.inc.php
 %%WWWDIR%%/main/lang/romanian/trad4all.inc.php
 %%WWWDIR%%/main/lang/romanian/userInfo.inc.php
+%%WWWDIR%%/main/lang/romanian/videoconf.inc.php
+%%WWWDIR%%/main/lang/romanian/wcag.inc.php
+%%WWWDIR%%/main/lang/romanian/wiki.inc.php
 %%WWWDIR%%/main/lang/romanian/work.inc.php
 %%WWWDIR%%/main/lang/russian/accessibility.inc.php
 %%WWWDIR%%/main/lang/russian/admin.inc.php
@@ -3806,6 +4939,7 @@
 %%WWWDIR%%/main/lang/russian/external_module.inc.php
 %%WWWDIR%%/main/lang/russian/forum.inc.php
 %%WWWDIR%%/main/lang/russian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/russian/gradebook.inc.php
 %%WWWDIR%%/main/lang/russian/group.inc.php
 %%WWWDIR%%/main/lang/russian/help.inc.php
 %%WWWDIR%%/main/lang/russian/hotspot.inc.php
@@ -3823,6 +4957,7 @@
 %%WWWDIR%%/main/lang/russian/messages.inc.php
 %%WWWDIR%%/main/lang/russian/myagenda.inc.php
 %%WWWDIR%%/main/lang/russian/notification.inc.php
+%%WWWDIR%%/main/lang/russian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/russian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/russian/phpbb.inc.php
 %%WWWDIR%%/main/lang/russian/registration.inc.php
@@ -3832,10 +4967,65 @@
 %%WWWDIR%%/main/lang/russian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/russian/slideshow.inc.php
 %%WWWDIR%%/main/lang/russian/survey.inc.php
+%%WWWDIR%%/main/lang/russian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/russian/tracking.inc.php
 %%WWWDIR%%/main/lang/russian/trad4all.inc.php
 %%WWWDIR%%/main/lang/russian/userInfo.inc.php
+%%WWWDIR%%/main/lang/russian/videoconf.inc.php
+%%WWWDIR%%/main/lang/russian/wcag.inc.php
+%%WWWDIR%%/main/lang/russian/wiki.inc.php
 %%WWWDIR%%/main/lang/russian/work.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/accessibility.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/admin.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/agenda.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/announcements.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/bbimport.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/blog.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/chat.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/course_description.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/course_home.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/course_info.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/coursebackup.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/courses.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/create_course.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/document.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/dropbox.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/exercice.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/external_module.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/forum.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/gradebook.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/group.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/help.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/hotspot.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/import.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/index.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/install.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/learnpath.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/link.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/md_document.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/md_link.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/md_mix.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/md_scorm.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/messages.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/myagenda.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/notification.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/online_meeting.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/registration.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/scorm.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/scormdocument.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/slideshow.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/survey.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/survey_answer.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/tracking.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/trad4all.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/userInfo.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/videoconf.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/wcag.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/wiki.inc.php
+%%WWWDIR%%/main/lang/russian_unicode/work.inc.php
 %%WWWDIR%%/main/lang/serbian/accessibility.inc.php
 %%WWWDIR%%/main/lang/serbian/admin.inc.php
 %%WWWDIR%%/main/lang/serbian/agenda.inc.php
@@ -3855,6 +5045,7 @@
 %%WWWDIR%%/main/lang/serbian/external_module.inc.php
 %%WWWDIR%%/main/lang/serbian/forum.inc.php
 %%WWWDIR%%/main/lang/serbian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/serbian/gradebook.inc.php
 %%WWWDIR%%/main/lang/serbian/group.inc.php
 %%WWWDIR%%/main/lang/serbian/help.inc.php
 %%WWWDIR%%/main/lang/serbian/hotspot.inc.php
@@ -3872,6 +5063,7 @@
 %%WWWDIR%%/main/lang/serbian/messages.inc.php
 %%WWWDIR%%/main/lang/serbian/myagenda.inc.php
 %%WWWDIR%%/main/lang/serbian/notification.inc.php
+%%WWWDIR%%/main/lang/serbian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/serbian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/serbian/phpbb.inc.php
 %%WWWDIR%%/main/lang/serbian/registration.inc.php
@@ -3881,9 +5073,13 @@
 %%WWWDIR%%/main/lang/serbian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/serbian/slideshow.inc.php
 %%WWWDIR%%/main/lang/serbian/survey.inc.php
+%%WWWDIR%%/main/lang/serbian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/serbian/tracking.inc.php
 %%WWWDIR%%/main/lang/serbian/trad4all.inc.php
 %%WWWDIR%%/main/lang/serbian/userInfo.inc.php
+%%WWWDIR%%/main/lang/serbian/videoconf.inc.php
+%%WWWDIR%%/main/lang/serbian/wcag.inc.php
+%%WWWDIR%%/main/lang/serbian/wiki.inc.php
 %%WWWDIR%%/main/lang/serbian/work.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/accessibility.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/admin.inc.php
@@ -3904,6 +5100,7 @@
 %%WWWDIR%%/main/lang/simpl_chinese/external_module.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/forum.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/forum_admin.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese/gradebook.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/group.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/help.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/hotspot.inc.php
@@ -3921,6 +5118,7 @@
 %%WWWDIR%%/main/lang/simpl_chinese/messages.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/myagenda.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/notification.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese/online_meeting.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/phpbb.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/registration.inc.php
@@ -3930,10 +5128,65 @@
 %%WWWDIR%%/main/lang/simpl_chinese/scormdocument.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/slideshow.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/survey.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese/survey_answer.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/tracking.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/trad4all.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/userInfo.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese/videoconf.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese/wcag.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese/wiki.inc.php
 %%WWWDIR%%/main/lang/simpl_chinese/work.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/accessibility.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/admin.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/agenda.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/announcements.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/bbimport.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/blog.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/chat.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/course_description.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/course_home.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/course_info.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/coursebackup.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/courses.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/create_course.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/document.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/dropbox.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/exercice.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/external_module.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/forum.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/gradebook.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/group.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/help.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/hotspot.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/import.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/index.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/install.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/learnpath.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/link.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/md_document.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/md_link.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/md_mix.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/md_scorm.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/messages.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/myagenda.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/notification.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/online_meeting.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/registration.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/scorm.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/scormdocument.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/slideshow.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/survey.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/survey_answer.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/tracking.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/trad4all.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/userInfo.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/videoconf.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/wcag.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/wiki.inc.php
+%%WWWDIR%%/main/lang/simpl_chinese_unicode/work.inc.php
 %%WWWDIR%%/main/lang/slovak/accessibility.inc.php
 %%WWWDIR%%/main/lang/slovak/admin.inc.php
 %%WWWDIR%%/main/lang/slovak/agenda.inc.php
@@ -3953,6 +5206,7 @@
 %%WWWDIR%%/main/lang/slovak/external_module.inc.php
 %%WWWDIR%%/main/lang/slovak/forum.inc.php
 %%WWWDIR%%/main/lang/slovak/forum_admin.inc.php
+%%WWWDIR%%/main/lang/slovak/gradebook.inc.php
 %%WWWDIR%%/main/lang/slovak/group.inc.php
 %%WWWDIR%%/main/lang/slovak/help.inc.php
 %%WWWDIR%%/main/lang/slovak/hotspot.inc.php
@@ -3968,6 +5222,7 @@
 %%WWWDIR%%/main/lang/slovak/messages.inc.php
 %%WWWDIR%%/main/lang/slovak/myagenda.inc.php
 %%WWWDIR%%/main/lang/slovak/notification.inc.php
+%%WWWDIR%%/main/lang/slovak/online_meeting.inc.php
 %%WWWDIR%%/main/lang/slovak/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/slovak/phpbb.inc.php
 %%WWWDIR%%/main/lang/slovak/registration.inc.php
@@ -3977,9 +5232,13 @@
 %%WWWDIR%%/main/lang/slovak/scormdocument.inc.php
 %%WWWDIR%%/main/lang/slovak/slideshow.inc.php
 %%WWWDIR%%/main/lang/slovak/survey.inc.php
+%%WWWDIR%%/main/lang/slovak/survey_answer.inc.php
 %%WWWDIR%%/main/lang/slovak/tracking.inc.php
 %%WWWDIR%%/main/lang/slovak/trad4all.inc.php
 %%WWWDIR%%/main/lang/slovak/userInfo.inc.php
+%%WWWDIR%%/main/lang/slovak/videoconf.inc.php
+%%WWWDIR%%/main/lang/slovak/wcag.inc.php
+%%WWWDIR%%/main/lang/slovak/wiki.inc.php
 %%WWWDIR%%/main/lang/slovak/work.inc.php
 %%WWWDIR%%/main/lang/slovenian/accessibility.inc.php
 %%WWWDIR%%/main/lang/slovenian/admin.inc.php
@@ -4000,6 +5259,7 @@
 %%WWWDIR%%/main/lang/slovenian/external_module.inc.php
 %%WWWDIR%%/main/lang/slovenian/forum.inc.php
 %%WWWDIR%%/main/lang/slovenian/forum_admin.inc.php
+%%WWWDIR%%/main/lang/slovenian/gradebook.inc.php
 %%WWWDIR%%/main/lang/slovenian/group.inc.php
 %%WWWDIR%%/main/lang/slovenian/help.inc.php
 %%WWWDIR%%/main/lang/slovenian/hotspot.inc.php
@@ -4017,6 +5277,7 @@
 %%WWWDIR%%/main/lang/slovenian/messages.inc.php
 %%WWWDIR%%/main/lang/slovenian/myagenda.inc.php
 %%WWWDIR%%/main/lang/slovenian/notification.inc.php
+%%WWWDIR%%/main/lang/slovenian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/slovenian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/slovenian/phpbb.inc.php
 %%WWWDIR%%/main/lang/slovenian/registration.inc.php
@@ -4026,10 +5287,62 @@
 %%WWWDIR%%/main/lang/slovenian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/slovenian/slideshow.inc.php
 %%WWWDIR%%/main/lang/slovenian/survey.inc.php
+%%WWWDIR%%/main/lang/slovenian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/slovenian/tracking.inc.php
 %%WWWDIR%%/main/lang/slovenian/trad4all.inc.php
 %%WWWDIR%%/main/lang/slovenian/userInfo.inc.php
+%%WWWDIR%%/main/lang/slovenian/videoconf.inc.php
+%%WWWDIR%%/main/lang/slovenian/wcag.inc.php
+%%WWWDIR%%/main/lang/slovenian/wiki.inc.php
 %%WWWDIR%%/main/lang/slovenian/work.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/accessibility.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/admin.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/agenda.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/announcements.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/bbimport.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/blog.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/chat.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/course_description.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/course_home.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/course_info.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/coursebackup.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/courses.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/create_course.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/document.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/dropbox.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/exercice.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/external_module.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/forum.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/gradebook.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/group.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/help.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/hotspot.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/import.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/index.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/install.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/learnpath.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/link.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/md_document.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/md_link.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/md_mix.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/md_scorm.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/messages.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/myagenda.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/notification.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/registration.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/scorm.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/scormdocument.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/slideshow.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/survey.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/tracking.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/trad4all.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/userInfo.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/videoconf.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/wiki.inc.php
+%%WWWDIR%%/main/lang/slovenian_unicode/work.inc.php
 %%WWWDIR%%/main/lang/spanish/accessibility.inc.php
 %%WWWDIR%%/main/lang/spanish/admin.inc.php
 %%WWWDIR%%/main/lang/spanish/agenda.inc.php
@@ -4049,6 +5362,7 @@
 %%WWWDIR%%/main/lang/spanish/external_module.inc.php
 %%WWWDIR%%/main/lang/spanish/forum.inc.php
 %%WWWDIR%%/main/lang/spanish/forum_admin.inc.php
+%%WWWDIR%%/main/lang/spanish/gradebook.inc.php
 %%WWWDIR%%/main/lang/spanish/group.inc.php
 %%WWWDIR%%/main/lang/spanish/help.inc.php
 %%WWWDIR%%/main/lang/spanish/hotspot.inc.php
@@ -4066,6 +5380,7 @@
 %%WWWDIR%%/main/lang/spanish/messages.inc.php
 %%WWWDIR%%/main/lang/spanish/myagenda.inc.php
 %%WWWDIR%%/main/lang/spanish/notification.inc.php
+%%WWWDIR%%/main/lang/spanish/online_meeting.inc.php
 %%WWWDIR%%/main/lang/spanish/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/spanish/phpbb.inc.php
 %%WWWDIR%%/main/lang/spanish/registration.inc.php
@@ -4075,9 +5390,13 @@
 %%WWWDIR%%/main/lang/spanish/scormdocument.inc.php
 %%WWWDIR%%/main/lang/spanish/slideshow.inc.php
 %%WWWDIR%%/main/lang/spanish/survey.inc.php
+%%WWWDIR%%/main/lang/spanish/survey_answer.inc.php
 %%WWWDIR%%/main/lang/spanish/tracking.inc.php
 %%WWWDIR%%/main/lang/spanish/trad4all.inc.php
 %%WWWDIR%%/main/lang/spanish/userInfo.inc.php
+%%WWWDIR%%/main/lang/spanish/videoconf.inc.php
+%%WWWDIR%%/main/lang/spanish/wcag.inc.php
+%%WWWDIR%%/main/lang/spanish/wiki.inc.php
 %%WWWDIR%%/main/lang/spanish/work.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/accessibility.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/admin.inc.php
@@ -4098,6 +5417,7 @@
 %%WWWDIR%%/main/lang/spanish_latin/external_module.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/forum.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/forum_admin.inc.php
+%%WWWDIR%%/main/lang/spanish_latin/gradebook.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/group.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/help.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/hotspot.inc.php
@@ -4115,6 +5435,7 @@
 %%WWWDIR%%/main/lang/spanish_latin/messages.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/myagenda.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/notification.inc.php
+%%WWWDIR%%/main/lang/spanish_latin/online_meeting.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/phpbb.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/registration.inc.php
@@ -4124,9 +5445,13 @@
 %%WWWDIR%%/main/lang/spanish_latin/scormdocument.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/slideshow.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/survey.inc.php
+%%WWWDIR%%/main/lang/spanish_latin/survey_answer.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/tracking.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/trad4all.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/userInfo.inc.php
+%%WWWDIR%%/main/lang/spanish_latin/videoconf.inc.php
+%%WWWDIR%%/main/lang/spanish_latin/wcag.inc.php
+%%WWWDIR%%/main/lang/spanish_latin/wiki.inc.php
 %%WWWDIR%%/main/lang/spanish_latin/work.inc.php
 %%WWWDIR%%/main/lang/swahili/accessibility.inc.php
 %%WWWDIR%%/main/lang/swahili/admin.inc.php
@@ -4147,6 +5472,7 @@
 %%WWWDIR%%/main/lang/swahili/external_module.inc.php
 %%WWWDIR%%/main/lang/swahili/forum.inc.php
 %%WWWDIR%%/main/lang/swahili/forum_admin.inc.php
+%%WWWDIR%%/main/lang/swahili/gradebook.inc.php
 %%WWWDIR%%/main/lang/swahili/group.inc.php
 %%WWWDIR%%/main/lang/swahili/help.inc.php
 %%WWWDIR%%/main/lang/swahili/hotspot.inc.php
@@ -4164,6 +5490,7 @@
 %%WWWDIR%%/main/lang/swahili/messages.inc.php
 %%WWWDIR%%/main/lang/swahili/myagenda.inc.php
 %%WWWDIR%%/main/lang/swahili/notification.inc.php
+%%WWWDIR%%/main/lang/swahili/online_meeting.inc.php
 %%WWWDIR%%/main/lang/swahili/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/swahili/phpbb.inc.php
 %%WWWDIR%%/main/lang/swahili/registration.inc.php
@@ -4173,9 +5500,13 @@
 %%WWWDIR%%/main/lang/swahili/scormdocument.inc.php
 %%WWWDIR%%/main/lang/swahili/slideshow.inc.php
 %%WWWDIR%%/main/lang/swahili/survey.inc.php
+%%WWWDIR%%/main/lang/swahili/survey_answer.inc.php
 %%WWWDIR%%/main/lang/swahili/tracking.inc.php
 %%WWWDIR%%/main/lang/swahili/trad4all.inc.php
 %%WWWDIR%%/main/lang/swahili/userInfo.inc.php
+%%WWWDIR%%/main/lang/swahili/videoconf.inc.php
+%%WWWDIR%%/main/lang/swahili/wcag.inc.php
+%%WWWDIR%%/main/lang/swahili/wiki.inc.php
 %%WWWDIR%%/main/lang/swahili/work.inc.php
 %%WWWDIR%%/main/lang/swedish/accessibility.inc.php
 %%WWWDIR%%/main/lang/swedish/admin.inc.php
@@ -4196,6 +5527,7 @@
 %%WWWDIR%%/main/lang/swedish/external_module.inc.php
 %%WWWDIR%%/main/lang/swedish/forum.inc.php
 %%WWWDIR%%/main/lang/swedish/forum_admin.inc.php
+%%WWWDIR%%/main/lang/swedish/gradebook.inc.php
 %%WWWDIR%%/main/lang/swedish/group.inc.php
 %%WWWDIR%%/main/lang/swedish/help.inc.php
 %%WWWDIR%%/main/lang/swedish/hotspot.inc.php
@@ -4213,6 +5545,7 @@
 %%WWWDIR%%/main/lang/swedish/messages.inc.php
 %%WWWDIR%%/main/lang/swedish/myagenda.inc.php
 %%WWWDIR%%/main/lang/swedish/notification.inc.php
+%%WWWDIR%%/main/lang/swedish/online_meeting.inc.php
 %%WWWDIR%%/main/lang/swedish/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/swedish/phpbb.inc.php
 %%WWWDIR%%/main/lang/swedish/registration.inc.php
@@ -4222,9 +5555,13 @@
 %%WWWDIR%%/main/lang/swedish/scormdocument.inc.php
 %%WWWDIR%%/main/lang/swedish/slideshow.inc.php
 %%WWWDIR%%/main/lang/swedish/survey.inc.php
+%%WWWDIR%%/main/lang/swedish/survey_answer.inc.php
 %%WWWDIR%%/main/lang/swedish/tracking.inc.php
 %%WWWDIR%%/main/lang/swedish/trad4all.inc.php
 %%WWWDIR%%/main/lang/swedish/userInfo.inc.php
+%%WWWDIR%%/main/lang/swedish/videoconf.inc.php
+%%WWWDIR%%/main/lang/swedish/wcag.inc.php
+%%WWWDIR%%/main/lang/swedish/wiki.inc.php
 %%WWWDIR%%/main/lang/swedish/work.inc.php
 %%WWWDIR%%/main/lang/thai/accessibility.inc.php
 %%WWWDIR%%/main/lang/thai/admin.inc.php
@@ -4245,6 +5582,7 @@
 %%WWWDIR%%/main/lang/thai/external_module.inc.php
 %%WWWDIR%%/main/lang/thai/forum.inc.php
 %%WWWDIR%%/main/lang/thai/forum_admin.inc.php
+%%WWWDIR%%/main/lang/thai/gradebook.inc.php
 %%WWWDIR%%/main/lang/thai/group.inc.php
 %%WWWDIR%%/main/lang/thai/help.inc.php
 %%WWWDIR%%/main/lang/thai/hotspot.inc.php
@@ -4262,6 +5600,7 @@
 %%WWWDIR%%/main/lang/thai/messages.inc.php
 %%WWWDIR%%/main/lang/thai/myagenda.inc.php
 %%WWWDIR%%/main/lang/thai/notification.inc.php
+%%WWWDIR%%/main/lang/thai/online_meeting.inc.php
 %%WWWDIR%%/main/lang/thai/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/thai/phpbb.inc.php
 %%WWWDIR%%/main/lang/thai/registration.inc.php
@@ -4271,9 +5610,13 @@
 %%WWWDIR%%/main/lang/thai/scormdocument.inc.php
 %%WWWDIR%%/main/lang/thai/slideshow.inc.php
 %%WWWDIR%%/main/lang/thai/survey.inc.php
+%%WWWDIR%%/main/lang/thai/survey_answer.inc.php
 %%WWWDIR%%/main/lang/thai/tracking.inc.php
 %%WWWDIR%%/main/lang/thai/trad4all.inc.php
 %%WWWDIR%%/main/lang/thai/userInfo.inc.php
+%%WWWDIR%%/main/lang/thai/videoconf.inc.php
+%%WWWDIR%%/main/lang/thai/wcag.inc.php
+%%WWWDIR%%/main/lang/thai/wiki.inc.php
 %%WWWDIR%%/main/lang/thai/work.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/accessibility.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/admin.inc.php
@@ -4294,6 +5637,7 @@
 %%WWWDIR%%/main/lang/trad_chinese/external_module.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/forum.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/forum_admin.inc.php
+%%WWWDIR%%/main/lang/trad_chinese/gradebook.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/group.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/help.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/hotspot.inc.php
@@ -4309,6 +5653,7 @@
 %%WWWDIR%%/main/lang/trad_chinese/messages.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/myagenda.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/notification.inc.php
+%%WWWDIR%%/main/lang/trad_chinese/online_meeting.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/phpbb.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/registration.inc.php
@@ -4318,10 +5663,65 @@
 %%WWWDIR%%/main/lang/trad_chinese/scormdocument.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/slideshow.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/survey.inc.php
+%%WWWDIR%%/main/lang/trad_chinese/survey_answer.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/tracking.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/trad4all.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/userInfo.inc.php
+%%WWWDIR%%/main/lang/trad_chinese/videoconf.inc.php
+%%WWWDIR%%/main/lang/trad_chinese/wcag.inc.php
+%%WWWDIR%%/main/lang/trad_chinese/wiki.inc.php
 %%WWWDIR%%/main/lang/trad_chinese/work.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/accessibility.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/admin.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/agenda.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/announcements.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/bbimport.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/blog.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/chat.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/course_description.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/course_home.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/course_info.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/coursebackup.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/courses.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/create_course.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/document.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/dropbox.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/exercice.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/external_module.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/forum.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/gradebook.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/group.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/help.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/hotspot.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/import.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/index.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/install.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/learnpath.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/link.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/md_document.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/md_link.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/md_mix.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/md_scorm.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/messages.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/myagenda.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/notification.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/online_meeting.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/pedaSuggest.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/registration.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/resourcelinker.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/scorm.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/scormbuilder.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/scormdocument.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/slideshow.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/survey.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/survey_answer.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/tracking.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/trad4all.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/userInfo.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/videoconf.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/wcag.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/wiki.inc.php
+%%WWWDIR%%/main/lang/trad_chinese_unicode/work.inc.php
 %%WWWDIR%%/main/lang/turkce/accessibility.inc.php
 %%WWWDIR%%/main/lang/turkce/admin.inc.php
 %%WWWDIR%%/main/lang/turkce/agenda.inc.php
@@ -4341,6 +5741,7 @@
 %%WWWDIR%%/main/lang/turkce/external_module.inc.php
 %%WWWDIR%%/main/lang/turkce/forum.inc.php
 %%WWWDIR%%/main/lang/turkce/forum_admin.inc.php
+%%WWWDIR%%/main/lang/turkce/gradebook.inc.php
 %%WWWDIR%%/main/lang/turkce/group.inc.php
 %%WWWDIR%%/main/lang/turkce/help.inc.php
 %%WWWDIR%%/main/lang/turkce/hotspot.inc.php
@@ -4358,6 +5759,7 @@
 %%WWWDIR%%/main/lang/turkce/messages.inc.php
 %%WWWDIR%%/main/lang/turkce/myagenda.inc.php
 %%WWWDIR%%/main/lang/turkce/notification.inc.php
+%%WWWDIR%%/main/lang/turkce/online_meeting.inc.php
 %%WWWDIR%%/main/lang/turkce/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/turkce/phpbb.inc.php
 %%WWWDIR%%/main/lang/turkce/registration.inc.php
@@ -4367,9 +5769,13 @@
 %%WWWDIR%%/main/lang/turkce/scormdocument.inc.php
 %%WWWDIR%%/main/lang/turkce/slideshow.inc.php
 %%WWWDIR%%/main/lang/turkce/survey.inc.php
+%%WWWDIR%%/main/lang/turkce/survey_answer.inc.php
 %%WWWDIR%%/main/lang/turkce/tracking.inc.php
 %%WWWDIR%%/main/lang/turkce/trad4all.inc.php
 %%WWWDIR%%/main/lang/turkce/userInfo.inc.php
+%%WWWDIR%%/main/lang/turkce/videoconf.inc.php
+%%WWWDIR%%/main/lang/turkce/wcag.inc.php
+%%WWWDIR%%/main/lang/turkce/wiki.inc.php
 %%WWWDIR%%/main/lang/turkce/work.inc.php
 %%WWWDIR%%/main/lang/ukrainian/accessibility.inc.php
 %%WWWDIR%%/main/lang/ukrainian/admin.inc.php
@@ -4389,6 +5795,7 @@
 %%WWWDIR%%/main/lang/ukrainian/exercice.inc.php
 %%WWWDIR%%/main/lang/ukrainian/external_module.inc.php
 %%WWWDIR%%/main/lang/ukrainian/forum.inc.php
+%%WWWDIR%%/main/lang/ukrainian/gradebook.inc.php
 %%WWWDIR%%/main/lang/ukrainian/group.inc.php
 %%WWWDIR%%/main/lang/ukrainian/help.inc.php
 %%WWWDIR%%/main/lang/ukrainian/hotspot.inc.php
@@ -4404,6 +5811,7 @@
 %%WWWDIR%%/main/lang/ukrainian/messages.inc.php
 %%WWWDIR%%/main/lang/ukrainian/myagenda.inc.php
 %%WWWDIR%%/main/lang/ukrainian/notification.inc.php
+%%WWWDIR%%/main/lang/ukrainian/online_meeting.inc.php
 %%WWWDIR%%/main/lang/ukrainian/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/ukrainian/registration.inc.php
 %%WWWDIR%%/main/lang/ukrainian/resourcelinker.inc.php
@@ -4412,9 +5820,13 @@
 %%WWWDIR%%/main/lang/ukrainian/scormdocument.inc.php
 %%WWWDIR%%/main/lang/ukrainian/slideshow.inc.php
 %%WWWDIR%%/main/lang/ukrainian/survey.inc.php
+%%WWWDIR%%/main/lang/ukrainian/survey_answer.inc.php
 %%WWWDIR%%/main/lang/ukrainian/tracking.inc.php
 %%WWWDIR%%/main/lang/ukrainian/trad4all.inc.php
 %%WWWDIR%%/main/lang/ukrainian/userInfo.inc.php
+%%WWWDIR%%/main/lang/ukrainian/videoconf.inc.php
+%%WWWDIR%%/main/lang/ukrainian/wcag.inc.php
+%%WWWDIR%%/main/lang/ukrainian/wiki.inc.php
 %%WWWDIR%%/main/lang/ukrainian/work.inc.php
 %%WWWDIR%%/main/lang/vietnamese/accessibility.inc.php
 %%WWWDIR%%/main/lang/vietnamese/admin.inc.php
@@ -4435,6 +5847,7 @@
 %%WWWDIR%%/main/lang/vietnamese/external_module.inc.php
 %%WWWDIR%%/main/lang/vietnamese/forum.inc.php
 %%WWWDIR%%/main/lang/vietnamese/forum_admin.inc.php
+%%WWWDIR%%/main/lang/vietnamese/gradebook.inc.php
 %%WWWDIR%%/main/lang/vietnamese/group.inc.php
 %%WWWDIR%%/main/lang/vietnamese/help.inc.php
 %%WWWDIR%%/main/lang/vietnamese/hotspot.inc.php
@@ -4452,6 +5865,7 @@
 %%WWWDIR%%/main/lang/vietnamese/messages.inc.php
 %%WWWDIR%%/main/lang/vietnamese/myagenda.inc.php
 %%WWWDIR%%/main/lang/vietnamese/notification.inc.php
+%%WWWDIR%%/main/lang/vietnamese/online_meeting.inc.php
 %%WWWDIR%%/main/lang/vietnamese/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/vietnamese/phpbb.inc.php
 %%WWWDIR%%/main/lang/vietnamese/registration.inc.php
@@ -4461,9 +5875,13 @@
 %%WWWDIR%%/main/lang/vietnamese/scormdocument.inc.php
 %%WWWDIR%%/main/lang/vietnamese/slideshow.inc.php
 %%WWWDIR%%/main/lang/vietnamese/survey.inc.php
+%%WWWDIR%%/main/lang/vietnamese/survey_answer.inc.php
 %%WWWDIR%%/main/lang/vietnamese/tracking.inc.php
 %%WWWDIR%%/main/lang/vietnamese/trad4all.inc.php
 %%WWWDIR%%/main/lang/vietnamese/userInfo.inc.php
+%%WWWDIR%%/main/lang/vietnamese/videoconf.inc.php
+%%WWWDIR%%/main/lang/vietnamese/wcag.inc.php
+%%WWWDIR%%/main/lang/vietnamese/wiki.inc.php
 %%WWWDIR%%/main/lang/vietnamese/work.inc.php
 %%WWWDIR%%/main/lang/yoruba/accessibility.inc.php
 %%WWWDIR%%/main/lang/yoruba/admin.inc.php
@@ -4484,6 +5902,7 @@
 %%WWWDIR%%/main/lang/yoruba/external_module.inc.php
 %%WWWDIR%%/main/lang/yoruba/forum.inc.php
 %%WWWDIR%%/main/lang/yoruba/forum_admin.inc.php
+%%WWWDIR%%/main/lang/yoruba/gradebook.inc.php
 %%WWWDIR%%/main/lang/yoruba/group.inc.php
 %%WWWDIR%%/main/lang/yoruba/help.inc.php
 %%WWWDIR%%/main/lang/yoruba/hotspot.inc.php
@@ -4499,6 +5918,7 @@
 %%WWWDIR%%/main/lang/yoruba/messages.inc.php
 %%WWWDIR%%/main/lang/yoruba/myagenda.inc.php
 %%WWWDIR%%/main/lang/yoruba/notification.inc.php
+%%WWWDIR%%/main/lang/yoruba/online_meeting.inc.php
 %%WWWDIR%%/main/lang/yoruba/pedaSuggest.inc.php
 %%WWWDIR%%/main/lang/yoruba/phpbb.inc.php
 %%WWWDIR%%/main/lang/yoruba/registration.inc.php
@@ -4508,9 +5928,13 @@
 %%WWWDIR%%/main/lang/yoruba/scormdocument.inc.php
 %%WWWDIR%%/main/lang/yoruba/slideshow.inc.php
 %%WWWDIR%%/main/lang/yoruba/survey.inc.php
+%%WWWDIR%%/main/lang/yoruba/survey_answer.inc.php
 %%WWWDIR%%/main/lang/yoruba/tracking.inc.php
 %%WWWDIR%%/main/lang/yoruba/trad4all.inc.php
 %%WWWDIR%%/main/lang/yoruba/userInfo.inc.php
+%%WWWDIR%%/main/lang/yoruba/videoconf.inc.php
+%%WWWDIR%%/main/lang/yoruba/wcag.inc.php
+%%WWWDIR%%/main/lang/yoruba/wiki.inc.php
 %%WWWDIR%%/main/lang/yoruba/work.inc.php
 %%WWWDIR%%/main/link/index.html
 %%WWWDIR%%/main/link/link.php
@@ -4556,6 +5980,7 @@
 %%WWWDIR%%/main/metadata/search.php
 %%WWWDIR%%/main/metadata/statistics.php
 %%WWWDIR%%/main/metadata/update_indexabletext.php
+%%WWWDIR%%/main/mySpace/access_details.php
 %%WWWDIR%%/main/mySpace/admin.php
 %%WWWDIR%%/main/mySpace/coaches.php
 %%WWWDIR%%/main/mySpace/course.php
@@ -4578,14 +6003,11 @@
 %%WWWDIR%%/main/newscorm/audiorecorder.inc.php
 %%WWWDIR%%/main/newscorm/back_compat.inc.php
 %%WWWDIR%%/main/newscorm/blank.php
-%%WWWDIR%%/main/newscorm/completed.png
 %%WWWDIR%%/main/newscorm/content_makers.inc.php
 %%WWWDIR%%/main/newscorm/display_audiorecorder.php
 %%WWWDIR%%/main/newscorm/document.php
 %%WWWDIR%%/main/newscorm/dtree.css
 %%WWWDIR%%/main/newscorm/dtree.js
-%%WWWDIR%%/main/newscorm/failed.png
-%%WWWDIR%%/main/newscorm/incomplete.png
 %%WWWDIR%%/main/newscorm/index.php
 %%WWWDIR%%/main/newscorm/js/api_wrapper.js
 %%WWWDIR%%/main/newscorm/learnpath.class.php
@@ -4620,9 +6042,15 @@
 %%WWWDIR%%/main/newscorm/lp_view.lib.js
 %%WWWDIR%%/main/newscorm/lp_view.php
 %%WWWDIR%%/main/newscorm/lp_view_item.php
-%%WWWDIR%%/main/newscorm/notattempted.png
-%%WWWDIR%%/main/newscorm/passed.png
-%%WWWDIR%%/main/newscorm/presentation.class.php
+%%WWWDIR%%/main/newscorm/openoffice_document.class.php
+%%WWWDIR%%/main/newscorm/openoffice_presentation.class.php
+%%WWWDIR%%/main/newscorm/openoffice_text_document.class.php
+%%WWWDIR%%/main/newscorm/packaging/adlcp_rootv1p2.xsd
+%%WWWDIR%%/main/newscorm/packaging/ims_qtiasiv1p2.xsd
+%%WWWDIR%%/main/newscorm/packaging/ims_xml.xsd
+%%WWWDIR%%/main/newscorm/packaging/imscp_rootv1p1p2.xsd
+%%WWWDIR%%/main/newscorm/packaging/imsmd_rootv1p2p1.xsd
+%%WWWDIR%%/main/newscorm/packaging/xml.xsd
 %%WWWDIR%%/main/newscorm/resourcelinker.inc.php
 %%WWWDIR%%/main/newscorm/resourcelinker.php
 %%WWWDIR%%/main/newscorm/scorm.class.php
@@ -4634,19 +6062,8 @@
 %%WWWDIR%%/main/newscorm/scormResource.class.php
 %%WWWDIR%%/main/newscorm/scorm_admin.php
 %%WWWDIR%%/main/newscorm/scorm_api.php
-%%WWWDIR%%/main/newscorm/scorm_build.gif
-%%WWWDIR%%/main/newscorm/scorm_build_disabled.gif
-%%WWWDIR%%/main/newscorm/scorm_controller.php
-%%WWWDIR%%/main/newscorm/scorm_embed.gif
-%%WWWDIR%%/main/newscorm/scorm_extra.gif
-%%WWWDIR%%/main/newscorm/scorm_fullscreen.gif
 %%WWWDIR%%/main/newscorm/scorm_manage.php
-%%WWWDIR%%/main/newscorm/scorm_no_reinit.gif
-%%WWWDIR%%/main/newscorm/scorm_normal.gif
-%%WWWDIR%%/main/newscorm/scorm_reinit.gif
 %%WWWDIR%%/main/newscorm/scormfs.css
-%%WWWDIR%%/main/newscorm/succeeded.png
-%%WWWDIR%%/main/newscorm/word_document.class.php
 %%WWWDIR%%/main/online/footer_frame.inc.php
 %%WWWDIR%%/main/online/header_frame.inc.php
 %%WWWDIR%%/main/online/index.html
@@ -4720,16 +6137,6 @@
 %%WWWDIR%%/main/user/userInfo.php
 %%WWWDIR%%/main/user/userInfoLib.php
 %%WWWDIR%%/main/user/user_add.php
-%%WWWDIR%%/main/webrooms/api.php
-%%WWWDIR%%/main/webrooms/checksession.php
-%%WWWDIR%%/main/webrooms/english.xml
-%%WWWDIR%%/main/webrooms/french.xml
-%%WWWDIR%%/main/webrooms/german.xml
-%%WWWDIR%%/main/webrooms/recorder.swf
-%%WWWDIR%%/main/webrooms/videoconference.html
-%%WWWDIR%%/main/webrooms/videoconference.swf
-%%WWWDIR%%/main/webrooms/videoconference2.html
-%%WWWDIR%%/main/webrooms/videoconference2.swf
 %%WWWDIR%%/main/work/index.html
 %%WWWDIR%%/main/work/work.lib.php
 %%WWWDIR%%/main/work/work.php
@@ -4749,16 +6156,38 @@
 %%WWWDIR%%/plugin/messages/notify.php
 %%WWWDIR%%/plugin/messages/plugin.php
 %%WWWDIR%%/plugin/messages/view_message.php
+%%WWWDIR%%/plugin/search/README.txt
+%%WWWDIR%%/plugin/search/client/client.conf.php
+%%WWWDIR%%/plugin/search/client/filter_user.lib.php
+%%WWWDIR%%/plugin/search/client/search.css
+%%WWWDIR%%/plugin/search/client/searchit.php
+%%WWWDIR%%/plugin/search/client/www/indexer_login.php
+%%WWWDIR%%/plugin/search/index.php
+%%WWWDIR%%/plugin/search/plugin.php
+%%WWWDIR%%/plugin/search/server/cron.d/dokeos-indexer
+%%WWWDIR%%/plugin/search/server/etc/indexer.conf
+%%WWWDIR%%/plugin/search/server/www/common.inc
+%%WWWDIR%%/plugin/search/server/www/config.inc
+%%WWWDIR%%/plugin/search/server/www/init.inc
+%%WWWDIR%%/plugin/search/server/www/search.php
+%%WWWDIR%%/plugin/search/server/www/search.xml.php
+%%WWWDIR%%/plugin/search/server/www/template.inc
 %%WWWDIR%%/user_portal.php
 %%WWWDIR%%/webchatdeny.php
 %%WWWDIR%%/whoisonline.php
 %%WWWDIR%%/whoisonlinesession.php
+@dirrm %%WWWDIR%%/plugin/search/server/www
+@dirrm %%WWWDIR%%/plugin/search/server/etc
+@dirrm %%WWWDIR%%/plugin/search/server/cron.d
+@dirrm %%WWWDIR%%/plugin/search/server
+@dirrm %%WWWDIR%%/plugin/search/client/www
+@dirrm %%WWWDIR%%/plugin/search/client
+@dirrm %%WWWDIR%%/plugin/search
 @dirrm %%WWWDIR%%/plugin/messages/images
 @dirrm %%WWWDIR%%/plugin/messages
 @dirrm %%WWWDIR%%/plugin/date
 @dirrm %%WWWDIR%%/plugin
 @dirrm %%WWWDIR%%/main/work
-@dirrm %%WWWDIR%%/main/webrooms
 @dirrm %%WWWDIR%%/main/user
 @dirrm %%WWWDIR%%/main/upload/users
 @dirrm %%WWWDIR%%/main/upload
@@ -4773,6 +6202,7 @@
 @dirrm %%WWWDIR%%/main/plugin
 @dirrm %%WWWDIR%%/main/permissions
 @dirrm %%WWWDIR%%/main/online
+@dirrm %%WWWDIR%%/main/newscorm/packaging
 @dirrm %%WWWDIR%%/main/newscorm/js
 @dirrm %%WWWDIR%%/main/newscorm
 @dirrm %%WWWDIR%%/main/mySpace
@@ -4785,26 +6215,33 @@
 @dirrm %%WWWDIR%%/main/lang/vietnamese
 @dirrm %%WWWDIR%%/main/lang/ukrainian
 @dirrm %%WWWDIR%%/main/lang/turkce
+@dirrm %%WWWDIR%%/main/lang/trad_chinese_unicode
 @dirrm %%WWWDIR%%/main/lang/trad_chinese
 @dirrm %%WWWDIR%%/main/lang/thai
 @dirrm %%WWWDIR%%/main/lang/swedish
 @dirrm %%WWWDIR%%/main/lang/swahili
 @dirrm %%WWWDIR%%/main/lang/spanish_latin
 @dirrm %%WWWDIR%%/main/lang/spanish
+@dirrm %%WWWDIR%%/main/lang/slovenian_unicode
 @dirrm %%WWWDIR%%/main/lang/slovenian
 @dirrm %%WWWDIR%%/main/lang/slovak
+@dirrm %%WWWDIR%%/main/lang/simpl_chinese_unicode
 @dirrm %%WWWDIR%%/main/lang/simpl_chinese
 @dirrm %%WWWDIR%%/main/lang/serbian
+@dirrm %%WWWDIR%%/main/lang/russian_unicode
 @dirrm %%WWWDIR%%/main/lang/russian
 @dirrm %%WWWDIR%%/main/lang/romanian
 @dirrm %%WWWDIR%%/main/lang/portuguese
 @dirrm %%WWWDIR%%/main/lang/polish
 @dirrm %%WWWDIR%%/main/lang/persian
+@dirrm %%WWWDIR%%/main/lang/pashto
 @dirrm %%WWWDIR%%/main/lang/norwegian
 @dirrm %%WWWDIR%%/main/lang/malay
 @dirrm %%WWWDIR%%/main/lang/macedonian
+@dirrm %%WWWDIR%%/main/lang/lithuanian
 @dirrm %%WWWDIR%%/main/lang/latvian
 @dirrm %%WWWDIR%%/main/lang/korean
+@dirrm %%WWWDIR%%/main/lang/japanese_unicode
 @dirrm %%WWWDIR%%/main/lang/japanese
 @dirrm %%WWWDIR%%/main/lang/italian
 @dirrm %%WWWDIR%%/main/lang/indonesian
@@ -4814,6 +6251,7 @@
 @dirrm %%WWWDIR%%/main/lang/german
 @dirrm %%WWWDIR%%/main/lang/galician
 @dirrm %%WWWDIR%%/main/lang/friulian
+@dirrm %%WWWDIR%%/main/lang/french_unicode
 @dirrm %%WWWDIR%%/main/lang/french_org
 @dirrm %%WWWDIR%%/main/lang/french_corporate
 @dirrm %%WWWDIR%%/main/lang/french_KM
@@ -4823,7 +6261,9 @@
 @dirrm %%WWWDIR%%/main/lang/esperanto
 @dirrm %%WWWDIR%%/main/lang/english_org
 @dirrm %%WWWDIR%%/main/lang/english
+@dirrm %%WWWDIR%%/main/lang/dutch_corporate
 @dirrm %%WWWDIR%%/main/lang/dutch
+@dirrm %%WWWDIR%%/main/lang/dari
 @dirrm %%WWWDIR%%/main/lang/danish
 @dirrm %%WWWDIR%%/main/lang/czech
 @dirrm %%WWWDIR%%/main/lang/croatian
@@ -4832,6 +6272,7 @@
 @dirrm %%WWWDIR%%/main/lang/brazilian
 @dirrm %%WWWDIR%%/main/lang/bosnian
 @dirrm %%WWWDIR%%/main/lang/asturian
+@dirrm %%WWWDIR%%/main/lang/arabic_unicode
 @dirrm %%WWWDIR%%/main/lang/arabic
 @dirrm %%WWWDIR%%/main/lang
 @dirrm %%WWWDIR%%/main/install
@@ -4844,7 +6285,11 @@
 @dirrm %%WWWDIR%%/main/inc/lib/phpmailer/language
 @dirrm %%WWWDIR%%/main/inc/lib/phpmailer/docs
 @dirrm %%WWWDIR%%/main/inc/lib/phpmailer
+@dirrm %%WWWDIR%%/main/inc/lib/pear/Spreadsheet_Excel_Writer/Writer
+@dirrm %%WWWDIR%%/main/inc/lib/pear/Spreadsheet_Excel_Writer
 @dirrm %%WWWDIR%%/main/inc/lib/pear/Pager
+@dirrm %%WWWDIR%%/main/inc/lib/pear/OLE/PPS
+@dirrm %%WWWDIR%%/main/inc/lib/pear/OLE
 @dirrm %%WWWDIR%%/main/inc/lib/pear/HTML/Table
 @dirrm %%WWWDIR%%/main/inc/lib/pear/HTML/QuickForm/Rule
 @dirrm %%WWWDIR%%/main/inc/lib/pear/HTML/QuickForm/Renderer
@@ -4860,6 +6305,8 @@
 @dirrm %%WWWDIR%%/main/inc/lib/kses-0.2.2/docs
 @dirrm %%WWWDIR%%/main/inc/lib/kses-0.2.2
 @dirrm %%WWWDIR%%/main/inc/lib/javascript
+@dirrm %%WWWDIR%%/main/inc/lib/icalcreator
+@dirrm %%WWWDIR%%/main/inc/lib/getid3
 @dirrm %%WWWDIR%%/main/inc/lib/formvalidator/Rule
 @dirrm %%WWWDIR%%/main/inc/lib/formvalidator/Element
 @dirrm %%WWWDIR%%/main/inc/lib/formvalidator
@@ -4878,6 +6325,8 @@
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/simplecommands
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/placeholder/lang
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/placeholder
+@dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/mimetex/lang
+@dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/mimetex
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/Video/lang
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/Video
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/plugins/MP3/lang
@@ -4897,10 +6346,6 @@
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/images/smiley
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/images
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/php
-@dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/lasso
-@dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/cfm
-@dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/aspx
-@dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload/asp
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/upload
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/browser/default/js
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/filemanager/browser/default/images/icons/32
@@ -4931,6 +6376,8 @@
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor/css
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor/editor
 @dirrm %%WWWDIR%%/main/inc/lib/fckeditor
+@dirrm %%WWWDIR%%/main/inc/lib/ezpdf/fonts
+@dirrm %%WWWDIR%%/main/inc/lib/ezpdf
 @dirrm %%WWWDIR%%/main/inc/lib/WCAG
 @dirrm %%WWWDIR%%/main/inc/lib
 @dirrm %%WWWDIR%%/main/inc/conf
@@ -4942,6 +6389,10 @@
 @dirrm %%WWWDIR%%/main/img
 @dirrm %%WWWDIR%%/main/help
 @dirrm %%WWWDIR%%/main/group
+@dirrm %%WWWDIR%%/main/gradebook/lib/fe
+@dirrm %%WWWDIR%%/main/gradebook/lib/be
+@dirrm %%WWWDIR%%/main/gradebook/lib
+@dirrm %%WWWDIR%%/main/gradebook
 @dirrm %%WWWDIR%%/main/garbage
 @dirrm %%WWWDIR%%/main/forum
 @dirrm %%WWWDIR%%/main/external_module
@@ -4953,23 +6404,43 @@
 @dirrm %%WWWDIR%%/main/dropbox
 @dirrm %%WWWDIR%%/main/document
 @dirrm %%WWWDIR%%/main/default_course_document/video
+@dirrm %%WWWDIR%%/main/default_course_document/themes/img
+@dirrm %%WWWDIR%%/main/default_course_document/themes/images
+@dirrm %%WWWDIR%%/main/default_course_document/themes
+@dirrm %%WWWDIR%%/main/default_course_document/images/trainer/.thumbs
+@dirrm %%WWWDIR%%/main/default_course_document/images/trainer
 @dirrm %%WWWDIR%%/main/default_course_document/images/small
+@dirrm %%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated/.thumbs
 @dirrm %%WWWDIR%%/main/default_course_document/images/mr_dokeos/animated
+@dirrm %%WWWDIR%%/main/default_course_document/images/mr_dokeos/.thumbs
 @dirrm %%WWWDIR%%/main/default_course_document/images/mr_dokeos
+@dirrm %%WWWDIR%%/main/default_course_document/images/diagrams/animated/.thumbs
 @dirrm %%WWWDIR%%/main/default_course_document/images/diagrams/animated
+@dirrm %%WWWDIR%%/main/default_course_document/images/diagrams/.thumbs
 @dirrm %%WWWDIR%%/main/default_course_document/images/diagrams
+@dirrm %%WWWDIR%%/main/default_course_document/images/.thumbs
 @dirrm %%WWWDIR%%/main/default_course_document/images
 @dirrm %%WWWDIR%%/main/default_course_document/flash
 @dirrm %%WWWDIR%%/main/default_course_document/audio
 @dirrm %%WWWDIR%%/main/default_course_document
-@dirrm %%WWWDIR%%/main/css/dokeosgrey
-@dirrm %%WWWDIR%%/main/css/default_with_tabs
-@dirrm %%WWWDIR%%/main/css/default/images
-@dirrm %%WWWDIR%%/main/css/default
-@dirrm %%WWWDIR%%/main/css/corporativa/images
-@dirrm %%WWWDIR%%/main/css/corporativa
-@dirrm %%WWWDIR%%/main/css/baby/images
-@dirrm %%WWWDIR%%/main/css/baby
+@dirrm %%WWWDIR%%/main/css/sober_brown/images
+@dirrm %%WWWDIR%%/main/css/sober_brown
+@dirrm %%WWWDIR%%/main/css/silver_line/images
+@dirrm %%WWWDIR%%/main/css/silver_line
+@dirrm %%WWWDIR%%/main/css/public_admin/images
+@dirrm %%WWWDIR%%/main/css/public_admin
+@dirrm %%WWWDIR%%/main/css/medical/images
+@dirrm %%WWWDIR%%/main/css/medical
+@dirrm %%WWWDIR%%/main/css/dokeos_classic_2D/images
+@dirrm %%WWWDIR%%/main/css/dokeos_classic_2D
+@dirrm %%WWWDIR%%/main/css/dokeos_classic/images
+@dirrm %%WWWDIR%%/main/css/dokeos_classic
+@dirrm %%WWWDIR%%/main/css/cosmic_campus/images
+@dirrm %%WWWDIR%%/main/css/cosmic_campus
+@dirrm %%WWWDIR%%/main/css/corporate/images
+@dirrm %%WWWDIR%%/main/css/corporate
+@dirrm %%WWWDIR%%/main/css/baby_orange/images
+@dirrm %%WWWDIR%%/main/css/baby_orange
 @dirrm %%WWWDIR%%/main/css/academica/images
 @dirrm %%WWWDIR%%/main/css/academica
 @dirrm %%WWWDIR%%/main/css
@@ -4980,10 +6451,17 @@
 @dirrm %%WWWDIR%%/main/course_home/css
 @dirrm %%WWWDIR%%/main/course_home
 @dirrm %%WWWDIR%%/main/course_description
+@dirrm %%WWWDIR%%/main/conference/resources/themes/grey/buttons
+@dirrm %%WWWDIR%%/main/conference/resources/themes/grey
+@dirrm %%WWWDIR%%/main/conference/resources/themes/darkblue/buttons
+@dirrm %%WWWDIR%%/main/conference/resources/themes/darkblue
+@dirrm %%WWWDIR%%/main/conference/resources/themes
+@dirrm %%WWWDIR%%/main/conference/resources
 @dirrm %%WWWDIR%%/main/conference
 @dirrm %%WWWDIR%%/main/chat
 @dirrm %%WWWDIR%%/main/calendar
 @dirrm %%WWWDIR%%/main/blog
+@dirrm %%WWWDIR%%/main/auth/openid
 @dirrm %%WWWDIR%%/main/auth/ldap
 @dirrm %%WWWDIR%%/main/auth
 @dirrm %%WWWDIR%%/main/app_share/serverbootstrap/DokeosAppShare/Properties
