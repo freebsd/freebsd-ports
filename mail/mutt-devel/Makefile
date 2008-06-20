@@ -107,6 +107,9 @@
 # If you want to enable the internal SMTP relay support define:
 #  WITH_MUTT_SMTP
 #
+# If you want to enable debugging capabilities define:
+#  WITH_MUTT_DEBUG
+#
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.18
@@ -400,6 +403,9 @@ CONFIGURE_ARGS+=	--enable-smtp
 .else
 CONFIGURE_ARGS+=	--disable-smtp
 .endif
+.if defined(WITH_MUTT_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
 
 PATCH_DIST_STRIP=	-p1
 
@@ -442,7 +448,7 @@ IGNORE=	The WITH_MUTT_MBOX_HOOK_PATCH does not work at the moment.
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.18.sidebar.20080517.txt
+SIDEBAR_PATCH=	patch-1.5.18.sidebar.20080611.txt
 DISTFILES+=	${SIDEBAR_PATCH}:tchan
 XML_NEEDED=	yes
 pre-patch::
