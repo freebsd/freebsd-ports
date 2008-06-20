@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript8
 PORTVERSION=	8.62
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
@@ -147,9 +147,11 @@ USE_XORG=	xt xext
 CONFIGURE_ARGS+=--with-x \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
+CONFLICTS+=	ghostscript8-nox11-[0-9]*
 .else
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
 CONFIGURE_ARGS+=--without-x
+CONFLICTS+=	ghostscript8-[0-9]*
 .endif
 
 _ICONV_ARG=	no
@@ -194,7 +196,7 @@ INSTALL_TARGET=	soinstall
 USE_LDCONFIG=	yes
 PLIST_SUB+=	SHLIB_VER="${PORTVERSION:R}"
 
-PORTDOCS=	${PORTVERSION}
+PORTDOCS=	japanese chp2200 epson740 lxm3200-tweaked md2k_md5k
 PORTDOC_FILES=	japanese/Gdevlips.htm japanese/README.gs550j		\
 	japanese/cdj880.txt japanese/dj505j.txt japanese/djgpp.txt	\
 	japanese/gdev10v.txt japanese/gdevalps.txt			\
@@ -246,10 +248,10 @@ pre-su-install:
 post-install-docs:
 	${MKDIR} ${WRKSRC}/contrib/japanese
 	${INSTALL_DATA} ${WRKSRC}/contrib/japanese/doc/* ${WRKSRC}/contrib/japanese
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}
+	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/contrib && \
 		${TAR} cf - ${PORTDOC_FILES} | \
-		( cd ${DOCSDIR}/${PORTVERSION} && ${TAR} xof - )
+		( cd ${DOCSDIR} && ${TAR} xof - )
 
 .if defined(WITH_FT_BRIDGE)
 post-install-fapi:
