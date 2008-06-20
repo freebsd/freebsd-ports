@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ko.TeX
-PORTVERSION=	0.1.0.20071215
-PORTREVISION=	1
+PORTVERSION=	0.1.1.20080329
 CATEGORIES=	korean print
 MASTER_SITES=	http://ftp.ktug.or.kr/KTUG/ko.TeX/current/
-DISTNAME=	ko.tex-macro-20071215
+DISTNAME=	ko.tex-macro-20080329
 
 MAINTAINER=	hyogeollee@gmail.com
 COMMENT=	Korean TeX macro and utilities
@@ -36,7 +35,8 @@ TEXHASH=	${PREFIX}/bin/texhash
 
 PLIST_SUB+=	TEXHASH=${TEXHASH}
 
-DOCS=		ChangLog INSTALL LICENSE VERSION manifest.txt news-0.1.0.txt
+DOCS=		ChangLog INSTALL LICENSE VERSION manifest.txt news-0.1.0.txt \
+		news-0.1.1.txt
 
 do-build:
 	@${MKDIR} ${WRKDIR}/build

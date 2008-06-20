@@ -12,6 +12,7 @@ bin/ttf2kotexfont.pl
 %%PORTDOCS%%%%DOCSDIR%%/VERSION
 %%PORTDOCS%%%%DOCSDIR%%/manifest.txt
 %%PORTDOCS%%%%DOCSDIR%%/news-0.1.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/news-0.1.1.txt
 share/texmf-local/bibtex/bst/kotex/euc/halpha.bst
 %%PORTDOCS%%share/texmf-local/doc/latex/kotex/COMPILE
 %%PORTDOCS%%share/texmf-local/doc/latex/kotex/KS.HAN.tex
