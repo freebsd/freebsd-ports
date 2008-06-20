@@ -45,8 +45,8 @@ share/Eterm/themes/auto/theme.cfg
 share/Eterm/themes/trans/menus.cfg
 share/Eterm/themes/trans/pixmaps.list
 share/Eterm/themes/trans/theme.cfg
-%%PORTDOCS%%share/doc/Eterm/Eterm_reference.html
-%%PORTDOCS%%share/doc/Eterm/ReleaseNotes
+%%PORTDOCS%%%%DOCSDIR%%/Eterm_reference.html
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes
 @dirrm share/Eterm/pix/scale
 @dirrm share/Eterm/pix/tile
 @dirrm share/Eterm/pix
@@ -56,4 +56,4 @@ share/Eterm/themes/trans/theme.cfg
 @dirrm share/Eterm/themes/trans
 @dirrm share/Eterm/themes
 @dirrm share/Eterm
-%%PORTDOCS%%@dirrm share/doc/Eterm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -45,9 +45,9 @@ post-patch:
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/Eterm
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm_reference.html ${PREFIX}/share/doc/Eterm
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm_reference.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
