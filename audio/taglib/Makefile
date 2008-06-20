@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	taglib
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://ktown.kde.org/~wheeler/files/src/
 
@@ -25,6 +24,6 @@ CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e \
 	"s#\$$(libdir)/pkgconfig#${PREFIX}/libdata/pkgconfig#g" \
-	${WRKSRC}/taglib/Makefile.in
+	${WRKSRC}/Makefile.in ${WRKSRC}/bindings/c/Makefile.in
 
 .include <bsd.port.mk>
