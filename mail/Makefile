@@ -132,6 +132,7 @@
     SUBDIR += exmh2
     SUBDIR += extmail
     SUBDIR += extman
+    SUBDIR += ez-pine-gpg
     SUBDIR += ezmlm
     SUBDIR += ezmlm-idx
     SUBDIR += ezmlm-web

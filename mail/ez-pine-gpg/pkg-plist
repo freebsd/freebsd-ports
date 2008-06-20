@@ -1,0 +1,9 @@
+bin/ez-pine-gpg-sign
+bin/ez-pine-gpg-encrypt
+bin/ez-pine-gpg-sign-and-encrypt
+bin/ez-pine-gpg-symmetric
+bin/ez-pine-gpg-incoming
+bin/ez-pine-gpg-helper-recipient
+bin/ez-pine-gpg-helper-sender
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
