@@ -1,5 +1,14 @@
---- make.inc.orig	Sun Jan  1 18:52:00 2006
-+++ make.inc	Sat Feb  4 19:25:37 2006
+--- make.inc.orig	2006-01-01 18:52:00.000000000 -0500
++++ make.inc	2008-06-19 22:08:49.000000000 -0500
+@@ -19,7 +19,7 @@
+ #
+ TMGLIB       = libtmglib.a
+ SUPERLULIB   = libsuperlu_3.0.a
+-BLASLIB      = ../libblas.a
++BLASLIB      = %%BLAS_LIBS%%
+ 
+ #
+ #  The archiver and the flag(s) to use when building archive (library)
 @@ -29,12 +29,12 @@
  ARCHFLAGS    = cr
  RANLIB       = ranlib
@@ -14,7 +23,7 @@
 +CFLAGS       = %%CFLAGS%%
 +FORTRAN	     = %%FC%%
 +FFLAGS       = %%FFLAGS%%
-+LOADER       = %%CC%%
++LOADER       = %%FC%%
 +LOADOPTS     = 
  
  #
