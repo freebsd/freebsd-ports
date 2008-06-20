@@ -84,6 +84,7 @@
     SUBDIR += p5-POE-Component-IRC-Object
     SUBDIR += p5-POE-Component-IRC-Plugin-Bollocks
     SUBDIR += p5-POE-Component-IRC-Plugin-CoreList
+    SUBDIR += p5-POE-Component-IRC-Plugin-POE-Knee
     SUBDIR += p5-POE-Component-IRC-Plugin-QueryDNSBL
     SUBDIR += p5-POE-Component-IRC-Plugin-RSS-Headlines
     SUBDIR += p5-POE-Component-Server-IRC
