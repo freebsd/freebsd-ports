@@ -7,7 +7,7 @@
 
 PORTNAME=	sablevm
 PORTVERSION=	1.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 
@@ -27,6 +27,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include `${PKG_CONFIG} libffi --cflags`" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
 
 OPTIONS=	SVMCP "Install SableVM classpath" ON \
 		MAN "Build and install man pages" ON
