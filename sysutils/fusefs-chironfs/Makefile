@@ -7,6 +7,7 @@
 
 PORTNAME=	chironfs
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	fusefs-
@@ -23,6 +24,11 @@ CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 PLIST_FILES=	bin/chironfs bin/chirctl
 PORTDOCS=	*
 MAN8=		chironfs.8
+
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's, doc , ,' ${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.pre.mk>
 
