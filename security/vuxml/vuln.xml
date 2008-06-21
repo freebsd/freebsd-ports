@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="30866e6c-3c6d-11dd-98c9-00163e000016">
+    <topic>vim -- Vim Shell Command Injection Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>vim</name>
+	<name>vim-lite</name>
+	<name>vim-ruby</name>
+	<name>vim6</name>
+	<name>vim6-ruby</name>
+	<range><gt>6</gt><le>6.4.10</le></range>
+	<range><gt>7</gt><lt>7.1.315</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rdancer.org reports:</p>
+	<blockquote cite="http://www.rdancer.org/vulnerablevim.html">
+	  <p>Improper quoting in some parts of Vim written in the Vim Script
+	    can lead to arbitrary code execution upon opening a crafted
+	    file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2712</cvename>
+      <url>http://www.rdancer.org/vulnerablevim.html</url>
+    </references>
+    <dates>
+      <discovery>2008-06-16</discovery>
+      <entry>2008-06-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="53802164-3f7e-11dd-90ea-0019666436c2">
     <topic>ruby -- multiple integer and buffer overflow vulnerabilities</topic>
     <affects>
