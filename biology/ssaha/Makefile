@@ -7,6 +7,7 @@
 
 PORTNAME=	ssaha
 PORTVERSION=	3.1c
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.sanger.ac.uk/Software/analysis/${PORTNAME:U}/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
@@ -28,6 +29,6 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ssaha ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/testSSAHA.csh ${DATADIR}/
-	${INSTALL_DATA} ${DATA_FILES:S,^,${WRKSRC}/,} ${DATADIR}/
+	${INSTALL_DATA} ${DATA_FILES:S,^,${BUILD_WRKSRC}/,} ${DATADIR}/
 
 .include <bsd.port.mk>
