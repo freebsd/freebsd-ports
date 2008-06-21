@@ -120,3 +120,4 @@ ports_x11_toolkits	ports/x11-toolkits
 ports_x11_wm	ports/x11-wm
 
 # !!MERGE!! (Magic marker, do not delete or reorder!)
+xchat-ruby	ports/irc/xchat-ruby
