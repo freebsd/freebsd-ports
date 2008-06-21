@@ -1,0 +1,6 @@
+bin/lxappearance
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/lxappearance.mo
+%%DATADIR%%/install-icon-theme.sh
+share/applications/lxappearance.desktop
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
