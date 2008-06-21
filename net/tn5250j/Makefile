@@ -7,10 +7,9 @@
 
 PORTNAME=	tn5250j
 PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	saper@SYSTEM.PL
@@ -21,7 +20,11 @@ BUILD_DEPENDS=	${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail \
 		${JAVAJARDIR}/jt400.jar:${PORTSDIR}/sysutils/jtopen \
 		${JAVAJARDIR}/itext.jar:${PORTSDIR}/devel/itext \
 		${JAVAJARDIR}/log4j.jar:${PORTSDIR}/devel/log4j
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${JAVAJARDIR}/mail.jar:${PORTSDIR}/java/javamail \
+		${JYTHON_JAR}:${PORTSDIR}/lang/jython \
+		${JAVAJARDIR}/jt400.jar:${PORTSDIR}/sysutils/jtopen \
+		${JAVAJARDIR}/itext.jar:${PORTSDIR}/devel/itext \
+		${JAVAJARDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 
 USE_ZIP=	yes
 USE_ANT=	yes
