@@ -1,0 +1,11 @@
+--- configure	1997-07-18 18:48:13.000000000 +0400
++++ configure	2008-06-22 00:21:13.000000000 +0400
+@@ -1994,7 +1994,7 @@
+ 
+ fi
+ 
+-for ac_func in gethostname getgroups opendir memcpy strtol dirfd tcgetattr tcsetpgrp killpg
++for ac_func in gethostname getgroups opendir memcpy strtol dirfd tcgetattr tcsetpgrp killpg execvpe
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
+ echo "configure:2001: checking for $ac_func" >&5

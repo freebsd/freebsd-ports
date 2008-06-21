@@ -1,6 +1,20 @@
---- run.c	Wed Mar  7 19:37:47 2001
-+++ run.c	Sun Dec  5 22:51:12 2004
-@@ -136,10 +136,22 @@
+--- run.c	2001-03-07 20:37:47.000000000 +0300
++++ run.c	2008-06-22 00:17:05.000000000 +0400
+@@ -77,6 +77,7 @@
+ 	return (*s1 ? ++s1 : 0);
+ }
+ 
++#if !HAVE_EXECVPE
+ static int execvpe (char *name, char **argv, char **envstr)
+ {
+ 	static char *pathstr;
+@@ -131,15 +132,28 @@
+ 		errno = EACCES;
+ 	return (-1);
+ }
++#endif
+ 
+ int runl (int silent, char *name, ...)
  {
  	va_list ap;
  	int err;
