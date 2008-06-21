@@ -1,17 +1,16 @@
 # New ports collection makefile for:	tcpillust
 # Date created:		14 April 2000
-# Whom:			nishida@csl.sony.co.jp
+# Whom:			nishida@sfc.wide.ad.jp
 #
 # $FreeBSD$
 #
 
 PORTNAME=	tcpillust
-PORTVERSION=	1.0a
-PORTREVISION=	3
+PORTVERSION=	2.01a
 CATEGORIES=	net tcl tk
-MASTER_SITES=	ftp://ftp.csl.sony.co.jp/CSL/nishida/
+MASTER_SITES=	http://www.jp.nishida.org/tcpillust/
 
-MAINTAINER=	nishida@csl.sony.co.jp
+MAINTAINER=	nishida@sfc.wide.ad.jp
 COMMENT=	A graphical TCP connection analysis tool
 
 USE_TCL=	yes
@@ -20,7 +19,7 @@ USE_XORG=	xt
 USE_MOTIF=	yes
 
 MAN1=		tcpillust.1
-PORTDOCS=	README FAQ tcpclient.log tcpserver.log
+PORTDOCS=	tcpclient.log tcpserver.log
 PLIST_DIRS=	share/tcpillust
 PLIST_FILES=	bin/tcpillust \
 		share/tcpillust/tcpillust.tcl \
@@ -29,13 +28,15 @@ PLIST_FILES=	bin/tcpillust \
 		share/tcpillust/zoomin.xbm \
 		share/tcpillust/zoomout.xbm
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 do-build:
-.for file in binread.c button.c draw.c parser.c tcpillust.c
+.for file in binread.c button.c draw.c parser.c tcpillust.c tcpdump/print-tcp.c
 	${CC} ${CFLAGS} -I${LOCALBASE}/include/ -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \
 	-I${LOCALBASE}/include -DILTDIR=\"${DATADIR}\" -c ${WRKSRC}/${file} -o ${WRKSRC}/${file:S/.c/.o/}
 .endfor
 	${CC} ${CFLAGS} -L${TCL_LIBDIR} -L${TK_LIBDIR} -L${LOCALBASE}/lib \
-	-lm -lpcap -ltcl${TCL_VER:S/.//} -ltk${TK_VER:S/.//} ${WRKSRC}/*.o -o ${WRKSRC}/tcpillust
+	-lm -ltcl${TCL_VER:S/.//} -ltk${TK_VER:S/.//} ${WRKSRC}/*.o ${WRKSRC}/tcpdump/*.o -o ${WRKSRC}/tcpillust -lpcap
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpillust ${PREFIX}/bin
@@ -45,7 +46,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/tcpillust.man ${PREFIX}/man/man1/tcpillust.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/FAQ ${WRKSRC}/sample/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
