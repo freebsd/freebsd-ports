@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2008
+PORTVERSION=	2008.710
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/alienarena/Files/
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}2008-linux20080227
+DISTNAME=	${PORTNAME}2008-linux20080603
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2008 (data)

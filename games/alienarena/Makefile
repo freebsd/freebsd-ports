@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2008
+PORTVERSION=	2008.710
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/alienarena/Files/
-DISTNAME=	${PORTNAME}2008-linux20080227
+DISTNAME=	${PORTNAME}2008-linux20080603
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2008 (native version)
@@ -36,22 +36,22 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED) && \
-    defined(WITHOUT_SDL)
-IGNORE=		needs at least one executable (CLIENT, DEDICATED or SDL)
-.endif
-
-.if defined(WITH_CLIENT) || defined(WITH_SDL)
+.if defined(WITH_CLIENT)
 LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 USE_GL=		yes
+USE_XORG=	xxf86dga
 .endif
 
-.if defined(WITH_CLIENT)
+.if defined(WITH_CLIENT) && defined(WITH_DEDICATED)
+MAKE_ENV+=	BUILD=ALL
+.elif defined(WITH_CLIENT)
 MAKE_ENV+=	BUILD=CLIENT
 .elif defined(WITH_DEDICATED)
 MAKE_ENV+=	BUILD=DEDICATED
+.else
+IGNORE=		needs at least one executable (CLIENT or DEDICATED)
 .endif
 
 .if defined(WITH_CLIENT)
