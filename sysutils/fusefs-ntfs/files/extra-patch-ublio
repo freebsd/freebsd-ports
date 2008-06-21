@@ -1,9 +1,9 @@
---- libntfs-3g/Makefile.in.orig	Mon Jan 28 16:08:09 2008
-+++ libntfs-3g/Makefile.in	Fri Feb  8 15:58:37 2008
-@@ -249,6 +249,7 @@
+--- libntfs-3g/Makefile.in.orig	2008-05-28 16:08:07.000000000 -0300
++++ libntfs-3g/Makefile.in	2008-06-21 20:41:19.000000000 -0300
+@@ -252,6 +252,7 @@
  libntfs_3g_la_CFLAGS = $(AM_CFLAGS) -I$(top_srcdir)/include/ntfs-3g
  libntfs_3g_la_LDFLAGS = -version-info $(LIBNTFS_3G_VERSION) -no-undefined
- @FUSE_INTERNAL_TRUE@libntfs_3g_la_LIBADD = $(top_srcdir)/libfuse-lite/libfuse-lite.la
+ @FUSE_INTERNAL_TRUE@libntfs_3g_la_LIBADD = $(top_builddir)/libfuse-lite/libfuse-lite.la
 +libntfs_3g_la_LIBADD = -lublio
  libntfs_3g_la_SOURCES = attrib.c attrlist.c bitmap.c bootsect.c \
  	collate.c compat.c compress.c debug.c device.c dir.c index.c \
