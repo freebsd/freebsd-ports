@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	pdftk
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.41
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdfhacks.com/pdftk/ \
 		http://www.accesspdf.com/pdftk/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}.${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	A simple tool for doing everyday things with PDF documents
 
 # gcj/libgcj don't exist on these platforms
