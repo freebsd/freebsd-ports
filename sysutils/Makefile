@@ -489,6 +489,7 @@
     SUBDIR += p5-Filesys-Statvfs
     SUBDIR += p5-Fuse
     SUBDIR += p5-Fuse-Simple
+    SUBDIR += p5-Iterator-File
     SUBDIR += p5-LJ-Cache
     SUBDIR += p5-LJ-TextMessage
     SUBDIR += p5-Lchown
