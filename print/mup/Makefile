@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mup
-PORTVERSION=	5.3
-PORTREVISION=	2
+PORTVERSION=	5.5
 CATEGORIES=	print audio
 MASTER_SITES=	ftp://ftp.arkkra.com/pub/unix/
 DISTFILES=	mup${PORTVERSION:S/.//}src.tar.gz
