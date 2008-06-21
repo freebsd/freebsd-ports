@@ -2368,6 +2368,7 @@
     SUBDIR += skalibs
     SUBDIR += smake
     SUBDIR += smc
+    SUBDIR += sml_tk
     SUBDIR += smv
     SUBDIR += soapui
     SUBDIR += soup
