@@ -7,7 +7,7 @@
 
 PORTNAME=	qmc2
 PORTVERSION=	0.2.b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	sdlmame:${PORTSDIR}/emulators/sdlmame
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build gui qtestlib xml
 MAKE_ENV=	QTDIR="${QTDIR}" QMAKE="${QMAKE}" SYSCONFDIR="${PREFIX}/etc"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
