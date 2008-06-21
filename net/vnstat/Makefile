@@ -7,10 +7,12 @@
 
 PORTNAME=	vnstat
 PORTVERSION=	1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://humdi.net/vnstat/ \
-		http://mcx2.org/files/
+		http://mirror.mcx2.org/ \
+		http://ftp.uwsg.indiana.edu/FreeBSD/distfiles/ \
+		ftp://ftp.jpix.ad.jp/pub/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_bsd
 
 MAINTAINER=	adox@mcx2.org
@@ -25,7 +27,7 @@ SUB_FILES=	pkg-message
 post-extract:
 	@cd ${WRKSRC} && ${CP} cron/vnstat vnstat-cron
 	@${REINPLACE_CMD} -e 's|/usr/bin|/usr/local/bin|g' \
-		-e 's|/var/lib|/var/db|g' ${WRKSRC}/vnstat-cron
+		-e 's|ls /var/lib|ls -l /var/db|g' ${WRKSRC}/vnstat-cron
 
 post-install:
 .if !defined(NOPORTDOCS)
