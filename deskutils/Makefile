@@ -105,6 +105,7 @@
     SUBDIR += howm
     SUBDIR += ical
     SUBDIR += ithought
+    SUBDIR += jjclient
     SUBDIR += jlj
     SUBDIR += karamba
     SUBDIR += katapult

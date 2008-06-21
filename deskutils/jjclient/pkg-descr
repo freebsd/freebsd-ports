@@ -1,0 +1,7 @@
+jjclient - A command line client for posting JustJournal entries
+
+jjclient is a UNIX-style client for JustJournal that allows you to
+post blog entries from the command line without the need for a web
+browser.
+
+WWW: http://www.justjournal.com/
