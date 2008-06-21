@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lxpanel
-PORTVERSION=	0.2.4
-PORTREVISION=	3
+PORTVERSION=	0.3.7
 CATEGORIES=	x11
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	lxde
@@ -15,14 +14,29 @@ MASTER_SITE_SUBDIR=	lxde
 MAINTAINER=	b89605222@ntu.edu.tw
 COMMENT=	LXPanel is a lightweight X11 desktop panel
 
+OPTIONS=	ALSA "enable ALSA audio architecture support" Off \
+		NLS "NLS support" On
+
 USE_XORG=	x11 xmu
-USE_GNOME=	gtk20 gnomelibs gnomedesktop
+USE_GNOME=	gtk20 gnomedesktop gnomeprefix libgnome
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:19
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CFLAGS="-I${LOCALBASE}/include"
+USE_AUTOTOOLS=	automake:110:env
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${WRKSRC}
 USE_GMAKE=	yes
+
+MAN1=		lxpanel.1 lxpanelctl.1
+WITH_ALSA=	yes
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ALSA)
+RUN_DEPENDS+=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib
+.else
+CONFIGURE_ARGS+=--disable-alsa
+.endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -38,4 +52,4 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's,$$(DATADIRNAME)/locale,share/locale,' \
 		${WRKSRC}/po/Makefile.in.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
