@@ -1,0 +1,4 @@
+lxsession is a standard-compliant X11 session manager with
+shutdown/reboot/suspend supports via HAL and gdm.
+
+WWW: http://lxde.sourceforge.net/

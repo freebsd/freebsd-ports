@@ -86,6 +86,7 @@
     SUBDIR += libcompizconfig
     SUBDIR += libdockapp
     SUBDIR += lwm
+    SUBDIR += lxsession
     SUBDIR += matchbox
     SUBDIR += metacity
     SUBDIR += mlvwm
