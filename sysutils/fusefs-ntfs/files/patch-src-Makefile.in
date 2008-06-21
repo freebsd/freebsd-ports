@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	2008-02-16 14:14:31.000000000 -0300
-+++ src/Makefile.in	2008-02-18 18:31:40.000000000 -0300
+--- src/Makefile.in.orig	2008-05-28 20:08:07.000000000 +0100
++++ src/Makefile.in	2008-06-14 23:44:30.000000000 +0100
 @@ -638,7 +638,7 @@
  
  info-am:
@@ -9,12 +9,14 @@
  	install-rootbinPROGRAMS install-rootsbinDATA
  
  install-exec-am: install-binPROGRAMS install-exec-local
-@@ -696,7 +696,7 @@
+@@ -699,8 +699,8 @@
+ @RUN_LDCONFIG_TRUE@	$(LDCONFIG)
  
- install-exec-local:
- 	$(INSTALL) -d "$(DESTDIR)$(rootsbindir)"
--	$(LN_S) -f "$(rootbindir)/ntfs-3g" "$(DESTDIR)/sbin/mount.ntfs-3g"
-+	$(LN_S) -f "$(rootbindir)/ntfs-3g" "/usr/sbin/mount_ntfs-3g"
+ @ENABLE_MOUNT_HELPER_TRUE@install-exec-local:	install-rootbinPROGRAMS
+-@ENABLE_MOUNT_HELPER_TRUE@	$(MKDIR_P) "$(DESTDIR)/sbin"
+-@ENABLE_MOUNT_HELPER_TRUE@	$(LN_S) -f "$(rootbindir)/ntfs-3g" "$(DESTDIR)/sbin/mount.ntfs-3g"
++@ENABLE_MOUNT_HELPER_TRUE@	$(MKDIR_P) "/usr/sbin"
++@ENABLE_MOUNT_HELPER_TRUE@	$(LN_S) -f "$(rootbindir)/ntfs-3g" "/usr/sbin/mount.ntfs-3g"
  
- install-data-local:
- 	$(INSTALL) -d "$(DESTDIR)$(man8dir)"
+ install-data-local:	install-man8
+ 	$(LN_S) -f ntfs-3g.8 "$(DESTDIR)$(man8dir)/mount.ntfs-3g.8"
