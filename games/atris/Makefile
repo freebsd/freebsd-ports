@@ -9,7 +9,7 @@ PORTNAME=	atris
 PORTVERSION=	1.0.7
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www.cs.berkeley.edu/~weimer/atris/
+MASTER_SITES=	http://www.sourcefiles.org/Games/Arcade/Block_Based/Tetris/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Atris: Alizarin Tetris
