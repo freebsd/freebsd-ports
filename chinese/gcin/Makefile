@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
-		http://yilan.twbbs.org/chinsan/gcin/:main \
 		LOCAL/chinsan:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
