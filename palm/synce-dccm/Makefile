@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
 DISTNAME=	synce-vdccm-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@logvinov.com
 COMMENT=	Listener daemon for connections from WinCE devices
 
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
