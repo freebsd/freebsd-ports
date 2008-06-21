@@ -1,0 +1,15 @@
+--- ./Binary/makefile.orig	2008-06-12 16:00:19.000000000 -0300
++++ ./Binary/makefile	2008-06-12 16:00:43.000000000 -0300
+@@ -11,10 +11,10 @@
+ # copy of the SSAHA directory structure you should be able to make files
+ # straight away.
+ # 
+-# SSAHA_TOP_DIR=$(SSAHA_DIR?$(SSAHA_DIR):$(PWD)/../)
++SSAHA_TOP_DIR=$(PWD)/../
+ # Above is a nice idea, but syntax doesn't work for all versions of make
+ # so must define CURRENT_SSAHA_VERSION, eg in your .cshrc file - TC 14.3.01
+-SSAHA_TOP_DIR=$(CURRENT_SSAHA_VERSION)
++# SSAHA_TOP_DIR=$(CURRENT_SSAHA_VERSION)
+ 
+ GLOBAL_DIR=${SSAHA_TOP_DIR}/Global
+ SEQ_DIR=${SSAHA_TOP_DIR}/SequenceReader

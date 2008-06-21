@@ -1,0 +1,13 @@
+--- ./Binary/README.orig	2004-08-25 11:35:58.000000000 -0300
++++ ./Binary/README	2008-06-12 15:39:31.000000000 -0300
+@@ -34,6 +34,10 @@
+ 
+ Patched for linux/g++3.2.2 25/8/4 AWS.
+ 
++This version was patched for Linux/GCC 4.0.2 and Mac OS X/GCC 4.0.1 by
++Conrad Halling on 26 January 2006. See http://www.bifx.org/SSAHA/index.html
++for more information.
++
+ 1. To compile the main ssaha executable
+ 
+ make ssaha

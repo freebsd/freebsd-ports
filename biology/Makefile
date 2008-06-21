@@ -81,6 +81,7 @@
     SUBDIR += seaview
     SUBDIR += seqio
     SUBDIR += sim4
+    SUBDIR += ssaha
     SUBDIR += tRNAscan-SE
     SUBDIR += t_coffee
     SUBDIR += tinker

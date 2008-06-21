@@ -1,0 +1,9 @@
+bin/ssaha
+%%DATADIR%%/testSSAHA.csh
+%%DATADIR%%/test.fasta
+%%DATADIR%%/test_extract.fasta
+%%DATADIR%%/test_filter.fail
+%%DATADIR%%/test_filter.fastq
+%%DATADIR%%/test_protein.fasta
+%%DATADIR%%/README
+@dirrmtry %%DATADIR%%
