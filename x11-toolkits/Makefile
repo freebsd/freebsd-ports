@@ -237,6 +237,7 @@
     SUBDIR += ruby-pango
     SUBDIR += ruby-tk
     SUBDIR += ruby-wx
+    SUBDIR += sakura
     SUBDIR += scintilla
     SUBDIR += scx
     SUBDIR += sdl_gui
