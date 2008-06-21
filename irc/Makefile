@@ -135,6 +135,7 @@
     SUBDIR += xchat-fish
     SUBDIR += xchat-gnome
     SUBDIR += xchat-mircryption
+    SUBDIR += xchat-ruby
     SUBDIR += xchat1
     SUBDIR += zircon
     SUBDIR += znc
