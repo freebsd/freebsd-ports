@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-#
-
-mv ${WRKSRC}/support/config.h.dist ${WRKSRC}/support/config.h.dist.bak.2
-sed <${WRKSRC}/support/config.h.dist.bak.2 >${WRKSRC}/support/config.h.dist s+!!SYSLOG_FACILITY!!+$SYSLOG_FACILITY+g
