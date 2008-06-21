@@ -50,6 +50,6 @@ rcvar=`set_rcvar`
 : ${barnyard_flags="-D"}
 
 command="%%PREFIX%%/bin/barnyard"
-command_args="-c ${barnyard_conf} ${barnyard_flags}"
+command_args="-c ${barnyard_conf}"
 
 run_rc_command "$1"
