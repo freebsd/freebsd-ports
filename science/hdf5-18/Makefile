@@ -71,4 +71,7 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${i}
 .endfor
 
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+
 .include <bsd.port.post.mk>
