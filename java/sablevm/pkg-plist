@@ -2,8 +2,8 @@ bin/jar-sablevm
 bin/java-sablevm
 bin/javac-sablevm
 bin/sablevm
-include/jni.h
-include/jni_system_specific.h
+include/sablevm/jni.h
+include/sablevm/jni_system_specific.h
 lib/libsablevm-1.13.so
 lib/libsablevm.la
 lib/libsablevm.so
@@ -17,6 +17,7 @@ lib/sablevm/jre/bin
 share/sablevm/AUTHORS
 share/sablevm/LGPL-2.1
 share/sablevm/LICENSE
+@dirrm include/sablevm
 @dirrm share/sablevm
 @dirrm lib/sablevm/jre
 @dirrm lib/sablevm/include
