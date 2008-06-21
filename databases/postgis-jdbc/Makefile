@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	postgis-jdbc
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	databases java geography
 MASTER_SITES=	http://postgis.refractions.net/download/
 DISTNAME=	postgis-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	PostGIS spatial data structures for JDBC
 
 BUILD_DEPENDS=	${JAVALIBDIR}/jts.jar:${PORTSDIR}/math/jts	\
