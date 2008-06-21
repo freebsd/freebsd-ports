@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	worldofpadman
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	1.2.20080621
 CATEGORIES=	games
 MASTER_SITES=	http://thilo.kickchat.com/download/:full \
 		http://btc3x6.che.uni-bayreuth.de/~tl/wop_final/:full \
 		ftp://ftp.snt.utwente.nl/pub/games/worldofpadman/linux/:full,update \
 		ftp://ftp.kickchat.com/wop/:update \
 		http://www.hessenfragger.de/uploads/:update \
-		http://padworld.myexp.de/downloads/:source \
-		http://thilo.kickchat.com/download/:source
-DISTNAME=	wopengine_src-1.1
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alepulver
 DISTFILES=	worldofpadman.run:full \
 		wop_patch_1_2.run:update \
-		${DISTNAME}.tar.bz2:source
+		${SRC_FILE}.tar.bz2:source
 EXTRACT_ONLY=	worldofpadman.run \
 		wop_patch_1_2.run
 
@@ -41,17 +39,13 @@ OPTIONS=	CLIENT "Build client" on \
 		OPENAL "Enable OpenAL (3D sound) support" off \
 		OPENAL_DLOPEN "Enable dynamic loading of OpenAL" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SDL_AUDIO "Use SDL for audio" off \
-		SDL_VIDEO "Use SDL for video" off \
 		SMP "Build SMP (threaded) client" on \
 		VORBIS "Enable Ogg Vorbis codec support" on
 
 MAKE_ENV=	DEFAULT_BASEDIR="${DATADIR}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 VM_ARCHS=	amd64 i386 powerpc
-
-# Should be in bsd.commands.mk. Remove when ports/118749 is committed.
-UNMAKESELF_CMD?=	${LOCALBASE}/bin/unmakeself
+SRC_FILE=	${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -92,17 +86,7 @@ MAKE_ENV+=	USE_OPENAL_DLOPEN=1
 .       endif
 .   endif
 # SDL
-.   if defined(WITH_SDL_AUDIO)
 USE_SDL=	sdl
-MAKE_ENV+=	USE_SDL_AUDIO=1
-.   endif
-.   if defined(WITH_SDL_VIDEO)
-USE_SDL=	sdl
-MAKE_ENV+=	USE_SDL_VIDEO=1
-.   else
-USE_GL=		yes
-USE_XORG=	xxf86dga
-.   endif
 # Vorbis
 .   if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
@@ -151,15 +135,18 @@ PLIST_SUB+=	SMP="@comment "
 .endif
 
 post-extract:
-	@${TAR} jxf ${DISTDIR}/${DISTNAME}.tar.bz2 -C ${WRKDIR}
+	@${TAR} jxf ${DISTDIR}/${SRC_FILE}.tar.bz2 -C ${WRKDIR}
 	@${MKDIR} ${WRKDIR}/wop
 .for f in wop-data wop-data-1.2 extras
 	@cd ${WRKDIR} && ${TAR} xf ${f}.tar -C wop
 .endfor
 	@cd ${WRKDIR} && ${TAR} xf readme.tar
 
-.if defined(WITH_CURL_DLOPEN)
 post-patch:
+# Do not log debug output of bots (can be enabled with "homedir"/"gamedir").
+	@${REINPLACE_CMD} -e 's|"botlib\.log"|"/dev/null"|' \
+		${WRKSRC}/code/botlib/be_interface.c
+.if defined(WITH_CURL_DLOPEN)
 # Fix wrong library version (use general case as only one is installed).
 	@${REINPLACE_CMD} -e 's|libcurl\.so\.[[:digit:]]|libcurl.so|' \
 		${WRKSRC}/code/client/cl_curl.h
@@ -191,5 +178,14 @@ do-install:
 	${CP} -r ${WRKDIR}/readme/* ${DOCSDIR}
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+
+maint-gen-distfile:
+	@if [ -f ${DISTDIR}/${SRC_FILE}.tar.bz2 ]; then \
+		${ECHO_CMD} "ERROR: the distfile already exists."; \
+		${FALSE}; \
+	fi
+	svn export https://wop-engine.svn.sourceforge.net/svnroot/wop-engine/trunk ${SRC_FILE}
+	tar cjf ${DISTDIR}/${SRC_FILE}.tar.bz2 ${SRC_FILE}
+	${RM} -rf ${SRC_FILE}
 
 .include <bsd.port.post.mk>
