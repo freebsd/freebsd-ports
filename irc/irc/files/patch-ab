@@ -49,7 +49,7 @@
   * this define.
   */
 -#define LOG_FACILITY LOG_DAEMON
-+#define LOG_FACILITY !!SYSLOG_FACILITY!!
++#define LOG_FACILITY LOG_LOCAL5
  #endif /* USE_SYSLOG */
  
  /*

@@ -2,11 +2,10 @@ etc/ircd/ircd.conf.example
 etc/ircd/iauth.conf.example
 etc/ircd/iauth.conf
 etc/ircd/ircd.motd
-etc/rc.d/ircd.sh
 etc/ircd/ircd.m4
 sbin/chkconf
 sbin/ircd
 sbin/iauth
 sbin/ircd-mkpasswd
 sbin/ircdwatch
-@dirrm etc/ircd
+@dirrmtry etc/ircd
