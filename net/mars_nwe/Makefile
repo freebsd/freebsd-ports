@@ -7,6 +7,7 @@
 
 PORTNAME=	mars_nwe
 PORTVERSION=	0.99.b20
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://www.compu-art.de/mars_nwe/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/ncpfs/mars_nwe/ \
@@ -21,8 +22,6 @@ WRKSRC=		${WRKDIR}/mars_nwe
 MAKE_ENV=	CC="${CC}"
 
 PLIST=	${WRKDIR}/PLIST.DYN
-
-NDOCDIR=	${PREFIX}/share/doc/mars_nwe
 
 do-install:
 	@(cd ${WRKSRC} && ./mk.li install)
@@ -41,10 +40,10 @@ post-install:
 		>${PREFIX}/etc/rc.d/nwserv.sh
 	@${CHMOD} 0755 ${PREFIX}/etc/rc.d/nwserv.sh
 .if !defined(NOPORTDOCS)
-	@if ! [ -d ${NDOCDIR} ]; then ${MKDIR} ${NDOCDIR}; fi
+	${MKDIR} ${DOCSDIR}/
 	${RM} -f ${WRKSRC}/doc/*.orig
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${NDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/
 .endif
-	@${ECHO_MSG} "Look in ${NDOCDIR} for documentation."
+	@${ECHO_MSG} "Look in ${DOCSDIR} for documentation."
 
 .include <bsd.port.mk>
