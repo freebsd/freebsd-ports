@@ -1,4 +1,4 @@
-%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/Apache/INSTALL
 %%DATADIR%%/Apache/MANIFEST
 %%DATADIR%%/Apache/Makefile.PL
@@ -234,4 +234,4 @@
 @dirrm %%DATADIR%%/Apache/Ocsinventory/
 @dirrm %%DATADIR%%/Apache/
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
