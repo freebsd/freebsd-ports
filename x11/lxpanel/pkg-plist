@@ -1,25 +1,26 @@
 bin/lxpanel
 bin/lxpanelctl
-lib/lxpanel/plugins/netstatus.so
-lib/lxpanel/plugins/volume.so
+lib/lxpanel/plugins/batt.so
 lib/lxpanel/plugins/cpu.so
 lib/lxpanel/plugins/deskno.so
+lib/lxpanel/plugins/kbled.so
+lib/lxpanel/plugins/netstatus.so
+lib/lxpanel/plugins/volume.so
+%%NLS%%share/locale/de/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/lxpanel.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lxpanel.mo
-%%DATADIR%%/default
-%%DATADIR%%/images/my-computer.svg
-%%DATADIR%%/images/redhat-internet.svg
-%%DATADIR%%/images/stock_volume.png
-%%DATADIR%%/images/thunderbird.svg
-%%DATADIR%%/images/default.xpm
-%%DATADIR%%/images/emacs.svg
-%%DATADIR%%/images/file-manager.svg
-%%DATADIR%%/images/firefox2.svg
+%%DATADIR%%/images/background.png
+%%DATADIR%%/images/file-manager.png
 %%DATADIR%%/images/gnome-applications.png
 %%DATADIR%%/images/gnome-control-center.png
 %%DATADIR%%/images/gnome-devel.png
-%%DATADIR%%/images/gnome-fs-desktop.svg
+%%DATADIR%%/images/gnome-fs-desktop.png
 %%DATADIR%%/images/gnome-globe.png
 %%DATADIR%%/images/gnome-graphics.png
 %%DATADIR%%/images/gnome-joystick.png
@@ -30,18 +31,42 @@ lib/lxpanel/plugins/deskno.so
 %%DATADIR%%/images/gnome-netstatus-25-49.png
 %%DATADIR%%/images/gnome-netstatus-50-74.png
 %%DATADIR%%/images/gnome-netstatus-75-100.png
-%%DATADIR%%/images/gnome-netstatus-disconn.svg
-%%DATADIR%%/images/gnome-netstatus-error.svg
-%%DATADIR%%/images/gnome-netstatus-idle.svg
-%%DATADIR%%/images/gnome-netstatus-rx.svg
-%%DATADIR%%/images/gnome-netstatus-txrx.svg
-%%DATADIR%%/images/gnome-netstatus-tx.svg
-%%DATADIR%%/images/gnome-setting.svg
+%%DATADIR%%/images/gnome-netstatus-disconn.png
+%%DATADIR%%/images/gnome-netstatus-error.png
+%%DATADIR%%/images/gnome-netstatus-idle.png
+%%DATADIR%%/images/gnome-netstatus-rx.png
+%%DATADIR%%/images/gnome-netstatus-txrx.png
+%%DATADIR%%/images/gnome-netstatus-tx.png
+%%DATADIR%%/images/gnome-setting.png
 %%DATADIR%%/images/gnome-system.png
-%%DATADIR%%/images/gnome_terminal.svg
 %%DATADIR%%/images/gnome-util.png
-%%DATADIR%%/pager
+%%DATADIR%%/images/mute.png
+%%DATADIR%%/images/ns-bothrs.png
+%%DATADIR%%/images/ns-connected.png
+%%DATADIR%%/images/ns-disconnect.png
+%%DATADIR%%/images/ns-problem.png
+%%DATADIR%%/images/ns-recvdata.png
+%%DATADIR%%/images/ns-senddata.png
+%%DATADIR%%/images/ns-lock.png
+%%DATADIR%%/images/capslock-on.png
+%%DATADIR%%/images/capslock-off.png
+%%DATADIR%%/images/numlock-on.png
+%%DATADIR%%/images/numlock-off.png
+%%DATADIR%%/images/scrllock-on.png
+%%DATADIR%%/images/scrllock-off.png
+%%DATADIR%%/images/my-computer.png
+%%DATADIR%%/images/redhat-internet.png
+%%DATADIR%%/images/stock_volume.png
+%%DATADIR%%/images/volume.png
+%%DATADIR%%/profile/default/config
+%%DATADIR%%/profile/default/panels/panel
+%%DATADIR%%/ui/panel-pref.glade
 @dirrmtry lib/lxpanel/plugins
 @dirrmtry lib/lxpanel
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/profile/default/panels
+@dirrm %%DATADIR%%/profile/default/config
+@dirrm %%DATADIR%%/profile/default
+@dirrm %%DATADIR%%/profile
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
