@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.alpha-tierchen.de/pub/FreeBSD/ports/distfiles/
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Execute .NET applications from command line
 
-ONLY_FOR_ARCHS=	i386 arm
+ONLY_FOR_ARCHS=	i386 amd64 arm
 
 USE_BZIP2=	yes
 KMODDIR?=	/boot/modules
