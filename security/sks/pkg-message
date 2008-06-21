@@ -1,0 +1,8 @@
+
+=> When updating from an sks version < 1.1 be aware that the pgp key
+=> database files are not compatible: make a full dump of your data
+=> before updating and rebuild the database files afterwards.
+
+When installing for the first time, you will need to obtain a pgp
+key database dump from somewhere and build database files from this.
+http://www.keysigning.org/sks/ may help you getting started.

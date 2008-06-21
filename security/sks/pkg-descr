@@ -6,8 +6,8 @@ key submitted to one SKS server will quickly be distributed to all key
 servers; and even wildly out-of-date servers, or servers that experience
 spotty connectivity, can fully synchronize with rest of the system.
 
-Refer to the online wiki for pointers on downloading a full copy of the
-public PGP databse (about 2Gb) and on customising the local configuration
-http://documentation.penguin.de/cgi-bin/twiki/view/SKSKeyserver/WebHome
+Refer to the online references for pointers on downloading a full copy of
+the public PGP databse (about 2Gb) and on tweaking the your configuration.
+http://www.keysigning.org/sks/ may help you getting started.
 
 WWW:	http://www.nongnu.org/sks/

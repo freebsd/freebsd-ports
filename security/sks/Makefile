@@ -6,42 +6,36 @@
 #
 
 PORTNAME=	sks
-PORTVERSION=	1.0.9
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITES=	http://minskyprimus.net/sks/releases/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
 
-BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml-nox11
-LIB_DEPENDS=	db-4.2:${PORTSDIR}/databases/db42
+USE_OCAML=	yes
+USE_BDB=	46+
+USE_PERL5_BUILD=yes
 
 USE_GMAKE=	yes
-MAKE_ENV=	BDBINCLUDE="-I${LOCALBASE}/include/db42" \
-		BDBLIB="-L${LOCALBASE}/lib" \
-		LIBDB="-ldb-4.2" \
+MAKE_ENV=	BDBINCLUDE="-I${BDB_INCLUDE_DIR}" \
+		BDBLIB="-L${BDB_LIB_DIR}" \
+		LIBDB="-l${BDB_LIB_NAME}" \
 		MANDIR="${MANPREFIX}/man"
-ALL_TARGET=	all sks.8
-USE_PERL5_BUILD=	yes
+ALL_TARGET=	all sks.8.gz
 
 PLIST_FILES=	bin/sks bin/sks_add_mail bin/sks_build.sh
 MAN8=		sks.8
-PORTDOCS=	ANNOUNCEMENT BUGS README TODO
+MANCOMPRESSED=	yes
+PORTDOCS=	BUGS README TODO
 
-post-patch:
-	@${CP} ${FILESDIR}/sks.numerix.patch ${WRKDIR}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sks 	  ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/sks_add_mail ${PREFIX}/bin
-	${INSTALL_SCRIPT}  ${WRKSRC}/sks_build.sh ${PREFIX}/bin
-	${INSTALL_MAN}     ${WRKSRC}/sks.8	  ${MAN8PREFIX}/man/man8
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
