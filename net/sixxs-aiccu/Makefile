@@ -39,9 +39,9 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 do-install:
-	${MKDIR} ${DOCSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/unix-console/aiccu ${PREFIX}/sbin/sixxs-aiccu
 .ifndef(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/README ${DOCSDIR}
 .endif
 	${INSTALL_DATA} ${WRKSRC}/doc/aiccu.conf ${PREFIX}/etc/aiccu.conf.sample
