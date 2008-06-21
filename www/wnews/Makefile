@@ -9,7 +9,7 @@ PORTNAME=	wnews
 PORTVERSION=	0.8
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://samy.kerneled.org/projects/
+MASTER_SITES=	http://kerneled.org/projects/wnews/
 
 MAINTAINER=	sbahra@gwu.edu
 COMMENT=	An RSS news client for the UNIX console
