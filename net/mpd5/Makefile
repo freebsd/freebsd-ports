@@ -7,6 +7,7 @@
 
 PORTNAME=	mpd
 DISTVERSION=	5.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	mpd
@@ -47,7 +48,6 @@ RUN_DEPENDS+=	/boot/modules/ng_ipacct.ko:${PORTSDIR}/net-mgmt/ng_ipacct
 .endif
 .endif
 
-MTREE_FILE=	${FILESDIR}/mpd5.mtree
 MAN8=		mpd5.8
 MANCOMPRESSED=	maybe
 USE_RC_SUBR=	mpd5.sh
