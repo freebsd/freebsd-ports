@@ -1,0 +1,25 @@
+bin/lxtask
+%%NLS%%share/locale/cs/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/de/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/el/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/lxtask.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/lxtask.mo
+share/applications/lxtask.desktop
+@dirrmtry share/applications
+%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb_NO
