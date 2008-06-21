@@ -199,6 +199,7 @@ include/omnithread/solaris.h
 %%STATIC%%lib/libomniConnectionMgmt4.a
 %%STATIC%%lib/libomniDynamic4.a
 %%STATIC%%lib/libomniORB4.a
+%%STATIC%%lib/libomnisslTP4.a
 %%STATIC%%lib/libomnithread.a
 lib/libCOS4.so
 lib/libCOS4.so.1
@@ -218,10 +219,9 @@ lib/libomniDynamic4.so.1.%%SONUM%%
 lib/libomniORB4.so
 lib/libomniORB4.so.1
 lib/libomniORB4.so.1.%%SONUM%%
-lib/libomnisslTP4.a
 lib/libomnisslTP4.so
 lib/libomnisslTP4.so.1
-lib/libomnisslTP4.so.1.1
+lib/libomnisslTP4.so.1.%%SONUM%%
 lib/libomnithread.so
 lib/libomnithread.so.3
 lib/libomnithread.so.3.3
