@@ -1,7 +1,7 @@
 Grig is a graphical front-end to the Ham Radio libraries
 written using Gtk+ and Gnome widgets by Alexandru Csete.
 
-Part of the grounstation suite, it purpose is to control
+Part of the groundstation suite, it purpose is to control
 an amateur radio transceiver from X. It supports any of
 the transceivers that hamlib supports, including rpc.rigd
 over the network.
