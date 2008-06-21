@@ -42,4 +42,7 @@ post-install:
 	${GUNZIP_CMD} ${PREFIX}/share/doc/gsl/${GSLREF}
 .endif
 
+regression-test:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
+
 .include <bsd.port.mk>
