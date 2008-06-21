@@ -411,6 +411,7 @@
     SUBDIR += lugtools
     SUBDIR += luma
     SUBDIR += lxsplit
+    SUBDIR += lxtask
     SUBDIR += magicrescue
     SUBDIR += maint
     SUBDIR += makefs
