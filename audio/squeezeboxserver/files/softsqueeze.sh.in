@@ -7,4 +7,4 @@
 # will release the JDK under a license that makes dependencies on the
 # JDK reasionable.
 #
-%%LOCALBASE%%/bin/javavm -jar /usr/local/slimserver/HTML/EN/html/softsqueeze/SoftSqueeze.jar
+%%LOCALBASE%%/bin/java -jar %%PREFIX%%/%%SLIMDIR%%/HTML/EN/html/softsqueeze/SoftSqueeze.jar
