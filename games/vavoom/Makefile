@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.27.1
-PORTREVISION=	1
+PORTVERSION=	1.28
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -124,7 +123,7 @@ CMAKE_ARGS+=	-DWITH_SDL=N
 
 post-patch:
 	@cd ${WRKSRC} && ${SH} fixunix.sh
-	@${REINPLACE_CMD} -e 's|$$\* $${IWADDIR}|-iwaddir ${DMDIR} $$*|' \
+	@${REINPLACE_CMD} -e 's|$$\* ||; s|$${IWADDIR}|-iwaddir ${DMDIR} $$*|' \
 		${WRKSRC}/source/CMakeLists.txt
 
 post-install:
