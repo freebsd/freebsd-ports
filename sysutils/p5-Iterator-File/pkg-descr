@@ -1,0 +1,6 @@
+Iterator_File is an attempt to take some repetition & tedium out of
+processing a flat file. Whenever doing so, I found myself adapting prior
+scripts so that processes could be resumed, emit status, etc. Hence an itch
+(and this module) was born.
+
+WWW: http://search.cpan.org/dist/Iterator-File/

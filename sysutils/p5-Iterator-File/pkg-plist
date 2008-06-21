@@ -1,0 +1,15 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator/File/.packlist
+%%SITE_PERL%%/Iterator/File.pm
+%%SITE_PERL%%/Iterator/File/Status.pm
+%%SITE_PERL%%/Iterator/File/Utility.pm
+%%SITE_PERL%%/Iterator/File/Source/FlatFile.pm
+%%SITE_PERL%%/Iterator/File/Source/Interface.pm
+%%SITE_PERL%%/Iterator/File/State/Interface.pm
+%%SITE_PERL%%/Iterator/File/State/TempFile.pm
+%%SITE_PERL%%/Iterator/File/State/IPCShareable.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Iterator
+@dirrmtry %%SITE_PERL%%/Iterator/File/State
+@dirrmtry %%SITE_PERL%%/Iterator/File/Source
+@dirrmtry %%SITE_PERL%%/Iterator/File
+@dirrmtry %%SITE_PERL%%/Iterator
