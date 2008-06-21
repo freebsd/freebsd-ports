@@ -1,4 +1,4 @@
-zmtx and zmrz impliement the ZMODEM error correcting protocol used to
+zmtx and zmrz implement the ZMODEM error correcting protocol used to
 send/receive files over a dial-in serial port.  And they do one thing
 and only one thing -- transmit files.  They don't do file conversions,
 they don't do remote commands, or any of that other stuff.

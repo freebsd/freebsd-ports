@@ -1,4 +1,4 @@
-    This program is intented for reading of the call detail records from
+    This program is intended for reading of the call detail records from
 PBX and putting them in common text file or in different files on
 day-by-day or  month-by-month basis. In case day-by-day or month-by-month
  basis the support  of  specific PBX is required.

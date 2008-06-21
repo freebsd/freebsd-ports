@@ -5,7 +5,7 @@ code to send an SMS message.
 At the same time, the intent is to remove the limits of some of the previous 
 attempts at this sort of API, like "must be free internet-based SMS services".
 
-SMS::Send drivers are installed seperately, and might use the web, email or 
+SMS::Send drivers are installed separately, and might use the web, email or 
 physical SMS hardware. It could be a free or paid. The details shouldn't matter.
 
 You should not have to care how it is actually sent, only that it has been sent 
