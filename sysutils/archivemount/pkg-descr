@@ -1,0 +1,6 @@
+Archivemount is a piece of glue code between libarchive
+(http://people.freebsd.org/~kientzle/libarchive/) and FUSE
+(http://fuse.sourceforge.net). It can be used to mount a (possibly compressed)
+archive (as in .tar.gz or .tar.bz2) and use it like an ordinary filesystem.
+
+WWW: http://www.cybernoia.de/software/archivemount/
