@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="53802164-3f7e-11dd-90ea-0019666436c2">
+    <topic>ruby -- multiple integer and buffer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<name>ruby+pthreads</name>
+	<name>ruby+pthreads+oniguruma</name>
+	<name>ruby+oniguruma</name>
+	<range><ge>1.8.*,1</ge><lt>1.8.6.111_3,1</lt></range>
+      </package>
+      <package>
+	<name>ruby_static</name>
+	<range><ge>1.8.*,1</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The official ruby site reports:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2008/06/20/arbitrary-code-execution-vulnerabilities/">
+	  <p>Multiple vulnerabilities in Ruby may lead to a denial of service
+	    (DoS) condition or allow execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2726</cvename>
+      <url>http://www.ruby-lang.org/en/news/2008/06/20/arbitrary-code-execution-vulnerabilities/</url>
+    </references>
+    <dates>
+      <discovery>2008-06-19</discovery>
+      <entry>2008-06-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="168190df-3e9a-11dd-87bc-000ea69a5213">
     <topic>fetchmail -- potential crash in -v -v verbose mode</topic>
     <affects>
