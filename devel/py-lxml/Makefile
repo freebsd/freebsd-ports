@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lxml
-PORTVERSION=	1.3.6
+PORTVERSION=	2.0.6
 CATEGORIES=	devel python
 MASTER_SITES=	http://codespeak.net/lxml/ \
 		http://cheeseshop.python.org/packages/source/l/lxml/
@@ -26,18 +26,18 @@ PYEASYINSTALL_ARCHDEP=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
-BASEDOCS=	CHANGES.txt \
+PORTDOCS=	CHANGES.txt \
 		CREDITS.txt \
 		LICENSES.txt \
 		TODO.txt \
 		README.txt
 
-PYLXML_EGG=     ${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}${PYEASYINSTALL_OSARCH}.egg
+PYLXML_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}${PYEASYINSTALL_OSARCH}.egg
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for f in ${BASEDOCS}
+. for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 . endfor
 	@${MKDIR} ${DOCSDIR}/doc
