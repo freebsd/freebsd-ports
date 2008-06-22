@@ -1,5 +1,5 @@
 Index: kqemu-freebsd.c
-@@ -208,9 +208,17 @@
+@@ -222,9 +222,17 @@
  int CDECL kqemu_schedule(void)
  {
      /* kqemu_log("kqemu_schedule\n"); */
@@ -17,7 +17,27 @@ Index: kqemu-freebsd.c
      return SIGPENDING(curthread);
  }
  #endif
-@@ -320,8 +328,15 @@
+@@ -258,6 +266,10 @@
+ static struct clonedevs *kqemuclones;
+ static TAILQ_HEAD(,kqemu_instance) kqemuhead = TAILQ_HEAD_INITIALIZER(kqemuhead);
+ static eventhandler_tag clonetag;
++#ifndef D_NEEDMINOR
++/* see http://svn.freebsd.org/viewvc/base?view=revision&revision=179726 */
++#define D_NEEDMINOR 0
++#endif
+ #endif
+ 
+ static d_close_t kqemu_close;
+@@ -282,7 +294,7 @@
+ 	/* bmaj */	-1
+ #else
+ 	.d_version =	D_VERSION,
+-	.d_flags =	D_NEEDGIANT,
++	.d_flags =	D_NEEDGIANT | D_NEEDMINOR,
+ 	.d_open =	kqemu_open,
+ 	.d_ioctl =	kqemu_ioctl,
+ 	.d_close =	kqemu_close,
+@@ -334,8 +346,15 @@
  #if __FreeBSD_version >= 500000
      dev->si_drv1 = NULL;
      TAILQ_REMOVE(&kqemuhead, ks, kqemu_ent);
@@ -33,7 +53,7 @@ Index: kqemu-freebsd.c
      free(ks, M_KQEMU);
      --kqemu_ref_count;
  }
-@@ -500,7 +515,13 @@
+@@ -514,7 +533,13 @@
  	while ((ks = TAILQ_FIRST(&kqemuhead)) != NULL) {
  	    kqemu_destroy(ks);
  	}

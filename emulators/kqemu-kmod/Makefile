@@ -7,7 +7,7 @@
 
 PORTNAME=	kqemu
 PORTVERSION=	1.3.0.p11
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://bellard.org/qemu/ \
 		http://qemu.org/ \
@@ -18,12 +18,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.p/pre/}
 DIST_SUBDIR=	kqemu
 
 MAINTAINER=	nox@FreeBSD.org
-COMMENT=	Kernel Accelerator for QEMU CPU Emulator (development version)
+COMMENT=	Kernel Accelerator for QEMU CPU Emulator
 
 ONLY_FOR_ARCHS=	i386 amd64
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
+CONFLICTS=	kqemu-kmod-devel-[0-9]*
 
 USE_RC_SUBR=	kqemu
 
