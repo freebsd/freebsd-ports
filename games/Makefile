@@ -274,6 +274,7 @@
     SUBDIR += geki2
     SUBDIR += geki3
     SUBDIR += gemdropx
+    SUBDIR += gemrb
     SUBDIR += ggz-client-libs
     SUBDIR += ggz-gtk-client
     SUBDIR += ggz-gtk-games
