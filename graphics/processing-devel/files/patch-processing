@@ -1,6 +1,6 @@
 --- processing.orig	2008-06-16 22:21:27.000000000 +1000
-+++ processing	2008-06-22 18:03:16.000000000 +1000
-@@ -1,6 +1,6 @@
++++ processing	2008-06-22 21:08:13.000000000 +1000
+@@ -1,17 +1,17 @@
 - #!/bin/sh
 +#!/bin/sh
   
@@ -9,7 +9,14 @@
   
  for LIB in \
      java/lib/rt.jar \
-@@ -14,4 +14,4 @@
+     java/lib/tools.jar \
+     lib \
+     lib/build \
+-    lib/*.jar \
++    lib/antlr.jar lib/core.jar lib/jna.jar lib/pde.jar \
+     ;
+ do
+     CLASSPATH="${CLASSPATH}:${APPDIR}/${LIB}"
  done
  export CLASSPATH
  
