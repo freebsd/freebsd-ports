@@ -225,6 +225,8 @@ share/applications/filezilla.desktop
 @dirrmtry share/locale/ro_RO
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
 @dirrmtry share/locale/mk_MK/LC_MESSAGES
 @dirrmtry share/locale/mk_MK
 @dirrmtry share/locale/lv_LV/LC_MESSAGES
@@ -239,6 +241,8 @@ share/applications/filezilla.desktop
 @dirrmtry share/locale/ja_JP
 @dirrmtry share/locale/id_ID/LC_MESSAGES
 @dirrmtry share/locale/id_ID
+@dirrmtry share/locale/hu_HU/LC_MESSAGES
+@dirrmtry share/locale/hu_HU
 @dirrmtry share/locale/he_IL/LC_MESSAGES
 @dirrmtry share/locale/he_IL
 @dirrmtry share/locale/gl_ES/LC_MESSAGES
@@ -257,6 +261,7 @@ share/applications/filezilla.desktop
 @dirrmtry share/locale/ca_ES@valencia
 @dirrmtry share/locale/bg_BG/LC_MESSAGES
 @dirrmtry share/locale/bg_BG
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/resources/cyril/16x16
 @dirrm %%DATADIR%%/resources/cyril
 @dirrm %%DATADIR%%/resources/blukis/48x48
