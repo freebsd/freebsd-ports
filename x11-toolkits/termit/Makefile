@@ -7,6 +7,7 @@
 
 PORTNAME=	termit
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GOOGLE_CODE \
 		LOCAL/chinsan/${PORTNAME}/
@@ -44,7 +45,7 @@ pre-install:
 .if !defined(NOPORSDOCS)
 	@${CAT} ${PKGDIR}/pkg-plist.DOC >> ${WRKDIR}/PLIST.DYN
 .else
-	@${REINPLACE_CMD} -e '1,3 d' doc/CMakeLists.txt
+	@${REINPLACE_CMD} -e '1,3 d' ${WRKSRC}/doc/CMakeLists.txt
 .endif
 
 do-install:
