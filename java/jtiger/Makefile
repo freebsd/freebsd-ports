@@ -46,8 +46,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKDIR}/doc; \
-		${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
-		${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
+		&& ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
+		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
 .endif
 
 .include <bsd.port.post.mk>
