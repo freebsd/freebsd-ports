@@ -7,6 +7,7 @@
 
 PORTNAME=	flightgear-aircrafts
 PORTVERSION=	20080212
+PORTREVISION=	1
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/ \
@@ -117,7 +118,7 @@ DISTFILES=	707_20060324.zip \
 		beaufighter_20071217.zip \
 		beech99_20080107.zip \
 		bleriot-XI_20080102.zip \
-		bluebird_5.0.zip \
+		bluebird_6.4.zip \
 		c150_20071218.zip \
 		c172r_20060315.zip \
 		c182_20070709.zip \
