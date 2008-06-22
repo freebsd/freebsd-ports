@@ -12,7 +12,7 @@ share/libexec/quilt/compat/cp
 share/libexec/quilt/compat/date
 share/libexec/quilt/compat/getopt
 share/libexec/quilt/compat/patch
-share/libexec/quilt/compat/rpmbuild
+%%RPMBUILD%%share/libexec/quilt/compat/rpmbuild
 share/libexec/quilt/compat/sed
 share/libexec/quilt/compat/sendmail
 share/libexec/quilt/delete
@@ -48,9 +48,9 @@ share/libexec/quilt/top
 share/libexec/quilt/unapplied
 share/libexec/quilt/upgrade
 share/libexec/quilt/wrapper/patch
-share/locale/de/LC_MESSAGES/quilt.mo
-share/locale/fr/LC_MESSAGES/quilt.mo
-share/locale/ja/LC_MESSAGES/quilt.mo
+%%NLS%%share/locale/de/LC_MESSAGES/quilt.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/quilt.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/quilt.mo
 @dirrm share/libexec/quilt/wrapper
 @dirrm share/libexec/quilt/scripts
 @dirrm share/libexec/quilt/compat
