@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	kqemu
-PORTVERSION=	1.3.0.p11
-PORTREVISION=	8
+PORTVERSION=	1.4.0.p1
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://bellard.org/qemu/ \
 		http://qemu.org/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nox
-PKGNAMESUFFIX=	-kmod
+PKGNAMESUFFIX=	-kmod-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.p/pre/}
 DIST_SUBDIR=	kqemu
 
@@ -24,6 +23,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
+CONFLICTS=	kqemu-kmod-[0-9]*
 
 USE_RC_SUBR=	kqemu
 
