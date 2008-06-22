@@ -3511,3 +3511,5 @@ graphics/gtkcairo|||2008-06-19|Unused, unfetchable, obsolete
 net/openospfd-devel|||2008-06-19|Has expired: no longer maintained
 x11-servers/xorg-server-snap|x11-servers/xorg-server|2008-06-19|Has expired: no longer maintained
 devel/dumb|audio/dumb|2008-06-23|Moved to better category audio
+archivers/dynamite|archivers/libdynamite|2008-06-22|Moved to archivers/libdynamite.
+archivers/orange|archivers/liborange|2008-06-22|Moved to archivers/liborange.
