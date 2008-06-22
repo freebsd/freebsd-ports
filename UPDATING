@@ -20,7 +20,7 @@ upgrades.
 
   Most of the command line options can now be set in configure files.
   So the default values (such as milterdkim_socket) are changed to blank.
-  Upgrading users should check the values both in rc.conf and 
+  Upgrading users should check the values both in rc.conf and
   dkim-filter.conf.
 
 20080612:
@@ -73,14 +73,13 @@ upgrades.
   As a result of the upgrade to gettext-0.17, the shared library version
   of libintl has changed, so you will need to rebuild all ports that
   depend on gettext:
-  
+
   # portupgrade -rf gettext
   # portmaster -r gettext\*
 
   Given the scope and sheer number of dependent ports, it may be more
   advisable to simply blow away all existing install ports (after
   keeping any local configuration changes), and rebuilding from scratch.
-  
 
 20080603:
   AFFECTS: users of editors/emacs
