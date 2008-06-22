@@ -28,9 +28,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 CFLAGS+=	-mmmx
-PLIST_SUB+=	ARCH=""
-.else
-PLIST_SUB+=	ARCH="@comment"
 .endif
 
 post-patch:
