@@ -119,6 +119,7 @@
     SUBDIR += drumpiler
     SUBDIR += dssi
     SUBDIR += dtmfdial
+    SUBDIR += dumb
     SUBDIR += dvda-author
     SUBDIR += easytag
     SUBDIR += easytag-devel

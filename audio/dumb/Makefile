@@ -7,12 +7,11 @@
 
 PORTNAME=	dumb
 PORTVERSION=	0.9.3
-PORTREVISION=	1
-CATEGORIES=	devel audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	dumb
+PORTREVISION=	2
+CATEGORIES=	audio
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	IT, XM, S3M and MOD player library
 
 USE_GMAKE=	yes
@@ -26,6 +25,10 @@ MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`"
 .else
 PLIST_SUB+=	ALLEGRO="@comment "
 MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS=
+.endif
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+CFLAGS+=	-fPIC
 .endif
 
 MAKE_ENV+=	CC="${CC}"
