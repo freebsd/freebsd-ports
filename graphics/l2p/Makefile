@@ -20,6 +20,8 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		latex:${PORTSDIR}/print/teTeX
 
+BROKEN=		Unfetchable
+
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
