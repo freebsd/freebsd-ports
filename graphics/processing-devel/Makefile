@@ -9,6 +9,7 @@ PORTNAME=	processing-devel
 PORTVERSION=	0142
 CATEGORIES=	graphics cad java
 MASTER_SITES=	http://processing.org./download/
+DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	edwin@mavetju.org
@@ -20,17 +21,19 @@ USE_JAVA=	1.5+
 NO_BUILD=	yes
 
 post-extract:
-	# Go from 116 Mb to 28 Mb
-	${RM} -rf ${WRKSRC}/jikes
-	${RM} -rf ${WRKSRC}/java
+	# Go from 124 Mb to 73 Mb
+	${RM} -rf ${WRKSRC}/java/.systemPrefs
+	${RM} -rf ${WRKSRC}/java/[a-km-z]*
+	${RM} -rf ${WRKSRC}/java/[A-Z]*
+	${RM} -rf ${WRKSRC}/java/lib/[a-qsu-z]*
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/processing
 	${RM} ${WRKSRC}/processing.*
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/processing ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/libexec/processing
-	${CP} -Rp ${WRKSRC}/* ${PREFIX}/libexec/processing
+	${INSTALL_SCRIPT} ${WRKSRC}/processing ${PREFIX}/bin/processing-devel
+	${MKDIR} ${PREFIX}/libexec/processing-devel
+	${CP} -Rp ${WRKSRC}/* ${PREFIX}/libexec/processing-devel
 
 .include <bsd.port.mk>
