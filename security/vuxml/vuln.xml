@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ee6fa2bd-406a-11dd-936a-0015af872849">
+    <topic>php -- input validation error in posix_access function</topic>
+    <affects>
+      <package>
+	<name>php5-posix</name>
+	<range><ge>5.0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>According to Maksymilian Arciemowicz research,
+	  it is possible to bypass security restrictions
+	  of safe_mode in posix_access() function via
+	  directory traversal vulnerability. The attacker
+	  can use this attack to gain access to sensitive
+	  information. Other functions utilizing expand_filepath()
+	  may be affected.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2665</cvename>
+      <bid>29797</bid>
+      <url>http://securityreason.com/achievement_securityalert/54</url>
+    </references>
+    <dates>
+      <discovery>2008-06-17</discovery>
+      <entry>2008-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="30866e6c-3c6d-11dd-98c9-00163e000016">
     <topic>vim -- Vim Shell Command Injection Vulnerabilities</topic>
     <affects>
