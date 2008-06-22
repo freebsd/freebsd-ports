@@ -1945,6 +1945,7 @@
     SUBDIR += perltidy
     SUBDIR += pharmacy
     SUBDIR += php-dbg2
+    SUBDIR += php-java-bridge
     SUBDIR += php-xdebug
     SUBDIR += php4-dio
     SUBDIR += php4-gettext
