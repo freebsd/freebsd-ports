@@ -400,6 +400,7 @@
     SUBDIR += p5-Net-IMAP-Simple-SSL
     SUBDIR += p5-Net-QMTP
     SUBDIR += p5-Net-SMTP-Server
+    SUBDIR += p5-Net-SMTP-SSL
     SUBDIR += p5-Net-SMTP-TLS
     SUBDIR += p5-Net-SMTP_auth
     SUBDIR += p5-Net-Server-Mail
