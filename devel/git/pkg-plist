@@ -202,8 +202,10 @@ share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/msgs/ru.msg
 %%GUI%%share/git-gui/lib/msgs/sv.msg
 %%GUI%%share/git-gui/lib/msgs/zh_cn.msg
+%%GUI%%share/gitk/lib/msgs/es.msg
 %%GUI%%share/gitk/lib/msgs/de.msg
 %%GUI%%share/gitk/lib/msgs/it.msg
+%%GUI%%share/gitk/lib/msgs/sv.msg
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm lib/xemacs/site-lisp/git
 @dirrmtry lib/xemacs/site-lisp
