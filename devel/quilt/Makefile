@@ -7,9 +7,10 @@
 
 PORTNAME=	quilt
 PORTVERSION=	0.46
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://download.savannah.gnu.org/releases/quilt/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	quilt
 
 MAINTAINER=	doj@cubic.org
 COMMENT=	A collection of bash scripts to ease working with patch files
@@ -18,13 +19,13 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		gsed:${PORTSDIR}/textproc/gsed \
 		gpatch:${PORTSDIR}/devel/patch \
-		diffstat:${PORTSDIR}/textproc/diffstat \
-		rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+		diffstat:${PORTSDIR}/textproc/diffstat
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_PERL5=	yes
+
+OPTIONS=	RPMBUILD "rpmbuild support" off
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed --without-getopt --with-patch=${LOCALBASE}/bin/gpatch
@@ -32,10 +33,29 @@ CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed --without-getopt --with-patch=$
 MAN1=		guards.1 quilt.1
 PORTDOCS=	README* quilt.pdf
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_RPMBUILD)
+BUILD_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm
+RUN_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm
+PLIST_SUB+=	RPMBUILD=""
+.else
+CONFIGURE_ARGS+=--without-rpmbuild
+PLIST_SUB+=	RPMBUILD="@comment "
+.endif
+
+.if !defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS=""
+USE_GETTEXT=	yes
+.else
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=	--disable-nls
+.endif
+
 post-install:
 	@if [ ! -f ${PREFIX}/etc/quilt.quiltrc ]; then \
 		${CP} ${PREFIX}/etc/quilt.quiltrc.sample \
 			${PREFIX}/etc/quilt.quiltrc ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
