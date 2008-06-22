@@ -8,7 +8,7 @@
 
 PORTNAME=	chasen
 PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/chasen/
 PKGNAMESUFFIX=	-base
