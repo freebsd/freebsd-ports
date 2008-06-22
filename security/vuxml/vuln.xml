@@ -46,11 +46,15 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>According to Maksymilian Arciemowicz research,
 	  it is possible to bypass security restrictions
-	  of safe_mode in posix_access() function via
+	  of safe_mode in <code>posix_access()</code> function via
 	  directory traversal vulnerability. The attacker
 	  can use this attack to gain access to sensitive
-	  information. Other functions utilizing expand_filepath()
-	  may be affected.</p>
+	  information. Other functions utilizing
+	  <code>expand_filepath()</code> may be affected.</p>
+	<p>It should be noted that this vulnerability is not
+	  considered to be serious by the FreeBSD Security Team,
+	  since <code>safe_mode</code> and <code>open_basedir</code>
+	  are insecure by design and should not be relied upon.</p>
       </body>
     </description>
     <references>
@@ -61,6 +65,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-06-17</discovery>
       <entry>2008-06-22</entry>
+      <modified>2008-06-22</modified>
     </dates>
   </vuln>
 
