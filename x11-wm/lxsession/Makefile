@@ -17,6 +17,8 @@ COMMENT=	LXDE Session Manager
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
 BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man
 
+CONFLICTS=	lxsession-lite-[0-9]*
+
 USE_GNOME=	gtk20 intlhack libgnome
 
 USE_GCC=	3.3+
