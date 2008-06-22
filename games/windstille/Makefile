@@ -7,7 +7,7 @@
 
 PORTNAME=	windstille
 PORTVERSION=	0.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS CENKES
 
@@ -31,7 +31,7 @@ USE_SDL=	sdl image
 USE_BISON=	build
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/lib
+	@${RM} -rf ${WRKSRC}/lib ${WRKSRC}/data/music/*
 
 post-patch:
 	@cd ${WRKSRC}/src/ && ${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' \
