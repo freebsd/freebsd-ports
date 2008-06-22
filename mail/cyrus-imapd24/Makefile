@@ -136,6 +136,10 @@ PLIST_SUB+=	LDAP_PTLOADER="@comment "
 CONFIGURE_ARGS+=--disable-gssapi
 .endif
 
+.if ${OSVERSION} >= 800037
+BROKEN=		does not compile
+.endif
+
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
 

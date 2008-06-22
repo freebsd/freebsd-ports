@@ -138,6 +138,10 @@ EXTRA_PATCHES+=	${FILESDIR}/pass8bit.diff
 CONFIGURE_ARGS+=--disable-gssapi
 .endif
 
+.if ${OSVERSION} >= 800037
+BROKEN=		does not compile
+.endif
+
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
 
