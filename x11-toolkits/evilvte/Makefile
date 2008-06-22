@@ -24,7 +24,7 @@ MAN1=		evilvte.1 showvte.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '37,38 d' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|\(FONT_SIZE\).*$|\1 12|' ${WRKSRC}/src/config.h
+	@${REINPLACE_CMD} -e 's|\(FONT_SIZE\).*|\1 12|' ${WRKSRC}/src/config.h
 
 post-install:
 # install manual
