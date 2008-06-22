@@ -55,6 +55,10 @@ PLIST_SUB+=	ARCH=${ARCH}
 
 PLTPATCHES=	# none yet for this version
 
+.if defined(PACKAGE_BUILDING)
+IGNORE=		signal 10 in mzscheme3m during build on pointyhat
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CGC)
