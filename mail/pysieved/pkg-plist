@@ -27,7 +27,5 @@ lib/pysieved/plugins/virtual.py
 lib/pysieved/plugins/virtual.pyc
 lib/pysieved/pysieved.py
 lib/pysieved/pysieved.pyc
-lib/pysieved/test.py
-lib/pysieved/test.pyc
 @dirrm lib/pysieved/plugins
 @dirrm lib/pysieved
