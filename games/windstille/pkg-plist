@@ -227,11 +227,6 @@ bin/windstille
 %%DATADIR%%/models/vehicles/shuttle/shuttle.wsprite
 %%DATADIR%%/models/vehicles/train/texture.png
 %%DATADIR%%/models/vehicles/train/train.wsprite
-%%DATADIR%%/music/Windstille_Ralph_Weinert.ogg
-%%DATADIR%%/music/jingle.ogg
-%%DATADIR%%/music/nightfall.ogg
-%%DATADIR%%/music/silence_wip.ogg
-%%DATADIR%%/music/techdemo.ogg
 %%DATADIR%%/particlesystems/deform.particles
 %%DATADIR%%/particlesystems/fire.particles
 %%DATADIR%%/scripts/apartment/barrobot.nut
