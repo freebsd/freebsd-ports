@@ -1,12 +1,12 @@
+
 =================================================================
 
 LedgerSMB has now been installed.
 
-To enable Apache web access, add the following to your
-%%PREFIX%%/etc/apache/httpd.conf:
+To enable Apache web access, add the following to your httpd.conf:
 
   Include %%PREFIX%%/etc/ledger-smb-httpd.conf
 
 Enjoy!
-
 =================================================================
+
