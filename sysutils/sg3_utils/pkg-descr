@@ -1,0 +1,9 @@
+The sg3_utils package contains utilities that send SCSI commands to devices.
+As well as devices on transports traditionally associated with SCSI (e.g.
+Fibre Channel (FCP), Serial Attached SCSI (SAS) and the SCSI Parallel
+Interface(SPI)) many other devices use SCSI command sets. It's
+functions similar to camcontrol(8), but more powerful. For example,
+it can use SCSI Environmental Services not using FreeBSD ses(4), 
+read SCSI device logs, and much more. 
+
+WWW: http://sg.torque.net/sg/sg3_utils.html

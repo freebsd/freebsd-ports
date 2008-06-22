@@ -647,6 +647,7 @@
     SUBDIR += setquota
     SUBDIR += sfdisk
     SUBDIR += sformat
+    SUBDIR += sg3_utils
     SUBDIR += sge60
     SUBDIR += sge61
     SUBDIR += sge62
