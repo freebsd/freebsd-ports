@@ -41,6 +41,7 @@
     SUBDIR += atitvout
     SUBDIR += automounter
     SUBDIR += autopsy
+    SUBDIR += avfs
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
     SUBDIR += bacula-client-devel
