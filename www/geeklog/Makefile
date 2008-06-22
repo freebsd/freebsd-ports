@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	geeklog
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.geeklog.net/filemgmt/upload_dir/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chess@chessgriffin.com
 COMMENT=	GeekLog is a web content magagement system
 
 USE_MYSQL=	yes
