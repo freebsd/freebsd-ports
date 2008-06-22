@@ -28,4 +28,14 @@ USE_LDCONFIG=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 
+post-install:
+	@${ECHO_MSG} '********************************************************'
+	@${ECHO_MSG} 'NOTE: If you want "Shutdown" and "Restart"'
+	@${ECHO_MSG} 'menu actions to work properly, manually set SUID bit'
+	@${ECHO_MSG} 'on "${PREFIX}/bin/enlightenment_sys" executable.'
+	@${ECHO_MSG}
+	@${ECHO_MSG} 'WARNING: this program might be vulnerable so do not'
+	@${ECHO_MSG} 'set suid bit if do not trust all users of this machine.'
+	@${ECHO_MSG} '********************************************************'
+
 .include <bsd.port.mk>
