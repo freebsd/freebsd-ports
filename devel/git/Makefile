@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.5.5.4
+PORTVERSION=	1.5.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		cvsps:${PORTSDIR}/devel/cvsps-devel \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
+		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
+		${SITE_PERL}/Net/SMTP/SSL.pm:${PORTSDIR}/mail/p5-Net-SMTP-SSL
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	cogito-0.1[012] git-4.*
@@ -154,10 +155,8 @@ MAN1=		git-add.1 \
 		git-write-tree.1
 MAN3=		Git.3
 MAN5=		gitattributes.5 \
-		gitcli.5 \
 		gitignore.5 \
 		gitmodules.5
-MAN7=		git.7
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
