@@ -1,0 +1,11 @@
+--- SConstruct~	2006-12-05 13:31:42.000000000 +0100
++++ SConstruct	2008-06-22 22:40:55.050203635 +0200
+@@ -8,7 +8,7 @@
+ #######################################
+ # OPTIONS
+ #######################################
+-opts = Options(ARGUMENTS)
++opts = Options(args = ARGUMENTS)
+ # conditionally build parts of gaia
+ #opts.Add(BoolOption('gaia', 'Compile gaia OpenGL client', 1));
+ 
