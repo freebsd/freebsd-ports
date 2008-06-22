@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	tinyproxy
-PORTVERSION=	1.7.0
-PORTREVISION=	2
+PORTVERSION=	1.6.3
+PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://files.banu.com/pub/tinyproxy/1.6/
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	A small, efficient HTTP proxy server
