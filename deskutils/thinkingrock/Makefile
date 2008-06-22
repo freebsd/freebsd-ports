@@ -24,8 +24,11 @@ NO_BUILD=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/bin/tr
 	@${RM} ${WRKSRC}/install.html~
+	@${RM} ${WRKSRC}/etc/tr.conf~
 	@${RM} ${WRKSRC}/bin/tr.bak
 	@${RM} ${WRKSRC}/bin/tr.orig
+	@${RM} ${WRKSRC}/bin/tr.exe
+	@${RM} ${WRKSRC}/bin/tr_w.exe
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PORTNAME}
