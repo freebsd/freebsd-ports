@@ -1,5 +1,5 @@
---- build/gmake/Makefile.orig	Sun Jan 21 21:20:58 2007
-+++ build/gmake/Makefile	Sat Feb  3 17:35:37 2007
+--- build/gmake/Makefile.orig	2008-03-22 22:13:38.000000000 +0100
++++ build/gmake/Makefile	2008-06-21 15:52:41.000000000 +0200
 @@ -58,8 +58,8 @@
  PROJECT=tidy
  
@@ -25,9 +25,9 @@
  # For optimised builds, flags such as "-O2" should be added and -D_DEBUG=1
  # disabled.
 -CC= gcc
--CFLAGS= -g -pedantic -Wall -Wno-switch -Wno-parentheses -I $(INCDIR)
+-CFLAGS= -g -pedantic -Wall -I $(INCDIR)
 +#CC= gcc
-+CFLAGS+= -g -pedantic -Wall -Wno-switch -Wno-parentheses -I $(INCDIR) -fPIC
++CFLAGS+= -pedantic -Wall -I $(INCDIR) -fPIC
  # flags only supported with gcc 3.x
  CFLAGS += -Wunused-parameter
  
