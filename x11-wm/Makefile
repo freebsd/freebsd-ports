@@ -87,6 +87,7 @@
     SUBDIR += libdockapp
     SUBDIR += lwm
     SUBDIR += lxsession
+    SUBDIR += lxsession-lite
     SUBDIR += matchbox
     SUBDIR += metacity
     SUBDIR += mlvwm
