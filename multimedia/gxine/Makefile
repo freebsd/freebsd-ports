@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk20 gnomehier
 USE_GMAKE=	yes
+USE_GCC=	4.2+
 USE_XORG=	x11 xaw ice
 MAKE_ARGS+=	LDFLAGS=-shared-libgcc
 CNU_CONFIGURE=	yes
