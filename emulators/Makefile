@@ -18,6 +18,7 @@
     SUBDIR += cingb
     SUBDIR += cpmemu
     SUBDIR += cpmtools
+    SUBDIR += cpmtools27
     SUBDIR += cygne-sdl
     SUBDIR += darcnes
     SUBDIR += dboxfe
