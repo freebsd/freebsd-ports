@@ -6,30 +6,26 @@
 #
 
 PORTNAME=	ocamlgraph
-PORTVERSION=	0.95
-PORTREVISION=	1
+PORTVERSION=	0.99c
 CATEGORIES=	math
-MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/ocamlgraph/
+MASTER_SITES=	http://ocamlgraph.lri.fr/download/
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Graph manipulation library for OCaml
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-RUN_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
-
+USE_OCAML=	yes
+USE_OCAML_LDCONFIG=	yes
 USE_GMAKE=	yes
-
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+= --prefix=${PREFIX}
+
+PLIST_SUB+=	OCAML_LIBDIR="${OCAML_LIBDIR}"
 
 ALL_TARGET=	all
 .ifndef NOPORTDOCS
 ALL_TARGET+=	doc
-.endif
+PORTDOCS=	*
 
-.ifndef NOPORTDOCS
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} * ${DOCSDIR}
