@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	pysieved
-PORTVERSION=	20070926
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 
@@ -30,7 +31,8 @@ post-patch:
 		${WRKSRC}/pysieved.py
 
 do-build:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PREFIX}/lib/${PORTNAME} ${WRKSRC}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}
