@@ -11,7 +11,7 @@
 
 PORTNAME=	crystal
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystalforgnome
@@ -25,6 +25,9 @@ RESTRICTED=	${REASON}
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/CfG-Crystal-SVG-${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} 's|\(^Directories=.*\),,|\1,|' ${WRKSRC}/index.theme
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>
