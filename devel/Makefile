@@ -273,7 +273,6 @@
     SUBDIR += dparser
     SUBDIR += dprog
     SUBDIR += drpython
-    SUBDIR += dumb
     SUBDIR += duplo
     SUBDIR += dwarfdump
     SUBDIR += dyncall
