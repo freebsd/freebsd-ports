@@ -68,6 +68,10 @@ OPTIONS=	PAM		"Enable pam(3) support"				on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800037
+BROKEN=		does not compile
+.endif
+
 # Preserve deprecated OPENSSH_OVERWRITE_BASE settings
 .if defined(OPENSSH_OVERWRITE_BASE)
 WITH_OVERWRITE_BASE=	yes
