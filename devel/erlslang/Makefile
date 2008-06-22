@@ -32,10 +32,6 @@ CONFIGURE_WRKSRC=${WRKSRC}/config
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
 post-build:
 	@${RM} -r ${WRKSRC}/*/CVS
 	@${RM} -r ${WRKSRC}/*/.cvsignore
