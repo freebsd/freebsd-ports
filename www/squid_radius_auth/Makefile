@@ -6,18 +6,11 @@
 #
 
 PORTNAME=	squid_radius_auth
-PORTVERSION=	1.0.8
+PORTVERSION=	1.10
 CATEGORIES=	www
-MASTER_SITES=	http://www.squid-cache.org/contrib/squid_radius_auth/ \
-		http://www.exeonline.com/downloads/
-DISTNAME=	squid_radius_auth-1.08
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.squid-cache.org/contrib/squid_radius_auth/
 
-PATCH_SITES=	http://www.exeonline.com/downloads/
-PATCHFILES=	squid_radius_freebsd.diff
-PATCH_DIST_STRIP=	-p1
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@falz.net
 COMMENT=	RADIUS authenticator for squid proxy 2.5 and later
 
 MAN8=		squid_radius_auth.8
