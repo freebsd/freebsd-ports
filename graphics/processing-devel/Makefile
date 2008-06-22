@@ -27,6 +27,8 @@ post-extract:
 	${RM} -rf ${WRKSRC}/java/[A-Z]*
 	${RM} -rf ${WRKSRC}/java/lib/[a-qsu-z]*
 
+	${FIND} ${WRKSRC}/reference -type f -exec ${CHMOD} go-xw {} \;
+
 post-patch:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/processing
 	${RM} ${WRKSRC}/processing.*
