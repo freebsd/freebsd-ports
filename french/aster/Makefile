@@ -64,10 +64,6 @@ PKGMESSIN=	pkg-message.in
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		floating point exception during build
-.endif
-
 .if ${ARCH} == "i386"
 FLAGARCH=	-DP_LINUX -DLINUX
 FFLAGARCH=
