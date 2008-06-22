@@ -1,0 +1,10 @@
+Index: configure
+@@ -29280,7 +29280,7 @@
+ 
+ CPPFLAGS="$CPPFLAGS -DSYSCONFDIR=\\\"\$(sysconfdir)\\\" -DDATADIR=\\\"\$(moddir)\\\" -DPLUGINDIR=\\\"\$(plugindir)\\\""
+ #CXXFLAGS="$CXXFLAGS -Werror -Wall -W -Wpointer-arith -Wcast-qual -Wwrite-strings -Wshadow -Wcast-align -ansi -pedantic -Wbad-function-cast -Winline -Wnested-externs -Wno-format-y2k -Wno-long-long"
+-CXXFLAGS="$CXXFLAGS -Werror -Wall -W -Wpointer-arith -Wcast-align -ansi -pedantic -Wno-format-y2k -Wno-long-long -fno-strict-aliasing"
++CXXFLAGS="$CXXFLAGS -Wall -W -Wpointer-arith -Wcast-align -ansi -pedantic -Wno-format-y2k -Wno-long-long -fno-strict-aliasing"
+ 
+ 
+ { echo "$as_me:$LINENO: checking whether compiler permits casting between ptr-to-object and ptr-to-function" >&5
