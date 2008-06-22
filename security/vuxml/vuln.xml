@@ -46,8 +46,8 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>According to Maksymilian Arciemowicz research,
 	  it is possible to bypass security restrictions
-	  of safe_mode in <code>posix_access()</code> function via
-	  directory traversal vulnerability. The attacker
+	  of <code>safe_mode</code> in <code>posix_access()</code>
+	  function via directory traversal vulnerability. The attacker
 	  can use this attack to gain access to sensitive
 	  information. Other functions utilizing
 	  <code>expand_filepath()</code> may be affected.</p>
