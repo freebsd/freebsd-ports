@@ -204,12 +204,14 @@ otrs/Kernel/Language.pm
 otrs/Kernel/Language/ar_SA.pm
 otrs/Kernel/Language/bb.pm
 otrs/Kernel/Language/bg.pm
+otrs/Kernel/Language/ct.pm
 otrs/Kernel/Language/cz.pm
 otrs/Kernel/Language/da.pm
 otrs/Kernel/Language/de.pm
 otrs/Kernel/Language/el.pm
 otrs/Kernel/Language/en.pm
 otrs/Kernel/Language/es.pm
+otrs/Kernel/Language/et.pm
 otrs/Kernel/Language/fa.pm
 otrs/Kernel/Language/fi.pm
 otrs/Kernel/Language/fr.pm
@@ -223,6 +225,7 @@ otrs/Kernel/Language/pt_BR.pm
 otrs/Kernel/Language/ru.pm
 otrs/Kernel/Language/sk_SK.pm
 otrs/Kernel/Language/sv.pm
+otrs/Kernel/Language/tr.pm
 otrs/Kernel/Language/vi_VN.pm
 otrs/Kernel/Language/xx_AgentZoom.pm
 otrs/Kernel/Language/xx_Custom.pm
@@ -540,6 +543,7 @@ otrs/Kernel/System/DB/mysql.pm
 otrs/Kernel/System/DB/oracle.pm
 otrs/Kernel/System/DB/postgresql.pm
 otrs/Kernel/System/Email.pm
+otrs/Kernel/System/Email/DoNotSendEmail.pm
 otrs/Kernel/System/Email/SMTP.pm
 otrs/Kernel/System/Email/Sendmail.pm
 otrs/Kernel/System/EmailParser.pm
@@ -639,13 +643,17 @@ otrs/Kernel/cpan-lib/HTML/Safe.pm
 @dirrm otrs/Kernel/System/Ticket/IndexAccelerator
 @dirrm otrs/Kernel/System/Ticket/Event
 @dirrm otrs/Kernel/System/Ticket/CustomerPermission
+@dirrm otrs/Kernel/System/Ticket/ArticleSearchIndex
+@dirrm otrs/Kernel/System/Ticket/Acl
 @dirrm otrs/Kernel/System/Ticket
 @dirrm otrs/Kernel/System/Stats/Dynamic
 @dirrm otrs/Kernel/System/Stats/Static
 @dirrm otrs/Kernel/System/Stats
+@dirrm otrs/Kernel/System/Queue
 @dirrm otrs/Kernel/System/PostMaster/LoopProtection
 @dirrm otrs/Kernel/System/PostMaster/Filter
 @dirrm otrs/Kernel/System/PostMaster
+@dirrm otrs/Kernel/System/MailAccount
 @dirrm otrs/Kernel/System/Log
 @dirrm otrs/Kernel/System/LinkObject
 @dirrm otrs/Kernel/System/GenericAgent
