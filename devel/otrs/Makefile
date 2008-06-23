@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.7
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -62,7 +62,7 @@ DOCS_DIRS_LIST=	"" manual/en/pdf
 DOCS_FILES_LIST=	C* INSTALL RE* TODO UPGRADING
 
 SCRIPTS_DIRS_LIST=	"" database/update test tools
-CLEAN_CPAN_DIRS=	Algorithm Authen Crypt Date Email File IO Mail MIME Text XML auto
+CLEAN_CPAN_DIRS=	Algorithm Authen Crypt Date Email File IO Mail MIME Net Text XML auto
 CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* \
 		scripts/redhat* scripts/DBUpdate*
 
