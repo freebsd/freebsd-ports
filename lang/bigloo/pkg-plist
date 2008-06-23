@@ -27,6 +27,8 @@ lib/bigloo/%%BIGLOO_VERSION%%/calendar.heap
 lib/bigloo/%%BIGLOO_VERSION%%/calendar.init
 lib/bigloo/%%BIGLOO_VERSION%%/fthread.heap
 lib/bigloo/%%BIGLOO_VERSION%%/fthread.init
+lib/bigloo/%%BIGLOO_VERSION%%/gstreamer.heap
+lib/bigloo/%%BIGLOO_VERSION%%/gstreamer.init
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloo_s-%%BIGLOO_VERSION%%.a
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloo_s-%%BIGLOO_VERSION%%.so
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloo_u-%%BIGLOO_VERSION%%.a
@@ -45,10 +47,11 @@ lib/bigloo/%%BIGLOO_VERSION%%/libbigloofth_s-%%BIGLOO_VERSION%%.a
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloofth_s-%%BIGLOO_VERSION%%.so
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloofth_u-%%BIGLOO_VERSION%%.a
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloofth_u-%%BIGLOO_VERSION%%.so
-lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc-%%BIGLOO_VERSION%%.a
-lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc-%%BIGLOO_VERSION%%.so
-lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc_fth-%%BIGLOO_VERSION%%.a
-lib/bigloo/%%BIGLOO_VERSION%%/libbigloogc_fth-%%BIGLOO_VERSION%%.so
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloogstreamer_e-%%BIGLOO_VERSION%%.so
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloogstreamer_s-%%BIGLOO_VERSION%%.a
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloogstreamer_s-%%BIGLOO_VERSION%%.so
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloogstreamer_u-%%BIGLOO_VERSION%%.a
+lib/bigloo/%%BIGLOO_VERSION%%/libbigloogstreamer_u-%%BIGLOO_VERSION%%.so
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloomail_e-%%BIGLOO_VERSION%%.so
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloomail_s-%%BIGLOO_VERSION%%.a
 lib/bigloo/%%BIGLOO_VERSION%%/libbigloomail_s-%%BIGLOO_VERSION%%.so
@@ -115,8 +118,9 @@ lib/libbigloocalendar_u-%%BIGLOO_VERSION%%.so
 lib/libbigloofth_e-%%BIGLOO_VERSION%%.so
 lib/libbigloofth_s-%%BIGLOO_VERSION%%.so
 lib/libbigloofth_u-%%BIGLOO_VERSION%%.so
-lib/libbigloogc-%%BIGLOO_VERSION%%.so
-lib/libbigloogc_fth-%%BIGLOO_VERSION%%.so
+lib/libbigloogstreamer_e-%%BIGLOO_VERSION%%.so
+lib/libbigloogstreamer_s-%%BIGLOO_VERSION%%.so
+lib/libbigloogstreamer_u-%%BIGLOO_VERSION%%.so
 lib/libbigloomail_e-%%BIGLOO_VERSION%%.so
 lib/libbigloomail_s-%%BIGLOO_VERSION%%.so
 lib/libbigloomail_u-%%BIGLOO_VERSION%%.so
