@@ -8,15 +8,13 @@ PORTNAME=	taglib
 PORTVERSION=	1.3.3
 PORTREVISION=	1
 CATEGORIES=	audio python
-MASTER_SITES=	http://download.berlios.de/namingmuse/ \
-		http://download2.berlios.de/namingmuse/
+MASTER_SITES=	BERLIOS
+MASTER_SITE_SUBDIR=	namingmuse
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-taglib-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the taglib audio file tagging library
-
-BROKEN=		does not build with taglib 1.5
 
 LIB_DEPENDS=	tag.6:${PORTSDIR}/audio/taglib
 
