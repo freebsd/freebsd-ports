@@ -20,6 +20,7 @@ info/gnutls-logo.png
 info/gnutls-objects.png
 info/gnutls-x509.png
 include/gnutls/compat.h
+include/gnutls/crypto.h
 include/gnutls/extra.h
 include/gnutls/gnutls.h
 include/gnutls/openpgp.h
@@ -49,6 +50,7 @@ share/aclocal/libgnutls-extra.m4
 share/aclocal/libgnutls.m4
 %%EXAMPLESDIR%%/ex-alert.c
 %%EXAMPLESDIR%%/ex-cert-select.c
+%%EXAMPLESDIR%%/ex-client-psk.c
 %%EXAMPLESDIR%%/ex-client-resume.c
 %%EXAMPLESDIR%%/ex-client-srp.c
 %%EXAMPLESDIR%%/ex-client-tlsia.c
@@ -60,6 +62,7 @@ share/aclocal/libgnutls.m4
 %%EXAMPLESDIR%%/ex-serv-anon.c
 %%EXAMPLESDIR%%/ex-serv-export.c
 %%EXAMPLESDIR%%/ex-serv-pgp.c
+%%EXAMPLESDIR%%/ex-serv-psk.c
 %%EXAMPLESDIR%%/ex-serv-srp.c
 %%EXAMPLESDIR%%/ex-serv1.c
 %%EXAMPLESDIR%%/ex-session-info.c
@@ -73,5 +76,6 @@ share/aclocal/libgnutls.m4
 %%NLS%%share/locale/nl/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnutls.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/gnutls.mo
 @dirrm %%EXAMPLESDIR%%
 @dirrm include/gnutls
