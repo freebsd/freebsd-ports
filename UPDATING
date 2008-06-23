@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080622:
+  AFFECTS: users of devel/subversion, subversion-devel and subversion-freebsd
+           with apr from www/apache22
+  AUTHOR: Clement Laforet <clement@FreeBSD.org>
+
+  apr and apr-util bundled with apache 2.2.9 have been upgraded to 1.3.x, so
+  shared libraries' versions have been bumped. If you are using subversion
+  with apache22 apr, you must rebuild subversion after the update.
+
 20080617:
   AFFECTS: users of editors/nvi-devel
   AUTHOR: Wesley Shields <wxs@FreeBSD.org>

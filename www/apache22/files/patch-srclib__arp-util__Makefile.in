@@ -1,9 +1,9 @@
---- srclib/apr-util/Makefile.in.orig	Sun Nov 28 19:59:35 2004
-+++ srclib/apr-util/Makefile.in	Wed Feb 23 11:26:13 2005
-@@ -54,12 +54,11 @@
+--- srclib/apr-util/Makefile.in.orig	2008-05-23 00:37:47.000000000 +0200
++++ srclib/apr-util/Makefile.in	2008-06-12 16:33:33.000000000 +0200
+@@ -69,12 +69,11 @@
  	sed 's,^\(location=\).*$$,\1installed,' < $(APU_CONFIG) > $@
  
- install: $(TARGET_LIB) apu-config.out
+ install: $(TARGETS) install-modules
 -	$(APR_MKDIR) $(DESTDIR)$(includedir) $(DESTDIR)$(libdir)/pkgconfig \
 +	$(APR_MKDIR) $(DESTDIR)$(includedir) \
  		     $(DESTDIR)$(libdir) $(DESTDIR)$(bindir)
