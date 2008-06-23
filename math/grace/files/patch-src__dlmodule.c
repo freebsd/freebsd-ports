@@ -1,5 +1,5 @@
---- src/dlmodule.c.orig  3 Jul 2004 20:47:45 -0000
-+++ src/dlmodule.c      27 Oct 2005 11:08:30 -0000
+--- src/dlmodule.c.orig	2005-11-13 07:45:16.000000000 +0900
++++ src/dlmodule.c	2008-06-16 15:28:33.000000000 +0900
 @@ -89,6 +89,9 @@
          return RETURN_FAILURE;
      }
@@ -8,5 +8,5 @@
 +    dlerror();
 +
      newkey.data = dlsym(handle, dl_function);
-     if ((error = (char *) dlerror()) != NULL) {
+     if (!newkey.data && (error = dlerror()) != NULL) {
          errmsg(error);
