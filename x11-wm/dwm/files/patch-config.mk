@@ -1,6 +1,6 @@
---- config.mk.orig	2008-04-03 22:57:01.000000000 +0200
-+++ config.mk	2008-04-04 12:05:19.000000000 +0200
-@@ -4,19 +4,19 @@
+--- config.mk.orig	2008-06-18 23:08:29.000000000 +0200
++++ config.mk	2008-06-20 10:39:37.000000000 +0200
+@@ -4,11 +4,11 @@
  # Customize below to fit your system
  
  # paths
@@ -14,21 +14,18 @@
 +X11INC = $(LOCALBASE)/include
 +X11LIB = $(LOCALBASE)/lib
  
- # includes and libs
- INCS = -I. -I/usr/include -I${X11INC}
- LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
+ # Xinerama, comment if you don't want it
+ XINERAMALIBS = -L${X11LIB} -lXinerama
+@@ -19,9 +19,9 @@
+ LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS}
  
  # flags
--CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
+-CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+-CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 -LDFLAGS = -s ${LIBS}
-+CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
++CPPFLAGS+= -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
++CFLAGS+= ${INCS} ${CPPFLAGS}
 +LDFLAGS+= ${LIBS}
- #CFLAGS = -g -std=c99 -pedantic -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
- #LDFLAGS = -g ${LIBS}
  
-@@ -25,4 +25,4 @@
- #LDFLAGS = ${LIBS}
- 
- # compiler and linker
--CC = cc
-+CC?= cc
+ # Solaris
+ #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
