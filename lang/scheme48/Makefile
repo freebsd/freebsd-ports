@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scheme48
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.s48.org/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
@@ -14,9 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	The Scheme Underground's implementation of R5RS
 
-CONFLICTS=	scsh-*
+USE_GMAKE=	yes
 
-ONLY_FOR_ARCHS=	i386
+CONFLICTS=	scsh-*
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	enough
