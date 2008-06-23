@@ -25,6 +25,9 @@ DOCSDIR=	${PREFIX}/share/doc/ghc6
 PORTDOCS=	*
 
 do-install:
+.if defined(NOPORTDOCS)
+	@${ECHO} NOPORTDOCS set, nothing to do!
+.else
 	@${MKDIR} ${DOCSDIR}
 .for FILE in Cabal.ps.gz users_guide.ps.gz index.html
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
@@ -37,5 +40,6 @@ do-install:
 .endfor
 	@${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 	@${FIND} ${DOCSDIR}/ -type f -exec ${CHOWN} ${SHAREOWN}:${SHAREGRP} {} \;
+.endif
 
 .include <bsd.port.mk>
