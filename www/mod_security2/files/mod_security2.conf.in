@@ -1,3 +1,0 @@
-<IfModule security2_module>
-    Include %%APACHEETCDIR%%/Includes/mod_security2/*.conf
-</IfModule>
