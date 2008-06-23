@@ -48,6 +48,9 @@ share/libexec/quilt/top
 share/libexec/quilt/unapplied
 share/libexec/quilt/upgrade
 share/libexec/quilt/wrapper/patch
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.MAIL
+%%PORTDOCS%%%%DOCSDIR%%/quilt.pdf
 %%NLS%%share/locale/de/LC_MESSAGES/quilt.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/quilt.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/quilt.mo
@@ -57,3 +60,4 @@ share/libexec/quilt/wrapper/patch
 @dirrm share/libexec/quilt
 @dirrm share/libexec
 @dirrm etc/bash_completion.d
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
