@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grace
-PORTVERSION=	5.1.21
-PORTREVISION=	1
+PORTVERSION=	5.1.22
 CATEGORIES=	math print
 #
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
@@ -20,37 +19,71 @@ MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful plotting tool (successor of xmgr)
 
-LIB_DEPENDS=	Xbae:${PORTSDIR}/x11-toolkits/xbae 	\
-		netcdf.4:${PORTSDIR}/science/netcdf	\
-		fftw.2:${PORTSDIR}/math/fftw		\
-		tiff.4:${PORTSDIR}/graphics/tiff	\
+LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib		\
 		jpeg.9:${PORTSDIR}/graphics/jpeg	\
 		png.5:${PORTSDIR}/graphics/png		\
-		t1:${PORTSDIR}/devel/t1lib		\
-		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml\
-		pdf.8:${PORTSDIR}/print/pdflib
+		tiff.4:${PORTSDIR}/graphics/tiff	\
+		fftw.2:${PORTSDIR}/math/fftw		\
+		pdf.8:${PORTSDIR}/print/pdflib		\
+		netcdf.4:${PORTSDIR}/science/netcdf	\
+		Xbae.4:${PORTSDIR}/x11-toolkits/xbae	\
+		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml
 
-MAN1=		convcal.1 grace.1 xmgrace.1 gracebat.1 grconvert.1
-
-USE_GMAKE=	YES
-USE_MOTIF=	YES
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	\
-	--with-extra-incpath=${LOCALBASE}/include/X11:${LOCALBASE}/include \
-	--with-extra-ldpath=${LOCALBASE}/lib --without-bundled_xbae \
-	--enable-grace-home=${DATADIR}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget
+USE_MOTIF=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-grace-home=${DATADIR} \
+		--with-extra-incpath=${LOCALBASE}/include \
+		--with-extra-ldpath=${LOCALBASE}/lib \
+		--without-bundled-xbae
 ALL_TARGET=	# empty
-INSTALL_TARGET=	install links
 
-pre-configure:
-	@${REINPLACE_CMD} -e "s%-lXm %${MOTIFLIB} %" ${WRKSRC}/configure
+MAN1=		convcal.1 grace.1 grconvert.1
+MLINKS=		grace.1 gracebat.1 \
+		grace.1 xmgrace.1
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/xmgrace ${PREFIX}/bin
+	@${LN} -sf xmgrace ${PREFIX}/bin/grace
+	@${LN} -sf xmgrace ${PREFIX}/bin/gracebat
+	${INSTALL_PROGRAM} ${WRKSRC}/auxiliary/convcal ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/grconvert/grconvert ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/auxiliary/fdf2fit ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/grace_np/grace_np.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/grace_np/libgrace_np.a ${PREFIX}/lib
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gracerc ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gracerc.user ${DATADIR}
+	@${MKDIR} ${DATADIR}/auxiliary
+	${INSTALL_DATA} ${WRKSRC}/auxiliary/README ${DATADIR}/auxiliary
+	${INSTALL_DATA} ${WRKSRC}/auxiliary/convcal.c ${DATADIR}/auxiliary
+	${INSTALL_DATA} ${WRKSRC}/auxiliary/magic.grace ${DATADIR}/auxiliary
+	@${MKDIR} ${DATADIR}/fonts
+	${INSTALL_DATA} ${WRKSRC}/fonts/FontDataBase ${DATADIR}/fonts
+	@${MKDIR} ${DATADIR}/fonts/enc
+	${INSTALL_DATA} ${WRKSRC}/fonts/enc/*.enc ${DATADIR}/fonts/enc
+	@${MKDIR} ${DATADIR}/fonts/type1
+	${INSTALL_DATA} ${WRKSRC}/fonts/type1/*.afm ${DATADIR}/fonts/type1
+	${INSTALL_DATA} ${WRKSRC}/fonts/type1/*.pfb ${DATADIR}/fonts/type1
+	@${MKDIR} ${DATADIR}/templates
+	${INSTALL_DATA} ${WRKSRC}/templates/*.agr ${DATADIR}/templates
 .if !defined(NOPORTDOCS)
-	if [ ! -e ${DOCSDIR} ]; then \
-	    ${LN} -s ${DATADIR}/doc ${DOCSDIR}; \
-	fi
+	@${MKDIR} ${DOCSDIR}
+	@${TAR} -C ${WRKSRC}/doc --exclude "*Makefile*" --exclude "*.1" \
+		-cf - . | ${TAR} -C ${DOCSDIR} --unlink -xf -
+	@${FIND} ${DOCSDIR} -exec ${CHOWN} ${SHAREOWN}:${SHAREGRP} {} \;
+	@${FIND} ${DOCSDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	@${LN} -sf ${DOCSDIR} ${DATADIR}/doc
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" \
+		-cf - . | ${TAR} -C ${EXAMPLESDIR} --unlink -xf -
+	@${FIND} ${EXAMPLESDIR} -exec ${CHOWN} ${SHAREOWN}:${SHAREGRP} {} \;
+	@${FIND} ${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	@${LN} -sf ${EXAMPLESDIR} ${DATADIR}/examples
 .endif
 
 .include <bsd.port.mk>

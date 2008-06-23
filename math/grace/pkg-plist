@@ -1,98 +1,96 @@
+bin/convcal
+bin/fdf2fit
 bin/grace
 bin/gracebat
+bin/grconvert
 bin/xmgrace
 include/grace_np.h
+lib/libgrace_np.a
+%%PORTDOCS%%%%DOCSDIR%%/10.1.dat
+%%PORTDOCS%%%%DOCSDIR%%/10a.dat
+%%PORTDOCS%%%%DOCSDIR%%/10b.dat
+%%PORTDOCS%%%%DOCSDIR%%/10c.dat
+%%PORTDOCS%%%%DOCSDIR%%/2.1.dat
+%%PORTDOCS%%%%DOCSDIR%%/3.dat
+%%PORTDOCS%%%%DOCSDIR%%/7.1.2.agr
+%%PORTDOCS%%%%DOCSDIR%%/7.1.3.agr
+%%PORTDOCS%%%%DOCSDIR%%/8.2.dat
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.dvi
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.sgml
+%%PORTDOCS%%%%DOCSDIR%%/GPL.html
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial.dvi
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial.sgml
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.dvi
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.html
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.sgml
+%%PORTDOCS%%%%DOCSDIR%%/mygraph.png
+%%PORTDOCS%%%%DOCSDIR%%/nohelp.html
+%%PORTDOCS%%%%DOCSDIR%%/philosophical-gnu-sm.jpg
+%%PORTDOCS%%%%DOCSDIR%%/shiftdata.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/altaxis.par
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/arrows.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/au.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/axes.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bar.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/boxplot.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/brw.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chartebar.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/charts.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/co2.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/co2.par
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dotest
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/explain.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fills.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphs.par
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hilo.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/log.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/log2.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/log2log.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logistic.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logistic.fit
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logit.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/logtest.par
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/manygraphs.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mlo.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/motif.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pie.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polar.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/props.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reciprocal.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/regions.par
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spectrum.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stackedb.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/symslines.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/terr.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.com
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test1.par
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tfonts.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tforms.par
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/times.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tinset.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tlog.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tmc.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tstack.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/txttrans.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/txyr.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/typeset.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vmap.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xycolor.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xysize.agr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xyz.agr
 %%DATADIR%%/auxiliary/README
 %%DATADIR%%/auxiliary/convcal.c
 %%DATADIR%%/auxiliary/magic.grace
-%%DATADIR%%/bin/convcal
-%%DATADIR%%/bin/fdf2fit
-%%DATADIR%%/bin/gracebat
-%%DATADIR%%/bin/grconvert
-%%DATADIR%%/bin/xmgrace
-%%DATADIR%%/doc/10.1.dat
-%%DATADIR%%/doc/10a.dat
-%%DATADIR%%/doc/10b.dat
-%%DATADIR%%/doc/10c.dat
-%%DATADIR%%/doc/2.1.dat
-%%DATADIR%%/doc/3.dat
-%%DATADIR%%/doc/7.1.2.agr
-%%DATADIR%%/doc/7.1.3.agr
-%%DATADIR%%/doc/8.2.dat
-%%DATADIR%%/doc/CHANGES.html
-%%DATADIR%%/doc/FAQ.dvi
-%%DATADIR%%/doc/FAQ.html
-%%DATADIR%%/doc/GPL.html
-%%DATADIR%%/doc/Tutorial.dvi
-%%DATADIR%%/doc/Tutorial.html
-%%DATADIR%%/doc/UsersGuide.dvi
-%%DATADIR%%/doc/UsersGuide.html
-%%DATADIR%%/doc/convcal.1
-%%DATADIR%%/doc/grace.1
-%%DATADIR%%/doc/gracebat.1
-%%DATADIR%%/doc/grconvert.1
-%%DATADIR%%/doc/mygraph.png
-%%DATADIR%%/doc/nohelp.html
-%%DATADIR%%/doc/philosophical-gnu-sm.jpg
-%%DATADIR%%/doc/shiftdata.sh
-%%DATADIR%%/doc/xmgrace.1
-%%DATADIR%%/examples/altaxis.par
-%%DATADIR%%/examples/arrows.agr
-%%DATADIR%%/examples/au.agr
-%%DATADIR%%/examples/axes.agr
-%%DATADIR%%/examples/bar.agr
-%%DATADIR%%/examples/boxplot.agr
-%%DATADIR%%/examples/brw.dat
-%%DATADIR%%/examples/chartebar.agr
-%%DATADIR%%/examples/charts.agr
-%%DATADIR%%/examples/co2.agr
-%%DATADIR%%/examples/co2.par
-%%DATADIR%%/examples/dotest
-%%DATADIR%%/examples/explain.agr
-%%DATADIR%%/examples/fills.agr
-%%DATADIR%%/examples/graphs.par
-%%DATADIR%%/examples/hilo.agr
-%%DATADIR%%/examples/log.dat
-%%DATADIR%%/examples/log2.agr
-%%DATADIR%%/examples/log2log.agr
-%%DATADIR%%/examples/logistic.agr
-%%DATADIR%%/examples/logistic.fit
-%%DATADIR%%/examples/logit.agr
-%%DATADIR%%/examples/logtest.par
-%%DATADIR%%/examples/manygraphs.agr
-%%DATADIR%%/examples/mlo.dat
-%%DATADIR%%/examples/motif.agr
-%%DATADIR%%/examples/pie.agr
-%%DATADIR%%/examples/polar.agr
-%%DATADIR%%/examples/props.agr
-%%DATADIR%%/examples/reciprocal.agr
-%%DATADIR%%/examples/regions.par
-%%DATADIR%%/examples/spectrum.agr
-%%DATADIR%%/examples/stackedb.agr
-%%DATADIR%%/examples/symslines.agr
-%%DATADIR%%/examples/terr.agr
-%%DATADIR%%/examples/test.com
-%%DATADIR%%/examples/test.dat
-%%DATADIR%%/examples/test1.par
-%%DATADIR%%/examples/test2.agr
-%%DATADIR%%/examples/tfonts.agr
-%%DATADIR%%/examples/tforms.par
-%%DATADIR%%/examples/times.agr
-%%DATADIR%%/examples/tinset.agr
-%%DATADIR%%/examples/tlog.agr
-%%DATADIR%%/examples/tmc.c
-%%DATADIR%%/examples/tstack.agr
-%%DATADIR%%/examples/txttrans.agr
-%%DATADIR%%/examples/txyr.agr
-%%DATADIR%%/examples/typeset.agr
-%%DATADIR%%/examples/vmap.agr
-%%DATADIR%%/examples/xycolor.agr
-%%DATADIR%%/examples/xysize.agr
-%%DATADIR%%/examples/xyz.agr
 %%DATADIR%%/fonts/FontDataBase
 %%DATADIR%%/fonts/enc/CP1251.enc
 %%DATADIR%%/fonts/enc/IsoLatin1.enc
 %%DATADIR%%/fonts/enc/IsoLatin2.enc
+%%DATADIR%%/fonts/enc/IsoLatin5.enc
 %%DATADIR%%/fonts/enc/IsoLatin7.enc
 %%DATADIR%%/fonts/enc/IsoLatin9.enc
 %%DATADIR%%/fonts/enc/KOI8-R.enc
@@ -131,19 +129,14 @@ include/grace_np.h
 %%DATADIR%%/fonts/type1/s050000l.pfb
 %%DATADIR%%/gracerc
 %%DATADIR%%/gracerc.user
-%%DATADIR%%/include/grace_np.h
-%%DATADIR%%/lib/libgrace_np.a
 %%DATADIR%%/templates/Default.agr
-lib/libgrace_np.a
-@dirrm %%DATADIR%%/auxiliary
-@dirrm %%DATADIR%%/bin
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/fonts/enc
-@dirrm %%DATADIR%%/fonts/type1
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/fonts/type1
+@dirrm %%DATADIR%%/fonts/enc
+@dirrm %%DATADIR%%/fonts
+%%PORTEXAMPLES%%@dirrm %%DATADIR%%/examples
+%%PORTDOCS%%@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/auxiliary
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
