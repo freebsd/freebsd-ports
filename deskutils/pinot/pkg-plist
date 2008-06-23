@@ -45,7 +45,6 @@ share/locale/zh_CN/LC_MESSAGES/pinot.mo
 share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/AmazonAPI.src
 %%DATADIR%%/engines/A9.src
-%%DATADIR%%/engines/Accoona.src
 %%DATADIR%%/engines/BitTorrent.src
 %%DATADIR%%/engines/Clusty.src
 %%DATADIR%%/engines/CreativeCommons.src
