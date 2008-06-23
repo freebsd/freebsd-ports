@@ -1306,8 +1306,6 @@ MASTER_SITE_SUSE+= 	\
 	http://ftp.isu.edu.tw/pub/Linux/SuSE/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/ftp.suse.com/pub/suse/%SUBDIR%/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.suse.com/%SUBDIR%/ \
-	http://download.mirror.ac.uk/sites/ftp.suse.com/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://ftp.suse.com/pub/suse/%SUBDIR%/ \
 	ftp://ftp.softnet.tuc.gr/pub/linux/suse/suse/%SUBDIR%/ \
