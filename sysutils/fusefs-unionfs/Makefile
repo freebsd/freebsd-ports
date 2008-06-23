@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unionfs
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	sysutils
 MASTER_SITES=	http://podgorny.cz/unionfs-fuse/releases/
 PKGNAMEPREFIX=	fusefs-
