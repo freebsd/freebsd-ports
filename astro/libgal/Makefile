@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgal
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	astro hamradio
 MASTER_SITES=	http://homepage.mac.com/pclwillmott/GAL/ \
 		${MASTER_SITE_LOCAL}
@@ -19,6 +19,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX} --enable-shared=yes
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	yes
 
 .include <bsd.port.mk>
