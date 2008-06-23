@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	javamail
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.4.1
 CATEGORIES=	java mail
 MASTER_SITES=	#
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
@@ -24,7 +23,7 @@ JAVA_VERSION=	1.4+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 NO_CDROM=	See the license
-DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=javamail-1.4-oth-JPR&SiteId=JSC&TransactionId=noreg
+DOWNLOAD_URL=	https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=javamail-1.4.1-oth-JPR@CDS-CDS_Developer
 
 .if !defined(NOPORTDOCS)
 DOCFILES1=	JavaMail-1.1-changes.txt JavaMail-1.2-changes.txt \
