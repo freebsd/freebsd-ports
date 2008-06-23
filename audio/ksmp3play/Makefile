@@ -7,17 +7,18 @@
 #
 
 PORTNAME=	ksmp3play
-PORTVERSION=	0.5.1
-PORTREVISION=	5
+PORTVERSION=	0.5.2.1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=ksmp3play
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An curses-based MP3 player
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
+NO_WRKSUBDIR=	yes
+
+USE_GNOME=	gnomehack gnometarget
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -26,9 +27,6 @@ MAN1=		ksmp3play.1
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
