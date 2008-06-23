@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Harness
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ MAN3=		App::Prove.3 \
 		TAP::Formatter::Console::ParallelSession.3 \
 		TAP::Formatter::Console::Session.3 \
 		TAP::Harness.3 \
+		TAP::Object.3 \
 		TAP::Parser.3 \
 		TAP::Parser::Aggregator.3 \
 		TAP::Parser::Grammar.3 \
@@ -32,6 +33,7 @@ MAN3=		App::Prove.3 \
 		TAP::Parser::Iterator::Array.3 \
 		TAP::Parser::Iterator::Process.3 \
 		TAP::Parser::Iterator::Stream.3 \
+		TAP::Parser::IteratorFactory.3 \
 		TAP::Parser::Multiplexer.3 \
 		TAP::Parser::Result.3 \
 		TAP::Parser::Result::Bailout.3 \
@@ -42,6 +44,7 @@ MAN3=		App::Prove.3 \
 		TAP::Parser::Result::Unknown.3 \
 		TAP::Parser::Result::Version.3 \
 		TAP::Parser::Result::YAML.3 \
+		TAP::Parser::ResultFactory.3 \
 		TAP::Parser::Scheduler.3 \
 		TAP::Parser::Scheduler::Job.3 \
 		TAP::Parser::Scheduler::Spinner.3 \

@@ -8,6 +8,7 @@
 %%SITE_PERL%%/TAP/Formatter/Console/ParallelSession.pm
 %%SITE_PERL%%/TAP/Formatter/Console/Session.pm
 %%SITE_PERL%%/TAP/Harness.pm
+%%SITE_PERL%%/TAP/Object.pm
 %%SITE_PERL%%/TAP/Parser.pm
 %%SITE_PERL%%/TAP/Parser/Aggregator.pm
 %%SITE_PERL%%/TAP/Parser/Grammar.pm
@@ -15,6 +16,7 @@
 %%SITE_PERL%%/TAP/Parser/Iterator/Array.pm
 %%SITE_PERL%%/TAP/Parser/Iterator/Process.pm
 %%SITE_PERL%%/TAP/Parser/Iterator/Stream.pm
+%%SITE_PERL%%/TAP/Parser/IteratorFactory.pm
 %%SITE_PERL%%/TAP/Parser/Multiplexer.pm
 %%SITE_PERL%%/TAP/Parser/Result.pm
 %%SITE_PERL%%/TAP/Parser/Result/Bailout.pm
@@ -25,6 +27,7 @@
 %%SITE_PERL%%/TAP/Parser/Result/Unknown.pm
 %%SITE_PERL%%/TAP/Parser/Result/Version.pm
 %%SITE_PERL%%/TAP/Parser/Result/YAML.pm
+%%SITE_PERL%%/TAP/Parser/ResultFactory.pm
 %%SITE_PERL%%/TAP/Parser/Scheduler.pm
 %%SITE_PERL%%/TAP/Parser/Scheduler/Job.pm
 %%SITE_PERL%%/TAP/Parser/Scheduler/Spinner.pm
