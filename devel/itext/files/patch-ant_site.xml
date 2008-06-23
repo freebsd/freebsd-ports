@@ -1,0 +1,10 @@
+--- ant/site.xml.orig	2008-06-23 07:52:55.000000000 +0200
++++ ant/site.xml	2008-06-23 07:53:07.000000000 +0200
+@@ -16,7 +16,6 @@
+ 	    <pathelement path="${itext.lib}/bcmail-${bc.jdk}-${bc.version}.jar"/>
+ 	    <pathelement path="${itext.lib}/bcprov-${bc.jdk}-${bc.version}.jar"/>
+ 	    <pathelement path="${itext.lib}/dom4j-1.6.1.jar"/>
+-	    <pathelement path="${itext.lib}/pdf-renderer.jar"/>
+ 	</path>
+ 	
+     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
