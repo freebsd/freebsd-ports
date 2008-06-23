@@ -1,6 +1,6 @@
 --- libcdplay.c.orig	2003-04-10 19:19:44.000000000 +0200
-+++ libcdplay.c	2008-06-20 22:38:39.000000000 +0200
-@@ -1,484 +1,179 @@
++++ libcdplay.c	2008-06-24 01:07:56.000000000 +0200
+@@ -1,484 +1,186 @@
 -/* $Revision: 1.4 $ */
 -/*
 - * This is libcdplay, a Linux-specific CD-ROM playing library. 
@@ -505,14 +505,28 @@
 +{
 +    return (info.disc_track[trknum-1].track_length.frames);
 +}
- 
--char *cd_discid(void) {
--  return discid;
++
 +int
 +cd_disc_length(void)
 +{
 +    return (info.disc_length.minutes * 60 +
 +	    info.disc_length.seconds);
++}
++
++int
++cd_track_length(u_char trknum)
++{
++    return (info.disc_track[trknum-1].track_length.minutes * 60 +
++	    info.disc_track[trknum-1].track_length.seconds);
++}
+ 
+-char *cd_discid(void) {
+-  return discid;
++int
++cd_track_time(void)
++{
++    cd_poll(cd_desc, &status);
++    return (status.status_track_time.minutes * 60 + status.status_track_time.seconds);
  }
  
 -static void int_cd_discid (void) {
@@ -568,20 +582,13 @@
 -    fprintf (stderr, "cd_discid returning %s\n", discid);
 -  #endif
 +int
-+cd_track_length(u_char trknum)
++cd_data_track(u_char trknum)
 +{
-+    return (info.disc_track[trknum-1].track_length.minutes * 60 +
-+	    info.disc_track[trknum-1].track_length.seconds);
++    return (info.disc_track[trknum-1].track_type == CDAUDIO_TRACK_DATA);
  }
  
 -/* there used to be more stuff here, but it's been more-or-less
 -   subsumed by the musicbrainz crapulence. */
-+int
-+cd_data_track(u_char trknum)
-+{
-+    return (info.disc_track[trknum-1].track_type == CDAUDIO_TRACK_DATA);
-+}
-+
 +u_char
 +cd_first_track(void)
 +{
@@ -593,7 +600,9 @@
 +{
 +    return (info.disc_total_tracks);
 +}
-+
+ 
+-/* char *cd_discid(void); */
+-/* char *cd_subid(void);  */
 +int
 +cd_active(void)
 +{
@@ -627,9 +636,7 @@
 +    snprintf(disc_id, sizeof(disc_id), "%0x", cddb_discid(cd_desc));
 +    return (disc_id);
 +}
- 
--/* char *cd_discid(void); */
--/* char *cd_subid(void);  */
++
 +void
 +dcd_stop(void)
 +{
