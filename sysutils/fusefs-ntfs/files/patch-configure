@@ -1,6 +1,15 @@
---- configure.orig	Mon Jan 28 16:08:03 2008
-+++ configure	Fri Feb  8 18:29:13 2008
-@@ -19836,7 +19836,7 @@
+--- configure.orig	2008-05-28 16:07:58.000000000 -0300
++++ configure	2008-06-23 17:39:29.000000000 -0300
+@@ -2671,7 +2671,7 @@
+ else
+ 
+ 		case "${target_os}" in
+-			linux*) enable_mount_helper="yes" ;;
++			linux*|freebsd*) enable_mount_helper="yes" ;;
+ 			*) enable_mount_helper="no" ;;
+ 		esac
+ 
+@@ -19822,7 +19822,7 @@
  fi
  
  	;;
@@ -9,7 +18,7 @@
  	with_fuse="external"
  	;;
  freebsd*)
-@@ -23293,7 +23293,7 @@
+@@ -23285,7 +23285,7 @@
  fi
  
  # Settings
