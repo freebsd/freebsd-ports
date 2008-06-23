@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	sysutils www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lam
+MASTER_SITES=	SF/lam
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
 MAINTAINER=	basil@vpm.net.ua
@@ -28,24 +26,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 WWW_ROOT?=	www/lam
 PKGINSTALL=	${WRKDIR}/pkg-install
 PLIST_SUB+=	WWWROOT=${WWW_ROOT}
-WWW_DATA=	index.html config graphics help lib sess style templates tmp
-WWW_LOCALE=	locale
+WWW_DATA=	index.html VERSION config graphics help lib locale sess style templates tmp
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-FLAG_NLS=	true
-.endif
-
-MYPORTDOCS=	COPYING HISTORY INSTALL README TODO copyright \
-	docs/README.Kolab.txt docs/README.fpdf.htm \
-	docs/README.hosts.txt docs/README.lamdaemon.txt \
-	docs/README.openldap.txt docs/README.schema.txt \
-	docs/README.security.txt docs/README.upgrade.txt
+MYPORTDOCS=	COPYING HISTORY INSTALL README copyright \
+		docs/README.Kolab.txt docs/README.fpdf.htm \
+		docs/README.hosts.txt docs/README.lamdaemon.txt \
+		docs/README.openldap.txt docs/README.schema.txt \
+		docs/README.security.txt docs/README.upgrade.txt
 
 LAM_SCRIPTS=	lib/lamdaemon.pl
 HTMLPORTDOCS=	docs/devel
@@ -61,10 +50,6 @@ do-install:
 	cd ${WRKSRC} && ${TAR} cf - ${MYPORTDOCS} | ${TAR} xf - -C ${DOCSDIR}
 	@${MKDIR} ${PREFIX}/${WWW_ROOT}/html
 	cd ${WRKSRC} && ${TAR} -C ${HTMLPORTDOCS} -cf - . | ${TAR} xf - -C ${PREFIX}/${WWW_ROOT}/html
-.endif
-
-.if defined(FLAG_NLS)
-	cd ${WRKSRC} && ${TAR} cf - ${WWW_LOCALE} | ${TAR} xf - -C ${PREFIX}/${WWW_ROOT}
 .endif
 
 	@${MKDIR} ${PREFIX}/${WWW_ROOT}/tmp
