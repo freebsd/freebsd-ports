@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mod_security2
+PORTNAME=	mod_security21
 PORTVERSION=	2.1.7
-PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
-DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
+DISTNAME=	${PORTNAME:S/_//:S/21//}-apache_${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
