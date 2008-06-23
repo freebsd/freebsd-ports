@@ -11,6 +11,7 @@ bin/wnDepths.pl
 bin/wordVectors.pl
 %%SITE_PERL%%/WordNet/Similarity.pm
 %%SITE_PERL%%/WordNet/Similarity/DepthFinder.pm
+%%SITE_PERL%%/WordNet/Similarity/FrequencyCounter.pm
 %%SITE_PERL%%/WordNet/Similarity/GlossFinder.pm
 %%SITE_PERL%%/WordNet/Similarity/ICFinder.pm
 %%SITE_PERL%%/WordNet/Similarity/PathFinder.pm
