@@ -64,7 +64,7 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 .include <bsd.port.pre.mk>
 .if exists(${LOCALBASE}/include/apr-1/apr.h)
 
-APR_l=		${LOCALBASE}/include/apr-1/apr.h
+APR_H=		${LOCALBASE}/include/apr-1/apr.h
 .elif exists(${LOCALBASE}/include/apr/apr.h)
 APR_H=		${LOCALBASE}/include/apr/apr.h
 .endif
