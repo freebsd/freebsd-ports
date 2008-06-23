@@ -20,7 +20,9 @@ include/gretl/genmain.h
 include/gretl/graphing.h
 include/gretl/gretl_commands.h
 include/gretl/gretl_errors.h
+include/gretl/gretl_f2c.h
 include/gretl/gretl_fft.h
+include/gretl/gretl_foreign.h
 include/gretl/gretl_func.h
 include/gretl/gretl_intl.h
 include/gretl/gretl_list.h
@@ -75,6 +77,7 @@ lib/gretl-gtk2/arma.so
 lib/gretl-gtk2/arma_x12.a
 lib/gretl-gtk2/arma_x12.la
 lib/gretl-gtk2/arma_x12.so
+lib/gretl-gtk2/data/dwdata.gz
 lib/gretl-gtk2/data/urcdata.gz
 lib/gretl-gtk2/eviews_import.a
 lib/gretl-gtk2/eviews_import.la
@@ -136,6 +139,9 @@ lib/gretl-gtk2/poisson.so
 lib/gretl-gtk2/progress_bar.a
 lib/gretl-gtk2/progress_bar.la
 lib/gretl-gtk2/progress_bar.so
+lib/gretl-gtk2/quantreg.a
+lib/gretl-gtk2/quantreg.la
+lib/gretl-gtk2/quantreg.so
 lib/gretl-gtk2/range-mean.a
 lib/gretl-gtk2/range-mean.la
 lib/gretl-gtk2/range-mean.so
@@ -285,10 +291,12 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/b-g.gdt
 %%DATADIR%%/data/misc/bjg.gdt
 %%DATADIR%%/data/misc/broiler.gdt
+%%DATADIR%%/data/misc/credscore.gdt
 %%DATADIR%%/data/misc/denmark.gdt
 %%DATADIR%%/data/misc/descriptions
 %%DATADIR%%/data/misc/djclose.gdt
 %%DATADIR%%/data/misc/ects_nls.gdt
+%%DATADIR%%/data/misc/engel.gdt
 %%DATADIR%%/data/misc/hall.gdt
 %%DATADIR%%/data/misc/hamilton.gdt
 %%DATADIR%%/data/misc/hendry_jae.gdt
@@ -342,6 +350,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/gretlgui.hlp
 %%DATADIR%%/gretlgui.hlp.es
 %%DATADIR%%/gretlgui.hlp.it
+%%NOGNOME:%%%%DATADIR%%/gtksourceview/R.lang
 %%NOGNOME:%%%%DATADIR%%/gtksourceview/gnuplot.lang
 %%NOGNOME:%%%%DATADIR%%/gtksourceview/gretl.lang
 %%DATADIR%%/helpfigs/Gamma.png
@@ -393,11 +402,13 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/bjg.inp
 %%DATADIR%%/scripts/misc/camtriv.inp
 %%DATADIR%%/scripts/misc/convolve.inp
+%%DATADIR%%/scripts/misc/credscore.inp
 %%DATADIR%%/scripts/misc/denmark.inp
 %%DATADIR%%/scripts/misc/ects_nls.inp
 %%DATADIR%%/scripts/misc/garch.inp
 %%DATADIR%%/scripts/misc/hall_cbapm.inp
 %%DATADIR%%/scripts/misc/hamilton.inp
+%%DATADIR%%/scripts/misc/heckit.inp
 %%DATADIR%%/scripts/misc/jgm-1996.inp
 %%DATADIR%%/scripts/misc/keane.inp
 %%DATADIR%%/scripts/misc/klein.inp
@@ -405,6 +416,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/leverage.inp
 %%DATADIR%%/scripts/misc/longley.inp
 %%DATADIR%%/scripts/misc/mrw.inp
+%%DATADIR%%/scripts/misc/mrw_qr.inp
 %%DATADIR%%/scripts/misc/ooballot.inp
 %%DATADIR%%/scripts/misc/oprobit.inp
 %%DATADIR%%/scripts/misc/penngrow.inp
@@ -491,8 +503,8 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/ps_descriptions
 %%DATADIR%%/scripts/testinp
 %%DATADIR%%/scripts/wg_ps_descriptions
-%%GNOME:%%share/gtksourceview-1.0/language-specs/gnuplot.lang
-%%GNOME:%%share/gtksourceview-1.0/language-specs/gretl.lang
+%%GNOME:%%share/gtksourceview-2.0/language-specs/gnuplot.lang
+%%GNOME:%%share/gtksourceview-2.0/language-specs/gretl.lang
 share/locale/de/LC_MESSAGES/gretl.mo
 share/locale/es/LC_MESSAGES/gretl.mo
 share/locale/eu/LC_MESSAGES/gretl.mo

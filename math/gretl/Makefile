@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTVERSION=	1.7.5
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -47,7 +46,7 @@ BROKEN=		math/lapack appears to be broken on alpha
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
-USE_GNOME+=	gnomeprefix gtksourceview libgnomeui
+USE_GNOME+=	gnomeprefix gtksourceview2 libgnomeui
 .else
 CONFIGURE_ARGS+=	--without-gnome --without-gtksourceview
 .endif
