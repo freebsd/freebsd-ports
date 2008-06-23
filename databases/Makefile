@@ -14,6 +14,7 @@
     SUBDIR += bbdb
     SUBDIR += cdb
     SUBDIR += clip
+    SUBDIR += couchdb
     SUBDIR += courier-authlib-mysql
     SUBDIR += courier-authlib-pgsql
     SUBDIR += courier-authlib-userdb
