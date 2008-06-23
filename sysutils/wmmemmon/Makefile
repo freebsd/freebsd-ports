@@ -23,6 +23,12 @@ MAN1=		wmmemmon.1
 PORTDOCS=	ChangeLog README
 PLIST_FILES=	bin/wmmemmon
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700000
+EXTRA_PATCHES=	${PATCHDIR}/extra-kvm2sysctl.diff
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^DEFS/s|-I\.\.$$|-I.. -I../libdockapp/|g ; \
 		 /^CFLAGS/s|-I../libdockapp/||g' ${WRKSRC}/src/Makefile.in
@@ -35,4 +41,4 @@ post-install:
 .endfor
 .endif # !NOPORTDOCS
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

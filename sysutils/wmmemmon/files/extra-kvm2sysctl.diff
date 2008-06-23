@@ -1,0 +1,215 @@
+--- src/mem_freebsd.c.orig	2002-10-14 05:23:26.000000000 -0700
++++ src/mem_freebsd.c	2008-05-03 13:46:06.000000000 -0700
+@@ -17,38 +17,45 @@
+ #include <stdlib.h>
+ #include "mem.h"
+ 
+-#include <kvm.h>
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#include <vm/vm_param.h>
+ #include <fcntl.h>
+-#include <sys/vmmeter.h>
+ #include <time.h>
+ 
+-static kvm_t *kvm_data = NULL;
+-static int pageshift;
+-static struct nlist nlst[] = { {"_cp_time"}, {"_cnt"}, {0} };
++static int page_size_mib[4]      = { -1, -1, -1, -1 };
++static int page_count_mib[4]     = { -1, -1, -1, -1 };
++static int free_count_mib[4]     = { -1, -1, -1, -1 };
++static int active_count_mib[4]   = { -1, -1, -1, -1 };
++static int inactive_count_mib[4] = { -1, -1, -1, -1 };
++static int wire_count_mib[4]     = { -1, -1, -1, -1 };
++static int cache_count_mib[4]    = { -1, -1, -1, -1 };
++static int swappgsout_mib[4]     = { -1, -1, -1, -1 };
++static int swappgsin_mib[4]      = { -1, -1, -1, -1 };
++
++static size_t page_size_len = 4;
++static size_t page_count_len = 4;
++static size_t free_count_len = 4;
++static size_t active_count_len = 4;
++static size_t inactive_count_len = 4;
++static size_t wire_count_len = 4;
++static size_t cache_count_len = 4;
++static size_t swappgsout_len = 4;
++static size_t swappgsin_len = 4;
+ 
+ /* initialize function */
+ void mem_init(void)
+ {
+-    int pagesize = getpagesize();
+-    pageshift = 0;
++    init_mib("vm.stats.vm.v_page_size",page_size_mib,&page_size_len);
++    init_mib("vm.stats.vm.v_page_count",page_count_mib,&page_count_len);
++    init_mib("vm.stats.vm.v_free_count",free_count_mib,&free_count_len);
++    init_mib("vm.stats.vm.v_active_count",active_count_mib,&active_count_len);
++    init_mib("vm.stats.vm.v_inactive_count",inactive_count_mib,&inactive_count_len);
++    init_mib("vm.stats.vm.v_wire_count",wire_count_mib,&wire_count_len);
++    init_mib("vm.stats.vm.v_cache_count",cache_count_mib,&cache_count_len);
++    init_mib("vm.stats.vm.v_swappgsout",swappgsout_mib,&swappgsout_len);
++    init_mib("vm.stats.vm.v_swappgsin",swappgsin_mib,&swappgsin_len);
+ 
+-    while (pagesize > 1) {
+-	pageshift++;
+-	pagesize >>= 1;
+-    }
+-
+-    kvm_data = kvm_open(NULL, NULL, NULL, O_RDONLY, "kvm_open");
+-
+-    if (kvm_data == NULL) {
+-	fprintf(stderr, "can't open kernel virtual memory");
+-	exit(1);
+-    }
+-    kvm_nlist(kvm_data, nlst);
+-
+-    if (nlst[0].n_type == 0 || nlst[1].n_type == 0) {
+-	fprintf(stderr, "error extracting symbols");
+-	exit(1);
+-    }
+     /* drop setgid & setuid (the latter should not be there really) */
+     seteuid(getuid());
+     setegid(getgid());
+@@ -59,26 +66,38 @@
+     }
+ }
+ 
+-
+ /* return mem/swap usage in percent 0 to 100 */
+ void mem_getusage(int *per_mem, int *per_swap, const struct mem_options *opts)
+ {
+-    struct vmmeter vm;
+-    int bufspace;
++    unsigned long int page_size;
++    unsigned long int page_count;
++    unsigned long int free_count;
++    unsigned long int active_count;
++    unsigned long int inactive_count;
++    unsigned long int wire_count;
++    unsigned long int cache_count;
++    long int swappgsout;
++    long int swappgsin;
++
++    static long int saved_swappgsout = -1;
++    static long int saved_swappgsin = -1;
++
+     static int swap_firsttime = 1;
+-    static int swappgsin = -1;
+-    static int swappgsout = -1;
+-    static int swapmax = 0, swapused = 0;
++    static long int swapmax = 0, swapused = 0;
+     time_t cur_time;
+     static time_t last_time_swap = 0;
+     u_int mused;
+ 
+     /* get mem usage */
+-    if (kvm_read(kvm_data, nlst[0].n_value, &bufspace, sizeof(bufspace)) !=
+-	sizeof(bufspace))
+-	exit(1);
+-    if (kvm_read(kvm_data, nlst[1].n_value, &vm, sizeof(vm)) != sizeof(vm))
+-	exit(1);
++    if (sysctl(page_size_mib, 4, &page_size, &page_size_len, NULL, 0) == -1) return;
++    if (sysctl(page_count_mib, 4, &page_count, &page_count_len, NULL, 0) == -1) return;
++    if (sysctl(free_count_mib, 4, &free_count, &free_count_len, NULL, 0) == -1) return;
++    if (sysctl(active_count_mib, 4, &active_count, &active_count_len, NULL, 0) == -1) return;
++    if (sysctl(inactive_count_mib, 4, &inactive_count, &inactive_count_len, NULL, 0) == -1) return;
++    if (sysctl(wire_count_mib, 4, &wire_count, &wire_count_len, NULL, 0) == -1) return;
++    if (sysctl(cache_count_mib, 4, &cache_count, &cache_count_len, NULL, 0) == -1) return;
++    if (sysctl(swappgsout_mib, 4, &swappgsout, &swappgsout_len, NULL, 0) == -1) return;
++    if (sysctl(swappgsin_mib, 4, &swappgsin, &swappgsin_len, NULL, 0) == -1) return;
+ 
+     /* get swap usage */
+     /* only calculate when first time or when changes took place         */
+@@ -86,45 +105,69 @@
+     /* otherwise it can eat up to 50% of CPU time on heavy swap activity */
+     cur_time = time(NULL);
+     if (swap_firsttime ||
+-	(((vm.v_swappgsin > swappgsin) || (vm.v_swappgsout > swappgsout))
++	(((swappgsin > saved_swappgsin) || (swappgsout > saved_swappgsout))
+ 	 && cur_time > last_time_swap + 1)) {
+ 
+-	struct kvm_swap swap;
+-	int n;
+-
+ 	swapmax = 0;
+ 	swapused = 0;
+ 
+-	n = kvm_getswapinfo(kvm_data, &swap, 1, 0);
+-	if (n >= 0 && swap.ksw_total != 0) {
+-	    swapmax = swap.ksw_total;
+-	    swapused = swap.ksw_used;
+-	}
++        getswapinfo(&swapmax,&swapused);
+ 
+ 	swap_firsttime = 0;
+ 	last_time_swap = cur_time;
+     }
+-    swappgsin = vm.v_swappgsin;
+-    swappgsout = vm.v_swappgsout;
++    saved_swappgsin = swappgsin;
++    saved_swappgsout = swappgsout;
+ 
+ #ifdef DEBUG
+     printf ("-------------------\n");
+-    printf ("total:%10d\n", vm.v_page_count * vm.v_page_size);
+-    printf ("free :%10d\n", vm.v_free_count * vm.v_page_size);
+-    printf ("act  :%10d\n", vm.v_active_count * vm.v_page_size);
+-    printf ("inact:%10d\n", vm.v_inactive_count * vm.v_page_size);
+-    printf ("wired:%10d\n", vm.v_wire_count * vm.v_page_size);
+-    printf ("cache:%10d\n", vm.v_cache_count * vm.v_page_size);
++    printf ("total:%10d\n", page_count * page_size);
++    printf ("free :%10d\n", free_count * page_size);
++    printf ("act  :%10d\n", active_count * page_size);
++    printf ("inact:%10d\n", inactive_count * page_size);
++    printf ("wired:%10d\n", wire_count * page_size);
++    printf ("cache:%10d\n", cache_count * page_size);
+     printf ("-------------------\n");
+ #endif
+ 
+     /* calc mem/swap usage in percent */
+-    mused = vm.v_page_count - vm.v_free_count;
+-    if (opts->ignore_wired) mused -= vm.v_wire_count;
+-    if (opts->ignore_cached) mused -= vm.v_cache_count;
++    mused = page_count - free_count;
++    if (opts->ignore_wired) mused -= wire_count;
++    if (opts->ignore_cached) mused -= cache_count;
+ 
+-    *per_mem = 100 * (double) mused / (double) vm.v_page_count;
++    *per_mem = 100 * (double) mused / (double) page_count;
+     *per_swap = 100 * (double) swapused / (double) swapmax;
+ 
+     if (*per_mem > 97) *per_mem = 100;
+ }
++
++/* sets up the mib for a sysctl */
++void init_mib(char *sysctlname, int *mib, size_t *len)
++{
++    if (sysctlnametomib(sysctlname,mib,len) == -1) {
++        fprintf(stderr, "bad sysctl %s\n", sysctlname);
++        exit(1);
++    }
++}
++
++/* returns total and used number of swap pages */
++void getswapinfo (long *swapmax, long *swapused)
++{
++    size_t miblen, size;
++    int mib[16], n;
++    struct xswdev xsw;
++
++    miblen = sizeof mib / sizeof mib[0];
++    init_mib("vm.swap_info",mib,&miblen);
++
++    for (n=0;; n++)
++    {
++        mib[miblen] = n;
++        size = sizeof xsw;
++        if (sysctl(mib,miblen+1,&xsw,&size,NULL,0) == -1)
++            break;
++        *swapmax += (long) xsw.xsw_nblks;
++        *swapused += (long) xsw.xsw_used;
++    }
++}
++
+
+
