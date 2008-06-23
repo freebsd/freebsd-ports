@@ -80,10 +80,12 @@ include/apache22/ap_release.h
 %%APR_PORTS%%include/apr-1/apr_ldap.h
 %%APR_PORTS%%include/apr-1/apr_ldap_init.h
 %%APR_PORTS%%include/apr-1/apr_ldap_option.h
+%%APR_PORTS%%include/apr-1/apr_ldap_rebind.h
 %%APR_PORTS%%include/apr-1/apr_ldap_url.h
 %%APR_PORTS%%include/apr-1/apr_lib.h
 %%APR_PORTS%%include/apr-1/apr_md4.h
 %%APR_PORTS%%include/apr-1/apr_md5.h
+%%APR_PORTS%%include/apr-1/apr_memcache.h
 %%APR_PORTS%%include/apr-1/apr_mmap.h
 %%APR_PORTS%%include/apr-1/apr_network_io.h
 %%APR_PORTS%%include/apr-1/apr_optional.h
@@ -107,6 +109,7 @@ include/apache22/ap_release.h
 %%APR_PORTS%%include/apr-1/apr_tables.h
 %%APR_PORTS%%include/apr-1/apr_thread_cond.h
 %%APR_PORTS%%include/apr-1/apr_thread_mutex.h
+%%APR_PORTS%%include/apr-1/apr_thread_pool.h
 %%APR_PORTS%%include/apr-1/apr_thread_proc.h
 %%APR_PORTS%%include/apr-1/apr_thread_rwlock.h
 %%APR_PORTS%%include/apr-1/apr_time.h
@@ -165,11 +168,11 @@ include/apache22/util_xml.h
 %%APR_PORTS%%lib/libapr-1.a
 %%APR_PORTS%%lib/libapr-1.la
 %%APR_PORTS%%lib/libapr-1.so
-%%APR_PORTS%%lib/libapr-1.so.2
+%%APR_PORTS%%lib/libapr-1.so.3
 %%APR_PORTS%%lib/libaprutil-1.a
 %%APR_PORTS%%lib/libaprutil-1.la
 %%APR_PORTS%%lib/libaprutil-1.so
-%%APR_PORTS%%lib/libaprutil-1.so.2
+%%APR_PORTS%%lib/libaprutil-1.so.3
 libexec/apache22/httpd.exp
 %%MOD_ACTIONS%%libexec/apache22/mod_actions.so
 %%MOD_ALIAS%%libexec/apache22/mod_alias.so
@@ -533,6 +536,7 @@ www/apache22/icons/world2.png
 @dirrm share/apache22/build
 @dirrm share/apache22
 %%APR_PORTS%%@dirrm include/apr-1
+%%APR_PORTS%%@dirrm lib/apr-util-1
 %%APR_PORTS%%@dirrm build-1
 @dirrmtry libexec/apache22
 @dirrmtry include/apache22
