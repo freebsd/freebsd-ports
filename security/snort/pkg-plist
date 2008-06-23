@@ -118,6 +118,7 @@ etc/snort/unicode.map-sample
 %%PORTDOCS%%%%DOCSDIR%%/README.database
 %%PORTDOCS%%%%DOCSDIR%%/README.dcerpc
 %%PORTDOCS%%%%DOCSDIR%%/README.decode
+%%PORTDOCS%%%%DOCSDIR%%/README.decoder_preproc_rules
 %%PORTDOCS%%%%DOCSDIR%%/README.dns
 %%PORTDOCS%%%%DOCSDIR%%/README.event_queue
 %%PORTDOCS%%%%DOCSDIR%%/README.flow
