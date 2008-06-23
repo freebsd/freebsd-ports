@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xdotool
-DISTVERSION=	20080527
+DISTVERSION=	20080606
 CATEGORIES=	x11
-MASTER_SITES=	http://www.semicomplete.com/files/xdotool/ \
-		http://www.atarininja.org/~wxs/distfiles/
+MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Programatically simulate keyboard input or mouse activity
