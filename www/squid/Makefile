@@ -76,7 +76,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.6.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -236,7 +236,7 @@ libexec+=	sasl_auth
 basic_auth+=	YP
 libexec+=	yp_auth
 .endif
-CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
+CONFIGURE_ARGS+=	--enable-auth="basic digest negotiate ntlm" \
 			--enable-basic-auth-helpers="${basic_auth}" \
 			--enable-digest-auth-helpers="${digest_auth}" \
 			--enable-external-acl-helpers="${external_acl}" \
