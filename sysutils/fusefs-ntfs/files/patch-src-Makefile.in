@@ -16,7 +16,7 @@
 -@ENABLE_MOUNT_HELPER_TRUE@	$(MKDIR_P) "$(DESTDIR)/sbin"
 -@ENABLE_MOUNT_HELPER_TRUE@	$(LN_S) -f "$(rootbindir)/ntfs-3g" "$(DESTDIR)/sbin/mount.ntfs-3g"
 +@ENABLE_MOUNT_HELPER_TRUE@	$(MKDIR_P) "/usr/sbin"
-+@ENABLE_MOUNT_HELPER_TRUE@	$(LN_S) -f "$(rootbindir)/ntfs-3g" "/usr/sbin/mount.ntfs-3g"
++@ENABLE_MOUNT_HELPER_TRUE@	$(LN_S) -f "$(rootbindir)/ntfs-3g" "/usr/sbin/mount_ntfs-3g"
  
  install-data-local:	install-man8
  	$(LN_S) -f ntfs-3g.8 "$(DESTDIR)$(man8dir)/mount.ntfs-3g.8"
