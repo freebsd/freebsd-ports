@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mew
-PORTVERSION=	5.2
-PORTREVISION=	1
+PORTVERSION=	6.1
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.Mew.org/Release/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -16,13 +15,23 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	hiroto.kagotani@gmail.com
 COMMENT?=	Messaging in the Emacs World for emacs
 
+OPTIONS=	DATABASE "Database feature support (with Ruby & Sqlite3)" on
+
 # emacs port setup
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
+EMACS_PORT_NAME?=	emacs22
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_DATABASE)
+RUN_DEPENDS=	rubygem-sqlite3>=0:${PORTSDIR}/databases/rubygem-sqlite3
+.endif
+
+SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-elispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/mew \
-		--with-etcdir=${LOCALBASE}/${EMACS_LIBDIR}/etc/mew
+		--with-etcdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/mew/etc
 
 # target name for make build and install
 ALL_TARGET=	all info
@@ -39,11 +48,6 @@ INFO=		mew
 INFO+=		mew.jis
 .endif
 
-pre-build:
-	${REINPLACE_CMD} -e \
-		's,%%MEWICONDIR%%,${LOCALBASE}/${EMACS_LIBDIR}/etc/mew,' \
-		${WRKSRC}/mew-key.el
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -56,4 +60,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
