@@ -7,7 +7,7 @@
 
 PORTNAME=	ireport
 PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A visual report builder/designer for JasperReports
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper					\
-		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/java/bsh				\
+		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh				\
 		${JAVALIBDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j			\
 		${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr				\
 		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks				\
