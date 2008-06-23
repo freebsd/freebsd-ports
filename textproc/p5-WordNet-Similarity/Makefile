@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	2.04
+PORTVERSION=	2.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -43,6 +43,7 @@ MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		WordNet::Similarity::lin.3 WordNet::Similarity::lch.3 \
 		WordNet::Similarity::wup.3 WordNet::Similarity::path.3 \
 		WordNet::Similarity::DepthFinder.3 \
+		WordNet::Similarity::FrequencyCounter.3 \
 		WordNet::Similarity::GlossFinder.3 \
 		WordNet::Similarity::ICFinder.3 \
 		WordNet::Similarity::PathFinder.3 \
