@@ -7,9 +7,9 @@
 
 PORTNAME=	ExtUtils-MakeMaker
 PORTVERSION=	6.44
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	ExtUtils
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -17,7 +17,6 @@ COMMENT=	Designed to write a Makefile for an extension module
 
 PERL_CONFIGURE=	YES
 
-MAN1=	instmodsh.1
 MAN3=	ExtUtils::Installed.3 ExtUtils::MM_OS2.3 ExtUtils::MakeMaker.3 \
 	ExtUtils::Install.3 ExtUtils::Manifest.3 \
 	ExtUtils::MM_Unix.3 ExtUtils::Mksymlists.3 ExtUtils::MM.3 \
@@ -35,11 +34,10 @@ MAN3=	ExtUtils::Installed.3 ExtUtils::MM_OS2.3 ExtUtils::MakeMaker.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 500800
-.undef MAN1
-PLIST_SUB+=	EXE_FILES="@comment " EXEUTILS_COMMAND="@comment "
+PLIST_SUB+=	EXE_FILES="@comment "
 .else
-PLIST_SUB+=	EXE_FILES="" EXEUTILS_COMMAND=""
-MAN3+=		ExtUtils::Command.3
+MAN1+=		instmodsh.1
+PLIST_SUB+=	EXE_FILES=""
 .endif
 
 post-patch:
