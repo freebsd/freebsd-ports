@@ -5,21 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=		enscribe
-PORTVERSION=		0.0.4
-PORTREVISION=		1
-CATEGORIES=		audio graphics
-MASTER_SITES=		http://www.coppercloudmusic.com/enscribe/
-EXTRACT_SUFX=		.tgz
+PORTNAME=	enscribe
+PORTVERSION=	0.1.0
+CATEGORIES=	audio graphics
+MASTER_SITES=	http://www.coppercloudmusic.com/enscribe/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Create digital audio watermark images from photographic images
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Create digital audio watermark images from photographic images
 
-LIB_DEPENDS=		gd:${PORTSDIR}/graphics/gd \
-			png:${PORTSDIR}/graphics/png \
-			jpeg:${PORTSDIR}/graphics/jpeg \
-			freetype:${PORTSDIR}/print/freetype2 \
-			sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
+		gd.4:${PORTSDIR}/graphics/gd \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		freetype.9:${PORTSDIR}/print/freetype2
+
+PORTDOCS=	README
+PLIST_FILES=	bin/enscribe
 
 do-build:
 	cd ${BUILD_WRKSRC}; ${CC} ${CFLAGS} \
@@ -29,7 +31,6 @@ do-build:
 		-o enscribe enscribe.c
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/enscribe ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
