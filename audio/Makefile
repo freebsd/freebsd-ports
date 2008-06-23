@@ -47,6 +47,7 @@
     SUBDIR += audacious-mac
     SUBDIR += audacity
     SUBDIR += audacity-devel
+    SUBDIR += audiere
     SUBDIR += audiotag
     SUBDIR += aumix
     SUBDIR += aureal-kmod

@@ -1,0 +1,6 @@
+bin/audiere-config
+include/audiere.h
+lib/libaudiere-1.9.4.so
+lib/libaudiere.a
+lib/libaudiere.la
+lib/libaudiere.so
