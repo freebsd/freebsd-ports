@@ -636,6 +636,7 @@
     SUBDIR += libiqxmlrpc
     SUBDIR += libisc
     SUBDIR += libixp
+    SUBDIR += liblas
     SUBDIR += libleaftag
     SUBDIR += liblogging
     SUBDIR += libltdl15
