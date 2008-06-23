@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	lxml
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	devel python
 MASTER_SITES=	http://codespeak.net/lxml/ \
-		http://cheeseshop.python.org/packages/source/l/lxml/
+		http://cheeseshop.python.org/packages/source/l/lxml/ \
+		http://pypi.python.org/packages/source/l/lxml/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
+#EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Pythonic binding for the libxml2 and libxslt libraries
