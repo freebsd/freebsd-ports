@@ -1,4 +1,4 @@
 @comment $FreeBSD$
 sbin/dds
-share/doc/ddos_scan/README
-@dirrm share/doc/ddos_scan
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

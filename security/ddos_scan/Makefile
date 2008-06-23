@@ -8,6 +8,7 @@
 
 PORTNAME=	ddos_scan
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://staff.washington.edu/dittrich/misc/
 DISTNAME=	${PORTNAME}
@@ -21,8 +22,8 @@ ALL_TARGET=	dds
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dds ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ddos_scan
-	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/ddos_scan
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
