@@ -8,7 +8,7 @@
 
 PORTNAME=	electric-ng
 PORTVERSION=	8.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad java
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.staticfreesoft.com/:1
@@ -47,7 +47,7 @@ PLUGINDIR=	${PREFIX}/libexec/electric/
 WITH_BSH=	yes
 .endif
 .if defined(WITH_BSH)
-RUN_DEPENDS+=	${JAVALIBDIR}/bsh.jar:${PORTSDIR}/java/bsh
+RUN_DEPENDS+=	${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh
 LIBFILES+=	${JAVALIBDIR}/bsh.jar
 .endif
 
