@@ -7,7 +7,7 @@
 
 PORTNAME=	win4bsd
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.win4bsd.com/pub/releases/${PORTVERSION}/
 DISTNAME=	Win4BSD-1.1_63918_i386-freebsd
@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	Win4BSD Virtual Machine for Windows under BSD
+
+RUN_DEPENDS=	xwininfo:${PORTSDIR}/x11/xwininfo
 
 CONFLICTS=	Win4BSD-[0-9]*
 
