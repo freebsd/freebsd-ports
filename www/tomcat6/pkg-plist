@@ -91,6 +91,7 @@
 %%T%%/webapps/docs/appdev/sample/src/mypackage/Hello.java
 %%T%%/webapps/docs/appdev/sample/web/WEB-INF/web.xml
 %%T%%/webapps/docs/appdev/sample/web/hello.jsp
+%%T%%/webapps/docs/appdev/sample/web/images/Thumbs.db
 %%T%%/webapps/docs/appdev/sample/web/images/tomcat.gif
 %%T%%/webapps/docs/appdev/sample/web/index.html
 %%T%%/webapps/docs/appdev/source.html
@@ -188,6 +189,7 @@
 %%T%%/webapps/docs/funcspecs/printer/index.html
 %%T%%/webapps/docs/funcspecs/printer/mbean-names.html
 %%T%%/webapps/docs/html-manager-howto.html
+%%T%%/webapps/docs/images/Thumbs.db
 %%T%%/webapps/docs/images/add.gif
 %%T%%/webapps/docs/images/asf-logo.gif
 %%T%%/webapps/docs/images/code.gif
@@ -545,6 +547,7 @@
 %%T%%/webapps/host-manager/META-INF/context.xml
 %%T%%/webapps/host-manager/WEB-INF/web.xml
 %%T%%/webapps/host-manager/manager.xml
+%%T%%/webapps/host-manager/images/Thumbs.db
 %%T%%/webapps/host-manager/images/add.gif
 %%T%%/webapps/host-manager/images/asf-logo.gif
 %%T%%/webapps/host-manager/images/code.gif
@@ -640,7 +643,6 @@
 @dirrm %%T%%/webapps/docs/images
 @dirrm %%T%%/webapps/docs/funcspecs/printer
 @dirrm %%T%%/webapps/docs/funcspecs
-@dirrm %%T%%/webapps/docs/funcspec
 @dirrm %%T%%/webapps/docs/config/printer
 @dirrm %%T%%/webapps/docs/config
 @dirrm %%T%%/webapps/docs/architecture/startup
