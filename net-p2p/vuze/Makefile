@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	azureus
-PORTVERSION=	3.0.5.2
-PORTREVISION=	1
+PORTVERSION=	3.1.0.0
+#PORTREVISION=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
-DISTNAME=	Azureus_${PORTVERSION}_source
+DISTNAME=	Vuze_${PORTVERSION}_source
 
 MAINTAINER=	rnoland@2hip.net
 COMMENT=	A BitTorrent client written in Java
