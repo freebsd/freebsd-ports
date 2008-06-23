@@ -7,25 +7,33 @@
 
 PORTNAME=	bsh
 PORTVERSION=	2.0.b4
-PORTREVISION=	2
-CATEGORIES=	java
+PORTREVISION=	3
+CATEGORIES=	lang java
 MASTER_SITES=	http://www.beanshell.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Java scripting environment
+MAINTAINER=	simon@olofsson.de
+COMMENT=	A Java scripting language
 
-PLIST_FILES=	%%JAVAJARDIR%%/bsh.jar bin/bsh
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 NO_BUILD=	yes
-SUB_FILES=	bsh.sh
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+SUB_FILES=	${PORTNAME}.sh
+SUB_LIST=	JARNAME=${PORTNAME}.jar
+
+PLIST_FILES=	%%DATADIR%%/${PORTNAME}.jar \
+		bin/${PORTNAME}
+PLIST_DIRS=	%%DATADIR%%
 
 do-install:
-	${MKDIR} ${JAVALIBDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${JAVAJARDIR}/bsh.jar
-	${INSTALL_SCRIPT} ${WRKDIR}/bsh.sh ${PREFIX}/bin/bsh
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} \
+		${DATADIR}/${PORTNAME}.jar
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
