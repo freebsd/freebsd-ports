@@ -158,6 +158,7 @@ include/fltk/ValueInput.h
 include/fltk/ValueOutput.h
 include/fltk/ValueSlider.h
 include/fltk/Widget.h
+include/fltk/WidgetAssociation.h
 include/fltk/Window.h
 include/fltk/WizardGroup.h
 include/fltk/WordwrapInput.h
