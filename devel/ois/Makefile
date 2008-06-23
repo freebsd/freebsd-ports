@@ -7,6 +7,7 @@
 
 PORTNAME=	ois
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	wgois
@@ -20,6 +21,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool:15:env aclocal:19:env autoheader:261:env automake:19:env autoconf:261:env
 USE_XORG=	x11 xaw
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
