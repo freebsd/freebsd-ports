@@ -7,7 +7,7 @@
 
 PORTNAME=	bugs
 PORTVERSION=	4.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.encryptsolutions.com/english/download/
 EXTRACT_SUFX=	.tgz
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Great cryptography library and sample programs
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+DOCSDIR=	${PREFIX}/${DISTNAME}/doc
 
 USE_GMAKE=	yes
 
@@ -40,7 +41,7 @@ pre-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${CP} -R ${WRKSRC}/doc ${PREFIX}/${DISTNAME}
+	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
 .endif
 	${CP} -R ${WRKSRC}/include ${PREFIX}/${DISTNAME}
 	${STRIP_CMD} ${PREFIX}/${DISTNAME}/bchat \
