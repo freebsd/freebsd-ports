@@ -9,6 +9,7 @@
 
 PORTNAME=	queso
 PORTVERSION=	980922
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/scanners/queso/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/
@@ -18,12 +19,14 @@ COMMENT=	Determine the remote OS using simple tcp packets
 
 GNU_CONFIGURE=	yes
 
+post-patch:
+	@${REINPLACE_CMD} 's,$(CFGDIR)/queso.conf,$(CFGDIR)/queso.conf.sample,' \
+		${WRKSRC}/Makefile.in
+
 post-install:
-	#${INSTALL_PROGRAM} ${WRKSRC}/queso ${PREFIX}/sbin
-	#${INSTALL_DATA} ${WRKSRC}/queso.conf ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/queso
-	${INSTALL_DATA} ${WRKSRC}/Documentation.txt ${PREFIX}/share/doc/queso
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
