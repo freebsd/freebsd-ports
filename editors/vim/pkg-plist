@@ -8,6 +8,7 @@ bin/eview
 bin/evim
 bin/gview
 bin/gvim
+bin/gvimtutor
 bin/rgview
 bin/rgvim
 bin/rview
