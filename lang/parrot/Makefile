@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	parrot
-PORTVERSION=	0.6.0
-CATEGORIES=	lang perl5
+PORTVERSION=	0.6.3
+CATEGORIES=	lang
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../../authors/id/S/SM/SMASH
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
@@ -18,8 +19,6 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		icudata:${PORTSDIR}/devel/icu
-
-BROKEN=		incorrect plist
 
 USE_BISON=	build
 USE_GCC=	3.4+
@@ -79,5 +78,9 @@ PLIST_SUB+=	JIT="@comment "
 .if ${ARCH} == ia64
 BROKEN=		Does not compile on ia64
 .endif
+
+pre-configure:
+	@if [ `${ID} -u` -eq 0 ]; then \
+		${ECHO_MSG} "==> Please do not build ${PORTNAME} as 'root' (because of 'perldoc' issue)."; exit 1; fi
 
 .include <bsd.port.post.mk>
