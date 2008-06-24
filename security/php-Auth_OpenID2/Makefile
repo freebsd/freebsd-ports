@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Auth_OpenID
-PORTVERSION=	1.2.3
+PORTNAME=	Auth_OpenID2
+PORTVERSION=	2.1.0
 CATEGORIES=	security www pear
 MASTER_SITES=	http://openidenabled.com/files/php-openid/packages/
 PKGNAMEPREFIX=	php-
@@ -27,7 +27,7 @@ OPTIONS=	BCMATH "Use bcmath instead of libgmp" off \
 		PGSQL "Use pgsql" off \
 		SQLITE "Use sqlite" off
 
-USE_PHP=	curl
+USE_PHP=	curl dom
 
 .include <bsd.port.pre.mk>
 
@@ -53,8 +53,8 @@ do-install:
 	${MKDIR} ${PREFIX}/share/pear/Auth/OpenID
 	${CP} ${WRKSRC}/Auth/OpenID.php ${PREFIX}/share/pear/Auth
 	${CP} ${WRKSRC}/Auth/OpenID/* ${PREFIX}/share/pear/Auth/OpenID
-	${MKDIR} ${PREFIX}/share/pear/Services/Yadis
-	${CP} ${WRKSRC}/Services/Yadis/* ${PREFIX}/share/pear/Services/Yadis
+	${MKDIR} ${PREFIX}/share/pear/Auth/Yadis
+	${CP} -R ${WRKSRC}/Auth/Yadis/* ${PREFIX}/share/pear/Auth/Yadis
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
 

@@ -547,6 +547,7 @@
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
     SUBDIR += pear-Auth_OpenID
+    SUBDIR += pear-Auth_OpenID2
     SUBDIR += pear-Auth_PrefManager
     SUBDIR += pear-Auth_SASL
     SUBDIR += pear-Crypt_Blowfish
