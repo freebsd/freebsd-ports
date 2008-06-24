@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6h
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -63,8 +63,6 @@ OPTIONS+=	X264 "Enable H.264/AVC codec support" On
 
 CONFLICTS=	vlc-devel-[0-9]*
 
-WITH_VLC_DEFAULT_FONT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
-
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -98,6 +96,8 @@ MAN1=		vlc.1 \
 		vlc-config.1
 
 .include <bsd.port.pre.mk>
+
+WITH_VLC_DEFAULT_FONT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
 .if ${PERL_LEVEL} < 500800
 BROKEN=	Does not compile with perl ${PERL_VERSION}
@@ -172,7 +172,7 @@ CONFIGURE_ARGS+=--disable-loader
 .endif
 
 .if !defined(WITHOUT_WXGTK)
-USE_WX=		2.8
+USE_WX=		2.6
 WX_UNICODE=	yes
 CONFIGURE_ARGS+=--enable-wxwidgets
 .else
