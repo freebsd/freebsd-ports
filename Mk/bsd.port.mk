@@ -423,6 +423,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_EFL		- If set, this port use EFL libraries.
 #				  Implies inclusion of bsd.efl.mk.  (Also see
 #				  that file for more information on USE_EFL_*).
+# USE_FPC		- If set, this port relies on the Free Pascal language.
+# 				  Implies inclusion of bsd.fpc.mk.  (Also see
+#				  that file for more information on WANT_FPC_*).
 # USE_JAVA		- If set, this port relies on the Java language.
 #				  Implies inclusion of bsd.java.mk.  (Also see
 #				  that file for more information on USE_JAVA_*).
@@ -1460,6 +1463,10 @@ PERL=		${LOCALBASE}/bin/perl
 
 .if defined(USE_EFL) || defined(WANT_EFL) || defined(USE_EFL_ESMART)
 .include "${PORTSDIR}/Mk/bsd.efl.mk"
+.endif
+
+.if defined(USE_FPC) || defined(WANT_FPC_BASE) || defined(WANT_FPC_ALL)
+.include "${PORTSDIR}/Mk/bsd.fpc.mk"
 .endif
 
 .if defined(USE_JAVA)
