@@ -28,7 +28,7 @@ post-extract:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042
-BROKEN=		Does not compile
+MAKE_ARGS+=	"CC=gcc -g -O"
 .endif
 
 .include <bsd.port.post.mk>
