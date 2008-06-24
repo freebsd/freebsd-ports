@@ -40,6 +40,7 @@ PLIST_FILES=	etc/kissdx.conf sbin/kissdx sbin/kissd-pretrigger sbin/kissd-posttr
 post-patch:
 	@${REINPLACE_CMD} -e 's|Linux|Unix|g ; s|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/kissdx.1
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/config.c
+	@${RM} ${WRKSRC}/kissdx.o
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kissdx ${PREFIX}/sbin/kissdx
