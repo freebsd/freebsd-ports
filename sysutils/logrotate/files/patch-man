@@ -1,0 +1,33 @@
+diff -ruN logrotate-3.7.7-orig/logrotate.8 logrotate-3.7.7/logrotate.8
+--- logrotate-3.7.7-orig/logrotate.8	Wed May 14 08:12:14 2008
++++ logrotate-3.7.7/logrotate.8	Sun Jun 22 22:22:41 2008
+@@ -46,14 +46,14 @@
+ Tells \fBlogrotate\fR which command to use when mailing logs. This
+ command should accept two arguments: 1) the subject of the message, and
+ 2) the recipient. The command must then read a message on standard input
+-and mail it to the recipient. The default mail command is \fB/bin/mail
++and mail it to the recipient. The default mail command is \fB/bin/mailx
+ -s\fR.
+ 
+ .TP
+ \fB-s, -\-state <statefile>\fR
+ Tells \fBlogrotate\fR to use an alternate state file.  This is useful
+ if logrotate is being run as a different user for various sets of
+-log files.  The default state file is \fI/var/lib/logrotate.status\fR.
++log files.  The default state file is \fI/var/run/logrotate.status\fR.
+ 
+ .TP
+ \fB-\-usage\fR
+@@ -456,10 +456,10 @@
+ .SH FILES
+ .PD 0
+ .TP 27
+-\fI/var/lib/logrotate.status\fR
++\fI/var/run/logrotate.status\fR
+ Default state file.
+ .TP 27
+-\fI/etc/logrotate.conf\fR
++\fI/usr/local/etc/logrotate.conf\fR
+ Configuration options.
+ 
+ .SH SEE ALSO
