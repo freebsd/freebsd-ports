@@ -217,6 +217,8 @@ post-install:
 	${TEST} -e ${PREFIX}/bin/eview  || (cd ${PREFIX}/bin ; ${LN} -sf vim eview)
 	${TEST} -e ${PREFIX}/bin/gvimdiff  \
 		|| (cd ${PREFIX}/bin ; ${LN} -sf vim gvimdiff)
+	${TEST} -e ${PREFIX}/bin/gvimtutor  \
+		|| (cd ${PREFIX}/bin ; ${LN} -sf vimtutor gvimtutor)
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${DATADIR}/keymap
 	cd ${PREFIX} ;\
 	    ${FIND} share/vim/${_DATADIR} -type f -o -type l	\
