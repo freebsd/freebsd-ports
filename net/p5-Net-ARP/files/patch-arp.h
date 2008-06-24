@@ -1,9 +1,8 @@
---- arp.h.orig	2008-01-06 21:14:49.000000000 +0800
-+++ arp.h	2008-01-06 21:15:11.000000000 +0800
-@@ -55,4 +55,6 @@
+--- arp.h.orig	2007-08-16 09:38:44.000000000 +0200
++++ arp.h	2008-06-24 14:47:24.000000000 +0200
+@@ -54,5 +54,3 @@
+    u_char dest_add[ETH_ALEN];   // dest mac
     u_char dest_ip[IP_ALEN];     // dest ip
  };
- 
-+#ifndef __i386__
- extern struct ether_addr *ether_aton (__const char *__asc) __THROW;
-+#endif
+-
+-extern struct ether_addr *ether_aton (__const char *__asc) __THROW;
