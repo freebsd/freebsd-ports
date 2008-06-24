@@ -1,7 +1,7 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/audio/squeezecenter/files/Attic/pkg-install.in,v 1.6 2008-04-30 23:18:04 brooks Exp $
+# $FreeBSD: /tmp/pcvs/ports/audio/squeezecenter/files/Attic/pkg-install.in,v 1.7 2008-06-24 16:10:23 brooks Exp $
 
-name=slimserver
+name=%%PORTNAME%%
 u=%%SLIMUSER%%
 g=%%SLIMGROUP%%
 ugid=104
@@ -11,13 +11,13 @@ comment="Slim Devices SlimServer/SqueezeCenter pseudo-user"
 slimdir="%%PREFIX%%/%%SLIMDIR%%"
 statedir=%%SLIMDBDIR%%
 cachedir=${statedir}/cache
-conffile=${statedir}/squeezecenter.conf
+conffile=${statedir}/${name}.conf
 playlistdir=${statedir}/playlists
 pidfile=/var/run/${name}/${name}.pid
 newsyslogfile=/etc/newsyslog.conf
-logcomment="# added by audio/squeezecenter port"
-serverlogfile=/var/log/squeezecenter/server.log
-scannerlogfile=/var/log/squeezecenter/scanner.log
+logcomment="# added by audio/${name} port"
+serverlogfile=/var/log/${name}/server.log
+scannerlogfile=/var/log/${name}/scanner.log
 serverlogline="${serverlogfile}	${u}:${g} 644 3	   100	*     J     ${pidfile}"
 scannerlogline="${scannerlogfile}	${u}:${g} 644 3	   100	*     J     ${pidfile}"
 
@@ -49,7 +49,7 @@ POST-INSTALL)
 	if egrep -q "^${serverlogfile}\>" ${newsyslogfile}; then
 		echo "Using existing ${newsyslogfile} entry."
 	else
-		echo "Adding squeezecenter log entry to ${newsyslogfile}."
+		echo "Adding ${name} log entry to ${newsyslogfile}."
 		echo "$logcomment" >> ${newsyslogfile}
 		echo "$serverlogline" >> ${newsyslogfile}
 		echo "$scannerlogline" >> ${newsyslogfile}

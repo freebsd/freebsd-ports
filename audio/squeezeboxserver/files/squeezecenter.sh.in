@@ -3,39 +3,39 @@
 # $FreeBSD$
 #
 
-# PROVIDE: squeezecenter
+# PROVIDE: %%PORTNAME%%
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable squeezecenter:
+# Add the following lines to /etc/rc.conf to enable %%PORTNAME%%:
 #
-#squeezecenter_enable="YES"
+#%%PORTNAME%%_enable="YES"
 #
 
 . %%RC_SUBR%%
 
-name=squeezecenter
-start_precmd="squeezecenter_start_precmd"
-stop_postcmd="squeezecenter_stop_postcmd"
+name=%%PORTNAME%%
+start_precmd="%%PORTNAME%%_start_precmd"
+stop_postcmd="%%PORTNAME%%_stop_postcmd"
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/%%SLIMDIR%%/slimserver.pl
 command_interpreter=%%PERL%%
 pidfile=/var/run/${name}/${name}.pid
-logdir=/var/log/squeezecenter
+logdir=/var/log/%{name}
 statedir=%%SLIMDBDIR%%
 cachedir=${statedir}/cache
 prefsdir=${statedir}/prefs
 playlistdir=${statedir}/playlists
-conffile=${statedir}/squeezecenter.conf
+conffile=${statedir}/%{name}.conf
 u=%%SLIMUSER%%
 g=%%SLIMGROUP%%
 command_args="--daemon --prefsfile=${conffile} --pidfile=${pidfile}"
-squeezecenter_user=${u}
-squeezecenter_group=${g}
+%%PORTNAME%%_user=${u}
+%%PORTNAME%%_group=${g}
 
-squeezecenter_start_precmd()
+%%PORTNAME%%_start_precmd()
 {
 	mkdir -p /var/run/${name}
 	chown -R ${u}:${g} /var/run/${name}
@@ -56,7 +56,7 @@ squeezecenter_start_precmd()
 	fi	
 }
 
-squeezecenter_stop_postcmd()
+%%PORTNAME%%_stop_postcmd()
 {
 	pids=`pgrep -u $u`
 	if [ -n "${pids}" ]; then
@@ -71,7 +71,7 @@ squeezecenter_stop_postcmd()
 
 load_rc_config ${name}
 
-squeezecenter_enable=${squeezecenter_enable:-"NO"}
-squeezecenter_flags=${squeezecenter_flags:-""}
+%%PORTNAME%%_enable=${%%PORTNAME%%_enable:-"NO"}
+%%PORTNAME%%_flags=${%%PORTNAME%%_flags:-""}
 
 run_rc_command "$1"
