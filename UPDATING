@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080624:
+  AFFECTS: users of www/opera and www/opera/devel
+  AUTHOR: Ion-Mihai Tetcu <itetcu@FreeBSD.org>
+
+  The Opera has been updated from 9.2x to 9.5x. A lot of things have been
+  changed such as keyboard shortcuts[1]; new storage and indexing formats
+  mail and feeds; new search.ini; native amd64 binaries; no 4.x support. The mail
+  and feeds will be asked to convert to new format in start up. Warning there is
+  no way to downgrade back to old format. Be sure to view the Changelog[2].
+
+  [1] http://www.opera.com/support/search/view/884/
+  [2] http://www.opera.com/docs/changelogs/freebsd/950/
+
 20080622:
   AFFECTS: users of devel/subversion, subversion-devel and subversion-freebsd
            with apr from www/apache22
