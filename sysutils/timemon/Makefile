@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	timemon
-PORTVERSION=	4.0
-PORTREVISION=	2
+PORTVERSION=	4.1
 CATEGORIES=	sysutils gnustep
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	gap
-DISTNAME=	TimeMon-gnustep
-EXTRACT_SUFX=	.tgz
+DISTNAME=	TimeMon-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	CPU time usage monitor for GNUstep
@@ -22,8 +20,6 @@ USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-
-WRKSRC=		${WRKDIR}/TimeMon
 
 post-patch:
 	${RM} ${WRKSRC}/shared_obj/*.*
