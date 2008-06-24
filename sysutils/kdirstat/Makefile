@@ -12,7 +12,7 @@ CATEGORIES=	sysutils kde
 MASTER_SITES=	http://kdirstat.sourceforge.net/download/
 
 MAINTAINER=	markus@FreeBSD.org
-COMMENT=	A small KDE utility that sums up disk usage for direcory trees
+COMMENT=	A small KDE utility that sums up disk usage for directory trees
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
