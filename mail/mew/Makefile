@@ -8,6 +8,7 @@
 
 PORTNAME=	mew
 PORTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.Mew.org/Release/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -42,7 +43,7 @@ INSTALL_TARGET+=install-jinfo
 .endif
 
 # manuals
-MAN1=		mew-pinentry.1 mewcat.1 mewdecode.1 mewencode.1 mewest.1 mewl.1 incm.1
+MAN1=		cmew.1 mew-pinentry.1 mewcat.1 mewdecode.1 mewencode.1 mewest.1 mewl.1 smew.1 incm.1
 INFO=		mew
 .if !defined(NOPORTDOCS)
 INFO+=		mew.jis
