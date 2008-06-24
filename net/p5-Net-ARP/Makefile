@@ -21,10 +21,4 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=	Net::ARP.3
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile on amd64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
