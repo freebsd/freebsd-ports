@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oss
-DISTVERSION=	4.0-build1015
-PORTREVISION=	1
+DISTVERSION=	4.0-build1016
 CATEGORIES=	audio kld
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
@@ -28,7 +27,7 @@ SUB_FILES=	pkg-install pkg-deinstall
 ONLY_FOR_ARCHS=	amd64 i386
 
 MAN1=		ossinfo.1 ossmix.1 ossplay.1 ossrecord.1 osstest.1 ossxmix.1
-MAN8=		ossdevlinks.8 savemixer.8 ossdetect.8
+MAN8=		ossdetect.8 ossdevlinks.8 savemixer.8
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed

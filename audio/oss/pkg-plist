@@ -42,7 +42,6 @@ lib/oss/modules/solo.ko
 lib/oss/modules/trident.ko
 lib/oss/modules/via8233.ko
 lib/oss/modules/via97.ko
-lib/oss/modules/vmix.ko
 lib/oss/modules/vortex.ko
 lib/oss/modules/ymf7xx.ko
 @dirrm lib/oss/modules
