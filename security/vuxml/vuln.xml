@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c84dc9ad-41f7-11dd-a4f9-00163e000016">
+    <topic>apache -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><gt>2.2.0</gt><lt>2.2.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Apache HTTP server project reports:</p>
+	<blockquote cite="http://www.apache.org/dist/httpd/Announcement2.2.html">
+	  <p>The following potential security flaws are addressed:</p>
+	  <ul>
+	    <li>CVE-2008-2364:  mod_proxy_http: Better handling of excessive
+	    interim responses from origin server to prevent potential denial of
+	    service and high memory usage. Reported by Ryujiro Shibuya.</li>
+	    <li>CVE-2007-6420:  mod_proxy_balancer: Prevent CSRF attacks against
+	    the balancer-manager interface</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6420</cvename>
+      <cvename>CVE-2008-2364</cvename>
+      <url>http://www.apache.org/dist/httpd/Announcement2.2.html</url>
+    </references>
+    <dates>
+      <discovery>2008-06-14</discovery>
+      <entry>2008-06-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ee6fa2bd-406a-11dd-936a-0015af872849">
     <topic>php -- input validation error in posix_access function</topic>
     <affects>
