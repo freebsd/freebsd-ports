@@ -8,6 +8,7 @@
 
 PORTNAME=	rrdpipe
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/

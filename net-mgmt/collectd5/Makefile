@@ -7,7 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/ \
 		http://mirror.roe.ch/dist/${PORTNAME}/

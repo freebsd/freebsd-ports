@@ -7,6 +7,7 @@
 
 PORTNAME=	monitor-core
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -62,7 +63,7 @@ USE_RC_SUBR=	ganglia.sh
 .endif
 
 .if defined (WITH_GMETAD)
-LIB_DEPENDS=	rrd.2:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS=	rrd.4:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=	--with-gmetad
 PLIST_SUB+=	GMETAD=
 SUB_LIST+=	GMETAD=
