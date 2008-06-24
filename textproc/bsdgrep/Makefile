@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grep
-PORTVERSION=	20080615
+PORTVERSION=	20080624
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
@@ -26,10 +26,22 @@ MLINKS=		grep.1 egrep.1 \
 
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
-		CATDIR="${MANPREFIX}/man/man"
+		CATDIR="${MANPREFIX}/man/man" \
+		NLSDIR="${PREFIX}/share/nls"
+
+OPTIONS=	NLS	"Compile in NLS support"	on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+MAKE_ENV+=	WITHOUT_NLS=yes
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
 
 post-install:
 	${LN} -s ${PREFIX}/bin/grep ${PREFIX}/bin/bsdgrep
 	${LN} -s /usr/bin/grep ${PREFIX}/bin/gnugrep
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
