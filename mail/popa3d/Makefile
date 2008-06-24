@@ -78,7 +78,7 @@ pre-configure:
 	@${ECHO_CMD} "@exec ${MKDIR} %D/empty" >>${PLIST}
 	@${ECHO_CMD} "@dirrm empty" >>${PLIST}
 .endif
-.if defined(WITH_SMTP_AFTER_POP3)
+.if defined(WITH_SMTP_AFTER_POP3) && !defined(WITHOUT_POPAUTH_M4)
 	@${ECHO_CMD} "@cwd ${CFDIR}" >>${PLIST}
 	@${ECHO_CMD} "hack/popauth.m4" >>${PLIST}
 .endif
@@ -101,7 +101,7 @@ do-install:
 	${INSTALL} ${COPY} -o root -g wheel -m 500 \
 	    ${WRKSRC}/popa3d ${PREFIX}/libexec/popa3d
 	${INSTALL_MAN} ${WRKSRC}/popa3d.8 ${MANPREFIX}/man/man8/
-.if defined(WITH_SMTP_AFTER_POP3)
+.if defined(WITH_SMTP_AFTER_POP3) && !defined(WITHOUT_POPAUTH_M4)
 	${INSTALL_DATA} ${FILESDIR}/popauth.m4 ${CFDIR}/hack/
 .endif
 .if defined(WITH_STANDALONE_POP3)
