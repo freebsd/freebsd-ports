@@ -9,7 +9,7 @@ PORTNAME=	libpathan
 PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://software.decisionsoft.com/software/pathan-2.0.0/
+MASTER_SITES=	http://software.decisionsoft.com/oldsite/software/pathan-2.0.0/
 DISTNAME=	${PORTNAME}-${PORTVERSION}beta-src
 
 MAINTAINER=	ports@FreeBSD.org
