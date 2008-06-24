@@ -102,7 +102,6 @@ USE_GNUSTEP_SYSTEM_APPS+=	\
 	Preferences:deskutils/preferences.app \
 	GWorkspace:deskutils/gworkspace \
 	TextEdit:editors/textedit.app \
-	TimeMon:sysutils/timemon \
 	Terminal:x11/terminal.app \
 	Emacs:editors/emacs.app \
 	GSPdf:print/gspdf \
@@ -128,6 +127,7 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	SlideShow:graphics/gnustep-slideshow \
 	Preview:graphics/preview \
 	oolite:games/oolite \
+	TimeMon:sysutils/timemon \
 	Cenon:graphics/cenon \
 	Gridlock:games/gridlock \
 	PRICE:graphics/price \
