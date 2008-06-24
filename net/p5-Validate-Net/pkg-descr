@@ -7,6 +7,3 @@ Whenever a test is false, you can access the reason through the reason
 method.
 
 WWW: http://search.cpan.org/dist/Validate-Net/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
