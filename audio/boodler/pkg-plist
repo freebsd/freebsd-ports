@@ -353,18 +353,18 @@ share/boodler/boodler-snd/animal/frog-bullfrog3.aiff
 @dirrm share/boodler/boodler-snd/animal
 @dirrm share/boodler/boodler-snd
 @dirrm share/boodler
-%%DOCSDIR%%/catalog.html
-%%DOCSDIR%%/design-basics.html
-%%DOCSDIR%%/design-channel.html
-%%DOCSDIR%%/design-events.html
-%%DOCSDIR%%/design-more.html
-%%DOCSDIR%%/design-ref.html
-%%DOCSDIR%%/design-start.html
-%%DOCSDIR%%/design.html
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/install.html
-%%DOCSDIR%%/license.html
-%%DOCSDIR%%/name.html
-%%DOCSDIR%%/use.html
-%%DOCSDIR%%/version.html
+%%PORTDOCS%%%%DOCSDIR%%/catalog.html
+%%PORTDOCS%%%%DOCSDIR%%/design-basics.html
+%%PORTDOCS%%%%DOCSDIR%%/design-channel.html
+%%PORTDOCS%%%%DOCSDIR%%/design-events.html
+%%PORTDOCS%%%%DOCSDIR%%/design-more.html
+%%PORTDOCS%%%%DOCSDIR%%/design-ref.html
+%%PORTDOCS%%%%DOCSDIR%%/design-start.html
+%%PORTDOCS%%%%DOCSDIR%%/design.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/name.html
+%%PORTDOCS%%%%DOCSDIR%%/use.html
+%%PORTDOCS%%%%DOCSDIR%%/version.html
 %%PORTDOCS%%@dirrm share/doc/boodler
