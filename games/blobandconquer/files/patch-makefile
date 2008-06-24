@@ -1,15 +1,15 @@
---- makefile.orig	Fri Aug 10 01:56:59 2007
-+++ makefile	Fri Aug 10 01:58:10 2007
+--- makefile.orig	2008-06-24 11:49:37.000000000 +0400
++++ makefile	2008-06-24 12:23:40.000000000 +0400
 @@ -12,21 +12,20 @@
  
  PREFIX = $(DESTDIR)/usr
- BINDIR = $(PREFIX)/games
--DATADIR = $(PREFIX)/share/games/blobAndConquer
--DOCDIR = $(PREFIX)/share/doc/$(PROG)
+ BINDIR = $(PREFIX)/games/
+-DATADIR = $(PREFIX)/share/games/blobAndConquer/
+-DOCDIR = $(PREFIX)/share/doc/$(PROG)/
 +DATADIR := $(DATADIR)/
 +DOCDIR = $(DOCSDIR)/
- ICONDIR = $(PREFIX)/share/icons
- MENUDIR = $(PREFIX)/share/applications
+ ICONDIR = $(PREFIX)/share/icons/
+ MENUDIR = $(PREFIX)/share/applications/
  LOCALEDIR = $(PREFIX)/share/locale/
  
 -CXXFLAGS = $(CFLAGS)
@@ -26,4 +26,4 @@
 +LIBS = -lGL -lGLU `$(SDL_CONFIG) --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz -lintl
  
  # Yes, it means compiling is a little slower... but it's less hassle
- SEARCHPATH += src/ src/3d/ src/bosses/ src/combat src/common/ src/effects/ src/entities/ src/game/ src/gui/ 
+ SEARCHPATH += src/
