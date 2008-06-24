@@ -27,7 +27,7 @@ OPTIONS=	BCMATH "Use bcmath instead of libgmp" off \
 		PGSQL "Use pgsql" off \
 		SQLITE "Use sqlite" off
 
-USE_PHP=	curl
+USE_PHP=	curl dom
 
 .include <bsd.port.pre.mk>
 
