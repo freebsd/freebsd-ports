@@ -345,6 +345,7 @@
     SUBDIR += gweled
     SUBDIR += hangman
     SUBDIR += hattrickorganizer
+    SUBDIR += hedgewars
     SUBDIR += heretic
     SUBDIR += heroes
     SUBDIR += hex
