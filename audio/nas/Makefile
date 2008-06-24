@@ -7,7 +7,7 @@
 
 PORTNAME=	nas
 PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.src.tar.gz
@@ -28,6 +28,12 @@ SUB_FILES=	pkg-message
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' | ${XARGS} ${GREP} -lF malloc.h \
 		| ${XARGS} ${REINPLACE_CMD} -n -e "s|<malloc.h>||" -e t -e p
+.if defined(NOPORTDOCS)
+        ${REINPLACE_CMD} -e '/^install.man::/ { p; s/.*/        exit 0\\/; }' \
+                ${WRKSRC}/Makefile
+.else
+.include "Makefile.man"
+.endif
 
 post-configure:
 	# Work around shortcomings of the Image.rules et. al:
@@ -38,10 +44,6 @@ post-configure:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-.ifndef(NOPORTDOCS)
-.	include "Makefile.man"
-.endif
 
 .if ${ARCH} == "sparc64"
 FPIC=	-fPIC
