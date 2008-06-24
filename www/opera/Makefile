@@ -7,7 +7,6 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
-PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://opera.inode.at/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
 		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
@@ -23,107 +22,61 @@ MASTER_SITES=	ftp://opera.inode.at/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER
 		http://opera.nedmirror.nl/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
 		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/&,} \
-		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/
-DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.${OPERA_TYPE}-${OPERA_LIB}-qt.i386.freebsd-en
+		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}${PKGNAMESUFFIX}/sources/
+DISTNAME=	${PORTNAME}-${OPERA_VER}${OPERA_MINVER}-freebsd${OPERA_TYPE}-shared-qt3.${ARCH}
 
 MAINTAINER=	freebsd-maintainer@opera.com
-COMMENT=	A blazingly fast, full-featured, standards-compliant browser
+COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
-OPERA_VER=	9.27
+OPERA_VER=	9.50
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20080331
-OPERA_BUILD=	709
+OPERA_DATE=	20080611
+OPERA_BUILD=	2042
 
-DATADIR=	${PREFIX}/share/${PORTNAME}
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
-WANT_GNOME=	yes
-ONLY_FOR_ARCHS=	i386
-WRKSRC=		${WRKDIR}/${DISTNAME}-${OPERA_BUILD}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.freebsd${OPERA_TYPE}-shared-qt3.${ARCH}
+USE_QT_VER=	3
 
 MAN1=		opera.1
 
 NO_BUILD=	yes
 
-OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on \
-		SHARED	"Use a shared Qt library (instead of static)"	on
-
-.if exists(${LOCALBASE}/lib/libqt-mt.prl)
-QT_PRESENT=	on
-.else
-QT_PRESENT=	off
-.endif
+OPTIONS=	ASPELL	"Use the aspell library for spell checking"	on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700040
-OPERA_TYPE=	1
-.elif ${OSVERSION} >= 600000
-OPERA_TYPE=	4
+.if ${OSVERSION} >= 600000
+ONLY_FOR_ARCHS=	i386 amd64
 .else
-OPERA_TYPE=	3
+ONLY_FOR_ARCHS=	i386
 .endif
 
-.if ${OSVERSION} > 700000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-symhack
-PLIST_SUB+=	SYMHACK=""
+.if ${ARCH} == amd64
+OPERA_LIB=	amd64
 .else
-PLIST_SUB+=	SYMHACK="@comment "
+OPERA_LIB=	shared
+.endif
+
+.if ${OSVERSION} >= 700000
+OPERA_TYPE=	7
+.elif ${OSVERSION} >= 600000
+OPERA_TYPE=	6
+.elif ${OSVERSION} >= 500000
+OPERA_TYPE=	5
+.else
+IGNORE=	is only supported on FreeBSD 5.x and higher
 .endif
 
 .if !defined(WITHOUT_ASPELL)
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .endif
 
-.if defined(WITH_SHARED) && ${OPERA_TYPE} > 1
-OPERA_LIB=	shared
-LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
-.else
-OPERA_LIB=	static
-OPERA_TYPE=	1
-.endif
-
-.if ${OPERA_TYPE} == 1
-LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	z.2:${PORTSDIR}/misc/compat5x
-.endif
-.endif
-
-.if ${HAVE_GNOME:Mgnomehier}!=""
-PLIST_SUB+=	GNOME=""
-.else
-PLIST_SUB+=	GNOME="@comment "
-.endif
-
-.if exists(${LOCALBASE}/bin/kde-config)
-PLIST_SUB+=	KDE=""
-.else
-PLIST_SUB+=	KDE="@comment "
-.endif
-
-post-patch:
-	@${CP} ${WRKSRC}/search.ini ${WRKSRC}/locale/en
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' \
-			${WRKSRC}/install.sh ${WRKSRC}/ini/pluginpath.ini \
-			${WRKSRC}/config/opera6rc
-	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/install.sh
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
-	@${FIND} ${WRKSRC} -name '*.bak' -delete
-
 do-install:
-	@(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX})
-
-post-install:
-.if ${OSVERSION} > 700000
-	@${CP} ${FILESDIR}/symhack.c ${WRKSRC}/
-	@(cd ${WRKSRC}/ && ${CC} -shared -o symhack.so symhack.c)
-	@${INSTALL_DATA} ${WRKSRC}/symhack.so ${DATADIR}/
-.endif
-
-	@${CAT} ${PKGMESSAGE}
+	@(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX} --docdir=${DOCSDIR} --sharedir=${DATADIR} --exec_prefix=${DATADIR}/bin --plugindir=${DATADIR}/plugins)
 
 .include <bsd.port.post.mk>
