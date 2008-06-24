@@ -5,15 +5,14 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fv
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	FreeVision is a Free Pascal unit for Delphi support
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
-		fpcmake:${PORTSDIR}/lang/fpc-utils
+USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/${PKGNAMESUFFIX:S/-//}

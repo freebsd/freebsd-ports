@@ -5,24 +5,15 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-image
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
-		${UNITSDIR}/fcl-base/Package.fpc:${PORTSDIR}/devel/fpc-fcl-base \
-		${UNITSDIR}/hash/Package.fpc:${PORTSDIR}/security/fpc-hash \
-		${UNITSDIR}/netdb/Package.fpc:${PORTSDIR}/net/fpc-netdb \
-		${UNITSDIR}/pasjpeg/Package.fpc:${PORTSDIR}/graphics/fpc-pasjpeg \
-		${UNITSDIR}/paszlib/Package.fpc:${PORTSDIR}/archivers/fpc-paszlib \
-		${UNITSDIR}/pthreads/Package.fpc:${PORTSDIR}/devel/fpc-pthreads \
-		${UNITSDIR}/libasync/Package.fpc:${PORTSDIR}/net/fpc-libasync \
-		${UNITSDIR}/libpng/Package.fpc:${PORTSDIR}/graphics/fpc-libpng
+USE_FPC=	fcl-base hash netdb pasjpeg paszlib pthreads libasync libpng
 
-UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}

@@ -1,7 +1,6 @@
 bin/bin2obj
 bin/data2inc
 bin/delp
-bin/fpcmake
 bin/fpcres
 bin/fpdoc
 bin/fppkg

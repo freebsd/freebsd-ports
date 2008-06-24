@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-netdb
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Pure-pascal netdb implementation
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}

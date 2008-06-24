@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-postgres
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to PostGreSQL
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}

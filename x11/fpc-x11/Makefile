@@ -5,15 +5,14 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 lang
 PKGNAMESUFFIX=	-x11
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to X windows server
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
-		fpcmake:${PORTSDIR}/lang/fpc-utils
+USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}

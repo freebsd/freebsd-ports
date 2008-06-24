@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	math lang
 PKGNAMESUFFIX=	-fftw
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to the FFTW3 library
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
