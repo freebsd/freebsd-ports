@@ -7,6 +7,7 @@
 
 PORTNAME=	nas
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.src.tar.gz
@@ -38,7 +39,9 @@ post-configure:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include "Makefile.man"
+.ifndef(NOPORTDOCS)
+.	include "Makefile.man"
+.endif
 
 .if ${ARCH} == "sparc64"
 FPIC=	-fPIC
