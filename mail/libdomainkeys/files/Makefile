@@ -11,6 +11,8 @@ INCLUDEDIR=	${PREFIX}/include
 CFLAGS+=	-DBIND_8_COMPAT -I${OPENSSLBASE}/include
 LDFLAGS+=	-lcrypto -L${OPENSSLBASE}/lib
 
+NO_PROFILE=
+
 makeheader: makeheader.c
 
 domainkeys.h: domainkeys.c makeheader
