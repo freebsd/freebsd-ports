@@ -12,7 +12,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.adotout.com/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS flood detector
 
 WRKSRC=		${WRKDIR}/dns_flood_detector

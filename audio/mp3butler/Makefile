@@ -10,7 +10,7 @@ PORTVERSION=	2.40
 CATEGORIES=	audio
 MASTER_SITES=	http://iainlea.dyndns.org/software/${PORTNAME}/
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for renaming mp3 files and looking ID3 tags for it
 
 RUN_DEPENDS=	${SITE_PERL}/CDDB.pm:${PORTSDIR}/audio/p5-CDDB \

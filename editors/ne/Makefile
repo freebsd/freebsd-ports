@@ -12,7 +12,7 @@ MASTER_SITES=	http://ne.dsi.unimi.it/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice and powerfull editor
 
 USE_GMAKE=	yes
