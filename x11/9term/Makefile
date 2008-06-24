@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/editors/sam:build
 
 DEPRECATED=	depends on expired port
 EXPIRATION_DATE=2008-07-18
+BROKEN=		Unfetchable
 
 NO_WRKSUBDIR=	yes
 USE_XORG=	x11
