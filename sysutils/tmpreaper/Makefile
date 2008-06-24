@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmpreaper
-PORTVERSION=	1.6.9
+PORTVERSION=	1.6.10
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
@@ -15,6 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cleans up files in directories based on their age
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 PLIST_FILES=	sbin/tmpreaper
 PORTDOCS=	README
