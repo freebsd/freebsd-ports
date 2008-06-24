@@ -2451,6 +2451,7 @@
     SUBDIR += tmake
     SUBDIR += tnt
     SUBDIR += toh
+    SUBDIR += tokamak
     SUBDIR += towitoko
     SUBDIR += tpasm
     SUBDIR += tpg
