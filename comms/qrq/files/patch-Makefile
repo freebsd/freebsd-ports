@@ -1,0 +1,43 @@
+--- Makefile.orig	2008-06-22 15:27:57.000000000 -0400
++++ Makefile	2008-06-23 21:33:21.000000000 -0400
+@@ -1,7 +1,8 @@
+ # qrq Makefile -- Fabian Kurz, DJ1YFK -- http://fkurz.net/ham/qrq.html
+ 
+ VERSION=0.1.4
+-DESTDIR?=/usr
++DESTDIR=%%PREFIX%%
++LDFLAGS+=%%PTHREAD_LIBS%%
+ 
+ # set to YES if you want to use OpenAL instead of OSS
+ # note that you must use OpenAL for OSX
+@@ -38,13 +39,13 @@
+ all: qrq
+ 
+ qrq: $(OBJECTS)
+-	g++ -pthread -Wall -lm -lncurses $(LDFLAGS) -o $@ $^
++	g++ -Wall -lm -lncurses $(LDFLAGS) -o $@ $^
+ 	
+ .c.o:
+-	gcc $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) -c $<
+ 
+ .cpp.o:
+-	g++ $(CFLAGS) -c $<
++	$(CPP) $(CFLAGS) -c $<
+ 
+ ifeq ($(OSX_BUNDLE), YES)
+ 
+@@ -71,11 +72,11 @@
+ 
+ install: qrq
+ 	install -d -v               $(DESTDIR)/share/qrq/
+-	install -d -v               $(DESTDIR)/share/man/man1/
++	install -d -v               $(DESTDIR)/man/man1/
+ 	install -d -v               $(DESTDIR)/bin/
+ 	install -s -m 0755 qrq      $(DESTDIR)/bin/
+ 	install    -m 0755 qrqscore $(DESTDIR)/bin/
+-	install    -m 0644 qrq.1    $(DESTDIR)/share/man/man1/
++	install    -m 0644 qrq.1    $(DESTDIR)/man/man1/
+ 	install    -m 0644 callbase $(DESTDIR)/share/qrq/
+ 	install    -m 0644 qrqrc    $(DESTDIR)/share/qrq/
+ 	install    -m 0644 toplist  $(DESTDIR)/share/qrq/

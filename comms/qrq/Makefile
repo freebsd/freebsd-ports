@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qrq
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/qrq/ \
 		${MASTER_SITE_LOCAL}
@@ -17,20 +17,10 @@ COMMENT=	Morse telegraphy trainer similar to the classic DOS version by DL4MM
 
 MAN1=		qrq.1
 
-LDFLAGS+=	-lm -lncurses -lpthread
-CFLAGS+=	-DDESTDIR=\"${PREFIX}\" -DVERSION=\"${PORTVERSION}\"
+USE_GMAKE=	yes
 
-do-build:
-	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c \
-		-o ${WRKSRC}/${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/qrqscore ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
-	${MKDIR} ${DATADIR}
-.for f in callbase qrqrc toplist
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
-.endfor
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
