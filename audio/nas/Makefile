@@ -24,19 +24,15 @@ MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
+.include "Makefile.man"
+
 .include <bsd.port.pre.mk>
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' | ${XARGS} ${GREP} -lF malloc.h \
 		| ${XARGS} ${REINPLACE_CMD} -n -e "s|<malloc.h>||" -e t -e p
-.if defined(NOPORTDOCS)
-        ${REINPLACE_CMD} -e '/^install.man::/ { p; s/.*/        exit 0\\/; }' \
-                ${WRKSRC}/Makefile
-.else
-.include "Makefile.man"
-.endif
 
 post-configure:
-	# Work around shortcomings of the Image.rules et. al:
+# Work around shortcomings of the Image.rules et. al:
 	${REINPLACE_CMD} -e 's:-fPIC:${FPIC} -DPIC:g' \
 	    -e 's,-c \$$(CCOPTIONS),-c $$(CFLAGS),' \
 	    -e 's,\(\$$(AR) \$$@ \$$\)(OBJS),\1(OBJS:S|^|unshared/|),' \
