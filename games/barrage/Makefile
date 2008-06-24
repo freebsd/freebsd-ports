@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/lgames
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Destroy as many targets as possible
 
 USE_GMAKE=	yes

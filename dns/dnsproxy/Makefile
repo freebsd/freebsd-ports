@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.wolfermann.org/
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A proxy for DNS queries
 
 GNU_CONFIGURE=	yes

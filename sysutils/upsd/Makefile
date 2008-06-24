@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APC Smart UPS Monitoring Daemon
 
 WRKSRC=		${WRKDIR}/upsd-2.0
