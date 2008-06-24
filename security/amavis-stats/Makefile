@@ -7,7 +7,7 @@
 
 PORTNAME=	amavis-stats
 PORTVERSION=	0.1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://rekudos.net/download/
 

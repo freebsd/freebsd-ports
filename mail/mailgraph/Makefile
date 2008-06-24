@@ -7,7 +7,7 @@
 
 PORTNAME=	mailgraph
 PORTVERSION=	1.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://mailgraph.schweikert.ch/pub/ \
 		http://mailgraph.schweikert.ch/pub/old/

@@ -7,6 +7,7 @@
 
 PORTNAME=	couriergraph
 PORTVERSION=	20060202
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.oav.net/couriergraph/
 DIST_SUBDIR=	${PORTNAME}

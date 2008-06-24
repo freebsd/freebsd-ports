@@ -7,6 +7,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL} http://www.joeym.net/
 MASTER_SITE_SUBDIR=	mat
@@ -19,6 +20,7 @@ COMMENT=	A php/rrdtool glue
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 GNU_CONFIGURE=	yes
+
 WRKSRC=		${WRKDIR}/${UNIQUENAME}-${PORTVERSION}
 
 USE_PHP=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	mysqlard
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	http://gert.sos.be/downloads/mysqlar/
 

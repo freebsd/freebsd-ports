@@ -7,6 +7,7 @@
 
 PORTNAME=	nfsen
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://nfsen.sourceforge.net/

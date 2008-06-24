@@ -6,6 +6,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	rubyrrdtool
@@ -16,6 +17,8 @@ COMMENT=	A Ruby interface to RRDTool
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 BUILD_DEPENDS=	sow:${PORTSDIR}/devel/rubygem-hoe
+
+BROKEN=		does not compile with rrdtool 1.3
 
 GEM_NAME=	RubyRRDtool-0.6.0
 GEM_ENV=	MAKEFLAGS="CPPFLAGS=-I${LOCALBASE}/include"
