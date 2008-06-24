@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.6
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
