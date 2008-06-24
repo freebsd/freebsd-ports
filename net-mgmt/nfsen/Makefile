@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	nfsen
-PORTVERSION=	1.2.4.20060810
+PORTVERSION=	1.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://nfsen.sourceforge.net/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-snapshot-20060810
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Web based frontend to nfdump netflow collector
 
 RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
+		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		nfdump:${PORTSDIR}/net-mgmt/nfdump
 
 USE_ICONV=	yes

@@ -2,7 +2,7 @@
 #
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-DAEMON=%%PREFIX%%/bin/nfsen.rc
+DAEMON=%%PREFIX%%/bin/nfsen
 NAME=nfsen
 
 test -x $DAEMON || exit 0
