@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blobandconquer
-DISTVERSION=	0.95-1
+DISTVERSION=	0.96-1
 CATEGORIES=	games
 # original url: http://www.parallelrealities.co.uk/download.php?proj=blobAndConquer&file=${DISTNAME}&type=zip
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
@@ -22,6 +22,8 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_DOS2UNIX=	makefile src/headers.h src/main.cpp
 USE_GETTEXT=	yes
+WANT_GNOME=	yes
+INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/blobAndConquer-${DISTVERSION:C/^([0-9]\.[0-9][0-9]).*/\1/}
 PORTDOCS=	*
@@ -29,29 +31,22 @@ PORTDOCS=	*
 MAKEFILE=	makefile
 MAKE_ENV=	CXX="${CXX}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
 
-DESKTOP_ENTRIES="Blob and Conquer" \
-		"Save Blobs" \
-		"" \
-		"blobAndConquer" \
-		"Application;Game;" \
-		false
-
-post-patch:
-	@${FIND} ${WRKSRC} -type d -empty -exec ${TOUCH} "{}/.keep_me" \;
+post-build:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} buildpak)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/blobAndConquer ${PREFIX}/bin
-.for d in data gfx music sound textures
-	cd ${WRKSRC} && \
-	${FIND} ${d} -type d -exec ${MKDIR} "${DATADIR}/{}" \; ;\
-	${FIND} ${d} -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
-.endfor
-
+	${INSTALL_PROGRAM} ${WRKSRC}/blobAndConquer ${PREFIX}/bin/
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/blobAndConquer.pak ${DATADIR}/
+	${MKDIR} ${PREFIX}/share/icons/hicolor/32x32/apps
+	${INSTALL_DATA} ${WRKSRC}/icons/blobAndConquer.png \
+		${PREFIX}/share/icons/hicolor/32x32/apps/
+	${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/icons/blobAndConquer.desktop \
+		${DESKTOPDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && \
-	${FIND} . -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; ;\
-	${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}/
 .endif
 
 .include <bsd.port.pre.mk>
