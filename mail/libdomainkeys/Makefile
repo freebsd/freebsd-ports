@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libdomainkeys
-PORTVERSION=	0.68
-PORTREVISION=	2
+PORTVERSION=	0.69
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	domainkeys
@@ -21,12 +20,6 @@ SHLIB_MAJOR=	3
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 USE_OPENSSL=	YES
-
-.if defined(NOPROFILE)
-PLIST_SUB+=	PROFILE="@comment "
-.else
-PLIST_SUB+=	PROFILE=""
-.endif
 
 post-patch:
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
