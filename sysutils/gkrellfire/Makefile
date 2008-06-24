@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gkrellfire
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.4.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.freenet.de/thomas-steinke/ \
+MASTER_SITES=	http://freenet-homepage.de/thomas-steinke/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	novel
 EXTRACT_SUFX=	.tgz
