@@ -5,17 +5,15 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	archivers devel
 PKGNAMESUFFIX=	-paszlib
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal unit for native compression IO
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
-		${UNITSDIR}/hash/Package.fpc:${PORTSDIR}/security/fpc-hash
+USE_FPC=	hash
 
-UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}

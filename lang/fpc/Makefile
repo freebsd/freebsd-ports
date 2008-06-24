@@ -7,7 +7,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	2.2.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
 		ftp://planetmirror.com/pub/fpc/dist/source-${PORTVERSION}/:source \
@@ -27,24 +27,26 @@ COMMENT?=	Free Pascal compiler with Turbo and Delphi
 
 USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
-BUILDNAME=	${ARCH}-freebsd
-OPT?=-CX
-MAKE_ENV=	PREFIX=${PREFIX} \
-		FPCTARGET=${BUILDNAME} \
-		OPT="${OPT}" \
-		BSDHIER=1
+
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
-		BUILDNAME=${BUILDNAME}
 SUB_FILES=	pkg-message
+
+OPT?=-CX
 FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
 .if !defined(PKGNAMESUFFIX)
+BUILDNAME=	${ARCH}-freebsd
+PLIST_SUB=	PORTVERSION=${PORTVERSION} \
+		BUILDNAME=${BUILDNAME}
 DISTFILES+=	${DISTNAME:S/$/.bin/}${EXTRACT_SUFX}:bin
 MAKE_ENV+=	PP=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/lib/${PORTNAME}/${PORTVERSION}/ppc386 \
-		FPCMAKE=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/bin/fpcmake
+		PREFIX=${PREFIX} \
+		FPCMAKE=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/bin/fpcmake \
+		FPCTARGET=${BUILDNAME} \
+		OPT="${OPT}" \
+		BSDHIER=1	
 MAN1=	bin2obj.1 \
 	data2inc.1 \
 	delp.1 \
@@ -88,17 +90,21 @@ do-extract:
 # unpack source distribution
 	@cd ${WRKDIR} && \
 		${GZIP_CMD} -dc ${_DISTDIR}/${DISTNAME:S/$/.source/}${EXTRACT_SUFX} \
-			| ${TAR} xf - ${FPCSRCDIR}/compiler ${FPCSRCDIR}/rtl
+			| ${TAR} xf - ${FPCSRCDIR}/compiler ${FPCSRCDIR}/rtl ${FPCSRCDIR}/utils/fpcm
 
 do-build:
 # build fpc compiler
 	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} cycle ${MAKE_ENV}
+# build fpcmake
+	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${GMAKE} ${MAKE_ENV}
 
 do-install:
 	# Installing fpc compiler
 	@cd ${WRKDIR}/${FPCSRCDIR}/rtl && ${GMAKE} install ${MAKE_ENV}
       	# Installing fpc runtime
 	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} install ${MAKE_ENV}
+	# Installng fpcmake
+	@@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${GMAKE} install ${MAKE_ENV}
 	# Installing manpages
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/man/man1/* ${MAN1PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/man/man5/* ${MAN1PREFIX}/man/man5

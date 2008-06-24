@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-ibase
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to interbase
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/base/${PKGNAMESUFFIX:S/-//}

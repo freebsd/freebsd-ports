@@ -5,16 +5,15 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	ftp lang
 PKGNAMESUFFIX=	-libcurl
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to libcurl
 
-BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
+USE_FPC=	yes
 
-UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/extra/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}

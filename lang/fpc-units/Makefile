@@ -7,7 +7,7 @@
 
 PORTNAME=	units
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	fpc-
@@ -62,61 +62,28 @@ OPTIONS=	BFD	"Interface to GNU Binary Format description"	on \
 		ZLIB	"Interface to the zlib compression library"	on \
 		ZVT	"Interface to Zed's Virtual Terminal"	on
 
-.include <bsd.port.pre.mk>
+PORT_DBDIR?=	/var/db/ports
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
+                
+.if exists(${OPTIONSFILE})
+.include "${OPTIONSFILE}"
+.endif
 
-UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 ALL_OPTIONS=	BFD CAIRO FCL-BASE FCL-DB FCL-FPCUNIT FCL-IMAGE FCL-NET FCL-PASSRC \
 		FCL-REGISTRY FCL-WEB FCL-XML FFTW FPMKUNIT FORMS FPGTK FV GCONF GDBM \
 		GGI GNOME GTK GTK2 HTTPD IMLIB LIBCURL LIBGD LIBPNG NCURSES OPENGL \
 		OPENSSL PCAP SVGALIB SYSLOG TCL UNZIP UTMP X11 ZLIB ZVT
 
-BFD_UNIT=	devel/fpc-bfd
-CAIRO_UNIT=	graphics/fpc-cairo
-FCL_BASE_UNIT=	devel/fpc-fcl-base
-FCL_DB_UNIT=	devel/fpc-fcl-db
-FCL_FPCUNIT_UNIT=	devel/fpc-fcl-fpcunit
-FCL_IMAGE_UNIT=	devel/fpc-fcl-image
-FCL_NET_UNIT=	devel/fpc-fcl-net
-FCL_PASSRC_UNIT=	devel/fpc-fcl-passrc
-FCL_REGISTRY_UNIT=	devel/fpc-fcl-registry
-FCL_WEB_UNIT=	devel/fpc-fcl-web
-FCL_XML_UNIT=	devel/fpc-fcl-xml
-FFTW_UNIT=	math/fpc-fftw
-FPMKUNIT_UNIT=	devel/fpc-fpmkunit
-FORMS_UNIT=	x11-toolkits/fpc-forms
-FPGTK_UNIT=	graphics/fpc-fpgtk
-FV_UNIT=	devel/fpc-fv
-GCONF_UNIT=	devel/fpc-gconf
-GDBM_UNIT=	databases/fpc-gdbm
-GGI_UNIT=	graphics/fpc-ggi
-GNOME_UNIT=	x11-toolkits/fpc-gnome
-GTK_UNIT=	x11-toolkits/fpc-gtk
-GTK2_UNIT=	x11-toolkits/fpc-gtk2
-HTTPD_UNIT=	www/fpc-httpd
-IMLIB_UNIT=	graphics/fpc-imlib
-LIBCURL_UNIT=	ftp/fpc-libcurl
-LIBGD_UNIT=	graphics/fpc-libgd
-LIBPNG_UNIT=	graphics/fpc-libpng
-NCURSES_UNIT=	graphics/fpc-ncurses
-OPENGL_UNIT=	graphics/fpc-opengl
-OPENSSL_UNIT=	security/fpc-openssl
-PCAP_UNIT=	net/fpc-pcap
-SVGALIB_UNIT=	graphics/fpc-svgalib
-SYSLOG_UNIT=	sysutils/fpc-syslog
-TCL_UNIT=	lang/fpc-tcl
-UNZIP_UNIT=	archivers/fpc-unzip
-UTMP_UNIT=	sysutils/fpc-utmp
-X11_UNIT=	x11/fpc-x11
-ZLIB_UNIT=	devel/fpc-zlib
-ZVT_UNIT=	x11-toolkits/fpc-zvt
-
+UNITS_SELECTED=		#
 .for OPT in ${ALL_OPTIONS}
 .	if defined(WITH_${OPT})  && !defined(WITHOUT_${OPT})
-RUN_DEPENDS+=	${UNITSDIR}/${OPT:L:S/httpd/httpd-1.3/}/Package.fpc:${PORTSDIR}/${${OPT:S/-/_/}_UNIT}
+UNITS_SELECTED+=	${OPT:L}
 .	endif
 .endfor
+USE_FPC=	${UNITS_SELECTED}
 
 do-install: build
 	@${DO_NADA}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

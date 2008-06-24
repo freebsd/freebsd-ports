@@ -1,6 +1,9 @@
-PLIST=	${.CURDIR}/pkg-plist
-PATCHDIR=	${.CURDIR}/files
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PLIST_SUB=		PORTVERSION=${PORTVERSION} \
+			BUILDNAME=${BUILDNAME}
+
+PLIST=			${.CURDIR}/pkg-plist
+PATCHDIR=		${.CURDIR}/files
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 UNITPREFIX=    		unit-
 UNITEXTRACT_SUFX=	.tar.gz
@@ -10,13 +13,12 @@ UNITDIR=		lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXTRACTUNITDIR}
 OPT=-CX
 
-MAKE_ENV+=	PP=${LOCALBASE}/bin/ppc386
-
-.if !exists(${LOCALBASE}/bin/fpcmake)
-EXTRACTUNITDIR+=	${PORTNAME}-${PORTVERSION:S/$/.bin/}
-DISTFILES+=	${DISTNAME:S/$/.bin/}${EXTRACT_SUFX}:bin
-MAKE_ENV+=	FPCMAKE=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/bin/fpcmake
-.endif
+MAKE_ENV+=		PP=${LOCALBASE}/bin/ppc386 \
+			PREFIX=${PREFIX} \
+			FPCMAKE=${LOCALBASE}/bin/fpcmake \
+			FPCTARGET=${BUILDNAME} \
+			OPT="${OPT}" \
+			BSDHIER=1
 
 .if ${PKGNAMESUFFIX} == "-gdbint"
 HAVE_EXAMPLES=	true
@@ -282,6 +284,12 @@ post-extract:
 	@cd ${WRKDIR}/${WRKUNITDIR} && \
 		${FIND} ${WRKSRC} -type d -name .svn | ${XARGS} ${RM} -rf
 
+post-patch:
+.if ${PKGNAMESUFFIX} == "-utils"
+	@${REINPLACE_CMD} -e 's|fpcm||g' ${WRKDIR}/${WRKUNITDIR}/Makefile \
+		${WRKDIR}/${WRKUNITDIR}/Makefile.fpc
+.endif
+
 do-build:
 	@${ECHO_CMD} ${MAKE_ENV}
 	@${ECHO_CMD} ""
@@ -294,15 +302,3 @@ do-install:
 			@cd ${WRKDIR}/${WRKUNITDIR} && ${GMAKE} fpc_exampleinstall
 .		endif
 .	endif
-	
-security-check: fpc-check-install
-
-fpc-check-install:
-check-makevars::
-	@${ECHO_CMD} "#################################################################"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} " The following freepascal unit will be installed in your system: "
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} " * ${UNITPREFIX}${PKGNAMESUFFIX:S/-//}"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "#################################################################"
