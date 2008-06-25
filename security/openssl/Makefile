@@ -11,7 +11,7 @@ PORTVERSION=	0.9.7m
 PORTREVISION?=	0
 .else
 PORTVERSION=	0.9.8h
-PORTREVISION?=	0
+PORTREVISION?=	1
 .endif
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
