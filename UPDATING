@@ -7,6 +7,18 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20080624:
+  AFFECTS: users of irc/ircd-ratbox-devel
+  AUTHOR: Beech Rintoul <beech@FreeBSD.org>
+
+  Upgrading between different beta releases can cause problems
+  when changes to the ban database schema have occurred.
+  The 'bantool' utility now comes with a -u switch that will
+  check and update the ban database as necessary.
+
+  A 'bantool -u' update is required when upgrading between
+  beta releases and must not be done while the ircd is running.
+
+20080624:
   AFFECTS: users of www/mod_security
   AUTHOR: Marcelo Araujo <araujo@FreeBSD.org>
 
