@@ -106,11 +106,10 @@ WITH_LINUX_BOOTSTRAP=	YES
 .endif
 
 # if no valid jdk found, set dependency
-.if !defined(BOOTSTRAPJDKDIR)
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/diablo-jdk1.5.0
+.if !defined(BOOTSTRAPJDKDIR) || !exists(${BOOTSTRAPJDKDIR}/bin/javac)
+BOOTSTRAPJDKDIR=	${LOCALBASE}/diablo-jdk1.5.0
+BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk15
 .endif
-
-BUILD_DEPENDS+=	${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk15
 
 .if defined(WITHOUT_WEB)
 MAKE_ENV+=	DONT_BUILD_DEPLOY="YES"
