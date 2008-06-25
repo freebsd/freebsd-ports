@@ -7,7 +7,7 @@
 
 PORTNAME=	chillispot
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.chillispot.info/download/ \
 		http://www.geeklan.co.uk/files/ \
@@ -49,7 +49,7 @@ RUN_DEPENDS+=	radiusd:${PORTSDIR}/net/openradius
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/chilli.conf ${DATADIR}/chilli.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/doc/dictionary.chillispot ${DATADIR}
