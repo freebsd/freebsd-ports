@@ -23,4 +23,7 @@ USE_LDCONFIG=	yes
 
 INFO=		mpfr
 
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+
 .include <bsd.port.mk>
