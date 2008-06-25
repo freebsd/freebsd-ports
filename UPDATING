@@ -7,6 +7,17 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20080624:
+  AFFECTS: users of www/mod_security
+  AUTHOR: Marcelo Araujo <araujo@FreeBSD.org>
+
+  The mod_security has been updated from 1.9.4 to 2.5.5. The branch 1.9
+  no receive more updates, all users must update mod_security to series
+  2.1 or 2.5.
+
+  You can get more information about update issues at:
+  http://www.modsecurity.org/documentation/
+
+20080624:
   AFFECTS: users of www/opera and www/opera/devel
   AUTHOR: Ion-Mihai Tetcu <itetcu@FreeBSD.org>
 
