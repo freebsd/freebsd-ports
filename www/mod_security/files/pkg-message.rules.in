@@ -1,0 +1,20 @@
+
+The modsecurity 2 Core Rules have been installed in 
+
+  %%PREFIX%%/%%APACHEETCDIR%%/Includes/mod_security2/
+
+and run in "DetectionOnly" mode as not to disturb operatings.
+
+Please read http://www.modsecurity.org/projects/rules/index.html
+
+ModSecurity requires mod_unique_id to be actived.
+This line must be present in your apache configuration file.
+
+LoadModule unique_id_module libexec/apache22/mod_unique_id.so
+
+You must add the following to your Apache configuration file for
+activate mod_security:
+
+LoadModule security2_module libexec/apache22/mod_security2.so
+
+Logging is done to /var/log/httpd-modsec2*.log
