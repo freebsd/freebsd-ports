@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.18
-PORTREVISION=	2
+PORTVERSION=	2.20.0
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -231,6 +230,13 @@ CONFIGURE_ARGS+=	 --with-gtkglext=yes
 LIB_DEPENDS+=		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 .else
 CONFIGURE_ARGS+=	--without-gtkglext
+.endif
+
+.if defined(WITH_SMYRNA)
+CONFIGURE_ARGS+=	 --with-gts=yes
+LIB_DEPENDS+=		gts.5:${PORTSDIR}/graphics/gts
+.else
+CONFIGURE_ARGS+=	--without-gts
 .endif
 
 .if !defined(WITHOUT_DIGCOLA)

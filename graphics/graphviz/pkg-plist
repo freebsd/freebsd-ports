@@ -94,10 +94,6 @@ lib/graphviz/libgvc.so
 lib/graphviz/libgvc.so.4
 lib/graphviz/libgvc.la
 lib/graphviz/libgvc.a
-lib/graphviz/libgvc_builtins.so
-lib/graphviz/libgvc_builtins.so.4
-lib/graphviz/libgvc_builtins.la
-lib/graphviz/libgvc_builtins.a
 lib/graphviz/libgvplugin_core.so
 lib/graphviz/libgvplugin_core.so.5
 lib/graphviz/libgvplugin_core.la
@@ -158,7 +154,7 @@ lib/graphviz/libgvplugin_neato_layout.a
 %%WITH_TCL%%lib/graphviz/tcl/libtclplan.so
 %%WITH_TCL%%lib/graphviz/tcl/libtclplan.so.0
 %%WITH_TCL%%lib/graphviz/tcl/pkgIndex.tcl
-%%WITH_TCL%%lib/tcl%%TCL_VER%%/graphviz-%%PORTVERSION%%
+%%WITH_TCL%%lib/tcl%%TCL_VER%%/graphviz
 %%WITH_TK%%lib/graphviz/tcl/libtkspline.a
 %%WITH_TK%%lib/graphviz/tcl/libtkspline.la
 %%WITH_TK%%lib/graphviz/tcl/libtkspline.so
@@ -200,7 +196,6 @@ libdata/pkgconfig/libagraph.pc
 libdata/pkgconfig/libcgraph.pc
 libdata/pkgconfig/libpathplan.pc
 libdata/pkgconfig/libgvc.pc
-libdata/pkgconfig/libgvc_builtins.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/html/build.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
@@ -388,39 +383,42 @@ libdata/pkgconfig/libgvc_builtins.pc
 %%WITH_TCL%%%%DATADIR%%/demo/modgraph.tcl
 %%WITH_SMYRNA%%%%DATADIR%%/examples/4elt.dot
 %%WITH_SMYRNA%%%%DATADIR%%/examples/world.dot
-%%WITH_SMYRNA%%%%DATADIR%%/gui/arial.tga
-%%WITH_SMYRNA%%%%DATADIR%%/gui/attrs.txt
-%%WITH_SMYRNA%%%%DATADIR%%/gui/smyrna.glade
-%%WITH_SMYRNA%%%%DATADIR%%/icons/AntiselectRect.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/AntiselectRectX.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/add_edge.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/cursor.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/deletE_edge.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/delete_node.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/find_edge.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/find_node.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/fisheye.raw
-%%WITH_SMYRNA%%%%DATADIR%%/icons/fit_to_screen.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/magifier_zoom_out.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/magnifier.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/magnifier_zoom_in.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/move.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/new_delete.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/new_node.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/newzoom.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/ok.raw
-%%WITH_SMYRNA%%%%DATADIR%%/icons/ok2.raw
-%%WITH_SMYRNA%%%%DATADIR%%/icons/ok3.raw
-%%WITH_SMYRNA%%%%DATADIR%%/icons/pan.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/pan.raw
-%%WITH_SMYRNA%%%%DATADIR%%/icons/select.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/selectx.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/zoom.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/zoom.raw
-%%WITH_SMYRNA%%%%DATADIR%%/icons/zoom_in.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/zoom_out.png
-%%WITH_SMYRNA%%%%DATADIR%%/icons/zoomminus.raw
-%%WITH_SMYRNA%%%%DATADIR%%/icons/zoomplus.raw
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/AntiselectRect.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/AntiselectRectX.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/add_edge.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/arial.tga
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/attrs.txt
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/cursor.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/deletE_edge.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/delete_node.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/find_edge.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/find_node.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/fisheye.raw
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/fit_to_screen.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/hourglass.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/magifier_zoom_out.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/magnifier.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/magnifier_zoom_in.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/move.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/new_delete.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/new_node.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/newzoom.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/ok.raw
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/ok2.raw
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/ok3.raw
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/pan.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/pan.raw
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/rotate.raw
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/select.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/selectx.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/smyrna.glade
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/template.dot
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoom.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoom.raw
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoom_in.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoom_out.png
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoomminus.raw
+%%WITH_SMYRNA%%%%DATADIR%%/smyrna/zoomplus.raw
 %%DATADIR%%/lefty/box.lefty
 %%DATADIR%%/lefty/def.lefty
 %%DATADIR%%/lefty/fractal.lefty
@@ -506,8 +504,7 @@ libdata/pkgconfig/libgvc_builtins.pc
 @exec mkdir -p %D/lib/graphviz/tcl
 @exec mkdir -p %D/%%DATADIR%%/demo
 @exec mkdir -p %D/%%DATADIR%%/examples
-@exec mkdir -p %D/%%DATADIR%%/gui
-@exec mkdir -p %D/%%DATADIR%%/icons
+@exec mkdir -p %D/%%DATADIR%%/smyrna
 @dirrm lib/graphviz/R
 @dirrm lib/graphviz/guile
 @dirrm lib/graphviz/io
@@ -527,12 +524,11 @@ libdata/pkgconfig/libgvc_builtins.pc
 @dirrm include/graphviz
 @dirrm %%DATADIR%%/demo
 @dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/gui
-@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/graphs/directed
 @dirrm %%DATADIR%%/graphs/undirected
 @dirrm %%DATADIR%%/graphs
 @dirrm %%DATADIR%%/lefty
+@dirrm %%DATADIR%%/smyrna
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%/pathplan_data
 @dirrm %%EXAMPLESDIR%%
