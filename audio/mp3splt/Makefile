@@ -7,13 +7,13 @@
 
 PORTNAME=	mp3splt
 PORTVERSION=	2.1c
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Utility to split mp3 and ogg files (via CUE sheets)
 
 OPTIONS=	VORBIS	"Ogg Vorbis support" On
