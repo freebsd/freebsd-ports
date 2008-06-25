@@ -7,10 +7,10 @@
 
 PORTNAME=	netbeans
 PORTVERSION=	6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/6.1/final/zip/
-DISTNAME=	netbeans-${PORTVERSION}-200804211638
+DISTNAME=	netbeans-${PORTVERSION}-200805300101-ml
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
@@ -19,8 +19,6 @@ USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
-
-BROKEN=		Unfetchable
 
 WRKSRC=		${WRKDIR}/netbeans
 
