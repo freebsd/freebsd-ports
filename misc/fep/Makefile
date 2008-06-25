@@ -20,4 +20,10 @@ PLIST_FILES=	bin/fep
 
 NO_WRKSUBDIR=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800039
+BROKEN=		Does not compile without sgtty
+.endif
+
+.include <bsd.port.post.mk>
