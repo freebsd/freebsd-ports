@@ -1,10 +1,11 @@
-bin/bandb
-bin/bantool
-bin/ident
 bin/ircd
-bin/mkpasswd
-bin/resolver
-bin/ssld
+bin/ratbox-mkpasswd
+bin/bantool
+bin/ratbox-sqlite3
+libexec/ircd-ratbox/bandb
+libexec/ircd-ratbox/ident
+libexec/ircd-ratbox/resolver
+libexec/ircd-ratbox/ssld
 %%DATADIR%%/help/opers/accept
 %%DATADIR%%/help/opers/admin
 %%DATADIR%%/help/opers/away
@@ -192,6 +193,7 @@ lib/ircd-ratbox/modules/autoload/m_who.so
 lib/ircd-ratbox/modules/autoload/m_whois.so
 lib/ircd-ratbox/modules/autoload/m_whowas.so
 lib/ircd-ratbox/modules/autoload/m_xline.so
+lib/ircd-ratbox/modules/contrib/example_module.so
 lib/ircd-ratbox/modules/contrib/m_42.so
 lib/ircd-ratbox/modules/contrib/m_clearchan.so
 lib/ircd-ratbox/modules/contrib/m_flags.so
@@ -221,6 +223,7 @@ lib/ircd-ratbox/modules/m_part.so
 lib/ircd-ratbox/modules/m_quit.so
 lib/ircd-ratbox/modules/m_server.so
 lib/ircd-ratbox/modules/m_squit.so
+@dirrm libexec/ircd-ratbox
 @dirrm lib/ircd-ratbox/modules/autoload
 @dirrm lib/ircd-ratbox/modules/contrib
 @dirrm lib/ircd-ratbox/modules
@@ -229,6 +232,7 @@ lib/ircd-ratbox/modules/m_squit.so
 @dirrm %%DATADIR%%/help/opers
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
+etc/ircd-ratbox/genssl.sh
 etc/ircd-ratbox/ircd-efnet.conf.sample
 @unexec if cmp -s %D/etc/ircd-ratbox/ircd.conf.sample %D/etc/ircd-ratbox/ircd.conf; then rm -f %D/etc/ircd-ratbox/ircd.conf; fi
 etc/ircd-ratbox/ircd.conf.sample

@@ -8,7 +8,7 @@
 
 PORTNAME=	ircd-ratbox
 #PORTVERSION=	3.0.0
-DISTVERSION=	3.0.0beta2
+DISTVERSION=	3.0.0beta5
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/testing/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/testing/	\
@@ -25,7 +25,8 @@ CONFLICTS=	ircd-ratbox-[0-9]*
 USE_BZIP2=	yes
 #MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox.sh
-USE_SQLITE=	3
+#USE_SQLITE=	3
+USE_LDCONFIG=	${PREFIX}/lib/ircd-ratbox
 
 LOGDIR?=	/var/log/${PORTNAME}
 RUNDIR?=	/var/run/${PORTNAME}
@@ -38,9 +39,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/${PORTNAME}		\
 		--with-logdir=/var/log/${PORTNAME}			\
 		--with-moduledir=${PREFIX}/lib/${PORTNAME}/modules	\
+		--libexecdir=${PREFIX}/libexec				\
 		--with-helpdir=${DATADIR}/help				\
 		--libdir=${PREFIX}/lib/${PORTNAME}			\
-		--with-sqlite3-path=${LOCALBASE}
+		--disable-backups
 
 PORTDOCS=	[^i]*.txt README.* technical/[^i]*.txt Tao-of-IRC.*
 
@@ -123,6 +125,10 @@ post-patch:
 	@${REINPLACE_CMD} -e "s#%%RUNDIR%%#${RUNDIR}#g" ${WRKSRC}/include/config.h
 	@${REINPLACE_CMD} -e "s#%%DBDIR%%#${DBDIR}#g" ${WRKSRC}/include/config.h
 
+post-build:
+	@cd ${INSTALL_WRKSRC}/contrib && ${SETENV} ${MAKE_ENV} ${MAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
+
 pre-su-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${MKDIR}  ${PREFIX}/etc/${PORTNAME}
@@ -134,9 +140,12 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+	@cd ${INSTALL_WRKSRC}/contrib && ${SETENV} ${MAKE_ENV} ${MAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
 	${INSTALL_DATA} ${WRKSRC}/doc/ircd.motd ${PREFIX}/etc/${PORTNAME}/ircd.motd.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${PREFIX}/etc/${PORTNAME}/ircd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/example.efnet.conf ${PREFIX}/etc/${PORTNAME}/ircd-efnet.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/doc/genssl.sh ${PREFIX}/etc/${PORTNAME}/genssl.sh
 
 	@if [ ! -f ${PREFIX}/etc/${PORTNAME}/ircd.conf ]; then \
 		${ECHO} "Installing default configuration file."; \
