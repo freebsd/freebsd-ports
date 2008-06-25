@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bdb
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.4
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ USE_BDB=	YES
 
 CONFLICTS=	${PKGNAMEPREFIX}${PORTNAME}[2-4]*
 
-USE_RUBY=	yes
+USE_RUBY=		yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
 
@@ -29,32 +29,45 @@ CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
 		--with-db-version=${BDB_LIB_NAME:S/^db//}
 INSTALL_TARGET=	site-install
 
-DOCS=		Changes \
-		README.en \
-		bdb.html \
-		bdb.rd \
-		docs/*.html \
-		docs/*.rd \
-		docs/doc
-
-post-build:
-.if !defined(NOPORTDOCS)
-	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
-.endif
+DOCS=	Changes \
+	README.en \
+	bdb.html \
+	bdb.rd \
+	docs/*.html \
+	docs/*.rd
 
 .include <bsd.port.pre.mk>
 
+PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/bdb.so
+
+.if !defined(NOPORTDOCS)
 DOCSDIR=	${RUBY_MODDOCDIR}
 PORTDOCS=	*
+.endif
+.if !defined(NOPORTEXAMPLES)
+EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
+PORTEXAMPLES=	*
+.endif
+
+post-build:
+.if !defined(NOPORTDOCS)
+	( cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} \
+	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc )
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
-	${CP} -R ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
+	${MKDIR} ${DOCSDIR}/doc
+	(cd ${WRKSRC} && ${INSTALL_MAN} ${DOCS} ${DOCSDIR})
+	(cd ${WRKSRC}/docs/doc && ${COPYTREE_SHARE} \* ${DOCSDIR}/doc)
 .endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR} "! -empty")
+.endif
+
+regression-test:
+	( cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
+	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test )
 
 .include <bsd.port.post.mk>
