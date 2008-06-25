@@ -18,14 +18,6 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/unmakeself
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502103
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libarchive.a:${PORTSDIR}/archivers/libarchive
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
 do-configure:
 	@${RM} -f ${WRKSRC}/config.h
 	@if ${GREP} -q memmem /usr/include/string.h; then \
@@ -41,4 +33,4 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unmakeself ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
