@@ -1,6 +1,6 @@
---- ./doc/Makefile.in.orig	Fri Mar  7 16:30:59 2008
-+++ ./doc/Makefile.in	Tue Apr 22 02:20:19 2008
-@@ -43,21 +43,10 @@
+--- ./doc/Makefile.in.orig	2008-04-23 20:59:46.000000000 +0100
++++ ./doc/Makefile.in	2008-06-18 14:31:34.000000000 +0100
+@@ -43,24 +43,6 @@
  	fi
  
  install: install-mkdirs build
@@ -11,15 +11,17 @@
 -		fi; \
 -		$(INSTALL_DATA) $$i $(DESTDIR)$(confdir); \
 -	done
- 
- 	-@if test ! -f $(DESTDIR)$(confdir)/ircd.motd; then \
- 		echo "ircd: installing motd file (ircd.motd)"; \
+-
+-	-@if test ! -f $(DESTDIR)$(confdir)/ircd.motd; then \
+-		echo "ircd: installing motd file (ircd.motd)"; \
 -		$(INSTALL_DATA) ircd.motd $(DESTDIR)$(confdir); \
 -	fi
 -
+-	$(INSTALL_BIN) genssl.sh $(DESTDIR)$(confdir)
+-
 -	-@if test -f $(DESTDIR)$(confdir)/links.txt; then \
 -		$(RM) $(DESTDIR)$(confdir)/links.txt; \
-+		$(INSTALL_DATA) ircd.motd $(DESTDIR)$(confdir)/ircd.motd.sample; \
- 	fi
+-	fi
  
  all:
+ build:
