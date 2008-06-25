@@ -21,6 +21,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:lbl pathcharnotes.html:caida,local \
 MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	LBNL Internet path characterization tool
 
+BROKEN=		Coredumps immediately, see PR ports/124404
+
 ONLY_FOR_ARCHS=	i386
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAN8=		pathchar.8
