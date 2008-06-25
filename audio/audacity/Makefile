@@ -8,8 +8,7 @@ PORTNAME=	audacity
 PORTVERSION=	1.2.4b
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	craig@yekse.gank.org
@@ -34,7 +33,7 @@ OPTIONS=	ID3TAG	"ID3 tag support"		off \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" && ${OSVERSION} >= 501103
+.if ${ARCH} == "i386"
 SSE_CFLAGS=	-mno-sse -mno-sse2
 .endif
 
