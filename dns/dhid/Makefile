@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhid
-PORTVERSION=	5.4
+PORTVERSION=	5.5
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.dhis.org/pub/dhis/
 
