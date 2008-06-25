@@ -15,6 +15,10 @@ MASTER_SITE_SUBDIR=	freevo
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Open source digital jukebox
 
+.ifdef NOPORTDOCS
+BROKEN=		bad plist
+.endif
+
 RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
 		${PYTHON_SITELIBDIR}/pyosd/__init__.py:${PORTSDIR}/misc/py-osd \
 		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
