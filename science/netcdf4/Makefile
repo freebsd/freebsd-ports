@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netcdf
-PORTVERSION=	3.6.2
+PORTVERSION=	3.6.3
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/%SUBDIR%/ \
 		http://sunpoet.net/distfiles/
@@ -15,18 +15,19 @@ MASTER_SITE_SUBDIR=	. old
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Library for machine-independent, array-oriented data access
 
-CONFLICTS=	hdf-4.*
+CONFLICTS=	hdf-4.* netcdf-4.*
 
 CONFIGURE_ARGS=	--enable-shared --disable-f77
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -fPIC -DPIC -Df2cFortran"
 
-USE_BZIP2=	YES
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=	ncdump.1 ncgen.1
-MAN3=	netcdf.3
+MAN1=		ncdump.1 ncgen.1
+MAN3=		netcdf.3
+
+INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \
+		netcdf-install netcdf-tutorial
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/ncdump ${PREFIX}/bin/ncgen
