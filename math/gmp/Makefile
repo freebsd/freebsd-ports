@@ -16,6 +16,7 @@ DISTNAME=	gmp-${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free library for arbitrary precision arithmetic
 
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
@@ -26,5 +27,8 @@ INFO=		gmp
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/gmp.info*
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>
