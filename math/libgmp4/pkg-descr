@@ -16,7 +16,7 @@ advantage for GMP increases with the operand sizes for certain
 operations, since GMP in many cases has asymptotically faster
 algorithms. 
 
-WWW: http://www.swox.com/gmp/
+WWW: http://gmplib.org/
 
 - Alex Dupre
 ale@FreeBSD.org
