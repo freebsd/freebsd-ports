@@ -16,6 +16,9 @@ COMMENT=	API for parsing XML documents using Tcl
 
 RUN_DEPENDS?=	dtplite:${PORTSDIR}/devel/tcllib
 
+PORTDOCS=	README.html html.xsl nroff.xsl tclxml.html tclxml.xml \
+		README.xml man.macros tcldoc-1.0.dtd tclxml.n txt.xsl
+
 USE_TCL=	82+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG?=	${PREFIX}/lib/Tclxml${PORTVERSION}
@@ -25,4 +28,13 @@ PLIST=		${PKGDIR}${PKGNAMESUFFIX}/pkg-plist
 PATCHDIR=	${PKGDIR}${PKGNAMESUFFIX}/files/
 PLIST_SUB=	VER=${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-install:
+
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}	
+	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>
