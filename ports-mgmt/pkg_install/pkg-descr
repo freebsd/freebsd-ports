@@ -1,6 +1,4 @@
 FreeBSD -CURRENT version of the pkg_install suite of tools for doing
-maintainance of software packages.
-
-This is mainly useful on FreeBSD systems <= 4.10.
+maintenance of software packages.
 
 WWW: http://www.freebsd.org/cgi/cvsweb.cgi/src/usr.sbin/pkg_install/
