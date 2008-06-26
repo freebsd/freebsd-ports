@@ -7,6 +7,7 @@
 
 PORTNAME=	AxKit
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.axkit.org/download/
 PKGNAMEPREFIX=	p5-
@@ -62,12 +63,12 @@ CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2' \
 		OPTIMIZE="${CFLAGS}"
 CONFIGURE_ENV+=	PERL_EXTUTILS_AUTOINSTALL='--defaultdeps'
 
-EX_DIR=${PREFIX}/share/examples/${PORTNAME}
+PORTEXAMPLES=	*
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${EX_DIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EX_DIR}
-	${CP} -R ${WRKSRC}/axkit.org ${EX_DIR}
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/axkit.org ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
