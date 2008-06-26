@@ -18,6 +18,7 @@ share/apps/kile/complete/tex/afterpage.cwl
 share/apps/kile/complete/tex/amsbsy.cwl
 share/apps/kile/complete/tex/amsfonts.cwl
 share/apps/kile/complete/tex/amsmath.cwl
+share/apps/kile/complete/tex/amsopn.cwl
 share/apps/kile/complete/tex/amssymb.cwl
 share/apps/kile/complete/tex/amsthm.cwl
 share/apps/kile/complete/tex/array.cwl
@@ -43,12 +44,12 @@ share/apps/kile/complete/tex/doi.cwl
 share/apps/kile/complete/tex/enumerate.cwl
 share/apps/kile/complete/tex/fancybox.cwl
 share/apps/kile/complete/tex/fancyhdr.cwl
-share/apps/kile/complete/tex/fancyunits-UF.cwl
-share/apps/kile/complete/tex/fancyunits-Uf.cwl
 share/apps/kile/complete/tex/fancyunits-base.cwl
 share/apps/kile/complete/tex/fancyunits-np.cwl
 share/apps/kile/complete/tex/fancyunits-per.cwl
-share/apps/kile/complete/tex/fancyunits-uf.cwl
+share/apps/kile/complete/tex/fancyunits_big-fractions.cwl
+share/apps/kile/complete/tex/fancyunits_medium-fractions.cwl
+share/apps/kile/complete/tex/fancyunits_small-fractions.cwl
 share/apps/kile/complete/tex/fancyvrb.cwl
 share/apps/kile/complete/tex/fontspec.cwl
 share/apps/kile/complete/tex/graphicx.cwl
@@ -92,14 +93,19 @@ share/apps/kile/complete/tex/scrtime.cwl
 share/apps/kile/complete/tex/setspace.cwl
 share/apps/kile/complete/tex/subfig.cwl
 share/apps/kile/complete/tex/supertabular.cwl
+share/apps/kile/complete/tex/svn-multi.cwl
+share/apps/kile/complete/tex/svninfo.cwl
 share/apps/kile/complete/tex/tabularx.cwl
 share/apps/kile/complete/tex/tex.cwl
 share/apps/kile/complete/tex/textcomp.cwl
+share/apps/kile/complete/tex/url.cwl
 share/apps/kile/complete/tex/varioref.cwl
 share/apps/kile/complete/tex/verse.cwl
+share/apps/kile/complete/tex/virginialake.cwl
 share/apps/kile/complete/tex/xifthen.cwl
 share/apps/kile/complete/tex/xltxtra.cwl
 share/apps/kile/complete/tex/xtab.cwl
+share/apps/kile/complete/tex/yfonts.cwl
 share/apps/kile/docpartui.rc
 share/apps/kile/encodings/cp1250.enc
 share/apps/kile/encodings/cp1252.enc
@@ -1290,6 +1296,8 @@ share/apps/kile/mathsymbols/special/img172special.png
 share/apps/kile/mathsymbols/special/img173special.png
 share/apps/kile/mathsymbols/special/img174special.png
 share/apps/kile/mathsymbols/special/img175special.png
+share/apps/kile/mathsymbols/special/img176special.png
+share/apps/kile/mathsymbols/special/img177special.png
 share/apps/kile/pics/kile_splash.png
 share/apps/kile/pics/type_Article.tex.kileicon
 share/apps/kile/pics/type_Beamer.tex.kileicon
@@ -1574,5 +1582,3 @@ share/mimelnk/text/x-kilepr.desktop
 @dirrm share/apps/kile/complete/abbreviation
 @dirrm share/apps/kile/complete
 @dirrm share/apps/kile
-@dirrmtry share/apps/kconf_update
-@dirrmtry share/applications/kde
