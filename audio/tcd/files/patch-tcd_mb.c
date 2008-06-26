@@ -1,6 +1,6 @@
---- /dev/null	2008-06-26 20:30:06.000000000 +0200
-+++ src/tcd_mb.c	2008-06-26 20:31:36.000000000 +0200
-@@ -0,0 +1,96 @@
+--- /dev/null	2008-06-26 21:42:58.000000000 +0200
++++ src/tcd_mb.c	2008-06-26 21:43:09.000000000 +0200
+@@ -0,0 +1,98 @@
 +/*-
 + * Copyright (c) 2008 Pietro Cerutti <gahr@FreeBSD.ch>
 + *
@@ -94,6 +94,8 @@
 +	mb_GetResultData1(mb, MBE_AlbumGetTrackName, cd->cd_info.trk[len-1].name, 256, len);
 +
 +    mb_Delete(mb);
++
++    tcd_writediskinfo(&cd->cd_info, cdrom);
 +
 +    return (0);
 +}
