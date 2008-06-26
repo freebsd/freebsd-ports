@@ -167,5 +167,5 @@ lib/libgphobos.a
 @dirrm include/d/%%GCC_VER%%/%%CONF_TARGET%%/gcc
 @dirrm include/d/%%GCC_VER%%/%%CONF_TARGET%%
 @dirrm include/d/%%GCC_VER%%
-@dirrm include/d
+@dirrmtry include/d
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
