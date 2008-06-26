@@ -12,7 +12,7 @@ bin/bomstrip-files
 %%DATADIR%%/source/bomstrip.pas
 %%DATADIR%%/source/bomstrip.php
 %%DATADIR%%/source/bomstrip.pl
-%%DATADIR%%/source/bomstrip-2.pl
+%%DATADIR%%/source/bomstrip2.pl
 %%DATADIR%%/source/bomstrip.ps
 %%DATADIR%%/source/bomstrip.py
 %%DATADIR%%/source/bomstrip.rb
