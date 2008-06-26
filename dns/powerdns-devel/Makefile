@@ -7,7 +7,6 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	3.0.${SNAPSHOT}
-PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://svn.powerdns.com/snapshots/${REVISION}/
 PKGNAMESUFFIX=	-devel
@@ -18,8 +17,8 @@ COMMENT=	An advanced DNS server with multiple backends including SQL
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
-SNAPSHOT=	20080406
-REVISION=	1177
+SNAPSHOT=	20080624
+REVISION=	1223
 
 CONFLICTS=	powerdns-[0-2]*
 
