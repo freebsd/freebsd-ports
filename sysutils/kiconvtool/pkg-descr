@@ -1,0 +1,16 @@
+On FreeBSD, it's possible to allow plain users to mount filesystems
+without using su or sudo. This is enabled via vfs.usermount sysctl.
+However, if file name conversion is used when mounting a filesystem,
+in most cases mount will fail with `mount_XXX: XXX_iconv: Operation
+not permitted denied' error. This is caused by the fact that character
+set conversion tables need to be loaded into kernel, but, apart
+from mounting, that's not allowed to plain users, because charset
+tables are large enough to initiate a denial of service by filling
+kernel memory with many tables.
+
+This utility allows you to load only specific charset tables into
+kernel, so usermounts with file name conversions won't fail and in
+the same time it's not possible to bring the system down by filling
+kernel memory.
+
+WWW: http://wiki.freebsd.org/DmitryMarakasov/kiconvtool

@@ -354,6 +354,7 @@
     SUBDIR += kdirstat
     SUBDIR += keep
     SUBDIR += kgtk
+    SUBDIR += kiconvtool
     SUBDIR += kkbswitch
     SUBDIR += kkeyled
     SUBDIR += klaptopdaemon
