@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Genshi
-PORTVERSION=	0.4.4
+PORTVERSION=	0.5
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	textproc www python
@@ -19,6 +19,11 @@ COMMENT=	Python toolkit for stream-based generation of output for the web
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+
+PYEASYINSTALL_ARCHDEP=	yes
+
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
