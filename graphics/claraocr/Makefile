@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	claraocr
-PORTVERSION=	0.9.9
-PORTREVISION?=	3
+PORTVERSION=	20031214
 CATEGORIES=	graphics accessibility
-MASTER_SITES=	${MASTER_SITE_NETBSD}
+MASTER_SITES=	http://www.geocities.com/claraocr/
 DISTNAME=	clara-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,12 +19,12 @@ RUN_DEPENDS=	pnmenlarge:${PORTSDIR}/graphics/netpbm
 USE_XORG=	x11
 USE_PERL5=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
+MAKE_ARGS=	-j`${SYSCTL} -n hw.ncpu`
 
 MAN1=	clara-adv.1 clara-dev.1 clara.1
 
 post-patch:
-.for file in clara.pl mkdoc.pl selthresh.pl
-	@${PERL} -pi -e 's|^#!/usr/bin/perl|#!${PERL}|g' ${WRKSRC}/${file}
-.endfor
+	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|g' \
+		clara.pl mkdoc.pl selthresh
 
 .include <bsd.port.mk>
