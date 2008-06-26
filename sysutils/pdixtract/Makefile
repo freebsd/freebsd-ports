@@ -8,7 +8,8 @@
 PORTNAME=	pdixtract
 PORTVERSION=	1.5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://members.chello.se/jonas.thornqvist/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	markus
 DISTNAME=	PDITOOL
 
 MAINTAINER=	markus@FreeBSD.org
