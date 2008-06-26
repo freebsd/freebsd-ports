@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	bomstrip
-PORTVERSION=	8
-PORTREVISION=	1
+PORTVERSION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.xs4all.nl/~mechiel/projects/bomstrip/files/:main \
 		http://devel.ringlet.net/textproc/bomstrip/:ringlet
 DISTFILES=	${DISTNAME}.tgz:main,ringlet \
-		${DISTNAME}-roam-05-extra-files.tar.gz:ringlet
+		${DISTNAME}-roam-01-extra-files.tar.gz:ringlet
 
-PATCHFILES=	${DISTNAME}-roam-05.patch
+PATCHFILES=	${DISTNAME}-roam-01.patch
 PATCH_SITES=	http://devel.ringlet.net/textproc/bomstrip/
 
 MAINTAINER=	roam@FreeBSD.org
