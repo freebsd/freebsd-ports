@@ -1,6 +1,11 @@
---- src/tcd.c.orig	2008-06-26 19:40:23.000000000 +0200
-+++ src/tcd.c	2008-06-26 19:40:47.000000000 +0200
-@@ -221,7 +221,7 @@
+--- src/tcd.c.orig	2004-06-15 22:32:31.000000000 +0200
++++ src/tcd.c	2008-06-27 01:25:01.000000000 +0200
+@@ -217,11 +217,11 @@
+ static void detect_disc_change(void)
+ {
+     unsigned long discid = cddb_discid(state.cdrom);
+-    if (discid != state.current_discid) {
++    if (CD_INDRIVE(state.cdrom->status) && discid != state.current_discid) {
          if (state.cd_info.modified) {
              tcd_writediskinfo(&state.cd_info, state.cdrom);
          }

@@ -2,7 +2,7 @@
 +++ src/tcd_mb.h	2008-06-26 19:37:19.000000000 +0200
 @@ -0,0 +1,44 @@
 +/*-
-+ * Copyright (c) 2008 Pietro Cerutti <gahr@FreeBSD.ch>
++ * Copyright (c) 2008 Pietro Cerutti <gahr@FreeBSD.org>
 + *
 + * Redistribution and use in source and binary forms, with or without
 + * modification, are permitted provided that the following conditions
