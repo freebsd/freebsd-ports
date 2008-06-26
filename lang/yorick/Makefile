@@ -56,4 +56,10 @@ post-install:
 	  ${INSTALL_DATA} $$f ${PREFIX}/${INFO_PATH}; \
 	done
 
+# Hidden by default: this requires an X terminal to run all checks
+.ifdef MAINTAINER_MODE
+regression-test: build
+	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check)
+.endif
+
 .include <bsd.port.mk>
