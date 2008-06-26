@@ -7,6 +7,7 @@
 
 PORTNAME=	doscan
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://static.enyo.de/fw/releases/doscan/
 
@@ -17,12 +18,14 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4
 PORTDOCS=	README
 MAN1=		doscan.1
-NOT_FOR_ARCHS=	sparc64
 
 PLIST_FILES=	bin/doscan
+
+post-patch:
+	${REINPLACE_CMD} -e 's|ony o|on yo|' \
+	    ${WRKSRC}/doc/doscan.1
 
 post-install:
 .ifndef(NOPORTDOCS)
