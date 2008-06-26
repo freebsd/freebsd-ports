@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}:gdc \
 		gcc-core-${GCC_VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${GCC_VERSIONSTRING}${EXTRACT_SUFX}
 
-MAINTAINER=	ozawa@ongs.co.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	D Front End for GCC
 
 ONLY_FOR_ARCHS=	i386 amd64
