@@ -1,0 +1,4 @@
+bin/geeqie
+share/pixmaps/geeqie.png
+share/applications/geeqie.desktop
+@dirrmtry share/applications
