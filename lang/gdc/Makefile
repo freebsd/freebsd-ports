@@ -7,7 +7,7 @@
 
 PORTNAME=	gdc
 PORTVERSION=	0.24
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/dgcc/g:S/$/:gdc/g}
@@ -25,6 +25,7 @@ USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_ICONV=	yes
 
 SRCDIR=		${WRKDIR}/gcc-${GCC_VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
@@ -48,11 +49,6 @@ GDC_INC=	${PREFIX}/include/d/${GCC_VERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 502126
-# GDC required g++ version on the system of 3.4.x 4.0.1 and later.
-IGNORE=		it is supported on FreeBSD 5.3-R and later
-.endif
-
 .ifndef TARGET_GCC
 .if ${OSVERSION} >= 700000 || ${ARCH} == "amd64"
 TARGET_GCC=	4.1
@@ -65,7 +61,7 @@ TARGET_GCC=	3.4
 
 .if ${TARGET_GCC} == 4.1
 GCC_VERSION=	4.1.3
-GCC_REVISION=	20071105
+GCC_REVISION=	20080428
 GCC_VERSIONSTRING=	4.1-${GCC_REVISION}
 GCC_MASTER_SITE_SUBDIR=	snapshots/${GCC_VERSIONSTRING}
 .elif ${TARGET_GCC} == 4.0
@@ -106,6 +102,8 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^\(gcc_d_include_dir\).*|\1 = ${GDC_INC}|' \
 		${GCCDIR}/d/Make-lang.in
+	@${REINPLACE_CMD} -e 's, BsdSockets_salen, GNU_BsdSockets_salen,' \
+		${GCCDIR}/d/phobos/config/unix-mid
 
 pre-configure:
 	@(cd ${SRCDIR} && contrib/gcc_update --touch)
