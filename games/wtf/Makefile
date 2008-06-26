@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wtf
-PORTVERSION=	20080513
+PORTVERSION=	20080626
 CATEGORIES=	games
 MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/ \
 		LOCAL
