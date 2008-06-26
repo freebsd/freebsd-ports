@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	cfv
-PORTVERSION=	1.18.1
+PORTVERSION=	1.18.2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to both test and create .sfv, .csv and md5sum files
