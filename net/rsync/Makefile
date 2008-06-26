@@ -42,11 +42,20 @@ OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		SSH       "Use SSH instead of RSH" on \
 		FLAGS     "File system flags support patch, adds --fileflags" off \
 		ACL       "Add backward-compatibility for the --acls option" off \
-		ICONV     "Add iconv support" off
+		ICONV     "Add iconv support" off \
+		TIMELIMIT "Time limit patch" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ICONV) || defined(WITH_FLAGS) || defined(WITH_ACL) || make(makesum)
+.if !defined(WITHOUT_TIMELIMIT)
+PATCH_STRIP=	-p1
+EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
+.if defined(WITH_FLAGS)
+IGNORE=		flags and timelimit can't be both enabled at the same time. Please rerun 'make config' and disable one of them
+.endif
+.endif
+
+.if defined(WITH_ICONV) || defined(WITH_FLAGS) || defined(WITH_ACL) || make(makesum) || defined(WITH_TIMELIMIT)
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
