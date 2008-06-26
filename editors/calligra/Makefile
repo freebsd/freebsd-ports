@@ -33,7 +33,9 @@ LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick \
 		xslt:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 
-USE_AUTOTOOLS=  libtool:15
+BROKEN=		does not build with GraphicsMagick v.1.2.3 and newer
+
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 PREFIX=		${KDE_PREFIX}
 USE_BZIP2=	yes
@@ -54,7 +56,7 @@ CONFIGURE_ARGS+=--with-pgsqlincdir=${LOCALBASE}/include \
 
 .if ${OSVERSION} < 500035
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-kexi-main-keximainwindowimpl.cpp
-CONFIGURE_ARGS+= --disable-final
+CONFIGURE_ARGS+=--disable-final
 .endif
 
 post-configure:
