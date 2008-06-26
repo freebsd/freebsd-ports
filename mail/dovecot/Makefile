@@ -7,17 +7,15 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.14
+DISTVERSION=	1.1.1
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.dovecot.org/releases/1.0/
+MASTER_SITES=	http://www.dovecot.org/releases/1.1/
 
 MAINTAINER=	robin@isometry.net
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 USE_ICONV=	yes
 USE_RC_SUBR=	dovecot.sh
-
-CONFLICTS?=	${PORTNAME}-1.[1-9].*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -53,6 +51,9 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 		SQLITE		"SQLite support"	off
 
 .include <bsd.port.pre.mk>
+
+# Default requirement for dovecot rc script
+_REQUIRE=	LOGIN
 
 ## kqueue(2) support
 #
@@ -115,6 +116,9 @@ CONFIGURE_ARGS+=	--without-vpopmail
 .if defined(WITH_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
+_REQUIRE+=		slapd
+.else
+CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 ## PostgreSQL Support
@@ -122,6 +126,9 @@ CONFIGURE_ARGS+=	--with-ldap
 .if defined(WITH_PGSQL)
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-pgsql
+_REQUIRE+=		postgresql
+.else
+CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
 ## MySQL Support
@@ -129,6 +136,9 @@ CONFIGURE_ARGS+=	--with-pgsql
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
+_REQUIRE+=		mysql
+.else
+CONFIGURE_ARGS+=	--without-mysql
 .endif
 
 ## SQLite Support
@@ -136,7 +146,11 @@ CONFIGURE_ARGS+=	--with-mysql
 .if defined(WITH_SQLITE)
 USE_SQLITE=		3
 CONFIGURE_ARGS+=	--with-sqlite
+.else
+CONFIGURE_ARGS+=	--without-sqlite
 .endif
+
+SUB_LIST+=		REQUIRE="${_REQUIRE}"
 
 post-patch:
 .if defined(WITH_GSSAPI)
