@@ -651,6 +651,7 @@
     SUBDIR += taglookup
     SUBDIR += tagtool
     SUBDIR += tap-plugins
+    SUBDIR += tcd
     SUBDIR += tclmidi
     SUBDIR += teamspeak_client
     SUBDIR += teamspeak_server
