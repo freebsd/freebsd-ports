@@ -1,5 +1,5 @@
 bin/clara
-bin/selthresh.pl
+bin/selthresh
 %%PORTDOCS%%share/doc/clara/ANNOUNCE
 %%PORTDOCS%%share/doc/clara/CHANGELOG
 %%PORTDOCS%%share/doc/clara/FAQ
