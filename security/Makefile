@@ -547,7 +547,6 @@
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
     SUBDIR += pear-Auth_OpenID
-    SUBDIR += pear-Auth_OpenID2
     SUBDIR += pear-Auth_PrefManager
     SUBDIR += pear-Auth_SASL
     SUBDIR += pear-Crypt_Blowfish
@@ -578,6 +577,7 @@
     SUBDIR += pgpgpg
     SUBDIR += pgpin
     SUBDIR += php-Auth_OpenID
+    SUBDIR += php-Auth_OpenID2
     SUBDIR += php-suhosin
     SUBDIR += php4-crack
     SUBDIR += php4-mcrypt
