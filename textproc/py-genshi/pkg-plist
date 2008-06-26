@@ -22,6 +22,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.html.HTMLSanitizer-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.i18n-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.i18n.Translator-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.transform-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.transform.InjectorTransformation-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.transform.StreamBuffer-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.filters.transform.Transformer-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.input-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.input.HTMLParser-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.input.ParseError-class.html
@@ -78,7 +82,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.plugin.MarkupTemplateEnginePlugin-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.plugin.TextTemplateEnginePlugin-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.text-module.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.text.TextTemplate-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.text.NewTextTemplate-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.text.OldTextTemplate-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.util-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.util.LRUCache-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/help.html
@@ -87,31 +92,40 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/module-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/redirect.html
 %%PORTDOCS%%%%DOCSDIR%%/api/since-index.html
-%%PORTDOCS%%%%DOCSDIR%%/conf/docutils.ini
-%%PORTDOCS%%%%DOCSDIR%%/conf/epydoc.ini
+%%PORTDOCS%%%%DOCSDIR%%/common/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/common/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/common/conf/docutils.ini
+%%PORTDOCS%%%%DOCSDIR%%/common/conf/epydoc.ini
+%%PORTDOCS%%%%DOCSDIR%%/common/doctools.py
+%%PORTDOCS%%%%DOCSDIR%%/common/doctools.pyc
+%%PORTDOCS%%%%DOCSDIR%%/common/style/bkgnd_pattern.png
+%%PORTDOCS%%%%DOCSDIR%%/common/style/docutils.css
+%%PORTDOCS%%%%DOCSDIR%%/common/style/edgewall.css
+%%PORTDOCS%%%%DOCSDIR%%/common/style/epydoc.css
+%%PORTDOCS%%%%DOCSDIR%%/common/style/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/common/style/shadow.gif
+%%PORTDOCS%%%%DOCSDIR%%/common/style/vertbars.png
+%%PORTDOCS%%%%DOCSDIR%%/common/template.html
 %%PORTDOCS%%%%DOCSDIR%%/filters.html
 %%PORTDOCS%%%%DOCSDIR%%/filters.txt
 %%PORTDOCS%%%%DOCSDIR%%/i18n.html
 %%PORTDOCS%%%%DOCSDIR%%/i18n.txt
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/install.txt
 %%PORTDOCS%%%%DOCSDIR%%/logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/plugin.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin.txt
 %%PORTDOCS%%%%DOCSDIR%%/streams.html
 %%PORTDOCS%%%%DOCSDIR%%/streams.txt
-%%PORTDOCS%%%%DOCSDIR%%/style/bkgnd_pattern.png
-%%PORTDOCS%%%%DOCSDIR%%/style/docutils.css
-%%PORTDOCS%%%%DOCSDIR%%/style/edgewall.css
-%%PORTDOCS%%%%DOCSDIR%%/style/epydoc.css
-%%PORTDOCS%%%%DOCSDIR%%/style/pygments.css
-%%PORTDOCS%%%%DOCSDIR%%/style/shadow.gif
-%%PORTDOCS%%%%DOCSDIR%%/style/vertbars.png
 %%PORTDOCS%%%%DOCSDIR%%/templates.html
 %%PORTDOCS%%%%DOCSDIR%%/templates.txt
 %%PORTDOCS%%%%DOCSDIR%%/text-templates.html
 %%PORTDOCS%%%%DOCSDIR%%/text-templates.txt
+%%PORTDOCS%%%%DOCSDIR%%/upgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/upgrade.txt
 %%PORTDOCS%%%%DOCSDIR%%/xml-templates.html
 %%PORTDOCS%%%%DOCSDIR%%/xml-templates.txt
 %%PORTDOCS%%%%DOCSDIR%%/xpath.html
@@ -136,25 +150,18 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/django/templatetags/bench.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/genshi/base.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/genshi/template.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/genshi_text/footer.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/genshi_text/header.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/genshi_text/template.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/kid/base.kid
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/kid/template.kid
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/mako/footer.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/mako/header.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/mako/template.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/myghty/base.myt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/myghty/template.myt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/simpletal/base.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/simpletal/template.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cherrypy/config.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cherrypy/index.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cherrypy/index.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/includes/common/macros.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/includes/module/test.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/includes/run.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/includes/skins/default/footer.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/includes/skins/default/header.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/includes/skins/default/layout.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transform/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transform/index.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transform/run.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transform/template.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/dev.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/__init__.py
@@ -179,12 +186,32 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/sample-prod.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/setup.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/start-genshitest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/controller.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/form.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/lib/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/lib/ajax.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/lib/template.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/model.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/static/jquery.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/static/layout.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/static/logo.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/_comment.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/_form.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/comment.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/index.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/info.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/info.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/layout.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/submit.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/hello.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/hello.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/style
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/common/conf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/common/style
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/common
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/cheetah
@@ -193,17 +220,12 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/django/templatetags
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/django
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/genshi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/genshi_text
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/kid
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/mako
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/myghty
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/simpletal
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cherrypy
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/includes/common
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/includes/module
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/includes/skins/default
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/includes/skins
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/includes
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/transform
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/config
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/static/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/static
@@ -211,5 +233,10 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/tests
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/lib
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/static
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/webpy
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
