@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	tuxguitar
-DISTVERSION=	1.0-rc4
-PORTREVISION=	3
+DISTVERSION=	1.0
 CATEGORIES=	audio java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
@@ -22,8 +21,9 @@ BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
 		gcj42:${PORTSDIR}/lang/gcc42-withgcjawt
 RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext
+LIB_DEPENDS=	fluidsynth.2:${PORTSDIR}/audio/fluidsynth
 
-MAKE_ENV=	"PREFIX=${PREFIX}" "INSTALL_DOC_DIR=${DOCSDIR}" \
+MAKE_ENV+=	"PREFIX=${PREFIX}" "INSTALL_DOC_DIR=${DOCSDIR}" \
 		"INSTALL_SHARE_DIR=${DATADIR}"
 
 USE_JAVA=	yes
@@ -31,6 +31,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 JAVA_VERSION=	1.4+
 JAVA_VENDOR=	bsdjava sun blackdown
+NOCCACHE=	yes
 
 .if !defined(WITHOUT_MAN)
 MAN1=		tuxguitar.1
@@ -42,7 +43,7 @@ USE_GECKO=	mozilla firefox seamonkey
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
 PLUGINS=	ascii compat converter gtp jsa lilypond midi musicxml \
-		oss pdf ptb tef tray
+		oss pdf ptb tef tray fluidsynth
 
 SUB_FILES=	tuxguitar
 SUB_LIST=	DATADIR=${DATADIR} \
@@ -52,7 +53,7 @@ SUB_LIST=	DATADIR=${DATADIR} \
 
 post-patch:
 	${REINPLACE_CMD} -e 's|linux|freebsd|;s|JAVA_VERS|JAVA_PORT_VERSION|g; \
-		/TuxGuitar-alsa/d' \
+		/TuxGuitar-alsa/d; s|/usr/lib/jvm/java-6-sun/|${JAVA_HOME}|' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|g; \
@@ -63,6 +64,7 @@ post-patch:
 		 s|%%DOCSDIR%%|${DOCSDIR}|g' \
 		${WRKSRC}/TuxGuitar/build.properties
 	${REINPLACE_CMD} -e 's|$${path.swt}|${JAVALIBDIR}/swt.jar|g' \
+		${WRKSRC}/TuxGuitar-fluidsynth/build.xml \
 		${WRKSRC}/TuxGuitar-lilypond/build.xml \
 		${WRKSRC}/TuxGuitar-midi/build.xml \
 		${WRKSRC}/TuxGuitar-pdf/build.xml \
@@ -74,8 +76,12 @@ post-patch:
 		${WRKSRC}/TuxGuitar/build.xml
 	${REINPLACE_CMD} -e 's|$${path.itext}|${JAVALIBDIR}/itext.jar|g' \
 		${WRKSRC}/TuxGuitar-pdf/build.xml
-	${REINPLACE_CMD} -e 's|gcj|${LOCALBASE}/bin/gcj42|g' \
-	    ${WRKSRC}/TuxGuitar-oss/jni/GNUmakefile
+	${REINPLACE_CMD} -e 's|CFLAGS?|CFLAGS+|g;\
+	    s|gcj|${LOCALBASE}/bin/gcj42|;\
+	    s|-I|-I${JAVA_HOME}/include -I${LOCALBASE}/include -I|;\
+	    s|/usr/lib|${LOCALBASE}/lib|' \
+	    ${WRKSRC}/TuxGuitar-oss/jni/GNUmakefile \
+	    ${WRKSRC}/TuxGuitar-fluidsynth/jni/GNUmakefile
 
 do-install:
 	${INSTALL} -d ${DATADIR}
@@ -85,6 +91,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/TuxGuitar/tuxguitar.jar ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/misc/*.tg ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/TuxGuitar-oss/jni/libtuxguitar-oss-jni.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/TuxGuitar-fluidsynth/jni/libtuxguitar-fluidsynth-jni.so ${PREFIX}/lib
 .for p in ${PLUGINS}
 	${INSTALL_DATA} ${WRKSRC}/TuxGuitar-${p}/tuxguitar-${p}.jar ${DATADIR}/plugins
 .endfor

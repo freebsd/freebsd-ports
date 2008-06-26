@@ -1,5 +1,6 @@
 bin/tuxguitar
 lib/libtuxguitar-oss-jni.so
+lib/libtuxguitar-fluidsynth-jni.so
 share/pixmaps/tuxguitar.xpm
 share/applications/tuxguitar.desktop
 %%DATADIR%%/tuxguitar.jar
@@ -20,10 +21,12 @@ share/applications/tuxguitar.desktop
 %%DATADIR%%/lang/messages_sr.properties
 %%DATADIR%%/lang/messages_sv.properties
 %%DATADIR%%/lang/messages_uk.properties
+%%DATADIR%%/lang/messages_vi.properties
 %%DATADIR%%/lang/messages_zh_TW.properties
 %%DATADIR%%/plugins/tuxguitar-compat.jar
 %%DATADIR%%/plugins/tuxguitar-converter.jar
 %%DATADIR%%/plugins/tuxguitar-ascii.jar
+%%DATADIR%%/plugins/tuxguitar-fluidsynth.jar
 %%DATADIR%%/plugins/tuxguitar-gtp.jar
 %%DATADIR%%/plugins/tuxguitar-musicxml.jar
 %%DATADIR%%/plugins/tuxguitar-ptb.jar
@@ -49,6 +52,7 @@ share/applications/tuxguitar.desktop
 %%DATADIR%%/help/html/tools_shortcuts.html
 %%DATADIR%%/help/html/editing_song.html
 %%DATADIR%%/help/html/tools_sound.html
+%%DATADIR%%/help/html/tools_converter.html
 %%DATADIR%%/help/html/introduction.html
 %%DATADIR%%/help/html/tools_plugins.html
 %%DATADIR%%/help/html/license.html
@@ -88,6 +92,7 @@ share/applications/tuxguitar.desktop
 %%DATADIR%%/help/images/tools/plugins_dialog.png
 %%DATADIR%%/help/images/tools/keybinding_editor.png
 %%DATADIR%%/help/images/tools/settings_skin.png
+%%DATADIR%%/help/images/tools/converter.png
 %%DATADIR%%/skins/Lavender/transport_first_2.png
 %%DATADIR%%/skins/Lavender/song_properties.png
 %%DATADIR%%/skins/Lavender/about_description.png
@@ -148,7 +153,7 @@ share/applications/tuxguitar.desktop
 %%DATADIR%%/skins/Lavender/option_skin.png
 %%DATADIR%%/skins/Lavender/effect_vibrato.png
 %%DATADIR%%/skins/Lavender/transport_first_1.png
-%%DATADIR%%/skins/Lavender/undo.png
+%%DATADIR%%/skins/Lavender/edit_undo.png
 %%DATADIR%%/skins/Lavender/effect_slide.png
 %%DATADIR%%/skins/Lavender/icon-24x24.png
 %%DATADIR%%/skins/Lavender/2.png
@@ -161,7 +166,7 @@ share/applications/tuxguitar.desktop
 %%DATADIR%%/skins/Lavender/transport_icon_last_1.png
 %%DATADIR%%/skins/Lavender/doubledotted.png
 %%DATADIR%%/skins/Lavender/marker_list.png
-%%DATADIR%%/skins/Lavender/redo.png
+%%DATADIR%%/skins/Lavender/edit_redo.png
 %%DATADIR%%/skins/Lavender/openrepeat.png
 %%DATADIR%%/skins/Lavender/effect_hammer.png
 %%DATADIR%%/skins/Lavender/layout_multitrack.png
@@ -281,7 +286,7 @@ share/applications/tuxguitar.desktop
 %%DATADIR%%/skins/blue_serious/option_skin.png
 %%DATADIR%%/skins/blue_serious/effect_vibrato.png
 %%DATADIR%%/skins/blue_serious/transport_first_1.png
-%%DATADIR%%/skins/blue_serious/undo.png
+%%DATADIR%%/skins/blue_serious/edit_undo.png
 %%DATADIR%%/skins/blue_serious/effect_slide.png
 %%DATADIR%%/skins/blue_serious/icon-24x24.png
 %%DATADIR%%/skins/blue_serious/2.png
@@ -294,7 +299,7 @@ share/applications/tuxguitar.desktop
 %%DATADIR%%/skins/blue_serious/transport_icon_last_1.png
 %%DATADIR%%/skins/blue_serious/doubledotted.png
 %%DATADIR%%/skins/blue_serious/marker_list.png
-%%DATADIR%%/skins/blue_serious/redo.png
+%%DATADIR%%/skins/blue_serious/edit_redo.png
 %%DATADIR%%/skins/blue_serious/openrepeat.png
 %%DATADIR%%/skins/blue_serious/effect_hammer.png
 %%DATADIR%%/skins/blue_serious/layout_multitrack.png
@@ -414,7 +419,7 @@ share/applications/tuxguitar.desktop
 %%DATADIR%%/skins/ersplus/option_skin.png
 %%DATADIR%%/skins/ersplus/effect_vibrato.png
 %%DATADIR%%/skins/ersplus/transport_first_1.png
-%%DATADIR%%/skins/ersplus/undo.png
+%%DATADIR%%/skins/ersplus/edit_undo.png
 %%DATADIR%%/skins/ersplus/effect_slide.png
 %%DATADIR%%/skins/ersplus/icon-24x24.png
 %%DATADIR%%/skins/ersplus/2.png
@@ -427,7 +432,7 @@ share/applications/tuxguitar.desktop
 %%DATADIR%%/skins/ersplus/transport_icon_last_1.png
 %%DATADIR%%/skins/ersplus/doubledotted.png
 %%DATADIR%%/skins/ersplus/marker_list.png
-%%DATADIR%%/skins/ersplus/redo.png
+%%DATADIR%%/skins/ersplus/edit_redo.png
 %%DATADIR%%/skins/ersplus/openrepeat.png
 %%DATADIR%%/skins/ersplus/effect_hammer.png
 %%DATADIR%%/skins/ersplus/layout_multitrack.png
