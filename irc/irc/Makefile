@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	irc
-PORTVERSION=	2.11.2
+PORTVERSION=	2.11.2p1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.irc.org/ftp/irc/server/ \
 		ftp://ftp.archive.de.uu.net/pub/mirrors/ftp.irc.org/server/ \
 		ftp://ftp.nl.uu.net/pub/mirrors/ftp.irc.org/server/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
-USE_RC_SUBR=	ircd.sh
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	The "Internet Relay Chat" Server
 
+USE_RC_SUBR=	ircd.sh
 MAN5=		iauth.conf.5
 MAN8=		ircd.8 iauth.8 ircdwatch.8
 
