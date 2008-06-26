@@ -1,6 +1,6 @@
---- setup.py.orig	2008-05-18 22:48:58.000000000 +0200
-+++ setup.py	2008-05-18 22:52:03.000000000 +0200
-@@ -47,6 +47,33 @@
+--- setup.py	2008-06-05 20:31:09.000000000 +0200
++++ setup.py.port	2008-06-26 17:09:51.000000000 +0200
+@@ -47,6 +47,34 @@
  # Copy script "sonata" file to sonata dir:
  shutil.copyfile("sonata.py", "sonata/sonata")
  
@@ -22,6 +22,7 @@
 +            ('share/locale/ar/LC_MESSAGES', ['mo/ar/sonata.mo']),
 +            ('share/locale/pt_BR/LC_MESSAGES', ['mo/pt_BR/sonata.mo']),
 +            ('share/locale/et/LC_MESSAGES', ['mo/et/sonata.mo']),
++            ('share/locale/tr/LC_MESSAGES', ['mo/tr/sonata.mo']),
 +            ('share/locale/be@latin/LC_MESSAGES', ['mo/be@latin/sonata.mo']),
 +            ('share/locale/uk/LC_MESSAGES', ['mo/uk/sonata.mo'])]
 +
@@ -29,12 +30,12 @@
 +	port_data_files.append(('share/doc/sonata', ['README',]))
 +
 +if not os.environ.has_key('NO_INSTALL_MANPAGES'):
-+        port_data_files.append(('man/man1', ['sonata.1']))
++	port_data_files.append(('man/man1', ['sonata.1']))
 +
  setup(name='Sonata',
-         version='1.5.1',
+         version='1.5.2',
          description='GTK+ client for the Music Player Daemon (MPD).',
-@@ -70,29 +97,8 @@
+@@ -70,29 +98,7 @@
          extra_link_args=capture("pkg-config --libs gtk+-2.0 pygtk-2.0").split()
           ),],
          scripts = ['sonata/sonata'],
@@ -58,11 +59,10 @@
 -                    ('share/locale/ar/LC_MESSAGES', ['mo/ar/sonata.mo']),
 -                    ('share/locale/pt_BR/LC_MESSAGES', ['mo/pt_BR/sonata.mo']),
 -                    ('share/locale/et/LC_MESSAGES', ['mo/et/sonata.mo']),
+-                    ('share/locale/tr/LC_MESSAGES', ['mo/tr/sonata.mo']),
 -                    ('share/locale/be@latin/LC_MESSAGES', ['mo/be@latin/sonata.mo']),
 -                    ('share/locale/uk/LC_MESSAGES', ['mo/uk/sonata.mo'])],
--        )
 +	data_files = port_data_files,
-+    )
+         )
  
  # Cleanup (remove /build, /mo, and *.pyc files:
- print "Cleaning up..."
