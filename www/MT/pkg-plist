@@ -482,6 +482,7 @@
 %%CGIDIR%%/lib/MT/Util/Archive/Tgz.pm
 %%CGIDIR%%/lib/MT/Util/Archive/Zip.pm
 %%CGIDIR%%/lib/MT/Util/Captcha.pm
+%%CGIDIR%%/lib/MT/Util/ReqTimer.pm
 %%CGIDIR%%/lib/MT/WeblogPublisher.pm
 %%CGIDIR%%/lib/MT/Worker/Publish.pm
 %%CGIDIR%%/lib/MT/Worker/Sync.pm
