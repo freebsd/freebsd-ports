@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://www.godisch.de/debian/wmwork/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A dockapp that keeps track of time you have spent on something
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
