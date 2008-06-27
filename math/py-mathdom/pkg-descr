@@ -1,0 +1,11 @@
+MathDOM is a set of Python  modules (using PyXML or
+lxml, and pyparsing) that import mathematical terms
+as a Content MathML DOM. It currently parses MathML
+and literal infix terms into a DOM document and writes
+out MathML and literal infix/prefix/postfix/Python
+terms. The DOM elements are enhanced by domain specific
+methods that make using the DOM a little easier.
+Implementations based on PyXML and lxml/libxml2 are
+available.
+
+WWW:   http://pypi.python.org/pypi/mathdom/
