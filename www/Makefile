@@ -1050,6 +1050,7 @@
     SUBDIR += pear-Services_urlTea
     SUBDIR += pear-Text_Wiki
     SUBDIR += pear-UDDI
+    SUBDIR += pear-XML_GRDDL
     SUBDIR += pecl-APC
     SUBDIR += pecl-amfext
     SUBDIR += pecl-mnogosearch
