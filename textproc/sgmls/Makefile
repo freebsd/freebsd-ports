@@ -7,6 +7,7 @@
 
 PORTNAME=	sgmls
 PORTVERSION=	1.1.91
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sgmls/
 EXTRACT_SUFX=	.tar.Z
@@ -32,9 +33,9 @@ post-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@-${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+	@-${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
