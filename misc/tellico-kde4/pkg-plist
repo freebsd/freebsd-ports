@@ -93,6 +93,7 @@ share/apps/tellico/tellico-common.xsl
 share/apps/tellico/tellico-printing.xsl
 share/apps/tellico/tellico.dtd
 share/apps/tellico/tellico.tips
+share/apps/tellico/tellico2gcstar.xsl
 share/apps/tellico/tellico2html.js
 share/apps/tellico/tellico2html.xsl
 share/apps/tellico/tellico2onix.xsl
