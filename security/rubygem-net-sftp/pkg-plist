@@ -1,388 +1,192 @@
-%%CACHE_DIR%%/net-sftp-%%PORTVERSION%%.gem
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP.src/M000004.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Bug.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Exception.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations.src/M000005.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Abstract.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Abstract.src/M000017.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Abstract.src/M000018.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Abstract.src/M000019.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Abstract.src/M000020.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Abstract.src/M000021.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Abstract.src/M000022.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Abstract.src/M000023.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Close.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Close.src/M000029.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Constants.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Fsetstat.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Fsetstat.src/M000028.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Fstat.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Fstat.src/M000033.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Lstat.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Lstat.src/M000011.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Mkdir.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Mkdir.src/M000027.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Open.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Open.src/M000026.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Opendir.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Opendir.src/M000030.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Read.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Read.src/M000008.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Read.src/M000009.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Read.src/M000010.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Readdir.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Readdir.src/M000014.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Readdir.src/M000015.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Readdir.src/M000016.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Realpath.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Realpath.src/M000024.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Realpath.src/M000025.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Remove.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Remove.src/M000032.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Rename.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Rename.src/M000031.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Rmdir.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Rmdir.src/M000007.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Setstat.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Setstat.src/M000006.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Stat.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Stat.src/M000036.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/StatusException.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/StatusException.src/M000012.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/StatusException.src/M000013.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Write.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Write.src/M000034.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Write.src/M000035.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol.src/M000037.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Constants.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src/M000082.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src/M000083.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src/M000084.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src/M000085.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src/M000086.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src/M000087.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src/M000088.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src/M000089.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src/M000090.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src/M000091.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src/M000092.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/PacketAssistant.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/PacketAssistant.src/M000080.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/PacketAssistant.src/M000081.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01.src/M000038.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Attributes.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Attributes.src/M000052.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Attributes.src/M000053.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Attributes.src/M000054.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Attributes.src/M000055.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Attributes.src/M000056.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Attributes.src/M000057.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Attributes.src/M000058.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Attributes.src/M000059.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000039.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000040.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000041.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000042.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000043.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000044.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000045.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000046.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000047.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000048.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000049.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000050.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src/M000051.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/PacketAssistant.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_02.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_02.src/M000060.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_02/Impl.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_02/Impl.src/M000061.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_02/PacketAssistant.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_03.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_03.src/M000062.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_03/Impl.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_03/Impl.src/M000063.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_03/PacketAssistant.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04.src/M000064.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Attributes.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Attributes.src/M000070.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Attributes.src/M000071.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Attributes.src/M000072.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Attributes.src/M000073.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Attributes.src/M000074.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Attributes.src/M000075.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Attributes.src/M000076.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Attributes.src/M000077.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Impl.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Impl.src/M000065.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Impl.src/M000066.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Impl.src/M000067.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Impl.src/M000068.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Impl.src/M000069.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/PacketAssistant.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_05.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_05.src/M000078.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_05/Impl.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_05/Impl.src/M000079.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_05/Impl/ACE.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_05/PacketAssistant.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000093.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000094.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000095.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000096.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000097.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000098.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000099.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000100.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000101.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000102.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000103.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000104.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000105.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000106.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000107.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000108.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000109.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000110.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src/M000111.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Version.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/URI.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/URI/SFTP.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/URI/SFTP.src/M000001.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/URI/SFTP.src/M000002.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/URI/SFTP.src/M000003.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/created.rid
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/errors_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/abstract_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/close_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/errors_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/fsetstat_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/fstat_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/lstat_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/mkdir_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/open_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/opendir_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/read_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/readdir_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/realpath_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/remove_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/rename_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/rmdir_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/services_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/setstat_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/stat_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations/write_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/01/attributes_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/01/impl_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/01/packet-assistant_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/01/services_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/02/impl_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/02/packet-assistant_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/02/services_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/03/impl_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/03/packet-assistant_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/03/services_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/04/attributes_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/04/impl_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/04/packet-assistant_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/04/services_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/05/impl_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/05/packet-assistant_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/05/services_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/constants_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/driver_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/packet-assistant_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/services_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/session_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/version_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/uri/open-sftp_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/uri/sftp_rb.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/fr_class_index.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/fr_file_index.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/fr_method_index.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/index.html
-%%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/rdoc-style.css
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/doc/LICENSE-BSD
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/doc/LICENSE-GPL
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/doc/LICENSE-RUBY
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/doc/faq/faq.html
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/doc/faq/faq.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/doc/faq/faq.yml
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/examples/asynchronous.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/examples/get-put.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/examples/sftp-open-uri.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/examples/ssh-service.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/examples/synchronous.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/errors.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/abstract.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/close.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/errors.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/fsetstat.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/fstat.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/lstat.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/mkdir.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/open.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/opendir.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/read.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/readdir.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/realpath.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/remove.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/rename.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/rmdir.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/services.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/setstat.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/stat.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations/write.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/01/attributes.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/01/impl.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/01/packet-assistant.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/01/services.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/02/impl.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/02/packet-assistant.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/02/services.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/03/impl.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/03/packet-assistant.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/03/services.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/04/attributes.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/04/impl.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/04/packet-assistant.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/04/services.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/05/impl.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/05/packet-assistant.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/05/services.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/constants.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/driver.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/packet-assistant.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/services.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/session.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/version.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/uri/open-sftp.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/uri/sftp.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/ALL-TESTS.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_abstract.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_close.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_fsetstat.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_fstat.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_lstat.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_mkdir.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_open.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_opendir.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_read.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_readdir.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_realpath.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_remove.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_rmdir.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_setstat.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_stat.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations/tc_write.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/01/tc_attributes.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/01/tc_impl.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/01/tc_packet_assistant.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/02/tc_impl.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/02/tc_packet_assistant.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/03/tc_impl.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/03/tc_packet_assistant.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/04/tc_attributes.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/04/tc_impl.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/04/tc_packet_assistant.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/05/tc_impl.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/05/tc_packet_assistant.rb
-%%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/tc_driver.rb
-%%SPEC_DIR%%/net-sftp-%%PORTVERSION%%.gemspec
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/05
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/04
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/03
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/02
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol/01
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/protocol
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test/operations
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/test
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/uri
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/05
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/04
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/03
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/02
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol/01
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/protocol
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp/operations
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net/sftp
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib/net
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/lib
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/examples
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/doc/faq
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%/doc
-@dirrm %%GEMS_DIR%%/net-sftp-%%PORTVERSION%%
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/uri
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/05
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/04
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/03
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/02
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol/01
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/protocol
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp/operations
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net/sftp
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib/net
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files/lib
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/files
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/URI/SFTP.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/URI
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Session.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_05/Impl.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_05/Impl
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_05.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_05
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Impl.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04/Attributes.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_04
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_03/Impl.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_03.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_03
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_02/Impl.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_02.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_02
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Impl.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01/Attributes.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/V_01
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/PacketAssistant.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol/Driver.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Protocol
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Write.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/StatusException.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Stat.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Setstat.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Rmdir.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Rename.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Remove.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Realpath.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Readdir.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Read.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Opendir.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Open.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Mkdir.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Lstat.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Fstat.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Fsetstat.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Close.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations/Abstract.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP/Operations
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP.src
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net/SFTP
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes/Net
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc/classes
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%/rdoc
-@dirrm %%DOC_DIR%%/net-sftp-%%PORTVERSION%%
+%%GEM_SPEC%%
+%%GEM_CACHE%%
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/constants_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/errors_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/operations/dir_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/operations/download_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/operations/file_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/operations/file_factory_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/operations/upload_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/packet_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/01/attributes_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/01/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/01/name_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/02/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/03/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/04/attributes_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/04/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/04/name_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/05/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/06/attributes_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/06/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/response_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/request_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/session_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/CHANGELOG_rdoc.html
+%%GEM_DOC_DIR%%/rdoc/files/README_rdoc.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Operations.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Version.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Session.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Exception.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Operations/Dir.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Operations/Download.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Operations/Upload.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Operations/FileFactory.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Operations/File.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V01.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V01/Name.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V01/Attributes.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V01/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V02.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V02/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V03.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V03/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V04.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V04/Name.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V04/Attributes.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V04/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V05.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V05/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V06.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V06/Attributes.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V06/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/OpenFlags.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/OpenFlags/FV1.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/OpenFlags/FV5.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/OpenFlags/FV6.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/RenameFlags.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/ACE.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/ACE/Mask.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/ACE/Flag.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/ACE/Type.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/PacketTypes.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/LockTypes.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/StatusCodes.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/StatusException.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Packet.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Response.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Request.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Session.html
+%%GEM_LIB_DIR%%/CHANGELOG.rdoc
+%%GEM_LIB_DIR%%/lib/net/sftp.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/constants.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/errors.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/operations/dir.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/operations/download.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/operations/file.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/operations/file_factory.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/operations/upload.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/packet.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/01/attributes.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/01/base.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/01/name.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/02/base.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/03/base.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/04/attributes.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/04/base.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/04/name.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/05/base.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/06/attributes.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/06/base.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol/base.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/protocol.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/request.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/response.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/session.rb
+%%GEM_LIB_DIR%%/lib/net/sftp/version.rb
+%%GEM_LIB_DIR%%/net-sftp.gemspec
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/README.rdoc
+%%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/test/common.rb
+%%GEM_LIB_DIR%%/test/protocol/01/test_attributes.rb
+%%GEM_LIB_DIR%%/test/protocol/01/test_base.rb
+%%GEM_LIB_DIR%%/test/protocol/01/test_name.rb
+%%GEM_LIB_DIR%%/test/protocol/02/test_base.rb
+%%GEM_LIB_DIR%%/test/protocol/03/test_base.rb
+%%GEM_LIB_DIR%%/test/protocol/04/test_attributes.rb
+%%GEM_LIB_DIR%%/test/protocol/04/test_base.rb
+%%GEM_LIB_DIR%%/test/protocol/04/test_name.rb
+%%GEM_LIB_DIR%%/test/protocol/05/test_base.rb
+%%GEM_LIB_DIR%%/test/protocol/06/test_attributes.rb
+%%GEM_LIB_DIR%%/test/protocol/06/test_base.rb
+%%GEM_LIB_DIR%%/test/protocol/test_base.rb
+%%GEM_LIB_DIR%%/test/test_all.rb
+%%GEM_LIB_DIR%%/test/test_dir.rb
+%%GEM_LIB_DIR%%/test/test_download.rb
+%%GEM_LIB_DIR%%/test/test_file.rb
+%%GEM_LIB_DIR%%/test/test_file_factory.rb
+%%GEM_LIB_DIR%%/test/test_packet.rb
+%%GEM_LIB_DIR%%/test/test_protocol.rb
+%%GEM_LIB_DIR%%/test/test_request.rb
+%%GEM_LIB_DIR%%/test/test_response.rb
+%%GEM_LIB_DIR%%/test/test_session.rb
+%%GEM_LIB_DIR%%/test/test_upload.rb
+%%GEM_LIB_DIR%%/Manifest
+@dirrm %%GEM_LIB_DIR%%/test/protocol/06
+@dirrm %%GEM_LIB_DIR%%/test/protocol/05
+@dirrm %%GEM_LIB_DIR%%/test/protocol/04
+@dirrm %%GEM_LIB_DIR%%/test/protocol/03
+@dirrm %%GEM_LIB_DIR%%/test/protocol/02
+@dirrm %%GEM_LIB_DIR%%/test/protocol/01
+@dirrm %%GEM_LIB_DIR%%/test/protocol
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/lib/net/sftp/protocol/06
+@dirrm %%GEM_LIB_DIR%%/lib/net/sftp/protocol/05
+@dirrm %%GEM_LIB_DIR%%/lib/net/sftp/protocol/04
+@dirrm %%GEM_LIB_DIR%%/lib/net/sftp/protocol/03
+@dirrm %%GEM_LIB_DIR%%/lib/net/sftp/protocol/02
+@dirrm %%GEM_LIB_DIR%%/lib/net/sftp/protocol/01
+@dirrm %%GEM_LIB_DIR%%/lib/net/sftp/protocol
+@dirrm %%GEM_LIB_DIR%%/lib/net/sftp/operations
+@dirrm %%GEM_LIB_DIR%%/lib/net/sftp
+@dirrm %%GEM_LIB_DIR%%/lib/net
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/06
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/05
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/04
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/03
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/02
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol/01
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/protocol
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp/operations
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/sftp
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V06
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V05
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V04
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V03
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V02
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol/V01
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Protocol
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Operations
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/OpenFlags
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants/ACE
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP/Constants
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SFTP
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
