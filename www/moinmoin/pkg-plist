@@ -98,6 +98,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/logout.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/logout.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/logout.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/newaccount.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/newaccount.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/newaccount.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/newpage.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/newpage.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/newpage.pyo
@@ -110,6 +113,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/quickunlink.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/quickunlink.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/quickunlink.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/recoverpass.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/recoverpass.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/recoverpass.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/refresh.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/refresh.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/refresh.pyo
@@ -119,6 +125,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/rss_rc.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/rss_rc.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/rss_rc.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/serveopenid.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/serveopenid.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/serveopenid.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/showtags.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/showtags.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/showtags.pyo
@@ -134,9 +143,6 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/supplementation.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/supplementation.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/supplementation.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/action/test.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/action/test.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/action/test.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/thread_monitor.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/thread_monitor.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/thread_monitor.pyo
@@ -149,12 +155,18 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/userprefs.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/userprefs.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/userprefs.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprofile.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprofile.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/action/userprofile.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/_PHPsessionParser.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/_PHPsessionParser.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/_PHPsessionParser.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/botbouncer.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/botbouncer.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/botbouncer.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/http.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/http.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/http.pyo
@@ -170,6 +182,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/mysql_group.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/mysql_group.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/mysql_group.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/openidrp.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/openidrp.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/auth/openidrp.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/php_session.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/php_session.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/php_session.pyo
@@ -200,6 +215,24 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/error.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/error.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/error.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/emailnotify.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/emailnotify.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/emailnotify.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/jabbernotify.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/jabbernotify.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/jabbernotify.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/notification.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/notification.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/notification.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/wikidictsrescan.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/wikidictsrescan.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/wikidictsrescan.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/xapian_index.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/xapian_index.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/events/xapian_index.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/failure.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/failure.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/failure.pyo
@@ -298,8 +331,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_xml.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/Makefile
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/MoinMoin.pot
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/POTFILES
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/POTFILES.in
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/README
-%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/mk.MoinMoin.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.pyo
@@ -326,10 +360,14 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/id.MoinMoin.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/it.MoinMoin.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ja.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/jabberbot/JabberBot.pot
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/jabberbot/Makefile
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/jabberbot/pl.JabberBot.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ko.MoinMoin.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/ku.MoinMoin.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/lt.MoinMoin.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/lv.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/mk.MoinMoin.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/mn.MoinMoin.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/msgfmt.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/msgfmt.pyc
@@ -375,6 +413,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/vi.MoinMoin.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/zh-tw.MoinMoin.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/zh.MoinMoin.po
+%%PYTHON_SITELIBDIR%%/MoinMoin/log.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/log.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/log.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/logfile/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/logfile/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/logfile/__init__.pyo
@@ -426,15 +467,18 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText2.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText2.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/GetText2.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Hits.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Hits.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Hits.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/Include.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/Include.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/Include.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/InterWiki.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/InterWiki.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/InterWiki.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/LikePages.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/LikePages.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/LikePages.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Login.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Login.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/macro/Login.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/MonthCalendar.pyo
@@ -447,9 +491,15 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/OrphanedPages.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/OrphanedPages.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/OrphanedPages.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageCount.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageCount.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageCount.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageHits.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageHits.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageHits.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageList.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageList.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageList.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageSize.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageSize.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/macro/PageSize.pyo
@@ -594,6 +644,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/account/disable.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/account/disable.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/account/disable.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/resetpw.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/resetpw.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/account/resetpw.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/cli/__init__.pyo
@@ -636,6 +689,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mailtranslators.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mailtranslators.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mailtranslators.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/makecache.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/makecache.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/makecache.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mkpagepacks.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mkpagepacks.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/maint/mkpagepacks.pyo
@@ -678,6 +734,30 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060300.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060300.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060300.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060400.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060400.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060400.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060500.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060500.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060500.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060600.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060600.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060600.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060700.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060700.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060700.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060800.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060800.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060800.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060900.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060900.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060900.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1069999.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1069999.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1069999.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070000.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070000.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1070000.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
@@ -759,27 +839,18 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/__init__.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/get_es_pages.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/get_es_pages.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/get_es_pages.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getmasterpages2.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getmasterpages2.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getmasterpages2.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages2.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages2.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/getsystempages2.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/putPageTest.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/putPageTest.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/putPageTest.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikibackup.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikibackup.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikibackup.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikirestore.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikirestore.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools/wikirestore.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/standalone.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/standalone.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/server/standalone.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc/__init__.pyo
@@ -846,6 +917,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/server/server_wsgi.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/server/server_wsgi.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/server/server_wsgi.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/session.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/session.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/session.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/stats/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/stats/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/stats/__init__.pyo
@@ -876,18 +950,12 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/cgitb.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/cgitb.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/cgitb.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/support/copy.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/support/copy.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/support/copy.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/difflib.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/difflib.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/difflib.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/htmlmarkup.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/htmlmarkup.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/htmlmarkup.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/support/logging_fix.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/support/logging_fix.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/support/logging_fix.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/multicall.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/multicall.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/support/multicall.pyo
@@ -939,9 +1007,36 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/user.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/user.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/user.pyo
-%%PYTHON_SITELIBDIR%%/MoinMoin/userform.py
-%%PYTHON_SITELIBDIR%%/MoinMoin/userform.pyc
-%%PYTHON_SITELIBDIR%%/MoinMoin/userform.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/admin.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/admin.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/admin.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/login.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/login.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userform/login.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/__init__.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/changepass.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/changepass.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/changepass.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/notification.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/notification.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/notification.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oid.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oid.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oid.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oidserv.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oidserv.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/oidserv.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/prefs.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/prefs.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/prefs.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/suid.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/suid.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/userprefs/suid.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/__init__.pyo
@@ -954,6 +1049,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes_create.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes_create.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/chartypes_create.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/clock.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/clock.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/clock.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/dataset.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/dataset.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/dataset.pyo
@@ -972,6 +1070,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/lock.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/lock.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/lock.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/moinoid.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/moinoid.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/util/moinoid.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/profile.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/profile.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/util/profile.pyo
@@ -1047,27 +1148,72 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/putClientInfo.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/putClientInfo.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc/putClientInfo.pyo
-share/moin/config/mailimportconf.py
-share/moin/config/more_samples/ldap_smb_farmconfig.py
+%%PYTHON_SITELIBDIR%%/jabberbot/__init__.py
+%%PYTHON_SITELIBDIR%%/jabberbot/__init__.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/__init__.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/bot.py
+%%PYTHON_SITELIBDIR%%/jabberbot/bot.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/bot.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/capat.py
+%%PYTHON_SITELIBDIR%%/jabberbot/capat.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/capat.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/commands.py
+%%PYTHON_SITELIBDIR%%/jabberbot/commands.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/commands.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/config.py
+%%PYTHON_SITELIBDIR%%/jabberbot/config.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/config.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/i18n.py
+%%PYTHON_SITELIBDIR%%/jabberbot/i18n.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/i18n.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/multicall.py
+%%PYTHON_SITELIBDIR%%/jabberbot/multicall.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/multicall.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/oob.py
+%%PYTHON_SITELIBDIR%%/jabberbot/oob.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/oob.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/xmlrpcbot.py
+%%PYTHON_SITELIBDIR%%/jabberbot/xmlrpcbot.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/xmlrpcbot.pyo
+%%PYTHON_SITELIBDIR%%/jabberbot/xmppbot.py
+%%PYTHON_SITELIBDIR%%/jabberbot/xmppbot.pyc
+%%PYTHON_SITELIBDIR%%/jabberbot/xmppbot.pyo
+share/moin/config/logging/README
+share/moin/config/logging/logfile
+share/moin/config/logging/logfile_debug_auth
+share/moin/config/logging/stderr
+share/moin/config/more_samples/README
+share/moin/config/more_samples/auth_session_wikiconfig_snippet
+share/moin/config/more_samples/http_auth_wikiconfig_snippet
+share/moin/config/more_samples/jabber_wikiconfig_snippet
+share/moin/config/more_samples/ldap_wikiconfig_snippet
+share/moin/config/more_samples/mail_wikiconfig_snippet
+share/moin/config/more_samples/mailimportconf.py
+share/moin/config/more_samples/security_wikiconfig_snippet
+share/moin/config/more_samples/smb_wikiconfig_snippet
+share/moin/config/more_samples/ui_wikiconfig_snippet
+share/moin/config/more_samples/user_wikiconfig_snippet
 share/moin/config/wikiconfig.py
 share/moin/config/wikifarm/farmconfig.py
 share/moin/config/wikifarm/mywiki.py
 share/moin/data/cache/README
 share/moin/data/dict/dummy_dict
 share/moin/data/edit-log
+share/moin/data/event-log
 share/moin/data/intermap.txt
 share/moin/data/meta
-share/moin/data/event-log
 share/moin/data/pages/BadContent/current
 share/moin/data/pages/BadContent/revisions/00000001
 share/moin/data/plugin/__init__.py
 share/moin/data/plugin/action/__init__.py
 share/moin/data/plugin/converter/__init__.py
+share/moin/data/plugin/events/__init__.py
 share/moin/data/plugin/filter/__init__.py
 share/moin/data/plugin/formatter/__init__.py
 share/moin/data/plugin/macro/__init__.py
 share/moin/data/plugin/parser/__init__.py
 share/moin/data/plugin/theme/__init__.py
+share/moin/data/plugin/userprefs/__init__.py
 share/moin/data/plugin/xmlrpc/__init__.py
 share/moin/data/user/README
 share/moin/htdocs/applets/FCKeditor/README
@@ -1854,6 +2000,7 @@ share/moin/htdocs/common/js/infobox.js
 share/moin/htdocs/common/moindude.png
 share/moin/htdocs/common/moinmoin.png
 share/moin/htdocs/common/moinmoin_alpha.png
+share/moin/htdocs/common/openid.png
 share/moin/htdocs/favicon.ico
 share/moin/htdocs/index.html
 share/moin/htdocs/modern/css/common.css
@@ -1862,6 +2009,11 @@ share/moin/htdocs/modern/css/print.css
 share/moin/htdocs/modern/css/projection.css
 share/moin/htdocs/modern/css/screen.css
 share/moin/htdocs/modern/img/PythonPowered.png
+share/moin/htdocs/modern/img/admon-caution.png
+share/moin/htdocs/modern/img/admon-important.png
+share/moin/htdocs/modern/img/admon-note.png
+share/moin/htdocs/modern/img/admon-tip.png
+share/moin/htdocs/modern/img/admon-warning.png
 share/moin/htdocs/modern/img/alert.png
 share/moin/htdocs/modern/img/angry.png
 share/moin/htdocs/modern/img/attach.png
@@ -1989,7 +2141,6 @@ share/moin/htdocs/robots.txt
 share/moin/server/moin
 share/moin/server/moin.cgi
 share/moin/server/moin.fcg
-share/moin/server/moin.py
 share/moin/server/moin.wsgi
 share/moin/server/moin_flup_wsgi.py
 share/moin/server/moinmodpy.htaccess
@@ -1997,6 +2148,7 @@ share/moin/server/moinmodpy.py
 share/moin/server/mointwisted
 share/moin/server/mointwisted.cmd
 share/moin/server/mointwisted.py
+share/moin/server/wikiserver.py
 share/moin/underlay/pages/AbandonedPages/current
 share/moin/underlay/pages/AbandonedPages/revisions/00000001
 share/moin/underlay/pages/AutoAdminGroup/current
@@ -2011,8 +2163,6 @@ share/moin/underlay/pages/CategoryHomepage/current
 share/moin/underlay/pages/CategoryHomepage/revisions/00000001
 share/moin/underlay/pages/CategoryTemplate/current
 share/moin/underlay/pages/CategoryTemplate/revisions/00000001
-share/moin/underlay/pages/DesktopEdition(2f)HowToConfigure/current
-share/moin/underlay/pages/DesktopEdition(2f)HowToConfigure/revisions/00000001
 share/moin/underlay/pages/DesktopEdition/current
 share/moin/underlay/pages/DesktopEdition/revisions/00000001
 share/moin/underlay/pages/EditedSystemPages/current
@@ -2069,10 +2219,10 @@ share/moin/underlay/pages/HelpOnActions/current
 share/moin/underlay/pages/HelpOnActions/revisions/00000001
 share/moin/underlay/pages/HelpOnAdministration/current
 share/moin/underlay/pages/HelpOnAdministration/revisions/00000001
+share/moin/underlay/pages/HelpOnAdmonitions/current
+share/moin/underlay/pages/HelpOnAdmonitions/revisions/00000001
 share/moin/underlay/pages/HelpOnAuthentication(2f)ExternalCookie/current
 share/moin/underlay/pages/HelpOnAuthentication(2f)ExternalCookie/revisions/00000001
-share/moin/underlay/pages/HelpOnAuthentication(2f)LDAP/current
-share/moin/underlay/pages/HelpOnAuthentication(2f)LDAP/revisions/00000001
 share/moin/underlay/pages/HelpOnAuthentication/current
 share/moin/underlay/pages/HelpOnAuthentication/revisions/00000001
 share/moin/underlay/pages/HelpOnAutoAdmin/current
@@ -2161,11 +2311,11 @@ share/moin/underlay/pages/HelpOnInstalling/current
 share/moin/underlay/pages/HelpOnInstalling/revisions/00000001
 share/moin/underlay/pages/HelpOnLanguages/current
 share/moin/underlay/pages/HelpOnLanguages/revisions/00000001
+share/moin/underlay/pages/HelpOnLinking(2f)NotesLinks/attachments/docprop.jpg
+share/moin/underlay/pages/HelpOnLinking(2f)NotesLinks/current
+share/moin/underlay/pages/HelpOnLinking(2f)NotesLinks/revisions/00000001
 share/moin/underlay/pages/HelpOnLinking/current
 share/moin/underlay/pages/HelpOnLinking/revisions/00000001
-share/moin/underlay/pages/HelpOnLinking(2f)NotesLinks/revisions/00000001
-share/moin/underlay/pages/HelpOnLinking(2f)NotesLinks/current
-share/moin/underlay/pages/HelpOnLinking(2f)NotesLinks/attachments/docprop.jpg
 share/moin/underlay/pages/HelpOnLists/current
 share/moin/underlay/pages/HelpOnLists/revisions/00000001
 share/moin/underlay/pages/HelpOnLogin/current
@@ -2182,6 +2332,8 @@ share/moin/underlay/pages/HelpOnMacros(2f)MonthCalendar/current
 share/moin/underlay/pages/HelpOnMacros(2f)MonthCalendar/revisions/00000001
 share/moin/underlay/pages/HelpOnMacros/current
 share/moin/underlay/pages/HelpOnMacros/revisions/00000001
+share/moin/underlay/pages/HelpOnMoinCommand(2f)ExportDump/current
+share/moin/underlay/pages/HelpOnMoinCommand(2f)ExportDump/revisions/00000001
 share/moin/underlay/pages/HelpOnMoinCommand/current
 share/moin/underlay/pages/HelpOnMoinCommand/revisions/00000001
 share/moin/underlay/pages/HelpOnMoinWikiSyntax/attachments/myexample.draw
@@ -2190,6 +2342,10 @@ share/moin/underlay/pages/HelpOnMoinWikiSyntax/current
 share/moin/underlay/pages/HelpOnMoinWikiSyntax/revisions/00000001
 share/moin/underlay/pages/HelpOnNavigation/current
 share/moin/underlay/pages/HelpOnNavigation/revisions/00000001
+share/moin/underlay/pages/HelpOnNotification/current
+share/moin/underlay/pages/HelpOnNotification/revisions/00000001
+share/moin/underlay/pages/HelpOnOpenIDProvider/current
+share/moin/underlay/pages/HelpOnOpenIDProvider/revisions/00000001
 share/moin/underlay/pages/HelpOnPackageInstaller/current
 share/moin/underlay/pages/HelpOnPackageInstaller/revisions/00000001
 share/moin/underlay/pages/HelpOnPageCreation/current
@@ -2283,14 +2439,14 @@ share/moin/underlay/pages/MoinMoin(2f)TextFormatting/current
 share/moin/underlay/pages/MoinMoin(2f)TextFormatting/revisions/00000001
 share/moin/underlay/pages/MoinMoin/current
 share/moin/underlay/pages/MoinMoin/revisions/00000001
-share/moin/underlay/pages/MoinPagesEditorGroup/current
-share/moin/underlay/pages/MoinPagesEditorGroup/revisions/00000001
 share/moin/underlay/pages/OrphanedPages/current
 share/moin/underlay/pages/OrphanedPages/revisions/00000001
 share/moin/underlay/pages/PageHits/current
 share/moin/underlay/pages/PageHits/revisions/00000001
 share/moin/underlay/pages/PageSize/current
 share/moin/underlay/pages/PageSize/revisions/00000001
+share/moin/underlay/pages/PermissionDeniedPage/current
+share/moin/underlay/pages/PermissionDeniedPage/revisions/00000001
 share/moin/underlay/pages/ProjectGroupsTemplate/current
 share/moin/underlay/pages/ProjectGroupsTemplate/revisions/00000001
 share/moin/underlay/pages/ProjectTemplate/current
@@ -2299,8 +2455,6 @@ share/moin/underlay/pages/RandomPage/current
 share/moin/underlay/pages/RandomPage/revisions/00000001
 share/moin/underlay/pages/RecentChanges/current
 share/moin/underlay/pages/RecentChanges/revisions/00000001
-share/moin/underlay/pages/SendMyPassword/current
-share/moin/underlay/pages/SendMyPassword/revisions/00000001
 share/moin/underlay/pages/SiteNavigation/current
 share/moin/underlay/pages/SiteNavigation/revisions/00000001
 share/moin/underlay/pages/SlideShowHandOutTemplate/current
@@ -2331,10 +2485,8 @@ share/moin/underlay/pages/SystemPagesSetup/attachments/Finnish.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/French.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/German.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Hebrew.zip
-share/moin/underlay/pages/SystemPagesSetup/attachments/Hindi.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Hungarian.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Indonesian.zip
-share/moin/underlay/pages/SystemPagesSetup/attachments/Irish.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Italian.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Japanese.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Korean.zip
@@ -2360,8 +2512,6 @@ share/moin/underlay/pages/SystemPagesSetup/current
 share/moin/underlay/pages/SystemPagesSetup/revisions/00000001
 share/moin/underlay/pages/TitleIndex/current
 share/moin/underlay/pages/TitleIndex/revisions/00000001
-share/moin/underlay/pages/UserPreferences/current
-share/moin/underlay/pages/UserPreferences/revisions/00000001
 share/moin/underlay/pages/WantedPages/current
 share/moin/underlay/pages/WantedPages/revisions/00000001
 share/moin/underlay/pages/WhyWikiWorks/current
@@ -2520,8 +2670,6 @@ share/moin/underlay/pages/XsltVersion/revisions/00000001
 @dirrm share/moin/underlay/pages/WhyWikiWorks
 @dirrm share/moin/underlay/pages/WantedPages/revisions
 @dirrm share/moin/underlay/pages/WantedPages
-@dirrm share/moin/underlay/pages/UserPreferences/revisions
-@dirrm share/moin/underlay/pages/UserPreferences
 @dirrm share/moin/underlay/pages/TitleIndex/revisions
 @dirrm share/moin/underlay/pages/TitleIndex
 @dirrm share/moin/underlay/pages/SystemPagesSetup/revisions
@@ -2547,8 +2695,6 @@ share/moin/underlay/pages/XsltVersion/revisions/00000001
 @dirrm share/moin/underlay/pages/SlideShowHandOutTemplate
 @dirrm share/moin/underlay/pages/SiteNavigation/revisions
 @dirrm share/moin/underlay/pages/SiteNavigation
-@dirrm share/moin/underlay/pages/SendMyPassword/revisions
-@dirrm share/moin/underlay/pages/SendMyPassword
 @dirrm share/moin/underlay/pages/RecentChanges/revisions
 @dirrm share/moin/underlay/pages/RecentChanges
 @dirrm share/moin/underlay/pages/RandomPage/revisions
@@ -2557,14 +2703,14 @@ share/moin/underlay/pages/XsltVersion/revisions/00000001
 @dirrm share/moin/underlay/pages/ProjectTemplate
 @dirrm share/moin/underlay/pages/ProjectGroupsTemplate/revisions
 @dirrm share/moin/underlay/pages/ProjectGroupsTemplate
+@dirrm share/moin/underlay/pages/PermissionDeniedPage/revisions
+@dirrm share/moin/underlay/pages/PermissionDeniedPage
 @dirrm share/moin/underlay/pages/PageSize/revisions
 @dirrm share/moin/underlay/pages/PageSize
 @dirrm share/moin/underlay/pages/PageHits/revisions
 @dirrm share/moin/underlay/pages/PageHits
 @dirrm share/moin/underlay/pages/OrphanedPages/revisions
 @dirrm share/moin/underlay/pages/OrphanedPages
-@dirrm share/moin/underlay/pages/MoinPagesEditorGroup/revisions
-@dirrm share/moin/underlay/pages/MoinPagesEditorGroup
 @dirrm share/moin/underlay/pages/MoinMoin/revisions
 @dirrm share/moin/underlay/pages/MoinMoin(2f)TextFormatting/revisions
 @dirrm share/moin/underlay/pages/MoinMoin(2f)TextFormatting
@@ -2658,12 +2804,18 @@ share/moin/underlay/pages/XsltVersion/revisions/00000001
 @dirrm share/moin/underlay/pages/HelpOnPageCreation
 @dirrm share/moin/underlay/pages/HelpOnPackageInstaller/revisions
 @dirrm share/moin/underlay/pages/HelpOnPackageInstaller
+@dirrm share/moin/underlay/pages/HelpOnOpenIDProvider/revisions
+@dirrm share/moin/underlay/pages/HelpOnOpenIDProvider
+@dirrm share/moin/underlay/pages/HelpOnNotification/revisions
+@dirrm share/moin/underlay/pages/HelpOnNotification
 @dirrm share/moin/underlay/pages/HelpOnNavigation/revisions
 @dirrm share/moin/underlay/pages/HelpOnNavigation
 @dirrm share/moin/underlay/pages/HelpOnMoinWikiSyntax/revisions
 @dirrm share/moin/underlay/pages/HelpOnMoinWikiSyntax/attachments
 @dirrm share/moin/underlay/pages/HelpOnMoinWikiSyntax
 @dirrm share/moin/underlay/pages/HelpOnMoinCommand/revisions
+@dirrm share/moin/underlay/pages/HelpOnMoinCommand(2f)ExportDump/revisions
+@dirrm share/moin/underlay/pages/HelpOnMoinCommand(2f)ExportDump
 @dirrm share/moin/underlay/pages/HelpOnMoinCommand
 @dirrm share/moin/underlay/pages/HelpOnMacros/revisions
 @dirrm share/moin/underlay/pages/HelpOnMacros(2f)MonthCalendar/revisions
@@ -2681,10 +2833,10 @@ share/moin/underlay/pages/XsltVersion/revisions/00000001
 @dirrm share/moin/underlay/pages/HelpOnLogin
 @dirrm share/moin/underlay/pages/HelpOnLists/revisions
 @dirrm share/moin/underlay/pages/HelpOnLists
+@dirrm share/moin/underlay/pages/HelpOnLinking/revisions
 @dirrm share/moin/underlay/pages/HelpOnLinking(2f)NotesLinks/revisions
 @dirrm share/moin/underlay/pages/HelpOnLinking(2f)NotesLinks/attachments
 @dirrm share/moin/underlay/pages/HelpOnLinking(2f)NotesLinks
-@dirrm share/moin/underlay/pages/HelpOnLinking/revisions
 @dirrm share/moin/underlay/pages/HelpOnLinking
 @dirrm share/moin/underlay/pages/HelpOnLanguages/revisions
 @dirrm share/moin/underlay/pages/HelpOnLanguages
@@ -2773,11 +2925,11 @@ share/moin/underlay/pages/XsltVersion/revisions/00000001
 @dirrm share/moin/underlay/pages/HelpOnAutoAdmin/revisions
 @dirrm share/moin/underlay/pages/HelpOnAutoAdmin
 @dirrm share/moin/underlay/pages/HelpOnAuthentication/revisions
-@dirrm share/moin/underlay/pages/HelpOnAuthentication(2f)LDAP/revisions
-@dirrm share/moin/underlay/pages/HelpOnAuthentication(2f)LDAP
 @dirrm share/moin/underlay/pages/HelpOnAuthentication(2f)ExternalCookie/revisions
 @dirrm share/moin/underlay/pages/HelpOnAuthentication(2f)ExternalCookie
 @dirrm share/moin/underlay/pages/HelpOnAuthentication
+@dirrm share/moin/underlay/pages/HelpOnAdmonitions/revisions
+@dirrm share/moin/underlay/pages/HelpOnAdmonitions
 @dirrm share/moin/underlay/pages/HelpOnAdministration/revisions
 @dirrm share/moin/underlay/pages/HelpOnAdministration
 @dirrm share/moin/underlay/pages/HelpOnActions/revisions
@@ -2824,8 +2976,6 @@ share/moin/underlay/pages/XsltVersion/revisions/00000001
 @dirrm share/moin/underlay/pages/EditedSystemPages/revisions
 @dirrm share/moin/underlay/pages/EditedSystemPages
 @dirrm share/moin/underlay/pages/DesktopEdition/revisions
-@dirrm share/moin/underlay/pages/DesktopEdition(2f)HowToConfigure/revisions
-@dirrm share/moin/underlay/pages/DesktopEdition(2f)HowToConfigure
 @dirrm share/moin/underlay/pages/DesktopEdition
 @dirrm share/moin/underlay/pages/CategoryTemplate/revisions
 @dirrm share/moin/underlay/pages/CategoryTemplate
@@ -2953,11 +3103,13 @@ share/moin/underlay/pages/XsltVersion/revisions/00000001
 @dirrm share/moin/htdocs
 @dirrm share/moin/data/user
 @dirrm share/moin/data/plugin/xmlrpc
+@dirrm share/moin/data/plugin/userprefs
 @dirrm share/moin/data/plugin/theme
 @dirrm share/moin/data/plugin/parser
 @dirrm share/moin/data/plugin/macro
 @dirrm share/moin/data/plugin/formatter
 @dirrm share/moin/data/plugin/filter
+@dirrm share/moin/data/plugin/events
 @dirrm share/moin/data/plugin/converter
 @dirrm share/moin/data/plugin/action
 @dirrm share/moin/data/plugin
@@ -2969,12 +3121,16 @@ share/moin/underlay/pages/XsltVersion/revisions/00000001
 @dirrm share/moin/data
 @dirrm share/moin/config/wikifarm
 @dirrm share/moin/config/more_samples
+@dirrm share/moin/config/logging
 @dirrm share/moin/config
 @dirrm share/moin
+@dirrm %%PYTHON_SITELIBDIR%%/jabberbot
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/xmlrpc
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/wikixml
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/widget
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/util
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/userprefs
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/userform
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/theme
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/xapwrap
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/support/parsedatetime
@@ -2984,6 +3140,7 @@ share/moin/underlay/pages/XsltVersion/revisions/00000001
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/security
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/search
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/xmlrpc
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/server
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/xmlrpc-tools
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old/migration
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/script/old
@@ -3001,9 +3158,11 @@ share/moin/underlay/pages/XsltVersion/revisions/00000001
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/macro
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/logfile
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/tools
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/jabberbot
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/formatter
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/filter
+@dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/events
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/converter
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/config
 @dirrm %%PYTHON_SITELIBDIR%%/MoinMoin/auth

@@ -21,7 +21,7 @@ case "x$2" in
 		echo " <Location \"/mywiki\">"
         	echo "     SetHandler python-program"
         	echo "     PythonPath \"['$destdir'] + sys.path\""
-        	echo "     PythonHandler MoinMoin.request::RequestModPy.run"
+        	echo "     PythonHandler MoinMoin.request.request_modpython::Request.run"
         	echo "     PythonAutoReload On"
         	echo "     PythonDebug On"
 		echo " </Location>"
