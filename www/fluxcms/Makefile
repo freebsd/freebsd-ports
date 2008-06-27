@@ -7,11 +7,11 @@
 
 PORTNAME=	fluxcms
 PORTVERSION=	1.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://bitflux.org/download/ \
 		http://www.chruetertee.ch/files/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-snapshot-20070727
+DISTNAME=	${PORTNAME}-${PORTVERSION}-snapshot-20080622
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beat@chruetertee.ch
@@ -46,7 +46,7 @@ post-patch:
 do-install:
 	@${MKDIR} ${INSTALLDIR}
 	@${CP} -R ${WRKSRC}/* ${INSTALLDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${INSTALLDIR}
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${INSTALLDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
