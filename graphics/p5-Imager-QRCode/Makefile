@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Imager-QRCode
-PORTVERSION=	0.01
-PORTREVISION=	1
+PORTVERSION=	0.03
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,9 +18,8 @@ BUILD_DEPENDS=	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager \
 		libqrencode>=0:${PORTSDIR}/graphics/libqrencode
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Does not build
-
 PERL_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
 
 MAN3=		Imager::QRCode.3
 
