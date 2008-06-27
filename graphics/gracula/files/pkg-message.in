@@ -1,6 +1,7 @@
 
-        Please read the file ${PREFIX}/share/doc/gracula/README
-        to learn how to use Graphic Counter Language.
+        Please read the file %%DOCSDIR%%/README
+        to learn how to use Graphic Counter Language (if you haven't
+	installed with -D NOPORTDOCS).
 
         An introductory tutorial, and a GCL FAQ, can be found at
         http://www.whizkidtech.redprince.net/gcl/
