@@ -1,22 +1,25 @@
---- bozohttpd.8.orig	Fri Aug 23 07:43:44 2002
-+++ bozohttpd.8	Tue Sep  3 10:23:12 2002
-@@ -197,8 +197,8 @@
+
+$FreeBSD$
+
+--- bozohttpd.8.orig
++++ bozohttpd.8
+@@ -284,8 +284,8 @@
  .Xr inetd.conf 5
  entry would be:
  .Bd -literal
--www stream tcp  nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd /var/www
--www stream tcp6 nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd /var/www
-+www stream tcp  nowait:600 httpd /@@PREFIX@@/libexec/bozohttpd bozohttpd /var/www
-+www stream tcp6 nowait:600 httpd /@@PREFIX@@/libexec/bozohttpd bozohttpd /var/www
+-http stream tcp  nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd /var/www
+-http stream tcp6 nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd /var/www
++http stream tcp  nowait:600 httpd /@@PREFI@@/libexec/bozohttpd bozohttpd /var/www
++http stream tcp6 nowait:600 httpd /@@PREFIX@@/libexec/bozohttpd bozohttpd /var/www
  .Ed
  .Pp
  This would serve web pages from
-@@ -218,7 +218,7 @@
- .Pp
- To configure set of virtual hosts, one would use an entry like:
+@@ -308,7 +308,7 @@
+ .Xr inetd.conf 5
+ entry like:
  .Bd -literal
--www stream tcp  nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd -v /var/vroot /var/www
-+www stream tcp  nowait:600 httpd /@@PREFIX@@/libexec/bozohttpd bozohttpd -v /var/vroot /var/www
+-http stream tcp  nowait:600 httpd /usr/pkg/libexec/bozohttpd bozohttpd -v /var/vroot /var/www
++http stream tcp  nowait:600 httpd /@@PREFIX@@/libexec/bozohttpd bozohttpd -v /var/vroot /var/www
  .Ed
  .Pp
  and inside
