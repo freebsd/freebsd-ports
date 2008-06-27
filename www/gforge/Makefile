@@ -26,6 +26,8 @@ USE_PHP=		pgsql session pcre
 WANT_PHP_CLI=		YES
 WANT_PHP_MOD=		YES
 
+BROKEN=		bad plist
+
 NO_PACKAGE=	The configure process uses hostname
 
 .include <bsd.port.pre.mk>
