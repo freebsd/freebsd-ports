@@ -33,7 +33,7 @@ do-install:
 	@for file in ${AUX_FILES}; do \
 	    ${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/${AUX_DIR}/ ; \
 	done
-.if !defined(NOPORTDOCS)
+.if !defined(NO_INSTALL_MANPAGES)
 	@${INSTALL_DATA} ${WRKSRC}/doc.8 ${PREFIX}/man/man8/doc.8
 .endif
 
