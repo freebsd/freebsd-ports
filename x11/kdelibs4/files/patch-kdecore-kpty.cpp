@@ -1,12 +1,13 @@
 --- kdecore/kpty.cpp
 +++ kdecore/kpty.cpp
-@@ -127,9 +127,15 @@
+@@ -127,10 +127,15 @@
  #include <kdebug.h>
  #include <kstandarddirs.h>	// locate
  
 -// not defined on HP-UX for example
--#undef CTRL
--#define CTRL(x) ((x) & 037)
+-#ifndef CTRL
+-# define CTRL(x) ((x) & 037)
+-#endif
 +#ifndef CINTR
 +#define CINTR	0x03
 +#endif
