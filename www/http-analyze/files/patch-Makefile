@@ -1,5 +1,5 @@
---- Makefile.orig	Sun May 31 15:06:53 1998
-+++ Makefile	Sat Aug 30 01:07:19 2003
+--- ./Makefile.orig	1998-05-31 16:06:53.000000000 +0300
++++ ./Makefile	2008-06-28 02:02:46.000000000 +0300
 @@ -28,9 +28,9 @@
  #	SVR4	/usr/share/man/cat1	-		1
  #	Linux	/usr/local/man/man1	-		man
@@ -66,15 +66,13 @@
  NROFF	= nroff
  NRFLAGS	= -u1 -man
  
-@@ -212,10 +216,12 @@
+@@ -212,10 +216,10 @@
  	cp http-analyze.$(EXTENSION) $(LOCALMAN)/http-analyze.1
  	chmod 755 $(LOCALBIN)/http-analyze $(LOCALBIN)/ha-setup
  	chmod 444 $(LOCALMAN)/http-analyze.1
 -	chown bin.bin $(LOCALBIN)/http-analyze $(LOCALBIN)/ha-setup
 -	$(COMPRESS) $(LOCALMAN)/http-analyze.1
 +	chown bin:bin $(LOCALBIN)/http-analyze $(LOCALBIN)/ha-setup
-+	-mkdir -p $(PREFIX)/share/doc/http-analyze
-+	cp http-analyze.pdf http-analyze.ps $(PREFIX)/share/doc/http-analyze
  	-mkdir -p $(LOCALLIB)/http-analyze/btn
 -	cp files/3D* files/TLD files/bugreport.html sample.conf $(LOCALLIB)/http-analyze/
 +	cp files/3D* files/TLD files/bugreport.html rotate-httpd sample.conf \

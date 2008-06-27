@@ -6,9 +6,9 @@
 
 PORTNAME=	http-analyze
 PORTVERSION=	2.01
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
-MASTER_SITES=	http://sce-tindy.tecnik93.com/FreeBSD/others_ports/http-analyze/
+MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	-src.tar.gz
 
@@ -24,5 +24,12 @@ post-patch:
 	@${ECHO_MSG} "Converting GIFs to PNG format"
 	@${FIND} "${WRKSRC}/files/btn" -name "*.gif" -type f \
 		-exec gif2png -d -O {} \;
+
+.ifndef(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/http-analyze.pdf ${WRKSRC}/http-analyze.ps \
+		${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
