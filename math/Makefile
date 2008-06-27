@@ -310,6 +310,7 @@
     SUBDIR += py-gnuplot
     SUBDIR += py-gsl
     SUBDIR += py-igraph
+    SUBDIR += py-mathdom
     SUBDIR += py-matplotlib
     SUBDIR += py-mpz
     SUBDIR += py-networkx
