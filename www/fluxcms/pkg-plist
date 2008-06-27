@@ -9,6 +9,7 @@
 %%INSTALLDIR%%/admin/data/admin/delete/.configxml
 %%INSTALLDIR%%/admin/data/admin/edit/.configxml
 %%INSTALLDIR%%/admin/data/admin/editpopup/.configxml
+%%INSTALLDIR%%/admin/data/admin/history/.configxml
 %%INSTALLDIR%%/admin/data/admin/images/.configxml
 %%INSTALLDIR%%/admin/data/admin/listview/.configxml
 %%INSTALLDIR%%/admin/data/admin/navi/.configxml
@@ -292,6 +293,8 @@
 %%INSTALLDIR%%/dbforms2/blogposts.xml
 %%INSTALLDIR%%/dbforms2/blogposts2.xml
 %%INSTALLDIR%%/dbforms2/boxes.xml
+%%INSTALLDIR%%/dbforms2/calendar.xml
+%%INSTALLDIR%%/dbforms2/dates.xml
 %%INSTALLDIR%%/dbforms2/events.xml
 %%INSTALLDIR%%/dbforms2/newsletter_feeds.xml
 %%INSTALLDIR%%/dbforms2/newsletter_from.xml
@@ -396,6 +399,7 @@
 %%INSTALLDIR%%/inc/Date/Span.php
 %%INSTALLDIR%%/inc/Date/TimeZone.php
 %%INSTALLDIR%%/inc/DirectoryIterator.php
+%%INSTALLDIR%%/inc/FDB2.php
 %%INSTALLDIR%%/inc/HTTP/Client.php
 %%INSTALLDIR%%/inc/HTTP/Client/CookieManager.php
 %%INSTALLDIR%%/inc/HTTP/Request.php
@@ -440,6 +444,7 @@
 %%INSTALLDIR%%/inc/MDB2/Driver/Manager/mysql.php
 %%INSTALLDIR%%/inc/MDB2/Driver/Manager/mysqli.php
 %%INSTALLDIR%%/inc/MDB2/Driver/Manager/sqlite.php
+%%INSTALLDIR%%/inc/MDB2/Driver/Native/Common.php
 %%INSTALLDIR%%/inc/MDB2/Driver/Native/mssql.php
 %%INSTALLDIR%%/inc/MDB2/Driver/Native/mysql.php
 %%INSTALLDIR%%/inc/MDB2/Driver/Native/mysqli.php
@@ -508,6 +513,18 @@
 %%INSTALLDIR%%/inc/System.php
 %%INSTALLDIR%%/inc/Text/CAPTCHA.php
 %%INSTALLDIR%%/inc/Text/CAPTCHA/Driver/Image.php
+%%INSTALLDIR%%/inc/Text/Diff.php
+%%INSTALLDIR%%/inc/Text/Diff/Engine/native.php
+%%INSTALLDIR%%/inc/Text/Diff/Engine/shell.php
+%%INSTALLDIR%%/inc/Text/Diff/Engine/string.php
+%%INSTALLDIR%%/inc/Text/Diff/Engine/xdiff.php
+%%INSTALLDIR%%/inc/Text/Diff/Mapped.php
+%%INSTALLDIR%%/inc/Text/Diff/Renderer.php
+%%INSTALLDIR%%/inc/Text/Diff/Renderer/context.php
+%%INSTALLDIR%%/inc/Text/Diff/Renderer/inline.php
+%%INSTALLDIR%%/inc/Text/Diff/Renderer/unified.php
+%%INSTALLDIR%%/inc/Text/Diff/ThreeWay.php
+%%INSTALLDIR%%/inc/Text/Diff3.php
 %%INSTALLDIR%%/inc/Text/Image/Text.php
 %%INSTALLDIR%%/inc/Text/Password.php
 %%INSTALLDIR%%/inc/XML/Parser.php
@@ -592,6 +609,7 @@
 %%INSTALLDIR%%/inc/bx/dbforms2/liveselect.php
 %%INSTALLDIR%%/inc/bx/dbforms2/liveselect/pagetree.php
 %%INSTALLDIR%%/inc/bx/dbforms2/nofield.php
+%%INSTALLDIR%%/inc/bx/dbforms2/nofield/html.php
 %%INSTALLDIR%%/inc/bx/dbforms2/nofield/text.php
 %%INSTALLDIR%%/inc/bx/dbforms2/sql.php
 %%INSTALLDIR%%/inc/bx/dbforms2/xsl/common.xsl
@@ -813,6 +831,8 @@
 %%INSTALLDIR%%/inc/bx/notification.php
 %%INSTALLDIR%%/inc/bx/notificationmanager.php
 %%INSTALLDIR%%/inc/bx/notifications/mail.php
+%%INSTALLDIR%%/inc/bx/notifications/sms.php
+%%INSTALLDIR%%/inc/bx/notifications/sms/aspsms.php
 %%INSTALLDIR%%/inc/bx/permm.php
 %%INSTALLDIR%%/inc/bx/permm/auth/common.php
 %%INSTALLDIR%%/inc/bx/permm/auth/confluence.php
@@ -850,6 +870,7 @@
 %%INSTALLDIR%%/inc/bx/plugins/admin/delete.php
 %%INSTALLDIR%%/inc/bx/plugins/admin/edit.php
 %%INSTALLDIR%%/inc/bx/plugins/admin/editpopup.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/history.php
 %%INSTALLDIR%%/inc/bx/plugins/admin/listview.php
 %%INSTALLDIR%%/inc/bx/plugins/admin/navi.php
 %%INSTALLDIR%%/inc/bx/plugins/admin/openid.php
@@ -875,6 +896,7 @@
 %%INSTALLDIR%%/inc/bx/plugins/blog/geoloc.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/gravatar.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/handlecomment.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/map.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/montharchive.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/plazes.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/preview.xml
@@ -898,6 +920,9 @@
 %%INSTALLDIR%%/inc/bx/plugins/fulltree.php
 %%INSTALLDIR%%/inc/bx/plugins/gallery.php
 %%INSTALLDIR%%/inc/bx/plugins/gallery/config.xml
+%%INSTALLDIR%%/inc/bx/plugins/gallery/file.php
+%%INSTALLDIR%%/inc/bx/plugins/gallery/flickr.php
+%%INSTALLDIR%%/inc/bx/plugins/gallery/overview.php
 %%INSTALLDIR%%/inc/bx/plugins/gallery/preview.php
 %%INSTALLDIR%%/inc/bx/plugins/graph.php
 %%INSTALLDIR%%/inc/bx/plugins/image.php
@@ -909,6 +934,7 @@
 %%INSTALLDIR%%/inc/bx/plugins/metainfo.php
 %%INSTALLDIR%%/inc/bx/plugins/metasearch.php
 %%INSTALLDIR%%/inc/bx/plugins/navitree.php
+%%INSTALLDIR%%/inc/bx/plugins/news.php
 %%INSTALLDIR%%/inc/bx/plugins/newsletter.php
 %%INSTALLDIR%%/inc/bx/plugins/openblog.php
 %%INSTALLDIR%%/inc/bx/plugins/permissions.php
@@ -1002,6 +1028,8 @@
 %%INSTALLDIR%%/inc/bx/tools/svnsync
 %%INSTALLDIR%%/inc/bx/tree.php
 %%INSTALLDIR%%/inc/bx/versioning.php
+%%INSTALLDIR%%/inc/bx/versioning/diff.php
+%%INSTALLDIR%%/inc/bx/versioning/interface.php
 %%INSTALLDIR%%/inc/bx/versioning/svn.php
 %%INSTALLDIR%%/inc/bx/xml.php
 %%INSTALLDIR%%/inc/bx/xsl/plugin2xml.xsl
@@ -1019,6 +1047,12 @@
 %%INSTALLDIR%%/inc/magpie/rss_fetch.inc
 %%INSTALLDIR%%/inc/magpie/rss_parse.inc
 %%INSTALLDIR%%/inc/magpie/rss_utils.inc
+%%INSTALLDIR%%/inc/minify/.htaccess
+%%INSTALLDIR%%/inc/minify/HISTORY
+%%INSTALLDIR%%/inc/minify/LICENSE
+%%INSTALLDIR%%/inc/minify/README
+%%INSTALLDIR%%/inc/minify/lib/jsmin.php
+%%INSTALLDIR%%/inc/minify/minify.php
 %%INSTALLDIR%%/inc/patError.php
 %%INSTALLDIR%%/inc/patErrorManager.php
 %%INSTALLDIR%%/inc/patForms.php
@@ -1239,6 +1273,7 @@
 %%INSTALLDIR%%/inc/popoon/exceptions/XSLTParseError.php
 %%INSTALLDIR%%/inc/popoon/functions/common.php
 %%INSTALLDIR%%/inc/popoon/globalContainer.php
+%%INSTALLDIR%%/inc/popoon/helpers/image.php
 %%INSTALLDIR%%/inc/popoon/helpers/lang.php
 %%INSTALLDIR%%/inc/popoon/helpers/mimetypes.php
 %%INSTALLDIR%%/inc/popoon/helpers/simplecache.php
@@ -1638,11 +1673,43 @@
 %%INSTALLDIR%%/structure/blogpodcast.xml
 %%INSTALLDIR%%/structure/news.xml
 %%INSTALLDIR%%/structure/projekte.xml
-%%INSTALLDIR%%/structure/projekte.xml~
 %%INSTALLDIR%%/structure/quicklinks.php
-%%INSTALLDIR%%/structure/quicklinks.php~
 %%INSTALLDIR%%/structure/staticpages.xml
-%%INSTALLDIR%%/structure/staticpages.xml~
+%%INSTALLDIR%%/themes/2-cols-2008/aggregator.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/allposts.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/blog.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/blogmicrosummary.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/buttons/bxcms.png
+%%INSTALLDIR%%/themes/2-cols-2008/buttons/comments.png
+%%INSTALLDIR%%/themes/2-cols-2008/buttons/fluxcms.png
+%%INSTALLDIR%%/themes/2-cols-2008/buttons/freeflux.png
+%%INSTALLDIR%%/themes/2-cols-2008/buttons/popoon.png
+%%INSTALLDIR%%/themes/2-cols-2008/buttons/rss.png
+%%INSTALLDIR%%/themes/2-cols-2008/buttons/xhtml10.png
+%%INSTALLDIR%%/themes/2-cols-2008/css/bx-additions.css
+%%INSTALLDIR%%/themes/2-cols-2008/css/bxe-additions.css
+%%INSTALLDIR%%/themes/2-cols-2008/css/kupu-additions.css
+%%INSTALLDIR%%/themes/2-cols-2008/css/main-beige.css
+%%INSTALLDIR%%/themes/2-cols-2008/css/main.css
+%%INSTALLDIR%%/themes/2-cols-2008/css/mobile.css
+%%INSTALLDIR%%/themes/2-cols-2008/css/rss.css
+%%INSTALLDIR%%/themes/2-cols-2008/dms.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/events.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/gallery.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/images/editbutton.png
+%%INSTALLDIR%%/themes/2-cols-2008/linklog.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/links.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/master.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/pagenotallowed.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/pagenotfound.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/preview/main.jpg
+%%INSTALLDIR%%/themes/2-cols-2008/preview/main_bird.jpg
+%%INSTALLDIR%%/themes/2-cols-2008/preview/main_mint.jpg
+%%INSTALLDIR%%/themes/2-cols-2008/search.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/static.xsl
+%%INSTALLDIR%%/themes/2-cols-2008/template.tal
+%%INSTALLDIR%%/themes/2-cols-2008/templates/default.xhtml
+%%INSTALLDIR%%/themes/2-cols-2008/vote.xsl
 %%INSTALLDIR%%/themes/2-cols/aggregator.xsl
 %%INSTALLDIR%%/themes/2-cols/allposts.xsl
 %%INSTALLDIR%%/themes/2-cols/blog.xsl
@@ -1680,6 +1747,42 @@
 %%INSTALLDIR%%/themes/2-cols/template.tal
 %%INSTALLDIR%%/themes/2-cols/templates/default.xhtml
 %%INSTALLDIR%%/themes/2-cols/vote.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/aggregator.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/allposts.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/blog.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/blogmicrosummary.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/buttons/bxcms.png
+%%INSTALLDIR%%/themes/3-cols-2008/buttons/comments.png
+%%INSTALLDIR%%/themes/3-cols-2008/buttons/fluxcms.png
+%%INSTALLDIR%%/themes/3-cols-2008/buttons/freeflux.png
+%%INSTALLDIR%%/themes/3-cols-2008/buttons/popoon.png
+%%INSTALLDIR%%/themes/3-cols-2008/buttons/rss.png
+%%INSTALLDIR%%/themes/3-cols-2008/buttons/xhtml10.png
+%%INSTALLDIR%%/themes/3-cols-2008/css/bx-additions.css
+%%INSTALLDIR%%/themes/3-cols-2008/css/bxe-additions.css
+%%INSTALLDIR%%/themes/3-cols-2008/css/kupu-additions.css
+%%INSTALLDIR%%/themes/3-cols-2008/css/main.css
+%%INSTALLDIR%%/themes/3-cols-2008/css/mobile.css
+%%INSTALLDIR%%/themes/3-cols-2008/css/rss.css
+%%INSTALLDIR%%/themes/3-cols-2008/dms.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/events.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/gallery.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/images/bird.jpg
+%%INSTALLDIR%%/themes/3-cols-2008/images/proto.jpg
+%%INSTALLDIR%%/themes/3-cols-2008/linklog.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/links.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/map.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/master.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/pagenotallowed.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/pagenotfound.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/preview/main.jpg
+%%INSTALLDIR%%/themes/3-cols-2008/preview/main_bird.jpg
+%%INSTALLDIR%%/themes/3-cols-2008/preview/main_mint.jpg
+%%INSTALLDIR%%/themes/3-cols-2008/search.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/static.xsl
+%%INSTALLDIR%%/themes/3-cols-2008/template.tal
+%%INSTALLDIR%%/themes/3-cols-2008/templates/default.xhtml
+%%INSTALLDIR%%/themes/3-cols-2008/vote.xsl
 %%INSTALLDIR%%/themes/3-cols/aggregator.xsl
 %%INSTALLDIR%%/themes/3-cols/allposts.xsl
 %%INSTALLDIR%%/themes/3-cols/blog.xsl
@@ -1706,6 +1809,7 @@
 %%INSTALLDIR%%/themes/3-cols/images/proto.jpg
 %%INSTALLDIR%%/themes/3-cols/linklog.xsl
 %%INSTALLDIR%%/themes/3-cols/links.xsl
+%%INSTALLDIR%%/themes/3-cols/map.xsl
 %%INSTALLDIR%%/themes/3-cols/master.xsl
 %%INSTALLDIR%%/themes/3-cols/pagenotallowed.xsl
 %%INSTALLDIR%%/themes/3-cols/pagenotfound.xsl
@@ -1748,6 +1852,11 @@
 %%INSTALLDIR%%/themes/standard/admin/images/bitfluxlogo.gif
 %%INSTALLDIR%%/themes/standard/admin/images/dbforms2/liveselect_arrowd.gif
 %%INSTALLDIR%%/themes/standard/admin/images/dbforms2/null.gif
+%%INSTALLDIR%%/themes/standard/admin/images/marker/dd-end.png
+%%INSTALLDIR%%/themes/standard/admin/images/marker/dd-start.png
+%%INSTALLDIR%%/themes/standard/admin/images/marker/marker.png
+%%INSTALLDIR%%/themes/standard/admin/images/marker/markeryellow.png
+%%INSTALLDIR%%/themes/standard/admin/images/marker/temp_marker.png
 %%INSTALLDIR%%/themes/standard/admin/images/overview/blog.png
 %%INSTALLDIR%%/themes/standard/admin/images/overview/collection.png
 %%INSTALLDIR%%/themes/standard/admin/images/overview/gallery.png
@@ -1765,6 +1874,7 @@
 %%INSTALLDIR%%/themes/standard/admin/openid.xsl
 %%INSTALLDIR%%/themes/standard/admin/overview.xsl
 %%INSTALLDIR%%/themes/standard/admin/plugins/dbforms2.xsl
+%%INSTALLDIR%%/themes/standard/admin/plugins/history.xsl
 %%INSTALLDIR%%/themes/standard/admin/plugins/properties.xsl
 %%INSTALLDIR%%/themes/standard/admin/properties.xsl
 %%INSTALLDIR%%/themes/standard/admin/themes.xsl
@@ -1779,6 +1889,7 @@
 %%INSTALLDIR%%/themes/standard/plugins/blog.xsl
 %%INSTALLDIR%%/themes/standard/plugins/blog/blog2atom.xsl
 %%INSTALLDIR%%/themes/standard/plugins/blog/blog2rss.xsl
+%%INSTALLDIR%%/themes/standard/plugins/blog/blog_map.xsl
 %%INSTALLDIR%%/themes/standard/plugins/blog/comments2rss.xsl
 %%INSTALLDIR%%/themes/standard/plugins/blog/microsummary.xsl
 %%INSTALLDIR%%/themes/standard/plugins/blog/osd.xsl
@@ -1787,6 +1898,7 @@
 %%INSTALLDIR%%/themes/standard/plugins/dms/dms.xsl
 %%INSTALLDIR%%/themes/standard/plugins/dms/dms2rss.xsl
 %%INSTALLDIR%%/themes/standard/plugins/gallery.xsl
+%%INSTALLDIR%%/themes/standard/plugins/gallery/overview.xsl
 %%INSTALLDIR%%/themes/standard/plugins/linklog/linklog2rss.xsl
 %%INSTALLDIR%%/themes/standard/plugins/metainfo/podcast.xsl
 %%INSTALLDIR%%/themes/standard/plugins/metasearch/result2html.xsl
@@ -1958,7 +2070,6 @@
 %%INSTALLDIR%%/webinc/bxe/relaxng/NodeVAL.js
 %%INSTALLDIR%%/webinc/bxe/relaxng/NodeVDOM.js
 %%INSTALLDIR%%/webinc/bxe/relaxng/RelaxNG.js
-%%INSTALLDIR%%/webinc/bxe/scripts/loadsave.php
 %%INSTALLDIR%%/webinc/bxe/td/relaxngtest.js
 %%INSTALLDIR%%/webinc/bxe/util/Doxyfile
 %%INSTALLDIR%%/webinc/bxe/util/JsUnit.css
@@ -2177,10 +2288,12 @@
 %%INSTALLDIR%%/webinc/fck/patch-against-2.3.1.patch
 %%INSTALLDIR%%/webinc/fck/patch-against-2.3.patch
 %%INSTALLDIR%%/webinc/images/blank.gif
+%%INSTALLDIR%%/webinc/images/editbutton.png
 %%INSTALLDIR%%/webinc/images/openid.gif
 %%INSTALLDIR%%/webinc/images/privat.gif
 %%INSTALLDIR%%/webinc/js/CalendarPopup.js
 %%INSTALLDIR%%/webinc/js/admin.js
+%%INSTALLDIR%%/webinc/js/blogmap.js
 %%INSTALLDIR%%/webinc/js/bx/helpers.js
 %%INSTALLDIR%%/webinc/js/bx/i18n.js
 %%INSTALLDIR%%/webinc/js/bx/scroller.js
@@ -2197,6 +2310,7 @@
 %%INSTALLDIR%%/webinc/js/prototype.lite.js
 %%INSTALLDIR%%/webinc/js/rating.js
 %%INSTALLDIR%%/webinc/js/sarissa.js
+%%INSTALLDIR%%/webinc/js/sarissa_0.9.9.4.js
 %%INSTALLDIR%%/webinc/js/sarissa_dbform.js
 %%INSTALLDIR%%/webinc/js/scriptaculous/builder.js
 %%INSTALLDIR%%/webinc/js/scriptaculous/controls.js
@@ -2336,6 +2450,7 @@
 %%INSTALLDIR%%/webinc/plugins/linklog/admin.css
 %%INSTALLDIR%%/webinc/plugins/metasearch/livesearch.js
 %%INSTALLDIR%%/webinc/plugins/patforms/fck.js
+%%INSTALLDIR%%/webinc/plugins/patforms/multiselect.js
 %%INSTALLDIR%%/webinc/tests/bx_collection.php
 %%INSTALLDIR%%/webinc/tests/index.php
 %%INSTALLDIR%%/webinc/tests/web.php
@@ -2459,12 +2574,14 @@
 @dirrm %%INSTALLDIR%%/themes/standard/plugins/metasearch
 @dirrm %%INSTALLDIR%%/themes/standard/plugins/metainfo
 @dirrm %%INSTALLDIR%%/themes/standard/plugins/linklog
+@dirrm %%INSTALLDIR%%/themes/standard/plugins/gallery
 @dirrm %%INSTALLDIR%%/themes/standard/plugins/dms
 @dirrm %%INSTALLDIR%%/themes/standard/plugins/blog
 @dirrm %%INSTALLDIR%%/themes/standard/plugins/aggregator
 @dirrm %%INSTALLDIR%%/themes/standard/plugins
 @dirrm %%INSTALLDIR%%/themes/standard/admin/plugins
 @dirrm %%INSTALLDIR%%/themes/standard/admin/images/overview
+@dirrm %%INSTALLDIR%%/themes/standard/admin/images/marker
 @dirrm %%INSTALLDIR%%/themes/standard/admin/images/dbforms2
 @dirrm %%INSTALLDIR%%/themes/standard/admin/images
 @dirrm %%INSTALLDIR%%/themes/standard/admin/css
@@ -2478,14 +2595,25 @@
 @dirrm %%INSTALLDIR%%/themes/3-cols/images
 @dirrm %%INSTALLDIR%%/themes/3-cols/css
 @dirrm %%INSTALLDIR%%/themes/3-cols/buttons
+@dirrm %%INSTALLDIR%%/themes/3-cols-2008/templates
+@dirrm %%INSTALLDIR%%/themes/3-cols-2008/preview
+@dirrm %%INSTALLDIR%%/themes/3-cols-2008/images
+@dirrm %%INSTALLDIR%%/themes/3-cols-2008/css
+@dirrm %%INSTALLDIR%%/themes/3-cols-2008/buttons
+@dirrm %%INSTALLDIR%%/themes/3-cols-2008
 @dirrm %%INSTALLDIR%%/themes/3-cols
 @dirrm %%INSTALLDIR%%/themes/2-cols/templates
 @dirrm %%INSTALLDIR%%/themes/2-cols/preview
 @dirrm %%INSTALLDIR%%/themes/2-cols/images
 @dirrm %%INSTALLDIR%%/themes/2-cols/css
 @dirrm %%INSTALLDIR%%/themes/2-cols/buttons
+@dirrm %%INSTALLDIR%%/themes/2-cols-2008/templates
+@dirrm %%INSTALLDIR%%/themes/2-cols-2008/preview
+@dirrm %%INSTALLDIR%%/themes/2-cols-2008/images
+@dirrm %%INSTALLDIR%%/themes/2-cols-2008/css
+@dirrm %%INSTALLDIR%%/themes/2-cols-2008/buttons
+@dirrm %%INSTALLDIR%%/themes/2-cols-2008
 @dirrm %%INSTALLDIR%%/themes/2-cols
-@dirrm %%INSTALLDIR%%/themes
 @dirrm %%INSTALLDIR%%/structure
 @dirrm %%INSTALLDIR%%/install/phing/classes/phing/util/regexp
 @dirrm %%INSTALLDIR%%/install/phing/classes/phing/util
@@ -2596,6 +2724,8 @@
 @dirrm %%INSTALLDIR%%/inc/patForms/Creator/DB
 @dirrm %%INSTALLDIR%%/inc/patForms/Creator
 @dirrm %%INSTALLDIR%%/inc/patForms
+@dirrm %%INSTALLDIR%%/inc/minify/lib
+@dirrm %%INSTALLDIR%%/inc/minify
 @dirrm %%INSTALLDIR%%/inc/magpie/extlib
 @dirrm %%INSTALLDIR%%/inc/magpie
 @dirrm %%INSTALLDIR%%/inc/bx/xsl
@@ -2639,6 +2769,7 @@
 @dirrm %%INSTALLDIR%%/inc/bx/permm/auth/pearcontainer
 @dirrm %%INSTALLDIR%%/inc/bx/permm/auth
 @dirrm %%INSTALLDIR%%/inc/bx/permm
+@dirrm %%INSTALLDIR%%/inc/bx/notifications/sms
 @dirrm %%INSTALLDIR%%/inc/bx/notifications
 @dirrm %%INSTALLDIR%%/inc/bx/metadatas/text
 @dirrm %%INSTALLDIR%%/inc/bx/metadatas
@@ -2723,6 +2854,9 @@
 @dirrm %%INSTALLDIR%%/inc/XML/Parser
 @dirrm %%INSTALLDIR%%/inc/XML
 @dirrm %%INSTALLDIR%%/inc/Text/Image
+@dirrm %%INSTALLDIR%%/inc/Text/Diff/Renderer
+@dirrm %%INSTALLDIR%%/inc/Text/Diff/Engine
+@dirrm %%INSTALLDIR%%/inc/Text/Diff
 @dirrm %%INSTALLDIR%%/inc/Text/CAPTCHA/Driver
 @dirrm %%INSTALLDIR%%/inc/Text/CAPTCHA
 @dirrm %%INSTALLDIR%%/inc/Text
@@ -2842,6 +2976,7 @@
 @dirrm %%INSTALLDIR%%/admin/data/admin/navi
 @dirrm %%INSTALLDIR%%/admin/data/admin/listview
 @dirrm %%INSTALLDIR%%/admin/data/admin/images
+@dirrm %%INSTALLDIR%%/admin/data/admin/history
 @dirrm %%INSTALLDIR%%/admin/data/admin/editpopup
 @dirrm %%INSTALLDIR%%/admin/data/admin/edit
 @dirrm %%INSTALLDIR%%/admin/data/admin/delete
@@ -2852,4 +2987,5 @@
 @dirrm %%INSTALLDIR%%/admin/data/admin
 @dirrm %%INSTALLDIR%%/admin/data
 @dirrm %%INSTALLDIR%%/admin
-@dirrm %%INSTALLDIR%%
+@dirrmtry %%INSTALLDIR%%/themes
+@dirrmtry %%INSTALLDIR%%
