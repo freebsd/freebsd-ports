@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/wmbsdbatt/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Dockapp for battery & temperature monitoring through ACPI
 
 USE_XORG=	x11 xpm
