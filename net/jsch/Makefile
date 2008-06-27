@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jsch
-PORTVERSION=	0.1.33
-PORTREVISION=	1
+PORTVERSION=	0.1.39
 CATEGORIES=	net java security
 MASTER_SITES=	SF
 
@@ -16,7 +15,7 @@ COMMENT=	A pure Java implementation of SSH2
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.4+
 USE_ANT=	yes
 
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
