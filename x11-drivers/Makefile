@@ -43,12 +43,14 @@
     SUBDIR += xf86-video-i810
     SUBDIR += xf86-video-imstt
     SUBDIR += xf86-video-intel
+    SUBDIR += xf86-video-mach64
     SUBDIR += xf86-video-mga
     SUBDIR += xf86-video-neomagic
     SUBDIR += xf86-video-newport
     SUBDIR += xf86-video-nsc
     SUBDIR += xf86-video-nv
     SUBDIR += xf86-video-openchrome
+    SUBDIR += xf86-video-r128
     SUBDIR += xf86-video-radeonhd
     SUBDIR += xf86-video-rendition
     SUBDIR += xf86-video-s3

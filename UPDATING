@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080627:
+  AFFECTS: users of x11-drivers/xf86-video-ati
+  AUTHOR: Jung-uk Kim <jkim@FreeBSD.org>
+
+  mach64 and r128 drivers are now separated out from the ati driver.
+  These video cards are supported by x11-drivers/xf86-video-mach64
+  and x11-drivers/xf86-video-r128 respectively. If you have one of
+  the affected video cards and xorg.conf contains the following line:
+
+	Driver	"ati"
+
+  you must specify "mach64" or "r128". Alternatively, you may install
+  x11-drivers/xf86-video-ati to get a wrapper driver.
+
 20080624:
   AFFECTS: users of irc/ircd-ratbox-devel
   AUTHOR: Beech Rintoul <beech@FreeBSD.org>
