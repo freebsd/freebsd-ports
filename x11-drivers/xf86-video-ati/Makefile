@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xf86-video-ati
-PORTVERSION=	6.8.0
-PORTREVISION=	2
+PORTVERSION=	6.9.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -17,6 +16,6 @@ USE_GL=		gl
 
 XORG_CAT=	driver
 USE_XORG=	xf86driproto xineramaproto videoproto xf86miscproto xextproto glproto
-MAN4=		ati.4x r128.4x radeon.4x
+MAN4=		ati.4x radeon.4x
 
 .include <bsd.port.mk>

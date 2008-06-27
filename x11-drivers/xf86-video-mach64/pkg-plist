@@ -1,0 +1,5 @@
+lib/xorg/modules/drivers/mach64_drv.la
+lib/xorg/modules/drivers/mach64_drv.so
+@dirrmtry lib/xorg/modules/drivers
+@dirrmtry lib/xorg/modules
+@dirrmtry lib/xorg

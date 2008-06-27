@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-drivers
 PORTVERSION=	7.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-drivers
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -27,7 +27,9 @@ ARCH!=  /usr/bin/uname -p
 
 VIDEO_ON=	ati \
 		intel \
+		mach64 \
 		nv \
+		r128 \
 		radeonhd \
 		vesa vga
 
