@@ -7,7 +7,7 @@
 
 PORTNAME=	TVGrab
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	pytvgrab
@@ -30,7 +30,9 @@ post-extract:
 	@${CP} ${FILESDIR}/timezone.py ${WRKSRC}/lib/timezone.py
 
 post-install:
+.ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
