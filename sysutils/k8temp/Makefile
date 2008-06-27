@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	k8temp
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hur.st/k8temp/
 
@@ -21,8 +21,6 @@ PLIST_FILES=	sbin/k8temp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/k8temp ${PREFIX}/sbin
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/k8temp.8 ${PREFIX}/man/man8
-.endif
 
 .include <bsd.port.mk>
