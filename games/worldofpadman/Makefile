@@ -30,7 +30,6 @@ ALL_TARGET=	release
 NO_PACKAGE=	package will be ~600MB; set FORCE_PACKAGE if you really want it
 
 OPTIONS=	CLIENT "Build client" on \
-		CELLSHADING "Enable Cell Shading effect" off \
 		CURL "Enable curl support" on \
 		CURL_DLOPEN "Enable dynamic loading of curl" on \
 		GAMELIBS "Build game libraries (when not mandatory)" off \
@@ -62,10 +61,6 @@ HAVE_VM_COMPILED=	yes
 
 .if defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	HAVE_VM_COMPILED=true
-.endif
-
-.if defined(WITH_CELLSHADING)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cellshading
 .endif
 
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
