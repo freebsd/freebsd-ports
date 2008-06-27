@@ -1,912 +1,326 @@
-bin/rb-keygen
 %%GEM_CACHE%%
 %%GEM_SPEC%%
-%%GEM_DOC_DIR%%/rdoc/classes/Net.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH.src/M000011.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH.src/M000012.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/AuthenticationFailed.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection.src/M000168.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000169.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000170.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000171.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000172.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000173.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000174.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000175.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000176.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000177.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000178.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000179.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000180.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000181.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000182.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000183.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000184.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000187.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000188.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000189.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000190.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000191.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000192.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000193.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000194.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000195.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000196.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000197.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000198.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000199.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000200.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000201.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000202.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000203.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000204.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src/M000205.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Constants.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000206.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000207.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000208.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000209.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000210.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000211.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000212.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000213.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000214.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000215.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000216.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000217.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000218.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000219.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000220.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000221.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000222.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000223.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000224.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000225.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000226.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000227.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000228.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000229.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000230.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000231.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000232.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000233.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src/M000234.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Term.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Exception.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyMismatch.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyMismatch.src/M000332.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyMismatch.src/M000333.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyMismatch.src/M000334.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyMismatch.src/M000335.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyMismatch.src/M000336.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyMismatch.src/M000337.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyMismatch.src/M000338.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyVerifier.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyVerifier.src/M000331.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.src/M000314.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.src/M000315.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.src/M000316.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.src/M000317.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.src/M000318.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.src/M000319.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.src/M000320.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.src/M000321.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.src/M000322.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/LenientHostKeyVerifier.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/LenientHostKeyVerifier.src/M000329.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/NullHostKeyVerifier.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/NullHostKeyVerifier.src/M000330.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/ConnectError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/Error.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/HTTP.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/HTTP.src/M000094.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/HTTP.src/M000095.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/SOCKS4.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/SOCKS4.src/M000090.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/SOCKS4.src/M000091.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/SOCKS5.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/SOCKS5.src/M000092.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/SOCKS5.src/M000093.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/UnauthorizedError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service.src/M000235.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/AgentForward.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/AgentForward.src/M000236.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/AgentForward/Driver.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/AgentForward/Driver.src/M000237.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/AgentForward/Driver.src/M000238.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/AgentForward/Driver.src/M000239.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/AgentForward/Driver.src/M000240.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/AgentForward/Driver.src/M000241.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward.src/M000294.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.src/M000304.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.src/M000305.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.src/M000306.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.src/M000307.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.src/M000308.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.src/M000309.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.src/M000310.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.src/M000311.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.src/M000312.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.src/M000313.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/LocalNetworkHandler.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/LocalNetworkHandler.src/M000295.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/LocalNetworkHandler.src/M000296.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/LocalNetworkHandler.src/M000297.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/LocalNetworkHandler.src/M000298.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/RemoteNetworkHandler.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/RemoteNetworkHandler.src/M000299.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/RemoteNetworkHandler.src/M000300.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/RemoteNetworkHandler.src/M000301.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/RemoteNetworkHandler.src/M000302.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/RemoteNetworkHandler.src/M000303.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process.src/M000242.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/Driver.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/Driver.src/M000272.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/Driver.src/M000273.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/Driver.src/M000274.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000255.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000256.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000257.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000258.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000259.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000260.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000261.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000262.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000263.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000264.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000265.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000266.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000267.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000268.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000269.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000270.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src/M000271.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager.src/M000243.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager.src/M000244.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHOutputPipe.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHOutputPipe.src/M000250.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHOutputPipe.src/M000251.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHOutputPipe.src/M000252.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStderrPipe.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStderrPipe.src/M000253.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStderrPipe.src/M000254.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStdinPipe.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStdinPipe.src/M000245.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStdinPipe.src/M000246.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStdinPipe.src/M000247.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStdoutPipe.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStdoutPipe.src/M000248.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStdoutPipe.src/M000249.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell.src/M000275.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Driver.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Driver.src/M000285.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Driver.src/M000286.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Driver.src/M000287.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/OpenFailed.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Shell.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Shell.src/M000276.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Shell.src/M000277.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Shell.src/M000278.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Shell.src/M000279.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Shell.src/M000280.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Shell.src/M000281.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Shell.src/M000282.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Shell.src/M000283.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Shell.src/M000284.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/SyncShell.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/SyncShell.src/M000288.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/SyncShell.src/M000289.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/SyncShell.src/M000290.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/SyncShell.src/M000291.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/SyncShell.src/M000292.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/SyncShell.src/M000293.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Session.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Session.src/M000323.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Session.src/M000324.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Session.src/M000325.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Session.src/M000326.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Session.src/M000327.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Session.src/M000328.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport.src/M000013.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/AlgorithmNegotiator.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/AlgorithmNegotiator.src/M000070.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/AlgorithmNegotiator.src/M000071.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/CipherNotFound.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress.src/M000044.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/Compressor.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/Compressor.src/M000052.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/Compressor.src/M000053.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/Compressor.src/M000054.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/Decompressor.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/Decompressor.src/M000055.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/Decompressor.src/M000056.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/Decompressor.src/M000057.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/NoneCompressor.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/NoneCompressor.src/M000045.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/NoneDecompressor.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/NoneDecompressor.src/M000051.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/ZLibCompressor.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/ZLibCompressor.src/M000046.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/ZLibCompressor.src/M000047.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/ZLibCompressor.src/M000048.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/ZLibDecompressor.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/ZLibDecompressor.src/M000049.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/ZLibDecompressor.src/M000050.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Constants.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/DigestTypeNotFound.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Disconnect.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/DisconnectReasons.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Exception.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/HMACAlgorithmNotFound.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IdentityCipher.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IdentityCipher.src/M000084.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IdentityCipher.src/M000085.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IdentityCipher.src/M000086.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IdentityCipher.src/M000087.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IdentityCipher.src/M000088.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IdentityCipher.src/M000089.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IncomingPacketStream.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IncomingPacketStream.src/M000067.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IncomingPacketStream.src/M000068.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IncomingPacketStream.src/M000069.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex.src/M000058.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex/DiffieHellmanGroup1SHA1.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex/DiffieHellmanGroup1SHA1.src/M000059.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex/DiffieHellmanGroup1SHA1.src/M000060.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex/DiffieHellmanGroup1SHA1.src/M000061.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex/DiffieHellmanGroupExchangeSHA1.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/KeyTypeNotFound.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL.src/M000014.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL.src/M000015.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/Buffer.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/BufferFactory.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/BufferFactory.src/M000032.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/BufferFactory.src/M000033.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/BufferFactory.src/M000034.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/CipherFactory.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/CipherFactory.src/M000041.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/CipherFactory.src/M000042.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/CipherFactory.src/M000043.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/DigestFactory.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/DigestFactory.src/M000039.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/DigestFactory.src/M000040.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC.src/M000019.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/Abstract.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/Abstract.src/M000024.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/Abstract.src/M000025.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/MD5.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/MD5.src/M000027.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/MD5_96.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/MD5_96.src/M000021.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/None.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/None.src/M000022.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/None.src/M000023.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/SHA1.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/SHA1.src/M000026.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/SHA1_96.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/SHA1_96.src/M000020.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMACFactory.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMACFactory.src/M000028.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMACFactory.src/M000029.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMACFactory.src/M000030.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMACFactory.src/M000031.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/KeyFactory.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/KeyFactory.src/M000035.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/KeyFactory.src/M000036.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/KeyFactory.src/M000037.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/KeyFactory.src/M000038.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/ReaderBuffer.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/ReaderBufferImpl.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/ReaderBufferImpl.src/M000016.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/ReaderBufferImpl.src/M000017.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/ReaderBufferImpl.src/M000018.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OutgoingPacketStream.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OutgoingPacketStream.src/M000064.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OutgoingPacketStream.src/M000065.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OutgoingPacketStream.src/M000066.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/PacketStream.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/PacketStream.src/M000081.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/PacketStream.src/M000082.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/PacketStream.src/M000083.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.src/M000072.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.src/M000073.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.src/M000074.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.src/M000075.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.src/M000076.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.src/M000077.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.src/M000078.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.src/M000079.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.src/M000080.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/VersionNegotiator.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/VersionNegotiator.src/M000062.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/VersionNegotiator.src/M000063.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth.src/M000125.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Agent.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Agent.src/M000142.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Agent.src/M000143.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Agent.src/M000144.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Agent.src/M000145.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Agent.src/M000146.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Agent.src/M000147.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/AgentError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Constants.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Driver.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Driver.src/M000160.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Driver.src/M000161.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Driver.src/M000162.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Driver.src/M000163.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Driver.src/M000164.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Driver.src/M000165.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Driver.src/M000166.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Driver.src/M000167.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods.src/M000132.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/HostBased.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/HostBased.src/M000135.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/HostBased.src/M000136.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/HostBased.src/M000137.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/KeyboardInteractive.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/KeyboardInteractive.src/M000140.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/KeyboardInteractive.src/M000141.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/Password.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/Password.src/M000138.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/Password.src/M000139.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/PublicKey.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/PublicKey.src/M000133.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/PublicKey.src/M000134.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Pageant.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Pageant/Socket.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Pageant/Socket.src/M000126.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Pageant/Socket.src/M000127.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Pageant/Socket.src/M000128.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Pageant/Socket.src/M000129.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Pageant/Socket.src/M000130.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Pageant/Socket.src/M000131.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Pageant/Win.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src/M000148.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src/M000149.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src/M000150.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src/M000151.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src/M000153.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src/M000154.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src/M000155.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src/M000156.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src/M000157.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src/M000158.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src/M000159.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManagerError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/Buffer.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/Buffer.src/M000121.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/BufferBase.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/BufferBase.src/M000117.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/BufferBase.src/M000118.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/BufferBase.src/M000119.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/BufferBase.src/M000120.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/Prompter.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/Prompter.src/M000123.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBuffer.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBuffer.src/M000124.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000105.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000106.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000107.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000108.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000109.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000110.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000111.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000112.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000113.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000114.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000115.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src/M000116.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBuffer.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBuffer.src/M000122.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBufferImpl.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBufferImpl.src/M000096.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBufferImpl.src/M000097.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBufferImpl.src/M000098.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBufferImpl.src/M000099.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBufferImpl.src/M000100.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBufferImpl.src/M000101.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBufferImpl.src/M000102.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBufferImpl.src/M000103.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBufferImpl.src/M000104.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Version.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/BN.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/BN.src/M000010.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/DH.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/DH.src/M000005.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/DSA.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/DSA.src/M000006.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/DSA.src/M000007.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/DSA.src/M000008.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/DSA.src/M000009.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/RSA.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/RSA.src/M000001.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/RSA.src/M000002.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/RSA.src/M000003.html
-%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/RSA.src/M000004.html
-%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication/agent_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication/constants_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication/key_manager_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication/methods/abstract_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication/methods/hostbased_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication/methods/keyboard_interactive_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication/methods/password_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication/methods/publickey_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication/pageant_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication/session_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/buffer_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/buffered_io_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/config_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/connection/channel_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/connection/constants_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/connection/driver_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/connection/services_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/connection/session_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/connection/term_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/errors_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/host-key-verifier_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/known-hosts_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/lenient-host-key-verifier_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/null-host-key-verifier_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/key_factory_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/known_hosts_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/loggable_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/packet_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/prompt_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/proxy/errors_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/proxy/http_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/proxy/socks4_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/proxy/socks5_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/agentforward/driver_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/agentforward/services_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/forward/driver_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/forward/local-network-handler_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/forward/remote-network-handler_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/forward/services_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/process/driver_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/process/open_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/process/popen3_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/process/services_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/services_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/shell/driver_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/shell/services_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/shell/shell_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/shell/sync_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/session_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/algorithm-negotiator_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/compress/compressor_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/compress/decompressor_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/compress/none-compressor_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/compress/none-decompressor_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/compress/services_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/compress/zlib-compressor_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/compress/zlib-decompressor_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/forward_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/test/channel_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/test/extensions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/test/kex_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/test/local_packet_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/test/packet_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/test/remote_packet_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/test/script_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/test/socket_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/test_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/algorithms_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/cipher_factory_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/constants_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/errors_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/identity-cipher_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/kex/dh-gex_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/kex/dh_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/kex/services_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/buffer-factory_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/buffer_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/cipher-factory_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/digest-factory_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/hmac-factory_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/hmac/hmac_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/hmac/md5-96_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/hmac/md5_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/hmac/none_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/hmac/services_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/hmac/sha1-96_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/hmac/sha1_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/key-factory_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/services_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/packet-stream_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/services_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/hmac/abstract_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/hmac/md5_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/hmac/md5_96_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/hmac/none_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/hmac/sha1_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/hmac/sha1_96_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/hmac_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/identity_cipher_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/kex/diffie_hellman_group1_sha1_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/kex/diffie_hellman_group_exchange_sha1_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/kex_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/openssl_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/packet_stream_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/server_version_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/session_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/version-negotiator_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/agent_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/constants_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/driver_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/methods/hostbased_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/methods/keyboard-interactive_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/methods/password_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/methods/publickey_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/methods/services_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/pageant_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/services_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/userkeys_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/util/buffer_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/util/openssl_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/util/prompter_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/state_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/verifiers/lenient_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/verifiers/null_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/verifiers/strict_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/version_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh_rb.html
-%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/files/CHANGELOG_rdoc.html
+%%GEM_DOC_DIR%%/rdoc/files/README_rdoc.html
+%%GEM_DOC_DIR%%/rdoc/files/THANKS_rdoc.html
+%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL.html
+%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey.html
+%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/RSA.html
+%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/DH.html
+%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/DSA.html
+%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/PKey.html
+%%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/BN.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/HMAC.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/HMAC/SHA1_96.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/HMAC/MD5_96.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/HMAC/None.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/HMAC/Abstract.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/HMAC/SHA1.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/HMAC/MD5.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/PacketStream.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex/DiffieHellmanGroupExchangeSHA1.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex/DiffieHellmanGroup1SHA1.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Constants.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/ServerVersion.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/State.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Algorithms.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IdentityCipher.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/CipherFactory.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Pageant.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Pageant/Win.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Pageant/Socket.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Methods.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Methods/Hostbased.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Methods/Abstract.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Methods/Publickey.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Methods/Password.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Methods/KeyboardInteractive.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Constants.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/KeyManager.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Session.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Agent.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Agent/Comment.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/AgentNotAvailable.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/AgentError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/KeyManagerError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/SOCKS4.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/SOCKS5.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/HTTP.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/ConnectError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/Error.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/UnauthorizedError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/PromptMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/PromptMethods/Highline.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/PromptMethods/Termios.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/PromptMethods/Clear.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/BufferedIo.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Verifiers.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Verifiers/Strict.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Verifiers/Lenient.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Verifiers/Null.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Extensions.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Extensions/Channel.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Extensions/BufferedIo.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Extensions/IO.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Extensions/IO/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Extensions/PacketStream.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Script.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Socket.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Packet.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/LocalPacket.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Channel.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/RemotePacket.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Kex.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Loggable.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Term.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Constants.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Session.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Buffer.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Packet.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Version.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/ChannelRequestFailed.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Config.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/ChannelOpenFailed.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KeyFactory.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Exception.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyMismatch.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Disconnect.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/AuthenticationFailed.html
 %%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
-%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
-%%GEM_LIB_DIR%%/ChangeLog
-%%GEM_LIB_DIR%%/LICENSE
-%%GEM_LIB_DIR%%/NEWS
-%%GEM_LIB_DIR%%/README
-%%GEM_LIB_DIR%%/THANKS
-%%GEM_LIB_DIR%%/bin/rb-keygen
-%%GEM_LIB_DIR%%/doc/LICENSE-BSD
-%%GEM_LIB_DIR%%/doc/LICENSE-GPL
-%%GEM_LIB_DIR%%/doc/LICENSE-RUBY
-%%GEM_LIB_DIR%%/doc/manual-html/chapter-1.html
-%%GEM_LIB_DIR%%/doc/manual-html/chapter-2.html
-%%GEM_LIB_DIR%%/doc/manual-html/chapter-3.html
-%%GEM_LIB_DIR%%/doc/manual-html/chapter-4.html
-%%GEM_LIB_DIR%%/doc/manual-html/chapter-5.html
-%%GEM_LIB_DIR%%/doc/manual-html/chapter-6.html
-%%GEM_LIB_DIR%%/doc/manual-html/chapter-7.html
-%%GEM_LIB_DIR%%/doc/manual-html/index.html
-%%GEM_LIB_DIR%%/doc/manual-html/stylesheets/manual.css
-%%GEM_LIB_DIR%%/doc/manual-html/stylesheets/ruby.css
-%%GEM_LIB_DIR%%/doc/manual/chapter.erb
-%%GEM_LIB_DIR%%/doc/manual/example.erb
-%%GEM_LIB_DIR%%/doc/manual/index.erb
-%%GEM_LIB_DIR%%/doc/manual/manual.rb
-%%GEM_LIB_DIR%%/doc/manual/manual.yml
-%%GEM_LIB_DIR%%/doc/manual/page.erb
-%%GEM_LIB_DIR%%/doc/manual/parts/0000.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0001.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0002.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0003.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0004.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0005.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0006.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0007.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0008.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0009.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0010.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0011.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0012.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0013.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0014.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0015.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0016.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0017.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0018.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0019.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0020.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0021.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0022.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0023.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0024.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0025.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0026.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0027.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0028.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0029.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0030.txt
-%%GEM_LIB_DIR%%/doc/manual/parts/0031.txt
-%%GEM_LIB_DIR%%/doc/manual/stylesheets/manual.css
-%%GEM_LIB_DIR%%/doc/manual/stylesheets/ruby.css
-%%GEM_LIB_DIR%%/doc/manual/tutorial.erb
-%%GEM_LIB_DIR%%/examples/auth-forward.rb
-%%GEM_LIB_DIR%%/examples/channel-demo.rb
-%%GEM_LIB_DIR%%/examples/port-forward.rb
-%%GEM_LIB_DIR%%/examples/process-demo.rb
-%%GEM_LIB_DIR%%/examples/remote-net-port-forward.rb
-%%GEM_LIB_DIR%%/examples/remote-port-forward.rb
-%%GEM_LIB_DIR%%/examples/shell-demo.rb
-%%GEM_LIB_DIR%%/examples/ssh-client.rb
-%%GEM_LIB_DIR%%/examples/sync-shell-demo.rb
-%%GEM_LIB_DIR%%/examples/tail-demo.rb
-%%GEM_LIB_DIR%%/lib/net/ssh.rb
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_LIB_DIR%%/CHANGELOG.rdoc
+%%GEM_LIB_DIR%%/lib/net/ssh/authentication/agent.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/authentication/constants.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/authentication/key_manager.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/authentication/methods/abstract.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/authentication/methods/hostbased.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/authentication/methods/keyboard_interactive.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/authentication/methods/password.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/authentication/methods/publickey.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/authentication/pageant.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/authentication/session.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/buffer.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/buffered_io.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/config.rb
 %%GEM_LIB_DIR%%/lib/net/ssh/connection/channel.rb
 %%GEM_LIB_DIR%%/lib/net/ssh/connection/constants.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/connection/driver.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/connection/services.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/connection/session.rb
 %%GEM_LIB_DIR%%/lib/net/ssh/connection/term.rb
 %%GEM_LIB_DIR%%/lib/net/ssh/errors.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/host-key-verifier.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/known-hosts.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/lenient-host-key-verifier.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/null-host-key-verifier.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/key_factory.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/known_hosts.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/loggable.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/packet.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/prompt.rb
 %%GEM_LIB_DIR%%/lib/net/ssh/proxy/errors.rb
 %%GEM_LIB_DIR%%/lib/net/ssh/proxy/http.rb
 %%GEM_LIB_DIR%%/lib/net/ssh/proxy/socks4.rb
 %%GEM_LIB_DIR%%/lib/net/ssh/proxy/socks5.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/agentforward/driver.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/agentforward/services.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/forward/driver.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/forward/local-network-handler.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/forward/remote-network-handler.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/forward/services.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/process/driver.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/process/open.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/process/popen3.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/process/services.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/services.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/shell/driver.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/shell/services.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/shell/shell.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/service/shell/sync.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/session.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/algorithm-negotiator.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/compress/compressor.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/compress/decompressor.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/compress/none-compressor.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/compress/none-decompressor.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/compress/services.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/compress/zlib-compressor.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/compress/zlib-decompressor.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/service/forward.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/test/channel.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/test/extensions.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/test/kex.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/test/local_packet.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/test/packet.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/test/remote_packet.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/test/script.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/test/socket.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/test.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/algorithms.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/cipher_factory.rb
 %%GEM_LIB_DIR%%/lib/net/ssh/transport/constants.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/errors.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/identity-cipher.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/kex/dh-gex.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/kex/dh.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/kex/services.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/buffer-factory.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/buffer.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/cipher-factory.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/digest-factory.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/hmac-factory.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/hmac/hmac.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/hmac/md5-96.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/hmac/md5.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/hmac/none.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/hmac/services.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/hmac/sha1-96.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/hmac/sha1.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/key-factory.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/services.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/packet-stream.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/services.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/hmac/abstract.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/hmac/md5.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/hmac/md5_96.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/hmac/none.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/hmac/sha1.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/hmac/sha1_96.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/hmac.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/identity_cipher.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/kex/diffie_hellman_group1_sha1.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/kex/diffie_hellman_group_exchange_sha1.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/kex.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/openssl.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/packet_stream.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/server_version.rb
 %%GEM_LIB_DIR%%/lib/net/ssh/transport/session.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/transport/version-negotiator.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/userauth/agent.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/userauth/constants.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/userauth/driver.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/userauth/methods/hostbased.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/userauth/methods/keyboard-interactive.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/userauth/methods/password.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/userauth/methods/publickey.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/userauth/methods/services.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/userauth/pageant.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/userauth/services.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/userauth/userkeys.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/util/buffer.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/util/openssl.rb
-%%GEM_LIB_DIR%%/lib/net/ssh/util/prompter.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/transport/state.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/verifiers/lenient.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/verifiers/null.rb
+%%GEM_LIB_DIR%%/lib/net/ssh/verifiers/strict.rb
 %%GEM_LIB_DIR%%/lib/net/ssh/version.rb
-%%GEM_LIB_DIR%%/test/ALL-TESTS.rb
-%%GEM_LIB_DIR%%/test/connection/tc_channel.rb
-%%GEM_LIB_DIR%%/test/connection/tc_driver.rb
-%%GEM_LIB_DIR%%/test/connection/tc_integration.rb
-%%GEM_LIB_DIR%%/test/proxy/tc_http.rb
-%%GEM_LIB_DIR%%/test/proxy/tc_socks4.rb
-%%GEM_LIB_DIR%%/test/proxy/tc_socks5.rb
-%%GEM_LIB_DIR%%/test/service/agentforward/tc_driver.rb
-%%GEM_LIB_DIR%%/test/service/forward/tc_driver.rb
-%%GEM_LIB_DIR%%/test/service/forward/tc_local_network_handler.rb
-%%GEM_LIB_DIR%%/test/service/forward/tc_remote_network_handler.rb
-%%GEM_LIB_DIR%%/test/service/process/tc_driver.rb
-%%GEM_LIB_DIR%%/test/service/process/tc_integration.rb
-%%GEM_LIB_DIR%%/test/service/process/tc_open.rb
-%%GEM_LIB_DIR%%/test/service/process/tc_popen3.rb
-%%GEM_LIB_DIR%%/test/tc_integration.rb
-%%GEM_LIB_DIR%%/test/transport/compress/tc_none_compress.rb
-%%GEM_LIB_DIR%%/test/transport/compress/tc_none_decompress.rb
-%%GEM_LIB_DIR%%/test/transport/compress/tc_zlib_compress.rb
-%%GEM_LIB_DIR%%/test/transport/compress/tc_zlib_decompress.rb
-%%GEM_LIB_DIR%%/test/transport/kex/tc_dh.rb
-%%GEM_LIB_DIR%%/test/transport/kex/tc_dh_gex.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/dsa-encrypted
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/dsa-encrypted-bad
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/dsa-unencrypted
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/dsa-unencrypted-bad
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/dsa-unencrypted.pub
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/not-a-private-key
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/not-supported
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/rsa-encrypted
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/rsa-encrypted-bad
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/rsa-unencrypted
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/rsa-unencrypted-bad
-%%GEM_LIB_DIR%%/test/transport/ossl/fixtures/rsa-unencrypted.pub
-%%GEM_LIB_DIR%%/test/transport/ossl/hmac/tc_hmac.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/hmac/tc_md5.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/hmac/tc_md5_96.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/hmac/tc_none.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/hmac/tc_sha1.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/hmac/tc_sha1_96.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/tc_buffer.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/tc_buffer_factory.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/tc_cipher_factory.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/tc_digest_factory.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/tc_hmac_factory.rb
-%%GEM_LIB_DIR%%/test/transport/ossl/tc_key_factory.rb
-%%GEM_LIB_DIR%%/test/transport/tc_algorithm_negotiator.rb
-%%GEM_LIB_DIR%%/test/transport/tc_identity_cipher.rb
-%%GEM_LIB_DIR%%/test/transport/tc_integration.rb
-%%GEM_LIB_DIR%%/test/transport/tc_packet_stream.rb
-%%GEM_LIB_DIR%%/test/transport/tc_session.rb
-%%GEM_LIB_DIR%%/test/transport/tc_version_negotiator.rb
-%%GEM_LIB_DIR%%/test/userauth/methods/tc_hostbased.rb
-%%GEM_LIB_DIR%%/test/userauth/methods/tc_password.rb
-%%GEM_LIB_DIR%%/test/userauth/methods/tc_publickey.rb
-%%GEM_LIB_DIR%%/test/userauth/tc_agent.rb
-%%GEM_LIB_DIR%%/test/userauth/tc_driver.rb
-%%GEM_LIB_DIR%%/test/userauth/tc_integration.rb
-%%GEM_LIB_DIR%%/test/userauth/tc_userkeys.rb
-%%GEM_LIB_DIR%%/test/util/tc_buffer.rb
-@dirrm %%GEM_LIB_DIR%%/test/util
-@dirrm %%GEM_LIB_DIR%%/test/userauth/methods
-@dirrm %%GEM_LIB_DIR%%/test/userauth
-@dirrm %%GEM_LIB_DIR%%/test/transport/ossl/hmac
-@dirrm %%GEM_LIB_DIR%%/test/transport/ossl/fixtures
-@dirrm %%GEM_LIB_DIR%%/test/transport/ossl
+%%GEM_LIB_DIR%%/lib/net/ssh.rb
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/README.rdoc
+%%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/test/authentication/methods/common.rb
+%%GEM_LIB_DIR%%/test/authentication/methods/test_abstract.rb
+%%GEM_LIB_DIR%%/test/authentication/methods/test_hostbased.rb
+%%GEM_LIB_DIR%%/test/authentication/methods/test_keyboard_interactive.rb
+%%GEM_LIB_DIR%%/test/authentication/methods/test_password.rb
+%%GEM_LIB_DIR%%/test/authentication/methods/test_publickey.rb
+%%GEM_LIB_DIR%%/test/authentication/test_agent.rb
+%%GEM_LIB_DIR%%/test/authentication/test_key_manager.rb
+%%GEM_LIB_DIR%%/test/authentication/test_session.rb
+%%GEM_LIB_DIR%%/test/common.rb
+%%GEM_LIB_DIR%%/test/configs/exact_match
+%%GEM_LIB_DIR%%/test/configs/wild_cards
+%%GEM_LIB_DIR%%/test/connection/test_channel.rb
+%%GEM_LIB_DIR%%/test/connection/test_session.rb
+%%GEM_LIB_DIR%%/test/test_all.rb
+%%GEM_LIB_DIR%%/test/test_buffer.rb
+%%GEM_LIB_DIR%%/test/test_buffered_io.rb
+%%GEM_LIB_DIR%%/test/test_config.rb
+%%GEM_LIB_DIR%%/test/test_key_factory.rb
+%%GEM_LIB_DIR%%/test/transport/hmac/test_md5.rb
+%%GEM_LIB_DIR%%/test/transport/hmac/test_md5_96.rb
+%%GEM_LIB_DIR%%/test/transport/hmac/test_none.rb
+%%GEM_LIB_DIR%%/test/transport/hmac/test_sha1.rb
+%%GEM_LIB_DIR%%/test/transport/hmac/test_sha1_96.rb
+%%GEM_LIB_DIR%%/test/transport/kex/test_diffie_hellman_group1_sha1.rb
+%%GEM_LIB_DIR%%/test/transport/kex/test_diffie_hellman_group_exchange_sha1.rb
+%%GEM_LIB_DIR%%/test/transport/test_algorithms.rb
+%%GEM_LIB_DIR%%/test/transport/test_cipher_factory.rb
+%%GEM_LIB_DIR%%/test/transport/test_hmac.rb
+%%GEM_LIB_DIR%%/test/transport/test_identity_cipher.rb
+%%GEM_LIB_DIR%%/test/transport/test_packet_stream.rb
+%%GEM_LIB_DIR%%/test/transport/test_server_version.rb
+%%GEM_LIB_DIR%%/test/transport/test_session.rb
+%%GEM_LIB_DIR%%/test/transport/test_state.rb
+%%GEM_LIB_DIR%%/THANKS.rdoc
+%%GEM_LIB_DIR%%/Manifest
+%%GEM_LIB_DIR%%/net-ssh.gemspec
 @dirrm %%GEM_LIB_DIR%%/test/transport/kex
-@dirrm %%GEM_LIB_DIR%%/test/transport/compress
+@dirrm %%GEM_LIB_DIR%%/test/transport/hmac
 @dirrm %%GEM_LIB_DIR%%/test/transport
-@dirrm %%GEM_LIB_DIR%%/test/service/process
-@dirrm %%GEM_LIB_DIR%%/test/service/forward
-@dirrm %%GEM_LIB_DIR%%/test/service/agentforward
-@dirrm %%GEM_LIB_DIR%%/test/service
-@dirrm %%GEM_LIB_DIR%%/test/proxy
 @dirrm %%GEM_LIB_DIR%%/test/connection
+@dirrm %%GEM_LIB_DIR%%/test/configs
+@dirrm %%GEM_LIB_DIR%%/test/authentication/methods
+@dirrm %%GEM_LIB_DIR%%/test/authentication
 @dirrm %%GEM_LIB_DIR%%/test
-@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/util
-@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/userauth/methods
-@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/userauth
-@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl/hmac
-@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/transport/ossl
+@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/verifiers
 @dirrm %%GEM_LIB_DIR%%/lib/net/ssh/transport/kex
-@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/transport/compress
+@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/transport/hmac
 @dirrm %%GEM_LIB_DIR%%/lib/net/ssh/transport
-@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/service/shell
-@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/service/process
-@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/service/forward
-@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/service/agentforward
+@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/test
 @dirrm %%GEM_LIB_DIR%%/lib/net/ssh/service
 @dirrm %%GEM_LIB_DIR%%/lib/net/ssh/proxy
 @dirrm %%GEM_LIB_DIR%%/lib/net/ssh/connection
+@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/authentication/methods
+@dirrm %%GEM_LIB_DIR%%/lib/net/ssh/authentication
 @dirrm %%GEM_LIB_DIR%%/lib/net/ssh
 @dirrm %%GEM_LIB_DIR%%/lib/net
 @dirrm %%GEM_LIB_DIR%%/lib
-@dirrm %%GEM_LIB_DIR%%/examples
-@dirrm %%GEM_LIB_DIR%%/doc/manual/stylesheets
-@dirrm %%GEM_LIB_DIR%%/doc/manual/parts
-@dirrm %%GEM_LIB_DIR%%/doc/manual-html/stylesheets
-@dirrm %%GEM_LIB_DIR%%/doc/manual-html
-@dirrm %%GEM_LIB_DIR%%/doc/manual
-@dirrm %%GEM_LIB_DIR%%/doc
-@dirrm %%GEM_LIB_DIR%%/bin
 @dirrm %%GEM_LIB_DIR%%
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/util
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth/methods
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/userauth
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl/hmac
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/ossl
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/verifiers
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/kex
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/compress
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport/hmac
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/transport
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/shell
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/process
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/forward
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service/agentforward
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/test
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/service
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/proxy
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/connection
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication/methods
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/authentication
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/RSA.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/DSA.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey/DH.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/PKey
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/OpenSSL/BN.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/OpenSSL
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBufferImpl.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/WriterBuffer.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBufferImpl.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/ReaderBuffer.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/Prompter.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/BufferBase.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util/Buffer.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Util
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/UserKeyManager.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Pageant/Socket.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Pageant
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/PublicKey.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/Password.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/KeyboardInteractive.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods/HostBased.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Methods
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Driver.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth/Agent.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/UserAuth
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/VersionNegotiator.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Session.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/PacketStream.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OutgoingPacketStream.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/ReaderBufferImpl.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/KeyFactory.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMACFactory.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/SHA1_96.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/SHA1.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/None.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/MD5_96.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/MD5.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC/Abstract.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/HMAC
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/DigestFactory.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/CipherFactory.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL/BufferFactory.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/OSSL
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex/DiffieHellmanGroup1SHA1.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Verifiers
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Kex
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IncomingPacketStream.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/IdentityCipher.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/ZLibDecompressor.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/ZLibCompressor.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/NoneDecompressor.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/NoneCompressor.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/Decompressor.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress/Compressor.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/Compress
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/AlgorithmNegotiator.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport/HMAC
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Transport
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Session.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/SyncShell.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Shell.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell/Driver.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Shell
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStdoutPipe.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStdinPipe.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHStderrPipe.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager/SSHOutputPipe.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/POpen3Manager
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/OpenManager.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process/Driver.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Process
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/RemoteNetworkHandler.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/LocalNetworkHandler.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward/Driver.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/Forward
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/AgentForward/Driver.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/AgentForward.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service/AgentForward
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Extensions/IO
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test/Extensions
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Test
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Service
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/SOCKS5.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/SOCKS4.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy/HTTP.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Proxy
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/NullHostKeyVerifier.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/LenientHostKeyVerifier.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/KnownHosts.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyVerifier.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/HostKeyMismatch.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Driver.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Channel.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/PromptMethods
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Pageant
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Methods
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication/Agent
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Authentication
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
