@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	google_analytics
-DISTVERSION=	5.x-1.0
-PORTREVISION=	1
+DISTVERSION=	5.x-1.6
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	Adds the Google Analytics web statistics tracking system to your website.
 
 DRUPAL5_MODULE=	yes
-MODULE_FILES=	googleanalytics.info googleanalytics.install googleanalytics.module
-DOC_FILES=	LICENSE.txt README.txt
+MODULE_FILES=	googleanalytics.info googleanalytics.install googleanalytics.js \
+		googleanalytics.module
+DOC_FILES=	LICENSE.txt README.txt UPGRADE.txt
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
