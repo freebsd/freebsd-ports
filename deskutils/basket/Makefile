@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		basket
-PORTVERSION=		1.0.2
-PORTREVISION=	1
+PORTVERSION=		1.0.3
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://basket.kde.org/downloads/
 
@@ -20,6 +19,8 @@ USE_LDCONFIG=		yes
 
 OPTIONS=	KONTACT	"Kontact plugin" on \
 		GPGME "GPG support (experimental)" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_KONTACT)
 LIB_DEPENDS+=	kontact.1:${PORTSDIR}/deskutils/kdepim3
@@ -40,4 +41,4 @@ CONFIGURE_ARGS+=	--with-encryption=no
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
