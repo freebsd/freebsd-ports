@@ -1,6 +1,7 @@
 bin/clawsker
-share/locale/es/LC_MESSAGES/clawsker.mo
-share/locale/sr/LC_MESSAGES/clawsker.mo
-share/locale/sr@latin/LC_MESSAGES/clawsker.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/clawsker.mo
+%%NLS%%share/locale/es/LC_MESSAGES/clawsker.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/clawsker.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/clawsker.mo
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
