@@ -1927,6 +1927,7 @@
     SUBDIR += pecl-hidef
     SUBDIR += pecl-htscanner
     SUBDIR += pecl-inclued
+    SUBDIR += pecl-intl
     SUBDIR += pecl-json
     SUBDIR += pecl-mcve
     SUBDIR += pecl-operator
