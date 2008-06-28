@@ -1,0 +1,9 @@
+include/claws-mail/plugins/archive/archiver.h
+include/claws-mail/plugins/archive/archiver_prefs.h
+lib/claws-mail/plugins/archive.a
+lib/claws-mail/plugins/archive.la
+lib/claws-mail/plugins/archive.so
+@dirrmtry lib/claws-mail/plugins
+@dirrmtry lib/claws-mail
+@dirrmtry include/claws-mail/plugins/archive
+@dirrmtry include/claws-mail/plugins
