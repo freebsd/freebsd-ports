@@ -21,6 +21,7 @@ include/claws-mail/addritem.h
 include/claws-mail/addrquery.h
 include/claws-mail/addrselect.h
 include/claws-mail/alertpanel.h
+include/claws-mail/autofaces.h
 include/claws-mail/browseldap.h
 include/claws-mail/codeconv.h
 include/claws-mail/printing.h
@@ -242,48 +243,36 @@ share/applications/claws-mail.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.tools
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/manual/en/claws-mail-manual.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/en/claws-mail-manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/manual/en/claws-mail-manual.ps
-%%PORTDOCS%%%%DOCSDIR%%/manual/en/claws-mail-manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual/es/claws-mail-manual.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/es/claws-mail-manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/manual/es/claws-mail-manual.ps
-%%PORTDOCS%%%%DOCSDIR%%/manual/es/claws-mail-manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual/fr/claws-mail-manual.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/fr/claws-mail-manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/manual/fr/claws-mail-manual.ps
-%%PORTDOCS%%%%DOCSDIR%%/manual/fr/claws-mail-manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual/pl/claws-mail-manual.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/pl/claws-mail-manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/manual/pl/claws-mail-manual.ps
-%%PORTDOCS%%%%DOCSDIR%%/manual/pl/claws-mail-manual.txt
+%%DOCSDIR%%/manual/en/claws-mail-manual.html
+%%DOCSDIR%%/manual/en/claws-mail-manual.pdf
+%%DOCSDIR%%/manual/en/claws-mail-manual.ps
+%%DOCSDIR%%/manual/en/claws-mail-manual.txt
+%%DOCSDIR%%/manual/es/claws-mail-manual.html
+%%DOCSDIR%%/manual/es/claws-mail-manual.pdf
+%%DOCSDIR%%/manual/es/claws-mail-manual.ps
+%%DOCSDIR%%/manual/es/claws-mail-manual.txt
+%%DOCSDIR%%/manual/fr/claws-mail-manual.html
+%%DOCSDIR%%/manual/fr/claws-mail-manual.pdf
+%%DOCSDIR%%/manual/fr/claws-mail-manual.ps
+%%DOCSDIR%%/manual/fr/claws-mail-manual.txt
+%%DOCSDIR%%/manual/pl/claws-mail-manual.html
+%%DOCSDIR%%/manual/pl/claws-mail-manual.pdf
+%%DOCSDIR%%/manual/pl/claws-mail-manual.ps
+%%DOCSDIR%%/manual/pl/claws-mail-manual.txt
 share/icons/hicolor/48x48/apps/claws-mail.png
-share/locale/bg/LC_MESSAGES/claws-mail.mo
 share/locale/ca/LC_MESSAGES/claws-mail.mo
-share/locale/cs/LC_MESSAGES/claws-mail.mo
 share/locale/de/LC_MESSAGES/claws-mail.mo
-share/locale/el/LC_MESSAGES/claws-mail.mo
 share/locale/en_GB/LC_MESSAGES/claws-mail.mo
 share/locale/es/LC_MESSAGES/claws-mail.mo
 share/locale/fi/LC_MESSAGES/claws-mail.mo
 share/locale/fr/LC_MESSAGES/claws-mail.mo
-share/locale/he/LC_MESSAGES/claws-mail.mo
-share/locale/hr/LC_MESSAGES/claws-mail.mo
 share/locale/hu/LC_MESSAGES/claws-mail.mo
 share/locale/it/LC_MESSAGES/claws-mail.mo
-share/locale/ja/LC_MESSAGES/claws-mail.mo
-share/locale/ko/LC_MESSAGES/claws-mail.mo
-share/locale/nb/LC_MESSAGES/claws-mail.mo
-share/locale/nl/LC_MESSAGES/claws-mail.mo
 share/locale/pl/LC_MESSAGES/claws-mail.mo
 share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
-share/locale/ru/LC_MESSAGES/claws-mail.mo
 share/locale/sk/LC_MESSAGES/claws-mail.mo
 share/locale/sr/LC_MESSAGES/claws-mail.mo
-share/locale/sv/LC_MESSAGES/claws-mail.mo
 share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
-share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
 share/pixmaps/claws-mail-128x128.png
 share/pixmaps/claws-mail-64x64.png
 share/pixmaps/claws-mail.png
@@ -2663,12 +2652,12 @@ share/pixmaps/claws-mail.png
 %%THEMES%%@dirrm %%DATADIR%%/themes/Crystal
 %%THEMES%%@dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/pl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/es
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%/manual/pl
+@dirrm %%DOCSDIR%%/manual/fr
+@dirrm %%DOCSDIR%%/manual/es
+@dirrm %%DOCSDIR%%/manual/en
+@dirrm %%DOCSDIR%%/manual
+@dirrmtry %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrmtry lib/claws-mail/plugins
 @dirrmtry lib/claws-mail
