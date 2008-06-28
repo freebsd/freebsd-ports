@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_Beautifier
-PORTVERSION=	0.1.13
+PORTVERSION=	0.1.14
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -26,9 +26,11 @@ FILES=		Beautifier.php Beautifier/Filter.php Beautifier/Decorator.php \
 		Beautifier/StreamWrapper.php Beautifier/Tokenizer.php \
 		Beautifier/Filter/ArrayNested.filter.php \
 		Beautifier/Filter/Default.filter.php \
-		Beautifier/Filter/ListClassFunction.filter.php \
-		Beautifier/Filter/Pear.filter.php \
 		Beautifier/Filter/IndentStyles.filter.php \
+		Beautifier/Filter/ListClassFunction.filter.php \
+		Beautifier/Filter/Lowercase.filter.php \
+		Beautifier/Filter/Pear.filter.php \
+		Beautifier/Filter/phpBB.filter.php \
 		Beautifier/Filter/NewLines.filter.php Beautifier/Batch/Output.php \
 		Beautifier/Batch/Output/Directory.php \
 		Beautifier/Batch/Output/DirectoryBz2.php \
@@ -40,9 +42,11 @@ FILES=		Beautifier.php Beautifier/Filter.php Beautifier/Decorator.php \
 		Beautifier/Batch/Output/FilesTar.php \
 		Beautifier/StreamWrapper/Tarz.php
 EXAMPLES=	run_me.php example_main.php example_pear.php example_array.php \
-		example_comments.php example_html.php
+		example_comments.php example_html.php \
+		example_lowercase.php
 TESTS=		Beautifier.phpt Beautifier_Common.phpt Beautifier_Bugs.phpt \
-		Beautifier_StreamWrapper.phpt
+		Beautifier_StreamWrapper.phpt \
+		Beautifier_Pear.phpt pear_sample_file.phps
 DATA=		apache.txt bsd.txt lgpl.txt php.txt pear.txt
 _DATADIR=	licenses
 SCRIPTFILES=	php_beautifier
