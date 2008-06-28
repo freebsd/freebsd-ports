@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spamreport
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -29,16 +28,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
 
-PLIST_FILES=lib/claws-mail/plugins/spamreport.a \
-	    lib/claws-mail/plugins/spamreport.la \
-	    lib/claws-mail/plugins/spamreport.so \
-	    share/locale/ca/LC_MESSAGES/spam_report.mo \
-	    share/locale/fi/LC_MESSAGES/spam_report.mo \
-	    share/locale/es/LC_MESSAGES/spam_report.mo \
-	    share/locale/fr/LC_MESSAGES/spam_report.mo \
-	    share/locale/hu/LC_MESSAGES/spam_report.mo \
-	    share/locale/pt_BR/LC_MESSAGES/spam_report.mo \
-	    share/locale/sk/LC_MESSAGES/spam_report.mo \
-	    share/locale/it/LC_MESSAGES/spam_report.mo
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 .include <bsd.port.mk>
