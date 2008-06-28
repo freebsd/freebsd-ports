@@ -16,7 +16,7 @@ COMMENT=	PHP based weblog software
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/File/Archive.php:${PORTSDIR}/archivers/pear-File_Archive
 
-SNAPSHOT=	200806182342
+SNAPSHOT=	200806272342
 WRKSRC=		${WRKDIR}/serendipity-nightly
 NO_BUILD=	YES
 SERENDIPITY?=	www/serendipity
