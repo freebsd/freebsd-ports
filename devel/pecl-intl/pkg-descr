@@ -1,0 +1,5 @@
+pecl-intl is a Internationalization extension that
+implements ICU library functionality in PHP.About
+ICU please visit http://www.icu-project.org/
+
+WWW: http://pecl.php.net/package/intl
