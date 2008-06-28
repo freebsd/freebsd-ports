@@ -62,7 +62,7 @@
 #     requests.
 
 PORTNAME=	squid
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -81,7 +81,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/Versions/v3/3.0/ \
 		http://www2.tw.squid-cache.org/Versions/v3/3.0/
 MASTER_SITE_SUBDIR=	squid-3/STABLE
-DISTNAME=	squid-3.0.STABLE6
+DISTNAME=	squid-3.0.STABLE7
 DIST_SUBDIR=	squid3.0
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
