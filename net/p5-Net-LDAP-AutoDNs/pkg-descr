@@ -1,0 +1,3 @@
+Automatically make some default decisions some LDAP DNs and scopes.
+
+WWW: http://search.cpan.org/dist/Net-LDAP-Makepath/
