@@ -232,6 +232,7 @@
     SUBDIR += slate
     SUBDIR += smokeping
     SUBDIR += snmp++
+    SUBDIR += snmp4nagios
     SUBDIR += snmptt
     SUBDIR += softflowd
     SUBDIR += spectools
