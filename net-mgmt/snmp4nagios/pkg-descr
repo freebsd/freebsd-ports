@@ -1,0 +1,16 @@
+This is a plugin package for Nagios.  Quoting from the
+snmp4nagios home page:
+
+SNMP4Nagios is a package of Nagios plugins which use SNMP
+to query hosts. While some of the plugins use standard MIBs,
+most are designed for vendor specific agents.
+
+Unlike other Nagios plugins, they are able to scan hosts for
+objects which can be monitored. They also can keep performance
+logs and draw plots of these using Tobias Oetiker's RRDTool.
+
+Currently devices by Brocade, Cisco, Compaq/HP and Network Appliance
+as well as computers running Microsoft Windows or Net-SNMP
+and uninterruptable power supplies are supported.
+
+WWW: http://snmp4nagios.sourceforge.net/
