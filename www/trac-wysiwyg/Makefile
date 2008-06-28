@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wysiwyg
-PORTVERSION=	0.2.3847
+PORTVERSION=	0.2.3856
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/
 PKGNAMEPREFIX=	trac-
