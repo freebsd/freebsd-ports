@@ -1,0 +1,28 @@
+--- Makefile.in.orig	2008-06-28 00:29:01.000000000 +0200
++++ Makefile.in	2008-06-28 00:29:43.000000000 +0200
+@@ -39,7 +39,7 @@
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ 	$(srcdir)/claws-mail.pc.in $(srcdir)/config.h.in \
+ 	$(top_srcdir)/configure ABOUT-NLS AUTHORS COPYING ChangeLog \
+-	INSTALL NEWS TODO
++	INSTALL NEWS TODO RELEASE_NOTES
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/aclocal-include.m4 \
+ 	$(top_srcdir)/m4/aspell.m4 $(top_srcdir)/m4/check-type.m4 \
+@@ -304,7 +304,6 @@
+ 	ChangeLog.gtk1 \
+ 	ChangeLog.pre2.0.0 \
+ 	ChangeLog.2.0.0-3.0.0 \
+-	RELEASE_NOTES \
+ 	claws-mail-128x128.png \
+ 	claws-mail-64x64.png \
+ 	claws-mail.pc.in \
+@@ -325,8 +324,6 @@
+ clawsinclude_HEADERS = \
+ 	config.h
+ 
+-relnotesdir = $(docdir)
+-relnotes_DATA = RELEASE_NOTES
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 

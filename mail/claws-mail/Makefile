@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	claws-mail
-PORTVERSION=	3.4.0
-PORTREVISION=	2
+PORTVERSION=	3.5.0
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -191,13 +190,10 @@ post-patch:
 	@${REINPLACE_CMD} -e "s:-Wno-unused-function::" ${WRKSRC}/src/Makefile.in
 	@for f in `${FIND} ${WRKSRC}/tools -type f -print`; do \
 		${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" $$f; done
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|src manual faq tools|src tools|' ${WRKSRC}/Makefile.in
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-.for i in NEWS README RELEASE_NOTES TODO
+.for i in NEWS RELEASE_NOTES README TODO
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
