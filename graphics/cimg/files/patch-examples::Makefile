@@ -1,9 +1,9 @@
---- ./examples/Makefile.orig	2008-04-18 12:46:38.000000000 +0200
-+++ ./examples/Makefile	2008-04-18 21:54:25.000000000 +0200
-@@ -73,15 +73,15 @@
+--- examples/Makefile.orig	2008-06-26 14:31:17.000000000 +0200
++++ examples/Makefile	2008-06-28 13:54:24.000000000 +0200
+@@ -75,15 +75,15 @@
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.28
+ CIMG_VERSION = 1.29
 -X11PATH      = /usr/X11R6
 -CC           = g++
 +#X11PATH      = /usr/X11R6
@@ -20,7 +20,16 @@
  endif
  
  #--------------------------------------------------
-@@ -131,7 +131,7 @@
+@@ -101,7 +101,7 @@
+ ifeq ($(CC),icc)
+ CIMG_OPT_FLAGS = -O3 -ipo -no-prec-div
+ else
+-CIMG_OPT_FLAGS = -O3 -ffast-math
++CIMG_OPT_FLAGS = -ffast-math
+ endif
+ 
+ # Flags to enable OpenMP support.
+@@ -146,10 +146,10 @@
  CIMG_FFTW3_FLAGS = -Dcimg_use_fftw3 -lfftw3
  
  # Flags to enable the use of LAPACK routines for matrix computation
@@ -28,18 +37,63 @@
 +CIMG_LAPACK_FLAGS = -Dcimg_use_lapack -lblas -llapack
  
  # Flags to enable the use of the Board library
- CIMG_BOARD_FLAGS = -Dcimg_use_board -lboard
-@@ -142,6 +142,9 @@
+-CIMG_BOARD_FLAGS = -Dcimg_use_board -I/usr/include/board -lboard
++CIMG_BOARD_FLAGS = -Dcimg_use_board -I$(LOCALBASE)/board -lboard
+ 
+ # Flags to compile on Solaris
+ CIMG_SOLARIS_FLAGS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
+@@ -157,6 +157,9 @@
  # Flags to compile on MacOSX with Carbon-based display support
- CIMG_CARBON_FLAGS = -Dcimg_display_type=3 -framework Carbon
+ CIMG_CARBON_FLAGS = -Dcimg_display=3 -framework Carbon
  
 +# Flags to compile on FreeBSD
 +CIMG_FREEBSD_FLAGS = -ansi -ffast-math  -I$(X11PATH)/include $(EXTRA_FLAGS) -lX11 -L$(X11PATH)/lib
 +
  # Set default compilation flags.
  # Uncomment lines here, if you want to customize your default configuration
- CIMG_DEFAULT_FLAGS = $(CIMG_X11_FLAGS) \
-@@ -208,7 +211,7 @@
+ CIMG_DEFAULT_FLAGS = $(CIMG_VT100_FLAGS) \
+@@ -164,15 +167,15 @@
+                      $(CIMG_XSHM_FLAGS) \
+                      $(CIMG_XRANDR_FLAGS) \
+ #                     $(CIMG_OPENMP_FLAGS) \
+-#                     $(CIMG_PNG_FLAGS) \
+-#                     $(CIMG_JPEG_FLAGS) \
+-#                     $(CIMG_TIFF_FLAGS) \
++                     $(CIMG_PNG_FLAGS) \
++                     $(CIMG_JPEG_FLAGS) \
++                     $(CIMG_TIFF_FLAGS) \
+ #  		      $(CIMG_FFMPEG_FLAGS) \
+-#                     $(CIMG_ZLIB_FLAGS) \
+-#                     $(CIMG_MAGICK_FLAGS) \
+-#                     $(CIMG_FFTW3_FLAGS)
+-#		      $(CIMG_LAPACK_FLAGS)
+-#                     $(CIMG_BOARD_FLAGS)
++                     $(CIMG_ZLIB_FLAGS) \
++                     $(CIMG_MAGICK_FLAGS) \
++                     $(CIMG_FFTW3_FLAGS) \
++#		      $(CIMG_LAPACK_FLAGS) \
++                     $(CIMG_BOARD_FLAGS)
+ 
+ # Set full compilation flags.
+ CIMG_FULL_FLAGS = $(CIMG_OPT_FLAGS) \
+@@ -184,12 +187,12 @@
+                   $(CIMG_PNG_FLAGS) \
+                   $(CIMG_JPEG_FLAGS) \
+                   $(CIMG_ZLIB_FLAGS) \
++                  $(CIMG_MAGICK_FLAGS) \
++                  $(CIMG_BOARD_FLAGS) \
++                  $(CIMG_FFTW3_FLAGS) \
+ #		  $(CIMG_FFMPEG_FLAGS) \
+-#                  $(CIMG_MAGICK_FLAGS) \
+-#                  $(CIMG_OPENMP_FLAGS) \
+-#                  $(CIMG_FFTW3_FLAGS) \
+ #	           $(CIMG_LAPACK_FLAGS) \
+-#                  $(CIMG_BOARD_FLAGS)
++#                  $(CIMG_OPENMP_FLAGS)
+ 
+ #-------------------------
+ # Define Makefile entries
+@@ -234,7 +237,7 @@
  all: $(CIMG_FILES)
  
  clean:
@@ -48,16 +102,16 @@
  
  greycstoration4gimp: greycstoration4gimp.cpp
  	@echo
-@@ -228,6 +231,12 @@
+@@ -254,6 +257,12 @@
  Mlinux:
- 	make "ARCHFLAGS=$(CIMG_ALL_FLAGS)" all jpeg_buffer greycstoration4gimp
+ 	make "ARCHFLAGS=$(CIMG_FULL_FLAGS)" "STRIP_EXE=1" all jpeg_buffer greycstoration4gimp
  
 +# FreeBSD targets
 +dFreeBSD:
 +	make "ARCHFLAGS=$(CIMG_FREEBSD_FLAGS) $(CIMG_DEFAULT_FLAGS)" all
 +
 +oFreeBSD:
-+	make "ARCHFLAGS=$(CIMG_FREEBSD_FLAGS) $(CIMG_ALL_FLAGS)" all
++	make "ARCHFLAGS=$(CIMG_FREEBSD_FLAGS) $(CIMG_FULL_FLAGS)" all
  # Sun Solaris targets
  solaris:
  	make "ARCHFLAGS=$(CIMG_SOLARIS_FLAGS) $(CIMG_DEFAULT_FLAGS)" all
