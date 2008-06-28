@@ -143,9 +143,12 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/aproxy.rb
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/server.rb
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-configure-windows.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-join.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-list-addons.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-next-channel.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-part.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-command-previous-channel.xpm
-%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-submit-bug-report.xpm
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/riece
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
