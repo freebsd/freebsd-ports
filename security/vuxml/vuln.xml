@@ -33860,6 +33860,7 @@ http_access deny Gopher</pre>
       <package>
 	<name>squid</name>
 	<range><lt>2.5.7</lt></range>
+	<range><ge>3.0.0</ge><lt>3.0.7</lt></range>
       </package>
     </affects>
     <description>
@@ -33873,16 +33874,22 @@ http_access deny Gopher</pre>
 	  explicitly enabled via "make config". As a workaround,
 	  SNMP can be disabled by defining "snmp_port 0" in
 	  squid.conf.</p>
+  	<p>Squid security advisory SQUID-2008:1 explains that Squid-3 versions
+	  up to and including Squid-3.0.STABLE6 are affected by this error,
+	  too.</p>
       </body>
     </description>
     <references>
       <cvename>CVE-2004-0918</cvename>
       <url>http://www.idefense.com/application/poi/display?id=152&amp;type=vulnerabilities</url>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE6-SNMP_core_dump</url>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2004_3.txt</url>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2008_1.txt</url>
     </references>
     <dates>
       <discovery>2004-09-29</discovery>
       <entry>2004-10-12</entry>
+      <modified>2008-06-28</modified>
     </dates>
   </vuln>
 
