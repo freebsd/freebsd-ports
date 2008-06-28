@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Error
-PORTVERSION=	0.17012
+PORTVERSION=	0.17014
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,4 +18,10 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Error.3 Error::Simple.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
