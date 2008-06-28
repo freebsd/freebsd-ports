@@ -4,5 +4,5 @@
  /* automatically created by configure */
 -#define IRSSI_VERSION_DATE @VERSION_DATE@
 -#define IRSSI_VERSION_TIME @VERSION_TIME@
-+#define IRSSI_VERSION_DATE 20080618                                                                                                                       
++#define IRSSI_VERSION_DATE 20080619                                                                                                                       
 +#define IRSSI_VERSION_TIME 0100
