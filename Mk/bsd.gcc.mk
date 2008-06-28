@@ -99,7 +99,9 @@ FC:=	f77
 MAKE_ENV+=	 F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
 .endif
 
+
 .if defined(USE_GCC)
+
 # See if we can use a later version
 _USE_GCC:=	${USE_GCC:S/+//}
 .if ${USE_GCC} != ${_USE_GCC}
@@ -190,21 +192,25 @@ CXX:=			g++${V}
 .endfor
 .undef V
 
-
 .if defined(_GCC_BUILD_DEPENDS)
 BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
 .endif
 
 MAKE_ENV+=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}"
 
+.endif
+# defined(USE_GCC)
+
+
 test-gcc:
 	@echo USE_GCC=${USE_GCC}
+	@echo USE_FORTRAN=${USE_FORTRAN}
+.if defined(USE_GCC)
 .if defined(_GCC_ORLATER)
 	@echo Port can use later versions.
 .else
 	@echo Port cannot use later versions.
 .endif
-	@echo USE_FORTRAN=${USE_FORTRAN}
 .for v in ${GCCVERSIONS}
 	@echo -n "GCC version: ${_GCCVERSION_${v}_V} "
 .if defined(_GCC_FOUND${v})
@@ -214,7 +220,7 @@ test-gcc:
 #	@echo ${v} - ${_GCC_FOUND${v}} - ${_GCCVERSION_${v}_L} to ${_GCCVERSION_${v}_R} - ${_GCCVERSION_${v}_V}
 .endfor
 	@echo Using GCC version ${_USE_GCC}
+.endif
 	@echo CC=${CC} - CXX=${CXX} - CFLAGS=${CFLAGS}
 	@echo F77=${F77} - FC=${FC} - FFLAGS=${FFLAGS}
 	@echo BUILD_DEPENDS=${BUILD_DEPENDS}
-.endif
