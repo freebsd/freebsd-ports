@@ -548,6 +548,7 @@
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldname.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldnum.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldphone.php
+%%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldradioenum.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldtext.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldtime.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetFieldurl.php
@@ -2729,6 +2730,7 @@
 %%WWWDIR%%/modules/Documents/metadata/detailviewdefs.php
 %%WWWDIR%%/modules/Documents/metadata/editviewdefs.php
 %%WWWDIR%%/modules/Documents/metadata/listviewdefs.php
+%%WWWDIR%%/modules/Documents/metadata/quickcreatedefs.php
 %%WWWDIR%%/modules/Documents/metadata/searchdefs.php
 %%WWWDIR%%/modules/Documents/metadata/sidecreateviewdefs.php
 %%WWWDIR%%/modules/Documents/metadata/studio.php
@@ -5256,6 +5258,7 @@
 %%WWWDIR%%/themes/Sugar2006/images/rightarrow.gif
 %%WWWDIR%%/themes/Sugar2006/images/rightarrow_big.gif
 %%WWWDIR%%/themes/Sugar2006/images/scheduled_inline.gif
+%%WWWDIR%%/themes/Sugar2006/images/searchBg.gif
 %%WWWDIR%%/themes/Sugar2006/images/searchMore.gif
 %%WWWDIR%%/themes/Sugar2006/images/show.gif
 %%WWWDIR%%/themes/Sugar2006/images/start.gif
