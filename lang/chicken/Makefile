@@ -42,7 +42,8 @@ CONFIGURE_ENV+=	ac_cv_header_pcre_h=no
 MAKE_FLAGS+=	HOST=${HOST} PREFIX=${PREFIX} PLATFORM=${PLATFORM} INFODIR=${PREFIX}/info
 
 post-patch:
-	${MV}  ${WRKSRC}/apply-hack.x86.s ${WRKSRC}/apply-hack.i386.s
+	${MV} ${WRKSRC}/apply-hack.x86.s ${WRKSRC}/apply-hack.i386.s
+	${MV} ${WRKSRC}/apply-hack.x86-64.s ${WRKSRC}/apply-hack.amd64.s
 #	@${REINPLACE_CMD} -e 's/\(install-data-am: \)install-data-local/\1/' \
 #		${WRKSRC}/Makefile.in
 
