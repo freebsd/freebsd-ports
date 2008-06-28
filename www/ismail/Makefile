@@ -7,7 +7,7 @@
 
 PORTNAME=	ismail
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www mail
 MASTER_SITES=	http://mail.electro-com.ru/~az/ISMail/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -16,73 +16,72 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based webmail client
 
 USE_BZIP2=	yes
-ISMAILDIR?=	www/data/ismail
-INSTALLDIR=	${PREFIX}/${ISMAILDIR}
 
 WRKSRC=		${WRKDIR}
 
-PLIST_SUB=	ISMAILDIR=${ISMAILDIR}/ \
-		INSTALLDIR=${INSTALLDIR}/
-
 NO_BUILD=	yes
-USE_PHP=	yes
+USE_PHP=	imap
+WANT_PHP_WEB=	yes
+
+SUB_FILES=	pkg-message
+
+OPTIONS=	DOMXML "Use DOMXML for datastore (only with php4.x)" off \
+		MYSQL "Use MySQL for datastore" on \
+		POSTGRESQL "Use PostgresQL for datastore" off
+
+.include <bsd.port.options.mk>
+
+.ifdef(WITH_DOMXML)
+USE_PHP+=	domxml
+IGNORE_WITH_PHP=	5
+.endif
+
+.ifdef(WITH_MYSQL)
+USE_PHP+=	mysql
+PLIST_FILES+=	${EXAMPLESDIR_REL}/mysql4.schema
+PLIST_DIRS+=	${EXAMPLESDIR_REL}
+.endif
+
+.ifdef(WITH_POSTGRESQL)
+USE_PHP+=	pgsql
+PLIST_FILES+=	${EXAMPLESDIR_REL}/pgsql.schema
+PLIST_DIRS+=	${EXAMPLESDIR_REL}
+.endif
 
 .include <bsd.port.pre.mk>
 
-PORTDOC_FILES=	docs.html
-PORT_EXAMPLES=	mysql4.schema pgsql.schema
-
 LIB_DEPENDS+=	c-client4.9:${PORTSDIR}/mail/cclient
 
-SED_SCRIPT=	-e 's,%%INSTALL_SCRIPT%%,${INSTALL_SCRIPT},g' \
-		-e 's,%%MKDIR%%,${MKDIR},g' \
-		-e 's,%%CHOWN%%,${CHOWN},g' \
-		-e 's,%%WRKSRC%%,${WRKSRC},g' \
-		-e 's,%%ISMAILDIR%%,${ISMAILDIR},g' \
-		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
-		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
-		-e 's,%%INSTALLDIR%%,${INSTALLDIR},g'
+.pre-extract:
+.if !defined(WITH_DOMXML) && !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
+	@${ECHO_MSG} "Pleasee choose at least one of DOMXML, MYSQL, POSTGRESQL"
+	@${FALSE}
+.endif
 
 pre-install:
-	@${ECHO_MSG} "Inside Systems Mail will be installed to "
-	@${ECHO_MSG} "${INSTALLDIR}."
-	@${ECHO_MSG} "To change it, set the following:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "PREFIX = ${PREFIX}"
-	@${ECHO_MSG} "ISMAILDIR = ${ISMAILDIR}"
+	@${ECHO_MSG} "Inside Systems Mail will be installed to ${WWWDIR}"
+	@${ECHO_MSG} "Define WWWDIR to change it."
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Inside Systems Mail requires that mod_php4 be build with"
-	@${ECHO_MSG} "IMAP support. To enable IMAP support, you must set"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITH_IMAP=yes"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "One of the following mod_php4 extensions are required to"
-	@${ECHO_MSG} "use the provided dastores:"
-	@${ECHO_MSG} "
-	@${ECHO_MSG} "  WITH_DOMXML=yes"
-	@${ECHO_MSG} "  WITH_MYSQL=yes"
-	@${ECHO_MSG} "  WITH_POSTGRESQL=yes"
-	@${ECHO_MSG} "
-	@${ECHO_MSG} "Hit Ctrl-C now to cancel the installation"
-	@sleep 7
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/install.sh > ${WRKDIR}/install.sh
-	@${SED} ${SED_SCRIPT} pkg-message > ${WRKDIR}/pkg-message
 
 do-install:
-	${SH} ${WRKDIR}/install.sh
-	${CHOWN} -R www:www ${INSTALLDIR}
-.if !defined(NOPORTDOCS)
+	@${MKDIR} ${WWWDIR}
+	${TAR} --exclude '*~' -C ${WRKSRC}/${PORTNAME} -cf - . | ${TAR} -C ${WWWDIR} -xf -
+	@${CHOWN} -R www:www ${WWWDIR}
+.ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for docfile in ${PORTDOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/docs.html ${DOCSDIR}
+.endif
+.ifdef(WITH_MYSQL)
 	@${MKDIR} ${EXAMPLESDIR}
-.for example in ${PORT_EXAMPLES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${example} ${EXAMPLESDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/examples/mysql4.schema ${EXAMPLESDIR}
+.endif
+.ifdef(WITH_POSTGRESQL)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/pgsql.schema ${EXAMPLESDIR}
 .endif
 
 post-install:
-	@${CAT} ${WRKDIR}/pkg-message
+	@${CAT} ${PKGMEASSAGE}
 
 .include <bsd.port.post.mk>
