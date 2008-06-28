@@ -33,8 +33,6 @@ LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick \
 		xslt:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx
 
-BROKEN=		does not build with GraphicsMagick v.1.2.3 and newer
-
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 PREFIX=		${KDE_PREFIX}
