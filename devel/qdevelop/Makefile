@@ -6,38 +6,26 @@
 #
 
 PORTNAME=	qdevelop
-PORTVERSION=	0.23.1
-PORTREVISION=	2
+PORTVERSION=	0.25.2
 CATEGORIES=	devel kde
-MASTER_SITES=	http://qdevelop.org/download/ \
+MASTER_SITES=	http://qdevelop.free.fr/download/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
-DISTNAME=	QDevelop-${PORTVERSION:C/.([0-9])$/-\1/}
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	A development environment entirely dedicated to Qt4
 
-BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 		qt4-sqlite-plugin>=0:${PORTSDIR}/databases/qt4-sqlite3-plugin
 
-BROKEN=		checksum fails
-DEPRECATED=	Has been broken for more than 6 months
-EXPIRATION_DATE=2008-09-19
-
-CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
-		-DCMAKE_C_COMPILER:STRING='${CC}' \
-		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
-		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS} -pthread" \
-		-DCMAKE_INSTALL_PREFIX=${PREFIX}
-
-USE_ZIP=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake moc uic rcc sql network xml gui corelib assistant linguist designer
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 
 DESKTOP_ENTRIES=	"QDevelop" \
-			"A development environment entirely dedicated to Qt4" \
-			"QDevelop" \
-			"QDevelop" \
+			"Qt4 development environment" \
+			"qdevelop" \
+			"qdevelop" \
 			"Qt;KDE;Development;" \
 			"false"
 
@@ -58,13 +46,9 @@ post-patch:
 		-e "s|\"/usr/bin/ctags\"|\"${LOCALBASE}/bin/exctags\"|g" \
 		${WRKSRC}/src/toolscontrolimpl.cpp
 
-do-configure:
-	@(cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake ${CMAKE_ARGS} ${WRKSRC})
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/QDevelop ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/resources/images/logo.png ${PREFIX}/share/pixmaps/QDevelop.png
+	@${INSTALL_PROGRAM} ${WRKSRC}/qdevelop ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/resources/images/logo.png ${PREFIX}/share/pixmaps/qdevelop.png
 .if !defined(WITHOUT_NLS)
 	@${MKDIR} ${DATADIR}
 	(cd ${WRKSRC}/resources/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations)
