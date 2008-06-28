@@ -1639,9 +1639,9 @@
 %%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_mysql.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_postgres.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha1_1.2_alpha2_sqlite.sql
-%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_mysql.sql
-%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_postgres.sql
-%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.2-alpha3_mysql.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.2-alpha3_postgres.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.2-alpha3_sqlite.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_mysql.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_postgres.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_sqlite.sql
