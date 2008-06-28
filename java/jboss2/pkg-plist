@@ -1126,7 +1126,6 @@ etc/rc.d/020.jboss2.sh
 %%T%%/bin/run.sh
 %%T%%/bin/verifier.jar
 %%T%%/bin/run.jar
-man/man1/jboss2ctl.1
 @dirrm %%T%%/application-deployments
 @dirrm %%T%%/docs/images
 @dirrm %%T%%/docs/api/org/jboss/web
