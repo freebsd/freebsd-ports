@@ -6,14 +6,9 @@
 #
 
 PORTNAME=	moc
-PORTVERSION=	2.4.1
-PORTREVISION=	5
+PORTVERSION=	2.4.3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
-
-PATCH_SITES=	ftp://ftp.daper.net/pub/soft/moc/patches/
-PATCHFILES=	moc-2.4.1-flac-1.1.3.patch.bz2
-PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	rzinkov@gmail.com
 COMMENT=	A console audio player designed to be powerful and easy to use
