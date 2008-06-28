@@ -80,6 +80,7 @@ for daemon in ${quagga_daemons}; do
 		continue
     fi
     eval flags=\$\{${daemon}_flags:-\"${quagga_flags}\"\}
+    name="${daemon}"
     run_rc_command "$1"
     _rc_restart_done=false
 done
