@@ -49,11 +49,11 @@ share/Eterm/themes/trans/MAIN
 share/Eterm/themes/trans/MAIN.in.orig
 share/Eterm/themes/trans/trans.menu
 share/Eterm/themes/trans/pixmaps.list
-share/doc/Eterm/Eterm_reference.html
-share/doc/Eterm/Eterm.tcap
-share/doc/Eterm/Eterm.ti
-share/doc/Eterm/FAQ.html
-share/doc/Eterm/ReleaseNotes
+%%PORTDOCS%%%%DOCSDIR%%/Eterm_reference.html
+%%PORTDOCS%%%%DOCSDIR%%/Eterm.tcap
+%%PORTDOCS%%%%DOCSDIR%%/Eterm.ti
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes
 @dirrm share/Eterm/themes/trans
 @dirrm share/Eterm/themes/tn3270
 @dirrm share/Eterm/themes/mutt
@@ -64,4 +64,4 @@ share/doc/Eterm/ReleaseNotes
 @dirrm share/Eterm/themes
 @dirrm share/Eterm/pix
 @dirrm share/Eterm
-@dirrm share/doc/Eterm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
