@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	kenosis
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 CATEGORIES=	net-p2p python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fully-distributed p2p RPC system built on top of XMLRPC
 
-RUN_DEPENDS=	\
-		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/xmlrpclib.py:${PORTSDIR}/net/py-xmlrpclib
+RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/xmlrpclib.py:${PORTSDIR}/net/py-xmlrpclib
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
