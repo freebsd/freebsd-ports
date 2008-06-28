@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-screenshooter-plugin
-PORTVERSION=	1.0.0
-PORTREVISION=	5
+PORTVERSION=	1.2.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -16,10 +15,10 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Desktop Screenshot plugin for xfce
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv panel
+MAN1=		xfce4-screenshooter.1
 
 .include <bsd.port.mk>
