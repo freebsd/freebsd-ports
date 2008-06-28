@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cimg
-PORTVERSION=	1.2.8
-PORTREVISION=	3
+PORTVERSION=	1.2.9
 PORTEPOCH=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
@@ -19,8 +18,8 @@ COMMENT=	The C++ Template Image Processing Library
 
 USE_ZIP=	yes
 BUILD_WRKSRC=	${WRKSRC}/examples
-MAKE_ENV=	CPPFLAGS="${CFLAGS} ${LAPACK_DEF} ${PTHREAD_CFLAGS}"	\
-		LDFLAGS="${LDFLAGS} ${LAPACK_LIB} ${PTHREAD_LIBS}"	\
+MAKE_ENV=	CPPFLAGS="${CFLAGS} ${LAPACK_DEF} ${PTHREAD_CFLAGS}"		\
+		LDFLAGS="${LDFLAGS} ${LAPACK_LIB} ${PTHREAD_LIBS} -lstdc++"	\
 		X11PATH=${LOCALBASE}
 
 .if !defined(NOPORTDOCS)
@@ -58,7 +57,7 @@ RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 . endif
 
 DOCBASE=	CHANGES.txt README.txt
-DOCREFS=	CImg.doxygen CImg_documentation.h CImg_reference.pdf chat.shtml	\
+DOCREFS=	CImg.doxygen CImg_documentation.h CImg_reference.pdf	\
 		download.shtml favicon.ico favicon.png footer.html header.html	\
 		header_reference.html img index.shtml links.shtml news.shtml	\
 		reference screenshots.shtml
@@ -69,12 +68,18 @@ NO_BUILD=	yes
 pre-configure:
 .if !defined(NOPORTDOCS)
 	${DIRNAME} `${LOCALBASE}/bin/${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
-	${GREP} -lR 'img/' ${BUILD_WRKSRC} |	\
-		${XARGS} ${REINPLACE_CMD} -e 's|"img/|"${EXAMPLESDIR}/img/|g'
 	${REINPLACE_CMD} -e 's|make|${GMAKE}|' ${BUILD_WRKSRC}/Makefile
 .else
 	${REINPLACE_CMD} -e 's|^OPTFLAGS|#OPTFLAGS|' ${BUILD_WRKSRC}/Makefile
 .endif
+. if !defined(WITHOUT_FFMPEG)
+	${REINPLACE_CMD} -e 's|#.*$$(CIMG_FFMPEG_FLAGS)|	$$(CIMG_FFMPEG_FLAGS)|'	\
+		${BUILD_WRKSRC}/Makefile
+. endif
+. if !defined(WITHOUT_LAPACK)
+	${REINPLACE_CMD} -e 's|#.*$$(CIMG_LAPACK_FLAGS)|	$$(CIMG_LAPACK_FLAGS)|'	\
+		${BUILD_WRKSRC}/Makefile
+. endif
 
 .if !defined(NOPORTDOCS)
 post-build:
