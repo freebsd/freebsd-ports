@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.1.1-alpha
+DISTVERSION=	0.2.1.2-alpha
 CATEGORIES=	security net
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -29,6 +29,7 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
 		CELLPOOL "memory pool allocator for cells" on \
 		GEOIP "track country data" off \
+		INSTR_DOWNLOADS "instrument downloads for analysis" off \
 		TCMALLOC "use the tcmalloc memory allocation library" off \
 		THREADS "multi-threading support" on \
 		TRANSPARENT "transparent proxy support" on \
@@ -60,6 +61,12 @@ CONFIGURE_ARGS+=	--disable-cell-pool
 CONFIGURE_ARGS+=	--enable-geoip-stats
 .else
 CONFIGURE_ARGS+=	--disable-geoip-stats
+.endif
+
+.if defined(WITH_INSTR_DOWNLOADS)
+CONFIGURE_ARGS+=	--enable-instrument-downloads
+.else
+CONFIGURE_ARGS+=	--disable-instrument-downloads
 .endif
 
 .if defined(WITH_TCMALLOC)
@@ -113,7 +120,7 @@ post-install:
 	${CHOWN} _tor:_tor /var/db/tor
 	${CAT} ${PKGMESSAGE}
 
-check:
+regression-test:
 	@( cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
 	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check )
 
