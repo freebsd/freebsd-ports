@@ -3,18 +3,18 @@ include/ical.h
 lib/claws-mail/plugins/vcalendar.a
 lib/claws-mail/plugins/vcalendar.la
 lib/claws-mail/plugins/vcalendar.so
-share/locale/ca/LC_MESSAGES/vcalendar.mo
-share/locale/de/LC_MESSAGES/vcalendar.mo
-share/locale/es/LC_MESSAGES/vcalendar.mo
-share/locale/fi/LC_MESSAGES/vcalendar.mo
-share/locale/fr/LC_MESSAGES/vcalendar.mo
-share/locale/hu/LC_MESSAGES/vcalendar.mo
-share/locale/it/LC_MESSAGES/vcalendar.mo
-share/locale/pl/LC_MESSAGES/vcalendar.mo
-share/locale/pt_BR/LC_MESSAGES/vcalendar.mo
-share/locale/sk/LC_MESSAGES/vcalendar.mo
-share/locale/sr/LC_MESSAGES/vcalendar.mo
-share/locale/zh_CN/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/de/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/es/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/it/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/vcalendar.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/vcalendar.mo
 @dirrmtry lib/claws-mail/plugins
 @dirrmtry lib/claws-mail
 @dirrmtry include/claws-mail/plugins/vcalendar
