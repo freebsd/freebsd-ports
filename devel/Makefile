@@ -2088,6 +2088,7 @@
     SUBDIR += py-lxml
     SUBDIR += py-magic
     SUBDIR += py-mez_xml
+    SUBDIR += py-mwlib
     SUBDIR += py-mx-experimental
     SUBDIR += py-myghtyutils
     SUBDIR += py-ncurses
