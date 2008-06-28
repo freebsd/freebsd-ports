@@ -7,7 +7,7 @@
 
 PORTNAME=	jasmin
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	java lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -28,12 +28,13 @@ SUB_FILES=	jasmin.sh
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/jasmin.jar ${JAVAJARDIR}
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples ; \
 	  ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/\{} \; ;\
 	  ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
+.endif
 	${INSTALL_SCRIPT} ${WRKDIR}/jasmin.sh ${PREFIX}/bin/jasmin
-
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCDIR}
 	cd ${WRKSRC}/docs ; \
