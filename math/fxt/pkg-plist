@@ -45,6 +45,7 @@ include/fxt/aux2/transpose.h
 include/fxt/aux2/transpose2.h
 include/fxt/bits-all.h
 include/fxt/bits/bin2naf.h
+include/fxt/bits/bit-isolate.h
 include/fxt/bits/bit-necklace.h
 include/fxt/bits/bit2adic.h
 include/fxt/bits/bit2pow.h
@@ -70,7 +71,6 @@ include/fxt/bits/bitgraypermute.h
 include/fxt/bits/bithigh.h
 include/fxt/bits/bitlex.h
 include/fxt/bits/bitlow.h
-include/fxt/bits/bitmisc.h
 include/fxt/bits/bitmrotate.h
 include/fxt/bits/bitperiodic.h
 include/fxt/bits/bitrotate.h
@@ -86,7 +86,6 @@ include/fxt/bits/bittest.h
 include/fxt/bits/bittransforms.h
 include/fxt/bits/bitxtransforms.h
 include/fxt/bits/bitzip.h
-include/fxt/bits/bitzip0.h
 include/fxt/bits/blue-fixed-points.h
 include/fxt/bits/branchless.h
 include/fxt/bits/colormix-fl.h
@@ -278,6 +277,7 @@ include/fxt/fft/shortfft.h
 include/fxt/fht-all.h
 include/fxt/fht/fht.h
 include/fxt/fht/fht2d.h
+include/fxt/fht/fhtcore.h
 include/fxt/fht/fhtloc2.h
 include/fxt/fht/hartleyshift.h
 include/fxt/fht/shortfhtdifcore.h
@@ -828,6 +828,7 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/butterfly-texpic-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/fft-arblen-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/fft-arblen-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/fht-bench.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/fib-haar-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/fib-haar-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/fib-walsh-demo.cc
@@ -842,6 +843,7 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/mers-walsh-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/walsh-basis-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/walsh-basis-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/walsh-bench.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/walsh-eigenvec-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/walsh-eigenvec-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/all-irredpoly-demo.cc
