@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e285a1f4-4568-11dd-ae96-0030843d3802">
+    <topic>phpmyadmin -- Cross Site Scripting Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><lt>2.11.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia report:</p>
+	<blockquote cite="http://secunia.com/advisories/30813/">
+	  <p>Some vulnerabilities have been reported in phpMyAdmin, which can be
+	    exploited by malicious people to conduct cross-site scripting
+	    attacks.</p>
+	  <p>Input passed via unspecified parameters to files in /libraries is not
+	    properly sanitised before being returned to the user. This can be
+	    exploited to execute arbitrary HTML and script code in a user's
+	    browser session in context of an affected site.</p>
+	  <p>Successful exploitation requires that "register_globals" is enabled
+	    and support for ".htaccess" files is disabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/30813/</url>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-4</url>
+    </references>
+    <dates>
+      <discovery>2008-06-23</discovery>
+      <entry>2008-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c84dc9ad-41f7-11dd-a4f9-00163e000016">
     <topic>apache -- multiple vulnerabilities</topic>
     <affects>
