@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sugarcrm
-PORTVERSION=	5.0.0e
+PORTVERSION=	5.0.0f
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://dl.sugarforge.org/sugarcrm/SugarCE5.0Latest/SugarCE5.0.0/
 DISTNAME=	SugarCE-${PORTVERSION}
