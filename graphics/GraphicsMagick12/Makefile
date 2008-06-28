@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.2.3
+PORTVERSION=	1.1.12
+PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/
@@ -19,12 +20,12 @@ LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
 		fpx.[2-9]:${PORTSDIR}/graphics/libfpx	\
 		jbig:${PORTSDIR}/graphics/jbigkit	\
 		wmflite:${PORTSDIR}/graphics/libwmf	\
-		xml2:${PORTSDIR}/textproc/libxml2	\
-		ltdl:${PORTSDIR}/devel/libltdl15
+		xml2:${PORTSDIR}/textproc/libxml2
 OTHERGRAPHICS=	jasper jpeg lcms png tiff
 LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
-OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off \
-		TESTS "Run bundled self-tests after build" on
+OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off
+
+OPTIONS+=	TESTS "Run bundled self-tests after build" on
 
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -46,9 +47,12 @@ WINDOWS_FONT_DIR=${LOCALBASE}/lib/X11/fonts/webfonts
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \
-		--without-threads --with-ltdl-include=${LOCALBASE}/include \
-		--with-ltdl-lib=${LOCALBASE}/lib
+		--without-threads
 USE_LDCONFIG=	yes
+
+.if defined(WITH_WINDOWS_FONT_DIR)
+CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
+.endif
 
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
@@ -63,9 +67,8 @@ test check:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_WINDOWS_FONT_DIR)
-CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
-.endif
+# Perl and Tcl APIs will be installed by separate ports
+PLIST_SUB+=	WITH_PERL="@comment "
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX+=	-nox11

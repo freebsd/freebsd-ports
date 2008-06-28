@@ -19,9 +19,9 @@ include/GraphicsMagick/magick/PreRvIcccm.h
 include/GraphicsMagick/magick/api.h
 include/GraphicsMagick/magick/attribute.h
 include/GraphicsMagick/magick/blob.h
-include/GraphicsMagick/magick/channel.h
+include/GraphicsMagick/magick/cache.h
+include/GraphicsMagick/magick/cache_view.h
 include/GraphicsMagick/magick/color.h
-include/GraphicsMagick/magick/colorspace.h
 include/GraphicsMagick/magick/command.h
 include/GraphicsMagick/magick/composite.h
 include/GraphicsMagick/magick/compress.h
@@ -33,7 +33,6 @@ include/GraphicsMagick/magick/draw.h
 include/GraphicsMagick/magick/effect.h
 include/GraphicsMagick/magick/enhance.h
 include/GraphicsMagick/magick/error.h
-include/GraphicsMagick/magick/forward.h
 include/GraphicsMagick/magick/fx.h
 include/GraphicsMagick/magick/gem.h
 include/GraphicsMagick/magick/image.h
@@ -43,13 +42,10 @@ include/GraphicsMagick/magick/magic.h
 include/GraphicsMagick/magick/magick.h
 include/GraphicsMagick/magick/magick_config.h
 include/GraphicsMagick/magick/magick_types.h
-include/GraphicsMagick/magick/memory.h
 include/GraphicsMagick/magick/module.h
 include/GraphicsMagick/magick/monitor.h
 include/GraphicsMagick/magick/montage.h
-include/GraphicsMagick/magick/operator.h
 include/GraphicsMagick/magick/paint.h
-include/GraphicsMagick/magick/pixel_cache.h
 include/GraphicsMagick/magick/profile.h
 include/GraphicsMagick/magick/quantize.h
 include/GraphicsMagick/magick/registry.h
@@ -58,6 +54,7 @@ include/GraphicsMagick/magick/resize.h
 include/GraphicsMagick/magick/resource.h
 include/GraphicsMagick/magick/shear.h
 include/GraphicsMagick/magick/signature.h
+include/GraphicsMagick/magick/stream.h
 include/GraphicsMagick/magick/symbols.h
 include/GraphicsMagick/magick/timer.h
 include/GraphicsMagick/magick/transform.h
@@ -69,55 +66,56 @@ include/GraphicsMagick/wand/drawing_wand.h
 include/GraphicsMagick/wand/magick_wand.h
 include/GraphicsMagick/wand/pixel_wand.h
 include/GraphicsMagick/wand/wand_api.h
-lib/GraphicsMagick/config/delegates.mgk
-lib/GraphicsMagick/config/type-ghostscript.mgk
-lib/GraphicsMagick/config/type-solaris.mgk
-lib/GraphicsMagick/config/type-windows.mgk
-lib/GraphicsMagick/config/type.mgk
-lib/libGraphicsMagick++.a
-lib/libGraphicsMagick++.la
-lib/libGraphicsMagick++.so
-lib/libGraphicsMagick++.so.2
-lib/libGraphicsMagick.a
-lib/libGraphicsMagick.la
-lib/libGraphicsMagick.so
-lib/libGraphicsMagick.so.2
-lib/libGraphicsMagickWand.a
-lib/libGraphicsMagickWand.la
-lib/libGraphicsMagickWand.so
-lib/libGraphicsMagickWand.so.1
-libdata/pkgconfig/GraphicsMagick++.pc
-libdata/pkgconfig/GraphicsMagick.pc
-libdata/pkgconfig/GraphicsMagickWand.pc
+%%DATADIR%%/Copyright.txt
 %%DATADIR%%/config/colors.mgk
+%%DATADIR%%/config/delegates.mgk
 %%DATADIR%%/config/log.mgk
 %%DATADIR%%/config/magic.mgk
 %%DATADIR%%/config/modules.mgk
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2001
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2002
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2003
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2004
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2005
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2006
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2007
-%%PORTDOCS%%%%DOCSDIR%%/Copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
+%%DATADIR%%/config/type-ghostscript.mgk
+%%DATADIR%%/config/type-solaris.mgk
+%%DATADIR%%/config/type-windows.mgk
+%%DATADIR%%/config/type.mgk
+lib/libGraphicsMagick++.a
+lib/libGraphicsMagick++.la
+lib/libGraphicsMagick++.so
+lib/libGraphicsMagick++.so.1
+lib/libGraphicsMagick.a
+lib/libGraphicsMagick.la
+lib/libGraphicsMagick.so
+lib/libGraphicsMagick.so.1
+lib/libGraphicsMagickWand.a
+lib/libGraphicsMagickWand.la
+lib/libGraphicsMagickWand.so
+lib/libGraphicsMagickWand.so.0
+libdata/pkgconfig/GraphicsMagick++.pc
+libdata/pkgconfig/GraphicsMagick.pc
+libdata/pkgconfig/GraphicsMagickWand.pc
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Graphics/Magick.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Magick/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Magick/Magick.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Magick/Magick.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Magick/autosplit.ix
+@comment lib/GraphicsMagick-%%PORTVERSION%%/modules-%%Q%%/coders
+@comment lib/GraphicsMagick-%%PORTVERSION%%/modules-%%Q%%/filters
 %%PORTDOCS%%%%DOCSDIR%%/images/ball.png
+%%PORTDOCS%%%%DOCSDIR%%/images/corbis.png
 %%PORTDOCS%%%%DOCSDIR%%/images/examples.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/gm-125x80t.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gm-188x120t.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gm-282x180t.png
+%%PORTDOCS%%%%DOCSDIR%%/images/home.png
+%%PORTDOCS%%%%DOCSDIR%%/images/mail.png
+%%PORTDOCS%%%%DOCSDIR%%/images/pdfsages.png
+%%PORTDOCS%%%%DOCSDIR%%/images/pngnow.png
 %%PORTDOCS%%%%DOCSDIR%%/images/right_triangle.png
 %%PORTDOCS%%%%DOCSDIR%%/images/right_triangle_option.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/www/AUTHORS.html
-%%PORTDOCS%%%%DOCSDIR%%/www/BENCHMARKS.html
-%%PORTDOCS%%%%DOCSDIR%%/www/BUGS.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/www/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/%%WWWDIR%%.html
+%%PORTDOCS%%%%DOCSDIR%%/www/GraphicsMagick.html
 %%PORTDOCS%%%%DOCSDIR%%/www/INSTALL-unix.html
 %%PORTDOCS%%%%DOCSDIR%%/www/INSTALL-windows.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ImageMagickObject.html
@@ -161,7 +159,6 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/thumbnail-sample-framed.jpg
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/thumbnail-sample-plain.jpg
 %%PORTDOCS%%%%DOCSDIR%%/www/NEWS.html
-%%PORTDOCS%%%%DOCSDIR%%/www/PLATFORMS.html
 %%PORTDOCS%%%%DOCSDIR%%/www/README.html
 %%PORTDOCS%%%%DOCSDIR%%/www/animate.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api.html
@@ -169,7 +166,8 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/annotate.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/attribute.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/blob.html
-%%PORTDOCS%%%%DOCSDIR%%/www/api/channel.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/cache.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/cache_view.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/color.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/composite.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/constitute.html
@@ -187,9 +185,7 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/memory.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/monitor.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/montage.html
-%%PORTDOCS%%%%DOCSDIR%%/www/api/operator.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/paint.html
-%%PORTDOCS%%%%DOCSDIR%%/www/api/pixel_cache.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/profile.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/registry.html
@@ -199,10 +195,12 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/segment.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/shear.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/signature.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/stream.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/transform.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/types.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/widget.html
 %%PORTDOCS%%%%DOCSDIR%%/www/body.html
+%%PORTDOCS%%%%DOCSDIR%%/www/books.html
 %%PORTDOCS%%%%DOCSDIR%%/www/color.html
 %%PORTDOCS%%%%DOCSDIR%%/www/composite.html
 %%PORTDOCS%%%%DOCSDIR%%/www/conjure.html
@@ -218,35 +216,31 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/identify.html
 %%PORTDOCS%%%%DOCSDIR%%/www/import.html
 %%PORTDOCS%%%%DOCSDIR%%/www/index.html
+%%PORTDOCS%%%%DOCSDIR%%/www/install.html
 %%PORTDOCS%%%%DOCSDIR%%/www/links.html
 %%PORTDOCS%%%%DOCSDIR%%/www/magick.css
 %%PORTDOCS%%%%DOCSDIR%%/www/miff.html
 %%PORTDOCS%%%%DOCSDIR%%/www/mission.html
 %%PORTDOCS%%%%DOCSDIR%%/www/mogrify.html
 %%PORTDOCS%%%%DOCSDIR%%/www/montage.html
-%%PORTDOCS%%%%DOCSDIR%%/www/motion-picture.html
 %%PORTDOCS%%%%DOCSDIR%%/www/perl.html
 %%PORTDOCS%%%%DOCSDIR%%/www/programming.html
 %%PORTDOCS%%%%DOCSDIR%%/www/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%/www/smile.c
 %%PORTDOCS%%%%DOCSDIR%%/www/tools.html
 %%PORTDOCS%%%%DOCSDIR%%/www/utilities.html
+%%PORTDOCS%%%%DOCSDIR%%/www/windows.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/Magick++
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/Magick
+%%WITH_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics
+%%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Graphics
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
-@dirrmtry libdata/pkgconfig
-@dirrm lib/GraphicsMagick/modules-Q16/filters
-@dirrm lib/GraphicsMagick/modules-Q16/coders
-@dirrm lib/GraphicsMagick/modules-Q16
-@dirrm lib/GraphicsMagick/config
-@dirrm lib/GraphicsMagick
 @dirrm include/GraphicsMagick/wand
 @dirrm include/GraphicsMagick/magick
 @dirrm include/GraphicsMagick/Magick++
 @dirrm include/GraphicsMagick
-@exec mkdir -p %D/lib/GraphicsMagick/modules-Q16/filters
-@exec mkdir -p %D/lib/GraphicsMagick/modules-Q16/coders
