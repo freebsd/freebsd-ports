@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openxpki-client-html-mason
-PORTVERSION=	0.9.1086
-PORTREVISION=	1
+PORTVERSION=	0.9.1263
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openxpki
@@ -34,19 +33,43 @@ PERL_CONFIGURE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/eg ${EXAMPLESDIR}/
-	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/bin ${DATADIR}/
-	@${CP} -R ${WRKSRC}/htdocs ${DATADIR}/
+	${MKDIR} ${DOCSDIR}
+	@${CP} -R ${WRKSRC}/htdocs ${DOCSDIR}/
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "================================ Information ==================================="
-	@${ECHO_MSG} "===> Examples of simple Mason configuration via httpd.conf directives installed in ${EXAMPLESDIR}."
-	@${ECHO_MSG} "===> CGI scripts and htdocs for ${DISTNAME} installed in ${DATADIR}."
-	@${ECHO_MSG} "================================================================================"
+	@${ECHO_MSG} "==================================================================="
+	@${ECHO_MSG} "===> Mason htdocs for ${DISTNAME}"
+	@${ECHO_MSG} "===> installed in ${DATADIR}"
+	@${ECHO_MSG} "==================================================================="
 	@${ECHO_MSG} ""
 .if !defined(BATCH)
-	@sleep 7
+	@sleep 3
+.endif
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	@${CP} -R ${WRKSRC}/eg ${EXAMPLESDIR}/
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "==================================================================="
+	@${ECHO_MSG} "===> Examples of simple Mason configuration via httpd.conf directives"
+	@${ECHO_MSG} "===> installed in ${EXAMPLESDIR}"
+	@${ECHO_MSG} "==================================================================="
+	@${ECHO_MSG} ""
+.if !defined(BATCH)
+	@sleep 3
+.endif
+.endif
+.if !defined(NOPORTDATA)
+	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
+	@${CP} -R ${WRKSRC}/bin ${DATADIR}/
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "==================================================================="
+	@${ECHO_MSG} "===> Examples of CGI scripts for ${DISTNAME}"
+	@${ECHO_MSG} "===> installed in ${DATADIR}"
+	@${ECHO_MSG} "==================================================================="
+	@${ECHO_MSG} ""
+.if !defined(BATCH)
+	@sleep 3
 .endif
 .endif
 
