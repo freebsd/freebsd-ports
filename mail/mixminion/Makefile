@@ -7,6 +7,7 @@
 
 PORTNAME=	Mixminion
 DISTVERSION=	0.0.8alpha2
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mixminion.net/dist/${DISTVERSION}/
 
@@ -23,6 +24,10 @@ MAN5=	mixminiond.conf.5 mixminionrc.5
 MAN8=	mixminiond.8
 
 PORTDOCS=	statusfd.txt tutorial.txt
+
+OPTIONS=	SERVER "Also install the server" on
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SERVER)
 USE_RC_SUBR+=	mixminiond
@@ -51,11 +56,11 @@ post-install:
 	@${CHMOD} 0700 /var/log/mixminion
 	@${CAT} ${PKGMESSAGE}
 .endif
-.if !defined(NOPORTDOC)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
