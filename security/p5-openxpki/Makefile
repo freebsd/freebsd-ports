@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openxpki
-PORTVERSION=	0.9.1084
-PORTREVISION=	1
+PORTVERSION=	0.9.1267
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,7 +37,11 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 	${SITE_PERL}/Sys/SigAction.pm:${PORTSDIR}/devel/p5-Sys-SigAction \
 	${SITE_PERL}/Data/Password.pm:${PORTSDIR}/security/p5-Data-Password \
-	${SITE_PERL}/RT/Client/REST.pm:${PORTSDIR}/www/p5-RT-Client-REST
+	${SITE_PERL}/RT/Client/REST.pm:${PORTSDIR}/www/p5-RT-Client-REST \
+	${SITE_PERL}/Data/Serializer.pm:${PORTSDIR}/devel/p5-Data-Serializer \
+	${SITE_PERL}/${PERL_ARCH}/IPC/ShareLite.pm:${PORTSDIR}/devel/p5-IPC-ShareLite \
+	${SITE_PERL}/DateTime/Format/DateParse.pm:${PORTSDIR}/devel/p5-DateTime-Format-DateParse \
+	${SITE_PERL}/IO/Prompt.pm:${PORTSDIR}/devel/p5-IO-Prompt
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	OpenXPKI.3 \
@@ -64,6 +67,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::create_pkcs12.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::create_random.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::get_pkcs8_keytype.3 \
+	OpenXPKI::Crypto::Backend::OpenSSL::Command::is_issuer.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::is_prime.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::issue_cert.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::issue_crl.3 \
@@ -127,6 +131,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Exception.3 \
 	OpenXPKI::FileUtils.3 \
 	OpenXPKI::LdapUtils.3 \
+	OpenXPKI::Serialization::Fast.3 \
 	OpenXPKI::Serialization::JSON.3 \
 	OpenXPKI::Serialization::Simple.3 \
 	OpenXPKI::Server.3 \
@@ -140,6 +145,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Authentication.3 \
 	OpenXPKI::Server::Authentication::Anonymous.3 \
 	OpenXPKI::Server::Authentication::ClientSSO.3 \
+	OpenXPKI::Server::Authentication::ClientX509.3 \
 	OpenXPKI::Server::Authentication::External.3 \
 	OpenXPKI::Server::Authentication::LDAP.3 \
 	OpenXPKI::Server::Authentication::Password.3 \
@@ -204,11 +210,11 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::SmartCard::WriteCertificateToInstall.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::Approve.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::CancelApprovals.3 \
-	OpenXPKI::Server::Workflow::Activity::Tools::CreateWorkflowInstance.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::DetermineIssuingCA.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::Export.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::ForkWorkflowInstance.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::Notification.3 \
+	OpenXPKI::Server::Workflow::Activity::Tools::NotifyParentWorkflow.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::SetErrorCode.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::SetSource.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::Sleep.3 \
@@ -219,6 +225,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Condition::CRLSigningCAsLeft.3 \
 	OpenXPKI::Server::Workflow::Condition::CertificateNotYetRevoked.3 \
 	OpenXPKI::Server::Workflow::Condition::CheckCertTestResult.3 \
+	OpenXPKI::Server::Workflow::Condition::CheckForkedWorkflowChildren.3 \
 	OpenXPKI::Server::Workflow::Condition::CorrectNumberOfValidCerts.3 \
 	OpenXPKI::Server::Workflow::Condition::CorrectTiming.3 \
 	OpenXPKI::Server::Workflow::Condition::InitialEnrollmentOrRenewal.3 \
@@ -241,6 +248,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Persister::DBI.3 \
 	OpenXPKI::Server::Workflow::Persister::DBI::SequenceId.3 \
 	OpenXPKI::Server::Workflow::Validator::ApprovalSignature.3 \
+	OpenXPKI::Server::Workflow::Validator::Bulk.3 \
 	OpenXPKI::Server::Workflow::Validator::CertProfile.3 \
 	OpenXPKI::Server::Workflow::Validator::CertRole.3 \
 	OpenXPKI::Server::Workflow::Validator::CertSubject.3 \
@@ -249,6 +257,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Validator::CertSubjectParts.3 \
 	OpenXPKI::Server::Workflow::Validator::Creator.3 \
 	OpenXPKI::Server::Workflow::Validator::InvalidityTime.3 \
+	OpenXPKI::Server::Workflow::Validator::KeyLength.3 \
 	OpenXPKI::Server::Workflow::Validator::KeyReuse.3 \
 	OpenXPKI::Server::Workflow::Validator::PKCS10.3 \
 	OpenXPKI::Server::Workflow::Validator::PasswordQuality.3 \
@@ -275,8 +284,9 @@ USE_OPENSSL=	yes
 WITH_OPENSSL_BETA=	yes
 PERL_CONFIGURE=	5.8.6+
 
-OPTIONS=	DEVELOPER	"Install development tools for OpenXPKI?" off
-# These tools include docbook, Java and Xorg libraries.
+OPTIONS=	DEVELOPER	"Install development tools for OpenXPKI?" off \
+		GRAPHVIZ	"With graphical visualization of workflows?" off
+# If DEVELOPER is checked, then docbook, Java and Xorg libraries are installed.
 # They are needed only if you plan to fetch development svn snapshot,
 # then edit XML prototypes for collection of OpenXPKI guides, and then
 # compile the collection into HTML or PDF forms.
@@ -290,6 +300,9 @@ RUN_DEPENDS+=	fop:${PORTSDIR}/textproc/fop \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/share/java/jai/lib/libmlib_jai.so:${PORTSDIR}/java/jai
+.endif
+.if defined(WITH_GRAPHVIZ)
+RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
 .endif
 
 post-install:
