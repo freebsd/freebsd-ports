@@ -640,6 +640,7 @@
     SUBDIR += splaytk
     SUBDIR += squash
     SUBDIR += squeezecenter
+    SUBDIR += squeezecenter-dynamicplaylist
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
     SUBDIR += streamtuner
