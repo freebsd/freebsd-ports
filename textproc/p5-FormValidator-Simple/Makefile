@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		FormValidator-Simple
-PORTVERSION=		0.22
+PORTVERSION=		0.23
 CATEGORIES=		textproc perl5
 MASTER_SITES=		CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/L/LY/LYOKATO
