@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openxpki-client-scep
-PORTVERSION=	0.9.957
-PORTREVISION=	1
+PORTVERSION=	0.9.1119
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openxpki
@@ -20,7 +19,8 @@ COMMENT=	Client for SCEP requests to openxpki server
 
 BUILD_DEPENDS=	\
 	${SITE_PERL}/Config/Std.pm:${PORTSDIR}/devel/p5-Config-Std \
-	${SITE_PERL}/OpenXPKI/Client.pm:${PORTSDIR}/security/p5-openxpki-client
+	${SITE_PERL}/OpenXPKI/Client.pm:${PORTSDIR}/security/p5-openxpki-client \
+	${SITE_PERL}/${PERL_ARCH}/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	OpenXPKI::Client::SCEP.3
