@@ -63,7 +63,7 @@ OPTIONS=	BFD	"Interface to GNU Binary Format description"	on \
 		ZVT	"Interface to Zed's Virtual Terminal"	on
 
 PORT_DBDIR?=	/var/db/ports
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
                 
 .if exists(${OPTIONSFILE})
