@@ -28,7 +28,7 @@ UIC=		${LOCALBASE}/bin/uic
 
 .include <bsd.port.pre.mk>
 
-post-extract:
+pre-configure:
 .for i in exportadvises framechooser themechooser themeeditor themeexporter
 	cd ${WRKSRC}/src && ${UIC} -o $i.h $i.ui
 .endfor
