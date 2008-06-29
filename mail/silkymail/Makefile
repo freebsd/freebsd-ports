@@ -18,6 +18,8 @@ EXTRACT_SUFX=   .tgz
 MAINTAINER=	voisine@yahoo.com
 COMMENT=	A webmail system which accesses mail over IMAP
 
+BROKEN=		doesn't fetch
+
 USE_PHP=	dba imap
 WANT_PHP_MOD=	YES
 
