@@ -5,190 +5,203 @@
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Javascript.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Menu.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason/.packlist
-%%EXAMPLESDIR%%/eg/openxpki-mason-cgi.conf
-%%EXAMPLESDIR%%/eg/openxpki-mason-mod_perl.conf
-%%DATADIR%%/bin/openxpki.cgi
-%%DATADIR%%/htdocs/Menu/Query/index.html
-%%DATADIR%%/htdocs/Renderer/Command/default.mhtml
-%%DATADIR%%/htdocs/Renderer/Service/GET_AUTHENTICATION_STACK.mhtml
-%%DATADIR%%/htdocs/Renderer/Service/default.mhtml
-%%DATADIR%%/htdocs/Request/index.html
-%%DATADIR%%/htdocs/authentication/auth_stack.mhtml
-%%DATADIR%%/htdocs/authentication/autohandler
-%%DATADIR%%/htdocs/authentication/close_form.mhtml
-%%DATADIR%%/htdocs/authentication/dhandler
-%%DATADIR%%/htdocs/authentication/login.mas
-%%DATADIR%%/htdocs/authentication/open_form.mhtml
-%%DATADIR%%/htdocs/authentication/passwd.mhtml
-%%DATADIR%%/htdocs/authentication/pki_realm.mhtml
-%%DATADIR%%/htdocs/authentication/role.mhtml
-%%DATADIR%%/htdocs/authentication/session.mhtml
-%%DATADIR%%/htdocs/authentication/shibboleth.mhtml
-%%DATADIR%%/htdocs/authentication/sso.mhtml
-%%DATADIR%%/htdocs/authentication/x509.mhtml
-%%DATADIR%%/htdocs/autohandler
-%%DATADIR%%/htdocs/binary/autohandler
-%%DATADIR%%/htdocs/binary/dhandler
-%%DATADIR%%/htdocs/binary/get_certificate.crt
-%%DATADIR%%/htdocs/binary/get_certificate.html
-%%DATADIR%%/htdocs/binary/get_chain.html
-%%DATADIR%%/htdocs/binary/get_crl.html
-%%DATADIR%%/htdocs/binary/get_privkey.html
-%%DATADIR%%/htdocs/binary/get_workflow_instance_info.html
-%%DATADIR%%/htdocs/css/openxpki.css
-%%DATADIR%%/htdocs/css/sinorcaish-print.css
-%%DATADIR%%/htdocs/css/sinorcaish-screen.css
-%%DATADIR%%/htdocs/favicon.ico
-%%DATADIR%%/htdocs/images/openxpki_logo.png
-%%DATADIR%%/htdocs/images/openxpki_sinorcaish.png
-%%DATADIR%%/htdocs/images/search.png
-%%DATADIR%%/htdocs/index.html
-%%DATADIR%%/htdocs/lib/debug.mhtml
-%%DATADIR%%/htdocs/lib/field_to_i18n.mhtml
-%%DATADIR%%/htdocs/lib/get_deep_error.mhtml
-%%DATADIR%%/htdocs/lib/get_menu.mhtml
-%%DATADIR%%/htdocs/lib/getsession.mhtml
-%%DATADIR%%/htdocs/lib/html/a.mhtml
-%%DATADIR%%/htdocs/lib/html/hidden.mhtml
-%%DATADIR%%/htdocs/lib/html/hidden_reqargs.mhtml
-%%DATADIR%%/htdocs/lib/html/input.mhtml
-%%DATADIR%%/htdocs/lib/html/safe.mhtml
-%%DATADIR%%/htdocs/lib/html/select.mhtml
-%%DATADIR%%/htdocs/lib/html/select_date.mhtml
-%%DATADIR%%/htdocs/lib/init_menu.mhtml
-%%DATADIR%%/htdocs/lib/javascript.mhtml
-%%DATADIR%%/htdocs/lib/language.mhtml
-%%DATADIR%%/htdocs/lib/paging.mhtml
-%%DATADIR%%/htdocs/lib/process_response.mhtml
-%%DATADIR%%/htdocs/lib/send_command_msg.mhtml
-%%DATADIR%%/htdocs/lib/send_service_msg.mhtml
-%%DATADIR%%/htdocs/lib/url.mhtml
-%%DATADIR%%/htdocs/service/api/ca_cert_info.html
-%%DATADIR%%/htdocs/service/api/cert_enroll_ie.html
-%%DATADIR%%/htdocs/service/api/cert_full_info.html
-%%DATADIR%%/htdocs/service/api/cert_info.html
-%%DATADIR%%/htdocs/service/api/cert_list.html
-%%DATADIR%%/htdocs/service/api/cert_search.html
-%%DATADIR%%/htdocs/service/api/chain_list.html
-%%DATADIR%%/htdocs/service/api/clear_secret.html
-%%DATADIR%%/htdocs/service/api/crl_list.html
-%%DATADIR%%/htdocs/service/api/dhandler
-%%DATADIR%%/htdocs/service/api/get_privkey_password.html
-%%DATADIR%%/htdocs/service/api/issuer_list.html
-%%DATADIR%%/htdocs/service/api/key_list.html
-%%DATADIR%%/htdocs/service/api/pki_realm_info.html
-%%DATADIR%%/htdocs/service/api/policy_list.html
-%%DATADIR%%/htdocs/service/api/set_secret.html
-%%DATADIR%%/htdocs/service/autohandler
-%%DATADIR%%/htdocs/service/close_form.mhtml
-%%DATADIR%%/htdocs/service/create_crr/error.mhtml
-%%DATADIR%%/htdocs/service/create_crr/form.html
-%%DATADIR%%/htdocs/service/create_crr/highlight_error.mhtml
-%%DATADIR%%/htdocs/service/create_crr/index.html
-%%DATADIR%%/htdocs/service/create_crr/search.mhtml
-%%DATADIR%%/htdocs/service/create_crr/success.mhtml
-%%DATADIR%%/htdocs/service/create_csr/create_workflow.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_ie_pkcs10.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_info.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_keygen.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_keyparameters.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_keytype.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_password.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_pkcs10.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_profile.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_role.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_spkac.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_subject.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_subject_alt_name.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_subject_style.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_workflow_type.mhtml
-%%DATADIR%%/htdocs/service/create_csr/index.html
-%%DATADIR%%/htdocs/service/create_csr/print_descriptions.mhtml
-%%DATADIR%%/htdocs/service/create_csr/print_errors.mhtml
-%%DATADIR%%/htdocs/service/create_csr/store_pkcs10.mhtml
-%%DATADIR%%/htdocs/service/create_csr/store_serverside.mhtml
-%%DATADIR%%/htdocs/service/dhandler
-%%DATADIR%%/htdocs/service/index.html
-%%DATADIR%%/htdocs/service/info/anonymous_menu.html
-%%DATADIR%%/htdocs/service/info/ca_info.html
-%%DATADIR%%/htdocs/service/info/ca_op_menu.html
-%%DATADIR%%/htdocs/service/info/dataexchange.html
-%%DATADIR%%/htdocs/service/info/dhandler
-%%DATADIR%%/htdocs/service/info/language.html
-%%DATADIR%%/htdocs/service/info/ra_op_menu.html
-%%DATADIR%%/htdocs/service/info/workflow.html
-%%DATADIR%%/htdocs/service/loginagain.html
-%%DATADIR%%/htdocs/service/logout.html
-%%DATADIR%%/htdocs/service/open_form.mhtml
-%%DATADIR%%/htdocs/service/send_form.mhtml
-%%DATADIR%%/htdocs/service/smartcard_personalization/failure.mhtml
-%%DATADIR%%/htdocs/service/smartcard_personalization/get_certificate_request.mhtml
-%%DATADIR%%/htdocs/service/smartcard_personalization/index.html
-%%DATADIR%%/htdocs/service/smartcard_personalization/install_certificate.mhtml
-%%DATADIR%%/htdocs/service/smartcard_personalization/print_errors.mhtml
-%%DATADIR%%/htdocs/service/smartcard_personalization/success.mhtml
-%%DATADIR%%/htdocs/service/smartcard_personalization/waiting_for_approval.mhtml
-%%DATADIR%%/htdocs/service/smartcard_personalization/waiting_for_issuance.mhtml
-%%DATADIR%%/htdocs/service/workflow/activity/approve_crr.html
-%%DATADIR%%/htdocs/service/workflow/activity/approve_csr.html
-%%DATADIR%%/htdocs/service/workflow/activity/cancel_crr_approval.html
-%%DATADIR%%/htdocs/service/workflow/activity/cancel_csr_approval.html
-%%DATADIR%%/htdocs/service/workflow/activity/change_crr_invalidity_time.html
-%%DATADIR%%/htdocs/service/workflow/activity/change_crr_reason.html
-%%DATADIR%%/htdocs/service/workflow/activity/change_csr_info.html
-%%DATADIR%%/htdocs/service/workflow/activity/change_csr_profile.html
-%%DATADIR%%/htdocs/service/workflow/activity/change_csr_role.html
-%%DATADIR%%/htdocs/service/workflow/activity/change_csr_subject.html
-%%DATADIR%%/htdocs/service/workflow/activity/change_csr_subject_alt_name.html
-%%DATADIR%%/htdocs/service/workflow/activity/change_csr_subject_style.html
-%%DATADIR%%/htdocs/service/workflow/activity/continue.html
-%%DATADIR%%/htdocs/service/workflow/activity/continue_issuance.html
-%%DATADIR%%/htdocs/service/workflow/activity/dhandler
-%%DATADIR%%/htdocs/service/workflow/activity/execute_csr.html
-%%DATADIR%%/htdocs/service/workflow/activity/export_csr.html
-%%DATADIR%%/htdocs/service/workflow/activity/fail_workflow.html
-%%DATADIR%%/htdocs/service/workflow/activity/persist_csr.html
-%%DATADIR%%/htdocs/service/workflow/activity/persist_csrs.html
-%%DATADIR%%/htdocs/service/workflow/activity/reject_crr.html
-%%DATADIR%%/htdocs/service/workflow/activity/reject_csr.html
-%%DATADIR%%/htdocs/service/workflow/activity/revoke_certificate.html
-%%DATADIR%%/htdocs/service/workflow/bulk_approval.html
-%%DATADIR%%/htdocs/service/workflow/create_instance.html
-%%DATADIR%%/htdocs/service/workflow/get_workflow_instance_info.html
-%%DATADIR%%/htdocs/service/workflow/link_to_cert_by_csr_id.mhtml
-%%DATADIR%%/htdocs/service/workflow/list_instances.html
-%%DATADIR%%/htdocs/service/workflow/list_types.html
-%%DATADIR%%/htdocs/service/workflow/search_instances.html
-%%DATADIR%%/htdocs/service/workflow/show_csr_brief.html
-%%DATADIR%%/htdocs/service/workflow/show_instance.html
-%%DATADIR%%/htdocs/service/workflow/show_pending_requests.html
-%%DATADIR%%/htdocs/service/workflow/start_data_exchange_export.html
-%%DATADIR%%/htdocs/syshandler
-@dirrmtry %%DATADIR%%/htdocs/service/workflow/activity
-@dirrmtry %%DATADIR%%/htdocs/service/workflow
-@dirrmtry %%DATADIR%%/htdocs/service/smartcard_personalization
-@dirrmtry %%DATADIR%%/htdocs/service/info
-@dirrmtry %%DATADIR%%/htdocs/service/create_csr
-@dirrmtry %%DATADIR%%/htdocs/service/create_crr
-@dirrmtry %%DATADIR%%/htdocs/service/api
-@dirrmtry %%DATADIR%%/htdocs/service
-@dirrmtry %%DATADIR%%/htdocs/lib/html
-@dirrmtry %%DATADIR%%/htdocs/lib
-@dirrmtry %%DATADIR%%/htdocs/images
-@dirrmtry %%DATADIR%%/htdocs/css
-@dirrmtry %%DATADIR%%/htdocs/binary
-@dirrmtry %%DATADIR%%/htdocs/authentication
-@dirrmtry %%DATADIR%%/htdocs/Request
-@dirrmtry %%DATADIR%%/htdocs/Renderer/Service
-@dirrmtry %%DATADIR%%/htdocs/Renderer/Command
-@dirrmtry %%DATADIR%%/htdocs/Renderer
-@dirrmtry %%DATADIR%%/htdocs/Menu/Query
-@dirrmtry %%DATADIR%%/htdocs/Menu
-@dirrmtry %%DATADIR%%/htdocs
-@dirrmtry %%DATADIR%%/bin
-@dirrmtry %%DATADIR%%
-@dirrmtry %%EXAMPLESDIR%%/eg
-@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg/openxpki-mason-cgi.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg/openxpki-mason-mod_perl.conf
+%%PORTDATA%%%%DATADIR%%/bin/openxpki.cgi
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/Menu/Query/index.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/Renderer/Command/default.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/Renderer/Service/GET_AUTHENTICATION_STACK.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/Renderer/Service/default.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/Request/index.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/auth_stack.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/autohandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/close_form.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/dhandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/login.mas
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/open_form.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/passwd.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/pki_realm.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/role.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/session.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/shibboleth.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/sso.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/x509.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/authentication/x509_webserver.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/autohandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/autohandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/dhandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/get_certificate.crt
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/get_certificate.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/get_chain.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/get_crl.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/get_privkey.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/binary/get_workflow_instance_info.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/openxpki.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/sinorcaish-print.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/sinorcaish-screen.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/favicon.ico
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/images/de.png
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/images/gb.png
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/images/openxpki_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/images/openxpki_sinorcaish.png
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/images/ru.png
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/images/search.png
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/debug.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/field_to_i18n.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/filename_for_cert.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/get_deep_error.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/get_menu.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/getsession.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/html/a.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/html/hidden.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/html/hidden_reqargs.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/html/input.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/html/safe.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/html/select.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/html/select_date.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/init_menu.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/javascript.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/language.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/paging.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/process_response.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/send_command_msg.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/send_service_msg.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/lib/url.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/ca_cert_info.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/cert_enroll_ie.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/cert_full_info.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/cert_info.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/cert_list.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/cert_search.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/certs_requested_by_user.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/chain_list.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/clear_secret.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/crl_list.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/dhandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/get_privkey_password.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/issuer_list.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/key_list.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/pki_realm_info.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/policy_list.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/set_secret.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/api/super_search.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/autohandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/close_form.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_crr/error.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_crr/form.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_crr/highlight_error.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_crr/index.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_crr/search.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_crr/success.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/bulk/create_workflows.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/bulk/get_pkcs10s.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/bulk/index.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/bulk/profile.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/create_workflow.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_ie_pkcs10.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_info.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_keygen.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_keyparameters.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_keytype.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_password.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_pkcs10.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_profile.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_role.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_spkac.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_subject.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_subject_alt_name.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_subject_style.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/get_workflow_type.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/index.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/print_descriptions.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/print_errors.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/show_receipt_confirmation.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/store_pkcs10.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/create_csr/store_serverside.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/dhandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/index.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/info/approval.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/info/dhandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/info/download.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/info/op_request.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/info/search.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/info/user_request.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/loginagain.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/logout.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/open_form.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/send_form.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/smartcard_personalization/failure.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/smartcard_personalization/get_certificate_request.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/smartcard_personalization/index.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/smartcard_personalization/install_certificate.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/smartcard_personalization/print_errors.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/smartcard_personalization/success.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/smartcard_personalization/waiting_for_approval.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/smartcard_personalization/waiting_for_issuance.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/approve_crr.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/approve_csr.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/autohandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/cancel_crr_approval.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/cancel_csr_approval.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_crr_invalidity_time.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_crr_reason.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_csr_info.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_csr_profile.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_csr_role.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_csr_subject.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_csr_subject_alt_name.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/change_csr_subject_style.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/continue.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/continue_issuance.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/dhandler
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/fail_workflow.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/persist_csr.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/persist_csrs.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/reject_crr.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/reject_csr.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/activity/revoke_certificate.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/bulk_approval.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/context_hash.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/create_instance.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/get_workflow_instance_info.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/link_to_cert_by_csr_id.mhtml
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/list_instances.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/list_types.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/search_instances.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/show_csr_brief.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/show_instance.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/show_pending_crrs.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/show_pending_requests.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/service/workflow/start_data_exchange_export.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/syshandler
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/workflow/activity
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/workflow
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/smartcard_personalization
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/info
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/create_csr/bulk
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/create_csr
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/create_crr
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service/api
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/service
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/lib/html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/lib
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/css
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/binary
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/authentication
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Request
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Renderer/Service
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Renderer/Command
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Renderer
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Menu/Query
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs/Menu
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/htdocs
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTDATA%%@dirrmtry %%DATADIR%%/bin
+%%PORTDATA%%@dirrmtry %%DATADIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/eg
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client
