@@ -1,0 +1,14 @@
+The SLgtk package binds the GIMP Toolkit, also known as Gtk,
+to the S-Lang scripting language. It provides an importable module
+which makes most of Gtk and its constituent libraries callable directly
+from S-Lang scripts.
+
+With SLgtk the S-Lang programmer now has access to a powerful,
+cross-platform widget set for creating sophisticated
+graphical user interfaces (GUIs). The package also includes bindings
+to GtkExtra, which are used in the vwhere visualization and filtering guilet,
+as well as a gdk-pixbuf loader for the FITS image file format
+widely used within astronomy, and an easy-to-use but powerful
+image compositing, display, and output tool.
+
+WWW: http://space.mit.edu/home/mnoble/slgtk/
