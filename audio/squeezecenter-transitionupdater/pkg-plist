@@ -1,0 +1,13 @@
+%%SLIMDIR%%/Plugins/TransitionUpdater/HTML/EN/plugins/TransitionUpdater/settings/basic.html
+%%SLIMDIR%%/Plugins/TransitionUpdater/Plugin.pm
+%%SLIMDIR%%/Plugins/TransitionUpdater/Settings.pm
+%%SLIMDIR%%/Plugins/TransitionUpdater/install.xml
+%%SLIMDIR%%/Plugins/TransitionUpdater/strings.txt
+@dirrm %%SLIMDIR%%/Plugins/TransitionUpdater/HTML/EN/plugins/TransitionUpdater/settings
+@dirrm %%SLIMDIR%%/Plugins/TransitionUpdater/HTML/EN/plugins/TransitionUpdater
+@dirrm %%SLIMDIR%%/Plugins/TransitionUpdater/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Plugins/TransitionUpdater/HTML/EN
+@dirrm %%SLIMDIR%%/Plugins/TransitionUpdater/HTML
+@dirrm %%SLIMDIR%%/Plugins/TransitionUpdater
+@dirrmtry %%SLIMDIR%%/Plugins
+@dirrmtry %%SLIMDIR%%
