@@ -58,7 +58,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
 .endif
 
 .if exists(${LOCALBASE}/include/mapi.h)
-IGNORE=	does not build with ${LOCALBASE}/include/mapi.h exists in system, run pkg_info -W ${LOCALBASE}/include/mapi.h to find the offending port and uninstall it, then install ${PORTNAME} and reinstall port
+IGNORE=	build fails when ${LOCALBASE}/include/mapi.h exists in system, run pkg_info -W ${LOCALBASE}/include/mapi.h to find the offending port and uninstall it, then install ${PORTNAME} and reinstall the port that installed mapi.h
 .endif
 
 post-extract:
