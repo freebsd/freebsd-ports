@@ -1,17 +1,17 @@
---- src/Makefile.orig	2007-12-21 21:40:21.000000000 +0300
-+++ src/Makefile	2008-01-19 06:22:47.000000000 +0300
+--- src/Makefile.orig	2008-05-03 20:17:49.000000000 +0400
++++ src/Makefile	2008-06-24 21:03:00.239785215 +0400
 @@ -1,10 +1,9 @@
 -CXXOPTFLAGS= -O3 -fomit-frame-pointer
 -INCLUDES= -Ishared -Iengine -Ifpsgame -Irpggame -Ienet/include -I/usr/X11R6/include `sdl-config --cflags`
--CXXFLAGS= -w -fsigned-char $(CXXOPTFLAGS) $(INCLUDES)
+-CXXFLAGS= -Wall -fsigned-char $(CXXOPTFLAGS) $(INCLUDES)
 +INCLUDES= -Ishared -Iengine -Ifpsgame -Irpggame -Ienet/include -I$(LOCALBASE)/include `$(SDL_CONFIG) --cflags`
 +CXXFLAGS+= -Wall -fsigned-char $(INCLUDES)
  
 -PLATFORM_PREFIX=native
 +PLATFORM_PREFIX=FreeBSD
  
--CLIENT_LIBS=-Lenet -lenet -L/usr/X11R6/lib `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU 
-+CLIENT_LIBS=-Lenet -lenet `$(SDL_CONFIG) --libs` -lSDL_image -lSDL_mixer -lz -L$(LOCALBASE)/lib -lGL -lGLU 
- CLIENT_OBJS= \
- 	shared/tools.o \
- 	shared/geom.o \
+-CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU 
++CLIENT_LIBS= -Lenet -lenet `$(SDL_CONFIG) --libs` -lSDL_image -lSDL_mixer -lz -L$(LOCALBASE)/lib -lGL -lGLU 
+ ifeq ($(shell uname -s),Linux)
+ CLIENT_LIBS+= -lrt
+ endif
