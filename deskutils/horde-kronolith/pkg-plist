@@ -83,6 +83,7 @@
 %%HORDIR%%/lib/Views/DeleteEvent.php
 %%HORDIR%%/lib/Views/EditEvent.php
 %%HORDIR%%/lib/Views/Event.php
+%%HORDIR%%/lib/Views/ExportEvent.php
 %%HORDIR%%/lib/Views/Month.php
 %%HORDIR%%/lib/Views/Week.php
 %%HORDIR%%/lib/Views/WorkWeek.php
@@ -132,6 +133,7 @@
 %%HORDIR%%/locale/sk_SK/LC_MESSAGES/kronolith.mo
 %%HORDIR%%/locale/sl_SI/LC_MESSAGES/kronolith.mo
 %%HORDIR%%/locale/sv_SE/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/tr_TR/LC_MESSAGES/kronolith.mo
 %%HORDIR%%/locale/tr_TR/help.xml
 %%HORDIR%%/locale/uk_UA/LC_MESSAGES/kronolith.mo
 %%HORDIR%%/locale/zh_CN/LC_MESSAGES/kronolith.mo
@@ -168,6 +170,7 @@
 %%HORDIR%%/po/sk_SK.po
 %%HORDIR%%/po/sl_SI.po
 %%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/tr_TR.po
 %%HORDIR%%/po/uk_UA.po
 %%HORDIR%%/po/zh_CN.po
 %%HORDIR%%/po/zh_TW.po
@@ -188,6 +191,7 @@
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2.sql
 %%HORDIR%%/scripts/upgrades/2006-08-20_fix_recur_int_fields.mysql.sql
+%%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/search.php
 %%HORDIR%%/templates/attendees/attendees.inc
 %%HORDIR%%/templates/calendar_info.php
@@ -315,7 +319,6 @@
 %%HORDIR%%/themes/tango-blue/graphics/alarm-000.png
 %%HORDIR%%/themes/tango-blue/graphics/alarm-fff.png
 %%HORDIR%%/themes/tango-blue/graphics/alarm.png
-%%HORDIR%%/themes/tango-blue/graphics/alarm_small.png
 %%HORDIR%%/themes/tango-blue/graphics/attendees.png
 %%HORDIR%%/themes/tango-blue/graphics/calendars.png
 %%HORDIR%%/themes/tango-blue/graphics/dayview.png
@@ -326,6 +329,7 @@
 %%HORDIR%%/themes/tango-blue/graphics/favicon.ico
 %%HORDIR%%/themes/tango-blue/graphics/goto.png
 %%HORDIR%%/themes/tango-blue/graphics/kronolith.png
+%%HORDIR%%/themes/tango-blue/graphics/loading.gif
 %%HORDIR%%/themes/tango-blue/graphics/minus.png
 %%HORDIR%%/themes/tango-blue/graphics/monthview.png
 %%HORDIR%%/themes/tango-blue/graphics/new.png
@@ -334,7 +338,6 @@
 %%HORDIR%%/themes/tango-blue/graphics/plus.png
 %%HORDIR%%/themes/tango-blue/graphics/recur-000.png
 %%HORDIR%%/themes/tango-blue/graphics/recur-fff.png
-%%HORDIR%%/themes/tango-blue/graphics/recur.png
 %%HORDIR%%/themes/tango-blue/graphics/search.png
 %%HORDIR%%/themes/tango-blue/graphics/today.png
 %%HORDIR%%/themes/tango-blue/graphics/unknown-background.png
@@ -387,6 +390,7 @@
 @dirrm %%HORDIR%%/locale/zh_CN
 @dirrm %%HORDIR%%/locale/uk_UA/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/uk_UA
+@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/tr_TR
 @dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/sv_SE
