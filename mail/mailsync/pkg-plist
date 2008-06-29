@@ -10,6 +10,6 @@ bin/mailsync
 %%PORTDOCS%%%%DOCSDIR%%/mail_open_close_flowchart.dia
 %%PORTDOCS%%%%DOCSDIR%%/mail_open_close_flowchart.svg
 %%PORTDOCS%%%%DOCSDIR%%/mail_open_close_flowchart2.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/mailsync
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mailsync
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

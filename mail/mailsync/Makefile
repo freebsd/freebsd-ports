@@ -7,10 +7,9 @@
 
 PORTNAME=	mailsync
 PORTVERSION=	5.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
@@ -38,7 +37,9 @@ do-install:
 		mail_open_close_flowchart.svg \
 		mail_open_close_flowchart2.svg ${DOCSDIR}
 .endif
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/mailsync ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
