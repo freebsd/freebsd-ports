@@ -7,7 +7,7 @@
 
 PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/ \
 		ftp://kucha.ru/pub/misc/oops/
@@ -33,11 +33,13 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-MAN8=		oops.8 oopsctl.8
 OOPSVAR=	/var/run/oops
 OOPSLOG=	/var/log/oops
+.if !defined(NO_INSTALL_MANPAGES)
+MAN8=		oops.8 oopsctl.8
+.endif
 
-USE_RC_SUBR=	YES
+USE_RC_SUBR=	oops
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
@@ -51,8 +53,9 @@ OPTIONS=	GIGABASE	"GigaBase storage" on \
 
 .if !defined(WITHOUT_GIGABASE)
 .if defined (WITH_DB4)
-BROKEN=	"Only one DB storage can be used (First)"
+BROKEN=	Only one DB storage can be used (First)
 .endif
+
 LIB_DEPENDS+=	gigabase_r.2:${PORTSDIR}/databases/gigabase
 CONFIGURE_ARGS+=	--without-DB
 .endif
@@ -62,7 +65,7 @@ CONFIGURE_ARGS+=	--without-DB
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 CONFIGURE_ARGS+=	--without-GB
 .else
-BROKEN=	"Only one DB storage can be used"
+BROKEN=	Only one DB storage can be used
 .endif
 .endif
 
@@ -84,15 +87,11 @@ CONFIGURE_ARGS+=	--with-regexp=pcre
 pre-configure:
 	@cd ${WRKSRC} && ${AUTOHEADER}
 
-post-build:
-	@${SED} -e 's=%%RC_SUBR%%=${RC_SUBR}=g;s=%%PREFIX%%=${PREFIX}=g' \
-		${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}.sh
-
 pre-install:
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NO_INSTALL_MANPAGES)
 	@${INSTALL_MAN} ${WRKSRC}/doc/oops.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/doc/oopsctl.8 ${PREFIX}/man/man8
 .endif
@@ -101,7 +100,7 @@ post-install:
 	@${CHOWN} oops ${OOPSVAR}
 	@${MKDIR} -m 750 ${OOPSLOG}
 	@${CHOWN} oops ${OOPSLOG}
-	${INSTALL_SCRIPT} ${WRKDIR}/oops.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/oops ${PREFIX}/etc/rc.d
 	@${CAT} ${PKGMESSAGE}
 
 post-clean:
