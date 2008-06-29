@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Action-RenderView
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,5 +21,8 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Catalyst::Action::RenderView.3
+
+post-extract:
+	@${PERL} -ne 'print unless /^test_requires/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
