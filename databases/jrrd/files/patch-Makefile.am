@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2008-06-25 15:15:08.000000000 +0000
++++ Makefile.am	2008-06-25 15:15:15.000000000 +0000
+@@ -26,7 +26,7 @@
+ 	cd $(classdir) && \
+ 	$(JAR) cvf ../$@ *
+ 
+-jardir=$(datadir)/java
++jardir=$(datadir)/java/classes
+ jar_DATA = jrrd.jar
+ 
+ deploy:
