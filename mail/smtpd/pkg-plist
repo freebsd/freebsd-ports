@@ -1,7 +1,7 @@
 sbin/smtpd
 sbin/smtpfwdd
-%%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @cwd %%SPOOLBASE%%
 etc/antirelay_check_rules.example
 etc/antispam_check_rules.example
