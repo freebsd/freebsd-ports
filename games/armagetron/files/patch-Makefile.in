@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2008-06-08 21:26:57.000000000 +0800
++++ Makefile.in	2008-06-08 21:27:08.000000000 +0800
+@@ -1130,7 +1130,7 @@
+ 
+ install-first:
+ #	uninstall previous version (if it exists), ignoring errors
+-	test -x $(uninstall_location) && $(uninstall_location) || true
++@USE_UNINSTALL_TRUE@	test -x $(uninstall_location) && $(uninstall_location) || true
+ 
+ distclean-local:
+ 	rm -f uninstall.sh batch/relocate.in universal_variable* extrapaths src/tUniversalVariables.h*
