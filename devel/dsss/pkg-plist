@@ -1,0 +1,53 @@
+bin/dsss
+bin/rebuild
+bin/rebuild_choosedc
+bin/rerun
+etc/dsss/list.list
+etc/rebuild/default
+etc/rebuild/dmd-posix
+etc/rebuild/dmd-posix-tango
+etc/rebuild/dmd-win
+etc/rebuild/dmd-win-tango
+etc/rebuild/gdc-posix
+etc/rebuild/gdc-posix-tango
+etc/rebuild/gdc-win
+etc/rebuild/gdc-win-tango
+etc/rebuild/native
+etc/rebuild/phobos
+etc/rebuild/tango
+include/d/hcf/env.d
+include/d/hcf/path.d
+include/d/hcf/process.d
+include/d/sss/build.d
+include/d/sss/clean.d
+include/d/sss/conf.d
+include/d/sss/genconfig.d
+include/d/sss/install.d
+include/d/sss/net.d
+include/d/sss/platform.d
+include/d/sss/stub.d
+include/d/sss/uninstall.d
+include/d/util/booltype.d
+include/d/util/fdt.d
+include/d/util/file2.d
+include/d/util/fileex.d
+include/d/util/linetoken.d
+include/d/util/pathex.d
+include/d/util/series.d
+include/d/util/str.d
+lib/dymoduleinit.d
+%%DATADIR%%/candydoc.tar.gz
+%%DATADIR%%/dsss_lib_test.d
+%%DATADIR%%/manifest/dsss.manifest
+%%DATADIR%%/sources/EMPTY
+share/rebuild/testtango.d
+@dirrm share/rebuild
+@dirrm %%DATADIR%%/sources
+@dirrm %%DATADIR%%/manifest
+@dirrm %%DATADIR%%
+@dirrm include/d/util
+@dirrm include/d/sss
+@dirrm include/d/hcf
+@dirrmtry include/d
+@dirrm etc/rebuild
+@dirrm etc/dsss

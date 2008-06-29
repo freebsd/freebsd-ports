@@ -1,0 +1,8 @@
+DSSS, the D Shared Software System, builds upon rebuild and intends
+to create a standardized system for building, installing, configuring,
+acquiring and using D software, licensed as Free and Open Source
+Software under the MIT license. One notable component of it is its
+net module, which provides an analogue to Perl's CPAN or Ruby's
+Gems for the D programming language.
+
+WWW: http://www.dsource.org/projects/dsss/
