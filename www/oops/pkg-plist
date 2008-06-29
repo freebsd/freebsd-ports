@@ -28,7 +28,6 @@ etc/oops/select.sql.sample
 etc/oops/tables/koi-alt.tab
 etc/oops/tables/koi-iso.tab
 etc/oops/tables/koi-win.tab
-etc/rc.d/oops.sh
 libexec/oops/accel.so
 libexec/oops/berkeley_db_api.so
 libexec/oops/custom_log.so
@@ -58,8 +57,8 @@ sbin/oopsctl
 @dirrmtry oops/logs
 @dirrmtry oops/storages
 @dirrmtry oops
-@unexec rmdir /var/log/oops 2>/dev/null || true
+@dirrmtry /var/log/oops
 @unexec rm -f /var/run/oops/oopsctl 2>/dev/null || true
 @unexec rm -f /var/run/oops/oops_statfile 2>/dev/null || true
 @unexec rm -f /var/run/oops/oops.pid 2>/dev/null || true
-@unexec rmdir /var/run/oops 2>/dev/null || true
+@dirrmtry /var/run/oops
