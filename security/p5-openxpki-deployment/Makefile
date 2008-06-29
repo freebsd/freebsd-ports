@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openxpki-deployment
-PORTVERSION=	0.9.1068
-PORTREVISION=	1
+PORTVERSION=	0.9.1268
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openxpki
@@ -20,8 +19,8 @@ COMMENT=	Perl based enterprise class trustcenter software for PKI
 BUILD_DEPENDS=	\
 	${SITE_PERL}/OpenXPKI/Client.pm:${PORTSDIR}/security/p5-openxpki-client \
 	${SITE_PERL}/Config/Std.pm:${PORTSDIR}/devel/p5-Config-Std \
-	${SITE_PERL}/IO/Prompt.pm:${PORTSDIR}/devel/p5-IO-Prompt \
-	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
+	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN1=	openxpki-configure.1 \
