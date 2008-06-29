@@ -1,0 +1,66 @@
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Default/html/images/dynamicplaylist_mixbutton.gif
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Default/plugins/DynamicPlayList/dynamicplaylistlink.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/html/images/dynamicplaylist_mixbutton.gif
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/dpcomponents.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/dynamicplaylist_list.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/dynamicplaylist_mixparameters.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/dynamicplaylistlink.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/html/images/dynamicplaylist.png
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/mixerlink65.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/settings/basic.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/settings/favourites.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/settings/filters.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/settings/playlists.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/settings/subpage_chooser.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Fishbone/html/images/dynamicplaylist_mixbutton.gif
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Nokia770/html/images/dynamicplaylist_mixbutton.gif
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/iPeng/plugins/DynamicPlayList/dpcomponents.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/iPeng/plugins/DynamicPlayList/dynamicplaylist_mixparameters.html
+%%SLIMDIR%%/Plugins/DynamicPlayList/HTML/iPeng/plugins/DynamicPlayList/html/images/dynamicplaylist.png
+%%SLIMDIR%%/Plugins/DynamicPlayList/LICENSE.txt
+%%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistalbum.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistartist.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistgenre.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistplaylist.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylisttrack.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/Mixes/dynamicplaylistyear.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/README.txt
+%%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql/dbcreate.sql
+%%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql/dbupgrade_skipped.sql
+%%SLIMDIR%%/Plugins/DynamicPlayList/iPengConfiguration/mix.ipeng.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/install.xml
+%%SLIMDIR%%/Plugins/DynamicPlayList/lib/Plugins-DynamicPlayList-Plugin.par
+%%SLIMDIR%%/Plugins/DynamicPlayList/strings.txt
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/lib
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/iPengConfiguration
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/SQL
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/Mixes
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/iPeng/plugins/DynamicPlayList/html/images
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/iPeng/plugins/DynamicPlayList/html
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/iPeng/plugins/DynamicPlayList
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/iPeng/plugins
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/iPeng
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Nokia770/html/images
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Nokia770/html
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Nokia770
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Fishbone/html/images
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Fishbone/html
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Fishbone
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/settings
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/html/images
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList/html
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins/DynamicPlayList
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/html/images
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN/html
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/EN
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Default/plugins/DynamicPlayList
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Default/plugins
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Default/html/images
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Default/html
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML/Default
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList/HTML
+@dirrm %%SLIMDIR%%/Plugins/DynamicPlayList
+@dirrmtry %%SLIMDIR%%/Plugins
+@dirrmtry %%SLIMDIR%%
