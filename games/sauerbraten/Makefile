@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sauerbraten
-PORTVERSION=	20071222
-PORTREVISION=	1
+PORTVERSION=	20080617
 CATEGORIES=	games
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}_2007_12_24_assassin_edition_linux
+DISTNAME=	${PORTNAME}_2008_06_17_ctf_edition_linux
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	First person shooter based on Cube
@@ -33,8 +32,6 @@ OPTIONS=	CLIENT "Build client" on \
 
 SUB_FILES=	sauer_client sauer_server pkg-message
 
-SAUDATDIR=	packages data
-
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_DEDICATED)
@@ -48,7 +45,7 @@ ALL_TARGET+=	client
 PLIST_SUB+=	CLIENT=""
 SAUER_BIN+=	client
 .else
-PLIST_SUB+=	CLIENT=""
+PLIST_SUB+=	CLIENT="@comment "
 .endif
 
 .if !defined(WITHOUT_DEDICATED)
@@ -56,7 +53,7 @@ ALL_TARGET+=	server
 PLIST_SUB+=	DEDICATED=""
 SAUER_BIN+=	server
 .else
-PLIST_SUB+=	DEDICATED=""
+PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
 post-extract:
@@ -73,15 +70,10 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/sauer_${f} ${PREFIX}/libexec
 .endfor
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && \
-		${FIND} -E ${SAUDATDIR} -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-		${FIND} -E ${SAUDATDIR} -type f -iregex ".*\.(png|cfg|cgz|jpg|ogg|ogz|txt|mid|md2|md3|ms3d|qc|wav)" \
-			-exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "packages data" ${DATADIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/docs && \
-		${FIND} -E * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
-		${FIND} -E * -type f -iregex ".*\.(html|css|jpg)" -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 post-install:
