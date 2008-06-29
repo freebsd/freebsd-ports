@@ -1,0 +1,181 @@
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates/albumratings.template
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates/albumratings.xml
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates/artistratings.template
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates/artistratings.xml
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates/trackdata.template
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates/trackdata.xml
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates/trackratings.template
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates/trackratings.xml
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenus/albumheaderratings.xml
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenus/artistheaderratings.xml
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenus/trackdata.xml
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenus/trackheaderdata.xml
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenus/trackheaderratings.xml
+%%SLIMDIR%%/Plugins/TrackStat/ContextMenus/trackratings.xml
+%%SLIMDIR%%/Plugins/TrackStat/DataQueries/problems.xml
+%%SLIMDIR%%/Plugins/TrackStat/DataQueries/statistics.xml
+%%SLIMDIR%%/Plugins/TrackStat/DataQueryTemplates/problems.template
+%%SLIMDIR%%/Plugins/TrackStat/DataQueryTemplates/problems.xml
+%%SLIMDIR%%/Plugins/TrackStat/DataQueryTemplates/statistics.template
+%%SLIMDIR%%/Plugins/TrackStat/DataQueryTemplates/statistics.xml
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Classic/html/images/h_PLUGIN_TRACKSTAT.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Classic/plugins/TrackStat/trackstat.css
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Classic/plugins/TrackStat/trackstat10scale.css
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Default/html/images/trackstat_mixbutton.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/html/images/b_delete.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/html/images/b_down.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/html/images/b_up.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/html/images/empty.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/html/images/empty_noborder.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/html/images/star.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/html/images/star_noborder.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/index.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/trackstat.css
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/trackstat10scale.css
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/html/images/trackstat_mixbutton.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/controls.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/html/images/b_delete.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/html/images/b_down.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/html/images/b_up.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/html/images/empty.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/html/images/empty_noborder.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/html/images/star.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/html/images/star_noborder.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/html/images/trackstat.png
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/index.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/listitems.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/mixerlink65.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/settings/backup.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/settings/basic.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/settings/enabledstatistic.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/settings/favorites.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/settings/interface.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/settings/rating.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/settings/subpage_chooser.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/trackstat.css
+%%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/trackstat10scale.css
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/html/images/trackstat_mixbutton.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/controls.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/html/images/b_delete.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/html/images/b_down.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/html/images/b_up.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/html/images/empty.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/html/images/empty_noborder.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/html/images/star.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/html/images/star_noborder.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/trackstat.css
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/trackstat10scale.css
+%%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/html/images/trackstat_mixbutton.gif
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/browse.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/controls.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/html/images/dynamicplaylist.png
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/html/images/empty.png
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/html/images/star.png
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/html/images/star_noborder.png
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/html/images/trackstat.png
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/index.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/listitems.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/nowplaying.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/songinfo.html
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/trackstat.css
+%%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/trackstat10scale.css
+%%SLIMDIR%%/Plugins/TrackStat/LICENSE.txt
+%%SLIMDIR%%/Plugins/TrackStat/MenuTemplates/trackstat.template
+%%SLIMDIR%%/Plugins/TrackStat/MenuTemplates/trackstat.xml
+%%SLIMDIR%%/Plugins/TrackStat/Menus/trackstat.xml
+%%SLIMDIR%%/Plugins/TrackStat/Mixes/trackstatalbum.xml
+%%SLIMDIR%%/Plugins/TrackStat/Mixes/trackstatartist.xml
+%%SLIMDIR%%/Plugins/TrackStat/Mixes/trackstatgenre.xml
+%%SLIMDIR%%/Plugins/TrackStat/Mixes/trackstatplaylist.xml
+%%SLIMDIR%%/Plugins/TrackStat/Mixes/trackstatyear.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/mostplayed.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/mostplayed.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/mostplayedalbums.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/mostplayedalbums.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/mostplayedartists.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/mostplayedartists.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/notrated.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/notrated.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/recentlyadded.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/recentlyadded.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/recentlyaddedalbums.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/recentlyaddedalbums.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/toprated.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/toprated.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedalbums.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedalbums.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedartists.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedartists.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedgenres.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedgenres.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedplaylists.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedplaylists.xml
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedyears.template
+%%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedyears.xml
+%%SLIMDIR%%/Plugins/TrackStat/README.txt
+%%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbcreate.sql
+%%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbupgrade_added.sql
+%%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbupgrade_history.sql
+%%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbupgrade_musicbrainz.sql
+%%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbupgrade_url_type.sql
+%%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbupgrade_url_type255.sql
+%%SLIMDIR%%/Plugins/TrackStat/TrackStatiTunesUpdateWin.pl
+%%SLIMDIR%%/Plugins/TrackStat/iPengConfiguration/trackstat.ipeng.xml
+%%SLIMDIR%%/Plugins/TrackStat/install.xml
+%%SLIMDIR%%/Plugins/TrackStat/lib/Plugins-TrackStat-Plugin.par
+%%SLIMDIR%%/Plugins/TrackStat/strings.txt
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/lib
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/iPengConfiguration
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/SQL/mysql
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/SQL
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/Mixes
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/Menus
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/MenuTemplates
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/html/images
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat/html
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins/TrackStat
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng/plugins
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/iPeng
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/plugins/TrackStat/html/images
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/plugins/TrackStat/html
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/plugins/TrackStat
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/plugins
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/html/images
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770/html
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Nokia770
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/html/images
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat/html
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins/TrackStat
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/plugins
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/html/images
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone/html
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Fishbone
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/settings
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/html/images
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat/html
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins/TrackStat
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/EN/html/images
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/EN/html
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/EN
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/html/images
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat/html
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins/TrackStat
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Default/plugins
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Default/html/images
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Default/html
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Default
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Classic/plugins/TrackStat
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Classic/plugins
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Classic/html/images
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Classic/html
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML/Classic
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/HTML
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/DataQueryTemplates
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/DataQueries
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/ContextMenus
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/ContextMenuTemplates
+@dirrm %%SLIMDIR%%/Plugins/TrackStat
+@dirrmtry %%SLIMDIR%%/Plugins
+@dirrmtry %%SLIMDIR%%
