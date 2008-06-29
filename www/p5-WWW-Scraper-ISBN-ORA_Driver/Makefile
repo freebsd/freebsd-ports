@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Scraper-ISBN-ORA_Driver
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Search driver for O'Reilly & Associates's online catalog
 
-RUN_DEPENDS=	${SITE_PERL}/WWW/Scraper/ISBN.pm:${PORTSDIR}/www/p5-WWW-Scraper-ISBN \
-		${SITE_PERL}/WWW/Scraper/ISBN/Record.pm:${PORTSDIR}/www/p5-WWW-Scraper-ISBN-Record \
-		${SITE_PERL}/WWW/Scraper/ISBN/Driver.pm:${PORTSDIR}/www/p5-WWW-Scraper-ISBN-Driver \
-		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
-		${SITE_PERL}/Template/Extract.pm:${PORTSDIR}/textproc/p5-Template-Extract
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-WWW-Scraper-ISBN>=0.25:${PORTSDIR}/www/p5-WWW-Scraper-ISBN
+RUN_DEPENDS=	p5-Template-Extract>=0:${PORTSDIR}/textproc/p5-Template-Extract \
+		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
+		p5-WWW-Scraper-ISBN-Driver>=0.18:${PORTSDIR}/www/p5-WWW-Scraper-ISBN-Driver
 
 PERL_CONFIGURE=	yes
 
