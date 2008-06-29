@@ -7,6 +7,7 @@
 
 PORTNAME=	mailfmt
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tundraware.com/Software/mailfmt/
 
