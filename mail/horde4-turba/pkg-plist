@@ -4,6 +4,7 @@
 %%HORDIR%%/addressbooks/edit.php
 %%HORDIR%%/addressbooks/index.php
 %%HORDIR%%/browse.php
+%%HORDIR%%/bug5476.phpt
 %%HORDIR%%/config/.htaccess
 %%HORDIR%%/config/attributes.php.dist
 %%HORDIR%%/config/conf.xml
@@ -20,12 +21,14 @@
 %%HORDIR%%/index.php
 %%HORDIR%%/js/QuickFinder.js
 %%HORDIR%%/js/contact_tabs.js
+%%HORDIR%%/js/dragdrop.js
 %%HORDIR%%/js/effects.js
 %%HORDIR%%/js/prototype.js
 %%HORDIR%%/js/redbox.js
 %%HORDIR%%/js/scriptaculous.js
 %%HORDIR%%/js/src/QuickFinder.js
 %%HORDIR%%/js/src/contact_tabs.js
+%%HORDIR%%/js/src/dragdrop.js
 %%HORDIR%%/js/src/effects.js
 %%HORDIR%%/js/src/prototype.js
 %%HORDIR%%/js/src/redbox.js
@@ -76,6 +79,7 @@
 %%HORDIR%%/lib/tests/ListViewTest.php
 %%HORDIR%%/lib/tests/TestBase.php
 %%HORDIR%%/lib/tests/ViewBrowseTest.php
+%%HORDIR%%/lib/tests/bug_6518.phpt
 %%HORDIR%%/lib/tests/import.ldif
 %%HORDIR%%/lib/tests/importCRLF.ldif
 %%HORDIR%%/lib/tests/ldif_exportFile.phpt
@@ -186,12 +190,16 @@
 %%HORDIR%%/scripts/sql/turba.pgsql.sql
 %%HORDIR%%/scripts/sql/turba.sql
 %%HORDIR%%/scripts/sql/turba.xml
-%%HORDIR%%/scripts/sql/turba_weddingguests.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_1.2.sql
 %%HORDIR%%/scripts/upgrades/1.2_to_2.0.oci8.sql
 %%HORDIR%%/scripts/upgrades/1.2_to_2.0.sql
+%%HORDIR%%/scripts/upgrades/2.1_to_2.2_add_sql_share_tables.mssql.sql
+%%HORDIR%%/scripts/upgrades/2.1_to_2.2_add_sql_share_tables.oci8.sql
+%%HORDIR%%/scripts/upgrades/2.1_to_2.2_add_sql_share_tables.pgsql.sql
+%%HORDIR%%/scripts/upgrades/2.1_to_2.2_add_sql_share_tables.sql
 %%HORDIR%%/scripts/upgrades/2.1_to_2.2_sql_schema.php
 %%HORDIR%%/scripts/upgrades/2007-06-17_flatten_shares.php
+%%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/scripts/upgrades/create_default_histories.php
 %%HORDIR%%/scripts/upgrades/public_to_horde_share.php
 %%HORDIR%%/search.php
@@ -234,6 +242,7 @@
 %%HORDIR%%/themes/graphics/za_secondary.png
 %%HORDIR%%/themes/ideas/screen.css
 %%HORDIR%%/themes/screen.css
+%%HORDIR%%/themes/silver/graphics/az.png
 %%HORDIR%%/themes/silver/graphics/az_secondary.png
 %%HORDIR%%/themes/silver/graphics/contact.png
 %%HORDIR%%/themes/silver/graphics/favicon.ico
@@ -242,7 +251,9 @@
 %%HORDIR%%/themes/silver/graphics/menu/new.png
 %%HORDIR%%/themes/silver/graphics/new.png
 %%HORDIR%%/themes/silver/graphics/turba.png
+%%HORDIR%%/themes/silver/graphics/za.png
 %%HORDIR%%/themes/silver/graphics/za_secondary.png
+%%HORDIR%%/themes/silver/screen.css
 %%HORDIR%%/themes/silver/themed_graphics
 %%HORDIR%%/themes/tango-blue/graphics/az_secondary.png
 %%HORDIR%%/themes/tango-blue/graphics/contact.png
