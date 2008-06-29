@@ -7,9 +7,9 @@
 
 PORTNAME=	gqview
 PORTVERSION=	2.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITES=	SFE
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	lme@FreeBSD.org
@@ -34,10 +34,6 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	README html
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$prefix/share/doc/gqview-$$VERSION|${DOCSDIR}|g' \
 		${WRKSRC}/configure
@@ -46,6 +42,9 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's| -r %F||' \
 		${WRKSRC}/gqview.desktop
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|doc$$||' ${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gqview.desktop ${PREFIX}/share/gnome/apps/Graphics
