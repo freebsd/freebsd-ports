@@ -3517,3 +3517,4 @@ security/barnyard-sguil6|security/barnyard-sguil|2008-06-22|Moved to security/ba
 java/bsh|lang/bsh|2008-06-22|Moved to lang/bsh
 www/mod_security2|www/mod_security21|2008-06-22|Moved to www/mod_security2.
 security/gnutls-devel||2008-06-23|Removed
+security/ca-roots||2008-06-29|No longer supported by FreeBSD Security Officer

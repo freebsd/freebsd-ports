@@ -1,5 +1,0 @@
-@exec mkdir -p %D/share/certs
-share/certs/ca-root.crt
-@exec ln -s %D/share/certs/ca-root.crt /etc/ssl/cert.pem
-@unexec [ -L /etc/ssl/cert.pem ] && rm -f /etc/ssl/cert.pem
-@unexec rmdir %D/share/certs
