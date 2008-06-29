@@ -8,6 +8,7 @@ include/spserver/sphttpmsg.hpp
 include/spserver/spiochannel.hpp
 include/spserver/spiocpdispatcher.hpp
 include/spserver/spiocpevent.hpp
+include/spserver/spiocplfserver.hpp
 include/spserver/spiocpserver.hpp
 include/spserver/spioutils.hpp
 include/spserver/splfserver.hpp

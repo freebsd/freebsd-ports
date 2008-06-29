@@ -1,26 +1,13 @@
---- spserver/Makefile.orig	Wed Aug 22 22:04:05 2007
-+++ spserver/Makefile	Fri Aug 24 15:37:38 2007
-@@ -3,19 +3,15 @@
- 
- CC = gcc
- AR = ar cru
--CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
-+LIBEVENT_INCL = -I%PREFIX%/include
-+LIBEVENT_LIB  = -L%PREFIX%/lib -levent
-+CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC $(LIBEVENT_INCL)
- SOFLAGS = -shared
--LDFLAGS = -lstdc++ -lpthread -lresolv
-+LDFLAGS = -lstdc++ -lpthread $(LIBEVENT_LIB)
- 
- LINKER = $(CC)
+--- spserver/Makefile.orig	2008-06-27 23:18:18.000000000 +0800
++++ spserver/Makefile	2008-06-28 07:05:46.000000000 +0800
+@@ -11,8 +11,8 @@
  LINT = lint -c
  RM = /bin/rm -f
--
+ 
 -LIBEVENT_INCL = -I$(HOME)/libevent/
 -LIBEVENT_LIB  = -L$(HOME)/libevent -levent
--
--CFLAGS  += $(LIBEVENT_INCL)
--LDFLAGS += $(LIBEVENT_LIB)
++LIBEVENT_INCL = -I%PREFIX%/include
++LIBEVENT_LIB  = -L%PREFIX%/lib -levent
  
- #--------------------------------------------------------------------
- 
+ CFLAGS  += $(LIBEVENT_INCL)
+ LDFLAGS += $(LIBEVENT_LIB)
