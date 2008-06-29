@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sub-Exporter
-PORTVERSION=	0.978
+PORTVERSION=	0.979
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A sophisticated exporter for custom-built routines
 
-BUILD_DEPENDS=	p5-Sub-Install>=0.92:${PORTSDIR}/devel/p5-Sub-Install \
+RUN_DEPENDS=	p5-Sub-Install>=0.92:${PORTSDIR}/devel/p5-Sub-Install \
 		p5-Data-OptList>=0.100:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-Params-Util>=0.14:${PORTSDIR}/devel/p5-Params-Util
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
