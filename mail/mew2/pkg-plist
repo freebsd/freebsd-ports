@@ -3,23 +3,23 @@ bin/mewcat
 bin/mewdecode
 bin/mewencode
 bin/mewls
-share/doc/mew%%MEW_MAJOR_VER%%/00api
-share/doc/mew%%MEW_MAJOR_VER%%/00changes
-share/doc/mew%%MEW_MAJOR_VER%%/00copyright
-share/doc/mew%%MEW_MAJOR_VER%%/00copyright.jis
-share/doc/mew%%MEW_MAJOR_VER%%/00diff
-share/doc/mew%%MEW_MAJOR_VER%%/00readme
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/00readme
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/00readme-namazu.jis
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-browse.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-caesar.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-fancy-summary.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-gnus.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-nmz-fixer.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-nmz.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-refile-view.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-smime-ja.texi
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/00api
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/00changes
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/00copyright
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/00copyright.jis
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/00diff
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/00readme
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/contrib/00readme
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/contrib/00readme-namazu.jis
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-browse.el
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-caesar.el
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-fancy-summary.el
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-gnus.el
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-nmz-fixer.el
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-nmz.el
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-refile-view.el
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-smime-ja.texi
+%%PORTDOCS%%share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.img
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.png
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.xbm
@@ -161,5 +161,5 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
 @dirrm %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/etc
 @dirrm %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%
 @dirrmtry %%EMACS_LIBDIR%%/etc
-@dirrm share/doc/mew%%MEW_MAJOR_VER%%/contrib
-@dirrm share/doc/mew%%MEW_MAJOR_VER%%
+%%PORTDOCS%%@dirrm share/doc/mew%%MEW_MAJOR_VER%%/contrib
+%%PORTDOCS%%@dirrm share/doc/mew%%MEW_MAJOR_VER%%
