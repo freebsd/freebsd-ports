@@ -3,27 +3,27 @@ bin/mewcat
 bin/mewdecode
 bin/mewencode
 bin/mewls
-%%DOCSDIR%%/00api
-%%DOCSDIR%%/00changes
-%%DOCSDIR%%/00changes.0
-%%DOCSDIR%%/00changes.1
-%%DOCSDIR%%/00changes.2
-%%DOCSDIR%%/00copyright
-%%DOCSDIR%%/00copyright.jis
-%%DOCSDIR%%/00diff
-%%DOCSDIR%%/00readme
-%%DOCSDIR%%/00roadmap
-%%DOCSDIR%%/contrib/00readme
-%%DOCSDIR%%/contrib/00readme-namazu.jis
-%%DOCSDIR%%/contrib/mew-browse.el
-%%DOCSDIR%%/contrib/mew-caesar.el
-%%DOCSDIR%%/contrib/mew-edebug.el
-%%DOCSDIR%%/contrib/mew-fancy-summary.el
-%%DOCSDIR%%/contrib/mew-nmz-fixer.el
-%%DOCSDIR%%/contrib/mew-nmz.el
-%%DOCSDIR%%/contrib/mew-refile-view.el
-%%DOCSDIR%%/contrib/mew-smime-ja.texi
-%%DOCSDIR%%/contrib/mew-toolbar-frame.el
+%%PORTDOCS%%%%DOCSDIR%%/00api
+%%PORTDOCS%%%%DOCSDIR%%/00changes
+%%PORTDOCS%%%%DOCSDIR%%/00changes.0
+%%PORTDOCS%%%%DOCSDIR%%/00changes.1
+%%PORTDOCS%%%%DOCSDIR%%/00changes.2
+%%PORTDOCS%%%%DOCSDIR%%/00copyright
+%%PORTDOCS%%%%DOCSDIR%%/00copyright.jis
+%%PORTDOCS%%%%DOCSDIR%%/00diff
+%%PORTDOCS%%%%DOCSDIR%%/00readme
+%%PORTDOCS%%%%DOCSDIR%%/00roadmap
+%%PORTDOCS%%%%DOCSDIR%%/contrib/00readme
+%%PORTDOCS%%%%DOCSDIR%%/contrib/00readme-namazu.jis
+%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-browse.el
+%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-caesar.el
+%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-edebug.el
+%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-fancy-summary.el
+%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-nmz-fixer.el
+%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-nmz.el
+%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-refile-view.el
+%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-smime-ja.texi
+%%PORTDOCS%%%%DOCSDIR%%/contrib/mew-toolbar-frame.el
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.img
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.png
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.xbm
@@ -186,5 +186,5 @@ bin/mewls
 @dirrm %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/etc
 @dirrm %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%
 @dirrmtry %%EMACS_LIBDIR%%/etc
-@dirrm %%DOCSDIR%%/contrib
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
