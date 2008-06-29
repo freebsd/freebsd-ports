@@ -22,6 +22,10 @@ NO_BUILD=	yes
 
 PORTDOCS=	*
 
+.ifdef(NOPORTDOCS)
+IGNORE=		installs only documentation and you have NOPORTDOCS defined
+.endif
+
 do-install:
 	@${MKDIR} ${DOCSDIR}/html/libref
 	cd ${WRKDIR}/htmlman/libref && ${INSTALL_DATA} * ${DOCSDIR}/html/libref
