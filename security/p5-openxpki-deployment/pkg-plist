@@ -34,7 +34,6 @@ share/openxpki/templates/default/workflow_def_certificate_issuance.xml
 share/openxpki/templates/default/workflow_def_certificate_ldap_publishing.xml
 share/openxpki/templates/default/workflow_def_certificate_revocation_request.xml
 share/openxpki/templates/default/workflow_def_certificate_signing_request.xml
-share/openxpki/templates/default/workflow_def_certificate_signing_request_dataonly.xml
 share/openxpki/templates/default/workflow_def_crl_issuance.xml
 share/openxpki/templates/default/workflow_def_scep_request.xml
 share/openxpki/templates/default/workflow_def_smartcard_personalization.xml
@@ -60,7 +59,6 @@ share/openxpki/templates/quickstart/workflow_condition.xml
 share/openxpki/templates/quickstart/workflow_def_certificate_issuance.xml
 share/openxpki/templates/quickstart/workflow_def_certificate_revocation_request.xml
 share/openxpki/templates/quickstart/workflow_def_certificate_signing_request.xml
-share/openxpki/templates/quickstart/workflow_def_certificate_signing_request_dataonly.xml
 share/openxpki/templates/quickstart/workflow_def_crl_issuance.xml
 share/openxpki/templates/quickstart/workflow_validator_certificate_revocation_request.xml
 share/openxpki/templates/quickstart/workflow_validator_certificate_signing_request.xml
