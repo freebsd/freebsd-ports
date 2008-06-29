@@ -1,0 +1,16 @@
+%%SLIMDIR%%/Plugins/LazySearch2/HTML/EN/plugins/LazySearch2/settings/basic.html
+%%SLIMDIR%%/Plugins/LazySearch2/HTML/EN/plugins/LazySearch2/settings/logo.jpg
+%%SLIMDIR%%/Plugins/LazySearch2/INSTALL
+%%SLIMDIR%%/Plugins/LazySearch2/LICENSE
+%%SLIMDIR%%/Plugins/LazySearch2/Plugin.pm
+%%SLIMDIR%%/Plugins/LazySearch2/Settings.pm
+%%SLIMDIR%%/Plugins/LazySearch2/install.xml
+%%SLIMDIR%%/Plugins/LazySearch2/strings.txt
+@dirrm %%SLIMDIR%%/Plugins/LazySearch2/HTML/EN/plugins/LazySearch2/settings
+@dirrm %%SLIMDIR%%/Plugins/LazySearch2/HTML/EN/plugins/LazySearch2
+@dirrm %%SLIMDIR%%/Plugins/LazySearch2/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Plugins/LazySearch2/HTML/EN
+@dirrm %%SLIMDIR%%/Plugins/LazySearch2/HTML
+@dirrm %%SLIMDIR%%/Plugins/LazySearch2
+@dirrmtry %%SLIMDIR%%/Plugins
+@dirrmtry %%SLIMDIR%%
