@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aws
-PORTVERSION=	0.1.0
+PORTVERSION=	0.3.3
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,6 +15,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	A Ruby interface to Amazon Web Services
+
+CONFLICTS=	ruby-amazon-[0-9]*
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
