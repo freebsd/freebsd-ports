@@ -4,3 +4,6 @@ SIZE (linux-ut/unreal.tournament_436-multilanguage.run) = 7492482
 MD5 (linux-ut/unreal.tournament.official.bonus.pack.collection.run) = 82e71a81de1eaf4e09648372c0ca7289
 SHA256 (linux-ut/unreal.tournament.official.bonus.pack.collection.run) = b4ac49ab1df2bd9644d05e0dfe6a67effbaeab739b6073c98220872eb9eec464
 SIZE (linux-ut/unreal.tournament.official.bonus.pack.collection.run) = 37213789
+MD5 (linux-ut/UTPGPatch451.tar.bz2) = 77a735a78b1eb819042338859900b83b
+SHA256 (linux-ut/UTPGPatch451.tar.bz2) = 31a07fb289841ceba36ca707fafd8180f48e462a53a62a2b34d5bc0f61c2481d
+SIZE (linux-ut/UTPGPatch451.tar.bz2) = 3064473
