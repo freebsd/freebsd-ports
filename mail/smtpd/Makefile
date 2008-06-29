@@ -7,7 +7,7 @@
 
 PORTNAME=	smtpd
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.netsw.org/net/ip/firewall/proxy/smtpd/
 
