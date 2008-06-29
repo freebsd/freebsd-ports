@@ -1274,6 +1274,7 @@
     SUBDIR += swish++
     SUBDIR += swish-e
     SUBDIR += syndigator
+    SUBDIR += tcldom
     SUBDIR += tclhttpd
     SUBDIR += tclwebtest
     SUBDIR += tdiary
