@@ -642,6 +642,7 @@
     SUBDIR += squeezecenter
     SUBDIR += squeezecenter-dynamicplaylist
     SUBDIR += squeezecenter-lazysearch
+    SUBDIR += squeezecenter-sqlplaylist
     SUBDIR += squeezecenter-superdatetime
     SUBDIR += squeezecenter-trackstat
     SUBDIR += squeezecenter-transitionupdater
