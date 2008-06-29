@@ -7,6 +7,7 @@
 
 PORTNAME=	fontforge
 PORTVERSION=	20080607
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -25,7 +26,7 @@ LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
 		spiro.0:${PORTSDIR}/graphics/libspiro
 
 .if defined(FONTFORGE_WITH_TTF_DEBUGGER)
-FREETYPE_VERSION=	2.3.5
+FREETYPE_VERSION=	2.3.6
 EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
 .endif
 
