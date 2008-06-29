@@ -56,6 +56,7 @@
 %%HORDIR%%/locale/sk_SK/help.xml
 %%HORDIR%%/locale/sl_SI/LC_MESSAGES/mnemo.mo
 %%HORDIR%%/locale/sv_SE/LC_MESSAGES/mnemo.mo
+%%HORDIR%%/locale/tr_TR/LC_MESSAGES/mnemo.mo
 %%HORDIR%%/locale/tr_TR/help.xml
 %%HORDIR%%/locale/zh_CN/LC_MESSAGES/mnemo.mo
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/mnemo.mo
@@ -92,6 +93,7 @@
 %%HORDIR%%/po/sk_SK.po
 %%HORDIR%%/po/sl_SI.po
 %%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/tr_TR.po
 %%HORDIR%%/po/zh_CN.po
 %%HORDIR%%/po/zh_TW.po
 %%HORDIR%%/pref_api.php
@@ -103,6 +105,8 @@
 %%HORDIR%%/scripts/sql/mnemo.xml
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.pgsq.sql
+%%HORDIR%%/scripts/upgrades/2.1_to_2.2.sql
+%%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/search.php
 %%HORDIR%%/templates/common-header.inc
 %%HORDIR%%/templates/data/export.inc
@@ -120,6 +124,7 @@
 %%HORDIR%%/templates/search/search.inc
 %%HORDIR%%/templates/view/memo.inc
 %%HORDIR%%/themes/bluewhite/screen.css
+%%HORDIR%%/themes/categoryCSS.php
 %%HORDIR%%/themes/fadetogreen/screen.css
 %%HORDIR%%/themes/graphics/add.png
 %%HORDIR%%/themes/graphics/az.png
@@ -130,12 +135,16 @@
 %%HORDIR%%/themes/graphics/plus.png
 %%HORDIR%%/themes/graphics/search.png
 %%HORDIR%%/themes/graphics/za.png
+%%HORDIR%%/themes/rtl.css
 %%HORDIR%%/themes/screen.css
 %%HORDIR%%/themes/silver/graphics/add.png
 %%HORDIR%%/themes/silver/graphics/az.png
 %%HORDIR%%/themes/silver/graphics/favicon.ico
+%%HORDIR%%/themes/silver/graphics/minus.png
 %%HORDIR%%/themes/silver/graphics/mnemo.png
 %%HORDIR%%/themes/silver/graphics/notepads.png
+%%HORDIR%%/themes/silver/graphics/plus.png
+%%HORDIR%%/themes/silver/graphics/search.png
 %%HORDIR%%/themes/silver/graphics/za.png
 %%HORDIR%%/themes/silver/screen.css
 %%HORDIR%%/themes/silver/themed_graphics
@@ -172,6 +181,7 @@
 @dirrm %%HORDIR%%/locale/zh_TW
 @dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/zh_CN
+@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/tr_TR
 @dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/sv_SE
