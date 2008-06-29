@@ -1,5 +1,6 @@
 %%SITE_PERL%%/File/HomeDir.pm
 %%SITE_PERL%%/File/HomeDir/Darwin.pm
+%%SITE_PERL%%/File/HomeDir/Driver.pm
 %%SITE_PERL%%/File/HomeDir/MacOS9.pm
 %%SITE_PERL%%/File/HomeDir/Unix.pm
 %%SITE_PERL%%/File/HomeDir/Windows.pm
