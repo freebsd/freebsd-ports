@@ -3,5 +3,6 @@ include/tclxml-libxml2/tclxml-libxml2.h
 include/tclxml-libxml2/tclxml-libxml2Decls.h
 lib/TclXML_libxml2%%VER%%/libTclXML_libxml2%%VER%%.so
 lib/TclXML_libxml2%%VER%%/pkgIndex.tcl
+lib/tcllibxml2Config.sh
 @dirrm lib/TclXML_libxml2%%VER%%
 @dirrm include/tclxml-libxml2
