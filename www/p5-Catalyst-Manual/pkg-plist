@@ -9,6 +9,8 @@
 %%SITE_PERL%%/Catalyst/Manual/Plugins.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/AdvancedCRUD.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/AdvancedCRUD/FormBuilder.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/AdvancedCRUD/FormFu.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/Appendices.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/Authentication.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/Authorization.pod
@@ -16,6 +18,7 @@
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/CatalystBasics.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/Debugging.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/Intro.pod
+%%SITE_PERL%%/Catalyst/Manual/Tutorial/MoreCatalystBasics.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/Testing.pod
 %%SITE_PERL%%/Catalyst/Manual/WritingPlugins.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual/.packlist

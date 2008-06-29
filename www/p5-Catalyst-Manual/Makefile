@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	Catalyst-Manual
-PORTVERSION=	5.701004
+PORTVERSION=	5.7012
+PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +28,8 @@ MAN3=	Catalyst::Manual.3 \
 	Catalyst::Manual::Plugins.3 \
 	Catalyst::Manual::Tutorial.3 \
 	Catalyst::Manual::Tutorial::AdvancedCRUD.3 \
+	Catalyst::Manual::Tutorial::AdvancedCRUD::FormBuilder.3 \
+	Catalyst::Manual::Tutorial::AdvancedCRUD::FormFu.3 \
 	Catalyst::Manual::Tutorial::Appendices.3 \
 	Catalyst::Manual::Tutorial::Authentication.3 \
 	Catalyst::Manual::Tutorial::Authorization.3 \
@@ -34,6 +37,7 @@ MAN3=	Catalyst::Manual.3 \
 	Catalyst::Manual::Tutorial::CatalystBasics.3 \
 	Catalyst::Manual::Tutorial::Debugging.3 \
 	Catalyst::Manual::Tutorial::Intro.3 \
+	Catalyst::Manual::Tutorial::MoreCatalystBasics.3 \
 	Catalyst::Manual::Tutorial::Testing.3 \
 	Catalyst::Manual::WritingPlugins.3
 
