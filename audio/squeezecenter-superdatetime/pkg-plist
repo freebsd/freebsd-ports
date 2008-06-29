@@ -1,0 +1,70 @@
+%%SLIMDIR%%/Plugins/SuperDateTime/COPYRIGHT
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/1.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/10.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/11.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/12.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/13.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/14.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/15.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/16.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/17.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/18.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/19.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/2.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/20.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/21.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/22.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/23.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/24.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/25.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/26.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/27.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/28.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/29.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/3.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/30.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/31.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/32.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/33.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/34.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/35.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/36.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/37.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/38.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/39.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/4.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/40.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/41.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/42.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/43.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/44.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/45.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/46.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/47.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/48.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/5.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/6.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/7.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/8.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/9.gif
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/NCAA.png
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/NHL.png
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/nba.png
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/nfl.png
+%%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/settings/basic.html
+%%SLIMDIR%%/Plugins/SuperDateTime/Plugin.pm
+%%SLIMDIR%%/Plugins/SuperDateTime/Settings.pm
+%%SLIMDIR%%/Plugins/SuperDateTime/install.xml
+%%SLIMDIR%%/Plugins/SuperDateTime/mlb.2.font.bmp
+%%SLIMDIR%%/Plugins/SuperDateTime/nfl.2.font.bmp
+%%SLIMDIR%%/Plugins/SuperDateTime/strings.txt
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/settings
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime
+@dirrmtry %%SLIMDIR%%/Plugins
+@dirrmtry %%SLIMDIR%%

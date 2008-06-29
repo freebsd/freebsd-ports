@@ -642,6 +642,7 @@
     SUBDIR += squeezecenter
     SUBDIR += squeezecenter-dynamicplaylist
     SUBDIR += squeezecenter-lazysearch
+    SUBDIR += squeezecenter-superdatetime
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
     SUBDIR += streamtuner
