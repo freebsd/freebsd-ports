@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.7012
+PORTVERSION=	5.7014
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	The Elegant MVC Web Application Framework (Runtime)
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Class-Inspector>=1.06:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-CGI-Simple>=0:${PORTSDIR}/www/p5-CGI-Simple \
@@ -34,7 +34,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Tree-Simple-VisitorFactory>=0:${PORTSDIR}/devel/p5-Tree-Simple-VisitorFactory \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
 		p5-Module-Install>=0.63:${PORTSDIR}/devel/p5-Module-Install
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
