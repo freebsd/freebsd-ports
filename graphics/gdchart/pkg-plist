@@ -5,10 +5,10 @@ lib/libgdc.a
 lib/libgdc.so
 lib/libgdc.so.1
 %%PROFILE%%lib/libgdc_p.a
-%%DOCSDIR%%/README.txt
-@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/ft_samp.c
-%%EXAMPLESDIR%%/gdc_samp1.c
-%%EXAMPLESDIR%%/gdc_samp2.c
-%%EXAMPLESDIR%%/gdc_pie_samp.c
-@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ft_samp.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gdc_samp1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gdc_samp2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gdc_pie_samp.c
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
