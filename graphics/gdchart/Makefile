@@ -7,7 +7,7 @@
 
 PORTNAME=	gdchart
 PORTVERSION=	0.11.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.fred.net/brv/chart/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -48,12 +48,14 @@ post-patch:
 		-e 's/^#include "gdc\.h"/#include "gdchart.h"/' \
 			${WRKSRC}/gdc_pie_samp.c
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 .for f in ${DOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
 .for f in ${EXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}/
