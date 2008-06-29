@@ -680,6 +680,7 @@
     SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
     SUBDIR += umodplayer
+    SUBDIR += vagalume
     SUBDIR += ventrilo-server
     SUBDIR += voipong
     SUBDIR += volumecontrol.app

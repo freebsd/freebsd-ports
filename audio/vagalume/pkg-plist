@@ -1,0 +1,32 @@
+bin/vagalume
+share/applications/vagalume.desktop
+share/icons/hicolor/48x48/apps/vagalume.png
+share/locale/de/LC_MESSAGES/vagalume.mo
+share/locale/es/LC_MESSAGES/vagalume.mo
+share/locale/es_MX/LC_MESSAGES/vagalume.mo
+share/locale/fi/LC_MESSAGES/vagalume.mo
+share/locale/gl/LC_MESSAGES/vagalume.mo
+share/locale/it/LC_MESSAGES/vagalume.mo
+share/locale/pt/LC_MESSAGES/vagalume.mo
+share/locale/pt_BR/LC_MESSAGES/vagalume.mo
+share/pixmaps/vagalume.xpm
+%%DATADIR%%/cover.png
+%%DATADIR%%/icons/hicolor/scalable/actions/accessories-text-editor.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/document-save.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/emblem-favorite.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/list-add.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/mail-message-new.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-playback-start.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-playback-stop.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-skip-forward.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/process-stop.svg
+@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
