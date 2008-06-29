@@ -33,34 +33,34 @@ include/huc/pce/startup.inc
 include/huc/pce/system.inc
 include/huc/pce/vdc.inc
 include/huc/overlay.h
-%%DOCSDIR%%/huc/random.txt
-%%DOCSDIR%%/huc/clibref.txt
-%%DOCSDIR%%/huc/clibref_fr.htm
-%%DOCSDIR%%/huc/clibref_fr.txt
-%%DOCSDIR%%/huc/huc_doc.htm
-%%DOCSDIR%%/huc/mmldoc.txt
-%%DOCSDIR%%/huc/overlays.txt
-%%DOCSDIR%%/huc/clibref.htm
-%%DOCSDIR%%/nes/cpu_inst.txt
-%%DOCSDIR%%/nes/history.txt
-%%DOCSDIR%%/nes/index.txt
-%%DOCSDIR%%/nes/neshdr20.txt
-%%DOCSDIR%%/nes/usage.txt
-%%DOCSDIR%%/pce/vdc.txt
-%%DOCSDIR%%/pce/cpu.txt
-%%DOCSDIR%%/pce/cpu_inst.txt
-%%DOCSDIR%%/pce/history.txt
-%%DOCSDIR%%/pce/index.txt
-%%DOCSDIR%%/pce/library.txt
-%%DOCSDIR%%/pce/psg.txt
-%%DOCSDIR%%/pce/sprites.txt
-%%DOCSDIR%%/pce/techdoc.txt
-%%DOCSDIR%%/pce/usage.txt
-%%DOCSDIR%%/pce/vce.txt
-%%DOCSDIR%%/pce/concepts.txt
-@dirrm %%DOCSDIR%%/pce
-@dirrm %%DOCSDIR%%/nes
-@dirrm %%DOCSDIR%%/huc
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/huc/random.txt
+%%PORTDOCS%%%%DOCSDIR%%/huc/clibref.txt
+%%PORTDOCS%%%%DOCSDIR%%/huc/clibref_fr.htm
+%%PORTDOCS%%%%DOCSDIR%%/huc/clibref_fr.txt
+%%PORTDOCS%%%%DOCSDIR%%/huc/huc_doc.htm
+%%PORTDOCS%%%%DOCSDIR%%/huc/mmldoc.txt
+%%PORTDOCS%%%%DOCSDIR%%/huc/overlays.txt
+%%PORTDOCS%%%%DOCSDIR%%/huc/clibref.htm
+%%PORTDOCS%%%%DOCSDIR%%/nes/cpu_inst.txt
+%%PORTDOCS%%%%DOCSDIR%%/nes/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/nes/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/nes/neshdr20.txt
+%%PORTDOCS%%%%DOCSDIR%%/nes/usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/vdc.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/cpu.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/cpu_inst.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/library.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/psg.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/sprites.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/techdoc.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/vce.txt
+%%PORTDOCS%%%%DOCSDIR%%/pce/concepts.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pce
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/nes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/huc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/huc/pce
 @dirrm include/huc
