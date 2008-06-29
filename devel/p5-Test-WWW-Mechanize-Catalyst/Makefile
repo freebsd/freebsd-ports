@@ -16,7 +16,7 @@ COMMENT=	Test::WWW::Mechanize for Catalyst
 
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Test-WWW-Mechanize>=1.14:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
-		p5-Test-Exception>=0::${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-WWW-Mechanize>=1.30:${PORTSDIR}/www/p5-WWW-Mechanize
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
