@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tar.gz?format=raw
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web application templating system, based on the the Twisted Woven
 
+BROKEN=		doesn't build: in nevow/static.py", line 18, twisted.web import error
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_TWISTED=	yes
