@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2008-06-25 14:46:42.000000000 +0000
++++ Makefile.am	2008-06-25 14:46:58.000000000 +0000
+@@ -67,7 +67,7 @@
+ 	cd $(classdir) && \
+ 	$(JAR) cvf ../$@ *
+ 
+-jardir=$(datadir)/java
++jardir=$(datadir)/java/classes
+ jar_DATA = jicmp.jar
+ 
+ deploy:
