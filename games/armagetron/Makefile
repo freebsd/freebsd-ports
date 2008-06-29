@@ -7,23 +7,27 @@
 #
 
 PORTNAME=	armagetron
-PORTVERSION=	0.2.7.1
-PORTREVISION=	3
+PORTVERSION=	0.2.8.2.1
 CATEGORIES=	games
 MASTER_SITES=	SF/armagetronad
 DISTNAME=	armagetronad-${PORTVERSION}
+EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ianthetechie@gmail.com
 COMMENT=	A multiplayer networked Tron clone in 3D
 
 USE_GL=		gl
 USE_SDL=	sdl image
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ENV=	CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include `${SDL_CONFIG} --cflags`"
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--disable-etc
 
+BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 OPTIONS=	MUSIC	"Compile in support for background music" on
 
@@ -34,11 +38,14 @@ USE_SDL+=	mixer
 CONFIGURE_ARGS+=--enable-music
 .endif
 
+# This script isn't needed and only causes install problems
+CONFIGURE_ARGS+=--disable-uninstall 
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|^#!/bin/bash$$|#!/bin/sh|g' ${WRKSRC}/batch/*
+	@${FIND} ${WRKSRC}/batch -type f -exec ${REINPLACE_CMD} -e 's|^#!/bin/bash$$|#!/bin/sh|g' {} \+
 	@${REINPLACE_CMD} -e 's|^INSTALL=.*$$|INSTALL=${DATADIR}|g' \
 	    ${WRKSRC}/batch/*.in
-	@${RM} -f ${WRKSRC}/batch/*.bak ${WRKSRC}/batch/*.orig
+	@${FIND} ${WRKSRC}/batch -name '*.bak' -o -name '*.orig' -delete
 
 .include <bsd.port.post.mk>

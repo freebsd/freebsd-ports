@@ -1,13 +1,14 @@
---- src/tron/gCycle.h.orig	2007-10-02 18:18:27.000000000 +0200
-+++ src/tron/gCycle.h	2007-10-02 18:18:51.000000000 +0200
-@@ -40,6 +40,10 @@
- class gTextureCycle;
- class eSoundPlayer;
- class gSensor;
-+class gCycle;
-+class gPlayerWall;
-+class gNetPlayerWall;
-+class gDestination;
+--- src/tron/gCycle.h.orig	2006-05-13 22:17:31.000000000 +0800
++++ src/tron/gCycle.h	2008-06-08 14:37:33.000000000 +0800
+@@ -41,8 +41,10 @@
+ #include "gCycleMovement.h"
  
- // minimum time between two cycle turns
- extern REAL sg_delayCycle;
+ class rModel;
+-class gTextureCycle;
++class gCycle;
++class gDestination;
+ class eSoundPlayer;
++class gTextureCycle;
+ class gSensor;
+ class gNetPlayerWall;
+ class gPlayerWall;

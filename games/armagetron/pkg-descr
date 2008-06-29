@@ -5,10 +5,10 @@ arcade game based on the movie of the same name, release by Disney in 1982. The
 original game consisted of 4 sub-games, the only one of concern is the 'Light
 Cycles' one, in which the player uses a left/right joystick to control a 'Light
 Cycle' which leaves a wall behind it wherever the cycle it goes, turning only
-at 90 degree angles. The player must then get the AI to crash into their wall
-while avoiding hitting the AI's own wall themselves. Those were the humble
-beginnings of Armagetron Advanced's game play, which has now blossomed into 16
-player mayhem, with highly advanced AI, network game play, and of course all in
-a 3D environment.
+at 90 degree angles (well, on most servers anyways). The player must then force
+his opponents to crash into their wall while avoiding his opponents walls.
+Those were the humble beginnings of Armagetron Advanced's game play, which has
+now blossomed into 16 player mayhem, with highly advanced AI, network game
+play, and of course all in a 3D environment.
 
 WWW: http://armagetronad.net/
