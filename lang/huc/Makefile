@@ -7,7 +7,7 @@
 
 PORTNAME=	huc
 PORTVERSION=	3.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang emulators
 MASTER_SITES=	http://www.zeograd.com/download/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//}
