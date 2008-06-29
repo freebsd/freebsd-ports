@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-pgf
-PORTVERSION=	1.18
+PORTVERSION=	2.00
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pgf
@@ -21,6 +21,11 @@ NO_BUILD=	YES
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR} \
 		TEXMFDIR=${TEXMFDIR}
+PORTDOCS=	AUTHORS ChangeLog FILES INSTALL README TODO \
+		pgfmanual.pdf \
+		version-for-vtex version-for-tex4ht version-for-pdftex	\
+		version-for-dvips version-for-dvipdfm text-en macros	\
+		licenses images
 
 TEXMFDIR=	share/texmf
 TEXMFDIR_LSR=	${LOCALBASE}/${TEXMFDIR}/ls-R
@@ -33,10 +38,12 @@ do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}/${C}/${PORTNAME:S/^latex-//}
 	${CP} -R ${WRKSRC}/${C}/pgf/* \
 		${PREFIX}/${CLASSDIR}/${C}/${PORTNAME:S/^latex-//}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${CLASSDIR}/${C}/${PORTNAME:S/^latex-//}
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/generic/pgf/* ${DOCSDIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
 post-install:
