@@ -7,7 +7,7 @@
 
 PORTNAME=	sj3
 PORTVERSION=	2.0.1.20
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sony.co.jp/pub/unsupported/src/ \
 		ftp://ftp.cs.titech.ac.jp/pub/japanese/sj3/
