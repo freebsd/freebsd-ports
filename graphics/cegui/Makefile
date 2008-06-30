@@ -52,9 +52,6 @@ post-patch:
 		${WRKSRC}/src/CEGUIDynamicModule.cpp \
 		${WRKSRC}/Samples/common/src/CEGuiSample.cpp \
 		${WRKSRC}/src/CEGUISystem.cpp
-	@${REINPLACE_CMD} -e 's|INCLUDES = |&-I${LOCALBASE}/include/lua51 |' \
-		${WRKSRC}/ScriptingModules/CEGUILua/tolua++bin/Makefile.in \
-		${WRKSRC}/ScriptingModules/CEGUILua/LuaScriptModule/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|ILvoid|void|g' \
 		${WRKSRC}/ImageCodecModules/DevILImageCodec/CEGUIDevILImageCodec.cpp
 
