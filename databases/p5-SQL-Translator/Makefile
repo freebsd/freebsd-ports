@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	SQL-Translator
-PORTVERSION=	0.08
-PORTREVISION=	2
+PORTVERSION=	0.09.000
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	SQL
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Manipulate structured data definitions (SQL and more)
@@ -38,11 +37,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_MODBUILD=	yes
 
 MAN1=		sqlt-diagram.1 \
+		sqlt-diff-old.1 \
 		sqlt-diff.1 \
 		sqlt-dumper.1 \
 		sqlt-graph.1 \
 		sqlt.1
 MAN3=		SQL::Translator.3 \
+		SQL::Translator::Diff.3 \
 		SQL::Translator::Filter::DefaultExtra.3 \
 		SQL::Translator::Filter::Globals.3 \
 		SQL::Translator::Filter::Names.3 \
