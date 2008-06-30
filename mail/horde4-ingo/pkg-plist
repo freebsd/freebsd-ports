@@ -73,6 +73,8 @@
 %%HORDIR%%/locale/pt_BR/LC_MESSAGES/ingo.mo
 %%HORDIR%%/locale/pt_PT/LC_MESSAGES/ingo.mo
 %%HORDIR%%/locale/ro_RO/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/ru_RU/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/sk_SK/LC_MESSAGES/ingo.mo
 %%HORDIR%%/locale/sl_SI/LC_MESSAGES/ingo.mo
 %%HORDIR%%/locale/sv_SE/LC_MESSAGES/ingo.mo
 %%HORDIR%%/locale/tr_TR/LC_MESSAGES/ingo.mo
@@ -102,6 +104,8 @@
 %%HORDIR%%/po/pt_BR.po
 %%HORDIR%%/po/pt_PT.po
 %%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/po/ru_RU.po
+%%HORDIR%%/po/sk_SK.po
 %%HORDIR%%/po/sl_SI.po
 %%HORDIR%%/po/sv_SE.po
 %%HORDIR%%/po/tr_TR.po
@@ -111,10 +115,11 @@
 %%HORDIR%%/rule.php
 %%HORDIR%%/script.php
 %%HORDIR%%/scripts/.htaccess
-%%HORDIR%%/scripts/convert_imp_filters.php
 %%HORDIR%%/scripts/ingo-postfix-policyd
 %%HORDIR%%/scripts/sql/ingo.oci8.sql
 %%HORDIR%%/scripts/sql/ingo.sql
+%%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
+%%HORDIR%%/scripts/upgrades/convert_imp_filters.php
 %%HORDIR%%/scripts/upgrades/convert_prefs_to_sql.php
 %%HORDIR%%/spam.php
 %%HORDIR%%/templates/blacklist/blacklist.inc
@@ -202,6 +207,10 @@
 @dirrm %%HORDIR%%/locale/sv_SE
 @dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/sl_SI
+@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sk_SK
+@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ru_RU
 @dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/ro_RO
 @dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
