@@ -7975,6 +7975,7 @@ mod_filter	ports/www/mod_filter
 mod_geoip	ports/www/mod_geoip
 mod_geoip2	ports/www/mod_geoip2
 mod_gzip	ports/www/mod_gzip
+mod_gzip2	ports/www/mod_gzip2
 mod_hosts_access	ports/www/mod_hosts_access
 mod_index_rss	ports/www/mod_index_rss
 mod_jail	ports/www/mod_jail
