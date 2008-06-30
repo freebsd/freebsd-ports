@@ -75,13 +75,13 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	cacheboy
-DISTVERSION=	1.3.2
-PORTREVISION=	8
+DISTVERSION=	1.3.3
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	CACHEBOY_1.3.2
+DISTNAME=	CACHEBOY_1.3.3
 # EXTRACT_SUFX=	.tar.gz
-DIST_SUBDIR=	CACHEBOY_1.3.2
+DIST_SUBDIR=	CACHEBOY_1.3.3
 
 MAINTAINER=	adrian@freebsd.org
 COMMENT=	HTTP Caching Proxy (Squid Derivative)
