@@ -1,21 +1,44 @@
-%%LIB32DIR%%/erlang/lib/distel-2007.11.03/ebin/distel.beam
-%%LIB32DIR%%/erlang/lib/distel-2007.11.03/ebin/distel_ie.beam
-%%LIB32DIR%%/erlang/lib/distel-2007.11.03/ebin/fdoc.beam
-%%LIB32DIR%%/erlang/lib/distel-2007.11.03/src/distel.erl
-%%LIB32DIR%%/erlang/lib/distel-2007.11.03/src/distel_ie.erl
-%%LIB32DIR%%/erlang/lib/distel-2007.11.03/src/fdoc.erl
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/INSTALL.WIN32
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.ie-session
-%%DOCSDIR%%/distel-3.1.pdf
-%%DOCSDIR%%/distel-euc.pdf
-%%DOCSDIR%%/distel-euc.ps.gz
-%%DOCSDIR%%/distel-user-3.3.pdf
-%%DOCSDIR%%/distel-user-3.3.ps.gz
+%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/ebin/distel.beam
+%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/ebin/distel_ie.beam
+%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/ebin/fdoc.beam
+%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/ebin/otp_doc.beam
+%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/src/distel.erl
+%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/src/distel_ie.erl
+%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/src/fdoc.erl
+%%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/src/otp_doc.erl
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.WIN32
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.ie-session
+%%PORTDOCS%%%%DOCSDIR%%/distel-3.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/distel-euc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/distel-euc.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/distel-user-3.3.pdf
+%%PORTDOCS%%%%DOCSDIR%%/distel-user-3.3.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/gorrie02distel.pdf
+%%PORTDOCS%%%%DOCSDIR%%/html/Applications.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Attach-Buffer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Basic-Commands.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Completion.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Conventions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Debugger.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Evaluation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Interactive-Sessions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Monitor-Buffer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Principles.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Process-Manager.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Profiler.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Programming-Aids.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Refactoring.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Saving-and-Restoring.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Synchronising-Breakpoints.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Tags.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%EMACS_SITE_LISPDIR%%/distel/derl.el
 %%EMACS_SITE_LISPDIR%%/distel/distel-ie.el
 %%EMACS_SITE_LISPDIR%%/distel/distel.el
@@ -29,9 +52,10 @@
 %%EMACS_SITE_LISPDIR%%/distel/net-fsm.el
 %%EMACS_SITE_LISPDIR%%/distel/patmatch.el
 @dirrm %%EMACS_SITE_LISPDIR%%/distel
-@dirrm %%DOCSDIR%%
-@dirrm %%LIB32DIR%%/erlang/lib/distel-2007.11.03/src
-@dirrm %%LIB32DIR%%/erlang/lib/distel-2007.11.03/ebin
-@dirrm %%LIB32DIR%%/erlang/lib/distel-2007.11.03
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/src
+@dirrm %%LIB32DIR%%/erlang/lib/distel-%%VERSION%%/ebin
+@dirrm %%LIB32DIR%%/erlang/lib/distel-%%VERSION%%
 @exec ln -sf distel-%%VERSION%% %D/%%LIB32DIR%%/erlang/lib/distel
-@rmtry %%LIB32DIR%%/erlang/lib/distel
+@unexec rm -f %D/%%LIB32DIR%%/erlang/lib/distel

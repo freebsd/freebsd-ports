@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distel
-PORTVERSION=	2007.11.03
+PORTVERSION=	2008.06.26
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	olgeni
@@ -22,7 +22,6 @@ BUILD_DEPENDS+=	erlc:${PORTSDIR}/lang/erlang
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 DISTEL_MANUALS=	distel-euc.pdf distel-euc.ps.gz \
 		distel-user-3.3.pdf distel-user-3.3.ps.gz \
@@ -36,6 +35,8 @@ do-build:
 do-install:
 	@${MKDIR} ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/elisp/*el ${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
+
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@for FILE in ${DISTEL_DOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${DOCSDIR}; \
@@ -43,7 +44,14 @@ do-install:
 	@for FILE in ${DISTEL_MANUALS}; do \
 		${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$${FILE} ${DOCSDIR}; \
 	done
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
+	@for FILE in ${DISTEL_MANUALS}; do \
+		${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$${FILE} ${DOCSDIR}; \
+	done
+	@${MKDIR} ${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/distel/*.html ${DOCSDIR}/html
 	@${MKDIR} ${DISTEL_ROOT}
+.endif
 	@${MKDIR} ${DISTEL_ROOT}/src
 	@${MKDIR} ${DISTEL_ROOT}/ebin
 	@${INSTALL_DATA} ${WRKSRC}/src/*.erl ${DISTEL_ROOT}/src
