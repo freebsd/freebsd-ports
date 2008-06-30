@@ -126,6 +126,7 @@
     SUBDIR += gtkterm2
     SUBDIR += gtstarter
     SUBDIR += gxset
+    SUBDIR += hotwire-shell
     SUBDIR += hs-x11-ghc
     SUBDIR += iceauth
     SUBDIR += ico
