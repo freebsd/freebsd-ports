@@ -90,6 +90,10 @@ OPTIONS=	ICONV "Build with ICONV support" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} <= 630000
+BROKEN=		configure needs a newer sh
+.endif
+
 CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--enable-dependency-tracking \
 		--enable-r=no \
