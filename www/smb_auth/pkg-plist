@@ -1,4 +1,4 @@
 bin/smb_auth
 bin/smb_auth.sh
-%%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
