@@ -67,7 +67,7 @@ EXTRACT_AFTER_ARGS+=	${DISTNAME}/mupen64_soft_gfx
 
 .if ${PKGNAMESUFFIX} == "-rsp"
 ALL_TARGET=             plugins/mupen64_hle_rsp_azimer.so
-EXTRACT_AFTER_ARGS+=	${DISTNAME}/Makefile ${DISTNAME}/rsp_hle
+EXTRACT_AFTER_ARGS+=	${DISTNAME}/rsp_hle
 .endif
 
 .if ${PKGNAMESUFFIX} == "-glide"
