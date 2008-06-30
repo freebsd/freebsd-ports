@@ -6,9 +6,8 @@
 #
 
 PORTNAME?=	xmms2
-PORTVERSION=	0.4.d.0
-DISTVERSION=	0.4DrKosmos
-PORTREVISION=	2
+DISTVERSION=	0.5.d.0
+DISTVERSION=	0.5DrLecter
 CATEGORIES?=	audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}
@@ -37,17 +36,20 @@ MANCOMPRESSED=	yes
 
 OPTIONS=	FAAD "Support to playback AAC files" on \
 		FLAC "Support to playback FLAC files" on \
+		SPEEX "Support to playback SPEEX files" off \
+		CDDA "Support to playback AudioCD" off \
 		MODPLUG "Support to playback MOD files" off \
 		MUSEPACK "Support to playback MPC files" off \
 		SID "Support to playback SID files" off \
-		AVCODEC "Support to playback files with avcodec/avformat" off \
+		AVCODEC "Support to playback files with avcodec" off \
 		APE "Support to playback Monkey's Audio files" off \
 		CURL "Support to playback files via HTTP" on \
 		LASTFM "Support to playback audio via Last.fm radio" on \
-		GNOMEVFS "Support to playback files via GnomeVFS" off \
+		GVFS "Support to playback files via GVFS" off \
 		MMS "Support to playback streams via MMS" off \
 		SAMBA "Support to playback files via SMB" off \
 		DAAP "Support to playback files via DAAP" on \
+		GME "Support to playback files via GME (SPC/NSF/GBS)" on \
 		OFA "Support to collect MusicDNS fingerprints" off \
 		XML "Support for XML based playlists (XSPF, RSS)" off \
 		FAM "Support to update Media Library on file change" off \
@@ -55,7 +57,9 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 		MDNS_APPLE "Support to announce XMMS2d via mDNS (Apple)" on \
 		ICES "Support to playback files to an icecast server" off \
 		JACK "Support to output via the Jack output server" off \
+		PULSE "Support to output via the PulseAudio" off \
 		AO "Support to output via libao" off \
+		KARAOKE "Karaoke plugin for voice removal from tracks" on \
 		VOCODER "Phase Vocoder effect plugin" off #\
 #		SDL "Support for visualization" on
 .endif
@@ -85,7 +89,6 @@ EXCLUDE+=	--without-optionals="python" --without-optionals="ruby" --without-opti
 
 .if !defined(XMMS2_SLAVE)
 
-EXCLUDE+=	--without-plugins="cdda"
 .if !defined(WITHOUT_CURL)
 LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
@@ -120,6 +123,23 @@ EXCLUDE+=	--without-plugins="flac"
 PLIST_SUB+=	FLAC="@comment "
 .endif
 
+.if defined(WITH_SPEEX)
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+PLIST_SUB+=	SPEEX=""
+.else
+EXCLUDE+=	--without-plugins="speex"
+PLIST_SUB+=	SPEEX="@comment "
+.endif
+
+.if defined(WITH_CDDA)
+LIB_DEPENDS+=	cdio.8:${PORTSDIR}/sysutils/libcdio \
+		discid.2:${PORTSDIR}/audio/libdiscid
+PLIST_SUB+=	CDDA=""
+.else
+EXCLUDE+=	--without-plugins="cdda"
+PLIST_SUB+=	CDDA="@comment "
+.endif
+
 .if !defined(WITHOUT_FAAD)
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 PLIST_SUB+=	FAAD=""
@@ -132,7 +152,7 @@ PLIST_SUB+=	FAAD="@comment "
 LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	AVCODEC=""
 .else
-EXCLUDE+=	--without-plugins="avcodec" --without-plugins="avformat"
+EXCLUDE+=	--without-plugins="avcodec"
 PLIST_SUB+=	AVCODEC="@comment "
 .endif
 
@@ -167,6 +187,14 @@ PLIST_SUB+=	JACK=""
 .else
 EXCLUDE+=	--without-plugins="jack"
 PLIST_SUB+=	JACK="@comment "
+.endif
+
+.if defined(WITH_PULSE)
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+PLIST_SUB+=	PULSE=""
+.else
+EXCLUDE+=	--without-plugins="pulse"
+PLIST_SUB+=	PULSE="@comment "
 .endif
 
 .if defined(WITH_MODPLUG)
@@ -208,12 +236,19 @@ EXCLUDE+=	--without-plugins="daap"
 PLIST_SUB+=	DAAP="@comment "
 .endif
 
-.if defined(WITH_GNOMEVFS)
-USE_GNOME+=	gnomevfs2
-PLIST_SUB+=	GNOMEVFS=""
+.if !defined(WITHOUT_GME)
+PLIST_SUB+=	GME=""
 .else
-EXCLUDE+=	--without-plugins="gnomevfs"
-PLIST_SUB+=	GNOMEVFS="@comment "
+EXCLUDE+=	--without-plugins="gme"
+PLIST_SUB+=	GME="@comment "
+.endif
+
+.if defined(WITH_GVFS)
+USE_GNOME+=	gvfs
+PLIST_SUB+=	GVFS=""
+.else
+EXCLUDE+=	--without-plugins="gvfs"
+PLIST_SUB+=	GVFS="@comment "
 .endif
 
 .if defined(WITH_MMS)
@@ -239,6 +274,14 @@ PLIST_SUB+=	ICES=""
 .else
 EXCLUDE+=	--without-plugins="ices"
 PLIST_SUB+=	ICES="@comment "
+.endif
+
+# FIXME: requires pkg-config data of openssl
+.if defined(WITH_AIRPLAY)
+PLIST_SUB+=	AIRPLAY=""
+.else
+EXCLUDE+=	--without-plugins="airplay"
+PLIST_SUB+=	AIRPLAY="@comment "
 .endif
 
 .if defined(WITH_AO)
@@ -272,6 +315,13 @@ PLIST_SUB+=	MDNS_APPLE=""
 .else
 EXCLUDE+=	--without-optionals="dns_sd"
 PLIST_SUB+=	MDNS_APPLE="@comment "
+.endif
+
+.if !defined(WITHOUT_KARAOKE)
+PLIST_SUB+=	KARAOKE=""
+.else
+EXCLUDE+=	--without-plugins="karaoke"
+PLIST_SUB+=	KARAOKE="@comment "
 .endif
 
 .if defined(WITH_VOCODER)
