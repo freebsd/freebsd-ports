@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	URI
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,13 +29,8 @@ MAN3=		URI.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
-RUN_DEPENDS=	${BUILD_DEPENDS}
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-MIME-Base64>=2:${PORTSDIR}/converters/p5-MIME-Base64
 .endif
-
-post-patch:
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);/' \
-		${WRKSRC}/URI/urn.pm
 
 .include <bsd.port.post.mk>
