@@ -8,7 +8,7 @@
 # KEYWORD: shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable dovecot:
+# Add the following lines to /etc/rc.conf to enable oidentd:
 #
 #oidentd_enable="YES"
 #
