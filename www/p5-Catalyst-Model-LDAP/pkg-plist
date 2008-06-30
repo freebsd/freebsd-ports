@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Catalyst/Helper/Model/LDAP.pm
+%%SITE_PERL%%/Catalyst/Model/LDAP.pm
+%%SITE_PERL%%/Catalyst/Model/LDAP/Connection.pm
+%%SITE_PERL%%/Catalyst/Model/LDAP/Entry.pm
+%%SITE_PERL%%/Catalyst/Model/LDAP/Search.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/LDAP/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/LDAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Model/LDAP
+@dirrmtry %%SITE_PERL%%/Catalyst
