@@ -135,7 +135,6 @@
     SUBDIR += gnu-watch
     SUBDIR += gnuls
     SUBDIR += gnustep-examples
-    SUBDIR += goblin
     SUBDIR += goldstr
     SUBDIR += gone
     SUBDIR += gonvert
