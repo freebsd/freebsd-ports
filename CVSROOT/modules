@@ -12135,6 +12135,7 @@ p5-rpm-build-perl	ports/devel/p5-rpm-build-perl
 p5-self		ports/devel/p5-self
 p5-sqlrelay	ports/databases/p5-sqlrelay
 p5-subatom	ports/devel/p5-subatom
+p5-subversion	ports/devel/p5-subversion
 p5-tagged	ports/audio/p5-tagged
 p5-threads	ports/devel/p5-threads
 p5-threads-shared	ports/devel/p5-threads-shared
@@ -14043,6 +14044,7 @@ py-sqlobject	ports/databases/py-sqlobject
 py-sqlrelay	ports/databases/py-sqlrelay
 py-statgrab	ports/devel/py-statgrab
 py-stripogram	ports/textproc/py-stripogram
+py-subversion	ports/devel/py-subversion
 py-supybot	ports/irc/py-supybot
 py-supybot-plugins	ports/irc/py-supybot-plugins
 py-sybase	ports/databases/py-sybase
@@ -15034,6 +15036,7 @@ ruby-spread	ports/net/ruby-spread
 ruby-sqlite	ports/databases/ruby-sqlite
 ruby-statgrab	ports/devel/ruby-statgrab
 ruby-strongtyping	ports/devel/ruby-strongtyping
+ruby-subversion	ports/devel/ruby-subversion
 ruby-svg	ports/graphics/ruby-svg
 ruby-sysvipc	ports/devel/ruby-sysvipc
 ruby-tcpsocketpipe	ports/net/ruby-tcpsocketpipe
@@ -16064,9 +16067,7 @@ subtools	ports/multimedia/subtools
 subversion	ports/devel/subversion
 subversion-devel	ports/devel/subversion-devel
 subversion-freebsd	ports/devel/subversion-freebsd
-subversion-perl	ports/devel/subversion-perl
-subversion-python	ports/devel/subversion-python
-subversion-ruby	ports/devel/subversion-ruby
+dubversion-java	ports/java/subversion-java
 subversive	ports/devel/subversive
 subweb		ports/security/subweb
 suck		ports/news/suck
