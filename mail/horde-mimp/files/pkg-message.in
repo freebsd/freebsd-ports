@@ -5,16 +5,13 @@ configuration files.
 Horde must be configured and the tables created; if not, see
 `pkg_info -Dx horde-base'.
 
-Then, you might have to tune the configuration files located in
-%%HORCFG%%/, specially the file servers.php.
-
 Then, you must login to Horde as a Horde Administrator to finish the
 configuration. Please read %%DOCSDIR%%/INSTALL.
 
 To protect your configuration files, you have to restart your webserver.
 
 To secure your installation, it is at least recommended that you change
-the default database password used by horde and imp.
+the default database password used by horde and mimp.
 Then, you might change the 'session.save_path' setting in php.ini to a
 directory only readable and writeable by your webserver.
 ************************************************************************

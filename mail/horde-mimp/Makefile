@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mimp
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.1
+PORTEPOCH=	1
 CATEGORIES=	mail www
 
 MAINTAINER=	beech@FreeBSD.org
@@ -24,12 +24,11 @@ COMMENT=	Mobile webmail system
 #
 # - NOCRYPT	if crypto is restricted in your country;
 #
-# - WITHOUT_SSL	if you have not installed c-client WITH_SSL;
-#
 # - WITH_VALID_CERT	if you own a valid SSL certificate;
 #-----------------------------------------------------------------------
 
-RUN_DEPENDS+=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
+RUN_DEPENDS+=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
+		${LOCALBASE}/${LHORDEDIR}/imp/index.php:${PORTSDIR}/mail/horde-imp
 
 USE_PHP=	imap
 . if !defined(WITHOUT_LDAP)
@@ -39,7 +38,7 @@ USE_PHP+=	ldap
 USE_PHP+=	openssl
 .endif
 .if !defined(NOCRYPT)
-RUN_DEPENDS+=	${LOCALBASE}/bin/gpgv:${PORTSDIR}/security/gnupg1
+RUN_DEPENDS+=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 .endif
 
 USE_HORDE=	base
@@ -53,26 +52,9 @@ pre-configure:
 .else
 	@${REINPLACE_CMD} -e "s:%%GPG%%::" ${WRKSRC}/config/conf.xml
 .endif
-	@${REINPLACE_CMD} -e "s:MIMP_VERSION:MIMP_VERSION . ' / ${SERVOS}':" \
-		${WRKSRC}/lib/MIME/Headers.php
-	@${REINPLACE_CMD} -e "s:example.com:${HOSTNAME}:g"	\
-		${WRKSRC}/config/servers.php.dist
-.if defined(WITHOUT_SSL)
-	@${REINPLACE_CMD} -e "s:%%PROTOCOL%%:imap/notls:;s:%%IMAPPORT%%:143:"
-\
-		${WRKSRC}/config/servers.php.dist
-.else
-	@${REINPLACE_CMD} -e "s:%%IMAPPORT%%:993:" ${WRKSRC}/config/servers.php.dist
-. if defined(WITH_VALID_CERT)
-	@${REINPLACE_CMD} -e "s:%%PROTOCOL%%:imap/ssl:" ${WRKSRC}/config/servers.php.dist
-. else
-	@${REINPLACE_CMD} -e "s:%%PROTOCOL%%:imap/ssl/novalidate-cert:"	\
-		${WRKSRC}/config/servers.php.dist
-. endif
-.endif
 
 pre-install:
-.if !defined(BATCH) && !defined(WITHOUT_SSL)
+.if !defined(BATCH)
 	@if ! ${GREP} -q -e 'CCLIENT_SSLENABLED "yes"' ${PORTREV_H}; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure c-client with SSL support." ; \
