@@ -1,0 +1,7 @@
+lib/libsvnjavahl-1.a
+lib/libsvnjavahl-1.la
+lib/libsvnjavahl-1.so
+lib/libsvnjavahl-1.so.0
+lib/svn-javahl/svn-javahl.jar
+@dirrm lib/svn-javahl/include
+@dirrm lib/svn-javahl
