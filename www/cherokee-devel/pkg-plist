@@ -1,8 +1,8 @@
 bin/cget
 bin/cherokee-config
 bin/cherokee-panic
+bin/cherokee-tweak
 bin/spawn-fcgi
-bin/cherokee_tweak
 @unexec for i in `find %D/etc/cherokee -name \*.default`;do if cmp -s $i ${i%%.default};then rm -f ${i%%.default};fi;done
 @unexec for i in `find %D/etc/cherokee -name \*.sample`;do if cmp -s $i ${i%%.sample};then rm -f ${i%%.sample};fi;done
 etc/cherokee/cherokee.conf.default
@@ -11,16 +11,15 @@ etc/cherokee/mods-enabled/.empty
 etc/cherokee/sites-available/.empty
 etc/cherokee/sites-enabled/.empty
 etc/cherokee/ssl/.empty
-@exec for i in `find %D/etc/cherokee -name \*.default`;do if [ ! -f ${i%%.default} ];then cp $i ${i%%.default};fi;done
-@exec for i in `find %D/etc/cherokee -name \*.sample`;do if [ ! -f ${i%%.sample} ];then cp $i ${i%%.sample};fi;done
 include/cherokee/admin_client.h
 include/cherokee/avl.h
 include/cherokee/avl_r.h
 include/cherokee/buffer.h
 include/cherokee/cherokee-config.h
-include/cherokee/config_node.h
 include/cherokee/cherokee.h
 include/cherokee/common.h
+include/cherokee/config_entry.h
+include/cherokee/config_node.h
 include/cherokee/connection.h
 include/cherokee/connection_info.h
 include/cherokee/downloader.h
@@ -29,6 +28,7 @@ include/cherokee/fdpoll.h
 include/cherokee/handler.h
 include/cherokee/header.h
 include/cherokee/http.h
+include/cherokee/init.h
 include/cherokee/list.h
 include/cherokee/logger.h
 include/cherokee/macros.h
@@ -40,22 +40,31 @@ include/cherokee/plugin.h
 include/cherokee/plugin_loader.h
 include/cherokee/post.h
 include/cherokee/resolv_cache.h
+include/cherokee/rule.h
 include/cherokee/server.h
+include/cherokee/trace.h
 include/cherokee/url.h
 include/cherokee/util.h
+include/cherokee/validator.h
 include/cherokee/version.h
 lib/cherokee/libplugin_admin.la
 lib/cherokee/libplugin_admin.so
+lib/cherokee/libplugin_and.la
+lib/cherokee/libplugin_and.so
 lib/cherokee/libplugin_cgi.la
 lib/cherokee/libplugin_cgi.so
 lib/cherokee/libplugin_combined.la
 lib/cherokee/libplugin_combined.so
 lib/cherokee/libplugin_common.la
 lib/cherokee/libplugin_common.so
+lib/cherokee/libplugin_directory.la
+lib/cherokee/libplugin_directory.so
 lib/cherokee/libplugin_dirlist.la
 lib/cherokee/libplugin_dirlist.so
 lib/cherokee/libplugin_error_redir.la
 lib/cherokee/libplugin_error_redir.so
+lib/cherokee/libplugin_extensions.la
+lib/cherokee/libplugin_extensions.so
 lib/cherokee/libplugin_fastcgi.la
 lib/cherokee/libplugin_fastcgi.so
 lib/cherokee/libplugin_fcgi.la
@@ -64,30 +73,36 @@ lib/cherokee/libplugin_file.la
 lib/cherokee/libplugin_file.so
 lib/cherokee/libplugin_gzip.la
 lib/cherokee/libplugin_gzip.so
+lib/cherokee/libplugin_header.la
+lib/cherokee/libplugin_header.so
 lib/cherokee/libplugin_htdigest.la
 lib/cherokee/libplugin_htdigest.so
 lib/cherokee/libplugin_htpasswd.la
 lib/cherokee/libplugin_htpasswd.so
 lib/cherokee/libplugin_ldap.la
 lib/cherokee/libplugin_ldap.so
-lib/cherokee/libplugin_mirror.so
 lib/cherokee/libplugin_mirror.la
-lib/cherokee/libplugin_mysql.so
+lib/cherokee/libplugin_mirror.so
 lib/cherokee/libplugin_mysql.la
+lib/cherokee/libplugin_mysql.so
 lib/cherokee/libplugin_ncsa.la
 lib/cherokee/libplugin_ncsa.so
 lib/cherokee/libplugin_nn.la
 lib/cherokee/libplugin_nn.so
-lib/cherokee/libplugin_pam.so
+lib/cherokee/libplugin_not.la
+lib/cherokee/libplugin_not.so
+lib/cherokee/libplugin_or.la
+lib/cherokee/libplugin_or.so
 lib/cherokee/libplugin_pam.la
+lib/cherokee/libplugin_pam.so
 lib/cherokee/libplugin_phpcgi.la
 lib/cherokee/libplugin_phpcgi.so
 lib/cherokee/libplugin_plain.la
 lib/cherokee/libplugin_plain.so
-lib/cherokee/libplugin_proxy.so
-lib/cherokee/libplugin_proxy.la
 lib/cherokee/libplugin_redir.la
 lib/cherokee/libplugin_redir.so
+lib/cherokee/libplugin_request.la
+lib/cherokee/libplugin_request.so
 lib/cherokee/libplugin_round_robin.la
 lib/cherokee/libplugin_round_robin.so
 lib/cherokee/libplugin_scgi.la
@@ -109,8 +124,8 @@ lib/libcherokee-server.la
 lib/libcherokee-server.so
 lib/libcherokee-server.so.0
 libdata/pkgconfig/cherokee.pc
-sbin/cherokee-admin
 sbin/cherokee
+sbin/cherokee-admin
 sbin/cherokee-guardian
 share/aclocal/cherokee.m4
 %%DATADIR%%/admin/CherokeeManagement.py
@@ -122,8 +137,11 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/ModuleBalancer.py
 %%DATADIR%%/admin/ModuleCgi.py
 %%DATADIR%%/admin/ModuleCommon.py
+%%DATADIR%%/admin/ModuleDefault.py
+%%DATADIR%%/admin/ModuleDirectory.py
 %%DATADIR%%/admin/ModuleDirlist.py
 %%DATADIR%%/admin/ModuleErrorRedir.py
+%%DATADIR%%/admin/ModuleExtensions.py
 %%DATADIR%%/admin/ModuleFcgi.py
 %%DATADIR%%/admin/ModuleFile.py
 %%DATADIR%%/admin/ModuleHtdigest.py
@@ -134,6 +152,7 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/ModulePam.py
 %%DATADIR%%/admin/ModulePlain.py
 %%DATADIR%%/admin/ModuleRedir.py
+%%DATADIR%%/admin/ModuleRequest.py
 %%DATADIR%%/admin/ModuleRoundRobin.py
 %%DATADIR%%/admin/ModuleScgi.py
 %%DATADIR%%/admin/ModuleServerInfo.py
@@ -151,9 +170,9 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/PageVServer.py
 %%DATADIR%%/admin/PageVServers.py
 %%DATADIR%%/admin/Post.py
+%%DATADIR%%/admin/RuleList.py
 %%DATADIR%%/admin/Table.py
 %%DATADIR%%/admin/Theme.py
-%%DATADIR%%/admin/VirtualServer.py
 %%DATADIR%%/admin/advanced.help.html
 %%DATADIR%%/admin/config.py
 %%DATADIR%%/admin/configured.py
@@ -195,7 +214,9 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/static/js/icons.js
 %%DATADIR%%/admin/static/js/jquery-1.2.3.min.js
 %%DATADIR%%/admin/static/js/jquery.accordion.js
+%%DATADIR%%/admin/static/js/jquery.dimensions.js
 %%DATADIR%%/admin/static/js/jquery.easing.js
+%%DATADIR%%/admin/static/js/jquery.tablednd.js
 %%DATADIR%%/admin/validations.py
 %%DATADIR%%/admin/vserver.help.html
 %%DATADIR%%/admin/vservers.help.html
@@ -233,37 +254,37 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/icons/ruby.png
 %%DATADIR%%/icons/script.png
 %%DATADIR%%/mime_types.txt
-%%DATADIR%%/themes/default/logo.png
 %%DATADIR%%/themes/default/entry.html
 %%DATADIR%%/themes/default/footer.html
 %%DATADIR%%/themes/default/header.html
+%%DATADIR%%/themes/default/logo.png
 %%DATADIR%%/themes/default/theme.css
-%%DATADIR%%/themes/firefox3/header.html
-%%DATADIR%%/themes/firefox3/footer.html
 %%DATADIR%%/themes/firefox3/entry.html
+%%DATADIR%%/themes/firefox3/footer.html
+%%DATADIR%%/themes/firefox3/header.html
 %%DATADIR%%/themes/firefox3/theme.css
 www/cherokee/images/cherokee-logo.png
 www/cherokee/images/default-bg.png
 www/cherokee/images/powered_by_cherokee.png
 www/cherokee/index.html
-@dirrm %%DATADIR%%/admin/static/css
-@dirrm %%DATADIR%%/admin/static/images
-@dirrm %%DATADIR%%/admin/static/js
-@dirrm %%DATADIR%%/admin/static
-@dirrm %%DATADIR%%/admin
+@dirrm www/cherokee/images
+@dirrm www/cherokee
+@dirrm %%DATADIR%%/themes/firefox3
+@dirrm %%DATADIR%%/themes/default
+@dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/deps
-@dirrm %%DATADIR%%/themes/default
-@dirrm %%DATADIR%%/themes/firefox3
-@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/admin/static/js
+@dirrm %%DATADIR%%/admin/static/images
+@dirrm %%DATADIR%%/admin/static/css
+@dirrm %%DATADIR%%/admin/static
+@dirrm %%DATADIR%%/admin
 @dirrm %%DATADIR%%
-@dirrm include/cherokee
 @dirrm lib/cherokee
-@dirrmtry etc/cherokee/mods-available
-@dirrmtry etc/cherokee/mods-enabled
-@dirrmtry etc/cherokee/sites-available
-@dirrmtry etc/cherokee/sites-enabled
+@dirrm include/cherokee
 @dirrmtry etc/cherokee/ssl
+@dirrmtry etc/cherokee/sites-enabled
+@dirrmtry etc/cherokee/sites-available
+@dirrmtry etc/cherokee/mods-enabled
+@dirrmtry etc/cherokee/mods-available
 @dirrmtry etc/cherokee
-@dirrmtry www/cherokee/images
-@dirrmtry www/cherokee
