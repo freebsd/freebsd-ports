@@ -15874,6 +15874,12 @@ squall		ports/net-p2p/squall
 squash		ports/audio/squash
 squeak		ports/lang/squeak
 squeezecenter	ports/audio/squeezecenter
+squeezecenter-dynamicplaylist	ports/audio/squeezecenter-dynamicplaylist
+squeezecenter-lazysearch	ports/audio/squeezecenter-lazysearch
+squeezecenter-sqlplaylist	ports/audio/squeezecenter-sqlplaylist
+squeezecenter-superdatetime	ports/audio/squeezecenter-superdatetime
+squeezecenter-trackstat		ports/audio/squeezecenter-trackstat
+squeezecenter-transitionupdater	ports/audio/squeezecenter-transitionupdater
 squid		ports/www/squid
 squid30		ports/www/squid30
 squid_radius_auth	ports/www/squid_radius_auth
