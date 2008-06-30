@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Business-OnlinePayment-LinkPoint
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
