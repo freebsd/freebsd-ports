@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	HTML-Encoding
-PORTVERSION=	0.57
+PORTVERSION=	0.59
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,13 +15,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Determine the encoding of HTML/XML/XHTML documents
 
-BUILD_DEPENDS=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
-		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	HTML::Encoding.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode
+.endif
+
+.include <bsd.port.post.mk>
