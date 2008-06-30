@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gnome.org/~gianmt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,14 +15,11 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	romain@blogreen.org
 COMMENT=	Python bindings for the Poppler PDF rendering library
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/poppler-glib.pc:${PORTSDIR}/graphics/poppler-gtk \
-		${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo \
-		${LOCALBASE}/libdata/pkgconfig/pygtk-2.0.pc:${PORTSDIR}/x11-toolkits/py-gtk2
+LIB_DEPENDS=	poppler-glib.3:${PORTSDIR}/graphics/poppler-gtk
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig atk
+USE_GNOME=	pkgconfig atk pygtk2
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

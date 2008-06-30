@@ -1,0 +1,11 @@
+--- db/sqlite3/src/Makefile.in.orig	2008-06-19 11:03:17.000000000 -0500
++++ db/sqlite3/src/Makefile.in	2008-06-19 11:04:15.000000000 -0500
+@@ -45,6 +45,8 @@
+ 
+ include $(DEPTH)/config/autoconf.mk
+ 
++OS_CFLAGS	 = -I../../../dist/include/sqlite3
++OS_LIBS		 = %%PTHREAD_LIBS%%
+ MODULE           = sqlite3
+ LIBRARY_NAME     = sqlite3
+ FORCE_SHARED_LIB = 1

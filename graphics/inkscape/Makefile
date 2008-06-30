@@ -7,7 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.46
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	--without-gnome-vfs
 .endif
 
 .if defined(WITH_POPPLER)
-LIB_DEPENDS+=		poppler-glib.2:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS+=		poppler-glib.3:${PORTSDIR}/graphics/poppler-gtk
 CONFIGURE_ARGS+=	--enable-poppler-cairo
 .else
 CONFIGURE_ARGS+=	--disable-poppler-cairo

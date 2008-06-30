@@ -1,3 +1,4 @@
+include/pixman-1/pixman-version.h
 include/pixman-1/pixman.h
 lib/libpixman-1.a
 lib/libpixman-1.la

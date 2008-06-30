@@ -1,10 +1,10 @@
---- qt4/Makefile.in.orig	2007-08-27 20:43:27.000000000 -0400
-+++ qt4/Makefile.in	2007-08-27 20:43:46.000000000 -0400
-@@ -223,7 +223,7 @@ sharedstatedir = @sharedstatedir@
+--- qt4/Makefile.in.orig	2008-03-24 08:30:49.000000000 -0400
++++ qt4/Makefile.in	2008-03-24 08:30:34.000000000 -0400
+@@ -223,7 +223,7 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  win32_libs = @win32_libs@
--SUBDIRS = src tests
+-SUBDIRS = src tests demos
 +SUBDIRS = src
  all: all-recursive
  

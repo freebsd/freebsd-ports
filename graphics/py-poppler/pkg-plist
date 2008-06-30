@@ -1,3 +1,3 @@
 @comment $FreeBSD$
-lib/python2.5/site-packages/poppler.so
-lib/python2.5/site-packages/poppler.la
+%%PYTHON_SITELIBDIR%%/poppler.la
+%%PYTHON_SITELIBDIR%%/poppler.so

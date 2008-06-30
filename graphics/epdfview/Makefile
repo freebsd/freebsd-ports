@@ -7,7 +7,7 @@
 
 PORTNAME=	epdfview
 PORTVERSION=	0.1.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	http://trac.emma-soft.com/epdfview/chrome/site/releases/ \
 		LOCAL/chinsan
@@ -16,7 +16,7 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A lightweight PDF document viewer
 
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
-LIB_DEPENDS=	poppler-glib.2:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS=	poppler-glib.3:${PORTSDIR}/graphics/poppler-gtk
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

@@ -9,6 +9,8 @@
 %%RUBY_SITELIBDIR%%/cairo/context/path.rb
 %%RUBY_SITELIBDIR%%/cairo/context/rectangle.rb
 %%RUBY_SITELIBDIR%%/cairo/context/triangle.rb
+%%RUBY_SITELIBDIR%%/cairo/paper.rb
+%%RUBY_SITELIBDIR%%/cairo/papers.rb
 %%RUBY_SITELIBDIR%%/cairo/path.rb
 %%RUBY_SITELIBDIR%%/cairo/point.rb
 %%RUBY_SITEARCHLIBDIR%%/cairo.so
