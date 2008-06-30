@@ -1,20 +1,5 @@
-libexec/apache/mod_gzip.so
-@exec %D/sbin/apxs -e -A -n gzip %f
-@unexec %D/sbin/apxs -e -A -n gzip %f
-%%PORTDOCS%%share/doc/mod_gzip/browser.htm
-%%PORTDOCS%%share/doc/mod_gzip/cache.htm
-%%PORTDOCS%%share/doc/mod_gzip/config.htm
-%%PORTDOCS%%share/doc/mod_gzip/encoding.htm
-%%PORTDOCS%%share/doc/mod_gzip/enhancements.htm
-%%PORTDOCS%%share/doc/mod_gzip/extern.gif
-%%PORTDOCS%%share/doc/mod_gzip/firewalls.htm
-%%PORTDOCS%%share/doc/mod_gzip/index.htm
-%%PORTDOCS%%share/doc/mod_gzip/links.htm
-%%PORTDOCS%%share/doc/mod_gzip/mod_gzip_logo.gif
-%%PORTDOCS%%share/doc/mod_gzip/status.htm
-%%PORTDOCS%%share/doc/mod_gzip/valid-css.png
-%%PORTDOCS%%share/doc/mod_gzip/valid-xhtml11.png
-%%PORTDOCS%%share/doc/mod_gzip/versions.htm
-share/examples/mod_gzip/mod_gzip.conf.sample
-@dirrm share/examples/mod_gzip
-%%PORTDOCS%%@dirrm share/doc/mod_gzip
+%%PORTDOCS%%share/doc/mod_gzip2/commands.txt
+%%PORTDOCS%%share/doc/mod_gzip2/samples.txt
+share/examples/mod_gzip2/mod_gzip2.conf.sample
+@dirrm share/examples/mod_gzip2
+%%PORTDOCS%%@dirrm share/doc/mod_gzip2

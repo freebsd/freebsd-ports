@@ -409,6 +409,7 @@
     SUBDIR += mod_geoip
     SUBDIR += mod_geoip2
     SUBDIR += mod_gzip
+    SUBDIR += mod_gzip2
     SUBDIR += mod_hosts_access
     SUBDIR += mod_index_rss
     SUBDIR += mod_jail
