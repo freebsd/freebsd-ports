@@ -6,7 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-java
-CATEGORIES+=	devel
+CATEGORIES+=	java
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Java bindings for Version control system

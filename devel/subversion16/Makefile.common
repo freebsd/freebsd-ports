@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.5.0
-CATEGORIES=	devel
+CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/nightly/en/:book
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
