@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	cherokee
-DISTVERSION=	0.7.0b1330
+PORTVERSION=	0.7.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/trunk/ \
-		LOCAL/beech \
-		http://www.alaskaparadise.com/freebsd/
+MASTER_SITES=	http://www.cherokee-project.com/download/0.7/0.7.2/ \
+		LOCAL/beech
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	beech@FreeBSD.org
@@ -35,7 +34,9 @@ CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
 		--disable-static
 DEFCONFS=	cherokee.conf
 CONFSUBDIRS=	ssl mods-available mods-enabled sites-available sites-enabled
-MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee_logrotate.1
+MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee_tweak.1 \
+		cherokee-admin.1 spawn-fcgi.1
+PORTDOCS=	*
 
 OPTIONS=	OPENSSL	"TLS/SSL support via openssl"	on \
 		GNUTLS	"TLS/SSL support via gnutls"	off \
@@ -86,5 +87,9 @@ post-install:
 		if [ ! -f $${i%.default} ];then ${CP} $$i $${i%.default};fi;done
 	@for i in `${FIND} ${PREFIX}/etc/cherokee/ -name \*.sample`;do\
 		if [ ! -f $${i%.sample} ];then ${CP} $$i $${i%.sample};fi;done
+
+.if !defined(NOPORTDOCS)
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
