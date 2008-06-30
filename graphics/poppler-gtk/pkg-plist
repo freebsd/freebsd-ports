@@ -1,4 +1,5 @@
 include/poppler/glib/poppler-action.h
+include/poppler/glib/poppler-annot.h
 include/poppler/glib/poppler-attachment.h
 include/poppler/glib/poppler-document.h
 include/poppler/glib/poppler-enums.h
@@ -9,7 +10,7 @@ include/poppler/glib/poppler.h
 lib/libpoppler-glib.a
 lib/libpoppler-glib.la
 lib/libpoppler-glib.so
-lib/libpoppler-glib.so.2
+lib/libpoppler-glib.so.3
 libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/ch01.html
 %%DOCSDIR%%/poppler/home.png

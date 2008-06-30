@@ -1,0 +1,28 @@
+--- qt4/src/Makefile.in.orig	2008-06-20 11:27:32.000000000 -0500
++++ qt4/src/Makefile.in	2008-06-20 11:29:36.000000000 -0500
+@@ -62,7 +62,6 @@
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+ libpoppler_qt4_la_DEPENDENCIES =  \
+-	$(top_builddir)/poppler/libpoppler.la $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__append_1)
+ am_libpoppler_qt4_la_OBJECTS = poppler-document.lo poppler-page.lo \
+ 	poppler-fontinfo.lo poppler-embeddedfile.lo poppler-textbox.lo \
+@@ -302,7 +301,7 @@
+ 	poppler-export.h			\
+ 	poppler-private.h
+ 
+-libpoppler_qt4_la_LIBADD = $(top_builddir)/poppler/libpoppler.la \
++libpoppler_qt4_la_LIBADD = -lpoppler \
+ 	$(FONTCONFIG_LIBS) $(POPPLER_QT4_LIBS) $(am__append_1)
+ libpoppler_qt4_la_LDFLAGS = -version-info 3:0:0
+ all: all-am
+@@ -620,7 +619,7 @@
+ 
+ # This rule lets GNU make create any *.moc from the equivalent *.h
+ .h.moc:
+-	moc -i $< -o $@
++	moc-qt4 -i $< -o $@
+ 
+ poppler-optcontent.lo: poppler-optcontent.moc
+ 

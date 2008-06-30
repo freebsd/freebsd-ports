@@ -191,6 +191,7 @@
     SUBDIR += ffproxy
     SUBDIR += fhttpd
     SUBDIR += firefox
+    SUBDIR += firefox3
     SUBDIR += firefox-devel
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote

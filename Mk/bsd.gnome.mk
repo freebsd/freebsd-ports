@@ -3,7 +3,7 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/Mk/bsd.gnome.mk,v 1.447 2008/03/12 03:42:31 marcus Exp $
+#     $MCom: ports-stable/Mk/bsd.gnome.mk,v 1.8 2008/06/16 21:35:56 mezz Exp $
 #
 # Please view me with 4 column tabs!
 
@@ -645,7 +645,7 @@ ${component}_USE_GNOME_IMPL+=${${subcomponent}_USE_GNOME_IMPL}
 # Also, check to see if each component has a desktop requirement.  If it does,
 # and if the user's chosen desktop is not of the same version, mark the
 # port as IGNORE.
-. for component in ${USE_GNOME}
+. for component in ${USE_GNOME:C/^([^:]+).*/\1/}
 .      if defined(GNOME_DESKTOP_VERSION) && \
 	defined(${component}_GNOME_DESKTOP_VERSION)
 .         if ${GNOME_DESKTOP_VERSION}!=${${component}_GNOME_DESKTOP_VERSION}
@@ -677,16 +677,21 @@ lthacks_PRE_PATCH=		${CP} -pf ${LTMAIN} ${WRKDIR}/gnome-ltmain.sh && \
 								${PATCH_WRKSRC}/$$file; \
 						done;
 .else
-.  if ${USE_GNOME:Mltverhack}!="" || ${USE_GNOME:Mltasneededhack}!=""
+.  if ${USE_GNOME:Mltverhack*}!="" || ${USE_GNOME:Mltasneededhack}!=""
 IGNORE=	cannot install: ${PORTNAME} uses the ltverhack and/or ltasneededhack GNOME components but does not use libtool
 .  endif
 .endif
 
+.if ${USE_GNOME:Mltverhack\:*:C/^[^:]+:([^:]+).*/\1/}==""
+ltverhack_LIB_VERSION=	major=.`expr $$current - $$age`
+.else
+ltverhack_LIB_VERSION=	major=".${USE_GNOME:Mltverhack\:*:C/^[^:]+:([^:]+).*/\1/}"
+.endif
 ltverhack_PATCH_DEPENDS=${LIBTOOL_DEPENDS}
 ltverhack_PRE_PATCH=	for file in gnome-ltmain.sh gnome-libtool; do \
 							if [ -f ${WRKDIR}/$$file ]; then \
 								${REINPLACE_CMD} -e \
-									'/freebsd-elf)/,/;;/ s|major="\.$$current"|major=.`expr $$current - $$age`|; \
+									'/freebsd-elf)/,/;;/ s|major="\.$$current"|${ltverhack_LIB_VERSION}|; \
 									 /freebsd-elf)/,/;;/ s|versuffix="\.$$current"|versuffix="$$major"|' \
 									${WRKDIR}/$$file; \
 							fi; \
@@ -703,9 +708,9 @@ ltasneededhack_PRE_PATCH=	if [ -f ${WRKDIR}/gnome-libtool ]; then \
 # Then traverse through all components, check which of them
 # exist in ${_USE_GNOME} and set variables accordingly
 .ifdef _USE_GNOME
-. if ${USE_GNOME:Mltverhack}!= "" || ${USE_GNOME:Mltasneededhack}!= ""
+. if ${USE_GNOME:Mltverhack*}!= "" || ${USE_GNOME:Mltasneededhack}!= ""
 GNOME_PRE_PATCH+=	${lthacks_PRE_PATCH}
-.endif
+. endif
 . for component in ${_USE_GNOME_ALL}
 .  if ${_USE_GNOME:M${component}}!=""
 PATCH_DEPENDS+=	${${component}_PATCH_DEPENDS}

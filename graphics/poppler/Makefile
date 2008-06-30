@@ -3,11 +3,11 @@
 # Whom:                 marcus@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports-stable/graphics/poppler/Makefile,v 1.4 2007/11/30 04:35:05 marcus Exp $
+#   $MCom: ports-stable/graphics/poppler/Makefile,v 1.8 2008/06/20 17:47:36 mezz Exp $
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.6.4
+PORTVERSION=	0.8.3
 PORTREVISION?=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
@@ -19,8 +19,8 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnometarget libxml2
+USE_GNOME=	gnomehack gnometarget libxml2 ltverhack
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \
@@ -35,7 +35,7 @@ OPTIONS=	CAIRO "Enable cairo output backend" on
 .include <bsd.port.pre.mk>
 
 .if defined(SLAVEPORT)
-LIB_DEPENDS+=	poppler.2:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS+=	poppler.3:${PORTSDIR}/graphics/poppler
 .if ${SLAVEPORT}=="gtk"
 CONFIGURE_ARGS+=--enable-poppler-glib
 USE_GNOME+=	gtk20
@@ -58,7 +58,10 @@ CONFIGURE_ARGS+=--disable-poppler-qt
 .if ${SLAVEPORT}=="qt4"
 CONFIGURE_ARGS+=--enable-poppler-qt4
 USE_QT_VER+=	4
-QT_COMPONENTS=	gui corelib xml qtestlib
+QT_COMPONENTS=	gui corelib xml qtestlib moc_build
+# It requires poppler/splash to be built unless you disable splash backend
+# support to allow you use BUILD_WRKSRC here. It seems that splash backend
+# can read more PDF files than without, tested with demos's poppler_qt4viewer.
 #BUILD_WRKSRC=	${WRKSRC}/qt4
 INSTALL_WRKSRC=	${WRKSRC}/qt4
 .else

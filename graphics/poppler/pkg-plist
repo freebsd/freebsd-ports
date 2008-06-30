@@ -26,9 +26,11 @@ include/poppler/JBIG2Stream.h
 include/poppler/JPXStream.h
 include/poppler/Lexer.h
 include/poppler/Link.h
+include/poppler/Movie.h
 include/poppler/NameToCharCode.h
 include/poppler/NameToUnicodeTable.h
 include/poppler/Object.h
+include/poppler/OptionalContent.h
 include/poppler/Outline.h
 include/poppler/OutputDev.h
 include/poppler/PDFDoc.h
@@ -92,7 +94,7 @@ include/poppler/splash/SplashXPathScanner.h
 lib/libpoppler.a
 lib/libpoppler.la
 lib/libpoppler.so
-lib/libpoppler.so.2
+lib/libpoppler.so.3
 libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-splash.pc
 libdata/pkgconfig/poppler.pc

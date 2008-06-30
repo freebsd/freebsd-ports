@@ -3,12 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/cairo/Makefile,v 1.69 2008/03/21 04:04:14 ahze Exp $
+#   $MCom: ports-stable/graphics/cairo/Makefile,v 1.3 2008/06/16 21:35:57 mezz Exp $
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.4.14
-PORTREVISION?=	0
+PORTVERSION=	1.6.4
+PORTREVISION?=	2
 PORTEPOCH?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -31,7 +31,7 @@ USE_GNOME=	gnometarget gnomehack ltverhack referencehack
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 
 .if defined(WITHOUT_X11)

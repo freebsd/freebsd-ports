@@ -3,12 +3,11 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/ruby-cairo/Makefile,v 1.6 2008/02/28 21:28:18 mezz Exp $
+#   $MCom: ports-stable/graphics/ruby-cairo/Makefile,v 1.1 2008/06/17 16:11:09 mezz Exp $
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.6.2
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -25,6 +24,10 @@ USE_RUBY_EXTCONF=yes
 CONFIGURE_ARGS+=--ruby=${RUBY}
 
 DOCS=		AUTHORS COPYING ChangeLog GPL NEWS README
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local/lib/pkgconfig|${LOCALBASE}/libdata/pkgconfig|g' \
+		${WRKSRC}/pkg-config.rb
 
 post-install:
 .if !defined(NOPORTDOCS)

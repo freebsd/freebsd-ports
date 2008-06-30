@@ -122,6 +122,7 @@ libdata/pkgconfig/cairomm-1.0.pc
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/classstd_1_1logic__error__inherit__graph.png
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/context_8h-source.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/context_8h.html
+%%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/deprecated.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/dir_60681489e9d398c429ccaa1240ca56f5.html
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/dir_60681489e9d398c429ccaa1240ca56f5_dep.map
 %%PORTDOCS%%share/doc/libcairomm-1.0/reference/html/dir_60681489e9d398c429ccaa1240ca56f5_dep.png
