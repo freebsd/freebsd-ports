@@ -1,6 +1,7 @@
 bin/sqlt
 bin/sqlt-diagram
 bin/sqlt-diff
+bin/sqlt-diff-old
 bin/sqlt-dumper
 bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator.pm
