@@ -7,3 +7,6 @@ SIZE (subversion/svn-book-html.tar.bz2) = 404468
 MD5 (subversion/svn-book.pdf) = 5fe39899d7e17f31f1498991dce7dafb
 SHA256 (subversion/svn-book.pdf) = cb34765531342a619ca3b710a75478ac9884e4e11ae680161b68f424f6f533f3
 SIZE (subversion/svn-book.pdf) = 1659122
+MD5 (subversion/svn_hacks_1.1.diff) = c936ad112897d698c6b3c066c8f93606
+SHA256 (subversion/svn_hacks_1.1.diff) = cbc4503e4f6a624ec40d23b8b8444ced84d71482308c4c08e3cce6f3452b64cb
+SIZE (subversion/svn_hacks_1.1.diff) = 17813
