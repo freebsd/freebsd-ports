@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Perl module for accounting SVN repository
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversion-perl \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion \
 		p5-SVN-Log>=0:${PORTSDIR}/devel/p5-SVN-Log \
 		p5-Algorithm-Accounting>=0:${PORTSDIR}/devel/p5-Algorithm-Accounting \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple

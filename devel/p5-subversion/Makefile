@@ -5,16 +5,37 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-perl
+PKGNAMEPREFIX=	p5-
+CATEGORIES+=	perl
 
-MAINTAINER=	autrijus@autrijus.org
-COMMENT=	Version control system with Perl bindings
-CONFLICTS=      subversion-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]* subversion-devel-[0-9]* subversion-freebsd-[0-9]*
+MAINTAINER=	lev@FreeBSD.org
+COMMENT=	Perl bindings for Version control system
 
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
-PLIST=		${MASTERDIR}/pkg-plist
 
-WITH_PERL=	yes
+USE_PERL5=		5.8.0+
 
-.include "${MASTERDIR}/Makefile"
+MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=			SVN::Base.3 \
+			SVN::Client.3 \
+			SVN::Core.3 \
+			SVN::Delta.3 \
+			SVN::Fs.3 \
+			SVN::Ra.3 \
+			SVN::Repos.3 \
+			SVN::Wc.3
+
+SVN_BUILD_BINDINGS=yes
+
+.include "${MASTERDIR}/Makefile.common"
+
+do-build:
+	cd ${WRKSRC} ; ${MAKE} swig-pl-lib ; ${MAKE} swig-pl
+
+do-install:
+	cd ${WRKSRC} ; \
+	${REINPLACE_CMD} '/SWIG_PL_DIR/s, install$$, all pure_install,g' ${WRKSRC}/Makefile ; \
+	${MAKE} install-swig-pl
+
+.include <bsd.port.post.mk>

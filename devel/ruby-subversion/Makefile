@@ -5,16 +5,25 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-ruby
+PKGNAMEPREFIX=	ruby-
+CATEGORIES+=	ruby
 
-MAINTAINER=	don@na.rim.or.jp
-COMMENT=	Version control system with Ruby bindings
-CONFLICTS=      subversion-[0-9]* subversion-perl-[0-9]* subversion-python-[0-9]* subversion-devel-[0-9]* subversion-freebsd-[0-9]*
+MAINTAINER=	lev@FreeBSD.org
+COMMENT=	Ruby bindings for version control system
 
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
-PLIST=		${MASTERDIR}/pkg-plist
 
-WITH_RUBY=	yes
+USE_RUBY=		yes
 
-.include "${MASTERDIR}/Makefile"
+SVN_BUILD_BINDINGS=yes
+
+.include "${MASTERDIR}/Makefile.common"
+
+do-build:
+	cd ${WRKSRC} ; ${MAKE} swig-rb-lib ; ${MAKE} swig-rb
+
+do-install:
+	cd ${WRKSRC} ; ${MAKE} install-swig-rb
+
+.include <bsd.port.post.mk>

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Wrapper for subversion program
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Client.pm:${PORTSDIR}/devel/subversion-perl \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Client.pm:${PORTSDIR}/devel/p5-subversion \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/${PERL_ARCH}/IO/AIO.pm:${PORTSDIR}/devel/p5-IO-AIO

@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-freebsd
+PORTREVISION?=	1
 
 COMMENT=	Version control system with FreeBSD Project repo customizations
 
-MASTERDIR=	${.CURDIR}/../subversion-devel
+MASTERDIR=	${.CURDIR}/../subversion
 
 DESCR=		${.CURDIR}/pkg-descr
 
@@ -17,7 +18,7 @@ PATCH_SITES=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	peter
 PATCHFILES+=		svn_hacks_1.1.diff
 
-CONFLICTS?=	subversion-[0-9]* subversion-perl-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]* subversion-devel-[0-9]*
+CONFLICTS?=	subversion-[0-9]* subversion-devel-[0-9]*
 
 MD5_FILE=	${MASTERDIR}/distinfo
 

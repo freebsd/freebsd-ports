@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A tool to post subversion repository commit information
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/subversion-python
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/py-subversion
 
 USE_BZIP2=	YES
 USE_PYTHON=		2.3+

@@ -1,0 +1,62 @@
+# New ports collection makefile for:	subversion
+# Date created:				10 September 2001
+# Whom:					rooneg@electricjellyfish.net
+#
+# $FreeBSD$
+
+PORTNAME=	subversion
+PORTVERSION=	1.5.0
+CATEGORIES=	devel
+MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
+		http://svnbook.red-bean.com/nightly/en/:book
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
+DIST_SUBDIR=	subversion
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+
+USE_BZIP2=	yes
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--with-ssl
+WANT_PERL=	yes
+
+.include <bsd.port.pre.mk>
+
+.if defined(SVN_BUILD_BINDINGS)
+LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
+EXTRA_PATCHES+=	${PATCHDIR}/bindings-patch-subversion--bindings--swig--perl--native--Makefile.PL.in
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+PLIST_SUB+=		WITHOUT_GETTEXT=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		WITHOUT_GETTEXT="@comment "
+.endif
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fpic -DPIC
+.endif
+
+.if defined(WITH_MAINTAINER_DEBUG)
+CONFIGURE_ARGS+=--enable-maintainer-mode \
+		--enable-debug
+CFLAGS+=	-g
+.endif
+
+post-extract:
+	@${RM} -rf ${WRKSRC}/neon
+	@${RM} -rf ${WRKSRC}/apr
+	@${RM} -rf ${WRKSRC}/apr-util
+
+post-patch:
+.if ${PREFIX} != "/usr"
+	@${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
+	@${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
+.endif
+	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} "s#^LIBTOOL =.*#LIBTOOL = ${LIBTOOL}#" ${WRKSRC}/Makefile.in
+.if defined(SVN_BUILD_BINDINGS)
+	@${CP} ${FILESDIR}/build-outputs.mk ${WRKSRC}
+.endif

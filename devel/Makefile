@@ -1819,6 +1819,7 @@
     SUBDIR += p5-rpm-build-perl
     SUBDIR += p5-self
     SUBDIR += p5-subatom
+    SUBDIR += p5-subversion
     SUBDIR += p5-threads
     SUBDIR += p5-threads-shared
     SUBDIR += p5-usb
@@ -2149,6 +2150,7 @@
     SUBDIR += py-spark
     SUBDIR += py-sqlcc
     SUBDIR += py-statgrab
+    SUBDIR += py-subversion
     SUBDIR += py-tables
     SUBDIR += py-tconfpy
     SUBDIR += py-testgears
@@ -2290,6 +2292,7 @@
     SUBDIR += ruby-slang
     SUBDIR += ruby-statgrab
     SUBDIR += ruby-strongtyping
+    SUBDIR += ruby-subversion
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-term-ansicolor
     SUBDIR += ruby-textbuf
@@ -2402,9 +2405,6 @@
     SUBDIR += subversion
     SUBDIR += subversion-devel
     SUBDIR += subversion-freebsd
-    SUBDIR += subversion-perl
-    SUBDIR += subversion-python
-    SUBDIR += subversion-ruby
     SUBDIR += subversive
     SUBDIR += sunterlib
     SUBDIR += svk

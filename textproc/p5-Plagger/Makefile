@@ -346,7 +346,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/WWW/Mixi.pm:${PORTSDIR}/www/p5-WWW-Mixi
 .endif
 
 .if defined(WITH_CUSTOMSVNLOG)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/SVN/Client.pm:${PORTSDIR}/devel/subversion-perl
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/SVN/Client.pm:${PORTSDIR}/devel/p5-subversion
 .endif
 
 .if defined(WITH_NTFYNETSEND)

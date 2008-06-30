@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	Perl extension to manipulate SVN Access files
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Base.pm:${PORTSDIR}/devel/subversion-perl \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Base.pm:${PORTSDIR}/devel/p5-subversion \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Base.pm:${PORTSDIR}/devel/subversion-perl \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Base.pm:${PORTSDIR}/devel/p5-subversion \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 
 PERL_CONFIGURE=	yes

@@ -4,30 +4,10 @@
 #
 # $FreeBSD$
 
-PORTNAME=	subversion
-PORTVERSION=	1.4.6
-PORTREVISION?=	2
-CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
-		http://svnbook.red-bean.com/en/${PORTVERSION:R}/:book
-DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
-DIST_SUBDIR=	subversion
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
-
 MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
 
-CONFLICTS?=	subversion-perl-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]* subversion-devel-[0-9]* subversion-freebsd-[0-9]*
-
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
-
-USE_LDCONFIG=	yes
-
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--with-ssl
-WANT_PERL=	yes
+CONFLICTS?=	subversion-devel-[0-9]* subversion-freebsd-[0-9]*
 
 USE_RC_SUBR=	svnserve
 
@@ -37,32 +17,18 @@ MAN8=		svnserve.8
 
 TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 
-OPTIONS=	PERL		"Perl bindings" off \
-		PYTHON		"Python bindings" off \
-		RUBY		"Ruby bindings" off \
-		JAVA		"Java (JavaHL) bindings" off \
-		MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
+OPTIONS=	MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
 		APACHE2_APR	"Use APR from Apache 2.X" off \
-		NEON		"WebDAV/Delta-V repository access module" on \
+		NEON		"WebDAV/Delta-V repo access module (neon)" on \
+		SERF		"WebDAV/Delta-V repo access module (serf)" off \
+		SASL		"SASL2 authorization support" off \
 		BDB		"db4 repository backend" on \
 		ASVN		"Build and install Archive SVN (asvn)" off \
 		MAINTAINER_DEBUG	"Build debug version" off \
 		SVNSERVE_WRAPPER	"Enable svnserve wrapper" off \
 		BOOK		"Install the Subversion Book" off
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
-PLIST_SUB+=		WITHOUT_GETTEXT=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		WITHOUT_GETTEXT="@comment "
-.endif
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fpic -DPIC
-.endif
+.include "${.CURDIR}/../../devel/subversion/Makefile.common"
 
 SVNREPOS?=	/home/svn/repos
 SVNFSTYPE?=	fsfs
@@ -75,83 +41,38 @@ WITH_REPOSITORY_CREATION=	yes
 MKREPOS_TARGET=	_mkrepos
 .endif
 
-.if defined(WITH_MAINTAINER_DEBUG)
-CONFIGURE_ARGS+=--enable-maintainer-mode \
-		--enable-debug
-CFLAGS+=	-g
-.endif
+CONFIGURE_ARGS+=	--without-swig
 
-.if !defined(WITHOUT_NEON)
-LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon26
+.if defined(WITH_NEON)
+LIB_DEPENDS+=	neon.28:${PORTSDIR}/www/neon28
 CONFIGURE_ARGS+=	--with-neon=${LOCALBASE}
-PLIST_SUB+=		WITHOUT_NEON=""
+PLIST_SUB+=		NEON=""
 .else
 CONFIGURE_ARGS+=	--without-neon
-PLIST_SUB+=		WITHOUT_NEON="@comment "
+PLIST_SUB+=		NEON="@comment "
 .endif
 
-.if defined(WITHOUT_BDB)
+.if defined(WITH_SERF)
+LIB_DEPENDS+=	serf-0.0:${PORTSDIR}/www/serf
+CONFIGURE_ARGS+=	--with-serf=${LOCALBASE}
+PLIST_SUB+=		SERF=""
+.else
+PLIST_SUB+=		SERF="@comment "
+.endif
+
+.if defined(WITH_SASL)
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
+PLIST_SUB+=		SASL=""
+.else
+PLIST_SUB+=		SASL="@comment "
+.endif
+
+.if defined(WITH_BDB)
+PLIST_SUB+=		BDB=""
+.else
 CONFIGURE_ARGS+=	--without-berkeley-db
-PLIST_SUB+=		WITHOUT_BDB="@comment "
-.else
-PLIST_SUB+=		WITHOUT_BDB=""
-.endif
-
-.if defined(WITH_PERL)
-USE_PERL5=		5.8.0+
-SWIG_BINDINGS+=		yes
-PLIST_SUB+=		WITH_PERL=""
-MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=			SVN::Base.3 \
-			SVN::Client.3 \
-			SVN::Core.3 \
-			SVN::Delta.3 \
-			SVN::Fs.3 \
-			SVN::Ra.3 \
-			SVN::Repos.3 \
-			SVN::Wc.3
-.else
-PLIST_SUB+=		WITH_PERL="@comment "
-.endif
-
-.if defined(WITH_PYTHON)
-USE_PYTHON=		yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
-SWIG_BINDINGS+=		yes
-PLIST_SUB+=		WITH_PYTHON=""
-.else
-PLIST_SUB+=		WITH_PYTHON="@comment "
-.endif
-
-.if defined(WITH_RUBY)
-USE_RUBY=		yes
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
-SWIG_BINDINGS+=		yes
-PLIST_SUB+=		WITH_RUBY=""
-.else
-PLIST_SUB+=		WITH_RUBY="@comment "
-.endif
-
-.if defined(WITH_JAVA)
-CATEGORIES+=	java
-USE_JAVA=	yes
-JAVA_VERSION=	1.2+
-JAVA_OS=	native
-JAVA_BUILD=	yes
-JAVA_RUN=	yes
-.include "${PORTSDIR}/Mk/bsd.java.mk"
-CONFIGURE_ARGS+=	--enable-javahl --with-jdk=${JAVA_HOME}
-PLIST_SUB+=		WITH_JAVA=""
-.else
-PLIST_SUB+=		WITH_JAVA="@comment "
-.endif
-
-.if defined(WITH_JAVA) && ${OSVERSION} < 503000
-BROKEN="Java bindings are supported only on FreeBSD 5.3 or newer"
-.endif
-
-.if !defined(SWIG_BINDINGS)
-CONFIGURE_ARGS+=	--without-swig --disable-swig-bindings
+PLIST_SUB+=		BDB="@comment "
 .endif
 
 .if defined(WITH_MOD_DAV_SVN)
@@ -178,7 +99,7 @@ APR_CONFIG=	apr-config
 APU_CONFIG=	apu-config
 .endif
 APR_PORT=	${APACHE_PORT}
-.if !defined(WITHOUT_BDB)
+.if defined(WITH_BDB)
 DEPENDS_ARGS+=	WITH_BERKELEYDB=db4
 OPT_NAME=	WITH_BERKELEYDB=(db4|db41|db42)
 .endif
@@ -186,7 +107,7 @@ OPT_NAME=	WITH_BERKELEYDB=(db4|db41|db42)
 APR_APU_DIR=	${LOCALBASE}/bin
 APR_CONFIG=	apr-1-config
 APU_CONFIG=	apu-1-config
-.if !defined(WITHOUT_BDB)
+.if defined(WITH_BDB)
 LIB_DEPENDS+=	apr-1.2:${PORTSDIR}/devel/apr-svn
 APR_PORT=	devel/apr-svn
 OPT_NAME=	APR_UTIL_WITH_BERKELEY_DB=yes
@@ -229,58 +150,27 @@ SCRIPTS_DATA=
 
 pre-everything::
 	@${ECHO_MSG} ""
-.if defined(WITHOUT_NEON)
-	@${ECHO_MSG} "WebDAV/Delta-V repository access module disabled."
-.else
+.if defined(WITH_NEON)
 	@${ECHO_MSG} "WebDAV/Delta-V repository access module enabled."
-	@${ECHO_MSG} "To disable it define WITHOUT_NEON"
+.else
+	@${ECHO_MSG} "WebDAV/Delta-V repository access module disabled."
 .endif
 	@${ECHO_MSG} ""
-.if defined(WITHOUT_BDB)
-	@${ECHO_MSG} "db4 repository backend disabled."
-.else
+.if defined(WITH_BDB)
 	@${ECHO_MSG} "db4 repository backend enabled."
-	@${ECHO_MSG} "To disable it define WITHOUT_BDB"
+.else
+	@${ECHO_MSG} "db4 repository backend disabled."
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_MAINTAINER_DEBUG)
 	@${ECHO_MSG} "Build debug version."
-.else
-	@${ECHO_MSG} "You can enable debug build by defining WITH_MAINTAINER_DEBUG."
-.endif
 	@${ECHO_MSG} ""
-.if defined(WITH_PERL)
-	@${ECHO_MSG} "Build with perl bindings."
-	@${ECHO_MSG} "Be sure, that apr library and perl both uses OR not uses threads in same time."
-.else
-	@${ECHO_MSG} "You can enable perl bindings by defining WITH_PERL"
 .endif
-	@${ECHO_MSG} ""
-.if defined(WITH_PYTHON)
-	@${ECHO_MSG} "Build with Python bindings."
-.else
-	@${ECHO_MSG} "You can enable Python bindings by defining WITH_PYTHON."
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_RUBY)
-	@${ECHO_MSG} "Build with Ruby bindings."
-.else
-	@${ECHO_MSG} "You can enable Ruby bindings by defining WITH_RUBY."
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_JAVA)
-	@${ECHO_MSG} "Build with Java (JavaHL) bindings."
-.else
-	@${ECHO_MSG} "You can enable Java bindings by defining WITH_JAVA."
-	@${ECHO_MSG} "You should have apr built with threads for Java support!"
-.endif
-	@${ECHO_MSG} ""
 .if defined(WITH_MOD_DAV_SVN)
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
+	@${ECHO_MSG} "This option implies the WITH_APACHE2_APR option."
 .else
 	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
-	@${ECHO_MSG} "by defining WITH_MOD_DAV_SVN.  This option implies"
-	@${ECHO_MSG} "the WITH_APACHE2_APR option."
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_APACHE2_APR)
@@ -288,17 +178,13 @@ pre-everything::
 	@${ECHO_MSG} "port/package installed, you may need to remove it."
 .else
 	@${ECHO_MSG} "You can link subversion against the APR built with"
-	@${ECHO_MSG} "the ${APACHE_PORT} port, rather than the devel/apr port,"
-	@${ECHO_MSG} "by defining WITH_APACHE2_APR."
+	@${ECHO_MSG} "the ${APACHE_PORT} port, rather than the devel/apr port."
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_SVNSERVE_WRAPPER)
 	@${ECHO_MSG} "svnserve wrapper enabled."
-.else
-	@${ECHO_MSG} "You can install the svnserve wrapper (sets umask 002)"
-	@${ECHO_MSG} "by defining WITH_SVNSERVE_WRAPPER."
-.endif
 	@${ECHO_MSG} ""
+.endif
 .if defined(WITH_REPOSITORY_CREATION)
 	@${ECHO_MSG} "I will create (or use, if it exists) \"${SVNGROUP}\" group."
 	@${ECHO_MSG} "Make sure that all committers are its members."
@@ -319,31 +205,13 @@ pre-everything::
 	@${ECHO_MSG} ""
 .if !defined(NOPORTDOCS) && defined(WITH_BOOK)
 	@${ECHO_MSG} "Subversion Book will be installed."
-.else
-	@${ECHO_MSG} "You can install the Subversion Book by defining WITH_BOOK."
-.endif
 	@${ECHO_MSG} ""
+.endif
 .if defined(WITH_ASVN)
 	@${ECHO_MSG} "asvn will be installed"
-.else
-	@${ECHO_MSG} "You can install asvn from contrib by defining WITH_ASVN"
-.endif
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}}"
-
-post-extract:
-	@${RM} -rf ${WRKSRC}/neon
-	@${RM} -rf ${WRKSRC}/apr
-	@${RM} -rf ${WRKSRC}/apr-util
-
-post-patch:
-.if ${PREFIX} != "/usr"
-	@${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
-	@${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
 .endif
-	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} "s#^LIBTOOL =.*#LIBTOOL = ${LIBTOOL}#" ${WRKSRC}/Makefile.in
+	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}}"
 
 pre-configure:
 	@if [ ! -x ${APR_APU_DIR}/${APR_CONFIG} -o ! -x ${APR_APU_DIR}/${APU_CONFIG} ] ; then \
@@ -364,25 +232,6 @@ pre-configure:
 		${ECHO_MSG} "" ; \
 		${FALSE} ; \
 	fi
-.endif
-
-post-build:
-.if defined(WITH_PERL)
-	cd ${WRKSRC} ; \
-	  ${MAKE} swig-pl
-.endif
-.if defined(WITH_PYTHON)
-	cd ${WRKSRC} ; \
-	  ${MAKE} swig-py
-.endif
-.if defined(WITH_RUBY)
-	cd ${WRKSRC} ; \
-	  ${MAKE} swig-rb
-.endif
-.if defined(WITH_JAVA)
-	@${MKDIR} ${WRKSRC}/subversion/bindings/java/javahl/classes
-	cd ${WRKSRC} ; \
-	  ${MAKE} javahl
 .endif
 
 .if defined(WITH_MOD_DAV_SVN)
@@ -407,23 +256,6 @@ post-install:	${MKREPOS_TARGET}
 .endif
 .if defined(WITH_ASVN)
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/client-side/asvn ${PREFIX}/bin
-.endif
-.if defined(WITH_PERL)
-	cd ${WRKSRC} ; \
-	${REINPLACE_CMD} '/SWIG_PL_DIR/s, install$$, all pure_install,g' ${WRKSRC}/Makefile ; \
-	  ${MAKE} install-swig-pl
-.endif
-.if defined(WITH_PYTHON)
-	cd ${WRKSRC} ; \
-	  ${MAKE} install-swig-py
-.endif
-.if defined(WITH_RUBY)
-	cd ${WRKSRC} ; \
-	  ${MAKE} install-swig-rb
-.endif
-.if defined(WITH_JAVA)
-	cd ${WRKSRC} ; \
-	  ${MAKE} install-javahl
 .endif
 .if defined(WITH_SVNSERVE_WRAPPER)
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${PREFIX}/bin/svnserve
@@ -471,5 +303,9 @@ post-deinstall:
 .if defined(WITH_MOD_DAV_SVN)
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
 .endif
+
+svn-build-outputs-hack:
+	cd ${WRKSRC} && ./gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc
+	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk
 
 .include <bsd.port.post.mk>
