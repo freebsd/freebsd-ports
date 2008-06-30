@@ -422,13 +422,13 @@ share/icons/hicolor/24x24/apps/hotwire-sudo.png
 share/icons/hicolor/24x24/apps/hotwire.png
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrm share/icons/hicolor/24x24/apps
-@dirrm share/icons/hicolor/24x24
-@dirrm share/icons/hicolor
-@dirrm share/icons
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
 @dirrm share/hotwire/images
 @dirrm share/hotwire
-@dirrm share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/hotwire_ui/renderers
 @dirrm %%PYTHON_SITELIBDIR%%/hotwire_ui/adaptors
 @dirrm %%PYTHON_SITELIBDIR%%/hotwire_ui
