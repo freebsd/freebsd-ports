@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080630:
+  AFFECTS: users of graphics/poppler* and future users of firefox3
+  AUTHOR: FreeBSD GNOME Team <gnome@FreeBSD.org>
+
+  The poppler* have been updated to 0.8.3 and the shared libraries have
+  been changed. As for the firefox3, it has been added in ports tree.
+  These ports need you to update most of installed ports, so run this:
+
+  # portmaster -a
+
+  or
+
+  # portupgrade -a
+
 20080627:
   AFFECTS: users of x11-drivers/xf86-video-ati
   AUTHOR: Jung-uk Kim <jkim@FreeBSD.org>
