@@ -8,12 +8,14 @@ bin/svnsync
 %%ASVN%%bin/asvn
 %%SVNSERVE_WRAPPER%%bin/svnserve.bin
 bin/svnversion
+include/subversion-1/mod_authz_svn.h
 include/subversion-1/mod_dav_svn.h
 include/subversion-1/svn-revision.txt
 include/subversion-1/svn_auth.h
 include/subversion-1/svn_base64.h
 include/subversion-1/svn_client.h
 include/subversion-1/svn_cmdline.h
+include/subversion-1/svn_compat.h
 include/subversion-1/svn_config.h
 include/subversion-1/svn_ctype.h
 include/subversion-1/svn_dav.h
@@ -25,7 +27,9 @@ include/subversion-1/svn_error_codes.h
 include/subversion-1/svn_fs.h
 include/subversion-1/svn_hash.h
 include/subversion-1/svn_io.h
+include/subversion-1/svn_iter.h
 include/subversion-1/svn_md5.h
+include/subversion-1/svn_mergeinfo.h
 include/subversion-1/svn_nls.h
 include/subversion-1/svn_opt.h
 include/subversion-1/svn_path.h
@@ -62,22 +66,26 @@ lib/libsvn_fs-1.a
 lib/libsvn_fs-1.la
 lib/libsvn_fs-1.so
 lib/libsvn_fs-1.so.0
-%%WITHOUT_BDB%%lib/libsvn_fs_base-1.a
-%%WITHOUT_BDB%%lib/libsvn_fs_base-1.la
-%%WITHOUT_BDB%%lib/libsvn_fs_base-1.so
-%%WITHOUT_BDB%%lib/libsvn_fs_base-1.so.0
+%%BDB%%lib/libsvn_fs_base-1.a
+%%BDB%%lib/libsvn_fs_base-1.la
+%%BDB%%lib/libsvn_fs_base-1.so
+%%BDB%%lib/libsvn_fs_base-1.so.0
 lib/libsvn_fs_fs-1.a
 lib/libsvn_fs_fs-1.la
 lib/libsvn_fs_fs-1.so
 lib/libsvn_fs_fs-1.so.0
+lib/libsvn_fs_util-1.a
+lib/libsvn_fs_util-1.la
+lib/libsvn_fs_util-1.so
+lib/libsvn_fs_util-1.so.0
 lib/libsvn_ra-1.a
 lib/libsvn_ra-1.la
 lib/libsvn_ra-1.so
 lib/libsvn_ra-1.so.0
-%%WITHOUT_NEON%%lib/libsvn_ra_dav-1.a
-%%WITHOUT_NEON%%lib/libsvn_ra_dav-1.la
-%%WITHOUT_NEON%%lib/libsvn_ra_dav-1.so
-%%WITHOUT_NEON%%lib/libsvn_ra_dav-1.so.0
+%%NEON%%lib/libsvn_ra_neon-1.a
+%%NEON%%lib/libsvn_ra_neon-1.la
+%%NEON%%lib/libsvn_ra_neon-1.so
+%%NEON%%lib/libsvn_ra_neon-1.so.0
 lib/libsvn_ra_local-1.a
 lib/libsvn_ra_local-1.la
 lib/libsvn_ra_local-1.so
@@ -90,6 +98,10 @@ lib/libsvn_repos-1.a
 lib/libsvn_repos-1.la
 lib/libsvn_repos-1.so
 lib/libsvn_repos-1.so.0
+%%SERF%%lib/libsvn_ra_serf-1.a
+%%SERF%%lib/libsvn_ra_serf-1.la
+%%SERF%%lib/libsvn_ra_serf-1.so
+%%SERF%%lib/libsvn_ra_serf-1.so.0
 lib/libsvn_subr-1.a
 lib/libsvn_subr-1.la
 lib/libsvn_subr-1.so
@@ -144,16 +156,40 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/bdb/svn-bdb-view.py
 %%DATADIR%%/bdb/svnfs.py
 %%DATADIR%%/bdb/whatis-rep.py
+%%DATADIR%%/buildbot/slaves/README
+%%DATADIR%%/buildbot/slaves/i686-debian-sarge1/mount-ramdrive.c
+%%DATADIR%%/buildbot/slaves/i686-debian-sarge1/svnbuild.sh
+%%DATADIR%%/buildbot/slaves/i686-debian-sarge1/svncheck.sh
+%%DATADIR%%/buildbot/slaves/i686-debian-sarge1/svnclean.sh
+%%DATADIR%%/buildbot/slaves/i686-debian-sarge1/svnlog.sh
+%%DATADIR%%/buildbot/slaves/i686-debian-sarge1/unmount-ramdrive.c
+%%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32/svnbuild.sh
+%%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32/svncheck.sh
+%%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32/svnclean.sh
+%%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32/svnlog.sh
+%%DATADIR%%/buildbot/slaves/win32-xp VS2005/config.bat
+%%DATADIR%%/buildbot/slaves/win32-xp VS2005/do_all.bat
+%%DATADIR%%/buildbot/slaves/win32-xp VS2005/svnbuild.bat
+%%DATADIR%%/buildbot/slaves/win32-xp VS2005/svncheck.bat
+%%DATADIR%%/buildbot/slaves/win32-xp VS2005/svnclean.bat
+%%DATADIR%%/buildbot/slaves/win32-xp VS2005/svnlog.bat
+%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/config.bat.tmpl
+%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svnbuild.bat
+%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svncheck.bat
+%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svnclean.bat
+%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svnlog.bat
 %%DATADIR%%/client-side/bash_completion
 %%DATADIR%%/client-side/bash_completion_test
-%%DATADIR%%/client-side/server-vsn.py
+%%DATADIR%%/client-side/change-svn-wc-format.py
+%%DATADIR%%/client-side/server-version.py
 %%DATADIR%%/client-side/showchange.pl
 %%DATADIR%%/client-side/svn-graph.pl
+%%DATADIR%%/client-side/wcfind
 %%DATADIR%%/dev/check-license.py
 %%DATADIR%%/dev/datecheck.py
 %%DATADIR%%/dev/contribulyze.py
 %%DATADIR%%/dev/gcov.patch
-%%DATADIR%%/dev/getsigs.pl
+%%DATADIR%%/dev/gen-javahl-errors.py
 %%DATADIR%%/dev/gnuify-changelog.pl
 %%DATADIR%%/dev/graph-dav-servers.py
 %%DATADIR%%/dev/iz/defect.dem
@@ -171,6 +207,7 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/dev/stress.pl
 %%DATADIR%%/dev/svn-dev.el
 %%DATADIR%%/dev/svn-dev.vim
+%%DATADIR%%/dev/svn-entries.el
 %%DATADIR%%/dev/svn-merge-revs.py
 %%DATADIR%%/dev/trails.py
 %%DATADIR%%/dev/verify-history.py
@@ -179,9 +216,19 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/diff/diff.c
 %%DATADIR%%/diff/diff3.c
 %%DATADIR%%/diff/diff4.c
+%%DATADIR%%/dist/construct-rolling-environment.sh
+%%DATADIR%%/dist/dist.sh
+%%DATADIR%%/dist/download-release.sh
+%%DATADIR%%/dist/extract-for-examination.sh
+%%DATADIR%%/dist/getsigs.pl
+%%DATADIR%%/dist/roll.sh
+%%DATADIR%%/dist/sample-rc-warning-index.html
+%%DATADIR%%/dist/test.sh
+%%DATADIR%%/dist/write-announcement.py
 %%DATADIR%%/examples/blame.py
 %%DATADIR%%/examples/check-modified.py
 %%DATADIR%%/examples/dumpprops.py
+%%DATADIR%%/examples/get-location-segments.py
 %%DATADIR%%/examples/getfile.py
 %%DATADIR%%/examples/getlocks_test.c
 %%DATADIR%%/examples/geturl.py
@@ -204,212 +251,51 @@ lib/libsvn_wc-1.so.0
 %%DATADIR%%/hook-scripts/log-police.py
 %%DATADIR%%/hook-scripts/mailer/mailer.conf.example
 %%DATADIR%%/hook-scripts/mailer/mailer.py
+%%DATADIR%%/hook-scripts/mailer/tests/mailer.conf
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-init.sh
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-t1.output
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-t1.sh
 %%DATADIR%%/hook-scripts/mailer/tests/mailer-tweak.py
 %%DATADIR%%/hook-scripts/README
+%%DATADIR%%/hook-scripts/svn2feed.py
 %%DATADIR%%/hook-scripts/svnperms.conf.example
 %%DATADIR%%/hook-scripts/svnperms.py
 %%DATADIR%%/hook-scripts/verify-po.py
+%%DATADIR%%/po/l10n-report.py
 %%DATADIR%%/po/po-update.sh
-%%DATADIR%%/po/svn-po-status-report.sh
-%%DATADIR%%/po/svn-po-status-run.sh
+%%DATADIR%%/server-side/fsfs-reshard.py
 %%DATADIR%%/server-side/svn-backup-dumps.py
+%%DATADIR%%/server-side/svn-populate-node-origins-index.c
 %%DATADIR%%/server-side/svnauthz-validate.c
-%%DATADIR%%/test-scripts/svntest/README
-%%DATADIR%%/test-scripts/svntest/dav_svn.passwd
-%%DATADIR%%/test-scripts/svntest/encode-base64.py
-%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/config.apr-0.9
-%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/config.apr-0.9.x
-%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/config.apr-util-0.9
-%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/config.httpd-2.0
-%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/config.shared
-%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/dav_svn.passwd
-%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/httpd-2.0.conf
-%%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared/mod_dav_svn.conf
-%%DATADIR%%/test-scripts/svntest/examples/solaris-7-static/config.apr-0.9
-%%DATADIR%%/test-scripts/svntest/examples/solaris-7-static/config.apr-util-0.9
-%%DATADIR%%/test-scripts/svntest/examples/solaris-7-static/config.httpd-2.0
-%%DATADIR%%/test-scripts/svntest/examples/solaris-7-static/config.solaris.static
-%%DATADIR%%/test-scripts/svntest/examples/solaris-7-static/dav_svn.passwd
-%%DATADIR%%/test-scripts/svntest/mod_dav_svn.conf
-%%DATADIR%%/test-scripts/svntest/svntest-bindings.sh
-%%DATADIR%%/test-scripts/svntest/svntest-bindings-generic.sh
-%%DATADIR%%/test-scripts/svntest/svntest-check-configuration.sh
-%%DATADIR%%/test-scripts/svntest/svntest-config.sh
-%%DATADIR%%/test-scripts/svntest/svntest-rebuild-generic.sh
-%%DATADIR%%/test-scripts/svntest/svntest-rebuild.sh
-%%DATADIR%%/test-scripts/svntest/svntest-run.sh
-%%DATADIR%%/test-scripts/svntest/svntest-sendmail.sh
-%%DATADIR%%/test-scripts/svntest/svntest-sendmail-generic.sh
-%%DATADIR%%/test-scripts/svntest/svntest-update.sh
-%%DATADIR%%/test-scripts/svntest/svntest.sh
+%%DATADIR%%/server-side/svn_dav_log_parse.py
+%%DATADIR%%/server-side/test_svn_dav_log_parse.py
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
 %%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_dav_svn.so
 %%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_authz_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav libexec/%%APACHEDIR%%/mod_dav.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav_svn libexec/%%APACHEDIR%%/mod_dav_svn.so
-%%WITH_JAVA%%lib/libsvnjavahl-1.a
-%%WITH_JAVA%%lib/libsvnjavahl-1.la
-%%WITH_JAVA%%lib/libsvnjavahl-1.so
-%%WITH_JAVA%%lib/libsvnjavahl-1.so.0
-%%WITH_JAVA%%lib/svn-javahl/svn-javahl.jar
-%%WITH_JAVA%%@dirrm lib/svn-javahl/include
-%%WITH_JAVA%%@dirrm lib/svn-javahl
-%%WITH_PERL%%lib/libsvn_swig_perl-1.a
-%%WITH_PERL%%lib/libsvn_swig_perl-1.la
-%%WITH_PERL%%lib/libsvn_swig_perl-1.so
-%%WITH_PERL%%lib/libsvn_swig_perl-1.so.0
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Base.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Client.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Core.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Delta.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Fs.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Ra.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Repos.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SVN/Wc.pm
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Client/_Client.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Client/_Client.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Core/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Core/_Core.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Core/_Core.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Delta/_Delta.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Delta/_Delta.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Fs/_Fs.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Fs/_Fs.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Ra/_Ra.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Ra/_Ra.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Repos/_Repos.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Repos/_Repos.so
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Wc/_Wc.bs
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Wc/_Wc.so
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Wc
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Repos
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Ra
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Fs
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Delta
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Client
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/_Core
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
-%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SVN
-%%WITH_PYTHON%%lib/libsvn_swig_py-1.a
-%%WITH_PYTHON%%lib/libsvn_swig_py-1.la
-%%WITH_PYTHON%%lib/libsvn_swig_py-1.so
-%%WITH_PYTHON%%lib/libsvn_swig_py-1.so.0
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/__init__.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/__init__.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_client.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_client.la
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_client.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_core.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_core.la
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_core.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_delta.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_delta.la
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_delta.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_fs.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_fs.la
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_fs.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_ra.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_ra.la
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_ra.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_repos.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_repos.la
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_repos.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_wc.a
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_wc.la
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/_wc.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/client.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/client.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/core.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/core.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/delta.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/delta.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/fs.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/fs.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/ra.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/ra.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/repos.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/repos.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/wc.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/libsvn/wc.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/__init__.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/__init__.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/client.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/client.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/core.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/core.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/delta.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/delta.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/fs.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/fs.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/ra.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/ra.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/repos.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/repos.pyc
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/wc.py
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/wc.pyc
-%%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/libsvn
-%%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/svn
-%%WITH_RUBY%%lib/libsvn_swig_ruby-1.a
-%%WITH_RUBY%%lib/libsvn_swig_ruby-1.la
-%%WITH_RUBY%%lib/libsvn_swig_ruby-1.so
-%%WITH_RUBY%%lib/libsvn_swig_ruby-1.so.0
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/core.a
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/core.la
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/core.so
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/client.a
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/client.la
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/client.so
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/delta.a
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/delta.la
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/delta.so
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/fs.a
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/fs.la
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/fs.so
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/ra.a
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/ra.la
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/ra.so
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/repos.a
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/repos.la
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/repos.so
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/wc.a
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/wc.la
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/svn/ext/wc.so
-%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/client.rb
-%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/core.rb
-%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/delta.rb
-%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/error.rb
-%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/fs.rb
-%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/info.rb
-%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/ra.rb
-%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/repos.rb
-%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/util.rb
-%%WITH_RUBY%%%%RUBY_SITELIBDIR%%/svn/wc.rb
-%%WITH_RUBY%%@dirrm %%RUBY_SITEARCHLIBDIR%%/svn/ext
-%%WITH_RUBY%%@dirrm %%RUBY_SITEARCHLIBDIR%%/svn
-%%WITH_RUBY%%@dirrm %%RUBY_SITELIBDIR%%/svn
 %%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html/images
 %%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/backup
 @dirrm %%DATADIR%%/bdb
+@dirrm %%DATADIR%%/buildbot/slaves/i686-debian-sarge1
+@dirrm %%DATADIR%%/buildbot/slaves/osx10.4-gcc4.0.1-ia32
+@dirrm %%DATADIR%%/buildbot/slaves/win32-xp VS2005
+@dirrm %%DATADIR%%/buildbot/slaves/xp-vc60-ia32
+@dirrm %%DATADIR%%/buildbot/slaves
+@dirrm %%DATADIR%%/buildbot
 @dirrm %%DATADIR%%/client-side
 @dirrm %%DATADIR%%/dev/iz
 @dirrm %%DATADIR%%/dev
 @dirrm %%DATADIR%%/diff
+@dirrm %%DATADIR%%/dist
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/hook-scripts/mailer/tests
 @dirrm %%DATADIR%%/hook-scripts/mailer
 @dirrm %%DATADIR%%/hook-scripts
 @dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%/server-side
-@dirrm %%DATADIR%%/test-scripts/svntest/examples/debian-gnulinux-shared
-@dirrm %%DATADIR%%/test-scripts/svntest/examples/solaris-7-static
-@dirrm %%DATADIR%%/test-scripts/svntest/examples
-@dirrm %%DATADIR%%/test-scripts/svntest
-@dirrm %%DATADIR%%/test-scripts
 @dirrm %%DATADIR%%/xslt
 @dirrm %%DATADIR%%

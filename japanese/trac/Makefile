@@ -72,7 +72,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/p
 .endif
 
 .if !defined(WITHOUT_SUBVERSION)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/subversion-python
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/py-subversion
 .endif
 
 .include <bsd.port.post.mk>

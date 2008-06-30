@@ -17,7 +17,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A simple ACL frontend for subversion
 
 BUILD_DEPENDS=	\
-		subversion-perl>=1.3.0:${PORTSDIR}/devel/subversion-perl \
+		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

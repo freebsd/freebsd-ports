@@ -17,7 +17,7 @@ MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	VCP destination driver for svn/svk
 
 BUILD_DEPENDS=	${SITE_PERL}/VCP.pm:${PORTSDIR}/devel/p5-VCP-autrijus \
-		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversion-perl \
+		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion \
 		${SITE_PERL}/SVK.pm:${PORTSDIR}/devel/svk \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}

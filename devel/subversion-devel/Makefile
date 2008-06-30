@@ -19,7 +19,7 @@ NO_PACKAGE=	No binary packages of release candidates
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-CONFLICTS?=	subversion-[0-9]* subversion-perl-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]* subversion-freebsd-[0-9]*
+CONFLICTS?=	subversion-[0-9]* subversion-freebsd-[0-9]*
 
 USE_LDCONFIG=	yes
 

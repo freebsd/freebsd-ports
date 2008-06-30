@@ -14,7 +14,7 @@ MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/41694/
 MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Web-based Version Control Repository Browsing
 
-RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/svn/__init__.py:${PORTSDIR}/devel/subversion-python \
+RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/svn/__init__.py:${PORTSDIR}/devel/py-subversion \
 		${PYTHON_LIBDIR}/site-packages/_mysql.so:${PORTSDIR}/databases/py-MySQLdb
 
 USE_PYTHON=	yes

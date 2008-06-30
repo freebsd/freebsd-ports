@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:id \
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Level design program developed by id Software and Loki Software
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/subversion-python
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libsvn/__init__.py:${PORTSDIR}/devel/py-subversion
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		mhash.2:${PORTSDIR}/security/mhash \
 		png.5:${PORTSDIR}/graphics/png

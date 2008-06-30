@@ -5,16 +5,25 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-python
+PKGNAMEPREFIX=	py-
+CATEGORIES+=	python
 
-MAINTAINER=	thinker@branda.to
-COMMENT=	Version control system with Python bindings
-CONFLICTS=      subversion-[0-9]* subversion-perl-[0-9]* subversion-ruby-[0-9]* subversion-devel-[0-9]* subversion-freebsd-[0-9]*
+MAINTAINER=	lev@FreeBSD.org
+COMMENT=	Python bindings for version control system
 
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
-PLIST=		${MASTERDIR}/pkg-plist
 
-WITH_PYTHON=	yes
+USE_PYTHON=yes
 
-.include "${MASTERDIR}/Makefile"
+SVN_BUILD_BINDINGS=yes
+
+.include "${MASTERDIR}/Makefile.common"
+
+do-build:
+	cd ${WRKSRC} ; ${MAKE} swig-py-lib ; ${MAKE} swig-py
+
+do-install:
+	cd ${WRKSRC} ; ${MAKE} install-swig-py
+
+.include <bsd.port.post.mk>
