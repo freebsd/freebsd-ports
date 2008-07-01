@@ -171,6 +171,7 @@ include/evolution-data-server-%%VERSION%%/libebook/e-contact.h
 include/evolution-data-server-%%VERSION%%/libebook/e-destination.h
 include/evolution-data-server-%%VERSION%%/libebook/e-name-western.h
 include/evolution-data-server-%%VERSION%%/libebook/e-vcard.h
+include/evolution-data-server-%%VERSION%%/libecal/e-cal-check-timezones.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-component.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-recur.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-time-util.h
