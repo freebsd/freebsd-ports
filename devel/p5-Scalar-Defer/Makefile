@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Scalar-Defer
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Calculate values on demand
 
-RUN_DEPENDS=	${SITE_PERL}/Class/InsideOut.pm:${PORTSDIR}/devel/p5-Class-InsideOut \
-		${SITE_PERL}/Exporter/Lite.pm:${PORTSDIR}/devel/p5-Exporter-Lite
+RUN_DEPENDS=	p5-Class-InsideOut>=0:${PORTSDIR}/devel/p5-Class-InsideOut \
+		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite
 
 PERL_CONFIGURE=	yes
 
