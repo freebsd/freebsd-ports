@@ -4,13 +4,16 @@ share/locale/bg/LC_MESSAGES/wormux.mo
 share/locale/bs/LC_MESSAGES/wormux.mo
 share/locale/ca/LC_MESSAGES/wormux.mo
 share/locale/cpf/LC_MESSAGES/wormux.mo
+share/locale/cs/LC_MESSAGES/wormux.mo
 share/locale/da/LC_MESSAGES/wormux.mo
 share/locale/de/LC_MESSAGES/wormux.mo
 share/locale/eo/LC_MESSAGES/wormux.mo
 share/locale/es/LC_MESSAGES/wormux.mo
+share/locale/fa/LC_MESSAGES/wormux.mo
 share/locale/fi/LC_MESSAGES/wormux.mo
 share/locale/fr/LC_MESSAGES/wormux.mo
 share/locale/gl/LC_MESSAGES/wormux.mo
+share/locale/he/LC_MESSAGES/wormux.mo
 share/locale/hu/LC_MESSAGES/wormux.mo
 share/locale/it/LC_MESSAGES/wormux.mo
 share/locale/lv/LC_MESSAGES/wormux.mo
@@ -25,11 +28,18 @@ share/locale/sk/LC_MESSAGES/wormux.mo
 share/locale/sl/LC_MESSAGES/wormux.mo
 share/locale/sv/LC_MESSAGES/wormux.mo
 share/locale/tr/LC_MESSAGES/wormux.mo
+share/locale/zh_CN/LC_MESSAGES/wormux.mo
+share/locale/zh_TW/LC_MESSAGES/wormux.mo
 share/pixmaps/wormux_128x128.png
 %%DATADIR%%/authors.dtd
 %%DATADIR%%/authors.xml
 %%DATADIR%%/body/beastieteam/arm.png
-%%DATADIR%%/body/beastieteam/black.png
+%%DATADIR%%/body/beastieteam/b_arm.png
+%%DATADIR%%/body/beastieteam/b_body.png
+%%DATADIR%%/body/beastieteam/b_eyelid.png
+%%DATADIR%%/body/beastieteam/b_foot.png
+%%DATADIR%%/body/beastieteam/b_head.png
+%%DATADIR%%/body/beastieteam/b_tail.png
 %%DATADIR%%/body/beastieteam/body.png
 %%DATADIR%%/body/beastieteam/c1.png
 %%DATADIR%%/body/beastieteam/c2.png
@@ -50,7 +60,15 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/body.dtd
 %%DATADIR%%/body/firefoxteam/arm1.png
 %%DATADIR%%/body/firefoxteam/arm2.png
-%%DATADIR%%/body/firefoxteam/black.png
+%%DATADIR%%/body/firefoxteam/b_arm1.png
+%%DATADIR%%/body/firefoxteam/b_arm2.png
+%%DATADIR%%/body/firefoxteam/b_body.png
+%%DATADIR%%/body/firefoxteam/b_ear-left.png
+%%DATADIR%%/body/firefoxteam/b_ear-right.png
+%%DATADIR%%/body/firefoxteam/b_eyelid.png
+%%DATADIR%%/body/firefoxteam/b_foot.png
+%%DATADIR%%/body/firefoxteam/b_head.png
+%%DATADIR%%/body/firefoxteam/b_tail.png
 %%DATADIR%%/body/firefoxteam/body.png
 %%DATADIR%%/body/firefoxteam/c1.png
 %%DATADIR%%/body/firefoxteam/c2.png
@@ -72,7 +90,11 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/firefoxteam/tail.png
 %%DATADIR%%/body/firefoxteam/yoyo.png
 %%DATADIR%%/body/gnuteam/arm.png
-%%DATADIR%%/body/gnuteam/black.png
+%%DATADIR%%/body/gnuteam/b_arm.png
+%%DATADIR%%/body/gnuteam/b_body.png
+%%DATADIR%%/body/gnuteam/b_eyelid.png
+%%DATADIR%%/body/gnuteam/b_foot.png
+%%DATADIR%%/body/gnuteam/b_head.png
 %%DATADIR%%/body/gnuteam/body.png
 %%DATADIR%%/body/gnuteam/c1.png
 %%DATADIR%%/body/gnuteam/c2.png
@@ -284,18 +306,31 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/workraveteam/jetpack.png
 %%DATADIR%%/body/workraveteam/pupil.png
 %%DATADIR%%/body/workraveteam/yoyo.png
+%%DATADIR%%/cursors.dtd
 %%DATADIR%%/cursors.xml
 %%DATADIR%%/font/DejaVuSans.ttf
 %%DATADIR%%/game_mode/classic.xml
 %%DATADIR%%/game_mode/classic_objects.xml
 %%DATADIR%%/game_mode/game_mode.dtd
 %%DATADIR%%/game_mode/objects.dtd
+%%DATADIR%%/game_mode/unlimited.xml
+%%DATADIR%%/game_mode/unlimited_objects.xml
 %%DATADIR%%/gfx/arrow.png
 %%DATADIR%%/gfx/pointer.png
-%%DATADIR%%/gfx/water.png
-%%DATADIR%%/gfx/water_bottom.png
+%%DATADIR%%/gfx/water/lava.png
+%%DATADIR%%/gfx/water/lava_bottom.png
+%%DATADIR%%/gfx/water/lava_drop.png
+%%DATADIR%%/gfx/water/radioactive.png
+%%DATADIR%%/gfx/water/radioactive_bottom.png
+%%DATADIR%%/gfx/water/radioactive_drop.png
+%%DATADIR%%/gfx/water/water.png
+%%DATADIR%%/gfx/water/water_bottom.png
+%%DATADIR%%/gfx/water/water_drop.png
 %%DATADIR%%/graphism.dtd
 %%DATADIR%%/graphism.xml
+%%DATADIR%%/help/ca/shortkeys.png
+%%DATADIR%%/help/en/shortkeys.png
+%%DATADIR%%/help/es/shortkeys.png
 %%DATADIR%%/interface/background_interface.png
 %%DATADIR%%/interface/clock.png
 %%DATADIR%%/interface/clock_background.png
@@ -313,9 +348,9 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/interface/cursors/hand-fire.png
 %%DATADIR%%/interface/cursors/hand-fire.right.png
 %%DATADIR%%/interface/cursors/hand-move.png
-%%DATADIR%%/interface/pause.png
 %%DATADIR%%/interface/quit.png
 %%DATADIR%%/interface/small_background_interface.png
+%%DATADIR%%/interface/warning.png
 %%DATADIR%%/interface/wind.png
 %%DATADIR%%/interface/wind_indicator.png
 %%DATADIR%%/map/aquarium/background.png
@@ -359,6 +394,10 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/christmas/map.png
 %%DATADIR%%/map/christmas/preview.jpg
 %%DATADIR%%/map/christmas/sky.jpg
+%%DATADIR%%/map/country/config.xml
+%%DATADIR%%/map/country/map.png
+%%DATADIR%%/map/country/preview.jpg
+%%DATADIR%%/map/country/sky.jpg
 %%DATADIR%%/map/cowland/config.xml
 %%DATADIR%%/map/cowland/map.png
 %%DATADIR%%/map/cowland/nuage.png
@@ -415,6 +454,11 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/hive/config.xml
 %%DATADIR%%/map/hive/part_effect_strip.png
 %%DATADIR%%/map/hive/preview.jpg
+%%DATADIR%%/map/icebergs/config.xml
+%%DATADIR%%/map/icebergs/map.png
+%%DATADIR%%/map/icebergs/preview.jpg
+%%DATADIR%%/map/icebergs/sky.jpg
+%%DATADIR%%/map/icebergs/wp.png
 %%DATADIR%%/map/island/config.xml
 %%DATADIR%%/map/island/island.png
 %%DATADIR%%/map/island/preview.jpg
@@ -424,6 +468,11 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/leafs/config.xml
 %%DATADIR%%/map/leafs/front.png
 %%DATADIR%%/map/leafs/preview.jpg
+%%DATADIR%%/map/lonely_island/config.xml
+%%DATADIR%%/map/lonely_island/map.png
+%%DATADIR%%/map/lonely_island/preview.jpg
+%%DATADIR%%/map/lonely_island/sky.jpg
+%%DATADIR%%/map/lonely_island/wind_particules.png
 %%DATADIR%%/map/map.dtd
 %%DATADIR%%/map/monkeybubbleworld/config.xml
 %%DATADIR%%/map/monkeybubbleworld/feuille.png
@@ -466,6 +515,7 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/random/texture.png
 %%DATADIR%%/map/random/tresor1.png
 %%DATADIR%%/map/random/tresor2.png
+%%DATADIR%%/map/random_map.jpg
 %%DATADIR%%/map/randomamoebas/config.xml
 %%DATADIR%%/map/randomamoebas/preview.jpg
 %%DATADIR%%/map/randomamoebas/sky.jpg
@@ -496,6 +546,7 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/menu/audio_label.png
 %%DATADIR%%/menu/background.png
 %%DATADIR%%/menu/background_credits.png
+%%DATADIR%%/menu/background_help.png
 %%DATADIR%%/menu/background_network.png
 %%DATADIR%%/menu/background_options.png
 %%DATADIR%%/menu/background_play.png
@@ -514,6 +565,14 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/menu/enabled.png
 %%DATADIR%%/menu/fps.png
 %%DATADIR%%/menu/fullscreen.png
+%%DATADIR%%/menu/i_backtobattle.png
+%%DATADIR%%/menu/i_credits.png
+%%DATADIR%%/menu/i_help.png
+%%DATADIR%%/menu/i_network.png
+%%DATADIR%%/menu/i_options.png
+%%DATADIR%%/menu/i_play.png
+%%DATADIR%%/menu/i_quit.png
+%%DATADIR%%/menu/i_update.png
 %%DATADIR%%/menu/ico_maps.png
 %%DATADIR%%/menu/ico_skins.png
 %%DATADIR%%/menu/ico_sounds.png
@@ -524,8 +583,10 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/menu/minus.png
 %%DATADIR%%/menu/mode_label.png
 %%DATADIR%%/menu/music_enable.png
+%%DATADIR%%/menu/padlock.png
 %%DATADIR%%/menu/plus.png
 %%DATADIR%%/menu/podium.png
+%%DATADIR%%/menu/refresh.png
 %%DATADIR%%/menu/resolution.png
 %%DATADIR%%/menu/right.png
 %%DATADIR%%/menu/scroll_on_border.png
@@ -573,15 +634,10 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/sound/default/crazy_03.ogg
 %%DATADIR%%/sound/default/crazy_04.ogg
 %%DATADIR%%/sound/default/crazy_05.ogg
-%%DATADIR%%/sound/default/cuss_01.ogg
-%%DATADIR%%/sound/default/cuss_02.ogg
-%%DATADIR%%/sound/default/cuss_03.ogg
-%%DATADIR%%/sound/default/cuss_04.ogg
 %%DATADIR%%/sound/default/death_01.ogg
 %%DATADIR%%/sound/default/death_02.ogg
 %%DATADIR%%/sound/default/fire_01.ogg
 %%DATADIR%%/sound/default/fire_02.ogg
-%%DATADIR%%/sound/default/hehe.ogg
 %%DATADIR%%/sound/default/hop_01.ogg
 %%DATADIR%%/sound/default/out_01.ogg
 %%DATADIR%%/sound/default/profile.xml
@@ -604,7 +660,10 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/sound/francais/fire_01.ogg
 %%DATADIR%%/sound/francais/fire_02.ogg
 %%DATADIR%%/sound/francais/profile.xml
+%%DATADIR%%/sound/profile.dtd
+%%DATADIR%%/sound/share/box_hitting_ground.ogg
 %%DATADIR%%/sound/share/character_change.ogg
+%%DATADIR%%/sound/share/countdown-endturn.ogg
 %%DATADIR%%/sound/share/end_turn.ogg
 %%DATADIR%%/sound/share/explosion.ogg
 %%DATADIR%%/sound/share/frog_music.ogg
@@ -615,6 +674,7 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/sound/share/menu/ok.ogg
 %%DATADIR%%/sound/share/menu/weapon_menu_toggled.ogg
 %%DATADIR%%/sound/share/profile.xml
+%%DATADIR%%/sound/share/start_turn.ogg
 %%DATADIR%%/sound/share/step.ogg
 %%DATADIR%%/sound/share/victory.ogg
 %%DATADIR%%/sound/share/weapon/aircraft_bomb_falling.ogg
@@ -625,13 +685,18 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/sound/share/weapon/anvil_collision.ogg
 %%DATADIR%%/sound/share/weapon/anvil_fall.ogg
 %%DATADIR%%/sound/share/weapon/baseball.ogg
+%%DATADIR%%/sound/share/weapon/cluzooka_hit.ogg
+%%DATADIR%%/sound/share/weapon/cluzooka_shot.ogg
 %%DATADIR%%/sound/share/weapon/commit_suicide.ogg
 %%DATADIR%%/sound/share/weapon/disco_grenade_music.ogg
 %%DATADIR%%/sound/share/weapon/dynamite.ogg
 %%DATADIR%%/sound/share/weapon/dynamite_exp.ogg
 %%DATADIR%%/sound/share/weapon/dynamite_fuze.ogg
 %%DATADIR%%/sound/share/weapon/flame.ogg
+%%DATADIR%%/sound/share/weapon/footbomb_bounce.ogg
 %%DATADIR%%/sound/share/weapon/gnu_bounce.ogg
+%%DATADIR%%/sound/share/weapon/grapple_attaching.ogg
+%%DATADIR%%/sound/share/weapon/grapple_cable.ogg
 %%DATADIR%%/sound/share/weapon/grenade_bounce.ogg
 %%DATADIR%%/sound/share/weapon/gun.ogg
 %%DATADIR%%/sound/share/weapon/holly_grenade_bounce.ogg
@@ -645,6 +710,7 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/sound/share/weapon/ricoche3.ogg
 %%DATADIR%%/sound/share/weapon/riot_bomb_exp.ogg
 %%DATADIR%%/sound/share/weapon/shotgun.ogg
+%%DATADIR%%/sound/share/weapon/slap.ogg
 %%DATADIR%%/sound/share/weapon/supertux_flying.ogg
 %%DATADIR%%/sound/share/weapon/teleport_land.ogg
 %%DATADIR%%/sound/share/weapon/teleport_start.ogg
@@ -731,6 +797,10 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/weapon/cluster_bomb/cluster.png
 %%DATADIR%%/weapon/cluster_bomb/clusterbomb.png
 %%DATADIR%%/weapon/cluster_bomb/clusterbomb_ico.png
+%%DATADIR%%/weapon/cluzooka/cluster.png
+%%DATADIR%%/weapon/cluzooka/cluz_ico.png
+%%DATADIR%%/weapon/cluzooka/dark_bazooka.png
+%%DATADIR%%/weapon/cluzooka/missile.png
 %%DATADIR%%/weapon/construct/construct_icon.png
 %%DATADIR%%/weapon/construct/construct_icon_mini.png
 %%DATADIR%%/weapon/construct/construct_spr.png
@@ -742,6 +812,8 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/weapon/flamethrower/flame.png
 %%DATADIR%%/weapon/flamethrower/flame_bullet.png
 %%DATADIR%%/weapon/flamethrower/flame_ico.png
+%%DATADIR%%/weapon/footbomb/bilson.png
+%%DATADIR%%/weapon/footbomb/footbomb_ico.png
 %%DATADIR%%/weapon/gnu/gnu.png
 %%DATADIR%%/weapon/gnu/gnu_ico.png
 %%DATADIR%%/weapon/gnu/gnulauncher.png
@@ -776,6 +848,8 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/weapon/shotgun/shotgun_ico.png
 %%DATADIR%%/weapon/skip_turn/skipturn.png
 %%DATADIR%%/weapon/skip_turn/skipturn_ico.png
+%%DATADIR%%/weapon/slap/slap.png
+%%DATADIR%%/weapon/slap/slap_ico.png
 %%DATADIR%%/weapon/snipe_rifle/gun_fire.png
 %%DATADIR%%/weapon/snipe_rifle/snipe_rifle.png
 %%DATADIR%%/weapon/snipe_rifle/snipe_rifle_ico.png
@@ -792,6 +866,7 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/weapons.dtd
 %%DATADIR%%/weapons.xml
 %%DATADIR%%/wormux.svg
+%%DATADIR%%/wormux_128x128.icns
 %%DATADIR%%/wormux_128x128.png
 %%DATADIR%%/wormux_128x128.xpm
 %%DATADIR%%/wormux_256x256.png
@@ -803,6 +878,7 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/weapon/supertux
 @dirrm %%DATADIR%%/weapon/suicide
 @dirrm %%DATADIR%%/weapon/snipe_rifle
+@dirrm %%DATADIR%%/weapon/slap
 @dirrm %%DATADIR%%/weapon/skip_turn
 @dirrm %%DATADIR%%/weapon/shotgun
 @dirrm %%DATADIR%%/weapon/riot_bomb
@@ -816,10 +892,12 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/weapon/grenade
 @dirrm %%DATADIR%%/weapon/grapple
 @dirrm %%DATADIR%%/weapon/gnu
+@dirrm %%DATADIR%%/weapon/footbomb
 @dirrm %%DATADIR%%/weapon/flamethrower
 @dirrm %%DATADIR%%/weapon/dynamite
 @dirrm %%DATADIR%%/weapon/disco_grenade
 @dirrm %%DATADIR%%/weapon/construct
+@dirrm %%DATADIR%%/weapon/cluzooka
 @dirrm %%DATADIR%%/weapon/cluster_bomb
 @dirrm %%DATADIR%%/weapon/bounce_ball
 @dirrm %%DATADIR%%/weapon/blowtorch
@@ -870,8 +948,10 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/map/paradis
 @dirrm %%DATADIR%%/map/moon-4m
 @dirrm %%DATADIR%%/map/monkeybubbleworld
+@dirrm %%DATADIR%%/map/lonely_island
 @dirrm %%DATADIR%%/map/leafs
 @dirrm %%DATADIR%%/map/island
+@dirrm %%DATADIR%%/map/icebergs
 @dirrm %%DATADIR%%/map/hive
 @dirrm %%DATADIR%%/map/hell
 @dirrm %%DATADIR%%/map/halloween
@@ -884,6 +964,7 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/map/desert
 @dirrm %%DATADIR%%/map/crystal
 @dirrm %%DATADIR%%/map/cowland
+@dirrm %%DATADIR%%/map/country
 @dirrm %%DATADIR%%/map/christmas
 @dirrm %%DATADIR%%/map/cheese
 @dirrm %%DATADIR%%/map/champignon
@@ -896,6 +977,11 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/map
 @dirrm %%DATADIR%%/interface/cursors
 @dirrm %%DATADIR%%/interface
+@dirrm %%DATADIR%%/help/es
+@dirrm %%DATADIR%%/help/en
+@dirrm %%DATADIR%%/help/ca
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/gfx/water
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%/game_mode
 @dirrm %%DATADIR%%/font
