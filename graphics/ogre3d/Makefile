@@ -23,11 +23,12 @@ LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
 WRKSRC=		${WRKDIR}/ogre
 CONFIGURE_ARGS=	--disable-cg --program-transform-name= --enable-static \
 		--with-cppunit-prefix=/nonexistent --disable-freeimage
-CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -DNDEBUG" \
-		ZZIPLIB_CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	ZZIPLIB_CFLAGS="-I${LOCALBASE}/include" \
 		ZZIPLIB_LIBS="-L${LOCALBASE}/lib -lzzip"
 
-OPTIONS=	GTK	"Use GTK instead of Xt gui"	off
+OPTIONS=	GTK	"Use GTK instead of Xt gui"	off \
+		DEBUG	"Enable debug mode"		off \
+		DEMOS	"Build OGRE demos"		off
 
 GNU_CONFIGURE=	YES
 USE_AUTOTOOLS=	libtool:15
@@ -39,6 +40,19 @@ USE_SDL=	sdl
 USE_XORG=	xaw
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITH_DEBUG)
+CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -DNDEBUG"
+.else
+CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include"
+.endif
+
+.if defined(WITH_DEMOS)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois
+RUN_DEPENDS+=	${LOCALBASE}/lib/libOIS.so:${PORTSDIR}/devel/ois
+.else
+CONGIGURE_ARGS+=        --disable-ogre-demos
+.endif
 
 .if defined(WITH_GTK)
 USE_GNOME+=	gtk20
