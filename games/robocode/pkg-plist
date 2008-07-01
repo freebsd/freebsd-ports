@@ -13,6 +13,10 @@ bin/robocode
 %%DATADIR%%/javadoc/overview-tree.html
 %%DATADIR%%/javadoc/package-list
 %%DATADIR%%/javadoc/resources/inherit.gif
+%%DATADIR%%/javadoc/robocode/_AdvancedRadiansRobot.html
+%%DATADIR%%/javadoc/robocode/_AdvancedRobot.html
+%%DATADIR%%/javadoc/robocode/_Robot.html
+%%DATADIR%%/javadoc/robocode/_RobotBase.html
 %%DATADIR%%/javadoc/robocode/AdvancedRobot.html
 %%DATADIR%%/javadoc/robocode/Bullet.html
 %%DATADIR%%/javadoc/robocode/BulletHitBulletEvent.html
@@ -30,6 +34,28 @@ bin/robocode
 %%DATADIR%%/javadoc/robocode/MessageEvent.html
 %%DATADIR%%/javadoc/robocode/MoveCompleteCondition.html
 %%DATADIR%%/javadoc/robocode/RadarTurnCompleteCondition.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/IAdvancedEvents.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/IAdvancedRobot.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/IBasicEvents.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/IBasicRobot.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/IInteractiveEvents.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/IInteractiveRobot.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/IJuniorRobot.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/IPaintEvents.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/IPaintRobot.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/ITeamEvents.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/ITeamRobot.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/package-frame.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/package-summary.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/package-tree.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/peer/IAdvancedRobotPeer.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/peer/IBasicRobotPeer.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/peer/IJuniorRobotPeer.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/peer/IStandardRobotPeer.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/peer/ITeamRobotPeer.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/peer/package-frame.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/peer/package-summary.html
+%%DATADIR%%/javadoc/robocode/robotinterfaces/peer/package-tree.html
 %%DATADIR%%/javadoc/robocode/Robocode.html
 %%DATADIR%%/javadoc/robocode/RobocodeFileOutputStream.html
 %%DATADIR%%/javadoc/robocode/RobocodeFileWriter.html
@@ -86,6 +112,9 @@ bin/robocode
 %%DATADIR%%/robots/sample/MyFirstRobot.class
 %%DATADIR%%/robots/sample/MyFirstRobot.java
 %%DATADIR%%/robots/sample/MyFirstRobot.properties
+%%DATADIR%%/robots/sample/PaintingRobot.class
+%%DATADIR%%/robots/sample/PaintingRobot.properties
+%%DATADIR%%/robots/sample/PaintingRobot.java
 %%DATADIR%%/robots/sample/RamFire.class
 %%DATADIR%%/robots/sample/RamFire.java
 %%DATADIR%%/robots/sample/RamFire.properties
@@ -109,6 +138,23 @@ bin/robocode
 %%DATADIR%%/robots/sample/Walls.class
 %%DATADIR%%/robots/sample/Walls.java
 %%DATADIR%%/robots/sample/Walls.properties
+%%DATADIR%%/robots/sampleex/Alien.class
+%%DATADIR%%/robots/sampleex/Alien.java
+%%DATADIR%%/robots/sampleex/Alien.properties
+%%DATADIR%%/robots/sampleex/AlienComposition$AlienEventHandler.class
+%%DATADIR%%/robots/sampleex/AlienComposition$AlienMain.class
+%%DATADIR%%/robots/sampleex/AlienComposition.class
+%%DATADIR%%/robots/sampleex/AlienComposition.java
+%%DATADIR%%/robots/sampleex/GreyEminence.class
+%%DATADIR%%/robots/sampleex/MasteAndSlave.properties
+%%DATADIR%%/robots/sampleex/MasterAndSlave.class
+%%DATADIR%%/robots/sampleex/MasterAndSlave.java
+%%DATADIR%%/robots/sampleex/MasterBase.class
+%%DATADIR%%/robots/sampleex/ProxyOfGreyEminence.class
+%%DATADIR%%/robots/sampleex/ProxyOfGreyEminence.java
+%%DATADIR%%/robots/sampleex/ProxyOfGreyEminence.properties
+%%DATADIR%%/robots/sampleex/RegullarMonk.class
+%%DATADIR%%/robots/sampleex/Slave.class
 %%DATADIR%%/robots/sampleteam/MyFirstDroid.class
 %%DATADIR%%/robots/sampleteam/MyFirstDroid.java
 %%DATADIR%%/robots/sampleteam/MyFirstLeader.class
@@ -123,10 +169,13 @@ bin/robocode
 %%DATADIR%%/versions.txt
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/robots/sampleteam
+@dirrm %%DATADIR%%/robots/sampleex
 @dirrm %%DATADIR%%/robots/sample
 @dirrm %%DATADIR%%/robots
 @dirrm %%DATADIR%%/libs
 @dirrm %%DATADIR%%/license
+@dirrm %%DATADIR%%/javadoc/robocode/robotinterfaces/peer
+@dirrm %%DATADIR%%/javadoc/robocode/robotinterfaces
 @dirrm %%DATADIR%%/javadoc/robocode/util
 @dirrm %%DATADIR%%/javadoc/robocode/control
 @dirrm %%DATADIR%%/javadoc/robocode
