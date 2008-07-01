@@ -10,9 +10,10 @@ upgrades.
   AFFECTS: users of graphics/poppler* and future users of firefox3
   AUTHOR: FreeBSD GNOME Team <gnome@FreeBSD.org>
 
-  The poppler* have been updated to 0.8.3 and the shared libraries have
-  been changed. As for the firefox3, it has been added in ports tree.
-  These ports need you to update most of installed ports, so run this:
+  The poppler* ports have been updated to 0.8.3 and the shared libraries
+  have changed.  Firefox 3.0 has been added to the tree as www/firefox3.
+  These changes require that all dependent ports be updated.  You can do
+  this in one of two ways:
 
   # portmaster -a
 
