@@ -32,12 +32,12 @@ etc/pkgtools.status-pkg.sh
 share/zsh/site-functions/_pkgtools
 @unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true
 @dirrmtry share/zsh
-%%PORTDOCS%%%%EXAMPLESDIR%%/bash/complete.sample
-%%PORTDOCS%%%%EXAMPLESDIR%%/tcsh/complete.sample
+%%EXAMPLESDIR%%/bash/complete.sample
+%%EXAMPLESDIR%%/tcsh/complete.sample
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/bash
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tcsh
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%EXAMPLESDIR%%/bash
+@dirrm %%EXAMPLESDIR%%/tcsh
+@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
