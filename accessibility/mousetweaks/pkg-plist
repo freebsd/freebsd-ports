@@ -89,6 +89,7 @@ share/gnome/help/mousetweaks/sv/figures/mouse-a11y-tab.png
 share/gnome/help/mousetweaks/sv/legal.xml
 share/gnome/help/mousetweaks/sv/mousetweaks.xml
 share/locale/ar/LC_MESSAGES/mousetweaks.mo
+share/locale/bg/LC_MESSAGES/mousetweaks.mo
 share/locale/ca/LC_MESSAGES/mousetweaks.mo
 share/locale/cs/LC_MESSAGES/mousetweaks.mo
 share/locale/da/LC_MESSAGES/mousetweaks.mo
@@ -124,6 +125,7 @@ share/locale/ta/LC_MESSAGES/mousetweaks.mo
 share/locale/th/LC_MESSAGES/mousetweaks.mo
 share/locale/tr/LC_MESSAGES/mousetweaks.mo
 share/locale/uk/LC_MESSAGES/mousetweaks.mo
+share/locale/vi/LC_MESSAGES/mousetweaks.mo
 share/locale/zh_CN/LC_MESSAGES/mousetweaks.mo
 share/locale/zh_HK/LC_MESSAGES/mousetweaks.mo
 share/locale/zh_TW/LC_MESSAGES/mousetweaks.mo
