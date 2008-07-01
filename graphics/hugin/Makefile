@@ -6,77 +6,69 @@
 #
 
 PORTNAME=	hugin
-DISTVERSION=	0.7_beta4
-PORTREVISION=	3
+PORTVERSION=	0.7.r3135
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	vd/hugin
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	A GUI for Panorama Tools, to stitch panoramic images
 
-# zip is needed for building the help file
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	pano13:${PORTSDIR}/graphics/libpano13 \
-		tiff:${PORTSDIR}/graphics/tiff \
-		png:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
+		png:${PORTSDIR}/graphics/png \
+		IlmImf:${PORTSDIR}/graphics/OpenEXR \
+		exiv2:${PORTSDIR}/graphics/exiv2 \
+		pano13:${PORTSDIR}/graphics/libpano13 \
 		boost_date_time:${PORTSDIR}/devel/boost
+RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
+		exiftool:${PORTSDIR}/graphics/p5-Image-ExifTool
 
-OPTIONS=	ENBLEND "enblend for high quality blending" on \
-		AUTOPANOSIFT "autopano-sift for automatic control points" on \
-		PTSTITCHER "PTStitcher for stitching images" on
+# TODO add autopano-sift-C to the ports collection and hook it here as
+# an optional dependency
+
+OPTIONS=	PANOMATIC "Install graphics/panomatic" on \
+		AUTOPANOSIFT "Install graphics/autopano-sift" on
 
 USE_BZIP2=	yes
 
-USE_AUTOTOOLS=	autoconf:261:env autoheader:261:env aclocal:110:env \
-		automake:110:env libtool:15:env
+USE_CMAKE=	yes
 
-IS_INTERACTIVE=	yes
+CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
+CMAKE_VERBOSE=	yes
+CMAKE_USE_PTHREAD=	yes
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} WXRC=${WXRC_CMD}
-CONFIGURE_ARGS+=--with-boost=${LOCALBASE}
-#		--disable-desktop
-USE_GMAKE=	yes
-USE_ICONV=	yes
-USE_WX=		2.6
-WX_CONF_ARGS=	absolute
+USE_WX=		2.8+
 
-.if defined(WX_UNICODE)
-CONFIGURE_ARGS+=--with-unicode=yes
-.else
-CONFIGURE_ARGS+=--with-unicode=no
-.endif
+USE_GETTEXT=	yes
 
 MAN1=		fulla.1
 
-DOCSDIR=	${PREFIX}/share/hugin/xrc/data
+#DOCSDIR=	${PREFIX}/share/hugin/xrc/data
+
+# workaround a bug in cmake (?). Without this we get an error like:
+# cd /usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1/base_wx && /usr/bin/c++   -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D__WXGTK__ -D_THREAD_SAFE -O2 -fno-strict-aliasing -pipe -pthread;-D_THREAD_SAFE -O3 -DNDEBUG -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin_base -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/foreign -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/foreign/vigra -I/usr/local/include -I/usr/local/include/OpenEXR -isystem /usr/local/lib/wx/include/gtk2-ansi-release-2.8 -isystem /usr/local/include/wx-2.8 -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1 -o CMakeFiles/huginbasewx.dir/ImageCache.o -c /usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1/base_wx/ImageCache.cpp
+# c++: No input files specified
+# with cmake 2.6.0. It works with cmake 2.4.8.
+post-configure:
+	${REINPLACE_CMD} \
+		's/-pthread;-D_THREAD_SAFE/-pthread -D_THREAD_SAFE/g' \
+		${WRKSRC}/src/hugin1/base_wx/CMakeFiles/huginbasewx.dir/flags.make \
+		${WRKSRC}/src/hugin1/hugin/CMakeFiles/hugin.dir/flags.make \
+		${WRKSRC}/src/hugin1/hugin/CMakeFiles/hugin.dir/link.txt \
+		${WRKSRC}/src/hugin1/nona_gui/CMakeFiles/nona_gui.dir/flags.make \
+		${WRKSRC}/src/hugin1/nona_gui/CMakeFiles/nona_gui.dir/link.txt \
+		${WRKSRC}/src/hugin1/stitch_project/CMakeFiles/hugin_stitch_project.dir/flags.make \
+		${WRKSRC}/src/hugin1/stitch_project/CMakeFiles/hugin_stitch_project.dir/link.txt
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ENBLEND)
-RUN_DEPENDS+=	enblend:${PORTSDIR}/graphics/enblend
+.if defined(WITH_PANOMATIC)
+RUN_DEPENDS+=	panomatic:${PORTSDIR}/graphics/panomatic
 .endif
 
 .if defined(WITH_AUTOPANOSIFT)
 RUN_DEPENDS+=	autopanog:${PORTSDIR}/graphics/autopano-sift
 .endif
-
-.if defined(WITH_PTSTITCHER)
-RUN_DEPENDS+=	PTStitcher:${PORTSDIR}/graphics/linux-panorama-tools
-.endif
-
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
-
-pre-configure:
-	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ./bootstrap
 
 .include <bsd.port.post.mk>

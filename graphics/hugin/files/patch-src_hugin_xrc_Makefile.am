@@ -1,8 +1,0 @@
---- src/hugin/xrc/Makefile.am.orig	Tue Jan 23 15:13:43 2007
-+++ src/hugin/xrc/Makefile.am	Tue Jan 23 15:52:04 2007
-@@ -42,4 +42,4 @@
- dist_xrc_DATA = $(XRC_FILES)
- 
- .xrc.xrs: 
--	-wxrc -g -o $(srcdir)/$@ $<
-+	-$(WXRC) -g -o $(srcdir)/$@ $<
