@@ -1708,6 +1708,8 @@ share/pixmaps/mahjongg/smooth.png
 @dirrm share/gnome/help/gnotski/fr
 @dirrm share/gnome/help/gnotski/es/figures
 @dirrm share/gnome/help/gnotski/es
+@dirrm share/gnome/help/gnotski/de/figures
+@dirrm share/gnome/help/gnotski/de
 @dirrm share/gnome/help/gnotski/ca/figures
 @dirrm share/gnome/help/gnotski/ca
 @dirrm share/gnome/help/gnotski/C/figures
