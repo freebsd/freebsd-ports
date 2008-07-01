@@ -172,6 +172,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/gnome-panel.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/gnome-panel.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/gnome-panel.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/gnome-screensaver-dialog.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/gnome-screensaver-dialog.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/gnome-screensaver-dialog.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/gnome-search-tool.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/gnome-search-tool.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/gnome-search-tool.pyo
