@@ -422,6 +422,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_EFL		- If set, this port use EFL libraries.
 #				  Implies inclusion of bsd.efl.mk.  (Also see
 #				  that file for more information on USE_EFL_*).
+# USE_FPC		- If set, this port relies on the Free Pascal language.
+# 				  Implies inclusion of bsd.fpc.mk.  (Also see
+#				  that file for more information on WANT_FPC_*).
 # USE_JAVA		- If set, this port relies on the Java language.
 #				  Implies inclusion of bsd.java.mk.  (Also see
 #				  that file for more information on USE_JAVA_*).
@@ -439,6 +442,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Implies the inclusion of bsd.gnustep.mk.
 #				  (Also see that file for more information on
 #				  USE_GNUSTEP_*).
+##
+# USE_GECKO		- If set, this port uses the Gecko/Mozilla product.
+#				  See bsd.gecko.mk for more details.
 ##
 # USE_GNOME		- A list of the Gnome dependencies the port has (e.g.,
 #				  glib12, gtk12).  Implies that the port needs Gnome.
@@ -1510,6 +1516,14 @@ PERL=		${LOCALBASE}/bin/perl
 .endif
 .endif
 
+.if defined(USE_FPC) || defined(WANT_FPC_BASE) || defined(WANT_FPC_ALL)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.fpc.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.fpc.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.fpc.mk"
+.endif
+.endif
+
 .if defined(USE_JAVA)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.java.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.java.mk"
@@ -1563,6 +1577,14 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${DEVELPORTSDIR}/Mk/bsd.qt.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.qt.mk"
+.endif
+.endif
+
+.if defined(WANT_GECKO) || defined(USE_GECKO)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gecko.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gecko.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .endif
 .endif
 
@@ -2180,6 +2202,14 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .include "${DEVELPORTSDIR}/Mk/bsd.autotools.mk"
 .else
 .include "${PORTSDIR}/Mk/bsd.autotools.mk"
+.endif
+.endif
+
+.if defined(WANT_GECKO) || defined(USE_GECKO)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.gecko.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.gecko.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .endif
 .endif
 
