@@ -1,19 +1,33 @@
+bin/align_image_stack
 bin/autooptimiser
-bin/color_correct_tiff
 bin/fulla
 bin/hugin
+bin/hugin_hdrmerge
+bin/hugin_stitch_project
+bin/matchpoint
 bin/nona
 bin/nona_gui
-bin/zhang_undistort
+bin/tca_correct
+bin/vig_optimize
+lib/libhuginANN.so
+lib/libhuginANN.so.0.0
+lib/libhuginbase.so
+lib/libhuginbase.so.0.0
+lib/libhuginjhead.so
+lib/libhuginjhead.so.0.0
+lib/libhuginvigraimpex.so
+lib/libhuginvigraimpex.so.0.0
+share/applications/hugin.desktop
+share/applications/hugin_stitch_project.desktop
+%%DATADIR%%/nona.txt
 %%DATADIR%%/xrc/about.xrc
-%%DATADIR%%/xrc/anchor_orientation.xrc
 %%DATADIR%%/xrc/assistant_panel.xrc
-%%DATADIR%%/xrc/cp_editor_panel-2.5.xrc
 %%DATADIR%%/xrc/cp_editor_panel.xrc
 %%DATADIR%%/xrc/cp_list_frame.xrc
 %%DATADIR%%/xrc/crop_panel.xrc
 %%DATADIR%%/xrc/data/1leftarrow.png
 %%DATADIR%%/xrc/data/1rightarrow.png
+%%DATADIR%%/xrc/data/CMakeLists.txt
 %%DATADIR%%/xrc/data/CPCursor0.png
 %%DATADIR%%/xrc/data/CPCursor1.png
 %%DATADIR%%/xrc/data/CPCursor2.png
@@ -22,8 +36,6 @@ bin/zhang_undistort
 %%DATADIR%%/xrc/data/CPCursor5.png
 %%DATADIR%%/xrc/data/CPCursor6.png
 %%DATADIR%%/xrc/data/about.htm
-%%DATADIR%%/xrc/data/about_fr.htm
-%%DATADIR%%/xrc/data/about_pl.htm
 %%DATADIR%%/xrc/data/center_pano.xpm
 %%DATADIR%%/xrc/data/close.xpm
 %%DATADIR%%/xrc/data/druid.control.128.png
@@ -42,25 +54,124 @@ bin/zhang_undistort
 %%DATADIR%%/xrc/data/filesaveas.png
 %%DATADIR%%/xrc/data/find.png
 %%DATADIR%%/xrc/data/fit_pano.xpm
-%%DATADIR%%/xrc/data/help_common/horiz-guide.jpg
-%%DATADIR%%/xrc/data/help_common/hugin.png
-%%DATADIR%%/xrc/data/help_common/problem-circle.jpg
-%%DATADIR%%/xrc/data/help_en_EN/FAQ.html
-%%DATADIR%%/xrc/data/help_en_EN/contents.html
+%%DATADIR%%/xrc/data/help_en_EN/16bit_workflow_with_hugin.html
+%%DATADIR%%/xrc/data/help_en_EN/Aliasing.html
+%%DATADIR%%/xrc/data/help_en_EN/Align_a_stack_of_photos.html
+%%DATADIR%%/xrc/data/help_en_EN/Align_image_stack.html
+%%DATADIR%%/xrc/data/help_en_EN/Alpha_channel.html
+%%DATADIR%%/xrc/data/help_en_EN/Aspect_Ratio.html
+%%DATADIR%%/xrc/data/help_en_EN/Autooptimiser.html
+%%DATADIR%%/xrc/data/help_en_EN/Autopano-sift-C.html
+%%DATADIR%%/xrc/data/help_en_EN/Autopano-sift.html
+%%DATADIR%%/xrc/data/help_en_EN/Autopano.html
+%%DATADIR%%/xrc/data/help_en_EN/Banding.html
+%%DATADIR%%/xrc/data/help_en_EN/Barrel_distortion.html
+%%DATADIR%%/xrc/data/help_en_EN/Bracketing.html
+%%DATADIR%%/xrc/data/help_en_EN/CCD.html
+%%DATADIR%%/xrc/data/help_en_EN/CMakeLists.txt
+%%DATADIR%%/xrc/data/help_en_EN/Camera_response_curve.html
+%%DATADIR%%/xrc/data/help_en_EN/Chromatic_aberration.html
+%%DATADIR%%/xrc/data/help_en_EN/Color_correct_tiff.html
+%%DATADIR%%/xrc/data/help_en_EN/Colour_profile.html
+%%DATADIR%%/xrc/data/help_en_EN/Control_points.html
+%%DATADIR%%/xrc/data/help_en_EN/Crop_factor.html
+%%DATADIR%%/xrc/data/help_en_EN/Cropped_TIFF.html
+%%DATADIR%%/xrc/data/help_en_EN/Cubic.html
+%%DATADIR%%/xrc/data/help_en_EN/Cubic_Projection.html
+%%DATADIR%%/xrc/data/help_en_EN/Cylindrical.html
+%%DATADIR%%/xrc/data/help_en_EN/Cylindrical_Projection.html
+%%DATADIR%%/xrc/data/help_en_EN/Cylindrical_panorama.html
+%%DATADIR%%/xrc/data/help_en_EN/Depth_of_Field.html
+%%DATADIR%%/xrc/data/help_en_EN/Dust_Removal_with_Flatfield.html
+%%DATADIR%%/xrc/data/help_en_EN/Dynamic_range.html
+%%DATADIR%%/xrc/data/help_en_EN/EXIF.html
+%%DATADIR%%/xrc/data/help_en_EN/Enblend.html
+%%DATADIR%%/xrc/data/help_en_EN/Enfuse.html
+%%DATADIR%%/xrc/data/help_en_EN/Entrance_pupil.html
+%%DATADIR%%/xrc/data/help_en_EN/Equirectangular.html
+%%DATADIR%%/xrc/data/help_en_EN/Equirectangular_Projection.html
+%%DATADIR%%/xrc/data/help_en_EN/Field_of_View.html
+%%DATADIR%%/xrc/data/help_en_EN/Fisheye_Projection.html
+%%DATADIR%%/xrc/data/help_en_EN/Focal_Length.html
+%%DATADIR%%/xrc/data/help_en_EN/Freepv.html
+%%DATADIR%%/xrc/data/help_en_EN/Fulla.html
+%%DATADIR%%/xrc/data/help_en_EN/GIF.html
+%%DATADIR%%/xrc/data/help_en_EN/Gamma.html
+%%DATADIR%%/xrc/data/help_en_EN/HDR.html
+%%DATADIR%%/xrc/data/help_en_EN/HDR_workflow_with_hugin.html
+%%DATADIR%%/xrc/data/help_en_EN/Horizontal_control_points.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Assistant_tab.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Camera_and_Lens_tab.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Control_Points_tab.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Control_Points_table.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Crop_tab.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Exposure_tab.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_FAQ.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Images_tab.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Keyboard_shortcuts.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Main_window.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Optimizer_tab.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Preferences.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Preview_window.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Stitcher_tab.html
+%%DATADIR%%/xrc/data/help_en_EN/Interpolation.html
+%%DATADIR%%/xrc/data/help_en_EN/JPEG.html
+%%DATADIR%%/xrc/data/help_en_EN/LICENCE.manual
+%%DATADIR%%/xrc/data/help_en_EN/Landscape.html
+%%DATADIR%%/xrc/data/help_en_EN/Lens_correction_model.html
+%%DATADIR%%/xrc/data/help_en_EN/Lens_distortion.html
+%%DATADIR%%/xrc/data/help_en_EN/MatchPoint.html
+%%DATADIR%%/xrc/data/help_en_EN/NPP.html
+%%DATADIR%%/xrc/data/help_en_EN/Nadir.html
+%%DATADIR%%/xrc/data/help_en_EN/No-parallax_point.html
+%%DATADIR%%/xrc/data/help_en_EN/Nodal_Point.html
+%%DATADIR%%/xrc/data/help_en_EN/Nona.html
+%%DATADIR%%/xrc/data/help_en_EN/Nona_gui.html
+%%DATADIR%%/xrc/data/help_en_EN/OpenEXR.html
+%%DATADIR%%/xrc/data/help_en_EN/PNG.html
+%%DATADIR%%/xrc/data/help_en_EN/PPI.html
+%%DATADIR%%/xrc/data/help_en_EN/PSD.html
+%%DATADIR%%/xrc/data/help_en_EN/PTOptimizer.html
+%%DATADIR%%/xrc/data/help_en_EN/PTStitcher.html
+%%DATADIR%%/xrc/data/help_en_EN/PTblender.html
+%%DATADIR%%/xrc/data/help_en_EN/PTmender.html
+%%DATADIR%%/xrc/data/help_en_EN/PTtiff2psd.html
+%%DATADIR%%/xrc/data/help_en_EN/Pano12.html
+%%DATADIR%%/xrc/data/help_en_EN/Panoglview.html
+%%DATADIR%%/xrc/data/help_en_EN/Panoinfo.html
+%%DATADIR%%/xrc/data/help_en_EN/Panomatic.html
+%%DATADIR%%/xrc/data/help_en_EN/Panorama.html
+%%DATADIR%%/xrc/data/help_en_EN/Panorama_formats.html
+%%DATADIR%%/xrc/data/help_en_EN/Panorama_tools.html
+%%DATADIR%%/xrc/data/help_en_EN/Panotools.html
+%%DATADIR%%/xrc/data/help_en_EN/Parallax.html
+%%DATADIR%%/xrc/data/help_en_EN/Perspective_correction.html
+%%DATADIR%%/xrc/data/help_en_EN/Perspective_distortion.html
+%%DATADIR%%/xrc/data/help_en_EN/Pincushion_distortion.html
+%%DATADIR%%/xrc/data/help_en_EN/Pitch.html
+%%DATADIR%%/xrc/data/help_en_EN/Portrait.html
+%%DATADIR%%/xrc/data/help_en_EN/Projections.html
+%%DATADIR%%/xrc/data/help_en_EN/QTVR.html
+%%DATADIR%%/xrc/data/help_en_EN/RAW.html
+%%DATADIR%%/xrc/data/help_en_EN/RGBE.html
+%%DATADIR%%/xrc/data/help_en_EN/Rectilinear_Projection.html
+%%DATADIR%%/xrc/data/help_en_EN/Roll.html
+%%DATADIR%%/xrc/data/help_en_EN/Spherical.html
+%%DATADIR%%/xrc/data/help_en_EN/Stereographic_Projection.html
+%%DATADIR%%/xrc/data/help_en_EN/Straight_line_control_points.html
+%%DATADIR%%/xrc/data/help_en_EN/TIFF.html
+%%DATADIR%%/xrc/data/help_en_EN/Tone_mapping.html
+%%DATADIR%%/xrc/data/help_en_EN/Vertical_control_points.html
+%%DATADIR%%/xrc/data/help_en_EN/Vignetting.html
+%%DATADIR%%/xrc/data/help_en_EN/Wavy_distortion.html
+%%DATADIR%%/xrc/data/help_en_EN/Yaw.html
+%%DATADIR%%/xrc/data/help_en_EN/Zenith.html
 %%DATADIR%%/xrc/data/help_en_EN/hugin.hhc
 %%DATADIR%%/xrc/data/help_en_EN/hugin.hhk
 %%DATADIR%%/xrc/data/help_en_EN/hugin.hhp
-%%DATADIR%%/xrc/data/help_en_EN/keyboard.html
 %%DATADIR%%/xrc/data/help_en_EN/license.html
-%%DATADIR%%/xrc/data/help_en_EN/manual.html
-%%DATADIR%%/xrc/data/help_fr_FR/FAQ.html
-%%DATADIR%%/xrc/data/help_fr_FR/contents.html
-%%DATADIR%%/xrc/data/help_fr_FR/hugin.hhc
-%%DATADIR%%/xrc/data/help_fr_FR/hugin.hhk
-%%DATADIR%%/xrc/data/help_fr_FR/hugin.hhp
-%%DATADIR%%/xrc/data/help_fr_FR/keyboard.html
-%%DATADIR%%/xrc/data/help_fr_FR/license.html
-%%DATADIR%%/xrc/data/help_fr_FR/manual.html
+%%DATADIR%%/xrc/data/help_en_EN/pages.txt
 %%DATADIR%%/xrc/data/hugin.png
 %%DATADIR%%/xrc/data/icon.ico
 %%DATADIR%%/xrc/data/icon.png
@@ -104,28 +215,38 @@ bin/zhang_undistort
 %%DATADIR%%/xrc/edit_text.xrc
 %%DATADIR%%/xrc/help.xrc
 %%DATADIR%%/xrc/images_panel.xrc
-%%DATADIR%%/xrc/images_panel-2.5.xrc
 %%DATADIR%%/xrc/keyboard_help.xrc
 %%DATADIR%%/xrc/lens_panel.xrc
-%%DATADIR%%/xrc/lens_panel-2.5.xrc
 %%DATADIR%%/xrc/main_frame.xrc
-%%DATADIR%%/xrc/main_frame-2.5.xrc
 %%DATADIR%%/xrc/main_menu.xrc
-%%DATADIR%%/xrc/main_menubar.xrc
 %%DATADIR%%/xrc/main_tool.xrc
-%%DATADIR%%/xrc/nona_panel.xrc
 %%DATADIR%%/xrc/optimize_panel.xrc
-%%DATADIR%%/xrc/optimize_panel-2.5.xrc
+%%DATADIR%%/xrc/optimize_photo_panel.xrc
 %%DATADIR%%/xrc/pano_panel.xrc
-%%DATADIR%%/xrc/pano_panel-2.5.xrc
 %%DATADIR%%/xrc/pref_dialog.xrc
 %%DATADIR%%/xrc/preview_frame.xrc
-%%DATADIR%%/xrc/ptstitcher_panel.xrc
 %%DATADIR%%/xrc/run_optimizer_frame.xrc
 %%DATADIR%%/xrc/run_stitcher_frame.xrc
 %%DATADIR%%/xrc/vig_corr_dlg.xrc
-share/applications/hugin.desktop
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.png
+share/locale/ca_ES/LC_MESSAGES/hugin.mo
+share/locale/cs_CZ/LC_MESSAGES/hugin.mo
+share/locale/de/LC_MESSAGES/hugin.mo
+share/locale/en_GB/LC_MESSAGES/hugin.mo
+share/locale/es/LC_MESSAGES/hugin.mo
+share/locale/fr/LC_MESSAGES/hugin.mo
+share/locale/hu/LC_MESSAGES/hugin.mo
+share/locale/it/LC_MESSAGES/hugin.mo
+share/locale/ja/LC_MESSAGES/hugin.mo
+share/locale/ko/LC_MESSAGES/hugin.mo
+share/locale/nl/LC_MESSAGES/hugin.mo
+share/locale/pl/LC_MESSAGES/hugin.mo
+share/locale/pt_BR/LC_MESSAGES/hugin.mo
+share/locale/ru/LC_MESSAGES/hugin.mo
+share/locale/sk/LC_MESSAGES/hugin.mo
+share/locale/sv/LC_MESSAGES/hugin.mo
+share/locale/uk/LC_MESSAGES/hugin.mo
+share/locale/zh_CN/LC_MESSAGES/hugin.mo
 share/mime/packages/hugin.xml
 share/pixmaps/hugin.png
 @dirrmtry share/applications
@@ -133,15 +254,13 @@ share/pixmaps/hugin.png
 @dirrmtry share/icons/gnome/48x48
 @dirrmtry share/icons/gnome
 @dirrmtry share/icons
-%%NLS%%@dirrmtry share/locale/ca_ES/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca_ES
-%%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs_CZ
+@dirrmtry share/locale/ca_ES/LC_MESSAGES
+@dirrmtry share/locale/ca_ES
+@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+@dirrmtry share/locale/cs_CZ
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrm %%DATADIR%%/xrc/data/help_common
 @dirrm %%DATADIR%%/xrc/data/help_en_EN
-@dirrm %%DATADIR%%/xrc/data/help_fr_FR
 @dirrm %%DATADIR%%/xrc/data
 @dirrm %%DATADIR%%/xrc
 @dirrm %%DATADIR%%
