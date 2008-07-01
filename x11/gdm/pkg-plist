@@ -65,6 +65,7 @@ sbin/gdmsetup
 %%DATADIR%%/themes/happygnome/screenshot.png
 share/gnome/help/gdm/C/gdm.xml
 share/gnome/help/gdm/C/legal.xml
+share/gnome/help/gdm/de/gdm.xml
 share/gnome/help/gdm/en_GB/gdm.xml
 share/gnome/help/gdm/es/gdm.xml
 share/gnome/help/gdm/fr/gdm.xml
@@ -175,6 +176,7 @@ share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
 share/omf/gdm/gdm-C.omf
+share/omf/gdm/gdm-de.omf
 share/omf/gdm/gdm-en_GB.omf
 share/omf/gdm/gdm-es.omf
 share/omf/gdm/gdm-fr.omf
@@ -220,6 +222,7 @@ share/xsessions/gnome.desktop
 @dirrm share/gnome/help/gdm/fr
 @dirrm share/gnome/help/gdm/es
 @dirrm share/gnome/help/gdm/en_GB
+@dirrm share/gnome/help/gdm/de
 @dirrm share/gnome/help/gdm/C
 @dirrm share/gnome/help/gdm
 @dirrm %%DATADIR%%/themes/happygnome-list
