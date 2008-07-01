@@ -7,7 +7,7 @@
 
 PORTNAME=	autotrace
 PORTVERSION=	0.31.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -26,6 +26,8 @@ MAN1=		autotrace.1
 
 OPTIONS=	MING "Enable swf interface" on \
 		PSTOEDIT "Convert postscript to other formats" on
+
+.include <bsd.port.pre.mk>
 
 .if !defined (WITHOUT_MING)
 LIB_DEPENDS+=	ming.4:${PORTSDIR}/graphics/ming
@@ -47,4 +49,4 @@ post-patch:
 		/^PSTOEDIT_CONFIG=/ s|=.*$$|=pkg-config| ' ${WRKSRC}/configure
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
