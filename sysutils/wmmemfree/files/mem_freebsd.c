@@ -77,8 +77,6 @@ mem_getfree()
 	unsigned long bufspace_offset;
 
 	static int firsttime = 1;
-	static int pagesin = -1;
-	static int pagesout = -1;
 	static time_t lasttime = 0;
 	time_t curtime;
 
@@ -105,10 +103,7 @@ mem_getfree()
 
 	curtime = time(NULL);
 
-	if (firsttime ||
-	    (((vm.v_swappgsin > pagesin) ||
-	    (vm.v_swappgsout > pagesout))
-		&& curtime > lasttime + 1))
+	if (firsttime || curtime > lasttime + 5)
 	{
 		if (kvm_getswapinfo(kd, &sw, 1, 0) >= 0 &&
 			sw.ksw_total)
@@ -120,6 +115,4 @@ mem_getfree()
 		firsttime = 0;
 		lasttime = curtime;
 	}
-	pagesin = vm.v_swappgsin;
-	pagesout = vm.v_swappgsout;
 }
