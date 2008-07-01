@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1e8e63c0-478a-11dd-a88d-000ea69a5213">
+    <topic>fetchmail -- potential crash in -v -v verbose mode (revised patch)</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><lt>6.3.8_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2008-01.txt">
+	  <p>2008-06-24 1.2  also fixed issue in report_complete (reported by
+	    Petr Uzel)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2711</cvename>
+      <url>http://fetchmail.berlios.de/fetchmail-SA-2008-01.txt</url>
+    </references>
+    <dates>
+      <discovery>2008-06-24</discovery>
+      <entry>2008-07-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e285a1f4-4568-11dd-ae96-0030843d3802">
     <topic>phpmyadmin -- Cross Site Scripting Vulnerabilities</topic>
     <affects>
