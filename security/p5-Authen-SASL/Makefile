@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Authen-SASL
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for SASL authentication
 
-BUILD_DEPENDS=	\
-	p5-Digest-MD5>0:${PORTSDIR}/security/p5-Digest-MD5 \
-	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC
+RUN_DEPENDS=	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC
 
 OPTIONS=	KERBEROS "Enable Kerberos support" On
 
@@ -35,9 +33,12 @@ MAN3+=	Authen::SASL::Perl::PLAIN.3
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_KERBEROS)
-BUILD_DEPENDS+=	p5-GSSAPI>0:${PORTSDIR}/security/p5-GSSAPI
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
 .endif
-RUN_DEPENDS=	${BUILD_DEPENDS}
+
+.if !defined(WITHOUT_KERBEROS)
+RUN_DEPENDS+=	p5-GSSAPI>0:${PORTSDIR}/security/p5-GSSAPI
+.endif
 
 .include <bsd.port.post.mk>
