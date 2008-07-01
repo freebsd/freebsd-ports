@@ -1,0 +1,11 @@
+--- configure.orig	2008-06-28 20:02:41.000000000 +0400
++++ configure	2008-07-01 04:33:14.000000000 +0400
+@@ -6825,8 +6825,6 @@
+   DATADIR="$withval"
+ fi;
+ 
+-# ensure a trailing slash (r4255)
+-DATADIR="${DATADIR}/"
+ 
+ 
+ if test "${WIN32}" = "yes"; then LOCALEDIR="locale"
