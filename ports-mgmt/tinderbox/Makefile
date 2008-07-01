@@ -53,6 +53,9 @@ PLIST_SUB+=	WEB="@comment "
 .endif
 
 .if !defined(WITHOUT_WEB_EXP)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-www-exp__core__TinderboxDS.php \
+		${FILESDIR}/extra-patch-www-exp__module__moduleBuildPorts.php
+
 PLIST_SUB+=	WEB_EXP=""
 .else
 PLIST_SUB+=	WEB_EXP="@comment "
@@ -121,8 +124,10 @@ post-patch:
 	@${RM} ${WRKSRC}/lib/setup-mysql.sh.bak
 .endif
 	@${RM} ${WRKSRC}/buildscript.orig
+.if defined(WITH_WEB_EXP)
 	@${RM} ${WRKSRC}/www-exp/core/TinderboxDS.php.orig
 	@${RM} ${WRKSRC}/www-exp/module/moduleBuildPorts.php.orig
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/tinderbox/scripts
