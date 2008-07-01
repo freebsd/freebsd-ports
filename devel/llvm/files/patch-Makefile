@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -18,7 +18,7 @@
+ #   6. Build tools, runtime, docs.
+ #
+ DIRS := lib/System lib/Support utils lib/VMCore lib tools/llvm-config \
+-        tools runtime docs
++        tools runtime %%DOCSRCDIR%%
+ 
+ OPTIONAL_DIRS := examples projects bindings
+ EXTRA_DIST := test llvm.spec include win32 Xcode
