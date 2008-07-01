@@ -1055,6 +1055,9 @@ share/gnome/help/gnotski/C/legal.xml
 share/gnome/help/gnotski/ca/figures/gnotski_start_window.png
 share/gnome/help/gnotski/ca/figures/gnotski_win.png
 share/gnome/help/gnotski/ca/gnotski.xml
+share/gnome/help/gnotski/de/figures/gnotski_start_window.png
+share/gnome/help/gnotski/de/figures/gnotski_win.png
+share/gnome/help/gnotski/de/gnotski.xml
 share/gnome/help/gnotski/es/figures/gnotski_start_window.png
 share/gnome/help/gnotski/es/figures/gnotski_win.png
 share/gnome/help/gnotski/es/gnotski.xml
@@ -1486,6 +1489,7 @@ share/omf/gnotravex/gnotravex-oc.omf
 share/omf/gnotravex/gnotravex-sv.omf
 share/omf/gnotski/gnotski-C.omf
 share/omf/gnotski/gnotski-ca.omf
+share/omf/gnotski/gnotski-de.omf
 share/omf/gnotski/gnotski-es.omf
 share/omf/gnotski/gnotski-fr.omf
 share/omf/gnotski/gnotski-it.omf
