@@ -16067,7 +16067,7 @@ subtools	ports/multimedia/subtools
 subversion	ports/devel/subversion
 subversion-devel	ports/devel/subversion-devel
 subversion-freebsd	ports/devel/subversion-freebsd
-dubversion-java	ports/java/subversion-java
+subversion-java	ports/java/subversion-java
 subversive	ports/devel/subversive
 subweb		ports/security/subweb
 suck		ports/news/suck
