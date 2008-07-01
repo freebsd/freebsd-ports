@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 	ftp://ftp.gnutls.org/pub/gnutls/ \
@@ -28,7 +28,7 @@ USE_ICONV=	yes
 USE_GNOME=	pkgconfig ltverhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15 autoconf:261 automake:110
+USE_AUTOTOOLS=	libtool:15
 USE_GCC=	3.4+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
