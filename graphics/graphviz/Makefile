@@ -90,7 +90,7 @@ OPTIONS=	ICONV "Build with ICONV support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 630000
+.if ${OSVERSION} < 603000
 BROKEN=		configure needs a newer sh
 .endif
 
