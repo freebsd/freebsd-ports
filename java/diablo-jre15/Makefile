@@ -105,9 +105,10 @@ post-extract:
 	@${UNZIP_CMD} -qo ${DISTDIR}/${TZUPDATEFILE} -d ${WRKDIR}
 
 pre-install:
-	@# Update time zones
-	@-${WRKSRC}/bin/java -jar \
+	@echo -n "Updating time zones..."
+	@${WRKSRC}/bin/java -jar \
 		${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/tzupdater.jar -u -bc
+	@echo "done"
 	@${RM} -rf ${WRKSRC}/lib/zi.tzdata*
 .endif
 
