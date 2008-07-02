@@ -37,6 +37,25 @@ stop_postcmd()
   rm -f $pidfile
 }
 
+do_cmd()
+{
+	for daemon in ${quagga_daemons}; do
+	    command=%%PREFIX%%/sbin/${daemon}
+	    required_files=%%SYSCONF_DIR%%/${daemon}.conf
+	    pidfile=%%LOCALSTATE_DIR%%/${daemon}.pid
+	    if [ ${quagga_cmd} = "start" -a ! -f ${required_files} ]; then
+			continue
+	    fi
+	    if [ ${quagga_cmd} = "stop" -a -z $(check_process ${command}) ]; then
+			continue
+	    fi
+	    eval flags=\$\{${daemon}_flags:-\"${quagga_flags}\"\}
+	    name=${daemon}
+	    run_rc_command "$1"
+	    _rc_restart_done=false
+	done
+}
+
 # set defaults
 
 load_rc_config $name
@@ -63,27 +82,18 @@ case "${quagga_cmd}" in
 	if [ ! -z ${quagga_extralibs_path} ]; then
 	    /sbin/ldconfig -m ${quagga_extralibs_path}
 	fi
+	do_cmd "start"
 	;;
-    stop|restart)
+    stop)
 	quagga_daemons=$(reverse_list ${quagga_daemons})
+	do_cmd "stop"
 	;;
+    restart)
+	quagga_daemons=$(reverse_list ${quagga_daemons})
+    	do_cmd "stop"
+	quagga_daemons=$(reverse_list ${quagga_daemons})
+	do_cmd "start"
 esac
-
-for daemon in ${quagga_daemons}; do
-    command=%%PREFIX%%/sbin/${daemon}
-    required_files=%%SYSCONF_DIR%%/${daemon}.conf
-    pidfile=%%LOCALSTATE_DIR%%/${daemon}.pid
-    if [ ${quagga_cmd} = "start" -a ! -f ${required_files} ]; then
-		continue
-    fi
-    if [ ${quagga_cmd} = "stop" -a -z $(check_process ${command}) ]; then
-		continue
-    fi
-    eval flags=\$\{${daemon}_flags:-\"${quagga_flags}\"\}
-    name="${daemon}"
-    run_rc_command "$1"
-    _rc_restart_done=false
-done
 
 if [ "${quagga_delay}" != "0" ]; then
     echo "Sleeping ${quagga_delay} seconds to obtain dynamic routing information..."
