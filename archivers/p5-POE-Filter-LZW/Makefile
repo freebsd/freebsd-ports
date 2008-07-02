@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Filter-LZW
-PORTVERSION=	1.6.8
+PORTVERSION=	1.7.0
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,6 @@ COMMENT=	A POE filter wrapped around Compress::LZW
 
 RUN_DEPENDS=	p5-Compress-LZW>=0:${PORTSDIR}/archivers/p5-Compress-LZW \
 		p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
