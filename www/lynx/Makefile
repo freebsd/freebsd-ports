@@ -7,7 +7,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.6.5
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/ \
@@ -23,9 +23,23 @@ USE_BZIP2=	yes
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \
-		--with-ssl="${OPENSSLBASE}"
+		--enable-nested-tables --enable-gzip-help \
+
+OPTIONS=	SSL		"SSL support" on \
+			DEFAULT_COLORS	"Colors support" off \
+			IPV6	"IPV6 support" off \
+			NLS 	"Native language support" on
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 602107 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700033)
+CONFIGURE_ARGS+=	--with-screen=ncurses
+.else
+CONFIGURE_ARGS+=	--with-screen=ncursesw
+.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
@@ -37,13 +51,17 @@ CONFIGURE_ARGS+=--enable-nls --with-libiconv-prefix="${LOCALBASE}"
 PLIST_SUB+=	NLS=''
 .endif
 
-.if defined(NO_INET6) || defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=--disable-ipv6
-.else
+.if defined(WITH_IPV6) && ! defined(NO_INET6)
 CONFIGURE_ARGS+=--enable-ipv6
+.else
+CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.if defined(ENABLE_DEFAULT_COLORS)
+.if defined(WITH_SSL)
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+.endif
+
+.if defined(WITH_DEFAULT_COLORS) || defined(ENABLE_DEFAULT_COLORS)
 CONFIGURE_ARGS+=--enable-default-colors
 .endif
 
@@ -65,4 +83,4 @@ post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
 	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${L_LIB}/lynx.cfg
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
