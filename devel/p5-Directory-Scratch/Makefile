@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Directory-Scratch
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Easy-to-use self-cleaning scratch space
 
-BUILD_DEPENDS=	${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
-		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
+BUILD_DEPENDS=	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-File-Slurp>=9999.12:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-String-Random>0:${PORTSDIR}/devel/p5-String-Random
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
