@@ -8,7 +8,7 @@
 
 PORTNAME=	ircd-ratbox
 #PORTVERSION=	3.0.0
-DISTVERSION=	3.0.0beta5
+DISTVERSION=	3.0.0beta7
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/testing/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/testing/	\
@@ -25,7 +25,8 @@ CONFLICTS=	ircd-ratbox-[0-9]*
 USE_BZIP2=	yes
 #MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox.sh
-#USE_SQLITE=	3
+USE_SQLITE=	3
+USE_PERL5_BUILD=	yes
 USE_LDCONFIG=	${PREFIX}/lib/ircd-ratbox
 
 LOGDIR?=	/var/log/${PORTNAME}
@@ -111,10 +112,20 @@ pre-configure:
 	@${ECHO_MSG} "This port has additional options:"
 	@${ECHO_MSG} "    NICKLEN     [default 9, max 50]    - Max nick length on server"
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "    SERVER_NAME [default 'services.ircd-ratbox.org'] - Name of services"
+	@${ECHO_MSG} "    USER_SERV   [default 'USERSERV'] - Name of user registration service"
+	@${ECHO_MSG} "    CHAN_SERV   [default 'CHANSERV'] - Name of channel registration serv'"
+	@${ECHO_MSG} "    NICK_SERV   [default 'NICKSERV'] - Name of nickname registration serv'"
+	@${ECHO_MSG} "    ALIS_SERV   [default 'ALIS'] - Name of channel list service"
+	@${ECHO_MSG} "    OPER_BOT    [default 'OPERBOT'] - Name of operbot service"
+	@${ECHO_MSG} "    OPER_SERV   [default 'OPERSERV'] - Name of oper command service"
+	@${ECHO_MSG} "    JUPE_SERV   [default 'JUPESERV'] - Name of jupe service"
+	@${ECHO_MSG} "    GLOBAL_SERV [default 'GLOBAL'] - Name of global announce service"
+	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Press CTRL+C now if you wish to set them."
 	@${ECHO_MSG} ""
 
-post-patch:
+pre-build:
 	@${REINPLACE_CMD} -e "s#-O2##" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s#%%PREFIX%%#${PREFIX}#g"		  \
 			  ${WRKSRC}/doc/example.conf		  \
@@ -124,10 +135,59 @@ post-patch:
 				${WRKSRC}/doc/example.efnet.conf
 	@${REINPLACE_CMD} -e "s#%%RUNDIR%%#${RUNDIR}#g" ${WRKSRC}/include/config.h
 	@${REINPLACE_CMD} -e "s#%%DBDIR%%#${DBDIR}#g" ${WRKSRC}/include/config.h
+	@${REINPLACE_CMD} -e "s#%%WRKSRC%%#${WRKSRC}#g" ${WRKSRC}/contrib/ircd-shortcut.pl
+
+#-- ircd-shortcut.pl ratbox-services commands --------------------------------------
+
+.if defined(SERVER_NAME)
+	@${REINPLACE_CMD} -e "s#services.ircd-ratbox.org#${SERVER_NAME}#"       \
+	${WRKSRC}/contrib/ircd-shortcut.pl
+.endif
+.if defined(USER_SERV)
+	@${REINPLACE_CMD} -e "s#USERSERV#${USER_SERV}#" \
+	${WRKSRC}/contrib/ircd-shortcut.pl
+.endif
+.if defined(CHAN_SERV)
+	@${REINPLACE_CMD} -e "s#CHANSERV#${CHAN_SERV}#" \
+	${WRKSRC}/contrib/ircd-shortcut.pl
+.endif
+.if defined(NICK_SERV)
+	@${REINPLACE_CMD} -e "s#NICKSERV#${NICK_SERV}#" \
+	${WRKSRC}/contrib/ircd-shortcut.pl
+.endif
+.if defined(ALIS_SERV)
+	@${REINPLACE_CMD} -e "s#ALIS#${ALIS_SERV}#"     \
+	${WRKSRC}/contrib/ircd-shortcut.pl
+.endif
+.if defined(OPER_BOT)
+	@${REINPLACE_CMD} -e "s#OPERBOT#${OPER_BOT}#"   \
+	${WRKSRC}/contrib/ircd-shortcut.pl
+.endif
+.if defined(OPER_SERV)
+	@${REINPLACE_CMD} -e "s#OPERSERV#${OPER_SERV}#" \
+	${WRKSRC}/contrib/ircd-shortcut.pl
+.endif
+.if defined(JUPE_SERV)
+	@${REINPLACE_CMD} -e "s#JUPESERV#${JUPE_SERV}#" \
+	${WRKSRC}/contrib/ircd-shortcut.pl
+.endif
+.if defined(GLOBAL_SERV)
+	@${REINPLACE_CMD} -e "s#GLOBAL#${GLOBAL_SERV}#" \
+	${WRKSRC}/contrib/ircd-shortcut.pl
+.endif
+
+#------ Execute ircd-shortcut perl script to generate the .c file. -----
+	@${ECHO_MSG} "Executing ircd-shortcut.pl for ircd-shortcuts generation."
+	${PERL} ${WRKSRC}/contrib/ircd-shortcut.pl
 
 post-build:
 	@cd ${INSTALL_WRKSRC}/contrib && ${SETENV} ${MAKE_ENV} ${MAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
+
+# ----- Need to build the m_rsshortcut.so module for ircd-shortcut.pl ----
+	@${ECHO_MSG} "Building m_rsshortcut.la for ircd-shortcuts."
+	@cd ${INSTALL_WRKSRC}/contrib && ${SETENV} ${MAKE_ENV} ${MAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} m_rsshortcut.la
 
 pre-su-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -144,8 +204,13 @@ post-install:
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
 	${INSTALL_DATA} ${WRKSRC}/doc/ircd.motd ${PREFIX}/etc/${PORTNAME}/ircd.motd.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${PREFIX}/etc/${PORTNAME}/ircd.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/doc/example.efnet.conf ${PREFIX}/etc/${PORTNAME}/ircd-efnet.conf.sample
+#	${INSTALL_DATA} ${WRKSRC}/doc/example.efnet.conf ${PREFIX}/etc/${PORTNAME}/ircd-efnet.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/genssl.sh ${PREFIX}/etc/${PORTNAME}/genssl.sh
+
+# ----- We need to install the shortcut.pl module ----
+	@${ECHO_MSG} "Executing install-mod.sh for ircd-shortcuts module installation."
+	${SH} ${WRKSRC}/install-mod.sh ${WRKSRC}/contrib/m_rsshortcut.la \
+		${PREFIX}/lib/${PORTNAME}/modules/contrib
 
 	@if [ ! -f ${PREFIX}/etc/${PORTNAME}/ircd.conf ]; then \
 		${ECHO} "Installing default configuration file."; \

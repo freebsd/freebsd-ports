@@ -17,9 +17,11 @@ using the following rc.d script command:
 
 	%%PREFIX%%/etc/rc.d/ircd-ratbox conftest
 
-An update of the ban.db database may be necessary when upgrading between
-ircd versions. You must perform this update manually using 'bantool -u'
-while no ircd is running and before starting the newer version.
+An update of the ban.db database will be necessary if upgrading from a
+pre-beta5 release. Those upgrading from 3.0.0-beta5 to this version
+should be able to omit this step. Though it doesn't do any harm to check
+anyway. Database updates must be performed using 'bantool -u' while no
+ircd is running and before starting the newer version.
 
 	%%PREFIX%%/bin/bantool -u
 
