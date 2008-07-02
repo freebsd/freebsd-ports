@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTVERSION=	2.2.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ftp.osuosl.org/pub/cfengine/ \
-		ftp://ftp.iu.hio.no/pub/cfengine/
+MASTER_SITES=	http://www.cfengine.org/downloads/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A systems administration tool for networks
@@ -23,15 +21,12 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-docs \
-		--docdir=${DOCSDIR}
+		--docdir=${DOCSDIR} \
+		--htmldir=${DOCSDIR}/html
 CONFIGURE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 		BERKELEY_DB_CFLAGS=-I${BDB_INCLUDE_DIR} \
 		BERKELEY_DB_LDFLAGS=-L${BDB_LIB_DIR} \
 		BERKELEY_DB_LIB=-l${BDB_LIB_NAME}
-
-.if !defined(NOPORTDOCS)
-INFO=		cfengine-Anomalies cfengine-Reference cfengine-Tutorial
-.endif
 
 MAN8=		cfagent.8 cfengine.8 cfenvd.8 cfenvgraph.8 cfetoolcheck.8 \
 		cfetoolcreate.8 cfetooldump.8 cfetoolgraph.8 cfetoolimport.8 \
@@ -43,5 +38,14 @@ post-patch:
 				  -e s,-lpthread,${PTHREAD_LIBS},g \
 				  -e s,lpthread,${PTHREAD_LIBS},g \
 				  ${WRKSRC}/configure
+		@${REINPLACE_CMD} -e '/^docdir/s!=.*!= @docdir@!'\
+				  ${WRKSRC}/doc/Makefile.in \
+				  ${WRKSRC}/Makefile.in
+		@${REINPLACE_CMD} -e '/^htmldir/s!=.*!= @htmldir@!'\
+				  ${WRKSRC}/doc/Makefile.in \
+				  ${WRKSRC}/Makefile.in
+		@${REINPLACE_CMD} -e '/^pkgdatadir/s!=.*!= ${EXAMPLESDIR}!'\
+				  ${WRKSRC}/inputs/Makefile.in \
+				  ${WRKSRC}/contrib/Makefile.in
 
 .include <bsd.port.mk>

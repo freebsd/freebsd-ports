@@ -1,94 +1,14 @@
---- doc/Makefile.in.orig	Tue May 29 11:07:06 2007
-+++ doc/Makefile.in	Wed May 30 10:58:27 2007
-@@ -52,8 +52,12 @@
- CONFIG_CLEAN_FILES =
- SOURCES =
- DIST_SOURCES =
-+.if defined(NOPORTDOCS)
-+INFO_DEPS =
-+.else
- INFO_DEPS = cfengine-Reference.info cfengine-Tutorial.info \
- 	cfengine-Anomalies.info
-+.endif
- am__TEXINFO_TEX_DIR = $(srcdir)
- DVIS = cfengine-Reference.dvi cfengine-Tutorial.dvi \
- 	cfengine-Anomalies.dvi
-@@ -171,7 +175,7 @@
- build_vendor = @build_vendor@
- datadir = @datadir@
- datarootdir = @datarootdir@
--docdir = $(pkgdatadir)/doc
-+docdir = $(prefix)/share/doc/cfengine
- dvidir = @dvidir@
- exec_prefix = @exec_prefix@
- host = @host@
-@@ -179,7 +183,7 @@
- host_cpu = @host_cpu@
- host_os = @host_os@
- host_vendor = @host_vendor@
--htmldir = $(pkgdatadir)/html
-+htmldir = $(docdir)
- includedir = @includedir@
- infodir = @infodir@
- install_sh = @install_sh@
-@@ -213,13 +217,21 @@
- 
- # Info used in building and installing HTML files
- htmlfiles = $(info_TEXINFOS:.texinfo=.html)
-+.if defined(NOPORTDOCS)
-+html_DATA = 
-+.else
- html_DATA = $(htmlfiles)
-+.endif
- 
- # Info used in building and installing Postscript files
- psfiles = $(info_TEXINFOS:.texinfo=.ps)
- pdffiles = $(info_TEXINFOS:.texinfo=.pdf)
- dvifiles = $(info_TEXINFOS:.texinfo=.dvi)
-+.if defined(NOPORTDOCS)
-+doc_DATA = 
-+.else
- doc_DATA = $(psfiles) $(pdffiles)
-+.endif
- 
- # Make sure these get distributed with everything else.
- EXTRA_DIST = cfagent.8 cfenvd.8 cfenvgraph.8 cfexecd.8 cfkey.8 cfrun.8 cfservd.8 cfengine.8 cfshow.8 cfetoolcheck.8   cfetooldump.8   cfetoolimport.8  cfetoolupdate.8 cfetoolcreate.8  cfetoolgraph.8  cfetoolinfo.8 cfetoolcheck.8   cfetooldump.8   cfetoolimport.8  cfetoolupdate.8 cfetoolcreate.8  cfetoolgraph.8  cfetoolinfo.8 texinfo.tex $(htmlfiles) $(infofiles)  $(psfiles) $(dvifiles) $(pdffiles)
-@@ -324,7 +336,7 @@
- 	  exit 1; \
- 	fi
- $(srcdir)/version1.texi:  $(srcdir)/stamp-vti
--$(srcdir)/stamp-vti: cfengine-Reference.texinfo $(top_srcdir)/configure
-+$(srcdir)/stamp-vti: cfengine-Reference.texinfo
- 	@(dir=.; test -f ./cfengine-Reference.texinfo || dir=$(srcdir); \
- 	set `$(SHELL) $(srcdir)/mdate-sh $$dir/cfengine-Reference.texinfo`; \
- 	echo "@set UPDATED $$1 $$2 $$3"; \
-@@ -385,7 +397,7 @@
- 	  exit 1; \
- 	fi
- $(srcdir)/version2.texi:  $(srcdir)/stamp-1
--$(srcdir)/stamp-1: cfengine-Tutorial.texinfo $(top_srcdir)/configure
-+$(srcdir)/stamp-1: cfengine-Tutorial.texinfo
- 	@(dir=.; test -f ./cfengine-Tutorial.texinfo || dir=$(srcdir); \
- 	set `$(SHELL) $(srcdir)/mdate-sh $$dir/cfengine-Tutorial.texinfo`; \
- 	echo "@set UPDATED $$1 $$2 $$3"; \
-@@ -446,7 +458,7 @@
- 	  exit 1; \
- 	fi
- $(srcdir)/version3.texi:  $(srcdir)/stamp-2
--$(srcdir)/stamp-2: cfengine-Anomalies.texinfo $(top_srcdir)/configure
-+$(srcdir)/stamp-2: cfengine-Anomalies.texinfo
- 	@(dir=.; test -f ./cfengine-Anomalies.texinfo || dir=$(srcdir); \
- 	set `$(SHELL) $(srcdir)/mdate-sh $$dir/cfengine-Anomalies.texinfo`; \
- 	echo "@set UPDATED $$1 $$2 $$3"; \
-@@ -592,6 +604,7 @@
- 	  rm -f "$(DESTDIR)$(man8dir)/$$inst"; \
+--- doc/Makefile.in.orig	2008-07-01 21:38:18.000000000 -0400
++++ doc/Makefile.in	2008-07-01 21:39:06.000000000 -0400
+@@ -331,6 +331,7 @@
  	done
  install-docDATA: $(doc_DATA)
-+.if !defined(NOPORTDOCS)
  	@$(NORMAL_INSTALL)
- 	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
++.if !defined(NOPORTDOCS)
+ 	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
  	@list='$(doc_DATA)'; for p in $$list; do \
-@@ -600,6 +613,7 @@
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+@@ -338,6 +339,7 @@
  	  echo " $(docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
  	  $(docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
  	done
@@ -96,15 +16,15 @@
  
  uninstall-docDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -609,6 +623,7 @@
- 	  rm -f "$(DESTDIR)$(docdir)/$$f"; \
+@@ -348,6 +350,7 @@
  	done
  install-htmlDATA: $(html_DATA)
-+.if !defined(NOPORTDOCS)
  	@$(NORMAL_INSTALL)
- 	test -z "$(htmldir)" || $(mkdir_p) "$(DESTDIR)$(htmldir)"
++.if !defined(NOPORTDOCS)
+ 	test -z "$(htmldir)" || $(MKDIR_P) "$(DESTDIR)$(htmldir)"
  	@list='$(html_DATA)'; for p in $$list; do \
-@@ -617,6 +632,7 @@
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+@@ -355,6 +358,7 @@
  	  echo " $(htmlDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(htmldir)/$$f'"; \
  	  $(htmlDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(htmldir)/$$f"; \
  	done
@@ -112,19 +32,3 @@
  
  uninstall-htmlDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -725,6 +741,7 @@
- install-info: install-info-am
- 
- install-info-am: $(INFO_DEPS)
-+.if !defined(NOPORTDOCS)
- 	@$(NORMAL_INSTALL)
- 	test -z "$(infodir)" || $(mkdir_p) "$(DESTDIR)$(infodir)"
- 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
-@@ -754,6 +771,7 @@
- 	    install-info --info-dir="$(DESTDIR)$(infodir)" "$(DESTDIR)$(infodir)/$$relfile" || :;\
- 	  done; \
- 	else : ; fi
-+.endif
- install-man: install-man8
- 
- installcheck-am:
