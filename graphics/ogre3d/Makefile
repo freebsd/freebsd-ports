@@ -7,7 +7,7 @@
 
 PORTNAME=	ogre3d
 PORTVERSION=	1.4.9
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=ogre
@@ -17,7 +17,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A scene-oriented, flexible 3D engine written in C++
 
 LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
-		CEGUIBase.1:${PORTSDIR}/graphics/cegui \
+		CEGUIBase.2:${PORTSDIR}/graphics/cegui \
 		IL.1:${PORTSDIR}/graphics/devil
 
 WRKSRC=		${WRKDIR}/ogre

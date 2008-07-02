@@ -7,6 +7,7 @@
 
 PORTNAME=	secretmaryochronicles
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	smclone
@@ -15,7 +16,7 @@ DISTNAME=	smc-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Secret Maryo Chronicles two-dimensional platform game
 
-LIB_DEPENDS=	CEGUIBase.1:${PORTSDIR}/graphics/cegui \
+LIB_DEPENDS=	CEGUIBase.2:${PORTSDIR}/graphics/cegui \
 		boost_filesystem.4:${PORTSDIR}/devel/boost \
 		png.5:${PORTSDIR}/graphics/png
 
