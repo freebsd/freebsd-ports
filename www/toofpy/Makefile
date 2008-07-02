@@ -16,18 +16,16 @@ DISTFILES=	toolserver-snapshot.tar.gz
 MAINTAINER=	frank@fenor.de
 COMMENT=	Toolserver Framework for Python
 
-BROKEN=		does not patch
-
-WRKSRC=		work/Toolserver-${PORTVERSION}
-USE_RC_SUBR=	toolserver
-PYDISTUTILS_PKGNAME=	Toolserver
-
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/medusa:${PORTSDIR}/net/py-medusa \
 		${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
 		${PYTHON_SITELIBDIR}/SOAPpy:${PORTSDIR}/net/py-soappy
+
+WRKSRC=		${WRKDIR}/Toolserver-${PORTVERSION}
+LATEST_LINK=	py-${PORTNAME}
+USE_RC_SUBR=	toolserver
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Toolserver
 
 OPTIONS=	PYCRYPTO "Use pycrypto (for RSA authentication)" off
 
