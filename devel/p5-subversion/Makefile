@@ -6,7 +6,6 @@
 #
 
 PKGNAMEPREFIX=	p5-
-CATEGORIES+=	perl
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Perl bindings for Version control system
@@ -29,6 +28,8 @@ MAN3=			SVN::Base.3 \
 SVN_BUILD_BINDINGS=yes
 
 .include "${MASTERDIR}/Makefile.common"
+
+CATEGORIES+=	perl
 
 do-build:
 	cd ${WRKSRC} ; ${MAKE} swig-pl-lib ; ${MAKE} swig-pl
