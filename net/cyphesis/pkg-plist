@@ -14,6 +14,7 @@ etc/cyphesis/mason.d/buildings.xml
 etc/cyphesis/mason.d/characters.xml
 etc/cyphesis/mason.d/clothing.xml
 etc/cyphesis/mason.d/construction.xml
+etc/cyphesis/mason.d/devices.xml
 etc/cyphesis/mason.d/food.xml
 etc/cyphesis/mason.d/mason.xml
 etc/cyphesis/mason.d/operations.xml
