@@ -8165,6 +8165,7 @@ mod_auth_form                   ports/www/mod_auth_form
 mod_auth_imap                   ports/www/mod_auth_imap
 mod_auth_imap2                  ports/www/mod_auth_imap2
 mod_auth_kerb                   ports/www/mod_auth_kerb
+mod_auth_ldap                   ports/www/mod_auth_ldap
 mod_auth_mysql                  ports/www/mod_auth_mysql
 mod_auth_mysql2                 ports/www/mod_auth_mysql2
 mod_auth_mysql41_ap2            ports/www/mod_auth_mysql41_ap2
@@ -11673,6 +11674,7 @@ p5-Set-Crontab                  ports/devel/p5-Set-Crontab
 p5-Set-Infinite                 ports/devel/p5-Set-Infinite
 p5-Set-IntSpan                  ports/math/p5-Set-IntSpan
 p5-Set-IntSpan-Fast             ports/math/p5-Set-IntSpan-Fast
+p5-Set-IntSpan-Fast-XS          ports/math/p5-Set-IntSpan-Fast-XS
 p5-Set-NestedGroups             ports/devel/p5-Set-NestedGroups
 p5-Set-Object                   ports/devel/p5-Set-Object
 p5-Set-Partition                ports/math/p5-Set-Partition
@@ -12102,6 +12104,7 @@ p5-URI-FromHash                 ports/net/p5-URI-FromHash
 p5-URI-OpenURL                  ports/net/p5-URI-OpenURL
 p5-URI-Sequin                   ports/www/p5-URI-Sequin
 p5-URI-Template                 ports/net/p5-URI-Template
+p5-URI-Title                    ports/www/p5-URI-Title
 p5-URI-ToDisk                   ports/www/p5-URI-ToDisk
 p5-URI-imap                     ports/mail/p5-URI-imap
 p5-URI-imaps                    ports/mail/p5-URI-imaps
@@ -14699,6 +14702,7 @@ p5-set-crontab                  ports/devel/p5-Set-Crontab
 p5-set-infinite                 ports/devel/p5-Set-Infinite
 p5-set-intspan                  ports/math/p5-Set-IntSpan
 p5-set-intspan-fast             ports/math/p5-Set-IntSpan-Fast
+p5-set-intspan-fast-xs          ports/math/p5-Set-IntSpan-Fast-XS
 p5-set-nestedgroups             ports/devel/p5-Set-NestedGroups
 p5-set-object                   ports/devel/p5-Set-Object
 p5-set-partition                ports/math/p5-Set-Partition
@@ -15209,6 +15213,7 @@ p5-uri-imaps                    ports/mail/p5-URI-imaps
 p5-uri-openurl                  ports/net/p5-URI-OpenURL
 p5-uri-sequin                   ports/www/p5-URI-Sequin
 p5-uri-template                 ports/net/p5-URI-Template
+p5-uri-title                    ports/www/p5-URI-Title
 p5-uri-todisk                   ports/www/p5-URI-ToDisk
 p5-usb                          ports/devel/p5-usb
 p5-user                         ports/sysutils/p5-User
