@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graph-Easy
-PORTVERSION=	0.60
+PORTVERSION=	0.63
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Render graphs as ASCII, HTML, SVG or Graphviz
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/Heap.pm:${PORTSDIR}/devel/p5-Heap
+BUILD_DEPENDS=	p5-Heap>0:${PORTSDIR}/devel/p5-Heap
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	5.8.2+
 
 MAN1=	graph-easy.1
 
