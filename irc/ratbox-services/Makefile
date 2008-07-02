@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ratbox-services
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/${PORTNAME}/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/${PORTNAME}/ \
@@ -14,12 +13,6 @@ MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/${PORTNAME}/	\
 		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/	\
 		http://services.ircd-ratbox.org/download/old/
 EXTRACT_SUFX=	.tgz
-
-PATCH_SITES=	http://www.elasticmind.net/freebsd/ports/distfiles/	\
-		http://jsreedinc.com/freebsd/ports/patches/		\
-		http://www.atarininja.org/~wxs/distfiles/
-PATCHFILES=	patch-autoconf_configure.in.gz patch-configure.gz	\
-		patch-include_setup.h.in.gz
 
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	A highly configurable services package for use with ircd-ratbox
@@ -35,15 +28,19 @@ SUB_FILES=	pkg-message pkg-install
 PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
 SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR} PERL=${PERL}
 
+USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--prefix=${PREFIX}		\
 		--sysconfdir=${PREFIX}/etc/	\
 		--with-logdir=${LOGDIR}		\
 		--with-rundir=${RUNDIR}		\
-		--with-helpdir=${DATADIR}/help	\
-		--without-sqlitebuild
+		--without-sqlitebuild		\
+		--enable-pcre=${PREFIX}
 
-PORTDOCS=	operguide.txt
+PORTDOCS=	operguide.txt userintro.txt whats-new-1.2.txt
 
 #-- Options ------------------------------------------------------------
 
@@ -57,7 +54,9 @@ OPTIONS=	NICKSERV	"Enable nickname registration service"		on \
 		GLOBALMSG	"Enable global messaging service"		on \
 		BANSERV		"Enable ban service"				on \
 		WATCHSERV	"Enable command watching service"		on \
+		MEMOSERV	"Enable memo services"				on \
 		SQLITE		"Enable sqlite3 support (default)"		on \
+		MYSQL		"Enable mysql support"				off \
 		PGSQL		"Enable pgsql backend support"			off
 
 #----------------------------------------------------------------------
@@ -104,8 +103,12 @@ CONFIGURE_ARGS+=	--disable-banserv
 CONFIGURE_ARGS+=	--disable-watchserv
 .endif
 
-.if !defined(WITH_SQLITE) && !defined(WITH_PGSQL)
-IGNORE=			requires either an sqlite or pgsql backend
+.if defined(WITHOUT_MEMOSERV)
+CONFIGURE_ARGS+=	--disable-memoserv
+.endif
+
+.if !defined(WITH_SQLITE) && !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
+IGNORE=			requires either an sqlite, mysql or pgsql backend
 .endif
 
 .if defined(WITH_SQLITE)
@@ -113,12 +116,10 @@ USE_SQLITE=		3
 CONFIGURE_ARGS+=	--enable-sqlite3=${LOCALBASE}
 .endif
 
-# This ratbox-services version has known problems when integrating
-# with MySQL and should be avoided until it is fixed in version 1.1.3
-#.if defined(WITH_MYSQL)
-#USE_MYSQL=		yes
-#CONFIGURE_ARGS+=	--enable-mysql=${LOCALBASE}
-#.endif
+.if defined(WITH_MYSQL)
+USE_MYSQL=		yes
+CONFIGURE_ARGS+=	--enable-mysql=${LOCALBASE}
+.endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=		yes
@@ -173,20 +174,22 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL.mysql ${DOCSDIR}/INSTALL.mysql
+	${INSTALL_DATA} ${WRKSRC}/INSTALL.pgsql ${DOCSDIR}/INSTALL.pgsql
+	${INSTALL_DATA} ${WRKSRC}/INSTALL.sqlite ${DOCSDIR}/INSTALL.sqlite
+	${INSTALL_DATA} ${WRKSRC}/UPGRADING ${DOCSDIR}/UPGRADING
+	${INSTALL_DATA} ${WRKSRC}/DBMOVE ${DOCSDIR}/DBMOVE
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ratbox-services ${PREFIX}/sbin/
-	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${PREFIX}/etc/ratbox-services.conf.sample
+
 	${MKDIR} ${DATADIR}
 		(cd ${WRKSRC}/tools/ &&	\
 		${COPYTREE_SHARE} \* ${DATADIR} "! -name dbupgrade.pl.bak	\
 						! -name dbupgrade.pl.orig	\
 						! -name generate-schema.pl.bak	\
 						! -name generate-schema.pl.orig")
-	${INSTALL_DATA} ${WRKSRC}/INSTALL.mysql ${DOCSDIR}/INSTALL.mysql
-	${INSTALL_DATA} ${WRKSRC}/INSTALL.pgsql ${DOCSDIR}/INSTALL.pgsql
-	${INSTALL_DATA} ${WRKSRC}/INSTALL.sqlite ${DOCSDIR}/INSTALL.sqlite
-	${INSTALL_DATA} ${WRKSRC}/UPGRADING ${DOCSDIR}/UPGRADING
-	${INSTALL_DATA} ${WRKSRC}/DBMOVE ${DOCSDIR}/DBMOVE
+
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ratbox-services ${PREFIX}/sbin/
+	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${PREFIX}/etc/ratbox-services.conf.sample
 
 	@if [ ! -f ${PREFIX}/etc/ratbox-services.conf ]; then \
 		${ECHO} "Installing default configuration file."; \
