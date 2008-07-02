@@ -24,6 +24,8 @@ prefix=%%PREFIX%%
 [ -z "$racoon_enable" ] && racoon_enable="NO"	# Disable by default
 #racoon_program="${prefix}/sbin/racoon"		# Location of racoon
 #racoon_flags=""				# Flags to racoon program
+racoon_create_dirs=NO				# Create $required_dirs (for
+						#  /var mfs)?
 
 . %%RC_SUBR%%
 
@@ -43,4 +45,7 @@ racoon_cleanup() {
 }
 
 load_rc_config $name
+if [ "$1" = start ] && checkyesno "${name}_create_dirs"; then
+	/bin/mkdir -p $required_dirs
+fi
 run_rc_command "$1"
