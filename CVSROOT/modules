@@ -57,6 +57,8 @@ rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
 taginfo		CVSROOT taginfo
 
+# !!MERGE!!
+
 #
 # Ports directories
 #
