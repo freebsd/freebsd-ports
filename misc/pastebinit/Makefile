@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pastebinit
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.stgraber.org/download/projects/pastebin/
 
@@ -20,7 +20,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/pastebinit
 
 post-patch:
-	${REINPLACE_CMD} -e 's#/usr/bin/python#${PYTHON_CMD}#' \
+	@${REINPLACE_CMD} -e 's#/usr/bin/python#${PYTHON_CMD}#' \
 	${WRKSRC}/${PORTNAME}
 
 do-install:
