@@ -1,34 +1,29 @@
 www/nocc/action.php
-www/nocc/check.php
-www/nocc/class_local.php
-www/nocc/class_send.php
-www/nocc/class_smtp.php
+www/nocc/classes/class_local.php
+www/nocc/classes/class_send.php
+www/nocc/classes/class_smtp.php
+www/nocc/classes/exception.php
+www/nocc/classes/user_filters.php
+www/nocc/classes/user_prefs.php
 www/nocc/common.php
-@unexec if cmp -s %D/www/nocc/conf.php %D/www/nocc/conf.php.dist; then rm -f %D/www/nocc/conf.php; fi
-www/nocc/conf.php.dist
-@exec [ -f %B/conf.php ] || cp %B/%f %B/conf.php
-www/nocc/conf_charset.php
-www/nocc/conf_lang.php
+@unexec if cmp -s %D/www/nocc/config/conf.php %D/www/nocc/config/conf.php.dist; then rm -f %D/www/nocc/config/conf.php; fi
+www/nocc/config/conf.php.dist
+@exec [ -f %B/config/conf.php ] || cp %B/%f %B/config/conf.php
+www/nocc/config/conf_charset.php
+www/nocc/config/conf_lang.php
+www/nocc/config/login_alias.sample
+www/nocc/config/login_allowed.sample
 www/nocc/contacts.php
 www/nocc/contacts_manager.php
-www/nocc/crypt.php
 www/nocc/delete.php
-www/nocc/detect_cyr_charset.php
 www/nocc/down_mail.php
 www/nocc/download.php
-www/nocc/exception.php
-www/nocc/functions.php
+www/nocc/favicon.ico
 www/nocc/get_img.php
 www/nocc/help.php
-www/nocc/html_entity_decode.php
 www/nocc/index.php
-www/nocc/is_uploaded_file.php
 www/nocc/logout.php
-www/nocc/mime.php
-www/nocc/proxy.php
 www/nocc/send.php
-www/nocc/user_filters.php
-www/nocc/user_prefs.php
 www/nocc/fckeditor/editor/css/behaviors/disablehandles.htc
 www/nocc/fckeditor/editor/css/behaviors/hiddenfield.gif
 www/nocc/fckeditor/editor/css/behaviors/hiddenfield.htc
@@ -186,6 +181,8 @@ www/nocc/html/no_mail.php
 www/nocc/html/prefs.php
 www/nocc/html/send.php
 www/nocc/html/send_error.php
+www/nocc/html/submenu_mail.php
+www/nocc/html/submenu_prefs.php
 www/nocc/js/nocc.js
 www/nocc/lang/ar.php
 www/nocc/lang/bg.php
@@ -299,6 +296,15 @@ www/nocc/themes/standard/img/smilies/wink.png
 www/nocc/themes/standard/img/up.png
 www/nocc/themes/standard/print.css
 www/nocc/themes/standard/style.css
+www/nocc/utils/check.php
+www/nocc/utils/crypt.php
+www/nocc/utils/detect_cyr_charset.php
+www/nocc/utils/functions.php
+www/nocc/utils/html_entity_decode.php
+www/nocc/utils/is_uploaded_file.php
+www/nocc/utils/mime.php
+www/nocc/utils/proxy.php
+@dirrm www/nocc/utils
 @dirrm www/nocc/themes/standard/img/smilies
 @dirrm www/nocc/themes/standard/img
 @dirrm www/nocc/themes/standard
@@ -333,4 +339,6 @@ www/nocc/themes/standard/style.css
 @dirrm www/nocc/fckeditor/editor/css
 @dirrm www/nocc/fckeditor/editor
 @dirrm www/nocc/fckeditor
+@dirrm www/nocc/config
+@dirrm www/nocc/classes
 @dirrm www/nocc
