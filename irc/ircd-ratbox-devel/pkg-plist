@@ -1,9 +1,7 @@
 bin/ircd
 bin/ratbox-mkpasswd
 bin/bantool
-bin/ratbox-sqlite3
 libexec/ircd-ratbox/bandb
-libexec/ircd-ratbox/ident
 libexec/ircd-ratbox/resolver
 libexec/ircd-ratbox/ssld
 %%DATADIR%%/help/opers/accept
@@ -51,6 +49,7 @@ libexec/ircd-ratbox/ssld
 %%DATADIR%%/help/opers/oper
 %%DATADIR%%/help/opers/operspy
 %%DATADIR%%/help/opers/operwall
+%%DATADIR%%/help/opers/adminwall
 %%DATADIR%%/help/opers/part
 %%DATADIR%%/help/opers/pass
 %%DATADIR%%/help/opers/ping
@@ -85,6 +84,10 @@ libexec/ircd-ratbox/ssld
 %%DATADIR%%/help/opers/userhost
 %%DATADIR%%/help/opers/users
 %%DATADIR%%/help/opers/version
+%%DATADIR%%/help/opers/admindline
+%%DATADIR%%/help/opers/adminkline
+%%DATADIR%%/help/opers/adminresv
+%%DATADIR%%/help/opers/adminxline
 %%DATADIR%%/help/opers/wallops
 %%DATADIR%%/help/opers/who
 %%DATADIR%%/help/opers/whois
@@ -211,6 +214,7 @@ lib/ircd-ratbox/modules/contrib/spy_stats_notice.so
 lib/ircd-ratbox/modules/contrib/spy_stats_p_notice.so
 lib/ircd-ratbox/modules/contrib/spy_whois_notice.so
 lib/ircd-ratbox/modules/contrib/spy_whois_notice_global.so
+lib/ircd-ratbox/modules/contrib/m_rsshortcut.so
 lib/ircd-ratbox/modules/m_die.so
 lib/ircd-ratbox/modules/m_error.so
 lib/ircd-ratbox/modules/m_join.so
@@ -233,7 +237,6 @@ lib/ircd-ratbox/modules/m_squit.so
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
 etc/ircd-ratbox/genssl.sh
-etc/ircd-ratbox/ircd-efnet.conf.sample
 @unexec if cmp -s %D/etc/ircd-ratbox/ircd.conf.sample %D/etc/ircd-ratbox/ircd.conf; then rm -f %D/etc/ircd-ratbox/ircd.conf; fi
 etc/ircd-ratbox/ircd.conf.sample
 @exec if [ ! -f %D/etc/ircd-ratbox/ircd.conf ] ; then cp -p %D/%F %B/ircd.conf; fi
