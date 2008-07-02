@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tramp
-PORTVERSION=	2.1.7
-PORTREVISION=	2
+PORTVERSION=	2.1.12
 CATEGORIES=	net elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +16,6 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Transparent remote file access tool for emacsen
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261
@@ -36,6 +34,8 @@ CONFIGURE_ARGS+=	--with-japanese-manual
 INFO+=		tramp
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if ${EMACS_PORT_NAME} == emacs20
 PLIST_SUB+=	EMACS20_ONLY=""
 .else
@@ -53,4 +53,4 @@ post-install:
 	(cd ${WRKSRC}/contrib; ${GMAKE} install)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
