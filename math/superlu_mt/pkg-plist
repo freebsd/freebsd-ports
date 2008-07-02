@@ -1,12 +1,18 @@
-include/superlu_mt/Cnames.h
 include/superlu_mt/colamd.h
-include/superlu_mt/machines.h
+include/superlu_mt/pcsp_defs.h
 include/superlu_mt/pdsp_defs.h
+include/superlu_mt/pssp_defs.h
 include/superlu_mt/pxgstrf_synch.h
+include/superlu_mt/pzsp_defs.h
+include/superlu_mt/slu_dcomplex.h
+include/superlu_mt/slu_mt_Cnames.h
+include/superlu_mt/slu_mt_machines.h
+include/superlu_mt/slu_mt_util.h
+include/superlu_mt/slu_scomplex.h
 include/superlu_mt/supermatrix.h
-include/superlu_mt/util.h
-lib/libsuperlu_mt.a
 @dirrm include/superlu_mt
+lib/libsuperlu_mt.a
+lib/libsuperlu_mt.so
+lib/libsuperlu_mt.so.1
 %%PORTDOCS%%%%DOCSDIR%%/simax97.ps.gz
-%%PORTDOCS%%%%DOCSDIR%%/ug.ps.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
