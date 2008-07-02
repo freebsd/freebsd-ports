@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rt
-PORTVERSION?=	3.6.6
-#PORTREVISION=	0
+PORTVERSION?=	3.6.7
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
@@ -22,8 +21,8 @@ COMMENT?=	RT is an industrial-grade ticketing system written in Perl
 PERL_MODULES =	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
-		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/DBIx/SearchBuilder.pm:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
+		p5-CGI.pm>=3.10:${PORTSDIR}/www/p5-CGI.pm \
+		p5-DBIx-SearchBuilder>=0.53:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format \
@@ -54,6 +53,7 @@ PERL_MODULES =	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 	        ${SITE_PERL}/Calendar/Simple.pm:${PORTSDIR}/devel/p5-Calendar-Simple \
 		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/CSS/Squish.pm:${PORTSDIR}/textproc/p5-CSS-Squish \
+		p5-Devel-StackTrace>=1.19:${PORTSDIR}/devel/p5-Devel-StackTrace \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
 
