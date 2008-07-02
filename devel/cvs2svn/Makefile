@@ -15,7 +15,7 @@ MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/41596/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkoshy
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	CVS to Subversion Repository Converter
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
