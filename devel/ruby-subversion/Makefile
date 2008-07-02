@@ -6,7 +6,6 @@
 #
 
 PKGNAMEPREFIX=	ruby-
-CATEGORIES+=	ruby
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Ruby bindings for version control system
@@ -19,6 +18,8 @@ USE_RUBY=		yes
 SVN_BUILD_BINDINGS=yes
 
 .include "${MASTERDIR}/Makefile.common"
+
+CATEGORIES+=	ruby
 
 do-build:
 	cd ${WRKSRC} ; ${MAKE} swig-rb-lib ; ${MAKE} swig-rb

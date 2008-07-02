@@ -6,7 +6,6 @@
 #
 
 PKGNAMEPREFIX=	py-
-CATEGORIES+=	python
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Python bindings for version control system
@@ -19,6 +18,8 @@ USE_PYTHON=yes
 SVN_BUILD_BINDINGS=yes
 
 .include "${MASTERDIR}/Makefile.common"
+
+CATEGORIES+=	python
 
 do-build:
 	cd ${WRKSRC} ; ${MAKE} swig-py-lib ; ${MAKE} swig-py
