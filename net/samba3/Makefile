@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.28a
-PORTREVISION=	2
+PORTVERSION?=		3.0.30
+PORTREVISION=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -66,6 +66,7 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		CUPS		"With CUPS printing support" on \
 		WINBIND		"With WinBIND support" on \
 		ACL_SUPPORT	"With ACL support" off \
+		AIO_SUPPORT	"With Asyncronous IO support" off \
 		FAM_SUPPORT	"With File Alteration Monitor" off \
 		SYSLOG		"With Syslog support" off \
 		QUOTAS		"With Disk quota support" off \
@@ -73,9 +74,10 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		MSDFS		"With MSDFS support" on \
 		PAM_SMBPASS	"With PAM authentication vs passdb backends" off \
 		CLUSTER		"With experimental cluster support" off \
-		DNSUPDATE	"With dynamic DNS update" off \
+		DNSUPDATE	"With dynamic DNS update(require ADS)" off \
 		EXP_MODULES	"With experimental modules" off \
 		POPT		"With system-wide POPT library" on \
+		PCH		"With precompiled headers optimization" on \
 		MAX_DEBUG	"With maximum debugging" off \
 		SMBTORTURE	"With smbtorture" off
 .endif
@@ -191,14 +193,6 @@ WANT_EXP_MODULES+=	vfs_catia vfs_cacheprime vfs_commit
 .	endif
 .endif
 
-.if defined(WITH_FAM_SUPPORT)
-USE_FAM=		yes
-CONFIGURE_ARGS+=	--enable-fam
-WANT_EXP_MODULES+=	vfs_notify_fam
-.else
-CONFIGURE_ARGS+=	--disable-fam
-.endif
-
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
 USE_EXP_MODULES!=	${ECHO_CMD} ${WANT_EXP_MODULES} | ${SED} -E 's/ +/,/g'
 CONFIGURE_ARGS+=	--with-shared-modules="${USE_EXP_MODULES}"
@@ -212,13 +206,30 @@ CONFIGURE_ARGS+=	--without-pam_smbpass
 PLIST_SUB+=		SMBPASS="@comment "
 .endif
 
+.if defined(WITH_FAM_SUPPORT)
+USE_FAM=		yes
+CONFIGURE_ARGS+=	--enable-fam
+WANT_EXP_MODULES+=	vfs_notify_fam
+.else
+CONFIGURE_ARGS+=	--disable-fam
+.endif
+
 .if defined(WITH_ACL_SUPPORT)
 .if ${OSVERSION} < 500018
-BROKEN=			ACL support requires FreeBSD 5.x at least after 20010326. Disable ACL support
+IGNORE=			ACL support requires 5.1-RELEASE or later. Disable ACL support
 .endif
 CONFIGURE_ARGS+=	--with-acl-support
 .else
 CONFIGURE_ARGS+=	--without-acl-support
+.endif
+
+.if defined(WITH_AIO_SUPPORT)
+.if ${OSVERSION} < 700055
+IGNORE=			AIO support requires 7.0-RELEASE or later. Disable AIO support
+.endif
+CONFIGURE_ARGS+=	--with-aio-support
+.else
+CONFIGURE_ARGS+=	--without-aio-support
 .endif
 
 .if defined(WITH_SMBSH)
@@ -244,13 +255,6 @@ LIB_DEPENDS+=		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 CONFIGURE_ARGS+=	--with-dnsupdate
 .else
 CONFIGURE_ARGS+=	--without-dnsupdate
-.endif
-
-.if defined(WITH_AIO_SUPPORT)
-IGNORE=			broken kernel API until now (7-CURRENT). Disable AIO support
-CONFIGURE_ARGS+=	--with-aio-support
-.else
-CONFIGURE_ARGS+=	--without-aio-support
 .endif
 
 .if !defined(WITHOUT_POPT)
@@ -358,6 +362,9 @@ MAN8+=		vfs_catia.8
 MAN8+=		vfs_commit.8
 .endif
 
+# Off by now
+PLIST_SUB+=	SAMBA_BOOK="@comment "
+
 PLIST_SUB+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
 		SAMBA_LOCKDIR="${SAMBA_LOCKDIR}" \
 		SAMBA_CONFDIR="${SAMBA_CONFDIR}" \
@@ -404,7 +411,7 @@ post-patch:
 	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r
 
 # This would speedup compilation for gcc 3.4(available in FreeBSD 5.2) and higher
-.if ${OSVERSION} >= 502126
+.if !defined(WITHOUT_PCH) && ${OSVERSION} >= 502126
 pre-build:
 	cd ${WRKSRC} && ${MAKE} pch
 .endif
