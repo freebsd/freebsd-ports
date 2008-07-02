@@ -9,7 +9,8 @@
 PORTNAME=	libotr
 PORTVERSION=	3.2.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.cypherpunks.ca/otr/
+MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
+		http://dougbarton.us/Downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
