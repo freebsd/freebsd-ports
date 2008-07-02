@@ -907,7 +907,6 @@
 %%T%%/jre/bin/rmiregistry
 %%T%%/jre/bin/servertool
 %%T%%/jre/bin/tnameserv
-%%T%%/jre/javaws/cacerts
 %%T%%/jre/javaws/javalogo52x88.gif
 %%T%%/jre/javaws/javaws
 %%T%%/jre/javaws/javaws-l10n.jar
@@ -1186,6 +1185,7 @@
 %%T%%/jre/lib/zi/America/Indiana/Knox
 %%T%%/jre/lib/zi/America/Indiana/Marengo
 %%T%%/jre/lib/zi/America/Indiana/Petersburg
+%%T%%/jre/lib/zi/America/Indiana/Tell_City
 %%T%%/jre/lib/zi/America/Indiana/Vevay
 %%T%%/jre/lib/zi/America/Indiana/Vincennes
 %%T%%/jre/lib/zi/America/Indiana/Winamac
