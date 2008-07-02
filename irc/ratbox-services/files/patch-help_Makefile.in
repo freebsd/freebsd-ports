@@ -1,15 +1,27 @@
---- ./help/Makefile.in.orig	Fri Aug 24 12:32:24 2007
-+++ ./help/Makefile.in	Fri Aug 24 12:15:25 2007
-@@ -10,10 +10,10 @@
- SUBDIRS=alis main operbot chanserv userserv jupeserv operserv nickserv global banserv watchserv
+--- ./help/Makefile.in.orig	2007-09-08 14:36:57.000000000 +0100
++++ ./help/Makefile.in	2008-06-26 13:29:10.000000000 +0100
+@@ -13,22 +13,12 @@
+ SERVICES=alis main operbot chanserv userserv jupeserv operserv nickserv global banserv watchserv memoserv
  
  install: 
--	$(INSTALL) -m 750 -d $(DESTDIR)$(helpdir)
-+	$(INSTALL) -d $(DESTDIR)$(helpdir)
+-	@if [ -d $(DESTDIR)$(helpdir)-old ]; then \
+-		echo "Removing old helpfiles"; \
+-		$(RM) -rf $(DESTDIR)$(helpdir)-old; \
+-	fi
+-	@if [ -d $(DESTDIR)$(helpdir) ]; then \
+-		echo "Backing up current helpfiles"; \
+-		$(MV) $(DESTDIR)$(helpdir) $(DESTDIR)$(helpdir)-old; \
+-	fi
+-
+ 	@echo "Installing new helpfiles"
+-	@$(INSTALL) -m 750 -d $(DESTDIR)$(helpdir)
  
- 	@for i in $(SUBDIRS); do \
--		$(INSTALL) -m 750 -d $(DESTDIR)$(helpdir)/$$i; \
-+		$(INSTALL) -d $(DESTDIR)$(helpdir)/$$i; \
- 		for j in $$i/*; do \
- 			if [ -f $$j ]; then \
- 				$(INSTALL_DATA) $$j $(DESTDIR)$(helpdir)/$$i; \
+ 	@for k in $(LANGS); do \
+-		$(INSTALL) -m 750 -d $(DESTDIR)$(helpdir)/$$k; \
++		$(INSTALL) -d $(DESTDIR)$(helpdir)/$$k; \
+ 		for i in $(SERVICES); do \
+-			$(INSTALL) -m 750 -d $(DESTDIR)$(helpdir)/$$k/$$i; \
++			$(INSTALL) -d $(DESTDIR)$(helpdir)/$$k/$$i; \
+ 			for j in $$k/$$i/*; do \
+ 				if [ -f $$j ]; then \
+ 					$(INSTALL_DATA) $$j $(DESTDIR)$(helpdir)/$$k/$$i; \

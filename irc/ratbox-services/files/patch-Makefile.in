@@ -1,15 +1,17 @@
---- ./Makefile.in.orig	Mon Apr 10 19:53:23 2006
-+++ ./Makefile.in	Wed Sep  5 04:08:35 2007
-@@ -6,7 +6,7 @@
+--- ./Makefile.in.orig	2008-02-17 15:33:40.000000000 +0000
++++ ./Makefile.in	2008-06-26 15:48:13.000000000 +0100
+@@ -6,8 +6,8 @@
  LIBS=@LIBS@
  LDFLAGS=@LDFLAGS@
  
--SUBDIRS=@SQLITE_SUBDIR@ src help
-+SUBDIRS=src help
+-SUBDIRS=@SQLITE_SUBDIR@ @PCRE_SUBDIR@ src help langs
+-SUBDIRS_NOINSTALL=@SQLITE_SUBDIR@ src help langs
++SUBDIRS=src help langs
++SUBDIRS_NOINSTALL=src help langs
  
  prefix=@prefix@
  exec_prefix=@prefix@
-@@ -37,20 +37,6 @@
+@@ -38,20 +38,6 @@
  	done
  
  install: build

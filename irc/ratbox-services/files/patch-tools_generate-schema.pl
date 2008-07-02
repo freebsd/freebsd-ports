@@ -1,5 +1,5 @@
---- ./tools/generate-schema.pl.orig	Fri Aug 24 12:45:51 2007
-+++ ./tools/generate-schema.pl	Fri Aug 24 12:49:13 2007
+--- ./tools/generate-schema.pl.orig	2006-09-09 16:41:27.000000000 +0100
++++ ./tools/generate-schema.pl	2008-06-26 15:36:23.000000000 +0100
 @@ -15,11 +15,11 @@
  my @schemas = ("base/schema-mysql.txt", "base/schema-pgsql.txt");
  my @plain_schemas = ("base/schema-sqlite.txt");

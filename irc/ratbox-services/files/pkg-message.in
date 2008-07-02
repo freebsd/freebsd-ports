@@ -19,7 +19,14 @@ The following directory has been created for the database to be stored
 in. For consistency, please use this location when generating your
 database instead of the directory specified in the help documentation:
 
-	%%DBDIR%%
+	%%DBDIR%%/
+
+The database schemas have been generated for you by the port, so this
+step in the documentation will not be necessary. For example, to create
+an sqlite database, you might do something like this:
+
+  cd %%DATADIR%%
+  sqlite3 %%DBDIR%%/ratbox-services.db < schema-sqlite.txt
 
 IRCD Server Config:
 -------------------
@@ -39,14 +46,15 @@ server can be started by running:
 
 Important UPGRADE Note:
 -----------------------
-Upgrading from the 1.0.x series to this current release will likely
-break everything. If upgrading between release versions you should
-read the UPDATING information:
+Upgrading to this current release will require modifications to the
+services configuration file and database so everything doesn't break.
+You must check the example configuration file and read the UPDATING docs
+for information on how to do this before starting services.
 
 	%%DOCSDIR%%/UPDATING
 
 Common database update tools and scripts referenced in ratbox-services
 documentation can be found in:
-	%%DOCSDIR%%/
+	%%DATADIR%%/
 
 ------------------------------------------------------------------------
