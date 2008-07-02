@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	crystal
@@ -25,7 +25,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut \
-		CEGUIBase.1:${PORTSDIR}/graphics/cegui
+		CEGUIBase.2:${PORTSDIR}/graphics/cegui
 
 CONFLICTS=	crystalspace-devel-[0-9]*
 

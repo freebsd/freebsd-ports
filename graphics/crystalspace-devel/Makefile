@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	20061105
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://alex.foxybanana.com/freebsd/
 PKGNAMESUFFIX=	-devel
@@ -24,7 +24,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut \
-		CEGUIBase.0:${PORTSDIR}/graphics/cegui
+		CEGUIBase.2:${PORTSDIR}/graphics/cegui
 
 BROKEN=		Incorrect pkg-plist
 DEPRECATED=	Has been broken for more than 6 months

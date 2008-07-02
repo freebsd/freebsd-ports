@@ -7,7 +7,7 @@
 
 PORTNAME=	tnl
 PORTVERSION=	071111
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://tnlgame.net/downloads/tnl/${PORTVERSION}/ \
 		http://www.amdmi3.ru/distfiles/
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut \
 		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-		CEGUIBase.1:${PORTSDIR}/graphics/cegui \
+		CEGUIBase.2:${PORTSDIR}/graphics/cegui \
 		png.5:${PORTSDIR}/graphics/png \
 		GLEW.1:${PORTSDIR}/graphics/glew
 
