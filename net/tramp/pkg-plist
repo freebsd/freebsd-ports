@@ -10,8 +10,16 @@
 %%EMACS20_ONLY%%%%TRAMP_LISPDIR%%/uudecode.elc
 %%TRAMP_LISPDIR%%/password.el
 %%TRAMP_LISPDIR%%/password.elc
+%%TRAMP_LISPDIR%%/tramp-cmds.el
+%%TRAMP_LISPDIR%%/tramp-cmds.elc
+%%TRAMP_LISPDIR%%/tramp-compat.el
+%%TRAMP_LISPDIR%%/tramp-compat.elc
+%%TRAMP_LISPDIR%%/tramp-fish.el
+%%TRAMP_LISPDIR%%/tramp-fish.elc
 %%TRAMP_LISPDIR%%/tramp-ftp.el
 %%TRAMP_LISPDIR%%/tramp-ftp.elc
+%%TRAMP_LISPDIR%%/tramp-gw.el
+%%TRAMP_LISPDIR%%/tramp-gw.elc
 %%TRAMP_LISPDIR%%/tramp-smb.el
 %%TRAMP_LISPDIR%%/tramp-smb.elc
 %%TRAMP_LISPDIR%%/tramp-util.el
