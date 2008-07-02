@@ -8282,7 +8282,6 @@ mod_xsendfile                   ports/www/mod_xsendfile
 mode-info                       ports/editors/mode-info
 modlogan                        ports/textproc/modlogan
 modplugplay                     ports/audio/modplugplay
-modules                         ports/sysutils/modules
 moftpd                          ports/ftp/moftpd
 moinmoin                        ports/www/moinmoin
 molden                          ports/biology/molden
@@ -16781,6 +16780,7 @@ ports_libsm                     ports/x11/libSM
 ports_m4                        ports/devel/m4
 ports_mixer                     ports/sysutils/mixer
 ports_mk                        ports/devel/mk
+ports_modules                   ports/sysutils/modules
 ports_mrouted                   ports/net/mrouted
 ports_mt                        ports/www/MT
 ports_ntp                       ports/net/ntp
