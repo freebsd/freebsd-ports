@@ -1,7 +1,11 @@
 lib/pidgin/pidgin-otr.la
 lib/pidgin/pidgin-otr.so
+share/locale/ar/LC_MESSAGES/pidgin-otr.mo
+share/locale/de/LC_MESSAGES/pidgin-otr.mo
 share/locale/es/LC_MESSAGES/pidgin-otr.mo
 share/locale/fr/LC_MESSAGES/pidgin-otr.mo
+share/locale/hu/LC_MESSAGES/pidgin-otr.mo
 share/locale/nl/LC_MESSAGES/pidgin-otr.mo
+share/locale/ru/LC_MESSAGES/pidgin-otr.mo
 share/locale/sk/LC_MESSAGES/pidgin-otr.mo
 @dirrmtry lib/pidgin

@@ -7,22 +7,22 @@
 #
 
 PORTNAME=	otr
-PORTVERSION=	3.1.0
-PORTREVISION=	5
+PORTVERSION=	3.2.0
 CATEGORIES=	security net
-MASTER_SITES=	http://www.cypherpunks.ca/otr/
+MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
+		http://dougbarton.us/Downloads/
 PKGNAMEPREFIX=	pidgin-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	perlfu@gmail.com
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Allows deniable private conversations using Pidgin
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
 LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
-		purple.4:${PORTSDIR}/net-im/libpurple
+		purple:${PORTSDIR}/net-im/libpurple
 
 USE_GMAKE=	yes
 USE_GNOME=	intltool
