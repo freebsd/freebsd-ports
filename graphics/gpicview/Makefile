@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpicview
-PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTVERSION=	0.1.9
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	lxde
@@ -17,5 +16,16 @@ COMMENT=	A Simple and Fast Image Viewer for X
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>

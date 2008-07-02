@@ -1,5 +1,16 @@
 bin/gpicview
 share/applications/gpicview.desktop
+%%NLS%%share/locale/cs/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/de_DE/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gpicview.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/gpicview.mo
 %%DATADIR%%/pixmaps/clockwise.png
 %%DATADIR%%/pixmaps/counterclockwise.png
 %%DATADIR%%/pixmaps/fullscreen.png
@@ -9,3 +20,5 @@ share/pixmaps/gpicview.png
 @dirrm %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
