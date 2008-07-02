@@ -39,7 +39,7 @@ upgrades.
   after subversion upgrade.
 
 20080630:
-  AFFECTS: users of graphics/poppler* and future users of firefox3
+  AFFECTS: users of graphics/poppler* and future users of www/firefox3
   AUTHOR: FreeBSD GNOME Team <gnome@FreeBSD.org>
 
   The poppler* ports have been updated to 0.8.3 and the shared libraries
@@ -47,11 +47,15 @@ upgrades.
   These changes require that all dependent ports be updated.  You can do
   this in one of two ways:
 
-  # portmaster -a
+  # portmaster pixman\*
+  # portmaster \*cairo\*
+  # portmaster -r poppler-0.\*
 
   or
 
-  # portupgrade -a
+  # pkgdb -Ff
+  # portupgrade pixman\* \*cairo\*
+  # portupgrade -r poppler-0.\*
 
 20080627:
   AFFECTS: users of x11-drivers/xf86-video-ati
