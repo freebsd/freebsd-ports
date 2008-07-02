@@ -1,7 +1,9 @@
 %%SITE_PERL%%/Set/IntSpan/Fast.pm
+%%SITE_PERL%%/Set/IntSpan/Fast/PP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/IntSpan/Fast/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/IntSpan/Fast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/IntSpan
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set
+@dirrmtry %%SITE_PERL%%/Set/IntSpan/Fast
 @dirrmtry %%SITE_PERL%%/Set/IntSpan
 @dirrmtry %%SITE_PERL%%/Set
