@@ -29,7 +29,7 @@ SVN_BUILD_BINDINGS=yes
 
 .include "${MASTERDIR}/Makefile.common"
 
-CATEGORIES+=	perl
+CATEGORIES+=	perl5
 
 do-build:
 	cd ${WRKSRC} ; ${MAKE} swig-pl-lib ; ${MAKE} swig-pl
