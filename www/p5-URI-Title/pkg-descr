@@ -1,0 +1,18 @@
+Let's suppose you want to find the title of things on the web. This
+seems like a really simple request, just get() the object, parse for a
+title tag, you're done. There are several problems with this approach:
+
+- What if the resource is on a very slow server? Do we wait for ever or
+  what?
+
+- What if the resource is a 900 gig file? You don't want to download
+  that.
+
+- What if the page title isn't in a title tag, but is buried in the HTML
+  somewhere?
+
+- What if the resource is an MP3 file, or a word document or something?
+
+This module attempts to solve this problem.
+
+WWW: http://search.cpan.org/dist/URI-Title/
