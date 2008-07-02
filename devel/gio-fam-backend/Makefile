@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gio-fam-backend
-PORTVERSION=	2.16.3
-PORTREVISION=	1
+PORTVERSION=	2.16.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
 		ftp://ftp.gtk.org/pub/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
