@@ -21,6 +21,7 @@ include/libotr/version.h
 lib/libotr.a
 lib/libotr.la
 lib/libotr.so
-lib/libotr.so.3
+lib/libotr.so.4
+libdata/pkgconfig/libotr.pc
 share/aclocal/libotr.m4
 @dirrm include/libotr

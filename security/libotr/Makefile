@@ -7,19 +7,19 @@
 #
 
 PORTNAME=	libotr
-PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTVERSION=	3.2.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@mcdermottroe.com
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The portable OTR Messaging Library and toolkit
 
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
+USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_LDCONFIG=	yes
 
@@ -33,5 +33,9 @@ MLINKS=		otr_toolkit.1 otr_parse.1 \
 
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#^pkgconfigdir .*#pkgconfigdir = ${PREFIX}/libdata/pkgconfig#' \
+	    ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>
