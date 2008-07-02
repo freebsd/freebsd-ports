@@ -1,0 +1,12 @@
+--- ezjail-admin.orig	2008-03-05 15:53:21.000000000 +0300
++++ ezjail-admin	2008-03-05 17:08:28.000000000 +0300
+@@ -590,7 +590,8 @@
+   DESTDIR=${ezjail_jailfull}
+ 
+   rm -rf ${ezjail_jailtemp}
+-  for pkg in base ${ezjail_installmanpages} ${ezjail_installsources}; do
++  [ "`uname -p`" = "amd64" ] && _pkg_list="base lib32" || _pkg_list="base"
++  for pkg in ${_pkg_list} ${ezjail_installmanpages} ${ezjail_installsources}; do
+ 
+     # The first case means, that a remote host has been specified.
+     if [ "${ezjail_dir}" = "${ezjail_ftphost}" ]; then
