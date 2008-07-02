@@ -1,0 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Set/IntSpan/Fast/XS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/IntSpan/Fast/XS/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/IntSpan/Fast/XS/XS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/IntSpan/Fast/XS/XS.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/IntSpan/Fast/XS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/IntSpan/Fast
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Set/IntSpan/Fast
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/IntSpan
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Set/IntSpan
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Set
