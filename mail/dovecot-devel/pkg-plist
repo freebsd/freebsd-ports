@@ -5,7 +5,6 @@ etc/dovecot-example.conf
 %%PORTDOCS%%etc/dovecot-ldap-example.conf
 %%PORTDOCS%%etc/dovecot-sql-example.conf
 @dirrmtry include/dovecot
-@dirrm lib/dovecot/auth
 lib/dovecot/imap/lib01_acl_plugin.so
 lib/dovecot/imap/lib02_lazy_expunge_plugin.so
 lib/dovecot/imap/lib10_quota_plugin.so
@@ -14,8 +13,8 @@ lib/dovecot/imap/lib11_imap_quota_plugin.la
 lib/dovecot/imap/lib11_imap_quota_plugin.so
 lib/dovecot/imap/lib11_trash_plugin.so
 lib/dovecot/imap/lib20_convert_plugin.so
-lib/dovecot/imap/lib20_fts_plugin.so
 lib/dovecot/imap/lib20_expire_plugin.so
+lib/dovecot/imap/lib20_fts_plugin.so
 lib/dovecot/imap/lib20_mail_log_plugin.so
 lib/dovecot/imap/lib20_mbox_snarf_plugin.so
 lib/dovecot/imap/lib20_zlib_plugin.a
@@ -39,6 +38,7 @@ lib/dovecot/pop3/lib20_expire_plugin.so
 lib/dovecot/pop3/lib20_mail_log_plugin.so
 lib/dovecot/pop3/lib20_mbox_snarf_plugin.so
 @dirrm lib/dovecot/pop3
+@dirrm lib/dovecot/auth
 lib/dovecot/lib01_acl_plugin.a
 lib/dovecot/lib01_acl_plugin.la
 lib/dovecot/lib01_acl_plugin.so
@@ -55,11 +55,11 @@ lib/dovecot/lib20_convert_plugin.a
 lib/dovecot/lib20_convert_plugin.la
 lib/dovecot/lib20_convert_plugin.so
 lib/dovecot/lib20_expire_plugin.a
-lib/dovecot/lib20_expire_plugin.so
 lib/dovecot/lib20_expire_plugin.la
+lib/dovecot/lib20_expire_plugin.so
 lib/dovecot/lib20_fts_plugin.a
-lib/dovecot/lib20_fts_plugin.so
 lib/dovecot/lib20_fts_plugin.la
+lib/dovecot/lib20_fts_plugin.so
 lib/dovecot/lib20_mail_log_plugin.a
 lib/dovecot/lib20_mail_log_plugin.la
 lib/dovecot/lib20_mail_log_plugin.so
@@ -67,12 +67,12 @@ lib/dovecot/lib20_mbox_snarf_plugin.a
 lib/dovecot/lib20_mbox_snarf_plugin.la
 lib/dovecot/lib20_mbox_snarf_plugin.so
 lib/dovecot/lib21_fts_squat_plugin.a
-lib/dovecot/lib21_fts_squat_plugin.so
 lib/dovecot/lib21_fts_squat_plugin.la
+lib/dovecot/lib21_fts_squat_plugin.so
 @dirrm lib/dovecot
 libexec/dovecot/checkpassword-reply
-%%LDA%%libexec/dovecot/deliver
 libexec/dovecot/convert-tool
+%%LDA%%libexec/dovecot/deliver
 libexec/dovecot/dict
 libexec/dovecot/dovecot-auth
 libexec/dovecot/expire-tool
