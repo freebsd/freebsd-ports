@@ -8,14 +8,15 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.8.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A PDF rendering library
 
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
 USE_GMAKE=	yes
@@ -36,13 +37,16 @@ OPTIONS=	CAIRO "Enable cairo output backend" on
 
 .if defined(SLAVEPORT)
 LIB_DEPENDS+=	poppler.3:${PORTSDIR}/graphics/poppler
+
 .if ${SLAVEPORT}=="gtk"
 CONFIGURE_ARGS+=--enable-poppler-glib
 USE_GNOME+=	gtk20
 BUILD_WRKSRC=	${WRKSRC}/glib
 INSTALL_WRKSRC=	${WRKSRC}/glib
 .else
-CONFIGURE_ARGS+=--disable-poppler-glib
+CONFIGURE_ARGS+=--disable-poppler-glib \
+		--disable-gdk \
+		--disable-gtk-test
 .endif
 
 .if ${SLAVEPORT}=="qt"
@@ -73,20 +77,21 @@ CONFIGURE_ARGS+=--enable-utils
 CONFLICTS=	xpdf-[0-9]*
 BUILD_WRKSRC=	${WRKSRC}/utils
 INSTALL_WRKSRC=	${WRKSRC}/utils
-MAN1=	pdffonts.1 pdfimages.1 pdfinfo.1 \
-	pdftohtml.1  pdftops.1 pdftotext.1 pdftoppm.1
+MAN1=		pdffonts.1 pdfimages.1 pdfinfo.1 \
+		pdftohtml.1  pdftops.1 pdftotext.1 pdftoppm.1
 .else
 CONFIGURE_ARGS+=--disable-utils
 .endif
 
 .else
 CONFIGURE_ARGS+=--disable-poppler-glib --disable-poppler-qt \
-		--disable-poppler-qt4 --disable-utils
+		--disable-poppler-qt4 --disable-utils --disable-gdk \
+		--disable-gtk-test
 
 .if defined(WITHOUT_CAIRO)
-CONFIGURE_ARGS+=	--disable-cairo-output
+CONFIGURE_ARGS+=--disable-cairo-output
 .else
-LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 .endif
 .endif
 

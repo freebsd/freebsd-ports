@@ -14,6 +14,6 @@ COMMENT=	Qt bindings to poppler
 
 MASTERDIR=	${.CURDIR}/../../graphics/poppler
 SLAVEPORT=	qt
-PLIST=	${.CURDIR}/pkg-plist
+PLIST=		${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"
