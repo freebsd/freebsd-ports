@@ -1,6 +1,6 @@
---- install.sh	2007-12-12 04:40:29.000000000 +0100
-+++ install.sh.port	2007-12-22 22:55:49.000000000 +0100
-@@ -1,14 +1,13 @@
+--- install.sh	2008-06-08 00:20:38.000000000 +0200
++++ install.sh.port	2008-06-28 18:24:30.000000000 +0200
+@@ -1,14 +1,12 @@
  #!/bin/sh
 -if [ "$1" = "--adult" ]; then echo '1'>/etc/tunapie.config 
 -else echo '0'>/etc/tunapie.config
@@ -24,5 +24,4 @@
 +mkdir -p %%DATADIR%%/pixmaps
 +cp src/tplogo.xpm %%DATADIR%%/pixmaps/
 +ln -s %%DATADIR%%/pixmaps/tplogo.xpm %%PREFIX%%/share/pixmaps/tplogo.xpm
-+cp tunapie.1 %%MANPREFIX%%/man/man1
 +cp tunapie.desktop %%DESKTOPDIR%%
