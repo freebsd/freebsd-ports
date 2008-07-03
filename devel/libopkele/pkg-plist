@@ -1,18 +1,26 @@
 include/opkele/acconfig.h
 include/opkele/association.h
+include/opkele/basic_op.h
+include/opkele/basic_rp.h
 include/opkele/consumer.h
 include/opkele/exception.h
 include/opkele/extension.h
 include/opkele/extension_chain.h
+include/opkele/iterator.h
 include/opkele/opkele-config.h
+include/opkele/prequeue_rp.h
 include/opkele/server.h
 include/opkele/sreg.h
+include/opkele/tr1-mem.h
 include/opkele/types.h
+include/opkele/uris.h
+include/opkele/util.h
+include/opkele/verify_op.h
 include/opkele/xconsumer.h
 include/opkele/xserver.h
 lib/libopkele.a
 lib/libopkele.la
 lib/libopkele.so
-lib/libopkele.so.2
+lib/libopkele.so.3
 libdata/pkgconfig/libopkele.pc
 @dirrm include/opkele
