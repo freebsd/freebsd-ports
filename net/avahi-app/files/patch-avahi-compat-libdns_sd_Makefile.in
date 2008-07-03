@@ -1,6 +1,6 @@
---- avahi-compat-libdns_sd/Makefile.in.orig	2007-07-31 12:31:07.000000000 -0400
-+++ avahi-compat-libdns_sd/Makefile.in	2007-07-31 12:35:41.000000000 -0400
-@@ -101,17 +101,14 @@
+--- avahi-compat-libdns_sd/Makefile.in.orig	2008-07-03 14:23:56.000000000 -0500
++++ avahi-compat-libdns_sd/Makefile.in	2008-07-03 14:31:19.000000000 -0500
+@@ -106,9 +106,7 @@
  null_test_OBJECTS = $(am_null_test_OBJECTS)
  am__DEPENDENCIES_1 =
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@null_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
@@ -8,28 +8,29 @@
 -@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	../avahi-common/libavahi-common.la \
 -@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	../avahi-client/libavahi-client.la
 +@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(am__DEPENDENCIES_1)
- am__txt_test_SOURCES_DIST = dns_sd.h txt.c txt-test.c warn.c warn.h
- @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@am_txt_test_OBJECTS = txt_test-txt.$(OBJEXT) \
- @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	txt_test-txt-test.$(OBJEXT) \
+ null_test_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(null_test_CFLAGS) \
+ 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+@@ -118,8 +116,7 @@
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	txt_test-warn.$(OBJEXT)
  txt_test_OBJECTS = $(am_txt_test_OBJECTS)
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@txt_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 -@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(am__DEPENDENCIES_1) \
 -@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	../avahi-common/libavahi-common.la
 +@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(am__DEPENDENCIES_1)
- DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
-@@ -430,7 +427,7 @@
+ txt_test_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(txt_test_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+@@ -411,7 +408,7 @@
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	warn.c warn.h
  
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd_la_CFLAGS = $(AM_CFLAGS) $(PTHREAD_CFLAGS)
--@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd_la_LDFLAGS = $(AM_LDFLAGS) -export-dynamic -version-info $(LIBAVAHI_COMPAT_LIBDNS_SD_VERSION_INFO) $(PTHREAD_LIBS) $(PTHREAD_CFLAGS) ../avahi-common/libavahi-common.la ../avahi-client/libavahi-client.la
-+@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd_la_LDFLAGS = $(AM_LDFLAGS) -export-dynamic -version-info $(LIBAVAHI_COMPAT_LIBDNS_SD_VERSION_INFO) $(PTHREAD_LIBS) $(PTHREAD_CFLAGS) `$(PKG_CONFIG) --libs --cflags avahi-client`
+-@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd_la_LDFLAGS = $(AM_LDFLAGS)  -version-info $(LIBAVAHI_COMPAT_LIBDNS_SD_VERSION_INFO) $(PTHREAD_LIBS) $(PTHREAD_CFLAGS) ../avahi-common/libavahi-common.la ../avahi-client/libavahi-client.la
++@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd_la_LDFLAGS = $(AM_LDFLAGS)  -version-info $(LIBAVAHI_COMPAT_LIBDNS_SD_VERSION_INFO) $(PTHREAD_LIBS) $(PTHREAD_CFLAGS) `$(PKG_CONFIG) --libs --cflags avahi-client`
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@txt_test_SOURCES = \
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	dns_sd.h \
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	txt.c \
-@@ -438,7 +435,7 @@
+@@ -419,7 +416,7 @@
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	warn.c warn.h
  
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@txt_test_CFLAGS = $(AM_CFLAGS) $(PTHREAD_CFLAGS)
@@ -38,7 +39,7 @@
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@null_test_SOURCES = \
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	dns_sd.h \
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	compat.c \
-@@ -446,7 +443,7 @@
+@@ -427,7 +424,7 @@
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	warn.c warn.h
  
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@null_test_CFLAGS = $(AM_CFLAGS) $(PTHREAD_CFLAGS)
@@ -47,7 +48,7 @@
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@CLEANFILES = libdns_sd-test.o libdns_sd-test
  all: all-am
  
-@@ -883,7 +880,7 @@
+@@ -870,7 +867,7 @@
  
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd-test: libdns_sd-test.c libdns_sd.la
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(LIBTOOL) --mode=compile $(CC) $(AM_CFLAGS) $(PTHREAD_CFLAGS) -o libdns_sd-test.o -c libdns_sd-test.c 

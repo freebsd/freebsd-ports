@@ -14,7 +14,7 @@ bin/avahi-discover
 %%PYTHON_SITELIBDIR%%/avahi_discover/__init__.pyo
 share/applications/avahi-discover.desktop
 %%DATADIR%%/service-types.db
-@dirrmtry share/applications
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/avahi_discover
 @dirrm %%PYTHON_SITELIBDIR%%/avahi

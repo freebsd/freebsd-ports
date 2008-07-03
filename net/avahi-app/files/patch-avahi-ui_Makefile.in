@@ -1,40 +1,41 @@
---- avahi-ui/Makefile.in.orig	Tue Jul 31 11:49:11 2007
-+++ avahi-ui/Makefile.in	Tue Jul 31 11:50:37 2007
-@@ -89,9 +89,7 @@
+--- avahi-ui/Makefile.in.orig	2008-07-03 14:43:40.000000000 -0500
++++ avahi-ui/Makefile.in	2008-07-03 14:45:39.000000000 -0500
+@@ -92,9 +92,7 @@
  libLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
--@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@libavahi_ui_la_DEPENDENCIES = ../avahi-common/libavahi-common.la \
--@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	../avahi-client/libavahi-client.la \
--@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	../avahi-glib/libavahi-glib.la \
-+@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@libavahi_ui_la_DEPENDENCIES = \
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	$(am__DEPENDENCIES_1) \
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	$(am__DEPENDENCIES_1)
+-@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@libavahi_ui_la_DEPENDENCIES = ../avahi-common/libavahi-common.la \
+-@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	../avahi-client/libavahi-client.la \
+-@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	../avahi-glib/libavahi-glib.la \
++@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@libavahi_ui_la_DEPENDENCIES =  \
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	$(am__DEPENDENCIES_1) \
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	$(am__DEPENDENCIES_1)
  am__libavahi_ui_la_SOURCES_DIST = avahi-ui.h avahi-ui.c \
-@@ -112,8 +110,6 @@
+@@ -117,8 +115,6 @@
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@am_bssh_OBJECTS = bssh-bssh.$(OBJEXT)
  bssh_OBJECTS = $(am_bssh_OBJECTS)
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@bssh_DEPENDENCIES =  \
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	$(am__DEPENDENCIES_1) \
--@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	../avahi-client/libavahi-client.la \
--@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	../avahi-common/libavahi-common.la \
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	libavahi-ui.la
- DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
- depcomp = $(SHELL) $(top_srcdir)/depcomp
-@@ -439,15 +435,12 @@
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@libavahi_ui_la_CFLAGS = $(AM_CFLAGS) \
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	$(GTK20_CFLAGS) $(am__append_2) \
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	$(am__append_5)
--@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@libavahi_ui_la_LIBADD = $(AM_LDADD) \
--@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	../avahi-common/libavahi-common.la \
--@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	../avahi-client/libavahi-client.la \
--@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	../avahi-glib/libavahi-glib.la \
-+@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@libavahi_ui_la_LIBADD = $(AM_LDADD) `$(PKG_CONFIG) --cflags --libs avahi-client avahi-core avahi-glib` \
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@	$(GTK20_LIBS) $(am__append_3)
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@libavahi_ui_la_LDFLAGS = $(AM_LDFLAGS) -export-dynamic -version-info $(LIBAVAHI_UI_VERSION_INFO)
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@bssh_SOURCES = bssh.c
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@bssh_CFLAGS = $(AM_CFLAGS) $(GTK20_CFLAGS)
--@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@bssh_LDADD = $(AM_LDADD) $(GTK20_LIBS) ../avahi-client/libavahi-client.la ../avahi-common/libavahi-common.la libavahi-ui.la
-+@HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@bssh_LDADD = $(AM_LDADD) $(GTK20_LIBS) `$(PKG_CONFIG) --cflags --libs avahi-client avahi-core` libavahi-ui.la
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@bssh_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	../avahi-client/libavahi-client.la \
+-@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	../avahi-common/libavahi-common.la \
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	libavahi-ui.la
+ bssh_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(bssh_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+@@ -424,16 +420,13 @@
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	$(am__append_2) \
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	$(am__append_5)
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@libavahi_ui_la_LIBADD =  \
+-@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	$(AM_LDADD) \
+-@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	../avahi-common/libavahi-common.la \
+-@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	../avahi-client/libavahi-client.la \
+-@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	../avahi-glib/libavahi-glib.la \
++@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	$(AM_LDADD) `$(PKG_CONFIG) --cflags --libs avahi-client avahi-core avahi-glib` \
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	$(GTK20_LIBS) \
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@	$(am__append_3)
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@libavahi_ui_la_LDFLAGS = $(AM_LDFLAGS)  -version-info $(LIBAVAHI_UI_VERSION_INFO)
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@bssh_SOURCES = bssh.c
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@bssh_CFLAGS = $(AM_CFLAGS) $(GTK20_CFLAGS)
+-@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@bssh_LDADD = $(AM_LDADD) $(GTK20_LIBS) ../avahi-client/libavahi-client.la ../avahi-common/libavahi-common.la libavahi-ui.la
++@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK_TRUE@bssh_LDADD = $(AM_LDADD) $(GTK20_LIBS) `$(PKG_CONFIG) --cflags --libs avahi-client avahi-core` libavahi-ui.la
  CLEANFILES = $(desktop_DATA)
  all: all-am
  

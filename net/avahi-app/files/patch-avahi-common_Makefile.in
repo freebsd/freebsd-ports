@@ -1,11 +1,11 @@
---- avahi-common/Makefile.in.orig	2007-12-24 13:57:24.000000000 -0500
-+++ avahi-common/Makefile.in	2007-12-24 14:00:15.000000000 -0500
-@@ -555,7 +555,7 @@ libavahi_common_la_SOURCES = \
+--- avahi-common/Makefile.in.orig	2008-07-03 14:21:02.000000000 -0500
++++ avahi-common/Makefile.in	2008-07-03 14:22:16.000000000 -0500
+@@ -487,7 +487,7 @@
  	i18n.c i18n.h
  
  libavahi_common_la_CFLAGS = $(AM_CFLAGS) $(PTHREAD_CFLAGS) -DAVAHI_LOCALEDIR=\"$(avahilocaledir)\"
 -libavahi_common_la_LIBADD = $(AM_LDADD) $(PTHREAD_CFLAGS) $(PTHREAD_LIBS)
 +libavahi_common_la_LIBADD = $(AM_LDADD) $(PTHREAD_CFLAGS) $(PTHREAD_LIBS) $(INTLLIBS)
- libavahi_common_la_LDFLAGS = $(AM_LDFLAGS) -export-dynamic -version-info $(LIBAVAHI_COMMON_VERSION_INFO)
+ libavahi_common_la_LDFLAGS = $(AM_LDFLAGS)  -version-info $(LIBAVAHI_COMMON_VERSION_INFO)
  strlst_test_SOURCES = \
  	strlst.c strlst.h \

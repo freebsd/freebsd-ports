@@ -1,6 +1,6 @@
---- avahi-qt/Makefile.in.orig	Thu Apr 12 00:16:01 2007
-+++ avahi-qt/Makefile.in	Thu Apr 12 00:17:25 2007
-@@ -90,7 +90,6 @@ libLTLIBRARIES_INSTALL = $(INSTALL)
+--- avahi-qt/Makefile.in.orig	2008-07-03 14:37:05.000000000 -0500
++++ avahi-qt/Makefile.in	2008-07-03 14:39:27.000000000 -0500
+@@ -93,7 +93,6 @@
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
  @HAVE_QT3_TRUE@libavahi_qt3_la_DEPENDENCIES =  \
@@ -8,29 +8,29 @@
  @HAVE_QT3_TRUE@	$(am__DEPENDENCIES_1)
  am__libavahi_qt3_la_SOURCES_DIST = qt-watch.cpp
  @HAVE_QT3_TRUE@am_libavahi_qt3_la_OBJECTS =  \
-@@ -98,7 +97,6 @@ am__libavahi_qt3_la_SOURCES_DIST = qt-wa
- libavahi_qt3_la_OBJECTS = $(am_libavahi_qt3_la_OBJECTS)
+@@ -104,7 +103,6 @@
+ 	$(CXXFLAGS) $(libavahi_qt3_la_LDFLAGS) $(LDFLAGS) -o $@
  @HAVE_QT3_TRUE@am_libavahi_qt3_la_rpath = -rpath $(libdir)
  @HAVE_QT4_TRUE@libavahi_qt4_la_DEPENDENCIES =  \
 -@HAVE_QT4_TRUE@	../avahi-common/libavahi-common.la \
  @HAVE_QT4_TRUE@	$(am__DEPENDENCIES_1)
  am__libavahi_qt4_la_SOURCES_DIST = qt-watch.cpp
  @HAVE_QT4_TRUE@am_libavahi_qt4_la_OBJECTS =  \
-@@ -418,7 +416,7 @@ BUILT_SOURCES = $(am__append_2) $(am__ap
+@@ -400,7 +398,7 @@
  @HAVE_QT3_TRUE@	qt-watch.cpp 
  
- @HAVE_QT3_TRUE@libavahi_qt3_la_CPPFLAGS = $(AM_CFLAGS) $(QT3_CFLAGS)
+ @HAVE_QT3_TRUE@libavahi_qt3_la_CPPFLAGS = $(AM_CFLAGS) $(QT3_CFLAGS) $(VISIBILITY_HIDDEN_CFLAGS)
 -@HAVE_QT3_TRUE@libavahi_qt3_la_LIBADD = $(AM_LDADD) ../avahi-common/libavahi-common.la $(QT3_LIBS)
 +@HAVE_QT3_TRUE@libavahi_qt3_la_LIBADD = $(AM_LDADD) -lavahi-common $(QT3_LIBS)
  @HAVE_QT3_TRUE@libavahi_qt3_la_LDFLAGS = $(AM_LDFLAGS) -export-dynamic -version-info $(LIBAVAHI_QT3_VERSION_INFO)
  @HAVE_QT4_TRUE@avahiqt4includedir = $(includedir)/avahi-qt4
  @HAVE_QT4_TRUE@avahiqt4include_HEADERS = \
-@@ -428,7 +426,7 @@ BUILT_SOURCES = $(am__append_2) $(am__ap
+@@ -410,7 +408,7 @@
  @HAVE_QT4_TRUE@	qt-watch.cpp 
  
- @HAVE_QT4_TRUE@libavahi_qt4_la_CPPFLAGS = $(AM_CFLAGS) $(QT4_CFLAGS) -DQT4
+ @HAVE_QT4_TRUE@libavahi_qt4_la_CPPFLAGS = $(AM_CFLAGS) $(QT4_CFLAGS) -DQT4 $(VISIBILITY_HIDDEN_CFLAGS)
 -@HAVE_QT4_TRUE@libavahi_qt4_la_LIBADD = $(AM_LDADD) ../avahi-common/libavahi-common.la $(QT4_LIBS)
 +@HAVE_QT4_TRUE@libavahi_qt4_la_LIBADD = $(AM_LDADD) -lavahi-common $(QT4_LIBS)
- @HAVE_QT4_TRUE@libavahi_qt4_la_LDFLAGS = $(AM_LDFLAGS) -export-dynamic -version-info $(LIBAVAHI_QT4_VERSION_INFO)
+ @HAVE_QT4_TRUE@libavahi_qt4_la_LDFLAGS = $(AM_LDFLAGS) -version-info $(LIBAVAHI_QT4_VERSION_INFO)
  CLEANFILES = $(BUILT_SOURCES)
  all: $(BUILT_SOURCES)

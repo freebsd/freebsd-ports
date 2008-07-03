@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.22
-PORTREVISION?=	5
+PORTVERSION=	0.6.23
+PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
@@ -29,7 +29,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 AVAHI_SLAVE?=	no
 CONFIGURE_ARGS?=--with-distro=freebsd \
-		--with-dbus-system-address=unix:path=/var/run/dbus/system_bus_socket \
+		--with-dbus-system-socket=unix:path=/var/run/dbus/system_bus_socket \
 		--disable-monodoc \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
@@ -60,9 +60,6 @@ USE_RC_SUBR=yes
 
 .if ${AVAHI_SLAVE}=="autoipd"
 CONFIGURE_ARGS+=--enable-autoipd
-.if ${OSVERSION} < 600000
-IGNORE=	${PORTNAME} does not build with libpcap from FreeBSD ${OSVERSION}
-.endif
 .else
 CONFIGURE_ARGS+=--disable-autoipd
 .endif
@@ -116,6 +113,8 @@ avahi-post-patch:
 	@${REINPLACE_CMD} -e 's|dbus_connection_disconnect|dbus_connection_close|g' \
 	    	${WRKSRC}/avahi-client/client.c \
 		${WRKSRC}/avahi-daemon/dbus-protocol.c
+	@${REINPLACE_CMD} -e 's|^_||g' \
+		${WRKSRC}/avahi-ui/*.desktop.in
 
 post-build: avahi-post-build
 

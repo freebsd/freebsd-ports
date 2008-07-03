@@ -1,11 +1,11 @@
---- avahi-dnsconfd/Makefile.in.orig	2007-12-19 14:33:03.000000000 +0000
-+++ avahi-dnsconfd/Makefile.in	2007-12-19 14:33:08.000000000 +0000
-@@ -523,7 +523,7 @@
+--- avahi-dnsconfd/Makefile.in.orig	2008-07-03 14:49:59.000000000 -0500
++++ avahi-dnsconfd/Makefile.in	2008-07-03 14:50:02.000000000 -0500
+@@ -432,7 +432,7 @@
  	done
  avahi-dnsconfd$(EXEEXT): $(avahi_dnsconfd_OBJECTS) $(avahi_dnsconfd_DEPENDENCIES) 
  	@rm -f avahi-dnsconfd$(EXEEXT)
--	$(LINK) $(avahi_dnsconfd_LDFLAGS) $(avahi_dnsconfd_OBJECTS) $(avahi_dnsconfd_LDADD) $(LIBS)
-+	$(LINK) $(avahi_dnsconfd_LDFLAGS) $(avahi_dnsconfd_OBJECTS) $(avahi_dnsconfd_LDADD) $(LIBS) $(INTLLIBS)
+-	$(avahi_dnsconfd_LINK) $(avahi_dnsconfd_OBJECTS) $(avahi_dnsconfd_LDADD) $(LIBS)
++	$(avahi_dnsconfd_LINK) $(avahi_dnsconfd_OBJECTS) $(avahi_dnsconfd_LDADD) $(LIBS) $(INTLLIBS)
  install-pkgsysconfSCRIPTS: $(pkgsysconf_SCRIPTS)
  	@$(NORMAL_INSTALL)
- 	test -z "$(pkgsysconfdir)" || $(mkdir_p) "$(DESTDIR)$(pkgsysconfdir)"
+ 	test -z "$(pkgsysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgsysconfdir)"

@@ -13,8 +13,8 @@ etc/avahi/hosts
 etc/avahi/services/sftp-ssh.service
 etc/avahi/services/ssh.service
 etc/dbus-1/system.d/avahi-dbus.conf
-etc/rc.d/avahi-daemon.sh
-etc/rc.d/avahi-dnsconfd.sh
+etc/rc.d/avahi-daemon
+etc/rc.d/avahi-dnsconfd
 include/avahi-client/client.h
 include/avahi-client/lookup.h
 include/avahi-client/publish.h
@@ -110,6 +110,22 @@ sbin/avahi-dnsconfd
 %%DATADIR%%/introspection/ServiceTypeBrowser.introspect
 %%DATADIR%%/service-types
 share/locale/de/LC_MESSAGES/avahi.mo
+share/locale/en_AU/LC_MESSAGES/avahi.mo
+share/locale/en_CA/LC_MESSAGES/avahi.mo
+share/locale/en_GB/LC_MESSAGES/avahi.mo
+share/locale/en_NZ/LC_MESSAGES/avahi.mo
+share/locale/fr/LC_MESSAGES/avahi.mo
+share/locale/it/LC_MESSAGES/avahi.mo
+share/locale/pl/LC_MESSAGES/avahi.mo
+share/locale/pt_BR/LC_MESSAGES/avahi.mo
+share/locale/ru/LC_MESSAGES/avahi.mo
+share/locale/sr/LC_MESSAGES/avahi.mo
+share/locale/sr@latin/LC_MESSAGES/avahi.mo
+share/locale/zh_CN/LC_MESSAGES/avahi.mo
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/en_NZ/LC_MESSAGES
+@dirrmtry share/locale/en_NZ
 @dirrm %%DATADIR%%/introspection
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
