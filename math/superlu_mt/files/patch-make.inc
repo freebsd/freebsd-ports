@@ -1,5 +1,5 @@
---- make.inc.orig	2008-01-18 05:53:51.000000000 +0900
-+++ make.inc	2008-07-02 09:44:04.000000000 +0900
+--- make.inc	Fri Jan 18 05:53:51 2008
++++ make.inc	Thu Jul  3 12:47:55 2008
 @@ -16,13 +16,13 @@
  #
  #  The machine (platform) identifier to append to the library names
@@ -30,7 +30,7 @@
  
  #  The archiver and the flag(s) to use when building archive (library)
  #  If your system has no ranlib, set RANLIB = echo.
-@@ -46,12 +46,12 @@
+@@ -46,16 +46,17 @@
  PREDEFS      	= -D_PTHREAD
  #
  
@@ -46,13 +46,8 @@
 +FFLAGS       = %%FFLAGS%%
 +LOADER       = %%FC%%
 +LOADOPTS     = -O
++NOOPTS       = %%FPIC%%
  #
- #  C preprocessor defs for compilation for the Fortran interface
- #  (-DNoChange, -DAdd_, -DAdd__, or -DUpCase)
-
---- make.inc~	2008-07-02 09:54:57.000000000 +0900
-+++ make.inc	2008-07-02 09:57:28.000000000 +0900
-@@ -56,6 +56,6 @@
  #  C preprocessor defs for compilation for the Fortran interface
  #  (-DNoChange, -DAdd_, -DAdd__, or -DUpCase)
  #

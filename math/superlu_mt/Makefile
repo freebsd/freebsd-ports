@@ -50,8 +50,6 @@ FPIC=	-fpic
 .endif
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-CFLAGS_SHARED=${CFLAGS} ${FPIC}
-FFLAGS_SHARED=${CFLAGS} ${FPIC}
 WRKSRC=		${WRKDIR}/SuperLU_MT_2.0
 WRKSRC_SHARED=	${WRKDIR}/SuperLU_MT_2.0_shared
 ALL_TARGET=	lib
@@ -71,14 +69,16 @@ post-patch:
 			s+%%CC%%+${CC}+; s+%%FC%%+${FC}+; \
 			s+%%CFLAGS%%+${CFLAGS}+; \
 			s+%%FFLAGS%%+${FFLAGS}+; \
+			s+%%FPIC%%++; \
 	  s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+ ; \
 	  s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+ ' \
 		${WRKSRC}/make.inc
 
 	@${REINPLACE_CMD} -e 's+%%BLAS_LIBS%%+-L${LOCALBASE}/lib ${BLAS_LIBS}+ ; \
 			s+%%CC%%+${CC}+; s+%%FC%%+${FC}+; \
-			s+%%CFLAGS%%+${CFLAGS_SHARED}+; \
-			s+%%FFLAGS%%+${FFLAGS_SHARED}+; \
+			s+%%CFLAGS%%+${CFLAGS} ${FPIC}+; \
+			s+%%FFLAGS%%+${FFLAGS} ${FPIC}+; \
+			s+%%FPIC%%+${FPIC}+; \
 	  s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+ ; \
 	  s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+ ' \
 		${WRKSRC_SHARED}/make.inc
