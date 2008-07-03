@@ -1780,7 +1780,6 @@ cssed                           ports/www/cssed
 csstidy                         ports/www/csstidy
 cstream                         ports/misc/cstream
 cstringbuffer                   ports/devel/cstringbuffer
-csup                            ports/net/csup
 csv2latex                       ports/textproc/csv2latex
 csv2xml                         ports/textproc/csv2xml
 csvdiff                         ports/textproc/csvdiff
@@ -2237,7 +2236,6 @@ dnstracer                       ports/dns/dnstracer
 dnsutl                          ports/dns/dnsutl
 dnswalk                         ports/dns/dnswalk
 dnswall                         ports/dns/dnswall
-doc                             ports/dns/doc
 docbook                         ports/textproc/docbook
 docbook-241                     ports/textproc/docbook-241
 docbook-300                     ports/textproc/docbook-300
@@ -5586,7 +5584,6 @@ ja-lyx-doc                      ports/japanese/lyx-doc
 ja-magicpoint                   ports/japanese/magicpoint
 ja-mailman                      ports/japanese/mailman
 ja-makejvf                      ports/japanese/makejvf
-ja-man                          ports/japanese/man
 ja-man-doc                      ports/japanese/man-doc
 ja-marumoji-fonts               ports/japanese/marumoji-fonts
 ja-mecab                        ports/japanese/mecab
@@ -9769,6 +9766,7 @@ p5-Chart-PNGgraph               ports/graphics/p5-Chart-PNGgraph
 p5-Chatbot-Eliza                ports/misc/p5-Chatbot-Eliza
 p5-Chemistry-Elements           ports/science/p5-Chemistry-Elements
 p5-Chess-PGN-Parse              ports/textproc/p5-Chess-PGN-Parse
+p5-Chooser                      ports/net/p5-Chooser
 p5-Cisco-Hash                   ports/security/p5-Cisco-Hash
 p5-Cisco-IPPhone                ports/net/p5-Cisco-IPPhone
 p5-Cisco-Reconfig               ports/net-mgmt/p5-Cisco-Reconfig
@@ -12798,6 +12796,7 @@ p5-chatbot-eliza                ports/misc/p5-Chatbot-Eliza
 p5-chemistry-elements           ports/science/p5-Chemistry-Elements
 p5-chess-pgn-parse              ports/textproc/p5-Chess-PGN-Parse
 p5-chklinks                     ports/www/p5-chklinks
+p5-chooser                      ports/net/p5-Chooser
 p5-cisco-hash                   ports/security/p5-Cisco-Hash
 p5-cisco-ipphone                ports/net/p5-Cisco-IPPhone
 p5-cisco-reconfig               ports/net-mgmt/p5-Cisco-Reconfig
@@ -16766,9 +16765,11 @@ portoseguro                     ports/x11/portoseguro
 ports_at                        ports/science/at
 ports_bs                        ports/games/bs
 ports_bzip2                     ports/archivers/bzip2
+ports_csup                      ports/net/csup
 ports_ctags                     ports/devel/ctags
 ports_cut                       ports/devel/cut
 ports_dict                      ports/textproc/dict
+ports_doc                       ports/dns/doc
 ports_enigma                    ports/games/enigma
 ports_file                      ports/sysutils/file
 ports_fish                      ports/shells/fish
@@ -16777,6 +16778,7 @@ ports_gperf                     ports/devel/gperf
 ports_gpt                       ports/misc/gpt
 ports_gzip                      ports/archivers/gzip
 ports_host                      ports/dns/host
+ports_ja-man                    ports/japanese/man
 ports_lam                       ports/net/lam
 ports_less                      ports/sysutils/less
 ports_libarchive                ports/archivers/libarchive
@@ -16801,6 +16803,7 @@ ports_sendmail                  ports/mail/sendmail
 ports_tcpdump                   ports/net/tcpdump
 ports_tee                       ports/sysutils/Tee
 ports_texinfo                   ports/print/texinfo
+ports_tinderbox                 ports/ports-mgmt/tinderbox
 ports_traceroute                ports/net/traceroute
 ports_units                     ports/math/units
 ports_vacation                  ports/mail/vacation
@@ -20035,7 +20038,6 @@ timidity++-xaw                  ports/audio/timidity++-xaw
 timidity++-xskin                ports/audio/timidity++-xskin
 tin                             ports/news/tin
 tinc                            ports/security/tinc
-tinderbox                       ports/ports-mgmt/tinderbox
 tinker                          ports/biology/tinker
 tintfu                          ports/graphics/tintfu
 tintin++                        ports/net/tintin++
