@@ -31,7 +31,6 @@ bin/sqlr-scaler
 bin/sqlr-start
 bin/sqlr-stop
 bin/sqlrsh
-etc/rc.d/sqlrelay.sh-sample
 etc/sqlrelay.conf.example
 etc/sqlrelay.dtd
 etc/sqlrelay-sample
