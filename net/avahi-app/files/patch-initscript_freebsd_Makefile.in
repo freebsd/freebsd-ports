@@ -1,0 +1,33 @@
+--- initscript/freebsd/Makefile.in.orig	2008-07-03 15:05:53.000000000 -0500
++++ initscript/freebsd/Makefile.in	2008-07-03 15:07:05.000000000 -0500
+@@ -333,12 +333,12 @@
+ 	avahi-dnsconfd.sh.in
+ 
+ initd_SCRIPTS = \
+-	avahi-daemon.sh \
+-	avahi-dnsconfd.sh
++	avahi-daemon \
++	avahi-dnsconfd
+ 
+ CLEANFILES = \
+-	avahi-daemon.sh \
+-	avahi-dnsconfd.sh
++	avahi-daemon \
++	avahi-dnsconfd
+ 
+ all: all-am
+ 
+@@ -531,11 +531,11 @@
+ 	uninstall uninstall-am uninstall-initdSCRIPTS
+ 
+ 
+-avahi-daemon.sh: avahi-daemon.sh.in
++avahi-daemon: avahi-daemon.sh.in
+ 	sed -e 's,@sbindir\@,$(sbindir),g' $< > $@
+ 	chmod +x $@
+ 
+-avahi-dnsconfd.sh: avahi-dnsconfd.sh.in
++avahi-dnsconfd: avahi-dnsconfd.sh.in
+ 	sed \
+ 	-e 's,@sbindir\@,$(sbindir),g' \
+ 	-e 's,@sysconfdir\@,$(sysconfdir),g' \
