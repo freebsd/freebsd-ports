@@ -1,26 +1,50 @@
---- desktop/scripts/soffice.sh	2008-03-18 22:44:45.000000000 +0900
-+++ desktop/scripts/soffice.sh	2008-03-29 19:17:49.000000000 +0900
-@@ -68,6 +68,23 @@
+--- configmgr/source/cmdtools/setofficelang.sh.orig	2008-06-09 08:42:48.000000000 -0400
++++ configmgr/source/cmdtools/setofficelang.sh	2008-06-27 15:47:37.000000000 -0400
+@@ -75,6 +75,11 @@
+     export DYLD_LIBRARY_PATH
+     ;;
  
- sd_binary=`basename "$0"`.bin
++  FreeBSD)
++    LD_LIBRARY_PATH=${sd_prog}:${sd_prog}/../ure-link/lib${LD_LIBRARY_PATH+:${LD_LIBRARY_PATH}}
++    export LD_LIBRARY_PATH
++    ;;
++
+   HP-UX)
+     SHLIB_PATH=${sd_prog}:/usr/openwin/lib${SHLIB_PATH+:${SHLIB_PATH}}
+     export SHLIB_PATH
+--- desktop/scripts/soffice.sh.orig	2008-06-09 08:57:10.000000000 -0400
++++ desktop/scripts/soffice.sh	2008-06-27 16:12:58.000000000 -0400
+@@ -75,6 +75,15 @@
  
-+# this is a temporary hack until we can live with the default search paths
-+case "`uname -s`" in
+ # extend the ld_library_path for java: javaldx checks the sofficerc for us
+ if [ -x "$sd_prog/../basis-link/ure-link/bin/javaldx" ] ; then
++    # this is a temporary hack until we can live with the default search paths
++    case "`uname -s`" in
 +    FreeBSD)
-+        sd_prog1="$sd_prog/../basis-link/program"
++	sd_prog1="$sd_prog/../basis-link/program"
 +	sd_prog2="$sd_prog/../basis-link/ure-link/lib"
-+	if [ $LD_LIBRARY_PATH ]; then
-+    	    SYSTEM_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
-+   	    export SYSTEM_LD_LIBRARY_PATH
-+    	    LD_LIBRARY_PATH="$sd_prog1:$sd_prog2":$LD_LIBRARY_PATH
-+	else
-+    	    LD_LIBRARY_PATH="$sd_prog1:$sd_prog2"
-+	fi
++	LD_LIBRARY_PATH=$sd_prog1:$sd_prog2${LD_LIBRARY_PATH+:${LD_LIBRARY_PATH}}
 +	export LD_LIBRARY_PATH
 +	;;
-+
-+esac
-+
- #collect all bootstrap variables specified on the command line
- #so that they can be passed as arguments to javaldx later on
- for arg in $@
++    esac
+     my_path=`"$sd_prog/../basis-link/ure-link/bin/javaldx" $BOOTSTRAPVARS \
+         "-env:INIFILENAME=vnd.sun.star.pathname:$sd_prog/redirectrc"`
+     if [ -n "$my_path" ] ; then
+--- padmin/source/spadmin.sh.orig	2008-06-27 01:18:09.000000000 -0400
++++ padmin/source/spadmin.sh	2008-06-27 13:31:09.000000000 -0400
+@@ -58,6 +58,15 @@
+ 
+ # extend the ld_library_path for java: javaldx checks the sofficerc for us
+ if [ -x "$sd_prog/../basis-link/ure-link/bin/javaldx" ] ; then
++    # this is a temporary hack until we can live with the default search paths
++    case "`uname -s`" in
++    FreeBSD)
++	sd_prog1="$sd_prog/../basis-link/program"
++	sd_prog2="$sd_prog/../basis-link/ure-link/lib"
++	LD_LIBRARY_PATH=$sd_prog1:$sd_prog2${LD_LIBRARY_PATH+:${LD_LIBRARY_PATH}}
++	export LD_LIBRARY_PATH
++	;;
++    esac
+     my_path=`"$sd_prog/../basis-link/ure-link/bin/javaldx" $BOOTSTRAPVARS \
+         "-env:INIFILENAME=vnd.sun.star.pathname:$sd_prog/redirectrc"`
+     if [ -n "$my_path" ] ; then
