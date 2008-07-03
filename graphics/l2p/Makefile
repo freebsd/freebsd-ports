@@ -11,7 +11,6 @@ PORTVERSION=	1.1.1
 CATEGORIES=	graphics print perl5
 MASTER_SITES=	http://www.redsymbol.net/software/l2p/dist/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Create PNG images from LaTeX math expressions
@@ -20,9 +19,8 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		latex:${PORTSDIR}/print/teTeX
 
-BROKEN=		Unfetchable
-
 USE_PERL5_RUN=	yes
+USE_ZIP=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
