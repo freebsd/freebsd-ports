@@ -1,5 +1,6 @@
 bin/geoiplookup
 bin/geoipupdate
+bin/geoipupdate.sh
 @unexec if cmp -s %D/etc/GeoIP.conf %D/etc/GeoIP.conf.default; then rm -f %D/etc/GeoIP.conf; fi
 etc/GeoIP.conf.default
 include/GeoIP.h
