@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	Algorithm-Evolutionary
-PORTVERSION=	0.54
-PORTREVISION=	1
+PORTVERSION=	0.60
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,15 +17,26 @@ COMMENT=	A library for doing evolutionary computation in Perl
 
 BUILD_DEPENDS=	p5-XML-LibXML>=1.5:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS=	p5-Algorithm-Permute>=0.01:${PORTSDIR}/devel/p5-Algorithm-Permute \
+		p5-Clone-Fast>=0:${PORTSDIR}/devel/p5-Clone-Fast \
 		p5-Math-Random>=0.63:${PORTSDIR}/math/p5-Math-Random \
+		p5-String-Random>=0:${PORTSDIR}/devel/p5-String-Random \
 		p5-Tree-DAG_Node>=1.04:${PORTSDIR}/devel/p5-Tree-DAG_Node \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-XML-Parser-EasyTree>=0.01:${PORTSDIR}/textproc/p5-XML-Parser-EasyTree
+		p5-XML-Parser-EasyTree>=0.01:${PORTSDIR}/textproc/p5-XML-Parser-EasyTree \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
 PERL_CONFIGURE=	yes
 
 MAN3=	Algorithm::Evolutionary.3 \
 	Algorithm::Evolutionary::Experiment.3 \
+	Algorithm::Evolutionary::Fitness::Base.3 \
+	Algorithm::Evolutionary::Fitness::Knapsack.3 \
+	Algorithm::Evolutionary::Fitness::MMDP.3 \
+	Algorithm::Evolutionary::Fitness::ONEMAX.3 \
+	Algorithm::Evolutionary::Fitness::P_Peaks.3 \
+	Algorithm::Evolutionary::Fitness::Royal_Road.3 \
+	Algorithm::Evolutionary::Fitness::String.3 \
+	Algorithm::Evolutionary::Fitness::wP_Peaks.3 \
 	Algorithm::Evolutionary::Individual::Base.3 \
 	Algorithm::Evolutionary::Individual::BitString.3 \
 	Algorithm::Evolutionary::Individual::String.3 \
@@ -58,7 +68,19 @@ MAN3=	Algorithm::Evolutionary.3 \
 	Algorithm::Evolutionary::Op::TournamentSelect.3 \
 	Algorithm::Evolutionary::Op::TreeMutation.3 \
 	Algorithm::Evolutionary::Op::VectorCrossover.3 \
+	Algorithm::Evolutionary::Run.3 \
+	Algorithm::Evolutionary::Utils.3 \
 	Algorithm::Evolutionary::Wheel.3 \
 	Algorithm::Evolutionary::XML.3
 
-.include <bsd.port.mk>
+post-patch:
+	${PERL} -pi -e 's/(.*?(\S+::Wheel).*)/use \2;\1/' ${WRKSRC}/lib/Algorithm/Evolutionary/Op/GeneralGeneration.pm
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Memoize>=0:${PORTSDIR}/devel/p5-Memoize \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
+.endif
+
+.include <bsd.port.post.mk>
