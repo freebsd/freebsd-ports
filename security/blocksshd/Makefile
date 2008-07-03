@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blocksshd
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	security sysutils
 MASTER_SITES=	SF
 
