@@ -7,10 +7,10 @@ ICAP patchset.
 
 Please see icap-2.6-core.patch for further information.
 
-Patch last updated: 2008-05-05
+Patch last updated: 2008-06-29
 
---- configure.orig	2008-04-25 21:49:52.000000000 +0200
-+++ configure	2008-05-05 20:50:40.000000000 +0200
+--- configure.orig	2008-06-29 14:48:32.000000000 +0200
++++ configure	2008-06-29 14:48:41.000000000 +0200
 @@ -728,6 +728,8 @@
  ENABLE_PINGER_FALSE
  USE_DELAY_POOLS_TRUE
@@ -20,7 +20,7 @@ Patch last updated: 2008-05-05
  USE_SNMP_TRUE
  USE_SNMP_FALSE
  SNMPLIB
-@@ -794,6 +796,10 @@
+@@ -797,6 +799,10 @@
  USE_DEVPOLL_FALSE
  NEED_OWN_SNPRINTF_TRUE
  NEED_OWN_SNPRINTF_FALSE
@@ -31,7 +31,7 @@ Patch last updated: 2008-05-05
  NEED_OWN_STRSEP_TRUE
  NEED_OWN_STRSEP_FALSE
  REGEXLIB
-@@ -1427,6 +1433,7 @@
+@@ -1430,6 +1436,7 @@
  			  to build your custom policy
    --enable-icmp           Enable ICMP pinging
    --enable-delay-pools    Enable delay pools to limit bandwidth usage
@@ -39,16 +39,16 @@ Patch last updated: 2008-05-05
    --enable-useragent-log  Enable logging of User-Agent header
    --enable-referer-log    Enable logging of Referer header
    --disable-wccp          Disable Web Cache Coordination V1 Protocol
-@@ -2349,7 +2356,7 @@
+@@ -2352,7 +2359,7 @@
  
  # Define the identity of the package.
   PACKAGE='squid'
-- VERSION='2.6.STABLE20'
-+ VERSION='2.6.STABLE20+ICAP'
+- VERSION='2.6.STABLE21'
++ VERSION='2.6.STABLE21+ICAP'
  
  
  cat >>confdefs.h <<_ACEOF
-@@ -4543,6 +4550,40 @@
+@@ -4546,6 +4553,40 @@
  
  
  
@@ -89,7 +89,7 @@ Patch last updated: 2008-05-05
  # Check whether --enable-useragent-log was given.
  if test "${enable_useragent_log+set}" = set; then
    enableval=$enable_useragent_log;  if test "$enableval" = "yes" ; then
-@@ -24506,6 +24547,8 @@
+@@ -24861,6 +24902,8 @@
  	srand48 \
  	srandom \
  	statfs \
@@ -98,7 +98,7 @@ Patch last updated: 2008-05-05
  	strsep \
  	strtoll \
  	sysconf \
-@@ -25211,6 +25254,52 @@
+@@ -25566,6 +25609,52 @@
  
  
  if false; then
@@ -151,7 +151,7 @@ Patch last updated: 2008-05-05
    NEED_OWN_STRSEP_TRUE=
    NEED_OWN_STRSEP_FALSE='#'
  else
-@@ -26801,6 +26890,20 @@
+@@ -27156,6 +27245,20 @@
  Usually this means the macro was only invoked conditionally." >&2;}
     { (exit 1); exit 1; }; }
  fi
@@ -172,7 +172,7 @@ Patch last updated: 2008-05-05
  if test -z "${USE_SNMP_TRUE}" && test -z "${USE_SNMP_FALSE}"; then
    { { echo "$as_me:$LINENO: error: conditional \"USE_SNMP\" was never defined.
  Usually this means the macro was only invoked conditionally." >&5
-@@ -26962,6 +27065,34 @@
+@@ -27317,6 +27420,34 @@
  Usually this means the macro was only invoked conditionally." >&2;}
     { (exit 1); exit 1; }; }
  fi
@@ -207,7 +207,7 @@ Patch last updated: 2008-05-05
  if test -z "${NEED_OWN_STRSEP_TRUE}" && test -z "${NEED_OWN_STRSEP_FALSE}"; then
    { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRSEP\" was never defined.
  Usually this means the macro was only invoked conditionally." >&5
-@@ -27708,6 +27839,8 @@
+@@ -28063,6 +28194,8 @@
  ENABLE_PINGER_FALSE!$ENABLE_PINGER_FALSE$ac_delim
  USE_DELAY_POOLS_TRUE!$USE_DELAY_POOLS_TRUE$ac_delim
  USE_DELAY_POOLS_FALSE!$USE_DELAY_POOLS_FALSE$ac_delim
@@ -216,7 +216,7 @@ Patch last updated: 2008-05-05
  USE_SNMP_TRUE!$USE_SNMP_TRUE$ac_delim
  USE_SNMP_FALSE!$USE_SNMP_FALSE$ac_delim
  SNMPLIB!$SNMPLIB$ac_delim
-@@ -27774,6 +27907,10 @@
+@@ -28132,6 +28265,10 @@
  USE_DEVPOLL_FALSE!$USE_DEVPOLL_FALSE$ac_delim
  NEED_OWN_SNPRINTF_TRUE!$NEED_OWN_SNPRINTF_TRUE$ac_delim
  NEED_OWN_SNPRINTF_FALSE!$NEED_OWN_SNPRINTF_FALSE$ac_delim
@@ -227,7 +227,7 @@ Patch last updated: 2008-05-05
  NEED_OWN_STRSEP_TRUE!$NEED_OWN_STRSEP_TRUE$ac_delim
  NEED_OWN_STRSEP_FALSE!$NEED_OWN_STRSEP_FALSE$ac_delim
  REGEXLIB!$REGEXLIB$ac_delim
-@@ -27784,7 +27921,7 @@
+@@ -28142,7 +28279,7 @@
  LTLIBOBJS!$LTLIBOBJS$ac_delim
  _ACEOF
  
