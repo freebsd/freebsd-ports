@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IPC-DirQueue
-PORTVERSION=	0.09
+PORTVERSION=	1.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	IPC::DirQueue - disk-based many-to-many task queue
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-				p5-POE>0:${PORTSDIR}/devel/p5-POE
+BUILD_DEPENDS=	p5-POE>0:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
