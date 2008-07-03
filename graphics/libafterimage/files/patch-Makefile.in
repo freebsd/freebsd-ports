@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Aug  2 07:36:22 2007
-+++ Makefile.in	Thu Aug  2 23:00:21 2007
-@@ -79,7 +79,7 @@
+--- Makefile.in.orig	2008-06-19 05:34:51.000000000 +0900
++++ Makefile.in	2008-06-26 21:27:22.000000000 +0900
+@@ -81,7 +81,7 @@
  MV		= @MV@
  RM		= @RM@
  RMF		= @RM@ -f
@@ -9,7 +9,7 @@
  FIND		= @FIND@
  XARGS		= @XARGS@
  LDCONFIG	= @LDCONFIG@
-@@ -92,16 +92,16 @@
+@@ -94,16 +94,16 @@
  LEXFLAGS	=
  
  INSTALL		= @INSTALL@
@@ -32,7 +32,7 @@
  
  USER_LD_FLAGS	= @user_ldflags@
  LIBS_X		= @x_libs@
-@@ -120,7 +120,7 @@
+@@ -122,7 +122,7 @@
  AFTER_MAN_DIR	= $(DESTDIR)@mandir@/man3
  AFTER_APP_MAN_DIR	= $(DESTDIR)@mandir@/man1
  AFTER_SHAREDIR	= $(DESTDIR)@datadir@/$(LIB_DIR_NAME)
@@ -41,7 +41,7 @@
  
  # We want to build both static and dynamic libs, as some service apps may need 
  # static library as they gets run at compile time (ASDocGen for example)
-@@ -161,11 +161,10 @@
+@@ -163,11 +163,10 @@
  install.script:
  
  install.dyn:	mkdir
@@ -56,16 +56,16 @@
  		$(LN_S) -f $(LIB_SHARED).$(LIBVERMAJOR) $(LIBDIR)/$(LIB_SHARED); \
  		if test `uname` = "Linux"; then \
  		   if test $(LIBDIR) = "/lib" || test $(LIBDIR) = "/usr/lib"; then \
-@@ -230,7 +229,7 @@
+@@ -232,7 +231,7 @@
  		)
  
  install.apps: install.lib
--		@(cd apps; make install || exit 1)
-+		@(cd apps; $(MAKE) install || exit 1)
+-		@(if test -d apps; then cd apps; make install || exit 1; fi)
++		@(if test -d apps; then cd apps; $(MAKE) install || exit 1; fi)
  
  # uninstallation targets : 
  #
-@@ -389,11 +388,8 @@
+@@ -391,11 +390,8 @@
  $(LIB_SHARED): $(LIB_SHARED).$(LIBVERMAJOR)
  	$(LN_S) -f $(LIB_SHARED).$(LIBVERMAJOR) $(LIB_SHARED)
  
@@ -79,18 +79,7 @@
  	 $(LIB_OBJS)
  
  install.man:
-@@ -402,8 +398,8 @@
- 			cd doc/man; \
- 			for f in `ls *.man`; do \
- 				page_name=`echo $$f| awk -F . '{print $$1}'`; \
--	  			echo $(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.1x; \
--	  			$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.1x; \
-+	  			echo $(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.3x; \
-+	  			$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.3x; \
- 			done; cd ../..; \
- 		fi
- 			
-@@ -419,7 +415,7 @@
+@@ -421,7 +417,7 @@
  			cd ../..; \
  		fi
  

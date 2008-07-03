@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libafterimage
-PORTVERSION=	1.15
-PORTREVISION=	3
+PORTVERSION=	1.18
 CATEGORIES=	graphics
 MASTER_SITES=	SF/afterstep
 DISTNAME=	libAfterImage-${PORTVERSION}
@@ -22,12 +21,10 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_GNOME=	librsvg2
-
 USE_BZIP2=	yes
+USE_XORG=	xext
+USE_GNOME=	gnometarget librsvg2
 GNU_CONFIGURE=	yes
-USE_XORG=	x11
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-staticlibs --enable-sharedlibs \
@@ -52,11 +49,10 @@ CONFIGURE_ARGS+=	--disable-mmx-optimization
 post-extract:
 	@${LN} -sf ${WRKSRC} ${WRKDIR}/libAfterImage
 
-pre-configure:
-	${REINPLACE_CMD} -e 's| malloc\.h | |g ; \
-		 s|-lgif|-lungif|g ; \
-		 s|CFLAGS="-O3"||g ; \
-		 s| -rdynamic||' ${WRKSRC}/configure
+post-patch:
+	@${REINPLACE_CMD} -e 's|CFLAGS="-O3"||g ; \
+		 s| malloc\.h | |g ; \
+		 s|-lgif|-lungif|g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/apps/ascompose.man \
