@@ -27,6 +27,9 @@ USE_XORG=	x11
 USE_GNOME=	glib20 gnomehack
 USE_PYTHON=	2.4+
 
+DEPRECATED=	No longer supported - Use compiz
+EXPIRATION_DATE=	2008-08-02
+
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>

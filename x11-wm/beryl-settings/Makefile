@@ -29,6 +29,9 @@ USE_GETTEXT=	yes
 USE_XORG=	glproto
 USE_PYTHON=	2.4+
 
+DEPRECATED=	No longer supported - Use compiz
+EXPIRATION_DATE=	2008-08-02
+
 INSTALLS_ICONS=	yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

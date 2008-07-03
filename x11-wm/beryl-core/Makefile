@@ -30,6 +30,9 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 
+DEPRECATED=	No longer supported - Use compiz
+EXPIRATION_DATE=	2008-08-02
+
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--disable-berylmesa
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
