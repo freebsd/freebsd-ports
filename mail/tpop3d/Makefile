@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tpop3d
-PORTVERSION=	1.5.3
-PORTREVISION=	6
+PORTVERSION=	1.5.4
 CATEGORIES=	mail
-MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	tpop3d
 
 MAINTAINER=	boris@tagnet.ru
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL, PgSQL etc auth
@@ -28,6 +28,7 @@ OPTIONS=	MYSQL		"Use MySQL authentication"			off \
 		PERLAUTH	"Use Perl authentication"			off \
 		PASSWDAUTH	"Use /etc/passwd authentication"		off \
 		FLATAUTH	"Use /etc/passwd-style flat file authentication"	off \
+		GDBMAUTH        "Use authentication against GNU dbm files"      off \
 		MAILDIR		"Compile Maildir support"			on \
 		MBOXINDICES	"Save Mbox indices"				off \
 		DRAC		"Enable DRAC RFC for POP-before-SMTP relaying"	off \
@@ -67,6 +68,11 @@ CONFIGURE_ARGS+=	--enable-auth-perl
 
 .if defined(WITH_FLATAUTH)
 CONFIGURE_ARGS+=	--enable-auth-flatfile
+.endif
+
+.if defined(WITH_GDBMAUTH)
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=	--enable-auth-gdbm
 .endif
 
 .if defined(WITH_PASSWDAUTH)
