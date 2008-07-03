@@ -18,6 +18,9 @@ COMMENT=	Beryl Composite/Window Manager meta-port
 
 NO_BUILD=	yes
 
+DEPRECATED=	No longer supported - Use compiz
+EXPIRATION_DATE=	2008-08-02
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/beryl:${PORTSDIR}/x11-wm/beryl-core			\
 		${LOCALBASE}/bin/beryl-manager:${PORTSDIR}/x11-wm/beryl-manager		\
 		${LOCALBASE}/lib/beryl/libanimation.so:${PORTSDIR}/x11-wm/beryl-plugins	\

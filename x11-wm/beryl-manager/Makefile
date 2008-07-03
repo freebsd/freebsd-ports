@@ -24,6 +24,9 @@ USE_PERL5_BUILD=	yes
 USE_GNOME=		glib20 gtk20
 INSTALLS_ICONS=		yes
 
+DEPRECATED=	No longer supported - Use compiz
+EXPIRATION_DATE=	2008-08-02
+
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
