@@ -22,10 +22,17 @@ bin/dev_appserver.py
 %%DATADIR%%/google/appengine/api/datastore_errors.py
 %%DATADIR%%/google/appengine/api/datastore_file_stub.py
 %%DATADIR%%/google/appengine/api/datastore_types.py
+%%DATADIR%%/google/appengine/api/images/__init__.py
+%%DATADIR%%/google/appengine/api/images/images_not_implemented_stub.py
+%%DATADIR%%/google/appengine/api/images/images_service_pb.py
+%%DATADIR%%/google/appengine/api/images/images_stub.py
 %%DATADIR%%/google/appengine/api/mail.py
 %%DATADIR%%/google/appengine/api/mail_errors.py
 %%DATADIR%%/google/appengine/api/mail_service_pb.py
 %%DATADIR%%/google/appengine/api/mail_stub.py
+%%DATADIR%%/google/appengine/api/memcache/__init__.py
+%%DATADIR%%/google/appengine/api/memcache/memcache_service_pb.py
+%%DATADIR%%/google/appengine/api/memcache/memcache_stub.py
 %%DATADIR%%/google/appengine/api/urlfetch.py
 %%DATADIR%%/google/appengine/api/urlfetch_errors.py
 %%DATADIR%%/google/appengine/api/urlfetch_service_pb.py
@@ -1216,11 +1223,13 @@ bin/dev_appserver.py
 @dirrm %%DATADIR%%/google/appengine/ext
 @dirrm %%DATADIR%%/google/appengine/datastore
 @dirrm %%DATADIR%%/google/appengine/base
+@dirrm %%DATADIR%%/google/appengine/api/memcache
+@dirrm %%DATADIR%%/google/appengine/api/images
 @dirrm %%DATADIR%%/google/appengine/api
 @dirrm %%DATADIR%%/google/appengine
 @dirrm %%DATADIR%%/google
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos/guestbook
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demos
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
