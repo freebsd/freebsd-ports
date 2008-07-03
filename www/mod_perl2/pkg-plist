@@ -71,6 +71,7 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Table.pm
 %%THREADMUTEX%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/ThreadMutex.pm
+%%THREADRWLOCK%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/ThreadRWLock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/URI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/UUID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Util.pm
@@ -211,6 +212,8 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Table/Table.so
 %%THREADMUTEX%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadMutex/ThreadMutex.so
 %%THREADMUTEX%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadMutex/ThreadMutex.bs
+%%THREADRWLOCK%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadRWLock/ThreadRWLock.so
+%%THREADRWLOCK%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadRWLock/ThreadRWLock.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/URI/URI.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/URI/URI.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/UUID/UUID.bs
@@ -311,6 +314,7 @@ bin/mp2bug
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/UUID
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/URI
 %%THREADMUTEX%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadMutex
+%%THREADRWLOCK%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadRWLock
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Table
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/String
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Status
