@@ -102,6 +102,10 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$QTDIR|${QT_PREFIX}|' ${WRKSRC}/configure
 .endif
+.if defined(SLAVEPORT) && ${SLAVEPORT}=="qt4"
+	@${REINPLACE_CMD} -e 's|MOCQT4=`.*|MOCQT4="${LOCALBASE}/bin/moc-qt4"|' \
+		${WRKSRC}/configure
+.endif
 
 post-install:
 .if defined(SLAVEPORT)
