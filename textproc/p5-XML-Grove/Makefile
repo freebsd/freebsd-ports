@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	XML-Grove
-PORTVERSION=	0.46.a
+DISTVERSION=	0.46alpha
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/alpha/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl-style XML objects
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/Data/Grove.pm:${PORTSDIR}/textproc/p5-libxml
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-libxml>=0:${PORTSDIR}/textproc/p5-libxml
 
 PERL_CONFIGURE=	yes
 
