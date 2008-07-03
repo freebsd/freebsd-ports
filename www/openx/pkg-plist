@@ -9,6 +9,7 @@
 %%WWWDIR%%/adx.js
 %%WWWDIR%%/adxmlrpc.php
 %%WWWDIR%%/constants.php
+%%WWWDIR%%/docs/KNOWN_ISSUES.txt
 %%WWWDIR%%/etc/.htaccess
 %%WWWDIR%%/etc/changes/ConfigMigration.php
 %%WWWDIR%%/etc/changes/StatMigration.php
@@ -365,6 +366,7 @@
 %%WWWDIR%%/lib/OA/Maintenance.php
 %%WWWDIR%%/lib/OA/Maintenance/Auto.php
 %%WWWDIR%%/lib/OA/Maintenance/Distributed.php
+%%WWWDIR%%/lib/OA/Maintenance/Status.php
 %%WWWDIR%%/lib/OA/Sync.php
 %%WWWDIR%%/lib/OA/Task.php
 %%WWWDIR%%/lib/OA/Task/Runner.php
@@ -565,13 +567,7 @@
 %%WWWDIR%%/lib/max/core/ServiceLocator.php
 %%WWWDIR%%/lib/max/data/data.entities.php
 %%WWWDIR%%/lib/max/deliverycache/cache-file.inc.php
-%%WWWDIR%%/lib/max/language/Default.php
-%%WWWDIR%%/lib/max/language/Invocation.php
-%%WWWDIR%%/lib/max/language/Maintenance.php
-%%WWWDIR%%/lib/max/language/Report.php
-%%WWWDIR%%/lib/max/language/Settings.php
-%%WWWDIR%%/lib/max/language/SettingsHelp.php
-%%WWWDIR%%/lib/max/language/Userlog.php
+%%WWWDIR%%/lib/max/language/Loader.php
 %%WWWDIR%%/lib/max/language/chinese_big5/default.lang.php
 %%WWWDIR%%/lib/max/language/chinese_big5/index.lang.php
 %%WWWDIR%%/lib/max/language/chinese_big5/invocation.lang.php
@@ -1941,6 +1937,7 @@
 %%WWWDIR%%/www/admin/maintenance-updates-js.php
 %%WWWDIR%%/www/admin/md5.js
 %%WWWDIR%%/www/admin/password-recovery.php
+%%WWWDIR%%/www/admin/privacy-policy.html
 %%WWWDIR%%/www/admin/report-generate.php
 %%WWWDIR%%/www/admin/report-generation.php
 %%WWWDIR%%/www/admin/report-index.php
@@ -1980,6 +1977,7 @@
 %%WWWDIR%%/www/admin/templates/logo.gif
 %%WWWDIR%%/www/admin/templates/welcome-advertiser.html
 %%WWWDIR%%/www/admin/templates/welcome-publisher.html
+%%WWWDIR%%/www/admin/terms-and-conditions.html
 %%WWWDIR%%/www/admin/tracker-append.php
 %%WWWDIR%%/www/admin/tracker-campaigns.php
 %%WWWDIR%%/www/admin/tracker-delete.php
@@ -2027,6 +2025,14 @@
 %%WWWDIR%%/www/images/robots.txt
 %%WWWDIR%%/www/index.php
 %%WWWDIR%%/www/robots.txt
+%%WWWDIR%%/LICENSE.txt
+%%WWWDIR%%/POLICY.txt
+%%WWWDIR%%/README.txt
+%%WWWDIR%%/RELEASE_NOTES.txt
+%%WWWDIR%%/UPGRADE.txt
+%%WWWDIR%%/TERMS.txt
+%%WWWDIR%%/TRANSLATIONS.txt
+@dirrm %%WWWDIR%%/docs
 @dirrm %%WWWDIR%%/www/images/layerstyles/simple
 @dirrm %%WWWDIR%%/www/images/layerstyles/geocities
 @dirrm %%WWWDIR%%/www/images/layerstyles
@@ -2317,7 +2323,6 @@
 @dirrm %%WWWDIR%%/lib/OA/Upgrade
 @dirrm %%WWWDIR%%/lib/OA/Task
 @dirrm %%WWWDIR%%/lib/OA/Maintenance
-@dirrm %%WWWDIR%%/lib/OA/Delivery
 @dirrm %%WWWDIR%%/lib/OA/Dal/Maintenance/Statistics/Tracker
 @dirrm %%WWWDIR%%/lib/OA/Dal/Maintenance/Statistics/AdServer
 @dirrm %%WWWDIR%%/lib/OA/Dal/Maintenance/Statistics
