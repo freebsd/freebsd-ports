@@ -1,8 +1,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
 %%SITE_PERL%%/Algorithm/Evolutionary.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Experiment.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Fitness/Base.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Fitness/Knapsack.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Fitness/MMDP.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Fitness/ONEMAX.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Fitness/P_Peaks.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Fitness/Royal_Road.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Fitness/String.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Fitness/wP_Peaks.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/Base.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/BitString.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Individual/String.pm
@@ -34,9 +40,14 @@
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/TournamentSelect.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/TreeMutation.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/VectorCrossover.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Run.pm
+%%SITE_PERL%%/Algorithm/Evolutionary/Utils.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Wheel.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/XML.pod
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Individual
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary/Op
-@dirrm %%SITE_PERL%%/Algorithm/Evolutionary
+@dirrmtry %%SITE_PERL%%/Algorithm/Evolutionary/Op
+@dirrmtry %%SITE_PERL%%/Algorithm/Evolutionary/Individual
+@dirrmtry %%SITE_PERL%%/Algorithm/Evolutionary/Fitness
+@dirrmtry %%SITE_PERL%%/Algorithm/Evolutionary
 @dirrmtry %%SITE_PERL%%/Algorithm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Evolutionary
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
