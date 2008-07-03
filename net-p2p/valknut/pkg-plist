@@ -46,6 +46,7 @@ bin/valknut
 %%DATADIR%%/icons/appl/default/flag_norway.xpm
 %%DATADIR%%/icons/appl/default/flag_poland.xpm
 %%DATADIR%%/icons/appl/default/flag_romania.xpm
+%%DATADIR%%/icons/appl/default/flag_serbia.xpm
 %%DATADIR%%/icons/appl/default/flag_russia.xpm
 %%DATADIR%%/icons/appl/default/flag_slovak.xpm
 %%DATADIR%%/icons/appl/default/flag_spain.xpm
@@ -113,6 +114,8 @@ bin/valknut
 %%DATADIR%%/translation/valknut.ro.qm
 %%DATADIR%%/translation/valknut.rus.qm
 %%DATADIR%%/translation/valknut.sk.qm
+%%DATADIR%%/translation/valknut.sr@latin.qm
+%%DATADIR%%/translation/valknut.sr.qm
 %%DATADIR%%/translation/valknut.sv.qm
 @dirrm %%DATADIR%%/translation
 @dirrm %%DATADIR%%/sounds/default
