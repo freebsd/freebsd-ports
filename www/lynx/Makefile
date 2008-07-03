@@ -29,9 +29,9 @@ CONFIGURE_ARGS+=--with-zlib --libdir="${L_LIB}" \
 		--enable-nested-tables --enable-gzip-help \
 
 OPTIONS=	SSL		"SSL support" on \
-			DEFAULT_COLORS	"Colors support" off \
-			IPV6	"IPV6 support" off \
-			NLS 	"Native language support" on
+		DEFAULT_COLORS	"Colors support" off \
+		IPV6		"IPv6 support" off \
+		NLS 		"Native language support" on
 
 .include <bsd.port.pre.mk>
 
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=--enable-nls --with-libiconv-prefix="${LOCALBASE}"
 PLIST_SUB+=	NLS=''
 .endif
 
-.if defined(WITH_IPV6) && ! defined(NO_INET6)
+.if defined(WITH_IPV6) && !defined(NO_INET6)
 CONFIGURE_ARGS+=--enable-ipv6
 .else
 CONFIGURE_ARGS+=--disable-ipv6
