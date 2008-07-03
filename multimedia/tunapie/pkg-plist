@@ -6,6 +6,8 @@ etc/tunapie.config.default
 share/pixmaps/tplogo.xpm
 %%DATADIR%%/AboutTuner.py
 %%DATADIR%%/AboutTuner.pyc
+%%DATADIR%%/AddStream.py
+%%DATADIR%%/AddStream.pyc
 %%DATADIR%%/RecordQueue.py
 %%DATADIR%%/RecordQueue.pyc
 %%DATADIR%%/RecordTime.py
