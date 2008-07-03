@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	customfieldadmin
-PORTVERSION=	0.1.3855
+PORTVERSION=	0.2.3428
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/
 PKGNAMEPREFIX=	trac-
@@ -16,12 +16,11 @@ MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	Web interface to administer Trac ticket custom fields
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		${PYTHON_SITELIBDIR}/TracWebAdmin-0.1.2dev-py${_PYTHON_VERSION}.egg:${PORTSDIR}/www/trac-webadmin
+RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 USE_ZIP=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.10
+WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 NO_BUILD=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
