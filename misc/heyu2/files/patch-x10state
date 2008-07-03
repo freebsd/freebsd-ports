@@ -1,0 +1,11 @@
+--- x10state.c.orig	2008-06-30 08:49:55.000000000 -0500
++++ x10state.c	2008-06-30 08:50:28.000000000 -0500
+@@ -6344,7 +6344,7 @@
+    char     *shell;
+    LAUNCHER *launcherp;
+ 
+-   if ( configp->script_ctrl == DISABLE )
++   if ( !i_am_state || configp->script_ctrl == DISABLE )
+       return 0;
+ 
+    launcherp = configp->launcherp;
