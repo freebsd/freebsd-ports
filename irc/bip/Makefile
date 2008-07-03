@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bip
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.4
 CATEGORIES=	irc
 MASTER_SITES=	http://bip.t1r.net/downloads/ \
 		http://distfiles.gentoo.org/distfiles/ \
