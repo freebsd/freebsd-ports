@@ -62,11 +62,13 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		APR::ThreadRWLock.3
 
 .include <bsd.port.pre.mk>
-.if exists(${LOCALBASE}/include/apr-1/apr.h)
 
+.if exists(${LOCALBASE}/include/apr-1/apr.h)
 APR_H=		${LOCALBASE}/include/apr-1/apr.h
+APR_MAJ_V!=	${ECHO_CMD} `${LOCALBASE}/bin/apr-1-config --version | ${SED} -e 's,\..*,,'`
 .elif exists(${LOCALBASE}/include/apr/apr.h)
 APR_H=		${LOCALBASE}/include/apr/apr.h
+APR_MAJ_V!=	${ECHO_CMD} `${LOCALBASE}/bin/apr-config --version | ${SED} -e 's,\..*,,'`
 .endif
 
 .if defined(APR_H)
@@ -77,8 +79,14 @@ APR_HAS_THREADS=	0
 
 .if ${APR_HAS_THREADS} == 1
 PLIST_SUB+=	THREADMUTEX=""
+.if ${APR_MAJ_V} > 0
+PLIST_SUB+=	THREADRWLOCK=""
+.else
+PLIST_SUB+=	THREADRWLOCK="@comment "
+.endif
 .else
 PLIST_SUB+=	THREADMUTEX="@comment "
+PLIST_SUB+=	THREADRWLOCK="@comment "
 .endif
 
 pre-fetch:
