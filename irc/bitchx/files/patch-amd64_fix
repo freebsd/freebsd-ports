@@ -1,0 +1,44 @@
+
+
+Patch attached with submission follows:
+
+diff -ur BitchX.orig/include/module.h BitchX/include/module.h
+--- BitchX.orig/include/module.h	Fri Apr 11 03:09:07 2003
++++ include/module.h	Sun Jan  8 17:18:15 2006
+@@ -15,7 +15,7 @@
+ 
+ #include "struct.h"
+ 
+-typedef int (*Function_ptr)();
++typedef long (*Function_ptr)();
+ 
+ #ifdef WANT_DLL
+ #ifdef HPUX
+diff -ur BitchX.orig/include/modval.h BitchX/include/modval.h
+--- BitchX.orig/include/modval.h	Fri Apr 11 03:09:07 2003
++++ include/modval.h	Sun Jan  8 17:18:15 2006
+@@ -318,7 +318,7 @@
+ #define show_window(x) ((void) (global[SHOW_WINDOW]((Window *)x)))
+ #define get_status_by_refnum(x, y) ((char *) (global[GET_STATUS_BY_REFNUM]((unsigned int)x, (unsigned int)y)))
+ #define get_visible_by_refnum(x) ((int) (global[GET_VISIBLE_BY_REFNUM]((char *)x)))
+-#define get_window_by_desc(x) ((Window *) (global[GET_WINDOW_BY_DESC]((unsigned int)x)))
++#define get_window_by_desc(x) ((Window *) (global[GET_WINDOW_BY_DESC]((unsigned long)x)))
+ #define get_window_by_refnum(x) ((Window *) (global[GET_WINDOW_BY_REFNUM]((unsigned int)x)))
+ #define get_window_by_name(x) ((Window *) (global[GET_WINDOW_BY_NAME]((char *)x)))
+ #define next_window(x, y) ((void) (global[FUNC_NEXT_WINDOW]((char)x, (char *)y)))
+diff -ur BitchX.orig/source/screen.c BitchX/source/screen.c
+--- BitchX.orig/source/screen.c	Thu Jul 31 09:01:08 2003
++++ source/screen.c	Sun Jan  8 17:18:18 2006
+@@ -1377,8 +1377,8 @@
+ {
+ 	if (!w)
+ 		w = current_window;
+-	if (w->screen)
+-		w->screen->cursor_window = w;
++/*	if (w->screen)
++		w->screen->cursor_window = w;*/
+ }
+ 
+ /*
+
+
