@@ -1,5 +1,5 @@
-# New ports collection makefile for:	BIND 9.4.x
-# Date created:				28 January 2007
+# New ports collection makefile for:	BIND 9.5.x
+# Date created:				2 July 2008
 # Whom:					dougb
 #
 # $FreeBSD$
@@ -11,9 +11,8 @@
 # version. If you are concerned about using the most recent ISC
 # release you can generally build it cleanly from the source - Doug
 
-PORTNAME=	bind94
-PORTVERSION=	9.4.2
-PORTREVISION=	1
+PORTNAME=	bind95
+PORTVERSION=	9.5.0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -26,7 +25,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.4.2
+ISCVERSION=	9.5.0
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
@@ -34,19 +33,41 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 USE_OPENSSL=	yes
 
-CONFLICTS=	bind9-9.3.* bind9-dlz-* bind9-sdb-mysql-* host-*
+CONFLICTS=	bind9-9.3.* bind9-9.4.* bind9-dlz-* bind9-sdb-mysql-* host-*
 
-OPTIONS=	REPLACE_BASE "Replace base BIND with this version" off \
+OPTIONS=	XML "Support for xml statistics output" on \
+		IDN "Add IDN support to dig, host, etc." off \
+		REPLACE_BASE "Replace base BIND with this version" off \
 		LARGE_FILE "64-bit file support" off \
-		IPV6 "IPv6 Support (autodetected by default)" off \
-		THREADS	"Compile with thread support" on
+		IPV6 "IPv6 Support (autodetected by default)" off
 
 .include <bsd.port.pre.mk>
+
+# We are ok by default from 7.0-RELEASE on
+.if ${OSVERSION} >= 700055
+OPTIONS+=	THREADS	"Compile with thread support" on
+.else
+OPTIONS+=	THREADS	"Compile with thread support" off
+.endif
 
 .if defined(WITH_OPENSSL_PORT)
 CONFIGURE_ARGS+=	--with-openssl=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-openssl
+.endif
+
+.if !defined(WITHOUT_XML)
+CONFIGURE_ARGS+=	--with-libxml2=${LOCALBASE}
+LIB_DEPENDS+=		xml2.5:${PORTSDIR}/textproc/libxml2
+.else
+CONFIGURE_ARGS+=	--without-libxml2
+.endif
+
+.if defined(WITH_IDN)
+CONFIGURE_ARGS+=	--with-idn=${LOCALBASE} --with-libiconv=${LOCALBASE}
+BUILD_DEPENDS+=		runidn:${PORTSDIR}/dns/idnkit
+.else
+CONFIGURE_ARGS+=	--without-idn
 .endif
 
 .if defined(WITH_LARGE_FILE)
@@ -135,7 +156,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
-		${WRKSRC}/README ${DOCSDIR}/
+		${WRKSRC}/README ${WRKSRC}/KNOWN-DEFECTS ${DOCSDIR}/
 .endif
 
 	@${CAT} ${PKGMESSAGE}

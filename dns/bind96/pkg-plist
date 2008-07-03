@@ -24,6 +24,7 @@ include/dns/enumclass.h
 include/dns/enumtype.h
 include/dns/events.h
 include/dns/fixedname.h
+include/dns/iptable.h
 include/dns/journal.h
 include/dns/keyflags.h
 include/dns/keytable.h
@@ -71,6 +72,7 @@ include/dns/zone.h
 include/dns/zonekey.h
 include/dns/zt.h
 include/dst/dst.h
+include/dst/gssapi.h
 include/dst/lib.h
 include/dst/result.h
 include/isc/app.h
@@ -95,6 +97,7 @@ include/isc/hash.h
 include/isc/heap.h
 include/isc/hex.h
 include/isc/hmacmd5.h
+include/isc/httpd.h
 include/isc/int.h
 include/isc/interfaceiter.h
 include/isc/lang.h
@@ -148,6 +151,7 @@ include/isc/timer.h
 include/isc/types.h
 include/isc/util.h
 include/isc/version.h
+include/isc/xml.h
 include/isccc/alist.h
 include/isccc/base64.h
 include/isccc/cc.h
@@ -199,6 +203,7 @@ sbin/rndc-confgen
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/KNOWN-DEFECTS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch02.html
@@ -230,6 +235,7 @@ sbin/rndc-confgen
 %%PORTDOCS%%%%DOCSDIR%%/misc/rfc-compliance
 %%PORTDOCS%%%%DOCSDIR%%/misc/roadmap
 %%PORTDOCS%%%%DOCSDIR%%/misc/sdb
+%%PORTDOCS%%%%DOCSDIR%%/misc/sort-options.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/arm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
