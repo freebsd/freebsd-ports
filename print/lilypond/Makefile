@@ -8,103 +8,74 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.2.2
-PORTREVISION=	6
+PORTVERSION=	2.11.47
 CATEGORIES=	print audio
-MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/:src \
-		http://distfiles.master.finkmirrors.net/:rpm
+MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.11/:src \
+    		http://download.linuxaudio.org/lilypond/binaries/freebsd-x86/:bin
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
-		${PORTNAME}-${PORTVERSION}-1.i386.rpm:rpm
+    		${PORTNAME}-${PORTVERSION}-1.freebsd-x86.sh:bin
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The GNU music typesetter
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		rarian-sk-config:${PORTSDIR}/textproc/rarian
+    		mftrace:${PORTSDIR}/print/mftrace \
+		rarian-sk-config:${PORTSDIR}/textproc/rarian \
+		texindex:${PORTSDIR}/print/texinfo \
+		bison:${PORTSDIR}/devel/bison
 LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
+    		mftrace:${PORTSDIR}/print/mftrace
 
-MAN1=		abc2ly.1 etf2ly.1 midi2ly.1 mup2ly.1 lilypond.1 musedata2ly.1 \
-		convert-ly.1 lilypond-bin.1 lilypond-book.1
-INFO=		lilypond lilypond-internals \
+OPTIONS=	WEBDOCS	"Builds and installs documentation" OFF
+
+MAN1=		lilymidi.1 lilypond-book.1 lilypond-invoke-editor.1 \
+		lilypond.1 lilysong.1 convert-ly.1 abc2ly.1 etf2ly.1 \
+		midi2ly.1 musicxml2ly.1
+INFO=		lilypond lilypond-internals lilypond-program lilypond-learning \
 		music-glossary
 
-BROKEN=	does not build with guile-1.8; needs update to 2.10.33
-#USE_LDCONFIG not needed for phyton library midi.so
-
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:261
 USE_GETTEXT=	yes
-USE_BISON=	build
 USE_GMAKE=	YES
 USE_PYTHON=	YES
+USE_GNOME=	pango
+INSTALLS_OMF=	yes
 MAKEFILE=	GNUmakefile
-PKGINSTALL=	${WRKDIR}/pkg-install
+BUILD_TARGET=	all
+CONFIGURE_ENV+=		"CPPFLAGS=${CPPFLAGS}" "MAKEINFO=${LOCALBASE}/bin/makeinfo"
 
-CONFIGURE_ARGS+=	--with-kpathsea-include=${LOCALBASE}/include \
-			--with-kpathsea-lib=${LOCALBASE}/lib 
-CONFIGURE_ENV+=		"CPPFLAGS=${CPPFLAGS}"
-
-.if defined(WITH_SELFBUILT_FONTS)
-BUILD_DEPENDS+=	mftrace:${PORTSDIR}/print/mftrace
-.else
-BUILD_DEPENDS+=	rpm2cpio:${PORTSDIR}/archivers/rpm
-.endif
-
-# inform kpathsea.h of getopt-prototype version
-CFLAGS+=	-D__GNU_LIBRARY__
-CPPFLAGS+=	-I${WRKSRC}/lily/out
-CFLAGS+=	${CPPFLAGS}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
-ALL_TARGET=	all
 
-SCRIPTS_ENV+=	PORTVERSION=${PORTVERSION}
-
-.if defined(NOPORTDOCS)
-PLIST_SUB+=	CONDITIONAL="@comment "
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch:GNUmakefile.in
+.if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
+BUILD_DEPENDS+=	pbmpscale:${PORTSDIR}/graphics/netpbm
+BUILD_TARGET+=	www
+PLIST_SUB+=	DOCS=""
 .else
-PLIST_SUB+=	CONDITIONAL=""
-.endif
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
+PLIST_SUB+=	DOCS="@comment "
 .endif
 
-pre-configure:
-	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=g;s=%%DATADIRVERSION%%=${DATADIR}/${PORTVERSION}=g" \
-		< ${FILESDIR}/pkg-install.in \
-		| ${SED} -e "s=${PREFIX}=\$${PKG_PREFIX}=g" \
-	> ${PKGINSTALL}
+post-extract:
+	( \
+		${TAIL} -c+000000004597 ${DISTDIR}/${PORTNAME}-${PORTVERSION}-1.freebsd-x86.sh > \
+		${WRKDIR}/${PORTNAME}.tmp.tar.bz2 && \
+		${TAR} -xjf ${WRKDIR}/${PORTNAME}.tmp.tar.bz2 -C ${WRKDIR} && \
+		${MKDIR} ${WRKSRC}/mf/out && \
+		${CP} ${WRKDIR}/usr/share/lilypond/current/fonts/otf/*.otf ${WRKSRC}/mf/out \
+	)
 
-.if !defined(WITH_SELFBUILT_FONTS)
-post-configure:
-	cd ${WRKSRC} && ${GMAKE} -C mf get-pfa DISTDIR=${DISTDIR}
-.endif
+post-patch:
+	${REINPLACE_CMD} -e 's|makeinfo|${LOCALBASE}/bin/makeinfo|' \
+	    ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}/scripts
-	cd ${WRKSRC}/input ; \
-	${TAR} -chf - --exclude=out --exclude=CVS --exclude=GNUmakefile . | \
-		${TAR} -xf - -C ${EXAMPLESDIR};
-
-.for ii in login profile
-	${INSTALL_SCRIPT} ${WRKSRC}/buildscripts/out/lilypond-${ii} \
-		${EXAMPLESDIR}/scripts
-.endfor
-
-	cd ${WRKSRC}/Documentation/topdocs/out && ${TAR} -chf - \
-		--exclude=dummy.dep --exclude=CVS --exclude=GNUmakefile . \
-		| ${TAR} -xf - -C ${DOCSDIR}
-
+	${LN} -s ${DATADIR}/${PORTVERSION} ${DATADIR}/current
+.if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
+	${INSTALL} -d ${DOCSDIR}
+	(cd ${WRKSRC}/out-www/offline-root && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-	@${ECHO_CMD} "* Look in ${EXAMPLESDIR}/scripts"
-	@${ECHO_CMD} "* for needed additions to your .profile"
-	@${ECHO_CMD} "* (at least the TEXMF environment variable is required)."
 
 .include <bsd.port.post.mk>
