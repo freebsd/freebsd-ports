@@ -5135,6 +5135,7 @@ idesk                           ports/x11/idesk
 idled                           ports/sysutils/idled
 idnits                          ports/textproc/idnits
 idnkit                          ports/dns/idnkit
+iec16022                        ports/graphics/iec16022
 iextract                        ports/sysutils/iextract
 ifc                             ports/lang/ifc
 ifc7                            ports/lang/ifc7
@@ -9766,7 +9767,7 @@ p5-Chart-PNGgraph               ports/graphics/p5-Chart-PNGgraph
 p5-Chatbot-Eliza                ports/misc/p5-Chatbot-Eliza
 p5-Chemistry-Elements           ports/science/p5-Chemistry-Elements
 p5-Chess-PGN-Parse              ports/textproc/p5-Chess-PGN-Parse
-p5-Chooser                      ports/net/p5-Chooser
+p5-Chooser                      ports/devel/p5-Chooser
 p5-Cisco-Hash                   ports/security/p5-Cisco-Hash
 p5-Cisco-IPPhone                ports/net/p5-Cisco-IPPhone
 p5-Cisco-Reconfig               ports/net-mgmt/p5-Cisco-Reconfig
@@ -10138,6 +10139,7 @@ p5-Data-Validate-IP             ports/net-mgmt/p5-Data-Validate-IP
 p5-Data-Validate-URI            ports/www/p5-Data-Validate-URI
 p5-Data-Visitor                 ports/devel/p5-Data-Visitor
 p5-Date-Calc                    ports/devel/p5-Date-Calc
+p5-Date-Calc-Iterator           ports/devel/p5-Date-Calc-Iterator
 p5-Date-DayOfWeek               ports/devel/p5-Date-DayOfWeek
 p5-Date-Easter                  ports/devel/p5-Date-Easter
 p5-Date-EzDate                  ports/devel/p5-Date-EzDate
@@ -12796,7 +12798,7 @@ p5-chatbot-eliza                ports/misc/p5-Chatbot-Eliza
 p5-chemistry-elements           ports/science/p5-Chemistry-Elements
 p5-chess-pgn-parse              ports/textproc/p5-Chess-PGN-Parse
 p5-chklinks                     ports/www/p5-chklinks
-p5-chooser                      ports/net/p5-Chooser
+p5-chooser                      ports/devel/p5-Chooser
 p5-cisco-hash                   ports/security/p5-Cisco-Hash
 p5-cisco-ipphone                ports/net/p5-Cisco-IPPhone
 p5-cisco-reconfig               ports/net-mgmt/p5-Cisco-Reconfig
@@ -13114,6 +13116,7 @@ p5-data-validate-ip             ports/net-mgmt/p5-Data-Validate-IP
 p5-data-validate-uri            ports/www/p5-Data-Validate-URI
 p5-data-visitor                 ports/devel/p5-Data-Visitor
 p5-date-calc                    ports/devel/p5-Date-Calc
+p5-date-calc-iterator           ports/devel/p5-Date-Calc-Iterator
 p5-date-dayofweek               ports/devel/p5-Date-DayOfWeek
 p5-date-easter                  ports/devel/p5-Date-Easter
 p5-date-ezdate                  ports/devel/p5-Date-EzDate
