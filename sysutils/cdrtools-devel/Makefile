@@ -22,7 +22,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01.01a41
+PORTVERSION=	2.01.01a42
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -77,10 +77,6 @@ PKGNAMESUFFIX?=	-devel
 CCOM!=		${BASENAME} ${CC}
 MAKE_ENV=	CCOM=${CCOM} LANG=C INS_BASE=${LOCALBASE}
 CDRTLSTARGET=	${ARCH}-freebsd-${CCOM}
-
-.if ${OSVERSION} >= 501104 && ${OSVERSION} < 502113
-IGNORE=		does not work with mlockall(2) on your version of FreeBSD 5.x. Please update to FreeBSD 5.3 or later in order to use this port
-.endif
 
 .if exists(${LOCALBASE}/lib/libiconv.a) || \
 	exists(${LOCALBASE}/lib/libintl.a) || !defined(WITHOUT_NLS)
