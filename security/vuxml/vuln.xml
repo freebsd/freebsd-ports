@@ -34,6 +34,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4fb43b2f-46a9-11dd-9d38-00163e000016">
+    <topic>FreeType 2 -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>freetype2</name>
+	<range><lt>2.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/30600">
+	  <ul>
+	    <li>An integer overflow error exists in the processing of PFB font
+	    files. This can be exploited to cause a heap-based buffer overflow
+	    via a PFB file containing a specially crafted "Private" dictionary
+	    table.</li>
+	    <li>An error in the processing of PFB font files can be exploited
+	    to trigger the "free()" of memory areas that are not allocated on
+	    the heap.</li>
+	    <li>An off-by-one error exists in the processing of PFB font files.
+	    This can be exploited to cause a one-byte heap-based buffer
+	    overflow via a specially crafted PFB file.</li>
+	    <li>An off-by-one error exists in the implementation of the "SHC"
+	    instruction while processing TTF files. This can be exploited to
+	    cause a one-byte heap-based buffer overflow via a specially crafted
+	    TTF file.</li>
+	  </ul>
+	  <p>Successful exploitation of the vulnerabilities may allow execution
+	  of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>29637</bid>
+      <bid>29639</bid>
+      <bid>29640</bid>
+      <bid>29641</bid>
+      <cvename>CVE-2008-1806</cvename>
+      <cvename>CVE-2008-1807</cvename>
+      <cvename>CVE-2008-1808</cvename>
+      <url>http://secunia.com/advisories/30600</url>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=605780</url>
+    </references>
+    <dates>
+      <discovery>2008-06-10</discovery>
+      <entry>2008-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1e8e63c0-478a-11dd-a88d-000ea69a5213">
     <topic>fetchmail -- potential crash in -v -v verbose mode (revised patch)</topic>
     <affects>
