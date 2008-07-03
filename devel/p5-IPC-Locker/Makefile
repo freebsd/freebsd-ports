@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	IPC-Locker
-PORTVERSION=	1.481
+PORTVERSION=	1.482
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide a server for locks and clients to access that server
@@ -23,11 +24,9 @@ MAN3=	IPC::Locker.3 IPC::Locker::Server.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-EXTRA_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		p5-Pod-Parser>0:${PORTSDIR}/textproc/p5-Pod-Parser
-BUILD_DEPENDS+=	${EXTRA_DEPENDS}
-RUN_DEPENDS+=	${EXTRA_DEPENDS}
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Net>=0:${PORTSDIR}/net/p5-Net \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
 
 .include <bsd.port.post.mk>
