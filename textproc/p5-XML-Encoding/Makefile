@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Encoding
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		compile_encoding.1 make_encmap.1
 MAN3=		XML::Encoding.3
-
 
 .include <bsd.port.mk>
