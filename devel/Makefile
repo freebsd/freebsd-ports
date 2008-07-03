@@ -1118,6 +1118,7 @@
     SUBDIR += p5-Data-Validate
     SUBDIR += p5-Data-Visitor
     SUBDIR += p5-Date-Calc
+    SUBDIR += p5-Date-Calc-Iterator
     SUBDIR += p5-Date-DayOfWeek
     SUBDIR += p5-Date-Easter
     SUBDIR += p5-Date-EzDate
