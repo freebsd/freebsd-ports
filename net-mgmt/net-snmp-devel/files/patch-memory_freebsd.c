@@ -1,5 +1,5 @@
---- agent/mibgroup/hardware/memory/memory_freebsd.c.orig	2006-03-06 17:23:52.000000000 +0100
-+++ agent/mibgroup/hardware/memory/memory_freebsd.c	2008-04-14 16:45:19.000000000 +0200
+--- agent/mibgroup/hardware/memory/memory_freebsd.c.orig	2006-03-07 01:23:52.000000000 +0900
++++ agent/mibgroup/hardware/memory/memory_freebsd.c	2008-07-03 21:32:46.000000000 +0900
 @@ -47,6 +47,9 @@
      int            phys_mem_mib[] = { CTL_HW, HW_PHYSMEM };
      int            user_mem_mib[] = { CTL_HW, HW_USERMEM };
@@ -18,6 +18,15 @@
  #ifndef freebsd4
      pagesize = 1024;
  #else
+@@ -70,7 +74,7 @@
+         if (!mem->descr)
+              mem->descr = strdup("Physical memory");
+         mem->units = pagesize;
+-        mem->size  = user_mem/pagesize;
++        mem->size  = phys_mem/pagesize;
+         mem->free  = total.t_free;
+     }
+ 
 @@ -129,6 +133,18 @@
          mem->free  = -1;
      }
