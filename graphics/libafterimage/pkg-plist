@@ -22,12 +22,12 @@ include/libAfterImage/asvisual.h
 include/libAfterImage/blender.h
 include/libAfterImage/bmp.h
 include/libAfterImage/char2uni.h
-include/libAfterImage/config.h
 include/libAfterImage/draw.h
 include/libAfterImage/export.h
 include/libAfterImage/imencdec.h
 include/libAfterImage/import.h
 include/libAfterImage/pixmap.h
+include/libAfterImage/scanline.h
 include/libAfterImage/transform.h
 include/libAfterImage/ungif.h
 include/libAfterImage/xcf.h
