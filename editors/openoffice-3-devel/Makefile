@@ -75,11 +75,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		19
+MILESTONE?=		20
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20080614
+SNAPDATE=		20080630
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
@@ -204,7 +204,7 @@ pre-configure:
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAXMODULES} --all --html --dontgraboutput -- -P${MAXPROCESSES}"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "TMP=${WRKSRC}" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAXMODULES} --all --html --dontgraboutput -- -P${MAXPROCESSES}"
 
 .if ${LOCALIZED_LANG} == "alllangs"
 	@${MAKE} languagepack
@@ -244,7 +244,6 @@ post-install:
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
 			-e 's#%%OOODIR%%#${OOODIR}#g' \
-			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice.org-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice.org-wrapper \
@@ -253,8 +252,8 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-scalc
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sdraw
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-setofficelang
-	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-smath
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-simpress
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-smath
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
 	@${ECHO_CMD} "" > ${TMPPLIST}
@@ -262,13 +261,16 @@ post-install:
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} \( -type f -or -type l \) >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d | ${SORT} -r | \
 		${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
-	@${REINPLACE_CMD} -e '/^Exec/s/printeradmin/spadmin/' \
-			${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop
-	@for app in base calc draw impress math printeradmin writer; do \
+	@for app in base calc draw impress math writer; do \
 		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
 			-e "s/^Icon.*/Icon=${EXECBASE}-$${app}.png/" \
 		${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/$${app}.desktop ; \
 	done
+	@${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE}-spadmin %U/" \
+		-e "s/^Icon.*/Icon=${EXECBASE}-printeradmin.png/" \
+		${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/printeradmin.desktop
+	@${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -quickstart -nologo -nodefault/" \
+		${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/qstart.desktop
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop.bak
 	@${RM} -f ${DESKTOPDIR}/${EXECBASE}
 	@${MKDIR} ${DESKTOPDIR}
@@ -298,10 +300,9 @@ post-install:
 	@${ECHO_CMD} "@unexec ${PREFIX}/bin/gtk-update-icon-cache -q -f %D/share/icons/hicolor 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
 			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
-			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
+			-e 's#%%OOODIR%%#${OOODIR}#g' \
 			${PKGMESSAGE}
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}

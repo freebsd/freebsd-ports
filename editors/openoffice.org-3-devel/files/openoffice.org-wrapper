@@ -1,15 +1,18 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-3-devel/files/Attic/openoffice.org-wrapper,v 1.4 2008-03-29 10:22:26 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-3-devel/files/Attic/openoffice.org-wrapper,v 1.5 2008-07-03 11:10:53 maho Exp $
 
-oopath=%%PREFIX%%/%%INSTALLATION_BASEDIR%%/%%OOODIR%%/program/
+oopath=%%PREFIX%%/%%INSTALLATION_BASEDIR%%/%%OOODIR%%
 program=`echo $0 | sed -e 's|.*-%%OOOTAG%%-||'`
 
 case $program in
 $0)
-	$oopath/soffice "$@"
+	$oopath/program/soffice "$@"
 	;;
-	*)
-	$oopath/$program "$@"
+setofficelang)
+	$oopath/basis-link/program/$program "$@"
+	;;
+*)
+	$oopath/program/$program "$@"
 	;;
 esac
