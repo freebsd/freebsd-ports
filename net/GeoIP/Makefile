@@ -7,6 +7,7 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	net geography
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/
 
@@ -18,5 +19,8 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
 MAN1=		geoiplookup.1 geoipupdate.1
+
+post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/geoipupdate.sh ${PREFIX}/bin/
 
 .include <bsd.port.mk>
