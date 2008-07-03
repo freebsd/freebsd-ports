@@ -1,5 +1,5 @@
 --- install.sh.orig	2008-06-11 15:33:00.000000000 -0500
-+++ install.sh	2008-06-12 21:04:22.000000000 -0500
++++ install.sh	2008-07-02 22:49:18.000000000 -0500
 @@ -832,10 +832,9 @@
      case "${machine}:${os}" in
  	x86:Linux|x86_64:Linux|x86:AnyBSD|x86_64:AnyBSD|x86:OpenBSD|x86:QNX)
@@ -157,7 +157,17 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1108,13 +1048,6 @@
+@@ -1099,8 +1039,7 @@
+ 
+ # Spellchecker needs to find libaspell.so.15
+ for LIBASPELL_DIR in \\
+-    /usr/local/lib \\
+-    /opkg/lib \\
++    %%LINUXBASE%%/usr/lib \\
+ ; do
+     if ls \$LIBASPELL_DIR/libaspell.so.1[5-9] >/dev/null 2>&1
+     then LD_LIBRARY_PATH=\"\${LD_LIBRARY_PATH}:\${LIBASPELL_DIR}\"
+@@ -1108,13 +1047,6 @@
  done"
  
  case "${os}" in
@@ -171,7 +181,7 @@
      SunOS)
  wrapper_contain="${wrapper_contain}
  
-@@ -1143,7 +1076,7 @@
+@@ -1143,7 +1075,7 @@
  };
  
  // Opera package classes get all permissions
@@ -180,7 +190,7 @@
  	permission java.security.AllPermission;
  };
  
-@@ -1260,12 +1193,12 @@
+@@ -1260,12 +1192,12 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -195,7 +205,7 @@
  
      share_src="`manifest_path 'html40_entities\.dtd'`"
      part_install "$share_src" "$share_dir" "Shared resources"
-@@ -1274,76 +1207,20 @@
+@@ -1274,76 +1206,20 @@
      mkdir $mkdirv $mkdirp $plugin_dir/
  
      # Wrapper
@@ -275,7 +285,7 @@
  	fi
  
      fi # OPERADESTDIR
-@@ -1392,21 +1269,21 @@
+@@ -1392,21 +1268,21 @@
      echo '[Desktop Entry]'
      if test -z "$1"
      then cat <<EOF
@@ -302,7 +312,7 @@
  Name[af]=opera
  Name[eo]=Opero
  Name[zu]=I Opera
-@@ -1430,7 +1307,7 @@
+@@ -1430,7 +1306,7 @@
  GenericName[ven]=Buronza ya Webu
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
@@ -311,7 +321,7 @@
  Terminal=false
  EOF
  
-@@ -1446,15 +1323,16 @@
+@@ -1446,15 +1322,16 @@
  	if test "$1" = "xdg"
  	then cat <<EOF
  Categories=Application;Qt;Network;WebBrowser;X-Ximian-Main;X-Ximian-Toplevel
@@ -330,7 +340,7 @@
  EOF
  }
  
-@@ -1462,7 +1340,7 @@
+@@ -1462,7 +1339,7 @@
  {
      # arg1 = location
      # arg2 = type
@@ -339,7 +349,7 @@
  }
  
  generate_mdk_menu()
-@@ -1487,51 +1365,26 @@
+@@ -1487,51 +1364,26 @@
  
      debug_msg 0 "in icons()"
  
