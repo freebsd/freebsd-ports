@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libotf
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	print devel
 MASTER_SITES=	http://www.m17n.org/libotf/
 
