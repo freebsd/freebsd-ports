@@ -444,7 +444,6 @@
     SUBDIR += p5-BBS-UserInfo-Ptt
     SUBDIR += p5-BBS-UserInfo-SOB
     SUBDIR += p5-BBS-UserInfo-Wretch
-    SUBDIR += p5-Chooser
     SUBDIR += p5-Cisco-IPPhone
     SUBDIR += p5-Daemon-Generic
     SUBDIR += p5-EasyTCP
