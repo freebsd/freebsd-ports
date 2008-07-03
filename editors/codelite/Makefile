@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	codelite
-DISTVERSION=	r${SVN_REVISION}
+DISTVERSION=	${REL_VERSION}.r${SVN_REVISION}
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	gahr
+MASTER_SITES=	SF
+DISTNAME=	CodeLite-rev${SVN_REVISION}-v${REL_VERSION}.src
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An Open Source IDE for C/C++
 
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+
 OPTIONS=	CSCOPE	"Enable CScope integration" OFF
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=	${WRKDIR}/CodeLite-Rev${SVN_REVISION}-V${REL_VERSION}
 
-USE_BZIP2=	yes
+USE_ZIP=	yes
 USE_WX=	2.8
 WX_UNICODE=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 
-SVN_REVISION=	1599
-
-GNU_CONFIGURE=	yes
+REL_VERSION=	1.0
+SVN_REVISION=	1789
 
 .include <bsd.port.pre.mk>
 
@@ -42,10 +43,18 @@ post-patch:
 	    ${WRKSRC}/configure ${WRKSRC}/makefile.base
 	${REINPLACE_CMD} -e 's|$${cur_rev}|${SVN_REVISION}|' \
 		${WRKSRC}/le_makerevision.sh
+	# CTags already installed
+	(if [ -f ${LOCALBASE}/include/readtags.h ]; then \
+	    ${RM} ${WRKSRC}/CodeLite/readtags.h; \
+	 fi; \
+	)
 .if ${ARCH} == "amd64"
 	${REINPLACE_CMD} -e 's|-Wall|-fPIC -Wall|g' \
 		${WRKSRC}/configure ${WRKSRC}/makefile.base
 .endif
+
+do-configure:
+	(cd ${WRKSRC} && ${SH} ${CONFIGURE_SCRIPT})
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -56,6 +65,7 @@ do-install:
 	${MKDIR} ${DATADIR}/debuggers
 	${MKDIR} ${DATADIR}/plugins
 	${MKDIR} ${DATADIR}/images
+	${MKDIR} ${PREFIX}/include/UnitTest++
 	${INSTALL_PROGRAM} ${WRKSRC}/Runtime/CodeLiteUR ${PREFIX}/bin/CodeLite
 	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_dos2unix.sh ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/Runtime/le_exec.sh ${PREFIX}/bin/
@@ -66,7 +76,9 @@ do-install:
 	(cd ${WRKSRC}/Runtime/templates && ${COPYTREE_SHARE} \* ${DATADIR}/templates)
 	(cd ${WRKSRC}/Runtime/lexers && ${COPYTREE_SHARE} \* ${DATADIR}/lexers)
 	${INSTALL_DATA} ${WRKSRC}/lib/Debugger.so ${DATADIR}/debuggers
-.for lib in CodeFormatter Subversion ReferenceAnalyser cscope Gizmos
+	${INSTALL_DATA} ${WRKSRC}/Runtime/sdk/lib/unix/libUnitTest++.a ${PREFIX}/lib
+	(cd ${WRKSRC}/Runtime/sdk/include/UnitTest++ &&  ${COPYTREE_SHARE} \* ${PREFIX}/include/UnitTest++)
+.for lib in CodeFormatter Subversion cscope Gizmos
 	${INSTALL_DATA} ${WRKSRC}/lib/${lib}.so ${DATADIR}/plugins
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/Runtime/index.html ${DATADIR}
