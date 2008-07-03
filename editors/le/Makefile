@@ -26,17 +26,19 @@ PLIST_FILES+=	bin/le
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 502010
 GNU_REGEX_H=	gnu/regex.h
-.else
-GNU_REGEX_H=	gnuregex.h
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@LIBOBJS@||g ; \
 		 s|@ALLOCA@||g' ${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e 's|<regex.h>|<${GNU_REGEX_H}>|g' \
 		${WRKSRC}/src/highli.h
+.if defined(NOPORTDATA)
+	@${REINPLACE_CMD} -e 's|misc||g' \
+	    ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|le.hlp||g;468s|install-pkgdataDATA||' \
+	    ${WRKSRC}/src/Makefile.in
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
