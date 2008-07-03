@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	dovecot-antispam
-PORTVERSION=	20071029
+PORTVERSION=	20080604
 CATEGORIES=	mail
-MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ehaupt
+MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Dovecot plugin to train dspam about spam or false positives
@@ -40,7 +38,6 @@ do-install:
 do-configure:
 	DOVECOT=`${MAKE} -C ${PORTSDIR}/mail/dovecot -V WRKSRC` && \
 		${ECHO} "DOVECOT=$$DOVECOT" > ${WRKSRC}/.config
-	${ECHO} "DOVECOT_VERSION=1.0" >> ${WRKSRC}/.config
 .if defined(WITH_DSPAM)
 	${ECHO} "BACKEND=dspam-exec"  >> ${WRKSRC}/.config
 .endif
