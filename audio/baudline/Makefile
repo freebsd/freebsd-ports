@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	baudline
-PORTVERSION=	1.06
-PORTREVISION=	2
+PORTVERSION=	1.07
 CATEGORIES=	audio linux
 # We have permission from author Erik Olsen <erik@sigblips.net> for the
 # package cluster to automatically fetch baudline
