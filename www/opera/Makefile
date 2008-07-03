@@ -8,7 +8,9 @@
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
 CATEGORIES=	www ipv6
-MASTER_SITES=	ftp://opera.inode.at/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+MASTER_SITES=	ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
+		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}${PKGNAMESUFFIX}/sources/ \
+		ftp://opera.inode.at/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
 		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
 		http://ftp.ucr.ac.cr/WWW/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
 		http://www.microrpm.ca/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/${OPERA_LIB}/ \
@@ -29,11 +31,11 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}${OPERA_MINVER}-freebsd${OPERA_TYPE}-shared-qt
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
 
-OPERA_VER=	9.50
+OPERA_VER=	9.51
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20080611
-OPERA_BUILD=	2042
+OPERA_DATE=	20080630
+OPERA_BUILD=	2061
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
