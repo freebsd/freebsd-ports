@@ -7,6 +7,7 @@
 
 PORTNAME=		nbc
 PORTVERSION=		1.0.1.b32
+PORTREVISION=		1
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bricxcc
@@ -16,20 +17,15 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		rambiusparkisanius@gmail.com
 COMMENT=		NBC is a programming language for the LEGO MINDSTORMS NXT product
 
-BUILD_DEPENDS=		fpc:${PORTSDIR}/lang/fpc \
-			${UNITSDIR}/fcl-base/Package.fpc:${PORTSDIR}/devel/fpc-fcl-base
 RUN_DEPENDS=		legoctl:${PORTSDIR}/devel/legoctl
 
 USE_GMAKE=		yes
 USE_DOS2UNIX=		yes
+USE_FPC=		fcl-base
 
 MAKEFILE=		nbcfreebsd.mak
 SUB_FILES=		pkg-message
 WRKSRC=			${WRKDIR}/nxt
-
-BUILDNAME=		${ARCH}-freebsd
-FPC_MINVER=		2.2.0
-UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_MINVER}/units/${BUILDNAME}
 
 PLIST_FILES=		bin/nbc \
 			share/nbc/history.txt \
@@ -39,16 +35,6 @@ PLIST_FILES=		bin/nbc \
 			include/nbc/NXTDefs.h
 PLIST_DIRS=		share/nbc \
 			include/nbc
-
-post-depends:
-.if exists(${LOCALBASE}/bin/fpc)
-FPC_VER!=	${LOCALBASE}/bin/fpc -iV
-FPC_REQVER!=	${ECHO_CMD} $$(${EXPR} ${FPC_VER:C/^[^\.]*\.//} \>= ${FPC_MINVER:C/^[^\.]*\.//})
-
-.if (${FPC_REQVER} != 1)
-IGNORE=	requires fpc ${FPC_MINVER} or above. Please upgrade
-.endif
-.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/nbc ${PREFIX}/share/nbc
