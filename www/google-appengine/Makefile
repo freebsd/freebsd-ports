@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-PROJECTHOST=	googleappengine
 DISTNAME=	${PORTNAME:S|-|_|}_${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Development tools for Google App Engine (SDK)
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-imaging
+
+PROJECTHOST=	googleappengine
 
 NO_BUILD=	yes
 
