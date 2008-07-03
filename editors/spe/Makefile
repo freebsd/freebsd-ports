@@ -6,32 +6,49 @@
 #
 
 PORTNAME=	SPE
-PORTVERSION=	0.8.3.c
-PORTREVISION=	2
+PORTVERSION=	0.8.4.h
+#PORTREVISION=	0
 CATEGORIES=	editors devel python
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	python
-DISTNAME=	${PORTNAME}-${PORTVERSION}-wx2.6.1.0
+DISTNAME=	${PORTNAME:L}-${PORTVERSION}-wx2.6.1.0
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Stani's Python Editor
 
+NO_BUILD=	yes
+
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
 USE_WX=		2.6
 WANT_UNICODE=	yes
 WX_COMPS=	python
 
 OPTIONS=	ENCRYPTED_DEBUG "Enable encrypted debug in SPE" off
 
-SPEDOCS=	${PYTHON_SITELIBDIR}/_${PORTNAME:L}/doc
-SPEXAMPLES=	${PYTHON_SITELIBDIR}/_${PORTNAME:L}/examples
-WINSCRIPT=	spe_wininst.py
+REINPLACE_ARGS=	-i.bak -E -e "1s,^(\#!.* )python$$,\1 -S PYTHONPATH=${DATADIR} ${PYTHON_CMD},1"
+
+WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
+SPEDOCS=	${DATADIR}/_spe/doc
+SPEXAMPLES=	${DATADIR}/_spe/examples
+SPESCRIPTS=	spe SPE.py SPE_DEBUG.py
 
 LN_OPTS=	-sf
 RM_OPTS=	-R
 
-post-install:
+DESKTOP_ENTRIES=	"SPE (Stani's Python Editor)" \
+			"Integrated Python Development Environment" \
+			"${DATADIR}/_spe/images/spe.png" \
+			"spe" \
+			"Development;IDE;Debugger;GUIDesigner;" \
+			true
+post-patch:
+	@cd ${WRKSRC}/_spe && ${REINPLACE_CMD} ${SPESCRIPTS} && ${RM} ${RM_OPTS} *.bak
+
+do-install:
+	@${MKDIR} ${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} _spe ${DATADIR} && \
+	${LN} ${LN_OPTS} ${DATADIR}/_spe/spe ${PREFIX}/bin/spe
+
 # documentation
 .if !defined (NOPORTDOCS)
 	@${MV} ${SPEDOCS} ${DOCSDIR} && \
@@ -40,10 +57,16 @@ post-install:
 	@${RM} ${RM_OPTS} ${SPEDOCS}
 .endif
 # examples
+.if !defined (NOPORTEXAMPLES)
 	@${MV} ${SPEXAMPLES} ${EXAMPLESDIR} && \
 	${LN} ${LN_OPTS} ${EXAMPLESDIR} ${SPEXAMPLES}
-# rm Windows script
-	@${RM} ${PREFIX}/bin/${WINSCRIPT}
+.else
+	@${RM} ${RM_OPTS} ${SPEXAMPLES}
+.endif
+
+post-install:
+	@cd ${DATADIR}/_spe && \
+	${CHMOD} ${BINMODE} ${SPESCRIPTS}
 
 .include <bsd.port.pre.mk>
 
