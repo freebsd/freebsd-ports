@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epic5
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.9
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
 		http://tehran.lain.pl/epic-mirror/EPIC5-BETA/ \
