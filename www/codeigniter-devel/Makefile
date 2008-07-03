@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	www
 MASTER_SITES=	http://codeigniter.com/download_files/
 DISTNAME=	CodeIgniter_${PORTVERSION}
@@ -172,6 +172,11 @@ post-install:
 	@for i in ${CI_CONF_FILES}; do \
 		if [ ! -f ${WWWDIR}/$$i ]; then \
 			${CP} -p ${WWWDIR}/$$i.sample ${WWWDIR}/$$i; \
+		else \
+			${ECHO_MSG} "===> Customized ${WWWDIR}/$$i has not been overwritten"; \
+			if [ ! -z "$UPGRADE_TOOL" ]; then \
+				${ECHO_MSG} "===> WARNING: You may have to manually merge changes to ${WWWDIR}/$$i.sample into ${WWWDIR}/$$i"; \
+			fi; \
 		fi; \
 	done
 .if defined(WITH_APACHE)
@@ -189,7 +194,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}/user_guide/ && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
+
 	@${CAT} ${PKGMESSAGE}
+
 .if ${CGI_EXT} == "-cgi"
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"Your CodeIgniter installation was configured to use the PHP CGI binary."
