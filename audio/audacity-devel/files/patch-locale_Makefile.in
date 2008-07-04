@@ -1,0 +1,11 @@
+--- locale/Makefile.in	2008-07-04 23:33:51.000000000 +0000
++++ locale/Makefile.in.orig	2008-07-04 23:33:28.000000000 +0000
+@@ -14,7 +14,7 @@
+ DATADIR=@datadir@
+ # This is an intermediate directory that all files destined for installation
+ # get put into on the way (make DESTDIR=/foo install).
+-DESTDIR=@destdir@
++DESTDIR=
+ # this is where locale-dependant stuff (i.e. .mo files) goes
+ LOCALEDIR=@localedir@
+ INSTALL=@INSTALL@
