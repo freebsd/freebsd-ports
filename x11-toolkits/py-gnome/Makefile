@@ -7,7 +7,7 @@
 
 PORTNAME=	py-gnome
 PORTVERSION=	1.4.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python/1.4
@@ -30,26 +30,21 @@ CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}				\
 		--with-gtkhtml
 
 EG_SRC_DIR=	${WRKSRC}/pygnome/examples
-EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
+EG_DST_DIR=	${EXAMPLESDIR}
 
 CONFLICTS=	py*-gnome-2*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure ${WRKSRC}/pygtk/configure
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
+		${WRKSRC}/configure ${WRKSRC}/pygtk/configure
 
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 post-install:
 	${MKDIR} ${EG_DST_DIR}
 	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xvf -
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
 	${FIND} ${EG_DST_DIR} -type d -print | ${XARGS} ${CHMOD} 0555
 	${FIND} ${EG_DST_DIR} -type f -print | ${XARGS} ${CHMOD} 0444
-.else
-PLIST=		${WRKDIR}/PLIST.nodocs
-pre-install:
-	${RM} -f ${PLIST}
-	${GREP} -E -v '^(@dirrm )?(share/examples/)|(share/doc/)'       \
-		${PKGDIR}/pkg-plist > ${PLIST}
 .endif
 
 .include <bsd.port.mk>
