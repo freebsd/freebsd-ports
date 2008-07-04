@@ -1,5 +1,5 @@
 --- src/tcd.c.orig	2004-06-15 22:32:31.000000000 +0200
-+++ src/tcd.c	2008-06-27 22:55:04.000000000 +0200
++++ src/tcd.c	2008-07-04 20:09:09.000000000 +0200
 @@ -33,6 +33,7 @@
  #include <unistd.h>
  
@@ -8,7 +8,19 @@
  
  #include "cd-utils.h"
  #include "cddb.h"
-@@ -179,6 +180,26 @@
+@@ -134,11 +135,6 @@
+     }
+ }
+ 
+-static void handle_repeat_track(void)
+-{
+-    state.play_method = REPEAT_TRK;
+-}
+-
+ static void handle_eject(void)
+ {
+     SDL_CDEject(state.cdrom);
+@@ -179,6 +175,26 @@
      }
  }
  
@@ -35,7 +47,7 @@
  static void init_SDL(int cdrom_num)
  {
      int err = SDL_Init(SDL_INIT_CDROM);
-@@ -217,11 +238,11 @@
+@@ -217,11 +233,11 @@
  static void detect_disc_change(void)
  {
      unsigned long discid = cddb_discid(state.cdrom);
@@ -49,7 +61,7 @@
          state.current_discid = discid;
      }
  }
-@@ -237,7 +258,7 @@
+@@ -237,7 +253,7 @@
      state.play_method = NORMAL;
  
      init_SDL((argc > 1) ? strtol(argv[1], NULL, 0) : 0);
@@ -58,12 +70,22 @@
      tcd_ui_init();
      tcd_ui_update(&state);
      state.current_discid = cddb_discid(state.cdrom);
-@@ -262,6 +283,8 @@
-             case 's': case 'S': handle_stop(); break;
+@@ -255,13 +271,16 @@
+             case '-': case '_': handle_prev_track(); break;
+             case 'g': case 'G': handle_goto(); break;
+             case 'c': case 'C': state.play_method = REPEAT_CD; break;
+-            case 'r': case 'R': handle_repeat_track(); break;
++            case 'r': case 'R': state.play_method = REPEAT_TRK; break;
+             case 'm': case 'M': handle_method(); break;
+             case 'e': case 'E': handle_eject(); break;
+             case 't': case 'T': handle_editor(); break;
+-            case 's': case 'S': handle_stop(); break;
++            case 's': case 'S': state.play_method = NORMAL;
++                                handle_stop(); break;
              case ']': handle_skip_forward(); break;
              case '[': handle_skip_back(); break;
-+	    case '*': inc_volume(); break;
-+	    case '/': dec_volume(); break;
++            case '*': inc_volume(); break;
++            case '/': dec_volume(); break;
  	}
      }
      tcd_ui_shutdown();
