@@ -9,6 +9,7 @@
     SUBDIR += bind9-dlz
     SUBDIR += bind9-sdb-ldap
     SUBDIR += bind94
+    SUBDIR += bind95
     SUBDIR += bindgraph
     SUBDIR += c-ares
     SUBDIR += checkdns
