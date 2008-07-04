@@ -7,21 +7,20 @@
 
 PORTNAME=	Data-ICal
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	deskutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Data::ICal - Generates iCalendar (RFC 2445) calendar files
-TAGS=	calendar ical devel
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/LongString.pm:${PORTSDIR}/devel/p5-Test-LongString \
-		${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
-		${SITE_PERL}/Text/vFile/asData.pm:${PORTSDIR}/devel/p5-Text-vFile-asData \
-		p5-Class-ReturnValue>0:${PORTSDIR}/devel/p5-Class-ReturnValue
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Test-LongString>=0:${PORTSDIR}/devel/p5-Test-LongString \
+		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-ReturnValue>=0:${PORTSDIR}/devel/p5-Class-ReturnValue \
+		p5-Text-vFile-asData>=0:${PORTSDIR}/devel/p5-Text-vFile-asData
 
 PERL_CONFIGURE=	yes
 
