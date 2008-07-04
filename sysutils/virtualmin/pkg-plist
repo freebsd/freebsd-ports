@@ -50,6 +50,7 @@ lib/webmin/virtual-server/disable_domain.cgi
 lib/webmin/virtual-server/domain-template
 lib/webmin/virtual-server/domain_form.cgi
 lib/webmin/virtual-server/domain_setup.cgi
+lib/webmin/virtual-server/domainname-lib.pl
 lib/webmin/virtual-server/download_cert.cgi
 lib/webmin/virtual-server/dynip-lib.pl
 lib/webmin/virtual-server/dynip.pl
@@ -292,6 +293,7 @@ lib/webmin/virtual-server/migrate_form.cgi
 lib/webmin/virtual-server/migration-cpanel.pl
 lib/webmin/virtual-server/migration-ensim.pl
 lib/webmin/virtual-server/migration-plesk.pl
+lib/webmin/virtual-server/migration-psa.pl
 lib/webmin/virtual-server/modify-domain.pl
 lib/webmin/virtual-server/modify-spam.pl
 lib/webmin/virtual-server/module.info
@@ -320,6 +322,9 @@ lib/webmin/virtual-server/newfeatures-all/3.58/7-backupowners
 lib/webmin/virtual-server/newfeatures-all/3.58/7-backupsched
 lib/webmin/virtual-server/newfeatures-all/3.58/8-dutch
 lib/webmin/virtual-server/newfeatures-all/3.58/9-dbhosts
+lib/webmin/virtual-server/newfeatures-all/3.59/2-plesk7
+lib/webmin/virtual-server/newfeatures-all/3.59/3-apihelper
+lib/webmin/virtual-server/newfeatures-all/3.59/4-purgeftp
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
