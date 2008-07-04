@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gcompris
-DISTVERSION=	8.3.2-2
-PORTREVISION=	6
+DISTVERSION=	8.4.5
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/gcompris
 
@@ -21,17 +20,18 @@ BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html \
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ao.3:${PORTSDIR}/audio/libao \
 		assetml.0:${PORTSDIR}/devel/libassetml \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3
+		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
+		gnet-2.0.0:${PORTSDIR}/net/gnet2
 RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-8.3.2
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_SDL=	mixer
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui pygnome2
+CONFIGURE_ARGS=	--enable-gnet
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="${PTHREAD_LIBS} -lm"
