@@ -3525,3 +3525,5 @@ misc/goblin|math/goblin|2008-06-30|repo move to a better category
 editors/openoffice.org-1.0||2008-07-02|Removed
 editors/openoffice.org-1.1||2008-07-02|Removed
 editors/openoffice.org-1.1-devel||2008-07-02|Removed
+deskutils/gdeskcal||2008-07-03|Disappeared from master site
+deskutils/gdeskcal-skins||2008-07-03|Disappeared from master site
