@@ -221,6 +221,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/Encodings/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/Encodings/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/Encodings/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/Entrez/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/Entrez/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/Entrez/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Bio/Enzyme/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/Enzyme/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/Enzyme/__init__.pyo
@@ -338,9 +341,6 @@
 %%PYTHON_SITELIBDIR%%/Bio/Geo/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/Geo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/Geo/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Bio/Geo/geo_format.py
-%%PYTHON_SITELIBDIR%%/Bio/Geo/geo_format.pyc
-%%PYTHON_SITELIBDIR%%/Bio/Geo/geo_format.pyo
 %%PYTHON_SITELIBDIR%%/Bio/Gobase/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/Gobase/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/Gobase/__init__.pyo
@@ -405,33 +405,15 @@
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/compound_format.py
-%%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/compound_format.pyc
-%%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/compound_format.pyo
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Enzyme/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Enzyme/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Enzyme/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Bio/KEGG/Enzyme/enzyme_format.py
-%%PYTHON_SITELIBDIR%%/Bio/KEGG/Enzyme/enzyme_format.pyc
-%%PYTHON_SITELIBDIR%%/Bio/KEGG/Enzyme/enzyme_format.pyo
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Map/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Map/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Map/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Bio/KEGG/Map/map_format.py
-%%PYTHON_SITELIBDIR%%/Bio/KEGG/Map/map_format.pyc
-%%PYTHON_SITELIBDIR%%/Bio/KEGG/Map/map_format.pyo
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Bio/Kabat/Record.py
-%%PYTHON_SITELIBDIR%%/Bio/Kabat/Record.pyc
-%%PYTHON_SITELIBDIR%%/Bio/Kabat/Record.pyo
-%%PYTHON_SITELIBDIR%%/Bio/Kabat/__init__.py
-%%PYTHON_SITELIBDIR%%/Bio/Kabat/__init__.pyc
-%%PYTHON_SITELIBDIR%%/Bio/Kabat/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Bio/Kabat/kabat_format.py
-%%PYTHON_SITELIBDIR%%/Bio/Kabat/kabat_format.pyc
-%%PYTHON_SITELIBDIR%%/Bio/Kabat/kabat_format.pyo
 %%PYTHON_SITELIBDIR%%/Bio/LocusLink/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/LocusLink/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/LocusLink/__init__.pyo
@@ -688,6 +670,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/PDB/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/PDB/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/PDB/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PDB/mmCIF/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/PDB/mmCIF/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PDB/mmCIF/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Bio/PDB/parse_pdb_header.py
 %%PYTHON_SITELIBDIR%%/Bio/PDB/parse_pdb_header.pyc
 %%PYTHON_SITELIBDIR%%/Bio/PDB/parse_pdb_header.pyo
@@ -715,6 +700,58 @@
 %%PYTHON_SITELIBDIR%%/Bio/Pathway/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/Pathway/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/Pathway/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/Async/Local.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/Async/Local.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/Async/Local.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/Async/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/Async/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/Async/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/Async.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/Async.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/Async.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/Controller.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/Controller.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/Controller.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/Utils.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/Utils.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/Utils.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/GenePop/Utils.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/GenePop/Utils.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/GenePop/Utils.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/GenePop/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/GenePop/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/GenePop/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Async.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Async.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Async.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Cache.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Cache.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Cache.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Controller.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Controller.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Controller.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Template.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Template.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/Template.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/data/bottle.par
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/data/decline_lambda.par
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/data/decline_split.par
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/data/island.par
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/data/simple.par
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/data/split_island.par
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/data/split_ssm_1d.par
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/data/split_ssm_2d.par
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/data/ssm_1d.par
+%%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/data/ssm_2d.par
 %%PYTHON_SITELIBDIR%%/Bio/PropertyManager.py
 %%PYTHON_SITELIBDIR%%/Bio/PropertyManager.pyc
 %%PYTHON_SITELIBDIR%%/Bio/PropertyManager.pyo
@@ -845,6 +882,12 @@
 %%PYTHON_SITELIBDIR%%/Bio/SeqRecord.py
 %%PYTHON_SITELIBDIR%%/Bio/SeqRecord.pyc
 %%PYTHON_SITELIBDIR%%/Bio/SeqRecord.pyo
+%%PYTHON_SITELIBDIR%%/Bio/SeqUtils/CheckSum.py
+%%PYTHON_SITELIBDIR%%/Bio/SeqUtils/CheckSum.pyc
+%%PYTHON_SITELIBDIR%%/Bio/SeqUtils/CheckSum.pyo
+%%PYTHON_SITELIBDIR%%/Bio/SeqUtils/lcc.py
+%%PYTHON_SITELIBDIR%%/Bio/SeqUtils/lcc.pyc
+%%PYTHON_SITELIBDIR%%/Bio/SeqUtils/lcc.pyo
 %%PYTHON_SITELIBDIR%%/Bio/SeqUtils/CodonUsage.py
 %%PYTHON_SITELIBDIR%%/Bio/SeqUtils/CodonUsage.pyc
 %%PYTHON_SITELIBDIR%%/Bio/SeqUtils/CodonUsage.pyo
@@ -1094,6 +1137,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/formatdefs/swissprot.py
 %%PYTHON_SITELIBDIR%%/Bio/formatdefs/swissprot.pyc
 %%PYTHON_SITELIBDIR%%/Bio/formatdefs/swissprot.pyo
+%%PYTHON_SITELIBDIR%%/Bio/ExPASy.py
+%%PYTHON_SITELIBDIR%%/Bio/ExPASy.pyc
+%%PYTHON_SITELIBDIR%%/Bio/ExPASy.pyo
 %%PYTHON_SITELIBDIR%%/Bio/kNN.py
 %%PYTHON_SITELIBDIR%%/Bio/kNN.pyc
 %%PYTHON_SITELIBDIR%%/Bio/kNN.pyo
@@ -1213,6 +1259,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/EUtils
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Emboss
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Encodings
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Entrez
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Enzyme
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/FSSP
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Fasta
@@ -1234,7 +1281,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG/Enzyme
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG/Map
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Kabat
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/LocusLink
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/MEME
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Medline
@@ -1248,6 +1294,13 @@
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork/Gene
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Nexus
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal/data
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/PopGen/SimCoal
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/PopGen/GenePop
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/PopGen/FDist
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/PopGen/Async
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/PopGen
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/PDB/mmCIF
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/PDB
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Parsers
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/Pathway/Rep
