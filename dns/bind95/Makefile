@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 USE_OPENSSL=	yes
 
-CONFLICTS=	bind9-9.3.* bind9-9.4.* bind9-dlz-* bind9-sdb-mysql-* host-*
+CONFLICTS=	bind9-9.[34].* bind9-dlz-* bind9-sdb-ldap-* host-*
 
 OPTIONS=	XML "Support for xml statistics output" on \
 		IDN "Add IDN support to dig, host, etc." off \
@@ -156,7 +156,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
-		${WRKSRC}/README ${WRKSRC}/KNOWN-DEFECTS ${DOCSDIR}/
+	${WRKSRC}/README ${WRKSRC}/README.idnkit ${WRKSRC}/KNOWN-DEFECTS \
+	    ${DOCSDIR}/
 .endif
 
 	@${CAT} ${PKGMESSAGE}
