@@ -1,0 +1,14 @@
+--- configure.orig	2008-06-26 05:04:55.000000000 +0000
++++ configure	2008-06-26 05:05:13.000000000 +0000
+@@ -21924,11 +21924,7 @@
+     if test "${ac_cv_dnet_bsd_bpf+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-  if test -c /dev/bpf0 ; then
+ 	    ac_cv_dnet_bsd_bpf=yes
+-	else
+-	    ac_cv_dnet_bsd_bpf=no
+-	fi
+ fi
+ 
+     echo "$as_me:$LINENO: result: $ac_cv_dnet_bsd_bpf" >&5
