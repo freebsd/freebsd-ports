@@ -7,6 +7,7 @@
 
 PORTNAME=	qtpfsgui
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -23,23 +24,24 @@ LIB_DEPENDS=	exiv2.3:${PORTSDIR}/graphics/exiv2 \
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui imageformats \
 		linguist_build moc_build qmake_build rcc_build uic_build
+INSTALL_TARGET=	install_target install_menu install_icon install_i18n
 INSTALLS_ICONS=	yes
 
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 
+.if !defined(NOPORTOOCS)
+INSTALL_TARGET+=install_htmls
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^QMAKE_CXXFLAGS/d ; \
-		 s|PREFIX =.*$$|PREFIX = ${PREFIX}|g ; \
-		 /^INSTALLS/s|docs||g' ${WRKSRC}/project.pro
+		 s|PREFIX =.*$$|PREFIX = ${PREFIX}|g' ${WRKSRC}/project.pro
 .for file in src/MainWindow/mainWindow.cpp \
 	src/Preferences/preferencesDialog.cpp \
 	src/TransplantExif/transplant.cpp
-	@${REINPLACE_CMD} -e 's|/usr/local/share/qtpfsgui/|${DATADIR}/|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local/share/qtpfsgui/|${DOCSDIR}/|g' \
 		${WRKSRC}/${file}
 .endfor
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '316s|htmls||' ${WRKSRC}/project.pro
-.endif
 
 do-configure:
 	@${LRELEASE} ${WRKSRC}/project.pro
