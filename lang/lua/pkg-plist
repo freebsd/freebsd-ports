@@ -10,6 +10,8 @@ bin/luac-%%LUA_VER%%
 %%LUA_INCDIR%%/luaconf.h
 %%LUA_INCDIR%%/lualib.h
 %%LUA_LIBDIR%%/liblua.a
+%%LUA_LIBDIR%%/liblua.so
+%%LUA_LIBDIR%%/liblua.so.1
 libdata/pkgconfig/lua-%%LUA_VER%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/amazon.gif
