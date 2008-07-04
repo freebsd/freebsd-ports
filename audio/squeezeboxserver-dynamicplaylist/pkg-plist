@@ -27,6 +27,7 @@
 %%SLIMDIR%%/Plugins/DynamicPlayList/README.txt
 %%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql/dbcreate.sql
 %%SLIMDIR%%/Plugins/DynamicPlayList/SQL/mysql/dbupgrade_skipped.sql
+%%SLIMDIR%%/Plugins/DynamicPlayList/custom-types.conf
 %%SLIMDIR%%/Plugins/DynamicPlayList/iPengConfiguration/mix.ipeng.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/install.xml
 %%SLIMDIR%%/Plugins/DynamicPlayList/lib/Plugins-DynamicPlayList-Plugin.par
