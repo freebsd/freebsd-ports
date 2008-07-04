@@ -9,14 +9,14 @@ PORTNAME=	opencart
 PORTVERSION=	0.7.7
 CATEGORIES=	www misc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-PROJECTHOST=	open-cart
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An open source PHP-based online shopping cart system
 
+PROJECTHOST=	open-cart
 USE_ZIP=	yes
-USE_PHP=	mysql gd
+USE_PHP=	mysql gd session pcre
 WRKSRC=		${WRKDIR}/upload
 
 NO_BUILD=	yes
