@@ -955,6 +955,7 @@ bind9                           ports/dns/bind9
 bind9-dlz                       ports/dns/bind9-dlz
 bind9-sdb-ldap                  ports/dns/bind9-sdb-ldap
 bind94                          ports/dns/bind94
+bind95                          ports/dns/bind95
 bindgraph                       ports/dns/bindgraph
 bindtest                        ports/net/bindtest
 bing                            ports/net/bing
@@ -3768,8 +3769,6 @@ gdbmods                         ports/devel/gdbmods
 gdc                             ports/lang/gdc
 gdcalc                          ports/math/gdcalc
 gdchart                         ports/graphics/gdchart
-gdeskcal                        ports/deskutils/gdeskcal
-gdeskcal-skins                  ports/deskutils/gdeskcal-skins
 gdesklets                       ports/deskutils/gdesklets
 gdesklets-clock                 ports/x11-clocks/gdesklets-clock
 gdesklets-countdown             ports/x11-clocks/gdesklets-countdown
@@ -4181,7 +4180,6 @@ gnome-libs                      ports/x11/gnome-libs
 gnome-look                      ports/x11-themes/gnome-look
 gnome-mag                       ports/accessibility/gnome-mag
 gnome-media                     ports/audio/gnome-media
-gnome-menu-editor               ports/deskutils/gnome-menu-editor
 gnome-menus                     ports/x11/gnome-menus
 gnome-mime-data                 ports/misc/gnome-mime-data
 gnome-mount                     ports/sysutils/gnome-mount
