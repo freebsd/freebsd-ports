@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	serf
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
@@ -22,8 +22,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=	--with-apr=${PREFIX}/bin/apr-1-config \
-			--with-apr-util=${PREFIX}/bin/apu-1-config
+CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-1-config \
+			--with-apr-util=${LOCALBASE}/bin/apu-1-config
 
 post-install:
 .if !defined(NOPORTDOCS)
