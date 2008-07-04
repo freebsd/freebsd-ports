@@ -1,5 +1,7 @@
 bin/gnome-schedule
 %%DATADIR%%/applications/gnome-schedule.desktop
+%%PORTDOCS%%%%DOCSDIR%%/addingandediting.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%DATADIR%%/gnome-schedule/addWindow.py
 %%DATADIR%%/gnome-schedule/addWindow.pyc
 %%DATADIR%%/gnome-schedule/addWindow.pyo
@@ -39,3 +41,5 @@ bin/gnome-schedule
 %%DATADIR%%/gnome-schedule/setuserWindow.pyo
 %%DATADIR%%/pixmaps/gnome-schedule.png
 @dirrm %%DATADIR%%/gnome-schedule
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/applications

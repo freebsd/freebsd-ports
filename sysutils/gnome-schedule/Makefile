@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-schedule
 PORTVERSION=	0.9.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -24,15 +24,12 @@ USE_GNOME=	gnomeprefix pygnome2
 GNU_CONFIGURE=	yes
 DATADIR=	${PREFIX}/share
 
-PORTDOCS=	addingandediting.html index.html
-
 .include <bsd.port.pre.mk>
 
 post-patch:
 .if defined(NOPORTDOCS)
-.for f in ${PORTDOCS}
-	@${REINPLACE_CMD} -e 's|${f}||' ${WRKSRC}/doc/Makefile.in
-.endfor
+	@${REINPLACE_CMD} -e 's|pixmaps doc po|pixmaps po|g' \
+		${WRKSRC}/Makefile.in
 .else
 	@${REINPLACE_CMD} -e 's|gnome-schedule-$$(VERSION)|gnome-schedule|' \
 		${WRKSRC}/doc/Makefile.in
