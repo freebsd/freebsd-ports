@@ -1,11 +1,11 @@
 bin/qtpfsgui
 share/applications/qtpfsgui.desktop
 share/pixmaps/qtpfsgui.png
+share/icons/hicolor/48x48/apps/qtpfsgui.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/html/dcraw.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/hints.html
@@ -21,16 +21,20 @@ share/pixmaps/qtpfsgui.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/tonemapdialog.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual.html
-%%NLS%%%%DATADIR%%/i18n/lang_de.qm
-%%NLS%%%%DATADIR%%/i18n/lang_es.qm
-%%NLS%%%%DATADIR%%/i18n/lang_it.qm
-%%NLS%%%%DATADIR%%/i18n/lang_fr.qm
-%%NLS%%%%DATADIR%%/i18n/lang_pl.qm
-%%NLS%%%%DATADIR%%/i18n/lang_tr.qm
-%%NLS%%%%DATADIR%%/i18n/lang_ru.qm
-%%NLS%%%%DATADIR%%/i18n/lang_cs.qm
-%%NLS%%@dirrm %%DATADIR%%/i18n
-%%NLS%%@dirrm %%DATADIR%%
+%%DATADIR%%/i18n/lang_cs.qm
+%%DATADIR%%/i18n/lang_de.qm
+%%DATADIR%%/i18n/lang_es.qm
+%%DATADIR%%/i18n/lang_fr.qm
+%%DATADIR%%/i18n/lang_it.qm
+%%DATADIR%%/i18n/lang_pl.qm
+%%DATADIR%%/i18n/lang_ru.qm
+%%DATADIR%%/i18n/lang_tr.qm
+@dirrm %%DATADIR%%/i18n
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
