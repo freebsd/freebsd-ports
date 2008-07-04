@@ -29,10 +29,12 @@ include/apr-1/apr_inherit.h
 include/apr-1/apr_ldap.h
 include/apr-1/apr_ldap_init.h
 include/apr-1/apr_ldap_option.h
+include/apr-1/apr_ldap_rebind.h
 include/apr-1/apr_ldap_url.h
 include/apr-1/apr_lib.h
 include/apr-1/apr_md4.h
 include/apr-1/apr_md5.h
+include/apr-1/apr_memcache.h
 include/apr-1/apr_mmap.h
 include/apr-1/apr_network_io.h
 include/apr-1/apr_optional.h
@@ -56,6 +58,7 @@ include/apr-1/apr_support.h
 include/apr-1/apr_tables.h
 include/apr-1/apr_thread_cond.h
 include/apr-1/apr_thread_mutex.h
+include/apr-1/apr_thread_pool.h
 include/apr-1/apr_thread_proc.h
 include/apr-1/apr_thread_rwlock.h
 include/apr-1/apr_time.h
@@ -76,10 +79,10 @@ lib/aprutil.exp
 lib/libapr-1.a
 lib/libapr-1.la
 lib/libapr-1.so
-lib/libapr-1.so.2
+lib/libapr-1.so.%%SHLIB_MAJOR%%
 lib/libaprutil-1.a
 lib/libaprutil-1.la
 lib/libaprutil-1.so
-lib/libaprutil-1.so.2
+lib/libaprutil-1.so.%%SHLIB_MAJOR%%
 @dirrm build-1
 @dirrm include/apr-1

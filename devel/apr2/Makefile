@@ -15,7 +15,7 @@
 # APR_UTIL_WITH_LDAP:		force dependency on OpenLDAP
 
 PORTNAME=	apr
-PORTVERSION=	1.2.12
+PORTVERSION=	1.3.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -35,9 +35,12 @@ USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 WRKSRC=	${WRKDIR}
 
+PLIST_SUB=  SHLIB_MAJOR="${SHLIB_MAJOR}"
+SHLIB_MAJOR=	3
+
 APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
-			--with-expat=${PREFIX} \
-			--with-iconv=${PREFIX}
+			--with-expat=${LOCALBASE} \
+			--with-iconv=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
@@ -85,8 +88,8 @@ PKGNAMESUFFIX=	-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
 
 .if defined(APR_UTIL_WITH_LDAP)
 USE_OPENLDAP=	yes
-APR_UTIL_CONF_ARGS+=	--with-ldap-include=${PREFIX}/include \
-	--with-ldap-lib=${PREFIX}/lib --with-ldap=ldap
+APR_UTIL_CONF_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
+	--with-ldap-lib=${LOCALBASE}/lib --with-ldap=ldap
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ldap
 .else
