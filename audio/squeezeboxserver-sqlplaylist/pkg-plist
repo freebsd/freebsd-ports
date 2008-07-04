@@ -19,6 +19,11 @@
 %%SLIMDIR%%/Plugins/SQLPlayList/LICENSE.txt
 %%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomalbums.sql.values.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomartists.sql.values.xml
+%%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomforalbum.sql.values.xml
+%%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomforartist.sql.values.xml
+%%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomforgenre.sql.values.xml
+%%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomforplaylist.sql.values.xml
+%%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomforyear.sql.values.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomtracks.sql.values.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/Playlists/randomyears.sql.values.xml
 %%SLIMDIR%%/Plugins/SQLPlayList/README.txt

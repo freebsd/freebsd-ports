@@ -112,6 +112,12 @@
 %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedplaylists.xml
 %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedyears.template
 %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates/topratedyears.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_mostplayedforartist.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_mostplayedforgenre.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_mostplayedforyear.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedforartist.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedforgenre.xml
+%%SLIMDIR%%/Plugins/TrackStat/Playlists/trackstat_topratedforyear.xml
 %%SLIMDIR%%/Plugins/TrackStat/README.txt
 %%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbcreate.sql
 %%SLIMDIR%%/Plugins/TrackStat/SQL/mysql/dbupgrade_added.sql
@@ -128,6 +134,7 @@
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/iPengConfiguration
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/SQL/mysql
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/SQL
+@dirrm %%SLIMDIR%%/Plugins/TrackStat/Playlists
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/PlaylistTemplates
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/Mixes
 @dirrm %%SLIMDIR%%/Plugins/TrackStat/Menus
