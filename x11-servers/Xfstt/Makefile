@@ -7,9 +7,10 @@
 
 PORTNAME=	xfstt
 PORTVERSION=	1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-servers
-MASTER_SITES=	http://download.berlios.de/xfstt/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A TrueType font server for X11
@@ -23,6 +24,8 @@ MAN1=		xfstt.1x
 
 TTFONTDIR=	${PREFIX}/lib/X11/fonts/TrueType
 
+SUB_FILES=	pkg-message
+
 post-patch:
 .for file in INSTALL doc/xfstt.1x src/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%TTFONTDIR%%|${TTFONTDIR}|g' ${WRKSRC}/${file}
@@ -33,10 +36,10 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xfstt.sh ${PREFIX}/etc/rc.d
 	@${MKDIR} ${TTFONTDIR}
-.if !defined{NOPORTDOCS}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in CHANGES INSTALL THANKS
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for _file in CHANGES INSTALL THANKS
+	${INSTALL_DATA} ${WRKSRC}/${_file} ${DOCSDIR}
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
