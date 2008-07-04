@@ -5,7 +5,7 @@
  }
  
 +
-+#ifdef 1
++#if 1
 +
 +/**
 + * This is for the change to GfxFont's getNextChar() call.
