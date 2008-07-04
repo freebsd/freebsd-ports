@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	dovecot-sieve
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dovecot.org/releases/sieve/ \
 		http://www.is-root.com/myports/
 
-MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
+MAINTAINER=	robin@isometry.net
 COMMENT=	A sieve plugin for the Dovecot LDA called 'deliver'
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:build
