@@ -7,28 +7,23 @@
 
 PORTNAME=	libdnet
 PORTVERSION=	1.11
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER?=	onatan@gmail.com
-COMMENT?=	A simple interface to low level networking routines
+COMMENT=	A simple interface to low level networking routines
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
 .if !defined(LIBDNET_SLAVE)
-CONFIGURE_ARGS+=--without-python
+CONFIGURE_ARGS+=	--without-python
 USE_LDCONFIG=	yes
 
 MAN3=	dnet.3
 MAN8=	dnet.8
-.endif
-
-.if !exists(/dev/bpf0)
-BROKEN=	Does not build properly without /dev/bpf0
 .endif
 
 .include <bsd.port.pre.mk>
