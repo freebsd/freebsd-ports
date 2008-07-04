@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An utility to query DNS servers
 
-CONFLICTS=	bind-8.* bind84-8.* bind9-9.* bind9-dlz-* bind9-sdb-mysql-* skalibs-*
+CONFLICTS=	bind9-9.* bind9-dlz-* bind9-sdb-ldap-* skalibs-*
 NO_WRKSUBDIR=	yes
 
 MAN1=		host.1

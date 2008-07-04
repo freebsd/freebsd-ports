@@ -24,7 +24,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Daemon, with DLZ extensions
 
-CONFLICTS?=	bind-8.* bind84-8.* bind9-9.* bind9-sdb-mysql-* host-* skalibs-*
+CONFLICTS?=	bind9-9.* bind9-sdb-ldap-* host-* skalibs-*
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 
 DLZVERSION=	0.7.0
