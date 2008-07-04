@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080704:
+  AFFECTS: users of misc/shared-mime-info
+  AUTHOR: FreeBSD GNOME Team <gnome@FreeBSD.org>
+
+  The misc/shared-mime-info has bee updated to 0.40. The Mime Types caches
+  have been changed a bit. If you have created any custom MIME types. You
+  will need to run update-mime-database to update your local Mime Types
+  caches.
+
+  $ update-mime-database ~/.local/share/mime/
+
 20080702:
   AFFECTS: users of irc/ratbox-services
   AUTHOR: Beech Rintoul <beech@FreeBSD.org>
