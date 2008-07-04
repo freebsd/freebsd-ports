@@ -8,6 +8,8 @@ include/ctpp2/CTPP2.hpp
 include/ctpp2/CTPP2BitIndex.hpp
 include/ctpp2/CTPP2CharIterator.hpp
 include/ctpp2/CTPP2Compiler.hpp
+include/ctpp2/CTPP2Error.hpp
+include/ctpp2/CTPP2ErrorCodes.h
 include/ctpp2/CTPP2FileSourceLoader.hpp
 include/ctpp2/CTPP2GlobalDefines.h
 include/ctpp2/CTPP2JSONFileParser.hpp
@@ -46,7 +48,7 @@ include/ctpp2/VMSyscall.hpp
 lib/libctpp2-st.a
 lib/libctpp2.so
 lib/libctpp2.so.2
-lib/libctpp2.so.2.3.0
+lib/libctpp2.so.2.3.3
 share/locale/ru_RU.CP1251/LC_MESSAGES/ctpp2.mo
 share/locale/ru_RU.KOI8-R/LC_MESSAGES/ctpp2.mo
 @dirrmtry share/locale/ru_RU.KOI8-R/LC_MESSAGES
