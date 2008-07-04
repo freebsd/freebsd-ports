@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.51
+PORTVERSION=	0.53
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SA/SARTAK
+MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -38,12 +38,9 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Recipe10.3 \
 	Moose::Cookbook::Recipe21.3 \
 	Moose::Cookbook::Recipe22.3 \
-	Moose::Cookbook::Snack::ArrayRef.3 \
-	Moose::Cookbook::Snack::BUILD.3 \
-	Moose::Cookbook::Snack::HashRef.3 \
 	Moose::Cookbook::Snack::Keywords.3 \
-	Moose::Cookbook::Snack::Perl5ObjsVsMooseObjs.3 \
 	Moose::Cookbook::Snack::Types.3 \
+	Moose::Cookbook::Style.3 \
 	Moose::Cookbook::WTF.3 \
 	Moose::Meta::Attribute.3 \
 	Moose::Meta::Class.3 \
