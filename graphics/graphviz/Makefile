@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.20.0
+PORTVERSION=	2.20.2
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
@@ -30,6 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
+CONFIGURE_ENV=	CONFIG_SHELL=${LCOALBASE}/bin/bash
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
 MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 \
@@ -89,10 +91,6 @@ OPTIONS=	ICONV "Build with ICONV support" on \
 		GUILE "Guile bindings (swig)" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 603000
-BROKEN=		configure needs a newer sh
-.endif
 
 CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--enable-dependency-tracking \
@@ -402,6 +400,8 @@ pre-patch:
 		${WRKSRC}/cmd/smyrna/tvnodes.h
 	@${REINPLACE_CMD} -e 's|#include "regex_win32.h"|#include <regex.h>|' \
 		${WRKSRC}/cmd/smyrna/btree.c
+	@${REINPLACE_CMD} -e 's|#! /bin/sh|#! /${LOCALBASE}/bin/bash|g' \
+		${WRKSRC}/configure
 
 .if defined(WITH_TK)
 post-install-script:
