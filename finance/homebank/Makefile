@@ -7,7 +7,7 @@
 
 PORTNAME=	homebank
 PORTVERSION=	3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -15,7 +15,7 @@ MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Manage your personal accounts at home
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gtk20 desktopfileutils
+USE_GNOME=	gnomeprefix gtk20 desktopfileutils librsvg2
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
