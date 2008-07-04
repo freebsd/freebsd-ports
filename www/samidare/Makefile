@@ -7,6 +7,7 @@
 
 PORTNAME=	samidare
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.a-k-r.org./samidare/
 
@@ -40,8 +41,10 @@ post-build:
 
 do-install:
 	cd ${INSTALL_WRKSRC}; ${INSTALL_SCRIPT} ${PORTNAME} ${PREFIX}/bin
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	cd ${INSTALL_WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${INSTALL_WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
