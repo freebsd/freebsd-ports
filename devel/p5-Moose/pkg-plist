@@ -13,12 +13,9 @@
 %%SITE_PERL%%/Moose/Cookbook/Recipe10.pod
 %%SITE_PERL%%/Moose/Cookbook/Recipe21.pod
 %%SITE_PERL%%/Moose/Cookbook/Recipe22.pod
-%%SITE_PERL%%/Moose/Cookbook/Snack/ArrayRef.pod
-%%SITE_PERL%%/Moose/Cookbook/Snack/BUILD.pod
-%%SITE_PERL%%/Moose/Cookbook/Snack/HashRef.pod
 %%SITE_PERL%%/Moose/Cookbook/Snack/Keywords.pod
-%%SITE_PERL%%/Moose/Cookbook/Snack/Perl5ObjsVsMooseObjs.pod
 %%SITE_PERL%%/Moose/Cookbook/Snack/Types.pod
+%%SITE_PERL%%/Moose/Cookbook/Style.pod
 %%SITE_PERL%%/Moose/Cookbook/WTF.pod
 %%SITE_PERL%%/Moose/Meta/Attribute.pm
 %%SITE_PERL%%/Moose/Meta/Class.pm
