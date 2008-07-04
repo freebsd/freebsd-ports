@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pbi-thumbnailer
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	http://www.marcuscom.com/pbi-thumbnailer/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Generates thumbnails for PC-BSD installer files
+COMMENT=	Generates icon thumbnails for PC-BSD installer files
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 gconf2
