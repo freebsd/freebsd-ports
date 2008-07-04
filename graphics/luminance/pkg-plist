@@ -35,7 +35,7 @@ share/icons/hicolor/48x48/apps/qtpfsgui.png
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%/html/images
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
