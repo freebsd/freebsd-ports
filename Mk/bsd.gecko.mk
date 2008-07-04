@@ -9,6 +9,17 @@
 #
 # 4 column tabs prevent hair loss and tooth decay!
 
+# ======================= USERS =================================
+# To specify which gecko-based backend you prefer, use something like:
+#
+# WITH_GECKO=	firefox3
+#
+# The valid backends are:
+# firefox firefox3 flock nvu seamonkey thunderbird xulrunner
+#
+# See below for more details.
+# ======================= /USERS ================================
+
 # bsd.gecko.mk abstracts the selection of gecko-based backends. It allows users
 # and porters to support any available gecko backend without needing to build
 # many conditional tests. ${USE_GECKO} is the list of backends that your port
