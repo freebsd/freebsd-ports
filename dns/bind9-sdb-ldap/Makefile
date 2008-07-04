@@ -20,7 +20,7 @@ COMMENT=	The well known Bind9, patched for use of an LDAP based backend
 
 USE_OPENLDAP=	yes
 
-CONFLICTS=	bind-8.* bind84-8.* bind9-9.* bind9-dlz-* host-* skalibs-*
+CONFLICTS=	bind9-9.* bind9-dlz-* host-* skalibs-*
 
 # ISC releases things like 9.3.0rc1, which our versioning doesn't like
 ISCVERSION=	9.4.1-P1
