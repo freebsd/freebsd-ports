@@ -1,0 +1,16 @@
+--- configure.in.orig	2008-06-15 05:56:12.000000000 +1000
++++ configure.in	2008-06-15 05:56:24.000000000 +1000
+@@ -1,11 +1,11 @@
+ dnl  Process this file with autoconf to produce a configure script.
+ AC_INIT(doxygen.h)
+-AM_INIT_AUTOMAKE(wbxml2, 0.9.0)
++AM_INIT_AUTOMAKE(wbxml2, 0.9.2)
+ AM_CONFIG_HEADER(config.h)
+ 
+ 
+ dnl Define common variables
+-VERSION="0.9.0"
++VERSION="0.9.2"
+ AC_SUBST(VERSION)
+ RELEASE="1"
+ AC_SUBST(RELEASE)
