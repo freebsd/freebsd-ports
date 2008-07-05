@@ -1,0 +1,37 @@
+--- CMakeLists.txt.linux.orig	2008-05-19 17:36:29.000000000 +0800
++++ CMakeLists.txt.linux	2008-06-21 08:50:58.000000000 +0800
+@@ -7,6 +7,7 @@
+ endif(FQTERM_USE_STATIC_QT)
+ 
+ ADD_DEFINITIONS(-Wall)
++ADD_DEFINITIONS(-D_OS_FREEBSD_)
+ ADD_DEFINITIONS(-DFQTERM_VERSION_STRING="\\"${FQTERM_VERSION}\\"")
+ 
+ add_subdirectory(src)
+@@ -42,6 +43,18 @@
+   ${QT_PLUGINS_DIR}/codecs/libqtwcodecs.a
+   jpeg
+   )
++else(FQTERM_USE_STATIC_QT)
++  set(FQ_QT_SHARED_PLUGINS
++  ${QT_PLUGINS_DIR}/imageformats/libqgif.so
++  ${QT_PLUGINS_DIR}/imageformats/libqjpeg.so
++  ${QT_PLUGINS_DIR}/imageformats/libqmng.so
++  ${QT_PLUGINS_DIR}/imageformats/libqsvg.so
++  ${QT_PLUGINS_DIR}/imageformats/libqtiff.so
++  ${QT_PLUGINS_DIR}/codecs/libqcncodecs.so
++  ${QT_PLUGINS_DIR}/codecs/libqjpcodecs.so
++  ${QT_PLUGINS_DIR}/codecs/libqkrcodecs.so
++  ${QT_PLUGINS_DIR}/codecs/libqtwcodecs.so
++  )
+ endif(FQTERM_USE_STATIC_QT)
+ 
+ target_link_libraries(fqterm.bin
+@@ -54,6 +67,7 @@
+   ${QT_QTNETWORK_LIBRARIES}
+   ${QT_QTSCRIPT_LIBRARIES}  
+   ${FQ_QT_STATIC_PLUGINS}
++  ${FQ_QT_SHARED_PLUGINS}
+   ${QT_LIBRARIES}
+   ${OPENSSL_LIBRARIES}
+ )
