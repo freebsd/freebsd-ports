@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cadaver
-PORTVERSION=	0.22.5
-PORTREVISION=	2
+PORTVERSION=	0.23.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/ \
 		http://www.tcbug.org/
@@ -15,7 +14,7 @@ MASTER_SITES=	http://www.webdav.org/cadaver/ \
 MAINTAINER=	josh@tcbug.org
 COMMENT=	Commandline client for DAV
 
-LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon26
+LIB_DEPENDS=	neon.28:${PORTSDIR}/www/neon28
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
