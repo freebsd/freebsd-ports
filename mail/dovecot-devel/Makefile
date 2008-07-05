@@ -17,6 +17,8 @@ COMMENT=	Secure and compact IMAP and POP3 servers
 USE_ICONV=	yes
 USE_RC_SUBR=	dovecot.sh
 
+DEPRECATED=	Please use mail/dovecot instead
+
 CONFLICTS?=	${PORTNAME}-1.[02-9].*
 
 GNU_CONFIGURE=	yes
