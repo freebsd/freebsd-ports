@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Lingua-EN-NamedEntity
-PORTVERSION=	1.7
+PORTVERSION=	1.9
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic Named Entity Extraction algorithm
 
 BUILD_DEPENDS=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
