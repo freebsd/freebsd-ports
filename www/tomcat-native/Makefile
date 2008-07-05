@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tomcat-native
-PORTVERSION=	1.1.13
-PORTREVISION=	1
+PORTVERSION=	1.1.14
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-connectors/native
@@ -16,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Tomcat native library
 
-LIB_DEPENDS=	apr-1.2:${PORTSDIR}/devel/apr
+LIB_DEPENDS=	apr-1.3:${PORTSDIR}/devel/apr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/jni/native
 
