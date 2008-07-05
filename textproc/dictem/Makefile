@@ -15,9 +15,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	m.boyarov@bsd.by
 COMMENT=	DictEm is a dict client for [X]Emacs
 
-.if ${EMACS_PORT_NAME} != "emacs21"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
-.endif
+USE_EMACS=	yes
 
 PLIST_FILES+=	${LISPDIR}/dictem.el	\
 		${LISPDIR}/dictem.elc
