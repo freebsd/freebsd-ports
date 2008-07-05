@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	atutor
-DISTVERSION=	1.6.0.1
+DISTVERSION=	1.6.1
 CATEGORIES=	www
 MASTER_SITES=	SF
-DISTNAME=	ATutor-1.6-pl1
+DISTNAME=	ATutor-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An Open Source Web-based Learning Content Management System (LCMS)
@@ -20,41 +20,23 @@ WRKSRC=		${WRKDIR}/ATutor
 .include <bsd.port.pre.mk>
 
 NO_BUILD=	yes
-PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
-SUB_LIST=	ATUTDIR=${ATUTDIR} \
-		ATUTDATDIR=${ATUTDATDIR}
 
-ATUTDIR?=	www/atutor
-ATUTDATDIR?=	${ATUTDIR}/content
-ATUTCONFIG?=	include/config.inc.php
-
-pre-install:
-	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${ATUTDIR}?g" >${PLIST}
-	@${ECHO_CMD} @dirrm ${ATUTDATDIR} >> ${PLIST}
-	@${FIND} -s -d ${WRKSRC} -type d  | ${SED} "s?${WRKSRC}?@dirrm ${ATUTDIR}?g" >> ${PLIST}
+ATUTDATDIR=	${WWWDIR}/content
+ATUTCONFIG=	include/config.inc.php
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${ATUTDIR}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${ATUTDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${PREFIX}/${ATUTDIR}' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${ATUTDIR} -type d -exec ${CHMOD} a+x {} \;
-	@${INSTALL} -d ${PREFIX}/${ATUTDATDIR}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${ATUTDATDIR}
-	@${ECHO_CMD} '@exec ${INSTALL} -d \
-		${PREFIX}/${ATUTDATDIR}' >> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${PREFIX}/${ATUTDATDIR}' >> ${TMPPLIST}
-	@${CHMOD} 755 ${PREFIX}/${ATUTDATDIR}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/${ATUTDATDIR}' >> ${TMPPLIST}
-	@${CHMOD} 666 ${PREFIX}/${ATUTDIR}/${ATUTCONFIG}
+		${WWWDIR}' >> ${TMPPLIST}
+	@${FIND} ${WWWDIR} -type d -exec ${CHMOD} a+x {} \;
+	@${INSTALL_DATA} -d ${ATUTDATDIR}
+	@${CHMOD} 777 ${ATUTDATDIR}
+	@${ECHO_CMD} '@exec ${CHMOD} 777 ${ATUTDATDIR}' >> ${TMPPLIST}
+	@${CHMOD} 666 ${WWWDIR}/${ATUTCONFIG}
 	@${ECHO_CMD} '@exec ${CHMOD} 666 \
-		${PREFIX}/${ATUTDIR}/${ATUTCONFIG}' >> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${INSTALL} -d \
-		${PREFIX}/${ATUTDIR}/themes/blumin/users' >> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${INSTALL} -d \
-		${PREFIX}/${ATUTDIR}/themes/greenmin/users' >> ${TMPPLIST}
+		${WWWDIR}/${ATUTCONFIG}' >> ${TMPPLIST}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
