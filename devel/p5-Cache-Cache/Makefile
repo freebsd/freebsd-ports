@@ -7,6 +7,7 @@
 
 PORTNAME=	Cache-Cache
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cache::Cache -- Perl Cache interface
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IPC/ShareLite.pm:${PORTSDIR}/devel/p5-IPC-ShareLite \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache \
+		p5-Digest-SHA1>=2.02:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-Error>=0.15:${PORTSDIR}/lang/p5-Error \
+		p5-IPC-ShareLite>=0.09:${PORTSDIR}/devel/p5-IPC-ShareLite
 
 PERL_CONFIGURE=	yes
 
@@ -45,4 +43,10 @@ MAN3=	Cache::BaseCache.3 \
 	Cache::SizeAwareMemoryCache.3 \
 	Cache::SizeAwareSharedMemoryCache.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Storable>=1.014:${PORTSDIR}/devel/p5-Storable
+.endif
+
+.include <bsd.port.post.mk>
