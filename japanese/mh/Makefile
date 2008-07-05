@@ -7,6 +7,7 @@
 
 PORTNAME=	mh
 PORTVERSION=	${VERSION}.j${JP_VERSION}
+PORTREVISION=	1
 CATEGORIES=	japanese mail
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://komadori.planet.sci.kobe-u.ac.jp/pub/MH/ \
@@ -51,5 +52,8 @@ post-install:
 	${MKDIR} ${DOCDIR}
 	(cd ${WRKSRC}/doc-JP; ${INSTALL_DATA} ${READMES} ${DOCDIR})
 .endif
+
+pre-install:
+	${MKDIR} ${PREFIX}/share/doc/ja-mh
 
 .include <bsd.port.post.mk>
