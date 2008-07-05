@@ -2128,7 +2128,6 @@ dice                            ports/lang/dice
 dictd                           ports/net/dictd
 dictd-database                  ports/net/dictd-database
 dictem                          ports/textproc/dictem
-dictem-emacs22                  ports/textproc/dictem-emacs22
 dictem-xemacs21-mule            ports/textproc/dictem-xemacs21-mule
 dictfmt                         ports/textproc/dictfmt
 diction                         ports/misc/diction
@@ -2237,6 +2236,7 @@ dnstracer                       ports/dns/dnstracer
 dnsutl                          ports/dns/dnsutl
 dnswalk                         ports/dns/dnswalk
 dnswall                         ports/dns/dnswall
+doc-mode.el                     ports/textproc/doc-mode.el
 docbook                         ports/textproc/docbook
 docbook-241                     ports/textproc/docbook-241
 docbook-300                     ports/textproc/docbook-300
@@ -2351,7 +2351,6 @@ drupal5-bookreview              ports/www/drupal5-bookreview
 drupal5-cck                     ports/www/drupal5-cck
 drupal5-disknode                ports/www/drupal5-disknode
 drupal5-google_analytics        ports/www/drupal5-google_analytics
-drupal5-gsitemap                ports/www/drupal5-gsitemap
 drupal5-i18n                    ports/www/drupal5-i18n
 drupal5-imagecache              ports/www/drupal5-imagecache
 drupal5-imagefield              ports/www/drupal5-imagefield
@@ -2369,6 +2368,7 @@ drupal5-ubercart                ports/www/drupal5-ubercart
 drupal5-ubrowser                ports/www/drupal5-ubrowser
 drupal5-views                   ports/www/drupal5-views
 drupal5-workflow_ng             ports/www/drupal5-workflow_ng
+drupal5-xmlsitemap              ports/www/drupal5-xmlsitemap
 drupal6                         ports/www/drupal6
 drupal6-nice_menus              ports/www/drupal6-nice_menus
 drweb                           ports/security/drweb
@@ -3596,6 +3596,7 @@ fusefs-encfs                    ports/sysutils/fusefs-encfs
 fusefs-funionfs                 ports/sysutils/fusefs-funionfs
 fusefs-gnome-vfs                ports/sysutils/fusefs-gnome-vfs
 fusefs-gphotofs                 ports/graphics/fusefs-gphotofs
+fusefs-gunzip                   ports/sysutils/fusefs-gunzip
 fusefs-httpfs                   ports/sysutils/fusefs-httpfs
 fusefs-kmod                     ports/sysutils/fusefs-kmod
 fusefs-libs                     ports/sysutils/fusefs-libs
@@ -4259,7 +4260,7 @@ gnotime                         ports/deskutils/gnotime
 gnowavcut                       ports/audio/gnowavcut
 gnu-radius                      ports/net/gnu-radius
 gnu-regexp                      ports/java/gnu-regexp
-gnu-unifont                     ports/sysutils/gnu-unifont
+gnu-unifont                     ports/x11-fonts/gnu-unifont
 gnu-watch                       ports/misc/gnu-watch
 gnubg                           ports/games/gnubg
 gnubiff                         ports/mail/gnubiff
@@ -5358,6 +5359,7 @@ iso12083                        ports/textproc/iso12083
 iso2mkv                         ports/multimedia/iso2mkv
 iso8879                         ports/textproc/iso8879
 isomaster                       ports/sysutils/isomaster
+isomd5sum                       ports/sysutils/isomd5sum
 isoqlog                         ports/mail/isoqlog
 ispell                          ports/textproc/ispell
 ispman                          ports/sysutils/ispman
@@ -16612,6 +16614,7 @@ pl-koffice-i18n                 ports/polish/koffice-i18n
 pl-libgadu                      ports/polish/libgadu
 pl-libtlen                      ports/polish/libtlen
 pl-php_doc                      ports/polish/php_doc
+pl-qnapi                        ports/polish/qnapi
 pl-sap                          ports/polish/sap
 pl-sms2                         ports/polish/sms2
 pl-tleenx2                      ports/polish/tleenx2
@@ -19569,6 +19572,7 @@ steghide                        ports/security/steghide
 stella                          ports/emulators/stella
 stellarium                      ports/astro/stellarium
 stepbill                        ports/games/stepbill
+stepmania-devel                 ports/games/stepmania-devel
 steptalk                        ports/lang/steptalk
 stepulator                      ports/math/stepulator
 stfl                            ports/devel/stfl
@@ -21220,6 +21224,7 @@ xantfarm                        ports/x11/xantfarm
 xaos                            ports/graphics/xaos
 xapian-bindings                 ports/databases/xapian-bindings
 xapian-core                     ports/databases/xapian-core
+xapian-omega                    ports/www/xapian-omega
 xapply                          ports/sysutils/xapply
 xar                             ports/archivers/xar
 xaralx                          ports/graphics/xaralx
@@ -22257,6 +22262,7 @@ zh-fcitx                        ports/chinese/fcitx
 zh-firebird                     ports/chinese/firebird
 zh-fireflyttf                   ports/chinese/fireflyttf
 zh-fortunetw                    ports/chinese/fortunetw
+zh-fqterm                       ports/chinese/fqterm
 zh-freewnn-lib                  ports/chinese/FreeWnn-lib
 zh-freewnn-server               ports/chinese/FreeWnn-server
 zh-gb2jis                       ports/chinese/gb2jis
