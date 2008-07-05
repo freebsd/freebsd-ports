@@ -50,7 +50,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libedataserver_e-msgport.c
 HEIMDAL_HOME?=	${LOCALBASE}
 LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} --with-krb5-includes=${HEIMDAL_HOME}/include
-KRB5_LIB=		`${HEIMDAL_HOME}/bin/krb5-config --libs`
+KRB5_LIB=		`${HEIMDAL_HOME}/bin/krb5-config gssapi --libs`
 .elif !defined(NO_KERBEROS)
 CONFIGURE_ARGS+=        --with-krb5=/usr
 KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
