@@ -7,12 +7,15 @@
 
 PORTNAME=	tome
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://t-o-m-e.net/dl/src/
 DISTNAME=	tome-235-src
 
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Roguelike dungeon exploration game based on JRR Tolkien's works
+
+SUB_FILES=	pkg-deinstall
 
 ALL_TARGET=	# empty
 MAKEFILE=	makefile.bsd

@@ -1,4 +1,6 @@
 bin/tome
+@exec chown root:games %F
+@exec chmod 2755 %F
 %%DATADIR%%/apex/.cvsignore
 %%DATADIR%%/apex/delete.me
 %%DATADIR%%/apex/scores.raw
@@ -446,27 +448,30 @@ bin/tome
 %%DATADIR%%/xtra/music/delete.me
 %%DATADIR%%/xtra/sound/Sound.cfg
 %%DATADIR%%/xtra/sound/readme.txt
-@dirrm %%DATADIR%%/xtra/sound
-@dirrm %%DATADIR%%/xtra/music
-@dirrm %%DATADIR%%/xtra/graf
-@dirrm %%DATADIR%%/xtra/font
-@dirrm %%DATADIR%%/xtra
-@dirrm %%DATADIR%%/user
-@dirrm %%DATADIR%%/scpt
-@dirrm %%DATADIR%%/save
-@dirrm %%DATADIR%%/pref
-@dirrm %%DATADIR%%/plot
-@dirrm %%DATADIR%%/patch
-@dirrm %%DATADIR%%/note
-@dirrm %%DATADIR%%/mods
-@dirrm %%DATADIR%%/info
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/file
-@dirrm %%DATADIR%%/edit
-@dirrm %%DATADIR%%/dngn
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/core
-@dirrm %%DATADIR%%/cmov
-@dirrm %%DATADIR%%/bone
-@dirrm %%DATADIR%%/apex
-@dirrm %%DATADIR%%
+@exec mkdir %D/%%DATADIR%%/plot
+@exec chown -R root:games %D/%%DATADIR%%
+@exec chmod -R g+w %D/%%DATADIR%%
+@dirrmtry %%DATADIR%%/xtra/sound
+@dirrmtry %%DATADIR%%/xtra/music
+@dirrmtry %%DATADIR%%/xtra/graf
+@dirrmtry %%DATADIR%%/xtra/font
+@dirrmtry %%DATADIR%%/xtra
+@dirrmtry %%DATADIR%%/user
+@dirrmtry %%DATADIR%%/scpt
+@dirrmtry %%DATADIR%%/save
+@dirrmtry %%DATADIR%%/pref
+@dirrmtry %%DATADIR%%/plot
+@dirrmtry %%DATADIR%%/patch
+@dirrmtry %%DATADIR%%/note
+@dirrmtry %%DATADIR%%/mods
+@dirrmtry %%DATADIR%%/info
+@dirrmtry %%DATADIR%%/help
+@dirrmtry %%DATADIR%%/file
+@dirrmtry %%DATADIR%%/edit
+@dirrmtry %%DATADIR%%/dngn
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%/core
+@dirrmtry %%DATADIR%%/cmov
+@dirrmtry %%DATADIR%%/bone
+@dirrmtry %%DATADIR%%/apex
+@dirrmtry %%DATADIR%%
