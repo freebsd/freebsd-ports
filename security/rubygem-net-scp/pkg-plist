@@ -1,0 +1,65 @@
+%%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/scp/download_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/scp/errors_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/scp/upload_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/scp/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/scp_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/uri/open-scp_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/uri/scp_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/CHANGELOG_rdoc.html
+%%GEM_DOC_DIR%%/rdoc/files/README_rdoc.html
+%%GEM_DOC_DIR%%/rdoc/classes/URI.html
+%%GEM_DOC_DIR%%/rdoc/classes/URI/SCP.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection/Session.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SCP.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SCP/Download.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SCP/Upload.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SCP/Version.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SCP/Error.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_LIB_DIR%%/CHANGELOG.rdoc
+%%GEM_LIB_DIR%%/lib/net/scp/download.rb
+%%GEM_LIB_DIR%%/lib/net/scp/errors.rb
+%%GEM_LIB_DIR%%/lib/net/scp/upload.rb
+%%GEM_LIB_DIR%%/lib/net/scp/version.rb
+%%GEM_LIB_DIR%%/lib/net/scp.rb
+%%GEM_LIB_DIR%%/lib/uri/open-scp.rb
+%%GEM_LIB_DIR%%/lib/uri/scp.rb
+%%GEM_LIB_DIR%%/Manifest
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/README.rdoc
+%%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/test/common.rb
+%%GEM_LIB_DIR%%/test/test_all.rb
+%%GEM_LIB_DIR%%/test/test_download.rb
+%%GEM_LIB_DIR%%/test/test_scp.rb
+%%GEM_LIB_DIR%%/test/test_upload.rb
+%%GEM_LIB_DIR%%/net-scp.gemspec
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/lib/uri
+@dirrm %%GEM_LIB_DIR%%/lib/net/scp
+@dirrm %%GEM_LIB_DIR%%/lib/net
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/uri
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/scp
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/URI
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Connection
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SCP
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
