@@ -1,0 +1,11 @@
+--- doc/qnapi-download.schemas.orig	Sat Feb 23 11:31:20 2008
++++ doc/qnapi-download.schemas	Thu Apr 10 20:11:23 2008
+@@ -32,7 +32,7 @@
+         <short>The icon of the menu item</short>
+         <long>The icon of the menu item that will appear next to the label in the Nautilus popup menu when the selection matches the appearance conditions settings</long>
+       </locale>
+-      <default>/usr/share/icons/qnapi.png</default>
++      <default>@PREFIX@/share/icons/qnapi.png</default>
+     </schema>
+     <schema>
+       <key>/schemas/apps/nautilus-actions/configurations/12e76756-c203-4a27-830f-af5a1527869e/path</key>
