@@ -17,15 +17,20 @@ COMMENT=	Free lossless audio codec
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 USE_AUTOTOOLS=	libtool:15
-USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-sse \
-		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \
 		--disable-thorough-tests \
 		--disable-xmms-plugin
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include"
+
+.if !defined(WITHOUT_ICONV)
+USE_ICONV=	yes
+CONFIGURE_ARGS+=--with-libiconv-prefix="${LOCALBASE}"
+.else
+CONFIGURE_ARGS+=--without-libiconv-prefix
+.endif
 
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 MAKE_ENV=	MAKEOBJDIR=/nonexistent		# ignore ${WRKSRC}/obj
