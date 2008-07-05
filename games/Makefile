@@ -749,6 +749,7 @@
     SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += stepbill
+    SUBDIR += stepmania-devel
     SUBDIR += stormbaancoureur
     SUBDIR += stransball2
     SUBDIR += stratagus
