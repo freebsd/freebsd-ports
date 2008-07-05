@@ -47,13 +47,15 @@ CONFLICTS=	nmh-[0-9]*
 
 .include <bsd.port.pre.mk>
 
-post-install:
 .if !defined(NOPORTDOCS)
+pre-install:
+	${MKDIR} ${PREFIX}/share/doc/ja-mh
+.endif
+
+.if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${DOCDIR}
 	(cd ${WRKSRC}/doc-JP; ${INSTALL_DATA} ${READMES} ${DOCDIR})
 .endif
-
-pre-install:
-	${MKDIR} ${PREFIX}/share/doc/ja-mh
 
 .include <bsd.port.post.mk>
