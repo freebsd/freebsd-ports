@@ -1,17 +1,17 @@
 - Add support for FreeBSD 8.x.
 - Add patches for setup.py and Lib/posixfile.py.
 
-Index: python/Python-2.3.4.patch
+Index: Python-2.3.4.patch
 ===================================================================
 RCS file: /cvs/external/python/Python-2.3.4.patch,v
-retrieving revision 1.21
-diff -u -r1.21 Python-2.3.4.patch
---- python/Python-2.3.4.patch	4 Feb 2008 12:57:01 -0000	1.21
-+++ python/Python-2.3.4.patch	9 Feb 2008 05:09:14 -0000
-@@ -131,6 +131,1625 @@
-       name = 'posix'
-       linesep = '\n'
-       from posix import *
+retrieving revision 1.22
+diff -u -r1.22 Python-2.3.4.patch
+--- python/Python-2.3.4.patch	9 Jun 2008 13:04:49 -0000	1.22
++++ python/Python-2.3.4.patch	14 Jun 2008 01:41:01 -0000
+@@ -14661,3 +14661,1648 @@
+  
+  /* Define the macros needed if on a UnixWare 7.x system. */
+  #if defined(__USLC__) && defined(__SCO_VERSION__)
 +*** misc/Python-2.3.4/Lib/plat-freebsd6/IN.py	Wed Dec 31 19:00:00 1969
 +--- misc/build/Python-2.3.4/Lib/plat-freebsd6/IN.py	Tue Jan  8 14:12:12 2008
 +***************
@@ -1631,13 +1631,13 @@ diff -u -r1.21 Python-2.3.4.patch
 +              flock = struct.pack('lxxxxlxxxxlhh', \
 +                    l_start, l_len, os.getpid(), l_type, l_whence)
 +          elif sys.platform in ['aix3', 'aix4']:
- *** misc/Python-2.3.4/Mac/OSX/Makefile	Tue Nov  4 23:45:16 2003
- --- misc/build/Python-2.3.4/Mac/OSX/Makefile	Tue Jan 15 12:11:51 2008
- ***************
-@@ -15547,3 +17166,22 @@
-   
-   /* Define the macros needed if on a UnixWare 7.x system. */
-   #if defined(__USLC__) && defined(__SCO_VERSION__)
++*** misc/Python-2.3.4/Mac/OSX/Makefile	Tue Nov  4 23:45:16 2003
++--- misc/build/Python-2.3.4/Mac/OSX/Makefile	Tue Jan 15 12:11:51 2008
++***************
++@ -15547,3 +17166,22 @@
++  
++  /* Define the macros needed if on a UnixWare 7.x system. */
++  #if defined(__USLC__) && defined(__SCO_VERSION__)
 +*** misc/Python-2.3.4/setup.py	Tue Oct 21 16:01:21 2003
 +--- misc/build/Python-2.3.4/setup.py	Tue Jan  8 14:17:55 2008
 +***************
