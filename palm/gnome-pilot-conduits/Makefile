@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome-pilot-conduits
-PORTVERSION=	2.0.15
-PORTREVISION=	5
+PORTVERSION=	2.0.16
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -16,7 +15,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional conduits for gnome-pilot
 
-LIB_DEPENDS=	gpilotd.3:${PORTSDIR}/palm/gnome-pilot
+LIB_DEPENDS=	gpilotd.2:${PORTSDIR}/palm/gnome-pilot
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

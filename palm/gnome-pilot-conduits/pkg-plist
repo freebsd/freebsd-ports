@@ -27,6 +27,7 @@ share/locale/ca/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/cs/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/da/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/de/LC_MESSAGES/gnome-pilot-conduits.mo
+share/locale/dz/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/el/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/en_CA/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/en_GB/LC_MESSAGES/gnome-pilot-conduits.mo
@@ -39,6 +40,7 @@ share/locale/hr/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/hu/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/it/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/ja/LC_MESSAGES/gnome-pilot-conduits.mo
+share/locale/lv/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/mk/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/ml/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/ms/LC_MESSAGES/gnome-pilot-conduits.mo
@@ -46,6 +48,7 @@ share/locale/nb/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/ne/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/nl/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/nn/LC_MESSAGES/gnome-pilot-conduits.mo
+share/locale/oc/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/pa/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/pl/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/pt/LC_MESSAGES/gnome-pilot-conduits.mo
@@ -73,3 +76,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-pilot-conduits.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dv/LC_MESSAGES
+@dirrmtry share/locale/dv

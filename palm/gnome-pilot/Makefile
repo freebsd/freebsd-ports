@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome-pilot
-PORTVERSION=	2.0.15
-PORTREVISION=	4
+PORTVERSION=	2.0.16
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -21,9 +20,10 @@ LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnomepanel intlhack
+USE_GNOME=	gnomeprefix gnomehack gnomehier gnomepanel intlhack \
+		ltverhack
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
