@@ -3528,3 +3528,4 @@ editors/openoffice.org-1.1-devel||2008-07-02|Removed
 deskutils/gdeskcal||2008-07-03|Disappeared from master site
 deskutils/gdeskcal-skins||2008-07-03|Disappeared from master site
 deskutils/gnome-menu-editor||2008-07-03|Disappeared from master site and take over by alacarte
+textproc/dictum-emacs22||2008-07-05|Assimilated into textproc/dictum

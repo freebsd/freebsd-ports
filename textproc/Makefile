@@ -81,7 +81,6 @@
     SUBDIR += denature
     SUBDIR += dict
     SUBDIR += dictem
-    SUBDIR += dictem-emacs22
     SUBDIR += dictem-xemacs21-mule
     SUBDIR += dictfmt
     SUBDIR += dictionary
