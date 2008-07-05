@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.154 2008/03/23 00:24:48 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.155 2008/07/05 06:01:38 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -46,7 +46,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 9;
-my $micro = 8;
+my $micro = 9;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -856,6 +856,12 @@ sub checkplist {
 					"unsure if this port is DATADIR-safe, then ignore this ".
 					"warning");
 			}
+		}
+
+		if ($_ =~ m{^%%PORT(\w+)%%(.*?)%%(\w+)DIR%%(.*)$} and $1 ne $3) {
+			&perror("WARN", $file, $., "Do not mix %%PORT$1%% with %%$3DIR%%. ".
+				"Use '%%PORT$3%%$2%%$3DIR%%$4' instead and update Makefile ".
+				"accordingly.");
 		}
 
 		if ($_ =~ m#man/([^/]+/)?man([$manchapters])/([^\.]+\.[$manchapters])(\.gz)?$#) {
