@@ -1,0 +1,4 @@
+doc-mode is an emacs mode for editing documentation, specifically
+designed for use with asciidoc (textproc/asciidoc).
+
+WWW: http://xpt.sourceforge.net/tools/doc-mode/
