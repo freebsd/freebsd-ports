@@ -116,6 +116,7 @@ bin/fqterm.bin
 %%DATADIR%%/dict/fqterm_zh_CN.qm
 %%DATADIR%%/dict/ui_zh_CN.qm
 share/applications/fqterm.desktop
+@dirrm share/applications
 @dirrm %%DATADIR%%/cursor/mac_16x16
 @dirrm %%DATADIR%%/cursor
 @dirrm %%DATADIR%%/dict
