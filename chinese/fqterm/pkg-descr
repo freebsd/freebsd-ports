@@ -1,0 +1,5 @@
+FQTerm is a cross-platform terminal emulator program which supports
+telnet/ssh1/ssh2 protocols and can process ANSI control sequences. It
+can be used to login BBS sites or *NIX hosts.
+
+WWW: http://fqterm.googlecode.com/

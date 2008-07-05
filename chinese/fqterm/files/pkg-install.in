@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+if [ "$2" != "POST-INSTALL" ]; then
+        exit 0
+fi
+
+fqterm_icon=%%DATADIR%%/pic/fqterm.png
+fqterm_icon_128=%%DATADIR%%/pic/fqterm_128x128.png
+fqterm_icon_64=%%DATADIR%%/pic/fqterm_64x64.png
+fqterm_icon_48=%%DATADIR%%/pic/fqterm_48x48.png
+fqterm_icon_32=%%DATADIR%%/pic/fqterm_32x32.png
+fqterm_icon_16=%%DATADIR%%/pic/fqterm_16x16.png
+
+TARGET_DIR=%%PREFIX%%/share/icons/hicolor
+
+[ -f $fqterm_icon ] && ln -s $fqterm_icon %%PREFIX%%/share/pixmaps/
+[ -f $fqterm_icon_128 ] && ln -s $fqterm_icon_128 $TARGET_DIR/128x128/apps/
+[ -f $fqterm_icon_64 ] && ln -s $fqterm_icon_64 $TARGET_DIR/64x64/apps/
+[ -f $fqterm_icon_48 ] && ln -s $fqterm_icon_48 $TARGET_DIR/48x48/apps/
+[ -f $fqterm_icon_32 ] && ln -s $fqterm_icon_32 $TARGET_DIR/32x32/apps/
+[ -f $fqterm_icon_16 ] && ln -s $fqterm_icon_16 $TARGET_DIR/16x16/apps/
+
+exit 0

@@ -1,0 +1,6 @@
+*************************************************************************
+  If you want to enable the IP location detection feature, please
+  download the IP location database file "QQWry.dat" and put a copy of
+  it under "$HOME/.fqterm". You can get "QQWry.dat" from this
+  project's home page or from other websites.
+*************************************************************************

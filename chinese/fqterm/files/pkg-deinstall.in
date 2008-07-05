@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+        exit 0
+fi
+
+TARGET_DIR=%%PREFIX%%/share/icons/hicolor
+
+fqterm_icon=%%PREFIX%%/share/pixmaps/fqterm.png
+fqterm_icon_128=$TARGET_DIR/128x128/apps/fqterm_128x128.png
+fqterm_icon_64=$TARGET_DIR/64x64/apps/fqterm_64x64.png
+fqterm_icon_48=$TARGET_DIR/48x48/apps/fqterm_48x48.png
+fqterm_icon_32=$TARGET_DIR/32x32/apps//fqterm_32x32.png
+fqterm_icon_16=$TARGET_DIR/16x16/apps/fqterm_16x16.png
+
+
+
+[ -h $fqterm_icon ] && rm -f $fqterm_icon
+[ -h $fqterm_icon_128 ] && rm -f $fqterm_icon_128
+[ -h $fqterm_icon_64 ] && rm -f $fqterm_icon_64
+[ -h $fqterm_icon_48 ] && rm -f $fqterm_icon_48
+[ -h $fqterm_icon_32 ] && rm -f $fqterm_icon_32
+[ -h $fqterm_icon_16 ] && rm -f $fqterm_icon_16
+
+exit 0

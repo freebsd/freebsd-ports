@@ -41,6 +41,7 @@
     SUBDIR += firebird
     SUBDIR += fireflyttf
     SUBDIR += fortunetw
+    SUBDIR += fqterm
     SUBDIR += gb2jis
     SUBDIR += gb2ps
     SUBDIR += gbk2uni
