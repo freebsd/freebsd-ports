@@ -66,7 +66,6 @@
     SUBDIR += kon2
     SUBDIR += libchewing
     SUBDIR += libtabe
-    SUBDIR += links
     SUBDIR += lunar
     SUBDIR += mingunittf
     SUBDIR += miniChinput
