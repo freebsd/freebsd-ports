@@ -141,7 +141,6 @@
     SUBDIR += drupal5-cck
     SUBDIR += drupal5-disknode
     SUBDIR += drupal5-google_analytics
-    SUBDIR += drupal5-gsitemap
     SUBDIR += drupal5-i18n
     SUBDIR += drupal5-imagecache
     SUBDIR += drupal5-imagefield
@@ -159,6 +158,7 @@
     SUBDIR += drupal5-ubrowser
     SUBDIR += drupal5-views
     SUBDIR += drupal5-workflow_ng
+    SUBDIR += drupal5-xmlsitemap
     SUBDIR += drupal6
     SUBDIR += drupal6-nice_menus
     SUBDIR += dtse
