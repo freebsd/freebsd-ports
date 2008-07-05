@@ -1,0 +1,16 @@
+bin/qnapi
+share/icons/qnapi.png
+share/icons/qnapi-48.png
+share/icons/qnapi-128.png
+share/icons/qnapi-512.png
+share/applications/qnapi.desktop
+share/apps/dolphin/servicemenus/qnapi-download.desktop
+share/apps/d3lphin/servicemenus/qnapi-download.desktop
+share/apps/konqueror/servicemenus/qnapi-download.desktop
+@dirrmtry share/apps/d3lphin/servicemenus
+@dirrmtry share/apps/d3lphin
+@dirrmtry share/apps/konqueror/servicemenus
+@dirrmtry share/apps/konqueror
+@dirrmtry share/apps/dolphin/servicemenus
+@dirrmtry share/apps/dolphin
+@dirrmtry share/apps
