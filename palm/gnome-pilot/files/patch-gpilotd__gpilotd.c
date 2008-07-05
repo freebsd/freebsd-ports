@@ -1,5 +1,5 @@
---- gpilotd/gpilotd.c.orig	Tue Sep  5 03:16:41 2006
-+++ gpilotd/gpilotd.c	Wed Sep  6 17:04:43 2006
+--- gpilotd/gpilotd.c.orig	2008-02-26 19:02:35.000000000 -0500
++++ gpilotd/gpilotd.c	2008-07-04 19:27:40.000000000 -0400
 @@ -27,6 +27,8 @@
  #include "config.h"
  #endif
@@ -9,10 +9,10 @@
  /* for crypt () */
  #ifdef USE_XOPEN_SOURCE
  #ifndef _XOPEN_SOURCE
-@@ -1386,6 +1388,49 @@ visor_devices_timeout (gpointer data) 
- }
+@@ -1279,6 +1281,47 @@ gpilotd_hal_init (void)
+ #endif /* WITH_HAL */
+ #ifdef WITH_USB_VISOR
  
- #endif /* WITH_USB_VISOR */
 +#ifdef freebsd
 +static gboolean
 +visor_devices_timeout (gpointer data)
@@ -40,8 +40,8 @@
 +				if (!visor_net)
 +					device->type = PILOT_DEVICE_SERIAL;
 +
-+				/* just try to synch.  Until I can talk to 
-+				 * the kernel guys this is the best way to 
++				/* just try to synch.  Until I can talk to
++				 * the kernel guys this is the best way to
 +				 * go. */
 +				sync_device (device, context);
 +				if (!visor_net)
@@ -49,30 +49,28 @@
 +			}
 +		}
 +		l = l->next;
-+
 +	}
 +
 +	return TRUE;
 +}
-+
-+#endif /* freebsd */
- #endif /* linux */
++#else
+ static gboolean 
+ visor_devices_timeout (gpointer data) 
+ {
+@@ -1448,6 +1491,7 @@ visor_devices_timeout (gpointer data) 
+ 	return TRUE;
+ }
+ 
++#endif
+ #endif /* WITH_USB_VISOR */
  
  
-@@ -1423,16 +1468,12 @@ monitor_channel (GPilotDevice *dev, GPil
+@@ -1486,7 +1530,7 @@ monitor_channel (GPilotDevice *dev, GPil
  			dev->device_exists = FALSE;
  		} else {
  #ifdef WITH_USB_VISOR
--#ifdef linux
+-#if defined(linux) || (defined(sun) && defined(__SVR4))
++#if defined(linux) || defined(freebsd) || (defined(sun) && defined(__SVR4))
  			/* We want to watch for a new recognised USB device
  			 * once per context. */
  			if (visor_timeout_id == -1) {
- 				visor_timeout_id = g_timeout_add (2000,
- 				    visor_devices_timeout, context);
- 			}
--#else /* linux */
--			g_assert_not_reached ();
--#endif /* linux */
- #endif /* WITH_USB_VISOR */
- 		}
- 	}
