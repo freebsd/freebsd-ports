@@ -8,7 +8,7 @@
 PORTNAME=	enemyterritory-tce
 PORTVERSION=	0.49
 CATEGORIES=	games linux
-MASTER_SITES=	http://ftp.games.skynet.be/pub/www.filesnetwork.com/Wolfenstein_Enemy_Territory/Mods/Total_Conversions/
+MASTER_SITES=	http://dragons-perch.net/tce/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	tcetest
 DISTFILES=	tcetest049.zip
