@@ -9,6 +9,7 @@
 %%DATADIR%%/basewiki/ikiwiki/openid.mdwn
 %%DATADIR%%/basewiki/ikiwiki/pagespec.mdwn
 %%DATADIR%%/basewiki/ikiwiki/preprocessordirective.mdwn
+%%DATADIR%%/basewiki/ikiwiki/searching.mdwn
 %%DATADIR%%/basewiki/ikiwiki/subpage.mdwn
 %%DATADIR%%/basewiki/ikiwiki/subpage/linkingrules.mdwn
 %%DATADIR%%/basewiki/ikiwiki/wikilink.mdwn
@@ -73,6 +74,7 @@
 %%DATADIR%%/templates/rssitem.tmpl
 %%DATADIR%%/templates/rsspage.tmpl
 %%DATADIR%%/templates/searchform.tmpl
+%%DATADIR%%/templates/searchquery.tmpl
 %%DATADIR%%/templates/titlepage.tmpl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki/.packlist
 %%SITE_PERL%%/IkiWiki.pm
@@ -84,6 +86,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/calendar.pm
 %%SITE_PERL%%/IkiWiki/Plugin/camelcase.pm
 %%SITE_PERL%%/IkiWiki/Plugin/conditional.pm
+%%SITE_PERL%%/IkiWiki/Plugin/creole.pm
 %%SITE_PERL%%/IkiWiki/Plugin/ddate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/editdiff.pm
 %%SITE_PERL%%/IkiWiki/Plugin/edittemplate.pm
@@ -95,6 +98,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/googlecalendar.pm
 %%SITE_PERL%%/IkiWiki/Plugin/graphviz.pm
 %%SITE_PERL%%/IkiWiki/Plugin/haiku.pm
+%%SITE_PERL%%/IkiWiki/Plugin/hnb.pm
 %%SITE_PERL%%/IkiWiki/Plugin/html.pm
 %%SITE_PERL%%/IkiWiki/Plugin/htmlscrubber.pm
 %%SITE_PERL%%/IkiWiki/Plugin/htmltidy.pm
@@ -141,6 +145,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/textile.pm
 %%SITE_PERL%%/IkiWiki/Plugin/toc.pm
 %%SITE_PERL%%/IkiWiki/Plugin/toggle.pm
+%%SITE_PERL%%/IkiWiki/Plugin/txt.pm
 %%SITE_PERL%%/IkiWiki/Plugin/typography.pm
 %%SITE_PERL%%/IkiWiki/Plugin/version.pm
 %%SITE_PERL%%/IkiWiki/Plugin/wikitext.pm
