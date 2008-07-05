@@ -1,0 +1,10 @@
+--- Makefile.in.bak	2007-12-16 21:37:14.000000000 +1100
++++ Makefile.in	2007-12-16 21:37:36.000000000 +1100
+@@ -201,7 +201,6 @@
+ AUTOMAKE_OPTIONS = 1.7 foreign
+ SUBDIRS = src
+ ACLOCAL_AMFLAGS = -I autoconf/m4
+-productID := $(shell sed -nr /define\\s+PRODUCT_ID_BARE/\{s/.*define\\s+PRODUCT_ID_BARE\\s+\(.+\)/\\1/\;y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/\;p\;q\} $(srcdir)/src/ProductInfo.h)
+ installFiles = src/stepmania $(am__append_1)
+ all: all-recursive
+ 

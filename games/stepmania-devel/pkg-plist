@@ -1,0 +1,1277 @@
+share/games/stepmania/BGAnimations/instructions.txt
+share/games/stepmania/BackgroundEffects/Centered.lua
+share/games/stepmania/BackgroundEffects/Checkerboard1File2x2.lua
+share/games/stepmania/BackgroundEffects/Checkerboard2File2x2.lua
+share/games/stepmania/BackgroundEffects/Kaleidoscope2x2.lua
+share/games/stepmania/BackgroundEffects/SongBgWithMovieViz.lua
+share/games/stepmania/BackgroundEffects/StretchNoLoop.lua
+share/games/stepmania/BackgroundEffects/StretchNormal.lua
+share/games/stepmania/BackgroundEffects/StretchNormalAlignLeft.lua
+share/games/stepmania/BackgroundEffects/StretchPaused.lua
+share/games/stepmania/BackgroundEffects/StretchRewind.lua
+share/games/stepmania/BackgroundEffects/UpperLeft.lua
+share/games/stepmania/BackgroundTransitions/CrossFade.xml
+share/games/stepmania/BackgroundTransitions/FadeDown.xml
+share/games/stepmania/BackgroundTransitions/FadeLeft.xml
+share/games/stepmania/BackgroundTransitions/FadeRight.xml
+share/games/stepmania/BackgroundTransitions/FadeUp.xml
+share/games/stepmania/BackgroundTransitions/SlideDown.xml
+share/games/stepmania/BackgroundTransitions/SlideLeft.xml
+share/games/stepmania/BackgroundTransitions/SlideRight.xml
+share/games/stepmania/BackgroundTransitions/SlideUp.xml
+share/games/stepmania/Characters/Instructions.txt
+share/games/stepmania/Characters/default/character.ini
+share/games/stepmania/Courses/Samples/AllChallenge.crs
+share/games/stepmania/Courses/Samples/AllMusicRandom.crs
+share/games/stepmania/Courses/Samples/EndOfTheRoad.crs
+share/games/stepmania/Courses/Samples/PlayersBest1-4.crs
+share/games/stepmania/Courses/Samples/PlayersBest13-16.crs
+share/games/stepmania/Courses/Samples/PlayersBest5-8.crs
+share/games/stepmania/Courses/Samples/PlayersBest9-12.crs
+share/games/stepmania/Courses/Samples/PlayersWorst.crs
+share/games/stepmania/Courses/Samples/Random Caprice.crs
+share/games/stepmania/Courses/Samples/StaminaTester.crs
+share/games/stepmania/Courses/Samples/StepMix Survival Sample.crs
+share/games/stepmania/Courses/Samples/Tortoise and the Hare.crs
+share/games/stepmania/Courses/Samples/TrickyRandom.crs
+share/games/stepmania/Courses/instructions.txt
+share/games/stepmania/Data/AI.ini
+share/games/stepmania/Data/NamesBlacklist.txt
+share/games/stepmania/Data/Shaders/GLSL/Color burn.frag
+share/games/stepmania/Data/Shaders/GLSL/Color dodge.frag
+share/games/stepmania/Data/Shaders/GLSL/Hard mix.frag
+share/games/stepmania/Data/Shaders/GLSL/Texture matrix scaling.vert
+share/games/stepmania/Data/Shaders/GLSL/Unpremultiply.frag
+share/games/stepmania/Data/Shaders/GLSL/Vivid light.frag
+share/games/stepmania/Data/Shaders/GLSL/YUYV422.frag
+share/games/stepmania/Data/Translations.xml
+share/games/stepmania/Data/splash.png
+share/games/stepmania/GtkModule.so
+share/games/stepmania/NoteSkins/common/common/Fallback Explosion.lua
+share/games/stepmania/NoteSkins/common/common/Fallback Go Receptor.redir
+share/games/stepmania/NoteSkins/common/common/Fallback HitMine Explosion.png
+share/games/stepmania/NoteSkins/common/common/Fallback Hold Body active.png
+share/games/stepmania/NoteSkins/common/common/Fallback Hold Body inactive.png
+share/games/stepmania/NoteSkins/common/common/Fallback Hold BottomCap active.png
+share/games/stepmania/NoteSkins/common/common/Fallback Hold BottomCap inactive.png
+share/games/stepmania/NoteSkins/common/common/Fallback Hold Explosion 2x1.png
+share/games/stepmania/NoteSkins/common/common/Fallback Hold Head Active.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Hold Head Inactive.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Hold Tail Active.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Hold Tail Inactive.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Hold TopCap Active.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Hold TopCap Inactive.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Ready Receptor 3x1.png
+share/games/stepmania/NoteSkins/common/common/Fallback Receptor.lua
+share/games/stepmania/NoteSkins/common/common/Fallback Roll Body active.png
+share/games/stepmania/NoteSkins/common/common/Fallback Roll Body inactive.png
+share/games/stepmania/NoteSkins/common/common/Fallback Roll BottomCap active.png
+share/games/stepmania/NoteSkins/common/common/Fallback Roll BottomCap inactive.png
+share/games/stepmania/NoteSkins/common/common/Fallback Roll Explosion.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Roll Head Active.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Roll Head Inactive.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Roll Tail Active.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Roll Tail Inactive.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Roll TopCap Active.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Roll TopCap Inactive.redir
+share/games/stepmania/NoteSkins/common/common/Fallback Tap Explosion Bright.png
+share/games/stepmania/NoteSkins/common/common/Fallback Tap Explosion Dim.png
+share/games/stepmania/NoteSkins/common/common/Fallback Tap Lift 4x1.png
+share/games/stepmania/NoteSkins/common/common/Fallback Tap Mine 4x2.png
+share/games/stepmania/NoteSkins/common/common/Fallback Tap Note 4x1.png
+share/games/stepmania/NoteSkins/common/common/NoteSkin.lua
+share/games/stepmania/NoteSkins/common/common/_Tap Lead-in Receptor.lua
+share/games/stepmania/NoteSkins/common/common/_Tap Press.lua
+share/games/stepmania/NoteSkins/common/common/_Tap Receptor.lua
+share/games/stepmania/NoteSkins/common/common/_blank.png
+share/games/stepmania/NoteSkins/common/common/metrics.ini
+share/games/stepmania/NoteSkins/dance/bold/Down Go Receptor.png
+share/games/stepmania/NoteSkins/dance/bold/Down Tap Explosion Bright.png
+share/games/stepmania/NoteSkins/dance/bold/Down Tap Explosion Dim.png
+share/games/stepmania/NoteSkins/dance/bold/_down tap note 8x8.png
+share/games/stepmania/NoteSkins/dance/bold/metrics.ini
+share/games/stepmania/NoteSkins/dance/default/Down Go Receptor.png
+share/games/stepmania/NoteSkins/dance/default/Down Hold Body active.png
+share/games/stepmania/NoteSkins/dance/default/Down Hold Body inactive.png
+share/games/stepmania/NoteSkins/dance/default/Down Hold BottomCap active.png
+share/games/stepmania/NoteSkins/dance/default/Down Hold BottomCap inactive.png
+share/games/stepmania/NoteSkins/dance/default/Down Hold Explosion 2x1.png
+share/games/stepmania/NoteSkins/dance/default/Down Receptor.lua
+share/games/stepmania/NoteSkins/dance/default/Down Roll Body active.png
+share/games/stepmania/NoteSkins/dance/default/Down Roll Body inactive.png
+share/games/stepmania/NoteSkins/dance/default/Down Roll BottomCap active.png
+share/games/stepmania/NoteSkins/dance/default/Down Roll BottomCap inactive.png
+share/games/stepmania/NoteSkins/dance/default/Down Tap Explosion Bright.png
+share/games/stepmania/NoteSkins/dance/default/Down Tap Explosion Dim.png
+share/games/stepmania/NoteSkins/dance/default/Down Tap Note.lua
+share/games/stepmania/NoteSkins/dance/default/NoteSkin.lua
+share/games/stepmania/NoteSkins/dance/default/_down tap note 8x8.png
+share/games/stepmania/NoteSkins/dance/default/metrics.ini
+share/games/stepmania/NoteSkins/dance/flat/Down Tap Note.lua
+share/games/stepmania/NoteSkins/dance/flat/metrics.ini
+share/games/stepmania/NoteSkins/instructions.txt
+share/games/stepmania/NoteSkins/lights/default/metrics.ini
+share/games/stepmania/NoteSkins/pump/classic/Center Tap Note.lua
+share/games/stepmania/NoteSkins/pump/classic/DownLeft Hold Body active.redir
+share/games/stepmania/NoteSkins/pump/classic/DownLeft Hold Body inactive.redir
+share/games/stepmania/NoteSkins/pump/classic/DownLeft Hold BottomCap active.redir
+share/games/stepmania/NoteSkins/pump/classic/DownLeft Hold BottomCap inactive.redir
+share/games/stepmania/NoteSkins/pump/classic/DownLeft Receptor.redir
+share/games/stepmania/NoteSkins/pump/classic/DownLeft Tap Explosion bright.redir
+share/games/stepmania/NoteSkins/pump/classic/DownLeft Tap Explosion dim.redir
+share/games/stepmania/NoteSkins/pump/classic/DownLeft Tap Note.lua
+share/games/stepmania/NoteSkins/pump/classic/NoteSkin.lua
+share/games/stepmania/NoteSkins/pump/classic/UpLeft Tap Note.lua
+share/games/stepmania/NoteSkins/pump/classic/metrics.ini
+share/games/stepmania/NoteSkins/pump/default/Center Hold Body active.redir
+share/games/stepmania/NoteSkins/pump/default/Center Hold Body inactive.redir
+share/games/stepmania/NoteSkins/pump/default/Center Hold BottomCap active.redir
+share/games/stepmania/NoteSkins/pump/default/Center Hold BottomCap inactive.redir
+share/games/stepmania/NoteSkins/pump/default/Center Receptor.lua
+share/games/stepmania/NoteSkins/pump/default/Center Tap Explosion bright.png
+share/games/stepmania/NoteSkins/pump/default/Center Tap Explosion dim.redir
+share/games/stepmania/NoteSkins/pump/default/Center Tap Note.lua
+share/games/stepmania/NoteSkins/pump/default/NoteSkin.lua
+share/games/stepmania/NoteSkins/pump/default/UpLeft Hold Body active.png
+share/games/stepmania/NoteSkins/pump/default/UpLeft Hold Body inactive.redir
+share/games/stepmania/NoteSkins/pump/default/UpLeft Hold BottomCap active.png
+share/games/stepmania/NoteSkins/pump/default/UpLeft Hold BottomCap inactive.redir
+share/games/stepmania/NoteSkins/pump/default/UpLeft Receptor.lua
+share/games/stepmania/NoteSkins/pump/default/UpLeft Tap Explosion bright.png
+share/games/stepmania/NoteSkins/pump/default/UpLeft Tap Explosion dim.redir
+share/games/stepmania/NoteSkins/pump/default/UpLeft Tap Note.lua
+share/games/stepmania/NoteSkins/pump/default/metalnote1 6x8.png
+share/games/stepmania/NoteSkins/pump/default/metalnote2 6x8.png
+share/games/stepmania/NoteSkins/pump/default/metrics.ini
+share/games/stepmania/NoteSkins/pump/default/receptor parts 2x3.png
+share/games/stepmania/Themes/_Installer/Languages/de.ini
+share/games/stepmania/Themes/_Installer/Languages/en.ini
+share/games/stepmania/Themes/_Installer/Languages/es.ini
+share/games/stepmania/Themes/_Installer/Languages/fr.ini
+share/games/stepmania/Themes/_Installer/Languages/it.ini
+share/games/stepmania/Themes/beat/Graphics/LifeMeterBar normal.png
+share/games/stepmania/Themes/beat/Graphics/LifeMeterBar passing.png
+share/games/stepmania/Themes/beat/metrics.ini
+share/games/stepmania/Themes/default/BGAnimations/Screen cancel.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenAlbums background/coming soon.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenAttract cancel.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenAttract overlay.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenBookkeeping in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenBookkeeping out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenCaution background/caution.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenCaution background/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenCaution overlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenCenterImage background/test.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenCenterImage in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenCenterImage out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenCompany background/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenCompany background/stepmania (dither).png
+share/games/stepmania/Themes/default/BGAnimations/ScreenCompany background/white.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenCredits background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenCredits overlay/credits.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenCredits overlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenCredits overlay/song background scroller.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenCredits2 background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenDemonstration overlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenDemonstration overlay/demonstration.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenEdit underlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenEdit underlay/help.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenEdit underlay/info.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenEditCoursesMenu in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEditCoursesMenu out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEditMenu in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEditMenu out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationEndless in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationEndless out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationNonstop in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationNonstop out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationOni in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationOni out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationRave in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationRave out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationStage background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationStage in.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationStage out.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationStage overlay/LifeGraph p1.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationStage overlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationStage overlay/life graph.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationSummary in.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationSummary out.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenExit background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameOver background/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameOver background/gameover.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay danger.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay failed/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay failed/failed.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay go/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay go/go.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay in.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay next course song/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay out/_extra1.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay out/_extra2.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay out/cleared.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay out/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay out/draw.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay out/extra1.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay out/extra2.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay out/p1 win.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay out/p2 win.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay overlay/_score frame.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay overlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay ready/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay ready/ready.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay toasty/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay toasty/toasty.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay underlay/_warning.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay underlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplaySyncMachine background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplaySyncMachine go.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplaySyncMachine in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplaySyncMachine out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplaySyncMachine ready.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenGameplaySyncMachine toasty.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenHowToPlay background/bg.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenHowToPlay background/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/feet.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/healthhilight.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/jumpmessage.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/missmessage.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/tapglow.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay/tapmessage.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenInstructions in.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenInstructions out.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenInstructions overlay/_endless.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenInstructions overlay/_nonstop.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenInstructions overlay/_oni.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenInstructions overlay/_regular.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenInstructions overlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenJukebox cancel.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenJukebox in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenJukebox out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenJukeboxMenu in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenJukeboxMenu out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenLogo background/bg.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenLogo background/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenLogo underlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenMapControllers in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenMapControllers out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenMemoryCard background/coming soon.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenMiniMenu cancel.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenMiniMenu in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenMiniMenu out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenMiniMenu underlay.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenMiniMenuContext underlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenMusicScroll background/_music scroll background.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenMusicScroll background/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenMusicScroll overlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenNameEntry background/_name entry.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenNameEntry background/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenNetEvaluation in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenNetEvaluation out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenNetSelectMusic in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenNetworkOptions in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenNetworkOptions out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenOptionsEditCourse overlay.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenOptionsEditCourseEntry overlay.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenOptionsManageCourses overlay.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenOptionsService in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenOptionsService out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenOptionsServiceChild in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenOptionsServiceChild out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenPlayerOptions background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenPlayerOptions in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenPlayerOptions out.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenProfileLoad background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenProfileLoad in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenProfileLoad out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenProfileLoad overlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenProfileSave in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenProfileSave out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenProfileSave overlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenPrompt in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenPrompt out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenPrompt underlay.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenRanking background/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenRanking background/ranking.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenRanking underlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenRaveOptions in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenRaveOptions out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenReloadSongs background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSMOnlineLogin overlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectCharacter in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectCharacter out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectDifficulty in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectDifficulty out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectGame in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectGroup in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectGroup out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay/_CourseEntryDisplay bar.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay/_DifficultyDisplay 6x1.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay/_autogen.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay/_balloon long.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay/_balloon marathon.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay/_banner frame.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay/_banner mask.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay/_bpm label.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay/_difficulty icons 1x6.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay/difficulties.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic underlay/_difficulty frame p1.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic underlay/_difficulty frame p2.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic underlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectProfileManage background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectProfileManage in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectProfileManage out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectStyle background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectStyle in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSelectStyle out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSongOptions in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSongOptions option in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSongOptions out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/1.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/2.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/3.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/4.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/5.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/6.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/_underline.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/endless.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/event.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/extra1.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/extra2.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/final.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/nonstop.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay/oni.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenStyleSplash background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenStyleSplash in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenSystemLayer overlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenTestInput in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenTestInput out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenTestInput overlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenTextEntry in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenTextEntry out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenTextEntry underlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleJoin overlay/default.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleJoin overlay/dp.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleJoin overlay/free.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleJoin overlay/jp.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleJoin overlay/pay.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleJoin underlay.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleMenu background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleMenu begin out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleMenu home.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleMenu in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleMenu out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleMenu overlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenTitleMenu underlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenUnlockStatus background/bg.png
+share/games/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements background.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements in.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements out.redir
+share/games/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements overlay.lua
+share/games/stepmania/Themes/default/BGAnimations/ScreenWithMenuElements underlay.lua
+share/games/stepmania/Themes/default/BGAnimations/_BLANK/default.lua
+share/games/stepmania/Themes/default/BGAnimations/_black.lua
+share/games/stepmania/Themes/default/BGAnimations/_black.png
+share/games/stepmania/Themes/default/BGAnimations/_delay in.lua
+share/games/stepmania/Themes/default/BGAnimations/_delay out.lua
+share/games/stepmania/Themes/default/BGAnimations/_fade and swoosh in.lua
+share/games/stepmania/Themes/default/BGAnimations/_fade in normal.lua
+share/games/stepmania/Themes/default/BGAnimations/_fade out normal.lua
+share/games/stepmania/Themes/default/BGAnimations/_fade out with sound.lua
+share/games/stepmania/Themes/default/BGAnimations/_frame 3x1/default.lua
+share/games/stepmania/Themes/default/BGAnimations/_frame 3x3/default.lua
+share/games/stepmania/Themes/default/BGAnimations/_frame files 3x1/headers 3x1.png
+share/games/stepmania/Themes/default/BGAnimations/_fullscreen black.lua
+share/games/stepmania/Themes/default/BGAnimations/_menu in.lua
+share/games/stepmania/Themes/default/BGAnimations/_menu out.lua
+share/games/stepmania/Themes/default/BGAnimations/_missing/dummy.txt
+share/games/stepmania/Themes/default/BGAnimations/_moveon.png
+share/games/stepmania/Themes/default/BGAnimations/_options to options.lua
+share/games/stepmania/Themes/default/BGAnimations/_prompt in instant.lua
+share/games/stepmania/Themes/default/BGAnimations/_prompt in normal.lua
+share/games/stepmania/Themes/default/BGAnimations/_prompt out.redir
+share/games/stepmania/Themes/default/BGAnimations/_prompt underlay.lua
+share/games/stepmania/Themes/default/BGAnimations/_shared background fade in.lua
+share/games/stepmania/Themes/default/BGAnimations/_shared background normal/bg.png
+share/games/stepmania/Themes/default/BGAnimations/_shared background normal/default.lua
+share/games/stepmania/Themes/default/BGAnimations/_shared edit courses.lua
+share/games/stepmania/Themes/default/BGAnimations/_underline.png
+share/games/stepmania/Themes/default/Fonts/BPMDisplay bpm 5x3.png
+share/games/stepmania/Themes/default/Fonts/BPMDisplay bpm.ini
+share/games/stepmania/Themes/default/Fonts/Combo numbers 5x3.png
+share/games/stepmania/Themes/default/Fonts/Combo numbers.ini
+share/games/stepmania/Themes/default/Fonts/Common Normal 16x16.png
+share/games/stepmania/Themes/default/Fonts/Common Normal.ini
+share/games/stepmania/Themes/default/Fonts/Common default 2x1.png
+share/games/stepmania/Themes/default/Fonts/Common default.ini
+share/games/stepmania/Themes/default/Fonts/Common title.redir
+share/games/stepmania/Themes/default/Fonts/CourseEntryDisplay difficulty 2x1.png
+share/games/stepmania/Themes/default/Fonts/CourseEntryDisplay difficulty.ini
+share/games/stepmania/Themes/default/Fonts/CourseEntryDisplay number.redir
+share/games/stepmania/Themes/default/Fonts/DifficultyMeter meter.redir
+share/games/stepmania/Themes/default/Fonts/DifficultyMeter ticks 2x1.png
+share/games/stepmania/Themes/default/Fonts/DifficultyMeter ticks.ini
+share/games/stepmania/Themes/default/Fonts/DifficultyMeterEdit meter.redir
+share/games/stepmania/Themes/default/Fonts/EditMenu title.redir
+share/games/stepmania/Themes/default/Fonts/EditMenu value.redir
+share/games/stepmania/Themes/default/Fonts/GroupList label.redir
+share/games/stepmania/Themes/default/Fonts/HelpDisplay text.redir
+share/games/stepmania/Themes/default/Fonts/LifeMeterBattery lives.redir
+share/games/stepmania/Themes/default/Fonts/LifeMeterBattery percent text.redir
+share/games/stepmania/Themes/default/Fonts/LyricDisplay text.redir
+share/games/stepmania/Themes/default/Fonts/MenuTimer numbers.redir
+share/games/stepmania/Themes/default/Fonts/ModeSwitcher stylenames.redir
+share/games/stepmania/Themes/default/Fonts/MusicList titles 16x16.png
+share/games/stepmania/Themes/default/Fonts/MusicList titles [extras].png
+share/games/stepmania/Themes/default/Fonts/MusicList titles.ini
+share/games/stepmania/Themes/default/Fonts/MusicWheelItem course.redir
+share/games/stepmania/Themes/default/Fonts/MusicWheelItem roulette.redir
+share/games/stepmania/Themes/default/Fonts/MusicWheelItem section.redir
+share/games/stepmania/Themes/default/Fonts/MusicWheelItem sort.redir
+share/games/stepmania/Themes/default/Fonts/MusicWheelItem text.redir
+share/games/stepmania/Themes/default/Fonts/OptionIconRow icon.redir
+share/games/stepmania/Themes/default/Fonts/PaneDisplay text.redir
+share/games/stepmania/Themes/default/Fonts/ProTimingDisplay Judgment.redir
+share/games/stepmania/Themes/default/Fonts/RoomInfoDisplay text.redir
+share/games/stepmania/Themes/default/Fonts/RoomWheel text.redir
+share/games/stepmania/Themes/default/Fonts/RoomWheelItem text.redir
+share/games/stepmania/Themes/default/Fonts/ScoreDisplayLifeTime DeltaSeconds.redir
+share/games/stepmania/Themes/default/Fonts/ScoreDisplayLifeTime TimeRemaining.redir
+share/games/stepmania/Themes/default/Fonts/ScoreDisplayNormal numbers 5x3.png
+share/games/stepmania/Themes/default/Fonts/ScoreDisplayNormal numbers.ini
+share/games/stepmania/Themes/default/Fonts/ScoreDisplayOni numbers.redir
+share/games/stepmania/Themes/default/Fonts/ScoreDisplayPercentage percent text.redir
+share/games/stepmania/Themes/default/Fonts/ScoreDisplayRave level.redir
+share/games/stepmania/Themes/default/Fonts/ScreenBookkeeping AllTime.redir
+share/games/stepmania/Themes/default/Fonts/ScreenBookkeeping data.redir
+share/games/stepmania/Themes/default/Fonts/ScreenBookkeeping title.redir
+share/games/stepmania/Themes/default/Fonts/ScreenCredits titles.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEdit EditHelp.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEdit Info.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEdit PlayRecordHelp.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEditMenu MaxStepsLoadedFromProfile.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEditMenu NumStepsLoadedFromProfile.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEditMenu explanation.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEvaluation PlayerOptions.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEvaluation judge.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEvaluation percent remainder.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEvaluation percent text 5x3.png
+share/games/stepmania/Themes/default/Fonts/ScreenEvaluation percent text.ini
+share/games/stepmania/Themes/default/Fonts/ScreenEvaluation score.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEvaluation stage.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEvaluation time.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEvaluation totalscore.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEz2SelectMusic GroupName.redir
+share/games/stepmania/Themes/default/Fonts/ScreenEz2SelectMusic difficulty.redir
+share/games/stepmania/Themes/default/Fonts/ScreenGameplay ActiveAttackList.redir
+share/games/stepmania/Themes/default/Fonts/ScreenGameplay StepsDescription.redir
+share/games/stepmania/Themes/default/Fonts/ScreenGameplay player options.redir
+share/games/stepmania/Themes/default/Fonts/ScreenGameplay player.redir
+share/games/stepmania/Themes/default/Fonts/ScreenGameplay scoreboard.redir
+share/games/stepmania/Themes/default/Fonts/ScreenGameplay song num.redir
+share/games/stepmania/Themes/default/Fonts/ScreenGameplay song options.redir
+share/games/stepmania/Themes/default/Fonts/ScreenGameplay survive time.redir
+share/games/stepmania/Themes/default/Fonts/ScreenMapControllers entry.redir
+share/games/stepmania/Themes/default/Fonts/ScreenMiniMenu title.redir
+share/games/stepmania/Themes/default/Fonts/ScreenMusicScroll thanks.redir
+share/games/stepmania/Themes/default/Fonts/ScreenMusicScroll titles.redir
+share/games/stepmania/Themes/default/Fonts/ScreenNameEntry category.redir
+share/games/stepmania/Themes/default/Fonts/ScreenNameEntry letters 16x16.png
+share/games/stepmania/Themes/default/Fonts/ScreenNameEntry letters.ini
+share/games/stepmania/Themes/default/Fonts/ScreenNetEvaluation names.redir
+share/games/stepmania/Themes/default/Fonts/ScreenNetSelectMusic chat.redir
+share/games/stepmania/Themes/default/Fonts/ScreenNetSelectMusic song.redir
+share/games/stepmania/Themes/default/Fonts/ScreenNetSelectMusic wheel.redir
+share/games/stepmania/Themes/default/Fonts/ScreenOptions explanation.redir
+share/games/stepmania/Themes/default/Fonts/ScreenOptions icon.redir
+share/games/stepmania/Themes/default/Fonts/ScreenOptions item.redir
+share/games/stepmania/Themes/default/Fonts/ScreenOptions player.redir
+share/games/stepmania/Themes/default/Fonts/ScreenOptions text 16x16.png
+share/games/stepmania/Themes/default/Fonts/ScreenOptions text.ini
+share/games/stepmania/Themes/default/Fonts/ScreenOptions title.redir
+share/games/stepmania/Themes/default/Fonts/ScreenOptionsSimple title.redir
+share/games/stepmania/Themes/default/Fonts/ScreenPrompt answer.redir
+share/games/stepmania/Themes/default/Fonts/ScreenPrompt question.redir
+share/games/stepmania/Themes/default/Fonts/ScreenRanking category.redir
+share/games/stepmania/Themes/default/Fonts/ScreenRanking course list score.redir
+share/games/stepmania/Themes/default/Fonts/ScreenRanking course list title.redir
+share/games/stepmania/Themes/default/Fonts/ScreenRanking course title.redir
+share/games/stepmania/Themes/default/Fonts/ScreenRanking name.redir
+share/games/stepmania/Themes/default/Fonts/ScreenRanking points.redir
+share/games/stepmania/Themes/default/Fonts/ScreenRanking score.redir
+share/games/stepmania/Themes/default/Fonts/ScreenRanking song title.redir
+share/games/stepmania/Themes/default/Fonts/ScreenRanking steps score.redir
+share/games/stepmania/Themes/default/Fonts/ScreenRanking steps type.redir
+share/games/stepmania/Themes/default/Fonts/ScreenRanking time.redir
+share/games/stepmania/Themes/default/Fonts/ScreenSMOnlineLogin text.redir
+share/games/stepmania/Themes/default/Fonts/ScreenSelectGroup num songs.redir
+share/games/stepmania/Themes/default/Fonts/ScreenSelectMusic rank.redir
+share/games/stepmania/Themes/default/Fonts/ScreenSelectMusic score 5x3.png
+share/games/stepmania/Themes/default/Fonts/ScreenSelectMusic score.ini
+share/games/stepmania/Themes/default/Fonts/ScreenStatsOverlay stats.redir
+share/games/stepmania/Themes/default/Fonts/ScreenStatsOverlay time.redir
+share/games/stepmania/Themes/default/Fonts/ScreenSystemLayer credits 16x16.png
+share/games/stepmania/Themes/default/Fonts/ScreenSystemLayer credits.ini
+share/games/stepmania/Themes/default/Fonts/ScreenSystemLayer message.redir
+share/games/stepmania/Themes/default/Fonts/ScreenTextEntry answer.redir
+share/games/stepmania/Themes/default/Fonts/ScreenTextEntry keyboard.redir
+share/games/stepmania/Themes/default/Fonts/ScreenTextEntry question.redir
+share/games/stepmania/Themes/default/Fonts/ScreenTitleMenu choices.redir
+share/games/stepmania/Themes/default/Fonts/ScreenTitleMenu help.redir
+share/games/stepmania/Themes/default/Fonts/ScreenUnlockStatus text.redir
+share/games/stepmania/Themes/default/Fonts/TextBanner text.redir
+share/games/stepmania/Themes/default/Fonts/_16px fonts.ini
+share/games/stepmania/Themes/default/Fonts/_20px fonts.ini
+share/games/stepmania/Themes/default/Fonts/_Arial 14 shadow 16x16.png
+share/games/stepmania/Themes/default/Fonts/_Arial 14 shadow.ini
+share/games/stepmania/Themes/default/Fonts/_ScreenRanking common 16x16.png
+share/games/stepmania/Themes/default/Fonts/_ScreenRanking common.ini
+share/games/stepmania/Themes/default/Fonts/_Thai 16px [PhayanChana] 16x4.png
+share/games/stepmania/Themes/default/Fonts/_Thai 16px [Sara1] 8x2.png
+share/games/stepmania/Themes/default/Fonts/_Thai 16px [Sara2] 8x2.png
+share/games/stepmania/Themes/default/Fonts/_Thai 16px.ini
+share/games/stepmania/Themes/default/Fonts/_game chars 16px 9x1.ini
+share/games/stepmania/Themes/default/Fonts/_game chars 16px 9x1.png
+share/games/stepmania/Themes/default/Fonts/_japanese 16px [extra] 4x1.png
+share/games/stepmania/Themes/default/Fonts/_japanese 16px [kanji 1] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 16px [kanji 2] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 16px [kanji 3] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 16px [kanji 4] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 16px [kanji 5] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 16px [kanji 6] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 16px [main] 16x16.png
+share/games/stepmania/Themes/default/Fonts/_japanese 16px.ini
+share/games/stepmania/Themes/default/Fonts/_japanese 24px [extra] 4x1.png
+share/games/stepmania/Themes/default/Fonts/_japanese 24px [kanji 1] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 24px [kanji 2] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 24px [kanji 3] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 24px [kanji 4] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 24px [kanji 5] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 24px [kanji 6] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_japanese 24px [main] 16x16.png
+share/games/stepmania/Themes/default/Fonts/_japanese 24px.ini
+share/games/stepmania/Themes/default/Fonts/_korean 16px [jamo 1] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_korean 16px [jamo 2] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_korean 16px [jamo 3] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_korean 16px [jamo 4] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_korean 16px.ini
+share/games/stepmania/Themes/default/Fonts/_korean 24px [jamo 1] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_korean 24px [jamo 2] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_korean 24px [jamo 3] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_korean 24px [jamo 4] 8x8.png
+share/games/stepmania/Themes/default/Fonts/_korean 24px.ini
+share/games/stepmania/Themes/default/Fonts/_misc 16px 8x4.png
+share/games/stepmania/Themes/default/Fonts/_misc 16px.ini
+share/games/stepmania/Themes/default/Fonts/_missing.redir
+share/games/stepmania/Themes/default/Fonts/_numbers1 5x3.png
+share/games/stepmania/Themes/default/Fonts/_numbers1.ini
+share/games/stepmania/Themes/default/Fonts/_numbers2 5x3.png
+share/games/stepmania/Themes/default/Fonts/_numbers2.ini
+share/games/stepmania/Themes/default/Fonts/_numbers3 5x3.png
+share/games/stepmania/Themes/default/Fonts/_numbers3.ini
+share/games/stepmania/Themes/default/Fonts/_option icon 16x16.png
+share/games/stepmania/Themes/default/Fonts/_option icon.ini
+share/games/stepmania/Themes/default/Fonts/_shared1 16x16.png
+share/games/stepmania/Themes/default/Fonts/_shared1.ini
+share/games/stepmania/Themes/default/Fonts/_shared2 16x16.png
+share/games/stepmania/Themes/default/Fonts/_shared2 [extras].png
+share/games/stepmania/Themes/default/Fonts/_shared2.ini
+share/games/stepmania/Themes/default/Fonts/_zeroesthree 16x16.png
+share/games/stepmania/Themes/default/Fonts/_zeroesthree.ini
+share/games/stepmania/Themes/default/Fonts/blaster 16x16.ini
+share/games/stepmania/Themes/default/Fonts/blaster 16x16.png
+share/games/stepmania/Themes/default/Graphics/BPMDisplay label.png
+share/games/stepmania/Themes/default/Graphics/Banner abc.png
+share/games/stepmania/Themes/default/Graphics/Banner all music.png
+share/games/stepmania/Themes/default/Graphics/Banner course fallback.redir
+share/games/stepmania/Themes/default/Graphics/Banner mode.redir
+share/games/stepmania/Themes/default/Graphics/Banner random.png
+share/games/stepmania/Themes/default/Graphics/Banner roulette.png
+share/games/stepmania/Themes/default/Graphics/BeginnerHelper background.png
+share/games/stepmania/Themes/default/Graphics/BeginnerHelper flash.redir
+share/games/stepmania/Themes/default/Graphics/BeginnerHelper stepcircle.png
+share/games/stepmania/Themes/default/Graphics/CombinedLifeMeterTug frame.png
+share/games/stepmania/Themes/default/Graphics/CombinedLifeMeterTug separator.png
+share/games/stepmania/Themes/default/Graphics/CombinedLifeMeterTug stream p1.png
+share/games/stepmania/Themes/default/Graphics/CombinedLifeMeterTug stream p2.png
+share/games/stepmania/Themes/default/Graphics/CombinedLifeMeterTug tip p1.redir
+share/games/stepmania/Themes/default/Graphics/CombinedLifeMeterTug tip p2.redir
+share/games/stepmania/Themes/default/Graphics/Common fallback background.png
+share/games/stepmania/Themes/default/Graphics/Common fallback banner.png
+share/games/stepmania/Themes/default/Graphics/Common window icon.png
+share/games/stepmania/Themes/default/Graphics/DifficultyMeter frame.redir
+share/games/stepmania/Themes/default/Graphics/DifficultyRating icon.redir
+share/games/stepmania/Themes/default/Graphics/EditCoursesMenu left.redir
+share/games/stepmania/Themes/default/Graphics/EditCoursesMenu right.redir
+share/games/stepmania/Themes/default/Graphics/EditMenu Left 1x4.png
+share/games/stepmania/Themes/default/Graphics/EditMenu Right 1x4.png
+share/games/stepmania/Themes/default/Graphics/GrooveGraph base.png
+share/games/stepmania/Themes/default/Graphics/GrooveRadar base.png
+share/games/stepmania/Themes/default/Graphics/GrooveRadar labels 1x5.png
+share/games/stepmania/Themes/default/Graphics/GroupList bar.png
+share/games/stepmania/Themes/default/Graphics/HoldJudgment label 1x2.png
+share/games/stepmania/Themes/default/Graphics/JukeboxMenu left.redir
+share/games/stepmania/Themes/default/Graphics/JukeboxMenu right.redir
+share/games/stepmania/Themes/default/Graphics/LifeMeterBar background.lua
+share/games/stepmania/Themes/default/Graphics/LifeMeterBar extra frame.png
+share/games/stepmania/Themes/default/Graphics/LifeMeterBar extra hot.redir
+share/games/stepmania/Themes/default/Graphics/LifeMeterBar extra normal.png
+share/games/stepmania/Themes/default/Graphics/LifeMeterBar extra passing.redir
+share/games/stepmania/Themes/default/Graphics/LifeMeterBar frame.png
+share/games/stepmania/Themes/default/Graphics/LifeMeterBar hot.png
+share/games/stepmania/Themes/default/Graphics/LifeMeterBar normal.png
+share/games/stepmania/Themes/default/Graphics/LifeMeterBar passing.redir
+share/games/stepmania/Themes/default/Graphics/LifeMeterBattery frame.png
+share/games/stepmania/Themes/default/Graphics/LifeMeterBattery lives 1x4.png
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay checking p1.redir
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay checking p2.redir
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay error p1.png
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay error p2.png
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay late p1.png
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay late p2.png
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay none p1.png
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay none p2.png
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay ready p1.png
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay ready p2.png
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay removed p1.png
+share/games/stepmania/Themes/default/Graphics/MemoryCardDisplay removed p2.png
+share/games/stepmania/Themes/default/Graphics/MenuElements icon couple 2x1.png
+share/games/stepmania/Themes/default/Graphics/MenuElements icon double 2x1.png
+share/games/stepmania/Themes/default/Graphics/MenuElements icon single 2x1.png
+share/games/stepmania/Themes/default/Graphics/MenuElements icon solo 2x1.png
+share/games/stepmania/Themes/default/Graphics/MenuElements icon versus 2x1.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay AllCourses.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay Genre.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay ModeMenu.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay TopGrades.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay artist.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay bpm.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay easymeter.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay endless.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay group.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay hardmeter.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay length.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay mediummeter.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay nonstop.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay oni.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay popularity.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay preferred.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay roulette.png
+share/games/stepmania/Themes/default/Graphics/MusicSortDisplay title.png
+share/games/stepmania/Themes/default/Graphics/MusicWheel highlight.png
+share/games/stepmania/Themes/default/Graphics/MusicWheelItem expanded.redir
+share/games/stepmania/Themes/default/Graphics/MusicWheelItem grades/default.lua
+share/games/stepmania/Themes/default/Graphics/MusicWheelItem grades/grades 2x9.png
+share/games/stepmania/Themes/default/Graphics/MusicWheelItem mode.redir
+share/games/stepmania/Themes/default/Graphics/MusicWheelItem section.png
+share/games/stepmania/Themes/default/Graphics/MusicWheelItem song.png
+share/games/stepmania/Themes/default/Graphics/MusicWheelItem sort.redir
+share/games/stepmania/Themes/default/Graphics/NoteField bars 1x4.png
+share/games/stepmania/Themes/default/Graphics/NoteField board.redir
+share/games/stepmania/Themes/default/Graphics/OptionIconRow icon 3x2.redir
+share/games/stepmania/Themes/default/Graphics/PaneDisplay MachineHighName label.redir
+share/games/stepmania/Themes/default/Graphics/PaneDisplay MachineHighScore label.lua
+share/games/stepmania/Themes/default/Graphics/PaneDisplay ProfileHighScore label.redir
+share/games/stepmania/Themes/default/Graphics/PaneDisplay SongHands label.lua
+share/games/stepmania/Themes/default/Graphics/PaneDisplay SongHolds label.lua
+share/games/stepmania/Themes/default/Graphics/PaneDisplay SongJumps label.lua
+share/games/stepmania/Themes/default/Graphics/PaneDisplay SongMines label.lua
+share/games/stepmania/Themes/default/Graphics/PaneDisplay SongNumSteps label.lua
+share/games/stepmania/Themes/default/Graphics/PaneDisplay SongRolls label.lua
+share/games/stepmania/Themes/default/Graphics/Player combo/_combo.png
+share/games/stepmania/Themes/default/Graphics/Player combo/_misses.png
+share/games/stepmania/Themes/default/Graphics/Player combo/default.lua
+share/games/stepmania/Themes/default/Graphics/Player judgment/_judgments 2x6.png
+share/games/stepmania/Themes/default/Graphics/Player judgment/default.lua
+share/games/stepmania/Themes/default/Graphics/RoomInfoDisplay Background.png
+share/games/stepmania/Themes/default/Graphics/RoomWheelItem bar.redir
+share/games/stepmania/Themes/default/Graphics/ScoreDisplayLifeTime frame.redir
+share/games/stepmania/Themes/default/Graphics/ScoreDisplayNormal frame.redir
+share/games/stepmania/Themes/default/Graphics/ScoreDisplayOni frame.redir
+share/games/stepmania/Themes/default/Graphics/ScoreDisplayRave frame base p1.png
+share/games/stepmania/Themes/default/Graphics/ScoreDisplayRave frame base p2.png
+share/games/stepmania/Themes/default/Graphics/ScoreDisplayRave frame overlay p1.png
+share/games/stepmania/Themes/default/Graphics/ScoreDisplayRave frame overlay p2.png
+share/games/stepmania/Themes/default/Graphics/ScoreDisplayRave stream level1.png
+share/games/stepmania/Themes/default/Graphics/ScoreDisplayRave stream level2.png
+share/games/stepmania/Themes/default/Graphics/ScoreDisplayRave stream level3.png
+share/games/stepmania/Themes/default/Graphics/ScreenBookkeeping footer.redir
+share/games/stepmania/Themes/default/Graphics/ScreenBookkeeping header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenCenterImage footer.redir
+share/games/stepmania/Themes/default/Graphics/ScreenCenterImage header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenCourseManager header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenCredits background frame.png
+share/games/stepmania/Themes/default/Graphics/ScreenEditCourse header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenEditCourseEntry header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEditCoursesMenu header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEditMenu header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenEditMenu page.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEditOptions header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation MachineRecord 01.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation MachineRecord 02.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation MachineRecord 03.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation MachineRecord 04.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation MachineRecord 05.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation MachineRecord 06.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation MachineRecord 07.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation MachineRecord 08.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation MachineRecord 09.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation MachineRecord 10.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation PersonalRecord 01.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation PersonalRecord 02.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation PersonalRecord 03.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation PersonalRecord 04.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation PersonalRecord 05.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation PersonalRecord 06.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation PersonalRecord 07.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation PersonalRecord 08.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation PersonalRecord 09.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation PersonalRecord 10.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation banner frame.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation bar actual p1.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation bar actual p2.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation bar possible p1.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation bar possible p2.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation bonus frame p1.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation bonus frame p2.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation difficulty icons 1x6.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation disqualified.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation failed background.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation failed overlay.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation grade frame p1.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation grade frame p2.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation grades 1x8.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation graph frame p1.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation graph frame p2.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation graph p2.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation judge labels 1x8.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation passed overlay.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation percent frame p1.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation percent frame p2.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation score label.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation stage.lua
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation survived frame p1.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation survived frame p2.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation time label.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation totalscore label.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation try extra1.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation try extra2.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation win frame p1.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation win frame p2.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation win p1 1x3.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluation win p2 1x3.png
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluationEndless footer.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluationEndless header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluationNonstop footer.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluationNonstop header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluationOni footer.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluationOni header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluationRave header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluationStage footer.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluationStage header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenEvaluationSummary header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenEz2SelectMusic difficulty frame.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEz2SelectMusic hiddenicon.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEz2SelectMusic infoframe.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEz2SelectMusic mirroricon.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEz2SelectMusic options message.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEz2SelectMusic shuffleicon.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEz2SelectMusic speedicon.redir
+share/games/stepmania/Themes/default/Graphics/ScreenEz2SelectMusic vanishicon.redir
+share/games/stepmania/Themes/default/Graphics/ScreenGameplay Static Background.redir
+share/games/stepmania/Themes/default/Graphics/ScreenGameplay difficulty icons 2x6.png
+share/games/stepmania/Themes/default/Graphics/ScreenGameplay life frame.png
+share/games/stepmania/Themes/default/Graphics/ScreenGameplay oni gameover.png
+share/games/stepmania/Themes/default/Graphics/ScreenGameplay oni life frame.redir
+share/games/stepmania/Themes/default/Graphics/ScreenGameplay song position meter.redir
+share/games/stepmania/Themes/default/Graphics/ScreenGameplay song position tip.redir
+share/games/stepmania/Themes/default/Graphics/ScreenGameplayExtra life frame.png
+share/games/stepmania/Themes/default/Graphics/ScreenGameplaySyncMachine footer.redir
+share/games/stepmania/Themes/default/Graphics/ScreenInstructions header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenJukeboxMenu header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenLogo dance (dither).png
+share/games/stepmania/Themes/default/Graphics/ScreenLogo ds3ddx.png
+share/games/stepmania/Themes/default/Graphics/ScreenLogo ez2.png
+share/games/stepmania/Themes/default/Graphics/ScreenLogo pump.redir
+share/games/stepmania/Themes/default/Graphics/ScreenLogo techno.redir
+share/games/stepmania/Themes/default/Graphics/ScreenMapControllers exit.lua
+share/games/stepmania/Themes/default/Graphics/ScreenMapControllers header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenu bullet.redir
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenu cursor 3x2.redir
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenu footer 3x2.redir
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenu icon 3x2.redir
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenu page.redir
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuAreaMenu header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuBackgroundChange header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuContext header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuCourseDisplay header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuCourseOptions header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuEditHelp header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuInsertCourseAttack header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuInsertTapAttack header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuMainMenu header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuPreferences header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuSongInformation header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenMiniMenuStepsInformation header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenNetEvaluation header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenNetRoom ChatInputBox.png
+share/games/stepmania/Themes/default/Graphics/ScreenNetRoom ChatOutputBox.png
+share/games/stepmania/Themes/default/Graphics/ScreenNetRoom TitleBG.png
+share/games/stepmania/Themes/default/Graphics/ScreenNetRoom header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenNetSelectMusic ChatInputbox.redir
+share/games/stepmania/Themes/default/Graphics/ScreenNetSelectMusic ChatOutputBox.redir
+share/games/stepmania/Themes/default/Graphics/ScreenNetSelectMusic DIffBG.redir
+share/games/stepmania/Themes/default/Graphics/ScreenNetSelectMusic Selection.redir
+share/games/stepmania/Themes/default/Graphics/ScreenNetSelectMusic header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenNetSelectMusic options.png
+share/games/stepmania/Themes/default/Graphics/ScreenNetworkOptions header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenOptions CanGoLeft.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptions CanGoRight.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptions bullet.png
+share/games/stepmania/Themes/default/Graphics/ScreenOptions cursor 3x2.png
+share/games/stepmania/Themes/default/Graphics/ScreenOptions icon 3x2.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptions line highlight.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptions more.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptions page.png
+share/games/stepmania/Themes/default/Graphics/ScreenOptions underline 3x2.png
+share/games/stepmania/Themes/default/Graphics/ScreenOptionsEditCourse header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptionsEditCourseEntry header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptionsEditProfile header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptionsManageCourses header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptionsManageProfiles header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptionsService header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptionsServiceChild header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenOptionsSimple cursor 3x2.redir
+share/games/stepmania/Themes/default/Graphics/ScreenPackages DownloadBG.png
+share/games/stepmania/Themes/default/Graphics/ScreenPackages PackagesBG.png
+share/games/stepmania/Themes/default/Graphics/ScreenPackages WebBG.png
+share/games/stepmania/Themes/default/Graphics/ScreenPackages WebSel.png
+share/games/stepmania/Themes/default/Graphics/ScreenPackages header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenPlayerOptions ask options.png
+share/games/stepmania/Themes/default/Graphics/ScreenPlayerOptions disqualify.redir
+share/games/stepmania/Themes/default/Graphics/ScreenPlayerOptions entering options.png
+share/games/stepmania/Themes/default/Graphics/ScreenPlayerOptions header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenProfileLoad header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenProfileSave header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenPrompt cursor.lua
+share/games/stepmania/Themes/default/Graphics/ScreenRanking CourseDifficulty easy.redir
+share/games/stepmania/Themes/default/Graphics/ScreenRanking CourseDifficulty hard.redir
+share/games/stepmania/Themes/default/Graphics/ScreenRanking CourseDifficulty medium.redir
+share/games/stepmania/Themes/default/Graphics/ScreenRanking Difficulty challenge.redir
+share/games/stepmania/Themes/default/Graphics/ScreenRanking Difficulty easy.redir
+share/games/stepmania/Themes/default/Graphics/ScreenRanking Difficulty hard.redir
+share/games/stepmania/Themes/default/Graphics/ScreenRanking Difficulty medium.redir
+share/games/stepmania/Themes/default/Graphics/ScreenRanking banner frame.redir
+share/games/stepmania/Themes/default/Graphics/ScreenRanking bullets 1x5.png
+share/games/stepmania/Themes/default/Graphics/ScreenRanking course frame.redir
+share/games/stepmania/Themes/default/Graphics/ScreenRanking song frame.redir
+share/games/stepmania/Themes/default/Graphics/ScreenRanking type dance-double.png
+share/games/stepmania/Themes/default/Graphics/ScreenRanking type dance-single.png
+share/games/stepmania/Themes/default/Graphics/ScreenRaveOptions header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSMOnlineLogin PasswordBG.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSMOnlineLogin header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenSMOnlineLogin page.png
+share/games/stepmania/Themes/default/Graphics/ScreenSMOnlineSelectMusic ChatInputbox.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSMOnlineSelectMusic ChatOutputBox.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSMOnlineSelectMusic DIffBG.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSMOnlineSelectMusic Selection.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSelectCharacter attack frame 1x2.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectCharacter card arrows.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectCharacter explanation.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectCharacter header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenSelectCharacter title 2x2.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectCourse banner frame.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectCourse explanation.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectCourse header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty cursor 2x1.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty explanation 1x2.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty info1.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty info2.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty info3.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty info4.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty info5.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty info6.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty info7.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty info8.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty more page1 1x4.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty more page2 1x4.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty ok 2x1.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty picture1.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty picture2.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty picture3.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty picture4.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty picture5.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty picture6.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty picture7.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty picture8.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectDifficulty shadow 2x1.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectGame header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSelectGroup contents.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectGroup explanation.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectGroup frame.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectGroup header.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMasterBlank explanation page1.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMasterBlank explanation page2.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMasterBlank more page1.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMasterBlank more page2.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusic difficulty icons 1x6.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusic fallback cdtitle.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusic header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusic options message 1x2.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusic score frame p1.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusic score frame p2.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusicEz2 difficulty frame.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusicEz2 difficultyratingicon.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusicEz2 hiddenicon.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusicEz2 infoframe.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusicEz2 mirroricon.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusicEz2 shuffleicon.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusicEz2 speedicon.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectMusicEz2 vanishicon.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectPlayer header.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectProfile scroll choiceCreate.lua
+share/games/stepmania/Themes/default/Graphics/ScreenSelectProfile scroll choiceExit.lua
+share/games/stepmania/Themes/default/Graphics/ScreenSelectProfile scroll choiceProfile.lua
+share/games/stepmania/Themes/default/Graphics/ScreenSelectProfileManage header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle doubles premium.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle explanation.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle icon1.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle icon2.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle icon3.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle icon4.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle icon5.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle info1.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle info2.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle info3.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle info4.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle info5.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle joint premium.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle picture1.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle picture2.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle picture3.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle picture4.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle picture5.png
+share/games/stepmania/Themes/default/Graphics/ScreenSelectStyle warning.png
+share/games/stepmania/Themes/default/Graphics/ScreenSetTime header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenSongOptions header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenStyleSplash footer.redir
+share/games/stepmania/Themes/default/Graphics/ScreenStyleSplash header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenSystemLayer MessageFrame.redir
+share/games/stepmania/Themes/default/Graphics/ScreenTestInput header.lua
+share/games/stepmania/Themes/default/Graphics/ScreenTextEntry cursor.lua
+share/games/stepmania/Themes/default/Graphics/ScreenTextEntry header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenTitleJoin scroll choice1.redir
+share/games/stepmania/Themes/default/Graphics/ScreenTitleMenu beat.redir
+share/games/stepmania/Themes/default/Graphics/ScreenTitleMenu dance.redir
+share/games/stepmania/Themes/default/Graphics/ScreenTitleMenu footer.redir
+share/games/stepmania/Themes/default/Graphics/ScreenTitleMenu header.redir
+share/games/stepmania/Themes/default/Graphics/ScreenTitleMenu pump.redir
+share/games/stepmania/Themes/default/Graphics/ScreenTitleMenu scroll.lua
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0001 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0002 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0003 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0004 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0005 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0006 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0007 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0008 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0009 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0010 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0011 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0012 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0013 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0014 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0015 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0016 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0017 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0018 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0019 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenUnlockStatus 0020 icon.png
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements StyleIcon/_icon OnePlayerOneSide 2x1.png
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements StyleIcon/_icon OnePlayerTwoSides 2x1.png
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements StyleIcon/_icon TwoPlayersSharedSides 2x1.png
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements StyleIcon/_icon TwoPlayersTwoSides 2x1.png
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements StyleIcon/default.lua
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements footer.redir
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements stage/_stage Stage_demo.png
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements stage/_stage Stage_endless.redir
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements stage/_stage Stage_event.png
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements stage/_stage Stage_extra1.png
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements stage/_stage Stage_extra2.png
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements stage/_stage Stage_nonstop.redir
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements stage/_stage Stage_oni.redir
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements stage/default.lua
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements stage/stage.lua
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElementsBlank footer.redir
+share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElementsBlank header.redir
+share/games/stepmania/Themes/default/Graphics/ScrollBar parts 1x3.png
+share/games/stepmania/Themes/default/Graphics/ScrollBar thumb.png
+share/games/stepmania/Themes/default/Graphics/SnapDisplay icon 9x1.png
+share/games/stepmania/Themes/default/Graphics/WheelBase hilight.redir
+share/games/stepmania/Themes/default/Graphics/WheelItemBase bar.redir
+share/games/stepmania/Themes/default/Graphics/WheelNotifyIcon icons 4x2.png
+share/games/stepmania/Themes/default/Graphics/_PaneDisplay label.lua
+share/games/stepmania/Themes/default/Graphics/_blank.png
+share/games/stepmania/Themes/default/Graphics/_frame 1d.lua
+share/games/stepmania/Themes/default/Graphics/_header.lua
+share/games/stepmania/Themes/default/Graphics/_missing.png
+share/games/stepmania/Themes/default/Graphics/_option icon 3x2.png
+share/games/stepmania/Themes/default/Graphics/_shared footer.png
+share/games/stepmania/Themes/default/Graphics/_shared menu header.png
+share/games/stepmania/Themes/default/Graphics/_shared options header.lua
+share/games/stepmania/Themes/default/Languages/de.ini
+share/games/stepmania/Themes/default/Languages/en.ini
+share/games/stepmania/Themes/default/Languages/es.ini
+share/games/stepmania/Themes/default/Languages/fr.ini
+share/games/stepmania/Themes/default/Languages/it.ini
+share/games/stepmania/Themes/default/Other/Profile Catalog.xsl
+share/games/stepmania/Themes/default/Other/Profile Common.xsl
+share/games/stepmania/Themes/default/Other/Profile Stats.xsl
+share/games/stepmania/Themes/default/Other/ScreenGameplaySyncMachine music.ogg
+share/games/stepmania/Themes/default/Other/ScreenGameplaySyncMachine music.sm
+share/games/stepmania/Themes/default/Other/ScreenHowToPlay steps.sm
+share/games/stepmania/Themes/default/Other/SongManager PreferredCourses.txt
+share/games/stepmania/Themes/default/Other/SongManager PreferredSongs.txt
+share/games/stepmania/Themes/default/Other/SongManager PreferredSort.txt
+share/games/stepmania/Themes/default/Scripts/00 init.lua
+share/games/stepmania/Themes/default/Scripts/01 base.lua
+share/games/stepmania/Themes/default/Scripts/Actor.lua
+share/games/stepmania/Themes/default/Scripts/ActorDef.lua
+share/games/stepmania/Themes/default/Scripts/Branches.lua
+share/games/stepmania/Themes/default/Scripts/Colors.lua
+share/games/stepmania/Themes/default/Scripts/Debug.lua
+share/games/stepmania/Themes/default/Scripts/Enum.lua
+share/games/stepmania/Themes/default/Scripts/HelpDisplay.lua
+share/games/stepmania/Themes/default/Scripts/Lyrics.lua
+share/games/stepmania/Themes/default/Scripts/OptionsMenu.lua
+share/games/stepmania/Themes/default/Scripts/Other.lua
+share/games/stepmania/Themes/default/Scripts/Serialize.lua
+share/games/stepmania/Themes/default/Scripts/Sound.lua
+share/games/stepmania/Themes/default/Scripts/Sprite.lua
+share/games/stepmania/Themes/default/Scripts/StageMods.lua
+share/games/stepmania/Themes/default/Scripts/Utilities.lua
+share/games/stepmania/Themes/default/Sounds/Common cancel.redir
+share/games/stepmania/Themes/default/Sounds/Common coin.redir
+share/games/stepmania/Themes/default/Sounds/Common invalid.ogg
+share/games/stepmania/Themes/default/Sounds/Common screenshot.ogg
+share/games/stepmania/Themes/default/Sounds/Common start.ogg
+share/games/stepmania/Themes/default/Sounds/EditCoursesMenu row.redir
+share/games/stepmania/Themes/default/Sounds/EditCoursesMenu save.redir
+share/games/stepmania/Themes/default/Sounds/EditCoursesMenu value.redir
+share/games/stepmania/Themes/default/Sounds/EditMenu row.redir
+share/games/stepmania/Themes/default/Sounds/EditMenu value.redir
+share/games/stepmania/Themes/default/Sounds/GameplayAssist clap.redir
+share/games/stepmania/Themes/default/Sounds/GameplayAssist metronome beat.redir
+share/games/stepmania/Themes/default/Sounds/GameplayAssist metronome measure.redir
+share/games/stepmania/Themes/default/Sounds/JukeboxMenu row.redir
+share/games/stepmania/Themes/default/Sounds/JukeboxMenu value.redir
+share/games/stepmania/Themes/default/Sounds/LifeMeterBattery gain.ogg
+share/games/stepmania/Themes/default/Sounds/LifeMeterBattery lose.ogg
+share/games/stepmania/Themes/default/Sounds/LifeMeterTime GainLife.redir
+share/games/stepmania/Themes/default/Sounds/MemoryCardManager disconnect.ogg
+share/games/stepmania/Themes/default/Sounds/MemoryCardManager error.redir
+share/games/stepmania/Themes/default/Sounds/MemoryCardManager ready.ogg
+share/games/stepmania/Themes/default/Sounds/MemoryCardManager too late.redir
+share/games/stepmania/Themes/default/Sounds/MenuTimer tick.ogg
+share/games/stepmania/Themes/default/Sounds/MusicWheel change.ogg
+share/games/stepmania/Themes/default/Sounds/MusicWheel expand.redir
+share/games/stepmania/Themes/default/Sounds/MusicWheel locked.ogg
+share/games/stepmania/Themes/default/Sounds/MusicWheel sort.ogg
+share/games/stepmania/Themes/default/Sounds/Player battle attack ending.redir
+share/games/stepmania/Themes/default/Sounds/Player battle attack launch.redir
+share/games/stepmania/Themes/default/Sounds/Player course attack ending.redir
+share/games/stepmania/Themes/default/Sounds/Player course attack launch.redir
+share/games/stepmania/Themes/default/Sounds/Player mine.ogg
+share/games/stepmania/Themes/default/Sounds/ScreenCaution change.redir
+share/games/stepmania/Themes/default/Sounds/ScreenCaution start.redir
+share/games/stepmania/Themes/default/Sounds/ScreenCompany music.ogg
+share/games/stepmania/Themes/default/Sounds/ScreenCredits music (loop).ogg
+share/games/stepmania/Themes/default/Sounds/ScreenEdit AddNote.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEdit RemoveNote.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEdit line.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEdit marker.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEdit music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEdit save.ogg
+share/games/stepmania/Themes/default/Sounds/ScreenEdit snap.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEdit switch steps.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEdit value decrease.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEdit value increase.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEditCourseSubmenu difficulty changed.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEvaluation failed.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEvaluation passed.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEvaluation start.redir
+share/games/stepmania/Themes/default/Sounds/ScreenEvaluation try extra1.ogg
+share/games/stepmania/Themes/default/Sounds/ScreenEvaluation try extra2.redir
+share/games/stepmania/Themes/default/Sounds/ScreenGameOver music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenGameplay oni die.ogg
+share/games/stepmania/Themes/default/Sounds/ScreenHowToPlay music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenInstructions music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenIntroMovie music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenJukeboxMenu music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenMapControllers change.redir
+share/games/stepmania/Themes/default/Sounds/ScreenMapControllers delete.redir
+share/games/stepmania/Themes/default/Sounds/ScreenMiniMenu change.redir
+share/games/stepmania/Themes/default/Sounds/ScreenMiniMenu music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenMiniMenu next.redir
+share/games/stepmania/Themes/default/Sounds/ScreenMiniMenu prev.redir
+share/games/stepmania/Themes/default/Sounds/ScreenMiniMenu row.redir
+share/games/stepmania/Themes/default/Sounds/ScreenMiniMenu value.redir
+share/games/stepmania/Themes/default/Sounds/ScreenMusicScroll music (loop).ogg
+share/games/stepmania/Themes/default/Sounds/ScreenNameEntry music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenNameEntry step.redir
+share/games/stepmania/Themes/default/Sounds/ScreenNetSelectMusic change opt.redir
+share/games/stepmania/Themes/default/Sounds/ScreenNetSelectMusic change sel.redir
+share/games/stepmania/Themes/default/Sounds/ScreenOptions change.redir
+share/games/stepmania/Themes/default/Sounds/ScreenOptions next.redir
+share/games/stepmania/Themes/default/Sounds/ScreenOptions prev.redir
+share/games/stepmania/Themes/default/Sounds/ScreenOptions toggle off.redir
+share/games/stepmania/Themes/default/Sounds/ScreenOptions toggle on.redir
+share/games/stepmania/Themes/default/Sounds/ScreenPrompt change.redir
+share/games/stepmania/Themes/default/Sounds/ScreenRanking music (loop).ogg
+share/games/stepmania/Themes/default/Sounds/ScreenSelectCharacter change.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectCharacter music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectDifficulty change.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectDifficulty music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectGroup change.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectGroup music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectMusic course music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectMusic difficulty easier.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectMusic difficulty harder.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectMusic locked.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectMusic loop music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectMusic options.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectMusic random music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectMusic roulette music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectMusic section music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectMusic sort music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectMusic start.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectStyle change.redir
+share/games/stepmania/Themes/default/Sounds/ScreenSelectStyle music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenTextEntry backspace.redir
+share/games/stepmania/Themes/default/Sounds/ScreenTextEntry change.redir
+share/games/stepmania/Themes/default/Sounds/ScreenTextEntry type.redir
+share/games/stepmania/Themes/default/Sounds/ScreenTitleMenu change.redir
+share/games/stepmania/Themes/default/Sounds/ScreenTitleMenu start.redir
+share/games/stepmania/Themes/default/Sounds/ScreenUnlock music.redir
+share/games/stepmania/Themes/default/Sounds/ScreenWithMenuElements music.redir
+share/games/stepmania/Themes/default/Sounds/_block (loop).ogg
+share/games/stepmania/Themes/default/Sounds/_cancel.ogg
+share/games/stepmania/Themes/default/Sounds/_clap.ogg
+share/games/stepmania/Themes/default/Sounds/_common menu music.redir
+share/games/stepmania/Themes/default/Sounds/_common row.ogg
+share/games/stepmania/Themes/default/Sounds/_common value.ogg
+share/games/stepmania/Themes/default/Sounds/_drums (loop).ogg
+share/games/stepmania/Themes/default/Sounds/_edit marker.redir
+share/games/stepmania/Themes/default/Sounds/_extra1.ogg
+share/games/stepmania/Themes/default/Sounds/_extra2.redir
+share/games/stepmania/Themes/default/Sounds/_failed.ogg
+share/games/stepmania/Themes/default/Sounds/_memcard error.ogg
+share/games/stepmania/Themes/default/Sounds/_missing.ogg
+share/games/stepmania/Themes/default/Sounds/_prompt.ogg
+share/games/stepmania/Themes/default/Sounds/_silent.ogg
+share/games/stepmania/Themes/default/Sounds/_skavenger (loop).ogg
+share/games/stepmania/Themes/default/Sounds/_switch down.ogg
+share/games/stepmania/Themes/default/Sounds/_switch up.ogg
+share/games/stepmania/Themes/default/Sounds/_swoosh normal.ogg
+share/games/stepmania/Themes/default/Sounds/_toasty.ogg
+share/games/stepmania/Themes/default/metrics.ini
+share/games/stepmania/Themes/instructions.txt
+share/games/stepmania/Themes/pump/Languages/en.ini
+share/games/stepmania/Themes/pump/Scripts/Sprite.lua
+share/games/stepmania/Themes/techno/metrics.ini
+share/games/stepmania/stepmania
+@dirrm share/games/stepmania/Themes/techno
+@dirrm share/games/stepmania/Themes/pump/Scripts
+@dirrm share/games/stepmania/Themes/pump/Languages
+@dirrm share/games/stepmania/Themes/pump
+@dirrm share/games/stepmania/Themes/default/Sounds
+@dirrm share/games/stepmania/Themes/default/Scripts
+@dirrm share/games/stepmania/Themes/default/Other
+@dirrm share/games/stepmania/Themes/default/Languages
+@dirrm share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements stage
+@dirrm share/games/stepmania/Themes/default/Graphics/ScreenWithMenuElements StyleIcon
+@dirrm share/games/stepmania/Themes/default/Graphics/Player judgment
+@dirrm share/games/stepmania/Themes/default/Graphics/Player combo
+@dirrm share/games/stepmania/Themes/default/Graphics/MusicWheelItem grades
+@dirrm share/games/stepmania/Themes/default/Graphics
+@dirrm share/games/stepmania/Themes/default/Fonts
+@dirrm share/games/stepmania/Themes/default/BGAnimations/_shared background normal
+@dirrm share/games/stepmania/Themes/default/BGAnimations/_missing
+@dirrm share/games/stepmania/Themes/default/BGAnimations/_frame files 3x1
+@dirrm share/games/stepmania/Themes/default/BGAnimations/_frame 3x3
+@dirrm share/games/stepmania/Themes/default/BGAnimations/_frame 3x1
+@dirrm share/games/stepmania/Themes/default/BGAnimations/_BLANK
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenUnlockStatus background
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenTitleJoin overlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenStage overlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic underlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenSelectMusic overlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenRanking underlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenRanking background
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenNameEntry background
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenMusicScroll background
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenMemoryCard background
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenLogo background
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenInstructions overlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenHowToPlay overlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenHowToPlay background
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay underlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay toasty
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay ready
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay overlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay out
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay next course song
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay go
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenGameplay failed
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenGameOver background
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenEvaluationStage overlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenEdit underlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenDemonstration overlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenCredits overlay
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenCompany background
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenCenterImage background
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenCaution background
+@dirrm share/games/stepmania/Themes/default/BGAnimations/ScreenAlbums background
+@dirrm share/games/stepmania/Themes/default/BGAnimations
+@dirrm share/games/stepmania/Themes/default
+@dirrm share/games/stepmania/Themes/beat/Graphics
+@dirrm share/games/stepmania/Themes/beat
+@dirrm share/games/stepmania/Themes/_Installer/Languages
+@dirrm share/games/stepmania/Themes/_Installer
+@dirrm share/games/stepmania/Themes
+@dirrm share/games/stepmania/NoteSkins/pump/default
+@dirrm share/games/stepmania/NoteSkins/pump/classic
+@dirrm share/games/stepmania/NoteSkins/pump
+@dirrm share/games/stepmania/NoteSkins/lights/default
+@dirrm share/games/stepmania/NoteSkins/lights
+@dirrm share/games/stepmania/NoteSkins/dance/flat
+@dirrm share/games/stepmania/NoteSkins/dance/default
+@dirrm share/games/stepmania/NoteSkins/dance/bold
+@dirrm share/games/stepmania/NoteSkins/dance
+@dirrm share/games/stepmania/NoteSkins/common/common
+@dirrm share/games/stepmania/NoteSkins/common
+@dirrm share/games/stepmania/NoteSkins
+@dirrm share/games/stepmania/Data/Shaders/GLSL
+@dirrm share/games/stepmania/Data/Shaders
+@dirrm share/games/stepmania/Data
+@dirrm share/games/stepmania/Courses/Samples
+@dirrm share/games/stepmania/Courses
+@dirrm share/games/stepmania/Characters/default
+@dirrm share/games/stepmania/Characters
+@dirrm share/games/stepmania/BackgroundTransitions
+@dirrm share/games/stepmania/BackgroundEffects
+@dirrm share/games/stepmania/BGAnimations
+@dirrm share/games/stepmania/Songs
+@dirrm share/games/stepmania/Announcers
+@dirrm share/games/stepmania
