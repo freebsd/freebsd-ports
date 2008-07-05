@@ -1,9 +1,8 @@
+bin/bingo_print.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games-Bingo-Print/.packlist
 %%SITE_PERL%%/Games/Bingo/Print.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Bingo/Print/.packlist
 %%PORTDOCS%%%%EXAMPLESDIR%%/bingo_print.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Bingo/Print
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Bingo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games-Bingo-Print
 @dirrmtry %%SITE_PERL%%/Games/Bingo
 @dirrmtry %%SITE_PERL%%/Games
