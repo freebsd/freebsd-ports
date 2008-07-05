@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.48
-PORTREVISION=	1
+PORTVERSION=	2.51
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -38,7 +37,8 @@ PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 
-OPTIONS=	W3M "Install w3m CGI wrapper" off
+OPTIONS=	SEARCH "Install search backend" On \
+		W3M "Install w3m CGI wrapper" Off
 
 MAN1=		ikiwiki.1 ikiwiki-makerepo.1 ikiwiki-transition.1 ikiwiki-update-wikilist.1
 MAN8=		ikiwiki-mass-rebuild.8
@@ -47,6 +47,12 @@ PORTEXAMPLES=	ikiwiki.setup
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_SEARCH)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+		${SITE_PERL}/${PERL_ARCH}/Search/Xapian.pm:${PORTSDIR}/databases/p5-Search-Xapian \
+		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:${PORTSDIR}/www/xapian-omega
+.endif
+
 .if defined(WITH_W3M)
 PLIST_SUB=	W3M=""
 .else
@@ -54,10 +60,12 @@ PLIST_SUB=	W3M="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
+	@${REINPLACE_CMD} -e \
+		"s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
 	@${RM} ${WRKSRC}/IkiWiki/Plugin/mdwn.pm.bak
-	@${REINPLACE_CMD} -e "s|/etc/ikiwiki/wikilist|${LOCALBASE}/etc/ikiwiki/wikilist|" \
+	@${REINPLACE_CMD} -e \
+		"s|/etc/ikiwiki/wikilist|${LOCALBASE}/etc/ikiwiki/wikilist|" \
 		${WRKSRC}/ikiwiki-mass-rebuild \
 		${WRKSRC}/doc/ikiwiki-mass-rebuild.mdwn \
 		${WRKSRC}/ikiwiki-update-wikilist \
@@ -67,6 +75,9 @@ post-patch:
 		-e 's|$$(PREFIX)/lib/w3m|$$(PREFIX)/libexec/w3m|' \
 		-e 's|-wholename|-path|' \
 		${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e \
+		"s|/usr/lib/cgi-bin/omega/omega|${LOCALBASE}/www/xapian-omega/cgi-bin/omega|" \
+		${WRKSRC}/doc/ikiwiki.setup
 .ifndef(WITH_W3M)
 	@${REINPLACE_CMD} -e '/w3m/d' ${WRKSRC}/Makefile.PL
 .endif

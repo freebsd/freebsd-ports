@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080705:
+  AFFECTS: users of www/ikiwiki
+  AUTHOR: Henrik Brix Andersen <brix@FreeBSD.org>
+
+  The IkiWiki search plug-in now uses www/xapian-omega as backend
+  instead of textproc/hyperestraier. You will need to update the
+  configuration of any search enabled ikiwiki installations and
+  rebuild them since the search form has changed.
+
 20080704:
   AFFECTS: users of misc/shared-mime-info
   AUTHOR: FreeBSD GNOME Team <gnome@FreeBSD.org>
