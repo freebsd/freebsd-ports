@@ -15,10 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	The Free Software Foundation's core utilities
 
-CONFLICTS=	fileutils-[0-9]* id-utils-[0-9]* linux-gid-[0-9]* \
-		sh-utils-[0-9]*  textutils-[0-9]*
+CONFLICTS=	id-utils-[0-9]* linux-gid-[0-9]*
 
-USE_GCC=	3.4+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -26,6 +24,7 @@ CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=	yes
+#USE_BISON=	yes
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
@@ -60,6 +59,7 @@ post-patch:
 post-build:
 	@${REINPLACE_CMD} -e "s/ lib / /g" ${WRKSRC}/Makefile
 
-post-install:
+regression-test: build
+	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} check)
 
 .include <bsd.port.mk>

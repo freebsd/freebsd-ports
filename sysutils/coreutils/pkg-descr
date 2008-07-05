@@ -20,4 +20,4 @@ will refer to them without the `g' prefix.
 GNU su does not support a wheel group.  This port installs it
 without the suid bit, unless you define WITH_SUID while building.
 
-WWW: http://www.gnu.org/directory/coreutils.html
+WWW: http://www.gnu.org/software/coreutils/
