@@ -1,0 +1,43 @@
+%%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh/gateway_rb.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Gateway.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Gateway.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Gateway.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Gateway.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Gateway.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Gateway.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Gateway.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Gateway/Version.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net/SSH.html
+%%GEM_DOC_DIR%%/rdoc/classes/Net.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_LIB_DIR%%/CHANGELOG.rdoc
+%%GEM_LIB_DIR%%/lib/net/ssh/gateway.rb
+%%GEM_LIB_DIR%%/Manifest
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/README.rdoc
+%%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/test/gateway_test.rb
+%%GEM_LIB_DIR%%/net-ssh-gateway.gemspec
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/lib/net/ssh
+@dirrm %%GEM_LIB_DIR%%/lib/net
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net/ssh
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/net
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Gateway.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH/Gateway
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/SSH
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%

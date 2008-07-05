@@ -673,6 +673,7 @@
     SUBDIR += rubygem-net-scp
     SUBDIR += rubygem-net-sftp
     SUBDIR += rubygem-net-ssh
+    SUBDIR += rubygem-net-ssh-gateway
     SUBDIR += saferpay
     SUBDIR += safesh
     SUBDIR += saint
