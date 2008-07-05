@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	capistrano
-PORTVERSION=	2.2.0
+PORTVERSION=	2.4.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RF
 
 MAINTAINER=	r.s.a.vandomburg@nedforce.nl
 COMMENT=	A utility for executing commands in parallel on multiple machines
 
-RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/net-sftp-1.1.0.gemspec:${PORTSDIR}/security/rubygem-net-sftp \
-		rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline
+RUN_DEPENDS=	rubygem-net-ssh-gateway>=1.0.0:${PORTSDIR}/security/rubygem-net-ssh-gateway \
+  	rubygem-net-sftp>=2.0.0:${PORTSDIR}/security/rubygem-net-sftp \
+	rubygem-net-scp>=1.0.0:${PORTSDIR}/security/rubygem-net-scp \
+	rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline
 
 USE_RUBY=	yes
 USE_RAKE=	yes
