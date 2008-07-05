@@ -1,7 +1,21 @@
 @comment $FreeBSD$
-bin/plmake
-%%SITE_PERL%%/Makefile/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser/.packlist
+%%SITE_PERL%%/Makefile/AST.pm
+%%SITE_PERL%%/Makefile/AST/Command.pm
+%%SITE_PERL%%/Makefile/AST/Evaluator.pm
+%%SITE_PERL%%/Makefile/AST/Rule.pm
+%%SITE_PERL%%/Makefile/AST/Rule/Base.pm
+%%SITE_PERL%%/Makefile/AST/Rule/Implicit.pm
+%%SITE_PERL%%/Makefile/AST/StemMatch.pm
+%%SITE_PERL%%/Makefile/AST/Variable.pm
+%%SITE_PERL%%/Makefile/Parser.pm
+%%SITE_PERL%%/Makefile/Parser/GmakeDB.pm
+bin/makesimple
+bin/pgmake-db
+bin/plmake
+@dirrmtry %%SITE_PERL%%/Makefile/Parser
+@dirrmtry %%SITE_PERL%%/Makefile/AST/Rule
+@dirrmtry %%SITE_PERL%%/Makefile/AST
+@dirrmtry %%SITE_PERL%%/Makefile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile
-@dirrmtry %%SITE_PERL%%/Makefile
