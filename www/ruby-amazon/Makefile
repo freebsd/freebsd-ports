@@ -16,6 +16,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	A Ruby interface to Amazon's Web Services
 
+CONFLICTS=	ruby-aws-[0-9]*
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
