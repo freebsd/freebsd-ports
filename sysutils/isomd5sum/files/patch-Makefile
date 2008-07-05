@@ -1,0 +1,58 @@
+--- ./Makefile.orig	2008-02-08 04:30:07.000000000 +0000
++++ ./Makefile	2008-06-17 17:07:37.000000000 +0000
+@@ -1,14 +1,14 @@
+ PYVER  := $(shell python -c 'import sys; print sys.version[0:3]')
+ PYTHON = python$(PYVER)
+-PYTHONINCLUDE = /usr/include/$(PYTHON)
++PYTHONINCLUDE = ${PYTHON_INCLUDEDIR}
+ 
+-ifneq (,$(filter ppc64 x86_64 s390x,$(shell uname -m)))
+-LIBDIR = lib64
+-else
++#ifneq (,$(filter ppc64 x86_64 s390x,$(shell uname -m)))
++#LIBDIR = lib64
++#else
+ LIBDIR = lib
+-endif
++#endif
+ 
+-CFLAGS = $(RPM_OPT_FLAGS) -Wall -Werror -D_GNU_SOURCE=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -fPIC -I$(PYTHONINCLUDE)
++CFLAGS = $(RPM_OPT_FLAGS) -Wall -Werror -D_GNU_SOURCE=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE=1 -D_LARGEFILE64_SOURCE=1 -fPIC -I$(PYTHONINCLUDE) -I${LOCALBASE}/include -L${LOCALBASE}/lib
+ 
+ OBJECTS = md5.o libimplantisomd5.o checkisomd5.o implantisomd5
+ SOURCES = $(patsubst %.o,%.c,$(OBJECTS))
+@@ -35,21 +35,21 @@
+ 	$(CC) -shared -g -o pyisomd5sum.so -fpic $(PYOBJS) $(LDFLAGS)
+ 
+ install: all
+-	mkdir -p $(DESTDIR)/usr/$(LIBDIR)/$(PYTHON)/site-packages
+-	mkdir -p $(DESTDIR)/usr/include
+-	mkdir -p $(DESTDIR)/usr/bin
+-	mkdir -p $(DESTDIR)/usr/share/man/man1
+-	install -m 755 implantisomd5 $(DESTDIR)/usr/bin
+-	install -m 755 checkisomd5 $(DESTDIR)/usr/bin
+-	install -m 755 implantisomd5.1 $(DESTDIR)/usr/share/man/man1
+-	install -m 755 checkisomd5.1 $(DESTDIR)/usr/share/man/man1
+-	install -m 755 pyisomd5sum.so $(DESTDIR)/usr/$(LIBDIR)/$(PYTHON)/site-packages
++	mkdir -p $(PYTHONPREFIX_SITELIBDIR)
++	mkdir -p $(PREFIX)/include
++	mkdir -p $(PREFIX)/bin
++	mkdir -p $(PREFIX)/man/man1
++	install -m 755 implantisomd5 $(PREFIX)/bin
++	install -m 755 checkisomd5 $(PREFIX)/bin
++	install -m 755 implantisomd5.1 $(PREFIX)/man/man1
++	install -m 755 checkisomd5.1 $(PREFIX)/man/man1
++	install -m 755 pyisomd5sum.so $(PYTHONPREFIX_SITELIBDIR)
+ #	ln -s ../../bin/implantisomd5 $(DESTDIR)/usr/lib/anaconda-runtime/implantisomd5
+ #	ln -s ../../bin/checkisomd5 $(DESTDIR)/usr/lib/anaconda-runtime/checkisomd5
+-	install -m 644 libimplantisomd5.h $(DESTDIR)/usr/include/
+-	install -m 644 libcheckisomd5.h $(DESTDIR)/usr/include/
+-	install -m 644 libimplantisomd5.a $(DESTDIR)/usr/$(LIBDIR)
+-	install -m 644 libcheckisomd5.a $(DESTDIR)/usr/$(LIBDIR)
++	install -m 644 libimplantisomd5.h $(PREFIX)/include/
++	install -m 644 libcheckisomd5.h $(PREFIX)/include/
++	install -m 644 libimplantisomd5.a $(PREFIX)/$(LIBDIR)
++	install -m 644 libcheckisomd5.a $(PREFIX)/$(LIBDIR)
+ 
+ clean:
+ 	rm -f *.o *.so *.pyc *.a .depend *~

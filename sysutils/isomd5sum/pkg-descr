@@ -1,0 +1,5 @@
+Isomd5sum is a collection of utilities for implanting and checking MD5
+checksums within an ISO9660 image. A checksum is implanted in an image
+using the implantisomd5 utility, and the corresponding checkisomd5 utility
+can be used to verify burned CDs are error-free. Also included is a Python
+extension for performing these tasks.
