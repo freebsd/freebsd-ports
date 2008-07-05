@@ -17,7 +17,7 @@ COMMENT=	Unoffical napiprojekt.pl qt4 client
 RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network qmake_build moc_build uic_build
+QT_COMPONENTS=	corelib gui network qmake_build moc_build uic_build rcc
 INSTALLS_ICONS=	yes
 
 MAN1=		qnapi.1
