@@ -7,7 +7,7 @@
 
 PORTNAME=	wbxml2
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://czauner.onlineloop.com/pub/FreeBSD/distfiles/
@@ -22,7 +22,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 USE_AUTOTOOLS=	aclocal:19 autoconf:261 autoheader:261 automake:19 libtool:15
 AUTOMAKE_ARGS=	-acf
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig libxml2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
