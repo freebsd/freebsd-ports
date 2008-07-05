@@ -7,7 +7,7 @@
 
 PORTNAME=	afterstep-i18n
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP:S/$/:afterstep/} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -49,10 +49,8 @@ pre-patch:
 post-patch:
 	@ ${CP} ${WRKSRC}/sample.steprc ${WRKSRC}/sample.steprc.ja_JP.EUC
 	@ ${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/steprc.ja.diff
-	@ for i in ${SRCDIRS}; do \
-		cd ${WRKSRC}/$$i; \
-		${MV} Imakefile Imakefile.orig; \
-		${SED} -e 's/#ifdef AlphaArchitecture/#if defined(AlphaArchitecture) \&\& !defined(FreeBSDArchitecture)/' < Imakefile.orig  >  Imakefile; \
+	for i in ${SRCDIRS}; do \
+		${REINPLACE_CMD} -e 's/#ifdef AlphaArchitecture/#if defined(AlphaArchitecture) \&\& !defined(FreeBSDArchitecture)/' ${WRKSRC}/$${i}/Imakefile ; \
 	done
 
 pre-build:
@@ -72,12 +70,12 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample.steprc.ja_JP.EUC ${AFTERSTEPDIR}/system.steprc.ja_JP.EUC
 
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/afterstep
+	@ ${MKDIR} ${DOCSDIR}
 .for i in CHANGES CREDITS README README.8bit INSTALL FAQ module-interface.txt
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/afterstep
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .for i in CHANGES.I18N README.I18N README.I18N.jis
-	${INSTALL_DATA} ${WRKDIR}/$i ${PREFIX}/share/doc/afterstep
+	${INSTALL_DATA} ${WRKDIR}/$i ${DOCSDIR}
 .endfor
 .endif
 
