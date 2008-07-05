@@ -32,6 +32,7 @@ MAN3+=	Imager::ImageTypes.3
 MAN3+=	Imager::Inline.3
 MAN3+=	Imager::LargeSamples.3
 MAN3+=	Imager::Matrix2d.3
+MAN3+=	Imager::Preprocess.3
 MAN3+=	Imager::Regops.3
 MAN3+=	Imager::Test.3
 MAN3+=	Imager::Transform.3
