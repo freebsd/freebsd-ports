@@ -6,14 +6,14 @@ POST-INSTALL CONFIGURATION FOR ATutor
    restart the server:
 
    ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
-   Alias /ATutor %%PREFIX%%/%%ATUTDIR%%/
+   Alias /atutor %%WWWDIR%%
    AcceptPathInfo On
-   <Directory %%PREFIX%%/%%ATUTDIR%%>
+   <Directory %%WWWDIR%%>
       AllowOverride None
       Order Allow,Deny
       Allow from all
    </Directory>
-   <Directory %%PREFIX%%/%%ATUTDATDIR%%>
+   <Directory %%WWWDIR%%/content/>
       AllowOverride None
       Order Allow,Deny
       Deny from all
