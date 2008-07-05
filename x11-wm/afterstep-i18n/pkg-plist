@@ -55,15 +55,15 @@ include/X11/pixmaps/ja-netscape4.xpm
 @dirrm lib/X11/afterstep/backgrounds
 @dirrm lib/X11/afterstep/sounds
 @dirrm lib/X11/afterstep
-share/doc/afterstep/CHANGES
-share/doc/afterstep/CREDITS
-share/doc/afterstep/README
-share/doc/afterstep/README.8bit
-share/doc/afterstep/FAQ
-share/doc/afterstep/INSTALL
-share/doc/afterstep/module-interface.txt
-share/doc/afterstep/CHANGES.I18N
-share/doc/afterstep/README.I18N
-share/doc/afterstep/README.I18N.jis
-@dirrm share/doc/afterstep
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.8bit
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/module-interface.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.I18N
+%%PORTDOCS%%%%DOCSDIR%%/README.I18N
+%%PORTDOCS%%%%DOCSDIR%%/README.I18N.jis
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry include/X11/pixmaps
