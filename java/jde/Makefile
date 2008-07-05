@@ -12,7 +12,7 @@ CATEGORIES=	java elisp
 MASTER_SITES=	http://jdee.sunsite.dk/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	dougk@dougk-ff7.net
+MAINTAINER=	clawsie@fastmail.fm
 COMMENT=	Java Development Environment for Emacs
 
 USE_EMACS=	yes
