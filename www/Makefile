@@ -1436,6 +1436,7 @@
     SUBDIR += wwwoffle
     SUBDIR += wwwstat
     SUBDIR += wyvern
+    SUBDIR += xapian-omega
     SUBDIR += xaraya
     SUBDIR += xcache
     SUBDIR += xfce4-smartbookmark-plugin
