@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Imager
-PORTVERSION=	0.60
+PORTVERSION=	0.65
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,11 +22,11 @@ LIB_DEPENDS=	\
 		tiff:${PORTSDIR}/graphics/tiff \
 		ungif:${PORTSDIR}/graphics/libungif
 
-USE_FREETYPE=	yes
+USE_FREETYPE2=	yes
 PERL_CONFIGURE=	5.8.0+
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
 		IM_CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		IM_INCPATH="${LOCALBASE}/include/freetype1/freetype"
+		IM_INCPATH="${LOCALBASE}/include/freetype2/freetype"
 
 .include "Makefile.man"
 

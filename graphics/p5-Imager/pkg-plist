@@ -50,6 +50,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Inline.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/LargeSamples.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Matrix2d.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Preprocess.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Regops.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Transform.pm
@@ -69,6 +70,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imextdef.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imexttypes.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imio.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/immacros.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imperl.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imrender.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/iolayer.h
