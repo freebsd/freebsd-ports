@@ -1,4 +1,13 @@
-include/babl-0.0/babl/babl-classes.h
+include/babl-0.0/babl/babl-component.h
+include/babl-0.0/babl/babl-conversion.h
+include/babl-0.0/babl/babl-extension.h
+include/babl-0.0/babl/babl-fish.h
+include/babl-0.0/babl/babl-format.h
+include/babl-0.0/babl/babl-image.h
+include/babl-0.0/babl/babl-model.h
+include/babl-0.0/babl/babl-sampling.h
+include/babl-0.0/babl/babl-type.h
+include/babl-0.0/babl/babl-version.h
 include/babl-0.0/babl/babl.h
 lib/babl-0.0/CIE-Lab.so
 lib/babl-0.0/gegl-fixups.so
@@ -6,6 +15,7 @@ lib/babl-0.0/gggl-lies.so
 lib/babl-0.0/gggl.so
 lib/babl-0.0/gimp-8bit.so
 lib/babl-0.0/naive-CMYK.so
+lib/babl-0.0/sse-fixups.so
 lib/libbabl-0.0.a
 lib/libbabl-0.0.la
 lib/libbabl-0.0.so
