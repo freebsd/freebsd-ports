@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	clojure
-PORTVERSION=	20071020
-PORTREVISION=	1
+PORTVERSION=	20080612
 CATEGORIES=	lang lisp java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dynamic programming language for the JVM
 
 USE_ZIP=	yes

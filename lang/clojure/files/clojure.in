@@ -2,4 +2,9 @@
 #
 # $FreeBSD$
 
-JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar" clojure.lang.Compiler %%DATADIR%%/boot.clj
+if [ -z "$@" ]
+then
+    JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar" clojure.lang.Repl
+else
+    JAVA_VERSION="1.5+" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/clojure.jar" clojure.lang.Script "$@"
+fi
