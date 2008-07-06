@@ -18664,8 +18664,10 @@ rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
 rubygem-mp3info                 ports/audio/rubygem-mp3info
 rubygem-needle                  ports/devel/rubygem-needle
 rubygem-net-netrc               ports/net/rubygem-net-netrc
+rubygem-net-scp                 ports/security/rubygem-net-scp
 rubygem-net-sftp                ports/security/rubygem-net-sftp
 rubygem-net-ssh                 ports/security/rubygem-net-ssh
+rubygem-net-ssh-gateway         ports/security/rubygem-net-ssh-gateway
 rubygem-open4                   ports/devel/rubygem-open4
 rubygem-openid                  ports/net/rubygem-openid
 rubygem-parsetree               ports/devel/rubygem-parsetree
@@ -22293,7 +22295,6 @@ zh-koffice-i18n-zh_tw           ports/chinese/koffice-i18n-zh_TW
 zh-kon2                         ports/chinese/kon2
 zh-libchewing                   ports/chinese/libchewing
 zh-libtabe                      ports/chinese/libtabe
-zh-links                        ports/chinese/links
 zh-lunar                        ports/chinese/lunar
 zh-mingunittf                   ports/chinese/mingunittf
 zh-miniChinput                  ports/chinese/miniChinput
