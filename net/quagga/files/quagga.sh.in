@@ -93,6 +93,10 @@ case "${quagga_cmd}" in
     	do_cmd "stop"
 	quagga_daemons=$(reverse_list ${quagga_daemons})
 	do_cmd "start"
+	;;
+    *)
+	do_cmd "${quagga_cmd}"
+	;;
 esac
 
 if [ "${quagga_delay}" != "0" ]; then
