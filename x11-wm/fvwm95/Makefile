@@ -7,7 +7,7 @@
 
 PORTNAME=	fvwm95
 PORTVERSION=	2.0.43a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Autoconf
@@ -24,6 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include \
 		--libdir=${LOCALBASE}/lib
 
+.ifndef(NO_INSTALL_MANPAGES)
 MAN1=		fvwm95.1 FvwmAudio.1 FvwmDebug.1 FvwmSave.1 FvwmAuto.1 FvwmForm.1 \
 		FvwmSaveDesk.1 FvwmBacker.1 FvwmIconBox.1 FvwmScroll.1 \
 		FvwmBanner.1 FvwmIconMan.1 FvwmTalk.1 FvwmButtons.1 FvwmIdent.1 \
@@ -31,7 +32,6 @@ MAN1=		fvwm95.1 FvwmAudio.1 FvwmDebug.1 FvwmSave.1 FvwmAuto.1 FvwmForm.1 \
 		FvwmPager.1
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${INSTALL_MAN}	${WRKSRC}/fvwm/fvwm95.man \
 		${PREFIX}/man/man1/fvwm95.1
 	for na in ${WRKSRC}/modules/Fvwm*/*.man; do \
