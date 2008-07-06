@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	loudmouth
-PORTVERSION=	1.2.3
-PORTREVISION=	4
+PORTVERSION=	1.4.0
 CATEGORIES=	net-im gnome
 MASTER_SITES=	http://ftp.imendio.com/pub/imendio/loudmouth/src/ \
 		${MASTER_SITE_GNOME}
@@ -20,9 +19,9 @@ LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack glib20
+USE_GNOME=	gnomehack glib20 ltverhack
 CONFIGURE_ARGS=	--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
