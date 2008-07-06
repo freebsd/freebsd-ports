@@ -79,6 +79,9 @@ lib/kde3/kstobject_binnedmap.so
 lib/kde3/kstobject_chop.a
 lib/kde3/kstobject_chop.la
 lib/kde3/kstobject_chop.so
+lib/kde3/kstobject_combine.a
+lib/kde3/kstobject_combine.la
+lib/kde3/kstobject_combine.so
 lib/kde3/kstobject_convolve.a
 lib/kde3/kstobject_convolve.la
 lib/kde3/kstobject_convolve.so
@@ -136,6 +139,9 @@ lib/kde3/kstobject_statistics.so
 lib/kde3/kstobject_syncbin.a
 lib/kde3/kstobject_syncbin.la
 lib/kde3/kstobject_syncbin.so
+lib/kde3/kstobject_trim.a
+lib/kde3/kstobject_trim.la
+lib/kde3/kstobject_trim.so
 lib/kde3/kstplugins/butterworth_bandpass.a
 lib/kde3/kstplugins/butterworth_bandpass.la
 lib/kde3/kstplugins/butterworth_bandpass.so
@@ -308,7 +314,12 @@ share/config/colors/IDL 38 Rainbow18
 share/config/colors/IDL 39 Rainbow-White
 share/config/colors/IDL 40 Rainbow-Black
 share/config/colors/Kst Colors
+share/config/colors/Kst Gamma0.3
+share/config/colors/Kst Gamma0.4
+share/config/colors/Kst Gamma0.5
+share/config/colors/Kst Gamma0.7
 share/config/colors/Kst Grayscale 256
+share/config/colors/Kst Log Greyscale
 share/config/colors/Kst Spectrum 1021
 share/doc/HTML/da/kst/additionalformats-chapter.docbook
 share/doc/HTML/da/kst/commandline-chapter.docbook
@@ -380,6 +391,7 @@ share/doc/HTML/en/kst/Icon-kst-string.png
 share/doc/HTML/en/kst/Icon-kst-tiedzoom.png
 share/doc/HTML/en/kst/Icon-kst-xmousezoom.png
 share/doc/HTML/en/kst/Icon-kst-xymousezoom.png
+share/doc/HTML/en/kst/KstHandbook.pdf
 share/doc/HTML/en/kst/Screenshot-ch3-spect-eg.png
 share/doc/HTML/en/kst/Screenshot-icons-changedatafile.png
 share/doc/HTML/en/kst/Screenshot-icons-changedatasamplerange.png
@@ -577,13 +589,21 @@ share/doc/HTML/en/kst/additionalformats-chapter.docbook
 share/doc/HTML/en/kst/commandline-chapter.docbook
 share/doc/HTML/en/kst/common
 share/doc/HTML/en/kst/commontasks-chapter.docbook
+share/doc/HTML/en/kst/creatingcplugin.html
+share/doc/HTML/en/kst/creatingdataobjectplugin.html
+share/doc/HTML/en/kst/creatingnonlinearfitplugin.html
 share/doc/HTML/en/kst/creatingplugins-chapter.docbook
 share/doc/HTML/en/kst/data-chapter.docbook
+share/doc/HTML/en/kst/data-sources.html
+share/doc/HTML/en/kst/data-tools.html
+share/doc/HTML/en/kst/data-types.html
+share/doc/HTML/en/kst/data.html
 share/doc/HTML/en/kst/dcop-chapter.docbook
 share/doc/HTML/en/kst/equation-appendix.docbook
 share/doc/HTML/en/kst/extensions-chapter.docbook
 share/doc/HTML/en/kst/index.cache.bz2
 share/doc/HTML/en/kst/index.docbook
+share/doc/HTML/en/kst/index.html
 share/doc/HTML/en/kst/install-chapter.docbook
 share/doc/HTML/en/kst/intro-chapter.docbook
 share/doc/HTML/en/kst/kst.1
@@ -1040,6 +1060,7 @@ share/services/kst/kstobject_autocorrelate.desktop
 share/services/kst/kstobject_bin.desktop
 share/services/kst/kstobject_binnedmap.desktop
 share/services/kst/kstobject_chop.desktop
+share/services/kst/kstobject_combine.desktop
 share/services/kst/kstobject_convolve.desktop
 share/services/kst/kstobject_crosscorrelate.desktop
 share/services/kst/kstobject_crossspectrum.desktop
@@ -1059,6 +1080,7 @@ share/services/kst/kstobject_polynomial.desktop
 share/services/kst/kstobject_shift.desktop
 share/services/kst/kstobject_statistics.desktop
 share/services/kst/kstobject_syncbin.desktop
+share/services/kst/kstobject_trim.desktop
 share/servicetypes/kst/kstbasicplugin.desktop
 share/servicetypes/kst/kstdataobjectplugin.desktop
 share/servicetypes/kst/kstdatasourceplugin.desktop
