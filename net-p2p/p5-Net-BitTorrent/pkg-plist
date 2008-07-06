@@ -1,5 +1,8 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/Net/BitTorrent.pm
+%%SITE_PERL%%/Net/BitTorrent/DHT.pm
+%%SITE_PERL%%/Net/BitTorrent/DHT/Node/Mainline.pm
+%%SITE_PERL%%/Net/BitTorrent/DHT/Node/Azureus.pm
 %%SITE_PERL%%/Net/BitTorrent/Session.pm
 %%SITE_PERL%%/Net/BitTorrent/Session/File.pm
 %%SITE_PERL%%/Net/BitTorrent/Session/Peer.pm
@@ -9,6 +12,8 @@
 %%SITE_PERL%%/Net/BitTorrent/Session/Tracker.pm
 %%SITE_PERL%%/Net/BitTorrent/Util.pm
 bin/client.pl
+@dirrmtry %%SITE_PERL%%/Net/BitTorrent/DHT/Node
+@dirrmtry %%SITE_PERL%%/Net/BitTorrent/DHT
 @dirrmtry %%SITE_PERL%%/Net/BitTorrent/Session/Piece
 @dirrmtry %%SITE_PERL%%/Net/BitTorrent/Session/Peer
 @dirrmtry %%SITE_PERL%%/Net/BitTorrent/Session
