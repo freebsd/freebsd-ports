@@ -1,0 +1,13 @@
+bin/npush
+%%DATADIR%%/Level 01 - Gold and Exit
+%%DATADIR%%/Level 02 - Rocks
+%%DATADIR%%/Level 03 - Dynamite
+%%DATADIR%%/Level 04 - The Show Starts
+%%DATADIR%%/Level 05 - The Triangle
+%%DATADIR%%/Level 06 - Moving along
+%%DATADIR%%/Level 07 - Duality
+%%DATADIR%%/Level 08 - Traps and Treasure
+%%DATADIR%%/Level 09 - Cooperation
+%%DATADIR%%/Level 10 - Golden Age
+%%DATADIR%%/Level 11 - Story of a lifetime
+@dirrm %%DATADIR%%
