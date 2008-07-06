@@ -10,15 +10,18 @@ use Getopt::Std;
 use strict;
 use Cwd;
 use Data::Dumper;
+use File::Basename;
 
-use vars qw/$opt_i $opt_u/;
+use vars qw/$opt_c $opt_n $opt_i $opt_u/;
 
 sub usage {
 	print <<EOF;
 Usage: $0 [options] [<category>/]<portname>
 
-	-u <username>	- Your freebsd.org username. Defaults to \$ENV{USER}.
-	-i <filename>	- Use this for INDEX name. Defaults to /usr/ports/INDEX.
+    -c              - Just check
+    -n              - No tmpdir, just use dirname(INDEX)
+    -u <username>   - Your freebsd.org username. Defaults to \$ENV{USER}.
+    -i <filename>   - Use this for INDEX name. Defaults to /usr/ports/INDEX.
 
 Questions, suggestions etc -> edwin\@freebsd.org
 EOF
@@ -30,16 +33,16 @@ my $USER = $ENV{USER};
 {
     $opt_i = "";
     $opt_u = "";
-    getopts("i:u:");
+    getopts("cni:u:");
     $INDEX = $opt_i if ($opt_i);
     $USER = $opt_u if ($opt_u);
 
-    die "$INDEX doesn't seem to exist. Please check the value supplied with -i or use -i." if (! -f $INDEX);
+    die "$INDEX doesn't seem to exist. Please check the value supplied with -i or use -i." unless(-f $INDEX);
 }
 my $PORT = $ARGV[0];
-usage() if (!$PORT);
+usage() unless($PORT);
 
-my $CVSROOT = ":ext:$USER\@pcvs.freebsd.org:/home/pcvs";
+my $CVSROOT = $ENV{CVSROOT} // ':ext:$USER\@pcvs.freebsd.org:/home/pcvs';
 
 #
 # Read the index, save some interesting keys
@@ -47,10 +50,10 @@ my $CVSROOT = ":ext:$USER\@pcvs.freebsd.org:/home/pcvs";
 my %index = ();
 {
     print "Reading $INDEX\n";
-    open(FIN, "$INDEX") or die "Cannot open $INDEX for reading.";
-    my @lines = <FIN>;
+    open(my $fin, '<', "$INDEX") or die "Cannot open $INDEX for reading.";
+    my @lines = <$fin>;
     chomp(@lines);
-    close(FIN);
+    close($fin);
 
     foreach my $line (@lines) {
 	my @a = split(/\|/, $line);
@@ -80,9 +83,7 @@ my %index = ();
 # If specified as category/portname, that should be enough.
 # If specified as portname, check all indexes for existence or duplicates.
 #
-if (defined $index{$PORT}) {
-    # all okay
-} else {
+unless (defined $index{$PORT}) {
     my $count = 0;
     my $n = "";
     foreach my $p (keys(%index)) {
@@ -126,13 +127,15 @@ my $ports = "";
 # Create a temp directory and cvs checkout the ports
 # (don't do error checking, too complicated right now)
 #
-my $TMPDIR = getcwd()."/.tmpdir.$$";
-{
-    mkdir($TMPDIR, 0755);
-    chdir($TMPDIR);
-    `cvs -d $CVSROOT co -T $ports`;
+
+my $TMPDIR = File::Basename::dirname($INDEX);
+unless ($opt_n) {
+  $TMPDIR = getcwd() . "/.tmpdir.$$";
+  mkdir($TMPDIR, 0755);
+  chdir($TMPDIR);
+  system "cvs -d $CVSROOT co -T $ports";
+  chdir($TMPDIR);
 }
-chdir($TMPDIR);
 
 #
 # Bump portrevisions
@@ -143,13 +146,15 @@ chdir($TMPDIR);
 	my $makefile = "ports/$p/Makefile";
 
 	print "- Updating Makefile of $p\n";
+    next if $opt_c;
 
-	if (!open(FIN, $makefile)) {
+    my $fin;
+	unless(open($fin, $makefile)) {
 	    print "-- Cannot open Makefile of $p, ignored.\n";
 	    next;
 	}
-	my @lines = <FIN>;
-	close(FIN);
+	my @lines = <$fin>;
+	close($fin) or die "Can't close $makefile b/c $!";
 	chomp(@lines);
 
 	my $revision = 1;
@@ -160,28 +165,28 @@ chdir($TMPDIR);
 	}
 
 	my $printedrev = 0;
-	open(FOUT, ">$makefile");
+	open(my $fout, '>', "$makefile");
 	foreach my $line (@lines) {
 	    if (!$printedrev) {
 		if ($line =~ /^CATEGORIES??=/ || $line =~ /^PORTEPOCH??=/) {
-		    print FOUT "PORTREVISION=	$revision\n";
+		    print $fout "PORTREVISION=	$revision\n";
 		    $printedrev = 1;
 		    # Fall through!
 		}
 		if ($line =~ /^PORTREVISION\?=/) {
-		    print FOUT "PORTREVISION?=	$revision\n";
+		    print $fout "PORTREVISION?=	$revision\n";
 		    $printedrev = 1;
 		    next;
 		}
 		if ($line =~ /^PORTREVISION=/) {
-		    print FOUT "PORTREVISION=	$revision\n";
+		    print $fout "PORTREVISION=	$revision\n";
 		    $printedrev = 1;
 		    next;
 		}
 	    }
-	    print FOUT "$line\n";
+	    print $fout "$line\n";
 	}
-	close(FOUT);
+	close($fout) or die "Can't close $makefile b/c $!";
     }
 }
 
