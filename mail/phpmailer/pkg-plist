@@ -16,8 +16,20 @@
 %%PORTDOCS%%%%DOCSDIR%%/media/banner.css
 %%PORTDOCS%%%%DOCSDIR%%/media/stylesheet.css
 %%PORTDOCS%%%%DOCSDIR%%/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/phpmailer_sm.gif
 %%PORTDOCS%%%%DOCSDIR%%/pop3_article.txt
 %%PORTDOCS%%%%DOCSDIR%%/use_gmail.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contents.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pop3_before_smtp_test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_gmail.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_mail.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_sendmail.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_smtp.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/bkgrnd.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/phpmailer.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/phpmailer.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/phpmailer_mini.gif
 %%DATADIR%%/class.phpmailer.php
 %%DATADIR%%/class.pop3.php
 %%DATADIR%%/class.smtp.php
@@ -51,3 +63,5 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/media
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/PHPMailer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

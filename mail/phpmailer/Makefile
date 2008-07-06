@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpmailer
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 DISTNAME=	PHPMailer_v${DISTVERSION}
@@ -14,7 +14,7 @@ DISTNAME=	PHPMailer_v${DISTVERSION}
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	Full Featured Email Transfer Class for PHP
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}
 
 USE_DOS2UNIX=	yes
 NO_BUILD=	yes
@@ -41,6 +41,10 @@ do-install:
 .endfor
 	@${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
 	@${CP} -R ${WRKSRC}/phpdoc/* ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
 post-install:
