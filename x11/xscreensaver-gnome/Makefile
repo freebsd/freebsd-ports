@@ -7,8 +7,8 @@
 #
 
 PORTNAME?=	xscreensaver-gnome
-PORTVERSION=	4.24
-PORTREVISION?=	8
+PORTVERSION=	5.05
+PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -27,54 +27,59 @@ USE_PERL5_RUN=	yes
 USE_GNOME=	gnomehier libglade2 gnomehack
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gl --with-gle --with-xpm --with-xml \
+CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
+		--with-jpeg=${LOCALBASE} --with-xshm-ext --with-xdbe-ext \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks \
 		--with-configdir=${PREFIX}/share/xscreensaver/config \
-		--with-jpeg=${LOCALBASE} --without-motif \
-		--without-kerberos
+		--with-dpms-ext --with-xinerama-ext --with-xf86vmode-ext \
+		--with-xf86gamma-ext --with-randr-ext --enable-locking
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS?=	PAM "Pluggable Authentication Module support" off \
-		ALL_FORTUNES "Enable support for all fortunes" off
+		KERBEROS "Add support for kerberos" off \
+		ALL_FORTUNES "Enable support for all fortunes" off \
+		SETUID_HACKS "Install sonar hack suid so it can ping" off
 
-MAN1?=	anemone.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
-	blitspin.1 bouboule.1 boxed.1 braid.1 bsod.1 bubble3d.1 bubbles.1 \
-	bumps.1 cage.1 ccurve.1 circuit.1 compass.1 coral.1 critical.1 \
-	crystal.1 cubenetic.1 cynosure.1 dangerball.1 decayscreen.1 deco.1 \
-	deluxe.1 demon.1 discrete.1 distort.1 drift.1 engine.1 epicycle.1 \
-	euler2d.1 extrusion.1 fadeplot.1 flag.1 flame.1 flipscreen3d.1 flow.1 \
-	fluidballs.1 forest.1 galaxy.1 gears.1 gflux.1 glforestfire.1 \
-	glplanet.1 glsnake.1 gltext.1 goop.1 grav.1 greynetic.1 halo.1 helix.1 \
-	hopalong.1 hyperball.1 hypercube.1 ifs.1 imsmap.1 interference.1 \
-	jigsaw.1 juggle.1 julia.1 kaleidescope.1 kumppa.1 lament.1 laser.1 \
-	lavalite.1 lightning.1 lisa.1 lissie.1 lmorph.1 loop.1 maze.1 menger.1 \
-	moebius.1 moire.1 moire2.1 molecule.1 morph3d.1 mountain.1 munch.1 \
-	nerverot.1 noseguy.1 pedal.1 penetrate.1 penrose.1 petri.1 phosphor.1 \
-	pipes.1 polyominoes.1 pulsar.1 pyro.1 qix.1 queens.1 rd-bomb.1 \
-	ripples.1 rocks.1 rorschach.1 rotor.1 rotzoomer.1 rubik.1 sballs.1 \
-	shadebobs.1 sierpinski.1 sierpinski3d.1 slidescreen.1 slip.1 sonar.1 \
-	speedmine.1 sphere.1 spheremonics.1 spiral.1 spotlight.1 sproingies.1 \
-	squiral.1 stairs.1 starfish.1 starwars.1 stonerview.1 strange.1 \
-	superquadrics.1 swirl.1 t3d.1 thornbird.1 triangle.1 truchet.1 twang.1 \
-	vermiculate.1 vidwhacker.1 vines.1 wander.1 webcollage.1 \
-	whirlwindwarp.1 whirlygig.1 worm.1 xflame.1 xjack.1 xlyap.1 \
-	xmatrix.1 xrayswarm.1 xspirograph.1 xsublim.1 xteevee.1 zoom.1 \
-	endgame.1 glblur.1 halftone.1 barcode.1 eruption.1 flurry.1 \
-	metaballs.1 atunnel.1 piecewise.1 bouncingcow.1 flyingtoasters.1 \
-	glslideshow.1 jigglypuff.1 klein.1 blocktube.1 cloudlife.1 \
-	cubestorm.1 glknots.1 glmatrix.1 hypertorus.1 antspotlight.1 \
-	flipflop.1 polytopes.1 ljlatest.1 apple2.1 blinkbox.1 \
-	fontglide.1 gleidescope.1 mirrorblob.1 pong.1 xanalogtv.1 \
-	mismunch.1 noof.1 pacman.1 wormhole.1 antinspect.1 fuzzyflakes.1\
-	polyhedra.1 anemotaxis.1 providence.1 memscroller.1 fireworkx.1 \
-	intermomentary.1 pinion.1 substrate.1 boing.1 boxfit.1 carousel.1 \
-	antmaze.1 crackberg.1 interaggregate.1 tangram.1 celtic.1 \
-	cube21.1 glhanoi.1 juggler3d.1 timetunnel.1 \
-	fiberlamp.1 fliptext.1 xscreensaver-text.1 \
-	xscreensaver-command.1 xscreensaver-demo.1 \
+MAN1?=	xscreensaver-command.1 xscreensaver-demo.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
-	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
+	xscreensaver-getimage.1 xscreensaver-text.1 xscreensaver.1
+
+MAN6?=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
+	apollonian.6 apple2.6 atlantis.6 attraction.6 atunnel.6 barcode.6 \
+	blaster.6 blinkbox.6 blitspin.6 blocktube.6 boing.6 bouboule.6 \
+	bouncingcow.6 boxed.6 boxfit.6 braid.6 bsod.6 bubble3d.6 bubbles.6 \
+	bumps.6 cage.6 carousel.6 ccurve.6 celtic.6 circuit.6 cloudlife.6 \
+	compass.6 coral.6 crackberg.6 critical.6 crystal.6 cube21.6 \
+	cubenetic.6 cubestorm.6 cynosure.6 dangerball.6 decayscreen.6 deco.6 \
+	deluxe.6 demon.6 discrete.6 distort.6 drift.6 endgame.6 engine.6 \
+	epicycle.6 eruption.6 euler2d.6 extrusion.6 fadeplot.6 fiberlamp.6 \
+	fireworkx.6 flag.6 flame.6 flipflop.6 flipscreen3d.6 fliptext.6 flow.6 \
+	fluidballs.6 flurry.6 flyingtoasters.6 fontglide.6 forest.6 \
+	fuzzyflakes.6 galaxy.6 gears.6 gflux.6 glblur.6 gleidescope.6 \
+	glforestfire.6 glhanoi.6 glknots.6 glmatrix.6 glplanet.6 glschool.6 \
+	glslideshow.6 glsnake.6 gltext.6 goop.6 grav.6 greynetic.6 halftone.6 \
+	halo.6 helix.6 hopalong.6 hyperball.6 hypercube.6 hypertorus.6 ifs.6 \
+	imsmap.6 interaggregate.6 interference.6 intermomentary.6 jigglypuff.6 \
+	jigsaw.6 juggle.6 juggler3d.6 julia.6 kaleidescope.6 klein.6 kumppa.6 \
+	lament.6 laser.6 lavalite.6 lightning.6 lisa.6 lissie.6 ljlatest.6 \
+	lmorph.6 loop.6 maze.6 memscroller.6 menger.6 metaballs.6 mirrorblob.6 \
+	mismunch.6 moebius.6 moire.6 moire2.6 molecule.6 morph3d.6 mountain.6 \
+	munch.6 nerverot.6 noof.6 noseguy.6 pacman.6 pedal.6 penetrate.6 \
+	penrose.6 petri.6 phosphor.6 piecewise.6 pinion.6 pipes.6 polyhedra.6 \
+	polyominoes.6 polytopes.6 pong.6 providence.6 pulsar.6 pyro.6 qix.6 \
+	queens.6 rd-bomb.6 ripples.6 rocks.6 rorschach.6 rotor.6 rotzoomer.6 \
+	rubik.6 sballs.6 shadebobs.6 sierpinski.6 sierpinski3d.6 slidescreen.6 \
+	slip.6 sonar.6 speedmine.6 sphere.6 spheremonics.6 spiral.6 \
+	spotlight.6 sproingies.6 squiral.6 stairs.6 starfish.6 \
+	starwars.6 stonerview.6 strange.6 substrate.6 superquadrics.6 \
+	swirl.6 t3d.6 tangram.6 thornbird.6 timetunnel.6 topblock.6 \
+	triangle.6 truchet.6 twang.6 vermiculate.6 vidwhacker.6 vines.6 \
+	wander.6 webcollage.6 whirlwindwarp.6 whirlygig.6 worm.6 wormhole.6 \
+	xanalogtv.6 xflame.6 xjack.6 xlyap.6 xmatrix.6 xrayswarm.6 \
+	xspirograph.6 xsublim.6 zoom.6 cwaves.6 glcells.6 voronoi.6 \
+	abstractile.6 moebiusgears.6 lockward.6 cubicgrid.6 hypnowheel.6 \
+	xscreensaver-gl-helper.6
 
 .include <bsd.port.pre.mk>
 
@@ -82,23 +87,55 @@ MAN1?=	anemone.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
 .endif
 
-.if !defined(WITH_PAM)
+.if defined(WITH_PAM)
+PLIST_SUB+=		PAM=""
 CONFIGURE_ARGS+=	--without-pam
+.else
+CONFIGURE_ARGS+=	--without-pam
+PLIST_SUB+=		PAM="@comment "
+.endif
+
+.if defined(WITH_KERBEROS)
+CONFIGURE_ARGS+=	--with-kerberos
+.else
+CONFIGURE_ARGS+=	--without-kerberos
+.endif
+
+.if defined(WITH_SETUID_HACKS)
+CONFIGURE_ARGS+=	--with-setuid-hacks
 .endif
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-O0
 .endif
 
+USE_DOS2UNIX=	hacks/glx/topblock.c
 post-patch:
-	@${REINPLACE_CMD}  -e 's|malloc[.]h|stdlib.h|g' \
-		${WRKSRC}/hacks/glx/extrusion.c
-	@${REINPLACE_CMD} -e 's|||' \
-		${WRKSRC}/hacks/glx/klein.c
-	@${REINPLACE_CMD} -E -e 's|^[[:space:]]*GL_LIBS="${PTHREAD_LIBS}"|#|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	    	s|malloc.h|stdlib.h|g ; \
 		s|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD}  -e 's|<util.h>|<libutil.h>|' \
-		${WRKSRC}/hacks/phosphor.c ${WRKSRC}/hacks/apple2-main.c
+.if defined(WITH_PAM)
+.for f in driver/passwd-pam.c driver/xscreensaver.man
+	@${REINPLACE_CMD} -e 's|/etc/pam.d|${PREFIX}/etc/pam.d|g' \
+	    	${WRKSRC}/${f}
+.endfor
+	@${CP} ${FILESDIR}/xscreensaver.pam ${WRKSRC}/driver/xscreensaver.pam
+.else
+	@${REINPLACE_CMD} -e 's|install-xml install-pam|install-xml|' \
+	    	${WRKSRC}/driver/Makefile.in
+.endif
+
+.if !target(post-install-slave)
+post-install-slave:
+	@${NO_NADA}
+.endif
+
+post-install: post-install-slave
+	@(if test -x ${PREFIX}/bin/xscreensaver-hacks/webcollage-helper; then \
+	    	${ECHO} "bin/xscreensaver-hacks/webcollage-helper" | \
+			${CAT} - ${TMPPLIST} > ${TMPPLIST}.cat && \
+			${MV} ${TMPPLIST}.cat ${TMPPLIST}; fi)
+	${RM} ${PREFIX}/man/man6/lcdscrub
 
 .include <bsd.port.post.mk>
