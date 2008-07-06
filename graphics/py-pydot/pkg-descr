@@ -4,4 +4,4 @@ supported (up to Graphviz 1.16). Output can be inlined in Postscript
 into interactive scientific environments like TeXmacs, or output in any
 of the formats supported by the Graphviz tools dot, neato, twopi.
 
-WWW:	http://dkbza.org/pydot.html
+WWW:	http://code.google.com/p/pydot/
