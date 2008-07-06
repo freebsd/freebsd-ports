@@ -534,6 +534,7 @@
     SUBDIR += noegnud-nethack-deet
     SUBDIR += noegnud-slashem
     SUBDIR += nonsense
+    SUBDIR += npush
     SUBDIR += nuclearchess
     SUBDIR += nwndata
     SUBDIR += odamex
