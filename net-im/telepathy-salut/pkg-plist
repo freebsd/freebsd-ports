@@ -1,5 +1,7 @@
 libexec/telepathy-salut
 share/telepathy/managers/salut.manager
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.salut.service
+%%DOCSDIR%%/clique.html
 @dirrmtry share/telepathy/managers
 @dirrmtry share/telepathy
+@dirrm %%DOCSDIR%%
