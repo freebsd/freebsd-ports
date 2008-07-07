@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -15,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	A complete modern object system for Perl 5
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-Class-MOP>=0.59:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
