@@ -4,29 +4,6 @@ bin/fvwm-crystal.generate-menu
 bin/fvwm-crystal.infoline
 bin/fvwm-crystal.mplayer-wrapper
 bin/fvwm-crystal.wallpaper
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/Application database.txt
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/Crystal ROX! HOWTO.txt
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/Keyboard bindings.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/Mouse bindings.txt
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/Tips.txt
-%%PORTDOCS%%%%DOCSDIR%%/addons/Sytem-documentation-browser.READNE
-%%PORTDOCS%%%%DOCSDIR%%/addons/Xresources
-%%PORTDOCS%%%%DOCSDIR%%/addons/Xsession
-%%PORTDOCS%%%%DOCSDIR%%/addons/fvwm-crystal.desktop
-%%PORTDOCS%%%%DOCSDIR%%/addons/fvwm-crystal.lesspipe.sh
-%%PORTDOCS%%%%DOCSDIR%%/addons/fvwm.vim
-%%PORTDOCS%%%%DOCSDIR%%/addons/session
-%%PORTDOCS%%%%DOCSDIR%%/addons/session-management.README
-%%PORTDOCS%%%%DOCSDIR%%/addons/sudo
 %%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/15~doom3~DOOM_III
 %%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/15~quake3~Quake_III_Arena
 %%DATADIR%%/fvwm/Applications/20~Games/20~Action_Games/15~quake4~Quake_IV
@@ -1028,6 +1005,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/components/styles/CursorStyle
 %%DATADIR%%/fvwm/components/styles/CursorStyle-Border
 %%DATADIR%%/fvwm/components/styles/FVWM
+%%DATADIR%%/fvwm/components/styles/FVWM.orig
 %%DATADIR%%/fvwm/components/styles/FocusPolicy-FVWM-Crystal
 %%DATADIR%%/fvwm/components/styles/FocusPolicy-FVWM-Crystal-Raise
 %%DATADIR%%/fvwm/components/styles/FocusPolicy-MSWindows
@@ -3315,6 +3293,7 @@ bin/fvwm-crystal.wallpaper
 %%DATADIR%%/fvwm/wallpapers/fvwm-crystal-bright1-1024x768.jpg
 %%DATADIR%%/fvwm/wallpapers/fvwm-crystal-dark1-1024x768.jpg
 %%DATADIR%%/fvwm/wallpapers/fvwm-crystal-dark2-1024x768.jpg
+@dirrm share/pixmaps
 @dirrm %%DATADIR%%/fvwm/wallpapers
 @dirrm %%DATADIR%%/fvwm/scripts/FvwmMPD
 @dirrm %%DATADIR%%/fvwm/scripts
@@ -3572,5 +3551,3 @@ bin/fvwm-crystal.wallpaper
 @dirrm %%DATADIR%%/fvwm/Applications
 @dirrm %%DATADIR%%/fvwm
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/addons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

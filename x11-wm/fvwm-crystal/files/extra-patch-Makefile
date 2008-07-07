@@ -1,5 +1,5 @@
---- Makefile.orig	2008-05-08 10:22:34.000000000 +0200
-+++ Makefile	2008-05-08 12:24:11.000000000 +0200
+--- Makefile.orig	2008-06-23 22:43:54.000000000 +0200
++++ Makefile	2008-07-01 18:00:25.000000000 +0200
 @@ -1,7 +1,7 @@
  #!/usr/bin/make -f
  .PHONY: all install uninstall dist correctpermissions install-doc uninstall-doc
@@ -13,8 +13,8 @@
  all:
  	@echo "There is nothing to compile."
  
--install: uninstall correctpermissions correctpath
-+install: uninstall install-doc correctpermissions correctpath
+-install: uninstall correctpath
++install: uninstall install-doc correctpath
  	@echo Installing fvwm-crystal $(RELEASE) to $(prefix)
  	mkdir -p $(prefix)/bin $(prefix)/share/fvwm-crystal/fvwm 
  
@@ -29,7 +29,7 @@
  
  uninstall:
  	@echo "Uninstalling previously installed fvwm-crystal"
-@@ -41,7 +41,7 @@
+@@ -40,7 +40,7 @@
  	mkdir -p "fvwm-crystal-minimal-$(RELEASE)"
  	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm"
  	# Copy basic files
@@ -38,7 +38,7 @@
  	cp -r fvwm/config fvwm-crystal-minimal-$(RELEASE)/fvwm/
  	# Copy addons/
  	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/addons"
-@@ -194,8 +194,8 @@
+@@ -190,8 +190,8 @@
  
  # It is needed to adjust some path inside fvwm-crystal.generate-menu since this file must know the install path
  correctpath:
@@ -49,3 +49,10 @@
  
  uninstall-doc:
  	-rm -rf $(docdir)
+@@ -200,5 +200,5 @@
+ install-doc:
+ 	mkdir -p $(addondir) $(docdir)
+ 	install -m 644 addons/* $(addondir)
+-	install -m 644 AUTHORS COPYING NEWS ChangeLog README INSTALL $(docdir)
++	install -m 644 AUTHORS NEWS ChangeLog README INSTALL $(docdir)
+ 	install -m 644 doc/* $(docdir)
