@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	1.42
-PORTREVISION=	2
+PORTVERSION=	1.43
+#PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -19,12 +19,13 @@ COMMENT=	A powerful script-based vector graphics language
 LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
 BUILD_DEPENDS=	boehm-gc>=6.8:${PORTSDIR}/devel/boehm-gc \
 		convert:${PORTSDIR}/graphics/ImageMagick \
+		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		latex:${PORTSDIR}/print/teTeX \
 		makeinfo:${PORTSDIR}/textproc/texi2html \
 		${MKTEXLSR}:${PORTSDIR}/print/teTeX \
 		texi2dvi:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	boehm-gc>=6.8:${PORTSDIR}/devel/boehm-gc \
-		ggv:${PORTSDIR}/print/ggv \
+		gv:${PORTSDIR}/print/gv \
 		latex:${PORTSDIR}/print/teTeX \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
@@ -63,8 +64,12 @@ ALL_TARGET+=	doc
 CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
 INSTALL_TARGET+=	install-doc
 .endif
+RM_OPTS=	-R
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+# Examples
+.if defined(NOPORTEXAMPLES)
+	@${RM} ${RM_OPTS} ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
