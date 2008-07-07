@@ -13,8 +13,7 @@ MASTER_SITES=	http://thilo.kickchat.com/download/:full \
 		ftp://ftp.snt.utwente.nl/pub/games/worldofpadman/linux/:full,update \
 		ftp://ftp.kickchat.com/wop/:update \
 		http://www.hessenfragger.de/uploads/:update \
-		${MASTER_SITE_LOCAL:S/$/:source/}
-MASTER_SITE_SUBDIR=	alepulver
+		${MASTER_SITE_LOCAL:S|$|alepulver/:source|}
 DISTFILES=	worldofpadman.run:full \
 		wop_patch_1_2.run:update \
 		${SRC_FILE}.tar.bz2:source
