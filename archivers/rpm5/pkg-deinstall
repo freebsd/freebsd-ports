@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 # The RPM database directory
-RPM_DATABASE_DIR=/var/lib/rpm
+RPM_DATABASE_DIR=/var/local/lib/rpm
 
 # Provide instructions for removing the RPM database.
 if [ "$2" = "POST-DEINSTALL" ]; then
