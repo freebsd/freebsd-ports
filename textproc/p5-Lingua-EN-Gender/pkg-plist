@@ -1,7 +1,9 @@
-%%SITE_PERL%%/Lingua/EN/gender.pl
+%%SITE_PERL%%/Lingua/EN/Gender.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Gender/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Gender
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Gender
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry %%SITE_PERL%%/Lingua/EN
 @dirrmtry %%SITE_PERL%%/Lingua
