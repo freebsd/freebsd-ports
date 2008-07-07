@@ -7,6 +7,7 @@
 
 PORTNAME=	Compress-Zlib
 PORTVERSION=	2.011
+PORTREVISION=	1
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +15,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Perl5 interface to zlib compression library
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
-		${SITE_PERL}/IO/Uncompress/Gunzip.pm:${PORTSDIR}/archivers/p5-IO-Compress-Zlib
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Compress-Raw-Zlib>=${PORTVERSION}:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
+		p5-IO-Compress-Base>=${PORTVERSION}:${PORTSDIR}/archivers/p5-IO-Compress-Base \
+		p5-IO-Compress-Zlib>=${PORTVERSION}:${PORTSDIR}/archivers/p5-IO-Compress-Zlib
 
 PERL_CONFIGURE=	YES
 
 MAN3=		Compress::Zlib.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
