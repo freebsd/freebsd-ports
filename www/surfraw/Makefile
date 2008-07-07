@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	surfraw
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	www
 MASTER_SITES=	http://surfraw.alioth.debian.org/dist/
 

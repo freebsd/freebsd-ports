@@ -10,6 +10,7 @@ lib/surfraw/alioth
 lib/surfraw/altavista
 lib/surfraw/amazon
 lib/surfraw/archpkg
+lib/surfraw/arxiv
 lib/surfraw/ask
 lib/surfraw/austlii
 lib/surfraw/bbcnews
@@ -49,6 +50,7 @@ lib/surfraw/gutenberg
 lib/surfraw/happypenguin
 lib/surfraw/imdb
 lib/surfraw/ixquick
+lib/surfraw/javasun
 lib/surfraw/lastfm
 lib/surfraw/leodict
 lib/surfraw/musicbrainz
@@ -68,7 +70,6 @@ lib/surfraw/slashdot
 lib/surfraw/slinuxdoc
 lib/surfraw/sourceforge
 lib/surfraw/stockquote
-lib/surfraw/sundocs
 lib/surfraw/sunonesearch
 lib/surfraw/thesaurus
 lib/surfraw/translate
@@ -81,7 +82,6 @@ lib/surfraw/webster
 lib/surfraw/wetandwild
 lib/surfraw/wikipedia
 lib/surfraw/woffle
-lib/surfraw/xxx
 lib/surfraw/yahoo
 lib/surfraw/yubnub
 man/man1/sr.1.gz
@@ -91,6 +91,7 @@ man/man1/altavista.1sr.gz
 man/man1/amazon.1sr.gz
 man/man1/archpkg.1sr.gz
 man/man1/ask.1sr.gz
+man/man1/arxiv.1sr.gz
 man/man1/austlii.1sr.gz
 man/man1/bbcnews.1sr.gz
 man/man1/cddb.1sr.gz
@@ -128,6 +129,7 @@ man/man1/google.1sr.gz
 man/man1/gutenberg.1sr.gz
 man/man1/happypenguin.1sr.gz
 man/man1/ixquick.1sr.gz
+man/man1/javasun.1sr.gz
 man/man1/lastfm.1sr.gz
 man/man1/leodict.1sr.gz
 man/man1/lsm.1sr.gz
@@ -147,7 +149,6 @@ man/man1/slashdot.1sr.gz
 man/man1/slinuxdoc.1sr.gz
 man/man1/sourceforge.1sr.gz
 man/man1/stockquote.1sr.gz
-man/man1/sundocs.1sr.gz
 man/man1/sunonesearch.1sr.gz
 man/man1/thesaurus.1sr.gz
 man/man1/translate.1sr.gz
@@ -160,7 +161,6 @@ man/man1/webster.1sr.gz
 man/man1/wetandwild.1sr.gz
 man/man1/wikipedia.1sr.gz
 man/man1/woffle.1sr.gz
-man/man1/xxx.1sr.gz
 man/man1/yahoo.1sr.gz
 man/man1/yubnub.1sr.gz
 man/man1/opensearch.1sr.gz
