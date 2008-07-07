@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.6.31
+PORTVERSION=	0.6.32
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -89,6 +89,7 @@ CONFIGURE_ARGS+=--with-http_flv_module
 .endif
 
 .if defined(WITH_HTTP_PERL_MODULE)
+CATEGORIES+=	perl5
 CONFIGURE_ARGS+=--with-http_perl_module
 USE_PERL5=	yes
 .endif
