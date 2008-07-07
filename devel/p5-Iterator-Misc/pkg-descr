@@ -5,5 +5,5 @@ keep the size of Iterator::Util down.
 For more information on iterators and how to use them, see the Iterator 
 module documentation.
 
-WWW: http://search.cpan.org/dist/Iterator-DBI/
+WWW: http://search.cpan.org/dist/Iterator-Misc/
 Author: Eric J. Roode <roode@cpan.org>
