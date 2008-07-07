@@ -365,15 +365,16 @@ pkg_backup() {
 	fi
 
 	pkg_install=`pkg_info -xoQ $pkg | cut -d: -f1 | awk '{ORS=" " ; print}'`
-	echo "Creating backup package(s) "$pkg_install"in /usr/obj/"
-	e=`pkg_info -xoQ $pkg | cut -d: -f1`
-	cd /usr/obj/ && pkg_create -xb $e 1>/dev/null 2>&1
+	echo "Creating backup package(s) "$pkg_install"in /var/tmp/"
+	for e in $pkg; do
+		i=`pkg_info -xoQ $e | cut -d: -f1'`
+		cd /var/tmp/ && pkg_create -xb $i 1>/dev/null 2>&1
+	done
 	echo "Done."
 	exit 0
 }	
 
-pkg_time() {
-	echo "Packages (date of installation):"
+pkg_time() { 
 	/bin/ls -lUTt /var/db/pkg/ | awk -F' ' '{ print $6,$7,$8,$9,$10 }' | cut -d/ -f1,5 
 	echo "***`pkg_info | wc -l` ports installed     ***"
 	exit 0
