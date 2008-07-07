@@ -5,7 +5,7 @@
  DmucsDb::assignCpuToClient(const unsigned int clientIp,
                             const DmucsDprop dprop,
 -                           const unsigned int sock)
-+                           const unsigned long sock)
++                           const void *sock)
  {
      MutexMonitor m(&mutex_);
  
@@ -14,7 +14,7 @@
  
  void
 -DmucsDb::releaseCpu(const unsigned int sock)
-+DmucsDb::releaseCpu(const unsigned long sock)
++DmucsDb::releaseCpu(const void *sock)
  {
      /* Get the dprop so that we can release the cpu back into the
         correct sub-db in the DmucsDb. */
@@ -23,7 +23,7 @@
  void
  DmucsDpropDb::assignCpuToClient(const unsigned int hostIp,
 -                                const unsigned int sock)
-+                                const unsigned long sock)
++                                const void *sock)
  {
      struct in_addr t2;
      t2.s_addr = hostIp;
@@ -32,15 +32,15 @@
  
  void
 -DmucsDpropDb::releaseCpu(const unsigned int sock)
-+DmucsDpropDb::releaseCpu(const unsigned long sock)
++DmucsDpropDb::releaseCpu(const void *sock)
  {
 -    DMUCS_DEBUG((stderr, "releaseCpu for socket 0x%x\n", sock));
-+    DMUCS_DEBUG((stderr, "releaseCpu for socket 0x%lx\n", sock));
++    DMUCS_DEBUG((stderr, "releaseCpu for socket %p\n", sock));
  
      dmucs_assigned_cpus_iter_t itr = assignedCpus_.find(sock);
      if (itr == assignedCpus_.end()) {
 -	DMUCS_DEBUG((stderr, "No cpu found in assignedCpus for sock 0x%x\n",
-+	DMUCS_DEBUG((stderr, "No cpu found in assignedCpus for sock 0x%lx\n",
++	DMUCS_DEBUG((stderr, "No cpu found in assignedCpus for sock %p\n",
  		     sock));
  	return;
      }
