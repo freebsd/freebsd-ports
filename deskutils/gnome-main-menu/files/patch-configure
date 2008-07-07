@@ -1,0 +1,85 @@
+--- configure.orig	2008-07-06 22:38:32.000000000 -0400
++++ configure	2008-07-06 22:39:21.000000000 -0400
+@@ -23537,12 +23537,12 @@ if test -n "$MAIN_MENU_CFLAGS"; then
+     pkg_cv_MAIN_MENU_CFLAGS="$MAIN_MENU_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo \"") >&5
+-  ($PKG_CONFIG --exists --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo ") 2>&5
++    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo \"") >&5
++  ($PKG_CONFIG --exists --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo ") 2>&5
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+-  pkg_cv_MAIN_MENU_CFLAGS=`$PKG_CONFIG --cflags " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo " 2>/dev/null`
++  pkg_cv_MAIN_MENU_CFLAGS=`$PKG_CONFIG --cflags " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo " 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -23553,12 +23553,12 @@ if test -n "$MAIN_MENU_LIBS"; then
+     pkg_cv_MAIN_MENU_LIBS="$MAIN_MENU_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo \"") >&5
+-  ($PKG_CONFIG --exists --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo ") 2>&5
++    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo \"") >&5
++  ($PKG_CONFIG --exists --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo ") 2>&5
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+-  pkg_cv_MAIN_MENU_LIBS=`$PKG_CONFIG --libs " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo " 2>/dev/null`
++  pkg_cv_MAIN_MENU_LIBS=`$PKG_CONFIG --libs " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo " 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -23576,14 +23576,14 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        MAIN_MENU_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo " 2>&1`
++	        MAIN_MENU_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo " 2>&1`
+         else
+-	        MAIN_MENU_PKG_ERRORS=`$PKG_CONFIG --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo " 2>&1`
++	        MAIN_MENU_PKG_ERRORS=`$PKG_CONFIG --print-errors " $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo " 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$MAIN_MENU_PKG_ERRORS" >&5
+ 
+-	{ { echo "$as_me:$LINENO: error: Package requirements ( $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo ) were not met:
++	{ { echo "$as_me:$LINENO: error: Package requirements ( $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo ) were not met:
+ 
+ $MAIN_MENU_PKG_ERRORS
+ 
+@@ -23594,7 +23594,7 @@ Alternatively, you may set the environme
+ and MAIN_MENU_LIBS to avoid the need to call pkg-config.
+ See the pkg-config man page for more details.
+ " >&5
+-echo "$as_me: error: Package requirements ( $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 NetworkManager libnm_glib >= 0.7.0 hal-storage cairo ) were not met:
++echo "$as_me: error: Package requirements ( $COMMON_MODULES libpanelapplet-2.0 gnome-desktop-2.0 gconf-2.0 libgtop-2.0 libgnome-2.0 libgnomeui-2.0 dbus-glib-1 hal-storage cairo ) were not met:
+ 
+ $MAIN_MENU_PKG_ERRORS
+ 
+@@ -23637,7 +23637,7 @@ echo "${ECHO_T}yes" >&6; }
+ fi
+ 
+ 
+-for ac_header in iwlib.h
++for ac_header in #
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
+@@ -23850,14 +23850,6 @@ fi
+ done
+ 
+ 
+-if test "x$have_iwlib" != "xyes" ; then
+-	{ { echo "$as_me:$LINENO: error: cannot find iwlib" >&5
+-echo "$as_me: error: cannot find iwlib" >&2;}
+-   { (exit 1); exit 1; }; }
+-else
+-	MAIN_MENU_LIBS="$MAIN_MENU_LIBS -liw"
+-
+-fi
+ 
+ 
+ 

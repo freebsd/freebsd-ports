@@ -1,0 +1,32 @@
+--- main-menu/src/Makefile.in.orig	2008-07-06 22:33:39.000000000 -0400
++++ main-menu/src/Makefile.in	2008-07-06 22:33:59.000000000 -0400
+@@ -48,8 +48,7 @@ libexecPROGRAMS_INSTALL = $(INSTALL_PROG
+ PROGRAMS = $(libexec_PROGRAMS)
+ am_main_menu_OBJECTS = main-menu.$(OBJEXT) main-menu-ui.$(OBJEXT) \
+ 	main-menu-migration.$(OBJEXT) tile-table.$(OBJEXT) \
+-	hard-drive-status-tile.$(OBJEXT) network-status-tile.$(OBJEXT) \
+-	network-status-agent.$(OBJEXT) network-status-info.$(OBJEXT) \
++	hard-drive-status-tile.$(OBJEXT) \
+ 	tomboykeybinder.$(OBJEXT) eggaccelerators.$(OBJEXT)
+ main_menu_OBJECTS = $(am_main_menu_OBJECTS)
+ am__DEPENDENCIES_1 =
+@@ -272,9 +271,6 @@ main_menu_SOURCES = \
+ 	main-menu-migration.c		main-menu-migration.h		\
+ 	tile-table.c			tile-table.h			\
+ 	hard-drive-status-tile.c	hard-drive-status-tile.h	\
+-	network-status-tile.c		network-status-tile.h		\
+-	network-status-agent.c		network-status-agent.h		\
+-	network-status-info.c		network-status-info.h		\
+ 	tomboykeybinder.c		tomboykeybinder.h		\
+ 	eggaccelerators.c		eggaccelerators.h
+ 
+@@ -360,9 +356,6 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main-menu-migration.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main-menu-ui.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main-menu.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/network-status-agent.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/network-status-info.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/network-status-tile.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tile-table.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tomboykeybinder.Po@am__quote@
+ 

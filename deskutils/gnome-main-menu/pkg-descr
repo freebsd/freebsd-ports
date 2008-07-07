@@ -1,0 +1,10 @@
+The gnome-main-menu is a set of two utilities.  A gnome-panel applet similar
+to the traditional main-menu but a few addtions and changes.  In particular the
+gnome-main-menu does not provide direct access to all the applications on the
+system, but rather displays user specified "favorites" and recently launched
+applications.
+
+Access to all the applications is made through the second of the three
+utilities, the application-browser, which is a larger format application than
+that the traditional main-menu which is managed by the window manager to allow
+for resizing, etc.
