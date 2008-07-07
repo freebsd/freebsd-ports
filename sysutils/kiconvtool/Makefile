@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kiconvtool
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -17,7 +17,7 @@ COMMENT=	Tool to preload kernel iconv charset tables
 
 PLIST_FILES=	sbin/kiconvtool etc/rc.d/kiconv
 
-PORTDOCS=	*
+MAN8=		kiconvtool.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/kiconv.sh
@@ -25,9 +25,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kiconvtool ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/kiconv.sh ${PREFIX}/etc/rc.d/kiconv
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
+	${INSTALL_MAN} ${WRKSRC}/kiconvtool.8 ${MAN8PREFIX}/man/man8/
 
 .include <bsd.port.mk>
