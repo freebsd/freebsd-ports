@@ -15,10 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	An elegant music player for MPD
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/mpd.py:${PORTSDIR}/audio/py-mpd \
-		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk>=2.12.1:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk>=2.12.1:${PORTSDIR}/x11-toolkits/py-gtk2 \
+		${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:${PORTSDIR}/audio/py-mpd \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:${PORTSDIR}/devel/py-dbus
 
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
@@ -51,11 +51,11 @@ RUN_DEPENDS+=	mpd:${PORTSDIR}/audio/musicpd
 .endif
 
 .if defined (WITH_TAGLIB)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/tagpy/__init__.py:${PORTSDIR}/audio/py-tagpy
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tagpy>=0.94.5:${PORTSDIR}/audio/py-tagpy
 .endif
 
 .if defined (WITH_ZSI)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ZSI/ServiceProxy.py:${PORTSDIR}/net/py-zsi-devel
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ZSI-devel>=2.0.r3,1:${PORTSDIR}/net/py-zsi-devel
 .endif
 
 .include <bsd.port.post.mk>
