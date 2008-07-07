@@ -23,7 +23,7 @@
 .\" SUCH DAMAGE.
 .\"
 .\"
-.Dd June 19, 2008
+.Dd July 4, 2008
 .Dt BPKG 8
 .Os
 .Sh NAME
@@ -45,7 +45,7 @@ installed ports and the whole ports tree.
 The following command line arguments are supported:
 .Bl -tag -width F1
 .It Fl b
-create backup package file in /usr/obj/ from a locally installed port.
+create backup package in /var/tmp/ from a locally installed port.
 .It Fl c
 clean all distfiles in /usr/ports/distfiles/* [no arguments]
 .It Fl C
@@ -95,11 +95,11 @@ show the total size occupied by files installed within the port.
 .It Fl S
 search the ports tree and display info about the port.
 .It Fl t
-list all installed ports and dates of their installation. [no arguments]
+list all installed ports with dates of their installation. [no arguments]
 .It Fl w
 which installed port owns the specified file.
 .It Fl v
-list all installed ports and possible upgrades. [no arguments]
+list all installed ports and possible updates. [no arguments]
 .It Fl z
 display dynamic object dependencies for the specified port.
 .It Fl Z
@@ -124,6 +124,10 @@ Display all ports matching the regular expression.
 .Dl Ar "> bpkg -t | head"
 .Pp
 Display 10 most recently installed ports.
+.Pp
+.Dl Ar "> bpkg -b 'foo bar'"
+.Pp
+Create backup packages of foo and bar in /var/tmp/ directory.
 .Sh SEE ALSO
 .Xr pkg_add 1 ,
 .Xr pkg_create 1 ,
