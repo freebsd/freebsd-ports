@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	powerdns-recursor
-PORTVERSION=	3.1.6
+PORTVERSION=	3.1.7
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -21,8 +21,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4+
 
-OPTIONS=	STATIC	"Enable Full STATIC" off \
-		SETUID	"Run as pdns_recursor user" on
+OPTIONS=	SETUID	"Run as pdns_recursor user" on \
+		LUA	"Enable Lua bindings" off \
+		STATIC	"Build static binaries" off
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -36,13 +37,21 @@ SUB_FILES=	pkg-message
 
 USE_RC_SUBR+=	pdns-recursor
 
+.if defined(WITH_SETUID)
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-setuid
+.endif
+
+.if defined(WITH_LUA)
+USE_LUA=5.1
+LUA_COMPS=lua
+MAKE_ENV+=LUA=1
+MAKE_ENV+=LUA_CPPFLAGS_CONFIG=-I${LOCALBASE}/include/lua51
+MAKE_ENV+="LUA_LIBS_CONFIG=-L${LOCALBASE}/lib/lua51/ -llua"
+.endif
+
 .if defined(WITH_STATIC)
 MAKE_ENV+=STATIC=full
 PLIST_SUB+=	STATIC="@comment "
-.endif
-
-.if defined(WITH_SETUID)
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-setuid
 .endif
 
 .if exists(/usr/include/ucontext.h)
