@@ -39,6 +39,8 @@ start_postcmd=start_postcmd
 
 # extract user and group, adjust ownership of directories and database
 
+DBDIR=`awk '$1 == "directory" {print $2}' "%%PREFIX%%/etc/openldap/slapd.conf"`
+
 start_precmd()
 {
   local slapd_ownername slapd_groupname
@@ -48,8 +50,8 @@ start_precmd()
     ;;
   *)
     chown "$slapd_owner" "%%LDAP_RUN_DIR%%"
-    chown -RL "$slapd_owner" "%%DATABASEDIR%%"
-    chmod 700 "%%DATABASEDIR%%"
+    chown -RL "$slapd_owner" "${DBDIR}"
+    chmod 700 "${DBDIR}"
     chown "$slapd_owner" "%%PREFIX%%/etc/openldap/slapd.conf"
 
     slapd_ownername="${slapd_owner%:*}"
