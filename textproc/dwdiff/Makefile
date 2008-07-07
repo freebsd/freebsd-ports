@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dwdiff
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://os.ghalkes.nl/dist/
 EXTRACT_SUFX=	.tgz
@@ -14,7 +13,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@logvinov.com
 COMMENT=	A delimited word diff program
 
+OPTIONS=	UNICODE	"Build with Unicode support"	on
+
 HAS_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 MAN1=		${PORTNAME}.1
 PORTDOCS=	COPYING Changelog README
@@ -23,16 +28,18 @@ PORTDOCS=	COPYING Changelog README
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 PLIST_SUB+=	NLS=""
 MANLANG=	"" nl
 LANGS=		de nl
 .else
-CONFIGURE_ARGS+=--without-gettext
+CONFIGURE_ARGS+=	--without-gettext
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined(WITH_UNICODE)
+LIB_DEPENDS+=	icudata:${PORTSDIR}/devel/icu
+.else
+CONFIGURE_ARGS+=	--without-unicode
 .endif
 
 do-install:
