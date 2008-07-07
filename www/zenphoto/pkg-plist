@@ -10,8 +10,8 @@
 %%WWWDIR%%/themes/default/images/tag.png
 %%WWWDIR%%/themes/default/index.php
 %%WWWDIR%%/themes/default/search.php
-%%WWWDIR%%/themes/default/slideshow-controls-old.png
 %%WWWDIR%%/themes/default/slideshow-controls.png
+%%WWWDIR%%/themes/default/slideshow-controls-old.png
 %%WWWDIR%%/themes/default/slideshow.css
 %%WWWDIR%%/themes/default/slideshow.php
 %%WWWDIR%%/themes/default/styles/dark.css
@@ -25,6 +25,7 @@
 %%WWWDIR%%/themes/effervescence_plus/archive.php
 %%WWWDIR%%/themes/effervescence_plus/customfunctions.php
 %%WWWDIR%%/themes/effervescence_plus/image.php
+%%WWWDIR%%/themes/effervescence_plus/images/err-passwordprotected.gif
 %%WWWDIR%%/themes/effervescence_plus/images/logo.png
 %%WWWDIR%%/themes/effervescence_plus/images/search.png
 %%WWWDIR%%/themes/effervescence_plus/images/slimbox/closelabel.gif
@@ -51,7 +52,6 @@
 %%WWWDIR%%/themes/effervescence_plus/scripts/swfobject.js
 %%WWWDIR%%/themes/effervescence_plus/search.php
 %%WWWDIR%%/themes/effervescence_plus/simpleviewer.swf
-%%WWWDIR%%/themes/effervescence_plus/slideshow-controls-old.png
 %%WWWDIR%%/themes/effervescence_plus/slideshow-controls.png
 %%WWWDIR%%/themes/effervescence_plus/slideshow.css
 %%WWWDIR%%/themes/effervescence_plus/slideshow.php
@@ -72,8 +72,8 @@
 %%WWWDIR%%/themes/example/image.php
 %%WWWDIR%%/themes/example/index.php
 %%WWWDIR%%/themes/example/search.php
-%%WWWDIR%%/themes/example/slideshow-controls-old.png
 %%WWWDIR%%/themes/example/slideshow-controls.png
+%%WWWDIR%%/themes/example/slideshow-controls-old.png
 %%WWWDIR%%/themes/example/slideshow.css
 %%WWWDIR%%/themes/example/slideshow.php
 %%WWWDIR%%/themes/example/tag.png
@@ -129,14 +129,15 @@
 %%WWWDIR%%/themes/stopdesign/js/comments.js
 %%WWWDIR%%/themes/stopdesign/js/rememberMe.js
 %%WWWDIR%%/themes/stopdesign/search.php
-%%WWWDIR%%/themes/stopdesign/slideshow-controls-old.png
 %%WWWDIR%%/themes/stopdesign/slideshow-controls.png
+%%WWWDIR%%/themes/stopdesign/slideshow-controls-old.png
 %%WWWDIR%%/themes/stopdesign/slideshow.css
 %%WWWDIR%%/themes/stopdesign/slideshow.php
 %%WWWDIR%%/themes/stopdesign/theme.png
 %%WWWDIR%%/themes/stopdesign/theme_description.php
 %%WWWDIR%%/themes/stopdesign/themeoptions.php
 %%WWWDIR%%/zp-core/admin-functions.php
+%%WWWDIR%%/zp-core/admin-tags.php
 %%WWWDIR%%/zp-core/admin.css
 %%WWWDIR%%/zp-core/admin.php
 %%WWWDIR%%/zp-core/albumsort.php
@@ -163,6 +164,7 @@
 %%WWWDIR%%/zp-core/full-image.php
 %%WWWDIR%%/zp-core/functions-controller.php
 %%WWWDIR%%/zp-core/functions-db.php
+%%WWWDIR%%/zp-core/functions-i18n.php
 %%WWWDIR%%/zp-core/functions-image.php
 %%WWWDIR%%/zp-core/functions.php
 %%WWWDIR%%/zp-core/i.php
@@ -201,6 +203,7 @@
 %%WWWDIR%%/zp-core/js/jquery.js
 %%WWWDIR%%/zp-core/js/jquery.tabs.js
 %%WWWDIR%%/zp-core/js/jquery.tooltip.js
+%%WWWDIR%%/zp-core/js/js-string-constants.js.php
 %%WWWDIR%%/zp-core/js/prototype.js
 %%WWWDIR%%/zp-core/js/scriptaculous/builder.js
 %%WWWDIR%%/zp-core/js/scriptaculous/controls.js
@@ -224,14 +227,26 @@
 %%WWWDIR%%/zp-core/lib-utf8.php
 %%WWWDIR%%/zp-core/locale/de_DE/LC_MESSAGES/zenphoto.mo
 %%WWWDIR%%/zp-core/locale/de_DE/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/fr_FR/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/fr_FR/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/nl_NL/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/nl_NL/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/zh_TW/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/zh_TW/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/option-defaults.php
 %%WWWDIR%%/zp-core/plugins/GoogleCheckout.php
+%%WWWDIR%%/zp-core/plugins/GoogleCheckout/GoogleCartDefault.css
+%%WWWDIR%%/zp-core/plugins/GoogleCheckout/GoogleCartPostToSandBox.js
+%%WWWDIR%%/zp-core/plugins/GoogleCheckout/GoogleCartTopLeft.css
 %%WWWDIR%%/zp-core/plugins/GoogleCheckout/GoogleCheckout.css
+%%WWWDIR%%/zp-core/plugins/dynamic-locale.php
 %%WWWDIR%%/zp-core/plugins/flowplayer.php
 %%WWWDIR%%/zp-core/plugins/flowplayer/FlowPlayerDark.swf
 %%WWWDIR%%/zp-core/plugins/flowplayer/FlowPlayerLight.swf
 %%WWWDIR%%/zp-core/plugins/flowplayer/flowplayer_license.txt
 %%WWWDIR%%/zp-core/plugins/flowplayer/jquery.flashembed.pack.js
+%%WWWDIR%%/zp-core/plugins/flv_playlist.php
+%%WWWDIR%%/zp-core/plugins/flv_playlist/playlist.php
 %%WWWDIR%%/zp-core/plugins/flvplayer.php
 %%WWWDIR%%/zp-core/plugins/flvplayer/flvplayer.js
 %%WWWDIR%%/zp-core/plugins/flvplayer/flvplayer.swf
@@ -241,42 +256,58 @@
 %%WWWDIR%%/zp-core/plugins/print_album_menu.php
 %%WWWDIR%%/zp-core/plugins/rating.php
 %%WWWDIR%%/zp-core/plugins/rating/alt_star.png
+%%WWWDIR%%/zp-core/plugins/rating/functions-rating.php
 %%WWWDIR%%/zp-core/plugins/rating/rating.css
 %%WWWDIR%%/zp-core/plugins/rating/rating.js
 %%WWWDIR%%/zp-core/plugins/rating/update.php
 %%WWWDIR%%/zp-core/plugins/shutterfly.php
 %%WWWDIR%%/zp-core/plugins/shutterfly/shutterfly.css
 %%WWWDIR%%/zp-core/plugins/shutterfly/shutterfly_smlogo.png
-%%WWWDIR%%/zp-core/plugins/shutterfly/zp-shutterfly.readme
 %%WWWDIR%%/zp-core/plugins/slideshow.php
 %%WWWDIR%%/zp-core/plugins/slideshow/controls.png
+%%WWWDIR%%/zp-core/plugins/slideshow/flowplayerfullsizeicon.png
 %%WWWDIR%%/zp-core/plugins/slideshow/jquery.cycle.all.pack.js
 %%WWWDIR%%/zp-core/plugins/spamfilters/akismet.php
 %%WWWDIR%%/zp-core/plugins/spamfilters/none.php
 %%WWWDIR%%/zp-core/plugins/spamfilters/simple.php
 %%WWWDIR%%/zp-core/plugins/spamfilters/spamassassin.php
+%%WWWDIR%%/zp-core/plugins/tag_suggest.php
+%%WWWDIR%%/zp-core/plugins/tag_suggest/tag.css
+%%WWWDIR%%/zp-core/plugins/tag_suggest/tag.js
+%%WWWDIR%%/zp-core/plugins/user_logout.php
 %%WWWDIR%%/zp-core/plugins/zenPaypal.php
 %%WWWDIR%%/zp-core/plugins/zenPaypal/zenPaypal.css
 %%WWWDIR%%/zp-core/refresh-metadata.php
+%%WWWDIR%%/zp-core/setup-primitive.php
 %%WWWDIR%%/zp-core/setup.php
 %%WWWDIR%%/zp-core/sortable.php
 %%WWWDIR%%/zp-core/template-functions.php
 %%WWWDIR%%/zp-core/upgrade.php
+%%WWWDIR%%/zp-core/version.php
 %%WWWDIR%%/zp-core/watermarks/copyright.png
 %%WWWDIR%%/zp-core/watermarks/watermark-video.png
 %%WWWDIR%%/zp-core/watermarks/watermark.png
 %%WWWDIR%%/zp-core/zp-config.php.example
 @dirrm %%WWWDIR%%/zp-core/watermarks
 @dirrm %%WWWDIR%%/zp-core/plugins/zenPaypal
+@dirrm %%WWWDIR%%/zp-core/plugins/tag_suggest
 @dirrm %%WWWDIR%%/zp-core/plugins/spamfilters
 @dirrm %%WWWDIR%%/zp-core/plugins/slideshow
 @dirrm %%WWWDIR%%/zp-core/plugins/shutterfly
 @dirrm %%WWWDIR%%/zp-core/plugins/rating
 @dirrm %%WWWDIR%%/zp-core/plugins/google_maps
 @dirrm %%WWWDIR%%/zp-core/plugins/flvplayer
+@dirrm %%WWWDIR%%/zp-core/plugins/flv_playlist
 @dirrm %%WWWDIR%%/zp-core/plugins/flowplayer
 @dirrm %%WWWDIR%%/zp-core/plugins/GoogleCheckout
 @dirrm %%WWWDIR%%/zp-core/plugins
+@dirrm %%WWWDIR%%/zp-core/locale/zh_TW/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/zh_TW
+@dirrm %%WWWDIR%%/zp-core/locale/nl_NL/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/nl_NL
+@dirrm %%WWWDIR%%/zp-core/locale/fr_FR/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/fr_FR
+@dirrm %%WWWDIR%%/zp-core/locale/en_US
 @dirrm %%WWWDIR%%/zp-core/locale/de_DE/LC_MESSAGES
 @dirrm %%WWWDIR%%/zp-core/locale/de_DE
 @dirrm %%WWWDIR%%/zp-core/locale
@@ -305,3 +336,4 @@
 @dirrmtry %%WWWDIR%%/cache
 @dirrmtry %%WWWDIR%%/albums
 @dirrmtry %%WWWDIR%%
+
