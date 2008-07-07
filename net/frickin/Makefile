@@ -7,6 +7,7 @@
 
 PORTNAME=	frickin
 DISTVERSION=	2.0BETA2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -41,10 +42,6 @@ do-install:
 
 .if ${OSVERSION} < 600000
 IGNORE=		does not compile with old version of pf
-.endif
-
-.if ${OSVERSION} >= 700042
-BROKEN=		does not compile with gcc 4.2
 .endif
 
 .include <bsd.port.post.mk>
