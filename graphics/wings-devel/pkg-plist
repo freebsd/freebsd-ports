@@ -132,10 +132,13 @@ lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_absolute_move.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_absolute_scale.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_bend.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_connect_tool.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_constraints.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_cylindrilize.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_doosabin.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_intersect_edge.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_intersect_vertex.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_region.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_shear.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_shift.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_turnedge.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/commands/wpc_tweak.beam
