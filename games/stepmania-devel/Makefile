@@ -9,8 +9,7 @@ PORTNAME=	stepmania
 PORTVERSION=	20071121
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://surfnet.dl.sourceforge.net/sourceforge/stepmania/ \
-		http://internap.dl.sourceforge.net/sourceforge/stepmania/
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
 DISTNAME=	StepMania-CVS-20071121-src
 
