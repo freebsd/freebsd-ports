@@ -22,6 +22,9 @@ ALL_TARGET=	${PORTNAME}
 MAN1=		mawk.1
 PLIST_FILES=	bin/mawk
 
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} mawk_test fpe_test
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mawk ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/mawk.1 ${MANPREFIX}/man/man1
