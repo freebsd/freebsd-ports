@@ -16,6 +16,8 @@ COMMENT=	A database query and administration tool
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+BROKEN=		Size mismatch
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
