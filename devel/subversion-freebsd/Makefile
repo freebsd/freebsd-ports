@@ -5,7 +5,6 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-freebsd
-PORTREVISION?=	1
 
 COMMENT=	Version control system with FreeBSD Project repo customizations
 
