@@ -4180,6 +4180,7 @@ gnome-launch-box                ports/x11/gnome-launch-box
 gnome-libs                      ports/x11/gnome-libs
 gnome-look                      ports/x11-themes/gnome-look
 gnome-mag                       ports/accessibility/gnome-mag
+gnome-main-menu                 ports/deskutils/gnome-main-menu
 gnome-media                     ports/audio/gnome-media
 gnome-menus                     ports/x11/gnome-menus
 gnome-mime-data                 ports/misc/gnome-mime-data
@@ -8904,6 +8905,7 @@ npapi-xine                      ports/www/npapi-xine
 npc                             ports/www/npc
 nph                             ports/net/nph
 npretty                         ports/graphics/npretty
+npush                           ports/games/npush
 nqc                             ports/lang/nqc
 nqueens                         ports/benchmarks/nqueens
 nrg                             ports/net-mgmt/nrg
@@ -9912,6 +9914,7 @@ p5-Config-Tiny                  ports/devel/p5-Config-Tiny
 p5-ConfigReader                 ports/devel/p5-ConfigReader
 p5-ConfigReader-Simple          ports/devel/p5-ConfigReader-Simple
 p5-Contextual-Return            ports/devel/p5-Contextual-Return
+p5-Continuity                   ports/www/p5-Continuity
 p5-Convert-ASCII-Armour         ports/converters/p5-Convert-ASCII-Armour
 p5-Convert-ASN1                 ports/converters/p5-Convert-ASN1
 p5-Convert-BER                  ports/converters/p5-Convert-BER
@@ -10061,6 +10064,7 @@ p5-DBIx-MySQLSequence           ports/databases/p5-DBIx-MySQLSequence
 p5-DBIx-Password                ports/databases/p5-DBIx-Password
 p5-DBIx-Perlish                 ports/databases/p5-DBIx-Perlish
 p5-DBIx-Recordset               ports/databases/p5-DBIx-Recordset
+p5-DBIx-RetryOverDisconnects    ports/databases/p5-DBIx-RetryOverDisconnects
 p5-DBIx-SQLEngine               ports/databases/p5-DBIx-SQLEngine
 p5-DBIx-SQLite-Simple           ports/databases/p5-DBIx-SQLite-Simple
 p5-DBIx-SearchBuilder           ports/databases/p5-DBIx-SearchBuilder
@@ -11426,6 +11430,7 @@ p5-POE-Filter-XML               ports/textproc/p5-POE-Filter-XML
 p5-POE-Filter-Zlib              ports/archivers/p5-POE-Filter-Zlib
 p5-POE-Session-MultiDispatch    ports/devel/p5-POE-Session-MultiDispatch
 p5-POE-Stage                    ports/devel/p5-POE-Stage
+p5-POE-Test-Loops               ports/devel/p5-POE-Test-Loops
 p5-POE-XS-Queue-Array           ports/devel/p5-POE-XS-Queue-Array
 p5-POSIX-Regex                  ports/textproc/p5-POSIX-Regex
 p5-POSIX-strptime               ports/devel/p5-POSIX-strptime
@@ -11728,6 +11733,7 @@ p5-Spreadsheet-WriteExcel       ports/textproc/p5-Spreadsheet-WriteExcel
 p5-Spreadsheet-WriteExcel-FromXML  ports/textproc/p5-Spreadsheet-WriteExcel-FromXML
 p5-Spreadsheet-WriteExcelXML    ports/textproc/p5-Spreadsheet-WriteExcelXML
 p5-SpringGraph                  ports/graphics/p5-SpringGraph
+p5-Squatting                    ports/www/p5-Squatting
 p5-Stanford-DNSserver           ports/dns/p5-Stanford-DNSserver
 p5-Stat-lsMode                  ports/sysutils/p5-Stat-lsMode
 p5-Statistics-ChiSquare         ports/math/p5-Statistics-ChiSquare
@@ -12944,6 +12950,7 @@ p5-config-tiny                  ports/devel/p5-Config-Tiny
 p5-configreader                 ports/devel/p5-ConfigReader
 p5-configreader-simple          ports/devel/p5-ConfigReader-Simple
 p5-contextual-return            ports/devel/p5-Contextual-Return
+p5-continuity                   ports/www/p5-Continuity
 p5-convert-ascii-armour         ports/converters/p5-Convert-ASCII-Armour
 p5-convert-asn1                 ports/converters/p5-Convert-ASN1
 p5-convert-bencode              ports/converters/p5-Convert-Bencode
@@ -13232,6 +13239,7 @@ p5-dbix-mysqlsequence           ports/databases/p5-DBIx-MySQLSequence
 p5-dbix-password                ports/databases/p5-DBIx-Password
 p5-dbix-perlish                 ports/databases/p5-DBIx-Perlish
 p5-dbix-recordset               ports/databases/p5-DBIx-Recordset
+p5-dbix-retryoverdisconnects    ports/databases/p5-DBIx-RetryOverDisconnects
 p5-dbix-searchbuilder           ports/databases/p5-DBIx-SearchBuilder
 p5-dbix-sequence                ports/databases/p5-DBIx-Sequence
 p5-dbix-simple                  ports/databases/p5-DBIx-Simple
@@ -14588,6 +14596,7 @@ p5-poe-filter-xml               ports/textproc/p5-POE-Filter-XML
 p5-poe-filter-zlib              ports/archivers/p5-POE-Filter-Zlib
 p5-poe-session-multidispatch    ports/devel/p5-POE-Session-MultiDispatch
 p5-poe-stage                    ports/devel/p5-POE-Stage
+p5-poe-test-loops               ports/devel/p5-POE-Test-Loops
 p5-poe-xs-queue-array           ports/devel/p5-POE-XS-Queue-Array
 p5-posix-regex                  ports/textproc/p5-POSIX-Regex
 p5-posix-strptime               ports/devel/p5-POSIX-strptime
@@ -14789,6 +14798,7 @@ p5-sql-statement                ports/databases/p5-SQL-Statement
 p5-sql-translator               ports/databases/p5-SQL-Translator
 p5-sqlite-work                  ports/databases/p5-SQLite-Work
 p5-sqlrelay                     ports/databases/p5-sqlrelay
+p5-squatting                    ports/www/p5-Squatting
 p5-sru                          ports/www/p5-SRU
 p5-ssn-validate                 ports/devel/p5-SSN-Validate
 p5-stanford-dnsserver           ports/dns/p5-Stanford-DNSserver
@@ -18258,6 +18268,7 @@ rpm                             ports/archivers/rpm
 rpm-spec-mode.el                ports/devel/rpm-spec-mode.el
 rpm2cpio                        ports/archivers/rpm2cpio
 rpm4                            ports/archivers/rpm4
+rpm5                            ports/archivers/rpm5
 rprint                          ports/print/rprint
 rpy                             ports/math/rpy
 rqm                             ports/mbone/rqm
