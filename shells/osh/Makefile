@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osh
-DISTVERSION=	20080109
+DISTVERSION=	20080629
 CATEGORIES=	shells
 MASTER_SITES=	http://www.v6shell.org/src/
 
