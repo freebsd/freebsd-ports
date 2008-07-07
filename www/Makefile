@@ -925,6 +925,7 @@
     SUBDIR += p5-Sledge-Plugin-XSLT
     SUBDIR += p5-Sledge-SessionManager-CookieStore
     SUBDIR += p5-Sledge-Template-Expr
+    SUBDIR += p5-Squatting
     SUBDIR += p5-Syntax-Highlight-HTML
     SUBDIR += p5-Syntax-Highlight-Shell
     SUBDIR += p5-Task-Catalyst
