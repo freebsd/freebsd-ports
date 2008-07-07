@@ -1,0 +1,11 @@
+--- Makefile.orig	2007-04-30 09:32:29.000000000 -0800
++++ Makefile	2008-07-04 18:34:18.000000000 -0800
+@@ -15,8 +15,4 @@
+ 	$(MAKEDIRS)
+ 	@(										\
+ 	$(INSTALLODR) $(TMPDIR);							\
+-	$(INSTALLDIR) $(PREFIX)/share/doc/$(PROGLNAME)-$(PROGVERSION);			\
+-	for IDOCFILE in COPYING ChangeLog FAQ INSTALL README README.DEV THANKS; do	\
+-	    $(INSTALLFIL) $$IDOCFILE $(PREFIX)/share/doc/$(PROGLNAME)-$(PROGVERSION);	\
+-	done										\
+ 	)

@@ -6,17 +6,27 @@
 #
 
 PORTNAME=	free-sa
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.3
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	toxa@toxahost.ru
 COMMENT=	Statistic analyzer for daemons log files similar to SARG
 
 USE_GMAKE=	yes
 
+PORTDOCS=	COPYING INSTALL README README.DEV ChangeLog FAQ THANKS
+DOCSDIR=	share/doc/free-sa-${DISTVERSION}
+
 MAN1=	free-sa.1
 MAN5=	free-sa.conf.5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile
+.endif
+
+.include <bsd.port.post.mk>
