@@ -133,10 +133,6 @@ DSPAM_HOME_MODE?=	0770
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 699999
-BROKEN=	for now dspam doesn't build on HEAD with PGSQL DB driver; it should be OK with any other driver
-.endif
-
 CONFIGURE_ARGS+=	--sysconfdir=${DSPAM_ETC}
 CONFIGURE_ARGS+=	--with-logdir=${LOG_DIR}
 PLIST_SUB+=	LOG_DIR=${LOG_DIR}
