@@ -1511,6 +1511,7 @@
     SUBDIR += p5-POE-Exceptions
     SUBDIR += p5-POE-Session-MultiDispatch
     SUBDIR += p5-POE-Stage
+    SUBDIR += p5-POE-Test-Loops
     SUBDIR += p5-POE-XS-Queue-Array
     SUBDIR += p5-POSIX-strptime
     SUBDIR += p5-PPerl
