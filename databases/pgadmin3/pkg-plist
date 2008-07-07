@@ -244,6 +244,8 @@ bin/pgagent
 %%DATADIR%%/i18n/it_IT/wxstd.mo
 %%DATADIR%%/i18n/ja_JP/pgadmin3.mo
 %%DATADIR%%/i18n/ja_JP/wxstd.mo
+%%DATADIR%%/i18n/ko_KR/pgadmin3.mo
+%%DATADIR%%/i18n/ko_KR/wxstd.mo
 %%DATADIR%%/i18n/nl_NL/pgadmin3.mo
 %%DATADIR%%/i18n/nl_NL/wxstd.mo
 %%DATADIR%%/i18n/pg_settings.csv
@@ -272,6 +274,7 @@ bin/pgagent
 @dirrm %%DATADIR%%/i18n/pt_BR
 @dirrm %%DATADIR%%/i18n/pl_PL
 @dirrm %%DATADIR%%/i18n/nl_NL
+@dirrm %%DATADIR%%/i18n/ko_KR
 @dirrm %%DATADIR%%/i18n/ja_JP
 @dirrm %%DATADIR%%/i18n/it_IT
 @dirrm %%DATADIR%%/i18n/gl_ES
