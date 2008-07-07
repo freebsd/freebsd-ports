@@ -7,7 +7,7 @@
 
 PORTNAME=	wikitemplates
 PORTVERSION=	0.3.0p3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-

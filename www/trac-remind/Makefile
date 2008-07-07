@@ -7,7 +7,7 @@
 
 PORTNAME=	remind
 PORTVERSION=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.unixmedia.it/
 PKGNAMEPREFIX=	trac-
