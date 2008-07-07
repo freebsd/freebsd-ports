@@ -282,6 +282,7 @@
     SUBDIR += p5-DBIx-Password
     SUBDIR += p5-DBIx-Perlish
     SUBDIR += p5-DBIx-Recordset
+    SUBDIR += p5-DBIx-RetryOverDisconnects
     SUBDIR += p5-DBIx-SQLEngine
     SUBDIR += p5-DBIx-SQLite-Simple
     SUBDIR += p5-DBIx-SearchBuilder
