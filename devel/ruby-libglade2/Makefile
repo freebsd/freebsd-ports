@@ -8,7 +8,6 @@
 
 PORTNAME=	libglade2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	devel ruby gnome
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -19,7 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Ruby binding for Libglade2
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 
 USE_RUBY=	yes
 USE_GNOME=	libglade2
@@ -37,13 +36,15 @@ DOCS=		COPYING.LIB ChangeLog README
 post-patch: general-patch
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/po/ja
 	@${INSTALL_DATA} ${WRKSRC}/sample/README ${RUBY_MODEXAMPLESDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/sample/*.glade ${RUBY_MODEXAMPLESDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/sample/po/*.pot ${RUBY_MODEXAMPLESDIR}/po/
 	@${INSTALL_DATA} ${WRKSRC}/sample/po/ja/*.po ${RUBY_MODEXAMPLESDIR}/po/ja/
+.endif
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
