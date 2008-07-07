@@ -1,0 +1,13 @@
+bin/squatting
+bin/vw
+%%SITE_PERL%%/Squatting.pm
+%%SITE_PERL%%/Squatting/Controller.pm
+%%SITE_PERL%%/Squatting/Cookbook.pod
+%%SITE_PERL%%/Squatting/Mapper.pm
+%%SITE_PERL%%/Squatting/On/Catalyst.pm
+%%SITE_PERL%%/Squatting/On/Continuity.pm
+%%SITE_PERL%%/Squatting/View.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Squatting/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Squatting
+@dirrmtry %%SITE_PERL%%/Squatting/On
+@dirrmtry %%SITE_PERL%%/Squatting

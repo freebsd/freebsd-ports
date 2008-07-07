@@ -1,0 +1,6 @@
+Squatting is a web microframework written in Perl that is based on
+Ruby's Camping.  It originally used Continuity as its foundation, but it
+has since been generalized such that it can squat on top of any
+Perl-based web framework (in theory).
+
+WWW: http://search.cpan.org/dist/Squatting/
