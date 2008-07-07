@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Continuity.pm
+%%SITE_PERL%%/Continuity/Adapt/FCGI.pm
+%%SITE_PERL%%/Continuity/Adapt/HttpDaemon.pm
+%%SITE_PERL%%/Continuity/Inspector.pm
+%%SITE_PERL%%/Continuity/Mapper.pm
+%%SITE_PERL%%/Continuity/Request.pm
+%%SITE_PERL%%/Continuity/RequestHolder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Continuity/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Continuity
+@dirrmtry %%SITE_PERL%%/Continuity/Adapt
+@dirrmtry %%SITE_PERL%%/Continuity

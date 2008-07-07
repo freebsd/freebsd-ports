@@ -1,0 +1,7 @@
+Continuity is a library to simplify web applications. Each session is
+written and runs as a persistant application, and is able to request
+additional input at any time without exiting. This is significantly
+different from the traditional CGI model of web applications in which a
+program is restarted for each new request.
+
+WWW: http://search.cpan.org/dist/Continuity/

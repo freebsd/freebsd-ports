@@ -741,6 +741,7 @@
     SUBDIR += p5-Class-DBI-FromForm
     SUBDIR += p5-ClearSilver
     SUBDIR += p5-Compress-LeadingBlankSpaces
+    SUBDIR += p5-Continuity
     SUBDIR += p5-Cookie-XS
     SUBDIR += p5-DBIx-Class-HTMLWidget
     SUBDIR += p5-Data-TreeDumper-Renderer-DHTML
