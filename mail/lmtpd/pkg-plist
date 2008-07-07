@@ -10,20 +10,22 @@ share/nls/fr_FR.UTF-8/filtercheck.cat
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/log.sql
-%%EXAMPLESDIR%%/mysqllog.mysql
-%%EXAMPLESDIR%%/overquota.sql
-%%EXAMPLESDIR%%/msg/README
-%%EXAMPLESDIR%%/msg/bounce.en.txt
-%%EXAMPLESDIR%%/msg/bounce.fr.txt
-%%EXAMPLESDIR%%/msg/debug.en.txt
-%%EXAMPLESDIR%%/msg/debug.fr.txt
-%%EXAMPLESDIR%%/msg/logmsg.fr.txt
-%%EXAMPLESDIR%%/msg/quotamsg.en.txt
-%%EXAMPLESDIR%%/msg/quotamsg.es.txt
-%%EXAMPLESDIR%%/msg/quotamsg.fr.txt
-%%EXAMPLESDIR%%/msg/quotamsg.it.txt
-%%EXAMPLESDIR%%/msg/virus.en.txt
-%%EXAMPLESDIR%%/msg/virus.fr.txt
-@dirrm %%EXAMPLESDIR%%/msg
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MANIFEST
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/log.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysqllog.mysql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/overquota.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/MANIFEST
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/bounce.en.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/bounce.fr.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/debug.en.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/debug.fr.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/logmsg.fr.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/quotamsg.en.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/quotamsg.es.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/quotamsg.fr.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/quotamsg.it.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/virus.en.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msg/virus.fr.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/msg
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lmtpd
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} ftp://ftp.oav.net/pll/
 MASTER_SITE_SUBDIR=	pll
@@ -104,9 +104,11 @@ post-install:
 		${PREFIX}/etc/lmtpd.conf.dist
 	${INSTALL_SCRIPT} ${WRKSRC}/lmtpdlogsum/lmtpdlogsum.pl \
 		${PREFIX}/bin/lmtpdlogsum
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}/msg
 	${INSTALL_DATA} ${WRKSRC}/sql/* ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/txt/* ${EXAMPLESDIR}/msg
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
