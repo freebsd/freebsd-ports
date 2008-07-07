@@ -128,7 +128,7 @@ post-patch:
 
 .if !target(post-install-slave)
 post-install-slave:
-	@${NO_NADA}
+	@${DO_NADA}
 .endif
 
 post-install: post-install-slave
