@@ -16,8 +16,6 @@ DISTNAME=	procps-${DISTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GNU watch command
 
-USE_GCC=	3.4+
-
 LDFLAGS+=	-lncurses
 
 MAN1=		gnu-watch.1

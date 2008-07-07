@@ -18,7 +18,6 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 
 # disable optimization flags to avoid a possible bug in gcc
 # (gcc tries to allocate memory in an endless loop)

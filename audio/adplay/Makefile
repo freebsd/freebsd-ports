@@ -22,7 +22,6 @@ LIB_DEPENDS=	adplug-2.1:${PORTSDIR}/audio/libadplug
 
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
-USE_GCC=	3.4+
 
 DBFILE=		adplug.db
 

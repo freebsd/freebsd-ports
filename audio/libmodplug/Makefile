@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	modplug-xmms
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ModPlug mod-like music shared libraries
 
-USE_GCC=	3.2+
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

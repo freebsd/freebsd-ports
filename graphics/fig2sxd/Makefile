@@ -16,7 +16,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert .xfig files to the OpenOffice draw format
 
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
