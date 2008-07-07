@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	news
 MASTER_SITES=	SF/sabnzbdplus
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -22,8 +22,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_PYTHON=	2.4+
 NO_BUILD=yes
-USE_ZIP=yes
-
 WRKSRC=	${WRKDIR}/SABnzbd-${PORTVERSION}
 PLIST_SUB=	PORTNAME=${PORTNAME}
 SUB_LIST+=	PORTNAME=${PORTNAME}
@@ -31,7 +29,8 @@ CONFLICTS=	sabzndb-0.*
 
 OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
 		UNRAR "Often required for unpacking many downloads." on \
-		FEEDPARSER "rss-feed support." on
+		FEEDPARSER "rss-feed support." on \
+		OPENSSL "SSL support" on
 
 .include <bsd.port.pre.mk>
 
@@ -40,6 +39,10 @@ RUN_DEPENDS+=	par2repair:${PORTSDIR}/archivers/par2cmdline
 .endif
 
 .if !defined(WITHOUT_FEEDPARSER)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl
+.endif
+
+.if !defined(WITHOUT_OPENSSL)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser
 .endif
 
@@ -57,9 +60,9 @@ post-patch:
 # post-build
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/SABnzbd.py ${PREFIX}/bin/SABnzbd.py
-	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
+	${INSTALL} -d  ${PYTHONPREFIX_SITELIBDIR}/
 	${CP} -rp ${WRKSRC}/sabnzbd ${PYTHONPREFIX_SITELIBDIR}/
-	${INSTALL_SCRIPT} -d ${DATADIR}
+	${INSTALL} -d ${DATADIR}
 	${CP} -rp ${WRKSRC}/interfaces ${DATADIR}
 
 post-install:
