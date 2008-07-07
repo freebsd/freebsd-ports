@@ -7,7 +7,7 @@
 
 PORTNAME=	Catalyst-Model-LDAP
 PORTVERSION=	0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DA/DANIELTWC
@@ -19,7 +19,8 @@ COMMENT=	LDAP model class for Catalyst
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-C3>=0:${PORTSDIR}/devel/p5-Class-C3 \
-		p5-Data-Page>0:${PORTSDIR}/databases/p5-Data-Page
+		p5-Data-Page>0:${PORTSDIR}/databases/p5-Data-Page \
+		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
