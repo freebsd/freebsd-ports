@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_security
 PORTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
 
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
-		apr-1.2:${PORTSDIR}/devel/apr
+		apr-1.3:${PORTSDIR}/devel/apr
 
 USE_APACHE=	2.0+
 GNU_CONFIGURE=	yes
