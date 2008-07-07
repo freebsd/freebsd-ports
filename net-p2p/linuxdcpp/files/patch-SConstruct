@@ -1,6 +1,6 @@
---- SConstruct.orig	2007-12-25 23:05:26.000000000 -0600
-+++ SConstruct	2007-12-25 23:16:28.000000000 -0600
-@@ -74,17 +74,23 @@
+--- SConstruct.orig	2008-07-07 01:07:36.000000000 -0500
++++ SConstruct	2008-07-07 01:09:49.000000000 -0500
+@@ -74,20 +74,23 @@
  	conf_dir = 'build/sconf',
  	log_file = 'build/sconf/config.log')
  
@@ -10,7 +10,9 @@
  if os.environ.has_key('CXX'):
 -	conf.env['CXX'] = os.environ['CXX']
 +	env['CXX'] = os.environ['CXX']
-+
+ 
+-if os.environ.has_key('CC'):
+-	conf.env['CC'] = os.environ['CC']
 +if os.environ.has_key('CCFLAGS'):
 +	env['CCFLAGS'] = os.environ['CCFLAGS'].split()
  
@@ -30,7 +32,7 @@
  
  env.SConsignFile('build/sconf/.sconsign')
  opts.Save('build/sconf/scache.conf', env)
-@@ -132,11 +138,6 @@
+@@ -135,11 +138,6 @@
  	if not conf.CheckHeader('unistd.h'):
  		Exit(1)
  
