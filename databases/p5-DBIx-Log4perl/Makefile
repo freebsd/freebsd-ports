@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	DBIx-Log4perl
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	For DBI to selectively log SQL, parameters, result-sets, transactions
 
 BUILD_DEPENDS=	p5-DBI>=1.50:${PORTSDIR}/databases/p5-DBI \
