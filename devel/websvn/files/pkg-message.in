@@ -1,4 +1,4 @@
 ----------------------------------------------------
 To setup websvn, please edit the configuration file:
-%%PREFIX%%/%%WEBSVNDIR%%/include/config.php
+%%PREFIX%%/%%WEBSVNDIR%%/include/distconfig.php
 ----------------------------------------------------
