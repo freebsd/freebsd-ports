@@ -1,9 +1,0 @@
-************************************************************************
-
-	To display graphical output in interactive mode or using
-	the -V option, set the following environment variables:
-
-		ASYMPTOTE_PSVIEWER=ggv
-		ASYMPTOTE_PDFVIEWER=ggv
-
-************************************************************************
