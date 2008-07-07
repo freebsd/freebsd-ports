@@ -20,7 +20,6 @@ LIB_DEPENDS=	binio.1:${PORTSDIR}/devel/libbinio
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	3.4+
 USE_GNOME=	pkgconfig
 
 CPPFLAGS+=	-I${LOCALBASE}/include
