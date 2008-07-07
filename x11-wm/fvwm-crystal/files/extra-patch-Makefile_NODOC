@@ -1,0 +1,52 @@
+--- Makefile.orig	2008-06-23 12:43:54.000000000 -0800
++++ Makefile	2008-07-05 20:15:41.000000000 -0800
+@@ -1,7 +1,7 @@
+ #!/usr/bin/make -f
+ .PHONY: all install uninstall dist correctpermissions install-doc uninstall-doc
+ 
+-prefix?=/usr/local
++prefix=$(PREFIX)
+ docdir?=$(prefix)/share/doc/fvwm-crystal/
+ addondir?=$(prefix)/share/fvwm-crystal/addons
+ 
+@@ -15,10 +15,10 @@
+ 	mkdir -p $(prefix)/bin $(prefix)/share/fvwm-crystal/fvwm 
+ 
+ 	install -m 755 bin/fvwm-crystal.apps bin/fvwm-crystal.wallpaper bin/fvwm-crystal bin/fvwm-crystal.generate-menu bin/fvwm-crystal.infoline bin/fvwm-crystal.mplayer-wrapper $(prefix)/bin
+-	cp -d -r fvwm/* $(prefix)/share/fvwm-crystal/fvwm/
++	cp -r fvwm/* $(prefix)/share/fvwm-crystal/fvwm/
+ 
+-	mkdir -p $(prefix)/share/man/man1
+-	cp -d -r man/* $(prefix)/share/man/man1
++	mkdir -p $(prefix)/man/man1
++	cp -r man/* $(prefix)/man/man1
+ 
+ uninstall:
+ 	@echo "Uninstalling previously installed fvwm-crystal"
+@@ -40,7 +40,7 @@
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)"
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm"
+ 	# Copy basic files
+-	cp -r AUTHORS COPYING INSTALL Makefile NEWS README fvwm-crystal-minimal-$(RELEASE)/
++	cp -r AUTHORS INSTALL Makefile NEWS README fvwm-crystal-minimal-$(RELEASE)/
+ 	cp -r fvwm/config fvwm-crystal-minimal-$(RELEASE)/fvwm/
+ 	# Copy addons/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/addons"
+@@ -190,15 +190,9 @@
+ 
+ # It is needed to adjust some path inside fvwm-crystal.generate-menu since this file must know the install path
+ correctpath:
+-	sed -i 's:FC_MENUBASEROOT="/usr/share:FC_MENUBASEROOT="$(prefix)/share:' bin/fvwm-crystal.generate-menu
+-	sed -i 's:FC_ICONBASEROOT="/usr/share:FC_ICONBASEROOT="$(prefix)/share:' bin/fvwm-crystal.generate-menu
++	sed 's:FC_MENUBASEROOT="/usr/share:FC_MENUBASEROOT="$(prefix)/share:' bin/fvwm-crystal.generate-menu > bin/fvwm-crystal.generate-menu.new
++	sed 's:FC_ICONBASEROOT="/usr/share:FC_ICONBASEROOT="$(prefix)/share:' bin/fvwm-crystal.generate-menu.new > bin/fvwm-crystal.generate-menu
+ 
+ uninstall-doc:
+ 	-rm -rf $(docdir)
+ 	-rm -rf $(addondir)
+-
+-install-doc:
+-	mkdir -p $(addondir) $(docdir)
+-	install -m 644 addons/* $(addondir)
+-	install -m 644 AUTHORS COPYING NEWS ChangeLog README INSTALL $(docdir)
+-	install -m 644 doc/* $(docdir)

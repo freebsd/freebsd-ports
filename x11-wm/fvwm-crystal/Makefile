@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fvwm-crystal
-PORTVERSION=	3.0.5
-PORTREVISION=	1
+PORTVERSION=	3.0.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.gna.org/fvwm-crystal/${PORTVERSION}/
 
@@ -21,6 +20,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 MAKE_ENV=	prefix="${PREFIX}" addondir="${DOCSDIR}/addons"
+PORTDOCS=*
 
 MAN1=	ApplicationDatabase.1 CrystalRoxHOWTO.1 FVWMCrystalFAQ.1 \
 	KeyboardBindings.1 MouseBindings.1 Tips.1
@@ -63,13 +63,18 @@ RUN_DEPENDS+=	hsetroot:${PORTSDIR}/graphics/hsetroot
 RUN_DEPENDS+=	cmus:${PORTSDIR}/audio/cmus
 .endif
 
+post-extract:
+	@cd ${WRKSRC} && ${FIND} . -depth -type d -name .svn -exec ${RM} -rf {} \;
+
+.if !defined(NOPORTDOCS)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile_NODOC
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|cp -r -d|cp -r|; s|cp -d|cp|' \
 		${WRKSRC}/${MAKEFILE}
-.if !defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|^install: uninstall|& install-doc|' \
-		${WRKSRC}/${MAKEFILE}
-.endif
 
 scrivi:
 	${ECHO_CMD} ${LOCALBASE}
