@@ -7,6 +7,7 @@
 
 PORTNAME=	dmucs
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -19,10 +20,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_FILES=	bin/dmucs bin/gethost bin/loadavg bin/monitor bin/remhost
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
