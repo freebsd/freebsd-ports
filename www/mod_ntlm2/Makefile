@@ -22,8 +22,4 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile
-.endif
-
 .include <bsd.port.post.mk>
