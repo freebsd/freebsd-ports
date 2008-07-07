@@ -5,7 +5,7 @@
         of the connection from the "gethost" application to the dmucs server,
         and the hostip of the cpu assigned to the "gethost" application. */
 -    typedef std::map<const unsigned int, const unsigned int>
-+    typedef std::map<const unsigned long, const unsigned int>
++    typedef std::map<const void *, const unsigned int>
      		dmucs_assigned_cpus_t;
      typedef dmucs_assigned_cpus_t::iterator dmucs_assigned_cpus_iter_t;
  
@@ -14,13 +14,13 @@
      unsigned int getBestAvailCpu();
      void	assignCpuToClient(const unsigned int clientIp,
 -				  const unsigned int cpuIp);
-+				  const unsigned long cpuIp);
++				  const void *cpuIp);
      void 	moveCpus(DmucsHost *host, int oldTier, int newTier);
      int 	delCpusFromTier(int tier, unsigned int ipAddr);
  
      void 	addNewHost(DmucsHost *host);
 -    void	releaseCpu(const unsigned int sock);
-+    void	releaseCpu(const unsigned long sock);
++    void	releaseCpu(const void *sock);
  
      void 	addToHostSet(dmucs_host_set_t *theSet, DmucsHost *host);
      void 	delFromHostSet(dmucs_host_set_t *theSet, DmucsHost *host);
@@ -29,7 +29,7 @@
         host is released and all we have is the socket information, we can
         figure out which DpropDb to put the host back into. */
 -    typedef std::map<int, DmucsDprop> dmucs_sock_dprop_db_t;
-+    typedef std::map<long, DmucsDprop> dmucs_sock_dprop_db_t;
++    typedef std::map<const void *, DmucsDprop> dmucs_sock_dprop_db_t;
      typedef dmucs_sock_dprop_db_t::iterator dmucs_sock_dprop_db_iter_t;
  
      dmucs_sock_dprop_db_t sock2DpropDb_;
@@ -38,7 +38,7 @@
      void assignCpuToClient(const unsigned int clientIp,
                             const DmucsDprop dprop,
 -                           const unsigned int sock);
-+                           const unsigned long sock);
++                           const void *sock);
      void moveCpus(DmucsHost *host, int oldTier, int newTier) {
  	MutexMonitor m(&mutex_);
  	// Assume the DmucsDpropDb is definitely there.
@@ -47,7 +47,7 @@
      }
  
 -    void releaseCpu(const unsigned int sock);
-+    void releaseCpu(const unsigned long sock);
++    void releaseCpu(const void *sock);
  
      void handleSilentHosts() {
  	MutexMonitor m(&mutex_);
