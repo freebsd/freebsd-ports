@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 PKGNAMEPREFIX=	cpp-
 
@@ -13,7 +13,7 @@ MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	C++ Bindings for XMMS2
 
 LIB_DEPENDS+=	boost_signals.4:${PORTSDIR}/devel/boost \
-		xmmsclient.3:${PORTSDIR}/audio/xmms2
+		xmmsclient.4:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 USE_LDCONFIG=	yes

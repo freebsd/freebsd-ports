@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Python Bindings for XMMS2
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex
-LIB_DEPENDS+=	xmmsclient.3:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS+=	xmmsclient.4:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 

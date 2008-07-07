@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=	--disable-mpd
 .endif
 
 .if defined(WITH_XMMS2)
-LIB_DEPENDS+=		xmmsclient.3:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS+=		xmmsclient.4:${PORTSDIR}/audio/xmms2
 CONFIGURE_ARGS+=	--enable-xmms2
 .else
 CONFIGURE_ARGS+=	--disable-xmms2
