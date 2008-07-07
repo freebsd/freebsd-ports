@@ -6,7 +6,7 @@
 
 PORTNAME=	kdesvn
 PORTVERSION=	0.14.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/${PORTVERSION:R}.x/
 
