@@ -7,7 +7,7 @@
 
 PORTNAME=	webadmin
 PORTVERSION=	0.1.2.4429
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 #MASTER_SITES=	http://trac.edgewall.org/browser/sandbox/webadmin
 MASTER_SITES=	http://dist.bsdlab.org/

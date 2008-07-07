@@ -7,7 +7,7 @@
 
 PORTNAME=	accountmanager
 PORTVERSION=	0.1.3.2063
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www devel python
 #MASTER_SITES=	http://trac-hacks.org/svn/accountmanagerplugin/0.10/
