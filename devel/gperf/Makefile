@@ -19,4 +19,9 @@ MAN1=		gperf.1
 INFO=		gperf
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
+regression-test: test
+
+test:	build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+
 .include <bsd.port.mk>
