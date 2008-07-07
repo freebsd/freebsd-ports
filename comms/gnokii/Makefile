@@ -7,6 +7,7 @@
 
 PORTNAME=	gnokii
 PORTVERSION=	0.6.26
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -15,6 +16,9 @@ MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Tools to talk to GSM cellular phones
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
