@@ -1,0 +1,3 @@
+DBI wrapper that helps to deal with databases connection problems
+
+WWW: http://search.cpan.org/dist/DBIx-RetryOverDisconnects/

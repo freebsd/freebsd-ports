@@ -1,0 +1,5 @@
+%%SITE_PERL%%/DBIx/RetryOverDisconnects.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/RetryOverDisconnects/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/RetryOverDisconnects
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx
