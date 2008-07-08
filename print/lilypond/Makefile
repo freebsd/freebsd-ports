@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.11.47
+PORTVERSION=	2.11.50
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.11/:src \
     		http://download.linuxaudio.org/lilypond/binaries/freebsd-x86/:bin
@@ -22,8 +22,7 @@ COMMENT=	The GNU music typesetter
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
     		mftrace:${PORTSDIR}/print/mftrace \
 		rarian-sk-config:${PORTSDIR}/textproc/rarian \
-		texindex:${PORTSDIR}/print/texinfo \
-		bison:${PORTSDIR}/devel/bison
+		texi2pdf:${PORTSDIR}/print/texinfo
 LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
     		mftrace:${PORTSDIR}/print/mftrace
@@ -37,14 +36,15 @@ INFO=		lilypond lilypond-internals lilypond-program lilypond-learning \
 		music-glossary
 
 USE_AUTOTOOLS=	autoconf:261
-USE_GETTEXT=	yes
+USE_BISON=	build
+USE_GETTEXT=	YES
 USE_GMAKE=	YES
 USE_PYTHON=	YES
 USE_GNOME=	pango
-INSTALLS_OMF=	yes
+INSTALLS_OMF=	YES
 MAKEFILE=	GNUmakefile
 BUILD_TARGET=	all
-CONFIGURE_ENV+=		"CPPFLAGS=${CPPFLAGS}" "MAKEINFO=${LOCALBASE}/bin/makeinfo"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" MAKEINFO="${LOCALBASE}/bin/makeinfo"
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
