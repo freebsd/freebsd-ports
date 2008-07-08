@@ -13,7 +13,7 @@ share/vmware-tools/resume-vm-default
 share/vmware-tools/suspend-vm-default
 sbin/vmware-guestd
 sbin/vmware-checkvm
-%%FIVEONLY%%sbin/vmware-hgfsmounter
+%%FIVEONLY%%sbin/mount.vmhgfs
 sbin/vmware-xferlogs
 %%X11%%sbin/vmware-toolbox
 %%X11%%sbin/vmware-user

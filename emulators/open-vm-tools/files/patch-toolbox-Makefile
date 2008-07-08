@@ -1,0 +1,22 @@
+--- toolbox/Makefile.in.orig	2008-07-08 15:03:02.000000000 +0200
++++ toolbox/Makefile.in	2008-07-08 15:03:49.000000000 +0200
+@@ -551,7 +551,7 @@
+ 	$(INSTALL) -d $(datadir)/applications/
+ 	$(INSTALL) -m 644 ../scripts/common/vmware-toolbox.desktop \
+ 		$(datadir)/applications/
+-	$(SED) -i s/Exec=.*/Exec=vmware-toolbox/ \
++	$(SED) -e s/Exec=.*/Exec=vmware-toolbox/ \
+ 		$(datadir)/applications/vmware-toolbox.desktop
+ 	$(INSTALL) -d /usr/share/pixmaps/vmware
+ 	$(INSTALL) -m 644 bigIcon.xpm \
+--- toolbox/Makefile.am.orig	2008-07-08 15:03:10.000000000 +0200
++++ toolbox/Makefile.am	2008-07-08 15:03:56.000000000 +0200
+@@ -65,7 +65,7 @@
+ 	$(INSTALL) -d $(datadir)/applications/
+ 	$(INSTALL) -m 644 ../scripts/common/vmware-toolbox.desktop \
+ 		$(datadir)/applications/
+-	$(SED) -i s/Exec=.*/Exec=vmware-toolbox/ \
++	$(SED) -e s/Exec=.*/Exec=vmware-toolbox/ \
+ 		$(datadir)/applications/vmware-toolbox.desktop
+ 	$(INSTALL) -d /usr/share/pixmaps/vmware
+ 	$(INSTALL) -m 644 bigIcon.xpm \

@@ -1,0 +1,58 @@
+--- hgfsmounter/Makefile.am.orig	2008-07-02 00:31:20.000000000 +0200
++++ hgfsmounter/Makefile.am	2008-07-08 15:30:29.000000000 +0200
+@@ -18,8 +18,8 @@
+ sbin_PROGRAMS = mount.vmhgfs
+ 
+ mount_vmhgfs_LDADD =
+-mount_vmhgfs_LDADD += ../lib/string/libString.a
+ mount_vmhgfs_LDADD += ../lib/strUtil/libStrUtil.a
++mount_vmhgfs_LDADD += ../lib/string/libString.a
+ mount_vmhgfs_LDADD += ../lib/panicDefault/libPanicDefault.a
+ mount_vmhgfs_LDADD += ../lib/panic/libPanic.a
+ mount_vmhgfs_LDADD += ../lib/stubs/libStubs.a
+@@ -30,11 +30,11 @@
+ 
+ if FREEBSD
+ install-exec-hook:
+-	$(MV) $(sbindir)/mount.vmhgfs $(sbindir)/mount_vmhgfs
++	/bin/mv $(sbindir)/mount.vmhgfs $(sbindir)/mount_vmhgfs
+ 	chown root $(sbindir)/mount_vmhgfs
+ 	chmod u+s $(sbindir)/mount_vmhgfs
+ uninstall-hook:
+-	$(RM) -f $(sbindir)/mount_vmhgfs
++	/bin/rm -f $(sbindir)/mount_vmhgfs
+ else
+ install-exec-hook:
+ 	chown root $(sbindir)/mount.vmhgfs
+--- hgfsmounter/Makefile.in.orig	2008-07-02 00:31:30.000000000 +0200
++++ hgfsmounter/Makefile.in	2008-07-08 15:29:54.000000000 +0200
+@@ -47,6 +47,7 @@
+ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
++MV=/bin/mv
+ build_triplet = @build@
+ host_triplet = @host@
+ sbin_PROGRAMS = mount.vmhgfs$(EXEEXT)
+@@ -64,8 +65,8 @@
+ am_mount_vmhgfs_OBJECTS = hgfsmounter.$(OBJEXT) \
+ 	stub-user-util.$(OBJEXT)
+ mount_vmhgfs_OBJECTS = $(am_mount_vmhgfs_OBJECTS)
+-mount_vmhgfs_DEPENDENCIES = ../lib/string/libString.a \
+-	../lib/strUtil/libStrUtil.a \
++mount_vmhgfs_DEPENDENCIES = ../lib/strUtil/libStrUtil.a \
++	../lib/string/libString.a \
+ 	../lib/panicDefault/libPanicDefault.a ../lib/panic/libPanic.a \
+ 	../lib/stubs/libStubs.a
+ DEFAULT_INCLUDES = -I.@am__isrc@
+@@ -225,8 +226,8 @@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-mount_vmhgfs_LDADD = ../lib/string/libString.a \
+-	../lib/strUtil/libStrUtil.a \
++mount_vmhgfs_LDADD = ../lib/strUtil/libStrUtil.a \
++	../lib/string/libString.a \
+ 	../lib/panicDefault/libPanicDefault.a ../lib/panic/libPanic.a \
+ 	../lib/stubs/libStubs.a
+ mount_vmhgfs_SOURCES = hgfsmounter.c stub-user-util.c
