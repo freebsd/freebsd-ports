@@ -1,11 +1,11 @@
 Index: hunspell/hunspell-1.1.12.patch
 ===================================================================
 RCS file: /cvs/external/hunspell/hunspell-1.1.12.patch,v
-retrieving revision 1.11
-diff -u -r1.11 hunspell-1.1.12.patch
---- hunspell/hunspell-1.1.12.patch	18 Jun 2008 10:07:23 -0000	1.11
-+++ hunspell/hunspell-1.1.12.patch	2 Jul 2008 20:13:47 -0000
-@@ -450,3 +450,10 @@
+retrieving revision 1.12
+diff -u -r1.12 hunspell-1.1.12.patch
+--- hunspell/hunspell-1.1.12.patch	2 Jul 2008 09:46:59 -0000	1.12
++++ hunspell/hunspell-1.1.12.patch	6 Jul 2008 01:23:13 -0000
+@@ -487,3 +487,10 @@
   i68568utf.test \
   1706659.test \
   digits_in_words.test \
