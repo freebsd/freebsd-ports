@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-launch-box
 PORTVERSION=	20060112
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jylefort
@@ -34,7 +34,9 @@ pre-configure:
 		${LOCALBASE}/bin/intltoolize
 
 post-install:
+.ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
