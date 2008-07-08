@@ -22,6 +22,8 @@ RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070208/feat
 
 RESTRICTED=	License agreement is required to download.
 
+BROKEN=		does not package
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
