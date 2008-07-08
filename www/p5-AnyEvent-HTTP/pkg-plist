@@ -1,0 +1,5 @@
+%%SITE_PERL%%/AnyEvent/HTTP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/HTTP/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
+@dirrmtry %%SITE_PERL%%/AnyEvent
