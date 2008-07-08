@@ -1,148 +1,3 @@
-Index: qemu-0.8.2/hw/cirrus_vga.c
-@@ -217,6 +217,20 @@
- #define CIRRUS_HOOK_NOT_HANDLED 0
- #define CIRRUS_HOOK_HANDLED 1
- 
-+#define BLTUNSAFE(s) \
-+    ( \
-+        ( /* check dst is within bounds */ \
-+            (s)->cirrus_blt_height * (s)->cirrus_blt_dstpitch \
-+                + ((s)->cirrus_blt_dstaddr & (s)->cirrus_addr_mask) > \
-+                    (s)->vram_size \
-+        ) || \
-+        ( /* check src is within bounds */ \
-+            (s)->cirrus_blt_height * (s)->cirrus_blt_srcpitch \
-+                + ((s)->cirrus_blt_srcaddr & (s)->cirrus_addr_mask) > \
-+                    (s)->vram_size \
-+        ) \
-+    )
-+
- struct CirrusVGAState;
- typedef void (*cirrus_bitblt_rop_t) (struct CirrusVGAState *s,
-                                      uint8_t * dst, const uint8_t * src,
-@@ -636,7 +650,7 @@
- 
-     for (y = 0; y < lines; y++) {
- 	off_cur = off_begin;
--	off_cur_end = off_cur + bytesperline;
-+	off_cur_end = (off_cur + bytesperline) & s->cirrus_addr_mask;
- 	off_cur &= TARGET_PAGE_MASK;
- 	while (off_cur < off_cur_end) {
- 	    cpu_physical_memory_set_dirty(s->vram_offset + off_cur);
-@@ -651,7 +665,11 @@
- {
-     uint8_t *dst;
- 
--    dst = s->vram_ptr + s->cirrus_blt_dstaddr;
-+    dst = s->vram_ptr + (s->cirrus_blt_dstaddr & s->cirrus_addr_mask);
-+ 
-+    if (BLTUNSAFE(s))
-+        return 0;
-+
-     (*s->cirrus_rop) (s, dst, src,
-                       s->cirrus_blt_dstpitch, 0, 
-                       s->cirrus_blt_width, s->cirrus_blt_height);
-@@ -667,8 +685,11 @@
- {
-     cirrus_fill_t rop_func;
- 
-+    if (BLTUNSAFE(s))
-+        return 0;
-+
-     rop_func = cirrus_fill[rop_to_index[blt_rop]][s->cirrus_blt_pixelwidth - 1];
--    rop_func(s, s->vram_ptr + s->cirrus_blt_dstaddr, 
-+    rop_func(s, s->vram_ptr + (s->cirrus_blt_dstaddr & s->cirrus_addr_mask), 
-              s->cirrus_blt_dstpitch,
-              s->cirrus_blt_width, s->cirrus_blt_height);
-     cirrus_invalidate_region(s, s->cirrus_blt_dstaddr,
-@@ -687,8 +708,8 @@
- static int cirrus_bitblt_videotovideo_patterncopy(CirrusVGAState * s)
- {
-     return cirrus_bitblt_common_patterncopy(s,
--					    s->vram_ptr + 
--                                            (s->cirrus_blt_srcaddr & ~7));
-+					    s->vram_ptr + ((s->cirrus_blt_srcaddr & ~7) & 
-+                        s->cirrus_addr_mask));
- }
- 
- static void cirrus_do_copy(CirrusVGAState *s, int dst, int src, int w, int h)
-@@ -738,8 +759,10 @@
-     if (notify)
- 	vga_hw_update();
- 
--    (*s->cirrus_rop) (s, s->vram_ptr + s->cirrus_blt_dstaddr,
--		      s->vram_ptr + s->cirrus_blt_srcaddr,
-+    (*s->cirrus_rop) (s, s->vram_ptr + 
-+                (s->cirrus_blt_dstaddr & s->cirrus_addr_mask),
-+		      s->vram_ptr + 
-+                (s->cirrus_blt_srcaddr & s->cirrus_addr_mask),
- 		      s->cirrus_blt_dstpitch, s->cirrus_blt_srcpitch,
- 		      s->cirrus_blt_width, s->cirrus_blt_height);
- 
-@@ -765,8 +788,14 @@
- 		       s->cirrus_blt_srcaddr - s->start_addr,
- 		       s->cirrus_blt_width, s->cirrus_blt_height);
-     } else {
--	(*s->cirrus_rop) (s, s->vram_ptr + s->cirrus_blt_dstaddr,
--			  s->vram_ptr + s->cirrus_blt_srcaddr,
-+
-+    if (BLTUNSAFE(s))
-+        return 0;
-+
-+	(*s->cirrus_rop) (s, s->vram_ptr + 
-+                (s->cirrus_blt_dstaddr & s->cirrus_addr_mask),
-+			  s->vram_ptr + 
-+                (s->cirrus_blt_srcaddr & s->cirrus_addr_mask),
- 			  s->cirrus_blt_dstpitch, s->cirrus_blt_srcpitch,
- 			  s->cirrus_blt_width, s->cirrus_blt_height);
- 
-@@ -798,8 +827,9 @@
-         } else {
-             /* at least one scan line */
-             do {
--                (*s->cirrus_rop)(s, s->vram_ptr + s->cirrus_blt_dstaddr,
--                                 s->cirrus_bltbuf, 0, 0, s->cirrus_blt_width, 1);
-+                (*s->cirrus_rop)(s, s->vram_ptr + 
-+                    (s->cirrus_blt_dstaddr & s->cirrus_addr_mask),
-+                        s->cirrus_bltbuf, 0, 0, s->cirrus_blt_width, 1);
-                 cirrus_invalidate_region(s, s->cirrus_blt_dstaddr, 0,
-                                          s->cirrus_blt_width, 1);
-                 s->cirrus_blt_dstaddr += s->cirrus_blt_dstpitch;
-@@ -1917,7 +1947,7 @@
-     unsigned val = mem_value;
-     uint8_t *dst;
- 
--    dst = s->vram_ptr + offset;
-+    dst = s->vram_ptr + (offset &= s->cirrus_addr_mask);
-     for (x = 0; x < 8; x++) {
- 	if (val & 0x80) {
- 	    *dst = s->cirrus_shadow_gr1;
-@@ -1940,7 +1970,7 @@
-     unsigned val = mem_value;
-     uint8_t *dst;
- 
--    dst = s->vram_ptr + offset;
-+    dst = s->vram_ptr + (offset &= s->cirrus_addr_mask);
-     for (x = 0; x < 8; x++) {
- 	if (val & 0x80) {
- 	    *dst = s->cirrus_shadow_gr1;
-Index: qemu-0.8.2/hw/cirrus_vga_rop.h
-===================================================================
---- qemu-0.8.2.orig/hw/cirrus_vga_rop.h	2006-07-22 20:23:34.000000000 +0300
-+++ qemu-0.8.2/hw/cirrus_vga_rop.h	2007-04-20 06:05:59.000000000 +0300
-@@ -31,6 +31,12 @@ glue(cirrus_bitblt_rop_fwd_, ROP_NAME)(C
-     int x,y;
-     dstpitch -= bltwidth;
-     srcpitch -= bltwidth;
-+
-+    if (dstpitch < 0 || srcpitch < 0) {
-+        /* is 0 valid? srcpitch == 0 could be useful */
-+        return;
-+    }
-+
-     for (y = 0; y < bltheight; y++) {
-         for (x = 0; x < bltwidth; x++) {
-             ROP_OP(*dst, *src);
 Index: qemu-0.8.2/hw/dma.c
 ===================================================================
 --- qemu-0.8.2.orig/hw/dma.c	2006-07-22 20:23:34.000000000 +0300
@@ -162,21 +17,27 @@ Index: qemu-0.8.2/hw/dma.c
      ldebug ("dma_pos %d size %d\n", n, (r->base[COUNT] + 1) << ncont);
  }
  
-Index: qemu-0.8.2/hw/fdc.c
-@@ -1247,7 +1247,12 @@
-             len = fdctrl->data_len - fdctrl->data_pos;
-             if (len > FD_SECTOR_LEN)
-                 len = FD_SECTOR_LEN;
--            bdrv_read(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1);
-+            if (cur_drv->bs) {
-+                bdrv_read(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1);
-+            } else {
-+                FLOPPY_ERROR("can't read data from drive\n");
-+                return 0;
-+           }
-         }
-     }
-     retval = fdctrl->fifo[pos];
+Index: qemu/hw/fdc.c
+@@ -1322,7 +1322,8 @@
+                                    fd_sector(cur_drv));
+                     return 0;
+                 }
+-            if (bdrv_read(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1) < 0) {
++            if (cur_drv->bs == NULL ||
++                bdrv_read(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1) < 0) {
+                 FLOPPY_DPRINTF("error getting sector %d\n",
+                                fd_sector(cur_drv));
+                 /* Sure, image size is too small... */
+@@ -1776,7 +1777,8 @@
+         if (pos == FD_SECTOR_LEN - 1 ||
+             fdctrl->data_pos == fdctrl->data_len) {
+             cur_drv = get_cur_drv(fdctrl);
+-            if (bdrv_write(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1) < 0) {
++            if (cur_drv->bs == NULL ||
++                bdrv_write(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1) < 0) {
+                 FLOPPY_ERROR("writing sector %d\n", fd_sector(cur_drv));
+                 return;
+             }
 Index: qemu-0.8.2/hw/pc.c
 ===================================================================
 --- qemu-0.8.2.orig/hw/pc.c	2007-04-20 06:05:58.000000000 +0300

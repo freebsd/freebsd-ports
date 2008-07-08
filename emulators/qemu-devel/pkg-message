@@ -88,14 +88,6 @@ to /etc/rc.conf
 (revision 1.25 of /usr/ports/emulators/kqemu-kmod/Makefile), so if your
 host is such you might want to make sure your kqemu-kmod port is new enough.
 (and don't forget to reload it...)
-- also remember that on amd64 you need to run the amd64 (x86_64) system
-emulation if you want to use kqemu, i.e. run qemu-system-x86_64 instead of
-qemu (the latter only emulates a 32 bit system.)  Unfortunately there can
-still be guests that don't run correctly in the amd64 emulation even when
-they do run in the 32 bit one, the same is true about kqemu and -kernel-kqemu
-on amd64 - not much you can do about that other than help debugging (k)qemu's
-amd64 emulation... (well or falling back to unaccellerated, possibly 32 bit
-qemu/leaving out -kernel-kqemu if its that what's causing the problems.)
 - qemu's network boot roms (-boot n) have a bug when bootfiles sizes are a
 multiple of blksize, if this affects you (like with FreeBSD's /boot/pxeboot)
 you can do like
@@ -107,6 +99,15 @@ extracted out of
 	ftp://ftp.freebsd.org/pub/FreeBSD/snapshots/200805/7.0-STABLE-200805-i386-bootonly.iso
 and placed it here:
 	http://people.freebsd.org/~nox/qemu/pxeboot-qemu
+- if you use slirp (usernet, the default) and want to mount nfs into the
+guest and you are not running qemu as root, then mountd(8) on the exporting
+box needs to be run with -n in order to accept requests from ports >= 1024.
+- unfortunately there can still be guests that don't run correctly with
+kqemu and -kernel-kqemu especially on amd64 - not much you can do about that
+other than help debugging (k)qemu... (well or falling back to unaccellerated
+qemu/leaving out -kernel-kqemu if its that what's causing the problems.
+note however that kqemu now can also be used with the 32 bit qemu even
+on amd64 hosts as of the 20080620 update.)
 - qemu now uses aio at least for ide dma, so if you get `Invalid system call'
 crashes that is because aio is not (kld)loaded.
 - The default configuration location (qemu-ifup script etc.) has been
