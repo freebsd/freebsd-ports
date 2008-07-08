@@ -7,11 +7,11 @@ bin/qemu-system-mips
 bin/qemu-system-mips64
 bin/qemu-system-mips64el
 bin/qemu-system-mipsel
-bin/qemu-system-ppc
-bin/qemu-system-ppc64
-bin/qemu-system-ppcemb
-bin/qemu-system-sh4
-bin/qemu-system-sh4eb
+%%DYNGEN%%bin/qemu-system-ppc
+%%DYNGEN%%bin/qemu-system-ppc64
+%%DYNGEN%%bin/qemu-system-ppcemb
+%%DYNGEN%%bin/qemu-system-sh4
+%%DYNGEN%%bin/qemu-system-sh4eb
 bin/qemu-system-sparc
 bin/qemu-system-x86_64
 @unexec if cmp -s %D/etc/qemu-ifup.sample %D/etc/qemu-ifup; then rm -f %D/etc/qemu-ifup; fi
@@ -28,6 +28,7 @@ etc/qemu-ifdown.sample
 %%DATADIR%%/vgabios-cirrus.bin
 %%DATADIR%%/ppc_rom.bin
 %%DATADIR%%/openbios-sparc32
+%%DATADIR%%/openbios-sparc64
 %%DATADIR%%/video.x
 %%DATADIR%%/pxe-ne2k_pci.bin
 %%DATADIR%%/pxe-rtl8139.bin

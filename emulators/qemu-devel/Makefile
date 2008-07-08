@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.9.1s.20080302
-PORTREVISION=	9
+PORTVERSION=	0.9.1s.20080620
 CATEGORIES=	emulators
-MASTER_SITES=	http://qemu.org/:release \
+MASTER_SITES=	http://bellard.org/qemu/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
-		http://www.volny.cz/xnavara/qemu/:snapshot \
-		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma \
-		http://people.freebsd.org/~maho/qemu/:misc
+		${MASTER_SITE_LOCAL}:snapshot
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-snapshot-2008-03-02_05
+DISTNAME=	${PORTNAME}-snapshot-2008-06-20_19
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 DIST_SUBDIR=	qemu
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -28,7 +25,6 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_GCC=	3.4
 PATCH_STRIP=	-lp1
 MAKE_ENV+=	BSD_MAKE="${MAKE}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
@@ -40,9 +36,18 @@ OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 		SAMBA "samba dependency (for -smb)" Off \
 		SDL "SDL/X dependency (graphical output)" On \
 		GNUTLS "gnutls dependency (vnc encryption)" On \
-		CDROM_DMA "IDE CDROM DMA" On
+		CDROM_DMA "IDE CDROM DMA" On \
+		ALL_TARGETS "Also build dyngen targets (requires gcc34)" On
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_ALL_TARGETS)
+CONFIGURE_ARGS+=	--disable-gcc-check --target-list=i386-softmmu,sparc-softmmu,x86_64-softmmu,mips-softmmu,mipsel-softmmu,mips64-softmmu,mips64el-softmmu,arm-softmmu,m68k-softmmu,cris-softmmu
+PLIST_SUB+=    DYNGEN="@comment "
+.else
+USE_GCC=	3.4
+PLIST_SUB+=    DYNGEN=""
+.endif
 
 .if ${OSVERSION} < 600000
 # 5.x base gcc segfaults in target-mips/op_mem.c
@@ -66,16 +71,12 @@ CONFIGURE_ARGS+=	--disable-vnc-tls
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .endif
 
-.if defined (WITH_HACKS_CIRRUS) || defined (WITH_HACKS)
-DISTFILES+=	patch3_cirrus:misc
-.endif
-
 .if defined(WITH_SAMBA)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba3
 .endif
 
 .if defined(WITH_KQEMU)
-BUILD_DEPENDS+=	kqemu-kmod>=1.3.0pre5:${PORTSDIR}/emulators/kqemu-kmod
+BUILD_DEPENDS+=	kqemu-kmod-devel>=1.4.0pre1:${PORTSDIR}/emulators/kqemu-kmod-devel
 .else
 CONFIGURE_ARGS+=	--disable-kqemu
 .endif

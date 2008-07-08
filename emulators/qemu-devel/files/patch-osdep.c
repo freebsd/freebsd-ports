@@ -1,5 +1,5 @@
 Index: qemu/osdep.c
-@@ -79,7 +79,9 @@
+@@ -68,7 +68,9 @@
  
  #if defined(USE_KQEMU)
  
@@ -9,7 +9,7 @@ Index: qemu/osdep.c
  #include <sys/mman.h>
  #include <fcntl.h>
  
-@@ -90,6 +92,7 @@
+@@ -79,6 +81,7 @@
      const char *tmpdir;
      char phys_ram_file[1024];
      void *ptr;
@@ -17,7 +17,7 @@ Index: qemu/osdep.c
  #ifdef HOST_SOLARIS
      struct statvfs stfs;
  #else
-@@ -151,12 +154,20 @@
+@@ -138,7 +141,9 @@
          }
          unlink(phys_ram_file);
      }
@@ -25,16 +25,19 @@ Index: qemu/osdep.c
      size = (size + 4095) & ~4095;
 +#ifndef __FreeBSD__
      ftruncate(phys_ram_fd, phys_ram_size + size);
-     ptr = mmap(NULL, 
-                size, 
-                PROT_WRITE | PROT_READ, MAP_SHARED, 
-                phys_ram_fd, phys_ram_size);
-+#else
-+    ptr = mmap(NULL, 
-+               size, 
-+               PROT_WRITE | PROT_READ, MAP_PRIVATE|MAP_ANON, 
-+               -1, 0);
-+#endif
-     if (ptr == MAP_FAILED) {
+     ptr = mmap(NULL,
+                size,
+@@ -148,6 +153,13 @@
          fprintf(stderr, "Could not map physical memory\n");
          exit(1);
+     }
++#else
++    ptr = malloc(size);
++    if (ptr == NULL) {
++        fprintf(stderr, "Could not allocate physical memory\n");
++        exit(1);
++    }
++#endif
+     phys_ram_size += size;
+     return ptr;
+ }
