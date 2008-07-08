@@ -1,0 +1,18 @@
+#!/bin/sh -xve
+printenv
+mkdir $WRKSRC
+cd $WRKSRC
+X11BASE=${LOCALBASE}
+#CFLAGS="-O0 -Werror-implicit-function-declaration -pipe -g"
+#CFLAGS="-O2 -pipe -g"
+#LDFLAGS=-L${LOCALBASE}/lib
+#CPPFLAGS="-I${LOCALBASE}/include -DLONG64"
+#LIBTOOL=${LOCALBASE}/bin/libtool
+
+../configure	--prefix=${PREFIX} --enable-shared --enable-xft --enable-gl	\
+		--enable-xrender --enable-cairo --with-x --enable-pthread	\
+		--enable-lt=${LIBTOOL}						\
+		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib	\
+		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"				\
+		CPPFLAGS="${CPPFLAGS}"						\
+		--mandir=${PREFIX}/man ${ARCH}-portbld-freebsd${OSREL}

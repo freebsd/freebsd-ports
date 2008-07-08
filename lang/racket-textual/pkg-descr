@@ -1,0 +1,22 @@
+PLT-Scheme is a set of tools for writing and running the PLT scheme
+programming language.  It includes a graphical IDE (drscheme) that
+features highlighting of the source of syntax and run-time errors,
+support for multiple language levels, an algebraic stepper, objects,
+modules, a GUI library, TCP/IP, and much more. It includes an
+extensive, hyper-linked help system called Help Desk, available
+from the Help menu, the plt-help command line tool, or through a
+web browser.
+
+mred is the interpreter/JIT compiler that includes the GUI toolkit.
+drscheme is the GUI ide, and is a mred application.
+mzscheme is a text-only variant that does not include the GUI toolkit.
+swindle is a language variant that includes a CLOS-style object system.
+mzc is a compilation manager that can produce stand-alone executable programs.
+plt-r5rs and plt-r6rs are front ends for running standards-conforming
+programms.
+plt-web-server is a web server.
+scribble, slatex and tex2page are text formatters.
+slideshow is a presentation formatter.
+sirmail is a mail user agent.
+
+WWW: http://www.plt-scheme.org/
