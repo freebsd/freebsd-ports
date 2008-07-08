@@ -29,9 +29,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}/
 	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} internals ${DOCSDIR}/)
 	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} design-thoughts ${DOCSDIR}/)
+.endif
 	@${INSTALL_DATA} ${WRKSRC}/examples/haproxy.cfg \
 				${PREFIX}/etc/haproxy.conf-dist
-.endif
 
 post-install:
 	@${ECHO_MSG} ""
