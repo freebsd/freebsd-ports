@@ -18,6 +18,6 @@ Main features:
     preconditioned by multigrid and BPX preconditioners.
 
 A complete description of the package (including the installation procedure)
-you may find in LASPack Reference Manual in the following postscript files:
+you may find in LASPack Reference Manual:
     
-WWW: http://www.tu-dresden.de/mwism/skalicky/laspack/laspack.html
+WWW: http://www.mgnet.org/mgnet/Codes/laspack/html/laspack.html
