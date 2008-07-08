@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ftwin
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://meroware.com/~joke/sources/ftwin/
 
@@ -28,12 +27,6 @@ PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION LICENSE README
 
 MAN8=		ftwin.8
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 600000
-LIB_DEPENDS+=	archive.6:${PORTSDIR}/archivers/libarchive
-CONFIGURE_ARGS+=	--with-archive=${LOCALBASE}
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -42,4 +35,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
