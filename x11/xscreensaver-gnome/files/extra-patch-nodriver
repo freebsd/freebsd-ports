@@ -5,7 +5,7 @@
  
  SHELL		= /bin/sh
 -SUBDIRS		= utils driver hacks hacks/glx po
-+SUBDIRS		= utils hacks hacks/glx po
++SUBDIRS		= utils hacks hacks/glx
  SUBDIRS2	= $(SUBDIRS) OSX
  TARFILES	= README README.hacking README.VMS INSTALL \
  		  configure configure.in Makefile.in config.h.in \
