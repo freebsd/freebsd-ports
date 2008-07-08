@@ -12,6 +12,7 @@
 #
 #balance_enable="YES"
 #balance_hosts="host1"
+#balance_host1_flags="-a"
 #balance_host1_address="host1.external.example"
 #balance_host1_ports="http 8180"
 #balance_host1_targets="host1.internal.example"
@@ -34,10 +35,11 @@ start_cmd()
 	if [ -x "${command}" ]; then
 		for host in ${balance_hosts}; do
 			eval ports=\"\${balance_${host}_ports}\"
+			eval flags=\"\${balance_${host}_flags}\"
 			eval address=\"\${balance_${host}_address}\"
 			eval targets=\"\${balance_${host}_targets}\"
 			for port in ${ports}; do
-				"${command}" -b ${address} ${port} ${targets}
+				"${command}" ${flags} -b ${address} ${port} ${targets}
 			done
 		done
 	fi
