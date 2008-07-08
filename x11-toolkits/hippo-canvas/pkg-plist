@@ -1,3 +1,5 @@
+include/hippo-canvas-1/hippo/hippo-animation-manager.h
+include/hippo-canvas-1/hippo/hippo-animation.h
 include/hippo-canvas-1/hippo/hippo-canvas-box.h
 include/hippo-canvas-1/hippo/hippo-canvas-container.h
 include/hippo-canvas-1/hippo/hippo-canvas-context.h
@@ -10,6 +12,7 @@ include/hippo-canvas-1/hippo/hippo-canvas-link.h
 include/hippo-canvas-1/hippo/hippo-canvas-style.h
 include/hippo-canvas-1/hippo/hippo-canvas-text.h
 include/hippo-canvas-1/hippo/hippo-canvas-theme-engine.h
+include/hippo-canvas-1/hippo/hippo-canvas-theme-image.h
 include/hippo-canvas-1/hippo/hippo-canvas-theme.h
 include/hippo-canvas-1/hippo/hippo-canvas-util.h
 include/hippo-canvas-1/hippo/hippo-canvas-widget.h
@@ -26,34 +29,34 @@ lib/libhippocanvas-1.so.0
 %%PYTHON_SITELIBDIR%%/hippo.la
 %%PYTHON_SITELIBDIR%%/hippo.so
 libdata/pkgconfig/hippo-canvas-1.pc
-share/gtk-doc/html/hippo-canvas/HippoCanvasBox.html
-share/gtk-doc/html/hippo-canvas/HippoCanvasContainer.html
-share/gtk-doc/html/hippo-canvas/HippoCanvasContext.html
-share/gtk-doc/html/hippo-canvas/HippoCanvasGradient.html
-share/gtk-doc/html/hippo-canvas/HippoCanvasImage.html
-share/gtk-doc/html/hippo-canvas/HippoCanvasImageButton.html
-share/gtk-doc/html/hippo-canvas/HippoCanvasItem.html
-share/gtk-doc/html/hippo-canvas/HippoCanvasLink.html
-share/gtk-doc/html/hippo-canvas/HippoCanvasStyle.html
-share/gtk-doc/html/hippo-canvas/HippoCanvasText.html
-share/gtk-doc/html/hippo-canvas/ch01.html
-share/gtk-doc/html/hippo-canvas/hippo-canvas-Graphics.html
-share/gtk-doc/html/hippo-canvas/hippo-canvas-HippoEvent.html
-share/gtk-doc/html/hippo-canvas/hippo-canvas-Utilitites.html
-share/gtk-doc/html/hippo-canvas/hippo-canvas-Widgets.html
-share/gtk-doc/html/hippo-canvas/hippo-canvas.devhelp
-share/gtk-doc/html/hippo-canvas/hippo-canvas.devhelp2
-share/gtk-doc/html/hippo-canvas/home.png
-share/gtk-doc/html/hippo-canvas/index.html
-share/gtk-doc/html/hippo-canvas/index.sgml
-share/gtk-doc/html/hippo-canvas/left.png
-share/gtk-doc/html/hippo-canvas/right.png
-share/gtk-doc/html/hippo-canvas/style.css
-share/gtk-doc/html/hippo-canvas/up.png
-@dirrm share/gtk-doc/html/hippo-canvas
-@dirrm share/gtk-doc/html
-@dirrm share/gtk-doc
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/HippoCanvasBox.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/HippoCanvasContainer.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/HippoCanvasContext.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/HippoCanvasGradient.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/HippoCanvasImage.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/HippoCanvasImageButton.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/HippoCanvasItem.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/HippoCanvasLink.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/HippoCanvasStyle.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/HippoCanvasText.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/ch01.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/hippo-canvas-Graphics.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/hippo-canvas-HippoEvent.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/hippo-canvas-Utilitites.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/hippo-canvas-Widgets.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/hippo-canvas.devhelp
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/hippo-canvas.devhelp2
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/home.png
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/index.html
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/index.sgml
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/left.png
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/right.png
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/style.css
+%%PORTDOCS%%share/gtk-doc/html/hippo-canvas/up.png
+%%PORTDOCS%%@dirrm share/gtk-doc/html/hippo-canvas
+%%PORTDOCS%%@dirrmtry share/gtk-doc/html
+%%PORTDOCS%%@dirrmtry share/gtk-doc
 @dirrm %%PYTHON_SITELIBDIR%%
-@dirrm lib/python2.5
+@dirrmtry %%PYTHON_LIBDIR%%
 @dirrm include/hippo-canvas-1/hippo
 @dirrm include/hippo-canvas-1
