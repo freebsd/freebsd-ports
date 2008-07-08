@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=--enable-music
 CONFIGURE_ARGS+=--disable-uninstall 
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|sdl11-config|${SDL_CONFIG}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC}/batch -type f -exec ${REINPLACE_CMD} -e 's|^#!/bin/bash$$|#!/bin/sh|g' {} \+
 	@${REINPLACE_CMD} -e 's|^INSTALL=.*$$|INSTALL=${DATADIR}|g' \
 	    ${WRKSRC}/batch/*.in
