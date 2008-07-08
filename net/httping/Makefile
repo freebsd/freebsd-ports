@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httping
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		CRITICAL
