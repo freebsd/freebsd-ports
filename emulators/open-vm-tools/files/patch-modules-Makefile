@@ -1,0 +1,63 @@
+--- modules/Makefile.am.orig	2008-07-08 14:44:08.000000000 +0200
++++ modules/Makefile.am	2008-07-08 14:45:16.000000000 +0200
+@@ -15,14 +15,6 @@
+ export DEPMOD = depmod -a
+ endif LINUX
+ 
+-if FREEBSD
+-export vmblockdir = $(MODULES_DIR)
+-export vmhgfsdir = $(MODULES_DIR)
+-export vmmemctldir = $(MODULES_DIR)
+-export vmsyncdir = $(MODULES_DIR)
+-export vmxnetdir = $(MODULES_DIR)
+-endif FREEBSD
+-
+ ## Automake will supplement its own "distclean" and "clean" targets with these.
+ distclean-local:
+ clean-local:
+@@ -32,13 +24,4 @@
+ 	$(RM) -f $(MODULES_OS)/*.o $(MODULES_OS)/*.ko
+ 
+ install-exec-hook:
+-	for MOD in $(MODULES); do \
+-		$(INSTALL) -d `eval echo '$$'$${MOD}dir`; \
+-		$(INSTALL) -m644 $(MODULES_OS)/$$MOD/$$MOD.ko `eval echo '$$'$${MOD}dir`; \
+-	done
+-	eval "$$DEPMOD"
+ uninstall-hook:
+-	for MOD in $(MODULES); do \
+-		$(RM) -f `eval echo '$$'$${MOD}dir`/$$MOD.ko &> /dev/null; \
+-	done
+-	eval "$$DEPMOD"
+--- modules/Makefile.in.orig	2008-07-08 14:44:39.000000000 +0200
++++ modules/Makefile.in	2008-07-08 14:45:03.000000000 +0200
+@@ -368,12 +368,6 @@
+ @LINUX_TRUE@export vmxnetdir = $(MODULES_DIR)/drivers/net
+ @LINUX_TRUE@export DEPMOD = depmod -a
+ 
+-@FREEBSD_TRUE@export vmblockdir = $(MODULES_DIR)
+-@FREEBSD_TRUE@export vmhgfsdir = $(MODULES_DIR)
+-@FREEBSD_TRUE@export vmmemctldir = $(MODULES_DIR)
+-@FREEBSD_TRUE@export vmsyncdir = $(MODULES_DIR)
+-@FREEBSD_TRUE@export vmxnetdir = $(MODULES_DIR)
+-
+ distclean-local:
+ clean-local:
+ 	for MOD in $(MODULES); do \
+@@ -382,16 +376,7 @@
+ 	$(RM) -f $(MODULES_OS)/*.o $(MODULES_OS)/*.ko
+ 
+ install-exec-hook:
+-	for MOD in $(MODULES); do \
+-		$(INSTALL) -d `eval echo '$$'$${MOD}dir`; \
+-		$(INSTALL) -m644 $(MODULES_OS)/$$MOD/$$MOD.ko `eval echo '$$'$${MOD}dir`; \
+-	done
+-	eval "$$DEPMOD"
+ uninstall-hook:
+-	for MOD in $(MODULES); do \
+-		$(RM) -f `eval echo '$$'$${MOD}dir`/$$MOD.ko &> /dev/null; \
+-	done
+-	eval "$$DEPMOD"
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

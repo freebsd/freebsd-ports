@@ -13,7 +13,7 @@ share/vmware-tools/resume-vm-default
 share/vmware-tools/suspend-vm-default
 sbin/vmware-guestd
 sbin/vmware-checkvm
-%%FIVEONLY%%sbin/vmware-hgfsmounter
+%%FIVEONLY%%sbin/mount.vmhgfs
 sbin/vmware-xferlogs
 @dirrm share/vmware-tools
 @unexec if test -f %D/lib/vmware-tools/modules/drivers/linker.hints; then rm -f %D/lib/vmware-tools/modules/drivers/linker.hints; fi

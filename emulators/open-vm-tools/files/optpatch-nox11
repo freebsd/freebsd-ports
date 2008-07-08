@@ -1,0 +1,11 @@
+--- lib/guestApp/Makefile.in	2008-07-08 16:58:54.000000000 +0200
++++ lib/guestApp/Makefile.in	2008-07-02 00:31:31.000000000 +0200
+@@ -231,7 +231,7 @@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-noinst_LIBRARIES = libGuestApp.a libGuestAppX11.a
++noinst_LIBRARIES = libGuestApp.a #libGuestAppX11.a
+ libGuestApp_a_SOURCES = guestApp.c guestAppPosix.c
+ libGuestAppX11_a_SOURCES = $(libGuestApp_a_SOURCES) guestAppPosixX11.c
+ libGuestAppX11_a_CPPFLAGS = -DGUESTAPP_HAS_X11
