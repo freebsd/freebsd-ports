@@ -19,5 +19,6 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 MASTERDIR=	${.CURDIR}/../tclxml
 
 BUILDING_EXPAT=	yes
+NOPORTDOCS=	yes
 
 .include	"${MASTERDIR}/Makefile"
