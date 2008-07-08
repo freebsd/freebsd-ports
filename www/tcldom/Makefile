@@ -23,6 +23,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I\"${PREFIX}/include\""
-PLIST_FILES=	lib/tcldom2.0/tcldom84.so.1 lib/tcldom2.0/pkgIndex.tcl
 
 .include <bsd.port.mk>
