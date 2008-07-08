@@ -7,7 +7,7 @@
 
 PORTNAME=	ggiterm
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggiterm
@@ -27,6 +27,8 @@ SUB_FILES=	pkg-message
 
 OPTIONS=	FREETYPE "Build with Freetype support" on
 
+PORTDOCS=	AUTHORS README
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_FREETYPE)
@@ -43,8 +45,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/ggiterm.termcap ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
