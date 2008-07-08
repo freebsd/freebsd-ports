@@ -4,7 +4,7 @@
  	..$/dist$/configure
  CONFIGURE_FLAGS=--disable-cxx --enable-dynamic --enable-shared --enable-compat185
  
-+.IF "$(COM)$(CPU)"=="GCCX"
++.IF "$(OS)"==FREEBSD && "$(COM)$(CPU)"=="GCCX"
 +CONFIGURE_FLAGS+=--with-mutex=x86/gcc-assembly
 +.ENDIF
 +
