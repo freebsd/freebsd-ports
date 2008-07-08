@@ -1,0 +1,151 @@
+bin/jrdesktop
+%%JAVAJARDIR%%/jrdesktop.jar
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/AboutGUI.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/ConnectionInfos.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/HostProperties.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/main.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/mainFrame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/SecurityMng.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/SysTray.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng/FileManager.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng/FilesDropTargetListener.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng/FileTransGUI.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng/class-use/FileManager.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng/class-use/FileTransGUI.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng/class-use/FilesDropTargetListener.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/ConnectionDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/Recorder.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/ScreenPlayer.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/ViewerData.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/ViewerGUI.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/rmi/Viewer.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/rmi/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/rmi/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/rmi/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/rmi/class-use/Viewer.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/rmi/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/class-use/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/class-use/ConnectionDialog.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/class-use/Recorder.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/class-use/ScreenPlayer.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/class-use/ViewerData.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/class-use/ViewerGUI.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/viewer/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/ClipbrdUtility.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/ClipbrdUtility.ImageSelection.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/FileUtility.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/ImageUtility.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/InetAdrUtility.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/ZipUtility.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/class-use/ClipbrdUtility.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/class-use/ClipbrdUtility.ImageSelection.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/class-use/FileUtility.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/class-use/ImageUtility.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/class-use/InetAdrUtility.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/class-use/ZipUtility.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/utilities/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/MultihomeRMIClientSocketFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/Server.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/ServerImpl.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/ServerInterface.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/class-use/MultihomeRMIClientSocketFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/class-use/Server.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/class-use/ServerImpl.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/class-use/ServerInterface.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/rmi/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/ActiveConnectionsGUI.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/ConfigGUI.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/robot.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/class-use/ActiveConnectionsGUI.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/class-use/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/class-use/ConfigGUI.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/class-use/robot.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/server/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/class-use/AboutGUI.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/class-use/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/class-use/ConnectionInfos.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/class-use/HostProperties.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/class-use/SecurityMng.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/class-use/SysTray.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/class-use/main.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/class-use/mainFrame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/jrdesktop/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/package-list
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/overview-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-1.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-2.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-3.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-4.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-5.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-6.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-7.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-8.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-9.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-10.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-11.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-12.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-13.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-14.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-15.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-16.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-17.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-18.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-19.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-20.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-21.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-22.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-files/index-23.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/stylesheet.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/viewer/rmi/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/viewer/rmi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/viewer/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/viewer/FileMng
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/viewer
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/utilities/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/utilities
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/server/rmi/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/server/rmi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/server/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/server
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/jrdesktop
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/index-files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
