@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--with-wfs --with-wfsclient
 .endif
 
 .if defined(WITH_GDAL)
-LIB_DEPENDS+=		gdal.12:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=		gdal.13:${PORTSDIR}/graphics/gdal
 CONFIGURE_ARGS+=	--with-gdal=${LOCALBASE}/bin/gdal-config \
 			--with-ogr=${LOCALBASE}/bin/gdal-config
 .endif
