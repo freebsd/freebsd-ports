@@ -111,6 +111,14 @@ upgrades.
   you must specify "mach64" or "r128". Alternatively, you may install
   x11-drivers/xf86-video-ati to get a wrapper driver.
 
+20080626:
+  AFFECTS: users of science/gramps
+  AUTHOR: Anders Troback <freebsd@troback.com>
+
+  Before you upgrade from 2.x to 3.x you need to export your existing 
+  databases to a generic format like gedcom. After the upgrade you can
+  import them into the new version.
+
 20080624:
   AFFECTS: users of irc/ircd-ratbox-devel
   AUTHOR: Beech Rintoul <beech@FreeBSD.org>
