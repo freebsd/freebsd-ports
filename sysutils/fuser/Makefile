@@ -27,6 +27,10 @@ PLIST_FILES=	bin/fuser
 IGNORE=		src/sys/fs/devfs/devfs_int.h does not exist before OSVERSION 600000
 .endif
 
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
