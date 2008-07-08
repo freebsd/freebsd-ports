@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080708:
+  AFFECTS: users of emulators/qemu-devel
+  AUTHOR: nox@FreeBSD.org
+
+  The port has been updated to a 20080620 svn snapshot, which uses the
+  new (incompatible) kqemu-kmod-devel port that now also works for the
+  32 bit "qemu" executable on amd64.  If you upgrade qemu-devel with the
+  KQEMU knob on, you have to
+
+  # pkg_delete kqemu-kmod-1\*
+
+  the old kqemu version first if it is installed.
+
 20080705:
   AFFECTS: users of www/ikiwiki
   AUTHOR: Henrik Brix Andersen <brix@FreeBSD.org>
