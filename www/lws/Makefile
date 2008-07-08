@@ -19,4 +19,10 @@ LIB_DEPENDS=		pdel.0:${PORTSDIR}/devel/libpdel
 MAN1=			lws.1
 MANCOMPRESSED=		yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
