@@ -160,6 +160,7 @@ include/fxt/comb/combination-emk.h
 include/fxt/comb/combination-endo.h
 include/fxt/comb/combination-enup.h
 include/fxt/comb/combination-lex.h
+include/fxt/comb/combination-mod.h
 include/fxt/comb/combination-pref.h
 include/fxt/comb/combination-rec.h
 include/fxt/comb/combination-revdoor.h
@@ -188,6 +189,7 @@ include/fxt/comb/mixedradix-gslex-alt.h
 include/fxt/comb/mixedradix-gslex.h
 include/fxt/comb/mixedradix-lex.h
 include/fxt/comb/mixedradix-modular-gray.h
+include/fxt/comb/mixedradix-modular-gray2.h
 include/fxt/comb/mixedradix.h
 include/fxt/comb/mpartition.h
 include/fxt/comb/mset-lex-rec.h
@@ -271,13 +273,14 @@ include/fxt/ds/ringbuffer.h
 include/fxt/ds/rset.h
 include/fxt/ds/stack.h
 include/fxt/fft-all.h
+include/fxt/fft/fft-default.h
 include/fxt/fft/fft.h
 include/fxt/fft/matrixfft.h
 include/fxt/fft/shortfft.h
 include/fxt/fht-all.h
+include/fxt/fht/fht-default.h
 include/fxt/fht/fht.h
 include/fxt/fht/fht2d.h
-include/fxt/fht/fhtcore.h
 include/fxt/fht/fhtloc2.h
 include/fxt/fht/hartleyshift.h
 include/fxt/fht/shortfhtdifcore.h
@@ -578,6 +581,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/combination-lam-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/combination-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/combination-lex-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/combination-mod-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/combination-mod-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/combination-pref-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/combination-pref-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/combination-rank-demo.cc
@@ -646,6 +651,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-lex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-modular-gray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-modular-gray-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-modular-gray2-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-modular-gray2-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/monotonicgray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/monotonicgray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mpartition-demo.cc
