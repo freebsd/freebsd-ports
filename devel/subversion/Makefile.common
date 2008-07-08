@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.5.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.4/:book
@@ -31,7 +31,8 @@ OPTIONS=
 
 CONFIGURE_ARGS+=	--without-swig
 
-.if defined(WITH_NEON)
+# Default is "on"
+.if !defined(WITHOUT_NEON)
 LIB_DEPENDS+=	neon.28:${PORTSDIR}/www/neon28
 CONFIGURE_ARGS+=	--with-neon=${LOCALBASE}
 PLIST_SUB+=		NEON=""
@@ -57,7 +58,8 @@ CONFIGURE_ARGS+=	--without-sasl
 PLIST_SUB+=		SASL="@comment "
 .endif
 
-.if defined(WITH_BDB)
+# Default us "on"
+.if !defined(WITHOUT_BDB)
 PLIST_SUB+=		BDB=""
 .else
 CONFIGURE_ARGS+=	--without-berkeley-db
