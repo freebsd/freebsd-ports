@@ -197,14 +197,12 @@ man/ru/man8/rpm2cpio.8
 man/sk/man8/rpm.8
 
 @dirrmtry man/fr/man8
-@dirrmtry man/ja/man8
 @dirrmtry man/ko/man8
 @dirrmtry man/pl/man1
 @dirrmtry man/pl/man8
 @dirrmtry man/ru/man8
 @dirrmtry man/sk/man8
 @dirrmtry man/fr
-@dirrmtry man/ja
 @dirrmtry man/ko
 @dirrmtry man/pl
 @dirrmtry man/ru
