@@ -9090,6 +9090,8 @@ olsrd                           ports/net/olsrd
 olvwm                           ports/x11-wm/olvwm
 omake                           ports/devel/omake
 omega                           ports/games/omega
+omegaT                          ports/editors/omegaT
+omegat                          ports/editors/omegaT
 omi                             ports/ftp/omi
 omnetpp                         ports/science/omnetpp
 omniNotify                      ports/devel/omniNotify
@@ -9367,6 +9369,7 @@ p5-Alzabo-GUI-Mason             ports/devel/p5-Alzabo-GUI-Mason
 p5-Amazon-SQS-Simple            ports/net/p5-Amazon-SQS-Simple
 p5-AnyData                      ports/devel/p5-AnyData
 p5-AnyEvent                     ports/devel/p5-AnyEvent
+p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
 p5-Apache-AddHostPath           ports/www/p5-Apache-AddHostPath
 p5-Apache-Admin-Config          ports/www/p5-Apache-Admin-Config
@@ -12405,6 +12408,7 @@ p5-amazon-sqs-simple            ports/net/p5-Amazon-SQS-Simple
 p5-amf-perl                     ports/www/p5-AMF-Perl
 p5-anydata                      ports/devel/p5-AnyData
 p5-anyevent                     ports/devel/p5-AnyEvent
+p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
 p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
 p5-apache-admin-config          ports/www/p5-Apache-Admin-Config
 p5-apache-antispam              ports/www/p5-Apache-AntiSpam
@@ -16661,6 +16665,7 @@ plotmtv                         ports/graphics/plotmtv
 plotutils                       ports/graphics/plotutils
 plp                             ports/comms/plp
 plplot                          ports/math/plplot
+plt-scheme                      ports/lang/plt-scheme
 plucker                         ports/palm/plucker
 plugdaemon                      ports/net/plugdaemon
 plugger                         ports/www/plugger
