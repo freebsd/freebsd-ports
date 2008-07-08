@@ -5,51 +5,48 @@
 # $FreeBSD$
 #
 
-PORTNAME=	macroscope
-PORTVERSION=	1.0.2278
-CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.berlios.de/pub/macroscope/ \
-		http://white-raven.pisem.net/
+PORTNAME=		macroscope
+PORTVERSION=		1.0.2938
+CATEGORIES=		net-mgmt
+MASTER_SITES=		ftp://ftp.berlios.de/pub/macroscope/ \
+			http://white-raven.pisem.net/
+DISTNAME=		${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	white_raven@users.berlios.de
-COMMENT=	User and IP traffic management with Web interface
+MAINTAINER=		white_raven@users.berlios.de
+COMMENT=		User and IP traffic management with Web interface
 
-LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2 \
-		odbc:${PORTSDIR}/databases/unixODBC \
-		pcap:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=		lzo2:${PORTSDIR}/archivers/lzo2 \
+			odbc:${PORTSDIR}/databases/unixODBC \
+			pcap:${PORTSDIR}/net/libpcap
 
-USE_RC_SUBR=	macroscope
-USE_BZIP2=	yes
-USE_DOS2UNIX=	yes
-USE_CMAKE=	yes
+USE_RC_SUBR=		${PORTNAME}
+USE_BZIP2=		yes
+USE_DOS2UNIX=		yes
+USE_CMAKE=		yes
 
-OPTIONS=	MYSQL		"With MySQL support" on \
-		FIREBIRD	"With Firebird support" off
+OPTIONS=		MYSQL		"With MySQL support" on \
+			FIREBIRD	"With Firebird support" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(NOPORTDOCS)
-CMAKE_ARGS+=	-DCMAKE_NOT_INSTALL_DOC:BOOL=ON
+CMAKE_ARGS+=		-DCMAKE_NOT_INSTALL_DOC:BOOL=ON
 .endif
 
 .if !defined(WITHOUT_MYSQL)
-WANT_MYSQL_VER=	50
-USE_MYSQL=	yes
+WANT_MYSQL_VER=		50
+USE_MYSQL=		yes
 .endif
 
 .if !defined(WITHOUT_FIREBIRD)
 WITH_FIREBIRD_VER=	2
-USE_FIREBIRD=	yes
+USE_FIREBIRD=		yes
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.database.mk"
 
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not compile
+BROKEN=	Does not compile
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|".*\.c\.in"|"${FILESDIR}/CheckTypeSize.c.in"|' \
-	${WRKSRC}/builds/cmake/CheckTypeSize.cmake
 
 .include <bsd.port.post.mk>
