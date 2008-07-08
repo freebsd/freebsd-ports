@@ -24,6 +24,6 @@ icon-do-install:
 	cd ${WRKDIR} && ${FIND} * -type d ! -empty \
 		-exec ${MKDIR} -m 0755 \
 		${PREFIX}/share/icons/"{}" \;
-	cd ${WRKDIR} && ${FIND} * ! -type d ! -name 'plist' \
+	cd ${WRKDIR} && ${FIND} * ! -type d ! -name 'plist' ! -name '*.bak' \
 		-exec ${INSTALL_DATA} ${WRKDIR}/"{}" \
 		${PREFIX}/share/icons/"{}" \;
