@@ -1,9 +1,10 @@
-Macroscope is a squid, sendmail, courier, bpft log files analizer,
+Macroscope is a squid, sendmail, courier, exim, bpft log files analizer,
   IP sniffer and HTML report generator.
 Features:
   squid log file parser.
   sendmail log file parser.
   courier log file parser.
+  exim log file parser.
   bpft(ports/net-mgmt/bpft) log file parser.
   Database backends support: MySQL, Firebird.
   IP sniffer via pcap library (ports/net/libpcap).
@@ -12,7 +13,7 @@ Features:
   Traffic dynamic HTML reports generating via CGI (Web interface).
   Multithreading architecture.
   Portable: BSD os'es and Windows NT family supported, but tested at this time
-            only under FreeBSD 5.x 6.x amd64 i386 and Windows 2000 XP 2003.
+            only under FreeBSD 5.x 6.x 7.x amd64 i386 and Windows 2000 XP 2003.
 
 WWW: http://developer.berlios.de/projects/macroscope/
 
