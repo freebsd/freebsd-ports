@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jrdesktop
-PORTVERSION=	0.2.0020
-PORTREVISION=	1
+PORTVERSION=	0.2.0030
 CATEGORIES=	net java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -20,10 +19,8 @@ JAVA_VERSION=	1.6+
 USE_ANT=	yes
 USE_ZIP=	yes
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
-
-PLIST_FILES=	%%JAVAJARDIR%%/jrdesktop.jar \
-		bin/jrdesktop
+WRKSRC=	${WRKDIR}/${DISTNAME}/${PORTNAME}
+TXTFILES=	changes.txt license.txt readme.txt
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/jrdesktop.jar ${JAVAJARDIR}
@@ -32,5 +29,12 @@ do-install:
 post-install:
 	${REINPLACE_CMD} -i "" -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|;s|%%JAVA%%|${JAVA}|' \
 	    ${PREFIX}/bin/jrdesktop
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d ${DOCSDIR}
+	(cd ${WRKSRC}/dist && ${COPYTREE_SHARE} javadoc ${DOCSDIR})
+.for txt in ${TXTFILES}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/${txt} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
