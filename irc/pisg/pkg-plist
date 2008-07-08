@@ -31,7 +31,9 @@ etc/pisg/pisg.cfg.sample
 %%SITE_PERL%%/Pisg/Parser/Format/winbot.pm
 %%SITE_PERL%%/Pisg/Parser/Format/RacBot.pm
 %%SITE_PERL%%/Pisg/Parser/Format/kvirc.pm
+%%SITE_PERL%%/Pisg/Parser/Format/konversation.pm
 %%SITE_PERL%%/Pisg/Parser/Format/moobot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/mozbot.pm
 %%SITE_PERL%%/Pisg/Parser/Format/mIRC6.pm
 %%SITE_PERL%%/Pisg/Parser/Format/ircII.pm
 %%SITE_PERL%%/Pisg/Parser/Format/blootbot.pm
@@ -46,6 +48,7 @@ etc/pisg/pisg.cfg.sample
 %%SITE_PERL%%/Pisg/Parser/Format/lulubot.pm
 %%SITE_PERL%%/Pisg/Parser/Format/miau.pm
 %%SITE_PERL%%/Pisg/Parser/Format/IRCAP.pm
+%%SITE_PERL%%/Pisg/Parser/Format/weechat.pm
 %%SITE_PERL%%/Pisg/Parser/Logfile.pm
 %%DATADIR%%/layout/justgrey.css
 %%DATADIR%%/layout/darkgalaxy.css
