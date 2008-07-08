@@ -17,6 +17,7 @@ COMMENT=	Chemistry file translation program
 USE_GNOME=	gnomehack gnometarget libxml2
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
+USE_GCC=	4.2+
 
 MAN1=		obchiral.1 obconformer.1 obenergy.1 obfit.1 obgen.1 obgrep.1 \
 		obminimize.1 obprobe.1 obprop.1 obrotamer.1 obrotate.1 \
