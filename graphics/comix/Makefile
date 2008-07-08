@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	comix
-PORTVERSION=	3.6.4
-PORTREVISION=	2
+PORTVERSION=	3.6.5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -47,7 +46,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s|share/man|man|g ; s|1.gz|1|g ; \
 		s|/usr/share/mime|${PREFIX}/share/mime|g ; \
-		s|'/usr'|'${PREFIX}'|g" \
+		s|'/usr'|'${PREFIX}'|g ; \
+		s|%%GCONF_CONFIG_SOURCE%%|${GCONF_CONFIG_SOURCE}|g" \
 			${WRKSRC}/install.py
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
 		${WRKSRC}/comix
