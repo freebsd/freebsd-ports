@@ -1,0 +1,22 @@
+--- Makefile.orig	2008-07-03 23:38:31.000000000 -0400
++++ Makefile	2008-07-03 23:38:53.000000000 -0400
+@@ -23,18 +23,10 @@
+ CFLAGS	 = -Wall -O3 -Wno-pointer-sign -D_GNU_SOURCE
+ LDFLAGS  = -lcrypto -lssl
+ 
+-all: $(PROGNAME) flare-check
++all: $(PROGNAME)
+ 
+ $(PROGNAME): $(PROGNAME).c http.c mime.c ssl.c http.h mime.h ssl.h nlist.h config.h debug.h types.h string-inl.h
+ 	$(CC) $(PROGNAME).c -o $(PROGNAME)  $(CFLAGS) http.c mime.c ssl.c $(LDFLAGS)
+ 
+-flare-check:
+-	@flare-dist/flare 2>&1 | grep -qF Igor || ( \
+-	  echo; \
+-	  echo '*** WARNING: 'flare-dist/flare' bianry is not operational.'; \
+-	  echo '*** Please see flare-dist/README and update it for your OS.'; \
+-	  echo )
+-
+ clean:
+ 	rm -f $(PROGNAME) *.exe *.o *~ a.out core core.[1-9][0-9]* *.stackdump
+-
