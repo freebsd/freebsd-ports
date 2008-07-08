@@ -7,7 +7,6 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=	3
 CATEGORIES=		emulators
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 MASTER_SITES=		SF
@@ -15,8 +14,8 @@ MASTER_SITES=		SF
 MAINTAINER=		mbr@freebsd.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
-RELEASE_DATE=		2008.05.02
-BUILD_VER=		90473
+RELEASE_DATE=		2008.07.01
+BUILD_VER=		102166
 
 GNU_CONFIGURE=		yes
 
@@ -24,6 +23,7 @@ CONFIGURE_ARGS+=	--without-procps
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
 .else
+CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 USE_XORG=		x11 ice xineramaproto xinerama xrandr xtst
@@ -56,6 +56,11 @@ PLIST_SUB+=	FIVEONLY="@comment "
 PLIST_SUB+=	FIVEONLY=""
 .endif
 
+post-patch:
+.if defined(WITHOUT_X11)
+	cd ${WRKSRC} && patch < ${FILESDIR}/optpatch-nox11
+.endif
+
 post-build:
 	cd ${WRKSRC}/modules && make
 
@@ -63,12 +68,12 @@ post-install:
 	${MKDIR} -p ${PREFIX}/lib/vmware-tools/modules/drivers
 	${MKDIR} -p ${PREFIX}/lib/vmware-tools/modules/input
 	${MKDIR} -p ${PREFIX}/share/vmware-tools
-	${INSTALL} ${WRKSRC}/guestd/guestd ${PREFIX}/sbin/vmware-guestd
-	${INSTALL} ${WRKSRC}/checkvm/checkvm ${PREFIX}/sbin/vmware-checkvm
+	${INSTALL} ${WRKSRC}/guestd/vmware-guestd ${PREFIX}/sbin/vmware-guestd
+	${INSTALL} ${WRKSRC}/checkvm/vmware-checkvm ${PREFIX}/sbin/vmware-checkvm
 .if ${OSREL} >= 6
-	${INSTALL} ${WRKSRC}/hgfsmounter/hgfsmounter ${PREFIX}/sbin/vmware-hgfsmounter
+	${INSTALL} ${WRKSRC}/hgfsmounter/mount.vmhgfs ${PREFIX}/sbin/mount.vmhgfs
 .endif
-	${INSTALL} ${WRKSRC}/xferlogs/xferlogs ${PREFIX}/sbin/vmware-xferlogs
+	${INSTALL} ${WRKSRC}/xferlogs/vmware-xferlogs ${PREFIX}/sbin/vmware-xferlogs
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmxnet.ko
 .if ${OSREL} >= 6
@@ -81,7 +86,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/freebsd/resume-vm-default ${PREFIX}/share/vmware-tools/resume-vm-default
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/freebsd/suspend-vm-default ${PREFIX}/share/vmware-tools/suspend-vm-default
 .if !defined(WITHOUT_X11)
-	${INSTALL} ${WRKSRC}/toolbox/toolbox ${LOCALBASE}/sbin/vmware-toolbox
+	${INSTALL} ${WRKSRC}/toolbox/vmware-toolbox ${LOCALBASE}/sbin/vmware-toolbox
 	${INSTALL} ${WRKSRC}/vmware-user/vmware-user ${LOCALBASE}/sbin/vmware-user
 .endif
 
