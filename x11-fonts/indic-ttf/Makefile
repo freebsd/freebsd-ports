@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	indic-ttf
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/t/ttf-indic-fonts
