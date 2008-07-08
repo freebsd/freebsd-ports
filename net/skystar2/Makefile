@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	skystar2
-PORTVERSION=	11
-PORTREVISION=	1
+PORTVERSION=	12
 CATEGORIES=	net
 MASTER_SITES=	http://paradox.org.ua/ \
 		http://lissyara.su/patch/skystar2/
@@ -30,6 +29,9 @@ pre-fetch:
 	${ECHO}  "*************************************************"; \
 	exit 1
 .endif
+
+pre-install:
+	${INSTALL} -d ${KMODDIR}
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/etc/channels.conf.dist ${PREFIX}/etc/
