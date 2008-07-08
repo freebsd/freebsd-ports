@@ -111,6 +111,7 @@
     SUBDIR += nvi-perl
     SUBDIR += nxml
     SUBDIR += nxml-emacs21
+    SUBDIR += omegaT
     SUBDIR += ooo-build
     SUBDIR += openoffice.org-2
     SUBDIR += openoffice.org-2-RC
