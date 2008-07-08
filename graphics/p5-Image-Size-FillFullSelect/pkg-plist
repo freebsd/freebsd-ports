@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Image/Size/FillFullSelect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Size/FillFullSelect/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Size/FillFullSelect
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Size/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrmtry %%SITE_PERL%%/Image/Size
+@dirrmtry %%SITE_PERL%%/Image
