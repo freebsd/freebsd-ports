@@ -80,7 +80,7 @@
            $(SMALL_OPTS) $(VER_OPTS) $(DEFINE)
  LIBS    = $(LIBS.$(TARGET)) $(LIBS.$(REGEX)) $(ADDLIB)
 -CFLAGS  = -Wall $(COPTS) $(DEBUG)
-+CFLAGS  = -Wall $(COPTS)
++CFLAGS  += -Wall $(COPTS)
  LDFLAGS = -g
  
  OBJS = src/haproxy.o src/sessionhash.o src/base64.o src/protocols.o \
