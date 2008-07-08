@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	batmon
-PORTVERSION=	0.2
-PORTREVISION=	2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils gnustep
 MASTER_SITES=	http://download.savannah.gnu.org/releases/gap/
 
