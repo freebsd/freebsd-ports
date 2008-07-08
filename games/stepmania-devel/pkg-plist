@@ -1275,3 +1275,4 @@ share/games/stepmania/stepmania
 @dirrm share/games/stepmania/Songs
 @dirrm share/games/stepmania/Announcers
 @dirrm share/games/stepmania
+@dirrmtry share/games
