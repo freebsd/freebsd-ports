@@ -1,6 +1,6 @@
---- jsopcode.c.orig	Sun Aug 29 18:00:24 2004
-+++ jsopcode.c	Sat Jan 14 02:26:07 2006
-@@ -239,7 +239,7 @@
+--- jsopcode.c	2007-09-27 20:30:18.000000000 +0200
++++ jsopcode.c	2008-06-19 16:10:44.000000000 +0200
+@@ -262,7 +262,7 @@
          pc2 += jmplen;
          npairs = GET_ATOM_INDEX(pc2);
          pc2 += ATOM_INDEX_LEN;
