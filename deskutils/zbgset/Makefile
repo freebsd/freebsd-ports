@@ -7,6 +7,7 @@
 
 PORTNAME=	zbgset
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	deskutils x11
 MASTER_SITES=	http://cpan.org/authors/id/V/VV/VVELOX/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.pl
@@ -17,7 +18,7 @@ MAINTAINER=	vvelox@vvelox.net
 COMMENT=	A perl program for managing the background
 
 RUN_DEPENDS=	${SITE_PERL}/Image/Size/FillFullSelect.pm:${PORTSDIR}/graphics/p5-Image-Size-FillFullSelect \
-		${SITE_PERL}/ZConf.pm:${PORTSDIR}/devel/p5-ZConf \
+		${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
 		${LOCALBASE}/bin/hsetroot:${PORTSDIR}/graphics/hsetroot
 
 USE_PERL5=	yes
