@@ -14,6 +14,7 @@ MAINTAINER=	r.s.a.vandomburg@nedforce.nl
 COMMENT=	Non-interactive SSH processing
 
 OPTIONS=	PROMPT_PASSPHRASES "Prompt for passphrases on keys" On
+OPTIONSFILE?=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 # to get RUBY_SITEARCHLIBDIR
 USE_RUBY=	yes
