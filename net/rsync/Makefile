@@ -40,6 +40,7 @@ MAN5=		rsyncd.conf.5
 OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		SSH       "Use SSH instead of RSH" on \
 		FLAGS     "File system flags support patch, adds --fileflags" off \
+		ATIMES    "Preserve access times, adds --atimes" off \
 		ACL       "Add backward-compatibility for the --acls option" off \
 		ICONV     "Add iconv support" off \
 		TIMELIMIT "Time limit patch" off
@@ -52,9 +53,20 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
 .if defined(WITH_FLAGS)
 IGNORE=		flags and timelimit can't be both enabled at the same time. Please rerun 'make config' and disable one of them
 .endif
+.if defined(WITH_ATIMES)
+IGNORE=		atimes and timelimit can't be enabled simultaneously. Please rerun 'make config' and disable one of them
+.endif
 .endif
 
-.if defined(WITH_ICONV) || defined(WITH_FLAGS) || defined(WITH_ACL) || make(makesum) || defined(WITH_TIMELIMIT)
+.if !defined(WITHOUT_ATIMES)
+PATCH_STRIP=	-p1
+EXTRA_PATCHES+=	${WRKSRC}/patches/atimes.diff
+.if defined(WITH_FLAGS)
+IGNORE=		flags and atimes can't be enabled simultaneously. Please rerun 'make config' and disable one of them
+.endif
+.endif
+
+.if defined(WITH_ICONV) || defined(WITH_FLAGS) || defined(WITH_ACL) || make(makesum) || defined(WITH_TIMELIMIT) || defined(WITH_ATIMES)
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
