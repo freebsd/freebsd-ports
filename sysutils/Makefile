@@ -831,6 +831,7 @@
     SUBDIR += xwipower
     SUBDIR += xwlans
     SUBDIR += yawho
+    SUBDIR += zccron
     SUBDIR += zeroer
     SUBDIR += zfs-replicate
     SUBDIR += zidrav
