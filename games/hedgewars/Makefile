@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hedgewars
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	games
 MASTER_SITES=	http://hedgewars.org/download/ \
 		http://www.amdmi3.ru/distfiles/
