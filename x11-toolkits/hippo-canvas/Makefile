@@ -18,7 +18,9 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libcroco-0.6.pc:${PORTSDIR}/textpr
 		${LOCALBASE}/libdata/pkgconfig/cairo.pc:${PORTSDIR}/graphics/cairo \
 		${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 LIB_DEPENDS=	croco-0.6.3:${PORTSDIR}/textproc/libcroco \
-		cairo.2:${PORTSDIR}/graphics/cairo
+		cairo.2:${PORTSDIR}/graphics/cairo \
+		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
 USE_GMAKE=	yes
