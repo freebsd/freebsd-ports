@@ -1,0 +1,4 @@
+%%SITE_PERL%%/ZConf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/.packlist
+@dirrmtry %%SITE_PERL%%/ZConf
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
