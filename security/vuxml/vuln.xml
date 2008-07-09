@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bc20510f-4dd4-11dd-93e7-0211d880e350">
+    <topic>poppler -- uninitialized pointer</topic>
+    <affects>
+      <package>
+	<name>poppler</name>
+	<range><lt>0.8.4_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Felipe Andres Manzano reports:</p>
+	<blockquote cite="http://milw0rm.com/exploits/6032">
+	  <p>The libpoppler pdf rendering library, can free
+	    uninitialized pointers, leading to arbitrary code
+	    execution. This vulnerability results from memory
+	    management bugs in the Page class constructor/destructor.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-2950</cvename>
+      <url>http://milw0rm.com/exploits/6032</url>
+    </references>
+    <dates>
+      <discovery>2008-07-07</discovery>
+      <entry>2008-07-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f5c58fc1-49c0-11dd-b0ba-00163e000016">
     <topic>py-pylons -- Path traversal bug</topic>
     <affects>
