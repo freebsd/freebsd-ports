@@ -89,10 +89,10 @@ do-build:
 	${RM} -rf ${WRKDIR}/tmp_static
 	${MKDIR} ${WRKDIR}/tmp_static
 	cd ${WRKDIR}/tmp_static
-	${FIND} ${WRKSRC} -name "*\.a" -exec ${MV} {} ${WRKDIR}/tmp_static \;
+	${FIND} ${WRKSRC} -name "*\.a" -exec ${CP} {} ${WRKDIR}/tmp_static \;
 	${RM} -rf ${WRKDIR}/tmp_shared
 	${MKDIR} ${WRKDIR}/tmp_shared
-	${FIND} ${WRKSRC_SHARED} -name "*\.a" -exec ${MV} {} ${WRKDIR}/tmp_shared \;
+	${FIND} ${WRKSRC_SHARED} -name "*\.a" -exec ${CP} {} ${WRKDIR}/tmp_shared \;
 
 post-build:
 	@cd ${WRKDIR}/tmp_shared ; for i in `ls *.a | ${SED}  's/\.a//' `; do \
@@ -114,7 +114,7 @@ do-install:
 .endif
 
 regression-test: do-build
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} testing)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} testing)
 	@(cd ${WRKSRC}/TESTING && ./plintstd pdtest.csh)
 
 .include <bsd.port.post.mk>
