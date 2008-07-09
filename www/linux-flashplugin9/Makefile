@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LINUXBASE}/lib/libssl.so.5:${PORTSDIR}/security/linux-openssl
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 
-BROKEN=		Unstable, no sound, generally unusable state
+IGNORE=		Unstable, no sound, generally unusable state
 RESTRICTED=	Redistribution not allowed
 
 NO_BUILD=	yes
