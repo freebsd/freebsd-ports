@@ -8,8 +8,7 @@
 PORTNAME=	firepay
 PORTVERSION=	0.9.5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.firestuff.org/projects/ \
-		http://www.wa.apana.org.au/~dean/sources/ \
+MASTER_SITES=	http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 
 MAINTAINER=	dean@odyssey.apana.org.au
