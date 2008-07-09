@@ -13,6 +13,7 @@
     SUBDIR += aiksaurus-gtk
     SUBDIR += align
     SUBDIR += am-aspell
+    SUBDIR += ansifilter
     SUBDIR += ant-xinclude-task
     SUBDIR += antiword
     SUBDIR += archmage
