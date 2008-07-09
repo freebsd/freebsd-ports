@@ -19,7 +19,7 @@ COMMENT=	A cron like tool that performs a single pass on a crontab stored in ZCo
 RUN_DEPENDS=	${SITE_PERL}/DateTime/Event/Cron.pm:${PORTSDIR}/devel/p5-DateTime-Event-Cron \
 		${SITE_PERL}/${PERL_ARCH}/DateTime/Duration.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		${SITE_PERL}/ZConf.pm:${PORTSDIR}/devel/p5-ZConf
+		${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
