@@ -8,6 +8,7 @@
 %%DATADIR%%/basewiki/ikiwiki/markdown.mdwn
 %%DATADIR%%/basewiki/ikiwiki/openid.mdwn
 %%DATADIR%%/basewiki/ikiwiki/pagespec.mdwn
+%%DATADIR%%/basewiki/ikiwiki/pagespec/attachment.mdwn
 %%DATADIR%%/basewiki/ikiwiki/preprocessordirective.mdwn
 %%DATADIR%%/basewiki/ikiwiki/searching.mdwn
 %%DATADIR%%/basewiki/ikiwiki/subpage.mdwn
@@ -82,6 +83,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/aggregate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/amazon_s3.pm
 %%SITE_PERL%%/IkiWiki/Plugin/anonok.pm
+%%SITE_PERL%%/IkiWiki/Plugin/attachment.pm
 %%SITE_PERL%%/IkiWiki/Plugin/brokenlinks.pm
 %%SITE_PERL%%/IkiWiki/Plugin/calendar.pm
 %%SITE_PERL%%/IkiWiki/Plugin/camelcase.pm
@@ -184,6 +186,7 @@ share/locale/vi/LC_MESSAGES/ikiwiki.mo
 @dirrm lib/ikiwiki/plugins
 @dirrm lib/ikiwiki
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki
+@dirrm %%DATADIR%%/basewiki/ikiwiki/pagespec
 @dirrm %%DATADIR%%/basewiki/ikiwiki/subpage
 @dirrm %%DATADIR%%/basewiki/ikiwiki
 @dirrm %%DATADIR%%/basewiki/templates
