@@ -6,22 +6,16 @@
 #
 
 PORTNAME=	pyephem
-PORTVERSION=	3.7b
+PORTVERSION=	3.7.3.1
+PORTEPOCH=	1
 CATEGORIES=	astro math hamradio
-MASTER_SITES=	http://rhodesmill.org/brandon/projects/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
+MASTER_SITES=	${MASTER_SITE_CHEESESHOP:S"%SUBDIR%"source/p/pyephem"} \
+		${MASTER_SITE_LOCAL:S"%SUBDIR%"db"}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Scientific-grade astronomical computations for Python
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
-
-post-install:
-.if     !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/pyephem-manual.html ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
