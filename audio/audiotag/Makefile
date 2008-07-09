@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audiotag
-PORTVERSION=	0.17
-PORTREVISION=	2
+PORTVERSION=	0.18
 CATEGORIES=	audio multimedia
 MASTER_SITES=	http://www.tempestgames.com/ryan/downloads/
 
