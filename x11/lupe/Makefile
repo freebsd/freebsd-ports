@@ -7,7 +7,7 @@
 
 PORTNAME=	lupe
 PORTVERSION=	0.08
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 accessibility
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/
 DISTNAME=	lupe008	
@@ -22,8 +22,8 @@ MAN1=		lupe.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/lupe
-	${INSTALL_MAN} ${WRKSRC}/lupe.doc ${PREFIX}/share/doc/lupe
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/lupe.doc ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,3 +1,3 @@
 bin/lupe
-share/doc/lupe/lupe.doc
-@dirrm share/doc/lupe
+%%PORTDOCS%%%%DOCSDIR%%/lupe.doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
