@@ -71,3 +71,6 @@ share/icons/hicolor/48x48/apps/terminator.png
 %%NLS%%share/locale/tr/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/terminator.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/terminator.mo
+%%NLS%%@dirrm share/locale/fy/LC_MESSAGES
+%%NLS%%@dirrm share/locale/fy
+@dirrm %%PYTHON_SITELIBDIR%%/terminatorlib
