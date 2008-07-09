@@ -7,7 +7,7 @@
 
 PORTNAME=	aqbanking
 PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aqbanking
@@ -17,8 +17,8 @@ COMMENT=	Online banking interface and financial data framework
 
 LIB_DEPENDS=	gwenhywfar.48:${PORTSDIR}/devel/gwenhywfar
 
-OPTIONS=	OFX		"LibOFX support"	off	\
-		KTOBLZCHECK	"KtoBlzCheck support"	off
+OPTIONS=	KTOBLZCHECK	"KtoBlzCheck support"	off
+#		OFX		"LibOFX support"	off
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -45,15 +45,15 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OFX)
-LIB_DEPENDS+=	ofx.3:${PORTSDIR}/finance/libofx
-CONFIGURE_ARGS=	--with-backends="aqhbci aqdtaus aqofxconnect"
-CONFIGURE_ARGS+=--enable-libofx
-PLIST_SUB+=	OFX=""
-.else
+#.if defined(WITH_OFX)
+#LIB_DEPENDS+=	ofx.3:${PORTSDIR}/finance/libofx
+#CONFIGURE_ARGS=	--with-backends="aqhbci aqdtaus aqofxconnect"
+#CONFIGURE_ARGS+=--enable-libofx
+#PLIST_SUB+=	OFX=""
+#.else
 CONFIGURE_ARGS+=--disable-libofx
 PLIST_SUB+=	OFX="@comment "
-.endif
+#.endif
 
 CONFIGURE_ARGS+= --with-frontends="cbanking qbanking"
 

@@ -342,7 +342,7 @@ share/locale/de/LC_MESSAGES/aqbanking.mo
 @dirrm include/aqbanking
 @dirrm include/aqdtaus
 @dirrm include/aqhbci
-@dirrm include/aqofxconnect
+%%OFX%%@dirrm include/aqofxconnect
 @dirrm include/cbanking
 @dirrm include/qbanking
 @dirrm lib/aqbanking/plugins/16/bankinfo
