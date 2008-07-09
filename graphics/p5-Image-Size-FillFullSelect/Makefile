@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	Choose wether a image fill setting for a image should be fill or full
+COMMENT=	Choose whether an image fill setting for a image should be fill or full
 
 RUN_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size
 
