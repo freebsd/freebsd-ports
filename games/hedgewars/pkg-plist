@@ -24,6 +24,8 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Clouds.png
 %%DATADIR%%/Data/Graphics/Crosshair.png
 %%DATADIR%%/Data/Graphics/Expl50.png
+%%DATADIR%%/Data/Graphics/ExplPart.png
+%%DATADIR%%/Data/Graphics/ExplPart2.png
 %%DATADIR%%/Data/Graphics/Finger.png
 %%DATADIR%%/Data/Graphics/FirstAid.png
 %%DATADIR%%/Data/Graphics/Flame.png
@@ -44,7 +46,12 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Hammer.png
 %%DATADIR%%/Data/Graphics/Hats/Samurai.png
 %%DATADIR%%/Data/Graphics/Hedgehog.png
+%%DATADIR%%/Data/Graphics/Hedgehog/Hurrah.png
+%%DATADIR%%/Data/Graphics/Hedgehog/ILoveLemonade.png
 %%DATADIR%%/Data/Graphics/Hedgehog/Idle.png
+%%DATADIR%%/Data/Graphics/Hedgehog/Kowtow.png
+%%DATADIR%%/Data/Graphics/Hedgehog/Sad.png
+%%DATADIR%%/Data/Graphics/Hedgehog/Wave.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amAirAttack.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amBTorch_i.png
 %%DATADIR%%/Data/Graphics/Hedgehog/amBTorch_w.png
@@ -81,17 +88,29 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/dynamite.png
 %%DATADIR%%/Data/Graphics/hhMask.png
 %%DATADIR%%/Data/Graphics/thinking.png
+%%DATADIR%%/Data/Locale/bg.txt
+%%DATADIR%%/Data/Locale/de.txt
 %%DATADIR%%/Data/Locale/en.txt
+%%DATADIR%%/Data/Locale/fr.txt
+%%DATADIR%%/Data/Locale/hedgewars_bg.qm
+%%DATADIR%%/Data/Locale/hedgewars_de.qm
+%%DATADIR%%/Data/Locale/hedgewars_fr.qm
 %%DATADIR%%/Data/Locale/hedgewars_it.qm
 %%DATADIR%%/Data/Locale/hedgewars_pl.qm
 %%DATADIR%%/Data/Locale/hedgewars_ru.qm
+%%DATADIR%%/Data/Locale/hedgewars_sk.qm
 %%DATADIR%%/Data/Locale/it.txt
 %%DATADIR%%/Data/Locale/pl.txt
 %%DATADIR%%/Data/Locale/ru.txt
+%%DATADIR%%/Data/Locale/sk.txt
 %%DATADIR%%/Data/Maps/Hedgelove/map.cfg
 %%DATADIR%%/Data/Maps/Hedgelove/map.png
 %%DATADIR%%/Data/Maps/Hedgewars/map.cfg
 %%DATADIR%%/Data/Maps/Hedgewars/map.png
+%%DATADIR%%/Data/Maps/Hydrant/map.cfg
+%%DATADIR%%/Data/Maps/Hydrant/map.png
+%%DATADIR%%/Data/Maps/Lonely_Island/map.cfg
+%%DATADIR%%/Data/Maps/Lonely_Island/map.png
 %%DATADIR%%/Data/Maps/Plane/map.cfg
 %%DATADIR%%/Data/Maps/Plane/map.png
 %%DATADIR%%/Data/Maps/Volcano/map.cfg
@@ -240,6 +259,8 @@ bin/hwengine
 @dirrm %%DATADIR%%/Data/Maps/cheese
 @dirrm %%DATADIR%%/Data/Maps/Volcano
 @dirrm %%DATADIR%%/Data/Maps/Plane
+@dirrm %%DATADIR%%/Data/Maps/Lonely_Island
+@dirrm %%DATADIR%%/Data/Maps/Hydrant
 @dirrm %%DATADIR%%/Data/Maps/Hedgewars
 @dirrm %%DATADIR%%/Data/Maps/Hedgelove
 @dirrm %%DATADIR%%/Data/Maps
