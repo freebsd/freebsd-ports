@@ -7,6 +7,7 @@
 
 PORTNAME=	plee-the-bear
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-light
@@ -14,9 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-light
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D platform jump and run game
 
-LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost
-BUILD_DEPENDS=	${LOCALBASE}/bin/claw-config:${PORTSDIR}/devel/libclaw
-RUN_DEPENDS=	${LOCALBASE}/bin/claw-config:${PORTSDIR}/devel/libclaw
+LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost \
+		claw_application.1:${PORTSDIR}/devel/libclaw
 
 USE_BZIP2=	yes
 USE_SDL=	sdl mixer
