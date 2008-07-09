@@ -7,7 +7,7 @@
 
 PORTNAME=	bubblemon-dockapp
 PORTVERSION=	1.46
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 		http://critical.ch/distfiles/ \
@@ -30,6 +30,7 @@ post-patch:
 		s@gtk-config@${GTK_CONFIG}@g; s@-lgtk@-lgtk-1.2@g; \
 		s@-c -g kmem -m 2755 -o root@-s -c -g kmem -m 2755 -o root@g" \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|-lkvm||g' ${WRKSRC}/Makefile.FreeBSD
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
