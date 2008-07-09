@@ -7,13 +7,15 @@
 
 PORTNAME=	gnome-main-menu
 PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provides easy access to sets of GNOME applications
+
+LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack eel2 gnomedesktop
