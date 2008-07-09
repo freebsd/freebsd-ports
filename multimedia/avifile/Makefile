@@ -68,7 +68,7 @@ WITH_OPTIMIZED_CFLAGS=	yes
 .endif
 
 .if ${OSVERSION} >= 700000
-BROKEN=		Numerous compile errors under gcc 4.2
+USE_GCC=	3.4
 .endif
 
 .if (${ARCH} != "i386") && (${ARCH} != "amd64")
@@ -294,6 +294,10 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^subdirs[[:space:]]*=.*libmad.*$$||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.if ${OSVERSION} > 700000
+	@${REINPLACE_CMD} -e 's|LIBTOOL)|LIBTOOL) --tag=gcc|g' \
+	    ${WRKSRC}/ffmpeg/libavcodec/ppc/Makefile.in
+.endif
 
 post-configure:
 	@${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
