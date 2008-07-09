@@ -2016,6 +2016,7 @@
     SUBDIR += privman
     SUBDIR += projectcenter.app
     SUBDIR += projectmanager
+    SUBDIR += protobuf
     SUBDIR += prototype
     SUBDIR += pstreams
     SUBDIR += psvn
