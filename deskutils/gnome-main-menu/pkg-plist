@@ -117,4 +117,5 @@ share/locale/zu/LC_MESSAGES/gnome-main-menu.mo
 @dirrmtry share/locale/ar/LC_MESSAGES
 @dirrmtry share/locale/ar
 @dirrm %%DATADIR%%
+@dirrm include/slab
 @dirrmtry share/applications
