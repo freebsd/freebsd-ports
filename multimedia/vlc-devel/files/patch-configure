@@ -1,55 +1,11 @@
---- configure.orig	Sat Jun  2 18:01:50 2007
-+++ configure	Sun Jun  3 16:20:03 2007
-@@ -2499,8 +2499,7 @@
- done
- if test -z "$ac_aux_dir"; then
-   { { echo "$as_me:$LINENO: error: cannot find install-sh or install.sh in autotools \"$srcdir\"/autotools" >&5
--echo "$as_me: error: cannot find install-sh or install.sh in autotools \"$srcdir\"/autotools" >&2;}
--   { (exit 1); exit 1; }; }
-+echo "$as_me: error: cannot find install-sh or install.sh in autotools \"$srcdir\"/autotools" >&2;} }
- fi
+--- configure.orig	2008-07-02 13:16:16.000000000 +0200
++++ configure	2008-07-02 13:16:48.000000000 +0200
+@@ -73873,7 +73873,7 @@
  
- # These three variables are undocumented and unsupported,
-@@ -42336,8 +42335,7 @@
-         if test -n "${enable_dv}"
-         then
-           { { echo "$as_me:$LINENO: error: cannot find libraw1394 headers" >&5
--echo "$as_me: error: cannot find libraw1394 headers" >&2;}
--   { (exit 1); exit 1; }; }
-+echo "$as_me: error: cannot find libraw1394 headers" >&2;} ;}
-         fi
+ VLC_CONFIG="top_builddir=\"\$(top_builddir)\" \$(top_builddir)/vlc-config"
  
- fi
-@@ -42356,8 +42354,7 @@
-             { echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6; }
-       { { echo "$as_me:$LINENO: error: cannot cd to ${real_dv_raw1394_tree}" >&5
--echo "$as_me: error: cannot cd to ${real_dv_raw1394_tree}" >&2;}
--   { (exit 1); exit 1; }; }
-+echo "$as_me: error: cannot cd to ${real_dv_raw1394_tree}" >&2;} ;}
-     fi
-     if test -f "${real_dv_raw1394_tree}/src/.libs/libraw1394.a"
-     then
-@@ -42576,8 +42573,7 @@
-         if test -n "${enable_dv}"
-         then
-           { { echo "$as_me:$LINENO: error: cannot find libavc1394 headers" >&5
--echo "$as_me: error: cannot find libavc1394 headers" >&2;}
--   { (exit 1); exit 1; }; }
-+echo "$as_me: error: cannot find libavc1394 headers" >&2;} ; }
-         fi
+-CPPFLAGS_save="${CPPFLAGS_save} -I\$(top_srcdir)/include -I\$(top_builddir)/include"
++CPPFLAGS_save="-I\$(top_srcdir)/include -I\$(top_builddir)/include ${CPPFLAGS_save}"
  
- fi
-@@ -64307,12 +64303,6 @@
  
-   if test "${WX_CONFIG}" != "no" -a "${CXX}" != ""
-   then
--    if expr 2.6.0 \> `${WX_CONFIG} --version` >/dev/null
--    then
--      { { echo "$as_me:$LINENO: error: You need wxWidgets version 2.6.0 or upwards. Please upgrade and try again." >&5
--echo "$as_me: error: You need wxWidgets version 2.6.0 or upwards. Please upgrade and try again." >&2;}
--   { (exit 1); exit 1; }; }
--    fi
-     ac_ext=cpp
- ac_cpp='$CXXCPP $CPPFLAGS'
- ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+   CPPFLAGS="${CPPFLAGS_save}"
