@@ -25,6 +25,7 @@ include/libmowgli/mowgli_object.h
 include/libmowgli/mowgli_object_class.h
 include/libmowgli/mowgli_object_messaging.h
 include/libmowgli/mowgli_object_metadata.h
+include/libmowgli/mowgli_patricia.h
 include/libmowgli/mowgli_queue.h
 include/libmowgli/mowgli_random.h
 include/libmowgli/mowgli_signal.h
@@ -32,7 +33,7 @@ include/libmowgli/mowgli_spinlock.h
 include/libmowgli/mowgli_stdinc.h
 include/libmowgli/mowgli_string.h
 lib/libmowgli.so
-lib/libmowgli.so.1
-lib/libmowgli.so.1.0.0
+lib/libmowgli.so.2
+lib/libmowgli.so.2.0.0
 libdata/pkgconfig/libmowgli.pc
 @dirrm include/libmowgli

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmowgli
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	devel
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
