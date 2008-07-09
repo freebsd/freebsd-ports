@@ -7,6 +7,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	9.0r124
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
 		LOCAL/lofi:suplib
@@ -24,6 +25,7 @@ RUN_DEPENDS=	${LINUXBASE}/lib/libssl.so.5:${PORTSDIR}/security/linux-openssl
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 
+BROKEN=		Unstable, no sound, generally unusable state
 RESTRICTED=	Redistribution not allowed
 
 NO_BUILD=	yes
