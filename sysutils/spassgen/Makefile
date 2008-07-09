@@ -12,7 +12,7 @@ CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	spassgen
 
-MAINTAINER=	achilov-rn@askd.ru
+MAINTAINER=	citycat4@ngs.ru
 COMMENT=	Qt GUI secure password generator
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

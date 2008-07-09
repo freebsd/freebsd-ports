@@ -11,7 +11,7 @@ CATEGORIES=		net kde
 MASTER_SITES=		${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	smb4k
 
-MAINTAINER=		achilov-rn@askd.ru
+MAINTAINER=		citycat4@ngs.ru
 COMMENT=		KDE 3.x SMB Network browser and SMB shares mounting center
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \

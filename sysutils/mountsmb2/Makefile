@@ -11,7 +11,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lippe
 
-MAINTAINER=	achilov-rn@askd.ru
+MAINTAINER=	citycat4@ngs.ru
 COMMENT=	SMB/CIFS shares mounting scripts to do it at login
 
 RUN_DEPENDS=	nbtscan:${PORTSDIR}/net-mgmt/nbtscan \
