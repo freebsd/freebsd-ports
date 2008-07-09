@@ -9977,6 +9977,7 @@ p5-Crypt-OFB                    ports/security/p5-Crypt-OFB
 p5-Crypt-OICQ                   ports/security/p5-Crypt-OICQ
 p5-Crypt-OTP                    ports/security/p5-Crypt-OTP
 p5-Crypt-OpenPGP                ports/security/p5-Crypt-OpenPGP
+p5-Crypt-OpenSSL-AES            ports/security/p5-Crypt-OpenSSL-AES
 p5-Crypt-OpenSSL-Bignum         ports/security/p5-Crypt-OpenSSL-Bignum
 p5-Crypt-OpenSSL-DSA            ports/security/p5-Crypt-OpenSSL-DSA
 p5-Crypt-OpenSSL-RSA            ports/security/p5-Crypt-OpenSSL-RSA
@@ -10773,6 +10774,7 @@ p5-Image-MetaData-JPEG          ports/graphics/p5-Image-MetaData-JPEG
 p5-Image-PBMlib                 ports/graphics/p5-Image-PBMlib
 p5-Image-Pngslimmer             ports/graphics/p5-Image-Pngslimmer
 p5-Image-Size                   ports/graphics/p5-Image-Size
+p5-Image-Size-FillFullSelect    ports/graphics/p5-Image-Size-FillFullSelect
 p5-Imager                       ports/graphics/p5-Imager
 p5-Imager-Graph                 ports/graphics/p5-Imager-Graph
 p5-Imager-Plot                  ports/graphics/p5-Imager-Plot
@@ -12352,6 +12354,7 @@ p5-Yada-Yada-Yada               ports/devel/p5-Yada-Yada-Yada
 p5-Yahoo-BBAuth                 ports/security/p5-Yahoo-BBAuth
 p5-Yahoo-Lifestyle              ports/www/p5-Yahoo-Lifestyle
 p5-Yahoo-Search                 ports/www/p5-Yahoo-Search
+p5-ZConf                        ports/net/p5-ZConf
 p5-ZML                          ports/devel/p5-ZML
 p5-Zen-Koans                    ports/misc/p5-Zen-Koans
 p5-accessors                    ports/devel/p5-accessors
@@ -13020,6 +13023,7 @@ p5-crypt-null                   ports/security/p5-Crypt-NULL
 p5-crypt-ofb                    ports/security/p5-Crypt-OFB
 p5-crypt-oicq                   ports/security/p5-Crypt-OICQ
 p5-crypt-openpgp                ports/security/p5-Crypt-OpenPGP
+p5-crypt-openssl-aes            ports/security/p5-Crypt-OpenSSL-AES
 p5-crypt-openssl-bignum         ports/security/p5-Crypt-OpenSSL-Bignum
 p5-crypt-openssl-dsa            ports/security/p5-Crypt-OpenSSL-DSA
 p5-crypt-openssl-random         ports/security/p5-Crypt-OpenSSL-Random
@@ -13776,6 +13780,7 @@ p5-image-metadata-jpeg          ports/graphics/p5-Image-MetaData-JPEG
 p5-image-pbmlib                 ports/graphics/p5-Image-PBMlib
 p5-image-pngslimmer             ports/graphics/p5-Image-Pngslimmer
 p5-image-size                   ports/graphics/p5-Image-Size
+p5-image-size-fillfullselect    ports/graphics/p5-Image-Size-FillFullSelect
 p5-imager                       ports/graphics/p5-Imager
 p5-imager-graph                 ports/graphics/p5-Imager-Graph
 p5-imager-plot                  ports/graphics/p5-Imager-Plot
@@ -15458,6 +15463,7 @@ p5-yaml-tiny                    ports/textproc/p5-YAML-Tiny
 p5-yape-html                    ports/textproc/p5-YAPE-HTML
 p5-yape-regex                   ports/textproc/p5-YAPE-Regex
 p5-yape-regex-explain           ports/textproc/p5-YAPE-Regex-Explain
+p5-zconf                        ports/net/p5-ZConf
 p5-zen-koans                    ports/misc/p5-Zen-Koans
 p5-zml                          ports/devel/p5-ZML
 p54u                            ports/net/p54u
@@ -16993,7 +16999,7 @@ proofgeneral                    ports/math/proofgeneral
 props                           ports/x11/props
 prosearch                       ports/net/prosearch
 prosper                         ports/textproc/prosper
-protobuf			ports/devel/protobuf
+protobuf                        ports/devel/protobuf
 protomol                        ports/biology/protomol
 prototype                       ports/devel/prototype
 proxsmtp                        ports/mail/proxsmtp
@@ -18068,6 +18074,7 @@ ratfor                          ports/lang/ratfor
 ratmen                          ports/x11-wm/ratmen
 ratmenu                         ports/x11-wm/ratmenu
 ratpoison                       ports/x11-wm/ratpoison
+ratproxy                        ports/security/ratproxy
 rats                            ports/security/rats
 rawdog                          ports/news/rawdog
 rawio                           ports/benchmarks/rawio
@@ -22222,6 +22229,9 @@ zabit                           ports/mail/zabit
 zangband                        ports/games/zangband
 zaptel                          ports/misc/zaptel
 zatacka                         ports/games/zatacka
+zbgset                          ports/deskutils/zbgset
+zbgset-admin                    ports/deskutils/zbgset-admin
+zccron                          ports/sysutils/zccron
 zebedee                         ports/security/zebedee
 zebra                           ports/net/zebra
 zebra-server                    ports/net/zebra-server
