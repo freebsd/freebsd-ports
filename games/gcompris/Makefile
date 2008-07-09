@@ -8,6 +8,7 @@
 
 PORTNAME=	gcompris
 DISTVERSION=	8.4.5
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/gcompris
 
@@ -28,6 +29,7 @@ RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+USE_GSTREAMER=	yes
 USE_PYTHON=	yes
 USE_SDL=	mixer
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui pygnome2
