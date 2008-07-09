@@ -6,4 +6,3 @@ etc/channels.conf.dist
 skystar2.ko
 @unexec /bin/rm %D/skystar2.ko.symbols 2>/dev/null || /usr/bin/true
 @unexec kldxref %D
-@unexec /bin/rmdir %D 2>/dev/null || /usr/bin/true
