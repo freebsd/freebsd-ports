@@ -7,9 +7,12 @@ lib/libgsoapck++.a
 lib/libgsoapck.a
 lib/libgsoapssl++.a
 lib/libgsoapssl.a
+lib/gsoap/stdsoap2.c
+lib/gsoap/stdsoap2.cpp
 libdata/pkgconfig/gsoap++.pc
 libdata/pkgconfig/gsoap.pc
 libdata/pkgconfig/gsoapck++.pc
 libdata/pkgconfig/gsoapck.pc
 libdata/pkgconfig/gsoapssl++.pc
 libdata/pkgconfig/gsoapssl.pc
+@dirrm lib/gsoap
