@@ -7,21 +7,20 @@
 
 PORTNAME=	glewpy
 PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
+PATCH_SITES=	http://www.amdmi3.ru/distfiles/ \
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|amdmi3|}
+PATCHFILES=	glewpy-${PORTVERSION}-generatedsources.diff.bz2
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Advanced OpenGL extensions to Python
 
 BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew
-
-BROKEN=		fails to install
-DEPRECATED=	Has been broken for more than 6 months
-EXPIRATION_DATE=2008-09-19
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
