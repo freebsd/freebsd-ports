@@ -16993,6 +16993,7 @@ proofgeneral                    ports/math/proofgeneral
 props                           ports/x11/props
 prosearch                       ports/net/prosearch
 prosper                         ports/textproc/prosper
+protobuf			ports/devel/protobuf
 protomol                        ports/biology/protomol
 prototype                       ports/devel/prototype
 proxsmtp                        ports/mail/proxsmtp
