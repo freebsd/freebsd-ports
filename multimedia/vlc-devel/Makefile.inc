@@ -11,26 +11,17 @@
 #
 # Interface Knobs:
 #
-# WITH_CORBA
-#  Enable a Corba interface via orbit2
-#
 # WITH_NCURSES=yes
 #  Ncurses (console) interface
 #
 # WITH_SKINS
-#  This Interface supports a skinned gtk2.0 interface
+#  This Interface supports a skinned interface usable with winamp 2.x skins
 #  Skins can be found at http://www.videolan.org/vlc/download-skins.html
-#
-# WITHOUT_WXGTK=yes
-#  WxWidgets Interface
 #
 # Audio Knobs:
 #
 # WITH_ARTS=yes
 #  Arts Support
-#
-# WITHOUT_DAAP=yes
-#  Enable libopendaap to connect to iTunes(R) music shares.
 #
 # WITHOUT_DTS=yes
 #  DTS decoder Support
@@ -48,11 +39,6 @@
 #
 # WITH_FLAC=yes
 #  Flac Support
-#
-
-# WITHOUT_LAME=yes
-#  Mp3 encoder Support
-#   ** NOT DEFINED if PACKAGE_BUILDING is defined **
 #
 # WITHOUT_A52=yes
 #  liba52 audio support
@@ -145,6 +131,9 @@
 #
 # Other Knobs:
 #
+# WITHOUT_LUA=yes
+#  Support for lua scripting (interfaces, HTML parsers for video websites...)
+#
 # WITHOUT_AVAHI=yes
 #  Avahi (Rendezvous/Bonjour (R) ) networking
 #
@@ -194,10 +183,6 @@
 # WITH_SSL=yes
 #  Enable TLS/SSL Support for web (httpd) interface
 #
-# WITHOUT_SLP=yes
-#  Disable SLP service discovery support
-#  * recommended if you want to stream media
-#
 # WITH_OPTIMIZED_CFLAGS=yes
 #  Compile with -O2 -ffast-math -fomit-frame-pointer
 #
@@ -226,6 +211,8 @@
 #
 
 post-patch:
+# Do not assume LOCALBASE is /usr/local
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 # Subtitle default font
 	@${REINPLACE_CMD} -e \
 	's|/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf|${WITH_VLC_DEFAULT_FONT}|' \
@@ -239,43 +226,30 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|lrint|rint|' \
 		${WRKSRC}/modules/gui/skins2/controls/ctrl_list.cpp
 .endif
-# s/Linux/FreeBSD/
-	@${REINPLACE_CMD} -e 's|Linux|FreeBSD|' \
-		${WRKSRC}/po/*
-	@${RM} -f ${WRKSRC}/po/*.bak
-	@${REINPLACE_CMD} -e 's|Linux OSS|FreeBSD OSS|' \
-		${WRKSRC}/modules/audio_output/oss.c
-	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/' \
-		-e 's/-lc_r/${PTHREAD_LIBS}/' \
-		-e 's|-mcpu=pentiumpro||; s|-ldl||' \
-		${WRKSRC}/configure ${WRKSRC}/libs/loader/Makefile.in
 # cdrom/dvd support
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
 		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/include/vlc_config.h
+# binary decoders
 	@${REINPLACE_CMD} -e 's|-DWIN32_PATH=\\"\\"|-DWIN32_PATH=\\"${LOCALBASE}/lib/win32\\"|' \
 		${WRKSRC}/libs/loader/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/lib/win32|${LOCALBASE}/lib/win32|' \
 		${WRKSRC}/libs/loader/module.c
-
-pre-build:
-	@${REINPLACE_CMD} -e 's|/intl/libintl.a|${WRKSRC}/intl/libintl.a|' \
-		${WRKSRC}/vlc-config
 
 pre-install: build
 	${RM} -rf ${PLIST} ${FAKEDIR}
 	${MKDIR} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
 	${ECHO_CMD} "share/applications/vlc.desktop" >> ${PLIST}
+.if !defined(WITHOUT_QT4)
+	${ECHO_CMD} "share/pixmaps/qvlc.png" >> ${PLIST}
+	${ECHO_CMD} "share/applications/qvlc.desktop" >> ${PLIST}
+.endif
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
 	${ECHO_CMD} "share/pixmaps/gvlc.png" >> ${PLIST}
 	${ECHO_CMD} "share/applications/svlc.desktop" >> ${PLIST}
 .endif
-.if !defined(WITHOUT_WXGTK)
-	${ECHO_CMD} "share/pixmaps/wxvlc.png" >> ${PLIST}
-	${ECHO_CMD} "share/applications/wxvlc.desktop" >> ${PLIST}
-.endif
-.if !defined(WITHOUT_WXGTK) || defined(WITH_SKINS) || !defined(WITHOUT_QT)
+.if defined(WITH_SKINS) || !defined(WITHOUT_QT)
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 .endif
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
@@ -320,9 +294,6 @@ pre-install: build
 .endfor
 
 do-install:
-	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|' \
-		${FAKEDIR}/bin/vlc-config
-	@${RM} -f ${FAKEDIR}/bin/*.bak
 	cd ${FAKEDIR}/bin && ${FIND} . | \
 		${CPIO} -vpdm -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
 	cd ${FAKEDIR}/include && ${FIND} . | \
@@ -337,19 +308,19 @@ do-install:
 .endif
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc.1 ${MANPREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc-config.1 ${MANPREFIX}/man/man1/
-.if defined(WITH_SKINS) || !defined(WITHOUT_WXGTK)
+.if (defined(WITH_SKINS) && defined(WITHOUT_SKINS)) || !defined(WITHOUT_QT4)
 	if [ ! -d ${PREFIX}/share/applications ]; then \
 		${MKDIR} ${PREFIX}/share/applications ; \
 	fi
 	if [ ! -d ${PREFIX}/share/pixmaps ]; then \
 		${MKDIR} ${PREFIX}/share/pixmaps ; \
 	fi
+.if !defined(WITHOUT_QT4)
+	${INSTALL_DATA} ${FILESDIR}/qvlc.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/qvlc.png
+.endif
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
 	${INSTALL_DATA} ${FILESDIR}/svlc.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/gvlc.png
-.endif
-.if !defined(WITHOUT_WXGTK)
-	${INSTALL_DATA} ${FILESDIR}/wxvlc.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/wxvlc.png
 .endif
 .endif
