@@ -7,7 +7,7 @@
 
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	materm
@@ -132,8 +132,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/share/scripts/mrxvtset.pl ${EXAMPLESDIR}/scripts
 	${INSTALL_DATA} ${WRKSRC}/share/scripts/settitle.c ${EXAMPLESDIR}/scripts
 .endif
-
-post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${CP} ${WRKSRC}/doc/*.bz2 ${DOCSDIR}
