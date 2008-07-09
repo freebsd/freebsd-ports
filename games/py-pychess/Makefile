@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pychess
-DISTVERSION=	0.8beta4
+PORTVERSION=	0.8.2
 #PORTREVISION=	0
 #PORTEPOCH=	0
-PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -35,15 +35,17 @@ USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-REINPLACE_ARGS=	-i.bak -e 's,%%PREFIX%%,${PREFIX},' -e 's,share/games/pychess,${DATADIR},'
+REINPLACE_ARGS=	-i.bak -e 's,%%PREFIX%%,${PREFIX},' -e 's,share/games/pychess,${DATADIR},' -e '1s,/usr/bin/env python,&${PYTHON_VER},'
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	${PORTNAME}.1
 MANCOMPRESSED=	yes
+.else
+MAKE_ENV+=	NO_INSTALL_MANPAGES=${NO_INSTALL_MANPAGES}
 .endif
 
 post-patch:
-	cd ${WRKSRC} && ${REINPLACE_CMD} ${PORTNAME} ${PYSETUP}
+	cd ${WRKSRC} && ${REINPLACE_CMD} ${PORTNAME} ${PYSETUP} lib/pychess/Utils/Move.py
 
 .include <bsd.port.pre.mk>
 
