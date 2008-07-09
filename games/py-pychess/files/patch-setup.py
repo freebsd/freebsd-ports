@@ -5,7 +5,7 @@
  
  # Manpages
 -DATA_FILES += [('share/man/man1', ['manpages/pychess.1.gz'])]
-+if not os.getenv('NO_INSTALL_MANPAGES'):
++if not os.environ.has_key('NO_INSTALL_MANPAGES'):
 +    DATA_FILES += [('man/man1', ['manpages/pychess.1.gz'])]
  
  # Language
