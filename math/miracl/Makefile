@@ -8,6 +8,7 @@
 PORTNAME=	miracl
 PORTVERSION=	5.3.2
 PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/ \
 		${MASTER_SITE_LOCAL}
