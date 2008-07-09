@@ -1,0 +1,3 @@
+A configuration system allowing for either file or LDAP backed storage.
+
+WWW: http://search.cpan.org/dist/Net-LDAP-Makepath/

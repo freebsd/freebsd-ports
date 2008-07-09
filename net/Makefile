@@ -628,6 +628,7 @@
     SUBDIR += p5-XML-Compile-SOAP
     SUBDIR += p5-XML-Compile-SOAP-Daemon
     SUBDIR += p5-XPC
+    SUBDIR += p5-ZConf
     SUBDIR += p5-perl-ldap
     SUBDIR += p54u
     SUBDIR += panoptis
