@@ -15,14 +15,10 @@ COMMENT=	A Unit Test Framework and Tools for the Java2 Platform
 
 USE_JAVA=	1.5
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	changes.html cpl-v10.html doc
-.endif
-
-#DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SRCFILES=	src test-src
 
 do-install:
@@ -45,7 +41,9 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKDIR}/doc; \
+	${INSTALL_DATA} ${WRKDIR}/changes.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/cpl-v10.html ${DOCSDIR}
+	cd ${WRKDIR}/doc \
 		&& ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
 		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
 .endif
