@@ -7,7 +7,7 @@
 
 PORTNAME=	qemacs
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://fabrice.bellard.free.fr/qemacs/
 
@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --make="${GMAKE}" --cc="${CC}" \
 		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}"
+USE_GCC=	3.4
 
 DATADIR=	${PREFIX}/share/qe
 
