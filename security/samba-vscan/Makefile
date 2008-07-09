@@ -7,6 +7,7 @@
 
 PORTNAME=	samba-vscan
 PORTVERSION=	0.3.6c
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.openantivirus.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta5
