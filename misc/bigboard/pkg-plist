@@ -15,23 +15,11 @@ libdata/bonobo/servers/GNOME_OnlineDesktop_BigBoardFactory.server
 %%PYTHON_SITELIBDIR%%/bigboard/big_widgets.py
 %%PYTHON_SITELIBDIR%%/bigboard/big_widgets.pyc
 %%PYTHON_SITELIBDIR%%/bigboard/big_widgets.pyo
-%%PYTHON_SITELIBDIR%%/bigboard/bigbar/EmbedController.py
-%%PYTHON_SITELIBDIR%%/bigboard/bigbar/EmbedController.pyc
-%%PYTHON_SITELIBDIR%%/bigboard/bigbar/EmbedController.pyo
-%%PYTHON_SITELIBDIR%%/bigboard/bigbar/EmbedView.py
-%%PYTHON_SITELIBDIR%%/bigboard/bigbar/EmbedView.pyc
-%%PYTHON_SITELIBDIR%%/bigboard/bigbar/EmbedView.pyo
-%%PYTHON_SITELIBDIR%%/bigboard/bigbar/__init__.py
-%%PYTHON_SITELIBDIR%%/bigboard/bigbar/__init__.pyc
-%%PYTHON_SITELIBDIR%%/bigboard/bigbar/__init__.pyo
 %%PYTHON_SITELIBDIR%%/bigboard/bignative.la
 %%PYTHON_SITELIBDIR%%/bigboard/bignative.so
 %%PYTHON_SITELIBDIR%%/bigboard/databound.py
 %%PYTHON_SITELIBDIR%%/bigboard/databound.pyc
 %%PYTHON_SITELIBDIR%%/bigboard/databound.pyo
-%%PYTHON_SITELIBDIR%%/bigboard/deskbar_embed.py
-%%PYTHON_SITELIBDIR%%/bigboard/deskbar_embed.pyc
-%%PYTHON_SITELIBDIR%%/bigboard/deskbar_embed.pyo
 %%PYTHON_SITELIBDIR%%/bigboard/editor.py
 %%PYTHON_SITELIBDIR%%/bigboard/editor.pyc
 %%PYTHON_SITELIBDIR%%/bigboard/editor.pyo
@@ -106,6 +94,62 @@ libdata/bonobo/servers/GNOME_OnlineDesktop_BigBoardFactory.server
 %%PYTHON_SITELIBDIR%%/bigboard/libgimmie.py
 %%PYTHON_SITELIBDIR%%/bigboard/libgimmie.pyc
 %%PYTHON_SITELIBDIR%%/bigboard/libgimmie.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/COPYING
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_BSDDBCookieJar.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_BSDDBCookieJar.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_BSDDBCookieJar.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_ClientCookie.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_ClientCookie.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_ClientCookie.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_ConnCache.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_ConnCache.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_ConnCache.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Debug.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Debug.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Debug.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_HeadersUtil.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_HeadersUtil.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_HeadersUtil.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_LWPCookieJar.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_LWPCookieJar.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_LWPCookieJar.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_MSIECookieJar.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_MSIECookieJar.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_MSIECookieJar.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_MSIEDBCookieJar.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_MSIEDBCookieJar.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_MSIEDBCookieJar.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_MozillaCookieJar.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_MozillaCookieJar.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_MozillaCookieJar.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Opener.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Opener.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Opener.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Request.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Request.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Request.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Util.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Util.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_Util.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/__init__.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_urllib2_support.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_urllib2_support.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie/_urllib2_support.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/README
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/__init__.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/lgconstants.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/lgconstants.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/lgconstants.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/lgcontacts.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/lgcontacts.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/lgcontacts.pyo
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/libgmail.py
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/libgmail.pyc
+%%PYTHON_SITELIBDIR%%/bigboard/libgmail/libgmail.pyo
 %%PYTHON_SITELIBDIR%%/bigboard/overview_layout.py
 %%PYTHON_SITELIBDIR%%/bigboard/overview_layout.pyc
 %%PYTHON_SITELIBDIR%%/bigboard/overview_layout.pyo
@@ -221,31 +265,33 @@ libexec/bigboard-applets
 libexec/bigboard/main.py
 libexec/bigboard/main.pyc
 libexec/bigboard/main.pyo
-share/bigboard/bigboard-bulb-bw.png
-share/bigboard/bigboard-bulb.png
-share/bigboard/bigboard-collapse.png
-share/bigboard/bigboard-document.png
-share/bigboard/bigboard-down-arrow-disabled.png
-share/bigboard/bigboard-down-arrow-enabled.png
-share/bigboard/bigboard-expand.png
-share/bigboard/bigboard-info.png
-share/bigboard/bigboard-left-button.png
-share/bigboard/bigboard-music.png
-share/bigboard/bigboard-nophoto-45.png
-share/bigboard/bigboard-nophoto-60.png
-share/bigboard/bigboard-presentation.png
-share/bigboard/bigboard-right-button.png
-share/bigboard/bigboard-spreadsheet.png
-share/bigboard/bigboard-today-disabled.png
-share/bigboard/bigboard-today-enabled.png
-share/bigboard/bigboard-up-arrow-disabled.png
-share/bigboard/bigboard-up-arrow-enabled.png
-share/bigboard/ctrl_esc_keys.png
-share/bigboard/windows_key.png
+%%DATADIR%%/bigboard-bulb-bw.png
+%%DATADIR%%/bigboard-bulb.png
+%%DATADIR%%/bigboard-collapse.png
+%%DATADIR%%/bigboard-document.png
+%%DATADIR%%/bigboard-down-arrow-disabled.png
+%%DATADIR%%/bigboard-down-arrow-enabled.png
+%%DATADIR%%/bigboard-expand.png
+%%DATADIR%%/bigboard-info.png
+%%DATADIR%%/bigboard-left-button.png
+%%DATADIR%%/bigboard-music.png
+%%DATADIR%%/bigboard-nophoto-45.png
+%%DATADIR%%/bigboard-nophoto-60.png
+%%DATADIR%%/bigboard-presentation.png
+%%DATADIR%%/bigboard-right-button.png
+%%DATADIR%%/bigboard-spreadsheet.png
+%%DATADIR%%/bigboard-today-disabled.png
+%%DATADIR%%/bigboard-today-enabled.png
+%%DATADIR%%/bigboard-up-arrow-disabled.png
+%%DATADIR%%/bigboard-up-arrow-enabled.png
+%%DATADIR%%/ctrl_esc_keys.png
+%%DATADIR%%/windows_key.png
 share/gnome-2.0/ui/GNOME_OnlineDesktop_BigBoardButtonApplet.xml
 share/online-prefs-sync/bigboard.synclist
 @dirrm share/online-prefs-sync
-@dirrm share/bigboard
+@dirrmtry share/gnome-2.0/ui
+@dirrmtry share/gnome-2.0
+@dirrm %%DATADIR%%
 @dirrm libexec/bigboard
 @dirrm %%PYTHON_SITELIBDIR%%/bigboard/themes
 @dirrm %%PYTHON_SITELIBDIR%%/bigboard/stocks/workspaces
@@ -258,8 +304,11 @@ share/online-prefs-sync/bigboard.synclist
 @dirrm %%PYTHON_SITELIBDIR%%/bigboard/stocks/files
 @dirrm %%PYTHON_SITELIBDIR%%/bigboard/stocks/apps
 @dirrm %%PYTHON_SITELIBDIR%%/bigboard/stocks
+@dirrm %%PYTHON_SITELIBDIR%%/bigboard/libgmail/ClientCookie
+@dirrm %%PYTHON_SITELIBDIR%%/bigboard/libgmail
 @dirrm %%PYTHON_SITELIBDIR%%/bigboard/libbig
 @dirrm %%PYTHON_SITELIBDIR%%/bigboard/keybinder
 @dirrm %%PYTHON_SITELIBDIR%%/bigboard/httplib2
-@dirrm %%PYTHON_SITELIBDIR%%/bigboard/bigbar
 @dirrm %%PYTHON_SITELIBDIR%%/bigboard
+@dirrm %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
