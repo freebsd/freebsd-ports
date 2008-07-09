@@ -7,6 +7,7 @@
 
 PORTNAME=	zbgset-admin
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	deskutils x11
 MASTER_SITES=	http://cpan.org/authors/id/V/VV/VVELOX/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.pl
@@ -17,7 +18,7 @@ MAINTAINER=	vvelox@vvelox.net
 COMMENT=	This is a program for managing the ZConf stored settings for zbgset
 
 RUN_DEPENDS=	${SITE_PERL}/Image/Size/FillFullSelect.pm:${PORTSDIR}/graphics/p5-Image-Size-FillFullSelect \
-		${SITE_PERL}/ZConf.pm:${PORTSDIR}/devel/p5-ZConf
+		${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
