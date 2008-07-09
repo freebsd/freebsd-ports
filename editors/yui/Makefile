@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.askd.ru/~shelton/fileZ/
 
-MAINTAINER=	achilov-rn@askd.ru
+MAINTAINER=	citycat4@ngs.ru
 COMMENT=	Rich-featured multi-windows console text editor
 
 USE_BZIP2=	yes

@@ -14,7 +14,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.jalix.org/projects/${PORTNAME}/download/${PORTVERSION}/ \
 		http://vxj-se.lunar-linux.org/lunar/cache/
 
-MAINTAINER=	achilov-rn@askd.ru
+MAINTAINER=	citycat4@ngs.ru
 COMMENT=	A picture viewer designed to run under KDE 3.x
 
 USE_BZIP2=		yes

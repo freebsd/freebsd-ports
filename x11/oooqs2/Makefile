@@ -11,7 +11,7 @@ CATEGORIES=		x11
 MASTER_SITES=		http://download.berlios.de/segfaultskde/ \
 			http://download2.berlios.de/segfaultskde/ \
 
-MAINTAINER=		achilov-rn@askd.ru
+MAINTAINER=		citycat4@ngs.ru
 COMMENT=		KDE Quick launcher for Open Office 2.x
 
 USE_AUTOTOOLS=		libtool:15

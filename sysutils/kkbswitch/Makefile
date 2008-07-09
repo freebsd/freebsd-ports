@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=		sysutils kde
 MASTER_SITES=		SF/kkbswitch
 
-MAINTAINER=		achilov-rn@askd.ru
+MAINTAINER=		citycat4@ngs.ru
 COMMENT=		Keyboard layout switcher and indicator for KDE 3.x
 
 EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
