@@ -7,7 +7,7 @@
 
 PORTNAME=	libdnd
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://leb.net/offix/
 DISTNAME=	dnd.${PORTVERSION}
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/" \
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/libdnd
-	${INSTALL_MAN} ${WRKDIR}/DND/DNDdoc/* ${PREFIX}/share/doc/libdnd
+	${INSTALL_MAN} ${WRKDIR}/DND/DNDdoc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

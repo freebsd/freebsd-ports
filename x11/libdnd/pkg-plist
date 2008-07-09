@@ -6,9 +6,9 @@ lib/libDnd.so
 lib/libDnd.so.1
 lib/libDnd++.so
 lib/libDnd++.so.1
-share/doc/libdnd/DND.dvi
-share/doc/libdnd/DNDa4.ps
-share/doc/libdnd/DNDletter.ps
-share/doc/libdnd/README
+%%PORTDOCS%%%%DOCSDIR%%/DND.dvi
+%%PORTDOCS%%%%DOCSDIR%%/DNDa4.ps
+%%PORTDOCS%%%%DOCSDIR%%/DNDletter.ps
+%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm include/OffiX
-@dirrm share/doc/libdnd
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
