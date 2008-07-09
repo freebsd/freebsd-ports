@@ -1,0 +1,16 @@
+NAME
+    zbgset - A perl program for managing the background.
+       
+SYNOPSIS
+    zbgset (-f <file>|-r|-l) [-F <fill type>] [-s <ZConf set>]
+
+USAGE
+    Either -f, -r, or -l need used.
+		     
+    This does not actually set the background, but calls another program to
+    do it, but what makes it useful is it allows for random images to be
+    used as well as the last image to be called. This makes it useful for
+    setting the image upon login or changing it regullarly through cron.
+
+    When it is ran for the first time it creates a ZConf config named
+    "zbgset" used store the settings.
