@@ -7,7 +7,7 @@
 
 PORTNAME=	Image-Size-FillFullSelect
 PORTVERSION=	0.0.1
-CATEGORIES=	net perl5
+CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
 PKGNAMEPREFIX=	p5-
