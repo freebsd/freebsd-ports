@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.51
+PORTVERSION=	2.52
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -60,6 +60,7 @@ PLIST_SUB=	W3M="@comment "
 .endif
 
 post-patch:
+	@${RM} ${WRKSRC}/IkiWiki/Plugin/attachment.pm.orig
 	@${REINPLACE_CMD} -e \
 		"s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
