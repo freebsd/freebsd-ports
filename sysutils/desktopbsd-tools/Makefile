@@ -46,6 +46,10 @@ RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
 RUN_DEPENDS+=	portsnap:${PORTSDIR}/ports-mgmt/portsnap
 .endif
 
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"/Installation/d; /Documentation/d; /InitialConf/d" \
