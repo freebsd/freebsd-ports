@@ -6,6 +6,7 @@ include/claw/arguments_table.hpp
 include/claw/assert.hpp
 include/claw/automaton.hpp
 include/claw/avl.hpp
+include/claw/avl_base.hpp
 include/claw/basic_singleton.hpp
 include/claw/basic_socket.hpp
 include/claw/basic_socketbuf.hpp
@@ -32,6 +33,7 @@ include/claw/graph_algorithm.hpp
 include/claw/image.hpp
 include/claw/impl/automaton.tpp
 include/claw/impl/avl.tpp
+include/claw/impl/avl_base.tpp
 include/claw/impl/basic_singleton.tpp
 include/claw/impl/basic_socketbuf.tpp
 include/claw/impl/binary_node.tpp
@@ -115,12 +117,30 @@ include/claw/types.hpp
 include/claw/vector_2d.hpp
 include/claw/xbm.hpp
 lib/claw/FindCLAW.cmake
+lib/libclaw_application-static.a
 lib/libclaw_application.so
+lib/libclaw_application.so.1
+lib/libclaw_application.so.1.5.3
+lib/libclaw_configuration_file-static.a
 lib/libclaw_configuration_file.so
+lib/libclaw_configuration_file.so.1
+lib/libclaw_configuration_file.so.1.5.3
+lib/libclaw_dynamic_library-static.a
 lib/libclaw_dynamic_library.so
+lib/libclaw_dynamic_library.so.1
+lib/libclaw_dynamic_library.so.1.5.3
+lib/libclaw_graphic-static.a
 lib/libclaw_graphic.so
+lib/libclaw_graphic.so.1
+lib/libclaw_graphic.so.1.5.3
+lib/libclaw_logger-static.a
 lib/libclaw_logger.so
+lib/libclaw_logger.so.1
+lib/libclaw_logger.so.1.5.3
+lib/libclaw_net-static.a
 lib/libclaw_net.so
+lib/libclaw_net.so.1
+lib/libclaw_net.so.1.5.3
 @dirrm lib/claw
 @dirrm include/claw/impl
 @dirrm include/claw
