@@ -229,6 +229,7 @@
     SUBDIR += xrolo
     SUBDIR += xwrits
     SUBDIR += zbgset
+    SUBDIR += zbgset-admin
     SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>
