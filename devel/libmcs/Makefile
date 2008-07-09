@@ -7,7 +7,7 @@
 
 PORTNAME=	libmcs
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A BSD licenced configuration database system
 
-LIB_DEPENDS=	mowgli.1:${PORTSDIR}/devel/libmowgli
+LIB_DEPENDS=	mowgli.2:${PORTSDIR}/devel/libmowgli
 
 OPTIONS=	GCONF	"Enable gconf support"		on
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious
 PORTVERSION=	1.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		audacious.1 audtool.1
 
 LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs \
-		mowgli.1:${PORTSDIR}/devel/libmowgli
+		mowgli.2:${PORTSDIR}/devel/libmowgli
 
 PORTDOCS=	README AUTHORS NEWS
 
