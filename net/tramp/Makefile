@@ -7,6 +7,7 @@
 
 PORTNAME=	tramp
 PORTVERSION=	2.1.12
+PORTREVISION=	1
 CATEGORIES=	net elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +28,7 @@ CONFIGURE_ARGS=	--with-contrib --prefix=${PREFIX} \
 		--with-lispdir=${PREFIX}/${TRAMP_LISPDIR} \
 		--with-emacs=${EMACS_CMD}
 
-INFO=		tramp
+INFO=		tramp21
 
 .if defined(JAPANESE_INFO)
 CONFIGURE_ARGS+=	--with-japanese-manual

@@ -1,5 +1,5 @@
---- texi/Makefile.in.orig	2007-09-28 09:32:11.000000000 -0500
-+++ texi/Makefile.in	2008-03-11 10:11:25.000000000 -0500
+--- texi/Makefile.in.orig	2007-09-28 23:32:11.000000000 +0900
++++ texi/Makefile.in	2008-07-10 06:48:37.000000000 +0900
 @@ -51,10 +51,10 @@
  TEXI_FILES	= tramp.texi trampver.texi doclicense.texi \
  		  $(if $(findstring yes, @INSTALL_CHAPTER@), trampinst.texi)
@@ -8,14 +8,14 @@
 -		  $(if $(JA_TEXI_FILES), $(localinfodir)/tramp_ja)
 -INSTALL_FILES	= $(DESTDIR)$(infodir)/tramp \
 -		  $(if $(JA_TEXI_FILES), $(DESTDIR)$(infodir)/tramp_ja)
-+INFO_FILES	= $(localinfodir)/tramp.info \
++INFO_FILES	= $(localinfodir)/tramp21.info \
 +		  $(if $(JA_TEXI_FILES), $(localinfodir)/tramp_ja.info)
-+INSTALL_FILES	= $(DESTDIR)$(infodir)/tramp.info \
++INSTALL_FILES	= $(DESTDIR)$(infodir)/tramp21.info \
 +		  $(if $(JA_TEXI_FILES), $(DESTDIR)$(infodir)/tramp_ja.info)
  CLEAN_FILES	= @TRAMP_CLEAN_FILES@ $(wildcard $(localinfodir)/*)
  
  # To be used by maintainer only
-@@ -67,19 +67,19 @@
+@@ -67,19 +67,22 @@
  
  tramp: $(INFO_FILES) $(localinfodir)/dir
  
@@ -35,7 +35,10 @@
 +		-D $(JA_MANUAL) -D $(INSTALL_CHAPTER) -o $@ $*.texi
  
 -$(DESTDIR)$(infodir)/tramp $(DESTDIR)$(infodir)/tramp_ja:
-+$(DESTDIR)$(infodir)/tramp.info $(DESTDIR)$(infodir)/tramp_ja.info:
++$(localinfodir)/tramp21.info: $(localinfodir)/tramp.info
++	cp $(localinfodir)/tramp.info $@
++
++$(DESTDIR)$(infodir)/tramp21.info $(DESTDIR)$(infodir)/tramp_ja.info:
  	$(MKDIR) $(dir $@)
  	$(INSTALL) $(INFO_FILES) $(DESTDIR)$(infodir)
  
