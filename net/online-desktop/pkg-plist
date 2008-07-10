@@ -83,21 +83,35 @@ share/icons/hicolor/48x48/apps/google-docs.png
 share/icons/hicolor/48x48/apps/google-reader.png
 share/icons/hicolor/48x48/apps/picasa.png
 share/icons/hicolor/48x48/apps/yahoo-mail.png
-share/online-desktop/autostart/bigboard.desktop
-share/online-desktop/autostart/browser.desktop
-share/online-desktop/autostart/im.desktop
-share/online-desktop/gconf.path
-share/online-desktop/gconf.xml.online-desktop/%gconf-tree.xml
-share/online-desktop/presession/panel-config.py
+%%DATADIR%%/autostart/bigboard.desktop
+%%DATADIR%%/autostart/browser.desktop
+%%DATADIR%%/autostart/im.desktop
+%%DATADIR%%/gconf.path
+%%DATADIR%%/gconf.xml.online-desktop/%gconf-tree.xml
+%%DATADIR%%/presession/panel-config.py
 share/online-prefs-sync/online-prefs-sync.synclist
 share/xsessions/online-desktop.desktop
-@dirrmtry lib/locale
-@dirrmtry lib/pidgin
-@dirrmtry share/xsessions
+@dirrm share/xsessions
 @dirrm share/online-prefs-sync
-@dirrm share/online-desktop/presession
-@dirrm share/online-desktop/gconf.xml.online-desktop
-@dirrm share/online-desktop/autostart
-@dirrm share/online-desktop
+@dirrm %%DATADIR%%/presession
+@dirrm %%DATADIR%%/gconf.xml.online-desktop
+@dirrm %%DATADIR%%/autostart
+@dirrm %%DATADIR%%
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/icons
+@dirrm share/gnome/autostart
+@dirrm share/gnome
+@dirrm share/dbus-1/services
+@dirrm share/dbus-1
+@dirrm share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/pyonlinedesktop
 @dirrm %%PYTHON_SITELIBDIR%%/ddm
+@dirrm %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
+@dirrmtry lib/pidgin
