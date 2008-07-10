@@ -462,6 +462,7 @@ annextools                      ports/net-mgmt/annextools
 annoyance-filter                ports/mail/annoyance-filter
 anomy-sanitizer                 ports/mail/anomy-sanitizer
 anope                           ports/irc/anope
+ansifilter                      ports/textproc/ansifilter
 ansiprint                       ports/print/ansiprint
 ant-xinclude-task               ports/textproc/ant-xinclude-task
 anteater                        ports/sysutils/anteater
@@ -1528,6 +1529,7 @@ clex                            ports/misc/clex
 clhep                           ports/science/clhep
 cli-msn                         ports/net-im/cli-msn
 click                           ports/net/click
+clickheat                       ports/www/clickheat
 clig                            ports/devel/clig
 climm                           ports/net-im/climm
 clint                           ports/devel/clint
@@ -7771,6 +7773,7 @@ mafft                           ports/biology/mafft
 magic                           ports/cad/magic
 magiccube4d                     ports/games/magiccube4d
 magicfilter                     ports/print/magicfilter
+magicor                         ports/games/magicor
 magicpoint                      ports/misc/magicpoint
 magicrescue                     ports/sysutils/magicrescue
 mahjong                         ports/games/mahjong
@@ -11436,6 +11439,7 @@ p5-POE-Filter-Zlib              ports/archivers/p5-POE-Filter-Zlib
 p5-POE-Session-MultiDispatch    ports/devel/p5-POE-Session-MultiDispatch
 p5-POE-Stage                    ports/devel/p5-POE-Stage
 p5-POE-Test-Loops               ports/devel/p5-POE-Test-Loops
+p5-POE-XS-Loop-Poll             ports/devel/p5-POE-XS-Loop-Poll
 p5-POE-XS-Queue-Array           ports/devel/p5-POE-XS-Queue-Array
 p5-POSIX-Regex                  ports/textproc/p5-POSIX-Regex
 p5-POSIX-strptime               ports/devel/p5-POSIX-strptime
@@ -14606,6 +14610,7 @@ p5-poe-filter-zlib              ports/archivers/p5-POE-Filter-Zlib
 p5-poe-session-multidispatch    ports/devel/p5-POE-Session-MultiDispatch
 p5-poe-stage                    ports/devel/p5-POE-Stage
 p5-poe-test-loops               ports/devel/p5-POE-Test-Loops
+p5-poe-xs-loop-poll             ports/devel/p5-POE-XS-Loop-Poll
 p5-poe-xs-queue-array           ports/devel/p5-POE-XS-Queue-Array
 p5-posix-regex                  ports/textproc/p5-POSIX-Regex
 p5-posix-strptime               ports/devel/p5-POSIX-strptime
