@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.pbernert.com/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	gpupetemesagl${MAJOR}${MINOR}
 
-MAINTAINER=	jylefort@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PSEmu Pro GPU plugin using an OpenGL renderer (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
