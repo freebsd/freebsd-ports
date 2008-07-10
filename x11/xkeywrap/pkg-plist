@@ -1,5 +1,5 @@
 bin/xkeywrap
-%%DOCSDIR%%/README
-%%DOCSDIR%%/demo.dat
-%%DOCSDIR%%/xkeywrap_demo.c
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/demo.dat
+%%PORTDOCS%%%%DOCSDIR%%/xkeywrap_demo.c
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
