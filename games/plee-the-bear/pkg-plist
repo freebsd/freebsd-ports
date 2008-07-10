@@ -18,20 +18,27 @@ share/icons/hicolor/24x24/apps/ptb.png
 share/icons/hicolor/32x32/apps/ptb.png
 share/icons/hicolor/48x48/apps/ptb.png
 share/icons/hicolor/64x64/apps/ptb.png
-share/menu/plee-the-bear
 share/pixmaps/ptb.png
 share/pixmaps/ptb.xpm
+%%DATADIR%%/font/AUTHORS
+%%DATADIR%%/font/fixed_red-14x28.fnt
 %%DATADIR%%/font/fixed_red-14x28.png
+%%DATADIR%%/font/fixed_white-7x12.fnt
 %%DATADIR%%/font/fixed_white-7x12.tga
+%%DATADIR%%/font/fixed_yellow-10x20.fnt
 %%DATADIR%%/font/fixed_yellow-10x20.png
+%%DATADIR%%/font/fixed_yellow-14x28.fnt
 %%DATADIR%%/font/fixed_yellow-14x28.png
-%%DATADIR%%/font/fixed_yellow-19x39.tga
+%%DATADIR%%/font/level_name-42x50.fnt
 %%DATADIR%%/font/level_name-42x50.png
+%%DATADIR%%/font/speech-10x14.fnt
 %%DATADIR%%/font/speech-10x14.png
 %%DATADIR%%/game_description
+%%DATADIR%%/gfx/AUTHORS
 %%DATADIR%%/gfx/balloon.png
 %%DATADIR%%/gfx/color/black.png
 %%DATADIR%%/gfx/color/darkred.png
+%%DATADIR%%/gfx/demo/AUTHORS
 %%DATADIR%%/gfx/demo/demo00.png
 %%DATADIR%%/gfx/demo/demo01.png
 %%DATADIR%%/gfx/demo/demo02.png
@@ -44,9 +51,12 @@ share/pixmaps/ptb.xpm
 %%DATADIR%%/gfx/demo/demo09.png
 %%DATADIR%%/gfx/demo/demo10.png
 %%DATADIR%%/gfx/demo/demo11.png
+%%DATADIR%%/gfx/flag/AUTHORS
 %%DATADIR%%/gfx/flag/default.png
 %%DATADIR%%/gfx/flag/english.png
 %%DATADIR%%/gfx/flag/francais.png
+%%DATADIR%%/gfx/flag/norsk-nynorsk.png
+%%DATADIR%%/gfx/forest/AUTHORS
 %%DATADIR%%/gfx/forest/bk/bk_00.png
 %%DATADIR%%/gfx/forest/bk/bk_01.png
 %%DATADIR%%/gfx/forest/bk/bk_02.png
@@ -69,15 +79,22 @@ share/pixmaps/ptb.xpm
 %%DATADIR%%/gfx/forest/bk/bk_19.png
 %%DATADIR%%/gfx/forest/bridge.png
 %%DATADIR%%/gfx/forest/end-notice.tga
+%%DATADIR%%/gfx/forest/fog-1.png
 %%DATADIR%%/gfx/forest/ground-ceiling.png
 %%DATADIR%%/gfx/forest/hollow-trunk.png
 %%DATADIR%%/gfx/forest/platform.png
+%%DATADIR%%/gfx/forest/slope-26-left.png
+%%DATADIR%%/gfx/forest/slope-26-right.png
+%%DATADIR%%/gfx/forest/slope-26s-left.png
+%%DATADIR%%/gfx/forest/slope-26s-right.png
 %%DATADIR%%/gfx/forest/tree_1.png
 %%DATADIR%%/gfx/forest/tree_2.png
 %%DATADIR%%/gfx/forest/tree_3.png
 %%DATADIR%%/gfx/forest/tree_4.png
 %%DATADIR%%/gfx/forest/wall-corner.png
+%%DATADIR%%/gfx/forest/wall-fill-2.png
 %%DATADIR%%/gfx/forest/wall-fill.png
+%%DATADIR%%/gfx/forest/wasp/AUTHORS
 %%DATADIR%%/gfx/forest/wasp/sting.tga
 %%DATADIR%%/gfx/forest/wasp/wasp-shooting-1.png
 %%DATADIR%%/gfx/forest/wasp/wasp-shooting-2.png
@@ -87,13 +104,17 @@ share/pixmaps/ptb.xpm
 %%DATADIR%%/gfx/gamned.png
 %%DATADIR%%/gfx/headstone.png
 %%DATADIR%%/gfx/info-board.png
+%%DATADIR%%/gfx/loading.png
+%%DATADIR%%/gfx/plee/AUTHORS
 %%DATADIR%%/gfx/plee/halo.png
 %%DATADIR%%/gfx/plee/plee-1.png
 %%DATADIR%%/gfx/plee/plee-2.png
 %%DATADIR%%/gfx/splash.png
 %%DATADIR%%/gfx/status.tga
 %%DATADIR%%/gfx/stone.tga
+%%DATADIR%%/gfx/thumb/AUTHORS
 %%DATADIR%%/gfx/thumb/tutorial.png
+%%DATADIR%%/gfx/title_screen/AUTHORS
 %%DATADIR%%/gfx/title_screen/background_00.png
 %%DATADIR%%/gfx/title_screen/background_01.png
 %%DATADIR%%/gfx/title_screen/background_02.png
@@ -110,8 +131,11 @@ share/pixmaps/ptb.xpm
 %%DATADIR%%/lang/english.lng
 %%DATADIR%%/lang/francais.lng
 %%DATADIR%%/lang/list.txt
+%%DATADIR%%/lang/norsk-nynorsk.lng
 %%DATADIR%%/level/demo.cl
 %%DATADIR%%/level/gamned.cl
+%%DATADIR%%/level/loading.cl
+%%DATADIR%%/level/sandbox.cl
 %%DATADIR%%/level/title_screen.cl
 %%DATADIR%%/level/tutorial.cl
 %%DATADIR%%/model/headstone.cm
@@ -120,10 +144,13 @@ share/pixmaps/ptb.xpm
 %%DATADIR%%/model/sting.cm
 %%DATADIR%%/model/stone.cm
 %%DATADIR%%/model/wasp.cm
+%%DATADIR%%/music/AUTHORS
 %%DATADIR%%/music/castle-1.ogg
 %%DATADIR%%/music/forest-1.ogg
+%%DATADIR%%/sound/AUTHORS
 %%DATADIR%%/sound/grr.wav
 %%DATADIR%%/sound/jump.ogg
+%%DATADIR%%/sound/splash.ogg
 %%DATADIR%%/sound/splash1.ogg
 %%DATADIR%%/sound/splash2.ogg
 %%DATADIR%%/sound/sting.ogg
@@ -144,20 +171,19 @@ share/pixmaps/ptb.xpm
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%/font
 @dirrm %%DATADIR%%
-@dirrmtry share/menu
-@dirrm share/icons/hicolor/64x64/apps
-@dirrm share/icons/hicolor/64x64
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/24x24/apps
-@dirrm share/icons/hicolor/24x24
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor/128x128/apps
-@dirrm share/icons/hicolor/128x128
-@dirrm share/icons/hicolor
-@dirrm share/icons
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications
 @dirrm lib/plee-the-bear
