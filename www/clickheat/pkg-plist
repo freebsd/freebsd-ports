@@ -1,0 +1,81 @@
+%%WWWDIR%%/VERSION
+%%WWWDIR%%/cache/.htaccess
+%%WWWDIR%%/check.php
+%%WWWDIR%%/classes/Heatmap.class.php
+%%WWWDIR%%/classes/HeatmapFromClicks.class.php
+%%WWWDIR%%/classes/HeatmapFromDatabase.class.php
+%%WWWDIR%%/classes/HeatmapFromFile.class.php
+%%WWWDIR%%/cleaner.php
+%%WWWDIR%%/click.php
+%%WWWDIR%%/clickempty.html
+%%WWWDIR%%/clickpmv.php
+%%WWWDIR%%/config.php
+%%WWWDIR%%/config/.htaccess
+%%WWWDIR%%/examples/coords.txt
+%%WWWDIR%%/examples/fromdatabase.php
+%%WWWDIR%%/examples/fromfile.php
+%%WWWDIR%%/footer.php
+%%WWWDIR%%/generate.php
+%%WWWDIR%%/header.php
+%%WWWDIR%%/images/arrow-down.png
+%%WWWDIR%%/images/arrow-up.png
+%%WWWDIR%%/images/flags/_flags.txt
+%%WWWDIR%%/images/flags/en.png
+%%WWWDIR%%/images/flags/es.png
+%%WWWDIR%%/images/flags/fr.png
+%%WWWDIR%%/images/flags/ja.png
+%%WWWDIR%%/images/flags/ro.png
+%%WWWDIR%%/images/flags/ru.png
+%%WWWDIR%%/images/flags/uk.png
+%%WWWDIR%%/images/flags/zh.png
+%%WWWDIR%%/images/ko.png
+%%WWWDIR%%/images/layout.png
+%%WWWDIR%%/images/logo.big.png
+%%WWWDIR%%/images/logo.png
+%%WWWDIR%%/images/logo170.png
+%%WWWDIR%%/images/next.png
+%%WWWDIR%%/images/ok.png
+%%WWWDIR%%/images/previous.png
+%%WWWDIR%%/images/reload.png
+%%WWWDIR%%/images/save.png
+%%WWWDIR%%/images/warning.png
+%%WWWDIR%%/index.php
+%%WWWDIR%%/javascript.php
+%%WWWDIR%%/js/admin.js
+%%WWWDIR%%/js/clickheat-original.js
+%%WWWDIR%%/js/clickheat.js
+%%WWWDIR%%/languages/__de.php
+%%WWWDIR%%/languages/__readme.txt
+%%WWWDIR%%/languages/en.php
+%%WWWDIR%%/languages/es.php
+%%WWWDIR%%/languages/fr.php
+%%WWWDIR%%/languages/ja.php
+%%WWWDIR%%/languages/ro.php
+%%WWWDIR%%/languages/ru.php
+%%WWWDIR%%/languages/uk.php
+%%WWWDIR%%/languages/zh.php
+%%WWWDIR%%/latest.php
+%%WWWDIR%%/layout.php
+%%WWWDIR%%/login.php
+%%WWWDIR%%/logo.big.png.php
+%%WWWDIR%%/logo.png.php
+%%WWWDIR%%/logo170.png.php
+%%WWWDIR%%/logs/.htaccess
+%%WWWDIR%%/scripts/compressJs.php
+%%WWWDIR%%/scripts/parseClickLogs.pl
+%%WWWDIR%%/scripts/upgrade-1.1.php
+%%WWWDIR%%/styles/clickheat.css
+%%WWWDIR%%/version.php
+%%WWWDIR%%/view.php
+@dirrm %%WWWDIR%%/styles
+@dirrm %%WWWDIR%%/scripts
+@dirrm %%WWWDIR%%/languages
+@dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/images/flags
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/examples
+@dirrm %%WWWDIR%%/classes
+@dirrmtry %%WWWDIR%%/cache
+@dirrmtry %%WWWDIR%%/logs
+@dirrmtry %%WWWDIR%%/config
+@dirrm %%WWWDIR%%

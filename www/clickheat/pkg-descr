@@ -1,0 +1,8 @@
+ClickHeat is a visual heatmap of clicks on a HTML page, showing hot and
+ cold click zones.
+Features:
+- Few function calls to log a click, no server load rise should be noticed
+- A keyword is used to define the page upon Javascript code load
+- Screen sizes and browsers are logged
+
+WWW: http://www.labsmedia.com/clickheat/index.html

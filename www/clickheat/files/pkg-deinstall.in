@@ -1,0 +1,12 @@
+#! /bin/sh
+# $FreeBSD$
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+if [ -d %%WWWDIR%% ]; then
+        echo "===> You may delete '%%WWWDIR%%' if you want to really delete your clickheat."
+fi

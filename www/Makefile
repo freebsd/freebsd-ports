@@ -92,6 +92,7 @@
     SUBDIR += claroline
     SUBDIR += clearsilver
     SUBDIR += clearsilver-python
+    SUBDIR += clickheat
     SUBDIR += cocoon
     SUBDIR += codeigniter
     SUBDIR += comclear
