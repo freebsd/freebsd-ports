@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTDOCS%%%%DOCSDIR%%/2000ft.png
 %%PORTDOCS%%%%DOCSDIR%%/api/api-objects.txt
@@ -208,35 +209,35 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/hello.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/hello.py
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/common/conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/common/style
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/common/conf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/common
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/cheetah
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/clearsilver
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/django/templates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/django/templatetags
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/django
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/genshi
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/genshi_text
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/kid
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/mako
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/myghty
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/simpletal
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/config
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/static/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/static
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/templates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/lib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/static
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/webpy
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/static
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/lib
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/webpy
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/tests
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/static/images
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/static
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/config
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/simpletal
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/myghty
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/mako
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/kid
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/genshi_text
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/genshi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/django/templatetags
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/django/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/django
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/clearsilver
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/cheetah
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
