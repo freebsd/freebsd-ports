@@ -7,6 +7,7 @@
 
 PORTNAME=	chordpack
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://sweb.cz/dan.polansky/chordpack/
 EXTRACT_SUFX=	.tgz
@@ -23,9 +24,11 @@ do-install:
 		${MKDIR} ${MKDIR}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKDIR}/chordpro-mode.el  \
 		${PREFIX}/share/emacs/site-lisp
+.ifndef(NOPORTDOCS)
 	[ -d ${PREFIX}/share/doc/chordpack ] ||	\
-		${MKDIR} ${PREFIX}/share/doc/chordpack
+		${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKDIR}/chordpack-documentation.html	\
-		${PREFIX}/share/doc/chordpack
+		${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
