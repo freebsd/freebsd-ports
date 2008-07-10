@@ -1,9 +1,15 @@
 bin/psi
+share/applications/psi.desktop
+share/icons/hicolor/128x128/apps/psi.png
+share/icons/hicolor/16x16/apps/psi.png
+share/icons/hicolor/32x32/apps/psi.png
+share/icons/hicolor/48x48/apps/psi.png
+share/icons/hicolor/64x64/apps/psi.png
 %%DATADIR%%/COPYING
 %%DATADIR%%/README
 %%DATADIR%%/certs/README
-%%DATADIR%%/certs/rootcert.xml
-%%DATADIR%%/iconsets/emoticons/README
+%%DATADIR%%/certs/rootcerts.pem
+%%DATADIR%%/certs/startcom_ca.crt
 %%DATADIR%%/iconsets/emoticons/default/angry.png
 %%DATADIR%%/iconsets/emoticons/default/bat.png
 %%DATADIR%%/iconsets/emoticons/default/beer.png
@@ -53,29 +59,28 @@ bin/psi
 %%DATADIR%%/iconsets/roster/crystal-yahoo.jisp
 %%DATADIR%%/iconsets/roster/default/ask.png
 %%DATADIR%%/iconsets/roster/default/away.png
-%%DATADIR%%/iconsets/roster/default/chat.png
-%%DATADIR%%/iconsets/roster/default/connect.png
+%%DATADIR%%/iconsets/roster/default/chat.fading.png
+%%DATADIR%%/iconsets/roster/default/chatty.png
 %%DATADIR%%/iconsets/roster/default/dnd.png
-%%DATADIR%%/iconsets/roster/default/ffc.png
-%%DATADIR%%/iconsets/roster/default/file.png
+%%DATADIR%%/iconsets/roster/default/file.fading.png
 %%DATADIR%%/iconsets/roster/default/groupclose.png
-%%DATADIR%%/iconsets/roster/default/groupempty.png
 %%DATADIR%%/iconsets/roster/default/groupopen.png
 %%DATADIR%%/iconsets/roster/default/headline.png
 %%DATADIR%%/iconsets/roster/default/icondef.xml
 %%DATADIR%%/iconsets/roster/default/invisible.png
-%%DATADIR%%/iconsets/roster/default/message.png
+%%DATADIR%%/iconsets/roster/default/message.fading.png
 %%DATADIR%%/iconsets/roster/default/noauth.png
 %%DATADIR%%/iconsets/roster/default/offline.png
+%%DATADIR%%/iconsets/roster/default/online.dimming.png
 %%DATADIR%%/iconsets/roster/default/online.png
 %%DATADIR%%/iconsets/roster/default/perr.png
 %%DATADIR%%/iconsets/roster/default/system.png
 %%DATADIR%%/iconsets/roster/default/xa.png
 %%DATADIR%%/iconsets/system/README
 %%DATADIR%%/iconsets/system/default/account.png
+%%DATADIR%%/iconsets/system/default/add.png
 %%DATADIR%%/iconsets/system/default/advanced.png
 %%DATADIR%%/iconsets/system/default/appearance.png
-%%DATADIR%%/iconsets/system/default/add.png
 %%DATADIR%%/iconsets/system/default/arrow_down.png
 %%DATADIR%%/iconsets/system/default/arrow_left.png
 %%DATADIR%%/iconsets/system/default/arrow_right.png
@@ -86,25 +91,28 @@ bin/psi
 %%DATADIR%%/iconsets/system/default/chatclear.png
 %%DATADIR%%/iconsets/system/default/close.png
 %%DATADIR%%/iconsets/system/default/closetab.png
+%%DATADIR%%/iconsets/system/default/command.png
+%%DATADIR%%/iconsets/system/default/configure-room.png
 %%DATADIR%%/iconsets/system/default/configure_toolbars.png
-%%DATADIR%%/iconsets/system/default/download.png
 %%DATADIR%%/iconsets/system/default/disco.png
-%%DATADIR%%/iconsets/system/default/eye_blue.png
+%%DATADIR%%/iconsets/system/default/download.png
 %%DATADIR%%/iconsets/system/default/events.png
+%%DATADIR%%/iconsets/system/default/eye_blue.png
 %%DATADIR%%/iconsets/system/default/filemanager.png
 %%DATADIR%%/iconsets/system/default/groupchat.png
 %%DATADIR%%/iconsets/system/default/help.png
 %%DATADIR%%/iconsets/system/default/history.png
-%%DATADIR%%/iconsets/system/default/icon_16.png
-%%DATADIR%%/iconsets/system/default/icon_32.png
-%%DATADIR%%/iconsets/system/default/icon_48.png
-%%DATADIR%%/iconsets/system/default/icon_mac.png
 %%DATADIR%%/iconsets/system/default/icondef.xml
 %%DATADIR%%/iconsets/system/default/info.png
 %%DATADIR%%/iconsets/system/default/jabber.png
 %%DATADIR%%/iconsets/system/default/key.png
 %%DATADIR%%/iconsets/system/default/key_bad.png
 %%DATADIR%%/iconsets/system/default/key_unknown.png
+%%DATADIR%%/iconsets/system/default/logo_128.png
+%%DATADIR%%/iconsets/system/default/logo_16.png
+%%DATADIR%%/iconsets/system/default/logo_32.png
+%%DATADIR%%/iconsets/system/default/logo_48.png
+%%DATADIR%%/iconsets/system/default/logo_64.png
 %%DATADIR%%/iconsets/system/default/ok.png
 %%DATADIR%%/iconsets/system/default/options.png
 %%DATADIR%%/iconsets/system/default/pgp.png
@@ -112,44 +120,50 @@ bin/psi
 %%DATADIR%%/iconsets/system/default/play_sounds.png
 %%DATADIR%%/iconsets/system/default/psilogo.png
 %%DATADIR%%/iconsets/system/default/psimain.png
+%%DATADIR%%/iconsets/system/default/publish_tune.png
 %%DATADIR%%/iconsets/system/default/quit.png
 %%DATADIR%%/iconsets/system/default/register.png
 %%DATADIR%%/iconsets/system/default/reload.png
 %%DATADIR%%/iconsets/system/default/remove.png
 %%DATADIR%%/iconsets/system/default/search.png
-%%DATADIR%%/iconsets/system/default/send.png
 %%DATADIR%%/iconsets/system/default/self.png
+%%DATADIR%%/iconsets/system/default/send.png
+%%DATADIR%%/iconsets/system/default/shortcuts.png
 %%DATADIR%%/iconsets/system/default/show_away.png
 %%DATADIR%%/iconsets/system/default/show_hidden.png
 %%DATADIR%%/iconsets/system/default/show_offline.png
-%%DATADIR%%/iconsets/system/default/start-chat.png
-%%DATADIR%%/iconsets/system/default/status.png
 %%DATADIR%%/iconsets/system/default/smile.png
 %%DATADIR%%/iconsets/system/default/ssl_no.png
 %%DATADIR%%/iconsets/system/default/ssl_yes.png
+%%DATADIR%%/iconsets/system/default/start-chat.png
+%%DATADIR%%/iconsets/system/default/status.png
 %%DATADIR%%/iconsets/system/default/stop.png
 %%DATADIR%%/iconsets/system/default/time.png
 %%DATADIR%%/iconsets/system/default/tip.png
 %%DATADIR%%/iconsets/system/default/upload.png
 %%DATADIR%%/iconsets/system/default/url.png
 %%DATADIR%%/iconsets/system/default/vcard.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/add_image.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/add_text.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/bring_forwards.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/bring_to_front.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/draw_circles.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/draw_ellipses.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/draw_lines.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/draw_paths.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/draw_rectangles.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/erase.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/group.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/rotate.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/scale.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/scroll.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/select.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/send_backwards.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/send_to_back.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/translate.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/ungroup.png
+%%DATADIR%%/iconsets/system/default/whiteboarding/whiteboard.png
 %%DATADIR%%/iconsets/system/default/xml.png
-%%DATADIR%%/iconsets/system/default/clients/aim.png
-%%DATADIR%%/iconsets/system/default/clients/exodus.png
-%%DATADIR%%/iconsets/system/default/clients/gabber.png
-%%DATADIR%%/iconsets/system/default/clients/gadu.png
-%%DATADIR%%/iconsets/system/default/clients/gaim.png
-%%DATADIR%%/iconsets/system/default/clients/gossip.png
-%%DATADIR%%/iconsets/system/default/clients/icq.png
-%%DATADIR%%/iconsets/system/default/clients/jajc.png
-%%DATADIR%%/iconsets/system/default/clients/kopete.png
-%%DATADIR%%/iconsets/system/default/clients/msn.png
-%%DATADIR%%/iconsets/system/default/clients/nitro.png
-%%DATADIR%%/iconsets/system/default/clients/pandion.png
-%%DATADIR%%/iconsets/system/default/clients/tkabber.png
-%%DATADIR%%/iconsets/system/default/clients/trillian.png
-%%DATADIR%%/iconsets/system/default/clients/unknown.png
-%%DATADIR%%/iconsets/system/default/clients/yahoo.png
 %%DATADIR%%/sound/chat1.wav
 %%DATADIR%%/sound/chat2.wav
 %%DATADIR%%/sound/ft_complete.wav
@@ -157,24 +171,8 @@ bin/psi
 %%DATADIR%%/sound/offline.wav
 %%DATADIR%%/sound/online.wav
 %%DATADIR%%/sound/send.wav
-%%GENTOO%%%%DATADIR%%/iconsets/roster/default/indicator.png
-%%GENTOO%%%%DATADIR%%/iconsets/system/default/clients/wpk.png
-%%GENTOO%%%%DATADIR%%/iconsets/system/default/clients/gajim.png
-%%GENTOO%%%%DATADIR%%/iconsets/system/default/clients/konnekt.png
-%%GENTOO%%%%DATADIR%%/iconsets/system/default/clients/tlen.png
-%%GENTOO%%%%DATADIR%%/iconsets/system/default/bookmark.png
-%%GENTOO%%%%DATADIR%%/iconsets/system/default/muc_affil_editor.png
-%%GENTOO%%%%DATADIR%%/iconsets/system/default/muc_destroy_room.png
-%%GENTOO%%%%DATADIR%%/iconsets/system/default/edittrash.png
-%%GENTOO%%%%DATADIR%%/iconsets/system/default/edit.png
-%%GENTOO%%%%DATADIR%%/iconsets/system/default/emergencyStatusNo.png
-%%GENTOO%%%%DATADIR%%/iconsets/system/default/emergencyStatusYes.png
-share/applications/psi.desktop
-share/icons/hicolor/16x16/apps/psi.png
-share/icons/hicolor/32x32/apps/psi.png
-share/icons/hicolor/48x48/apps/psi.png
 @dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/iconsets/system/default/clients
+@dirrm %%DATADIR%%/iconsets/system/default/whiteboarding
 @dirrm %%DATADIR%%/iconsets/system/default
 @dirrm %%DATADIR%%/iconsets/system
 @dirrm %%DATADIR%%/iconsets/roster/default
@@ -191,5 +189,9 @@ share/icons/hicolor/48x48/apps/psi.png
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
