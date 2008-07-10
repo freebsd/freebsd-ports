@@ -470,6 +470,7 @@
     SUBDIR += madbomber
     SUBDIR += maelstrom
     SUBDIR += magiccube4d
+    SUBDIR += magicor
     SUBDIR += mahjong
     SUBDIR += maitretarot
     SUBDIR += mangband
