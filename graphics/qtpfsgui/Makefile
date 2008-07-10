@@ -15,15 +15,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical user interface that provides a workflow for HDR imaging
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	exiv2.3:${PORTSDIR}/graphics/exiv2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		fftw3f.4:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2 \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		IlmImf:${PORTSDIR}/graphics/OpenEXR \
+		tiff:${PORTSDIR}/graphics/tiff \
+		fftw3f:${PORTSDIR}/math/fftw3-float
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui imageformats \
 		linguist_build moc_build qmake_build rcc_build uic_build
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 INSTALL_TARGET=	install_target install_menu install_icon install_i18n
 INSTALLS_ICONS=	yes
 
