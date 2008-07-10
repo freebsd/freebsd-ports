@@ -22,4 +22,13 @@ sbin/smtp
 %%CGI%%%%ETCDIR%%/cgi/upsimage.cgi
 %%CGI%%%%ETCDIR%%/cgi/upsstats.cgi
 %%CGI%%@dirrm %%ETCDIR%%/cgi
+%%GAPCMON%%bin/gapcmon
+%%GAPCMON%%share/applications/gapcmon.desktop
+%%GAPCMON%%share/pixmaps/apcupsd.png
+%%GAPCMON%%share/pixmaps/charging.png
+%%GAPCMON%%share/pixmaps/gapc_prefs.png
+%%GAPCMON%%share/pixmaps/onbatt.png
+%%GAPCMON%%share/pixmaps/online.png
+%%GAPCMON%%share/pixmaps/unplugged.png
+%%GAPCMON%%@dirrmtry share/applications
 @dirrmtry %%ETCDIR%%

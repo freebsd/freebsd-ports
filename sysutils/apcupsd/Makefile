@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.14.3
-PORTREVISION=	2
+PORTVERSION=	3.14.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
@@ -22,12 +21,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Set of programs for controlling APC UPS
 
-BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
-
 USE_RC_SUBR=	apcupsd
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 		--with-nologin=/var/run \
 		--disable-install-distdir \
@@ -44,18 +42,17 @@ OPTIONS=	APCSMART_DRV "Compile APC SmartUPS serial driver" on \
 		APCDUMB_DRV "Compile dumb UPS driver" on \
 		CLIENT_ONLY "Only NIS client (no network server or drivers)" off \
 		CGI "Compile with CGI programms to show status" off \
-		NLS "Enable Native Language Support" off \
 		PCNET_DRV "Compile PowerChute Network Shutdown driver" on \
-		POWERFLUTE "Compile powerflute program" on \
 		USB "Compile with USB Support driver" on \
 		SNMP_DRV "Compile with SNMP driver" on \
 		TCP_WRAPPERS "Compile with TCP_WRAPPERS support" on\
 		TEST_DRV "Compile TEST driver" off \
-#		GAPCMON "Build GTK GUI front-end" off
+		GAPCMON "Build GTK GUI front-end" off
+#               POWERFLUTE "Compile powerflute program" off
 
 PORTDOCS=	${PORTNAME}.pdf
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .ifdef(WITH_APCSMART_DRV)
 CONFIGURE_ARGS+=	--enable-apcsmart
@@ -83,16 +80,12 @@ PLIST_SUB+=		CGI=""
 PLIST_SUB+=		CGI="@comment "
 .endif
 
-#.ifdef(WITH_GAPCMON)
-#CONFIGURE_ARGS+=	--enable-gapcmon
-#.endif
-
-.ifndef(WITHOUT_NLS)
-USE_GETTEXT=		yes
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=		NLS=""
+.ifdef(WITH_GAPCMON)
+CONFIGURE_ARGS+=	--enable-gapcmon
+USE_GNOME+=		gconf2
+PLIST_SUB+=		GAPCMON=""
 .else
-PLIST_SUB+=		NLS="@comment "
+PLIST_SUB+=		GAPCMON="@comment "
 .endif
 
 .ifdef(WITH_PCNET_DRV)
@@ -101,6 +94,7 @@ CONFIGURE_ARGS+=	--enable-pcnet
 CONFIGURE_ARGS+=	--disable-pcnet
 .endif
 
+# disabled upstream
 .ifdef(WITH_POWERFLUTE)
 CONFIGURE_ARGS+=	--enable-powerflute
 CONFIGURE_ENV+=		LIBS+="-lcurses -lmenu"
@@ -131,6 +125,8 @@ CONFIGURE_ARGS+=	--enable-test
 #CONFIGURE_ARGS+=	--with-libwrap=yes
 #CONFIGURE_ENV+=		LIBS="-lcurses -lmenu"
 #PLIST_SUB+=		POWERFL=""
+
+.include <bsd.port.pre.mk>
 
 pre-configure:
 .if defined(WITH_CLIENT_ONLY) && ( defined(WITH_APCSMART_DRV) || \
@@ -171,7 +167,7 @@ post-install:
 	done
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${DISTDIR} && ${INSTALL_DATA} ${PORTNAME}.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.pdf ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
