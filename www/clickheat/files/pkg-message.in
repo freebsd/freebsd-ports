@@ -1,0 +1,15 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Browse http://your.host.tld/%%PORTNAME%%/ to configure your clickheat
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+To make clickheat available through your web site, I suggest
+that you add something like the following to httpd.conf:
+
+    Alias /clickheat/ "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%/">
+        Options none
+        AllowOverride Limit
+        Order Deny,Allow
+        Allow from all
+    </Directory>
+
