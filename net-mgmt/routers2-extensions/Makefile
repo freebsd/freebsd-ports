@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	routers2-extensions
-PORTVERSION=	2.17
-PORTREVISION=	1
+PORTVERSION=	2.18
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.steveshipway.org/software/rrd/ \
 		ftp://ftp.oav.oav.net/routers2/
-DISTNAME=	routers2-v${PORTVERSION}a
+DISTNAME=	routers2-v${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Extensions of routers2 frontend
