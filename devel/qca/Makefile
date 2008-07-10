@@ -6,33 +6,29 @@
 #
 
 PORTNAME=	qca
-PORTVERSION=	1.0
-PORTREVISION=	2
-CATEGORIES=	devel security
-MASTER_SITES=	http://delta.affinix.com/download/qca/ \
-		http://mirror.inerd.com/FreeBSD/distfiles/qca/
+PORTVERSION=	2.0.0
+CATEGORIES=	devel
+MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/
+DISTNAME=	qca-${PORTVERSION}
 
 MAINTAINER=	shaun@FreeBSD.org
-COMMENT=	Straightforward and cross-platform crypto API
+COMMENT=	Cross-platform crypto API for QT
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-
-QT_NONSTANDARD=	yes
-HAS_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_QT_VER=	3
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake gui moc uic rcc qtestlib network
+USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-CONFIGURE_ARGS=	--qtdir=${QT_PREFIX}
-MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
-		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+CMAKE_ARGS+=	-DQT_QMAKE_EXECUTABLE=${QMAKE}
 
-do-install:
-	${TEST} -d ${PREFIX}/include/plugins/qca || ${MKDIR} ${PREFIX}/include/plugins/qca
-	${INSTALL_SCRIPT} ${WRKSRC}/src/qca.h ${WRKSRC}/src/qcaprovider.h ${PREFIX}/include/plugins/qca
-	${INSTALL_SCRIPT} -m 755 ${WRKSRC}/libqca.so.1.0.0 ${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libqca.so.1.0.0 ${PREFIX}/lib/libqca.so.1
-	${LN} -sf ${PREFIX}/lib/libqca.so.1.0.0 ${PREFIX}/lib/libqca.so
+post-patch:
+	${MKDIR} ${WRKSRC}/plugins
+	${REINPLACE_CMD} -e \
+	's,$${LIB_SUFFIX}/pkgconfig/,data/pkgconfig,' \
+	${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
