@@ -41,7 +41,7 @@ upgrades.
   AFFECTS: users of misc/shared-mime-info
   AUTHOR: FreeBSD GNOME Team <gnome@FreeBSD.org>
 
-  The misc/shared-mime-info has bee updated to 0.40. The Mime Types caches
+  The misc/shared-mime-info has been updated to 0.40. The Mime Types caches
   have been changed a bit. If you have created any custom MIME types. You
   will need to run update-mime-database to update your local Mime Types
   caches.
