@@ -1,6 +1,6 @@
---- src/apcaccess.c.orig	2007-08-03 18:17:38.000000000 +0300
-+++ src/apcaccess.c	2008-02-27 09:30:39.352400647 +0200
-@@ -62,11 +62,19 @@
+--- ./src/apcaccess.c.orig	2008-01-27 18:22:58.000000000 +0200
++++ ./src/apcaccess.c	2008-06-29 14:17:12.000000000 +0300
+@@ -68,11 +68,19 @@
  int main(int argc, char **argv)
  {
     int mode = 0;
@@ -20,7 +20,7 @@
     if (argc < 2) {
        /* Assume user wants "status" */
        mode = 2;
-@@ -87,6 +95,20 @@
+@@ -94,8 +102,23 @@
           *p++ = 0;
           port = atoi(p);
        }
@@ -40,9 +40,12 @@
 +      }
     }
  
++
     if (!*host || strcmp(host, "0.0.0.0") == 0)
-@@ -101,5 +123,7 @@
-       Error_abort0(_("Strange mode\n"));
+       host = "localhost";
+ 
+@@ -108,5 +131,7 @@
+       return 1;
     }
  
 +   detach_ups(ups);
