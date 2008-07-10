@@ -68,9 +68,6 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 
 .if defined(XMMS2_SLAVE)
 EXCLUDE+=	--without-xmms2d=1
-EXTRA_PATCHES=	${PATCHDIR}/slaveport-wscript\
-		${PATCHDIR}/slaveport-src_include_wscript\
-		${PATCHDIR}/slaveport-src-clients-lib-wscripts
 .endif
 
 .if defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "python"
