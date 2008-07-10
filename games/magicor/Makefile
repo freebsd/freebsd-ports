@@ -7,6 +7,7 @@
 
 PORTNAME=	magicor
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
@@ -27,7 +28,7 @@ OPTIONS=	EDITOR	"Enable editor"	on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_EDITOR)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 PLIST_SUB+=	EDITOR=""
 .else
 PLIST_SUB+=	EDITOR="@comment "
