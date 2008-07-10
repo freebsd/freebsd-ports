@@ -18,6 +18,7 @@
 %%SITE_PERL%%/Curses/UI/Language/french.pm
 %%SITE_PERL%%/Curses/UI/Language/german.pm
 %%SITE_PERL%%/Curses/UI/Language/italian.pm
+%%SITE_PERL%%/Curses/UI/Language/japanese.pm
 %%SITE_PERL%%/Curses/UI/Language/russian.pm
 %%SITE_PERL%%/Curses/UI/Language/norwegian.pm
 %%SITE_PERL%%/Curses/UI/Language/english.pm
