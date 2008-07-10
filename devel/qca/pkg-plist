@@ -1,7 +1,26 @@
+bin/qcatool2
+certs/rootcerts.pem
+include/QtCrypto/QtCrypto
+include/QtCrypto/qca.h
+include/QtCrypto/qca_basic.h
+include/QtCrypto/qca_cert.h
+include/QtCrypto/qca_core.h
+include/QtCrypto/qca_export.h
+include/QtCrypto/qca_keystore.h
+include/QtCrypto/qca_publickey.h
+include/QtCrypto/qca_securelayer.h
+include/QtCrypto/qca_securemessage.h
+include/QtCrypto/qca_support.h
+include/QtCrypto/qca_textfilter.h
+include/QtCrypto/qca_tools.h
+include/QtCrypto/qcaprovider.h
+include/QtCrypto/qpipe.h
 lib/libqca.so
-lib/libqca.so.1
-lib/libqca.so.1.0.0
-include/plugins/qca/qca.h
-include/plugins/qca/qcaprovider.h
-@dirrm include/plugins/qca
-@dirrm include/plugins
+lib/libqca.so.2
+lib/libqca.so.2.0.0
+libdata/pkgconfig/qca.pc
+mkspecs/features/crypto.prf
+@dirrmtry mkspecs/features
+@dirrmtry mkspecs
+@dirrmtry include/QtCrypto
+@dirrmtry certs
