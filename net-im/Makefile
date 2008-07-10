@@ -113,7 +113,6 @@
     SUBDIR += pidgin-twitter
     SUBDIR += pork
     SUBDIR += psi
-    SUBDIR += psi-gentoo
     SUBDIR += py-jabber
     SUBDIR += py-msnp
     SUBDIR += py-punjab
