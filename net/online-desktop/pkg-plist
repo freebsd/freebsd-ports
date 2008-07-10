@@ -93,25 +93,13 @@ share/online-prefs-sync/online-prefs-sync.synclist
 share/xsessions/online-desktop.desktop
 @dirrm share/xsessions
 @dirrm share/online-prefs-sync
+@dirrm lib/locale
 @dirrm %%DATADIR%%/presession
 @dirrm %%DATADIR%%/gconf.xml.online-desktop
 @dirrm %%DATADIR%%/autostart
 @dirrm %%DATADIR%%
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
-@dirrm share/gnome/autostart
-@dirrm share/gnome
-@dirrm share/dbus-1/services
-@dirrm share/dbus-1
-@dirrm share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/pyonlinedesktop
 @dirrm %%PYTHON_SITELIBDIR%%/ddm
-@dirrm %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
 @dirrmtry lib/pidgin
