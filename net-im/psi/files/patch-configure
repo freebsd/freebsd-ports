@@ -9,32 +9,3 @@
  		*) show_usage; exit ;;
  	esac
  done
-@@ -1055,9 +1057,13 @@
- 			"}\n";
- 
- 		QString extra;
-+		QString pthread_cflags = getenv("PTHREAD_CFLAGS");
-+		QString pthread_ldflags = getenv("PTHREAD_LDFLAGS");
- 		if(!path.isEmpty())
- 			extra += QString("-L") + path + ' ';
- 		extra += QString("-l") + name;
-+		extra += ' ' + pthread_cflags + ' ' + pthread_ldflags + ' ';
-+		
- 		if(!doCompileAndLink(str, extra))
- 			return false;
- 		return true;
-@@ -1287,14 +1293,6 @@
- 	echo
- 	exit 1;
- fi
--cat >Makefile.tmp <<EOT
--export QTDIR = $QTDIR
--export PATH = $QTDIR/bin:$PATH
--EOT
--cat Makefile >> Makefile.tmp
--rm -f Makefile
--cp -f Makefile.tmp Makefile
--rm -f Makefile.tmp
- 
- echo
- echo "Good, your configure finished.  Now run 'make'."
