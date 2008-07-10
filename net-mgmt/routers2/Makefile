@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	routers2
-PORTVERSION=	2.17
-PORTREVISION=	1
+PORTVERSION=	2.18
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.steveshipway.org/software/rrd/ \
 		ftp://ftp.oav.oav.net/routers2/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}a
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Frontend for the MRTG system monitoring software

@@ -170,6 +170,7 @@ www/routers2/rrdicons/target2-sm.gif
 www/routers2/rrdicons/targets.gif
 www/routers2/rrdicons/temp-sm.gif
 www/routers2/rrdicons/tick-sm.gif
+www/routers2/rrdicons/juniper-sm.gif
 www/routers2/rrdicons/tick-vsm.gif
 www/routers2/rrdicons/traffic-sm.gif
 www/routers2/rrdicons/user-sm.gif
@@ -186,6 +187,7 @@ www/routers2/rrdicons/zoomout-bw.gif
 www/routers2/rrdicons/zoomout.gif
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/PERFORMANCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHENTICATION
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/EXAMPLES
