@@ -7,6 +7,7 @@
 
 PORTNAME=	alac
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://crazney.net/programs/itunes/files/
 DISTNAME=	${PORTNAME}_decoder-${PORTVERSION}
@@ -30,7 +31,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/alac ${PREFIX}/bin/
-.if !defined(WITHOUT_PORTDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
