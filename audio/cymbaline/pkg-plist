@@ -85,8 +85,8 @@
 %%PYTHON_SITELIBDIR%%/cypack/update.py
 %%PYTHON_SITELIBDIR%%/cypack/update.pyc
 %%PYTHON_SITELIBDIR%%/cypack/update.pyo
-%%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/cypack
 @dirrm %%PYTHON_SITELIBDIR%%
 @dirrm %%PYTHON_LIBDIR%%
