@@ -7,7 +7,7 @@
 
 PORTNAME=	xkeywrap
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/
 
@@ -17,16 +17,15 @@ COMMENT=	Record, repeat, and play key sequence from keyboard
 USE_XORG=	x11 xt
 MAN1=		xkeywrap.1
 MANCOMPRESSED=	yes
-PORTSDOCDIR=	${PREFIX}/share/doc/xkeywrap
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xkeywrap ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xkeywrap.1.gz ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PORTSDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${PORTSDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/demo.dat ${PORTSDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/xkeywrap_demo.c ${PORTSDOCDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/demo.dat ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/xkeywrap_demo.c ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
