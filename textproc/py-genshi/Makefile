@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Genshi
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	textproc www python
@@ -28,12 +28,12 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+	cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
