@@ -13,13 +13,16 @@ MASTER_SITES=	http://www.eudoxos.de/gtk/gtkdatabox/download/
 DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	leoz.2005@gmail.com
+MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
 COMMENT=	A GTK+2 widget to display large amounts of numerical data
 
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=	--includedir="${PREFIX}/include/${PORTNAME:S/2//}"
+
+DEPRECATED=	please use x11-toolkits/gtkdatabox instead
+EXPIRATION_DATE=	2008-08-11
 
 OPTIONS=	GLADE "Enable libglade2 support" off \
 		GLADEUI "Enable glade3 support" off
