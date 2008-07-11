@@ -1,0 +1,10 @@
+Index: portbuild
+@@ -251,7 +251,7 @@
+ fi
+ 
+ if [ x"${OPTIONS_ENABLED}" = x"1" ]; then
+-    export PORT_DBDIR=${chroot}/var/db/ports
++    export PORT_DBDIR=/var/db/ports
+ fi
+ 
+ echo "building $pkgname in $chroot"
