@@ -18,7 +18,7 @@ DIST_SUBDIR=	gngeo
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Fronted (GUI) for gngeo
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk2 \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		gngeo:${PORTSDIR}/emulators/gngeo
 
 USE_BZIP2=	yes
