@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade-devel
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.6
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portupgrade
@@ -35,6 +35,7 @@ MAN1=		pkg_deinstall.1 \
 		pkg_glob.1 \
 		pkg_sort.1 \
 		pkgdb.1 \
+		pkgdu.1 \
 		portcvsweb.1 \
 		portsclean.1 \
 		portsdb.1 \

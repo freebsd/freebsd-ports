@@ -6,6 +6,7 @@ sbin/pkg_glob
 sbin/pkg_sort
 sbin/pkg_which
 sbin/pkgdb
+sbin/pkgdu
 sbin/portcvsweb
 sbin/portinstall
 sbin/ports_glob

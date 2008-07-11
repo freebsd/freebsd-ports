@@ -17,6 +17,7 @@ pkg_fetch:	Fetches packages from a remote site.
 pkg_glob:	Expands package globs.
 pkg_which:	Checks which package a file came from quickly.
 pkgdb:		Manages and searches the package database.
+pkgdu:		Display a disk usage for installed packages.
 
 Author: Akinori MUSHA <knu@FreeBSD.org>
 WWW: http://wiki.freebsd.org/portupgrade
