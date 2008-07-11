@@ -39,9 +39,8 @@ IGNORE_WITH_PHP=4
 # a table of what PHP extensions are required for what ZF classes.
 
 .if defined(WITH_REQPHP)
-USE_PHP+=	ctype curl dom gd hash iconv mbstring \
+USE_PHP+=	apc ctype curl dom gd hash iconv mbstring \
 		memcache pdo session simplexml soap xml zlib
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
 .endif
 .if defined(WITH_OPTPHP)
 USE_PHP+=	bcmath bitset json posix
