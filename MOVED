@@ -3533,4 +3533,5 @@ www/drupal5-gsitemap|www/drupal5-xmlsitemap|2008-07-04|Rename after vendor name 
 sysutils/gnu-unifont|x11-fonts/gun-unifont|2008-07-05|Category change
 chinese/links||2008-07-05|Has been ignored for 15 months
 net-im/psi-gentoo||2008-07-11|Removed because no longer supported
+lang/yarv|lang/ruby19|2008-07-11|Officially released as Ruby 1.9
 

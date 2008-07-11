@@ -1,8 +1,0 @@
-YARV is Virtual Machine for Programming Language Ruby.
-
-The goal of this project is only one, to develop the fastest Virtual
-Machine for Ruby in the world.
-
-Author: Koichi Sasada <ko1@atdot.net>
-
-WWW: http://www.atdot.net/yarv/
