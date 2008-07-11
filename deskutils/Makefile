@@ -142,6 +142,7 @@
     SUBDIR += mical
     SUBDIR += moregroupware
     SUBDIR += mrundlg
+    SUBDIR += msynctool
     SUBDIR += multi-backgrounds-daemon
     SUBDIR += multisync
     SUBDIR += multisync-backup
