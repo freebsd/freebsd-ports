@@ -5,11 +5,13 @@
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Data/UUID.pm
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Data/Uniqid.pm
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/UUID.pm
+%%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/UUID/Random.pm
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Win32/Guidgen.pm
 %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Win32API/GUID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/UUIDColumns/.packlist
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Win32API
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Win32
+@dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/UUID
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/Data
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker/APR
 @dirrmtry %%SITE_PERL%%/DBIx/Class/UUIDColumns/UUIDMaker

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-UUIDColumns
-PORTVERSION=	0.02004
+PORTVERSION=	0.02005
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,6 +28,7 @@ MAN3=	DBIx::Class::UUIDColumns.3 \
 	DBIx::Class::UUIDColumns::UUIDMaker::Data::UUID.3 \
 	DBIx::Class::UUIDColumns::UUIDMaker::Data::Uniqid.3 \
 	DBIx::Class::UUIDColumns::UUIDMaker::UUID.3 \
+	DBIx::Class::UUIDColumns::UUIDMaker::UUID::Random.3 \
 	DBIx::Class::UUIDColumns::UUIDMaker::Win32::Guidgen.3 \
 	DBIx::Class::UUIDColumns::UUIDMaker::Win32API::GUID.3
 
