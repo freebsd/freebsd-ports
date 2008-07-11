@@ -6,8 +6,10 @@ with the following syntax:
 
 ---------------------------------------------------------
 # this is a comment
-editors/openoffice*: WITH_CCACHE|LOCALIZED_LANG=it
-print/ghostscript-gpl print/lpr-wrapper: A4
+*: NOPORTDOCS
+editors/openoffice.org-2: WITH_CCACHE|LOCALIZED_LANG=it
+print/ghostscript-* print/lpr-wrapper: A4
+sysutils/fusefs-kmod*: !KERNCONF | !NOPORTDOCS
 www/firefox-i18n: WITHOUT_SWITCHER | FIREFOX_I18N=fr it
 x11/fakeport: CONFIGURE_ARGS=--with-modules="aaa bbb ccc"
 ---------------------------------------------------------
