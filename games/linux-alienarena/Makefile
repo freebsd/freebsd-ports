@@ -7,6 +7,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2007.610
+PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://ftp.simtel.com/pub/gamezone/31/5/17/
 PKGNAMEPREFIX=	linux-
