@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	omni-bot
-PORTVERSION=	0.66
-PORTREVISION=	1
+PORTVERSION=	0.660
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
 PKGNAMEPREFIX=	linux-enemyterritory-
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Omni-Bot is a bot for Enemy Territory
