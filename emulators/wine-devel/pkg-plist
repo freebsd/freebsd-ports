@@ -119,6 +119,8 @@ include/wine/windows/control.idl
 include/wine/windows/cor.h
 include/wine/windows/corerror.h
 include/wine/windows/cpl.h
+include/wine/windows/cryptdlg.h
+include/wine/windows/cryptuiapi.h
 include/wine/windows/custcntl.h
 include/wine/windows/cvconst.h
 include/wine/windows/d3d.h
@@ -328,6 +330,8 @@ include/wine/windows/msinkaut.h
 include/wine/windows/msinkaut.idl
 include/wine/windows/msiquery.h
 include/wine/windows/mssip.h
+include/wine/windows/mstask.h
+include/wine/windows/mstask.idl
 include/wine/windows/mswsock.h
 include/wine/windows/msxml.h
 include/wine/windows/msxml.idl
@@ -469,6 +473,7 @@ include/wine/windows/vdmdbg.h
 include/wine/windows/ver.h
 include/wine/windows/vmr9.h
 include/wine/windows/vmr9.idl
+include/wine/windows/vmrender.idl
 include/wine/windows/vfw.h
 include/wine/windows/vfwmsgs.h
 include/wine/windows/wfext.h
@@ -793,6 +798,7 @@ lib/wine/libversion.def
 lib/wine/libwinecrt0.a
 lib/wine/libwined3d.def
 lib/wine/libwinedos.def
+lib/wine/libwinhttp.def
 lib/wine/libwininet.def
 lib/wine/libwinmm.def
 lib/wine/libwinnls32.def
