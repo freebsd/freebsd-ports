@@ -6,43 +6,54 @@
 #
 
 PORTNAME=	chromium
-PORTVERSION=	0.9.12
-PORTREVISION=	6
+PORTVERSION=	0.9.13.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.reptilelabour.com/software/files/chromium/ \
-		http://www.amdmi3.ru/distfiles/
-DISTFILES=	${PORTNAME}-src-${PORTVERSION}.tar.gz \
-		${PORTNAME}-data-${PORTVERSION}.tar.gz
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	chromium-bsu
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An arcade-style, top-scrolling space shooter
 
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		smpeg.1:${PORTSDIR}/multimedia/smpeg \
-		openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
+LIB_DEPENDS=	glpng.1:${PORTSDIR}/graphics/glpng \
+		ftgl.2:${PORTSDIR}/graphics/ftgl \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_GL=		glu
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/Chromium-0.9
+GNU_CONFIGURE=	yes
+USE_GL=		gl glu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lopenal|& -lalut|g' \
-			  -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/src-setup/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/support/glpng/src/Makefile
+PORTDOCS=	*
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/chromium ${PREFIX}/bin
-	${MKDIR} ${DATADIR}/data
-	(cd ${WRKSRC}/data && \
-		${TAR} -c -f - --exclude "*CVS*" --exclude "*xvpics*" png fonts wav) | \
-		(cd ${DATADIR}/data && ${TAR} -x -f - )
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/data/doc && ${TAR} -c -f - --exclude "*CVS*" *) | \
-		(cd ${DOCSDIR} && ${TAR} -x -f - )
+MAN6=		chromium.6
+
+OPTIONS=	SDL_MIXER "Use SDL_mixer instead of openal for audio" off \
+		GLUT	"Use GLUT instead of SDL for video" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GLUT)
+USE_GL+=	glut
+CONFIGURE_ARGS+=--disable-sdl
+.else
+USE_SDL+=	sdl
+CONFIGURE_ARGS+=--disable-glut
 .endif
 
-.include <bsd.port.mk>
+.if defined(WITH_SDL_MIXER)
+USE_SDL+=	mixer
+CONFIGURE_ARGS+=--disable-openal
+.else
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal \
+		alut.1:${PORTSDIR}/audio/freealut
+CONFIGURE_ARGS+=--disable-sdlmixer
+.endif
+
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/SUBDIRS/ s|doc||' ${WRKSRC}/data/Makefile.in
+.endif
+	@${REINPLACE_CMD} -e '/^bindir=.*games/ d; /^datadir=.*games/ d' \
+		${WRKSRC}/configure
+
+.include <bsd.port.post.mk>
