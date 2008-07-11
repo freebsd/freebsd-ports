@@ -6,47 +6,29 @@
 #
 
 PORTNAME=	ftgl
-PORTVERSION=	2.12
-PORTREVISION=	2
+DISTVERSION=	2.1.3-rc5
+PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://opengl.geek.nz/ftgl/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/([[:digit:]])$/.\1/}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	An OpenGL FreeType fonts rendering library
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
-USE_GL=		gl
+USE_GL=		gl glu
+USE_XORG=	x11 xext xmu
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME:U}
-CONFIGURE_WRKSRC=	${WRKSRC}/unix
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-gl-inc=${LOCALBASE}/include --with-gl-lib=${LOCALBASE}/lib
-BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
-INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
-MAKE_ENV=	MKDIR="${MKDIR}"
+CONFIGURE_ARGS=	--with-gl-inc="${LOCALBASE}/include" \
+		--without-glut-inc
+USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
 
-.ifdef (NOPORTDOCS)
-DO_INSTALL_DOCS=\#
-.endif
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-/~/}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PORTDOCS%%|${DO_INSTALL_DOCS}|' \
-		${BUILD_WRKSRC}/Makefile
-
-post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/demo/* ${EXAMPLESDIR}
-	@${SED} -e 's|%%CC%%|${CC}|g;			\
-		    s|%%CXX%%|${CXX}|g;			\
-		    s|%%RM%%|${RM}|g;			\
-		    s|%%CFLAGS%%|${CFLAGS}|g;		\
-		    s|%%CXXFLAGS%%|${CXXFLAGS}|g;	\
-		    s|%%PREFIX%%|${PREFIX}|g;		\
-		    s|%%LOCALBASE%%|${LOCALBASE}|g'	\
-	<${FILESDIR}/makefile.ex >${EXAMPLESDIR}/makefile
+	@${REINPLACE_CMD} -e '/SUBDIRS/ s|docs||; /SUBDIRS/ s|demo||' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
