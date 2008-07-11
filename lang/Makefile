@@ -346,7 +346,6 @@
     SUBDIR += xotcl
     SUBDIR += xsb
     SUBDIR += yabasic
-    SUBDIR += yarv
     SUBDIR += yorick
     SUBDIR += yorick-doc
 
