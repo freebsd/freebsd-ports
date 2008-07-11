@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	lamarc
-PORTVERSION=	2.1.2b
+PORTVERSION=	2.1.2c
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/download/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	A package of programs for computing population parameters
 
 USE_GNOME=	gnometarget
