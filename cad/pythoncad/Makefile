@@ -8,7 +8,7 @@
 
 PORTNAME=	pythoncad
 PORTVERSION=	36
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.pythoncad.org/releases/
 DISTNAME=	PythonCAD-DS1-R${PORTVERSION}
@@ -16,7 +16,7 @@ DISTNAME=	PythonCAD-DS1-R${PORTVERSION}
 MAINTAINER=	fbsd-ports@xbsd.net
 COMMENT=	An open-source CAD package built designed around Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
