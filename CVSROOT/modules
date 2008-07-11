@@ -4651,6 +4651,7 @@ gtkatlantic                     ports/games/gtkatlantic
 gtkballs                        ports/games/gtkballs
 gtkbe                           ports/x11-themes/gtkbe
 gtkchtheme                      ports/x11/gtkchtheme
+gtkdatabox                      ports/x11-toolkits/gtkdatabox
 gtkdatabox2                     ports/x11-toolkits/gtkdatabox2
 gtkdiff                         ports/textproc/gtkdiff
 gtkdps                          ports/graphics/gtkdps
@@ -8437,6 +8438,7 @@ msp430-libc                     ports/devel/msp430-libc
 msql                            ports/databases/msql
 msql3                           ports/databases/msql3
 msrc0                           ports/devel/msrc0
+msynctool                       ports/deskutils/msynctool
 msyslog                         ports/sysutils/msyslog
 mt-aspell                       ports/textproc/mt-aspell
 mt-daapd                        ports/audio/mt-daapd
@@ -11886,6 +11888,7 @@ p5-Test-File                    ports/devel/p5-Test-File
 p5-Test-File-Contents           ports/devel/p5-Test-File-Contents
 p5-Test-Group                   ports/devel/p5-Test-Group
 p5-Test-HTML-Tidy               ports/devel/p5-Test-HTML-Tidy
+p5-Test-HTTP                    ports/www/p5-Test-HTTP
 p5-Test-HTTP-Server-Simple      ports/www/p5-Test-HTTP-Server-Simple
 p5-Test-Harness                 ports/devel/p5-Test-Harness
 p5-Test-HasVersion              ports/devel/p5-Test-HasVersion
@@ -14985,6 +14988,7 @@ p5-test-group                   ports/devel/p5-Test-Group
 p5-test-harness                 ports/devel/p5-Test-Harness
 p5-test-hasversion              ports/devel/p5-Test-HasVersion
 p5-test-html-tidy               ports/devel/p5-Test-HTML-Tidy
+p5-test-http                    ports/www/p5-Test-HTTP
 p5-test-http-server-simple      ports/www/p5-Test-HTTP-Server-Simple
 p5-test-inline                  ports/devel/p5-Test-Inline
 p5-test-json                    ports/devel/p5-Test-JSON
@@ -17026,7 +17030,6 @@ psgconf                         ports/sysutils/psgconf
 psgml                           ports/editors/psgml
 psh                             ports/shells/psh
 psi                             ports/net-im/psi
-psi-gentoo                      ports/net-im/psi-gentoo
 psi3                            ports/science/psi3
 psi88                           ports/biology/psi88
 psiconv                         ports/converters/psiconv
