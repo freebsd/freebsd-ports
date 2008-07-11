@@ -138,8 +138,8 @@ upgrades.
   AUTHOR: Anders Troback <freebsd@troback.com>
 
   Before you upgrade from 2.x to 3.x you need to export your existing 
-  databases to a generic format like gedcom. After the upgrade you can
-  import them into the new version.
+  databases to a GRAMPS XML file. After the upgrade you can import
+  them into the new version.
 
 20080624:
   AFFECTS: users of irc/ircd-ratbox-devel
