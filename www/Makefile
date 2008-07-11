@@ -951,6 +951,7 @@
     SUBDIR += p5-Template-Provider-Encoding
     SUBDIR += p5-Template-Timer
     SUBDIR += p5-Template-Toolkit
+    SUBDIR += p5-Test-HTTP
     SUBDIR += p5-Test-HTTP-Server-Simple
     SUBDIR += p5-TestGen4Web-Runner
     SUBDIR += p5-Text-Markdown-ApacheHandler

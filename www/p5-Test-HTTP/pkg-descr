@@ -1,0 +1,8 @@
+Test::HTTP is designed to make it easier to write tests which are mainly
+about HTTP-level things, such as REST-type services.
+
+Each Test::HTTP object can contain state about a current request and its
+response.  This allows convenient shorthands for sending requests,
+checking status codes, headers, and message bodies.
+
+WWW: http://search.cpan.org/dist/Test-HTTP/
