@@ -13,6 +13,7 @@
 
 PORTNAME=	bind94
 PORTVERSION=	9.4.2.1
+PORTREVISION=	1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -37,10 +38,16 @@ CONFLICTS=	bind9-9.[35].* bind9-dlz-* bind9-sdb-ldap-* host-*
 
 OPTIONS=	REPLACE_BASE "Replace base BIND with this version" off \
 		LARGE_FILE "64-bit file support" off \
-		IPV6 "IPv6 Support (autodetected by default)" off \
-		THREADS	"Compile with thread support" on
+		IPV6 "IPv6 Support (autodetected by default)" off
 
 .include <bsd.port.pre.mk>
+
+# We are ok by default from 7.0-RELEASE on
+.if ${OSVERSION} >= 700055
+OPTIONS+=	THREADS "Compile with thread support" on
+.else
+OPTIONS+=	THREADS "Compile w/threads (Not Recommended <FreeBSD-7)" off
+.endif
 
 .if defined(WITH_OPENSSL_PORT)
 CONFIGURE_ARGS+=	--with-openssl=${LOCALBASE}
