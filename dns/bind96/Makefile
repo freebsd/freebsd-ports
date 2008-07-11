@@ -47,7 +47,7 @@ OPTIONS=	XML "Support for xml statistics output" on \
 .if ${OSVERSION} >= 700055
 OPTIONS+=	THREADS	"Compile with thread support" on
 .else
-OPTIONS+=	THREADS	"Compile with thread support" off
+OPTIONS+=	THREADS	"Compile w/threads (Not Recommended <FreeBSD-7)" off
 .endif
 
 .if defined(WITH_OPENSSL_PORT)
