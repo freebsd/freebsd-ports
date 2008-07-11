@@ -1,41 +1,83 @@
-bin/cap
-bin/capify
 %%GEM_CACHE%%
-%%GEM_SPEC%%
-%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy_rb.src/M000001.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy_rb.src/M000002.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy_rb.src/M000003.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy_rb.src/M000004.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy_rb.src/M000005.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/compat_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/dependencies_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/local_dependency_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/remote_dependency_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/accurev_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/base_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/bzr_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/cvs_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/darcs_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/git_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/mercurial_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/none_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/perforce_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/subversion_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/base_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/checkout_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/copy_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/export_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/remote_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/remote_cache_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/standard_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/upgrade_rb.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Help.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Options.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Options/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/UI.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/UI/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Callback.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CaptureError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CommandError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/FileTransfer.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Inspect.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Callbacks.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Connections.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading/ClassMethods.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces/Namespace.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Roles.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Servers.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Variables.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ConnectionError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Dependencies.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/LocalDependency.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev/InternalRevision.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base/LocalProxy.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Bzr.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Cvs.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Darcs.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Mercurial.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/None.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Perforce.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Base.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Checkout.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Copy.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Export.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Remote.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/RemoteCache.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Error.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/NoMatchingServersError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/NoSuchTaskError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ProcCallback.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Processable.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Processable/SessionAssociation.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/RemoteError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role/DynamicServerList.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/SSH.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ServerDefinition.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Shell.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskCallback.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskDefinition.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer/SFTPTransferWrapper.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TransferError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Version.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/CHANGELOG_rdoc.html
+%%GEM_DOC_DIR%%/rdoc/files/README_rdoc.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/callback_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/cli/execute_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/cli/help_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/cli/help_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/cli/options_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/cli/ui_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/cli_rb.html
@@ -56,6 +98,33 @@ bin/capify
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/extensions_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/logger_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/processable_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/compat_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/dependencies_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/local_dependency_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/remote_dependency_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/accurev_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/bzr_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/cvs_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/darcs_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/git_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/mercurial_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/none_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/perforce_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm/subversion_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/checkout_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/copy_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/export_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/remote_cache_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy/remote_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/templates/maintenance_rhtml.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/standard_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/templates/maintenance_rhtml.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/upgrade_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/role_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/server_definition_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/shell_rb.html
@@ -64,351 +133,29 @@ bin/capify
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/transfer_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/version_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano_rb.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano.src/M000006.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano.src/M000007.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano.src/M000008.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy.src/M000009.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Checkout.src/M000010.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Base.src/M000011.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Base.src/M000012.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Base.src/M000013.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Base.src/M000014.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Base.src/M000015.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Export.src/M000016.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/RemoteCache.src/M000017.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/RemoteCache.src/M000018.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Remote.src/M000019.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Remote.src/M000020.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Remote.src/M000021.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Remote.src/M000022.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Remote.src/M000023.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Copy.src/M000024.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Copy.src/M000025.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Copy.src/M000026.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Checkout.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Export.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/RemoteCache.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Remote.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Copy.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM.src/M000027.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Cvs.src/M000028.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Cvs.src/M000029.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Cvs.src/M000030.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Cvs.src/M000031.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Cvs.src/M000032.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Cvs.src/M000033.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Cvs.src/M000034.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Cvs.src/M000035.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.src/M000036.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.src/M000037.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.src/M000038.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.src/M000039.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.src/M000040.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.src/M000041.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.src/M000042.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.src/M000043.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.src/M000044.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/None.src/M000045.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/None.src/M000046.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/None.src/M000048.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Bzr.src/M000049.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Bzr.src/M000050.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Bzr.src/M000051.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Bzr.src/M000052.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Bzr.src/M000053.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Bzr.src/M000054.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Bzr.src/M000055.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Bzr.src/M000056.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000057.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000058.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000059.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000060.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000061.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000062.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000063.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000064.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000065.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000066.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000067.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000068.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src/M000069.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base/LocalProxy.src/M000070.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base/LocalProxy.src/M000071.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base/LocalProxy.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Perforce.src/M000072.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Perforce.src/M000073.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Perforce.src/M000074.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Perforce.src/M000075.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Perforce.src/M000076.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Perforce.src/M000077.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Perforce.src/M000078.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Perforce.src/M000079.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Mercurial.src/M000080.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Mercurial.src/M000081.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Mercurial.src/M000082.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Mercurial.src/M000083.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Mercurial.src/M000084.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Mercurial.src/M000085.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Mercurial.src/M000086.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Mercurial.src/M000087.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.src/M000088.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.src/M000089.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.src/M000090.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.src/M000091.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.src/M000092.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.src/M000093.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.src/M000094.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.src/M000095.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.src/M000096.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.src/M000097.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev.src/M000098.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev.src/M000099.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev.src/M000100.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev.src/M000101.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev.src/M000102.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev/InternalRevision.src/M000103.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev/InternalRevision.src/M000104.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev/InternalRevision.src/M000105.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev/InternalRevision.src/M000106.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev/InternalRevision.src/M000107.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev/InternalRevision.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Darcs.src/M000108.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Darcs.src/M000109.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Darcs.src/M000110.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Darcs.src/M000111.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Darcs.src/M000112.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Darcs.src/M000113.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Darcs.src/M000114.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Cvs.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/None.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Bzr.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Perforce.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Mercurial.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Darcs.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Dependencies.src/M000115.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Dependencies.src/M000116.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Dependencies.src/M000117.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Dependencies.src/M000118.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Dependencies.src/M000119.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Dependencies.src/M000120.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/LocalDependency.src/M000121.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/LocalDependency.src/M000122.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/LocalDependency.src/M000123.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/LocalDependency.src/M000124.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.src/M000125.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.src/M000126.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.src/M000127.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.src/M000128.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.src/M000129.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.src/M000130.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.src/M000131.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.src/M000132.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.src/M000133.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.src/M000134.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Dependencies.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/LocalDependency.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Processable.src/M000135.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Processable.src/M000136.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Processable/SessionAssociation.src/M000137.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Processable/SessionAssociation.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.src/M000138.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.src/M000139.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.src/M000140.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.src/M000142.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.src/M000144.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.src/M000145.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.src/M000146.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.src/M000147.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.src/M000148.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role/DynamicServerList.src/M000149.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role/DynamicServerList.src/M000150.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role/DynamicServerList.src/M000151.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role/DynamicServerList.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI.src/M000152.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Options.src/M000153.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Options/ClassMethods.src/M000154.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Options/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Help.src/M000155.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/UI/ClassMethods.src/M000156.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/UI/ClassMethods.src/M000157.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/UI/ClassMethods.src/M000158.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/UI/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute.src/M000159.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute.src/M000160.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute/ClassMethods.src/M000161.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Options.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Help.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/UI.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskCallback.src/M000162.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskCallback.src/M000163.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskCallback.src/M000164.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer.src/M000165.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer.src/M000166.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer.src/M000167.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer.src/M000168.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer.src/M000169.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer.src/M000170.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer.src/M000171.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer/SFTPTransferWrapper.src/M000172.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer/SFTPTransferWrapper.src/M000173.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer/SFTPTransferWrapper.src/M000174.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer/SFTPTransferWrapper.src/M000175.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer/SFTPTransferWrapper.src/M000176.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer/SFTPTransferWrapper.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ServerDefinition.src/M000177.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ServerDefinition.src/M000178.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ServerDefinition.src/M000179.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ServerDefinition.src/M000180.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ServerDefinition.src/M000182.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ServerDefinition.src/M000183.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.src/M000184.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.src/M000185.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.src/M000186.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.src/M000187.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.src/M000188.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.src/M000189.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.src/M000190.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.src/M000191.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.src/M000192.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.src/M000193.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces/Namespace.src/M000194.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces/Namespace.src/M000195.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces/Namespace.src/M000196.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces/Namespace.src/M000197.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces/Namespace.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Connections.src/M000198.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Connections.src/M000199.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Connections.src/M000200.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Connections.src/M000201.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Connections.src/M000202.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Connections.src/M000203.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Connections.src/M000204.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Variables.src/M000205.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Variables.src/M000207.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Variables.src/M000208.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Variables.src/M000209.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Variables.src/M000210.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Variables.src/M000211.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Servers.src/M000212.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Servers.src/M000213.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Servers.src/M000214.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Servers.src/M000215.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Servers.src/M000216.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading.src/M000217.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading/ClassMethods.src/M000218.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading/ClassMethods.src/M000219.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading/ClassMethods.src/M000220.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading/ClassMethods.src/M000221.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading/ClassMethods.src/M000222.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.src/M000223.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.src/M000224.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.src/M000225.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.src/M000226.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.src/M000227.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.src/M000228.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.src/M000229.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.src/M000230.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.src/M000231.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.src/M000232.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Roles.src/M000233.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Roles.src/M000234.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Callbacks.src/M000235.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Callbacks.src/M000236.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Callbacks.src/M000237.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Callbacks.src/M000238.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Inspect.src/M000239.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Inspect.src/M000240.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/FileTransfer.src/M000241.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/FileTransfer.src/M000242.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/FileTransfer.src/M000243.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/FileTransfer.src/M000244.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/FileTransfer.src/M000245.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation.src/M000246.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation.src/M000247.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation.src/M000248.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation.src/M000249.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation.src/M000250.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation.src/M000251.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Inspect.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/FileTransfer.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation/ClassMethods.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Connections.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Variables.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Servers.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Roles.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Callbacks.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command.src/M000252.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command.src/M000253.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command.src/M000254.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command.src/M000255.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Shell.src/M000256.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Shell.src/M000257.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Shell.src/M000258.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Shell.src/M000259.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ProcCallback.src/M000260.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskDefinition.src/M000261.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskDefinition.src/M000262.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskDefinition.src/M000263.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskDefinition.src/M000264.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskDefinition.src/M000265.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/SSH.src/M000266.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/SSH.src/M000267.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Callback.src/M000268.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Callback.src/M000269.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Processable.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/NoMatchingServersError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/RemoteError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CaptureError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ConnectionError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskCallback.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ServerDefinition.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Shell.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/NoSuchTaskError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ProcCallback.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskDefinition.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CommandError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TransferError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/SSH.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Error.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Callback.html
-%%GEM_DOC_DIR%%/rdoc/classes/Capistrano.html
-%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
-%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_LIB_DIR%%/CHANGELOG.rdoc
+%%GEM_LIB_DIR%%/Manifest
+%%GEM_LIB_DIR%%/README.rdoc
+%%GEM_LIB_DIR%%/Rakefile
 %%GEM_LIB_DIR%%/bin/cap
 %%GEM_LIB_DIR%%/bin/capify
+%%GEM_LIB_DIR%%/capistrano.gemspec
+%%GEM_LIB_DIR%%/examples/sample.rb
+%%GEM_LIB_DIR%%/lib/capistrano.rb
 %%GEM_LIB_DIR%%/lib/capistrano/callback.rb
+%%GEM_LIB_DIR%%/lib/capistrano/cli.rb
 %%GEM_LIB_DIR%%/lib/capistrano/cli/execute.rb
 %%GEM_LIB_DIR%%/lib/capistrano/cli/help.rb
 %%GEM_LIB_DIR%%/lib/capistrano/cli/help.txt
 %%GEM_LIB_DIR%%/lib/capistrano/cli/options.rb
 %%GEM_LIB_DIR%%/lib/capistrano/cli/ui.rb
-%%GEM_LIB_DIR%%/lib/capistrano/cli.rb
 %%GEM_LIB_DIR%%/lib/capistrano/command.rb
+%%GEM_LIB_DIR%%/lib/capistrano/configuration.rb
 %%GEM_LIB_DIR%%/lib/capistrano/configuration/actions/file_transfer.rb
 %%GEM_LIB_DIR%%/lib/capistrano/configuration/actions/inspect.rb
 %%GEM_LIB_DIR%%/lib/capistrano/configuration/actions/invocation.rb
@@ -420,15 +167,16 @@ bin/capify
 %%GEM_LIB_DIR%%/lib/capistrano/configuration/roles.rb
 %%GEM_LIB_DIR%%/lib/capistrano/configuration/servers.rb
 %%GEM_LIB_DIR%%/lib/capistrano/configuration/variables.rb
-%%GEM_LIB_DIR%%/lib/capistrano/configuration.rb
 %%GEM_LIB_DIR%%/lib/capistrano/errors.rb
 %%GEM_LIB_DIR%%/lib/capistrano/extensions.rb
 %%GEM_LIB_DIR%%/lib/capistrano/logger.rb
 %%GEM_LIB_DIR%%/lib/capistrano/processable.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/compat.rb
+%%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/dependencies.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/local_dependency.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/remote_dependency.rb
+%%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/scm.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/scm/accurev.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/scm/base.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/scm/bzr.rb
@@ -439,16 +187,14 @@ bin/capify
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/scm/none.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/scm/perforce.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/scm/subversion.rb
-%%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/scm.rb
+%%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/strategy.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/strategy/base.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/strategy/checkout.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/strategy/copy.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/strategy/export.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/strategy/remote.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/strategy/remote_cache.rb
-%%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/strategy.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy/templates/maintenance.rhtml
-%%GEM_LIB_DIR%%/lib/capistrano/recipes/deploy.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/standard.rb
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/templates/maintenance.rhtml
 %%GEM_LIB_DIR%%/lib/capistrano/recipes/upgrade.rb
@@ -459,8 +205,7 @@ bin/capify
 %%GEM_LIB_DIR%%/lib/capistrano/task_definition.rb
 %%GEM_LIB_DIR%%/lib/capistrano/transfer.rb
 %%GEM_LIB_DIR%%/lib/capistrano/version.rb
-%%GEM_LIB_DIR%%/lib/capistrano.rb
-%%GEM_LIB_DIR%%/examples/sample.rb
+%%GEM_LIB_DIR%%/setup.rb
 %%GEM_LIB_DIR%%/test/cli/execute_test.rb
 %%GEM_LIB_DIR%%/test/cli/help_test.rb
 %%GEM_LIB_DIR%%/test/cli/options_test.rb
@@ -498,9 +243,9 @@ bin/capify
 %%GEM_LIB_DIR%%/test/task_definition_test.rb
 %%GEM_LIB_DIR%%/test/transfer_test.rb
 %%GEM_LIB_DIR%%/test/utils.rb
-%%GEM_LIB_DIR%%/README
-%%GEM_LIB_DIR%%/MIT-LICENSE
-%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_SPEC%%
+bin/cap
+bin/capify
 @dirrm %%GEM_LIB_DIR%%/test/fixtures
 @dirrm %%GEM_LIB_DIR%%/test/deploy/strategy
 @dirrm %%GEM_LIB_DIR%%/test/deploy/scm
@@ -523,7 +268,8 @@ bin/capify
 @dirrm %%GEM_LIB_DIR%%/examples
 @dirrm %%GEM_LIB_DIR%%/bin
 @dirrm %%GEM_LIB_DIR%%
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy_rb.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/templates
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/templates
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/strategy
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy/scm
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano/recipes/deploy
@@ -534,81 +280,23 @@ bin/capify
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/capistrano
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer/SFTPTransferWrapper.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Transfer
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskDefinition.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/TaskCallback.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Shell.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ServerDefinition.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/SSH.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role/DynamicServerList.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Role
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Processable/SessionAssociation.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Processable.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Processable
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/ProcCallback.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/RemoteCache.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Remote.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Export.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Copy.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Checkout.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy/Base.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Strategy
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Subversion.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Perforce.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/None.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Mercurial.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Git.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Darcs.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Cvs.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Bzr.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base/LocalProxy.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Base
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev/InternalRevision.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM/Accurev
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/SCM
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/RemoteDependency.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/LocalDependency.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy/Dependencies.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Deploy
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Variables.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Servers.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Roles.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces/Namespace.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Namespaces
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Loading
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Execution.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Connections.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Callbacks.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Invocation
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/Inspect.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions/FileTransfer.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration/Actions
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Configuration
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Command.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/Callback.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/UI/ClassMethods.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/UI
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Options/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Options.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Options
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Help.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute/ClassMethods.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI/Execute
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano/CLI
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Capistrano
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
