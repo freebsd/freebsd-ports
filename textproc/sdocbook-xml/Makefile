@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/xml/simple/${PORTVERSION}/
 DISTNAME=	docbook-simple-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	"Simplified" DocBook XML DTD
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
