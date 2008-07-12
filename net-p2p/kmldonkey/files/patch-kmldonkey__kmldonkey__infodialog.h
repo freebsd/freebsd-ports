@@ -1,5 +1,5 @@
---- ./src/kmldonkey/infodialog.h.orig	Tue Jul 26 13:40:33 2005
-+++ ./src/kmldonkey/infodialog.h	Sun Apr  9 13:15:40 2006
+--- ./kmldonkey/kmldonkey/infodialog.h.orig	2008-07-12 06:04:43.000000000 -0300
++++ ./kmldonkey/kmldonkey/infodialog.h	2008-07-12 06:05:09.000000000 -0300
 @@ -51,7 +51,7 @@
  private:
      int fileno;

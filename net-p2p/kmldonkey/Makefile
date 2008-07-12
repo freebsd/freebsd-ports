@@ -6,35 +6,24 @@
 #
 
 PORTNAME=	kmldonkey
-PORTVERSION=	0.10.1
-PORTREVISION=	5
+PORTVERSION=	0.11
 CATEGORIES=	net-p2p kde
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/network
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.pre/pre/}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE integration for MLDonkey eDonkey P2P client
 
 USE_KDELIBS_VER=3
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--program-transform-name=''
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
+
+DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
 MAN1=	kmldonkey.1 kmldonkey_submit.1
-
-pre-configure:
-# disable AUTO* tools
-	@${FIND} -E ${WRKSRC} -type f \
-		-iregex ".*(Makefile.in|configure)" \
-		| ${XARGS} -x -n 10 \
-		${REINPLACE_CMD} -E \
-			-e 's!^(AUTOCONF|AUTOHEADER|AUTOMAKE|ACLOCAL).*$$!\1=${TRUE}!'
-
-pre-build:
-# disable AUTO* tools
-	@${ECHO_CMD} > ${WRKSRC}/admin/cvs.sh
 
 .include <bsd.port.mk>

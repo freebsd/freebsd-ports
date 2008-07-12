@@ -7,11 +7,6 @@ include/kmldonkey/donkeyprotocol.h
 include/kmldonkey/donkeysocket.h
 include/kmldonkey/ed2kurl.h
 include/kmldonkey/fileinfo.h
-include/kmldonkey/giftdownload.h
-include/kmldonkey/gifthost.h
-include/kmldonkey/giftmessage.h
-include/kmldonkey/giftprotocol.h
-include/kmldonkey/giftsocket.h
 include/kmldonkey/hostiface.h
 include/kmldonkey/hostmanager.h
 include/kmldonkey/infoiface.h
@@ -48,8 +43,8 @@ lib/libkmldonkeytools.a
 lib/libkmldonkeytools.la
 lib/libkmldonkeytools.so
 lib/libkmldonkeytools.so.0
-share/applnk/Internet/kmldonkey.desktop
-share/applnk/Settings/Network/kcmdonkey.desktop
+share/applications/kde/kcmdonkey.desktop
+share/applications/kde/kmldonkey.desktop
 share/apps/kicker/applets/mldonkeyapplet.desktop
 share/apps/kmldonkey/eventsrc
 share/apps/kmldonkey/images/networks/bittorrent.png
@@ -65,27 +60,9 @@ share/apps/konqueror/servicemenus/ed2k_slurp.desktop
 share/apps/mldonkeyapplet/pics/mld-launchgui.png
 share/apps/mldonkeyapplet/pics/mld-mutedonkey.png
 share/apps/mldonkeyapplet/pics/mld-unmutedonkey.png
-share/doc/HTML/de/kmldonkey/common
-share/doc/HTML/de/kmldonkey/index.cache.bz2
-share/doc/HTML/de/kmldonkey/index.docbook
-share/doc/HTML/et/kmldonkey/common
-share/doc/HTML/et/kmldonkey/index.cache.bz2
-share/doc/HTML/et/kmldonkey/index.docbook
-share/doc/HTML/it/kmldonkey/common
-share/doc/HTML/it/kmldonkey/index.cache.bz2
-share/doc/HTML/it/kmldonkey/index.docbook
-share/doc/HTML/nl/kmldonkey/common
-share/doc/HTML/nl/kmldonkey/index.cache.bz2
-share/doc/HTML/nl/kmldonkey/index.docbook
-share/doc/HTML/pt/kmldonkey/common
-share/doc/HTML/pt/kmldonkey/index.cache.bz2
-share/doc/HTML/pt/kmldonkey/index.docbook
-share/doc/HTML/ru/kmldonkey/common
-share/doc/HTML/ru/kmldonkey/index.cache.bz2
-share/doc/HTML/ru/kmldonkey/index.docbook
-share/doc/HTML/sv/kmldonkey/common
-share/doc/HTML/sv/kmldonkey/index.cache.bz2
-share/doc/HTML/sv/kmldonkey/index.docbook
+%%DOCSDIR%%/common
+%%DOCSDIR%%/index.cache.bz2
+%%DOCSDIR%%/index.docbook
 share/icons/hicolor/128x128/apps/kmldonkey.png
 share/icons/hicolor/128x128/apps/mldonkey.png
 share/icons/hicolor/16x16/apps/kmldonkey.png
@@ -98,26 +75,6 @@ share/icons/hicolor/48x48/apps/kmldonkey.png
 share/icons/hicolor/48x48/apps/mldonkey.png
 share/icons/hicolor/64x64/apps/kmldonkey.png
 share/icons/hicolor/64x64/apps/mldonkey.png
-share/locale/ca/LC_MESSAGES/kmldonkey.mo
-share/locale/cy/LC_MESSAGES/kmldonkey.mo
-share/locale/de/LC_MESSAGES/kmldonkey.mo
-share/locale/el/LC_MESSAGES/kmldonkey.mo
-share/locale/es/LC_MESSAGES/kmldonkey.mo
-share/locale/et/LC_MESSAGES/kmldonkey.mo
-share/locale/hu/LC_MESSAGES/kmldonkey.mo
-share/locale/is/LC_MESSAGES/kmldonkey.mo
-share/locale/it/LC_MESSAGES/kmldonkey.mo
-share/locale/lt/LC_MESSAGES/kmldonkey.mo
-share/locale/mt/LC_MESSAGES/kmldonkey.mo
-share/locale/nb/LC_MESSAGES/kmldonkey.mo
-share/locale/nl/LC_MESSAGES/kmldonkey.mo
-share/locale/pt/LC_MESSAGES/kmldonkey.mo
-share/locale/pt_BR/LC_MESSAGES/kmldonkey.mo
-share/locale/ro/LC_MESSAGES/kmldonkey.mo
-share/locale/ru/LC_MESSAGES/kmldonkey.mo
-share/locale/sv/LC_MESSAGES/kmldonkey.mo
-share/locale/ta/LC_MESSAGES/kmldonkey.mo
-share/locale/zh_CN/LC_MESSAGES/kmldonkey.mo
 share/services/ed2k.protocol
 share/services/kded/kmldonkeyd.desktop
 share/services/kmldonkey_debugpage.desktop
@@ -128,6 +85,61 @@ share/servicetypes/kmldonkey_plugin.desktop
 @dirrmtry share/servicetypes
 @dirrmtry share/services/kded
 @dirrmtry share/services
+@dirrmtry share/pixmaps
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uz/LC_MESSAGES
+@dirrmtry share/locale/uz
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/tk/LC_MESSAGES
+@dirrmtry share/locale/tk
+@dirrmtry share/locale/tg/LC_MESSAGES
+@dirrmtry share/locale/tg
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/li/LC_MESSAGES
+@dirrmtry share/locale/li
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fr_FR/LC_MESSAGES
+@dirrmtry share/locale/fr_FR
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/fa_IR/LC_MESSAGES
+@dirrmtry share/locale/fa_IR
+@dirrmtry share/locale/en_AU/LC_MESSAGES
+@dirrmtry share/locale/en_AU
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/de_AT/LC_MESSAGES
+@dirrmtry share/locale/de_AT
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/48x48/apps
@@ -142,24 +154,11 @@ share/servicetypes/kmldonkey_plugin.desktop
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm share/doc/HTML/sv/kmldonkey
-@dirrmtry share/doc/HTML/sv
-@dirrm share/doc/HTML/ru/kmldonkey
-@dirrmtry share/doc/HTML/ru
-@dirrm share/doc/HTML/pt/kmldonkey
-@dirrmtry share/doc/HTML/pt
-@dirrm share/doc/HTML/nl/kmldonkey
-@dirrmtry share/doc/HTML/nl
-@dirrm share/doc/HTML/it/kmldonkey
-@dirrmtry share/doc/HTML/it
-@dirrm share/doc/HTML/et/kmldonkey
-@dirrmtry share/doc/HTML/et
-@dirrm share/doc/HTML/en/kmldonkey-apidocs/src/html
-@dirrm share/doc/HTML/en/kmldonkey-apidocs/src
-@dirrm share/doc/HTML/en/kmldonkey-apidocs
+@dirrmtry share/doc/HTML/en/kmldonkey-apidocs/kmldonkey/html
+@dirrmtry share/doc/HTML/en/kmldonkey-apidocs/kmldonkey
+@dirrmtry share/doc/HTML/en/kmldonkey-apidocs
+@dirrm %%DOCSDIR%%
 @dirrmtry share/doc/HTML/en
-@dirrm share/doc/HTML/de/kmldonkey
-@dirrmtry share/doc/HTML/de
 @dirrmtry share/doc/HTML
 @dirrm share/apps/mldonkeyapplet/pics
 @dirrm share/apps/mldonkeyapplet
@@ -171,9 +170,12 @@ share/servicetypes/kmldonkey_plugin.desktop
 @dirrmtry share/apps/kicker/applets
 @dirrmtry share/apps/kicker
 @dirrmtry share/apps
-@dirrmtry share/applnk/Settings/Network
-@dirrmtry share/applnk/Settings
-@dirrmtry share/applnk/Internet
-@dirrmtry share/applnk
+@dirrmtry share/applications/kde
+@dirrmtry share/applications
 @dirrmtry lib/kde3
+@dirrmtry lib/X11/fonts/local
+@dirrmtry lib/X11/fonts
+@dirrmtry lib/X11/app-defaults
+@dirrmtry lib/X11
 @dirrm include/kmldonkey
+@dirrmtry include/X11
