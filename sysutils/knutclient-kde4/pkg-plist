@@ -1,37 +1,39 @@
 bin/knutclient
 share/applnk/Utilities/knutclient.desktop
 share/apps/knutclient/knutclientui.rc
+share/apps/knutclient/pics/knc_batt.png
 share/apps/knutclient/pics/knc_conn.png
 share/apps/knutclient/pics/knc_error.png
 share/apps/knutclient/pics/knc_main.png
-share/doc/HTML/cs/knutclient/asetting-cs.png
-share/doc/HTML/cs/knutclient/common
-share/doc/HTML/cs/knutclient/fsetting-cs.png
-share/doc/HTML/cs/knutclient/index.cache.bz2
-share/doc/HTML/cs/knutclient/index.docbook
-share/doc/HTML/cs/knutclient/knutclient-cs.png
-share/doc/HTML/cs/knutclient/ksetting-cs.png
-share/doc/HTML/cs/knutclient/mkicker-cs.png
-share/doc/HTML/cs/knutclient/msetting-cs.png
-share/doc/HTML/cs/knutclient/new-cs.png
-share/doc/HTML/cs/knutclient/psetting-cs.png
-share/doc/HTML/cs/knutclient/tkicker-cs.png
-share/doc/HTML/cs/knutclient/usetting-cs.png
-share/doc/HTML/cs/knutclient/variables-cs.png
-share/doc/HTML/en/knutclient/asetting-en.png
-share/doc/HTML/en/knutclient/common
-share/doc/HTML/en/knutclient/fsetting-en.png
-share/doc/HTML/en/knutclient/index.cache.bz2
-share/doc/HTML/en/knutclient/index.docbook
-share/doc/HTML/en/knutclient/knutclient-en.png
-share/doc/HTML/en/knutclient/ksetting-en.png
-share/doc/HTML/en/knutclient/mkicker-en.png
-share/doc/HTML/en/knutclient/msetting-en.png
-share/doc/HTML/en/knutclient/new-en.png
-share/doc/HTML/en/knutclient/psetting-en.png
-share/doc/HTML/en/knutclient/tkicker-en.png
-share/doc/HTML/en/knutclient/usetting-en.png
-share/doc/HTML/en/knutclient/variables-en.png
+share/apps/knutclient/pics/knc_ups.png
+share/doc/kde/HTML/cs/knutclient/asetting-cs.png
+share/doc/kde/HTML/cs/knutclient/common
+share/doc/kde/HTML/cs/knutclient/fsetting-cs.png
+share/doc/kde/HTML/cs/knutclient/index.cache.bz2
+share/doc/kde/HTML/cs/knutclient/index.docbook
+share/doc/kde/HTML/cs/knutclient/knutclient-cs.png
+share/doc/kde/HTML/cs/knutclient/ksetting-cs.png
+share/doc/kde/HTML/cs/knutclient/mkicker-cs.png
+share/doc/kde/HTML/cs/knutclient/msetting-cs.png
+share/doc/kde/HTML/cs/knutclient/new-cs.png
+share/doc/kde/HTML/cs/knutclient/psetting-cs.png
+share/doc/kde/HTML/cs/knutclient/tkicker-cs.png
+share/doc/kde/HTML/cs/knutclient/usetting-cs.png
+share/doc/kde/HTML/cs/knutclient/variables-cs.png
+share/doc/kde/HTML/en/knutclient/asetting-en.png
+share/doc/kde/HTML/en/knutclient/common
+share/doc/kde/HTML/en/knutclient/fsetting-en.png
+share/doc/kde/HTML/en/knutclient/index.cache.bz2
+share/doc/kde/HTML/en/knutclient/index.docbook
+share/doc/kde/HTML/en/knutclient/knutclient-en.png
+share/doc/kde/HTML/en/knutclient/ksetting-en.png
+share/doc/kde/HTML/en/knutclient/mkicker-en.png
+share/doc/kde/HTML/en/knutclient/msetting-en.png
+share/doc/kde/HTML/en/knutclient/new-en.png
+share/doc/kde/HTML/en/knutclient/psetting-en.png
+share/doc/kde/HTML/en/knutclient/tkicker-en.png
+share/doc/kde/HTML/en/knutclient/usetting-en.png
+share/doc/kde/HTML/en/knutclient/variables-en.png
 share/icons/hicolor/16x16/apps/knutclient.png
 share/icons/hicolor/16x16/apps/knutclientconn.png
 share/icons/hicolor/16x16/apps/knutclienterr.png
@@ -62,11 +64,12 @@ share/locale/uk/LC_MESSAGES/knutclient.mo
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm share/doc/HTML/en/knutclient
-@dirrmtry share/doc/HTML/en
-@dirrm share/doc/HTML/cs/knutclient
-@dirrmtry share/doc/HTML/cs
-@dirrmtry share/doc/HTML
+@dirrm share/doc/kde/HTML/en/knutclient
+@dirrmtry share/doc/kde/HTML/en
+@dirrm share/doc/kde/HTML/cs/knutclient
+@dirrmtry share/doc/kde/HTML/cs
+@dirrmtry share/doc/kde/HTML
+@dirrmtry share/doc/kde
 @dirrm share/apps/knutclient/pics
 @dirrm share/apps/knutclient
 @dirrmtry share/apps
