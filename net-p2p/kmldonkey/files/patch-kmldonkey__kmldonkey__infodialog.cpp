@@ -1,6 +1,6 @@
---- ./src/kmldonkey/infodialog.cpp.orig	Tue Jul 26 13:40:33 2005
-+++ ./src/kmldonkey/infodialog.cpp	Sun Apr  9 13:15:40 2006
-@@ -72,10 +72,20 @@
+--- ./kmldonkey/kmldonkey/infodialog.cpp.orig	2008-07-12 06:02:29.000000000 -0300
++++ ./kmldonkey/kmldonkey/infodialog.cpp	2008-07-12 06:04:27.000000000 -0300
+@@ -72,10 +72,21 @@
      layout->addWidget(makeLabel(i18n("Comment:"), frame), 6, 0);
      layout->addWidget(makeLabel(i18n("Alt. names:"), frame, true), 7, 0);
  
@@ -10,6 +10,7 @@
      nameView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
      nameView->setReadOnly(true);
 -    layout->addWidget(nameView, 0, 1);
++
 +    l1->addWidget(nameView);
 +
 +    l1->addWidget(makeLabel(i18n("Number:"), frame));
@@ -22,7 +23,7 @@
  
      availView = new AvailabilityWidget(fileno, frame, "availView");
      layout->addWidget(availView, 1, 1);
-@@ -206,6 +216,7 @@
+@@ -202,6 +213,7 @@
          return;
      }
      nameView->setText(fi->fileName());
