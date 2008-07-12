@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.12
-PORTREVISION=	1
+PORTVERSION=	1.1.14
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	lib
@@ -59,7 +58,7 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		GNOMEVFS2 "Enable GnomeVFS2 support" off \
 		PULSEAUDIO "Enable PulseAudio support" off \
 		XVMC "Enable XvMC support" off \
-		XCB "Enable XCB support" off \
+		XCB "Enable XCB support" on \
 		SMB "Enable SMB protocol support" off \
 		AALIB "Enable aalib support" off \
 		IMAGEMAGICK "Enable ImageMagick support" off \
@@ -70,7 +69,7 @@ MAN1=	xine-config.1 xine-list-1.1.1
 MAN5=	xine.5
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.21"
+PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.23"
 
 .include <bsd.port.pre.mk>
 
