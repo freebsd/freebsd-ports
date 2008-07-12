@@ -1,3 +1,4 @@
+bin/upnpc
 include/miniupnpc/igd_desc_parse.h
 include/miniupnpc/miniupnpc.h
 include/miniupnpc/miniwget.h

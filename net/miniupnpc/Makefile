@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	miniupnpc
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
-DISTNAME=	${PORTNAME}-1.0
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	UPnP IGD client lightweight library
@@ -17,9 +16,13 @@ COMMENT=	UPnP IGD client lightweight library
 USE_GMAKE=	yes
 MAKE_ENV+=	INSTALLPREFIX=${PREFIX}
 USE_LDCONFIG=	yes
+MAN3=		miniupnpc.3
 
 post-configure:
 	${REINPLACE_CMD} -e 's|--mode=|-m |' -e 's|--symbolic|-s|' \
 		-e 's| -Wall | -Wall -fPIC |' -e 's|--force|-f|' ${WRKSRC}/Makefile
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/man3/miniupnpc.3 ${PREFIX}/man/man3/
 
 .include <bsd.port.mk>
