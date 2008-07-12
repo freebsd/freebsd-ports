@@ -101,7 +101,7 @@ CONFIGURE_ARGS+=	--disable-lirc
 .endif
 
 .if defined(WITH_CACA)
-LIBXINE_VER=	1.21
+LIBXINE_VER=	1.23
 .if !exists(${LOCALBASE}/lib/xine/plugins/${LIBXINE_VER}/xineplug_vo_out_caca.so)
 IGNORE=libxine should be compiled with caca support
 .endif
