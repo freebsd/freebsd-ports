@@ -7,7 +7,7 @@
 PORTNAME=	tinderbox
 #DISTVERSION=	${PORTVERSION}-${PORTREVISION}
 PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 DIST_SUBDIR=	tinderbox
@@ -43,7 +43,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 WANT_PHP_WEB=	yes
 USE_PHP=	session
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		favicon.ico tb242_template_paefchen_v3.tbz
+		favicon.ico tb243_template_paefchen_v1.tbz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
@@ -111,7 +111,7 @@ post-extract:
 	@${RM} -R ${WRKSRC}/www-exp
 .else
 	@${CP} ${_DISTDIR}/favicon.ico ${WRKSRC}/www-exp
-	@${TAR} -C ${WRKSRC}/www-exp/templates -xf ${_DISTDIR}/tb242_template_paefchen_v3.tbz
+	@${TAR} -C ${WRKSRC}/www-exp/templates -xf ${_DISTDIR}/tb243_template_paefchen_v1.tbz
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}/www-exp/templates/paefchen
 	@${REINPLACE_CMD} 's|/templates/default|/templates/paefchen|' ${WRKSRC}/www-exp/inc_tinderbox.php.dist
 	@${RM} ${WRKSRC}/www-exp/inc_tinderbox.php.dist.bak
