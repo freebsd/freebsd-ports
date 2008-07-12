@@ -1,20 +1,17 @@
-OpenOffice.org Build %%OOOVERSION%% Personal Install How-To
+OpenOffice.org Build %%OOOTAG%% Personal Install How-To
 
 Written by:	Martin Blapp <mbr@freebsd.org>
 		and Maho Nakata <maho@FreeBSD.org>
 
-OpenOffice.org %%OOOVERSION%% will soon been installed in
+OpenOffice.org %%OOOTAG%% will soon been installed in
 %%PREFIX%%/%%EXECBASE%%
 
 1. User installation
 --------------------
 
 Just type "%%EXECBASE%%" after you have successfully
-installed the package. If there is no installed
-OO.org dir in your homedir, you'll be prompted to
-install some files and choose an installed JDK.
-The setup installs a ".openoffice.org3" folder
-in your homedir.
+installed the package. If there is no installed OO.org dir
+in your homedir, the setup installs ".%%OOODIR%%" folder.
 
 2. Starting OO.org
 ------------------
@@ -37,6 +34,6 @@ OO.org does need $LANG to be set to a suitable value.
 
 3. If you run into problems
 --------------------------------------------------
-If you somehow run into problems, please remove the already installed
-".openoffice.org3" dir in your homedir. Redo the user
+If you somehow run into problems, please remove the already
+installed ".%%OOODIR%%" dir in your homedir. Redo the user
 installation and the problems should go away.
