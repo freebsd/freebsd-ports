@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	muparser
-PORTVERSION=	1.27
+PORTVERSION=	1.30
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_v127
+DISTNAME=	${PORTNAME}_v130
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Mathematical expressions parser library written in C++
@@ -18,7 +18,13 @@ COMMENT=	Mathematical expressions parser library written in C++
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-samples=no
+CONFIGURE_ARGS+=	--enable-shared=no
+.if defined(NOPORTEXAMPLES)
+CONFIGURE_ARGS+=	--enable-samples=no
+.endif
+.if !defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
+.endif
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
@@ -30,6 +36,18 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E 's,^(CXXFLAGS|LDFLAGS) = ,\1 ?= ,g' \
 		${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR} && \
+	cd ${WRKSRC}/docs/html && \
+	${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR} && \
+	cd ${WRKSRC}/samples && \
+	${COPYTREE_SHARE} . ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.pre.mk>
 
