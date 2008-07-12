@@ -27,13 +27,13 @@ bin/wcseq
 %%PORTDOCS%%%%DOCSDIR%%/quickref.doc
 %%PORTDOCS%%%%DOCSDIR%%/seqio.doc
 %%PORTDOCS%%%%DOCSDIR%%/user.doc
-%%PORTDOCS%%share/examples/seqio/example1.c
-%%PORTDOCS%%share/examples/seqio/example2.c
-%%PORTDOCS%%share/examples/seqio/example3.c
-%%PORTDOCS%%share/examples/seqio/example4.c
-%%PORTDOCS%%share/examples/seqio/seqio.c
-%%PORTDOCS%%share/examples/seqio/seqio.h
-%%PORTDOCS%%share/examples/seqio/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example3.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example4.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seqio.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seqio.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm share/examples/seqio
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -7,6 +7,7 @@
 
 PORTNAME=	seqio
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.cs.ucdavis.edu/~gusfield/
 DISTNAME=	${PORTNAME}
@@ -16,25 +17,25 @@ COMMENT=	A set of C functions which can read/write biological sequence files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 EXAMPLES=	example1.c example2.c example3.c example4.c seqio.c \
 		seqio.h Makefile
 PROGRAMS=	fmtseq grepseq idxseq typeseq wcseq
 
 do-install:
-	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/html
-	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}; \
 	for file in ${PROGRAMS}; do \
 		${INSTALL_PROGRAM} $$file ${PREFIX}/bin; \
 	done
-post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}; \
 	for file in ${EXAMPLES}; do \
 		${INSTALL_DATA} $$file ${EXAMPLESDIR}; \
 	done
+.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/bioseq.txt ${DOCSDIR}
 	cd ${WRKSRC}/doc; \
 	for file in *.doc; do \
