@@ -1,17 +1,2 @@
-%%OCAML_SITELIBDIR%%/ssl/dllssl_threads_stubs.so
-%%OCAML_SITELIBDIR%%/ssl/dllssl_stubs.so
-%%OCAML_SITELIBDIR%%/ssl/ssl_threads.a
-%%OCAML_SITELIBDIR%%/ssl/ssl.a
-%%OCAML_SITELIBDIR%%/ssl/libssl_threads_stubs.a
-%%OCAML_SITELIBDIR%%/ssl/libssl_stubs.a
-%%OCAML_SITELIBDIR%%/ssl/ssl_threads.cmxa
-%%OCAML_SITELIBDIR%%/ssl/ssl.cmxa
-%%OCAML_SITELIBDIR%%/ssl/ssl_threads.cma
-%%OCAML_SITELIBDIR%%/ssl/ssl.cma
-%%OCAML_SITELIBDIR%%/ssl/ssl_threads.cmi
-%%OCAML_SITELIBDIR%%/ssl/ssl.cmi
-%%OCAML_SITELIBDIR%%/ssl/ssl_threads.mli
-%%OCAML_SITELIBDIR%%/ssl/ssl.mli
-%%OCAML_SITELIBDIR%%/ssl/META
 @dirrmtry share/doc/ocaml/ssl/html
 @dirrmtry share/doc/ocaml/ssl
