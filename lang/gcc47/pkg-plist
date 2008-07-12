@@ -13,6 +13,7 @@ bin/%%GNU_HOST%%-gcc%%SUFFIX%%
 bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
 %%JAVA%%bin/addr2name.awk%%SUFFIX%%
+%%JAVA%%bin/aot-compile%%SUFFIX%%
 %%JAVA%%bin/gappletviewer%%SUFFIX%%
 %%JAVA%%bin/gc-analyze%%SUFFIX%%
 %%JAVA%%bin/gcj%%SUFFIX%%
@@ -32,8 +33,11 @@ info/gcc%%SUFFIX%%/dir
 %%JAVA%%bin/gtnameserv%%SUFFIX%%
 %%JAVA%%bin/jv-convert%%SUFFIX%%
 %%JAVA%%bin/jcf-dump%%SUFFIX%%
+%%JAVA%%bin/rebuild-gcj-db%%SUFFIX%%
 %%JAVA%%bin/%%GNU_HOST%%-gcj%%SUFFIX%%
 %%JAVA%%libdata/pkgconfig/libgcj-4.4.pc
 %%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
 %%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
+%%JAVA%%share/python/aotcompile.py
+%%JAVA%%share/python/classfile.py
 @comment Insert PLIST.lib here
