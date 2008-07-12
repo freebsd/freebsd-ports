@@ -1,19 +1,19 @@
---- configure.orig	2008-02-08 06:38:17.000000000 +0900
-+++ configure	2008-02-24 13:42:11.000000000 +0900
-@@ -9327,6 +9327,12 @@
+--- configure.orig	2008-06-28 22:13:45.000000000 -0500
++++ configure	2008-06-28 22:13:45.000000000 -0500
+@@ -10049,6 +10049,12 @@
        fi
        ;;
  
-+    freebsd* | kfreebsd*-gnu | dragonfly*)
-+      archive_cmds='$CC -shared -o $lib $libobjs $deplibs $compiler_flags'
-+      hardcode_direct=no
-+      hardcode_minus_L=yes
-+      ;;
++     freebsd* | kfreebsd*-gnu | dragonfly*)
++	archive_cmds='$CC -shared -o $lib $libobjs $deplibs $compiler_flags'
++	hardcode_direct=no
++	hardcode_minus_L=yes
++	;;
 +
-     linux*)
-       if $LD --help 2>&1 | grep ': supported targets:.* elf' > /dev/null; then
- 	tmp_addflag=
-@@ -22572,7 +22578,7 @@
+     netbsd* | netbsdelf*-gnu)
+       if echo __ELF__ | $CC -E - | grep __ELF__ >/dev/null; then
+ 	archive_cmds='$LD -Bshareable $libobjs $deplibs $linker_flags -o $lib'
+@@ -22431,7 +22437,7 @@
                      if test -z "$haveit"; then
                        LIBICONV="${LIBICONV}${LIBICONV:+ }-L$found_dir"
                      fi
@@ -22,7 +22,7 @@
                                                                                          LIBICONV="${LIBICONV}${LIBICONV:+ }$found_so"
                      else
                                                                                                                                                                                  LIBICONV="${LIBICONV}${LIBICONV:+ }-l$name"
-@@ -37624,6 +37630,8 @@
+@@ -37670,6 +37676,8 @@
        fi
         CFLAGS="$ac_save_CFLAGS"
         LIBS="$ac_save_LIBS"
@@ -31,7 +31,7 @@
    fi
  
    if test "x$no_libFLAC" = "x" ; then
-@@ -49857,7 +49865,7 @@
+@@ -50370,7 +50378,7 @@
  
  xinelibdir='${libdir}/xine'
  xinedatadir='${datadir}/xine'
