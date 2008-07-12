@@ -59,28 +59,28 @@ lib/libtaskjuggler.so.3
 %%PORTDOCS%%share/doc/HTML/en/taskjuggler/index.cache.bz2
 %%PORTDOCS%%share/doc/HTML/en/taskjuggler/index.docbook
 %%PORTDOCS%%share/doc/HTML/en/taskjuggler/taskjuggler.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Common/Resources.tji
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project1/Project1-Interface.tji
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project1/Project1.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project1/Project1.tjp
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project2/AccountingReport.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project2/Project2.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/Project2/Project2.tjp
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/BigProject/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/FirstProject/Accounting.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/FirstProject/AccountingSoftware.tjp
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/FirstProject/Calendar.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/FirstProject/Status-Report.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-anders.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-joe.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-khaled.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-paul.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-sally.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/ResourceUsage-Jun.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/ShiftSchedule.tjp
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/ShiftTimes-06-03.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/ShiftTimes-06-10.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Examples/ShiftSchedule/TaskCoverage-Jun.html
+%%EXAMPLESDIR%%/Examples/BigProject/Common/Resources.tji
+%%EXAMPLESDIR%%/Examples/BigProject/Project1/Project1-Interface.tji
+%%EXAMPLESDIR%%/Examples/BigProject/Project1/Project1.html
+%%EXAMPLESDIR%%/Examples/BigProject/Project1/Project1.tjp
+%%EXAMPLESDIR%%/Examples/BigProject/Project2/AccountingReport.html
+%%EXAMPLESDIR%%/Examples/BigProject/Project2/Project2.html
+%%EXAMPLESDIR%%/Examples/BigProject/Project2/Project2.tjp
+%%EXAMPLESDIR%%/Examples/BigProject/README
+%%EXAMPLESDIR%%/Examples/FirstProject/Accounting.html
+%%EXAMPLESDIR%%/Examples/FirstProject/AccountingSoftware.tjp
+%%EXAMPLESDIR%%/Examples/FirstProject/Calendar.html
+%%EXAMPLESDIR%%/Examples/FirstProject/Status-Report.html
+%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-anders.html
+%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-joe.html
+%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-khaled.html
+%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-paul.html
+%%EXAMPLESDIR%%/Examples/ShiftSchedule/Calendar-sally.html
+%%EXAMPLESDIR%%/Examples/ShiftSchedule/ResourceUsage-Jun.html
+%%EXAMPLESDIR%%/Examples/ShiftSchedule/ShiftSchedule.tjp
+%%EXAMPLESDIR%%/Examples/ShiftSchedule/ShiftTimes-06-03.html
+%%EXAMPLESDIR%%/Examples/ShiftSchedule/ShiftTimes-06-10.html
+%%EXAMPLESDIR%%/Examples/ShiftSchedule/TaskCoverage-Jun.html
 %%WITH_KDE%%share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tji.png
 %%WITH_KDE%%share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tjp.png
 %%WITH_KDE%%share/icons/crystalsvg/32x32/mimetypes/taskjuggler_tjx.png
@@ -90,14 +90,14 @@ lib/libtaskjuggler.so.3
 %%WITH_KDE%%share/mimelnk/application/x-tji.desktop
 %%WITH_KDE%%share/mimelnk/application/x-tjp.desktop
 %%WITH_KDE%%share/mimelnk/application/x-tjx.desktop
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/ShiftSchedule
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/FirstProject
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/BigProject/Project2
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/BigProject/Project1
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/BigProject/Common
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples/BigProject
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Examples
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%EXAMPLESDIR%%/Examples/ShiftSchedule
+@dirrm %%EXAMPLESDIR%%/Examples/FirstProject
+@dirrm %%EXAMPLESDIR%%/Examples/BigProject/Project2
+@dirrm %%EXAMPLESDIR%%/Examples/BigProject/Project1
+@dirrm %%EXAMPLESDIR%%/Examples/BigProject/Common
+@dirrm %%EXAMPLESDIR%%/Examples/BigProject
+@dirrm %%EXAMPLESDIR%%/Examples
+@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm share/doc/HTML/en/taskjuggler
 %%WITH_KDE%%@dirrm share/apps/taskjuggler/templates/en_US
 %%WITH_KDE%%@dirrm share/apps/taskjuggler/templates

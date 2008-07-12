@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	taskjuggler
-PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTVERSION=	2.4.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.taskjuggler.org/download/
 
@@ -32,6 +31,7 @@ USE_PERL5_RUN=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-docdir=${EXAMPLESDIR}/
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_CFLAGS}"
 USE_LDCONFIG=	yes
@@ -44,7 +44,6 @@ NOPORTDOCS=	true
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
-CONFIGURE_ARGS+=--with-docdir=${EXAMPLESDIR}/
 .else
 CONFIGURE_ARGS+=--disable-docs
 .endif
