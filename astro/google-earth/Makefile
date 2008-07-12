@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	4.3.7204.836
-PORTREVISION=	1
+PORTVERSION=	4.3.7284.3916
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTFILES=	${TARGET_DISTFILE}
