@@ -8,7 +8,7 @@
 PORTNAME=	zipcodes
 PORTVERSION=	20020622
 CATEGORIES=	hungarian
-MASTER_SITES=	http://skye.ki.iif.hu/~mohacsi/downloads/
+MASTER_SITES=	http://ipv6.niif.hu/~mohacsi/downloads/
 PKGNAMEPREFIX=	hu-
 DISTNAME=	iranyitoszamok.2002.06.22
 EXTRACT_SUFX=	.gz
