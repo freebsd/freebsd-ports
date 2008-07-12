@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/xmlschema/${PORTVERSION:S/.b/b/}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	DocBook W3C XML Schema
 
 USE_ZIP=	yes
