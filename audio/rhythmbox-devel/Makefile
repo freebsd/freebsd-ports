@@ -54,6 +54,8 @@ OPTIONS=	DAAP "Enable iTunes music sharing" off \
 		GECKO_PLUGIN "Enable iTunes browser plugin" on
 #		GDA "Enable GDA database storage" off
 
+CONFLICTS=	rhythmbox-0.10.[0-9]*
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_VORBIS)

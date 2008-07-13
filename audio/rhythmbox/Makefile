@@ -50,6 +50,8 @@ OPTIONS=	DAAP "Enable iTunes music sharing" off \
 		LIRC "Enable Infrared syncing support" off
 #		GDA "Enable GDA database storage" off
 
+CONFLICTS=	rhythmbox-0.11.[0-9]*
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_VORBIS)
