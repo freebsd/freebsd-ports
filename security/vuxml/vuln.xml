@@ -34,6 +34,60 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ecedde1c-5128-11dd-a4e1-0030843d3802">
+    <topic>drupal -- multiple vulnerabilities </topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.8</lt></range>
+      </package>
+      <package>
+        <name>drupal6</name>
+      	<range><lt>6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/280571">
+	  <p>Free tagging taxonomy terms can be used to insert arbitrary script
+	    and HTML code (cross site scripting or XSS) on node preview pages. A
+	    successful exploit requires that the victim selects a term containing
+	    script code and chooses to preview the node. This issue affects Drupal
+	    6.x only. Some values from OpenID providers are output without being
+	    properly escaped, allowing malicious providers to insert arbitrary script
+	    and HTML code (XSS) into user pages. This issue affects Drupal 6.x only.
+	    filter_xss_admin() has been hardened to prevent use of the object HTML
+	    tag in administrator input.</p>
+	  <p>Translated strings (5.x, 6.x) and OpenID identities (6.x) are
+	    immediately deleted upon accessing a properly formatted URL, making
+	    such deletion vulnerable to cross site request forgeries (CSRF). This
+	    may lead to unintended deletion of translated strings or OpenID
+	    identities when a sufficiently privileged user visits a page or site
+	    created by a malicious person.</p>
+	  <p>When contributed modules such as Workflow NG terminate the current
+	    request during a login event, user module is not able to regenerate
+	    the user's session. This may lead to a session fixation attack, when a
+	    malicious user is able to control another users' initial session ID.
+	    As the session is not regenerated, the malicious user may use the
+	    'fixed' session ID after the victim authenticates and will have the
+	    same access. This issue affects both Drupal 5 and Drupal 6.</p>
+	  <p>Schema API uses an inappropriate placeholder for 'numeric' fields
+	    enabling SQL injection when user-supplied data is used for such
+	    fields.This issue affects Drupal 6 only.</p>
+	</blockquote>
+      </body>
+    </description>
+     <references>
+       <url>http://drupal.org/node/280571</url>
+       <url>http://secunia.com/advisories/31028/</url>
+    </references>
+    <dates>
+      <discovery>2008-07-9</discovery>
+      <entry>2008-07-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="655ee1ec-511b-11dd-80ba-000bcdf0a03b">
     <topic>FreeBSD -- DNS cache poisoning</topic>
     <affects>
