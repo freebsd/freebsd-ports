@@ -1135,6 +1135,7 @@
 %%T%%/jre/lib/zi/America/Argentina/Mendoza
 %%T%%/jre/lib/zi/America/Argentina/Rio_Gallegos
 %%T%%/jre/lib/zi/America/Argentina/San_Juan
+%%T%%/jre/lib/zi/America/Argentina/San_Luis
 %%T%%/jre/lib/zi/America/Argentina/Tucuman
 %%T%%/jre/lib/zi/America/Argentina/Ushuaia
 %%T%%/jre/lib/zi/America/Aruba
@@ -1277,7 +1278,6 @@
 %%T%%/jre/lib/zi/Asia/Beirut
 %%T%%/jre/lib/zi/Asia/Bishkek
 %%T%%/jre/lib/zi/Asia/Brunei
-%%T%%/jre/lib/zi/Asia/Calcutta
 %%T%%/jre/lib/zi/Asia/Choibalsan
 %%T%%/jre/lib/zi/Asia/Chongqing
 %%T%%/jre/lib/zi/Asia/Colombo
@@ -1288,6 +1288,7 @@
 %%T%%/jre/lib/zi/Asia/Dushanbe
 %%T%%/jre/lib/zi/Asia/Gaza
 %%T%%/jre/lib/zi/Asia/Harbin
+%%T%%/jre/lib/zi/Asia/Ho_Chi_Minh
 %%T%%/jre/lib/zi/Asia/Hong_Kong
 %%T%%/jre/lib/zi/Asia/Hovd
 %%T%%/jre/lib/zi/Asia/Irkutsk
@@ -1299,6 +1300,7 @@
 %%T%%/jre/lib/zi/Asia/Karachi
 %%T%%/jre/lib/zi/Asia/Kashgar
 %%T%%/jre/lib/zi/Asia/Katmandu
+%%T%%/jre/lib/zi/Asia/Kolkata
 %%T%%/jre/lib/zi/Asia/Krasnoyarsk
 %%T%%/jre/lib/zi/Asia/Kuala_Lumpur
 %%T%%/jre/lib/zi/Asia/Kuching
@@ -1322,7 +1324,6 @@
 %%T%%/jre/lib/zi/Asia/Riyadh87
 %%T%%/jre/lib/zi/Asia/Riyadh88
 %%T%%/jre/lib/zi/Asia/Riyadh89
-%%T%%/jre/lib/zi/Asia/Saigon
 %%T%%/jre/lib/zi/Asia/Sakhalin
 %%T%%/jre/lib/zi/Asia/Samarkand
 %%T%%/jre/lib/zi/Asia/Seoul
