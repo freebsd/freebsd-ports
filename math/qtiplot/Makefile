@@ -14,7 +14,7 @@ MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An Origin clone for data analysis and scientific plotting
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
 
 LIB_DEPENDS=	gsl.12:${PORTSDIR}/math/gsl \
 		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4 \
