@@ -1,8 +1,8 @@
---- conf/config.orig	Tue Jan  2 13:36:39 2007
-+++ conf/config	Wed Jan 10 22:02:14 2007
-@@ -46,6 +46,10 @@
- # temporary directory for Aster executions
- rep_trav : /tmp
+--- conf/config.orig	2008-06-25 15:43:23.000000000 +0200
++++ conf/config	2008-07-06 18:16:37.000000000 +0200
+@@ -50,6 +50,10 @@
+ # (used by mpi executions). For example : /export/tmp, /home/tmp...
+ shared_tmp : /tmp
  
 +# directories for tests
 +rep_test : /tmp
@@ -11,7 +11,7 @@
  # choose True to create symbolic links instead of copying executable and catalogs
  symlink : True
  
-@@ -76,6 +80,7 @@
+@@ -80,6 +84,7 @@
  # for each version a config.VVV file must be created.
  # DO NOT EDIT FOLLOWING LINE !
  #?vers : VVV?
@@ -19,7 +19,7 @@
  
  #-------------------------------------------------------------------------------
  # ----- batch/interactive configuration
-@@ -114,12 +119,12 @@
+@@ -122,12 +127,12 @@
  # batch_job : to display information about jobs
  # batch_kil : to delete jobs
  # --- Sun Grid Engine example
@@ -38,7 +38,7 @@
  
  # --- LSF example
  #batch_nom : LSF
-@@ -130,19 +135,22 @@
+@@ -138,12 +143,12 @@
  #batch_kil : /usr/opt/lsf/4.2/alpha5/bin/bkill
  
  # --- PBS example
@@ -55,6 +55,8 @@
 +batch_kil : LOCALBASE/bin/qdel
  
  #-------------------------------------------------------------------------------
+ # ----- MPI commands and parameters
+@@ -168,8 +173,11 @@
  # ps commands : uncomment lines corresponding to your platform
  #ps_cpu : /bin/ps -e --width=512 -ocputime -ocommand
  #ps_pid : /bin/ps -e --width=512 -opid -ocommand
@@ -68,7 +70,7 @@
  
  #-------------------------------------------------------------------------------
  # debug command :
-@@ -154,7 +162,7 @@
+@@ -181,7 +189,7 @@
  #cmd_post : gdb -batch --command=@D @E @C
  #cmd_dbg : ddd --debugger gdb --command=@D --exec=@E --core=@C
  cmd_post : ?DEBUGGER_COMMAND_POST?
