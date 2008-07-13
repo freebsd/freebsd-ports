@@ -7,7 +7,7 @@
 
 PORTNAME=		aster
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=		9.2.0-2
+DISTVERSION=		9.3.0-1
 DISTVERSIONSUFFIX=	.noarch
 CATEGORIES=		french cad
 MASTER_SITES=		http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
@@ -18,7 +18,6 @@ COMMENT=	Code_Aster finite element method solver
 #-----------------------------------------------------------------------
 # You may define these options:
 #
-# - F77: don't use the default fortran compiler;
 # - FFLAGS: fortan compiler's flags (-O2 by default);
 # - WITH_ZSH or WITH_BASH or WITH_KSH: select a shell among
 #			zsh (default), bash or ksh;
@@ -43,7 +42,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 LIB_DEPENDS+=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
 		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}	\
 		hdf5.0:${PORTSDIR}/science/hdf5					\
-		med.2:${PORTSDIR}/french/med
+		med.2:${PORTSDIR}/french/med					\
+		f2c.2:${PORTSDIR}/lang/f2c
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
@@ -61,6 +61,8 @@ PKGMESSIN=	pkg-message.sans-astk.in
 .else
 PKGMESSIN=	pkg-message.in
 .endif
+
+INTERACTIVE_SCRIPTS=	check_compilers.py setup.py
 
 .include <bsd.port.pre.mk>
 
@@ -223,8 +225,8 @@ ${WRKSRC}/instdir/${vaster}/elements:	build
 pre-configure:
 	${REINPLACE_CMD} -e 's|PREFER_SHARED_LIBS=False|PREFER_SHARED_LIBS=True|' ${WRKSRC}/setup.cfg
 	${REINPLACE_CMD} -e 's|/opt/aster|${WRKSRC}/instdir|'		\
-		-e 's|/usr/bin/gcc|${CC}|;s|/usr/bin/g77|${F77}|'	\
 		${WRKSRC}/setup.cfg
+	${REINPLACE_CMD} -e "s|'gfortran'|'${FC}'|g" ${WRKSRC}/check_compilers.py
 .if defined(WITH_ATLAS)
 	${REINPLACE_CMD} -e "s|cfg\['BLASLIB'\]|cfg['BLASLIB'], cfg['ATLASLIB']|"	\
 		${WRKSRC}/products.py
@@ -236,6 +238,7 @@ pre-configure:
 	${ECHO_CMD} "_install_Pmw = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_Numeric = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_gmsh = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_gmsh2 = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_gibi = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_grace = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "XMGRACE = 'xmgrace'"			>> ${WRKSRC}/setup.cfg
@@ -244,10 +247,15 @@ pre-configure:
 	${ECHO_CMD} "_install_astk = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_astk_serv = False"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_metis = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_mumps = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_omniORB = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_omniORBpy = False"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "_install_pylotage = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_crpcrs = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_aster_Linux = False"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_scotch  = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_SCOTCH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "HOME_METIS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 .if defined(WITH_MUMPS)
 	${ECHO_CMD} "HOME_MUMPS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 . if ${MUMPS_PORT} == "mumps-mpich"
@@ -255,6 +263,7 @@ pre-configure:
 	${ECHO_CMD} "MUMPSLIB = '${MUMPSLIB}'"			>> ${WRKSRC}/setup.cfg
 . endif
 .endif
+	${ECHO_CMD} "LD='${CC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "F90='${LOCALBASE}/bin/${FC}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -L${FORTRANLIBDIR} -L${FORTRANLIBDIR2} -lgfortranbegin  -lgfortran'"	\
 		>> ${WRKSRC}/setup.cfg
@@ -283,15 +292,19 @@ pre-configure:
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} -fno-stack-protector ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
+	${ECHO_CMD} "CFLAGS_DBG='-c -g -O -pipe -fno-stack-protector ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
+.for is in ${INTERACTIVE_SCRIPTS}
+	${REINPLACE_CMD} -e '/should_continue()/d'		\
+		${WRKSRC}/${is}
+.endfor
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-configure:
-	(cd ${CONFIGURE_WRKSRC} && ${PYTHON_CMD} setup.pyo test		\
+	(cd ${CONFIGURE_WRKSRC} && ${PYTHON_CMD} setup.pyo ${DEBUG_FLAGS} test	\
 		| tee ${CONFIGURE_LOG})
 	@${ECHO_MSG} "---------------- Debug ------------------"
 	${CAT} ${CONFIGURE_WRKSRC}/setup.log
@@ -310,7 +323,8 @@ pre-build:
 		${WRKSRC}/instdir/ASTK/ASTK_SERV
 
 do-build:
-	(cd ${BUILD_WRKSRC} && ${PYTHON_CMD} setup.pyo install		\
+	(cd ${BUILD_WRKSRC} &&	\
+		${PYTHON_CMD} setup.pyo ${DEBUG_FLAGS} install aster	\
 		| tee ${BUILD_WRKSRC}/build.log)
 
 pre-install:
@@ -346,7 +360,7 @@ post-install:
 	${LN} -fs ${LOCALBASE}/bin/onmetis ${tools_dir}/
 	${LN} -fs ${LOCALBASE}/bin/pmetis ${tools_dir}/
 	${LN} -fs ${LOCALBASE}/bin/gnuplot ${tools_dir}/
-.if !defined(WITHOUT_ASTK) && !defined(WITHOUT_ASTK_CLI)
+.if !defined(WITHOUT_ASTK_CLI)
 	${LN} -fs ${ASTKDIR}/bin/astk ${tools_dir}/
 	${LN} -fs ${ASTKDIR}/bin/bsf ${tools_dir}/
 .endif
@@ -360,6 +374,8 @@ post-install:
 	${LN} -fs ${LOCALBASE}/bin/gracebat ${tools_dir}/
 	${LN} -fs ${LOCALBASE}/bin/xmgrace ${tools_dir}/
 .endif
+	${LN} -fs ${LOCALBASE}/${PORTNAME}/ASTK/ASTK_SERV/conf/aster_profile.sh	\
+		${PREFIX}/${PORTNAME}/
 	@${ECHO_MSG}
 	@${SED} -e "s#%%tools_dir%%#${tools_dir}#"	\
 		${FILESDIR}/${PKGMESSIN} > ${PKGMESSAGE}
