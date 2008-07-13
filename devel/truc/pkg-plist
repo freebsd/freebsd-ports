@@ -1255,6 +1255,7 @@ www/truc/build_page.php
 www/truc/css/default.css
 www/truc/css/default.php
 www/truc/delete_page.php
+www/truc/docs/changelog
 www/truc/docs/config.template
 www/truc/docs/database.sql
 www/truc/docs/install
