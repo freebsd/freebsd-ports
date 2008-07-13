@@ -7,10 +7,9 @@
 
 PORTNAME=	gadfly
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gadfly
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database written in Python
@@ -21,12 +20,14 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 post-install:
-.if !defined(${NOPORTDOCS})
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/CHANGES.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/build_html.py ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}/kjParsing
 	@${INSTALL_DATA} ${WRKSRC}/doc/demo/kjParsing/*.py \
 		${EXAMPLESDIR}/kjParsing
