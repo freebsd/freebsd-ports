@@ -7,7 +7,7 @@
 
 PORTNAME=	ocrad
 PORTVERSION=	0.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,11 +17,10 @@ COMMENT=	OCR program implemented as filter
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
 
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		CXX="${CXX}"
+CONFIGURE_ARGS=	--prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}" CXX="${CXX}"
+CXXFLAGS+=	-Wall -W
+MAKE_ARGS=	-j`${SYSCTL} -n hw.ncpu`
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO INSTALL
 EXAMPLES=	test.pbm test.txt
@@ -29,10 +28,10 @@ MAN1=		ocrad.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ocrad ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/doc/ocrad.1 ${MAN1PREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	${INSTALL_MAN} ${WRKSRC}/doc/ocrad.1 ${MAN1PREFIX}/man/man1/
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
