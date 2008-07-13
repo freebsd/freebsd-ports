@@ -2247,6 +2247,8 @@ docbook-400                     ports/textproc/docbook-400
 docbook-410                     ports/textproc/docbook-410
 docbook-420                     ports/textproc/docbook-420
 docbook-430                     ports/textproc/docbook-430
+docbook-440                     ports/textproc/docbook-440
+docbook-450                     ports/textproc/docbook-450
 docbook-sk                      ports/textproc/docbook-sk
 docbook-tdg                     ports/textproc/docbook-tdg
 docbook-to-man                  ports/textproc/docbook-to-man
