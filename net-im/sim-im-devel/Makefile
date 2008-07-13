@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	sim-im-devel
-PORTVERSION=	0.9.5.2152
-PORTREVISION=	1
+PORTVERSION=	0.9.5.2236
 CATEGORIES=	net-im
 MASTER_SITES=	http://sim-im.lehis.ru/dist/ \
 		http://www.sim-im.lehis.ru/dist/
 
-MAINTAINER=	sim-im@lehis.ru
+MAINTAINER=	ports@subnets.ru
 COMMENT=	Plugin-based instant messenger
 
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
