@@ -17,6 +17,9 @@ COMMENT=	A program to monitor loss in multicast sessions
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
+DEPRECATED=	abandoned upstream, needs gcc32 which is going to be removed
+EXPIRATION_DATE=2008-08-15
+
 USE_AUTOTOOLS=	autoconf:261:env
 GNU_CONFIGURE=	yes
 USE_GCC=	3.2
