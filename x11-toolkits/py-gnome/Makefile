@@ -7,7 +7,7 @@
 
 PORTNAME=	py-gnome
 PORTVERSION=	1.4.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python/1.4
@@ -17,13 +17,10 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GNOME
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gtkhtml gnometarget
+USE_GNOME=	gtkhtml gnometarget pygtk
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}				\
 		--with-gnome-config=${LOCALBASE}/bin/gnome-config		\
