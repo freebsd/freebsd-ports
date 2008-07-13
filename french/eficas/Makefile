@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	eficas
-DISTVERSION=	1.13.0-1
+DISTVERSIONPREFIX=	full-src-
+DISTVERSION=	1.14.0-1
+DISTVERSIONSUFFIX=	.noarch
 CATEGORIES=	french cad
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
+DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASter Command FIle Editor
@@ -17,6 +20,10 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw		\
 		${PYTHON_SITELIBDIR}/mx:${PORTSDIR}/lang/py-mx-base		\
 		${PYNUMERIC}							\
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+
+ASTER_VER=	9.3.0
+ASTER_DISTVERSION=	${ASTER_VER}-1
+EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
 
 USE_PYTHON=	yes
 REINPLACE_ARGS=	-i ""
@@ -40,6 +47,8 @@ ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py convert/Parserv5/Translate.py
 FIXSH=		bureau.py cataediteur.py panels.py
 
 post-extract:
+	(cd ${WRKDIR} &&	\
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
 	${MV} ${WRKSRC}/Aster/Doc ${WRKDIR}
 
 pre-configure:
