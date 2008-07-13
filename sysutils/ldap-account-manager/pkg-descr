@@ -4,16 +4,20 @@ in an openLDAP server.
 Features:
 - management of Unix user and group accounts (posixAccount/posixGroup)
 - management of Samba 2.x/3 user and host accounts
+(sambaAccount/sambaSamAccount)
+- management of Kolab 2 accounts (kolabInetorgPerson)
 - profiles for account creation
-- editor for organizational units (OU)
 - account creation via file upload
 - automatic creation/deletion of home directories
 - setting quotas
-- support for LDAP+SSL
-- multi-language support (English, French, German, Hungarian, Japanese)
+- PDF output for all accounts
+- editor for organizational units (OU)
+- schema browser
+- tree view
 - multiple configuration files
-- PDF output for user/group/host accounts
-- additional text for user PDFs
-- supports multiple password hashes
+- multi-language support (Catalan, Chinese (Traditional + Simplified),
+Czech, Dutch, English, French, German, Hungarian, Italian, Japanese, Polish,
+Portuguese, Russian and Spanish)
+-support for LDAP+SSL/TLS
 
 WWW: http://lam.sourceforge.net/

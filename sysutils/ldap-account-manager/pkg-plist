@@ -1,633 +1,324 @@
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/copyright
-%%PORTDOCS%%%%DOCSDIR%%/docs/README.Kolab.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/README.fpdf.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/README.hosts.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/README.lamdaemon.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/README.openldap.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/README.schema.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/README.security.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/README.upgrade.txt
-%%WWWROOT%%/VERSION
-%%WWWROOT%%/config/.htaccess
-%%WWWROOT%%/config/config.cfg
-%%WWWROOT%%/config/config.cfg_sample
-%%WWWROOT%%/config/lam.conf
-%%WWWROOT%%/config/lam.conf_sample
-%%WWWROOT%%/config/language
-%%WWWROOT%%/config/passwordMailTemplate.txt
-%%WWWROOT%%/config/pdf/.htaccess
-%%WWWROOT%%/config/pdf/default.group.xml
-%%WWWROOT%%/config/pdf/default.host.xml
-%%WWWROOT%%/config/pdf/default.mailAlias.xml
-%%WWWROOT%%/config/pdf/default.smbDomain.xml
-%%WWWROOT%%/config/pdf/default.user.xml
-%%WWWROOT%%/config/pdf/logos/.htaccess
-%%WWWROOT%%/config/pdf/logos/printLogo.jpg
-%%WWWROOT%%/config/profiles/.htaccess
-%%WWWROOT%%/config/profiles/default.group
-%%WWWROOT%%/config/profiles/default.host
-%%WWWROOT%%/config/profiles/default.mailAlias
-%%WWWROOT%%/config/profiles/default.smbDomain
-%%WWWROOT%%/config/profiles/default.user
-%%WWWROOT%%/config/selfService/.htaccess
-%%WWWROOT%%/config/selfService/default.user
-%%WWWROOT%%/config/shells
-%%WWWROOT%%/graphics/add.png
-%%WWWROOT%%/graphics/back.gif
-%%WWWROOT%%/graphics/banner.jpg
-%%WWWROOT%%/graphics/bigPeople.png
-%%WWWROOT%%/graphics/bigServers.png
-%%WWWROOT%%/graphics/bigTools.png
-%%WWWROOT%%/graphics/catalog.png
-%%WWWROOT%%/graphics/dc.png
-%%WWWROOT%%/graphics/delete.gif
-%%WWWROOT%%/graphics/delete.png
-%%WWWROOT%%/graphics/device.png
-%%WWWROOT%%/graphics/document.png
-%%WWWROOT%%/graphics/door.png
-%%WWWROOT%%/graphics/down.gif
-%%WWWROOT%%/graphics/edit.png
-%%WWWROOT%%/graphics/error.png
-%%WWWROOT%%/graphics/exit.png
-%%WWWROOT%%/graphics/fail.png
-%%WWWROOT%%/graphics/favicon.ico
-%%WWWROOT%%/graphics/files.png
-%%WWWROOT%%/graphics/find.png
-%%WWWROOT%%/graphics/folder.png
-%%WWWROOT%%/graphics/forward.gif
-%%WWWROOT%%/graphics/go.png
-%%WWWROOT%%/graphics/group.png
-%%WWWROOT%%/graphics/groupBig.png
-%%WWWROOT%%/graphics/hard-drive.png
-%%WWWROOT%%/graphics/hard-driveBig.png
-%%WWWROOT%%/graphics/help.png
-%%WWWROOT%%/graphics/host.png
-%%WWWROOT%%/graphics/info.png
-%%WWWROOT%%/graphics/key.png
-%%WWWROOT%%/graphics/keyBig.png
-%%WWWROOT%%/graphics/kolab.png
-%%WWWROOT%%/graphics/lam.png
-%%WWWROOT%%/graphics/ldap-server.png
-%%WWWROOT%%/graphics/light.png
-%%WWWROOT%%/graphics/locality.png
-%%WWWROOT%%/graphics/lock.png
-%%WWWROOT%%/graphics/mail.png
-%%WWWROOT%%/graphics/mailAlias.png
-%%WWWROOT%%/graphics/mailBig.png
-%%WWWROOT%%/graphics/minus.png
-%%WWWROOT%%/graphics/n.png
-%%WWWROOT%%/graphics/network-wired.png
-%%WWWROOT%%/graphics/network.png
-%%WWWROOT%%/graphics/nt_machine.png
-%%WWWROOT%%/graphics/nt_user.png
-%%WWWROOT%%/graphics/o.png
-%%WWWROOT%%/graphics/object.png
-%%WWWROOT%%/graphics/ou.png
-%%WWWROOT%%/graphics/pass.png
-%%WWWROOT%%/graphics/pdf.png
-%%WWWROOT%%/graphics/phpGroupware.png
-%%WWWROOT%%/graphics/plus.png
-%%WWWROOT%%/graphics/process.png
-%%WWWROOT%%/graphics/refresh.png
-%%WWWROOT%%/graphics/samba.png
-%%WWWROOT%%/graphics/save.png
-%%WWWROOT%%/graphics/select.png
-%%WWWROOT%%/graphics/server-settings.png
-%%WWWROOT%%/graphics/server-small.png
-%%WWWROOT%%/graphics/smbDomain.png
-%%WWWROOT%%/graphics/smile.png
-%%WWWROOT%%/graphics/sort_asc.png
-%%WWWROOT%%/graphics/sort_desc.png
-%%WWWROOT%%/graphics/star.png
-%%WWWROOT%%/graphics/tools-no.png
-%%WWWROOT%%/graphics/tools.png
-%%WWWROOT%%/graphics/tree_info.png
-%%WWWROOT%%/graphics/tux.png
-%%WWWROOT%%/graphics/uid.png
-%%WWWROOT%%/graphics/uniquegroup.png
-%%WWWROOT%%/graphics/up.gif
-%%WWWROOT%%/graphics/user.png
-%%WWWROOT%%/graphics/userDefault.png
-%%WWWROOT%%/graphics/warn.png
-%%WWWROOT%%/help/help.inc
-%%WWWROOT%%/html/FAQ.htm
-%%WWWROOT%%/html/account_modules.htm
-%%WWWROOT%%/html/account_modules_lib.htm
-%%WWWROOT%%/html/account_pages.htm
-%%WWWROOT%%/html/account_types.htm
-%%WWWROOT%%/html/account_types_lib.htm
-%%WWWROOT%%/html/base_module.htm
-%%WWWROOT%%/html/base_type.htm
-%%WWWROOT%%/html/config.htm
-%%WWWROOT%%/html/config_files.htm
-%%WWWROOT%%/html/config_pages.htm
-%%WWWROOT%%/html/images/favicon.ico
-%%WWWROOT%%/html/images/lam_baseModule.png
-%%WWWROOT%%/html/images/lam_baseType.png
-%%WWWROOT%%/html/images/lam_config.png
-%%WWWROOT%%/html/images/lam_lists.png
-%%WWWROOT%%/html/images/lam_overview.png
-%%WWWROOT%%/html/images/lam_pdfEditor.png
-%%WWWROOT%%/html/images/lam_profedit.png
-%%WWWROOT%%/html/images/lam_upload.png
-%%WWWROOT%%/html/index.htm
-%%WWWROOT%%/html/ldap.htm
-%%WWWROOT%%/html/lists.htm
-%%WWWROOT%%/html/login.htm
-%%WWWROOT%%/html/mod_accountPages.htm
-%%WWWROOT%%/html/mod_basics.htm
-%%WWWROOT%%/html/mod_config.htm
-%%WWWROOT%%/html/mod_ext.htm
-%%WWWROOT%%/html/mod_general.htm
-%%WWWROOT%%/html/mod_help.htm
-%%WWWROOT%%/html/mod_index.htm
-%%WWWROOT%%/html/mod_pdf.htm
-%%WWWROOT%%/html/mod_profiles.htm
-%%WWWROOT%%/html/mod_rdn.htm
-%%WWWROOT%%/html/mod_upload.htm
-%%WWWROOT%%/html/mod_upload2.htm
-%%WWWROOT%%/html/other_libs.htm
-%%WWWROOT%%/html/ou-edit.htm
-%%WWWROOT%%/html/pdf_editor.htm
-%%WWWROOT%%/html/pdf_libs.htm
-%%WWWROOT%%/html/pdf_profiles.htm
-%%WWWROOT%%/html/phpdoc/Help/_help---help.inc.html
-%%WWWROOT%%/html/phpdoc/Help/_templates---help.php.html
-%%WWWROOT%%/html/phpdoc/LDAP/Ldap.html
-%%WWWROOT%%/html/phpdoc/LDAP/_lib---ldap.inc.html
-%%WWWROOT%%/html/phpdoc/PDF/FPDF.html
-%%WWWROOT%%/html/phpdoc/PDF/UFPDF.html
-%%WWWROOT%%/html/phpdoc/PDF/_lib---font---vera.php.html
-%%WWWROOT%%/html/phpdoc/PDF/_lib---font---verab.php.html
-%%WWWROOT%%/html/phpdoc/PDF/_lib---font---verabi.php.html
-%%WWWROOT%%/html/phpdoc/PDF/_lib---font---verai.php.html
-%%WWWROOT%%/html/phpdoc/PDF/_lib---fpdf.php.html
-%%WWWROOT%%/html/phpdoc/PDF/_lib---lamPDF.inc.html
-%%WWWROOT%%/html/phpdoc/PDF/_lib---pdf.inc.html
-%%WWWROOT%%/html/phpdoc/PDF/_lib---pdfstruct.inc.html
-%%WWWROOT%%/html/phpdoc/PDF/_lib---ufpdf.php.html
-%%WWWROOT%%/html/phpdoc/PDF/_lib---xml_parser.inc.html
-%%WWWROOT%%/html/phpdoc/PDF/_templates---pdfedit---pdfdelete.php.html
-%%WWWROOT%%/html/phpdoc/PDF/_templates---pdfedit---pdfmain.php.html
-%%WWWROOT%%/html/phpdoc/PDF/_templates---pdfedit---pdfpage.php.html
-%%WWWROOT%%/html/phpdoc/PDF/lamPDF.html
-%%WWWROOT%%/html/phpdoc/PDF/xmlParser.html
-%%WWWROOT%%/html/phpdoc/classtrees_Help.html
-%%WWWROOT%%/html/phpdoc/classtrees_LDAP.html
-%%WWWROOT%%/html/phpdoc/classtrees_PDF.html
-%%WWWROOT%%/html/phpdoc/classtrees_configuration.html
-%%WWWROOT%%/html/phpdoc/classtrees_lib.html
-%%WWWROOT%%/html/phpdoc/classtrees_lists.html
-%%WWWROOT%%/html/phpdoc/classtrees_main.html
-%%WWWROOT%%/html/phpdoc/classtrees_modules.html
-%%WWWROOT%%/html/phpdoc/classtrees_profiles.html
-%%WWWROOT%%/html/phpdoc/classtrees_selfService.html
-%%WWWROOT%%/html/phpdoc/classtrees_tools.html
-%%WWWROOT%%/html/phpdoc/classtrees_types.html
-%%WWWROOT%%/html/phpdoc/configuration/LAMCfgMain.html
-%%WWWROOT%%/html/phpdoc/configuration/LAMConfig.html
-%%WWWROOT%%/html/phpdoc/configuration/_lib---config.inc.html
-%%WWWROOT%%/html/phpdoc/configuration/_templates---config---conflogin.php.html
-%%WWWROOT%%/html/phpdoc/configuration/_templates---config---confmain.php.html
-%%WWWROOT%%/html/phpdoc/configuration/_templates---config---confmodules.php.html
-%%WWWROOT%%/html/phpdoc/configuration/_templates---config---conftypes.php.html
-%%WWWROOT%%/html/phpdoc/configuration/_templates---config---index.php.html
-%%WWWROOT%%/html/phpdoc/configuration/_templates---config---mainlogin.php.html
-%%WWWROOT%%/html/phpdoc/configuration/_templates---config---mainmanage.php.html
-%%WWWROOT%%/html/phpdoc/configuration/_templates---config---profmanage.php.html
-%%WWWROOT%%/html/phpdoc/elementindex.html
-%%WWWROOT%%/html/phpdoc/elementindex_Help.html
-%%WWWROOT%%/html/phpdoc/elementindex_LDAP.html
-%%WWWROOT%%/html/phpdoc/elementindex_PDF.html
-%%WWWROOT%%/html/phpdoc/elementindex_configuration.html
-%%WWWROOT%%/html/phpdoc/elementindex_lib.html
-%%WWWROOT%%/html/phpdoc/elementindex_lists.html
-%%WWWROOT%%/html/phpdoc/elementindex_main.html
-%%WWWROOT%%/html/phpdoc/elementindex_modules.html
-%%WWWROOT%%/html/phpdoc/elementindex_profiles.html
-%%WWWROOT%%/html/phpdoc/elementindex_selfService.html
-%%WWWROOT%%/html/phpdoc/elementindex_tools.html
-%%WWWROOT%%/html/phpdoc/elementindex_types.html
-%%WWWROOT%%/html/phpdoc/errors.html
-%%WWWROOT%%/html/phpdoc/index.html
-%%WWWROOT%%/html/phpdoc/li_Help.html
-%WWWROOT%%/html/phpdoc/li_LDAP.html
-%%WWWROOT%%/html/phpdoc/li_PDF.html
-%%WWWROOT%%/html/phpdoc/li_configuration.html
-%%WWWROOT%%/html/phpdoc/li_lib.html
-%%WWWROOT%%/html/phpdoc/li_lists.html
-%%WWWROOT%%/html/phpdoc/li_main.html
-%%WWWROOT%%/html/phpdoc/li_modules.html
-%%WWWROOT%%/html/phpdoc/li_profiles.html
-%%WWWROOT%%/html/phpdoc/li_selfService.html
-%%WWWROOT%%/html/phpdoc/li_tools.html
-%%WWWROOT%%/html/phpdoc/li_types.html
-%%WWWROOT%%/html/phpdoc/lib/AttributeType.html
-%%WWWROOT%%/html/phpdoc/lib/MatchingRule.html
-%%WWWROOT%%/html/phpdoc/lib/MatchingRuleUse.html
-%%WWWROOT%%/html/phpdoc/lib/ObjectClass.html
-%%WWWROOT%%/html/phpdoc/lib/ObjectClassAttribute.html
-%%WWWROOT%%/html/phpdoc/lib/SchemaItem.html
-%%WWWROOT%%/html/phpdoc/lib/Syntax.html
-%%WWWROOT%%/html/phpdoc/lib/_lib---account.inc.html
-%%WWWROOT%%/html/phpdoc/lib/_lib---cache.inc.html
-%%WWWROOT%%/html/phpdoc/lib/_lib---schema.inc.html
-%%WWWROOT%%/html/phpdoc/lib/_lib---security.inc.html
-%%WWWROOT%%/html/phpdoc/lib/_lib---status.inc.html
-%%WWWROOT%%/html/phpdoc/lib/cache.html
-%%WWWROOT%%/html/phpdoc/lists/_lib---lists.inc.html
-%%WWWROOT%%/html/phpdoc/lists/_templates---lists---deletelink.php.html
-%%WWWROOT%%/html/phpdoc/lists/_templates---lists---list.php.html
-%%WWWROOT%%/html/phpdoc/lists/_templates---lists---userlink.php.html
-%%WWWROOT%%/html/phpdoc/lists/lamBooleanListOption.html
-%%WWWROOT%%/html/phpdoc/lists/lamGroupList.html
-%%WWWROOT%%/html/phpdoc/lists/lamHostList.html
-%%WWWROOT%%/html/phpdoc/lists/lamList.html
-%%WWWROOT%%/html/phpdoc/lists/lamListOption.html
-%%WWWROOT%%/html/phpdoc/lists/lamListTool.html
-%%WWWROOT%%/html/phpdoc/lists/lamMailAliasList.html
-%%WWWROOT%%/html/phpdoc/lists/lamSelectListOption.html
-%%WWWROOT%%/html/phpdoc/lists/lamSmbDomainList.html
-%%WWWROOT%%/html/phpdoc/lists/lamUserList.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_lib---tree.inc.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---add_attr.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---add_attr_form.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---add_oclass.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---add_oclass_form.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---add_value.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---add_value_form.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---collapse.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---create.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---create_form.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---creation_template.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---delete.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---delete_attr.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---delete_form.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---download_binary_attr.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---edit.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---expand.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---export.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---export_form.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---rdelete.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---refresh.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---templates---creation---custom.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---templates---creation---new_ou_template.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---templates---templates.inc.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---tree.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---tree_view.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---update.php.html
-%%WWWROOT%%/html/phpdoc/lists/tree/_templates---tree---update_confirm.php.html
-%%WWWROOT%%/html/phpdoc/main/_templates---delete.php.html
-%%WWWROOT%%/html/phpdoc/main/_templates---initsuff.php.html
-%%WWWROOT%%/html/phpdoc/main/_templates---login.php.html
-%%WWWROOT%%/html/phpdoc/main/_templates---logout.php.html
-%%WWWROOT%%/html/phpdoc/main/_templates---main.php.html
-%%WWWROOT%%/html/phpdoc/main/_templates---main_header.php.html
-%%WWWROOT%%/html/phpdoc/media/background.png
-%%WWWROOT%%/html/phpdoc/media/empty.png
-%%WWWROOT%%/html/phpdoc/media/style.css
-%%WWWROOT%%/html/phpdoc/modules/_lib---baseModule.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---createntlm.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---lamdaemon.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---account.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---ieee802device.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---inetLocalMailRecipient.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---inetOrgPerson.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---kolabUser.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---ldapPublicKey.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---nisMailAlias.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---phpGroupwareGroup.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---phpGroupwareUser.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---posixAccount.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---posixGroup.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---quota.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---sambaAccount.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---sambaDomain.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---sambaGroupMapping.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---sambaSamAccount---sambaMungedDial.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---sambaSamAccount.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules---shadowAccount.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_lib---modules.inc.html
-%%WWWROOT%%/html/phpdoc/modules/_templates---account---edit.php.html
-%%WWWROOT%%/html/phpdoc/modules/account.html
-%%WWWROOT%%/html/phpdoc/modules/accountContainer.html
-%%WWWROOT%%/html/phpdoc/modules/baseModule.html
-%%WWWROOT%%/html/phpdoc/modules/ieee802Device.html
-%%WWWROOT%%/html/phpdoc/modules/inetLocalMailRecipient.html
-%%WWWROOT%%/html/phpdoc/modules/inetOrgPerson.html
-%%WWWROOT%%/html/phpdoc/modules/kolabUser.html
-%%WWWROOT%%/html/phpdoc/modules/ldapPublicKey.html
-%%WWWROOT%%/html/phpdoc/modules/nisMailAlias.html
-%%WWWROOT%%/html/phpdoc/modules/phpGroupwareGroup.html
-%%WWWROOT%%/html/phpdoc/modules/phpGroupwareUser.html
-%%WWWROOT%%/html/phpdoc/modules/posixAccount.html
-%%WWWROOT%%/html/phpdoc/modules/posixGroup.html
-%%WWWROOT%%/html/phpdoc/modules/quota.html
-%%WWWROOT%%/html/phpdoc/modules/samba3domain.html
-%%WWWROOT%%/html/phpdoc/modules/sambaAccount.html
-%%WWWROOT%%/html/phpdoc/modules/sambaDomain.html
-%%WWWROOT%%/html/phpdoc/modules/sambaGroupMapping.html
-%%WWWROOT%%/html/phpdoc/modules/sambaMungedDial.html
-%%WWWROOT%%/html/phpdoc/modules/sambaSamAccount.html
-%%WWWROOT%%/html/phpdoc/modules/shadowAccount.html
-%%WWWROOT%%/html/phpdoc/modules/smbHash.html
-%%WWWROOT%%/html/phpdoc/profiles/_lib---profiles.inc.html
-%%WWWROOT%%/html/phpdoc/profiles/_templates---profedit---profiledelete.php.html
-%%WWWROOT%%/html/phpdoc/profiles/_templates---profedit---profilemain.php.html
-%%WWWROOT%%/html/phpdoc/profiles/_templates---profedit---profilepage.php.html
-%%WWWROOT%%/html/phpdoc/ric_INSTALL.html
-%%WWWROOT%%/html/phpdoc/ric_README.html
-%%WWWROOT%%/html/phpdoc/selfService/_lib---selfService.inc.html
-%%WWWROOT%%/html/phpdoc/selfService/selfServiceProfile.html
-%%WWWROOT%%/html/phpdoc/tools/LAMTool.html
-%%WWWROOT%%/html/phpdoc/tools/LdapExportInfo.html
-%%WWWROOT%%/html/phpdoc/tools/MyCustomExporter.html
-%%WWWROOT%%/html/phpdoc/tools/PlaAbstractExporter.html
-%%WWWROOT%%/html/phpdoc/tools/PlaCSVExporter.html
-%%WWWROOT%%/html/phpdoc/tools/PlaDsmlExporter.html
-%%WWWROOT%%/html/phpdoc/tools/PlaExporter.html
-%%WWWROOT%%/html/phpdoc/tools/PlaLdapExporter.html
-%%WWWROOT%%/html/phpdoc/tools/PlaLdifExporter.html
-%%WWWROOT%%/html/phpdoc/tools/PlaVcardExporter.html
-%%WWWROOT%%/html/phpdoc/tools/_lib---export.inc.html
-%%WWWROOT%%/html/phpdoc/tools/_templates---massBuildAccounts.php.html
-%%WWWROOT%%/html/phpdoc/tools/_templates---massDoUpload.php.html
-%%WWWROOT%%/html/phpdoc/tools/_templates---masscreate.php.html
-%%WWWROOT%%/html/phpdoc/tools/_templates---ou_edit.php.html
-%%WWWROOT%%/html/phpdoc/tools/_templates---schema---schema.php.html
-%%WWWROOT%%/html/phpdoc/tools/_templates---tests---index.php.html
-%%WWWROOT%%/html/phpdoc/tools/_templates---tests---lamdaemonTest.php.html
-%%WWWROOT%%/html/phpdoc/tools/_templates---tests---schemaTest.php.html
-%%WWWROOT%%/html/phpdoc/tools/_templates---tools.php.html
-%%WWWROOT%%/html/phpdoc/types/_lib---baseType.inc.html
-%%WWWROOT%%/html/phpdoc/types/_lib---types---group.inc.html
-%%WWWROOT%%/html/phpdoc/types/_lib---types---host.inc.html
-%%WWWROOT%%/html/phpdoc/types/_lib---types---mailAlias.inc.html
-%%WWWROOT%%/html/phpdoc/types/_lib---types---smbDomain.inc.html
-%%WWWROOT%%/html/phpdoc/types/_lib---types---user.inc.html
-%%WWWROOT%%/html/phpdoc/types/_lib---types.inc.html
-%%WWWROOT%%/html/phpdoc/types/baseType.html
-%%WWWROOT%%/html/phpdoc/types/group.html
-%%WWWROOT%%/html/phpdoc/types/host.html
-%%WWWROOT%%/html/phpdoc/types/mailAlias.html
-%%WWWROOT%%/html/phpdoc/types/smbDomain.html
-%%WWWROOT%%/html/phpdoc/types/user.html
-%%WWWROOT%%/html/profile_editor.htm
-%%WWWROOT%%/html/profile_files.htm
-%%WWWROOT%%/html/profiles.htm
-%%WWWROOT%%/html/samba_domains.htm
-%%WWWROOT%%/html/style/layout.css
-%%WWWROOT%%/html/tree_schema.htm
-%%WWWROOT%%/html/type_basics.htm
-%%WWWROOT%%/html/type_css.htm
-%%WWWROOT%%/html/type_general.htm
-%%WWWROOT%%/html/type_icon.htm
-%%WWWROOT%%/html/type_index.htm
-%%WWWROOT%%/html/type_list.htm
-%%WWWROOT%%/html/type_profile.htm
-%%WWWROOT%%/html/types-specification.htm
-%%WWWROOT%%/html/upgrade.htm
-%%WWWROOT%%/html/upload.htm
-%%WWWROOT%%/index.html
-%%WWWROOT%%/lib/.htaccess
-%%WWWROOT%%/lib/account.inc
-%%WWWROOT%%/lib/baseModule.inc
-%%WWWROOT%%/lib/baseType.inc
-%%WWWROOT%%/lib/cache.inc
-%%WWWROOT%%/lib/config.inc
-%%WWWROOT%%/lib/createntlm.inc
-%%WWWROOT%%/lib/export.inc
-%%WWWROOT%%/lib/font/Vera.ttf
-%%WWWROOT%%/lib/font/VeraBI.ttf
-%%WWWROOT%%/lib/font/VeraBd.ttf
-%%WWWROOT%%/lib/font/VeraIt.ttf
-%%WWWROOT%%/lib/font/vera.ctg.z
-%%WWWROOT%%/lib/font/vera.php
-%%WWWROOT%%/lib/font/vera.z
-%%WWWROOT%%/lib/font/verab.ctg.z
-%%WWWROOT%%/lib/font/verab.php
-%%WWWROOT%%/lib/font/verab.z
-%%WWWROOT%%/lib/font/verabi.ctg.z
-%%WWWROOT%%/lib/font/verabi.php
-%%WWWROOT%%/lib/font/verabi.z
-%%WWWROOT%%/lib/font/verai.ctg.z
-%%WWWROOT%%/lib/font/verai.php
-%%WWWROOT%%/lib/font/verai.z
-%%WWWROOT%%/lib/fpdf.php
-%%WWWROOT%%/lib/lamPDF.inc
-%%WWWROOT%%/lib/lamdaemon.inc
-%%WWWROOT%%/lib/lamdaemon.pl
-%%WWWROOT%%/lib/lamdaemonOld.pl
-%%WWWROOT%%/lib/ldap.inc
-%%WWWROOT%%/lib/lists.inc
-%%WWWROOT%%/lib/modules.inc
-%%WWWROOT%%/lib/modules/account.inc
-%%WWWROOT%%/lib/modules/ieee802device.inc
-%%WWWROOT%%/lib/modules/inetLocalMailRecipient.inc
-%%WWWROOT%%/lib/modules/inetOrgPerson.inc
-%%WWWROOT%%/lib/modules/kolabUser.inc
-%%WWWROOT%%/lib/modules/ldapPublicKey.inc
-%%WWWROOT%%/lib/modules/nisMailAlias.inc
-%%WWWROOT%%/lib/modules/posixAccount.inc
-%%WWWROOT%%/lib/modules/posixGroup.inc
-%%WWWROOT%%/lib/modules/quota.inc
-%%WWWROOT%%/lib/modules/sambaAccount.inc
-%%WWWROOT%%/lib/modules/sambaDomain.inc
-%%WWWROOT%%/lib/modules/sambaGroupMapping.inc
-%%WWWROOT%%/lib/modules/sambaSamAccount.inc
-%%WWWROOT%%/lib/modules/sambaSamAccount/sambaMungedDial.inc
-%%WWWROOT%%/lib/modules/shadowAccount.inc
-%%WWWROOT%%/lib/pdf.inc
-%%WWWROOT%%/lib/pdfstruct.inc
-%%WWWROOT%%/lib/profiles.inc
-%%WWWROOT%%/lib/schema.inc
-%%WWWROOT%%/lib/security.inc
-%%WWWROOT%%/lib/selfService.inc
-%%WWWROOT%%/lib/status.inc
-%%WWWROOT%%/lib/tree.inc
-%%WWWROOT%%/lib/types.inc
-%%WWWROOT%%/lib/types/group.inc
-%%WWWROOT%%/lib/types/host.inc
-%%WWWROOT%%/lib/types/mailAlias.inc
-%%WWWROOT%%/lib/types/smbDomain.inc
-%%WWWROOT%%/lib/types/user.inc
-%%WWWROOT%%/lib/ufpdf.php
-%%WWWROOT%%/lib/xml_parser.inc
-%%WWWROOT%%/locale/ca_ES/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/ca_ES/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/cs_CZ/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/cs_CZ/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/es_ES/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/es_ES/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/fr_FR/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/fr_FR/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/hu_HU/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/hu_HU/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/it_IT/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/it_IT/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/ja_JP/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/ja_JP/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/nl_NL/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/nl_NL/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/pl_PL/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/pl_PL/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/pt_BR/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/pt_BR/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/ru_RU/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/ru_RU/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/zh_CN/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/zh_CN/LC_MESSAGES/messages.po
-%%WWWROOT%%/locale/zh_TW/LC_MESSAGES/messages.mo
-%%WWWROOT%%/locale/zh_TW/LC_MESSAGES/messages.po
-%%WWWROOT%%/sess/.htaccess
-%%WWWROOT%%/style/layout.css
-%%WWWROOT%%/style/type_group.css
-%%WWWROOT%%/style/type_host.css
-%%WWWROOT%%/style/type_mailAlias.css
-%%WWWROOT%%/style/type_smbDomain.css
-%%WWWROOT%%/style/type_user.css
-%%WWWROOT%%/templates/account/edit.php
-%%WWWROOT%%/templates/config/conflogin.php
-%%WWWROOT%%/templates/config/confmain.php
-%%WWWROOT%%/templates/config/confmodules.php
-%%WWWROOT%%/templates/config/conftypes.php
-%%WWWROOT%%/templates/config/index.php
-%%WWWROOT%%/templates/config/mainlogin.php
-%%WWWROOT%%/templates/config/mainmanage.php
-%%WWWROOT%%/templates/config/profmanage.php
-%%WWWROOT%%/templates/delete.php
-%%WWWROOT%%/templates/help.php
-%%WWWROOT%%/templates/initsuff.php
-%%WWWROOT%%/templates/lists/deletelink.php
-%%WWWROOT%%/templates/lists/list.js
-%%WWWROOT%%/templates/lists/list.php
-%%WWWROOT%%/templates/lists/userlink.php
-%%WWWROOT%%/templates/login.php
-%%WWWROOT%%/templates/logout.php
-%%WWWROOT%%/templates/main.php
-%%WWWROOT%%/templates/main_header.php
-%%WWWROOT%%/templates/massBuildAccounts.php
-%%WWWROOT%%/templates/massDoUpload.php
-%%WWWROOT%%/templates/masscreate.php
-%%WWWROOT%%/templates/ou_edit.php
-%%WWWROOT%%/templates/pdfedit/pdfdelete.php
-%%WWWROOT%%/templates/pdfedit/pdfmain.php
-%%WWWROOT%%/templates/pdfedit/pdfpage.php
-%%WWWROOT%%/templates/profedit/profiledelete.php
-%%WWWROOT%%/templates/profedit/profilemain.php
-%%WWWROOT%%/templates/profedit/profilepage.php
-%%WWWROOT%%/templates/schema/schema.php
-%%WWWROOT%%/templates/tests/index.php
-%%WWWROOT%%/templates/tests/lamdaemonTest.php
-%%WWWROOT%%/templates/tests/schemaTest.php
-%%WWWROOT%%/templates/tools.php
-%%WWWROOT%%/templates/tree/add_attr.php
-%%WWWROOT%%/templates/tree/add_attr_form.php
-%%WWWROOT%%/templates/tree/add_oclass.php
-%%WWWROOT%%/templates/tree/add_oclass_form.php
-%%WWWROOT%%/templates/tree/add_value.php
-%%WWWROOT%%/templates/tree/add_value_form.php
-%%WWWROOT%%/templates/tree/collapse.php
-%%WWWROOT%%/templates/tree/create.php
-%%WWWROOT%%/templates/tree/create_form.php
-%%WWWROOT%%/templates/tree/creation_template.php
-%%WWWROOT%%/templates/tree/delete.php
-%%WWWROOT%%/templates/tree/delete_attr.php
-%%WWWROOT%%/templates/tree/delete_form.php
-%%WWWROOT%%/templates/tree/download_binary_attr.php
-%%WWWROOT%%/templates/tree/edit.php
-%%WWWROOT%%/templates/tree/expand.php
-%%WWWROOT%%/templates/tree/export.php
-%%WWWROOT%%/templates/tree/export_form.php
-%%WWWROOT%%/templates/tree/rdelete.php
-%%WWWROOT%%/templates/tree/refresh.php
-%%WWWROOT%%/templates/tree/templates/creation/custom.php
-%%WWWROOT%%/templates/tree/templates/creation/new_ou_template.php
-%%WWWROOT%%/templates/tree/templates/templates.inc
-%%WWWROOT%%/templates/tree/tree.php
-%%WWWROOT%%/templates/tree/tree_view.php
-%%WWWROOT%%/templates/tree/update.php
-%%WWWROOT%%/templates/tree/update_confirm.php
-%%WWWROOT%%/tmp/.htaccess
-@dirrm %%WWWROOT%%/tmp
-@dirrm %%WWWROOT%%/templates/tree/templates/creation
-@dirrm %%WWWROOT%%/templates/tree/templates
-@dirrm %%WWWROOT%%/templates/tree
-@dirrm %%WWWROOT%%/templates/tests
-@dirrm %%WWWROOT%%/templates/schema
-@dirrm %%WWWROOT%%/templates/profedit
-@dirrm %%WWWROOT%%/templates/pdfedit
-@dirrm %%WWWROOT%%/templates/lists
-@dirrm %%WWWROOT%%/templates/config
-@dirrm %%WWWROOT%%/templates/account
-@dirrm %%WWWROOT%%/templates
-@dirrm %%WWWROOT%%/style
-@dirrm %%WWWROOT%%/sess
-@dirrm %%WWWROOT%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/zh_TW
-@dirrm %%WWWROOT%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/zh_CN
-@dirrm %%WWWROOT%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/ru_RU
-@dirrm %%WWWROOT%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/pt_BR
-@dirrm %%WWWROOT%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/pl_PL
-@dirrm %%WWWROOT%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/nl_NL
-@dirrm %%WWWROOT%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/ja_JP
-@dirrm %%WWWROOT%%/locale/it_IT/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/it_IT
-@dirrm %%WWWROOT%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/hu_HU
-@dirrm %%WWWROOT%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/fr_FR
-@dirrm %%WWWROOT%%/locale/es_ES/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/es_ES
-@dirrm %%WWWROOT%%/locale/de_DE/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/de_DE
-@dirrm %%WWWROOT%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/cs_CZ
-@dirrm %%WWWROOT%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%WWWROOT%%/locale/ca_ES
-@dirrm %%WWWROOT%%/locale
-@dirrm %%WWWROOT%%/lib/types
-@dirrm %%WWWROOT%%/lib/modules/sambaSamAccount
-@dirrm %%WWWROOT%%/lib/modules
-@dirrm %%WWWROOT%%/lib/font
-@dirrm %%WWWROOT%%/lib
-@dirrm %%WWWROOT%%/html/style
-@dirrm %%WWWROOT%%/html/phpdoc/types
-@dirrm %%WWWROOT%%/html/phpdoc/tools
-@dirrm %%WWWROOT%%/html/phpdoc/selfService
-@dirrm %%WWWROOT%%/html/phpdoc/profiles
-@dirrm %%WWWROOT%%/html/phpdoc/modules
-@dirrm %%WWWROOT%%/html/phpdoc/media
-@dirrm %%WWWROOT%%/html/phpdoc/main
-@dirrm %%WWWROOT%%/html/phpdoc/lists/tree
-@dirrm %%WWWROOT%%/html/phpdoc/lists
-@dirrm %%WWWROOT%%/html/phpdoc/lib
-@dirrm %%WWWROOT%%/html/phpdoc/configuration
-@dirrm %%WWWROOT%%/html/phpdoc/PDF
-@dirrm %%WWWROOT%%/html/phpdoc/LDAP
-@dirrm %%WWWROOT%%/html/phpdoc/Help
-@dirrm %%WWWROOT%%/html/phpdoc
-@dirrm %%WWWROOT%%/html/images
-@dirrm %%WWWROOT%%/html
-@dirrm %%WWWROOT%%/help
-@dirrm %%WWWROOT%%/graphics
-@dirrm %%WWWROOT%%/config/selfService
-@dirrm %%WWWROOT%%/config/profiles
-@dirrm %%WWWROOT%%/config/pdf/logos
-@dirrm %%WWWROOT%%/config/pdf
-@dirrm %%WWWROOT%%/config
-@dirrm %%WWWROOT%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%WWWDIR%%/VERSION
+%%WWWDIR%%/config/.htaccess
+%%WWWDIR%%/config/config.cfg_sample
+%%WWWDIR%%/config/config.cfg
+%%WWWDIR%%/config/lam.conf_sample
+%%WWWDIR%%/config/lam.conf
+%%WWWDIR%%/config/language
+%%WWWDIR%%/config/passwordMailTemplate.txt
+%%WWWDIR%%/config/pdf/.htaccess
+%%WWWDIR%%/config/pdf/default.group.xml
+%%WWWDIR%%/config/pdf/default.host.xml
+%%WWWDIR%%/config/pdf/default.mailAlias.xml
+%%WWWDIR%%/config/pdf/default.smbDomain.xml
+%%WWWDIR%%/config/pdf/default.user.xml
+%%WWWDIR%%/config/pdf/logos/.htaccess
+%%WWWDIR%%/config/pdf/logos/printLogo.jpg
+%%WWWDIR%%/config/profiles/.htaccess
+%%WWWDIR%%/config/profiles/default.group
+%%WWWDIR%%/config/profiles/default.host
+%%WWWDIR%%/config/profiles/default.mailAlias
+%%WWWDIR%%/config/profiles/default.smbDomain
+%%WWWDIR%%/config/profiles/default.user
+%%WWWDIR%%/config/selfService/.htaccess
+%%WWWDIR%%/config/selfService/default.user
+%%WWWDIR%%/config/shells
+%%WWWDIR%%/graphics/add.png
+%%WWWDIR%%/graphics/back.gif
+%%WWWDIR%%/graphics/banner.jpg
+%%WWWDIR%%/graphics/bigPeople.png
+%%WWWDIR%%/graphics/bigServers.png
+%%WWWDIR%%/graphics/bigTools.png
+%%WWWDIR%%/graphics/catalog.png
+%%WWWDIR%%/graphics/dc.png
+%%WWWDIR%%/graphics/delete.gif
+%%WWWDIR%%/graphics/delete.png
+%%WWWDIR%%/graphics/device.png
+%%WWWDIR%%/graphics/document.png
+%%WWWDIR%%/graphics/door.png
+%%WWWDIR%%/graphics/down.gif
+%%WWWDIR%%/graphics/edit.png
+%%WWWDIR%%/graphics/error.png
+%%WWWDIR%%/graphics/exit.png
+%%WWWDIR%%/graphics/fail.png
+%%WWWDIR%%/graphics/favicon.ico
+%%WWWDIR%%/graphics/files.png
+%%WWWDIR%%/graphics/find.png
+%%WWWDIR%%/graphics/folder.png
+%%WWWDIR%%/graphics/forward.gif
+%%WWWDIR%%/graphics/go.png
+%%WWWDIR%%/graphics/group.png
+%%WWWDIR%%/graphics/groupBig.png
+%%WWWDIR%%/graphics/hard-drive.png
+%%WWWDIR%%/graphics/hard-driveBig.png
+%%WWWDIR%%/graphics/help.png
+%%WWWDIR%%/graphics/host.png
+%%WWWDIR%%/graphics/info.png
+%%WWWDIR%%/graphics/key.png
+%%WWWDIR%%/graphics/keyBig.png
+%%WWWDIR%%/graphics/kolab.png
+%%WWWDIR%%/graphics/lam.png
+%%WWWDIR%%/graphics/ldap-server.png
+%%WWWDIR%%/graphics/light.png
+%%WWWDIR%%/graphics/locality.png
+%%WWWDIR%%/graphics/lock.png
+%%WWWDIR%%/graphics/mail.png
+%%WWWDIR%%/graphics/mailAlias.png
+%%WWWDIR%%/graphics/mailBig.png
+%%WWWDIR%%/graphics/minus.png
+%%WWWDIR%%/graphics/n.png
+%%WWWDIR%%/graphics/network-wired.png
+%%WWWDIR%%/graphics/network.png
+%%WWWDIR%%/graphics/nt_machine.png
+%%WWWDIR%%/graphics/nt_user.png
+%%WWWDIR%%/graphics/o.png
+%%WWWDIR%%/graphics/object.png
+%%WWWDIR%%/graphics/ou.png
+%%WWWDIR%%/graphics/pass.png
+%%WWWDIR%%/graphics/pdf.png
+%%WWWDIR%%/graphics/phpGroupware.png
+%%WWWDIR%%/graphics/plus.png
+%%WWWDIR%%/graphics/process.png
+%%WWWDIR%%/graphics/refresh.png
+%%WWWDIR%%/graphics/samba.png
+%%WWWDIR%%/graphics/save.png
+%%WWWDIR%%/graphics/select.png
+%%WWWDIR%%/graphics/server-settings.png
+%%WWWDIR%%/graphics/server-small.png
+%%WWWDIR%%/graphics/smbDomain.png
+%%WWWDIR%%/graphics/smile.png
+%%WWWDIR%%/graphics/sort_asc.png
+%%WWWDIR%%/graphics/sort_desc.png
+%%WWWDIR%%/graphics/star.png
+%%WWWDIR%%/graphics/tools-no.png
+%%WWWDIR%%/graphics/tools.png
+%%WWWDIR%%/graphics/tree_info.png
+%%WWWDIR%%/graphics/tux.png
+%%WWWDIR%%/graphics/uid.png
+%%WWWDIR%%/graphics/uniquegroup.png
+%%WWWDIR%%/graphics/up.gif
+%%WWWDIR%%/graphics/user.png
+%%WWWDIR%%/graphics/userDefault.png
+%%WWWDIR%%/graphics/warn.png
+%%WWWDIR%%/help/help.inc
+%%WWWDIR%%/index.html
+%%WWWDIR%%/lib/.htaccess
+%%WWWDIR%%/lib/account.inc
+%%WWWDIR%%/lib/baseModule.inc
+%%WWWDIR%%/lib/baseType.inc
+%%WWWDIR%%/lib/cache.inc
+%%WWWDIR%%/lib/config.inc
+%%WWWDIR%%/lib/createntlm.inc
+%%WWWDIR%%/lib/export.inc
+%%WWWDIR%%/lib/font/Vera.ttf
+%%WWWDIR%%/lib/font/VeraBI.ttf
+%%WWWDIR%%/lib/font/VeraBd.ttf
+%%WWWDIR%%/lib/font/VeraIt.ttf
+%%WWWDIR%%/lib/font/vera.ctg.z
+%%WWWDIR%%/lib/font/vera.php
+%%WWWDIR%%/lib/font/vera.z
+%%WWWDIR%%/lib/font/verab.ctg.z
+%%WWWDIR%%/lib/font/verab.php
+%%WWWDIR%%/lib/font/verab.z
+%%WWWDIR%%/lib/font/verabi.ctg.z
+%%WWWDIR%%/lib/font/verabi.php
+%%WWWDIR%%/lib/font/verabi.z
+%%WWWDIR%%/lib/font/verai.ctg.z
+%%WWWDIR%%/lib/font/verai.php
+%%WWWDIR%%/lib/font/verai.z
+%%WWWDIR%%/lib/fpdf.php
+%%WWWDIR%%/lib/lamPDF.inc
+%%WWWDIR%%/lib/lamdaemon.inc
+%%WWWDIR%%/lib/lamdaemon.pl
+%%WWWDIR%%/lib/lamdaemonOld.pl
+%%WWWDIR%%/lib/ldap.inc
+%%WWWDIR%%/lib/lists.inc
+%%WWWDIR%%/lib/modules.inc
+%%WWWDIR%%/lib/modules/account.inc
+%%WWWDIR%%/lib/modules/ieee802device.inc
+%%WWWDIR%%/lib/modules/inetLocalMailRecipient.inc
+%%WWWDIR%%/lib/modules/inetOrgPerson.inc
+%%WWWDIR%%/lib/modules/kolabUser.inc
+%%WWWDIR%%/lib/modules/ldapPublicKey.inc
+%%WWWDIR%%/lib/modules/nisMailAlias.inc
+%%WWWDIR%%/lib/modules/phpGroupwareGroup.inc
+%%WWWDIR%%/lib/modules/phpGroupwareUser.inc
+%%WWWDIR%%/lib/modules/posixAccount.inc
+%%WWWDIR%%/lib/modules/posixGroup.inc
+%%WWWDIR%%/lib/modules/quota.inc
+%%WWWDIR%%/lib/modules/sambaAccount.inc
+%%WWWDIR%%/lib/modules/sambaDomain.inc
+%%WWWDIR%%/lib/modules/sambaGroupMapping.inc
+%%WWWDIR%%/lib/modules/sambaSamAccount.inc
+%%WWWDIR%%/lib/modules/sambaSamAccount/sambaMungedDial.inc
+%%WWWDIR%%/lib/modules/shadowAccount.inc
+%%WWWDIR%%/lib/pdf.inc
+%%WWWDIR%%/lib/pdfstruct.inc
+%%WWWDIR%%/lib/profiles.inc
+%%WWWDIR%%/lib/schema.inc
+%%WWWDIR%%/lib/security.inc
+%%WWWDIR%%/lib/selfService.inc
+%%WWWDIR%%/lib/status.inc
+%%WWWDIR%%/lib/tree.inc
+%%WWWDIR%%/lib/types.inc
+%%WWWDIR%%/lib/types/group.inc
+%%WWWDIR%%/lib/types/host.inc
+%%WWWDIR%%/lib/types/mailAlias.inc
+%%WWWDIR%%/lib/types/smbDomain.inc
+%%WWWDIR%%/lib/types/user.inc
+%%WWWDIR%%/lib/ufpdf.php
+%%WWWDIR%%/lib/xml_parser.inc
+%%WWWDIR%%/locale/ca_ES/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ca_ES/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/cs_CZ/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/cs_CZ/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/hu_HU/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/hu_HU/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/nl_NL/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/nl_NL/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pl_PL/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pl_PL/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.po
+%%WWWDIR%%/sess/.htaccess
+%%WWWDIR%%/style/layout.css
+%%WWWDIR%%/style/type_group.css
+%%WWWDIR%%/style/type_host.css
+%%WWWDIR%%/style/type_mailAlias.css
+%%WWWDIR%%/style/type_smbDomain.css
+%%WWWDIR%%/style/type_user.css
+%%WWWDIR%%/templates/account/edit.php
+%%WWWDIR%%/templates/config/conflogin.php
+%%WWWDIR%%/templates/config/confmain.php
+%%WWWDIR%%/templates/config/confmodules.php
+%%WWWDIR%%/templates/config/conftypes.php
+%%WWWDIR%%/templates/config/index.php
+%%WWWDIR%%/templates/config/mainlogin.php
+%%WWWDIR%%/templates/config/mainmanage.php
+%%WWWDIR%%/templates/config/profmanage.php
+%%WWWDIR%%/templates/delete.php
+%%WWWDIR%%/templates/help.php
+%%WWWDIR%%/templates/initsuff.php
+%%WWWDIR%%/templates/lists/deletelink.php
+%%WWWDIR%%/templates/lists/list.js
+%%WWWDIR%%/templates/lists/list.php
+%%WWWDIR%%/templates/lists/userlink.php
+%%WWWDIR%%/templates/login.php
+%%WWWDIR%%/templates/logout.php
+%%WWWDIR%%/templates/main.php
+%%WWWDIR%%/templates/main_header.php
+%%WWWDIR%%/templates/massBuildAccounts.php
+%%WWWDIR%%/templates/massDoUpload.php
+%%WWWDIR%%/templates/masscreate.php
+%%WWWDIR%%/templates/ou_edit.php
+%%WWWDIR%%/templates/pdfedit/pdfdelete.php
+%%WWWDIR%%/templates/pdfedit/pdfmain.php
+%%WWWDIR%%/templates/pdfedit/pdfpage.php
+%%WWWDIR%%/templates/profedit/profiledelete.php
+%%WWWDIR%%/templates/profedit/profilemain.php
+%%WWWDIR%%/templates/profedit/profilepage.php
+%%WWWDIR%%/templates/schema/schema.php
+%%WWWDIR%%/templates/tests/index.php
+%%WWWDIR%%/templates/tests/lamdaemonTest.php
+%%WWWDIR%%/templates/tests/schemaTest.php
+%%WWWDIR%%/templates/tools.php
+%%WWWDIR%%/templates/tree/add_attr.php
+%%WWWDIR%%/templates/tree/add_attr_form.php
+%%WWWDIR%%/templates/tree/add_oclass.php
+%%WWWDIR%%/templates/tree/add_oclass_form.php
+%%WWWDIR%%/templates/tree/add_value.php
+%%WWWDIR%%/templates/tree/add_value_form.php
+%%WWWDIR%%/templates/tree/collapse.php
+%%WWWDIR%%/templates/tree/create.php
+%%WWWDIR%%/templates/tree/create_form.php
+%%WWWDIR%%/templates/tree/creation_template.php
+%%WWWDIR%%/templates/tree/delete.php
+%%WWWDIR%%/templates/tree/delete_attr.php
+%%WWWDIR%%/templates/tree/delete_form.php
+%%WWWDIR%%/templates/tree/download_binary_attr.php
+%%WWWDIR%%/templates/tree/edit.php
+%%WWWDIR%%/templates/tree/expand.php
+%%WWWDIR%%/templates/tree/export.php
+%%WWWDIR%%/templates/tree/export_form.php
+%%WWWDIR%%/templates/tree/rdelete.php
+%%WWWDIR%%/templates/tree/refresh.php
+%%WWWDIR%%/templates/tree/templates/creation/custom.php
+%%WWWDIR%%/templates/tree/templates/creation/new_ou_template.php
+%%WWWDIR%%/templates/tree/templates/templates.inc
+%%WWWDIR%%/templates/tree/tree.php
+%%WWWDIR%%/templates/tree/tree_view.php
+%%WWWDIR%%/templates/tree/update.php
+%%WWWDIR%%/templates/tree/update_confirm.php
+%%WWWDIR%%/tmp/.htaccess
+@dirrm %%WWWDIR%%/tmp
+@dirrm %%WWWDIR%%/templates/tree/templates/creation
+@dirrm %%WWWDIR%%/templates/tree/templates
+@dirrm %%WWWDIR%%/templates/tree
+@dirrm %%WWWDIR%%/templates/tests
+@dirrm %%WWWDIR%%/templates/schema
+@dirrm %%WWWDIR%%/templates/profedit
+@dirrm %%WWWDIR%%/templates/pdfedit
+@dirrm %%WWWDIR%%/templates/lists
+@dirrm %%WWWDIR%%/templates/config
+@dirrm %%WWWDIR%%/templates/account
+@dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/style
+@dirrm %%WWWDIR%%/sess
+@dirrm %%WWWDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/zh_TW
+@dirrm %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/zh_CN
+@dirrm %%WWWDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ru_RU
+@dirrm %%WWWDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pt_BR
+@dirrm %%WWWDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pl_PL
+@dirrm %%WWWDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/nl_NL
+@dirrm %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ja_JP
+@dirrm %%WWWDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/it_IT
+@dirrm %%WWWDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/hu_HU
+@dirrm %%WWWDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/fr_FR
+@dirrm %%WWWDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/es_ES
+@dirrm %%WWWDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/de_DE
+@dirrm %%WWWDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/cs_CZ
+@dirrm %%WWWDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ca_ES
+@dirrm %%WWWDIR%%/locale
+@dirrm %%WWWDIR%%/lib/types
+@dirrm %%WWWDIR%%/lib/modules/sambaSamAccount
+@dirrm %%WWWDIR%%/lib/modules
+@dirrm %%WWWDIR%%/lib/font
+@dirrm %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/help
+@dirrm %%WWWDIR%%/graphics
+@dirrm %%WWWDIR%%/config/selfService
+@dirrm %%WWWDIR%%/config/profiles
+@dirrm %%WWWDIR%%/config/pdf/logos
+@dirrm %%WWWDIR%%/config/pdf
+@dirrm %%WWWDIR%%/config
+@dirrm %%WWWDIR%%
