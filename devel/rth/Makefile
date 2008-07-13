@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	rth
-PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTVERSION=	1.6.4
 CATEGORIES=	devel www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	rth
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jsi@jules.de
 COMMENT=	Web-based requirement, test and bugtracking system
 
+USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PHP=	mysql gd
 
@@ -23,6 +22,8 @@ SUB_LIST=	"PKGNAME=${PKGNAME}"
 SUB_FILES=	pkg-message
 
 WANT_PHP_WEB=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	@${ECHO} "Installing in ${PREFIX}/www/rth"
