@@ -32,6 +32,7 @@
 %%T%%/bin/jstack
 %%T%%/bin/jstat
 %%T%%/bin/jstatd
+%%T%%/bin/jvisualvm
 %%T%%/bin/keytool
 %%T%%/bin/native2ascii
 %%T%%/bin/orbd
@@ -3355,6 +3356,7 @@
 %%T%%/jre/lib/zi/America/Argentina/Mendoza
 %%T%%/jre/lib/zi/America/Argentina/Rio_Gallegos
 %%T%%/jre/lib/zi/America/Argentina/San_Juan
+%%T%%/jre/lib/zi/America/Argentina/San_Luis
 %%T%%/jre/lib/zi/America/Argentina/Tucuman
 %%T%%/jre/lib/zi/America/Argentina/Ushuaia
 %%T%%/jre/lib/zi/America/Aruba
@@ -3497,7 +3499,6 @@
 %%T%%/jre/lib/zi/Asia/Beirut
 %%T%%/jre/lib/zi/Asia/Bishkek
 %%T%%/jre/lib/zi/Asia/Brunei
-%%T%%/jre/lib/zi/Asia/Calcutta
 %%T%%/jre/lib/zi/Asia/Choibalsan
 %%T%%/jre/lib/zi/Asia/Chongqing
 %%T%%/jre/lib/zi/Asia/Colombo
@@ -3508,6 +3509,7 @@
 %%T%%/jre/lib/zi/Asia/Dushanbe
 %%T%%/jre/lib/zi/Asia/Gaza
 %%T%%/jre/lib/zi/Asia/Harbin
+%%T%%/jre/lib/zi/Asia/Ho_Chi_Minh
 %%T%%/jre/lib/zi/Asia/Hong_Kong
 %%T%%/jre/lib/zi/Asia/Hovd
 %%T%%/jre/lib/zi/Asia/Irkutsk
@@ -3519,6 +3521,7 @@
 %%T%%/jre/lib/zi/Asia/Karachi
 %%T%%/jre/lib/zi/Asia/Kashgar
 %%T%%/jre/lib/zi/Asia/Katmandu
+%%T%%/jre/lib/zi/Asia/Kolkata
 %%T%%/jre/lib/zi/Asia/Krasnoyarsk
 %%T%%/jre/lib/zi/Asia/Kuala_Lumpur
 %%T%%/jre/lib/zi/Asia/Kuching
@@ -3542,7 +3545,6 @@
 %%T%%/jre/lib/zi/Asia/Riyadh87
 %%T%%/jre/lib/zi/Asia/Riyadh88
 %%T%%/jre/lib/zi/Asia/Riyadh89
-%%T%%/jre/lib/zi/Asia/Saigon
 %%T%%/jre/lib/zi/Asia/Sakhalin
 %%T%%/jre/lib/zi/Asia/Samarkand
 %%T%%/jre/lib/zi/Asia/Seoul
@@ -3743,6 +3745,238 @@
 %%T%%/lib/orb.idl
 %%T%%/lib/sa-jdi.jar
 %%T%%/lib/tools.jar
+%%T%%/lib/visualvm/etc/visualvm.clusters
+%%T%%/lib/visualvm/etc/visualvm.conf
+%%T%%/lib/visualvm/platform7/config/ModuleAutoDeps/org-netbeans-core.xml
+%%T%%/lib/visualvm/platform7/config/ModuleAutoDeps/org-netbeans-modules-options-api.xml
+%%T%%/lib/visualvm/platform7/config/ModuleAutoDeps/org-netbeans-modules-queries.xml
+%%T%%/lib/visualvm/platform7/config/ModuleAutoDeps/org-openide-execution.xml
+%%T%%/lib/visualvm/platform7/config/ModuleAutoDeps/org-openide-explorer.xml
+%%T%%/lib/visualvm/platform7/config/ModuleAutoDeps/org-openide-modules.xml
+%%T%%/lib/visualvm/platform7/config/ModuleAutoDeps/org-openide-text.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-jdesktop-layout.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-api-progress.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-api-visual.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-core-execution.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-core-multiview.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-core-output2.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-core-ui.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-core-windows.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-core.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-libs-jsr223.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-applemenu.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-autoupdate-services.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-autoupdate-ui.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-core-kit.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-editor-mimelookup-impl.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-editor-mimelookup.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-favorites.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-javahelp.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-masterfs.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-options-api.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-options-keymap.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-progress-ui.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-queries.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-sendopts.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-settings.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-modules-templates.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-swing-plaf.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-netbeans-swing-tabcontrol.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-actions.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-awt.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-compat.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-dialogs.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-execution.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-explorer.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-io.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-loaders.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-nodes.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-options.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-text.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-util-enumerations.xml
+%%T%%/lib/visualvm/platform7/config/Modules/org-openide-windows.xml
+%%T%%/lib/visualvm/platform7/core/core.jar
+%%T%%/lib/visualvm/platform7/core/org-openide-filesystems.jar
+%%T%%/lib/visualvm/platform7/docs/swing-layout-1.0.3-doc.zip
+%%T%%/lib/visualvm/platform7/docs/swing-layout-1.0.3-src.zip
+%%T%%/lib/visualvm/platform7/lib/boot.jar
+%%T%%/lib/visualvm/platform7/lib/nbexec
+%%T%%/lib/visualvm/platform7/lib/org-openide-modules.jar
+%%T%%/lib/visualvm/platform7/lib/org-openide-util.jar
+%%T%%/lib/visualvm/platform7/modules/ext/jh-2.0_05.jar
+%%T%%/lib/visualvm/platform7/modules/ext/script-api.jar
+%%T%%/lib/visualvm/platform7/modules/ext/swing-layout-1.0.3.jar
+%%T%%/lib/visualvm/platform7/modules/ext/updater.jar
+%%T%%/lib/visualvm/platform7/modules/org-jdesktop-layout.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-api-progress.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-api-visual.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-core-execution.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-core-multiview.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-core-output2.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-core-ui.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-core-windows.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-core.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-libs-jsr223.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-applemenu.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-autoupdate-services.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-autoupdate-ui.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-core-kit.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-editor-mimelookup-impl.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-editor-mimelookup.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-favorites.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-javahelp.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-masterfs.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-options-api.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-options-keymap.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-progress-ui.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-queries.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-sendopts.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-settings.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-modules-templates.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-swing-plaf.jar
+%%T%%/lib/visualvm/platform7/modules/org-netbeans-swing-tabcontrol.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-actions.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-awt.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-compat.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-dialogs.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-execution.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-explorer.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-io.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-loaders.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-nodes.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-options.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-text.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-util-enumerations.jar
+%%T%%/lib/visualvm/platform7/modules/org-openide-windows.jar
+%%T%%/lib/visualvm/platform7/update_tracking/org-jdesktop-layout.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-api-progress.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-api-visual.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-bootstrap.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-core-execution.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-core-multiview.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-core-output2.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-core-startup.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-core-ui.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-core-windows.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-core.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-libs-jsr223.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-applemenu.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-autoupdate-services.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-autoupdate-ui.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-core-kit.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-editor-mimelookup-impl.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-editor-mimelookup.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-favorites.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-javahelp.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-masterfs.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-options-api.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-options-keymap.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-progress-ui.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-queries.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-sendopts.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-settings.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-modules-templates.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-swing-plaf.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-netbeans-swing-tabcontrol.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-actions.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-awt.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-compat.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-dialogs.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-execution.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-explorer.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-filesystems.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-io.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-loaders.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-modules.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-nodes.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-options.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-text.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-util-enumerations.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-util.xml
+%%T%%/lib/visualvm/platform7/update_tracking/org-openide-windows.xml
+%%T%%/lib/visualvm/profiler2/config/Modules/org-netbeans-lib-profiler-common.xml
+%%T%%/lib/visualvm/profiler2/config/Modules/org-netbeans-lib-profiler-ui.xml
+%%T%%/lib/visualvm/profiler2/config/Modules/org-netbeans-lib-profiler.xml
+%%T%%/lib/visualvm/profiler2/config/Modules/org-netbeans-modules-profiler.xml
+%%T%%/lib/visualvm/profiler2/config/Services/filters-default.xml
+%%T%%/lib/visualvm/profiler2/config/Services/filtersets-default.xml
+%%T%%/lib/visualvm/profiler2/lib/deployed/jdk15/linux/libprofilerinterface.so
+%%T%%/lib/visualvm/profiler2/lib/deployed/jdk16/linux/libprofilerinterface.so
+%%T%%/lib/visualvm/profiler2/lib/jfluid-server-15.jar
+%%T%%/lib/visualvm/profiler2/lib/jfluid-server.jar
+%%T%%/lib/visualvm/profiler2/modules/docs/org-netbeans-modules-profiler.jar
+%%T%%/lib/visualvm/profiler2/modules/org-netbeans-lib-profiler-common.jar
+%%T%%/lib/visualvm/profiler2/modules/org-netbeans-lib-profiler-ui.jar
+%%T%%/lib/visualvm/profiler2/modules/org-netbeans-lib-profiler.jar
+%%T%%/lib/visualvm/profiler2/modules/org-netbeans-modules-profiler.jar
+%%T%%/lib/visualvm/profiler2/update_tracking/org-netbeans-lib-profiler-common.xml
+%%T%%/lib/visualvm/profiler2/update_tracking/org-netbeans-lib-profiler-ui.xml
+%%T%%/lib/visualvm/profiler2/update_tracking/org-netbeans-lib-profiler.xml
+%%T%%/lib/visualvm/profiler2/update_tracking/org-netbeans-modules-profiler.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-application-views.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-application.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-attach.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-core.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-coredump.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-heapdump.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-host-views.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-host.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jmx.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jvm.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-jvmstat.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-modules-appui.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-profiler.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-sa.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-threaddump.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/com-sun-tools-visualvm-tools.xml
+%%T%%/lib/visualvm/visualvm/config/Modules/org-netbeans-api-visual.xml_hidden
+%%T%%/lib/visualvm/visualvm/config/Modules/org-netbeans-core-execution.xml_hidden
+%%T%%/lib/visualvm/visualvm/config/Modules/org-netbeans-core-output2.xml_hidden
+%%T%%/lib/visualvm/visualvm/config/Modules/org-netbeans-libs-jsr223.xml_hidden
+%%T%%/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-core-kit.xml_hidden
+%%T%%/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-favorites.xml_hidden
+%%T%%/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-options-keymap.xml_hidden
+%%T%%/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-sendopts.xml_hidden
+%%T%%/lib/visualvm/visualvm/config/Modules/org-netbeans-modules-templates.xml_hidden
+%%T%%/lib/visualvm/visualvm/config/Modules/org-openide-compat.xml_hidden
+%%T%%/lib/visualvm/visualvm/config/Modules/org-openide-util-enumerations.xml_hidden
+%%T%%/lib/visualvm/visualvm/core/com-sun-tools-visualvm-modules-startup.jar
+%%T%%/lib/visualvm/visualvm/core/locale/core_visualvm.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application-views.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-attach.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-core.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-coredump.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-heapdump.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-host-views.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-host.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-jmx.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-jvm.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-jvmstat.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-modules-appui.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-profiler.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-sa.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-threaddump.jar
+%%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-tools.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-core-windows_visualvm.jar
+%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-core_visualvm.jar
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application-views.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-attach.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-core.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-coredump.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-heapdump.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-host-views.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-host.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-jmx.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-jvm.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-jvmstat.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-modules-appui.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-modules-startup.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-profiler.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-sa.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-threaddump.xml
+%%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-tools.xml
 %%T%%/man/ja
 %%T%%/man/ja_JP.eucJP/man1/appletviewer.1
 %%T%%/man/ja_JP.eucJP/man1/apt.1
@@ -3806,6 +4040,7 @@
 %%T%%/man/man1/jstack.1
 %%T%%/man/man1/jstat.1
 %%T%%/man/man1/jstatd.1
+%%T%%/man/man1/jvisualvm.1
 %%T%%/man/man1/keytool.1
 %%T%%/man/man1/native2ascii.1
 %%T%%/man/man1/orbd.1
@@ -4175,6 +4410,39 @@
 @dirrm %%T%%/man/ja_JP.eucJP/man1
 @dirrm %%T%%/man/ja_JP.eucJP
 @dirrm %%T%%/man
+@dirrm %%T%%/lib/visualvm/visualvm/update_tracking
+@dirrm %%T%%/lib/visualvm/visualvm/modules/locale
+@dirrm %%T%%/lib/visualvm/visualvm/modules
+@dirrm %%T%%/lib/visualvm/visualvm/core/locale
+@dirrm %%T%%/lib/visualvm/visualvm/core
+@dirrm %%T%%/lib/visualvm/visualvm/config/Modules
+@dirrm %%T%%/lib/visualvm/visualvm/config
+@dirrm %%T%%/lib/visualvm/visualvm
+@dirrm %%T%%/lib/visualvm/profiler2/update_tracking
+@dirrm %%T%%/lib/visualvm/profiler2/modules/docs
+@dirrm %%T%%/lib/visualvm/profiler2/modules
+@dirrm %%T%%/lib/visualvm/profiler2/lib/deployed/jdk16/linux
+@dirrm %%T%%/lib/visualvm/profiler2/lib/deployed/jdk16
+@dirrm %%T%%/lib/visualvm/profiler2/lib/deployed/jdk15/linux
+@dirrm %%T%%/lib/visualvm/profiler2/lib/deployed/jdk15
+@dirrm %%T%%/lib/visualvm/profiler2/lib/deployed
+@dirrm %%T%%/lib/visualvm/profiler2/lib
+@dirrm %%T%%/lib/visualvm/profiler2/config/Services
+@dirrm %%T%%/lib/visualvm/profiler2/config/Modules
+@dirrm %%T%%/lib/visualvm/profiler2/config
+@dirrm %%T%%/lib/visualvm/profiler2
+@dirrm %%T%%/lib/visualvm/platform7/update_tracking
+@dirrm %%T%%/lib/visualvm/platform7/modules/ext
+@dirrm %%T%%/lib/visualvm/platform7/modules
+@dirrm %%T%%/lib/visualvm/platform7/lib
+@dirrm %%T%%/lib/visualvm/platform7/docs
+@dirrm %%T%%/lib/visualvm/platform7/core
+@dirrm %%T%%/lib/visualvm/platform7/config/Modules
+@dirrm %%T%%/lib/visualvm/platform7/config/ModuleAutoDeps
+@dirrm %%T%%/lib/visualvm/platform7/config
+@dirrm %%T%%/lib/visualvm/platform7
+@dirrm %%T%%/lib/visualvm/etc
+@dirrm %%T%%/lib/visualvm
 @dirrm %%T%%/lib
 @dirrm %%T%%/jre/plugin/i386/ns7-gcc29
 @dirrm %%T%%/jre/plugin/i386/ns7
