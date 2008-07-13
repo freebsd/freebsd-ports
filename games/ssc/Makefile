@@ -17,6 +17,9 @@ COMMENT=	An OpenGL arcade space shoot-em-up with interesting physics
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+DEPRECATED=	abandoned upstream, needs gcc32 which is going to be removed
+EXPIRATION_DATE=2008-08-15
+
 USE_BZIP2=	yes
 USE_GCC=	3.2
 USE_GMAKE=	yes
