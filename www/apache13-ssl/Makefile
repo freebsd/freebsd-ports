@@ -9,6 +9,7 @@
 
 PORTNAME=	apache+ssl
 PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_APACHE_SSL:S/$/:ssl/}
@@ -17,10 +18,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}:ssl
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-#PATCH_SITES=		${MASTER_SITE_APACHE_HTTPD}
-#PATCH_SITE_SUBDIR=	patches/apply_to_${APACHE_VERSION}
-#PATCHFILES=
-
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache secure webserver integrating OpenSSL
 
@@ -28,7 +25,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
 		apache+mod_ssl+mod_snmp+mod_accel-1.* \
 		apache+ipv6-1.* apache-1.* apache-2.* apache_fp-1.* \
-		caudium-devel-1.* caudium10-1.* caudium12-* \
+		caudium-devel-1.* caudium10-1.* caudium12-1.* \
 		ru-apache+mod_ssl-1.* ru-apache-1.*
 
 APACHE_VERSION=		1.3.41
@@ -36,12 +33,12 @@ APACHE_SSL_VERSION=	1.59
 USE_OPENSSL=		yes
 USE_PERL5=		yes
 HAS_CONFIGURE=		yes
-USE_RC_SUBR=		yes
-RC_SCRIPTS_SUB=		PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} WWWOWN=${WWWOWN}
+USE_RC_SUBR=		apache
+SUB_LIST+=		WWWOWN=${WWWOWN}
 MAKE_ENV+=		EXAMPLESDIR=${EXAMPLESDIR}
 USE_APACHE=		common13
 
-MASTER_SITES_APACHE_SSL= \
+MASTER_SITES_APACHE_SSL=	\
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
 		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
 		ftp://opensores.thebunker.net/pub/mirrors/apache-ssl/
@@ -100,10 +97,11 @@ post-extract:
 post-patch:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch ${OPENSSLBASE}
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/post-patch-conf:httpd.conf-dist
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache.sh > ${WRKDIR}/apache.sh
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
 		${WRKSRC}/src/Configure
+.if defined(NOPORTDOCS)
+	(cd ${WRKSRC} ; ${PATCH} ${PATCH_ARGS} < ${FILESDIR}/extra-patch-noportdocs)
+.endif
 
 post-install:
 	@${ECHO_CMD} ""
@@ -112,7 +110,6 @@ post-install:
 	@${ECHO_CMD} "  http://www.apache-ssl.org/docs.html"
 	@${ECHO_CMD} " to know how to configure correctly apache-ssl"
 	@${ECHO_CMD} ""
-	@${INSTALL_SCRIPT} ${WRKDIR}/apache.sh ${PREFIX}/etc/rc.d
 
 certificate:
 	-${MKDIR} ${PREFIX}/etc/apache/certs

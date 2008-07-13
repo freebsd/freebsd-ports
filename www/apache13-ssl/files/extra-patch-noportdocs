@@ -1,0 +1,22 @@
+--- Makefile.tmpl.orig	2008-07-01 01:08:04.000000000 +0000
++++ Makefile.tmpl	2008-07-01 01:08:17.000000000 +0000
+@@ -228,7 +228,6 @@
+ 	$(MKDIR) $(root)$(mandir)/man8
+ 	$(MKDIR) $(root)$(sysconfdir)
+ 	$(MKDIR) $(root)$(htdocsdir)-dist
+-	$(MKDIR) $(root)$(manualdir)
+ 	$(MKDIR) $(root)$(iconsdir)
+ 	$(MKDIR) $(root)$(cgidir)-dist
+ 	$(MKDIR) $(root)$(includedir)
+@@ -422,11 +421,6 @@
+ 		(cd $(root)$(htdocsdir)-dist/ && $(TAR) -xf -); \
+ 		find $(root)$(htdocsdir)-dist/ -type d -exec chmod a+rx {} \; ; \
+ 		find $(root)$(htdocsdir)-dist/ -type f -print | xargs chmod a+r ;
+-		echo "Copying tree $(TOP)/htdocs/manual -> $(root)/$(manualdir)/"; \
+-		(cd $(TOP)/htdocs/manual/ && $(TAR) $(TAROPT) - *) |\
+-		(cd $(root)$(manualdir)/ && $(TAR) -xf -); \
+-		find $(root)$(manualdir)/ -type d -exec chmod a+rx {} \; ; \
+-		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ;
+ 	if [ ! -d $(root)$(htdocsdir)/ ]; then \
+ 		$(LN) -sf $(root)$(htdocsdir)-dist $(root)$(htdocsdir); \
+ 	fi

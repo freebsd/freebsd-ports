@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
+# renamed from ports/www/apache13-ssl/files/apache.sh,v 1.2 2006/02/20 20:47:46 dougb Exp
 #
 
 # PROVIDE: apache
