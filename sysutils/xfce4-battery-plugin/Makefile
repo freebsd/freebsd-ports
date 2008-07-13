@@ -15,10 +15,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Battery monitor panel plugin for XFce4
 
-BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
