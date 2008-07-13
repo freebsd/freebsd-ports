@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.6b12
-PORTREVISION=	1
+DISTVERSION=	3.6b15
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -103,8 +102,6 @@ post-patch:
 		${WRKSRC}/src/constants.h
 	@${REINPLACE_CMD} -e 's|mime.types ||g' \
 		${WRKSRC}/config/Makefile.in
-	@${REINPLACE_CMD} -e '/^install-data-am/s|install-docDATA||' \
-		${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
