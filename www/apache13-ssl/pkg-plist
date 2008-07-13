@@ -4,7 +4,6 @@ bin/dbmmanage
 bin/htdigest
 bin/htpasswd
 @exec mkdir -p %D/etc/apache 2> /dev/null
-etc/rc.d/apache.sh
 @unexec if cmp -s %D/etc/apache/access.conf% %D/%%EXAMPLESDIR%%/access.conf-dist; then rm -f %D/etc/apache/access.conf%; fi
 %%EXAMPLESDIR%%/access.conf-dist
 @exec [ -f %D/etc/apache/access.conf% ] || cp %D/%%EXAMPLESDIR%%/access.conf-dist %D/etc/apache/access.conf
@@ -660,13 +659,13 @@ www/icons/world2.png
 @dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/howto
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/images
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/misc
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/mod
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/programs
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/vhosts
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/howto
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/programs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/vhosts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
 @unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
 @dirrm www/cgi-bin-dist
