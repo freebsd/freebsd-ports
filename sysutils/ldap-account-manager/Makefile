@@ -7,72 +7,54 @@
 
 PORTNAME=	ldap-account-manager
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils www
-MASTER_SITES=	SF/lam
+MASTER_SITES=	SF/${PNAME}
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
 MAINTAINER=	basil@vpm.net.ua
 COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota\
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 
+NO_BUILD=	yes
+USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_PHP=	pcre xml gettext session mcrypt ldap mhash iconv
 WANT_PHP_WEB=	yes
-NO_BUILD=	YES
-WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
-BROKEN=		bad plist
-
-WWW_ROOT?=	www/lam
-PKGINSTALL=	${WRKDIR}/pkg-install
-PLIST_SUB+=	WWWROOT=${WWW_ROOT}
-WWW_DATA=	index.html VERSION config graphics help lib locale sess style templates tmp
+PNAME=		lam
+PORTDOCS=	docs COPYING HISTORY INSTALL README
+LAMDATA=	index.html VERSION config graphics help lib locale sess style templates tmp
+WWWDIR?=	${PREFIX}/www/${PNAME}
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-MYPORTDOCS=	COPYING HISTORY INSTALL README copyright \
-		docs/README.Kolab.txt docs/README.fpdf.htm \
-		docs/README.hosts.txt docs/README.lamdaemon.txt \
-		docs/README.openldap.txt docs/README.schema.txt \
-		docs/README.security.txt docs/README.upgrade.txt
-
-LAM_SCRIPTS=	lib/lamdaemon.pl
-HTMLPORTDOCS=	docs/devel
 
 do-configure:
 	@${RM} ${WRKSRC}/config/shells
 
 do-install:
-	@${MKDIR} ${PREFIX}/${WWW_ROOT}
-	@cd ${WRKSRC} && ${TAR} cf - ${WWW_DATA} | ${TAR} xf - -C ${PREFIX}/${WWW_ROOT}
+	-@${MKDIR} ${WWWDIR}
+.for i in ${LAMDATA}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
+.endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${TAR} cf - ${MYPORTDOCS} | ${TAR} xf - -C ${DOCSDIR}
-	@${MKDIR} ${PREFIX}/${WWW_ROOT}/html
-	cd ${WRKSRC} && ${TAR} -C ${HTMLPORTDOCS} -cf - . | ${TAR} xf - -C ${PREFIX}/${WWW_ROOT}/html
+	-@${MKDIR} ${DOCSDIR}
+.for j in ${PORTDOCS}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${j} ${DOCSDIR}
+.endfor
 .endif
-
-	@${MKDIR} ${PREFIX}/${WWW_ROOT}/tmp
-	@[ -e ${PREFIX}/${WWW_ROOT}/config/config.cfg ] || \
-		${INSTALL_DATA} ${WRKSRC}/config/config.cfg_sample ${PREFIX}/${WWW_ROOT}/config/config.cfg
-	@[ -e ${PREFIX}/${WWW_ROOT}/config/lam.conf ] || \
-		${INSTALL_DATA} ${WRKSRC}/config/lam.conf_sample ${PREFIX}/${WWW_ROOT}/config/lam.conf
-
-post-patch:
-	@${SED} -e "s;%%WWWOWN%%;${WWWOWN};g" \
-		-e "s;%%WWWGRP%%;${WWWGRP};g" \
-		-e "s;%%WWW_ROOT%%;${WWW_ROOT};g" \
-		${.CURDIR}/pkg-install > ${PKGINSTALL}
+	@[ -e ${WWWDIR}/config/config.cfg ] || ${INSTALL_DATA} ${WRKSRC}/config/config.cfg_sample ${WWWDIR}/config/config.cfg
+	@[ -e ${WWWDIR}/config/lam.conf   ] || ${INSTALL_DATA} ${WRKSRC}/config/lam.conf_sample   ${WWWDIR}/config/lam.conf
 
 post-install:
 	@${ECHO_MSG} "===> Setting correct permissions"
-	@${FIND} ${PREFIX}/${WWW_ROOT} -type f -exec ${CHMOD} 644 {} \;
-	@${FIND} ${PREFIX}/${WWW_ROOT} -type d -exec ${CHMOD} 755 {} \;
-	@cd ${PREFIX}/${WWW_ROOT} ; ${CHMOD} 755 ${LAM_SCRIPTS}
-	@${LN} -sf /etc/shells ${PREFIX}/${WWW_ROOT}/config/shells
-	@PKG_PREFIX=${PREFIX} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} WWW_ROOT=${WWW_ROOT} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${FIND} ${WWWDIR} -type f -exec ${CHMOD} 644 {} \;
+	@${FIND} ${WWWDIR} -type d -exec ${CHMOD} 755 {} \;
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/config ${WWWDIR}/sess ${WWWDIR}/tmp
+	@${LN} -sf /etc/shells ${WWWDIR}/config/shells
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
