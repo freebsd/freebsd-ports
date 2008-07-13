@@ -113,6 +113,10 @@ OPTIONS=	OPTIMIZATION "Build with optimizations" on
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800032
+BROKEN=		does not compile
+.endif
+
 EXTRA_LIBS=	${PTHREAD_LIBS}
 
 .ifdef WITH_OPTIMIZATION
@@ -130,5 +134,8 @@ pre-install:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mged.sh ${PREFIX}/bin/mged.sh
 	${LN} -s ${PREFIX}/bin/mged.sh ${LOCALBASE}/bin/mged.sh
+
+regression-test: build
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} test)
 
 .include <bsd.port.post.mk>
