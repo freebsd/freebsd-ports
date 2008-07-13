@@ -81,14 +81,14 @@ bin/gfserver
 %%PORTDOCS%%%%DOCSDIR%%/recover.txt
 %%PORTDOCS%%%%DOCSDIR%%/sql.txt
 %%PORTDOCS%%%%DOCSDIR%%/structure.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/DLispShort.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/DumbLispGen.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/idl.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/pygram.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/pylint.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/kjParsing/relalg.py
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/kjParsing
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kjParsing/DLispShort.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kjParsing/DumbLispGen.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kjParsing/idl.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kjParsing/pygram.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kjParsing/pylint.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kjParsing/relalg.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kjParsing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gadfly/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/gadfly
