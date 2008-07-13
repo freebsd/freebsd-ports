@@ -7,7 +7,7 @@
 
 PORTNAME=	cegui
 PORTVERSION=	0.6.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=crayzedsgui
@@ -25,14 +25,14 @@ CONFIGURE_ARGS=	--enable-toluacegui --disable-irrlicht-renderer \
 		--disable-corona --enable-devil --disable-freeimage --disable-silly \
 		--disable-libxml --disable-xerces-c --disable-expat
 
-CONFIGURE_ENV+=	Lua_LIBS="-L${LUA_LIBDIR} -llua -llualib -lm" \
+CONFIGURE_ENV+=	Lua_LIBS="-L${LUA_LIBDIR} -llua -lm" \
 		Lua_CFLAGS="-I${LUA_INCDIR}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}"
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GL=		yes
-USE_LUA=	5.0
+USE_LUA=	5.1
 USE_GNOME=	gnomehack
 
 .if !defined(NOPORTDOCS)
