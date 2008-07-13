@@ -18,6 +18,8 @@ PKGNAMESUFFIX?=	-devel
 MAINTAINER?=	thierry@FreeBSD.org
 COMMENT?=	Utility to clean up and pretty print HTML/XHTML/XML
 
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+
 USE_BZIP2=	yes
 
 SLAVEDIRS=	www/tidy-lib
@@ -46,7 +48,6 @@ MAN1=		tidy.1
 
 .if !defined(NOPORTDOCS)
 . if !defined(WITH_SHLIB)
-BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
 ALL_TARGET=	all doc
 DOCFILES=	quickref.html
 . endif
