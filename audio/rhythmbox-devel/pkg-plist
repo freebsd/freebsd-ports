@@ -522,8 +522,8 @@ share/rhythmbox/icons/hicolor/22x22/places/library-internet-radio.png
 share/rhythmbox/icons/hicolor/22x22/places/library-podcast.png
 share/rhythmbox/icons/hicolor/22x22/places/playlist-automatic.png
 share/rhythmbox/icons/hicolor/22x22/places/playlist.png
-share/rhythmbox/icons/hicolor/24x24/places/jamendo.png
-share/rhythmbox/icons/hicolor/24x24/places/magnatune.png
+%%PYTHON%%share/rhythmbox/icons/hicolor/24x24/places/jamendo.png
+%%PYTHON%%share/rhythmbox/icons/hicolor/24x24/places/magnatune.png
 share/rhythmbox/icons/hicolor/22x22/status/rhythmbox-notplaying.png
 share/rhythmbox/icons/hicolor/32x32/actions/internet-radio-new.png
 share/rhythmbox/icons/hicolor/32x32/actions/playlist-automatic-new.png
@@ -549,8 +549,8 @@ share/rhythmbox/rhythmbox-ui.xml
 @dirrm share/rhythmbox/icons/hicolor/32x32/places
 @dirrm share/rhythmbox/icons/hicolor/32x32/actions
 @dirrm share/rhythmbox/icons/hicolor/32x32
-@dirrm share/rhythmbox/icons/hicolor/24x24/places
-@dirrm share/rhythmbox/icons/hicolor/24x24
+%%PYTHON%%@dirrm share/rhythmbox/icons/hicolor/24x24/places
+%%PYTHON%%@dirrm share/rhythmbox/icons/hicolor/24x24
 @dirrm share/rhythmbox/icons/hicolor/22x22/status
 @dirrm share/rhythmbox/icons/hicolor/22x22/places
 @dirrm share/rhythmbox/icons/hicolor/22x22/actions
