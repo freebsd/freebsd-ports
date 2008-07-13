@@ -7,15 +7,16 @@
 
 PORTNAME=	qtiplot
 DISTVERSION=	0.9.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An Origin clone for data analysis and scientific plotting
 
+RUN_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
+
 LIB_DEPENDS=	gsl.12:${PORTSDIR}/math/gsl \
-		muparser.0:${PORTSDIR}/math/muparser \
 		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4 \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
