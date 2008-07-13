@@ -25,7 +25,6 @@ CONFIGURE_ARGS+=	--enable-samples=no
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 .endif
-USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
 WRKSRC=	${WRKDIR}/muparser
