@@ -5,11 +5,11 @@ etc/ember/ogre.cfg
 etc/ember/resources.cfg
 etc/ember/terrain.cfg
 share/applications/ember.desktop
-share/doc/ember/AUTHORS
-share/doc/ember/COPYING
-share/doc/ember/ChangeLog
-share/doc/ember/README
-share/doc/ember/TODO
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/ember/carpenter/blockspec/adapters.blockspec.xml
 share/ember/carpenter/blockspec/fences.blockspec.xml
 share/ember/carpenter/blockspec/floors.blockspec.xml
@@ -1135,8 +1135,7 @@ share/ember/user/wfut.xml
 share/icons/worldforge/ember.png
 @dirrm etc/ember
 @dirrmtry share/applications
-@dirrm share/doc/ember
-@dirrmtry share/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/ember/carpenter/blockspec
 @dirrm share/ember/carpenter/blueprints
 @dirrm share/ember/carpenter/modelblockspecs
