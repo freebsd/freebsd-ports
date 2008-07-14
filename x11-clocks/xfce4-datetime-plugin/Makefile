@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-datetime-plugin
-PORTVERSION=	0.5.0
-PORTREVISION=	5
+PORTVERSION=	0.6.0
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -16,6 +15,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A datetime plugin for xfce
 
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
