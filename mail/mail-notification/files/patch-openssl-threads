@@ -1,0 +1,11 @@
+--- jbsrc/lib/src/extras/jb-openssl.c.orig	2008-04-27 16:47:43.000000000 +0200
++++ jbsrc/lib/src/extras/jb-openssl.c	2008-07-10 22:48:53.000000000 +0200
+@@ -91,7 +91,7 @@
+   result = jb_test_compile_string("#define OPENSSL_THREAD_DEFINES\n"
+ 				  "#include <openssl/opensslconf.h>\n"
+ 				  "int main () {\n"
+-				  "#ifndef OPENSSL_THREADS\n"
++				  "#if !defined(OPENSSL_THREADS) && !defined(THREADS)\n"
+ 				  "#error \"no thread support\"\n"
+ 				  "#endif\n"
+ 				  "}\n",
