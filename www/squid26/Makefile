@@ -112,7 +112,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
 
-LATEST_LINK=	squd26
+LATEST_LINK=	squid26
 
 CONFLICTS=	squid-2.[^6]* squid-3.* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
