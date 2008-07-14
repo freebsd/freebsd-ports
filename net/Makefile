@@ -766,6 +766,7 @@
     SUBDIR += quagga
     SUBDIR += queso
     SUBDIR += quoted
+    SUBDIR += rabbitmq
     SUBDIR += raddump
     SUBDIR += radiator
     SUBDIR += radiusclient
