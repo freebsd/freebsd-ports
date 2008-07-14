@@ -7,7 +7,7 @@
 
 CATEGORIES?=	chinese net games
 
-MAINTAINER=	foxfair@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../net/tintin++-devel
 
