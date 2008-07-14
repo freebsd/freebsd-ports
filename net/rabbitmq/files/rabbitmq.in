@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# rabbitmq for rc.d usage
+# $Id$
+
+# PROVIDE: rabbitmq
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable RabitMQ
+#
+#  rabbitmq_enable="YES"
+
+. "%%RC_SUBR%%"
+
+# Set some defaults
+rabbitmq_enable=${rabbitmq_enable:-"NO"}
+
+name=rabbitmq
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+rabbitmq_start()
+{
+	rabbitmq-server -detached
+	echo "RabbitMQ started"
+}
+
+rabbitmq_stop()
+{
+	rabbitmqctl stop
+}
+
+rcvar=`set_rcvar`
+load_rc_config $name
+
+
+
+run_rc_command "$1"
