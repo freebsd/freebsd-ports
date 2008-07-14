@@ -1,0 +1,13 @@
+--- doc/Makefile.in.orig	2008-07-10 19:10:25.000000000 +0800
++++ doc/Makefile.in	2008-07-10 19:13:51.000000000 +0800
+@@ -909,8 +909,8 @@
+ @OS_IS_FINK_FALSE@	$(INSTALL_DATA)    $(srcdir)/../doc/gri.info*      $(INFO_DIR)
+ @OS_IS_FINK_TRUE@	@echo "DEBUG: The OS is fink"
+ #	This is handled by gri.spec [2003-may-31 Dan Kelley]
+-@OS_IS_LINUX_REDHAT_FALSE@	gzip $(MAN_DIR)/gri_merge.1
+-@OS_IS_LINUX_REDHAT_FALSE@	gzip $(MAN_DIR)/gri_unpage.1
++@OS_IS_LINUX_REDHAT_FALSE@@OS_IS_FREEBSD_FALSE@	gzip $(MAN_DIR)/gri_merge.1
++@OS_IS_LINUX_REDHAT_FALSE@@OS_IS_FREEBSD_FALSE@	gzip $(MAN_DIR)/gri_unpage.1
+ @OS_IS_FINK_FALSE@@OS_IS_LINUX_REDHAT_FALSE@	cd  $(INFO_DIR) ; gzip -f --best gri.info*
+ 
+ uninstall-local:
