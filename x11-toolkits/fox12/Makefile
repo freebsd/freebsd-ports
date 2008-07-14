@@ -7,7 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -53,7 +53,7 @@ OPTIONS=	XFT	"Enable Xft support" on \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
+CPPFLAGS+=	-ffriend-injection
 .endif
 
 ##
