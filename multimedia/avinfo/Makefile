@@ -19,7 +19,7 @@ COMMENT=	A utility for displaying AVI header information
 USE_GMAKE=	yes
 USE_BISON=	build
 
-#WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/avinfo
 
