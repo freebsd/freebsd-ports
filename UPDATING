@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080712:
+  AFFECTS: users of databases/rrdtool
+  AUTHOR: rafan@FreeBSD.org
+
+  If you use language bindings, like the Perl's RRDs, please upgrade
+  this port *twice* in order to get the library dependency right.
+
 20080711:
   AFFECTS: users of x11-toolkits/gtkdatabox2
   AUTHOR: Beech Rintoul <beech@FreeBSD.org>
