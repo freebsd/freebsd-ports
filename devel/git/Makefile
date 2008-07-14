@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.6.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -158,6 +158,9 @@ MAN5=		gitattributes.5 \
 		gitignore.5 \
 		gitmodules.5
 
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes
@@ -177,11 +180,12 @@ USE_RC_SUBR=	git_daemon
 SHELLS=		/etc/shells
 
 OPTIONS=	GUI "Enable building of GUI tools" on \
-		SVN "Enable required dependencies for SVN tools" off
+		SVN "Enable required dependencies for SVN tools" off \
+		GITWEB "Install gitweb" off
 
 .include <bsd.port.pre.mk>
 
-.ifndef WITHOUT_GUI
+.ifndef (WITHOUT_GUI)
 MAN1+=		git-citool.1 \
 		git-gui.1 \
 		gitk.1
@@ -193,9 +197,15 @@ PLIST_SUB+=	GUI="@comment "
 MAKE_ENV+=	NO_TCLTK=yes
 .endif
 
-.ifdef WITH_SVN
+.ifdef (WITH_SVN)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		svn:${PORTSDIR}/devel/subversion
+.endif
+
+.ifdef (WITH_GITWEB)
+PLIST_SUB+=	GITWEB=""
+.else
+PLIST_SUB+=	GITWEB="@comment "
 .endif
 
 pre-patch:
@@ -236,11 +246,25 @@ post-install:
 		${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/fast-import/git-p4 \
 		${PREFIX}/bin/
+.ifdef (WITH_GITWEB)
+	@${ECHO_MSG} "===> Installing gitweb files"
+	${MKDIR} ${EXAMPLESDIR}/gitweb
+	${INSTALL_DATA} ${WRKSRC}/gitweb/INSTALL ${EXAMPLESDIR}/gitweb/
+	${INSTALL_DATA} ${WRKSRC}/gitweb/README ${EXAMPLESDIR}/gitweb/
+	${INSTALL_DATA} ${WRKSRC}/gitweb/git-favicon.png ${EXAMPLESDIR}/gitweb/
+	${INSTALL_DATA} ${WRKSRC}/gitweb/git-logo.png ${EXAMPLESDIR}/gitweb/
+	${INSTALL_DATA} ${WRKSRC}/gitweb/gitweb.css ${EXAMPLESDIR}/gitweb/
+	${INSTALL_SCRIPT} ${WRKSRC}/gitweb/gitweb.cgi ${EXAMPLESDIR}/gitweb/
+.endif
 
 	@${ECHO_MSG} "===> Updating ${SHELLS}"
 	@${CP} ${SHELLS} ${SHELLS}.bak
 	@(${GREP} -v ${PREFIX}/bin/git-shell ${SHELLS}.bak; \
 	  ${ECHO_CMD} ${PREFIX}/bin/git-shell) > ${SHELLS}
 	@${RM} ${SHELLS}.bak
+
+.ifdef (WITH_GITWEB)
+	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
