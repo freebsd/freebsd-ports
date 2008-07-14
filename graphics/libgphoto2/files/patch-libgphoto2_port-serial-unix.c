@@ -8,17 +8,3 @@
  #include <sys/stat.h>
  #include <sys/types.h>
  #ifdef HAVE_SYS_TIME_H
-@@ -348,11 +349,11 @@
- 		/* resmgr has its own API, which calls to a server and
- 		 * communicates over UNIX domain sockets.
- 		 */
--		fd = rsm_open_device(path, O_RDONLY | O_NDELAY);
-+		fd = rsm_open_device(path, O_RDONLY | O_NONBLOCK);
- 		/* fall through to standard open if this failed */
- #endif
- 		if (fd == -1)
--			fd = open (path, O_RDONLY | O_NDELAY);
-+			fd = open (path, O_RDONLY | O_NONBLOCK);
- 		if (fd < 0) {
- 			gp_port_serial_unlock (NULL, path);
- 			continue;
