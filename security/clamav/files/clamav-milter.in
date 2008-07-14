@@ -36,8 +36,12 @@ start_precmd()
 		rm "$clamav_milter_socket"
 	fi
 	rc_flags="--pidfile ${pidfile} ${flags:-$clamav_milter_flags} $clamav_milter_socket"
+
+	clamav_clamd_socket_prefix=${clamav_clamd_socket%:*}
+	# We can have inet or inet6, try to remove 6
+	clamav_clamd_socket_prefix=${clamav_clamd_socket_prefix%6}
 	
-	if checkyesno clamav_clamd_enable && [ "x$clamav_clamd_socket" != "x" ]; then
+	if checkyesno clamav_clamd_enable && [ "x$clamav_clamd_socket" != "x" -a "${clamav_clamd_socket_prefix}" != "inet" ]; then
 		echo -n "Waiting for clamd socket.. "
 		i=${clamav_milter_socktimeout}
 		while [ $i -ne 0 ]
@@ -59,23 +63,29 @@ start_precmd()
 
 start_postcmd()
 {
-	echo -n "Waiting for clamav-milter socket.. "
-	i=${clamav_milter_socktimeout}
-	while [ $i -ne 0 ]
-	do
-		[ -S "$clamav_milter_socket" ] && break
-		if [ `expr $i % 10` -eq 0 ]; then
-			echo -n "${i}.. "
+	clamav_milter_socket_prefix=${clamav_milter_socket%:*}
+	# We can have inet or inet6, try to remove 6
+	clamav_milter_socket_prefix=${clamav_milter_socket_prefix%6}
+	
+	if [ "x$clamav_milter_socket" != "x" -a "${clamav_milter_socket_prefix}" != "inet" ]; then
+		echo -n "Waiting for clamav-milter socket.. "
+		i=${clamav_milter_socktimeout}
+		while [ $i -ne 0 ]
+		do
+			[ -S "$clamav_milter_socket" ] && break
+			if [ `expr $i % 10` -eq 0 ]; then
+				echo -n "${i}.. "
+			fi
+			sleep 1
+			i=$(($i-1))
+		done
+		echo
+		if [ $i -eq 0 ]; then
+			echo "There is no clamav-milter socket (${clamav_clamd_socket})!"
+			exit 1
 		fi
-		sleep 1
-		i=$(($i-1))
-	done
-	echo
-	if [ $i -eq 0 ]; then
-		echo "There is no clamav-milter socket (${clamav_clamd_socket})!"
-		exit 1
+		/bin/chmod ${clamav_milter_socket_mode} ${clamav_milter_socket}
 	fi
-	/bin/chmod ${clamav_milter_socket_mode} ${clamav_milter_socket}
 }
 
 # read settings, set default values
