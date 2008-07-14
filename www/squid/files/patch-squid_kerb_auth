@@ -3,13 +3,9 @@ compilation of the squid_kerb_auth authentication helper program on
 all versions of FreeBSD that are currently supported by the FreeBSD
 ports framework where Heimdal is part of the base system.
 
-In order to have it applied before the icap26-boostrap.patch it is
-not merged into patch-configure. See the port's Makefile for further
-explanation.
-
---- configure	2008-04-25 21:49:52.000000000 +0200
-+++ configure	2008-05-26 15:19:54.000000000 +0200
-@@ -753,10 +753,13 @@
+--- configure.orig	2008-06-26 00:18:55.000000000 +0200
++++ configure	2008-07-06 17:45:05.000000000 +0200
+@@ -751,10 +751,13 @@
  NTLM_AUTH_HELPERS
  DIGEST_AUTH_HELPERS
  NEGOTIATE_AUTH_HELPERS
@@ -24,7 +20,7 @@ explanation.
  LIBSASL
  ENABLE_UNLINKD_TRUE
  ENABLE_UNLINKD_FALSE
-@@ -5591,50 +5594,59 @@
+@@ -5593,50 +5596,59 @@
  fi
  
  
@@ -119,7 +115,7 @@ explanation.
  
  ac_ext=c
  ac_cpp='$CPP $CPPFLAGS'
-@@ -6273,6 +6285,349 @@
+@@ -6275,6 +6287,349 @@
  
  
  
@@ -469,7 +465,7 @@ explanation.
  
  for ac_header in sasl/sasl.h sasl.h
  do
-@@ -27733,10 +28088,13 @@
+@@ -28245,10 +28600,13 @@
  NTLM_AUTH_HELPERS!$NTLM_AUTH_HELPERS$ac_delim
  DIGEST_AUTH_HELPERS!$DIGEST_AUTH_HELPERS$ac_delim
  NEGOTIATE_AUTH_HELPERS!$NEGOTIATE_AUTH_HELPERS$ac_delim
@@ -484,18 +480,18 @@ explanation.
  LIBSASL!$LIBSASL$ac_delim
  ENABLE_UNLINKD_TRUE!$ENABLE_UNLINKD_TRUE$ac_delim
  ENABLE_UNLINKD_FALSE!$ENABLE_UNLINKD_FALSE$ac_delim
-@@ -27784,7 +28142,7 @@
+@@ -28296,7 +28654,7 @@
  LTLIBOBJS!$LTLIBOBJS$ac_delim
  _ACEOF
  
--  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 89; then
-+  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 92; then
+-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 87; then
++  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 90; then
      break
    elif $ac_last_try; then
      { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
---- include/autoconf.h.in.orig	2007-09-02 02:14:59.000000000 +0200
-+++ include/autoconf.h.in	2008-05-26 14:16:26.000000000 +0200
-@@ -155,6 +155,12 @@
+--- include/autoconf.h.in.orig	2008-06-05 02:18:07.000000000 +0200
++++ include/autoconf.h.in	2008-07-06 17:45:05.000000000 +0200
+@@ -161,6 +161,12 @@
  /* Define to 1 if you have the <grp.h> header file. */
  #undef HAVE_GRP_H
  
@@ -507,9 +503,9 @@ explanation.
 +
  /* Define to 1 if you have the `initgroups' function. */
  #undef HAVE_INITGROUPS
-
---- helpers/negotiate_auth/squid_kerb_auth/Makefile.in.orig	2008-05-17 18:06:10.000000000 +0200
-+++ helpers/negotiate_auth/squid_kerb_auth/Makefile.in	2008-05-17 18:40:15.000000000 +0200
+ 
+--- helpers/negotiate_auth/squid_kerb_auth/Makefile.in.orig	2007-11-12 02:14:15.000000000 +0100
++++ helpers/negotiate_auth/squid_kerb_auth/Makefile.in	2008-07-06 17:45:05.000000000 +0200
 @@ -130,6 +130,18 @@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_SCRIPT = @INSTALL_SCRIPT@
@@ -529,7 +525,7 @@ explanation.
  LDFLAGS = @LDFLAGS@
  LIBDLMALLOC = @LIBDLMALLOC@
  LIBOBJS = @LIBOBJS@
-@@ -267,15 +279,6 @@
+@@ -265,15 +277,6 @@
  squid_kerb_auth_SOURCES = $(SOURCE) $(SPNEGO)
  #-I$(top_srcdir)/include -I$(top_srcdir)/src
  LDADD = $(KERBLIBS)
@@ -545,8 +541,8 @@ explanation.
  all: all-am
  
  .SUFFIXES:
---- helpers/negotiate_auth/squid_kerb_auth/squid_kerb_auth.c.orig	2008-03-18 00:33:00.000000000 +0100
-+++ helpers/negotiate_auth/squid_kerb_auth/squid_kerb_auth.c	2008-05-26 15:29:56.000000000 +0200
+--- helpers/negotiate_auth/squid_kerb_auth/squid_kerb_auth.c.orig	2008-02-24 20:18:53.000000000 +0100
++++ helpers/negotiate_auth/squid_kerb_auth/squid_kerb_auth.c	2008-07-06 17:45:05.000000000 +0200
 @@ -24,6 +24,7 @@
  /*
   * Hosted at http://sourceforge.net/projects/squidkerbauth

@@ -14,17 +14,13 @@
        proxy service. Edit the "http_access" directives in
        %%PREFIX%%/etc/squid/squid.conf to suit your needs.
 
-     Please note that the Squid start script is an rc.d style script.
-     This means that Squid will not start automatically at boot
-     time unless it is explicitly enabled.
-
      To enable Squid, set squid_enable=yes in either
      /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid
      Please see %%PREFIX%%/etc/rc.d/squid for further details.
 
      Note:
-     If you just updated your Squid installation from 2.5 or earlier,
-     make sure to check your Squid configuration against the 2.6 default
+     If you just updated your Squid installation from 2.6 or earlier,
+     make sure to check your Squid configuration against the 2.7 default
      configuration file %%PREFIX%%/etc/squid/squid.conf.default.
 
      Additionally, you should check your configuration by calling

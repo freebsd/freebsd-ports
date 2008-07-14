@@ -75,7 +75,7 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.21
+PORTVERSION=	2.7.${SQUID_STABLE_VER}
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -85,17 +85,17 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/www/Squid/%SUBDIR%/ \
 		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,} \
-		http://www.squid-cache.org/Versions/v2/2.6/ \
-		http://www3.us.squid-cache.org/Versions/v2/2.6/ \
-		http://www1.at.squid-cache.org/Versions/v2/2.6/ \
-		http://www2.nl.squid-cache.org/Versions/v2/2.6/ \
-		http://www1.ru.squid-cache.org/Versions/v2/2.6/ \
-		http://www1.uk.squid-cache.org/Versions/v2/2.6/ \
-		http://www1.jp.squid-cache.org/Versions/v2/2.6/ \
-		http://www2.tw.squid-cache.org/Versions/v2/2.6/
+		http://www.squid-cache.org/Versions/v2/2.7/ \
+		http://www3.us.squid-cache.org/Versions/v2/2.7/ \
+		http://www1.at.squid-cache.org/Versions/v2/2.7/ \
+		http://www2.nl.squid-cache.org/Versions/v2/2.7/ \
+		http://www1.ru.squid-cache.org/Versions/v2/2.7/ \
+		http://www1.uk.squid-cache.org/Versions/v2/2.7/ \
+		http://www1.jp.squid-cache.org/Versions/v2/2.7/ \
+		http://www2.tw.squid-cache.org/Versions/v2/2.7/
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE21
-DIST_SUBDIR=	squid2.6
+DISTNAME=	squid-2.7.STABLE${SQUID_STABLE_VER}
+DIST_SUBDIR=	squid2.7
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www3.us.squid-cache.org/%SUBDIR%/ \
@@ -105,14 +105,16 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.uk.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
-PATCH_SITE_SUBDIR=	Versions/v2/2.6/changesets
+PATCH_SITE_SUBDIR=	Versions/v2/2.7/changesets
 PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
 
-CONFLICTS=	squid-2.[^6]* squid-3.* cacheboy-[0-9]*
+SQUID_STABLE_VER=	3
+
+CONFLICTS=	squid-2.[^7]* squid-3.* cacheboy-[0-9]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -149,7 +151,6 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_PF "Enable transparent proxying with PF" off \
 		SQUID_IPFILTER "Enable transp. proxying with IPFilter" off \
 		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
-		SQUID_ICAP "Enable ICAP client functionality" off \
 		SQUID_AUFS "Enable the aufs storage scheme" off \
 		SQUID_COSS "Enable the COSS storage scheme" off \
 		SQUID_KQUEUE "Use kqueue(2) instead of poll(2)" on \
@@ -183,7 +184,7 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
 
 libexec=	cachemgr.cgi digest_pw_auth diskd-daemon \
-		ip_user_check \
+		ip_user_check logfile-daemon \
 		msnt_auth ncsa_auth ntlm_auth \
 		pam_auth smb_auth smb_auth.sh squid_db_auth squid_session \
 		squid_unix_group wbinfo_group.pl
@@ -246,23 +247,15 @@ CONFIGURE_ARGS+=	--enable-auth="basic digest negotiate ntlm" \
 CONFIGURE_ARGS+=	--enable-negotiate-auth-helpers="squid_kerb_auth"
 libexec+=	squid_kerb_auth
 .endif
-# XXX: this is a bit misleading: this patch fixes compilation of
-#      squid_kerb_auth on 8-CURRENT after the import of Heimdal 1.1 and
-#      it needs to be applied before the ICAP bootstrap patch in any case
-#      because the ICAP patch relies on changes to the configure script
-#      that are made by this patch. Because patches are applied in alphabe-
-#      tical order, sneak it in front of the ICAP bootstrap patch by (ab)using
-#      EXTRA_PATCHES: (Note: this patch is a no-op in the NO_KERBEROS case and
-#      should not break compilation in this case.)
-EXTRA_PATCHES+=	${PATCHDIR}/fix-kerberos.patch
 
 # Storage schemes:
 
 storage_schemes=	ufs diskd null
 .if defined(WITH_SQUID_AUFS)
 storage_schemes+=	aufs
-.if ${OSVERSION}>=501000
-# Only document libmap.conf where it is available:
+.if ${OSVERSION}>=501000 && ${OSVERSION}<700055
+# Only document libmap.conf for releases where it may be needed to
+# switch from libpthread (aka libkse) to libthr:
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src-cf.data.pre.aufs
 .endif
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS
@@ -344,31 +337,15 @@ CONFIGURE_ARGS+=	--enable-arp-acl
 .endif
 .if defined(WITH_SQUID_PF)
 CONFIGURE_ARGS+=	--enable-pf-transparent
-.if ${OSVERSION} < 502106
-IGNORE=		pf available only in FreeBSD 5.3 and newer
 .endif
-.endif
-# IPFilter-headers are not installed on FreeBSD 4 since 4.7-RELEASE,
-# they were not installed on FreeBSD 5 from 2002-03-26 (OSVERSION > 500032) to
-# 2003-06-27 (OSVERSION < 501101).
-#
-# Please see PR misc/44148 and the CVS log of src/include/Makefile for further
-# information.
 .if defined(WITH_SQUID_IPFILTER)
-.if (${OSVERSION} > 500032 && ${OSVERSION} < 501101)
-IGNORE=		the IPFilter headers are not part of the base system
-.else
 CONFIGURE_ARGS+=	--enable-ipf-transparent
-.endif
 .endif
 .if defined(WITH_SQUID_FOLLOW_XFF)
 CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
 .endif
 .if defined(WITH_SQUID_ICAP)
-EXTRA_PATCHES+=		${PATCHDIR}/icap-2.6-bootstrap.patch \
-			${PATCHDIR}/icap-2.6-core.patch
-CONFIGURE_ARGS+=	--enable-icap-support
-error_files+=		ERR_ICAP_FAILURE
+IGNORE=		does not have working ICAP support anymore -- please use Squid 3.x if you need ICAP. Please remove WITH_SQUID_ICAP from your make environment
 .endif
 .if defined(WITHOUT_SQUID_KQUEUE)
 CONFIGURE_ARGS+=	--disable-kqueue
