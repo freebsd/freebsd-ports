@@ -7,6 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/0.7/0.7.2/ \
 		LOCAL/beech
@@ -73,6 +74,16 @@ post-patch:
 		s:#.*Group.*nogroup:Group www:g; \
 		s:#.*PollMethod.*poll:PollMethod kqueue:g' \
 		$$i > $${i%.pre};done
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/admin/server.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/contrib/05to06.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/contrib/06to07.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/qa/fcgi.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/qa/run-tests.py	
 
 post-install:
 	@${INSTALL} -d ${CONFSUBDIRS:S|^|${PREFIX}/etc/cherokee/|}
