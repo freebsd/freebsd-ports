@@ -13,6 +13,9 @@ MASTER_SITES=	http://freshdns.net/rainbowcrack/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
 
+DEPRECATED=	Software was abandoned by author and master site has disappeared.
+EXPIRATION_DATE=	2008-09-13
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
