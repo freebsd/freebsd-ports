@@ -35,6 +35,7 @@ pre-everything::
 	@${ECHO_MSG} "WARNING: The on-disk structure of the databases has"
 	@${ECHO_MSG} "changed since version 2.2.x."
 	@${ECHO_MSG} "Cancel this installation now and export your databases"
-	@${ECHO_MSG} "to a generic format as gedcom if you have not already done so."
+	@${ECHO_MSG} "to GRAMPS XML file format as gedcom if you have not"
+	@${ECHO_MSG} "already have done so."
 
 .include <bsd.port.post.mk>
