@@ -7,7 +7,7 @@
 
 PORTNAME=	gnokii
 PORTVERSION=	0.6.26
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE} --enable-security \
@@ -31,6 +32,7 @@ CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -fPIC" \
 		LIBS="-L../common -L${LOCALBASE}/lib" \
 		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PKGDEINSTALL=	${PKGINSTALL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -92,6 +94,7 @@ CONFIGURE_ARGS+=	--disable-smsd
 .else
 PLIST_SUB+=	SMSD=''
 MAN8+=		smsd.8
+USE_GNOME+=	glib20
 .if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so) && !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
 PLIST_SUB+=	MSM=''
@@ -113,19 +116,11 @@ CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11='@comment '
 .else
 USE_XORG=	xpm
-USE_GNOME+=	gtk20 libgnome
+USE_GNOME+=	glib20 gtk20 libgnome
 PLIST_SUB+=	X11=''
 .if !defined(NOPORTDOCS)
 MAN1+=		xgnokii.1
 .endif
-.endif
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 pre-fetch:
