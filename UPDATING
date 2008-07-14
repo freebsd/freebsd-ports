@@ -98,11 +98,9 @@ upgrades.
   subversion now uses neon-0.28.x (www/neon28) port, and automatic
   portupgrade will fail because neon26 will conflict with installed
   neon26.
-  You should upgrade neon library together with subversion with
+  You should upgrade neon library before subversion with the command:
 
-  # portupgrade -o www/neon28 neon subversion
-
-  command.
+  # portupgrade -o www/neon28 neon26
 
   Also, if you use special subversion port with bindings, you
   should upgrade your port to clean subversion port with
