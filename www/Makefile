@@ -1266,7 +1266,6 @@
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid
-    SUBDIR += squid26
     SUBDIR += squid30
     SUBDIR += squid_radius_auth
     SUBDIR += squidclients
