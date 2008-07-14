@@ -1,22 +1,20 @@
 #!/bin/sh
 
-# $FreeBSD$
-
 cd /g/hubgnats/gnats-aa/modules
 
 make clean
 make
 
-pl=`wc -l modules-ports | awk '{ print $1 }'`
-ml=`wc -l modules | awk '{ print $1 }'`
-diff=`expr $pl - $ml`
-if [ $diff -lt 0 ]; then
-	diff=`expr 0 - $diff`
-fi
+diff=`diff modules-ports modules | wc | awk '{ print $1 }'`
+
 echo Difference is $diff lines.
+
 if [ $diff -gt 50 ]; then
 	date | mail -s "DIFF > $diff" edwin@FreeBSD.org
 	exit
 fi
 
-make commit
+# Don't commit anything if only the $FreeBSD$ tag has changed
+if [ $diff -ne 4 ]; then
+	make commit
+fi
