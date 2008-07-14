@@ -27,7 +27,6 @@ rcvar=`set_rcvar`
 start_precmd="nginx_precmd"
 restart_precmd="nginx_checkconfig"
 reload_precmd="nginx_checkconfig"
-reload_cmd="nginx_reload"
 configtest_cmd="nginx_checkconfig"
 command="%%PREFIX%%/sbin/nginx"
 _pidprefix="/var/run/nginx"
