@@ -17,6 +17,8 @@
 %%DATADIR%%/vtinclude/file.module
 %%DATADIR%%/vtinclude/filelib.inc
 %%DATADIR%%/vtinclude/fmtout.module
+%%DATADIR%%/vtinclude/font10x20.inc
+%%DATADIR%%/vtinclude/font6x13.inc
 %%DATADIR%%/vtinclude/forall.module
 %%DATADIR%%/vtinclude/graphics.inc
 %%DATADIR%%/vtinclude/hostio.inc
@@ -47,6 +49,7 @@
 %%DATADIR%%/vtinclude/raster.module
 %%DATADIR%%/vtinclude/rastergraphics.module
 %%DATADIR%%/vtinclude/rasterio.module
+%%DATADIR%%/vtinclude/rastertext.module
 %%DATADIR%%/vtinclude/sdlraster.inc
 %%DATADIR%%/vtinclude/sdlraster.module
 %%DATADIR%%/vtinclude/sdlrcompat.inc
@@ -82,6 +85,7 @@
 %%DATADIR%%/vtlib/proc.lib
 %%DATADIR%%/vtlib/rastergraphics.lib
 %%DATADIR%%/vtlib/rasterio.lib
+%%DATADIR%%/vtlib/rastertext.lib
 %%DATADIR%%/vtlib/sdlraster.lib
 %%DATADIR%%/vtlib/shared_screen.lib
 %%DATADIR%%/vtlib/snglmath.lib
@@ -119,6 +123,7 @@
 %%PORTDOCS%%%%DATADIR%%/doc/api/raster.html
 %%PORTDOCS%%%%DATADIR%%/doc/api/rastergraphics.html
 %%PORTDOCS%%%%DATADIR%%/doc/api/rasterio.html
+%%PORTDOCS%%%%DATADIR%%/doc/api/rastertext.html
 %%PORTDOCS%%%%DATADIR%%/doc/api/sdlraster.html
 %%PORTDOCS%%%%DATADIR%%/doc/api/shared-screen.html
 %%PORTDOCS%%%%DATADIR%%/doc/api/sock.html
@@ -579,6 +584,8 @@ lib/liboccam_rastergraphics.a
 lib/liboccam_rastergraphics.so
 lib/liboccam_rasterio.a
 lib/liboccam_rasterio.so
+lib/liboccam_rastertext.a
+lib/liboccam_rastertext.so
 lib/liboccam_sdlraster.a
 lib/liboccam_sdlraster.so
 lib/liboccam_shared_screen.a
