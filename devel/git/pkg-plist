@@ -206,6 +206,14 @@ share/git-core/templates/info/exclude
 %%GUI%%share/gitk/lib/msgs/de.msg
 %%GUI%%share/gitk/lib/msgs/it.msg
 %%GUI%%share/gitk/lib/msgs/sv.msg
+%%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
+%%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
+%%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
+%%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-logo.png
+%%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
+%%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.css
+%%GITWEB%%@dirrm %%EXAMPLESDIR%%/gitweb
+%%GITWEB%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm lib/xemacs/site-lisp/git
 @dirrmtry lib/xemacs/site-lisp
