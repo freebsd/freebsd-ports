@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Magic print filter with print preview, duplex printing and more
 
 DIST_SUBDIR=	apsfilter
