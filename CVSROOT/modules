@@ -10473,6 +10473,7 @@ p5-Font-AFM                     ports/x11-fonts/p5-Font-AFM
 p5-Font-TTF                     ports/x11-fonts/p5-Font-TTF
 p5-Font-TTFMetrics              ports/x11-fonts/p5-Font-TTFMetrics
 p5-FormValidator-Simple         ports/textproc/p5-FormValidator-Simple
+p5-FreeBSD-Pkgs                 ports/ports-mgmt/p5-FreeBSD-Pkgs
 p5-FreeBSD-Portindex            ports/ports-mgmt/p5-FreeBSD-Portindex
 p5-FreeBSD-Ports                ports/ports-mgmt/p5-FreeBSD-Ports
 p5-FreeBSD-Ports-INDEXhash      ports/ports-mgmt/p5-FreeBSD-Ports-INDEXhash
@@ -13532,6 +13533,7 @@ p5-font-ttf                     ports/x11-fonts/p5-Font-TTF
 p5-font-ttfmetrics              ports/x11-fonts/p5-Font-TTFMetrics
 p5-forks                        ports/devel/p5-forks
 p5-formvalidator-simple         ports/textproc/p5-FormValidator-Simple
+p5-freebsd-pkgs                 ports/ports-mgmt/p5-FreeBSD-Pkgs
 p5-freebsd-portindex            ports/ports-mgmt/p5-FreeBSD-Portindex
 p5-freebsd-ports                ports/ports-mgmt/p5-FreeBSD-Ports
 p5-freebsd-ports-indexhash      ports/ports-mgmt/p5-FreeBSD-Ports-INDEXhash
@@ -18035,6 +18037,7 @@ qwtplot3d                       ports/math/qwtplot3d
 qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
 r                               ports/math/R
 r1q2                            ports/games/r1q2
+rabbitmq                        ports/net/rabbitmq
 rabl_client                     ports/mail/rabl_client
 rabl_server                     ports/mail/rabl_server
 race                            ports/games/race
