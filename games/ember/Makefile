@@ -42,7 +42,7 @@ CPPFLAGS=	-DBR_NO_MACROS
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000
-IGNORE=		Does not compile because of inlining error
+IGNORE=		does not compile because of inlining error
 .endif
 
 post-patch:
@@ -71,7 +71,7 @@ post-install:
 		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
 	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
 	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
-	
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for docfile in README COPYING AUTHORS ChangeLog TODO
