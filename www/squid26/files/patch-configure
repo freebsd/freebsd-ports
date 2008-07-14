@@ -1,0 +1,19 @@
+Patch for Squid bug 2203:
+
+--with-maxfd inadvertently unsets LDFLAGS.
+--- configure.orig	2008-04-02 21:51:54.000000000 +0200
++++ configure	2008-04-02 21:55:28.000000000 +0200
+@@ -25795,11 +25795,12 @@
+ 
+ fi
+ 
++TLDFLAGS="$LDFLAGS"
++
+ if test -z "$SQUID_MAXFD"; then
+ 
+ { echo "$as_me:$LINENO: checking Maximum number of filedescriptors we can open" >&5
+ echo $ECHO_N "checking Maximum number of filedescriptors we can open... $ECHO_C" >&6; }
+-TLDFLAGS="$LDFLAGS"
+ case $host in
+ i386-unknown-freebsd*)
+     if echo "$LDFLAGS" | grep -q pthread; then

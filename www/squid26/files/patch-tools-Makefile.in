@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig	2008-05-10 18:39:20.000000000 +0200
++++ tools/Makefile.in	2008-05-10 18:40:02.000000000 +0200
+@@ -791,6 +791,8 @@
+ $(OBJS): $(top_srcdir)/include/version.h ../include/autoconf.h
+ 
+ install-data-local:
++	@echo "$(INSTALL_DATA) $(srcdir)/cachemgr.conf $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG).default"; \
++	$(INSTALL_DATA) $(srcdir)/cachemgr.conf $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG).default;
+ 	@if test -f $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG) ; then \
+ 	        echo "$@ will not overwrite existing $(DESTDIR)$(DEFAULT_CACHEMGR_CONFIG)" ; \
+ 	else \
