@@ -187,6 +187,9 @@ lib/libgphoto2/%%VERSION%%/stv0680.so
 lib/libgphoto2/%%VERSION%%/sx330z.a
 lib/libgphoto2/%%VERSION%%/sx330z.la
 lib/libgphoto2/%%VERSION%%/sx330z.so
+lib/libgphoto2/%%VERSION%%/topfield.a
+lib/libgphoto2/%%VERSION%%/topfield.la
+lib/libgphoto2/%%VERSION%%/topfield.so
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.a
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.la
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.so
@@ -211,8 +214,6 @@ lib/libgphoto2_port.a
 lib/libgphoto2_port.la
 lib/libgphoto2_port.so
 lib/libgphoto2_port.so.0
-lib/udev/check-mtp-device
-lib/udev/check-ptp-camera
 libdata/pkgconfig/libgphoto2.pc
 libdata/pkgconfig/libgphoto2_port.pc
 share/doc/libgphoto2/AUTHORS
@@ -285,6 +286,7 @@ share/libgphoto2/%%VERSION%%/konica/spanish
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libgphoto2_port-0.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libgphoto2-2.mo
@@ -302,7 +304,6 @@ share/libgphoto2/%%VERSION%%/konica/spanish
 @dirrm share/doc/libgphoto2_port
 @dirrm share/doc/libgphoto2/camlibs
 @dirrm share/doc/libgphoto2
-@dirrmtry lib/udev
 @dirrm lib/libgphoto2_port/%%VERSION_PORT%%
 @dirrm lib/libgphoto2_port
 @dirrm lib/libgphoto2/%%VERSION%%
