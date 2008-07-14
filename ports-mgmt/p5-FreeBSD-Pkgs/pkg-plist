@@ -1,0 +1,5 @@
+%%SITE_PERL%%/FreeBSD/Pkgs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Pkgs/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Pkgs
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD
+@dirrmtry %%SITE_PERL%%/FreeBSD
