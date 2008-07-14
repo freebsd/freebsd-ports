@@ -85,7 +85,7 @@ post-patch:
 		${WRKSRC}/src/libid3tag/Makefile
 	@${REINPLACE_CMD} 's|FMT_FIXED32,|FMT_FIXED32|' ${WRKSRC}/src/audacious/plugin.h
 .if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
-	@${REINPLACE_CMD} 's|-laudclient$$|& -L${LOCALBASE}/lib -lexecinfo|' \
+	@${REINPLACE_CMD} 's|$${REGEX_LIBS}$$|& -L${LOCALBASE}/lib -lexecinfo|' \
 		${WRKSRC}/src/audacious/Makefile
 .endif
 
