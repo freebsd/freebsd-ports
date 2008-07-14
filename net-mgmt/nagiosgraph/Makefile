@@ -7,10 +7,9 @@
 
 PORTNAME=	nagiosgraph
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dsh@wizard.volgograd.ru
@@ -29,8 +28,13 @@ PLIST_SUB=	NAGIOSWWWDIR=${NAGIOSWWWDIR}
 NAGIOSWWWDIR?=	www/nagios
 
 post-patch:
-.for i in insert.pl show.cgi testcolor.cgi testentry.pl
-	${REINPLACE_CMD} -e 's!/usr/bin/perl!${PERL}!g' -e 's!/usr/local!${PREFIX}!g' -e 's!nagiosgraph\.conf!nagios/nagiosgraph/nagiosgraph.conf!g' ${WRKSRC}/$i
+.for i in insert.pl testcolor.cgi testentry.pl
+	${REINPLACE_CMD} -e 's!/usr/bin/perl!${PERL}!g' -e 's!/usr/local!${PREFIX}!g' \
+		-e 's!nagiosgraph\.conf!nagios/nagiosgraph/nagiosgraph.conf!g' ${WRKSRC}/$i
+.endfor
+.for i in show.cgi
+	${REINPLACE_CMD} -e 's!/usr/bin/perl!${PERL}!g' -e 's!/usr/local!${PREFIX}!g' \
+		-e 's!nagiosgraph/nagiosgraph\.conf!nagios/nagiosgraph/nagiosgraph.conf!g' ${WRKSRC}/$i
 .endfor
 
 do-install:
