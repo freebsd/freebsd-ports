@@ -6,58 +6,60 @@
 #
 
 PORTNAME=	mail-notification
-DISTVERSION=	4.1
-PORTREVISION=	2
+DISTVERSION=	5.4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mwisnicki+freebsd@gmail.com
 COMMENT=	A mail notification for freedesktop.org-compliant system trays
 
-LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		gnome-keyring:${PORTSDIR}/security/gnome-keyring \
+		notify:${PORTSDIR}/devel/libnotify
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomeprefix gnomehack eel2
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USE_GNOME=	gconf2 gnomeprefix gnomevfs2 libglade2 libgnomeui libxml2
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+JB_CONF_ARGS=	cc="${CC}" cflags="${CFLAGS}" cppflags="${CPPFLAGS}" ldflags="${LDFLAGS}" prefix="${PREFIX}"
+JB_CONF_ENV=	jb_cppflags="${CPPFLAGS}" jb_ldflags="${LDFLAGS}"
 GCONF_SCHEMAS=	mail-notification.schemas
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 
-OPTIONS=	MBOX "mbox support" on \
-		MH "MH support" on \
-		MAILDIR "Maildir support" on \
-		POP3 "POP3 support" on \
-		IMAP "IMAP support" on \
-		SSL "SSL/TLS support" on \
-		SASL "SASL authentication support" on \
+OPTIONS=	EVOLUTION "Evolution support" off \
 		GMAIL "Gmail support" on \
-		EVOLUTION "Evolution support" off \
+		HOTMAIL "Windows Live Hotmail support" on \
+		IMAP "IMAP support" on \
+		MAILDIR "Maildir support" on \
+		MBOX "mbox support" on \
+		MH "MH support" on \
 		MOZILLA "Mozilla products support" on \
-		SYLPHEED "Sylpheed support" on
+		POP3 "POP3 support" on \
+		SASL "SASL authentication support" on \
+		SSL "SSL/TLS support" on \
+		SYLPHEED "Sylpheed support" on \
+		YAHOO "Yahoo! Mail support" on
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_MBOX)
-CONFIGURE_ARGS+=--disable-mbox
+JB_CONF_ARGS+=	mbox=no
 .endif
 .if defined(WITHOUT_MH)
-CONFIGURE_ARGS+=--disable-mh
+JB_CONF_ARGS+=	mh=no
 .endif
 .if defined(WITHOUT_MAILDIR)
-CONFIGURE_ARGS+=--disable-maildir
+JB_CONF_ARGS+=	maildir=no
 .endif
 .if defined(WITHOUT_POP3)
-CONFIGURE_ARGS+=--disable-pop3
+JB_CONF_ARGS+=	pop3=no
 .endif
 .if defined(WITHOUT_IMAP)
-CONFIGURE_ARGS+=--disable-imap
+JB_CONF_ARGS+=	imap=no
 .endif
 .if defined(WITHOUT_POP3) && defined(WITHOUT_IMAP)
 # only POP3 and IMAP use SSL and SASL
@@ -65,25 +67,39 @@ WITHOUT_SSL=	yes
 WITHOUT_SASL=	yes
 .endif
 .if defined(WITHOUT_GMAIL)
-CONFIGURE_ARGS+=--disable-gmail
+JB_CONF_ARGS+=	gmail=no
 PLIST_SUB+=	GMAIL="@comment "
 .else
 PLIST_SUB+=	GMAIL=""
 .endif
+.if defined(WITHOUT_HOTMAIL)
+JB_CONF_ARGS+=	hotmail=no
+PLIST_SUB+=	HOTMAIL="@comment "
+.else
+RUN_DEPENDS+=	getlive:${PORTSDIR}/mail/getlive
+PLIST_SUB+=	HOTMAIL=""
+.endif
+.if defined(WITHOUT_YAHOO)
+JB_CONF_ARGS+=	yahoo=no
+PLIST_SUB+=	YAHOO="@comment "
+.else
+RUN_DEPENDS+=	fetchyahoo:${PORTSDIR}/mail/fetchyahoo
+PLIST_SUB+=	YAHOO=""
+.endif
 .if defined(WITHOUT_EVOLUTION)
-CONFIGURE_ARGS+=--disable-evolution
+JB_CONF_ARGS+=	evolution=no
 PLIST_SUB+=	EVOLUTION="@comment "
 .else
-EVO_VERSION=	2.12
+EVO_VERSION=	2.22
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc:${PORTSDIR}/mail/evolution
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc:${PORTSDIR}/mail/evolution
 PLIST_SUB+=	EVOLUTION="" EVO_VERSION=${EVO_VERSION}
 .endif
 .if defined(WITHOUT_MOZILLA)
-CONFIGURE_ARGS+=--disable-mozilla
+JB_CONF_ARGS+=	mozilla=no
 .endif
 .if defined(WITHOUT_SYLPHEED)
-CONFIGURE_ARGS+=--disable-sylpheed
+JB_CONF_ARGS+=	sylpheed=no
 .endif
 .if defined(WITH_MBOX) \
 	|| defined(WITH_MH) \
@@ -91,19 +107,30 @@ CONFIGURE_ARGS+=--disable-sylpheed
 	|| defined(WITH_POP3) \
 	|| defined(WITH_IMAP) \
 	|| defined(WITH_MOZILLA) \
-	|| defined(WITH_SYLPHEED)
+	|| defined(WITH_SYLPHEED) \
+	|| defined(WITH_HOTMAIL) \
+	|| defined(WITH_YAHOO)
 LIB_DEPENDS+=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 .endif
 .if defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=--disable-ssl
+JB_CONF_ARGS+=	ssl=no
 .else
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 .if defined(WITHOUT_SASL)
-CONFIGURE_ARGS+=--disable-sasl
+JB_CONF_ARGS+=	sasl=no
 .else
 LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 .endif
+
+do-configure:
+	cd ${WRKSRC} && ${JB_CONF_ENV} ./jb configure ${JB_CONF_ARGS}
+
+do-build:
+	cd ${WRKSRC} && ./jb build
+
+do-install:
+	cd ${WRKSRC} && ./jb install
 
 .include <bsd.port.post.mk>

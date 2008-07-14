@@ -1,19 +1,17 @@
 bin/mail-notification
 etc/xdg/autostart/mail-notification.desktop
-libdata/bonobo/servers/GNOME_MailNotification.server
-%%EVOLUTION%%libdata/bonobo/servers/GNOME_MailNotification_Evolution.server
 share/applications/mail-notification-properties.desktop
 share/gnome/help/mail-notification/C/documentation-license.xml
 share/gnome/help/mail-notification/C/figures/mail.png
-share/gnome/help/mail-notification/C/figures/mailbox-emblem-error.png
-share/gnome/help/mail-notification/C/figures/mailbox-emblem-polled.png
-share/gnome/help/mail-notification/C/figures/mailbox-emblem-unknown.png
 share/gnome/help/mail-notification/C/mail-notification.xml
 share/gnome/help/mail-notification/C/software-license.xml
-%%GMAIL%%share/mail-notification/ui/gmail.png
-share/mail-notification/ui/logo.png
-share/mail-notification/ui/mailbox-properties-dialog.glade
-share/mail-notification/ui/properties-dialog.glade
+%%GMAIL%%share/mail-notification/gmail.png
+%%HOTMAIL%%share/mail-notification/hotmail.png
+share/mail-notification/logo.png
+share/mail-notification/new-mail.wav
+%%YAHOO%%share/mail-notification/yahoo.png
+share/mail-notification/mailbox-properties-dialog.glade
+share/mail-notification/properties-dialog.glade
 share/omf/mail-notification/mail-notification-C.omf
 share/icons/hicolor/16x16/apps/mail-notification.png
 share/icons/hicolor/22x22/apps/mail-notification.png
@@ -25,6 +23,7 @@ share/locale/bg/LC_MESSAGES/mail-notification.mo
 share/locale/ca/LC_MESSAGES/mail-notification.mo
 share/locale/cs/LC_MESSAGES/mail-notification.mo
 share/locale/de/LC_MESSAGES/mail-notification.mo
+share/locale/es/LC_MESSAGES/mail-notification.mo
 share/locale/fr/LC_MESSAGES/mail-notification.mo
 share/locale/ja/LC_MESSAGES/mail-notification.mo
 share/locale/nl/LC_MESSAGES/mail-notification.mo
@@ -35,12 +34,9 @@ share/locale/ru/LC_MESSAGES/mail-notification.mo
 share/locale/sr/LC_MESSAGES/mail-notification.mo
 share/locale/sr@Latn/LC_MESSAGES/mail-notification.mo
 share/locale/sv/LC_MESSAGES/mail-notification.mo
-%%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/liborg-jylefort-mail-notification.a
-%%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/liborg-jylefort-mail-notification.la
 %%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/liborg-jylefort-mail-notification.so
 %%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/org-jylefort-mail-notification.eplug
 @dirrm share/omf/mail-notification
-@dirrm share/mail-notification/ui
 @dirrm share/mail-notification
 @dirrm share/gnome/help/mail-notification/C/figures
 @dirrm share/gnome/help/mail-notification/C
