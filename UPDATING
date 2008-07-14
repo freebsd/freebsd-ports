@@ -6,6 +6,23 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080714:
+  AFFECTS: Users of www/squid
+  Author: Thomas-Martin Seck <tmseck@web.de>
+
+  www/squid has been updated to Squid 2.7.STABLE3.
+
+  This update should be rather straightforward.
+
+  The only noticeable change in the port is that the ICAP patch is no
+  longer included; this is because this patch was unmaintained for a
+  long time and its use was not really recommended. Please consider
+  moving to Squid-3 (currently available as www/squid30) if you need
+  ICAP support.
+
+  Squid 2.6 is still available as www/squid26 and will probably
+  removed from the ports tree at the end of 2008.
+
 20080712:
   AFFECTS: users of databases/rrdtool
   AUTHOR: rafan@FreeBSD.org
