@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		kadu
-PORTVERSION=		0.6.0
-PORTREVISION=	1
+PORTVERSION=		0.6.0.2
 PORTEPOCH=		1
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://www.kadu.net/download/stable/:kadu \
@@ -25,13 +24,12 @@ COMMENT=		QT Gadu-Gadu client
 LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/libgadu\
 			sndfile.1:${PORTSDIR}/audio/libsndfile
 
-TABS_MOD_DISTFILE=	kadu-tabs-1.1.5.tar.bz2
+TABS_MOD_DISTFILE=	kadu-tabs-1.1.6.tar.bz2
 ASPELL_MOD_DISTFILE=	spellchecker-20071230.tar.bz2
 
 GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
 GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
-USE_AUTOTOOLS=		autoconf:261
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_OPENSSL=		yes
