@@ -114,7 +114,7 @@ do-install:
 .endif
 
 regression-test: do-build
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} testing)
-	(cd ${WRKSRC}/TESTING && ./plintstd pdtest.csh)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} testing)
+	@(cd ${WRKSRC_SHARED} && ${SETENV} ${MAKE_ENV} ${GMAKE} testing)
 
 .include <bsd.port.post.mk>
