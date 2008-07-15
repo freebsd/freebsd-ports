@@ -1,0 +1,27 @@
+--- ./CMakeLists.txt.orig	2007-10-14 13:27:59.000000000 +0200
++++ ./CMakeLists.txt	2008-07-10 17:16:26.000000000 +0200
+@@ -101,11 +101,15 @@
+ if(NOT WIN32)
+         MESSAGE(STATUS "<Checking for X11>")
+         MESSAGE(STATUS "<******************************>")
++	if(NO_X11)
++	message(status "<disabled per request>")
++	else(NO_X11)
+         include(FindX11)
+         if(NOT X11_FOUND)
+              MESSAGE(FATAL_ERROR "Could not find X11")
+         endif(NOT X11_FOUND)
+         MESSAGE(STATUS OK)
++	endif(NO_X11)
+ endif(NOT WIN32)
+ #**************************************************
+ # Search for GLIB through PKG-Config
+@@ -135,7 +139,7 @@
+ IF(NOT GTK_CFLAGS)
+     MESSAGE(STATUS "Could not find GTK - cannot compile avidemux2_gtk here")
+ ELSE(NOT GTK_CFLAGS)
+-    SET(GTK_FOUND TRUE)
++    SET(GTK_FOUND "YES")
+     MESSAGE(STATUS OK)
+ ENDIF(NOT GTK_CFLAGS)
+ endif(NO_GTK)
