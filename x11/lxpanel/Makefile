@@ -46,6 +46,10 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's,linux,sys,' \
 		${WRKSRC}/src/plugins/volume/volume-impl.c
