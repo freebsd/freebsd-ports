@@ -1,0 +1,10 @@
+--- makefile.orig	2008-07-14 11:37:57.000000000 -0400
++++ makefile	2008-07-14 18:31:06.000000000 -0400
+@@ -4,5 +4,5 @@
+ 	gcc -O2 -fPIC -shared -o manualsize.so `pkg-config --cflags pidgin` manualsize.c
+ 
+ install: manualsize.so
+-	install -d -o root -g root -m 755 $(INSTALL_ROOT)`pkg-config --variable=libdir pidgin`/pidgin
+-	install -o root -g root -m 755 manualsize.so $(INSTALL_ROOT)`pkg-config --variable=libdir pidgin`/pidgin
++	install -d -o root -g wheel -m 755 $(INSTALL_ROOT)`pkg-config --variable=libdir pidgin`/pidgin
++	install -o root -g wheel -m 755 manualsize.so $(INSTALL_ROOT)`pkg-config --variable=libdir pidgin`/pidgin
