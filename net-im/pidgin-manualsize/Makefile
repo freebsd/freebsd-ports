@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	manualsize
-PORTVERSION=	0.5a
-PORTREVISION=	1
+PORTVERSION=	0.6
+PORTREVISION?=	0
 CATEGORIES=	net-im
-MASTER_SITES=	http://leapster.org/patches/pidgin/source/ \
+MASTER_SITES=	http://myfotomx.com/files/ \
 		http://autocthonia.net/freebsd/distfiles/
 PKGNAMEPREFIX=	pidgin-
-DISTNAME=	${PKGNAMEPREFIX}plugin-${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jsatkinson@embarqmail.com
 COMMENT=	Plugin to allow manual resizing of Pidgin's message input area
@@ -20,10 +20,11 @@ COMMENT=	Plugin to allow manual resizing of Pidgin's message input area
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
-PLIST_FILES=	lib/pidgin/manualsize.la \
-		lib/pidgin/manualsize.so
+MAKEFILE=	makefile
 
-GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
+PLIST_FILES=	lib/pidgin/manualsize.so
+
+USE_BZIP2=	yes
+ALL_TARGET=	manualsize.so
 
 .include <bsd.port.mk>
