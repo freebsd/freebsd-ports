@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 sbin/pchar
-share/doc/pchar/CHANGES
-share/doc/pchar/FAQ
-share/doc/pchar/README
-@dirrm share/doc/pchar
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
