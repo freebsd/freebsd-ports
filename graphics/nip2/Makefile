@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	nip2
-PORTVERSION=	7.12.4
-PORTREVISION=	1
+PORTVERSION=	7.14.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-${PORTVERSION:R}/
+MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Graphical user interface for VIPS

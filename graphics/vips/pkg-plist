@@ -303,8 +303,6 @@ bin/im_similarity_area
 bin/im_sintra
 bin/im_slice
 bin/im_spcor
-bin/im_spcor2
-bin/im_spcor2_raw
 bin/im_spcor_raw
 bin/im_stats
 bin/im_stdif
@@ -361,7 +359,6 @@ include/vips/colour.h
 include/vips/debug.h
 include/vips/dispatch.h
 include/vips/fmask.h
-include/vips/history.h
 include/vips/intl.h
 include/vips/meta.h
 include/vips/mosaic.h
@@ -373,7 +370,6 @@ include/vips/semaphore.h
 include/vips/struct.h
 include/vips/thread.h
 include/vips/threadgroup.h
-include/vips/time.h
 include/vips/util.h
 include/vips/vbuf.h
 include/vips/version.h
@@ -384,11 +380,11 @@ include/vips/vipscpp.h
 lib/libvips.a
 lib/libvips.la
 lib/libvips.so
-lib/libvips.so.14
+lib/libvips.so.20
 lib/libvipsCC.a
 lib/libvipsCC.la
 lib/libvipsCC.so
-lib/libvipsCC.so.14
+lib/libvipsCC.so.20
 libdata/pkgconfig/vips-%%VERSION%%.pc
 libdata/pkgconfig/vipsCC-%%VERSION%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/figs/arch.png
@@ -420,7 +416,6 @@ libdata/pkgconfig/vipsCC-%%VERSION%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/vipsmanualse8.html
 %%PORTDOCS%%%%DOCSDIR%%/html/vipsmanualse9.html
 %%PORTDOCS%%%%DOCSDIR%%/pdf/vipsmanual.pdf
-share/locale/en_GB/LC_MESSAGES/vips7.mo
 %%DATADIR%%/vdump.pro
 %%DATADIR%%/vips2dj/cmyk/head1
 %%DATADIR%%/vips2dj/cmyk/head2
