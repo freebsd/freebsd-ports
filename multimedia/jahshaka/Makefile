@@ -31,6 +31,12 @@ TCSH?=		/bin/csh
 QMAKE?=		${LOCALBASE}/bin/qmake
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		does not compile with GCC 4.2
+.endif
+
 post-patch:
 	@(${FIND} ${WRKSRC} -name '*.h' -or -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} -i '' \
 		-e 's|avifile-0.7|avifile|g; s|malloc\.h|stdlib\.h|g')
@@ -95,4 +101,4 @@ do-install:
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
