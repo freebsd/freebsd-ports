@@ -45,6 +45,9 @@ CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
 .if defined(WITH_OPENSSL)
 CONFIGURE_ARGS+=--with-ssl=bundled
 .endif
+.if defined(WITH_FAST_MUTEXES)
+CONFIGURE_ARGS+=--with-fast-mutexes
+.endif
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
 .endif
@@ -115,6 +118,7 @@ pre-fetch:
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
 	@${ECHO} "	WITH_PROC_SCOPE_PTH=yes	Use process scope threads"
 	@${ECHO} "				(try it if you use libpthread)."
+	@${ECHO} "	WITH_FAST_MUTEXES=yes	Replace mutexes with spinlocks."
 	@${ECHO} "	BUILD_OPTIMIZED=yes	Enable compiler optimizations"
 	@${ECHO} "				(use it if you need speed)."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
