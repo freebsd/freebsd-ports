@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	docbook-xsl
-PORTVERSION=	1.71.1
-PORTREVISION=	2
+PORTVERSION=	1.74.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
@@ -31,7 +30,7 @@ INSTDIR=	share/xsl/docbook
 PINSTDIR=	${PREFIX}/${INSTDIR}
 COPYDIRS=	common extensions fo highlighting html htmlhelp images \
 		javahelp lib manpages params profiling slides \
-		template tools wordml xhtml
+		template tools xhtml
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
@@ -39,7 +38,7 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS=	${XMLDIR}/catalog.ports
 
 post-extract:
-	${FIND} ${WRKSRC} -name '.#*' -delete
+	${FIND} ${WRKSRC} -name '.#*' -or -name '.gitignore' -delete
 	${FIND} ${WRKSRC}/extensions -type d -mindepth 1 -maxdepth 1 -print0 |\
 		${XARGS} -0 ${RM} -rf
 
