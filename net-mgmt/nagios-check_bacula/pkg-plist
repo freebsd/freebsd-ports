@@ -1,0 +1,2 @@
+libexec/nagios/check_bacula
+@dirrmtry libexec/nagios
