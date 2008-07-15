@@ -6,37 +6,42 @@
 #
 
 PORTNAME=	vips
-PORTVERSION=	7.12.4
-PORTREVISION=	3
+PORTVERSION=	7.14.4.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-${PORTVERSION:R}/
+MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R:R}/
+DISTVERSION=	7.14.4-1
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Free image processing system
 
-OPTIONS=	MAGICK	"Use ImageMagick for more image-types" ${IMPRESENT}
 OPTIONS+=	LIBOIL	"Use liboil for CPU-optimized primitives" on
 # Making Python a proper option awaits portmgr's resolving the current
 # chicken-and-egg problem of OPTIONS vs. USE_* knobs
 #OPTIONS+=	PYTHON	"Create Python bindings" ${PYPRESENT}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
+		exif:${PORTSDIR}/graphics/libexif	\
 		tiff:${PORTSDIR}/graphics/tiff \
+		GraphicsMagick:${PORTSDIR}/graphics/GraphicsMagick \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		png:${PORTSDIR}/graphics/png \
 		lcms:${PORTSDIR}/graphics/lcms
 
-IMPRESENT!=	which mogrify > /dev/null && echo on || echo off
 PYPRESENT!=	which python > /dev/null && echo on || echo off
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig pango libxml2
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+
+post-configure:
+	${REINPLACE_CMD} -Ee 's,^(G?MSGFMT = *)$$,\1${LOCALBASE}/bin/msgfmt,g' \
+		${WRKSRC}/po/Makefile
+
 .if defined(NOPORTDOCS)
 # Don't extract doc/ subdirectory - the simplest way:
 EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - --exclude doc
@@ -46,9 +51,10 @@ post-install:
 # Don't extract html-ized man-pages in either case:
 EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - --exclude doc/html/man
 .endif
-PLIST_SUB+=	VERSION=${PORTVERSION:R}
+PLIST_SUB+=	VERSION=${PORTVERSION:R:R}
 
-CONFIGURE_ARGS=	--without-x --mandir=${PREFIX}/man
+CONFIGURE_ENV+=	MAGICK_CFLAGS="-I${LOCALBASE}/include/GraphicsMagick"
+CONFIGURE_ARGS+=--without-x --mandir=${PREFIX}/man --with-magickpackage=GraphicsMagick
 
 # This is used to generate the list of man-pages and MLINKS. It
 # looks through the available man-pages and filters out those,
@@ -58,7 +64,7 @@ CONFIGURE_ARGS=	--without-x --mandir=${PREFIX}/man
 .PHONY:	Makefile.man
 Makefile.man:
 	@${ECHO_MSG} "# This file is auto-generated" > $@
-	${FIND} ${WRKSRC} -name '*.[13]' | ${XARGS} ${AWK} '	\
+	${FIND} ${WRKSRC}/ -type f -name '*.[13]' | ${XARGS} ${AWK} '	\
 		/\.so/ {	\
 			page=substr($$2, 6, 100);	\
 			sub(".*/", "", FILENAME);	\
@@ -75,12 +81,6 @@ Makefile.man:
 .include "Makefile.man"
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_MAGICK)
-LIB_DEPENDS+=	Magick:${PORTSDIR}/graphics/ImageMagick
-.else
-CONFIGURE_ARGS+=	--without-magick
-.endif
 
 .if defined(WITH_LIBOIL)
 LIB_DEPENDS+=	oil:${PORTSDIR}/devel/liboil
