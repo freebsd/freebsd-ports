@@ -105,6 +105,7 @@
     SUBDIR += nagcon
     SUBDIR += nagios
     SUBDIR += nagios-certexp-plugin
+    SUBDIR += nagios-check_bacula
     SUBDIR += nagios-devel
     SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-plugins
