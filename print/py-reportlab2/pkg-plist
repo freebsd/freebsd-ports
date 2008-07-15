@@ -62,6 +62,11 @@
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/luxiserif_license.txt
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/rina.ttf
 %%PYTHON_SITELIBDIR%%/reportlab/fonts/rina_license.txt
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/Vera.ttf
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/VeraBI.ttf
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/VeraBd.ttf
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/VeraIt.ttf
+%%PYTHON_SITELIBDIR%%/reportlab/fonts/bitstream-vera-license.txt
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/__init__.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/__init__.pyo
@@ -92,6 +97,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/usps.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/usps.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/usps.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/usps4s.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/usps4s.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/usps4s.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/widgets.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/widgets.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/barcode/widgets.pyo
@@ -251,6 +259,12 @@
 %%PYTHON_SITELIBDIR%%/reportlab/lib/attrmap.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/attrmap.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/attrmap.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/lib/boxstuff.py
+%%PYTHON_SITELIBDIR%%/reportlab/lib/boxstuff.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/lib/boxstuff.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/lib/fontfinder.py
+%%PYTHON_SITELIBDIR%%/reportlab/lib/fontfinder.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/lib/fontfinder.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/codecharts.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/codecharts.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/codecharts.pyo
@@ -532,9 +546,6 @@
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paraparser.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paraparser.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_paraparser.pyo
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_pto.py
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_pto.pyc
-%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_pto.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_tables.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_tables.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_tables.pyo
@@ -544,6 +555,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_xref.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_xref.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_xref.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_pleaseturnover.py
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_pleaseturnover.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/test/test_platypus_pleaseturnover.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pyfiles.py
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pyfiles.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/test/test_pyfiles.pyo

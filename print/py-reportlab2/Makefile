@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	reportlab2
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	print python
 MASTER_SITES=	http://www.reportlab.org/ftp/ \
 		ftp://ftp.reportlab.org/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/:accel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	ReportLab_${PORTVERSION:S/./_/}.tgz \
-		rl_accel-3004.tgz:accel
+		rl_accel-3242.tgz:accel
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Library to create PDF documents using the Python language
+
+CONFLICTS=	py2[0-9]-reportlab-[0-9]*
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
