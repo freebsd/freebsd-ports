@@ -1,0 +1,17 @@
+--- org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java	Fri Dec 12 09:56:48 2003
++++ org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java	Sat Jun 11 16:06:40 2005
+@@ -41,5 +41,5 @@
+         TransferData[] data = event.dataTypes;
+         for (int i = 0; i < data.length; i++) {
+-          int id = data[i].type;
++          long id = data[i].type;
+           String name = getNameFromId(id);
+           System.out.println("Data type is " + id + " " + name);
+@@ -97,5 +97,5 @@
+     return ids;
+   }
+-  static String getNameFromId(int id) {
++  static String getNameFromId(long id) {
+-    switch (id) {
++    switch ((int)id) {
+       case 1 :
