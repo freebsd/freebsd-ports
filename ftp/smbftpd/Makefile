@@ -7,6 +7,7 @@
 
 PORTNAME=	smbftpd
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.twbsd.org/download/download.php?file=smbftpd/

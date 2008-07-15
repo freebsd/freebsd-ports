@@ -22,7 +22,7 @@ command=%%PREFIX%%/sbin/smbftpd
 smbftpd_config=${smbftpd_config:-"%%PREFIX%%/etc/smbftpd/smbftpd.conf"}
 required_files=${smbftpd_config}
 pidfile=/var/run/smbftpd.pid
-procname=smbftpd
+procname=%%PREFIX%%/sbin/smbftpd
 
 smbftpd_enable=${smbftpd_enable:-"NO"}
 command_args="-D -s ${smbftpd_config}"
