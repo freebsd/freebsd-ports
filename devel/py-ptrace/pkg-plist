@@ -12,9 +12,6 @@ bin/gdb.py
 %%PYTHON_SITELIBDIR%%/ptrace/binding/func.py
 %%PYTHON_SITELIBDIR%%/ptrace/binding/func.pyc
 %%PYTHON_SITELIBDIR%%/ptrace/binding/func.pyo
-%%PYTHON_SITELIBDIR%%/ptrace/binding/libc_backtrace.py
-%%PYTHON_SITELIBDIR%%/ptrace/binding/libc_backtrace.pyc
-%%PYTHON_SITELIBDIR%%/ptrace/binding/libc_backtrace.pyo
 %%PYTHON_SITELIBDIR%%/ptrace/binding/linux_struct.py
 %%PYTHON_SITELIBDIR%%/ptrace/binding/linux_struct.pyc
 %%PYTHON_SITELIBDIR%%/ptrace/binding/linux_struct.pyo
