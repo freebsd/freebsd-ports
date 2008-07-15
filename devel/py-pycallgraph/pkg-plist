@@ -1,4 +1,4 @@
-bin/pycallgraph-dot.py
+bin/pycallgraph
 %%PYTHON_SITELIBDIR%%/pycallgraph.py
 %%PYTHON_SITELIBDIR%%/pycallgraph.pyc
 %%PYTHON_SITELIBDIR%%/pycallgraph.pyo
