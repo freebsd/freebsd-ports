@@ -1,6 +1,6 @@
---- src/global/mail_params.h.orig	Fri Feb 11 21:53:21 2005
-+++ src/global/mail_params.h	Sat Mar  5 11:53:42 2005
-@@ -64,7 +64,7 @@
+--- src/global/mail_params.h.orig	Mon Jun 30 18:57:48 2008
++++ src/global/mail_params.h	Mon Jun 30 19:00:05 2008
+@@ -67,7 +67,7 @@
  extern gid_t var_owner_gid;
  
  #define VAR_SGID_GROUP		"setgid_group"
@@ -9,7 +9,7 @@
  extern char *var_sgid_group;
  extern gid_t var_sgid_gid;
  
-@@ -221,7 +221,7 @@
+@@ -241,7 +241,7 @@
    */
  #define VAR_DAEMON_DIR		"daemon_directory"
  #ifndef DEF_DAEMON_DIR
@@ -18,12 +18,21 @@
  #endif
  extern char *var_daemon_dir;
  
-@@ -250,7 +250,7 @@
+@@ -265,7 +265,7 @@
+   */
+ #define VAR_DATA_DIR		"data_directory"
+ #ifndef DEF_DATA_DIR
+-#define DEF_DATA_DIR		"/var/lib/postfix"
++#define DEF_DATA_DIR		"/var/db/postfix"
+ #endif
+ extern char *var_data_dir;
+ 
+@@ -279,7 +279,7 @@
    */
  #define VAR_CONFIG_DIR		"config_directory"
  #ifndef DEF_CONFIG_DIR
 -#define DEF_CONFIG_DIR		"/etc/postfix"
-+#define DEF_CONFIG_DIR		"!!PREFIX!!/etc/postfix"
++#define DEF_CONFIG_DIR		"!!PREFIX!!/etc/postfix"	
  #endif
  extern char *var_config_dir;
  
