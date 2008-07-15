@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.11.51
+PORTVERSION=	2.11.52
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.11/:src \
     		http://download.linuxaudio.org/lilypond/binaries/freebsd-x86/:bin
@@ -43,7 +43,7 @@ USE_PYTHON=	yes
 USE_GNOME=	pango
 INSTALLS_OMF=	yes
 MAKEFILE=	GNUmakefile
-BUILD_TARGET=	all
+ALL_TARGET=	all
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" MAKEINFO="${LOCALBASE}/bin/makeinfo"
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
@@ -52,7 +52,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
 BUILD_DEPENDS+=	pbmpscale:${PORTSDIR}/graphics/netpbm
-BUILD_TARGET+=	www
+ALL_TARGET+=	web
 PLIST_SUB+=	DOCS=""
 .else
 PLIST_SUB+=	DOCS="@comment "
@@ -72,10 +72,11 @@ post-patch:
 	    ${WRKSRC}/configure
 
 post-install:
-	${LN} -s ${DATADIR}/${PORTVERSION} ${DATADIR}/current
+	@${LN} -s ${DATADIR}/${PORTVERSION} ${DATADIR}/current
 .if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
-	${INSTALL} -d ${DOCSDIR}
-	(cd ${WRKSRC}/out-www/offline-root && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	@${INSTALL} -d ${DOCSDIR}
+	@echo "Installing documentation... this takes a while..."
+	@(cd ${WRKSRC}/out-www/offline-root && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>
