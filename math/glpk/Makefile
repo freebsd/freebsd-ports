@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	4.28
+PORTVERSION=	4.29
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -25,7 +25,8 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS+=	--with-gmp --with-zlib
 
 .include <bsd.port.pre.mk>
 
@@ -51,7 +52,7 @@ CONFIGURE_ARGS+=	--disable-mysql
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	bench.txt bench1.txt glpk.ps glpk_faq.txt gmpl.ps \
-		gomory.djvu opb.txt tables.txt
+		gomory.djvu opb.txt tables.txt updating.djvu
 .endif
 
 post-patch:
@@ -63,6 +64,7 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	@${CP} ${WRKSRC}/doc/memo/gomory.djvu ${WRKSRC}/doc/
+	@${CP} ${WRKSRC}/doc/memo/updating.djvu ${WRKSRC}/doc/
 	@${MKDIR} ${DOCSDIR}
 	for docfile in ${PORTDOCS} ; do \
 		${INSTALL_MAN} ${WRKSRC}/doc/$${docfile} ${DOCSDIR} ; \
