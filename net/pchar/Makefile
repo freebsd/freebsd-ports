@@ -25,8 +25,8 @@ CONFIGURE_ARGS= --with-pcap
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/pchar
-	cd ${WRKSRC} ; ${INSTALL_DATA} README CHANGES FAQ ${PREFIX}/share/doc/pchar
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} ; ${INSTALL_DATA} README CHANGES FAQ ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
