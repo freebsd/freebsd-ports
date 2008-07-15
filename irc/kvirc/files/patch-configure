@@ -1,6 +1,6 @@
---- configure.orig	Sat Feb 26 03:35:31 2005
-+++ configure	Sat Mar 12 09:28:45 2005
-@@ -19621,7 +19621,7 @@
+--- configure.orig	2008-03-12 18:29:00.000000000 -0800
++++ configure	2008-06-30 12:21:03.000000000 -0800
+@@ -20761,7 +20761,7 @@
  
  
  # This can be used to rebuild libtool when needed
@@ -9,16 +9,16 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -21745,7 +21745,7 @@
+@@ -26694,7 +26694,7 @@
  		else
- 			echo "$as_me:$LINENO: result: no..using lpthread" >&5
- echo "${ECHO_T}no..using lpthread" >&6
+ 			{ echo "$as_me:$LINENO: result: no..using lpthread" >&5
+ echo "${ECHO_T}no..using lpthread" >&6; }
 -			SS_THREAD_LIBLINK="-lpthread"
 +			SS_THREAD_LIBLINK="-pthread"
  
  cat >>confdefs.h <<\_ACEOF
  #define COMPILE_THREADS_USE_POSIX 1
-@@ -23316,7 +23316,7 @@
+@@ -28452,7 +28452,7 @@
  			# Set the X include and lib dir
  	 		SS_X_INCDIR="$x_includes"
  			SS_X_LIBDIR="$x_libraries"
