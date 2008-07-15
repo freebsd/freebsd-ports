@@ -6,38 +6,41 @@
 #
 
 PORTNAME=	libxml
-PORTVERSION=	0.5.2.0
+PORTVERSION=	0.7.0
 CATEGORIES=	textproc ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	libxml
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A friendly API to libxml for Ruby
 
-BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
-					xml2-config:${PORTSDIR}/textproc/libxml2 \
-
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-
-PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/xml/libxml_so.so \
-					%%RUBY_SITELIBDIR%%/xml/libxml.rb
-PLIST_DIRS=	%%RUBY_SITEARCHLIBDIR%%/xml \
-				%%RUBY_SITELIBDIR%%/xml
 
 USE_RUBY=	yes
 USE_ICONV=	yes
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${RUBY_SITEARCHLIBDIR}/xml
 
-post-patch:
-	${REINPLACE_CMD} -e 's|%%%PREFIX%%%|${PREFIX}|g' \
-		${WRKSRC}/ext/xml/extconf.rb
+EXT_ARGS=	--with-iconv-dir=${LOCALBASE} \
+		--with-iconv-lib=${LOCALBASE}/lib \
+		--with-iconv-include=${LOCALBASE}/include
+
+PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/xml/libxml.so \
+		%%RUBY_SITELIBDIR%%/xml/libxml.rb
+PLIST_DIRS=	%%RUBY_SITEARCHLIBDIR%%/xml \
+		%%RUBY_SITELIBDIR%%/xml
+
+do-configure:
+	cd ${WRKSRC}/ext/libxml && ${RUBY} extconf.rb build ${EXT_ARGS} 
 
 do-build:
-	cd ${WRKSRC} && rake test
+	cd ${WRKSRC}/ext/libxml && ${MAKE}
 
 do-install:
-	cd ${WRKSRC} && rake install
+	${INSTALL} -d ${RUBY_SITELIBDIR}/xml ${RUBY_SITEARCHLIBDIR}/xml
+	${INSTALL_DATA} ${WRKSRC}/lib/libxml.rb ${RUBY_SITELIBDIR}/xml
+	${INSTALL_DATA} ${WRKSRC}/ext/libxml/libxml_ruby.so ${RUBY_SITEARCHLIBDIR}/xml/libxml.so
 
 .include <bsd.port.mk>
