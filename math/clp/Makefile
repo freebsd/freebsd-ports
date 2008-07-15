@@ -17,7 +17,7 @@ COMMENT=	Linear Programming Solver
 
 LIB_DEPENDS=	lapack.4:${PORTSDIR}/math/lapack
 .ifdef WITH_GMPL
-LIB_DEPENDS+=	glpk.13:${PORTSDIR}/math/glpk
+LIB_DEPENDS+=	glpk.14:${PORTSDIR}/math/glpk
 .endif
 
 USE_FORTRAN=	yes
