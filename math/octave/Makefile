@@ -22,7 +22,7 @@ BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
-		glpk.13:${PORTSDIR}/math/glpk \
+		glpk.14:${PORTSDIR}/math/glpk \
 		hdf5:${PORTSDIR}/science/hdf5 \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		qhull:${PORTSDIR}/math/qhull
