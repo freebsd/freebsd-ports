@@ -8,10 +8,10 @@
 PORTNAME=	kvirc
 PORTVERSION=	3.4.0
 CATEGORIES=	irc kde
-MASTER_SITES=	ftp://ftp.kvirc.net/pub/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.kvirc.ru/pub/kvirc.net/3.4.0/source/ \
 		ftp://ftp.kvirc.de/pub/%SUBDIR%/ \
-		ftp://mirror.dudcore.net/pub/%SUBDIR%/ \
-		ftp://ftp.kvirc.pragmaware.net/pub/%SUBDIR%/
+		http://kvirc.gmake.de/pub/%SUBDIR%/ \
+		LOCAL/beech
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}/source
 
 MAINTAINER=	mranner@inode.at
