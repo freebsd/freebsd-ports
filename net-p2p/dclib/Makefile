@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	dclib
-PORTVERSION=	0.3.17
+PORTVERSION=	0.3.18
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	wxdcgui
@@ -35,10 +35,12 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's/-O2//g; s/-pedantic //g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+	    ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 	${FIND} ${WRKSRC} -name "Makefile.*" | ${XARGS} \
 	    ${REINPLACE_CMD} -e 's|dclib-0.3/||g'
 	${REINPLACE_CMD} -e 's|-0.3||g' ${WRKSRC}/dclib.pc.in
+	${REINPLACE_CMD} -e 's|-D_XOPEN_SOURCE=500||g; \
+	    s|-D_BSD_SOURCE||g' ${WRKSRC}/configure ${WRKSRC}/configure.in
 
 .include <bsd.port.mk>

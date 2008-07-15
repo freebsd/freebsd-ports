@@ -33,6 +33,7 @@ include/dclib/core/csingleton.h
 include/dclib/core/csocket.h
 include/dclib/core/cssl.h
 include/dclib/core/cstring.h
+include/dclib/core/cstringhash.h
 include/dclib/core/cstringlist.h
 include/dclib/core/cthread.h
 include/dclib/core/cxml.h
@@ -50,6 +51,7 @@ include/dclib/ctransfer.h
 include/dclib/cuserlist.h
 include/dclib/cutils.h
 include/dclib/dclib-ssl-use.h
+include/dclib/dclib-stl-use.h
 include/dclib/dclib.h
 include/dclib/dcobject.h
 include/dclib/dcos.h
