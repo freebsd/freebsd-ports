@@ -79,7 +79,7 @@ PLIST_SUB+=	JIT="@comment "
 BROKEN=		Does not compile on ia64
 .endif
 
-.if ${PACKAGE_BUILDING}
+.if defined(PACKAGE_BUILDING)
 IGNORE=		needs to be build under non-root user, pointyhat cannot do that
 .endif
 
