@@ -7,6 +7,7 @@
 
 PORTNAME=	libxml
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	libxml
@@ -27,13 +28,17 @@ EXT_ARGS=	--with-iconv-dir=${LOCALBASE} \
 		--with-iconv-lib=${LOCALBASE}/lib \
 		--with-iconv-include=${LOCALBASE}/include
 
-PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/xml/libxml.so \
+PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/xml/libxml_ruby.so \
 		%%RUBY_SITELIBDIR%%/xml/libxml.rb
 PLIST_DIRS=	%%RUBY_SITEARCHLIBDIR%%/xml \
 		%%RUBY_SITELIBDIR%%/xml
 
+post-patch:
+	${REINPLACE_CMD} -e 's|libxml_ruby.so|xml/libxml_ruby.so|' \
+	    ${WRKSRC}/lib/libxml.rb
+
 do-configure:
-	cd ${WRKSRC}/ext/libxml && ${RUBY} extconf.rb build ${EXT_ARGS} 
+	cd ${WRKSRC}/ext/libxml && ${RUBY} extconf.rb build ${EXT_ARGS}
 
 do-build:
 	cd ${WRKSRC}/ext/libxml && ${MAKE}
@@ -41,6 +46,6 @@ do-build:
 do-install:
 	${INSTALL} -d ${RUBY_SITELIBDIR}/xml ${RUBY_SITEARCHLIBDIR}/xml
 	${INSTALL_DATA} ${WRKSRC}/lib/libxml.rb ${RUBY_SITELIBDIR}/xml
-	${INSTALL_DATA} ${WRKSRC}/ext/libxml/libxml_ruby.so ${RUBY_SITEARCHLIBDIR}/xml/libxml.so
+	${INSTALL_DATA} ${WRKSRC}/ext/libxml/libxml_ruby.so ${RUBY_SITEARCHLIBDIR}/xml/
 
 .include <bsd.port.mk>
