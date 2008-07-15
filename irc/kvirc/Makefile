@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	3.2.0
-PORTREVISION=	5
+PORTVERSION=	3.4.0
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.net/pub/%SUBDIR%/ \
 		ftp://ftp.kvirc.de/pub/%SUBDIR%/ \
@@ -23,6 +22,8 @@ USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 CONFIGURE_TARGET=
 PLIST_SUB=		VER=${PORTVERSION}
 
@@ -34,10 +35,6 @@ OPTIONS=	ARTS "Compile with arts support" on \
 			GSM "Compile with gsm support" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=		artsc.0:${PORTSDIR}/audio/arts
