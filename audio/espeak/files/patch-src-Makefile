@@ -1,38 +1,59 @@
---- src/Makefile.orig	2008-03-09 12:22:06.000000000 -0700
-+++ src/Makefile	2008-03-17 16:12:11.322174163 -0700
-@@ -1,10 +1,9 @@
+--- src/Makefile	2008-04-16 14:06:34.000000000 +0200
++++ src/Makefile.port	2008-07-15 14:28:18.000000000 +0200
+@@ -1,10 +1,10 @@
  # remove -fno-exceptions  if it causes problems with stdio library on some platforms (ARM)
  
--PREFIX=/
--BINDIR=$(PREFIX)/usr/bin
--INCDIR=$(PREFIX)/usr/include/espeak
--LIBDIR=$(PREFIX)/usr/lib
--DATADIR=$(PREFIX)/usr/share/espeak-data
-+BINDIR=%%PREFIX%%/bin
-+INCDIR=%%PREFIX%%/include/espeak
-+LIBDIR=%%PREFIX%%/lib
+-PREFIX=/usr
++PREFIX?=/usr
+ BINDIR=$(PREFIX)/bin
+ INCDIR=$(PREFIX)/include/espeak
+ LIBDIR=$(PREFIX)/lib
+-DATADIR=$(PREFIX)/share/espeak-data
 +DATADIR=%%DATADIR%%/espeak-data
  
- RELEASE = 1.36
+ RELEASE = 1.37
  BIN_NAME = speak
-@@ -53,24 +52,23 @@
+@@ -24,18 +24,18 @@
+ LN_SF = /bin/ln -sf
+ MKDIR = mkdir -p
+ 
+-AUDIO = portaudio
++AUDIO ?= portaudio
+ #AUDIO = pulseaudio
+ #AUDIO = sada
+ 
+ ifeq ($(AUDIO),pulseaudio)
+ WAVE=wave_pulse.cpp
+-LIB_AUDIO=-lpulse
++LIB_AUDIO=-L$(LOCALBASE)/lib -lpulse
+ USE_AUDIO=-DUSE_PULSEAUDIO
+ else
+ ifeq ($(AUDIO),portaudio)
+ WAVE=wave.cpp
+-LIB_AUDIO=-lportaudio
++LIB_AUDIO=-L$(LOCALBASE)/lib -lportaudio
+ USE_AUDIO=-DUSE_PORTAUDIO
+ else
+ ifeq ($(AUDIO),sada)
+@@ -60,24 +60,24 @@
  
  SRCS1=$(speak_SOURCES)
  OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
 -LIBS1=-lstdc++ $(LIB_AUDIO) -lpthread $(EXTRA_LIBS)
-+LIBS1=-lstdc++ -L%%LOCALBASE%%/lib $(LIB_AUDIO) $(PTHREAD_LIBS) $(EXTRA_LIBS)
++LIBS1=-lstdc++ $(LIB_AUDIO) $(PTHREAD_LIBS) $(EXTRA_LIBS)
  
  SRCS2=$(libespeak_SOURCES)
  OBJS2=$(patsubst %.cpp,x_%.o,$(SRCS2))
 -LIBS2=-lstdc++ $(LIB_AUDIO) -lpthread
-+LIBS2=-lstdc++ -L%%LOCALBASE%%/lib $(LIB_AUDIO) $(PTHREAD_LIBS)
++LIBS2=-lstdc++ $(LIB_AUDIO) $(PTHREAD_LIBS)
  
  SRCS3 = espeak.cpp
  OBJS3=$(patsubst %.cpp,%.o,$(SRCS3))
 -LIBS3=-lstdc++ -L . -lespeak
++LIBS3=-lstdc++ -L . -lespeak $(PTHREAD_LIBS)
  
 -CXXFLAGS=-O2
-+LIBS3=-lstdc++ -L . -lespeak $(PTHREAD_LIBS)
++CXXFLAGS?=-O2
  
  
  all: $(BIN_NAME) $(LIB_NAME) $(STATIC_LIB_NAME) $(BIN2_NAME)
@@ -44,25 +65,25 @@
  
  $(BIN_NAME): $(OBJS1)
  	$(CXX) -o $@ $(OBJS1) $(LIBS1)
-@@ -81,7 +79,7 @@
+@@ -88,7 +88,7 @@
  
  
  x_%.o: %.cpp
 -	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -Wall -fpic -pedantic \
-+	$(CXX) $(CXXFLAGS) $(PTHREAD_CFLAGS) $(USE_AUDIO) -Wall -fpic -pedantic \
++	$(CXX) $(CXXFLAGS) $(PHREAD_CFLAGS) $(USE_AUDIO) -Wall -fpic -pedantic \
  	-I. -D LIBRARY -c -fno-exceptions  $<  -o x_$*.o
  
  $(LIB_NAME): $(OBJS2)
-@@ -100,7 +98,7 @@
+@@ -107,7 +107,7 @@
  
  install: all
  	# Create directories
 -	rm -rf $(DESTDIR)$(DATADIR)
-+	#rm -rf $(DESTDIR)$(DATADIR)
++	# rm -rf $(DESTDIR)$(DATADIR)
  	$(MKDIR) $(DESTDIR)$(BINDIR)
  	$(MKDIR) $(DESTDIR)$(LIBDIR)
  	$(MKDIR) $(DESTDIR)$(INCDIR)
-@@ -116,5 +114,5 @@
+@@ -123,5 +123,5 @@
  	# Install development headers
  	$(INSTALL) -pm 644 speak_lib.h $(DESTDIR)$(INCDIR)
  	# Install data files
