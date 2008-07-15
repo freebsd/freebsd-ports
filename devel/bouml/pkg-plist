@@ -1610,6 +1610,7 @@ bin/projectSynchro
 %%DATADIR%%/xmi2/147840.bodies
 %%DATADIR%%/xmi2/148096.bodies
 %%DATADIR%%/xmi2/148352.bodies
+%%DATADIR%%/xmi2/148482.bodies
 %%DATADIR%%/xmi2/148608.bodies
 %%DATADIR%%/xmi2/148864.bodies
 %%DATADIR%%/xmi2/149120.bodies
@@ -1671,6 +1672,7 @@ bin/projectSynchro
 %%DATADIR%%/xmi2/9345.bodies
 %%DATADIR%%/xmi2/9473.bodies
 %%DATADIR%%/xmi2/9729.bodies
+%%DATADIR%%/xmi2/9857.bodies
 %%DATADIR%%/xmi2/9985.bodies
 %%DATADIR%%/xmi2/cpp_includes
 %%DATADIR%%/xmi2/generation_settings
