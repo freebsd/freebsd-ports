@@ -8602,6 +8602,7 @@ nagcon                          ports/net-mgmt/nagcon
 nagios                          ports/net-mgmt/nagios
 nagios-base-logos               ports/misc/nagios-base-logos
 nagios-certexp-plugin           ports/net-mgmt/nagios-certexp-plugin
+nagios-check_bacula             ports/net-mgmt/nagios-check_bacula
 nagios-devel                    ports/net-mgmt/nagios-devel
 nagios-pf-plugin                ports/net-mgmt/nagios-pf-plugin
 nagios-plugins                  ports/net-mgmt/nagios-plugins
@@ -19484,6 +19485,7 @@ squeezecenter-superdatetime     ports/audio/squeezecenter-superdatetime
 squeezecenter-trackstat         ports/audio/squeezecenter-trackstat
 squeezecenter-transitionupdater  ports/audio/squeezecenter-transitionupdater
 squid                           ports/www/squid
+squid26                         ports/www/squid26
 squid30                         ports/www/squid30
 squid_radius_auth               ports/www/squid_radius_auth
 squidclam                       ports/security/squidclam
