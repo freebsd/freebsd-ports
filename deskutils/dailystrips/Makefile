@@ -7,10 +7,9 @@
 
 PORTNAME=	dailystrips
 PORTVERSION=	1.0.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to download or view your favorite online comic strips daily
