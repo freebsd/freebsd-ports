@@ -79,6 +79,10 @@ PLIST_SUB+=	JIT="@comment "
 BROKEN=		Does not compile on ia64
 .endif
 
+.if ${PACKAGE_BUILDING}
+IGNORE=		needs to be build under non-root user, pointyhat cannot do that
+.endif
+
 pre-configure:
 	@if [ `${ID} -u` -eq 0 ]; then \
 		${ECHO_MSG} "==> Please do not build ${PORTNAME} as 'root' (because of 'perldoc' issue)."; exit 1; fi
