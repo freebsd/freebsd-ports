@@ -1,0 +1,16 @@
+Seed7 is an extensible general purpose programming language
+designed by Thomas Mertes. It is a higher level language
+compared to Ada, C/C++ and Java.
+
+Major features include:
+
+- user defined statements and operators,
+- abstract data types,
+- templates without special syntax,
+- OO with interfaces and multiple dispatch,
+- statically typed,
+- interpreted or compiled,
+- portable,
+- runs under linux/unix/windows.
+
+WWW: http://seed7.sourceforge.net/
