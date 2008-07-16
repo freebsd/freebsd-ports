@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	komodo-edit
-PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTVERSION=	4.4.1
 CATEGORIES=	editors
 MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${PORTVERSION}/
-DISTNAME=	Komodo-Edit-4.2.1-283000-linux-libcpp6-x86
+DISTNAME=	Komodo-Edit-${PORTVERSION}-1774-linux-libcpp6-x86
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
