@@ -8,7 +8,7 @@
 
 PORTNAME=	apinger
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 		http://www.bnet.pl/~jajcus/apinger/
