@@ -125,6 +125,11 @@ JB_CONF_ARGS+=	sasl=no
 LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
+post-patch:
+.if ${OSVERSION} < 700042
+	@${REINPLACE_CMD} -e "s,-Wno-pointer-sign,," ${WRKSRC}/jb
+.endif
+
 do-configure:
 	cd ${WRKSRC} && ${JB_CONF_ENV} ./jb configure ${JB_CONF_ARGS}
 
