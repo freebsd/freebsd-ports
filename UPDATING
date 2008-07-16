@@ -262,6 +262,16 @@ upgrades.
   from 0 to 1 in 'Dialog Toolkit' if it annoys you. 0 = auto detection,
   1 = QT and 2 = GTK+.
 
+20080610:
+  AFFECTS: users of mail/svnmailer
+  AUTHOR: pgollucci@p6m7g8.com
+
+  Some of the config directives and sections allowed have changed.  You will
+  have to edit your config file when updating to  1.1.0-dev-r1373 version of
+  the port.
+
+  http://opensource.perlig.de/en/svnmailer/doc-1.1/#general-config-charset
+
 20080609:
   AFFECTS: users of devel/pear-Date_Holidays
   AUTHOR: tabthorpe@FreeBSD.org
