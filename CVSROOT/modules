@@ -4129,6 +4129,7 @@ gngeo                           ports/emulators/gngeo
 gnmm                            ports/games/gnmm
 gno3dtet                        ports/games/gno3dtet
 gnochm                          ports/deskutils/gnochm
+gnocky                          ports/comms/gnocky
 gnocl                           ports/x11-toolkits/gnocl
 gnoemoe                         ports/net/gnoemoe
 gnofin                          ports/finance/gnofin
