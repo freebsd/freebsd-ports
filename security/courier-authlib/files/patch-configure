@@ -1,6 +1,6 @@
---- configure.orig	2008-06-12 20:25:13.000000000 +0200
-+++ configure	2008-06-12 20:23:39.000000000 +0200
-@@ -907,6 +907,9 @@
+--- configure.orig	2008-07-12 21:41:09.000000000 +0200
++++ configure	2008-07-16 08:38:29.000000000 +0200
+@@ -898,6 +898,9 @@
  SHADOWLIBS
  LIBAUTHSHADOW
  LIBAUTHPWD
@@ -10,7 +10,7 @@
  authpgsqlrc
  PG_CONFIG
  PGSQL_LIBS
-@@ -937,7 +940,11 @@
+@@ -928,7 +931,11 @@
  HAVE_SGML_FALSE
  subdirs
  LIBOBJS
@@ -23,7 +23,7 @@
  ac_subst_files=''
        ac_precious_vars='build_alias
  host_alias
-@@ -1561,6 +1568,7 @@
+@@ -1552,6 +1559,7 @@
   --with-authldaprc=filename         Expect to find authldaprc here
   --without-authpwd                  Do not include the authpwd module
   --without-authshadow               Do not include the authshadow module
@@ -31,7 +31,7 @@
   --with-authpgsqlrc=filename        Expect to find authpgsql here
   --without-authpgsql               Do not include the authpgsql module
   --with-pgsql-libs=DIR		Look for pgsql libs in this dir
-@@ -2502,7 +2510,7 @@
+@@ -2493,7 +2501,7 @@
  fi
  
  fi
@@ -40,7 +40,7 @@
  
  # We need awk for the "check" target.  The system "awk" is bad on
  # some platforms.
-@@ -21290,8 +21298,12 @@
+@@ -21188,8 +21196,12 @@
  
  if test "$doauthuserdb" = "no"
  then
@@ -53,7 +53,7 @@
  	AUTHUSERDB="authuserdb"
  	LIBAUTHUSERDB="libauthuserdb.la"
  
-@@ -22969,6 +22981,20 @@
+@@ -22867,6 +22879,20 @@
  fi
  
  
@@ -74,7 +74,7 @@
  
   if test "$HAVE_LDAP" = 1; then
    HAVE_LDAP_TRUE=
-@@ -23617,6 +23643,256 @@
+@@ -23515,6 +23541,256 @@
  
  
  
@@ -331,7 +331,7 @@
  # Check whether --with-authpgsqlrc was given.
  if test "${with_authpgsqlrc+set}" = set; then
    withval=$with_authpgsqlrc; authpgsqlrc="$withval"
-@@ -26616,9 +26892,13 @@
+@@ -26486,9 +26762,13 @@
  CXXFLAGS!$CXXFLAGS$ac_delim
  ac_ct_CXX!$ac_ct_CXX$ac_delim
  CXXDEPMODE!$CXXDEPMODE$ac_delim
@@ -346,7 +346,7 @@
      break
    elif $ac_last_try; then
      { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
-@@ -26698,6 +26978,9 @@
+@@ -26559,6 +26839,9 @@
  SHADOWLIBS!$SHADOWLIBS$ac_delim
  LIBAUTHSHADOW!$LIBAUTHSHADOW$ac_delim
  LIBAUTHPWD!$LIBAUTHPWD$ac_delim
@@ -356,12 +356,12 @@
  authpgsqlrc!$authpgsqlrc$ac_delim
  PG_CONFIG!$PG_CONFIG$ac_delim
  PGSQL_LIBS!$PGSQL_LIBS$ac_delim
-@@ -26731,7 +27014,7 @@
+@@ -26592,7 +26875,7 @@
  LTLIBOBJS!$LTLIBOBJS$ac_delim
  _ACEOF
  
--  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 72; then
-+  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 75; then
+-  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 63; then
++  if test `sed -n "s/.*$ac_delim\$/X/p" conf$$subs.sed | grep -c X` = 66; then
      break
    elif $ac_last_try; then
      { { echo "$as_me:$LINENO: error: could not make $CONFIG_STATUS" >&5
