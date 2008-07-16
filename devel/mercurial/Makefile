@@ -57,6 +57,8 @@ post-install:
 	for f in ${DOCS}; do \
 		${INSTALL_MAN} ${WRKSRC}/$${f} ${DOCSDIR}; \
 	done
+.endif
+.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${DATADIR}/contrib
 	${MKDIR} ${DATADIR}/contrib/git-viz
@@ -67,6 +69,7 @@ post-install:
 	done
 	${MKDIR} ${DATADIR}/www
 	${INSTALL_MAN} ${WRKSRC}/*.cgi ${DATADIR}/www
+.endif
 	@${CAT} ${PKGMESSAGE}
 .endif
 
