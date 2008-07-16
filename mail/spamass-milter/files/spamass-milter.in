@@ -52,7 +52,7 @@ stop_postcmd()
 load_rc_config $name
 : ${spamass_milter_enable="NO"}
 : ${spamass_milter_socket="/var/run/spamass-milter.sock"}
-: ${spamass_milter_flags="-f -p ${spamass_milter_socket}"}
+${spamass_milter_flags="-f -p ${spamass_milter_socket} ${spamass_milter_localflags}"}
 : ${spamass_milter_socket_owner="root"}
 : ${spamass_milter_socket_group="wheel"}
 : ${spamass_milter_socket_mode="644"}
