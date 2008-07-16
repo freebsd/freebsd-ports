@@ -1,0 +1,14 @@
+%%RUBY_SITEARCHLIBDIR%%/xml/libxml_ruby.so
+%%RUBY_SITELIBDIR%%/xml/libxml.rb
+%%RUBY_SITELIBDIR%%/libxml/attr.rb
+%%RUBY_SITELIBDIR%%/libxml/attributes.rb
+%%RUBY_SITELIBDIR%%/libxml/document.rb
+%%RUBY_SITELIBDIR%%/libxml/node.rb
+%%RUBY_SITELIBDIR%%/libxml/node_set.rb
+%%RUBY_SITELIBDIR%%/libxml/parser.rb
+%%RUBY_SITELIBDIR%%/libxml/parser_options.rb
+%%RUBY_SITELIBDIR%%/libxml/properties.rb
+%%RUBY_SITELIBDIR%%/libxml/tree.rb
+@dirrm %%RUBY_SITEARCHLIBDIR%%/xml
+@dirrm %%RUBY_SITELIBDIR%%/xml
+@dirrm %%RUBY_SITELIBDIR%%/libxml
