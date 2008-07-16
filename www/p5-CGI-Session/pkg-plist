@@ -12,9 +12,7 @@
 %%SITE_PERL%%/CGI/Session/ID/static.pm
 %%SITE_PERL%%/CGI/Session/Serialize/default.pm
 %%SITE_PERL%%/CGI/Session/Serialize/freezethaw.pm
-%%SITE_PERL%%/CGI/Session/Serialize/json.pm
 %%SITE_PERL%%/CGI/Session/Serialize/storable.pm
-%%SITE_PERL%%/CGI/Session/Serialize/yaml.pm
 %%SITE_PERL%%/CGI/Session/Test/Default.pm
 %%SITE_PERL%%/CGI/Session/Tutorial.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Session/.packlist

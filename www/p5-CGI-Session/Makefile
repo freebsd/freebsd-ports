@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Session
-PORTVERSION=	4.20
+PORTVERSION=	4.34
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MARKSTOS
@@ -32,9 +32,7 @@ MAN3=		\
 		CGI::Session::ID::static.3 \
 		CGI::Session::Serialize::default.3 \
 		CGI::Session::Serialize::freezethaw.3 \
-		CGI::Session::Serialize::json.3 \
 		CGI::Session::Serialize::storable.3 \
-		CGI::Session::Serialize::yaml.3 \
 		CGI::Session::Test::Default.3 \
 		CGI::Session::Tutorial.3 \
 
