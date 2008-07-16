@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	audio
 MASTER_SITES=	http://herrie.info/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
@@ -17,6 +16,7 @@ MAINTAINER=	ed@FreeBSD.org
 COMMENT=	A small command line interface music player
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=verbose
 CONFIGURE_ENV+=	PREFIX=${PREFIX}
 
 USE_BZIP2=	yes
