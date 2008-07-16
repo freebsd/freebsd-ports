@@ -1,0 +1,6 @@
+LastFMrec plays a last.fm radio stream.
+While listening it creates one mp3-file per song and names
+it after artist and title.
+It can be run inside a shell or in a pop-up xterm (as browser plugin).
+
+WWW: http://elgrande.daemoncore.org/index_lastfmrec.php
