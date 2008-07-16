@@ -1,0 +1,12 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+echo
+echo "Remember to remove zfs-snapshot-mgmt entry from cron configuration."
+echo -n "Otherwise the system will be constantly trying to call the deinstalled"
+echo " script."
