@@ -1,0 +1,5 @@
+Gnocky is an application for managing your mobile phone.  It supports
+setting logos, SMS and address book management, and uses the user-space
+mobile driver provided by the gnokii project.
+
+WWW: http://wiki.gnokii.org/index.php/Gnocky
