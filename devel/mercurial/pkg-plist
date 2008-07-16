@@ -389,36 +389,36 @@ bin/hg
 %%PORTDOCS%%%%DOCSDIR%%/hgignore.5.txt
 %%PORTDOCS%%%%DOCSDIR%%/hgrc.5.html
 %%PORTDOCS%%%%DOCSDIR%%/hgrc.5.txt
-%%DATADIR%%/contrib/bash_completion
-%%DATADIR%%/contrib/convert-repo
-%%DATADIR%%/contrib/darcs2hg.py
-%%DATADIR%%/contrib/git-viz/git-cat-file
-%%DATADIR%%/contrib/git-viz/git-diff-tree
-%%DATADIR%%/contrib/git-viz/git-rev-list
-%%DATADIR%%/contrib/git-viz/git-rev-tree
-%%DATADIR%%/contrib/git-viz/hg-viz
-%%DATADIR%%/contrib/hg-ssh
-%%DATADIR%%/contrib/hgdiff
-%%DATADIR%%/contrib/hgk
-%%DATADIR%%/contrib/hgsh/Makefile
-%%DATADIR%%/contrib/hgsh/hgsh.c
-%%DATADIR%%/contrib/mercurial.el
-%%DATADIR%%/contrib/sample.hgrc
-%%DATADIR%%/contrib/tcsh_completion
-%%DATADIR%%/contrib/vim/HGAnnotate.vim
-%%DATADIR%%/contrib/vim/hg-menu.vim
-%%DATADIR%%/contrib/vim/hgcommand.vim
-%%DATADIR%%/contrib/vim/patchreview.txt
-%%DATADIR%%/contrib/vim/patchreview.vim
-%%DATADIR%%/contrib/zsh_completion
-%%DATADIR%%/www/hgweb.cgi
-%%DATADIR%%/www/hgwebdir.cgi
-@dirrm %%DATADIR%%/www
-@dirrm %%DATADIR%%/contrib/vim
-@dirrm %%DATADIR%%/contrib/hgsh
-@dirrm %%DATADIR%%/contrib/git-viz
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%
+%%PORTDATA%%%%DATADIR%%/contrib/bash_completion
+%%PORTDATA%%%%DATADIR%%/contrib/convert-repo
+%%PORTDATA%%%%DATADIR%%/contrib/darcs2hg.py
+%%PORTDATA%%%%DATADIR%%/contrib/git-viz/git-cat-file
+%%PORTDATA%%%%DATADIR%%/contrib/git-viz/git-diff-tree
+%%PORTDATA%%%%DATADIR%%/contrib/git-viz/git-rev-list
+%%PORTDATA%%%%DATADIR%%/contrib/git-viz/git-rev-tree
+%%PORTDATA%%%%DATADIR%%/contrib/git-viz/hg-viz
+%%PORTDATA%%%%DATADIR%%/contrib/hg-ssh
+%%PORTDATA%%%%DATADIR%%/contrib/hgdiff
+%%PORTDATA%%%%DATADIR%%/contrib/hgk
+%%PORTDATA%%%%DATADIR%%/contrib/hgsh/Makefile
+%%PORTDATA%%%%DATADIR%%/contrib/hgsh/hgsh.c
+%%PORTDATA%%%%DATADIR%%/contrib/mercurial.el
+%%PORTDATA%%%%DATADIR%%/contrib/sample.hgrc
+%%PORTDATA%%%%DATADIR%%/contrib/tcsh_completion
+%%PORTDATA%%%%DATADIR%%/contrib/vim/HGAnnotate.vim
+%%PORTDATA%%%%DATADIR%%/contrib/vim/hg-menu.vim
+%%PORTDATA%%%%DATADIR%%/contrib/vim/hgcommand.vim
+%%PORTDATA%%%%DATADIR%%/contrib/vim/patchreview.txt
+%%PORTDATA%%%%DATADIR%%/contrib/vim/patchreview.vim
+%%PORTDATA%%%%DATADIR%%/contrib/zsh_completion
+%%PORTDATA%%%%DATADIR%%/www/hgweb.cgi
+%%PORTDATA%%%%DATADIR%%/www/hgwebdir.cgi
+%%PORTDATA%%@dirrm %%DATADIR%%/www
+%%PORTDATA%%@dirrm %%DATADIR%%/contrib/vim
+%%PORTDATA%%@dirrm %%DATADIR%%/contrib/hgsh
+%%PORTDATA%%@dirrm %%DATADIR%%/contrib/git-viz
+%%PORTDATA%%@dirrm %%DATADIR%%/contrib
+%%PORTDATA%%@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/static
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/rss
