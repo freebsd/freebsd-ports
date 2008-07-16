@@ -1,0 +1,52 @@
+bin/gnocky
+share/applications/gnocky.desktop
+share/gnocky/glade/caller-id.png
+share/gnocky/glade/cellphone.png
+share/gnocky/glade/ellipse-filled.png
+share/gnocky/glade/ellipse.png
+share/gnocky/glade/fill.png
+share/gnocky/glade/gnocky-addressbook-list-dialog.glade
+share/gnocky/glade/gnocky-edit-phonebook.glade
+share/gnocky/glade/gnocky-logos-view.glade
+share/gnocky/glade/gnocky-new-sms.glade
+share/gnocky/glade/gnocky-phone-view.glade
+share/gnocky/glade/gnocky-phonebook-list-dialog.glade
+share/gnocky/glade/gnocky-phonebook-view.glade
+share/gnocky/glade/gnocky-preferences.glade
+share/gnocky/glade/gnocky-sms-view.glade
+share/gnocky/glade/gnocky.glade
+share/gnocky/glade/line.png
+share/gnocky/glade/logos.png
+share/gnocky/glade/operator-logo.png
+share/gnocky/glade/pencil.png
+share/gnocky/glade/phonebook.png
+share/gnocky/glade/phonebook24x24.png
+share/gnocky/glade/picture-message.png
+share/gnocky/glade/read-from-phone.png
+share/gnocky/glade/rect-filled.png
+share/gnocky/glade/rect.png
+share/gnocky/glade/sms.png
+share/gnocky/glade/startup-logo.png
+share/gnocky/glade/tasks.png
+share/gnocky/glade/write-to-phone.png
+@dirrm share/gnocky/glade
+share/gnocky/pixmaps/phones/3210.png
+share/gnocky/pixmaps/phones/3310.png
+share/gnocky/pixmaps/phones/3510i.png
+share/gnocky/pixmaps/phones/6210.png
+share/gnocky/pixmaps/phones/6310.png
+share/gnocky/pixmaps/phones/6310i.png
+share/gnocky/pixmaps/phones/7110.png
+share/gnocky/pixmaps/phones/c55.png
+share/gnocky/pixmaps/phones/m55.png
+share/gnocky/pixmaps/phones/s55.png
+share/gnocky/pixmaps/phones/unknown.png
+@dirrm share/gnocky/pixmaps/phones
+share/gnocky/pixmaps/me.png
+share/gnocky/pixmaps/sm.png
+@dirrm share/gnocky/pixmaps
+@dirrm share/gnocky
+%%NLS%%share/locale/de/LC_MESSAGES/gnocky.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gnocky.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gnocky.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gnocky.mo

@@ -33,6 +33,7 @@
     SUBDIR += ghfaxviewer
     SUBDIR += gkermit
     SUBDIR += gmfsk
+    SUBDIR += gnocky
     SUBDIR += gnokii
     SUBDIR += gnuradio
     SUBDIR += gpredict
