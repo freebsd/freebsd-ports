@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	separate
-PORTVERSION=	20070727
+PORTVERSION=	0.5.1
+PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~gahr/distfiles/
 MASTER_SITE_SUBDIR=	gahr
+DISTNAME=	${PORTNAME}+-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A CMYK plugin for The GIMP
@@ -18,7 +21,7 @@ BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep \
 		gimp-2.4:${PORTSDIR}/graphics/gimp
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms
 
-WRKSRC=		${WRKDIR}/${PORTNAME}+
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_ZIP=	yes
 
@@ -35,6 +38,7 @@ PORTEXAMPLES=	quickproof.scm quicksave.scm
 MAKE_ENV+=	TARGETS="${TARGETS}"
 
 do-install:
+	${INSTALL} -d ${PREFIX}/${GIMP_PLUGINS_DIR}
 .for PLUGIN in ${TARGETS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PLUGIN} ${PREFIX}/${GIMP_PLUGINS_DIR}/
 .endfor
