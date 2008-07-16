@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Testing_Selenium
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -18,8 +18,8 @@ RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 FILES=		Selenium/Exception.php \
 		ChangeLog \
 		Selenium.php \
-		README \
-		TODO
+		readme \
+		todo
 EXAMPLES=	example.php
 TESTS=		html/bug8893.html \
 		html/bug9119.html \
