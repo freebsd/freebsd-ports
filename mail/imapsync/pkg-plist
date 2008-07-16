@@ -1,0 +1,21 @@
+bin/imapsync
+%%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/Mail/IMAPClient.pm
+%%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/Mail/IMAPClient.pod
+%%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/Mail/IMAPClient/BodyStructure.pm
+%%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/Mail/IMAPClient/BodyStructure/Parse.pm
+%%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/Mail/IMAPClient/MessageSet.pm
+%%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/Mail/IMAPClient/Thread.pm
+%%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/mach/auto/Mail/IMAPClient/.packlist
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/mach/auto/Mail/IMAPClient
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/mach/auto/Mail
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/mach/auto
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/mach
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/Mail/IMAPClient/BodyStructure
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/Mail/IMAPClient
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8/Mail
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl/5.8.8
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5/site_perl
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9/lib/perl5
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9/lib
+@dirrm %%DATADIR%%/Mail-IMAPClient-2.2.9
+@dirrm %%DATADIR%%
