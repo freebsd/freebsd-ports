@@ -7,6 +7,7 @@
 
 PORTNAME=	libdict
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source treap_insert.pdf:doc \
@@ -28,11 +29,13 @@ post-extract:
 pre-install:
 	-@${MKDIR} ${PREFIX}/include/
 	-@${MKDIR} ${PREFIX}/lib/
+.ifndef(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
 
 post-install:
 .	for ___f in avl_insert.pdf empty.pdf treap_insert.pdf
 	@${CP} ${WRKSRC}/${___f} ${DOCSDIR}
 .	endfor
+.endif
 
 .include <bsd.port.mk>
