@@ -8,8 +8,7 @@
 # this port.  You need a patched version of mysql server for that.
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://www.sphinxsearch.com/downloads/
 DISTNAME=	sphinx-${PORTVERSION}
@@ -21,6 +20,7 @@ CONFLICTS=	sphinxsearch-devel-[0-9]*
 
 OPTIONS=	MYSQL            "MySQL support"                   on  \
 		PGSQL            "PostgreSQL support"              off \
+		ICONV		 "Iconv support"		   on  \
 		OPTIMIZED_CFLAGS "Use compiler optimization (-O3)" off
 
 SPHINX_USR?=	_sphinx
@@ -50,8 +50,12 @@ SUB_LIST+=	PORTNAME=${PORTNAME}     \
 		SPHINX_LOG=${SPHINX_LOG}
 SUB_FILES+=	pkg-install pkg-deinstall
 
+.if !defined(NOPORTEXAMPLES)
+EXAMPLES=	example.sql api
+PORTEXAMPLES=	*
+.endif
+
 .if !defined(NOPORTDOCS)
-EXAMPLES=	example.sql api/sphinxapi.php api/test.php api/test2.php
 DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
 .endif
 
@@ -72,6 +76,13 @@ CONFIGURE_ARGS+=	--with-pgsql
 USE_PGSQL=		yes
 .else
 CONFIGURE_ARGS+=	--without-pgsql
+.endif
+
+.if defined(WITH_ICONV) && !defined(WITHOUT_ICONV)
+CONFIGURE_ARGS+=	--with-iconv
+USE_ICONV=		yes
+.else
+CONFIGURE_ARGS+=	--without-iconv
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
@@ -108,10 +119,10 @@ install-docs:
 .endif
 
 install-examples:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for example in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${example} ${EXAMPLESDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${example} ${EXAMPLESDIR}
 .endfor
 .endif
 
