@@ -834,6 +834,7 @@
     SUBDIR += zccron
     SUBDIR += zeroer
     SUBDIR += zfs-replicate
+    SUBDIR += zfs-snapshot-mgmt
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
 

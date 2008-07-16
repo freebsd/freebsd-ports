@@ -1,0 +1,9 @@
+
+To actually turn on the automatic snapshots you have to do the following:
+
+1. Add an appropriate crontab entry, e.g.:
+
+    echo "*/5 * * * *	root   /usr/local/bin/zfs-snapshot-mgmt" >> /etc/crontab
+
+See zfs-snapshot-mgmt(8) manpage for more details.
+
