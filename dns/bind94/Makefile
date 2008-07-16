@@ -38,6 +38,7 @@ CONFLICTS=	bind9-9.[35].* bind9-dlz-* bind9-sdb-ldap-* host-*
 
 OPTIONS=	REPLACE_BASE "Replace base BIND with this version" off \
 		LARGE_FILE "64-bit file support" off \
+		SIGCHASE "dig/host/nslookup will do DNSSEC validation" off \
 		IPV6 "IPv6 Support (autodetected by default)" off
 
 .include <bsd.port.pre.mk>
@@ -57,6 +58,10 @@ CONFIGURE_ARGS+=	--with-openssl
 
 .if defined(WITH_LARGE_FILE)
 CONFIGURE_ARGS+=	--enable-largefile
+.endif
+
+.if defined(WITH_SIGCHASE)
+CONFIGURE_ARGS+=	STD_CDEFINES="-DDIG_SIGCHASE=1"
 .endif
 
 .if defined(WITH_IPV6)
