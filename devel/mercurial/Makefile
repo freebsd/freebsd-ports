@@ -71,6 +71,5 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/*.cgi ${DATADIR}/www
 .endif
 	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.mk>
