@@ -1,0 +1,94 @@
+--- input.c.orig	2008-04-19 00:00:00.000000000 +0900
++++ input.c	2008-07-16 15:11:17.000000000 +0900
+@@ -256,7 +256,7 @@ int key;
+ 	else if ((c = getch2()) == EOF) /*EMPTY*/;
+ 	else if (c != K_ESC) /*EMPTY*/;
+ 	else if (kbhit2(WAITKEYPAD * 1000L)) {
+-		ungetkey2(c);
++		ungetkey2(c, 0);
+ 		c = EOF;
+ 	}
+ 
+@@ -266,7 +266,7 @@ int key;
+ 		else fprintf2(stderr, "%k\n", INTR_K);
+ 	}
+ 	else {
+-		ungetkey2(c);
++		ungetkey2(c, 0);
+ 		c = EOF;
+ 	}
+ 	errno = duperrno;
+@@ -372,7 +372,7 @@ int sig;
+ {
+ 	int n;
+ 
+-	for (n = ungetnum3 - 1; n >= 0; n--) ungetkey2((int)ungetbuf3[n]);
++	for (n = 0; n < ungetnum3; n++) ungetkey2((int)ungetbuf3[n], 0);
+ # ifndef	_NOIME
+ 	if (imemode && !ungetnum3 && getime(sig, &n, 0) >= 0) /*EMPTY*/;
+ 	else
+--- main.c.orig	2008-04-19 00:00:00.000000000 +0900
++++ main.c	2008-07-16 15:08:58.000000000 +0900
+@@ -681,7 +681,7 @@ int forced;
+ 		checkscreen(-1, -1);
+ 		if (isorgpid()) {
+ 			if (x != n_column || y != n_line) rewritefile(1);
+-			if (subwindow) ungetkey2(K_CTRL('L'));
++			if (subwindow) ungetkey2(K_CTRL('L'), 1);
+ 		}
+ 	}
+ }
+--- term.c.orig	2008-04-19 00:00:00.000000000 +0900
++++ term.c	2008-07-16 15:08:58.000000000 +0900
+@@ -2905,14 +2905,17 @@ int sig, code;
+ 	return(ch);
+ }
+ 
+-int ungetkey2(c)
+-int c;
++int ungetkey2(c, desc)
++int c, desc;
+ {
+ 	if (c == EOF || ttyio < 0) return(EOF);
+ 	if (ungetnum >= arraysize(ungetbuf)) return(EOF);
+-	memmove((char *)&(ungetbuf[1]), (char *)&(ungetbuf[0]),
+-		ungetnum * sizeof(u_char));
+-	ungetbuf[0] = (u_char)c;
++	if (!desc) ungetbuf[ungetnum] = (u_char)c;
++	else {
++		memmove((char *)&(ungetbuf[1]),
++			(char *)&(ungetbuf[0]), ungetnum * sizeof(u_char));
++		ungetbuf[0] = (u_char)c;
++	}
+ 	ungetnum++;
+ 
+ 	return(c);
+@@ -3155,14 +3158,15 @@ int sig, code;
+ 	return(alternate(ch));
+ }
+ 
+-int ungetkey2(c)
+-int c;
++int ungetkey2(c, desc)
++int c, desc;
+ {
+ # ifdef	TIOCSTI
+ 	u_char ch;
+ # endif
+ 
+ 	if (c == EOF || ttyio < 0) return(EOF);
++	if (!desc) return(ungetch2(c));
+ # ifdef	TIOCSTI
+ 	ch = c;
+ 	Xioctl(ttyio, TIOCSTI, &ch);
+--- term.h.orig	2008-04-19 00:00:00.000000000 +0900
++++ term.h	2008-07-16 15:08:58.000000000 +0900
+@@ -217,7 +217,7 @@ extern int getkey2 __P_((int, int));
+ #else
+ extern int getkey3 __P_((int, int));
+ #endif
+-extern int ungetkey2 __P_((int));
++extern int ungetkey2 __P_((int, int));
+ extern int setscroll __P_((int, int));
+ extern int locate __P_((int, int));
+ extern int tflush __P_((VOID_A));
