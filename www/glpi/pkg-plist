@@ -19,6 +19,8 @@ www/glpi/ajax/dropdownMassiveAction.php
 www/glpi/ajax/dropdownMassiveActionField.php
 www/glpi/ajax/dropdownMassiveActionPorts.php
 www/glpi/ajax/dropdownNetpoint.php
+www/glpi/ajax/dropdownRubDocument.php
+www/glpi/ajax/dropdownRules.php
 www/glpi/ajax/dropdownSelectSoftware.php
 www/glpi/ajax/dropdownTrackingDeviceType.php
 www/glpi/ajax/dropdownUsers.php
@@ -26,8 +28,10 @@ www/glpi/ajax/dropdownUsersTracking.php
 www/glpi/ajax/dropdownValue.php
 www/glpi/ajax/inputtext.php
 www/glpi/ajax/planning.php
+www/glpi/ajax/private_public.php
 www/glpi/ajax/profiles.php
 www/glpi/ajax/ruleaction.php
+www/glpi/ajax/ruleactionvalue.php
 www/glpi/ajax/rulecriteria.php
 www/glpi/ajax/rulecriteriavalue.php
 www/glpi/ajax/textarea.php
@@ -55,8 +59,10 @@ www/glpi/files/_lock/remove.txt
 www/glpi/files/_log/remove.txt
 www/glpi/files/_plugins/remove.txt
 www/glpi/files/_sessions/remove.txt
+www/glpi/files/_tmp/remove.txt
 www/glpi/files/_uploads/remove.txt
 www/glpi/front/backup.php
+www/glpi/front/bookmark.php
 www/glpi/front/cartridge.edit.php
 www/glpi/front/cartridge.form.php
 www/glpi/front/cartridge.php
@@ -74,6 +80,7 @@ www/glpi/front/contract.php
 www/glpi/front/cron.php
 www/glpi/front/device.form.php
 www/glpi/front/device.php
+www/glpi/front/dictionnary.php
 www/glpi/front/document.form.php
 www/glpi/front/document.php
 www/glpi/front/document.send.php
@@ -95,6 +102,8 @@ www/glpi/front/infocom.form.php
 www/glpi/front/infocom.show.php
 www/glpi/front/knowbase.form.php
 www/glpi/front/knowbase.php
+www/glpi/front/ldap.group.import.php
+www/glpi/front/ldap.group.php
 www/glpi/front/ldap.import.php
 www/glpi/front/ldap.parameters.php
 www/glpi/front/ldap.php
@@ -146,8 +155,43 @@ www/glpi/front/report.switch.list.php
 www/glpi/front/report.year.list.php
 www/glpi/front/report.year.php
 www/glpi/front/reservation.php
+www/glpi/front/rule.cache.php
 www/glpi/front/rule.common.form.php
 www/glpi/front/rule.common.php
+www/glpi/front/rule.dictionnary.manufacturer.form.php
+www/glpi/front/rule.dictionnary.manufacturer.php
+www/glpi/front/rule.dictionnary.model.computer.form.php
+www/glpi/front/rule.dictionnary.model.computer.php
+www/glpi/front/rule.dictionnary.model.monitor.form.php
+www/glpi/front/rule.dictionnary.model.monitor.php
+www/glpi/front/rule.dictionnary.model.networking.form.php
+www/glpi/front/rule.dictionnary.model.networking.php
+www/glpi/front/rule.dictionnary.model.peripheral.form.php
+www/glpi/front/rule.dictionnary.model.peripheral.php
+www/glpi/front/rule.dictionnary.model.phone.form.php
+www/glpi/front/rule.dictionnary.model.phone.php
+www/glpi/front/rule.dictionnary.model.printer.form.php
+www/glpi/front/rule.dictionnary.model.printer.php
+www/glpi/front/rule.dictionnary.os.form.php
+www/glpi/front/rule.dictionnary.os.php
+www/glpi/front/rule.dictionnary.os_sp.form.php
+www/glpi/front/rule.dictionnary.os_sp.php
+www/glpi/front/rule.dictionnary.os_version.form.php
+www/glpi/front/rule.dictionnary.os_version.php
+www/glpi/front/rule.dictionnary.software.form.php
+www/glpi/front/rule.dictionnary.software.php
+www/glpi/front/rule.dictionnary.type.computer.form.php
+www/glpi/front/rule.dictionnary.type.computer.php
+www/glpi/front/rule.dictionnary.type.monitor.form.php
+www/glpi/front/rule.dictionnary.type.monitor.php
+www/glpi/front/rule.dictionnary.type.networking.form.php
+www/glpi/front/rule.dictionnary.type.networking.php
+www/glpi/front/rule.dictionnary.type.peripheral.form.php
+www/glpi/front/rule.dictionnary.type.peripheral.php
+www/glpi/front/rule.dictionnary.type.phone.form.php
+www/glpi/front/rule.dictionnary.type.phone.php
+www/glpi/front/rule.dictionnary.type.printer.form.php
+www/glpi/front/rule.dictionnary.type.printer.php
 www/glpi/front/rule.generic.form.php
 www/glpi/front/rule.ocs.form.php
 www/glpi/front/rule.ocs.php
@@ -159,6 +203,7 @@ www/glpi/front/rule.softwarecategories.php
 www/glpi/front/rule.test.php
 www/glpi/front/rule.tracking.form.php
 www/glpi/front/rule.tracking.php
+www/glpi/front/rulesengine.test.php
 www/glpi/front/search.php
 www/glpi/front/setup.auth.php
 www/glpi/front/setup.config.php
@@ -203,8 +248,11 @@ www/glpi/help/hd-it_IT.html
 www/glpi/help/pt_PT.html
 www/glpi/inc/admininfo.class.php
 www/glpi/inc/ajax.function.php
+www/glpi/inc/alert.class.php
 www/glpi/inc/auth.class.php
 www/glpi/inc/auth.function.php
+www/glpi/inc/bookmark.class.php
+www/glpi/inc/bookmark.function.php
 www/glpi/inc/cartridge.class.php
 www/glpi/inc/cartridge.function.php
 www/glpi/inc/central.function.php
@@ -225,6 +273,7 @@ www/glpi/inc/contract.function.php
 www/glpi/inc/cron.class.php
 www/glpi/inc/db.function.php
 www/glpi/inc/dbmysql.class.php
+www/glpi/inc/dbreplicate.function.php
 www/glpi/inc/device.class.php
 www/glpi/inc/device.function.php
 www/glpi/inc/display.function.php
@@ -272,6 +321,8 @@ www/glpi/inc/reminder.class.php
 www/glpi/inc/reminder.function.php
 www/glpi/inc/reservation.class.php
 www/glpi/inc/reservation.function.php
+www/glpi/inc/rule.dictionnary.dropdown.class.php
+www/glpi/inc/rule.dictionnary.software.class.php
 www/glpi/inc/rule.ocs.class.php
 www/glpi/inc/rule.right.class.php
 www/glpi/inc/rule.softwarecategories.class.php
@@ -300,7 +351,7 @@ www/glpi/index.php
 www/glpi/install/index.php
 www/glpi/install/install.php
 www/glpi/install/mysql/.htaccess
-www/glpi/install/mysql/glpi-0.7-empty.sql
+www/glpi/install/mysql/glpi-0.71-empty.sql
 www/glpi/install/update.php
 www/glpi/install/update_031_04.php
 www/glpi/install/update_042_05.php
@@ -311,6 +362,7 @@ www/glpi/install/update_065_068.php
 www/glpi/install/update_0681_07.php
 www/glpi/install/update_068_0681.php
 www/glpi/install/update_06_065.php
+www/glpi/install/update_07_071.php
 www/glpi/install/update_content.php
 www/glpi/install/update_to_031.php
 www/glpi/lib/cache_lite/LICENSE
@@ -341,6 +393,7 @@ www/glpi/lib/calendar/images/left.gif
 www/glpi/lib/calendar/images/left_over.gif
 www/glpi/lib/calendar/images/right.gif
 www/glpi/lib/calendar/images/right_over.gif
+www/glpi/lib/calendar/lang/calendar-bg.js
 www/glpi/lib/calendar/lang/calendar-br.js
 www/glpi/lib/calendar/lang/calendar-ca.js
 www/glpi/lib/calendar/lang/calendar-cs.js
@@ -353,17 +406,20 @@ www/glpi/lib/calendar/lang/calendar-fr.js
 www/glpi/lib/calendar/lang/calendar-hu.js
 www/glpi/lib/calendar/lang/calendar-it.js
 www/glpi/lib/calendar/lang/calendar-ja.js
+www/glpi/lib/calendar/lang/calendar-lt.js
+www/glpi/lib/calendar/lang/calendar-lv.js
 www/glpi/lib/calendar/lang/calendar-nl.js
 www/glpi/lib/calendar/lang/calendar-pl.js
 www/glpi/lib/calendar/lang/calendar-ro.js
 www/glpi/lib/calendar/lang/calendar-ru.js
 www/glpi/lib/calendar/lang/calendar-sv.js
+www/glpi/lib/calendar/lang/calendar-tr.js
+www/glpi/lib/control.modal.js
 www/glpi/lib/ezpdf/class.ezpdf.php
 www/glpi/lib/ezpdf/class.pdf.php
 www/glpi/lib/ezpdf/fonts/Helvetica.afm
 www/glpi/lib/ezpdf/fonts/php_Helvetica.afm
 www/glpi/lib/index.php
-www/glpi/lib/mail/receivemail.class.php
 www/glpi/lib/phpcas/CAS.php
 www/glpi/lib/phpcas/COPYRIGHT
 www/glpi/lib/phpcas/PGTStorage/pgt-db.php
@@ -382,61 +438,56 @@ www/glpi/lib/phpmailer/LICENSE
 www/glpi/lib/phpmailer/class.phpmailer.php
 www/glpi/lib/phpmailer/class.smtp.php
 www/glpi/lib/phpmailer/language/phpmailer.lang-en.php
+www/glpi/lib/prototype.js
+www/glpi/lib/scriptaculous/MIT-LICENSE
+www/glpi/lib/scriptaculous/README
 www/glpi/lib/scriptaculous/builder.js
 www/glpi/lib/scriptaculous/controls.js
 www/glpi/lib/scriptaculous/dragdrop.js
 www/glpi/lib/scriptaculous/effects.js
-www/glpi/lib/scriptaculous/prototype.js
 www/glpi/lib/scriptaculous/scriptaculous.js
 www/glpi/lib/scriptaculous/slider.js
+www/glpi/lib/scriptaculous/sound.js
 www/glpi/lib/scriptaculous/unittest.js
-www/glpi/lib/tiny_mce/blank.htm
+www/glpi/lib/tiny_mce/langs/ar.js
+www/glpi/lib/tiny_mce/langs/bg.js
+www/glpi/lib/tiny_mce/langs/bs.js
 www/glpi/lib/tiny_mce/langs/ca.js
 www/glpi/lib/tiny_mce/langs/cs.js
-www/glpi/lib/tiny_mce/langs/cy.js
 www/glpi/lib/tiny_mce/langs/da.js
 www/glpi/lib/tiny_mce/langs/de.js
 www/glpi/lib/tiny_mce/langs/el.js
 www/glpi/lib/tiny_mce/langs/en.js
 www/glpi/lib/tiny_mce/langs/es.js
+www/glpi/lib/tiny_mce/langs/et.js
 www/glpi/lib/tiny_mce/langs/fa.js
 www/glpi/lib/tiny_mce/langs/fi.js
 www/glpi/lib/tiny_mce/langs/fr.js
-www/glpi/lib/tiny_mce/langs/fr_ca.js
 www/glpi/lib/tiny_mce/langs/he.js
+www/glpi/lib/tiny_mce/langs/hr.js
 www/glpi/lib/tiny_mce/langs/hu.js
-www/glpi/lib/tiny_mce/langs/is.js
+www/glpi/lib/tiny_mce/langs/ia.js
+www/glpi/lib/tiny_mce/langs/ii.js
 www/glpi/lib/tiny_mce/langs/it.js
 www/glpi/lib/tiny_mce/langs/ja.js
-www/glpi/lib/tiny_mce/langs/ja_euc-jp.js
-www/glpi/lib/tiny_mce/langs/ja_shift_jis.js
-www/glpi/lib/tiny_mce/langs/ja_utf-8.js
 www/glpi/lib/tiny_mce/langs/ko.js
+www/glpi/lib/tiny_mce/langs/lt.js
+www/glpi/lib/tiny_mce/langs/lv.js
 www/glpi/lib/tiny_mce/langs/nb.js
 www/glpi/lib/tiny_mce/langs/nl.js
 www/glpi/lib/tiny_mce/langs/nn.js
 www/glpi/lib/tiny_mce/langs/pl.js
-www/glpi/lib/tiny_mce/langs/pt_br.js
-www/glpi/lib/tiny_mce/langs/readme.txt
-www/glpi/lib/tiny_mce/langs/ro.js
+www/glpi/lib/tiny_mce/langs/pt.js
 www/glpi/lib/tiny_mce/langs/ru.js
-www/glpi/lib/tiny_mce/langs/ru_CP1251.js
-www/glpi/lib/tiny_mce/langs/ru_KOI8-R.js
-www/glpi/lib/tiny_mce/langs/si.js
 www/glpi/lib/tiny_mce/langs/sk.js
-www/glpi/lib/tiny_mce/langs/sq.js
+www/glpi/lib/tiny_mce/langs/sl.js
 www/glpi/lib/tiny_mce/langs/sr.js
 www/glpi/lib/tiny_mce/langs/sv.js
-www/glpi/lib/tiny_mce/langs/sv_utf8.js
 www/glpi/lib/tiny_mce/langs/tr.js
+www/glpi/lib/tiny_mce/langs/tw.js
 www/glpi/lib/tiny_mce/langs/uk.js
-www/glpi/lib/tiny_mce/langs/uk_CP1251.js
-www/glpi/lib/tiny_mce/langs/uk_KOI8-U.js
 www/glpi/lib/tiny_mce/langs/vi.js
-www/glpi/lib/tiny_mce/langs/zh_cn.js
-www/glpi/lib/tiny_mce/langs/zh_cn_utf8.js
-www/glpi/lib/tiny_mce/langs/zh_tw.js
-www/glpi/lib/tiny_mce/langs/zh_tw_utf8.js
+www/glpi/lib/tiny_mce/langs/zh.js
 www/glpi/lib/tiny_mce/license.txt
 www/glpi/lib/tiny_mce/plugins/cleanup/editor_plugin.js
 www/glpi/lib/tiny_mce/plugins/cleanup/editor_plugin_src.js
@@ -491,7 +542,6 @@ www/glpi/lib/tiny_mce/plugins/directionality/langs/zh_cn_utf8.js
 www/glpi/lib/tiny_mce/plugins/directionality/langs/zh_tw.js
 www/glpi/lib/tiny_mce/plugins/directionality/langs/zh_tw_utf8.js
 www/glpi/lib/tiny_mce/plugins/directionality/readme.txt
-www/glpi/lib/tiny_mce/plugins/readme.txt
 www/glpi/lib/tiny_mce/plugins/table/cell.htm
 www/glpi/lib/tiny_mce/plugins/table/css/cell.css
 www/glpi/lib/tiny_mce/plugins/table/css/row.css
@@ -511,53 +561,96 @@ www/glpi/lib/tiny_mce/plugins/table/images/table_insert_row_before.gif
 www/glpi/lib/tiny_mce/plugins/table/images/table_merge_cells.gif
 www/glpi/lib/tiny_mce/plugins/table/images/table_row_props.gif
 www/glpi/lib/tiny_mce/plugins/table/images/table_split_cells.gif
+www/glpi/lib/tiny_mce/plugins/table/js/cell.js
+www/glpi/lib/tiny_mce/plugins/table/js/merge_cells.js
+www/glpi/lib/tiny_mce/plugins/table/js/row.js
+www/glpi/lib/tiny_mce/plugins/table/js/table.js
 www/glpi/lib/tiny_mce/plugins/table/jscripts/cell.js
 www/glpi/lib/tiny_mce/plugins/table/jscripts/merge_cells.js
 www/glpi/lib/tiny_mce/plugins/table/jscripts/row.js
 www/glpi/lib/tiny_mce/plugins/table/jscripts/table.js
+www/glpi/lib/tiny_mce/plugins/table/langs/ar_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/bg_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/bs_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ca.js
+www/glpi/lib/tiny_mce/plugins/table/langs/ca_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/cs.js
+www/glpi/lib/tiny_mce/plugins/table/langs/cs_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/cy.js
 www/glpi/lib/tiny_mce/plugins/table/langs/da.js
+www/glpi/lib/tiny_mce/plugins/table/langs/da_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/de.js
+www/glpi/lib/tiny_mce/plugins/table/langs/de_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/el.js
+www/glpi/lib/tiny_mce/plugins/table/langs/el_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/en.js
+www/glpi/lib/tiny_mce/plugins/table/langs/en_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/es.js
+www/glpi/lib/tiny_mce/plugins/table/langs/es_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/et_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/fa.js
+www/glpi/lib/tiny_mce/plugins/table/langs/fa_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/fi.js
+www/glpi/lib/tiny_mce/plugins/table/langs/fi_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/fr.js
 www/glpi/lib/tiny_mce/plugins/table/langs/fr_ca.js
+www/glpi/lib/tiny_mce/plugins/table/langs/fr_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/he.js
+www/glpi/lib/tiny_mce/plugins/table/langs/he_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/hr_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/hu.js
+www/glpi/lib/tiny_mce/plugins/table/langs/hu_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/ia_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/ii_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/is.js
 www/glpi/lib/tiny_mce/plugins/table/langs/it.js
+www/glpi/lib/tiny_mce/plugins/table/langs/it_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ja.js
+www/glpi/lib/tiny_mce/plugins/table/langs/ja_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ja_euc-jp.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ja_shift_jis.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ja_utf-8.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ko.js
+www/glpi/lib/tiny_mce/plugins/table/langs/ko_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/lt_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/lv_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/nb.js
+www/glpi/lib/tiny_mce/plugins/table/langs/nb_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/nl.js
+www/glpi/lib/tiny_mce/plugins/table/langs/nl_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/nn.js
+www/glpi/lib/tiny_mce/plugins/table/langs/nn_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/pl.js
+www/glpi/lib/tiny_mce/plugins/table/langs/pl_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/pt_br.js
+www/glpi/lib/tiny_mce/plugins/table/langs/pt_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ro.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ru.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ru_CP1251.js
 www/glpi/lib/tiny_mce/plugins/table/langs/ru_KOI8-R.js
+www/glpi/lib/tiny_mce/plugins/table/langs/ru_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/si.js
 www/glpi/lib/tiny_mce/plugins/table/langs/sk.js
+www/glpi/lib/tiny_mce/plugins/table/langs/sk_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/sl_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/sq.js
 www/glpi/lib/tiny_mce/plugins/table/langs/sr.js
+www/glpi/lib/tiny_mce/plugins/table/langs/sr_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/sv.js
+www/glpi/lib/tiny_mce/plugins/table/langs/sv_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/sv_utf8.js
 www/glpi/lib/tiny_mce/plugins/table/langs/tr.js
+www/glpi/lib/tiny_mce/plugins/table/langs/tr_dlg.js
+www/glpi/lib/tiny_mce/plugins/table/langs/tw_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/uk.js
 www/glpi/lib/tiny_mce/plugins/table/langs/uk_CP1251.js
 www/glpi/lib/tiny_mce/plugins/table/langs/uk_KOI8-U.js
+www/glpi/lib/tiny_mce/plugins/table/langs/uk_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/vi.js
+www/glpi/lib/tiny_mce/plugins/table/langs/vi_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/zh_cn.js
 www/glpi/lib/tiny_mce/plugins/table/langs/zh_cn_utf8.js
+www/glpi/lib/tiny_mce/plugins/table/langs/zh_dlg.js
 www/glpi/lib/tiny_mce/plugins/table/langs/zh_tw.js
 www/glpi/lib/tiny_mce/plugins/table/langs/zh_tw_utf8.js
 www/glpi/lib/tiny_mce/plugins/table/merge_cells.htm
@@ -568,173 +661,162 @@ www/glpi/lib/tiny_mce/themes/advanced/about.htm
 www/glpi/lib/tiny_mce/themes/advanced/anchor.htm
 www/glpi/lib/tiny_mce/themes/advanced/charmap.htm
 www/glpi/lib/tiny_mce/themes/advanced/color_picker.htm
-www/glpi/lib/tiny_mce/themes/advanced/css/colorpicker.css
-www/glpi/lib/tiny_mce/themes/advanced/css/editor_content.css
-www/glpi/lib/tiny_mce/themes/advanced/css/editor_popup.css
-www/glpi/lib/tiny_mce/themes/advanced/css/editor_ui.css
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/about.htm
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/common_buttons.htm
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/create_accessible_content.htm
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/images/insert_anchor_window.gif
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/images/insert_image_window.gif
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/images/insert_link_window.gif
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/images/insert_table_window.gif
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/index.htm
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/insert_anchor_button.htm
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/insert_image_button.htm
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/insert_link_button.htm
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/insert_table_button.htm
-www/glpi/lib/tiny_mce/themes/advanced/docs/en/style.css
 www/glpi/lib/tiny_mce/themes/advanced/editor_template.js
 www/glpi/lib/tiny_mce/themes/advanced/editor_template_src.js
 www/glpi/lib/tiny_mce/themes/advanced/image.htm
-www/glpi/lib/tiny_mce/themes/advanced/images/anchor.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/anchor_symbol.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/backcolor.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/bold.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/bold_de_se.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/bold_es.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/bold_fr.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/bold_ru.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/bold_tw.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/browse.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/bullist.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/button_menu.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/buttons.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/cancel_button_bg.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/charmap.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/cleanup.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/close.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/code.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/color.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/colors.jpg
-www/glpi/lib/tiny_mce/themes/advanced/images/copy.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/custom_1.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/cut.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/forecolor.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/help.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/hr.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/image.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/indent.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/insert_button_bg.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/italic.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/italic_de_se.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/italic_es.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/italic_ru.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/italic_tw.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/justifycenter.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/justifyfull.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/justifyleft.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/justifyright.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/link.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/menu_check.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/newdocument.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/numlist.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/opacity.png
-www/glpi/lib/tiny_mce/themes/advanced/images/outdent.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/paste.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/redo.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/removeformat.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/separator.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/spacer.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/statusbar_resize.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/strikethrough.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/sub.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/sup.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/underline.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/underline_es.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/underline_fr.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/underline_ru.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/underline_tw.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/undo.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/unlink.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/visualaid.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/xp/tab_bg.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/xp/tab_end.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/xp/tab_sel_bg.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/xp/tab_sel_end.gif
-www/glpi/lib/tiny_mce/themes/advanced/images/xp/tabs_bg.gif
-www/glpi/lib/tiny_mce/themes/advanced/jscripts/about.js
-www/glpi/lib/tiny_mce/themes/advanced/jscripts/anchor.js
-www/glpi/lib/tiny_mce/themes/advanced/jscripts/charmap.js
-www/glpi/lib/tiny_mce/themes/advanced/jscripts/color_picker.js
-www/glpi/lib/tiny_mce/themes/advanced/jscripts/image.js
-www/glpi/lib/tiny_mce/themes/advanced/jscripts/link.js
-www/glpi/lib/tiny_mce/themes/advanced/jscripts/source_editor.js
+www/glpi/lib/tiny_mce/themes/advanced/img/colorpicker.jpg
+www/glpi/lib/tiny_mce/themes/advanced/img/icons.gif
+www/glpi/lib/tiny_mce/themes/advanced/js/about.js
+www/glpi/lib/tiny_mce/themes/advanced/js/anchor.js
+www/glpi/lib/tiny_mce/themes/advanced/js/charmap.js
+www/glpi/lib/tiny_mce/themes/advanced/js/color_picker.js
+www/glpi/lib/tiny_mce/themes/advanced/js/image.js
+www/glpi/lib/tiny_mce/themes/advanced/js/link.js
+www/glpi/lib/tiny_mce/themes/advanced/js/source_editor.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ar.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ar_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/bg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/bg_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/bs.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/bs_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ca.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ca_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/cs.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/cy.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/cs_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/da.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/da_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/de.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/de_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/el.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/el_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/en.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/en_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/es.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/es_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/et.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/et_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/fa.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/fa_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/fi.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/fi_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/fr.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/fr_ca.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/fr_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/he.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/he_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/hr.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/hr_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/hu.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/is.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/hu_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ia.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ia_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ii.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ii_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/it.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/it_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ja.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/ja_euc-jp.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/ja_shift_jis.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/ja_utf-8.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ja_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ko.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ko_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/lt.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/lt_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/lv.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/lv_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/nb.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/nb_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/nl.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/nl_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/nn.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/nn_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/pl.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/pt_br.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/ro.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/pl_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/pt.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/pt_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/ru.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/ru_CP1251.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/ru_KOI8-R.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/si.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/ru_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/sk.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/sq.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/sk_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/sl.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/sl_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/sr.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/sr_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/sv.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/sv_utf8.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/sv_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/tr.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/tr_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/tw.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/tw_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/uk.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/uk_CP1251.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/uk_KOI8-U.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/uk_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/langs/vi.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/zh_cn.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/zh_cn_utf8.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/zh_tw.js
-www/glpi/lib/tiny_mce/themes/advanced/langs/zh_tw_utf8.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/vi_dlg.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/zh.js
+www/glpi/lib/tiny_mce/themes/advanced/langs/zh_dlg.js
 www/glpi/lib/tiny_mce/themes/advanced/link.htm
+www/glpi/lib/tiny_mce/themes/advanced/skins/default/content.css
+www/glpi/lib/tiny_mce/themes/advanced/skins/default/dialog.css
+www/glpi/lib/tiny_mce/themes/advanced/skins/default/img/buttons.png
+www/glpi/lib/tiny_mce/themes/advanced/skins/default/img/items.gif
+www/glpi/lib/tiny_mce/themes/advanced/skins/default/img/menu_arrow.gif
+www/glpi/lib/tiny_mce/themes/advanced/skins/default/img/menu_check.gif
+www/glpi/lib/tiny_mce/themes/advanced/skins/default/img/progress.gif
+www/glpi/lib/tiny_mce/themes/advanced/skins/default/img/tabs.gif
+www/glpi/lib/tiny_mce/themes/advanced/skins/default/ui.css
+www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/content.css
+www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/dialog.css
+www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/img/button_bg.png
+www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_black.png
+www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/img/button_bg_silver.png
+www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/ui.css
+www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/ui_black.css
+www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/ui_silver.css
 www/glpi/lib/tiny_mce/themes/advanced/source_editor.htm
-www/glpi/lib/tiny_mce/themes/simple/css/editor_content.css
-www/glpi/lib/tiny_mce/themes/simple/css/editor_popup.css
-www/glpi/lib/tiny_mce/themes/simple/css/editor_ui.css
 www/glpi/lib/tiny_mce/themes/simple/editor_template.js
 www/glpi/lib/tiny_mce/themes/simple/editor_template_src.js
-www/glpi/lib/tiny_mce/themes/simple/images/bold.gif
-www/glpi/lib/tiny_mce/themes/simple/images/bold_de_se.gif
-www/glpi/lib/tiny_mce/themes/simple/images/bold_fr.gif
-www/glpi/lib/tiny_mce/themes/simple/images/bold_ru.gif
-www/glpi/lib/tiny_mce/themes/simple/images/bold_tw.gif
-www/glpi/lib/tiny_mce/themes/simple/images/bullist.gif
-www/glpi/lib/tiny_mce/themes/simple/images/buttons.gif
-www/glpi/lib/tiny_mce/themes/simple/images/cleanup.gif
-www/glpi/lib/tiny_mce/themes/simple/images/italic.gif
-www/glpi/lib/tiny_mce/themes/simple/images/italic_de_se.gif
-www/glpi/lib/tiny_mce/themes/simple/images/italic_ru.gif
-www/glpi/lib/tiny_mce/themes/simple/images/italic_tw.gif
-www/glpi/lib/tiny_mce/themes/simple/images/numlist.gif
-www/glpi/lib/tiny_mce/themes/simple/images/redo.gif
-www/glpi/lib/tiny_mce/themes/simple/images/separator.gif
-www/glpi/lib/tiny_mce/themes/simple/images/spacer.gif
-www/glpi/lib/tiny_mce/themes/simple/images/strikethrough.gif
-www/glpi/lib/tiny_mce/themes/simple/images/underline.gif
-www/glpi/lib/tiny_mce/themes/simple/images/underline_fr.gif
-www/glpi/lib/tiny_mce/themes/simple/images/underline_ru.gif
-www/glpi/lib/tiny_mce/themes/simple/images/underline_tw.gif
-www/glpi/lib/tiny_mce/themes/simple/images/undo.gif
+www/glpi/lib/tiny_mce/themes/simple/img/icons.gif
+www/glpi/lib/tiny_mce/themes/simple/langs/ar.js
+www/glpi/lib/tiny_mce/themes/simple/langs/bg.js
+www/glpi/lib/tiny_mce/themes/simple/langs/bs.js
+www/glpi/lib/tiny_mce/themes/simple/langs/ca.js
+www/glpi/lib/tiny_mce/themes/simple/langs/cs.js
+www/glpi/lib/tiny_mce/themes/simple/langs/da.js
+www/glpi/lib/tiny_mce/themes/simple/langs/de.js
+www/glpi/lib/tiny_mce/themes/simple/langs/el.js
+www/glpi/lib/tiny_mce/themes/simple/langs/en.js
+www/glpi/lib/tiny_mce/themes/simple/langs/es.js
+www/glpi/lib/tiny_mce/themes/simple/langs/et.js
+www/glpi/lib/tiny_mce/themes/simple/langs/fa.js
+www/glpi/lib/tiny_mce/themes/simple/langs/fi.js
+www/glpi/lib/tiny_mce/themes/simple/langs/fr.js
+www/glpi/lib/tiny_mce/themes/simple/langs/he.js
+www/glpi/lib/tiny_mce/themes/simple/langs/hr.js
+www/glpi/lib/tiny_mce/themes/simple/langs/hu.js
+www/glpi/lib/tiny_mce/themes/simple/langs/ia.js
+www/glpi/lib/tiny_mce/themes/simple/langs/ii.js
+www/glpi/lib/tiny_mce/themes/simple/langs/it.js
+www/glpi/lib/tiny_mce/themes/simple/langs/ja.js
+www/glpi/lib/tiny_mce/themes/simple/langs/ko.js
+www/glpi/lib/tiny_mce/themes/simple/langs/lt.js
+www/glpi/lib/tiny_mce/themes/simple/langs/lv.js
+www/glpi/lib/tiny_mce/themes/simple/langs/nb.js
+www/glpi/lib/tiny_mce/themes/simple/langs/nl.js
+www/glpi/lib/tiny_mce/themes/simple/langs/nn.js
+www/glpi/lib/tiny_mce/themes/simple/langs/pl.js
+www/glpi/lib/tiny_mce/themes/simple/langs/pt.js
+www/glpi/lib/tiny_mce/themes/simple/langs/ru.js
+www/glpi/lib/tiny_mce/themes/simple/langs/sk.js
+www/glpi/lib/tiny_mce/themes/simple/langs/sl.js
+www/glpi/lib/tiny_mce/themes/simple/langs/sr.js
+www/glpi/lib/tiny_mce/themes/simple/langs/sv.js
+www/glpi/lib/tiny_mce/themes/simple/langs/tr.js
+www/glpi/lib/tiny_mce/themes/simple/langs/tw.js
+www/glpi/lib/tiny_mce/themes/simple/langs/uk.js
+www/glpi/lib/tiny_mce/themes/simple/langs/vi.js
+www/glpi/lib/tiny_mce/themes/simple/langs/zh.js
+www/glpi/lib/tiny_mce/themes/simple/skins/default/content.css
+www/glpi/lib/tiny_mce/themes/simple/skins/default/ui.css
+www/glpi/lib/tiny_mce/themes/simple/skins/o2k7/content.css
+www/glpi/lib/tiny_mce/themes/simple/skins/o2k7/img/button_bg.png
+www/glpi/lib/tiny_mce/themes/simple/skins/o2k7/ui.css
 www/glpi/lib/tiny_mce/tiny_mce.js
 www/glpi/lib/tiny_mce/tiny_mce_gzip.js
 www/glpi/lib/tiny_mce/tiny_mce_gzip.php
@@ -757,9 +839,12 @@ www/glpi/locales/en_GB.php
 www/glpi/locales/es_AR.php
 www/glpi/locales/es_ES.php
 www/glpi/locales/fr_FR.php
+www/glpi/locales/gl_ES.php
 www/glpi/locales/hu_HU.php
 www/glpi/locales/it_IT.php
 www/glpi/locales/ja_JP.php
+www/glpi/locales/lt_LT.php
+www/glpi/locales/lv_LV.php
 www/glpi/locales/nl_BE.php
 www/glpi/locales/nl_NL.php
 www/glpi/locales/pl_PL.php
@@ -768,6 +853,7 @@ www/glpi/locales/pt_PT.php
 www/glpi/locales/ro_RO.php
 www/glpi/locales/ru_RU.php
 www/glpi/locales/sv_SE.php
+www/glpi/locales/tr_TR.php
 www/glpi/locales/zh_CN.php
 www/glpi/login.php
 www/glpi/logout.php
@@ -779,7 +865,11 @@ www/glpi/pics/aide.png
 www/glpi/pics/arrow-left.png
 www/glpi/pics/assign.png
 www/glpi/pics/bas_install.png
+www/glpi/pics/bookmark.png
+www/glpi/pics/bookmark_record.png
 www/glpi/pics/calendar.png
+www/glpi/pics/collapse.gif
+www/glpi/pics/corners.gif
 www/glpi/pics/delete.png
 www/glpi/pics/delete2.png
 www/glpi/pics/deplier_down.png
@@ -788,6 +878,7 @@ www/glpi/pics/dollar.png
 www/glpi/pics/dollaradd.png
 www/glpi/pics/edit.png
 www/glpi/pics/entity_all.png
+www/glpi/pics/expand.gif
 www/glpi/pics/faqadd.png
 www/glpi/pics/faqdelete.png
 www/glpi/pics/faqedit.png
@@ -881,6 +972,7 @@ www/glpi/pics/icones/xcf-dist.png
 www/glpi/pics/icones/xls-dist.png
 www/glpi/pics/icones/xml-dist.png
 www/glpi/pics/icones/zip-dist.png
+www/glpi/pics/l.gif
 www/glpi/pics/last.png
 www/glpi/pics/left.png
 www/glpi/pics/login_glpi.png
@@ -919,6 +1011,7 @@ www/glpi/pics/puce-down2.png
 www/glpi/pics/puce-up.png
 www/glpi/pics/puce-up2.png
 www/glpi/pics/puce.gif
+www/glpi/pics/r.gif
 www/glpi/pics/rapports.png
 www/glpi/pics/rdv.png
 www/glpi/pics/rdv_interv.png
@@ -935,6 +1028,7 @@ www/glpi/pics/sauvegardes.png
 www/glpi/pics/showdeleted.png
 www/glpi/pics/slk.png
 www/glpi/pics/stats_item.png
+www/glpi/pics/tb.gif
 www/glpi/pics/treeroot.png
 www/glpi/pics/users.png
 www/glpi/pics/wait.png
@@ -944,10 +1038,12 @@ www/glpi/pics/web.png
 www/glpi/plugins/remove.txt
 www/glpi/script.js
 www/glpi/scripts/.htaccess
+www/glpi/scripts/compute_dictionnary.php
 www/glpi/scripts/ldap_mass_sync.php
 www/glpi/scripts/ocsng_mass_import.php
 www/glpi/scripts/ocsng_mass_sync.php
 www/glpi/scripts/softcat_mass_compute.php
+www/glpi/status.php
 @dirrm www/glpi/scripts
 @dirrm www/glpi/plugins
 @dirrm www/glpi/pics/icones
@@ -955,21 +1051,26 @@ www/glpi/scripts/softcat_mass_compute.php
 @dirrm www/glpi/locales
 @dirrm www/glpi/lib/vcardclass
 @dirrm www/glpi/lib/tiny_mce/utils
-@dirrm www/glpi/lib/tiny_mce/themes/simple/images
-@dirrm www/glpi/lib/tiny_mce/themes/simple/css
+@dirrm www/glpi/lib/tiny_mce/themes/simple/skins/o2k7/img
+@dirrm www/glpi/lib/tiny_mce/themes/simple/skins/o2k7
+@dirrm www/glpi/lib/tiny_mce/themes/simple/skins/default
+@dirrm www/glpi/lib/tiny_mce/themes/simple/skins
+@dirrm www/glpi/lib/tiny_mce/themes/simple/langs
+@dirrm www/glpi/lib/tiny_mce/themes/simple/img
 @dirrm www/glpi/lib/tiny_mce/themes/simple
+@dirrm www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7/img
+@dirrm www/glpi/lib/tiny_mce/themes/advanced/skins/o2k7
+@dirrm www/glpi/lib/tiny_mce/themes/advanced/skins/default/img
+@dirrm www/glpi/lib/tiny_mce/themes/advanced/skins/default
+@dirrm www/glpi/lib/tiny_mce/themes/advanced/skins
 @dirrm www/glpi/lib/tiny_mce/themes/advanced/langs
-@dirrm www/glpi/lib/tiny_mce/themes/advanced/jscripts
-@dirrm www/glpi/lib/tiny_mce/themes/advanced/images/xp
-@dirrm www/glpi/lib/tiny_mce/themes/advanced/images
-@dirrm www/glpi/lib/tiny_mce/themes/advanced/docs/en/images
-@dirrm www/glpi/lib/tiny_mce/themes/advanced/docs/en
-@dirrm www/glpi/lib/tiny_mce/themes/advanced/docs
-@dirrm www/glpi/lib/tiny_mce/themes/advanced/css
+@dirrm www/glpi/lib/tiny_mce/themes/advanced/js
+@dirrm www/glpi/lib/tiny_mce/themes/advanced/img
 @dirrm www/glpi/lib/tiny_mce/themes/advanced
 @dirrm www/glpi/lib/tiny_mce/themes
 @dirrm www/glpi/lib/tiny_mce/plugins/table/langs
 @dirrm www/glpi/lib/tiny_mce/plugins/table/jscripts
+@dirrm www/glpi/lib/tiny_mce/plugins/table/js
 @dirrm www/glpi/lib/tiny_mce/plugins/table/images
 @dirrm www/glpi/lib/tiny_mce/plugins/table/css
 @dirrm www/glpi/lib/tiny_mce/plugins/table
@@ -986,7 +1087,6 @@ www/glpi/scripts/softcat_mass_compute.php
 @dirrm www/glpi/lib/phpcas/languages
 @dirrm www/glpi/lib/phpcas/PGTStorage
 @dirrm www/glpi/lib/phpcas
-@dirrm www/glpi/lib/mail
 @dirrm www/glpi/lib/ezpdf/fonts
 @dirrm www/glpi/lib/ezpdf
 @dirrm www/glpi/lib/calendar/lang
@@ -1003,8 +1103,9 @@ www/glpi/scripts/softcat_mass_compute.php
 @dirrm www/glpi/help
 @dirrm www/glpi/front
 @dirrm www/glpi/files/_uploads
+@dirrm www/glpi/files/_tmp
 @dirrmtry www/glpi/files/_sessions
-@dirrm www/glpi/files/_plugins
+@dirrmtry www/glpi/files/_plugins
 @dirrm www/glpi/files/_log
 @dirrm www/glpi/files/_lock
 @dirrm www/glpi/files/_dumps
@@ -1012,6 +1113,6 @@ www/glpi/scripts/softcat_mass_compute.php
 @dirrmtry www/glpi/files/_cache
 @dirrmtry www/glpi/files
 @dirrm www/glpi/css
-@dirrm www/glpi/ajax
 @dirrmtry www/glpi/config
+@dirrm www/glpi/ajax
 @dirrmtry www/glpi
