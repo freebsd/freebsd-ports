@@ -10,6 +10,8 @@ bin/gpodder
 %%PYTHON_SITELIBDIR%%/gpodder/config.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/console.py
 %%PYTHON_SITELIBDIR%%/gpodder/console.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/dbsqlite.py
+%%PYTHON_SITELIBDIR%%/gpodder/dbsqlite.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/download.py
 %%PYTHON_SITELIBDIR%%/gpodder/download.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/draw.py
