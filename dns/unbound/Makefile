@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	unbound
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -46,7 +45,8 @@ CONFIGURE_ARGS+=	--with-libevent=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#/usr/local/etc/unbound/unbound.pid#/var/run/unbound/unbound.pid#' ${WRKSRC}/doc/example.conf ${WRKSRC}/doc/unbound.conf.5
+	@${MKDIR} ${WRKSRC}/balancer
+	@${RM} ${WRKSRC}/util/configlexer.c
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
