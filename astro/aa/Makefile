@@ -37,10 +37,12 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/aa ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/aa.ini ${PREFIX}/etc/aa.ini.default
+.if !defined(NOPORTDATA)
 	@${MKDIR} ${DATADIR}
 .for i in ${PORTDATA}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DATADIR}
 .endfor
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
