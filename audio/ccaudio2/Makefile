@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ccaudio2
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.14
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnutelephony
+MASTER_SITES=	http://www.gnutelephony.org/dist/tarballs/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files
