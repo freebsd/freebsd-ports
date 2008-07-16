@@ -8,7 +8,7 @@
 PORTNAME=	fourcdns
 PORTVERSION=	1.1.0
 CATEGORIES=	dns
-MASTER_SITES=	http://www.fourcalorieservers.com/
+MASTER_SITES=	http://www.fourcalorieservers.com/ports/dns/fourcdns/
 
 MAINTAINER=	rscheckelhoff@fourcalorieservers.com
 COMMENT=	A simple DNS server
