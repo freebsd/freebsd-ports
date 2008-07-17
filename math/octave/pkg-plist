@@ -668,8 +668,8 @@ libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/lsode.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/lu.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/luinc.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/matrix_type.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/max.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/md5sum.oct
-libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/minmax.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/pinv.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/qr.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/quad.oct
@@ -707,6 +707,7 @@ libexec/octave/ls-R
 @dirrm libexec/octave/site/exec
 @dirrm libexec/octave/site
 @dirrm libexec/octave
+share/applications/www.octave.org-octave.desktop
 share/octave/%%OCTAVE_VERSION%%/NEWS
 share/octave/%%OCTAVE_VERSION%%/imagelib/default.img
 share/octave/%%OCTAVE_VERSION%%/imagelib/octave-sombrero.png
@@ -1002,6 +1003,7 @@ share/octave/%%OCTAVE_VERSION%%/m/general/del2.m
 share/octave/%%OCTAVE_VERSION%%/m/general/interp3.m
 share/octave/%%OCTAVE_VERSION%%/m/general/interpn.m
 share/octave/%%OCTAVE_VERSION%%/m/general/rat.m
+share/octave/%%OCTAVE_VERSION%%/m/general/runlength.m
 share/octave/%%OCTAVE_VERSION%%/m/general/structfun.m
 share/octave/%%OCTAVE_VERSION%%/m/general/arrayfun.m
 share/octave/%%OCTAVE_VERSION%%/m/general/bicubic.m
@@ -1240,7 +1242,9 @@ share/octave/%%OCTAVE_VERSION%%/m/plot/__plt2__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plt2mm__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plt2mv__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plt2ss__.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/__plt2sv__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plt2vm__.m
+share/octave/%%OCTAVE_VERSION%%/m/plot/__plt2vs__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plt2vv__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plt__.m
 share/octave/%%OCTAVE_VERSION%%/m/plot/__plt_get_axis_arg__.m
@@ -1704,6 +1708,7 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave/site/m
 @dirrm share/octave/site
 @dirrm share/octave
+@dirrmtry %%DATADIR%%/application
 %%PORTDOCS%%%%DOCSDIR%%/Octave-FAQ.ps
 %%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-a4.ps
