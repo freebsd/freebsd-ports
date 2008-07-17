@@ -1,4 +1,5 @@
 %%SITE_PERL%%/maatkit.pm
+%%SITE_PERL%%/maatkitdsn.pm
 bin/mk-archiver
 bin/mk-checksum-filter
 bin/mk-deadlock-logger
@@ -11,6 +12,8 @@ bin/mk-profile-compact
 bin/mk-query-profiler
 bin/mk-show-grants
 bin/mk-slave-delay
+bin/mk-slave-find
+bin/mk-slave-move
 bin/mk-slave-prefetch
 bin/mk-slave-restart
 bin/mk-table-checksum
