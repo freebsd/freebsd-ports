@@ -6633,6 +6633,7 @@ lasi                            ports/devel/lasi
 laspack                         ports/math/laspack
 lasso                           ports/security/lasso
 last.fm                         ports/audio/last.fm
+lastfmrec                       ports/audio/lastfmrec
 latd                            ports/net/latd
 latex                           ports/print/latex
 latex-aa                        ports/print/latex-aa
@@ -18981,6 +18982,7 @@ seda                            ports/net/seda
 sedsed                          ports/devel/sedsed
 see                             ports/lang/see
 see-devel                       ports/lang/see-devel
+seed7                           ports/lang/seed7
 seejpeg                         ports/graphics/seejpeg
 selectwm                        ports/x11-wm/selectwm
 selenium                        ports/www/selenium
@@ -22261,6 +22263,7 @@ zeroer                          ports/sysutils/zeroer
 zeroinstall-injector            ports/devel/zeroinstall-injector
 zerowait-httpd                  ports/www/zerowait-httpd
 zfs-replicate                   ports/sysutils/zfs-replicate
+zfs-snapshot-mgmt               ports/sysutils/zfs-snapshot-mgmt
 zgv                             ports/graphics/zgv
 zh-BBMan                        ports/chinese/BBMan
 zh-CJKUnifonts                  ports/chinese/CJKUnifonts
