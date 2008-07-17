@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	handbrake
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://saintdevelopment.com/mirror/handbrake/:main \
-		http://junk.phantomgorilla.com/hb/:main \
-		http://daigertech.com/handbrake/:main \
-		http://www.mirrors.ausmac.net/ftp/Audio-SW/HandBrake/testing/:main \
-		http://asshatandi.com/:main \
-		http://download.m0k.org/handbrake/testing/:main \
+MASTER_SITES=	http://download.handbrake.fr/handbrake/releases/:main \
+		http://download.m0k.org/handbrake/releases/:main \
+		http://download.handbrake.fr/handbrake/contrib/:contrib \
 		http://download.m0k.org/handbrake/contrib/:contrib
 DISTFILES=	HandBrake-${PORTVERSION}.tar.gz:main \
 		faac-1.24.tar.gz:contrib \
@@ -21,19 +18,19 @@ DISTFILES=	HandBrake-${PORTVERSION}.tar.gz:main \
 		libdca-r81-strapped.tar.gz:contrib \
 		libdvdcss-1.2.9.tar.gz:contrib \
 		libdvdread-0.9.7.tar.gz:contrib \
-		libmkv-0.6.1.2.tar.gz:contrib \
+		libmkv-0.6.1.3.tar.gz:contrib \
 		libogg-1.1.2.tar.gz:contrib \
 		libvorbis-aotuv_b5.tar.gz:contrib \
 		mpeg2dec-0.4.1.tar.gz:contrib \
 		mpeg4ip-1.3.tar.gz:contrib \
 		xvidcore-1.1.2.tar.gz:contrib \
 		ffmpeg-9816.tar.gz:contrib \
-		x264-r665.tar.gz:contrib \
+		x264-r736.tar.gz:contrib \
 		a52dec-0.7.4.tar.gz:contrib \
 		libsamplerate-0.1.2.tar.gz:contrib
 DIST_SUBDIR=	handbrake
 
-MAINTAINER=	jaj@hcl-club.lu
+MAINTAINER=	jonathan@kc8onw.net
 COMMENT=	A DVD to MPEG-4 ripper and encoder
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
@@ -64,8 +61,8 @@ APPLY?=		/usr/bin/apply
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" && ${OSVERSION} < 700000
-BROKEN=		Does not compile
+.if ${ARCH} == "amd64"
+BROKEN=		Needs testing
 .endif
 
 # nasm/yasm needed by x264
