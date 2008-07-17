@@ -32,20 +32,14 @@ CONFIGURE_ENV=	"OPENSSL_CFLAGS=${CFLAGS} -l${OPENSSLINC}" \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	"-L${LOCALBASE}/lib"
 
-# Required version of OpenSSL for this build
-OPENSSL_SHLIBVER=5
+# This port needs OpenSSL 0.9.8b which is present in 7.0 and up
+.if !exists(/usr/include/openssl/store.h)
+WITH_OPENSSL_PORT=      yes
+.endif
+
 # If we use the base OpenSSL either by default or
 # by design, we need to remove the openssl dependency
-# in pkgconfig/libopkele.pc. For the moment, the only
-# way I kan think of is to check for 7.0 with OpenSSL 0.9.8b
-# and not WITH_OPENSSL_PORT. As 6 requires the port, add this
-# as a dependency instead.
-
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} < 700019 )
-    WITH_OPENSSL_PORT=yes
-.endif
+# in pkgconfig/libopkele.pc.
 
 post-patch:
 	@ ${REINPLACE_CMD} -e "s|pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g" \
@@ -54,4 +48,4 @@ post-patch:
 	@ ${REINPLACE_CMD} -e "s|Requires: openssl|Requires:|" ${WRKSRC}/libopkele.pc.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
