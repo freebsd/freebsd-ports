@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	py-
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Python bindings for version control system
 
+BROKEN=		depends on apr-db42-1.3.2 and apr-1.3.2 which conflict with each other
+
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
 
