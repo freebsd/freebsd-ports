@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.rapidsvn.org/download/release/${PORTVERSION}/
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Cross-platform GUI front-end for the Subversion revision system
 
+BROKEN=		depends on apr-db42-1.3.2 and apr-1.3.2 which conflict with each other
+
 BUILD_DEPENDS=	apr-1-config:${PORTSDIR}/devel/apr-svn \
 		neon-config:${PORTSDIR}/www/neon26 \
 		svn:${PORTSDIR}/devel/subversion \
