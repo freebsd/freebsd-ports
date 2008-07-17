@@ -213,6 +213,7 @@ etc/gentoorc
 %%DATADIR%%/icons/xpm.xpm
 %%DATADIR%%/icons/xpm2.xpm
 %%NLS%%share/locale/de/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/es_MX/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/ja_JP.UTF-8/LC_MESSAGES/gentoo.mo
@@ -224,12 +225,6 @@ etc/gentoorc
 %%NLS%%share/locale/ru_RU.koi8r/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/ru_RU.utf8/LC_MESSAGES/gentoo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gentoo.mo
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/scratch
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/config
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%NLS%%@dirrmtry share/locale/ru_RU.utf8/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru_RU.utf8
 %%NLS%%@dirrmtry share/locale/ru_RU.koi8r/LC_MESSAGES
@@ -244,3 +239,9 @@ etc/gentoorc
 %%NLS%%@dirrmtry share/locale/ru_RU.CP1251
 %%NLS%%@dirrmtry share/locale/ja_JP.UTF-8/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ja_JP.UTF-8
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/scratch
+%%PORTDOCS%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/config
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
