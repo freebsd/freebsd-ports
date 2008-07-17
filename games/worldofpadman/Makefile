@@ -7,6 +7,7 @@
 
 PORTNAME=	worldofpadman
 PORTVERSION=	1.2.20080621
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://thilo.kickchat.com/download/:full \
 		http://btc3x6.che.uni-bayreuth.de/~tl/wop_final/:full \
@@ -140,20 +141,10 @@ post-patch:
 # Do not log debug output of bots (can be enabled with "homedir"/"gamedir").
 	@${REINPLACE_CMD} -e 's|"botlib\.log"|"/dev/null"|' \
 		${WRKSRC}/code/botlib/be_interface.c
-.if defined(WITH_CURL_DLOPEN)
-# Fix wrong library version (use general case as only one is installed).
-	@${REINPLACE_CMD} -e 's|libcurl\.so\.[[:digit:]]|libcurl.so|' \
-		${WRKSRC}/code/client/cl_curl.h
-.endif
-
-.if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
-post-build:
-	@cd ${WRKSRC}/build/release && ${MV} baseq3 wop
-.endif
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -r ${WRKDIR}/wop ${DATADIR}
+	${MKDIR} ${DATADIR}/wop
+	${CP} -r ${WRKDIR}/wop/* ${DATADIR}/wop
 	${INSTALL_DATA} ${WRKDIR}/wop.png \
 		${PREFIX}/share/pixmaps/${PORTNAME}.png
 .for bin in ${Q3BIN}
@@ -162,10 +153,7 @@ do-install:
 		${PREFIX}/bin/${bin:S/wop/${PORTNAME}/}
 .endfor
 .if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
-. for dir in wop missionpack
-	${MKDIR} ${DATADIR}/${dir}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${dir}/*.so ${DATADIR}/${dir}
-. endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/build/release/baseq3/*.so ${DATADIR}/wop
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
