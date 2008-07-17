@@ -15,6 +15,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.14.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.15.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.16.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.17.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.7.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.8.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.9.html
@@ -65,6 +66,7 @@
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/activedirectory.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/ibmds.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/pilotperson.py
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/pgpkeysrv.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/vpim.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/__init__.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/entrust.py
@@ -77,6 +79,7 @@
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/activedirectory.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/ibmds.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/pilotperson.pyc
+%%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/pgpkeysrv.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/vpim.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/__init__.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/entrust.pyc
@@ -136,6 +139,7 @@
 %%DATADIR%%/etc/web2ldap/templates/add_olcHdbConfig_UnixUsers.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_olcSchemaConfig.ldif
 %%DATADIR%%/etc/web2ldap/templates/inputform_olcBdbConfig.html
+%%DATADIR%%/etc/web2ldap/ssl/crt/stroeder.com_Server_CA_no._2008-07.pem
 %%DATADIR%%/etc/dumpasn1.cfg
 %%DATADIR%%/fcgi/web2ldap.py
 %%DATADIR%%/fcgi/web2ldap.pyc
@@ -227,10 +231,12 @@
 %%DATADIR%%/pylib/ldaputil/base.py
 %%DATADIR%%/pylib/ldaputil/passwd.py
 %%DATADIR%%/pylib/ldaputil/modlist2.py
+%%DATADIR%%/pylib/ldaputil/schema.py
 %%DATADIR%%/pylib/ldaputil/__init__.pyc
 %%DATADIR%%/pylib/ldaputil/base.pyc
 %%DATADIR%%/pylib/ldaputil/passwd.pyc
 %%DATADIR%%/pylib/ldaputil/modlist2.pyc
+%%DATADIR%%/pylib/ldaputil/schema.pyc
 %%DATADIR%%/pylib/msHTTPHandler.py
 %%DATADIR%%/pylib/msHTTPServer.py
 %%DATADIR%%/pylib/msbase.py
@@ -278,6 +284,8 @@
 @dirrm %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins
 @dirrm %%DATADIR%%/etc/web2ldap/web2ldapcnf
 @dirrm %%DATADIR%%/etc/web2ldap/templates
+@dirrm %%DATADIR%%/etc/web2ldap/ssl/crt
+@dirrm %%DATADIR%%/etc/web2ldap/ssl
 @dirrm %%DATADIR%%/etc/web2ldap
 @dirrm %%DATADIR%%/etc/init.d
 @dirrm %%DATADIR%%/etc/httpd
