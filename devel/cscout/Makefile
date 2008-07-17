@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cscout
-PORTVERSION=	2.2
+PORTVERSION=	2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.spinellis.gr/cscout/ \
 		http://www.dmst.aueb.gr/dds/cscout/
@@ -20,13 +20,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 ONLY_FOR_ARCHS_REASON=	The port fetches and installs precompiled binaries
+USE_PERL5_RUN=	yes
 
 MAN1=	cscout.1 cswc.1
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000
-IGNORE=		fails to work on versions of FreeBSD before 6.0 (it installs FreeBSD 6.x binaries)
+IGNORE =	fails to work on versions of FreeBSD before 6.0 (it installs FreeBSD 6.x binaries)
+.elif ${OSVERSION} >= 700000
+LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
 .endif
 
 post-patch:
