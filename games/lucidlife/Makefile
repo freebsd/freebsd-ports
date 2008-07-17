@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	lucidlife
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTVERSION=	0.9.2
 CATEGORIES=	games
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
-	    	http://offload1.icculus.org/~jcspray/LucidLife/ \
-		http://icculus.org/~jcspray/LucidLife/
+MASTER_SITES=	http://offload1.icculus.org/~jcspray/LucidLife/ \
+		http://icculus.org/~jcspray/LucidLife/ \
+		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	mwisnicki+freebsd@gmail.com
 COMMENT=	A GTK2 implementation of Conway's Game of Life
 
-USE_GCC=	3.2+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gnomevfs2 intlhack
 GNU_CONFIGURE=	yes
