@@ -9,11 +9,12 @@
 
 PORTNAME=	bpkg
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	andy.kosela@gmail.com
+MAINTAINER=	akosela@andykosela.com
 COMMENT=	Simple tool for displaying information about ports
 
 NO_BUILD=	yes
