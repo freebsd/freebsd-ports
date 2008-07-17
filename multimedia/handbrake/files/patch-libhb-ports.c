@@ -1,10 +1,10 @@
---- HandBrake_old/libhb/ports.c	2007-10-08 22:57:08.000000000 +0200
-+++ libhb/ports.c	2007-12-04 07:48:47.000000000 +0100
-@@ -28,6 +28,11 @@
+--- ../../work/HandBrake/libhb/ports.c	2008-02-19 19:28:17.000000000 +0100
++++ libhb/ports.c	2008-06-17 13:20:42.000000000 +0200
+@@ -30,6 +30,11 @@
  #include <netinet/in.h>
  //#endif
  
-+#if defined(__FreeBSD__)
++#if defined( SYS_FREEBSD )
 +#include <sys/types.h>
 +#include <sys/sysctl.h>
 +#endif
@@ -12,26 +12,21 @@
  #include "hb.h"
  
  /************************************************************************
-@@ -105,21 +110,17 @@
+@@ -107,7 +112,7 @@
          cpu_count = info.cpu_count;
      }
  
 -#elif defined( SYS_DARWIN ) || defined( SYS_FREEBSD )
--    FILE * info;
--    char   buffer[16];
--
--    if( ( info = popen( "/usr/sbin/sysctl hw.ncpu", "r" ) ) )
-+#elif defined(__FreeBSD__)
-     {
--        memset( buffer, 0, 16 );
--        if( fgets( buffer, 15, info ) )
--        {
--            if( sscanf( buffer, "hw.ncpu: %d", &cpu_count ) != 1 )
--            {
--                cpu_count = 1;
--            }
--        }
--        fclose( info );
++#elif defined( SYS_DARWIN )
+     FILE * info;
+     char   buffer[16];
+ 
+@@ -124,6 +129,19 @@
+         fclose( info );
+     }
+ 
++#elif defined( SYS_FREEBSD )
++    {
 +        int mib[2];
 +        size_t len;
 +
@@ -41,6 +36,8 @@
 +
 +        if(sysctl(mib, 2, &cpu_count, &len, NULL, 0) != 0)
 +          cpu_count = 1;
-     }
- 
++    }
++
  #elif defined( SYS_LINUX )
+     {
+         FILE * info;
