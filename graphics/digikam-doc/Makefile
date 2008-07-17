@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	digikam-doc
-DISTVERSION=	0.9.3-beta3
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	graphics kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SFE
 MASTER_SITE_SUBDIR=	digikam
 
 MAINTAINER=	ale@FreeBSD.org
@@ -23,5 +22,6 @@ USE_KDELIBS_VER=3
 post-patch:
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${TOUCH} ${WRKSRC}/*
 
 .include <bsd.port.mk>
