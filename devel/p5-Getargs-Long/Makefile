@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Getargs-Long
-PORTVERSION=	1.1002
+PORTVERSION=	1.1003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Parse routine arguments
 
 BUILD_DEPENDS=	p5-Log-Agent>=0.105:${PORTSDIR}/devel/p5-Log-Agent \
