@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	iso-codes
-DISTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	3.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/
 
@@ -17,13 +16,10 @@ COMMENT=	Lists of the country, language and currency iso names
 BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
 
 USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnometarget
 USE_PYTHON_BUILD=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^pkgconfigdir =/s|=.*|=${PREFIX}/libdata/pkgconfig|'\
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

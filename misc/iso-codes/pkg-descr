@@ -4,4 +4,4 @@ ISO standards 639 (language names), 3166 (country names), and 4217 (currency).
 The translations are from the Translation Project. The data is provided 
 in tabular files as well as XML.
 
-WWW: http://alioth.debian.org/projects/pkg-isocodes/
+WWW: http://pkg-isocodes.alioth.debian.org/
