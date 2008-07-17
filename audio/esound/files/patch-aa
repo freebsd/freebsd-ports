@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon May 28 15:23:55 2007
-+++ Makefile.in	Mon May 28 15:24:56 2007
-@@ -341,7 +341,7 @@ bin_SCRIPTS = \
+--- Makefile.in.orig	2008-07-17 13:45:22.000000000 -0400
++++ Makefile.in	2008-07-17 13:45:46.000000000 -0400
+@@ -342,7 +342,7 @@ bin_SCRIPTS = \
  
  lib_LTLIBRARIES = libesd.la $(libesddsp_la)
  libesd_la_CFLAGS = $(AM_CFLAGS)
@@ -9,12 +9,12 @@
  libesd_la_LIBADD = $(AUDIOFILE_LIBS) $(SOUND_LIBS)
  libesd_la_SOURCES = \
  	esdlib.c	\
-@@ -372,7 +372,7 @@ AUDIO_BACKENDS = \
+@@ -373,7 +373,7 @@ AUDIO_BACKENDS = \
  	audio_solaris.c		\
  	audio_win32.c
  
 -libesddsp_la_LDFLAGS = -version-info $(ESD_VERSION_INFO)
 +libesddsp_la_LDFLAGS = -version-info 2:0:0
- libesddsp_la_LIBADD = $(DL_LIB) -lm libesd.la
+ libesddsp_la_LIBADD = libesd.la $(DL_LIB) -lm
  libesddsp_la_SOURCES = \
  	esddsp.c

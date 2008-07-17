@@ -1,22 +1,40 @@
---- esddsp.c.orig	Mon Jan  1 18:56:06 2007
-+++ esddsp.c	Thu Mar 22 19:49:15 2007
-@@ -224,9 +224,12 @@ open_wrapper (int (*func) (const char *,
+--- esddsp.c.orig	2008-07-15 11:47:20.000000000 -0400
++++ esddsp.c	2008-07-17 13:58:09.000000000 -0400
+@@ -220,16 +220,19 @@ open_wrapper (int (*func) (const char *,
+ 	      const char *pathname, int flags, ...)
+ {
+   va_list args;
+-  mode_t mode;
++  mode_t mode = 0;
  
    dsp_init ();
  
 -  va_start (args, flags);
--  mode = va_arg (args, mode_t);
--  va_end (args);
+-  if (sizeof (mode_t) < sizeof (int))
 +  if ((flags & O_CREAT) != 0)
 +    {
 +      va_start (args, flags);
-+      mode = va_arg (args, int);
++      if (sizeof (mode_t) < sizeof (int))
+ 	  mode = va_arg (args, int);
+-  else
++      else
+ 	  mode = va_arg (args, mode_t);
+-  va_end (args);
 +      va_end (args);
 +    }
  
    if (!strcmp (pathname, "/dev/dsp"))
      {
-@@ -272,9 +275,12 @@ open (const char *pathname, int flags, .
+@@ -260,7 +263,7 @@ open (const char *pathname, int flags, .
+ {
+   static int (*func) (const char *, int, mode_t) = NULL;
+   va_list args;
+-  mode_t mode;
++  mode_t mode = 0;
+ 
+   DPRINTF ("open\n");
+ 
+@@ -275,9 +278,12 @@ open (const char *pathname, int flags, .
  	}
      }
  
@@ -32,7 +50,16 @@
  
    return open_wrapper(func, pathname, flags, mode);
  }
-@@ -299,9 +305,12 @@ open64 (const char *pathname, int flags,
+@@ -287,7 +293,7 @@ open64 (const char *pathname, int flags,
+ {
+   static int (*func) (const char *, int, mode_t) = NULL;
+   va_list args;
+-  mode_t mode;
++  mode_t mode = 0;
+ 
+   DPRINTF ("open64\n");
+ 
+@@ -302,9 +308,12 @@ open64 (const char *pathname, int flags,
  	}
      }
  

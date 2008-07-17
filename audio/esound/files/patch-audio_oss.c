@@ -1,6 +1,12 @@
---- audio_oss.c.orig	Tue Jun  4 08:55:37 2002
-+++ audio_oss.c	Sun Jun  9 01:55:21 2002
-@@ -10,9 +10,14 @@
+--- audio_oss.c.orig	2008-07-15 12:00:03.000000000 -0400
++++ audio_oss.c	2008-07-17 13:56:25.000000000 -0400
+@@ -1,4 +1,5 @@
+ #include "config.h"
++#include <errno.h>
+ 
+ #ifdef HAVE_MACHINE_SOUNDCARD_H
+ #  include <machine/soundcard.h>
+@@ -10,9 +11,14 @@
  #  endif
  #endif
  
