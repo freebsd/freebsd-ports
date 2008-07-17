@@ -1,25 +1,25 @@
---- webalizer.c.a-urasim	Wed Apr 17 07:11:31 2002
-+++ webalizer.c	Tue Dec 23 23:26:23 2003
-@@ -39,6 +39,7 @@
+--- webalizer.c.orig	2008-07-02 00:23:43.000000000 +0200
++++ webalizer.c	2008-07-05 13:45:11.000000000 +0200
+@@ -36,6 +36,7 @@
  #include <sys/utsname.h>
- #include <sys/times.h>
  #include <zlib.h>
+ #include <sys/stat.h>
 +#include <iconv.h>
  
  /* ensure getopt */
  #ifdef HAVE_GETOPT_H
-@@ -224,6 +225,8 @@
- char    *f_cp=f_buf+GZ_BUFSIZE;               /* pointer into the buffer  */
- int     f_end;                                /* count to end of buffer   */ 
+@@ -255,6 +256,8 @@
+ char    pie_color3[]  = "#ff00ff";            /* pie additionnal color 3  */
+ char    pie_color4[]  = "#ffc080";            /* pie additionnal color 4  */
  
 +iconv_t cd_from_sjis, cd_from_utf8;
 +
  /*********************************************/
  /* MAIN - start here                         */
  /*********************************************/
-@@ -526,6 +529,9 @@
- 
-    start_time = times(&mytms);
+@@ -661,6 +664,9 @@
+    /* get processing start time */
+    start_time = time(NULL);
  
 +   cd_from_sjis = iconv_open("EUC-JP", "Shift_JIS");
 +   cd_from_utf8 = iconv_open("EUC-JP", "UTF-8");
@@ -27,8 +27,8 @@
     /*********************************************/
     /* MAIN PROCESS LOOP - read through log file */
     /*********************************************/
-@@ -1345,6 +1351,9 @@
-       if (dns_db) close_cache();
+@@ -1477,6 +1483,9 @@
+       if (geo_fp) GeoIP_delete(geo_fp);
  #endif
  
 +      iconv_close(cd_from_sjis);
@@ -37,7 +37,7 @@
        /* Whew, all done! Exit with completion status (0) */
        exit(0);
     }
-@@ -1773,6 +1782,23 @@
+@@ -2079,6 +2088,23 @@
  
     if (!str) return NULL;                       /* make sure strings valid */
  
@@ -61,8 +61,8 @@
     while (*cp1)
     {
        if (*cp1=='%')                            /* Found an escape?        */
-@@ -1793,6 +1819,116 @@
-    return str;                                  /* return the string       */
+@@ -2111,6 +2137,116 @@
+    if (*str1==0) return 0; else return 1;
  }
  
 +int score_eucj(unsigned char *str)
@@ -178,7 +178,7 @@
  /*********************************************/
  /* SRCH_STRING - get search strings from ref */
  /*********************************************/
-@@ -1804,6 +1940,10 @@
+@@ -2122,6 +2258,10 @@
     char srch[80]="";
     unsigned char *cp1, *cp2, *cps;
     int  sp_flg=0;
@@ -188,10 +188,10 @@
 +   unsigned char *cp3;
  
     /* Check if search engine referrer or return  */
-    if ( (cps=isinglist(search_list,log_rec.refer))==NULL) return; 
-@@ -1839,9 +1978,39 @@
-    cp1=cp2+strlen(cp2)-1;
-    while (cp1!=cp2) if (isspace(*cp1)) *cp1--='\0'; else break;
+    if ( (cps=(unsigned char *)isinglist(search_list,log_rec.refer))==NULL)
+@@ -2160,9 +2300,39 @@
+    cp1=cp2+strlen((char *)cp2)-1;
+    while (cp1!=cp2) if (isspace((unsigned char)*cp1)) *cp1--='\0'; else break;
  
 +   utf8=score_utf8(cp2);
 +   sjis=score_sjis(cp2);
@@ -228,5 +228,5 @@
 +     cp1++;
 +   }
  
-    if (put_snode(cp2,(u_long)1,sr_htab))
+    if (put_snode((char *)cp2,(u_int64_t)1,sr_htab))
     {

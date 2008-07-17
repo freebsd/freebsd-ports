@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	webalizer
-PORTVERSION=	2.1.10
-PORTREVISION=	13
+PORTVERSION=	2.20.1
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
-		http://sysd.org/stas/files/active/0/:geo \
 		http://flags.blogpotato.de/zip/:flags
 PKGNAMESUFFIX?=	${WEBALIZER_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}-2.01-10-src
-DISTFILES=	${DISTNAME}.tar.bz2:main
+DISTNAME=	${PORTNAME}-2.20-01-src
+DISTFILES=	${DISTNAME}.tgz:main webalizer-geodb-20080701.tgz:main
 .if defined(WITH_GEOIP) || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	geolizer_2.01-10-patch.20070115.tar.gz:geo
 DISTFILES+=	world.small.zip:flags special.small.zip:flags
 .endif
 
@@ -40,25 +37,6 @@ GD_PORT?=	graphics/gd
 
 CONFLICTS=	geolizer-2*
 
-
-.if defined(WITH_GEOIP)
-WEBALIZER_SUFFIX=	-geoip
-CONFLICTS+=	${PKGNAMEPREFIX}webalizer-2*
-EXTRA_PATCHES+=	${WRKDIR}/geolizer_2.01-10-patch/geolizer.patch
-EXTRA_PATCHES+=	${FILESDIR}/output.geo.patch
-EXTRA_PATCHES+=	${FILESDIR}/linklist.geo.patch
-PATCH_STRIP=	-p1
-CONFIGURE_ARGS+=	--enable-geoip \
-			--with-geoip-lib=${LOCALBASE}/lib \
-			--with-geoip-inc=${LOCALBASE}/include
-PLIST_SUB+=	WITH_GEOIP=""
-.else
-CONFLICTS+=	${PKGNAMEPREFIX}webalizer-geoip-2*
-EXTRA_PATCHES+=	${FILESDIR}/output.patch
-EXTRA_PATCHES+=	${FILESDIR}/linklist.patch
-PLIST_SUB+=	WITH_GEOIP="@comment "
-.endif
-
 .if defined(BATCH)
 # no cosmetique spaces allowed
 WEBALIZER_LANG?=english
@@ -66,14 +44,27 @@ WEBALIZER_LANG?=english
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_GEOIP)
+WEBALIZER_SUFFIX=	-geoip
+CONFLICTS+=	${PKGNAMEPREFIX}webalizer-2*
+CONFIGURE_ARGS+=	--enable-geoip \
+			--with-geoip-lib=${LOCALBASE}/lib \
+			--with-geoip-inc=${LOCALBASE}/include
+PLIST_SUB+=	WITH_GEOIP=""
+.else
+CONFLICTS+=	${PKGNAMEPREFIX}webalizer-geoip-2*
+PLIST_SUB+=	WITH_GEOIP="@comment "
+.endif
+
 CONFIGURE_ARGS+=	--enable-dns \
-			--with-etcdir=${PREFIX}/etc \
+			--with-geodb=${PREFIX}/share/webalizer \
+			--sysconfdir=${PREFIX}/etc \
 			--with-gdlib=${LOCALBASE}/lib \
 			--with-gd=${LOCALBASE}/include
 
 CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib"
-CFLAGS+=	-DLINKLIST_MAX_STRING=256
-MAN1=		${PKGNAMEPREFIX}webalizer.1
+CFLAGS+=	-DUSE_DB185 -Wall
+MAN1=		${PKGNAMEPREFIX}webalizer.1 ${PKGNAMEPREFIX}wcmgr.1
 DOC1=		CHANGES Copyright INSTALL \
 		README README.FIRST DNS.README country-codes.txt
 DOC2=		INSTALL GeoIP.README
@@ -93,8 +84,6 @@ CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
 #	see http://tyche.pu-toyama.ac.jp/~a-urasim/webalizer/
 .if ${WEBALIZER_LANG} == japanese
 EXTRA_PATCHES+=		${FILESDIR}/ja-webalizer.conf-dist.patch
-.else
-EXTRA_PATCHES+=		${FILESDIR}/sample.conf.patch
 .endif
 .endif
 
@@ -108,20 +97,20 @@ CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -liconv"
 CFLAGS+=		-I${LOCALBASE}/include
 .endif
 
-.if !defined(WITHOUT_WEBALIZER_FULLREFS)
-EXTRA_PATCHES+=		${FILESDIR}/webalizer-fullrefs.patch
+.if !defined(WITHOUT_WEBALIZER_FULL_CGI_REFS)
+CFLAGS+=	-DUSE_FULL_CGI_REFS
 .endif
 
-.if defined(WITH_WEBALIZER_LOWERCASE_SEARCH)
-CFLAGS+=	-DWEBALIZER_LOWERCASE_SEARCH
+.if defined(WITH_WEBALIZER_CLICKABLE_REFERER)
+CFLAGS+=	-DUSE_CLICKABLE_REFERER
 .endif
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@for f in ${EXTRACT_ONLY}; do \
-                case $$f in \
-		*.Z|*.gz) \
+		case $$f in \
+		*.Z|*.gz|*.tgz) \
 			if ! (cd ${WRKDIR} && \
 				${GZCAT} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS});\
 			then \
@@ -160,11 +149,8 @@ pre-configure:
 	${REINPLACE_CMD} \
 		-e "s|webalizer.conf|${PKGNAMEPREFIX}webalizer.conf|" \
 		${WRKSRC}/webalizer.c
-.if defined(WITH_GEOIP)
-	${REINPLACE_CMD} \
-		-e 's|USE_GEOIP=""|USE_GEOIP="yes"|' \
+	${REINPLACE_CMD} -e "s|-ldb||" \
 		${WRKSRC}/configure
-.endif
 .if !defined(WEBALIZER_LANG)
 	@${ECHO_MSG} "You can customize the language by typing"
 	@${ECHO_MSG} "       make WEBALIZER_LANG=<lang>"
@@ -175,6 +161,8 @@ pre-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/webalizer \
 		${PREFIX}/bin/${PKGNAMEPREFIX}webalizer
+	${INSTALL_PROGRAM} ${WRKSRC}/wcmgr \
+		${PREFIX}/bin/${PKGNAMEPREFIX}wcmgr
 	${LN} -sf ${PKGNAMEPREFIX}webalizer \
 		${PREFIX}/bin/${PKGNAMEPREFIX}webazolver
 	${INSTALL_DATA} ${WRKSRC}/sample.conf \
@@ -182,24 +170,18 @@ do-install:
 
 post-install:
 .for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/webalizer.1 ${PREFIX}/man/man1/${i}
+	${INSTALL_MAN} ${WRKSRC}/${i:S/^${PKGNAMEPREFIX}//} ${PREFIX}/man/man1/${i}
 .endfor
 .if defined(WITH_GEOIP)
 	${MKDIR} ${PREFIX}/share/geolizer
 	@${INSTALL_DATA} ${WRKDIR}/*.png ${PREFIX}/share/geolizer/
+	@${INSTALL_DATA} ${WRKDIR}/GeoDB.dat ${PREFIX}/share/geolizer/
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${DOC1}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
-.if defined(WITH_GEOIP)
-	${MKDIR} ${DOCSDIR}/geolizer
-.for i in ${DOC2}
-	@${INSTALL_DATA} ${WRKDIR}/geolizer_2.01-10-patch/${i} \
-		${DOCSDIR}/geolizer/${i}
-.endfor
-.endif
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
