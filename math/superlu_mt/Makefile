@@ -102,8 +102,9 @@ post-build:
 	done
 
 do-install:
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libsuperlu_mt.* ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKDIR}/tmp_static/libsuperlu_mt.* ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKDIR}/tmp_static/libsuperlu_mt.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libsuperlu_mt.so.${SVERSION} ${PREFIX}/lib
+	cd ${PREFIX}/lib && ${LN} -s -f libsuperlu_mt.so.${SVERSION} libsuperlu_mt.so
 	${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/SRC/*.h ${PREFIX}/include/${PORTNAME}
 .ifndef NOPORTDOCS
