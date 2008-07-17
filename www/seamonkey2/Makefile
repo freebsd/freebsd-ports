@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	seamonkey
-DISTVERSION=	1.1.10
+DISTVERSION=	1.1.11
 PORTREVISION?=	0
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
@@ -28,6 +28,8 @@ MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/cairo"
 
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
+
+GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
 
 MOZ_EXTENSIONS=	default
 MOZ_OPTIONS+=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
@@ -117,6 +119,8 @@ pre-install:
 	fi
 	${ECHO_CMD} share/applications/seamonkey.desktop >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${CP} ${WRKSRC}/suite/branding/icons/gtk/default.xpm \
+		${FAKEDIR}/lib/${MOZILLA}/chrome/icons/default/
 
 do-install:
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
