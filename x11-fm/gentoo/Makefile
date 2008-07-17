@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.11.56
-PORTREVISION=	2
+PORTVERSION=	0.11.57
 CATEGORIES=	x11-fm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
@@ -28,9 +26,6 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
-
-MYPORTDOCS=	BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS \
-		README.gtkrc TODO
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
@@ -51,13 +46,15 @@ CONFIGURE_ARGS+=	--disable-fam
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^CFLAGS = @GENTOO_CFLAGS@|CFLAGS = @CFLAGS@|g ; \
-		 s|^mkinstalldirs =.*$$|mkinstalldirs = $$(SHELL) $$(top_srcdir)/mkinstalldirs|g'
+		 s|^MKDIR_P =.*$$|MKDIR_P = ${MKDIR}|g ; \
+		 s|^mkdir_p =.*$$|mkdir_p = ${MKDIR}|g'
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${MANPREFIX}/man/man1/gentoo.1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${MYPORTDOCS}
+.for file in BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS README.gtkrc \
+	TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 	${TAR} -C ${WRKSRC}/docs --exclude "gentoo.1x*" -cf - . | \
