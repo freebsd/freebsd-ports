@@ -72,9 +72,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/weapons_de.html
 %%PORTDOCS%%%%DOCSDIR%%/weapons_en.html
 share/pixmaps/worldofpadman.png
-%%GAMELIBS%%%%DATADIR%%/missionpack/cgame.so
-%%GAMELIBS%%%%DATADIR%%/missionpack/qagame.so
-%%GAMELIBS%%%%DATADIR%%/missionpack/ui.so
 %%DATADIR%%/wop/server-allgametypes.cfg
 %%DATADIR%%/wop/server-bigballoon.cfg
 %%DATADIR%%/wop/server-lastpadstanding.cfg
@@ -94,7 +91,6 @@ share/pixmaps/worldofpadman.png
 %%GAMELIBS%%%%DATADIR%%/wop/qagame.so
 %%GAMELIBS%%%%DATADIR%%/wop/ui.so
 @dirrm %%DATADIR%%/wop
-%%GAMELIBS%%@dirrm %%DATADIR%%/missionpack
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pictures/weapons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pictures/powerups

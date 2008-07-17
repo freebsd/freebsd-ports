@@ -7,6 +7,4 @@ If you have sound problems with OpenAL recompile without it. Also the OPENAL
 option causes the program to omit restoring gamma and mouse sensivity after
 exitting.
 
-If you enabled CELLSHADING, check files/extra-patch-cellshading for variables.
-
 ==============================================================================
