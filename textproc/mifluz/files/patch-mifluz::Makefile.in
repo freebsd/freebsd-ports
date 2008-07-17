@@ -1,11 +1,11 @@
---- mifluz/Makefile.in.orig	Mon Jul 23 22:12:14 2001
-+++ mifluz/Makefile.in	Tue Jul 30 00:26:00 2002
-@@ -147,7 +147,7 @@
- 
+--- mifluz/Makefile.in.orig	2008-07-11 21:45:32.000000000 +0900
++++ mifluz/Makefile.in	2008-07-11 21:47:15.000000000 +0900
+@@ -300,7 +300,7 @@
+ 	WordType.cc
  
  libmifluz_la_LDFLAGS = -version-info $(MAJOR_VERSION):$(MINOR_VERSION):$(MICRO_VERSION)
 -libmifluz_la_LIBADD = ../db/libdb.la ../clib/libclib.la
-+libmifluz_la_LIBADD = ../db/libdb.la ../clib/libclib.la @LIBICONV@
- 
- include_HEADERS =  	mifluz.h
++libmifluz_la_LIBADD = ../db/libdb.la ../clib/libclib.la $(LIBICONV)
+ include_HEADERS = \
+ 	mifluz.h
  

@@ -1,6 +1,7 @@
 bin/htdb_dump
 bin/htdb_load
 bin/htdb_stat
+bin/mifluz-config
 bin/mifluzdict
 bin/mifluzdump
 bin/mifluzload
@@ -58,6 +59,7 @@ include/mifluz/db_upgrade.h
 include/mifluz/db_verify.h
 include/mifluz/debug.h
 include/mifluz/env_ext.h
+include/mifluz/example1.h
 include/mifluz/hash.h
 include/mifluz/hash_auto.h
 include/mifluz/hash_ext.h
