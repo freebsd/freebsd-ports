@@ -61,6 +61,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/fm30.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmad1.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmad2.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/fmadd.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmc63.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmcancel.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmeq1.png
@@ -123,6 +124,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmeq9.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmradio.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/fmsweep.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/fmtime.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/formant.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/frqenvspectrum.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/gain.png
@@ -267,6 +269,7 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/sin300.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sincube.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sinesummation.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/smoothsq.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/snd-gtkrc.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/snd-ls.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sndcmn.png
@@ -274,11 +277,14 @@ bin/sndrecord
 %%PORTDOCS%%%%DOCSDIR%%/pix/sos.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/soundbox.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/split-noise.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/sqrt.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sqsq.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/srates.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/ssbam.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/ssbambank.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/stochastic.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/sum2.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/sum5.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanh1.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanh100.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanh3.png
