@@ -19,6 +19,7 @@ lib/libuchicken.so
 %%DATADIR%%/extras.exports
 %%DATADIR%%/library.exports
 %%DATADIR%%/lolevel.exports
+%%DATADIR%%/ports.exports
 %%DATADIR%%/posix.exports
 %%DATADIR%%/regex.exports
 %%DATADIR%%/scheduler.exports
@@ -32,6 +33,7 @@ lib/libuchicken.so
 %%DATADIR%%/utils.exports
 %%DATADIR%%/doc/LICENSE
 %%DATADIR%%/doc/README
+%%DATADIR%%/doc/chicken.pdf
 %%DATADIR%%/doc/html/accessing-external-objects.html
 %%DATADIR%%/doc/html/acknowledgements.html
 %%DATADIR%%/doc/html/basic-mode-of-operation.html
@@ -63,6 +65,7 @@ lib/libuchicken.so
 %%DATADIR%%/doc/html/unit-library.html
 %%DATADIR%%/doc/html/unit-lolevel.html
 %%DATADIR%%/doc/html/unit-match.html
+%%DATADIR%%/doc/html/unit-ports.html
 %%DATADIR%%/doc/html/unit-posix.html
 %%DATADIR%%/doc/html/unit-regex.html
 %%DATADIR%%/doc/html/unit-srfi-1.html
