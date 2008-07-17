@@ -1,6 +1,6 @@
---- configure.orig	Sat Oct 29 20:43:26 2005
-+++ configure	Sat Oct 29 21:00:14 2005
-@@ -1650,11 +1650,11 @@
+--- configure.orig	2008-07-10 23:32:20.000000000 +0300
++++ configure	2008-07-10 23:33:51.000000000 +0300
+@@ -1653,13 +1653,13 @@
  
  # The aliases save the names the user supplied, while $host etc.
  # will get canonicalized.
@@ -8,12 +8,16 @@
 -  test "$program_prefix$program_suffix$program_transform_name" = \
 -    NONENONEs,x,x, &&
 -  program_prefix=${target_alias}-
+-
+-# When changing, also change VersionInfo.h and driver/myodbc3.def
 -am__api_version="1.9"
-+# test -n "$target_alias" &&
-+#   test "$program_prefix$program_suffix$program_transform_name" = \
-+#     NONENONEs,x,x, &&
-+#   program_prefix=${target_alias}-
-+# am__api_version="1.9"
++#test -n "$target_alias" &&
++#  test "$program_prefix$program_suffix$program_transform_name" = \
++#    NONENONEs,x,x, &&
++#  program_prefix=${target_alias}-
++#
++## When changing, also change VersionInfo.h and driver/myodbc3.def
++#am__api_version="1.9"
  # Find a good install program.  We prefer a C program (faster),
  # so one script is as good as another.  But avoid the broken or
  # incompatible versions:

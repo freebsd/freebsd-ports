@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mysql-connector-odbc
-PORTVERSION=	3.51.12
-PORTREVISION=	1
+PORTVERSION=	3.51.26
+DISTVERSIONSUFFIX=    r1127
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
-MASTER_SITE_SUBDIR=	MyODBC3
+MASTER_SITE_SUBDIR=	Connector-ODBC/3.51
 PKGNAMESUFFIX=	-${DRIVER_MANAGER}-mysql${MYSQL_VER}
 
 MAINTAINER=	sergey@network-asp.biz
@@ -29,7 +29,8 @@ CONFIGURE_ARGS=	--with-mysql-path=${LOCALBASE} --without-samples \
 
 PLIST_SUB=	VER=${PORTVERSION}
 
-PORTDOCS=	README
+PORTDOCS=	ChangeLog INSTALL LICENSE.exceptions LICENSE.gpl \
+		README README.debug
 
 # MyODBC needs an ODBC driver manager to be installed, and it supports both
 # iODBC and unixODBC.
@@ -63,6 +64,13 @@ post-patch:
 .if defined(ODBCVER)
 	@${REINPLACE_CMD} -e "s|ODBCVER 0x0250|ODBCVER ${ODBCVER}|" ${WRKSRC}/myodbc.h
 .endif
+	@${REINPLACE_CMD} -e "s|^\(readmedir =\).*|\1 ${DOCSDIR}|" ${WRKSRC}/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e " \
+	/^	/s|install-readmeDATA||; \
+	/^install-data-am:/s|install-readmeDATA||; \
+	" ${WRKSRC}/Makefile.in
+.endif
 
 # XXX untested
 .if defined(STATIC)
@@ -70,10 +78,6 @@ CONFIGURE_ARGS+=	--enable-shared=no --enable-static=yes
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
 .if !exists(${PREFIX}/lib/libmyodbc3.so.0)
 	@${LN} -s ${PREFIX}/lib/libmyodbc3-${PORTVERSION}.so ${PREFIX}/lib/libmyodbc3.so.0
 .endif
