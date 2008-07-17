@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	gwhich
-PORTVERSION=	2.16
+PORTVERSION=	2.19
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.cse.cuhk.edu.hk/pub/gnu/gnu/which/ \
-		http://voodoo.bawue.com/download/
+MASTER_SITES=	GNU/which \
+		http://www.xs4all.nl/~carlo17/which/
 DISTNAME=	which-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Which - Everything you never wanted in a which
 
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 
 MAN1=		gwhich.1
 INFO=		which
-
-EXAMPLESDIR_REL=	${EXAMPLESDIR:S,^${PREFIX}/,,}
-PLIST_FILES=	bin/gwhich \
-		${EXAMPLESDIR_REL}/EXAMPLES
-PLIST_DIRS=	${EXAMPLESDIR_REL}
+PORTEXAMPLES=	EXAMPLES
+PLIST_FILES=	bin/gwhich
 
 post-install:
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/EXAMPLES ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
