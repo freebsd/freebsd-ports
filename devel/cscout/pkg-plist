@@ -1,8 +1,6 @@
 bin/cscout
 bin/csmake
 bin/cswc
-@unexec if cmp -s %D/etc/cscout/cscout_defs.h %D/etc/cscout/cscout_defs.FBSD_GCC; then rm -f %D/etc/cscout/cscout_defs.h; fi
-@unexec if cmp -s %D/etc/cscout/cscout_incs.h %D/etc/cscout/cscout_incs.FBSD_GCC; then  rm -f %D/etc/cscout/cscout_incs.h; fi
 etc/cscout/acl
 etc/cscout/cscout_defs.BORLAND
 etc/cscout/cscout_defs.FBSD_GCC
@@ -16,7 +14,6 @@ etc/cscout/cscout_incs.GENERIC
 etc/cscout/cscout_incs.LINUX_GCC
 etc/cscout/cscout_incs.WIN32_MINGW
 etc/cscout/cscout_incs.WIN32_MSC
-@dirrmtry etc/cscout
 %%PORTDOCS%%%%DOCSDIR%%/access.html
 %%PORTDOCS%%%%DOCSDIR%%/bib.html
 %%PORTDOCS%%%%DOCSDIR%%/cg.html
@@ -36,8 +33,10 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%DOCSDIR%%/flow.gif
 %%PORTDOCS%%%%DOCSDIR%%/flow.html
 %%PORTDOCS%%%%DOCSDIR%%/fun.html
+%%PORTDOCS%%%%DOCSDIR%%/funarg.html
 %%PORTDOCS%%%%DOCSDIR%%/funq.html
 %%PORTDOCS%%%%DOCSDIR%%/geglos.html
+%%PORTDOCS%%%%DOCSDIR%%/hedit.html
 %%PORTDOCS%%%%DOCSDIR%%/id.html
 %%PORTDOCS%%%%DOCSDIR%%/idq.html
 %%PORTDOCS%%%%DOCSDIR%%/idxprint.html
@@ -45,9 +44,11 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%DOCSDIR%%/indexw.html
 %%PORTDOCS%%%%DOCSDIR%%/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/maincall.gif
 %%PORTDOCS%%%%DOCSDIR%%/mancscout.html
 %%PORTDOCS%%%%DOCSDIR%%/mancswc.html
+%%PORTDOCS%%%%DOCSDIR%%/metrics.html
 %%PORTDOCS%%%%DOCSDIR%%/mismash.gif
 %%PORTDOCS%%%%DOCSDIR%%/name.html
 %%PORTDOCS%%%%DOCSDIR%%/obf.html
@@ -64,46 +65,50 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%DOCSDIR%%/simul.html
 %%PORTDOCS%%%%DOCSDIR%%/smlogo.png
 %%PORTDOCS%%%%DOCSDIR%%/sql.html
+%%PORTDOCS%%%%DOCSDIR%%/tree.png
 %%PORTDOCS%%%%DOCSDIR%%/walk.html
 %%PORTDOCS%%%%DOCSDIR%%/web.html
 %%PORTDOCS%%%%DOCSDIR%%/wsp.html
 %%PORTDOCS%%%%DOCSDIR%%/wspd.html
 %%PORTDOCS%%%%DOCSDIR%%/yacc.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.cscout/cscout_defs.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.cscout/cscout_incs.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.cscout/options
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk.prj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/FIXES
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/awk.1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/awk.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/awkgram.y
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/b.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/buildwin.bat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/lex.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/lib.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/mac.code
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/main.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/makefile.win
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/maketab.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/missing95.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/parse.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/proctab.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/proto.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/run.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/tran.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/vcvars32.bat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/ytab.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/ytab.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/ytabc.bak
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/ytabh.bak
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bin.prj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mkproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sh.prj
+@unexec if cmp -s %D/etc/cscout/cscout_defs.h %D/etc/cscout/cscout_defs.FBSD_GCC ; then rm -f %D/etc/cscout/cscout_defs.h; fi
+@unexec if cmp -s %D/etc/cscout/cscout_incs.h %D/etc/cscout/cscout_incs.FBSD_GCC ; then  rm -f %D/etc/cscout/cscout_incs.h; fi
+@dirrmtry etc/cscout
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/.cscout/cscout_defs.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/.cscout/cscout_incs.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/.cscout/options
-%%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk.prj
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/FIXES
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/awk.1
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/awk.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/awkgram.y
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/b.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/buildwin.bat
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/lex.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/lib.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/mac.code
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/main.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/makefile.win
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/maketab.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/missing95.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/parse.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/proctab.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/proto.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/run.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/tran.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/vcvars32.bat
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/ytab.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/ytab.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/ytabc.bak
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk/ytabh.bak
-%%PORTDOCS%%%%EXAMPLESDIR%%/bin.prj
-%%PORTDOCS%%%%EXAMPLESDIR%%/mkproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/sh.prj
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/.cscout
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/awk
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.cscout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/awk
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
