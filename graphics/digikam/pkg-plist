@@ -33,6 +33,7 @@ include/digikam/iccprofileinfodlg.h
 include/digikam/iccprofilewidget.h
 include/digikam/icctransform.h
 include/digikam/imagecurves.h
+include/digikam/imagedialog.h
 include/digikam/imagedlgbase.h
 include/digikam/imageguidedlg.h
 include/digikam/imageguidewidget.h
@@ -48,9 +49,11 @@ include/digikam/listboxpreviewitem.h
 include/digikam/paniconwidget.h
 include/digikam/photoinfocontainer.h
 include/digikam/previewwidget.h
+include/digikam/rawcameradlg.h
 include/digikam/searchtextbar.h
 include/digikam/sidebar.h
 include/digikam/squeezedcombobox.h
+include/digikam/statusled.h
 include/digikam/statusnavigatebar.h
 include/digikam/statusprogressbar.h
 include/digikam/statuszoombar.h
@@ -185,6 +188,7 @@ share/apps/digikam/about/main.html
 share/apps/digikam/about/top-left.png
 share/apps/digikam/about/top-middle.png
 share/apps/digikam/about/top-right-digikam.png
+share/apps/digikam/data/banner-digikam.png
 share/apps/digikam/data/bluejean-texture.png
 share/apps/digikam/data/bothhorz.png
 share/apps/digikam/data/bothvert.png
@@ -212,9 +216,11 @@ share/apps/digikam/data/histogram-log.png
 share/apps/digikam/data/ice-pattern.png
 share/apps/digikam/data/image-full.png
 share/apps/digikam/data/image-selection.png
+share/apps/digikam/data/indicator-gray.png
+share/apps/digikam/data/indicator-green.png
+share/apps/digikam/data/indicator-red.png
 share/apps/digikam/data/leaf-pattern.png
 share/apps/digikam/data/logo-cimg.png
-share/apps/digikam/data/logo-digikam.png
 share/apps/digikam/data/logo-exiv2.png
 share/apps/digikam/data/logo-gphoto.png
 share/apps/digikam/data/logo-lcms.png
@@ -696,64 +702,23 @@ share/apps/digikam/themes/Dreary
 share/apps/digikam/themes/Gray
 share/apps/digikam/themes/Marine
 share/apps/digikam/themes/OrangeCrush
+share/apps/digikam/themes/Rose
 share/apps/digikam/themes/Sandy
 share/apps/digikam/tips
 share/apps/digikam/utils/digikam-camera
 share/apps/konqueror/servicemenus/digikam-download.desktop
 share/apps/konqueror/servicemenus/digikam-gphoto2-camera.desktop
 share/apps/konqueror/servicemenus/digikam-mount-and-download.desktop
-share/apps/showfoto/icons/crystalsvg/128x128/actions/crop.png
-share/apps/showfoto/icons/crystalsvg/128x128/actions/rotate_cw.png
-share/apps/showfoto/icons/crystalsvg/16x16/actions/crop.png
-share/apps/showfoto/icons/crystalsvg/16x16/actions/rotate_cw.png
-share/apps/showfoto/icons/crystalsvg/22x22/actions/crop.png
-share/apps/showfoto/icons/crystalsvg/22x22/actions/rotate_cw.png
-share/apps/showfoto/icons/crystalsvg/32x32/actions/crop.png
-share/apps/showfoto/icons/crystalsvg/32x32/actions/rotate_cw.png
-share/apps/showfoto/icons/crystalsvg/48x48/actions/crop.png
-share/apps/showfoto/icons/crystalsvg/48x48/actions/rotate_cw.png
-share/apps/showfoto/icons/crystalsvg/64x64/actions/crop.png
-share/apps/showfoto/icons/crystalsvg/64x64/actions/rotate_cw.png
-share/apps/showfoto/icons/crystalsvg/scalable/actions/crop.svgz
-share/apps/showfoto/icons/crystalsvg/scalable/actions/rotate_cw.svgz
-share/apps/showfoto/icons/hicolor/128x128/actions/flip.png
-share/apps/showfoto/icons/hicolor/128x128/actions/histogram.png
-share/apps/showfoto/icons/hicolor/128x128/actions/resize_image.png
-share/apps/showfoto/icons/hicolor/128x128/actions/slideshow.png
 share/apps/showfoto/icons/hicolor/128x128/apps/showfoto.png
-share/apps/showfoto/icons/hicolor/16x16/actions/flip.png
-share/apps/showfoto/icons/hicolor/16x16/actions/histogram.png
-share/apps/showfoto/icons/hicolor/16x16/actions/resize_image.png
-share/apps/showfoto/icons/hicolor/16x16/actions/slideshow.png
 share/apps/showfoto/icons/hicolor/16x16/apps/showfoto.png
-share/apps/showfoto/icons/hicolor/22x22/actions/flip.png
-share/apps/showfoto/icons/hicolor/22x22/actions/histogram.png
-share/apps/showfoto/icons/hicolor/22x22/actions/resize_image.png
-share/apps/showfoto/icons/hicolor/22x22/actions/slideshow.png
 share/apps/showfoto/icons/hicolor/22x22/apps/showfoto.png
 share/apps/showfoto/icons/hicolor/22x22/mimetypes/raw.png
-share/apps/showfoto/icons/hicolor/32x32/actions/flip.png
-share/apps/showfoto/icons/hicolor/32x32/actions/histogram.png
-share/apps/showfoto/icons/hicolor/32x32/actions/resize_image.png
-share/apps/showfoto/icons/hicolor/32x32/actions/slideshow.png
 share/apps/showfoto/icons/hicolor/32x32/apps/showfoto.png
 share/apps/showfoto/icons/hicolor/32x32/mimetypes/raw.png
-share/apps/showfoto/icons/hicolor/48x48/actions/flip.png
-share/apps/showfoto/icons/hicolor/48x48/actions/histogram.png
-share/apps/showfoto/icons/hicolor/48x48/actions/resize_image.png
-share/apps/showfoto/icons/hicolor/48x48/actions/slideshow.png
 share/apps/showfoto/icons/hicolor/48x48/apps/showfoto.png
 share/apps/showfoto/icons/hicolor/48x48/mimetypes/raw.png
-share/apps/showfoto/icons/hicolor/64x64/actions/flip.png
-share/apps/showfoto/icons/hicolor/64x64/actions/histogram.png
-share/apps/showfoto/icons/hicolor/64x64/actions/resize_image.png
-share/apps/showfoto/icons/hicolor/64x64/actions/slideshow.png
 share/apps/showfoto/icons/hicolor/64x64/apps/showfoto.png
 share/apps/showfoto/icons/hicolor/64x64/mimetypes/raw.png
-share/apps/showfoto/icons/hicolor/scalable/actions/flip.svgz
-share/apps/showfoto/icons/hicolor/scalable/actions/histogram.svgz
-share/apps/showfoto/icons/hicolor/scalable/actions/resize_image.svgz
-share/apps/showfoto/icons/hicolor/scalable/actions/slideshow.svgz
 share/apps/showfoto/menusidepixmap.png
 share/apps/showfoto/showfoto-splash.png
 share/apps/showfoto/showfotoui.rc
@@ -851,46 +816,23 @@ share/services/digikamsearch.protocol
 share/services/digikamtags.protocol
 share/services/digikamthumbnail.protocol
 share/servicetypes/digikamimageplugin.desktop
-@dirrm share/apps/showfoto/icons/hicolor/scalable/actions
-@dirrm share/apps/showfoto/icons/hicolor/scalable
 @dirrm share/apps/showfoto/icons/hicolor/64x64/mimetypes
 @dirrm share/apps/showfoto/icons/hicolor/64x64/apps
-@dirrm share/apps/showfoto/icons/hicolor/64x64/actions
 @dirrm share/apps/showfoto/icons/hicolor/64x64
 @dirrm share/apps/showfoto/icons/hicolor/48x48/mimetypes
 @dirrm share/apps/showfoto/icons/hicolor/48x48/apps
-@dirrm share/apps/showfoto/icons/hicolor/48x48/actions
 @dirrm share/apps/showfoto/icons/hicolor/48x48
 @dirrm share/apps/showfoto/icons/hicolor/32x32/mimetypes
 @dirrm share/apps/showfoto/icons/hicolor/32x32/apps
-@dirrm share/apps/showfoto/icons/hicolor/32x32/actions
 @dirrm share/apps/showfoto/icons/hicolor/32x32
 @dirrm share/apps/showfoto/icons/hicolor/22x22/mimetypes
 @dirrm share/apps/showfoto/icons/hicolor/22x22/apps
-@dirrm share/apps/showfoto/icons/hicolor/22x22/actions
 @dirrm share/apps/showfoto/icons/hicolor/22x22
 @dirrm share/apps/showfoto/icons/hicolor/16x16/apps
-@dirrm share/apps/showfoto/icons/hicolor/16x16/actions
 @dirrm share/apps/showfoto/icons/hicolor/16x16
 @dirrm share/apps/showfoto/icons/hicolor/128x128/apps
-@dirrm share/apps/showfoto/icons/hicolor/128x128/actions
 @dirrm share/apps/showfoto/icons/hicolor/128x128
 @dirrm share/apps/showfoto/icons/hicolor
-@dirrm share/apps/showfoto/icons/crystalsvg/scalable/actions
-@dirrm share/apps/showfoto/icons/crystalsvg/scalable
-@dirrm share/apps/showfoto/icons/crystalsvg/64x64/actions
-@dirrm share/apps/showfoto/icons/crystalsvg/64x64
-@dirrm share/apps/showfoto/icons/crystalsvg/48x48/actions
-@dirrm share/apps/showfoto/icons/crystalsvg/48x48
-@dirrm share/apps/showfoto/icons/crystalsvg/32x32/actions
-@dirrm share/apps/showfoto/icons/crystalsvg/32x32
-@dirrm share/apps/showfoto/icons/crystalsvg/22x22/actions
-@dirrm share/apps/showfoto/icons/crystalsvg/22x22
-@dirrm share/apps/showfoto/icons/crystalsvg/16x16/actions
-@dirrm share/apps/showfoto/icons/crystalsvg/16x16
-@dirrm share/apps/showfoto/icons/crystalsvg/128x128/actions
-@dirrm share/apps/showfoto/icons/crystalsvg/128x128
-@dirrm share/apps/showfoto/icons/crystalsvg
 @dirrm share/apps/showfoto/icons
 @dirrm share/apps/showfoto
 @dirrmtry share/apps/konqueror/servicemenus

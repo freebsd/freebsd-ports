@@ -1,9 +1,9 @@
---- digikam/kioslave/digikamdates.cpp.orig	Tue Apr 11 13:53:08 2006
-+++ digikam/kioslave/digikamdates.cpp	Tue Apr 11 13:53:54 2006
-@@ -186,7 +186,7 @@
-                          .arg(moStr2)
-                          .arg(yr,4)
-                          .arg(moStr1,2),
+--- digikam/kioslave/digikamdates.cpp.orig	2008-07-16 21:05:55.000000000 +0200
++++ digikam/kioslave/digikamdates.cpp	2008-07-17 08:28:24.000000000 +0200
+@@ -199,7 +199,7 @@
+                          .arg(moEndStr, 2)
+                          .arg(yrStart, 4)
+                          .arg(moStartStr, 2),
 -                         &values, false);
 +                         &values);
  

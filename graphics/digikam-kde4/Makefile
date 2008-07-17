@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	digikam
-DISTVERSION=	0.9.3
-PORTREVISION=	3
+DISTVERSION=	0.9.4
 CATEGORIES=	graphics kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SFE
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An advanced digital photo management application for KDE
@@ -32,6 +30,8 @@ USE_KDELIBS_VER=3
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+
+CONFIGURE_ARGS=	--without-included-sqlite3
 
 MAN1=		digitaglinktree.1
 
