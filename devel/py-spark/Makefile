@@ -8,6 +8,7 @@
 
 PORTNAME=	spark
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://pages.cpsc.ucalgary.ca/~aycock/spark/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +21,7 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/spark.py ${PYTHON_SITELIBDIR}
-.if !defined(PORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in doc.html doc.tex paper.ps.gz
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
