@@ -7,6 +7,7 @@
 
 PORTNAME=	picasm
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.jmp.fi/~trossi/pic/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -27,13 +28,18 @@ EXAMPLE_FILES=	example.asm morse.asm morse.i pic16f84.i picmac.i
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/picasm ${PREFIX}/bin
-	${MKDIR} ${DATADIR}/device_definitions
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/picasm.txt ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 .for EXAMPLE in ${EXAMPLE_FILES}
+	@ ${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/${EXAMPLE} ${EXAMPLESDIR}
 .endfor
+.endif
+.if !defined(NOPORTDATA)
+	${MKDIR} ${DATADIR}/device_definitions
 	${INSTALL_DATA} ${WRKSRC}/device_definitions/*.i ${DATADIR}/device_definitions
 .endif
 
