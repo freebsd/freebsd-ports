@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wormux
-DISTVERSION=	0.7.9
-PORTREVISION=	3
+DISTVERSION=	0.8
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/wormux/
 
@@ -17,11 +16,13 @@ COMMENT=	Wormux game
 LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		curl:${PORTSDIR}/ftp/curl
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_SDL=	sdl image mixer ttf gfx net
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-CONFIGURE_ARGS=	--with-datadir-name=${DATADIR} --program-prefix=""
-
+MANCOMPRESSED=	no
 MAN6=	wormux.6
 
 post-patch:
