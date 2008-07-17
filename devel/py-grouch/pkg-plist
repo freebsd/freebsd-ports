@@ -27,18 +27,18 @@ bin/gen_schema
 %%PYTHON_SITELIBDIR%%/grouch/valuetype.py
 %%PYTHON_SITELIBDIR%%/grouch/valuetype.pyc
 %%PYTHON_SITELIBDIR%%/grouch/valuetype.pyo
-%%DOCSDIR%%/CHANGES.txt
-%%DOCSDIR%%/LICENSE.txt
-%%DOCSDIR%%/README.txt
-%%DOCSDIR%%/checking.txt
-%%DOCSDIR%%/schema.txt
-%%DOCSDIR%%/type-system.txt
-%%EXAMPLESDIR%%/animal.py
-%%EXAMPLESDIR%%/make_things
-%%EXAMPLESDIR%%/thing.py
-%%EXAMPLESDIR%%/things.proj
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/checking.txt
+%%PORTDOCS%%%%DOCSDIR%%/schema.txt
+%%PORTDOCS%%%%DOCSDIR%%/type-system.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animal.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_things
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/thing.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/things.proj
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/grouch
 @dirrm %%PYTHON_SITELIBDIR%%
 @dirrm %%PYTHON_LIBDIR%%

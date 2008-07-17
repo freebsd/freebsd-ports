@@ -7,6 +7,7 @@
 
 PORTNAME=	grouch
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.mems-exchange.org/software/files/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,6 +36,8 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile}.txt ${DOCSDIR}
 .endfor
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@ ${MKDIR} ${EXAMPLESDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
