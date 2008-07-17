@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Net_DIME
-PORTVERSION=	0.3
+DISTVERSION=	1.0.0RC1
 CATEGORIES=	net pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	The PEAR::Net_DIME class implements DIME encoding
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
