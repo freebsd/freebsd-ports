@@ -1,15 +1,15 @@
---- esdlib.c.orig	Mon Jul 15 05:28:26 2002
-+++ esdlib.c	Tue Aug 27 13:06:16 2002
-@@ -20,6 +20,8 @@
- #include <arpa/inet.h>
+--- esdlib.c.orig	2008-07-15 11:35:15.000000000 -0400
++++ esdlib.c	2008-07-17 13:46:44.000000000 -0400
+@@ -21,6 +21,8 @@
  #include <errno.h>
  #include <sys/wait.h>
+ #include <poll.h>
 +#include <pwd.h>
 +#include <limits.h>
  
  #include <sys/un.h>
  
-@@ -660,8 +662,7 @@
+@@ -889,8 +891,7 @@ int esd_open_sound( const char *host )
  		setsid();
  		cmd = malloc(strlen(SERVERDIR"/esd  -spawnfd 999999") + (esd_spawn_options?strlen(esd_spawn_options):0));
  
@@ -19,11 +19,10 @@
  		execl("/bin/sh", "/bin/sh", "-c", cmd, NULL);
  		perror("execl");
  		_exit(1);
-@@ -1421,3 +1422,34 @@
- 
+@@ -1703,3 +1704,34 @@ int esd_close( int esd )
      return close( esd );
  }
-+
+ 
 +char *
 +esd_unix_socket_dir(void) {
 +       static char *sockdir = NULL, sockdirbuf[PATH_MAX];
@@ -53,4 +52,5 @@
 +       sockname = socknamebuf;
 +       return (sockname);
 + }
++
 +
