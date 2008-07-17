@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnuradio
@@ -26,7 +26,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		usb:${PORTSDIR}/devel/libusb \
 		boost_python:${PORTSDIR}/devel/boost-python
 RUN_DEPENDS=	${PYNUMERIC} \
-		${PYTHON_SITELIBDIR}/ephem.so:${PORTSDIR}/astro/pyephem
+		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem
 
 USE_PYTHON=	2.4+
 USE_WX=		2.6+
