@@ -1,5 +1,5 @@
---- sample.conf.orig	2000-09-29 12:51:42.000000000 +0900
-+++ sample.conf	2008-01-16 21:58:12.000000000 +0900
+--- sample.conf.orig	2008-07-01 22:09:31.000000000 +0200
++++ sample.conf	2008-07-05 13:39:47.000000000 +0200
 @@ -107,9 +107,12 @@
  
  PageType	htm*
@@ -11,18 +11,19 @@
  #PageType	pl
 +#PageType	rb
  
- # UseHTTPS should be used if the analysis is being run on a
- # secure server, and links to urls should use 'https://' instead
-@@ -153,6 +156,8 @@
+ # PagePrefix allows all requests with a specified prefix to be
+ # considered as 'pages'. If you want everything under /documents
+@@ -242,7 +245,8 @@
  # is 80 characters, so use multiple lines if needed.
  
  #HTMLHead <META NAME="author" CONTENT="The Webalizer">
-+HTMLHead <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=x-euc-jp">
+-#HTMLHead <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 +HTMLHead <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
++HTMLHead <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=x-euc-jp">
  
  # HTMLBody defined the HTML code to be inserted, starting with the
  # <BODY> tag.  If not specified, the default is shown below.  If
-@@ -393,6 +398,9 @@
+@@ -545,6 +550,9 @@
  HideURL		*.png
  HideURL		*.PNG
  HideURL		*.ra
@@ -32,7 +33,7 @@
  
  # Hiding agents is kind of futile
  #HideAgent	RealPlayer
-@@ -412,6 +420,11 @@
+@@ -564,6 +572,11 @@
  #GroupReferrer	excite.com/     Excite
  #GroupReferrer	infoseek.com/   InfoSeek
  #GroupReferrer	webcrawler.com/ WebCrawler
@@ -44,9 +45,9 @@
  
  #GroupUser      root            Admin users
  #GroupUser      admin           Admin users
-@@ -531,6 +544,21 @@
- SearchEngine	alltheweb.com	query=
- SearchEngine	northernlight.com  qr=
+@@ -702,6 +715,21 @@
+ #SearchEngine	alltheweb.com	q=
+ #SearchEngine	northernlight.com  qr=
  
 +SearchEngine	yahoo.co.jp	p=
 +SearchEngine	google.co.jp	q=
@@ -60,9 +61,9 @@
 +SearchEngine	excite.co.jp	search=
 +SearchEngine	livedoor.com	q=
 +SearchEngine	jp.aol.com	query=
-+#SearchEngine	.google.	q=
-+#SearchEngine	bulkfeeds.net	q=
++#SearchEngine .google.        q=
++#SearchEngine bulkfeeds.net   q=
 +
- # The Dump* keywords allow the dumping of Sites, URL's, Referrers
- # User Agents, Usernames and Search strings to seperate tab delimited
- # text files, suitable for import into most database or spreadsheet
+ # Normally, search strings are converted to lower case in order to
+ # increase accuracy.  The SearchCaseI option allows them to maintain
+ # case sensitivity, useful for some sites.  The value can be 'yes'

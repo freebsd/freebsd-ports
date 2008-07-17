@@ -1,7 +1,9 @@
 bin/%%PKGNAMEPREFIX%%webalizer
+bin/%%PKGNAMEPREFIX%%wcmgr
 @exec ln -f %B/%%PKGNAMEPREFIX%%webalizer %B/%%PKGNAMEPREFIX%%webazolver
 @unexec rm -f %B/%%PKGNAMEPREFIX%%webazolver
 etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
+%%WITH_GEOIP%%share/geolizer/GeoDB.dat
 %%WITH_GEOIP%%share/geolizer/ad.png
 %%WITH_GEOIP%%share/geolizer/ae.png
 %%WITH_GEOIP%%share/geolizer/af.png
@@ -254,9 +256,6 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/zm.png
 %%WITH_GEOIP%%share/geolizer/zw.png
 %%WITH_GEOIP%%@dirrm share/geolizer
-%%PORTDOCS%%%%WITH_GEOIP%%%%DOCSDIR%%/geolizer/GeoIP.README
-%%PORTDOCS%%%%WITH_GEOIP%%%%DOCSDIR%%/geolizer/INSTALL
-%%PORTDOCS%%%%WITH_GEOIP%%@dirrm %%DOCSDIR%%/geolizer
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/Copyright
 %%PORTDOCS%%%%DOCSDIR%%/DNS.README
