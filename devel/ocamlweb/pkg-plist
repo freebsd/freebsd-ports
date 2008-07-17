@@ -1,7 +1,6 @@
+@comment $FreeBSD$
 bin/ocamlweb
-share/texmf/tex/latex/ocamlweb/ocamlweb.sty
-@dirrm share/texmf/tex/latex/ocamlweb
-%%PORTDOCS%%%%DOCSDIR%%/ocamlweb-%%PORTVERSION%%-man.ps.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec %D/bin/mktexlsr
-@unexec %D/bin/mktexlsr
+%%TEXMFDIR%%/tex/latex/ocamlweb/ocamlweb.sty
+@dirrm %%TEXMFDIR%%/tex/latex/ocamlweb
+@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
