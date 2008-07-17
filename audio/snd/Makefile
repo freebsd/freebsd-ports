@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snd
-PORTVERSION=	9.10
-PORTREVISION=	1
+PORTVERSION=	9.11
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -89,7 +88,7 @@ CONFIGURE_ARGS+=	--with-ruby
 .endif
 
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--with-no-gui                                   
+CONFIGURE_ARGS+=	--with-no-gui
 PLIST_SUB+=	X11="@comment "
 .else
 USE_GNOME+=	gtk20
