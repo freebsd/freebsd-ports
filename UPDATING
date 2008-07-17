@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080717:
+   AFFECTS: Users of devel/anjuta
+   Author: gnome@FreeBSD.org
+
+   Anjuta's neon dependency has been switched from neon26 to neon28.  The
+   two are incompatible, so you will need to do the following to upgrade:
+
+   portupgrade -o www/neon28 neon26
+   portupgrade anjuta
+
 20080714:
   AFFECTS: Users of www/squid
   Author: Thomas-Martin Seck <tmseck@web.de>
