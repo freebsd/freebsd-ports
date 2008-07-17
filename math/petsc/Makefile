@@ -69,10 +69,6 @@ MPIDIR=		${LOCALBASE}/mpich2
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
-BROKEN=		does not compile
-.endif
-
 .if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
 WITH_OPENMPI=	yes
 MPIDIR=		${LOCALBASE}/mpi/openmpi
