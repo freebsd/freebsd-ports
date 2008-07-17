@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maatkit
-PORTVERSION=	1753
+PORTVERSION=	1972
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -31,11 +31,13 @@ MAN1=	mk-archiver.1 \
 		mk-query-profiler.1 \
 		mk-show-grants.1 \
 		mk-slave-delay.1 \
+		mk-slave-find.1 \
+		mk-slave-move.1 \
 		mk-slave-prefetch.1 \
 		mk-slave-restart.1 \
 		mk-table-checksum.1 \
 		mk-table-sync.1 \
 		mk-visual-explain.1
-MAN3=	maatkit.3
+MAN3=	maatkit.3 maatkitdsn.3
 
 .include <bsd.port.mk>
