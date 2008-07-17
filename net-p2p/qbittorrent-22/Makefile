@@ -38,6 +38,7 @@ MANCOMPRESSED=	yes
 
 .if defined(WITH_IMAGEMAGICK)
 LIB_DEPENDS+=	MagickWand.1:${PORTSDIR}/graphics/ImageMagick
+CONFIGURE_ARGS+=--with-libmagick-inc=${LOCALBASE}/include/ImageMagick
 .else
 CONFIGURE_ARGS+=--disable-libmagick
 .endif
