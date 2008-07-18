@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="35e54755-54e4-11dd-ad8b-0030843d3802">
+    <topic>phpmyadmin -- cross site request forgery vulnerabilites</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><lt>2.1.17.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyAdmin security announcement:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-5">
+	  <p>A logged-in user, if abused into clicking a crafted link or loading
+	    an attack page, would create a database he did not intend to, or would
+	    change his connection character set.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-5</url>
+      <url>http://secunia.com/advisories/31115/</url>
+    </references>
+    <dates>
+      <discovery>2008-07-15</discovery>
+      <entry>2008-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ecedde1c-5128-11dd-a4e1-0030843d3802">
     <topic>drupal -- multiple vulnerabilities </topic>
     <affects>
