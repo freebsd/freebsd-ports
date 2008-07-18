@@ -1,0 +1,15 @@
+--- Makefile.orig	2007-07-14 20:39:41.000000000 +0200
++++ Makefile	2008-07-17 21:27:32.000000000 +0200
+@@ -35,12 +35,10 @@
+ 	@${CC} -o $@ ${OBJ} ${LDFLAGS}
+ 
+ install: all
+-	@mkdir -p ${DESTDIR}${DOCDIR}
+ 	@mkdir -p ${DESTDIR}${BINDIR}
+ 	@mkdir -p ${DESTDIR}${MAN1DIR}
+ 
+ 	@install -d ${DESTDIR}${BINDIR} ${DESTDIR}${MAN1DIR}
+-	@install -m 644 CHANGES README query.sh FAQ LICENSE ${DESTDIR}${DOCDIR}
+ 	@install -m 775 ii ${DESTDIR}${BINDIR}
+ 	@install -m 444 ii.1 ${DESTDIR}${MAN1DIR}
+ 	@echo "installed ii"
