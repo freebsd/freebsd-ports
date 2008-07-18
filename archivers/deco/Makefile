@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	deco
-PORTVERSION=	1.0.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.0.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://hartlich.com/deco/download/
 
