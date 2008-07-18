@@ -401,6 +401,7 @@
     SUBDIR += p5-Hatena-Keyword
     SUBDIR += p5-IDNA-Punycode
     SUBDIR += p5-IO-CSVHeaderFile
+    SUBDIR += p5-JavaScript-Minifier-XS
     SUBDIR += p5-KinoSearch
     SUBDIR += p5-LJ-SpellCheck
     SUBDIR += p5-Lingua-Conjunction
