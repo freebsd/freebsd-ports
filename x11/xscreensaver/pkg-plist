@@ -175,6 +175,7 @@ bin/xscreensaver-hacks/sballs
 bin/xscreensaver-hacks/shadebobs
 bin/xscreensaver-hacks/sierpinski
 bin/xscreensaver-hacks/sierpinski3d
+bin/xscreensaver-hacks/skytentacles
 bin/xscreensaver-hacks/slidescreen
 bin/xscreensaver-hacks/slip
 bin/xscreensaver-hacks/sonar
@@ -222,6 +223,7 @@ bin/xscreensaver-hacks/xsublim
 bin/xscreensaver-hacks/zoom
 bin/xscreensaver-text
 %%PAM%%etc/pam.d/xscreensaver
+lib/X11/app-defaults/XScreenSaver
 share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/README
 %%DATADIR%%/config/abstractile.xml
@@ -397,6 +399,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/shadebobs.xml
 %%DATADIR%%/config/sierpinski.xml
 %%DATADIR%%/config/sierpinski3d.xml
+%%DATADIR%%/config/skytentacles.xml
 %%DATADIR%%/config/slidescreen.xml
 %%DATADIR%%/config/slip.xml
 %%DATADIR%%/config/sonar.xml
@@ -458,5 +461,3 @@ share/pixmaps/xscreensaver.xpm
 @dirrmtry %%DATADIR%%/config
 @dirrm %%DATADIR%%/glade
 @dirrmtry %%DATADIR%%
-@cwd %%LOCALBASE%%
-lib/X11/app-defaults/XScreenSaver

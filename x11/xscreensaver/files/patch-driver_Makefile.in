@@ -1,5 +1,5 @@
---- driver/Makefile.in.orig	2007-11-13 00:39:35.000000000 -0800
-+++ driver/Makefile.in	2007-12-08 23:23:01.000000000 -0800
+--- driver/Makefile.in.orig	2008-07-16 14:40:49.000000000 -0700
++++ driver/Makefile.in	2008-07-18 16:23:37.000000000 -0700
 @@ -81,8 +81,8 @@
  
  
@@ -19,7 +19,16 @@
  		  .gdbinit
  VMSFILES	= compile_axp.com compile_decc.com link_axp.com link_decc.com \
  		  vms-getpwnam.c vms-pwd.h vms-hpwd.c vms-validate.c \
-@@ -490,21 +489,6 @@
+@@ -258,7 +257,7 @@
+ tests: $(TEST_EXES)
+ 
+ install:   install-program   install-ad    install-scripts \
+-	   install-gnome     install-man   install-xml install-pam
++	   install-gnome     install-man   install-xml
+ uninstall: uninstall-program uninstall-ad  \
+ 	   uninstall-gnome   uninstall-man uninstall-xml  
+ 
+@@ -490,22 +489,6 @@
  	  fi ;								\
  	fi
  
@@ -31,13 +40,14 @@
 -	     echo $(INSTALL_DIRS) "$(install_prefix)$(GTK_APPDIR)"	     ;\
 -		  $(INSTALL_DIRS) "$(install_prefix)$(GTK_APPDIR)"	     ;\
 -	   fi								     ;\
--	   name2=gnome-screensaver-properties.desktop			     ;\
+-	   name2=xscreensaver-properties.desktop			     ;\
 -	   echo $(INSTALL_DATA) screensaver-properties.desktop		      \
 -		  $(install_prefix)$(GTK_APPDIR)/$$name2		     ;\
 -		$(INSTALL_DATA) screensaver-properties.desktop		      \
 -		  $(install_prefix)$(GTK_APPDIR)/$$name2		     ;\
 -	 fi
 -
- 
+-
  # xscreensaver.xpm
  # into /usr/share/pixmaps/
+ install-gnome:: $(LOGO)
