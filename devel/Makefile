@@ -2491,6 +2491,7 @@
     SUBDIR += winpdb
     SUBDIR += wizardkit
     SUBDIR += wxGlade
+    SUBDIR += xdg-user-dirs
     SUBDIR += xdg-utils
     SUBDIR += xfc
     SUBDIR += xfce4-dev-tools
