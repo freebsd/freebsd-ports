@@ -10,7 +10,7 @@ PORTVERSION=	1.5
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	RFC 2821 compliant SMTP service that always returns a 4xx soft error
 
 CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}

@@ -1,6 +1,6 @@
 # Ports collection makefile for: pear-VersionControl_SVN
 # Date created: 30 Oct 2007
-# Whom: Greg Larkin <glarkin@sourcehosting.net>
+# Whom: Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -9,7 +9,7 @@ PORTNAME=	VersionControl_SVN
 PORTVERSION=	0.3.1
 CATEGORIES=	devel pear
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Wrapper interface for the Subversion command-line client
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

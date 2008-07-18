@@ -1,6 +1,6 @@
 # New ports collection makefile for:	SVN::Hook
 # Date created:		2008-02-12
-# Whom:			Greg Larkin <glarkin@sourcehosting.net>
+# Whom:			Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Perl module for managing Subversion hook scripts
 
 RUN_DEPENDS=	${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \

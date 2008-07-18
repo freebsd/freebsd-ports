@@ -13,7 +13,7 @@ MASTER_SITES=	http://proj.llucax.com.ar/home/eventxx/releases/
 MASTER_SITE_SUBDIR=	gahr
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A C++ wrapper for libevent
 
 LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent

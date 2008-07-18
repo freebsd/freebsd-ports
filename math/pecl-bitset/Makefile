@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pecl-bitset
 # Date created:			2007/07/06
-# Whom:				Greg Larkin <glarkin@sourcehosting.net>
+# Whom:				Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A PECL extension for manipulating bitsets
 
 USE_PHP=	yes

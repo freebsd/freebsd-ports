@@ -1,6 +1,6 @@
 # Ports collection makefile for:	rubygem-rightaws
 # Date created:			01 May 2008
-# Whom:				Greg Larkin <glarkin@sourcehosting.net>
+# Whom:				Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	rightaws
 DISTNAME=	right_aws-${PORTVERSION}
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Provides access to Amazon EC2, S3, SQS, and SDB web services
 
 RUN_DEPENDS=	rubygem-righthttpconnection>=1.2.1:${PORTSDIR}/net/rubygem-righthttpconnection

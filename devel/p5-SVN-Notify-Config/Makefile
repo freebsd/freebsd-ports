@@ -1,6 +1,6 @@
 # New ports collection makefile for:	SVN-Notify-Config
 # Date created:		2008-02-12
-# Whom:			Greg Larkin <glarkin@sourcehosting.net>
+# Whom:			Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Perl module for config-driven Subversion notification
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svnlook:${PORTSDIR}/devel/subversion \

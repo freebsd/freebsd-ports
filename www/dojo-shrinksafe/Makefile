@@ -1,6 +1,6 @@
 # New ports collection makefile for:	dojo-shrinksafe
 # Date created:		2008-05-01
-# Whom:			Greg Larkin <glarkin@sourcehosting.net>
+# Whom:			Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/ \
 PKGNAMEPREFIX=		dojo-
 DISTNAME=		${PKGNAMEPREFIX}release-${PORTVERSION}-${PORTNAME}
 
-MAINTAINER=		glarkin@sourcehosting.net
+MAINTAINER=		glarkin@FreeBSD.org
 COMMENT=		A Javascript code compressor
 
 USE_JAVA=	yes

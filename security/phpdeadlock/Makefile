@@ -1,6 +1,6 @@
 # New ports collection makefile for:	phpdeadlock
 # Date created:		08 Oct 2007
-# Whom:			Greg Larkin <glarkin@sourcehosting.net>
+# Whom:			Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	security www
 MASTER_SITES=	SF
 DISTNAME=	Deadlock-${PORTVERSION}-Stable
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Web-based user authentication/password protection system
 
 WRKSRC=	${WRKDIR}/Deadlock-1.01

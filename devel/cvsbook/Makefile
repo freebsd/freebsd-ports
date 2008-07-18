@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://cvsbook.red-bean.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A tutorial and reference for CVS
 
 OPTIONS=	CVSBOOK_INFO		"Install the info version" on \

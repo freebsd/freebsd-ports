@@ -1,6 +1,6 @@
 # New ports collection makefile for:	yahoo-ui
 # Date created:		2008-01-29
-# Whom:			Greg Larkin <glarkin@sourcehosting.net>
+# Whom:			Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	yui
 PKGNAMESUFFIX=	-ui
 DISTNAME=	yui_${PORTVERSION}
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	The Yahoo! User Interface (YUI) Library
 
 USE_ZIP=	yes

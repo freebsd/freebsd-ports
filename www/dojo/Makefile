@@ -1,6 +1,6 @@
 # New ports collection makefile for:	dojo
 # Date created:		2008-01-29
-# Whom:			Greg Larkin <glarkin@sourcehosting.net>
+# Whom:			Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/ \
 			LOCAL/beech
 DISTNAME=		dojo-release-${PORTVERSION}
 
-MAINTAINER=		glarkin@sourcehosting.net
+MAINTAINER=		glarkin@FreeBSD.org
 COMMENT=		An open-source DHTML toolkit written in JavaScript
 
 NO_BUILD=		yes
