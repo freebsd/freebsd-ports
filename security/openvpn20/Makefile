@@ -13,7 +13,7 @@ PORTNAME=	openvpn
 # UPGRADE REQUESTS WILL BE DROPPED UNLESS BSD-RELATED.
 # -----------------------------------------------------
 PORTVERSION=	2.0.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
@@ -81,10 +81,14 @@ post-install:
 	PORTS README
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
 .endfor
-	( cd ${WRKSRC} \
-	&& ${FIND} easy-rsa sample-config-files sample-scripts -depth \
-	| ${GREP} -v easy-rsa/Windows \
-	| ${CPIO} -pdmu ${DOCSDIR} )
+.for dir in easy-rsa easy-rsa/2.0 sample-config-files
+	${MKDIR} ${DOCSDIR}/${dir}
+	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_DATA} \{\} ${DOCSDIR}/${dir} \;
+.endfor
+.for dir in sample-scripts
+	${MKDIR} ${DOCSDIR}/${dir}
+	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_SCRIPT} \{\} ${DOCSDIR}/${dir} \;
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
