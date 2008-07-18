@@ -103,6 +103,7 @@
     SUBDIR += gsl
     SUBDIR += guppi
     SUBDIR += hexcalc
+    SUBDIR += igraph
     SUBDIR += isabelle
     SUBDIR += it++
     SUBDIR += itl
