@@ -16,12 +16,12 @@
 %%PYTHON_SITELIBDIR%%/paida/math/array/__init__.py
 %%PYTHON_SITELIBDIR%%/paida/math/array/__init__.pyc
 %%PYTHON_SITELIBDIR%%/paida/math/array/__init__.pyo
-%%PYTHON_SITELIBDIR%%/paida/math/array/array2.py
-%%PYTHON_SITELIBDIR%%/paida/math/array/array2.pyc
-%%PYTHON_SITELIBDIR%%/paida/math/array/array2.pyo
 %%PYTHON_SITELIBDIR%%/paida/math/array/binArray.py
 %%PYTHON_SITELIBDIR%%/paida/math/array/binArray.pyc
 %%PYTHON_SITELIBDIR%%/paida/math/array/binArray.pyo
+%%PYTHON_SITELIBDIR%%/paida/math/array/matrix.py
+%%PYTHON_SITELIBDIR%%/paida/math/array/matrix.pyc
+%%PYTHON_SITELIBDIR%%/paida/math/array/matrix.pyo
 %%PYTHON_SITELIBDIR%%/paida/math/optimize/__init__.py
 %%PYTHON_SITELIBDIR%%/paida/math/optimize/__init__.pyc
 %%PYTHON_SITELIBDIR%%/paida/math/optimize/__init__.pyo
@@ -229,6 +229,12 @@
 %%PYTHON_SITELIBDIR%%/paida/paida_core/ITreeFactory.py
 %%PYTHON_SITELIBDIR%%/paida/paida_core/ITreeFactory.pyc
 %%PYTHON_SITELIBDIR%%/paida/paida_core/ITreeFactory.pyo
+%%PYTHON_SITELIBDIR%%/paida/paida_core/ITreeElementTree.py
+%%PYTHON_SITELIBDIR%%/paida/paida_core/ITreeElementTree.pyc
+%%PYTHON_SITELIBDIR%%/paida/paida_core/ITreeElementTree.pyo
+%%PYTHON_SITELIBDIR%%/paida/paida_core/ITreeOld.py
+%%PYTHON_SITELIBDIR%%/paida/paida_core/ITreeOld.pyc
+%%PYTHON_SITELIBDIR%%/paida/paida_core/ITreeOld.pyo
 %%PYTHON_SITELIBDIR%%/paida/paida_core/ITuple.py
 %%PYTHON_SITELIBDIR%%/paida/paida_core/ITuple.pyc
 %%PYTHON_SITELIBDIR%%/paida/paida_core/ITuple.pyo
@@ -265,6 +271,30 @@
 %%PYTHON_SITELIBDIR%%/paida/paida_gui/batch/__init__.py
 %%PYTHON_SITELIBDIR%%/paida/paida_gui/batch/__init__.pyc
 %%PYTHON_SITELIBDIR%%/paida/paida_gui/batch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/PRoot.py
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/PRoot.pyc
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/PRoot.pyo
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/__init__.py
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/__init__.pyc
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/__init__.pyo
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/paida_library.py
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/paida_library.pyc
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/paida_library.pyo
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/plotter_xml.py
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/plotter_xml.pyc
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/plotter_xml.pyo
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/top_html.py
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/top_html.pyc
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/top_html.pyo
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/tree_xml.py
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/tree_xml.pyc
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox/tree_xml.pyo
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/matplotlib/PRoot.py
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/matplotlib/PRoot.pyc
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/matplotlib/PRoot.pyo
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/matplotlib/__init__.py
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/matplotlib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/paida/paida_gui/matplotlib/__init__.pyo
 %%PYTHON_SITELIBDIR%%/paida/paida_gui/swing/PRoot.py
 %%PYTHON_SITELIBDIR%%/paida/paida_gui/swing/PRoot.pyc
 %%PYTHON_SITELIBDIR%%/paida/paida_gui/swing/PRoot.pyo
@@ -283,11 +313,15 @@
 %%PYTHON_SITELIBDIR%%/paida/tools/__init__.py
 %%PYTHON_SITELIBDIR%%/paida/tools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/paida/tools/__init__.pyo
-
+%%PYTHON_SITELIBDIR%%/paida/tools/Matrix.py
+%%PYTHON_SITELIBDIR%%/paida/tools/Matrix.pyc
+%%PYTHON_SITELIBDIR%%/paida/tools/Matrix.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/paida/tools
 @dirrm %%PYTHON_SITELIBDIR%%/paida/paida_gui/tkinter
 @dirrm %%PYTHON_SITELIBDIR%%/paida/paida_gui/swing
 @dirrm %%PYTHON_SITELIBDIR%%/paida/paida_gui/batch
+@dirrm %%PYTHON_SITELIBDIR%%/paida/paida_gui/firefox
+@dirrm %%PYTHON_SITELIBDIR%%/paida/paida_gui/matplotlib
 @dirrm %%PYTHON_SITELIBDIR%%/paida/paida_gui
 @dirrm %%PYTHON_SITELIBDIR%%/paida/paida_core
 @dirrm %%PYTHON_SITELIBDIR%%/paida/math/pylapack/pyblas
