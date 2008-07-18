@@ -7,7 +7,7 @@
 
 PORTNAME=	masqmail
 PORTVERSION=	0.2.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -15,8 +15,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Mail server for hosts, not permanently connected to the internet
 
+.if !defined (NO_INSTALL_MANPAGES)
 MAN5=		masqmail.aliases.5 masqmail.conf.5 masqmail.get.5 masqmail.route.5
 MAN8=		masqmail.8 mservdetect.8
+.endif
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-trigraphs
@@ -24,6 +26,10 @@ CONFIGURE_ARGS+=	--with-user=mailnull --with-group=mail \
 		--with-confdir=${PREFIX}/etc/masqmail --with-logdir=/var/log/masqmail
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.if !defined (NOPORTDOCS)
+PORTDOCS=	AUTHORS COPYING INSTALL NEWS README TODO
+.endif
 
 .if defined(WITH_LIBCRYPTO)
 CONFIGURE_ARGS+=	--with-libcrypto
@@ -51,15 +57,9 @@ CONFIGURE_ARGS+=	--enable-ident
 .endif
 
 USE_GNOME=	glib20
-USE_RC_SUBR=	yes
-
-post-build:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-	${FILESDIR}/masqmail.sh > ${WRKDIR}/masqmail.sh
+USE_RC_SUBR=	masqmail	
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/masqmail.sh ${PREFIX}/etc/rc.d/masqmail.sh
 	${MKDIR} ${PREFIX}/etc/masqmail
 	${CHOWN} mailnull:mail ${PREFIX}/etc/masqmail
 	${INSTALL_DATA} -o mailnull -g mail ${WRKSRC}/examples/masqmail.conf ${PREFIX}/etc/masqmail/masqmail.conf-dist
@@ -68,7 +68,7 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in  AUTHORS COPYING INSTALL NEWS README TODO
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
