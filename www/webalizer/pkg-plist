@@ -4,6 +4,10 @@ bin/%%PKGNAMEPREFIX%%wcmgr
 @unexec rm -f %B/%%PKGNAMEPREFIX%%webazolver
 etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEODB%%share/geolizer/GeoDB.dat
+%%WITH_GEOIP%%share/geolizer/README
+%%WITH_GEOIP%%share/geolizer/a1.png
+%%WITH_GEOIP%%share/geolizer/a2.png
+%%WITH_GEOIP%%share/geolizer/ac.png
 %%WITH_GEOIP%%share/geolizer/ad.png
 %%WITH_GEOIP%%share/geolizer/ae.png
 %%WITH_GEOIP%%share/geolizer/af.png
@@ -30,6 +34,7 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/bh.png
 %%WITH_GEOIP%%share/geolizer/bi.png
 %%WITH_GEOIP%%share/geolizer/bj.png
+%%WITH_GEOIP%%share/geolizer/bl.png
 %%WITH_GEOIP%%share/geolizer/bm.png
 %%WITH_GEOIP%%share/geolizer/bn.png
 %%WITH_GEOIP%%share/geolizer/bo.png
@@ -53,7 +58,6 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/cn.png
 %%WITH_GEOIP%%share/geolizer/co.png
 %%WITH_GEOIP%%share/geolizer/cr.png
-%%WITH_GEOIP%%share/geolizer/cs.png
 %%WITH_GEOIP%%share/geolizer/cu.png
 %%WITH_GEOIP%%share/geolizer/cv.png
 %%WITH_GEOIP%%share/geolizer/cx.png
@@ -79,7 +83,6 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/fm.png
 %%WITH_GEOIP%%share/geolizer/fo.png
 %%WITH_GEOIP%%share/geolizer/fr.png
-%%WITH_GEOIP%%share/geolizer/fx.png
 %%WITH_GEOIP%%share/geolizer/ga.png
 %%WITH_GEOIP%%share/geolizer/gb.png
 %%WITH_GEOIP%%share/geolizer/gd.png
@@ -108,6 +111,7 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/id.png
 %%WITH_GEOIP%%share/geolizer/ie.png
 %%WITH_GEOIP%%share/geolizer/il.png
+%%WITH_GEOIP%%share/geolizer/im.png
 %%WITH_GEOIP%%share/geolizer/in.png
 %%WITH_GEOIP%%share/geolizer/io.png
 %%WITH_GEOIP%%share/geolizer/iq.png
@@ -144,6 +148,7 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/mc.png
 %%WITH_GEOIP%%share/geolizer/md.png
 %%WITH_GEOIP%%share/geolizer/me.png
+%%WITH_GEOIP%%share/geolizer/mf.png
 %%WITH_GEOIP%%share/geolizer/mg.png
 %%WITH_GEOIP%%share/geolizer/mh.png
 %%WITH_GEOIP%%share/geolizer/mk.png
@@ -163,7 +168,6 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/my.png
 %%WITH_GEOIP%%share/geolizer/mz.png
 %%WITH_GEOIP%%share/geolizer/na.png
-%%WITH_GEOIP%%share/geolizer/nato.png
 %%WITH_GEOIP%%share/geolizer/nc.png
 %%WITH_GEOIP%%share/geolizer/ne.png
 %%WITH_GEOIP%%share/geolizer/nf.png
@@ -175,7 +179,7 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/nr.png
 %%WITH_GEOIP%%share/geolizer/nu.png
 %%WITH_GEOIP%%share/geolizer/nz.png
-%%WITH_GEOIP%%share/geolizer/olympics.png
+%%WITH_GEOIP%%share/geolizer/o1.png
 %%WITH_GEOIP%%share/geolizer/om.png
 %%WITH_GEOIP%%share/geolizer/pa.png
 %%WITH_GEOIP%%share/geolizer/pe.png
@@ -195,7 +199,6 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/re.png
 %%WITH_GEOIP%%share/geolizer/ro.png
 %%WITH_GEOIP%%share/geolizer/rs.png
-%%WITH_GEOIP%%share/geolizer/rs.woa.png
 %%WITH_GEOIP%%share/geolizer/ru.png
 %%WITH_GEOIP%%share/geolizer/rw.png
 %%WITH_GEOIP%%share/geolizer/sa.png
@@ -214,6 +217,7 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/so.png
 %%WITH_GEOIP%%share/geolizer/sr.png
 %%WITH_GEOIP%%share/geolizer/st.png
+%%WITH_GEOIP%%share/geolizer/su.png
 %%WITH_GEOIP%%share/geolizer/sv.png
 %%WITH_GEOIP%%share/geolizer/sy.png
 %%WITH_GEOIP%%share/geolizer/sz.png
@@ -228,6 +232,7 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/tm.png
 %%WITH_GEOIP%%share/geolizer/tn.png
 %%WITH_GEOIP%%share/geolizer/to.png
+%%WITH_GEOIP%%share/geolizer/tp.png
 %%WITH_GEOIP%%share/geolizer/tr.png
 %%WITH_GEOIP%%share/geolizer/tt.png
 %%WITH_GEOIP%%share/geolizer/tv.png
@@ -235,8 +240,8 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/tz.png
 %%WITH_GEOIP%%share/geolizer/ua.png
 %%WITH_GEOIP%%share/geolizer/ug.png
+%%WITH_GEOIP%%share/geolizer/uk.png
 %%WITH_GEOIP%%share/geolizer/um.png
-%%WITH_GEOIP%%share/geolizer/un.png
 %%WITH_GEOIP%%share/geolizer/us.png
 %%WITH_GEOIP%%share/geolizer/uy.png
 %%WITH_GEOIP%%share/geolizer/uz.png
@@ -255,8 +260,7 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/za.png
 %%WITH_GEOIP%%share/geolizer/zm.png
 %%WITH_GEOIP%%share/geolizer/zw.png
-%%WITH_GEODB%%@dirrmtry share/geolizer
-%%WITH_GEOIP%%@dirrmtry share/geolizer
+%%WITH_GEOIP%%@dirrm share/geolizer
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/Copyright
 %%PORTDOCS%%%%DOCSDIR%%/DNS.README
