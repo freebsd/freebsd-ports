@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.40.11
+PORTVERSION=	1.41.0
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -16,6 +16,7 @@ MAINTAINER?=	matthias.andree@gmx.de
 COMMENT?=	Utilities & library to manipulate ext2/3/4 filesystems
 
 PATCH_STRIP=	-p1
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
@@ -32,8 +33,9 @@ OPTIONS=	NLS "Enable national language support" on
 MAN1=	chattr.1 lsattr.1
 MAN5=	e2fsck.conf.5 mke2fs.conf.5
 MAN8=	badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 \
-	mke2fs.8 mklost+found.8 resize2fs.8 tune2fs.8 \
-	fsck.ext2.8 fsck.ext3.8 mkfs.ext2.8 mkfs.ext3.8 \
+	e2undo.8 mke2fs.8 mklost+found.8 resize2fs.8 tune2fs.8 \
+	fsck.ext2.8 fsck.ext3.8 fsck.ext4.8 fsck.ext4dev.8 \
+	mkfs.ext2.8 mkfs.ext3.8 mkfs.ext4.8 mkfs.ext4dev.8 \
 	findfs.8 blkid.8 logsave.8 fsck_ext2fs.8
 
 post-extract:
@@ -65,7 +67,7 @@ post-build:
 # else we're in trouble if e2fsck is needed for boot:
 # (we don't use e2fsck.static, since we can link libc.so dynamically)
 	cd ${WRKSRC}/e2fsck && ${RM} -f e2fsck \
-		&& ${MAKE} e2fsck \
+		&& ${GMAKE} e2fsck \
 		STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
 		../lib/libblkid.a  ../lib/libuuid.a" \
 		LIBINTL="${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
@@ -81,7 +83,7 @@ post-build:
 	    echo 'FAIL' ; echo '===>  e2fsck depends on:' ; echo "$$a" ; exit 1 ; fi
 # Update translation binary files
 .if !defined(WITHOUT_NLS)
-	cd ${WRKSRC}/po && ${MAKE} update-gmo
+	cd ${WRKSRC}/po && ${GMAKE} update-gmo
 .endif
 # Build fsck(8) wrapper
 	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -s ${LIBS} \
@@ -94,7 +96,7 @@ post-build:
 # There have been subtle failures induced by Linux-isms in the past.
 # -- Matthias Andree, package maintainer, 2007-09-18
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
-	cd ${WRKSRC}/tests && ${MAKE} check \
+	cd ${WRKSRC}/tests && ${GMAKE} check \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
 
 post-install:

@@ -1,0 +1,44 @@
+--- a/tests/u_mke2fs/script.orig	2008-06-18 05:53:42.000000000 +0200
++++ b/tests/u_mke2fs/script	2008-07-13 13:31:23.000000000 +0200
+@@ -10,16 +10,16 @@
+ 
+ echo mke2fs -q -F -o Linux -b 1024 test.img  > $OUT
+ $MKE2FS -F -o Linux -I 128 -b 1024 $TMPFILE  >> $OUT 2>&1
+-md5=$(md5sum $TMPFILE | cut -d " " -f 1)
++md5=$(md5 -q $TMPFILE)
+ echo md5sum before mke2fs $md5 >> $OUT
+ 
+ echo using mke2fs to test e2undo >> $OUT
+ $MKE2FS -q -F -o Linux -I 256 -O uninit_bg -E lazy_itable_init=1 -b 1024 $TMPFILE  >> $OUT 2>&1
+-new_md5=$(md5sum $TMPFILE | cut -d " " -f 1)
++new_md5=$(md5 -q $TMPFILE)
+ echo md5sum after mke2fs $new_md5 >> $OUT
+ 
+ $E2UNDO_EXE  $TDB_FILE $TMPFILE  >> $OUT 2>&1
+-new_md5=$(md5sum $TMPFILE | cut -d " " -f 1)
++new_md5=$(md5 -q $TMPFILE)
+ echo md5sum after e2undo $new_md5 >> $OUT
+ 
+ if [ $md5 = $new_md5 ]; then
+--- a/tests/u_tune2fs/script.orig	2008-06-18 05:53:42.000000000 +0200
++++ b/tests/u_tune2fs/script	2008-07-13 13:32:10.000000000 +0200
+@@ -10,16 +10,16 @@
+ 
+ echo mke2fs -q -F -o Linux -b 1024 $TMPFILE  > $OUT
+ $MKE2FS -q -F -o Linux -I 128 -b 1024 $TMPFILE  >> $OUT 2>&1
+-md5=$(md5sum $TMPFILE | cut -d " " -f 1)
++md5=$(md5 -q $TMPFILE)
+ echo md5sum before tune2fs $md5 >> $OUT
+ 
+ echo using tune2fs to test e2undo >> $OUT
+ $TUNE2FS -I 256 $TMPFILE  >> $OUT 2>&1
+-new_md5=$(md5sum $TMPFILE | cut -d " " -f 1)
++new_md5=$(md5 -q $TMPFILE)
+ echo md5sum after tune2fs $new_md5 >> $OUT
+ 
+ $E2UNDO_EXE  $TDB_FILE $TMPFILE  >> $OUT 2>&1
+-new_md5=$(md5sum $TMPFILE | cut -d " " -f 1)
++new_md5=$(md5 -q $TMPFILE)
+ echo md5sum after e2undo $new_md5 >> $OUT
+ 
+ if [ $md5 = $new_md5 ]; then
