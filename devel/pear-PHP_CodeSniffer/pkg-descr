@@ -1,0 +1,7 @@
+PHP_CodeSniffer is a PHP5 script that tokenises and "sniffs" PHP and
+JavaScript code to detect violations of a defined coding standard. It
+is an essential development tool that ensures your code remains clean
+and consistent. It can also help prevent some common semantic errors
+made by developers.
+
+WWW: http://pear.php.net/package/PHP_CodeSniffer/

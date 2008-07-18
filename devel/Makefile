@@ -1897,6 +1897,7 @@
     SUBDIR += pear-PHPUnit2
     SUBDIR += pear-PHPUnit3
     SUBDIR += pear-PHP_Beautifier
+    SUBDIR += pear-PHP_CodeSniffer
     SUBDIR += pear-PHP_Compat
     SUBDIR += pear-PHP_CompatInfo
     SUBDIR += pear-PHP_Parser
