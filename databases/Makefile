@@ -553,6 +553,7 @@
     SUBDIR += sharedance
     SUBDIR += skytools
     SUBDIR += slony1
+    SUBDIR += spatialite
     SUBDIR += sqlcached
     SUBDIR += sqlclient
     SUBDIR += sqldeveloper
