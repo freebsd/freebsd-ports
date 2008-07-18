@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Jan 10 22:19:40 2008
-+++ Makefile	Thu Jan 10 22:19:38 2008
-@@ -6,23 +6,23 @@
+--- Makefile.orig	2008-04-05 15:46:24.000000000 +0200
++++ Makefile	2008-06-21 14:57:26.965023476 +0200
+@@ -6,8 +6,8 @@
  #whois_LDADD += -lnsl -lsocket
  
  # FreeBSD
@@ -11,35 +11,25 @@
  
  # OS/2 EMX
  #LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
- 
--ifdef HAVE_LIBIDN
-+.ifdef HAVE_LIBIDN
- whois_LDADD += -lidn
- whois_CFLAGS += -DHAVE_LIBIDN
--endif
-+.endif
- 
--ifdef HAVE_XCRYPT
-+.ifdef HAVE_XCRYPT
- mkpasswd_LDADD += -lxcrypt
- mkpasswd_CFLAGS += -DHAVE_XCRYPT
--else
-+.else
- mkpasswd_LDADD += -lcrypt
--endif
-+.endif
- 
- PERL := perl
- 
-@@ -55,9 +55,8 @@
+@@ -57,16 +57,15 @@
+ ##############################################################################
  install: whois
  	install -d $(BASEDIR)$(prefix)/bin/
- 	install -d $(BASEDIR)$(prefix)/share/man/man1/
+-	install -d $(BASEDIR)$(prefix)/share/man/man1/
 -	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
 -	install -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
 -	cd po && $(MAKE) $@
++	install -d $(BASEDIR)$(prefix)/man/man1/
 +	install -m 0755 whois ${PREFIX}/bin/mwhois
 +	install -m 0644 whois.1 ${PREFIX}/man/man1/mwhois.1
  
  install-mkpasswd: mkpasswd
  	install -d $(BASEDIR)$(prefix)/bin/
+-	install -d $(BASEDIR)$(prefix)/share/man/man1/
++	install -d $(BASEDIR)$(prefix)/man/man1/
+ 	install -m 0755 mkpasswd $(BASEDIR)$(prefix)/bin/
+-	install -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/share/man/man1/
++	install -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/man/man1/
+ 
+ distclean: clean
+ 	rm -f po/whois.pot
