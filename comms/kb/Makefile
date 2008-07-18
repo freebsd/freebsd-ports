@@ -6,7 +6,7 @@
 
 PORTNAME=	kb
 PORTVERSION=	8.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.db.net/downloads/ \
 		${MASTER_SITE_LOCAL}
