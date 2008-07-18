@@ -2,6 +2,7 @@ bin/rst2xml
 bin/rst2s5
 bin/rst2pseudoxml
 bin/rst2newlatex
+bin/rstpep2html.py
 bin/rst2latex
 bin/rst2html
 %%PYTHON_SITELIBDIR%%/roman.pyo
@@ -60,6 +61,7 @@ bin/rst2html
 %%PYTHON_SITELIBDIR%%/docutils/writers/html4css1/__init__.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/html4css1/__init__.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/html4css1/__init__.py
+%%PYTHON_SITELIBDIR%%/docutils/writers/html4css1/template.txt
 %%PYTHON_SITELIBDIR%%/docutils/writers/docutils_xml.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/docutils_xml.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/docutils_xml.py
@@ -189,6 +191,9 @@ bin/rst2html
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/__init__.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/__init__.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/__init__.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/he.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/he.pyc
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/he.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/include/xhtml1-symbol.txt
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/include/xhtml1-special.txt
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/include/xhtml1-lat1.txt
@@ -289,6 +294,9 @@ bin/rst2html
 %%PYTHON_SITELIBDIR%%/docutils/languages/it.pyo
 %%PYTHON_SITELIBDIR%%/docutils/languages/it.pyc
 %%PYTHON_SITELIBDIR%%/docutils/languages/it.py
+%%PYTHON_SITELIBDIR%%/docutils/languages/he.py
+%%PYTHON_SITELIBDIR%%/docutils/languages/he.pyc
+%%PYTHON_SITELIBDIR%%/docutils/languages/he.pyo
 %%PYTHON_SITELIBDIR%%/docutils/languages/fr.pyo
 %%PYTHON_SITELIBDIR%%/docutils/languages/fr.pyc
 %%PYTHON_SITELIBDIR%%/docutils/languages/fr.py
