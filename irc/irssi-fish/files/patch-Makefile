@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -124,10 +124,10 @@
+ 	gcc -c -static -fPIC cfgopts.c
+ 
+ 	gcc -static -c -fPIC DH1080.c
+-	gcc -static -fPIC -shared DH1080.o miracl.a SHA-256.o base64.o -o DH1080.so
++	gcc -fPIC -shared DH1080.o miracl.a SHA-256.o base64.o -o DH1080.so
+ 
+ 	gcc -I. -I$(glib_dir) -I$(glib_dir)/include -I$(glib_dir)/glib -I$(irssi_dir) -I$(irssi_dir)/src -I$(irssi_dir)/src/core -I$(irssi_dir)/src/fe-common/core -static -O2 -Wall -c FiSH.c -fPIC -DPIC -o FiSH.o
+-	gcc -static -fPIC -shared FiSH.o SHA-256.o base64.o blowfish.o cfgopts.o DH1080.o miracl.a -o libfish.so
++	gcc -fPIC -shared FiSH.o SHA-256.o base64.o blowfish.o cfgopts.o DH1080.o miracl.a -o libfish.so
+ 
+ 	@echo 
+ 	@ls -l libfish.so

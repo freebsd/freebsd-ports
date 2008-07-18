@@ -7,44 +7,39 @@
 
 PORTNAME=	irssi-fish
 DISTVERSION=	0.99
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc security
 MASTER_SITES=	http://fish.sekure.us/irssi/
 DISTNAME=	FiSH-irssi.v${DISTVERSION}-source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wahjava@gmail.com
 COMMENT=	An encryption plugin for irssi
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glib-2.0/glib.h:${PORTSDIR}/devel/glib20 \
 		${LOCALBASE}/lib/libmiracl.a:${PORTSDIR}/math/miracl \
-		${NONEXISTENT}:${PORTSDIR}/irc/irssi:patch
+		${LOCALBASE}/include/irssi/src/common.h:${PORTSDIR}/irc/irssi
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 
 USE_ZIP=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/irssi/modules/libfish.so
 PORTDOCS=	FiSH-irssi.txt FiSH-irssi_History.txt
-
-IRSSI_WRKSRC!=	cd ${.CURDIR}/../irssi && ${MAKE} -V WRKSRC
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 ALL_TARGET=	amd64
-
-.if ${OSVERSION} >= 700042
-BROKEN=		does not compile
-.endif
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -E -e 's|||' {} \;
+	@${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -E -e 's|||' {} \;
 	@${REINPLACE_CMD} -E \
 		-e 's|gcc|${CC}|' \
 		-e 's|-O2|${CFLAGS}|' \
 		-e 's|-shared|-shared -fPIC -DPIC|' \
 		-e 's|[$$][(]HOME[)]/glib-1.2.10|${LOCALBASE}/include/glib-2.0|' \
-		-e 's|[$$][(]HOME[)]/irssi-0.8.9|${IRSSI_WRKSRC}|' \
+		-e 's|[$$][(]HOME[)]/irssi-0.8.9|${LOCALBASE}/include/irssi|' \
 		-e 's|miracl.a|${LOCALBASE}/lib/libmiracl.a|' \
 		-e 's|\@echo \"Press ENTER to continue or CTRL\+C to abort...\"\; read junk||' \
 		${WRKSRC}/Makefile
