@@ -7,6 +7,7 @@
 
 PORTNAME=	gchemutils
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/0.8
@@ -24,8 +25,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
 
 USE_BZIP2=	yes
-# because of openbabel
-USE_GCC=	4.2+
 USE_GNOME=	gnomehack intlhack libglade2 libgnomeprintui libgnomeui gnomedocutils
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

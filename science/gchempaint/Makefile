@@ -7,7 +7,7 @@
 
 PORTNAME=	gchempaint
 PORTVERSION=	0.8.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/0.8
@@ -19,8 +19,6 @@ BUILD_DEPENDS=	gnome-doc-prepare:${PORTSDIR}/textproc/gnome-doc-utils
 LIB_DEPENDS=	gcu.8:${PORTSDIR}/science/gchemutils
 
 USE_BZIP2=	yes
-# because openbabel/gchemutils
-USE_GCC=	4.2+
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
