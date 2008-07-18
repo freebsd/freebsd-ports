@@ -6,4 +6,4 @@ contain the server messages. For every channel and every nick name there
 are related in and out files created. This allows IRC communication from
 command line and adheres to the Unix philosophy.
 
-WWW: http://www.suckless.org/wiki/tools/irc/irc_it/
+WWW: http://www.suckless.org/programs/ii.html
