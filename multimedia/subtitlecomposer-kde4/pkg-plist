@@ -19,13 +19,16 @@ share/icons/hicolor/128x128/apps/subtitlecomposer.png
 share/icons/hicolor/16x16/apps/subtitlecomposer.png
 share/icons/hicolor/32x32/apps/subtitlecomposer.png
 share/icons/hicolor/64x64/apps/subtitlecomposer.png
+share/locale/es/LC_MESSAGES/subtitlecomposer.mo
+share/locale/sr/LC_MESSAGES/subtitlecomposer.mo
+share/locale/sr@Latn/LC_MESSAGES/subtitlecomposer.mo
 share/mimelnk/subtitle/x-advsubstationalpha.desktop
 share/mimelnk/subtitle/x-microdvd.desktop
 share/mimelnk/subtitle/x-mplayer.desktop
 share/mimelnk/subtitle/x-subrip.desktop
 share/mimelnk/subtitle/x-substationalpha.desktop
 share/mimelnk/subtitle/x-subviewer.desktop
-@dirrm share/mimelnk/subtitle
+@dirrmtry share/mimelnk/subtitle
 @dirrmtry share/config
 @dirrm share/apps/subtitlecomposer/pics
 @dirrm share/apps/subtitlecomposer
