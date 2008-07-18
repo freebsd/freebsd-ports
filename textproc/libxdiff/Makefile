@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libxdiff
-PORTVERSION=	0.20
+PORTVERSION=	0.22
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.xmailserver.org/
 
