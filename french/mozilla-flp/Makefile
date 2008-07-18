@@ -7,7 +7,6 @@
 
 PORTNAME=	${GECKO}-flp
 PORTVERSION=	${MOZVERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	french www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
@@ -43,7 +42,7 @@ DISTURL=	# No subdir
 FICHIERS+=	defaults/isp/FR/gmail.rdf
 PLIST_SUB+=	MOZ=""
 .else
-MOZVERSION=	1.1.9
+MOZVERSION=	1.1.11
 DISTURL=	/SeaMonkey
 MD5_FILE=	${MASTERDIR}/distinfo.seamonkey
 PLIST_SUB+=	MOZ="@comment "
