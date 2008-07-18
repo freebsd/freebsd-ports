@@ -310,6 +310,7 @@
     SUBDIR += py-bitvector
     SUBDIR += py-fpconst
     SUBDIR += py-gato
+    SUBDIR += py-gmpy
     SUBDIR += py-gnuplot
     SUBDIR += py-gsl
     SUBDIR += py-igraph
