@@ -2,7 +2,6 @@ bin/mservdetect
 etc/masqmail/masqmail.conf-dist
 etc/masqmail/masqmail.get-dist
 etc/masqmail/masqmail.route-dist
-etc/rc.d/masqmail.sh
 sbin/masqmail
 share/masqmail/tpl/failmsg.tpl
 share/masqmail/tpl/failmsg.tpl.de
@@ -11,14 +10,7 @@ share/masqmail/tpl/failmsg.tpl.it
 share/masqmail/tpl/warnmsg.tpl
 share/masqmail/tpl/warnmsg.tpl.de
 share/masqmail/tpl/warnmsg.tpl.fr
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 @dirrm share/masqmail/tpl
 @dirrm share/masqmail
 @dirrm etc/masqmail
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir /var/log/masqmail 2>/dev/null || true
+@dirrmtry /var/log/masqmail

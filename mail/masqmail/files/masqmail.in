@@ -31,6 +31,11 @@ stop_postcmd=stop_postcmd
 
 extra_commands="reload"
 
+load_rc_config $name
+# set defaults
+masqmail_enable=${masqmail_enable:-"NO"}
+masqmail_flags=${masqmail_flags:-"-bd -q30m"}
+
 start_precmd()
 {
   case $sendmail_enable in
@@ -54,10 +59,4 @@ stop_postcmd()
   rm -f $pidfile
 }
 
-# set defaults
-
-masqmail_enable=${masqmail_enable:-"NO"}
-masqmail_flags=${masqmail_flags:-"-bd -q30m"}
-
-load_rc_config $name
 run_rc_command "$1"
