@@ -7,6 +7,7 @@
 
 PORTNAME=	openvpn
 DISTVERSION=	2.1_rc8
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	https://secure.openvpn.net/beta/
 PKGNAMESUFFIX=	-devel
@@ -77,10 +78,14 @@ post-install:
 	PORTS README
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}/
 .endfor
-	( cd ${WRKSRC} \
-	&& ${FIND} easy-rsa sample-config-files sample-scripts -depth \
-	| ${GREP} -v easy-rsa/Windows \
-	| ${CPIO} -pdmu ${DOCSDIR} )
+.for dir in easy-rsa easy-rsa/1.0 easy-rsa/2.0 sample-config-files
+	${MKDIR} ${DOCSDIR}/${dir}
+	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_DATA} \{\} ${DOCSDIR}/${dir} \;
+.endfor
+.for dir in sample-scripts
+	${MKDIR} ${DOCSDIR}/${dir}
+	${FIND} ${WRKSRC}/${dir}/ -maxdepth 1 -type f -exec ${INSTALL_SCRIPT} \{\} ${DOCSDIR}/${dir} \;
+.endfor
 .else
 	-@${RMDIR} ${DOCSDIR}
 .endif
