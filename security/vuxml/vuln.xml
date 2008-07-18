@@ -39,12 +39,12 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>phpmyadmin</name>
-	<range><lt>2.1.17.1</lt></range>
+	<range><lt>2.11.7.1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>phpMyAdmin security announcement:</p>
+	<p>A phpMyAdmin security announcement:</p>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-5">
 	  <p>A logged-in user, if abused into clicking a crafted link or loading
 	    an attack page, would create a database he did not intend to, or would
