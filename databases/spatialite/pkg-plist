@@ -1,0 +1,12 @@
+bin/spatialite
+lib/libspatialite.la
+lib/libspatialite.a
+lib/libspatialite.so
+lib/libspatialite.so.2
+include/spatialite.h
+include/spatialite/gaiageo.h
+include/spatialite/rtree.h
+include/spatialite/spatialite.h
+include/spatialite/sqlite3.h
+include/spatialite/sqlite3ext.h
+@dirrm include/spatialite/
