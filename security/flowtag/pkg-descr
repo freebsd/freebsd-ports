@@ -1,0 +1,8 @@
+FlowTag is a GUI interface for exploring the TCP flows in a PCAP  
+(network trace recorded by libpcap, tcpdump, ethereal, or wireshark)
+file.  It's strengths lie in:
+
+   * rapid reconstruction of flows (via indexing),
+   * visual selection of source IP and destination TCP ports;
+   * filtering by time, packet count, and/or byte count
+   * tagging flows with keywords
