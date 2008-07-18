@@ -11,7 +11,7 @@ CATEGORIES=	games tk
 MASTER_SITES=	http://www.ifarchive.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	if-archive/mapping-tools
 
-MAINTAINER=	andy.kosela@gmail.com
+MAINTAINER=	akosela@andykosela.com
 COMMENT=	Interactive Fiction mapper and walkthrough generator
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
