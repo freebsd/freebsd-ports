@@ -33,6 +33,7 @@
     SUBDIR += gseen.mod
     SUBDIR += hybserv
     SUBDIR += icbirc
+    SUBDIR += ii
     SUBDIR += iip
     SUBDIR += infobot
     SUBDIR += inspircd
