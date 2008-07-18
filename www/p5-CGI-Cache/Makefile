@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Cache
-PORTVERSION=	1.42.00
+PORTVERSION=	1.42.01
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,15 +15,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to cache output of time-intensive CGI scripts
 
-RUN_DEPENDS=	${SITE_PERL}/Tie/Restore.pm:${PORTSDIR}/devel/p5-Tie-Restore \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Cache/SizeAwareFileCache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache \
+		p5-Cache-Cache>=0:${PORTSDIR}/devel/p5-Cache-Cache \
+		p5-Tie-Restore>=0:${PORTSDIR}/devel/p5-Tie-Restore
 
 PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Cache.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
+.endif
+
+.include <bsd.port.post.mk>
