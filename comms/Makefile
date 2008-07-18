@@ -22,6 +22,7 @@
     SUBDIR += conserver-com
     SUBDIR += cutecom
     SUBDIR += cwdaemon
+    SUBDIR += ebook2cw
     SUBDIR += echolinux
     SUBDIR += efax
     SUBDIR += efax-gtk
