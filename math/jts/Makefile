@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jts
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	math databases
-MASTER_SITES=	http://www.vividsolutions.com/Jts/bin/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	jts-topo-suite
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	JTS Topology Suite
 
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom		\
@@ -23,23 +23,8 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 NO_WRKSUBDIR=	yes
 
-VER=		${PORTVERSION:R}
-# Note: ATM JTS requires a deprecated jdom - to be checked when upgrading!
-JARFILES=	JTS_Test acme jts-${VER} jtsio-${VER} jdom-old
-
-DOCS=		"JTS Developer Guide.pdf" "JTS Technical Specs.pdf"	\
-		"JTS TestBuilder & TestRunner User Guide.pdf"		\
-		"JTS Version History.html"
-PORTDOCS0=	${DOCS:S| |_|g}
-PORTDOCS=	${PORTDOCS0:S|&|and|g}
-
-PLIST_FILES=	${JARFILES:S|^|%%JAVAJARDIR%%/|:S|$|.jar|:S|-${VER}||}
-
-post-extract:
-	${MV} ${WRKSRC}/lib/jdom.jar ${WRKSRC}/lib/jdom-old.jar
-.for pdf in ${PORTDOCS0}
-	${MV} ${WRKSRC}/doc/${pdf:S|_| |g} ${WRKSRC}/doc/${pdf}
-.endfor
+VER=		${PORTVERSION:L}
+JARFILES=	JTS_Test acme jts-${VER}
 
 do-install:
 .for jar in ${JARFILES}
@@ -48,9 +33,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS0:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
-	${MV} "${DOCSDIR}/JTS_TestBuilder_&_TestRunner_User_Guide.pdf"	\
-		"${DOCSDIR}/JTS_TestBuilder_and_TestRunner_User_Guide.pdf"
+	@cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
