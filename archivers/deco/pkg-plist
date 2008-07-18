@@ -38,6 +38,7 @@ bin/deco
 %%DATADIR%%/otp
 %%DATADIR%%/ots
 %%DATADIR%%/ott
+%%DATADIR%%/oxt
 %%DATADIR%%/part[0-9]+\.rar
 %%DATADIR%%/pk3
 %%DATADIR%%/pk4
