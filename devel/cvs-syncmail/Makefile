@@ -1,6 +1,6 @@
 # New ports collection makefile for:	cvs-syncmail
 # Date created:				13 August 2007
-# Whom:					Greg Larkin <glarkin@sourcehosting.net>
+# Whom:					Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	syncmail
 EXTRACT_SUFX=
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	CVS notification tool
 
 .if defined(WITH_CVSNT)

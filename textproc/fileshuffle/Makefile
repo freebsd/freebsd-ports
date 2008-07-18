@@ -1,6 +1,6 @@
 # New ports collection makefile for:	fileshuffle
 # Date created:		2008-05-29
-# Whom:			Greg Larkin <glarkin@sourcehosting.net>
+# Whom:			Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.eskimo.com/u/s/scs/src/
 DISTNAME=	shuffle
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A filter for shuffling lines in a text file into random order
 
 MANPAGE=	shuffle.1

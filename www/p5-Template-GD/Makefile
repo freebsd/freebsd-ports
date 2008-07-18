@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Template-GD
 # Date created:		22 June 2006
-# Whom:			Greg Larkin <glarkin@sourcehosting.net>
+# Whom:			Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Template Toolkit plugin to interface with GD modules
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit

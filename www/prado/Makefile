@@ -1,6 +1,6 @@
 # New ports collection makefile for:	prado
 # Date created:        04 January 2008
-# Whom:                Greg Larkin <glarkin@sourcehosting.net>
+# Whom:                Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	3.1.2.r2448
 CATEGORIES=	www
 MASTER_SITES=	SF
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
 USE_ZIP=	yes

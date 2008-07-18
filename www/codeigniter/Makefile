@@ -1,6 +1,6 @@
 # New ports collection makefile for:	codeigniter
 # Date created:        04 January 2008
-# Whom:                Greg Larkin <glarkin@sourcehosting.net>
+# Whom:                Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://codeigniter.com/download_files/
 DISTNAME=	CodeIgniter_${PORTVERSION}
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
 USE_ZIP=	yes

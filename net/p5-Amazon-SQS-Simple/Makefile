@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Amazon-SQS-Simple
 # Date created:		2007-10-31
-# Whom:			Greg Larkin <glarkin@sourcehosting.net>
+# Whom:			Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN/../../authors/id/S/SW/SWHITAKER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	OO API for accessing the Amazon Simple Queue Service
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \

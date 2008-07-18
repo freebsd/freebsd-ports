@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A web-based calendar application
 
 USE_PHP=	pcre session

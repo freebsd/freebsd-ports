@@ -1,6 +1,6 @@
 # New ports collection makefile for:	cakephp
 # Date created:        19 January 2007
-# Whom:                Greg Larkin <glarkin@sourcehosting.net>
+# Whom:                Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://cakeforge.org/frs/download.php/591/
 DISTNAME=	cake_${PORTVERSION}
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
 USE_BZIP2=	yes

@@ -1,6 +1,6 @@
 # New ports collection makefile for: trac-customfieldadmin
 # Date created:                      Jan 11 2008
-# Whom:                              Greg Larkin <glarkin@sourcehosting.net>
+# Whom:                              Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	glarkin@sourcehosting.net
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Web interface to administer Trac ticket custom fields
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
