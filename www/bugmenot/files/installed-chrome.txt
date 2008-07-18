@@ -1,1 +1,4 @@
 content,install,url,jar:resource:/chrome/bugmenot.jar!/content/bugmenot/
+skin,install,url,jar:resource:/chrome/bugmenot.jar!/skin/classic/bugmenot/
+locale,install,url,jar:resource:/chrome/bugmenot.jar!/locale/bugmenot/en-US/
+locale,install,url,jar:resource:/chrome/bugmenot.jar!/locale/bugmenot/it-IT/
