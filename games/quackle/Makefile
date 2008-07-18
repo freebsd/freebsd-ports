@@ -7,7 +7,7 @@
 
 PORTNAME=	quackle
 PORTVERSION=	0.95
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://web.mit.edu/jasonkb/www/quackle/downloads/${PORTNAME}-${PORTVERSION}/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-source.tar.gz
@@ -17,19 +17,19 @@ COMMENT=	A scrabble-like word game utilizing qt4
 
 USE_SCONS=	yes
 USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build moc_build gui
 USE_GMAKE=	yes
+QMAKE_ARGS=	-unix -spec ${QMAKESPEC}
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's|if (QFile::exists("data"))|if (QFile::exists("${PREFIX}/lib/quackle"))|' ${WRKSRC}/quacker/settings.cpp
-	@${REINPLACE_CMD} -e 's|QUACKLE_DATAMANAGER->setDataDirectory("data");|QUACKLE_DATAMANAGER->setDataDirectory("${PREFIX}/lib/quackle");|' ${WRKSRC}/quacker/settings.cpp
+	@${REINPLACE_CMD} -e 's|if (QFile::exists("data"))|if (QFile::exists("${DATADIR}"))|' ${WRKSRC}/quacker/settings.cpp
+	@${REINPLACE_CMD} -e 's|QUACKLE_DATAMANAGER->setDataDirectory("data");|QUACKLE_DATAMANAGER->setDataDirectory("${DATADIR}");|' ${WRKSRC}/quacker/settings.cpp
 
 post-build:
-	@(cd ${WRKSRC}/quackleio && qmake-qt4 -unix -spec freebsd-g++ -o Makefile quackleio.pro && ${GMAKE} && cd ${WRKSRC}/quacker && qmake-qt4 -unix -spec freebsd-g++ -o Makefile quacker.pro && ${GMAKE})
+	@(cd ${WRKSRC}/quackleio && ${QMAKE} ${QMAKE_ARGS} -o Makefile quackleio.pro && ${SETENV} ${MAKE_ENV} ${GMAKE} && cd ${WRKSRC}/quacker && ${QMAKE} ${QMAKE_ARGS} -o Makefile quacker.pro && ${SETENV} ${MAKE_ENV} ${GMAKE})
 
 do-install:
-	@(${MKDIR} -m 555 ${PREFIX}/lib/quackle; cd ${WRKSRC}/data && ${PAX} -rw ./ ${PREFIX}/lib/quackle)
-	@${FIND} ${PREFIX}/lib/quackle -type directory -exec ${CHMOD} 555 {} \;
-	@${FIND} ${PREFIX}/lib/quackle -type file -exec ${CHMOD} 444 {} \;
-	@${INSTALL} -m 0555 ${WRKSRC}/quacker/quacker ${PREFIX}/bin/quackle
+	@${INSTALL_PROGRAM} ${WRKSRC}/quacker/quacker ${PREFIX}/bin/quackle
+	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR})
 
 .include <bsd.port.mk>
