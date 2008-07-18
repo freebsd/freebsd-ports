@@ -7,6 +7,7 @@
 
 PORTNAME=	c2hs
 PORTVERSION=	0.15.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
 PKGNAMEPREFIX=	hs-
@@ -21,7 +22,7 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 .include <bsd.port.pre.mk>
 
-GHC_VERSION=	6.8.2
+GHC_VERSION=	6.8.3
 
 # 'owned' by lang/ghc:
 CABALDIR=       ${PREFIX}/${SUBDIR}

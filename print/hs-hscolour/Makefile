@@ -7,6 +7,7 @@
 
 PORTNAME=	hscolour
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	print haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/
 PKGNAMEPREFIX=	hs-
@@ -20,7 +21,7 @@ BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 NO_PKG_REGISTER=
 .endif
 
-GHC_VERSION=	6.8.2
+GHC_VERSION=	6.8.3
 HSCOLOUR_VERSION=	${PORTVERSION}
 
 CABAL_CMD=	runghc Setup.hs

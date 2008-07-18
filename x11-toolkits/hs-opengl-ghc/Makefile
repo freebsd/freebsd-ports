@@ -6,6 +6,7 @@
 
 PORTNAME=	opengl
 PORTVERSION=	2.2.1.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${GHC_VERSION}/
 PKGNAMEPREFIX=	hs-
@@ -21,7 +22,7 @@ COMMENT=	OpenGL bindings for Haskell programs
 USE_BZIP2=	yes
 USE_GL=		yes
 
-GHC_VERSION=	6.8.2
+GHC_VERSION=	6.8.3
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
 		PORTVERSION=${PORTVERSION} \
 		PORTNAME=${PORTNAME} \
