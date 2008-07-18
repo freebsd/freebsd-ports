@@ -1,6 +1,5 @@
-bin/disassemble
 bin/parrot
-bin/parrot-config
+bin/pbc_disassemble
 bin/pbc_info
 bin/pbc_merge
 bin/pbc_to_exe
@@ -210,11 +209,30 @@ lib/parrot/library/tcpstream.pir
 lib/parrot/library/uuid.pir
 lib/parrot/library/yaml_dumper.pir
 libdata/pkgconfig/parrot.pc
+runtime/parrot/library/CGI/QueryHash.pbc
+runtime/parrot/library/Getopt/Obj.pbc
+runtime/parrot/library/Data/Dumper/Base.pbc
+runtime/parrot/library/Data/Dumper/Default.pbc
+runtime/parrot/library/Data/Dumper.pbc
+runtime/parrot/library/Data/Escape.pbc
+runtime/parrot/library/Data/Sort.pbc
+runtime/parrot/library/Math/Random/mt19937ar.pbc
+runtime/parrot/library/MIME/Base64.pbc
+runtime/parrot/library/NCI/call_toolkit_init.pbc
 runtime/parrot/library/PCT/Grammar.pbc
 runtime/parrot/library/PCT/HLLCompiler.pbc
 runtime/parrot/library/PCT/PAST.pbc
-runtime/parrot/library/Getopt/Obj.pbc
-runtime/parrot/library/CGI/QueryHash.pbc
+runtime/parrot/library/PCT.pbc
+runtime/parrot/library/Parrot/Capture_PIR.pbc
+runtime/parrot/library/Parrot/Coroutine.pbc
+runtime/parrot/library/Parrot/Exception.pbc
+runtime/parrot/library/PGE/Glob.pbc
+runtime/parrot/library/PGE/Text.pbc
+runtime/parrot/library/PGE/Util.pbc
+runtime/parrot/library/PGE/Dumper.pbc
+runtime/parrot/library/PGE.pbc
+runtime/parrot/library/P6object.pbc
+runtime/parrot/library/Protoobject.pbc
 runtime/parrot/library/Stream/Base.pbc
 runtime/parrot/library/Stream/Combiner.pbc
 runtime/parrot/library/Stream/Coroutine.pbc
@@ -224,24 +242,6 @@ runtime/parrot/library/Stream/ParrotIO.pbc
 runtime/parrot/library/Stream/Replay.pbc
 runtime/parrot/library/Stream/Sub.pbc
 runtime/parrot/library/Stream/Writer.pbc
-runtime/parrot/library/NCI/call_toolkit_init.pbc
-runtime/parrot/library/Data/Dumper/Base.pbc
-runtime/parrot/library/Data/Dumper/Default.pbc
-runtime/parrot/library/Data/Dumper.pbc
-runtime/parrot/library/Data/Escape.pbc
-runtime/parrot/library/Data/Sort.pbc
-runtime/parrot/library/Parrot/Capture_PIR.pbc
-runtime/parrot/library/Parrot/Coroutine.pbc
-runtime/parrot/library/Parrot/Exception.pbc
-runtime/parrot/library/MIME/Base64.pbc
-runtime/parrot/library/PGE/Dumper.pbc
-runtime/parrot/library/PGE/Glob.pbc
-runtime/parrot/library/PGE/Text.pbc
-runtime/parrot/library/PGE/Util.pbc
-runtime/parrot/library/P6object.pbc
-runtime/parrot/library/Protoobject.pbc
-runtime/parrot/library/PCT.pbc
-runtime/parrot/library/PGE.pbc
 runtime/parrot/library/TGE.pbc
 runtime/parrot/library/config.pbc
 runtime/parrot/library/dumper.pbc
@@ -754,6 +754,8 @@ tools/install/smoke.pl
 @dirrmtry runtime/parrot/library/PCT
 @dirrmtry runtime/parrot/library/NCI
 @dirrmtry runtime/parrot/library/MIME
+@dirrmtry runtime/parrot/library/Math/Random
+@dirrmtry runtime/parrot/library/Math
 @dirrmtry runtime/parrot/library/Getopt
 @dirrmtry runtime/parrot/library/Data/Dumper
 @dirrmtry runtime/parrot/library/Data
@@ -796,9 +798,9 @@ tools/install/smoke.pl
 @dirrm languages/squaak
 @dirrm languages/pynie
 @dirrm languages/punie
-@dirrm languages/plumhead/src/common
-@dirrm languages/plumhead/src
-@dirrm languages/plumhead
+@dirrm languages/pipp/src/common
+@dirrm languages/pipp/src
+@dirrm languages/pipp
 @dirrm languages/pheme
 @dirrm languages/perl6
 @dirrm languages/ook
