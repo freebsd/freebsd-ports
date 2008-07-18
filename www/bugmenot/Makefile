@@ -6,19 +6,14 @@
 #
 
 PORTNAME=	bugmenot
-PORTVERSION=	1.3
-PORTREVISION=	3
+PORTVERSION=	1.8
 CATEGORIES=	www
-MASTER_SITES=	http://extensions.roachfiend.com/
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}_2
+MASTER_SITES=	${MASTER_SITE_MOZDEV}
+MASTER_SITE_SUBDIR=	xsidebar/mods
+DISTNAME=	${PORTNAME}-${PORTVERSION}-mod
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	saper@SYSTEM.PL
 COMMENT=	${GECKO} extension to bypass compulsory web registration
-
-BROKEN=		Unfetchable
-DEPRECATED=	1.4 seems the latest version installable with seamonkey, but it does not work
-EXPIRATION_DATE=2008-08-17
 
 PLIST_FILES=	%%MOZDIR%%/chrome/bugmenot.jar
 
