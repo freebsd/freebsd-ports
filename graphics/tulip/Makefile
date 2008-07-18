@@ -7,69 +7,56 @@
 #
 
 PORTNAME=	tulip
-PORTVERSION=	1.2.5
-PORTREVISION=	4
+PORTVERSION=	3.0.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/download/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/auber:src \
+		http://tulip.labri.fr/userHandbook/:doc
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src\
+		userManual.pdf:doc
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A system dedicated to the visualization of huge graphs
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
-USE_QT_VER=	3
-QT_NONSTANDARD=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib moc uic rcc gui opengl xml network \
+		designer
+USE_GL=	glut
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_GNOME=	libxml2
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" GLDIR="${LOCALBASE}"
-CONFIGURE_ARGS=	--with-qt-includes=${QT_PREFIX}/include \
-		--with-qt-libraries=${QT_PREFIX}/lib \
-		--with-extra-libs=${LOCALBASE}/lib
-# libOSMesa, installed by the xorg-libraries-6.9.0 port is causing
-# /usr/X11R6/lib/libOSMesa.so: undefined reference to `driDispatchRemapTable'
-# during the configure step which results in tlprender not being build.
-# So we remove it from pkg-plist and disable it here to make sure it does not
-# get build somehow, causing plist problems
-CONFIGURE_ARGS+=	--disable-tlprender
 USE_LDCONFIG=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${PREFIX}/include \
-		-I${QT_PREFIX}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
-LDFLAGS=	-Wl,-export-dynamic -L${LOCALBASE}/lib \
-		-ljpeg -L${QT_PREFIX}/lib -lcompat ${PTHREAD_LIBS}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
+.endif
 
-.if ${OSVERSION} >= 700042
-BROKEN=		tries to link libcompat.a
-.endif
-.endif
+PORTDOCS=	userManual.pdf
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "moc_*" -delete
 
-pre-configure:
-	@if [ -z "`pkg-config --variable qt_config qt-mt | ${GREP} opengl`" ]; then \
-	   echo "Please reinstall x11-toolkits/qt33 with OpenGL supportsd"; \
-	   exit 1; \
-	fi
-
 post-patch:
-	@${REINPLACE_CMD} -e 's| -O2 -pipe||g; \
-	   s|echo aout|echo elf|g' ${WRKSRC}/configure ${WRKSRC}/thirdparty/gle/configure
-	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|malloc\.h|stdlib.h|g'
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-ldl||g ; \
-		 s|-lpthread||g ; \
-		 s|-release @TULIP_VERSION@|| ; \
-		 s|LDFLAGS = -module|LDFLAGS = @LDFLAGS@ -module|g'
+	@${REINPLACE_CMD} -e '/#include <qvariant.h>/d' \
+	    ${WRKSRC}/library/tulip-qt/include/tulip/LayerManagerWidgetData.h
+	@${REINPLACE_CMD} -e 's|<qdir.h>|<QtCore/qdir.h>|' \
+	    ${WRKSRC}/software/tulip/src/Application.cpp
+	@${REINPLACE_CMD} -e 's|<qtimer.h>|<QtCore/qtimer.h>|' \
+	    ${WRKSRC}/software/tulip/src/main.cpp
+	@${REINPLACE_CMD} -e 's|docs||g' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${INSTALL} -d ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/userManual.pdf ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
