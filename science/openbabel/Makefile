@@ -8,6 +8,7 @@
 
 PORTNAME=	openbabel
 PORTVERSION=	2.2.0
+PORTREVSION=	1
 CATEGORIES=	science
 MASTER_SITES=	SF
 
@@ -17,7 +18,6 @@ COMMENT=	Chemistry file translation program
 USE_GNOME=	gnomehack gnometarget libxml2
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-USE_GCC=	4.2+
 
 MAN1=		obchiral.1 obconformer.1 obenergy.1 obfit.1 obgen.1 obgrep.1 \
 		obminimize.1 obprobe.1 obprop.1 obrotamer.1 obrotate.1 \
@@ -29,6 +29,10 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 .if ${ARCH} == "ia64"
 BROKEN=		does not compile on ia64 (gcc internal error)
+.endif
+
+.if (${OSVERSION} < 700042)
+LIB_DEPENDS+=   boost_thread.4:${PORTSDIR}/devel/boost-python
 .endif
 
 post-extract:
