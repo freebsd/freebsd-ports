@@ -18,7 +18,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${BASE_MAP}:${PORTSDIR}/korean/ko.TeX-fonts-base
 BUILD_DEPENDS=	texhash:${PORTSDIR}/print/teTeX
 
-OONFLICTS=	hlatex-[0-9]*
+CONFLICTS=	hlatex-[0-9]*
 
 NO_WRKSUBDIR=	yes
 
