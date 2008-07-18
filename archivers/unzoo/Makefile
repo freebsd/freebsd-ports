@@ -24,11 +24,7 @@ EXTRA_DEFINES=	-DSYS_IS_UNIX -DSYS_HAS_MKDIR
 MAN1=		unzoo.1
 PLIST_FILES=	bin/unzoo
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 503000
 CFLAGS+=	-trigraphs
-.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
@@ -42,4 +38,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
