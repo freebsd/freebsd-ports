@@ -7,6 +7,7 @@
 
 PORTNAME=	TurboJson
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
