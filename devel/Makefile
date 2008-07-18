@@ -2075,6 +2075,7 @@
     SUBDIR += py-gdata
     SUBDIR += py-generate
     SUBDIR += py-geotypes
+    SUBDIR += py-gmpy
     SUBDIR += py-gobject
     SUBDIR += py-grouch
     SUBDIR += py-icalendar
