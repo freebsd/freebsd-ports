@@ -6,6 +6,7 @@
 
 PORTNAME=	haddock
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/haddock/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -26,7 +27,7 @@ NO_PKG_REGISTER=
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
 
-GHC_VERSION=	 6.8.2
+GHC_VERSION=	 6.8.3
 HADDOCK_VERSION=	${PORTVERSION}
 
 CABAL_CMD=	runghc Setup.lhs
@@ -47,7 +48,7 @@ do-configure:
 	cd ${WRKSRC} && ${CABAL_CMD} configure --ghc --prefix=${PREFIX}
 
 do-build:
-	cd ${WRKSRC} && ${CABAL_CMD} build
+	cd ${WRKSRC} && ${CABAL_CMD} build --ghc-option="-package process-1.0.0.1"
 .if !defined(SLAVE)
 	cd ${WRKSRC} && ${CABAL_CMD} register --gen-script
 .endif

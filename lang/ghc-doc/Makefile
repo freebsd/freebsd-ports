@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ghc
-PORTVERSION=	6.8.2
+PORTVERSION=	6.8.3
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/docs/${PORTVERSION}/ \
 		http://www.haskell.org/ghc/docs/${PORTVERSION}/html/
 PKGNAMESUFFIX=	-doc
-DISTFILES=	Cabal.ps.gz Cabal.html.tar.gz \
+DISTFILES=	Cabal.html.tar.gz \
 		libraries.html.tar.gz users_guide.html.tar.gz \
-		users_guide.ps.gz index.html
+		index.html
 DIST_SUBDIR=	ghc-${PORTVERSION}
 EXTRACT_ONLY=
 
@@ -29,7 +29,7 @@ do-install:
 	@${ECHO} NOPORTDOCS set, nothing to do!
 .else
 	@${MKDIR} ${DOCSDIR}
-.for FILE in Cabal.ps.gz users_guide.ps.gz index.html
+.for FILE in index.html
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${FILE} \
 		${DOCSDIR}
 .endfor

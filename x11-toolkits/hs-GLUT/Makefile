@@ -6,7 +6,7 @@
 
 PORTNAME=	glut
 PORTVERSION=	2.1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/GLUT/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -18,7 +18,7 @@ COMMENT=	A Compiler for the functional language Haskell
 
 USE_GL=		glut
 
-GHC_VERSION=	6.8.2
+GHC_VERSION=	6.8.3
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
 		PORTVERSION=${PORTVERSION} \
 		PORTNAME=${PORTNAME} \

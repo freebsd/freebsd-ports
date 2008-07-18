@@ -7,6 +7,7 @@
 
 PORTNAME=	uulib
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,7 +17,7 @@ COMMENT=	Haskell Utrecht Tools Library
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 
-GHC_VERSION=	6.8.2
+GHC_VERSION=	6.8.3
 UULIB_VERSION=	${PORTVERSION}
 
 GHC_CMD=	${LOCALBASE}/bin/ghc

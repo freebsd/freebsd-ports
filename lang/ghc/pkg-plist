@@ -394,95 +394,95 @@ bin/runhaskell
 %%GHC_LIBDIR_REL%%/include/ghcconfig.h
 %%GHC_LIBDIR_REL%%/include/ghcplatform.h
 %%GHC_LIBDIR_REL%%/include/ieee-flpt.h
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/Directory.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/Directory.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/Exception.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/Exception.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/Map.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/Map.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/RawSystem.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/RawSystem.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/ReadP.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/ReadP.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/TempFile.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat/TempFile.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compiler.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compiler.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Configuration.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Configuration.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Extension.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Extension.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/GetOpt.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/GetOpt.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/InstalledPackageInfo.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/InstalledPackageInfo.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/License.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/License.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Make.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Make.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Package.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Package.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/PackageDescription.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/PackageDescription.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/ParseUtils.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/ParseUtils.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Setup.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Setup.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Build.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Build.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Compiler.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Compiler.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Configure.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Configure.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC/Makefile.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC/Makefile.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC/PackageConfig.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC/PackageConfig.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Haddock.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Haddock.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Hugs.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Hugs.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Install.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Install.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/InstallDirs.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/InstallDirs.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/JHC.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/JHC.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/LocalBuildInfo.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/LocalBuildInfo.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/NHC.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/NHC.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/PreProcess.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/PreProcess.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/PreProcess/Unlit.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/PreProcess/Unlit.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Program.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Program.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Register.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Register.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Setup.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Setup.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/SetupWrapper.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/SetupWrapper.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/SrcDist.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/SrcDist.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Utils.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/Utils.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/System.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/System.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Verbosity.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Verbosity.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Version.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Version.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/HSCabal-1.2.3.0.o
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Language/Haskell/Extension.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Language/Haskell/Extension.p_hi
-%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/libHSCabal-1.2.3.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/libHSCabal-1.2.3.0_p.a
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/Directory.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/Directory.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/Exception.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/Exception.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/Map.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/Map.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/RawSystem.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/RawSystem.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/ReadP.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/ReadP.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/TempFile.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat/TempFile.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compiler.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compiler.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Configuration.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Configuration.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Extension.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Extension.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/GetOpt.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/GetOpt.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/InstalledPackageInfo.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/InstalledPackageInfo.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/License.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/License.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Make.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Make.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Package.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Package.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/PackageDescription.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/PackageDescription.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/ParseUtils.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/ParseUtils.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Setup.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Setup.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Build.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Build.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Compiler.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Compiler.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Configure.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Configure.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/GHC.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/GHC.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/GHC/Makefile.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/GHC/Makefile.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/GHC/PackageConfig.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/GHC/PackageConfig.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Haddock.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Haddock.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Hugs.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Hugs.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Install.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Install.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/InstallDirs.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/InstallDirs.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/JHC.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/JHC.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/LocalBuildInfo.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/LocalBuildInfo.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/NHC.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/NHC.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/PreProcess.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/PreProcess.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/PreProcess/Unlit.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/PreProcess/Unlit.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Program.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Program.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Register.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Register.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Setup.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Setup.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/SetupWrapper.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/SetupWrapper.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/SrcDist.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/SrcDist.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Utils.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/Utils.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/System.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/System.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Verbosity.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Verbosity.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Version.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Version.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/HSCabal-1.2.4.0.o
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Language/Haskell/Extension.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Language/Haskell/Extension.p_hi
+%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/libHSCabal-1.2.4.0.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/libHSCabal-1.2.4.0_p.a
 %%GHC_LIBDIR_REL%%/lib/HUnit-1.2.0.0/HSHUnit-1.2.0.0.o
 %%GHC_LIBDIR_REL%%/lib/HUnit-1.2.0.0/Test/HUnit.hi
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/HUnit-1.2.0.0/Test/HUnit.p_hi
@@ -538,383 +538,385 @@ bin/runhaskell
 %%GHC_LIBDIR_REL%%/lib/array-0.1.0.0/HSarray-0.1.0.0.o
 %%GHC_LIBDIR_REL%%/lib/array-0.1.0.0/libHSarray-0.1.0.0.a
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/array-0.1.0.0/libHSarray-0.1.0.0_p.a
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Applicative.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Applicative.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Arrow.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Arrow.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent/Chan.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent/Chan.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent/MVar.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent/MVar.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent/QSem.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent/QSem.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent/QSemN.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent/QSemN.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent/SampleVar.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent/SampleVar.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Exception.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Exception.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad/Fix.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad/Fix.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad/Instances.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad/Instances.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad/ST.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad/ST.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad/ST/Lazy.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad/ST/Lazy.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad/ST/Strict.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad/ST/Strict.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Bits.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Bits.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Bool.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Bool.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Char.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Char.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Complex.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Complex.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Dynamic.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Dynamic.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Either.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Either.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Eq.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Eq.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Fixed.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Fixed.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Foldable.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Foldable.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Function.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Function.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Aliases.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Aliases.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Basics.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Basics.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Instances.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Instances.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Schemes.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Schemes.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Text.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Text.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Twins.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics/Twins.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/HashTable.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/HashTable.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/IORef.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/IORef.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Int.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Int.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Ix.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Ix.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/List.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/List.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Maybe.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Maybe.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Monoid.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Monoid.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Ord.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Ord.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Ratio.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Ratio.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/STRef.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/STRef.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/STRef/Lazy.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/STRef/Lazy.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/STRef/Strict.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/STRef/Strict.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/String.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/String.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Traversable.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Traversable.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Tuple.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Tuple.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Typeable.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Typeable.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Unique.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Unique.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Version.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Version.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Word.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Word.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Debug/Trace.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Debug/Trace.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/C.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/C.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/C/Error.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/C/Error.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/C/String.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/C/String.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/C/Types.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/C/Types.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Concurrent.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Concurrent.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/ForeignPtr.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/ForeignPtr.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal/Alloc.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal/Alloc.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal/Array.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal/Array.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal/Error.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal/Error.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal/Pool.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal/Pool.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal/Utils.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal/Utils.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Ptr.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Ptr.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/StablePtr.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/StablePtr.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Storable.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Storable.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Arr.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Arr.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Base.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Base.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Conc.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Conc.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/ConsoleHandler.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/ConsoleHandler.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Dotnet.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Dotnet.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Enum.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Enum.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Environment.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Environment.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Err.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Err.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Exception.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Exception.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Exts.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Exts.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Float.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Float.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/ForeignPtr.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/ForeignPtr.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Handle.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Handle.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/IO.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/IO.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/IOBase.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/IOBase.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Int.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Int.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/List.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/List.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Num.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Num.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/PArr.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/PArr.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Pack.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Pack.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/PrimopWrappers.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/PrimopWrappers.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Ptr.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Ptr.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Read.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Read.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Real.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Real.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/ST.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/ST.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/STRef.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/STRef.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Show.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Show.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Stable.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Stable.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Storable.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Storable.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/TopHandler.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/TopHandler.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Unicode.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Unicode.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Weak.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Weak.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Word.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC/Word.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/HSbase-3.0.1.0.o
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Numeric.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Numeric.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Prelude.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Prelude.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/CPUTime.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/CPUTime.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Console/GetOpt.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Console/GetOpt.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Environment.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Environment.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Exit.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Exit.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/IO.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/IO.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/IO/Error.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/IO/Error.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/IO/Unsafe.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/IO/Unsafe.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Info.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Info.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Mem.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Mem.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Mem/StableName.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Mem/StableName.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Mem/Weak.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Mem/Weak.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Posix/Internals.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Posix/Internals.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Posix/Types.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Posix/Types.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Timeout.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Timeout.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/ParserCombinators/ReadP.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/ParserCombinators/ReadP.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/ParserCombinators/ReadPrec.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/ParserCombinators/ReadPrec.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Printf.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Printf.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Read.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Read.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Read/Lex.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Read/Lex.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Show.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Show.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Show/Functions.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Show/Functions.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Unsafe/Coerce.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Unsafe/Coerce.p_hi
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/include/HsBase.h
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/include/HsBaseConfig.h
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/include/Typeable.h
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/include/WCsubst.h
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/include/consUtils.h
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/include/dirUtils.h
-%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/libHSbase-3.0.1.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/libHSbase-3.0.1.0_p.a
-%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString.p_hi
-%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Char8.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Char8.p_hi
-%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Fusion.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Fusion.p_hi
-%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Internal.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Internal.p_hi
-%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy.p_hi
-%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy/Char8.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy/Char8.p_hi
-%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy/Internal.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy/Internal.p_hi
-%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Unsafe.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Unsafe.p_hi
-%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/HSbytestring-0.9.0.1.o
-%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/include/fpstring.h
-%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/libHSbytestring-0.9.0.1.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/libHSbytestring-0.9.0.1_p.a
-%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/HScgi-3001.1.5.1.o
-%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI.p_hi
-%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI/Cookie.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI/Cookie.p_hi
-%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI/Monad.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI/Monad.p_hi
-%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI/Multipart.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI/Multipart.p_hi
-%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI/Protocol.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI/Protocol.p_hi
-%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI/RFC822Headers.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI/RFC822Headers.p_hi
-%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/libHScgi-3001.1.5.1.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/libHScgi-3001.1.5.1_p.a
-%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/Graph.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/Graph.p_hi
-%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/IntMap.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/IntMap.p_hi
-%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/IntSet.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/IntSet.p_hi
-%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/Map.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/Map.p_hi
-%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/Sequence.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/Sequence.p_hi
-%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/Set.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/Set.p_hi
-%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/Tree.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data/Tree.p_hi
-%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/HScontainers-0.1.0.1.o
-%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/libHScontainers-0.1.0.1.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/libHScontainers-0.1.0.1_p.a
-%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.0/HSdirectory-1.0.0.0.o
-%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.0/System/Directory.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.0/System/Directory.p_hi
-%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.0/include/HsDirectory.h
-%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.0/include/HsDirectoryConfig.h
-%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.0/libHSdirectory-1.0.0.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.0/libHSdirectory-1.0.0.0_p.a
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Basic.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Basic.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Example.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Example.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Graph.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Graph.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Graphviz.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Graphviz.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/FiniteMap.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/FiniteMap.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Heap.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Heap.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Queue.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Queue.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/RootPath.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/RootPath.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Thread.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Thread.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Monad.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Monad.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Monad/IOArray.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Monad/IOArray.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/NodeMap.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/NodeMap.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/ArtPoint.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/ArtPoint.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/BCC.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/BCC.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/BFS.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/BFS.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/DFS.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/DFS.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Dominators.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Dominators.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/GVD.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/GVD.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Indep.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Indep.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MST.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MST.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MaxFlow.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MaxFlow.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MaxFlow2.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MaxFlow2.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Monad.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Monad.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/SP.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/SP.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/TransClos.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/TransClos.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Tree.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Tree.p_hi
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/HSfgl-5.4.1.1.o
-%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/libHSfgl-5.4.1.1.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/libHSfgl-5.4.1.1_p.a
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Applicative.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Applicative.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Arrow.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Arrow.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent/Chan.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent/Chan.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent/MVar.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent/MVar.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent/QSem.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent/QSem.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent/QSemN.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent/QSemN.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent/SampleVar.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent/SampleVar.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Exception.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Exception.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad/Fix.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad/Fix.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad/Instances.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad/Instances.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad/ST.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad/ST.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad/ST/Lazy.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad/ST/Lazy.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad/ST/Strict.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad/ST/Strict.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Bits.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Bits.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Bool.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Bool.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Char.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Char.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Complex.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Complex.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Dynamic.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Dynamic.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Either.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Either.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Eq.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Eq.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Fixed.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Fixed.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Foldable.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Foldable.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Function.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Function.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Aliases.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Aliases.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Basics.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Basics.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Instances.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Instances.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Schemes.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Schemes.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Text.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Text.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Twins.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics/Twins.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/HashTable.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/HashTable.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/IORef.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/IORef.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Int.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Int.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Ix.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Ix.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/List.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/List.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Maybe.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Maybe.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Monoid.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Monoid.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Ord.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Ord.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Ratio.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Ratio.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/STRef.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/STRef.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/STRef/Lazy.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/STRef/Lazy.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/STRef/Strict.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/STRef/Strict.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/String.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/String.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Traversable.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Traversable.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Tuple.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Tuple.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Typeable.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Typeable.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Unique.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Unique.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Version.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Version.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Word.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Word.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Debug/Trace.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Debug/Trace.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/C.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/C.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/C/Error.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/C/Error.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/C/String.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/C/String.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/C/Types.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/C/Types.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Concurrent.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Concurrent.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/ForeignPtr.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/ForeignPtr.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal/Alloc.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal/Alloc.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal/Array.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal/Array.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal/Error.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal/Error.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal/Pool.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal/Pool.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal/Utils.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal/Utils.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Ptr.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Ptr.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/StablePtr.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/StablePtr.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Storable.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Storable.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Arr.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Arr.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Base.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Base.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Conc.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Conc.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/ConsoleHandler.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/ConsoleHandler.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Dotnet.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Dotnet.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Enum.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Enum.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Environment.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Environment.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Err.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Err.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Exception.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Exception.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Exts.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Exts.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Float.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Float.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/ForeignPtr.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/ForeignPtr.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Handle.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Handle.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/IO.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/IO.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/IOBase.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/IOBase.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Int.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Int.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/List.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/List.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Num.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Num.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/PArr.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/PArr.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Pack.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Pack.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/PrimopWrappers.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/PrimopWrappers.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Ptr.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Ptr.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Read.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Read.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Real.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Real.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/ST.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/ST.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/STRef.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/STRef.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Show.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Show.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Stable.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Stable.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Storable.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Storable.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/TopHandler.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/TopHandler.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Unicode.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Unicode.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Weak.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Weak.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Word.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC/Word.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/HSbase-3.0.2.0.o
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Numeric.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Numeric.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Prelude.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Prelude.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/CPUTime.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/CPUTime.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Console/GetOpt.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Console/GetOpt.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Environment.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Environment.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Exit.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Exit.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/IO.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/IO.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/IO/Error.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/IO/Error.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/IO/Unsafe.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/IO/Unsafe.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Info.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Info.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Mem.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Mem.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Mem/StableName.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Mem/StableName.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Mem/Weak.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Mem/Weak.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Posix/Internals.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Posix/Internals.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Posix/Types.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Posix/Types.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Timeout.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Timeout.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/ParserCombinators/ReadP.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/ParserCombinators/ReadP.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/ParserCombinators/ReadPrec.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/ParserCombinators/ReadPrec.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Printf.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Printf.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Read.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Read.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Read/Lex.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Read/Lex.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Show.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Show.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Show/Functions.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Show/Functions.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Unsafe/Coerce.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Unsafe/Coerce.p_hi
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/include/HsBase.h
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/include/HsBaseConfig.h
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/include/Typeable.h
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/include/WCsubst.h
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/include/consUtils.h
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/include/dirUtils.h
+%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/libHSbase-3.0.2.0.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/libHSbase-3.0.2.0_p.a
+%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString.p_hi
+%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Char8.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Char8.p_hi
+%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Fusion.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Fusion.p_hi
+%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Internal.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Internal.p_hi
+%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Lazy.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Lazy.p_hi
+%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Lazy/Char8.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Lazy/Char8.p_hi
+%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Lazy/Internal.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Lazy/Internal.p_hi
+%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Unsafe.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Unsafe.p_hi
+%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/HSbytestring-0.9.0.1.1.o
+%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/include/fpstring.h
+%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/libHSbytestring-0.9.0.1.1.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/libHSbytestring-0.9.0.1.1_p.a
+%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/HScgi-3001.1.6.0.o
+%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI.p_hi
+%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Compat.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Compat.p_hi
+%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Cookie.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Cookie.p_hi
+%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Header.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Header.p_hi
+%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Monad.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Monad.p_hi
+%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Multipart.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Multipart.p_hi
+%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Protocol.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI/Protocol.p_hi
+%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/libHScgi-3001.1.6.0.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/libHScgi-3001.1.6.0_p.a
+%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/Graph.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/Graph.p_hi
+%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/IntMap.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/IntMap.p_hi
+%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/IntSet.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/IntSet.p_hi
+%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/Map.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/Map.p_hi
+%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/Sequence.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/Sequence.p_hi
+%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/Set.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/Set.p_hi
+%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/Tree.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data/Tree.p_hi
+%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/HScontainers-0.1.0.2.o
+%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/libHScontainers-0.1.0.2.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/libHScontainers-0.1.0.2_p.a
+%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.1/HSdirectory-1.0.0.1.o
+%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.1/System/Directory.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.1/System/Directory.p_hi
+%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.1/include/HsDirectory.h
+%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.1/include/HsDirectoryConfig.h
+%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.1/libHSdirectory-1.0.0.1.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/directory-1.0.0.1/libHSdirectory-1.0.0.1_p.a
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Basic.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Basic.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Example.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Example.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Graph.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Graph.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Graphviz.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Graphviz.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Internal/FiniteMap.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Internal/FiniteMap.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Internal/Heap.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Internal/Heap.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Internal/Queue.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Internal/Queue.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Internal/RootPath.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Internal/RootPath.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Internal/Thread.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Internal/Thread.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Monad.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Monad.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Monad/IOArray.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Monad/IOArray.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/NodeMap.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/NodeMap.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/ArtPoint.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/ArtPoint.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/BCC.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/BCC.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/BFS.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/BFS.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/DFS.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/DFS.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/Dominators.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/Dominators.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/GVD.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/GVD.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/Indep.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/Indep.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/MST.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/MST.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/MaxFlow.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/MaxFlow.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/MaxFlow2.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/MaxFlow2.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/Monad.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/Monad.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/SP.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/SP.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/TransClos.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query/TransClos.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Tree.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Tree.p_hi
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/HSfgl-5.4.2.0.o
+%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/libHSfgl-5.4.2.0.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/libHSfgl-5.4.2.0_p.a
 %%GHC_LIBDIR_REL%%/lib/filepath-1.1.0.0/HSfilepath-1.1.0.0.o
 %%GHC_LIBDIR_REL%%/lib/filepath-1.1.0.0/System/FilePath.hi
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/filepath-1.1.0.0/System/FilePath.p_hi
@@ -924,21 +926,21 @@ bin/runhaskell
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/filepath-1.1.0.0/System/FilePath/Windows.p_hi
 %%GHC_LIBDIR_REL%%/lib/filepath-1.1.0.0/libHSfilepath-1.1.0.0.a
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/filepath-1.1.0.0/libHSfilepath-1.1.0.0_p.a
-%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/HShaskell-src-1.0.1.1.o
-%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/Lexer.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/Lexer.p_hi
-%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/ParseMonad.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/ParseMonad.p_hi
-%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/ParseUtils.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/ParseUtils.p_hi
-%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/Parser.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/Parser.p_hi
-%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/Pretty.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/Pretty.p_hi
-%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/Syntax.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell/Syntax.p_hi
-%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/libHShaskell-src-1.0.1.1.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/libHShaskell-src-1.0.1.1_p.a
+%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/HShaskell-src-1.0.1.2.o
+%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/Lexer.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/Lexer.p_hi
+%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/ParseMonad.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/ParseMonad.p_hi
+%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/ParseUtils.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/ParseUtils.p_hi
+%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/Parser.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/Parser.p_hi
+%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/Pretty.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/Pretty.p_hi
+%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/Syntax.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell/Syntax.p_hi
+%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/libHShaskell-src-1.0.1.2.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/libHShaskell-src-1.0.1.2_p.a
 %%GHC_LIBDIR_REL%%/lib/haskell98-1.0.1.0/Array.hi
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell98-1.0.1.0/Array.p_hi
 %%GHC_LIBDIR_REL%%/lib/haskell98-1.0.1.0/Bits.hi
@@ -1002,17 +1004,17 @@ bin/runhaskell
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell98-1.0.1.0/Word.p_hi
 %%GHC_LIBDIR_REL%%/lib/haskell98-1.0.1.0/libHShaskell98-1.0.1.0.a
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/haskell98-1.0.1.0/libHShaskell98-1.0.1.0_p.a
-%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/HShpc-0.5.0.0.o
-%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/Trace/Hpc/Mix.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/Trace/Hpc/Mix.p_hi
-%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/Trace/Hpc/Reflect.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/Trace/Hpc/Reflect.p_hi
-%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/Trace/Hpc/Tix.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/Trace/Hpc/Tix.p_hi
-%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/Trace/Hpc/Util.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/Trace/Hpc/Util.p_hi
-%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/libHShpc-0.5.0.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/libHShpc-0.5.0.0_p.a
+%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/HShpc-0.5.0.1.o
+%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/Trace/Hpc/Mix.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/Trace/Hpc/Mix.p_hi
+%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/Trace/Hpc/Reflect.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/Trace/Hpc/Reflect.p_hi
+%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/Trace/Hpc/Tix.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/Trace/Hpc/Tix.p_hi
+%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/Trace/Hpc/Util.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/Trace/Hpc/Util.p_hi
+%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/libHShpc-0.5.0.1.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/libHShpc-0.5.0.1_p.a
 %%GHC_LIBDIR_REL%%/lib/html-1.0.1.1/HShtml-1.0.1.1.o
 %%GHC_LIBDIR_REL%%/lib/html-1.0.1.1/Text/Html.hi
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/html-1.0.1.1/Text/Html.p_hi
@@ -1020,64 +1022,64 @@ bin/runhaskell
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/html-1.0.1.1/Text/Html/BlockTable.p_hi
 %%GHC_LIBDIR_REL%%/lib/html-1.0.1.1/libHShtml-1.0.1.1.a
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/html-1.0.1.1/libHShtml-1.0.1.1_p.a
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Cont.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Cont.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Cont/Class.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Cont/Class.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Error.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Error.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Error/Class.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Error/Class.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Identity.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Identity.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/List.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/List.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/RWS.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/RWS.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Class.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Class.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Lazy.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Lazy.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Strict.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Strict.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Reader.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Reader.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Reader/Class.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Reader/Class.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/State.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/State.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/State/Class.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/State/Class.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/State/Lazy.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/State/Lazy.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/State/Strict.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/State/Strict.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Trans.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Trans.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Writer.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Writer.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Class.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Class.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Lazy.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Lazy.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Strict.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Strict.p_hi
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/HSmtl-1.1.0.0.o
-%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/libHSmtl-1.1.0.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/libHSmtl-1.1.0.0_p.a
-%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/HSnetwork-2.1.0.0.o
-%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/Network.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/Network.p_hi
-%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/Network/BSD.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/Network/BSD.p_hi
-%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/Network/Socket.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/Network/Socket.p_hi
-%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/Network/URI.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/Network/URI.p_hi
-%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/include/HsNet.h
-%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/include/HsNetworkConfig.h
-%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/libHSnetwork-2.1.0.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/libHSnetwork-2.1.0.0_p.a
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Cont.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Cont.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Cont/Class.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Cont/Class.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Error.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Error.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Error/Class.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Error/Class.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Identity.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Identity.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/List.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/List.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/RWS.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/RWS.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/RWS/Class.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/RWS/Class.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/RWS/Lazy.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/RWS/Lazy.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/RWS/Strict.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/RWS/Strict.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Reader.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Reader.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Reader/Class.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Reader/Class.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/State.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/State.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/State/Class.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/State/Class.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/State/Lazy.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/State/Lazy.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/State/Strict.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/State/Strict.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Trans.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Trans.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Writer.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Writer.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Writer/Class.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Writer/Class.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Writer/Lazy.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Writer/Lazy.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Writer/Strict.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Writer/Strict.p_hi
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/HSmtl-1.1.0.1.o
+%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/libHSmtl-1.1.0.1.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/libHSmtl-1.1.0.1_p.a
+%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/HSnetwork-2.2.0.0.o
+%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/Network.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/Network.p_hi
+%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/Network/BSD.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/Network/BSD.p_hi
+%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/Network/Socket.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/Network/Socket.p_hi
+%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/Network/URI.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/Network/URI.p_hi
+%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/include/HsNet.h
+%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/include/HsNetworkConfig.h
+%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/libHSnetwork-2.2.0.0.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/libHSnetwork-2.2.0.0_p.a
 %%GHC_LIBDIR_REL%%/lib/old-locale-1.0.0.0/HSold-locale-1.0.0.0.o
 %%GHC_LIBDIR_REL%%/lib/old-locale-1.0.0.0/System/Locale.hi
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/old-locale-1.0.0.0/System/Locale.p_hi
@@ -1095,36 +1097,36 @@ bin/runhaskell
 %%GHC_LIBDIR_REL%%/lib/packedstring-0.1.0.0/HSpackedstring-0.1.0.0.o
 %%GHC_LIBDIR_REL%%/lib/packedstring-0.1.0.0/libHSpackedstring-0.1.0.0.a
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/packedstring-0.1.0.0/libHSpackedstring-0.1.0.0_p.a
-%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.0/Control/Parallel.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.0/Control/Parallel.p_hi
-%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.0/Control/Parallel/Strategies.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.0/Control/Parallel/Strategies.p_hi
-%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.0/HSparallel-1.0.0.0.o
-%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.0/libHSparallel-1.0.0.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.0/libHSparallel-1.0.0.0_p.a
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/HSparsec-2.1.0.0.o
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec.p_hi
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Char.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Char.p_hi
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Combinator.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Combinator.p_hi
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Error.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Error.p_hi
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Expr.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Expr.p_hi
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Language.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Language.p_hi
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Perm.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Perm.p_hi
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Pos.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Pos.p_hi
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Prim.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Prim.p_hi
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Token.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Token.p_hi
-%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/libHSparsec-2.1.0.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/libHSparsec-2.1.0.0_p.a
+%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.1/Control/Parallel.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.1/Control/Parallel.p_hi
+%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.1/Control/Parallel/Strategies.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.1/Control/Parallel/Strategies.p_hi
+%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.1/HSparallel-1.0.0.1.o
+%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.1/libHSparallel-1.0.0.1.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.1/libHSparallel-1.0.0.1_p.a
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/HSparsec-2.1.0.1.o
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec.p_hi
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Char.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Char.p_hi
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Combinator.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Combinator.p_hi
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Error.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Error.p_hi
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Expr.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Expr.p_hi
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Language.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Language.p_hi
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Perm.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Perm.p_hi
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Pos.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Pos.p_hi
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Prim.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Prim.p_hi
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Token.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec/Token.p_hi
+%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/libHSparsec-2.1.0.1.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/libHSparsec-2.1.0.1_p.a
 %%GHC_LIBDIR_REL%%/lib/pretty-1.0.0.0/HSpretty-1.0.0.0.o
 %%GHC_LIBDIR_REL%%/lib/pretty-1.0.0.0/Text/PrettyPrint.hi
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/pretty-1.0.0.0/Text/PrettyPrint.p_hi
@@ -1132,17 +1134,17 @@ bin/runhaskell
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/pretty-1.0.0.0/Text/PrettyPrint/HughesPJ.p_hi
 %%GHC_LIBDIR_REL%%/lib/pretty-1.0.0.0/libHSpretty-1.0.0.0.a
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/pretty-1.0.0.0/libHSpretty-1.0.0.0_p.a
-%%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/HSprocess-1.0.0.0.o
-%%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/System/Cmd.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/System/Cmd.p_hi
-%%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/System/Process.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/System/Process.p_hi
-%%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/System/Process/Internals.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/System/Process/Internals.p_hi
-%%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/include/HsProcessConfig.h
-%%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/include/runProcess.h
-%%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/libHSprocess-1.0.0.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/libHSprocess-1.0.0.0_p.a
+%%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/HSprocess-1.0.0.1.o
+%%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/System/Cmd.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/System/Cmd.p_hi
+%%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/System/Process.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/System/Process.p_hi
+%%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/System/Process/Internals.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/System/Process/Internals.p_hi
+%%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/include/HsProcessConfig.h
+%%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/include/runProcess.h
+%%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/libHSprocess-1.0.0.1.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/libHSprocess-1.0.0.1_p.a
 %%GHC_LIBDIR_REL%%/lib/random-1.0.0.0/HSrandom-1.0.0.0.o
 %%GHC_LIBDIR_REL%%/lib/random-1.0.0.0/System/Random.hi
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/random-1.0.0.0/System/Random.p_hi
@@ -1184,23 +1186,23 @@ bin/runhaskell
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/regex-posix-0.72.0.2/Text/Regex/Posix/Wrap.p_hi
 %%GHC_LIBDIR_REL%%/lib/regex-posix-0.72.0.2/libHSregex-posix-0.72.0.2.a
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/regex-posix-0.72.0.2/libHSregex-posix-0.72.0.2_p.a
-%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent/STM.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent/STM.p_hi
-%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TArray.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TArray.p_hi
-%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TChan.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TChan.p_hi
-%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TMVar.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TMVar.p_hi
-%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TVar.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TVar.p_hi
-%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Monad/STM.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Monad/STM.p_hi
-%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Sequential/STM.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Sequential/STM.p_hi
-%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/HSstm-2.1.1.0.o
-%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/libHSstm-2.1.1.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/libHSstm-2.1.1.0_p.a
+%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent/STM.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent/STM.p_hi
+%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent/STM/TArray.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent/STM/TArray.p_hi
+%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent/STM/TChan.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent/STM/TChan.p_hi
+%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent/STM/TMVar.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent/STM/TMVar.p_hi
+%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent/STM/TVar.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent/STM/TVar.p_hi
+%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Monad/STM.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Monad/STM.p_hi
+%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Sequential/STM.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Sequential/STM.p_hi
+%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/HSstm-2.1.1.1.o
+%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/libHSstm-2.1.1.1.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/libHSstm-2.1.1.1_p.a
 %%GHC_LIBDIR_REL%%/lib/template-haskell-2.2.0.0/HStemplate-haskell-2.2.0.0.o
 %%GHC_LIBDIR_REL%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH.hi
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH.p_hi
@@ -1214,140 +1216,140 @@ bin/runhaskell
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH/Syntax.p_hi
 %%GHC_LIBDIR_REL%%/lib/template-haskell-2.2.0.0/libHStemplate-haskell-2.2.0.0.a
 %%PROFILE%%%%GHC_LIBDIR_REL%%/lib/template-haskell-2.2.0.0/libHStemplate-haskell-2.2.0.0_p.a
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/Days.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/Days.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/Easter.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/Easter.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/Gregorian.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/Gregorian.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/Julian.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/Julian.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/JulianYearDay.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/JulianYearDay.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/MonthDay.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/MonthDay.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/OrdinalDate.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/OrdinalDate.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/Private.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/Private.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/WeekDate.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar/WeekDate.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/CTimeval.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/CTimeval.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/POSIX.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/POSIX.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/Scale.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/Scale.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/TAI.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/TAI.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/UTC.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/UTC.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/UTCDiff.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock/UTCDiff.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Format.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Format.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Format/Parse.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Format/Parse.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/LocalTime.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/LocalTime.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/LocalTime/LocalTime.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/LocalTime/LocalTime.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/LocalTime/TimeOfDay.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/LocalTime/TimeOfDay.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/LocalTime/TimeZone.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/LocalTime/TimeZone.p_hi
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/HStime-1.1.2.0.o
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/include/HsTime.h
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/include/HsTimeConfig.h
-%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/libHStime-1.1.2.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/libHStime-1.1.2.0_p.a
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/HSunix-2.3.0.0.o
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Directory.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Directory.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker/Module.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker/Module.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker/Prim.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker/Prim.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Env.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Env.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Error.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Error.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Files.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Files.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/IO.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/IO.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Process.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Process.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Process/Internals.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Process/Internals.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Resource.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Resource.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Semaphore.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Semaphore.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/SharedMem.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/SharedMem.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Signals.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Signals.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Signals/Exts.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Signals/Exts.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Temp.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Temp.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Terminal.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Terminal.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Time.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Time.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Unistd.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Unistd.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/User.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/User.p_hi
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/include/HsUnix.h
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/include/HsUnixConfig.h
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/include/execvpe.h
-%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/libHSunix-2.3.0.0.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/libHSunix-2.3.0.0_p.a
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/HSxhtml-3000.0.2.1.o
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/BlockTable.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/BlockTable.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Debug.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Debug.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Extras.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Extras.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset/Attributes.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset/Attributes.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset/Elements.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset/Elements.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Internals.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Internals.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict/Attributes.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict/Attributes.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict/Elements.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict/Elements.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Table.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Table.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional/Attributes.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional/Attributes.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional/Elements.hi
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional/Elements.p_hi
-%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/libHSxhtml-3000.0.2.1.a
-%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/libHSxhtml-3000.0.2.1_p.a
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/Days.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/Days.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/Easter.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/Easter.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/Gregorian.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/Gregorian.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/Julian.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/Julian.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/JulianYearDay.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/JulianYearDay.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/MonthDay.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/MonthDay.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/OrdinalDate.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/OrdinalDate.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/Private.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/Private.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/WeekDate.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar/WeekDate.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/CTimeval.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/CTimeval.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/POSIX.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/POSIX.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/Scale.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/Scale.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/TAI.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/TAI.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/UTC.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/UTC.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/UTCDiff.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock/UTCDiff.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Format.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Format.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Format/Parse.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Format/Parse.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/LocalTime.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/LocalTime.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/LocalTime/LocalTime.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/LocalTime/LocalTime.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/LocalTime/TimeOfDay.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/LocalTime/TimeOfDay.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/LocalTime/TimeZone.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/LocalTime/TimeZone.p_hi
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/HStime-1.1.2.1.o
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/include/HsTime.h
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/include/HsTimeConfig.h
+%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/libHStime-1.1.2.1.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/libHStime-1.1.2.1_p.a
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/HSunix-2.3.0.1.o
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Directory.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Directory.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/DynamicLinker.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/DynamicLinker.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/DynamicLinker/Module.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/DynamicLinker/Module.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/DynamicLinker/Prim.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/DynamicLinker/Prim.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Env.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Env.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Error.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Error.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Files.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Files.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/IO.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/IO.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Process.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Process.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Process/Internals.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Process/Internals.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Resource.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Resource.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Semaphore.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Semaphore.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/SharedMem.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/SharedMem.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Signals.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Signals.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Signals/Exts.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Signals/Exts.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Temp.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Temp.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Terminal.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Terminal.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Time.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Time.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Unistd.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Unistd.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/User.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/User.p_hi
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/include/HsUnix.h
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/include/HsUnixConfig.h
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/include/execvpe.h
+%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/libHSunix-2.3.0.1.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/libHSunix-2.3.0.1_p.a
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/HSxhtml-3000.2.0.0.o
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/BlockTable.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/BlockTable.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Debug.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Debug.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Extras.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Extras.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Frameset.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Frameset.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Frameset/Attributes.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Frameset/Attributes.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Frameset/Elements.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Frameset/Elements.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Internals.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Internals.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Strict.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Strict.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Strict/Attributes.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Strict/Attributes.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Strict/Elements.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Strict/Elements.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Table.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Table.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Transitional.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Transitional.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Transitional/Attributes.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Transitional/Attributes.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Transitional/Elements.hi
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Transitional/Elements.p_hi
+%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/libHSxhtml-3000.2.0.0.a
+%%PROFILE%%%%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/libHSxhtml-3000.2.0.0_p.a
 %%GHC_LIBDIR_REL%%/libHSghc.a
 %%GHC_LIBDIR_REL%%/libHSrts.a
 %%GHC_LIBDIR_REL%%/libHSrts_debug.a
@@ -1391,37 +1393,37 @@ bin/runhaskell
 %%NOPORTDOCS%%%%DOCSDIR%%/libraries/time/LICENSE
 %%NOPORTDOCS%%%%DOCSDIR%%/libraries/unix/LICENSE
 %%NOPORTDOCS%%%%DOCSDIR%%/libraries/xhtml/LICENSE
-@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional
-@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict
-@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset
-@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text/XHtml
-@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1/Text
-@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.0.2.1
-@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/include
-@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Signals
-@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/Process
-@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker
-@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System/Posix
-@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0/System
-@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.0
-@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/include
-@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/LocalTime
-@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Format
-@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Clock
-@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time/Calendar
-@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data/Time
-@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.0/Data
-@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Transitional
+@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Strict
+@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml/Frameset
+@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text/XHtml
+@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0/Text
+@dirrm %%GHC_LIBDIR_REL%%/lib/xhtml-3000.2.0.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/include
+@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Signals
+@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/Process
+@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix/DynamicLinker
+@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System/Posix
+@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1/System
+@dirrm %%GHC_LIBDIR_REL%%/lib/unix-2.3.0.1
+@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/include
+@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/LocalTime
+@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Format
+@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Clock
+@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time/Calendar
+@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data/Time
+@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.1/Data
+@dirrm %%GHC_LIBDIR_REL%%/lib/time-1.1.2.1
 @dirrm %%GHC_LIBDIR_REL%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH
 @dirrm %%GHC_LIBDIR_REL%%/lib/template-haskell-2.2.0.0/Language/Haskell
 @dirrm %%GHC_LIBDIR_REL%%/lib/template-haskell-2.2.0.0/Language
 @dirrm %%GHC_LIBDIR_REL%%/lib/template-haskell-2.2.0.0
-@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Sequential
-@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Monad
-@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent/STM
-@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control/Concurrent
-@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0/Control
-@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Sequential
+@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Monad
+@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent/STM
+@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control/Concurrent
+@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1/Control
+@dirrm %%GHC_LIBDIR_REL%%/lib/stm-2.1.1.1
 @dirrm %%GHC_LIBDIR_REL%%/lib/regex-posix-0.72.0.2/Text/Regex/Posix
 @dirrm %%GHC_LIBDIR_REL%%/lib/regex-posix-0.72.0.2/Text/Regex
 @dirrm %%GHC_LIBDIR_REL%%/lib/regex-posix-0.72.0.2/Text
@@ -1438,20 +1440,20 @@ bin/runhaskell
 @dirrm %%GHC_LIBDIR_REL%%/lib/readline-1.0.1.0
 @dirrm %%GHC_LIBDIR_REL%%/lib/random-1.0.0.0/System
 @dirrm %%GHC_LIBDIR_REL%%/lib/random-1.0.0.0
-@dirrm %%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/include
-@dirrm %%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/System/Process
-@dirrm %%GHC_LIBDIR_REL%%/lib/process-1.0.0.0/System
-@dirrm %%GHC_LIBDIR_REL%%/lib/process-1.0.0.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/include
+@dirrm %%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/System/Process
+@dirrm %%GHC_LIBDIR_REL%%/lib/process-1.0.0.1/System
+@dirrm %%GHC_LIBDIR_REL%%/lib/process-1.0.0.1
 @dirrm %%GHC_LIBDIR_REL%%/lib/pretty-1.0.0.0/Text/PrettyPrint
 @dirrm %%GHC_LIBDIR_REL%%/lib/pretty-1.0.0.0/Text
 @dirrm %%GHC_LIBDIR_REL%%/lib/pretty-1.0.0.0
-@dirrm %%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec
-@dirrm %%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text/ParserCombinators
-@dirrm %%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0/Text
-@dirrm %%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.0
-@dirrm %%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.0/Control/Parallel
-@dirrm %%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.0/Control
-@dirrm %%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators/Parsec
+@dirrm %%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text/ParserCombinators
+@dirrm %%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1/Text
+@dirrm %%GHC_LIBDIR_REL%%/lib/parsec-2.1.0.1
+@dirrm %%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.1/Control/Parallel
+@dirrm %%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.1/Control
+@dirrm %%GHC_LIBDIR_REL%%/lib/parallel-1.0.0.1
 @dirrm %%GHC_LIBDIR_REL%%/lib/packedstring-0.1.0.0/Data
 @dirrm %%GHC_LIBDIR_REL%%/lib/packedstring-0.1.0.0
 @dirrm %%GHC_LIBDIR_REL%%/lib/old-time-1.0.0.0/include
@@ -1459,75 +1461,75 @@ bin/runhaskell
 @dirrm %%GHC_LIBDIR_REL%%/lib/old-time-1.0.0.0
 @dirrm %%GHC_LIBDIR_REL%%/lib/old-locale-1.0.0.0/System
 @dirrm %%GHC_LIBDIR_REL%%/lib/old-locale-1.0.0.0
-@dirrm %%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/include
-@dirrm %%GHC_LIBDIR_REL%%/lib/network-2.1.0.0/Network
-@dirrm %%GHC_LIBDIR_REL%%/lib/network-2.1.0.0
-@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Writer
-@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/State
-@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Reader
-@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/RWS
-@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Error
-@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad/Cont
-@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control/Monad
-@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0/Control
-@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/include
+@dirrm %%GHC_LIBDIR_REL%%/lib/network-2.2.0.0/Network
+@dirrm %%GHC_LIBDIR_REL%%/lib/network-2.2.0.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Writer
+@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/State
+@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Reader
+@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/RWS
+@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Error
+@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad/Cont
+@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control/Monad
+@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1/Control
+@dirrm %%GHC_LIBDIR_REL%%/lib/mtl-1.1.0.1
 @dirrm %%GHC_LIBDIR_REL%%/lib/html-1.0.1.1/Text/Html
 @dirrm %%GHC_LIBDIR_REL%%/lib/html-1.0.1.1/Text
 @dirrm %%GHC_LIBDIR_REL%%/lib/html-1.0.1.1
-@dirrm %%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/Trace/Hpc
-@dirrm %%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0/Trace
-@dirrm %%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/Trace/Hpc
+@dirrm %%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1/Trace
+@dirrm %%GHC_LIBDIR_REL%%/lib/hpc-0.5.0.1
 @dirrm %%GHC_LIBDIR_REL%%/lib/haskell98-1.0.1.0
-@dirrm %%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language/Haskell
-@dirrm %%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1/Language
-@dirrm %%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.1
+@dirrm %%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language/Haskell
+@dirrm %%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2/Language
+@dirrm %%GHC_LIBDIR_REL%%/lib/haskell-src-1.0.1.2
 @dirrm %%GHC_LIBDIR_REL%%/lib/filepath-1.1.0.0/System/FilePath
 @dirrm %%GHC_LIBDIR_REL%%/lib/filepath-1.1.0.0/System
 @dirrm %%GHC_LIBDIR_REL%%/lib/filepath-1.1.0.0
-@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query
-@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Monad
-@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal
-@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph/Inductive
-@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data/Graph
-@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1/Data
-@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.1.1
-@dirrm %%GHC_LIBDIR_REL%%/lib/directory-1.0.0.0/include
-@dirrm %%GHC_LIBDIR_REL%%/lib/directory-1.0.0.0/System
-@dirrm %%GHC_LIBDIR_REL%%/lib/directory-1.0.0.0
-@dirrm %%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1/Data
-@dirrm %%GHC_LIBDIR_REL%%/lib/containers-0.1.0.1
-@dirrm %%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network/CGI
-@dirrm %%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1/Network
-@dirrm %%GHC_LIBDIR_REL%%/lib/cgi-3001.1.5.1
-@dirrm %%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/include
-@dirrm %%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy
-@dirrm %%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data/ByteString
-@dirrm %%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1/Data
-@dirrm %%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/include
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Unsafe
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Show
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/Read
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text/ParserCombinators
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Text
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Posix
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Mem
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/IO
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System/Console
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/System
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/GHC
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/Marshal
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign/C
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Foreign
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Debug
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/STRef
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data/Generics
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Data
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad/ST
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Monad
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control/Concurrent
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0/Control
-@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.1.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Query
+@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Monad
+@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive/Internal
+@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph/Inductive
+@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data/Graph
+@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0/Data
+@dirrm %%GHC_LIBDIR_REL%%/lib/fgl-5.4.2.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/directory-1.0.0.1/include
+@dirrm %%GHC_LIBDIR_REL%%/lib/directory-1.0.0.1/System
+@dirrm %%GHC_LIBDIR_REL%%/lib/directory-1.0.0.1
+@dirrm %%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2/Data
+@dirrm %%GHC_LIBDIR_REL%%/lib/containers-0.1.0.2
+@dirrm %%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network/CGI
+@dirrm %%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0/Network
+@dirrm %%GHC_LIBDIR_REL%%/lib/cgi-3001.1.6.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/include
+@dirrm %%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString/Lazy
+@dirrm %%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data/ByteString
+@dirrm %%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1/Data
+@dirrm %%GHC_LIBDIR_REL%%/lib/bytestring-0.9.0.1.1
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/include
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Unsafe
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Show
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/Read
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text/ParserCombinators
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Text
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Posix
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Mem
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/IO
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System/Console
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/System
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/GHC
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/Marshal
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign/C
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Foreign
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Debug
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/STRef
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data/Generics
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Data
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad/ST
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Monad
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control/Concurrent
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0/Control
+@dirrm %%GHC_LIBDIR_REL%%/lib/base-3.0.2.0
 @dirrm %%GHC_LIBDIR_REL%%/lib/array-0.1.0.0/Data/Array/IO
 @dirrm %%GHC_LIBDIR_REL%%/lib/array-0.1.0.0/Data/Array
 @dirrm %%GHC_LIBDIR_REL%%/lib/array-0.1.0.0/Data
@@ -1540,14 +1542,14 @@ bin/runhaskell
 @dirrm %%GHC_LIBDIR_REL%%/lib/HUnit-1.2.0.0/Test/HUnit
 @dirrm %%GHC_LIBDIR_REL%%/lib/HUnit-1.2.0.0/Test
 @dirrm %%GHC_LIBDIR_REL%%/lib/HUnit-1.2.0.0
-@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Language/Haskell
-@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Language
-@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/PreProcess
-@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC
-@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Simple
-@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution/Compat
-@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0/Distribution
-@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.3.0
+@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Language/Haskell
+@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Language
+@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/PreProcess
+@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple/GHC
+@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Simple
+@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution/Compat
+@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0/Distribution
+@dirrm %%GHC_LIBDIR_REL%%/lib/Cabal-1.2.4.0
 @dirrm %%GHC_LIBDIR_REL%%/lib
 @dirrm %%GHC_LIBDIR_REL%%/include
 @dirrm %%GHC_LIBDIR_REL%%/icons

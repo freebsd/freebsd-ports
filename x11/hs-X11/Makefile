@@ -6,7 +6,7 @@
 
 PORTNAME=	x11
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/X11/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -19,7 +19,7 @@ COMMENT=	X11 bindings for Haskell programs
 # include the version verbatim. This will require a revision bump
 # on updates, but the correct quoting of `ghc --numeric-version` in the various
 # places is a real nightmare.
-GHC_VERSION=	6.8.2
+GHC_VERSION=	6.8.3
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
 		PORTVERSION=${PORTVERSION} \
 		PORTNAME=${PORTNAME} \

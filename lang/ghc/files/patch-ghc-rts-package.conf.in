@@ -1,18 +1,10 @@
---- rts/package.conf.in.orig	2007-12-10 19:11:32.000000000 +0100
-+++ rts/package.conf.in	2007-12-31 08:32:19.000000000 +0100
-@@ -66,6 +66,7 @@
- include-dirs:		FPTOOLS_TOP_ABS"/includes"
-              		FPTOOLS_TOP_ABS"/rts"
-              		FPTOOLS_TOP_ABS"/gmp/gmpbuild"
-+                        GMP_INCLUDE_DIRS
- #endif
- 
- includes:		Stg.h
-@@ -143,6 +144,7 @@
+--- rts/package.conf.in.orig	2008-06-16 19:27:16.000000000 +0200
++++ rts/package.conf.in	2008-06-21 21:46:49.000000000 +0200
+@@ -144,6 +144,7 @@
           , "-u", "base_GHCziIOBase_NestedAtomically_closure"
           , "-u", "base_GHCziWeak_runFinalizzerBatch_closure"
  #endif
-+	 , "-L/usr/local/lib"
++         , "-L/usr/local/lib"
  
  #ifdef LEADING_UNDERSCORE
  	 , "-u", "_base_GHCziConc_ensureIOManagerIsRunning_closure"

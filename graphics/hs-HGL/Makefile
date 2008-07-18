@@ -7,6 +7,7 @@
 
 PORTNAME=	HGL
 PORTVERSION=	3.2.0.0
+PORTREVISION=	1
 CATEGORIES=	graphics haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -18,7 +19,7 @@ COMMENT=	A simple graphics library based on X11 or Win32
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		hs-x11-ghc>=1.2.1:${PORTSDIR}/x11/hs-x11-ghc
 
-GHC_VERSION=	6.8.2
+GHC_VERSION=	6.8.3
 
 CABAL_CMD=	${LOCALBASE}/bin/runghc Setup.hs
 
