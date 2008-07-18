@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	customfieldadmin
-PORTVERSION=	0.2.3428
+PORTVERSION=	0.2.4016
 CATEGORIES=	www devel python
-MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/
+MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
+		LOCAL/glarkin
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
