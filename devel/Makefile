@@ -2125,6 +2125,7 @@
     SUBDIR += py-px
     SUBDIR += py-pycallgraph
     SUBDIR += py-pydasm
+    SUBDIR += py-pygpx
     SUBDIR += py-pyshapelib
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
