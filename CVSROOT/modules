@@ -2525,6 +2525,7 @@ eawplus                         ports/audio/eawplus
 ebnf2ps                         ports/textproc/Ebnf2ps
 ebnf2yacc                       ports/devel/ebnf2yacc
 eboard                          ports/games/eboard
+ebook2cw                        ports/comms/ebook2cw
 eboxy                           ports/devel/eboxy
 ebuttons                        ports/x11/ebuttons
 ecamegapedal                    ports/audio/ecamegapedal
@@ -3236,6 +3237,7 @@ flowd                           ports/net-mgmt/flowd
 flowdesigner                    ports/devel/flowdesigner
 flowgrep                        ports/net/flowgrep
 flowscan                        ports/net-mgmt/flowscan
+flowtag                         ports/security/flowtag
 flowviewer                      ports/net-mgmt/flowviewer
 flphoto                         ports/graphics/flphoto
 flpsed                          ports/print/flpsed
@@ -5162,6 +5164,8 @@ ifstated                        ports/net/ifstated
 iftop                           ports/net-mgmt/iftop
 igal                            ports/www/igal
 iglooftp                        ports/ftp/IglooFTP
+igraph                          ports/math/igraph
+ii                              ports/irc/ii
 iiimf-client-lib                ports/textproc/iiimf-client-lib
 iiimf-csconv                    ports/textproc/iiimf-csconv
 iiimf-gnome-im-switcher         ports/textproc/iiimf-gnome-im-switcher
@@ -9662,6 +9666,7 @@ p5-CPANPLUS-Dist-Build          ports/devel/p5-CPANPLUS-Dist-Build
 p5-CQL-Parser                   ports/textproc/p5-CQL-Parser
 p5-CSP                          ports/security/p5-CSP
 p5-CSS                          ports/textproc/p5-CSS
+p5-CSS-Minifier-XS              ports/textproc/p5-CSS-Minifier-XS
 p5-CSS-SAC                      ports/textproc/p5-CSS-SAC
 p5-CSS-Squish                   ports/textproc/p5-CSS-Squish
 p5-CSS-Tiny                     ports/textproc/p5-CSS-Tiny
@@ -10821,6 +10826,7 @@ p5-Jabber-Lite                  ports/net-im/p5-Jabber-Lite
 p5-Jabber-SimpleSend            ports/net-im/p5-Jabber-SimpleSend
 p5-Java                         ports/devel/p5-Java
 p5-JavaScript                   ports/lang/p5-JavaScript
+p5-JavaScript-Minifier-XS       ports/textproc/p5-JavaScript-Minifier-XS
 p5-JavaScript-RPC               ports/net/p5-JavaScript-RPC
 p5-JavaScript-SpiderMonkey      ports/lang/p5-JavaScript-SpiderMonkey
 p5-JavaScript-Squish            ports/lang/p5-JavaScript-Squish
@@ -13075,6 +13081,7 @@ p5-crypt-x509                   ports/security/p5-Crypt-X509
 p5-crypt-xdbm_file              ports/security/p5-Crypt-xDBM_File
 p5-csp                          ports/security/p5-CSP
 p5-css                          ports/textproc/p5-CSS
+p5-css-minifier-xs              ports/textproc/p5-CSS-Minifier-XS
 p5-css-sac                      ports/textproc/p5-CSS-SAC
 p5-css-squish                   ports/textproc/p5-CSS-Squish
 p5-css-tiny                     ports/textproc/p5-CSS-Tiny
@@ -13878,6 +13885,7 @@ p5-jabber-lite                  ports/net-im/p5-Jabber-Lite
 p5-jabber-simplesend            ports/net-im/p5-Jabber-SimpleSend
 p5-java                         ports/devel/p5-Java
 p5-javascript                   ports/lang/p5-JavaScript
+p5-javascript-minifier-xs       ports/textproc/p5-JavaScript-Minifier-XS
 p5-javascript-rpc               ports/net/p5-JavaScript-RPC
 p5-javascript-spidermonkey      ports/lang/p5-JavaScript-SpiderMonkey
 p5-javascript-squish            ports/lang/p5-JavaScript-Squish
@@ -15812,6 +15820,7 @@ pear-PHPUnit2                   ports/devel/pear-PHPUnit2
 pear-PHPUnit3                   ports/devel/pear-PHPUnit3
 pear-PHP_Archiv                 ports/archivers/pear-PHP_Archiv
 pear-PHP_Beautifier             ports/devel/pear-PHP_Beautifier
+pear-PHP_CodeSniffer            ports/devel/pear-PHP_CodeSniffer
 pear-PHP_Compat                 ports/devel/pear-PHP_Compat
 pear-PHP_CompatInfo             ports/devel/pear-PHP_CompatInfo
 pear-PHP_Parser                 ports/devel/pear-PHP_Parser
@@ -16060,6 +16069,7 @@ pear-pear_info                  ports/devel/pear-PEAR_Info
 pear-pear_packagefilemanager    ports/devel/pear-PEAR_PackageFileManager
 pear-php_archiv                 ports/archivers/pear-PHP_Archiv
 pear-php_beautifier             ports/devel/pear-PHP_Beautifier
+pear-php_codesniffer            ports/devel/pear-PHP_CodeSniffer
 pear-php_compat                 ports/devel/pear-PHP_Compat
 pear-php_compatinfo             ports/devel/pear-PHP_CompatInfo
 pear-php_parser                 ports/devel/pear-PHP_Parser
@@ -17194,6 +17204,7 @@ py-bsddb                        ports/databases/py-bsddb
 py-bsddb3                       ports/databases/py-bsddb3
 py-bulksms                      ports/comms/py-bulksms
 py-cairo                        ports/graphics/py-cairo
+py-cclib                        ports/devel/py-cclib
 py-cdb                          ports/databases/py-cdb
 py-cddb                         ports/audio/py-cddb
 py-celementtree                 ports/devel/py-celementtree
@@ -17294,10 +17305,12 @@ py-gdchart2                     ports/graphics/py-gdchart2
 py-generate                     ports/devel/py-generate
 py-genshi                       ports/textproc/py-genshi
 py-geoip                        ports/net/py-GeoIP
+py-geojson                      ports/devel/py-geojson
 py-geotypes                     ports/devel/py-geotypes
 py-gimp                         ports/graphics/py-gimp
 py-gingin                       ports/www/py-GinGin
 py-glewpy                       ports/graphics/py-glewpy
+py-gmpy                         ports/math/py-gmpy
 py-gnome                        ports/x11-toolkits/py-gnome
 py-gnome-desktop                ports/x11-toolkits/py-gnome-desktop
 py-gnome-extras                 ports/x11-toolkits/py-gnome-extras
@@ -17491,8 +17504,10 @@ py-pydasm                       ports/devel/py-pydasm
 py-pydot                        ports/graphics/py-pydot
 py-pyftpdlib                    ports/ftp/py-pyftpdlib
 py-pygments                     ports/textproc/py-pygments
+py-pygpx                        ports/devel/py-pygpx
 py-pygresql                     ports/databases/py-PyGreSQL
 py-pylons                       ports/www/py-pylons
+py-pymarc                       ports/devel/py-pymarc
 py-pypcap                       ports/net/py-pypcap
 py-pypgsql                      ports/databases/py-pyPgSQL
 py-pyproj                       ports/graphics/py-pyproj
@@ -17568,6 +17583,7 @@ py-sexy                         ports/x11-toolkits/py-sexy
 py-sgflib                       ports/games/py-sgflib
 py-sgfsummary                   ports/games/py-sgfsummary
 py-sgrep                        ports/textproc/py-sgrep
+py-shapely                      ports/devel/py-shapely
 py-simplejson                   ports/devel/py-simplejson
 py-simpleparse                  ports/devel/py-simpleparse
 py-simpletal                    ports/devel/py-simpletal
@@ -19404,6 +19420,7 @@ sparc-rtems-gdb                 ports/devel/sparc-rtems-gdb
 sparc-rtems-objc                ports/devel/sparc-rtems-objc
 spassgen                        ports/sysutils/spassgen
 spatialindex                    ports/devel/spatialindex
+spatialite                      ports/databases/spatialite
 spcaview                        ports/graphics/spcaview
 spdict                          ports/devel/spdict
 spe                             ports/editors/spe
@@ -21382,6 +21399,7 @@ xdelta3                         ports/misc/xdelta3
 xdemineur                       ports/games/xdemineur
 xdesktopwaves                   ports/games/xdesktopwaves
 xdeview                         ports/converters/xdeview
+xdg-user-dirs                   ports/devel/xdg-user-dirs
 xdg-utils                       ports/devel/xdg-utils
 xdgagrab                        ports/graphics/xdgagrab
 xdialog                         ports/x11/xdialog
