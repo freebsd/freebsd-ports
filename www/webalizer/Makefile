@@ -17,6 +17,9 @@ DISTFILES=	${DISTNAME}.tgz:main webalizer-geodb-20080701.tgz:main
 .if defined(WITH_GEOIP) || make(makesum) || defined(FETCH_ALL)
 DISTFILES+=	world.small.zip:flags special.small.zip:flags
 .endif
+.if defined(WITH_GEODB) || make(makesum) || defined(FETCH_ALL)
+DISTFILES+=	webalizer-geodb-20080701.tgz:main
+.endif
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT=	A web server log file analysis program
@@ -43,6 +46,12 @@ WEBALIZER_LANG?=english
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_GEODB)
+PLIST_SUB+=	WITH_GEODB=""
+.else
+PLIST_SUB+=	WITH_GEODB="@comment "
+.endif
 
 .if defined(WITH_GEOIP)
 WEBALIZER_SUFFIX=	-geoip
@@ -172,9 +181,13 @@ post-install:
 .for i in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/${i:S/^${PKGNAMEPREFIX}//} ${PREFIX}/man/man1/${i}
 .endfor
-.if defined(WITH_GEOIP)
+.if defined(WITH_GEODB) || defined(WITH_GEOIP)
 	${MKDIR} ${PREFIX}/share/geolizer
+.endif
+.if defined(WITH_GEOIP)
 	@${INSTALL_DATA} ${WRKDIR}/*.png ${PREFIX}/share/geolizer/
+.endif
+.if defined(WITH_GEODB)
 	@${INSTALL_DATA} ${WRKDIR}/GeoDB.dat ${PREFIX}/share/geolizer/
 .endif
 .if !defined(NOPORTDOCS)
