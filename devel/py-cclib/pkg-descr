@@ -1,0 +1,6 @@
+Py-cclib is an open source library, written in Python, for parsing and
+interpreting the results of computational chemistry packages. The current
+version, cclib 0.9, parses output files from ADF, GAMESS (US), GAMESS-UK,
+Gaussian, Jaguar, Molpro, ORCA and PC GAMESS.
+
+WWW:  http://cclib.sourceforge.net/
