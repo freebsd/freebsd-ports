@@ -1,0 +1,22 @@
+%%PYTHON_SITELIBDIR%%/pg8000/__init__.py
+%%PYTHON_SITELIBDIR%%/pg8000/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pg8000/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pg8000/dbapi.py
+%%PYTHON_SITELIBDIR%%/pg8000/dbapi.pyc
+%%PYTHON_SITELIBDIR%%/pg8000/dbapi.pyo
+%%PYTHON_SITELIBDIR%%/pg8000/errors.py
+%%PYTHON_SITELIBDIR%%/pg8000/errors.pyc
+%%PYTHON_SITELIBDIR%%/pg8000/errors.pyo
+%%PYTHON_SITELIBDIR%%/pg8000/interface.py
+%%PYTHON_SITELIBDIR%%/pg8000/interface.pyc
+%%PYTHON_SITELIBDIR%%/pg8000/interface.pyo
+%%PYTHON_SITELIBDIR%%/pg8000/protocol.py
+%%PYTHON_SITELIBDIR%%/pg8000/protocol.pyc
+%%PYTHON_SITELIBDIR%%/pg8000/protocol.pyo
+%%PYTHON_SITELIBDIR%%/pg8000/types.py
+%%PYTHON_SITELIBDIR%%/pg8000/types.pyc
+%%PYTHON_SITELIBDIR%%/pg8000/types.pyo
+%%PYTHON_SITELIBDIR%%/pg8000/util.py
+%%PYTHON_SITELIBDIR%%/pg8000/util.pyc
+%%PYTHON_SITELIBDIR%%/pg8000/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pg8000
