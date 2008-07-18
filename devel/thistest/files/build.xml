@@ -12,7 +12,7 @@
           <javac srcdir="${src}" destdir="${build}"/>
           <jar jarfile="thisTest.jar" basedir="${build}">
                <manifest>
-                    <attribute name="Main-Class" value="dev.thistest.ui.swing.Main"/>
+                    <attribute name="Main-Class" value="dev.thistest.ui.cmdline.Main"/>
                </manifest>
           </jar>
      </target>
