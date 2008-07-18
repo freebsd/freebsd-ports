@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	garmin-utils
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	comms geography
 MASTER_SITES=	ftp://ftp.snafu.org/pub/
 
