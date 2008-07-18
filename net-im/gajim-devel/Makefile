@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	20080309
-PORTREVISION=	4
+PORTVERSION=	20080713
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2008-03-09
+DISTNAME=	${PORTNAME}-2008-07-13
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
@@ -19,11 +18,11 @@ COMMENT=	Gajim is a Jabber client based on a plugin system
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl
 
-USE_XORG=	x11 xext xscrnsaver
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	2.4+
+USE_XORG=	x11 xext xscrnsaver
 
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I ${LOCALBASE}/include" \
 		LDFLAGS="-L ${LOCALBASE}/lib" PYTHON=${PYTHON_CMD}
@@ -36,7 +35,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.11.4.2-svn
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.11.4.4-svn
 
 MAN1=		gajim.1
 
