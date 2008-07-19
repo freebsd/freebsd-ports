@@ -126,6 +126,7 @@
     SUBDIR += ksmoothdock
     SUBDIR += ktagebuch
     SUBDIR += kuake
+    SUBDIR += libopensync-plugin-evolution2
     SUBDIR += lightning-xpi
     SUBDIR += linux-sunbird
     SUBDIR += ljcharm
