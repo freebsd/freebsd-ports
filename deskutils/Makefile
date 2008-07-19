@@ -128,6 +128,7 @@
     SUBDIR += kuake
     SUBDIR += libopensync-plugin-evolution2
     SUBDIR += libopensync-plugin-python
+    SUBDIR += libopensync-plugin-python-devel
     SUBDIR += lightning-xpi
     SUBDIR += linux-sunbird
     SUBDIR += ljcharm
