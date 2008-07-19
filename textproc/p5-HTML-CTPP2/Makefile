@@ -16,6 +16,8 @@ COMMENT=	Perl interface module to CTPP2 library
 
 LIB_DEPENDS=	ctpp2:${PORTSDIR}/textproc/ctpp2
 
+BROKEN=		Does not compile
+
 PERL_CONFIGURE=	yes
 
 MAN3=		HTML::CTPP2.3
