@@ -233,6 +233,9 @@ bin/rebuild-pysnmp-mibs
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/IANA-MALLOC-MIB.py
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/IANA-MALLOC-MIB.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/IANA-MALLOC-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/IANA-MAU-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/IANA-MAU-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/IANA-MAU-MIB.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/IANA-PRINTER-MIB.py
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/IANA-PRINTER-MIB.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp_mibs/v4/IANA-PRINTER-MIB.pyo
