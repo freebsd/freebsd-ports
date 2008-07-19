@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	isomaster
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://littlesvr.ca/isomaster/releases/
 
