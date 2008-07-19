@@ -1,6 +1,6 @@
 # New ports collection makefile for:	bpkg
 # Date created:				24 June 2007
-# Whom:					Andy Kosela <andy.kosela@gmail.com>
+# Whom:					Andy Kosela <akosela@andykosela.com>
 #
 # $FreeBSD$
 #
@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	bpkg
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
