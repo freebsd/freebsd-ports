@@ -1,8 +1,4 @@
 bin/gprename
-share/applications/gprename.desktop
-share/pixmaps/gprename/gprename.png
-share/pixmaps/gprename/gprename_debian_menu_icon.xpm
-share/pixmaps/gprename/gprename_nautilus-action.png
 share/locale/ca/LC_MESSAGES/gprename.mo
 share/locale/de/LC_MESSAGES/gprename.mo
 share/locale/es/LC_MESSAGES/gprename.mo
@@ -12,5 +8,12 @@ share/locale/it/LC_MESSAGES/gprename.mo
 share/locale/nl/LC_MESSAGES/gprename.mo
 share/locale/pl/LC_MESSAGES/gprename.mo
 share/locale/pt_BR/LC_MESSAGES/gprename.mo
-@dirrm share/pixmaps/gprename
+share/locale/sv/LC_MESSAGES/gprename.mo
+share/locale/zh_CN/LC_MESSAGES/gprename.mo
+share/pixmaps/gprename/gprename.png
+share/pixmaps/gprename/gprename_debian_menu_icon.xpm
+share/pixmaps/gprename/gprename_nautilus-action.png
+share/applications/gprename.desktop
+share/applications/gprename.schemas
 @dirrmtry share/applications
+@dirrm share/pixmaps/gprename
