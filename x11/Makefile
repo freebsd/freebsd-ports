@@ -263,6 +263,7 @@
     SUBDIR += slim
     SUBDIR += slock
     SUBDIR += smproxy
+    SUBDIR += sselp
     SUBDIR += stalonetray
     SUBDIR += startup-notification
     SUBDIR += swarp

@@ -1,0 +1,6 @@
+Simple X selection printer. Prints the X selection to stdout.
+If there is no X client owning the selection it just exits.
+Useful for scripts where you can query the X selection
+without pressing mouse Button2 in cumbersome ways.
+
+WWW: http://www.suckless.org/programs/sselp.html
