@@ -15,11 +15,11 @@ HDRS	      =
 
 INSTALL	      = install
 
-LD	      = $(CC)
+LD	      = $(F77)
 
-LDFLAGS	      = -L%%LOCALBASE%%/lib %%GCCLIBDIR%%
+LDFLAGS	      = -L%%LOCALBASE%%/lib
 
-LIBS	      = -lgd -lpng -ljpeg -lX11 -lz %%FORTRANLIBS%%  -lm
+LIBS	      = -lgd -lpng -ljpeg -lX11 -lz -lm
 
 MAKEFILE      = Makefile
 
