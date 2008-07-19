@@ -1120,6 +1120,7 @@
     SUBDIR += py-HTMLgen
     SUBDIR += py-Lightbox
     SUBDIR += py-albatross
+    SUBDIR += py-amf
     SUBDIR += py-apachelog
     SUBDIR += py-beaker
     SUBDIR += py-beautifulsoup
