@@ -1,0 +1,8 @@
+bin/vconvert
+lib/opensync-1.0/formats/vformat-xmlformat.so
+lib/opensync-1.0/formats/vcard.so
+lib/opensync-1.0/formats/vevent.so
+lib/opensync-1.0/formats/vtodo.so
+lib/opensync-1.0/formats/vjournal.so
+lib/opensync-1.0/formats/vnote.so
+@dirrmtry lib/opensync-1.0/formats
