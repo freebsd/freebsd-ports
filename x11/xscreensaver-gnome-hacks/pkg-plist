@@ -173,6 +173,7 @@ bin/xscreensaver-hacks/sballs
 bin/xscreensaver-hacks/shadebobs
 bin/xscreensaver-hacks/sierpinski
 bin/xscreensaver-hacks/sierpinski3d
+bin/xscreensaver-hacks/skytentacles
 bin/xscreensaver-hacks/slidescreen
 bin/xscreensaver-hacks/slip
 bin/xscreensaver-hacks/sonar
@@ -392,6 +393,7 @@ share/xscreensaver/config/sballs.xml
 share/xscreensaver/config/shadebobs.xml
 share/xscreensaver/config/sierpinski.xml
 share/xscreensaver/config/sierpinski3d.xml
+share/xscreensaver/config/skytentacles.xml
 share/xscreensaver/config/slidescreen.xml
 share/xscreensaver/config/slip.xml
 share/xscreensaver/config/sonar.xml
