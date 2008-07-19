@@ -186,7 +186,8 @@ emc2*			math/emc2		Contact author personally
 						regarding commercial use
 et-linux-*		games/linux-enemyterritory Redistribution limited
 etf_*			games/linux-enemyterritory-fortress Redistribution limited
-etqw			games/linux-etqw-server Redistribution limited
+etqw*			games/linux-etqw-server Redistribution limited
+etqw*			games/linux-etqw-demo-server Redistribution limited
 ezmlm-*			mail/ezmlm		No license -- see
 						http://cr.yp.to/softwarelaw.html
 ezmlm-*			mail/ezmlm-idx		No license -- see
