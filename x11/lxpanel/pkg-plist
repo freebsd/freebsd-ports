@@ -65,7 +65,6 @@ lib/lxpanel/plugins/volume.so
 @dirrmtry lib/lxpanel
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/profile/default/panels
-@dirrm %%DATADIR%%/profile/default/config
 @dirrm %%DATADIR%%/profile/default
 @dirrm %%DATADIR%%/profile
 @dirrm %%DATADIR%%/images
