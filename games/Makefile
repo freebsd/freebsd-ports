@@ -454,6 +454,7 @@
     SUBDIR += linux-savage-samuraiwars
     SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-steam
+    SUBDIR += linux-unrealgold
     SUBDIR += linux-uplink-demo
     SUBDIR += linux-ut
     SUBDIR += linux-ut2003-demo
