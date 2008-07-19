@@ -1,0 +1,9 @@
+Adds XHTML Ruby support. Ruby texts will be rendered above the base texts,
+as a small text. This supports both simple ruby and complex ruby of W3C spec.
+
+Testcases:
+* http://www.w3.org/International/tests/sec-ruby-markup-1
+* http://www.aozora.gr.jp/cards/000035/files/1567_14913.html
+* http://www.keishicho.metro.tokyo.jp/sikumi/pipo/music/music.htm
+
+WWW: http://piro.sakura.ne.jp/xul/_rubysupport.html.en
