@@ -1,0 +1,8 @@
+vordog is a collection of a driver and a user space daemon for FreeBSD to
+leverage watchdog timer of Vortex86 SoC . vordog is also watchdog(9)
+compatible. It is as a timer source of watchdog(9), you can use it with
+watchdog(4), watchdog(8), and watchdogd(8).
+
+You can get vordog from repository with Mercurial.
+
+WWW: http://www.assembla.com/spaces/vordog
