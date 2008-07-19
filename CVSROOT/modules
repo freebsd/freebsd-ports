@@ -384,6 +384,7 @@ akpop3d                         ports/mail/akpop3d
 alabastra                       ports/devel/alabastra
 alac                            ports/audio/alac
 alacarte                        ports/deskutils/alacarte
+alarm-clock                     ports/x11-clocks/alarm-clock
 albumshaper                     ports/graphics/albumshaper
 ald                             ports/devel/ald
 aldo                            ports/comms/aldo
@@ -926,6 +927,7 @@ bglibs                          ports/devel/bglibs
 bgpq                            ports/net-mgmt/bgpq
 bgrab                           ports/news/bgrab
 bgrot                           ports/x11/bgrot
+bgs                             ports/x11/bgs
 biabam                          ports/mail/biabam
 bib2html                        ports/textproc/bib2html
 bibcursed                       ports/print/bibcursed
@@ -1616,6 +1618,7 @@ comiccron                       ports/sysutils/comiccron
 comix                           ports/graphics/comix
 commonclipse                    ports/java/commonclipse
 commoncpp                       ports/devel/commoncpp
+commonist                       ports/www/commonist
 compaq-cc                       ports/lang/compaq-cc
 compat3x                        ports/misc/compat3x
 compat4x                        ports/misc/compat4x
@@ -1652,6 +1655,7 @@ conserver                       ports/comms/conserver
 conserver-com                   ports/comms/conserver-com
 consolehm                       ports/sysutils/consolehm
 consolekit                      ports/sysutils/consolekit
+conspire                        ports/irc/conspire
 construo                        ports/games/construo
 contact-lookup-applet           ports/mail/contact-lookup-applet
 contacts                        ports/deskutils/contacts
@@ -2310,6 +2314,7 @@ dotter                          ports/biology/dotter
 dovecot                         ports/mail/dovecot
 dovecot-antispam                ports/mail/dovecot-antispam
 dovecot-devel                   ports/mail/dovecot-devel
+dovecot-managesieve             ports/mail/dovecot-managesieve
 dovecot-sieve                   ports/mail/dovecot-sieve
 downloader                      ports/ftp/downloader
 downtime                        ports/sysutils/downtime
@@ -2362,6 +2367,7 @@ drupal5-insert-view             ports/www/drupal5-insert-view
 drupal5-nice_menus              ports/www/drupal5-nice_menus
 drupal5-securepages             ports/www/drupal5-securepages
 drupal5-simplenews              ports/www/drupal5-simplenews
+drupal5-tagadelic               ports/www/drupal5-tagadelic
 drupal5-tapir                   ports/www/drupal5-tapir
 drupal5-taxonomy_access         ports/www/drupal5-taxonomy_access
 drupal5-taxonomy_ticker         ports/www/drupal5-taxonomy_ticker
@@ -4269,6 +4275,7 @@ gnowavcut                       ports/audio/gnowavcut
 gnu-radius                      ports/net/gnu-radius
 gnu-regexp                      ports/java/gnu-regexp
 gnu-unifont                     ports/x11-fonts/gnu-unifont
+gnu-unifont-ttf                 ports/x11-fonts/gnu-unifont-ttf
 gnu-watch                       ports/misc/gnu-watch
 gnubg                           ports/games/gnubg
 gnubiff                         ports/mail/gnubiff
@@ -4585,6 +4592,7 @@ gstreamer-plugins-x264          ports/multimedia/gstreamer-plugins-x264
 gstreamer-plugins-xvid          ports/multimedia/gstreamer-plugins-xvid
 gstreamermm                     ports/multimedia/gstreamermm
 gsubedit                        ports/multimedia/gsubedit
+gsview                          ports/print/gsview
 gsynaptics                      ports/x11/gsynaptics
 gsystem                         ports/science/gsystem
 gtamsanalyzer                   ports/science/gtamsanalyzer
@@ -4805,6 +4813,7 @@ hamachi                         ports/security/hamachi
 hamfax                          ports/comms/hamfax
 hamlib                          ports/comms/hamlib
 hammerhead                      ports/sysutils/hammerhead
+hamsterdb                       ports/databases/hamsterdb
 handbrake                       ports/multimedia/handbrake
 hangman                         ports/games/hangman
 happydoc                        ports/devel/happydoc
@@ -5991,6 +6000,7 @@ jed                             ports/editors/jed
 jedit                           ports/editors/jedit
 jedit-devel                     ports/editors/jedit-devel
 jep                             ports/devel/jep
+jericho-html                    ports/www/jericho-html
 jerm                            ports/comms/jerm
 jesred                          ports/www/jesred
 jetpack                         ports/games/jetpack
@@ -7126,6 +7136,10 @@ libopendaap                     ports/devel/libopendaap
 libopennet                      ports/net/libopennet
 libopenraw                      ports/graphics/libopenraw
 libopensync                     ports/devel/libopensync
+libopensync-plugin-evolution2   ports/deskutils/libopensync-plugin-evolution2
+libopensync-plugin-python       ports/deskutils/libopensync-plugin-python
+libopensync-plugin-python-devel  ports/deskutils/libopensync-plugin-python-devel
+libopensync-plugin-vformat-devel  ports/deskutils/libopensync-plugin-vformat-devel
 libopensync022                  ports/devel/libopensync022
 liboping                        ports/net/liboping
 libopkele                       ports/devel/libopkele
@@ -7452,6 +7466,8 @@ linux-enemyterritory-shrub      ports/games/linux-enemyterritory-shrub
 linux-enemyterritory-tce        ports/games/linux-enemyterritory-tce
 linux-epsxe                     ports/emulators/linux-ePSXe
 linux-esound                    ports/audio/linux-esound
+linux-etqw-demo-server          ports/games/linux-etqw-demo-server
+linux-etqw-server               ports/games/linux-etqw-server
 linux-expat                     ports/textproc/linux-expat
 linux-firefox                   ports/www/linux-firefox
 linux-firefox-devel             ports/www/linux-firefox-devel
@@ -7545,6 +7561,7 @@ linux-seamonkey-devel           ports/www/linux-seamonkey-devel
 linux-sha-1_collision_search_graz  ports/math/linux-SHA-1_collision_search_graz
 linux-shoutcast                 ports/audio/linux-shoutcast
 linux-spheresofchaos-demo       ports/games/linux-spheresofchaos-demo
+linux-ssamtfe                   ports/games/linux-ssamtfe
 linux-steam                     ports/games/linux-steam
 linux-sun-jdk13                 ports/java/linux-sun-jdk13
 linux-sun-jdk14                 ports/java/linux-sun-jdk14
@@ -7557,6 +7574,7 @@ linux-thunderbird               ports/mail/linux-thunderbird
 linux-tiff                      ports/graphics/linux-tiff
 linux-ucl                       ports/archivers/linux-ucl
 linux-ungif                     ports/graphics/linux-ungif
+linux-unrealgold                ports/games/linux-unrealgold
 linux-uplink-demo               ports/games/linux-uplink-demo
 linux-upx                       ports/archivers/linux-upx
 linux-ut                        ports/games/linux-ut
@@ -10066,6 +10084,7 @@ p5-DBIx-AnyDBD                  ports/databases/p5-DBIx-AnyDBD
 p5-DBIx-Browse                  ports/databases/p5-DBIx-Browse
 p5-DBIx-Class                   ports/databases/p5-DBIx-Class
 p5-DBIx-Class-DigestColumns     ports/databases/p5-DBIx-Class-DigestColumns
+p5-DBIx-Class-DynamicSubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-DBIx-Class-EncodeColumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-DBIx-Class-HTMLWidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-DBIx-Class-Loader            ports/databases/p5-DBIx-Class-Loader
@@ -13250,6 +13269,7 @@ p5-dbix-anydbd                  ports/databases/p5-DBIx-AnyDBD
 p5-dbix-browse                  ports/databases/p5-DBIx-Browse
 p5-dbix-class                   ports/databases/p5-DBIx-Class
 p5-dbix-class-digestcolumns     ports/databases/p5-DBIx-Class-DigestColumns
+p5-dbix-class-dynamicsubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-dbix-class-encodecolumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-dbix-class-htmlwidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-dbix-class-loader            ports/databases/p5-DBIx-Class-Loader
@@ -17447,6 +17467,7 @@ py-ogg                          ports/audio/py-ogg
 py-omniorb                      ports/devel/py-omniorb
 py-oops                         ports/databases/py-oops
 py-openal                       ports/audio/py-openal
+py-openbabel                    ports/science/py-openbabel
 py-opengl                       ports/graphics/py-opengl
 py-openid                       ports/security/py-openid
 py-openssl                      ports/security/py-openssl
@@ -17470,6 +17491,7 @@ py-pdf                          ports/print/py-pdf
 py-pefile                       ports/devel/py-pefile
 py-period                       ports/devel/py-period
 py-pexpect                      ports/misc/py-pexpect
+py-pg8000                       ports/databases/py-pg8000
 py-plex                         ports/devel/py-plex
 py-ply                          ports/devel/py-ply
 py-pmock                        ports/devel/py-pmock
@@ -17522,6 +17544,7 @@ py-pysqlite22                   ports/databases/py-pysqlite22
 py-pysqlite23                   ports/databases/py-pysqlite23
 py-pytz                         ports/devel/py-pytz
 py-pyutil                       ports/devel/py-pyutil
+py-pywebdav                     ports/www/py-pywebdav
 py-pyx                          ports/graphics/py-PyX
 py-pyx12                        ports/textproc/py-pyx12
 py-pyxfce                       ports/x11-toolkits/py-pyxfce
@@ -19576,6 +19599,7 @@ sscalc                          ports/astro/sscalc
 sscep                           ports/security/sscep
 ssddiff                         ports/textproc/ssddiff
 ssed                            ports/editors/ssed
+sselp                           ports/x11/sselp
 ssh                             ports/security/ssh
 ssh-gui                         ports/security/ssh-gui
 ssh-multiadd                    ports/security/ssh-multiadd
@@ -20855,6 +20879,7 @@ vomit                           ports/net/vomit
 vor                             ports/games/vor
 vorbis-tools                    ports/audio/vorbis-tools
 vorbisgain                      ports/audio/vorbisgain
+vordog                          ports/sysutils/vordog
 vp                              ports/graphics/vp
 vpce                            ports/emulators/vpce
 vpnc                            ports/security/vpnc
