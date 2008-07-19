@@ -19,8 +19,8 @@ Note for MySQL users:
     
     If you have enabled mysql support, it is needed to point out to SQL
     Developer where the MySQL JDBC classes are. Go to Tools -> Preferences
-    menu, select Database -> Third Party JDBC Drivers and add
-    %%JAVALIBDIR%%/mysql-connector-java.jar
-    in the browser.
+    menu, select Database -> Third Party JDBC Drivers and add the proper jar.
+    Do not install 5.1 version of mysql jdbc connector; see note 7 of
+    http://www.oracle.com/technology/products/database/sql_developer/files/relnotes_v151.html#sec1
 
 ************************************************************************

@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	1.5.0.53.38
+PORTVERSION=	1.5.1.54.40
 DISTVERSIONSUFFIX=-no-jre
-PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
-DISTNAME=	${PORTNAME}-5338${DISTVERSIONSUFFIX}
+DISTNAME=	${PORTNAME}-5440${DISTVERSIONSUFFIX}
 DIST_SUBDIR=	oracle
 
 MAINTAINER=	jjuanino@gmail.com
@@ -32,13 +31,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
 
-OPTIONS=	MYSQL "Enable connection to MySQL databases" off
-
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
-.endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
 ECHO_MSG=		${PRINTF} %b
@@ -63,7 +56,7 @@ do-install:
 			  -e 's|%JAVA_HOME%|${JAVA_HOME}|' \
 	    ${WRKSRC}/sqldeveloper.sh \
 	    ${WRKSRC}/sqlcli
-	@${REINPLACE_CMD} -e 's|/bin/bash|/usr/local/bin/bash|' \
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 	    ${WRKSRC}/sqldeveloper.sh \
 	    ${WRKSRC}/sqlcli \
 	    ${WRKSRC}/ide/bin/launcher.sh \

@@ -65,7 +65,6 @@ bin/sqldeveloper
 %%DATADIR%%/ide/themes/creating_themes.html
 %%DATADIR%%/ide/themes/fusionblue.jar
 %%DATADIR%%/ide/themes/sizingmargins.png
-%%DATADIR%%/j2ee/home/lib/activation.jar
 %%DATADIR%%/j2ee/home/lib/el-ri.jar
 %%DATADIR%%/j2ee/home/lib/pcl.jar
 %%DATADIR%%/j2ee/home/lib/servlet.jar
@@ -116,13 +115,8 @@ bin/sqldeveloper
 %%DATADIR%%/jlib/share.jar
 %%DATADIR%%/jlib/xmlef.jar
 %%DATADIR%%/lib/classgen.jar
-%%DATADIR%%/lib/java/api/jaxb-api.jar
-%%DATADIR%%/lib/java/api/jsr173_api.jar
 %%DATADIR%%/lib/java/shared/oracle.javatools/11.1.1.0.0/javamodel-rt.jar
 %%DATADIR%%/lib/java/shared/oracle.javatools/11.1.1.0.0/javatools-nodeps.jar
-%%DATADIR%%/lib/java/shared/sun.jaxb/2.0/jaxb-impl.jar
-%%DATADIR%%/lib/java/shared/sun.jaxb/2.0/jaxb-xjc.jar
-%%DATADIR%%/lib/java/shared/sun.jaxb/2.0/jaxb1-impl.jar
 %%DATADIR%%/lib/oraclexsql.jar
 %%DATADIR%%/lib/xml.jar
 %%DATADIR%%/lib/xmlcomp.jar
@@ -211,12 +205,9 @@ bin/sqldeveloper
 @dirrm %%DATADIR%%/sqldeveloper
 @dirrm %%DATADIR%%/rdbms/jlib
 @dirrm %%DATADIR%%/rdbms
-@dirrm %%DATADIR%%/lib/java/shared/sun.jaxb/2.0
-@dirrm %%DATADIR%%/lib/java/shared/sun.jaxb
 @dirrm %%DATADIR%%/lib/java/shared/oracle.javatools/11.1.1.0.0
 @dirrm %%DATADIR%%/lib/java/shared/oracle.javatools
 @dirrm %%DATADIR%%/lib/java/shared
-@dirrm %%DATADIR%%/lib/java/api
 @dirrm %%DATADIR%%/lib/java
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/jlib
