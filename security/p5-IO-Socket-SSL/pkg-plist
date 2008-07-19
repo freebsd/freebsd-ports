@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/SSL/.packlist
 %%SITE_PERL%%/IO/Socket/SSL.pm
 %%PORTDOCS%%%%EXAMPLESDIR%%/async_https_server.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/lwp-with-verifycn.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl_client.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/ssl_server.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
