@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080719:
+  AFFECTS: users of x11-fm/gprename
+  AUTHOR: Martin Tournoij <carpetsmoker@rwxrwxrwx.net>
+
+  GPRename configuration files now live ~/.config/gprename instead of ~/, to
+  upgrade use:
+
+  % mkdir -p ~/.config/gprename
+  % mv ~/.gprename ~/.config/gprename/gprename
+  % mv ~/.gprename_log ~/.config/gprename/gprename_log
+
 20080717:
   AFFECTS: Users of devel/anjuta
   Author: gnome@FreeBSD.org
