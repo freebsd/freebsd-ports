@@ -1,0 +1,5 @@
+The bgs program allows you to tailor the appearance of the background
+("root") window on a workstation display running X.
+bgs uses imlib2 for image rendering and rotates the images automaticly.
+It is made for dynamic Xinerama/Xrandr setups such as used with notebooks,
+but it works very fine in any setup.
