@@ -1504,6 +1504,7 @@
     SUBDIR += xpi-noscript
     SUBDIR += xpi-num2web
     SUBDIR += xpi-pdf_download
+    SUBDIR += xpi-permatabs
     SUBDIR += xpi-preferential
     SUBDIR += xpi-quick-locale-switcher
     SUBDIR += xpi-quickproxy
