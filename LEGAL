@@ -638,6 +638,7 @@ uppaal-*.zip		devel/uppaal		Downloading requires completion
 upsmon*			sysutils/upsmon		Redistribute only with
 						original source code
 ut_linux_mgr_*		sysutils/linux-megamgr	Redistribution prohibited
+linux-unrealgold*	games/linux-unrealgold	Redistribution limited
 linux-ut/*		games/linux-ut		Redistribution limited
 uplink-demo		games/linux-uplink-demo	Redistribution limited
 ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
