@@ -20,6 +20,7 @@
     SUBDIR += bbuname
     SUBDIR += beforelight
     SUBDIR += bgrot
+    SUBDIR += bgs
     SUBDIR += bigreqsproto
     SUBDIR += bitmap
     SUBDIR += blast
