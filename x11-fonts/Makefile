@@ -78,6 +78,7 @@
     SUBDIR += gfe
     SUBDIR += gnome-font-sampler
     SUBDIR += gnu-unifont
+    SUBDIR += gnu-unifont-ttf
     SUBDIR += indic-ttf
     SUBDIR += intlfonts
     SUBDIR += jmk-x11-fonts
