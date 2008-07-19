@@ -597,6 +597,8 @@
 %%ZOPEPRODUCTDIR%%/Archetypes/interfaces/_templatemixin.pyc
 %%ZOPEPRODUCTDIR%%/Archetypes/interfaces/_validator.py
 %%ZOPEPRODUCTDIR%%/Archetypes/interfaces/_validator.pyc
+%%ZOPEPRODUCTDIR%%/Archetypes/interfaces/_viewlet.py
+%%ZOPEPRODUCTDIR%%/Archetypes/interfaces/_viewlet.pyc
 %%ZOPEPRODUCTDIR%%/Archetypes/interfaces/_vocabulary.py
 %%ZOPEPRODUCTDIR%%/Archetypes/interfaces/_vocabulary.pyc
 %%ZOPEPRODUCTDIR%%/Archetypes/interfaces/annotations.py
@@ -8812,13 +8814,14 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/dependencies.zcml
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/docs/__init__.py
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/docs/__init__.pyc
-%%ZOPELIBPYTHONDIR%%/plone/app/customerize/docs/failing-testCustomizeView.txt
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/docs/testBrowserLayers.txt
+%%ZOPELIBPYTHONDIR%%/plone/app/customerize/docs/testCustomizeView.txt
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/registration.py
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/registration.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/registrations.pt
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/tests/__init__.py
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/tests/__init__.pyc
+%%ZOPELIBPYTHONDIR%%/plone/app/customerize/tests/duplicate_viewlet.zcml
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/tests/interfaces.py
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/tests/interfaces.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/customerize/tests/layer.py
@@ -9289,6 +9292,9 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/docs/testCircularReferences.txt
 %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/docs/testCircularReferencesWithHelper.txt
 %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/docs/testConfirmationPageIntegration.txt
+%%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/docs/testFileRemoval.txt
+%%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/docs/testFileWithSpacesRemoval.txt
+%%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/docs/testIntegrityBreachesBug.txt
 %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/docs/testInterReferences.txt
 %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/docs/testMultipleFilesRemoval.txt
 %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/docs/testMultipleFilesRemovalWithHelper.txt
@@ -9532,6 +9538,9 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/redirector/tests/__init__.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/redirector/tests/base.py
 %%ZOPELIBPYTHONDIR%%/plone/app/redirector/tests/base.pyc
+%%ZOPELIBPYTHONDIR%%/plone/app/redirector/tests/browser.txt
+%%ZOPELIBPYTHONDIR%%/plone/app/redirector/tests/test_doctests.py
+%%ZOPELIBPYTHONDIR%%/plone/app/redirector/tests/test_doctests.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/redirector/tests/test_events.py
 %%ZOPELIBPYTHONDIR%%/plone/app/redirector/tests/test_events.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/redirector/tests/test_setup.py
