@@ -103,6 +103,7 @@
     SUBDIR += gribouy
     SUBDIR += gsfonts
     SUBDIR += gspdf
+    SUBDIR += gsview
     SUBDIR += gtklp
     SUBDIR += guitartex
     SUBDIR += gutenprint
