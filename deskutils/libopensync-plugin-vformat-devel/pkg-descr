@@ -1,0 +1,6 @@
+This plugin is based on vformat.{c,h} which got adapted from evolution e-vcard
+parser. vformat.{c,h} parsing and assembling of vObject-like formatting. The
+term vformat is often use to describe this format of vCard 2.1, vCard 3.0,
+vCalendar, iCalendar and vNote.
+
+WWW: http://www.opensync.org/
