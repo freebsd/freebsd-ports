@@ -1532,6 +1532,7 @@
     SUBDIR += xpi-vimperator
     SUBDIR += xpi-web_developer
     SUBDIR += xpi-wmlbrowser
+    SUBDIR += xpi-xhtml-ruby-support
     SUBDIR += xpi-xmpp4moz
     SUBDIR += xpi-xpcom-component-viewer
     SUBDIR += xpi-yslow
