@@ -1,22 +1,21 @@
 # New ports collection makefile for:	dataplot
 # Date created:		20 July 2003
-# Whom:			Pedro F. Giffuni <giffunip@asme.org>
+# Whom:			Pedro F. Giffuni <pfgshield-freebsd@yahoo.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	dataplot
-PORTVERSION=	20061219
-PORTREVISION=	3
+PORTVERSION=	20070224
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
-				http://www.alaskaparadise.com/freebsd/:source \
-				http://www.itl.nist.gov/div898/software/dataplot.html/:doc \
-				http://www.alaskaparadise.com/freebsd/:doc
-DISTFILES=	dpsrc.12_19_2006.tar.gz:source \
-			dpsnapsh.pdf:doc
+		LOCAL/beech:source \
+		http://www.itl.nist.gov/div898/software/dataplot.html/:doc \
+		LOCAL/beech:doc
+DISTFILES=	dpsrc.02_24_2007${EXTRACT_SUFX}:source \
+		dpsnapsh.pdf:doc
 DIST_SUBDIR=	dataplot
-EXTRACT_ONLY=	dpsrc.12_19_2006.tar.gz
+EXTRACT_ONLY=	dpsrc.02_24_2007${EXTRACT_SUFX}
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	A free software system for statistical visualization
@@ -30,16 +29,9 @@ FFLAGS+=	-fno-range-check
 MAKE_ENV+=	FFLAGS="${FFLAGS}"
 USE_XORG=	x11 xi
 NO_WRKSUBDIR=	yes
-MAXOBV?=	20000	# Make bigger if you need more observations/variable
+MAXOBV?=	100000	# Change if you need more observations/variable
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		Does not link on alpha (.got subsegment exceeds 64k)
-.endif
-
-FORTRANLIBS=	-lgfortranbegin -lgfortran
-GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 post-extract:
 	@${INSTALL_DATA} ${FILESDIR}/Makefile.tmpl ${WRKSRC}/Makefile
@@ -52,13 +44,9 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's/MAXOBV=100000/MAXOBV=${MAXOBV}/' \
 	${WRKSRC}/DPCOPA.INC
 
-pre-build:
-	${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
-	${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" -e "s+%%FORTRANLIBS%%+${FORTRANLIBS}+" ${WRKSRC}/Makefile
-
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR}  ${DOCSDIR}
+	@${INSTALL} -d  ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dpsnapsh.pdf \
 		${DOCSDIR}
 .endif
