@@ -23,6 +23,16 @@
 %%LISPDIR%%/auctex/toolbar-x.el
 %%LISPDIR%%/auctex/auto/.nosearch
 %%LISPDIR%%/auctex/style/.nosearch
+%%LISPDIR%%/auctex/style/comment.el
+%%LISPDIR%%/auctex/style/comment.elc
+%%LISPDIR%%/auctex/style/flashcards.el
+%%LISPDIR%%/auctex/style/flashcards.elc
+%%LISPDIR%%/auctex/style/icelandic.el
+%%LISPDIR%%/auctex/style/icelandic.elc
+%%LISPDIR%%/auctex/style/nomencl.el
+%%LISPDIR%%/auctex/style/nomencl.elc
+%%LISPDIR%%/auctex/style/pstricks.el
+%%LISPDIR%%/auctex/style/pstricks.elc
 %%LISPDIR%%/auctex/style/pdfsync.el
 %%LISPDIR%%/auctex/style/prosper.el
 %%LISPDIR%%/auctex/style/babel.el

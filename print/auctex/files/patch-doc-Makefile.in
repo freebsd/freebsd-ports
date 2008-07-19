@@ -1,0 +1,41 @@
+--- doc/Makefile.in.orig	2008-07-19 23:03:54.000000000 +0900
++++ doc/Makefile.in	2008-07-19 23:06:53.000000000 +0900
+@@ -70,7 +70,11 @@
+ 	done ; \
+ 	}
+ 
++.if defined(WITHOUT_AUCTEX_DOCSDIR)
++dist: $(DISTTEXTS) preview-latex.info auctex.info
++.else
+ dist: $(DISTTEXTS) preview-latex.info auctex.info tex-ref.pdf
++.endif
+ 
+ extradist: html/auctex_toc.html auctex.ps auctex.pdf tex-ref.ps
+ 
+@@ -110,6 +114,18 @@
+ auctex.info: $(AUCTEXTEXIFILES)
+ 	$(MAKEINFO) auctex.texi
+ 
++.if defined(WITHOUT_AUCTEX_DOCSDIR)
++install-auctex: auctex.info
++	-$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
++	rm -f $(DESTDIR)$(infodir)/auctex $(DESTDIR)$(infodir)/auctex-*
++	$(INSTALL_DATA) auctex.info $(DESTDIR)$(infodir)
++	for x in auctex.info-*; do \
++	  if [ -r $$x ]; then \
++	    $(INSTALL_DATA) $$x $(DESTDIR)$(infodir) ; \
++	  fi; \
++	done
++	-$(INSTALL_INFO)  --info-dir=$(DESTDIR)$(infodir) auctex.info
++.else
+ install-auctex: auctex.info tex-ref.pdf
+ 	-$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
+ 	rm -f $(DESTDIR)$(infodir)/auctex $(DESTDIR)$(infodir)/auctex-*
+@@ -123,6 +139,7 @@
+ 	-$(MKINSTALLDIRS) $(DESTDIR)$(docdir)
+ 	rm -f $(DESTDIR)$(docdir)/tex-ref.pdf
+ 	$(INSTALL_DATA) tex-ref.pdf $(DESTDIR)$(docdir)
++.endif
+ 
+ # preview
+ 
