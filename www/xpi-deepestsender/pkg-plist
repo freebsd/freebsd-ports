@@ -1,0 +1,12 @@
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/chrome/deepestsender.jar
+%%XPI_XPIDIR%%/chrome/icons/default/deepestsender.ico
+%%XPI_XPIDIR%%/chrome/icons/default/deepestsender.xpm
+%%XPI_XPIDIR%%/defaults/preferences/deepestsender.js
+%%XPI_XPIDIR%%/install.js
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/chrome/icons/default
+@dirrm %%XPI_XPIDIR%%/chrome/icons
+@dirrm %%XPI_XPIDIR%%/chrome
