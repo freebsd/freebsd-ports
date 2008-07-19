@@ -1,0 +1,8 @@
+
+You need to edit %%PREFIX%%/etc/ssamtfe.conf
+to set correct CPU frequency in SERIOUS_MHZ variable.
+
+Run the game using:
+
+# ssamtfe
+
