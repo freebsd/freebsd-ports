@@ -755,6 +755,7 @@
     SUBDIR += vils
     SUBDIR += virtualmin
     SUBDIR += vobcopy
+    SUBDIR += vordog
     SUBDIR += vstrip
     SUBDIR += vttest
     SUBDIR += wait_on
