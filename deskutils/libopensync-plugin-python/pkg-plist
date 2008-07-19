@@ -1,0 +1,6 @@
+lib/opensync/plugins/python_module.so
+lib/opensync/plugins/python_module.la
+lib/opensync/python-plugins/sample.py
+@dirrmtry lib/opensync/python-plugins
+@dirrmtry lib/opensync/plugins
+@dirrmtry lib/opensync
