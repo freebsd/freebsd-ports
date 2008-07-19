@@ -8,51 +8,67 @@
 PORTNAME=	lynx
 PORTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
 CATEGORIES=	japanese www ipv6
-MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		${MASTER_SITE_LOCAL} \
-		http://lynx.isc.org/current/
-MASTER_SITE_SUBDIR=	shige
+MASTER_SITES=	http://lynx.isc.org/current/ \
+		http://ftp2.uk.freebsd.org/sites/lynx.isc.org/current/
 DISTNAME=	${PORTNAME}${VERSION}${MINOR_VERSION}
 
-
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A terminal-based World-Wide Web Client with multi-byte modification
+COMMENT=	A terminal-based World-Wide Web Client with multi-byte modification (development version)
+
+VERSION=	2.8.7
+MINOR_VERSION=	dev.9
+
+CONFLICTS=	lynx-2.* ja-lynx-2.8.6.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}
+USE_BZIP2=	yes
+NO_LATEST_LINK=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
+		--enable-nsl-fork --enable-ipv6 \
+		--enable-cjk --enable-justify-elts --enable-internal-links \
+		--with-bzlib
 
-VERSION=	2.8.5
-MINOR_VERSION=	dev.7
-
-USE_BZIP2=	YES
-NO_LATEST_LINK=	YES
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib \
-		--libdir="${PREFIX}/${LYNX_LIB}" \
-		--disable-nls --enable-default-colors \
-		--enable-nsl-fork --enable-persistent-cookies \
-		--enable-cjk --enable-file-upload --enable-justify-elts \
-		--enable-libjs --enable-read-eta --enable-source-cache \
-		--enable-ipv6
-.if (WITH_LYNX_EXPERIMENTAL_OPTS)
+.ifndef (WITHOUT_LYNX_EXPERIMENTAL_OPTS)
 # experimental optional configure args
-CONFIGURE_ARGS+=	--enable-prettysrc --enable-color-style \
-			--enable-addrlist-page --enable-charset-choice \
-			--enable-htmlized-cfg
+USE_ICONV=	yes
+CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE} \
+		--enable-japanese-utf8 --enable-addrlist-page \
+		--enable-charset-choice
 .endif
-MAKEFILE=	makefile
-MAKE_ARGS=	helpdir=${PREFIX}/${LYNX_HELP} docdir=${PREFIX}/${LYNX_DOC}
-PLIST_SUB=	LYNX_LIB=${LYNX_LIB} LYNX_DOC=${LYNX_DOC} LYNX_HELP=${LYNX_HELP}
 
-INSTALL_TARGET=	install-full
+.if defined(ENABLE_COLOR_STYLE)
+PLIST_SUB+=	ENABLE_COLOR_STYLE=""
+.else
+CONFIGURE_ARGS+=--disable-color-style
+PLIST_SUB+=	ENABLE_COLOR_STYLE="@comment "
+.endif
+
+.if defined(ENABLE_DEFAULT_COLORS)
+CONFIGURE_ARGS+=--enable-default-colors
+.endif
+
+MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}
+MAKEFILE=	makefile
 MAN1=		lynx.1
 
-LYNX_LIB=	etc
-LYNX_DOC=	share/doc/lynx
-LYNX_HELP=	share/lynx_help
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET=	install-full
+.else
+INSTALL_TARGET=	install install-help
+.endif
+
+L_LIB=		${PREFIX}/etc
+L_HELP=		${PREFIX}/share/lynx_help
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lssl -lcrypto|-L${OPENSSLLIB} &|g' \
+		${WRKSRC}/configure
 
 post-install:
-	@/usr/sbin/chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${LYNX_DOC}
-	@/usr/sbin/chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${LYNX_HELP}
-	@/usr/sbin/chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${LYNX_LIB}/lynx.cfg
+.if !defined(NOPORTDOCS)
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+.endif
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
 
 .include <bsd.port.mk>

@@ -1,70 +1,120 @@
 bin/lynx
-%%LYNX_LIB%%/lynx.cfg
-%%LYNX_LIB%%/lynx.cfg.default
-%%LYNX_HELP%%/Lynx_users_guide.html
-%%LYNX_HELP%%/about_lynx.html
-%%LYNX_HELP%%/keystrokes/alt_edit_help.html
-%%LYNX_HELP%%/keystrokes/bashlike_edit_help.html
-%%LYNX_HELP%%/keystrokes/bookmark_help.html
-%%LYNX_HELP%%/keystrokes/cookie_help.html
-%%LYNX_HELP%%/keystrokes/dired_help.html
-%%LYNX_HELP%%/keystrokes/edit_help.html
-%%LYNX_HELP%%/keystrokes/environments.html
-%%LYNX_HELP%%/keystrokes/follow_help.html
-%%LYNX_HELP%%/keystrokes/gopher_types_help.html
-%%LYNX_HELP%%/keystrokes/history_help.html
-%%LYNX_HELP%%/keystrokes/keystroke_help.html
-%%LYNX_HELP%%/keystrokes/movement_help.html
-%%LYNX_HELP%%/keystrokes/option_help.html
-%%LYNX_HELP%%/keystrokes/other_help.html
-%%LYNX_HELP%%/keystrokes/print_help.html
-%%LYNX_HELP%%/keystrokes/scrolling_help.html
-%%LYNX_HELP%%/keystrokes/test_display.html
-%%LYNX_HELP%%/keystrokes/visited_help.html
-%%LYNX_HELP%%/keystrokes/xterm_help.html
-%%LYNX_HELP%%/lynx-dev.html
-%%LYNX_HELP%%/lynx_help_main.html
-%%LYNX_HELP%%/lynx_url_support.html
-@unexec rm -rf %D/%%LYNX_HELP%%/COPYHEADER
-@unexec rm -rf %D/%%LYNX_HELP%%/COPYING
-%%PORTDOCS%%%%LYNX_DOC%%/CHANGES
-%%PORTDOCS%%%%LYNX_DOC%%/COPYHEADER
-%%PORTDOCS%%@exec ln -sf %D/%F %D/%%LYNX_HELP%%/%f
-%%PORTDOCS%%%%LYNX_DOC%%/COPYING
-%%PORTDOCS%%@exec ln -sf %D/%F %D/%%LYNX_HELP%%/%f
-%%PORTDOCS%%%%LYNX_DOC%%/PROBLEMS
-%%PORTDOCS%%%%LYNX_DOC%%/README
-%%PORTDOCS%%%%LYNX_DOC%%/samples/blue-background.lss
-%%PORTDOCS%%%%LYNX_DOC%%/samples/bright-blue.lss
-%%PORTDOCS%%%%LYNX_DOC%%/samples/cernrules.txt
-%%PORTDOCS%%%%LYNX_DOC%%/samples/installdirs.html
-%%PORTDOCS%%%%LYNX_DOC%%/samples/jumpsUnix.html
-%%PORTDOCS%%%%LYNX_DOC%%/samples/jumpsVMS.html
-%%PORTDOCS%%%%LYNX_DOC%%/samples/keepviewer
-%%PORTDOCS%%%%LYNX_DOC%%/samples/lynxdump
-%%PORTDOCS%%%%LYNX_DOC%%/samples/lynx-keymaps
-%%PORTDOCS%%%%LYNX_DOC%%/samples/lynx.com
-%%PORTDOCS%%%%LYNX_DOC%%/samples/lynx.lss
-%%PORTDOCS%%%%LYNX_DOC%%/samples/mailcap
-%%PORTDOCS%%%%LYNX_DOC%%/samples/mailto-form.pl
-%%PORTDOCS%%%%LYNX_DOC%%/samples/mild-colors.lss
-%%PORTDOCS%%%%LYNX_DOC%%/samples/mime.types
-%%PORTDOCS%%%%LYNX_DOC%%/test/ALT88592.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/ISO_LATIN1_test.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/README.txt
-%%PORTDOCS%%%%LYNX_DOC%%/test/TestComment.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/c1.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/iso8859-1.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/iso88592.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/quickbrown.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/raw8bit.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/sgml.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/spaces.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/tabtest.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/unicode.html
-%%PORTDOCS%%%%LYNX_DOC%%/test/utf-8-demo.html
-%%PORTDOCS%%@dirrm %%LYNX_DOC%%/test
-%%PORTDOCS%%@dirrm %%LYNX_DOC%%/samples
-%%PORTDOCS%%@dirrm %%LYNX_DOC%%
-@dirrm %%LYNX_HELP%%/keystrokes
-@dirrm %%LYNX_HELP%%
+@unexec if [ -f %D/etc/lynx.cfg ] && cmp -s %D/etc/lynx.cfg %D/etc/lynx.cfg.default; then rm -f %D/etc/lynx.cfg; fi
+etc/lynx.cfg.default
+@exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
+%%ENABLE_COLOR_STYLE%%@unexec if [ -f %D/etc/lynx.lss ] && cmp -s %D/etc/lynx.lss %D/etc/lynx.lss.default; then rm -f %D/etc/lynx.lss; fi
+%%ENABLE_COLOR_STYLE%%etc/lynx.lss.default
+%%ENABLE_COLOR_STYLE%%@exec if [ ! -f %D/etc/lynx.lss ] ; then cp -p %D/%F %B/lynx.lss; fi
+@exec mkdir -p %D/share/lynx_help
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYHEADER
+%%PORTDOCS%%@exec ln -sf %D/%F %D/share/lynx_help
+%%PORTDOCS%%%%DOCSDIR%%/COPYHEADER.asc
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%@exec ln -sf %D/%F %D/share/lynx_help
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.asc
+%%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/docs/CHANGES2.3
+%%PORTDOCS%%%%DOCSDIR%%/docs/CHANGES2.4
+%%PORTDOCS%%%%DOCSDIR%%/docs/CHANGES2.5
+%%PORTDOCS%%%%DOCSDIR%%/docs/CHANGES2.6
+%%PORTDOCS%%%%DOCSDIR%%/docs/CHANGES2.7
+%%PORTDOCS%%%%DOCSDIR%%/docs/CHANGES2.8
+%%PORTDOCS%%%%DOCSDIR%%/docs/CRAWL.announce
+%%PORTDOCS%%%%DOCSDIR%%/docs/FM.announce
+%%PORTDOCS%%%%DOCSDIR%%/docs/IBMPC-charsets.announce
+%%PORTDOCS%%%%DOCSDIR%%/docs/OS-390.announce
+%%PORTDOCS%%%%DOCSDIR%%/docs/README.TRST
+%%PORTDOCS%%%%DOCSDIR%%/docs/README.chartrans
+%%PORTDOCS%%%%DOCSDIR%%/docs/README.defines
+%%PORTDOCS%%%%DOCSDIR%%/docs/README.jp
+%%PORTDOCS%%%%DOCSDIR%%/docs/README.metrics
+%%PORTDOCS%%%%DOCSDIR%%/docs/README.rootcerts
+%%PORTDOCS%%%%DOCSDIR%%/docs/README.ssl
+%%PORTDOCS%%%%DOCSDIR%%/docs/README.sslcerts
+%%PORTDOCS%%%%DOCSDIR%%/docs/SOCKETSHR.announce
+%%PORTDOCS%%%%DOCSDIR%%/docs/TCPWARE.announce
+%%PORTDOCS%%%%DOCSDIR%%/docs/VMSWAIS.announce
+%%PORTDOCS%%%%DOCSDIR%%/docs/djgpp.key
+%%PORTDOCS%%%%DOCSDIR%%/docs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/pdcurses.key
+%%PORTDOCS%%%%DOCSDIR%%/docs/slang.key
+%%PORTDOCS%%%%DOCSDIR%%/docs/win-386.announce
+%%PORTDOCS%%%%DOCSDIR%%/samples/blue-background.lss
+%%PORTDOCS%%%%DOCSDIR%%/samples/bright-blue.lss
+%%PORTDOCS%%%%DOCSDIR%%/samples/cernrules.txt
+%%PORTDOCS%%%%DOCSDIR%%/samples/home.htm
+%%PORTDOCS%%%%DOCSDIR%%/samples/index.html
+%%PORTDOCS%%%%DOCSDIR%%/samples/installdirs.html
+%%PORTDOCS%%%%DOCSDIR%%/samples/jumps.htm
+%%PORTDOCS%%%%DOCSDIR%%/samples/jumpsUnix.html
+%%PORTDOCS%%%%DOCSDIR%%/samples/jumpsVMS.html
+%%PORTDOCS%%%%DOCSDIR%%/samples/keepviewer
+%%PORTDOCS%%%%DOCSDIR%%/samples/lynx-demo.cfg
+%%PORTDOCS%%%%DOCSDIR%%/samples/lynx-keymaps
+%%PORTDOCS%%%%DOCSDIR%%/samples/lynx.bat
+%%PORTDOCS%%%%DOCSDIR%%/samples/lynx.com
+%%PORTDOCS%%%%DOCSDIR%%/samples/lynx.lss
+%%PORTDOCS%%%%DOCSDIR%%/samples/lynx_bookmarks.htm
+%%PORTDOCS%%%%DOCSDIR%%/samples/lynxdump
+%%PORTDOCS%%%%DOCSDIR%%/samples/mailcap
+%%PORTDOCS%%%%DOCSDIR%%/samples/mailto-form.pl
+%%PORTDOCS%%%%DOCSDIR%%/samples/midnight.lss
+%%PORTDOCS%%%%DOCSDIR%%/samples/mild-colors.lss
+%%PORTDOCS%%%%DOCSDIR%%/samples/mime.types
+%%PORTDOCS%%%%DOCSDIR%%/samples/oldlynx
+%%PORTDOCS%%%%DOCSDIR%%/samples/opaque.lss
+%%PORTDOCS%%%%DOCSDIR%%/test/ALT88592.html
+%%PORTDOCS%%%%DOCSDIR%%/test/ISO_LATIN1_test.html
+%%PORTDOCS%%%%DOCSDIR%%/test/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/test/TestComment.html
+%%PORTDOCS%%%%DOCSDIR%%/test/c1.html
+%%PORTDOCS%%%%DOCSDIR%%/test/index.html
+%%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-1.html
+%%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-2.html
+%%PORTDOCS%%%%DOCSDIR%%/test/koi8-r.html
+%%PORTDOCS%%%%DOCSDIR%%/test/quickbrown.html
+%%PORTDOCS%%%%DOCSDIR%%/test/raw8bit.html
+%%PORTDOCS%%%%DOCSDIR%%/test/sgml.html
+%%PORTDOCS%%%%DOCSDIR%%/test/spaces.html
+%%PORTDOCS%%%%DOCSDIR%%/test/special_urls.html
+%%PORTDOCS%%%%DOCSDIR%%/test/tabtest.html
+%%PORTDOCS%%%%DOCSDIR%%/test/tags.html
+%%PORTDOCS%%%%DOCSDIR%%/test/test-styles.html
+%%PORTDOCS%%%%DOCSDIR%%/test/unicode.html
+%%PORTDOCS%%%%DOCSDIR%%/test/utf-8-demo.html
+%%PORTDOCS%%share/lynx_help/COPYHEADER
+%%PORTDOCS%%share/lynx_help/COPYING
+share/lynx_help/Lynx_users_guide.html
+share/lynx_help/about_lynx.html
+share/lynx_help/index.html
+share/lynx_help/keystrokes/alt_edit_help.html
+share/lynx_help/keystrokes/bashlike_edit_help.html
+share/lynx_help/keystrokes/bookmark_help.html
+share/lynx_help/keystrokes/cookie_help.html
+share/lynx_help/keystrokes/dired_help.html
+share/lynx_help/keystrokes/edit_help.html
+share/lynx_help/keystrokes/environments.html
+share/lynx_help/keystrokes/follow_help.html
+share/lynx_help/keystrokes/gopher_types_help.html
+share/lynx_help/keystrokes/history_help.html
+share/lynx_help/keystrokes/index.html
+share/lynx_help/keystrokes/keystroke_help.html
+share/lynx_help/keystrokes/movement_help.html
+share/lynx_help/keystrokes/option_help.html
+share/lynx_help/keystrokes/other_help.html
+share/lynx_help/keystrokes/print_help.html
+share/lynx_help/keystrokes/scrolling_help.html
+share/lynx_help/keystrokes/test_display.html
+share/lynx_help/keystrokes/visited_help.html
+share/lynx_help/keystrokes/xterm_help.html
+share/lynx_help/lynx-dev.html
+share/lynx_help/lynx_help_main.html
+share/lynx_help/lynx_url_support.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/test
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/lynx_help/keystrokes
+@dirrm share/lynx_help

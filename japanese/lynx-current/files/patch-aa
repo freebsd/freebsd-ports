@@ -1,41 +1,46 @@
---- makefile.in.orig	Wed Jan  2 10:30:08 2002
-+++ makefile.in	Wed Jan 23 02:32:35 2002
-@@ -350,22 +350,19 @@
+--- makefile.in.orig	2007-05-18 07:53:22.000000000 +0900
++++ makefile.in	2008-06-29 16:30:48.000000000 +0900
+@@ -365,14 +365,9 @@
  		if test "$(COMPRESS_PROG)" != "" ; then \
  			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
  		fi'
--	@echo Updating $(libdir)/lynx.cfg
--	$(SHELL) -c 'if test -f $(LIBDIR)/lynx.cfg ; then \
--		mv $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
+-	@echo Updating $(sysconfdir)/lynx.cfg
+-	@ECHO_CC@$(SHELL) -c \
+-	'if test -f $(SYSCONFDIR)/lynx.cfg ; then \
+-		mv $(SYSCONFDIR)/lynx.cfg $(SYSCONFDIR)/lynx.tmp ; \
 -	else \
--		cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
+-		cp $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.tmp ; \
 -	fi'
--	@echo Updating $(libdir)/lynx.cfg to point to installed help-files
-+	@echo Updating $(libdir)/lynx.cfg.default
-+	cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp
-+	@echo Updating $(libdir)/lynx.cfg.default to point to installed help-files
+-	@echo Updating $(sysconfdir)/lynx.cfg to point to installed help-files
++	@echo Updating $(sysconfdir)/lynx.cfg.default
++	cp $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.tmp ;
++	@echo Updating $(sysconfdir)/lynx.cfg.default to point to installed help-files
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
  		-e '/^#HELPFILE:file/s!#!!' \
- 		-e '/^HELPFILE:file/s!PATH_TO/lynx_help!$(helpdir1)!' \
- 		-e '/^[A-Z_]*:/s!PATH_TO/lynx_doc!$(docdir1)!' \
- 		-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
+ 		$(SYSCONFDIR)/lynx.tmp | \
+@@ -380,9 +375,9 @@
+ 	$(SHELL) $(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir) | \
+ 	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
--		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg
--	chmod 644 $(LIBDIR)/lynx.cfg
-+		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg.default
-+	chmod 644 $(LIBDIR)/lynx.cfg.default
- 	-rm -f $(LIBDIR)/lynx.tmp
-+	-[ ! -f $(LIBDIR)/lynx.cfg ] && $(INSTALL_DATA) $(LIBDIR)/lynx.cfg.default $(LIBDIR)/lynx.cfg
+-		>$(SYSCONFDIR)/lynx.cfg
+-	chmod 644 $(SYSCONFDIR)/lynx.cfg
++		>$(SYSCONFDIR)/lynx.cfg.default
+ 	-rm -f $(SYSCONFDIR)/lynx.tmp
++	-[ ! -f $(SYSCONFDIR)/lynx.cfg ] && $(INSTALL_DATA) $(SYSCONFDIR)/lynx.cfg.default $(SYSCONFDIR)/lynx.cfg
  
  LYHelp.h : help_files.sed LYHelp.hin
  	@echo Creating $@
-@@ -387,8 +384,7 @@
- 	$(SHELL) -c '$(srcdir)/cfg_defs.sh $(srcdir)'
+@@ -404,10 +399,11 @@
+ 	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
  
- install-cfg : $(LIBDIR)
--	-mv -f $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.oldcfg
--	$(INSTALL_DATA) $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg
-+	$(INSTALL_DATA) $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg.default
+ install-cfg : $(SYSCONFDIR)
+-	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg
++	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg.default
  
- install-lss : $(LIBDIR)
- 	-mv -f $(LIBDIR)/lynx.lss $(LIBDIR)/lynx.oldlss
+ install-lss : $(SYSCONFDIR)
+-	@$(SHELL) $(scripts_dir)/install-lss.sh "$(INSTALL_DATA)" $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss
++	@$(SHELL) $(scripts_dir)/install-lss.sh "$(INSTALL_DATA)" $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss.default
++	-[ ! -f $(SYSCONFDIR)/lynx.lss ] && $(INSTALL_DATA) $(SYSCONFDIR)/lynx.lss.default $(SYSCONFDIR)/lynx.lss
+ 
+ uninstall ::
+ @MSG_DIR_MAKE@	cd po && $(MAKE_RECUR) uninstall
