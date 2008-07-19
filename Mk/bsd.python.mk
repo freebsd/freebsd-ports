@@ -352,13 +352,23 @@ _PYTHON_VERSION=	${_PYTHON_PORTBRANCH} # just to avoid version sanity checking.
 
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
 PYTHON_CMD?=		${_PYTHON_CMD}
+.if !defined(PYTHONBASE)
 PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix' \
 						2> /dev/null || ${ECHO_CMD} ${LOCALBASE}) | ${TAIL} -1
+.endif
 DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
+
+# We can only use the cached version if we are using the default python version.  Otherwise it
+# should point to some other version we have installed, according to the port USE_PYTHON
+# specification
+.if !defined(PYTHON_DEFAULT_PORTVERSION) || (${PYTHON_VERSION} != ${PYTHON_DEFAULT_VERSION})
 _PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
 							print string.split(sys.version)[0].replace("b",".b")' 2> /dev/null) | ${TAIL} -1
 .if !defined(PYTHON_NO_DEPENDS) && !empty(_PYTHON_PORTVERSION)
 PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
+.endif
+.elif defined(PYTHON_DEFAULT_PORTVERSION)
+PYTHON_PORTVERSION=	${PYTHON_DEFAULT_PORTVERSION}
 .endif
 
 # Propagate the chosen python version to submakes.
@@ -440,7 +450,9 @@ MAKE_ENV+=						PYTHONPATH=${PYEASYINSTALL_SITELIBDIR}
 .endif
 
 .if defined(PYEASYINSTALL_ARCHDEP)
+.if !defined(_OSRELEASE)
 _OSRELEASE!=					${UNAME} -r
+.endif
 PYEASYINSTALL_OSARCH?=			-${OPSYS:L}-${_OSRELEASE}-${ARCH}
 .endif
 PYEASYINSTALL_EGG?=				${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
