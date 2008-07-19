@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	msort
-PORTVERSION=	8.46
+PORTVERSION=	8.47
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Sorting files in sophisticated ways
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	tre:${PORTSDIR}/textproc/libtre \
     		uninum:${PORTSDIR}/devel/libuninum \
 		utf8proc:${PORTSDIR}/textproc/utf8proc
@@ -23,6 +22,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
 USE_TK_RUN=	yes
+USE_TCL_WRAPPER=	yes
 USE_GETTEXT=	yes
 
 PLIST_FILES=	bin/msg bin/msort
