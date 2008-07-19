@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bgs
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	x11
 MASTER_SITES=	http://s01.de/~gottox/files/bgs/ \
 		http://laffaye.free.fr/distfiles/
