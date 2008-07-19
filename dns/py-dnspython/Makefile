@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dnspython
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	dns python
-MASTER_SITES=	http://www.dnspython.org/kits/stable/
+MASTER_SITES=	http://www.dnspython.org/kits/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
