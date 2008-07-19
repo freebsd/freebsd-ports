@@ -94,6 +94,7 @@
     SUBDIR += dovecot
     SUBDIR += dovecot-antispam
     SUBDIR += dovecot-devel
+    SUBDIR += dovecot-managesieve
     SUBDIR += dovecot-sieve
     SUBDIR += drac
     SUBDIR += drbl
