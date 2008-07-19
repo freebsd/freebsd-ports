@@ -453,6 +453,7 @@
     SUBDIR += linux-savage
     SUBDIR += linux-savage-samuraiwars
     SUBDIR += linux-spheresofchaos-demo
+    SUBDIR += linux-ssamtfe
     SUBDIR += linux-steam
     SUBDIR += linux-unrealgold
     SUBDIR += linux-uplink-demo
