@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-unifont
-PORTVERSION=	20080510
+PORTVERSION=	20080620
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://unifoundry.com/ \
 		http://chirashi-no-ura.net/files/
-DISTNAME=	gnu-unifont-2008-05-10.bdf
+DISTNAME=	unifont-5.1.${PORTVERSION}.bdf
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	bsdports@gmail.com
-COMMENT=	Unicode font
+COMMENT=	Unicode Font
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
