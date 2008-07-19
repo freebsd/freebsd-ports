@@ -1503,6 +1503,7 @@
     SUBDIR += xpi-no-referrer
     SUBDIR += xpi-noscript
     SUBDIR += xpi-num2web
+    SUBDIR += xpi-passwordmaker
     SUBDIR += xpi-pdf_download
     SUBDIR += xpi-permatabs
     SUBDIR += xpi-preferential
