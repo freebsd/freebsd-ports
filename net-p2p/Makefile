@@ -45,6 +45,7 @@
     SUBDIR += gtkhx
     SUBDIR += gtorrentviewer
     SUBDIR += hagelslag
+    SUBDIR += hrktorrent
     SUBDIR += hx
     SUBDIR += i2p
     SUBDIR += javadc
