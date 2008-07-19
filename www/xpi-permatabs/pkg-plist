@@ -1,0 +1,41 @@
+%%XPI_XPIDIR%%/chrome/permatabs/content/permatabs.css
+%%XPI_XPIDIR%%/chrome/permatabs/content/permatabs.js
+%%XPI_XPIDIR%%/chrome/permatabs/content/permatabs.xul
+%%XPI_XPIDIR%%/chrome/permatabs/content/prefsWindow.js
+%%XPI_XPIDIR%%/chrome/permatabs/content/prefsWindow.xul
+%%XPI_XPIDIR%%/chrome/permatabs/locale/cs-CZ/permatabs.dtd
+%%XPI_XPIDIR%%/chrome/permatabs/locale/cs-CZ/permatabs.properties
+%%XPI_XPIDIR%%/chrome/permatabs/locale/de-CH/permatabs.dtd
+%%XPI_XPIDIR%%/chrome/permatabs/locale/de-CH/permatabs.properties
+%%XPI_XPIDIR%%/chrome/permatabs/locale/de-DE/permatabs.dtd
+%%XPI_XPIDIR%%/chrome/permatabs/locale/de-DE/permatabs.properties
+%%XPI_XPIDIR%%/chrome/permatabs/locale/en-US/permatabs.dtd
+%%XPI_XPIDIR%%/chrome/permatabs/locale/en-US/permatabs.properties
+%%XPI_XPIDIR%%/chrome/permatabs/locale/fr-FR/permatabs.dtd
+%%XPI_XPIDIR%%/chrome/permatabs/locale/fr-FR/permatabs.properties
+%%XPI_XPIDIR%%/chrome/permatabs/locale/it-IT/permatabs.dtd
+%%XPI_XPIDIR%%/chrome/permatabs/locale/it-IT/permatabs.properties
+%%XPI_XPIDIR%%/chrome/permatabs/locale/ja-JP/permatabs.dtd
+%%XPI_XPIDIR%%/chrome/permatabs/locale/ja-JP/permatabs.properties
+%%XPI_XPIDIR%%/chrome/permatabs/locale/nl-NL/permatabs.dtd
+%%XPI_XPIDIR%%/chrome/permatabs/locale/nl-NL/permatabs.properties
+%%XPI_XPIDIR%%/chrome/permatabs/locale/zh-CN/permatabs.dtd
+%%XPI_XPIDIR%%/chrome/permatabs/locale/zh-CN/permatabs.properties
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/defaults/preferences/prefs.js
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs/content
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs/locale/cs-CZ
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs/locale/de-CH
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs/locale/de-DE
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs/locale/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs/locale/fr-FR
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs/locale/it-IT
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs/locale/ja-JP
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs/locale/nl-NL
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs/locale/zh-CN
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs/locale
+@dirrm %%XPI_XPIDIR%%/chrome/permatabs
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
