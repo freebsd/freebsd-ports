@@ -1,0 +1,14 @@
+lib/libhamsterdb.la
+lib/libhamsterdb.a
+lib/libhamsterdb.so
+lib/libhamsterdb.so.1
+include/ham/hamsterdb.h
+include/ham/hamsterdb_int.h
+include/ham/types.h
+include/ham/hamsterdb.hpp
+bin/ham_info
+bin/ham_dump
+@dirrm include/ham
+%%PORTDOCS%%%%DOCSDIR%%/Doxyfile
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.odt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

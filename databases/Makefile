@@ -84,6 +84,7 @@
     SUBDIR += gqlplus
     SUBDIR += grass
     SUBDIR += gtksql
+    SUBDIR += hamsterdb
     SUBDIR += hk_classes
     SUBDIR += hsqldb
     SUBDIR += innotop
