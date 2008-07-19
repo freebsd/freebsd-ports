@@ -1,0 +1,45 @@
+bin/etqwded
+lib/etqw-server/base/bots/botnames.dat
+lib/etqw-server/base/game000.pk4
+lib/etqw-server/base/game002.pk4
+lib/etqw-server/base/match.cfg
+lib/etqw-server/base/pak000.pk4
+lib/etqw-server/base/pak001.pk4
+lib/etqw-server/base/pak002.pk4
+lib/etqw-server/base/pak003.pk4
+lib/etqw-server/base/pak004.pk4
+lib/etqw-server/base/pak005.pk4
+lib/etqw-server/base/pak006.pk4
+lib/etqw-server/base/pak007.pk4
+lib/etqw-server/base/public.cfg
+lib/etqw-server/base/server.cfg
+lib/etqw-server/base/usergroups.dat
+lib/etqw-server/base/usergroups.example
+lib/etqw-server/etqwded.x86
+lib/etqw-server/libSDL-1.2.id.so.0
+lib/etqw-server/libgcc_s.so.1
+lib/etqw-server/libjpeg.so.62
+lib/etqw-server/libstdc++.so.6
+lib/etqw-server/pb/PBEULA.txt
+lib/etqw-server/pb/htm/la001313.htm
+lib/etqw-server/pb/htm/lc001714.htm
+lib/etqw-server/pb/htm/ma001313.htm
+lib/etqw-server/pb/htm/mc001714.htm
+lib/etqw-server/pb/htm/wa001313.htm
+lib/etqw-server/pb/htm/wc001714.htm
+lib/etqw-server/pb/pbag.so
+lib/etqw-server/pb/pbags.so
+lib/etqw-server/pb/pbcl.so
+lib/etqw-server/pb/pbcls.so
+lib/etqw-server/pb/pbsv.so
+%%PORTDOCS%%%%DOCSDIR%%/EULA.txt
+%%PORTDOCS%%%%DOCSDIR%%/PBEULA.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/copyrights.txt
+%%PORTDOCS%%%%DOCSDIR%%/etqwtv.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/etqw-server/pb/htm
+@dirrm lib/etqw-server/pb
+@dirrm lib/etqw-server/base/bots
+@dirrm lib/etqw-server/base
+@dirrm lib/etqw-server
