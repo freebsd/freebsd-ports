@@ -1465,6 +1465,7 @@
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-customizegoogle
     SUBDIR += xpi-cutemenus-crystalsvg
+    SUBDIR += xpi-deepestsender
     SUBDIR += xpi-delicious
     SUBDIR += xpi-downthemall
     SUBDIR += xpi-errorzilla
