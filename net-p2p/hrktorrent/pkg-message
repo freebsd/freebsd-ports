@@ -1,0 +1,7 @@
+-----------------------------------------------------------------
+A default hrktorrent.rc config has been installed to:
+ PREFIX/share/examples/hrktorrent.rc
+Copy it to ~/.hrktorrent/ and modify it. 
+To use the IPFilter, move the rulefile the same dir and name it:
+ ipfilter.dat.
+-----------------------------------------------------------------

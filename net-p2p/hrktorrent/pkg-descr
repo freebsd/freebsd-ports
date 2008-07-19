@@ -1,0 +1,5 @@
+hrktorrent is a light console torrent client using rasterbar's libtorrent.
+It supports the IPFilter and DHT implementation of libtorrent.
+It is aimed to be light and fast.
+
+WWW: http://henrik.unit5.ca/hrktorrent/
