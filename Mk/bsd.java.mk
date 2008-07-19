@@ -249,34 +249,30 @@ check-makevars::
 .		endfor
 
 # Error checking: JAVA_VERSION
+.if !defined(_JAVA_VERSION_LIST_REGEXP)
 _JAVA_VERSION_LIST_REGEXP!=		${ECHO_CMD} "${_JAVA_VERSION_LIST}" | ${SED} "s/ /\\\|/g"
-_ERROR_CHECKING_JAVA_VERSION!=	${ECHO_CMD} "${JAVA_VERSION}" | ${TR} " " "\n" \
-								| ${GREP} -v "${_JAVA_VERSION_LIST_REGEXP}" || true
-.		if (${_ERROR_CHECKING_JAVA_VERSION} != "")
+.endif
 check-makevars::
-	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_VERSION}\" is not a valid value for JAVA_VERSION. It should be one or more of: ${__JAVA_VERSION_LIST} (with an optional \"+\" suffix.)";
-	@${FALSE}
-.		endif
+	@test ! -z "${JAVA_VERSION}" && ( ${ECHO_CMD} "${JAVA_VERSION}" | ${TR} " " "\n" | ${GREP} -q "${_JAVA_VERSION_LIST_REGEXP}" || \
+	(${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_VERSION}\" is not a valid value for JAVA_VERSION. It should be one or more of: ${__JAVA_VERSION_LIST} (with an optional \"+\" suffix.)"; ${FALSE})) || true
 
 # Error checking: JAVA_VENDOR
+.if !defined(_JAVA_VENDOR_LIST_REGEXP)
 _JAVA_VENDOR_LIST_REGEXP!=		${ECHO_CMD} "${_JAVA_VENDOR_LIST}" | ${SED} "s/ /\\\|/g"
-_ERROR_CHECKING_JAVA_VENDOR!=	${ECHO_CMD} "${JAVA_VENDOR}" | ${TR} " " "\n" \
-								| ${GREP} -v "${_JAVA_VENDOR_LIST_REGEXP}" || true
-.		if (${_ERROR_CHECKING_JAVA_VENDOR} != "")
+.endif
 check-makevars::
-	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_VENDOR}\" is not a valid value for JAVA_VENDOR. It should be one or more of: ${_JAVA_VENDOR_LIST}";
-	@${FALSE}
-.		endif
+	@test ! -z "${JAVA_VENDOR}" && ( ${ECHO_CMD} "${JAVA_VENDOR}" | ${TR} " " "\n" | ${GREP} -q "${_JAVA_VENDOR_LIST_REGEXP}" || \
+	(${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_VENDOR}\" is not a valid value for JAVA_VENDOR. It should be one or more of: ${_JAVA_VENDOR_LIST}"; \
+	${FALSE})) || true
 
 # Error checking: JAVA_OS
+.if !defined(_JAVA_OS_LIST_REGEXP)
 _JAVA_OS_LIST_REGEXP!=		${ECHO_CMD} "${_JAVA_OS_LIST}" | ${SED} "s/ /\\\|/g"
-_ERROR_CHECKING_JAVA_OS!=	${ECHO_CMD} "${JAVA_OS}" | ${TR} " " "\n" \
-							| ${GREP} -v "${_JAVA_OS_LIST_REGEXP}" || true
-.		if (${_ERROR_CHECKING_JAVA_OS} != "")
+.endif
 check-makevars::
-	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_OS}\" is not a valid value for JAVA_OS. It should be one or more of: ${_JAVA_OS_LIST}";
-	@${FALSE}
-.		endif
+	@test ! -z "${JAVA_OS}" && ( ${ECHO_CMD} "${JAVA_OS}" | ${TR} " " "\n" | ${GREP} -q "${_JAVA_OS_LIST_REGEXP}" || \
+	(${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_OS}\" is not a valid value for JAVA_OS. It should be one or more of: ${_JAVA_OS_LIST}"; \
+	${FALSE})) || true
 
 # Set default values for JAVA_BUILD and JAVA_RUN
 # When nothing is set, assume JAVA_BUILD=jdk and JAVA_RUN=jre
@@ -313,18 +309,30 @@ A_JAVA_PORT_HOME=			${A_JAVA_PORT_INFO:MHOME=*:S,HOME=,,}
 A_JAVA_PORT_VERSION=		${A_JAVA_PORT_INFO:MVERSION=*:C/VERSION=([0-9])\.([0-9])(.*)/\1.\2/}
 A_JAVA_PORT_OS=				${A_JAVA_PORT_INFO:MOS=*:S,OS=,,}
 A_JAVA_PORT_VENDOR=			${A_JAVA_PORT_INFO:MVENDOR=*:S,VENDOR=,,}
+.if !defined(_JAVA_PORTS_INSTALLED)
 A_JAVA_PORT_INSTALLED!=		${TEST} -x "${A_JAVA_PORT_HOME}/${_JDK_FILE}" \
 							&& ${ECHO_CMD} "${A_JAVA_PORT}" \
 							|| ${TRUE}
 __JAVA_PORTS_INSTALLED!=	${ECHO_CMD} "${__JAVA_PORTS_INSTALLED} ${A_JAVA_PORT_INSTALLED}"
-A_JAVA_PORT_POSSIBLE!=		${ECHO_CMD} "${_JAVA_VERSION}" | ${GREP} -q "${A_JAVA_PORT_VERSION}" \
-							&& ${ECHO_CMD} "${_JAVA_OS}" | ${GREP} -q "${A_JAVA_PORT_OS}" \
-							&& ${ECHO_CMD} "${_JAVA_VENDOR}" | ${GREP} -q "${A_JAVA_PORT_VENDOR}" \
-							&& ${ECHO_CMD} "${A_JAVA_PORT}" \
-							|| ${TRUE}
-__JAVA_PORTS_POSSIBLE!=		${ECHO_CMD} "${__JAVA_PORTS_POSSIBLE} ${A_JAVA_PORT_POSSIBLE}"
+.endif
+
+# The magic here is that we want to test for a substring using only shell builtins (to avoid forking)
+# Our shell does not have an explicit substring operator, but we can build one by using the '#'
+# deletion operator ('%' would also work).  We try to delete the pattern "*${substr}*" and compare it
+# to the original string.  If they differ, the substring matched.
+# 
+# We can't do this in make because it doesn't allow nested modifiers ${foo:${bar}}
+#
+A_JAVA_PORT_POSSIBLE!=		ver="${_JAVA_VERSION}"; os="${_JAVA_OS}"; vendor="${_JAVA_VENDOR}"; \
+				${TEST} "$${ver\#*${A_JAVA_PORT_VERSION}*}" != "${_JAVA_VERSION}" -a \
+				"$${os\#*${A_JAVA_PORT_OS}*}" != "${_JAVA_OS}" -a \
+				"$${vendor\#*${A_JAVA_PORT_VENDOR}*}" != "${_JAVA_VENDOR}" && \
+				${ECHO_CMD} "${A_JAVA_PORT}" || ${TRUE}
+__JAVA_PORTS_POSSIBLE:=		${__JAVA_PORTS_POSSIBLE} ${A_JAVA_PORT_POSSIBLE}
 .		endfor
+.if !defined(_JAVA_PORTS_INSTALLED)
 _JAVA_PORTS_INSTALLED=		${__JAVA_PORTS_INSTALLED:C/ [ ]+/ /g}
+.endif
 _JAVA_PORTS_POSSIBLE=		${__JAVA_PORTS_POSSIBLE:C/ [ ]+/ /g}
 
 
@@ -337,20 +345,28 @@ _JAVA_PORTS_POSSIBLE=		${__JAVA_PORTS_POSSIBLE:C/ [ ]+/ /g}
 .		undef _JAVA_PORTS_INSTALLED_POSSIBLE
 
 .		for A_JAVA_PORT in ${_JAVA_PORTS_POSSIBLE}
-A_JAVA_PORT_INSTALLED_POSSIBLE!=	${ECHO_CMD} "${_JAVA_PORTS_INSTALLED}" | ${GREP} -q "${A_JAVA_PORT}" \
-									&& ${ECHO_CMD} "${A_JAVA_PORT}" || ${TRUE}
-__JAVA_PORTS_INSTALLED_POSSIBLE!=	${ECHO_CMD} "${__JAVA_PORTS_INSTALLED_POSSIBLE} ${A_JAVA_PORT_INSTALLED_POSSIBLE}"
+A_JAVA_PORT_INSTALLED_POSSIBLE!=	inst="${_JAVA_PORTS_INSTALLED}"; \
+					${TEST} "$${inst\#*${A_JAVA_PORT}*}" != "${_JAVA_PORTS_INSTALLED}" && \
+					${ECHO_CMD} "${A_JAVA_PORT}" || ${TRUE}
+__JAVA_PORTS_INSTALLED_POSSIBLE:=	${__JAVA_PORTS_INSTALLED_POSSIBLE} ${A_JAVA_PORT_INSTALLED_POSSIBLE}
 .		endfor
-_JAVA_PORTS_INSTALLED_POSSIBLE=		${__JAVA_PORTS_INSTALLED_POSSIBLE:C/ [ ]+/ /g}
+_JAVA_PORTS_INSTALLED_POSSIBLE=		${__JAVA_PORTS_INSTALLED_POSSIBLE:C/[ ]+//g}
 
 .		if ${_JAVA_PORTS_INSTALLED_POSSIBLE} != ""
-_JAVA_PORT!=	${ECHO_CMD} "${_JAVA_PORTS_INSTALLED_POSSIBLE}" \
-				| ${AWK} '{ print $$1 }'
-
+.                 for i in ${_JAVA_PORTS_INSTALLED_POSSIBLE}
+.                   if !defined(_JAVA_PORTS_INSTALLED_POSSIBLE_shortcircuit)
+_JAVA_PORT=	$i
+_JAVA_PORTS_INSTALLED_POSSIBLE_shortcircuit=	1
+.                   endif
+.                 endfor
 # If no installed JDK port fits, then pick one from the list of possible ones
 .		else
-_JAVA_PORT!=	${ECHO_CMD} "${_JAVA_PORTS_POSSIBLE}" \
-				| ${AWK} '{ print $$1 }'
+.                 for i in ${_JAVA_PORTS_POSSIBLE}
+.                   if !defined(_JAVA_PORTS_POSSIBLE_shortcircuit)
+_JAVA_PORT=	$i
+_JAVA_PORTS_POSSIBLE_shortcircuit=	1
+.                   endif
+.                 endfor
 .		endif
 
 _JAVA_PORT_INFO:=		${_JAVA_PORT:S/^/\${_/:S/$/_INFO}/}

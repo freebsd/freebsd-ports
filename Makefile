@@ -86,11 +86,20 @@ FETCHINDEX?=	${SETENV} ${FETCH_ENV} fetch -am -o
 INDEX_JOBS?=	2
 
 .if !defined(INDEX_VERBOSE)
-INDEX_ECHO_MSG=		echo > /dev/null
+INDEX_ECHO_MSG=		true
 INDEX_ECHO_1ST=		echo -n
 .else
 INDEX_ECHO_MSG=		echo 1>&2
 INDEX_ECHO_1ST=		echo
+.endif
+
+# /rescue/sh is statically linked and much faster to execute than the
+# dynamically linked /bin/sh.  This is significant for targets like
+# make index that execute the shell tens of thousands of times.
+.if exists(/rescue/sh)
+INDEX_SHELL=		/rescue/sh
+.else
+INDEX_SHELL=		/bin/sh
 .endif
 
 ${INDEXDIR}/${INDEXFILE}:
@@ -103,6 +112,7 @@ ${INDEXDIR}/${INDEXFILE}:
 	tmpdir=`/usr/bin/mktemp -d -t index` || exit 1; \
 	trap "rm -rf $${tmpdir}; exit 1" 1 2 3 5 10 13 15; \
 	( cd ${.CURDIR} && make -j${INDEX_JOBS} INDEX_TMPDIR=$${tmpdir} BUILDING_INDEX=1 \
+		__MAKE_SHELL=${INDEX_SHELL} \
 		ECHO_MSG="${INDEX_ECHO_MSG}" describe ) || \
 		(rm -rf $${tmpdir} ; \
 		if [ "${INDEX_QUIET}" = "" ]; then \
