@@ -1,0 +1,40 @@
+bin/etqwded-demo
+lib/etqw-demo-server/base/bots/botnames.dat
+lib/etqw-demo-server/base/game000.pk4
+lib/etqw-demo-server/base/game002.pk4
+lib/etqw-demo-server/base/match.cfg
+lib/etqw-demo-server/base/pak000.pk4
+lib/etqw-demo-server/base/pak001.pk4
+lib/etqw-demo-server/base/pak002.pk4
+lib/etqw-demo-server/base/public.cfg
+lib/etqw-demo-server/base/server.cfg
+lib/etqw-demo-server/base/usergroups.dat
+lib/etqw-demo-server/base/usergroups.example
+lib/etqw-demo-server/etqwded.x86
+lib/etqw-demo-server/libSDL-1.2.id.so.0
+lib/etqw-demo-server/libgcc_s.so.1
+lib/etqw-demo-server/libjpeg.so.62
+lib/etqw-demo-server/libstdc++.so.6
+lib/etqw-demo-server/pb/PBEULA.txt
+lib/etqw-demo-server/pb/htm/la001313.htm
+lib/etqw-demo-server/pb/htm/lc001714.htm
+lib/etqw-demo-server/pb/htm/ma001313.htm
+lib/etqw-demo-server/pb/htm/mc001714.htm
+lib/etqw-demo-server/pb/htm/wa001313.htm
+lib/etqw-demo-server/pb/htm/wc001714.htm
+lib/etqw-demo-server/pb/pbag.so
+lib/etqw-demo-server/pb/pbags.so
+lib/etqw-demo-server/pb/pbcl.so
+lib/etqw-demo-server/pb/pbcls.so
+lib/etqw-demo-server/pb/pbsv.so
+%%PORTDOCS%%%%DOCSDIR%%/EULA.txt
+%%PORTDOCS%%%%DOCSDIR%%/PBEULA.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/copyrights.txt
+%%PORTDOCS%%%%DOCSDIR%%/etqwtv.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/etqw-demo-server/pb/htm
+@dirrm lib/etqw-demo-server/pb
+@dirrm lib/etqw-demo-server/base/bots
+@dirrm lib/etqw-demo-server/base
+@dirrm lib/etqw-demo-server
