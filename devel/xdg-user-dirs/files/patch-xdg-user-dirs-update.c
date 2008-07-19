@@ -5,7 +5,7 @@
  #include <langinfo.h>
  
 +#if defined(__FreeBSD__)
-+static char *strndup(const char *str, int len) {
++static char *strndup(const char *str, size_t len) {
 +	char *ret;
 +	
 +	if ((str == NULL || len < 0)) return(NULL);
