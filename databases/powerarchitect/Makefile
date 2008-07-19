@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	powerarchitect
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	0.9.11
 CATEGORIES=	databases java
-MASTER_SITES=	http://power-architect.googlecode.com/files/
+MASTER_SITES=	http://power-architect.googlecode.com/files/ \
+    		http://freshmeat.net/redir/powerarchitect/67980/url_tgz/
 DISTNAME=	Architect-generic-jdbc-${PORTVERSION}
 
 MAINTAINER=	jjuanino@gmail.com
