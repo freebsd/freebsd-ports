@@ -1,0 +1,24 @@
+%%XPI_XPIDIR%%/LICENSE
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/chrome/foxyproxy.jar
+%%XPI_XPIDIR%%/chrome/icons/default/foxyproxyaboutdlg.ico
+%%XPI_XPIDIR%%/chrome/icons/default/foxyproxyaddproxydlg.ico
+%%XPI_XPIDIR%%/chrome/icons/default/foxyproxyoptions.ico
+%%XPI_XPIDIR%%/chrome/icons/default/foxyproxypatterndlg.ico
+%%XPI_XPIDIR%%/chrome/icons/default/foxyproxyquickadddlg.ico
+%%XPI_XPIDIR%%/components/autoconf.js
+%%XPI_XPIDIR%%/components/foxyproxy.js
+%%XPI_XPIDIR%%/components/manualconf.js
+%%XPI_XPIDIR%%/components/match.js
+%%XPI_XPIDIR%%/components/matchingproxy.js
+%%XPI_XPIDIR%%/components/proxy.js
+%%XPI_XPIDIR%%/components/relativeprotocolhandler.js
+%%XPI_XPIDIR%%/components/superadd.js
+%%XPI_XPIDIR%%/defaults/preferences/prefs.js
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/chrome/icons/default
+@dirrm %%XPI_XPIDIR%%/chrome/icons
+@dirrm %%XPI_XPIDIR%%/chrome

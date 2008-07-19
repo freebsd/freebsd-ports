@@ -1478,6 +1478,7 @@
     SUBDIR += xpi-forecastfox
     SUBDIR += xpi-formfox
     SUBDIR += xpi-foxmarks
+    SUBDIR += xpi-foxyproxy
     SUBDIR += xpi-gbrain
     SUBDIR += xpi-gmail-manager
     SUBDIR += xpi-google-notebook
