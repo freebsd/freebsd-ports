@@ -5,6 +5,7 @@
 
     SUBDIR += abclock
     SUBDIR += aclock
+    SUBDIR += alarm-clock
     SUBDIR += alltraxclock
     SUBDIR += asclock
     SUBDIR += asclock-gtk

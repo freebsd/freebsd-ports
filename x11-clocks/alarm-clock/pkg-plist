@@ -1,0 +1,74 @@
+@comment $FreeBSD$
+bin/alarm-clock
+%%PYTHON_SITELIBDIR%%/alarmclock/CheckAlarmThread.py
+%%PYTHON_SITELIBDIR%%/alarmclock/CheckAlarmThread.pyc
+%%PYTHON_SITELIBDIR%%/alarmclock/CheckAlarmThread.pyo
+%%PYTHON_SITELIBDIR%%/alarmclock/CountThread.py
+%%PYTHON_SITELIBDIR%%/alarmclock/CountThread.pyc
+%%PYTHON_SITELIBDIR%%/alarmclock/CountThread.pyo
+%%PYTHON_SITELIBDIR%%/alarmclock/MainClass.py
+%%PYTHON_SITELIBDIR%%/alarmclock/MainClass.pyc
+%%PYTHON_SITELIBDIR%%/alarmclock/MainClass.pyo
+%%PYTHON_SITELIBDIR%%/alarmclock/Prefix.py
+%%PYTHON_SITELIBDIR%%/alarmclock/Prefix.pyc
+%%PYTHON_SITELIBDIR%%/alarmclock/Prefix.pyo
+%%PYTHON_SITELIBDIR%%/alarmclock/RepeatSoundThread.py
+%%PYTHON_SITELIBDIR%%/alarmclock/RepeatSoundThread.pyc
+%%PYTHON_SITELIBDIR%%/alarmclock/RepeatSoundThread.pyo
+%%PYTHON_SITELIBDIR%%/alarmclock/SnoozeThread.py
+%%PYTHON_SITELIBDIR%%/alarmclock/SnoozeThread.pyc
+%%PYTHON_SITELIBDIR%%/alarmclock/SnoozeThread.pyo
+%%PYTHON_SITELIBDIR%%/alarmclock/Version.py
+%%PYTHON_SITELIBDIR%%/alarmclock/Version.pyc
+%%PYTHON_SITELIBDIR%%/alarmclock/Version.pyo
+%%PYTHON_SITELIBDIR%%/alarmclock/VolumeFadeThread.py
+%%PYTHON_SITELIBDIR%%/alarmclock/VolumeFadeThread.pyc
+%%PYTHON_SITELIBDIR%%/alarmclock/VolumeFadeThread.pyo
+%%PYTHON_SITELIBDIR%%/alarmclock/__init__.py
+%%PYTHON_SITELIBDIR%%/alarmclock/__init__.pyc
+%%PYTHON_SITELIBDIR%%/alarmclock/__init__.pyo
+%%DATADIR%%/glade/main.glade
+%%DATADIR%%/scalable/alarm-caution.svg
+%%DATADIR%%/scalable/alarm-clock.svg
+%%DATADIR%%/sound/ring.wav
+share/applications/alarm-clock.desktop
+share/locale/ar/LC_MESSAGES/alarm-clock.mo
+share/locale/ca/LC_MESSAGES/alarm-clock.mo
+share/locale/cs/LC_MESSAGES/alarm-clock.mo
+share/locale/da/LC_MESSAGES/alarm-clock.mo
+share/locale/de_DE/LC_MESSAGES/alarm-clock.mo
+share/locale/en_GB/LC_MESSAGES/alarm-clock.mo
+share/locale/es/LC_MESSAGES/alarm-clock.mo
+share/locale/fa/LC_MESSAGES/alarm-clock.mo
+share/locale/fr/LC_MESSAGES/alarm-clock.mo
+share/locale/hu/LC_MESSAGES/alarm-clock.mo
+share/locale/it/LC_MESSAGES/alarm-clock.mo
+share/locale/ja/LC_MESSAGES/alarm-clock.mo
+share/locale/la/LC_MESSAGES/alarm-clock.mo
+share/locale/lv/LC_MESSAGES/alarm-clock.mo
+share/locale/nb/LC_MESSAGES/alarm-clock.mo
+share/locale/nds/LC_MESSAGES/alarm-clock.mo
+share/locale/nl/LC_MESSAGES/alarm-clock.mo
+share/locale/pl/LC_MESSAGES/alarm-clock.mo
+share/locale/pt/LC_MESSAGES/alarm-clock.mo
+share/locale/pt_BR/LC_MESSAGES/alarm-clock.mo
+share/locale/ru/LC_MESSAGES/alarm-clock.mo
+share/locale/sr/LC_MESSAGES/alarm-clock.mo
+share/locale/sr@latin/LC_MESSAGES/alarm-clock.mo
+share/locale/sv/LC_MESSAGES/alarm-clock.mo
+share/locale/tr/LC_MESSAGES/alarm-clock.mo
+share/pixmaps/alarm-clock.svg
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/la/LC_MESSAGES
+@dirrmtry share/locale/la
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/applications
+@dirrmtry share/alarm-clock/sound
+@dirrmtry share/alarm-clock/scalable
+@dirrmtry share/alarm-clock/glade
+@dirrmtry share/alarm-clock
+@dirrmtry %%PYTHON_SITELIBDIR%%/alarmclock
