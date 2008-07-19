@@ -279,6 +279,7 @@
     SUBDIR += jakarta-tomcat4
     SUBDIR += jakarta-tomcat5
     SUBDIR += jdresolve
+    SUBDIR += jericho-html
     SUBDIR += jesred
     SUBDIR += jetspeed
     SUBDIR += jetty
