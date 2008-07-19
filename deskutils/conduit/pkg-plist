@@ -32,6 +32,7 @@ lib/conduit/modules/EvolutionModule/config.glade
 lib/conduit/modules/FacebookModule/FacebookModule.py
 lib/conduit/modules/FacebookModule/FacebookModule.pyc
 lib/conduit/modules/FacebookModule/FacebookModule.pyo
+lib/conduit/modules/FacebookModule/config.glade
 lib/conduit/modules/FacebookModule/pyfacebook/__init__.py
 lib/conduit/modules/FacebookModule/pyfacebook/__init__.pyc
 lib/conduit/modules/FacebookModule/pyfacebook/__init__.pyo
@@ -84,11 +85,15 @@ lib/conduit/modules/GoogleModule/GoogleModule.pyo
 lib/conduit/modules/GoogleModule/atom/__init__.py
 lib/conduit/modules/GoogleModule/atom/__init__.pyc
 lib/conduit/modules/GoogleModule/atom/__init__.pyo
+lib/conduit/modules/GoogleModule/atom/mock_service.py
+lib/conduit/modules/GoogleModule/atom/mock_service.pyc
+lib/conduit/modules/GoogleModule/atom/mock_service.pyo
 lib/conduit/modules/GoogleModule/atom/service.py
 lib/conduit/modules/GoogleModule/atom/service.pyc
 lib/conduit/modules/GoogleModule/atom/service.pyo
 lib/conduit/modules/GoogleModule/calendar-config.glade
 lib/conduit/modules/GoogleModule/contacts-config.glade
+lib/conduit/modules/GoogleModule/documents-config.glade
 lib/conduit/modules/GoogleModule/gdata/__init__.py
 lib/conduit/modules/GoogleModule/gdata/__init__.pyc
 lib/conduit/modules/GoogleModule/gdata/__init__.pyo
@@ -96,6 +101,8 @@ lib/conduit/modules/GoogleModule/gdata/apps/__init__.py
 lib/conduit/modules/GoogleModule/gdata/apps/__init__.pyc
 lib/conduit/modules/GoogleModule/gdata/apps/__init__.pyo
 lib/conduit/modules/GoogleModule/gdata/apps/service.py
+lib/conduit/modules/GoogleModule/gdata/apps/service.pyc
+lib/conduit/modules/GoogleModule/gdata/apps/service.pyo
 lib/conduit/modules/GoogleModule/gdata/auth.py
 lib/conduit/modules/GoogleModule/gdata/auth.pyc
 lib/conduit/modules/GoogleModule/gdata/auth.pyo
@@ -105,6 +112,12 @@ lib/conduit/modules/GoogleModule/gdata/base/__init__.pyo
 lib/conduit/modules/GoogleModule/gdata/base/service.py
 lib/conduit/modules/GoogleModule/gdata/base/service.pyc
 lib/conduit/modules/GoogleModule/gdata/base/service.pyo
+lib/conduit/modules/GoogleModule/gdata/blogger/__init__.py
+lib/conduit/modules/GoogleModule/gdata/blogger/__init__.pyc
+lib/conduit/modules/GoogleModule/gdata/blogger/__init__.pyo
+lib/conduit/modules/GoogleModule/gdata/blogger/service.py
+lib/conduit/modules/GoogleModule/gdata/blogger/service.pyc
+lib/conduit/modules/GoogleModule/gdata/blogger/service.pyo
 lib/conduit/modules/GoogleModule/gdata/calendar/__init__.py
 lib/conduit/modules/GoogleModule/gdata/calendar/__init__.pyc
 lib/conduit/modules/GoogleModule/gdata/calendar/__init__.pyo
@@ -156,6 +169,12 @@ lib/conduit/modules/GoogleModule/gdata/spreadsheet/service.pyo
 lib/conduit/modules/GoogleModule/gdata/spreadsheet/text_db.py
 lib/conduit/modules/GoogleModule/gdata/spreadsheet/text_db.pyc
 lib/conduit/modules/GoogleModule/gdata/spreadsheet/text_db.pyo
+lib/conduit/modules/GoogleModule/gdata/youtube/__init__.py
+lib/conduit/modules/GoogleModule/gdata/youtube/__init__.pyc
+lib/conduit/modules/GoogleModule/gdata/youtube/__init__.pyo
+lib/conduit/modules/GoogleModule/gdata/youtube/service.py
+lib/conduit/modules/GoogleModule/gdata/youtube/service.pyc
+lib/conduit/modules/GoogleModule/gdata/youtube/service.pyo
 lib/conduit/modules/GoogleModule/picasa-config.glade
 lib/conduit/modules/GoogleModule/youtube-config.glade
 lib/conduit/modules/N800Module/N800Module.py
@@ -385,6 +404,7 @@ share/applications/conduit.desktop
 %%DATADIR%%/boxdotnet.png
 %%DATADIR%%/conduit-splash.png
 %%DATADIR%%/conduit.glade
+%%DATADIR%%/windows.png
 %%DATADIR%%/f-spot.png
 %%DATADIR%%/facebook.png
 %%DATADIR%%/feed.png
@@ -434,6 +454,7 @@ share/icons/hicolor/48x48/apps/conduit.png
 share/icons/hicolor/scalable/apps/conduit.svg
 share/locale/ar/LC_MESSAGES/conduit.mo
 share/locale/ca/LC_MESSAGES/conduit.mo
+share/locale/de/LC_MESSAGES/conduit.mo
 share/locale/en_GB/LC_MESSAGES/conduit.mo
 share/locale/es/LC_MESSAGES/conduit.mo
 share/locale/fi/LC_MESSAGES/conduit.mo
@@ -443,6 +464,8 @@ share/locale/he/LC_MESSAGES/conduit.mo
 share/locale/hu/LC_MESSAGES/conduit.mo
 share/locale/it/LC_MESSAGES/conduit.mo
 share/locale/nb/LC_MESSAGES/conduit.mo
+share/locale/oc/LC_MESSAGES/conduit.mo
+share/locale/pa/LC_MESSAGES/conduit.mo
 share/locale/pt/LC_MESSAGES/conduit.mo
 share/locale/pt_BR/LC_MESSAGES/conduit.mo
 share/locale/ru/LC_MESSAGES/conduit.mo
@@ -452,6 +475,8 @@ share/locale/vi/LC_MESSAGES/conduit.mo
 share/omf/conduit/conduit-C.omf
 share/omf/conduit/conduit-es.omf
 @dirrm share/omf/conduit
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/icons/hicolor/26x26/apps
 @dirrmtry share/icons/hicolor/26x26
 @dirrm share/gnome/help/conduit/es/figures
@@ -476,6 +501,7 @@ share/omf/conduit/conduit-es.omf
 @dirrm lib/conduit/modules/RhythmboxModule
 @dirrm lib/conduit/modules/NetworkModule
 @dirrm lib/conduit/modules/N800Module
+@dirrm lib/conduit/modules/GoogleModule/gdata/youtube
 @dirrm lib/conduit/modules/GoogleModule/gdata/spreadsheet
 @dirrm lib/conduit/modules/GoogleModule/gdata/photos
 @dirrm lib/conduit/modules/GoogleModule/gdata/media
@@ -485,6 +511,7 @@ share/omf/conduit/conduit-es.omf
 @dirrm lib/conduit/modules/GoogleModule/gdata/contacts
 @dirrm lib/conduit/modules/GoogleModule/gdata/codesearch
 @dirrm lib/conduit/modules/GoogleModule/gdata/calendar
+@dirrm lib/conduit/modules/GoogleModule/gdata/blogger
 @dirrm lib/conduit/modules/GoogleModule/gdata/base
 @dirrm lib/conduit/modules/GoogleModule/gdata/apps
 @dirrm lib/conduit/modules/GoogleModule/gdata

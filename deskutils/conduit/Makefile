@@ -6,7 +6,7 @@
 #    $MCom: ports/deskutils/conduit/Makefile,v 1.7 2008/03/18 14:53:42 ahze Exp $
 
 PORTNAME=	conduit
-PORTVERSION=	0.3.11.2
+PORTVERSION=	0.3.12
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -26,7 +26,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goo
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_SITELIBDIR}/vobject/__init__.py:${PORTSDIR}/deskutils/py-vobject \
 		firefox:${PORTSDIR}/www/firefox \
-		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
+		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
+		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_PYTHON=	2.4+
 USE_GMAKE=	yes
