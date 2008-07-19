@@ -1,0 +1,15 @@
+--- build.xml.orig	2008-01-17 21:47:36.000000000 +0100
++++ build.xml	2008-06-20 01:11:45.983423901 +0200
+@@ -52,10 +52,9 @@
+ 				<attribute name="Creator"		value="${author}"/>
+ 				<attribute name="License"		value="${license}"/>
+ 				
+-				<!-- 
+-				TODO: use a property, add binary.jars to classpath (manifestclasspath from ant 1.7.0)
+ 				<attribute name="Main-Class"	value="net.psammead.commonist.Main"/>
+-				-->
++				<attribute name="Class-Path"	value="commons-httpclient.jar commons-codec.jar commons-logging.jar bsh.jar"/>
++			
+ 			</manifest>
+ 		</jar>
+ 	</target>

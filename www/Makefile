@@ -96,6 +96,7 @@
     SUBDIR += cocoon
     SUBDIR += codeigniter
     SUBDIR += comclear
+    SUBDIR += commonist
     SUBDIR += conkeror
     SUBDIR += coppermine
     SUBDIR += crawl

@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+bin/commonist
+%%JAVAJARDIR%%/commonist.jar
+%%ETCDIR%%/gallery_commons.bpp
+%%ETCDIR%%/gallery_default.bpp
+%%ETCDIR%%/image_commons.bpp
+%%ETCDIR%%/image_default.bpp
+%%ETCDIR%%/licenses.txt
+%%ETCDIR%%/messages_de.properties
+%%ETCDIR%%/messages_en.properties
+%%ETCDIR%%/messages_fr.properties
+%%ETCDIR%%/messages_sk.properties
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/commons.family
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/commons.site
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/startup.bsh
+@dirrm %%ETCDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
