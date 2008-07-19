@@ -84,6 +84,9 @@ bin/libsmi2pysnmp
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/error.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/error.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/error.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/nextid.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/nextid.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/nextid.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/__init__.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/__init__.pyo
@@ -189,6 +192,15 @@ bin/libsmi2pysnmp
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3414/service.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3414/service.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3414/service.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3826/__init__.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3826/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3826/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3826/priv/__init__.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3826/priv/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3826/priv/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3826/priv/aes.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3826/priv/aes.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3826/priv/aes.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/__init__.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/__init__.pyo
@@ -240,6 +252,9 @@ bin/libsmi2pysnmp
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/SNMP-USER-BASED-SM-MIB.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/SNMP-USER-BASED-SM-MIB.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/SNMP-USER-BASED-SM-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/SNMP-USM-AES-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/SNMP-USM-AES-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/SNMP-USM-AES-MIB.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/SNMP-VIEW-BASED-ACM-MIB.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/SNMP-VIEW-BASED-ACM-MIB.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/SNMP-VIEW-BASED-ACM-MIB.pyo
@@ -291,14 +306,14 @@ bin/libsmi2pysnmp
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.pyo
-%%DOCSDIR%%/CHANGES
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/mibs/PYSNMP-MIB.txt
-%%DOCSDIR%%/mibs/PYSNMP-USM-MIB.txt
-%%DOCSDIR%%/pysnmp-arch.gif
-%%DOCSDIR%%/pysnmp-tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/mibs/PYSNMP-MIB.txt
+%%PORTDOCS%%%%DOCSDIR%%/mibs/PYSNMP-USM-MIB.txt
+%%PORTDOCS%%%%DOCSDIR%%/pysnmp-arch.gif
+%%PORTDOCS%%%%DOCSDIR%%/pysnmp-tutorial.html
 %%EXAMPLESDIR%%/build-pysnmp-mib
 %%EXAMPLESDIR%%/libsmi2pysnmp
 %%EXAMPLESDIR%%/smi/backend.py
@@ -318,6 +333,7 @@ bin/libsmi2pysnmp
 %%EXAMPLESDIR%%/v3arch/manager/ntfrcv.py
 %%EXAMPLESDIR%%/v3arch/manager/setgen.py
 %%EXAMPLESDIR%%/v3arch/oneliner/agent/ntforg.py
+%%EXAMPLESDIR%%/v3arch/oneliner/manager/async/nextgen.py
 %%EXAMPLESDIR%%/v3arch/oneliner/manager/bulkgen.py
 %%EXAMPLESDIR%%/v3arch/oneliner/manager/getgen.py
 %%EXAMPLESDIR%%/v3arch/oneliner/manager/nextgen.py
@@ -325,6 +341,7 @@ bin/libsmi2pysnmp
 %%EXAMPLESDIR%%/v3arch/oneliner/manager/withmib/nextgen.py
 %%EXAMPLESDIR%%/v3arch/oneliner/manager/withmib/setgen.py
 @dirrm %%EXAMPLESDIR%%/v3arch/oneliner/manager/withmib
+@dirrm %%EXAMPLESDIR%%/v3arch/oneliner/manager/async
 @dirrm %%EXAMPLESDIR%%/v3arch/oneliner/manager
 @dirrm %%EXAMPLESDIR%%/v3arch/oneliner/agent
 @dirrm %%EXAMPLESDIR%%/v3arch/oneliner
@@ -336,11 +353,13 @@ bin/libsmi2pysnmp
 @dirrm %%EXAMPLESDIR%%/v1arch
 @dirrm %%EXAMPLESDIR%%/smi
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%/mibs
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mibs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3826/priv
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3826
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3414/priv
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3414/auth
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3414
