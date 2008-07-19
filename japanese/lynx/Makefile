@@ -16,16 +16,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal-based World-Wide Web Client with multi-byte modification
 
 VERSION=	2.8.6
-MINOR_VERSION=	rel.4
+MINOR_VERSION=	rel.5
 
-CONFLICTS=	lynx-2.* lynx-ssl-2.*
+CONFLICTS=	lynx-2.* ja-lynx-2.8.7.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-ipv6 \
-		--enable-cjk --enable-justify-elts --enable-internal-links
+		--enable-cjk --enable-justify-elts --enable-internal-links \
+		--with-bzlib
 
 .if defined(ENABLE_COLOR_STYLE)
 PLIST_SUB+=	ENABLE_COLOR_STYLE=""
