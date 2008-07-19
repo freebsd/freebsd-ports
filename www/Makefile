@@ -1151,6 +1151,7 @@
     SUBDIR += py-pullparser
     SUBDIR += py-pylons
     SUBDIR += py-pysearch
+    SUBDIR += py-pywebdav
     SUBDIR += py-qp
     SUBDIR += py-qpy
     SUBDIR += py-restclient
