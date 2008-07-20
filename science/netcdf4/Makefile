@@ -7,10 +7,10 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	3.6.3
+PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/netcdf/	\
 		http://sunpoet.net/distfiles/
-MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Library for machine-independent, array-oriented data access
@@ -39,5 +39,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.mk>
