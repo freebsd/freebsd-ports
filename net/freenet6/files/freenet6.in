@@ -16,7 +16,7 @@
 # Add the following lines to /etc/rc.conf to enable freenet6:
 #
 # freenet6_enable="YES"
-# freenet6_flags="-f %%PREFIX%%/etc/tspc.conf"
+# freenet6_flags="-f %%PREFIX%%/etc/gw6c.conf"
 #
 
 . %%RC_SUBR%%
@@ -24,13 +24,13 @@
 name=freenet6
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/bin/tspc
-required_files=%%PREFIX%%/etc/tspc.conf
+command=%%PREFIX%%/bin/gw6c
+required_files=%%PREFIX%%/etc/gw6c.conf
 
 # set defaults
 
 freenet6_enable=${freenet6_enable:-"NO"}
-freenet6_flags=${freenet6_flags:-"-f %%PREFIX%%/etc/tspc.conf"}
+freenet6_flags=${freenet6_flags:-"-f %%PREFIX%%/etc/gw6c.conf"}
 
 load_rc_config $name
 run_rc_command "$1"
