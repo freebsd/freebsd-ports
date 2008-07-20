@@ -7,7 +7,7 @@
 
 PORTNAME=	bitmap
 PORTVERSION=	${BITMAP_VER}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/ \
 		ftp://ftp.jpl.org/pub/elisp/bitmap/snapshots/
