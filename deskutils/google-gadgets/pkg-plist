@@ -39,6 +39,7 @@ include/google-gadgets/ggadget/gadget_consts.h
 include/google-gadgets/ggadget/gadget_manager_interface.h
 include/google-gadgets/ggadget/graphics_interface.h
 include/google-gadgets/ggadget/gtk/cairo_graphics.h
+include/google-gadgets/ggadget/gtk/hotkey.h
 include/google-gadgets/ggadget/gtk/key_convert.h
 include/google-gadgets/ggadget/gtk/main_loop.h
 include/google-gadgets/ggadget/gtk/menu_builder.h
@@ -51,6 +52,8 @@ include/google-gadgets/ggadget/image_cache.h
 include/google-gadgets/ggadget/image_interface.h
 include/google-gadgets/ggadget/img_element.h
 include/google-gadgets/ggadget/item_element.h
+include/google-gadgets/ggadget/js/js_utils.h
+include/google-gadgets/ggadget/js/jscript_massager.h
 include/google-gadgets/ggadget/label_element.h
 include/google-gadgets/ggadget/listbox_element.h
 include/google-gadgets/ggadget/locales.h
@@ -67,6 +70,7 @@ include/google-gadgets/ggadget/object_element.h
 include/google-gadgets/ggadget/options_interface.h
 include/google-gadgets/ggadget/progressbar_element.h
 include/google-gadgets/ggadget/registerable_interface.h
+include/google-gadgets/ggadget/run_once.h
 include/google-gadgets/ggadget/scoped_ptr.h
 include/google-gadgets/ggadget/script_context_interface.h
 include/google-gadgets/ggadget/script_runtime_interface.h
@@ -156,19 +160,33 @@ lib/libggadget-gtk-1.0.a
 lib/libggadget-gtk-1.0.la
 lib/libggadget-gtk-1.0.so
 lib/libggadget-gtk-1.0.so.0
+lib/libggadget-js-1.0.a
+lib/libggadget-js-1.0.la
+lib/libggadget-js-1.0.so
+lib/libggadget-js-1.0.so.0
 libdata/pkgconfig/libggadget-1.0.pc
 libdata/pkgconfig/libggadget-dbus-1.0.pc
 libdata/pkgconfig/libggadget-gtk-1.0.pc
+libdata/pkgconfig/libggadget-js-1.0.pc
+share/applications/ggl-gtk.desktop
+%%DATADIR%%/analog_clock.gg
+%%DATADIR%%/digital_alarm_clock.gg
 %%DATADIR%%/google-gadget-browser.gg
 %%DATADIR%%/igoogle.gg
 %%DATADIR%%/resources.gg
 %%DATADIR%%/rss.gg
+share/mime/packages/00-google-gadgets.xml
+share/mime/application/x-google-gadgets.xml
+share/pixmaps/google-gadgets.png
+@dirrm share/mime/packages
 @dirrm %%DATADIR%%
 @dirrm lib/google-gadgets/modules
 @dirrm lib/google-gadgets/include/ggadget
 @dirrm lib/google-gadgets/include
 @dirrm lib/google-gadgets
+@dirrm include/google-gadgets/ggadget/js
 @dirrm include/google-gadgets/ggadget/gtk
 @dirrm include/google-gadgets/ggadget/dbus
 @dirrm include/google-gadgets/ggadget
 @dirrm include/google-gadgets
+@dirrmtry share/mime/application

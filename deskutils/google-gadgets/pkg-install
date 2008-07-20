@@ -1,0 +1,13 @@
+#!/bin/sh
+
+UPDATE_MIME_DATABASE=update-mime-database
+
+case $2 in
+POST-INSTALL)
+	${UPDATE_MIME_DATABASE} ${PKG_PREFIX}/share/mime
+	;;
+POST-DEINSTALL)
+	${UPDATE_MIME_DATABASE} ${PKG_PREFIX}/share/mime
+	;;
+esac
+
