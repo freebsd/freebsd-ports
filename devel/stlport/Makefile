@@ -7,20 +7,16 @@
 #
 
 PORTNAME=	stlport
-PORTVERSION=	5.1.4
+PORTVERSION=	5.1.5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${COMPILER}
 DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Adaptation of SGI\'s Standard Template Library
 
 USE_BZIP2=	yes
-
-.if !exists(/usr/include/wchar.h)
-BROKEN=		Requires /usr/include/wchar.h for compilation
-.endif
 
 WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/build/lib
 PATCH_WRKSRC=	${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}
