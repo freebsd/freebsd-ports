@@ -1,10 +1,16 @@
 bin/benchmark
+%%PYTHON_SITELIBDIR%%/epsilon/view.py
+%%PYTHON_SITELIBDIR%%/epsilon/view.pyc
+%%PYTHON_SITELIBDIR%%/epsilon/view.pyo
 %%PYTHON_SITELIBDIR%%/epsilon/unrepr.pyo
 %%PYTHON_SITELIBDIR%%/epsilon/unrepr.pyc
 %%PYTHON_SITELIBDIR%%/epsilon/unrepr.py
 %%PYTHON_SITELIBDIR%%/epsilon/test/utils.pyo
 %%PYTHON_SITELIBDIR%%/epsilon/test/utils.pyc
 %%PYTHON_SITELIBDIR%%/epsilon/test/utils.py
+%%PYTHON_SITELIBDIR%%/epsilon/test/test_view.py
+%%PYTHON_SITELIBDIR%%/epsilon/test/test_view.pyc
+%%PYTHON_SITELIBDIR%%/epsilon/test/test_view.pyo
 %%PYTHON_SITELIBDIR%%/epsilon/test/test_unrepr.pyo
 %%PYTHON_SITELIBDIR%%/epsilon/test/test_unrepr.pyc
 %%PYTHON_SITELIBDIR%%/epsilon/test/test_unrepr.py
