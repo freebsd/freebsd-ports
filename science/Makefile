@@ -106,6 +106,7 @@
     SUBDIR += qcl
     SUBDIR += ruby-dcl
     SUBDIR += ruby-gphys
+    SUBDIR += silo
     SUBDIR += simlib
     SUBDIR += svmlight
     SUBDIR += szip
