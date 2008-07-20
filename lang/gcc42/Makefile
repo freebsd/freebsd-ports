@@ -27,7 +27,7 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 
 SUFFIX=		42
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
-NOT_FOR_ARCHS=	alpha ia64
+NOT_FOR_ARCHS=	ia64
 # Building libgcj with lang/gcc295 installed is causing a failure about
 # "hidden symbol `__eprintf'" in libgcc.a(_eprintf.o).
 CONFLICTS=	gcc-2.95.*
