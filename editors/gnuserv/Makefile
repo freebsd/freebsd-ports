@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gnuserv
-PORTVERSION=	3.12.7
-PORTREVISION=	3
+PORTVERSION=	3.12.8
 CATEGORIES=	editors
 MASTER_SITES=	http://meltin.net/hacks/emacs/src/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	A standalone release of gnuserv for GNU Emacs
 
 GNU_CONFIGURE=	yes
