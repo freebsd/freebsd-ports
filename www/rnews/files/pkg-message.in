@@ -14,8 +14,7 @@ and restart httpd.
 To finish the installation, open:
     http://<hostname>/rnews/install.php
 
-update:
-    The DB schema has changed in several ways! For more
-    information see: %%DOCSDIR%%/UPGRADE 
+for update information see:
+    %%DOCSDIR%%/UPGRADE 
 ===============================================================
 

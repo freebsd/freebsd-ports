@@ -4,31 +4,62 @@
 %%WWWDIR%%/ajax.js
 %%WWWDIR%%/ajax.php
 %%WWWDIR%%/auth.php
+%%WWWDIR%%/book.php
 %%WWWDIR%%/export.php
 %%WWWDIR%%/foot.php
-%%WWWDIR%%/img/add.gif
-%%WWWDIR%%/img/edit.gif
-%%WWWDIR%%/img/info.gif
-%%WWWDIR%%/img/mark.gif
-%%WWWDIR%%/img/markall.gif
-%%WWWDIR%%/img/more.gif
-%%WWWDIR%%/img/rnews-logo.gif
-%%WWWDIR%%/img/update.gif
-%%WWWDIR%%/img/x.gif
+%%WWWDIR%%/functions.js
+%%WWWDIR%%/img/b1-add_hv.png
+%%WWWDIR%%/img/b1-add_nm.png
+%%WWWDIR%%/img/b1-block.png
+%%WWWDIR%%/img/b1-block_hv.png
+%%WWWDIR%%/img/b1-block_nm.png
+%%WWWDIR%%/img/b1-blockw.png
+%%WWWDIR%%/img/b1-blockw_hv.png
+%%WWWDIR%%/img/b1-blockw_nm.png
+%%WWWDIR%%/img/b1-list.png
+%%WWWDIR%%/img/b1-list_hv.png
+%%WWWDIR%%/img/b1-list_nm.png
+%%WWWDIR%%/img/b1-markall_hv.png
+%%WWWDIR%%/img/b1-markall_nm.png
+%%WWWDIR%%/img/b1-sname.png
+%%WWWDIR%%/img/b1-sname_hv.png
+%%WWWDIR%%/img/b1-sname_nm.png
+%%WWWDIR%%/img/b1-sscore.png
+%%WWWDIR%%/img/b1-sscore_hv.png
+%%WWWDIR%%/img/b1-sscore_nm.png
+%%WWWDIR%%/img/b2-edit_hv.png
+%%WWWDIR%%/img/b2-edit_nm.png
+%%WWWDIR%%/img/b2-mark_hv.png
+%%WWWDIR%%/img/b2-mark_nm.png
+%%WWWDIR%%/img/b2-update_hv.png
+%%WWWDIR%%/img/b2-update_nm.png
+%%WWWDIR%%/img/b2-x_hv.png
+%%WWWDIR%%/img/b2-x_nm.png
+%%WWWDIR%%/img/feedhdbg.png
+%%WWWDIR%%/img/hdrbg.png
+%%WWWDIR%%/img/loading.gif
+%%WWWDIR%%/img/more-seen.png
+%%WWWDIR%%/img/more.png
+%%WWWDIR%%/img/morew_hv.png
+%%WWWDIR%%/img/morew_nm.png
+%%WWWDIR%%/img/rnews-logo.png
+%%WWWDIR%%/img/screenshot-0.90-sm-g.jpg
 %%WWWDIR%%/img/xml.png
 %%WWWDIR%%/inc/.htaccess
-%%WWWDIR%%/inc/cat.php
+%%WWWDIR%%/inc/cl_cat.php
+%%WWWDIR%%/inc/cl_config.php
+%%WWWDIR%%/inc/cl_db.php
+%%WWWDIR%%/inc/cl_feed.php
+%%WWWDIR%%/inc/cl_feedlink.php
+%%WWWDIR%%/inc/cl_user.php
 %%WWWDIR%%/inc/config.php
-%%WWWDIR%%/inc/db.php
-%%WWWDIR%%/inc/feed.php
-%%WWWDIR%%/inc/feedlink.php
 %%WWWDIR%%/inc/functions.php
 %%WWWDIR%%/inc/kses.php
 %%WWWDIR%%/inc/opml.php
 %%WWWDIR%%/inc/output.php
 %%WWWDIR%%/inc/rss.php
 %%WWWDIR%%/inc/security.php
-%%WWWDIR%%/inc/user.php
+%%WWWDIR%%/inc/upgrade.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install.php
 %%WWWDIR%%/magpierss/extlib/Snoopy.class.inc
@@ -38,10 +69,17 @@
 %%WWWDIR%%/magpierss/rss_utils.inc
 %%WWWDIR%%/prefs.php
 %%WWWDIR%%/redirect.php
+%%WWWDIR%%/rnews-ie6.css
 %%WWWDIR%%/rnews-side.css
-@exec /usr/bin/touch %D/%%WWWDIR%%/inc/config_user.php;/usr/sbin/chown www %D/%%WWWDIR%%/inc/config_user.php
-@unexec if [ ! -s %D/%%WWWDIR%%/inc/config_user.php ];then /bin/rm -f %D/%%WWWDIR%%/inc/config_user.php;fi
-@dirrm %%WWWDIR%%/img/feeds
+%%WWWDIR%%/rollover.js
+%%WWWDIR%%/search.php
+@exec if [ ! -f %D/%%WWWDIR%%/inc/config.php ]; then  install  -o root -g wheel -m 444 %D/%%WWWDIR%%/inc/config.php.sample %D/%%WWWDIR%%/inc/config.php;  /usr/sbin/chown www %D/%%WWWDIR%%/inc/config.php;  /bin/chmod u+w %D/%%WWWDIR%%/inc/config.php; fi
+@exec if [ ! -f %D/%%WWWDIR%%/inc/config_user.php ]; then  install  -o root -g wheel -m 444 %D/%%WWWDIR%%/inc/config_user.php.sample %D/%%WWWDIR%%/inc/config_user.php;  /usr/sbin/chown www %D/%%WWWDIR%%/inc/config_user.php;  /bin/chmod u+w %D/%%WWWDIR%%/inc/config_user.php; fi
+@unexec if cmp -s %D/%%WWWDIR%%/inc/config.php.sample %D/%%WWWDIR%%/inc/config.php;  then /bin/rm -f %D/%%WWWDIR%%/inc/config.php; fi
+%%WWWDIR%%/inc/config.php.sample
+@unexec if cmp -s %D/%%WWWDIR%%/inc/config_user.php.sample %D/%%WWWDIR%%/inc/config_user.php;  then /bin/rm -f %D/%%WWWDIR%%/inc/config_user.php; fi
+%%WWWDIR%%/inc/config_user.php.sample
+@unexec if [ $(ls %D/%%WWWDIR%%/img/feeds/|wc -w) -eq 0 ]; then /bin/rm -rf %D/%%WWWDIR%%/img/feeds;fi
 @dirrm %%WWWDIR%%/img
 @dirrm %%WWWDIR%%/inc
 @dirrm %%WWWDIR%%/magpierss/cache
