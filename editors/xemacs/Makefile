@@ -8,14 +8,14 @@
 PORTNAME=	xemacs
 PORTVERSION=	${XEMACS_VER}
 PORTREVISION=	2
-CATEGORIES+=	editors
+CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
 DISTNAME=	xemacs-${XEMACS_VER}
 DIST_SUBDIR=	xemacs
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	This port tracks the stable version of the XEmacs text editor
+MAINTAINER=	pgollucci@p6m7g8.com
+COMMENT=	This port tracks the stable version of the XEmacs text editor
 
 CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 		xemacs-devel-[0-9]* \
@@ -59,8 +59,7 @@ INFO=		xemacs-${XEMACS_VER}/cl \
 		xemacs-${XEMACS_VER}/xemacs
 ALL_TARGET=	all dist
 
-PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH} \
-		LOCALBASE=${LOCALBASE}
+PLIST_SUB+=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 .include <bsd.port.pre.mk>
 
