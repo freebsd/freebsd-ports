@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.11
 CATEGORIES=	databases
 MASTER_SITES=	http://tokyocabinet.sourceforge.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	A modern implementation of DBM
 
 CONFIGURE_ARGS=	--enable-off64
@@ -18,10 +18,12 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+.if !defined (NO_INSTALL_MANPAGES)
 MAN1=		tcamgr.1 tcatest.1 tcbmgr.1 tcbmttest.1 tcbtest.1 \
 		tchmgr.1 tchmttest.1 tchtest.1 tcucodec.1 tcumttest.1 \
 		tcutest.1
 MAN3=		tcadb.3 tcbdb.3 tchdb.3 tcutil.3 tokyocabinet.3
+.endif
 DOCS=		COPYING ChangeLog README THANKS
 BINS=		tcamgr tcatest tcbmgr tcbmttest tcbtest tchmgr tchmttest \
 		tchtest tcucodec tcumttest tcutest
