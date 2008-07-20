@@ -7,7 +7,7 @@
 
 PORTNAME=	SVN-Web
 PORTVERSION=	0.53
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -61,17 +61,17 @@ MAN3=		SVN::Web.3 \
 		SVN::Web::X.3 \
 		SVN::Web::action.3
 
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/svnweb-install ${PREFIX}/bin
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
-
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500703
 BUILD_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/svnweb-install ${PREFIX}/bin
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO}
 
 .include <bsd.port.post.mk>
