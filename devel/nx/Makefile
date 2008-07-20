@@ -8,7 +8,7 @@
 
 PORTNAME=	nx
 PORTVERSION=	0.33
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://networkx.lanl.gov/download/
 DISTNAME=	networkx-${PORTVERSION}
@@ -29,6 +29,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	networkx
 DOCSDIR=	${PREFIX}/share/doc/networkx-${PORTVERSION}
 PORTDOCS=	*
+EXAMPLESDIR=	${PREFIX}/share/doc/networkx-${PORTVERSION}/examples/
 
 .include <bsd.port.pre.mk>
 
