@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-gadgets
-PORTVERSION=	0.9.3
+PORTVERSION=	0.10.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://google-gadgets-for-linux.googlecode.com/files/
 DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
@@ -27,15 +27,17 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		curl.4:${PORTSDIR}/ftp/curl \
 		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/firefox-js.pc:${PORTSDIR}/www/firefox
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/firefox-js.pc:${PORTSDIR}/www/firefox \
+		${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20
+USE_GCC=	4.2+
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -Wno-deprecated-declarations" CPPFLAGS="-I${LOCALBASE}/include -Wno-deprecated-declarations" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-qt-host --enable-ltdl-install=no
+CONFIGURE_ARGS=	--disable-qt-host --enable-ltdl-install=no --disable-update-mime-database
 USE_AUTOTOOLS=	libtool:15:env autoconf:261:env automake:110:env aclocal:110:env libltdl:15
 
 OPTIONS=	DEBUGGING	"Enable debug output on runtime"	on
@@ -51,5 +53,11 @@ post-patch:
 
 pre-configure:
 	@cd ${WRKSRC} && ${SH} autotools/bootstrap.sh && ${CP} ${AUTOMAKE_DIR}/mkinstalldirs libltdl/
+
+post-deinstall:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-DEINSTALL
+
+post-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
