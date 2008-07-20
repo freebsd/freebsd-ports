@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pixie
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	Pixie-src-${PORTVERSION}
@@ -20,6 +20,8 @@ BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex \
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		fltk_gl.1:${PORTSDIR}/x11-toolkits/fltk \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR
+
+NOT_FOR_ARCHS=	amd64
 
 PORTDOCS=*
 USE_GL=		yes
