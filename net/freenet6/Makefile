@@ -14,7 +14,7 @@ DISTNAME=	tspc-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	edwin@mavetju.org
-COMMENT=	Freenet6 Tunnel Setup Protocol Client - Free IPv6 tunnel
+COMMENT=	Hexago Freenet6 Tunnel Setup Protocol Client - Free IPv6 tunnel
 
 USE_RC_SUBR=	yes
 WRKSRC=		${WRKDIR}/tspc-advanced
