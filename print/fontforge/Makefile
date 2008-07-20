@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20080607
-PORTREVISION=	2
+PORTVERSION=	20080720
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -105,7 +104,7 @@ post-extract:
 	for doc in ${DOCFILES} ; \
 		do ${TAR} -xjC ${WRKDIR}/html -f ${DISTDIR}/$${doc} ; \
 	done
-# The 20080607 version of fontforge's documentation doesn't contain the cidmaps,
+# The 20080607 and up versions of fontforge's documentation doesn't contain the cidmaps,
 #  but I'm leaving this here just in case they are added back in a later version.
 #	${TAR} -xzC ${WRKSRC}/cidmap -f ${WRKDIR}/html/cidmaps.tgz
 #	${RM} ${WRKDIR}/html/cidmaps.tgz
