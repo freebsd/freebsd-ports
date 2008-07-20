@@ -7,7 +7,7 @@
 
 PORTNAME=	color-mate
 PORTVERSION=	10.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 
@@ -38,7 +38,7 @@ do-build:
 	${ECHO_CMD} "(provide 'color-mate-startup)" >> ${WRKDIR}/color-mate-startup.xemacs.el
 
 do-install:
-	${MKDIR} ${ELISPDIR} ${DOCSDIR} ${THEME_DIR} ${XELISPDIR} ${ELISPDIR}/kanakan-cursor ${ELISPDIR}/contrib
+	${MKDIR} ${ELISPDIR} ${THEME_DIR} ${XELISPDIR} ${ELISPDIR}/kanakan-cursor ${ELISPDIR}/contrib
 	${INSTALL_DATA} ${WRKSRC}/*.el ${ELISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/kanakan-cursor/*.el ${ELISPDIR}/kanakan-cursor/
 	${INSTALL_DATA} ${WRKSRC}/contrib/*.el ${ELISPDIR}/contrib/
@@ -50,6 +50,7 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/theme_build.sh ${THEME_DIR}
 	${INSTALL_DATA} ${WRKDIR}/color-mate-startup.el ${ELISPDIR}/../
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.color-mate ${DOCSDIR}/README.color-mate.jp
 	${INSTALL_DATA} ${WRKSRC}/README.color-mate.eng ${DOCSDIR}/README.color-mate.eng
 	${INSTALL_DATA} ${WRKSRC}/Q_and_A.color-mate  ${DOCSDIR}
