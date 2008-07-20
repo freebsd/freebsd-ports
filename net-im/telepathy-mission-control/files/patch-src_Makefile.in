@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	2008-07-20 01:57:35.000000000 -0400
++++ src/Makefile.in	2008-07-20 01:57:38.000000000 -0400
+@@ -291,7 +291,6 @@ BUILT_SOURCES = \
+ CLEANFILES = $(BUILT_SOURCES)
+ lib_LTLIBRARIES = libmissioncontrol-server.la
+ libmissioncontrol_server_la_LIBADD = $(GCONF_LIBS) $(TELEPATHY_LIBS) \
+-	-ldl \
+ 	$(top_builddir)/libmissioncontrol/libmissioncontrol-client.la
+ 
+ 
