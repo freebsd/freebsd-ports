@@ -43,8 +43,8 @@ share/locale/ru/LC_MESSAGES/pinot.mo
 share/locale/sv/LC_MESSAGES/pinot.mo
 share/locale/zh_CN/LC_MESSAGES/pinot.mo
 share/locale/zh_TW/LC_MESSAGES/pinot.mo
-%%DATADIR%%/AmazonAPI.src
 %%DATADIR%%/engines/A9.src
+%%DATADIR%%/engines/AmazonAPI.src
 %%DATADIR%%/engines/BitTorrent.src
 %%DATADIR%%/engines/Clusty.src
 %%DATADIR%%/engines/CreativeCommons.src
@@ -61,6 +61,7 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/engines/UNData.src
 %%DATADIR%%/engines/Wikipedia.src
 %%DATADIR%%/engines/Yahoo.src
+%%DATADIR%%/engines/YahooBOSS.src
 %%DATADIR%%/metase-gtk2.glade
 %%DATADIR%%/metase-gtk2.gladep
 %%DATADIR%%/pinot-dbus-daemon.xml
