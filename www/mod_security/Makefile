@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_security
 PORTVERSION=	2.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
@@ -35,6 +35,7 @@ DOCSDIR=	${PREFIX}/share/doc/${MODULENAME}
 SUB_FILES+=	mod_security2.conf
 SUB_LIST+=	APACHEETCDIR="${APACHEETCDIR}"
 PLIST_FILES+=	${APACHEMODDIR}/mod_security2.so
+OPTIONS=	LUA "Embedded Lua language support (EXPERIMENTAL)" off
 
 .if !defined(SKIP_RULES)
 SUB_FILES+=	pkg-message.rules
@@ -64,6 +65,14 @@ PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_
 
 .endif
 
+.if defined(WITH_LUA)
+USE_LUA=	5.1+
+CONFIGURE_ARGS+=	--with-lua=${LOCALBASE}
+LIB_DEPENDS+=	lua.1:${PORTSDIR}/lang/lua
+.else
+CONFIGURE_ARGS+=	--without-lua
+.endif
+
 REINPLACE_ARGS=	-i ""
 
 post-patch:
@@ -73,6 +82,9 @@ post-patch:
 		s|SecDebugLog.*logs/modsec_debug.log|SecDebugLog /var/log/httpd-modsec2_debug.log|; \
 		s|SecServerSignature "Apache/2.2.0 (Fedora)"|SecServerSignature "Apache/${APACHE_VERSION:C/[0-9]/\0./g}x (${OPSYS})"|; \
 		' ${WRKSRCTOP}/rules/modsecurity_crs_10_config.conf
+.if defined(WITH_LUA)
+	${REINPLACE_CMD} -e 's|%%LUA_VER%%|${LUA_VER}|' ${WRKSRC}/configure
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
