@@ -1,5 +1,5 @@
 bin/templ
-share/doc/templates/README
+%%PORTDOCS%%%%DOCSDIR%%/templates/README
 share/templates/t.4th
 share/templates/t.c
 share/templates/t.cc
@@ -12,5 +12,6 @@ share/templates/t.py
 share/templates/t.sgml
 share/templates/t.sh
 share/templates/t.txt
-@dirrm share/doc/templates
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/templates
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/templates
