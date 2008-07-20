@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rnews
-PORTVERSION=	0.81
+PORTVERSION=	0.92
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -14,8 +14,6 @@ MAINTAINER=	as@bsdgroup.de
 COMMENT=	A server-side rss aggregator written in php with mysql
 
 NO_BUILD=	yes
-
-WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
 SUB_FILES=	pkg-message
 
@@ -37,44 +35,64 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER
 .endif
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	CHANGELOG INSTALL README UPGRADE
+PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADE
 .endif
+
+CONFIGS=	inc/config.php inc/config_user.php
 
 do-install:
 	@${FIND} -s ${WRKSRC} -type  d | ${SED} -e 's,^${WRKSRC},${WWWDIR},' \
 		| ${XARGS} ${MKDIR}
 	${INSTALL_DATA} -v ${WRKSRC}/*.php ${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/rnews-side.css ${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/ajax.js ${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.css ${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.js ${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/.htaccess ${WWWDIR}
 	${INSTALL_DATA} -v ${WRKSRC}/img/*.gif ${WWWDIR}/img
-	${INSTALL_DATA} ${WRKSRC}/img/xml.png ${WWWDIR}/img
-	( ${FIND} ${WRKSRC}/inc -name '*.php' -not -name config_user.php; ${ECHO} ${WWWDIR}/inc ) \
+	${INSTALL_DATA} ${WRKSRC}/img/*.png ${WWWDIR}/img
+	${INSTALL_DATA} ${WRKSRC}/img/*.jpg ${WWWDIR}/img
+	( ${FIND} ${WRKSRC}/inc -type f -not -name config_user.php -a -not -name config.php; ${ECHO} ${WWWDIR}/inc ) \
 		| ${XARGS} ${INSTALL_DATA} -v
-	${INSTALL_DATA} ${WRKSRC}/inc/.htaccess ${WWWDIR}/inc
 	${INSTALL_DATA} -v ${WRKSRC}/magpierss/*.inc ${WWWDIR}/magpierss
 	${INSTALL_DATA} ${WRKSRC}/magpierss/extlib/Snoopy.class.inc ${WWWDIR}/magpierss/extlib
 	@${CHOWN} ${WWWOWN} ${WWWDIR}/magpierss/cache
 	@${CHOWN} ${WWWOWN} ${WWWDIR}/img/feeds
-.if !exists(${WWWDIR}/inc/config_user.php)
-	@${TOUCH} ${WWWDIR}/inc/config_user.php
-	@${CHOWN} ${WWWOWN} ${WWWDIR}/inc/config_user.php
-.endif
+.for FILE in ${CONFIGS}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${WWWDIR}/${FILE}.sample
+.endfor
+
+post-install:
+.for FILE in ${CONFIGS}
+. if !exists(${WWWDIR}/${FILE})
+	${INSTALL_DATA} ${WWWDIR}/${FILE}.sample ${WWWDIR}/${FILE}
+	@${CHOWN} ${WWWOWN} ${WWWDIR}/${FILE}
+	@${CHMOD} u+w ${WWWDIR}/${FILE}
+. endif
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.	for FILE in ${PORTDOCS}
+. for FILE in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.	endfor
+. endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
 create-plist:
-	@${FIND} -s ${WRKSRC} \( -name "*.php" -o -name "*.inc" -o -name "*.js" -o -name "*.css" \
+	@${FIND} -s ${WRKSRC} \( -name "*.php" -o -name "*.inc" -o -name "*.js" -o -name "*.css" -o -name "*.jpg" \
 		-o -name "*.gif" -o -name "*.png" -o -name ".htaccess" \) -and -not -name config_user.php \
 		| ${SED} -e 's,^${WRKSRC},%%WWWDIR%%,' > ${PLIST}
-	@${ECHO_CMD} '@exec ${TOUCH} %D/%%WWWDIR%%/inc/config_user.php;${CHOWN} ${WWWOWN} %D/%%WWWDIR%%/inc/config_user.php' >> ${PLIST}
-	@${ECHO_CMD} '@unexec if [ ! -s %D/%%WWWDIR%%/inc/config_user.php ];then ${RM} -f %D/%%WWWDIR%%/inc/config_user.php;fi' >> ${PLIST}
-	@${FIND} -ds ${WRKSRC} -type d \
+.for FILE in ${CONFIGS}
+	@${ECHO_CMD} '@exec if [ ! -f %D/%%WWWDIR%%/${FILE} ]; then \
+		${INSTALL_DATA} %D/%%WWWDIR%%/${FILE}.sample %D/%%WWWDIR%%/${FILE}; \
+		${CHOWN} ${WWWOWN} %D/%%WWWDIR%%/${FILE}; \
+		${CHMOD} u+w %D/%%WWWDIR%%/${FILE}; fi' >> ${PLIST}
+.endfor
+.for FILE in ${CONFIGS}
+	@${ECHO_CMD} '@unexec if cmp -s %D/%%WWWDIR%%/${FILE}.sample %D/%%WWWDIR%%/${FILE}; \
+		then ${RM} -f %D/%%WWWDIR%%/${FILE}; fi' >> ${PLIST}
+	@${ECHO_CMD} '%%WWWDIR%%/${FILE}.sample' >> ${PLIST}
+.endfor
+	@${ECHO_CMD} '@unexec if [ $$(ls %D/%%WWWDIR%%/img/feeds/|wc -w) -eq 0 ]; then ${RM} -rf %D/%%WWWDIR%%/img/feeds;fi' >> ${PLIST}
+	@${FIND} -ds ${WRKSRC} -type d -a -not -name feeds \
 		| ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
 
 .include <bsd.port.post.mk>
