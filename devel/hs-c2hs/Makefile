@@ -18,6 +18,7 @@ COMMENT=	C->Haskell, an Interface Generator for Haskell
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		happy:${PORTSDIR}/devel/hs-happy \
 		alex:${PORTSDIR}/devel/hs-alex
+RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 .include <bsd.port.pre.mk>
@@ -25,8 +26,8 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 GHC_VERSION=	6.8.3
 
 # 'owned' by lang/ghc:
-CABALDIR=       ${PREFIX}/${SUBDIR}
-CABALCMD=       ${LOCALBASE}/bin/runghc Setup.hs
+CABALDIR=	${PREFIX}/${SUBDIR}
+CABALCMD=	${LOCALBASE}/bin/runghc Setup.hs
 SUBDIR=		lib/ghc-${GHC_VERSION}/cabal
 
 PLIST_FILES=	bin/c2hs ${SUBDIR}/${PORTNAME}/C2HS.hs \
