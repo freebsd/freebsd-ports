@@ -4959,6 +4959,7 @@ hplip                           ports/print/hplip
 hppsmtools                      ports/graphics/hppsmtools
 hptools                         ports/devel/hptools
 hr-aspell                       ports/textproc/hr-aspell
+hrktorrent                      ports/net-p2p/hrktorrent
 hs-HGL-ghc                      ports/graphics/hs-HGL-ghc
 hs-alex                         ports/devel/hs-alex
 hs-buddha                       ports/devel/hs-buddha
@@ -17192,6 +17193,7 @@ py-TurboJinja                   ports/devel/py-TurboJinja
 py-adns                         ports/dns/py-adns
 py-albatross                    ports/www/py-albatross
 py-amanith                      ports/graphics/py-amanith
+py-amf                          ports/www/py-amf
 py-anki                         ports/games/py-anki
 py-anonfunc                     ports/devel/py-anonfunc
 py-anygui                       ports/x11-toolkits/py-anygui
@@ -17708,6 +17710,7 @@ py-urwid                        ports/devel/py-urwid
 py-usb                          ports/devel/py-usb
 py-utidy                        ports/www/py-utidy
 py-utils                        ports/devel/py-utils
+py-uuid                         ports/devel/py-uuid
 py-vertex                       ports/net-p2p/py-vertex
 py-virtualenv                   ports/devel/py-virtualenv
 py-visual                       ports/graphics/py-visual
@@ -17716,6 +17719,7 @@ py-vobject                      ports/deskutils/py-vobject
 py-vorbis                       ports/audio/py-vorbis
 py-vte                          ports/x11-toolkits/py-vte
 py-wax                          ports/x11-toolkits/py-wax
+py-wbxml                        ports/textproc/py-wbxml
 py-webhelpers                   ports/www/py-webhelpers
 py-webunit                      ports/www/py-webunit
 py-webware                      ports/www/py-webware
@@ -21959,6 +21963,7 @@ xpi-cookiesafe                  ports/www/xpi-cookiesafe
 xpi-cssviewer                   ports/www/xpi-cssviewer
 xpi-customizegoogle             ports/www/xpi-customizegoogle
 xpi-cutemenus-crystalsvg        ports/www/xpi-cutemenus-crystalsvg
+xpi-deepestsender               ports/www/xpi-deepestsender
 xpi-delicious                   ports/www/xpi-delicious
 xpi-displayquota                ports/mail/xpi-displayquota
 xpi-downthemall                 ports/www/xpi-downthemall
@@ -21973,7 +21978,9 @@ xpi-flatbmark                   ports/www/xpi-flatbmark
 xpi-forecastfox                 ports/www/xpi-forecastfox
 xpi-formfox                     ports/www/xpi-formfox
 xpi-foxmarks                    ports/www/xpi-foxmarks
+xpi-foxyproxy                   ports/www/xpi-foxyproxy
 xpi-gbrain                      ports/www/xpi-gbrain
+xpi-gbutts                      ports/www/xpi-gbutts
 xpi-gmail-manager               ports/www/xpi-gmail-manager
 xpi-google-notebook             ports/www/xpi-google-notebook
 xpi-greasemonkey                ports/www/xpi-greasemonkey
@@ -21998,7 +22005,9 @@ xpi-neo-diggler                 ports/www/xpi-neo-diggler
 xpi-no-referrer                 ports/www/xpi-no-referrer
 xpi-noscript                    ports/www/xpi-noscript
 xpi-num2web                     ports/www/xpi-num2web
+xpi-passwordmaker               ports/www/xpi-passwordmaker
 xpi-pdf_download                ports/www/xpi-pdf_download
+xpi-permatabs                   ports/www/xpi-permatabs
 xpi-preferential                ports/www/xpi-preferential
 xpi-quick-locale-switcher       ports/www/xpi-quick-locale-switcher
 xpi-quickproxy                  ports/www/xpi-quickproxy
@@ -22023,6 +22032,7 @@ xpi-videodownloader             ports/www/xpi-videodownloader
 xpi-vimperator                  ports/www/xpi-vimperator
 xpi-web_developer               ports/www/xpi-web_developer
 xpi-wmlbrowser                  ports/www/xpi-wmlbrowser
+xpi-xhtml-ruby-support          ports/www/xpi-xhtml-ruby-support
 xpi-xmpp4moz                    ports/www/xpi-xmpp4moz
 xpi-xpcom-component-viewer      ports/www/xpi-xpcom-component-viewer
 xpi-yslow                       ports/www/xpi-yslow
