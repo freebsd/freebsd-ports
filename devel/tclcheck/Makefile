@@ -7,6 +7,7 @@
 
 PORTNAME=	tclcheck
 PORTVERSION=	1.1.13
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 DISTNAME=	tclCheck-${PORTVERSION}
@@ -22,9 +23,8 @@ pre-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/tclCheck
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/tclCheck
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tclCheck
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
