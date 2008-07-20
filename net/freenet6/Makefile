@@ -7,7 +7,7 @@
 
 PORTNAME=	freenet6
 PORTVERSION=	5.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://go6.net/4105/file.asp?file_id=150&
 DISTNAME=	tspc-${PORTVERSION}-src

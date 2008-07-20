@@ -1,6 +1,0 @@
-bin/tspc
-%%EXAMPLESDIR%%/tspc.conf.sample
-bin/tspc-freebsd.sh
-bin/checktunnel.sh
-etc/rc.d/freenet6.sh
-@dirrm %%EXAMPLESDIR%%
