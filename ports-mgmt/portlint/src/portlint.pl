@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.155 2008/07/05 06:01:38 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.158 2008/07/20 01:07:59 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -46,7 +46,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 9;
-my $micro = 9;
+my $micro = 10;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -603,7 +603,20 @@ sub checkdescr {
 	open(IN, "< $file") || return 0;
 	while (<IN>) {
 		$tmp .= $_;
-		chomp || &perror("WARN", $file, -1, "should terminate in '\n'.");
+		chomp || &perror("WARN", $file, -1, "lines should terminate with a ".
+			"newline (i.e. '\\n').");
+		if (/$/) {
+			&perror("WARN", $file, -1, "lines should not contain carriage ".
+				"returns.  Strip all carriage returns (e.g. run dos2unix) ".
+				"in $file.");
+		}
+		if (/^WWW:\s*(\S*)/) {
+			my $wwwurl = $1;
+			if ($wwwurl !~ m|^http://|) {
+				&perror("WARN", $file, -1, "WWW URL, $wwwurl should begin ".
+					"with \"http://\".");
+			}
+		}
 		$linecnt++;
 		$longlines++ if ($maxchars{$file} < length);
 	}
@@ -1146,6 +1159,18 @@ sub checkmakefile {
 	}
 
 	#
+	# whole file: use of !=
+	#
+	print "OK: checking for use of !=.\n" if ($verbose);
+	if ($whole =~ /^[\w\d_]+\!=/m) {
+		my $lineno = &linenumber($`);
+		&perror("WARN", $file, $lineno, "use of != in assignments is almost ".
+			"never a good thing to do.  Try to avoid using them.  See ".
+			"http://lists.freebsd.org/pipermail/freebsd-ports/2008-July/049777.html ".
+			"for some helpful hints on what to do instead.");
+	}
+
+	#
 	# whole file: use of .elseif
 	#
 	print "OK: checking for use of .elseif.\n" if ($verbose);
@@ -1641,6 +1666,29 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 			$use_gnome_hack = 1;
 		}
 	}
+
+	#
+	# whole file: USE_GCC checks
+	#
+	if ($whole =~ /^USE_GCC[?:]?=\s*(.*)$/m) {
+		my $lineno = &linenumber($`);
+		my $gcc_val = $1;
+		if ($gcc_val =~ /3\.[234]\+/) {
+			&perror("WARN", $file, $lineno, "USE_GCC=3.2+, USE_GCC=3.3+, ".
+				"and USE_GCC=3.4+ are noops on all currently (and future) ".
+				"supported versions of FreeBSD.  Do not use them.");
+		} elsif ($gcc_val eq "4.1+") {
+			&perror("WARN", $file, $lineno, "USE_GCC=4.2+ is recommended ".
+				"over USE_GCC=4.1+ since the former is the system compiler ".
+				"for FreeBSD 7.X.");
+		} elsif ($gcc_val !~ /\+/) {
+			&perror("WARN", $file, $lineno, "Setting a specific version for ".
+				"USE_GCC should only be done as a last resort.  Unless you ".
+				"have confirmed this port does not build with later ".
+				"versions of GCC, please use USE_GCC=$gcc_val+.");
+		}
+	}
+
 
 	#
 	# whole file: USE_JAVA check
