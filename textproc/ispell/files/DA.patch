@@ -1,8 +1,8 @@
---- ispell-da-1.4.49/Makefile.orig	Thu Apr 21 11:29:52 2005
-+++ ispell-da-1.4.49/Makefile	Sun May  1 21:35:42 2005
+--- ispell-da-1.7.18/Makefile.orig	Mon Feb 11 11:37:04 2008
++++ ispell-da-1.7.18/Makefile	Sun Jul 20 16:40:35 2008
 @@ -9,13 +9,13 @@
  lang=da
- version=1.4.49
+ version=1.7.18
  
 -installdir=`ispell -vv | grep LIBDIR | cut -d'"' -f2`
 +installdir=`${ISPELL} -vv | grep LIBDIR | cut -d'"' -f2`
