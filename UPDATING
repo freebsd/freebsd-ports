@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080721:
+  AFFECTS: users of net/freenet6
+  Author: Edwin Groothuis <edwin@mavetju.org>
+
+  Please note that there has been a major update of this port (From
+  vesion 2.x to 5.x) and that the name of the binaries and configuration
+  files has changed from "tpsc" to "gw6c". The configuration files
+  have to be opied from ${PREFIX}/share/examples/freenet6 to
+  ${PREFIX}/etc again.
+
 20080719:
   AFFECTS: users of x11-fm/gprename
   AUTHOR: Martin Tournoij <carpetsmoker@rwxrwxrwx.net>
