@@ -11,17 +11,16 @@ PORTVERSION=	3.3.6
 PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	lang
-VERSIONSTRING=	${PORTVERSION}
 MASTER_SITES=	${MASTER_SITE_GCC}
-MASTER_SITE_SUBDIR=	releases/gcc-${VERSIONSTRING}
-DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g77-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	releases/gcc-${PORTVERSION}
+DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-g77-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-objc-${PORTVERSION}${EXTRACT_SUFX} \
+		gcc-testsuite-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	gerald@FreeBSD.org
-COMMENT?=	GNU Compiler Collection 3.3
+COMMENT=	GNU Compiler Collection 3.3
 
 SUFFIX=		33
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
@@ -37,13 +36,17 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+IGNORE=		does not support FreeBSD 8 and above
+.endif
+
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
-SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
+SRCDIR=		${WRKDIR}/gcc-${PORTVERSION}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
