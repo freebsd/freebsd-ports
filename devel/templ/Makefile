@@ -7,8 +7,9 @@
 
 PORTNAME=	templ
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES= 	ftp://ftp.holywar.net/pub/templ/ \
+MASTER_SITES=	ftp://ftp.holywar.net/pub/templ/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,8 +17,8 @@ COMMENT=	Source code templates generator
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/templates
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/templates
+	@${MKDIR} ${DOCSDIR}/templates
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/templates
 .endif
 
 .include <bsd.port.mk>
