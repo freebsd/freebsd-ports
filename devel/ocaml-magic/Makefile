@@ -6,60 +6,50 @@
 #
 
 PORTNAME=	magic
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	OCaml-Magic-${PORTVERSION}
+DISTNAME=	${PKGNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	An OCaml binding for libmagic(3)
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
+USE_OCAML=		yes
+USE_OCAML_FINDLIB=	yes
+USE_OCAML_LDCONFIG=	yes
 
-ALL_TARGET=	opt
-INSTALL_TARGET=	install-opt
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+.ifndef(NOPORTDOCS)
+ALL_TARGET+=	doc
+PORTDOCS=	*
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
+.endif
+
+.ifndef(NOPORTEXAMPLES)
+ALL_TARGET+=	examples
+PORTEXAMPLES=	*
+EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
+.endif
 
 # This really is overzealous but I work this way
 .if !exists(/usr/lib/libmagic.so)
 LIB_DEPENDS+=	magic:${PORTSDIR}/sysutils/file
 .endif
 
-.ifndef(NOPORTDOCS)
-ALL_TARGET+=	doc
-INSTALL_TARGET+=	install-doc
-
-PORTDOCS=	*
-.endif
-
-LIB_STUB_FILES=	\
-		dllmagic_stub.so
-
-post-configure:
-# LIB safeness
-	${REINPLACE_CMD} -E \
-		-e's|(-lmagic[[:space:]]+)|\1 -lz |' \
-		${WRKSRC}/Makefile
-# CFLAGS,PREFIX safeness
-	@${REINPLACE_CMD} -E \
-		-e 's|^PREFIX.+$$||' \
-		-e 's|\$$\(shell[[:space:]]+ocamlc[[:space:]]+-version\)||' \
-		-e 's|^(DOCDIR).*$$|\1 = ${DOCSDIR}|' \
-		-e 's,^((OCAMLC|OCAMLOPT|OCAMLDEP|OCAMLDOC|OCAMLMKLIB)[^=]*)[[:space:]]*=[[:space:]]*(.+)$$,\1 = ${LOCALBASE}/bin/\3,' \
-		${WRKSRC}/Makefile.config
-
-post-install:
-# stub files
-	@${MKDIR} ${PREFIX}/lib/ocaml/stublibs
-.for file in ${LIB_STUB_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/ocaml/stublibs
-.endfor
-
 .include <bsd.port.pre.mk>
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+post-install:
+.ifndef(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOCSDIR}
+.endif
+.ifndef(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.post.mk>
