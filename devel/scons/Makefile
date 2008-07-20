@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	scons
-PORTVERSION=	0.98.4
+PORTVERSION=	0.98.5
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	A build tool alternative to make
 
+.if !defined (NO_INSTALL_MANPAGES)
 MAN1=		scons.1 sconsign.1 scons-time.1
+.endif
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
