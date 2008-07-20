@@ -82,7 +82,7 @@ OPTIONS=	ELM_ICONV "libiconv support" on \
 
 ELM_VERSION=	2.4
 ELM_REVISION=	124
-ELM_PATCHLEVEL=	b	# a...z = patch-level, _ means no patch-level.
+ELM_PATCHLEVEL=	c	# a...z = patch-level, _ means no patch-level.
 
 ELM_PATCHDONE=	false
 .for level in _ a b c d e f g h i j k l m n o p q r s t u v w x y z
