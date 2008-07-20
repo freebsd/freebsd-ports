@@ -14,6 +14,8 @@ DISTNAME=	Subcommander-${PORTVERSION}
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Qt based multiplatform subversion client, diff & merge tool
 
+BROKEN=		depends on conflicting packages neon28-0.28.2_1 and neon26-0.26.4_1
+
 LIB_DEPENDS=	neon.28:${PORTSDIR}/www/neon28 \
 		apr-1.3:${PORTSDIR}/devel/apr-svn \
 		boost_thread.4:${PORTSDIR}/devel/boost \
