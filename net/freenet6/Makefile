@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	freenet6
-PORTVERSION=	2.1.1
+PORTVERSION=	5.1
 PORTREVISION=	10
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.go6.net/4105/file.asp?file_id=80&foo=/
+MASTER_SITES=	http://go6.net/4105/file.asp?file_id=150&
 DISTNAME=	tspc-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
@@ -17,46 +17,35 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Freenet6 Tunnel Setup Protocol Client - Free IPv6 tunnel
 
 USE_RC_SUBR=	yes
-WRKSRC=		${WRKDIR}/tspc2
+WRKSRC=		${WRKDIR}/tspc-advanced
 
-MAN8=		tspc.8
-MAN5=		tspc.conf.5
+MAN8=		gw6c.8
+MAN5=		gw6c.conf.5
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	freenet6.sh pkg-message
-EXTRA_PATCHES=	${FILESDIR}/patch5-template::freebsd.sh
+USE_RC_SUBR=	freenet6
+SUB_FILES=	pkg-message
 MAKE_ARGS=	target=freebsd installdir=${PREFIX}
+
+PLIST_FILES=	bin/gw6c bin/gw6c-freebsd.sh share/examples/freenet6/gw6c.conf
+PLIST_DIRS=	share/examples/freenet6
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 700000
-EXTRA_PATCHES+=	${FILESDIR}/patch7-plstform__freebsd__tsp_local.c
+post-fetch:
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+	${MV} ${DISTDIR}/file.asp*file_id*150* ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 .endif
 
 do-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/bin/tspc.conf.sample ${EXAMPLESDIR}
-
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/tspc ${PREFIX}/bin/tspc
-	@${INSTALL_SCRIPT} ${WRKSRC}/template/checktunnel.sh ${PREFIX}/bin/checktunnel.sh
-	@${INSTALL_SCRIPT} ${WRKSRC}/template/freebsd.sh ${PREFIX}/bin/tspc-freebsd.sh
-	@${INSTALL_MAN} ${WRKSRC}/man/man8/tspc.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/man/man5/tspc.conf.5 ${PREFIX}/man/man5
-	@${INSTALL_SCRIPT} ${WRKDIR}/freenet6.sh ${PREFIX}/etc/rc.d/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/gw6c ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/template/freebsd.sh ${PREFIX}/bin/gw6c-freebsd.sh
+	${MKDIR} ${PREFIX}/share/examples/freenet6
+	${INSTALL_DATA} ${WRKSRC}/bin/gw6c.conf.sample ${PREFIX}/share/examples/freenet6/gw6c.conf
+	${INSTALL_MAN} ${WRKSRC}/man/man5/gw6c.conf.5 ${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/man/man8/gw6c.8 ${PREFIX}/man/man8
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-post-patch:
-	@${REINPLACE_CMD} \
-		-e "s|/installdir/bin|${PREFIX}/etc|g" \
-		${WRKSRC}/man/man8/tspc.8
-
-	@${REINPLACE_CMD} \
-		-e "s|/usr/local/tsp|${PREFIX}|g" \
-		-e "s|/install/dir/bin/tspc.conf.sample|${EXAMPLESDIR}/tspc.conf.sample|g" \
-		-e "s|/install/dir/bin/tspc.conf|${PREFIX}/etc/tspc.conf|g" \
-		-e "s|template=linux|template=tspc-freebsd|g" \
-		${WRKSRC}/man/man5/tspc.conf.5
 
 .include <bsd.port.post.mk>

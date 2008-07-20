@@ -1,20 +1,26 @@
-Freenet6's TSP is a new initiative launched by Viagenie, a private
-company in Canada involved in IPv6 since 1996, to facilitate a
-faster deployment of an Internet IPv6. Internet is world-wide
-deployed over IPv4, therefore this project has the main goal of
-deploying IPv6 at a larger scale by using configured tunnels.
+What is Freenet6?
 
-Configured tunnel is a transitional method standardized by the IETF
-to use IPv6 in coexistence with IPv4 by encapsulating IPv6 packets
-over IPv4. Any host already connected to Internet with IPv4 and
-having an IPv6 stack could establish link to Internet IPv6.
+Freenet6 is an IPv6 access service offered for free to the community.
+This service enables thousands of people from all over the world
+to experience the best solution for a smooth and incremental
+deployment of IPv6. Freenet6 users can get IPv6 connectivity from
+anywhere, including from behind any NAT device or from outside of
+their home network.
 
-Freenet6, developed by Viagenie in 1999-2000, was the first public
-tunnel server service and one of the most used in the world to
-delegate automatically one single IPv6 address to any host already
-connected to an IPv4 network over configured tunnel simply by
-filling a Web form and running a script. Freenet6's TSP is representing
-another very important step to accelerate the deployment at large
-scale of IPv6 to everyone on the net.
+On Freenet6, a single, permanent IPv6 address and a DNS name are
+assigned to each user, making their PC reachable from anywhere on
+the IPv6 internet. A full /48 prefix may also be assigned to a
+router, enabling the distribution of IPv6 connectivity to an entire
+network.  Freenet 6 - Get Connected For Free!
+
+Instead of a Web interface, which is usually offered by traditional
+tunnel brokers, Freenet6 uses an innovative model based on a
+client/server architecture. The Gateway6 Client is software that
+usually runs on a PC and that implements the Tunnel Setup Protocol
+(TSP). The Gateway6 Client is used to automatically negotiate a
+configured tunnel between a PC or router and the Freenet6 tunnel
+broker, making IPv6 easy to install and maintain. The Gateway6
+Client source code is licensed under the GPL. A commercial license
+is also available.
 
 WWW: http://www.go6.net/4105/freenet.asp
