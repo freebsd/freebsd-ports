@@ -8,7 +8,9 @@
 PORTNAME=	mod_auth_ldap
 PORTVERSION=	2.12
 CATEGORIES=	www
-MASTER_SITES=	http://www.muquit.com/muquit/software/mod_auth_ldap/
+MASTER_SITES=	http://www.muquit.com/muquit/software/mod_auth_ldap/ \
+		LOCAL
+MASTER_SITE_SUBDIR=	jadawin
 DISTNAME=	modauthldap_apache2
 
 MAINTAINER=	gerrit.beine@gmx.de
