@@ -1,8 +1,8 @@
 bin/epm
 bin/epminstall
 bin/mkepmlist
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/epm-manual.html
-%%PORTDOCS%%%%DOCSDIR%%/epm-manual.pdf
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README
+%%DOCSDIR%%/epm-manual.html
+%%DOCSDIR%%/epm-manual.pdf
+@dirrm %%DOCSDIR%%
