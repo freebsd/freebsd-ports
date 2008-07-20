@@ -1,0 +1,76 @@
+--- cmuwmraster.c.orig	Tue Jul  1 19:08:24 2008
++++ cmuwmraster.c	Tue Jul  1 19:08:57 2008
+@@ -22,9 +22,9 @@ struct cmuwm_header *headerp;
+ {
+     printf("%s is a %ldx%ld %ld plane CMU WM raster\n",
+ 	   name,
+-	   memToVal(headerp->width, sizeof(long)),
+-	   memToVal(headerp->height, sizeof(long)),
+-	   memToVal(headerp->depth, sizeof(short)));
++	   memToVal(headerp->width, 4),
++	   memToVal(headerp->height, 4),
++	   memToVal(headerp->depth, 2));
+ }
+ 
+ int cmuwmIdent(fullname, name)
+@@ -48,7 +48,7 @@ char *fullname, *name;
+ 	  break;
+ 
+       case sizeof(struct cmuwm_header):
+-	if (memToVal(header.magic, sizeof(long)) != CMUWM_MAGIC)
++	if (memToVal(header.magic, 4) != CMUWM_MAGIC)
+ 	  {
+ 	      r = 0;
+ 	      break;
+@@ -91,7 +91,7 @@ unsigned int verbose;
+ 	  exit(1);
+ 
+       case sizeof(struct cmuwm_header):
+-	  if (memToVal(header.magic, sizeof(long)) != CMUWM_MAGIC)
++	  if (memToVal(header.magic, 4) != CMUWM_MAGIC)
+ 	    {
+ 		zclose(zf);
+ 		return(NULL);
+@@ -104,16 +104,16 @@ unsigned int verbose;
+ 	  return(NULL);
+       }
+ 
+-    if (memToVal(header.depth, sizeof(short)) != 1)
++    if (memToVal(header.depth, 2) != 1)
+       {
+ 	  fprintf(stderr,"CMU WM raster %s is of depth %d, must be 1",
+ 		  name,
+-		  (int) header.depth);
++		  memToVal(header.depth, 2));
+ 	  return(NULL);
+       }
+ 
+-    image = newBitImage(width = memToVal(header.width, sizeof(long)),
+-			height = memToVal(header.height, sizeof(long)));
++    image = newBitImage(width = memToVal(header.width, 4),
++			height = memToVal(header.height, 4));
+ 
+     linelen = (width / 8) + (width % 8 ? 1 : 0);
+     lineptr = image->data;
+--- image.h.orig	Tue Jul  1 21:18:52 2008
++++ image.h	Tue Jul  1 21:21:24 2008
+@@ -163,7 +163,7 @@ typedef struct {
+     ((LEN) == 2 ? ((unsigned long) \
+ 		   (*(byte *)(PTR) << 8) | \
+ 		   (*((byte *)(PTR) + 1))) : \
+-     ((unsigned long)((*(byte *)(PTR) << 24) | \
++     (((unsigned long)(*(byte *)(PTR) << 24) | \
+ 		      (*((byte *)(PTR) + 1) << 16) | \
+ 		      (*((byte *)(PTR) + 2) << 8) | \
+ 		      (*((byte *)(PTR) + 3)))))))
+@@ -176,7 +176,7 @@ typedef struct {
+ 		  (*((byte *)(PTR) + 2) << 16)) : \
+     ((LEN) == 2 ? ((unsigned long) \
+ 		   (*(byte *)(PTR)) | (*((byte *)(PTR) + 1) << 8)) : \
+-     ((unsigned long)((*(byte *)(PTR)) | \
++     (((unsigned long)(*(byte *)(PTR)) | \
+ 		      (*((byte *)(PTR) + 1) << 8) | \
+ 		      (*((byte *)(PTR) + 2) << 16) | \
+ 		      (*((byte *)(PTR) + 3) << 24))))))
+
+
