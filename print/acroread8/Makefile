@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	acroread8
-PORTVERSION?=	8.1.2
+PORTVERSION=	8.1.2
+PORTREVISION=	1
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/
-DISTNAME=	AdobeReader_${ADOBE_LANG:L}-${PORTVERSION}-1.i486
+DISTNAME=	AdobeReader_${ADOBE_LANG:L}-${PORTVERSION}_SU1-1.i486
 DIST_SUBDIR=	acroread
 
 MAINTAINER=	hrs@FreeBSD.org
