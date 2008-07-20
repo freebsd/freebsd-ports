@@ -7,9 +7,9 @@
 
 PORTNAME=	dnswalk
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	mark@foster.cc
 COMMENT=	DNS debugger - requests a zone transfer and analyzes the result
@@ -28,10 +28,12 @@ pre-configure:
 		 < ${WRKDIR}/dnswalk.orig > ${WRKDIR}/dnswalk
 
 do-install:
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/do-dnswalk ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/makereports ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/sendreports ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/README ${DOCSDIR}
