@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	getlive
-PORTVERSION=	0.56
+PORTVERSION=	0.57
 CATEGORIES=	mail
 MASTER_SITES=	SF
-DISTNAME=	GetLive_0_56
+DISTNAME=	GetLive_0_57
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ayunyan@gmail.com
+MAINTAINER=	ayu@commun.jp
 COMMENT=	Get mail from hotmail (live) mailboxes
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		procmail:${PORTSDIR}/mail/procmail
+		procmail:${PORTSDIR}/mail/procmail \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
