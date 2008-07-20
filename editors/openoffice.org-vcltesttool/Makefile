@@ -152,7 +152,8 @@ MAXMODULES?=	1
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--enable-crashdump=yes				\
-			--with-system-zlib
+			--with-system-zlib				\
+			--with-epm=internal
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
 LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
