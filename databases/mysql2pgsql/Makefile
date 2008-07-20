@@ -6,29 +6,25 @@
 #
 
 PORTNAME=	mysql2pgsql
-PORTVERSION=	20010527
-PORTREVISION=	2
+PORTVERSION=	1.2
+PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.rot13.org/~dpavlin/projects/sql/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1535/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=
-EXTRACT_ONLY=	${PORTNAME}
+EXTRACT_SUFX=	.perl
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	klossalex@gmail.com
 COMMENT=	Convert a MySQL dump to a PostgreSQL dump
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-
-PATCH_WRKSRC=	${WRKDIR}
 PLIST_FILES=	bin/mysql2pgsql
 USE_PERL5=	yes
 NO_BUILD=	yes
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-	${CP} -p ${DISTDIR}/mysql2pgsql ${WRKDIR}
+	${CP} -p ${DISTDIR}/mysql2pgsql.perl ${WRKDIR}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/mysql2pgsql ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/mysql2pgsql.perl ${PREFIX}/bin/mysql2pgsql
 
 .include <bsd.port.mk>
