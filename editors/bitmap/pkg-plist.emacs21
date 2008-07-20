@@ -15,7 +15,7 @@
 @unexec rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/gnus-bitmap.elc
 @unexec rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/bitmap/vm-bitmap.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/bitmap
-%%BITMAPDOCDIR%%/ChangeLog
-%%BITMAPDOCDIR%%/NEWS
-%%BITMAPDOCDIR%%/README.en
-@dirrm %%BITMAPDOCDIR%%
+%%PORTDOCS%%%%BITMAPDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%BITMAPDOCDIR%%/NEWS
+%%PORTDOCS%%%%BITMAPDOCDIR%%/README.en
+%%PORTDOCS%%@dirrm %%BITMAPDOCDIR%%
