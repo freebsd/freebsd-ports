@@ -1,4 +1,4 @@
 bin/tclCheck
-share/doc/tclCheck/COPYRIGHT
-share/doc/tclCheck/README
-@dirrm share/doc/tclCheck
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
