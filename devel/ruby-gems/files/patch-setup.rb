@@ -1,6 +1,15 @@
---- setup.rb.orig	2007-12-21 09:15:55.000000000 +0800
-+++ setup.rb	2007-12-25 22:39:23.000000000 +0800
-@@ -222,6 +222,22 @@
+--- setup.rb~	2008-06-22 08:51:11.000000000 +0900
++++ setup.rb	2008-07-03 17:39:54.000000000 +0900
+@@ -158,7 +158,7 @@
+ Dir.chdir 'bin' do
+   bin_files = Dir['*']
+ 
+-  bin_files.delete 'update_rubygems'
++#  bin_files.delete 'update_rubygems'
+ 
+   bin_files.each do |bin_file|
+     bin_file_formatted = if format_executable then
+@@ -299,6 +299,23 @@
    puts "Set the GEM_HOME environment variable if you want RDoc generated"
  end
  
@@ -19,12 +28,8 @@
 +    Gem::Installer.new(gem_file).install
 +  end
 +end
-+
- # Remove stubs
- 
- def stub?(path)
-@@ -268,3 +284,4 @@
-   puts "No library stubs found."
- end
- 
 +install_sources
++
+ puts
+ puts "-" * 78
+ puts
