@@ -49,6 +49,10 @@ start_precmd()
   ""|[Nn][Oo][Nn][Ee]|[Dd][Ee][Ff][Aa][Uu][Ll][Tt])
     ;;
   *)
+    if [ ! -d "${DBDIR}" ]; then
+      mkdir -p "${DBDIR}"
+      cp "%%PREFIX%%/etc/openldap/DB_CONFIG.example" "${DBDIR}/DB_CONFIG"
+    fi
     chown "$slapd_owner" "%%LDAP_RUN_DIR%%"
     chown -RL "$slapd_owner" "${DBDIR}"
     chmod 700 "${DBDIR}"

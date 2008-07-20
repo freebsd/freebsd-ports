@@ -5,6 +5,10 @@
 
 ECHO_CMD=echo
 
+if [ -f "%%PREFIX%%/etc/openldap/slapd.conf" ]; then
+  DBDIR=`awk '$1 == "directory" {print $2}' "%%PREFIX%%/etc/openldap/slapd.conf"`
+fi
+
 case $2 in
 POST-DEINSTALL)
   ${ECHO_CMD}
@@ -13,9 +17,13 @@ POST-DEINSTALL)
   ${ECHO_CMD} "it any longer, you may want to issue the"
   ${ECHO_CMD} "following commands:"
   ${ECHO_CMD}
-  if [ -d %%DATABASEDIR%% ]; then
+  if ([ "${DBDIR}" ] && [ -d "${DBDIR}" ]) || ([ ! "${DBDIR}" ] && [ -d %%DATABASEDIR%% ]); then
     ${ECHO_CMD} "- to delete the OpenLDAP database permanently (losing all data):"
-    ${ECHO_CMD} "  rm -Rf %%DATABASEDIR%%"
+    if [ "${DBDIR}" ] && [ -d "${DBDIR}" ]; then
+      ${ECHO_CMD} "  rm -Rf ${DBDIR}"
+    else
+      ${ECHO_CMD} "  rm -Rf %%DATABASEDIR%%"
+    fi
     ${ECHO_CMD}
   fi
   ${ECHO_CMD} "- to remove the OpenLDAP user:"

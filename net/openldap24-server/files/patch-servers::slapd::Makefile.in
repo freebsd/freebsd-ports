@@ -1,6 +1,6 @@
---- servers/slapd/Makefile.in.orig	Fri Sep  2 00:28:10 2005
-+++ servers/slapd/Makefile.in	Sun Sep  4 17:34:37 2005
-@@ -372,7 +372,6 @@
+--- servers/slapd/Makefile.in.orig	2008-02-11 15:26:43.000000000 -0800
++++ servers/slapd/Makefile.in	2008-07-19 20:10:16.023473779 -0700
+@@ -374,7 +374,6 @@
  
  install-slapd: FORCE
  	-$(MKDIR) $(DESTDIR)$(libexecdir)
@@ -8,7 +8,7 @@
  	$(LTINSTALL) $(INSTALLFLAGS) $(STRIP) -m 755 \
  		slapd$(EXEEXT) $(DESTDIR)$(libexecdir)
  	@for i in $(SUBDIRS); do \
-@@ -403,16 +402,18 @@
+@@ -405,16 +404,18 @@
  	touch all-cffiles
  
  install-schema: FORCE
@@ -21,24 +21,24 @@
  	@SD=$(DESTDIR)$(schemadir) ; \
 -	files=`cd $(srcdir)/schema ; echo README *.ldif *.schema` ; \
 +	files=`cd $(srcdir)/schema ; echo README *.ldif` ; \
-+	for i in $$files ; do \
-+		echo $(INSTALL) $(INSTALLFLAGS) -m 444 schema/$$i $$SD/$$i ; \
-+		$(INSTALL) $(INSTALLFLAGS) -m 444 $(srcdir)/schema/$$i $$SD/$$i ; \
-+	done ; \
-+	files=`cd $(srcdir)/schema ; echo *.schema` ; \
  	for i in $$files ; do \
  		echo $(INSTALL) $(INSTALLFLAGS) -m 444 schema/$$i $$SD/$$i ; \
  		$(INSTALL) $(INSTALLFLAGS) -m 444 $(srcdir)/schema/$$i $$SD/$$i ; \
++	done ; \
++	files=`cd $(srcdir)/schema ; echo *.schema` ; \
++	for i in $$files ; do \
++		echo $(INSTALL) $(INSTALLFLAGS) -m 444 schema/$$i $$SD/$$i ; \
++		$(INSTALL) $(INSTALLFLAGS) -m 444 $(srcdir)/schema/$$i $$SD/$$i ; \
 +		$(INSTALL) $(INSTALLFLAGS) -m 444 $(srcdir)/schema/$$i $$SD/$$i.default ; \
  	done
  
  install-conf: FORCE
-@@ -429,8 +430,6 @@
- install-db-config: FORCE
+@@ -432,8 +433,6 @@
  	@-$(MKDIR) $(DESTDIR)$(localstatedir) $(DESTDIR)$(sysconfdir)
  	@-$(INSTALL) -m 700 -d $(DESTDIR)$(localstatedir)/openldap-data
--	$(INSTALL) $(INSTALLFLAGS) -m 600 $(srcdir)/DB_CONFIG \
--		$(DESTDIR)$(localstatedir)/openldap-data/DB_CONFIG.example
  	$(INSTALL) $(INSTALLFLAGS) -m 600 $(srcdir)/DB_CONFIG \
+-		$(DESTDIR)$(localstatedir)/openldap-data/DB_CONFIG.example
+-	$(INSTALL) $(INSTALLFLAGS) -m 600 $(srcdir)/DB_CONFIG \
  		$(DESTDIR)$(sysconfdir)/DB_CONFIG.example
  
+ install-tools: FORCE

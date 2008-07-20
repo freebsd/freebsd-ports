@@ -1705,7 +1705,7 @@ LIB_DEPENDS+=		ldap-2.2.7:${PORTSDIR}/net/openldap22${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 23
 LIB_DEPENDS+=		ldap-2.3.2:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 24
-LIB_DEPENDS+=		ldap-2.4.2:${PORTSDIR}/net/openldap24${_OPENLDAP_FLAVOUR}-client
+LIB_DEPENDS+=		ldap-2.4.3:${PORTSDIR}/net/openldap24${_OPENLDAP_FLAVOUR}-client
 .else
 IGNORE=				cannot be built with unknown OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
