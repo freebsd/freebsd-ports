@@ -68,13 +68,15 @@ DESCR?=			${PKGDIR}/pkg-descr
 STRIP?=	-s
 .endif
 
+# These are variables that are invariant for the lifetime of a recursive port traversal
+# (index build, etc), so it is more efficient to precompute them here and pass them in
+# to child makes explicitly, instead of recomputing them tens of thousands of times.
+
 .if !defined(NOPRECIOUSMAKEVARS)
 .if !defined(ARCH)
 ARCH!=	${UNAME} -p
 .endif
-.if !defined(OSREL)
-OSREL!=	${UNAME} -r | ${SED} -e 's/[-(].*//'
-.endif
+
 .if !defined(OSVERSION)
 .if exists(/usr/include/sys/param.h)
 OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < /usr/include/sys/param.h
@@ -84,22 +86,75 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < /usr/
 OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
 .endif
+
+.if !defined(_OSRELEASE)
+_OSRELEASE!=			uname -r
+.endif
+.if !defined(OSREL)
+OSREL=	${_OSRELEASE:C/[-(].*//}
 .endif
 
-INDEXDIR?=	${PORTSDIR}
-INDEXFILE?=	INDEX-${OSVERSION:C/([0-9]).*/\1/}
+.if !defined(OPSYS)
+OPSYS!=	${UNAME} -s
+.endif
 
+.if ${ARCH} == "amd64" || ${ARCH} =="ia64"
+.if !defined(HAVE_COMPAT_IA32_KERN)
+HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi
+.endif
+.endif
+
+.if !defined(CONFIGURE_MAX_CMD_LEN)
+CONFIGURE_MAX_CMD_LEN!= ${SYSCTL} -n kern.argmax
+.endif
+
+.if !defined(PYTHON_DEFAULT_VERSION)
+PYTHON_DEFAULT_VERSION!=	make -V PYTHON_DEFAULT_VERSION USE_PYTHON=1 -f ${PORTSDIR}/Mk/bsd.port.mk
+.endif
+
+.if !defined(PYTHON_DEFAULT_PORTVERSION)
+# We are caching the PYTHON_PORTVERSION of the default python version so we can reuse it in the
+# common case.
+PYTHON_DEFAULT_PORTVERSION!=	make -V PYTHON_PORTVERSION USE_PYTHON=1 -f ${PORTSDIR}/Mk/bsd.port.mk
+.endif
+
+.if !defined(PYTHONBASE)
+PYTHONBASE!=			make -V PYTHONBASE USE_PYTHON=1 -f ${PORTSDIR}/Mk/bsd.port.mk
+.endif
+
+.if !defined(_JAVA_VERSION_LIST_REGEXP)
+_JAVA_VERSION_LIST_REGEXP!=	make -V _JAVA_VERSION_LIST_REGEXP USE_JAVA=1 -f ${PORTSDIR}/Mk/bsd.port.mk
+.endif
+
+.if !defined(_JAVA_VENDOR_LIST_REGEXP)
+_JAVA_VENDOR_LIST_REGEXP!=	make -V _JAVA_VENDOR_LIST_REGEXP USE_JAVA=1 -f ${PORTSDIR}/Mk/bsd.port.mk
+.endif
+
+.if !defined(_JAVA_OS_LIST_REGEXP)
+_JAVA_OS_LIST_REGEXP!=		make -V _JAVA_OS_LIST_REGEXP USE_JAVA=1 -f ${PORTSDIR}/Mk/bsd.port.mk
+.endif
+
+.if !defined(_JAVA_PORTS_INSTALLED)
+_JAVA_PORTS_INSTALLED!=		make -V _JAVA_PORTS_INSTALLED USE_JAVA=1 -f ${PORTSDIR}/Mk/bsd.port.mk
+.endif
+
+.if !defined(UID)
 UID!=	${ID} -u
+.endif
+
 .if exists(${LOCALBASE}/sbin/pkg_info)
 PKG_INFO?=	${LOCALBASE}/sbin/pkg_info
 .else
 PKG_INFO?=	/usr/sbin/pkg_info
 .endif
+.if !defined(PKGINSTALLVER)
 PKGINSTALLVER!=	${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
-
-.if !defined(OPSYS)
-OPSYS!=	${UNAME} -s
 .endif
+
+.endif
+
+INDEXDIR?=	${PORTSDIR}
+INDEXFILE?=	INDEX-${OSVERSION:C/([0-9]).*/\1/}
 
 # local customization of the ports tree
 .if exists(${.CURDIR}/Makefile.local)
@@ -312,6 +367,8 @@ README.html:
 		> $@
 	@${RM} -f $@.tmp $@.tmp2 $@.tmp3 $@.tmp4
 
+# Pass in the cached invariant variables to child makes.
+# XXX Why are we trying to escape these characters using regexps and not using ':Q'?
 .if !defined(NOPRECIOUSMAKEVARS)
 .MAKEFLAGS: \
 	ARCH="${ARCH:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
@@ -319,7 +376,16 @@ README.html:
 	OSREL="${OSREL:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	OSVERSION="${OSVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	UID="${UID:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	PKGINSTALLVER="${PKGINSTALLVER:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
+	PKGINSTALLVER="${PKGINSTALLVER:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	HAVE_COMPAT_IA32_KERN="${HAVE_COMPAT_IA32_KERN}" \
+	CONFIGURE_MAX_CMD_LEN="${CONFIGURE_MAX_CMD_LEN}" \
+	PYTHON_DEFAULT_VERSION="${PYTHON_DEFAULT_VERSION}" \
+	PYTHON_DEFAULT_PORTVERSION="${PYTHON_DEFAULT_PORTVERSION}" \
+	PYTHONBASE="${PYTHONBASE}" \
+	_JAVA_VERSION_LIST_REGEXP="${_JAVA_VERSION_LIST_REGEXP}" \
+	_JAVA_VENDOR_LIST_REGEXP="${_JAVA_VENDOR_LIST_REGEXP}" \
+	_JAVA_OS_LIST_REGEXP="${_JAVA_OS_LIST_REGEXP}" \
+	_JAVA_PORTS_INSTALLED="${_JAVA_PORTS_INSTALLED}"
 .endif
 
 PORTSEARCH_DISPLAY_FIELDS?=name,path,info,maint,index,bdeps,rdeps,www
