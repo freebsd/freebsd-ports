@@ -1592,6 +1592,7 @@
     SUBDIR += p5-SVN-Mirror
     SUBDIR += p5-SVN-Notify
     SUBDIR += p5-SVN-Notify-Config
+    SUBDIR += p5-SVN-Notify-Filter-EmailFlatFileDB
     SUBDIR += p5-SVN-Notify-Filter-Markdown
     SUBDIR += p5-SVN-Notify-Filter-Watchers
     SUBDIR += p5-SVN-Notify-Mirror
