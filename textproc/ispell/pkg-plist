@@ -1,6 +1,6 @@
 bin/buildhash
-bin/deformat-c
-bin/deformat-sh
+bin/defmt-c
+bin/defmt-sh
 bin/findaffix
 bin/icombine
 bin/ijoin

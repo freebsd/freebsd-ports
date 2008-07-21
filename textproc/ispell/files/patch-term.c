@@ -1,18 +1,20 @@
---- term.c	Wed Jul 25 23:51:46 2001
-+++ term.c	Fri Mar 16 10:52:35 2007
-@@ -80,8 +80,10 @@
+--- term.c.orig	2008-07-04 11:42:14.000000000 -0500
++++ term.c	2008-07-04 11:55:44.000000000 -0500
+@@ -86,8 +86,12 @@
  #include "ispell.h"
  #include "proto.h"
  #include "msgs.h"
++#ifdef BSD_4_4
 +#define USG
++#endif
  #ifdef USG
 -#include <termio.h>
 +#include <unistd.h>
 +#include <termios.h>
  #else
+ #ifndef __DJGPP__
  #include <sgtty.h>
- #endif
-@@ -152,8 +154,8 @@
+@@ -166,8 +170,8 @@
      }
  
  #ifdef USG
@@ -23,7 +25,7 @@
  #else
  static struct sgttyb	sbuf;
  static struct sgttyb	osbuf;
-@@ -263,7 +265,7 @@
+@@ -276,7 +280,7 @@
  	(void) fprintf (stderr, TERM_C_NO_BATCH);
  	exit (1);
  	}
@@ -32,7 +34,7 @@
      termchanged = 1;
  
      sbuf = osbuf;
-@@ -272,7 +274,7 @@
+@@ -285,7 +289,7 @@
      sbuf.c_iflag &= ~(INLCR | IGNCR | ICRNL);
      sbuf.c_cc[VMIN] = 1;
      sbuf.c_cc[VTIME] = 1;
@@ -41,34 +43,34 @@
  
      uerasechar = osbuf.c_cc[VERASE];
      ukillchar = osbuf.c_cc[VKILL];
-@@ -360,7 +362,7 @@
+@@ -373,7 +377,7 @@
  	if (te)
- 	    tputs (te, 1, putch);
+ 	    tputs (te, 1, iputch);
  #ifdef USG
 -	(void) ioctl (0, TCSETAW, (char *) &osbuf);
 +	tcsetattr(STDIN_FILENO, TCSANOW, &osbuf);
  #else
  	(void) ioctl (0, TIOCSETP, (char *) &osbuf);
  #ifdef TIOCSLTC
-@@ -376,7 +378,7 @@
-     int		signo;
-     {
+@@ -394,7 +398,7 @@
+ 	if (te)
+ 	    tputs (te, 1, iputch);
  #ifdef USG
--    (void) ioctl (0, TCSETAW, (char *) &osbuf);
-+    tcsetattr(STDIN_FILENO, TCSANOW, &osbuf);
+-	(void) ioctl (0, TCSETAW, (char *) &osbuf);
++	tcsetattr(STDIN_FILENO, TCSANOW, &osbuf);
  #else
-     (void) ioctl (0, TIOCSETP, (char *) &osbuf);
+ 	(void) ioctl (0, TIOCSETP, (char *) &osbuf);
  #ifdef TIOCSLTC
-@@ -391,7 +393,7 @@
-     /* stop here until continued */
-     (void) signal (signo, onstop);
+@@ -413,7 +417,7 @@
+     if (termchanged)
+ 	{
  #ifdef USG
--    (void) ioctl (0, TCSETAW, (char *) &sbuf);
-+    tcsetattr(STDIN_FILENO, TCSANOW, &sbuf);
+-	(void) ioctl (0, TCSETAW, (char *) &sbuf);
++	tcsetattr(STDIN_FILENO, TCSANOW, &sbuf);
  #else
-     (void) ioctl (0, TIOCSETP, (char *) &sbuf);
+ 	(void) ioctl (0, TIOCSETP, (char *) &sbuf);
  #ifdef TIOCSLTC
-@@ -451,7 +453,7 @@
+@@ -481,7 +485,7 @@
      argv[i] = NULL;
  
  #ifdef USG
@@ -77,7 +79,7 @@
  #else
      (void) ioctl (0, TIOCSETP, (char *) &osbuf);
  #ifdef TIOCSLTC
-@@ -497,7 +499,7 @@
+@@ -527,7 +531,7 @@
  #endif
  
  #ifdef USG
@@ -86,7 +88,7 @@
  #else
      (void) ioctl (0, TIOCSETP, (char *) &sbuf);
  #ifdef TIOCSLTC
-@@ -530,7 +532,7 @@
+@@ -563,7 +567,7 @@
  #endif
  
  #ifdef USG
@@ -95,7 +97,7 @@
  #else
      (void) ioctl (0, TIOCSETP, (char *) &osbuf);
  #ifdef TIOCSLTC
-@@ -562,7 +564,7 @@
+@@ -611,7 +615,7 @@
  #endif
  
  #ifdef USG

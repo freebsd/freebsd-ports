@@ -6,29 +6,28 @@
 #
 
 PORTNAME?=	ispell
-PORTVERSION?=	3.2.06
-PORTREVISION?=	22
+PORTVERSION?=	3.3.02
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		http://distfiles.opendarwin.org/
-DISTNAME=	ispell-3.2.06		# needed for slave ports / options
-DISTFILES=	ispell-3.2.06.tar.gz    # needed for slave ports / options
+DISTNAME=	ispell-3.3.02		# needed for slave ports / options
+DISTFILES=	ispell-3.3.02.tar.gz    # needed for slave ports / options
+EXTRACT_ONLY=	${ISPELL_FILES}
 
 MAINTAINER?=	jmz@FreeBSD.org
 COMMENT=	An interactive spelling checker for multiple languages
 
-ISPELL_FILES=	ispell-3.2.06.tar.gz
-
 MAN1=		ispell.1
-MAN4=		ispell.4 english.4
+MAN5=		ispell.5 english.5
 MLINKS=		ispell.1 buildhash.1 \
 		ispell.1 findaffix.1 \
 		ispell.1 munchlist.1 \
 		ispell.1 tryaffix.1 \
 		ispell.1 spell.1
 
-EXTRACT_ONLY=	${ISPELL_FILES}
+ISPELL_FILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 EXTRA_DICT=
+
 MAKE_FLAGS=	TMPDIR=${WRKDIR} -f
 ALL_TARGET=
 
@@ -73,7 +72,7 @@ SCRIPTS_ENV+=	ISPELL_INCLAMERICAN=${ISPELL_INCLAMERICAN}
 .endif
 .if defined(ISPELL_IT)
 ITDISTFILE=	ispell-it2001.tgz
-MASTER_SITES+=	http://members.xoom.virgilio.it/trasforma/ispell/:it
+MASTER_SITES+=	http://members.xoom.alice.it/trasforma/ispell/:it
 EXTRA_DICT+=	${ITDISTFILE}:it
 .endif
 .if defined(ISPELL_FR)
