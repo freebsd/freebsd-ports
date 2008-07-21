@@ -1,0 +1,19 @@
+Tint is a simple panel/taskbar intentionally made for openbox3, but should
+also work with other window managers.
+
+The goal is to keep a clean and unintrusive look with lightweight code and
+compliance with freedesktop specifications.
+
+Tint taskbar features
+    * color/transparency on font, icon, border and background
+    * customize mouse event
+    * drag and drop task between desktop and switch desktop 
+
+Tint panel features
+    * clock with font, color and transparency
+    * multi-monitor : panel position adjust to monitor, taskbar by monitor
+
+WWW:	http://code.google.com/p/tint2/
+
+- Doug Barton
+dougb@FreeBSD.org
