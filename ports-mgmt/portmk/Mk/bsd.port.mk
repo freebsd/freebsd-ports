@@ -1249,14 +1249,13 @@ UNIQUENAME?=	${LATEST_LINK}
 UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
 .endif
 OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
-_OPTIONSFILE!=	${ECHO_CMD} "${OPTIONSFILE}"
 .if defined(OPTIONS)
 # include OPTIONSFILE first if exists
-.	if exists(${_OPTIONSFILE}) && !make(rmconfig)
-.	include "${_OPTIONSFILE}"
+.	if exists(${OPTIONSFILE}) && !make(rmconfig)
+.	include "${OPTIONSFILE}"
 .	endif
-.	if exists(${_OPTIONSFILE}.local)
-.	include "${_OPTIONSFILE}.local"
+.	if exists(${OPTIONSFILE}.local)
+.	include "${OPTIONSFILE}.local"
 .	endif
 WITHOUT:=
 WITH:=
@@ -1767,7 +1766,7 @@ PATCH_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 HAVE_COMPAT_IA32_LIBS?=  YES
 .endif
 .if !defined(HAVE_COMPAT_IA32_KERN)
-HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -a compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi
+HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi
 .endif
 .endif
 
@@ -1826,7 +1825,7 @@ LIB_DEPENDS+=		ldap-2.2.7:${PORTSDIR}/net/openldap22${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 23
 LIB_DEPENDS+=		ldap-2.3.2:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 24
-LIB_DEPENDS+=		ldap-2.4.2:${PORTSDIR}/net/openldap24${_OPENLDAP_FLAVOUR}-client
+LIB_DEPENDS+=		ldap-2.4.3:${PORTSDIR}/net/openldap24${_OPENLDAP_FLAVOUR}-client
 .else
 IGNORE=				cannot be built with unknown OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
@@ -3495,8 +3494,8 @@ options-message:
 .endif
 .if defined(_OPTIONS_READ)
 	@${ECHO_MSG} "===>  Found saved configuration for ${_OPTIONS_READ}"
-.if ${OPTIONSFILE} != ${_OPTIONSFILE}
-	@${ECHO_MSG} "===>  *** CAUTION *** Using wrong configuration file ${_OPTIONSFILE}"
+.if ${OPTIONSFILE} != ${OPTIONSFILE}
+	@${ECHO_MSG} "===>  *** CAUTION *** Using wrong configuration file ${OPTIONSFILE}"
 .endif
 .endif
 
@@ -5512,14 +5511,46 @@ missing:
 # If this ever changes, portmgr should contact the portsnap maintainer
 # first to avoid gratuitous breakage.
 
-.if !target(describe)
+# XXX Older versions do not support the :u make modifier.  The .else
+# clause can be removed once 6.3-RELEASE is no longer supported.
+.if ${OSVERSION} >= 603104
+. if !target(describe)
+_EXTRACT_DEPENDS=${EXTRACT_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
+_PATCH_DEPENDS=${PATCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
+_FETCH_DEPENDS=${FETCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u} 
+_LIB_DEPENDS=${LIB_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
+_BUILD_DEPENDS=${BUILD_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u} ${_LIB_DEPENDS}
+_RUN_DEPENDS=${RUN_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u} ${_LIB_DEPENDS}
+. if exists(${DESCR})
+_DESCR=${DESCR}
+. else
+_DESCR=/dev/null
+. endif
+
+describe:
+	@${ECHO_CMD} -n "${PKGNAME}|${.CURDIR}|${PREFIX}|"; \
+	${ECHO_CMD} -n ${COMMENT:Q}; \
+	${ECHO_CMD} -n "|${_DESCR}|${MAINTAINER}|${CATEGORIES}|${_EXTRACT_DEPENDS}|${_PATCH_DEPENDS}|${_FETCH_DEPENDS}|${_BUILD_DEPENDS:O:u}|${_RUN_DEPENDS:O:u}|"; \
+	while read one two discard; do \
+		case "$$one" in \
+		WWW:)   case "$$two" in \
+			https://*|http://*|ftp://*) ${ECHO_CMD} -n "$$two" ;; \
+			*) ${ECHO_CMD} -n "http://$$two" ;; \
+			esac; \
+			break; \
+			;; \
+		esac; \
+	done < ${DESCR}; ${ECHO_CMD} 
+. endif
+.else
+. if !target(describe)
 describe:
 	@${ECHO_CMD} -n "${PKGNAME}|${.CURDIR}|${PREFIX}|"
-.if defined(COMMENT)
+. if defined(COMMENT)
 	@${ECHO_CMD} -n ${COMMENT:Q}
-.else
+. else
 	@${ECHO_CMD} -n '** No Description'
-.endif
+. endif
 	@perl -e ' \
 		if ( -f q{${DESCR}} ) { \
 			print q{|${DESCR}}; \
@@ -5574,6 +5605,7 @@ describe:
 			} \
 		} \
 		print qq{\n};'
+. endif
 .endif
 
 www-site:
@@ -5998,23 +6030,23 @@ config:
 .if !defined(OPTIONS)
 	@${ECHO_MSG} "===> No options to configure"
 .else
-.if ${OPTIONSFILE} != ${_OPTIONSFILE}
-	@${ECHO_MSG} "===> Using wrong configuration file ${_OPTIONSFILE}"
+.if ${OPTIONSFILE} != ${OPTIONSFILE}
+	@${ECHO_MSG} "===> Using wrong configuration file ${OPTIONSFILE}"
 	@exit 1
 .endif
 .if ${UID} != 0 && !defined(INSTALL_AS_USER)
-	@optionsdir=${_OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
+	@optionsdir=${OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
 	${ECHO_MSG} "===>  Switching to root credentials to create $${optionsdir}"; \
 	(${SU_CMD} "${SH} -c \"${MKDIR} $${optionsdir} 2> /dev/null\"") || \
 		(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1); \
 	${ECHO_MSG} "===>  Returning to user credentials"
 .else
-	@(optionsdir=${_OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
+	@(optionsdir=${OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
 	${MKDIR} $${optionsdir} 2> /dev/null) || \
 		(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1)
 .endif
-	-@if [ -e ${_OPTIONSFILE} ]; then \
-		. ${_OPTIONSFILE}; \
+	-@if [ -e ${OPTIONSFILE} ]; then \
+		. ${OPTIONSFILE}; \
 	fi; \
 	set -- ${OPTIONS} XXX; \
 	while [ $$# -gt 3 ]; do \
@@ -6064,11 +6096,11 @@ config:
 		fi; \
 	done; \
 	if [ `${ID} -u` != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
-		${ECHO_MSG} "===>  Switching to root credentials to write ${_OPTIONSFILE}"; \
-		${SU_CMD} "${CAT} $${TMPOPTIONSFILE} > ${_OPTIONSFILE}"; \
+		${ECHO_MSG} "===>  Switching to root credentials to write ${OPTIONSFILE}"; \
+		${SU_CMD} "${CAT} $${TMPOPTIONSFILE} > ${OPTIONSFILE}"; \
 		${ECHO_MSG} "===>  Returning to user credentials"; \
 	else \
-		${CAT} $${TMPOPTIONSFILE} > ${_OPTIONSFILE}; \
+		${CAT} $${TMPOPTIONSFILE} > ${OPTIONSFILE}; \
 	fi; \
 	${RM} -f $${TMPOPTIONSFILE}
 .endif
@@ -6085,9 +6117,9 @@ config-recursive:
 .if !target(config-conditional)
 config-conditional:
 .if defined(OPTIONS)
-.if exists(${_OPTIONSFILE})
+.if exists(${OPTIONSFILE})
 # scan saved options and invalidate them, if the set of options does not match
-	@. ${_OPTIONSFILE}; \
+	@. ${OPTIONSFILE}; \
 	set ${OPTIONS} XXX; \
 	while [ $$# -gt 3 ]; do \
 		withvar=WITH_$$1; \
@@ -6119,8 +6151,8 @@ config-conditional:
 showconfig:
 .if defined(OPTIONS)
 	@${ECHO_MSG} "===> The following configuration options are available for ${PKGNAME}:"
-	-@if [ -e ${_OPTIONSFILE} ]; then \
-		. ${_OPTIONSFILE}; \
+	-@if [ -e ${OPTIONSFILE} ]; then \
+		. ${OPTIONSFILE}; \
 	fi; \
 	set -- ${OPTIONS} XXX; \
 	while [ $$# -gt 3 ]; do \
@@ -6145,16 +6177,16 @@ showconfig:
 
 .if !target(rmconfig)
 rmconfig:
-.if defined(OPTIONS) && exists(${_OPTIONSFILE})
+.if defined(OPTIONS) && exists(${OPTIONSFILE})
 	-@${ECHO_MSG} "===> Removing user-configured options for ${PKGNAME}"; \
-	optionsdir=${_OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
+	optionsdir=${OPTIONSFILE}; optionsdir=$${optionsdir%/*}; \
 	if [ `${ID} -u` != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
-		${ECHO_MSG} "===> Switching to root credentials to remove ${_OPTIONSFILE} and $${optionsdir}"; \
-		${SU_CMD} "${RM} -f ${_OPTIONSFILE} ; \
+		${ECHO_MSG} "===> Switching to root credentials to remove ${OPTIONSFILE} and $${optionsdir}"; \
+		${SU_CMD} "${RM} -f ${OPTIONSFILE} ; \
 			${RMDIR} $${optionsdir}"; \
 		${ECHO_MSG} "===> Returning to user credentials"; \
 	else \
-		${RM} -f ${_OPTIONSFILE}; \
+		${RM} -f ${OPTIONSFILE}; \
 		${RMDIR} $${optionsdir}; \
 	fi
 .else
