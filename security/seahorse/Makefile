@@ -68,9 +68,6 @@ CONFIGURE_ARGS+=--disable-nautilus
 
 .if !defined(WITHOUT_LDAP)
 USE_OPENLDAP=	yes
-.if ${WANT_OPENLDAP_VER} >= 23
-CFLAGS+=	-DLDAP_DEPRECATED
-.endif
 .else
 CONFIGURE_ARGS+=--disable-ldap
 .endif
