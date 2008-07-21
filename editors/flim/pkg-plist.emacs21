@@ -71,12 +71,12 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/std11.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/std11.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/flim
-%%FLIMDOCDIR%%/ChangeLog
-%%FLIMDOCDIR%%/NEWS
-%%FLIMDOCDIR%%/README.en
-%%FLIMDOCDIR%%/README.ja
-%%FLIMDOCDIR%%/VERSION
-@dirrm %%FLIMDOCDIR%%
+%%PORTDOCS%%%%FLIMDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%FLIMDOCDIR%%/NEWS
+%%PORTDOCS%%%%FLIMDOCDIR%%/README.en
+%%PORTDOCS%%%%FLIMDOCDIR%%/README.ja
+%%PORTDOCS%%%%FLIMDOCDIR%%/VERSION
+%%PORTDOCS%%@dirrm %%FLIMDOCDIR%%
 @unexec install-info --delete %D/info/mime-en.info %D/info/dir
 info/mime-en.info
 @exec install-info %D/info/mime-en.info %D/info/dir
