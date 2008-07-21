@@ -1,9 +1,9 @@
 %%EMACS_PACKAGESDIR%%/pkginfo/MANIFEST.flim
-%%EMACS_PACKAGESDIR%%/lisp/flim/ChangeLog
-%%EMACS_PACKAGESDIR%%/lisp/flim/NEWS
-%%EMACS_PACKAGESDIR%%/lisp/flim/README.en
-%%EMACS_PACKAGESDIR%%/lisp/flim/README.ja
-%%EMACS_PACKAGESDIR%%/lisp/flim/VERSION
+%%PORTDOCS%%%%EMACS_PACKAGESDIR%%/lisp/flim/ChangeLog
+%%PORTDOCS%%%%EMACS_PACKAGESDIR%%/lisp/flim/NEWS
+%%PORTDOCS%%%%EMACS_PACKAGESDIR%%/lisp/flim/README.en
+%%PORTDOCS%%%%EMACS_PACKAGESDIR%%/lisp/flim/README.ja
+%%PORTDOCS%%%%EMACS_PACKAGESDIR%%/lisp/flim/VERSION
 %%EMACS_PACKAGESDIR%%/lisp/flim/_pkg.el
 %%EMACS_PACKAGESDIR%%/lisp/flim/auto-autoloads.el
 %%EMACS_PACKAGESDIR%%/lisp/flim/auto-autoloads.elc
