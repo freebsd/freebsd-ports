@@ -8,7 +8,7 @@
 
 PORTNAME=	serveez
 PORTVERSION=	0.1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net devel
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/GNU/serveez/ \
 		http://www.textsure.net/~ela/download/
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://gatekeeper.dec.com/pub/GNU/serveez/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server framework
 
-LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile
 
 GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 

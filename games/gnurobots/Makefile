@@ -7,14 +7,14 @@
 
 PORTNAME=	gnurobots
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU diversion wherein Scheme-coded robots explore a world
 
-LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile
 
 USE_XORG=	x11 xpm
 USE_GNOME=	gnometarget glib20

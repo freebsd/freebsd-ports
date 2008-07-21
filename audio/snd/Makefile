@@ -7,6 +7,7 @@
 
 PORTNAME=	snd
 PORTVERSION=	9.11
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -59,7 +60,7 @@ CONFIGURE_ARGS+=	--without-gsl
 .endif
 
 .if !defined(WITHOUT_GUILE)
-LIB_DEPENDS+=	guile.18:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.19:${PORTSDIR}/lang/guile
 PLIST_SUB+=	GUILE=""
 .else
 CONFIGURE_ARGS+=	--without-guile

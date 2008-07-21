@@ -8,7 +8,7 @@
 
 PORTNAME=	mdk
 PORTVERSION=	1.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gnu/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
@@ -20,7 +20,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gnu \
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A set of utilities for developing programs using MIX and MIXAL
 
-LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile \
 		readline.5:${PORTSDIR}/devel/readline
 
 USE_GNOME=	gnometarget libglade2
