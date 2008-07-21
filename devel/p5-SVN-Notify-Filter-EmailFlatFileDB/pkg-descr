@@ -1,0 +1,9 @@
+This module is a filter for SVN::Notify that translates user account
+names (e.g. "user1") into email addresses. It does this based on a
+colon-separated file, like a UNIX passwd file (or more usefully)
+the AuthUserFile used by Apache. The file path is specified via the
+--account_file option to the svnnotify script, and the index
+(zero-based) of the email field is specified via the --account_field
+option.
+
+WWW:    http://search.cpan.org/dist/SVN-Notify-Filter-EmailFlatFileDB/
