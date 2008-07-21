@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-games
 PORTVERSION=	2.22.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The game applications package for the GNOME 2 Desktop Environment
 
-LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile \
 		ggzmod.5:${PORTSDIR}/games/ggz-client-libs
 
 USE_BZIP2=	yes

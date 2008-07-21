@@ -33,7 +33,7 @@ WISH=		${LOCALBASE}/bin/wish8.4
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GUILE)
-LIB_DEPENDS+=	guile.18:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.19:${PORTSDIR}/lang/guile
 .else
 CONFIGURE_ARGS+=	--disable-guile
 .endif

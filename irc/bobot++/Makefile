@@ -8,7 +8,7 @@
 
 PORTNAME=	bobotpp
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	bobotpp
@@ -23,7 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 .if defined(WITHOUT_GUILE)
 CONFIGURE_ARGS+=	--disable-scripting
 .else
-LIB_DEPENDS+=	guile.18:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.19:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=	--enable-scripting
 .endif
 

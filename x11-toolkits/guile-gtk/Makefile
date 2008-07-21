@@ -7,7 +7,7 @@
 
 PORTNAME=	guile-gtk
 PORTVERSION=	0.60
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Guile binding library for GTK+
 
-LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile
 
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget ltverhack gdkpixbuf libglade

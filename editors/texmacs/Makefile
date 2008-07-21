@@ -7,7 +7,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.6.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors print
 MASTER_SITES=	http://www.texmacs.org/Download/ftp/%SUBDIR%/ \
 		ftp://ftp.texmacs.org/pub/TeXmacs/%SUBDIR%/ \
@@ -20,7 +20,7 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A free WYSIWYG scientific text editor
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
-LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
 

@@ -7,14 +7,14 @@
 
 PORTNAME=	gwave
 PORTVERSION=	20060606
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	http://geda.seul.org/dist/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Waveform viewer for analogue electronic simulation tools
 
-LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile \
 		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 
 USE_GNOME=	gtk12

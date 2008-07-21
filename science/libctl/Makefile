@@ -8,14 +8,14 @@
 
 PORTNAME=	libctl
 PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science math
 MASTER_SITES=	http://ab-initio.mit.edu/libctl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Control Language Library
 
-LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV+=	 FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"

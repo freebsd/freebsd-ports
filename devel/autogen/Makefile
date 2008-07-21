@@ -8,6 +8,7 @@
 
 PORTNAME=	autogen
 PORTVERSION=	5.9.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNU:S/$/:gnu/}
@@ -17,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT,gnu
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	The Automated Program Generator
 
-LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.19:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
