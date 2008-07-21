@@ -6648,7 +6648,6 @@ lasi                            ports/devel/lasi
 laspack                         ports/math/laspack
 lasso                           ports/security/lasso
 last.fm                         ports/audio/last.fm
-lastfmrec                       ports/audio/lastfmrec
 latd                            ports/net/latd
 latex                           ports/print/latex
 latex-aa                        ports/print/latex-aa
@@ -18913,6 +18912,7 @@ schism                          ports/audio/schism
 schroedinger                    ports/multimedia/schroedinger
 scid                            ports/games/scid
 science_cdf                     ports/science/cdf
+science_silo                    ports/science/silo
 science_szip                    ports/science/szip
 scigraphica                     ports/math/scigraphica
 scilab                          ports/math/scilab
@@ -19168,7 +19168,6 @@ silc-toolkit                    ports/devel/silc-toolkit
 silktools                       ports/security/silktools
 silky                           ports/net/silky
 silkymail                       ports/mail/silkymail
-silo                            ports/x11/silo
 silvercity                      ports/textproc/silvercity
 sim-im                          ports/net-im/sim-im
 sim-im-devel                    ports/net-im/sim-im-devel
@@ -21290,6 +21289,7 @@ x11-toolkits_xg                 ports/x11-toolkits/xg
 x11_bitmap                      ports/x11/bitmap
 x11_blast                       ports/x11/blast
 x11_chameleon                   ports/x11/chameleon
+x11_silo                        ports/x11/silo
 x11amp                          ports/audio/x11amp
 x11iraf                         ports/science/x11iraf
 x11perf                         ports/x11/x11perf
