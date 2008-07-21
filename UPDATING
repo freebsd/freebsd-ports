@@ -13,7 +13,7 @@ upgrades.
   Please note that there has been a major update of this port (From
   vesion 2.x to 5.x) and that the name of the binaries and configuration
   files has changed from "tpsc" to "gw6c". The configuration files
-  have to be opied from ${PREFIX}/share/examples/freenet6 to
+  have to be copied from ${PREFIX}/share/examples/freenet6 to
   ${PREFIX}/etc again.
 
 20080719:
