@@ -1,0 +1,20 @@
+--- espa~nol-1.10/Makefile.orig	2008-07-05 16:49:20.000000000 -0500
++++ espa~nol-1.10/Makefile	2008-07-05 16:51:23.000000000 -0500
+@@ -54,7 +54,7 @@
+ MAKE = make
+ 
+ PATHADDER	=	../..
+-BUILDHASH	=	buildhash
++BUILDHASH	=	%%BH%%
+ UNSQ		=	unsq
+ FIX8BIT		=	fix8bit
+ 
+@@ -79,7 +79,7 @@
+ 
+ $(HASHFILE):	$(AFFIXES) $(DICTIONARY)
+ 	rm -f $(HASHFILE)
+-	munchlist -v -l $(AFFIXES) $(DICTIONARY) > $(LANGUAGE).words+
++	%%MH%% -v -l $(AFFIXES) $(DICTIONARY) > $(LANGUAGE).words+
+ 	$(BUILDHASH) $(LANGUAGE).words+ $(AFFIXES) $(HASHFILE)
+ 
+ build:
