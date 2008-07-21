@@ -74,3 +74,26 @@
  		      (*((byte *)(PTR) + 3) << 24))))))
 
 
+--- root.c.orig	2006-10-20 16:05:45.000000000 -0400
++++ root.c	2006-10-20 16:18:09.000000000 -0400
+@@ -68,16 +68,16 @@
+   Pixmap *pm;			
+   Atom	actual_type;		/* NOTUSED */
+   int	format;
+-  int	nitems;
+-  int	bytes_after;
++  unsigned long	nitems;
++  unsigned long	bytes_after;
+ 
+   /* intern the property name */
+   Atom atom = XInternAtom(dpy, RETAIN_PROP_NAME, 0);
+ 
+   /* look for existing resource allocation */
+   if ((XGetWindowProperty(dpy, w, atom, 0, 1, 1/*delete*/,
+-			  AnyPropertyType, &actual_type, &format, (unsigned long *)&nitems,
+-			  (unsigned long *)&bytes_after, (unsigned char **)&pm) == Success) &&
++			  AnyPropertyType, &actual_type, &format, &nitems,
++			  &bytes_after, (unsigned char **)&pm) == Success) &&
+       nitems == 1) {
+     if ((actual_type == XA_PIXMAP) && (format == 32) &&
+ 	(nitems == 1) && (bytes_after == 0)) {
