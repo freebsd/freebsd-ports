@@ -317,7 +317,6 @@
     SUBDIR += rubygem-jpmobile
     SUBDIR += rxvt
     SUBDIR += ryaku-fpw
-    SUBDIR += samba
     SUBDIR += samba3
     SUBDIR += sazanami-ttf
     SUBDIR += scim-anthy

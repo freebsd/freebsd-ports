@@ -1,8 +1,0 @@
-WARNING: 
-
-The lock directory where browse.dat, wins.dat and other *.tdb files
-are created by smbd and nmbd is changed from /var/spool/lock to
-/var/db/samba.
-
-If you are about to update your japanese/samba from 2.0.10j1.2 to 2.2.8aj1.1,
-you need to remove old these files in /var/spool/lock.
