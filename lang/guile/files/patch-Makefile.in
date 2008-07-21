@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2008-07-09 15:28:14.000000000 +0800
++++ Makefile.in	2008-07-09 15:29:13.000000000 +0800
+@@ -318,7 +318,7 @@
+ TESTS = check-guile
+ ACLOCAL_AMFLAGS = -I guile-config
+ DISTCLEANFILES = check-guile.log
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(DESTDIR)$(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = guile-1.8.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive

@@ -6,8 +6,7 @@
 #    $MCom: ports/lang/guile/Makefile,v 1.1 2006/09/12 14:57:06 ahze Exp $
 
 PORTNAME=	guile
-PORTVERSION=	1.8.4
-PORTREVISION=	3
+PORTVERSION=	1.8.5
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
