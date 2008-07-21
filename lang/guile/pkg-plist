@@ -129,11 +129,12 @@ lib/libguile-srfi-srfi-60-v-2.so.2
 lib/libguile.a
 lib/libguile.la
 lib/libguile.so
-lib/libguile.so.18
+lib/libguile.so.19
 lib/libguilereadline-v-17.a
 lib/libguilereadline-v-17.la
 lib/libguilereadline-v-17.so
 lib/libguilereadline-v-17.so.17
+libdata/pkgconfig/guile-1.8.pc
 share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/guile-procedures.txt
 %%DATADIR%%/%%GUILE_VER%%/ice-9/and-let-star.scm
@@ -149,6 +150,12 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/ice-9/debugger/state.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/debugger/trc.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/debugger/utils.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugging/example-fns.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugging/ice-9-debugger-extensions.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugging/steps.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugging/trace.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugging/traps.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugging/trc.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/deprecated.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/documentation.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/emacs.scm
@@ -156,6 +163,8 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/ice-9/format.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/ftw.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/gap-buffer.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/gds-client.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/gds-server.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/getopt-long.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/hcons.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/history.scm
@@ -279,6 +288,7 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-60.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-69.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-8.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-88.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-9.scm
 @dirrm %%DATADIR%%/%%GUILE_VER%%/srfi
 @dirrm %%DATADIR%%/%%GUILE_VER%%/scripts
@@ -288,6 +298,7 @@ share/aclocal/guile.m4
 @dirrm %%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals
 @dirrm %%DATADIR%%/%%GUILE_VER%%/lang/elisp
 @dirrm %%DATADIR%%/%%GUILE_VER%%/lang
+@dirrm %%DATADIR%%/%%GUILE_VER%%/ice-9/debugging
 @dirrm %%DATADIR%%/%%GUILE_VER%%/ice-9/debugger
 @dirrm %%DATADIR%%/%%GUILE_VER%%/ice-9
 @dirrm %%DATADIR%%/%%GUILE_VER%%
