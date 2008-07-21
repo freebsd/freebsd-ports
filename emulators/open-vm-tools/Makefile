@@ -7,6 +7,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
+PORTREVISION=		1
 CATEGORIES=		emulators
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 MASTER_SITES=		SF
@@ -27,7 +28,7 @@ CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 USE_XORG=		x11 ice xineramaproto xinerama xrandr xtst
-USE_GNOME=		gtk12
+USE_GNOME=		gtk20
 PLIST_SUB+=		X11=""
 PLIST=			${PKGDIR}/pkg-plist-x11
 .endif
@@ -68,12 +69,10 @@ post-install:
 	${MKDIR} -p ${PREFIX}/lib/vmware-tools/modules/drivers
 	${MKDIR} -p ${PREFIX}/lib/vmware-tools/modules/input
 	${MKDIR} -p ${PREFIX}/share/vmware-tools
-	${INSTALL} ${WRKSRC}/guestd/vmware-guestd ${PREFIX}/sbin/vmware-guestd
-	${INSTALL} ${WRKSRC}/checkvm/vmware-checkvm ${PREFIX}/sbin/vmware-checkvm
+	${INSTALL} ${WRKSRC}/guestd/vmware-guestd ${PREFIX}/bin/vmware-guestd
 .if ${OSREL} >= 6
-	${INSTALL} ${WRKSRC}/hgfsmounter/mount.vmhgfs ${PREFIX}/sbin/mount.vmhgfs
+	${INSTALL} ${WRKSRC}/hgfsmounter/mount.vmhgfs ${PREFIX}/sbin/mount_vmhgfs
 .endif
-	${INSTALL} ${WRKSRC}/xferlogs/vmware-xferlogs ${PREFIX}/sbin/vmware-xferlogs
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmxnet.ko
 .if ${OSREL} >= 6
@@ -81,10 +80,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
 	@-kldxref ${PREFIX}/lib/vmware-tools/modules/drivers 2>/dev/null
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/freebsd/poweroff-vm-default ${PREFIX}/share/vmware-tools/poweroff-vm-default
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/freebsd/poweron-vm-default ${PREFIX}/share/vmware-tools/poweron-vm-default
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/freebsd/resume-vm-default ${PREFIX}/share/vmware-tools/resume-vm-default
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/freebsd/suspend-vm-default ${PREFIX}/share/vmware-tools/suspend-vm-default
 .if !defined(WITHOUT_X11)
 	${INSTALL} ${WRKSRC}/toolbox/vmware-toolbox ${LOCALBASE}/sbin/vmware-toolbox
 	${INSTALL} ${WRKSRC}/vmware-user/vmware-user ${LOCALBASE}/sbin/vmware-user

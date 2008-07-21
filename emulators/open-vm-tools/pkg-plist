@@ -11,10 +11,12 @@ share/vmware-tools/poweroff-vm-default
 share/vmware-tools/poweron-vm-default
 share/vmware-tools/resume-vm-default
 share/vmware-tools/suspend-vm-default
+share/vmware-tools/vm-support
 sbin/vmware-guestd
-sbin/vmware-checkvm
-%%FIVEONLY%%sbin/mount.vmhgfs
-sbin/vmware-xferlogs
+bin/vmware-checkvm
+bin/vmware-xferlogs
+bin/vmware-hgfsclient
+%%FIVEONLY%%sbin/mount_vmhgfs
 @dirrm share/vmware-tools
 @unexec if test -f %D/lib/vmware-tools/modules/drivers/linker.hints; then rm -f %D/lib/vmware-tools/modules/drivers/linker.hints; fi
 @dirrmtry lib/vmware-tools/modules/drivers
