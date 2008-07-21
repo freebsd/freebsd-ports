@@ -7,6 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.3.02
+PORTREVISION=	1
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		http://distfiles.opendarwin.org/
@@ -25,7 +26,7 @@ MLINKS=		ispell.1 buildhash.1 \
 		ispell.1 tryaffix.1 \
 		ispell.1 spell.1
 
-ISPELL_FILES=	${PORTNAME}-${PORTVERSION}.tar.gz
+ISPELL_FILES=	${DISTNAME}.tar.gz
 EXTRA_DICT=
 
 MAKE_FLAGS=	TMPDIR=${WRKDIR} -f
@@ -37,7 +38,7 @@ MUNCHLIST=	${WRKSRC}/munchlist
 DATADIR=	${PREFIX}/share/ispell
 ISPELL=		${WRKSRC}/ispell
 
-.if (!defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI) && !defined(ISPELL_PL) && !defined(ISPELL_BG) && !defined(ISPELL_SK) && !defined(ISPELL_CS))
+.if (!defined(ISPELL_ES) && !defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI) && !defined(ISPELL_PL) && !defined(ISPELL_BG) && !defined(ISPELL_SK) && !defined(ISPELL_CS))
 pre-everything::
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
@@ -59,6 +60,7 @@ pre-everything::
 	@${ECHO_MSG} '*  - Italian                   ISPELL_IT=yes            *'
 	@${ECHO_MSG} '*  - Polish                    ISPELL_PL=yes            *'
 	@${ECHO_MSG} '*  - Slovak                    ISPELL_SK=yes            *'
+	@${ECHO_MSG} '*  - Spanish                   ISPELL_ES=yes            *'
 	@${ECHO_MSG} '*  - Swedish                   ISPELL_SE=yes            *'
 	@${ECHO_MSG} '*  - Norwegian                 ISPELL_NO=yes            *'
 	@${ECHO_MSG} '* Example: "make ISPELL_FR=yes ISPELL_SE=yes install"   *'
@@ -69,6 +71,11 @@ SCRIPTS_ENV+=	ISPELL_BRITISH=${ISPELL_BRITISH}
 .if defined(ISPELL_INCLAMERICAN)
 SCRIPTS_ENV+=	ISPELL_INCLAMERICAN=${ISPELL_INCLAMERICAN}
 .endif
+.endif
+.if defined(ISPELL_ES)
+ESDISTFILE=	espa~nol-1.10.tar.gz
+MASTER_SITES+=	http://www.datsi.fi.upm.es/~coes/:es
+EXTRA_DICT+=	${ESDISTFILE}:es
 .endif
 .if defined(ISPELL_IT)
 ITDISTFILE=	ispell-it2001.tgz
@@ -178,6 +185,9 @@ EXTRACT_ONLY+=	${CSDISTFILE}
 DISTFILES+=	${EXTRA_DICT}
 
 post-extract:
+.if defined(ISPELL_ES)
+	@${TAR} -C ${WRKDIR} -zxf ${DISTDIR}/${ESDISTFILE}
+.endif
 .if defined(ISPELL_IT)
 	@${TAR} -C ${WRKDIR} -zxf ${DISTDIR}/${ITDISTFILE}
 .endif
@@ -201,6 +211,11 @@ post-extract:
 .endif
 
 post-patch:
+.if defined(ISPELL_ES)
+	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/ES.patch 2>/dev/null
+	@${REINPLACE_CMD} -e "s|%%BH%%|${BUILDHASH}|g;s|%%MH%%|${MUNCHLIST}|g" \
+		${WRKDIR}/espa~nol-1.10/Makefile
+.endif
 .if defined(ISPELL_IT)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/IT.patch 2>/dev/null
 	@${REINPLACE_CMD} -e "s|%%BH%%|${BUILDHASH}|g;s|%%MH%%|${MUNCHLIST}|g" \
@@ -245,6 +260,9 @@ post-configure:
 .endif
 
 post-build:
+.if defined(ISPELL_ES)
+	@cd ${WRKDIR}/espa~nol-1.10 && ${MAKE}
+.endif
 .if defined(ISPELL_IT)
 	@cd ${WRKDIR}/ispell-it && ${MAKE} all
 .endif
@@ -333,6 +351,9 @@ post-install:
 		${DATADIR}/english.dict
 .endif
 	@-${INSTALL_DATA} ${WRKDIR}/*/*.aff ${WRKDIR}/*/*.hash ${DATADIR}
+.if defined(ISPELL_ES)
+	@${CAT} ${MASTERDIR}/pkg-plist.es >> ${TMPPLIST}
+.endif
 .if defined(ISPELL_IT)
 	@${CAT} ${MASTERDIR}/pkg-plist.it >> ${TMPPLIST}
 .endif
