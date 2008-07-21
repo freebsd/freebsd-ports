@@ -116,9 +116,6 @@ _REQUIRE+=		postgresql
 .if defined(WITH_OPENLDAP)
 BROKEN=			does not support OPENLDAP
 USE_OPENLDAP=		yes
-.if defined(WITH_OPENLDAP_VER)
-USE_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
-.endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 _REQUIRE+=		slapd
