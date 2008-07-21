@@ -8,7 +8,7 @@
 
 PORTNAME=	nx
 PORTVERSION=	0.33
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://networkx.lanl.gov/download/
 DISTNAME=	networkx-${PORTVERSION}
@@ -27,9 +27,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	networkx
-DOCSDIR=	${PREFIX}/share/doc/networkx-${PORTVERSION}
 PORTDOCS=	*
-EXAMPLESDIR=	${PREFIX}/share/doc/networkx-${PORTVERSION}/examples/
 
 .include <bsd.port.pre.mk>
 
@@ -40,5 +38,9 @@ post-install:
 	@${FIND} ${d} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endfor
+.ifndef(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.endif
 
 .include <bsd.port.post.mk>
