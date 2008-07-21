@@ -19,6 +19,8 @@ USE_GHOSTSCRIPT=	yes
 RUN_DEPENDS+=		epstool:${PORTSDIR}/graphics/epstool \
 			pstotext:${PORTSDIR}/print/pstotext
 
+NO_CDROM=	Can only be distributed for free
+
 MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS}
 
 MAN1=		gsview.1
