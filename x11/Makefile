@@ -273,6 +273,7 @@
     SUBDIR += terminator
     SUBDIR += thinglaunch
     SUBDIR += tilda
+    SUBDIR += tint
     SUBDIR += tkXwin
     SUBDIR += tkgoodstuff
     SUBDIR += trapproto
