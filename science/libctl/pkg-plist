@@ -10,36 +10,36 @@ lib/libctlgeom.a
 lib/libctlgeom.la
 lib/libctlgeom.so
 lib/libctlgeom.so.3
-%%DOCSDIR%%/advanced-user.html
-%%DOCSDIR%%/basic-user.html
-%%DOCSDIR%%/developer.html
-%%DOCSDIR%%/guile-links.html
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/introduction.html
-%%DOCSDIR%%/license.html
-%%DOCSDIR%%/user-ref.html
-%%EXAMPLESDIR%%/.deps/example-ctl-io.Po
-%%EXAMPLESDIR%%/.deps/example-example.Po
-%%EXAMPLESDIR%%/.deps/example-geom.Po
-%%EXAMPLESDIR%%/.deps/example-main.Po
-%%EXAMPLESDIR%%/.libs/example
-%%EXAMPLESDIR%%/Makefile
-%%EXAMPLESDIR%%/Makefile.am
-%%EXAMPLESDIR%%/Makefile.in
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/ctl-io.c
-%%EXAMPLESDIR%%/ctl-io.h
-%%EXAMPLESDIR%%/example
-%%EXAMPLESDIR%%/example-ctl-io.o
-%%EXAMPLESDIR%%/example-example.o
-%%EXAMPLESDIR%%/example-geom.o
-%%EXAMPLESDIR%%/example-main.o
-%%EXAMPLESDIR%%/example.c
-%%EXAMPLESDIR%%/example.scm
-%%EXAMPLESDIR%%/example.scm.in
-%%EXAMPLESDIR%%/geom.c
-%%EXAMPLESDIR%%/main.c
-%%EXAMPLESDIR%%/run.ctl
+%%PORTDOCS%%%%DOCSDIR%%/advanced-user.html
+%%PORTDOCS%%%%DOCSDIR%%/basic-user.html
+%%PORTDOCS%%%%DOCSDIR%%/developer.html
+%%PORTDOCS%%%%DOCSDIR%%/guile-links.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/user-ref.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.deps/example-ctl-io.Po
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.deps/example-example.Po
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.deps/example-geom.Po
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.deps/example-main.Po
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.libs/example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ctl-io.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ctl-io.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-ctl-io.o
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-example.o
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-geom.o
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-main.o
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.scm.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geom.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/main.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run.ctl
 %%DATADIR%%/base/class.scm
 %%DATADIR%%/base/ctl.scm
 %%DATADIR%%/base/extern-funcs.scm
@@ -59,7 +59,7 @@ lib/libctlgeom.so.3
 @dirrm %%DATADIR%%/utils
 @dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%/.libs
-@dirrm %%EXAMPLESDIR%%/.deps
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.libs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/.deps
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

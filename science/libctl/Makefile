@@ -24,10 +24,12 @@ USE_LDCONFIG=	yes
 
 MAN1=		gen-ctl-io.1
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
 .endif
