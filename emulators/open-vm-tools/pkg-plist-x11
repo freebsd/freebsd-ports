@@ -11,10 +11,12 @@ share/vmware-tools/poweroff-vm-default
 share/vmware-tools/poweron-vm-default
 share/vmware-tools/resume-vm-default
 share/vmware-tools/suspend-vm-default
+share/vmware-tools/vm-support
 sbin/vmware-guestd
-sbin/vmware-checkvm
-%%FIVEONLY%%sbin/mount.vmhgfs
-sbin/vmware-xferlogs
+bin/vmware-checkvm
+bin/vmware-xferlogs
+bin/vmware-hgfsclient
+%%FIVEONLY%%sbin/mount_vmhgfs
 %%X11%%sbin/vmware-toolbox
 %%X11%%sbin/vmware-user
 @dirrm share/vmware-tools
