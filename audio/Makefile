@@ -326,7 +326,6 @@
     SUBDIR += lame
     SUBDIR += lash
     SUBDIR += last.fm
-    SUBDIR += lastfmrec
     SUBDIR += laudio
     SUBDIR += liba52
     SUBDIR += libadplug
