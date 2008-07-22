@@ -24,6 +24,7 @@ bin/structuresynth
 %%DATADIR%%/Misc/splash.png
 %%DATADIR%%/Misc/sunflow.rendertemplate
 %%DATADIR%%/Misc/sunflowcolored.rendertemplate
+%%DATADIR%%/Misc/sunflowmulticolored.rendertemplate
 @dirrm %%DATADIR%%/Misc
 @dirrm %%DATADIR%%/Examples
 @dirrm %%DATADIR%%
