@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	openx
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.7
 CATEGORIES=	www
 MASTER_SITES=	http://download.openx.org/
 
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	Free, opensource ad server in PHP
 
-USE_ZIP=	yes
+USE_BZIP2=	yes
 NO_BUILD=	yes
 SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES+=	pkg-message
