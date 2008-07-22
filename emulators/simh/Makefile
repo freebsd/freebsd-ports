@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	simh
-PORTVERSION=	3.7.3
+PORTVERSION=	3.8.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
-DISTNAME=	${PORTNAME}v37-3
+DISTNAME=	${PORTNAME}v38-0
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
@@ -26,7 +26,7 @@ BIN_FILES=	altair altairz80 gri h316 hp2100 i1401 i1620 i7094 ibm1130 \
 		id16 id32 lgp nova pdp1 pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 pdp9 \
 		s3 sds vax vax780 
 
-PORTDOCS=	0readme_37.txt 0readme_ethernet.txt
+PORTDOCS=	0readme_38.txt 0readme_ethernet.txt
 
 PLIST_FILES=	${BIN_FILES:S/^/bin\//g} %%DATADIR%%/ka655x.bin bin/simh-eclipse
 PLIST_DIRS=	%%DATADIR%%
