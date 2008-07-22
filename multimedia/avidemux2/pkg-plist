@@ -14,6 +14,8 @@ bin/avidemux2_cli
 %%NLS%%share/locale/sr/LC_MESSAGES/avidemux.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/avidemux.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/avidemux.mo
+%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@latin
 %%QT_NLS%%share/avidemux2/avidemux_ca.qm
 %%QT_NLS%%share/avidemux2/avidemux_cs.qm
 %%QT_NLS%%share/avidemux2/avidemux_de.qm
