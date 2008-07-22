@@ -24,7 +24,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 # been implemented.
 
 USE_IMAKE=	yes
-USE_XORG=	xpm xbitmaps
+USE_XORG=	xaw xbitmaps
 
 MAN1=	xtel.1 xteld.1
 
