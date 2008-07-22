@@ -16,7 +16,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Mailbox checker with sound and animation for X Window System
 
 USE_IMAKE=		yes
-USE_XORG=		xpm
+USE_XORG=		xaw
 MAN1=			xmailbox.1
 
 post-patch:

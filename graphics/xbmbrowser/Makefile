@@ -17,7 +17,7 @@ MAINTAINER=	tg@FreeBSD.org
 COMMENT=	View complete directories of X bitmaps and X pixmaps
 
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xaw xmu
 MAN1=		xbmbrowser.1
 
 USE_GMAKE=	yes

@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 solitaire game with 14 variations
 
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xaw
 MAN6=		xpat2.6
 MANCOMPRESSED=	no
 

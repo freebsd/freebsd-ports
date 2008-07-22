@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X version of simple but tricky board game
 
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xaw
 MAN6=		xquarto.6
 PLIST_FILES=	bin/xquarto
 
