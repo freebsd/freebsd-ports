@@ -9,7 +9,7 @@ PORTNAME=	vips
 PORTVERSION=	7.14.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R:R}/
-DISTVERSION=	7.14.4-1
+DISTFILES=	${PORTNAME}-7.14.4-1.tar.gz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Free image processing system
