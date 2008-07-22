@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	5.1.4
+PORTVERSION=	5.1.6
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTNAME=	spin${PORTVERSION:S/.//g}
@@ -21,7 +21,7 @@ OPTIONS=	XSPIN "Install xspin and TCL/Tk dependency" on
 .if !defined(WITHOUT_XSPIN)
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 PLIST_SUB+=	XSPIN=""
-XSPIN_TCL	=${WRKDIR}/Spin/Xspin4.3/xspin430.tcl
+XSPIN_TCL	=${WRKDIR}/Spin/Xspin5.1/xspin510.tcl
 .else
 PLIST_SUB+=	XSPIN="@comment "
 .endif

@@ -1,5 +1,5 @@
---- ../../Spin/Xspin4.3/xspin430.tcl.orig	Mon Mar  8 11:27:07 2004
-+++ ../../Spin/Xspin4.3/xspin430.tcl	Mon Mar  8 11:31:09 2004
+--- ../../Spin/Xspin5.1/xspin510.tcl.orig	Mon Mar  8 11:27:07 2004
++++ ../../Spin/Xspin5.1/xspin510.tcl	Mon Mar  8 11:31:09 2004
 @@ -1,6 +1,6 @@
 -#!/bin/sh
 +#!%%LOCALBASE%%/bin/%%WISH%% -f
