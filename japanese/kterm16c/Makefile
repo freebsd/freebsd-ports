@@ -33,7 +33,7 @@ RUN_DEPENDS=		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 EXTRACT_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xaw
 
 .include <bsd.port.pre.mk>
 

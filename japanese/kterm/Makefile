@@ -37,7 +37,7 @@ PATCHFILES=	${DISTNAME}.NFS-xauth.patch:nfs \
 PATCH_DIST_STRIP=	-p1
 
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xaw
 
 MAN1=		kterm.1
 MANLANG=	"" ja
