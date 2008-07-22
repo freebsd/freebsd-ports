@@ -5756,7 +5756,6 @@ ja-ruby-usersguide              ports/japanese/ruby-usersguide
 ja-rubygem-jpmobile             ports/japanese/rubygem-jpmobile
 ja-rxvt                         ports/japanese/rxvt
 ja-ryaku-fpw                    ports/japanese/ryaku-fpw
-ja-samba                        ports/japanese/samba
 ja-samba3                       ports/japanese/samba3
 ja-sazanami-ttf                 ports/japanese/sazanami-ttf
 ja-scim-anthy                   ports/japanese/scim-anthy
@@ -10233,7 +10232,6 @@ p5-DateTime-Format-ICal         ports/devel/p5-DateTime-Format-ICal
 p5-DateTime-Format-ISO8601      ports/devel/p5-DateTime-Format-ISO8601
 p5-DateTime-Format-Mail         ports/devel/p5-DateTime-Format-Mail
 p5-DateTime-Format-MySQL        ports/devel/p5-DateTime-Format-MySQL
-p5-DateTime-Format-Natural	ports/devel/p5-DateTime-Format-Natural
 p5-DateTime-Format-Pg           ports/devel/p5-DateTime-Format-Pg
 p5-DateTime-Format-Roman        ports/devel/p5-DateTime-Format-Roman
 p5-DateTime-Format-Strptime     ports/devel/p5-DateTime-Format-Strptime
@@ -11683,6 +11681,7 @@ p5-SVN-Log                      ports/devel/p5-SVN-Log
 p5-SVN-Mirror                   ports/devel/p5-SVN-Mirror
 p5-SVN-Notify                   ports/devel/p5-SVN-Notify
 p5-SVN-Notify-Config            ports/devel/p5-SVN-Notify-Config
+p5-SVN-Notify-Filter-EmailFlatFileDB  ports/devel/p5-SVN-Notify-Filter-EmailFlatFileDB
 p5-SVN-Notify-Filter-Markdown   ports/devel/p5-SVN-Notify-Filter-Markdown
 p5-SVN-Notify-Filter-Watchers   ports/devel/p5-SVN-Notify-Filter-Watchers
 p5-SVN-Notify-Mirror            ports/devel/p5-SVN-Notify-Mirror
@@ -14916,6 +14915,7 @@ p5-svn-log                      ports/devel/p5-SVN-Log
 p5-svn-mirror                   ports/devel/p5-SVN-Mirror
 p5-svn-notify                   ports/devel/p5-SVN-Notify
 p5-svn-notify-config            ports/devel/p5-SVN-Notify-Config
+p5-svn-notify-filter-emailflatfiledb  ports/devel/p5-SVN-Notify-Filter-EmailFlatFileDB
 p5-svn-notify-filter-markdown   ports/devel/p5-SVN-Notify-Filter-Markdown
 p5-svn-notify-filter-watchers   ports/devel/p5-SVN-Notify-Filter-Watchers
 p5-svn-notify-mirror            ports/devel/p5-SVN-Notify-Mirror
@@ -19167,7 +19167,6 @@ silc-irssi-plugin               ports/net/silc-irssi-plugin
 silc-server                     ports/net/silc-server
 silc-toolkit                    ports/devel/silc-toolkit
 silktools                       ports/security/silktools
-silky                           ports/net/silky
 silkymail                       ports/mail/silkymail
 silvercity                      ports/textproc/silvercity
 sim-im                          ports/net-im/sim-im
@@ -20133,6 +20132,7 @@ timidity++-xskin                ports/audio/timidity++-xskin
 tin                             ports/news/tin
 tinc                            ports/security/tinc
 tinker                          ports/biology/tinker
+tint                            ports/x11/tint
 tintfu                          ports/graphics/tintfu
 tintin++                        ports/net/tintin++
 tintin++-devel                  ports/net/tintin++-devel
@@ -20411,6 +20411,7 @@ tsocks                          ports/net/tsocks
 tss                             ports/sysutils/tss
 tt                              ports/games/tt
 tta                             ports/audio/tta
+ttbudget                        ports/net/ttbudget
 ttcp                            ports/benchmarks/ttcp
 ttf2pt1                         ports/print/ttf2pt1
 ttfquery                        ports/print/ttfquery
