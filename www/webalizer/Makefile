@@ -79,6 +79,7 @@ CFLAGS+=	-DUSE_DB185
 .endif
 
 CONFIGURE_ARGS+=	--enable-dns \
+			--enable-bz2 \
 			--with-geodb=${PREFIX}/share/webalizer \
 			--sysconfdir=${PREFIX}/etc \
 			--with-gdlib=${LOCALBASE}/lib \
