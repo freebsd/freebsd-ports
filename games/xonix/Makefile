@@ -15,7 +15,7 @@ MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	Try to win land without colliding with `flyers' and `eaters'
 
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xaw
 MAN1=		xonix.1
 
 .include <bsd.port.mk>

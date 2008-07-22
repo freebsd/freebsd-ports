@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	O. J. Simpson Simulator root window demo
 
-USE_XORG=	xpm
+USE_XORG=	xaw
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/xoj

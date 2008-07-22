@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X version of a simple but tricky board game
 
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xaw
 MAN1=		xtic.1
 PLIST_FILES=	bin/xtic
 

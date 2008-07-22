@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Magnifying glass for X. like xmag but with continously updates
 
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xaw
 
 PLIST_FILES=	bin/xlupe
 
