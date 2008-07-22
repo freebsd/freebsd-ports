@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Aug 29 14:09:55 2005
-+++ Makefile	Fri Jan 27 16:37:23 2006
+--- Makefile.orig	2008-03-22 16:47:51.000000000 -0500
++++ Makefile	2008-07-05 15:24:56.000000000 -0500
 @@ -1,5 +1,5 @@
  # Where is your Xwindows located?
 -X11=/usr/X11R6
@@ -24,7 +24,7 @@
  LD=gcc
  BINFORMAT=bin
  
-@@ -60,7 +60,7 @@
+@@ -66,7 +66,7 @@
  	${MAKE} all CC=gcc XCFLAGS='-fPIC -aout' LD=gcc XLDFLAGS='-shared -aout'
  
  freebsd:
@@ -33,16 +33,16 @@
  
  openbsd:
  	${MAKE} all CC=gcc XCFLAGS=-fPIC LD=gcc XLDFLAGS=-shared X11=/usr/X11R6/
-@@ -91,7 +91,7 @@
- 	     mozplugger-common.c mozplugger.h README.in
- BIN_FILES=mozplugger.so mozplugger-helper
+@@ -109,7 +109,7 @@
+ 	  mozplugger-helper \
+ 	  mozplugger-controller
  
--DEFINES=$(STREAM) -DVERSION=\"$(VERSION)\" #-Wall -DDEBUG #-D__amd64__
-+DEFINES=$(STREAM) -DVERSION=\"$(VERSION)\" -DPREFIX=\"$(prefix)\" #-Wall -DDEBUG #-D__amd64__
+-DEFINES= -DXP_UNIX -DVERSION=\"$(VERSION)\" -D$(BUILD) #-D__amd64__
++DEFINES= -DXP_UNIX -DVERSION=\"$(VERSION)\" -DPREFIX=\"$(prefix)\" -D$(BUILD) #-D__amd64__
+ INCLUDES= -Inpapi/include -I$(X11)/include
  RPM_OPT_FLAGS=-O2
- COMMON_CFLAGS=$(RPM_OPT_FLAGS) -Inpapi/include -I$(X11)/include -DXP_UNIX $(DEFINES)
- COMMON_LDFLAGS=
-@@ -156,14 +156,14 @@
+ COMMON_CFLAGS=$(RPM_OPT_FLAGS) $(INCLUDES) $(DEFINES)
+@@ -175,14 +175,14 @@
  
  install:
  	-@mkdir -p $(root)$(prefix)/bin
@@ -50,13 +50,13 @@
 -	-@mkdir -p $(root)$(prefix)/share/man/man7
 -	-@mkdir -p $(root)/etc
 +	-@mkdir -p $(root)$(prefix)/lib/browser_plugins
-+	-@mkdir -p $(root)$(prefix)/etc
 +	-@mkdir -p $(root)$(prefix)/man/man7
++	-@mkdir -p $(root)$(prefix)/etc
  	cp mozplugger-helper $(root)$(prefix)/bin/
  	cp mozplugger-controller $(root)$(prefix)/bin/
 -	cp mozplugger.so $(root)$(prefix)/lib/mozilla/plugins/
 -	cp mozpluggerrc $(root)/etc/
--	cp mozplugger.7.bz2 $(root)$(prefix)/share/man/man7/
+-	cp mozplugger.7 $(root)$(prefix)/share/man/man7/
 +	cp mozplugger.so $(root)$(prefix)/lib/browser_plugins/
 +	cp mozpluggerrc $(root)$(prefix)/etc/
 +	cp mozplugger.7 $(root)$(prefix)/man/man7/
