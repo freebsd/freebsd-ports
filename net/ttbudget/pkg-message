@@ -1,0 +1,15 @@
+
+*********************************************************************
+To use these drivers, make sure that you have loaded the skystar3
+kernel module, by doing
+
+       # kldload ttbudget
+
+or adding
+
+       ttbudget_load="YES"
+
+to your /boot/loader.conf.
+*********************************************************************
+
+

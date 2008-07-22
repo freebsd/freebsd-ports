@@ -1,0 +1,5 @@
+bin/dvbconfig
+@cwd %%KMODDIR%%
+ttbudget.ko
+@unexec /bin/rm %D/ttbudget.ko.symbols 2>/dev/null || /usr/bin/true
+@unexec kldxref %D
