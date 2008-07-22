@@ -1,3 +1,5 @@
+bin/oscdump
+bin/oscsend
 include/lo/lo_errors.h
 include/lo/lo.h
 include/lo/lo_lowlevel.h
@@ -10,4 +12,4 @@ lib/liblo.so.6
 lib/liblo.so
 lib/liblo.la
 libdata/pkgconfig/liblo.pc
-@dirrmtry include/lo
+@dirrm include/lo
