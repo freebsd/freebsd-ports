@@ -1,4 +1,4 @@
-%%WITH_BROWSER%%bin/browser
+%%WITH_SILEXB%%bin/browser
 bin/silodiff
 bin/silex
 bin/silock

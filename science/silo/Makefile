@@ -28,16 +28,17 @@ USE_XLIB=	yes
 USE_QT_VER=	3
 QT_COMPONENTS=	moc uic
 
-OPTIONS=	PYTHON	"Enable Python Module" On \
+OPTIONS=	PYTHON	"Enable Python Module" Off \
 		HDF5	"Enable HDF5 Driver" Off \
-		BROWSER	"Enable Silex Browser" Off \
+		SILEXB	"Enable Silex Browser" Off \
 		FORTRAN "Compile Fortran interface" Off \
 		OPTIMIZATION "Enable extra optimizations" On
+
+USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
 .ifdef WITH_PYTHON
-USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--enable-pythonmodule
 PLIST_SUB+=	WITH_PYTHON=""
 .else
@@ -54,11 +55,11 @@ PLIST_SUB+=	WITH_HDF5="@comment "
 PLIST_SUB+=	WITH_NCDF=""
 .endif
 
-.ifdef WITH_BROWSER
+.ifdef WITH_SILEXB
 CONFIGURE_ARGS+=	--enable-silex
-PLIST_SUB+=	WITH_BROWSER=""
+PLIST_SUB+=	WITH_SILEXB=""
 .else
-PLIST_SUB+=	WITH_BROWSER="@comment "
+PLIST_SUB+=	WITH_SILEXB="@comment "
 .endif
 
 .ifdef WITH_FORTRAN
