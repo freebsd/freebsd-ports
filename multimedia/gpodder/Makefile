@@ -7,6 +7,7 @@
 
 PORTNAME=	gpodder
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gpodder
@@ -19,6 +20,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedpa
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
+		${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/py-pysqlite23 \
 		wget:${PORTSDIR}/ftp/wget \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
@@ -51,13 +53,13 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITH_IPOD)
-RUN_DEPENDS+=	gpod.3:${PORTSDIR}/audio/libgpod \
-		${PYTHON_SITELIBDIR}/py-mad:${PORTSDIR}/audio/py-mad
+LIB_DEPENDS+=	gpod.3:${PORTSDIR}/audio/libgpod
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/madmodule.so:${PORTSDIR}/audio/py-mad
 .endif
 
 .if defined(WITH_VIDEO)
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer \
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ID3.py:${PORTSDIR}/audio/py-id3
+		${PYTHON_SITELIBDIR}/ID3.py:${PORTSDIR}/audio/py-id3
 .endif
 
 .if defined(WITH_MP3TAG)
