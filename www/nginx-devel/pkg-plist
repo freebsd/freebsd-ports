@@ -21,4 +21,4 @@
 sbin/nginx
 @exec [ -d %%NGINX_TMPDIR%% ] || mkdir -p %%NGINX_TMPDIR%%
 @exec chown %%WWWOWN%%:%%WWWGRP%% %%NGINX_TMPDIR%%
-@unexec rm -fr %%NGINX_TMPDIR%%
+@unexec if [ -z ${UPGRADE_PORT} ] ; then rm -fr %%NGINX_TMPDIR%%; fi
