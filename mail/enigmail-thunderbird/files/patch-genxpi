@@ -1,0 +1,11 @@
+--- mailnews/extensions/enigmail/genxpi.orig	2008-07-22 15:48:33.000000000 +0200
++++ mailnews/extensions/enigmail/genxpi	2008-07-22 16:06:26.000000000 +0200
+@@ -171,6 +171,8 @@
+   case APP_PLATFORM_OS2:
+     addDirectory("", "platform/"+ABI_PLATFORM_OS2+"/components",    fComponents, "");
+     break;
++  default:
++    addDirectory("", "platform/${platform}/components",    fComponents, "");
+   }
+ 
+   err = getLastError();
