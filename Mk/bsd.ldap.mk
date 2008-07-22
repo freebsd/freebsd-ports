@@ -34,7 +34,7 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #				- Detected OpenLDAP version.
 
 .if defined(USE_OPENLDAP)
-DEFAULT_OPENLPAP_VER?=	24
+DEFAULT_OPENLDAP_VER?=	24
 # OpenLDAP client versions currently supported
 OPENLDAP23_LIBVER=	2.3.2
 OPENLDAP24_LIBVER=	2.4.3
