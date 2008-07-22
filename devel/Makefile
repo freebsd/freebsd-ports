@@ -1169,6 +1169,7 @@
     SUBDIR += p5-DateTime-Format-ISO8601
     SUBDIR += p5-DateTime-Format-Mail
     SUBDIR += p5-DateTime-Format-MySQL
+    SUBDIR += p5-DateTime-Format-Natural
     SUBDIR += p5-DateTime-Format-Pg
     SUBDIR += p5-DateTime-Format-Roman
     SUBDIR += p5-DateTime-Format-Strptime
