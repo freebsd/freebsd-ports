@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xmlto
-PORTVERSION=	0.0.20
-PORTREVISION=	2
+PORTVERSION=	0.0.21
 CATEGORIES=	textproc
-MASTER_SITES=	http://cyberelk.net/tim/data/xmlto/stable/
-# Master Site is subject to change with 0.0.21 release
+MASTER_SITES=	https://fedorahosted.org/releases/x/m/xmlto/
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	Front-end to an XSL toolchain
@@ -22,7 +20,10 @@ BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash \
 		${XSL_DIR}:${PORTSDIR}/textproc/docbook-xsl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-OPTIONS=	PASSIVETEX "Enable PassiveTeX support for DVI/PS/PDF" OFF
+OPTIONS=	PASSIVETEX "Enable PassiveTeX support for DVI/PS/PDF" OFF \
+		FOP "Add dependency on FOP" OFF \
+		LIBPAPER "Add dependency on libpaper" OFF \
+		DBLATEX "Add dependency on Dblatex (EXPERIMENTAL)" OFF
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -49,19 +50,25 @@ PLIST_SUB=	PASSIVETEX=""
 PLIST_SUB=	PASSIVETEX="@comment "
 .endif
 
+.if defined(WITH_FOP)
+RUN_DEPENDS+=	${LOCALBASE}/bin/fop:${PORTSDIR}/textproc/fop
+.endif
+
+.if defined(WITH_LIBPAPER)
+RUN_DEPENDS+=	${LOCALBASE}/bin/paperconf:${PORTSDIR}/print/libpaper
+.endif
+
+.if defined(WITH_DBLATEX)
+RUN_DEPENDS+=	${LOCALBASE}/bin/dblatex:${PORTSDIR}/textproc/dblatex
+.endif
+
 post-patch:
-.for i in docbook/htmlhelp docbook/xhtml-nochunks docbook/javahelp \
-	docbook/html docbook/html-nochunks docbook/xhtml docbook/fo \
-	docbook/man fo/dvi fo/pdf
-	@${REINPLACE_CMD} -e 's|-a|-PpR|' ${WRKSRC}/format/${i}
-.endfor
+	@${REINPLACE_CMD} -E -e 's,/usr/bin/(dblatex|fop|links|lynx|paperconf|w3m),${LOCALBASE}/bin/\1,g' \
+		${WRKSRC}/xmlto.in \
+		${WRKSRC}/format/docbook/txt
 .if !defined(WITH_PASSIVETEX)
 	@${REINPLACE_CMD} -e '/format\/fo\//d' ${WRKSRC}/Makefile.in
 .endif
-
-post-build:
-	@${REINPLACE_CMD} -e 's,/usr/bin,${LOCALBASE}/bin,g' \
-		${WRKSRC}/format/docbook/txt
 
 .if !defined(NOPORTDOCS)
 post-install:
