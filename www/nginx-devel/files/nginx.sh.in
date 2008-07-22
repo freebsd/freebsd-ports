@@ -28,6 +28,8 @@ start_precmd="nginx_precmd"
 restart_precmd="nginx_checkconfig"
 reload_precmd="nginx_checkconfig"
 configtest_cmd="nginx_checkconfig"
+upgrade_precmd="nginx_checkconfig"
+upgrade_cmd="nginx_upgrade"
 command="%%PREFIX%%/sbin/nginx"
 _pidprefix="/var/run/nginx"
 pidfile="${_pidprefix}.pid"
@@ -89,6 +91,23 @@ nginx_checkconfig()
 	eval ${command} ${nginx_flags} -t
 }
 
+nginx_upgrade()
+{
+	echo "Upgrading nginx binary:"
+
+	reload_precmd=""
+	sig_reload="USR2"
+	run_rc_command ${rc_prefix}reload $rc_extra_args || return 1
+
+	sleep 1
+
+	echo "Stopping old binary:"
+
+	sig_reload="QUIT"
+	pidfile="$pidfile.oldbin"
+	run_rc_command ${rc_prefix}reload $rc_extra_args || return 1
+}
+
 nginx_precmd() 
 {
 	nginx_checkconfig
@@ -99,8 +118,7 @@ nginx_precmd()
 	else
 		return 0
         fi
-
 }
 
-extra_commands="reload configtest"
+extra_commands="reload configtest upgrade"
 run_rc_command "$1"
