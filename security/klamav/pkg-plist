@@ -82,3 +82,6 @@ share/apps/klamav/about/tshirt.png
 @dirrmtry share/apps/klamav/about
 @dirrmtry share/apps/klamav
 @dirrmtry share/config.kcfg
+@dirrmtry share/doc/HTML/en/klamav02
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML
