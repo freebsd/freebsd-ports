@@ -1,0 +1,4 @@
+DateTime::Format::Natural takes a string with a human readable date/time
+and creates a machine readable one by applying natural parsing logic.
+
+WWW: http://datetime.perl.org/
