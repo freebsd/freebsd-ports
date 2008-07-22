@@ -1,0 +1,38 @@
+share/xml/docbook/5.0/catalog.xml
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/ChangeLog
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/README
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/VERSION
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.html
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.pdf
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.xml
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/howto.html
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/howto.pdf
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/howto.xml
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/images/emacs.png
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen1.png
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen2.png
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen3.png
+%%NOPORTDOCS%%share/xml/docbook/5.0/docs/images/xxe.png
+%%NOPORTDOCS%%@dirrm share/xml/docbook/5.0/docs/images
+%%NOPORTDOCS%%@dirrm share/xml/docbook/5.0/docs
+%%DTD%%share/xml/docbook/5.0/dtd/docbook.dtd
+%%DTD%%@dirrm share/xml/docbook/5.0/dtd
+%%NVDL%%share/xml/docbook/5.0/nvdl/docbook.nvdl
+%%NVDL%%@dirrm share/xml/docbook/5.0/nvdl
+%%RELAXNG%%share/xml/docbook/5.0/rng/docbook.rnc
+%%RELAXNG%%share/xml/docbook/5.0/rng/docbook.rng
+%%RELAXNG%%share/xml/docbook/5.0/rng/docbookxi.rnc
+%%RELAXNG%%share/xml/docbook/5.0/rng/docbookxi.rng
+%%RELAXNG%%@dirrm share/xml/docbook/5.0/rng
+%%SCHEMATRON%%share/xml/docbook/5.0/sch/docbook.sch
+%%SCHEMATRON%%@dirrm share/xml/docbook/5.0/sch
+%%TOOLS%%share/xml/docbook/5.0/tools/db4-entities.pl
+%%TOOLS%%share/xml/docbook/5.0/tools/db4-upgrade.xsl
+%%TOOLS%%@dirrm share/xml/docbook/5.0/tools
+%%SCHEMA%%share/xml/docbook/5.0/xsd/docbook.xsd
+%%SCHEMA%%share/xml/docbook/5.0/xsd/xlink.xsd
+%%SCHEMA%%share/xml/docbook/5.0/xsd/xml.xsd
+%%SCHEMA%%@dirrm share/xml/docbook/5.0/xsd
+@dirrm share/xml/docbook/5.0
+@dirrmtry share/xml/docbook
+@dirrmtry share/xml
