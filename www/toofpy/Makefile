@@ -20,6 +20,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/medusa:${PORTSDIR}/net/py-medusa \
 		${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
 		${PYTHON_SITELIBDIR}/SOAPpy:${PORTSDIR}/net/py-soappy
 
+BROKEN=		Installs files outside of localbase
+
 WRKSRC=		${WRKDIR}/Toolserver-${PORTVERSION}
 LATEST_LINK=	py-${PORTNAME}
 USE_RC_SUBR=	toolserver
