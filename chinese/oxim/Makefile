@@ -27,7 +27,7 @@ OPTIONS=	GTK2 "Enable GTK2 input method module" On \
 		SETUP "Enable GUI Setup Tool" On
 
 USE_ICONV=	yes
-USE_XORG=	x11 xft xpm
+USE_XORG=	x11 xft xpm xtst
 WANT_GNOME=	yes
 
 GNU_CONFIGURE=	yes

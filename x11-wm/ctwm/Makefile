@@ -18,7 +18,7 @@ COMMENT=	An extension to twm, with support for multiple virtual screens, etc
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xpm xmu
 MAN1=		ctwm.1
 
 .include <bsd.port.pre.mk>
