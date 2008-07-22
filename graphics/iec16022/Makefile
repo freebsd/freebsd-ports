@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iec16022
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://datenfreihafen.org/~stefan/iec16022/ \
 		CRITICAL
@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
+MAN1=		iec16022.1
 PLIST_FILES=	bin/iec16022
 
 post-patch:
@@ -28,5 +29,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
