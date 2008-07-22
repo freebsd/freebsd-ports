@@ -366,6 +366,7 @@
 %%WWWDIR%%/lib/OA/Maintenance.php
 %%WWWDIR%%/lib/OA/Maintenance/Auto.php
 %%WWWDIR%%/lib/OA/Maintenance/Distributed.php
+%%WWWDIR%%/lib/OA/Maintenance/Regenerate.php
 %%WWWDIR%%/lib/OA/Maintenance/Status.php
 %%WWWDIR%%/lib/OA/Sync.php
 %%WWWDIR%%/lib/OA/Task.php
