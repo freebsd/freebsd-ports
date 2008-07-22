@@ -1,0 +1,6 @@
+A driver for DVB S-1401 PCI card. Written by paradox (http://paradox.org.ua/).
+In this version of the driver there is no support of TV. Only data.
+
+For additional information, see readme in source tarball
+
+WWW: http://paradox.org.ua/
