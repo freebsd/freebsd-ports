@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.3.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		http://distfiles.opendarwin.org/
@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${ISPELL_FILES}
 MAINTAINER?=	jmz@FreeBSD.org
 COMMENT=	An interactive spelling checker for multiple languages
 
-MAN1=		ispell.1
+MAN1=		ispell.1 sq.1 unsq.1
 MAN5=		ispell.5 english.5
 MLINKS=		ispell.1 buildhash.1 \
 		ispell.1 findaffix.1 \
