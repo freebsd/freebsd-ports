@@ -13,8 +13,6 @@ COMMENT=	Perl bindings for Version control system
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
 
-BROKEN=		conflicting dependencies
-
 USE_PERL5=		5.8.0+
 
 MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
