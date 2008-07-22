@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	4.21
+PORTVERSION=	4.25
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
@@ -16,16 +16,18 @@ MAINTAINER=	jharris@widomaker.com
 COMMENT=	Utility to determine file type
 
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	3.4+
 
-CONFIGURE_ARGS=	--enable-fsect-man5
+CONFIGURE_ARGS+=	--enable-fsect-man5
 
 CONFLICTS=	tct-[0-9]*
 
 MAN1=		file.1
 MAN3=		libmagic.3
 MAN5=		magic.5
+
+regression-test: build
+	@( cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check ; )
 
 .include <bsd.port.mk>
