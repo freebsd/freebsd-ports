@@ -311,9 +311,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # GMAKE			- Set to path of GNU make if not in $PATH.
 #				  Default: gmake
 ##
-# USE_GETOPT_LONG
-#				- If set, this port uses getopt_long.  May be obsolete.
-##
 # USE_ICONV		- If set, this port uses libiconv.
 # USE_GETTEXT	- If set, this port uses GNU gettext (libintl).
 ##
@@ -383,7 +380,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Supported components are: glut, glu, glw, gl and linux.
 #				  If set to "yes", this is equivalent to "glu". Note that
 #				  glut depends on glu, glw and glu depend on gl.
-# USE_MOTIF		- If set, this port uses a Motif toolkit.  Implies USE_XPM.
+# USE_MOTIF		- If set, this port uses a Motif toolkit. Implies USE_XORG+= xpm
 # NO_OPENMOTIF	- If set, this port uses a custom Motif toolkit
 #				  instead of Openmotif.
 #				  Used only when USE_MOTIF is set.
@@ -393,14 +390,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 ##
 # USE_SDL		- If set, this port uses the sdl libraries.
 #				  See bsd.sdl.mk for more information.
-# USE_XPM		- If set, this port uses the xpm graphics libraries.
 ##
 # USE_OPENSSL	- If set, this port relies on the OpenSSL package.
 ##
 # USE_OPENLDAP	- If set, this port uses the OpenLDAP libraries.
 #				  Implies: WANT_OPENLDAP_VER?=23
 # WANT_OPENLDAP_VER
-#				- Legal values are: 22, 23, 24
+#				- Legal values are: 23, 24
 #				  If set to an unkown value, the port is marked BROKEN.
 # WANT_OPENLDAP_SASL
 #				- If set, the system should use OpenLDAP libraries
@@ -593,7 +589,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- A command to install binary executables.  (By
 #				  default, also strips them, unless ${STRIP} is
 #				  overridden to be the empty string).
-# INSTALL_KLD	- As INSTALL_KLD, but without the STRIP.
+# INSTALL_KLD	- As INSTALL_PROGRAM, but without the STRIP.
 # INSTALL_SCRIPT
 #				- A command to install executable scripts.
 # INSTALL_DATA	- A command to install sharable data.
@@ -806,7 +802,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # FETCH_BINARY	- Path to ftp/http fetch command if not in $PATH.
 #				  Default: "/usr/bin/fetch"
 # FETCH_ARGS	- Arguments to ftp/http fetch command.
-#				  Default: "-ARr"
+#				  Default: "-ApRr"
 # FETCH_CMD		- ftp/http fetch command.
 #				  Default: ${FETCH_BINARY} ${FETCH_ARGS}
 # FETCH_BEFORE_ARGS
@@ -1137,13 +1133,13 @@ INDEXDIR?=		${PORTSDIR}
 
 .else
 
-# Look for ${WRKSRC}/.../*.orig files, and (re-)create
+# Look for ${PATCH_WRKSRC}/.../*.orig files, and (re-)create
 # ${FILEDIR}/patch-* files from them.
 
 .if !target(makepatch)
 makepatch:
 	@cd ${.CURDIR} && ${MKDIR} ${FILESDIR}
-	@(cd ${WRKSRC}; \
+	@(cd ${PATCH_WRKSRC}; \
 		for i in `find . -type f -name '*.orig'`; do \
 			ORG=$$i; \
 			NEW=$${i%.orig}; \
@@ -1587,7 +1583,7 @@ PERL=		${LOCALBASE}/bin/perl
 .endif
 .endif
 
-.if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
+.if defined(WANT_GNOME) || defined(USE_GNOME)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.gnome.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.gnome.mk"
 .else
@@ -1656,8 +1652,6 @@ PERL=		${LOCALBASE}/bin/perl
 
 # Location of mounted CDROM(s) to search for files
 CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
-
-WANT_OPENLDAP_VER?=	23
 
 # Owner and group of the WWW user
 WWWOWN?=	www
@@ -1809,25 +1803,11 @@ MAKE_ENV+=		CC="${CC}" CXX="${CXX}"
 .endif
 .endif
 
-.if defined(USE_OPENLDAP_VER)
-USE_OPENLDAP?=		yes
-WANT_OPENLDAP_VER=	${USE_OPENLDAP_VER}
-.endif
-
-.if defined(USE_OPENLDAP)
-.if defined(WANT_OPENLDAP_SASL)
-_OPENLDAP_FLAVOUR=	-sasl
+.if defined(USE_OPENLDAP) || defined(WANT_OPENLDAP_VER)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.ldap.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.ldap.mk"
 .else
-_OPENLDAP_FLAVOUR=
-.endif
-.if ${WANT_OPENLDAP_VER} == 22
-LIB_DEPENDS+=		ldap-2.2.7:${PORTSDIR}/net/openldap22${_OPENLDAP_FLAVOUR}-client
-.elif ${WANT_OPENLDAP_VER} == 23
-LIB_DEPENDS+=		ldap-2.3.2:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
-.elif ${WANT_OPENLDAP_VER} == 24
-LIB_DEPENDS+=		ldap-2.4.3:${PORTSDIR}/net/openldap24${_OPENLDAP_FLAVOUR}-client
-.else
-IGNORE=				cannot be built with unknown OpenLDAP version: ${WANT_OPENLDAP_VER}
+.include "${PORTSDIR}/Mk/bsd.ldap.mk"
 .endif
 .endif
 
@@ -1953,7 +1933,7 @@ RUN_DEPENDS+=	${LINUX_BASE_PORT}
 .endif
 
 .if defined(USE_MOTIF)
-USE_XPM=			yes
+USE_XORG+=			xpm
 .if defined(WANT_LESSTIF)
 LIB_DEPENDS+=		Xm:${PORTSDIR}/x11-toolkits/lesstif
 NO_OPENMOTIF=		yes
@@ -1999,7 +1979,7 @@ MAKE_ENV+=		DISPLAY="localhost:1001"
 .endif
 
 .if defined(USE_XPM)
-USE_XORG+=			xpm
+IGNORE=		USE_XPM is deprecated. Use USE_XORG=xpm instead.
 .endif
 
 XAWVER=				8
@@ -2212,7 +2192,7 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .endif
 .endif
 
-.if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
+.if defined(WANT_GNOME) || defined(USE_GNOME)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.gnome.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.gnome.mk"
 .else
@@ -2464,7 +2444,7 @@ INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 MAKE_ENV+=	${INSTALL_MACROS}
 SCRIPTS_ENV+=	${INSTALL_MACROS}
 
-# Macro for coping entire directory tree with correct permissions
+# Macro for copying entire directory tree with correct permissions
 .if ${UID} == 0
 COPYTREE_BIN=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 					2>&1) && \
