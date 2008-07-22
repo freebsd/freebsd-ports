@@ -42,6 +42,7 @@ bin/im_acostra
 bin/im_add
 bin/im_addgnoise
 bin/im_affine
+bin/im_align_bands
 bin/im_analyze2vips
 bin/im_andimage
 bin/im_andimage_vec
@@ -100,6 +101,7 @@ bin/im_copy_swap
 bin/im_correl
 bin/im_costra
 bin/im_create_fmask
+bin/im_cross_phase
 bin/im_csv2vips
 bin/im_dE00_fromLab
 bin/im_dECMC_fromLab
@@ -165,6 +167,8 @@ bin/im_gradcor
 bin/im_gradcor_raw
 bin/im_gradient
 bin/im_grey
+bin/im_greyc
+bin/im_greyc_mask
 bin/im_grid
 bin/im_guess_prefix
 bin/im_header_double
@@ -240,10 +244,12 @@ bin/im_mattrn
 bin/im_max
 bin/im_maxpos
 bin/im_maxpos_avg
+bin/im_maxpos_vec
 bin/im_maxvalue
 bin/im_measure
 bin/im_min
 bin/im_minpos
+bin/im_minpos_vec
 bin/im_more
 bin/im_more_vec
 bin/im_moreconst
@@ -260,6 +266,7 @@ bin/im_notequalconst
 bin/im_orimage
 bin/im_orimage_vec
 bin/im_orimageconst
+bin/im_phasecor_fft
 bin/im_png2vips
 bin/im_point_bilinear
 bin/im_powtra
@@ -335,6 +342,7 @@ bin/im_vips2mimejpeg
 bin/im_vips2png
 bin/im_vips2ppm
 bin/im_vips2tiff
+bin/im_wrap
 bin/im_zerox
 bin/im_zone
 bin/im_zoom
@@ -391,6 +399,9 @@ libdata/pkgconfig/vipsCC-%%VERSION%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/figs/arch.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/figs/interconvert.png
 %%PORTDOCS%%%%DOCSDIR%%/html/figs/interconvert.svg
+%%PORTDOCS%%%%DOCSDIR%%/html/arch.png
+%%PORTDOCS%%%%DOCSDIR%%/html/interconvert.png
+%%PORTDOCS%%%%DOCSDIR%%/html/vipsmanual0x.png
 %%PORTDOCS%%%%DOCSDIR%%/html/vipsmanual.css
 %%PORTDOCS%%%%DOCSDIR%%/html/vipsmanual.html
 %%PORTDOCS%%%%DOCSDIR%%/html/vipsmanualch1.html
