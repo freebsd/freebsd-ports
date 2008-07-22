@@ -10233,6 +10233,7 @@ p5-DateTime-Format-ICal         ports/devel/p5-DateTime-Format-ICal
 p5-DateTime-Format-ISO8601      ports/devel/p5-DateTime-Format-ISO8601
 p5-DateTime-Format-Mail         ports/devel/p5-DateTime-Format-Mail
 p5-DateTime-Format-MySQL        ports/devel/p5-DateTime-Format-MySQL
+p5-DateTime-Format-Natural	ports/devel/p5-DateTime-Format-Natural
 p5-DateTime-Format-Pg           ports/devel/p5-DateTime-Format-Pg
 p5-DateTime-Format-Roman        ports/devel/p5-DateTime-Format-Roman
 p5-DateTime-Format-Strptime     ports/devel/p5-DateTime-Format-Strptime
