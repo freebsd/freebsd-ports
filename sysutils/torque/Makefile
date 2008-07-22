@@ -57,10 +57,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/torque.setup ${EXAMPLESDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000
-BROKEN=		Does not build on 8.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
