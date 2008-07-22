@@ -79,12 +79,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #		${WRKSRC}/configure
 #  .endif
 
-.if ${OSVERSION} >= 500000
-.if (${ARCH}!="sparc64" || ${OSVERSION} >= 601101) && ${ARCH}!="ia64"
-_GECKO_ALL=	firefox nvu seamonkey thunderbird xulrunner flock firefox3
-.endif
-.endif
-_GECKO_ALL+=	mozilla
+_GECKO_ALL=	firefox nvu seamonkey thunderbird xulrunner flock firefox3 mozilla
 
 thunderbird_PORTSDIR=	mail
 
