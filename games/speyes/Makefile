@@ -16,6 +16,6 @@ COMMENT=	WindowMaker dockapp/xeyes clone using SouthPark characters
 
 PLIST_FILES=	bin/speyes
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xpm xmu
 
 .include <bsd.port.mk>
