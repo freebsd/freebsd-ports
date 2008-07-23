@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Mouse.pm
+%%SITE_PERL%%/Mouse/Meta/Attribute.pm
+%%SITE_PERL%%/Mouse/Meta/Class.pm
+%%SITE_PERL%%/Mouse/Meta/Role.pm
+%%SITE_PERL%%/Mouse/Object.pm
+%%SITE_PERL%%/Mouse/Role.pm
+%%SITE_PERL%%/Mouse/TypeRegistry.pm
+%%SITE_PERL%%/Squirrel.pm
+%%SITE_PERL%%/Squirrel/Role.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mouse
+@dirrmtry %%SITE_PERL%%/Mouse/Meta
+@dirrmtry %%SITE_PERL%%/Mouse
+@dirrmtry %%SITE_PERL%%/Squirrel

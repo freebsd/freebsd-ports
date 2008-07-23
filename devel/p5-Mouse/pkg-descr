@@ -1,0 +1,22 @@
+Moose is wonderful.
+
+Unfortunately, it's a little slow. Though significant progress has been made
+over the years, the compile time penalty is a non-starter for some applications.
+
+Mouse aims to alleviate this by providing a subset of Moose's functionality,
+faster. In particular, "has" in Moose is missing only a few expert-level
+features.
+
+Compatibility with Moose has been the utmost concern. Fewer than 1% of the
+tests fail when run against Moose instead of Mouse. Mouse code coverage is also
+over 97%. Even the error messages are taken from Moose. The Mouse code just
+runs the test suite 3x-4x faster.
+
+The idea is that, if you need the extra power, you should be able to run
+s/Mouse/Moose/g on your codebase and have nothing break. To that end,
+nothingmuch has written Squirrel (part of this distribution) which will act as
+Mouse unless Moose is loaded, in which case it will act as Moose.
+
+Mouse also has the blessings of Moose's author, stevan.
+
+WWW: http://search.cpan.org/dist/Mouse/
