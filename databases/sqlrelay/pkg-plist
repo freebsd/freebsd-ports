@@ -34,6 +34,7 @@ bin/sqlrsh
 etc/sqlrelay.conf.example
 etc/sqlrelay.dtd
 etc/sqlrelay-sample
+etc/rc.d/sqlrelay.sh-sample
 include/sqlrelay/private/bindvar.h
 include/sqlrelay/private/column.h
 include/sqlrelay/private/row.h
