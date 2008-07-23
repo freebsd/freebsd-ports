@@ -54,6 +54,10 @@ LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=--without-theora
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not link
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lrt|-lrt -liconv|' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|@LINUX_TRUE@am__append_19|@UNIX_TRUE@am__append_19|' ${WRKSRC}/src/Makefile.in
