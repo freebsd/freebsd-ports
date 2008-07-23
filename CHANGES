@@ -101,7 +101,7 @@ AUTHOR: maho@FreeBSD.org
 
   * Add knob USE_FORTRAN for ports which uses FORTRAN. All ports uses
     FORTRAN compiler should use this knob. Usages are: USE_FORTRAN=yes
-    (default;gfortran42), USE_FROTRAN=ifc (Intel FORTRAN compiler)
+    (default;gfortran42), USE_FORTRAN=ifc (Intel FORTRAN compiler)
     and USE_FORTRAN=g77 (/usr/bin/f77 or g77-34).
 
 20070701:
@@ -327,7 +327,7 @@ Tools/scripts/security-check.awk:
   * LOCALBASE, LINUXBASE and X11BASE variables point to the final destination
     now, LOCALBASE_REL, LINUXBASE_REL and X11BASE_REL can be used for the
     old behavior.  The behavior has not been changed in PLIST_SUB.
-    Note, that the three variables are still overrideable with a hack, so this
+    Note, that the three variables are still overridable with a hack, so this
     change doesn't affect POLA, but necessary for DESTDIR support.
 
   * OSVERSION is now determined from the userland, not from the kernel.
@@ -484,7 +484,7 @@ The following changes were introduced:
     - add support for Berkeley DB and SQLite (via USE_BDB and USE_SQLITE
       knobs).
 
-  * Espace '+' in make search
+  * Escape '+' in make search
 
   * Add "makepatch" target to simplify creation of patches during porting
 
@@ -567,7 +567,7 @@ The following changes were introduced:
 
   * Fix add-plist-docs target to work correctly with wildcards.
 
-  * Fix USE_MYSQL and USE_PGSQL knobs to work in partitial ports
+  * Fix USE_MYSQL and USE_PGSQL knobs to work in partial ports
     tree.
 
   * Introduce 2 new variables: USE_FAM and WANT_FAM_SYSTEM.
@@ -864,7 +864,7 @@ AUTHOR: eik@FreeBSD.org
   When your port links against the openldap client libraries use
     USE_OPENLDAP=	yes
   and do not depend on a particular version. A user (or package
-  building cluster) can select the desired flavour with
+  building cluster) can select the desired flavor with
   WANT_OPENLDAP_VER and WANT_OPENLDAP_SASL, but these must not
   be used in ports Makefiles.
 
