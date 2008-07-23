@@ -3,11 +3,11 @@ lib/libcgraph.a
 lib/libcgraph_p.a
 lib/libcgraph.so
 lib/libcgraph.so.2
-share/doc/cgraph/cgraph.ps
-share/examples/cgraph/CGminimal.c
-share/examples/cgraph/dashlist.c
-share/examples/cgraph/markerlist.c
-share/examples/cgraph/TFopt-lrLog.c
-share/examples/cgraph/TFampspect.dat
-@dirrm share/doc/cgraph
-@dirrm share/examples/cgraph
+%%PORTDOCS%%%%DOCSDIR%%/cgraph.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CGminimal.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dashlist.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/markerlist.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TFopt-lrLog.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TFampspect.dat
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

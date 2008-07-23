@@ -7,7 +7,7 @@
 
 PORTNAME=	Cgraph
 PORTVERSION=	2.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.tobez.org/download/port-mirrors/graphics/Cgraph/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,6 +16,8 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A PostScript plotting library in C
 
 WRKSRC=		${WRKDIR}/Cgraph/source
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:L}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:L}
 
 USE_LDCONFIG=	yes
 
@@ -24,16 +26,16 @@ post-extract:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cgraph
-	@${INSTALL_DATA} ${WRKSRC}/../docs/cgraph.ps ${PREFIX}/share/doc/cgraph
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../docs/cgraph.ps ${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${PREFIX}/share/examples/cgraph
-	@${INSTALL_DATA} ${WRKSRC}/../examples/minimal/CGminimal.c ${PREFIX}/share/examples/cgraph
-	@${INSTALL_DATA} ${WRKSRC}/../examples/dash/dashlist.c ${PREFIX}/share/examples/cgraph
-	@${INSTALL_DATA} ${WRKSRC}/../examples/marker/markerlist.c ${PREFIX}/share/examples/cgraph
-	@${INSTALL_DATA} ${WRKSRC}/../examples/loglog/TFopt-lrLog.c ${PREFIX}/share/examples/cgraph
-	@${INSTALL_DATA} ${WRKSRC}/../examples/loglog/TFampspect.dat ${PREFIX}/share/examples/cgraph
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../examples/minimal/CGminimal.c \
+		${WRKSRC}/../examples/dash/dashlist.c \
+		${WRKSRC}/../examples/marker/markerlist.c \
+		${WRKSRC}/../examples/loglog/TFopt-lrLog.c \
+		${WRKSRC}/../examples/loglog/TFampspect.dat ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
