@@ -7,7 +7,7 @@
 
 PORTNAME=	kterm16c
 PORTVERSION=	6.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://ftp.interface-business.de/pub/outgoing/ \
@@ -35,9 +35,13 @@ EXTRACT_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 USE_IMAKE=	yes
 USE_XORG=	xaw
 
-.include <bsd.port.pre.mk>
+CONFLICTS=	ja-kterm-[0-9]*
 
-DOCDIR=		${PREFIX}/share/doc/kterm16c
+.if !defined(NOPORTDOCS)
+PORTDOCS=	dot.termcap kterm16c.doc
+.endif
+
+.include <bsd.port.pre.mk>
 
 post-extract:
 	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
@@ -77,9 +81,9 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}
-	@${INSTALL_DATA} ${FILESDIR}/dot.termcap ${DOCDIR}
-	@${INSTALL_DATA} ${FILESDIR}/kterm16c.doc ${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/dot.termcap \
+		${FILESDIR}/kterm16c.doc ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
