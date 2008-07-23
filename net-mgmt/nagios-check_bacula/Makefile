@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	check_bacula
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 PKGNAMEPREFIX=	nagios-
@@ -16,7 +16,8 @@ MAINTAINER=	freebsd@troback.com
 COMMENT=	Nagios plugin for Bacula
 
 WRKSRC=		${WRKDIR}/bacula-${PORTVERSION}
-CONFIGURE_ARGS=	--enable-client-only
+CONFIGURE_ARGS=	--enable-client-only \
+		--disable-nls
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
