@@ -230,11 +230,12 @@ upgrades.
   AFFECTS: users of www/opera and www/opera/devel
   AUTHOR: Ion-Mihai Tetcu <itetcu@FreeBSD.org>
 
-  The Opera has been updated from 9.2x to 9.5x. A lot of things have been
+  The Opera has been updated from 9.2x to 9.5x.  A lot of things have been
   changed such as keyboard shortcuts[1]; new storage and indexing formats
-  mail and feeds; new search.ini; native amd64 binaries; no 4.x support. The mail
-  and feeds will be asked to convert to new format in start up. Warning there is
-  no way to downgrade back to old format. Be sure to view the Changelog[2].
+  for mail and feeds; new search.ini; native amd64 binaries; no 4.x support.
+  You will be asked whether to convert mail and feeds to new format during
+  start up.  Warning: there is no way to downgrade back to the old format.
+  Be sure to see the Changelog[2].
 
   [1] http://www.opera.com/support/search/view/884/
   [2] http://www.opera.com/docs/changelogs/freebsd/950/
@@ -269,29 +270,29 @@ upgrades.
   AFFECTS: users of www/linux-opera
   AUTHOR: mezz@FreeBSD.org
 
-  The Opera has been updated from 9.2x to 9.5x. A lot of things have been
+  The Opera has been updated from 9.2x to 9.5x.  A lot of things have been
   changed such as keyboard shortcuts[1]; new storage and indexing formats
-  mail and feeds; new search.ini; probably more that I have missed. I do
-  not know if the keyboard shortcuts and search.ini will be overwritten. The
-  mail and feeds will be asked to convert to new format during start up.
-  Warning there is no way to downgrade back to old format. Be sure to view
-  the Changelog[2].
+  for mail and feeds; new search.ini; probably more that I have missed.  I
+  do not know if the keyboard shortcuts and search.ini will be overwritten.
+  You will be asked whether you want mail and feeds to be converted to new
+  format during start up.  Warning: there is no way to downgrade back to
+  the old format.  Be sure to see the Changelog[2].
 
   [1] http://www.opera.com/support/search/view/884/
   [2] http://www.opera.com/docs/changelogs/linux/950/
 
   It is probably best for you to back up your linux-opera directory in
-  case until you have no problem with new Opera for a while. Also, you
-  might have to re-configure search and keyboard shortcuts if these are
+  case until you have no problem with new Opera for a while.  Also, you
+  might have to re-configure search and keyboard shortcuts if these were
   overwritten:
 
 	# cp -Rp ~/.linux-opera ~/.linux-opera-bak
 
-  If you are seeing an error of undefined symbol related with GTK+. It is
+  If you are seeing an error of undefined symbols related to GTK+, it is
   because it needs newer linux-gtk2 that ports doesn't have. You can enter
   'opera:config#FileSelector|DialogToolkit' in the address bar and change
-  from 0 to 1 in 'Dialog Toolkit' if it annoys you. 0 = auto detection,
-  1 = QT and 2 = GTK+.
+  from 0 to 1 in 'Dialog Toolkit' if it annoys you.  0 = auto detection,
+  1 = QT, and 2 = GTK+.
 
 20080610:
   AFFECTS: users of mail/svnmailer
