@@ -72,7 +72,7 @@ MAD			Mad MP3 audio decoder support
 MATROSKA		Matroska multimedia container support
 MMX			Adds support for x86 MMX optimizations
 MODPERL2		Use www/mod_perl2 port
-MODPYTHON3             Use www/mod_python3 port
+MODPYTHON3		Use www/mod_python3 port
 MPEG4IP			MPEG4 multimedia support
 MUSEPACK		Musepack (MPC, musicpd, libmpcdec) support
 MYSQL			MySQL database support
@@ -82,6 +82,7 @@ NHC98			Prefer/use nhc98 Haskell compiler
 NIS			Support for NIS/YP
 NLS			Native Language Support via gettext utilities
 OGG			OGG multimedia container format
+OPENAL			Adds OpenAL support
 OPENGL			Adds OpenGL support
 PERL			Adds Perl language/module support
 PGSQL			PostgreSQL database support
