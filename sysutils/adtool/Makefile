@@ -15,7 +15,7 @@ COMMENT=	Active Directory administration tool
 
 USE_GMAKE=	yes
 USE_OPENLDAP=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-ldap=${LOCALBASE}
