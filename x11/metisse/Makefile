@@ -9,7 +9,8 @@ PORTNAME=	metisse
 DISTVERSION=	0.4.0-rc4
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	http://insitu.lri.fr/metisse/download/latest/
+MASTER_SITES=	http://insitu.lri.fr/metisse/download/latest/ \
+		http://freebsd.nsu.ru/distfiles/metisse/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An innovative X-based window system
@@ -18,10 +19,6 @@ CONFLICTS=	fvwm-1.* fvwm-2.5.*
 
 LIB_DEPENDS=	Nucleo.0:${PORTSDIR}/x11-toolkits/nucleo
 RUN_DEPENDS=	${LOCALBASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts
-
-BROKEN=		Does not compile
-DEPRECATED=	Has been broken for more than 6 months
-EXPIRATION_DATE=2008-09-19
 
 USE_BZIP2=	yes
 PATCH_STRIP=	-p1
@@ -32,6 +29,7 @@ CONFIGURE_ARGS=	--with-fontdir=${LOCALBASE}/lib/X11/fonts
 MAKE_ARGS=	METISSE_DOC_DIR="${DOCSDIR}"
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+USE_XORG=	xrender
 WANT_GNOME=	yes
 
 OPTIONS=	MMX	"Enable MMX optimizations"		on \
@@ -118,11 +116,11 @@ PLIST_SUB+=	GTK=""
 PLIST_SUB+=	GTK="@comment "
 .endif
 
-post-extract: .SILENT
+post-patch: .SILENT
 # Fix KDE tray
 	${REINPLACE_CMD} -e '4723d' ${WRKSRC}/fvwm-insitu/fvwm/events.c
 # Fix pager mode border color
-	${REINPLACE_CMD} -e 's/0.1,0.5,0.4/0.7,0.71,0.7/' \
+	${REINPLACE_CMD} -e 's/0\.1,0\.5,0\.4/0.7,0.71,0.7/' \
 		${WRKSRC}/FvwmCompositor/main/compositor.cxx
 # Fix desktop entries path
 	${REINPLACE_CMD} -E 's,^(configdir =).*,\1 ${DESKTOPDIR},' \
