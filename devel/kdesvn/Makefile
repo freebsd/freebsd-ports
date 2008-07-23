@@ -6,7 +6,7 @@
 
 PORTNAME=	kdesvn
 PORTVERSION=	0.14.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/${PORTVERSION:R}.x/
 
@@ -15,7 +15,7 @@ COMMENT=	KDE frontend for Subversion
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr-svn \
 		svn_client-1:${PORTSDIR}/devel/subversion \
-		neon:${PORTSDIR}/www/neon26
+		neon:${PORTSDIR}/www/neon28
 
 USE_CMAKE=	yes
 USE_BZIP2=	yes
