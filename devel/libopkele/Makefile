@@ -21,7 +21,6 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		xslt:${PORTSDIR}/textproc/libxslt
 
 USE_GMAKE=	yes
-USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
@@ -32,10 +31,14 @@ CONFIGURE_ENV=	"OPENSSL_CFLAGS=${CFLAGS} -l${OPENSSLINC}" \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	"-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
 # This port needs OpenSSL 0.9.8b which is present in 7.0 and up
-.if !exists(/usr/include/openssl/store.h)
+USE_OPENSSL=	yes
+.if ${OSVERSION} < 700000
 WITH_OPENSSL_PORT=      yes
 .endif
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 # If we use the base OpenSSL either by default or
 # by design, we need to remove the openssl dependency
@@ -48,4 +51,4 @@ post-patch:
 	@ ${REINPLACE_CMD} -e "s|Requires: openssl|Requires:|" ${WRKSRC}/libopkele.pc.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
