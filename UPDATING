@@ -10,8 +10,8 @@ upgrades.
   AFFECTS: users of net/freenet6
   Author: Edwin Groothuis <edwin@mavetju.org>
 
-  Please note that there has been a major update of this port (From
-  vesion 2.x to 5.x) and that the name of the binaries and configuration
+  Please note that there has been a major update of this port (from
+  version 2.x to 5.x) and that the name of the binaries and configuration
   files has changed from "tpsc" to "gw6c". The configuration files
   have to be copied from ${PREFIX}/share/examples/freenet6 to
   ${PREFIX}/etc again.
@@ -23,9 +23,9 @@ upgrades.
   GPRename configuration files now live ~/.config/gprename instead of ~/, to
   upgrade use:
 
-  % mkdir -p ~/.config/gprename
-  % mv ~/.gprename ~/.config/gprename/gprename
-  % mv ~/.gprename_log ~/.config/gprename/gprename_log
+	% mkdir -p ~/.config/gprename
+	% mv ~/.gprename ~/.config/gprename/gprename
+	% mv ~/.gprename_log ~/.config/gprename/gprename_log
 
 20080717:
   AFFECTS: Users of devel/anjuta
@@ -34,8 +34,8 @@ upgrades.
   Anjuta's neon dependency has been switched from neon26 to neon28.  The
   two are incompatible, so you will need to do the following to upgrade:
 
-  portupgrade -o www/neon28 neon26
-  portupgrade anjuta
+	portupgrade -o www/neon28 neon26
+	portupgrade anjuta
 
 20080714:
   AFFECTS: Users of www/squid
@@ -88,7 +88,7 @@ upgrades.
   32 bit "qemu" executable on amd64.  If you upgrade qemu-devel with the
   KQEMU knob on, you have to
 
-  # pkg_delete kqemu-kmod-1\*
+	# pkg_delete kqemu-kmod-1\*
 
   the old kqemu version first if it is installed.
 
@@ -110,7 +110,7 @@ upgrades.
   will need to run update-mime-database to update your local Mime Types
   caches.
 
-  $ update-mime-database ~/.local/share/mime/
+	$ update-mime-database ~/.local/share/mime/
 
 20080702:
   AFFECTS: users of irc/ratbox-services
@@ -148,12 +148,12 @@ upgrades.
   neon26.
   You should upgrade neon library before subversion with the command:
 
-  # portupgrade -o www/neon28 neon26
+	# portupgrade -o www/neon28 neon26
 
   Also, if you use special subversion port with bindings, you
   should upgrade your port to clean subversion port with
 
-  # portupgrade -o devel/subversion subversion-\*
+	# portupgrade -o devel/subversion subversion-\*
 
   and install needed bindings (p5-subversion, py-subversion and/or
   ruby-subversion) after that.
@@ -171,15 +171,15 @@ upgrades.
   These changes require that all dependent ports be updated.  You can do
   this in one of two ways:
 
-  # portmaster pixman\*
-  # portmaster \*cairo\*
-  # portmaster -r poppler-0.\*
+	# portmaster pixman\*
+	# portmaster \*cairo\*
+	# portmaster -r poppler-0.\*
 
-  or
+  or:
 
-  # pkgdb -Ff
-  # portupgrade pixman\* \*cairo\*
-  # portupgrade -r poppler-0.\*
+	# pkgdb -Ff
+	# portupgrade pixman\* \*cairo\*
+	# portupgrade -r poppler-0.\*
 
 20080627:
   AFFECTS: users of x11-drivers/xf86-video-ati
@@ -199,7 +199,7 @@ upgrades.
   AFFECTS: users of science/gramps
   AUTHOR: Anders Troback <freebsd@troback.com>
 
-  Before you upgrade from 2.x to 3.x you need to export your existing 
+  Before you upgrade from 2.x to 3.x you need to export your existing
   databases to a GRAMPS XML file. After the upgrade you can import
   them into the new version.
 
@@ -241,7 +241,7 @@ upgrades.
 
 20080622:
   AFFECTS: users of devel/subversion, subversion-devel and subversion-freebsd
-           with apr from www/apache22
+	   with apr from www/apache22
   AUTHOR: Clement Laforet <clement@FreeBSD.org>
 
   apr and apr-util bundled with apache 2.2.9 have been upgraded to 1.3.x, so
@@ -272,8 +272,8 @@ upgrades.
   The Opera has been updated from 9.2x to 9.5x. A lot of things have been
   changed such as keyboard shortcuts[1]; new storage and indexing formats
   mail and feeds; new search.ini; probably more that I have missed. I do
-  not know if the keyboard shortcuts and search.ini will be overwrite. The
-  mail and feeds will be asked to convert to new format in start up.
+  not know if the keyboard shortcuts and search.ini will be overwritten. The
+  mail and feeds will be asked to convert to new format during start up.
   Warning there is no way to downgrade back to old format. Be sure to view
   the Changelog[2].
 
@@ -283,9 +283,9 @@ upgrades.
   It is probably best for you to back up your linux-opera directory in
   case until you have no problem with new Opera for a while. Also, you
   might have to re-configure search and keyboard shortcuts if these are
-  overwrote.
+  overwritten:
 
-  # cp -Rp ~/.linux-opera ~/.linux-opera-bak
+	# cp -Rp ~/.linux-opera ~/.linux-opera-bak
 
   If you are seeing an error of undefined symbol related with GTK+. It is
   because it needs newer linux-gtk2 that ports doesn't have. You can enter
@@ -319,15 +319,15 @@ upgrades.
   volume control tool to PulseAudio.
 
 20080605:
-  AFFECTS: users of devel/gettext (ie: YOU)
+  AFFECTS: users of devel/gettext (i.e.: YOU)
   AUTHOR: ade@FreeBSD.org
 
   As a result of the upgrade to gettext-0.17, the shared library version
   of libintl has changed, so you will need to rebuild all ports that
   depend on gettext:
 
-  # portupgrade -rf gettext
-  # portmaster -r gettext\*
+	# portupgrade -rf gettext
+	# portmaster -r gettext\*
 
   Given the scope and sheer number of dependent ports, it may be more
   advisable to simply blow away all existing install ports (after
@@ -341,7 +341,7 @@ upgrades.
   directories are changed. So you should reinstall all ports depending on
   this one. Run something like:
 
-  # portupgrade -fr emacs
+	# portupgrade -fr emacs
 
 20080601:
   AFFECTS: users of www/ikiwiki
@@ -397,7 +397,7 @@ upgrades.
   upgrading multimedia/smplayer to version 0.6.0 or higher.
 
 20080513:
-  AFFECTS: users of secutity/amavisd-new
+  AFFECTS: users of security/amavisd-new
   AUTHOR: scheidell@secnap.net
 
   Amavisd-new 2.6.0 introduces several incompatibilities with prior versions.
@@ -517,13 +517,13 @@ upgrades.
   separate ports to allow non-GNOME users to install tracker without pulling
   in GNOME components. To upgrade please use the directions below.
 
-  portmaster users:
-  portmaster -o sysutils/tracker-client tracker
-  portmaster -u sysutils/tracker
+  Portmaster users:
+	portmaster -o sysutils/tracker-client tracker
+	portmaster -u sysutils/tracker
 
-  portupgrade users:
-  portupgrade -o sysutils/tracker-client tracker
-  portupgrade -u sysutils/tracker
+  Portupgrade users:
+	portupgrade -o sysutils/tracker-client tracker
+	portupgrade -u sysutils/tracker
 
 20080405:
   AFFECTS: users and maintainers of ports that depends of databases/sqlite3
@@ -566,7 +566,8 @@ upgrades.
      of www/openx.
   3. Copy your banner images from phpadsnew/www/images to openx/www/images
   4. Access openx on your browser and follow the instructions for upgrading.
-  5. When you are satisfied everthing is working properly remove www/phpadsnew
+  5. When you are satisfied with everything working properly you can remove
+     www/phpadsnew.
 
 20080326:
   AFFECTS: users of emulators/linux_base-f8
@@ -605,7 +606,7 @@ upgrades.
 
   Portmaster users:
     # pkg_delete -f gnome-applets\* totem\* gnome-control-center\* \
-       gnome-keyring-manager\*
+      gnome-keyring-manager\*
     # portmaster -a
 
   Be sure to read in our known issues and solutions:
@@ -614,7 +615,7 @@ upgrades.
 
 20080318:
   AFFECTS: users of audio/gnump3d
-  AUTHOR:  jadawin@FreeBSD.org
+  AUTHOR: jadawin@FreeBSD.org
 
   The layout of gnump3d 3.0 is changed, please read the documents and the
   manual pages of gnump3d.
@@ -655,10 +656,10 @@ upgrades.
   AFFECTS: users of security/nmapfe
   AUTHOR: miwi@FreeBSD.org
 
-    nmapfe has been renamed to zenmap upstream. The port has also been
-    renamed. If you haven't already installed nmapfe, you need to:
+  nmapfe has been renamed to zenmap upstream. The port has also been
+  renamed. If you haven't already installed nmapfe, you need to:
 
-    portupgrade -o security/zenmap nmapfe\*
+	portupgrade -o security/zenmap nmapfe\*
 
 20080313:
   AFFECTS: users of mail/ezmlm-web
@@ -671,16 +672,16 @@ upgrades.
   AFFECTS: users of x11-wm/enlightenment-devel, x11/ecore and grephics/evas
   AUTHOR: stas@FreeBSD.org
 
-  Evas and ecore ports have been splitted to separate modules to simplify
+  Evas and ecore ports have been split to separate modules to simplify
   dependency tracking. Thus, portupgrade in many cases won't be able to
   correctly update these ports.
 
   The easiest upgrade path would be to remove all EFL ports and install
   them from scratch. At least, you should reinstall ecore and evas.
 
-  Please note, that your old $HOME/.e is not longer compatible with new
+  Please note that your old $HOME/.e is no longer compatible with new
   snapshot version. You will need to remove this directory and let e17
-  to create it automatically on the next startup.
+  create it automatically on the next startup.
 
 20080306:
   AFFECTS: users of mail/dovecot
@@ -701,7 +702,7 @@ upgrades.
   have been bumped. So you need to rebuild all applications that
   depend on gnutls. Do something like:
 
-        portupgrade -rf gnutls
+	portupgrade -rf gnutls
 
 20080223:
   AFFECTS: users of www/instiki
@@ -712,7 +713,9 @@ upgrades.
 
   If you are updating from a previous version, to preserve your
   settings and data, please do the following:
+
 	mv /usr/local/instiki /usr/local/share
+
   Then update as usual.
 
 20080219:
@@ -739,10 +742,11 @@ upgrades.
 
   The symon port has been updated from 2.75 to 2.78. It changes the wire
   protocol again. You should update your symux(8) and symon(8) installations
-  simultaneously, as
+  simultaneously, as:
+
      - new symon clients will make old symux servers exit, and
-     - new symux servers don't understand the old symon client's if() and mem()
-       probes.
+     - new symux servers don't understand the old symon client's if() and
+       mem() probes.
 
 20080208:
   AFFECTS: users of ports-mgmt/portupgrade
@@ -768,6 +772,7 @@ upgrades.
    AUTHOR: beech@FreeBSD.org
 
    Install paths have changed. Please do the following prior to upgrade:
+
 	cd /usr/local/www
 	mv punbb punbb.old
 	cp -R punbb.old/upload punbb
@@ -807,8 +812,8 @@ upgrades.
    Update of mod_security2 is a dramatic change, because there is a need
    to completely rewrite their obsolete rules and migrate for capacity
    to use new syntax.
-   You need to make a complete backup of your conf files before to do an
-   update.
+   You need to make a complete backup of your configuration files before
+   you can perform an update.
 
 20080120:
    AFFECTS: users of www/apache20
@@ -1011,13 +1016,13 @@ upgrades.
   sysutils/portmaster.
 
     Portupgrade users:
-        # pkgdb -Ff
-        # portupgrade -f -o textproc/rarian textproc/scrollkeeper
-        # portupgrade -a
+	# pkgdb -Ff
+	# portupgrade -f -o textproc/rarian textproc/scrollkeeper
+	# portupgrade -a
 
     Portmaster users:
-        # portmaster -o textproc/rarian textproc/scrollkeeper
-        # portmaster -a
+	# portmaster -o textproc/rarian textproc/scrollkeeper
+	# portmaster -a
 
   If some of icons, applets, themes or other customized items have
   disappeared from your desktop in this upgrade, you will need to
@@ -1148,7 +1153,7 @@ upgrades.
   installed, perform an upgrade devel/p5-Gearman-Server with a
   command like:
 
-    # portupgrade -o devel/p5-Gearman-Server devel/p5-gearmand
+	# portupgrade -o devel/p5-Gearman-Server devel/p5-gearmand
 
 20070923:
   AFFECTS: users of emulators/linux_base-fc7
@@ -1201,12 +1206,14 @@ upgrades.
 
   By popular request, OPTIONS support has been added. When enabled
   (default), these knobs are ignored:
-          * WITH_<CATEGORY>_MODULES
-          * WITHOUT_<CATEGORY>_MODULES
-          * WITH_CUSTOM_<CATEGORY>
-          * WITH_MODULES
-          * WITHOUT_MODULES
-          * WITH_STATIC_MODULES
+
+	WITH_<CATEGORY>_MODULES
+	WITHOUT_<CATEGORY>_MODULES
+	WITH_CUSTOM_<CATEGORY>
+	WITH_MODULES
+	WITHOUT_MODULES
+	WITH_STATIC_MODULES
+
   However, you can disable OPTIONS by defining WITHOUT_APACHE_OPTIONS.
 
 20070913:
@@ -1217,12 +1224,12 @@ upgrades.
   build, the upgrade is pretty much painless.  If you're using the
   x11/xorg meta-port, upgrade should be as easy as:
 
-  # portupgrade -R xorg
+	# portupgrade -R xorg
 
   Users of nvidia-driver will have to make sure Composite extension is
   turned off and start Xorg with the following command:
 
-  $ startx -- -ignoreABI
+	$ startx -- -ignoreABI
 
   The -ignoreABI option is a Xorg option. If you're using gdm, kdm or
   xdm, you will have to modify your configuration file so that Xorg
@@ -1274,7 +1281,7 @@ upgrades.
 
 20070903:
   AFFECTS: users of net/whois, net/gwhois
-  AUTHOR:  nivo+kw+ports.bfa274@is-root.com
+  AUTHOR: nivo+kw+ports.bfa274@is-root.com
 
   To avoid a conflicting binary name issue, net/whois has renamed its
   files to mwhois.  Please use mwhois if you want to use Marco d'Itri's
@@ -1282,7 +1289,7 @@ upgrades.
 
 20070828:
   AFFECTS: users of www/wordpress-mu
-  AUTHOR:  araujo@FreeBSD.org
+  AUTHOR: araujo@FreeBSD.org
 
   To follow the standards this port has received a small reworking.
 
@@ -1291,16 +1298,16 @@ upgrades.
 
 20070828:
   AFFECTS: users of databases/mysql51-client
-  AUTHOR:  ale@FreeBSD.org
+  AUTHOR: ale@FreeBSD.org
 
   Since libmysqlclient version number is increased, all ports depending
   on it must be recompiled. Run something like:
 
-   # portmaster -r mysql-client
+	# portmaster -r mysql-client
 
 20070821:
   AFFECTS: users of net-im/pidgin
-  AUTHOR:  marcus@FreeBSD.org
+  AUTHOR: marcus@FreeBSD.org
 
   Because sound support was added to finch 2.1.1, the sound files used by
   pidgin have been moved from the pidgin port to the libpurple port.  This
@@ -1308,12 +1315,12 @@ upgrades.
   sounds, you must first upgrade libpurple and pidgin as you normally would,
   then force a rebuild of libpurple.  For example, using portupgrade:
 
-    # portupgrade net-im/libpurple net-im/pidgin
-    # portupgrade -f net-im/libpurple
+	# portupgrade net-im/libpurple net-im/pidgin
+	# portupgrade -f net-im/libpurple
 
 20070804:
   AFFECTS: users of DESTDIR
-  AUTHOR:  gabor@FreeBSD.org
+  AUTHOR: gabor@FreeBSD.org
 
   DESTDIR is a feature, that allows installation of ports into separate
   environments, like jails.  The previous implementation, introduced in the
@@ -1336,26 +1343,26 @@ upgrades.
   If you have 2.4.x installed, perform an upgrade of lang/python24 to
   lang/python25 with a command like:
 
-    # portupgrade -o lang/python25 lang/python24
+	# portupgrade -o lang/python25 lang/python24
 
   If you want to keep 2.4.x installed alongside 2.5.x, set the
   PYTHON_DEFAULT_VERSION variable to 'python2.5' without quotes in make.conf,
   then go to lang/python and execute
 
-    # portupgrade -R python
+	# portupgrade -R python
 
   Once the installed Python has been updated to 2.5, by using one of the
   methods above, it is required to run the upgrade-site-packages target in
   lang/python to assure that site-packages are made available to the new Python
   version.
 
-    # cd /usr/ports/lang/python && make upgrade-site-packages
+	# cd /usr/ports/lang/python && make upgrade-site-packages
 
   This Makefile target requires ports-mgmt/portupgrade to be installed.
 
 20070727:
   AFFECTS: autotools
-  AUTHOR:  ade@FreeBSD.org
+  AUTHOR: ade@FreeBSD.org
 
   Extensive reworking of the autotools ports has occurred, putting them in
   the canonical locations, along with a suitable wrapper port to make
@@ -1365,9 +1372,9 @@ upgrades.
   Upgrade path is as follows for portupgrade, substitute the appropriate
   commands if you are using portmaster:
 
-    1.   portupgrade -f 'autoconf*' 'automake*'
-    2.   cd /usr/ports/devel/autotools; make install
-    3.   portupgrade -a
+    1. portupgrade -f 'autoconf*' 'automake*'
+    2. cd /usr/ports/devel/autotools; make install
+    3. portupgrade -a
 
   The second step is optional, but is recommended to bring in all versions
   of autoconf and automake.
@@ -1402,12 +1409,12 @@ upgrades.
   Please add EMACS_PORT_NAME=emacs22 to /etc/make.conf and
   upgrade Emacs and related ports with:
 
-  # portupgrade -fr emacs
+	# portupgrade -fr emacs
 
   If you want to keep using Emacs 21.3, please add EMACS_PORT_NAME=emacs21
   to /etc/make.conf and reinstall Emacs from editors/emacs21 port:
 
-  # portupgrade -f -o editors/emacs21 emacs
+	# portupgrade -f -o editors/emacs21 emacs
 
 20070713:
   AFFECTS: users of audio/pulseaudio
@@ -1548,7 +1555,7 @@ upgrades.
   smb.conf:
 
   [file_share]
-        vfs objects = readahead
+	vfs objects = readahead
 
   Note that this plugin will result in additional RAM requirements
   due to the increased amount of kernel buffer caches used by smbd.
@@ -1585,7 +1592,7 @@ upgrades.
   Make sure you choose a filesystem with lots of space for the script
   output.
 
-  # script xorg-upgrade
+	# script xorg-upgrade
 
   You may wish to set BATCH=yes in the environment to avoid interactive
   dialogue boxes.
@@ -1595,19 +1602,19 @@ upgrades.
   when they actually completed successfully.  To switch to
   portupgrade-devel:
 
-  # portupgrade -f -o ports-mgmt/portupgrade-devel portupgrade
-  # rm -f /usr/ports/INDEX*.db /var/db/pkg/pkgdb.db
-  # pkgdb -fu
+	# portupgrade -f -o ports-mgmt/portupgrade-devel portupgrade
+	# rm -f /usr/ports/INDEX*.db /var/db/pkg/pkgdb.db
+	# pkgdb -fu
 
   If you have changed your ports environment in /etc/make.conf,
   /usr/local/etc/pkgtools.conf or similar you need to rebuild INDEX:
 
-  # cd /usr/ports && make index
+	# cd /usr/ports && make index
 
   If you have not changed your ports environment you can save some
   time and just fetch the latest INDEX:
 
-  # cd /usr/ports && make fetchindex
+	# cd /usr/ports && make fetchindex
 
   It is necessary to set the XORG_UPGRADE environment variable while
   updating from xorg 6.9 to 7.2.  Once the upgrade is complete this
@@ -1622,30 +1629,30 @@ upgrades.
   Unfortunately portupgrade (nor portupgrade-devel) cannot yet handle
   the rigors of the xorg upgrade without a small bit of help:
 
-  # portupgrade -Rf libXft
+	# portupgrade -Rf libXft
 
   If your machine does NOT have any gstreamer ports installed, you can then
   run:
 
-  # portupgrade -a
+	# portupgrade -a
 
   However, if you DO have gstreamer ports installed, you must run:
 
-  # portupgrade -a -x 'gstreamer*'
+	# portupgrade -a -x 'gstreamer*'
 
   Followed by:
 
-  # portupgrade -Rr 'gstreamer*'
+	# portupgrade -Rr 'gstreamer*'
 
   When packages are available (wait for the announcement on ports@), you
   may prefer to use precompiled packages to speed up the process:
 
-  # portupgrade -aP
+	# portupgrade -aP
 
   Once the upgrade completes successfully, you can delete the
   xorg-manpages package, which is now orphaned.
 
-  # pkg_delete xorg-manpages\*
+	# pkg_delete xorg-manpages\*
 
   The final step is to merge remaining files from /usr/X11R6 into
   /usr/local (/usr/X11R6 is no longer used with xorg 7.2) and replace
@@ -1722,10 +1729,10 @@ upgrades.
   The current version of Kwiki contains all plugins.
   To upgrade from old version ( prior to 0.39):
 
-  # cd <into your Kwiki site directory>
-  # rm index.cgi
-  # rm -rf ./lib  # Remove ./lib, if you have one
-  # kwiki -update
+	# cd <into your Kwiki site directory>
+	# rm index.cgi
+	# rm -rf ./lib		# Remove ./lib, if you have one
+	# kwiki -update
 
   And you are safe to uninstall www/p5-Kwiki-*, which also means
   you do not have to install www/p5-Kwiki-*.
@@ -1746,15 +1753,15 @@ upgrades.
   nagios now uses the registered uid/gid 181 for a fresh installation.
   To switch to the new scheme, the following may help:
 
-  # /usr/local/etc/rc.d/nagios stop
-  Stopping nagios.
-  # find / -user nagios -exec chown 181 {} \;
-  # find / -group nagios -exec chgrp 181 {} \;
-  # pw groupmod nagios -g 181
-  # pw usermod nagios -u 181 -g 181
-  # /usr/local/etc/rc.d/nagios start
-  Performing sanity check of nagios configuration: OK
-  Starting nagios.
+	# /usr/local/etc/rc.d/nagios stop
+	Stopping nagios.
+	# find / -user nagios -exec chown 181 {} \;
+	# find / -group nagios -exec chgrp 181 {} \;
+	# pw groupmod nagios -g 181
+	# pw usermod nagios -u 181 -g 181
+	# /usr/local/etc/rc.d/nagios start
+	Performing sanity check of nagios configuration: OK
+	Starting nagios.
 
 20070405:
   AFFECTS: users of print/ghostscript-*
@@ -1763,8 +1770,8 @@ upgrades.
   The default ghostscript port is changed from ghostscript-gnu to
   ghostscript-gpl. To upgrade
 
-  portupgrade -o print/ghostscript-gpl ghostscript-gnu
-  portmaster -o print/ghostscript-gpl ghostscript-gnu
+	portupgrade -o print/ghostscript-gpl ghostscript-gnu
+	portmaster -o print/ghostscript-gpl ghostscript-gnu
 
   If you want to use the ghostscript-gnu as default, put
   WITH_GHOSTSCRIPT_GNU=yes in your make.conf.
@@ -1778,18 +1785,18 @@ upgrades.
   gimp-print, if you have gimp-print installed you will need to
   pkg_delete gimp-print before you install or upgrade the gimp.
 
-  portmaster users:
-   (gimp)
-  portmaster -o graphics/gimp-app gimp
-  portmaster -u graphics/gimp
-   (gimp-devel)
-  portmaster -o graphics/gimp-app-devel gimp-devel
-  portmaster -u graphics/gimp-devel
+  Portmaster users:
+    (gimp)
+	portmaster -o graphics/gimp-app gimp
+	portmaster -u graphics/gimp
+    (gimp-devel)
+	portmaster -o graphics/gimp-app-devel gimp-devel
+	portmaster -u graphics/gimp-devel
 
-  portupgrade users:
-   (gimp)
-  portupgrade -o graphics/gimp-app gimp
-  portupgrade -u graphics/gimp
+  Portupgrade users:
+    (gimp)
+	portupgrade -o graphics/gimp-app gimp
+	portupgrade -u graphics/gimp
 
 20070404:
   AFFECTS: users of print/gutenprint
@@ -1799,13 +1806,13 @@ upgrades.
   one of the following examples. If you have gimp-print installed you
   will need to pkg_delete gimp-print before installing gutenprint.
 
-  portmaster users:
-  portmaster -o print/gutenprint-base gutenprint
-  portmaster -u print/gutenprint
+  Portmaster users:
+	portmaster -o print/gutenprint-base gutenprint
+	portmaster -u print/gutenprint
 
-  portupgrade users:
-  portupgrade -o print/gutenprint-base gutenprint
-  portupgrade -u print/gutenprint
+  Portupgrade users:
+	portupgrade -o print/gutenprint-base gutenprint
+	portupgrade -u print/gutenprint
 
 20070402:
   AFFECTS: users of devel/cvstrac
@@ -1895,18 +1902,16 @@ upgrades.
   taking care of it by default.
 
 20070318:
-  AFFECTS: users of devel/gettext (ie: YOU)
+  AFFECTS: users of devel/gettext (i.e.: YOU)
   AUTHOR: ade@FreeBSD.org
 
   As a result of the upgrade to gettext-0.16.1, the shared library version
   of libintl has changed, so you will need to rebuild all ports that
-  depend on gettext (ie: most of them, sorry):
+  depend on gettext (read: most of them, sorry):
 
-    portupgrade -rf gettext
-
-  or
-
-    portmaster -r gettext
+	portupgrade -rf gettext
+  or:
+	portmaster -r gettext
 
   In addition, if you have multimedia/vlc installed, you should deinstall
   it *before* either of the above commands, and reinstall it manually
@@ -2200,7 +2205,7 @@ upgrades.
   it was terminal charset). If you still want to send messages as
   ISO-8859-1, you should send either global encode or server specific
   encode to ISO-8859-1.
-  For global encode:  /setp charset.global.encode = "ISO-8859-1"
+  For global encode: /setp charset.global.encode = "ISO-8859-1"
   For server encode: (on server buffer)  /charset encode ISO-8859-1
 
 20070109:
@@ -2214,7 +2219,7 @@ upgrades.
   should also update the server to make sure you are not left without
   the server-side tools. Do something like:
 
-    portupgrade postgresql-client postgresql-server
+	portupgrade postgresql-client postgresql-server
 
 20070105:
   AFFECTS: users of mail/spamprobe
@@ -2231,13 +2236,13 @@ upgrades.
   The port now has support for the PBL database backend; unless built with
   WITHOUT_PBL set, SpamProbe will use PBL as the default even if you have an
   existing BerkleyDB or hash database; in that case, use the parameter "-d" to
-  specify the type of the existing database on the command line, e.g.
+  specify the type of the existing database on the command line, e.g.:
 
-    spamprobe -d bdb:$HOME/.spamprobe receive
+	spamprobe -d bdb:$HOME/.spamprobe receive
 
-  or
+  or:
 
-    spamprobe -d hash:$HOME/.spamprobe receive
+	spamprobe -d hash:$HOME/.spamprobe receive
 
   Using PBL instead of BerkleyDB might be a good idea, though, as the former
   seems to perform better. You can convert your existing database to PBL using
@@ -2288,7 +2293,7 @@ upgrades.
   have been bumped. So you need to rebuild all applications that
   depend on gnutls. Do something like:
 
-        portupgrade -rf gnutls
+	portupgrade -rf gnutls
 
 20061231:
   AFFECTS: users of mail/sylpheed-claws*
@@ -2348,7 +2353,7 @@ upgrades.
 
      ... by creating a floppy device icon on your KDE desktop and selecting
 	 the above-mentioned fstab entry in the device dropdown list on the
-         device tab.
+	 device tab.
 
   - Mounting volumes from fixed drives is prohibited for non-superusers
     by default.
@@ -2544,11 +2549,11 @@ upgrades.
   upgrade succeed.
 
  Portupgrade users:
-  pkgdb -Ff
-  portupgrade -rf pkg-config\*
+	pkgdb -Ff
+	portupgrade -rf pkg-config\*
 
  Portmaster users:
-  portmaster -r pkg-config\*
+	portmaster -r pkg-config\*
 
 20061010:
   AFFECTS: users of devel/avr-gcc*
@@ -2576,7 +2581,7 @@ upgrades.
   for some reason, please manually perform a portupgrade to the new
   name:
 
-  portupgrade -o devel/avr-gcc-3 avr-gcc
+	portupgrade -o devel/avr-gcc-3 avr-gcc
 
 20061010:
   AFFECTS: user of sysutils/flexbackup
@@ -2651,7 +2656,7 @@ upgrades.
   from (before update)
     snmpd_flags="-a -c /usr/local/etc/snmpd.conf -p /var/run/snmpd.pid"
 
-  to   (after update)
+  to (after update)
     snmpd_flags="-a"
     snmpd_pidfile="/var/run/snmpd.pid"
     snmpd_conffile="/usr/local/etc/snmpd.conf"
@@ -2728,7 +2733,8 @@ upgrades.
   AUTHOR: nobutaka@FreeBSD.org
 
   Input modes for uim-anthy and uim-canna are reorganized since version 1.2.0.
-  Please re-configure the following keybindings with uim-pref.
+  Please re-configure the following keybindings with uim-pref:
+
     - off key
     - convert to halfwidth alphanumeric key
     - convert to fullwidth alphanumeric key
@@ -2903,9 +2909,10 @@ upgrades.
   AUTHOR: mwisnicki+freebsd@gmail.com
 
   If you have installed both ekg-1.6,2 and libgadu-20051229_1 then you should
-  first deinstall them and install polish/ekg after that, eg:
-        pkg_deinstall -f pl-ekg-\* pl-libgadu-\*
-        portinstall polish/ekg
+  first deinstall them and install polish/ekg after that, e.g.:
+
+	pkg_deinstall -f pl-ekg-\* pl-libgadu-\*
+	portinstall polish/ekg
 
 20060723:
   AFFECTS: users of www/dillo-i18n
@@ -3026,7 +3033,7 @@ upgrades.
   have been bumped. So you need to rebuild all applications that
   depend on gnutls. Do something like:
 
-        portupgrade -rf gnutls
+	portupgrade -rf gnutls
 
 20060703:
   AFFECTS: users of audio/amarok
@@ -3172,7 +3179,7 @@ upgrades.
 
 20060612:
   AFFECTS: users of editors/staroffice60, editors/staroffice70 and
-           german/staroffice70
+	   german/staroffice70
   AUTHOR: erwin@FreeBSD.org
 
   The USE_CDROM knob was renamed to WITH_CDROM for consistency
@@ -3237,9 +3244,10 @@ upgrades.
   amavisd-new, this port was modified to depend on the same two archiver ports
   as well. The amavisd-new port automatically recognizes arj, but not unzoo, so
   ${PREFIX}/etc/amavisd.conf should be modified. This line should be changed:
-	  ['zoo',  \&do_zoo,         'zoo'],
+
+	  ['zoo',	\&do_zoo,	'zoo'],
   To this one:
-	  ['zoo',  \&do_zoo,         ['zoo','unzoo'] ],
+	  ['zoo',	\&do_zoo,	['zoo','unzoo'] ],
 
 20060526:
   AFFECTS: users of net/openldap23-server
@@ -3272,7 +3280,7 @@ upgrades.
 
 20060522:
   AFFECTS: users of astro/boinc-setiathome-enhanced,
-           astro/boinc-setiathome-naparst, astro-boinc-setiathome
+	   astro/boinc-setiathome-naparst, astro-boinc-setiathome
   AUTHOR: r.c.ladan@gmail.com
 
   As SETI@home doesn't generate work for 4.x clients anymore, the ports
@@ -3376,7 +3384,7 @@ upgrades.
   your KDE installation", make sure to downgrade your lua installation back
   to 5.0:
 
-  portupgrade -f -o lang/lua50 lua-5.1
+	portupgrade -f -o lang/lua50 lua-5.1
 
 20060501:
   AFFECTS: users of www/instiki
@@ -3390,16 +3398,16 @@ upgrades.
   1. cd /usr/ports/www/instiki; make extract
   2. Execute
       ruby work/instiki-0.11.0/script/import_storage \
-          -t /usr/local/instiki/storage/2500 \
-          -i /usr/local/instiki \
-          -d sqlite \
-          -o [some location]/instiki_import.sql
+	-t /usr/local/instiki/storage/2500 \
+	-i /usr/local/instiki \
+	-d sqlite \
+	-o [some location]/instiki_import.sql
   3. This will produce instiki_import.sql file in the specified location.
      Open it in a text editor and inspect carefully.
-  4. Upgrade your instiki port normally (eg portupgrade)
-  5. Connect to your production database, eg:
+  4. Upgrade your instiki port normally (e.g. portupgrade)
+  5. Connect to your production database, e.g.:
        sqlite3 /usr/local/instiki/db/production.db.sqlite3
-     and have it execute instiki_import.sql, eg:
+     and have it execute instiki_import.sql, e.g.:
        .read [some location]/instiki_import.sql
   6. Execute
        ruby /usr/local/instiki/script/reset_references production
@@ -3414,10 +3422,10 @@ upgrades.
   use of the gnome_upgrade.sh script. That script should not be used.
   Instead, use the following simple recipe:
 
-pkgdb -Ff
-portupgrade -o net/avahi -f howl
-portupgrade -o x11/gnome-screensaver -f xscreensaver-gnome
-portupgrade -a
+	pkgdb -Ff
+	portupgrade -o net/avahi -f howl
+	portupgrade -o x11/gnome-screensaver -f xscreensaver-gnome
+	portupgrade -a
 
 20060425:
   AFFECTS: users of net-im/ejabberd
@@ -3462,8 +3470,8 @@ portupgrade -a
 
 20060414:
   AFFECTS: users of www/horde, www/horde-php5, www/horde-passwd,
-           deskutils/nag, deskutils/mnemo, deskutils/kronolith,
-           mail/turba, mail/ingo, mail/imp, devel/chora
+	   deskutils/nag, deskutils/mnemo, deskutils/kronolith,
+	   mail/turba, mail/ingo, mail/imp, devel/chora
   AUTHOR: shaun@inerd.com
 
   The Horde ports no longer overwrite your existing configuration
@@ -3679,7 +3687,7 @@ portupgrade -a
   so before starting the daemons, you should fix permissions for each
   spooldir (default: /var/spool/jabber):
 
-  # chown -R jabber:jabber spooldir/Transport_JID
+	# chown -R jabber:jabber spooldir/Transport_JID
 
 20060223:
   AFFECTS: all ports using libtool as part of the build process
@@ -3762,9 +3770,11 @@ portupgrade -a
   The midnight dccm and dccifd system log message has been changed to disclose
   spam passed from whiteclnt-listed MX servers. MX servers should now be listed
   in /var/dcc/whiteclnt with lines like:
-                mx      ip      10.2.3.4
-                mx      ip      10.5.6.0/28
-                mxdcc   ip      10.7.8.9
+
+		mx      ip      10.2.3.4
+		mx      ip      10.5.6.0/28
+		mxdcc   ip      10.7.8.9
+
   "MX" marks the IP address of one of your mail systems that should be ignored
   in initial Received: headers and when reported by sendmail to dccm. "MXDCC"
   marks IP addresses of your mail systems that run DCC clients and that will
@@ -3775,7 +3785,7 @@ portupgrade -a
 
 20060207:
   AFFECTS: users of www/jakarta-tomcat4, www/jakarta-tomcat41,
-           www/jakarta-tomcat5, www/jakarta-tomcat55, and www/tomcat55
+	   www/jakarta-tomcat5, www/jakarta-tomcat55, and www/tomcat55
   AUTHOR: lawrance@FreeBSD.org
 
   The Tomcat ports listed above have been converted to use new-style
@@ -3801,7 +3811,7 @@ portupgrade -a
   Users of expat2 (and its many dependencies) should do the following to
   properly update expat2 and all of its dependencies:
 
-  portupgrade -rf textproc/expat2
+	portupgrade -rf textproc/expat2
 
 20060201:
   AFFECTS: users of sysutils/xmbmon
@@ -3845,8 +3855,8 @@ portupgrade -a
 
 20060123:
   AFFECTS: users of mail/qmail, mail/qmail-ldap, mail/qmail-mysql,
-           mail/qmail-spamcontrol, mail/qmail-tls and all dependant
-           ports.
+	   mail/qmail-spamcontrol, mail/qmail-tls and all dependant
+	   ports.
   AUTHOR: garga@FreeBSD.org
 
   If you use qmail installed on a PREFIX different of /var/qmail,
@@ -3880,11 +3890,11 @@ portupgrade -a
   Then, remove the previous configuration file. Finally, start qvamps
   again. The configuration file can be removed with:
 
-  $ rm ~/.qvamps/qvampsrc
+	$ rm ~/.qvamps/qvampsrc
 
 20060112:
   AFFECTS: users of mail/postfix, mail/postfix1, mail/postfix21,
-		    mail/postfix-current
+	   mail/postfix-current
   AUTHOR: mnag@FreeBSD.org
 
   Now all postfix ports use rcNG script to startup. If you have any file
@@ -3920,9 +3930,9 @@ portupgrade -a
 
   File: ~/.lxdvdrip.conf
   From: play_cell_name=play_cell
-        vamps_name=vamps
+	vamps_name=vamps
   To:   play_cell_name=play_cell_lxdvdrip
-        vamps_name=vamps_lxdvdrip
+	vamps_name=vamps_lxdvdrip
 
 20060111:
   AFFECTS: users of devel/perforce
@@ -3957,8 +3967,7 @@ portupgrade -a
 
 20060108:
   AFFECTS: users of x11/kdelibs3, x11/kdebase3, deskutils/superkaramba,
-	            x11-themes/kde-windeco-smoothblend, irc/kvirc,
-	            editors/vimpart
+	   x11-themes/kde-windeco-smoothblend, irc/kvirc, editors/vimpart
   AUTHOR: kde@FreeBSD.org
 
   A number of files have been moved from kdebase to kdelibs between
@@ -3975,21 +3984,21 @@ portupgrade -a
   1.) Delete installed packages which conflict with the updated KDE
       ports.
 
-        pkg_deinstall -f kdebase-\[0-9\]\* superkaramba-\[0-9\]\* \
-        kde-windeco-smoothblend-\[0-9]\* kvirc-\[0-9\]\* \
-        kdeaddons-vimpart-\[0-9\]\*
+	pkg_deinstall -f kdebase-\[0-9\]\* superkaramba-\[0-9\]\* \
+	kde-windeco-smoothblend-\[0-9]\* kvirc-\[0-9\]\* \
+	kdeaddons-vimpart-\[0-9\]\*
 
   2.) Now update the remaining KDE ports.
 
-        portupgrade -O arts\* kde\* \*kde-i18n\*
+	portupgrade -O arts\* kde\* \*kde-i18n\*
 
       or, if you want to update KDE along with other updated ports:
 
-        portupgrade -a
+	portupgrade -a
 
   3.) Reinstall the KDE ports you deleted in step 1.
 
-        portinstall -O kdebase
+	portinstall -O kdebase
 
   Superkaramba is now included in misc/kdeutils3.
 
@@ -4052,9 +4061,9 @@ portupgrade -a
   Due to this change, the configuration files need to be regenerated.
   Please, erase all previous configuration files. The configuration
   file samples will be generated on the 1st invocation of the
-  scripts.
+  scripts:
 
-  $ rm ~/.tovid/*
+	$ rm ~/.tovid/*
 
 20051228:
   AFFECTS: users of shells/scponly
@@ -4084,7 +4093,7 @@ portupgrade -a
   you may safely remove pear-XML_RPC, pear-Console_Getopt, pear-Archive_Tar
   and php[45]-pear and then run:
 
-  portupgrade -o devel/pear -f pear-PEAR
+	portupgrade -o devel/pear -f pear-PEAR
 
 20051212:
   AFFECTS: users of net/ntop
@@ -4107,7 +4116,7 @@ portupgrade -a
 
   If you use the command below, everything should be fine.
 
-  $ portupgrade -fr 'ocaml*' 'mldonkey-*devel*'
+	$ portupgrade -fr 'ocaml*' 'mldonkey-*devel*'
 
 20051210:
   AFFECTS: users of mail/fetchmail using SSL encryption
@@ -4125,17 +4134,17 @@ portupgrade -a
     * Run the c_rehash tool on the freshly installed certificates:
 
       - If you are using OpenSSL from the base system (this is the default)
-        use the following command:
+	use the following command:
 	% perl /usr/src/crypto/openssl/tools/c_rehash /home/user/.certs
 
-      - If you are using OpenSSL from security/openssl please use
-        % c_rehash /home/user/.certs
+      - If you are using OpenSSL from security/openssl please use command:
+	% c_rehash /home/user/.certs
 
     * Use the following options to enable SSL encryption in your .fetchmailrc
       configuration file:
 
       options ssl sslcertpath /home/user/.certs sslcertck
-              sslfingerprint '< fingerprint >'
+	      sslfingerprint '< fingerprint >'
 	      < other options >
 
 20051208:
@@ -4287,20 +4296,20 @@ portupgrade -a
 
   The canonical update procedure for existing trac environments is:
 
-  $ export TRAC_ENV=/path/to/trac/env
-  $ # backup existing trac environment
-  $ cp -Rp $TRAC_ENV $TRAC_ENV.backup # backup existing trac env
-  $ # convert database from sqlite 2 to sqlite 3 format
-  $ mv $TRAC_ENV/db/trac.db $TRAC_ENV/db/trac2.db
-  $ sqlite $TRAC_ENV/db/trac2.db .dump | sqlite3 $TRAC_ENV/db/trac.db
-  $ # upgrade trac environment
-  $ /usr/local/bin/trac-admin $TRAC_ENV upgrade
-  $ /usr/local/bin/trac-admin $TRAC_ENV resync
-  $ /usr/local/bin/trac-admin $TRAC_ENV wiki upgrade
+    $ export TRAC_ENV=/path/to/trac/env
+    $ # backup existing trac environment
+    $ cp -Rp $TRAC_ENV $TRAC_ENV.backup # backup existing trac env
+    $ # convert database from sqlite 2 to sqlite 3 format
+    $ mv $TRAC_ENV/db/trac.db $TRAC_ENV/db/trac2.db
+    $ sqlite $TRAC_ENV/db/trac2.db .dump | sqlite3 $TRAC_ENV/db/trac.db
+    $ # upgrade trac environment
+    $ /usr/local/bin/trac-admin $TRAC_ENV upgrade
+    $ /usr/local/bin/trac-admin $TRAC_ENV resync
+    $ /usr/local/bin/trac-admin $TRAC_ENV wiki upgrade
 
   Consult the full upgrade instructions at:
 
-          http://projects.edgewall.com/trac/wiki/TracUpgrade
+	http://projects.edgewall.com/trac/wiki/TracUpgrade
 
 20051013:
   AFFECTS: users of www/mediawiki
@@ -4311,7 +4320,7 @@ portupgrade -a
 
   If you want to preserve your 1.4 installation, run this:
 
-  # portupgrade -o www/mediawiki14 -f mediawiki
+	# portupgrade -o www/mediawiki14 -f mediawiki
 
 20051013:
   AFFECTS: users of mail/qmrtg
@@ -4505,19 +4514,19 @@ portupgrade -a
   1.) Delete installed packages which conflict with the updated KDE
       ports.
 
-        pkg_deinstall -f kdeadmin-\[0-9\]\*
+	pkg_deinstall -f kdeadmin-\[0-9\]\*
 
   2.) Now update the remaining KDE ports.
 
-        portupgrade -O arts\* kde\* \*kde-i18n\*
+	portupgrade -O arts\* kde\* \*kde-i18n\*
 
       or, if you want to update KDE along with other updated ports:
 
-        portupgrade -a
+	portupgrade -a
 
   3.) Reinstall the KDE ports you deleted in step 1.
 
-        portinstall -O kdeadmin
+	portinstall -O kdeadmin
 
 20050728:
   AFFECTS: users of sysutils/sge and sysutils/sgeee
@@ -4578,7 +4587,7 @@ portupgrade -a
   with pkg_info), you should cvsup and recompile qt33 and everything
   depending on it:
 
-  portupgrade -rf qt\*
+	portupgrade -rf qt\*
 
   Previous versions of the qt33 port contained a patch that
   introduces binary incompatibility between unpatched qt33 and software
@@ -4755,9 +4764,9 @@ portupgrade -a
 
   The latest FreeBSD CVS snapshot has been committed under
   multimedia/ffmepg-devel. In order to build it, you need to deinstall
-  any ffmpeg ports first.
+  any ffmpeg ports first:
 
-  # pkg_deinstall multimedia/ffmpeg
+	# pkg_deinstall multimedia/ffmpeg
 
   Furthermore, video capture is no longer working in the latest
   version. Work is been done to overcome this.
@@ -4818,8 +4827,8 @@ portupgrade -a
   below, it is recommend that you backup your personal "~/.opera"
   directory and remove it, like this:
 
-        # cp -Rp ~/.opera ~/.opera-bak
-        # rm -rf ~/.opera/*
+	# cp -Rp ~/.opera ~/.opera-bak
+	# rm -rf ~/.opera/*
 
   After that, you can put your bookmarks, email, contacts, etc. back in
   ~/.opera/. The most important files are your bookmarks
@@ -4836,9 +4845,9 @@ portupgrade -a
 
   1. You must update your pysh profile (~/.ipython/ipythonrc-pysh):
      a) Add to it the line:
-        import_all IPython.Extensions.InterpreterExec
-     b) Delete the line
-        execfile pysh.py
+	import_all IPython.Extensions.InterpreterExec
+     b) Delete the line:
+	execfile pysh.py
   2. You must also delete from ~/.ipython/ the file pysh.py.
 
 20050419:
@@ -4984,15 +4993,15 @@ portupgrade -a
 	- www/akregator is now included into deskutils/kdepim3.
 	- x11-themes/phase is now included in x11-themes/kdeartwork3.
 	- www/konqueror-nsplugins has been removed and is now integrated into
-          x11/kdebase3.
+	  x11/kdebase3.
 	- Juk has been split out of multimedia/kdemultimedia3 and is now
-          available as audio/juk.
+	  available as audio/juk.
 	- Akode has been split out of multimedia/kdemultimedia3 and is now
-          available as audio/akode and audio/akode-plugins-*. Akode is also
+	  available as audio/akode and audio/akode-plugins-*. Akode is also
 	  a default dependency of multimedia/kdemultimedia3 now.
 	- audio/mpeglib_artsplug has been demoted to legacy status and is no
-          longer the default decoder backend for kdemultimedia3. It's also not
-          depended on by kdemultimedia3 by default anymore.
+	  longer the default decoder backend for kdemultimedia3. It's also not
+	  depended on by kdemultimedia3 by default anymore.
 
   Known post-updating issues:
 
@@ -5132,13 +5141,13 @@ portupgrade -a
 
   1) Update i2p port to the new one
   2) Use the i2prouter script to uninstall i2p from user account.
-     You are going to lose all your configuration.
+     You are going to lose all your configuration:
 
-  $ i2prouter uninstall
+	$ i2prouter uninstall
 
-  3) Install the new i2p version
+  3) Install the new i2p version:
 
-  $ i2prouter install
+	$ i2prouter install
 
 20050301:
   AFFECTS: users of sysutils/ganglia-monitor-core
@@ -5283,8 +5292,8 @@ portupgrade -a
     * run some magic incantations to upgrade all ports depending on perl,
       that is run something like :
       portupgrade -f `(pkg_info -R perl-5\* |tail +4; \
-        find /usr/local/lib/perl5/site_perl/5.[68].[1245] -type f -print0 \
-        | xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
+	find /usr/local/lib/perl5/site_perl/5.[68].[1245] -type f -print0 \
+	| xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
       This is likely to fail for a few ports, you'll have to upgrade them
       afterwards by hand.
 
@@ -5508,7 +5517,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
 20041226:
   AFFECTS: users of Horde and the related ports (Turba, IMP, Nag, Kronolith,
-           Mnemo, Chora)
+	   Mnemo, Chora)
   AUTHOR: thierry@FreeBSD.org
 
   As of this update, the configuration files are generated by the application,
@@ -5574,7 +5583,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   affects the various plugins. Hence, users should upgrade all jdictionary
   related ports at once to avoid inconsistencies:
 
-  $ portupgrade jdictionary\*
+	$ portupgrade jdictionary\*
 
 20041214:
   AFFECTS: users of net/freenet6
@@ -5704,9 +5713,10 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   http://perl.apache.org/docs/1.0/guide/install.html#When_DSO_can_be_Used
 
   To do this, you will need to:
-    pkg_delete -f apache-mod_perl
-    pkg_delete -f p5-libapreq-static
-    portupgrade -rR bricolage
+
+	pkg_delete -f apache-mod_perl
+	pkg_delete -f p5-libapreq-static
+	portupgrade -rR bricolage
 
   Bricolage will rebuild mod_perl, apache and libapreq using their standard
   versions.
@@ -5722,9 +5732,9 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
   There are several ways to work around this, for example:
 
-  - Run 'make fetchindex' after cvsup'ing ports.
+  - Run 'make fetchindex' after cvsup'ing ports,
 
-  or
+  or:
 
   - Adjust the PORTS_INDEX variable in your environment or in
     pkgtools.conf (see portupgrade(1) or the default pkgtools.conf) to
@@ -6257,8 +6267,8 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
     * now, run some magic incantations to upgrade all ports depending on perl,
       that is run something like :
       portupgrade -f `(pkg_info -R perl-5.8.5 |tail +4; \
-        find /usr/local/lib/perl5/site_perl/5.8.[124] -type f -print0 \
-        | xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
+	find /usr/local/lib/perl5/site_perl/5.8.[124] -type f -print0 \
+	| xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
       This is likely to fail for a few ports, you'll have to upgrade them
       afterwards.
       Please note, that this last step is, strictly speaking, not necessary,
@@ -6575,8 +6585,8 @@ Option "XkbRules" "xfree86"
     * now, run some magic incantations to upgrade all ports depending on perl,
       that is run something like :
       portupgrade -f `(pkg_info -R perl-5.8.4 |tail +4; \
-        find /usr/local/lib/perl5/site_perl/5.8.2 -type f -print0 \
-        | xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
+	find /usr/local/lib/perl5/site_perl/5.8.2 -type f -print0 \
+	| xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
       This is likely to fail for a few ports, you'll have to upgrade them
       afterward.
 
@@ -6596,7 +6606,7 @@ Option "XkbRules" "xfree86"
   The OpenLDAP library soname has changed, requiring a recompilation
   of all dependent ports:
 
-  portupgrade -rf net/openldap22-client
+	portupgrade -rf net/openldap22-client
 
 20040525:
   AFFECTS: users of databases/postgresql-client
@@ -6697,7 +6707,7 @@ Option "XkbRules" "xfree86"
   Users of expat2 (and its many dependencies) should do the following to
   properly update expat2 and all of its dependencies:
 
-  portupgrade -rf textproc/expat2
+	portupgrade -rf textproc/expat2
 
 20040311:
   AFFECTS: users of databases/postgresql7
@@ -6810,7 +6820,7 @@ Option "XkbRules" "xfree86"
   Change the default version of perl to 5.8.
 
   1) Force perl-5.6.1 to be upgraded with perl-5.8.
-        portupgrade -o lang/perl5.8 -f perl-5.6.1_15
+	portupgrade -o lang/perl5.8 -f perl-5.6.1_15
 
   2) Update all p5-* modules.
 	portupgrade -f p5-\*
