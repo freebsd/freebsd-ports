@@ -1,0 +1,22 @@
+Method modifiers are a powerful feature from the CLOS (Common Lisp Object
+System) world.
+
+In its most basic form, a method modifier is just a method that calls
+$self->SUPER::foo(@_). I for one have trouble remembering that exact
+invocation, so my classes seldom re-dispatch to their base classes. Very bad!
+
+Class::Method::Modifiers provides three modifiers: before, around, and after.
+before and after are run just before and after the method they modify, but can
+not really affect that original method. around is run in place of the original
+method, with a hook to easily call that original method.
+
+One clear benefit of using Class::Method::Modifiers is that you can define
+multiple modifiers in a single namespace. These separate modifiers don't need
+to know about each other. This makes top-down design easy. Have a base class
+that provides the skeleton methods of each operation, and have plugins modify
+those methods to flesh out the specifics.
+
+In short, Class::Method::Modifiers solves the problem of making sure you call
+$self->SUPER::foo(@_), and provides a cleaner interface for it.
+
+WWW: http://search.cpan.org/dist/Class-Method-Modifiers/
