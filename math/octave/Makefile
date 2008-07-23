@@ -112,6 +112,9 @@ post-install:
 	refcard/refcard-a4.ps refcard/refcard-legal.ps refcard/refcard-letter.ps
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
+	${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/octave.desktop \
+	${DESKTOPDIR}/www.octave.org-octave.desktop
 .endif
 
 .include <bsd.port.post.mk>
