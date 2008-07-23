@@ -28,4 +28,10 @@ post-patch:
 
 MAN1=	couchdb.1 couchjs.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
