@@ -27,6 +27,10 @@ NO_BUILD=	yes
 PLIST_SUB+=	PORTNAME=${PORTNAME}
 USE_RC_SUBR=	nfsen.sh
 
+.if defined(PACKAGE_BUILDING)
+IGNORE=		needs running syslogd
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "*****************************************************"
