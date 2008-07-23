@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.3.02
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		http://distfiles.opendarwin.org/

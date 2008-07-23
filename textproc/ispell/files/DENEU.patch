@@ -5,10 +5,10 @@
  ZIP = 7z
  ZIP_OPTS = a -tzip -mx=9
 -BUILDHASH = buildhash
-+BUILDHASH = ../ispell-3.2.06/buildhash
++BUILDHASH = ../ispell-3.3.02/buildhash
  
 -ISPELL = ispell
-+ISPELL = ../ispell-3.2.06/ispell
++ISPELL = ../ispell-3.3.02/ispell
  HUNSPELL_BIN = hunspell
  # Hunspell starting with 1.1.9 (?) uses automatic charset transcoding,
  # we need to make sure we use latin1:
@@ -16,7 +16,7 @@
  
  SQ = sq
 -UNSQ = unsq
-+UNSQ = ../ispell-3.2.06/unsq
++UNSQ = ../ispell-3.3.02/unsq
  #   if for some reason you don't have Ispell's unsq use my Perl sq/unsq
  #  and put it into a directory known by your PATH variable!
  #UNSQ = unsq.pl
@@ -25,7 +25,7 @@
  
  all.words.$(1).tmp: all.words.$(1).raw ispell/$(1).aff
 -	munchlist -l ./ispell/$(1).aff all.words.$(1).raw > $$@
-+	../ispell-3.2.06/munchlist -l ./ispell/$(1).aff all.words.$(1).raw > $$@
++	../ispell-3.3.02/munchlist -l ./ispell/$(1).aff all.words.$(1).raw > $$@
  
  all.words.$(1).raw: $$(WORDS_$(1)) $$(WORDS_de_all) dicts/abkuerzpunkt.txt
  	sed "s/qq//g;s/\.//;s/\-.*//" dicts/abkuerzpunkt.txt $$(WORDS_$(1)) $$(WORDS_de_all) \
