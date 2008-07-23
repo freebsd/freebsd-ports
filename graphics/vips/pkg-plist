@@ -244,6 +244,7 @@ bin/im_mattrn
 bin/im_max
 bin/im_maxpos
 bin/im_maxpos_avg
+bin/im_maxpos_subpel
 bin/im_maxpos_vec
 bin/im_maxvalue
 bin/im_measure
