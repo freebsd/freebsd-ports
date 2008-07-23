@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	pysvn
-PORTVERSION=	1.5.3
-PORTREVISION=	2
+PORTVERSION=	1.6.0
 CATEGORIES=	devel
 MASTER_SITES=	http://pysvn.barrys-emacs.org/source_kits/
 
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Python binding for Subversion
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/CXX/__init__.py:${PORTSDIR}/devel/py-cxx
+BUILD_DEPENDS=	py${PYTHON_SUFFIX}-cxx>=5.4.1:${PORTSDIR}/devel/py-cxx
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion \
-		neon.26:${PORTSDIR}/www/neon26
+		neon.28:${PORTSDIR}/www/neon28
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
