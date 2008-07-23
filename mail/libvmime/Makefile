@@ -18,6 +18,8 @@ COMMENT=	An all-in-one Internet mail library
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 LIB_DEPENDS+=	gsasl.11:${PORTSDIR}/security/gsasl
 
+BROKEN=		does not compile with gnutls-2.4.x
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
