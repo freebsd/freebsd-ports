@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	vips
-PORTVERSION=	7.14.4.1
+PORTVERSION=	7.14.5
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R:R}/
-DISTFILES=	${PORTNAME}-7.14.4-1.tar.gz
+MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Free image processing system
@@ -18,7 +17,7 @@ OPTIONS+=	LIBOIL	"Use liboil for CPU-optimized primitives" on
 # Making Python a proper option awaits portmgr's resolving the current
 # chicken-and-egg problem of OPTIONS vs. USE_* knobs
 #OPTIONS+=	PYTHON	"Create Python bindings" ${PYPRESENT}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
@@ -51,7 +50,7 @@ post-install:
 # Don't extract html-ized man-pages in either case:
 EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - --exclude doc/html/man
 .endif
-PLIST_SUB+=	VERSION=${PORTVERSION:R:R}
+PLIST_SUB+=	VERSION=${PORTVERSION:R}
 
 CONFIGURE_ENV+=	MAGICK_CFLAGS="-I${LOCALBASE}/include/GraphicsMagick"
 CONFIGURE_ARGS+=--without-x --mandir=${PREFIX}/man --with-magickpackage=GraphicsMagick

@@ -402,7 +402,6 @@ libdata/pkgconfig/vipsCC-%%VERSION%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/figs/interconvert.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/arch.png
 %%PORTDOCS%%%%DOCSDIR%%/html/interconvert.png
-%%PORTDOCS%%%%DOCSDIR%%/html/vipsmanual0x.png
 %%PORTDOCS%%%%DOCSDIR%%/html/vipsmanual.css
 %%PORTDOCS%%%%DOCSDIR%%/html/vipsmanual.html
 %%PORTDOCS%%%%DOCSDIR%%/html/vipsmanualch1.html
