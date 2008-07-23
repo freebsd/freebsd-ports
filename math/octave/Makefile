@@ -106,15 +106,15 @@ post-install:
 	${MV} ${PREFIX}/bin/${PORTNAME}-${PORTVERSION} ${PREFIX}/libexec/${PORTNAME}/${PORTVERSION}/exec/${GNU_HOST}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}-${PORTVERSION}
 	${LN} -fs ${PREFIX}/bin/${PORTNAME}-${PORTVERSION} ${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/octave.desktop \
+	${DESKTOPDIR}/www.octave.org-octave.desktop
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in faq/Octave-FAQ.ps liboctave/liboctave.ps \
 	refcard/refcard-a4.ps refcard/refcard-legal.ps refcard/refcard-letter.ps
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
-	${MKDIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/octave.desktop \
-	${DESKTOPDIR}/www.octave.org-octave.desktop
 .endif
 
 .include <bsd.port.post.mk>
