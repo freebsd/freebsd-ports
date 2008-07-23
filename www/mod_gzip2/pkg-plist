@@ -1,5 +1,0 @@
-%%PORTDOCS%%share/doc/mod_gzip2/commands.txt
-%%PORTDOCS%%share/doc/mod_gzip2/samples.txt
-share/examples/mod_gzip2/mod_gzip2.conf.sample
-@dirrm share/examples/mod_gzip2
-%%PORTDOCS%%@dirrm share/doc/mod_gzip2
