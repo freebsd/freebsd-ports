@@ -21,7 +21,7 @@ upgrades.
   AUTHOR: Martin Tournoij <carpetsmoker@rwxrwxrwx.net>
 
   GPRename configuration files now live ~/.config/gprename instead of ~/, to
-  upgrade use:
+  upgrade use the following commands:
 
 	% mkdir -p ~/.config/gprename
 	% mv ~/.gprename ~/.config/gprename/gprename
@@ -51,7 +51,7 @@ upgrades.
   moving to Squid-3 (currently available as www/squid30) if you need
   ICAP support.
 
-  Squid 2.6 is still available as www/squid26 and will probably
+  Squid 2.6 is still available as www/squid26 and will probably be
   removed from the ports tree at the end of 2008.
 
 20080712:
@@ -66,7 +66,7 @@ upgrades.
   AUTHOR: Beech Rintoul <beech@FreeBSD.org>
 
   The port has been deprecated and gtkdatabox has been updated. This was
-  done so the port tracks vendor name. Please update by doing the following:
+  done so the port tracks vendor name. Please update by doing:
 
 	portupgrade -o x11-toolkits/gtkdatabox x11-toolkits/gtkdatabox2
 
@@ -83,7 +83,7 @@ upgrades.
   AFFECTS: users of emulators/qemu-devel
   AUTHOR: nox@FreeBSD.org
 
-  The port has been updated to a 20080620 svn snapshot, which uses the
+  The port has been updated to a 20080620 SVN snapshot, which uses the
   new (incompatible) kqemu-kmod-devel port that now also works for the
   32 bit "qemu" executable on amd64.  If you upgrade qemu-devel with the
   KQEMU knob on, you have to
@@ -106,9 +106,9 @@ upgrades.
   AUTHOR: FreeBSD GNOME Team <gnome@FreeBSD.org>
 
   The misc/shared-mime-info has been updated to 0.40. The Mime Types caches
-  have been changed a bit. If you have created any custom MIME types. You
+  have been changed a bit. If you have created any custom MIME types, you
   will need to run update-mime-database to update your local Mime Types
-  caches.
+  caches:
 
 	$ update-mime-database ~/.local/share/mime/
 
@@ -119,17 +119,16 @@ upgrades.
   Configuration file and database changes have been made between the
   1.1.x series and the current release version of ratbox-services.
 
-  It is highly recommended that services be stopped, and the proper
-  upgrade procedure be followed as described in
-  '/usr/local/share/doc/ratbox-services/', before restarting
-  ratbox-services using the new release version.
+  It is highly recommended that services are stopped, and the proper
+  upgrade procedure is followed as described in port's documentation,
+  before restarting newly updated ratbox-services again.
 
   Please remember to backup the database before attempting an
-  upgrade, an incorrectly upgraded database may be rendered unusable.
+  upgrade, as incorrectly upgraded database may be rendered unusable.
 
   The ratbox-services-1.2.x branch implements multi-language support.
   However, an inconsistency in the language indexing may result in
-  errors. It is therefore recommended that the English default be
+  errors. It is therefore recommended that the English default to be
   used until the next version release.
 
 20080702:
@@ -144,21 +143,22 @@ upgrades.
   AUTHOR: Lev Serebryakov <lev@FreeBSD.org>
 
   subversion now uses neon-0.28.x (www/neon28) port, and automatic
-  portupgrade will fail because neon26 will conflict with installed
-  neon26.
+  portupgrade will fail because www/neon28 will conflict with installed
+  www/neon26 port.
+
   You should upgrade neon library before subversion with the command:
 
 	# portupgrade -o www/neon28 neon26
 
-  Also, if you use special subversion port with bindings, you
-  should upgrade your port to clean subversion port with
+  Also, if you use any special subversion ports with bindings, you
+  should upgrade these ports to clean subversion port with
 
 	# portupgrade -o devel/subversion subversion-\*
 
   and install needed bindings (p5-subversion, py-subversion and/or
   ruby-subversion) after that.
 
-  If you use subversion with bindings, installed from devel/subversion
+  If you use subversion with bindings installed from devel/subversion
   with custom options, don't forget to install separate bindings ports
   after subversion upgrade.
 
@@ -207,35 +207,36 @@ upgrades.
   AFFECTS: users of irc/ircd-ratbox-devel
   AUTHOR: Beech Rintoul <beech@FreeBSD.org>
 
-  Upgrading between different beta releases can cause problems
-  when changes to the ban database schema have occurred.
-  The 'bantool' utility now comes with a -u switch that will
-  check and update the ban database as necessary.
+  Upgrading between different beta releases can cause problems when
+  changes to the ban database schema have occurred.  The 'bantool'
+  utility now comes with a -u switch that will check and update the
+  ban database as necessary.
 
-  A 'bantool -u' update is required when upgrading between
-  beta releases and must not be done while the ircd is running.
+  Issuing 'bantool -u' is required when upgrading between beta releases
+  and must not be done while the ircd is running.
 
 20080624:
   AFFECTS: users of www/mod_security
   AUTHOR: Marcelo Araujo <araujo@FreeBSD.org>
 
-  The mod_security has been updated from 1.9.4 to 2.5.5. The branch 1.9
-  no receive more updates, all users must update mod_security to series
-  2.1 or 2.5.
+  The mod_security port has been updated from 1.9.4 to 2.5.5. Branch 1.9.x
+  will not receive any further updates; all users must update mod_security
+  port to versions 2.1 or 2.5.
 
   You can get more information about update issues at:
-  http://www.modsecurity.org/documentation/
+
+	http://www.modsecurity.org/documentation/
 
 20080624:
   AFFECTS: users of www/opera and www/opera/devel
   AUTHOR: Ion-Mihai Tetcu <itetcu@FreeBSD.org>
 
-  The Opera has been updated from 9.2x to 9.5x.  A lot of things have been
-  changed such as keyboard shortcuts[1]; new storage and indexing formats
-  for mail and feeds; new search.ini; native amd64 binaries; no 4.x support.
-  You will be asked whether to convert mail and feeds to new format during
-  start up.  Warning: there is no way to downgrade back to the old format.
-  Be sure to see the Changelog[2].
+  The Opera port has been updated from 9.2x to 9.5x.  A lot of things have
+  been changed such as keyboard shortcuts[1]; new storage and indexing
+  formats for mail and feeds; new search.ini; native amd64 binaries; no 4.x
+  support.  You will be asked whether to convert mail and feeds to new
+  format during start up.  Warning: there is no way to downgrade back to
+  the old format.  Be sure to see the Changelog[2].
 
   [1] http://www.opera.com/support/search/view/884/
   [2] http://www.opera.com/docs/changelogs/freebsd/950/
@@ -270,13 +271,13 @@ upgrades.
   AFFECTS: users of www/linux-opera
   AUTHOR: mezz@FreeBSD.org
 
-  The Opera has been updated from 9.2x to 9.5x.  A lot of things have been
-  changed such as keyboard shortcuts[1]; new storage and indexing formats
-  for mail and feeds; new search.ini; probably more that I have missed.  I
-  do not know if the keyboard shortcuts and search.ini will be overwritten.
-  You will be asked whether you want mail and feeds to be converted to new
-  format during start up.  Warning: there is no way to downgrade back to
-  the old format.  Be sure to see the Changelog[2].
+  The Opera port has been updated from 9.2x to 9.5x.  A lot of things have
+  been changed such as keyboard shortcuts[1]; new storage and indexing
+  formats for mail and feeds; new search.ini; probably more that I have
+  missed.  I do not know if the keyboard shortcuts and search.ini will be
+  overwritten.  You will be asked whether you want mail and feeds to be
+  converted to new format during start up.  Warning: there is no way to
+  downgrade back to the old format.  Be sure to see the Changelog[2].
 
   [1] http://www.opera.com/support/search/view/884/
   [2] http://www.opera.com/docs/changelogs/linux/950/
@@ -299,8 +300,8 @@ upgrades.
   AUTHOR: pgollucci@p6m7g8.com
 
   Some of the config directives and sections allowed have changed.  You will
-  have to edit your config file when updating to  1.1.0-dev-r1373 version of
-  the port.
+  have to edit your config file when updating to 1.1.0-dev-r1373 version of
+  the port.  Please see the following URL for more information:
 
   http://opensource.perlig.de/en/svnmailer/doc-1.1/#general-config-charset
 
@@ -316,7 +317,7 @@ upgrades.
   AUTHOR: lippe@FreeBSD.org
 
   paman was renamed to pavucontrol, which are two different projects.
-  paman is a GTK frontend to PulseAudio and pavucontrol is a GTK based
+  paman is a GTK frontend to PulseAudio, while pavucontrol is a GTK-based
   volume control tool to PulseAudio.
 
 20080605:
@@ -339,7 +340,7 @@ upgrades.
   AUTHOR: Yasuhiro KIMURA <yasu@utahime.org>
 
   The port (editors/emacs) is updated to 22.2 and some of emacs lisp
-  directories are changed. So you should reinstall all ports depending on
+  directories had changed. So you should reinstall all ports depending on
   this one. Run something like:
 
 	# portupgrade -fr emacs
@@ -363,11 +364,11 @@ upgrades.
   AUTHOR: mm@FreeBSD.org
 
   Starting with version 2.2.0, resolver is now built in the S2S component.
-  Jabberd configuration files require updating.
+  Jabberd configuration files require updating:
 
-  jabberd.cfg: resolver component must be removed
-  s2s.xml: <lookup> section must be added (see s2s.xml.dist)
-  resolver.xml: may be deleted (file not required anymore)
+	jabberd.cfg: resolver component must be removed
+	s2s.xml: <lookup> section must be added (see s2s.xml.dist)
+	resolver.xml: may be deleted (file not required anymore)
 
 20080519:
   AFFECTS: users of www/nginx and www/nginx-devel
@@ -375,7 +376,7 @@ upgrades.
 
   Nginx version lines have been changed: 0.5 -> 0.6 for stable and
   0.6 -> 0.7 for development version.  Make sure your configuration
-  files are compatible with the new version.
+  files are compatible with the new version(s).
 
 20080519:
   AFFECTS: users of irc/bitlbee
@@ -403,7 +404,7 @@ upgrades.
 
   Amavisd-new 2.6.0 introduces several incompatibilities with prior versions.
   If you are upgrading from 2.5.4 or earlier, you will need to update your
-  sql schema.  If you have third party programs that access sql tables, you
+  SQL schema.  If you have third party programs that access SQL tables, you
   will need to update those also.
 
   COMPATIBILITY WITH 2.5.4
@@ -446,7 +447,7 @@ upgrades.
 
   Perl support is removed due to devel/swig11 removal in ports.
   If you use the Perl interface, you are encouraged to use
-  the new Audio::Gramofile found on cpan (contact me for the ports).
+  the new Audio::Gramofile found on CPAN (contact me for the ports).
 
 20080506:
   AFFECTS: users of net-mgmt/collectd
@@ -454,9 +455,11 @@ upgrades.
 
   Previously, net-mgmt/collectd used to remove the config file
   even if it was changed by the user. This has now been fixed.
+
   To upgrade without losing your configuration, copy
   ${PREFIX}/etc/collectd.conf away to a safe place before
   upgrading net-mgmt/collectd.
+
   In addition, the default location of the data files changed
   from ${PREFIX}/var/lib/collectd to /var/db/collectd; you
   may want to move your data files and edit your configuration
@@ -490,15 +493,15 @@ upgrades.
 
   Clamav 0.93 does not support the daily.inc and main.inc directories format
   for virus databases.  You need to remove these directories manually and
-  force freshclam get new cvd format files before starting clamd.
+  force freshclam get new cvd format files before starting clamd:
 
-  portupgrade clamav
-  /usr/local/etc/rc.d/clamav-clamd stop
-  /usr/local/etc/rc.d/clamav-freshclam stop
-  rm -rf /var/db/clamav/main.inc /var/db/clamav/daily.inc
-  freshclam
-  /usr/local/etc/rc.d/clamav-freshclam start
-  /usr/local/etc/rc.d/clamav-clamd start
+	portupgrade clamav
+	/usr/local/etc/rc.d/clamav-clamd stop
+	/usr/local/etc/rc.d/clamav-freshclam stop
+	rm -rf /var/db/clamav/main.inc /var/db/clamav/daily.inc
+	freshclam
+	/usr/local/etc/rc.d/clamav-freshclam start
+	/usr/local/etc/rc.d/clamav-clamd start
 
 20080408:
   AFFECTS: users of www/p5-Apache-Test
@@ -2143,16 +2146,17 @@ upgrades.
   With update to aolserver 4.5.0 modules have been moved to separate ports.
 
   The following modules are available initially:
-    archivers/aolserver-nszlib
-    databases/aolserver-nsmysql
-    databases/aolserver-nspostgres
-    graphics/aolserver-nsgd
-    security/aolserver-nsencrypt
-    security/aolserver-nsmcrypt
-    security/aolserver-nsmhash
-    security/aolserver-nsopenssl
-    security/aolserver-nssha1
-    www/aolserver-nscache
+
+	archivers/aolserver-nszlib
+	databases/aolserver-nsmysql
+	databases/aolserver-nspostgres
+	graphics/aolserver-nsgd
+	security/aolserver-nsencrypt
+	security/aolserver-nsmcrypt
+	security/aolserver-nsmhash
+	security/aolserver-nsopenssl
+	security/aolserver-nssha1
+	www/aolserver-nscache
 
   A different aolserver install directory for aolserver and modules
   can be specified by defining AOLSERVERBASE in make.conf
