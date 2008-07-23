@@ -28,8 +28,7 @@ include/libmetisse/proto.h
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/facade_setup.pyo
 lib/libmetisse.a
 lib/libmetisse.la
-lib/libmetisse.so
-lib/libmetisse.so.1
+lib/libmetisse.so.1.0
 libdata/pkgconfig/libmetisse.pc
 libexec/fvwm-insitu/2.5.20/FvwmAnimate
 libexec/fvwm-insitu/2.5.20/FvwmAudio
