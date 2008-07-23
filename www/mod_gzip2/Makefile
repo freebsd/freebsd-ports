@@ -14,6 +14,8 @@ DISTNAME=	mod_gzip-${PORTVERSION}
 MAINTAINER=	sec@42.org
 COMMENT=	An Internet Content Acceleration module for Apache2+
 
+BROKEN=		bad plist
+
 USE_APACHE=	2.0+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
