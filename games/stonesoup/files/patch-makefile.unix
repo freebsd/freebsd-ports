@@ -1,0 +1,119 @@
+--- makefile.unix.orig	2008-07-14 04:17:51.000000000 +0200
++++ makefile.unix	2008-07-18 08:49:37.000000000 +0200
+@@ -4,7 +4,7 @@
+ # Modified for Crawl Reference by $Author: ennewalker $ on $Date: 2008-07-04T22:50:41.915156Z $
+ #
+ 
+-GAME = crawl
++GAME = stonesoup
+ 
+ # this file contains a list of the libraries.
+ # it will make a variable called OBJECTS that contains all the libraries
+@@ -12,7 +12,6 @@
+ 
+ OBJECTS += libunix.o
+ 
+-CXX = g++
+ DELETE = rm -f
+ COPY = cp
+ OS_TYPE = UNIX
+@@ -37,15 +36,15 @@
+ MCHMOD_SAVEDIR := 775
+ 
+ # The user:group to install the game as.
+-INSTALL_UGRP ?= games:games
+-INSTALLDIR   ?= /usr/games/crawl
++INSTALL_UGRP ?= root:games
++INSTALLDIR   ?= %%PREFIX%%/bin
+ 
+ # If you're installing Crawl for multiple users, you *must* set this to a
+ # valid path before building Crawl. This is not necessary if you are building
+ # Crawl for a single user.
+ 
+-# SAVEDIR := /usr/games/crawl/saves/
+-# DATADIR := /usr/games/crawl/data/
++SAVEDIR := %%SAVEDIR%%/
++DATADIR := %%DATADIR%%/
+ 
+ LEX  := flex
+ YACC := bison -y
+@@ -58,7 +57,7 @@
+ NDBM_FILE := /usr/include/ndbm.h
+ 
+ HAVE_DBH  := $(shell [ -f $(DBH_FILE) ] && echo y)
+-HAVE_NDBM := $(shell [ -f $(NDBM_FILE) -a "`uname`" = "Darwin" ] && echo y)
++HAVE_NDBM := $(shell [ -f $(NDBM_FILE) -a \( "`uname`" = "Darwin" -o "`uname`" = "FreeBSD" \) ] && echo y)
+ 
+ ifeq ($(strip $(HAVE_DBH)),y)
+ ifneq ($(shell grep dbm_open $(DBH_FILE)),)
+@@ -70,9 +69,11 @@
+ ifeq ($(strip $(HAVE_NDBM)),y)
+ SELDBM ?= -DDB_NDBM
+ ifeq ($(SELDBM),-DDB_NDBM)
++ifneq ($(shell echo "`uname`"),FreeBSD)
+ LIBDBM := -ldbm
+ endif
+ endif
++endif
+ 
+ SQLSRC   := util/sqlite
+ SQLLIB   := sqlite3
+@@ -89,17 +90,8 @@
+ 
+ INCLUDES := $(INCLUDES) -Iutil -I. -I$(LUASRC) $(EXTRA_INCLUDES)
+ 
+-CFWARN := -Wall -Wwrite-strings -Wshadow -pedantic
+-
+ CFOTHERS := -fsigned-char -D$(OS_TYPE) $(EXTRA_FLAGS) -DCLUA_BINDINGS
+ 
+-ifneq ($(HURRY),y)
+-ifneq ($(DEBUG_CRAWL),y)
+-CFWARN += -Wuninitialized
+-CFOTHERS += -O2
+-endif
+-endif
+-
+ ifneq ($(strip $(SAVEDIR)),)
+ CFOTHERS += '-DSAVE_DIR_PATH="$(strip $(SAVEDIR))"'
+ endif
+@@ -138,8 +130,8 @@
+ 
+ CFOTHERS += $(SELDBM)
+ 
+-CFLAGS  := $(INCLUDES) $(CFWARN) $(CFOTHERS)
+-YCFLAGS := $(INCLUDES) $(CFOTHERS)
++LOCAL_CXXFLAGS  := $(INCLUDES) $(CFWARN) $(CXXFLAGS) $(CFOTHERS)
++YCFLAGS := $(INCLUDES) $(CXXFLAGS) $(CFOTHERS)
+ 
+ UTIL = util/
+ 
+@@ -181,7 +173,7 @@
+ 	rm -f $(DEPENDENCY_MKF)
+ 	@for i in $^; do \
+ 	    echo "Updating dependencies for $$i"; \
+-	    $(CXX) -MM $(CFLAGS) $$i >>$(DEPENDENCY_MKF) 2>/dev/null; \
++	    $(CXX) -MM $(LOCAL_CXXFLAGS) $$i >>$(DEPENDENCY_MKF) 2>/dev/null; \
+ 	done
+ 
+ -include $(DEPENDENCY_MKF)
+@@ -277,16 +269,16 @@
+ 	$(DELETE) $(DEPENDENCY_MKF)
+ 
+ $(GAME): $(GAME_DEPENDS)
+-	${CXX} ${LDFLAGS} $(CFLAGS) $(OBJECTS) -o $(GAME) $(LIB)
++	${CXX} ${LDFLAGS} $(LOCAL_CXXFLAGS) $(OBJECTS) -o $(GAME) $(LIB)
+ 
+ debug: $(GAME_DEPENDS)
+-	${CXX} ${LDFLAGS} $(CFLAGS) $(OBJECTS) -o $(GAME) $(LIB)
++	${CXX} ${LDFLAGS} $(LOCAL_CXXFLAGS) $(OBJECTS) -o $(GAME) $(LIB)
+ 
+ profile: $(GAME_DEPENDS)
+-	${CXX} -g -p ${LDFLAGS} $(CFLAGS) $(OBJECTS) -o $(GAME) $(LIB)
++	${CXX} -g -p ${LDFLAGS} $(LOCAL_CXXFLAGS) $(OBJECTS) -o $(GAME) $(LIB)
+ 
+ .cc.o:
+-	${CXX} ${CFLAGS} -c $<
++	${CXX} ${LOCAL_CXXFLAGS} -c $<
+ 
+ # [ds] Note we don't use the standard CFLAGS here; that's intentional, most
+ # flex/bison combos I've tried don't produce code that passes the warnings

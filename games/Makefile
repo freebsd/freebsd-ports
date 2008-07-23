@@ -756,6 +756,7 @@
     SUBDIR += starlanes
     SUBDIR += stepbill
     SUBDIR += stepmania-devel
+    SUBDIR += stonesoup
     SUBDIR += stormbaancoureur
     SUBDIR += stransball2
     SUBDIR += stratagus
