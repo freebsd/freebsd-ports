@@ -1,0 +1,11 @@
+--- configure.ac~	2007-04-11 07:03:27.000000000 +0900
++++ configure.ac	2008-07-23 20:53:01.000000000 +0900
+@@ -28,7 +28,7 @@
+ objincdir='$(top_objdir)/include'
+ AC_SUBST(objincdir)
+ 
+-docdir='$(prefix)/doc'
++docdir='%%TMPDOC%%'
+ mandir='$(docdir)/man'
+ txtdir='$(docdir)/txt'
+ htmldir='$(docdir)/html'

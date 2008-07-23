@@ -628,8 +628,8 @@ lib/libPSI_r12.a
 %%PORTDOCS%%%%DOCSDIR%%/libqt.txt
 %%PORTDOCS%%%%DOCSDIR%%/progman.pdf
 %%PORTDOCS%%%%DOCSDIR%%/userman.pdf
-%%PORTDOCS%%share/psi3/pbasis.dat
-%%PORTDOCS%%share/psi3/psi.dat
+share/psi3/pbasis.dat
+share/psi3/psi.dat
 %%PORTDOCS%%@dirrm share/doc/psi3/CINTS
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/libr12
