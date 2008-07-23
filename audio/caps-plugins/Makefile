@@ -22,14 +22,8 @@ WRKSRC=		${WRKDIR}/caps-${PORTVERSION}
 USE_GMAKE=	yes
 CFLAGS+=	-fPIC
 
-.include <bsd.port.pre.mk>
-
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O2 -ffast-math -funroll-loops
 .endif
 
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 5.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
