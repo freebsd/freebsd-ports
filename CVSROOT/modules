@@ -2253,6 +2253,7 @@ docbook-420                     ports/textproc/docbook-420
 docbook-430                     ports/textproc/docbook-430
 docbook-440                     ports/textproc/docbook-440
 docbook-450                     ports/textproc/docbook-450
+docbook-500                     ports/textproc/docbook-500
 docbook-sk                      ports/textproc/docbook-sk
 docbook-tdg                     ports/textproc/docbook-tdg
 docbook-to-man                  ports/textproc/docbook-to-man
@@ -9884,6 +9885,7 @@ p5-Class-Loader                 ports/devel/p5-Class-Loader
 p5-Class-MOP                    ports/devel/p5-Class-MOP
 p5-Class-MakeMethods            ports/devel/p5-Class-MakeMethods
 p5-Class-Measure                ports/devel/p5-Class-Measure
+p5-Class-Method-Modifiers       ports/devel/p5-Class-Method-Modifiers
 p5-Class-MethodMaker            ports/devel/p5-Class-MethodMaker
 p5-Class-MethodMapper           ports/devel/p5-Class-MethodMapper
 p5-Class-MixinFactory           ports/devel/p5-Class-MixinFactory
@@ -10232,6 +10234,7 @@ p5-DateTime-Format-ICal         ports/devel/p5-DateTime-Format-ICal
 p5-DateTime-Format-ISO8601      ports/devel/p5-DateTime-Format-ISO8601
 p5-DateTime-Format-Mail         ports/devel/p5-DateTime-Format-Mail
 p5-DateTime-Format-MySQL        ports/devel/p5-DateTime-Format-MySQL
+p5-DateTime-Format-Natural      ports/devel/p5-DateTime-Format-Natural
 p5-DateTime-Format-Pg           ports/devel/p5-DateTime-Format-Pg
 p5-DateTime-Format-Roman        ports/devel/p5-DateTime-Format-Roman
 p5-DateTime-Format-Strptime     ports/devel/p5-DateTime-Format-Strptime
@@ -11141,6 +11144,7 @@ p5-MooseX-ClassAttribute        ports/devel/p5-MooseX-ClassAttribute
 p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
 p5-MooseX-Policy-SemiAffordanceAccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-MooseX-Singleton             ports/devel/p5-MooseX-Singleton
+p5-Mouse                        ports/devel/p5-Mouse
 p5-MusicBrainz-Client           ports/audio/p5-MusicBrainz-Client
 p5-MusicBrainz-Queries          ports/audio/p5-MusicBrainz-Queries
 p5-MusicBrainz-TRM              ports/audio/p5-MusicBrainz-TRM
@@ -12929,6 +12933,7 @@ p5-class-isa                    ports/devel/p5-Class-ISA
 p5-class-loader                 ports/devel/p5-Class-Loader
 p5-class-makemethods            ports/devel/p5-Class-MakeMethods
 p5-class-measure                ports/devel/p5-Class-Measure
+p5-class-method-modifiers       ports/devel/p5-Class-Method-Modifiers
 p5-class-methodmaker            ports/devel/p5-Class-MethodMaker
 p5-class-methodmapper           ports/devel/p5-Class-MethodMapper
 p5-class-mixinfactory           ports/devel/p5-Class-MixinFactory
@@ -13222,6 +13227,7 @@ p5-datetime-format-ical         ports/devel/p5-DateTime-Format-ICal
 p5-datetime-format-iso8601      ports/devel/p5-DateTime-Format-ISO8601
 p5-datetime-format-mail         ports/devel/p5-DateTime-Format-Mail
 p5-datetime-format-mysql        ports/devel/p5-DateTime-Format-MySQL
+p5-datetime-format-natural      ports/devel/p5-DateTime-Format-Natural
 p5-datetime-format-pg           ports/devel/p5-DateTime-Format-Pg
 p5-datetime-format-roman        ports/devel/p5-DateTime-Format-Roman
 p5-datetime-format-strptime     ports/devel/p5-DateTime-Format-Strptime
@@ -14214,6 +14220,7 @@ p5-moosex-classattribute        ports/devel/p5-MooseX-ClassAttribute
 p5-moosex-ioc                   ports/devel/p5-MooseX-IOC
 p5-moosex-policy-semiaffordanceaccessor  ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-moosex-singleton             ports/devel/p5-MooseX-Singleton
+p5-mouse                        ports/devel/p5-Mouse
 p5-mp3-find                     ports/audio/p5-MP3-Find
 p5-mp3-id3v1tag                 ports/audio/p5-MP3-ID3v1Tag
 p5-mp3-info                     ports/audio/p5-MP3-Info
@@ -14229,6 +14236,7 @@ p5-mysql-diff                   ports/databases/p5-Mysql-Diff
 p5-mysql-genocide               ports/databases/p5-mysql-genocide
 p5-nagios-plugin                ports/net-mgmt/p5-Nagios-Plugin
 p5-nagios-plugins-memcached     ports/net-mgmt/p5-Nagios-Plugins-Memcached
+p5-namespace-clean              ports/devel/p5-namespace-clean
 p5-net                          ports/net/p5-Net
 p5-net-acl                      ports/net-mgmt/p5-Net-ACL
 p5-net-address-ethernet         ports/net/p5-Net-Address-Ethernet
@@ -19672,6 +19680,7 @@ stlfilt                         ports/devel/stlfilt
 stlport                         ports/devel/stlport
 stmpclean                       ports/sysutils/stmpclean
 stone                           ports/net/stone
+stonesoup                       ports/games/stonesoup
 stonx                           ports/emulators/stonx
 stormbaancoureur                ports/games/stormbaancoureur
 stow                            ports/sysutils/stow
