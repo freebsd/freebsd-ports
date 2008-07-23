@@ -28,7 +28,7 @@ WRKSRC=		${WRKDIR}/vnc_unixsrc
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xaw
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
 
