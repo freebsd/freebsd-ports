@@ -1,0 +1,11 @@
+--- configure.orig	2008-07-23 12:17:35.000000000 +0200
++++ configure	2008-07-23 12:18:05.000000000 +0200
+@@ -20374,7 +20374,7 @@
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+-  if test "$jackmidi_nframes" == "yes"
++  if test "$jackmidi_nframes" = "yes"
+   then
+ 
+ cat >>confdefs.h <<\_ACEOF
