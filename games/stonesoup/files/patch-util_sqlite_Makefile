@@ -1,0 +1,16 @@
+--- util/sqlite/Makefile.orig	2008-07-14 04:17:51.000000000 +0200
++++ util/sqlite/Makefile	2008-07-18 08:50:23.000000000 +0200
+@@ -4,12 +4,11 @@
+ 
+ LIBSQL = libsqlite3.a
+ AR     = ar rcu
+-CC     = gcc
+ RANLIB = ranlib
+ RM_F   = rm -f
+ 
+ # Omit SQLite features we don't need.
+-CFLAGS = -DSQLITE_OMIT_AUTHORIZATION \
++CFLAGS += -DSQLITE_OMIT_AUTHORIZATION \
+ 		 -DSQLITE_OMIT_AUTOVACUUM \
+ 		 -DSQLITE_OMIT_COMPLETE \
+ 		 -DSQLITE_OMIT_BLOB_LITERAL \

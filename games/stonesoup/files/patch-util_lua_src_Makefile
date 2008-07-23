@@ -1,0 +1,11 @@
+--- util/lua/src/Makefile.orig	2008-07-14 04:17:51.000000000 +0200
++++ util/lua/src/Makefile	2008-07-18 08:49:37.000000000 +0200
+@@ -9,8 +9,6 @@
+ # Your platform. See PLATS for possible values.
+ PLAT= none
+ 
+-CC= gcc
+-CFLAGS= -O2 -Wall $(MYCFLAGS)
+ AR= ar rcu
+ RANLIB= ranlib
+ RM= rm -f
