@@ -18,6 +18,8 @@ COMMENT=	Full-text search system using N-gram
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr
 
+BROKEN=		does not compile
+
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	YES
 USE_BDB=	42
