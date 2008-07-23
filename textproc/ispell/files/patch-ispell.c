@@ -63,10 +63,10 @@
  	}
  
 -#ifndef __bsdi__
-+#ifndef BSD_4_4
++#ifndef BSD4_4
      setbuf (stdout, outbuf);
 -#endif /* __bsdi__ */
-+#endif /* BSD_4_4 */
++#endif /* BSD4_4 */
      if (lflag)
  	{
  	infile = setupdefmt(NULL, NULL);
