@@ -17,13 +17,6 @@ DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//g}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake3 map viewer
 
-.if defined(WITH_FREEGLUT)
-LIB_DEPENDS=	glut.11:${PORTSDIR}/graphics/freeglut
-.else
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-.endif
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
-
 # Need to pass `-l', but PATCH_ARGS+= won't work because of PATCH_ARGS?=
 # in bsd.port.mk.
 PATCH_ARGS=	-d ${PATCH_WRKSRC} -N -s -E ${PATCH_STRIP} -l
@@ -36,13 +29,20 @@ WRKSRC=		${WRKDIR}/cake_src
 
 PLIST_FILES=	bin/cake
 
-pre-everything::
-.if !defined(WITH_FREEGLUT)
-	@${ECHO_MSG} "Define WITH_FREEGLUT to build against FreeGLUT"
-.endif
+OPTIONS=	FREEGLUT "Build with alternative GLUT library, FreeGLUT" off
 
-post-extract: .SILENT
-	${FIND} -E ${WRKDIR} -type f \( -iregex ".*\.(cpp|h)" -or -name Makefile \) \
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_FREEGLUT)
+LIB_DEPENDS=	glut.11:${PORTSDIR}/graphics/freeglut
+.else
+LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
+.endif
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+
+post-patch: .SILENT
+	${FIND} -E ${WRKDIR} -type f \( -iregex ".*\.(cpp|h)" -or \
+		-name Makefile \) \
 		-exec ${REINPLACE_CMD} -E -e 's/[[:cntrl:]]*$$//' \
 		-e 's/#pragma[[:blank:]]+pack[[:blank:]]*\([[:blank:]]*push[[:blank:]]*,[[:blank:]]*1[[:blank:]]*\)/#pragma pack(1)/g' \
 		-e 's/#pragma[[:blank:]]+pack[[:blank:]]*\([[:blank:]]*pop[[:blank:]]*\)/#pragma pack()/g' '{}' \;
@@ -60,4 +60,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
