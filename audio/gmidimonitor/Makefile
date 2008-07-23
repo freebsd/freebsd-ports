@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	gmidimonitor
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	3.4
 CATEGORIES=	audio
-# WARNING: the path below changes with every release.  It's not enough to change
-# the version number above.
-MASTER_SITES=	https://files.bountysource.com/file/download/588/
+MASTER_SITES=	http://download.gna.org/gmidimonitor/
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	GTK+ application that shows MIDI events
@@ -22,6 +19,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsamidi
+CONFIGURE_ENV=	"CFLAGS=${CFLAGS} -I${LOCALBASE}/include"
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 
