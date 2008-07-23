@@ -10,7 +10,7 @@ PORTVERSION=	1.30
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Embeds a Perl interpreter in the Apache server
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww

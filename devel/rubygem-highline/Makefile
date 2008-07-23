@@ -1,6 +1,6 @@
 # New ports collection makefile for:	rubygem-highline
 # Date created:		    4 October 2007
-# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
+# Whom:					Philip M. Gollucci <pgollucci@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A high-level IO library for command-line interfaces
 
 USE_RUBY=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://meltin.net/hacks/emacs/src/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A standalone release of gnuserv for GNU Emacs
 
 GNU_CONFIGURE=	yes

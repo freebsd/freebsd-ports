@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/42521/
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	CVS to Subversion Repository Converter
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm

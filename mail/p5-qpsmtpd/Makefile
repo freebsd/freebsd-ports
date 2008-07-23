@@ -13,7 +13,7 @@ MASTER_SITES=	http://smtpd.develooper.com/files/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	qpsmtpd-${PORTVERSION}
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A flexible SMTP daemon written in Perl and featuring a plugin API
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \

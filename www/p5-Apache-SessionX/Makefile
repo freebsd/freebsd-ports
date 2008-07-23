@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	An extented persistence framework for session data
 
 BUILD_DEPENDS=	${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session

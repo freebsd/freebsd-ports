@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	perky
 PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Not Erik's Windowing Toolkit:  console I/O handling library#'
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \

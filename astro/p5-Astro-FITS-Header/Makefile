@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Astro
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Object Orientated interface to FITS HDUs
 
 PERL_CONFIGURE=	yes

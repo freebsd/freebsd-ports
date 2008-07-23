@@ -13,7 +13,7 @@ MASTER_SITES=	http://perl.apache.org/dist/ \
 		http://perl.apache.org/dist/old/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Embeds a Perl interpreter in the Apache2 server
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource

@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Test.pm wrapper with helpers for testing Apache
 
 ## XXX: Need to fix this, www/mod_perl2 currently @2.0.3 contains A-T 1.29,

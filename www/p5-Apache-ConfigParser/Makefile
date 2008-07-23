@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Load Apache configuration files
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/FnMatch.pm:${PORTSDIR}/devel/p5-File-FnMatch \

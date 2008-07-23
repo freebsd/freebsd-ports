@@ -10,7 +10,7 @@ PORTVERSION=	4.5.7
 CATEGORIES=	devel sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A portable process tracer
 
 USE_BZIP2=	yes

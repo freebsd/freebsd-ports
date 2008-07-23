@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A Python source to bytecode compiler
 
 DIST_SUBDIR=	python
