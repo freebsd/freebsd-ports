@@ -27,6 +27,9 @@ bin/html_formfu_deploy.pl
 %%SITE_PERL%%/HTML/FormFu/Constraint/File/Size.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/File/MIME.pm
 %%SITE_PERL%%/HTML/FormFu/Deflator/Strftime.pm
+%%SITE_PERL%%/HTML/FormFu/Deflator/CompoundDateTime.pm
+%%SITE_PERL%%/HTML/FormFu/Inflator/CompoundDateTime.pm
+%%SITE_PERL%%/HTML/FormFu/Deflator/CompoundSplit.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Radio.pm
 %%SITE_PERL%%/HTML/FormFu/Element/SimpleTable.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Block.pm
@@ -72,6 +75,8 @@ bin/html_formfu_deploy.pl
 %%SITE_PERL%%/HTML/FormFu/Filter/NonNumeric.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/Regex.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/HTMLScrubber.pm
+%%SITE_PERL%%/HTML/FormFu/Filter/Split.pm
+%%SITE_PERL%%/HTML/FormFu/Filter/CompoundJoin.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/pt_pt.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/de.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/en.pm
@@ -80,7 +85,6 @@ bin/html_formfu_deploy.pl
 %%SITE_PERL%%/HTML/FormFu/Inflator/DateTime.pm
 %%SITE_PERL%%/HTML/FormFu/Manual/Cookbook.pod
 %%SITE_PERL%%/HTML/FormFu/Manual/Unicode.pod
-%%SITE_PERL%%/HTML/FormFu/Model/DBIC.pm
 %%SITE_PERL%%/HTML/FormFu/OutputProcessor/StripWhitespace.pm
 %%SITE_PERL%%/HTML/FormFu/OutputProcessor/Indent.pm
 %%SITE_PERL%%/HTML/FormFu/QueryType/CGI/Simple.pm
@@ -90,6 +94,7 @@ bin/html_formfu_deploy.pl
 %%SITE_PERL%%/HTML/FormFu/Validator/Callback.pm
 %%SITE_PERL%%/HTML/FormFu/Inflator.pm
 %%SITE_PERL%%/HTML/FormFu/Processor.pm
+%%SITE_PERL%%/HTML/FormFu/Plugin/StashValid.pm
 %%SITE_PERL%%/HTML/FormFu/Preload.pm
 %%SITE_PERL%%/HTML/FormFu/I18N.pm
 %%SITE_PERL%%/HTML/FormFu/Element.pm
@@ -102,7 +107,10 @@ bin/html_formfu_deploy.pl
 %%SITE_PERL%%/HTML/FormFu/Attribute.pm
 %%SITE_PERL%%/HTML/FormFu/Deflator.pm
 %%SITE_PERL%%/HTML/FormFu/Filter.pm
+%%SITE_PERL%%/HTML/FormFu/Plugin.pm
 %%SITE_PERL%%/HTML/FormFu/Upload.pm
+%%SITE_PERL%%/HTML/FormFu/UploadParam.pm
+%%SITE_PERL%%/HTML/FormFu/Model.pm
 %%SITE_PERL%%/HTML/FormFu/Localize.pm
 %%SITE_PERL%%/HTML/FormFu/FakeQuery.pm
 %%SITE_PERL%%/HTML/FormFu/Util.pm
@@ -152,5 +160,6 @@ bin/html_formfu_deploy.pl
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Deflator
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint/File
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Plugin
 @dirrmtry %%SITE_PERL%%/HTML/FormFu
 @dirrmtry %%SITE_PERL%%/HTML
