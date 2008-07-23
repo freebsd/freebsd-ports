@@ -6,12 +6,16 @@ bgp/xorp_bgp
 bgp/tools/xorpsh_print_peers
 bgp/tools/xorpsh_print_routes
 cli/tools/send_cli_processor_xrl
-etc/xorp.conf.sample
+contrib/olsr/tools/clear_database
+contrib/olsr/tools/print_databases
+contrib/olsr/xorp_olsr4
+etc/rc.d/xorp
 etc/templates/bgp.cmds
 etc/templates/bgp.tp
 etc/templates/fea.cmds
 etc/templates/fea.tp
 etc/templates/fib2mrib.tp
+etc/templates/firewall.tp
 etc/templates/host.cmds
 etc/templates/igmp.cmds
 etc/templates/igmp.tp
@@ -23,6 +27,8 @@ etc/templates/mfea6.tp
 etc/templates/misc.cmds
 etc/templates/mld.cmds
 etc/templates/mld.tp
+etc/templates/olsr4.cmds
+etc/templates/olsr4.tp
 etc/templates/ospfv2.cmds
 etc/templates/ospfv2.tp
 etc/templates/ospfv3.cmds
@@ -38,6 +44,7 @@ etc/templates/protocols.tp
 etc/templates/rib.cmds
 etc/templates/rip.cmds
 etc/templates/rip.tp
+etc/templates/ripng.cmds
 etc/templates/ripng.tp
 etc/templates/rtrmgr.tp
 etc/templates/snmp.tp
@@ -53,12 +60,14 @@ mld6igmp/xorp_igmp
 mld6igmp/xorp_mld
 ospf/xorp_ospfv2
 ospf/xorp_ospfv3
+ospf/tools/clear_database
 ospf/tools/print_lsas
 ospf/tools/print_neighbours
 pim/xorp_pimsm4
 pim/xorp_pimsm6
 policy/xorp_policy
 rib/xorp_rib
+rib/tools/show_distances
 rib/tools/show_routes
 rip/xorp_rip
 rip/xorp_ripng
@@ -70,16 +79,15 @@ xrl/targets/bgp4_mib.xrls
 xrl/targets/cli.xrls
 xrl/targets/coord.xrls
 xrl/targets/fea.xrls
-xrl/targets/demo_fea_ifmgr_client.xrls
 xrl/targets/fea_ifmgr_mirror.xrls
 xrl/targets/fib2mrib.xrls
 xrl/targets/finder.xrls
 xrl/targets/finder_client.xrls
 xrl/targets/mfea.xrls
 xrl/targets/mld6igmp.xrls
+xrl/targets/olsr4.xrls
 xrl/targets/ospfv2.xrls
 xrl/targets/ospfv3.xrls
-xrl/targets/packet_acl.xrls
 xrl/targets/pim.xrls
 xrl/targets/policy.xrls
 xrl/targets/profiler.xrls
@@ -88,11 +96,12 @@ xrl/targets/ribclient.xrls
 xrl/targets/rip.xrls
 xrl/targets/ripng.xrls
 xrl/targets/rtrmgr.xrls
+xrl/targets/show_distances.xrls
 xrl/targets/show_routes.xrls
-xrl/targets/socket_server.xrls
 xrl/targets/static_routes.xrls
 xrl/targets/test.xrls
 xrl/targets/test_fea_ifmgr_mirror.xrls
+xrl/targets/test_fea_rawlink.xrls
 xrl/targets/test_finder_events.xrls
 xrl/targets/test_peer.xrls
 xrl/targets/test_socket4.xrls
@@ -100,6 +109,7 @@ xrl/targets/test_socket6.xrls
 xrl/targets/test_xrls.xrls
 xrl/targets/xorp_if_mib.xrls
 xrl/targets/xorpsh.xrls
+%%XORP_SNMP%%libdata/ldconfig/xorp
 %%XORP_SNMP%%mibs/bgp4_mib_1657.la
 %%XORP_SNMP%%mibs/bgp4_mib_1657.so
 %%XORP_SNMP%%mibs/libnetsnmpxorp.la
@@ -127,12 +137,18 @@ xrl/targets/xorpsh.xrls
 %%XORP_SNMP%%@dirrm mibs/snmpdscripts
 %%XORP_SNMP%%@dirrm mibs
 @dirrm libxipc
+%%XORP_SNMP%%@dirrmtry libdata/ldconfig/xorp
+%%XORP_SNMP%%@dirrmtry libdata/ldconfig
+%%XORP_SNMP%%@dirrmtry libdata
 @dirrm fib2mrib
 @dirrmtry fea/tools
 @dirrm fea
 @dirrmtry etc/templates
 @dirrmtry etc/rc.d
 @dirrmtry etc
+@dirrm contrib/olsr/tools
+@dirrm contrib/olsr
+@dirrm contrib
 @dirrm cli/tools
 @dirrm cli
 @dirrmtry bin
