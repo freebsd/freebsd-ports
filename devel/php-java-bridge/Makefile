@@ -53,4 +53,10 @@ post-install:
 	${ECHO_CMD} "lib/php/${PHP_EXT_DIR}/libnatcJavaBridge.so" \
 	 	>> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
+BROKEN=		does not install
+.endif
+
+.include <bsd.port.post.mk>
