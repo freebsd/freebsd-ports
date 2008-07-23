@@ -8,10 +8,10 @@ bin/gnuattach%%BINSUFFIX%%
 bin/gnuclient%%BINSUFFIX%%
 bin/gnudoit%%BINSUFFIX%%
 bin/gnuserv%%BINSUFFIX%%
-%%PORTDOCS%%/gnuserv-%%EMACS_PORT_NAME%%/COPYING
-%%PORTDOCS%%/gnuserv-%%EMACS_PORT_NAME%%/ChangeLog
-%%PORTDOCS%%/gnuserv-%%EMACS_PORT_NAME%%/INSTALL
-%%PORTDOCS%%/gnuserv-%%EMACS_PORT_NAME%%/README
-%%PORTDOCS%%/gnuserv-%%EMACS_PORT_NAME%%/README.orig
+%%PORTDOCS%%%%DOCSDIR%%/gnuserv-%%EMACS_PORT_NAME%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/gnuserv-%%EMACS_PORT_NAME%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/gnuserv-%%EMACS_PORT_NAME%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/gnuserv-%%EMACS_PORT_NAME%%/README
+%%PORTDOCS%%%%DOCSDIR%%/gnuserv-%%EMACS_PORT_NAME%%/README.orig
 @dirrm %%EMACS_SITE_LISPDIR%%/gnuserv
-@dirrm %%PORTDOCS%%/gnuserv-%%EMACS_PORT_NAME%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/gnuserv-%%EMACS_PORT_NAME%%
