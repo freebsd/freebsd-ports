@@ -13,6 +13,8 @@ MASTER_SITES=	http://cerrg.com/dax/rainbowcrack/
 MAINTAINER=	semprix@bsdmail.org
 COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
 
+USE_DOS2UNIX=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
