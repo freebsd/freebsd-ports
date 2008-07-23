@@ -12,7 +12,6 @@ CATEGORIES=	games
 MASTER_SITES=	http://jdolan.dyndns.org/jaydolan/files/ \
 		http://tastyspleen.net/~jdolan/ \
 		http://freebsd.nsu.ru/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-full
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast, stable, compatible, and secure Quake II client
@@ -23,21 +22,22 @@ USE_GL=		glut
 USE_DOS2UNIX=	src/vanctf/g_local.h
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
-		OPENGL_CFLAGS="-I${LOCALBASE}/include" OPENGL_LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		OPENGL_CFLAGS="-I${LOCALBASE}/include" \
+		OPENGL_LIBS="-L${LOCALBASE}/lib"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 # Main and CTF game.so files are not built/installed by default since
 # they're available via `quake2-data' and `quake2-ctf' ports.
 #
-OPTIONS=	GAME		"Build a main game .so file"		off \
-		CTF		"Build Capture The Flag modification"	off \
-		VANCTF		"Build Vanilla CTF modification"	on \
-		QMASS		"Build QMass deathmatch mod"		on \
-		MYSQL		"Enable MySQL frag logging"		off \
+OPTIONS=	GAME	"Build the main game .so file"		off \
+		CTF	"Build Capture The Flag modification"	off \
+		VANCTF	"Build Vanilla CTF modification"	on \
+		QMASS	"Build QMass deathmatch mod"		on \
+		MYSQL	"Enable MySQL frag logging"		off \
 
 .include <bsd.port.pre.mk>
 
@@ -80,9 +80,9 @@ CONFIGURE_ARGS+=	--without-mysql
 
 CONFIGURE_ARGS+=	--with-games='${Q2GAMES}'
 
-post-extract: .SILENT
+post-patch: .SILENT
 	${REINPLACE_CMD} -E 's,^(eval PKGDATADIR=).*$$,\1"${Q2DIR}", ; \
-		20055s,sdl-config,${SDL_CONFIG}, ; \
+		19752s,sdl-config,${SDL_CONFIG}, ; \
 		s,^(GAME_MODULES=")baseq2",\1",' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,const struct,struct,' ${WRKSRC}/src/files.c
 	${REINPLACE_CMD} -e 's,-ldl,,' ${WRKSRC}/src/Makefile.in
