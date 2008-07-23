@@ -1,6 +1,6 @@
 # New ports collection makefile for:   vde2
 # Date created:        20 January 2007
-# Whom:                Philip M. Gollucci <pgollucci@p6m7g8.com>
+# Whom:                Philip M. Gollucci <pgollucci@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vde
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
 
 CONFLICTS=	vde-[0-9]*

@@ -10,7 +10,7 @@ PORTVERSION=	6.6.7
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcptrace.org/download/
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A TCP dump file analysis tool
 
 GNU_CONFIGURE=	yes

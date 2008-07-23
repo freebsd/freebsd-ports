@@ -11,7 +11,7 @@ CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Perl module to provide Error/exception support for perl: Error
 
 PERL_CONFIGURE=	YES

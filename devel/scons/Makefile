@@ -10,7 +10,7 @@ PORTVERSION=	0.98.5
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A build tool alternative to make
 
 .if !defined (NO_INSTALL_MANPAGES)

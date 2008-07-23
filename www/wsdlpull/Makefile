@@ -11,7 +11,7 @@ PORTVERSION=	1.19
 CATEGORIES=	www
 MASTER_SITES=	SF
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	C++ WSDL Parser
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl

@@ -12,7 +12,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/download/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A package of programs for computing population parameters
 
 USE_GNOME=	gnometarget

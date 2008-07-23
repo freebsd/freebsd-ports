@@ -14,7 +14,7 @@ MASTER_SITES=	CPAN/../../src
 PKGNAMEPREFIX=	p5-
 DISTNAME=	perl-5.8.8
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	GNU Data Base Manager (gdbm) interface
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm

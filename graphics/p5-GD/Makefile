@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-GD
 # Date created:				March 11, 2003
-# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
+# Whom:					Philip M. Gollucci <pgollucci@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	GD-${PORTVERSION}
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A perl5 interface to Gd Graphics Library version2
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

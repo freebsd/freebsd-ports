@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/41694/
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
 
 RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/svn/__init__.py:${PORTSDIR}/devel/py-subversion \

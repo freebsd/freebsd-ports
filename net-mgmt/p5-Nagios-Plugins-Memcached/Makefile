@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Nagios-Plugins-Memcached
 # Date created:				18 Dec 2007
-# Whom:					Philp M. Gollucci <pgollucci@p6m7g8.com>
+# Whom:					Philp M. Gollucci <pgollucci@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/Z/ZI/ZIGOROU
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Module to check memcached via nagios
 
 PERL_CONFIGURE=	yes

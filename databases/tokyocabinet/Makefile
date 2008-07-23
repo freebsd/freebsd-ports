@@ -10,7 +10,7 @@ PORTVERSION=	1.2.11
 CATEGORIES=	databases
 MASTER_SITES=	http://tokyocabinet.sourceforge.net/
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A modern implementation of DBM
 
 CONFIGURE_ARGS=	--enable-off64

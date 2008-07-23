@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	SF/aria-rpm
 
-MAINTAINER=	pgollucci@p6m7g8.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Yet another download tool
 
 USE_BZIP2=	yes
