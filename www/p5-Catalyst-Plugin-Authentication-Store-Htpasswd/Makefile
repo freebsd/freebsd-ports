@@ -7,11 +7,11 @@
 
 PORTNAME=	Catalyst-Plugin-Authentication-Store-Htpasswd
 PORTVERSION=	0.020
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/N/NU/NUFFIN
 PKGNAMEPREFIX=	p5-
-DISTNAME=       ${PORTNAME}-0.02
+DISTNAME=	${PORTNAME}-0.02
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Use .htpasswd with Catalyst
