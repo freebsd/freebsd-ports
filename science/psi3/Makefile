@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	psi3
-PORTVERSION=	3.2.3
-PORTREVISION=	3
+PORTVERSION=	3.3.0
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.psicode.org/doc/:doc
 MASTER_SITE_SUBDIR=     psicode
 DISTNAME=	psi-${PORTVERSION}
 .if !defined(NOPORTDOCS)
@@ -21,28 +21,35 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	An electronic structure programs for high-accuracy computations
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
+USE_BLAS?=	reference
+
+.if exists(${LOCALBASE}/lib/libgoto.so)
+USE_BLAS=     gotoblas
+.elif exists(${LOCALBASE}/lib/libatlas_r.so)
+USE_BLAS=     atlas
 .endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lf77blas -latlas
-LAPACK=		-lalapack
-.else
+
+. if ${USE_BLAS} == reference
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
+.elif ${USE_BLAS} == gotoblas
+LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+BLAS=		-lgotop
+LAPACK=		-lgotop -llapack
+.elif ${USE_BLAS} == atlas
+LIB_DEPENDS+=   atlas:${PORTSDIR}/math/atlas
+BLAS=		-lptf77blas -lptcblas -latlas_r
+LAPACK=		-lalapack_r
 .endif
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261
-WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran42
-F77=		gfortran42
+USE_FORTRAN=	yes
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--with-fc=${FC} \
@@ -67,15 +74,11 @@ CXXFLAGS+=	-mfancy-math-387
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 MAN1=	ccenergy.1 cceom.1 cints.1 clag.1 cscf.1 dboc.1 detcas.1 \
-	detcasman.1 detci.1 geom.1 input.1 mocube.1 mp2.1 mp2r12.1 \
+	detcasman.1 detci.1 geom.1 input.1 intder.1 mocube.1 mp2.1 mp2r12.1 \
 	oeprop.1 optking.1 psi3.1 psiclean.1 stable.1 tocprint.1 transqt.1
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
-	@${REINPLACE_CMD} -e 's|%%TMPDOC%%|${WRKSRC}/tmpdoc|g ; \
-			      s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g ; \
-			      s|%%FFLAGS%%|${FFLAGS}|g ; \
-			      s|%%CFLAGS%%|${CFLAGS}|g ; \
-			      s|%%CXXFLAGS%%|${CXXFLAGS}|g ;' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|%%TMPDOC%%|${WRKSRC}/tmpdoc|g ' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTREAD_CFLAGS}|g ; \
 			      s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g'  ${WRKSRC}/src/bin/cints/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTREAD_CFLAGS}|g ; \
@@ -88,9 +91,9 @@ do-build:
 
 do-install:
 	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	@${TAR} cf - -C ${WRKSRC}/tmpdoc/man .  | ${TAR} xf - -C ${PREFIX}/man
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/psi3
-	@${TAR} cf - -C ${WRKSRC}/tmpdoc/man .  | ${TAR} xf - -C ${PREFIX}/man
 	@${TAR} cf - -C ${WRKSRC}/tmpdoc/html . | ${TAR} xf - -C ${PREFIX}/share/doc/psi3
 	@${TAR} cf - -C ${WRKSRC}/tmpdoc/txt  . | ${TAR} xf - -C ${PREFIX}/share/doc/psi3
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/installation.pdf ${DOCSDIR}
