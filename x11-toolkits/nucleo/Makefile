@@ -9,7 +9,8 @@ PORTNAME=	nucleo
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://insitu.lri.fr/metisse/download/latest/
+MASTER_SITES=	http://insitu.lri.fr/metisse/download/latest/ \
+		http://freebsd.nsu.ru/distfiles/metisse/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Toolkit to explore video and human-computer interaction
@@ -26,9 +27,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
-OPTIONS=	EXIF	"Build with EXIF support"		on \
-		DNSSD	"Build with DNS-SD support"		off \
-		QT4	"Enable Qt4 plugin"			off
+OPTIONS=	EXIF	"Build with EXIF support"	on \
+		DNSSD	"Build with DNS-SD support"	off \
+		QT4	"Enable Qt4 plugin"		off
 
 .include <bsd.port.pre.mk>
 
