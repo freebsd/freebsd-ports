@@ -20,6 +20,8 @@ RUN_DEPENDS=	nfdump:${PORTSDIR}/net-mgmt/nfdump \
 		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool
 
+BROKEN=		fails to install
+
 CONFLICTS=	nfsen-[0-9]*
 
 USE_ICONV=	yes
