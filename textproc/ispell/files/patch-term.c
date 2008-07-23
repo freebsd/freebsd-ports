@@ -4,7 +4,7 @@
  #include "ispell.h"
  #include "proto.h"
  #include "msgs.h"
-+#ifdef BSD_4_4
++#ifdef BSD4_4
 +#define USG
 +#endif
  #ifdef USG
