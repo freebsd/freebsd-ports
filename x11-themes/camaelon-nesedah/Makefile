@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Etoile Project's Nesedah Camaelon Theme
 
+BROKEN=		conflicts with its own dependency
+
 CONFLICTS=	etoile-camaelon-0.2*
 
 USE_GNUSTEP_SYSTEM_THEMES=	Camaelon:x11-themes/etoile-camaelon
