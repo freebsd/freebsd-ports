@@ -13,7 +13,7 @@ MASTER_SITES=	# must fetch manually
 DISTFILES=	${PORTNAME}-${PORTVERSION:S|b|beta|}.sh.bin
 EXTRACT_ONLY=
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@logvinov.com
 COMMENT=	Serious Sam - The Second Encounter
 
 NO_BUILD=	yes
