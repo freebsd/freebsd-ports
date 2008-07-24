@@ -5584,7 +5584,6 @@ ja-kon2-14dot                   ports/japanese/kon2-14dot
 ja-kon2-16dot                   ports/japanese/kon2-16dot
 ja-kpcal                        ports/japanese/kpcal
 ja-kterm                        ports/japanese/kterm
-ja-kterm16c                     ports/japanese/kterm16c
 ja-lambdamoo                    ports/japanese/lambdamoo
 ja-latex2html                   ports/japanese/latex2html
 ja-leafrogue                    ports/japanese/leafrogue
@@ -6724,6 +6723,7 @@ leaktracer                      ports/devel/leaktracer
 led                             ports/editors/led
 ledger                          ports/finance/ledger
 ledgersmb                       ports/finance/ledgersmb
+ledgersmb12                     ports/finance/ledgersmb12
 ledit                           ports/sysutils/ledit
 legends                         ports/games/legends
 legoctl                         ports/devel/legoctl
@@ -8619,7 +8619,6 @@ mytop                           ports/databases/mytop
 mywiki                          ports/deskutils/mywiki
 mywwwatcher                     ports/databases/mywwwatcher
 nInvaders                       ports/games/nInvaders
-nab                             ports/biology/nab
 nadar                           ports/games/nadar
 nagaina                         ports/deskutils/nagaina
 nagcon                          ports/net-mgmt/nagcon
