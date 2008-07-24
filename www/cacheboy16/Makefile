@@ -178,6 +178,10 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800037
+BROKEN=		does not compile with Heimdal 1.1 in 8.0-CURRENT
+.endif
+
 # Authentication methods and modules:
 
 basic_auth=	DB NCSA PAM MSNT SMB
