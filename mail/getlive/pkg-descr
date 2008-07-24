@@ -1,5 +1,5 @@
-GetLive is a perl script that fetches mail from your Hotmail
-Live account. The mail is then presented to any filter (typically 
-procmail) for further processing or dropping in a local mailbox.
+GetLive is a perl script that fetches mail from your Hotmail Live account.
+The mail is then presented to any filter (typically procmail) for further
+processing or dropping in a local mailbox.
 
-WWW:	http://sourceforge.net/projects/getlive
+WWW: http://sourceforge.net/projects/getlive/
