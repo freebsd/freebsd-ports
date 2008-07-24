@@ -1,6 +1,14 @@
---- sys/dev/ltmdm/ltmdmsio.c.orig	Tue Mar 12 04:47:31 2002
-+++ sys/dev/ltmdm/ltmdmsio.c	Tue Apr  3 00:24:20 2007
-@@ -60,7 +60,9 @@
+--- sys/dev/ltmdm/ltmdmsio.c.orig	2002-03-12 10:47:31.000000000 +0900
++++ sys/dev/ltmdm/ltmdmsio.c	2008-07-21 20:24:52.000000000 +0900
+@@ -55,12 +55,17 @@
+ #include <sys/param.h>
+ #include <sys/bus.h>
+ #include <sys/systm.h>
++#if __FreeBSD_version >= 700000
++#include <sys/priv.h>
++#endif
+ #include <sys/malloc.h>
+ #include <sys/tty.h>
  #include <sys/proc.h>
  #include <sys/module.h>
  #include <sys/conf.h>
@@ -10,7 +18,7 @@
  #include <sys/fcntl.h>
  #include <sys/interrupt.h>
  #include <sys/kernel.h>
-@@ -69,12 +71,21 @@
+@@ -69,12 +74,21 @@
  #include <machine/bus.h>
  #include <sys/rman.h>
  #if __FreeBSD_version >= 500000
@@ -32,7 +40,7 @@
  
  #include <machine/clock.h>
  
-@@ -88,7 +99,9 @@
+@@ -88,7 +102,9 @@
  
  #include <machine/resource.h>
  
@@ -43,7 +51,7 @@
  #include <dev/sio/sioreg.h>
  #else
  #include <isa/sioreg.h>
-@@ -124,10 +137,15 @@
+@@ -124,10 +140,15 @@
  #endif
  
  #if __FreeBSD_version >= 500023 /* >= 20010912 */
@@ -60,7 +68,7 @@
  
  #define LOTS_OF_EVENTS  64  /* helps separate urgent events from input */
  
-@@ -230,7 +248,9 @@
+@@ -230,7 +251,9 @@
      u_char  last_modem_status;  /* last MSR read by intr handler */
      u_char  prev_modem_status;  /* last MSR handled by high level */
  
@@ -70,7 +78,7 @@
      u_char  *ibuf;          /* start of input buffer */
      u_char  *ibufend;       /* end of input buffer */
      u_char  *ibufold;       /* old input buffer, to be freed */
-@@ -256,7 +276,9 @@
+@@ -256,7 +279,9 @@
      bool_t  do_dcd_timestamp;
      struct timeval  timestamp;
      struct timeval  dcd_timestamp;
@@ -80,7 +88,7 @@
  
      u_long  bytes_in;       /* statistics */
      u_long  bytes_out;
-@@ -268,7 +290,11 @@
+@@ -268,7 +293,11 @@
      struct resource *iores[6];
      struct resource *irqres;
      void *cookie;
@@ -92,7 +100,7 @@
  
      /*
       * Data area for output buffers.  Someday we should build the output
-@@ -352,6 +378,7 @@
+@@ -352,6 +381,7 @@
  #endif
  
  static struct cdevsw sio_cdevsw = {
@@ -100,7 +108,7 @@
      /* open */  sioopen,
      /* close */ sioclose,
      /* read */  sioread,
-@@ -361,7 +388,11 @@
+@@ -361,7 +391,11 @@
      /* mmap */  nommap,
      /* strategy */  nostrategy,
      /* name */  driver_name,
@@ -112,7 +120,7 @@
      /* dump */  nodump,
      /* psize */ nopsize,
  #if __FreeBSD_version < 430000
-@@ -373,10 +404,32 @@
+@@ -373,10 +407,32 @@
      /* bmaj */  -1,
      /* kqfilter */  ttykqfilter,
  #else /* __FreeBSD_version >= 500000 */
@@ -146,7 +154,7 @@
  };
  
  static  u_int   com_events; /* input chars + weighted output completions */
-@@ -566,8 +619,8 @@
+@@ -566,8 +622,8 @@
  u_int32_t Get_PCI_BASE_ADDRESS_IO_MASK(void);
  u_int8_t  Get_PCI_BASE_ADDRESS_SPACE_IO(void);
  u_int32_t VMODEM_Get_System_Time(void);
@@ -157,7 +165,7 @@
  u_int16_t inpw(u_int16_t addr);
  void      outpw(u_int16_t addr, u_int16_t value);
  u_int32_t inpd(u_int16_t addr);
-@@ -695,7 +748,7 @@
+@@ -695,7 +751,7 @@
  
          for (i = 0; i < 6; i++) {
              dev_info->BaseAddress[i]
@@ -166,7 +174,7 @@
              DPRINTF(1,("    BaseAddress[%d] = 0x%08lx\n",
                         i, dev_info->BaseAddress[i]));
          }
-@@ -836,12 +889,12 @@
+@@ -836,12 +892,12 @@
      return t;
  }
  
@@ -181,7 +189,7 @@
  {
      outb(addr, value);
  }
-@@ -968,8 +1021,6 @@
+@@ -968,8 +1024,6 @@
  {
      {   SWI_TTY     ,   "SWI_TTY"       },
      {   SWI_NET     ,   "SWI_NET"       },
@@ -190,7 +198,7 @@
      {   -1          ,   NULL            }
  };
  
-@@ -1175,7 +1226,7 @@
+@@ -1175,7 +1229,7 @@
  
      found = 0;
      for (i = 0; i < 6; i++) {
@@ -199,7 +207,7 @@
          data = pci_read_config(dev, com->iorid[i], 4);
          if (((data &  0x01UL) == 0x01) &&
              ((data & ~0x03UL) != 0   )) {
-@@ -1232,6 +1283,9 @@
+@@ -1232,6 +1286,9 @@
  
      if (intr_type & INTR_TYPE_FAST) {
          ret = bus_setup_intr(dev, com->irqres, intr_type,
@@ -209,7 +217,7 @@
                               siointr, com, &com->cookie);
          if (ret != 0)
              intr_type &= ~INTR_TYPE_FAST;
-@@ -1240,6 +1294,9 @@
+@@ -1240,6 +1297,9 @@
      }
      if (ret != 0) {
          ret = bus_setup_intr(dev, com->irqres, intr_type,
@@ -219,7 +227,7 @@
                               siointr, com, &com->cookie);
          if (ret == 0 && (ltmdm_intr_type & INTR_TYPE_FAST)) {
              device_printf(dev, "could not activate interrupt in fast mode\n");
-@@ -1295,8 +1352,11 @@
+@@ -1295,8 +1355,11 @@
      DPRINTF(1,("  x_chip_version    = %d\n", x_chip_version));
  
      com->flags = flags;
@@ -231,7 +239,7 @@
  
      /*
       * initialize the device registers as follows:
-@@ -1368,11 +1428,16 @@
+@@ -1368,11 +1431,16 @@
      write_vuart_port(UART_FIFO, 0);
      printf("\n");
  
@@ -249,7 +257,7 @@
  #else
      if (!sio_registered) {
          register_swi(ltmdm_swi_type, siopoll);
-@@ -1415,7 +1480,7 @@
+@@ -1415,7 +1483,7 @@
          return EBUSY;
  
      com->gone = 1;
@@ -258,7 +266,7 @@
      if (sio_fast_ih != NULL) {
          ithread_remove_handler(sio_fast_ih);
          sio_fast_ih = NULL;
-@@ -1424,6 +1489,15 @@
+@@ -1424,6 +1492,15 @@
          ithread_remove_handler(sio_slow_ih);
          sio_slow_ih = NULL;
      }
@@ -274,7 +282,7 @@
  #else
      if (sio_registered) {
          unregister_swi(ltmdm_swi_type, siopoll);
-@@ -1433,11 +1507,19 @@
+@@ -1433,11 +1510,19 @@
  
      s = splfunc();
      if (tp) {
@@ -294,7 +302,7 @@
      }
      vxdPortClose();
      siosettimeout();
-@@ -1470,7 +1552,11 @@
+@@ -1470,7 +1555,11 @@
  }
  
  static int
@@ -306,7 +314,7 @@
  {
      struct com_s    *com;
      int     error;
-@@ -1488,7 +1574,11 @@
+@@ -1488,7 +1577,11 @@
          return (ENXIO);
      if (mynor & CONTROL_MASK)
          return (0);
@@ -318,7 +326,7 @@
      s = splfunc();
      /*
       * We jump to this label after all non-interrupted sleeps to pick
-@@ -1610,7 +1700,11 @@
+@@ -1610,7 +1703,11 @@
           * the true carrier.
           */
          if (com->prev_modem_status & MSR_DCD || mynor & CALLOUT_MASK)
@@ -330,7 +338,7 @@
      }
      /*
       * Wait for DCD if necessary.
-@@ -1626,7 +1720,11 @@
+@@ -1626,7 +1723,11 @@
              goto out;
          goto open_top;
      }
@@ -342,7 +350,7 @@
      disc_optim(tp, &tp->t_termios, com);
      if (tp->t_state & TS_ISOPEN && mynor & CALLOUT_MASK)
          com->active_out = TRUE;
-@@ -1639,7 +1737,11 @@
+@@ -1639,7 +1740,11 @@
  }
  
  static int
@@ -354,7 +362,7 @@
  {
      struct com_s    *com;
      int     mynor;
-@@ -1654,11 +1756,19 @@
+@@ -1654,11 +1759,19 @@
          return (ENODEV);
      tp = com->tp;
      s = splfunc();
@@ -374,7 +382,7 @@
      siosettimeout();
      splx(s);
      if (com->gone) {
-@@ -1685,7 +1795,9 @@
+@@ -1685,7 +1798,9 @@
      s = splfunc();
      com->do_timestamp = FALSE;
      com->do_dcd_timestamp = FALSE;
@@ -384,7 +392,7 @@
      write_vuart_port(UART_CFCR, com->cfcr_image &= ~CFCR_SBREAK);
      {
          write_vuart_port(UART_IER, 0);
-@@ -1724,7 +1836,11 @@
+@@ -1724,7 +1839,11 @@
  }
  
  static int
@@ -396,7 +404,7 @@
  {
      int     mynor;
      struct com_s    *com;
-@@ -1735,11 +1851,19 @@
+@@ -1735,11 +1854,19 @@
      com = com_addr(MINOR_TO_UNIT(mynor));
      if (com == NULL || com->gone)
          return (ENODEV);
@@ -416,7 +424,7 @@
  {
      int     mynor;
      struct com_s    *com;
-@@ -1754,7 +1878,11 @@
+@@ -1754,7 +1881,11 @@
      if (com == NULL || com->gone)
          return (ENODEV);
  
@@ -428,7 +436,7 @@
  }
  
  static void
-@@ -1860,7 +1988,11 @@
+@@ -1860,7 +1991,11 @@
                  if (line_status & LSR_PE)
                      recv_data |= TTY_PE;
              }
@@ -440,7 +448,7 @@
              lt_disable_intr();
          } while (buf < com->iptr);
      }
-@@ -1894,23 +2026,34 @@
+@@ -1894,23 +2029,34 @@
      u_char  recv_data;
      u_char  int_ctl;
      u_char  int_ctl_new;
@@ -475,7 +483,7 @@
          line_status = read_vuart_port(UART_LSR);
  
          /* input event? (check first to help avoid overruns) */
-@@ -1948,7 +2091,11 @@
+@@ -1948,7 +2094,11 @@
                      recv_data = 0;
              }
              ++com->bytes_in;
@@ -487,7 +495,7 @@
                  setsofttty();
              ioptr = com->iptr;
              if (ioptr >= com->ibufend)
-@@ -2053,17 +2200,23 @@
+@@ -2053,17 +2203,23 @@
  }
  
  static int
@@ -511,7 +519,7 @@
  
      mynor = minor(dev);
      com = com_addr(MINOR_TO_UNIT(mynor));
-@@ -2103,6 +2256,7 @@
+@@ -2103,6 +2259,7 @@
          }
      }
      tp = com->tp;
@@ -519,7 +527,7 @@
  #if defined(COMPAT_43) || defined(COMPAT_SUNOS)
      term = tp->t_termios;
      oldcmd = cmd;
-@@ -2112,6 +2266,7 @@
+@@ -2112,6 +2269,7 @@
      if (cmd != oldcmd)
          data = (caddr_t)&term;
  #endif
@@ -527,7 +535,7 @@
      if (cmd == TIOCSETA || cmd == TIOCSETAW || cmd == TIOCSETAF) {
          int cc;
          struct termios *dt = (struct termios *)data;
-@@ -2134,7 +2289,11 @@
+@@ -2134,7 +2292,11 @@
          if (lt->c_ospeed != 0)
              dt->c_ospeed = tp->t_ospeed;
      }
@@ -539,7 +547,7 @@
      if (error != ENOIOCTL)
          return (error);
      s = splfunc();
-@@ -2189,13 +2348,17 @@
+@@ -2189,13 +2351,17 @@
          com->do_timestamp = TRUE;
          *(struct timeval *)data = com->timestamp;
          break;
@@ -557,7 +565,7 @@
          if (error == ENODEV)
              error = ENOTTY;
          return (error);
-@@ -2257,8 +2420,13 @@
+@@ -2257,8 +2423,13 @@
              com->state &= ~CS_CHECKMSR;
              lt_enable_intr();
              if (delta_modem_status & MSR_DCD)
@@ -571,7 +579,7 @@
          }
          if (com->state & CS_ODONE) {
              lt_disable_intr();
-@@ -2270,7 +2438,11 @@
+@@ -2270,7 +2441,11 @@
                  sio_busycheck_handle = timeout(siobusycheck, com, hz / 100);
                  com->extra_state |= CSE_BUSYCHECK;
              }
@@ -583,7 +591,7 @@
          }
          if (com_events == 0)
              break;
-@@ -2769,11 +2941,21 @@
+@@ -2769,11 +2944,21 @@
          && (!(t->c_iflag & PARMRK)
          || (t->c_iflag & (IGNPAR | IGNBRK)) == (IGNPAR | IGNBRK))
          && !(t->c_lflag & (ECHO | ICANON | IEXTEN | ISIG | PENDIN))
@@ -605,7 +613,7 @@
  }
  
  #ifdef KLD_MODULE
-@@ -2796,7 +2978,7 @@
+@@ -2796,7 +2981,7 @@
  #endif
  
  DRIVER_MODULE(ltmdm, pci, ltmdm_pci_driver, ltmdm_devclass, ltmdm_event, 0);
