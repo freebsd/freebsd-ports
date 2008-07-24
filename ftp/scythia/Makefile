@@ -7,7 +7,7 @@
 
 PORTNAME=	scythia
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://scythia.free.fr/file/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
@@ -22,7 +22,7 @@ INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if defined(NOPORTDOCS)
-INSTALL_TARGET=install_lang install_icon install_icon2 install_desktop install_target
+INSTALL_TARGET=install_lang install_icon install_icon2 install_target
 .endif
 
 DESKTOP_ENTRIES=	"Scythia" \
