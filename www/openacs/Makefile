@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	openacs
-DISTVERSION?=	5.4.2b1
-PORTREVISION=	1
+DISTVERSION?=	5.4.2
 CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
 EXTRACT_SUFX=	.tgz?revision_id=${DIST_REV_ID}
@@ -15,7 +14,7 @@ EXTRACT_SUFX=	.tgz?revision_id=${DIST_REV_ID}
 MAINTAINER?=	mm@FreeBSD.org
 COMMENT?=	A modular web application platform for communities
 
-DIST_REV_ID?=	1515804
+DIST_REV_ID?=	1570341
 
 AOLSERVERBASE?=	${LOCALBASE}/aolserver
 RUN_DEPENDS+=	${AOLSERVERBASE}/bin/nscache.so:${PORTSDIR}/www/aolserver-nscache \
