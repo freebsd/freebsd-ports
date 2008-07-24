@@ -8,7 +8,7 @@
 
 PORTNAME=	ircd-ratbox
 #PORTVERSION=	3.0.0
-DISTVERSION=	3.0.0beta7
+DISTVERSION=	3.0.0beta8
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/testing/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/testing/	\
@@ -204,7 +204,7 @@ post-install:
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
 	${INSTALL_DATA} ${WRKSRC}/doc/ircd.motd ${PREFIX}/etc/${PORTNAME}/ircd.motd.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${PREFIX}/etc/${PORTNAME}/ircd.conf.sample
-#	${INSTALL_DATA} ${WRKSRC}/doc/example.efnet.conf ${PREFIX}/etc/${PORTNAME}/ircd-efnet.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/doc/example.efnet.conf ${PREFIX}/etc/${PORTNAME}/ircd-efnet.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/genssl.sh ${PREFIX}/etc/${PORTNAME}/genssl.sh
 
 # ----- We need to install the shortcut.pl module ----
