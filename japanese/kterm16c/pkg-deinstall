@@ -1,3 +1,0 @@
-#!/bin/sh
-
-perl -pi -e 's/^vga\.pcf\.gz[ \t]+.*\n$//' ${PKG_PREFIX}/lib/X11/fonts/misc/fonts.dir

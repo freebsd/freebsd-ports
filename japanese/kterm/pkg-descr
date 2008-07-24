@@ -2,7 +2,6 @@ Kterm is a xterm replacement with Japanese (Kanji) support.  It also
 understands ANSI color sequences.  This version is 6.2.0, available
 from the X11R6 contrib tape.
 
-
 Also included is support for Xaw3d arrow-style scrollbars and neXtaw
 NeX-style scrollbars.  You can now hold down the arrow buttons to 
 scroll continuously.
