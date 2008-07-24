@@ -14,6 +14,8 @@ bin/deplate
 %%RUBY_SITELIBDIR%%/deplate/deplate-string.rb
 %%RUBY_SITELIBDIR%%/deplate/docbook.rb
 %%RUBY_SITELIBDIR%%/deplate/elements.rb
+%%RUBY_SITELIBDIR%%/deplate/ents/general-latin1.entities
+%%RUBY_SITELIBDIR%%/deplate/ents/general-utf-8.entities
 %%RUBY_SITELIBDIR%%/deplate/etc.rb
 %%RUBY_SITELIBDIR%%/deplate/external.rb
 %%RUBY_SITELIBDIR%%/deplate/formatter-snippet.rb
@@ -55,6 +57,7 @@ bin/deplate
 %%RUBY_SITELIBDIR%%/deplate/fmt/plain.rb
 %%RUBY_SITELIBDIR%%/deplate/fmt/template.rb
 %%RUBY_SITELIBDIR%%/deplate/fmt/xhtml10t.rb
+%%RUBY_SITELIBDIR%%/deplate/fmt/xhtml11m.rb
 %%RUBY_SITELIBDIR%%/deplate/input/deplate-headings.rb
 %%RUBY_SITELIBDIR%%/deplate/input/deplate-restricted.rb
 %%RUBY_SITELIBDIR%%/deplate/input/deplate.rb
@@ -66,17 +69,21 @@ bin/deplate
 %%RUBY_SITELIBDIR%%/deplate/metadata/yaml.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/anyword.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/babelfish.rb
+%%RUBY_SITELIBDIR%%/deplate/mod/code-coderay.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/code-gvim.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/code-gvim71.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/code-highlight.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/colored-log.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/endnotes.rb
+%%RUBY_SITELIBDIR%%/deplate/mod/entities-decode.rb
+%%RUBY_SITELIBDIR%%/deplate/mod/entities-encode.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/guesslanguage.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/html-asciimath.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/html-deplate-button.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/html-headings-navbar.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/html-highstep.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/html-jsmath.rb
+%%RUBY_SITELIBDIR%%/deplate/mod/html-mathml.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/html-obfuscate-email.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/html-sidebar.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/htmlslides-navbar-fh.rb
@@ -118,15 +125,28 @@ bin/deplate
 %%RUBY_SITELIBDIR%%/deplate/mod/syntax-region-alt.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/validate-html.rb
 %%RUBY_SITELIBDIR%%/deplate/mod/xmlrpc.rb
+%%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/prelude.txt
+%%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/theme.ini
+%%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/css/presentation.css
+%%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/css/presentation_highstep.css
+%%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/css/presentation_website.css
+%%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/resources/spacer.png
+%%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/templates/presentation.html
 %%DATADIR%%/css/article.css
 %%DATADIR%%/css/deplate.css
+%%DATADIR%%/css/doc.css
 %%DATADIR%%/css/heading-navbar.css
+%%DATADIR%%/css/highlight.css
 %%DATADIR%%/css/highstep.css
 %%DATADIR%%/css/htmldoc.css
 %%DATADIR%%/css/layout-deplate-print.css
 %%DATADIR%%/css/layout-deplate.css
 %%DATADIR%%/css/play.css
+%%DATADIR%%/css/presentation.css
+%%DATADIR%%/css/presentation_highstep.css
+%%DATADIR%%/css/presentation_website.css
 %%DATADIR%%/css/sans-serif.css
+%%DATADIR%%/css/screenplay.css
 %%DATADIR%%/css/serif-e.css
 %%DATADIR%%/css/serif-rel.css
 %%DATADIR%%/css/serif.css
@@ -139,6 +159,8 @@ bin/deplate
 %%DATADIR%%/css/tabbar.css
 %%DATADIR%%/css/text-sans-serif.css
 %%DATADIR%%/css/text-serif.css
+%%DATADIR%%/css/websitary.css
+%%DATADIR%%/css/website.css
 %%DATADIR%%/lib/Makefile.config
 %%DATADIR%%/lib/tabmenu.js
 %%DATADIR%%/lib/html/parbreak
@@ -166,10 +188,16 @@ bin/deplate
 %%DATADIR%%/templates/html-tabbar-right.html
 %%DATADIR%%/templates/html-tabbar-top.html
 %%DATADIR%%/templates/html-tabbar.html
+@dirrm %%RUBY_SITELIBDIR%%/deplate/ents
 @dirrm %%RUBY_SITELIBDIR%%/deplate/fmt
 @dirrm %%RUBY_SITELIBDIR%%/deplate/input
 @dirrm %%RUBY_SITELIBDIR%%/deplate/metadata
 @dirrm %%RUBY_SITELIBDIR%%/deplate/mod
+@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/css
+@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/resources
+@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html/templates
+@dirrm %%RUBY_SITELIBDIR%%/deplate/themes/presentation.html
+@dirrm %%RUBY_SITELIBDIR%%/deplate/themes
 @dirrm %%RUBY_SITELIBDIR%%/deplate
 @dirrm %%DATADIR%%/css
 @dirrm %%DATADIR%%/lib/html
