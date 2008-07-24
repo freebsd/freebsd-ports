@@ -17,32 +17,29 @@ LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include"	\
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 
 USE_GMAKE=	yes
-CONFIGURE_ARGS= --enable-shared
+CONFIGURE_ENV+=	${MAKE_ENV}
+CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 
 USE_XLIB=	yes
 USE_QT_VER=	3
 QT_COMPONENTS=	moc uic
 
-OPTIONS=	PYTHON	"Enable Python Module" Off \
-		HDF5	"Enable HDF5 Driver" Off \
-		SILEXB	"Enable Silex Browser" Off \
-		FORTRAN "Compile Fortran interface" Off \
-		OPTIMIZATION "Enable extra optimizations" On
-
-USE_PYTHON=	yes
-
-.include <bsd.port.pre.mk>
-
 .ifdef WITH_PYTHON
+USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--enable-pythonmodule
 PLIST_SUB+=	WITH_PYTHON=""
 .else
 PLIST_SUB+=	WITH_PYTHON="@comment "
+.endif
+
+.ifdef WITH_FORTRAN
+USE_FORTRAN=	yes
+CONFIGURE_ARGS+=	--enable-fortran
+.else
+CONFIGURE_ARGS+=	--disable-fortran
 .endif
 
 .ifdef WITH_HDF5
@@ -55,25 +52,14 @@ PLIST_SUB+=	WITH_HDF5="@comment "
 PLIST_SUB+=	WITH_NCDF=""
 .endif
 
-.ifdef WITH_SILEXB
-CONFIGURE_ARGS+=	--enable-silex
-PLIST_SUB+=	WITH_SILEXB=""
-.else
-PLIST_SUB+=	WITH_SILEXB="@comment "
-.endif
-
-.ifdef WITH_FORTRAN
-USE_FORTRAN=	yes
-CONFIGURE_ARGS+=	--enable-fortran
-.else
-CONFIGURE_ARGS+=	--disable-fortran
-.endif
-
 .ifdef WITH_OPTIMIZATION
 CONFIGURE_ARGS+=	--enable-optimization
 .endif
 
+post-install:
+	@${RM} ${PREFIX}/lib/libsilo.settings
+
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
