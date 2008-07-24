@@ -46,7 +46,10 @@ CONFIGURE_ARGS+=	--with-silc-plugin=${PREFIX}/lib/irssi \
 CFLAGS+=	-fPIC
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 # We don't want to install the man page and configuration file for this case
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-apps__irssi__Makefile.in
+# Also, the port makes an extra symlink which causes IRSSI to load the plugin
+# twice.  This causes weird behavior such as /me output showing up twice.
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-apps__irssi__Makefile.in \
+		${FILESDIR}/extra-patch-apps__irssi__src__fe-common__Makefile.in
 .else
 MAN1=		silc.1
 .endif

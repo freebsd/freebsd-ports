@@ -1,7 +1,6 @@
 lib/irssi/modules/libfe_common_silc.a
 lib/irssi/modules/libfe_common_silc.la
 lib/irssi/modules/libfe_common_silc.so
-lib/irssi/modules/libfe_silc.so
 lib/irssi/modules/libsilc_core.a
 lib/irssi/modules/libsilc_core.la
 lib/irssi/modules/libsilc_core.so
