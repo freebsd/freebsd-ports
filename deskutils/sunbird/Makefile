@@ -19,7 +19,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Redesign of the Mozilla Calendar with XUL interface
 
 USE_AUTOTOOLS=	libtool:15
-USE_GCC=	3.4+
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes
@@ -39,6 +38,8 @@ MOZ_OPTIONS=	--enable-application=calendar \
 		--enable-canvas
 MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=calendar
 
+.include <bsd.init.mk>
+.include <bsd.libnames.mk>
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/Makefile.common"
 
@@ -51,7 +52,7 @@ post-patch:
 		${FILESDIR}/sunbird.desktop.in >${WRKDIR}/sunbird.desktop
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/security/manager/ssl/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|%%LIB_BZ2%%|${LIB_BZ2}|' \
+	@${REINPLACE_CMD} -e 's|%%LIB_BZ2%%|${LIBBZ2}|' \
 		${WRKSRC}/toolkit/mozapps/update/src/updater/Makefile.in
 
 post-build:
