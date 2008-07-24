@@ -33,9 +33,10 @@ PLIST_DIRS=	share/examples/freenet6
 .include <bsd.port.pre.mk>
 
 post-fetch:
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	${MV} ${DISTDIR}/file.asp*file_id*150* ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-.endif
+	if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
+		${MV} ${DISTDIR}/file.asp*file_id*150* \
+		    ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}; \
+	fi
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gw6c ${PREFIX}/bin
