@@ -32,6 +32,12 @@ MAKE_ARGS=	KTARGET=freebsd CC="${CC}" CC2="${CC}" \
 		LIBS="-L${OPENSSLLIB} \
 		-lssl -lcrypto -lncurses -lcrypt -lutil -lm"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800037
+BROKEN=		does not compile
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/krbmit ${PREFIX}/bin/kermit
 	${INSTALL_MAN} ${WRKSRC}/ckuker.nr ${PREFIX}/man/man1/kermit.1
@@ -49,4 +55,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ckermit.ini ${EXAMPLESDIR}/dot.kermrc
 	${INSTALL_DATA} ${WRKSRC}/ckermod.ini ${EXAMPLESDIR}/dot.mykermrc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
