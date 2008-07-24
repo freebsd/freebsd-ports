@@ -5,7 +5,7 @@
  
  build:
 -	python setup.py build
-+	python setup.py bdist_egg
++	CXX="" python setup.py bdist_egg
  
  egg:
  	python setup.py bdist_egg 

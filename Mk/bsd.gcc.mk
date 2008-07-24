@@ -196,8 +196,6 @@ CXX:=			g++${V}
 BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
 .endif
 
-MAKE_ENV+=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}"
-
 .endif
 # defined(USE_GCC)
 

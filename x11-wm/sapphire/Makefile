@@ -17,7 +17,7 @@ COMMENT=	Small window manager
 USE_XORG=	x11 xext
 USE_GMAKE=	yes
 REINPLACE_ARGS=	-i '' -e
-MAKE_ENV=	CC="${CXX}"
+CC=		${CXX}
 
 post-extract:
 

@@ -21,8 +21,9 @@ USE_SDL=	sdl mixer image
 
 HISCOREDIR=	/var/games/formido
 
+CC=		${CXX}
 MAKE_ENV=	DATDIR="${DATADIR}" HISCOREDIR="${HISCOREDIR}" \
-		CC="${CXX}" LINKFLAGS="${CXXFLAGS}" DEFAULT_CONFIG_FILE="${DATADIR}/formido.cfg"
+		LINKFLAGS="${CXXFLAGS}" DEFAULT_CONFIG_FILE="${DATADIR}/formido.cfg"
 
 OPTIONS=	MUSIC "Install music (6MB)" on
 
