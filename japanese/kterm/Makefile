@@ -7,28 +7,27 @@
 
 PORTNAME=	kterm
 PORTVERSION=	6.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_PORTS_JP:S/$/:wp_jp/} \
 		${MASTER_SITE_XCONTRIB} \
-		${MASTER_SITE_LOCAL:S/$/:wp_local/}
-MASTER_SITE_SUBDIR=	applications kterm/:wp_jp shige/kterm/:wp_local
+		${MASTER_SITE_LOCAL:S/$/:wp_local,pcemu/}
+MASTER_SITE_SUBDIR= applications \
+		kterm/:wp_jp \
+		shige/kterm/:wp_local \
+		hrs/:pcemu
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		README.wallpaper.ja:wp_local,wp_jp
-
-MAINTAINER=	nork@FreeBSD.org
-COMMENT=	An xterm that speaks Japanese
-
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
-
+		README.wallpaper.ja:wp_local,wp_jp \
+		pcemu1.01alpha.tar.gz:pcemu
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-DIST_SUBDIR=	kterm
+
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/:nfs \
 		http://www.asahi-net.or.jp/~hc3j-tkg/kterm/:wpi \
 		http://dists.lovepeers.org/distfiles/:termios \
 		${MASTER_SITE_LOCAL:S/$/:jisx0213,color16,termios/}
 PATCH_SITE_SUBDIR=	shige/kterm/:jisx0213,color16 \
-       			nork/:termios
+			nork/:termios
 PATCHFILES=	${DISTNAME}.NFS-xauth.patch:nfs \
 		${DISTNAME}-wpi.patch.gz:wpi \
 		${DISTNAME}-jisx0213.patch.gz:jisx0213 \
@@ -36,53 +35,74 @@ PATCHFILES=	${DISTNAME}.NFS-xauth.patch:nfs \
 		${DISTNAME}-termios-0.2.patch.gz:termios
 PATCH_DIST_STRIP=	-p1
 
+MAINTAINER=	nork@FreeBSD.org
+COMMENT=	An xterm variant with Japanese support
+
+BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
+
 USE_IMAKE=	yes
 USE_XORG=	xaw
 
 MAN1=		kterm.1
 MANLANG=	"" ja
 
-PLIST_FILES=	bin/kterm lib/X11/app-defaults/KTerm
-PORTDOCS=	README.kt README.wallpaper.ja
-
-NKFCMD=		nkf
-
-.if !defined(PACKAGE_BUILDING)
-
-.if defined(WITH_XAW3DLIB) && defined(WITH_NEXTAWLIB)
-.BEGIN:
-	@${ECHO} "Error: \$${WITH_XAW3DLIB} and \$${WITH_NEXTAWLIB} cannot be specified simultaneously!"
-	@${FALSE}
-.elif defined(WITH_XAW3DLIB)
-LIB_DEPENDS+=  Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
-post-patch:
-	@${ECHO_MSG}  "===>  Applying Xaw3d scrollbar patch"
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-Xaw3d
-.elif defined(WITH_NEXTAWLIB)
-LIB_DEPENDS+=	neXtaw:${PORTSDIR}/x11-toolkits/neXtaw
-post-patch:
-	@${ECHO_MSG}  "===>  Applying neXtaw scrollbar patch"
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-neXtaw
-.endif
-.if defined(WITH_TEKTRONIX)
-post-patch:
-	@${ECHO_MSG}  "===>  Applying Tektronix emulation patch"
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-Tektronix
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README.kt README.wallpaper.ja dot.termcap
 .endif
 
+OPTIONS=	XAW3DLIB "with Xaw3d scrollbar" off \
+		NEXTAWLIB "with neXtaw scrollbar" off \
+		TEKTRONIXEMU "Tektronix emulation" off \
+		VGAFONT "install VGA font" off
+
+NKFCMD=		${LOCALBASE}/bin/nkf
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_XAW3DLIB)
+LIB_DEPENDS+=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Xaw3d
+.elif !defined(WITHOUT_NEXTAWLIB)
+LIB_DEPENDS+=	neXtaw.6:${PORTSDIR}/x11-toolkits/neXtaw
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-neXtaw
+.endif
+
+.if !defined(WITHOUT_TEKTRONIXEMU)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Tektronix
+.endif
+
+.if !defined(WITHOUT_VGAFONT)
+PLIST_SUB=	VGAFONT=""
+post-extract:
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${DIST_SUBDIR}/pcemu1.01alpha.tar.gz \
+		${EXTRACT_AFTER_ARGS} -C ${WRKDIR} pcemu1.01alpha/vga.bdf
+	cd ${WRKDIR}/pcemu1.01alpha && \
+		${LOCALBASE}/bin/bdftopcf vga.bdf | ${GZIP_CMD} > vga.pcf.gz
+post-install-vgafont:
+	${MKDIR} ${PREFIX}/lib/X11/fonts/misc
+	${INSTALL_DATA} ${WRKDIR}/pcemu1.01alpha/vga.pcf.gz \
+		${PREFIX}/lib/X11/fonts/misc
+	${LOCALBASE}/bin/mkfontdir ${PREFIX}/lib/X11/fonts/misc
+post-install: post-install-vgafont
+.else
+PLIST_SUB=	VGAFONT="@comment "
 .endif
 
 post-build:
-	@${MV} ${WRKSRC}/kterm.jman ${WRKSRC}/kterm.jman.jis
-	@${NKFCMD} -e -u ${WRKSRC}/kterm.jman.jis >${WRKSRC}/${MAN1}
+	${NKFCMD} -e -u ${WRKSRC}/kterm.jman \
+		| ${GZIP_CMD} > ${WRKSRC}/${MAN1}.gz
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/ja/man1
-	${GZIP_CMD} ${MANPREFIX}/man/ja/man1/${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${MAN1}.gz ${MANPREFIX}/man/ja/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.kt ${DOCSDIR}
-	${INSTALL_DATA} ${_DISTDIR}/README.wallpaper.ja ${DOCSDIR}/README.wallpaper.ja
+	${INSTALL_DATA} \
+		${WRKSRC}/README.kt \
+		${DISTDIR}/${DIST_SUBDIR}/README.wallpaper.ja \
+		${FILESDIR}/dot.termcap \
+		${DOCSDIR}/README.wallpaper.ja \
+		${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

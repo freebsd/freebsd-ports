@@ -1,7 +1,0 @@
-@comment $FreeBSD$
-bin/kterm16c
-lib/X11/app-defaults/KTerm
-lib/X11/fonts/misc/vga.pcf.gz
-@exec %D/bin/mkfontdir %D/lib/X11/fonts/misc
-@unexec if [ `wc -c < %D/lib/X11/fonts/misc/fonts.dir` = 2 ]; then rm -f %D/lib/X11/fonts/misc/fonts.dir; fi
-@dirrmtry lib/X11/fonts/misc
