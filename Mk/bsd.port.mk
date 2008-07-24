@@ -1580,6 +1580,10 @@ PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir %D/\1 2>/dev/null || 
 PLIST_REINPLACE_RMTRY=s!^@rmtry \(.*\)!@unexec rm -f %D/\1 2>/dev/null || true!
 PLIST_REINPLACE_STOPDAEMON=s!^@stopdaemon \(.*\)!@unexec %D/etc/rc.d/\1${RC_SUBR_SUFFIX} forcestop 2>/dev/null || true!
 
+# kludge to strip trailing whitespace from CFLAGS;
+# sub-configure will not # survive double space
+CFLAGS:=	${CFLAGS:C/ $//}
+
 .if defined(WITHOUT_CPU_CFLAGS)
 .if defined(_CPUCFLAGS)
 .if !empty(_CPUCFLAGS)
