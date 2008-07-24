@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	6.7
+PORTVERSION=	6.8
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_DOS2UNIX=	tools/logresolvemerge.pl
+USE_DOS2UNIX=	yes
 
 SUB_FILES=	pkg-message
 
@@ -71,7 +70,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/logresolvemerge.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/maillogconvert.pl ${PREFIX}/www/awstats/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/urlaliasbuilder.pl ${PREFIX}/www/awstats/tools
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.7.wbm ${PREFIX}/www/awstats/tools/webmin
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/webmin/awstats-1.8.wbm ${PREFIX}/www/awstats/tools/webmin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awredir.pl ${PREFIX}/www/awstats/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf ${PREFIX}/www/awstats/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/wwwroot/cgi-bin/awstats.pl ${PREFIX}/www/awstats/cgi-bin
@@ -103,8 +102,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/*.* ${DOCSDIR}
 .endif
 
-post-install:
 .if !defined(BATCH)
+post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
