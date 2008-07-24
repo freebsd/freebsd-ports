@@ -423,7 +423,7 @@ GEMFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 do-install:
 .for _D in ${GEMFILES}
-	${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install --no-update-sources --no-ri --install-dir ${PREFIX}/lib/ruby/gems/${RUBY_VER} ${DISTDIR}/${DIST_SUBDIR}/${_D} -- --build-args ${CONFIGURE_ARGS}
+	${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install -l --no-update-sources --no-ri --install-dir ${PREFIX}/lib/ruby/gems/${RUBY_VER} ${DISTDIR}/${DIST_SUBDIR}/${_D} -- --build-args ${CONFIGURE_ARGS}
 .endfor
 
 .endif # USE_RUBYGEMS
