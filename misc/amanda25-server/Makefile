@@ -7,7 +7,7 @@
 
 PORTNAME=	amanda
 PORTVERSION=	2.5.1p3
-PORTREVISION?=	4
+PORTREVISION?=	5
 PKGNAMESUFFIX?=	-server
 PORTEPOCH=	1
 CATEGORIES=	misc
@@ -20,9 +20,10 @@ COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda-client
 
-NO_LATEST_LINK=	yes
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 USE_AUTOTOOLS=	autoconf:261
 USE_GMAKE=	yes
+USE_OPENSSL=	yes
 PATCH_STRIP=
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
@@ -32,7 +33,8 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 USE_LDCONFIG=	yes
 WANT_PERL=	yes
 
-OPTIONS=	GNUTAR "use GNU tar" on
+OPTIONS=	GNUTAR "use GNU tar" on \
+		SSH "enable ssh-auth" off
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +57,10 @@ CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
 
 .if defined (AMANDA_UDPPORTRANGE)
 CONFIGURE_ARGS+=	--with-udpportrange=${AMANDA_UDPPORTRANGE}
+.endif
+
+.if defined (WITH_SSH)
+CONFIGURE_ARGS+=	--with-ssh-security
 .endif
 
 # AMANDA_PORTRANGE is obsoleted.  Use AMANDA_TCPPORTRANGE instead.
@@ -99,6 +105,12 @@ pre-fetch:
 	@${ECHO} "        The default is no restriction on UDP ports."
 	@${ECHO} ""
 
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|^OPENSSL=.*$$|OPENSSL=${OPENSSLBASE}/bin/openssl|' \
+		${WRKSRC}/server-src/amcrypt-ossl.sh.in \
+		${WRKSRC}/server-src/amcrypt-ossl-asym.sh.in
+
 USE_PERL5=	yes
 
 BUILD_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
@@ -116,8 +128,7 @@ MAN8=		amadmin.8 amaespipe.8 amcheck.8 \
 OPTIONS+=	PLOT "enable ploting, requires X11 libraries" off\
 		SAMBA "enable the use of smbclient" off \
 		MTX "enable the use of mtx changer scripts" off \
-		AESPIPE "enable encryption. Needed by amcrypt" off \
-		SSH "enable ssh-auth" off
+		AESPIPE "enable encryption. Needed by amcrypt" off
 
 .if defined (WITH_PLOT)
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
@@ -141,10 +152,6 @@ RUN_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
 
 .if defined (WITH_AESPIPE)
 RUN_DEPENDS+=	aespipe:${PORTSDIR}/security/aespipe
-.endif
-
-.if defined (WITH_SSL)
-CONFIGURE_ARGS+=	--with-ssh-security
 .endif
 
 .if defined (AMANDA_TAPE)
@@ -213,5 +220,9 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-sendbackup-dump.c
 .endif
 
 .endif
+
+# Maintainer TODO:
+#   o amanda-server installs lib/libamandad.a which should be handled by
+#     amanda-client only.
 
 .include <bsd.port.post.mk>
