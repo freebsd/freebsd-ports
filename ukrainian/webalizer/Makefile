@@ -8,7 +8,7 @@
 MASTERDIR=	${.CURDIR}/../../www/webalizer
 CATEGORIES=	ukrainian
 
-MAINTAINER=	mike@LITech.lviv.ua
+MAINTAINER=	mikef@LITech.lviv.ua
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/ukrainian/gd
 
