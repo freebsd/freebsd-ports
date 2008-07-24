@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay/Handle.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/ptrtstrun.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/SSLeay.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/SSLeay.so
@@ -79,28 +78,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_nothing.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_read.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_write.al
-%%PORTDOCS%%%%EXAMPLESDIR%%/bio.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/bulk.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/callback.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/cb-testi.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/cli-cert.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/ephemeral.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/get_authenticated_page.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/get_page.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/get_page_cert.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/https-proxy-snif.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/makecert.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/minicli.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/passwd-cb.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/req.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl-inetd-serv.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/ssl_diff.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/sslcat.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/sslecho.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/stdio_bulk.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/tcpcat.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/tcpecho.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay

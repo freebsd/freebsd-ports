@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	Net-SSLeay
-PORTVERSION=	1.30
-PORTREVISION=	1
+PORTVERSION=	1.34
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Net_SSLeay.pm-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to SSL
@@ -22,13 +20,12 @@ USE_OPENSSL=	yes
 
 MAN3=		Net::SSLeay.3 Net::SSLeay::Handle.3
 
-SRCDIR=		${WRKSRC}/examples
-
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${SRCDIR}/*.pl ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${SRCDIR}/req.conf ${EXAMPLESDIR}/req.conf
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/req.conf ${EXAMPLESDIR}/req.conf
 .endif
 
 .include <bsd.port.mk>
