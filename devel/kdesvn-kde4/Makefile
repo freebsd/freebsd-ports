@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-PORTVERSION=	0.14.1
-PORTREVISION=	4
+PORTVERSION=	0.14.4
 CATEGORIES=	devel kde
-MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/${PORTVERSION:R}.x/
+MASTER_SITES=	http://kdesvn.alwins-world.de/trac.fcgi/downloads/
 
 MAINTAINER=	yuanjue@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
@@ -22,6 +21,8 @@ USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+
+CMAKE_ARGS=	-DLIB_SUFFIX=
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

@@ -38,7 +38,7 @@ lib/kde3/libkdesvnpart.la
 lib/kde3/libkdesvnpart.so
 lib/libsvnqt.so
 lib/libsvnqt.so.4
-lib/libsvnqt.so.4.0.0
+lib/libsvnqt.so.4.1.1
 share/applications/kde/kdesvn.desktop
 share/apps/kconf_update/kdesvnpartrc-use-external.upd
 share/apps/kconf_update/kdesvn-use-external-update.sh
