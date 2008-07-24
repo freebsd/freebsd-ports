@@ -11,12 +11,15 @@ lib/libpolkit-gnome.so
 lib/libpolkit-gnome.so.0
 libdata/pkgconfig/polkit-gnome.pc
 libexec/polkit-gnome-manager
-share/PolicyKit/policy/polkit-gnome-example.policy
+share/PolicyKit/policy/org.gnome.policykit.examples.policy
 share/applications/polkit-gnome-authorization.desktop
 share/dbus-1/services/gnome-org.freedesktop.PolicyKit.AuthenticationAgent.service
 share/dbus-1/services/org.gnome.PolicyKit.AuthorizationManager.service
 share/dbus-1/services/org.gnome.PolicyKit.service
+share/locale/ca/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/cs/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/da/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/de/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/el/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/en_GB/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/es/LC_MESSAGES/PolicyKit-gnome.mo
@@ -25,6 +28,12 @@ share/locale/fr/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/he/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/hu/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/ja/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/pl/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/pt/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/pt_BR/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/ru/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/sk/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/sv/LC_MESSAGES/PolicyKit-gnome.mo
+share/locale/zh_CN/LC_MESSAGES/PolicyKit-gnome.mo
 @dirrmtry share/applications
 @dirrm include/PolicyKit/polkit-gnome
