@@ -1,6 +1,0 @@
-bin/getlive
-etc/getlive.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/License
-%%PORTDOCS%%%%DOCSDIR%%/Manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

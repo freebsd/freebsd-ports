@@ -1,19 +1,19 @@
-# New ports collection makefile for: getlive
-# Date created:	20 April 2008
-# Whom:		ayunyan
+# New ports collection makefile for:	GetLive
+# Date created:				20 April 2008
+# Whom:					ayunyan <ayunyan@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	getlive
-PORTVERSION=	0.57
+DISTVERSION=	0_57
 CATEGORIES=	mail
 MASTER_SITES=	SF
-DISTNAME=	GetLive_0_57
+DISTNAME=	GetLive_${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ayu@commun.jp
-COMMENT=	Get mail from hotmail (live) mailboxes
+COMMENT=	Get mail from Hotmail (Live) mailboxes
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		procmail:${PORTSDIR}/mail/procmail \
@@ -22,13 +22,16 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
+PLIST_FILES=	bin/getlive etc/getlive.conf.sample
+PORTDOCS=	ChangeLog License Manual
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/GetLive.pl ${PREFIX}/bin/getlive
 	${INSTALL_DATA} ${FILESDIR}/getlive.conf.sample ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ChangeLog License Manual
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
