@@ -27,7 +27,7 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|CC=gcc|CC=${CC}|' \
 		-e 's|	gcc|	$${CC} $${CFLAGS}|' \
-		-e 's|CFLAGS=|CFLAGS=${CFLAGS}|' \
+		-e 's|CFLAGS=|CFLAGS=${CFLAGS} |' \
 		-e 's|LDFLAGS=-shared -L/usr/local/lib|LDFLAGS=-shared -L${PREFIX}/lib|' \
 		-e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|' \
 		-e 's|INCLUDES=-I/usr/local/include|INCLUDES=-I${TCL_INCLUDEDIR}|' \
