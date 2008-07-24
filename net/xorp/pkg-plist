@@ -9,7 +9,6 @@ cli/tools/send_cli_processor_xrl
 contrib/olsr/tools/clear_database
 contrib/olsr/tools/print_databases
 contrib/olsr/xorp_olsr4
-etc/rc.d/xorp
 etc/templates/bgp.cmds
 etc/templates/bgp.tp
 etc/templates/fea.cmds
@@ -144,8 +143,6 @@ xrl/targets/xorpsh.xrls
 @dirrmtry fea/tools
 @dirrm fea
 @dirrmtry etc/templates
-@dirrmtry etc/rc.d
-@dirrmtry etc
 @dirrm contrib/olsr/tools
 @dirrm contrib/olsr
 @dirrm contrib
