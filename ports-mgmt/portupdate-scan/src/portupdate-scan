@@ -19,7 +19,8 @@
 # Intended to be used prior to upgrading ports
 # Usage: portupdatescan [-dDhmuvV] [--help] [--version]
 # Created:      2006/12/21	Alex Stangl
-# Last updated: 2008/02/04	Alex Stangl  INDEX computation change from Tom Doherty
+# Updates:      2008/02/04     Alex Stangl  INDEX computation change from Tom Doherty
+#               2008/07/21     Alex Stangl  Tolerate problems w/ MOVED & UPDATING
 
 use Text::ParseWords;
 use Getopt::Std;
@@ -41,7 +42,7 @@ EOF
 }
 
 sub VERSION_MESSAGE() {
-	print "portupdate-scan 0.1\n";
+       print "portupdate-scan 0.3\n";
 }
 
 # Fetch cmdline args, display usage if appropriate
@@ -82,10 +83,10 @@ sub processBlock(@) {
 	my ($affects, $remainder, $line);
 	my $index = 0;
 	foreach $line (@_) {
-		if ($line =~ /^\s*AFFECTS:/) {
+               if ($line =~ /^\s*AFFECTS:/i) {
 			$affects = $line;
 			$remainder = $index;
-		} elsif ($affects and $line =~ /^\s*AUTHOR/) {
+               } elsif ($affects and $line =~ /^\s*AUTHOR/i) {
 			last;
 		} elsif ($affects) {
 			$affects .= $line;
@@ -317,7 +318,9 @@ MAIN:{
 	open(MOVED, $movedFile) or die "Can't open $movedFile: $!";
 	while(<MOVED>) {
 		chomp;
-		if ($_ !~ /^\s*#/) {
+               if ($_ =~ /^\s*$/) {
+                       print "+ Ignoring MOVED line containing no non-whitespace chars.\n" if $opt{d};
+               } elsif ($_ !~ /^\s*#/) {
 			my ($from, $to) = ($_ =~ /^([^|]*)\|([^|]*)/)
 			    or die "$_ is not a correctly formed MOVED line";
 
