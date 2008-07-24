@@ -237,6 +237,7 @@ lib/ircd-ratbox/modules/m_squit.so
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
 etc/ircd-ratbox/genssl.sh
+etc/ircd-ratbox/ircd-efnet.conf.sample
 @unexec if cmp -s %D/etc/ircd-ratbox/ircd.conf.sample %D/etc/ircd-ratbox/ircd.conf; then rm -f %D/etc/ircd-ratbox/ircd.conf; fi
 etc/ircd-ratbox/ircd.conf.sample
 @exec if [ ! -f %D/etc/ircd-ratbox/ircd.conf ] ; then cp -p %D/%F %B/ircd.conf; fi
