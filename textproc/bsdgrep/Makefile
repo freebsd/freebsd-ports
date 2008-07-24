@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grep
-PORTVERSION=	20080624
+PORTVERSION=	20080723
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
@@ -29,7 +29,7 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		CATDIR="${MANPREFIX}/man/man" \
 		NLSDIR="${PREFIX}/share/nls"
 
-OPTIONS=	NLS	"Compile in NLS support"	on
+OPTIONS=	NLS	"Compile with NLS support"	on
 
 .include <bsd.port.pre.mk>
 
