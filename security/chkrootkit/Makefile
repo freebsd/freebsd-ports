@@ -20,40 +20,38 @@ MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/ \
 MAINTAINER=	cordeiro@nic.br
 COMMENT=	A tool to locally check for signs of a rootkit
 
-MAKE_ENV+=	CC="${CC}"
-ALL_TARGET=	chkrootkit chklastlog chkwtmp chkutmp chkproc chkdirs ifpromisc check_wtmpx strings
+SCRIPT_FILES=	chkrootkit
+PROG_FILES=	chklastlog \
+		chkwtmp \
+		chkutmp \
+		chkproc \
+		chkdirs \
+		ifpromisc \
+		check_wtmpx \
+		strings
+ALL_TARGET=	${SCRIPT_FILES} ${PROG_FILES}
+PORTDOCS=	ACKNOWLEDGMENTS \
+		COPYRIGHT \
+		README \
+		README.chklastlog \
+		README.chkwtmp
 
 PLIST_FILES=	${ALL_TARGET:C,^,sbin/,}
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	ACKNOWLEDGMENTS COPYRIGHT README README.chklastlog README.chkwtmp
-.endif
-
 BINMODE=	0700
 
-pre-patch:
-	${REINPLACE_CMD} -e "s/^CC/#CC/; s/^CFLAGS/#CFLAGS/" ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e \
-		's#\./chklastlog#${PREFIX}/sbin/chklastlog#g; \
-		s#\./chkwtmp#${PREFIX}/sbin/chkwtmp#g; \
-		s#\./chkutmp#${PREFIX}/sbin/chkutmp#g; \
-		s#\./chkproc#${PREFIX}/sbin/chkproc#g; \
-		s#\./chkdirs#${PREFIX}/sbin/chkdirs#g; \
-		s#\./check_wtmpx#${PREFIX}/sbin/check_wtmpx#g; \
-		s#\./strings#${PREFIX}/sbin/strings#g; \
-		s#\./ifpromisc#${PREFIX}/sbin/ifpromisc#g;' \
+post-patch:
+	@${REINPLACE_CMD} -E "s/^(CC|CFLAGS)[^a-zA-Z]*=/\1 ?=/" \
+		${WRKSRC}/Makefile
+
+.for prog in ${PROG_FILES}
+	@${REINPLACE_CMD} -E 's,\./(${prog}),${PREFIX}/sbin/\1,g' \
 		${WRKSRC}/chkrootkit
+.endfor
 
 do-install:
-	${INSTALL_SCRIPT}  ${WRKSRC}/chkrootkit ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/chklastlog ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/chkwtmp    ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/chkutmp    ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/chkproc    ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/chkdirs    ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/ifpromisc  ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/check_wtmpx  ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/strings  ${PREFIX}/sbin
+	${INSTALL_SCRIPT}  ${SCRIPT_FILES:C,^,${WRKSRC}/,} ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${PROG_FILES:C,^,${WRKSRC}/,}   ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:C,^,${WRKSRC}/,} ${DOCSDIR}
