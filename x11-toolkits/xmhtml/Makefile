@@ -20,7 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_AUTOTOOLS=	libtool:15:env
 USE_MOTIF=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CC="${LIBTOOL} ${CC}"
+CC:=		${LIBTOOL} ${CC}
 USE_LDCONFIG=	yes
 
 do-configure:
