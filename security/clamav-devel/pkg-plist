@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-bin/check_clamav
 bin/clamav-config
 bin/clamconf
 bin/clamscan
