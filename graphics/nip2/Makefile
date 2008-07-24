@@ -17,6 +17,7 @@ LIB_DEPENDS=	vips:${PORTSDIR}/graphics/vips	\
 		gsl:${PORTSDIR}/math/gsl	\
 		xml2:${PORTSDIR}/textproc/libxml2
 
+USE_BISON=	build
 USE_GMAKE=	yes
 USE_GNOME=	gnomemimedata glib20 pkgconfig gtk20
 GNU_CONFIGURE=	yes
