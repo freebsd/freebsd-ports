@@ -54,6 +54,7 @@ www/awstats/cgi-bin/awstats.pl
 www/awstats/cgi-bin/lang/awstats-al.txt
 www/awstats/cgi-bin/lang/awstats-ar.txt
 www/awstats/cgi-bin/lang/awstats-ba.txt
+www/awstats/cgi-bin/lang/awstats-be.txt
 www/awstats/cgi-bin/lang/awstats-bg.txt
 www/awstats/cgi-bin/lang/awstats-br.txt
 www/awstats/cgi-bin/lang/awstats-ca.txt
@@ -99,11 +100,13 @@ www/awstats/cgi-bin/lang/awstats-lt.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-br.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-cz.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-en.txt
+www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-gr.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-is.txt
 www/awstats/cgi-bin/lang/tooltips_f/awstats-tt-it.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-br.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-en.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-fr.txt
+www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-gr.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-is.txt
 www/awstats/cgi-bin/lang/tooltips_m/awstats-tt-it.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-al.txt
@@ -120,6 +123,7 @@ www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-es.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-fi.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-fr.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-gl.txt
+www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-gr.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-hu.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-is.txt
 www/awstats/cgi-bin/lang/tooltips_w/awstats-tt-it.txt
@@ -143,6 +147,7 @@ www/awstats/cgi-bin/lib/browsers_phone.pm
 www/awstats/cgi-bin/lib/domains.pm
 www/awstats/cgi-bin/lib/mime.pm
 www/awstats/cgi-bin/lib/operating_systems.pm
+www/awstats/cgi-bin/lib/referer_spam.pm
 www/awstats/cgi-bin/lib/robots.pm
 www/awstats/cgi-bin/lib/search_engines.pm
 www/awstats/cgi-bin/lib/status_http.pm
@@ -678,7 +683,7 @@ www/awstats/tools/awstats_updateall.pl
 www/awstats/tools/logresolvemerge.pl
 www/awstats/tools/maillogconvert.pl
 www/awstats/tools/urlaliasbuilder.pl
-www/awstats/tools/webmin/awstats-1.7.wbm
+www/awstats/tools/webmin/awstats-1.8.wbm
 @dirrm www/awstats/tools/webmin
 @dirrm www/awstats/tools
 @dirrm www/awstats/js
