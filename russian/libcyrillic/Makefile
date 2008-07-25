@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME:S/^lib//}-${PORTVERSION}
 MAINTAINER=	pavel@ext.by
 COMMENT=	Text manipulation and autodetection for 6 major cyrillic charsets
 
-MAKE_ENV=	WRKSRC="${WRKSRC}" CFLAGS="${CFLAGS}"
+MAKE_ENV=	WRKSRC="${WRKSRC}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 USE_LDCONFIG=	yes
 

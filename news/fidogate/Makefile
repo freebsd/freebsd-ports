@@ -30,8 +30,6 @@ DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		template.html fido howto misc rfc gatebau/msgid.sgml \
 		gatebau/msgid.tex gatebau/msgid.txt
 
-MAKE_ENV+=	CC=${CC}
-
 .include <bsd.port.pre.mk>
 
 pre-configure:

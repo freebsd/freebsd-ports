@@ -41,8 +41,7 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \
-		OSVERSION=${OSVERSION} \
-		CXX="${CXX}"
+		OSVERSION=${OSVERSION}
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 
 .include <bsd.port.pre.mk>

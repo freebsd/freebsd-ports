@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-MAKE_ENV=	CXX="${CXX}"
 
 .include <bsd.port.pre.mk>
 

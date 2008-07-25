@@ -24,7 +24,6 @@ USE_SDL=	image mixer sdl ttf
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.0
 
 MAKEFILE=	makefile
-MAKE_ENV=	CXX="${CXX}"
 
 post-patch:
 # Fix Makefile

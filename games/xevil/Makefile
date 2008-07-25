@@ -17,7 +17,6 @@ COMMENT=	A fast-action, networked, anti-social, kill-everything game
 
 USE_ZIP=	yes
 USE_XORG=	xpm
-MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd
 

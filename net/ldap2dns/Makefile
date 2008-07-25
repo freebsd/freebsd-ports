@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 USE_PERL5=	yes
 
-MAKE_ENV=	PREFIX=${PREFIX} INC=-I${PREFIX}/include LIB=-L${PREFIX}/lib
+MAKE_ENV=	INC=-I${PREFIX}/include LIB=-L${PREFIX}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/ldap2dns.c

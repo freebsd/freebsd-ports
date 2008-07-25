@@ -24,8 +24,6 @@ USE_GL=		gl
 USE_SDL=	sdl mixer image
 USE_DOS2UNIX=	kodilib/linux/Makefile src/main/KikiController.cpp linux/Makefile kodilib/src/types/KVector.h src/main/KikiPythonWidget.h
 
-MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
-
 WRKSRC=		${WRKDIR}/kiki
 
 post-patch:

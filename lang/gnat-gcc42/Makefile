@@ -83,11 +83,11 @@ PLIST_SUB=		GCC_VER=${PORTVERSION} \
 USE_LDCONFIG=		${targlib}
 
 # Prepare environment for the bootstrap compiler.
-build_env=		CC=${WRKDIR}/boot/bin/gcc \
-			PTHREAD_LIBS=${PTHREAD_LIBS} \
+CC=			${WRKDIR}/boot/bin/gcc
+build_env=		PTHREAD_LIBS=${PTHREAD_LIBS} \
 			PATH=${WRKDIR}/boot/bin:${WRKDIR}/boot/libexec:${PATH}
 
-CONFIGURE_ENV+=		${build_env}
+CONFIGURE_ENV+=		${build_env} CC="${CC}"
 MAKE_ENV+=		${build_env}
 
 pre-everything::

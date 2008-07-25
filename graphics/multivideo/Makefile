@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_WX=		2.4
-MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=	default
 
 PLIST_FILES=	bin/multivideo

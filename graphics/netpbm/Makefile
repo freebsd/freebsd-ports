@@ -37,7 +37,7 @@ LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CC="${CC}" LN="${LN}" RANLIB="${RANLIB}"
+MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
 USE_LDCONFIG=	yes

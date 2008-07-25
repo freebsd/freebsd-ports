@@ -28,8 +28,7 @@ TETEX_SRC=	tetex-src-${PORTVERSION}.tar.gz
 TETEX_TEXMF=	tetex-texmf-${PORTVERSION}.tar.gz
 TEXMF_TREE=	${PREFIX}/share/texmf
 
-MAKE_ENV=	PREFIX="${PREFIX}" \
-		LN="${LN}" \
+MAKE_ENV=	LN="${LN}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS= --disable-multiplatform \

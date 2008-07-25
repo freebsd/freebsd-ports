@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	xpm
 USE_GMAKE=	yes
-MAKE_ENV=	CPP="${CC} -E" CC="${CC}"
+MAKE_ENV=	CPP="${CC} -E"
 
 CFLAGS+=	-DDATADIR=\\\"${DATADIR}\\\"
 

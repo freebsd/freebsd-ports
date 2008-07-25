@@ -23,7 +23,6 @@ USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}_source/src
-MAKE_ENV+=	CXX="${CXX}"
 CFLAGS+=	-fsigned-char
 ALL_TARGET=	#empty
 

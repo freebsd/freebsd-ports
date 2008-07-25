@@ -16,8 +16,7 @@ COMMENT=	An interesting one-player puzzle game for X
 
 USE_SDL=	mixer
 USE_GMAKE=	yes
-MAKE_ENV=	JOY=NO \
-		SDL_CONFIG="${SDL_CONFIG}"
+MAKE_ENV=	JOY=NO
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gemdropx ${PREFIX}/bin

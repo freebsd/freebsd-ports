@@ -26,6 +26,6 @@ WRKSRC=		${WRKDIR}/gkrellm-mailwatch
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins CC="${CC}"
+MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins
 
 .include <bsd.port.mk>

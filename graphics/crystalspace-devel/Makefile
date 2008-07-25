@@ -38,8 +38,7 @@ WANT_PERL=	yes
 LDFLAGS=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS} ${CXX}" \
-		CPPFLAGS="${CPPFLAGS} "LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS} "LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--disable-cpu-specific-optimizations \
 			--disable-make-emulation \
 			--prefix=${PREFIX} \

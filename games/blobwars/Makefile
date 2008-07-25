@@ -16,7 +16,6 @@ MAINTAINER=	lorenl@north-winds.org
 COMMENT=	You are the fearless Blob agent, Bob
 
 MAKEFILE=	makefile
-MAKE_ENV=	CXX="${CXX}"
 
 USE_SDL=	sdl image mixer ttf
 USE_GMAKE=	yes

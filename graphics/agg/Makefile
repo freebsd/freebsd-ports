@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 USE_AUTOTOOLS=	autoconf:261:env automake:15:env libtool:15:env
-MAKE_ENV=	C="${CC}" CXX="${CXX}" AGGCXXFLAGS="${CXXFLAGS}"
+MAKE_ENV=	C="${CC}" AGGCXXFLAGS="${CXXFLAGS}"
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I../include -L./
 
 post-patch:

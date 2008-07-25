@@ -22,8 +22,6 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAKE_ENV+=	CC="${CC}"
-
 PERLFILTERS=	b1ff censor chef eleet fudd jibberish kenny pirate rasterman \
 		spammer studly uniencode upside-down
 CFILTERS=	jethro kraut cockney jive nyc ken ky00te newspeak nethackify

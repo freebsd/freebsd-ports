@@ -21,6 +21,4 @@ WRKSRC=		${WRKDIR}/nte
 PLIST_FILES=	bin/nte
 USE_GMAKE=	yes
 
-MAKE_ENV=	LOCALBASE="${LOCALBASE}"
-
 .include <bsd.port.mk>

@@ -27,7 +27,7 @@ MAN1=		kissdx.1
 USE_RC_SUBR=	kissdx
 
 # set enviroment variables for port makefile
-MAKE_ENV=	FreeBSD=defined CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
+MAKE_ENV=	FreeBSD=defined LDFLAGS="${LDFLAGS}"
 
 # Convert CR/LF to LF in source files
 USE_DOS2UNIX=	yes

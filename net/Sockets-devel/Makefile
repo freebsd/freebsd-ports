@@ -17,7 +17,6 @@ COMMENT=	A C++ wrapper for BSD-style sockets
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 WITH_OPENSSL_BASE=	yes
-MAKE_ENV=	CXX="${CXX}"
 
 post-patch:
 # PREFIX safeness

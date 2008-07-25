@@ -29,8 +29,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 INSTALLS_ICONS=	yes
 
-MAKE_ENV=	CC="${CC}" CXX="${CXX}"
-
 DOCS=		LICENSE README
 
 .include <bsd.port.pre.mk>

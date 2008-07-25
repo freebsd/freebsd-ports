@@ -43,8 +43,6 @@ CMAKE_SOURCE_PATH=	..
 PLIST_SUB+=	VERMAJORMINOR=2.4
 CMAKE2INST=	Utilities/ParaViewConfig.cmake ParaViewConfig.cmake \
 		ParaViewLibraryDepends.cmake cmake_install.cmake
-MAKE_ENV=	CC="${CC}" \
-		CXX="${CXX}"
 LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
 
 post-extract:

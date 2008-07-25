@@ -23,7 +23,6 @@ USE_GL=		yes
 USE_DOS2UNIX=	makefile source/MenuScreen.h source/main.cpp
 
 MAKEFILE=	makefile
-MAKE_ENV=	CXX="${CXX}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|images/|${DATADIR}/images/|' \

@@ -29,7 +29,7 @@ CFLAGS+=	-I${LOCALBASE}/include/nspr
 USE_GMAKE=	YES
 MAKEFILE=	Makefile.ref
 ALL_TARGET=	${OPSYS}`${UNAME} -r`_DBG.OBJ/js
-MAKE_ENV+=	CC="${CC}" CCC="${CXX}"
+MAKE_ENV+=	CCC="${CXX}"
 USE_LDCONFIG=	yes
 SRC_DIR=	js/src
 JSH=		jsapi.h jsautocfg.h jsconfig.h jscompat.h jslong.h jsosdep.h \

@@ -16,9 +16,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Place five pieces in a row on a 3d board
 
 MAKEFILE=	Makefile.linux
-MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-			CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 ALL_TARGET=	default
 
 USE_SDL=	sdl

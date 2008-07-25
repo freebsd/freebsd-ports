@@ -18,7 +18,6 @@ COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 
 USE_BISON=	build
 USE_GMAKE=	yes
-MAKE_ENV=	CC=${CC} CXX=${CXX}
 
 SAVEDIR?=	/var/games/${PORTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/source/

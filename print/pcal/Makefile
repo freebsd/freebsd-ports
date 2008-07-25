@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	PostScript calendar program
 
-MAKE_ENV=	CC="${CC}" HOST_CC="${CC}"
+MAKE_ENV=	HOST_CC="${CC}"
 ALL_TARGET=
 USE_GMAKE=	yes
 

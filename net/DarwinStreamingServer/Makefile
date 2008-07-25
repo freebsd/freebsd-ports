@@ -35,9 +35,7 @@ SUB_LIST+=	PERL=${PERL}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-MAKE_ENV+=	CC="${CC}"				\
-		CXX="${CXX}"				\
-		MAKE="${MAKE}"				\
+MAKE_ENV+=	MAKE="${MAKE}"				\
 		DATADIR="${DATADIR}"			\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\

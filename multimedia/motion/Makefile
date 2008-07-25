@@ -42,8 +42,6 @@ OPTIONS=	PWCBSD "PWCBSD based Webcams (disables BKTR)" off \
 		BKTR "Support for TV Capture cards" on \
 		LINUXTHREADS "Use LinuxThreads" off
 
-MAKE_ENV+=	CC="${CC}"
-
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_BKTR) && !defined(WITH_PWCBSD)

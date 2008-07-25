@@ -15,7 +15,8 @@ DISTNAME=	qtpkg
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Qt based package removal tool
-MAKE_ENV=	LIBS="-lqt-mt ${PTHREAD_LIBS}" CFLAGS="${PTHREAD_CFLAGS}"
+CFLAGS+=	${PTHREAD_CFLAGS}
+MAKE_ENV=	LIBS="-lqt-mt ${PTHREAD_LIBS}"
 
 PLIST_FILES=	sbin/qtpkg
 USE_QT_VER=	3

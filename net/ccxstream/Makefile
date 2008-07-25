@@ -19,7 +19,6 @@ OPTIONS=		SO_KEEPALIVE "Build with SO_KEEPALIVE" ON \
 			TCP_NODELAY "Build with TCP_NODELAY" OFF
 
 USE_GMAKE=		yes
-MAKE_ENV=		CC="${CC}"
 USE_RC_SUBR=		ccxstream
 
 PLIST_FILES=		\

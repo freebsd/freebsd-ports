@@ -21,7 +21,7 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 USE_GMAKE=	yes
 ALL_TARGET=	gkrellweather.so
 
-MAKE_ENV=	enable_nls=1 PTHREAD_LIBS=${PTHREAD_LIBS} CC=${CC}
+MAKE_ENV=	enable_nls=1 PTHREAD_LIBS=${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 

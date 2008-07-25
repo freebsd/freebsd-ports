@@ -20,7 +20,6 @@ LIB_DEPENDS=	SGE.0:${PORTSDIR}/devel/sdl_sge
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer sound
-MAKE_ENV=	CXX="${CXX}"
 
 BUILD_WRKSRC=	${WRKSRC}/sources
 

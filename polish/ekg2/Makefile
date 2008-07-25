@@ -40,11 +40,11 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--with-libgadu
 
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lintl"
 MAKE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CFLAGS+=		-I${LOCALBASE}/include
 
 USE_LDCONFIG=		yes
 

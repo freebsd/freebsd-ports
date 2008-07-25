@@ -15,7 +15,6 @@ DISTNAME=	wistumbler${PORTVERSION}-pre7
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network Stumbler for WaveLAN/IEEE Wireless
 
-MAKE_ENV=	PREFIX=${LOCALBASE} USE_GTK=1
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_GNOME=	gtk20
@@ -25,17 +24,13 @@ MAN1=		wistumbler2.1
 PLIST_FILES=	bin/wistumbler2
 
 .if defined(NO_X)
-MAKE_ENV=	PREFIX=${LOCALBASE} USE_GTK=0
+MAKE_ENV=	USE_GTK=0
+.else
+MAKE_ENV=	USE_GTK=1
 .endif
 
 .include <bsd.port.pre.mk>
 
-# this port needs the file /sys/dev/owi/if_ieee80211.h, but there
-# was not a FreeBSD version bump specifically for that.  Use the
-# nearest one.
-.if ${OSVERSION} < 501107
-IGNORE=		requires newer kernel sources
-.endif
 .if ${OSVERSION} > 700045
 IGNORE=		is not supported on FreeBSD 7.X and later
 .endif
