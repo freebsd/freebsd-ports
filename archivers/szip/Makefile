@@ -9,7 +9,8 @@ PORTNAME=	szip
 PORTVERSION=	1.12b
 PORTREVISION=	2
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.compressconsult.com/szip/
+MASTER_SITES=	http://www.compressconsult.com/szip/ \
+		ftp://ftp.sai.msu.su/pub/unix/Archivers/
 DISTNAME=	sz${PORTVERSION:S/.//}_src
 
 MAINTAINER=	garga@FreeBSD.org
