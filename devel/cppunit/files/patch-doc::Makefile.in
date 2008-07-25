@@ -1,11 +1,36 @@
---- doc/Makefile.in.orig	Wed Jul  7 16:33:12 2004
-+++ doc/Makefile.in	Wed Jul  7 16:34:27 2004
-@@ -161,7 +161,7 @@
+--- doc/Makefile.in.orig	2008-02-20 00:59:51.000000000 -0500
++++ doc/Makefile.in	2008-07-13 18:52:35.000000000 -0400
+@@ -179,7 +179,7 @@
  # and an extra copy or two in the install-data-hook.  
  # However, the manpages do not appear to be tremendously useful, so
  # let's not bother.
 -@DOC_TRUE@htmldir = $(pkgdatadir)/html
 +@DOC_TRUE@htmldir = $(prefix)/share/doc/cppunit
- @DOC_TRUE@html_DATA = $(static_pages) html/index.html
- subdir = doc
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ htmldir = @htmldir@
+ includedir = @includedir@
+ infodir = @infodir@
+@@ -248,6 +248,7 @@
+ 	-rm -rf .libs _libs
+ install-htmlDATA: $(html_DATA)
+ 	@$(NORMAL_INSTALL)
++.if !defined(NOPORTDOCS)
+ 	test -z "$(htmldir)" || $(MKDIR_P) "$(DESTDIR)$(htmldir)"
+ 	@list='$(html_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+@@ -255,6 +256,7 @@
+ 	  echo " $(htmlDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(htmldir)/$$f'"; \
+ 	  $(htmlDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(htmldir)/$$f"; \
+ 	done
++.endif
+ 
+ uninstall-htmlDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -398,7 +400,7 @@
+ 
+ 
+ @DOC_TRUE@install-data-hook:
+-@DOC_TRUE@	cp -pR html/* $(DESTDIR)$(htmldir)
++@DOC_TRUE@	cp -pR html/ $(DESTDIR)$(htmldir)
+ 
+ # Automake's "distcheck" is sensitive to having files left over
+ # after "make uninstall", so we have to clean up the install hook.
