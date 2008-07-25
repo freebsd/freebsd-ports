@@ -1,5 +1,5 @@
---- lxsys.c.orig	2007-11-05 15:40:27.000000000 -0500
-+++ lxsys.c	2007-12-18 15:46:41.000000000 -0500
+--- lxsys.c.orig	2008-06-25 19:17:06.000000000 -0400
++++ lxsys.c	2008-07-18 20:15:10.000000000 -0400
 @@ -1,12 +1,14 @@
 -
 -#include <sys/io.h>
@@ -18,18 +18,17 @@
  #include <fcntl.h>
  #include <termios.h>
  #include "thrdef.h"
-@@ -18,8 +20,9 @@
+@@ -18,7 +20,8 @@
  #include "hwaredef.h"
  
  struct termios old_options;
 -char serport_name[]="/dev/ttyS?";
 +char serport_name[]="/dev/ttyd?";
- 
 +extern int saved_euid;
  
- void lir_mutex_init(void)
- {
-@@ -173,15 +176,13 @@
+ void perseus_input(void){};
+ 
+@@ -190,15 +193,13 @@
  
  int lir_parport_permission(void)
  {
@@ -49,7 +48,7 @@
    }
  if(i != 0)
    {
-@@ -331,11 +332,9 @@
+@@ -355,11 +356,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {
@@ -64,7 +63,7 @@
    }
  if(i!=0)lirerr(764921);
  i=1000;
-@@ -348,11 +347,9 @@
+@@ -372,11 +371,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {
