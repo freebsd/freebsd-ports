@@ -7,7 +7,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		http://komquats.com/distfiles/ \
@@ -23,7 +23,8 @@ OPTIONS=	CJK "Treat CJK ambiguous characters as full width" OFF \
 		MAN "Build and install man pages" ON \
 		NETHACK "Enable nethack-style messages" ON \
 		XTERM_256 "Enable support for 256 colour xterm" OFF \
-		HOSTINLOCKED "Print user@host in locked message" OFF
+		HOSTINLOCKED "Print user@host in locked message" OFF \
+		SHOWENC "Show encoding on the status line" OFF
 
 NO_PACKAGE=	Tends to loop using 100% CPU when used from package - perhaps it hard-codes information about the build host
 
@@ -65,6 +66,11 @@ EXTRA_PATCHES+=	${FILESDIR}/opt-cjkwidth
 
 .if defined(WITH_HOSTINLOCKED)
 EXTRA_PATCHES+= ${FILESDIR}/opt-hostinlocked
+.endif
+
+# show encoding on the status line via option "showenc"
+.if defined(WITH_SHOWENC)
+EXTRA_PATCHES+=	${FILESDIR}/opt-showencoding
 .endif
 
 post-patch:
