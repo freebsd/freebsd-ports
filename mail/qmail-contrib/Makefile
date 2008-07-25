@@ -18,8 +18,6 @@ COMMENT=	Contributed programs for qmail
 
 USE_QMAIL_RUN=	yes
 
-RESTRICTED=	Unsure of djb's license
-
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
 

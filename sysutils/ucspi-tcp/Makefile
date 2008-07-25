@@ -23,8 +23,6 @@ OPTIONS=	MAN "Install man(1) pages" on \
 		SSL "Adds support for SSL (Secure Socket Layer)" off \
 		RBL2SMTPD "Don't drop connection, pass envvar to smtpd" off
 
-RESTRICTED=	Unsure of djb's license
-
 ALL_TARGET=	prog install instcheck
 
 SCRIPTS_ENV=	BINOWN="${BINOWN}" \
