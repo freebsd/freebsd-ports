@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	linrad
-PORTVERSION=	2.43
+PORTVERSION=	2.48
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\
 		http://www.sm5bsz.com/linuxdsp/archive/
-DISTNAME=	lir02-43
+DISTNAME=	lir02-48
 EXTRACT_SUFX=	.tbz
 DIST_SUBDIR=	${PORTNAME}
 
@@ -30,7 +30,6 @@ USE_BZIP2=	yes
 ALL_TARGET=	xlinrad
 USE_XORG=	x11
 ONLY_FOR_ARCHS=	i386
-X11_PATCHFILES=	help.c xmain.c
 LINRAD_DOCFILES=	z_APM.txt z_BUFFERS.txt z_CALIBRATE.txt \
 			z_COPYRIGHT.txt z_GIFINFO.txt \
 			z_MOUSE.txt z_NETWORK.txt \
@@ -42,9 +41,6 @@ post-patch:
 	-e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}/|' \
 		${WRKSRC}/help.c
-.for f in ${X11_PATCHFILES}
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/${f}
-.endfor
 
 do-install:
 	${MKDIR} ${DATADIR}
