@@ -9,7 +9,9 @@ PORTNAME=	queue-fix
 PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.netmeridian.com/e-huss/
+MASTER_SITES=	http://www.netmeridian.com/e-huss/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Repairs or generates a qmail queue structure
