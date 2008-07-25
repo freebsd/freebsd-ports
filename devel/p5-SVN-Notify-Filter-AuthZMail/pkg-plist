@@ -1,0 +1,9 @@
+%%SITE_PERL%%/SVN/Notify/Filter/AuthZMail.pm
+@dirrmtry %%SITE_PERL%%/SVN/Notify/Filter
+@dirrmtry %%SITE_PERL%%/SVN/Notify
+@dirrmtry %%SITE_PERL%%/SVN
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Notify/Filter/AuthZMail/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Notify/Filter/AuthZMail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Notify/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Notify
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN

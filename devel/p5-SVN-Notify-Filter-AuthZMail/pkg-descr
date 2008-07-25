@@ -1,0 +1,7 @@
+This module is a filter for SVN::Notify, intended to assist with
+the maintenance of access control lists with Subversion repositories.
+This module removes the need to maintain a separate list of people
+to send email notification messages to (via svnnotify --to arguments),
+from the AuthZSVNAccessFile.
+
+WWW:	http://search.cpan.org/dist/SVN-Notify-Filter-AuthZMail/
