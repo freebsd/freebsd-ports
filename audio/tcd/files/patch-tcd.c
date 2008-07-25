@@ -1,5 +1,5 @@
---- src/tcd.c.orig	2008-07-16 00:27:33.000000000 +0200
-+++ src/tcd.c	2008-07-16 00:27:33.000000000 +0200
+--- src/tcd.c.orig	2004-06-15 22:32:31.000000000 +0200
++++ src/tcd.c	2008-07-25 13:25:50.000000000 +0200
 @@ -33,6 +33,7 @@
  #include <unistd.h>
  
@@ -8,7 +8,68 @@
  
  #include "cd-utils.h"
  #include "cddb.h"
-@@ -134,11 +135,6 @@
+@@ -80,37 +81,40 @@
+ 
+ static void handle_next_track(void)
+ {
+-    if (!CD_INDRIVE(state.cdrom->status)) {
++    int next_track;
++
++    if (!CD_INDRIVE(state.cdrom->status))
+         return;
+-    }
+-    if (state.cdrom->cur_track == state.cdrom->numtracks - 1) {
+-        SDL_CDStop(state.cdrom);
+-    } else if (state.play_method == REPEAT_TRK) {
+-        SDL_CDPlayTracks(state.cdrom, state.cdrom->cur_track + 1, 0, 1, 0);
+-    } else {
+-        SDL_CDPlayTracks(state.cdrom, state.cdrom->cur_track + 1, 0, 0, 0);
+-    }
++
++    if (state.cdrom->cur_track == state.cdrom->numtracks - 1)
++	next_track = 0;
++    else
++	next_track = state.cdrom->cur_track + 1;
++
++    if (state.play_method == REPEAT_TRK)
++        SDL_CDPlayTracks(state.cdrom, next_track, 0, 1, 0);
++    else
++        SDL_CDPlayTracks(state.cdrom, next_track, 0, 0, 0);
+ }
+ 
+ static void handle_prev_track(void)
+ {
+     int prev_track;
+ 
+-    if (!CD_INDRIVE(state.cdrom->status)) {
++    if (!CD_INDRIVE(state.cdrom->status))
+         return;
+-    }
+-    if (state.cdrom->cur_track == 0) {
+-        prev_track = 0;
+-    } else if (state.cdrom->cur_frame / CD_FPS < 5) {
+-        prev_track = state.cdrom->cur_track - 1;
+-    } else {
++
++    if (state.cdrom->cur_frame / CD_FPS > 5)
+         prev_track = state.cdrom->cur_track;
+-    }
+-    if (state.play_method == REPEAT_TRK) {
++    else if (state.cdrom->cur_track == 0)
++	prev_track = state.cdrom->numtracks - 1;
++    else
++	prev_track = state.cdrom->cur_track - 1;
++
++    if (state.play_method == REPEAT_TRK)
+         SDL_CDPlayTracks(state.cdrom, prev_track, 0, 1, 0);
+-    } else {
++    else
+         SDL_CDPlayTracks(state.cdrom, prev_track, 0, 0, 0);
+-    }
+ }
+ 
+ static void handle_goto(void)
+@@ -134,11 +138,6 @@
      }
  }
  
@@ -20,7 +81,7 @@
  static void handle_eject(void)
  {
      SDL_CDEject(state.cdrom);
-@@ -179,6 +175,26 @@
+@@ -179,6 +178,26 @@
      }
  }
  
@@ -47,7 +108,7 @@
  static void init_SDL(int cdrom_num)
  {
      int err = SDL_Init(SDL_INIT_CDROM);
-@@ -218,10 +234,12 @@
+@@ -218,10 +237,12 @@
  {
      unsigned long discid = cddb_discid(state.cdrom);
      if (discid != state.current_discid) {
@@ -63,7 +124,7 @@
          state.current_discid = discid;
      }
  }
-@@ -237,7 +255,7 @@
+@@ -237,7 +258,7 @@
      state.play_method = NORMAL;
  
      init_SDL((argc > 1) ? strtol(argv[1], NULL, 0) : 0);
@@ -72,7 +133,7 @@
      tcd_ui_init();
      tcd_ui_update(&state);
      state.current_discid = cddb_discid(state.cdrom);
-@@ -255,14 +273,17 @@
+@@ -255,14 +276,17 @@
              case '-': case '_': handle_prev_track(); break;
              case 'g': case 'G': handle_goto(); break;
              case 'c': case 'C': state.play_method = REPEAT_CD; break;
