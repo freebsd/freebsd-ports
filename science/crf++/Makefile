@@ -18,12 +18,5 @@ COMMENT=	Yet Another CRF toolkit
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	3.2+
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500016
-MAKE_ARGS+=	LDFLAGS=${PTHREAD_LIBS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
