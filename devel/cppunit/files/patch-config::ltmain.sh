@@ -1,6 +1,6 @@
---- config/ltmain.sh.orig	Wed Jul  7 16:52:56 2004
-+++ config/ltmain.sh	Wed Jul  7 16:53:13 2004
-@@ -5425,10 +5425,12 @@
+--- config/ltmain.sh.orig	2008-07-11 18:31:19.000000000 +0800
++++ config/ltmain.sh	2008-07-11 18:32:49.000000000 +0800
+@@ -6092,10 +6092,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
