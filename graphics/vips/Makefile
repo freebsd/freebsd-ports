@@ -54,6 +54,10 @@ PLIST_SUB+=	VERSION=${PORTVERSION:R}
 
 CONFIGURE_ENV+=	MAGICK_CFLAGS="-I${LOCALBASE}/include/GraphicsMagick"
 CONFIGURE_ARGS+=--without-x --mandir=${PREFIX}/man --with-magickpackage=GraphicsMagick
+.for p in tiff jpeg zip png
+CONFIGURE_ARGS+=--with-$p-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+=--with-$p-libraries=${LOCALBASE}/lib
+.endfor
 
 # This is used to generate the list of man-pages and MLINKS. It
 # looks through the available man-pages and filters out those,
