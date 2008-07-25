@@ -11,8 +11,10 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.spinnaker.de/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of tools for use with mutt's external mail address query feature
+
+RUN_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 WRKSRC=		${WRKDIR}/lbdb-${PORTVERSION}
 GNU_CONFIGURE=	YES
@@ -69,5 +71,8 @@ PLIST_SUB+=	GETENT="@comment "
 
 MAN1=		nodelist2lbdb.1 lbdbq.1 lbdb-fetchaddr.1 lbdb_dotlock.1 \
 		mutt_ldap_query.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's/sed/gsed/' ${WRKSRC}/m_muttalias.sh.in
 
 .include <bsd.port.post.mk>
