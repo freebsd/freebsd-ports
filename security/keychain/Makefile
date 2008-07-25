@@ -8,7 +8,10 @@
 PORTNAME=	keychain
 PORTVERSION=	2.6.8
 CATEGORIES=	security
-MASTER_SITES=	http://dev.gentoo.org/~agriffis/keychain/
+MASTER_SITES=	http://dev.gentoo.org/~agriffis/keychain/ \
+		http://agriffis.n01se.net/keychain/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A user-friendly front-end to ssh-agent(1)
