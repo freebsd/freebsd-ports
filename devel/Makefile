@@ -2095,6 +2095,7 @@
     SUBDIR += py-istring
     SUBDIR += py-jcc
     SUBDIR += py-json-py
+    SUBDIR += py-jsonlib
     SUBDIR += py-kid
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
