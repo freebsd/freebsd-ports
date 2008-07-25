@@ -12,7 +12,7 @@ PORTREVISION=	8
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.mcatalog.net/releases/
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	An application for catalogue films and books
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/evolution-sharp.pc:${PORTSDIR}/mail/evolution-sharp \

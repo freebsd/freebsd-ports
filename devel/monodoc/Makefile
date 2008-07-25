@@ -13,7 +13,7 @@ PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	Documentation for Mono and Mono libraries
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono

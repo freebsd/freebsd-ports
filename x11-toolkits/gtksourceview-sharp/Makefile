@@ -13,7 +13,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/gtksourceview-sharp-2.0/
 DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	gtksourview bindings for Mono.
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \

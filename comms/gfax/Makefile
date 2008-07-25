@@ -12,7 +12,7 @@ PORTREVISION=	7
 CATEGORIES=	comms print gnome
 MASTER_SITES=	http://gfax.cowlug.org/
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	A Mono based pop-up fax manager
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \

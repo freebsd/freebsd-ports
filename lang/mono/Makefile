@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	An open source implementation of .NET Development Framework
 
 CONFLICTS=	mono-devel-[0-9]* mono-svn-[0-9]*
