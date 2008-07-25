@@ -14,7 +14,6 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXTRACTUNITDIR}
 OPT=-CX
 
 MAKE_ENV+=		PP=${LOCALBASE}/bin/ppc386 \
-			PREFIX=${PREFIX} \
 			FPCMAKE=${LOCALBASE}/bin/fpcmake \
 			FPCTARGET=${BUILDNAME} \
 			OPT="${OPT}" \
