@@ -13,7 +13,7 @@ PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://download.gna.org/bless/
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	A high quality, full featured hex editor
 
 USE_GNOME=	gnomehack gnomeprefix gnometarget gnomedocutils gtksharp20

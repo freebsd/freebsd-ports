@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	Mono bindings for evolution
 
 BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution

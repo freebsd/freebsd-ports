@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-sharp
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	Mono bindings for gmime
 
 LIB_DEPENDS=	gmime-2.0.4:${PORTSDIR}/mail/gmime2

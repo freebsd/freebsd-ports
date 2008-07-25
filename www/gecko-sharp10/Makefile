@@ -12,7 +12,7 @@ PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/gecko-sharp/
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	Mono bindings for embeding mozilla
 
 USE_GECKO=	firefox mozilla

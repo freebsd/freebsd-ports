@@ -14,7 +14,7 @@ MASTER_SITES=	http://muine-player.org/releases/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	tmclaugh/muine
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	Mono based Gnome audio player
 
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \

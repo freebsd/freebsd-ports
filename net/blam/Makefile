@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.cmartin.tk/blam/
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	Mono based RSS feed reader
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gecko-sharp-2.0.pc:${PORTSDIR}/www/gecko-sharp20

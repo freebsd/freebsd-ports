@@ -14,7 +14,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
 
-MAINTAINER=	bsd-sharp-list@forge.novell.com
+MAINTAINER=	bsd-sharp@googlegroups.com
 COMMENT=	Personal photo management to the GNOME desktop
 
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
