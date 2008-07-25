@@ -8,7 +8,9 @@
 PORTNAME=	scanhill
 DISTVERSION=	0.5-p1
 CATEGORIES=	security net-im
-MASTER_SITES=	http://www.enderunix.org/scanhill/
+MASTER_SITES=	http://www.enderunix.org/scanhill/ \
+		http://www.sourcefiles.org/Networking/Security/Sniffers/ \
+		http://www.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/s/sc/scanhill/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Microsoft Messenger Protocol Sniffer
