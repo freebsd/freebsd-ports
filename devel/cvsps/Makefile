@@ -18,6 +18,8 @@ COMMENT=	Create patchset information from CVS
 USE_GMAKE=	yes
 ALL_TARGET=	cvsps
 
+CONFLICTS=	cvsps-devel-*
+
 MAN1=		cvsps.1
 PLIST_FILES=	bin/cvsps
 
