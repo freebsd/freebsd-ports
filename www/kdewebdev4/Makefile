@@ -7,7 +7,7 @@
 
 PORTNAME=	kdewebdev
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -20,7 +20,7 @@ COMMENT=	Comprehensive html/website development environment
 BUILD_DEPENDS=	cvsservice:${PORTSDIR}/devel/kdesdk3 \
 		xgettext:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	cvsservice:${PORTSDIR}/devel/kdesdk3 \
-		tidy:${PORTSDIR}/www/tidy
+		tidy:${PORTSDIR}/www/tidy-lib
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
