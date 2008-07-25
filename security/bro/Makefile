@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/bro-${PORTVERSION}.1
 USE_BISON=	build
 USE_LDCONFIG=	${PREFIX}/share
 GNU_CONFIGURE=	yes
-MAKE_ENV+=	CC="${CC}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 USE_PERL5=	yes

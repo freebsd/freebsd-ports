@@ -20,7 +20,6 @@ MAN5=		anacrontab.5
 USE_GMAKE=	yes
 USE_RC_SUBR=	anacron.sh
 SUB_FILES=	pkg-message
-MAKE_ENV=	CC="${CC}"
 
 post-patch:
 .for f in Makefile anacron.8 anacrontab.5

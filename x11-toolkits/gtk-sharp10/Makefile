@@ -28,8 +28,6 @@ USE_GNOME=	gnomehack gtkhtml3 vte librsvg2 libgnomecanvas \
 
 USE_AUTOTOOLS=	libtool:15
 
-MAKE_ENV=MONO_SHARED_DIR=${WRKDIR}
-
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|'

@@ -19,7 +19,7 @@ COMMENT=	An easy to use gtk program for configuring Xbindkeys
 RUN_DEPENDS=	${LOCALBASE}/bin/xbindkeys:${PORTSDIR}/x11/xbindkeys
 
 USE_GNOME=	gtk20
-MAKE_ENV=	CC="${CC} ${CFLAGS}"
+CC+=		${CFLAGS}
 
 PLIST_FILES=	bin/xbindkeys_config
 

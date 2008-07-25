@@ -27,8 +27,9 @@ WRKSRC=		${WRKDIR}/GtkAda-2_8_1
 CONFLICTS=	gtkada-[0-9]* \
 		gtkada-devel-[0-9]*
 
-CONFIGURE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${LOCALBASE}/bin/gcc41/gcc41
-MAKE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${LOCALBASE}/bin/gcc41/gcc41
+CC=		${LOCALBASE}/bin/gcc41/gcc41
+CONFIGURE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${CC}
+MAKE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH}
 CONFIGURE_ARGS=	--with-GL=GL
 
 USE_GL=		gl glu

@@ -18,7 +18,7 @@ COMMENT=	Utility to render graphical statistics for pf
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 MAKE_ARGS=	"LD_GD=gd"
-MAKE_ENV+=	CFLAGS="${CFLAGS}" CC="${CC}" __MAKE_CONF=/dev/null
+MAKE_ENV+=	__MAKE_CONF=/dev/null
 USE_ICONV=	yes
 
 MAN8=		pfstat.8 \

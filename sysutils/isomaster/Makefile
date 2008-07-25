@@ -18,7 +18,7 @@ USE_GNOME=	gtk20 pkgconfig intlhack gnomehier
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 
-MAKE_ENV=	PREFIX=${PREFIX} DESKTOPPATH=${DESKTOPDIR}
+MAKE_ENV=	DESKTOPPATH=${DESKTOPDIR}
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS:S/"//g} \
 		`pkg-config --cflags gtk+-2.0` \

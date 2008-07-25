@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
-MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20

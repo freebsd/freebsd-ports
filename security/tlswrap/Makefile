@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-1.04
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An FTP proxy that wraps data and control with TLS/SSL
 
-MAKE_ENV+=	CC="${CC}"
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 

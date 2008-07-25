@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for guessing a text's charset and language
 
 CFLAGS+=	-DUDM_GUESSER_STANDALONG -DLMDIR=\"${PREFIX}/share/mguesser\"
-MAKE_ENV+=	CFLAGS="${$CFLAGS}"
 
 post-patch:
 	${REINPLACE_CMD} -E \

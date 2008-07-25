@@ -51,7 +51,7 @@ BINMODE=	4511
 BINMODE=	2511
 .endif
 
-MAKE_ENV+=	CC="${CC}" LOCALEDIR=${PREFIX}/share/locale
+MAKE_ENV+=	LOCALEDIR=${PREFIX}/share/locale
 CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${PREFIX}/share/gkrellm/themes\"' \
 		-DSYSTEM_PLUGINS_DIR='\"${PREFIX}/libexec/gkrellm/plugins\"'
 

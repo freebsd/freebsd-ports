@@ -34,7 +34,7 @@ RESTRICTED=	Source recipient must acknowledge license
 FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
 FETCH_CMD=	/usr/bin/fetch -Rr		# see bin/76134
 NO_WRKSUBDIR=	yes
-MAKE_ENV=	CCFLAGS="${CFLAGS}" SHELL="${SH}"
+MAKE_ENV=	CCFLAGS="${CFLAGS}"
 .if defined(WANT_STATIC)
 MAKE_ENV+=	LDFLAGS=-static
 .endif

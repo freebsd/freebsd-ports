@@ -19,7 +19,6 @@ COMMENT=	Filemanager with FTP capabilities. Uses Tcl/Tk
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 MAKEFILE=	Makefile.freebsd_gcc
-MAKE_ENV+=	LOCALBASE=${LOCALBASE}
 
 pre-build:
 #	@ ${RM} ${WRKSRC}/ext.so

@@ -17,7 +17,6 @@ COMMENT=	HTML Help Maker
 LIB_DEPENDS=	lzxcomp.1:${PORTSDIR}/archivers/liblzxcomp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-MAKE_ENV=	PREFIX=${PREFIX}
 
 PLIST_FILES=	bin/hhm
 

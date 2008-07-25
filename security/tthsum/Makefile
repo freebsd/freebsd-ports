@@ -15,7 +15,7 @@ COMMENT=	A command-line utility for generating and checking TTH message digests
 
 USE_GMAKE=	yes
 
-MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 PORTDOCS=	Changelog.txt
 PLIST_FILES=	bin/tthsum

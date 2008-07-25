@@ -15,7 +15,6 @@ MAINTAINER=	frank@pinky.sax.de
 COMMENT=	A small and fast caching web proxy
 
 MAN1=		polipo.1
-MAKE_ENV=	CC="${CC}"
 
 USE_RC_SUBR=	polipo.sh
 

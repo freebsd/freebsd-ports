@@ -17,8 +17,6 @@ PLIST_FILES=	bin/dfileserver
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAKE_ENV=	CXX=${CXX}
-
 post-patch:
 	${REINPLACE_CMD} 's,g++,${CXX},;s,$$GCCFLAGS,${CXXFLAGS},; \
 		s,strip,${STRIP_CMD},' ${WRKSRC}/build.sh
