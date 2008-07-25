@@ -1,0 +1,12 @@
+bin/skyfish
+etc/skyfish.conf.dist
+share/doc/skyfish/README
+share/doc/skyfish/README.rus
+share/doc/skyfish/CHANGES
+share/doc/skyfish/COPYRIGHT
+share/doc/skyfish/CREDITS
+@dirrm share/doc/skyfish
+@cwd %%KMODDIR%%
+ng_skyfish.ko
+@unexec /bin/rm %D/skyfish2.ko.symbols 2>/dev/null || /usr/bin/true
+@unexec kldxref %D

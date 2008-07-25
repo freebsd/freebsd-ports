@@ -860,6 +860,7 @@
     SUBDIR += sipxvxml
     SUBDIR += sixxs-aiccu
     SUBDIR += skstream
+    SUBDIR += skyfish
     SUBDIR += skype
     SUBDIR += skype-devel
     SUBDIR += skype12
