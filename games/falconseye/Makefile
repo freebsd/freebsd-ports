@@ -24,7 +24,7 @@ USE_SDL=	sdl
 USE_PERL5_BUILD=yes
 USE_ZIP=	yes
 USE_XORG=	x11 xpm xaw
-MAKE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib -I${LOCALBASE}/include/SDL11" PREFIX="${PREFIX}"
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I${LOCALBASE}/include/SDL11
 WRKSRC=		${WRKDIR}
 
 post-patch:

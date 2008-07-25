@@ -18,7 +18,7 @@ COMMENT=	Meshes partionning tool used by Code_Aster
 CONFLICTS=	metis-[0-9]*
 
 ALL_TARGET=	default
-MAKE_ENV+=	CC="${CC}" AR="${AR}" F77="${F77}" FFLAGS="${FFLAGS}"
+MAKE_ENV+=	AR="${AR}"
 REINPLACE_ARGS=	-i ""
 
 USE_FORTRAN=	yes

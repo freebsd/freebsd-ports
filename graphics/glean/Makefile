@@ -24,8 +24,7 @@ WRKSRC=		${WRKDIR}/glean/src
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
-MAKE_ENV+=	GLEAN_ROOT="${WRKDIR}/glean" \
-		CXX="${CXX}"
+MAKE_ENV+=	GLEAN_ROOT="${WRKDIR}/glean"
 ALL_TARGET=	install
 
 do-install:

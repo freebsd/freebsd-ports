@@ -22,7 +22,6 @@ USE_SDL=	sdl mixer
 USE_GL=		gl
 USE_GMAKE=	yes
 
-MAKE_ENV=	CXX="${CXX}"
 PORTDOCS=	*
 
 post-patch:

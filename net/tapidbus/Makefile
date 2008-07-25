@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\-O2||' ${WRKSRC}/configure

@@ -19,7 +19,8 @@ USE_SDL=	mixer image sdl
 USE_BZIP2=	yes
 USE_GL=		glut
 CFLAGS+=	"-I${LOCALBASE}/include"
-MAKE_ENV=	CC="${CC} ${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CC+=		${CFLAGS}
+MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|g" \

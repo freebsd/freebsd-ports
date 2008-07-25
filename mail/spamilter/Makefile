@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 LDFLAGS+=	${PTHREAD_LIBS}
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}" __MAKE_CONF=/dev/null
+MAKE_ENV+=	__MAKE_CONF=/dev/null
 
 BINFILES=	spamilter-system-report spamilter-user-report
 DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt \

@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	COPYING ChangeLog INSTALL README TODO
 MAN1=		y4mscaler.1
 PLIST_FILES=	bin/y4mscaler
-MAKE_ENV=	CXX="${CXX}"
 
 .include <bsd.port.pre.mk>
 

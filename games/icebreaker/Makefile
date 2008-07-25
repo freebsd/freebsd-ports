@@ -22,8 +22,7 @@ MAKE_ENV+=	prefix="${PREFIX}" \
 		mandir="${MANPREFIX}/man" \
 		CHMOD="${CHMOD}" \
 		CHOWN="${CHOWN}" \
-		MKDIR="${MKDIR}" \
-		CC="${CC}"
+		MKDIR="${MKDIR}"
 
 MAN6=		${PORTNAME}.6
 

@@ -20,9 +20,7 @@ USE_GMAKE=	yes
 USE_SDL=	sdl
 
 ALL_TARGET=	rs
-MAKE_ENV=	CXX="${CXX}"
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 PORTDOCS=	README

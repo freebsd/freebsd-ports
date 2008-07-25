@@ -20,7 +20,6 @@ BUILD_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade \
 
 USE_GNOME=	gtk20
 ALL_TARGET=
-MAKE_ENV=	PREFIX=${PREFIX}
 MAN1=		g3data.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/g3data %%EXAMPLESDIR%%/test1.png %%EXAMPLESDIR%%/test1.values \

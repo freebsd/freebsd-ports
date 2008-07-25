@@ -19,7 +19,6 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Netware server emulator for Un*x systems
 
 WRKSRC=		${WRKDIR}/mars_nwe
-MAKE_ENV=	CC="${CC}"
 
 PLIST=	${WRKDIR}/PLIST.DYN
 

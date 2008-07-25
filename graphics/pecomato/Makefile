@@ -18,7 +18,6 @@ USE_GMAKE=		yes
 USE_PYTHON_BUILD=	yes
 
 MAKEFILE=	Makefile.unix
-MAKE_ENV=	CC="${CC}"
 
 MAN1=		pecomato.1
 PLIST_FILES=	bin/pecomato

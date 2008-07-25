@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libSockets.a:${PORTSDIR}/net/Sockets
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 WITH_OPENSSL_BASE=	yes
-MAKE_ENV=	CXX="${CXX}"
 
 # ssl support
 CFLAGS+=	${PTHREAD_CFLAGS} -DHAVE_OPENSSL

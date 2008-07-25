@@ -38,8 +38,7 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \
 		OSVERSION=${OSVERSION} \
-		NOISY_BUILD=YES \
-		CXX="${CXX}"
+		NOISY_BUILD=YES
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 
 OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \

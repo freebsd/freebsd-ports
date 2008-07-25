@@ -39,8 +39,7 @@ MONO_SHARED_DIR=${WRKDIR}
 # LC_ALL is set in order to work around issues people are having when using
 # other languages.  This has shown itself in build fails and possibly other
 # strange crashes.
-MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
-		LC_ALL=C
+MAKE_ENV=	LC_ALL=C
 
 # Removed amd64 arch because builds are exhibiting semaphore problems on
 # pointyhat runs causing failure to build.

@@ -26,7 +26,6 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 
 USE_FORTRAN=	yes
 FFLAGS+=	-fno-range-check
-MAKE_ENV+=	FFLAGS="${FFLAGS}"
 USE_XORG=	x11 xi
 NO_WRKSUBDIR=	yes
 MAXOBV?=	100000	# Change if you need more observations/variable

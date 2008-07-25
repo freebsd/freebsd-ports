@@ -21,8 +21,6 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/pouetChess_0.11
 
-MAKE_ENV=	CXX="${CXX}"
-
 DESKTOP_ENTRIES="pouetChess" \
 		"Play chess" \
 		"${DATADIR}/textures/1.png" \

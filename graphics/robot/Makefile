@@ -24,7 +24,6 @@ MAKE_ENV+=	OPENWINHOME=${LOCALBASE}
 WEB_BROWSER?=	firefox
 USE_FORTRAN=	yes
 FFLAGS+=	-ffixed-line-length-80
-MAKE_ENV+=	FFLAGS="${FFLAGS}"
 
 MANL=		robot.l
 

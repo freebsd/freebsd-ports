@@ -23,7 +23,6 @@ QT_COMPONENTS=	gui qt3support qmake_build uic_build rcc_build moc_build svg
 
 QMAKE?=		qmake-qt4
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
-MAKE_ENV=	QMAKESPEC="{QMAKESPEC}"
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DATADIR=	${PREFIX}/share/djgame2

@@ -38,7 +38,7 @@ EXDIRS=		NACA012 quadloop square test
 
 .pre-configure:
 HOSTTYPE=	${UNAME} -s
-MAKE_ENV=       CXX=${CXX} HOSTTYPE=${${HOSTTYPE}}
+MAKE_ENV=	HOSTTYPE=${${HOSTTYPE}}
 
 post-patch:
 	@${MV} ${WRKSRC}/FLAG.linux ${WRKSRC}/FLAG.${${HOSTTYPE}}

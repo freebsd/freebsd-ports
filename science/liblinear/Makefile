@@ -19,8 +19,6 @@ OPTIONS=	OCFLAGS "Use optimized CFLAGS" On
 
 USE_ZIP=	yes
 
-MAKE_ENV=	CC="${CC}" CXX="${CXX}"
-
 TXT_DOCS=	COPYRIGHT README
 
 .if !defined(NOPORTDOCS)

@@ -15,7 +15,6 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Graphical overview of traffic going through your IPFW rules
 
 USE_GNOME=	gtk12
-MAKE_ENV+=	MANPREFIX="${MANPREFIX}"
 
 MAN8=		ipfw-al.8 ipfw-graph.8
 

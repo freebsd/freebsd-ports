@@ -18,8 +18,7 @@ COMMENT=	Proxy servers set (support HTTP(S), FTP, SOCKS, POP3, TCP & UDP)
 NO_WRKSUBDIR=	yes
 USE_RC_SUBR=	3proxy.sh
 MAKEFILE=	Makefile.unix
-MAKE_ENV=	CC="${CC}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
 MAN3=	3proxy.conf.3

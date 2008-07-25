@@ -20,7 +20,6 @@ BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
 
 USE_GL=		gl
 USE_SDL=	sdl image ttf
-MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 SCONS_ARGS=	prefix=${PREFIX}
 
 PLIST=		${WRKDIR}/pkg-plist

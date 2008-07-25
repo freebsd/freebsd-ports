@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_WRKSRC=	${WRKSRC}/${PORTNAME}/modules/pony
 MAKEFILE=	GNUmakefile
-MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 post-patch:
 	@${REINPLACE_CMD} -e '/APPLE_CC/s|$$| \&\& !defined(__FreeBSD__)|'\

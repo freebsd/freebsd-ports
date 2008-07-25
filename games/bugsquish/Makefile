@@ -16,7 +16,6 @@ COMMENT=	Bug-squishing, fly-swatting action
 
 USE_SDL=	mixer image
 USE_GMAKE=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

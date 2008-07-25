@@ -23,7 +23,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-1.1
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 MAKEFILE=	makefile
-MAKE_ENV=	CXX="${CXX}"
 
 .if !defined(NOPORTDOCS)
 post-install:

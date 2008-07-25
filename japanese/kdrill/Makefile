@@ -22,7 +22,6 @@ MAN1=		kdrill.1 makedic.1 makeedict.1
 
 MANCOMPRESSED=	yes
 USE_IMAKE=	yes
-MAKE_ENV+=	LOCALBASE=${LOCALBASE}
 
 RUN_DEPENDS+=	xjdic:${PORTSDIR}/japanese/edict
 

@@ -33,7 +33,6 @@ CONFLICTS=	ja-p5-Mail-SpamAssassin-[0-9]*
 
 PERL_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_ENV+=	CC="${CC}"
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="${CONTACT_ADDRESS}" \
 		LOCALSTATEDIR="/var/db/spamassassin"

@@ -22,7 +22,6 @@ USE_BZIP2=	yes
 USE_IMAKE=	yes
 ALL_TARGET=	canna
 USE_LDCONFIG=	yes
-MAKE_ENV+=	CC=$(CC)
 
 MANLANG="" ja
 MAN1=	addwords.1 cannacheck.1 cannakill.1 cannaserver.1 cannastat.1 \

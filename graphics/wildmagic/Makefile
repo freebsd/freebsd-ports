@@ -25,7 +25,7 @@ DOS2UNIX_REGEX=	.*\.(wm${MV}|h|inl|cpp)
 MAKEFILE=	makefile.wm${MV}
 ALL_TARGET=	build
 MAKE_ARGS=	CFG=${CONFIG} SYS=${OPSYS:L} GRF=${GRF}
-MAKE_ENV=	CC=${CXX} GCC=${CXX} AR=${AR} EGL=${EGL} EGL0=glx EGL1=Glx	\
+MAKE_ENV=	GCC=${CXX} AR=${AR} EGL=${EGL} EGL0=glx EGL1=Glx	\
 		INCPATH="-I${LOCALBASE}/include"		\
 		LIBPATH="-L${LOCALBASE}/lib"			\
 		XLIBS="-lX11 -lXext" GLIBS="-lGL -lGLU"

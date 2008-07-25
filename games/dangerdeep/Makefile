@@ -24,7 +24,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/maps/default.xml:${PORTSDIR}/games/d
 USE_GL=		yes
 USE_SDL=	sdl mixer image net
 
-MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 SCONS_ARGS=	installbindir=${PREFIX}/bin installdatadir=${DATADIR}
 
 PLIST_FILES=	bin/dangerdeep bin/crosssection bin/damagemodel \

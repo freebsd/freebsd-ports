@@ -18,8 +18,7 @@ MANCOMPRESSED=	no
 
 USE_LDCONFIG=	yes
 MAKE_ENV+=	BINOWN=${BINOWN} \
-		BINGRP=${BINGRP} \
-		PREFIX=${PREFIX}
+		BINGRP=${BINGRP}
 
 # Please, please keep this!
 USE_REINPLACE=	yes

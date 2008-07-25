@@ -26,7 +26,6 @@ USE_GNOME=	gnomeprefix gnomehack gtk20
 
 SNAPSHOT=	20050720
 WRKSRC=		${WRKDIR}/PopplerKit
-MAKE_ENV+=	CXX=${CXX}
 ADDITIONAL_CPPFLAGS+=	-DPOPPLER_0_5
 
 post-patch:

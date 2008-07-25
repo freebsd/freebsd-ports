@@ -22,7 +22,6 @@ USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl net image mixer sound
 USE_GL=		gl glu
-MAKE_ENV=	CXX="${CXX}"
 
 WRKSRC=		"${WRKDIR}/F-1 Spirit"
 BUILD_WRKSRC=	${WRKSRC}/sources

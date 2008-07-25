@@ -45,7 +45,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_MOTIF=	yes
-MAKE_ENV=	CC="${CC}"
 
 WRKSRC=		${WRKDIR}/afni_src
 MAKEFILE=	Makefile.FreeBSD_PORT
