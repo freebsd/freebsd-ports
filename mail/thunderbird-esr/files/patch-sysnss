@@ -7,9 +7,33 @@
 -
  ifndef MOZ_NATIVE_JPEG
  tier_1_dirs	+= jpeg
---- security/manager/Makefile.in.orig	Tue Mar 28 14:36:54 2006
-+++ security/manager/Makefile.in	Tue Mar 28 14:40:29 2006
-@@ -54,22 +54,13 @@
+--- security/manager/ssl/src/Makefile.in.orig	Mon Aug 14 19:22:52 2006
++++ security/manager/ssl/src/Makefile.in	Thu Aug 31 15:17:20 2006
+@@ -124,19 +124,19 @@
+ 		  pipboot \
+ 		  $(NULL)
+ 
+-EXTRA_DEPS = $(NSS_DEP_LIBS)
+ 
+ DEFINES += -DNSS_ENABLE_ECC
+ 
+ # Use local includes because they are inserted before INCLUDES
+ # so that Mozilla's nss.h is used, not glibc's
+-LOCAL_INCLUDES += $(NSS_CFLAGS)
++LOCAL_INCLUDES += -I%%LOCALBASE%%/include/nss/nss
+ 
+ EXTRA_DSO_LDOPTS += \
+ 		$(MOZ_UNICHARUTIL_LIBS) \
+ 		$(MOZ_COMPONENT_LIBS) \
+ 		$(MOZ_JS_LIBS) \
+ 		$(NSS_LIBS) \
++		$(LOCAL_INCLUDES) \
+ 		$(NULL)
+ 
+ include $(topsrcdir)/config/rules.mk
+--- security/manager/Makefile.in.orig	2008-05-23 19:45:26.000000000 -0400
++++ security/manager/Makefile.in	2008-07-17 14:59:30.000000000 -0400
+@@ -54,22 +54,13 @@ PACKAGE_VARS += \
  	SSL3_LIB \
  	SOFTOKEN3_LIB \
  	SOFTOKEN3_CHK \
@@ -32,7 +56,7 @@
  # Default
  HAVE_FREEBL_LIBS = 1
  
-@@ -217,11 +208,6 @@
+@@ -218,11 +209,6 @@ export:: .nss.cleaned
  .nss.cleaned: .nss.checkout
  ifndef MOZ_NATIVE_NSS
  	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
@@ -44,11 +68,19 @@
  	touch $@
  endif
  
-@@ -248,47 +234,6 @@
+@@ -249,55 +235,6 @@ else
  	cd $(DIST)/lib; cp -f $(LIB_PREFIX)mozdbm_s.$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX); $(RANLIB) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
  endif
  ifndef MOZ_NATIVE_NSS
--	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS)
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib/util $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib $(DEFAULT_GMAKE_FLAGS) export
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/util $(DEFAULT_GMAKE_FLAGS) libs
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/freebl $(DEFAULT_GMAKE_FLAGS) libs
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/softoken $(DEFAULT_GMAKE_FLAGS) libs
+-	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/util $(DEFAULT_GMAKE_FLAGS) clean
+-	# In NSS 3.11.8-3.11.9, lib/ssl/derive.c includes cmd/lib/secutil.h.
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) export
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) DIRS="util base dev pki pki1 certdb certhigh pk11wrap cryptohi nss ssl pkcs12 pkcs7 smime crmf jar ckfw ckfw/builtins"
 -ifndef SKIP_CHK
 -	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
 -	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS)
@@ -92,7 +124,7 @@
  endif
  	$(MAKE) -C boot $@
  	$(MAKE) -C ssl $@
-@@ -299,42 +244,6 @@
+@@ -308,42 +245,6 @@ endif
  
  install::
  ifndef MOZ_NATIVE_NSS
@@ -135,7 +167,7 @@
  endif
  	$(MAKE) -C boot $@
  	$(MAKE) -C ssl $@
-@@ -351,12 +260,6 @@
+@@ -360,12 +261,6 @@ ifdef MOZ_XUL
  	$(MAKE) -C pki $@
  endif
  ifndef MOZ_NATIVE_NSS
@@ -148,28 +180,3 @@
  endif
  
  echo-requires-recursive::
---- security/manager/ssl/src/Makefile.in.orig	Mon Aug 14 19:22:52 2006
-+++ security/manager/ssl/src/Makefile.in	Wed Apr 18 20:16:36 2007
-@@ -124,19 +124,20 @@
- 		  pipboot \
- 		  $(NULL)
- 
--EXTRA_DEPS = $(NSS_DEP_LIBS)
- 
- DEFINES += -DNSS_ENABLE_ECC
- 
- # Use local includes because they are inserted before INCLUDES
- # so that Mozilla's nss.h is used, not glibc's
--LOCAL_INCLUDES += $(NSS_CFLAGS)
-+LOCAL_INCLUDES += -I%%LOCALBASE%%/include/nss/nss
- 
- EXTRA_DSO_LDOPTS += \
- 		$(MOZ_UNICHARUTIL_LIBS) \
- 		$(MOZ_COMPONENT_LIBS) \
- 		$(MOZ_JS_LIBS) \
- 		$(NSS_LIBS) \
-+		-L%%LOCALBASE%%/lib/nss \
-+		$(LOCAL_INCLUDES) \
- 		$(NULL)
- 
- include $(topsrcdir)/config/rules.mk
