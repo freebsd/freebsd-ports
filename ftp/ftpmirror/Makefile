@@ -9,7 +9,8 @@ PORTNAME=	ftpmirror
 PORTVERSION=	1.96
 PORTREVISION=	3
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.intec.co.jp/pub/utils/ftpmirror/beta/
+MASTER_SITES=	ftp://ftp.intec.co.jp/pub/utils/ftpmirror/beta/ \
+		ftp://ftp.sai.msu.su/pub/unix/FTP/mirror/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	An utility to mirror directory hierarchy with FTP
