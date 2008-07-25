@@ -3536,3 +3536,4 @@ lang/yarv|lang/ruby19|2008-07-11|Officially released as Ruby 1.9
 japanese/samba|japanese/samba3|2008-07-21|Superseded by japanese/samba3
 net/silky||2008-07-21|Broken with newer silc-toolkit version
 japanese/kterm16c|japanese/kterm|2008-07-24|Deprecated in favor of japanese/kterm
+lang/gambc|lang/gambit-c|2008-07-24|Port was renamed
