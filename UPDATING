@@ -17,6 +17,11 @@ upgrades.
 # portupgrade shared-mime-info
 # portinstall -O nautilus
 
+  Once misc/shared-mime-info has been updated, each user will need to run the
+  following command:
+
+$ update-mime-database ~/.local/share/mime/
+
 20080725:
   AFFECTS: users of www/ojs2
   Author: Greg Larkin <glarkin@FreeBSD.org>
