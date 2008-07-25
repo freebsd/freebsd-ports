@@ -1,0 +1,9 @@
+TclDOM is a Tcl language binding for the W3C's DOM standard. DOM
+provides a tree view of an XML document.
+
+TclDOM is a package with several implementations, including one
+written in pure Tcl, one written in C based on TclDOMPro and
+another that wraps the Gnome libxml2 library.
+This port installs the libxml2 part.
+
+WWW: http://tclxml.sourceforge.net/tcldom.html
