@@ -1,24 +1,10 @@
 %%CLIENT%%bin/warsow
 %%SERVER%%bin/wsw_server
-lib/warsow/basewsw/cfgs
-%%CLIENT%%lib/warsow/basewsw/cgame%%ARCHSUFFIX%%.so
-lib/warsow/basewsw/config.cfg
-lib/warsow/basewsw/data0.pk3
-lib/warsow/basewsw/data0fix1.pk3
-lib/warsow/basewsw/data0fix2.pk3
-lib/warsow/basewsw/dedicated_autoexec.cfg
-lib/warsow/basewsw/game%%ARCHSUFFIX%%.so
-lib/warsow/basewsw/huds
-lib/warsow/basewsw/map_wctf1.pk3
-lib/warsow/basewsw/map_wdm1.pk3
-lib/warsow/basewsw/map_wdm2.pk3
-lib/warsow/basewsw/map_wdm5.pk3
-lib/warsow/basewsw/map_wmid1.pk3
-lib/warsow/basewsw/map_wmid2.pk3
-lib/warsow/basewsw/map_wmid3.pk3
-lib/warsow/basewsw/map_wtest1.pk3
-lib/warsow/basewsw/map_wtest3.pk3
-lib/warsow/basewsw/map_wtest4.pk3
-%%CLIENT%%lib/warsow/basewsw/ui%%ARCHSUFFIX%%.so
-@dirrm lib/warsow/basewsw
-@dirrm lib/warsow
+%%TVSERVER%%bin/wswtv_server
+%%CLIENT%%%%DATADIR%%/basewsw/cgame_%%ARCH%%.so
+%%DATADIR%%/basewsw/game_%%ARCH%%.so
+%%CLIENT%%%%DATADIR%%/basewsw/ui_%%ARCH%%.so
+%%IRC%%%%DATADIR%%/libs/irc_%%ARCH%%.so
+%%OPENAL%%%%DATADIR%%/libs/snd_openal_%%ARCH%%.so
+%%QF%%%%DATADIR%%/libs/snd_qf_%%ARCH%%.so
+%%IRC%%%%OPENAL%%%%QF%%@dirrm %%DATADIR%%/libs

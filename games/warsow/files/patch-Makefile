@@ -1,204 +1,56 @@
 --- Makefile.orig	2006-06-08 22:44:02.000000000 +0200
 +++ Makefile	2008-04-11 13:18:40.000000000 +0200
-@@ -18,15 +18,15 @@
- 
- CC?=gcc
- 
--CFLAGS_COMMON=$(CFLAGS) -I. -I$(LOCALBASE)/include -I$(X11BASE)/include -D__linux__ -Wall
--CFLAGS_RELEASE=-O2 -fno-strict-aliasing -ffast-math -funroll-loops
-+CFLAGS_COMMON=$(CFLAGS) -I. -I$(LOCALBASE)/include -D__linux__ -Wall
-+CFLAGS_RELEASE=-fno-strict-aliasing -ffast-math -funroll-loops
- CFLAGS_DEBUG=-O0 -ggdb -DDEBUG
- CFLAGS_COMMON+=$(CFLAGS_RELEASE)
- 
- CFLAGS_DED=-DDEDICATED_ONLY -DC_ONLY
- CFLAGS_MODULE=-fPIC
- 
--LDFLAGS_COMMON=-L/usr/local/lib -ldl -lm
-+LDFLAGS_COMMON=-L$(LOCALBASE)/lib -lm
- 
- ifeq ($(ARCH),x86_64)
- LIB=lib64
-@@ -48,13 +48,19 @@
- LDFLAGS_SDL=$(shell $(SDL_CONFIG) --libs)
- 
- ifeq ($(OS),FreeBSD)
--ARCH=freebsd_$(BASE_ARCH)
-+ARCH=_$(BASE_ARCH)
+@@ -34,19 +34,12 @@
+ CC=i586-mingw32msvc-gcc
+ LD=i586-mingw32msvc-gcc
  else
- ARCH=$(BASE_ARCH)
+-CC?=gcc
+-LD=gcc
++CC?=cc
++LD=$(CC)
+ 
+-# this nice line comes from the linux kernel makefile
+-BASE_ARCH:=$(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
++ARCH=$(shell uname -m)
+ OS=$(shell uname)
+ 
+-ifeq ($(OS),FreeBSD)
+-ARCH=freebsd_$(BASE_ARCH)
+-else
+-ARCH=$(BASE_ARCH)
+-endif
+-
+ SHARED_LIBRARY_EXTENSION=so
  endif
  
--SERVER_EXE=wsw_server.$(ARCH)
--CLIENT_EXE=warsow.$(ARCH)
-+ifeq ($(BASE_ARCH),i386)
-+ARCHSUFFIX=i386
-+else
-+ARCHSUFFIX=x86_64
-+endif
-+
-+SERVER_EXE=wsw_server
-+CLIENT_EXE=warsow
+@@ -134,7 +127,7 @@
+ LIB=lib
+ endif
  
+-LDFLAGS_CLIENT=-ljpeg -lz -L$(X11BASE)/$(LIB) -lX11 -lXext -lXxf86dga -lXxf86vm -lXinerama $(shell curl-config --libs)
++LDFLAGS_CLIENT=-ljpeg -lz -L$(X11BASE)/$(LIB) -lX11 -lXext -lXxf86dga -lXxf86vm -lXinerama $(shell curl-config --libs) $(PTHREAD_LIBS)
+ LDFLAGS_DED=-lz $(shell curl-config --libs)
+ LDFLAGS_MODULE=-shared
+ LDFLAGS_TV_SERVER=-lz
+@@ -149,11 +142,7 @@
+ 
+ # sdl
+ ifeq ($(BUILD_SND_QF),YES)
+-ifeq ($(OS),FreeBSD)
+-SDL_CONFIG?=sdl11-config
+-else
+ SDL_CONFIG?=sdl-config
+-endif
+ 
+ CFLAGS_SDL=$(shell $(SDL_CONFIG) --cflags)
+ LDFLAGS_QF=$(shell $(SDL_CONFIG) --libs) -lvorbisfile
+@@ -193,8 +182,7 @@
  ######################################################################################################
  # Helper functions
-@@ -196,21 +202,21 @@
- 	@echo "> * Building cgame"
- 	@echo "> *********************************************************"
- compile-cgame: $(OBJS_CGAME)
--link-cgame: $(BINDIR)/basewsw $(BINDIR)/basewsw/cgame_$(ARCH).so
-+link-cgame: $(BINDIR)/basewsw $(BINDIR)/basewsw/cgame_$(ARCHSUFFIX).so
- 
- message-game:
- 	@echo "> *********************************************************"
- 	@echo "> * Building game"
- 	@echo "> *********************************************************"
- compile-game: $(OBJS_GAME)
--link-game: $(BINDIR)/basewsw $(BINDIR)/basewsw/game_$(ARCH).so
-+link-game: $(BINDIR)/basewsw $(BINDIR)/basewsw/game_$(ARCHSUFFIX).so
- 
- message-ui:
- 	@echo "> *********************************************************"
- 	@echo "> * Building ui"
- 	@echo "> *********************************************************"
- compile-ui: $(OBJS_UI)
--link-ui: $(BINDIR)/basewsw $(BINDIR)/basewsw/ui_$(ARCH).so
-+link-ui: $(BINDIR)/basewsw $(BINDIR)/basewsw/ui_$(ARCHSUFFIX).so
- 
- 
  ######################################################################################################
-@@ -220,29 +226,29 @@
- # DED
- ########
- $(BINDIR)/$(SERVER_EXE): $(OBJS_DED)
--	@echo "  > Linking $@" && \
-+	echo "  > Linking $@" && \
- 	$(CC) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_DED)
+-DO_CC=echo "  > Compiling $<" && \
+-	$(CC) $(CFLAGS_COMMON) -c $< -o $@
++DO_CC=$(CC) $(CFLAGS_COMMON) -c $< -o $@
  
- #########
- # CLIENT
- #########
- $(BINDIR)/$(CLIENT_EXE): $(OBJS_CLIENT)
--	@echo "  > Linking $@" && \
-+	echo "  > Linking $@" && \
- 	$(CC) -o $@ $(OBJS_CLIENT) $(LDFLAGS_COMMON) $(LDFLAGS_CLIENT) $(LDFLAGS_SDL)
- 
- ########
- # .SO
- ########
--$(BINDIR)/basewsw/cgame_$(ARCH).so: $(OBJS_CGAME)
--	@echo "  > Linking $@" && \
-+$(BINDIR)/basewsw/cgame_$(ARCHSUFFIX).so: $(OBJS_CGAME)
-+	echo "  > Linking $@" && \
- 	$(CC) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)
- 
--$(BINDIR)/basewsw/game_$(ARCH).so: $(OBJS_GAME)
--	@echo "  > Linking $@" && \
-+$(BINDIR)/basewsw/game_$(ARCHSUFFIX).so: $(OBJS_GAME)
-+	echo "  > Linking $@" && \
- 	$(CC) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)
- 
--$(BINDIR)/basewsw/ui_$(ARCH).so: $(OBJS_UI)
--	@echo "  > Linking $@" && \
-+$(BINDIR)/basewsw/ui_$(ARCHSUFFIX).so: $(OBJS_UI)
-+	echo "  > Linking $@" && \
- 	$(CC) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)
- 
- 
-@@ -253,76 +259,76 @@
- # CLIENT
- ########
- $(BUILDDIR)/client/%.o: qcommon/%.c
--	@$(DO_CC)
-+	$(DO_CC)
- 
- $(BUILDDIR)/client/%.o: server/%.c
--	@$(DO_CC)
-+	$(DO_CC)
- 
- $(BUILDDIR)/client/%.o: client/%.c
--	@$(DO_CC)
-+	$(DO_CC)
- 
- $(BUILDDIR)/client/%.o: ref_gl/%.c
--	@$(DO_CC)
-+	$(DO_CC)
- 
- $(BUILDDIR)/client/%.o: linux/%.c
--	@$(DO_CC)
-+	$(DO_CC)
- 
- $(BUILDDIR)/client/snd_sdl.o: linux/snd_sdl.c
--	@$(DO_CC) $(CFLAGS_SDL)
-+	$(DO_CC) $(CFLAGS_SDL)
- 
- $(BUILDDIR)/client/%.o: game/%.c
--	@$(DO_CC)
-+	$(DO_CC)
- 
- ########
- # DED
- ########
- $(BUILDDIR)/ded/%.o: qcommon/%.c 
--	@$(DO_CC_DED)
-+	$(DO_CC_DED)
- 
- $(BUILDDIR)/ded/%.o: server/%.c
--	@$(DO_CC_DED)
-+	$(DO_CC_DED)
- 
- $(BUILDDIR)/ded/%.o: linux/%.c
--	@$(DO_CC_DED)
-+	$(DO_CC_DED)
- 
- $(BUILDDIR)/ded/%.o: null/%.c
--	@$(DO_CC_DED)
-+	$(DO_CC_DED)
- 
- $(BUILDDIR)/ded/%.o: game/%.c
--	@$(DO_CC_DED)
-+	$(DO_CC_DED)
- 
- ########
- # CGAME
- ########
- $(BUILDDIR)/cgame/%.o: cgame/%.c
--	@$(DO_CC_MODULE)
-+	$(DO_CC_MODULE)
- 
- $(BUILDDIR)/cgame/%.o: gameshared/%.c
--	@$(DO_CC_MODULE)
-+	$(DO_CC_MODULE)
- 
- $(BUILDDIR)/cgame/%.o: game/%.c
--	@$(DO_CC_MODULE)
-+	$(DO_CC_MODULE)
- 
- ########
- # GAME
- ########
- $(BUILDDIR)/game/%.o: game/%.c
--	@$(DO_CC_MODULE)
-+	$(DO_CC_MODULE)
- 
- $(BUILDDIR)/game/%.o: game/ai/%.c
--	@$(DO_CC_MODULE)
-+	$(DO_CC_MODULE)
- 
- $(BUILDDIR)/game/%.o: gameshared/%.c
--	@$(DO_CC_MODULE)
-+	$(DO_CC_MODULE)
- 
- ########
- # UI
- ########
- $(BUILDDIR)/ui/%.o: game/%.c
--	@$(DO_CC_MODULE)
-+	$(DO_CC_MODULE)
- 
- $(BUILDDIR)/ui/%.o: ui/%.c
--	@$(DO_CC_MODULE)
-+	$(DO_CC_MODULE)
- 
- 
- ######################################################################################################
+ DO_CC_CLIENT=$(DO_CC) $(CFLAGS_CLIENT)
+ DO_CC_DED=$(DO_CC) $(CFLAGS_DED)
