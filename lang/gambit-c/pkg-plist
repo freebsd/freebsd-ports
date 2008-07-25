@@ -1,6 +1,6 @@
 bin/six
-bin/gsc
-bin/gsc-cc-o
+bin/gsc-cc-o.bat
+bin/gsc-gambit
 bin/gsc-script
 bin/gsi
 bin/gsi-script
@@ -9,18 +9,34 @@ bin/scheme-r4rs
 bin/scheme-r5rs
 bin/scheme-srfi-0
 bin/six-script
-current
-doc/gambit-c.html
-doc/gambit-c.pdf
-doc/gambit-c.txt
-include/gambit.h
-lib/_gambc.c
-lib/digest#.scm
-lib/digest.scm
-lib/gambit#.scm
-lib/libgambc.a
-lib/r4rs#.scm
-lib/r5rs#.scm
+share/doc/Gambit-C/gambit-c.html
+share/doc/Gambit-C/gambit-c.pdf
+share/doc/Gambit-C/gambit-c.txt
+include/Gambit-C/gambit.h
+lib/Gambit-C/_gambc.c
+lib/Gambit-C/_kernel#.scm
+lib/Gambit-C/_system#.scm
+lib/Gambit-C/_num#.scm
+lib/Gambit-C/_std#.scm
+lib/Gambit-C/_eval#.scm
+lib/Gambit-C/_io#.scm
+lib/Gambit-C/_nonstd#.scm
+lib/Gambit-C/_thread#.scm
+lib/Gambit-C/_repl#.scm
+lib/Gambit-C/_gambit#.scm
+lib/Gambit-C/digest#.scm
+lib/Gambit-C/digest.scm
+lib/Gambit-C/gambit#.scm
+lib/_gambcgsi.c
+lib/libgambcgsi.a
+lib/_gambcgsc.c
+lib/libgambcgsc.a
+lib/Gambit-C/libgambc.a
+lib/Gambit-C/r4rs#.scm
+lib/Gambit-C/r5rs#.scm
 share/emacs/site-lisp/gambit.el
-syntax-case.scm
-@dirrm doc
+share/Gambit-C/syntax-case.scm
+@dirrm include/Gambit-C
+@dirrm share/doc/Gambit-C
+@dirrm share/Gambit-C
+@dirrm lib/Gambit-C

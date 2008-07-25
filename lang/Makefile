@@ -72,6 +72,7 @@
     SUBDIR += g95
     SUBDIR += gambas
     SUBDIR += gambc
+    SUBDIR += gambit-c
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc-ooo
