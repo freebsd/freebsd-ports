@@ -10,7 +10,7 @@ PORTVERSION=	0.22
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 
-MAINTAINER=	ports@logvinov.com
+MAINTAINER=	webmaster@kibab.com
 COMMENT=	Evolution 2 plugin for the OpenSync framework
 
 LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022
