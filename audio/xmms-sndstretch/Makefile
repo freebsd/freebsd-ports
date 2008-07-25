@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/sndstretch_xmms
 
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-MAKE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" PTHREAD_LIBS=${PTHREAD_LIBS}
+MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 post-extract:
 	(cd ${WRKSRC}; ${MAKE} clean)

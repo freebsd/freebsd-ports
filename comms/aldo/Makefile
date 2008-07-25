@@ -23,7 +23,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
 USE_GMAKE=	yes
-MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 PLIST_FILES=	bin/aldo
 MAN1=	aldo.1

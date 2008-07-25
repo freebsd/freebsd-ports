@@ -34,6 +34,6 @@ USE_GMAKE=	yes
 
 MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins \
 		LOCALEDIR=${PREFIX}/share/locale \
-		enable_nls=1 CC="${CC}"
+		enable_nls=1
 
 .include <bsd.port.mk>

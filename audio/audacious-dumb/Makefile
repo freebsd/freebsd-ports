@@ -22,6 +22,4 @@ BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-MAKE_ENV+=	CC="${CC}" LOCALBASE="${LOCALBASE}"
-
 .include <bsd.port.mk>

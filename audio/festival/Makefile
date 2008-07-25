@@ -32,9 +32,7 @@ MAKE_ENV+=	GCC="${CC}" \
 		GXX="${CXX}" \
 		EST_HOME=${SPEECHTOOLS} \
 		EGCS_CC="${CC}" \
-		EGCS_CXX="${CXX}" \
-		CC="${CC}" \
-		CXX="${CXX}"
+		EGCS_CXX="${CXX}"
 MAN1=		festival.1 festival_client.1
 WRKSRC=		${WRKDIR}
 

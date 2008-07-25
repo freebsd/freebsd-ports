@@ -25,7 +25,6 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk-threads \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAKE_ENV+=	CXX="${CXX}"
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "amd64" && ${OSVERSION} < 700000

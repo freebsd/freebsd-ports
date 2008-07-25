@@ -19,8 +19,6 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 
-MAKE_ENV+=	CXX="${CXX}"
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXXFLAGS=/d' \
 		${WRKSRC}/configure

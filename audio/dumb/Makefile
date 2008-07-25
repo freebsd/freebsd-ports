@@ -31,8 +31,6 @@ MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS=
 CFLAGS+=	-fPIC
 .endif
 
-MAKE_ENV+=	CC="${CC}"
-
 pre-configure:
 	@${CP} ${FILESDIR}/config.txt ${WRKSRC}/make
 	@${REINPLACE_CMD} -e "s,@LOCALBASE@,${LOCALBASE}," ${WRKSRC}/make/config.txt

@@ -41,9 +41,7 @@ MAKE_ENV+=	PKG_EST_HOME=${SPEECHTOOLS} \
 		PKG_LOCALBASE=${LOCALBASE} \
 		PKG_PREFIX=${PREFIX} \
 		GCC27_CC="${CC}" \
-		GCC27_CXX="${CXX}" \
-		CC="${CC}" \
-		CXX="${CXX}"
+		GCC27_CXX="${CXX}"
 MAN1=		festival.1 festival_client.1
 USE_GCC=	2.95
 USE_GMAKE=	yes

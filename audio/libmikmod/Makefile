@@ -24,7 +24,6 @@ USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-MAKE_ENV=	SHELL=/bin/sh
 USE_LDCONFIG=	yes
 
 MAN1=		libmikmod-config.1
