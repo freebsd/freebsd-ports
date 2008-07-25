@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -25,6 +25,7 @@ TETGEN_PORTDIR=		${PORTSDIR}/math/tetgen
 TETGEN_SRC=		predicates.cxx tetgen.cxx tetgen.h
 .endif
 
+USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-fltk-prefix=${LOCALBASE}	\
@@ -32,6 +33,7 @@ CONFIGURE_ARGS=	--with-fltk-prefix=${LOCALBASE}	\
 		--with-med-prefix=${LOCALBASE}	\
 		--with-jpeg-prefix=${LOCALBASE}	\
 		--with-png-prefix=${LOCALBASE}
+CONFIGURE_ENV=	F77=${F77}
 USE_GMAKE=	yes
 ALL_TARGET=	all utils
 
@@ -60,6 +62,14 @@ CONFIGURE_ARGS+=	--enable-cgns --with-cgns-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=	--disable-cgns
 .endif
 
+# For FourierModel
+.if defined(WITH_FFTW3)
+LIB_DEPENDS+=		fftw3.4:${PORTSDIR}/math/fftw3
+CONFIGURE_ARGS+=	--enable-fftw3 --with-fftw3-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--disable-fftw3
+.endif
+
 .if defined(WITH_OCC)
 LIB_DEPENDS+=		TKernel.0:${PORTSDIR}/cad/opencascade
 CONFIGURE_ARGS+=	--enable-occ --with-occ-prefix=${LOCALBASE}/OpenCAS/ros
@@ -70,6 +80,8 @@ CONFIGURE_ARGS+=	--disable-occ
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+PORTDOCS=	CREDITS.txt FAQ.txt VERSIONS.txt gmsh.html
 
 MAN1=		gmsh.1
 
@@ -123,9 +135,11 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/gmsh.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
 	cd ${WRKSRC} && ${FIND} tutorial | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${FIND} demos ! -name "*.bak" | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
