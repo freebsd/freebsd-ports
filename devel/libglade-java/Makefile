@@ -27,7 +27,6 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
-USE_GCC=	3.4+
 JAVA_VERSION=	1.2+
 JAVA_OS=	native
 USE_GNOME=	gnomehack libglade2

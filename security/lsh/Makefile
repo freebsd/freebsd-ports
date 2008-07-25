@@ -22,7 +22,6 @@ LIB_DEPENDS+=	oop:${PORTSDIR}/devel/liboop \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 INSTALL_TARGET=	install
 CONFIGURE_ENV=	PREFIX="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS+=	--with-include-path=${LOCALBASE}/include

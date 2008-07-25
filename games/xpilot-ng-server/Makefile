@@ -67,7 +67,6 @@ post-patch:
 USE_SDL=	image sdl ttf
 USE_GL=		yes
 PLIST_SUB+=	SDL=""
-USE_GCC=	3.4+
 MAN6+=		xpilot-ng-sdl.6
 .else
 CONFIGURE_ARGS+=--disable-sdl-client

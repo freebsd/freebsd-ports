@@ -24,7 +24,6 @@ MAN1=		linrename.1
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GCC=	3.4+
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -lintl -I${WRKSRC}/lib
 EXTRACT_AFTER_ARGS=	| tar -xf - \

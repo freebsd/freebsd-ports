@@ -19,7 +19,6 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui lthack \
 		pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_GCC=	3.4+
 
 PORTDOCS=	*
 INSTALLS_EGGINFO=	yes

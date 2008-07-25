@@ -15,7 +15,6 @@ COMMENT=	Library for converting Unicode strings to numbers
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
-USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"

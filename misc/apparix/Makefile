@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-07-261
 MAINTAINER=	steinex@nognu.de
 COMMENT=	Bookmark directories and apparate inside them
 
-USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 MANCOMPRESSED=	no
 

@@ -27,7 +27,6 @@ LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack gtk20

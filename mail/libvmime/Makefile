@@ -23,7 +23,6 @@ BROKEN=		does not compile with gnutls-2.4.x
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

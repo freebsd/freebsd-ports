@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --disable-nls # strangeness in nls support
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GCC=	3.4+
 
 PORTDOCS=	README
 MAN6=		volleyball.6

@@ -21,7 +21,6 @@ LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro \
 		vga.1:${PORTSDIR}/graphics/svgalib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_GCC=	3.2+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl

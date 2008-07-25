@@ -15,7 +15,6 @@ MAINTAINER=	rdenis@simphalempin.com
 COMMENT=	IPv6 network diagnostic tools
 
 USE_BZIP2=	yes
-USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-suid-install
 

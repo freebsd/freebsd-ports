@@ -18,7 +18,6 @@ COMMENT=	Various ELF related utils for ELF32, ELF64 binaries
 
 USE_BZIP2=	true
 USE_GMAKE=	true
-USE_GCC=	3.4+
 
 PLIST_FILES=	bin/dumpelf bin/pspax bin/scanelf
 

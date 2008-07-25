@@ -17,7 +17,6 @@ MAINTAINER=	mva@sysfault.org
 COMMENT=	ATK accessibility wrapper for python
 
 USE_GNOME=	atk
-USE_GCC=	3.4+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 

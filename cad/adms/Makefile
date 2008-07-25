@@ -20,6 +20,5 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	3.2+
 
 .include <bsd.port.mk>

@@ -16,7 +16,6 @@ COMMENT=	A daemon to monitor and configure modern scanner's buttons
 
 LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
-USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

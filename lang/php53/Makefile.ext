@@ -140,7 +140,6 @@ USE_OPENSSL=	yes
 .if ${PHP_MODNAME} == "interbase"
 CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}
 
-USE_GCC=	3.4+
 USE_FIREBIRD=	yes
 .endif
 
@@ -260,7 +259,6 @@ CONFIGURE_ARGS+=--with-pdo-firebird=${LOCALBASE}
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
 
-USE_GCC=	3.4+
 USE_FIREBIRD=	yes
 .endif
 
@@ -378,7 +376,6 @@ CONFIGURE_ARGS+=--enable-soap \
 		--with-libxml-dir=${LOCALBASE}
 
 USE_GNOME=	libxml2
-USE_GCC=	3.4+
 
 USE_PHP=	session
 USE_PHP_BUILD=	yes

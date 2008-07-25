@@ -28,7 +28,6 @@ EXTRA_CFLAGS=	-O2
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 WANT_PERL=	yes
 GECKO_PLIST_PRE_FILES=	lib/${MOZILLA}/chrome/icons/default/default.xpm
 GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/chrome/icons/default lib/${MOZILLA}/chrome/icons

@@ -18,8 +18,6 @@ COMMENT=	A java extension of BSD YACC-compatible parser generator
 PLIST_FILES=	bin/byaccj
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_GCC=	3.4+
-
 post-patch:
 	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#' ${WRKSRC}/defs.h ${WRKSRC}/*c
 

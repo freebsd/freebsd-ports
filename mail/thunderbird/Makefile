@@ -24,7 +24,6 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 WANT_PERL=	yes
 
 MOZ_EXTENSIONS=	wallet,spellcheck,xmlextras,webservices,auth,transformiix

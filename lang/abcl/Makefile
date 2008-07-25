@@ -17,7 +17,6 @@ COMMENT=	An implementation of ANSI Common Lisp in Java
 SUB_FILES=	abcl
 SUB_LIST=	JAVA=${JAVA} ABCL_JAR=${JAVAJARDIR}/abcl.jar
 
-USE_GCC=	3.3+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_LDCONFIG=	yes

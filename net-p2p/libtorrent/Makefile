@@ -23,7 +23,6 @@ CONFLICTS?=	libtorrent-devel-[0-9]* \
 		rblibtorrent-devel-[0-9]*
 
 USE_AUTOTOOLS=	libtool:15
-USE_GCC=	3.4+
 USE_GNOME=	pkgconfig gnomehack
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

@@ -17,7 +17,6 @@ COMMENT=	A fast tool for local sequence similarity searches
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}Src
 MAKE_ENV+=	HOME="${WRKSRC}/${BINDIR}" MACHTYPE="${ARCH}"

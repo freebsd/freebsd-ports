@@ -21,7 +21,6 @@ LIB_DEPENDS=	cdio.8:${PORTSDIR}/sysutils/libcdio \
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 MAN1=	unieject.1
 MAN5=	unieject.conf.5

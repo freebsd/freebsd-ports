@@ -26,7 +26,6 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 WRKSRC=		${WRKDIR}/GPL/GtkRadiant
 
 USE_ZIP=	yes
-USE_GCC=	3.4+
 USE_GNOME=	gtk20 libxml2
 USE_PYTHON_BUILD=	yes
 USE_SCONS=	yes

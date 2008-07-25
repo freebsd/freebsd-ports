@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.phpcompiler.org/src/archive/
 MAINTAINER=	ports@mcdermottroe.com
 COMMENT=	A compiler for the PHP language
 
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

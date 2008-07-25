@@ -23,7 +23,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

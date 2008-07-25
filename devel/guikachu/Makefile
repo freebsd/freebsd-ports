@@ -19,7 +19,6 @@ LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26 \
 		gnomevfsmm-2.6.1:${PORTSDIR}/devel/gnome-vfsmm
 
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -16,7 +16,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	Fast open-source implementation of Standard ML
 
-USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-x
 USE_LDCONFIG=	yes

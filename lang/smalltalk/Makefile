@@ -24,7 +24,6 @@ OPTIONS=	TCLTK "Enable Tcl/Tk binding" on \
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_GCC=	3.4+
 USE_ICONV=	yes
 USE_SQLITE=	yes
 USE_GMAKE=	yes

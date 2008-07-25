@@ -21,7 +21,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_GETTEXT=	yes
-USE_GCC=	3.2+
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-shared \

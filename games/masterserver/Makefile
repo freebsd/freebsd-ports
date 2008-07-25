@@ -15,7 +15,6 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Masterserver for IdSoftware games (D3, EF, H2, Q2, Q3, QW)
 
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

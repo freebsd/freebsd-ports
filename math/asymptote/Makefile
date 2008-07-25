@@ -32,7 +32,6 @@ RUN_DEPENDS=	boehm-gc>=6.8:${PORTSDIR}/devel/boehm-gc \
 # devel/boehm-gc
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_GCC=	3.3+
 USE_GHOSTSCRIPT=yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes

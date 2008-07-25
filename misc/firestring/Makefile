@@ -21,8 +21,6 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-USE_GCC=	3.4+
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=	firestring_chomp.3 firestring_chug.3 firestring_concat.3 \

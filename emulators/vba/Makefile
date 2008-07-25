@@ -43,7 +43,6 @@ BROKEN=		Fails to compile: internal gcc error
 
 .ifdef(WITH_GTK2)
 PLIST_SUB=	INSTALL_GTK2=""
-USE_GCC=	3.4+
 CONFIGURE_ARGS+=	--enable-gtk=2.4
 USE_GNOME=	gnomelibs gtk20
 LIB_DEPENDS+=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \

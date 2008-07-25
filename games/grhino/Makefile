@@ -16,7 +16,6 @@ MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	GRhino Othello/Reversi Program
 
 USE_GNOME=	gnomeprefix libgnomeui
-USE_GCC=	3.4+
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

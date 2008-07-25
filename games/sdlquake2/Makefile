@@ -17,7 +17,6 @@ COMMENT=	Combination of R1Q2 and R1GL with SDL code from Quake2Forge
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_BZIP2=	yes
-USE_GCC=	3.2+
 USE_GMAKE=	yes
 
 OPTIONS=	CLIENT "Build client" on \

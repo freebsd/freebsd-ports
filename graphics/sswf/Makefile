@@ -22,7 +22,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_BISON=	build
 USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/sswf-${PORTVERSION}
-USE_GCC=	3.4+
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

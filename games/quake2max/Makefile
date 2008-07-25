@@ -25,7 +25,6 @@ EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	xxf86dga
-USE_GCC=	3.4+
 ALL_TARGET=	release
 WRKSRC=		${WRKDIR}/${DISTNAME:S/quake2max/Quake2maX/}
 

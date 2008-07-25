@@ -30,7 +30,6 @@ LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
 
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-USE_GCC=	3.2+
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-shared=yes --enable-static=yes

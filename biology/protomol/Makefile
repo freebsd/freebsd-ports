@@ -21,7 +21,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 
 # Hack to cure a misbehavior of the configure script
 CONFIGURE_ARGS+=	--without-irix_mipspro_mpi

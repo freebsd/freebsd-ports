@@ -20,7 +20,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 USE_GNOME=	gnometarget
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

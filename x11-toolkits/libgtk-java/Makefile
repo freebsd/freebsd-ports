@@ -25,7 +25,6 @@ GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 JAVA_OS=	native
-USE_GCC=	3.4+
 USE_GNOME=	gnomehack gtk20
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR} \
 		--without-javadocs # needs docbook-utils

@@ -15,7 +15,6 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Search using regexes for file names and text
 
 USE_GNOME=	gtk20
-USE_GCC=	3.3+
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}

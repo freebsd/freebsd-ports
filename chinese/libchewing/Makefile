@@ -15,7 +15,6 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	The Chewing intelligent phonetic input method library
 
 USE_GNOME=	gnomehack pkgconfig
-USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

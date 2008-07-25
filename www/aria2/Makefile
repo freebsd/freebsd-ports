@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-openssl \
 		--with-libxml2 --without-gnutls --without-libares \
 		--without-libcares --program-transform-name=""
 
-USE_GCC=	3.4+
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack libxml2
 USE_GETTEXT=	yes

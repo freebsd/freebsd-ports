@@ -20,7 +20,6 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

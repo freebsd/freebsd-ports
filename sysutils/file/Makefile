@@ -17,7 +17,6 @@ COMMENT=	Utility to determine file type
 
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-USE_GCC=	3.4+
 
 CONFIGURE_ARGS+=	--enable-fsect-man5
 

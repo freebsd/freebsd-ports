@@ -16,7 +16,6 @@ MAINTAINER=	pankov_p@mail.ru
 COMMENT=	A fast offline password cracker for VNC passwords
 
 GNU_CONFIGURE=	yes
-USE_GCC=	3.2+
 USE_OPENSSL=	yes
 
 SUB_FILES+=	pkg-message

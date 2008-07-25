@@ -62,7 +62,6 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lutil -lpthread" CFLAGS="${CFLAGS} \
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GCC=	3.2+
 
 MAN1=		fontforge.1 fontimage.1 fontlint.1 sfddiff.1
 

@@ -24,6 +24,5 @@ MAN1=		jack-keyboard.1
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
-USE_GCC=	3.4+
 
 .include <bsd.port.mk>

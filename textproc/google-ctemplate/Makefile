@@ -16,7 +16,6 @@ MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A simple but powerful template language for C++
 
 GNU_CONFIGURE=	yes
-USE_GCC=	3.2+
 USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)

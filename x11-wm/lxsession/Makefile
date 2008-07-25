@@ -21,7 +21,6 @@ CONFLICTS=	lxsession-lite-[0-9]*
 
 USE_GNOME=	gtk20 intlhack libgnome
 
-USE_GCC=	3.3+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

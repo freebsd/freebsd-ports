@@ -16,7 +16,6 @@ COMMENT=	Simple GTK+ input methods for Vietnamese(VNI and TELEX)
 
 GNU_CONFIGURE=	YES
 USE_GNOME=	gtk20
-USE_GCC=	3.4+
 USE_LDCONFIG=	YES
 
 .include <bsd.port.pre.mk>

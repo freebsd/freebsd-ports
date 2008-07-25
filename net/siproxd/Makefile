@@ -16,7 +16,6 @@ COMMENT=	A proxy/masquerading daemon for the SIP protocol
 
 LIB_DEPENDS=	osip2.5:${PORTSDIR}/net/libosip
 
-USE_GCC=	3.2+
 USE_RC_SUBR=	siproxd.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--with-libosip-prefix=${PREFIX}

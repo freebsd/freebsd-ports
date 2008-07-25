@@ -18,7 +18,6 @@ LIB_DEPENDS=	proj.5:${PORTSDIR}/graphics/proj
 RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 USE_BISON=	build
-USE_GCC=	3.2+
 USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

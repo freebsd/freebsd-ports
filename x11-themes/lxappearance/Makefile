@@ -15,7 +15,6 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A desktop-independent theme switcher for GTK+
 
 USE_GNOME=	gtk20 intlhack
-USE_GCC=	3.3+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

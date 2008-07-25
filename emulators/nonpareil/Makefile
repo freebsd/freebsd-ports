@@ -20,7 +20,6 @@ USE_BISON=	build
 USE_SCONS=	yes
 USE_GNOME=	gtk20 libxml2
 USE_SDL=	mixer
-USE_GCC=	3.4+
 
 SCONS_ARGS+=	prefix="${PREFIX}"
 

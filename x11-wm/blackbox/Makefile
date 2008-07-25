@@ -26,7 +26,6 @@ USE_GNOME=	gnomehack pkgconfig
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
-USE_GCC=	3.3+
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-pedantic##' ${WRKSRC}/configure

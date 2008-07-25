@@ -19,7 +19,6 @@ CONFLICTS=	cherokee-devel-[0-9]*
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cherokee.sh
-USE_GCC=	3.4+
 USE_BISON=	build
 USE_MYSQL=	yes
 USE_OPENLDAP=	yes

@@ -22,7 +22,6 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgda3
 GNU_CONFIGURE=	yes

@@ -25,7 +25,6 @@ USE_AUTOTOOLS=	autoconf:261
 
 USE_LDCONFIG=		yes
 
-USE_GCC=	3.2+
 USE_RC_SUBR=	bsnmpd.sh
 
 MAN1=	bsnmpd.1 gensnmptree.1 gensnmpdef.1

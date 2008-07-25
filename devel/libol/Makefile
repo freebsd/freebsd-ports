@@ -16,6 +16,5 @@ COMMENT=	Library needed by syslog-ng
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	3.3+
 
 .include <bsd.port.mk>

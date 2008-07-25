@@ -25,12 +25,6 @@ USE_SDL=	sdl ttf mixer
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/slashem
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502102
-USE_GCC=	3.3+
-.endif
-
 pre-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh
 
@@ -45,4 +39,4 @@ post-configure:
 		's|#include <SDL_image.h>||g' \
 		${WRKSRC}/win/vultures/vultures_gfl.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

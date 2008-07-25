@@ -21,7 +21,6 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GNOME=	gnometarget pkgconfig
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

@@ -16,7 +16,6 @@ COMMENT=	Simple HTTP scanner
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
-USE_GCC=	3.4+
 
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/requests.txt %%DATADIR%%/subdomains.txt
 PLIST_DIRS=	%%DATADIR%%

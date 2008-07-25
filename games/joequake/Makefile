@@ -22,7 +22,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/src
 
-USE_GCC=	3.2+
 USE_GMAKE=	yes
 USE_ZIP=	yes
 

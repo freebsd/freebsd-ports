@@ -17,7 +17,6 @@ COMMENT=	ISO-C & Perl API and CLI for generating Universally Unique Identifiers
 
 CONFLICTS=	e2fsprogs-libuuid-[0-9]*
 
-USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

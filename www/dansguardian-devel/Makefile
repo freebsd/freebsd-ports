@@ -17,7 +17,6 @@ COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
-USE_GCC=	3.4+
 USE_ICONV=	yes
 
 USE_RC_SUBR=	dansguardian

@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.unifont.org/lasi/download/
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	C++ stream output interface for creating Postscript documents
 
-USE_GCC=	3.2+
 USE_GNOME=	pango pkgconfig
 USE_AUTOTOOLS=	libltdl:15
 GNU_CONFIGURE=	yes

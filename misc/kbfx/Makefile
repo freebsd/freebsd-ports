@@ -22,6 +22,5 @@ USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GCC=	3.4+
 
 .include <bsd.port.mk>

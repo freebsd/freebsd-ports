@@ -18,7 +18,6 @@ COMMENT=	CLucene is a C++ port of Lucene
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	3.2+
 USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.pre.mk>

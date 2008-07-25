@@ -20,7 +20,6 @@ CONFLICTS=	lxsession-[0-9]*
 
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	automake:110:env
-USE_GCC=	3.3+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

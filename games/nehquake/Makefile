@@ -18,7 +18,6 @@ COMMENT=	Quake engine designed for playing Nehahra
 
 USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
-USE_GCC=	3.2+
 USE_GL=		gl
 USE_XORG=	xxf86dga
 USE_GMAKE=	yes

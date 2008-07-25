@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.2+
 
 MAKEFILE=	GNUmakefile
 

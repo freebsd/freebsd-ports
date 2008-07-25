@@ -19,7 +19,6 @@ ALL_TARGET=	astyle
 CFLAGS+=	-W -Wall -fno-rtti -fno-exceptions
 LDFLAGS+=	-s
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
-USE_GCC=	3.3+
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/astyle/build

@@ -16,7 +16,6 @@ COMMENT=	A C++ library of common design patterns
 
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 USE_LDCONFIG=	yes
 
 DOCS=		README CHANGES doc/flex/flex_string.html \

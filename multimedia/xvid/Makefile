@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC?=	3.4+
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/build/generic
 

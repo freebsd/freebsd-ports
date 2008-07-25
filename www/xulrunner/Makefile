@@ -23,7 +23,6 @@ ALL_TARGET=	default
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 
 PORT_MOZCONFIG=	${WRKSRC}/xulrunner/config/mozconfig
 MOZ_OPTIONS?=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \

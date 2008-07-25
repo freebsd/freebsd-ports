@@ -28,7 +28,6 @@ WRKSRC=		${WRKDIR}/release-${PORTVERSION}
 
 USE_AUTOTOOLS=	automake:19 autoconf:261
 AUTOMAKE_ARGS=	--add-missing
-USE_GCC=	3.4+
 CONFIGURE_ARGS=	--bindir=${PREFIX}/libexec --includedir=${PREFIX}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"	\
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"	\

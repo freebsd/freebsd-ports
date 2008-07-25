@@ -17,7 +17,6 @@ COMMENT=	Console program to recover files based on their headers and footers
 USE_GMAKE=	yes
 ALL_TARGET=	freebsd
 MAN1=		foremost.1
-USE_GCC=	3.4+
 
 PLIST_FILES=	bin/foremost etc/foremost.conf.sample
 

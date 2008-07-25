@@ -17,7 +17,6 @@ COMMENT=	A blacklisting daemon
 USE_RC_SUBR=	bld
 MANCOMPRESSED=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.2+
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/bld
 PORTDOCS=	README README.postfix
