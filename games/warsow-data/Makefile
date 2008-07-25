@@ -1,55 +1,45 @@
 # New ports collection makefile for:	warsow-data
-# Date created:		2006-08-03
-# Whom:			Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
+# Date created:				2006-08-03
+# Whom:				Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	data
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.42
 CATEGORIES=	games
-MASTER_SITES=	http://ftp.club-internet.fr/pub/games/nofrag/warsow/ \
-		http://mirrors-av.club-internet.fr/pub/games/nofrag/warsow/ \
-		http://kenh.rxvt.net/ \
-		http://turkeyfiles.escapedturkey.net/warsow/versions/ \
-		http://www.gizmo.fi/warsow/ \
-		http://warsow.as-mirror.net/ \
-		http://wsw.surreal-xenotronic.com/ \
-		http://tmp.death-row.org/
+MASTER_SITES=	http://data.rodix.free.fr/warsow/files/ \
+		http://88.191.19.21/wsw/ \
+		http://www.derchris.net/warsow/ \
+		http://gedankenschlag.de/mirror/ \
+		http://uzz.cc/ \
+		http://wahs.de/warsow/ \
+		http://tastyspleen.net/quake/downloads/mods/warsow/
 PKGNAMEPREFIX=	warsow-
-DISTNAME=	${PKGNAMEPREFIX:S/-//}_${PORTVERSION}_linux
+DISTNAME=	${PKGNAMEPREFIX:S/-//}_${PORTVERSION}_unified
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Warsow data files
 
+USE_ZIP=	yes
+USE_DOS2UNIX=	${TXTDOCS}
+
 NO_BUILD=	yes
-WARSOW_EXTRACT=	${PKGNAMEPREFIX:S/-//}/basewsw ${PKGNAMEPREFIX:S/-//}/docs
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX:S/-//}
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-//}
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${WARSOW_EXTRACT}
-
-post-extract:
-	${RM} -R ${WRKSRC}/basewsw/*.so
-	${RM} -R ${WRKSRC}/basewsw/screenshots ${WRKSRC}/basewsw/demos
+TXTDOCS=	bots_navigation.txt changelog.txt contact.txt credits.txt \
+		dedicated_server_quide.txt demoavi.txt democams.txt \
+		features.txt huds.txt license.txt mousefilter.txt \
+		query_protocols.txt
+PORTDOCS=	0.4_renderer_changes.png ${TXTDOCS}
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC}/basewsw && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-			${FIND} -E * -type f -iregex ".*\.(pk3|cfg|hud)" \
-				-exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	cd ${WRKSRC} && ${COPYTREE_SHARE} basewsw ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.	for FILE in Shader* bots_navigation.txt changelog.txt contact.txt dedicated* demoavi.txt \
-		huds.txt linux_sound_sdl.txt new* query*
-			${INSTALL_DATA} ${WRKSRC}/docs/${FILE} ${DOCSDIR}
-.	endfor
+	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-
-post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
