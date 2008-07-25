@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -30,10 +30,12 @@ post-patch:
 		${WRKSRC}/pkg-config.rb
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/agg
 	@${INSTALL_DATA} ${WRKSRC}/samples/*.rb ${RUBY_MODEXAMPLESDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/samples/agg/*.rb ${RUBY_MODEXAMPLESDIR}/agg/
+.endif
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
