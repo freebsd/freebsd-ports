@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	manualsize
-PORTVERSION=	0.6
+PORTVERSION=	0.6a
 PORTREVISION?=	0
 CATEGORIES=	net-im
 MASTER_SITES=	http://myfotomx.com/files/ \
@@ -26,5 +26,8 @@ PLIST_FILES=	lib/pidgin/manualsize.so
 
 USE_BZIP2=	yes
 ALL_TARGET=	manualsize.so
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-g root -m 755|-g wheel -m 755|g' ${WRKSRC}/makefile
 
 .include <bsd.port.mk>
