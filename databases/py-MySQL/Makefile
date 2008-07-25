@@ -18,8 +18,7 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/MySQLmodule.so
 USE_PYTHON=	-2.4
-CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
-MAKE_ENV=	${CONFIGURE_ENV}
+MAKE_ENV=	PYTHON="${PYTHON_CMD}"
 
 .include <bsd.port.pre.mk>
 

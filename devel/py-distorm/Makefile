@@ -21,7 +21,6 @@ COMMENT=	Fast x86 and x86-64 disassembler library with Python interface
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 
-MAKE_ENV+=	CC=${CC}
 WRKSRC=		${WRKDIR}/distorm/build/linux
 ALL_TARGET=	py
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/distorm.so \

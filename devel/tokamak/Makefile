@@ -19,7 +19,6 @@ USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_DOS2UNIX=	*
 
-MAKE_ENV=	CC=${CC} CXX=${CXX}
 MAKEFILE=	tokamak.make
 ALL_TARGET=
 

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gdc:${PORTSDIR}/lang/gdc
 USE_BZIP2=	yes
 MAKEFILE=	Makefile.gdc.posix
 
-MAKE_ENV=	CXX="${CXX}" NATIVECXX="${CXX}"
+MAKE_ENV=	NATIVECXX="${CXX}"
 
 PORTDOCS=	*
 

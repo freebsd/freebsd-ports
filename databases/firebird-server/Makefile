@@ -80,7 +80,7 @@ PORTDOCS=	*
 .endif
 .endif
 
-MAKE_ENV+=	CC=${CC} CXX=${CXX} FIREBIRD_TMP="${WRKDIR}" FIREBIRD_LOCK="${WRKDIR}"
+MAKE_ENV+=	FIREBIRD_TMP="${WRKDIR}" FIREBIRD_LOCK="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
 

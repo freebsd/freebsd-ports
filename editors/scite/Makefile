@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 MAKEFILE=	makefile
-MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 SUB_FILES=	pkg-message
 

@@ -19,8 +19,6 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
 
-MAKE_ENV+=	CXX=${CXX} CC=${CC}
-
 .if defined(WITH_PYTHON) || defined (WITH_PYSTE)
 USE_PYTHON=	2.4+
 

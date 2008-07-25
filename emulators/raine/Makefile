@@ -27,7 +27,6 @@ USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomehier
 MAKEFILE=	makefile
-MAKE_ENV=	PREFIX=${PREFIX}
 
 ONLY_FOR_ARCHS=	i386
 
