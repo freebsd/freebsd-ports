@@ -9,7 +9,9 @@ PORTNAME=	rinetd
 PORTVERSION=	0.62
 PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	http://www.boutell.com/rinetd/http/
+MASTER_SITES=	http://www.boutell.com/rinetd/http/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	rinetd
 
 MAINTAINER=	garga@FreeBSD.org
