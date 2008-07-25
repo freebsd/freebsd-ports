@@ -7,7 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.2.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	fxruby
@@ -33,18 +33,21 @@ NOHARM_ARGS=	--no-harm
 USE_XORG=	xcursor x11
 USE_GL=		yes
 
+.include <bsd.port.pre.mk>
+
 install-noharm:
 	cd ${WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install ${NOHARM_ARGS} ${RUBY_INSTALL_ARGS}
 
 post-configure:
-
+.if ${OSVERSION} >= 700000
 	@${REINPLACE_CMD} -e 's|CPPFLAGS = -DHAVE_SYS_TIME_H -DHAVE_SIGNAL_H -I/usr/local/include/fxscintilla -I/usr/local/include/fox-1.2|CPPFLAGS = -ffriend-injection -DHAVE_SYS_TIME_H -DHAVE_SIGNAL_H -I/usr/local/include/fxscintilla -I/usr/local/include/fox-1.2|' \
 	${WRKSRC}/ext/fox12/Makefile
+.endif
 
 do-install:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
 	@cd ${INSTALL_WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install ${RUBY_INSTALL_ARGS}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
