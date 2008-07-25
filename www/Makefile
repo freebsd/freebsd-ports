@@ -1067,6 +1067,7 @@
     SUBDIR += pear-XML_GRDDL
     SUBDIR += pecl-APC
     SUBDIR += pecl-amfext
+    SUBDIR += pecl-http
     SUBDIR += pecl-mnogosearch
     SUBDIR += pecl-pecl_http
     SUBDIR += pecl-swish
