@@ -9,7 +9,9 @@ PORTNAME=	wmauda
 PORTVERSION=	0.7
 PORTREVISION=	2
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://www.netswarm.net/misc/
+MASTER_SITES=	http://www.netswarm.net/misc/ \
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A port of wmxmms to GTK 2.x and Audacious
