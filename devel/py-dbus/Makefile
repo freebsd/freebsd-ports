@@ -3,11 +3,11 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/devel/py-dbus/Makefile,v 1.8 2007/03/01 05:52:46 marcus Exp $
+#   $MCom: ports/devel/py-dbus/Makefile,v 1.8 2007/03/01 05:52:46 marcus Exp $
+#
 
 PORTNAME=	dbus
-PORTVERSION=	0.82.4
-PORTREVISION=	1
+PORTVERSION=	0.83.0
 CATEGORIES=	devel gnome python
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,13 +33,12 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 .if exists(${LOCALBASE}/bin/rst2html) && !defined(NOPORTDOCS)
 PLIST_SUB+=	HTML=""
 .else
+CONFIGURE_ARGS+=--disable-html-docs
 PLIST_SUB+=	HTML="@comment "
 .endif
 
 post-install:
-.if defined(NOPORTDOCS)
-	@${RM} -rf ${DOCSDIR}
-.else
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR} && \
 		${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 .endif

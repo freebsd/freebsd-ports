@@ -1,23 +1,4 @@
 include/dbus-1.0/dbus/dbus-python.h
-libdata/pkgconfig/dbus-python.pc
-%%PORTDOCS%%%%DOCSDIR%%/API_CHANGES.txt
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/API_CHANGES.html
-%%PORTDOCS%%%%DOCSDIR%%/HACKING.txt
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/HACKING.html
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/NEWS.html
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/README.html
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/TODO.html
-%%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
-%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/example-async-client.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/example-client.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/example-service.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/example-signal-emitter.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/example-signal-recipient.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/list-system-services.py
 %%PYTHON_SITELIBDIR%%/_dbus_bindings.a
 %%PYTHON_SITELIBDIR%%/_dbus_bindings.la
 %%PYTHON_SITELIBDIR%%/_dbus_bindings.so
@@ -69,6 +50,9 @@ libdata/pkgconfig/dbus-python.pc
 %%PYTHON_SITELIBDIR%%/dbus/proxies.py
 %%PYTHON_SITELIBDIR%%/dbus/proxies.pyc
 %%PYTHON_SITELIBDIR%%/dbus/proxies.pyo
+%%PYTHON_SITELIBDIR%%/dbus/server.py
+%%PYTHON_SITELIBDIR%%/dbus/server.pyc
+%%PYTHON_SITELIBDIR%%/dbus/server.pyo
 %%PYTHON_SITELIBDIR%%/dbus/service.py
 %%PYTHON_SITELIBDIR%%/dbus/service.pyc
 %%PYTHON_SITELIBDIR%%/dbus/service.pyo
@@ -78,7 +62,26 @@ libdata/pkgconfig/dbus-python.pc
 %%PYTHON_SITELIBDIR%%/dbus_bindings.py
 %%PYTHON_SITELIBDIR%%/dbus_bindings.pyc
 %%PYTHON_SITELIBDIR%%/dbus_bindings.pyo
+libdata/pkgconfig/dbus-python.pc
+%%PORTDOCS%%%%DOCSDIR%%/API_CHANGES.txt
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/API_CHANGES.html
+%%PORTDOCS%%%%DOCSDIR%%/HACKING.txt
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/HACKING.html
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/NEWS.html
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/TODO.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
+%%HTML%%%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-async-client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-service.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-signal-emitter.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-signal-recipient.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/list-system-services.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/dbus/mainloop
 @dirrm %%PYTHON_SITELIBDIR%%/dbus
