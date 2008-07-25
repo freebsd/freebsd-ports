@@ -25,6 +25,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free multiplayer first person shooter with cartoon design
 
+IGNORE=		is outdated, does not match games/warsow-data port
+
 RUN_DEPENDS=	${LINUXBASE}/lib/libssl.so.5:${PORTSDIR}/security/linux-openssl \
 		${DATADIR}/data0.pk3:${PORTSDIR}/games/warsow-data
 
