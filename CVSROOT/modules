@@ -3686,8 +3686,8 @@ galeon                          ports/www/galeon
 gallery                         ports/www/gallery
 gallery2                        ports/www/gallery2
 gambas                          ports/lang/gambas
-gambc                           ports/lang/gambc
 gambit                          ports/math/gambit
+gambit-c                        ports/lang/gambit-c
 games_crimson                   ports/games/crimson
 games_ttt                       ports/games/ttt
 gamess                          ports/science/gamess
@@ -11831,11 +11831,13 @@ p5-Syntax-Highlight-Engine-Kate  ports/textproc/p5-Syntax-Highlight-Engine-Kate
 p5-Syntax-Highlight-HTML        ports/www/p5-Syntax-Highlight-HTML
 p5-Syntax-Highlight-Perl-Improved  ports/textproc/p5-Syntax-Highlight-Perl-Improved
 p5-Syntax-Highlight-Shell       ports/www/p5-Syntax-Highlight-Shell
+p5-Sys-Cpu                      ports/devel/p5-Sys-Cpu
 p5-Sys-CpuLoad                  ports/sysutils/p5-Sys-CpuLoad
 p5-Sys-Filesystem               ports/sysutils/p5-Sys-Filesystem
 p5-Sys-Gamin                    ports/sysutils/p5-Sys-Gamin
 p5-Sys-Hostname-FQDN            ports/sysutils/p5-Sys-Hostname-FQDN
 p5-Sys-Hostname-Long            ports/sysutils/p5-Sys-Hostname-Long
+p5-Sys-MemInfo                  ports/devel/p5-Sys-MemInfo
 p5-Sys-Mmap                     ports/devel/p5-Sys-Mmap
 p5-Sys-Sig                      ports/devel/p5-Sys-Sig
 p5-Sys-SigAction                ports/devel/p5-Sys-SigAction
@@ -14939,11 +14941,13 @@ p5-syntax-highlight-engine-kate  ports/textproc/p5-Syntax-Highlight-Engine-Kate
 p5-syntax-highlight-html        ports/www/p5-Syntax-Highlight-HTML
 p5-syntax-highlight-perl-improved  ports/textproc/p5-Syntax-Highlight-Perl-Improved
 p5-syntax-highlight-shell       ports/www/p5-Syntax-Highlight-Shell
+p5-sys-cpu                      ports/devel/p5-Sys-Cpu
 p5-sys-cpuload                  ports/sysutils/p5-Sys-CpuLoad
 p5-sys-filesystem               ports/sysutils/p5-Sys-Filesystem
 p5-sys-gamin                    ports/sysutils/p5-Sys-Gamin
 p5-sys-hostname-fqdn            ports/sysutils/p5-Sys-Hostname-FQDN
 p5-sys-hostname-long            ports/sysutils/p5-Sys-Hostname-Long
+p5-sys-meminfo                  ports/devel/p5-Sys-MemInfo
 p5-sys-mmap                     ports/devel/p5-Sys-Mmap
 p5-sys-sig                      ports/devel/p5-Sys-Sig
 p5-sys-sigaction                ports/devel/p5-Sys-SigAction
@@ -19246,6 +19250,7 @@ sks                             ports/security/sks
 skstream                        ports/net/skstream
 sky2000                         ports/astro/sky2000
 skyeye                          ports/emulators/skyeye
+skyfish                         ports/net/skyfish
 skype                           ports/net/skype
 skype-devel                     ports/net/skype-devel
 skype12                         ports/net/skype12
@@ -19920,6 +19925,7 @@ tclX                            ports/lang/tclX
 tclcheck                        ports/devel/tclcheck
 tclcl                           ports/devel/tclcl
 tcldom                          ports/www/tcldom
+tcldom-libxml2                  ports/www/tcldom-libxml2
 tclexpat                        ports/textproc/tclExpat
 tclgeomap                       ports/astro/tclgeomap
 tclgetopts                      ports/devel/tclgetopts
