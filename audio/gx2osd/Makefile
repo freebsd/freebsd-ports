@@ -6,7 +6,7 @@
 
 PORTNAME=	gx2osd
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	 http://eclipser.no-ip.org/
 
@@ -16,8 +16,8 @@ COMMENT=	An OSD client for XMMS2
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		xerces-c.27:${PORTSDIR}/textproc/xerces-c2
-BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.2:${PORTSDIR}/audio/cpp-xmms2
-RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.2:${PORTSDIR}/audio/cpp-xmms2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
+RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
 
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes

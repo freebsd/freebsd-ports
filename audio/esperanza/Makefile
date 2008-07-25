@@ -7,15 +7,15 @@
 
 PORTNAME=	esperanza
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://xmms2.xmms.se/~tru/esperanza/0.3/
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Advanced QT4 XMMS2 client
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.2:${PORTSDIR}/audio/cpp-xmms2
-RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.2:${PORTSDIR}/audio/cpp-xmms2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
+RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
 
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc qmake rcc uic xml network imageformats
