@@ -31,8 +31,9 @@ WRKSRC=		${WRKDIR}/xmlada-gnat-5_04a
 
 CONFLICTS=	xmlada-[0-9]*
 
+CC=		${LOCALBASE}/bin/gcc41/gcc41
 CONFIGURE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${LOCALBASE}/bin/gcc41/gcc41
-MAKE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH} CC=${LOCALBASE}/bin/gcc41/gcc41
+MAKE_ENV+=	PATH=${LOCALBASE}/bin/gcc41:${PATH}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

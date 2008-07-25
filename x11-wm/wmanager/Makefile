@@ -24,8 +24,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_XORG=	x11 xext
 USE_GL=		gl
 USE_GMAKE=	yes
-MAKE_ENV=	CXX="${CXX}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 OPTIONS=	ADDONS "Install the helper scripts and manpages" on

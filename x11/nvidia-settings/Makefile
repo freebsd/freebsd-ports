@@ -23,7 +23,6 @@ PLIST_FILES=	bin/nvidia-settings
 MAN1=		nvidia-settings.1
 
 MAKE_ENV=	ROOT=${PREFIX} \
-		CC=${CC} \
 		X11R6_LIB_DIR=${LOCALBASE}/lib \
 		X11R6_INC_DIR=${LOCALBASE}/include \
 		LDFLAGS="${PTHREAD_LIBS}"

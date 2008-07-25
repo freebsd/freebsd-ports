@@ -22,7 +22,6 @@ COMMENT=	Convert LaTeX to HTML
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 PLIST_SUB=	HEVEAVERSION=${PORTVERSION}
-MAKE_ENV=	PREFIX=${PREFIX}
 
 .include <bsd.port.pre.mk>
 

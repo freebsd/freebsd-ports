@@ -27,7 +27,7 @@ NO_PACKAGE=	depends on kernel
 
 PLIST_SUB=	KMODDIR="${KMODDIR:C,^/,,}"
 KMODDIR=	/boot/modules
-MAKE_ENV+=	KMODDIR="${KMODDIR}"
+MAKE_ENV+=	KMODDIR="${KMODDIR}" BINDIR="${PREFIX}/bin"
 
 STAMPFILE=	${LOCALBASE}/share/${PORTNAME}/.do_not_delete
 
@@ -49,9 +49,6 @@ PLIST_SUB+=	EXTRACTOR=""
 .else
 PLIST_SUB+=	EXTRACTOR="@comment "
 .endif
-
-MAKE_ENV+=	KMODDIR="${KMODDIR}" \
-		BINDIR="${PREFIX}/bin"
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed

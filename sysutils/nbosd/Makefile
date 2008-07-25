@@ -18,8 +18,6 @@ BUILD_DEPENDS=	xosd-config:${PORTSDIR}/misc/xosd
 PLIST_FILES=	bin/nbosd
 PORTDOCS=	*
 
-MAKE_ENV+=	PREFIX=${PREFIX}
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nbosd ${PREFIX}/bin
 

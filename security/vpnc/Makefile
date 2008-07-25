@@ -30,8 +30,7 @@ OPTIONS+=	DECRYPT       "cisco-decypt password decrypt utility"      on
 OPTIONS+=	SSL           "OpenSSL certificate support (hybrid only)"  off
 OPTIONS+=	CISCOVERSION  "Mask linux presentation string"             off
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}" CC="${CC}" \
-		BINS="${EXTRABUILDS}"
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}" BINS="${EXTRABUILDS}"
 
 .include <bsd.port.pre.mk>
 

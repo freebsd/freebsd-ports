@@ -23,7 +23,6 @@ USE_DOS2UNIX=	Makefile *.cpp *.h *.txt
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
-MAKE_ENV+=	CXX="${CXX}"
 
 PLIST_SUB+=	SHARED_LIB_VER=${SHARED_LIB_VER}
 SUB_FILES=	pkg-message

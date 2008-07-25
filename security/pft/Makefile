@@ -18,7 +18,6 @@ COMMENT=	Printer Job Language library and tool
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	libPJL.a
 USE_GMAKE=	yes
-MAKE_ENV=	CXX="${CXX}"
 
 PLIST_FILES=	bin/pft lib/libPJL.a
 

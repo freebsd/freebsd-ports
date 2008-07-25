@@ -13,7 +13,7 @@ MASTER_SITES=	http://cr.yp.to/mac/
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	The poly1305 message authentication reference implementation using AES
 
-MAKE_ENV+=	CC="${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} ${STRIP}"
+CC+=		${CPPFLAGS} ${CFLAGS} ${LDFLAGS} ${STRIP}
 ALL_TARGET=	default
 
 REPLACE_HDRS=	aes.h cpucycles.h poly1305aes.h

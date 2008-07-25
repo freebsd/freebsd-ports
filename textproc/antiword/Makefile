@@ -23,7 +23,6 @@ PORTDOCS=	COPYING ChangeLog Emacs Exmh FAQ History Mozilla Mutt Netscape \
 		QandA ReadMe antiword.1 antiword.man antiword.php testdoc.doc
 
 CFLAGS+=	-DNDEBUG
-MAKE_ENV+=	CC="${CC}"
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \

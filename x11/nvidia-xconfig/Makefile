@@ -17,8 +17,7 @@ COMMENT=	Tool to manipulate X configuration files for the NVidia driver
 
 USE_GMAKE=	yes
 
-MAKE_ENV=	ROOT=${PREFIX} \
-		CC=${CC}
+MAKE_ENV=	ROOT=${PREFIX}
 
 MAN1=		nvidia-xconfig.1
 PLIST_FILES=	bin/nvidia-xconfig

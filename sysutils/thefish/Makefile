@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mmendez@energyhq.be
 COMMENT=	Qt/Gtk+/ncurses rc.conf editor/management tool
 
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		LOCALBASE="${LOCALBASE}"
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 WANT_GNOME=	yes
 
