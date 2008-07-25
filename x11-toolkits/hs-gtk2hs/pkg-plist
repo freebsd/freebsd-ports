@@ -2,6 +2,7 @@ lib/gtk2hs/HScairo.o
 lib/gtk2hs/HSgconf.o
 lib/gtk2hs/HSglade.o
 lib/gtk2hs/HSglib.o
+lib/gtk2hs/HSgnomevfs.o
 lib/gtk2hs/HSgtk.o
 lib/gtk2hs/HSmozembed.o
 lib/gtk2hs/HSsoegtk.o
@@ -11,11 +12,8 @@ lib/gtk2hs/cairo.package.conf
 lib/gtk2hs/gconf.package.conf
 lib/gtk2hs/glade.package.conf
 lib/gtk2hs/glib.package.conf
+lib/gtk2hs/gnomevfs.package.conf
 lib/gtk2hs/gtk.package.conf
-lib/gtk2hs/mozembed.package.conf
-lib/gtk2hs/soegtk.package.conf
-lib/gtk2hs/sourceview.package.conf
-lib/gtk2hs/svgcairo.package.conf
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing/Cairo.hi
@@ -44,6 +42,7 @@ lib/gtk2hs/imports/glib/System/Glib.hi
 lib/gtk2hs/imports/glib/System/Glib/Attributes.hi
 lib/gtk2hs/imports/glib/System/Glib/FFI.hi
 lib/gtk2hs/imports/glib/System/Glib/Flags.hi
+lib/gtk2hs/imports/glib/System/Glib/GDateTime.hi
 lib/gtk2hs/imports/glib/System/Glib/GError.hi
 lib/gtk2hs/imports/glib/System/Glib/GList.hi
 lib/gtk2hs/imports/glib/System/Glib/GObject.hi
@@ -58,6 +57,26 @@ lib/gtk2hs/imports/glib/System/Glib/Signals.hi
 lib/gtk2hs/imports/glib/System/Glib/StoreValue.hi
 lib/gtk2hs/imports/glib/System/Glib/Types.hi
 lib/gtk2hs/imports/glib/System/Glib/UTFString.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Cancellation.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Constants.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Directory.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Drive.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Error.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/FileInfo.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Hierarchy.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Init.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/MIME.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Marshal.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Monitor.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Ops.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Signals.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Types.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/URI.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Util.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Volume.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/VolumeMonitor.hi
+lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS/Xfer.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Bin.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Abstract/Box.hi
@@ -86,8 +105,8 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/AccelLabel.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Image.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Label.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/ProgressBar.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Statusbar.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/StatusIcon.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Statusbar.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Embedding.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Plug.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Socket.hi
@@ -97,6 +116,7 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/EntryCompletion.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/HScale.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/SpinButton.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Entry/VScale.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Cursor.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/DrawWindow.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Drawable.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Enums.hi
@@ -108,6 +128,7 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Pixbuf.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/PixbufData.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Pixmap.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Region.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Screen.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Clipboard.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/DNDTypes.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Drag.hi
@@ -160,6 +181,7 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/HandleBox.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/SizeGroup.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/Tooltips.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/Viewport.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellLayout.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellRenderer.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellRendererCombo.hi
@@ -175,14 +197,16 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/EntryCompletion.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/IconView.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/ListStore.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/Sequence.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeDrag.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeModel.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeModelSort.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeRowReference.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeSelection.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeSortable.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeStore.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeView.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeViewColumn.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/Types.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextBuffer.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextIter.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextMark.hi
@@ -202,6 +226,7 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/GlyphStorage.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Layout.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Markup.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Rendering.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Structs.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango/Types.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Scrolling/HScrollbar.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Scrolling/ScrolledWindow.hi
@@ -230,7 +255,6 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeIter.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeModel.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeModelSort.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreePath.hi
-lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeRowReference.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeSelection.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeStore.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeView.hi
@@ -243,6 +267,7 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/Window.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/WindowGroup.hi
 lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk/MozEmbed.hi
 lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk/MozEmbed/Types.hi
+lib/gtk2hs/imports/soegtk/Graphics/SOE/Gtk.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceBuffer.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceIter.hi
@@ -256,29 +281,34 @@ lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceTagTable.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceView.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/Types.hi
 lib/gtk2hs/imports/svgcairo/Graphics/Rendering/Cairo/SVG.hi
-lib/gtk2hs/imports/soegtk/Graphics/SOE/Gtk.hi
 lib/gtk2hs/include/gtk2hs-config.h
 lib/gtk2hs/libHScairo.a
 lib/gtk2hs/libHSgconf.a
 lib/gtk2hs/libHSglade.a
 lib/gtk2hs/libHSglib.a
+lib/gtk2hs/libHSgnomevfs.a
 lib/gtk2hs/libHSgtk.a
 lib/gtk2hs/libHSmozembed.a
 lib/gtk2hs/libHSsoegtk.a
 lib/gtk2hs/libHSsourceview.a
 lib/gtk2hs/libHSsvgcairo.a
+lib/gtk2hs/mozembed.package.conf
+lib/gtk2hs/soegtk.package.conf
+lib/gtk2hs/sourceview.package.conf
+lib/gtk2hs/svgcairo.package.conf
+@dirrm lib/gtk2hs/include
 @dirrm lib/gtk2hs/imports/svgcairo/Graphics/Rendering/Cairo
 @dirrm lib/gtk2hs/imports/svgcairo/Graphics/Rendering
 @dirrm lib/gtk2hs/imports/svgcairo/Graphics
 @dirrm lib/gtk2hs/imports/svgcairo
-@dirrm lib/gtk2hs/imports/soegtk/Graphics/SOE
-@dirrm lib/gtk2hs/imports/soegtk/Graphics
-@dirrm lib/gtk2hs/imports/soegtk
 @dirrm lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView
 @dirrm lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk
 @dirrm lib/gtk2hs/imports/sourceview/Graphics/UI
 @dirrm lib/gtk2hs/imports/sourceview/Graphics
 @dirrm lib/gtk2hs/imports/sourceview
+@dirrm lib/gtk2hs/imports/soegtk/Graphics/SOE
+@dirrm lib/gtk2hs/imports/soegtk/Graphics
+@dirrm lib/gtk2hs/imports/soegtk
 @dirrm lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk/MozEmbed
 @dirrm lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk
 @dirrm lib/gtk2hs/imports/mozembed/Graphics/UI
@@ -307,6 +337,10 @@ lib/gtk2hs/libHSsvgcairo.a
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI
 @dirrm lib/gtk2hs/imports/gtk/Graphics
 @dirrm lib/gtk2hs/imports/gtk
+@dirrm lib/gtk2hs/imports/gnomevfs/System/Gnome/VFS
+@dirrm lib/gtk2hs/imports/gnomevfs/System/Gnome
+@dirrm lib/gtk2hs/imports/gnomevfs/System
+@dirrm lib/gtk2hs/imports/gnomevfs
 @dirrm lib/gtk2hs/imports/glib/System/Glib
 @dirrm lib/gtk2hs/imports/glib/System
 @dirrm lib/gtk2hs/imports/glib
@@ -319,14 +353,13 @@ lib/gtk2hs/libHSsvgcairo.a
 @dirrm lib/gtk2hs/imports/gconf/System/Gnome
 @dirrm lib/gtk2hs/imports/gconf/System
 @dirrm lib/gtk2hs/imports/gconf
-@dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing
-@dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Fonts
 @dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Surfaces
+@dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Fonts
+@dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing
 @dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal
 @dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo
 @dirrm lib/gtk2hs/imports/cairo/Graphics/Rendering
 @dirrm lib/gtk2hs/imports/cairo/Graphics
 @dirrm lib/gtk2hs/imports/cairo
 @dirrm lib/gtk2hs/imports
-@dirrm lib/gtk2hs/include
 @dirrm lib/gtk2hs

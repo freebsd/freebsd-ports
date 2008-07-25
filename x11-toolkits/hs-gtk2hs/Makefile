@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk2hs
-PORTVERSION=	0.9.12.1
-PORTREVISION=	1
+PORTVERSION=	0.9.13
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -33,6 +32,6 @@ SUB_LIST+=	GHC_VERSION="${GHC_VERSION}" \
 		PORTVERSION=${PORTVERSION} \
 		PKGS="${PKGS}"
 
-PKGS=		glib cairo gtk glade gconf sourceview mozembed soegtk svgcairo
+PKGS=		glib cairo gtk glade gconf sourceview mozembed soegtk svgcairo gnomevfs
 
 .include <bsd.port.mk>
