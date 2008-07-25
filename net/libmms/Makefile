@@ -18,7 +18,6 @@ USE_GNOME=	gnomehack gnometarget pkgconfig glib20
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	3.4+
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib.h|' \

@@ -21,7 +21,6 @@ LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomevfs2
 GNU_CONFIGURE=	yes

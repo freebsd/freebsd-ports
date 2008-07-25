@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small utility used to generate code from a Dia diagram
 
 USE_GNOME=	gnometarget libxml2
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

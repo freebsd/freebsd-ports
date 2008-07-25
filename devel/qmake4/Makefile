@@ -73,10 +73,6 @@ do-configure:
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../Mk/bsd.qt.mk"
 
-.if ${OSVERSION} < 500035
-USE_GCC=	3.4+
-.endif
-
 .if ${ARCH} == "alpha"
 CXXFLAGS+=	-mieee
 .endif

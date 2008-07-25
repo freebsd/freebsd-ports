@@ -25,7 +25,6 @@ PLIST_FILES=	bin/bsetbg bin/bsetroot
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
-USE_GCC=	3.3+
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's#PACKAGE=blackbox#PACKAGE=boxtools#' \

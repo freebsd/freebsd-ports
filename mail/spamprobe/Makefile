@@ -22,7 +22,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	Spam detector using Bayesian analysis of word counts
 
-USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

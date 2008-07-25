@@ -19,7 +19,6 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GCC=	3.4+
 USE_GNOME=	glib20 gtk20 atk pango pkgconfig libglade2 gnomehack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

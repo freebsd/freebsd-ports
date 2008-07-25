@@ -19,7 +19,6 @@ BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 
 OPTIONS=	SETUID	"Run as pdns_recursor user" on \
 		LUA	"Enable Lua bindings" off \

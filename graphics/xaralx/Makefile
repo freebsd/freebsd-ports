@@ -34,7 +34,6 @@ USE_GMAKE=	yes
 MAKE_ENV?=	LANG=C
 
 USE_XORG=	x11
-USE_GCC=	3.4+
 USE_WX=		2.6
 WX_CONF_ARGS=	absolute
 WX_UNICODE=	yes

@@ -16,7 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-5
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Port of pMARS using the Simple Directmedia Library
 
-USE_GCC=	3.2+
 USE_SDL=	sdl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

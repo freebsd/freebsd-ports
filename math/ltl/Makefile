@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.mpe.mpg.de/~drory/ltl/
 MAINTAINER=	rossiya@gmail.com
 COMMENT=	A C++ class SSE library for scientific computing
 
-USE_GCC=	3.2+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15

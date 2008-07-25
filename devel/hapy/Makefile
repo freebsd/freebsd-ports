@@ -16,7 +16,6 @@ MAINTAINER=	rousskov@measurement-factory.com
 COMMENT=	A runtime parser generator
 
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 
 post-build:
 	@${ECHO_MSG} "Consider running 'make check' before 'make install'"

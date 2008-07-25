@@ -20,7 +20,6 @@ USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S|.|-|}
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-sdltest --enable-static

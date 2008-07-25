@@ -21,7 +21,6 @@ USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:19 autoheader:261 libtool:15
 USE_LDCONFIG=	yes
-USE_GCC=	3.4+
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	cal3d_converter.1

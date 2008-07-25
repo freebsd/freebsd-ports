@@ -21,7 +21,6 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=		yes
 USE_XORG=		ice sm x11 xau xcursor xdmcp xext xfixes xi
-USE_GCC=		3.3+
 
 PLIST_FILES=		bin/bbdock
 

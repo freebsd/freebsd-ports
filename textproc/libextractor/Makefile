@@ -18,7 +18,6 @@ COMMENT=	Library for keyword extraction
 
 LIB_DEPENDS=	mpeg2:${PORTSDIR}/multimedia/libmpeg2
 
-USE_GCC=	3.4+
 USE_GNOME=	glib20
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libltdl:15

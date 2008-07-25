@@ -19,7 +19,6 @@ COMMENT=	Multi-client VNC proxy server
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_RC_SUBR=	vncreflector.sh
-USE_GCC=	3.3+
 
 ALL_TARGET=	default
 WRKSRC=		${WRKDIR}/vnc_reflector

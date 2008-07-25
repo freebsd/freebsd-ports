@@ -25,7 +25,6 @@ ONLY_FOR_ARCHS_REASON=	does not run properly; try games/ioquake3
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.2+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${REALVERSION}
 BUILD_WRKSRC=	${WRKSRC}/code/unix
 

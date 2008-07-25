@@ -18,7 +18,6 @@ COMMENT=	PHP, HTML and CSS development environment for GNOME 2.x
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgtkhtml
-USE_GCC=	3.4+
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

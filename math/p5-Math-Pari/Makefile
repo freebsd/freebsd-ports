@@ -17,7 +17,6 @@ COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 BUILD_DEPENDS=	pari:${PORTSDIR}/math/pari:configure
 LIB_DEPENDS=	pari:${PORTSDIR}/math/pari
 
-USE_GCC=	3.2+
 PERL_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	parilib="-L${LOCALBASE}/lib -lpari" \

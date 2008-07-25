@@ -32,7 +32,6 @@ BLAS=           -lblas
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	opt
 USE_GMAKE=	yes
-USE_GCC=	3.3+
 USE_FORTRAN=	yes
 
 post-patch:

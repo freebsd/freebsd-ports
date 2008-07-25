@@ -18,7 +18,6 @@ COMMENT=	A data interchange format library
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.2+
 USE_LDCONFIG=	yes
 
 tests: build

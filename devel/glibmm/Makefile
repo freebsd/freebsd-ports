@@ -28,7 +28,6 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 USE_GNOME=	gnomehack gnometarget glib20
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

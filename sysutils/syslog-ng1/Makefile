@@ -16,7 +16,6 @@ COMMENT=	A powerful syslogd replacement
 
 GNU_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/MESSAGE
-USE_GCC=	3.3+
 USE_RC_SUBR=	syslog-ng.sh
 
 OPTIONS=	TCP_WRAPPERS "Enable TCP wrapper support" off \

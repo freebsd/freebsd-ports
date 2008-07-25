@@ -21,7 +21,6 @@ LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 
 USE_GETTEXT=	yes
 USE_PERL5=	yes
-USE_GCC=	3.4+
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

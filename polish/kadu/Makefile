@@ -92,7 +92,6 @@ PLIST_SUB+=	GG_EMOTS="@comment "
 
 .if !defined(WITHOUT_PHEADERS)
 CONFIGURE_ARGS+=	--enable-pheaders
-USE_GCC=		3.4+
 .endif
 
 .if defined(WITH_TABS)

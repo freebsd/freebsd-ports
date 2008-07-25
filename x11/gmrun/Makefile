@@ -17,7 +17,6 @@ COMMENT=	A customizable program to run programs, with tab-completion
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-USE_GCC=	3.4+
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -18,7 +18,6 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 CONFLICTS=	pccts-[0-9]*
 
-USE_GCC=	3.2+
 USE_GMAKE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+

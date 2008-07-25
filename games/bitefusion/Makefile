@@ -18,7 +18,6 @@ COMMENT=	A snake game with 8 levels
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
-USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 		LDFLAGS="`${SDL_CONFIG} --libs`"
 

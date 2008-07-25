@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/sidplay/compconf.h:${PORTSDIR}/audio/libsidp
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include
-USE_GCC=	3.2+
 PORTDOCS=	ABOUT POINTER
 PLIST_FILES=	bin/fcplay
 

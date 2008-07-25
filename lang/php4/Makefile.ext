@@ -152,7 +152,6 @@ USE_OPENSSL=	yes
 .if ${PHP_MODNAME} == "interbase"
 CONFIGURE_ARGS+=--with-interbase=${LOCALBASE}
 
-USE_GCC=	3.4+
 USE_FIREBIRD=	yes
 .endif
 

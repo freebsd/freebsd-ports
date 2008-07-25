@@ -17,7 +17,6 @@ COMMENT=	Network capacity tester
 MAN1=		thrulay.1
 MAN8=		thrulayd.8
 MANCOMPRESSED=	no
-USE_GCC=	3.2+
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 

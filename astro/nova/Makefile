@@ -31,6 +31,5 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--datadir=${DATADIR}
-USE_GCC=	3.3+
 
 .include <bsd.port.mk>

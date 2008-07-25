@@ -18,7 +18,6 @@ COMMENT=	Guide a cat across a series of rivers, jumping from log to log
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer
-USE_GCC=	3.4+
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 

@@ -19,7 +19,6 @@ LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 vte
-USE_GCC=	3.4+
 
 DOCS=		AUTHORS ChangeLog README TODO
 

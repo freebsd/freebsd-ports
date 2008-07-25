@@ -61,12 +61,6 @@ MAKE_ENV+=	ICONV=1
 .endif
 
 .if defined(WITH_GATLING_TLS)
-.if defined(WITH_GATLING_ZLIB)
-# For reasons unknown, gatling with both HTTPS and zlib support only compiles
-# with gcc 3.1 and above. Depend on gcc 3.4+ since this is the default
-# compiler on supported FreeBSD systems anyway.
-USE_GCC=	3.4+
-.endif
 MAKE_ENV+=	TLSGATLING=1
 sbin+=		tlsgatling
 portdocs+=	README.tls

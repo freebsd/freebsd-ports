@@ -16,7 +16,6 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Ehnaced OpenGL only Quake II engine
 
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_XORG=	xxf86dga xext xxf86vm x11
 USE_GMAKE=	yes
 ALL_TARGET=	release

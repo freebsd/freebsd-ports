@@ -23,7 +23,6 @@ OPTIONS=	KTOBLZCHECK	"KtoBlzCheck support"	off
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GCC=	3.4+
 USE_QT_VER=	3
 QT_NONSTANDARD=	special flags for threading
 

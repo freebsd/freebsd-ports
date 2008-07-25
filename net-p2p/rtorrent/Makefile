@@ -24,7 +24,6 @@ CONFLICTS?=	rtorrent-devel-[0-9]*
 
 MAN1=		rtorrent.1
 
-USE_GCC?=	3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

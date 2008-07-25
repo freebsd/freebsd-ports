@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-the
 FETCH_CMD=	/usr/bin/fetch
 
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes

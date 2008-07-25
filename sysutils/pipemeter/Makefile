@@ -15,7 +15,6 @@ MAINTAINER=	rabbi@abditum.com
 COMMENT=	A tool for displaying pipe status information
 
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 
 MAN1=		pipemeter.1
 PLIST_FILES=	bin/pipemeter

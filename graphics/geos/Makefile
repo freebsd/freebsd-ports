@@ -17,7 +17,6 @@ COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	YES
 USE_BZIP2=	YES
-USE_GCC=	3.4+
 
 USE_LDCONFIG=	YES
 

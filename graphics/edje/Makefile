@@ -18,7 +18,6 @@ COMMENT=	Edje is a complex graphical design and layout engine
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	embryo eet evas ecore imlib2
 USE_EFL_ECORE=	evas job

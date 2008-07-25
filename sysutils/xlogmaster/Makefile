@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick & easy monitoring of logfiles and devices
 
-USE_GCC=	3.4+
 USE_GNOME=	gtk12 gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

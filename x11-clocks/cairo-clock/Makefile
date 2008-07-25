@@ -16,7 +16,6 @@ COMMENT=	MacSlow's Cairo-Clock
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20 intlhack gnomehack libglade2 librsvg2
-USE_GCC=	3.3+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

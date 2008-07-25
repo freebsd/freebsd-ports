@@ -15,7 +15,6 @@ MASTER_SITES=	http://corsair626.no-ip.org/microdc/ \
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	A command-line based Direct Connect client
 
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_GNOME=	libxml2

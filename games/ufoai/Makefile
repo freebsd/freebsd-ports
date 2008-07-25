@@ -24,7 +24,6 @@ LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/default.cfg:${PORTSDIR}/games/ufoai-data
 
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GL=		yes
 USE_SDL=	sdl mixer ttf
 USE_GETTEXT=	yes

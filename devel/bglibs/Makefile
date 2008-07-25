@@ -15,7 +15,6 @@ COMMENT=	One stop library package by Bruce Guenter
 
 NOT_FOR_ARCHS=	alpha
 
-USE_GCC=	3.2+
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool:15:env
 LDFLAGS?=	-s

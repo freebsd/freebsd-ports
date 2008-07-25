@@ -24,7 +24,6 @@ RUN_DEPENDS=	guichan>=0.7.1:${PORTSDIR}/devel/guichan
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image mixer net
-USE_GCC=	3.2+
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

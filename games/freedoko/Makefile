@@ -22,7 +22,6 @@ LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2 \
 WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 
 USE_ZIP=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}"
 

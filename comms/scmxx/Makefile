@@ -16,7 +16,6 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Data exchange utility for Siemens mobile phones
 
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes

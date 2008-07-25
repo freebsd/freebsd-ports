@@ -20,7 +20,6 @@ OPTIONS=	DOUBLE "64bit Data Precision Support" off \
 		FFTW3 "FFTW3 Support" on \
 		IMAGEMAGICK "ImageMagick Support" on
 
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" IOCTL=1
 

@@ -18,7 +18,6 @@ COMMENT=	An Evolutionary Computation Framework
 
 CONFLICTS=	beagle-[0-9]*
 USE_AUTOTOOLS=	libtool:15
-USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-optimization
 USE_LDCONFIG=	yes

@@ -17,7 +17,6 @@ COMMENT=	C++ Elliptic Curve Library
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
-USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

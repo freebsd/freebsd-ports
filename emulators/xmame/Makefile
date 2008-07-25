@@ -115,10 +115,6 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 BROKEN=		internal gcc error on FreeBSD < 6.x
 .endif
 
-.if (${MAMEMESS} == "mess")
-USE_GCC=	3.4+
-.endif
-
 .if defined(WITH_ASM68K)
 ASM_COMMENT=
 .else

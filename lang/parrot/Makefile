@@ -21,7 +21,6 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		icudata:${PORTSDIR}/devel/icu
 
 USE_BISON=	build
-USE_GCC=	3.4+
 USE_PERL5=	5.8.0+
 USE_GMAKE=	yes
 

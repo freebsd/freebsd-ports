@@ -17,7 +17,6 @@ COMMENT=	Duel in the universe
 WRKSRC=		${WRKDIR}/HighMoon
 
 USE_SDL=	image sdl
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
 

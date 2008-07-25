@@ -23,7 +23,6 @@ QT_COMPONENTS=	qmake_build corelib
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
-USE_GCC=	3.4+
 #USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes

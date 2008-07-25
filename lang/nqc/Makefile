@@ -16,7 +16,6 @@ MAINTAINER=	jhay@FreeBSD.org
 COMMENT=	A compiler for writing programs for the Lego RCX
 
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 NO_WRKSUBDIR=	yes
 
 MAN1=		nqc.1

@@ -48,10 +48,4 @@ post-install:
 	${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} < 501103 )
-USE_GCC=	3.3+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

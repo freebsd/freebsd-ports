@@ -18,7 +18,6 @@ COMMENT=	Cleaned up copy of the original Quake III Arena source code
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.2+
 WRKSRC=		${WRKDIR}/CleanQ3
 BUILD_WRKSRC=	${WRKSRC}/code/unix
 

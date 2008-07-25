@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/tt/src
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.2+
 
 PLIST_FILES=	bin/tt++
 PORTDOCS=	BUGS CREDITS FAQ README TODO chat_protocol.txt tintin19.txt

@@ -20,7 +20,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer
-USE_GCC=	3.4+
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \

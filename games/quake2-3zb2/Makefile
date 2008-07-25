@@ -21,7 +21,6 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	3rd-Zigock Bot II for Quake II
 
 USE_ZIP=	yes
-USE_GCC=	3.4+
 USE_DOS2UNIX=	*.[ch]
 NO_WRKSUBDIR=	yes
 

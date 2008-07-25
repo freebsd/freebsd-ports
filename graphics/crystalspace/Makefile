@@ -31,7 +31,6 @@ CONFLICTS=	crystalspace-devel-[0-9]*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 USE_GL=		yes
 WANT_PERL=	yes
 LDFLAGS+=	-L/usr/lib -lc

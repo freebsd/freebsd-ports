@@ -16,7 +16,6 @@ COMMENT=	A diff application for semistructured data such as XML files
 
 USE_AUTOTOOLS=	automake:14
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GNOME=	libxml2
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include \
