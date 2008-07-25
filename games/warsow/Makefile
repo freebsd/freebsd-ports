@@ -47,7 +47,7 @@ IGNORE=		requires at least one of CLIENT or SERVER options
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 USE_GL=		yes
 USE_SDL=	yes
-USE_XORG=	xxf86dga
+USE_XORG=	xinerama xxf86dga
 ALL_TARGET+=	cgame ui client
 WSWBIN+=	warsow
 PLIST_SUB+=	CLIENT=""
