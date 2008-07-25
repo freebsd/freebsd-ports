@@ -1,7 +1,28 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/configobj.py
 %%PYTHON_SITELIBDIR%%/configobj.pyc
 %%PYTHON_SITELIBDIR%%/configobj.pyo
 %%PYTHON_SITELIBDIR%%/validate.py
 %%PYTHON_SITELIBDIR%%/validate.pyc
 %%PYTHON_SITELIBDIR%%/validate.pyo
+%%PORTDOCS%%%%DOCSDIR%%/BSD-LICENSE.html
+%%PORTDOCS%%%%DOCSDIR%%/BSD-LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/configobj.html
+%%PORTDOCS%%%%DOCSDIR%%/configobj.txt
+%%PORTDOCS%%%%DOCSDIR%%/images/new_python.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/osi-certified-120x100.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/pythonbanner.gif
+%%PORTDOCS%%%%DOCSDIR%%/smilies/biggrin.gif
+%%PORTDOCS%%%%DOCSDIR%%/smilies/cool.gif
+%%PORTDOCS%%%%DOCSDIR%%/smilies/exclaim.gif
+%%PORTDOCS%%%%DOCSDIR%%/smilies/sad.gif
+%%PORTDOCS%%%%DOCSDIR%%/smilies/smile.gif
+%%PORTDOCS%%%%DOCSDIR%%/smilies/wink.gif
+%%PORTDOCS%%%%DOCSDIR%%/stylesheets/default.css
+%%PORTDOCS%%%%DOCSDIR%%/stylesheets/pysrc.css
+%%PORTDOCS%%%%DOCSDIR%%/stylesheets/voidspace_docutils.css
+%%PORTDOCS%%%%DOCSDIR%%/validate.html
+%%PORTDOCS%%%%DOCSDIR%%/validate.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/stylesheets
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/smilies
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

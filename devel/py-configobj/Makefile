@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	configobj
-PORTVERSION=	4.5.2
+PORTVERSION=	4.5.3
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,12 +22,12 @@ USE_PYDISTUTILS=	yes
 # www/py-turbogears requires (and installs) a Python egg for ConfigObj
 CONFLICTS=	py*-TurboGears-[0-9]*
 
-PORTDOCS=	*
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/docs/* ${DOCSDIR}
+	${MKDIR} ${DOCSDIR} && \
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
