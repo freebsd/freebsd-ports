@@ -18,7 +18,6 @@ COMMENT=	A graphic library for the Simple DirectMedia Layer (SDL)
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 OPTIONS=	SDL_IMAGE "Enable support for SDL_IMAGE" On \
 		FREETYPE "Enable FreeType support" On \

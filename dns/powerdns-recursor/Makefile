@@ -28,8 +28,6 @@ OPTIONS=	SETUID	"Run as pdns_recursor user" on \
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_ENV+=	CXX="${CXX}" CC="${CC}"
-
 MAN8=		rec_control.8 pdns_recursor.8
 SUB_FILES=	pkg-message
 

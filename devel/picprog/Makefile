@@ -15,7 +15,7 @@ COMMENT=	Serial port pic16c84 programmer
 
 USE_GMAKE=	yes
 
-MAKE_ENV=	CXX="${CXX}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/picprog
 MAN1=		picprog.1

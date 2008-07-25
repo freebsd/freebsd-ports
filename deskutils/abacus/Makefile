@@ -23,10 +23,11 @@ LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 
 USE_GMAKE=	yes
 USE_XORG=	x11
-MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -Wno-deprecated" LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 CFLAGS+=	-I$(LOCALBASE)/include \
 		-I$(LOCALBASE)/include/tcl8.2 \
 		-I$(LOCALBASE)/include/tk8.2
+CXXFLAGS+=	-Wno-deprecated
 LDFLAGS+=	-L$(LOCALBASE)/lib
 ALL_TARGET=	dep tcl_interf/nxlc
 

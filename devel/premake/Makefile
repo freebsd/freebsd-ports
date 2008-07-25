@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/Premake-${PORTVERSION}
 USE_DOS2UNIX=	yes
 USE_ZIP=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/premake
 

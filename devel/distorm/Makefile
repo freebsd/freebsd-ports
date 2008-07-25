@@ -18,7 +18,6 @@ COMMENT=	Fast x86 and x86-64 disassembler library
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
-MAKE_ENV+=	CC=${CC}
 WRKSRC=		${WRKDIR}/distorm/build/linux
 ALL_TARGET=	clib
 PLIST_FILES=	bin/disasm lib/libdistorm64.a lib/libdistorm64.so

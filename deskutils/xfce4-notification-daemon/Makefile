@@ -33,8 +33,6 @@ CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/xfce4 \
 			--libexecdir=${PREFIX}/libexec/xfce4 \
 			--with-dbus-services=${PREFIX}/share/dbus-1/services
 
-MAKE_ENV+=	CFLAGS="${CFLAGS}"
-
 CONFLICTS=	notification-daemon-[0-9]*
 
 OPTIONS=	GRADIENT "Show a gradient look in the default theme"  off \

@@ -22,7 +22,7 @@ OPTIONS=	LIBOWFAT_OPTIMIZED_CFLAGS "Use optimized CFLAGS" on
 
 .include <bsd.port.pre.mk>
 
-MAKE_ENV+=	INSTALL="${INSTALL}" CC="${CC}"
+MAKE_ENV+=	INSTALL="${INSTALL}"
 
 .if defined(WITH_LIBOWFAT_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O2 -fomit-frame-pointer

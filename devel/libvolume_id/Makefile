@@ -17,7 +17,7 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 MAKE_ENV=	E=${ECHO_MSG} RANLIB=${RANLIB} AR=${AR} Q=@ \
-		CC=${CC} prefix=${PREFIX}
+		prefix=${PREFIX}
 
 PLIST_FILES=	include/libvolume_id.h \
 		lib/libvolume_id.a \
