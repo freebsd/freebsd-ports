@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	0.40
+PORTVERSION=	0.51
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
@@ -41,6 +41,5 @@ post-install:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
 		s|%%MIMEDIRS%%|${MIMEDIRS}|' \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	@${MKDIR} ${PREFIX}/share/mime/x-content
 
 .include <bsd.port.mk>
