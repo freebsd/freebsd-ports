@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080725:
+  AFFECTS: users of www/ojs2
+  Author: Greg Larkin <glarkin@FreeBSD.org>
+
+  If you are upgrading from a prior version of ojs2, please backup
+  your database, uploaded files directory and your config.inc.php before
+  the upgrade.  Read /usr/local/share/docs/ojs2/UPGRADE or visit
+  http://pkp.sfu.ca/ojs/UPGRADE for additional upgrade information.
+
 20080721:
   AFFECTS: users of net/freenet6
   Author: Edwin Groothuis <edwin@mavetju.org>
