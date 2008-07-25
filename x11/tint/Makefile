@@ -37,6 +37,11 @@ post-patch:
 	@${SED} -e 's#/usr/bin#/bin#g' \
 		${WRKSRC}/Makefile.dist > ${WRKSRC}/Makefile
 
+pre-install:
+	${ECHO} "rmdir ${X11BASE}/etc/xdg 2>/dev/null || true" > \
+		${WRKDIR}/pkg-deinstall
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
