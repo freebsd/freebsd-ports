@@ -1,0 +1,11 @@
+--- configure.orig	2008-04-28 10:45:06.000000000 +0200
++++ configure	2008-04-28 10:45:36.000000000 +0200
+@@ -3192,7 +3192,7 @@
+ 
+     TCL_INCLUDES=-I\"${INCLUDE_DIR_NATIVE}\"
+ 
+-    
++    TCL_SRC_DIR=${with_tclinclude}
+ 
+ 
+     echo $ac_n "checking for Tcl private include files""... $ac_c" 1>&6

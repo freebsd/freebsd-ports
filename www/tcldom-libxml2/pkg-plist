@@ -1,0 +1,10 @@
+include/tcldom-libxml2/tcldom.h
+include/tcldom-libxml2/tcldomlibxml2.h
+include/tcldom-libxml2/tcldomlibxml2Decls.h
+lib/tcldom_libxml2%%VER%%/impl.tcl
+lib/tcldom_libxml2%%VER%%/libtcldom_libxml2%%VER%%.so
+lib/tcldom_libxml2%%VER%%/libtcldom_libxml2stub%%VER%%.a
+lib/tcldom_libxml2%%VER%%/pkgIndex.tcl
+lib/tcldomlibxml2Config.sh
+@dirrm lib/tcldom_libxml2%%VER%%
+@dirrm include/tcldom-libxml2
