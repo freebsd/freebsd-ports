@@ -6,56 +6,50 @@
 #
 
 PORTNAME=	warsow
-PORTVERSION=	0.12
-PORTREVISION=	7
+PORTVERSION=	0.42
 CATEGORIES=	games
-MASTER_SITES=	http://warsow.aditsystems.com/ \
-		http://ftp.club-internet.fr/pub/games/nofrag/warsow/ \
-		http://wsw.surreal-xenotronic.com/
+MASTER_SITES=	http://data.rodix.free.fr/warsow/files/ \
+		http://88.191.19.21/wsw/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_sdk
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast paced first person shooter game
 
-RUN_DEPENDS=	${DATADIR}/data0.pk3:${PORTSDIR}/games/warsow-data
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	${DATADIR}/basewsw/data0.pk3:${PORTSDIR}/games/warsow-data
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
-USE_GCC=	3.4+
-USE_XORG=	xxf86dga
 USE_ZIP=	yes
-USE_DOS2UNIX=	linux/in_x11.c linux/sys_linux.c
+USE_DOS2UNIX=	game/q_shared.h
 
-WRKSRC=		${WRKDIR}/source/source012
+WRKSRC=		${WRKDIR}/${DISTNAME:S/sdk/src/}/source
 ALL_TARGET=	game
+MAKE_ARGS=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 RELEASEDIR=	${WRKSRC}/release
-WSWDATADIR=	${PREFIX}/lib/${PORTNAME}
+WSWSUBDIR=	basewsw
 
 OPTIONS=	CLIENT	"Build client executable"		on \
-		SERVER	"Build dedicated server executable"	on
+		SERVER	"Build dedicated server executable"	on \
+		QF	"Build Qf sound module"			on \
+		OPENAL	"Build OpenAL sound module"		on \
+		IRC	"Build IRC client module"		on \
+		TV_SRV	"Build Warsow TV server"		on
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_CLIENT) && defined(WITHOUT_SERVER)
-IGNORE=		requires at least one of CLIENT and SERVER options
-.endif
-
-.if ${ARCH} == "i386"
-ARCHSUFFIX=	"_i386"
-PLIST_SUB+=	ARCHSUFFIX=${ARCHSUFFIX}
-.elif ${ARCH} == "amd64"
-ARCHSUFFIX=	"_x86_64"
-PLIST_SUB+=	ARCHSUFFIX=${ARCHSUFFIX}
+IGNORE=		requires at least one of CLIENT or SERVER options
 .endif
 
 .if !defined(WITHOUT_CLIENT)
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 USE_GL=		yes
 USE_SDL=	yes
+USE_XORG=	xxf86dga
 ALL_TARGET+=	cgame ui client
-WSBIN+=		warsow
+WSWBIN+=	warsow
 PLIST_SUB+=	CLIENT=""
 .else
 PLIST_SUB+=	CLIENT="@comment "
@@ -63,25 +57,70 @@ PLIST_SUB+=	CLIENT="@comment "
 
 .if !defined(WITHOUT_SERVER)
 ALL_TARGET+=	ded
-WSBIN+=		wsw_server
+WSWBIN+=	wsw_server
 PLIST_SUB+=	SERVER=""
 .else
 PLIST_SUB+=	SERVER="@comment "
 .endif
 
+.if !(defined(WITHOUT_QF) && defined(WITHOUT_OPENAL))
+LIB_DEPENDS+=	vorbisfile.5:${PORTSDIR}/audio/libvorbis
+.endif
+
+.if !(defined(WITHOUT_QF) && defined(WITHOUT_OPENAL) && defined(WITHOUT_IRC))
+WSWSUBDIR+=	libs
+.endif
+
+.if !defined(WITHOUT_QF)
+USE_SDL=	yes
+ALL_TARGET+=	qf
+PLIST_SUB+=	QF=""
+.else
+PLIST_SUB+=	QF="@comment "
+.endif
+
+.if !defined(WITHOUT_OPENAL)
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
+ALL_TARGET+=	openal
+PLIST_SUB+=	OPENAL=""
+.else
+PLIST_SUB+=	OPENAL="@comment "
+.endif
+
+.if !defined(WITHOUT_IRC)
+ALL_TARGET+=	irc
+PLIST_SUB+=	IRC=""
+.else
+PLIST_SUB+=	IRC="@comment "
+.endif
+
+.if !defined(WITHOUT_TV_SRV)
+ALL_TARGET+=	tv_server
+WSWBIN+=	wswtv_server
+PLIST_SUB+=	TVSERVER=""
+.else
+PLIST_SUB+=	TVSERVER="@comment "
+.endif
+
+PLIST_SUB+=	ARCH=${ARCH}
+
 post-patch: .SILENT
-	${REINPLACE_CMD} -e 's#@$$(DO_CC#$$(DO_CC#; \
-		s#-O2 ##' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's#path", "\.#path", "${WSWDATADIR}#; \
-		s#dir", "0#dir", "1#' ${WRKSRC}/qcommon/files.c
-	${REINPLACE_CMD} -e 's#Linux#FreeBSD#' ${WRKSRC}/game/q_shared.h
+# Unmute build and link commands, respect CFLAGS
+	${REINPLACE_CMD} -e 's|@$$(DO_CC|$$(DO_CC| ; /> Linking $$@/d ; \
+		s|-O2 -fno-strict-aliasing -ffast-math -funroll-loops ||' \
+			${WRKSRC}/Makefile
+# Search directory provided by warsow-data port instead of current.  Doing
+# so allows us not to install any wrapper scripts.
+	${REINPLACE_CMD} -e 's|path", "\.|path", "${DATADIR}|' \
+		${WRKSRC}/qcommon/files.c
+# FreeBSD does not use stupid `64' suffix for 64-bit readdir(3)
+	${REINPLACE_CMD} -e 's/FILE64_SOURCE)/& || defined(__FreeBSD__)/' \
+		${WRKSRC}/unix/unix_fs.c
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/basewsw
-.for FILE in ${WSBIN}
-	${INSTALL_PROGRAM} ${RELEASEDIR}/${FILE} ${PREFIX}/bin
+.for b in ${WSWBIN}
+	${INSTALL_PROGRAM} ${RELEASEDIR}/${b}.${ARCH} ${PREFIX}/bin/${b}
 .endfor
-	${INSTALL_DATA} ${RELEASEDIR}/basewsw/*.so ${PREFIX}/lib/${PORTNAME}/basewsw
-	${LN} -s ${DATADIR}/* ${PREFIX}/lib/${PORTNAME}/basewsw
+	cd ${RELEASEDIR} && ${COPYTREE_SHARE} ${WSWSUBDIR} ${DATADIR}
 
 .include <bsd.port.post.mk>
