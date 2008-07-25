@@ -1,5 +1,9 @@
 bin/admsCheck
 bin/admsXml
+lib/libadmsAdmstpath.a
+lib/libadmsAdmstpath.la
+lib/libadmsAdmstpath.so
+lib/libadmsAdmstpath.so.0
 lib/libadmsElement.a
 lib/libadmsElement.la
 lib/libadmsElement.so
