@@ -1,4 +1,6 @@
 %%DOCSDIR_REL%%/html/Distribution-Haddock.html
+%%DOCSDIR_REL%%/html/Haddock-DocName.html
+%%DOCSDIR_REL%%/html/Haddock-GHC-Utils.html
 %%DOCSDIR_REL%%/html/doc-index.html
 %%DOCSDIR_REL%%/html/haddock-util.js
 %%DOCSDIR_REL%%/html/haddock.css
@@ -9,8 +11,10 @@
 %%DOCSDIR_REL%%/html/haddock/Haddock-Backends-HaddockDB.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-Backends-Hoogle.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-Backends-Html.html
+%%DOCSDIR_REL%%/html/haddock/Haddock-DocName.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-Exception.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-GHC-Typecheck.html
+%%DOCSDIR_REL%%/html/haddock/Haddock-GHC-Utils.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-GHC.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-Interface-AttachInstances.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-Interface-Create.html
@@ -19,6 +23,7 @@
 %%DOCSDIR_REL%%/html/haddock/Haddock-InterfaceFile.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-ModuleTree.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-Options.html
+%%DOCSDIR_REL%%/html/haddock/Haddock-Types.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-Utils-BlockTable.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-Utils-FastMutInt2.html
 %%DOCSDIR_REL%%/html/haddock/Haddock-Utils-Html.html
