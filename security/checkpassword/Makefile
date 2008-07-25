@@ -17,7 +17,6 @@ COMMENT=	A simple password-checking interface
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
-RESTRICTED=	Unsure of djb's license
 
 PLIST_FILES=	bin/checkpassword
 PORTDOCS=	CHANGES FILES README SYSDEPS TARGETS TODO VERSION
