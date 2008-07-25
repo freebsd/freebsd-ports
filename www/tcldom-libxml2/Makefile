@@ -11,8 +11,10 @@ PKGNAMESUFFIX=	-libxml2
 MAINTAINER=	frank@fenor.de
 COMMENT=	DOM API for Tcl using libxml2
 
-BUILD_DEPENDS=	${LOCALBASE}/include/tclxml-libxml2/tclxml-libxml2Decls.h:${PORTSDIR}/devel/tclxml-libxml2
-RUN_DEPENDS=	${LOCALBASE}/lib/TclXML_libxml2${PORTVERSION}/libTclXML_libxml2${PORTVERSION}.so:${PORTSDIR}/devel/tclxml-libxml2
+BUILD_DEPENDS=	${LOCALBASE}/lib/TclxmlConfig.sh:${PORTSDIR}/devel/tclxml \
+		${LOCALBASE}/include/tclxml-libxml2/tclxml-libxml2Decls.h:${PORTSDIR}/devel/tclxml-libxml2
+RUN_DEPENDS=	${LOCALBASE}/lib/Tclxml${PORTVERSION}/libTclxml${PORTVERSION}.so:${PORTSDIR}/devel/tclxml \
+		${LOCALBASE}/lib/TclXML_libxml2${PORTVERSION}/libTclXML_libxml2${PORTVERSION}.so:${PORTSDIR}/devel/tclxml-libxml2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src-libxml2
 PATCHDIR=	${.CURDIR}/files
