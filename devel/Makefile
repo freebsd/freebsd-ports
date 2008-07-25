@@ -2086,6 +2086,7 @@
     SUBDIR += py-generate
     SUBDIR += py-geojson
     SUBDIR += py-geotypes
+    SUBDIR += py-gitpython
     SUBDIR += py-gobject
     SUBDIR += py-grouch
     SUBDIR += py-icalendar

@@ -1,0 +1,22 @@
+# New ports collection makefile for:	py-GitPython
+# Date created:		2006-07-18
+# Whom:			Wen Heping <wenheping@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	GitPython
+PORTVERSION=	0.1.4.1
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	wenheping@gmail.com
+COMMENT=	Python Git Library
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=easy_install
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+
+.include <bsd.port.mk>
