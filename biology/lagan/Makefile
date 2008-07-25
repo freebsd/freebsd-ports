@@ -27,7 +27,8 @@ EXEUTILS=	Glue bin2bl bin2mf cextract contigorder cstat dotplot fa2xfa \
 SCRIPTUTILS=	cmerge2.pl draft.pl mextract.pl mf2bin.pl mpretty.pl \
 		mproject.pl mrun.pl mrunfile.pl mrunpairs.pl mviz.pl
 
-MAKE_ENV+=	CC="${CC} ${CFLAGS}" CPP="${CXX} ${CXXFLAGS}"
+CC:=		${CC} ${CFLAGS}
+MAKE_ENV+=	CPP="${CXX} ${CXXFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(CC|CPP) =,\1 ?=,g' \

@@ -24,8 +24,6 @@ MAN5=		mfbcap.5
 MLINKS=		spice.1 spice3.1
 USE_XORG=	xt xaw xmu
 
-MAKE_ENV+=	CC="${CC}"
-
 pre-patch:
 	@${CP} -f ${WRKSRC}/spice/common/lib/helpdir/spice.txt ${WRKSRC}/cider/common/lib/helpdir/spice.txt
 

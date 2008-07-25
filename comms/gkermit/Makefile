@@ -18,7 +18,6 @@ NO_WRKSUBDIR=	yes
 MAN1=		gkermit.1
 
 ALL_TARGET=	posix
-MAKE_ENV=	CC="${CC}"
 
 GKERMIT_DOCDIR=	${PREFIX}/share/doc/gkermit
 

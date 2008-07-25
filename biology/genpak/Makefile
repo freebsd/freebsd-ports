@@ -20,7 +20,7 @@ COMMENT=	A set of small utilities to manipulate DNA sequences
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 USE_GMAKE=	yes
-MAKE_ENV=	GMAKE="${GMAKE}" MANPREFIX="${MANPREFIX}"
+MAKE_ENV=	GMAKE="${GMAKE}"
 
 MAN1=	Genpak.1 gp_acc.1 gp_adjust.1 gp_cdndev.1 gp_cusage.1 gp_digest.1 \
 	gp_dimer.1 gp_findorf.1 gp_gc.1 gp_getseq.1 gp_matrix.1 gp_mkmtx.1 \

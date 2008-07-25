@@ -18,8 +18,6 @@ COMMENT=	The Universal IR Receiver Daemon
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
-MAKE_ENV+=	CC="${CC}"
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	${PORTNAME}
 

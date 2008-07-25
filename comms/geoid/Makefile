@@ -24,7 +24,6 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk-threads
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 
-MAKE_ENV+=	CXX="${CXX}"
 PLIST_FILES=	bin/geoid ${DATADIR_REL}/country.pos share/pixmaps/geoid.png
 PLIST_DIRS=	${DATADIR_REL}
 

@@ -24,8 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/sphinxbas
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAKE_ENV=	MKDIR="${MKDIR}" \
-		OSVERSION=${OSVERSION} \
-		CXX="${CXX}"
+		OSVERSION=${OSVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in

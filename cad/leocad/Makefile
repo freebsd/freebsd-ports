@@ -26,8 +26,6 @@ USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 
-MAKE_ENV+=	CXX=${CXX}
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000

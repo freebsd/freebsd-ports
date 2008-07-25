@@ -31,7 +31,7 @@ EXTRACT_ONLY=	${PORTNAME}552.tar.gz
 LOCAL_UNZIP+=	-DUSE_SMITH_CODE
 .endif
 
-MAKE_ENV=	CC="${CC}" LOCAL_UNZIP="${LOCAL_UNZIP}"
+MAKE_ENV=	LOCAL_UNZIP="${LOCAL_UNZIP}"
 
 .ifdef USE_UNZIP
 .error You have `USE_UNZIP' variable defined either in environment or in make(1) arguments. Please undefine and try again.
