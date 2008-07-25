@@ -1654,6 +1654,7 @@
     SUBDIR += p5-Sub-Uplevel
     SUBDIR += p5-Sub-WrapPackages
     SUBDIR += p5-Sys-Cpu
+    SUBDIR += p5-Sys-MemInfo
     SUBDIR += p5-Sys-Mmap
     SUBDIR += p5-Sys-Sig
     SUBDIR += p5-Sys-SigAction

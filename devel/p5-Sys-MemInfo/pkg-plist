@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/MemInfo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/MemInfo/MemInfo.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/MemInfo/MemInfo.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/MemInfo/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/MemInfo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
