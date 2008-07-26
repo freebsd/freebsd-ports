@@ -41,13 +41,13 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/smime.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semi/smime.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/semi
-%%SEMIDOCDIR%%/ChangeLog
-%%SEMIDOCDIR%%/NEWS
-%%SEMIDOCDIR%%/README.en
-%%SEMIDOCDIR%%/README.ja
-%%SEMIDOCDIR%%/TODO
-%%SEMIDOCDIR%%/VERSION
-@dirrm %%SEMIDOCDIR%%
+%%PORTDOCS%%%%SEMIDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%SEMIDOCDIR%%/NEWS
+%%PORTDOCS%%%%SEMIDOCDIR%%/README.en
+%%PORTDOCS%%%%SEMIDOCDIR%%/README.ja
+%%PORTDOCS%%%%SEMIDOCDIR%%/TODO
+%%PORTDOCS%%%%SEMIDOCDIR%%/VERSION
+%%PORTDOCS%%@dirrm %%SEMIDOCDIR%%
 @unexec install-info --delete %D/info/mime-ui-en.info %D/info/dir
 info/mime-ui-en.info
 @exec install-info %D/info/mime-ui-en.info %D/info/dir
