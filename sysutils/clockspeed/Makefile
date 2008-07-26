@@ -7,10 +7,10 @@
 
 PORTNAME=	clockspeed
 PORTVERSION=	0.62
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/clockspeed/ \
-		ftp://ftp.task.gda.pl/mirror/mirror.qmail.org/koobera/pub/software/
+		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Uses a hardware tick counter to compensate for deviant system clock
@@ -50,7 +50,7 @@ do-configure:
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
 
 post-build:
-	@${CP} ${LOCALBASE}/etc/leapsecs.dat ${WRKSRC}/leapsecs.dat
+	@${CP} ${FILESDIR}/leapsecs.dat ${WRKSRC}/leapsecs.dat
 
 post-install:
 .if !defined(NOPORTDOCS)
