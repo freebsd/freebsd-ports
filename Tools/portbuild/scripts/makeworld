@@ -1,34 +1,59 @@
 #!/bin/sh
 
+#
+# XXX lockfile and interlock with mkbindist to avoid overlapping
+# builds
+
 pb=/var/portbuild
 
-if [ $# -lt 2 ]; then
-        echo "usage: makeworld arch branch [args]"
+if [ $# -lt 3 ]; then
+        echo "usage: makeworld arch branch buildid [args]"
         exit 1
 fi
 
 arch=$1
 branch=$2
-shift 2
+buildid=$3
+shift 3
+
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
 . ${pb}/${arch}/portbuild.conf
+# NB: we can't use buildenv because it sets ARCH and MACHINE_ARCH that
+# confuses cross-builds
 
 export TARGET_ARCH=${arch}
+
+case "$branch" in
+    6*)
+	export SRCBRANCH="-r RELENG_6"
+	;;
+    7*)
+	export SRCBRANCH="-r RELENG_7"
+	;;
+    8*)
+	export SRCBRANCH=
+	;;
+    *)
+	echo "Invalid branch ${branch}"
+	exit 1
+	;;
+esac
 
 client=0
 nocvs=0
 
 # optional arguments
 while [ $# -gt 0 ]; do
-  case "x$1" in
-    x-client)
+  case "$1" in
+    -client)
       client=1
       ;;
-    x-nocvs)
+    -nocvs)
       nocvs=1
       ;;
     *)
-      break
+      args="$1 ${args}"
       ;;
   esac
   shift
@@ -38,28 +63,18 @@ if [ "$client" = "1" ]; then
 	SRCBASE=${pb}/${arch}/src-client
 	shift 1
 else
-	SRCBASE=${pb}/${arch}/${branch}/src
+	SRCBASE=${builddir}/src
 	export __MAKE_CONF=/dev/null
 fi
 cd ${SRCBASE}
 
 if [ "$nocvs" = "0" ]; then
 	echo "==> Updating source tree"
-	cvs -Rq update -Pd
-	error=$?
-	if [ "$error" != "0" ]; then
-		exit 1
-	fi
+	cvs -Rq update -PdA ${SRCBRANCH} || exit $?
 fi
-
-env
 
 echo "==> Starting make buildworld"
-make buildworld $*
-error=$?
-if [ "$error" != "0" ]; then
-	exit $error
-fi
+make buildworld ${args} || exit $?
 
 echo "==> Cleaning up chroot"
 rm -rf /var/chroot/
@@ -70,26 +85,12 @@ mkdir /var/chroot/
 echo "==> Starting make installworld"
 if [ "$client" = "0" ]; then
 	export NEWSPARC_TIMETYPE=__int64_t
-	make installworld DESTDIR=/var/chroot
-	error=$?
-	if [ "$error" != "0" ]; then
-		exit $error
-	fi
+	make installworld DESTDIR=/var/chroot || exit $?
 
 	echo "==> Starting make distribute"
-	if [ "$branch" = "5" ]; then
-		cd etc
-		make obj
-		make all
-		make distribute DISTRIBUTION=/var/chroot/
-	else
-		make DESTDIR=/var/chroot distrib-dirs && \
-		  make DESTDIR=/var/chroot distribution
-	fi
-	error=$?
-	if [ "$error" != "0" ]; then
-		exit $error
-	fi
+	make DESTDIR=/var/chroot distrib-dirs && \
+	    make DESTDIR=/var/chroot distribution || exit $?
+
 else
 	echo "==> Not doing installworld of client source tree"
 fi
