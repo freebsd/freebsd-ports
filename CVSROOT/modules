@@ -3664,6 +3664,7 @@ gaa                             ports/devel/gaa
 gacxtool                        ports/net/gacxtool
 gaddr                           ports/deskutils/gaddr
 gadfly                          ports/databases/gadfly
+gaeo                            ports/www/gaeo
 gai                             ports/x11-toolkits/gai
 gai-album                       ports/audio/gai-album
 gai-leds                        ports/sysutils/gai-leds
@@ -6726,7 +6727,6 @@ ledgersmb                       ports/finance/ledgersmb
 ledgersmb12                     ports/finance/ledgersmb12
 ledit                           ports/sysutils/ledit
 legends                         ports/games/legends
-legoctl                         ports/devel/legoctl
 leim21                          ports/editors/leim21
 lemmatizer                      ports/textproc/lemmatizer
 lemmatizer2                     ports/textproc/lemmatizer2
@@ -6934,6 +6934,7 @@ libg++                          ports/devel/libg++
 libgail-gnome                   ports/x11-toolkits/libgail-gnome
 libgal                          ports/astro/libgal
 libgalago                       ports/devel/libgalago
+libgamepad                      ports/devel/libgamepad
 libgconf-java                   ports/devel/libgconf-java
 libgcrypt                       ports/security/libgcrypt
 libgda                          ports/databases/libgda
@@ -8604,6 +8605,9 @@ mysql50-server                  ports/databases/mysql50-server
 mysql51-client                  ports/databases/mysql51-client
 mysql51-scripts                 ports/databases/mysql51-scripts
 mysql51-server                  ports/databases/mysql51-server
+mysql60-client                  ports/databases/mysql60-client
+mysql60-scripts                 ports/databases/mysql60-scripts
+mysql60-server                  ports/databases/mysql60-server
 mysql_last_value                ports/databases/mysql_last_value
 mysqlard                        ports/databases/mysqlard
 mysqlbigram                     ports/databases/mysqlbigram
@@ -10076,6 +10080,7 @@ p5-DBD-mysql40                  ports/databases/p5-DBD-mysql40
 p5-DBD-mysql41                  ports/databases/p5-DBD-mysql41
 p5-DBD-mysql50                  ports/databases/p5-DBD-mysql50
 p5-DBD-mysql51                  ports/databases/p5-DBD-mysql51
+p5-DBD-mysql60                  ports/databases/p5-DBD-mysql60
 p5-DBI                          ports/databases/p5-DBI
 p5-DBI-Shell                    ports/databases/p5-DBI-Shell
 p5-DBIWrapper                   ports/databases/p5-DBIWrapper
@@ -10971,6 +10976,7 @@ p5-MP3-Tag                      ports/audio/p5-MP3-Tag
 p5-MP4-Info                     ports/multimedia/p5-MP4-Info
 p5-MPEG-ID3v2Tag                ports/audio/p5-MPEG-ID3v2Tag
 p5-MRO-Compat                   ports/devel/p5-MRO-Compat
+p5-MRTG-Parse                   ports/net-mgmt/p5-MRTG-Parse
 p5-Mac-FileSpec-Unixish         ports/devel/p5-Mac-FileSpec-Unixish
 p5-Mac-Macbinary                ports/archivers/p5-Mac-Macbinary
 p5-Mail-Address-MobileJp        ports/mail/p5-Mail-Address-MobileJp
@@ -11684,6 +11690,7 @@ p5-SVN-Log                      ports/devel/p5-SVN-Log
 p5-SVN-Mirror                   ports/devel/p5-SVN-Mirror
 p5-SVN-Notify                   ports/devel/p5-SVN-Notify
 p5-SVN-Notify-Config            ports/devel/p5-SVN-Notify-Config
+p5-SVN-Notify-Filter-AuthZMail  ports/devel/p5-SVN-Notify-Filter-AuthZMail
 p5-SVN-Notify-Filter-EmailFlatFileDB  ports/devel/p5-SVN-Notify-Filter-EmailFlatFileDB
 p5-SVN-Notify-Filter-Markdown   ports/devel/p5-SVN-Notify-Filter-Markdown
 p5-SVN-Notify-Filter-Watchers   ports/devel/p5-SVN-Notify-Filter-Watchers
@@ -13259,6 +13266,7 @@ p5-dbd-mysql40                  ports/databases/p5-DBD-mysql40
 p5-dbd-mysql41                  ports/databases/p5-DBD-mysql41
 p5-dbd-mysql50                  ports/databases/p5-DBD-mysql50
 p5-dbd-mysql51                  ports/databases/p5-DBD-mysql51
+p5-dbd-mysql60                  ports/databases/p5-DBD-mysql60
 p5-dbd-odbc                     ports/databases/p5-DBD-ODBC
 p5-dbd-oracle                   ports/databases/p5-DBD-Oracle
 p5-dbd-pg                       ports/databases/p5-DBD-Pg
@@ -14229,6 +14237,7 @@ p5-mp3-tag                      ports/audio/p5-MP3-Tag
 p5-mp4-info                     ports/multimedia/p5-MP4-Info
 p5-mpeg-id3v2tag                ports/audio/p5-MPEG-ID3v2Tag
 p5-mro-compat                   ports/devel/p5-MRO-Compat
+p5-mrtg-parse                   ports/net-mgmt/p5-MRTG-Parse
 p5-musicbrainz-client           ports/audio/p5-MusicBrainz-Client
 p5-musicbrainz-queries          ports/audio/p5-MusicBrainz-Queries
 p5-musicbrainz-trm              ports/audio/p5-MusicBrainz-TRM
@@ -14924,6 +14933,7 @@ p5-svn-log                      ports/devel/p5-SVN-Log
 p5-svn-mirror                   ports/devel/p5-SVN-Mirror
 p5-svn-notify                   ports/devel/p5-SVN-Notify
 p5-svn-notify-config            ports/devel/p5-SVN-Notify-Config
+p5-svn-notify-filter-authzmail  ports/devel/p5-SVN-Notify-Filter-AuthZMail
 p5-svn-notify-filter-emailflatfiledb  ports/devel/p5-SVN-Notify-Filter-EmailFlatFileDB
 p5-svn-notify-filter-markdown   ports/devel/p5-SVN-Notify-Filter-Markdown
 p5-svn-notify-filter-watchers   ports/devel/p5-SVN-Notify-Filter-Watchers
@@ -16204,6 +16214,7 @@ pecl-hash                       ports/security/pecl-hash
 pecl-hidef                      ports/devel/pecl-hidef
 pecl-html_parse                 ports/textproc/pecl-html_parse
 pecl-htscanner                  ports/devel/pecl-htscanner
+pecl-http                       ports/www/pecl-http
 pecl-id3                        ports/audio/pecl-id3
 pecl-imagick                    ports/graphics/pecl-imagick
 pecl-imlib2                     ports/graphics/pecl-imlib2
@@ -17342,6 +17353,7 @@ py-geojson                      ports/devel/py-geojson
 py-geotypes                     ports/devel/py-geotypes
 py-gimp                         ports/graphics/py-gimp
 py-gingin                       ports/www/py-GinGin
+py-gitpython                    ports/devel/py-gitpython
 py-glewpy                       ports/graphics/py-glewpy
 py-gmpy                         ports/math/py-gmpy
 py-gnome                        ports/x11-toolkits/py-gnome
@@ -17394,6 +17406,7 @@ py-jcc                          ports/devel/py-jcc
 py-jinja                        ports/devel/py-Jinja
 py-jonpy                        ports/www/py-jonpy
 py-json-py                      ports/devel/py-json-py
+py-jsonlib                      ports/devel/py-jsonlib
 py-karaoke                      ports/audio/py-karaoke
 py-kde                          ports/x11-toolkits/py-kde
 py-kenosis                      ports/net-p2p/py-kenosis
@@ -18306,6 +18319,7 @@ roadmap                         ports/astro/roadmap
 roadrunner                      ports/net/roadrunner
 roap                            ports/textproc/roap
 robocode                        ports/games/robocode
+roboctl                         ports/devel/roboctl
 robodoc                         ports/devel/robodoc
 robot                           ports/graphics/robot
 robotfindskitten                ports/games/robotfindskitten
@@ -19628,6 +19642,7 @@ sshguard                        ports/security/sshguard
 sshguard-ipfw                   ports/security/sshguard-ipfw
 sshguard-pf                     ports/security/sshguard-pf
 sshit                           ports/security/sshit
+ssl-admin                       ports/security/ssl-admin
 ssldump                         ports/net/ssldump
 sslproxy                        ports/security/sslproxy
 sslsniffer                      ports/security/sslsniffer
