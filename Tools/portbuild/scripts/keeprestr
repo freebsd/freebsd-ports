@@ -1,11 +1,32 @@
-#!/bin/sh
+#!/bin/sh -x
+
+usage () {
+  echo "usage: keeprestr arch branch buildid"
+  exit 1
+}
+
+if [ $# -ne 3 ]; then
+  usage
+fi
 
 arch=$1
 branch=$2
+buildid=$3
 
-cd /var/portbuild/${arch}/${branch}
+pb=/var/portbuild
+
+. ${pb}/scripts/buildenv
+
+buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
+if [ -z "${buildid}" ]; then
+    echo "Invalid build ID ${buildid}"
+    exit 1
+fi
+
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
+cd ${builddir}
 
 rm -rf bak/restricted
 mkdir -p bak/restricted
 
-tar cvf - `tr ';' '\n' < restricted.sh | grep "/bin/rm -f" | awk '{print $3}' | grep packages/ | sed -e "s,/var/portbuild/${arch}/${branch}/,," -e 's,)$,,' ` | tar xfCP - bak/restricted/
+(tr ';' '\n' < restricted.sh | grep "/bin/rm -f" | awk '{print $3}' | grep packages/ | sed -e "s,${builddir}/,," -e 's,)$,,' | xargs ls -1 2>/dev/null) | cpio -dumpl bak/restricted/
