@@ -78,7 +78,7 @@ WANT_MYSQL_VER=	323
 
 LATEST_LINK=	mysql323-server
 
-CONFLICTS=	mysql-server-4.* mysql-server-5.*
+CONFLICTS=	mysql-server-4.* mysql-server-5.* mysql-server-6.*
 
 USE_RC_SUBR=	mysql-server.sh
 
@@ -138,7 +138,7 @@ post-install:
 .if defined(CLIENT_ONLY)
 LATEST_LINK=	mysql323-client
 
-CONFLICTS=	mysql-client-4.* mysql-client-5.*
+CONFLICTS=	mysql-client-4.* mysql-client-5.* mysql-client-6.*
 
 MAN1=		mysql.1 mysqladmin.1 mysqldump.1 mysqlshow.1
 
@@ -165,7 +165,7 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 LATEST_LINK=	mysql323-scripts
 
-CONFLICTS=	mysql-scripts-4.* mysql-scripts-5.*
+CONFLICTS=	mysql-scripts-4.* mysql-scripts-5.* mysql-scripts-6.*
 
 MAN1=		mysql_zap.1 mysqlaccess.1 mysqld_multi.1
 
