@@ -1,70 +1,38 @@
 #!/bin/sh
-# usage: $0 arch branch
+# usage: $0 arch branch buildid
 
-# Don't want to pick up bento customizations
-INDEX_PRISTINE=1
+# Don't want to pick up host customizations
+export INDEX_PRISTINE=1
 
 # Don't give luser advice if it fails
-INDEX_QUIET=1
+export INDEX_QUIET=1
 
 # Concurrency of index build
 export INDEX_JOBS=6
 
 pb=/var/portbuild
-arch=$1
-shift
-. ${pb}/${arch}/portbuild.conf
-. ${pb}/scripts/buildenv
 
 usage () {
-  echo "usage: makeindex arch branch"
+  echo "usage: makeindex arch branch buildid"
   exit 1
 }
 
-if [ $# != 1 ]; then
+if [ $# -ne 3 ]; then
   usage
 fi
 
-case "x$1" in
-  x5)
-    branch=5
-    INDEXFILE=INDEX-5
-    ;;
-  x6)
-    branch=6
-    INDEXFILE=INDEX-6
-    ;;
-  x6-exp)
-    branch=6-exp
-    INDEXFILE=INDEX-6
-    ;;
-  x6-exp2)
-    branch=6-exp2
-    INDEXFILE=INDEX-6
-    ;;
-  x7)
-    branch=7
-    INDEXFILE=INDEX-7
-    ;;
-  x7-exp)
-    branch=7-exp
-    INDEXFILE=INDEX-7
-    ;;
-  x8)
-    branch=8
-    INDEXFILE=INDEX-8
-    ;;
-  x8-exp)
-    branch=8-exp
-    INDEXFILE=INDEX-8
-    ;;
-  *)
-    usage
-    ;;
-esac
+arch=$1
+branch=$2
+buildid=$3
+shift 3
+
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
+
+. ${pb}/${arch}/portbuild.conf
+. ${pb}/scripts/buildenv
 
 # Set up the build env variables
-buildenv ${pb} ${arch} ${branch}
+buildenv ${pb} ${arch} ${branch} ${builddir}
 
 unset DISPLAY
 
@@ -74,8 +42,7 @@ export X11BASE=/nonexistentx
 
 cd ${PORTSDIR}
 make index
+
 # remove extra spaces in dependency list -- this causes problems
 # Also transform the dummy paths to their canonical locations
-sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,${LOCALBASE},/usr/local," -e "s,${X11BASE},/usr/X11R6," ${INDEXFILE} > ${INDEXFILE}.tmp
-
-mv -f ${INDEXFILE}.tmp ${INDEXFILE}
+sed -i '' -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,${LOCALBASE},/usr/local," -e "s,${X11BASE},/usr/local," ${INDEXFILE}
