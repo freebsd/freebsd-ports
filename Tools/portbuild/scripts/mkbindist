@@ -1,102 +1,78 @@
 #!/bin/sh
 
+# XXX merge with makeworld?
+
 usage () {
-  echo "usage: mkbindist <arch> <branch>"
+  echo "usage: mkbindist <arch> <branch> <buildid>"
   exit 1
 }
-if [ $# != 2 ]; then
+
+cleandir() {
+    dir=$1
+    rm -rf ${dir} 2>/dev/null
+    if [ -d ${dir} ]; then
+	chflags -R noschg ${dir}
+	rm -rf ${dir}
+    fi
+}
+
+if [ $# -lt 3 ]; then
   usage
 fi
 
 arch=$1
 branch=$2
-if [ "x$branch" != x6-exp -a "x$branch" != x6-exp2 -a "x$branch" != x6 -a "x$branch" != x7 -a "x$branch" != x7-exp -a "x$branch" != x8 -a "x$branch" != x8-exp ]; then
-  usage
-fi
+buildid=$3
+shift 3
 
 pb=/var/portbuild
 . ${pb}/${arch}/portbuild.conf
 
-here=${pb}/${arch}/${branch}
-. ${here}/mkbindist.conf
+. ${pb}/scripts/buildenv
 
-if [ ${buildworld} = "1" ]; then
-    if ! ${pb}/scripts/makeworld ${arch} ${branch}; then
-	exit 1
-    fi
-elif [ ${ftp} = "1" ]; then
-    cd ${here}
-    rm -rf bindist/ftp
-    mkdir -p bindist/ftp
-    cd bindist/ftp
-    for i in ${ftpdists}; do
-        /usr/bin/ftp -a "ftp://${ftpserver}${ftpurl}/${rel}/$i.??"
-    done
-    cd ${here}
+if ! validate_env ${arch} ${branch}; then
+    echo "Invalid build environment ${arch}/${branch}"
+    exit 1
+fi
+
+here=${pb}/${arch}/${branch}/builds/${buildid}
+if [ ! -d ${here} ]; then
+    echo "Invalid build ID ${buildid}"
+    exit 1
 fi
 
 tmpdir=${here}/bindist/tmp
 
 # Clean up ${tmpdir}
-rm -rf ${tmpdir} 2>/dev/null
-if [ -d ${tmpdir} ]; then
-    chflags -R noschg ${tmpdir}
-    rm -rf ${tmpdir}
-fi
+cleandir ${tmpdir}
 mkdir -p ${tmpdir}
 
-# Set up the tmpdir directory hierarchy
-cd ${tmpdir}
-
-# Copy the files into the tmpdir.  Use an existing built world, or the ftp
-# files.
-if [ "${ftp}" = 0 ]; then
-    (cd ${worlddir}; find -dx . | \
-	grep -v -E '^./usr/(local|obj|opt|ports|src)' | \
-	grep -v '^./home' | \
-	grep -v '^./var/db/pkg' | \
-	cpio -dump ${tmpdir})
-else
-    for i in ${ftpdists}; do
-	cat ${here}/bindist/ftp/$(basename $i).?? | tar --unlink -xzpf -
-    done
-fi
+# Copy the files into the tmpdir from an existing built world
+cd ${worlddir}; find -dx . | \
+    grep -v -E '^./usr/(local|obj|opt|ports|src)' | \
+    grep -v '^./home' | \
+    grep -v '^./var/db/pkg' | \
+    cpio -dump ${tmpdir}
 
 cd ${tmpdir}
 
 # Customize the tmpdir
 if [ -s "${here}/bindist/delete" ]; then
-  sed -e "s,^,${tmpdir},," ${here}/bindist/delete | xargs rm -rf
+  sed -e "s,^,${tmpdir}," ${here}/bindist/delete | xargs rm -rf
 fi
 if [ -s "${here}/bindist/dirlist" ]; then
   cat "${here}/bindist/dirlist" | xargs mkdir -p 
 fi
-(cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir})
+cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir}
 
 # Post-processing of installed world
-date '+%Y%m%d' > var/db/port.mkversion
+date '+%Y%m%d' > ${tmpdir}/var/db/port.mkversion
 
-# Create the tarballs
-mkdir -p ${here}/tarballs
-
-if [ -f ${here}/tarballs/.gen ]; then
-  gen=$(cat ${here}/tarballs/.gen)
-else
-  gen=0
-fi
-newgen=$((${gen}+1))
-echo ${newgen} > ${here}/tarballs/.gen
-
-cd ${tmpdir}
-tar cf ${here}/tarballs/bindist.tar.new .
-rm -f ${here}/tarballs/bindist-${gen}.tar
-mv -f ${here}/tarballs/bindist.tar.new ${here}/tarballs/bindist-${newgen}.tar
-ln -sf ${here}/tarballs/bindist-${newgen}.tar ${here}/tarballs/bindist.tar
+# Create the tarball
+tar cfCj ${here}/.bindist.tbz ${tmpdir} .
+mv -f ${here}/.bindist.tbz ${here}/bindist.tbz
+md5 ${here}/bindist.tbz > ${here}/bindist.tbz.md5
 
 # Clean up
 cd ${here}
-rm -rf ${tmpdir} 2>/dev/null
-if [ -d ${tmpdir} ]; then
-    chflags -R noschg ${tmpdir}
-    rm -rf ${tmpdir}
-fi
+cleandir ${tmpdir}
