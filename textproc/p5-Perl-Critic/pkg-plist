@@ -62,6 +62,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodAtEnd.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodSections.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCarping.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCheckingReturnValueOfEval.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitBacktickOperators.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitBarewordFileHandles.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitExplicitStdin.pm
