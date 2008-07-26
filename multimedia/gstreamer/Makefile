@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.19
-PORTREVISION=	1
+PORTVERSION=	0.10.20
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		${MASTER_SITE_LOCAL}
@@ -17,6 +16,7 @@ MASTER_SITE_SUBDIR=	ahze
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Development framework for creating media applications
 
+BUILD_DEPENDS=	${LOCALBASE}/bin:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 CFLAGS:=	${CFLAGS} -O2
@@ -35,7 +35,8 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		ac_cv_func_register_printf_function="no"
+		ac_cv_func_register_printf_function="no" \
+		FLEX_PATH="${LOCALBASE}/bin/flex"
 PLIST_SUB=	VERSION="${GST_VERSION}"
 USE_LDCONFIG=	yes
 GST_VERSION=	0.10

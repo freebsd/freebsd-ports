@@ -62,6 +62,7 @@ include/gstreamer-%%VERSION%%/gst/gstparse.h
 include/gstreamer-%%VERSION%%/gst/gstpipeline.h
 include/gstreamer-%%VERSION%%/gst/gstplugin.h
 include/gstreamer-%%VERSION%%/gst/gstpluginfeature.h
+include/gstreamer-%%VERSION%%/gst/gstpreset.h
 include/gstreamer-%%VERSION%%/gst/gstquery.h
 include/gstreamer-%%VERSION%%/gst/gstregistry.h
 include/gstreamer-%%VERSION%%/gst/gstsegment.h
