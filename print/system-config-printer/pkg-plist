@@ -3,6 +3,15 @@ bin/system-config-printer
 bin/system-config-printer-applet
 etc/dbus-1/system.d/newprinternotification.conf
 etc/xdg/autostart/redhat-print-applet.desktop
+%%PYTHON_SITELIBDIR%%/cupshelpers-1.0-py2.5.egg-info
+%%PYTHON_SITELIBDIR%%/cupshelpers/__init__.py
+%%PYTHON_SITELIBDIR%%/cupshelpers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cupshelpers/cupshelpers.py
+%%PYTHON_SITELIBDIR%%/cupshelpers/cupshelpers.pyc
+%%PYTHON_SITELIBDIR%%/cupshelpers/openprinting.py
+%%PYTHON_SITELIBDIR%%/cupshelpers/openprinting.pyc
+%%PYTHON_SITELIBDIR%%/cupshelpers/ppds.py
+%%PYTHON_SITELIBDIR%%/cupshelpers/ppds.pyc
 share/applications/redhat-manage-print-jobs.desktop
 share/applications/redhat-my-default-printer.desktop
 share/applications/redhat-system-config-printer.desktop
@@ -71,7 +80,6 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 %%DATADIR%%/authconn.py
 %%DATADIR%%/config.py
 %%DATADIR%%/contextmenu.py
-%%DATADIR%%/cupshelpers.py
 %%DATADIR%%/debug.py
 %%DATADIR%%/errordialogs.py
 %%DATADIR%%/gtk_label_autowrap.py
@@ -80,10 +88,8 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 %%DATADIR%%/jobviewer.py
 %%DATADIR%%/monitor.py
 %%DATADIR%%/my-default-printer.py
-%%DATADIR%%/openprinting.py
 %%DATADIR%%/options.py
 %%DATADIR%%/optionwidgets.py
-%%DATADIR%%/ppds.py
 %%DATADIR%%/probe_printer.py
 %%DATADIR%%/pysmb.py
 %%DATADIR%%/smburi.py
@@ -94,6 +100,7 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 %%DATADIR%%/troubleshoot/CheckNetworkServerSanity.py
 %%DATADIR%%/troubleshoot/CheckPPDSanity.py
 %%DATADIR%%/troubleshoot/CheckPrinterSanity.py
+%%DATADIR%%/troubleshoot/CheckUSBPermissions.py
 %%DATADIR%%/troubleshoot/ChooseNetworkPrinter.py
 %%DATADIR%%/troubleshoot/ChoosePrinter.py
 %%DATADIR%%/troubleshoot/DeviceListed.py
@@ -113,6 +120,7 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 %%DATADIR%%/troubleshoot/Welcome.py
 %%DATADIR%%/troubleshoot/__init__.py
 %%DATADIR%%/troubleshoot/base.py
+%%DATADIR%%/userdefault.py
 @dirrm %%DATADIR%%/troubleshoot
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
@@ -135,5 +143,4 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
 @dirrmtry share/applications
-@dirrm etc/xdg/autostart
-@dirrm etc/xdg
+@dirrm %%PYTHON_SITELIBDIR%%/cupshelpers

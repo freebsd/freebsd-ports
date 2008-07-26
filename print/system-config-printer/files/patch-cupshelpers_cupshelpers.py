@@ -1,15 +1,15 @@
---- cupshelpers.py.orig	2008-03-20 11:49:54.000000000 -0400
-+++ cupshelpers.py	2008-03-20 11:51:06.000000000 -0400
-@@ -19,7 +19,7 @@
- ## Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+--- cupshelpers/cupshelpers.py.orig	2008-07-09 06:23:44.000000000 -0500
++++ cupshelpers/cupshelpers.py	2008-07-26 13:33:50.596144479 -0500
+@@ -20,7 +20,7 @@
  
  import cups, pprint, os, tempfile, re
--from rhpl.translate import _, N_
-+from gettext import gettext as _
  import locale
+-from . import _debugprint
++# from . import _debugprint
  
- def debugprint(x):
-@@ -456,7 +456,7 @@
+ class Printer:
+     _flags_blacklist = ["options", "local"]
+@@ -699,7 +699,7 @@
  
      # First, a local function.  How to check that something exists
      # in a path:
@@ -18,7 +18,7 @@
          # Strip out foomatic '%'-style place-holders.
          p = name.find ('%')
          if p != -1:
-@@ -551,7 +551,7 @@
+@@ -794,7 +794,7 @@
                      continue
  
                  exepath = pathcheck (exe,
