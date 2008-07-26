@@ -5,6 +5,7 @@
 # configurable variables
 pb=/var/portbuild
 arch=$(uname -m)
+osver=$(sysctl -n kern.osreldate)
 
 . ${pb}/${arch}/portbuild.conf
 if [ -f ${pb}/${arch}/portbuild.$(hostname) ]; then
@@ -12,18 +13,27 @@ if [ -f ${pb}/${arch}/portbuild.$(hostname) ]; then
 fi
 
 # Look for exceptional conditions
-error=0
+error=
 for i in squid disk; do
   if [ -f ${scratchdir}/.${i} ]; then
-    error=1
+    error=${i} "${error}"
   fi
 done
 
-if [ ${error} = 0 ]; then
-  num=$(echo $(ls -1d ${scratchdir}/*/*/used ${scratchdir}/*/chroot/*/used 2>/dev/null| wc -l))
-else
-  num=ERR
-fi
+num=$(echo $(ls -1d ${scratchdir}/*/*/*/used ${scratchdir}/*/*/chroot/*/used 2>/dev/null| wc -l))
 
-echo -n "$num "
+echo "arch=${arch}"
+echo "osversion=${osver}"
+echo "jobs=${num}"
+
+cd /var/portbuild/${arch}
+for i in */builds/*; do
+    buildenv=${arch}/${i%%/*}/${i##*/}
+    if [ -f ${i}/.ready ]; then
+	buildenvs="${buildenv} ${buildenvs}"
+    fi
+done
+echo "buildenvs=${buildenvs}"
+echo -n "load="
 uptime
+echo "error=${error}"
