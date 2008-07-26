@@ -1,0 +1,13 @@
+#!/bin/sh 
+
+PATH=/bin:/usr/local/bin
+
+STOREDIR="${HOME}/.screenshots"
+SHOTDATE="$(date +%Y.%m.%d-%H.%M.%S)"
+SHOTNAME="${STOREDIR}/screenshot-${SHOTDATE}.png"
+
+if [ ! -d "${STOREDIR}" ]; then
+	mkdir "${STOREDIR}"
+fi 
+
+xwd -root | xwdtopnm 2>/dev/null | pnmtopng 2>/dev/null > "${SHOTNAME}"
