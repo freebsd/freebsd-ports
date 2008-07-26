@@ -1,6 +1,6 @@
---- src/gv_misc_res.dat.bak	Mon Dec 20 01:21:45 2004
-+++ src/gv_misc_res.dat	Wed Dec 29 22:58:43 2004
-@@ -463,7 +463,6 @@
+--- src/gv_misc_res.dat.orig	2008-07-07 23:05:39.631469696 -0400
++++ src/gv_misc_res.dat	2008-07-07 23:06:13.945427476 -0400
+@@ -465,7 +465,6 @@
   <Key>BackSpace:	GV_Page(up,left-bottom,!page-1,bottom-rightedge)\n\
   <Key>Insert:		GV_Page(page-5)		\n\
   <Key>Delete:		GV_Page(page+5)		\n\
