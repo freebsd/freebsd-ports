@@ -2,18 +2,28 @@
 
 pb=/var/portbuild
 
-if [ $# -ne 2 ]; then
-	echo "usage: makeparallel arch branch"
+if [ $# -ne 3 ]; then
+	echo "usage: makeparallel arch branch buildid"
 	exit 1
 fi
 
 arch=$1
 branch=$2
+buildid=$3
+shift 3
 
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
-buildenv ${pb} ${arch} ${branch}
+buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
+if [ -z "${buildid}" ]; then
+    echo "Invalid build ID ${buildid}"
+    exit 1
+fi
+
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
+
+buildenv ${pb} ${arch} ${branch} ${builddir}
 
 # packages that take a long time to build or have very deep dependency
 # trees and tend to stall the rest of the cluster waiting for them.
@@ -23,17 +33,18 @@ quickports="lang/ghc x11/xorg x11/gnome2 x11/kde3 java/jdk14 java/jdk15 java/jdk
 
 cd ${PORTSDIR}
 subdir=$(make -V SUBDIR)
-makefile=${pb}/${arch}/${branch}/Makefile
+makefile=${builddir}/Makefile
 rm ${makefile}
 
 SUBDIR=$(make -V SUBDIR)
 (for dir in ${SUBDIR}; do
 	[ -r ${dir}/Makefile ] && echo "all: ${dir}-all" || true
 done
-env arch=${arch} branch=${branch} awk -F '|' '{me=$1; here=$2; bdep=$8; rdep=$9
+env arch=${arch} branch=${branch} buildid=${buildid} awk -F '|' '{me=$1; here=$2; bdep=$8; rdep=$9
 	edep=$11; pdep=$12; fdep=$13
 	sufx=ENVIRON["PKGSUFFIX"]
 	arch=ENVIRON["arch"]
+        buildid=ENVIRON["buildid"]
 	branch=ENVIRON["branch"]
 	split(here, tmp, "/")
 	if (edep != "") { gsub("$", sufx, edep); gsub(" ", sufx " ", edep) }
@@ -50,8 +61,8 @@ env arch=${arch} branch=${branch} awk -F '|' '{me=$1; here=$2; bdep=$8; rdep=$9
 	if (fdep != "") printf(" FD=\"%s\"", fdep)
 	if (bdep != "") printf(" BD=\"%s\"", bdep)
 	if (rdep != "") printf(" RD=\"%s\"", rdep)
-	printf(" /var/portbuild/scripts/pdispatch %s %s /var/portbuild/scripts/portbuild %s%s %s\n",
-	    arch, branch, me, sufx, here)
+	printf(" /var/portbuild/scripts/pdispatch %s %s %s /var/portbuild/scripts/portbuild %s%s %s\n",
+	    arch, branch, buildid, me, sufx, here)
 	}' < ${INDEXFILE}) > ${makefile}
 
 for i in ${quickports}; do
