@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Test packages and make sure they are not corrupt
+#
+# XXX stale, and better to do this individually at the time the
+# package is copied in
+
 # configurable variables
 pb=/var/portbuild
 
