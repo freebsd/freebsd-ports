@@ -1,0 +1,11 @@
+Google App Engine Oil (GAEO) is an open-source web framework
+running on Google App Engine.
+
+Google App Engine Oil (GAEO) enables the web development on
+Google AppEngine quick and less configurations. GAEO enhances
+Google AppEngine SDK with new features such as:
+    - Well-formed URL Routing
+    - Enhanced Request Handler (Controller)
+    - Enhanced Object-Relation Mapping (ORM)
+
+WWW:	http://gaeo.org

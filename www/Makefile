@@ -212,6 +212,7 @@
     SUBDIR += fswiki
     SUBDIR += g-cows
     SUBDIR += g-gcl
+    SUBDIR += gaeo
     SUBDIR += galeon
     SUBDIR += gallery
     SUBDIR += gallery2
