@@ -1,35 +1,263 @@
-#!/bin/sh
+#!/usr/bin/env python
+#
+# pollmachine
+#
+# Monitors build machines and notifies qmgr of changes
 
-buildroot=/var/portbuild
+#
+# pollmachine [options] [arch] ...
+#   - update every machine in the mlist file for [arch]
+#
+# pollmachine [options] [arch/mach] ...
+#   - update individual machine(s) for specified architecture
+#
+# options are:
+#   -daemon : poll repeatedly
+#   -queue  : update queue entries (XXX racy)
 
-i=$1
-m=$2
-if [ "$3" = "-queue" ]; then
-  queue=1
-else
-  queue=0
-fi
+#
+# TODO:
+# XXX qmgr notification of new/removed machines
+# XXX log state changes in daemon mode
+# XXX clean up inactive builds
+# XXX test thread shutdown
+# XXX needed an explicit way to request setup?
+# XXX signal handler
 
-infoseek_port=414
-. ${buildroot}/${i}/portbuild.conf
-if [ -f ${buildroot}/${i}/portbuild.${m} ]; then
-  . ${buildroot}/${i}/portbuild.${m}
-fi
-if [ -z "${infoseek_host}" ]; then
-  infoseek_host=$m
-fi
-if (/usr/bin/nc -w 15 ${infoseek_host} ${infoseek_port} > ${buildroot}/${i}/loads/$m < /dev/null); then
-  if [ "${queue}" = 1 ]; then
-    num=$(awk '{print $1}' ${buildroot}/${i}/loads/$m)
-    if [ "$num" -lt "${maxjobs}" ]; then
-      echo ${num} > ${buildroot}/${i}/queue/$m
-      chown ports-${i} ${buildroot}/${i}/queue/$m
-    else
-      rm -f ${buildroot}/${i}/queue/$m
-    fi
-  fi
-else
-    rm -f ${buildroot}/${i}/queue/$m
-    exit 1
-fi
-exit 0
+# * Deal with machines change OS/kernel version
+#     - ACL list might change!
+#          - take machine offline, update ACL/arch/etc, reboot, bring online
+
+import sys, threading, socket
+from popen2 import *
+from time import sleep
+
+if len(sys.argv) < 1:
+    print "Usage: %s <arch> [<arch> ...]" % sys.argv[0]
+    sys.exit(1)
+
+arches=set()
+mlist={}
+polldelay=0
+queue=0
+for i in sys.argv[1:]:
+    if i == "-daemon":
+        polldelay = 30
+        continue
+
+    if i == "-queue":
+        queue = 1
+        continue
+
+    if "/" in i:
+        item=i.partition("/")
+        arch=item[0]
+        mach=item[2]
+        arches.add(arch)
+        try:
+            mlist[arch].add(mach)
+        except KeyError:
+            mlist[arch] = set((mach,))
+    else:
+        arches.add(i)
+
+pb="/var/portbuild"
+
+# set of machines for each arch
+machines={}
+for i in arches:
+    machines[i]=set()
+
+# Mapping from machine names to monitor threads
+pollthreads={}
+
+class MachinePoll(threading.Thread):
+    """ Poll a machine regularly """
+
+    mach = None	# Which machine name to poll
+    arch = None # Which arch is this assigned to
+
+    # Which host/port to poll for this machine status (might be SSH
+    # tunnel endpoint)
+    host = None
+    port = 414
+
+    # Should we update queue entry?
+    queue = None
+
+    timeout = None	# How often to poll
+    shutdown = False # Exit at next poll wakeup
+
+    # State variables tracked
+    online = False
+
+    # Dictionary of variables reported by the client
+    vars = None
+
+    def __init__(self, mach, arch, timeout, host, port, queue):
+        super(MachinePoll, self).__init__()
+        self.mach = mach
+        self.arch = arch
+        self.timeout = timeout
+        self.host = host
+        self.port = port
+        self.queue = queue
+
+        self.vars = {}
+    
+    def run(self):
+        while True:
+            if self.shutdown:
+                break
+
+            self.poll()
+            
+            if not self.timeout:
+                break
+            else:
+                sleep(self.timeout)
+
+    def poll(self):
+        """ Poll the status of this machine """
+
+        nowonline = False
+        lines = []
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.connect((self.host, self.port))
+            f = s.makefile()
+        
+            lines = f.readlines()
+            nowonline = True
+        except:
+            pass
+        finally:
+            try:
+                s.close()
+            except:
+                pass
+
+        if nowonline != self.online:
+            print "State change: %s %s -> %s" % (self.mach, self.online, nowonline)
+            self.online = nowonline
+            # XXX inform qmgr of state change
+
+        if self.online and not lines:
+            # reportload script is missing
+            dosetup=1
+        else:
+            dosetup=0
+
+        for line in lines:
+            line=line.rstrip()
+            part=line.partition('=')
+            if part[1] != '=' or not part[0]:
+#                if "No such file or directory" in line:
+#                    # Client may require setting up post-boot
+#                    dosetup=1
+                print "Bad input from %s: %s" % (self.mach, line)
+                # Assume client needs setting up
+                dosetup=1
+
+            try:
+                old = self.vars[part[0]]
+            except KeyError:
+                old = ""
+            if old != part[2]:
+                self.vars[part[0]] = part[2]
+#                print "%s@%s: \"%s\" -> \"%s\"" % (part[0], self.mach, old, part[2])
+                # XXX update qmgr
+
+        if dosetup:
+            print "Setting up %s" % (self.mach)
+            (err, out) = self.setup()
+            if err:
+                print "Error from setup of %s:" % (self.mach)
+                print out
+            print "Setup of %s complete" % (self.mach)
+            return
+                            
+        # Validate that arch has not changed (e.g. i386 -> amd64)
+        try:
+            if self.arch != self.vars['arch']:
+                print "Machine %s reporting unexpected arch: %s -> %s" % (self.mach, self.arch, self.vars['arch'])
+        except KeyError:
+            pass
+
+        # Record current system load
+        try:
+            f = file("%s/%s/loads/%s" % (pb, self.arch, self.mach), "w")
+        except:
+            return
+        try:
+            f.write("%s %s\n" % (self.vars['jobs'], self.vars['load']))
+        except:
+            pass
+        f.close()
+
+        if self.queue:
+            try:
+                f = file("%s/%s/queue/%s" % (pb, self.arch, self.mach), "w")
+            except:
+                return
+
+            try:
+                f.write("%s\n" % self.vars['jobs'])
+            except:
+                pass
+            f.close()
+
+    def setup(self):
+        child = Popen4("su ports-%s -c \"/var/portbuild/scripts/dosetupnode %s - - %s\"" % (self.arch, self.arch, self.mach), 0)
+        err = child.wait()
+        out = "".join(child.fromchild.readlines())
+        return (err, out)
+
+while True:
+    for arch in arches:
+        try:
+            now = mlist[arch]
+        except KeyError:
+            mlistfile="%s/%s/mlist" % (pb, arch)
+            try:
+                f = file(mlistfile, "r")
+            except OSError, error:
+                raise
+
+            now=set(mach.rstrip() for mach in f.readlines())
+            f.close()
+
+        gone = machines[arch].difference(now)
+        new = now.difference(machines[arch])
+
+        machines[arch]=now
+
+        for mach in gone:
+            print "Removing machine %s" % mach
+            # XXX disable from qmgr
+            pollthreads[mach].shutdown=True
+            del pollthreads[mach]
+
+        for mach in new:
+            print "Adding machine %s" % mach
+            # XXX set up qmgr
+
+            pc="%s/%s/portbuild.conf" % (pb, arch)
+            pch="%s/%s/portbuild.%s" % (pb, arch, mach)
+            config = Popen4("test -f %s && . %s; test -f %s && . %s; echo $infoseek_host; echo $infoseek_port" % (pc, pc, pch, pch))
+            host=config.fromchild.readline().rstrip()
+            if not host:
+                host = mach
+            port=config.fromchild.readline().rstrip()
+            try:
+                port = int(port)
+            except (TypeError, ValueError):
+                port = 414
+
+            pollthreads[mach] = MachinePoll(mach, arch, polldelay, host, port, queue)
+            pollthreads[mach].start()
+
+    if not polldelay:
+        break
+
+    sleep(polldelay)
