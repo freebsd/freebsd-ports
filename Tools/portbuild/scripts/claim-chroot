@@ -1,114 +1,159 @@
 #!/bin/sh
 
-# usage: claim-chroot ${arch} ${branch} ${pkgname}
+# usage: claim-chroot ${arch} ${branch} ${pkgname} ${buildid}
 
-# This script cannot output anything except the name of the successfully
-# claimed chroot.  In case of error, just exit.
+# Care needs to be taken with the output of this script, it cannot
+# output anything except space-separated pairs of "keyword value".
+#
+# Keywords:
+# chroot : successfully claimed a chroot
+# setup  : we own the rights to setup the build env
+# wait   : someone else is setting up the build env
 
-# XXX Return the string "chroot=*" and look for that in pdispatch to make
-# this more robust
+# In case of other error, just exit.
 
-# configurable variables
+# XXX if the setupnode process was a single process invocation we
+# could use a lockf lock, and be able to tell if the setup process was
+# still running or died prematurely
+
 pb=/var/portbuild
 
+usage () {
+    echo "usage: claim-chroot arch branch buildid"
+    exit 1
+}
+
+if [ $# -ne 4 ]; then
+    usage
+fi
+
 arch=$1
-shift
+branch=$2
+buildid=$3
+pkgname=$4
+shift 4
+
+# If client has just rebooted it may not have any files yet
+
+if [ ! -f /tmp/.boot_finished ]; then
+    echo "wait boot"
+    exit 1
+fi
+
+# Do we need to set up the client after cold boot?
+#
+# NB: mkdir is being used as an atomic test-and-set operation to
+# provide mutual exclusion against other callers, since we only want
+# one of them to perform setup
+
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
+
+# Is the build environment populated?  Again we only want a single
+# instance to gain setup rights if not.
+if (mkdir /tmp/.setup-${buildid} 2> /dev/null); then
+    # The buildenv is not set up, tell the caller to do it
+    echo "setup ${builddir}"
+    exit 1
+fi
+
+if [ ! -f ${builddir}/.ready ]; then
+    # The buildenv is still being set up
+    echo "wait ${builddir}"
+    exit 1
+fi
 
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/${arch}/portbuild.$(hostname)
 . ${pb}/scripts/buildenv
 
+buildenv ${pb} ${arch} ${branch} ${builddir}
+
 buildroot=${scratchdir}
+pkgname=${pkgname%.${PKGSUFFIX}}
 
-branch=$1
-shift
+chrootdir=${buildroot}/${branch}/${buildid}/chroot
 
-buildenv ${pb} ${arch} ${branch}
+# Perform initial sanity checks
 
-pkgname=$(basename $1 ${PKGSUFFIX})
-
-if [ "${use_zfs}" = 1 ]; then
-  chrootdir=${buildroot}/${branch}
-else
-  chrootdir=${buildroot}/${branch}/chroot
-fi
-
-# Perform initial sanity check
-
+# Check squid is running
 if [ ! -z "${squid_dir}" ]; then
-  /usr/local/sbin/squid -k check 2> /dev/null
-  status=$?
-  if [ "${status}" != "0" ]; then
-    touch ${scratchdir}/.squid
-    /usr/local/etc/rc.d/squid start > /dev/null &
-    exit 1
-  else
-    rm -f ${scratchdir}/.squid
-  fi
+    /usr/local/sbin/squid -k check 2> /dev/null
+    status=$?
+    if [ "${status}" != "0" ]; then
+	touch ${scratchdir}/.squid
+	/usr/local/etc/rc.d/squid start > /dev/null &
+	echo "error squid"
+	exit 1
+    else
+	rm -f ${scratchdir}/.squid
+    fi
 fi
 
 # Check for enough disk space
 df=$(df -k ${scratchdir} | tail -1 | awk '{print $4}')
 
 if [ ${df} -lt 102400 ]; then
-  touch ${scratchdir}/.disk
-  exit 1
+    touch ${scratchdir}/.disk
+    echo "error disk"
+    exit 1
 else
-  rm -f ${scratchdir}/.disk
+    rm -f ${scratchdir}/.disk
 fi
 
 found=0
 # Look for pre-existing chroot directories that are populated and unused
 for dir in ${chrootdir}/*; do
-  if [ -f ${dir}/.ready -o -f ${dir}/.dirty ]; then
+    if [ -f ${dir}/.ready -o -f ${dir}/.dirty ]; then
     # Atomically claim the directory
-    mkdir ${dir}/used 2>/dev/null || continue
-    touch ${dir}/used/${pkgname}
-    if [ -f ${dir}/.dirty ]; then
-      ${pb}/scripts/clean-chroot ${arch} ${branch} ${dir} 2 >/dev/null 2>/dev/null &
-      continue
+	mkdir ${dir}/used 2>/dev/null || continue
+	touch ${dir}/used/${pkgname}
+	if [ -f ${dir}/.dirty ]; then
+	    ${pb}/scripts/clean-chroot ${arch} ${branch} ${buildid} ${dir} 2 >/dev/null 2>/dev/null &
+	    continue
+	fi
+	found=1
+	chroot=${dir}
+	break
     fi
-    found=1
-    chroot=${dir}
-    break
-  fi
 done
 
 chrootnum=$$
 # If we didn't find a pre-existing directory, create and claim a new one.
 while [ ${found} != 1 ]; do
-  if [ "${use_zfs}" = "1" ]; then
-    chroot=${chrootdir}/${chrootnum}
-    zfs clone y/${branch}@base $(echo ${chrootdir} | sed -e 's,/,,')/${chrootnum}
-    mkdir ${chroot}/used
-  elif [ "${use_md_swap}" = "1" ]; then
-    unit=$(mdconfig -a -t swap -s ${md_size})
-    newfs /dev/${unit} > /dev/null
-    chrootnum=$(echo ${unit} | sed 's,md,,')
-    chroot=${chrootdir}/${chrootnum}
-    mkdir -p ${chroot}/used 2>/dev/null || continue
-    # Need to make sure that used/ is also present after mounting the fresh md so as to not leave open any races
-    mount -o async /dev/${unit} ${chroot}/used
-    mkdir ${chroot}/used/used
-    touch ${chroot}/used/used/${pkgname}
-    umount ${chroot}/used
-    mount -o async /dev/${unit} ${chroot}/
-    touch ${chroot}/.notready
-  else
-    chrootnum=$(($chrootnum+1))
-    chroot=${chrootdir}/${chrootnum}
-    mkdir -p ${chrootdir} 2> /dev/null || continue
-    mkdir ${chroot} 2>/dev/null || continue
-    mkdir ${chroot}/used 2>/dev/null || continue
-    touch ${chroot}/.notready
-  fi
-  if [ "${use_tmpfs}" = "1" ]; then
-    mount -t tmpfs -o "size=${tmpfs_size}" foo ${chroot}
-    mkdir ${chroot}/used 2>/dev/null || echo "ERROR: mkdir race"
-    touch ${chroot}/.notready
-  fi
-  touch ${chroot}/used/${pkgname}
-  found=1
+    if [ "${use_zfs}" = "1" ]; then
+	chroot=${chrootdir}/${chrootnum}
+	# XXX deal with failure
+	zfs clone ${scratchdir#/}/${branch}/${buildid}/world@base ${chroot#/}
+	mkdir ${chroot}/used
+    elif [ "${use_md_swap}" = "1" ]; then
+	unit=$(mdconfig -a -t swap -s ${md_size})
+	newfs /dev/${unit} > /dev/null
+	chrootnum=$(echo ${unit} | sed 's,md,,')
+	chroot=${chrootdir}/${chrootnum}
+	mkdir -p ${chroot}/used 2>/dev/null || continue
+        # Need to make sure that used/ is also present after mounting
+        # the fresh md so as to not leave open any races
+	mount -o async /dev/${unit} ${chroot}/used
+	mkdir ${chroot}/used/used
+	touch ${chroot}/used/used/${pkgname}
+	umount -f ${chroot}/used
+	mount -o async /dev/${unit} ${chroot}/
+	touch ${chroot}/.notready
+    else
+	chrootnum=$(($chrootnum+1))
+	chroot=${chrootdir}/${chrootnum}
+	mkdir -p ${chrootdir} 2> /dev/null || continue
+	mkdir ${chroot} 2>/dev/null || continue
+	mkdir ${chroot}/used 2>/dev/null || continue
+	touch ${chroot}/.notready
+    fi
+    if [ "${use_tmpfs}" = "1" ]; then
+	mount -t tmpfs -o "size=${tmpfs_size}" foo ${chroot}
+	mkdir ${chroot}/used 2>/dev/null || echo "ERROR: mkdir race"
+	touch ${chroot}/.notready
+    fi
+    touch ${chroot}/used/${pkgname}
+    found=1
 done
 
-echo ${chroot}
+echo "chroot ${chroot}"
