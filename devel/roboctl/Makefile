@@ -1,28 +1,31 @@
-# New ports collection makefile for:	legoctl
+# New ports collection makefile for:	roboctl
 # Date created:		2007-05-03
 # Whom:			Jason Bacon <jwbacon@tds.net>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	legoctl
-PORTVERSION=	0.2
+PORTNAME=	roboctl
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://bacon.is-a-geek.org/~bacon/Ports/distfiles/
+		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	Lego Mindstorms communication tool
+COMMENT=	API for communications with Lego and Vex robot controllers
 
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
+		gamepad.1:${PORTSDIR}/devel/libgamepad
 
-MAN1=		legoctl.1
+OPTIONS=	CUTECOM "Install cutecom for Vex debugging" On
 
-PLIST_FILES=	bin/legoctl lib/liblegoctl.a
+MAN1=		legoctl.1 vexctl.1 nxtremote.1
+MAN3=		roboctl.3
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Commands/Legoctl/legoctl ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/Libs/C/liblegoctl.a ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/Commands/Legoctl/legoctl.1 ${PREFIX}/man/man1
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if defined(WITH_CUTECOM)
+RUN_DEPENDS+=	cutecom:${PORTSDIR}/comms/cutecom-devel
+.endif
+
+.include <bsd.port.post.mk>

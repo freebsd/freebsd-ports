@@ -554,7 +554,6 @@
     SUBDIR += lasi
     SUBDIR += lbpp
     SUBDIR += leaktracer
-    SUBDIR += legoctl
     SUBDIR += lemon
     SUBDIR += lexi
     SUBDIR += lhs2TeX
@@ -2255,6 +2254,7 @@
     SUBDIR += rlog
     SUBDIR += rlwrap
     SUBDIR += robodoc
+    SUBDIR += roboctl
     SUBDIR += root
     SUBDIR += root-doc
     SUBDIR += rote
