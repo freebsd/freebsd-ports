@@ -7,10 +7,9 @@ fi
 
 branch=$1
 
-for i in i386 alpha sparc64 ia64 amd64; do
-	if [ -d /var/portbuild/$i/${branch}/packages/All ]; then
-		cd /var/portbuild/$i/${branch}/packages/All
-		count=$(find . -name \*.tbz -o -name \*.tgz |wc -l)
+for i in i386 sparc64 amd64; do
+	if [ -d /var/portbuild/$i/${branch}/builds/latest/packages/All ]; then
+		count=$(find /var/portbuild/$i/${branch}/builds/latest/packages/All -name \*.tbz -o -name \*.tgz |wc -l)
 		echo -n "$i: ${count}  "
 	fi
 done
