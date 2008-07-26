@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # prints out logs that are in dir1 but not in dir2
+# XXX out of date and disabled
 
 if [ $# -ne 3 ]; then
   echo "usage: $0 arch dir1 dir2"
