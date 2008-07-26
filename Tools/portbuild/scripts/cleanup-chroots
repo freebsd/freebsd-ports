@@ -1,89 +1,90 @@
 #!/bin/sh
 #
-# To be run on the client, this script looks for chroot directories that have not been
-# used in 20 minutes, as well as directories listed as 'in use' that have not been touched
-# in 24 hours (corresponding to port builds that have timed out or shut down uncleanly)
-# and prunes them to reclaim space.
+# To be run on the client, this script looks for chroot directories
+# that have not been used in 60 minutes, as well as directories listed
+# as 'in use' that have not been touched in 5 days (corresponding to
+# port builds that have timed out or shut down uncleanly) and prunes
+# them to reclaim space.
 
 kill_procs()
 {
-  dir=$1
+    dir=$1
 
-  pids="XXX"
-  while [ ! -z "${pids}" ]; do
-    pids=$(fstat -f "$dir" | tail +2 | awk '{print $3}' | sort -u)
-    if [ ! -z "${pids}" ]; then
-      echo "Killing off pids in ${dir}"
-      ps -p $pids
-      kill -KILL ${pids} 2> /dev/null
-      sleep 2
-    fi
-  done
+    pids="XXX"
+    while [ ! -z "${pids}" ]; do
+	pids=$(fstat -f "$dir" | tail +2 | awk '{print $3}' | sort -u)
+	if [ ! -z "${pids}" ]; then
+	    echo "Killing off pids in ${dir}"
+	    ps -p $pids
+	    kill -KILL ${pids} 2> /dev/null
+	    sleep 2
+	fi
+    done
 }
 
 cleanup_mount() {
-  chroot=$1
-  mount=$2
+    chroot=$1
+    mount=$2
 
-  if [ -d ${chroot}${mount} ]; then
-    mdir=$(fstat -f ${chroot}${mount} | head -2 | tail -1 | awk '{print $5}')
-    if [ "${mdir}" = "MOUNT" ]; then
-      umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+    if [ -d ${chroot}${mount} ]; then
+	mdir=$(fstat -f ${chroot}${mount} | head -2 | tail -1 | awk '{print $5}')
+	if [ "${mdir}" = "MOUNT" ]; then
+	    umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+	fi
+	if [ "${mdir}" = "${chroot}${mount}" ]; then
+	    kill_procs ${chroot}${mount}
+	    umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+	fi
     fi
-    if [ "${mdir}" = "${chroot}${mount}" ]; then
-      kill_procs ${chroot}${mount}
-      umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
-    fi
-  fi
 }
 
 pb=/var/portbuild
-arch=$(cat /etc/arch)
+arch=$(uname -m)
 
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/${arch}/portbuild.$(hostname)
 
 if [ "${use_zfs}" = "1" ]; then
-  old=$(find ${scratchdir}/*/* -prune -mmin +20 2> /dev/null)
+    old=$(find ${scratchdir}/*/*/* -prune -mmin +60 2> /dev/null)
 else 
-  old=$(find ${scratchdir}/*/chroot/* -prune -mmin +20 2> /dev/null)
+    old=$(find ${scratchdir}/*/*/chroot/* -prune -mmin +60 2> /dev/null)
 fi
 
 if [ -z "${old}" ]; then
-	exit 0
+    exit 0
 fi
 
 # Prune out chroots with active builds
 for i in ${old}; do
-	if [ ! -d ${i}/used ]; then
-		old2="${i} ${old2}"
+    if [ ! -d ${i}/used ]; then
+	old2="${i} ${old2}"
 	# Also remove "in use" chroots that were set up more than 5 days ago
-	elif [ ! -z "`find $i/used -prune -mmin +7200`" ]; then
-		echo "cleanup-chroots: Found old files on `hostname`:"
-		ls -l ${i}/tmp ${i}/used
-		echo "${i} allegedly in use but >5 days old"
-		old2="${i} ${old2}"
-	fi
+    elif [ ! -z "`find $i/used -prune -mmin +7200`" ]; then
+	echo "cleanup-chroots: Found old files on `hostname`:"
+	ls -l ${i}/tmp ${i}/used
+	echo "${i} allegedly in use but >5 days old"
+	old2="${i} ${old2}"
+    fi
 done
 
 if [ -z "${old2}" ]; then
-	exit 0
+    exit 0
 fi
 
 # cleanup old NFS and devfs mounts
 for i in ${old2}; do
-	mounts=$(mount | grep $i | awk '{print $3}')
-	if [ ! -z "${mounts}" ]; then
-	  for j in ${mounts}; do
+    mounts=$(mount | grep $i | awk '{print $3}')
+    if [ ! -z "${mounts}" ]; then
+	for j in ${mounts}; do
 	    umount ${j} || cleanup_mount ${j}
-	  done
-	  umount ${i}/compat/linux/proc || cleanup_mount ${i}/compat/linux/proc
-	fi
-	if [ "${use_zfs}" != "1" -a "${use_md_swap}" = "1" ]; then
-		chrootnum=$(basename $i)
-		umount -f /dev/md${i}
-		mdconfig -d -u ${chrootnum}
-	fi
+	done
+	umount ${i}/compat/linux/proc || cleanup_mount ${i}/compat/linux/proc
+    fi
+    if [ "${use_zfs}" != "1" -a "${use_md_swap}" = "1" ]; then
+	chrootnum=$(basename $i)
+	umount -f /dev/md${i}
+	mdconfig -d -u ${chrootnum}
+    fi
 done
 
 mkdir -p ${scratchdir}/old
