@@ -1,0 +1,20 @@
+--- ext/pango/Makefile.in.orig	2008-07-26 06:39:00.827210159 -0700
++++ ext/pango/Makefile.in	2008-07-26 06:57:02.595333482 -0700
+@@ -86,7 +86,7 @@
+ pluginLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(plugin_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-libgstpango_la_DEPENDENCIES = $(top_builddir)/gst-libs/gst/video/libgstvideo-$(GST_MAJORMINOR).la \
++libgstpango_la_DEPENDENCIES = \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ am_libgstpango_la_OBJECTS = libgstpango_la-gstclockoverlay.lo \
+@@ -481,7 +481,7 @@
+ 
+ libgstpango_la_LIBADD = \
+ 	$(GST_PLUGINS_BASE_LIBS) \
+-	$(top_builddir)/gst-libs/gst/video/libgstvideo-$(GST_MAJORMINOR).la \
++	-lgstvideo-$(GST_MAJORMINOR) \
+ 	$(GST_BASE_LIBS) \
+ 	$(GST_LIBS) \
+ 	$(PANGO_LIBS)
