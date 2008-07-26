@@ -7,7 +7,7 @@
 
 PORTNAME=	BitchX
 PORTVERSION=	1.1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	irc
 MASTER_SITES=	SF
 DISTNAME=	ircii-pana-1.1-final
@@ -80,8 +80,9 @@ CONFIGURE_ARGS+=	--with-socks5=${LOCALBASE}
 .endif
 
 .if defined(WITH_PLUGINS)
-PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,\
-fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay
+PLUGINS=\
+abot,acro,arcfour,autocycle,blowfish,encrypt,fserv,hint,pkga,possum,qbx,qmail,scan,wavplay
+CONFIGURE_ARGS+=	--with-plugins=${PLUGINS}
 PLIST_SUB+=	PLUGINS=""
 .else
 CONFIGURE_ARGS+=--without-plugins
@@ -95,8 +96,8 @@ PLIST_SUB+=	XMMS=""
 PLIST_SUB+=	XMMS="@comment "
 .endif
 .if (defined(WITH_XMMS) && defined(WITH_PLUGINS))
-PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,\
-hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay,xmms
+PLUGINS=\
+abot,acro,arcfour,autocycle,blowfish,encrypt,fserv,hint,pkga,possum,qbx,qmail,scan,wavplay,xmms
 .endif
 
 .if (defined(WITH_PLUGINS) || defined(WITH_XMMS))
