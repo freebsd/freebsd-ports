@@ -1,0 +1,217 @@
+#!/usr/bin/env python
+
+# Back up a list of ZFS filesystems, doing a full backup periodically
+# and using incremental diffs in between
+
+import zfs, commands, datetime, sys, os, bz2
+
+from signal import *
+
+# List of filesystems to backup
+backuplist=["a", "a/nfs", "a/src", "a/local", "a/ports", "a/portbuild",
+            "a/portbuild/amd64", "a/portbuild/i386",
+            "a/portbuild/sparc64", "a/portbuild/ia64"]
+
+# Directory to store backups
+backupdir="/dumpster/pointyhat/backup"
+
+# How many days between full backups
+fullinterval=14
+
+def validate():
+    fslist = zfs.getallfs()
+
+    missing = set(backuplist).difference(set(fslist))
+    if len(missing) > 0:
+        print "Backup list refers to filesystems that do not exist: %s" % missing
+        sys.exit(1)
+
+def mkdirp(path):
+
+    plist = path.split("/")
+
+    for i in xrange(2,len(plist)+1):
+        sofar = "/".join(plist[0:i])
+        if not os.path.isdir(sofar):
+            os.mkdir(sofar)
+
+class node(object):
+    child=None
+    parent=None
+    name=None
+    visited=0
+
+    def __init__(self, name):
+        self.name = name
+        self.child = []
+        self.parent = None
+        self.visited = 0
+
+for fs in backuplist:
+
+    dir = backupdir + "/" + fs
+    mkdirp(dir)
+
+    snaplist = [snap[0] for snap in zfs.getallsnaps(fs) if snap[0].isdigit()]
+
+    dofull = 0
+
+    # Mapping from backup date tag to node
+    backups={}
+
+    # list of old-new pairs seen
+    seen=[]
+
+    # Most recent snapshot date
+    latest = "0"
+    for j in os.listdir(dir):
+        (old, sep, new) = j.partition('-')
+        if not old.isdigit() or not new.isdigit():
+            continue        
+
+        seen.append("%s-%s" % (old, new))
+
+        if int(old) >= int(new):
+            print "Warning: backup sequence not monotonic: %s >= %s" % (old, new)
+            continue
+
+        try:
+            oldnode = backups[old]
+        except KeyError:
+            oldnode = node(old)
+            backups[old] = oldnode
+
+        try:
+            newnode = backups[new]
+        except KeyError:
+            newnode = node(new)
+            backups[new] = newnode
+
+        if int(new) > int(latest):
+            latest = new
+
+        oldnode.child.append(newnode)
+        if newnode.parent:
+            # We are not a tree!
+            if not dofull:
+                print "Multiple backup sequences found, forcing full dump!"
+                dofull = 1
+            continue
+
+        newnode.parent = oldnode
+
+    if not "0" in backups and not dofull:
+        # No root!
+        print "No full backup found!"
+        dofull = 1
+
+    if not latest in snaplist and not dofull:
+        print "Latest dumped snapshot no longer exists: forcing full dump"
+        dofull = 1
+
+    now = datetime.datetime.now()
+    nowdate = now.strftime("%Y%m%d%H%M")
+
+    try:
+        prev = datetime.datetime.strptime(latest, "%Y%m%d%H%M")
+    except ValueError:
+        if not dofull:
+            print "Unable to parse latest snapshot as a date, forcing full dump!"
+            dofull = 1
+
+    print "Creating zfs snapshot %s@%s" % (fs, nowdate)
+    zfs.createsnap(fs, nowdate)
+
+    # Find path from latest back to root
+    try:
+        cur = backups[latest]
+    except KeyError:
+        cur = None
+
+    chain = []
+    firstname = "0"
+    # Skip if latest doesn't exist or chain is corrupt
+    while cur:
+        chain.append("%s-%s" % (cur.parent.name, cur.name))
+        par = cur.parent
+        
+        # Remove from the backup tree so we can delete the leftovers
+        # below
+        par.child.remove(cur)
+        cur.parent=None
+            
+        if par.name == "0":
+            firstname = cur.name
+            break
+        cur = par
+
+    chain.reverse()
+
+    print chain
+
+    # Prune stale links not in the backup chain
+    for j in backups.iterkeys():
+        cur = backups[j]
+        for k in cur.child:
+            stale="%s-%s" % (cur.name, k.name)
+            print "Deleting %s" % stale
+            os.remove("%s/%s/%s" % (backupdir, fs, stale))
+
+    # Lookup date of full dump
+    try:
+        first = datetime.datetime.strptime(firstname, "%Y%m%d%H%M")
+    except ValueError:
+        if not dofull:
+            print "Unable to parse first snapshot as a date, forcing full dump!"
+            dofull = 1
+
+    if not dofull and (now - first) > datetime.timedelta(days=fullinterval):
+        print "Previous full backup too old, forcing full dump!"
+        dofull = 1
+
+    # In case we are interrupted don't leave behind a truncated file
+    # that will corrupt the backup chain
+
+    if dofull:
+        latest = "0"
+
+    outfile="%s/%s/.%s-%s" % (backupdir, fs, latest, nowdate)
+
+    # zfs send aborts on receiving a signal
+    signal(SIGTSTP, SIG_IGN)
+    if not dofull:
+        print "Doing incremental of %s: %s-%s" % (fs, latest, nowdate)
+        (err, out) = \
+            commands.getstatusoutput("zfs send -i %s %s@%s | bzip2 > %s" % 
+                                     (latest, fs, nowdate, outfile))
+    else:
+        print "Doing full backup of %s" % fs
+        latest = "0"
+        (err, out) = \
+            commands.getstatusoutput("zfs send %s@%s | bzip2 > %s" % 
+                                     (fs, nowdate, outfile))
+    signal(SIGTSTP, SIG_DFL)
+
+    if err:
+        print "Error from snapshot: (%s, %s)" % (err, out)
+        try:
+            os.remove(outfile)
+            print "Deleted %s" % outfile
+        except OSError, err:
+            print repr(err)
+            if err.errno != 2:
+                raise
+        finally:
+            sys.exit(1)
+
+    # We seem to be finished
+    try:
+        os.rename(outfile, "%s/%s/%s-%s" % (backupdir, fs, latest, nowdate))
+    except:
+        print "Error renaming dump file!"
+        raise
+
+    if dofull:
+        for i in seen:
+            print "Removing stale snapshot %s/%s" % (dir, i)
+            os.remove("%s/%s" % (dir, i))
