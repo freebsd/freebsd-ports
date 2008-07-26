@@ -17,7 +17,7 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		rambiusparkisanius@gmail.com
 COMMENT=		NBC is a programming language for the LEGO MINDSTORMS NXT product
 
-RUN_DEPENDS=		legoctl:${PORTSDIR}/devel/legoctl
+RUN_DEPENDS=		legoctl:${PORTSDIR}/devel/roboctl
 
 USE_GMAKE=		yes
 USE_DOS2UNIX=		yes
