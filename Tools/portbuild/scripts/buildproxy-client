@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+#
+# Client for communicating proxy requests to the buildproxy
+
+import sys, socket, os, commands
+
+from freebsd import *
+
+SOCKET='/tmp/.build'
+
+try:
+    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    s.connect(SOCKET)
+
+    sockfile = s.makefile()
+    sockfile.write("%s\n" % " ".join(sys.argv[1:]))
+    sockfile.flush()
+    code = sockfile.readline().strip()
+    out = "".join(sockfile.readlines())
+
+    if out:
+        print out
+
+    sockfile.close()
+    s.close()
+
+    sys.exit(int(code))
+except:
+    raise # XXX debug
+    sys.exit(254)
+
+
