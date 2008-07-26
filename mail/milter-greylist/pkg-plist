@@ -1,12 +1,11 @@
 libexec/milter-greylist
 etc/mail/greylist.conf.sample
-etc/rc.d/milter-greylist.sh
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/greylist.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/greylist.conf
 @exec /bin/mkdir -p /var/milter-greylist
 @exec /usr/sbin/chown -R mailnull /var/milter-greylist
 @exec [ -f /var/db/milter-greylist/greylist.db ] && printf '\n\n************************************************************\n************************************************************\n**                                                        **\n**                        WARNING                         **\n**                                                        **\n** The default dump file location has changed.            **\n** Please move greylist.db from /var/db/milter-greylist/  **\n** to /var/milter-greylist/ and update your greylist.conf **\n** accordingly.                                           **\n**                                                        **\n************************************************************\n************************************************************\n' ||true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@unexec /bin/rmdir %D/etc/mail 2>/dev/null || true
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry etc/mail
 @unexec [ -f /var/milter-greylist/greylist.db ] || /bin/rmdir /var/milter-greylist || true

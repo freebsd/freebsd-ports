@@ -19,6 +19,8 @@
 name="miltergreylist"
 rcvar=`set_rcvar`
 
+command="%%PREFIX%%/libexec/milter-greylist"
+
 load_rc_config $name
 
 miltergreylist_enable=${miltergreylist_enable-"NO"}
@@ -28,7 +30,5 @@ miltergreylist_sockfile=${miltergreylist_sockfile-"/var/milter-greylist/milter-g
 miltergreylist_cfgfile=${miltergreylist_cfgfile-"%%PREFIX%%/etc/mail/greylist.conf"}
 miltergreylist_flags=${miltergreylist_flags-"-P $miltergreylist_pidfile \
 -f $miltergreylist_cfgfile -p $miltergreylist_sockfile -u $miltergreylist_runas"}
-
-command="%%PREFIX%%/libexec/milter-greylist"
 
 run_rc_command "$1"
