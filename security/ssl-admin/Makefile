@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ssl-admin
-DISTVERSION=	1.0b1
+DISTVERSION=	1.0b1.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		ftp://ftp.secure-computing.net/pub/FreeBSD/ports/
