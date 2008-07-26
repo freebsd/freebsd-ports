@@ -2,114 +2,116 @@
 
 kill_procs()
 {
-  dir=$1
-  mount=$2
+    dir=$1
+    mount=$2
 
-  pids="XXX"
-  while [ ! -z "${pids}" ]; do
-    pids=$(fstat -f "${dir}${mount}" | tail +2 | awk '{print $3}' | sort -u)
-    if [ ! -z "${pids}" ]; then
-      echo "Killing off pids in ${dir}"
-      ps -p $pids
-      kill -KILL ${pids} 2> /dev/null
-      sleep 2
-    fi
-  done
+    pids="XXX"
+    while [ ! -z "${pids}" ]; do
+	pids=$(fstat -f "${dir}${mount}" | tail +2 | awk '{print $3}' | sort -u)
+	if [ ! -z "${pids}" ]; then
+	    echo "Killing off pids in ${dir}"
+	    ps -p $pids
+	    kill -KILL ${pids} 2> /dev/null
+	    sleep 2
+	fi
+    done
 }
 
 cleanup_mount() {
-  chroot=$1
-  mount=$2
-
-  if [ -d ${chroot}${mount} ]; then
-    mdir=$(fstat -f ${chroot}${mount} | head -2 | tail -1 | awk '{print $5}')
-    if [ "${mdir}" = "MOUNT" ]; then
-      umount -f ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+    chroot=$1
+    mount=$2
+    
+    if [ -d ${chroot}${mount} ]; then
+	mdir=$(fstat -f ${chroot}${mount} | head -2 | tail -1 | awk '{print $5}')
+	if [ "${mdir}" = "MOUNT" ]; then
+	    umount -f ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+	fi
+	if [ "${mdir}" = "${chroot}${mount}" ]; then
+	    kill_procs ${chroot} ${mount}
+	    umount -f ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!" 
+	fi
     fi
-    if [ "${mdir}" = "${chroot}${mount}" ]; then
-      kill_procs ${chroot} ${mount}
-      umount -f ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!" 
-    fi
-  fi
 }
 
 arch=$1
 branch=$2
-chroot=$3
-clean=$4
+buildid=$3
+chroot=$4
+clean=$5
 
 pb=/var/portbuild
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/${arch}/portbuild.$(hostname)
 . ${pb}/scripts/buildenv
-buildenv ${pb} ${arch} ${branch}
+
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
+
+buildenv ${pb} ${arch} ${branch} ${builddir}
 
 # directories to clean
-cleandirs="${LOCALBASE} ${X11BASE} /compat /var/db/pkg"
+cleandirs="${LOCALBASE} /compat /var/db/pkg"
 
 if [ ! -d "${chroot}" ]; then
-  exit 0
+    exit 0
 fi
 
 if [ `realpath ${chroot}` = "/" ]; then
-  # Don't spam the root file system if something has gone wrong!
-  exit 1
+    # Don't spam the root file system if something has gone wrong!
+    exit 1
 fi
 
 if [ -f ${chroot}/tmp/jail.id ]; then
-  pgrep -lfj `awk '{print $1}' ${chroot}/tmp/jail.id`
-  pkill -j `awk '{print $1}' ${chroot}/tmp/jail.id`
+    pgrep -lfj `awk '{print $1}' ${chroot}/tmp/jail.id`
+    pkill -j `awk '{print $1}' ${chroot}/tmp/jail.id`
 fi
 
 #umount ${chroot}/proc
 
 if [ ${arch} = "i386" -o ${arch} = "amd64" ]; then
-  cleanup_mount ${chroot} /compat/linux/proc
+    cleanup_mount ${chroot} /compat/linux/proc
 fi
 
 for i in /a/ports /usr/src /dev /root/.ccache; do
-  cleanup_mount ${chroot} ${i}
+    cleanup_mount ${chroot} ${i}
 done
 
-#kill_procs ${chroot}
-
 if [ "${use_zfs}" = "1" ]; then
-  cleanup_mount ${chroot} ""
-  zfs destroy $(echo ${chroot} | sed -e 's,/,,' )
+    cleanup_mount ${chroot} ""
+    zfs destroy -f ${chroot#/}
 elif [ "${use_tmpfs}" = "1" -a "${clean}" = "2" ]; then
-  cleanup_mount ${chroot} ""
-  if ! rm -rf ${chroot} >/dev/null 2>&1; then
-    chflags -R noschg ${chroot} >/dev/null 2>&1
-    rm -rf ${chroot} >/dev/null 2>&1
-  fi
-  # XXX possible race from cleanup and claim by next build?
-elif [ "${use_md_swap}" = "1" -a \( "${md_persistent}" != "1" -a "${clean}" -gt "0" \) -o "${clean}" = "2" ]; then
-  cleanup_mount ${chroot} /used
-  cleanup_mount ${chroot} ""
-  mdconfig -d -u $(basename ${chroot})
-  if ! rm -rf ${chroot} >/dev/null 2>&1; then
-    chflags -R noschg ${chroot} >/dev/null 2>&1
-    rm -rf ${chroot} >/dev/null 2>&1
-  fi
-else
-  if [ "${clean}" = 1 ]; then
-    rm -rf ${chroot}/tmp/*
-    for dir in ${cleandirs}; do
-      if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
-        chflags -R noschg ${chroot}${dir} >/dev/null 2>&1
-        rm -rf ${chroot}${dir} >/dev/null 2>&1
-      fi
-    done
-    test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -R
-    if [ ${arch} = "i386" ]; then
-        test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -aout -R
-    fi
-    rm -rf ${chroot}/var/db/pkg/*
-    rm -rf ${chroot}/used
-  elif [ "${clean}" = 2 ]; then
+    cleanup_mount ${chroot} ""
     if ! rm -rf ${chroot} >/dev/null 2>&1; then
-      chflags -R noschg ${chroot} >/dev/null 2>&1
-      rm -rf ${chroot} >/dev/null 2>&1
+	chflags -R noschg ${chroot} >/dev/null 2>&1
+	rm -rf ${chroot} >/dev/null 2>&1
     fi
-  fi
+    # XXX possible race from cleanup and claim by next build?
+elif [ "${use_md_swap}" = "1" -a \( "${md_persistent}" != "1" -a "${clean}" -gt "0" \) -o "${clean}" = "2" ]; then
+    cleanup_mount ${chroot} /used > /dev/null 2>&1
+    cleanup_mount ${chroot} ""
+    mdconfig -d -u $(basename ${chroot})
+    if ! rm -rf ${chroot} >/dev/null 2>&1; then
+	chflags -R noschg ${chroot} >/dev/null 2>&1
+	rm -rf ${chroot} >/dev/null 2>&1
+    fi
+else
+    if [ "${clean}" = 1 ]; then
+	rm -rf ${chroot}/tmp/*
+	for dir in ${cleandirs}; do
+	    if ! rm -rf ${chroot}${dir} >/dev/null 2>&1; then
+		chflags -R noschg ${chroot}${dir} >/dev/null 2>&1
+		rm -rf ${chroot}${dir} >/dev/null 2>&1
+	    fi
+	done
+	test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -R
+	if [ ${arch} = "i386" ]; then
+            test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -aout -R
+	fi
+	rm -rf ${chroot}/var/db/pkg/*
+	rm -rf ${chroot}/used
+    elif [ "${clean}" = 2 ]; then
+	if ! rm -rf ${chroot} >/dev/null 2>&1; then
+	    chflags -R noschg ${chroot} >/dev/null 2>&1
+	    rm -rf ${chroot} >/dev/null 2>&1
+	fi
+    fi
 fi
