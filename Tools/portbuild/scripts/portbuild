@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# usage: $0 ARCH BRANCH [-noclean] [-norestr] [-noplistcheck] [-distfiles] [-fetch-original] [-trybroken] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
+# usage: $0 ARCH BRANCH BUILDID CHROOT [-noclean] [-norestr] [-noplistcheck] [-distfiles] [-fetch-original] [-trybroken] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
 
 mount_fs()
 {
@@ -51,7 +51,10 @@ bailout()
 pb=/var/portbuild
 
 arch=$1
-shift
+branch=$2
+buildid=$3
+chroot=$4
+shift 4
 
 # Default niceness value
 nice=0
@@ -62,10 +65,6 @@ nice=0
 
 buildroot=${scratchdir}
 error=0
-
-branch=$1
-chroot=$2
-shift 2
 
 clean=1
 if [ "x$1" = "x-noclean" ]; then
@@ -105,7 +104,8 @@ FD=$3
 BD=$4
 RD=$5
 
-buildenv ${pb} ${arch} ${branch}
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
+buildenv ${pb} ${arch} ${branch} ${builddir}
 
 # Want to use the /etc/make.conf in the chroot
 unset __MAKE_CONF
@@ -147,10 +147,8 @@ export PATH=/sbin:/bin:/usr/sbin:/usr/bin:${LOCALBASE}/sbin:${LOCALBASE}/bin:${X
 
 echo "building $pkgname in $chroot"
 
-bakdir=${pb}/${arch}/${branch}/tarballs
-bindist=${buildroot}/${branch}/tarballs/bindist.tar
-bindistlocal=${buildroot}/${branch}/tarballs/bindist-$(hostname).tar
-packages=${pb}/${arch}/${branch}/packages
+bindist=${buildroot}/${branch}/${buildid}/tarballs/bindist.tar
+bindistlocal=${buildroot}/${branch}/${buildid}/tarballs/bindist-$(hostname).tar
 
 if [ -f ${chroot}/.notready ]; then
   tar -C ${chroot} -xpf ${bindist}
@@ -207,12 +205,12 @@ if [ ! -z "${ccache_dir}" ]; then
   fi
 fi
 
-mount_fs ${pb}/${arch}/${branch}/ports ${chroot}/a/ports ${master}
+mount_fs ${builddir}/ports ${chroot}/a/ports ${master}
 ln -sf ../a/ports ${chroot}/usr/ports
 
 mkdir -p ${chroot}/usr/src 
 
-mount_fs ${pb}/${arch}/${branch}/src ${chroot}/usr/src ${master}
+mount_fs ${builddir}/src ${chroot}/usr/src ${master}
 
 mount -t devfs foo ${chroot}/dev
 umount -f ${chroot}/compat/linux/proc > /dev/null 2>&1
@@ -303,4 +301,8 @@ if [ "${error}" = 0 ]; then
 fi
 
 rm -rf ${chroot}/${WRKDIRPREFIX}
+
+# Record build completion time for ganglia
+echo "${arch} ${branch} ${buildid}" > ${buildroot}/stamp/${pkgname}
+
 exit $error
