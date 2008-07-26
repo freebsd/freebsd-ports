@@ -6,65 +6,113 @@
 #
 
 PORTNAME=	ssamtse
-PORTVERSION=	b1
-PORTREVISION=	2
-CATEGORIES=	games
-MASTER_SITES=	# must fetch manually
-DISTFILES=	${PORTNAME}-${PORTVERSION:S|b|beta|}.sh.bin
-EXTRACT_ONLY=
+PORTVERSION=	1.07b1
+CATEGORIES=	games linux
+MASTER_SITES=	http://liflg.0wnitsch.de/files/final/
+PKGNAMEPREFIX=	linux-
+DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.run
 
 MAINTAINER=	ports@logvinov.com
-COMMENT=	Serious Sam - The Second Encounter
+COMMENT=	Serious Sam: The Second Encounter for Linux
 
-NO_BUILD=	yes
-USE_BZIP2=	yes
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
+
+OPTIONS=	VORBIS	"Ogg playing support"	on
+
 USE_LINUX=	yes
 USE_XLIB=	yes
-USE_GL=		yes
-USE_LDCONFIG=	yes
-NO_PACKAGE=	yes	# distfiles must be downloaded manually, wierd legal issues etc etc etc.
+NO_BUILD=	yes
+NO_PACKAGE=	Distribution is 352MB; set FORCE_PACKAGE if you really want to build this package
+RESTRICTED=	Redistribution is limited, see license
+PORTDOCS=	README.liflg ShellSymbols.txt changes.txt Notes_1_04.txt
+SUB_FILES=	pkg-message
 
-SSAMDIR=	${PREFIX}/ssam
-SERIOUS_MHZ?=	1000
-PKGMESSAGE=	${WRKDIR}/pkgmsg
+.include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386
-
-pre-fetch:
-	@if test ! -e "${DISTDIR}/${DISTFILES}"; then \
-		${ECHO_MSG} "Warning: you should fetch distfiles for this port"; \
-		${ECHO_MSG} "manually! Google for 'serious sam linux', and get"; \
-		${ECHO_MSG} "following files into distdir:"; \
-		${ECHO_MSG} "	${DISTFILES}"; \
-		${ECHO_MSG} "I'll enable auto-fetch, when licensing issues"; \
-		${ECHO_MSG} "become clear"; \
-		${FALSE}; \
-	fi
-
-post-extract:
-.if !exists("${WRKDIR}/ssam/")
-	@${ECHO} n | ${SH} ${DISTDIR}/${DISTFILES} --keep --nox11 --confirm \
-		--target ${WRKDIR}/ssam
-	@${ECHO_MSG} ""
+.if defined(WITH_VORBIS)
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis
+PLIST_SUB+=	VORBIS=""
+.else
+PLIST_SUB+=	VORBIS="@comment "
 .endif
-	@${MKDIR} ${WRKSRC}
-	@${TAR} -C ${WRKSRC} -xzf ${WRKDIR}/ssam/setupstuff.tar.gz
+
+# Gold Edition
+.if exists(${CDROM_MOUNT}/Install/SEGold_DM.gro)
+PLIST_SUB+=	GOLD=""
+.else
+PLIST_SUB+=	GOLD="@comment "
+.endif
+
+do-extract:
+	@${MKDIR} ${WRKSRC}/Data
+	@cd ${WRKSRC} && ${SED} -e '1,/exit $$res/d' ${_DISTDIR}/${DISTFILES} |\
+		${GUNZIP_CMD} -q | ${TAR} xf -
+	@${TAR} jx -C ${WRKSRC}/Data -f ${WRKSRC}/bins.tar.bz2
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%SSAMTSE_DATA_PATH%|${SSAMDIR}/Bin|g' \
-		-e 's|%SERIOUS_MHZ%|${SERIOUS_MHZ}|g' \
-		${WRKSRC}/bin/ssamtse
-	@${SED} 's|%SSAMDIR%|${SSAMDIR}|g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
+	@${REINPLACE_CMD} -e "s|^\(GAMEDIR=\).*|\1\"${DATADIR}\"|" \
+		-e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/${PORTNAME}
 
 do-install:
-# XXX: this is missing "${BRANDELF} -t Linux <executables>"
-	@${MKDIR} ${SSAMDIR}
-	@${TAR} --bzip2 -C ${SSAMDIR} -xf \
-		${WRKDIR}/ssam/bins.tar.bz2
-	@${LN} -sf ${SSAMDIR}/Bin/libogg.so ${SSAMDIR}/Bin/libogg.so.0
-	@${LN} -sf ${SSAMDIR}/Bin/libGameMP.so ${SSAMDIR}/Bin/libGame.so
-	@${LN} -sf ${SSAMDIR}/Bin/libEntitiesMP.so ${SSAMDIR}/Bin/libEntities.so
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/ssamtse ${PREFIX}/bin/ssamtse
+.if !defined(CDROM_MOUNT)
+	@${ECHO_CMD} "${PKGNAME} requires CDROM_MOUNT set to mount point of CD"
+	@${FALSE}
+.endif
+.if !exists(${CDROM_MOUNT}/Install/Mods/SecondEncounterTbn.tex)
+	@${ECHO_CMD} "${PKGNAME} requires a retail Second Encounter disc"
+	@${FALSE}
+.endif
+	@${MKDIR} ${DATADIR}/Mods
+.for gro in "" _Extra _ExtraTools _Levels _Music
+	${INSTALL_DATA} "${CDROM_MOUNT}/Install/SE1_00${gro}.gro" ${DATADIR}/SE1_00${gro}.gro
+.endfor
+	${INSTALL_DATA} "${CDROM_MOUNT}/Install/Mods/SecondEncounterTbn.tex" ${DATADIR}/Mods/SecondEncounterTbn.tex
+.for dir in Controls Data Scripts VirtualTrees Worlds Demos
+	@cd ${CDROM_MOUNT}/Install && \
+		${FIND} ${dir} -type d -exec \
+			${MKDIR} "${DATADIR}/{}" \; && \
+		${FIND} ${dir} -type f -exec \
+			${INSTALL_DATA} "${CDROM_MOUNT}/Install/{}" "${DATADIR}/{}" \;
+.endfor
+	@${MKDIR} ${DATADIR}/Help
+.for i in ${PORTDOCS:NREADME.liflg}
+	${INSTALL_DATA} "${CDROM_MOUNT}/Install/Help/${i}" ${DATADIR}/Help/${i}
+.endfor
+.for dir in Data/Var Levels
+	@cd ${WRKSRC} && \
+		${FIND} ${dir} -type d -exec \
+			${MKDIR} "${DATADIR}/{}" \; && \
+		${FIND} ${dir} -type f -exec \
+			${INSTALL_DATA} "${WRKSRC}/{}" "${DATADIR}/{}" \;
+.endfor
+	@${MKDIR} ${DATADIR}/Bin
+	@cd ${WRKSRC}/Data && \
+		${FIND} Bin -type f -exec \
+			${INSTALL_PROGRAM} "${WRKSRC}/Data/{}" "${DATADIR}/{}" \;
+	${BRANDELF} -t Linux ${DATADIR}/Bin/ssam_*
+	${INSTALL_DATA} ${WRKSRC}/ModExt.txt ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
+.if defined(WITH_VORBIS)
+	${LN} -fs ${LINUXBASE}/usr/lib/libvorbisfile.so.3 ${DATADIR}/Bin/libvorbisfile.so
+.endif
+	@${FIND} -E ${DATADIR} -type f \
+		-iregex ".*\.(ctl|txt|lst|ini|cfg|des|reg)" \
+		! -iregex ".*ModExt.txt" \
+		-exec ${SH} -c "${SED} "s/`printf '\r'`//" '{}' \
+		>${WRKDIR}/tmp.txt; ${MV} ${WRKDIR}/tmp.txt '{}'" \;
+	@${ECHO} SERIOUS_MHZ=2000 > ${PREFIX}/etc/${PORTNAME}.conf.sample
+.if !exists(${PREFIX}/etc/${PORTNAME}.conf)
+	${INSTALL_DATA} ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf
+.endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} -p ${WRKSRC}/README.liflg ${DOCSDIR}
+.for i in ${PORTDOCS:NREADME.liflg}
+	${LN} -sf ${DATADIR}/Help/${i} ${DOCSDIR}/${i}
+.endfor
+.endif
+
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

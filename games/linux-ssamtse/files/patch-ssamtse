@@ -1,0 +1,27 @@
+--- bin/ssamtse.orig	2008-05-18 23:51:30.000000000 +1000
++++ bin/ssamtse	2008-05-18 23:58:42.000000000 +1000
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ ###############################################################################
+ #
+ ## LIFLG Startup Script
+@@ -49,6 +49,18 @@
+ ###############################################################################
+ ## DO NOT EDIT BELOW THIS LINE
+ ###############################################################################
++
++# config file
++if [ -r %%PREFIX%%/etc/ssamtse.conf ]; then
++    . %%PREFIX%%/etc/ssamtse.conf
++fi    
++if [ -n "${SERIOUS_MHZ}" ]; then
++	export SERIOUS_MHZ
++else
++	echo "Can't get CPU speed. Please set SERIOUS_MHZ variable in %%PREFIX%%/etc/ssamtse.conf"
++	exit 1
++fi
++
+ export LANG="POSIX"
+ 
+ test -n "${SDL_AUDIODRIVER}" && export SDL_AUDIODRIVER
