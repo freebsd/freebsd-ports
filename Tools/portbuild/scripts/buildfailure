@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# buildfailure <arch> <branch> <pkgname>
+# buildfailure <arch> <branch> <buildid> <pkgname>
 
 cleanup() {
     echo "Problem writing new failure file!"
@@ -10,17 +10,28 @@ cleanup() {
 
 # configurable variables
 pb=/var/portbuild
+
+usage () {
+  echo "usage: buildfailure arch branch buildid pkgname"
+  exit 1
+}
+
+if [ $# -ne 4 ]; then
+  usage
+fi
+
 arch=$1
-shift 1
+branch=$2
+buildid=$3
+pkgname=$4
+shift 4
+
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
-branch=$1
-pkgname=$2
-shift 2
-
-buildenv ${pb} ${arch} ${branch}
+buildenv ${pb} ${arch} ${branch} ${builddir}
 
 # Don't pick up installed packages from the host
 export LOCALBASE=/nonexistentlocal
@@ -29,7 +40,7 @@ export X11BASE=/nonexistentx
 index=${PORTSDIR}/${INDEXFILE}
 
 portloc=$(grep "^$pkgname|" ${index} | cut -f 2 -d \| | sed s,/usr/ports/,,)
-pkgbase=$(cd ${pb}/${arch}/${branch}/ports/${portloc}/ && make -V PKGBASE)
+pkgbase=$(cd ${PORTSDIR}/${portloc}/ && make -V PKGBASE)
 
 cd ${pb}/${arch}/${branch}
 entry=$(grep "^${portloc}|" failure)
@@ -48,5 +59,5 @@ fi
 
 link=${pb}/${arch}/${branch}/latest/${portloc}
 mkdir -p $(dirname ${link})
-errorloc=$(realpath ${pb}/${arch}/${branch}/errors/${pkgname}.log)
+errorloc=$(realpath ${builddir}/errors/${pkgname}.log)
 ln -sf ${errorloc} ${link}
