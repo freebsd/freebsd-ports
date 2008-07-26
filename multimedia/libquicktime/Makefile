@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libquicktime
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.0.3
 CATEGORIES=	multimedia
 MASTER_SITES=	SFE
 
@@ -23,7 +22,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
-CONFIGURE_ARGS=	--with-x --enable-gpl
+CONFIGURE_ARGS=	--with-x --enable-gpl --without-doxygen
 CFLAGS+=	-fPIC
 MAN1=		lqtplay.1
 
