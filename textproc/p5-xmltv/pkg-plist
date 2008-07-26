@@ -100,3 +100,4 @@ www/cgi-bin/tv_pick.cgi
 @dirrm %%SITE_PERL%%/XMLTV/Configure
 @dirrm %%SITE_PERL%%/XMLTV/Ask
 @dirrm %%SITE_PERL%%/XMLTV
+@dirrmtry www/cgi-bin
