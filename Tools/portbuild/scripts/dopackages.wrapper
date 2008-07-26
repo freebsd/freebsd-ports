@@ -2,43 +2,38 @@
 
 # configurable variables
 pb=/var/portbuild
-arch=$1
-branch=$(echo $(basename $0) | cut -d'.' -f2)
-shift
 
-. ${pb}/${arch}/portbuild.conf
-
-lock=${pb}/${arch}/${branch}/lock
-status=${pb}/${arch}/status
-date=$(date '+%Y%m%d%H')
-shortdate=$(date '+%Y%m%d')
-
-if [ -e ${lock} ]; then
-  echo "Already locked."
-  exit 1
+if [ $# -lt 2 ]; then
+    echo "usage: $0 <arch> <buildid> [<args> ...]"
+    exit 1
 fi
 
-rm -f ${status}
-mkdir -p ${pb}/${arch}/archive/buildlogs
+arch=$1
+buildid=$2
+branch=$(echo $(basename $0) | cut -d'.' -f2)
+shift 2
 
-trap "exit 1" 1 2 3 9 10 11 15
+. ${pb}/scripts/buildenv
+if ! validate_env ${arch} ${branch} ; then
+    echo "Invalid environment: ${arch}/${branch}"
+    exit 1
+fi
+
+buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
+if [ -z "${buildid}" ]; then
+    echo "Invalid build ID ${buildid}"
+    exit 1
+fi
+
+# XXX move to per-build
+lock=${pb}/${arch}/${branch}/lock
+
+date=$(date '+%Y%m%d%H%M%S')
 
 dorun() {
-  branch=$1
-  shift 1
 
-  ln -sf ${pb}/${arch}/archive/buildlogs/log.${branch}.${date} ${pb}/${arch}/${branch}/build.log
-  ln -sf log.${branch}.${date} ${pb}/${arch}/archive/buildlogs/log.${branch}.${shortdate}
-  lockf -t 0 ${lock} ${pb}/scripts/dopackages ${arch} $@ ${branch} ${date} 2>&1 \
-    > ${pb}/${arch}/archive/buildlogs/log.${branch}.${date}
-  if [ -f ${status} ]; then
-    error=$(cat ${status})
-    exit ${error}
-  fi
-
+    lockf -k -t 0 ${lock} ${pb}/scripts/dopackages ${arch} ${branch} ${buildid} ${date} $@ 2>&1 \
+	| tee ${pb}/${arch}/archive/buildlogs/log.${branch}.${date}
 }
 
-dorun ${branch} $@ &
-wait
-
-exit 0
+dorun $@ || (echo "Build failed."; exit 1)
