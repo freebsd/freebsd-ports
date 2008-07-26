@@ -1,35 +1,37 @@
 #!/bin/sh
-# usage: $0 arch branch
+
+usage () {
+  echo "usage: makeduds arch branch buildid"
+  exit 1
+}
+
+if [ $# -ne 3 ]; then
+  usage
+fi
 
 # configurable variables
 pb=/var/portbuild
 arch=$1
-shift
+branch=$2
+buildid=$3
+shift 3
+
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
 . ${pb}/${arch}/portbuild.conf
-
 . ${pb}/scripts/buildenv
 
 # -j# to make duds
 DUDSJOBS=4
 
-usage () {
-  echo "usage: makeduds branch"
-  exit 1
-}
-if [ $# != 1 ]; then
-  usage
-fi
+buildenv ${pb} ${arch} ${branch} ${builddir}
 
-branch=$1
-
-buildenv ${pb} ${arch} ${branch}
-
-duds=${pb}/${arch}/${branch}/duds
+duds=${builddir}/duds
 index=${PORTSDIR}/${INDEXFILE}
 
 unset DISPLAY
 
+export __MAKE_SHELL=/rescue/sh
 export PACKAGE_BUILDING=1
 export LOCALBASE=/nonexistentlocal
 export X11BASE=/nonexistentx
