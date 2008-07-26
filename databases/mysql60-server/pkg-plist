@@ -19,6 +19,7 @@ bin/mysqld_safe
 %%NDB%%bin/ndb_print_backup_file
 %%NDB%%bin/ndb_print_schema_file
 %%NDB%%bin/ndb_print_sys_file
+%%NDB%%bin/ndb_redo_log_reader
 %%NDB%%bin/ndb_restore
 %%NDB%%bin/ndb_select_all
 %%NDB%%bin/ndb_select_count
@@ -50,6 +51,7 @@ bin/resolveip
 %%NDB%%include/mysql/storage/ndb/ndbapi/NdbIndexOperation.hpp
 %%NDB%%include/mysql/storage/ndb/ndbapi/NdbIndexScanOperation.hpp
 %%NDB%%include/mysql/storage/ndb/ndbapi/NdbIndexStat.hpp
+%%NDB%%include/mysql/storage/ndb/ndbapi/NdbInterpretedCode.hpp
 %%NDB%%include/mysql/storage/ndb/ndbapi/NdbOperation.hpp
 %%NDB%%include/mysql/storage/ndb/ndbapi/NdbPool.hpp
 %%NDB%%include/mysql/storage/ndb/ndbapi/NdbRecAttr.hpp
@@ -80,7 +82,6 @@ libexec/mysqld
 %%NDB%%libexec/ndb_cpcd
 %%NDB%%libexec/ndb_mgmd
 %%NDB%%libexec/ndbd
-%%DATADIR%%/ChangeLog
 %%DATADIR%%/binary-configure
 %%DATADIR%%/charsets/Index.xml
 %%DATADIR%%/charsets/README
