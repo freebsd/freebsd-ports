@@ -613,6 +613,7 @@
     SUBDIR += libftdi
     SUBDIR += libg++
     SUBDIR += libgalago
+    SUBDIR += libgamepad
     SUBDIR += libgconf-java
     SUBDIR += libgetline
     SUBDIR += libghthash
