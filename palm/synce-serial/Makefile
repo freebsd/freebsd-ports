@@ -5,17 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	synce-serial
-PORTVERSION=	0.9.1
+PORTVERSION=	0.11
 CATEGORIES=	palm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Wrapper for pppd to initiate communications with WinCE devices
+MAINTAINER=	ports@logvinov.com
+COMMENT=	Wrapper for pppd to initiate communications with Windows Mobile devices
 
-MAN8=		synce-serial-config.8 synce-serial-start.8 synce-serial-abort.8
+RUN_DEPENDS=	vdccm:${PORTSDIR}/palm/synce-vdccm
+
+CONFLICTS=	synce-hal-[0-9]*
+
+MAN8=		${PORTNAME}-config.8 ${PORTNAME}-start.8 \
+		${PORTNAME}-abort.8 ${PORTNAME}-chat.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget
 
 .include <bsd.port.mk>
