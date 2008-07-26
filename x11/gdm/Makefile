@@ -8,6 +8,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	2.20.7
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -45,7 +46,7 @@ GNOME_LOCALSTATEDIR=	/var
 
 MAN1=		gdm.1
 
-OPTIONS=	IPV6 "Enable IPv6 support" on \
+OPTIONS=	IPV6 "Enable IPv6 support" off \
 		LOG_LIMIT "Limit ~/.xsession-errors size" on
 
 .include <bsd.port.pre.mk>
