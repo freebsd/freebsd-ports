@@ -1,22 +1,22 @@
---- src/pulsecore/core-util.c.orig	Sun Jul  8 18:35:21 2007
-+++ src/pulsecore/core-util.c	Sun Jul  8 18:39:04 2007
-@@ -40,6 +40,7 @@
+--- src/pulsecore/core-util.c.orig	2008-06-21 13:25:57.000000000 -0400
++++ src/pulsecore/core-util.c	2008-07-26 17:01:01.000000000 -0400
+@@ -37,6 +37,7 @@
  #include <time.h>
  #include <ctype.h>
  #include <sys/types.h>
 +#include <sys/socket.h>
  #include <sys/stat.h>
  #include <sys/time.h>
- 
-@@ -544,6 +545,7 @@ fail:
-         cap_free(caps);
-     }
+ #include <dirent.h>
+@@ -548,6 +549,7 @@ int pa_make_realtime(int rtprio) {
+ #else
+     return -1;
  #endif
 +    ;
  }
  
- /* Reset the priority to normal, inverting the changes made by pa_raise_priority() */
-@@ -838,22 +840,22 @@ int pa_check_in_group(gid_t g) {
+ /* This is merely used for giving the user a hint. This is not correct
+@@ -1036,22 +1038,22 @@ int pa_check_in_group(gid_t g) {
    (advisory on UNIX, mandatory on Windows) */
  int pa_lock_fd(int fd, int b) {
  #ifdef F_SETLKW
@@ -47,3 +47,15 @@
              return 0;
      }
  
+@@ -1990,7 +1992,11 @@ int pa_reset_sigs(int except, ...) {
+ int pa_reset_sigsv(const int except[]) {
+     int sig;
+ 
++#ifdef _NSIG
+     for (sig = 1; sig < _NSIG; sig++) {
++#else
++    for (sig = 1; sig < NSIG; sig++) {
++#endif
+         pa_bool_t reset = TRUE;
+ 
+         switch (sig) {

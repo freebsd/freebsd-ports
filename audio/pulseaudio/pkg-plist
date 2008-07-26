@@ -9,25 +9,28 @@ bin/parec
 bin/pasuspender
 bin/pax11publish
 bin/pulseaudio
+bin/start-pulseaudio-x11
 @unexec if cmp -s %D/etc/pulse/client.conf %D/etc/pulse/client.conf-dist; then rm -f %D/etc/pulse/client.conf; fi
 etc/pulse/client.conf-dist
 @unexec if cmp -s %D/etc/pulse/daemon.conf %D/etc/pulse/daemon.conf-dist; then rm -f %D/etc/pulse/daemon.conf; fi
 etc/pulse/daemon.conf-dist
 @unexec if cmp -s %D/etc/pulse/default.pa %D/etc/pulse/default.pa-dist; then rm -f %D/etc/pulse/default.pa; fi
 etc/pulse/default.pa-dist
-etc/xdg/autostart/pulseaudio-module-xsmp.desktop
+etc/xdg/autostart/pulseaudio.desktop
 %%AVAHI%%include/pulse/browser.h
 include/pulse/cdecl.h
 include/pulse/channelmap.h
 include/pulse/context.h
 include/pulse/def.h
 include/pulse/error.h
+include/pulse/gccmacro.h
 include/pulse/glib-mainloop.h
 include/pulse/introspect.h
 include/pulse/mainloop-api.h
 include/pulse/mainloop-signal.h
 include/pulse/mainloop.h
 include/pulse/operation.h
+include/pulse/proplist.h
 include/pulse/pulseaudio.h
 include/pulse/sample.h
 include/pulse/scache.h
@@ -60,7 +63,7 @@ lib/libpulse.so.0
 lib/libpulsecore.a
 lib/libpulsecore.la
 lib/libpulsecore.so
-lib/libpulsecore.so.5
+lib/libpulsecore.so.6
 lib/libpulsedsp.so
 lib/pulse-%%PULSE_VERSION%%/modules/libauthkey-prop.so
 lib/pulse-%%PULSE_VERSION%%/modules/libauthkey.so
@@ -89,12 +92,15 @@ lib/pulse-%%PULSE_VERSION%%/modules/libstrlist.so
 lib/pulse-%%PULSE_VERSION%%/modules/libtagstruct.so
 lib/pulse-%%PULSE_VERSION%%/modules/libx11prop.so
 lib/pulse-%%PULSE_VERSION%%/modules/libx11wrap.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-always-sink.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-cli-protocol-tcp.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-cli-protocol-unix.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-cli.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-combine.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-console-kit.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-default-device-restore.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-detect.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-device-restore.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-esound-compat-spawnfd.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-esound-compat-spawnpid.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-esound-protocol-tcp.so
@@ -115,6 +121,7 @@ lib/pulse-%%PULSE_VERSION%%/modules/module-null-sink.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-oss.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-pipe-sink.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-pipe-source.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-position-event-sounds.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-remap-sink.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-rescue-streams.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-rtp-recv.so

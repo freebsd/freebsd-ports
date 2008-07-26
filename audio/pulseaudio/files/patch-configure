@@ -1,27 +1,27 @@
---- configure.orig	2008-03-31 07:31:37.381987526 -0400
-+++ configure	2008-03-31 07:31:37.771922603 -0400
-@@ -23902,6 +23902,7 @@
+--- configure.orig	2008-07-26 15:15:12.000000000 -0400
++++ configure	2008-07-26 15:15:35.000000000 -0400
+@@ -25321,6 +25321,7 @@ $as_echo_n "checking whether to check fo
     check_inconsistencies=yes
     case "${host_cpu}-${host_os}" in
       *-darwin*) check_inconsistencies=no ;;
 +     *-freebsd*) check_inconsistencies=no ;;
     esac
     if test x"$GCC" != xyes -o "x$check_inconsistencies" != xyes ; then
-       { echo "$as_me:$LINENO: result: no" >&5
-@@ -30280,9 +30281,9 @@
+       { $as_echo "$as_me:$LINENO: result: no" >&5
+@@ -32654,9 +32655,9 @@ _ACEOF
  
  else
  
--   { { echo "$as_me:$LINENO: error: *** libatomic-ops headers not found" >&5
--echo "$as_me: error: *** libatomic-ops headers not found" >&2;}
+-   { { $as_echo "$as_me:$LINENO: error: *** libatomic-ops headers not found" >&5
+-$as_echo "$as_me: error: *** libatomic-ops headers not found" >&2;}
 -   { (exit 1); exit 1; }; }
-+#   { { echo "$as_me:$LINENO: error: *** libatomic-ops headers not found" >&5
-+#echo "$as_me: error: *** libatomic-ops headers not found" >&2;}
++#   { { $as_echo "$as_me:$LINENO: error: *** libatomic-ops headers not found" >&5
++#$as_echo "$as_me: error: *** libatomic-ops headers not found" >&2;}
 +#   { (exit 1); exit 1; }; }
  
  fi
  
-@@ -30290,9 +30291,9 @@
+@@ -32664,9 +32665,9 @@ done
  
  
     # Win32 does not need the lib and breaks horribly if we try to include it
@@ -32,5 +32,5 @@
 +#       LIBS="$LIBS -latomic_ops"
 +#   fi
  else
-    { echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6; }
+    { $as_echo "$as_me:$LINENO: result: no" >&5
+ $as_echo "no" >&6; }

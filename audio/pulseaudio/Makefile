@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pulseaudio
-PORTVERSION=	0.9.10
-PORTREVISION=	2
+PORTVERSION=	0.9.11
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -16,7 +15,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound server for UNIX
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		oil-0.3.0:${PORTSDIR}/devel/liboil
+		oil-0.3.0:${PORTSDIR}/devel/liboil \
+		speexdsp.1:${PORTSDIR}/audio/speex \
+		dbus-1.3:${PORTSDIR}/devel/dbus
 
 USE_GNOME=	gnometarget gnomehack glib20 ltverhack
 USE_XORG=	x11 sm
@@ -67,7 +68,8 @@ PLIST_SUB+=	AVAHI="@comment "
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 PLIST_SUB+=	HAL=""
 .else
-CONFIGURE_ARGS+=--disable-hal
+CONFIGURE_ARGS+=--disable-hal \
+		--disable-polkit
 PLIST_SUB+=	HAL="@comment "
 .endif
 
@@ -80,8 +82,6 @@ PLIST_SUB+=	GCONF="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/PolicyKit/policy/|${PREFIX}/share/PolicyKit/policy/|' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/daemon/default.pa.in
 .if ${OSVERSION} < 700042
