@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silktools
-PORTVERSION=	0.11.9
+PORTVERSION=	1.1.0
 CATEGORIES=	security net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
@@ -14,6 +14,10 @@ DISTNAME=	silk-${PORTVERSION}
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Tools for large-scale network capture analysis
+
+# Optional PySiLK support awaiting a fix for the USE_PYTHON
+# chicken/egg issue
+OPTIONS=	IPFIX "Enable IPFIX support" off
 
 LIB_DEPENDS=	lzo:${PORTSDIR}/archivers/lzo
 
@@ -31,16 +35,27 @@ MAN1=	rwip2cc.1 rwpmapbuild.1 mapsid.1 num2dot.1 rwaddrcount.1 rwappend.1 \
 	rwsetintersect.1 rwsetunion.1 rwstats.1 rwswapbytes.1 rwtotal.1 \
 	rwtuc.1 rwuniq.1 rwptoflow.1 rwpmatch.1 rwpdedupe.1 rwpcut.1 \
 	rwp2yaf2silk.1 rwgeoip2ccmap.1 rwpmapcat.1 rwresolve.1 rwscan.1 \
-	rwscanquery.1 rwsetmember.1 rwsettool.1 rwsplit.1 rwdedupe.1
+	rwscanquery.1 rwsetmember.1 rwsettool.1 rwsplit.1 rwdedupe.1 \
+	rwidsquery.1
 
-MAN3=	libaddrtype.3 libccfilter.3 libpmapfilter.3
+MAN3=	addrtype.3 ccfilter.3 pmapfilter.3
 
 MAN5=	sensor.conf.5 silk.conf.5
 
+MAN7=	silk.7
+
 MAN8=	rwflowpack.8 rwpackchecker.8 rwflowappend.8 rwreceiver.8 rwsender.8 \
-	flowcap.8
+	flowcap.8 rwguess.8
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_IPFIX)
+LIB_DEPENDS+=	fixbuf:${PORTSDIR}/net/libfixbuf
+MAN1+=	rwipfix2silk.1 rwsilk2ipfix.1
+PLIST_SUB+=	IPFIX=""
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
