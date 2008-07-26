@@ -1,20 +1,31 @@
 #!/bin/sh
 #
-# buildsuccess <arch> <branch> <pkgname>
+# buildsuccess <arch> <branch> <buildid> <pkgname>
 
 # configurable variables
 pb=/var/portbuild
+
+usage () {
+  echo "usage: buildsuccess arch branch buildid pkgname"
+  exit 1
+}
+
+if [ $# -ne 4 ]; then
+  usage
+fi
+
 arch=$1
-shift
+branch=$2
+buildid=$3
+pkgname=$4
+shift 4
+
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
-branch=$1
-pkgname=$2
-shift 2
-
-buildenv ${pb} ${arch} ${branch}
+buildenv ${pb} ${arch} ${branch} ${builddir}
 
 # Don't pick up installed packages from the host
 export LOCALBASE=/nonexistentlocal

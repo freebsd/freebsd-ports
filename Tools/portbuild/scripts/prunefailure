@@ -4,7 +4,7 @@
 #
 # This must be called via:
 #
-#   lockf -k ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/prunefailure ${arch} ${branch}
+#   lockf -k ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/prunefailure ${arch} ${branch} ${buildid}
 #
 # to avoid racing with any package builds in progress that might try to append to
 # these files.
@@ -18,24 +18,28 @@ cleanup() {
     exit 1
 }
 
-if [ $# -ne 2 ]; then
-    echo "prunefailure <arch> <branch>"
+if [ $# -ne 3 ]; then
+    echo "prunefailure <arch> <branch> <buildid>"
     exit 1
 fi
 
 arch=$1
 branch=$2
-shift 2
+buildid=$3
+shift 3
 
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
-buildenv ${pb} ${arch} ${branch}
+
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
+
+buildenv ${pb} ${arch} ${branch} ${builddir}
 
 home=${pb}/${arch}/${branch}
 cd $home
 
-pkgdir=$home/packages/All
+pkgdir=${builddir}/packages/All
 index=${PORTSDIR}/${INDEXFILE}
 
 if [ "`wc -l $index | awk '{print $1}'`" -lt 9000 ]; then
@@ -65,13 +69,13 @@ while read dir name ver olddate date count; do
 
     newver=$(echo $entry | awk '{print $1}')
 
-    if [ -e "$home/packages/All/$newver${PKGSUFFIX}" ]; then
+    if [ -e "${builddir}/packages/All/$newver${PKGSUFFIX}" ]; then
 	echo "$newver package exists, should not still be here!"
 	rm -f ${pb}/${arch}/${branch}/latest/${dir}
 	continue
     fi
 
-    if grep -qxF $newver $home/duds.full; then
+    if grep -qxF $newver ${builddir}/duds.full; then
 	echo "$newver listed in duds, should not be here"
 	rm -f ${pb}/${arch}/${branch}/latest/${dir}
 	continue
