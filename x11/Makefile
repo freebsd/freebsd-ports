@@ -228,6 +228,7 @@
     SUBDIR += portoseguro
     SUBDIR += powershell
     SUBDIR += printproto
+    SUBDIR += printscreen
     SUBDIR += props
     SUBDIR += py-qt4-opengl
     SUBDIR += qrash
