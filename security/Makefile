@@ -742,6 +742,7 @@
     SUBDIR += sshguard-ipfw
     SUBDIR += sshguard-pf
     SUBDIR += sshit
+    SUBDIR += ssl-admin
     SUBDIR += sslproxy
     SUBDIR += sslsniffer
     SUBDIR += sslwrap
