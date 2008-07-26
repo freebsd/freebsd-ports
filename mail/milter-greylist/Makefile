@@ -7,6 +7,7 @@
 
 PORTNAME=	milter-greylist
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 DISTNAME=	milter-greylist-${PORTVERSION}
@@ -29,10 +30,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 # installed port preference over it.
 ##
 
+.if !defined (NO_INSTALL_MANPAGES)
 MAN5=		greylist.conf.5
 MAN8=		milter-greylist.8
-
-.include <bsd.port.pre.mk>
+.endif
 
 .if !defined(WITH_SENDMAIL_BASE) && \
     !defined(WITH_SENDMAIL_PORT) && \
@@ -45,7 +46,7 @@ WITH_SENDMAIL_BASE=yes
 _MILT_DEP=
 MILTERBASE=	/usr
 .else
-BROKEN=		"Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes"
+BROKEN=		Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
 .endif
 .else
 _MILT_DEP=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
@@ -56,63 +57,51 @@ MILTERBASE?=	${LOCALBASE}
 # If you have a reentrant resolver (starting with RELENG_5_2) you can use SPF
 ##
 .if defined(WITH_LIBSPF2)
-.if ${OSVERSION} < 502102
-IGNORE=		Using libspf2 requires a thread safe resolver
-.else
 BUILD_DEPENDS+=	libspf2>=1.2.5:${PORTSDIR}/mail/libspf2
-CONFIGURE_ARGS+= 	--with-libspf2=${LOCALBASE}
-.endif
+CONFIGURE_ARGS+=	--with-libspf2=${LOCALBASE}
 .endif
 .if defined(WITH_GEOIP)
 BUILD_DEPENDS+=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
-CONFIGURE_ARGS+= 	--with-libGeoIP=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libGeoIP=${LOCALBASE}
 .endif
 .if defined(WITH_CURL)
-BUILD_DEPENDS+= curl>=7.18:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS+=	curl>=7.18:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 .endif
 RUN_DEPENDS+=	${BUILD_DEPENDS}
-BUILD_DEPENDS+= ${_MILT_DEP}
+BUILD_DEPENDS+=	${_MILT_DEP}
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 LIBS+=		${PTHREAD_LIBS}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-user=mailnull --with-libmilter=${MILTERBASE}
-.if ${OSVERSION} >= 502102
-CONFIGURE_ARGS+=	--enable-dnsrbl --with-thread-safe-resolver
-.endif
+CONFIGURE_ARGS+=	--with-user=mailnull --with-libmilter=${MILTERBASE} \
+			--enable-dnsrbl --with-thread-safe-resolver
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LIBS="${LIBS} "
 
 ALL_TARGET=	milter-greylist
+SUB_FILES+=	pkg-message
 
-USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
-post-extract:
-	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/milter-greylist.sh > ${WRKSRC}/milter-greylist.sh
+USE_RC_SUBR=	milter-greylist
 
 do-install:
 	@${MKDIR} ${PREFIX}/etc/mail
-	@${INSTALL_PROGRAM} ${WRKSRC}/milter-greylist ${PREFIX}/libexec
 	@${INSTALL_MAN} ${WRKSRC}/greylist.conf.5 ${PREFIX}/man/man5
 	@${INSTALL_MAN} ${WRKSRC}/milter-greylist.8 ${PREFIX}/man/man8
+	@${INSTALL_PROGRAM} ${WRKSRC}/milter-greylist ${PREFIX}/libexec
 	@${INSTALL_DATA} ${WRKSRC}/greylist.conf \
 			${PREFIX}/etc/mail/greylist.conf.sample
-	@${INSTALL_SCRIPT} ${WRKSRC}/milter-greylist.sh ${PREFIX}/etc/rc.d/
-	@${SED} -e "s,%%DOCSDIR%%,${DOCSDIR},g" \
-		-e "s,%%PREFIX%%,${PREFIX},g" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 	@${MKDIR} /var/milter-greylist
 	@${CHOWN} -R mailnull /var/milter-greylist
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
+.if !defined (NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/greylist.conf ${EXAMPLESDIR}
 .endif
 	@${TEST} -f /var/db/milter-greylist/greylist.db && ( \
@@ -131,4 +120,4 @@ post-install:
 	) || ${TRUE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
