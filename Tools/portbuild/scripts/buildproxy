@@ -9,6 +9,8 @@ from freebsd import *
 
 SOCKET='/tmp/.build'
 
+valid_cmds = ['create', 'clone', 'portsupdate', 'srcupdate', 'destroy']
+
 def validate(uid, arch):
     if uid == 0:
         return True
@@ -31,6 +33,9 @@ def process(cmd, sockfile):
             return (254, "Permission denied")
     except:
         return (254, "Internal error")
+
+    if cmd[1] not in valid_cmds:
+        return (254, "Permission denied")
 
     for i in cmd:
         for j in i:
