@@ -1,34 +1,41 @@
 #!/bin/sh
-# usage: $0 arch branch
+
+usage () {
+  echo "usage: makerestr arch branch buildid"
+  exit 1
+}
+if [ $# -ne 3 ]; then
+  usage
+fi
 
 # configurable variables
 pb=/var/portbuild
 arch=$1
+branch=$2
+buildid=$3
 shift
 
 . ${pb}/${arch}/portbuild.conf
-
 . ${pb}/scripts/buildenv
 
-usage () {
-  echo "usage: makerestr branch"
-  exit 1
-}
-if [ $# != 1 ]; then
-  usage
-fi
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
-branch=$1
+buildenv ${pb} ${arch} ${branch} ${builddir}
 
-buildenv ${pb} ${arch} ${branch}
-
-duds=${pb}/${arch}/${branch}/duds
+duds=${builddir}/duds
 
 unset DISPLAY
 
+export __MAKE_SHELL=/rescue/sh
 export PACKAGE_BUILDING=1
+export LOCALBASE=/nonexistentlocal
+export X11BASE=/nonexistentx
+export LINUXBASE=/nonexistentlinux
+export PKG_DBDIR=/nonexistentpkg
+export PORT_DBDIR=/nonexistentport
+
 cd ${PORTSDIR}
-make -j4 ECHO_MSG=/usr/bin/true clean-restricted-list \
-  | sed -e "s./usr/ports/packages/.${pb}/${arch}/${branch}/packages/.g" \
-  -e "s./usr/ports/.${pb}/${arch}/${branch}/ports/.g" \
-  > ${pb}/${arch}/${branch}/restricted.sh
+make -j4 ECHO_MSG=true clean-restricted-list \
+  | sed -e "s./usr/ports/packages/.${builddir}/packages/.g" \
+  -e "s./usr/ports/.${builddir}/ports/.g" \
+  > ${builddir}/restricted.sh
