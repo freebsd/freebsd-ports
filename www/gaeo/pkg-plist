@@ -1,0 +1,18 @@
+bin/gaeo.py
+bin/gaeogen.py
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/gaeo/__init__.py
+%%DATADIR%%/gaeo/controller/__init__.py
+%%DATADIR%%/gaeo/controller/errors.py
+%%DATADIR%%/gaeo/controller/helper.py
+%%DATADIR%%/gaeo/dispatch/__init__.py
+%%DATADIR%%/gaeo/dispatch/dispatcher.py
+%%DATADIR%%/gaeo/dispatch/router.py
+%%DATADIR%%/gaeo/session/__init__.py
+%%DATADIR%%/gaeo/session/memcache.py
+@dirrm %%DATADIR%%/gaeo/session
+@dirrm %%DATADIR%%/gaeo/dispatch
+@dirrm %%DATADIR%%/gaeo/controller
+@dirrm %%DATADIR%%/gaeo
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
