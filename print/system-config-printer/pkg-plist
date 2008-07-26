@@ -144,3 +144,5 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 @dirrmtry share/locale/as
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/cupshelpers
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
