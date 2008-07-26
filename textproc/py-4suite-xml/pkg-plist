@@ -16,6 +16,7 @@
 %%LIBDIR%%/tests/Xml/Borrowed/ie-050515.py
 %%LIBDIR%%/tests/Xml/Borrowed/jb-060405.py
 %%LIBDIR%%/tests/Xml/Borrowed/rs-030516.py
+%%LIBDIR%%/tests/Xml/Borrowed/rs-060405.py
 %%LIBDIR%%/tests/Xml/Borrowed/uo-051205.py
 %%LIBDIR%%/tests/Xml/Core/4suite.xsa
 %%LIBDIR%%/tests/Xml/Core/__init__.py
@@ -53,6 +54,7 @@
 %%LIBDIR%%/tests/Xml/Core/test_format_number.py
 %%LIBDIR%%/tests/Xml/Core/test_markup_writer.py
 %%LIBDIR%%/tests/Xml/Core/test_nss.py
+%%LIBDIR%%/tests/Xml/Core/test_parse_fragment.py
 %%LIBDIR%%/tests/Xml/Core/test_printers.py
 %%LIBDIR%%/tests/Xml/Core/test_ranges.py
 %%LIBDIR%%/tests/Xml/Core/test_relax_ng.py
