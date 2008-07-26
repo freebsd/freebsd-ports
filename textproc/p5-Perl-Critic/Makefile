@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.08.5
+PORTVERSION=	1.09.0
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -95,6 +95,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Documentation::RequirePodAtEnd.3 \
 	Perl::Critic::Policy::Documentation::RequirePodSections.3 \
 	Perl::Critic::Policy::ErrorHandling::RequireCarping.3 \
+	Perl::Critic::Policy::ErrorHandling::RequireCheckingReturnValueOfEval.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBacktickOperators.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBarewordFileHandles.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitExplicitStdin.3 \
