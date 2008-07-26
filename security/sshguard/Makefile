@@ -6,28 +6,27 @@
 #
 
 PORTNAME=	sshguard
-DISTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mij@bitchx.it
-COMMENT?=	Protect hosts from brute force attacks against ssh
+COMMENT?=	Protect hosts from brute force attacks against ssh and other services
 
-CONFLICTS?=	sshguard-ipfw-1.0* sshguard-pf-1.0*
+CONFLICTS?=	sshguard-ipfilter-1.* sshguard-ipfw-1.* sshguard-pf-1.*
 
 PLIST_FILES=	sbin/sshguard
 
+MANPREFIX=	${PREFIX}/share
 MAN8=		sshguard.8
 MANCOMPRESSED=	no
 USE_BZIP2=	yes
-MAKE_ARGS+=     ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}"
+MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}"
 HAS_CONFIGURE=	yes
 
 # sublist will be set afterward
 SUB_FILES=	pkg-message
-#SUB_LIST=
 
 # backend type in { hosts, ipfw, pf }
 SSHGUARDFW?=	hosts
@@ -44,6 +43,8 @@ PKGMSG_FWBLOCK="  To activate or configure PF see http://sshguard.sf.net/doc/set
 PKGMSG_FWBLOCK="  Verify that IPFW is active with \"ipfw show\"."
 .elif ${SSHGUARDFW} == hosts
 PKGMSG_FWBLOCK="  Sshguard is going to use /etc/hosts.allow, I have touched it for you."
+.elif ${SSHGUARDFW} == ipfilter
+PKGMSG_FWBLOCK="  Sshguard will use /etc/ipf.rules as ruleset."
 .endif
 
 # for substitution in subfiles
