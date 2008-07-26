@@ -1,3 +1,7 @@
-Lego robot communication and control utility.
+Roboctl is a library and tool suite for communicating with Lego and
+Vex robots from Unix systems.  It allows users to upload programs
+and other data to the controller, examine various robot states such
+as battery level, firmware version, etc., and control the robot
+remotely from a Unix workstation.
 
 WWW:	http://personalpages.tds.net/~jwbacon/Ports
