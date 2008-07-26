@@ -27,11 +27,7 @@ bin/wineserver
 bin/wineshelllink
 bin/wmc
 bin/wrc
-include/wine/dcetypes.h
-include/wine/dcetypes.idl
 include/wine/debug.h
-include/wine/epm.h
-include/wine/epm.idl
 include/wine/exception.h
 include/wine/itss.h
 include/wine/itss.idl
@@ -118,6 +114,7 @@ include/wine/windows/control.h
 include/wine/windows/control.idl
 include/wine/windows/cor.h
 include/wine/windows/corerror.h
+include/wine/windows/corhdr.h
 include/wine/windows/cpl.h
 include/wine/windows/cryptdlg.h
 include/wine/windows/cryptuiapi.h
@@ -147,6 +144,7 @@ include/wine/windows/d3dx9.h
 include/wine/windows/d3dx9core.h
 include/wine/windows/d3dx9math.h
 include/wine/windows/d3dx9math.inl
+include/wine/windows/d3dx9shader.h
 include/wine/windows/d3dx9tex.h
 include/wine/windows/dbghelp.h
 include/wine/windows/dbinit.idl
@@ -549,6 +547,7 @@ lib/wine/actxprxy.dll.so
 lib/wine/advapi32.dll.so
 lib/wine/advpack.dll.so
 lib/wine/amstream.dll.so
+lib/wine/appwiz.cpl.so
 lib/wine/atl.dll.so
 lib/wine/avicap32.dll.so
 lib/wine/avifil32.dll.so
@@ -627,6 +626,7 @@ lib/wine/dpnaddr.dll.so
 lib/wine/dpnet.dll.so
 lib/wine/dpnhpast.dll.so
 lib/wine/dpnlobby.dll.so
+lib/wine/dpwsockx.dll.so
 lib/wine/dsound.dll.so
 lib/wine/dssenh.dll.so
 lib/wine/dswave.dll.so
@@ -720,7 +720,6 @@ lib/wine/libgdiplus.def
 lib/wine/libglu32.def
 lib/wine/libhid.def
 lib/wine/libhlink.def
-lib/wine/libicmp.def
 lib/wine/libimagehlp.def
 lib/wine/libimm32.def
 lib/wine/libinetcomm.def
@@ -850,6 +849,7 @@ lib/wine/msisys.ocx.so
 lib/wine/msnet32.dll.so
 lib/wine/msrle32.dll.so
 lib/wine/mssip32.dll.so
+lib/wine/mstask.dll.so
 lib/wine/msvcirt.dll.so
 lib/wine/msvcrt.dll.so
 lib/wine/msvcr71.dll.so
