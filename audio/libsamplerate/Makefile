@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsamplerate
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/SRC/
 
