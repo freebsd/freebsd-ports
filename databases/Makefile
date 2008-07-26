@@ -177,6 +177,9 @@
     SUBDIR += mysql51-client
     SUBDIR += mysql51-scripts
     SUBDIR += mysql51-server
+    SUBDIR += mysql60-client
+    SUBDIR += mysql60-scripts
+    SUBDIR += mysql60-server
     SUBDIR += mysql_last_value
     SUBDIR += mysqlard
     SUBDIR += mysqlbigram
@@ -259,6 +262,7 @@
     SUBDIR += p5-DBD-mysql41
     SUBDIR += p5-DBD-mysql50
     SUBDIR += p5-DBD-mysql51
+    SUBDIR += p5-DBD-mysql60
     SUBDIR += p5-DBI
     SUBDIR += p5-DBI-Shell
     SUBDIR += p5-DBIWrapper
