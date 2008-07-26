@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Collect metrics for ganglia:
+#       - current vnodes
+#       - max vnodes
+#       - number of packages built in the past hour
+
+pb=/var/portbuild
+
+arch=$(uname -m)
+me=$(hostname)
+
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+
+gmetric --name="maxvnodes" --value=`sysctl -n kern.maxvnodes` --tmax=120 --dmax=0 --type=uint32 --units="# vnodes"
+gmetric --name="vnodes" --value=`sysctl -n vfs.numvnodes` --tmax=120 --dmax=0 --type=uint32 --units="# vnodes"
+
+if [ -f ${pb}/${arch}/portbuild.conf -a -f ${pb}/${arch}/portbuild.${me} ]; then
+    . ${pb}/${arch}/portbuild.conf 
+    . ${pb}/${arch}/portbuild.${me}
+else
+    exit 1
+fi
+
+if [ ! -d ${scratchdir}/stamp ]; then
+    exit 1
+fi
+
+cd ${scratchdir}/stamp || exit 1
+
+new=$(find . -mmin -60 | wc -l)
+new=$((${new} + 0))
+find . \! -mmin -60 -delete
+
+gmetric --name="packages" --value="${new}" --tmax=120 --dmax=0 --type=int16 --units="Packages/hour" --conf="/usr/local/etc/gmond.conf"
