@@ -2,8 +2,8 @@
 
 buildroot=/var/portbuild
 
-i=$1
-m=$2
+i=$1 #arch
+m=$2 #machine
 
 machonline=$(grep -c ${m} ${buildroot}/${i}/mlist)
 if [ ${machonline} = "0" ]; then
