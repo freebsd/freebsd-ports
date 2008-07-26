@@ -454,6 +454,7 @@
     SUBDIR += linux-savage-samuraiwars
     SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-ssamtfe
+    SUBDIR += linux-ssamtse
     SUBDIR += linux-steam
     SUBDIR += linux-unrealgold
     SUBDIR += linux-uplink-demo
@@ -750,7 +751,6 @@
     SUBDIR += spicetrade
     SUBDIR += spider
     SUBDIR += spring
-    SUBDIR += ssamtse
     SUBDIR += ssc
     SUBDIR += starfighter
     SUBDIR += starlanes
