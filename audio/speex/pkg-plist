@@ -2,6 +2,7 @@ bin/speexdec
 bin/speexenc
 include/speex/speex.h
 include/speex/speex_bits.h
+include/speex/speex_buffer.h
 include/speex/speex_callbacks.h
 include/speex/speex_config_types.h
 include/speex/speex_echo.h
@@ -15,6 +16,11 @@ lib/libspeex.a
 lib/libspeex.la
 lib/libspeex.so
 lib/libspeex.so.1
+lib/libspeexdsp.a
+lib/libspeexdsp.la
+lib/libspeexdsp.so
+lib/libspeexdsp.so.1
 libdata/pkgconfig/speex.pc
+libdata/pkgconfig/speexdsp.pc
 share/aclocal/speex.m4
 @dirrm include/speex
