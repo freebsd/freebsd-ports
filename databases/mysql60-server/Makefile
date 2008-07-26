@@ -6,18 +6,18 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.26
+PORTVERSION=	6.0.5
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
-MASTER_SITE_SUBDIR=	MySQL-5.1
+MASTER_SITE_SUBDIR=	MySQL-6.0
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME}-${PORTVERSION}-rc
+DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
-SLAVEDIRS=	databases/mysql51-client databases/mysql51-scripts
+SLAVEDIRS=	databases/mysql60-client databases/mysql60-scripts
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
@@ -47,6 +47,9 @@ CONFIGURE_ARGS+=--with-ssl=bundled
 .endif
 .if defined(WITH_FAST_MUTEXES)
 CONFIGURE_ARGS+=--with-fast-mutexes
+.endif
+.if defined(WITH_THREAD_POOL)
+CONFIGURE_ARGS+=--with-libevent
 .endif
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
@@ -87,11 +90,11 @@ CXXFLAGS+=	-fno-exceptions
 # MySQL-Server part
 .if !defined(CLIENT_ONLY) && !defined(SCRIPTS_ONLY)
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	51
+WANT_MYSQL_VER=	60
 
-LATEST_LINK=	mysql51-server
+LATEST_LINK=	mysql60-server
 
-CONFLICTS=	mysql-server-3.* mysql-server-4.* mysql-server-5.0.*
+CONFLICTS=	mysql-server-3.* mysql-server-4.* mysql-server-5.*
 
 USE_RC_SUBR=	mysql-server.sh
 
@@ -118,6 +121,7 @@ pre-fetch:
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
 	@${ECHO} "	WITH_PROC_SCOPE_PTH=yes	Use process scope threads"
 	@${ECHO} "				(try it if you use libpthread)."
+	@${ECHO} "	WITH_THREAD_POOL=yes	Use libevent to have connection pooling."
 	@${ECHO} "	WITH_FAST_MUTEXES=yes	Replace mutexes with spinlocks."
 	@${ECHO} "	BUILD_OPTIMIZED=yes	Enable compiler optimizations"
 	@${ECHO} "				(use it if you need speed)."
@@ -132,7 +136,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = fill_help_tables.sql mysql_system_tables.sql mysql_system_tables_data.sql|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/extra/Makefile.in
+	@${REINPLACE_CMD} -e "s|install-data-am: install-includeHEADERS|install-data-am:|g" ${WRKSRC}/extra/libevent/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
+	@${REINPLACE_CMD} -e "s|PROGRAMS = \$$(noinst_PROGRAMS)|PROGRAMS =|g" ${WRKSRC}/storage/archive/Makefile.in
 	@${REINPLACE_CMD} -e "/^AM_CXXFLAGS/s|=.*|+= \$$(NDB_CXXFLAGS)|" `${FIND} ${WRKSRC}/storage/ndb -name Makefile.in`
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
@@ -147,9 +153,9 @@ post-install:
 .else
 # MySQL-Client part
 .if defined(CLIENT_ONLY)
-LATEST_LINK=	mysql51-client
+LATEST_LINK=	mysql60-client
 
-CONFLICTS=	mysql-client-3.* mysql-client-4.* mysql-client-5.0.*
+CONFLICTS=	mysql-client-3.* mysql-client-4.* mysql-client-5.*
 
 MAN1=		mysql_config.1 mysql.1 mysqladmin.1 mysqlbinlog.1 \
 		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1
@@ -174,17 +180,17 @@ post-install:
 .else
 # MySQL-Scripts part
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	51
+WANT_MYSQL_VER=	60
 USE_PERL5=	yes
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql51
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql60
 .if ${PERL_LEVEL} <= 500800
 RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
-LATEST_LINK=	mysql51-scripts
+LATEST_LINK=	mysql60-scripts
 
-CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.* mysql-scripts-5.0.*
+CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.* mysql-scripts-5.*
 
 MAN1=		msql2mysql.1 mysql_zap.1 mysqlaccess.1 mysqlhotcopy.1 \
 		mysqld_multi.1 mysql_fix_privilege_tables.1
