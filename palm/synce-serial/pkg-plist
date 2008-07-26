@@ -1,6 +1,14 @@
-bin/synce-serial-abort
-bin/synce-serial-chat
-bin/synce-serial-config
-bin/synce-serial-start
+sbin/synce-serial-abort
+sbin/synce-serial-abort-device
+sbin/synce-serial-config
+sbin/synce-serial-hotplug
+sbin/synce-serial-start
+sbin/synce-serial-start-device
+sbin/synce-serial-udev-add
+sbin/synce-serial-udev-remove
+libexec/synce-serial-chat
 share/synce/synce-serial-common
-@dirrm share/synce
+share/synce/synce-serial.conf
+share/synce/synce-udev.rules
+share/synce/synce.usermap
+@dirrmtry share/synce
