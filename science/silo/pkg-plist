@@ -8,9 +8,12 @@ include/pmpio.h
 %%WITH_PYTHON%%lib/Silo.a
 %%WITH_PYTHON%%lib/Silo.la
 %%WITH_PYTHON%%lib/Silo.so
+%%WITH_PYTHON%%lib/Silo.so.4
 %%WITH_NCDF%%lib/libsilo.a
 %%WITH_NCDF%%lib/libsilo.la
 %%WITH_NCDF%%lib/libsilo.so
+%%WITH_NCDF%%lib/libsilo.so.4
 %%WITH_HDF5%%lib/libsiloh5.a
 %%WITH_HDF5%%lib/libsiloh5.la
 %%WITH_HDF5%%lib/libsiloh5.so
+%%WITH_HDF5%%lib/libsiloh5.so.4

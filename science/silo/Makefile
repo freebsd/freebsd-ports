@@ -17,9 +17,10 @@ LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include"	\
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 
 USE_GMAKE=	yes
-CONFIGURE_ENV+=	${MAKE_ENV}
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 
@@ -31,12 +32,14 @@ QT_COMPONENTS=	moc uic
 USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--enable-pythonmodule
 PLIST_SUB+=	WITH_PYTHON=""
+LIBSILO=	Silo
 .else
 PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
 .ifdef WITH_FORTRAN
 USE_FORTRAN=	yes
+CONFIGURE_ENV+=	${MAKE_ENV}
 CONFIGURE_ARGS+=	--enable-fortran
 .else
 CONFIGURE_ARGS+=	--disable-fortran
@@ -47,9 +50,12 @@ LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
 CONFIGURE_ARGS= --with-hdf5=${LOCALBASE}
 PLIST_SUB+=	WITH_HDF5=""
 PLIST_SUB+=	WITH_HDF5="@comment "
+LIBSILO=	libsiloh5
 .else
 PLIST_SUB+=	WITH_HDF5="@comment "
 PLIST_SUB+=	WITH_NCDF=""
+LIBSILO=	libsilo
+
 .endif
 
 .ifdef WITH_OPTIMIZATION
@@ -58,6 +64,8 @@ CONFIGURE_ARGS+=	--enable-optimization
 
 post-install:
 	@${RM} ${PREFIX}/lib/libsilo.settings
+	@${MV} ${PREFIX}/lib/${LIBSILO}.so ${PREFIX}/lib/${LIBSILO}.so.4
+	@${LN} -sf ${PREFIX}/lib/${LIBSILO}.so.4 ${PREFIX}/lib/${LIBSILO}.so
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
