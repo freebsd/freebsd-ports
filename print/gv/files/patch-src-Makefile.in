@@ -1,9 +1,9 @@
---- src/Makefile.in.orig	Mon Dec 20 04:17:13 2004
-+++ src/Makefile.in	Wed Dec 29 23:06:46 2004
-@@ -233,7 +233,7 @@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
- dist_pkglib_DATA = gv_system.ad gv_user.ad gv_class.ad gv_spartan.dat gv_user_res.dat gv_copyright.dat
+--- src/Makefile.in.orig	2008-07-07 23:01:11.532113493 -0400
++++ src/Makefile.in	2008-07-07 23:02:16.119805505 -0400
+@@ -256,7 +256,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ dist_pkglib_DATA = gv_system.ad gv_user.ad gv_class.ad gv_spartan.dat gv_user_res.dat gv_copyright.dat gv_widgetless.dat
 -appdefaultsdir = $(pkglibdir)
 +appdefaultsdir = $(libdir)/app-defaults
  appdefaults_DATA = GV
