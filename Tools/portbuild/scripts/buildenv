@@ -1,26 +1,87 @@
+#!/bin/sh
+#
 # Set up the build variables which are used by a given build
 #
 # Code fragment used by other scripts for commonality
+
+validate_env() {
+    arch=$1
+    branch=$2
+
+    case ${arch} in
+	amd64|i386|sparc64)
+	    continue
+	    ;;
+	*)
+	    echo "Invalid arch: ${arch}"
+	    return 1
+	    ;;
+    esac
+
+    case ${branch} in
+	6|6-exp|6-exp2|7|7-exp|8|8-exp)
+	    continue
+	    ;;
+	*)
+	    echo "Invalid branch: ${branch}"
+	    return 1
+	    ;;
+    esac
+
+    return 0
+}
+
+resolve() {
+    pb=$1
+    arch=$2
+    branch=$3
+    buildid=$4
+
+    # Resolve a possibly symlinked buildid (e.g. "latest") to the
+    # underlying directory
+
+    pbab=${pb}/${arch}/${branch}
+    builddir=${pbab}/builds/${buildid}/
+
+    if [ ! -d ${builddir} ]; then
+	return 1
+    else
+	builddir=$(realpath ${builddir})
+    fi
+
+    buildid=${builddir%/}
+    buildid=${buildid##*/}
+    echo ${buildid}
+}
 
 buildenv () {
     pb=$1
     arch=$2
     branch=$3
+    builddir=$4
 
-    # Have to use realpath because 'make index' doesn't deal with symlinks in PORTSDIR
-    # - kk 020311
-    export PORTSDIR=$(realpath ${pb}/${arch}/${branch}/ports)
-    export SRCBASE=$(realpath ${pb}/${arch}/${branch}/src)
+    # Have to use realpath because 'make index' doesn't deal with
+    # symlinks in PORTSDIR - kk 020311
+    if [ -d ${builddir}/ports/ ]; then
+	export PORTSDIR=$(realpath ${builddir}/ports)
+    else
+	export PORTSDIR=/nonexistent
+    fi
+    if [ -d ${builddir}/src/ ]; then
+	export SRCBASE=$(realpath ${builddir}/src)
+    else
+	export SRCBASE=/nonexistent
+    fi
 
-    export OSVERSION=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCBASE}/sys/sys/param.h)
-    export OSREL=$(awk 'BEGIN {FS="\""}; /^REVISION/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
-    export BRANCH=$(awk 'BEGIN {FS="\""}; /^BRANCH/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
+    if [ -f ${SRCBASE}/sys/sys/param.h ]; then
+	export OSVERSION=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCBASE}/sys/sys/param.h)
+    fi
+    if [ -f ${SRCBASE}/sys/conf/newvers.sh ]; then
+	export OSREL=$(awk 'BEGIN {FS="\""}; /^REVISION/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
+	export BRANCH=$(awk 'BEGIN {FS="\""}; /^BRANCH/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
+    fi
 
     case "x$branch" in
-	x5)
-	export INDEXFILE=INDEX-5
-	export USE_NONDEFAULT_X11BASE=1
-	    ;;
 	x6)
 	export INDEXFILE=INDEX-6
 	    ;;
@@ -32,12 +93,6 @@ buildenv () {
 	    ;;
 	x7)
 	export INDEXFILE=INDEX-7
-	    ;;
-	x7-exp)
-	export INDEXFILE=INDEX-7
-	    ;;
-	x8)
-	export INDEXFILE=INDEX-8
 	    ;;
 	x7-exp)
 	export INDEXFILE=INDEX-7
@@ -68,8 +123,8 @@ buildenv () {
 
     export __MAKE_CONF=${pb}/${arch}/make.conf
 
-    export DISTDIR=${pb}/${arch}/${branch}/distfiles
-    export PACKAGES=${pb}/${arch}/${branch}/packages
+    export DISTDIR=${builddir}/distfiles
+    export PACKAGES=${builddir}/packages
 
     # Don't pick up host OPTIONS
     export PORT_DBDIR=/nonexistent
