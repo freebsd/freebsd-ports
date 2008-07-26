@@ -1,20 +1,212 @@
+@unexec if cmp -s %D/etc/ssamtse.conf %D/etc/ssamtse.conf.sample; then rm -f %D/etc/ssamtse.conf; fi
 bin/ssamtse
-ssam/Bin/libEntitiesMP.so
-ssam/Bin/libamp11lib.so
-ssam/Bin/libvorbis.so
-ssam/Bin/ssam_lnx.dynamic
-ssam/Bin/libGameMP.so
-ssam/Bin/libvorbisfile.so
-ssam/Bin/ssam_lnxded
-ssam/Bin/libShaders.so
-ssam/Bin/libogg.so
-ssam/Bin/ssam_lnx
-ssam/Bin/ssam_lnxded.dynamic
-@exec ln -sf %D/ssam/Bin/libogg.so %D/ssam/Bin/libogg.so.0
-@exec ln -sf %D/ssam/Bin/libGameMP.so %D/ssam/Bin/libGame.so
-@exec ln -sf %D/ssam/Bin/libEntitiesMP.so %D/ssam/Bin/libEntities.so
-@unexec rm %D/ssam/Bin/libogg.so.0 2>&1 >/dev/null || true
-@unexec rm %D/ssam/Bin/libGame.so 2>&1 >/dev/null || true
-@unexec rm %D/ssam/Bin/libEntities.so 2>&1 >/dev/null || true
-@dirrm ssam/Bin
-@dirrm ssam
+etc/ssamtse.conf.sample
+@exec [ -f %B/ssamtse.conf ] || cp %B/%f %B/ssamtse.conf
+%%DATADIR%%/ModExt.txt
+%%DATADIR%%/SE1_00.gro
+%%DATADIR%%/SE1_00_Extra.gro
+%%DATADIR%%/SE1_00_ExtraTools.gro
+%%DATADIR%%/SE1_00_Levels.gro
+%%DATADIR%%/SE1_00_Music.gro
+%%DATADIR%%/Bin/libEntitiesMP.so
+%%DATADIR%%/Bin/libGameMP.so
+%%DATADIR%%/Bin/libShaders.so
+%%DATADIR%%/Bin/libamp11lib.so
+%%VORBIS%%%%DATADIR%%/Bin/libvorbisfile.so
+%%DATADIR%%/Bin/ssam_lnx
+%%DATADIR%%/Bin/ssam_lnx.dynamic
+%%DATADIR%%/Bin/ssam_lnxded
+%%DATADIR%%/Bin/ssam_lnxded.dynamic
+%%DATADIR%%/Controls/00-Default.ctl
+%%DATADIR%%/Controls/01-Keyboard.ctl
+%%DATADIR%%/Controls/02-PantherXL.ctl
+%%DATADIR%%/Controls/03-Wingman Extreme.ctl
+%%DATADIR%%/Controls/04-Wingman GamePad.ctl
+%%DATADIR%%/Controls/05-2nd Mouse.ctl
+%%DATADIR%%/Controls/10-DEN.ctl
+%%DATADIR%%/Controls/System/Common.ctl
+%%DATADIR%%/Data/Default.ifr
+%%DATADIR%%/Data/Defaults/WorldEditor.reg
+%%DATADIR%%/Data/IFeel.txt
+%%DATADIR%%/Data/Logitech.ifr
+%%DATADIR%%/Data/SED_TipOfTheDay.txt
+%%DATADIR%%/Data/Var/DefaultPlayer.var
+%%DATADIR%%/Data/Var/ModName.var
+%%DATADIR%%/Data/Var/Sam_Version.var
+%%DATADIR%%/Demos/Default.ini
+%%DATADIR%%/Demos/auto-demo0001.dem
+%%DATADIR%%/Demos/auto-demo0001.ini
+%%DATADIR%%/Demos/auto-demo0001Tbn.tex
+%%DATADIR%%/Demos/auto-demo0002.dem
+%%DATADIR%%/Demos/auto-demo0002.ini
+%%DATADIR%%/Demos/auto-demo0002Tbn.tex
+%%DATADIR%%/Demos/auto-demo0003.dem
+%%DATADIR%%/Demos/auto-demo0003.ini
+%%DATADIR%%/Demos/auto-demo0003Tbn.tex
+%%DATADIR%%/Demos/auto-demoMP0001.dem
+%%DATADIR%%/Demos/auto-demoMP0001.ini
+%%DATADIR%%/Demos/auto-demoMP0001Tbn.tex
+%%DATADIR%%/Demos/auto-demoMP0002.dem
+%%DATADIR%%/Demos/auto-demoMP0002.ini
+%%DATADIR%%/Demos/auto-demoMP0002Tbn.tex
+%%DATADIR%%/Help/ShellSymbols.txt
+%%DATADIR%%/Help/changes.txt
+%%DATADIR%%/Help/Notes_1_04.txt
+%%DATADIR%%/Levels/TechTest.tbn
+%%DATADIR%%/Levels/TechTest.wld
+%%DATADIR%%/Levels/TechTestTbn.tex
+%%DATADIR%%/Mods/SecondEncounterTbn.tex
+%%DATADIR%%/Scripts/Addons/Default.ini
+%%DATADIR%%/Scripts/Addons/Extreme.ini
+%%DATADIR%%/Scripts/Addons/SFX-AutoAdjust.ini
+%%DATADIR%%/Scripts/Addons/SSam_Voodoo2.ini
+%%DATADIR%%/Scripts/Addons/SafeMode.ini
+%%DATADIR%%/Scripts/Commands/kick.ini
+%%DATADIR%%/Scripts/Commands/list.ini
+%%DATADIR%%/Scripts/Commands/rkick.ini
+%%DATADIR%%/Scripts/Commands/rlist.ini
+%%DATADIR%%/Scripts/CustomOptions/GFX-AdvancedRendering.cfg
+%%DATADIR%%/Scripts/CustomOptions/NET-PredictionOptions.cfg
+%%DATADIR%%/Scripts/Dedicated/DefaultCoop/1_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultCoop/1_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultCoop/init.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/1_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/1_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/2_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/2_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/3_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/3_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/4_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/4_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/5_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/5_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/6_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/6_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/7_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/7_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/8_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/8_end.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/9_begin.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/9_end.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/10_begin.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/10_end.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/11_begin.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/11_end.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/12_begin.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/12_end.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/13_begin.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/13_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE/init.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/1_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/1_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/2_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/2_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/3_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/3_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/4_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/4_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/5_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/5_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/6_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/6_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/7_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/7_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/8_begin.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/8_end.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/9_begin.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/9_end.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/10_begin.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/10_end.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/11_begin.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/11_end.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/12_begin.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/12_end.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/13_begin.ini
+%%GOLD%%%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/13_end.ini
+%%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE/init.ini
+%%DATADIR%%/Scripts/Dedicated_startup.ini
+%%DATADIR%%/Scripts/GLSettings/3Dfx-V1.ini
+%%DATADIR%%/Scripts/GLSettings/3Dfx-V2.ini
+%%DATADIR%%/Scripts/GLSettings/3Dfx-V3.ini
+%%DATADIR%%/Scripts/GLSettings/3Dfx-V5.ini
+%%DATADIR%%/Scripts/GLSettings/ATI-Maxx.ini
+%%DATADIR%%/Scripts/GLSettings/ATI-R128.ini
+%%DATADIR%%/Scripts/GLSettings/ATI-RPRO.ini
+%%DATADIR%%/Scripts/GLSettings/ATI-Radeon.ini
+%%DATADIR%%/Scripts/GLSettings/Default.ini
+%%DATADIR%%/Scripts/GLSettings/GLSettings.lst
+%%DATADIR%%/Scripts/GLSettings/I-i740.ini
+%%DATADIR%%/Scripts/GLSettings/I-i752.ini
+%%DATADIR%%/Scripts/GLSettings/Initial.ini
+%%DATADIR%%/Scripts/GLSettings/MGA-G200.ini
+%%DATADIR%%/Scripts/GLSettings/MGA-G400.ini
+%%DATADIR%%/Scripts/GLSettings/NV-GF.ini
+%%DATADIR%%/Scripts/GLSettings/NV-TNT.ini
+%%DATADIR%%/Scripts/GLSettings/PVR-Kyro.ini
+%%DATADIR%%/Scripts/GLSettings/RAM.ini
+%%DATADIR%%/Scripts/GLSettings/S3-S2K.ini
+%%DATADIR%%/Scripts/GLSettings/S3-S4.ini
+%%DATADIR%%/Scripts/Game_startup.ini
+%%DATADIR%%/Scripts/NetSettings/56-normal.ini
+%%DATADIR%%/Scripts/NetSettings/56k-quality.ini
+%%DATADIR%%/Scripts/NetSettings/DSLCable.ini
+%%DATADIR%%/Scripts/NetSettings/ISDN.ini
+%%DATADIR%%/Scripts/NetSettings/LAN.ini
+%%DATADIR%%/Scripts/NetSettings/OldModem.ini
+%%DATADIR%%/Scripts/PersistentSymbols.ini
+%%DATADIR%%/Scripts/WorldEditorKeys/F2.ini
+%%DATADIR%%/Scripts/WorldEditorKeys/F3.ini
+%%DATADIR%%/Scripts/WorldEditorKeys/F4.ini
+%%DATADIR%%/Scripts/WorldEditorKeys/MiddleMouse.ini
+%%DATADIR%%/Scripts/WorldEditorKeys/Shift_F2.ini
+%%DATADIR%%/Scripts/WorldEditorKeys/Shift_F3.ini
+%%DATADIR%%/Scripts/WorldEditorKeys/Shift_F4.ini
+%%DATADIR%%/Scripts/WorldEditorKeys/vssver.scc
+%%DATADIR%%/Scripts/menu/ApplyShadowmaps.ini
+%%DATADIR%%/Scripts/menu/ApplyTextures.ini
+%%DATADIR%%/Scripts/menu/ApplyVideo.ini
+%%DATADIR%%/Scripts/menu/GameOptions.cfg
+%%DATADIR%%/Scripts/menu/RenderingOptions.cfg
+%%DATADIR%%/Scripts/menu/SPOptions.cfg
+%%DATADIR%%/VirtualTrees/BasicVirtualTree.vrt
+%%DATADIR%%/Worlds/TemplatesSE/MiscBabylon.tbn
+%%DATADIR%%/Worlds/TemplatesSE/MiscBabylon.wld
+%%DATADIR%%/Worlds/TemplatesSE/MiscGothic.tbn
+%%DATADIR%%/Worlds/TemplatesSE/MiscGothic.wld
+%%DATADIR%%/Worlds/TemplatesSE/MiscSouthAmerica.tbn
+%%DATADIR%%/Worlds/TemplatesSE/MiscSouthAmerica.wld
+%%DATADIR%%/Worlds/TemplatesSE/Statues.tbn
+%%DATADIR%%/Worlds/TemplatesSE/Statues.wld
+%%DATADIR%%/Worlds/TemplatesSE/StatuesBabylon.tbn
+%%DATADIR%%/Worlds/TemplatesSE/StatuesBabylon.wld
+%%DATADIR%%/Worlds/TemplatesSE/StatuesGothic.tbn
+%%DATADIR%%/Worlds/TemplatesSE/StatuesGothic.wld
+%%DATADIR%%/Worlds/TemplatesSE/StatuesSouthAmerica.tbn
+%%DATADIR%%/Worlds/TemplatesSE/StatuesSouthAmerica.wld
+@dirrmtry %%DATADIR%%/Bin
+@dirrmtry %%DATADIR%%/Controls/System
+@dirrmtry %%DATADIR%%/Controls
+@dirrmtry %%DATADIR%%/Data/Defaults
+@dirrmtry %%DATADIR%%/Data/Var
+@dirrmtry %%DATADIR%%/Data
+@dirrmtry %%DATADIR%%/Demos
+@dirrmtry %%DATADIR%%/Help
+@dirrmtry %%DATADIR%%/Levels/LevelsMP
+@dirrmtry %%DATADIR%%/Levels
+@dirrmtry %%DATADIR%%/Mods
+@dirrmtry %%DATADIR%%/Scripts/Addons
+@dirrmtry %%DATADIR%%/Scripts/Commands
+@dirrmtry %%DATADIR%%/Scripts/CustomOptions
+@dirrmtry %%DATADIR%%/Scripts/Dedicated/DefaultCoop
+@dirrmtry %%DATADIR%%/Scripts/Dedicated/DefaultFragmatchSE
+@dirrmtry %%DATADIR%%/Scripts/Dedicated/DefaultScorematchSE
+@dirrmtry %%DATADIR%%/Scripts/Dedicated
+@dirrmtry %%DATADIR%%/Scripts/GLSettings
+@dirrmtry %%DATADIR%%/Scripts/menu
+@dirrmtry %%DATADIR%%/Scripts/NetSettings
+@dirrmtry %%DATADIR%%/Scripts/WorldEditorKeys
+@dirrmtry %%DATADIR%%/Scripts
+@dirrmtry %%DATADIR%%/VirtualTrees
+@dirrmtry %%DATADIR%%/Worlds/TemplatesSE
+@dirrmtry %%DATADIR%%/Worlds
+@dirrmtry %%DATADIR%%
