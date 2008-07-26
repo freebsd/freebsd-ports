@@ -25,7 +25,7 @@ MAN3=		roboctl.3
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CUTECOM)
-RUN_DEPENDS+=	cutecom:${PORTSDIR}/comms/cutecom-devel
+RUN_DEPENDS+=	cutecom:${PORTSDIR}/comms/cutecom
 .endif
 
 .include <bsd.port.post.mk>
