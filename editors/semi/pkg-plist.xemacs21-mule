@@ -1,10 +1,10 @@
 %%EMACS_PACKAGESDIR%%/pkginfo/MANIFEST.semi
-%%EMACS_PACKAGESDIR%%/lisp/semi/ChangeLog
-%%EMACS_PACKAGESDIR%%/lisp/semi/NEWS
-%%EMACS_PACKAGESDIR%%/lisp/semi/README.en
-%%EMACS_PACKAGESDIR%%/lisp/semi/README.ja
-%%EMACS_PACKAGESDIR%%/lisp/semi/TODO
-%%EMACS_PACKAGESDIR%%/lisp/semi/VERSION
+%%PORTDOCS%%%%EMACS_PACKAGESDIR%%/lisp/semi/ChangeLog
+%%PORTDOCS%%%%EMACS_PACKAGESDIR%%/lisp/semi/NEWS
+%%PORTDOCS%%%%EMACS_PACKAGESDIR%%/lisp/semi/README.en
+%%PORTDOCS%%%%EMACS_PACKAGESDIR%%/lisp/semi/README.ja
+%%PORTDOCS%%%%EMACS_PACKAGESDIR%%/lisp/semi/TODO
+%%PORTDOCS%%%%EMACS_PACKAGESDIR%%/lisp/semi/VERSION
 %%EMACS_PACKAGESDIR%%/lisp/semi/_pkg.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/auto-autoloads.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/auto-autoloads.elc
