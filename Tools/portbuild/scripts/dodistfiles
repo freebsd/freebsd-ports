@@ -21,15 +21,19 @@
 #
 # 5. Clean up
 
-if [ $# != 2 ]; then
-  echo "usage: $0 <arch> <branch>"
+if [ $# -ne 3 ]; then
+  echo "usage: $0 <arch> <branch> <buildid>"
   exit 1
 fi
 
 arch=$1
 branch=$2
+buildid=$3
 
-distdir=/var/portbuild/${arch}/${branch}/distfiles
+pb=/var/portbuild
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
+
+distdir=${builddir}/distfiles
 
 cd ${distdir} || exit 1
 

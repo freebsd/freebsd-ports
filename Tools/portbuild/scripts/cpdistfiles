@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ $# -lt 2 ]; then
-  echo "usage: $0 arch branch"
+if [ $# -lt 3 ]; then
+  echo "usage: $0 arch branch buildid"
   exit 1
 fi
 
@@ -10,23 +10,26 @@ pb=/var/portbuild
 
 arch=$1
 branch=$2
+buildid=$3
+
+builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
 yesreally=0
 dryrun=-n
-if [ "$3" = "-yesreally" ]; then
+if [ "$4" = "-yesreally" ]; then
   yesreally=1
   dryrun=
 fi
 
-distdir=${pb}/${arch}/${branch}/distfiles/
-log=${pb}/${arch}/${branch}/logs/.distfiles
+distdir=${builddir}/distfiles/
+log=${builddir}/logs/.distfiles
 
 if [ -e ${distdir}/.pbtmp ]; then
   echo "${distdir} has not been processed!"
   exit 1
 fi
 
-rsync ${dryrun} -r -v -l -t --exclude RESTRICTED/ ${pb}/${arch}/${branch}/distfiles/ portmgr@ftp-master:w/ports/distfiles/ | tee ${log}
+rsync ${dryrun} -r -v -l -t --exclude RESTRICTED/ ${builddir}/distfiles/ portmgr@ftp-master:w/ports/distfiles/ | tee ${log}
 
 num=$(wc -l ${log} | awk '{print $1}')
 if [ "$yesreally" = "0" ]; then
