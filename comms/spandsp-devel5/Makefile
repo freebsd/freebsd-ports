@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spandsp
-PORTVERSION=	0.0.4.p15
+PORTVERSION=	0.0.5.p3
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/ \
 		ftp://ftp.rewt.org.uk/pub/distfiles/
@@ -19,13 +19,16 @@ COMMENT=	A DSP library and software FAX machine
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
-WRKSRC=		${WRKDIR}/spandsp-${PORTVERSION:S/.p15//}
+WRKSRC=		${WRKDIR}/spandsp-0.0.5
 USE_AUTOTOOLS=	libtool15
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
 

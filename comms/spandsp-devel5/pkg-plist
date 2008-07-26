@@ -42,6 +42,8 @@ include/spandsp/sig_tone.h
 include/spandsp/silence_gen.h
 include/spandsp/super_tone_rx.h
 include/spandsp/super_tone_tx.h
+include/spandsp/t30_api.h
+include/spandsp/t30_logging.h
 include/spandsp/t30.h
 include/spandsp/t30_fcf.h
 include/spandsp/t31.h
@@ -71,8 +73,5 @@ include/spandsp/version.h
 lib/libspandsp.a
 lib/libspandsp.la
 lib/libspandsp.so
-lib/libspandsp.so.0
-%%DATADIR%%/global-tones.xml
-%%DATADIR%%/tones.dtd
-@dirrm share/spandsp
+lib/libspandsp.so.1
 @dirrm include/spandsp
