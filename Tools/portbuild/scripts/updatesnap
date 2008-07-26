@@ -1,0 +1,63 @@
+#!/bin/sh
+#
+# Update the master ports and source trees that are used by package builds
+# and other consumers
+
+base=/a/snap
+zbase=a/snap
+
+srepo=/r/ncvs
+prepo=/r/pcvs
+
+stamp() {
+	fulldate=$1
+        date -j -f %+ "${fulldate}" +%Y%m%d%H%M%S
+}
+
+finish() {
+    err=$1
+
+    end=$(date +%s)
+    echo "Finished at $(date)"
+    len=$((end-begin))
+    echo "Duration = $(date -j -f %s +%H:%M:%S ${len})"
+    exit 1
+}
+
+begin=$(date +%s)
+echo "Started at $(date)"
+
+# We need to preserve group writability so portmgr group can write
+umask 002
+
+#cvsup -g /root/cvs-supfile || finish 1
+
+cd $base/ports
+fulldate=$(date)
+cvs -Rq -d ${prepo} update -PdA -D "${fulldate}"
+echo ${fulldate} > cvsdone
+snapdate=$(stamp ${fulldate})
+zfs snapshot ${zbase}/ports@${snapdate}
+
+cd $base/src-HEAD
+fulldate=$(date)
+cvs -Rq -d ${srepo} update -PdA -D "${fulldate}"
+echo ${fulldate} > cvsdone
+snapdate=$(stamp ${fulldate})
+zfs snapshot ${zbase}/src-HEAD@${snapdate}
+
+cd $base/src-6
+fulldate=$(date)
+cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_6
+echo ${fulldate} > cvsdone
+snapdate=$(stamp ${fulldate})
+zfs snapshot ${zbase}/src-6@${snapdate}
+
+cd $base/src-7
+fulldate=$(date)
+cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_7
+echo ${fulldate} > cvsdone
+snapdate=$(stamp ${fulldate})
+zfs snapshot ${zbase}/src-7@${snapdate}
+
+finish 0
