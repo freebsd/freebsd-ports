@@ -3,175 +3,258 @@
 # configurable variables
 pb=/var/portbuild
 
-arch=$1
-shift
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:${pb}/scripts
 
-. ${pb}/${arch}/portbuild.conf
-. ${pb}/scripts/buildenv
-
-status=${pb}/${arch}/status
-scripts=${pb}/scripts
-
-errorexit () {
-  echo "$1" > ${status}
-  exit $1
-}
+# writable by portmgr
+umask 002
 
 usage () {
-  echo "usage: [-continue] [-incremental] [-restart] [-nofinish] [-finish] [-ftp] [-cdrom] [-nobuild] [-noindex] [-noduds] [-norestr] [-nocvs] [-noportscvs] [-noplistcheck] [-nodistfiles] [-fetch-original] [-trybroken] branch date"
-  errorexit 1
+    echo "usage: arch branch buildid date [-continue] [-incremental] [-restart] [-nofinish] [-finish] [-nocleanup] [-cdrom] [-nobuild] [-noindex] [-noduds] [-norestr] [-nosrc] [-srccvs] [-noports] [-portscvs] [-noplistcheck] [-nodistfiles] [-fetch-original] [-trybroken]"
+    echo "       -incremental     : Start a new incremental build"
+    echo "       -continue        : Restart an interrupted build, skipping failed ports"
+    echo "       -restart         : Restart an interrupted build, rebuilding failed ports"
+    echo "       -nofinish        : Do not post-process upon build completion"
+    echo "       -finish          : Post-process a completed build"
+    echo "       -nocleanup       : Do not clean up and deactivate the build once it finishes"
+    echo "       -nobuild         : Only do the build preparation steps, do not build packages"
+    echo "       -noindex         : Do not build the INDEX"
+    echo "       -noduds          : Do not build the duds file"
+    echo "       -norestr         : Do not build the restricted.sh file"
+    echo "       -nosrc           : Do not update the src tree"
+    echo "       -srccvs          : Update the src tree via CVS, don't use a pre-existing snapshot"
+    echo "       -noports         : Do not update the ports tree"
+    echo "       -portscvs        : Update the ports tree via CVS, don't use a pre-existing snapshot"
+    echo "       -noplistcheck    : Don't check the plist during the build"
+    echo "       -nodistfiles     : Don't collect distfiles"
+    echo "       -fetch-original  : Fetch from original MASTER_SITE"
+    echo "       -trybroken       : Try to build BROKEN ports"
+    echo "       -keep            : Do not automatically recycle this build"
+    echo "       -cdrom           : Prepare a build for distribution on CDROM "
+
+    exit 1
 }
 
-# usage: makeindex pb arch scripts branch
+if [ $# -lt 4 ]; then
+    usage
+fi
+
+arch=$1
+branch=$2
+buildid=$3
+date=$4
+shift 4
+
+. ${pb}/scripts/buildenv
+validate_env ${arch} ${branch} || usage
+
+buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
+if [ -z "${buildid}" ]; then
+    echo "Invalid build ID ${buildid}"
+    exit 1
+fi
+
+if [ -f ${pb}/${arch}/portbuild.conf ]; then
+    . ${pb}/${arch}/portbuild.conf
+else
+    usage
+fi
+
+pbab=${pb}/${arch}/${branch}
+
+trap "exit 1" 1 2 3 9 10 11 15
+
+mailexit () {
+
+    echo | mail -s "$(basename $0) ended for ${arch}-${branch} ${buildid} at $(date)" ${mailto}
+
+    exit $1
+}
+
+srctar() {
+    tar cfCj ${builddir}/src-${buildid}.tbz ${builddir} src/
+    md5 ${builddir}/src-${buildid}.tbz > ${builddir}/src-${buildid}.tbz.md5
+}
+
+portstar() {
+    tar cfCj ${builddir}/ports-${buildid}.tbz ${builddir} ports/
+    md5 ${builddir}/ports-${buildid}.tbz > ${builddir}/ports-${buildid}.tbz.md5
+}
+
+# usage: makeindex pb arch branch builddir
 makeindex () {
-  pb=$1
-  arch=$2
-  scripts=$3
-  branch=$4
+    pb=$1
+    arch=$2
+    branch=$3
+    buildid=$4
+    builddir=$5
 
-  cd ${pb}/${arch}/${branch}/ports
-  echo "================================================"
-  echo "generating index"
-  echo "================================================"
-  echo "index generation started at $(date)"
-  ${scripts}/makeindex ${arch} ${branch} || errorexit 1
-  echo "index generation ended at $(date)"
-  echo $(wc -l <${INDEXFILE}) "lines in INDEX"
+    cd ${builddir}/ports
+    echo "================================================"
+    echo "generating index"
+    echo "================================================"
+    echo "index generation started at $(date)"
+    ${pb}/scripts/makeindex ${arch} ${branch} ${buildid} || mailexit 1
+    echo "index generation ended at $(date)"
+    echo $(wc -l ${INDEXFILE} | awk '{print $1}') "lines in INDEX"
+
+    # Save a copy of it for the next build since ports directories may
+    # not be preserved
+    cp ${INDEXFILE} ${builddir}/bak
 }
 
-# usage: checkindex pb arch branch
+# usage: checkindex builddir
 # Perform some sanity checks on the INDEX so we don't blow up later on
 checkindex () {
-  pb=$1
-  arch=$2
-  branch=$3
+    builddir=$1
 
-  cd ${pb}/${arch}/${branch}/ports
-  if grep -q non-existent ${INDEXFILE}; then
-    echo "errors in INDEX:"
-    grep -n non-existent ${INDEXFILE}
-    errorexit 1
-  fi
-  if ! awk -F '|' '{if (NF != 13) { error=1; printf("line %d: %s\n", NR, $0)}} END {if (error == 1) exit(1)}' ${INDEXFILE}; then
-    echo "error in INDEX"
-    errorexit 1
-  fi
+    cd ${builddir}/ports
+    if grep -q non-existent ${INDEXFILE}; then
+	echo "errors in INDEX:"
+	grep -n non-existent ${INDEXFILE}
+	mailexit 1
+    fi
+    if ! awk -F '|' '{if (NF != 13) { error=1; printf("line %d: %s\n", NR, $0)}} END {if (error == 1) exit(1)}' ${INDEXFILE}; then
+	echo "error in INDEX"
+	mailexit 1
+    fi
 }
 
-# usage: makeduds pb arch scripts branch
+# usage: makeduds pb arch branch builddir
 makeduds () {
-  pb=$1
-  arch=$2
-  scripts=$3
-  branch=$4
+    pb=$1
+    arch=$2
+    branch=$3
+    buildid=$4
+    builddir=$5
 
-  cd ${pb}/${arch}/${branch}/ports
-  echo "================================================"
-  echo "generating duds"
-  echo "================================================"
-  echo "duds generation started at $(date)"
-  cp -p ${pb}/${arch}/${branch}/duds ${pb}/${arch}/${branch}/duds.old
-  if ! ${scripts}/makeduds ${arch} ${branch}; then
-    echo "error(s) detected, exiting script at $(date).  Failed duds list was:"
-    cat ${pb}/${arch}/${branch}/duds
-    errorexit 1
-  fi
-  echo "duds generation ended at $(date)"
-  echo $(wc -l < ${pb}/${arch}/${branch}/duds) "items in duds"
-  echo "duds diff:"
-  diff ${pb}/${arch}/${branch}/duds.old ${pb}/${arch}/${branch}/duds
-  cp -p ${pb}/${arch}/${branch}/duds ${pb}/${arch}/${branch}/duds.orig
+    cd ${builddir}/ports
+    echo "================================================"
+    echo "generating duds"
+    echo "================================================"
+    echo "duds generation started at $(date)"
+    cp -p ${builddir}/duds ${builddir}/duds.old
+    if ! ${pb}/scripts/makeduds ${arch} ${branch} ${buildid}; then
+	echo "error(s) detected, exiting script at $(date).  Failed duds list was:"
+	cat ${builddir}/duds
+	mailexit 1
+    fi
+    echo "duds generation ended at $(date)"
+    echo $(wc -l ${builddir}/duds | awk '{print $1}') "items in duds"
+    echo "duds diff:"
+    diff ${builddir}/duds.old ${builddir}/duds
+    cp -p ${builddir}/duds ${builddir}/duds.orig
 }
 
-# usage: restrictedlist pb scripts branch
+# usage: restrictedlist pb arch branch builddir
 restrictedlist () {
-  pb=$1
-  arch=$2
-  scripts=$3
-  branch=$4
-
-  cd ${pb}/${arch}/${branch}/ports
-  echo "================================================"
-  echo "creating restricted list"
-  echo "================================================"
-  echo "restricted list generation started at $(date)"
-  ${scripts}/makerestr ${arch} ${branch} || errorexit 1
-  echo "restricted list generation ended at $(date)"
-  echo $(grep -c '^#' ${pb}/${arch}/${branch}/restricted.sh) "ports in ${pb}/${arch}/${branch}/restricted.sh"
+    pb=$1
+    arch=$2
+    branch=$3
+    buildid=$4
+    builddir=$5
+    
+    cd ${builddir}/ports
+    echo "================================================"
+    echo "creating restricted list"
+    echo "================================================"
+    echo "restricted list generation started at $(date)"
+    ${pb}/scripts/makerestr ${arch} ${branch} ${buildid} || mailexit 1
+    echo "restricted list generation ended at $(date)"
+    echo $(grep -c '^#' ${builddir}/restricted.sh) "ports in ${builddir}/restricted.sh"
 }
 
-# usage: cdromlist pb scripts branch
+# usage: cdromlist pb arch branch builddir
 cdromlist () {
-  pb=$1
-  branch=$2
-  scripts=$3
-  branch=$4
-
-  cd ${pb}/${arch}/${branch}/ports
-  echo "================================================"
-  echo "creating cdrom list"
-  echo "================================================"
-  echo "cdrom list generation started at $(date)"
-  make ECHO_MSG=/usr/bin/true clean-for-cdrom-list \
-    | sed -e "s./usr/ports/distfiles/./distfiles/.g" \
-          -e "s./usr/ports/./${branch}/.g" \
-      > ${pb}/${arch}/${branch}/cdrom.sh
-  echo "cdrom list generation ended at $(date)"
-  echo $(grep -c '^#' ${pb}/${arch}/${branch}/cdrom.sh) "ports in ${pb}/${arch}/${branch}/cdrom.sh"
-}
-
-# usage: archiveports pb branch
-archiveports () {
-  pb=$1
-  arch=$2
-  branch=$3
-
-  echo "started archive of ${pb}/${arch}/${branch}/ports at $(date)"
-  cd ${pb}/${arch}/${branch}
-  tar --exclude CVS -czf ${pb}/${arch}/${branch}/tarballs/ports.tar.gz ports
-  echo "ended archive of ${pb}/${arch}/${branch}/ports at $(date)"
+    pb=$1
+    arch=$2
+    branch=$3
+    builddir=$4
+    
+    cd ${builddir}/ports
+    echo "================================================"
+    echo "creating cdrom list"
+    echo "================================================"
+    echo "cdrom list generation started at $(date)"
+    make ECHO_MSG=true clean-for-cdrom-list \
+	| sed -e "s./usr/ports/distfiles/./distfiles/.g" \
+        -e "s./usr/ports/./${branch}/.g" \
+	> ${builddir}/cdrom.sh
+    echo "cdrom list generation ended at $(date)"
+    echo $(grep -c '^#' ${builddir}/cdrom.sh) "ports in ${builddir}/cdrom.sh"
 }
 
 # XXX Should use SHA256 instead, but I'm not sure what consumes this file (if anything)
 # XXX Should generate these as the packages are copied in, instead of all at once at the end
-# usage: generatemd5 pb branch
+# usage: generatemd5 pb arch branch builddir
 generatemd5 () {
-  pb=$1
-  arch=$2
-  branch=$3
-
-  echo "started generating CHECKSUM.MD5 at $(date)"
-  cd ${pb}/${arch}/${branch}/packages/All
-  find . -name '*.t[bg]z' | sort | sed -e 's/^..//' | xargs md5 > CHECKSUM.MD5
-  echo "ended generating CHECKSUM.MD5 at $(date)"
+    pb=$1
+    arch=$2
+    branch=$3
+    builddir=$4
+    
+    echo "started generating CHECKSUM.MD5 at $(date)"
+    cd ${builddir}/packages/All
+    find . -name '*.tbz' | sort | sed -e 's/^..//' | xargs md5 > CHECKSUM.MD5
+    echo "ended generating CHECKSUM.MD5 at $(date)"
 }
 
-umask 002
+
+dobuild() {
+    pb=$1
+    arch=$2
+    branch=$3
+    builddir=$4
+    phase=$5
+    
+    count=0
+    for i in `cat ${pb}/${arch}/mlist`; do
+	. ${pb}/${arch}/portbuild.conf
+	test -f ${pb}/${arch}/portbuild.${i} && . ${pb}/${arch}/portbuild.${i}
+	count=$((${count}+${maxjobs}))
+    done
+    
+    echo "================================================"
+    echo "building packages (phase ${phase})"
+    echo "================================================"
+    echo "started at $(date)"
+    phasestart=$(date +%s)
+    make -k -j${count} quickports all > ${builddir}/make.${phase} 2>&1 </dev/null
+    echo "ended at $(date)"
+    phaseend=$(date +%s)
+    echo "phase ${phase} took $(date -u -j -r $(($phaseend - $phasestart)) | awk '{print $4}')"
+    echo $(echo $(ls -1 ${builddir}/packages/All | wc -l) - 2 | bc) "packages built"
+    
+    echo $(wc -l ${PORTSDIR}/${INDEXFILE} | awk '{print $1}') "lines in INDEX"
+    
+    echo $(echo $(du -sk ${builddir}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
+    echo $(echo $(du -sk ${builddir}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
+    
+    cd ${builddir}
+    if grep -qE '(ptimeout|pnohang): killing' make.${phase}; then
+	echo "The following port(s) timed out:"
+	grep -E '(ptimeout|pnohang): killing' make.${phase} | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/'
+    fi
+    
+}
 
 me=$(hostname)
+starttime=$(date +%s)
 
 echo "Subject: $me package building logs"
 echo
-echo "Called with arguments: "${1+"$@"}
-echo "Started at $(date)"
-
-starttime=$(date +%s)
-
-PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/X11R6/bin
-
-if [ $# = 0 ]; then
-  usage
-fi
+echo "Called with arguments: $@"
+echo "Started at ${starttime}"
 
 nobuild=0
 noindex=0
 noduds=0
-nocvs=0
-noportscvs=0
+nosrc=0
+srccvs=0
+noports=0
+portscvs=0
 norestr=0
 noplistcheck=0
 cdrom=0
-ftp=0
 restart=0
 cont=0
 finish=0
@@ -180,444 +263,447 @@ dodistfiles=1
 fetch_orig=0
 trybroken=0
 incremental=0
+keep=0
+nocleanup=0
 
 # optional arguments
-while [ $# -gt 2 ]; do
-  case "x$1" in
-    x-nobuild)
-      nobuild=1
-      ;;
-    x-noindex)
-      noindex=1
-      ;;
-    x-noduds)
-      noduds=1
-      ;;
-    x-cdrom)
-      cdrom=1
-      ;;
-    x-nocvs)
-      nocvs=1
-      ;;
-    x-noportscvs)
-      noportscvs=1
-      ;;
-    x-norestr)
-      norestr=1
-      ;;
-    x-noplistcheck)
-      noplistcheck=1
-      ;;
-    x-ftp)
-      ftp=1
-      ;;
-    x-nodistfiles)
-      dodistfiles=0
-      ;;
-    x-fetch-original)
-      fetch_orig=1
-      ;;
-    x-trybroken)
-      trybroken=1
-      ;;
-    x-continue)
-      cont=1
-      ;;
-    x-restart)
-      restart=1
-      ;;
-    x-nofinish)
-      nofinish=1
-      ;;
-    x-finish)
-      nobuild=1
-      finish=1
-      ;;
-    x-incremental)
-      incremental=1
-      ;;
-    *)
-      usage
-      ;;
-  esac
-  shift
+while [ $# -gt 0 ]; do
+    case "x$1" in
+	x-nobuild)
+	    nobuild=1
+	    ;;
+	x-noindex)
+	    noindex=1
+	    ;;
+	x-noduds)
+	    noduds=1
+	    ;;
+	x-cdrom)
+	    cdrom=1
+	    ;;
+	x-nosrc)
+	    nosrc=1
+	    ;;
+	x-srccvs)
+	    srccvs=1
+	    ;;
+	x-noports)
+	    noports=1
+	    ;;
+	x-portscvs)
+	    portscvs=1
+	    ;;
+	x-norestr)
+	    norestr=1
+	    ;;
+	x-noplistcheck)
+	    noplistcheck=1
+	    ;;
+	x-nodistfiles)
+	    dodistfiles=0
+	    ;;
+	x-fetch-original)
+	    fetch_orig=1
+	    ;;
+	x-trybroken)
+	    trybroken=1
+	    ;;
+	x-continue)
+	    cont=1
+	    ;;
+	x-restart)
+	    restart=1
+	    ;;
+	x-nofinish)
+	    nofinish=1
+	    ;;
+	x-finish)
+	    nobuild=1
+	    finish=1
+	    ;;
+	x-incremental)
+	    incremental=1
+	    ;;
+	x-keep)
+	    keep=1
+	    ;;
+	x-nocleanup)
+	    nocleanup=1
+	    ;;
+	*)
+	    usage
+	    ;;
+    esac
+    shift
 done
 
 if [ "$restart" = 1 -o "$cont" = 1 -o "$finish" = 1 ]; then
-  skipstart=1
+    skipstart=1
 else
-  skipstart=0
+    skipstart=0
 fi
 
-# mandatory arguments
-branch=$1
-date=$2
+# XXX check for conflict between -noports and -portscvs etc
 
-echo | mail -s "$(basename $0) started for ${arch}-${branch} ${date} at $(date)" ${mailto}
+# We have valid options, start the build
 
-if [ "x$branch" != x5 -a "x$branch" != x6 -a "x$branch" != x6-exp -a "x$branch" != "x6-exp2" -a "x$branch" != x7 -a "x$branch" != x7-exp -a "x$branch" != x8 -a "x$branch" != x8-exp ]; then
-  usage
-fi
-
-# Set up our environment variables
-buildenv ${pb} ${arch} ${branch}
+echo | mail -s "$(basename $0) started for ${arch}-${branch} ${buildid} at $(date)" ${mailto}
 
 if [ "$dodistfiles" = 1 ]; then
-  export WANT_DISTFILES=1
+    # XXX flip default to always collect
+    export WANT_DISTFILES=1
 fi
 
 if [ "$noplistcheck" = 1 ]; then
-  export NOPLISTCHECK=1
+    export NOPLISTCHECK=1
 fi
 
 if [ "$cdrom" = 1 ]; then
-  export FOR_CDROM=1
+    export FOR_CDROM=1
 fi
 
 if [ "$fetch_orig" = 1 ]; then
-  export FETCH_ORIGINAL=1
+    export FETCH_ORIGINAL=1
 fi
 
 if [ "$trybroken" = 1 ]; then
-  export TRYBROKEN=1
+    export TRYBROKEN=1
 fi
 
 # Start setting up build environment
 
-if [ "$incremental" = 1 ]; then
-  cd ${PORTSDIR}
-  cp ${INDEXFILE} ${INDEXFILE}.old
+if [ "${skipstart}" -eq 0 ]; then
+    oldbuildid=${buildid}
+    buildid=$(date +%Y%m%d%H%M%S)
+    build clone ${arch} ${branch} ${oldbuildid} ${buildid}
 fi
+
+builddir=${pbab}/builds/${buildid}
+
+df -k | grep ${buildid}
+# Set up our environment variables
+buildenv ${pb} ${arch} ${branch} ${builddir}
+
+if [ "${keep}" -eq 1 ]; then
+    touch ${builddir}/.keep
+fi
+
+# Mark as active so that it is not automatically cleaned up on the
+# clients
+touch ${builddir}/.active
+
+# Update link to current logfile created by dopackages.wrapper
+ln -sf ${pb}/${arch}/archive/buildlogs/log.${branch}.${date} \
+    ${builddir}/build.log
 
 if [ "$skipstart" = 0 ]; then
-  if [ "$noportscvs" = 0 ]; then
-    echo "================================================"
-    echo "running cvs update -PAd on ${PORTSDIR}"
-    echo "================================================"
-    cd ${PORTSDIR}
-    cvs -qR update -PAd
-    # XXX Check for conflicts
-    date > ${pb}/${arch}/${branch}/cvsdone
-  else
-    rm -f ${pb}/${arch}/${branch}/cvsdone
-  fi
 
-  if [ "$nocvs" = 0 ]; then
-    echo "================================================"
-    echo "running cvs update on ${SRCBASE}"
-    echo "================================================"
-    cd ${SRCBASE}
-    cvs -qR update -Pd
-    # XXX Check for conflicts
-  fi
+    # Update build
 
-  echo "================================================"
-  echo "running make checksubdirs"
-  echo "================================================"
-  cd ${PORTSDIR}
-  make checksubdirs
-
-  # this one not run in background to check return status
-  # XXX Return status not checked!
-  if [ "$noduds" = 0 ]; then
-    makeduds ${pb} ${arch} ${scripts} ${branch}
-  fi
-
-  if [ "$noindex" = 0 ]; then
-    makeindex ${pb} ${arch} ${scripts} ${branch}
-  fi
-  checkindex ${pb} ${arch} ${branch}
-
-  if [ "$trybroken" = 1 ]; then
-    echo "================================================"
-    echo "pruning stale entries from the failed ports list"
-    echo "================================================"
-    cp ${pb}/${arch}/${branch}/failure ${pb}/${arch}/${branch}/newfailure ${pb}/${arch}/${branch}/bak
-    lockf -k ${pb}/${arch}/${branch}/failure.lock ${scripts}/prunefailure ${arch} ${branch}
-  fi
-fi
-
-if [ "$nobuild" = 0 -a "$finish" = 0 ]; then
-  echo "================================================"
-  echo "setting up nodes"
-  echo "================================================"
-  for node in $(cat ${pb}/${arch}/mlist); do
-    ${scripts}/dosetupnode ${arch} ${branch} ${node} &
-  done
-fi
-
-if [ "$skipstart" = 0 ]; then
-  if [ "$norestr" = 0 ]; then
-    restrictedlist ${pb} ${arch} ${scripts} ${branch} &
-  fi
-
-  if [ "$cdrom" = 1 ]; then
-    cdromlist ${pb} ${arch} ${scripts} ${branch} &
-  fi
-
-  ${scripts}/makeparallel ${arch} ${branch} &
-
-  cd ${pb}/${arch}/${branch}
-  mkdir -p bak
-  rm -rf bak/packages bak/old-errors
-  mv make.* bak
-
-  olderrors=$(readlink ${pb}/${arch}/${branch}/errors)
-  oldlogs=$(readlink ${pb}/${arch}/${branch}/logs)
-
-  newerrors=${pb}/${arch}/archive/errorlogs/e.${branch}.${date}
-  newlogs=${pb}/${arch}/archive/errorlogs/a.${branch}.${date}
-
-  # Cycle out the previous symlinks
-  # For now the bak/errors may be a directory, so fall back to removing it if we fail to
-  # remove it as a symlink
-  rm -f bak/errors || rm -rf bak/errors
-  rm -f bak/logs || rm -rf bak/logs
-  mv errors logs bak
-
-  # Create new log directories for archival
-  rm -rf ${newerrors}
-  mkdir -p ${newerrors}/old-errors
-  ln -sf ${newerrors} ${pb}/${arch}/${branch}/errors
-  rm -rf ${newlogs}
-  mkdir -p ${newlogs}
-  ln -sf ${newlogs} ${pb}/${arch}/${branch}/logs
-  
-  echo "error logs in ${newerrors}"
-  if [ -f "${pb}/${arch}/${branch}/cvsdone" ]; then
-    cp -p ${pb}/${arch}/${branch}/cvsdone ${newerrors}/cvsdone
-    cp -p ${pb}/${arch}/${branch}/cvsdone ${newlogs}/cvsdone
-  else
-    rm -f ${newerrors}/cvsdone ${newlogs}/cvsdone
-  fi
-  cp -p ${pb}/${arch}/${branch}/duds ${newerrors}/duds
-  cp -p ${pb}/${arch}/${branch}/duds ${newlogs}/duds
-  cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${newerrors}/INDEX
-  cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${newlogs}/INDEX
-
-  if [ "$incremental" = 1 ]; then
-    # XXX Don't do this for space reasons
-    # XXX Could be replaced by hardlinks?
-    #tar cf - packages | tar xfC - bak
-
-    # Copy back in the restricted ports that were saved after the previous build
-    cd ${pb}/${arch}/${branch}
-    if [ -d bak/restricted/ ]; then
-      tar cfC - bak/restricted/ packages/ | tar xfpP -
+    if [ "$incremental" = 1 ]; then
+	# Stash a copy of the index since we may be about to replace
+	# it with the ZFS update
+	if [ -f ${PORTSDIR}/${INDEXFILE} ]; then
+	    cp ${PORTSDIR}/${INDEXFILE} ${builddir}/bak/${INDEXFILE}
+	fi
     fi
 
-    # Create hardlinks to previous set of logs
-    cd ${oldlogs} && find . -name \*.log\* | cpio -dumpl ${newlogs}
-    cd ${olderrors} && find . -name \*.log\* | cpio -dumpl ${newerrors}
+    if [ ${noports} -eq 0 ]; then
+	if [ -L ${builddir}/ports -o ${portscvs} -eq 1 ]; then
+	    echo "================================================"
+	    echo "running cvs update -PAd on ${PORTSDIR}"
+	    echo "================================================"
+	    cd ${PORTSDIR}
+	    cvsdone=$(date)
+	    echo ${cvsdone} > ${builddir}/cvsdone
+	    cvs -Rq update -PdA -D "${cvsdone}"
+	    # XXX Check for conflicts
+	else
+	    build portsupdate ${arch} ${branch} ${buildid} $@ 
+	fi
+    else
+	rm -f ${builddir}/cvsdone
+    fi
 
-    # Identify the ports that have changed and need to be removed before rebuilding
-    # XXX Need to also remove stale distfiles
-    # XXX and logs?
+    if [ "$incremental" = 1 ]; then
+	if [ -f ${builddir}/bak/${INDEXFILE} ]; then
+	    cp ${builddir}/bak/${INDEXFILE} ${PORTSDIR}/${INDEXFILE}.old
+	fi
+    fi
+    # Create tarballs for distributing to clients.  Should not cause
+    # much extra delay because we will do this in conjunction with
+    # recursing over the ports tree anyway just below, and might have
+    # just finished cvs updating, so it is likely to be in cache.
+    portstar &
+
+    if [ ${nosrc} -eq 0 ]; then
+	if [ -L ${builddir}/src -o ${srccvs} -eq 1 ]; then
+	    echo "================================================"
+	    echo "running cvs update -PAd on ${SRCBASE}"
+	    echo "================================================"
+	    cd ${SRCBASE}
+	    if [ -z "${cvsdone}" ]; then
+		# Don't overwrite/create cvsdone if we didnt set it
+		# with the ports update
+		cvsdone=$(date)
+	    fi
+	    cvs -Rq update -PdA -D "${cvsdone}"
+	    # XXX Check for conflicts
+	else
+	    build srcupdate ${arch} ${branch} ${buildid} $@ 
+	fi
+    fi
+    srctar &
+
+    # Begin build preprocess
+    
+    echo "================================================"
+    echo "running make checksubdirs"
+    echo "================================================"
     cd ${PORTSDIR}
-    cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE}.old | sort > ${INDEXFILE}.old1
-    cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE} | sort > ${INDEXFILE}.1
-    comm -2 -3 ${INDEXFILE}.old1 ${INDEXFILE}.1 | cut -f 1 -d \| > ${pb}/${arch}/${branch}/.oldports
+    make checksubdirs
 
-    echo "Removing $(wc -l ${pb}/${arch}/${branch}/.oldports) packages in preparation for incremental build"
-    rm ${INDEXFILE}.old1 ${INDEXFILE}.1
+    # not run in background to check return status
+    if [ "$noindex" = 0 ]; then
+	makeindex ${pb} ${arch} ${branch} ${buildid} ${builddir} || mailexit 1
+    fi
+    checkindex ${builddir}
+    if [ "$noduds" = 0 ]; then
+	makeduds ${pb} ${arch} ${branch} ${buildid} ${builddir} || mailexit 1
+    fi
 
-    cd ${PACKAGES}/All
-    sed "s,$,${PKGSUFFIX}," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-    ${scripts}/prunepkgs ${PORTSDIR}/${INDEXFILE} ${PACKAGES}
-
-    cd ${pb}/${arch}/${branch}/errors/
-    sed "s,\$,.log," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-    sed "s,\$,.log.bz2," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-
-    cd ${pb}/${arch}/${branch}/logs/
-    sed 's,$,.log,' ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-    sed 's,$,.log.bz2,' ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-  else
-    cd ${pb}/${arch}/${branch}
-
-    # XXX Don't do this for space reasons
-    #mv -f packages bak
-    rm -rf packages
-    mkdir -p packages/All
-
-    rm -rf distfiles/
-    mkdir -p distfiles/
-  fi
+    wait # for tar creation
+ 
+    if [ "$trybroken" = 1 ]; then
+	echo "================================================"
+	echo "pruning stale entries from the failed ports list"
+	echo "================================================"
+	
+	# XXX failure and newfailure are arch/branch-global for now.  We
+        # will need to work out how to deal with updates from
+        # concurrent builds though (one build may fail after a more
+        # recent build has fixed the breakage)
+	cp ${pbab}/failure ${pbab}/newfailure ${builddir}/bak
+	lockf -k ${pbab}/failure.lock ${pb}/scripts/prunefailure ${arch} ${branch} ${builddir}
+    fi
 fi
 
+if [ "$skipstart" = 0 ]; then
+    # XXX These can happen after build start
+    if [ "$norestr" = 0 ]; then
+	restrictedlist ${pb} ${arch} ${branch} ${buildid} ${builddir} &
+    fi
+    
+    if [ "$cdrom" = 1 ]; then
+	cdromlist ${pb} ${arch} ${branch} ${builddir} &
+    fi
+    
+    ${pb}/scripts/makeparallel ${arch} ${branch} ${buildid} &
+    
+    cd ${builddir}
+    mv distfiles/ .distfiles~
+    rm -rf .distfiles~ &
+    mkdir -p distfiles/
+    
+    olderrors=$(readlink ${builddir}/errors)
+    oldlogs=$(readlink ${builddir}/logs)
+    
+    newerrors=${pb}/${arch}/archive/errorlogs/e.${branch}.${buildid}
+    newlogs=${pb}/${arch}/archive/errorlogs/a.${branch}.${buildid}
+    
+    # Cycle out the previous symlinks
+    rm -f bak/errors
+    rm -f bak/logs
+    mv errors logs bak
+    
+    # Create new log directories for archival
+    rm -rf ${newerrors}
+    mkdir -p ${newerrors}/old-errors
+    ln -sf ${newerrors} ${builddir}/errors
+    rm -rf ${newlogs}
+    mkdir -p ${newlogs}
+    ln -sf ${newlogs} ${builddir}/logs
+    
+    echo "error logs in ${newerrors}"
+    if [ -f "${builddir}/cvsdone" ]; then
+	cp -p ${builddir}/cvsdone ${newerrors}/cvsdone
+	cp -p ${builddir}/cvsdone ${newlogs}/cvsdone
+    else
+	rm -f ${newerrors}/cvsdone ${newlogs}/cvsdone
+    fi
+    cp -p ${builddir}/duds ${newerrors}/duds
+    cp -p ${builddir}/duds ${newlogs}/duds
+    cp -p ${builddir}/ports/${INDEXFILE} ${newerrors}/INDEX
+    cp -p ${builddir}/ports/${INDEXFILE} ${newlogs}/INDEX
+    
+    if [ "$incremental" = 1 ]; then
+	
+        # Copy back in the restricted ports that were saved after the
+        # previous build
+	if [ -d bak/restricted/ ]; then
+	    cd ${builddir}/bak/restricted
+	    find . | cpio -dumpl ${builddir}
+	fi
+	cd ${builddir}
+
+        # Create hardlinks to previous set of logs
+	cd ${oldlogs} && find . -name \*.log\* | cpio -dumpl ${newlogs}
+	cd ${olderrors} && find . -name \*.log\* | cpio -dumpl ${newerrors}
+	
+        # Identify the ports that have changed and need to be removed
+        # before rebuilding
+	cd ${PORTSDIR}
+	cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE}.old | sort > ${INDEXFILE}.old1
+	cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE} | sort > ${INDEXFILE}.1
+	comm -2 -3 ${INDEXFILE}.old1 ${INDEXFILE}.1 | cut -f 1 -d \| > ${builddir}/.oldports
+	
+	echo "Removing $(wc -l ${builddir}/.oldports | awk '{print $1}') packages in preparation for incremental build"
+	rm ${INDEXFILE}.old1 ${INDEXFILE}.1
+	
+	cd ${PACKAGES}/All
+	sed "s,$,${PKGSUFFIX}," ${builddir}/.oldports | xargs rm -f
+	${pb}/scripts/prunepkgs ${PORTSDIR}/${INDEXFILE} ${PACKAGES}
+	
+	cd ${builddir}/errors/
+	sed "s,\$,.log," ${builddir}/.oldports | xargs rm -f
+	sed "s,\$,.log.bz2," ${builddir}/.oldports | xargs rm -f
+	
+	cd ${builddir}/logs/
+	sed 's,$,.log,' ${builddir}/.oldports | xargs rm -f
+	sed 's,$,.log.bz2,' ${builddir}/.oldports | xargs rm -f
+    else
+	cd ${builddir}
+	
+	mv packages .packages~
+	rm -rf .packages~ &
+	mkdir -p packages/All
+    fi
+fi
+
+# XXX only need to wait for some tasks
 wait
 
 if [ "$nobuild" = 0 ]; then
-  cd ${pb}/${arch}/${branch}
+    cd ${builddir}
+    
+    if [ "$cont" = 1 ]; then
+	find errors/ -name \*.log | sed -e 's,\.log$,,' -e 's,^errors/,,' > duds.errors
+	cat duds duds.errors | sort -u > duds.new
+	mv duds.new duds
+    else
+	cp duds.orig duds
+    fi
+    
+    cd ${builddir}/packages/All
+    ln -sf ../../Makefile .
+    
+    dobuild ${pb} ${arch} ${branch} ${builddir} 1
+    
+    ls -asFlrt ${builddir}/packages/All > ${builddir}/logs/ls-lrt
+    
+    cd ${builddir}/errors/
+    find . -name '*.log' -depth 1 | cpio -dumpl ${builddir}/errors/old-errors
 
-  if [ "$cont" = 1 ]; then
-    find errors/ -name \*.log | sed -e 's,\.log$,,' -e 's,^errors/,,' > duds.errors
-    cat duds duds.errors | sort -u > duds.new
-    mv duds.new duds
-  else
-    cp duds.orig duds
-  fi
+    # Clean up the clients
+    ${pb}/scripts/build cleanup ${arch} ${branch} ${buildid}
 
-  count=0
-  for i in `cat ${pb}/${arch}/mlist`; do
-    . ${pb}/${arch}/portbuild.conf
-    test -f ${pb}/${arch}/portbuild.${i} && . ${pb}/${arch}/portbuild.${i}
-    count=$((${count}+${maxjobs}))
-  done
-  cd ${pb}/${arch}/${branch}/packages/All
-  ln -sf ../../Makefile .
-
-  echo "================================================"
-  echo "building packages (phase 1)"
-  echo "================================================"
-  echo "started at $(date)"
-  phase1start=$(date +%s)
-  make -k -j$count quickports all > ../../make.0 2>&1 </dev/null
-  echo "ended at $(date)"
-  phase1end=$(date +%s)
-  echo "phase 1 took $(date -u -j -r $(($phase1end - $phase1start)) | awk '{print $4}')"
-  echo $(echo $(ls -1 ${pb}/${arch}/${branch}/packages/All | wc -l) - 2 | bc) "packages built"
-  echo $(echo $(du -sk ${pb}/${arch}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
-  echo $(echo $(du -sk ${pb}/${arch}/${branch}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
-
-  cd ${pb}/${arch}/${branch}
-  if grep -qE '(ptimeout|pnohang): killing' make.0; then
-    echo "The following port(s) timed out:"
-    grep -E '(ptimeout|pnohang): killing' make.0 | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/'
-  fi
-
-  ls -asFlrt ${pb}/${arch}/${branch}/packages/All > ${pb}/${arch}/${branch}/logs/ls-lrt
-
-  # XXX Is there any point in keeping a second copy of the phase 1 errors?
-  cd ${pb}/${arch}/${branch}/errors/
-  find . -name '*.log' | cpio -dumpl ${pb}/${arch}/${branch}/errors/old-errors
-
-#  XXX What is the point of the old-errors/ directory (not errors/old-errors/)?
-#  cd ${pb}/${arch}/${branch}/old-errors
-#  ${scripts}/processlogs
-
-  echo "================================================"
-  echo "setting up nodes"
-  echo "================================================"
-  for node in $(cat ${pb}/${arch}/mlist); do
-    ${scripts}/dosetupnode ${arch} ${branch} ${node} -norsync &
-    sleep 2
-  done
-
-  wait
-
-  echo "setting up of nodes ended at $(date)"
-
-  count=0
-  for i in `cat ${pb}/${arch}/mlist`; do
-    . ${pb}/${arch}/portbuild.conf
-    test -f ${pb}/${arch}/portbuild.${i} && . ${pb}/${arch}/portbuild.${i}
-    count=$((${count}+${maxjobs}))
-  done
-  cd ${pb}/${arch}/${branch}/packages/All
-  echo "================================================"
-  echo "building packages (phase 2)"
-  echo "================================================"
-  echo "started at $(date)"
-  phase2start=$(date +%s)
-  make -k -j$count quickports all > ../../make.1 2>&1 </dev/null
-  echo "ended at $(date)"
-  phase2end=$(date +%s)
-  echo "phase 2 took $(date -u -j -r $(($phase2end - $phase2start)) | awk '{print $4}')"
-
-  echo $(ls -1 ${pb}/${arch}/${branch}/packages/All | wc -l) "packages built"
-  echo $(cat ${pb}/${arch}/${branch}/packages/INDEX | wc -l) "lines in INDEX"
-  echo $(echo $(du -sk ${pb}/${arch}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
-  echo $(echo $(du -sk ${pb}/${arch}/${branch}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
-fi
-
-cd ${pb}/${arch}/${branch}
-if grep -qE '(ptimeout|pnohang): killing' make.1; then
-  echo "The following port(s) timed out:"
-  grep -E '(ptimeout|pnohang): killing' make.1 | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/'
+    wait
+    echo "setting up of nodes ended at $(date)"
+    
+    cd ${builddir}/packages/All
+    dobuild ${pb} ${arch} ${branch} ${builddir} 2
+    
 fi
 
 # Clean up temporary duds file
 if [ "$cont" = 1 ]; then
-  cp duds.orig duds
+    cp duds.orig duds
 fi
 
-cd ${pb}/${arch}/${branch}/packages/All
+cd ${builddir}/packages/All
 if [ "$nofinish" = 0 ]; then
-  rm -f Makefile
-
-  if [ "$norestr" = 0 ]; then
-    # Before deleting restricted packages, save a copy so we don't have to rebuild them next time
-    ${pb}/scripts/keeprestr ${arch} ${branch}
-  else
-    rm -rf ${pb}/${arch}/${branch}/bak/restricted/
-  fi
-
-  # Always delete restricted packages/distfiles since they're published on the
-  # website
-  echo "deleting restricted ports"
-  sh ${pb}/${arch}/${branch}/restricted.sh
-
-  if [ "$cdrom" = 1 ]; then
-    echo "deleting cdrom restricted ports"
-    sh ${pb}/${arch}/${branch}/cdrom.sh
-  fi
-
-  # Remove packages not listed in INDEX
-  ${scripts}/prunepkgs ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/${branch}/packages
+    rm -f Makefile
+    
+    if [ "$norestr" = 0 ]; then
+        # Before deleting restricted packages, save a copy so we don't
+        # have to rebuild them next time
+	${pb}/scripts/keeprestr ${arch} ${branch} ${buildid}
+    else
+	rm -rf ${builddir}/bak/restricted/
+    fi
+    
+    # Always delete restricted packages/distfiles since they're
+    # published on the website
+    echo "deleting restricted ports"
+    sh ${builddir}/restricted.sh
+    
+    if [ "$cdrom" = 1 ]; then
+	echo "deleting cdrom restricted ports"
+	sh ${builddir}/cdrom.sh
+    fi
+    
+    # Remove packages not listed in INDEX
+    ${pb}/scripts/prunepkgs ${builddir}/ports/${INDEXFILE} ${builddir}/packages
 fi
 
 # XXX Checking for bad packages should be done after the package is uploaded
-#rm -rf ${pb}/${arch}/${branch}/bad
-#mkdir -p ${pb}/${arch}/${branch}/bad
+#rm -rf ${builddir}/bad
+#mkdir -p ${builddir}/bad
 #echo "checking packages"
 #for i in *${PKGSUFFIX}; do
 #  if ! ${PKGZIPCMD} -t $i; then
-#    echo "Warning: package $i is bad, moving to ${pb}/${arch}/${branch}/bad"
+#    echo "Warning: package $i is bad, moving to ${builddir}/bad"
 #    # the latest link will be left behind...
-#    mv $i ${pb}/${arch}/${branch}/bad
+#    mv $i ${builddir}/bad
 #    rm ../*/$i
 #  fi
 #done
 
 if [ "$nofinish" = 0 ]; then
-  generatemd5 ${pb} ${arch} ${branch} &
+    generatemd5 ${pb} ${arch} ${branch} ${builddir} &
+    
+    # Remove INDEX entries for packages that do not exist
+    ${pb}/scripts/chopindex ${builddir}/ports/${INDEXFILE} ${builddir}/packages > ${builddir}/packages/INDEX
 
-  # Remove INDEX entries for packages that do not exist
-  ${scripts}/chopindex ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${pb}/${arch}/${branch}/packages > ${pb}/${arch}/${branch}/packages/INDEX
+    ls -asFlrt ${builddir}/packages/All > ${builddir}/logs/ls-lrt
+    cp -p ${builddir}/make.[12] ${builddir}/logs
 
-  ls -asFlrt ${pb}/${arch}/${branch}/packages/All > ${pb}/${arch}/${branch}/logs/ls-lrt
-  cp -p ${pb}/${arch}/${branch}/make.[01] ${pb}/${arch}/${branch}/logs
-
-  echo "================================================"
-  echo "copying distfiles"
-  echo "================================================"
-  echo "started at $(date)"
-  cd ${pb}/${arch}
-  ${scripts}/dodistfiles ${arch} ${branch}
-
-  # Always delete restricted distfiles
-  echo "deleting restricted distfiles"
-  sh ${pb}/${arch}/${branch}/restricted.sh
-
-  if [ "$cdrom" = 1 ]; then
-    echo "deleting cdrom restricted distfiles"
-    sh ${pb}/${arch}/${branch}/cdrom.sh
-  fi
-
-  wait
-
-  if [ "$branch" != "4-exp" ]; then
-    # Currently broken - kk
-    #su ${user} -c "${scripts}/cpdistfiles ${branch} > ${pb}/${arch}/${branch}/cpdistfiles.log 2>&1 </dev/null" &
-    if [ "$ftp" = 1 ]; then
-      echo "ended at $(date)"
-      echo "================================================"
-      echo "copying packages"
-      echo "================================================"
-      ${scripts}/docppackages ${arch} ${branch}
+    echo "================================================"
+    echo "copying distfiles"
+    echo "================================================"
+    echo "started at $(date)"
+    cd ${builddir}
+    ${pb}/scripts/dodistfiles ${arch} ${branch} ${buildid}
+    
+    # Always delete restricted distfiles
+    echo "deleting restricted distfiles"
+    sh ${builddir}/restricted.sh
+    
+    if [ "$cdrom" = 1 ]; then
+	echo "deleting cdrom restricted distfiles"
+	sh ${builddir}/cdrom.sh
     fi
-  fi
+    
+    wait
+    
+    if [ "$branch" != "4-exp" ]; then
+    # Currently broken - kk
+    #su ${user} -c "${pb}/scripts/cpdistfiles ${branch} > ${builddir}/cpdistfiles.log 2>&1 </dev/null" &
+	if [ "$ftp" = 1 ]; then
+	    echo "ended at $(date)"
+	    echo "================================================"
+	    echo "copying packages"
+	    echo "================================================"
+	    ${pb}/scripts/docppackages ${arch} ${branch} ${builddir}
+	fi
+    fi
+fi
+
+if [ "${nocleanup}" -eq 1 ]; then
+    echo "Not cleaning up build, when you are finished be sure to run:"
+    echo "   ${pb}/scripts/build cleanup ${arch} ${branch} ${buildid} -full"
+else
+    ${pb}/scripts/build cleanup ${arch} ${branch} ${buildid} -full
 fi
 
 endtime=$(date +%s)
@@ -626,5 +712,4 @@ echo "all done at $(date)"
 echo "entire process took $(date -u -j -r $(($endtime - $starttime)) | awk '{print $4}')"
 echo "================================================"
 
-sleep 1
-echo | mail -s "$(basename $0) ended for ${arch}-${branch} ${date} at $(date)" ${mailto}
+mailexit 0
