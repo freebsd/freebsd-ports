@@ -1,0 +1,75 @@
+#!/usr/bin/env python
+#
+# Allow access to privileged build commands to ports-* users for
+# managing their own build spaces.
+
+import sys, socket, os, commands
+
+from freebsd import *
+
+SOCKET='/tmp/.build'
+
+def validate(uid, arch):
+    if uid == 0:
+        return True
+
+    if getuidbyname("ports-%s" % arch) == uid:
+        return True
+
+    return False
+
+def process(cmd, sockfile):
+
+    if len(cmd) < 5:
+        return (254, "Wrong number of arguments")
+
+    if cmd[0] != "build":
+        return (254, "Invalid command")
+
+    try:
+        if not validate(uid, cmd[2]):
+            return (254, "Permission denied")
+    except:
+        return (254, "Internal error")
+
+    for i in cmd:
+        for j in i:
+            if not j.isalnum() and not j in "-_.":
+                return (254, "Illegal characters in input")
+    
+    (status, out) = commands.getstatusoutput("/var/portbuild/scripts/build %s" % " ".join(cmd[1:]))
+
+    return (status, out)
+
+if os.path.exists(SOCKET):
+    os.unlink(SOCKET)
+s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+s.bind(SOCKET)
+os.chmod(SOCKET, 0660)
+os.chown(SOCKET, -1, getgidbyname('portmgr'))
+
+s.listen(10)
+
+while True:
+    try:
+        (conn, addr) = s.accept()
+
+        (uid, gids) = getpeerid(conn)
+
+        sockfile = conn.makefile()
+        cmd = sockfile.readline().rstrip().split()
+        print cmd
+        try:
+            (status, out) = process(cmd, sockfile)
+        except:
+            (status, out) = (254, "Internal error")
+
+        sockfile.write("%d\n" % status)
+        sockfile.write(out)
+        sockfile.flush()
+
+        sockfile.close()
+        conn.close()
+    except Exception:
+        pass
+
