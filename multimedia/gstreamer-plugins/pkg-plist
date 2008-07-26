@@ -196,6 +196,7 @@ share/locale/de/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/fr/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
@@ -209,6 +210,7 @@ share/locale/sr/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/ru/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/video
 @dirrm include/gstreamer-%%VERSION%%/gst/tag
