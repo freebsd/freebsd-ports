@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	system-config-printer
-PORTVERSION=	0.9.93
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	print gnome
-MASTER_SITES=	http://cyberelk.net/tim/data/${PORTNAME}/
+MASTER_SITES=	http://cyberelk.net/tim/data/${PORTNAME}/${PORTVERSION:R}.x/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CUPS configuration Gtk+2.0 GUI
