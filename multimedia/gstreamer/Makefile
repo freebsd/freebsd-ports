@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	ahze
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Development framework for creating media applications
 
-BUILD_DEPENDS=	${LOCALBASE}/bin:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 CFLAGS:=	${CFLAGS} -O2
