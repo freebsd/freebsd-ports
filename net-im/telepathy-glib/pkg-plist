@@ -106,6 +106,7 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-handle-repo.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-handle.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-interfaces.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-media-interfaces.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-asv.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-proxy-dbus-core.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-proxy-subclass.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-proxy-tp-properties.html
