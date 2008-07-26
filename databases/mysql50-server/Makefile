@@ -102,7 +102,7 @@ WANT_MYSQL_VER=	50
 
 LATEST_LINK=	mysql50-server
 
-CONFLICTS=	mysql-server-3.* mysql-server-4.* mysql-server-5.1.*
+CONFLICTS=	mysql-server-3.* mysql-server-4.* mysql-server-5.1.* mysql-server-6.*
 
 USE_RC_SUBR=	mysql-server.sh
 
@@ -167,7 +167,7 @@ post-install:
 .if defined(CLIENT_ONLY)
 LATEST_LINK=	mysql50-client
 
-CONFLICTS=	mysql-client-3.* mysql-client-4.* mysql-client-5.1.*
+CONFLICTS=	mysql-client-3.* mysql-client-4.* mysql-client-5.1.* mysql-client-6.*
 
 MAN1=		mysql_config.1 mysql.1 mysqladmin.1 mysqlbinlog.1 \
 		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1
@@ -204,7 +204,7 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 LATEST_LINK=	mysql50-scripts
 
-CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.* mysql-scripts-5.1.*
+CONFLICTS=	mysql-scripts-3.* mysql-scripts-4.* mysql-scripts-5.1.* mysql-scripts-6.*
 
 MAN1=		msql2mysql.1 mysql_zap.1 mysqlaccess.1 mysqlhotcopy.1 \
 		mysqld_multi.1 mysql_fix_privilege_tables.1
