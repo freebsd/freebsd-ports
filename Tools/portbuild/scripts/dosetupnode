@@ -1,45 +1,170 @@
 #!/bin/sh
+#
+# XXX Use a worker pool that only runs N setups at once to avoid
+# raping the server.  Hard to do in shell?
+
+# -norsync|-nocopy : Don't copy files, just clean up builds
+#
+# -queue : update queue once we finish setting up
+#
+# -force : force file copying/extraction even if it appears it is
+#          up-to-date
+#
+# NB: branch or buildid might be "-" to specify only to set up the
+# scripts/ and ${arch}/ directories (e.g. after client reboot)
 
 # configurable variables
 pb=/var/portbuild
 arch=$1
 branch=$2
-node=$3
-shift 3
+buildid=$3
+nodelist=$4
+shift 4
 
-norsync=0
-if [ "$1" = "-norsync" ]; then
-  norsync=1
+if [ -f ${pb}/${arch}/portbuild.conf ]; then
+    . ${pb}/${arch}/portbuild.conf
+else
+    echo "Invalid arch ${arch}"
+    exit 1
 fi
-
-. ${pb}/${arch}/portbuild.conf
-
 . ${pb}/scripts/buildenv
 
-echo "setting up of $node started at $(date)"
+# Check for non-fatal rsync errors
+checkerror() {
+    error=$?
 
-# Read in client config and decide if the node is disconnected or not (i.e. mounts via NFS)
-disconnected=0
-. ${pb}/${arch}/portbuild.${node}
+    case $error in
+	0)
+	    return 0
+	    ;;
+	23)
+	    echo "Continuing..."	 
+	    return 0
+	    ;;
+	*)
+	    echo "Aborting..."
+	    return 1
+	    ;;
+    esac
+}
 
-if [ "${norsync}" = 1 ]; then
-  md5=0
-  nocopy=-nocopy
-else
-  nocopy=
-  md5=$(/sbin/md5 ${pb}/${arch}/${branch}/tarballs/bindist.tar | awk '{print $4}')
+setup() {
+    node=$1
+
+    echo "setting up of $node started at $(date)"
+
+    . ${pb}/${arch}/portbuild.conf
+    . ${pb}/${arch}/portbuild.${node}
+
+    ${scp_cmd} -q -p ${pb}/scripts/setupnode ${client_user}@${node}:/tmp || return 1
+
+    client_setup="${ssh_cmd} -n ${client_user}@${node} sh /tmp/setupnode ${pb} ${arch} ${branch} ${buildid} ${scratchdir} \"${portsmd5}\" \"${srcmd5}\" \"${bindistmd5}\""
+    args="${nocopy} ${force}"
+
+    ${client_setup} pre-copy ${args} || (echo "pre-copy for ${node} failed"; return 1)
+
+    if [ "${norsync}" -eq 0 ]; then
+
+	rsync ${rsync_gzip} -e "${ssh_cmd}" -r -l -p --delete ${pb}/scripts \
+	    ${client_user}@${node}:${pb}/
+	checkerror $? || (echo "Copying scripts to ${node} failed"; return 1)
+
+	rsync ${rsync_gzip} -e "${ssh_cmd}" -r -l -p --delete ${pb}/${arch}/portbuild* \
+	    ${client_user}@${node}:${pb}/${arch}
+	checkerror $? || (echo "copying portbuild.conf files to ${node} failed"; return 1)
+
+	if [ -f "${pb}/${arch}/clients/bindist-${node}.tar" ]; then
+	    rsync ${rsync_gzip} -e "${ssh_cmd}" -r -L -p --delete \
+		${pb}/${arch}/clients/bindist-${node}.tar \
+		${client_user}@${node}:${pb}/${arch}/clients/
+	    checkerror $? || (echo "Copying bindist-${node}.tar to ${node} failed"; return 1)
+	else
+	    echo "Host customization file not found: ${pb}/${arch}/clients/bindist-${node}.tar"
+	    return 1
+	fi
+
+	if [ "${buildid}" != "-" ]; then
+	    rsync ${rsync_gzip} -e "${ssh_cmd}" -r -L -p \
+		${builddir}/ports-${buildid}.tbz \
+		${builddir}/ports-${buildid}.tbz.md5 \
+		${builddir}/src-${buildid}.tbz \
+		${builddir}/src-${buildid}.tbz.md5 \
+		${builddir}/bindist.tbz \
+		${builddir}/bindist.tbz.md5 \
+		${client_user}@${node}:${builddir}/ 
+	    checkerror $? || (echo "Copying build tarballs to ${node} failed"; return 1)
+	fi
+    fi
+
+    ${client_setup} post-copy ${args} || (echo "post-copy for ${node} failed"; return 1)
+
+    if [ "${queue}" -eq 1 ]; then
+	lockf -k ${pb}/${arch}/queue/.lock \
+	    ${pb}/scripts/pollmachine ${arch}/${node} -queue
+    fi
+    echo "setting up of $node ended at $(date)"
+}
+
+pbab=${pb}/${arch}/${branch}
+
+norsync=0
+queue=0
+
+while [ $# -ge 1 ]; do
+    case $1 in
+	-norsync|-nocopy)
+	    norsync=1
+	    nocopy=-nocopy
+	    ;;
+	-queue)
+	    queue=1
+	    ;;
+	-force)
+	    force=-force
+	    ;;
+    esac
+    shift
+done
+
+if [ "${norsync}" -eq 0 ]; then
+    if [ "${branch}" != "-" -a "${buildid}" != "-" ]; then
+	buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
+
+	if [ -z "${buildid}" ]; then
+	    echo "Invalid build ID ${buildid}"
+	    exit 1
+	fi
+
+	builddir=${pbab}/builds/${buildid}
+
+	if [ ! -f ${builddir}/ports-${buildid}.tbz.md5 ]; then
+	    echo "ports-${buildid}.tbz.md5 not found"
+	    exit 1
+	else
+	    portsmd5=$(awk '{print $4}' ${builddir}/ports-${buildid}.tbz.md5)
+	fi
+	
+	if [ ! -f ${builddir}/src-${buildid}.tbz.md5 ]; then
+	    echo "src-${buildid}.tbz.md5 not found"
+	    exit 1
+	else
+	    srcmd5=$(awk '{print $4}' ${builddir}/src-${buildid}.tbz.md5)
+	fi
+	
+	if [ ! -f ${builddir}/bindist.tbz.md5 ]; then
+	    echo "bindist.tbz.md5 not found"
+	    exit 1
+	else
+	    bindistmd5=$(awk '{print $4}' ${builddir}/bindist.tbz.md5)
+	fi
+    fi
 fi
 
-scp -p ${pb}/scripts/setupnode ${client_user}@${node}:/tmp
-ssh -n ${client_user}@${node} ${sudo_cmd} sh /tmp/setupnode ${nocopy} $(hostname) ${pb} ${arch} ${branch} ${scratchdir} ${md5} ${disconnected}
-
-if [ "${disconnected}" = 1 -a "${norsync}" = 0 ]; then
-  rsync ${rsync_gzip} -r -l -p --delete ${pb}/scripts ${client_user}@${node}:${pb}/
-  rsync ${rsync_gzip} -r -l -p --delete ${pb}/${arch}/portbuild* ${client_user}@${node}:${pb}/${arch}
-  rsync ${rsync_gzip} -r -L -p --delete ${pb}/${arch}/${branch}/ports ${client_user}@${node}:${pb}/${arch}/${branch}
-  rsync ${rsync_gzip} -r -L -p --delete ${pb}/${arch}/${branch}/src ${client_user}@${node}:${pb}/${arch}/${branch}
-  rsync ${rsync_gzip} -r -L -p --delete ${pb}/${arch}/${branch}/tarballs/ ${client_user}@${node}:${pb}/${arch}/${branch}/tarballs/
+if [ "${nodelist}" = "all" ]; then
+    nodelist=$(cat ${pb}/${arch}/mlist)
 fi
 
-lockf -k ${pb}/${arch}/queue/.lock ${pb}/scripts/pollmachine ${arch} ${node} -queue
-echo "setting up of $node ended at $(date)"
+for node in ${nodelist}; do
+    setup ${node} &
+done
+wait
