@@ -5,52 +5,165 @@
 # directory hierarchy, the portbuild script and the bindist.tar file
 # for populating the build chroots.
 
-nocopy=0
-if [ "x$1" = "x-nocopy" ]; then
-  nocopy=1
-  shift
+if [ $# -lt 8 ]; then
+    echo "usage: $0 portbuilddir arch branch buildid tmpdir portsmd5 srcmd5 phase [-nocopy] [-force]"
+    exit 1
 fi
 
-if [ $# != 7 ]; then
-  echo "usage: $0 [-nocopy] master portbuilddir arch branch tmpdir md5 disconnected"
-  exit 1
-fi
-
-master=$1
-pb=$2
-arch=$3
-branch=$4
+pb=$1
+arch=$2
+branch=$3
+buildid=$4
 tmpdir=$5
-md5master=$6
-disconnected=$7
+portsmd5=$6
+srcmd5=$7
+bindistmd5=$8
+phase=$9
+shift 9
 
-mkdir -p ${tmpdir}/${branch}/chroot
-mkdir -p ${tmpdir}/${branch}/tarballs
-cd ${tmpdir}
-if [ "$nocopy" = 0 ]; then
-  if [ -f ${tmpdir}/${branch}/tarballs/bindist.tar ]; then
-    md5=$(/sbin/md5 ${tmpdir}/${branch}/tarballs/bindist.tar | awk '{print $4}')
-  fi
-  if [ "${md5}" = "${md5master}" ]; then
-    echo "not copying bindist to $(hostname) since it is already up to date"
-  else
-    echo "copying bindist to $(hostname)"
-    if [ ${disconnected} = 0 ]; then
-      cp -p ${pb}/${arch}/${branch}/tarballs/bindist.tar ${tmpdir}/${branch}/tarballs
+precopy() {
+    # Create directories and symlinks for later population
+
+    # Timestamp of finished builds
+    mkdir -p ${tmpdir}/stamp/
+
+    # Prepare all directories, they will be populated by a rsync
+    # push from the master
+    mkdir -p ${pb}/scripts ${pb}/${arch}/clients/
+
+    if [ "${buildid}" != "-" -a "${branch}" != "-" ]; then
+	if [ ${nocopy} -eq 0 ]; then
+	    mkdir -p ${builddir}
+	fi
     fi
-  fi
-  cp -p ${pb}/${arch}/${branch}/tarballs/bindist-$(hostname).tar ${tmpdir}/${branch}/tarballs
-  if [ ${disconnected} = 1 ]; then
-    # Prepare all directories, they will be populated by a rsync push from the master
-    mkdir -p ${pb}/scripts ${pb}/${arch}/${branch}/ports ${pb}/${arch}/${branch}/src ${pb}/${arch}/${branch}/src ${pb}/${arch}/${branch}/tarballs
-    # bindist is a local file, so we don't have to worry about whether nfs caches it
-    # This symlink will dangle until the rsync comes along and fills in the destination.
-    ln -sf ${pb}/${arch}/${branch}/tarballs/bindist.tar ${tmpdir}/${branch}/tarballs
-    ln -sf ${pb}/${arch}/${branch}/tarballs/bindist-$(hostname).tar ${tmpdir}/${branch}/tarballs
-  fi
+}
+
+postcopy() {
+    if [ "${buildid}" != "-" -a "${branch}" != "-" ]; then
+        # Extract ports trees and cleanup
+	if [ ${nocopy} -eq 0 ]; then
+
+	    cd ${builddir} || return 1
+
+	    # Unpack bindist
+	    if [ -f bindist.tbz.md5 -a "${force}" -ne 1 ]; then
+		localbindistmd5=$(awk '{print $4}' bindist.tbz.md5)
+	    else
+		localbindistmd5=0
+	    fi
+
+	    if [ ${localbindistmd5} != ${bindistmd5} -o ! -f bindist.tar ]; then
+		if [ -f bindist.tar ]; then
+		    rm -f bindist.tar
+		fi
+      		bzcat bindist.tbz > bindist.tar || return 1
+	    fi
+
+	    # Unpack ports
+	    if [ -f ports-${buildid}.tbz.md5 -a "${force}" -ne 1 ]; then
+		localportsmd5=$(awk '{print $4}' ports-${buildid}.tbz.md5)
+	    else
+		localportsmd5=0
+	    fi
+
+	    if [ ${localportsmd5} != ${portsmd5} -o ! -d ports ]; then
+		if [ -d ports ]; then
+		    mv ports ports~
+		    mkdir ports
+		    rm -rf ports~ &
+		fi
+      		tar xfj ports-${buildid}.tbz || return 1
+	    fi
+
+	    # Unpack src
+	    if [ -f src-${buildid}.tbz.md5 -a "${force}" -ne 1 ]; then
+		localsrcmd5=$(awk '{print $4}' src-${buildid}.tbz.md5)
+	    else
+		localsrcmd5=0
+	    fi
+
+	    if [ ${localsrcmd5} != ${srcmd5} -o ! -d src ]; then
+		if [ -d src ]; then
+		    mv src src~
+		    mkdir src
+		    rm -rf src~ &
+		fi
+      		tar xfj src-${buildid}.tbz || return 1
+	    fi
+	    touch .ready
+	fi
+
+        # Clean up the tmpdir
+        # By now the portbuild.conf files are in place so we can source them
+
+	. ${pb}/${arch}/portbuild.conf
+	me=$(hostname)
+	if [ -f ${pb}/${arch}/portbuild.${me} ] ; then
+	    . ${pb}/${arch}/portbuild.${me}
+	fi
+
+	if [ "${buildid}" != "-" -a "${branch}" != "-" ]; then
+	    mkdir -p ${wrkdir}/chroot
+	    if [ "${use_zfs}" -eq 1 ]; then
+		zbase=${scratchdir#/}
+		zfs create ${zbase}/${branch} || true
+		zfs create ${zbase}/${branch}/${buildid} || true
+		zfs create ${zbase}/${branch}/${buildid}/world || true
+		zfs create ${zbase}/${branch}/${buildid}/chroot || true
+		tar xfpC ${builddir}/bindist.tar ${scratchdir}/${branch}/${buildid}/world
+		tar xfpC ${pb}/${arch}/clients/bindist-$(hostname).tar ${scratchdir}/${branch}/${buildid}/world
+		zfs snapshot ${zbase}/${branch}/${buildid}/world@base
+
+	    else
+		mkdir -p ${wrkdir}/tarballs
+		if [ ${nocopy} -eq 0 ]; then
+		    ln -sf ${pbab}/builds/${buildid}/bindist.tar ${wrkdir}/tarballs
+		    ln -sf ${pb}/${arch}/clients/bindist-$(hostname).tar ${wrkdir}/tarballs
+		fi
+	    fi
+	fi
+
+	for i in ${wrkdir}/chroot/*; do
+	    ${sudo_cmd} ${pb}/scripts/clean-chroot ${arch} ${branch} ${buildid} ${i} 2
+	done
+	wait
+    else
+	# Client may have been waiting for us to set it up, so finish
+	# the job.
+	touch /tmp/.boot_finished
+    fi
+
+}
+
+if [ "${branch}" != "-" -a "${buildid}" != "-" ]; then
+    pbab=${pb}/${arch}/${branch}
+    builddir=${pbab}/builds/${buildid}
+
+    wrkdir=${tmpdir}/${branch}/${buildid}
 fi
 
-# Clean up the tmpdir
-for i in ${tmpdir}/${branch}/chroot/*; do
-    ${pb}/scripts/clean-chroot ${arch} ${branch} ${i} 2
+nocopy=0
+force=0
+while [ $# -ge 1 ]; do
+    case $1 in
+	-nocopy)
+	    nocopy=1
+	    ;;
+	-force)
+	    force=1
+	    ;;
+    esac
+    shift
 done
+
+case ${phase} in
+    pre-copy)
+	precopy
+	;;
+    post-copy)
+	postcopy
+	;;
+    *)
+	echo "Invalid phase ${phase}"
+	exit 1
+esac
