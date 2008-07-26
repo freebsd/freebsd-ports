@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	POE-Component-RSSAggregator
-PORTVERSION=	1.02.2
+PORTVERSION=	1.11
 CATEGORIES=	devel perl5 textproc
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
+#DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Watch Muliple RSS Feeds for New Headlines
