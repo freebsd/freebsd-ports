@@ -41,6 +41,14 @@ footer() {
 #
 header "<th>Port</th><th>Package</th><th>Broken</th><th>Last</th><th>#</th>"
 
+dirname() {
+	echo ${1%/*}
+}
+
+basename() {
+	echo ${1##*/}
+}
+
 sort -r -n -k 4 -t \| failure > newfailure
 IFS='|'
 while read dir name ver date last count; do
