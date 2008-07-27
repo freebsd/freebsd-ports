@@ -10,7 +10,7 @@ PORTVERSION=	2.2.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cfengine.org/downloads/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	jrhett@netconsonance.com
 COMMENT=	A systems administration tool for networks
 
 USE_RC_SUBR=	cfexecd cfservd
