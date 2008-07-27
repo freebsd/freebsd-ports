@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -52,9 +52,9 @@ PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
 		draft-hoffman-dac-vbr-03.txt draft-ietf-dkim-deployment-01.txt \
-		draft-ietf-dkim-overview-09.txt draft-ietf-dkim-ssp-03.txt \
-		draft-kucherawy-dkim-reporting-02.txt draft-kucherawy-sender-auth-header-14.txt \
-		draft-shafranovich-feedback-report-04.txt rfc4686.txt rfc4871.txt rfc5016.txt
+		draft-ietf-dkim-overview-10.txt draft-ietf-dkim-ssp-04.txt \
+		draft-kucherawy-dkim-reporting-04.txt draft-kucherawy-sender-auth-header-15.txt \
+		draft-shafranovich-feedback-report-05.txt rfc4686.txt rfc4871.txt rfc5016.txt
 .if !defined(NOPORTDOCS)
 LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/overview.html \
