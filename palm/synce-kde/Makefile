@@ -6,22 +6,25 @@
 
 PORTNAME=	synce-kde
 PORTVERSION=	0.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	palm
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	synce
+MASTER_SITES=	SF/synce
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SynCE KDE Utilities
 
 LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce \
 		rapi.2:${PORTSDIR}/palm/synce-librapi2 \
-		rra.0:${PORTSDIR}/palm/synce-rra \
+		rra.0:${PORTSDIR}/palm/synce-librra \
 		dynamite.0:${PORTSDIR}/archivers/libdynamite \
 		orange.0:${PORTSDIR}/archivers/liborange \
 		unshield.0:${PORTSDIR}/archivers/unshield
 
 RUN_DEPENDS+=	synce-serial-start:${PORTSDIR}/palm/synce-serial
+
+BROKEN=		No longer supported by developers
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=	2008-08-24
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

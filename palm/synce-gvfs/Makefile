@@ -22,6 +22,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-librapi=${LOCALBASE} \
 			--with-libsynce=${LOCALBASE}
 
+BROKEN=		No longer supported by developers
+DEPRECATED=     ${BROKEN}
+EXPIRATION_DATE=        2008-08-24
+
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
