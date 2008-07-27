@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://transcode.kabewm.com/ \
 		http://fromani.exit1.org/
@@ -157,8 +158,8 @@ CONFIGURE_ARGS+=	--with-lame-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=	--disable-lame
 .endif
 
-.if defined(WITH_LZO) || (exists(${LOCALBASE}/lib/liblzo.so) && !defined(WITHOUT_LZO))
-LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
+.if defined(WITH_LZO) || (exists(${LOCALBASE}/lib/liblzo2.so) && !defined(WITHOUT_LZO))
+LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
 CONFIGURE_ARGS+=	--enable-lzo --with-lzo-prefix=${LOCALBASE} \
 					--with-lzo-includes=${LOCALBASE}
 .else
