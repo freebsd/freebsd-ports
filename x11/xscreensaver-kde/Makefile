@@ -34,7 +34,7 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/share/applications/gnome-screensaver-properties.desktop)
+.if exists(${LOCALBASE}/share/applications/xscreensaver-properties.desktop)
 WITH_XSGNOME=	yes
 .elif exists(${LOCALBASE}/bin/screensaver)
 WITH_XSGNOME=	yes
@@ -48,8 +48,8 @@ RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 .endif # defined(WITH_XS)
 
 .if defined(WITH_XSGNOME)
-BUILD_DEPENDS+=	${LOCALBASE}/share/applications/gnome-screensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
-RUN_DEPENDS+=	${LOCALBASE}/share/applications/gnome-screensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
+BUILD_DEPENDS+=	${LOCALBASE}/share/applications/xscreensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
+RUN_DEPENDS+=	${LOCALBASE}/share/applications/xscreensaver-properties.desktop:${PORTSDIR}/x11/xscreensaver-gnome
 .endif # defined(WITH_XSGNOME)
 
 pre-configure:
