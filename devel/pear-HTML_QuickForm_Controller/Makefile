@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_QuickForm_Controller
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.9
 CATEGORIES=	devel www pear
 
 MAINTAINER=	dk@catpipe.net
