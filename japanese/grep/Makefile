@@ -18,6 +18,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU grep + multi-byte extension
 
+USE_AUTOTOOLS=	autoconf:213 aclocal:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=j --disable-nls
 
