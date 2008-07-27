@@ -104,6 +104,7 @@
     SUBDIR += p5-POE-Component-Client-MSN
     SUBDIR += pebrot
     SUBDIR += pidgin
+    SUBDIR += pidgin-facebookchat
     SUBDIR += pidgin-guifications
     SUBDIR += pidgin-hotkeys
     SUBDIR += pidgin-latex
