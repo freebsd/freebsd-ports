@@ -1,0 +1,11 @@
+%%SITE_PERL%%/MooseX/Async.pm
+%%SITE_PERL%%/MooseX/Async/Meta/Class.pm
+%%SITE_PERL%%/MooseX/Async/Meta/Method/State.pm
+%%SITE_PERL%%/MooseX/Async/Meta/Role.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Async/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Async
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/Async/Meta/Method
+@dirrmtry %%SITE_PERL%%/MooseX/Async/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/Async
+@dirrmtry %%SITE_PERL%%/MooseX
