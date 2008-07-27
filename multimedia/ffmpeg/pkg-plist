@@ -1,61 +1,63 @@
 bin/ffmpeg
 bin/ffserver
-@unexec if cmp -s %D/etc/ffserver.conf %D/etc/ffserver.conf-dist; then rm -f %D/etc/ffserver.conf; fi
+etc/ffserver.conf
 etc/ffserver.conf-dist
-include/ffmpeg/adler32.h
-include/ffmpeg/avcodec.h
-include/ffmpeg/avformat.h
-include/ffmpeg/avio.h
-include/ffmpeg/avstring.h
-include/ffmpeg/avutil.h
-include/ffmpeg/base64.h
-include/ffmpeg/common.h
-include/ffmpeg/fifo.h
-include/ffmpeg/integer.h
-include/ffmpeg/intfloat_readwrite.h
-include/ffmpeg/log.h
-include/ffmpeg/lzo.h
-include/ffmpeg/mathematics.h
-include/ffmpeg/md5.h
-include/ffmpeg/mem.h
-include/ffmpeg/opt.h
-include/ffmpeg/random.h
-include/ffmpeg/rational.h
-include/ffmpeg/rgb2rgb.h
-include/ffmpeg/rtp.h
-include/ffmpeg/rtsp.h
-include/ffmpeg/rtspcodes.h
-include/ffmpeg/swscale.h
-include/postproc/postprocess.h
+include/libavcodec/avcodec.h
+include/libavcodec/opt.h
+include/libavdevice/avdevice.h
+include/libavformat/avformat.h
+include/libavformat/avio.h
+include/libavformat/rtsp.h
+include/libavformat/rtspcodes.h
+include/libavutil/adler32.h
+include/libavutil/avstring.h
+include/libavutil/avutil.h
+include/libavutil/base64.h
+include/libavutil/common.h
+include/libavutil/crc.h
+include/libavutil/fifo.h
+include/libavutil/intfloat_readwrite.h
+include/libavutil/log.h
+include/libavutil/lzo.h
+include/libavutil/mathematics.h
+include/libavutil/md5.h
+include/libavutil/mem.h
+include/libavutil/random.h
+include/libavutil/rational.h
+include/libavutil/sha1.h
+include/libpostproc/postprocess.h
 lib/libavcodec.a
 lib/libavcodec.so
-lib/libavcodec.so.%%SHLIB_VER%%
-lib/libavcodec.so.51.44.0
+lib/libavcodec.so.1
+lib/libavcodec.so.51.61.0
+lib/libavdevice.a
+lib/libavdevice.so
+lib/libavdevice.so.1
+lib/libavdevice.so.52.0.0
 lib/libavformat.a
 lib/libavformat.so
-lib/libavformat.so.%%SHLIB_VER%%
-lib/libavformat.so.51.14.0
+lib/libavformat.so.1
+lib/libavformat.so.52.18.0
 lib/libavutil.a
 lib/libavutil.so
-lib/libavutil.so.%%SHLIB_VER%%
-lib/libavutil.so.49.5.0
+lib/libavutil.so.1
+lib/libavutil.so.49.7.0
 lib/libpostproc.a
 lib/libpostproc.so
-lib/libpostproc.so.%%SHLIB_VER%%
+lib/libpostproc.so.1
 lib/libpostproc.so.51.1.0
-%%SWSCAL%%lib/libswscale.a
-%%SWSCAL%%lib/libswscale.so
-%%SWSCAL%%lib/libswscale.so.%%SHLIB_VER%%
-%%SWSCAL%%lib/libswscale.so.0.5.0
-%%VHOOK%%lib/vhook/fish.so
-%%VHOOK%%lib/vhook/null.so
-%%VHOOK%%lib/vhook/ppm.so
-%%VHOOK%%lib/vhook/watermark.so
+lib/vhook/fish.so
+lib/vhook/null.so
+lib/vhook/ppm.so
+lib/vhook/watermark.so
 libdata/pkgconfig/libavcodec.pc
+libdata/pkgconfig/libavdevice.pc
 libdata/pkgconfig/libavformat.pc
 libdata/pkgconfig/libavutil.pc
 libdata/pkgconfig/libpostproc.pc
-libdata/pkgconfig/libswscale.pc
 @dirrm lib/vhook
-@dirrm include/postproc
-@dirrm include/ffmpeg
+@dirrm include/libpostproc
+@dirrm include/libavutil
+@dirrm include/libavformat
+@dirrm include/libavdevice
+@dirrm include/libavcodec

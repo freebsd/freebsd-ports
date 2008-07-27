@@ -1,50 +1,6 @@
---- configure.orig	2007-09-29 22:25:06.000000000 +0200
-+++ configure	2008-03-12 08:59:27.000000000 +0100
-@@ -211,11 +211,11 @@
- 
- # "tr '[a-z]' '[A-Z]'" is a workaround for Solaris tr not grokking "tr a-z A-Z"
- toupper(){
--    echo "$@" | tr '[a-z]' '[A-Z]'
-+    echo "$@" | tr '[:lower:]' '[:upper:]'
- }
- 
- tolower(){
--    echo "$@" | tr '[A-Z]' '[a-z]'
-+    echo "$@" | tr '[:upper:]' '[:lower:]'
- }
- 
- set_all(){
-@@ -604,9 +604,11 @@
-     ffmpeg
-     ffplay
-     ffserver
-+    freetype2
-     gpl
-     gprof
-     gray
-+    imlib2
-     ipv6
-     liba52
-     liba52bin
-@@ -1033,15 +1035,9 @@
-     enable fast_unaligned
-   ;;
-   x86_64|amd64)
--    arch="x86_32"
-     enable fast_unaligned
--    canon_arch="`$cc -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
--    if [ x"$canon_arch" = x"x86_64" -o x"$canon_arch" = x"amd64" ]; then
--      if [ -z "`echo $CFLAGS | grep -- -m32`"  ]; then
--        arch="x86_64"
--        enable fast_64bit
--      fi
--    fi
-+    arch="x86_64"
-+    enable fast_64bit
-   ;;
-   # armv4l is a subset of armv[567]*l
-   arm|armv[4567]*l)
-@@ -1491,8 +1487,8 @@
+--- configure.orig	2008-07-24 05:53:32.000000000 -0500
++++ configure	2008-07-27 17:31:20.767081842 -0500
+@@ -1596,8 +1596,8 @@
  
  if check_func dlopen; then
      ldl=
@@ -54,8 +10,8 @@
 +    ldl=
  fi
  
- check_func fork
-@@ -1597,10 +1593,17 @@
+ check_func  fork
+@@ -1718,10 +1718,17 @@
  if enabled vhook; then
      check_ldflags -rdynamic
      check_ldflags -export-dynamic
@@ -75,42 +31,17 @@
  
  ##########################################
  # SDL check
-@@ -1705,12 +1708,6 @@
-     check_cflags -Os            # not all compilers support -Os
-     optimize="small"
- elif enabled optimize; then
--    if test -n "`$cc -v 2>&1 | grep xlc`"; then
--        add_cflags  "-O5"
--        add_ldflags "-O5"
--    else
--        add_cflags "-O3"
--    fi
- fi
+@@ -2072,7 +2079,7 @@
+     eval ${name}_VERSION=\$${name}_VERSION_MAJOR.\$${name}_VERSION_MINOR.\$${name}_VERSION_MICRO
+     lcname=$(tolower $name)
+     eval echo "${lcname}_VERSION=\$${name}_VERSION" >> config.mak
+-    eval echo "${lcname}_VERSION_MAJOR=\$${name}_VERSION_MAJOR" >> config.mak
++    eval echo "${lcname}_VERSION_MAJOR=1" >> config.mak
+ }
  
- # PIC flags for shared library objects where they are needed
-@@ -1894,15 +1891,15 @@
- if enabled shared; then
-   echo "BUILD_SHARED=yes" >> config.mak
-   echo "PIC=-fPIC -DPIC" >> config.mak
--  echo "SPPMAJOR=${pp_version%%.*}" >> config.mak
-+  echo "SPPMAJOR=1" >> config.mak
-   echo "SPPVERSION=$pp_version" >> config.mak
--  echo "LAVCMAJOR=${lavc_version%%.*}" >> config.mak
-+  echo "LAVCMAJOR=%%SHLIB_VER%%" >> config.mak
-   echo "LAVCVERSION=$lavc_version" >> config.mak
--  echo "LAVFMAJOR=${lavf_version%%.*}" >> config.mak
-+  echo "LAVFMAJOR=%%SHLIB_VER%%" >> config.mak
-   echo "LAVFVERSION=$lavf_version" >> config.mak
--  echo "LAVUMAJOR=${lavu_version%%.*}" >> config.mak
-+  echo "LAVUMAJOR=%%SHLIB_VER%%" >> config.mak
-   echo "LAVUVERSION=$lavu_version" >> config.mak
--  echo "SWSMAJOR=${sws_version%%.*}" >> config.mak
-+  echo "SWSMAJOR=%%SHLIB_VER%%" >> config.mak
-   echo "SWSVERSION=$sws_version" >> config.mak
-   echo "SLIBNAME=${SLIBNAME}" >> config.mak
-   echo "SLIBNAME_WITH_VERSION=${SLIBNAME_WITH_VERSION}" >> config.mak
-@@ -1911,7 +1908,7 @@
-   echo "SLIB_INSTALL_EXTRA_CMD=${SLIB_INSTALL_EXTRA_CMD}" >> config.mak
+ get_version LIBSWSCALE  libswscale/swscale.h
+@@ -2096,7 +2103,7 @@
+     echo "SLIB_UNINSTALL_EXTRA_CMD=${SLIB_UNINSTALL_EXTRA_CMD}" >> config.mak
  fi
  echo "LIB_INSTALL_EXTRA_CMD=${LIB_INSTALL_EXTRA_CMD}" >> config.mak
 -echo "EXTRALIBS=$extralibs" >> config.mak
@@ -118,33 +49,3 @@
  
  print_config ARCH_   $TMPH config.mak $ARCH_LIST
  print_config HAVE_   $TMPH config.mak $HAVE_LIST
-@@ -1932,7 +1929,7 @@
- 
- echo "SRC_PATH=\"$source_path\"" >> config.mak
- echo "SRC_PATH_BARE=$source_path" >> config.mak
--echo "BUILD_ROOT=\"$PWD\"" >> config.mak
-+echo "BUILD_ROOT=\"$(pwd)\"" >> config.mak
- 
- # Apparently it's not possible to portably echo a backslash.
- enabled asmalign_pot &&
-@@ -2008,8 +2005,8 @@
- Version: $version
- Requires: $requires
- Conflicts:
--Libs: -L\${libdir} $libs
--Cflags: -I\${includedir} -I\${includedir}/$include
-+Libs: -L\${libdir} $libs -L%%LOCALBASE%%/lib
-+Cflags: -I\${includedir} -I\${includedir}/$include -I%%LOCALBASE%%/include
- EOF
- }
- 
-@@ -2032,7 +2029,8 @@
- Requires: $requires
- Conflicts:
- Libs: \${libdir}/${LIBPREF}${shortname}${LIBSUF} $libs
--Cflags: -I\${includedir}
-+Ldflags: -L%%LOCALBASE%%/lib
-+Cflags: -I\${includedir} -I%%LOCALBASE%%/include
- EOF
- }
- 

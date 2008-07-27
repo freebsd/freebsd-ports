@@ -3,11 +3,10 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#      $Id: Makefile 66 2007-10-09 17:50:49Z buhnux $
+#      $Id: Makefile 77 2008-07-27 21:50:37Z buhnux $
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2007-10-04
-PORTREVISION=	4
+DISTVERSION=	2008-07-27
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -29,14 +28,9 @@ OPTIONS=	AMR_NB	"AMR narrowband encoder" off \
 		IPV6	"IPV6 network support" on \
 		LAME	"lame MP3 codec" off \
 		LIBA52	"liba52 support"	on \
-		OGG	"OGG codec" on \
 		OPTIMIZED_CFLAGS "Additional optimizations" off \
 		SDL	"SDL support (build ffplay)" off \
-		SWSCALER "Software scaler support" off \
 		THEORA	"libtheora support (implies OGG)" on \
-		VHOOK	"video hooking" on \
-		VHOOK_FREETYPE2 "drawtext support (implies VHOOK)" off \
-		VHOOK_IMLIB2 "imlib2 support (implies VHOOK)" off \
 		VORBIS	"libvorbisenc support (implies OGG)" on \
 		X264	"X.264 codec" on \
 		XVID	"XVID codec" off
@@ -44,11 +38,10 @@ OPTIONS=	AMR_NB	"AMR narrowband encoder" off \
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=--cc="${CC}" --prefix="${PREFIX}" \
-		--make="${GMAKE}" \
 		--disable-debug \
 		--enable-memalign-hack \
 		--enable-shared \
-		--enable-pp \
+		--enable-postproc \
 		--extra-cflags="${FFMPEG_CFLAGS} -I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib ${FFMPEG_LDFLAGS}" \
 		--extra-libs="${PTHREAD_LIBS}" \
@@ -100,12 +93,6 @@ FFMPEG_LDFLAGS+=	-la52
 .else
 CONFIGURE_ARGS+=	--disable-liba52
 .endif
-## dts
-#.ifdef(WITH_DTS) || exists(${LOCALBASE}/lib/libdca.a)
-#LIB_DEPENDS+=		dca.0:${PORTSDIR}/multimedia/libdca
-#CONFIGURE_ARGS+=	--enable-libdts
-#.endif
-## faac
 
 .ifdef(WITH_FAAC)
 LIB_DEPENDS+=		faac.0:${PORTSDIR}/audio/faac
@@ -161,14 +148,6 @@ CONFIGURE_ARGS+=	--enable-libmp3lame
 CONFIGURE_ARGS+=	--disable-libmp3lame
 .endif
 
-## ogg
-.if !defined(WITHOUT_OGG) || !defined(WITHOUT_VORBIS) || !defined(WITHOUT_THEORA)
-LIB_DEPENDS+=		ogg.5:${PORTSDIR}/audio/libogg
-CONFIGURE_ARGS+=	--enable-libogg
-.else
-CONFIGURE_ARGS+=	--disable-libogg
-.endif
-
 ## SDL
 .ifdef(WITH_SDL)
 USE_SDL+=	sdl
@@ -178,15 +157,6 @@ MAN1+=	ffplay.1
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
-.endif
-
-## swscaler
-.if defined(WITH_SWSCALER)
-CONFIGURE_ARGS+=	--enable-swscaler
-PLIST_SUB+=	SWSCAL=""
-.else
-CONFIGURE_ARGS+=	--disable-swscaler
-PLIST_SUB+=	SWSCAL="@comment "
 .endif
 
 ## theora
@@ -220,31 +190,6 @@ CONFIGURE_ARGS+=	--disable-libx264
 .if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
 FFMPEG_CFLAGS+=		-msse
 .endif
-
-.if !defined(WITHOUT_VHOOK) || defined(WITH_VHOOK_FREETYPE2) || defined(WITH_VHOOK_IMLIB2)
-. ifdef(WITH_VHOOK_FREETYPE2)
-LIB_DEPENDS+=   freetype.9:${PORTSDIR}/print/freetype2
-PLIST_FILES+=   lib/vhook/drawtext.so
-CONFIGURE_ARGS+=	--enable-freetype2
-. else
-CONFIGURE_ARGS+=	--disable-freetype2
-. endif # freetype2
-. ifdef(WITH_VHOOK_IMLIB2)
-USE_EFL+=	imlib2
-.  if !exists(${LOCALBASE}/include/X11/Xlib.h)
-CFLAGS+=	-DX_DISPLAY_MISSING
-.  endif
-PLIST_FILES+=   lib/vhook/imlib2.so
-CONFIGURE_ARGS+=	--enable-imlib2
-. else
-CONFIGURE_ARGS+=	--disable-imlib2
-. endif # imlib2
-CONFIGURE_ARGS+=	--enable-vhook
-PLIST_SUB+=	VHOOK=""
-.else
-CONFIGURE_ARGS+=	--disable-vhook
-PLIST_SUB+=	VHOOK="@comment "
-. endif
 
 ## xvid
 .ifdef(WITH_XVID)
@@ -320,13 +265,6 @@ post-patch:
 		${WRKSRC}/common.mak
 
 post-configure:
-#.ifdef(WITH_DTS)
-#	@${REINPLACE_CMD} -E \
-#		-e 's|-ldts|${LOCALBASE}/lib/libdts_pic.a|' \
-#		-e 's|(-lx264)|-L${LOCALBASE}/lib \1|' \
-#			${WRKSRC}/config.mak \
-#			${WRKSRC}/libavcodec/Makefile
-#.endif
 .ifdef(WITHOUT_THEORA)
 	@${REINPLACE_CMD} -E \
 		-e 's|^(CONFIG_LIBTHEORA).*$$|\1=no|' \
