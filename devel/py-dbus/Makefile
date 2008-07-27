@@ -8,6 +8,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.83.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome python
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,6 +36,13 @@ PLIST_SUB+=	HTML=""
 .else
 CONFIGURE_ARGS+=--disable-html-docs
 PLIST_SUB+=	HTML="@comment "
+.endif
+
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|HEADERS install-dist_docDATA|HEADERS|g ; \
+		s|PYTHON install-nodist_docDATA|PYTHON|g' \
+			${WRKSRC}/Makefile.in
 .endif
 
 post-install:
