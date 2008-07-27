@@ -163,6 +163,8 @@
 %%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/nl_NL/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/nl_NL/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.mo
@@ -257,6 +259,7 @@
 %%WWWDIR%%/modules/kajax/ajax.js
 %%WWWDIR%%/modules/localplay/httpq.controller.php
 %%WWWDIR%%/modules/localplay/mpd.controller.php
+%%WWWDIR%%/modules/localplay/shoutcast.controller.php
 %%WWWDIR%%/modules/mpd/CHANGELOG
 %%WWWDIR%%/modules/mpd/README
 %%WWWDIR%%/modules/mpd/USAGE
@@ -538,6 +541,8 @@
 @dirrm %%WWWDIR%%/locale/nl_NL
 @dirrm %%WWWDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/it_IT
+@dirrm %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ja_JP/
 @dirrm %%WWWDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/fr_FR
 @dirrm %%WWWDIR%%/locale/es_ES/LC_MESSAGES
