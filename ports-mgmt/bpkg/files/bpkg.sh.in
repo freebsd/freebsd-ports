@@ -1,4 +1,5 @@
 #!/bin/sh
+# @(#) bpkg.sh	simple tool for displaying information about ports
 # $FreeBSD$
 
 #  Copyright (c) 2007-2008 Andy Kosela <akosela@andykosela.com>
@@ -26,33 +27,30 @@
 #  SUCH DAMAGE.
 
 trap trap_exit 2
-
 pkg=$@
 
-root() {
-	if [ `id -u` != 0 ]; then
-		echo "bpkg: access denied, root privileges required"
-		exit 0
-	fi
-}
-
-trap_exit() {
+trap_exit()
+{
 	echo -e "\n*** SIGINT ***"
 	exit 1
 }
 
-missing() {
-	echo "bpkg: can't find the port in /usr/ports/"
-	exit 0
+root()
+{
+	if [ `id -u` != 0 ]; then
+		echo "bpkg: access denied, root privileges required"
+		exit 1
+	fi
 }
 
-main() {
-	help
-}
+###############################################################################
+# Start of main functions
 
-pkg_info-xI() {
+pkg_info-xI()
+{
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d/ -f5`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d/ -f5`
 	
 		if [ -z "$info" ]; then
 		    path=`cd /usr/ports && make search path=/$e | \
@@ -70,9 +68,11 @@ pkg_info-xI() {
 	exit 0
 }
 
-pkg_info-xL() {
+pkg_info-xL()
+{
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
 
 		if [ ! -z "$info" ]; then
 		    for i in $info; do
@@ -90,16 +90,19 @@ pkg_info-xL() {
 	exit 0
 }
 
-pkg_inf() {
+pkg_inf()
+{
 	echo -e "\033[33m*** installed ***\033[0m"
 	pkg_info 
 	echo "***`pkg_info | wc -l` ports installed     ***"
 	exit 0
 }
 
-pkg_info-xs() {
+pkg_info-xs()
+{
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
 
 		if [ ! -z "$info" ]; then
 		    for i in $info; do
@@ -117,9 +120,11 @@ pkg_info-xs() {
 	exit 0
 }
 
-pkg_info-xr() {
+pkg_info-xr()
+{
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
 	
 		if [ -z "$info" ]; then
 		    path=`cd /usr/ports && make search path=/$e.* | \
@@ -152,9 +157,11 @@ pkg_info-xr() {
 	exit 0
 }
 
-pkg_info-xg() {
+pkg_info-xg()
+{
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
 
 		if [ ! -z "$info" ]; then
 		    for i in $info; do
@@ -172,9 +179,11 @@ pkg_info-xg() {
 	exit 0
 }
 
-pkg_info-xf() {
+pkg_info-xf()
+{
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
 	
 		if [ -z "$info" ]; then
 		    path=`cd /usr/ports && make search path=/$e.* | \
@@ -202,9 +211,11 @@ pkg_info-xf() {
 	exit 0
 }
 
-pkg_info-xk() {
+pkg_info-xk()
+{
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
 
 		if [ ! -z "$info" ]; then
 		    for i in $info; do
@@ -222,9 +233,11 @@ pkg_info-xk() {
 	exit 0
 }
 
-pkg_info-xD() {
+pkg_info-xD()
+{
         for e in $pkg; do
-                info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+                info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
                 
                 if [ ! -z "$info" ]; then
 		    for i in $info; do
@@ -242,9 +255,11 @@ pkg_info-xD() {
         exit 0
 }
 
-pkg_info-x() {
+pkg_info-x()
+{
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
 	
 		if [ -z "$info" ]; then
 		    path=`cd /usr/ports && make search path=/$e.* | \
@@ -272,15 +287,18 @@ pkg_info-x() {
 	exit 0
 }
 
-pkg_ver() {
+pkg_ver()
+{
 	echo -e "\033[33m*** installed ***\033[0m"
 	pkg_version -Iv
 	echo "***`pkg_info | wc -l` ports installed     ***"
 	exit 0
 }
 
-pkg_path() {
-	path=`cd /usr/ports && make search path=/$pkg | grep -w Path | cut -d/ -f4,5`
+pkg_path()
+{
+	path=`cd /usr/ports && make search path=/$pkg | grep -w Path | \
+	    cut -d/ -f4,5`
 	for e in $path; do
 		echo "$e" ; cat /usr/ports/$e/Makefile | grep -w COMMENT | \
 		    cut -d= -f2
@@ -288,17 +306,21 @@ pkg_path() {
 	exit 0
 }
 
-pkg_makefile() {
-	path=`cd /usr/ports && make search path=/$pkg$ | grep -w Path | cut -d/ -f4,5`
-	[ -z "$path" ] && missing
+pkg_makefile()
+{
+	path=`cd /usr/ports && make search path=/$pkg$ | grep -w Path | \
+	    cut -d/ -f4,5`
+	[ -z "$path" ] && echo "bpkg: can't find the port in /usr/ports/"
 
 	less /usr/ports/$path/Makefile 2>/dev/null
 	exit 0
 }
 
-make_search() {
+make_search()
+{
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
 		if [ -z "$info" ]; then
 		    path=`cd /usr/ports && make search path=/$e | \
 			grep -w Path | cut -d/ -f4,5`
@@ -319,21 +341,24 @@ make_search() {
 	exit 0
 }
 
-make_search_S() {
+make_search_S()
+{
 	for e in $pkg; do
 		cd /usr/ports && make search path=/$e
 	done
 	exit 0
 }
 
-make_search_info() {
+make_search_info()
+{
 	for e in $pkg; do
 		cd /usr/ports && make search info=$e
 	done
 	exit 0
 }
 
-pkg_ftp() {
+pkg_ftp()
+{
 	arch=`uname -m`
 	sys=`uname -r | cut -d- -f1,2 | tr '[:upper:]' '[:lower:]'`
 
@@ -346,7 +371,8 @@ pkg_ftp() {
 	exit 0
 }
 
-pkg_latestftp() {
+pkg_latestftp()
+{
 	arch=`uname -m`
 
 	for e in $pkg; do
@@ -358,7 +384,8 @@ pkg_latestftp() {
 	exit 0
 }
 
-pkg_clean() {
+pkg_clean()
+{
 	root
 	echo "Cleaning /usr/ports/distfiles/*"
 	rm -rf /usr/ports/distfiles/* 1>/dev/null 2>&1
@@ -366,7 +393,8 @@ pkg_clean() {
 	exit 0
 }
 
-pkg_clean2() {
+pkg_clean2()
+{
 	root
 	echo "Cleaning /usr/ports/distfiles/* and /usr/ports/*/*/work/"
 	rm -rf /usr/ports/distfiles/* 1>/dev/null 2>&1 
@@ -375,13 +403,15 @@ pkg_clean2() {
 	exit 0
 }
 
-pkg_which-() {
+pkg_which-()
+{
 	grep "$pkg"$ /var/db/pkg/*/+CONTENTS | awk -F 'pkg/' '{ print $2 }' | \
 	    sed '/@dirrm/ d ; /@unexec/ d ; /@comment/ d ; s/\/+CONTENTS//g ; s/:@comment .*ORIGIN//g' | awk -F: '{ print $1 ":\t" $2 }'
 	exit 0
 }
 
-pkg_backup() {
+pkg_backup()
+{
 	root
 	z=`pkg_info -xoQ $pkg 2>/dev/null`
 
@@ -401,16 +431,19 @@ pkg_backup() {
 	exit 0
 }	
 
-pkg_time() { 
+pkg_time()
+{ 
 	/bin/ls -lUTt /var/db/pkg/ | awk -F' ' '{ print $6,$7,$8,$9,$10 }' | \
 	    cut -d/ -f1,5 
 	echo "***`pkg_info | wc -l` ports installed     ***"
 	exit 0
 }
 
-make_showc() {
+make_showc()
+{
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
 		if [ -z "$info" ]; then
 		    path=`cd /usr/ports && make search path=/$e.* | \
 			grep Path | cut -d/ -f4,5`
@@ -448,10 +481,12 @@ make_showc() {
 	exit 0
 }
 
-make_rmc() {
+make_rmc()
+{
 	root
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
 	
 		if [ -z "$info" ]; then
 		    path=`cd /usr/ports && make search path=/$e.* | \
@@ -490,10 +525,13 @@ make_rmc() {
 	exit 0
 }
 
-make_config() {
+make_config()
+{
 	root
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
+
 		if [ -z "$info" ]; then
 		    path=`cd /usr/ports && make search path=/$e.* | \
 			grep Path | cut -d/ -f4,5`
@@ -531,9 +569,11 @@ make_config() {
 	exit 0
 }
 
-make_ldd() {
+make_ldd()
+{
 	for e in $pkg; do
-		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | cut -d: -f3`
+		info=`grep $e /var/db/pkg/*/+CONTENTS | grep -w ORIGIN | \
+		    cut -d: -f3`
 	
 		if [ -z "$info" ]; then
 		    echo "bpkg: no installed ports match $e"
@@ -558,7 +598,8 @@ make_ldd() {
 	exit 0
 }
 
-make_ldd_all() {
+make_ldd_all()
+{
 	echo ""
 	echo "List of all missing dynamic object dependencies:"
 
@@ -760,7 +801,8 @@ make_ldd_all() {
 	exit 0
 }
 
-help() {
+help()
+{
 	echo "bpkg version `pkg_info -xI bpkg | cut -d- -f2 | cut -d' ' -f1`" 
 	echo ""
 	echo "Usage: bpkg [-bdefgiIjkLmMoOpqQrsSwz] pkg-name ..."
@@ -772,7 +814,7 @@ help() {
 }
 
 # End of functions
-################################################################################
+###############################################################################
 
 while getopts b:d:e:f:g:i:I:j:k:L:m:M:o:O:p:q:Q:r:s:S:w:z:cChltvZ opts; do
 	case $opts in
@@ -831,4 +873,4 @@ while getopts b:d:e:f:g:i:I:j:k:L:m:M:o:O:p:q:Q:r:s:S:w:z:cChltvZ opts; do
 	esac
 done
 
-main
+help
