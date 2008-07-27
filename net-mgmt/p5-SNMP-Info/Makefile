@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	SNMP-Info
-PORTVERSION=	1.07
-PORTREVISION=	1
+PORTVERSION=	1.09
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	snmp-info
@@ -49,6 +48,7 @@ MAN3=	SNMP::Info.3 SNMP::Info::Airespace.3 SNMP::Info::Bridge.3 \
 	SNMP::Info::Layer2::Netgear.3 SNMP::Info::Layer3::Dell.3 \
 	SNMP::Info::Layer3::Enterasys.3 SNMP::Info::Layer3::Microsoft.3 \
 	SNMP::Info::Layer3::NetSNMP.3 SNMP::Info::Layer3::Netscreen.3\
-	SNMP::Info::Layer3::Sun.3 SNMP::Info::PowerEthernet.3
+	SNMP::Info::Layer3::Sun.3 SNMP::Info::PowerEthernet.3 \
+	SNMP::Info::Layer3::HP9300.3
 
 .include <bsd.port.mk>

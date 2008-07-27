@@ -61,6 +61,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/Netscreen.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Passport.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Sun.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/HP9300.pm
 %%SITE_PERL%%/SNMP/Info/MAU.pm
 %%SITE_PERL%%/SNMP/Info/NortelStack.pm
 %%SITE_PERL%%/SNMP/Info/PowerEthernet.pm
