@@ -5,8 +5,9 @@ include/synce_log.h
 include/synce_socket.h
 include/synce_types.h
 include/synce_vector_template.h
-lib/libsynce.a
-lib/libsynce.la
+include/synce_sys_error.h
 lib/libsynce.so
+lib/libsynce.la
+lib/libsynce.a
 lib/libsynce.so.0
 libdata/pkgconfig/libsynce.pc
