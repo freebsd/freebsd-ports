@@ -1,0 +1,31 @@
+%%SITE_PERL%%/MooseX/AttributeHelpers.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Base.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Bool.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Collection.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Collection/Array.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Collection/Bag.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Collection/Hash.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Collection/ImmutableHash.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Collection/List.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Counter.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Meta/Method/Curried.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Meta/Method/Provided.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider/Array.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider/Bag.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider/Bool.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider/Counter.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider/Hash.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider/ImmutableHash.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider/List.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider/String.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/Number.pm
+%%SITE_PERL%%/MooseX/AttributeHelpers/String.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AttributeHelpers/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AttributeHelpers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider
+@dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/Meta/Method
+@dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/Collection
+@dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers
+@dirrmtry %%SITE_PERL%%/MooseX

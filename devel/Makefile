@@ -1468,6 +1468,7 @@
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-Moose
     SUBDIR += p5-Moose-Policy
+    SUBDIR += p5-MooseX-AttributeHelpers
     SUBDIR += p5-MooseX-ClassAttribute
     SUBDIR += p5-MooseX-IOC
     SUBDIR += p5-MooseX-Policy-SemiAffordanceAccessor
