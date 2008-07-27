@@ -27,6 +27,6 @@
 -@MAINTAINER_NO_DOCS_FALSE@	examples/copydatabase.1 \
 -@MAINTAINER_NO_DOCS_FALSE@	examples/delve.1 examples/quest.1
 +@MAINTAINER_NO_DOCS_FALSE@	$(am__append_7)
- bin_quartzcheck_CXXFLAGS = -I$(top_srcdir)/backends/quartz
+ bin_quartzcheck_CPPFLAGS = -I$(top_srcdir)/backends/quartz
  bin_quartzcheck_SOURCES = bin/quartzcheck.cc
  bin_quartzcheck_LDADD = $(ldflags) libquartzcheck.la libxapian.la
