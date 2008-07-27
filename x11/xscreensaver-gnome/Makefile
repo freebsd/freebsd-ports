@@ -8,7 +8,7 @@
 
 PORTNAME?=	xscreensaver-gnome
 PORTVERSION=	5.06
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -36,9 +36,12 @@ CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS?=	PAM "Pluggable Authentication Module support" off \
+OPTIONS?=	PAM "Pluggable Authentication Module support" on \
+		KEYRING "Enable GnomeKeyring/PAM integration" on \
 		ALL_FORTUNES "Enable support for all fortunes" off \
 		SETUID_HACKS "Install sonar hack suid so it can ping" off
+
+SUB_FILES+=	xscreensaver.pam
 
 MAN1?=	xscreensaver-command.1 xscreensaver-demo.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
@@ -90,9 +93,18 @@ CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
 .if defined(WITH_PAM)
 CONFIGURE_ARGS+=	--with-pam
 PLIST_SUB+=		PAM=""
+.if defined(WITH_KEYRING)
+SUB_LIST+=		PAM_KEYRING=
+RUN_DEPENDS+=		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
+.else
+SUB_LIST+=		PAM_KEYRING=\#
+.endif
 .else
 CONFIGURE_ARGS+=	--without-pam
 PLIST_SUB+=		PAM="@comment "
+.if defined(WITH_KEYRING)
+.warning Option KEYRING needs PAM, but PAM is disabled.
+.endif
 .endif
 
 .if defined(WITH_SETUID_HACKS)
@@ -114,10 +126,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/pam.d|${PREFIX}/etc/pam.d|g' \
 	    	${WRKSRC}/${f}
 .endfor
-	@${CP} ${FILESDIR}/xscreensaver.pam ${WRKSRC}/driver/xscreensaver.pam
 .else
 	@${REINPLACE_CMD} -e 's|install-xml install-pam|install-xml|' \
 	    	${WRKSRC}/driver/Makefile.in
+.endif
+
+pre-install:
+.if defined(WITH_PAM)
+	@${CP} ${WRKDIR}/xscreensaver.pam ${WRKSRC}/driver/xscreensaver.pam
 .endif
 
 .if !target(post-install-slave)
