@@ -1,0 +1,19 @@
+%%SITE_PERL%%/MooseX/POE.pm
+%%SITE_PERL%%/MooseX/POE/Aliased.pm
+%%SITE_PERL%%/MooseX/POE/Meta/Class.pm
+%%SITE_PERL%%/MooseX/POE/Meta/Instance.pm
+%%SITE_PERL%%/MooseX/POE/Meta/Instance/Deferred.pm
+%%SITE_PERL%%/MooseX/POE/Meta/Role.pm
+%%SITE_PERL%%/MooseX/POE/Object.pm
+%%SITE_PERL%%/MooseX/POE/Object/Deferred.pm
+%%SITE_PERL%%/MooseX/POE/Role.pm
+%%SITE_PERL%%/ooseX/POE.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/POE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/POE/Object
+@dirrmtry %%SITE_PERL%%/MooseX/POE/Meta/Instance
+@dirrmtry %%SITE_PERL%%/MooseX/POE/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/POE
+@dirrmtry %%SITE_PERL%%/MooseX
+@dirrmtry %%SITE_PERL%%/ooseX
