@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	ssl-admin
-DISTVERSION=	1.0b1.1
+DISTVERSION=	1.0b1.2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		ftp://ftp.secure-computing.net/pub/FreeBSD/ports/
+MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/ \
+		${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	OpenSSL certificate manager
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/zip \
 		zip:${PORTSDIR}/archivers/unzip
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.0b1
 
 USE_PERL5_RUN=	YES
 MAN1=		ssl-admin.1
