@@ -16,7 +16,7 @@
 +#elif defined(__POSIX__)
 +    tcgetattr(0, &orig); tcgetattr(0, &new);
 +    new.c_lflag &= ~ICANON; new.c_lflag &= ~ISIG; new.c_lflag &= ~ECHO;
-+    new.c_lflag &= ~IXON;
++    new.c_lflag &= ~IXON; new.c_cc[VMIN] = 1;
 +    new.c_cc[4] = 1; new.c_cc[5] = 0;   tcsetattr(0, TCSANOW, &new);
  #else
      ioctl(0, TCGETA, &orig); ioctl(0, TCGETA, &new);
