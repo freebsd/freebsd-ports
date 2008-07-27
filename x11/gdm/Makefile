@@ -8,7 +8,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	2.20.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -39,6 +39,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTKDOC="false"
 CONFIGURE_ARGS=--with-console-kit=yes
 
+SUB_FILES+=	gdm.pam
+
 GDMDIR?=	${PREFIX}/etc/gdm
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -47,14 +49,16 @@ GNOME_LOCALSTATEDIR=	/var
 MAN1=		gdm.1
 
 OPTIONS=	IPV6 "Enable IPv6 support" off \
+		KEYRING "Enable GnomeKeyring/PAM integration" on \
 		LOG_LIMIT "Limit ~/.xsession-errors size" on
 
 .include <bsd.port.pre.mk>
 
-.if exists(/usr/include/security/pam_misc.h)
-PLIST_SUB+=	PAM_MISC=""
+.if defined(WITHOUT_KEYRING)
+SUB_LIST+=	PAM_KEYRING=\#
 .else
-PLIST_SUB+=	PAM_MISC="@comment "
+RUN_DEPENDS+=	${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
+SUB_LIST+=	PAM_KEYRING=
 .endif
 
 .if !defined(WITHOUT_IPV6)
@@ -88,6 +92,7 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/config/gdm.conf-custom \
 		${PREFIX}/etc/gdm/custom.conf.default
+	${INSTALL_DATA} ${WRKDIR}/gdm.pam ${PREFIX}/etc/pam.d/gdm
 	@${MKDIR} ${PREFIX}/etc/gdm/Sessions
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
