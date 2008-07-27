@@ -5,6 +5,7 @@
 %%SITE_PERL%%/HTML/Template/Compiled/Compiler.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Exception.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Expression.pm
+%%SITE_PERL%%/HTML/Template/Compiled/Expr.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Expression/Expressions.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Filter.pm
 %%SITE_PERL%%/HTML/Template/Compiled/Formatter.pm

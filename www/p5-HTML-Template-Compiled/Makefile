@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Template-Compiled
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,7 @@ MAN3=		HTML::Template::Compiled.3 \
 		HTML::Template::Compiled::Plugin::DHTML.3 \
 		HTML::Template::Compiled::Exception.3 \
 		HTML::Template::Compiled::Expression.3 \
+		HTML::Template::Compiled::Expr.3 \
 		HTML::Template::Compiled::Formatter.3 \
 		HTML::Template::Compiled::Filter.3 \
 		HTML::Template::Compiled::Parser.3 \
