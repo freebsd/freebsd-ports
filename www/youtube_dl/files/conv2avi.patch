@@ -1,34 +1,42 @@
---- youtube-dl.orig	2008-06-09 09:36:33.000000000 +0400
-+++ youtube-dl	2008-06-09 09:43:10.000000000 +0400
-@@ -216,6 +216,7 @@
- cmdl_parser.add_option('-t', '--title', action='store_true', dest='use_title', help='use title in file name')
- cmdl_parser.add_option('-l', '--literal', action='store_true', dest='use_literal', help='use literal title in file name')
- cmdl_parser.add_option('-n', '--netrc', action='store_true', dest='use_netrc', help='use .netrc authentication data')
-+cmdl_parser.add_option('-a', '--avi', action='store_true', dest='use_avi', help='convert file to MPEG4 format')
- cmdl_parser.add_option('-g', '--get-url', action='store_true', dest='get_url', help='print final video URL only')
- cmdl_parser.add_option('-2', '--title-too', action='store_true', dest='get_title', help='used with -g, print title too')
- cmdl_parser.add_option('-f', '--format', dest='video_format', metavar='FORMAT', help='append &fmt=FORMAT to the URL')
-@@ -420,6 +421,22 @@
- 	
- 	except KeyboardInterrupt:
- 		sys.exit('\n')
--	
+--- youtube-dl.orig	2008-07-27 11:21:44.000000000 +0400
++++ youtube-dl	2008-07-27 11:24:01.000000000 +0400
+@@ -288,6 +288,22 @@
+ 					except (urllib2.URLError, httplib.HTTPException, socket.error), err:
+ 						retcode = self.trouble('ERROR: unable to download video data: %s' % str(err))
+ 						continue
 +
-+	# Convert to avi if needed
-+	avi_filename = '%s.avi' % video_filename
++					# Convert to avi if needed
++					if self._params['useavi']:
++						avi_filename = '%s.avi' % filename
 +
-+	try:
-+		os.system('%%CONV2AVI_CMD%% "%s" "%s" > %s 2> %s' % (video_filename, avi_filename, os.path.devnull, os.path.devnull))
-+		cond_print('Video file converted to %s\n' % avi_filename)
-+	except OSError:
-+		sys.exit('Error: unable to convert file.\n')
-+	except KeyboardInterrupt:
-+		sys.exit('\n')
++						try:
++							os.system('%%CONV2AVI_CMD%% "%s" "%s" > %s 2> %s' % (filename, avi_filename, os.path.devnull, os.path.devnull))
++							self.to_stdout('Video file converted to %s' % avi_filename)
++						except OSError, e:
++							retcode = self.trouble('ERROR: unable to convert file: %s' % e.strerror)
 +
-+	try:
-+		os.unlink(video_filename)
-+	except OSError:
-+		sys.exit('Error: unable to remove downloaded file.\n')
++						try:
++							os.unlink(filename)
++						except OSError, e:
++							retcode = self.trouble('ERROR: unable to remove downloaded file: %s' % e.strerror)
 +
- # Finish
- sys.exit()
+ 				break
+ 			if not suitable_found:
+ 				retcode = self.trouble('ERROR: no suitable InfoExtractor: %s' % url)
+@@ -773,6 +789,8 @@
+ 				action='store_true', dest='useliteral', help='use literal title in file name', default=False)
+ 		parser.add_option('-n', '--netrc',
+ 				action='store_true', dest='usenetrc', help='use .netrc authentication data', default=False)
++		parser.add_option('-a', '--avi',
++				action='store_true', dest='useavi', help='convert file to MPEG4 format', default=False)
+ 		parser.add_option('-g', '--get-url',
+ 				action='store_true', dest='geturl', help='simulate, quiet but print URL', default=False)
+ 		parser.add_option('-e', '--get-title',
+@@ -829,6 +847,7 @@
+ 				or u'%(id)s.%(ext)s'),
+ 			'ignoreerrors': opts.ignoreerrors,
+ 			'ratelimit': opts.ratelimit,
++			'useavi': opts.useavi,
+ 			})
+ 		fd.add_info_extractor(youtube_pl_ie)
+ 		fd.add_info_extractor(metacafe_ie)
