@@ -1,22 +1,40 @@
---- toolbox/Makefile.in.orig	2008-07-08 15:03:02.000000000 +0200
-+++ toolbox/Makefile.in	2008-07-08 15:03:49.000000000 +0200
-@@ -551,7 +551,7 @@
+--- toolbox/Makefile.in.orig	2008-07-02 00:31:34.000000000 +0200
++++ toolbox/Makefile.in	2008-07-27 15:13:21.000000000 +0200
+@@ -551,14 +551,14 @@
  	$(INSTALL) -d $(datadir)/applications/
  	$(INSTALL) -m 644 ../scripts/common/vmware-toolbox.desktop \
  		$(datadir)/applications/
 -	$(SED) -i s/Exec=.*/Exec=vmware-toolbox/ \
-+	$(SED) -e s/Exec=.*/Exec=vmware-toolbox/ \
++	$(SED) -i '' s/Exec=.*/Exec=vmware-toolbox/ \
  		$(datadir)/applications/vmware-toolbox.desktop
- 	$(INSTALL) -d /usr/share/pixmaps/vmware
+-	$(INSTALL) -d /usr/share/pixmaps/vmware
++	$(INSTALL) -d $(datadir)/pixmaps/vmware
  	$(INSTALL) -m 644 bigIcon.xpm \
---- toolbox/Makefile.am.orig	2008-07-08 15:03:10.000000000 +0200
-+++ toolbox/Makefile.am	2008-07-08 15:03:56.000000000 +0200
-@@ -65,7 +65,7 @@
+-		/usr/share/pixmaps/vmware/vmware-toolbox.xpm
++		$(datadir)/pixmaps/vmware/vmware-toolbox.xpm
+ uninstall-hook:
+ 	-$(RM) -f $(datadir)/share/applications/vmware-toolbox.desktop
+-	-$(RM) -rf /usr/share/pixmaps/vmware
++	-$(RM) -rf $(datadir)/pixmaps/vmware
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+--- toolbox/Makefile.am.orig	2008-07-02 00:31:20.000000000 +0200
++++ toolbox/Makefile.am	2008-07-27 15:13:02.000000000 +0200
+@@ -65,11 +65,11 @@
  	$(INSTALL) -d $(datadir)/applications/
  	$(INSTALL) -m 644 ../scripts/common/vmware-toolbox.desktop \
  		$(datadir)/applications/
 -	$(SED) -i s/Exec=.*/Exec=vmware-toolbox/ \
-+	$(SED) -e s/Exec=.*/Exec=vmware-toolbox/ \
++	$(SED) -i '' s/Exec=.*/Exec=vmware-toolbox/ \
  		$(datadir)/applications/vmware-toolbox.desktop
- 	$(INSTALL) -d /usr/share/pixmaps/vmware
+-	$(INSTALL) -d /usr/share/pixmaps/vmware
++	$(INSTALL) -d $(datadir)/pixmaps/vmware
  	$(INSTALL) -m 644 bigIcon.xpm \
+-		/usr/share/pixmaps/vmware/vmware-toolbox.xpm
++		$(datadir)/pixmaps/vmware/vmware-toolbox.xpm
+ uninstall-hook:
+-	-$(RM) -f $(datadir)/share/applications/vmware-toolbox.desktop
+-	-$(RM) -rf /usr/share/pixmaps/vmware
++	-$(RM) -f $(datadir)/applications/vmware-toolbox.desktop
++	-$(RM) -rf $(datadir)/pixmaps/vmware
