@@ -85,9 +85,9 @@ APACHE_LOGFILE_DIR?=	${APACHE_LOCALSTATE_DIR}/log
 
 .if exists(${LOCALBASE}/include/fnmatch.h)
 check-depends::
-	@pkg_info -W ${LOCALBASE}/include/fnmatch.h
+	@${PKG_INFO} -W ${LOCALBASE}/include/fnmatch.h
 	@${ECHO_CMD} "Dependency error, please do: pkg_delete " \
-		`pkg_info -q -W ${LOCALBASE}/include/fnmatch.h`
+		`${PKG_INFO} -q -W ${LOCALBASE}/include/fnmatch.h`
 	@${FALSE}
 .endif
 
