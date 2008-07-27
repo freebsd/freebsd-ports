@@ -8,23 +8,23 @@ upgrades.
 
 20080725:
   AFFECTS: users of x11-fm/nautilus and misc/shared-mime-info
-  Author: gnome@FreeBSD.org
+  AUTHOR: gnome@FreeBSD.org
 
   In order to properly update x11-fm/nautilus and
   misc/shared-mime-info, do the following using portupgrade:
 
-# pkg_deinstall -fO nautilus
-# portupgrade shared-mime-info
-# portinstall -O nautilus
+	# pkg_deinstall -fO nautilus
+	# portupgrade shared-mime-info
+	# portinstall -O nautilus
 
   Once misc/shared-mime-info has been updated, each user will need to run the
   following command:
 
-$ update-mime-database ~/.local/share/mime/
+	$ update-mime-database ~/.local/share/mime/
 
 20080725:
   AFFECTS: users of www/ojs2
-  Author: Greg Larkin <glarkin@FreeBSD.org>
+  AUTHOR: Greg Larkin <glarkin@FreeBSD.org>
 
   If you are upgrading from a prior version of ojs2, please backup
   your database, uploaded files directory and your config.inc.php before
@@ -33,7 +33,7 @@ $ update-mime-database ~/.local/share/mime/
 
 20080721:
   AFFECTS: users of net/freenet6
-  Author: Edwin Groothuis <edwin@mavetju.org>
+  AUTHOR: Edwin Groothuis <edwin@mavetju.org>
 
   Please note that there has been a major update of this port (from
   version 2.x to 5.x) and that the name of the binaries and configuration
@@ -54,7 +54,7 @@ $ update-mime-database ~/.local/share/mime/
 
 20080717:
   AFFECTS: Users of devel/anjuta
-  Author: gnome@FreeBSD.org
+  AUTHOR: gnome@FreeBSD.org
 
   Anjuta's neon dependency has been switched from neon26 to neon28.  The
   two are incompatible, so you will need to do the following to upgrade:
@@ -64,7 +64,7 @@ $ update-mime-database ~/.local/share/mime/
 
 20080714:
   AFFECTS: Users of www/squid
-  Author: Thomas-Martin Seck <tmseck@web.de>
+  AUTHOR: Thomas-Martin Seck <tmseck@web.de>
 
   www/squid has been updated to Squid 2.7.STABLE3.
 
@@ -415,13 +415,12 @@ $ update-mime-database ~/.local/share/mime/
   AFFECTS: users of multimedia/smplayer-*
   AUTHOR: miwi@FreeBSD.org
 
-  The slave port multimedia/smplayer-qt4 has been removed
-  with the upgrade of multimedia/smplayer to 0.6.0, qt3 is
-  no longer supported. They are now fully integrated into
-  multimedia/smplayer.
+  The slave port multimedia/smplayer-qt4 has been removed with the upgrade
+  of multimedia/smplayer to 0.6.0, qt3 is no longer supported. They are now
+  fully integrated into multimedia/smplayer.
 
-  Please uninstall multimedia/smplayer-qt4 port before
-  upgrading multimedia/smplayer to version 0.6.0 or higher.
+  Please uninstall multimedia/smplayer-qt4 port before upgrading
+  multimedia/smplayer to version 0.6.0 or higher.
 
 20080513:
   AFFECTS: users of security/amavisd-new
@@ -432,7 +431,7 @@ $ update-mime-database ~/.local/share/mime/
   SQL schema.  If you have third party programs that access SQL tables, you
   will need to update those also.
 
-  COMPATIBILITY WITH 2.5.4
+  COMPATIBILITY WITH 2.5.4:
 
   - when using SQL for logging (e.g. for a pen pals feature) or for
     quarantining, SQL tables tables maddr, msgs, msgrcpt and quarantine need
@@ -447,7 +446,7 @@ $ update-mime-database ~/.local/share/mime/
     has changed, so if a configuration file replaces this SQL clause
     by a non-default setting, it needs to be updated;
 
-  Full information in /usr/local/share/doc/amavisd-new/RELEASE_NOTES
+  Full information in /usr/local/share/doc/amavisd-new/RELEASE_NOTES.
 
 20080513:
   AFFECTS: users of audio/ampache
@@ -654,6 +653,7 @@ $ update-mime-database ~/.local/share/mime/
   AUTHOR: beech@FreeBSD.org
 
   For FreeBSD versions 7.0 and above:
+
   It is required with both skype and skype-devel to update to linux_base-fc6.
   Please do the following:
 
@@ -670,7 +670,8 @@ $ update-mime-database ~/.local/share/mime/
   osrelease.
 
   For FreeBSD versions 5.x and 6.x:
-  Please use the legacy version net/skype12
+
+  Please use the legacy version net/skype12:
 
 	portupgrade -o net/skype12 net/skype
 
@@ -894,10 +895,10 @@ $ update-mime-database ~/.local/share/mime/
   as /usr/local/etc/raddb_v1, then edit /etc/rc.conf to point the rc.d script
   to that location. For example:
 
-  radiusd_flags="-d /usr/local/etc/raddb_v1"
+	radiusd_flags="-d /usr/local/etc/raddb_v1"
 
   I cannot guarantee that all 1.x configurations will work with the 2.0
-  server,and I only recommend using a 1.x configuration as an interim measure.
+  server, and I only recommend using a 1.x configuration as an interim measure.
 
      [1] - http://www.freeradius.org/business/roadmap.html
      [2] - http://preview.tinyurl.com/ysrr6a
@@ -910,7 +911,7 @@ $ update-mime-database ~/.local/share/mime/
   straightforward, but it is still highly recommended to follow the
   upgrading instructions in the release notes:
 
-    http://www.perforce.com/perforce/doc.073/user/relnotes.txt
+	http://www.perforce.com/perforce/doc.073/user/relnotes.txt
 
 20080108:
   AFFECTS: users of irc/bitlbee
@@ -1038,10 +1039,10 @@ $ update-mime-database ~/.local/share/mime/
   GNOME has been updated to 2.20.1. All ports that depend on gnomehier have
   had their DATADIR moved from share/gnome/ to share/ (e.g.
   ${LOCALBASE}/share/gnome/ to ${LOCALBASE}/share/).
-  This puts the FreeBSD GNOME ports more in line with the default
-  GNOME installation hierarchy. To find the specific directories that
-  have changed, see misc/gnomehier/files/dirlist. To upgrade your
-  installed ports, you will need to use either sysutils/portupgrade or
+  This puts the FreeBSD GNOME ports more in line with the default GNOME
+  installation hierarchy. To find the specific directories that have
+  changed, see misc/gnomehier/files/dirlist. To upgrade your installed
+  ports, you will need to use either sysutils/portupgrade or
   sysutils/portmaster.
 
     Portupgrade users:
@@ -1054,9 +1055,8 @@ $ update-mime-database ~/.local/share/mime/
 	# portmaster -a
 
   If some of icons, applets, themes or other customized items have
-  disappeared from your desktop in this upgrade, you will need to
-  remove and re-add these items to make them appear again due to the
-  DATADIR change.
+  disappeared from your desktop in this upgrade, you will need to remove and
+  re-add these items to make them appear again due to the DATADIR change.
 
 20071024:
   AFFECTS: users of databases/mysql-connector-java
@@ -1106,7 +1106,7 @@ $ update-mime-database ~/.local/share/mime/
   AFFECTS: users of www/mediawiki
   AUTHOR: miwi@FreeBSD.org
 
-  www/mediawiki version is 1.11 now. 1.10 version was preserved on
+  www/mediawiki version is 1.11 now. 1.10 version was preserved as
   www/mediawiki110 port.
 
 20071008:
@@ -1143,8 +1143,8 @@ $ update-mime-database ~/.local/share/mime/
   They are now fully integrated into sysutils/nut and their functionality
   can be enabled/disabled in OPTIONS of sysutils/nut.
 
-  Please uninstall all sysutils/nut-* slave ports before upgrading sysutils/nut
-  to version 2.2.0 or higher.
+  Please uninstall all sysutils/nut-* slave ports before upgrading
+  sysutils/nut to version 2.2.0 or higher.
 
 20070930:
   AFFECTS: everyone
@@ -1161,16 +1161,16 @@ $ update-mime-database ~/.local/share/mime/
   AFFECTS: users of irc/ratbox-services
   AUTHOR: Lewis <moggie@elasticmind.net>
 
-  Significant changes have been made between the 1.0.x series and
-  the current release version of ratbox-services.
+  Significant changes have been made between the 1.0.x series and the
+  current release version of ratbox-services.
 
-  It is highly recommended that services be stopped, and the proper
-  upgrade procedure be followed as described in
-  '/usr/local/share/doc/ratbox-services/', before restarting
-  ratbox-services with the new release version.
+  It is highly recommended that services be stopped, and the proper upgrade
+  procedure be followed as described in
+  '/usr/local/share/doc/ratbox-services/', before restarting ratbox-services
+  with the new release version.
 
-  Please remember to backup the database before attempting an
-  upgrade, an incorrectly upgraded database may be rendered unusable.
+  Please remember to backup the database before attempting an upgrade, an
+  incorrectly upgraded database may be rendered unusable.
 
 20070926:
   AFFECTS: users of devel/p5-gearmand
@@ -1274,10 +1274,9 @@ $ update-mime-database ~/.local/share/mime/
   release of the OpenLDAP 2.4.x series, and contains significant changes
   compared to its previous release.
 
-  Berkeley DB 4.2 support was dropped and Berkeley DB 4.6 is now
-  default.  As this is still a beta release, it should be treated
-  accordingly and should not be used in critical environment e.g.
-  production environment.
+  Berkeley DB 4.2 support was dropped and Berkeley DB 4.6 is now default.
+  As this is still a beta release, it should be treated accordingly and
+  should not be used in critical (e.g. production) environments.
 
 20070904:
   AFFECTS: users of mail/qmail-scanner
@@ -1354,8 +1353,8 @@ $ update-mime-database ~/.local/share/mime/
   DESTDIR is a feature, that allows installation of ports into separate
   environments, like jails.  The previous implementation, introduced in the
   August 2006, had some problems and was very expensive to maintain.  It was
-  completely rolled back, and replaced with a brand new implementation utilizing
-  chroot.
+  completely rolled back, and replaced with a brand new implementation
+  utilizing chroot.
 
   When DESTDIR is set, the system will chroot into the specified directory,
   mount devfs, null mount the ports tree, then proceed with building and
@@ -1423,9 +1422,9 @@ $ update-mime-database ~/.local/share/mime/
   AUTHOR: brooks@FreeBSD.org
 
   The llvm bytecode and .ll formats have changed as have numerous
-  internal APIs.  Existing users should consult the release notes.
+  internal APIs.  Existing users should consult the release notes:
 
-    http://llvm.org/releases/2.0/docs/ReleaseNotes.html
+	http://llvm.org/releases/2.0/docs/ReleaseNotes.html
 
 20070716:
   AFFECTS: users of editors/emacs
@@ -1435,8 +1434,8 @@ $ update-mime-database ~/.local/share/mime/
   Since this is a major upgrade, all installed elisp ports should be
   reinstalled.
 
-  Please add EMACS_PORT_NAME=emacs22 to /etc/make.conf and
-  upgrade Emacs and related ports with:
+  Please add EMACS_PORT_NAME=emacs22 to /etc/make.conf and upgrade Emacs
+  and related ports with:
 
 	# portupgrade -fr emacs
 
@@ -1482,7 +1481,7 @@ $ update-mime-database ~/.local/share/mime/
   AFFECTS: users of www/mediawiki
   AUTHOR: miwi@FreeBSD.org
 
-  www/mediawiki version is 1.10 now. 1.9 version was preserved on
+  www/mediawiki version is 1.10 now. 1.9 version was preserved as
   www/mediawiki19 port.
 
 20070614:
@@ -1498,8 +1497,8 @@ $ update-mime-database ~/.local/share/mime/
   AFFECTS: users of net-mgmt/zabbix
   AUTHOR: infofarmer@FreeBSD.org
 
-  The agent part has been moved out into net/zabbix-agent. If you
-  need both the server and the agent, install both ports.
+  The agent part has been moved out into net/zabbix-agent. If you need both
+  the server and the agent, install both ports.
 
 20070612:
   AFFECTS: users of security/sshguard
@@ -1518,7 +1517,7 @@ $ update-mime-database ~/.local/share/mime/
   should be fairly straightforward, it is still highly recommended
   to follow the upgrading instructions in the release notes:
 
-    http://www.perforce.com/perforce/doc.062/user/relnotes.txt
+	http://www.perforce.com/perforce/doc.062/user/relnotes.txt
 
 20070525:
   AFFECTS: users of textproc/senna and textproc/p5-Senna
@@ -1741,11 +1740,11 @@ $ update-mime-database ~/.local/share/mime/
   AUTHOR: hrs@FreeBSD.org
 
   These ports now use PostScript virtual fonts to handle CJK CID/TT-CID
-  emulated fonts.  CIDFnmap still works but note that if a font
-  is both in Resource/Font or Resource/CIDFont and in CIDFnmap,
-  the entry in Resource/* will be used.  For the actual font mapping, see
-  files in Resource/CIDFont/*.  This is just an internal structural
-  change; default font mapping has not been changed.
+  emulated fonts.  CIDFnmap still works but note that if a font is both
+  in Resource/Font or Resource/CIDFont and in CIDFnmap, the entry in
+  Resource/* will be used.  For the actual font mapping, see files in
+  Resource/CIDFont/*.  This is just an internal structural change;
+  default font mapping has not been changed.
 
   If you use CIDFnmap to change a font mapping already defined by
   Resource/CIDFont/foo, you have to remove (or rename) the
@@ -1753,10 +1752,10 @@ $ update-mime-database ~/.local/share/mime/
 
 20070423:
   AFFECTS: users of www/p5-Kwiki
-  AUTHORS: clsung@FreeBSD.org
+  AUTHOR: clsung@FreeBSD.org
 
   The current version of Kwiki contains all plugins.
-  To upgrade from old version ( prior to 0.39):
+  To upgrade from old version (prior to 0.39), please do:
 
 	# cd <into your Kwiki site directory>
 	# rm index.cgi
@@ -1848,10 +1847,10 @@ $ update-mime-database ~/.local/share/mime/
   AUTHOR: nkoch@demig.de
 
   cvstrac is changed to use SQLite 3, users should backup their database
-  then restore after upgrading. For example,
+  then restore after upgrading. For example:
 
-  mv cvstrac.db cvstrac_2.db
-  sqlite cvstrac_2.db .dump | sqlite3 cvstrac.db
+	mv cvstrac.db cvstrac_2.db
+	sqlite cvstrac_2.db .dump | sqlite3 cvstrac.db
 
 20070327:
   AFFECTS: users of emulators/linux_base-fc6
@@ -1971,7 +1970,7 @@ $ update-mime-database ~/.local/share/mime/
   is now dependent on libdnet.  py-libdnet now only installs the libdnet
   python modules.  Since files previously owned by py-libdnet are now owned
   by its dependency, in order to upgrade correctly, py-libdnet must be
-  deinstall and then reinstalled manually.
+  deinstalled and then reinstalled manually.
 
 20070205:
   AFFECTS: all users of FreeBSD 4.X
@@ -2362,7 +2361,7 @@ $ update-mime-database ~/.local/share/mime/
   polkitd_enable="YES"
   hald_enable="YES"
 
-  Notes / known problems about mounting devices in media:/ with HAL enabled:
+  Notes and known problems about mounting devices in media:/ with HAL enabled:
 
   - Your user must be in group operator in order to be able to mount removable
     media.
@@ -2378,7 +2377,7 @@ $ update-mime-database ~/.local/share/mime/
     You can still mount them in KDE if ...
 
     - You have an fstab entry for your floppy pointing to a mountpoint
-      owned by your user (i.e. somewhere in your homedir)
+      owned by your user (e.g. somewhere in your homedir)
     - The vfs.usermount sysctl is set to 1
 
      ... by creating a floppy device icon on your KDE desktop and selecting
@@ -2399,9 +2398,9 @@ $ update-mime-database ~/.local/share/mime/
   AFFECTS: users of devel/p5-PAR
   AUTHOR: rafan@FreeBSD.org
 
-  As of version 0.97.0, all PAR::Packer logic, i.e. pp, parl and
-  all packaging tools are moved to another distribution. You can
-  install devel/p5-PAR-Packer to get them.
+  As of version 0.97.0, all PAR::Packer logic, i.e. pp, parl and all
+  packaging tools are moved to another distribution. You can install
+  devel/p5-PAR-Packer to get them.
 
 20061207:
   AFFECTS: users of net/samba3
@@ -2920,7 +2919,7 @@ $ update-mime-database ~/.local/share/mime/
   In order to fix a symbol collision between GraphicsMagick and libtidy,
   GraphicsMagick has been updated so that all its symbols are now prefixed with
   'Gm'. Consequently, all dependencies should be upgraded when you perform this
-  upgrade with this command :
+  upgrade with this command:
 
   portupgrade -rf graphics/GraphicsMagick
 
@@ -2983,7 +2982,7 @@ $ update-mime-database ~/.local/share/mime/
   - by default, textproc/aspell installs the English dictionaries (no
     change);
   - thereafter you can install any foreign dictionary;
-  - when you install a foreign dictionary, i.e. french/aspell or
+  - when you install a foreign dictionary, e.g. french/aspell or
     textproc/da-aspell, it installs only the dictionaries, and depends
     upon textproc/aspell for the programs;
   - if you don't need the English dictionaries, you can define
@@ -3299,8 +3298,8 @@ $ update-mime-database ~/.local/share/mime/
   AUTHOR: hq@FreeBSD.org
 
   To comply with the Porter's Handbook recommendations, spicetrade port no
-  longer defines USE_X_PREFIX. Hence the executable used to launch the game has
-  moved to ${PREFIX}/bin/spicetrade (was ${X11BASE}/bin/spicetrade).
+  longer defines USE_X_PREFIX. Hence the executable used to launch the game
+  has moved to ${PREFIX}/bin/spicetrade (was ${X11BASE}/bin/spicetrade).
 
 20060524:
   AFFECTS: users of java/jasmin
@@ -4537,8 +4536,8 @@ $ update-mime-database ~/.local/share/mime/
   you will have to take some precautions to update your KDE
   installation.
 
-  We recommend sticking to the following procedure. This procedure requires you
-  to have sysutils/portupgrade installed and to be the superuser (or using
+  We recommend sticking to the following procedure. This procedure requires
+  you to have sysutils/portupgrade installed and to be the superuser (or using
   sudo).
 
   1.) Delete installed packages which conflict with the updated KDE
@@ -4842,7 +4841,7 @@ $ update-mime-database ~/.local/share/mime/
   AFFECTS: users of www/opera-devel
   AUTHOR: avleeuwen@piwebs.com
 
-  Opera 8.0 final has been released and can be installed by installing the
+  Opera 8.0 final has been released and can be installed via the
   www/opera port. The opera-devel port is now deprecated. If you want
   to continue using the personal settings you used with www/opera-devel,
   issue this command:
@@ -4854,24 +4853,24 @@ $ update-mime-database ~/.local/share/mime/
   AUTHOR: avleeuwen@piwebs.com
 
   Opera has been updated to 8.0. If are upgrading from version 7.x or
-  below, it is recommend that you backup your personal "~/.opera"
+  below, it is recommended that you backup your personal ~/.opera
   directory and remove it, like this:
 
 	# cp -Rp ~/.opera ~/.opera-bak
-	# rm -rf ~/.opera/*
+	# rm -rf ~/.opera
 
   After that, you can put your bookmarks, email, contacts, etc. back in
   ~/.opera/. The most important files are your bookmarks
   (~/.opera/opera6.adr) and your emails (~/.opera/mail). It is not a good
   idea to put opera6.ini, userstyle.ini, search.ini, pluginpath.ini and other
   non-personal stuff back in ~/.opera/. If you need custom settings,
-  reconfigure Opera from the preferences pane or edit the files by hand.
+  reconfigure Opera from the Preferences pane or edit the files by hand.
 
 20050420:
   AFFECTS: users of www/ipython
   AUTHOR: dryice@liu.com.cn
 
-  This is backward-incompatible changes for pysh.
+  There are backward-incompatible changes for pysh:
 
   1. You must update your pysh profile (~/.ipython/ipythonrc-pysh):
      a) Add to it the line:
@@ -4885,11 +4884,11 @@ $ update-mime-database ~/.local/share/mime/
   AUTHOR: mezz@FreeBSD.org
 
   Opera has been updated to 8.0. If you are upgrade from version 7.x or
-  below, it is recommend for you to backup your personal "~/.linux-opera"
+  below, it is recommended for you to backup your personal ~/.linux-opera
   directory and remove it. It can be done following from the command line:
 
 	# cp -Rp ~/.linux-opera ~/.linux-opera-bak
-	# rm -rf ~/.linux-opera/*
+	# rm -rf ~/.linux-opera
 
   After that, you can put your bookmark, email, contacts and etc back in
   ~/.linux-opera/. The bookmark is ~/.linux-opera/opera6.adr and the email is
@@ -5097,7 +5096,7 @@ $ update-mime-database ~/.local/share/mime/
   AFFECTS: users of databases/mysql323-server
   AUTHOR: ale@FreeBSD.org
 
-  The MySQL Daemon must now be enabled / disabled in rc.conf.
+  The MySQL daemon must now be enabled/disabled in rc.conf.
   The base database directory can now be set and changed in rc.conf (default:
   /var/db/mysql). If you used to set DB_DIR to a different value during port
   compilation, you must specify it via the new "mysql_dbdir" rc variable.
@@ -5235,35 +5234,34 @@ $ update-mime-database ~/.local/share/mime/
   AFFECTS: users of print/teTeX-*
   AUTHOR: hrs@FreeBSD.org
 
-  print/teTeX-* are now based on teTeX 3.0. Although some
-  reliability fixes are also added, here are several common problems
-  which you might fall on.
+  print/teTeX-* are now based on teTeX 3.0. Although some reliability fixes
+  are also added, here are several common problems which you might fall on.
 
   1) $PREFIX/bin/pdftex is missing:
 
-   Probably your system has old files included teTeX 2.x which can
-   prevent the new version from working. Please remove the old
-   files first (see 20050206 in this file) and reinstall.
+    Probably your system has old files included teTeX 2.x which can
+    prevent the new version from working. Please remove the old files
+    first (see entry 20050206 in this file) and reinstall.
 
   2) Some formats are still corrupted (for example, "Fatal format file error;
      I'm stymied" is displayed) or not updated even after a clean install:
 
-   You might have old or corrupted *.fmt and/or *.map files
-   under /root/.texmf-* or $HOME/.texmf-* directories. Typically
-   these directories are generated when you invoke the updmap(1),
-   texconfig(1), or fmtutil(1) utility manually. However, for a period
-   after the first revision of the teTeX-base port erroneously used
-   fmtutil(1) to regenerate *.fmt files, you could have these directories
-   without your intent. In such a case, please remove these directories
-   and reinstall the ports (it is not needed to rebuild ports/packages).
-   Just for your information, $HOME/.texmf-config and $HOME/.texmf-var
-   can be used for your personal configuration.
+    You might have old or corrupted *.fmt and/or *.map files under
+    /root/.texmf-* or $HOME/.texmf-* directories. Typically these
+    directories are generated when you invoke the updmap(1), texconfig(1),
+    or fmtutil(1) utility manually. However, for a period after the first
+    revision of the teTeX-base port erroneously used fmtutil(1) to
+    regenerate *.fmt files, you could have these directories without your
+    intent. In such a case, please remove these directories and reinstall
+    the ports (it is not needed to rebuild ports/packages).  Just for your
+    information, $HOME/.texmf-config and $HOME/.texmf-var can be used for
+    your personal configuration.
 
   If you have other problems, please contact hrs@FreeBSD.org.
 
 20050212:
   AFFECTS: users of x11-fonts/mkbold, x11-fonts/mkitalic, and
-	x11-fonts/mkbold-mkitalic
+	   x11-fonts/mkbold-mkitalic
   AUTHOR: koma2@ms.u-tokyo.ac.jp
 
   The dependency on x11-fonts/mkbold and x11-fonts/mkitalic has been
@@ -5311,7 +5309,7 @@ $ update-mime-database ~/.local/share/mime/
   AUTHOR: tobez@FreeBSD.org
 
   lang/perl5 has been updated to 5.6.2, and lang/perl5.8 has been
-  updated to 5.8.6. you should update everything depending on perl, that
+  updated to 5.8.6. You should update everything depending on perl, that
   is:
 
     * first, upgrade your perl installation (use either lang/perl5 or
@@ -5320,10 +5318,10 @@ $ update-mime-database ~/.local/share/mime/
       have 5.8.6 or 5.6.2; this step is not needed on FreeBSD 5.X and
       FreeBSD -CURRENT;
     * run some magic incantations to upgrade all ports depending on perl,
-      that is run something like :
-      portupgrade -f `(pkg_info -R perl-5\* |tail +4; \
+      that is run something like:
+      portupgrade -f `(pkg_info -R perl-5\* | tail +4; \
 	find /usr/local/lib/perl5/site_perl/5.[68].[1245] -type f -print0 \
-	| xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
+	| xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //') | sort -u`
       This is likely to fail for a few ports, you'll have to upgrade them
       afterwards by hand.
 
@@ -5428,26 +5426,26 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   Therefore, you need to update the configuration files for each
   user running the iip isproxy daemon:
 
-  1) Backup configuration files
+  1) Backup configuration files:
 
-  cp ~/.iip/isproxy.ini ~/.iip/isproxy.ini.backup
-  cp ~/.iip/node.ref ~/.iip/node.ref.backup
+	cp ~/.iip/isproxy.ini ~/.iip/isproxy.ini.backup
+	cp ~/.iip/node.ref ~/.iip/node.ref.backup
 
-  2) Remove configuration files
+  2) Remove configuration files:
 
-  rm ~/.iip/isproxy.ini
-  rm ~/.iip/node.ref
+	rm ~/.iip/isproxy.ini
+	rm ~/.iip/node.ref
 
   3) Create new configuration. Fill information as requested. This
-  creates the updated isproxy.ini file
+  creates the updated isproxy.ini file:
 
-  isproxy -C
+	isproxy -C
 
   4) Start iip isproxy. This will initialize your updated node.ref
   file. This file will be automatically updated when you connect
-  to the iip network
+  to the iip network:
 
-  isproxy
+	isproxy
 
 20050110:
   AFFECTS: users of sysutils/nautilus-cd-burner
@@ -5512,9 +5510,11 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
   The default linux_base was changed from v7 to v8. You need to update from
   v7 to v8 and rebuild every linux port. To update run:
+
 	portupgrade -rf -o emulators/linux_base-8 emulators/linux_base
 
   In case you already use linux_base-8 you have to run:
+
 	portupgrade -rf emulators/linux_base-8
 
 20041229:
@@ -5527,8 +5527,9 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   and has permissions 1777 (read/write/access for everybody + sticky bit).
 
   To make sure everything is in working order, do (as root):
-  mkdir -p /tmp/.ICE-unix && chmod 1777 /tmp/.ICE-unix &&
-  chown root:wheel /tmp/.ICE-unix
+
+	mkdir -p /tmp/.ICE-unix && chmod 1777 /tmp/.ICE-unix &&
+	chown root:wheel /tmp/.ICE-unix
 
   Also, make sure you do NOT have clear_tmp_enable="YES" set in /etc/rc.conf,
   as it will remove the directory on every reboot and applications will re-
@@ -5619,8 +5620,9 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AFFECTS: users of net/freenet6
   AUTHOR: edwin@FreeBSD.org
 
-  The FreeNet6 Service must now be enabled / disabled in rc.conf:
-    freenet6_enable="YES"
+  The FreeNet6 service must now be enabled/disabled in rc.conf:
+
+	freenet6_enable="YES"
 
 20041213:
   AFFECTS: users of security/cryptplug, deskutils/kdepim3
@@ -5639,7 +5641,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AFFECTS: users of databases/postgresql-relay
   AUTHOR: edwin@FreeBSD.org
 
-  The PostgreSQL Relay must now be enabled / disabled in rc.conf:
+  The PostgreSQL Relay must now be enabled/ disabled in rc.conf:
     postgresqlrelay_enable="YES"
 
 20041212:
@@ -5864,8 +5866,8 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AFFECTS: users of databases/mysql40-server
   AUTHOR: ale@FreeBSD.org
 
-  The MySQL Daemon must now be enabled / disabled in rc.conf.
-  See the script for details.
+  The MySQL daemon must now be enabled/disabled in rc.conf.  See the
+  script for details.
 
 20041028:
   AFFECTS: users of net/netatalk
@@ -5892,8 +5894,8 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AFFECTS: users of databases/mysql50-server
   AUTHOR: ale@FreeBSD.org
 
-  The MySQL Daemon must now be enabled / disabled in rc.conf.
-  See the script for details.
+  The MySQL daemon must now be enabled/disabled in rc.conf.  See the
+  script for details.
 
 20041024:
   AFFECTS: users of mail/popfile
@@ -5932,15 +5934,15 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AFFECTS: users of databases/mysql41-server
   AUTHOR: ale@FreeBSD.org
 
-  The MySQL Daemon must now be enabled / disabled in rc.conf.
-  See the script for details.
+  The MySQL daemon must now be enabled/disabled in rc.conf.  See the
+  script for details.
 
 20041018:
   AFFECTS: users of mail/courier-imap
   AUTHOR: oliver@FreeBSD.org
 
-  The courier-imap port must now be enabled / disabled in rc.conf.
-  See the script for details.
+  The courier-imap port must now be enabled/disabled in rc.conf.  See the
+  script for details.
 
 20041015:
   AFFECTS: users of www/apache2 with devel/apr
@@ -6273,15 +6275,15 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   please do the following:
 
   1.) Copy /usr/local/share/config/kdm/kdmrc away to a safe place, for example
-  your home directory ( cp /usr/local/share/config/kdm/kdmrc ~/ )
+  your home directory (cp /usr/local/share/config/kdm/kdmrc ~/)
 
   2.) Run, as root: genkdmconf --no-old
 
   3.) Put your copy of kdmrc back to /usr/local/share/config/kdm/kdmrc (cp
-  ~/kdmrc /usr/local/share/config/kdm/ )
+  ~/kdmrc /usr/local/share/config/kdm/)
 
   Optional step 4.) Run, as root: genkdmconf (without any options) to update
-  your kdmrc to the latest configfile format
+  your kdmrc to the latest configuration file format
 
   Note for advanced users: Substitute /usr/local with your custom PREFIX if
   you're using one.
@@ -6290,15 +6292,16 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AFFECTS: users of lang/perl5.8
   AUTHOR: tobez@FreeBSD.org, mat@FreeBSD.org, marcus@FreeBSD.org
 
-  lang/perl5.8 has been updated to 5.8.5. you should update everything
+  lang/perl5.8 has been updated to 5.8.5. You should update everything
   depending on perl, that is:
+
     * first, upgrade your perl5.8 installation.
     * run "use.perl port", so that the system knows you have 5.8.5.
     * now, run some magic incantations to upgrade all ports depending on perl,
-      that is run something like :
-      portupgrade -f `(pkg_info -R perl-5.8.5 |tail +4; \
+      that is run something like:
+      portupgrade -f `(pkg_info -R perl-5.8.5 | tail +4; \
 	find /usr/local/lib/perl5/site_perl/5.8.[124] -type f -print0 \
-	| xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
+	| xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //') | sort -u`
       This is likely to fail for a few ports, you'll have to upgrade them
       afterwards.
       Please note, that this last step is, strictly speaking, not necessary,
@@ -6510,8 +6513,8 @@ Option "XkbRules" "xfree86"
   AFFECTS: users of net/openslp
   AUTHOR: kuriyama@FreeBSD.org
 
-  The openslp port must now be enabled / disabled and configured in
-  rc.conf. See the script for details.
+  The openslp port must now be enabled/disabled and configured in rc.conf.
+  See the script for details.
 
 20040619:
   AFFECTS: users of sysutils/webmin and sysutils/usermin
@@ -6580,15 +6583,15 @@ Option "XkbRules" "xfree86"
   AFFECTS: users of net/haproxy
   AUTHOR: clement@FreeBSD.org
 
-  The haproxy port must now be enabled / disabled and configured in
-  rc.conf. See the pkg-message or script for details.
+  The haproxy port must now be enabled/disabled and configured in rc.conf.
+  See the pkg-message or script for details.
 
 20040605:
   AFFECTS: users of www/apache2
   AUTHOR: clement@FreeBSD.org
 
-  The apache2 port must now be enabled / disabled and configured in
-  rc.conf. See the pkg-message or script for details.
+  The apache2 port must now be enabled/disabled and configured in rc.conf.
+  See the pkg-message or script for details.
 
 20040602:
   AFFECTS: users of sysutils/mkisofs and sysutils/mkisofs-devel
@@ -6609,14 +6612,15 @@ Option "XkbRules" "xfree86"
   AUTHOR: mat@FreeBSD.org, marcus@FreeBSD.org
 
   lang/perl5.8 has been updated to 5.8.4. you should update everything
-  depending on perl, that is :
+  depending on perl, that is:
+
     * first, upgrade your perl5.8 installation.
     * run "use.perl port", so that the system knows you have 5.8.4.
     * now, run some magic incantations to upgrade all ports depending on perl,
-      that is run something like :
-      portupgrade -f `(pkg_info -R perl-5.8.4 |tail +4; \
+      that is run something like:
+      portupgrade -f `(pkg_info -R perl-5.8.4 | tail +4; \
 	find /usr/local/lib/perl5/site_perl/5.8.2 -type f -print0 \
-	| xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u`
+	| xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //') | sort -u`
       This is likely to fail for a few ports, you'll have to upgrade them
       afterward.
 
@@ -6679,14 +6683,14 @@ Option "XkbRules" "xfree86"
   AFFECTS: users of www/apache13
   AUTHOR: nork@FreeBSD.org
 
-  The apache13 port must now be enabled / disabled and configured in
-  rc.conf. See the pkg-message or script for details.
+  The apache13 port must now be enabled/disabled and configured in rc.conf.
+  See the pkg-message or script for details.
 
 20040429:
   AFFECTS: users of sysutils/smartmontools
   AUTHOR: nork@FreeBSD.org
 
-  The smartmontools port must now be enabled / disabled and configured in
+  The smartmontools port must now be enabled/disabled and configured in
   rc.conf. See the pkg-message or script for details.
 
 20040420:
@@ -6717,7 +6721,7 @@ Option "XkbRules" "xfree86"
   problems if you are using the desktop itself. If you are a GNOME desktop
   user, you should carefully read the instructions at:
 
-  http://www.freebsd.org/gnome/docs/faq26.html
+	http://www.freebsd.org/gnome/docs/faq26.html
 
   And use the gnome_upgrade.sh script to properly upgrade to GNOME 2.6. If
   you are just a casual user of some of the GNOME libraries, portupgrade
@@ -6727,7 +6731,7 @@ Option "XkbRules" "xfree86"
   AFFECTS: users of net/isc-dhcp3-*
   AUTHOR: des@FreeBSD.org
 
-  The isc-dhcp3-* ports must now be enabled / disabled and configured in
+  The isc-dhcp3-* ports must now be enabled/disabled and configured in
   rc.conf. See the pkg-message for details.
 
 20040313:
@@ -6743,14 +6747,15 @@ Option "XkbRules" "xfree86"
   AFFECTS: users of databases/postgresql7
   AUTHOR: osa@FreeBSD.org
 
-  PostgreSQL 7.4.2 Released and release notes available at
-  http://www.postgresql.org/news/173.html
+  PostgreSQL 7.4.2 released and release notes available at:
+
+	http://www.postgresql.org/news/173.html
 
   NOTICE: unlike most minor versions, this version does require some
   updates to the pg_* system tables. Full instructions for how to do
   this are included in the full HISTORY file.
 
-  DO NOT UPGRADE WITHOUT READING THESE INSTRUCTIONS.
+	*** DO NOT UPGRADE WITHOUT READING THESE INSTRUCTIONS ***
 
 20040309:
   AFFECTS: users of x11/kdelibs3 and x11/kdebase3
@@ -6780,7 +6785,7 @@ Option "XkbRules" "xfree86"
   - Uncheck "Run with the highest possible priority (realtime priority)"
     in Control Center/Sound & Multimedia/Sound System BEFORE updating arts
 
-  OR
+  OR:
 
   - AFTER updating arts and kdebase, go to Control Center/Sound & Multimedia/
     Sound System, click on the unchecked "Run with the highest possible priority
