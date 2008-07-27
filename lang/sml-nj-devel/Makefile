@@ -288,7 +288,6 @@ deinstall:
 # variable used by multiexec-wrapper to select the executable
 # from that smlnj-devel-* package matching SMLNJ_DEVEL_VERSION.
 smlnj-devel-version:
-#	XXX PKG_INFO not in bsd.commands.mk (20070818)
 	@${EXPR} `${PKG_INFO} -q -O lang/sml-nj-devel` : '.*-\(.*\)' \
 		2>/dev/null || \
 	${ECHO_CMD} ${PKGVERSION}
