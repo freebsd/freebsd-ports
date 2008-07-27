@@ -4,30 +4,62 @@
 #
 # $FreeBSD$
 
-PORTNAME=	synce-rra
-PORTVERSION=	0.9.1
+PORTNAME=	librra
+PORTVERSION=	0.12
 CATEGORIES=	palm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	synce
+MASTER_SITES=	SF/synce
+PKGNAMEPREFIX?=	synce-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Remote Replication Agent Connection protocol library
+MAINTAINER=	webmaster@kibab.com
+COMMENT?=	Remote Replication Agent Connection protocol library
 
-LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce \
+LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce \
 		rapi.2:${PORTSDIR}/palm/synce-librapi2
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmimedir.a:${PORTSDIR}/devel/libmimedir
-RUN_DEPENDS=	${LOCALBASE}/lib/libmimedir.a:${PORTSDIR}/devel/libmimedir
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmimedir.a:${PORTSDIR}/devel/libmimedir
+RUN_DEPENDS+=	${LOCALBASE}/lib/libmimedir.a:${PORTSDIR}/devel/libmimedir
 
-MAN1=		synce-matchmaker.1
+OPTIONS?=	TOOLS	"Build with minor rra command line tools" on \
+		RECURR	"Enable experimential recurrence support" off
 
-USE_ICONV=	yes
+GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
+USE_ICONV=	yes
 USE_LDCONFIG=	yes
+USE_ICONV=	yes
+USE_GNOME=	gnomehack gnometarget
+CONFIGURE_ARGS+=	--with-libsynce="${LOCALBASE}" \
+			--with-libmimedir="${LOCALBASE}"
+
+.include <bsd.port.pre.mk>
+
+.if defined(RRA_SLAVE) && ${RRA_SLAVE} == "pythonb"
+# If we're building python bindings, omit building tools
+CONFIGURE_ARGS+=	--enable-python-bindings --disable-minor-tools
+.else
+# Not building bindings
+MAN1=	synce-matchmaker.1
+CONFIGURE_ARGS+=	--disable-minor-tools
+.if !defined(WITHOUT_TOOLS)
+PLIST_SUB+=	TOOLS="@comment "
+.else
+MAN1+=		rra-appointment-from-vevent.1 \
+		rra-appointment-to-vevent.1 rra-contact-from-vcard.1 \
+		rra-contact-to-vcard.1 rra-decode.1 \
+		rra-delete.1 rra-get-data.1 \
+		rra-get-ids.1 rra-get-types.1 \
+	        rra-get-recurring-appointments.1 rra-put-data.1 \
+	        rra-subscribe.1 rra-task-from-vtodo.1 \
+	        rra-task-to-vtodo.1 rra-timezone.1
+PLIST_SUB+=	TOOLS=""
+.endif
+
+.if defined(WITH_RECURR)
+CONFIGURE_ARGS+=	--enable-recurrence
+.endif
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/lib/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
