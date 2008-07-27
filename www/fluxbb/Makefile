@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	fluxbb
-PORTVERSION=	1.2.18
+PORTVERSION=	1.2.20
 CATEGORIES=	www
 MASTER_SITES=	http://fluxbb.org/download/releases/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A fast and lightweight PHP-powered discussion board
