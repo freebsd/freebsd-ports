@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Search-Xapian
-PORTVERSION=	1.0.6.0
-PORTREVISION=	1
+PORTVERSION=	1.0.7.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +15,7 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	xapian-core>=1.0.5:${PORTSDIR}/databases/xapian-core
+RUN_DEPENDS=	xapian-core>=1.0.7:${PORTSDIR}/databases/xapian-core
 
 PERL_CONFIGURE=	yes
 CC=		${CXX}
