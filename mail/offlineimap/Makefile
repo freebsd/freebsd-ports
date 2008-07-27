@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	offlineimap
-PORTVERSION=	4.0.11
-PORTREVISION=	1
+PORTVERSION=	6.0.0
 CATEGORIES=	mail python
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.quux.org/devel/offlineimap/
-MASTER_SITE_SUBDIR=	sergei
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -28,13 +26,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-MAN1=		offlineimap.1
-DOCS=		COPYRIGHT ChangeLog UPGRADING manual.html manual.pdf \
-		manual.ps manual.txt
+DOCS=		COPYING COPYRIGHT FAQ.html README UPGRADING
 EXAMPLES=	offlineimap.conf offlineimap.conf.minimal
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/offlineimap.1 ${MANPREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

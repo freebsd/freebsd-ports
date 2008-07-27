@@ -6,6 +6,9 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/Base.py
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/Base.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/Base.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/folder/Gmail.py
+%%PYTHON_SITELIBDIR%%/offlineimap/folder/Gmail.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/folder/Gmail.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/IMAP.py
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/IMAP.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/IMAP.pyo
@@ -25,6 +28,9 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/repository/Base.py
 %%PYTHON_SITELIBDIR%%/offlineimap/repository/Base.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/repository/Base.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/repository/Gmail.py
+%%PYTHON_SITELIBDIR%%/offlineimap/repository/Gmail.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/repository/Gmail.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/repository/IMAP.py
 %%PYTHON_SITELIBDIR%%/offlineimap/repository/IMAP.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/repository/IMAP.pyo
@@ -44,15 +50,15 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/Curses.py
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/Curses.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/Curses.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/ui/Machine.py
+%%PYTHON_SITELIBDIR%%/offlineimap/ui/Machine.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/ui/Machine.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/Noninteractive.py
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/Noninteractive.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/Noninteractive.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/TTY.py
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/TTY.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/TTY.pyo
-%%PYTHON_SITELIBDIR%%/offlineimap/ui/Tk.py
-%%PYTHON_SITELIBDIR%%/offlineimap/ui/Tk.pyc
-%%PYTHON_SITELIBDIR%%/offlineimap/ui/Tk.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/UIBase.py
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/UIBase.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/UIBase.pyo
@@ -72,9 +78,9 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.py
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.pyo
-%%PYTHON_SITELIBDIR%%/offlineimap/imaplib.py
-%%PYTHON_SITELIBDIR%%/offlineimap/imaplib.pyc
-%%PYTHON_SITELIBDIR%%/offlineimap/imaplib.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/imaplibutil.py
+%%PYTHON_SITELIBDIR%%/offlineimap/imaplibutil.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/imaplibutil.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/imapserver.py
 %%PYTHON_SITELIBDIR%%/offlineimap/imapserver.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/imapserver.pyo
@@ -100,13 +106,11 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/version.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/offlineimap
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/manual.ps
-%%PORTDOCS%%%%DOCSDIR%%/manual.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/offlineimap.conf
 %%EXAMPLESDIR%%/offlineimap.conf.minimal
