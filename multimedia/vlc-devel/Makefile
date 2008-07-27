@@ -10,6 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.9.0-test1
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/testing/${PORTNAME}-${DISTVERSION}/
@@ -78,7 +79,7 @@ PLIST=		${WRKDIR}/plist
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/ffmpeg ${PTHREAD_CFLAGS} -DHAVE_POSTPROC_POSTPROCESS_H" \
+CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/ffmpeg ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${FAKEDIR}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lc" \
 		LIBS="-lc"
 
