@@ -17,6 +17,8 @@ COMMENT=	OpenSSL certificate manager
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/zip \
 		zip:${PORTSDIR}/archivers/unzip
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.0b1
+
 USE_PERL5_RUN=	YES
 MAN1=		ssl-admin.1
 MAN5=		ssl-admin.conf.5
