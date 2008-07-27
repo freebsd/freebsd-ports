@@ -33,6 +33,7 @@
     SUBDIR += romeo
     SUBDIR += sitescooper
     SUBDIR += synce-gnomevfs
+    SUBDIR += synce-hal
     SUBDIR += synce-kde
     SUBDIR += synce-librapi2
     SUBDIR += synce-libsynce
