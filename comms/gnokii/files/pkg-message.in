@@ -1,4 +1,4 @@
-================================================================================
+==============================================================================
 The default config is installed in %%PREFIX%%/etc/gnokiirc.sample, and is
 configured for Nokia 6210 phones connected on COM1. Have a look at the
 documentation/manpages for more information. You'll need to copy
@@ -9,5 +9,5 @@ Add the users that shall be authorized to run gnokii programs to the
 gnokii group.
 
 NOTE: if you have enabled and plan using the smsd program check
-%%PREFIX%%/share/smsd/README
-================================================================================
+%%PREFIX%%/share/smsd/README.
+==============================================================================
