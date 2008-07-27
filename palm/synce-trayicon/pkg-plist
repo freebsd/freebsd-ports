@@ -1,8 +1,13 @@
 bin/synce-trayicon
+lib/synce-trayicon/modules/test-mod.so
+lib/synce-trayicon/modules/test-mod.la
 share/locale/ru/LC_MESSAGES/synce-trayicon.mo
 share/locale/sv/LC_MESSAGES/synce-trayicon.mo
-share/pixmaps/synce/synce-color-small.png
-share/pixmaps/synce/synce-gray-small.png
+share/icons/hicolor/22x22/apps/synce-gray.png
+share/icons/hicolor/22x22/apps/synce-color.png
+share/icons/hicolor/48x48/apps/synce-gray.png
+share/icons/hicolor/48x48/apps/synce-color.png
 share/synce/synce_trayicon_properties.glade
-@dirrm share/pixmaps/synce
+@dirrmtry lib/synce-trayicon/modules
+@dirrmtry lib/synce-trayicon
 @dirrmtry share/synce

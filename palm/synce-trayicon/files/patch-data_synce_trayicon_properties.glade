@@ -1,0 +1,51 @@
+--- data/synce_trayicon_properties.glade.orig	2008-04-16 05:17:48.000000000 +1000
++++ data/synce_trayicon_properties.glade	2008-07-26 22:06:15.000000000 +1000
+@@ -53,20 +53,6 @@
+                         <property name="visible">True</property>
+                         <property name="spacing">6</property>
+                         <child>
+-                          <widget class="GtkRadioButton" id="prefs_use_odccm">
+-                            <property name="visible">True</property>
+-                            <property name="can_focus">True</property>
+-                            <property name="label" translatable="yes">Odccm</property>
+-                            <property name="use_underline">True</property>
+-                            <property name="response_id">0</property>
+-                            <property name="draw_indicator">True</property>
+-                          </widget>
+-                          <packing>
+-                            <property name="expand">False</property>
+-                            <property name="fill">False</property>
+-                          </packing>
+-                        </child>
+-                        <child>
+                           <widget class="GtkRadioButton" id="prefs_use_hal">
+                             <property name="visible">True</property>
+                             <property name="can_focus">True</property>
+@@ -74,12 +60,10 @@
+                             <property name="use_underline">True</property>
+                             <property name="response_id">0</property>
+                             <property name="draw_indicator">True</property>
+-                            <property name="group">prefs_use_odccm</property>
+                           </widget>
+                           <packing>
+                             <property name="expand">False</property>
+                             <property name="fill">False</property>
+-                            <property name="position">1</property>
+                           </packing>
+                         </child>
+                         <child>
+@@ -90,12 +74,12 @@
+                             <property name="use_underline">True</property>
+                             <property name="response_id">0</property>
+                             <property name="draw_indicator">True</property>
+-                            <property name="group">prefs_use_odccm</property>
++                            <property name="group">prefs_use_hal</property>
+                           </widget>
+                           <packing>
+                             <property name="expand">False</property>
+                             <property name="fill">False</property>
+-                            <property name="position">2</property>
++                            <property name="position">1</property>
+                           </packing>
+                         </child>
+                         <child>

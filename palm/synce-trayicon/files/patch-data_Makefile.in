@@ -1,0 +1,18 @@
+--- data/Makefile.in.orig	2008-07-26 23:24:21.000000000 +1000
++++ data/Makefile.in	2008-07-26 23:25:28.000000000 +1000
+@@ -452,13 +452,8 @@
+ @INTLTOOL_SCHEMAS_RULE@
+ 
+ @GCONF_SCHEMAS_INSTALL_TRUE@install-data-hook:
+-@GCONF_SCHEMAS_INSTALL_TRUE@	@-if test -z "$(DESTDIR)"; then \
+-@GCONF_SCHEMAS_INSTALL_TRUE@		echo "Installing GConf schemas"; \
+-@GCONF_SCHEMAS_INSTALL_TRUE@		-$(gconf_schema_install); \
+-@GCONF_SCHEMAS_INSTALL_TRUE@	else \
+-@GCONF_SCHEMAS_INSTALL_TRUE@		echo "*** GConf schema not installed. After install, run this:"; \
+-@GCONF_SCHEMAS_INSTALL_TRUE@		echo "***   $(gconf_schema_install)"; \
+-@GCONF_SCHEMAS_INSTALL_TRUE@	fi
++@GCONF_SCHEMAS_INSTALL_TRUE@	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
++@GCONF_SCHEMAS_INSTALL_TRUE@	$(GCONFTOOL) --makefile-install-rule $(schema_DATA)
+ 
+ @GCONF_SCHEMAS_INSTALL_TRUE@uninstall-hook:
+ @GCONF_SCHEMAS_INSTALL_TRUE@	@-if test -z "$(DESTDIR)"; then \
