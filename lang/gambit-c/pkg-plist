@@ -13,6 +13,7 @@ share/doc/Gambit-C/gambit-c.html
 share/doc/Gambit-C/gambit-c.pdf
 share/doc/Gambit-C/gambit-c.txt
 include/Gambit-C/gambit.h
+include/Gambit-C/gambit-not402008.h
 lib/Gambit-C/_gambc.c
 lib/Gambit-C/_kernel#.scm
 lib/Gambit-C/_system#.scm
