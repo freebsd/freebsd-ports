@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	MIME_Type
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 CATEGORIES=	mail www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class for dealing with MIME types
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
@@ -19,13 +19,10 @@ LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_SYSTEM_COMMAND "PEAR::System_Command support" off
 
 CATEGORY=	MIME
-FILES=		Type.php Type/Parameter.php
+FILES=		MIME/Type.php MIME/Type/Parameter.php
 EXAMPLES=	example.php
-_EXAMPLESDIR=	.
-
-post-extract:
-	@${MKDIR} ${WRKSRC}/Type
-	@${MV} ${WRKSRC}/Parameter.php ${WRKSRC}/Type
+_EXAMPLESDIR=	docs/examples/
+TESTS=		TypeTest.php
 
 .include <bsd.port.pre.mk>
 
@@ -34,12 +31,4 @@ RUN_DEPENDS+=	${PEARDIR}/System/Command.php:${PORTSDIR}/devel/pear-System_Comman
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
-
-post-patch:
-.for file in ${FILES}
-	@${REINPLACE_CMD} -e "s|@version@|${PORTVERSION}|" ${WRKSRC}/${file}
-	@${REINPLACE_CMD} -e "s|@package@|${PORTNAME}|" ${WRKSRC}/${file}
-.endfor
-	@${REINPLACE_CMD} -e "s|@doc_dir@|${EXAMPLESDIR}|" ${WRKSRC}/${EXAMPLES}
-
 .include <bsd.port.post.mk>
