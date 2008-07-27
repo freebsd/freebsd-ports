@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freepops
-PORTVERSION=	0.0.99
-PORTREVISION=	1
+PORTVERSION=	0.2.7
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freepops
@@ -18,7 +17,7 @@ COMMENT=	Extensible webmail to pop3 interface
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		curl:${PORTSDIR}/ftp/curl
 
-MAN1=		freepopsd.1
+MAN1=		freepopsd.1 freepops-updater-dialog.1 freepops-updater-zenity.1
 
 USE_BISON=	build
 USE_GMAKE=	yes
@@ -29,25 +28,23 @@ CFLAGS+=	-I${OPENSSLBASE}/include ${PTHREAD_CFLAGS}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|\(WHERE=\)/usr/local|\1${PREFIX}|; \
-		 s|^#!/bin/bash|#!/bin/sh|; \
+		's|^#!/bin/bash|#!/bin/sh|; \
+		 s|\(WHERE=\)/usr/local|\1${PREFIX}|; \
 		 s|/usr/local|${LOCALBASE}|; \
-		 s|^CC=gcc||; \
-		 s|-O2 -g3 -march=i486|${CFLAGS}|' \
+		 s|^CC=$${CC:-gcc}||; \
+		 s|^CXX=$${CXX:-g++}||; \
+		 s|=$${CFLAGS:-"-O2 -g3 \(.*\)"}|="$${CFLAGS} \1"|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e \
 		's|$$(PREFIX)|${PREFIX}/|; \
 		 s|share/\(man/man1\)|\1|; \
-		 s|$$(DESTDIR)\(/etc/freepops\)|${PREFIX}\1|; \
+		 s|$$(DESTDIR)\(etc/freepops\)|${PREFIX}/\1|; \
 		 s|\(cp config\.lua\) .*|\1 ${PREFIX}/etc/freepops/config.lua.sample|; \
 		 s|for D in modules/include/\*/;|for D in modules/include/*;|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|-pthread|${PTHREAD_LIBS}|g'\
 		${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} -e \
-		's|^#!/bin/bash|#!/bin/sh|' \
-		${WRKSRC}/modules/src/curl_lua/find_curl.sh
 	@${REINPLACE_CMD} -e \
 		's|^#CURL_LD_FLAGS|CURL_LD_FLAGS|' \
 		${WRKSRC}/src/Makefile
