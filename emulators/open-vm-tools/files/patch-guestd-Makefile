@@ -1,0 +1,31 @@
+--- guestd/Makefile.am.orig	2008-07-02 00:31:19.000000000 +0200
++++ guestd/Makefile.am	2008-07-27 15:48:03.000000000 +0200
+@@ -96,8 +96,8 @@
+ endif LINUX
+ 
+ install-exec-hook:
+-	$(INSTALL) -d /etc/vmware-tools
+-	echo 'disable-tools-version = "true"' > /etc/vmware-tools/tools.conf
++	$(INSTALL) -d $(prefix)/etc/vmware-tools
++	echo 'disable-tools-version = "true"' > $(prefix)/etc/vmware-tools/tools.conf
+ 
+ uninstall-hook:
+-	$(RM) -rf /etc/vmware-tools
++	$(RM) -rf $(prefix)/etc/vmware-tools
+--- guestd/Makefile.in.orig	2008-07-02 00:31:30.000000000 +0200
++++ guestd/Makefile.in	2008-07-27 15:47:54.000000000 +0200
+@@ -605,11 +605,11 @@
+ 
+ 
+ install-exec-hook:
+-	$(INSTALL) -d /etc/vmware-tools
+-	echo 'disable-tools-version = "true"' > /etc/vmware-tools/tools.conf
++	$(INSTALL) -d $(prefix)/etc/vmware-tools
++	echo 'disable-tools-version = "true"' > $(prefix)/etc/vmware-tools/tools.conf
+ 
+ uninstall-hook:
+-	$(RM) -rf /etc/vmware-tools
++	$(RM) -rf $(prefix)/etc/vmware-tools
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
