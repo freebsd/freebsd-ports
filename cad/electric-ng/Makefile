@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	electric-ng
-PORTVERSION=	8.06
-PORTREVISION=	2
+PORTVERSION=	8.07
+PORTREVISION=	0
 CATEGORIES=	cad java
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.staticfreesoft.com/:1
@@ -21,7 +21,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A sophisticated VLSI design system
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
 		bin/electric-ng
@@ -53,13 +53,13 @@ LIBFILES+=	${JAVALIBDIR}/bsh.jar
 
 .if defined(WITH_AXIS)
 WITH_3D=	yes
-PLUGINS+=	electricJava3D-8.06
+PLUGINS+=	electricJava3D-8.07
 .endif
 
 .if defined(WITH_ANIM)
 WITH_3D=	yes
 RUN_DEPENDS+=	${JAVALIBDIR}/jmf.jar:${PORTSDIR}/java/jmf
-PLUGINS+=	electricJMF-8.06
+PLUGINS+=	electricJMF-8.07
 .endif
 
 .if exists(${J3DLIB})
@@ -70,15 +70,15 @@ RUN_DEPENDS+=	${J3DLIB}:${PORTSDIR}/java/java3d
 .endif
 
 .if defined(WITH_IRSIM)
-PLUGINS+=	electricIRSIM-8.06
+PLUGINS+=	electricIRSIM-8.07
 .endif
 
 .if defined(WITH_PIE)
-PLUGINS+=	electricPIE-8.06
+PLUGINS+=	electricPIE-8.07
 .endif
 
 .if defined(WITH_RUSSIAN)
-PLUGINS+=	electricRussianManual-8.06
+PLUGINS+=	electricRussianManual-8.07
 .endif
 
 .if defined(PLUGINS)
