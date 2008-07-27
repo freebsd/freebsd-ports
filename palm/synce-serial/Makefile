@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	synce
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Wrapper for pppd to initiate communications with Windows Mobile devices
 
-RUN_DEPENDS=	vdccm:${PORTSDIR}/palm/synce-dccm
+RUN_DEPENDS=	vdccm:${PORTSDIR}/palm/synce-vdccm
 
 CONFLICTS=	synce-hal-[0-9]*
 

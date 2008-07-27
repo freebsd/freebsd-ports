@@ -32,7 +32,6 @@
     SUBDIR += prc-tools
     SUBDIR += romeo
     SUBDIR += sitescooper
-    SUBDIR += synce-dccm
     SUBDIR += synce-gnomevfs
     SUBDIR += synce-kde
     SUBDIR += synce-librapi2
@@ -41,6 +40,7 @@
     SUBDIR += synce-multisync
     SUBDIR += synce-serial
     SUBDIR += synce-trayicon
+    SUBDIR += synce-vdccm
     SUBDIR += txt2pdbdoc
     SUBDIR += uppc-kmod
 
