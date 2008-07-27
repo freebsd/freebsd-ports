@@ -7563,6 +7563,7 @@ linux-sha-1_collision_search_graz  ports/math/linux-SHA-1_collision_search_graz
 linux-shoutcast                 ports/audio/linux-shoutcast
 linux-spheresofchaos-demo       ports/games/linux-spheresofchaos-demo
 linux-ssamtfe                   ports/games/linux-ssamtfe
+linux-ssamtse                   ports/games/linux-ssamtse
 linux-steam                     ports/games/linux-steam
 linux-sun-jdk13                 ports/java/linux-sun-jdk13
 linux-sun-jdk14                 ports/java/linux-sun-jdk14
@@ -8466,6 +8467,7 @@ msql                            ports/databases/msql
 msql3                           ports/databases/msql3
 msrc0                           ports/devel/msrc0
 msynctool                       ports/deskutils/msynctool
+msynctool-devel                 ports/deskutils/msynctool-devel
 msyslog                         ports/sysutils/msyslog
 mt-aspell                       ports/textproc/mt-aspell
 mt-daapd                        ports/audio/mt-daapd
@@ -10091,6 +10093,7 @@ p5-DBIx-Class                   ports/databases/p5-DBIx-Class
 p5-DBIx-Class-DigestColumns     ports/databases/p5-DBIx-Class-DigestColumns
 p5-DBIx-Class-DynamicSubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-DBIx-Class-EncodeColumns     ports/databases/p5-DBIx-Class-EncodeColumns
+p5-DBIx-Class-FrozenColumns     ports/databases/p5-DBIx-Class-FrozenColumns
 p5-DBIx-Class-HTMLWidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-DBIx-Class-Loader            ports/databases/p5-DBIx-Class-Loader
 p5-DBIx-Class-Schema-Loader     ports/databases/p5-DBIx-Class-Schema-Loader
@@ -13286,6 +13289,7 @@ p5-dbix-class                   ports/databases/p5-DBIx-Class
 p5-dbix-class-digestcolumns     ports/databases/p5-DBIx-Class-DigestColumns
 p5-dbix-class-dynamicsubclass   ports/databases/p5-DBIx-Class-DynamicSubclass
 p5-dbix-class-encodecolumns     ports/databases/p5-DBIx-Class-EncodeColumns
+p5-dbix-class-frozencolumns     ports/databases/p5-DBIx-Class-FrozenColumns
 p5-dbix-class-htmlwidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-dbix-class-loader            ports/databases/p5-DBIx-Class-Loader
 p5-dbix-class-schema-loader     ports/databases/p5-DBIx-Class-Schema-Loader
@@ -16574,6 +16578,7 @@ piddle                          ports/graphics/piddle
 pidentd                         ports/security/pidentd
 pidgin                          ports/net-im/pidgin
 pidgin-encryption               ports/security/pidgin-encryption
+pidgin-facebookchat             ports/net-im/pidgin-facebookchat
 pidgin-guifications             ports/net-im/pidgin-guifications
 pidgin-hotkeys                  ports/net-im/pidgin-hotkeys
 pidgin-latex                    ports/net-im/pidgin-latex
@@ -17038,6 +17043,7 @@ primateplunge                   ports/games/primateplunge
 primer3                         ports/biology/primer3
 print-n-times                   ports/textproc/print-n-times
 printproto                      ports/x11/printproto
+printscreen                     ports/x11/printscreen
 prips                           ports/sysutils/prips
 privman                         ports/devel/privman
 privoxy                         ports/www/privoxy
@@ -19464,6 +19470,7 @@ spamprobe                       ports/mail/spamprobe
 spamstats                       ports/mail/spamstats
 spandsp                         ports/comms/spandsp
 spandsp-devel                   ports/comms/spandsp-devel
+spandsp-devel5                  ports/comms/spandsp-devel5
 spar                            ports/math/spar
 sparc-rtems-binutils            ports/devel/sparc-rtems-binutils
 sparc-rtems-g77                 ports/devel/sparc-rtems-g77
@@ -19622,7 +19629,6 @@ ss                              ports/math/ss
 ss5                             ports/net/ss5
 ssaha                           ports/biology/ssaha
 ssam                            ports/editors/ssam
-ssamtse                         ports/games/ssamtse
 ssc                             ports/games/ssc
 sscalc                          ports/astro/sscalc
 sscep                           ports/security/sscep
@@ -19639,6 +19645,7 @@ sshblock                        ports/security/sshblock
 sshbuddy                        ports/misc/sshbuddy
 sshfp                           ports/dns/sshfp
 sshguard                        ports/security/sshguard
+sshguard-ipfilter               ports/security/sshguard-ipfilter
 sshguard-ipfw                   ports/security/sshguard-ipfw
 sshguard-pf                     ports/security/sshguard-pf
 sshit                           ports/security/sshit
@@ -19842,15 +19849,16 @@ sympa-elixus                    ports/mail/sympa-elixus
 sympa5                          ports/mail/sympa5
 synaesthesia                    ports/graphics/synaesthesia
 synaptics                       ports/x11-drivers/synaptics
-synce-dccm                      ports/palm/synce-dccm
 synce-gnomevfs                  ports/palm/synce-gnomevfs
+synce-hal                       ports/palm/synce-hal
 synce-kde                       ports/palm/synce-kde
 synce-librapi2                  ports/palm/synce-librapi2
+synce-librra                    ports/palm/synce-librra
 synce-libsynce                  ports/palm/synce-libsynce
 synce-multisync                 ports/palm/synce-multisync
-synce-rra                       ports/palm/synce-rra
 synce-serial                    ports/palm/synce-serial
 synce-trayicon                  ports/palm/synce-trayicon
+synce-vdccm                     ports/palm/synce-vdccm
 syncterm                        ports/comms/syncterm
 syndigator                      ports/www/syndigator
 synergy                         ports/sysutils/synergy
