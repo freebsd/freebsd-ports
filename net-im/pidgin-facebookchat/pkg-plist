@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+lib/purple-2/libfacebook.so
+share/pixmaps/pidgin/protocols/16/facebook.png
+share/pixmaps/pidgin/protocols/22/facebook.png
+share/pixmaps/pidgin/protocols/48/facebook.png
