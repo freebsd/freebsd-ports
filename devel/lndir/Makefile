@@ -12,8 +12,6 @@ CATEGORIES=	devel
 MAINTAINER=	unixmania@gmail.com
 COMMENT=	Create a shadow directory of symbolic links to another directory tree
 
-CONFLICTS=	imake-4*
-
 XORG_CAT=	util
 USE_XORG=	xproto
 
