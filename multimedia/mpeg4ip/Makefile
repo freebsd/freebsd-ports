@@ -157,7 +157,8 @@ post-patch:
 		s|$$(top_srcdir)/lib/mp4v2/libmp4v2.la||; \
 		s|$$(top_srcdir)/lib/gnu/libmpeg4ip_gnu.la||; \
 		s|$$(top_srcdir)/lib/mp4av/libmp4av.la||; \
-		s|@LIBS@|@LIBS@ -lmp4v2 -lmp4av -lmpeg4ip_gnu|'
+		s|@LIBS@|@LIBS@ -lmp4v2 -lmp4av -lmpeg4ip_gnu|; \
+		s|nasm|yasm|'
 	@${REINPLACE_CMD} -e 's|mpeg4ip.h||; \
 		s|mpeg4ip_config.h||; s|mpeg4ip_version.h||' \
 		${WRKSRC}/include/Makefile.in
@@ -172,6 +173,7 @@ post-patch:
 		's|<stdint.h>|<inttypes.h>|; \
 		s|mp4v2/mp4.h|mp4.h|; \
 		s|<malloc.h>|<stdlib.h>|; \
+		s|<avcodec.h>|<libavcodec/avcodec.h>|; \
 		s|<strstream.h>|<iostream>|'
 # replacing distfile's libs with ports' versions
 # SDL related fixes
@@ -180,7 +182,7 @@ post-patch:
 		s|sdl-config|${SDL_CONFIG}|; \
 		s|^(SDL_LIBS=).+$$|\1"`${SDL_CONFIG} --libs`"|; \
 		s|-Wmissing-declarations||; s|-Wmissing-prototypes||; \
-		s|>&/|>/|' \
+		s|>&/|>/|; s|nasm|yasm|' \
 		${CONFIGURE_WRKSRC}/configure
 # do not install manm man pages
 	@${REINPLACE_CMD} -E \
@@ -219,7 +221,7 @@ WITHOUT_MMX=yes
 .ifdef(WITHOUT_MMX)
 CONFIGURE_ARGS+=	--disable-mmx
 .else
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
 .endif
 # compiler optimizations
 .if defined(WITH_OPTIMIZED_CFLAGS)
