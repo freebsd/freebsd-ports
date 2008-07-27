@@ -1,56 +1,63 @@
+bin/freepops-updater-dialog
+bin/freepops-updater-zenity
 bin/freepopsd
-@unexec if cmp -s %D/etc/freepops/config.lua %D/etc/freepops/config.lua.sample; then rm -f %D/etc/freepops/config.lua; fi
+share/doc/freepops/MANUAL.txt
+share/freepops/lua/abv.lua
+share/freepops/lua/aggregator.lua
+share/freepops/lua/aol.lua
+share/freepops/lua/browser/browser.lua
+share/freepops/lua/browser/cookie.lua
+share/freepops/lua/common.lua
+share/freepops/lua/config.lua
+share/freepops/lua/davmail.lua
+share/freepops/lua/excite.lua
+share/freepops/lua/fastmail.lua
+share/freepops/lua/flatnuke.lua
+share/freepops/lua/foo.lua
+share/freepops/lua/freepops.lua
+share/freepops/lua/gmail.lua
+share/freepops/lua/hotmail.lua
+share/freepops/lua/httpmail.lua
+share/freepops/lua/juno.lua
+share/freepops/lua/kernel.lua
+share/freepops/lua/libero.lua
+share/freepops/lua/lxp/lom.lua
+share/freepops/lua/lycos.lua
+share/freepops/lua/mail2world.lua
+share/freepops/lua/mailcom.lua
+share/freepops/lua/mimer.lua
+share/freepops/lua/monitor.lua
+share/freepops/lua/netscape.lua
+share/freepops/lua/orange.lua
+share/freepops/lua/plugins2xml.lua
+share/freepops/lua/popforward.lua
+share/freepops/lua/psock.lua
+share/freepops/lua/serial.lua
+share/freepops/lua/skeleton.lua
+share/freepops/lua/soap/http.lua
+share/freepops/lua/soap/soap.lua
+share/freepops/lua/socket.lua
+share/freepops/lua/softhome.lua
+share/freepops/lua/squirrelmail.lua
+share/freepops/lua/supereva.lua
+share/freepops/lua/support.lua
+share/freepops/lua/table2xml.lua
+share/freepops/lua/tin.lua
+share/freepops/lua/tre.lua
+share/freepops/lua/updater.lua
+share/freepops/lua/updater_common.lua
+share/freepops/lua/updater_php.lua
+share/freepops/lua/version_comparer.lua
+share/freepops/lua/xml2table.lua
+share/freepops/lua/xml2tex.lua
+share/freepops/lua/yahoo.lua
+@dirrm share/freepops/lua/soap
+@dirrm share/freepops/lua/lxp
+@dirrm share/freepops/lua/browser
+@dirrm share/freepops/lua
+@dirrm share/freepops
+@dirrm share/doc/freepops
+@unexec if cmp -s %D/etc/freepops/config.lua.sample %D/etc/freepops/config.lua; then rm -f %D/etc/freepops/config.lua; fi
 etc/freepops/config.lua.sample
-@exec [ -f %B/config.lua ] || cp %B/%f %B/config.lua
-%%DOCSDIR%%/MANUAL.txt
-%%DATADIR%%/lua/aggregator.lua
-%%DATADIR%%/lua/aol.lua
-%%DATADIR%%/lua/browser/browser.lua
-%%DATADIR%%/lua/browser/cookie.lua
-%%DATADIR%%/lua/common.lua
-%%DATADIR%%/lua/compat-5.1.lua
-%%DATADIR%%/lua/config.lua
-%%DATADIR%%/lua/criticalpath.lua
-%%DATADIR%%/lua/davmail.lua
-%%DATADIR%%/lua/fastmail.lua
-%%DATADIR%%/lua/flatnuke.lua
-%%DATADIR%%/lua/foo.lua
-%%DATADIR%%/lua/freepops.lua
-%%DATADIR%%/lua/gmail.lua
-%%DATADIR%%/lua/hotmail.lua
-%%DATADIR%%/lua/httpmail.lua
-%%DATADIR%%/lua/juno.lua
-%%DATADIR%%/lua/kernel.lua
-%%DATADIR%%/lua/libero.lua
-%%DATADIR%%/lua/lxp/lom.lua
-%%DATADIR%%/lua/lycos.lua
-%%DATADIR%%/lua/mail2world.lua
-%%DATADIR%%/lua/mailcom.lua
-%%DATADIR%%/lua/mimer.lua
-%%DATADIR%%/lua/netscape.lua
-%%DATADIR%%/lua/plugins2xml.lua
-%%DATADIR%%/lua/popforward.lua
-%%DATADIR%%/lua/serial.lua
-%%DATADIR%%/lua/skeleton.lua
-%%DATADIR%%/lua/soap/http.lua
-%%DATADIR%%/lua/soap/soap.lua
-%%DATADIR%%/lua/squirrelmail.lua
-%%DATADIR%%/lua/supereva.lua
-%%DATADIR%%/lua/support.lua
-%%DATADIR%%/lua/table2xml.lua
-%%DATADIR%%/lua/tin.lua
-%%DATADIR%%/lua/tre.lua
-%%DATADIR%%/lua/updater.lua
-%%DATADIR%%/lua/version_comparer.lua
-%%DATADIR%%/lua/xml2table.lua
-%%DATADIR%%/lua/xml2tex.lua
-%%DATADIR%%/lua/yahoo.lua
-@dirrmtry %%DATADIR%%/lua_unofficial
-@dirrm %%DATADIR%%/lua/soap
-@dirrm %%DATADIR%%/lua/lxp
-@dirrm %%DATADIR%%/lua/browser
-@dirrm %%DATADIR%%/lua
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+@exec if [ ! -f %D/etc/freepops/config.lua ] ; then cp -p %D/%F %B/config.lua; fi
 @dirrmtry etc/freepops
-@exec mkdir -p %D/share/freepops/lua_unofficial
