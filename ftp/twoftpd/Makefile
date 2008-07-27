@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple, secure, efficient FTP server
 
 LIB_DEPENDS=	cvm-v2client.1:${PORTSDIR}/security/cvm

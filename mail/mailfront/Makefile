@@ -12,7 +12,7 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sergei
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail server network protocol front-ends
 
 LIB_DEPENDS=	cvm-v2client.1:${PORTSDIR}/security/cvm

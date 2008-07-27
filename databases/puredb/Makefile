@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/pure-db/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/pure-db/
 DISTNAME=	pure-db-${PORTVERSION}
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of libraries for creating and reading constant databases
 
 USE_AUTOTOOLS=	libtool:15

@@ -10,7 +10,7 @@ PORTVERSION=	0.46
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose C libraries used by skarnet.org software
 
 LDFLAGS?=	-s

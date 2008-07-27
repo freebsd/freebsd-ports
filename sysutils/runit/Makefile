@@ -10,7 +10,7 @@ PORTVERSION=	1.7.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Service supervision tools compatible with DJB daemontools
 
 USE_RC_SUBR=	runsvdir.sh

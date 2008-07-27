@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	security ftp
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/ftpmap/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Identify remote FTP server software by fingerprinting
 
 GNU_CONFIGURE=	yes

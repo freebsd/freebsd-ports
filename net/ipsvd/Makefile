@@ -10,7 +10,7 @@ PORTVERSION=	0.12.1
 CATEGORIES=	net
 MASTER_SITES=	http://smarden.org/ipsvd/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet protocol service daemons
 
 WRKSRC=		${WRKDIR}/net/${DISTNAME}

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://asic-linux.com.mx/~izto/checkinstall/files/source/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file creation/modification logger
 
 DOCS=		BUGS CHANGELOG INSTALL README TODO
