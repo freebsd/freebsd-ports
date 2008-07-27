@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	libmpeg2
-PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTVERSION=	0.5.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
-DISTNAME=	mpeg2dec-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
 
-USE_GNOME=	gnometarget
+USE_GNOME=	gnometarget ltverhack
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
@@ -28,7 +26,6 @@ PORTDOCS=	libmpeg2.txt README
 
 .ifdef(WITH_SDL)
 USE_SDL=	yes
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libvo::configure.incl
 CONFIGURE_ARGS+=	--enable-sdl
 .else
 CONFIGURE_ARGS+=	--disable-sdl
