@@ -52,7 +52,9 @@ MAN8=	rwflowpack.8 rwpackchecker.8 rwflowappend.8 rwreceiver.8 rwsender.8 \
 .if defined(WITH_IPFIX)
 LIB_DEPENDS+=	fixbuf:${PORTSDIR}/net/libfixbuf
 MAN1+=	rwipfix2silk.1 rwsilk2ipfix.1
-PLIST_SUB+=	IPFIX=""
+PLIST_SUB=	IPFIX=""
+.else
+PLIST_SUB=	IPFIX="@comment "
 .endif
 
 post-patch:
