@@ -24,7 +24,7 @@ USE_PYDISTUTILS=	yes
 TDS_SUF="=${TDS_VERSION}"
 .else
 pre-fetch:
-	@V=`pkg_info | sed -ne 's/^freetds-0.\(..\).*/\1/p'` ; \
+	@V=`${PKG_INFO} | sed -ne 's/^freetds-0.\(..\).*/\1/p'` ; \
 	if [ $$V -le 60 ]; then \
 		${ECHO_MSG} "Suggest you update your FreeTDS port to at least version 0.61" ; \
 		${ECHO_MSG} "Otherwise, you will need to add TDS_VERSION=$$V to the Make command" ; \
