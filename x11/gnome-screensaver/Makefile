@@ -34,20 +34,40 @@ GCONF_SCHEMAS=	gnome-screensaver.schemas
 MAN1=		gnome-screensaver-command.1 gnome-screensaver-preferences.1 \
 		gnome-screensaver.1
 
-
 PLIST=	${WRKDIR}/pkg-plist
+SUB_FILES+=	gnome-screensaver.pam
 
 XSCREENSAVER_DIR=	${LOCALBASE}/share/xscreensaver/config
 SCREENSAVER_DIR=	share/applications/screensavers
 
 XSCREENSAVER_EXCLUDE=	"(popsquares.xml)"
 
-OPTIONS=	PAM "Pluggable Authentication Module support" off
+OPTIONS=	PAM "Pluggable Authentication Module support" off \
+		KEYRING "Enable GnomeKeyring/PAM integration" off
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_PAM)
+.if defined(WITH_PAM)
+CONFIGURE_ARGS+=	--enable-pam
+PLIST_SUB+=		PAM=""
+.if defined(WITH_KEYRING)
+SUB_LIST+=		PAM_KEYRING=
+RUN_DEPENDS+=		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
+.else
+SUB_LIST+=		PAM_KEYRING=\#
+.endif
+.else
 CONFIGURE_ARGS+=	--disable-pam
+PLIST_SUB+=		PAM="@comment "
+.if defined(WITH_KEYRING)
+.warning Option KEYRING needs PAM, but PAM is disabled.
+.endif
+.endif
+
+post-patch:
+.if defined(WITH_PAM)
+	@${REINPLACE_CMD} -e 's|/etc/pam.d|${PREFIX}/etc/pam.d|g' \
+		${WRKSRC}/src/gs-auth-pam.c
 .endif
 
 pre-install:
@@ -66,5 +86,8 @@ post-install:
 		${FIND} -s ${XSCREENSAVER_DIR} -maxdepth 1 -type f -name "*.xml" | \
 			${GREP} -Ev ${XSCREENSAVER_EXCLUDE} | \
 			${XARGS} ${WRKSRC}/data/migrate-xscreensaver-config.sh
+.if defined(WITH_PAM)
+	${INSTALL_DATA} ${WRKDIR}/gnome-screensaver.pam ${PREFIX}/etc/pam.d/gnome-screensaver
+.endif
 
 .include <bsd.port.post.mk>
