@@ -4,25 +4,38 @@
 #
 # $FreeBSD$
 
-PORTNAME=	synce-dccm
-PORTVERSION=	0.9.3
+PORTNAME=	vdccm
+PORTVERSION=	0.10.1
 CATEGORIES=	palm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
-DISTNAME=	synce-vdccm-${PORTVERSION}
+PKGNAMEPREFIX=	synce-
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Listener daemon for connections from WinCE devices
 
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
+LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce
+
+OPTIONS=	DESKTOP	"Enable desktop integration"	on
 
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
-WRKSRC=		${WRKDIR}/vdccm-${PORTVERSION}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE} \
-			--with-libsynce=${LOCALBASE}
-USE_LDCONFIG=	yes
+USE_GNOME=	gnometarget
+CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} \
+		--with-libsynce=${LOCALBASE}
 
-.include <bsd.port.mk>
+MAN1=		triggerconnection.1 ${PORTNAME}.1
+PLIST_FILES=	bin/triggerconnection bin/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DESKTOP)
+CONFIGURE_ARGS+=	--enable-desktop-integration=yes
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		hal.1:${PORTSDIR}/sysutils/hal
+USE_GNOME+=	glib20
+.else
+CONFIGURE_ARGS+=	--enable-desktop-integration=no
+.endif
+
+.include <bsd.port.post.mk>
