@@ -1,9 +1,9 @@
 ************************************************************************
 
 In order to run this port, write your dkim-filter.conf and add your
-milter socket path in ${PREFIX}/etc/mail/main.cf:
+milter socket `socketspec' in ${PREFIX}/etc/mail/main.cf:
 
-smtpd_milters = _YOUR_SOCKET_PATH_
+smtpd_milters = _YOUR_SOCKET_SPEC_
 
 And to run the milter from startup, add milterdkim_enable="YES" in
 your /etc/rc.conf.
