@@ -20,10 +20,4 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-IGNORE=			does not work on 4.x, needs newer C++ library
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
