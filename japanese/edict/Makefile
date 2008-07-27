@@ -21,7 +21,7 @@ MASTER_SITES=	\
 EXTRACT_SUFX=
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
 
-MAINTAINER=	jhanna@shaw.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese-English dictionaries with access and maintenance utilities
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
@@ -59,10 +59,6 @@ MAN1=		xjdic.1
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not build
-.endif
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
