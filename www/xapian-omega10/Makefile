@@ -6,6 +6,7 @@
 
 PORTNAME=	xapian-omega
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	brix
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	CGI search application built on Xapian
 
-LIB_DEPENDS=	xapian.19:${PORTSDIR}/databases/xapian-core
+LIB_DEPENDS=	xapian.20:${PORTSDIR}/databases/xapian-core
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	xapian-bindings
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
 
