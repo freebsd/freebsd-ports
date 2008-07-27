@@ -7,7 +7,7 @@
 
 PORTNAME=	clockspeed
 PORTVERSION=	0.62
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/clockspeed/ \
 		http://redundancy.redundancy.org/mirror/
