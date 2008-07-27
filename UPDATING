@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080727:
+  AFFECTS: users of www/firefox3
+  Author: gnome@FreeBSD.org
+
+  Update to 3.0.1_1,1; it no longer seek for plugins in lib/browser_plugins,
+  because a few plugins that built with Firefox 2 can causes Firefox 3
+  crashes. We are working on make some changes with plugins directory by using
+  www/linux-mplayer-plugin/Makefile.npapi. If there are few other plugins that
+  work with Firefox 3 and you would like to use it. You can copy plugins in
+  ~/.mozilla/plugins or /usr/local/lib/firefox3/plugins by manual for now.
+
 20080725:
   AFFECTS: users of x11-fm/nautilus and misc/shared-mime-info
   AUTHOR: gnome@FreeBSD.org

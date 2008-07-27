@@ -8,6 +8,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	3.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -101,16 +102,16 @@ port-pre-install:
 		>> ${SYSTEM_PREFS}
 .endif # !defined(WITHOUT_NEWTAB)
 
-do-install:
-	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
-		for jpi in ${JPI_LIST}; do \
-			if [ -f $${jpi} ]; then \
-				${LN} -sf $${jpi} \
-					${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
-				break; \
-			fi; \
-		done; \
-	fi
+#do-install:
+#	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
+#		for jpi in ${JPI_LIST}; do \
+#			if [ -f $${jpi} ]; then \
+#				${LN} -sf $${jpi} \
+#					${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
+#				break; \
+#			fi; \
+#		done; \
+#	fi
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
