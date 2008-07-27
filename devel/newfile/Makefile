@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for creating starter files in various languages
 
 USE_RUBY=	yes

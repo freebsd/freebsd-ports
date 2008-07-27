@@ -10,7 +10,7 @@ PORTVERSION=	2.1.0
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/pymsgauth/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically process qsecretary confirmation requests
 
 USE_PYTHON=	yes

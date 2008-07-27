@@ -17,7 +17,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.nl.uu.net/pub/unix/mail/qmail/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/mail/qmail/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An easy-to-use, high-speed mailing list manager for qmail
 
 USE_QMAIL_RUN=	yes

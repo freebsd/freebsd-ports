@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for processing logs from qmail and other packages
 
 LDFLAGS?=	-s

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/_file/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts documentation from C source code comments
 
 BUILD_DEPENDS+=	make+:${PORTSDIR}/devel/makeplus

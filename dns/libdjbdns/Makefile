@@ -12,7 +12,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://smarden.org/pape/djb/manpages/
 DISTNAME=	djbdns-pd-${PORTVERSION}
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Public domain DNS client library
 
 USE_LDCONFIG=	yes

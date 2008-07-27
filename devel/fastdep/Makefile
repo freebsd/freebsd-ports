@@ -11,7 +11,7 @@ PORTVERSION=	0.16
 CATEGORIES=	devel
 MASTER_SITES=	http://www.irule.be/bvh/c++/fastdep/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast dependency generator for C/C++ files
 
 USE_GMAKE=	yes

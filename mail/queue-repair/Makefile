@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A qmail queue diagnostic and repair tool
 
 .if !defined(WITHOUT_QMAIL_PORT)

@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-tools
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-man-20031023.tar.gz:manpages
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolver tools from djbdns package
 
 CONFLICTS=	djbdns-[0-9]*

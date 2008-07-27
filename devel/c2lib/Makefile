@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/_file/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of basic structures and memory allocators for C
 
 BUILD_DEPENDS=	cdoc:${PORTSDIR}/devel/cdoc \

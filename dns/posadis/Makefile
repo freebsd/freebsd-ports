@@ -12,7 +12,7 @@ CATEGORIES=	dns ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Domain Name Server (DNS) implementation
 
 LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib

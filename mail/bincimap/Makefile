@@ -19,7 +19,7 @@ MASTER_SITES=	http://www.bincimap.org/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	dl/tarballs/1.2
 DISTNAME=	${PORTNAME}-${PORTVERSION}final
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight IMAP server for Maildir
 
 USE_BZIP2=	yes

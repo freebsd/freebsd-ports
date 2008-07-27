@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.superscript.com/qtools/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to use in .qmail files
 
 RUN_DEPENDS=	${EZMLM_DIR}/bin/ezmlm-weed:${PORTSDIR}/mail/ezmlm

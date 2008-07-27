@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://xjack.org/logtool/download/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse ASCII logfiles into ANSI, CSV, HTML formats
 
 CONFLICTS=	logtool-1.2*

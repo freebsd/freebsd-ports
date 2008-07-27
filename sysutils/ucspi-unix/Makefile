@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UNIX-domain socket client-server command-line tools
 
 BUILD_DEPENDS=	${BGLIBS_LIB}/libbg.a:${PORTSDIR}/devel/bglibs

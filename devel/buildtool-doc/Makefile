@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	buildtool
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Buildtool User's and Developer's manuals
 
 BUILD_DEPENDS=	${BUILDTOOL}:${PORTSDIR}/devel/buildtool \

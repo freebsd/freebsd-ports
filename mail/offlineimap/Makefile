@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	sergei
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
 
 .if !defined(WITHOUT_X11)

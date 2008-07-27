@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/_file/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced build system for GNU Make
 
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto

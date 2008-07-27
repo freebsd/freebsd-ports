@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Credential Validation Modules
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool15

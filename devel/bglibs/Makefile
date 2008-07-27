@@ -10,7 +10,7 @@ PORTVERSION=	1.102
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	One stop library package by Bruce Guenter
 
 NOT_FOR_ARCHS=	alpha

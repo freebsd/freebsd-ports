@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.home.unix-ag.org/simon/gromit/
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GRaphics Over Miscellaneous Objects (Gromit)
 
 USE_GNOME=	gtk20

@@ -24,7 +24,7 @@ CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		sergei@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Outgoing SMTP mail processor
 
 GNU_CONFIGURE=		yes
