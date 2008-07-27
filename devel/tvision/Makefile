@@ -7,7 +7,7 @@
 
 PORTNAME=	tvision
 PORTVERSION=	0.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.sigala.it/sergio/tvision/mysource/
@@ -21,12 +21,11 @@ USE_GMAKE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-USE_GCC=	3.3
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-USE_GCC=	3.4
+.if ${ARCH} != "amd64"
+USE_GCC=	3.3
 .endif
 
 post-extract:
