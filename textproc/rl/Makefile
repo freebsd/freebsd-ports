@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rl
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://ch.tudelft.nl/~arthur/rl/
 
