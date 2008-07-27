@@ -7,9 +7,9 @@
 
 PORTNAME=	porttools
 PORTVERSION=	0.77
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for testing and submitting port updates and new ports
