@@ -4,35 +4,46 @@
 #
 # $FreeBSD$
 
-PORTNAME=	synce-librapi2
-PORTVERSION=	0.9.3
+PORTNAME=	librapi2
+PORTVERSION=	0.12
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
-DISTNAME=	synce-librapi-${PORTVERSION}
+PKGNAMEPREFIX?=	synce-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Utilities/libraries to make RAPI calls on WinCE devices
+MAINTAINER=	webmaster@kibab.com
+COMMENT?=	Utilities/libraries to make RAPI calls on WinCE devices
 
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
 
-ONLY_FOR_ARCHS=	i386 amd64
-
-MAN1=		pcp.1 pls.1 pmkdir.1 pmv.1 prm.1 prmdir.1 prun.1 pstatus.1 rapiconfig.1 synce-install-cab.1 synce-remove-program.1 synce-list-programs.1
-
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
-WRKSRC=		${WRKDIR}/librapi-${PORTVERSION}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE} \
-			--with-libsynce=${LOCALBASE}
-
+USE_GNOME=	gnomehack gnometarget
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-libiconv="${LOCALBASE}" \
+			--with-libsynce="${LOCALBASE}"
+
+.include <bsd.port.pre.mk>
+
+.if defined(RAPI_SLAVE) && ${RAPI_SLAVE} == "pythonb"
+CONFIGURE_ARGS+=	--enable-python-bindings
+.else
+CONFIGURE_ARGS+=	--disable-python-bindings
+
+MAN1=		pcp.1 pkillall.1 pls.1 pmkdir.1 \
+		pmv.1 prm.1 prmdir.1 prun.1 \
+		psettime.1 pshortcut.1 pstatus.1 \
+		rapiconfig.1 synce-install-cab.1 \
+		synce-list-programs.1 synce-registry.1 \
+		synce-remove-program.1
+MAN3=		rapi_connection_from_name.3
 
 post-patch:
 .for f in synce-install-cab.in synce-remove-program.in
-	@${REINPLACE_CMD} -e 's+bin/bash+bin/sh+' ${WRKSRC}/script/${f}
+	@${REINPLACE_CMD} -e 's|bin/bash|bin/sh|' ${WRKSRC}/script/${f}
 .endfor
 
-.include <bsd.port.mk>
+.endif
+
+.include <bsd.port.post.mk>
