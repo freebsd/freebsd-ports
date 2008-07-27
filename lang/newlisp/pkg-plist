@@ -8,7 +8,7 @@ bin/newlispdoc
 %%PORTDOCS%%%%DOCSDIR%%/ExpressionEvaluation.html
 %%PORTDOCS%%%%DOCSDIR%%/MemoryManagement.html
 %%PORTDOCS%%%%DOCSDIR%%/manual_frame.html
-%%PORTDOCS%%%%DOCSDIR%%/newLISP-9.3-Release.html
+%%PORTDOCS%%%%DOCSDIR%%/newLISP-9.4-Release.html
 %%PORTDOCS%%%%DOCSDIR%%/newLISPdoc.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_index.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_manual.html
@@ -43,6 +43,8 @@ bin/newlispdoc
 %%GUISERV%%%%DATADIR%%/guiserver/frameless-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/html-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/image-demo.lsp
+%%GUISERV%%%%DATADIR%%/guiserver/midi-demo.lsp
+%%GUISERV%%%%DATADIR%%/guiserver/midi2-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/mouse-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/move-resize-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/pinballs-demo.lsp
@@ -54,6 +56,7 @@ bin/newlispdoc
 %%GUISERV%%%%DATADIR%%/guiserver/tabs-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/textrot-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/uppercase.lsp
+%%GUISERV%%%%DATADIR%%/guiserver/widgets-demo-ru.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/widgets-demo.lsp
 %%GUISERV%%%%DATADIR%%/guiserver/word-count.lsp
 %%DATADIR%%/modules/cgi.lsp
@@ -63,7 +66,6 @@ bin/newlispdoc
 %%DATADIR%%/modules/infix.lsp
 %%MYSQL51%%%%DATADIR%%/modules/mysql51.lsp
 %%MYSQL5%%%%DATADIR%%/modules/mysql5.lsp
-%%MYSQL4%%%%DATADIR%%/modules/mysql.lsp
 %%DATADIR%%/modules/odbc.lsp
 %%DATADIR%%/modules/pop3.lsp
 %%DATADIR%%/modules/postscript.lsp

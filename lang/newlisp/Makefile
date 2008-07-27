@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	newlisp
-PORTVERSION=	9.3.0
+PORTVERSION=	9.4.3
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -28,12 +28,11 @@ MODULES=	cgi crypto ftp infix odbc pop3 postscript smtp stat unix \
 		xmlrpc-client zlib
 
 DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
-		MemoryManagement.html newLISP-9.3-Release.html \
+		MemoryManagement.html newLISP-${PORTVERSION:R}-Release.html \
 		manual_frame.html newLISPdoc.html \
 		newlisp_index.html newlisp_manual.html \
 
 OPTIONS=	GMP	"Enable GMP math library support" off \
-		MYSQL4	"Build with MySQL 4.1.x support" off \
 		MYSQL5	"Build with mysql 5.0.x support" off \
 		MYSQL51	"Build with mysql 5.1.x support" off \
 		SQLITE	"Build with sqlite support" off \
@@ -51,15 +50,6 @@ MODULES+=	gmp
 PLIST_SUB+=	GMP=""
 .else
 PLIST_SUB+=	GMP="@comment "
-.endif
-
-.if defined(WITH_MYSQL4)
-USE_MYSQL=yes
-WITH_MYSQL_VER=	41
-MODULES+=	mysql
-PLIST_SUB+=	MYSQL4=""
-.else
-PLIST_SUB+=	MYSQL4="@comment "
 .endif
 
 .if defined(WITH_MYSQL5)
@@ -113,9 +103,6 @@ post-patch:
 		${WRKSRC}/modules/* \
 		${WRKSRC}/newlisp.c
 
-	@${REINPLACE_CMD} -E -e \
-		"s,/usr/lib/(libmysqlclient.so.)14,${LOCALBASE}/lib/mysql/\1${MYSQL${MYSQL_VER}_LIBVER}," \
-		${WRKSRC}/modules/mysql.lsp
 	@${REINPLACE_CMD} -E -e \
 		"s,/usr/local/mysql/lib/(libmysqlclient.)dylib,${LOCALBASE}/lib/mysql/\1so.${MYSQL${MYSQL_VER}_LIBVER}," \
 		${WRKSRC}/modules/mysql5.lsp
