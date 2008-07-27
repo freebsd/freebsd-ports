@@ -3539,3 +3539,4 @@ japanese/kterm16c|japanese/kterm|2008-07-24|Deprecated in favor of japanese/kter
 lang/gambc|lang/gambit-c|2008-07-24|Port was renamed
 devel/legoctl|devel/roboctl|2008-07-26|Port was renamed
 games/ssamtse|games/linux-ssamtse|2008-07-26|Upgraded to Linux version of the game
+palm/synce-rra|synce-librra|2008-07-27|Port was renamed
