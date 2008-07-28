@@ -115,7 +115,7 @@ share/swat/help/Samba3-HOWTO/apa.html
 share/swat/help/Samba3-HOWTO/bugreport.html
 share/swat/help/Samba3-HOWTO/cfgsmarts.html
 share/swat/help/Samba3-HOWTO/ch-ldap-tls.html
-share/swat/help/Samba3-HOWTO/ch46.html
+share/swat/help/Samba3-HOWTO/ch47.html
 share/swat/help/Samba3-HOWTO/classicalprinting.html
 share/swat/help/Samba3-HOWTO/compiling.html
 share/swat/help/Samba3-HOWTO/diagnosis.html
@@ -235,7 +235,6 @@ share/swat/help/manpages/smbmnt.8.html
 share/swat/help/manpages/smbmount.8.html
 share/swat/help/manpages/smbpasswd.5.html
 share/swat/help/manpages/smbpasswd.8.html
-share/swat/help/manpages/smbsh.1.html
 share/swat/help/manpages/smbspool.8.html
 share/swat/help/manpages/smbstatus.1.html
 share/swat/help/manpages/smbtar.1.html
