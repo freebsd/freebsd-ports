@@ -1,0 +1,9 @@
+This is a role which provides an alternate constructor for creating objects
+using parameters passed in from the command line.
+
+This module attempts to DWIM as much as possible with the command line params
+by introspecting your class's attributes. It will use the name of your
+attribute as the command line option, and if there is a type constraint
+defined, it will configure Getopt::Long to handle the option accordingly.
+
+WWW: http://search.cpan.org/dist/MooseX-Getopt/
