@@ -18,11 +18,10 @@ MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/games/source/ \
 		http://ifarchive.flavorplex.com/if-archive/games/source/ \
 		http://www.vaxdungeon.com/Archive/dungeon/
 DISTFILES=	dungn27s.zip dungn32b.zip
+EXTRACT_ONLY=	dungn27s.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text adventure game of ZORK
-
-EXTRACT_ONLY=	dungn27s.zip
 
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
@@ -39,7 +38,7 @@ post-extract:
 	(cd ${WRKSRC} && ${LS} > ${TMPFILE}.1)
 	(cd ${WRKSRC} && ${AWK} -f ${FILESDIR}/aa.awk < ${TMPFILE}.1 \
 		> ${TMPFILE}.2)
-	(cd ${WRKSRC} && sh ${TMPFILE}.2)
+	(cd ${WRKSRC} && ${SH} ${TMPFILE}.2)
 	(cd ${WRKSRC} && ${RM} ${TMPFILE}.?)
 	(cd ${WRKSRC} && ${CP} makefile Makefile)
 
