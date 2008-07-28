@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	2.22.3
+PORTVERSION?=	2.22.4
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -103,6 +103,8 @@ post-patch:
 		-or -name "README.docs" \) | ${XARGS} ${RM} -rf
 	@${FIND} ${WRKSRC} -name "*.p[ml]" | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e 's!/usr/lib/sendmail!/usr/sbin/sendmail!'
+	@${FIND} ${WRKSRC}/docs -type f | \
+		${XARGS} ${REINPLACE_CMD} -i '' -e "s!/var/www/html/bugzilla!${BUGZILLADIR}!"
 
 do-build:
 	@${SED} -e "s:%%BUGZILLADIR%%:${BUGZILLADIR}:g; s:%%DOCSDIR%%:${DOCSDIR}:g" \
