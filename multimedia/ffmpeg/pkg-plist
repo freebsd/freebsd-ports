@@ -2,6 +2,30 @@ bin/ffmpeg
 bin/ffserver
 etc/ffserver.conf
 etc/ffserver.conf-dist
+include/ffmpeg/adler32.h
+include/ffmpeg/avcodec.h
+include/ffmpeg/avdevice.h
+include/ffmpeg/avformat.h
+include/ffmpeg/avio.h
+include/ffmpeg/avstring.h
+include/ffmpeg/avutil.h
+include/ffmpeg/base64.h
+include/ffmpeg/common.h
+include/ffmpeg/crc.h
+include/ffmpeg/fifo.h
+include/ffmpeg/intfloat_readwrite.h
+include/ffmpeg/log.h
+include/ffmpeg/lzo.h
+include/ffmpeg/mathematics.h
+include/ffmpeg/md5.h
+include/ffmpeg/mem.h
+include/ffmpeg/opt.h
+include/ffmpeg/postprocess.h
+include/ffmpeg/random.h
+include/ffmpeg/rational.h
+include/ffmpeg/rtsp.h
+include/ffmpeg/rtspcodes.h
+include/ffmpeg/sha1.h
 include/libavcodec/avcodec.h
 include/libavcodec/opt.h
 include/libavdevice/avdevice.h
@@ -61,3 +85,4 @@ libdata/pkgconfig/libpostproc.pc
 @dirrm include/libavformat
 @dirrm include/libavdevice
 @dirrm include/libavcodec
+@dirrm include/ffmpeg

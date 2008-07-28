@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2008-07-27
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -34,6 +35,31 @@ OPTIONS=	AMR_NB	"AMR narrowband encoder" off \
 		VORBIS	"libvorbisenc support (implies OGG)" on \
 		X264	"X.264 codec" on \
 		XVID	"XVID codec" off
+
+COMPAT_HEADERS=	libavcodec/avcodec.h \
+	libavcodec/opt.h \
+	libavdevice/avdevice.h \
+	libavformat/avformat.h \
+	libavformat/avio.h \
+	libavformat/rtsp.h \
+	libavformat/rtspcodes.h \
+	libavutil/adler32.h  \
+	libavutil/avstring.h \
+	libavutil/avutil.h \
+	libavutil/base64.h \
+	libavutil/common.h \
+	libavutil/crc.h \
+	libavutil/fifo.h \
+	libavutil/intfloat_readwrite.h \
+	libavutil/log.h \
+	libavutil/lzo.h \
+	libavutil/mathematics.h \
+	libavutil/md5.h \
+	libavutil/mem.h \
+	libavutil/random.h \
+	libavutil/rational.h \
+	libavutil/sha1.h \
+	libpostproc/postprocess.h
 
 .include <bsd.port.pre.mk>
 
@@ -285,5 +311,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
 .endfor
 .endif
+	${MKDIR} ${PREFIX}/include/ffmpeg
+.for FILE in ${COMPAT_HEADERS}
+	${CP} -f ${PREFIX}/include/${FILE} ${PREFIX}/include/ffmpeg/${FILE:C,^[^/]+/([^/]+).*,\1,}
+.endfor
 
 .include <bsd.port.post.mk>
