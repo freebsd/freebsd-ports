@@ -82,7 +82,7 @@ if [ -n "$2" ]; then
 	    milterdkim_cfgfile=""
 	fi
 	if [ "x${milterdkim_socket}" != "x" ];then
-	    milterdkim_socket="-p ${milterdkim_socket}"
+	    _socket_prefix="-p"
 	fi
 	if [ "x${milterdkim_domain}" != "x" ];then
 	    milterdkim_domain="-d ${milterdkim_domain}"
@@ -96,7 +96,7 @@ if [ -n "$2" ]; then
 	if [ "x${milterdkim_alg}" != "x" ];then
 	    milterdkim_alg="-S ${milterdkim_alg}"
 	fi
-	command_args="-l ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} ${milterdkim_cfgfile} ${milterdkim_domain} ${milterdkim_key} ${milterdkim_selector} ${milterdkim_alg}"
+	command_args="-l ${_socket_prefix} ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} ${milterdkim_cfgfile} ${milterdkim_domain} ${milterdkim_key} ${milterdkim_selector} ${milterdkim_alg}"
     else
 	echo "$0: extra argument ignored"
     fi
@@ -124,7 +124,7 @@ else
 	    milterdkim_cfgfile=""
 	fi
 	if [ "x${milterdkim_socket}" != "x" ];then
-	    milterdkim_socket="-p ${milterdkim_socket}"
+	    _socket_prefix="-p"
 	fi
 	if [ "x${milterdkim_domain}" != "x" ];then
 	    milterdkim_domain="-d ${milterdkim_domain}"
@@ -138,7 +138,7 @@ else
 	if [ "x${milterdkim_alg}" != "x" ];then
 	    milterdkim_alg="-S ${milterdkim_alg}"
 	fi
-	command_args="-l ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} ${milterdkim_cfgfile} ${milterdkim_domain} ${milterdkim_key} ${milterdkim_selector} ${milterdkim_alg}"
+	command_args="-l ${_socket_prefix} ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} ${milterdkim_cfgfile} ${milterdkim_domain} ${milterdkim_key} ${milterdkim_selector} ${milterdkim_alg}"
     fi
 fi
 
