@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.98.1
-PORTREVISION=	1
+PORTVERSION=	1.98.3
 CATEGORIES+=	net games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SFE
 
-MAINTAINER?=	sunpoet@sunpoet.net
-COMMENT=	A client program to help playing muds (devel version)
+MAINTAINER=	sunpoet@sunpoet.net
+COMMENT=	A client program to help playing MUDs (devel version)
 
 LATEST_LINK=	${PORTNAME}-devel
 
@@ -23,18 +21,23 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/tt++
-PORTDOCS=	BUGS CREDITS FAQ README TODO chat_protocol.txt tintin19.txt
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.in
+.include <bsd.port.pre.mk>
+
+DOCS=		BUGS CREDITS FAQ README TODO \
+		docs/chat_protocol.txt docs/tintin19.txt
+PORTDOCS=	${DOCS:T}
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${PREFIX}/bin
+
+post-install:
 .ifndef NOPORTDOCS
-	${MKDIR} ${DOCSDIR}
-.for i in BUGS CREDITS FAQ README TODO docs/chat_protocol.txt docs/tintin19.txt
-	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC}/.. && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
