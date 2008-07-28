@@ -1,13 +1,24 @@
 Get a 'graphical' tree-overview of installed packages
 
 Generates a ascii-art-graphical tree of packages and their dependancies.
-For example for itk-3.2_1:
+For example for setxkbmap and xkbcomp
 
-      [~] edwin@k7>pkg_tree tk-8
-      tk-8.3.3
-        |\__ tcl-8.3.3_3 (unknown)
-        |\__ imake-4.1.0 (unknown)
-        |\__ freetype2-2.0.4
-         \__ XFree86-libraries-4.1.0 (unknown)
+      [~] edwin@k7>pkg_tree 'xkb[cm]'
+      setxkbmap-1.0.4
+      |\__ kbproto-1.0.3
+      |\__ pkg-config-0.23_1
+      |\__ xproto-7.0.10_1
+      |\__ libXau-1.0.3_2
+      |\__ libXdmcp-1.0.2_1
+      |\__ libX11-1.1.3_1,1
+       \__ libxkbfile-1.0.4
+      xkbcomp-1.0.3
+      |\__ kbproto-1.0.3
+      |\__ pkg-config-0.23_1
+      |\__ xproto-7.0.10_1
+      |\__ libXau-1.0.3_2
+      |\__ libXdmcp-1.0.2_1
+      |\__ libX11-1.1.3_1,1
+       \__ libxkbfile-1.0.4
 
 WWW: http://www.mavetju.org/
