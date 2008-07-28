@@ -19,6 +19,9 @@ lib/libsmbclient.so.0
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/bsd-strlfunc.h
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/opendir_smbsh.c
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/select.c
+%%EXAMPLESDIR%%/libsmbclient/smbwrapper/smbsh.1
+%%EXAMPLESDIR%%/libsmbclient/smbwrapper/smbsh.1.html
+%%EXAMPLESDIR%%/libsmbclient/smbwrapper/smbsh.1.xml
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/smbsh.c
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/smbw.c
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/smbw.h
