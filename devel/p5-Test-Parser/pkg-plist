@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Test/Parser/Dbt5.pm
 %%SITE_PERL%%/Test/Parser/Iostat.pm
 %%SITE_PERL%%/Test/Parser/KernelBuild.pm
+%%SITE_PERL%%/Test/Parser/Mpstat.pm
 %%SITE_PERL%%/Test/Parser/Oprofile.pm
 %%SITE_PERL%%/Test/Parser/PgOptions.pm
 %%SITE_PERL%%/Test/Parser/Readprofile.pm
