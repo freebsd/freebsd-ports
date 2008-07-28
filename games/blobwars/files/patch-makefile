@@ -1,43 +1,36 @@
---- makefile.orig	Mon Apr 25 20:25:37 2005
-+++ makefile	Sat Jun 18 01:55:54 2005
+--- makefile.orig	2008-01-21 23:17:53.000000000 +0300
++++ makefile	2008-07-11 22:35:03.000000000 +0400
 @@ -7,9 +7,8 @@
  RELEASE = 1
  USEPAK = 1
  
 -PREFIX=$(DESTDIR)/usr
 -BINDIR = $(PREFIX)/games/
--DATADIR = $(PREFIX)/share/games/parallelrealities/
+-DATADIR = $(PREFIX)/share/games/blobwars/
 +BINDIR = $(PREFIX)/bin/
 +DATADIR = $(PREFIX)/share/$(PROG)/
  DOCDIR = $(PREFIX)/share/doc/$(PROG)/
- ICONDIR = $(PREFIX)/share/icons/
- KDE = $(PREFIX)/share/applnk/Games/Arcade/
-@@ -35,7 +34,7 @@
- PAKOBJS = CFileData.o pak.o
+ ICONDIR = $(PREFIX)/share/icons/hicolor/
+ DESKTOPDIR = $(PREFIX)/share/applications/
+@@ -19,7 +18,7 @@
+ CXXFLAGS += -DPAKNAME=\"$(PAKNAME)\" -DPAKLOCATION=\"$(DATADIR)\" -DUNIX -DGAMEPLAYMANUAL=\"$(DOCDIR)index.html\" -Wall
+ CXXFLAGS += -DLOCALEDIR=\"$(LOCALEDIR)\"
+ CXXFLAGS += $(CFLAGS)
+-LIBS = `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz
++LIBS = `sdl-config --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lz -lintl
+ 
+ OBJS += aquaBoss.o bosses.o bullets.o cutscene.o
+ OBJS += CAudio.o CBoss.o CCollision.o CCutscene.o CData.o CEffect.o CEngine.o CEntity.o CFileData.o CGame.o 
+@@ -38,7 +37,7 @@
+ LOCALE_MO = $(patsubst %.po,%.mo,$(wildcard locale/*.po))
  
  # top-level rule to create the program.
--all: $(PROG) pak
-+all: $(PROG) pak buildpak
+-all: $(PROG) pak $(LOCALE_MO)
++all: $(PROG) pak buildpak $(LOCALE_MO)
  
  # compiling other source files.
  %.o: src/%.cpp src/%.h src/defs.h src/defines.h src/headers.h
-@@ -44,7 +43,7 @@
- # linking the program.
- $(PROG): $(GAMEOBJS)
- 	$(CXX) $(LIBS) $(GAMEOBJS) -o $(PROG)
--	
-+
- pak: $(PAKOBJS)
- 	$(CXX) $(LIBS) $(PAKOBJS) -o pak
- 
-@@ -55,33 +54,20 @@
- # cleaning everything that can be automatically recreated with "make".
- clean:
- 	$(RM) $(GAMEOBJS) mapEditor.o pak.o
--	
-+
- buildpak:
- 	./pak data gfx music sound $(PAKNAME)
+@@ -66,30 +65,20 @@
  
  # install
  install:
@@ -47,21 +40,18 @@
 -	mkdir -p $(BINDIR)
  	mkdir -p $(DATADIR)
 -	mkdir -p $(DOCDIR)
--	mkdir -p $(ICONDIR)
--	mkdir -p $(ICONDIR)mini
--	mkdir -p $(ICONDIR)large
--	mkdir -p $(KDE)
--	mkdir -p $(GNOME)
+-	mkdir -p $(ICONDIR)16x16/apps
+-	mkdir -p $(ICONDIR)32x32/apps
+-	mkdir -p $(ICONDIR)64x64/apps
+-	mkdir -p $(DESKTOPDIR)
 -
--	strip $(PROG)
 -	install -o root -g games -m 755 $(PROG) $(BINDIR)$(PROG)
 -	install -o root -g games -m 644 $(PAKNAME) $(DATADIR)$(PAKNAME)
 -	install -o root -g games -m 644 $(DOCS) $(DOCDIR)
--	cp $(ICONS)$(PROG).png $(ICONDIR)
--	cp $(ICONS)$(PROG)-mini.png $(ICONDIR)mini/$(PROG).png
--	cp $(ICONS)$(PROG)-large.png $(ICONDIR)large/$(PROG).png
--	cp $(ICONS)$(PROG).desktop $(KDE)
--	cp $(ICONS)$(PROG).desktop $(GNOME)
+-	cp $(ICONS)$(PROG).png $(ICONDIR)32x32/apps/
+-	cp $(ICONS)$(PROG)-mini.png $(ICONDIR)16x16/apps/$(PROG).png
+-	cp $(ICONS)$(PROG)-large.png $(ICONDIR)64x64/apps/$(PROG).png
+-	cp $(ICONS)$(PROG).desktop $(DESKTOPDIR)
 +	mkdir -p $(PREFIX)/share/applications
 +	mkdir -p $(PREFIX)/share/pixmaps
 +
@@ -70,11 +60,13 @@
 +	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).desktop $(PREFIX)/share/applications
 +	$(BSD_INSTALL_DATA) $(ICONS)$(PROG).png $(PREFIX)/share/pixmaps
  
+ 	@for f in $(LOCALE_MO); do \
+ 		lang=`echo $$f | sed -e 's/^locale\///;s/\.mo$$//'`; \
+ 		mkdir -p $(LOCALEDIR)$$lang/LC_MESSAGES; \
+-		echo "cp $$f $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo"; \
+-		cp $$f $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo; \
++		echo "$(BSD_INSTALL_DATA) $$f $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo"; \
++		$(BSD_INSTALL_DATA) $$f $(LOCALEDIR)$$lang/LC_MESSAGES/$(PROG).mo; \
+ 	done
+ 
  uninstall:
- 	$(RM) $(BINDIR)$(PROG)
-@@ -92,4 +78,3 @@
- 	$(RM) $(ICONDIR)large/$(PROG).png
- 	$(RM) $(KDE)$(ICONS)$(PROG).desktop
- 	$(RM) $(GNOME)$(ICONS)$(PROG).desktop
--	
-\ No newline at end of file
