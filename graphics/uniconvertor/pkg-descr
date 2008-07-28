@@ -6,7 +6,7 @@ through different stages, quality and feature coverage are different
 among formats.
 
 Import filters:
-* CorelDraw ver.7-X3,X4 (CDR/CDT/CCX/CDRX/CMX)
+* CorelDRAW ver.7-X3,X4 (CDR/CDT/CCX/CDRX/CMX)
 * Adobe Illustrator up to 9 ver. (AI postscript based)
 * Postscript (PS)
 * Encapsulated Postscript (EPS)
@@ -24,5 +24,7 @@ Export filters:
 * SK1 (sK1 format)
 * CGM (Computer Graphics Metafile)
 * WMF (Windows Metafile)
+* PDF (Portable Document Format)
+* PS (PostScript)
 
 WWW: http://www.sk1project.org/

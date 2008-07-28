@@ -225,6 +225,12 @@ bin/uniconv
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/gziploader.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/gziploader.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/gziploader.pyo
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pdfgensaver.py
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pdfgensaver.pyc
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pdfgensaver.pyo
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pssaver.py
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pssaver.pyc
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pssaver.pyo
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sk1loader.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sk1loader.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sk1loader.pyo

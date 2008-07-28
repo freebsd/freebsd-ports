@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uniconvertor
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	1.1.3
 CATEGORIES=	graphics python
 MASTER_SITES=	http://sk1project.org/downloads/uniconvertor/v${PORTVERSION}/ \
 		http://www.amdmi3.ru/distfiles/
@@ -15,7 +14,8 @@ MASTER_SITES=	http://sk1project.org/downloads/uniconvertor/v${PORTVERSION}/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Universal vector graphics translator
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
 
 CONFLICTS=	yudit-[0-9]*
 
