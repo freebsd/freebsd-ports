@@ -14,12 +14,14 @@ MASTER_SITES=	http://asic-linux.com.mx/~izto/checkinstall/files/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file creation/modification logger
 
-DOCS=		BUGS CHANGELOG INSTALL README TODO
+PLIST_FILES=	bin/installwatch lib/installwatch.so
+
+PORTDOCS=	BUGS CHANGELOG INSTALL README TODO
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
