@@ -32,8 +32,4 @@ PLIST_SUB=	RULESUSED="${RULEUSED}"
 BROKEN=		Does not compile
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not build on sparc64
-.endif
-
 .include <bsd.port.post.mk>
