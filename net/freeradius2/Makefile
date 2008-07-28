@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeradius
-DISTVERSION=	2.0.3
-PORTREVISION=	1
+DISTVERSION=	2.0.5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -49,7 +48,7 @@ OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
 		PGSQL		"With PostgreSQL database support" off \
 		FIREBIRD	"With Firebird database support (EXPERIMENTAL)" off \
 		SNMP		"With SNMP support" off \
-		EXPERIMENTAL	"Build experimental modules" off
+		EXPERIMENTAL	"Build experimental modules (including DHCP)" off
 
 .include <bsd.port.pre.mk>
 
@@ -60,16 +59,23 @@ _REQUIRE=	NETWORKING SERVERS
 USER=	freeradius
 GROUP=	freeradius
 
+FREERADIUS_LIBDIR=	lib/freeradius-${PORTVERSION}
+PLIST_SUB+=	LIBDIR="${FREERADIUS_LIBDIR}"
+USE_LDCONFIG=	${PREFIX}/${FREERADIUS_LIBDIR}
+
 CONFIGURE_ARGS=	--quiet \
 		--prefix=${PREFIX} \
+		--libdir=${PREFIX}/${FREERADIUS_LIBDIR} \
 		--localstatedir=/var \
 		--with-system-libtool
 .ifdef(NOPORTDOCS)
 CONFIGURE_ARGS+=--without-docdir
 PLIST_SUB+=	PORTDOCS="@comment "
+SUB_LIST+=	PORTDOCS="@comment "
 .else
 CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
 PLIST_SUB+=	PORTDOCS=""
+SUB_LIST+=	PORTDOCS=""
 .endif
 CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
 		--with-openssl-includes=${OPENSSLINC}
@@ -81,6 +87,7 @@ CONFIGURE_ARGS+=--with-openssl-libraries=${OPENSSLLIB}
 CONFIGURE_ARGS+=--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
 		--with-rlm-python-include-dir=${PYTHON_INCLUDEDIR} \
 		--without-rlm_eap_ikev2 \
+		--without-rlm_eap_tnc \
 		--without-rlm_eap2 \
 		--without-rlm_opendirectory \
 		--without-rlm_sql_db2 \
@@ -122,8 +129,9 @@ SUB_LIST+=	USER="${RADIUS_USER}" \
 		GID="${RADIUS_GID}" \
 		RADDB_WORK="${WRKSRC}/raddb" \
 		RADDB="${PREFIX}/etc/raddb" \
-		LOGDIR="${LOGDIR}"
-SUB_FILES+=	pkg-install pkg-deinstall
+		LOGDIR="${LOGDIR}" \
+		RC_SUBR_SUFFIX="${RC_SUBR_SUFFIX}"
+SUB_FILES+=	pkg-install pkg-deinstall pkg-message
 .ifdef(WITH_USER)
 SUB_LIST+=	RUN_AS_USER="yes"
 .else
@@ -199,7 +207,7 @@ CONFIGURE_ARGS+=--without-snmp
 .endif
 
 .ifdef(WITH_EXPERIMENTAL)
-CONFIGURE_ARGS+=--with-experimental-modules
+CONFIGURE_ARGS+=--with-experimental-modules --with-dhcp
 PLIST_SUB+=	EXPM=""
 .else
 PLIST_SUB+=	EXPM="@comment "
@@ -207,6 +215,8 @@ PLIST_SUB+=	EXPM="@comment "
 
 .ifdef(WITH_DEVELOPER)
 CONFIGURE_ARGS+=--enable-developer
+# Turn off compiler optimisations
+CFLAGS!=	${ECHO} ${CFLAGS} | ${SED} -Ee 's:-O[0-9]?[[:space:]]*::g'
 .endif
 
 # NOPERL has been removed from OPTIONS. It is a nasty hack as it doesn't
@@ -225,8 +235,6 @@ USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-rlm_perl
 PLIST_SUB+=	RLMPERL=""
 .endif
-
-USE_LDCONFIG=	yes
 
 MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
 		radzap.1
@@ -249,7 +257,7 @@ post-patch:
 # Clean up after the last operation (so as not to get unwanted files when installing doc/)
 	@${FIND} -E ${WRKSRC} -regex '.*/Makefile(\.in)?\.(orig|bak)$$' -delete
 # Patch raddb/certs/bootstrap to use gmake instead of make
-	@${REINPLACE_CMD} -Ee "s:^make:${PREFIX}/bin/gmake:" \
+	@${REINPLACE_CMD} -Ee "s:^make:${GMAKE}:" \
 		${WRKSRC}/raddb/certs/bootstrap
 # Clean up after the last operation (so as not to get unwanted files in raddb)
 	@${FIND} -E ${WRKSRC}/raddb/certs -regex '.*/bootstrap\.(orig|bak)$$' \
@@ -274,28 +282,21 @@ pre-install:
 		PRE-INSTALL
 
 post-install:
-# Create (if necessary) ${PREFIX}/etc/raddb and subdirectories using
-# ${EXAMPLESDIR}/raddb as the model layout
-	@for i in `${FIND} ${EXAMPLESDIR}/raddb/ -type d -print \
-	| ${SED} -e 's:^${EXAMPLESDIR}/raddb::g'`; do \
-		if [ ! -d ${PREFIX}/etc/raddb$${i} ]; then \
-			${MKDIR} ${PREFIX}/etc/raddb$${i}; \
-		fi; \
-	done
-# Copy all files from ${EXAMPLESDIR}/raddb to ${PREFIX}/etc/raddb if they
-# don't already exist in the destination location
-	@for i in `${FIND} -P ${EXAMPLESDIR}/raddb/ \( -type f -or -type l \) \
-	-print \
-	| ${SED} -e 's:^${EXAMPLESDIR}/raddb/::g'`; do \
-		if [ ! -f ${PREFIX}/etc/raddb/$${i} ]; then \
-			${CP} -RP ${EXAMPLESDIR}/raddb/$${i} ${PREFIX}/etc/raddb/$${i}; \
-		fi; \
-	done
+# If ${PREFIX}/etc/raddb isn't a directory (or a symlink), make a copy
+# of ${EXAMPLESDIR}/raddb as ${PREFIX}/etc/raddb, then bootstrap the
+# certificates
+	@if ! [ -d ${PREFIX}/etc/raddb -o -L ${PREFIX}/etc/raddb ]; then \
+		${CP} -RP ${EXAMPLESDIR}/raddb ${PREFIX}/etc/raddb; \
+		${ECHO_MSG} '===> Bootstrapping default certificates, please wait...'; \
+		${PREFIX}/etc/raddb/certs/bootstrap >/dev/null 2>&1; \
+	fi
 # Set ${PREFIX}/etc/raddb and all the files and folders in it to g-w,o-rwx
 # (FreeRADIUS will probably complain if this is not done)
 	@${CHMOD} -R g-w,o-rwx ${PREFIX}/etc/raddb
 # Run pkg-install POST-INSTALL
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
 		POST-INSTALL
+# Display the contents of pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
