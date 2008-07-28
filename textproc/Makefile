@@ -394,6 +394,7 @@
     SUBDIR += p5-HTML-Format
     SUBDIR += p5-HTML-FormatText-WithLinks
     SUBDIR += p5-HTML-Fraction
+    SUBDIR += p5-HTML-RewriteAttributes
     SUBDIR += p5-HTML-SBC
     SUBDIR += p5-HTML-TagFilter
     SUBDIR += p5-HTML-Tidy
