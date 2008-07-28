@@ -76,6 +76,9 @@ FFLAGARCH=	-fdefault-integer-8 -fdefault-real-8
 # Avoid renaming .f into .F
 #F90FLAGS=	-x f77-cpp-input ${FFLAGS}
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not install
+.endif
 .if ${OSVERSION} < 600022
 BROKEN=	Does not compile on this version, and cannot be patched easily.
 .endif
