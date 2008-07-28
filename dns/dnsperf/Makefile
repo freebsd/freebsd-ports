@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dnsperf
-PORTVERSION=	1.0.0.1
+PORTVERSION=	1.0.1.0
 CATEGORIES=	dns benchmarks net
 MASTER_SITES=	ftp://ftp.nominum.com/pub/nominum/${PORTNAME}/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	DNSPerf and ResPerf deliver accurate performance metrics of Domain Name Services
