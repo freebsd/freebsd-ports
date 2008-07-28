@@ -7,6 +7,7 @@
 
 PORTNAME=	wysiwyg
 PORTVERSION=	0.2.3856
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/
 PKGNAMEPREFIX=	trac-
@@ -20,7 +21,7 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 USE_ZIP=	yes
 
-WRKSRC=		${WRKDIR}/trac${PORTNAME}plugin/0.10
+WRKSRC=		${WRKDIR}/trac${PORTNAME}plugin/0.11
 NO_BUILD=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
