@@ -4,4 +4,4 @@ Amazon's REST and query interfaces to provide full programmatic
 control. An optional robust HTTP layer retries and clears transient
 errors.
 
-WWW: http://rightaws.rubyforge.org/
+WWW:	http://rightaws.rubyforge.org/
