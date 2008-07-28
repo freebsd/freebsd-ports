@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	0.4.16
+PORTVERSION=	0.4.19
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	multimedia
@@ -52,7 +52,7 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 .if defined(WITH_NEWT)
 PLIST_SUB+=	OPTNEWT="@comment "
-CONFIGURE_ARGS+=	--with-newt=no
+CONFIGURE_ARGS+=	--with-installed-newt=yes
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 RUN_DEPENDS+=	newt${PYTHON_PKGNAMESUFFIX}>=0.51.0_4:${PORTSDIR}/devel/newt
 .else
