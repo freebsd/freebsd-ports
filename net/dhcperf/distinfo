@@ -1,3 +1,3 @@
-MD5 (dhcperf-1.0.0.0-1-freebsd-5.4-i386.tar.gz) = c7750749ffaebc8c40391e39d5fedbef
-SHA256 (dhcperf-1.0.0.0-1-freebsd-5.4-i386.tar.gz) = 5ad2aafcaa441ba6bd3edc162e9197e3ef84953b4c85fdaa8bb99711f558cf55
-SIZE (dhcperf-1.0.0.0-1-freebsd-5.4-i386.tar.gz) = 565825
+MD5 (dhcperf-1.0.1.0-1-freebsd-5.4-i386.tar.gz) = 173fec933d63e719f6f1e110d23b2c22
+SHA256 (dhcperf-1.0.1.0-1-freebsd-5.4-i386.tar.gz) = c2007408c202027631f2bdea2a9a0841d34a14fc4a7a81b7ae93c2aff2262ca9
+SIZE (dhcperf-1.0.1.0-1-freebsd-5.4-i386.tar.gz) = 577064
