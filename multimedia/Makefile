@@ -204,6 +204,7 @@
     SUBDIR += sabbu
     SUBDIR += schroedinger
     SUBDIR += shell-fm
+    SUBDIR += smile
     SUBDIR += smilutils
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
