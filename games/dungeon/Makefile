@@ -7,7 +7,7 @@
 
 PORTNAME=	dungeon
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/games/source/ \
 		ftp://ftp.ifarchive.com/if-archive/games/source/ \
@@ -49,16 +49,13 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dungeon ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/dtextc.dat ${PREFIX}/share/dungeon
+	${INSTALL_DATA} ${WRKSRC}/dtextc.dat ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/dungeon.6 ${PREFIX}/man/man6
-
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/dungeon
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/history ${PREFIX}/share/dungeon
-	${INSTALL_DATA} ${WRKSRC}/manifest ${PREFIX}/share/dungeon
-	${INSTALL_DATA} ${WRKSRC}/readme ${PREFIX}/share/dungeon
-	${INSTALL_DATA} ${DISTDIR}/dungn32b.zip ${PREFIX}/share/dungeon
+	${INSTALL_DATA} ${WRKSRC}/history ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/manifest ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/dungn32b.zip ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
