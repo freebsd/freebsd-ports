@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-NoWarnings
-PORTVERSION=	0.083
+PORTVERSION=	0.084
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,16 +14,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	alex@kapranoff.ru
 COMMENT=	Hide and store warnings while running test scripts
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Tester.pm:${PORTSDIR}/devel/p5-Test-Tester
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
-INSTALL_TARGET=	pure_install
 
 MAN3=		Test::NoWarnings.3
 
-post-patch:
-	@${PERL} -i -pe 'm/INSTALLDIRS\s+=>/ and $$_ = ""' \
-			${WRKSRC}/Makefile.PL
+OPTIONS=	DEVEL_STACKTRACE "Stack trace support" off
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DEVEL_STACKTRACE)
+RUN_DEPENDS+=	p5-Devel-StackTrace>=0:${PORTSDIR}/devel/p5-Devel-StackTrace
+.endif
+
+.include <bsd.port.post.mk>
