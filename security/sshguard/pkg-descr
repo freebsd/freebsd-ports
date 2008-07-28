@@ -1,12 +1,14 @@
-Sshguard monitors ssh servers from their logging activity. It reacts to messages
+Sshguard monitors services from their logging activity. It reacts to messages
 about dangerous activity by blocking the source address with the local firewall.
 
-Sshguard can operate all the major firewalling systems:
-* PF (OpenBSD, FreeBSD, NetBSD, DragonFly BSD)
-* netfilter/iptables (Linux)
-* IPFIREWALL/ipfw (FreeBSD, Mac OS X)
+Sshguard employs a clever parser that can recognize several logging formats at
+once transparently (syslog, syslog-ng, metalog, multilog, raw messages), and
+detects attacks for many services out of the box, including SSH, FreeBSD's
+ftpd and dovecot.  It can operate all the major firewalling systems, including
+PF, netfilter/iptables, IPFIREWALL/ipfw, IPFILTER.
 
-Sshguard is reliable, easy to set up and demands very few resources to the
-system.
+Sshguard has several relevant features like support for IPv6, whitelisting,
+suspension, log message authentication. It is reliable, easy to set up and
+demands very few resources to the system.
 
 WWW: http://sshguard.sourceforge.net
