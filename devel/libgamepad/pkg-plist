@@ -3,6 +3,5 @@ include/libgamepad/gamepad.h
 include/libgamepad/gamepad_analog.h
 include/libgamepad/gamepad_libhid.h
 include/libgamepad/gamepad_usbhid.h
-lib/libgamepad.so.1
-lib/libgamepad.so
+lib/libgamepad.a
 @dirrm include/libgamepad

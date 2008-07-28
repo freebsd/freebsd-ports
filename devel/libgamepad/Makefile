@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgamepad
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 CATEGORIES=	devel games
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
@@ -14,7 +14,8 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Generic gamepad API
 
-USE_LDCONFIG=	yes
+pre-build:
+	(cd ${WRKSRC} && make depend)
 
 MAN3=		libgamepad.3
 
