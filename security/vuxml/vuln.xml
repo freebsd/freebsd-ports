@@ -5227,11 +5227,8 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>bugzilla</name>
 	<name>ja-bugzilla</name>
-	<range><lt>3.0.1</lt></range>
-      </package>
-      <package>
-	<name>bugzilla2</name>
-	<range><lt>2.22.3</lt></range>
+	<range><ge>2.20.*</ge><lt>2.22.3</lt></range>
+	<range><ge>3.*</ge><lt>3.0.1</lt></range>
       </package>
     </affects>
     <description>
@@ -5365,7 +5362,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>bugzilla</name>
-	<range><lt>3.0.2</lt></range>
+	<range><ge>3.*</ge><lt>3.0.2</lt></range>
       </package>
     </affects>
     <description>
