@@ -787,6 +787,7 @@
     SUBDIR += xmmsctrl
     SUBDIR += xmp
     SUBDIR += xmradio
+    SUBDIR += xoscope
     SUBDIR += xsidplay
     SUBDIR += xsynth-dssi
     SUBDIR += xtuner
