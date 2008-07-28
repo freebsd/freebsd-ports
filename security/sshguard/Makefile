@@ -7,6 +7,7 @@
 
 PORTNAME=	sshguard
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +19,6 @@ CONFLICTS?=	sshguard-ipfilter-1.* sshguard-ipfw-1.* sshguard-pf-1.*
 
 PLIST_FILES=	sbin/sshguard
 
-MANPREFIX=	${PREFIX}/share
 MAN8=		sshguard.8
 MANCOMPRESSED=	no
 USE_BZIP2=	yes
@@ -36,6 +36,9 @@ SSHGUARDFW?=	hosts
 .if defined(PREFIX)
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 .endif
+
+# set path for manpages
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
 .if ${SSHGUARDFW} == pf
 PKGMSG_FWBLOCK="  To activate or configure PF see http://sshguard.sf.net/doc/setup/blockingpf.html"
