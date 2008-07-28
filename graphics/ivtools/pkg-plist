@@ -46,6 +46,8 @@ lib/libComGlyph.so
 lib/libComGlyph.so.1.2.5
 lib/libComUtil.so
 lib/libComUtil.so.1.2.5
+lib/libComTerp.so
+lib/libComTerp.so.1.2.5
 lib/libIV-common.so
 lib/libIV-common.so.1.2.5
 lib/libIVGlyph.so
