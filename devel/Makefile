@@ -1472,6 +1472,7 @@
     SUBDIR += p5-MooseX-Async
     SUBDIR += p5-MooseX-AttributeHelpers
     SUBDIR += p5-MooseX-ClassAttribute
+    SUBDIR += p5-MooseX-Getopt
     SUBDIR += p5-MooseX-IOC
     SUBDIR += p5-MooseX-POE
     SUBDIR += p5-MooseX-Policy-SemiAffordanceAccessor
