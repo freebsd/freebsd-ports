@@ -1,0 +1,21 @@
+--- config.h.in.orig	2008-03-29 22:30:23.000000000 -0400
++++ config.h.in	2008-03-29 22:33:00.000000000 -0400
+@@ -11,6 +11,9 @@
+  *
+  */
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
+ 
+ /* Define to empty if the keyword does not work.  */
+ #undef const
+@@ -200,4 +203,8 @@
+ 
+ /* extra places to look for serial scopes (set to {""} to not search) */
+ /* ({"", "/dev/ttyS0", "/dev/ttyS1", "/dev/ttyS2", "/dev/ttyS3"}) */
++#ifdef BSD
++#define PSDEVS {"", "/dev/ttyd0", "/dev/ttyd1", "/dev/ttyd2", "/dev/ttyd3"}
++#else
+ #define PSDEVS {"", "/dev/ttyS0", "/dev/ttyS1", "/dev/ttyS2", "/dev/ttyS3"}
++#endif
