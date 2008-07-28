@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Parser
-PORTVERSION=	1.7
+PORTVERSION=	1.9
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,7 @@ PERL_CONFIGURE=	yes
 MAN1=		parse_iozone.1 parse_test.1
 
 MAN3=		Test::Metadata.3 Test::Parser.3 Test::Parser::Dbench.3 \
-		Test::Parser::Dbt2.3 Test::Parser::Dbt5.3 \
+		Test::Parser::Dbt2.3 Test::Parser::Dbt5.3 Test::Parser::Mpstat.3 \
 		Test::Parser::Iostat.3 Test::Parser::KernelBuild.3 \
 		Test::Parser::Oprofile.3 Test::Parser::PgOptions.3 \
 		Test::Parser::Readprofile.3 Test::Parser::Sar.3 \
