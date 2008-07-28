@@ -1,0 +1,289 @@
+%%BUGZILLADIR%%/README-ru.en
+%%BUGZILLADIR%%/README-ru.ru.UTF-8
+%%BUGZILLADIR%%/help/ru/bug_status.html
+%%BUGZILLADIR%%/help/ru/bugwritinghelp.html
+%%BUGZILLADIR%%/help/ru/confirmhelp.html
+%%BUGZILLADIR%%/help/ru/glossary.html
+%%BUGZILLADIR%%/template/ru/default/account/auth/login-small.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/auth/login.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/cancel-token.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/created.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/email/change-new.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/email/change-old.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/email/confirm-new.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/email/confirm.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/email/request-new.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/password/forgotten-password.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/password/set-forgotten-password.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/prefs/account.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/prefs/email.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/prefs/permissions.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/prefs/prefs.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/prefs/saved-searches.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/prefs/settings.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/account/profile-activity.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/classifications/add.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/classifications/del.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/classifications/delete.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/classifications/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/classifications/new.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/classifications/reclassify.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/classifications/select.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/classifications/update.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/components/confirm-delete.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/components/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/components/created.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/components/deleted.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/components/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/components/footer.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/components/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/components/select-product.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/components/updated.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/confirm-action.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/custom_fields/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/custom_fields/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/custom_fields/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/fieldvalues/confirm-delete.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/fieldvalues/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/fieldvalues/created.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/fieldvalues/deleted.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/fieldvalues/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/fieldvalues/footer.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/fieldvalues/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/fieldvalues/select-field.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/fieldvalues/updated.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/flag-type/confirm-delete.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/flag-type/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/flag-type/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/groups/change.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/groups/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/groups/created.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/groups/delete.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/groups/deleted.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/groups/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/groups/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/groups/remove.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/keywords/confirm-delete.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/keywords/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/keywords/created.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/keywords/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/keywords/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/keywords/rebuild-cache.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/milestones/confirm-delete.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/milestones/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/milestones/created.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/milestones/deleted.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/milestones/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/milestones/footer.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/milestones/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/milestones/select-product.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/milestones/updated.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/admin.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/attachment.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/auth.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/bugchange.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/bugfields.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/bugmove.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/common.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/core.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/dependencygraph.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/editparams.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/groupsecurity.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/index.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/l10n.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/ldap.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/mta.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/patchviewer.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/query.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/shadowdb.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/usermatch.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/confirm-delete.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/created.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/deleted.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/edit-common.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/footer.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/groupcontrol/confirm-edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/groupcontrol/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/groupcontrol/updated.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/list-classifications.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/products/updated.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/settings/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/settings/updated.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/sudo.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/table.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/users/confirm-delete.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/users/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/users/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/users/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/users/search.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/users/userdata.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/versions/confirm-delete.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/versions/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/versions/created.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/versions/deleted.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/versions/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/versions/footer.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/versions/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/versions/select-product.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/versions/updated.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/choose.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/confirm-delete.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/content-types.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/created.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/createformcontents.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/delete_reason.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/diff-file.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/diff-header.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/show-multiple.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/attachment/updated.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/activity/show.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/activity/table.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/choose.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/comments.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/create/comment-guided.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/create/confirm-create-dupe.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/create/create-guided.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/create/create.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/create/created.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/create/make-template.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/create/user-message.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/dependency-graph.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/dependency-tree.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/knob.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/navigate.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/process/bugmail.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/process/confirm-duplicate.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/process/header.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/process/midair.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/process/results.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/process/verify-new-product.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/show-multiple.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/show.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/summarize-time.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/votes/delete-all.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/votes/list-for-bug.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/bug/votes/list-for-user.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/email/newchangedmail.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/email/sudo.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/email/votes-removed.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/email/whine.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/filterexceptions.pl
+%%BUGZILLADIR%%/template/ru/default/flag/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/choose-classification.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/choose-product.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/code-error.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/common-links.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/confirm-user-match.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/docslinks.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/field-descs.none.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/hidden-fields.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/message.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/messages.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/per-bug-queries.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/setting-descs.none.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/site-navigation.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/useful-links.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/user-error.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/variables.none.tmpl
+%%BUGZILLADIR%%/template/ru/default/index.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/list/change-columns.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/list/edit-multiple.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/list/list-simple.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/list/list.atom.tmpl
+%%BUGZILLADIR%%/template/ru/default/list/list.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/list/quips.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/list/server-push.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/list/table.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/pages/bug-writing.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/pages/fields.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/pages/linked.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/pages/linkify.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/pages/quicksearch.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/pages/quicksearchhack.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/pages/release-notes.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/pages/sudo.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/pages/voting.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/chart.csv.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/chart.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/chart.png.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/components.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/create-chart.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/duplicates-simple.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/duplicates-table.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/duplicates.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/edit-series.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/keywords.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/menu.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/old-charts.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/report-simple.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/report-table.csv.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/report-table.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/report.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/series.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/request/email.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/request/queue.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/search/boolean-charts.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/search/form.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/search/knob.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/search/search-advanced.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/search/search-create-series.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/search/search-help.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/search/search-report-graph.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/search/search-report-select.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/search/search-report-table.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/search/search-specific.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/search/tabs.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/sidebar.xul.tmpl
+%%BUGZILLADIR%%/template/ru/default/welcome-admin.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/whine/mail.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/whine/mail.txt.tmpl
+%%BUGZILLADIR%%/template/ru/default/whine/schedule.html.tmpl
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/whine
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/search
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/request
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/reports
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/pages
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/list
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/global
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/flag
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/email
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/bug/votes
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/bug/process
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/bug/create
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/bug/activity
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/bug
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/attachment
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/versions
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/users
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/settings
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/products/groupcontrol
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/products
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/params
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/milestones
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/keywords
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/groups
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/flag-type
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/fieldvalues
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/custom_fields
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/components
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin/classifications
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/admin
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/account/prefs
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/account/password
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/account/email
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/account/auth
+@dirrmtry %%BUGZILLADIR%%/template/ru/default/account
+@dirrmtry %%BUGZILLADIR%%/template/ru/default
+@dirrmtry %%BUGZILLADIR%%/template/ru
+@dirrmtry %%BUGZILLADIR%%/template
+@dirrmtry %%BUGZILLADIR%%/help/ru
+@dirrmtry %%BUGZILLADIR%%/help
+@dirrmtry %%BUGZILLADIR%%

@@ -7,6 +7,7 @@
     SUBDIR += apache13-modssl
     SUBDIR += artwiz-ru
     SUBDIR += aspell
+    SUBDIR += bugzilla-ru
     SUBDIR += cyrproxy
     SUBDIR += d1489
     SUBDIR += eric4
