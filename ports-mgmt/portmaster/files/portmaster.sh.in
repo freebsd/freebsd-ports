@@ -42,7 +42,7 @@ umask 022
 version () {
 	local rcs cvs
 
-	rcs='$Id: portmaster,v 2.27 2008/03/19 21:32:24 doug Exp $'
+	rcs='$Id: portmaster,v 2.36 2008/07/28 21:13:08 doug Exp $'
 	cvs='$FreeBSD$'
 
 	rcs="${rcs#*,v }" ; rcs="${rcs%% *}"
@@ -177,7 +177,7 @@ safe_exit () {
 			;;
 		esac
 
-		if [ -n "$UPDATE_ALL" ]; then
+		if [ -n "$UPDATE_ALL" -a -n "$INSTALLED_LIST" ]; then
 			show_list=all
 		else
 			case "$INSTALLED_LIST" in
@@ -223,9 +223,10 @@ usage () {
 	echo "    [-x <glob pattern to exclude from building>]"
 	echo "${0##*/} [Common flags] <full name of port directory in $pdb>"
 	echo "${0##*/} [Common flags] <full path to $pd/foo/bar>"
-	echo "${0##*/} [Common flags] Multiple full names/paths from $pdb|$pd"
-	echo ''
 	echo "${0##*/} [Common flags] <glob pattern of directories in $pdb>"
+	echo "${0##*/} [Common flags] Multiple full names/paths from $pdb|$pd"
+	echo "                          and/or multiple globs from $pdb"
+	echo ''
 	echo "${0##*/} [Common flags] -p <port directory in $pd>"
 	echo "${0##*/} [Common flags] . [Use in $pd/foo/bar to build that port]"
 	echo ''
@@ -386,8 +387,9 @@ check_dependency_files () {
 	# egrep hates + in file names
 	case "$origin" in *+*)
 		origin=`echo $origin | sed 's#\+#\\\\+#g'` ;; esac
-	case "$ro_opd" in *+*)
-		ro_opd=`echo $ro_opd | sed 's#\+#\\\\+#g'` ;; esac
+	case "$ro_opd" in
+	'')	ro_opd=a/a ;;
+	*+*)	ro_opd=`echo $ro_opd | sed 's#\+#\\\\+#g'` ;; esac
 
 	# Always rely on the grep'ed dependencies instead of +REQUIRED_BY
 	grep_deps=`pm_mktemp grep-deps-${iport}`
@@ -560,6 +562,9 @@ read_distinfos () {
 	for pkg in ${pdb}/*; do
 		[ -d $pkg ] || continue
 		iport=${pkg#$pdb/}
+
+		case "$iport" in bsdpan-*) continue ;; esac
+
 		origin=`origin_from_pdb $iport`
 
 		if [ ! -d "$pd/$origin" ]; then
@@ -623,6 +628,11 @@ IFS='
 		[ -d "$pkg" ] || continue
 
 		iport=${pkg#$pdb/}
+
+		case "$iport" in bsdpan-*)
+		echo "===>>> BSDPAN ports do not record dependencies ($iport)"
+		continue ;; esac
+
 		echo "===>>> Checking $iport"
 
 		[ -r "$pkg/+CONTENTS" ] || {
@@ -666,7 +676,7 @@ fi
 #=============== End code relevant only to --features ===============
 
 # Save switches for potential child processes
-while getopts 'BCDFGHLRabde:fghilm:nop:r:stuvwx:' COMMAND_LINE_ARGUMENT ; do
+while getopts 'BCDFGHKLRabde:fghilm:nop:r:stuvwx:' COMMAND_LINE_ARGUMENT ; do
 	case "${COMMAND_LINE_ARGUMENT}" in
 	B)	NO_BACKUP=Bopt; ARGS="-B $ARGS" ;;
 	C)	DONT_PRE_CLEAN=Copt; ARGS="-C $ARGS" ;;
@@ -752,7 +762,13 @@ check_for_updates () {
 
 	[ "$1" = 'list' ] && { list=list ; shift; }
 
-	iport=$1 ; origin=${2:-`origin_from_pdb $iport`}
+	iport=$1
+
+	case "$iport" in bsdpan-*)	[ -n "$PM_VERBOSE" ] &&
+	echo "	===>>> BSDPAN ports cannot be upgraded with portmaster"
+	return 0 ;; esac
+
+	origin=${2:-`origin_from_pdb $iport`}
 	if [ -z "$origin" ]; then
 		if [ -n "$PM_VERBOSE" ]; then
 			echo "===>>> No ORIGIN in $pdb/$iport/+CONTENTS"
@@ -847,8 +863,8 @@ check_for_updates () {
 		return 0
 	fi
 
-	check_interactive $iport || return 0
-	update_port $iport || return 1
+	check_interactive $iport $port_ver || return 0
+	update_port $iport $port_ver || return 1
 	return 0
 }
 
@@ -1343,6 +1359,10 @@ check_restart_and_udf () {
 check_interactive () {
 	[ -n "$INTERACTIVE_UPDATE" ] || return 0
 
+	local update_to
+
+	[ -n "$2" ] && update_to=" to $2"
+
 	case "$INTERACTIVE_YES" in *:${1}:*) return 0 ;; esac
 	case "$INTERACTIVE_NO" in *:${1}:*) return 1 ;; esac
 
@@ -1351,7 +1371,7 @@ check_interactive () {
 		echo "===>>> +IGNOREME file is present for $1"
 	fi
 
-	echo '' ; echo -n "===>>> Update ${1}? [y] "
+	echo '' ; echo -n "===>>> Update ${1}${update_to}? [y] "
 	local answer ; read answer
 	case "$answer" in
 	[nN]*)	INTERACTIVE_NO="${INTERACTIVE_NO}${1}:" ; return 1 ;;
@@ -1396,7 +1416,11 @@ check_fetch_only () {
 }
 
 update_port () {
-	echo "===>>> Launching child to update ${1#$pd/}"
+	local update_to
+
+	[ -n "$2" ] && update_to=" to $2"
+
+	echo "===>>> Launching child to update ${1#$pd/}${update_to}"
 
 	[ -n "$DEPTH" ] && echo "	$DEPTH >> ${1#$pd/}"
 
@@ -1553,28 +1577,44 @@ multiport () {
 	PM_MULTI_PORTS=':' ; PM_MULTI_BUILT=':'
 	export PM_MULTI_PORTS PM_MULTI_BUILT
 
-	local port portlist
+	local worklist port portlist
 
-	# Quick check of the command line arguments
+	# Expand globs and check that the directories exist
 	for port in $@; do
 		port=${port#$pdb/}
 		case "$port" in
-		*/*)	[ -d "$pd/${port#$pd/}" ] ||
-			    fail "$pd/${port#$pd/} does not exist"
-			;;
-		*)	[ -d "$pdb/$port" ] ||
-			    fail "$pdb/$port does not exist"
-			;;
+		*/*)	port=${port#$pd/}
+			if [ -d "$pd/${port}" ]; then
+				worklist="$worklist $port"
+				portlist="${portlist}\t${port}\n"
+				PM_MULTI_PORTS="${PM_MULTI_PORTS}${port}:"
+			else
+				fail "$pd/${port} does not exist"
+			fi ;;
+		*)	if [ -d "$pdb/$port" ]; then
+				worklist="$worklist $port"
+				portlist="${portlist}\t${port}\n"
+				PM_MULTI_PORTS="${PM_MULTI_PORTS}${port}:"
+			else
+				local globlist dir
+		globlist=`find $pdb -maxdepth 1 -type d -name ${port%\*}\*`
+				case "$globlist" in
+				*\*|'') fail "$pdb/$port does not exist" ;;
+				*)	for dir in $globlist; do
+				worklist="$worklist ${dir#$pdb/}"
+				portlist="${portlist}\t${dir#$pdb/}\n"
+				PM_MULTI_PORTS="${PM_MULTI_PORTS}${dir#$pdb/}:"
+					done ;;
+				esac
+			fi ;;
 		esac
-		portlist="${portlist}\t${port}\n"
-		PM_MULTI_PORTS="${PM_MULTI_PORTS}${port}:"
 	done
 
 	echo "===>>> Working on multiple ports:"
 	echo -e $portlist
 
 	if [ -n "$CONFIG_ONLY" ]; then
-		for port in $@; do
+		for port in $worklist; do
 			($0 $ARGS $port) || fail "Update for $port failed"
 			. $IPC_SAVE
 		done
@@ -1584,7 +1624,7 @@ multiport () {
 		echo "===>>> Starting build for multiple ports <<<==="
 		echo ''
 	fi
-	for port in $@; do
+	for port in $worklist; do
 		case "$PM_MULTI_BUILT" in *:${port}:*) continue ;; esac
 
 		case "$port" in
@@ -1669,6 +1709,10 @@ all_config () {
 
 		case "$CUR_DEPS" in *:${iport}:*) continue ;; esac
 
+		case "$iport" in bsdpan-*)	[ -n "$PM_VERBOSE" ] &&
+		echo "	===>>> BSDPAN ports cannot be upgraded with portmaster"
+		continue ;; esac
+
 		origin=`origin_from_pdb $iport`
 		case "$CONFIG_SEEN_LIST" in *:${origin}:*) continue ;; esac
 
@@ -1720,6 +1764,8 @@ all_config () {
 		[ -d "$pdb/$iport" ] || continue
 		case "$CUR_DEPS" in *:${iport}:*) continue ;; esac
 		check_exclude $iport || continue
+
+		case "$iport" in bsdpan-*) continue ;; esac
 
 		DEPTH=
 		if [ -n "$PM_FORCE" ]; then
@@ -1805,7 +1851,14 @@ fi
 
 if [ -n "$upg_port" -a -z "$REPLACE_ORIGIN" ]; then
 	portdir=`origin_from_pdb $upg_port`
-	[ -n "$portdir" ] || fail "No ORIGIN in $pdb/$upg_port/+CONTENTS"
+	if [ ! -n "$portdir" ]; then
+		case "$upg_port" in
+		bsdpan-*)	echo ''
+		echo "===>>> BSDPAN ports cannot be upgraded with portmaster"
+			echo "       (${upg_port})"; echo ''; safe_exit ;;
+		*)	fail "No ORIGIN in $pdb/$upg_port/+CONTENTS" ;;
+		esac
+	fi
 elif [ -z "$portdir" ]; then
 	no_valid_port
 fi
