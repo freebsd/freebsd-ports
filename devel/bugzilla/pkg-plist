@@ -46,6 +46,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/installing-bugzilla.html
 %%PORTDOCS%%%%DOCSDIR%%/html/integration.html
+%%PORTDOCS%%%%DOCSDIR%%/html/keywords.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lifecycle.html
 %%PORTDOCS%%%%DOCSDIR%%/html/milestones.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules-manual-download.html
@@ -63,6 +64,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/query.html
 %%PORTDOCS%%%%DOCSDIR%%/html/quips.html
 %%PORTDOCS%%%%DOCSDIR%%/html/reporting.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sanitycheck.html
 %%PORTDOCS%%%%DOCSDIR%%/html/security-bugzilla.html
 %%PORTDOCS%%%%DOCSDIR%%/html/security-mysql.html
 %%PORTDOCS%%%%DOCSDIR%%/html/security-os.html
