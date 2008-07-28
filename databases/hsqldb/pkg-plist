@@ -1,0 +1,178 @@
+%%JAVAJARDIR%%/hsqldb.jar
+%%JAVAJARDIR%%/hsqljdbc.jar
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/guide/navicons/home.gif
+%%PORTDOCS%%%%DOCSDIR%%/guide/navicons/next.gif
+%%PORTDOCS%%%%DOCSDIR%%/guide/navicons/prev.gif
+%%PORTDOCS%%%%DOCSDIR%%/guide/navicons/up.gif
+%%PORTDOCS%%%%DOCSDIR%%/guide/apa.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/apb.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/apc.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/apd.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/ape.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/apf.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/apg.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/ch02.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/ch03.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/ch04.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/ch05.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/ch06.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/ch07.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/ch08.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/ch09.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/guide.css
+%%PORTDOCS%%%%DOCSDIR%%/guide/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/guide/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/pr01.html
+%%PORTDOCS%%%%DOCSDIR%%/images/sqlDDL.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/sqlDML.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/sqlOther.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/sqlSecurity.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/sqlSelect.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/sqlTransact.gif
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/class-use/jdbcDriver.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/class-use/Server.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/class-use/Trigger.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/class-use/WebServer.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcBlob.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcCallableStatement.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcClob.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcColumnMetaData.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcConnection.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcDatabaseMetaData.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcDataSourceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcParameterMetaData.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcPreparedStatement.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcResultSet.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcResultSetMetaData.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcSavepoint.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/jdbcStatement.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/class-use/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcBlob.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcCallableStatement.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcClob.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcColumnMetaData.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcConnection.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcDatabaseMetaData.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcDataSourceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcParameterMetaData.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcPreparedStatement.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcResultSet.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcResultSetMetaData.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcSavepoint.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/jdbcStatement.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbc/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/sample/class-use/TriggerSample.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/sample/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/sample/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/sample/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/sample/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/sample/TriggerSample.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/util/class-use/RCData.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/util/class-use/SqlTool.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/util/class-use/SqlTool.SqlToolException.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/util/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/util/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/util/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/util/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/util/RCData.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/util/SqlTool.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/util/SqlTool.SqlToolException.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/jdbcDriver.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/Server.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/Trigger.html
+%%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/WebServer.html
+%%PORTDOCS%%%%DOCSDIR%%/src/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/src/.cvsignore
+%%PORTDOCS%%%%DOCSDIR%%/src/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/src/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/src/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/src/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/src/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/src/hsqldb.gif
+%%PORTDOCS%%%%DOCSDIR%%/src/hsqldbstylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/src/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/src/index.html
+%%PORTDOCS%%%%DOCSDIR%%/src/overview-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/src/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/src/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/src/package-list
+%%PORTDOCS%%%%DOCSDIR%%/src/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/src/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/buttons.png
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/commandBut.png
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/constructor-index.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/constructors.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/editorBut.png
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/green-ball-small.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/green-ball.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/hsqldb.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/method-index.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/methods.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/nicksant3.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/red-ball-small.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/red-ball.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/red_up.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/resultBut.png
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/sharp1.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/sourceforge.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/sqlDDL.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/sqlDML.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/sqlOther.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/sqlSecurity.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/sqlSelect.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/sqlTransact.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/treeBut.png
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/yellow-ball-small.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/yellow-ball.gif
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/images/zaurus.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/building.html
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/hsqlSyntax.html
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/index.html
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/org.hsqldb.util.ZaurusEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/readme
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/todo.html
+%%PORTDOCS%%%%DOCSDIR%%/zaurus/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/changelist_1_7_2.txt
+%%PORTDOCS%%%%DOCSDIR%%/changelist_1_7_3.txt
+%%PORTDOCS%%%%DOCSDIR%%/changelist_1_8_0.txt
+%%PORTDOCS%%%%DOCSDIR%%/changelog_1_7_1.txt
+%%PORTDOCS%%%%DOCSDIR%%/changelog_1_7_2.txt
+%%PORTDOCS%%%%DOCSDIR%%/changelog_1_8_0.txt
+%%PORTDOCS%%%%DOCSDIR%%/databaseinjar.txt
+%%PORTDOCS%%%%DOCSDIR%%/hsqldb_lic.txt
+%%PORTDOCS%%%%DOCSDIR%%/hsqlFindFile.html
+%%PORTDOCS%%%%DOCSDIR%%/hsqlSoftwareLinks.html
+%%PORTDOCS%%%%DOCSDIR%%/hypersonic_lic.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme-docauthors.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme_linux.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/navicons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src/org/hsqldb/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src/org/hsqldb/jdbc/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src/org/hsqldb/jdbc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src/org/hsqldb/sample/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src/org/hsqldb/sample
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src/org/hsqldb/util/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src/org/hsqldb/util
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src/org/hsqldb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/src
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zaurus/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zaurus
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
