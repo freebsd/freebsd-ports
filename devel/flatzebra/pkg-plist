@@ -15,4 +15,12 @@ include/flatzebra/RSprite.h
 include/flatzebra/SoundMixer.h
 include/flatzebra/KeyState.h
 
+share/doc/flatzebra-0.1.1/AUTHORS
+share/doc/flatzebra-0.1.1/COPYING
+share/doc/flatzebra-0.1.1/INSTALL
+share/doc/flatzebra-0.1.1/NEWS
+share/doc/flatzebra-0.1.1/README
+share/doc/flatzebra-0.1.1/TODO
+
+@dirrm share/doc/flatzebra-0.1.1/
 @dirrm include/flatzebra
