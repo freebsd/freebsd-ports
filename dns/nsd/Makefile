@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	3.0.7
+PORTVERSION=	3.1.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -16,24 +16,24 @@ COMMENT=	An authoritative only non-recursive name server
 
 CONFLICTS=	nsd-[0-2]*
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	nsd
 
 NSDUSER?=	bind
-NSDDIR?=	${PREFIX}/etc/nsd
-NSDDBFILE?=	/var/db/nsd.database
+NSDDBDIR?=	/var/db/nsd
+NSDDBFILE?=	${NSDDBDIR}/nsd.db
+NSDDIFFFILE?=	${NSDDBDIR}/ixfr.db
+NSDXFRDFILE?=	${NSDDBDIR}/xfrd.state
+NSDMAX_INT?=	512
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-user=${NSDUSER} \
-		--with-configdir=${NSDDIR} \
+		--with-configdir=${PREFIX}/etc/nsd \
 		--with-pidfile=/var/run/nsd.pid \
 		--with-dbfile=${NSDDBFILE} \
+		--with-difffile=${NSDDIFFFILE} \
+		--with-xfrdfile=${NSDXFRDFILE} \
 		--with-libwrap
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-SED_SCRIPT=	-e 's,%%NSDUSER%%,${NSDUSER},g' \
-		-e 's,%%NSDDIR%%,${NSDDIR},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
 
 MAN5=	nsd.conf.5
 MAN8=	nsd.8 nsdc.8 zonec.8 nsd-checkconf.8 nsd-notify.8 nsd-patch.8 \
@@ -51,9 +51,9 @@ OPTIONS=	ROOT_SERVER	"Configure NSD as a root server" Off \
 		BIND8_STATS	"Enable BIND8 like NSTATS & XSTATS" Off \
 		CHECKING	"Enable internal runtime checks" Off \
 		TSIG		"Enable TSIG support" On \
-		NSEC3		"Enable NSEC3 support" Off \
+		NSEC3		"Enable NSEC3 support" On \
 		NSID		"Enable NSID support" Off \
-		DOCFILES	"Enable PORTDOCS" On
+		MAXINT		"Raise max_interfaces from 8 to ${NSDMAX_INT}" Off
 
 .include <bsd.port.pre.mk>
 
@@ -85,12 +85,16 @@ CONFIGURE_ARGS+=	--enable-checking
 CONFIGURE_ARGS+=	--disable-tsig
 .endif
 
-.if defined(WITH_NSEC3)
-CONFIGURE_ARGS+=	--enable-nsec3
+.if defined(WITHOUT_NSEC3)
+CONFIGURE_ARGS+=	--disable-nsec3
 .endif
 
 .if defined(WITH_NSID)
 CONFIGURE_ARGS+=	--enable-nsid
+.endif
+
+.if defined(WITH_MAXINT)
+CONFIGURE_ARGS+=	--with-max_interfaces=${NSDMAX_INT}
 .endif
 
 pre-patch:
@@ -109,11 +113,11 @@ pre-patch:
 .endif
 
 post-install:
-	${SED} ${SED_SCRIPT} < ${FILESDIR}/nsd.sh.tmpl >${WRKDIR}/nsd.sh
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
-		${NSDDIR}/nsd.conf.sample
-	${INSTALL_SCRIPT} ${WRKDIR}/nsd.sh ${PREFIX}/etc/rc.d/
-.if !defined(WITHOUT_DOCFILES)
+		${PREFIX}/etc/nsd/nsd.conf.sample
+	@${MKDIR} ${NSDDBDIR}
+	@${CHOWN} -R ${NSDUSER} ${NSDDBDIR}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/${f}
