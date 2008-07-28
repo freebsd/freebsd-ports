@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-RSA
-PORTVERSION=	1.58
+PORTVERSION=	1.98
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,20 +14,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	RSA public-key cryptosystem
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5-Crypt-Blowfish \
-		${SITE_PERL}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random \
-		${SITE_PERL}/Crypt/Primes.pm:${PORTSDIR}/security/p5-Crypt-Primes \
-		${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
-		${SITE_PERL}/Convert/ASCII/Armor.pm:${PORTSDIR}/converters/p5-Convert-ASCII-Armour \
-		${SITE_PERL}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer \
-		${SITE_PERL}/Sort/Versions.pm:${PORTSDIR}/devel/p5-Sort-Versions \
-		${SITE_PERL}/Class/Loader.pm:${PORTSDIR}/devel/p5-Class-Loader \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD2.pm:${PORTSDIR}/security/p5-Digest-MD2 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/Tie/EncryptedHash.pm:${PORTSDIR}/security/p5-Tie-EncryptedHash \
-		${SITE_PERL}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Class-Loader>=2.00:${PORTSDIR}/devel/p5-Class-Loader \
+		p5-Convert-ASCII-Armour>=0:${PORTSDIR}/converters/p5-Convert-ASCII-Armour \
+		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \
+		p5-Crypt-Primes>=0.38:${PORTSDIR}/security/p5-Crypt-Primes \
+		p5-Crypt-Random>=0.34:${PORTSDIR}/security/p5-Crypt-Random \
+		p5-Data-Buffer>=0:${PORTSDIR}/misc/p5-Data-Buffer \
+		p5-Digest-MD2>=0:${PORTSDIR}/security/p5-Digest-MD2 \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-Math-Pari>=2.001804:${PORTSDIR}/math/p5-Math-Pari \
+		p5-Sort-Versions>=0:${PORTSDIR}/devel/p5-Sort-Versions \
+		p5-Tie-EncryptedHash>=0:${PORTSDIR}/security/p5-Tie-EncryptedHash
 
 PERL_CONFIGURE=	yes
 
@@ -46,4 +43,11 @@ MAN3=	Crypt::RSA.3 \
 	Crypt::RSA::SS::PKCS1v15.3 \
 	Crypt::RSA::SS::PSS.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
+.endif
+
+.include <bsd.port.post.mk>

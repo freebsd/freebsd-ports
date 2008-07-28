@@ -20,3 +20,5 @@ the key-pair are encapsulated in Crypt::RSA::Key(3). Crypt::RSA::Key::Public(3)
 from disk, decoding & encoding of keys in certain formats, and secure
 representation of keys in memory. Finally, the Crypt::RSA module provides a
 convenient, DWIM wrapper around the rest of the modules in the bundle.
+
+WWW: http://search.cpan.org/dist/Crypt-RSA/
