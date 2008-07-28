@@ -12,7 +12,7 @@ CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kevedit
 
-MAINTAINER=		ray@cultofray.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Modern ZZT editor with necessary features
 
 USE_SDL=		yes

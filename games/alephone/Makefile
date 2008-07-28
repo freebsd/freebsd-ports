@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/marathon
 DISTNAME=	AlephOne-${PORTVERSION}
 
-MAINTAINER=	ray@cultofray.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The open source version of Bungie's Marathon game
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost
