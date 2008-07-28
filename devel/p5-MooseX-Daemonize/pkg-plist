@@ -1,0 +1,14 @@
+%%SITE_PERL%%/MooseX/Daemonize.pm
+%%SITE_PERL%%/MooseX/Daemonize/Core.pm
+%%SITE_PERL%%/MooseX/Daemonize/Pid.pm
+%%SITE_PERL%%/MooseX/Daemonize/Pid/File.pm
+%%SITE_PERL%%/MooseX/Daemonize/WithPidFile.pm
+%%SITE_PERL%%/Test/MooseX/Daemonize.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Daemonize/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Daemonize
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/Daemonize/Pid
+@dirrmtry %%SITE_PERL%%/MooseX/Daemonize
+@dirrmtry %%SITE_PERL%%/MooseX
+@dirrmtry %%SITE_PERL%%/Test/MooseX
+@dirrmtry %%SITE_PERL%%/Test
