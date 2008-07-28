@@ -1,3 +1,8 @@
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/MIT.txt
+%%PORTDOCS%%%%DOCSDIR%%/NOTICE
+%%PORTDOCS%%%%DOCSDIR%%/Tiddlywiki_License.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%WWWDIR%%/3rdparty/blueprint/compressed/print.css
 %%WWWDIR%%/3rdparty/blueprint/compressed/screen.css
 %%WWWDIR%%/3rdparty/blueprint/lib/forms.css
@@ -32,65 +37,104 @@
 %%WWWDIR%%/3rdparty/blueprint/plugins/link-icons/link-icons.css
 %%WWWDIR%%/3rdparty/blueprint/print.css
 %%WWWDIR%%/3rdparty/blueprint/screen.css
-%%WWWDIR%%/.htaccess
-%%WWWDIR%%/LICENSE
-%%WWWDIR%%/NOTICE
-%%WWWDIR%%/doc/MIT.txt
-%%WWWDIR%%/doc/Tiddlywiki_License.txt
-%%WWWDIR%%/doc/manual/index.html
+%%WWWDIR%%/3rdparty/hotkeys/jquery.hotkeys.js
+%%WWWDIR%%/3rdparty/humanmsg/humanmsg.css
+%%WWWDIR%%/3rdparty/humanmsg/humanmsg.js
 %%WWWDIR%%/index.php
 %%WWWDIR%%/scripts/index.html
+%%WWWDIR%%/scripts/jquery.color.js
 %%WWWDIR%%/scripts/jquery.js
+%%WWWDIR%%/scripts/jquery.spinner.js
+%%WWWDIR%%/scripts/ui.core.js
+%%WWWDIR%%/scripts/ui.resizable.js
+%%WWWDIR%%/scripts/ui.slider.js
+%%WWWDIR%%/scripts/ui.sortable.js
 %%WWWDIR%%/scripts/ui.tabs.js
-%%WWWDIR%%/system/admin/admin.js
-%%WWWDIR%%/system/admin/content.php
+%%WWWDIR%%/system/admin/comments.php
+%%WWWDIR%%/system/admin/comments_items.php
 %%WWWDIR%%/system/admin/css/admin.css
+%%WWWDIR%%/system/admin/css/ie.css
+%%WWWDIR%%/system/admin/dash_additem.php
 %%WWWDIR%%/system/admin/dashboard.php
+%%WWWDIR%%/system/admin/dashboard_modules.php
 %%WWWDIR%%/system/admin/db_profiling.php
 %%WWWDIR%%/system/admin/footer.php
+%%WWWDIR%%/system/admin/formcontrols/admincontrol_buttons.php
+%%WWWDIR%%/system/admin/formcontrols/admincontrol_submit.php
+%%WWWDIR%%/system/admin/formcontrols/admincontrol_text.php
+%%WWWDIR%%/system/admin/formcontrols/admincontrol_textarea.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_checkbox.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_checkboxes.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_fieldset.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_form.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_password.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_radio.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_select.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_silos.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_submit.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_tabs.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_text.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_textarea.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_textmulti.php
+%%WWWDIR%%/system/admin/formcontrols/formcontrol_wrapper.php
+%%WWWDIR%%/system/admin/formcontrols/optionscontrol_checkbox.php
+%%WWWDIR%%/system/admin/formcontrols/optionscontrol_select.php
+%%WWWDIR%%/system/admin/formcontrols/optionscontrol_text.php
+%%WWWDIR%%/system/admin/formcontrols/tabcontrol_checkbox.php
+%%WWWDIR%%/system/admin/formcontrols/tabcontrol_select.php
+%%WWWDIR%%/system/admin/formcontrols/tabcontrol_tag.php
+%%WWWDIR%%/system/admin/formcontrols/tabcontrol_text.php
+%%WWWDIR%%/system/admin/formcontrols/tabcontrol_textarea.php
 %%WWWDIR%%/system/admin/groups.php
 %%WWWDIR%%/system/admin/header.php
-%%WWWDIR%%/system/admin/images/bar-back-active-drop.png
-%%WWWDIR%%/system/admin/images/bar-back-active.png
-%%WWWDIR%%/system/admin/images/bar-back-button.png
-%%WWWDIR%%/system/admin/images/bar-back-drop.png
-%%WWWDIR%%/system/admin/images/bar-back-sep.png
-%%WWWDIR%%/system/admin/images/bar-back.png
-%%WWWDIR%%/system/admin/images/brick.png
-%%WWWDIR%%/system/admin/images/chart_bar.png
-%%WWWDIR%%/system/admin/images/comments.png
-%%WWWDIR%%/system/admin/images/delete.png
-%%WWWDIR%%/system/admin/images/edit.png
-%%WWWDIR%%/system/admin/images/footer.png
+%%WWWDIR%%/system/admin/images/arrowdown.png
+%%WWWDIR%%/system/admin/images/arrowright.png
+%%WWWDIR%%/system/admin/images/closebutton.png
+%%WWWDIR%%/system/admin/images/currentpageindicator.png
+%%WWWDIR%%/system/admin/images/dashboardh2bg.png
+%%WWWDIR%%/system/admin/images/dashboardh2bgdark.png
+%%WWWDIR%%/system/admin/images/dashboardhandle.png
 %%WWWDIR%%/system/admin/images/habari-logo.png
-%%WWWDIR%%/system/admin/images/home.png
-%%WWWDIR%%/system/admin/images/logout-active.png
-%%WWWDIR%%/system/admin/images/logout.png
-%%WWWDIR%%/system/admin/images/media_arrow.png
-%%WWWDIR%%/system/admin/images/media_arrow_active.png
-%%WWWDIR%%/system/admin/images/page_edit.png
-%%WWWDIR%%/system/admin/images/screenshot_default.png
+%%WWWDIR%%/system/admin/images/loginbg.png
+%%WWWDIR%%/system/admin/images/loupebg.png
+%%WWWDIR%%/system/admin/images/loupehandle.png
+%%WWWDIR%%/system/admin/images/medialink.png
+%%WWWDIR%%/system/admin/images/minusbutton.png
+%%WWWDIR%%/system/admin/images/moduleoptions.png
+%%WWWDIR%%/system/admin/images/shadow-heavy-top.png
+%%WWWDIR%%/system/admin/images/shadow-light-left.png
+%%WWWDIR%%/system/admin/images/shadow-light-right.png
+%%WWWDIR%%/system/admin/images/shadow-light-top.png
+%%WWWDIR%%/system/admin/images/silo-mediabg.png
+%%WWWDIR%%/system/admin/images/spinnerbigdark.png
+%%WWWDIR%%/system/admin/images/spinnerbiglight.png
+%%WWWDIR%%/system/admin/images/spinnersmalldark.png
+%%WWWDIR%%/system/admin/images/spinnersmalllight.png
 %%WWWDIR%%/system/admin/images/tabsbg.png
-%%WWWDIR%%/system/admin/images/update.png
-%%WWWDIR%%/system/admin/images/view.png
 %%WWWDIR%%/system/admin/import.php
 %%WWWDIR%%/system/admin/index.php
+%%WWWDIR%%/system/admin/js/admin.js
+%%WWWDIR%%/system/admin/js/media.js
 %%WWWDIR%%/system/admin/login.php
 %%WWWDIR%%/system/admin/logs.php
-%%WWWDIR%%/system/admin/media.js
-%%WWWDIR%%/system/admin/moderate.php
+%%WWWDIR%%/system/admin/logs_items.php
 %%WWWDIR%%/system/admin/options.php
 %%WWWDIR%%/system/admin/plugins.php
+%%WWWDIR%%/system/admin/posts.php
+%%WWWDIR%%/system/admin/posts_items.php
 %%WWWDIR%%/system/admin/publish.php
-%%WWWDIR%%/system/admin/publish_settings.php
-%%WWWDIR%%/system/admin/publish_tags.php
+%%WWWDIR%%/system/admin/tag_collection.php
+%%WWWDIR%%/system/admin/tags.php
 %%WWWDIR%%/system/admin/themes.php
+%%WWWDIR%%/system/admin/timeline_items.php
 %%WWWDIR%%/system/admin/user.php
 %%WWWDIR%%/system/admin/users.php
+%%WWWDIR%%/system/admin/users_items.php
 %%WWWDIR%%/system/classes/acl.php
 %%WWWDIR%%/system/classes/actionhandler.php
 %%WWWDIR%%/system/classes/adminhandler.php
 %%WWWDIR%%/system/classes/ajaxhandler.php
+%%WWWDIR%%/system/classes/apccache.php
 %%WWWDIR%%/system/classes/atomhandler.php
 %%WWWDIR%%/system/classes/bitmask.php
 %%WWWDIR%%/system/classes/cache.php
@@ -116,11 +160,14 @@
 %%WWWDIR%%/system/classes/inforecords.php
 %%WWWDIR%%/system/classes/inputfilter.php
 %%WWWDIR%%/system/classes/installhandler.php
+%%WWWDIR%%/system/classes/iscontent.php
 %%WWWDIR%%/system/classes/locale.php
 %%WWWDIR%%/system/classes/logentry.php
 %%WWWDIR%%/system/classes/media.php
 %%WWWDIR%%/system/classes/mediaasset.php
 %%WWWDIR%%/system/classes/mediasilo.php
+%%WWWDIR%%/system/classes/modules.php
+%%WWWDIR%%/system/classes/multibyte.php
 %%WWWDIR%%/system/classes/options.php
 %%WWWDIR%%/system/classes/pluggable.php
 %%WWWDIR%%/system/classes/plugin.php
@@ -141,6 +188,7 @@
 %%WWWDIR%%/system/classes/smartyengine.php
 %%WWWDIR%%/system/classes/socketrequestprocessor.php
 %%WWWDIR%%/system/classes/stack.php
+%%WWWDIR%%/system/classes/tag.php
 %%WWWDIR%%/system/classes/tags.php
 %%WWWDIR%%/system/classes/templateengine.php
 %%WWWDIR%%/system/classes/theme.php
@@ -190,26 +238,91 @@
 %%WWWDIR%%/system/installer/index.html
 %%WWWDIR%%/system/installer/requirements.php
 %%WWWDIR%%/system/installer/script.js
+%%WWWDIR%%/system/installer/sqlite.php
 %%WWWDIR%%/system/installer/style.css
+%%WWWDIR%%/system/locale/da/LC_MESSAGES/habari.mo
 %%WWWDIR%%/system/locale/de-de/LC_MESSAGES/habari.po
+%%WWWDIR%%/system/locale/de/LC_MESSAGES/habari.mo
 %%WWWDIR%%/system/locale/en-us/LC_MESSAGES/habari.mo
 %%WWWDIR%%/system/locale/en-us/LC_MESSAGES/habari.po
+%%WWWDIR%%/system/locale/habari.pot
+%%WWWDIR%%/system/locale/ja/LC_MESSAGES/habari.mo
+%%WWWDIR%%/system/locale/zh-tw/LC_MESSAGES/habari.mo
+%%WWWDIR%%/system/plugins/coredashmodules/coredashmodules.plugin.php
+%%WWWDIR%%/system/plugins/coredashmodules/dash_latestcomments.php
+%%WWWDIR%%/system/plugins/coredashmodules/dash_latestentries.php
+%%WWWDIR%%/system/plugins/coredashmodules/dash_logs.php
 %%WWWDIR%%/system/plugins/flickrsilo/flickrsilo.plugin.php
+%%WWWDIR%%/system/plugins/flickrsilo/icon.png
+%%WWWDIR%%/system/plugins/habarisilo/habarisilo.plugin.php
+%%WWWDIR%%/system/plugins/habarisilo/icon.png
 %%WWWDIR%%/system/plugins/index.html
 %%WWWDIR%%/system/plugins/pingback/pingback.plugin.php
-%%WWWDIR%%/system/plugins/simplefilesilo/simplefilesilo.plugin.php
+%%WWWDIR%%/system/plugins/s9yimport/s9yimport.plugin.php
 %%WWWDIR%%/system/plugins/spamchecker/spamchecker.plugin.php
 %%WWWDIR%%/system/plugins/themehelper/themehelper.plugin.php
 %%WWWDIR%%/system/plugins/undelete/undelete.plugin.php
+%%WWWDIR%%/system/plugins/viddlersilo/icon.png
 %%WWWDIR%%/system/plugins/viddlersilo/viddlersilo.plugin.php
 %%WWWDIR%%/system/plugins/viddlersilo/vidfuncs.js
 %%WWWDIR%%/system/plugins/wpimport/wpimport.plugin.php
 %%WWWDIR%%/system/schema/mysql/config.php
 %%WWWDIR%%/system/schema/mysql/connection.php
 %%WWWDIR%%/system/schema/mysql/schema.sql
+%%WWWDIR%%/system/schema/mysql/upgrades/1377.sql
+%%WWWDIR%%/system/schema/pgsql/config.php
+%%WWWDIR%%/system/schema/pgsql/connection.php
+%%WWWDIR%%/system/schema/pgsql/schema.sql
 %%WWWDIR%%/system/schema/sqlite/config.php
 %%WWWDIR%%/system/schema/sqlite/connection.php
 %%WWWDIR%%/system/schema/sqlite/schema.sql
+%%WWWDIR%%/system/themes/charcoal/404.php
+%%WWWDIR%%/system/themes/charcoal/commentform.php
+%%WWWDIR%%/system/themes/charcoal/comments.php
+%%WWWDIR%%/system/themes/charcoal/entry.single.php
+%%WWWDIR%%/system/themes/charcoal/footer.php
+%%WWWDIR%%/system/themes/charcoal/header.php
+%%WWWDIR%%/system/themes/charcoal/home.php
+%%WWWDIR%%/system/themes/charcoal/ie.css
+%%WWWDIR%%/system/themes/charcoal/images/archives_text.png
+%%WWWDIR%%/system/themes/charcoal/images/arrow.png
+%%WWWDIR%%/system/themes/charcoal/images/blockquote.png
+%%WWWDIR%%/system/themes/charcoal/images/bullet.png
+%%WWWDIR%%/system/themes/charcoal/images/comments.png
+%%WWWDIR%%/system/themes/charcoal/images/comments_text.png
+%%WWWDIR%%/system/themes/charcoal/images/dots.png
+%%WWWDIR%%/system/themes/charcoal/images/feed.png
+%%WWWDIR%%/system/themes/charcoal/images/feed_hover_1.png
+%%WWWDIR%%/system/themes/charcoal/images/feed_hover_2.png
+%%WWWDIR%%/system/themes/charcoal/images/main_bg.png
+%%WWWDIR%%/system/themes/charcoal/images/nav-left.png
+%%WWWDIR%%/system/themes/charcoal/images/nav-right.png
+%%WWWDIR%%/system/themes/charcoal/images/page_bottom_bg.png
+%%WWWDIR%%/system/themes/charcoal/images/paperclip.png
+%%WWWDIR%%/system/themes/charcoal/images/postcomment_text.png
+%%WWWDIR%%/system/themes/charcoal/images/prevposts_text.png
+%%WWWDIR%%/system/themes/charcoal/images/pwrd_habari.png
+%%WWWDIR%%/system/themes/charcoal/images/sample-title.png
+%%WWWDIR%%/system/themes/charcoal/images/search_button.png
+%%WWWDIR%%/system/themes/charcoal/images/secodary_top.png
+%%WWWDIR%%/system/themes/charcoal/images/secondary_bg.png
+%%WWWDIR%%/system/themes/charcoal/images/select_bg.png
+%%WWWDIR%%/system/themes/charcoal/images/sidebar_top.png
+%%WWWDIR%%/system/themes/charcoal/images/tagcloud_text.png
+%%WWWDIR%%/system/themes/charcoal/images/tags.png
+%%WWWDIR%%/system/themes/charcoal/multiple.php
+%%WWWDIR%%/system/themes/charcoal/page.single.php
+%%WWWDIR%%/system/themes/charcoal/screenshot.jpg
+%%WWWDIR%%/system/themes/charcoal/scripts/fixpngs.js
+%%WWWDIR%%/system/themes/charcoal/scripts/jquery.pngfix.js
+%%WWWDIR%%/system/themes/charcoal/search.php
+%%WWWDIR%%/system/themes/charcoal/searchform.php
+%%WWWDIR%%/system/themes/charcoal/sidebar.php
+%%WWWDIR%%/system/themes/charcoal/style.css
+%%WWWDIR%%/system/themes/charcoal/tag.php
+%%WWWDIR%%/system/themes/charcoal/taglist.php
+%%WWWDIR%%/system/themes/charcoal/theme.php
+%%WWWDIR%%/system/themes/charcoal/theme.xml
 %%WWWDIR%%/system/themes/k2/404.php
 %%WWWDIR%%/system/themes/k2/commentform.php
 %%WWWDIR%%/system/themes/k2/comments.php
@@ -246,7 +359,7 @@
 %%WWWDIR%%/system/themes/k2/images/tag_blue.png
 %%WWWDIR%%/system/themes/k2/images/time.png
 %%WWWDIR%%/system/themes/k2/images/transparent.gif
-%%WWWDIR%%/system/themes/k2/login.php
+%%WWWDIR%%/system/themes/k2/login-disabled.php
 %%WWWDIR%%/system/themes/k2/loginform.php
 %%WWWDIR%%/system/themes/k2/page.single.php
 %%WWWDIR%%/system/themes/k2/screenshot.png
@@ -257,6 +370,25 @@
 %%WWWDIR%%/system/themes/k2/tag.php
 %%WWWDIR%%/system/themes/k2/theme.php
 %%WWWDIR%%/system/themes/k2/theme.xml
+%%WWWDIR%%/system/themes/mzingi/404.php
+%%WWWDIR%%/system/themes/mzingi/commentform.php
+%%WWWDIR%%/system/themes/mzingi/entry.multiple.php
+%%WWWDIR%%/system/themes/mzingi/entry.single.php
+%%WWWDIR%%/system/themes/mzingi/footer.php
+%%WWWDIR%%/system/themes/mzingi/header.php
+%%WWWDIR%%/system/themes/mzingi/home.php
+%%WWWDIR%%/system/themes/mzingi/license.txt
+%%WWWDIR%%/system/themes/mzingi/login.php
+%%WWWDIR%%/system/themes/mzingi/loginform.php
+%%WWWDIR%%/system/themes/mzingi/page.single.php
+%%WWWDIR%%/system/themes/mzingi/screenshot.png
+%%WWWDIR%%/system/themes/mzingi/search.php
+%%WWWDIR%%/system/themes/mzingi/searchform.php
+%%WWWDIR%%/system/themes/mzingi/sidebar.php
+%%WWWDIR%%/system/themes/mzingi/style.css
+%%WWWDIR%%/system/themes/mzingi/tag.php
+%%WWWDIR%%/system/themes/mzingi/theme.php
+%%WWWDIR%%/system/themes/mzingi/theme.xml
 %%WWWDIR%%/user/classes/index.html
 %%WWWDIR%%/user/index.html
 %%WWWDIR%%/user/plugins/index.html
@@ -264,12 +396,21 @@
 @dirrm %%WWWDIR%%/user/themes
 @dirrm %%WWWDIR%%/user/plugins
 @dirrm %%WWWDIR%%/user/classes
+@dirrm %%WWWDIR%%/user/cache
 @dirrm %%WWWDIR%%/user
+@dirrm %%WWWDIR%%/system/themes/mzingi
 @dirrm %%WWWDIR%%/system/themes/k2/images/headers
 @dirrm %%WWWDIR%%/system/themes/k2/images
 @dirrm %%WWWDIR%%/system/themes/k2
+@dirrm %%WWWDIR%%/system/themes/charcoal/scripts
+@dirrm %%WWWDIR%%/system/themes/charcoal/images
+@dirrm %%WWWDIR%%/system/themes/charcoal
 @dirrm %%WWWDIR%%/system/themes
+@dirrm %%WWWDIR%%/system/schema/sqlite/upgrades
 @dirrm %%WWWDIR%%/system/schema/sqlite
+@dirrm %%WWWDIR%%/system/schema/pgsql/upgrades
+@dirrm %%WWWDIR%%/system/schema/pgsql
+@dirrm %%WWWDIR%%/system/schema/mysql/upgrades
 @dirrm %%WWWDIR%%/system/schema/mysql
 @dirrm %%WWWDIR%%/system/schema
 @dirrm %%WWWDIR%%/system/plugins/wpimport
@@ -277,26 +418,37 @@
 @dirrm %%WWWDIR%%/system/plugins/undelete
 @dirrm %%WWWDIR%%/system/plugins/themehelper
 @dirrm %%WWWDIR%%/system/plugins/spamchecker
-@dirrm %%WWWDIR%%/system/plugins/simplefilesilo
+@dirrm %%WWWDIR%%/system/plugins/s9yimport
 @dirrm %%WWWDIR%%/system/plugins/pingback
+@dirrm %%WWWDIR%%/system/plugins/habarisilo
 @dirrm %%WWWDIR%%/system/plugins/flickrsilo
+@dirrm %%WWWDIR%%/system/plugins/coredashmodules
 @dirrm %%WWWDIR%%/system/plugins
+@dirrm %%WWWDIR%%/system/locale/zh-tw/LC_MESSAGES
+@dirrm %%WWWDIR%%/system/locale/zh-tw
+@dirrm %%WWWDIR%%/system/locale/ja/LC_MESSAGES
+@dirrm %%WWWDIR%%/system/locale/ja
 @dirrm %%WWWDIR%%/system/locale/en-us/LC_MESSAGES
 @dirrm %%WWWDIR%%/system/locale/en-us
+@dirrm %%WWWDIR%%/system/locale/de/LC_MESSAGES
 @dirrm %%WWWDIR%%/system/locale/de-de/LC_MESSAGES
 @dirrm %%WWWDIR%%/system/locale/de-de
+@dirrm %%WWWDIR%%/system/locale/de
+@dirrm %%WWWDIR%%/system/locale/da/LC_MESSAGES
+@dirrm %%WWWDIR%%/system/locale/da
 @dirrm %%WWWDIR%%/system/locale
 @dirrm %%WWWDIR%%/system/installer/images
 @dirrm %%WWWDIR%%/system/installer
 @dirrm %%WWWDIR%%/system/classes
-@dirrm %%WWWDIR%%/system/cache
+@dirrm %%WWWDIR%%/system/admin/js
 @dirrm %%WWWDIR%%/system/admin/images
+@dirrm %%WWWDIR%%/system/admin/formcontrols
 @dirrm %%WWWDIR%%/system/admin/css
 @dirrm %%WWWDIR%%/system/admin
 @dirrm %%WWWDIR%%/system
 @dirrm %%WWWDIR%%/scripts
-@dirrm %%WWWDIR%%/doc/manual
-@dirrm %%WWWDIR%%/doc
+@dirrm %%WWWDIR%%/3rdparty/humanmsg
+@dirrm %%WWWDIR%%/3rdparty/hotkeys
 @dirrm %%WWWDIR%%/3rdparty/blueprint/plugins/link-icons/icons
 @dirrm %%WWWDIR%%/3rdparty/blueprint/plugins/link-icons
 @dirrm %%WWWDIR%%/3rdparty/blueprint/plugins/iepngfix
@@ -310,3 +462,4 @@
 @dirrm %%WWWDIR%%/3rdparty/blueprint
 @dirrm %%WWWDIR%%/3rdparty
 @dirrm %%WWWDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
