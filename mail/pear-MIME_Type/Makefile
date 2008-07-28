@@ -7,6 +7,7 @@
 
 PORTNAME=	MIME_Type
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	mail www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -18,7 +19,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_SYSTEM_COMMAND "PEAR::System_Command support" off
 
-CATEGORY=	MIME
 FILES=		MIME/Type.php MIME/Type/Parameter.php
 EXAMPLES=	example.php
 _EXAMPLESDIR=	docs/examples/
