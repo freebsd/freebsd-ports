@@ -1,11 +1,11 @@
-@comment $FreeBSD$
-etc/rc.d/nsd.sh
 etc/nsd/nsd.conf.sample
 sbin/nsd
-sbin/zonec
-sbin/nsdc
-sbin/nsd-notify
 sbin/nsd-checkconf
+sbin/nsd-notify
 sbin/nsd-patch
 sbin/nsd-xfer
+sbin/nsdc
+sbin/zonec
 @dirrm etc/nsd
+@cwd /
+@dirrm var/db/nsd
