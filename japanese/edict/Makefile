@@ -7,7 +7,7 @@
 
 PORTNAME=	edict
 PORTVERSION=	19990714
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	\
 		http://japanology.arts.kuleuven.ac.be/mirrors/monash/ \
@@ -47,13 +47,13 @@ DOCFILES=	edict_doc.html edicth.doc \
 #
 # These change too often and are not made into executables.
 #
-IGNOREFILES=	$(DICTFILES) $(DOCFILES)
+IGNOREFILES=	${DICTFILES} ${DOCFILES}
 
 BINFILES=	exjdxgen xjdic_cl xjdic_sa xjdserver xjdxgen
 
 # Where to install the data files
 DATADIR=	${PREFIX}/share/dict/edict
-DOCDIR=		${PREFIX}/share/doc/xjdic
+DOCSDIR=	${PREFIX}/share/doc/xjdic
 MAN1=		xjdic.1
 
 NO_WRKSUBDIR=	yes
@@ -63,16 +63,16 @@ NO_WRKSUBDIR=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@for file in ${SRCFILES}; do \
-		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+	@for _file in ${SRCFILES}; do \
+		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$${_file} ${EXTRACT_AFTER_ARGS});\
 		then \
 			exit 1; \
 		fi \
 	done
 
 do-install:
-	@for file in ${BINFILES}; do \
-		if ! ${INSTALL_PROGRAM} ${WRKDIR}/$$file ${PREFIX}/bin ;\
+	@for _file in ${BINFILES}; do \
+		if ! ${INSTALL_PROGRAM} ${WRKDIR}/$${_file} ${PREFIX}/bin ;\
 		then \
 			exit 1; \
 		fi \
@@ -81,11 +81,11 @@ do-install:
 	then \
 		${MKDIR} ${DATADIR} ; \
 	fi
-	@for file in ${DICTFILES}; do \
-		case $$file in \
+	@for _file in ${DICTFILES}; do \
+		case $${_file} in \
 		*.gz) \
-			instfile=`${BASENAME} $$file .gz` ; \
-			if ${GZIP_CMD} -cd ${_DISTDIR}/$$file > ${DATADIR}/$$instfile ; \
+			instfile=`${BASENAME} $${_file} .gz` ; \
+			if ${GZIP_CMD} -cd ${_DISTDIR}/$${_file} > ${DATADIR}/$$instfile ; \
 			then \
 				${TRUE} ; \
 			else \
@@ -94,7 +94,7 @@ do-install:
 			;; \
 		*.Z) \
 			instfile=`${BASENAME} $$file .Z` ; \
-			if ${GZIP_CMD} -cd ${_DISTDIR}/$$file > ${DATADIR}/$$instfile ; \
+			if ${GZIP_CMD} -cd ${_DISTDIR}/$${_file} > ${DATADIR}/$$instfile ; \
 			then \
 				${TRUE} ; \
 			else \
@@ -102,12 +102,12 @@ do-install:
 			fi \
 			;; \
 		*.zip) \
-			instfile=`${BASENAME} $$file .zip` ; \
+			instfile=`${BASENAME} $${_file} .zip` ; \
 			if [ $$instfile = 4jword3_edict ] ; \
 			then \
 				instfile=4jword3_edict.euc ; \
 			fi; \
-			if unzip -o ${_DISTDIR}/$$file $$instfile -d ${DATADIR} ; \
+			if ${UNZIP_CMD} -o ${_DISTDIR}/$${_file} $$instfile -d ${DATADIR} ; \
 			then \
 				${TRUE} ; \
 			else \
@@ -115,8 +115,8 @@ do-install:
 			fi \
 			;; \
 		*) \
-			instfile=`${BASENAME} $$file` ; \
-			${CP} ${_DISTDIR}/$$file ${DATADIR} ; \
+			instfile=`${BASENAME} $${_file}` ; \
+			${CP} ${_DISTDIR}/$${_file} ${DATADIR} ; \
 			;; \
 		esac ; \
 		( \
@@ -157,14 +157,14 @@ do-install:
 	@${CHMOD} ${SHAREMODE} ${DATADIR}/.xjdicrc
 	${INSTALL_MAN} ${WRKSRC}/xjdic.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@if [ ! -d ${DOCDIR} ] ; \
+	@if [ ! -d ${DOCSDIR} ] ; \
 	then \
-		${MKDIR} ${DOCDIR} ; \
+		${MKDIR} ${DOCSDIR} ; \
 	fi
-	${INSTALL_MAN} ${WRKSRC}/xjdic23.inf ${DOCDIR}
+	${INSTALL_MAN} ${WRKSRC}/xjdic23.inf ${DOCSDIR}
 	@for docfile in ${DOCFILES} ; do \
-		${ECHO_CMD} Installing  ${DOCDIR}/$$docfile ; \
-		${INSTALL_MAN}  ${_DISTDIR}/$$docfile ${DOCDIR} ; \
+		${ECHO_CMD} Installing  ${DOCSDIR}/$${docfile} ; \
+		${INSTALL_MAN}  ${_DISTDIR}/$${docfile} ${DOCSDIR} ; \
 	done
 .endif
 
