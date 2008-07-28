@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roboctl
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
@@ -14,8 +14,8 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	API for communications with Lego and Vex robot controllers
 
-LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb \
-		gamepad.1:${PORTSDIR}/devel/libgamepad
+LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:${PORTSDIR}/devel/libgamepad
 
 OPTIONS=	CUTECOM "Install cutecom for Vex debugging" On
 
@@ -27,5 +27,10 @@ MAN3=		roboctl.3
 .if defined(WITH_CUTECOM)
 RUN_DEPENDS+=	cutecom:${PORTSDIR}/comms/cutecom
 .endif
+
+post-install:
+	(cd ${WRKSRC}/Commands/NXTRemote; ${MAKE})
+	${INSTALL_PROGRAM} ${WRKSRC}/Commands/NXTRemote/nxtremote ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/Commands/NXTRemote/nxtremote.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
