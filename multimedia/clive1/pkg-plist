@@ -60,6 +60,9 @@ bin/clive
 %%PYTHON_SITELIBDIR%%/clive/scan.py
 %%PYTHON_SITELIBDIR%%/clive/scan.pyc
 %%PYTHON_SITELIBDIR%%/clive/scan.pyo
+%%PYTHON_SITELIBDIR%%/clive/unicode.py
+%%PYTHON_SITELIBDIR%%/clive/unicode.pyc
+%%PYTHON_SITELIBDIR%%/clive/unicode.pyo
 %%PYTHON_SITELIBDIR%%/clive/update.py
 %%PYTHON_SITELIBDIR%%/clive/update.pyc
 %%PYTHON_SITELIBDIR%%/clive/update.pyo
