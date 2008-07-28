@@ -1,0 +1,13 @@
+This is a utility that creates common Moose subtypes, coercions and option
+specifications useful for dealing with Path::Class objects as Moose attributes.
+
+This module constructs coercions (see Moose::Util::TypeConstraints) from both
+'Str' and 'ArrayRef' to both Path::Class::Dir and Path::Class::File objects.
+It also adds the Getopt option type ("=s") for both Path::Class::Dir and
+Path::Class::File (see MooseX::Getopt).
+
+This is just meant to be a central place for these constructs, so you don't
+have to worry about whether they've been created or not, and you're not tempted
+to copy them into yet another class (like I was).
+
+WWW: http://search.cpan.org/dist/MooseX-Types-Path-Class/
