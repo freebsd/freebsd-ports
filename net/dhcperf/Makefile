@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhcperf
-PORTVERSION=	1.0.0.0
+PORTVERSION=	1.0.1.0
 CATEGORIES=	net benchmarks
 MASTER_SITES=	ftp://ftp.nominum.com/pub/nominum/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1-freebsd-5.4-i386
@@ -36,7 +36,7 @@ LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
 .endif
 
 post-extract:
-	${TAR} -C ${WRKSRC} -zxvf ${WRKSRC}/dhcperf-1.0.0.0_1.tgz
+	${TAR} -C ${WRKSRC} -zxvf ${WRKSRC}/${PORTNAME}-${PORTVERSION}_1.tgz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/usr/local/nom/bin/dhcperf ${PREFIX}/bin/dhcperf
