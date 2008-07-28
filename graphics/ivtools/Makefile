@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ivtools
-PORTVERSION=	1.2.4
-PORTREVISION=	4
+PORTVERSION=	1.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -29,16 +28,4 @@ USE_XORG=	x11 xaw ice xext
 MANCOMPRESSED=	no
 MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500034
-PLIST_SUB+=	IVDL="@comment "
-.else
-PLIST_SUB+=	IVDL=""
-.endif
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
