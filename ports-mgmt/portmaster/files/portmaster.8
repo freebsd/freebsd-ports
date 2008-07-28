@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd June 12, 2008
+.Dd July 28, 2008
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -43,14 +43,15 @@ Common Flags:
 .Ar full path to /usr/ports/foo/bar
 .Nm
 .Op Common Flags
-.Ar Multiple full names/paths from either of the above
-.Nm
-.Op Common Flags
 .Ar glob pattern of directories from /var/db/pkg
 .Pp
 PLEASE NOTE: Glob patterns now update every port that matches.
 This is a change from pre-version-2.3 behavior.
 .Pp
+.Nm
+.Op Common Flags
+.Ar Multiple full names or paths from /usr/ports or /var/db/pkg,
+and/or multiple globs from /var/db/pkg
 .Nm
 .Op Common Flags
 .Fl p Ar port directory in /usr/ports
