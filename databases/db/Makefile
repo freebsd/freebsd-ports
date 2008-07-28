@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	db
-PORTVERSION=	1.14
+PORTVERSION=	1.16
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mavetju.org/download/
@@ -21,7 +21,7 @@ PLIST_FILES=	bin/db
 MAKE_ENV=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}
 
 DIST_CVS=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/src/usr.bin/db/db
-DB1VERSION=	1.17
+DB1VERSION=	1.19
 MAKEVERSION=	1.2
 DIST_DB1=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/src/usr.bin/db/db.1?rev=${DB1VERSION}&content-type=text/plain&only_with_tag=HEAD
 DIST_DBC=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/src/usr.bin/db/db.c?rev=${PORTVERSION}&content-type=text/plain
