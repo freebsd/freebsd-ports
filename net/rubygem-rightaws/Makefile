@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rightaws
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	rightaws
 DISTNAME=	right_aws-${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org

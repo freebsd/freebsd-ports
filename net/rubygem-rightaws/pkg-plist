@@ -41,9 +41,9 @@
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Bucket.src/M000024.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Bucket.src/M000025.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Bucket.src/M000026.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000027.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000028.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Bucket.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Bucket.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Bucket.src/M000029.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000030.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000031.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000032.html
@@ -52,9 +52,9 @@
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000035.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000036.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000037.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000038.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000039.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src/M000040.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000041.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000042.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000043.html
@@ -66,24 +66,24 @@
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000049.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000050.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src/M000059.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Owner.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Bucket.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AwsError.src/M000052.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AwsError.src/M000053.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AwsError.src/M000054.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AwsError.src/M000055.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/RightAwsBase.src/M000056.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/RightAwsBase.src/M000057.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000058.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000059.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000060.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000061.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000062.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000063.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000064.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AwsError.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AwsError.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AwsError.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AwsError.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/RightAwsBase.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/RightAwsBase.src/M000065.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000066.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000067.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000068.html
@@ -103,21 +103,21 @@
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000082.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000083.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000085.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000086.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000087.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb.src/M000088.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb.src/M000089.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb.src/M000090.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/ActiveSdbConnect.src/M000091.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/ActiveSdbConnect.src/M000092.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000093.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000094.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000095.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000096.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000097.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000098.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000099.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src/M000095.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb.src/M000097.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/ActiveSdbConnect.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/ActiveSdbConnect.src/M000100.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000101.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000102.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000103.html
@@ -137,41 +137,42 @@
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000117.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000118.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000119.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000120.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000121.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000122.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000123.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000124.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000125.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000126.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src/M000127.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/ActiveSdbConnect.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/ActiveSdbError.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2.src/M000120.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2.src/M000121.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2.src/M000122.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Message.src/M000123.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Message.src/M000124.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Message.src/M000125.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000126.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000127.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000128.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000129.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000130.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000131.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000133.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2.src/M000128.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2.src/M000129.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2.src/M000130.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Message.src/M000131.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Message.src/M000132.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Message.src/M000133.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000134.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000135.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000136.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000137.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000138.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000139.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000141.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000142.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000143.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000144.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000145.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000146.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src/M000147.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Message.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000140.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000141.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000142.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000143.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000144.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000145.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000146.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000147.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000148.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000149.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000150.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000151.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000152.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000153.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000154.html
@@ -179,15 +180,14 @@
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000156.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000157.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000158.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000159.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000160.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000161.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000162.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000163.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000164.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000165.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000166.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000167.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000160.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000161.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000162.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000163.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000164.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000165.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000166.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src/M000167.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000168.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000169.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000170.html
@@ -215,51 +215,51 @@
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000192.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000193.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000194.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000195.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000196.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000197.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000198.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000199.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000200.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000201.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000202.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000203.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000204.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000205.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator.src/M000206.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator.src/M000207.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator.src/M000208.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000209.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000211.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000212.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000213.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000214.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000215.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000216.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000217.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000218.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000219.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000220.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000221.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000222.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000223.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000224.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000225.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000226.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000227.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000195.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000196.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000197.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000198.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000199.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000200.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000201.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000202.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000203.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000204.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src/M000205.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000206.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000207.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000208.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000209.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000210.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000211.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000212.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000213.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000214.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000215.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src/M000216.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator.src/M000217.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator.src/M000218.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator.src/M000219.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000220.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000222.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000223.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000224.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000225.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000226.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000227.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000228.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000229.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src/M000230.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000231.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000232.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000233.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000234.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000235.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000236.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000237.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src/M000238.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000228.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000229.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000230.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000231.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000232.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000233.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000234.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000235.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000236.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000237.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000238.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000239.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000240.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000241.html
@@ -289,40 +289,51 @@
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000265.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000266.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000267.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000268.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000269.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000270.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000271.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000272.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000273.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000274.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000275.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs.src/M000276.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs.src/M000277.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs.src/M000278.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Message.src/M000279.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Message.src/M000280.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Message.src/M000281.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Message.src/M000282.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Grantee.src/M000283.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Grantee.src/M000284.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Grantee.src/M000285.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Grantee.src/M000286.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000287.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000288.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000289.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000290.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000291.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000292.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000294.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000295.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000296.html
-%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000297.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000268.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000269.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000270.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000271.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000272.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000273.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000274.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000275.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000276.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000277.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src/M000278.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000279.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000280.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000281.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000282.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000283.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000284.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000285.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src/M000286.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs.src/M000287.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs.src/M000288.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs.src/M000289.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Message.src/M000290.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Message.src/M000291.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Message.src/M000292.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Message.src/M000293.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Grantee.src/M000294.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Grantee.src/M000295.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Grantee.src/M000296.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Grantee.src/M000297.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000298.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000299.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000300.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000301.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000302.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000303.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000305.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000306.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000307.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000308.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000309.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000310.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000311.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000312.html
+%%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src/M000313.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Message.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Grantee.html
 %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.html
@@ -378,58 +389,58 @@
 %%GEM_LIB_DIR%%/test/test_credentials.rb
 %%GEM_LIB_DIR%%/test/ts_right_aws.rb
 %%GEM_SPEC%%
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sqs
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sdb
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/s3
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/ec2
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/awsbase
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/ec2
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/s3
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sdb
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sqs
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/RightAwsBaseInterface.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Owner.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Bucket.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/AwsError.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/RightAwsBase.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsInterface.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Message.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/ActiveSdbConnect.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Message.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2/Queue.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SqsGen2Interface.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Message.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Grantee.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs/Queue.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Sqs
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/SdbInterface.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Interface.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Key.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator/Bucket.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3Generator
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Owner.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Key.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Grantee.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3/Bucket.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/S3
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/RightAwsBaseInterface.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/RightAwsBase.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/Ec2.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/AwsError.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/Base.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb/ActiveSdbConnect.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/ActiveSdb
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws/AWSErrorHandler.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/RightAws
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
-@dirrm %%GEM_LIB_DIR%%/test/sqs
-@dirrm %%GEM_LIB_DIR%%/test/sdb
-@dirrm %%GEM_LIB_DIR%%/test/s3
-@dirrm %%GEM_LIB_DIR%%/test/ec2
-@dirrm %%GEM_LIB_DIR%%/test
-@dirrm %%GEM_LIB_DIR%%/lib/sqs
-@dirrm %%GEM_LIB_DIR%%/lib/sdb
-@dirrm %%GEM_LIB_DIR%%/lib/s3
-@dirrm %%GEM_LIB_DIR%%/lib/ec2
 @dirrm %%GEM_LIB_DIR%%/lib/awsbase
+@dirrm %%GEM_LIB_DIR%%/lib/ec2
+@dirrm %%GEM_LIB_DIR%%/lib/s3
+@dirrm %%GEM_LIB_DIR%%/lib/sdb
+@dirrm %%GEM_LIB_DIR%%/lib/sqs
 @dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/test/ec2
+@dirrm %%GEM_LIB_DIR%%/test/s3
+@dirrm %%GEM_LIB_DIR%%/test/sdb
+@dirrm %%GEM_LIB_DIR%%/test/sqs
+@dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%
