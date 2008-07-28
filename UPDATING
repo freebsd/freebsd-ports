@@ -6,6 +6,50 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080728:
+  AFFECTS: users of net/freeradius2
+  AUTHOR: David Wood <david@wood2.org.uk>
+
+  Upgrading the FreeRADIUS port used to replace all unmodified files
+  in your configuration with the latest version from the sample
+  configuration. This strategy has two disadvantages; over time your
+  configuration became based on different versions of the sample
+  configuration, also major changes to the sample configuration could
+  leave your configuration in a confusing state.
+
+  From version 2.0.5, your configuration is not touched if any
+  configuration files have been modified.
+
+  You are recommended to track changes in the sample configuration and
+  keep your configuration in a version control system. I use
+  Subversion (see the devel/subversion port) to track my
+  changes. Keeping the sample configuration in a 'vendor branch' (see
+  the Subversion book for more details) allows easy merging of changes
+  from the sample configuration.
+
+  *** IMPORTANT ***
+
+  You are urged to move your configuration out of the default location
+  (/usr/local/etc/raddb) before upgrading from 2.0.4 (or earlier)
+  to 2.0.5 (or later). Once this upgrade is complete, remove the sample 
+  configuration that has been installed in the default location and 
+  move your configuration back to the default location.
+
+  This is a one time procedure that will prevent unmodified files in
+  your configuration from being deleted from your configuration and not
+  restored during the upgrade. No customised files will be lost in any
+  circumstances.
+
+  The sample configuration in 2.0.5 has been reorganised: the
+  configuration of most modules is now in the modules directory rather
+  than in radiusd.conf. You are urged to rearrange your configuration
+  to match this layout.
+
+  There are several improvements in this version of the port, including
+  a new pkg-message that will help new FreeRADIUS users to get started
+  with the port, also new 'reload' and 'debug' commands for the rc.d
+  script. Enjoy!
+
 20080727:
   AFFECTS: users of www/firefox3
   AUTHOR: gnome@FreeBSD.org
