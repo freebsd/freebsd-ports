@@ -10,12 +10,11 @@ http://www.sax.de/~joerg/README.coff-avr-patch
 In addition to the stock binutils-2.18 distribution, support for the
 following AVR devices has been added by a private patch:
 
-  ATtiny43U
-  ATtiny48/88
-  AT90PWM2B/PWM3B
-  AT90PWM216/PWM316
+  ATtiny43U, ATtiny48/88, ATtiny167
+  AT90PWM2B/PWM3B, AT90PWM216/PWM316
+  ATmega32C1, ATmega32M1, ATmega32U4
   ATmega48P/88P/168P/328P
-  ATmega32HVB
-  ATmega1284P
+  ATmega32HVB, ATmega1284P
+  ATxmega64A1, ATxmega128A1
 
 WWW: http://www.sourceware.org/binutils/

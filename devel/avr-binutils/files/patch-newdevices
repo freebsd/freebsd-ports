@@ -1,15 +1,28 @@
 --- gas/config/tc-avr.c.orig	Mon Aug  6 21:59:55 2007
 +++ gas/config/tc-avr.c	Wed Dec 19 12:08:45 2007
-@@ -63,7 +63,7 @@
+@@ -63,7 +63,10 @@
  {
    {"avr1",       AVR_ISA_TINY1,   bfd_mach_avr1},
    {"avr2",       AVR_ISA_TINY2,   bfd_mach_avr2},
 -  {"avr3",       AVR_ISA_M103,    bfd_mach_avr3},
-+  {"avr3",       AVR_ISA_USB162,  bfd_mach_avr3},
++  {"avr3",       AVR_ISA_AVR3,    bfd_mach_avr3},
++  {"avr31",      AVR_ISA_M103,    bfd_mach_avr3},
++  {"avr35",      AVR_ISA_USB162,  bfd_mach_avr3},
    {"avr4",       AVR_ISA_M8,      bfd_mach_avr4},
-   {"avr5",       AVR_ISA_ALL,     bfd_mach_avr5},
+-  {"avr5",       AVR_ISA_ALL,     bfd_mach_avr5},
++  {"avr5",       AVR_ISA_M323,    bfd_mach_avr5},
++  {"avr51",      AVR_ISA_M128,    bfd_mach_avr5},
    {"avr6",       AVR_ISA_ALL,     bfd_mach_avr6},
-@@ -97,22 +97,31 @@
+@@ -84,7 +84,7 @@ static struct mcu_type_s mcu_types[] =
+   {"at90s8515",  AVR_ISA_2xxx,    bfd_mach_avr2},
+   {"at90s8535",  AVR_ISA_2xxx,    bfd_mach_avr2},
+   {"at90c8534",  AVR_ISA_2xxx,    bfd_mach_avr2},
+-  {"at86rf401",  AVR_ISA_2xxx,    bfd_mach_avr2},
++  {"at86rf401",  AVR_ISA_RF401,   bfd_mach_avr2},
+   {"attiny13",   AVR_ISA_TINY2,   bfd_mach_avr2},
+   {"attiny2313", AVR_ISA_TINY2,   bfd_mach_avr2},
+   {"attiny261",  AVR_ISA_TINY2,   bfd_mach_avr2},
+@@ -97,22 +97,32 @@
    {"attiny25",   AVR_ISA_TINY2,   bfd_mach_avr2},
    {"attiny45",   AVR_ISA_TINY2,   bfd_mach_avr2},
    {"attiny85",   AVR_ISA_TINY2,   bfd_mach_avr2},
@@ -23,6 +36,7 @@
    {"at76c711",   AVR_ISA_M603,    bfd_mach_avr3},
 +  {"at90usb82",  AVR_ISA_USB162,  bfd_mach_avr3},
 +  {"at90usb162", AVR_ISA_USB162,  bfd_mach_avr3},
++  {"attiny167",  AVR_ISA_TINY3,   bfd_mach_avr3},
    {"atmega48",   AVR_ISA_PWMx,    bfd_mach_avr4},
 +  {"atmega48p",  AVR_ISA_PWMx,    bfd_mach_avr4},
    {"atmega8",    AVR_ISA_M8,      bfd_mach_avr4},
@@ -72,7 +86,7 @@
    {"atmega645",  AVR_ISA_M323,    bfd_mach_avr5},
    {"atmega649",  AVR_ISA_M323,    bfd_mach_avr5},
    {"atmega6450", AVR_ISA_M323,    bfd_mach_avr5},
-@@ -150,8 +163,8 @@
+@@ -150,8 +163,11 @@
    {"at90can32" , AVR_ISA_M323,    bfd_mach_avr5},
    {"at90can64" , AVR_ISA_M323,    bfd_mach_avr5},
    {"at90can128", AVR_ISA_M128,    bfd_mach_avr5},
@@ -80,6 +94,9 @@
 -  {"at90usb162", AVR_ISA_M323,    bfd_mach_avr5},
 +  {"at90pwm216", AVR_ISA_M323,    bfd_mach_avr5},
 +  {"at90pwm316", AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega32c1", AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega32m1", AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega32u4", AVR_ISA_M323,    bfd_mach_avr5},
    {"at90usb646", AVR_ISA_M323,    bfd_mach_avr5},
    {"at90usb647", AVR_ISA_M323,    bfd_mach_avr5},
    {"at90usb1286",AVR_ISA_M128,    bfd_mach_avr5},
@@ -95,7 +112,7 @@
  Instruction set avr3 is for the classic AVR core with up to 128K program
  memory space (MCU types: atmega103, atmega603, at43usb320, at43usb355,
 -at76c711).
-+at76c711, at90usb82, at90usb162).
++at76c711, at90usb82, at90usb162, attiny167).
  
 -Instruction set avr4 is for the enhanced AVR core with up to 8K program
 -memory space (MCU types: atmega48, atmega8, atmega83, atmega85, atmega88,
@@ -121,18 +138,28 @@
 +atmega3250p, atmega3290, atmega3290p, atmega406, atmega64, atmega640,
 +atmega644, atmega644p, atmega128, atmega1280, atmega1281, atmega1284p, atmega645,
 +atmega649, atmega6450, atmega6490, atmega16hva, at90can32, at90can64,
-+at90can128, at90pwm216, at90pwm316, at90usb646,
++at90can128, at90pwm216, at90pwm316, atmega32c1, atmega32m1, atmega32u4, at90usb646,
  at90usb647, at90usb1286, at90usb1287, at94k).
  
  Instruction set avr6 is for the enhanced AVR core with 256K program
 --- include/opcode/avr.h.orig	Fri Apr  7 17:18:08 2006
 +++ include/opcode/avr.h	Wed Dec 19 12:10:04 2007
-@@ -40,6 +40,8 @@
+@@ -40,12 +40,18 @@
+ #define AVR_ISA_TINY1 (AVR_ISA_1200 | AVR_ISA_LPM)
+ #define AVR_ISA_PWMx  (AVR_ISA_M8   | AVR_ISA_BRK)
+ #define AVR_ISA_2xxx  (AVR_ISA_TINY1 | AVR_ISA_SRAM)
++#define AVR_ISA_RF401 (AVR_ISA_2xxx | AVR_ISA_MOVW | AVR_ISA_LPMX)
+ #define AVR_ISA_TINY2 (AVR_ISA_2xxx | AVR_ISA_MOVW | AVR_ISA_LPMX | \
+                        AVR_ISA_SPM  | AVR_ISA_BRK)
++#define AVR_ISA_TINY3 (AVR_ISA_TINY2 | AVR_ISA_MEGA)
+ #define AVR_ISA_M8    (AVR_ISA_2xxx | AVR_ISA_MUL | AVR_ISA_MOVW | \
                         AVR_ISA_LPMX | AVR_ISA_SPM)
  #define AVR_ISA_M603  (AVR_ISA_2xxx | AVR_ISA_MEGA)
  #define AVR_ISA_M103  (AVR_ISA_M603 | AVR_ISA_ELPM)
 +#define AVR_ISA_USB162 (AVR_ISA_M603 | AVR_ISA_MOVW | \
 +			AVR_ISA_LPMX | AVR_ISA_SPM)
++#define AVR_ISA_AVR3 (AVR_ISA_M603 | AVR_ISA_MOVW | \
++                       AVR_ISA_LPMX | AVR_ISA_SPM  | AVR_ISA_ELPM)
  #define AVR_ISA_M161  (AVR_ISA_M603 | AVR_ISA_MUL | AVR_ISA_MOVW | \
                         AVR_ISA_LPMX | AVR_ISA_SPM)
  #define AVR_ISA_94K   (AVR_ISA_M603 | AVR_ISA_MUL | AVR_ISA_MOVW | AVR_ISA_LPMX)
