@@ -1,0 +1,11 @@
+%%SITE_PERL%%/MooseX/Types.pm
+%%SITE_PERL%%/MooseX/Types/Base.pm
+%%SITE_PERL%%/MooseX/Types/Moose.pm
+%%SITE_PERL%%/MooseX/Types/UndefinedType.pm
+%%SITE_PERL%%/MooseX/Types/Util.pm
+%%SITE_PERL%%/MooseX/Types/Wrapper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/Types
+@dirrmtry %%SITE_PERL%%/MooseX

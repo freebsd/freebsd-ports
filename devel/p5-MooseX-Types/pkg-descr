@@ -1,0 +1,12 @@
+The types provided with Moose are by design global. This package helps you to
+organise and selectively import your own and the built-in types in libraries.
+As a nice side effect, it catches typos at compile-time too.
+
+However, the main reason for this module is to provide an easy way to not have
+conflicts with your type names, since the internal fully qualified names of the
+ types will be prefixed with the library's name.
+
+This module will also provide you with some helper functions to make it easier
+to use Moose types in your code.
+
+WWW: http://search.cpan.org/dist/MooseX-Types/
