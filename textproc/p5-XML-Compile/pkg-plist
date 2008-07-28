@@ -26,6 +26,14 @@ bin/schema2example
 %%SITE_PERL%%/XML/Compile/Schema/XmlReader.pod
 %%SITE_PERL%%/XML/Compile/Schema/XmlWriter.pm
 %%SITE_PERL%%/XML/Compile/Schema/XmlWriter.pod
+%%SITE_PERL%%/XML/Compile/Translate.pm
+%%SITE_PERL%%/XML/Compile/Translate.pod
+%%SITE_PERL%%/XML/Compile/Translate/Reader.pm
+%%SITE_PERL%%/XML/Compile/Translate/Reader.pod
+%%SITE_PERL%%/XML/Compile/Translate/Template.pm
+%%SITE_PERL%%/XML/Compile/Translate/Template.pod
+%%SITE_PERL%%/XML/Compile/Translate/Writer.pm
+%%SITE_PERL%%/XML/Compile/Translate/Writer.pod
 %%SITE_PERL%%/XML/Compile/Util.pm
 %%SITE_PERL%%/XML/Compile/Util.pod
 %%SITE_PERL%%/XML/Compile/xsd/1998-namespace.xsd
@@ -39,6 +47,7 @@ bin/schema2example
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Compile/xsd
+@dirrmtry %%SITE_PERL%%/XML/Compile/Translate
 @dirrmtry %%SITE_PERL%%/XML/Compile/Schema
 @dirrmtry %%SITE_PERL%%/XML/Compile
 @dirrmtry %%SITE_PERL%%/XML
