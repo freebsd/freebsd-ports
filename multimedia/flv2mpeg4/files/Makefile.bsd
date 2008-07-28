@@ -5,7 +5,7 @@ SRCS=		avformat_writer.c dcprediction.c flv2mpeg4.c fetch.c flvdecoder.c\
 			m4vencode.c mp3header.c
 LDADD+=		-lpthread -lavformat -lavcodec -lavutil
 CFLAGS+=	-O2
-CFLAGS+=	-I/usr/local/include/ffmpeg
+CFLAGS+=	-I/usr/local/include
 LDADD+=		-L/usr/local/lib
 PROG=		flv2mpeg4
 NO_MAN=		yes
