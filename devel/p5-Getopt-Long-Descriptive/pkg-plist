@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Getopt/Long/Descriptive.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long/Descriptive/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long/Descriptive
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Long
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
+@dirrmtry %%SITE_PERL%%/Getopt/Long
+@dirrmtry %%SITE_PERL%%/Getopt
