@@ -24,6 +24,9 @@ MAN1=		tirc.1
 PLIST_FILES=	bin/tirc %%DATADIR%%/tircrc
 PLIST_DIRS=	%%DATADIR%%
 
+DEPRECATED=	No longer developed, website gone
+EXPIRATION_DATE=	2008-08-28
+
 post-patch:
 	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/*.c ${WRKSRC}/*.1
 
