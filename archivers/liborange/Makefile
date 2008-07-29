@@ -7,6 +7,7 @@
 
 PORTNAME=	liborange
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synce
@@ -37,23 +38,26 @@ MAN1=		orange.1
 
 .if !defined(WITH_LIBSYNCE)
 CONFIGURE_ARGS+=	--without-libsynce
+REQUIRES+=	libsynce
 .else
 LIB_DEPENDS+=		synce.0:${PORTSDIR}/palm/synce-libsynce
-CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libsynce
 .endif
 
 .if !defined(WITH_LIBDYNAMITE)
 CONFIGURE_ARGS+=	--without-libdynamite
+REQUIRES+=	libdynamite
 .else
 LIB_DEPENDS+=		dynamite.0:${PORTSDIR}/archivers/libdynamite
-CONFIGURE_ARGS+=	--with-libdynamite=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libdynamite
 .endif
 
 .if !defined(WITH_LIBUNSHIELD)
 CONFIGURE_ARGS+=	--without-libunshield
+REQUIRES+=	libunshield
 .else
 LIB_DEPENDS+=		unshield.0:${PORTSDIR}/archivers/unshield
-CONFIGURE_ARGS+=	--with-libunshield=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libunshield
 .endif
 
 .if defined(WITH_INNO)
@@ -68,5 +72,10 @@ CONFIGURE_ARGS+=	--enable-vise
 CONFIGURE_ARGS+=	--enable-msi --with-libgsf
 LIB_DEPENDS+=		gsf-1.114:${PORTSDIR}/devel/libgsf
 .endif
+
+post-patch:
+.for req in ${REQUIRES}
+	@${REINPLACE_CMD} -e 's|${req}||' ${WRKSRC}/${PORTNAME}.pc.in
+.endfor
 
 .include <bsd.port.post.mk>
