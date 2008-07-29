@@ -36,7 +36,7 @@ lib/kde3/ktupnpplugin.so
 lib/kde3/ktwebinterfaceplugin.a
 lib/kde3/ktwebinterfaceplugin.la
 lib/kde3/ktwebinterfaceplugin.so
-lib/libktorrent-2.2.6.so
+lib/libktorrent-2.2.7.so
 lib/libktorrent.a
 lib/libktorrent.la
 lib/libktorrent.so
