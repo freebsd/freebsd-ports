@@ -16,6 +16,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -35,7 +36,7 @@ USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 WRKSRC=	${WRKDIR}
 
-PLIST_SUB=  SHLIB_MAJOR="${SHLIB_MAJOR}"
+PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 SHLIB_MAJOR=	3
 
 APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
@@ -87,6 +88,7 @@ PKGNAMESUFFIX=	-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
 .endif
 
 .if defined(APR_UTIL_WITH_LDAP)
+PLIST_SUB+=	LDAP=""
 USE_OPENLDAP=	yes
 APR_UTIL_CONF_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 	--with-ldap-lib=${LOCALBASE}/lib --with-ldap=ldap
@@ -95,6 +97,8 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ldap
 .else
 PKGNAMESUFFIX=	-ldap
 .endif
+.else
+PLIST_SUB+=	LDAP="@comment "
 .endif
 
 pre-extract:
