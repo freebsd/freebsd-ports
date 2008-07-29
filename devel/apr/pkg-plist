@@ -84,5 +84,10 @@ lib/libaprutil-1.a
 lib/libaprutil-1.la
 lib/libaprutil-1.so
 lib/libaprutil-1.so.%%SHLIB_MAJOR%%
+%%LDAP%%lib/apr-util-1/apr_ldap-1.so
+%%LDAP%%lib/apr-util-1/apr_ldap.so
+%%LDAP%%lib/apr-util-1/apr_ldap.la
+%%LDAP%%lib/apr-util-1/apr_ldap.a
+%%LDAP%%@dirrm lib/apr-util-1
 @dirrm build-1
 @dirrm include/apr-1
