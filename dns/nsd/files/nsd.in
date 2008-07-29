@@ -15,17 +15,14 @@
 name=nsd
 rcvar=`set_rcvar`
 
-prefix=%%PREFIX%%
-
 required_files=%%PREFIX%%/etc/nsd/nsd.conf
 
-command=/usr/local/sbin/${name}
+command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
 
 load_rc_config ${name}
 
-nsd_enable=${nsd_enable:-"NO"}
-nsd_flags=${nsd_flags:-""}
+nsd_enable=${nsd_enable-"NO"}
 
 run_rc_command "$1"
 
