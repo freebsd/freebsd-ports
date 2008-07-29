@@ -10,8 +10,8 @@ PORTVERSION=	0.5
 PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.klebsch.de/ \
-		ftp://ftp.apple.asimov.net/pub/apple_II/images/utility/programming/apple_pascal/:disks \
-		ftp://ftp1.au.apple.asimov.net/pub/apple2/images/utility/programming/apple_pascal/:disks
+		ftp://ftp.apple.asimov.net/pub/apple_II/images/programming/pascal/apple_pascal/:disks \
+		http://www.kdbarto.org/UCSD_Pascal_files/:disks
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		apple_pascal_0.dsk.gz:disks apple_pascal_1.dsk.gz:disks \
