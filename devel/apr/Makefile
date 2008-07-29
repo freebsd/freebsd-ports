@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
 DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
 
-MAINTAINER=	rodrigc@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	The Apache Group's Portability Library
 
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
