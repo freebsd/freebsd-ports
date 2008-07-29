@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	unshield
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=synce
 
 MAINTAINER=	se@FreeBSD.org
@@ -16,8 +16,9 @@ COMMENT=	Extract data from InstallShield CAB files
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnomehack gnometarget
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--program-prefix=""
+
+MAN1=		${PORTNAME}.1
 
 .include <bsd.port.mk>
