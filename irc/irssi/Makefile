@@ -7,17 +7,18 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.12
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	irc
 MASTER_SITES=	http://mirror.irssi.org/
 
 MAINTAINER?=	vanilla@FreeBSD.org
 COMMENT?=	A modular IRC client with many features
 
+LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20
+
 CONFLICTS=	irssi-devel-[0-9]*
 
 USE_BZIP2=	yes
-USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_PERL=	yes
@@ -62,8 +63,8 @@ PLIST_SUB+=	WITH_PROXY="@comment "
 CONFIGURE_ARGS+=	--with-socks
 .endif
 
-.if !defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
 CATEGORIES+=	ipv6
 .endif
 
