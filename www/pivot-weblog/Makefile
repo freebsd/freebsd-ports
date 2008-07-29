@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pivot-weblog
-PORTVERSION=	1.40.5
+PORTVERSION=	1.40.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	pivot_1405_full
+DISTNAME=	pivot_1406_full
 
 MAINTAINER=	hans@nordhaug.priv.no
 COMMENT=	A web-based tool to help you maintain weblogs (or other dynamic sites)
