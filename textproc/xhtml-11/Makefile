@@ -6,36 +6,51 @@
 #
 
 PORTNAME=	xhtml
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.${RECDATE}
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.w3.org/TR/xhtml11/
+MASTER_SITES=	http://www.w3.org/TR/2007/WD-xhtml11-${RECDATE}/
 DISTNAME=	xhtml11
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	W3C's XHTML 1.1 DTD
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
-BROKEN=		Checksum mismatch
+RECDATE=	20070216
 
 LATEST_LINK=	xhtml-11
-WRKSRC=		${WRKDIR}/xhtml11-20010531
+WRKSRC=		${WRKDIR}/xhtml11-20070216
 NO_BUILD=	yes
-PLIST_SUB=	XMLCATMGR=${XMLCATMGR} DTDDIR=${DTDDIR} \
-		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
+PLIST_SUB+=	XMLCAT_ADD="${XMLCAT_ADD}" \
+		XMLCAT_RM="${XMLCAT_RM}" \
+		SGMLCAT_ADD="${SGMLCAT_ADD}" \
+		SGMLCAT_RM="${SGMLCAT_RM}"
 
-DTDDIR=		${PREFIX}/share/xml/${PORTNAME}/${PORTVERSION}
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
+SGMLCAT=	${PREFIX}/share/sgml/catalog.ports
+XMLCAT=		${PREFIX}/share/xml/catalog.ports
+
+XMLCAT_ADD=	${XMLCATMGR} -c ${XMLCAT} add nextCatalog \
+		    ${PREFIX}/${DTDDIR}/catalog.xml
+XMLCAT_RM=	${XMLCATMGR} -c ${XMLCAT} remove \
+		    ${PREFIX}/${DTDDIR}/catalog.xml
+SGMLCAT_ADD=	${XMLCATMGR} -sc ${SGMLCAT} add CATALOG \
+		    ${PREFIX}/${DTDDIR}/xhtml11.cat
+SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
+		    ${PREFIX}/${DTDDIR}/xhtml11.cat
+
+DTDDIR=		share/xml/${PORTNAME}/1.1/dtd
+XSDDIR=		share/xml/${PORTNAME}/1.1/xsd
 
 do-install:
-	${MKDIR} ${DTDDIR}
-	${INSTALL_DATA} ${WRKSRC}/DTD/* ${DTDDIR}
+	${MKDIR} ${PREFIX}/${DTDDIR}
+	${INSTALL_DATA} ${WRKSRC}/DTD/* ${PREFIX}/${DTDDIR}
+	${MKDIR} ${PREFIX}/${XSDDIR}
+	${INSTALL_DATA} ${WRKSRC}/SCHEMA/* ${PREFIX}/${XSDDIR}
 
 post-install:
-	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML}	\
-		add CATALOG ${DTDDIR}/xhtml11.cat
+#	${XMLCAT_ADD}
+	${SGMLCAT_ADD}
 
 .include <bsd.port.mk>
