@@ -2535,6 +2535,7 @@
     SUBDIR += z80-asm
     SUBDIR += z80asm
     SUBDIR += zeroinstall-injector
+    SUBDIR += zmq
     SUBDIR += ztcl
     SUBDIR += zthread
     SUBDIR += zziplib
