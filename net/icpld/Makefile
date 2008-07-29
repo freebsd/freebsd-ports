@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icpld
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.ibiblio.org/icpld/download/ \
 		http://freebsd.unixfreunde.de/sources/
