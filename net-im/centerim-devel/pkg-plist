@@ -1,5 +1,6 @@
 bin/centerim
 bin/cimconv
+bin/CenterIMLog2HTML.py
 %%DATADIR%%/email.wav
 %%DATADIR%%/msg.wav
 %%DATADIR%%/offline.wav
