@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	2.6.1
-PORTREVISION=	2
+PORTVERSION=	2.7.1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -40,20 +39,21 @@ OPTIONS=	ATLAS        "Use ATLAS instead of BLAS/LAPACK"           off \
 		GHOSTSCRIPT  "Enable the [dev2]bitmap() graphics devices" on  \
 		PCRE_PORT    "Use PCRE port instead of bundled source"    on  \
 		DVI_MANUALS  "Install DVI manuals (requires TeX)"         off \
-		PDF_MANUALS  "Install PDF manuals (requires TeX)"         on  \
 		INFO_MANUALS "Install GNU info manuals"                   on  \
 		LETTER_PAPER "Use US Letter paper"                        off
 
 MAN1=		R.1 Rscript.1
 
 USE_LDCONFIG=	yes
+USE_FORTRAN=	yes
+
 INSTALL_TARGET=	install install-libR
 ALL_TARGET=	all
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_PERL5=	yes
+USE_GETTEXT=	yes
 
 CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" F77="${F77}" FC="${FC}"
 CONFIGURE_ARGS=	--enable-R-shlib --with-system-bzlib --with-system-zlib \
@@ -61,12 +61,13 @@ CONFIGURE_ARGS=	--enable-R-shlib --with-system-bzlib --with-system-zlib \
 
 .include <bsd.port.pre.mk>
 
-USE_FORTRAN=	yes
-
-test check: build
-	@(cd ${WRKSRC}; ${MAKE} check)
-check-all: build
-	@(cd ${WRKSRC}; ${MAKE} check-all)
+.ifndef WITHOUT_NLS
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
@@ -74,22 +75,19 @@ CONFIGURE_ARGS+=--with-blas="-lf77blas -latlas"
 # A workaround to prevent hangs up during the build.
 .if ${ARCH} != "i386"
 CONFIGURE_ARGS+=--with-lapack="-lalapack -lcblas"
-PLIST_SUB+=	BLAS="@comment "
-.else
-PLIST_SUB+=	BLAS=""
 .endif
 .else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-CONFIGURE_ARGS+=--with-blas="-lblas"
-PLIST_SUB+=	BLAS=""
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas	\
+		lapack.4:${PORTSDIR}/math/lapack
+CONFIGURE_ARGS+=--with-blas="-lblas" --with-lapack="-llapack -lblas"
 .endif
 
 .if defined(WITHOUT_TCLTK)
 CONFIGURE_ARGS+=--without-tcltk
 PLIST_SUB+=	TCLTK="@comment "
 .else
-LIB_DEPENDS+=	tcl84:${PORTSDIR}/lang/tcl84 \
-		tk84:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS+=	tcl85:${PORTSDIR}/lang/tcl85 \
+		tk85:${PORTSDIR}/x11-toolkits/tk85
 CONFIGURE_ARGS+=--with-tcltk
 PLIST_SUB+=	TCLTK=""
 .endif
@@ -113,7 +111,7 @@ CONFIGURE_ARGS+=--without-x
 PLIST_SUB+=	X11="@comment "
 .else
 CONFIGURE_ARGS+=--with-x
-USE_XORG=	x11
+USE_XORG=	x11 xt
 PLIST_SUB+=	X11=""
 .endif
 
@@ -128,7 +126,7 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-system-pcre
 .endif
 
-.if defined(WITH_DVI_MANUALS)
+.if defined(WITH_DVI_MANUALS) && !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base
 ALL_TARGET+=	dvi
 INSTALL_TARGET+=install-dvi
@@ -137,16 +135,7 @@ PLIST_SUB+=	DVI_MANUAL=""
 PLIST_SUB+=	DVI_MANUAL="@comment "
 .endif
 
-.if defined(WITHOUT_PDF_MANUALS)
-PLIST_SUB+=	PDF_MANUAL="@comment "
-.else
-PLIST_SUB+=	PDF_MANUAL=""
-BUILD_DEPENDS+=	pdflatex:${PORTSDIR}/print/teTeX-base
-ALL_TARGET+=	pdf
-INSTALL_TARGET+=install-pdf
-.endif
-
-.if !defined(WITHOUT_INFO_MANUALS)
+.if defined(WITH_INFO_MANUALS) && !defined(NOPORTDOCS)
 ALL_TARGET+=	info
 INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 .endif
@@ -155,20 +144,21 @@ INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 CONFIGURE_ENV+=	R_PAPERSIZE=letter
 .endif
 
-.if ${OSVERSION} < 600000
-CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
-BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/src/nmath/standalone/Makefile.in \
 		${WRKSRC}/src/unix/Makefile.in
 
+regression-test: build
+	@(cd ${WRKSRC}; ${MAKE} check)
+
+check-all: build
+	@(cd ${WRKSRC}; ${MAKE} check-all)
+
 post-install:
 	${MV} ${PREFIX}/lib/libR.so ${PREFIX}/lib/libR.so.0
 	${LN} -sf ${PREFIX}/lib/libR.so.0 ${PREFIX}/lib/libR.so
-.if !defined(WITHOUT_INFO_MANUALS)
+.if defined(WITH_INFO_MANUALS) && !defined(NOPORTDOCS)
 	(cd ${WRKSRC}/doc/manual; \
 	for infofile in ${INFO}; do \
 		${INSTALL_DATA} $${infofile}.info* ${PREFIX}/${INFO_PATH}/; \
