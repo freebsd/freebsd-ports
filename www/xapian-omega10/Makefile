@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
