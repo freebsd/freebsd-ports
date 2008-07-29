@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	1.22
-PORTREVISION=	4
+PORTVERSION=	2.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.viceteam.org/online/ \
 		http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
@@ -66,6 +65,14 @@ INFO=		vice
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/fc-cache)
+PLIST_SUB+=		FCCACHE=""
+PLIST_SUB+=		NOFCCACHE="@comment "
+.else
+PLIST_SUB+=		FCCACHE="@comment "
+PLIST_SUB+=		NOFCCACHE=""
+.endif
 
 .if exists(${LOCALBASE}/include/esd.h) && !defined(WITHOUT_ESOUND)
 WITH_ESOUND?=yes
