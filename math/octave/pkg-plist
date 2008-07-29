@@ -1708,7 +1708,7 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave/site/m
 @dirrm share/octave/site
 @dirrm share/octave
-@dirrmtry %%DATADIR%%/applications
+@dirrmtry share/applications
 %%PORTDOCS%%%%DOCSDIR%%/Octave-FAQ.ps
 %%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-a4.ps
