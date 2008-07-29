@@ -777,6 +777,7 @@ avltree                         ports/devel/avltree
 avr-binutils                    ports/devel/avr-binutils
 avr-gcc                         ports/devel/avr-gcc
 avr-gcc-3                       ports/devel/avr-gcc-3
+avr-gcc-devel                   ports/devel/avr-gcc-devel
 avr-gdb                         ports/devel/avr-gdb
 avr-libc                        ports/devel/avr-libc
 avra                            ports/devel/avra
@@ -10646,6 +10647,7 @@ p5-HTML-Prototype               ports/www/p5-HTML-Prototype
 p5-HTML-QuickCheck              ports/www/p5-HTML-QuickCheck
 p5-HTML-RSSAutodiscovery        ports/www/p5-HTML-RSSAutodiscovery
 p5-HTML-ResolveLink             ports/www/p5-HTML-ResolveLink
+p5-HTML-RewriteAttributes       ports/textproc/p5-HTML-RewriteAttributes
 p5-HTML-RobotsMETA              ports/www/p5-HTML-RobotsMETA
 p5-HTML-SBC                     ports/textproc/p5-HTML-SBC
 p5-HTML-Sanitizer               ports/www/p5-HTML-Sanitizer
@@ -13740,6 +13742,7 @@ p5-html-prettyprinter           ports/www/p5-HTML-PrettyPrinter
 p5-html-prototype               ports/www/p5-HTML-Prototype
 p5-html-quickcheck              ports/www/p5-HTML-QuickCheck
 p5-html-resolvelink             ports/www/p5-HTML-ResolveLink
+p5-html-rewriteattributes       ports/textproc/p5-HTML-RewriteAttributes
 p5-html-robotsmeta              ports/www/p5-HTML-RobotsMETA
 p5-html-rssautodiscovery        ports/www/p5-HTML-RSSAutodiscovery
 p5-html-sanitizer               ports/www/p5-HTML-Sanitizer
@@ -19363,6 +19366,7 @@ smbftpd                         ports/ftp/smbftpd
 smbldap-tools                   ports/net/smbldap-tools
 smc                             ports/devel/smc
 smfsav                          ports/mail/smfsav
+smile                           ports/multimedia/smile
 smiley                          ports/games/smiley
 smilutils                       ports/multimedia/smilutils
 sml-fxp                         ports/textproc/sml-fxp
@@ -21990,6 +21994,7 @@ xorg-vfbserver                  ports/x11-servers/xorg-vfbserver
 xoris                           ports/graphics/xoris
 xorp                            ports/net/xorp
 xorsearch                       ports/security/xorsearch
+xoscope                         ports/audio/xoscope
 xosd                            ports/misc/xosd
 xosmulti                        ports/games/xosmulti
 xosview                         ports/sysutils/xosview
@@ -22558,6 +22563,7 @@ ziproxy                         ports/www/ziproxy
 zircon                          ports/irc/zircon
 zisofs-tools                    ports/sysutils/zisofs-tools
 zmailer                         ports/mail/zmailer
+zmq                             ports/devel/zmq
 zmtx-zmrx                       ports/comms/zmtx-zmrx
 znavigator                      ports/www/znavigator
 znc                             ports/irc/znc
