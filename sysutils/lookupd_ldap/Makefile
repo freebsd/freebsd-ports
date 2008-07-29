@@ -20,6 +20,10 @@ USE_OPENLDAP=	yes
 
 PLIST_FILES=	lib/lkpd_ldap.so lib/lkpd_ldap.so.1
 
+.if !defined(WITH_OPENLDAP_VER) || ${WITH_OPENLDAP_VER} != "23"
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-config.h
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-install:
