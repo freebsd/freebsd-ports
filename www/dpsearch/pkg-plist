@@ -5,6 +5,7 @@ bin/storedoc.cgi
 etc/dpsearch/acronym/en.acr
 etc/dpsearch/acronym/en.cs.acr
 etc/dpsearch/acronym/en.fido.acr
+etc/dpsearch/acronym/fr.acr
 etc/dpsearch/acronym/ru.acr
 etc/dpsearch/cached.conf-dist
 etc/dpsearch/indexer.conf-dist
@@ -294,8 +295,10 @@ etc/dpsearch/stopwords/tr.sl
 etc/dpsearch/stopwords/uk.sl
 etc/dpsearch/stored.conf-dist
 etc/dpsearch/storedoc.htm-dist
+etc/dpsearch/synonym/english.big.syn
 etc/dpsearch/synonym/english.syn
 etc/dpsearch/synonym/francais.syn
+etc/dpsearch/synonym/russian.big.syn
 etc/dpsearch/synonym/russian.syn
 include/dps_acronym.h
 include/dps_agent.h

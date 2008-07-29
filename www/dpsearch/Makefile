@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.49
+PORTVERSION=	4.50
 CATEGORIES=	www
-MASTER_SITES=	http://www.dataparksearch.org/ \
-		http://dataparksearch.newsa.ru/
+MASTER_SITES=	http://dataparksearch.googlecode.com/files/ \
+		http://www.dataparksearch.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source search engine for Internet and Intranet sites
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 DOCSDIR=	${PREFIX}/share/doc/dataparksearch
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
