@@ -4,6 +4,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/ssi/changes_navigation.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/sidebars/mozilla-add-sidebar.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/sidebars/mozilla-sidebar.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/img/ldif_template_select_list.jpg
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/default.css
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/fixed.css
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/print.css
@@ -33,6 +34,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/robots.txt
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/security.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/support.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/usability.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldap.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_fastcgi.html
@@ -44,6 +47,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/compability.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/ssi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/sidebars
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/css/web2ldap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs
