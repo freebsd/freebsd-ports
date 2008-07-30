@@ -11,4 +11,4 @@ www/cgi-bin/uprecords.conf
 www/cgi-bin/uprecords.footer
 www/cgi-bin/uprecords.header
 @dirrmtry www/cgi-bin
-@unexec rm -rf /var/spool/uptimed 2>/dev/null || true
+@unexec rmdir /var/spool/uptimed 2>/dev/null || true
