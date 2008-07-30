@@ -6127,6 +6127,7 @@ k3dsurf                         ports/math/k3dsurf
 k8048                           ports/devel/k8048
 k8temp                          ports/sysutils/k8temp
 k9copy                          ports/multimedia/k9copy
+kBuild                          ports/devel/kBuild
 kaddressbook-plugins            ports/misc/kaddressbook-plugins
 kaffe                           ports/java/kaffe
 kaffeine                        ports/multimedia/kaffeine
@@ -6170,6 +6171,7 @@ kbirthday                       ports/deskutils/kbirthday
 kblticker                       ports/deskutils/kblticker
 kbproto                         ports/x11/kbproto
 kbtv                            ports/multimedia/kbtv
+kbuild                          ports/devel/kBuild
 kcachegrind                     ports/devel/kcachegrind
 kcd                             ports/misc/kcd
 kcd-devel                       ports/misc/kcd-devel
@@ -6687,6 +6689,7 @@ latrine                         ports/games/latrine
 latte                           ports/textproc/latte
 laudio                          ports/audio/laudio
 laughingman                     ports/games/laughingman
+launchy                         ports/deskutils/launchy
 lavaps                          ports/sysutils/lavaps
 lazarus                         ports/editors/lazarus
 lbdb                            ports/mail/lbdb
@@ -10798,6 +10801,7 @@ p5-IPC-Mmap-Share               ports/devel/p5-IPC-Mmap-Share
 p5-IPC-Open3-Simple             ports/devel/p5-IPC-Open3-Simple
 p5-IPC-PubSub                   ports/devel/p5-IPC-PubSub
 p5-IPC-Run                      ports/devel/p5-IPC-Run
+p5-IPC-Run-SafeHandles          ports/devel/p5-IPC-Run-SafeHandles
 p5-IPC-Run3                     ports/devel/p5-IPC-Run3
 p5-IPC-ShareLite                ports/devel/p5-IPC-ShareLite
 p5-IPC-Shareable                ports/devel/p5-IPC-Shareable
@@ -13918,6 +13922,7 @@ p5-ipc-mmap-share               ports/devel/p5-IPC-Mmap-Share
 p5-ipc-open3-simple             ports/devel/p5-IPC-Open3-Simple
 p5-ipc-pubsub                   ports/devel/p5-IPC-PubSub
 p5-ipc-run                      ports/devel/p5-IPC-Run
+p5-ipc-run-safehandles          ports/devel/p5-IPC-Run-SafeHandles
 p5-ipc-run3                     ports/devel/p5-IPC-Run3
 p5-ipc-shareable                ports/devel/p5-IPC-Shareable
 p5-ipc-sharedcache              ports/devel/p5-IPC-SharedCache
