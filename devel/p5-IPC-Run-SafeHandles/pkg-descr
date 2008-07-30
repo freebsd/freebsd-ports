@@ -1,0 +1,12 @@
+IPC::Run and IPC::Run3 are both very upset when you try to use them
+under environments where you have STDOUT and/or STDERR tied to something
+else, such as under fastcgi.
+
+The module adds safe-guarding code when you call IPC::Run or IPC::Run3
+under such environment to make sure it always works.
+
+If you intend to release your code to work under normal envionrment as
+well as under fastcgi, simply use this module *after* the "IPC" modules
+are loaded in your code.
+
+WWW: http://search.cpan.org/dist/IPC-Run-SafeHandles/
