@@ -1,0 +1,128 @@
+%%HORDIR%%/admin.php
+%%HORDIR%%/config/.htaccess
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/deliverables.php
+%%HORDIR%%/entry.php
+%%HORDIR%%/index.php
+%%HORDIR%%/invoicing.php
+%%HORDIR%%/lib/Admin.php
+%%HORDIR%%/lib/Block/tree_menu.php
+%%HORDIR%%/lib/Block/tree_stopwatch.php
+%%HORDIR%%/lib/Data/hermes_csv.php
+%%HORDIR%%/lib/Data/hermes_tsv.php
+%%HORDIR%%/lib/Data/hermes_xls.php
+%%HORDIR%%/lib/Data/iif.php
+%%HORDIR%%/lib/Data/qbxml.php
+%%HORDIR%%/lib/Driver.php
+%%HORDIR%%/lib/Driver/sql.php
+%%HORDIR%%/lib/Forms/Deliverable.php
+%%HORDIR%%/lib/Forms/Export.php
+%%HORDIR%%/lib/Forms/Search.php
+%%HORDIR%%/lib/Forms/Time.php
+%%HORDIR%%/lib/Hermes.php
+%%HORDIR%%/lib/Table.php
+%%HORDIR%%/lib/api.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/hermes.mo
+%%HORDIR%%/locale/en_US/help.xml
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/hermes.mo
+%%HORDIR%%/locale/es_ES/help.xml
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/hermes.mo
+%%HORDIR%%/locale/zh_TW/LC_MESSAGES/hermes.mo
+%%HORDIR%%/po/README
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/hermes.pot
+%%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/scripts/.htaccess
+%%HORDIR%%/scripts/Sandals.wdgt/Default.png
+%%HORDIR%%/scripts/Sandals.wdgt/Icon.png
+%%HORDIR%%/scripts/Sandals.wdgt/Info.plist
+%%HORDIR%%/scripts/Sandals.wdgt/KeychainPlugIn.widgetplugin/Contents/Info.plist
+%%HORDIR%%/scripts/Sandals.wdgt/KeychainPlugIn.widgetplugin/Contents/MacOS/KeychainPlugIn
+%%HORDIR%%/scripts/Sandals.wdgt/KeychainPlugIn.widgetplugin/Contents/Resources/English.lproj/InfoPlist.strings
+%%HORDIR%%/scripts/Sandals.wdgt/Sandals.html
+%%HORDIR%%/scripts/Sandals.wdgt/lib/Sandals.js
+%%HORDIR%%/scripts/Sandals.wdgt/lib/horde.js
+%%HORDIR%%/scripts/Sandals.wdgt/lib/open_calendar.js
+%%HORDIR%%/scripts/Sandals.wdgt/lib/stripe.js
+%%HORDIR%%/scripts/Sandals.wdgt/lib/vcXMLRPC.js
+%%HORDIR%%/scripts/Sandals.wdgt/themes/bluewhite-screen.css
+%%HORDIR%%/scripts/Sandals.wdgt/themes/graphics/alerts/alarm.png
+%%HORDIR%%/scripts/Sandals.wdgt/themes/graphics/alerts/error.png
+%%HORDIR%%/scripts/Sandals.wdgt/themes/graphics/alerts/message.png
+%%HORDIR%%/scripts/Sandals.wdgt/themes/graphics/alerts/success.png
+%%HORDIR%%/scripts/Sandals.wdgt/themes/graphics/alerts/warning.png
+%%HORDIR%%/scripts/Sandals.wdgt/themes/graphics/calendar.png
+%%HORDIR%%/scripts/Sandals.wdgt/themes/graphics/hermes.png
+%%HORDIR%%/scripts/Sandals.wdgt/themes/graphics/required.png
+%%HORDIR%%/scripts/Sandals.wdgt/themes/graphics/spinner-transparent.gif
+%%HORDIR%%/scripts/Sandals.wdgt/themes/hermes-screen.css
+%%HORDIR%%/scripts/Sandals.wdgt/themes/sandals-screen.css
+%%HORDIR%%/scripts/Sandals.wdgt/themes/screen.css
+%%HORDIR%%/scripts/purge.php
+%%HORDIR%%/scripts/sql/hermes.mssql.sql
+%%HORDIR%%/scripts/sql/hermes.oci8.sql
+%%HORDIR%%/scripts/sql/hermes.sql
+%%HORDIR%%/scripts/sql/hermes.xml
+%%HORDIR%%/scripts/upgrades/2007-04-20_drop_invoicing.sql
+%%HORDIR%%/scripts/upgrades/2007-04-25_add_jobtype_rate.sql
+%%HORDIR%%/scripts/upgrades/2007-10-17_add_jobtype_billable.sql
+%%HORDIR%%/search.php
+%%HORDIR%%/start.php
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/deliverables/list.inc
+%%HORDIR%%/templates/menu.inc
+%%HORDIR%%/templates/time/form.html
+%%HORDIR%%/themes/graphics/clockout.png
+%%HORDIR%%/themes/graphics/deliverable.png
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/hermes.png
+%%HORDIR%%/themes/graphics/invoices.png
+%%HORDIR%%/themes/graphics/newdeliverable.png
+%%HORDIR%%/themes/graphics/timer-start.png
+%%HORDIR%%/themes/graphics/timer-stop.png
+%%HORDIR%%/themes/print/screen.css
+%%HORDIR%%/themes/screen.css
+%%HORDIR%%/time.php
+@dirrm %%HORDIR%%/themes/print
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes
+@dirrm %%HORDIR%%/templates/time
+@dirrm %%HORDIR%%/templates/deliverables
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/scripts/upgrades
+@dirrm %%HORDIR%%/scripts/sql
+@dirrm %%HORDIR%%/scripts/Sandals.wdgt/themes/graphics/alerts
+@dirrm %%HORDIR%%/scripts/Sandals.wdgt/themes/graphics
+@dirrm %%HORDIR%%/scripts/Sandals.wdgt/themes
+@dirrm %%HORDIR%%/scripts/Sandals.wdgt/lib
+@dirrm %%HORDIR%%/scripts/Sandals.wdgt/KeychainPlugIn.widgetplugin/Contents/Resources/English.lproj
+@dirrm %%HORDIR%%/scripts/Sandals.wdgt/KeychainPlugIn.widgetplugin/Contents/Resources
+@dirrm %%HORDIR%%/scripts/Sandals.wdgt/KeychainPlugIn.widgetplugin/Contents/MacOS
+@dirrm %%HORDIR%%/scripts/Sandals.wdgt/KeychainPlugIn.widgetplugin/Contents
+@dirrm %%HORDIR%%/scripts/Sandals.wdgt/KeychainPlugIn.widgetplugin
+@dirrm %%HORDIR%%/scripts/Sandals.wdgt
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/lib/Forms
+@dirrm %%HORDIR%%/lib/Driver
+@dirrm %%HORDIR%%/lib/Data
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib
+@dirrmtry %%HORDIR%%/config
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%
