@@ -1,0 +1,29 @@
+--------------- Flexbackup Configuration Information ---------------
+
+Flexbackup needs to have its configuration file placed in
+%%PREFIX%%/etc.  A template copy of this configuration file
+has been installed into
+
+  %%PREFIX%%/etc/flexbackup.conf.sample
+
+Please copy this file to
+
+  %%PREFIX%%/etc/flexbackup.conf
+
+Edit this file appropriately on all machines where you will
+run flexbackup.
+
+NOTE: The flexbackup.conf file will not be removed or overwritten
+      by future package removals or upgrades once you have
+      customized it.
+
+***************************************************************
+**   Changes have occurred in this file up to and including  **
+**   version 1.2.0!                                          **
+***************************************************************
+
+Also see %%PREFIX%%/share/doc/flexbackup/README
+for more information on how to use flexbackup. Man pages have
+also been written and included in this version of the port!
+
+--------------------------------------------------------------------

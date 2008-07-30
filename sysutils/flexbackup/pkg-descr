@@ -11,4 +11,7 @@ Features:
    o Keeps a table of contents so you know archives are on each tape
    o Nice log files
 
+You can get additional information about remote backup strategies using SSH
+at http://www.sysfault.org/flexbackup.html
+
 WWW: http://flexbackup.sourceforge.net/
