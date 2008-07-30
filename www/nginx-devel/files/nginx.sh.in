@@ -35,11 +35,11 @@ _pidprefix="/var/run/nginx"
 pidfile="${_pidprefix}.pid"
 required_files=%%PREFIX%%/etc/nginx/nginx.conf
 
-[ -z "$nginx_enable" ]       && nginx_enable="NO"
-[ -z "$nginx_profiles" ]     && nginx_profiles=""
-[ -z "$nginx_flags" ]        && nginx_flags=""
-[ -z "$nginxlimits_enable" ] && nginxlimits_enable="NO"
-[ -z "$nginxlimits_args" ]   && nginxlimits_args="-e -U %%WWWOWN%%"
+[ -z "$nginx_enable" ]		&& nginx_enable="NO"
+[ -z "$nginx_profiles" ]	&& nginx_profiles=""
+[ -z "$nginx_flags" ]		&& nginx_flags=""
+[ -z "$nginxlimits_enable" ]	&& nginxlimits_enable="NO"
+[ -z "$nginxlimits_args" ]	&& nginxlimits_args="-e -U %%WWWOWN%%"
 
 load_rc_config $name
 
@@ -77,14 +77,6 @@ else
 	fi
 fi
 
-nginx_requirepidfile()
-{
-	if [ ! "0`check_pidfile ${pidfile} ${command}`" -gt 1 ]; then
-		echo "${name} not running? (check $pidfile)."
-		exit 1
-	fi
-}
-
 nginx_checkconfig()
 {
 	echo "Performing sanity check on nginx configuration:"
@@ -117,7 +109,7 @@ nginx_precmd()
 		eval `/usr/bin/limits ${nginxlimits_args}` 2>/dev/null
 	else
 		return 0
-        fi
+	fi
 }
 
 extra_commands="reload configtest upgrade"
