@@ -13,7 +13,7 @@ MASTER_SITES=	http://releases.beryl-project.org/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flz/beryl/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Beryl Composite/Window Manager
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

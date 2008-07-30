@@ -1,6 +1,6 @@
 # New ports collection makefile for:	heliodor
 # Date created:				2007-02-05
-# Whom:					Robert Noland <rnoland@2hip.net>
+# Whom:					Robert Noland <rnoland@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.beryl-project.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Heliodor Window Decorator
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/beryl.pc:${PORTSDIR}/x11-wm/beryl-core

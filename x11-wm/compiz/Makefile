@@ -11,7 +11,7 @@ PORTVERSION=	0.6.2
 PORTREVISION=	2
 CATEGORIES=	x11-wm
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Compiz Composite/Window Manager
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

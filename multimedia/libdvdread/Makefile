@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	This is needed by ogle, which is a DVD player that supports DVD menus
 
 .if !defined(PACKAGE_BUILDING)

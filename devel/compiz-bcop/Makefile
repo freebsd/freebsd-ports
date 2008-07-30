@@ -1,6 +1,6 @@
 # New ports collection makefile for:	compiz-bcop
 # Date created:				2007-08-15
-# Whom:					Robert Noland <rnoland@2hip.net>
+# Whom:					Robert Noland <rnoland@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	devel x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Code generator for Compiz Fusion Plugins
 
 # This annoys me...
