@@ -7,6 +7,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 	ftp://ftp.gnutls.org/pub/gnutls/ \
