@@ -1693,6 +1693,10 @@ PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir %D/\1 2>/dev/null || 
 PLIST_REINPLACE_RMTRY=s!^@rmtry \(.*\)!@unexec rm -f %D/\1 2>/dev/null || true!
 PLIST_REINPLACE_STOPDAEMON=s!^@stopdaemon \(.*\)!@unexec %D/etc/rc.d/\1${RC_SUBR_SUFFIX} forcestop 2>/dev/null || true!
 
+# kludge to strip trailing whitespace from CFLAGS;
+# sub-configure will not # survive double space
+CFLAGS:=	${CFLAGS:C/ $//}
+
 .if defined(WITHOUT_CPU_CFLAGS)
 .if defined(_CPUCFLAGS)
 .if !empty(_CPUCFLAGS)
@@ -1790,9 +1794,6 @@ EXTRACT_DEPENDS+=	unmakeself:${PORTSDIR}/archivers/unmakeself
 .if defined(USE_GMAKE)
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 CONFIGURE_ENV+=	MAKE=${GMAKE}
-# note: the next line is from 86106 which says: "It needs more investigation.
-# We will keep it in ports-mgmt/portmk for further tests."
-MAKE_ENV+=		CC="${CC}" CXX="${CXX}"
 .endif
 
 .if defined(USE_GCC) || defined(USE_FORTRAN)
@@ -2299,8 +2300,9 @@ MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
 MAKE_ENV+=		PREFIX=${PREFIX} \
 			LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
-			MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" \
-			CXXFLAGS="${CXXFLAGS}" MANPREFIX="${MANPREFIX}"
+			MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" \
+			CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+			MANPREFIX="${MANPREFIX}"
 
 # Add -fno-strict-aliasing to CFLAGS with optimization level -O2 or higher.
 # gcc 4.x enable strict aliasing optimization with -O2 which is known to break
