@@ -1,19 +1,18 @@
 %%HORDIR%%/admin/index.php
 %%HORDIR%%/config/.htaccess
 %%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/create_email.txt.dist
 %%HORDIR%%/config/hooks.php.dist
 %%HORDIR%%/config/menu.php.dist
 %%HORDIR%%/config/mime_drivers.php.dist
+%%HORDIR%%/config/notify_email.txt.dist
 %%HORDIR%%/config/prefs.php.dist
 %%HORDIR%%/config/reminders.php.dist
 %%HORDIR%%/config/templates.php.dist
 %%HORDIR%%/data.php
+%%HORDIR%%/imple.php
 %%HORDIR%%/index.php
 %%HORDIR%%/lib/.htaccess
-%%HORDIR%%/lib/Block/CVS/Entries
-%%HORDIR%%/lib/Block/CVS/Repository
-%%HORDIR%%/lib/Block/CVS/Root
-%%HORDIR%%/lib/Block/CVS/Template
 %%HORDIR%%/lib/Block/myqueries.php
 %%HORDIR%%/lib/Block/myrequests.php
 %%HORDIR%%/lib/Block/mytickets.php
@@ -23,234 +22,67 @@
 %%HORDIR%%/lib/Block/tree_menu.php
 %%HORDIR%%/lib/Block/unassigned.php
 %%HORDIR%%/lib/Driver.php
-%%HORDIR%%/lib/Driver/CVS/Entries
-%%HORDIR%%/lib/Driver/CVS/Repository
-%%HORDIR%%/lib/Driver/CVS/Root
-%%HORDIR%%/lib/Driver/CVS/Template
 %%HORDIR%%/lib/Driver/sql.php
+%%HORDIR%%/lib/Forms/Action.php
 %%HORDIR%%/lib/Forms/AddComment.php
 %%HORDIR%%/lib/Forms/Admin.php
-%%HORDIR%%/lib/Forms/CVS/Entries
-%%HORDIR%%/lib/Forms/CVS/Repository
-%%HORDIR%%/lib/Forms/CVS/Root
-%%HORDIR%%/lib/Forms/CVS/Template
+%%HORDIR%%/lib/Forms/Admin/Attribute.php
+%%HORDIR%%/lib/Forms/Admin/Priority.php
+%%HORDIR%%/lib/Forms/Admin/Queue.php
+%%HORDIR%%/lib/Forms/Admin/Reply.php
+%%HORDIR%%/lib/Forms/Admin/State.php
+%%HORDIR%%/lib/Forms/Admin/Type.php
+%%HORDIR%%/lib/Forms/Admin/User.php
+%%HORDIR%%/lib/Forms/Admin/Version.php
 %%HORDIR%%/lib/Forms/CreateTicket.php
 %%HORDIR%%/lib/Forms/EditTicket.php
+%%HORDIR%%/lib/Forms/Query.php
 %%HORDIR%%/lib/Forms/QueryParameterForm.php
 %%HORDIR%%/lib/Forms/Search.php
-%%HORDIR%%/lib/MIME/CVS/Entries
-%%HORDIR%%/lib/MIME/CVS/Repository
-%%HORDIR%%/lib/MIME/CVS/Root
-%%HORDIR%%/lib/MIME/CVS/Template
-%%HORDIR%%/lib/MIME/Viewer/CVS/Entries
-%%HORDIR%%/lib/MIME/Viewer/CVS/Repository
-%%HORDIR%%/lib/MIME/Viewer/CVS/Root
-%%HORDIR%%/lib/MIME/Viewer/CVS/Template
+%%HORDIR%%/lib/Forms/VarRenderer.php
+%%HORDIR%%/lib/Imple.php
+%%HORDIR%%/lib/Imple/ContactAutoCompleter.php
 %%HORDIR%%/lib/MIME/Viewer/zip.php
 %%HORDIR%%/lib/Mail.php
 %%HORDIR%%/lib/Query.php
-%%HORDIR%%/lib/Renderer/CVS/Entries
-%%HORDIR%%/lib/Renderer/CVS/Repository
-%%HORDIR%%/lib/Renderer/CVS/Root
-%%HORDIR%%/lib/Renderer/CVS/Template
 %%HORDIR%%/lib/Renderer/Comment.php
 %%HORDIR%%/lib/Renderer/Query.php
 %%HORDIR%%/lib/Reports.php
-%%HORDIR%%/lib/Scheduler/CVS/Entries
-%%HORDIR%%/lib/Scheduler/CVS/Repository
-%%HORDIR%%/lib/Scheduler/CVS/Root
-%%HORDIR%%/lib/Scheduler/CVS/Template
 %%HORDIR%%/lib/Scheduler/whups.php
 %%HORDIR%%/lib/Ticket.php
 %%HORDIR%%/lib/View.php
-%%HORDIR%%/lib/View/CVS/Entries
-%%HORDIR%%/lib/View/CVS/Repository
-%%HORDIR%%/lib/View/CVS/Root
-%%HORDIR%%/lib/View/CVS/Template
 %%HORDIR%%/lib/View/Results.php
 %%HORDIR%%/lib/View/SavedQueries.php
 %%HORDIR%%/lib/Whups.php
 %%HORDIR%%/lib/api.php
 %%HORDIR%%/lib/base.php
 %%HORDIR%%/lib/tests/ApiTest.php
-%%HORDIR%%/lib/tests/CVS/Entries
-%%HORDIR%%/lib/tests/CVS/Repository
-%%HORDIR%%/lib/tests/CVS/Root
-%%HORDIR%%/lib/tests/CVS/Template
 %%HORDIR%%/lib/tests/TestBase.php
 %%HORDIR%%/lib/version.php
-%%HORDIR%%/locale/bg_BG/CVS/Entries
-%%HORDIR%%/locale/bg_BG/CVS/Repository
-%%HORDIR%%/locale/bg_BG/CVS/Root
-%%HORDIR%%/locale/bg_BG/CVS/Template
-%%HORDIR%%/locale/bg_BG/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/bg_BG/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/bg_BG/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/bg_BG/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/bg_BG/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/cs_CZ/CVS/Entries
-%%HORDIR%%/locale/cs_CZ/CVS/Repository
-%%HORDIR%%/locale/cs_CZ/CVS/Root
-%%HORDIR%%/locale/cs_CZ/CVS/Template
-%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/cs_CZ/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/de_DE/CVS/Entries
-%%HORDIR%%/locale/de_DE/CVS/Repository
-%%HORDIR%%/locale/de_DE/CVS/Root
-%%HORDIR%%/locale/de_DE/CVS/Template
-%%HORDIR%%/locale/de_DE/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/de_DE/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/de_DE/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/de_DE/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/de_DE/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/en_US/CVS/Entries
-%%HORDIR%%/locale/en_US/CVS/Repository
-%%HORDIR%%/locale/en_US/CVS/Root
-%%HORDIR%%/locale/en_US/CVS/Template
 %%HORDIR%%/locale/en_US/help.xml
-%%HORDIR%%/locale/es_ES/CVS/Entries
-%%HORDIR%%/locale/es_ES/CVS/Repository
-%%HORDIR%%/locale/es_ES/CVS/Root
-%%HORDIR%%/locale/es_ES/CVS/Template
-%%HORDIR%%/locale/es_ES/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/es_ES/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/es_ES/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/es_ES/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/es_ES/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/fi_FI/CVS/Entries
-%%HORDIR%%/locale/fi_FI/CVS/Repository
-%%HORDIR%%/locale/fi_FI/CVS/Root
-%%HORDIR%%/locale/fi_FI/CVS/Template
-%%HORDIR%%/locale/fi_FI/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/fi_FI/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/fi_FI/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/fi_FI/LC_MESSAGES/CVS/Template
+%%HORDIR%%/locale/es_ES/help.xml
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/whups.mo
 %%HORDIR%%/locale/fi_FI/help.xml
-%%HORDIR%%/locale/fr_FR/CVS/Entries
-%%HORDIR%%/locale/fr_FR/CVS/Repository
-%%HORDIR%%/locale/fr_FR/CVS/Root
-%%HORDIR%%/locale/fr_FR/CVS/Template
-%%HORDIR%%/locale/fr_FR/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/fr_FR/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/fr_FR/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/fr_FR/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/fr_FR/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/it_IT/CVS/Entries
-%%HORDIR%%/locale/it_IT/CVS/Repository
-%%HORDIR%%/locale/it_IT/CVS/Root
-%%HORDIR%%/locale/it_IT/CVS/Template
-%%HORDIR%%/locale/it_IT/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/it_IT/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/it_IT/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/it_IT/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/it_IT/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/lt_LT/CVS/Entries
-%%HORDIR%%/locale/lt_LT/CVS/Repository
-%%HORDIR%%/locale/lt_LT/CVS/Root
-%%HORDIR%%/locale/lt_LT/CVS/Template
-%%HORDIR%%/locale/lt_LT/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/lt_LT/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/lt_LT/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/lt_LT/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/lt_LT/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/nb_NO/CVS/Entries
-%%HORDIR%%/locale/nb_NO/CVS/Repository
-%%HORDIR%%/locale/nb_NO/CVS/Root
-%%HORDIR%%/locale/nb_NO/CVS/Template
-%%HORDIR%%/locale/nb_NO/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/nb_NO/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/nb_NO/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/nb_NO/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/nb_NO/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/nl_NL/CVS/Entries
-%%HORDIR%%/locale/nl_NL/CVS/Repository
-%%HORDIR%%/locale/nl_NL/CVS/Root
-%%HORDIR%%/locale/nl_NL/CVS/Template
-%%HORDIR%%/locale/nl_NL/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/nl_NL/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/nl_NL/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/nl_NL/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/nl_NL/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/pl_PL/CVS/Entries
-%%HORDIR%%/locale/pl_PL/CVS/Repository
-%%HORDIR%%/locale/pl_PL/CVS/Root
-%%HORDIR%%/locale/pl_PL/CVS/Template
-%%HORDIR%%/locale/pl_PL/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/pl_PL/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/pl_PL/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/pl_PL/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/pl_PL/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/pt_BR/CVS/Entries
-%%HORDIR%%/locale/pt_BR/CVS/Repository
-%%HORDIR%%/locale/pt_BR/CVS/Root
-%%HORDIR%%/locale/pt_BR/CVS/Template
-%%HORDIR%%/locale/pt_BR/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/pt_BR/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/pt_BR/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/pt_BR/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/pt_BR/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/ro_RO/CVS/Entries
-%%HORDIR%%/locale/ro_RO/CVS/Repository
-%%HORDIR%%/locale/ro_RO/CVS/Root
-%%HORDIR%%/locale/ro_RO/CVS/Template
-%%HORDIR%%/locale/ro_RO/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/ro_RO/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/ro_RO/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/ro_RO/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/ro_RO/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/ru_RU/CVS/Entries
-%%HORDIR%%/locale/ru_RU/CVS/Repository
-%%HORDIR%%/locale/ru_RU/CVS/Root
-%%HORDIR%%/locale/ru_RU/CVS/Template
-%%HORDIR%%/locale/ru_RU/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/ru_RU/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/ru_RU/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/ru_RU/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/ru_RU/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/sl_SI/CVS/Entries
-%%HORDIR%%/locale/sl_SI/CVS/Repository
-%%HORDIR%%/locale/sl_SI/CVS/Root
-%%HORDIR%%/locale/sl_SI/CVS/Template
-%%HORDIR%%/locale/sl_SI/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/sl_SI/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/sl_SI/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/sl_SI/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/sl_SI/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/uk_UA/CVS/Entries
-%%HORDIR%%/locale/uk_UA/CVS/Repository
-%%HORDIR%%/locale/uk_UA/CVS/Root
-%%HORDIR%%/locale/uk_UA/CVS/Template
-%%HORDIR%%/locale/uk_UA/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/uk_UA/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/uk_UA/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/uk_UA/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/uk_UA/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/zh_CN/CVS/Entries
-%%HORDIR%%/locale/zh_CN/CVS/Repository
-%%HORDIR%%/locale/zh_CN/CVS/Root
-%%HORDIR%%/locale/zh_CN/CVS/Template
-%%HORDIR%%/locale/zh_CN/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/zh_CN/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/zh_CN/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/zh_CN/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/zh_CN/LC_MESSAGES/whups.mo
-%%HORDIR%%/locale/zh_TW/CVS/Entries
-%%HORDIR%%/locale/zh_TW/CVS/Repository
-%%HORDIR%%/locale/zh_TW/CVS/Root
-%%HORDIR%%/locale/zh_TW/CVS/Template
-%%HORDIR%%/locale/zh_TW/LC_MESSAGES/CVS/Entries
-%%HORDIR%%/locale/zh_TW/LC_MESSAGES/CVS/Repository
-%%HORDIR%%/locale/zh_TW/LC_MESSAGES/CVS/Root
-%%HORDIR%%/locale/zh_TW/LC_MESSAGES/CVS/Template
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/whups.mo
 %%HORDIR%%/mybugs.php
 %%HORDIR%%/mybugs_edit.php
 %%HORDIR%%/opensearch.php
-%%HORDIR%%/po/.cvsignore
 %%HORDIR%%/po/README
 %%HORDIR%%/po/bg_BG.po
 %%HORDIR%%/po/cs_CZ.po
@@ -282,13 +114,10 @@
 %%HORDIR%%/scripts/mail-filter.php
 %%HORDIR%%/scripts/obliterate.php
 %%HORDIR%%/scripts/reminders.php
-%%HORDIR%%/scripts/sql/CVS/Entries
-%%HORDIR%%/scripts/sql/CVS/Repository
-%%HORDIR%%/scripts/sql/CVS/Root
-%%HORDIR%%/scripts/sql/CVS/Template
 %%HORDIR%%/scripts/sql/whups.mssql.sql
 %%HORDIR%%/scripts/sql/whups.oci8.sql
 %%HORDIR%%/scripts/sql/whups.sql
+%%HORDIR%%/scripts/sql/whups.xml
 %%HORDIR%%/scripts/upgrades/2006-07-12_add_due_date.sql
 %%HORDIR%%/scripts/upgrades/2006-08-04_drop_subjectlist.sql
 %%HORDIR%%/scripts/upgrades/2007-01-16_add_queries.mssql.sql
@@ -303,66 +132,31 @@
 %%HORDIR%%/scripts/upgrades/2007-12-09_add_slugs.sql
 %%HORDIR%%/scripts/upgrades/2007-12-12_additional_indexes.sql
 %%HORDIR%%/scripts/upgrades/2008-02-27_add_defaults.sql
-%%HORDIR%%/scripts/upgrades/CVS/Entries
-%%HORDIR%%/scripts/upgrades/CVS/Repository
-%%HORDIR%%/scripts/upgrades/CVS/Root
-%%HORDIR%%/scripts/upgrades/CVS/Template
+%%HORDIR%%/scripts/upgrades/2008-04-29_add_sql_share_tables.sql
+%%HORDIR%%/scripts/upgrades/2008-06-11_add_attribute_types.oci8.sql
+%%HORDIR%%/scripts/upgrades/2008-06-11_add_attribute_types.pgsql.sql
+%%HORDIR%%/scripts/upgrades/2008-06-11_add_attribute_types.sql
+%%HORDIR%%/scripts/upgrades/2008-06-13_add_queue_emails.sql
+%%HORDIR%%/scripts/upgrades/2008-06-17_fix_varchar_lengths.sql
+%%HORDIR%%/scripts/upgrades/2008-06-24_add_replies.sql
+%%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
 %%HORDIR%%/search.php
 %%HORDIR%%/templates/.htaccess
-%%HORDIR%%/templates/CVS/Entries
-%%HORDIR%%/templates/CVS/Repository
-%%HORDIR%%/templates/CVS/Root
-%%HORDIR%%/templates/CVS/Template
-%%HORDIR%%/templates/admin/CVS/Entries
-%%HORDIR%%/templates/admin/CVS/Repository
-%%HORDIR%%/templates/admin/CVS/Root
-%%HORDIR%%/templates/admin/CVS/Template
 %%HORDIR%%/templates/admin/mtmatrix.inc
 %%HORDIR%%/templates/common-header.inc
 %%HORDIR%%/templates/menu.inc
+%%HORDIR%%/templates/prefs/sourceselect.inc
 %%HORDIR%%/templates/prevnext.inc
-%%HORDIR%%/templates/renderer/CVS/Entries
-%%HORDIR%%/templates/renderer/CVS/Repository
-%%HORDIR%%/templates/renderer/CVS/Root
-%%HORDIR%%/templates/renderer/CVS/Template
-%%HORDIR%%/templates/renderer/query/CVS/Entries
-%%HORDIR%%/templates/renderer/query/CVS/Repository
-%%HORDIR%%/templates/renderer/query/CVS/Root
-%%HORDIR%%/templates/renderer/query/CVS/Template
 %%HORDIR%%/templates/renderer/query/edit.inc
 %%HORDIR%%/templates/renderer/query/render.inc
 %%HORDIR%%/templates/renderer/querysetcurrenttype.inc
-%%HORDIR%%/templates/reports/CVS/Entries
-%%HORDIR%%/templates/reports/CVS/Repository
-%%HORDIR%%/templates/reports/CVS/Root
-%%HORDIR%%/templates/reports/CVS/Template
 %%HORDIR%%/templates/reports/stats.inc
-%%HORDIR%%/templates/rss/CVS/Entries
-%%HORDIR%%/templates/rss/CVS/Repository
-%%HORDIR%%/templates/rss/CVS/Root
-%%HORDIR%%/templates/rss/CVS/Template
 %%HORDIR%%/templates/rss/queue.rss
 %%HORDIR%%/templates/rss/ticket.rss
-%%HORDIR%%/templates/ticket/CVS/Entries
-%%HORDIR%%/templates/ticket/CVS/Repository
-%%HORDIR%%/templates/ticket/CVS/Root
-%%HORDIR%%/templates/ticket/CVS/Template
 %%HORDIR%%/templates/ticket/watchers.inc
-%%HORDIR%%/templates/view/CVS/Entries
-%%HORDIR%%/templates/view/CVS/Repository
-%%HORDIR%%/templates/view/CVS/Root
-%%HORDIR%%/templates/view/CVS/Template
 %%HORDIR%%/templates/view/results.inc
 %%HORDIR%%/templates/view/savedqueries.inc
-%%HORDIR%%/themes/CVS/Entries
-%%HORDIR%%/themes/CVS/Repository
-%%HORDIR%%/themes/CVS/Root
-%%HORDIR%%/themes/CVS/Template
 %%HORDIR%%/themes/feed-rss.xsl
-%%HORDIR%%/themes/graphics/CVS/Entries
-%%HORDIR%%/themes/graphics/CVS/Repository
-%%HORDIR%%/themes/graphics/CVS/Root
-%%HORDIR%%/themes/graphics/CVS/Template
 %%HORDIR%%/themes/graphics/admin.png
 %%HORDIR%%/themes/graphics/az.png
 %%HORDIR%%/themes/graphics/create.png
@@ -372,15 +166,8 @@
 %%HORDIR%%/themes/graphics/search.png
 %%HORDIR%%/themes/graphics/whups.png
 %%HORDIR%%/themes/graphics/za.png
+%%HORDIR%%/themes/hordeweb/screen.css
 %%HORDIR%%/themes/screen.css
-%%HORDIR%%/themes/silver/CVS/Entries
-%%HORDIR%%/themes/silver/CVS/Repository
-%%HORDIR%%/themes/silver/CVS/Root
-%%HORDIR%%/themes/silver/CVS/Template
-%%HORDIR%%/themes/silver/graphics/CVS/Entries
-%%HORDIR%%/themes/silver/graphics/CVS/Repository
-%%HORDIR%%/themes/silver/graphics/CVS/Root
-%%HORDIR%%/themes/silver/graphics/CVS/Template
 %%HORDIR%%/themes/silver/graphics/admin.png
 %%HORDIR%%/themes/silver/graphics/az.png
 %%HORDIR%%/themes/silver/graphics/create.png
@@ -390,12 +177,9 @@
 %%HORDIR%%/themes/silver/graphics/search.png
 %%HORDIR%%/themes/silver/graphics/whups.png
 %%HORDIR%%/themes/silver/graphics/za.png
+%%HORDIR%%/themes/silver/screen.css
 %%HORDIR%%/themes/silver/themed_graphics
 %%HORDIR%%/ticket/.htaccess
-%%HORDIR%%/ticket/CVS/Entries
-%%HORDIR%%/ticket/CVS/Repository
-%%HORDIR%%/ticket/CVS/Root
-%%HORDIR%%/ticket/CVS/Template
 %%HORDIR%%/ticket/comment.php
 %%HORDIR%%/ticket/create.php
 %%HORDIR%%/ticket/delete.php
@@ -407,131 +191,74 @@
 %%HORDIR%%/ticket/update.php
 %%HORDIR%%/ticket/watch.php
 %%HORDIR%%/view.php
-@dirrm %%HORDIR%%/ticket/CVS
 @dirrm %%HORDIR%%/ticket
-@dirrm %%HORDIR%%/themes/silver/graphics/CVS
 @dirrm %%HORDIR%%/themes/silver/graphics
-@dirrm %%HORDIR%%/themes/silver/CVS
 @dirrm %%HORDIR%%/themes/silver
-@dirrm %%HORDIR%%/themes/graphics/CVS
+@dirrm %%HORDIR%%/themes/hordeweb
 @dirrm %%HORDIR%%/themes/graphics
-@dirrm %%HORDIR%%/themes/CVS
 @dirrm %%HORDIR%%/themes
-@dirrm %%HORDIR%%/templates/view/CVS
 @dirrm %%HORDIR%%/templates/view
-@dirrm %%HORDIR%%/templates/ticket/CVS
 @dirrm %%HORDIR%%/templates/ticket
-@dirrm %%HORDIR%%/templates/rss/CVS
 @dirrm %%HORDIR%%/templates/rss
-@dirrm %%HORDIR%%/templates/reports/CVS
 @dirrm %%HORDIR%%/templates/reports
-@dirrm %%HORDIR%%/templates/renderer/query/CVS
 @dirrm %%HORDIR%%/templates/renderer/query
-@dirrm %%HORDIR%%/templates/renderer/CVS
 @dirrm %%HORDIR%%/templates/renderer
-@dirrm %%HORDIR%%/templates/admin/CVS
+@dirrm %%HORDIR%%/templates/prefs
 @dirrm %%HORDIR%%/templates/admin
-@dirrm %%HORDIR%%/templates/CVS
 @dirrm %%HORDIR%%/templates
-@dirrm %%HORDIR%%/scripts/upgrades/CVS
 @dirrm %%HORDIR%%/scripts/upgrades
-@dirrm %%HORDIR%%/scripts/sql/CVS
 @dirrm %%HORDIR%%/scripts/sql
 @dirrm %%HORDIR%%/scripts
 @dirrm %%HORDIR%%/queue
 @dirrm %%HORDIR%%/po
-@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/zh_TW/CVS
 @dirrm %%HORDIR%%/locale/zh_TW
-@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/zh_CN/CVS
 @dirrm %%HORDIR%%/locale/zh_CN
-@dirrm %%HORDIR%%/locale/uk_UA/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/uk_UA/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/uk_UA/CVS
 @dirrm %%HORDIR%%/locale/uk_UA
-@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sl_SI/CVS
 @dirrm %%HORDIR%%/locale/sl_SI
-@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ru_RU/CVS
 @dirrm %%HORDIR%%/locale/ru_RU
-@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ro_RO/CVS
 @dirrm %%HORDIR%%/locale/ro_RO
-@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pt_BR/CVS
 @dirrm %%HORDIR%%/locale/pt_BR
-@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pl_PL/CVS
 @dirrm %%HORDIR%%/locale/pl_PL
-@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nl_NL/CVS
 @dirrm %%HORDIR%%/locale/nl_NL
-@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nb_NO/CVS
 @dirrm %%HORDIR%%/locale/nb_NO
-@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lt_LT/CVS
 @dirrm %%HORDIR%%/locale/lt_LT
-@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/it_IT/CVS
 @dirrm %%HORDIR%%/locale/it_IT
-@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fr_FR/CVS
 @dirrm %%HORDIR%%/locale/fr_FR
-@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fi_FI/CVS
 @dirrm %%HORDIR%%/locale/fi_FI
-@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/es_ES/CVS
 @dirrm %%HORDIR%%/locale/es_ES
-@dirrm %%HORDIR%%/locale/en_US/CVS
 @dirrm %%HORDIR%%/locale/en_US
-@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/de_DE/CVS
 @dirrm %%HORDIR%%/locale/de_DE
-@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/cs_CZ/CVS
 @dirrm %%HORDIR%%/locale/cs_CZ
-@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES/CVS
 @dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/bg_BG/CVS
 @dirrm %%HORDIR%%/locale/bg_BG
 @dirrm %%HORDIR%%/locale
-@dirrm %%HORDIR%%/lib/tests/CVS
 @dirrm %%HORDIR%%/lib/tests
-@dirrm %%HORDIR%%/lib/View/CVS
 @dirrm %%HORDIR%%/lib/View
-@dirrm %%HORDIR%%/lib/Scheduler/CVS
 @dirrm %%HORDIR%%/lib/Scheduler
-@dirrm %%HORDIR%%/lib/Renderer/CVS
 @dirrm %%HORDIR%%/lib/Renderer
-@dirrm %%HORDIR%%/lib/MIME/Viewer/CVS
 @dirrm %%HORDIR%%/lib/MIME/Viewer
-@dirrm %%HORDIR%%/lib/MIME/CVS
 @dirrm %%HORDIR%%/lib/MIME
-@dirrm %%HORDIR%%/lib/Forms/CVS
+@dirrm %%HORDIR%%/lib/Imple
+@dirrm %%HORDIR%%/lib/Forms/Admin
 @dirrm %%HORDIR%%/lib/Forms
-@dirrm %%HORDIR%%/lib/Driver/CVS
 @dirrm %%HORDIR%%/lib/Driver
-@dirrm %%HORDIR%%/lib/Block/CVS
 @dirrm %%HORDIR%%/lib/Block
 @dirrm %%HORDIR%%/lib
 @dirrmtry %%HORDIR%%/config

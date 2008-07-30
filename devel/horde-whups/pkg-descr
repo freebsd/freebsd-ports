@@ -2,7 +2,6 @@ Whups is Horde's bug tracking/ticketing system. It is designed to be extremely
 flexible in letting users define kinds of tickets, different lifecycles 
 (sets of states) and priorities for each kind of ticket, and mixing types of 
 tickets into sets of queues. This design allows for very general and 
-sophisticated multi-purpose uses of Whups. The code is near 1.0 quality and most
-features are fully implemented at this time.
+sophisticated multi-purpose uses of Whups.
 
 WWW: http://horde.org/whups/

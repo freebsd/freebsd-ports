@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	whups
-PORTVERSION=	0.0.20080228
-PORTREVISION=	1
+DISTVERSION=	1.0-rc1
 CATEGORIES=	devel www
-MASTER_SITES=	LOCAL/beech \
-		http://www.alaskaparadise.com/freebsd/
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Bug tracking/ticketing system
 
 USE_HORDE=	base pkg-message
 USE_GETTEXT=	yes
-PORTDOCS=	README CHANGES CREDITS INSTALL TODO
+PORTDOCS=	README CHANGES CREDITS INSTALL TODO lighttpd-whups.conf
 
 .include "${.CURDIR}/../../www/horde-base/bsd.horde.mk"
 .include <bsd.port.mk>
