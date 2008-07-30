@@ -1,0 +1,6 @@
+Hermes is a time-tracking application integrated with the Horde Framework. It
+ties into Turba (to retrieve clients) and Nag and Whups (to retrieve cost
+objects). It comes with a stop watch, search and reporting capabilities, and an
+invoice interface.
+
+WWW: http://horde.org/hermes/
