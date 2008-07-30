@@ -19,6 +19,8 @@ COMMENT=	A basic image management and display program
 LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN=		does not compile
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
