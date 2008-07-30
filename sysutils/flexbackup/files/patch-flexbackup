@@ -1,0 +1,395 @@
+--- ./flexbackup.orig	2008-07-19 09:56:20.000000000 +0200
++++ ./flexbackup	2008-07-19 09:58:09.000000000 +0200
+@@ -269,6 +269,7 @@
+     untie(%::index);
+ }
+ 
++system ('rm', '-rf', $cfg::tmpdir);
+ exit(0);
+ 
+ ######################################################################
+@@ -441,7 +442,7 @@
+ 		# Get rid of trailing /
+ 		$dir = &nuke_trailing_slash($dir);
+ 
+-		# If level is icremental for the set, each dir might
++		# If level is incremental for the set, each dir might
+ 		# have a different numeric level
+ 		if (!defined($::set_incremental)) {
+ 		    $level = $::level;
+@@ -687,6 +688,8 @@
+ 		$filename .= ".zip";
+ 	    } elsif ($cfg::compress eq "compress") {
+ 		$filename .= ".Z";
++	    } elsif ($cfg::compress eq "lzma") {
++		$filename .= ".lzma";
+ 	    }
+ 	} elsif ($cfg::type eq "afio") {
+ 	    # tag these a little different, the archive file itself isn't a
+@@ -701,6 +704,8 @@
+ 		$filename .= "-zip";
+ 	    } elsif ($cfg::compress eq "compress") {
+ 		$filename .= "-Z";
++	    } elsif ($cfg::compress eq "lzma") {
++		$filename .= "-lzma";
+ 	    }
+ 	}
+ 
+@@ -811,6 +816,11 @@
+ 	($remove, @cmds) = &backup_filelist($label, $localdir, $title, $level, $remote);
+     }
+ 
++	if(defined($remote)) {
++		# create our temporary directory as first remote command
++		unshift(@cmds, &maybe_remote_cmd("$::path{mkdir} -p $cfg::tmpdir", $remote));
++	}
++
+     # Nuke any tmp files used in the above routines
+     if ($remove ne '') {
+ 	push(@cmds, &maybe_remote_cmd("$::path{rm} -f $remove", $remote));
+@@ -827,6 +837,11 @@
+ 	    push(@cmds, &maybe_remote_cmd("$::path{rm} -f $pkglist", $remote));
+ 	}
+     }
++	
++	if(defined($remote)) {
++		# remove temporary directory as our last remote command
++		push(@cmds, &maybe_remote_cmd("$::path{rm} -rf $cfg::tmpdir", $remote));
++	}
+ 
+     # Strip multiple spaces
+     foreach my $cmd (@cmds) {
+@@ -1140,7 +1155,7 @@
+     $cmd .= "$::path{afio} -o ";
+     $cmd .= "$no_compress ";
+     $cmd .= "-z ";
+-    $cmd .= "-1 m ";
++    $cmd .= "-1 mC ";
+     $cmd .= "$::afio_z_flag ";
+     $cmd .= "$::afio_verb_flag ";
+     $cmd .= "$::afio_sparse_flag ";
+@@ -1286,8 +1301,8 @@
+ 	$cmd .= "$::unz";
+     }
+     $cmd .= "(";
+-    $cmd .= "mkdir -p $::device ; ";
+-    $cmd .= "cd $::device ; ";
++    $cmd .= "mkdir -p \"$::device\" ; ";
++    $cmd .= "cd \"$::device\" ; ";
+     $cmd .= "$::path{cpio} -i ";
+     $cmd .= "-m ";
+     $cmd .= "-d ";
+@@ -1336,9 +1351,8 @@
+ 
+     # Have to take leading './' off to make rsync's include/exclude work right
+     $cmd .= " | $::path{sed} -e \"s/\\.\\///g\" | ";
+-
+     $cmd .= "$::path{rsync} ";
+-    $cmd .= "--include-from=- --exclude=* ";
++    $cmd .= "--files-from=- ";
+     $cmd .= "--archive ";
+     $cmd .= "$::rsync_verb_flag ";
+     $cmd .= "--delete --delete-excluded ";
+@@ -1353,7 +1367,7 @@
+ 	    $cmd .= "$remote:";
+ 	}
+     }
+-    $cmd .= "$dir/ $::device";
++    $cmd .= "\"$dir/\" \"$::device\"";
+ 
+     push(@cmds, $cmd);
+ 
+@@ -1643,7 +1657,9 @@
+     my $tmpfile = "$cfg::tmpdir/ar.$PROCESS_ID";
+     my $remove = '';
+ 
+-    &log("| NOTE: ar archives will not descend directories");
++    &log("| NOTE: ar archives will not recurse into subdirectories,");
++    &log("|       which makes them inappropriate for most backups.");
++    &log("|       Be sure this is what you want.");
+ 
+     if (defined($remote) and ($level != 0)) {
+ 	my $time = &get_last_date($label, $level, 'numeric');
+@@ -1667,11 +1683,13 @@
+     $cmd = "cd \"$dir\" && ";
+     $cmd .= &file_list_cmd( $dir, $stamp, 'newline', $level, $remote, '-maxdepth 1 ! -type d');
+     $cmd .= "> $filelist; ";
++    # Escape any spaces in filenames. 
++    $cmd .= "$::path{sed} -i -e 's/ /\\\\ /g' $filelist; ";
+ 
+     $cmd .= "$::path{ar} rc";
+     $cmd .= "$::ar_verb_flag ";
+     $cmd .= "$tmpfile ";
+-    $cmd .= "`$::path{cat} $filelist`";
++    $cmd .= "\@$filelist ";
+     $cmd .= "; $::path{cat} $tmpfile $::z";
+ 
+     # Buffer both sides if remote
+@@ -1785,12 +1803,9 @@
+ 
+     $cmd = "cd \"$dir\" && ";
+     $cmd .= &file_list_cmd( $dir, $stamp, 'newline', $level, $remote);
+-    $cmd .= "> $filelist; ";
+-
+-    $cmd .= "$::path{lha} a";
++    $cmd .= " | $::path{lha} a";
+     $cmd .= "$::lha_verb_flag ";
+     $cmd .= "$tmpfile ";
+-    $cmd .= "`$::path{cat} $filelist`";
+     $cmd .= "; $::path{cat} $tmpfile $::z";
+ 
+     # Buffer both sides if remote
+@@ -2700,7 +2715,7 @@
+     # First check if things are defined in the config file
+     # Checks exist, true/false, or one of options
+     &checkvar(\$cfg::type,'type','dump afio cpio tar star pax zip ar shar lha copy rsync filelist','tar');
+-    &checkvar(\$cfg::compress,'compress','gzip bzip2 lzop compress zip false hardware','gzip');
++    &checkvar(\$cfg::compress,'compress','gzip bzip2 lzop compress zip false hardware lzma','gzip');
+     &checkvar(\$cfg::compr_level,'compr_level','exist','4');
+     &checkvar(\$cfg::verbose,'verbose','bool','true');
+     &checkvar(\$cfg::sparse,'sparse','bool','true');
+@@ -2750,8 +2765,10 @@
+     $::path{'find'} = &checkinpath('find');
+     $::path{'dd'} = &checkinpath('dd');
+     $::path{'printf'} = &checkinpath('printf');
++    $::path{'mkdir'} = &checkinpath('mkdir');
++	$::path{'sed'} = &checkinpath('sed');
+ 
+-    push(@::remoteprogs,($::path{'touch'},$::path{'rm'},$::path{'find'},$::path{'printf'}));
++    push(@::remoteprogs,($::path{'touch'},$::path{'rm'},$::path{'find'},$::path{'printf'},$::path{'mkdir'}));
+ 
+     # Check device (or dir)
+     $::ftape = 0;
+@@ -3001,6 +3018,16 @@
+ 	    $::z = " | $::path{zip} -$cfg::compr_level - -";
+ 	    $::unz = "$::path{funzip} | ";
+ 	}
++    } elsif ($cfg::compress eq "lzma") {
++	$::path{'lzma'} = &checkinpath($cfg::compress);
++	push(@::remoteprogs, $::path{$cfg::compress});
++	if ($cfg::compr_level !~ m/^[123456789]$/) {
++	    push(@::errors,"\$compr_level must be set to 1-9");
++	} else {
++	    $::z = " | $::path{$cfg::compress} -$cfg::compr_level ";
++	}
++	$::unz = "$::path{$cfg::compress} -d | ";
++
+     } else {
+ 	$::z = "";
+ 	$::unz = "";
+@@ -3059,12 +3086,11 @@
+ 	    $::read_cmd = "$bufcmd $read_flags";
+ 
+ 	} elsif ($cfg::buffer eq "mbuffer") {
+-
+ 	    $::path{'mbuffer'} = &checkinpath('mbuffer');
+ 	    push(@::remoteprogs, $::path{'mbuffer'});
+ 
+ 	    my $megs = $cfg::buffer_megs . "M";
+-	    my $bufcmd = "$::path{mbuffer} -q -m $megs -p $cfg::buffer_fill_pct $mbuffer_blk_flag ";
++		my $bufcmd  = "$::path{mbuffer} -q -m $megs -P $cfg::buffer_fill_pct $mbuffer_blk_flag ";
+ 
+ 	    $::buffer_cmd = " | $bufcmd";
+ 	    $::write_cmd = "$bufcmd -f -o ";
+@@ -3075,7 +3101,6 @@
+ 	    }
+ 	}
+     } else {
+-
+ 	# If buffering disabled, use dd or cat depending on if blocking turned off on not
+ 	if ($cfg::blksize eq '0') {
+ 	    $::buffer_cmd = "";
+@@ -3252,6 +3277,10 @@
+ 		$::afio_z_flag = "-P $::path{$cfg::compress} -Q -c -Z";
+ 		$::afio_unz_flag = "-P $::path{$cfg::compress} -Q -d -Q -c -Z";
+ 
++	    } elsif ($cfg::compress eq "lzma") {
++		$::afio_z_flag = "-P $::path{$cfg::compress} -Q -$cfg::compr_level -Z";
++		$::afio_unz_flag = "-P $::path{$cfg::compress} -Q -d -Z";
++
+ 	    }
+ 	    $::unz = ""; # Reset & just use this for reading the archive file.
+ 
+@@ -3415,7 +3444,7 @@
+ 	$::path{'lha'} = &checkinpath('lha');
+ 	push(@::remoteprogs, $::path{'lha'});
+ 
+-	if ($cfg::compress =~ /^(gzip|bzip2|lzop|compress|zip)$/) {
++	if ($cfg::compress =~ /^(gzip|bzip2|lzop|compress|zip|lzma)$/) {
+ 	    warn("Using type \"lha\" with compress=$cfg::compress makes no sense");
+ 	    warn("Setting compression to false");
+ 	    $::unz = "";
+@@ -3442,6 +3471,15 @@
+ 	push(@::errors,"\$tmpdir $cfg::tmpdir is not writable");
+     }
+ 
++	$cfg::hostname = `hostname`;
++	chomp($cfg::hostname);
++
++	# Use a subdirectory of the user-specified directory as our tmpdir
++	# Also note that we make it closer to globally unique as we sometimes
++	# use this variable for remote systems, so PID isn't enough
++    $cfg::tmpdir = $cfg::tmpdir .'/flexbackup.'.$$.'.'.$cfg::hostname;
++    mkdir ($cfg::tmpdir) || die "Can't create temporary directory, $!";
++
+     # Levels
+     if (defined($::opt{'level'}) and
+ 	(defined($::opt{'incremental'}) or
+@@ -3781,7 +3819,7 @@
+ 
+     # Try and guess file types and commpression scheme
+     # might as well since we are reading from a file in this case
+-    if ($file =~ m/\.(dump|cpio|tar|star|pax|a|shar|filelist)\.(gz|bz2|lzo|Z|zip)$/) {
++    if ($file =~ m/\.(dump|cpio|tar|star|pax|a|shar|filelist)\.(gz|bz2|lzo|Z|zip|lzma)$/) {
+ 	$cfg::type = $1;
+ 	$cfg::compress = $2;
+ 	$cfg::type =~ s/^a$/ar/;
+@@ -3789,16 +3827,18 @@
+ 	$cfg::compress =~ s/bz2/bzip2/;
+ 	$cfg::compress =~ s/lzo/lzop/;
+ 	$cfg::compress =~ s/Z/compress/;
++	$cfg::compress =~ s/lzma/lzma/;
+ 	&log("| Auto-set to type=$cfg::type compress=$cfg::compress");
+ 	&optioncheck();                  # redo to set a few variables over
+ 
+-    } elsif ($file =~ m/\.afio-(gz|bz2|lzo|Z|zip)$/) {
++    } elsif ($file =~ m/\.afio-(gz|bz2|lzo|Z|zip|lzma)$/) {
+ 	$cfg::type = "afio";
+ 	$cfg::compress = $1;
+ 	$cfg::compress =~ s/gz/gzip/;
+ 	$cfg::compress =~ s/bz2/bzip2/;
+ 	$cfg::compress =~ s/lzo/lzop/;
+ 	$cfg::compress =~ s/Z/compress/;
++	$cfg::compress =~ s/lzma/lzma/;
+ 	&log("| Auto-set to type=$cfg::type compress=$cfg::compress");
+ 	&optioncheck();                  # redo to set a few variables over
+ 
+@@ -4843,23 +4883,31 @@
+     }
+ 
+     if (defined(%{$::prune{$prunekey}})) {
++		my $rex;
+ 	# FreeBSD needs -E (above) and no backslashes around the (|) chars
+ 	if ($::uname =~ /FreeBSD/) {
+-	    $cmd .= '-regex "\./(';
+-	    $cmd .= join('|', keys %{$::prune{$prunekey}});
+-	    $cmd .= ')/.*" ';
+-	} else {
+-	    $cmd .= '-regex "\./\(';
+-	    $cmd .= join('\|', keys %{$::prune{$prunekey}});
+-	    $cmd .= '\)/.*" ';
+-	}
+-	$cmd .= '-prune -o ';
++			$rex  = '"\./(';
++			$rex .= join('|', keys %{$::prune{$prunekey}});
++			$rex .= ')"';
++		} else {
++			$rex  = '"\./\(';
++			$rex .= join('\|', keys %{$::prune{$prunekey}});
++			$rex .= '\)"';
++		}
++		# Show what the darn thing is constructing for prune expressions.
++        (my $temp = $rex) =~ s/\\([()|])/$1/g;
++		&log("| \"find\" regex for pruning (shell escaping omitted for clarity) is:");
++		&log("|     $temp");
++		$cmd .= '-regex ' . $rex . ' -prune -o ';
+     } else {
++		# Show what the darn thing is constructing for prune expressions.
++		&log("| No pruning defined for this tree.");
+ 	# Can't use find -depth with -prune (see single unix spec etc)
+ 	# (not toally required anyway, only if you are archiving dirs you
+ 	# don't have permissions on and are running as non-root)
+ 	$cmd .= "-depth ";
+     }
++    &line();
+ 
+     $cmd .= "$::mountpoint_flag ";
+     $cmd .= "! -type s ";
+@@ -5229,6 +5277,7 @@
+     my $tmp_script = "$cfg::tmpdir/buftest.$host.$PROCESS_ID.sh";
+     my $retval = 0;
+     my $pipecmd;
++	my $explicit_success;
+ 
+     $buffer_cmd =~ s:^\s*\|\s*::;
+     $buffer_cmd =~ s:\s*\|\s*$::;
+@@ -5236,14 +5285,14 @@
+     # Create a script which tests the buffer program
+     open(SCR,"> $tmp_script") || die;
+     print SCR "#!/bin/sh\n";
+-    print SCR "tmp_data=/tmp/bufftest\$\$.txt\n";
+-    print SCR "tmp_err=/tmp/bufftest\$\$.err\n";
++    print SCR "tmp_data=\`tempfile\`\n";
++    print SCR "tmp_err=\`tempfile\`\n";
+     print SCR "echo testme > \$tmp_data\n";
+     print SCR "$buffer_cmd > /dev/null 2> \$tmp_err < \$tmp_data\n";
+     print SCR "res=\$?\n";
+     print SCR "out=\`cat \$tmp_err\`\n";
+     print SCR "if [ \$res -eq 0 ]; then\n";
+-    print SCR "   echo successful\n";
++    print SCR "    echo \"successful\"\n";
+     print SCR "else\n";
+     print SCR "   echo \"unsuccessful: exit code \$res: \$out\" \n";
+     print SCR "fi\n";
+@@ -5254,14 +5303,22 @@
+ 	print $::msg "| Checking '$cfg::buffer' on this machine... ";
+ 	$pipecmd = "sh $tmp_script ";
+     } else {
++	$pipecmd = 
++        "$::remoteshell $host '$::path{mkdir} -p $cfg::tmpdir'; " .
++        "cat $tmp_script | ($::remoteshell $host 'cat > $tmp_script; " .
++        "sh $tmp_script; rm -rf $cfg::tmpdir')";
+ 	print $::msg "| Checking '$cfg::buffer' on host $host... ";
+-	$pipecmd =  "cat $tmp_script | ($::remoteshell $host 'cat > $tmp_script; sh $tmp_script; rm -f $tmp_script')";
+     }
+ 
+     if (!defined($::debug)) {
+-
+ 	open(PIPE,"$pipecmd |") || die;
++
++	$explicit_success = 0;
+ 	while (<PIPE>) {
++		if (/^successful$/) {
++			$explicit_success = 1;
++			last;
++		}
+ 	    if (/^unsuccessful: exit code (\d+): (.*)/) {
+ 		$retval = $1;
+ 		my $out = $2;
+@@ -5290,11 +5347,15 @@
+ 	print $::msg "\n(debug) $pipecmd\n";
+     }
+ 
+-    if ($retval == 0) {
++	if ($explicit_success) {
+ 	print $::msg "Ok\n";
+     }  else {
++		if ($retval == 0) {
++		    push(@::errors, "Unanticipated problems encountered testing '$cfg::buffer' on host '$host'.");
++		}  else {
+ 	print $::msg "Failed!\n";
+     }
++	}
+     unlink("$tmp_script");
+ 
+     return($retval);
+@@ -5396,10 +5457,10 @@
+ 	    my $shell = $1;
+ 	    my $ver = $2;
+ 	    if ($shell eq 'bash') {
+-		if ($ver =~ m/^2/) {
+-		    $::shelltype{$host} = 'bash2';
+-		} else {
++		if ($ver =~ m/^1/) {
+ 		    $::shelltype{$host} = 'bash1';
++		} else {
++		    $::shelltype{$host} = 'bash2';
+ 		}
+ 	    } else {
+ 		$::shelltype{$host} = $shell;
+@@ -5686,3 +5747,5 @@
+ 
+     return($spinner[$index]);
+ }
++
++ 	  	 

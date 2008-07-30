@@ -7,7 +7,7 @@
 
 PORTNAME=	flexbackup
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 		http://www.reynoldsnet.org/flexbackup/tarball/
@@ -15,19 +15,17 @@ MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 MAINTAINER=	mva@sysfault.org
 COMMENT=	Perl-based flexible backup system that can use dump/afio/cpio/tar/star
 
-MAKE_ARGS=	PERLPATH=${PERL} CONFDIR=${PREFIX} \
-		CONFFILE=${PREFIX}/etc/flexbackup.conf
-CONFDIR=	${PREFIX}
+MAKE_ARGS=	PERLPATH=${PERL} CONFFILE=${PREFIX}/etc/flexbackup.conf
 
 USE_PERL5=	yes
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES+=	pkg-message
 
 OPTIONS=	AFIO	"Enable afio support" Off \
 		BUFFER	"Enable buffer support" Off \
 		MBUFFER	"Enable mbuffer support" Off \
 		STAR	"Enable star support" Off \
-		ZIP	"Eanble zip support" Off
+		ZIP	"Enable zip support" Off
 
 .include <bsd.port.pre.mk>
 
@@ -69,22 +67,17 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%TAR_CMD%%|'${TAR_CMD}'|g' \
 		${WRKSRC}/flexbackup.conf
 
-post-configure:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' -e 's|%%CONFDIR%%|${CONFDIR}|g' \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/fb.install ${PREFIX}/bin/flexbackup
-	${INSTALL_DATA} ${WRKSRC}/flexbackup.conf ${PREFIX}/etc/flexbackup.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/flexbackup.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/flexbackup.conf.5 ${MAN5PREFIX}/man/man5
+	@${INSTALL_SCRIPT} ${WRKSRC}/fb.install ${PREFIX}/bin/flexbackup
+	@${INSTALL_DATA} ${WRKSRC}/flexbackup.conf ${PREFIX}/etc/flexbackup.conf.sample
+	@${INSTALL_MAN} ${WRKSRC}/flexbackup.1 ${MAN1PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/flexbackup.conf.5 ${MAN5PREFIX}/man/man5
+
+DOCLIST=	CHANGES CREDITS README TODO faq.html
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for docfile in CHANGES CREDITS README TODO faq.html
-	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${DOCLIST}" ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

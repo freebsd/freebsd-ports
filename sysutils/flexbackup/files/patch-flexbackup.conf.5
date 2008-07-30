@@ -1,0 +1,77 @@
+--- ./flexbackup.conf.5.orig	2008-07-19 09:56:34.000000000 +0200
++++ ./flexbackup.conf.5	2008-07-19 09:57:58.000000000 +0200
+@@ -24,23 +24,51 @@
+ .TP
+ \fB$set{\fI'tag'\fR}\fR = \fI'/dir'\fR;
+ Configure backup \(dqsets\(dq. Not needed if \(dq-dir <dir>\(dq is used to
+-backup one tree at a time.  Each set is a simple space-separated list of
+-filesystems/directories. Remote filesystems should be denoted as
+-\(dqhost:directory\(dq.  You can use anything (other than \fI'all'\fR) as set
+-names. Using \(dq-set all\(dq will back up all defined sets. If you are doing
+-a full backup using tapes, each \(dqset\(dq will go onto a different tape and
+-you will be prompted for tape change in between. Examples:
++backup one tree at a time.
++Each set is a simple space-separated list of filesystems/directories.
++Remote filesystems should be denoted as \(dqhost:directory\(dq.
++You can use anything (other than \fI'all'\fR) as set names.
++Using \(dq-set all\(dq will back up all defined sets.
++If you are doing a full backup using tapes, each \(dqset\(dq will go onto a
++different tape and you will be prompted for tape change in between.
++Examples:
+ .RS
+ .PP
+ \fB$set{\fI'set1'\fI}\fR = \fI'/home /usr'\fR;
+ .br
+ \fB$set{\fI'set2'\fI}\fR = \fI'/dir3 machine2:/dir4 machine3:/dir5'\fR;
++.br
++.PP
++Directories (local or remote) with spaces in their names should be enclosed in
++their entirety in double quotes.
++Multiple quoted directories included in a set should be space separated just
++like unquoted directories.
++The Perl '.' string concatenation operator can be used to split excessively
++long sets.
++Example:
++.PP
++\fB$set{\fI'set3'\fI}\fR = \fI
++    '\(dq/mnt/winmachine1/Documents and Settings\(dq ' .
++    '\(dq/mnt/winmachine1/Program Files\(dq';\fR
+ .RE
+ .TP
+ \fB$prune{\fI'/'\fR}\fR = \fI'tmp proc'\fR;
+ Configure subtree pruning. A space-separated list of directories to prune from
+ each backup. Key is a filesystem/directory or \(dqhost:directory\(dq spec as
+-outlined above regular expressions allowed (not shell-type wildcards!).
++outlined above. Regular expressions allowed (not shell-type wildcards!).
++.RS
++.PP
++Like the \fB$set\fR configuration item, special handling is required for
++directories with spaces in them.  Double quotes should surround pruning targets
++but not the key.  Example:
++.PP
++\fB$prune{\fI'/mnt/winmachine1/Documents and Settings'\fI}\fR = 
++    \fI'\(dquser1/Local Settings/Temp\(dq user2'\fR;
++.br
++.PP
++There are lots of examples and additional explanation in the provided sample
++configuration file.
++.RE
+ .TP
+ \fB$compress\fR = \fI'false|gzip|bzip2|lzop|zip|compress|hardware'\fR;
+ .TQ
+@@ -205,7 +233,7 @@
+ .RS
+ .TP
+ If GNU \fBtar\fR is called \fB\(dqgtar\(dq\fR on your system:
+-\fB$path{'tar'} = 'gtar';
++\fB$path{'tar'} = 'gtar';\fR
+ .TP
+ Or it can be used to \fB\(dqsudo\(dq\fR certain commands:
+ \fB$path{\fI'find'\fR}\fR = \fI'sudo find'\fR;
+@@ -302,3 +330,6 @@
+ Written by Edwin Huffstutler (edwinh@computer.org)
+ .SH "SEE ALSO"
+ \fBflexbackup\fR(1)
++.\" Local Variables:
++.\" mode: nroff
++.\" End:
