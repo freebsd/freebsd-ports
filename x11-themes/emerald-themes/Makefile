@@ -10,7 +10,7 @@ PORTVERSION=	0.5.2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Themes for the Emerald Window Decorator
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash

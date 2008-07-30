@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
 DISTNAME=	Vuze_${PORTVERSION}_source
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	A BitTorrent client written in Java
 
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \

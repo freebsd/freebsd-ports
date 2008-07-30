@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Beryl Composite/Window Manager meta-port
 
 NO_BUILD=	yes

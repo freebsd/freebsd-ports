@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ccsm
 # Date created:		2007-08-17
-# Whom:			Robert Noland <rnoland@2hip.net>
+# Whom:			Robert Noland <rnoland@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	A Python/GTK based settings manager for CompizConfig
 
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:${PORTSDIR}/x11-wm/compizconfig-python

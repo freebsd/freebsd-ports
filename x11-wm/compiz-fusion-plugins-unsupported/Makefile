@@ -1,6 +1,6 @@
 # New ports collection makefile for:	compiz-fusion-plugins-unsupported
 # Date created:				2007-08-17
-# Whom:					Robert Noland <rnoland@2hip.net>
+# Whom:					Robert Noland <rnoland@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Plugins for Compiz Composite Window Manager
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo

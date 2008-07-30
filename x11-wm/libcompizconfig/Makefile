@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libcompizconfig
 # Date created:				2007-08-16
-# Whom:					Robert Noland <rnoland@2hip.net>
+# Whom:					Robert Noland <rnoland@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	An alternative configuration system for Compiz
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz

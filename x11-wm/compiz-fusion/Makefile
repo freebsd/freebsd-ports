@@ -1,6 +1,6 @@
 # New ports collection makefile for:	compiz-fusion
 # Date created:				2007-10-22
-# Whom:					Robert C. Noland III <rnoland@2hip.net>
+# Whom:					Robert C. Noland III <rnoland@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Metaport of compiz-fusion
 
 LIB_DEPENDS=	compizconfig:${PORTSDIR}/x11-wm/libcompizconfig

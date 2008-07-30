@@ -13,7 +13,7 @@ MASTER_SITES=	http://releases.beryl-project.org/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flz/beryl/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Beryl Settings Bindings
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/berylsettings.pc:${PORTSDIR}/x11-wm/beryl-core \

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	swt-devel
 # Date created:				2006-11-16
-# Whom:					Robert C. Noland III <rnoland@2hip.net>
+# Whom:					Robert C. Noland III <rnoland@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-3.4-200806172000
 DISTNAME=	swt-${DISTVERSION}-${DIST_EXT}
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Standard Widget Toolkit for Java
 
 ONLY_FOR_ARCHS=	i386 amd64

@@ -12,7 +12,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	FreeBSD installed ports status and safe update utility
 
 MAN1=		portmanager.1

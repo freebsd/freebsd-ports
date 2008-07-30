@@ -1,6 +1,6 @@
 # New ports collection makefile for:	beryl-plugins-unsupported
 # Date created:		2007-06-08
-# Whom:			Robert Noland <rnoland@2hip.net>
+# Whom:			Robert Noland <rnoland@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.beryl-project.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Additional Plugins for Beryl Composite/Window Manager
 
 # XXX - Might depends on graphics/libsvg-cairo instead.
