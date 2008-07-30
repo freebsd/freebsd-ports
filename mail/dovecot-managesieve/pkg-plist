@@ -1,4 +1,4 @@
-@comment $ID:$
+@comment $FreeBSD: /tmp/pcvs/ports/mail/dovecot-managesieve/pkg-plist,v 1.2 2008-07-30 02:19:41 beech Exp $
 libexec/dovecot/managesieve
 libexec/dovecot/managesieve-login
 @dirrmtry libexec/dovecot

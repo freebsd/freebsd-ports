@@ -5,20 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=	dovecot-1.1-managesieve
+PORTNAME=	dovecot-managesieve
 PORTVERSION=	0.10.3
 CATEGORIES=	mail
-MASTER_SITES=	http://www.rename-it.nl/dovecot/1.1/
+MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
+DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	dgeo@ec-marseille.fr
-COMMENT=	Managesieve package
+COMMENT=	Dovecot ManageSieve Server daemon
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:build \
 		${NONEXISTENT}:${PORTSDIR}/mail/dovecot-sieve:build
-RUN_DEPENDS=	${LOCALBASE}/lib/dovecot/lda/lib90_cmusieve_plugin.so:${PORTSDIR}/mail/dovecot-sieve
+RUN_DEPENDS=	dovecot>=1.1.*:${PORTSDIR}/mail/dovecot \
+		dovecot-sieve>=1.1.*:${PORTSDIR}/mail/dovecot-sieve
+
+DOVECOTVERSION=	1.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-dovecot=`make -C ${PORTSDIR}/mail/dovecot -V WRKSRC` --with-dovecot-sieve=`make -C ${PORTSDIR}/mail/dovecot-sieve -V WRKSRC`
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--with-dovecot=`${MAKE} -C ${PORTSDIR}/mail/dovecot -V WRKSRC` \
+		--with-dovecot-sieve=`${MAKE} -C ${PORTSDIR}/mail/dovecot-sieve -V WRKSRC`
 
 .include <bsd.port.mk>
