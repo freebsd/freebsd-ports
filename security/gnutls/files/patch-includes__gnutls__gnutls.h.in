@@ -1,0 +1,11 @@
+--- ./includes/gnutls/gnutls.h.in.orig	2008-06-30 13:45:51.000000000 -0700
++++ ./includes/gnutls/gnutls.h.in	2008-07-30 01:39:55.348483886 -0700
+@@ -287,7 +287,7 @@
+     {
+       GNUTLS_CRT_PRINT_FULL,
+       GNUTLS_CRT_PRINT_ONELINE,
+-      GNUTLS_CRT_PRINT_UNSIGNED_FULL,
++      GNUTLS_CRT_PRINT_UNSIGNED_FULL
+     } gnutls_certificate_print_formats_t;
+ 
+   typedef enum
