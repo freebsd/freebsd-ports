@@ -6,6 +6,7 @@
 
 PORTNAME=	uptimed
 PORTVERSION=	0.3.12
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://podgorny.cz/uptimed/releases/
 
@@ -27,6 +28,7 @@ post-patch:
 
 post-install:
 	${MKDIR} ${PREFIX}/www/cgi-bin
+	${MKDIR} /var/spool/uptimed
 	${INSTALL_PROGRAM}	${PREFIX}/bin/uprecords ${PREFIX}/www/cgi-bin/uprecords.cgi
 	${INSTALL_DATA}		${WRKSRC}/sample-cgi/* ${PREFIX}/www/cgi-bin/
 
