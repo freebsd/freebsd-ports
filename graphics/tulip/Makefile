@@ -8,6 +8,7 @@
 
 PORTNAME=	tulip
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber:src \
 		http://tulip.labri.fr/userHandbook/:doc
@@ -24,7 +25,7 @@ LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib moc uic rcc gui opengl xml network \
-		designer
+		designer assistant
 USE_GL=	glut
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
