@@ -65,6 +65,10 @@
 %%DATADIR%%/templates/blogpost.tmpl
 %%DATADIR%%/templates/change.tmpl
 %%DATADIR%%/templates/editpage.tmpl
+%%DATADIR%%/templates/editconflict.tmpl
+%%DATADIR%%/templates/editcreationconflict.tmpl
+%%DATADIR%%/templates/editfailedsave.tmpl
+%%DATADIR%%/templates/editpagegone.tmpl
 %%DATADIR%%/templates/estseek.conf
 %%DATADIR%%/templates/feedlink.tmpl
 %%DATADIR%%/templates/inlinepage.tmpl
@@ -72,6 +76,7 @@
 %%DATADIR%%/templates/page.tmpl
 %%DATADIR%%/templates/passwordmail.tmpl
 %%DATADIR%%/templates/recentchanges.tmpl
+%%DATADIR%%/templates/renamesummary.tmpl
 %%DATADIR%%/templates/rssitem.tmpl
 %%DATADIR%%/templates/rsspage.tmpl
 %%DATADIR%%/templates/searchform.tmpl
@@ -89,6 +94,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/camelcase.pm
 %%SITE_PERL%%/IkiWiki/Plugin/conditional.pm
 %%SITE_PERL%%/IkiWiki/Plugin/creole.pm
+%%SITE_PERL%%/IkiWiki/Plugin/cutpaste.pm
 %%SITE_PERL%%/IkiWiki/Plugin/ddate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/editdiff.pm
 %%SITE_PERL%%/IkiWiki/Plugin/edittemplate.pm
@@ -122,6 +128,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/pagecount.pm
 %%SITE_PERL%%/IkiWiki/Plugin/pagestats.pm
 %%SITE_PERL%%/IkiWiki/Plugin/pagetemplate.pm
+%%SITE_PERL%%/IkiWiki/Plugin/parentlinks.pm
 %%SITE_PERL%%/IkiWiki/Plugin/passwordauth.pm
 %%SITE_PERL%%/IkiWiki/Plugin/pingee.pm
 %%SITE_PERL%%/IkiWiki/Plugin/pinger.pm
@@ -132,11 +139,13 @@
 %%SITE_PERL%%/IkiWiki/Plugin/rawhtml.pm
 %%SITE_PERL%%/IkiWiki/Plugin/recentchanges.pm
 %%SITE_PERL%%/IkiWiki/Plugin/recentchangesdiff.pm
+%%SITE_PERL%%/IkiWiki/Plugin/remove.pm
+%%SITE_PERL%%/IkiWiki/Plugin/rename.pm
 %%SITE_PERL%%/IkiWiki/Plugin/search.pm
 %%SITE_PERL%%/IkiWiki/Plugin/shortcut.pm
 %%SITE_PERL%%/IkiWiki/Plugin/sidebar.pm
 %%SITE_PERL%%/IkiWiki/Plugin/signinedit.pm
-%%SITE_PERL%%/IkiWiki/Plugin/skeleton.pm
+%%SITE_PERL%%/IkiWiki/Plugin/skeleton.pm.example
 %%SITE_PERL%%/IkiWiki/Plugin/smiley.pm
 %%SITE_PERL%%/IkiWiki/Plugin/sparkline.pm
 %%SITE_PERL%%/IkiWiki/Plugin/table.pm
