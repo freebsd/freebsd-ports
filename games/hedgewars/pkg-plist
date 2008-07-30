@@ -1,6 +1,6 @@
 bin/hedgewars
 bin/hwengine
-%%DATADIR%%/Data/Fonts/DejaVuSans.ttf
+%%DATADIR%%/Data/Fonts/DejaVuSans-Bold.ttf
 %%DATADIR%%/Data/Forts/BarrelhouseL.png
 %%DATADIR%%/Data/Forts/BarrelhouseR.png
 %%DATADIR%%/Data/Forts/IslandL.png
@@ -9,6 +9,7 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/Airplane.png
 %%DATADIR%%/Data/Graphics/AmmoMenu/AmmoName.png
 %%DATADIR%%/Data/Graphics/AmmoMenu/Ammos.png
+%%DATADIR%%/Data/Graphics/AmmoMenu/Ammos_bw.png
 %%DATADIR%%/Data/Graphics/AmmoMenu/BrdrLines.png
 %%DATADIR%%/Data/Graphics/AmmoMenu/Selection.png
 %%DATADIR%%/Data/Graphics/AmmoMenu/Slot.png
@@ -18,6 +19,8 @@ bin/hwengine
 %%DATADIR%%/Data/Graphics/BigDigits.png
 %%DATADIR%%/Data/Graphics/BlueWater.png
 %%DATADIR%%/Data/Graphics/Bomb.png
+%%DATADIR%%/Data/Graphics/Cake_down.png
+%%DATADIR%%/Data/Graphics/Cake_walk.png
 %%DATADIR%%/Data/Graphics/Case.png
 %%DATADIR%%/Data/Graphics/ClBomb.png
 %%DATADIR%%/Data/Graphics/ClParticle.png
@@ -103,6 +106,14 @@ bin/hwengine
 %%DATADIR%%/Data/Locale/pl.txt
 %%DATADIR%%/Data/Locale/ru.txt
 %%DATADIR%%/Data/Locale/sk.txt
+%%DATADIR%%/Data/Maps/Bamboo/map.cfg
+%%DATADIR%%/Data/Maps/Bamboo/map.png
+%%DATADIR%%/Data/Maps/BambooPlinko/map.cfg
+%%DATADIR%%/Data/Maps/BambooPlinko/map.png
+%%DATADIR%%/Data/Maps/Bath/map.cfg
+%%DATADIR%%/Data/Maps/Bath/map.png
+%%DATADIR%%/Data/Maps/EarthRise/map.cfg
+%%DATADIR%%/Data/Maps/EarthRise/map.png
 %%DATADIR%%/Data/Maps/Hedgelove/map.cfg
 %%DATADIR%%/Data/Maps/Hedgelove/map.png
 %%DATADIR%%/Data/Maps/Hedgewars/map.cfg
@@ -113,12 +124,16 @@ bin/hwengine
 %%DATADIR%%/Data/Maps/Lonely_Island/map.png
 %%DATADIR%%/Data/Maps/Plane/map.cfg
 %%DATADIR%%/Data/Maps/Plane/map.png
-%%DATADIR%%/Data/Maps/Volcano/map.cfg
-%%DATADIR%%/Data/Maps/Volcano/map.png
 %%DATADIR%%/Data/Maps/cheese/map.cfg
 %%DATADIR%%/Data/Maps/cheese/map.png
 %%DATADIR%%/Data/Maps/mushrooms/map.cfg
 %%DATADIR%%/Data/Maps/mushrooms/map.png
+%%DATADIR%%/Data/Music/Nature.ogg
+%%DATADIR%%/Data/Music/city.ogg
+%%DATADIR%%/Data/Music/oriental.ogg
+%%DATADIR%%/Data/Music/pirate.ogg
+%%DATADIR%%/Data/Music/snow.ogg
+%%DATADIR%%/Data/Sounds/cake2.ogg
 %%DATADIR%%/Data/Sounds/explosion.ogg
 %%DATADIR%%/Data/Sounds/graveimpact.ogg
 %%DATADIR%%/Data/Sounds/grenadeimpact.ogg
@@ -164,7 +179,15 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Nooo.ogg
 %%DATADIR%%/Data/Sounds/voices/Nutter.ogg
 %%DATADIR%%/Data/Sounds/voices/Ohdear.ogg
+%%DATADIR%%/Data/Sounds/voices/Ooff1.ogg
+%%DATADIR%%/Data/Sounds/voices/Ooff2.ogg
+%%DATADIR%%/Data/Sounds/voices/Ooff3.ogg
 %%DATADIR%%/Data/Sounds/voices/Oops.ogg
+%%DATADIR%%/Data/Sounds/voices/Ouch.ogg
+%%DATADIR%%/Data/Sounds/voices/Ow1.ogg
+%%DATADIR%%/Data/Sounds/voices/Ow2.ogg
+%%DATADIR%%/Data/Sounds/voices/Ow3.ogg
+%%DATADIR%%/Data/Sounds/voices/Ow4.ogg
 %%DATADIR%%/Data/Sounds/voices/Perfect.ogg
 %%DATADIR%%/Data/Sounds/voices/Reinforcements.ogg
 %%DATADIR%%/Data/Sounds/voices/Revenge.ogg
@@ -183,6 +206,16 @@ bin/hwengine
 %%DATADIR%%/Data/Sounds/voices/Whoopsee.ogg
 %%DATADIR%%/Data/Sounds/voices/Yessir.ogg
 %%DATADIR%%/Data/Sounds/voices/Youllregretthat.ogg
+%%DATADIR%%/Data/Themes/Bamboo/Clouds.png
+%%DATADIR%%/Data/Themes/Bamboo/Flake.png
+%%DATADIR%%/Data/Themes/Bamboo/Sky.png
+%%DATADIR%%/Data/Themes/Bamboo/horizont.png
+%%DATADIR%%/Data/Themes/Bamboo/theme.cfg
+%%DATADIR%%/Data/Themes/Bath/Clouds.png
+%%DATADIR%%/Data/Themes/Bath/Flake.png
+%%DATADIR%%/Data/Themes/Bath/Sky.png
+%%DATADIR%%/Data/Themes/Bath/horizont.png
+%%DATADIR%%/Data/Themes/Bath/theme.cfg
 %%DATADIR%%/Data/Themes/City/Border.png
 %%DATADIR%%/Data/Themes/City/Flake.png
 %%DATADIR%%/Data/Themes/City/LandTex.png
@@ -193,6 +226,15 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/City/plant3.png
 %%DATADIR%%/Data/Themes/City/plant4.png
 %%DATADIR%%/Data/Themes/City/theme.cfg
+%%DATADIR%%/Data/Themes/EarthRise/Border.png
+%%DATADIR%%/Data/Themes/EarthRise/Clouds.png
+%%DATADIR%%/Data/Themes/EarthRise/Flake.png
+%%DATADIR%%/Data/Themes/EarthRise/LandTex.png
+%%DATADIR%%/Data/Themes/EarthRise/Sky.png
+%%DATADIR%%/Data/Themes/EarthRise/horizont.png
+%%DATADIR%%/Data/Themes/EarthRise/rock1.png
+%%DATADIR%%/Data/Themes/EarthRise/rock2.png
+%%DATADIR%%/Data/Themes/EarthRise/theme.cfg
 %%DATADIR%%/Data/Themes/Island/Border.png
 %%DATADIR%%/Data/Themes/Island/Flake.png
 %%DATADIR%%/Data/Themes/Island/LandTex.png
@@ -217,16 +259,6 @@ bin/hwengine
 %%DATADIR%%/Data/Themes/Snow/plant3.png
 %%DATADIR%%/Data/Themes/Snow/plant4.png
 %%DATADIR%%/Data/Themes/Snow/theme.cfg
-%%DATADIR%%/Data/Themes/Volcano/Border.png
-%%DATADIR%%/Data/Themes/Volcano/Flake.png
-%%DATADIR%%/Data/Themes/Volcano/LandTex.png
-%%DATADIR%%/Data/Themes/Volcano/Sky.png
-%%DATADIR%%/Data/Themes/Volcano/gr1.png
-%%DATADIR%%/Data/Themes/Volcano/horizont.png
-%%DATADIR%%/Data/Themes/Volcano/leaf1.png
-%%DATADIR%%/Data/Themes/Volcano/leaf2.png
-%%DATADIR%%/Data/Themes/Volcano/theme.cfg
-%%DATADIR%%/Data/Themes/Volcano/tree.png
 %%DATADIR%%/Data/Themes/cheese/Flake.png
 %%DATADIR%%/Data/Themes/cheese/Sky.png
 %%DATADIR%%/Data/Themes/cheese/horizont.png
@@ -247,22 +279,28 @@ bin/hwengine
 @dirrm %%DATADIR%%/Data/Trainings
 @dirrm %%DATADIR%%/Data/Themes/nature
 @dirrm %%DATADIR%%/Data/Themes/cheese
-@dirrm %%DATADIR%%/Data/Themes/Volcano
 @dirrm %%DATADIR%%/Data/Themes/Snow
 @dirrm %%DATADIR%%/Data/Themes/Planes
 @dirrm %%DATADIR%%/Data/Themes/Island
+@dirrm %%DATADIR%%/Data/Themes/EarthRise
 @dirrm %%DATADIR%%/Data/Themes/City
+@dirrm %%DATADIR%%/Data/Themes/Bath
+@dirrm %%DATADIR%%/Data/Themes/Bamboo
 @dirrm %%DATADIR%%/Data/Themes
 @dirrm %%DATADIR%%/Data/Sounds/voices
 @dirrm %%DATADIR%%/Data/Sounds
+@dirrm %%DATADIR%%/Data/Music
 @dirrm %%DATADIR%%/Data/Maps/mushrooms
 @dirrm %%DATADIR%%/Data/Maps/cheese
-@dirrm %%DATADIR%%/Data/Maps/Volcano
 @dirrm %%DATADIR%%/Data/Maps/Plane
 @dirrm %%DATADIR%%/Data/Maps/Lonely_Island
 @dirrm %%DATADIR%%/Data/Maps/Hydrant
 @dirrm %%DATADIR%%/Data/Maps/Hedgewars
 @dirrm %%DATADIR%%/Data/Maps/Hedgelove
+@dirrm %%DATADIR%%/Data/Maps/EarthRise
+@dirrm %%DATADIR%%/Data/Maps/Bath
+@dirrm %%DATADIR%%/Data/Maps/BambooPlinko
+@dirrm %%DATADIR%%/Data/Maps/Bamboo
 @dirrm %%DATADIR%%/Data/Maps
 @dirrm %%DATADIR%%/Data/Locale
 @dirrm %%DATADIR%%/Data/Graphics/Hedgehog
