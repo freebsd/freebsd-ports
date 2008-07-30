@@ -538,6 +538,7 @@
     SUBDIR += jude-community
     SUBDIR += judy
     SUBDIR += k8048
+    SUBDIR += kBuild
     SUBDIR += kaptain
     SUBDIR += kcachegrind
     SUBDIR += kdbg
