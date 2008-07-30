@@ -7,7 +7,7 @@
 
 PORTNAME=	meta
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	# Empty
 DISTFILES=	# None
@@ -18,21 +18,22 @@ COMMENT=	Meta port for the horde framework
 NO_BUILD=	yes
 LHORDEDIR?=	www/horde
 
-OPTIONS=	IMP "IMAP Webmail System" on	\
-		MIMP "Mobile Webmail System" off	\
-		INGO "Email-Filter Management" on	\
-		TURBA "Contact Management" on	\
-		KRONOLITH "Calendar Application" off \
-		MNEMO "Notes and Memo Application" off	\
-		NAG "Task List Manager" on	\
+OPTIONS=	ANSEL "Photo Gallery" off	\
 		CHORA "CVS Web Viewer" off	\
 		GOLLEM "Web-Based File Manager" off	\
-		JETA "Java SSH Applets" off	\
+		HERMES "Time Tracking Application" off	\
 		HPASSWD "Password Changing Module" off	\
-		VACATION "Vacation & Auto Respond" off	\
-		TREAN "Bookmark Manager" off	\
+		IMP "IMAP Webmail System" on	\
+		INGO "Email-Filter Management" on	\
+		JETA "Java SSH Applets" off	\
+		KRONOLITH "Calendar Application" off \
+		MIMP "Mobile Webmail System" off	\
+		MNEMO "Notes and Memo Application" off	\
+		NAG "Task List Manager" on	\
 		NIC "Network Monitor" off	\
-		ANSEL "Photo Gallery" off	\
+		TREAN "Bookmark Manager" off	\
+		TURBA "Contact Management" on	\
+		VACATION "Vacation & Auto Respond" off	\
 		WHUPS "Bug Tracking/Ticket System" off
 
 .include <bsd.port.pre.mk>
@@ -101,6 +102,10 @@ RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/ansel/gallery.php:${PORTSDIR}/www/horde-
 
 .if defined(WITH_WHUPS)
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/whups/index.php:${PORTSDIR}/devel/horde-whups
+.endif
+
+.if defined(WITH_HERMES)
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/hermes/index.php:${PORTSDIR}/deskutils/horde-hermes
 .endif
 
 post-configure:
