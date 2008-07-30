@@ -8,6 +8,7 @@
 
 PORTNAME=	dovecot
 DISTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/1.1/
 
@@ -43,6 +44,7 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 		IPV6		"IPv6 support"		on  \
 		POP3		"POP3 support"		on  \
 		LDA		"LDA support"		on  \
+		MANAGESIEVE	"ManageSieve support"	off  \
 		GSSAPI		"GSSAPI support"	off \
 		VPOPMAIL	"VPopMail support"	off \
 		LDAP		"OpenLDAP support"	off \
@@ -91,6 +93,15 @@ CONFIGURE_ARGS+=	--without-deliver
 PLIST_SUB+=		LDA="@comment "
 .else
 PLIST_SUB+=		LDA=""
+.endif
+
+## ManageSieve support
+#
+.if defined(WITH_MANAGESIEVE)
+MANAGESIEVEVERSION!=	${MAKE} -C ${.CURDIR}/../dovecot-managesieve -V PORTVERSION
+PATCH_SITES!=		${MAKE} -C ${.CURDIR}/../dovecot-managesieve -V MASTER_SITES
+PATCHFILES+=		dovecot-${PORTVERSION}-managesieve-${MANAGESIEVEVERSION}.diff.gz
+PATCH_DIST_STRIP=	-p1
 .endif
 
 ## GSSAPI support

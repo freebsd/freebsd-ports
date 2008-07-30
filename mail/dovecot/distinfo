@@ -1,3 +1,6 @@
 MD5 (dovecot-1.1.2.tar.gz) = fcebb6c099421049632b2f1f019f55cd
 SHA256 (dovecot-1.1.2.tar.gz) = 693981dbaa3bfda0796a88995b42c17f8c48d3cc8630a4762557db01170ca91e
 SIZE (dovecot-1.1.2.tar.gz) = 2300564
+MD5 (dovecot-1.1.2-managesieve-0.10.3.diff.gz) = 72e1532ddd5df4ee5f8cf190a1b53cfe
+SHA256 (dovecot-1.1.2-managesieve-0.10.3.diff.gz) = 67a2b7ca49d5dc96e57b534008593c9702cecd768801aaba2f588087e5fe5980
+SIZE (dovecot-1.1.2-managesieve-0.10.3.diff.gz) = 6117
