@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-Inline
 PORTVERSION=	2.208
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +25,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathT
 		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
 		${SITE_PERL}/Algorithm/Dependency.pm:${PORTSDIR}/devel/p5-Algorithm-Dependency \
 		${SITE_PERL}/File/Flat.pm:${PORTSDIR}/devel/p5-File-Flat \
+		${SITE_PERL}/File/chmod.pm:${PORTSDIR}/devel/p5-File-chmod \
+		${SITE_PERL}/Test/Script.pm:${PORTSDIR}/devel/p5-Test-Script \
 		${SITE_PERL}/Pod/Tests.pm:${PORTSDIR}/devel/p5-Pod-Tests
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
