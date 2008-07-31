@@ -7,6 +7,7 @@
 
 PORTNAME=	mogilefs-server
 PORTVERSION=	2.17
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
@@ -17,6 +18,8 @@ COMMENT=	MogileFS (distributed filesystem) server
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/AIO.pm:${PORTSDIR}/devel/p5-IO-AIO \
 		${SITE_PERL}/Danga/Socket.pm:${PORTSDIR}/devel/p5-Danga-Socket \
+		${SITE_PERL}/Gearman/Client/Async.pm:${PORTSDIR}/devel/p5-Gearman-Client-Async \
+		${SITE_PERL}/Gearman/Server.pm:${PORTSDIR}/devel/p5-Gearman-Server \
 		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
 		${SITE_PERL}/Perlbal.pm:${PORTSDIR}/www/perlbal \
 		${SITE_PERL}/Sys/Syscall.pm:${PORTSDIR}/devel/p5-Sys-Syscall
