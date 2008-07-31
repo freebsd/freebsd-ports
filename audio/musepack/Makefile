@@ -8,7 +8,7 @@
 PORTNAME=	musepack
 PORTVERSION=	1.15v
 CATEGORIES=	audio
-MASTER_SITES=	http://files2.musepack.net/source/
+MASTER_SITES=	http://files.musepack.net/source/
 DISTNAME=	mpcsv7-src-${PORTVERSION}
 
 MAINTAINER=	shoesoft@gmx.net
