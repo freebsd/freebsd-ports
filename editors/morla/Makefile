@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	morla
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 #PORTREVISION=	0
-PORTREVISION=	1
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -22,10 +21,13 @@ LIB_DEPENDS=	nxml.18:${PORTSDIR}/textproc/libnxml \
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
+OPTIONS=	XULRUNNER	"Install xulrunner as JavaScript engine" off
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I/${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-gconf=auto
 USE_GETTEXT=	yes
-USE_GNOME=	libgtkhtml libxslt
+USE_GNOME=	gconf2 libgtkhtml libxslt
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 MAN1=	morla.1
@@ -34,11 +36,20 @@ DESKTOP_ENTRIES="morla" \
 		"Edit RDF documents" \
 		"${DATADIR}/icons/128_color.png" \
 		"morla" \
-		"Application;WebDevelopment;" \
+		"WebDevelopment;" \
 		true
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_XULRUNNER)
+USE_GECKO=	xulrunner
+CONFIGURE_ARGS+=	--with-javascript=xulrunner
+.else
+CONFIGURE_ARGS+=	--with-javascript=none
+.endif
+
+.include <bsd.port.post.mk>
