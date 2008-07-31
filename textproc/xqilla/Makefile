@@ -15,7 +15,7 @@ DISTNAME=	XQilla-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	An XQuery and XPath2 library
 
-BUILD_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2:build
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/textproc/xerces-c2:build
 LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2
 
 USE_GMAKE=	yes
