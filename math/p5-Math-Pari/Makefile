@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 
-BUILD_DEPENDS=	pari:${PORTSDIR}/math/pari:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/math/pari:configure
 LIB_DEPENDS=	pari:${PORTSDIR}/math/pari
 
 PERL_CONFIGURE=	yes
