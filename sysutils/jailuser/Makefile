@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jail
 DISTNAME=	jail_${PORTVERSION}
 
-MAINTAINER=	vaida.bogdan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Builds a chrooted environment
 
 WRKSRC=		${WRKDIR}/jail_1-9_stable/src
