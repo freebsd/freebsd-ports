@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Perl module implementing a simple, platform-independent mailer
 
 PERL_CONFIGURE=	yes
