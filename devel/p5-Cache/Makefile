@@ -7,6 +7,7 @@
 
 PORTNAME=	Cache
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,14 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A Perl Cache interface
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/Heap/Fibonacci.pm:${PORTSDIR}/devel/p5-Heap \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/File/NFSLock.pm:${PORTSDIR}/devel/p5-File-NFSLock \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Digest-SHA1>=2.01:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-File-NFSLock>=1.2:${PORTSDIR}/devel/p5-File-NFSLock \
+		p5-Heap>=0.01:${PORTSDIR}/devel/p5-Heap \
+		p5-IO-String>=1.02:${PORTSDIR}/devel/p5-IO-String \
+		p5-TimeDate>=2.24:${PORTSDIR}/devel/p5-TimeDate
 
 PERL_CONFIGURE=	yes
 
@@ -42,4 +40,10 @@ MAN3=		Cache.3 \
 		Cache::RemovalStrategy::LRU.3 \
 		Cache::Tester.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Storable>=1:${PORTSDIR}/devel/p5-Storable
+.endif
+
+.include <bsd.port.post.mk>
