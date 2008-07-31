@@ -7,6 +7,7 @@
 
 PORTNAME=	autocd
 PORTVERSION=	3.02.12b
+PORTREVISION=	1
 CATEGORIES=	audio sysutils
 MASTER_SITES=	ftp://kot.spb.ru/pub/src/projects/autocd/
 
@@ -21,16 +22,9 @@ MLINKS=		cdctl.1 eject.1 cdctl.1 pause.1
 PLIST_FILES=	sbin/autocd bin/acdplay bin/cdctl bin/pause bin/eject
 PORTDOCS=	README.rus.html
 
-USE_RC_SUBR=	yes
-RC_SUFX=	.sh
-SED_SCRIPT+=	-e '{ s,%%PREFIX%%,${PREFIX},g; s,%%RC_SUBR%%,${RC_SUBR},g; }'
-PLIST_FILES+=	etc/rc.d/autocd${RC_SUFX}
-
-post-build:
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/autocd.sh >${WRKDIR}/autocd.sh
+USE_RC_SUBR=	autocd
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/autocd.sh ${PREFIX}/etc/rc.d/autocd${RC_SUFX}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
