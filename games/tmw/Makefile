@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmw
-PORTVERSION=	0.0.24.1
+PORTVERSION=	0.0.25
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	themanaworld
@@ -19,8 +19,8 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		png.5:${PORTSDIR}/graphics/png \
 		curl.4:${PORTSDIR}/ftp/curl \
 		physfs-1.0.1:${PORTSDIR}/devel/physfs
-BUILD_DEPENDS=	guichan>=0.7.1:${PORTSDIR}/devel/guichan
-RUN_DEPENDS=	guichan>=0.7.1:${PORTSDIR}/devel/guichan
+BUILD_DEPENDS=	guichan>=0.8.1:${PORTSDIR}/devel/guichan
+RUN_DEPENDS=	guichan>=0.8.1:${PORTSDIR}/devel/guichan
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image mixer net

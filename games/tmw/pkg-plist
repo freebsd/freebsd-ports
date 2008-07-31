@@ -10,6 +10,7 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/checkbox.png
 %%DATADIR%%/data/graphics/gui/close_button.png
 %%DATADIR%%/data/graphics/gui/deepbox.png
+%%DATADIR%%/data/graphics/gui/emotions.png
 %%DATADIR%%/data/graphics/gui/fixedfont.png
 %%DATADIR%%/data/graphics/gui/hits_blue.png
 %%DATADIR%%/data/graphics/gui/hits_red.png
