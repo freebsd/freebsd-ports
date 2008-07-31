@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seed7
-DISTVERSION=	05_20080707
+DISTVERSION=	05_20080720
 CATEGORIES=	lang
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -23,8 +23,12 @@ MAKEFILE=	makefile
 ALL_TARGET=	hi
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;\
+	    s|`pwd`|${PREFIX}/lib/${PORTNAME}|g;\
+	    s|-lX11|$${LFLAGS} -lX11|g' \
 	    ${WRKSRC}/makefile
+	${REINPLACE_CMD} -i '' -e 's|./hi|${PREFIX}/bin/hi|g' \
+	    ${WRKSRC}/../prg/chk_all.sd7
 
 do-configure:
 	(cd ${WRKSRC} && ${GMAKE} depend)
@@ -33,6 +37,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hi ${PREFIX}/bin
 	${INSTALL} -d ${PREFIX}/lib/${PORTNAME}
 	(cd ${WRKSRC}/../lib && ${COPYTREE_SHARE} \* ${PREFIX}/lib/${PORTNAME})
+	${INSTALL_DATA} ${WRKSRC}/s7_comp.a ${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/s7_data.a ${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/seed7_05.a ${PREFIX}/lib/${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -43,5 +50,10 @@ post-install:
 	${INSTALL} -d ${EXAMPLESDIR}
 	(cd ${WRKSRC}/../prg && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
+
+test: install
+	@echo ""
+	@echo "Testing the ${PORTNAME} installation"
+	@(cd ${WRKSRC}/../prg && ${PREFIX}/bin/hi chk_all)
 
 .include <bsd.port.mk>
