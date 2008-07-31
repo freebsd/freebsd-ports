@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epsilon
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	devel python
 MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
