@@ -1,5 +1,5 @@
 Index: configure
-@@ -4622,7 +4622,7 @@
+@@ -4577,7 +4577,7 @@
      LDFLAGS="$LDFLAGS -lSDL_mixer"
      LIBS="-lSDL_mixer $LIBS"
  
@@ -8,7 +8,18 @@ Index: configure
  
         if test "$cross_compiling" = yes; then
    { { echo "$as_me:$LINENO: error: cannot run test program while cross compiling
-@@ -13798,8 +13798,7 @@
+@@ -4655,8 +4655,8 @@
+ _ACEOF
+ 
+ else
+-    CFLAGS=$ac_save_CFLAGS
+-    LDFLAGS="$ac_save_LDFLAGS"
++    CFLAGS=$ac_save_cflags
++    LDFLAGS="$ac_save_ldflags"
+     LIBS="$ac_save_libs"
+ fi
+ 
+@@ -12271,8 +12271,7 @@
  
  rm -f src/main.o
  
@@ -17,4 +28,4 @@ Index: configure
 +eval LORDSAWAR_DATADIR="$datadir/lordsawar"
  
  
- ac_config_files="$ac_config_files dat/Makefile dat/army/Makefile dat/army/default/Makefile dat/army/bigdefault/Makefile dat/tilesets/Makefile dat/tilesets/default/Makefile dat/tilesets/default/misc/Makefile dat/tilesets/bigdefault/Makefile dat/tilesets/bigdefault/misc/Makefile dat/shield/Makefile dat/shield/default/Makefile dat/shield/plain/Makefile dat/citysets/Makefile dat/citysets/default/Makefile dat/citysets/bigdefault/Makefile dat/various/Makefile dat/various/items/Makefile dat/various/editor/Makefile dat/map/Makefile dat/ggz/Makefile dat/ggz/lordsawar.dsc dat/ggz/lordsawar-server.dsc dat/music/Makefile dat/glade/Makefile dat/glade/editor/Makefile intl/Makefile po/Makefile.in po/Makefile Makefile src/Makefile doc/Makefile src/server/Makefile src/editor/Makefile src/gui/Makefile"
+ ac_config_files="$ac_config_files dat/Makefile dat/army/Makefile dat/army/default/Makefile dat/army/bigdefault/Makefile dat/tilesets/Makefile dat/tilesets/default/Makefile dat/tilesets/default/misc/Makefile dat/tilesets/bigdefault/Makefile dat/tilesets/bigdefault/misc/Makefile dat/shield/Makefile dat/shield/default/Makefile dat/shield/plain/Makefile dat/citysets/Makefile dat/citysets/default/Makefile dat/citysets/bigdefault/Makefile dat/various/Makefile dat/various/items/Makefile dat/various/editor/Makef ile dat/map/Makefile dat/music/Makefile dat/glade/Makefile dat/glade/editor/Makefile intl/Makefile po/Makefile.in po/Makefile Makefile src/Makefile doc/Makefile src/editor/Makefile src/gui/Makefile"
