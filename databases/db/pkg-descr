@@ -1,3 +1,7 @@
 db allows manipulation of btree(3) and hash(3) (db(3)) databases.
 
+See NetBSD Problem Report #39254
+(http://www.netbsd.org/cgi-bin/query-pr-single.pl?number=39254) for
+the issues with the version 1.15 and higher.
+
 WWW: http://cvsweb.netbsd.org/bsdweb.cgi/src/usr.bin/db/
