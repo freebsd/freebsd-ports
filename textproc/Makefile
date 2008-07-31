@@ -601,6 +601,7 @@
     SUBDIR += p5-Text-Ngrams
     SUBDIR += p5-Text-Original
     SUBDIR += p5-Text-ParagraphDiff
+    SUBDIR += p5-Text-ParseWords
     SUBDIR += p5-Text-Query
     SUBDIR += p5-Text-Quote
     SUBDIR += p5-Text-Quoted
