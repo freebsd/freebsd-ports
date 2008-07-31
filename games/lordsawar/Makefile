@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	lordsawar
-PORTVERSION=	0.0.8
-PORTREVISION=	2
+PORTVERSION=	0.0.9
 CATEGORIES=	games
 MASTER_SITES=	http://lordsawar.com/
 
 MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	A Warlords II clone
 
-LIB_DEPENDS=	glademm-2.4:${PORTSDIR}/devel/libglademm24
+LIB_DEPENDS=	glademm-2.4:${PORTSDIR}/devel/libglademm24 \
+		gnet-2.0:${PORTSDIR}/net/gnet2
 
 USE_GZIP=	yes
 USE_GETTEXT=	yes
