@@ -30,9 +30,9 @@ stop_cmd()
   %%PREFIX%%/bin/cdctl die
 }
 
-# set defaults
-autocd_enable=${autocd_enable:-"NO"}
-autocd_flags=${autocd_flags:-""}
-
 load_rc_config $name
+
+# set defaults
+autocd_flags=${autocd_flags-""}
+
 run_rc_command "$1"
