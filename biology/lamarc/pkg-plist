@@ -72,6 +72,7 @@ bin/lamarc
 %%PORTDOCS%%%%DOCSDIR%%/tracer.html
 %%PORTDOCS%%%%DOCSDIR%%/trait_mapping/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/trait_mapping/lamarc-trait-input.xml
+%%PORTDOCS%%%%DOCSDIR%%/trait_mapping/mapfile_funny-nose.txt
 %%PORTDOCS%%%%DOCSDIR%%/trait_mapping/outfile.txt
 %%PORTDOCS%%%%DOCSDIR%%/trait_mapping/traitCmd.xml
 %%PORTDOCS%%%%DOCSDIR%%/trait_mapping/traitCmd.xml.txt
