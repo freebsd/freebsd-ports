@@ -7,6 +7,7 @@
 
 PORTNAME=	bazaar-ng
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/ \
 		https://launchpad.net/bzr/1.5/${PORTVERSION}/+download/
@@ -30,7 +31,7 @@ MAN1=		bzr.1
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
 .endif
 
-.if defined(WITH_SFTP)
+.if !defined(WITHOUT_SFTP)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/paramiko/__init__.py:${PORTSDIR}/security/py-paramiko
 .endif
 
