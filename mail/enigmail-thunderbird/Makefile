@@ -15,7 +15,7 @@ PKGNAMEPREFIX?=	thunderbird-
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Thunderbird mail client
 
-EXTRACT_DEPENDS=${GECKO_WRKSRC}/configure:${PORTSDIR}/${GECKO_PORTDIR}:patch
+EXTRACT_DEPENDS=${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:patch
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \

@@ -22,7 +22,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Mozilla mail client
 
-EXTRACT_DEPENDS?=	${WRKDIR}/../../../${LOCAL_SRCDIR}/work/mozilla/Makefile:${PORTSDIR}/${LOCAL_SRCDIR}:configure \
+EXTRACT_DEPENDS?=	${NONEXISTENT}:${PORTSDIR}/${LOCAL_SRCDIR}:configure \
 		zip:${PORTSDIR}/archivers/zip \
 		gmake:${PORTSDIR}/devel/gmake \
 		intltool-extract:${PORTSDIR}/textproc/intltool
