@@ -37,19 +37,19 @@ lib/libgiftproto.la
 lib/libgiftproto.so
 lib/libgiftproto.so.0
 libdata/pkgconfig/libgift.pc
-%%PORTDOCS%%share/doc/giFT/AUTHORS
-%%PORTDOCS%%share/doc/giFT/COPYING
-%%PORTDOCS%%share/doc/giFT/ChangeLog
-%%PORTDOCS%%share/doc/giFT/INSTALL
-%%PORTDOCS%%share/doc/giFT/NEWS
-%%PORTDOCS%%share/doc/giFT/QUICKSTART
-%%PORTDOCS%%share/doc/giFT/README
-%%PORTDOCS%%share/doc/giFT/TODO
-%%PORTDOCS%%share/giFT/giftd.conf.template
-%%PORTDOCS%%share/giFT/mime.types
-%%PORTDOCS%%share/giFT/ui/ui.conf.template
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/QUICKSTART
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/giftd.conf.template
+%%DATADIR%%/mime.types
+%%DATADIR%%/ui/ui.conf.template
 @dirrm include/libgift/proto
 @dirrm include/libgift
-@dirrm %%PORTDOCS%%share/doc/giFT
-@dirrm %%PORTDOCS%%share/giFT/ui
-@dirrm %%PORTDOCS%%share/giFT
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%
