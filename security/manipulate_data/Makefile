@@ -10,8 +10,11 @@ PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://packetstormsecurity.org/groups/thc/
 
-MAINTAINER=	vaida.bogdan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search/extract/write raw data
+
+PLIST_FILES=	sbin/read_data sbin/replace_data sbin/search_data sbin/write_data
+PORTDOCS=	CHANGES README
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/read_data ${PREFIX}/sbin

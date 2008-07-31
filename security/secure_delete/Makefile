@@ -10,8 +10,10 @@ PORTVERSION=	3.1
 CATEGORIES=	security
 MASTER_SITES=	http://packetstormsecurity.org/groups/thc/
 
-MAINTAINER=	vaida.bogdan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure data deletion toolkit
+
+CONFLICTS=	srm-[0-9]*
 
 MANCOMPRESSED=	no
 MAN1=		srm.1 sfill.1 sswap.1 smem.1

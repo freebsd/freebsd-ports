@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	srm
 MAINTAINER=	kjones@antihackertoolkit.com
 COMMENT=	Secure rm, a utility which destroys file contents before unlinking
 
+CONFLICTS=	secure_delete-[0-9]*
+
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

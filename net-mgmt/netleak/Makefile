@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	vaida.bogdan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to detect connectivity between network segments
 
 RUN_DEPENDS=	${SITE_PERL}/Net/PcapUtils.pm:${PORTSDIR}/net/p5-Net-PcapUtils \
@@ -29,6 +29,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5_RUN=	yes
 MAN8=		netleak.8 netleakd.8
 
+PLIST_FILES=	etc/netleak.conf etc/netleakd.conf sbin/netleak sbin/netleakd
 PORTDOCS=	BUGS README TODO
 
 post-install:
