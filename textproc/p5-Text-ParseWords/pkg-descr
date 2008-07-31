@@ -1,0 +1,13 @@
+This is a CORE module. If you installed perl 5.003 or above, a
+version of this module is already available to you. This CPAN
+package is only here to update core distributions prior 5.005.
+
+The version provided is the same that comes with perl 5.00502.
+If you run a newer version of perl, the version of Text::ParseWords
+included there may be newer. This package is not fully synchronized
+with the perl distributions.
+
+Please run "perldoc Text::ParseWords" to see what this module
+is for.
+
+WWW:	http://search.cpan.org/dist/Text-ParseWords/
