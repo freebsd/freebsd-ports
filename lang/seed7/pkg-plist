@@ -1,4 +1,7 @@
 bin/hi
+lib/seed7/s7_comp.a
+lib/seed7/s7_data.a
+lib/seed7/seed7_05.a
 lib/seed7/COPYING
 lib/seed7/LGPL
 lib/seed7/bigfile.s7i
@@ -60,6 +63,7 @@ lib/seed7/wrinum.s7i
 %%PORTDOCS%%%%DOCSDIR%%/robodoc.rc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/COPYING
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/LGPL
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/files.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/addup.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bas7.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bifurk.sd7
@@ -94,7 +98,6 @@ lib/seed7/wrinum.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eliza.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/err.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fib.sd7
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/files
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gcd.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gkbd.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/green.dna
