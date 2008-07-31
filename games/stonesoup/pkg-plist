@@ -85,6 +85,7 @@ bin/stonesoup
 %%DATADIR%%/docs/macros_guide.txt
 %%DATADIR%%/docs/lualicense.txt
 %%DATADIR%%/docs/level_design.txt
+%%DATADIR%%/docs/keybind.txt
 %%DATADIR%%/docs/crawl_manual.txt
 %%DATADIR%%/docs/coding_conventions.txt
 %%DATADIR%%/docs/aptitudes.txt

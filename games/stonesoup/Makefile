@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	crawl-ref
@@ -46,7 +46,6 @@ RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%MAKEFILE_SEL%%,${MAKEFILE_SEL}," ${WRKSRC}/makefile
 .for makefile in makefile.unix makefile.x11
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/${makefile}
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}," ${WRKSRC}/${makefile}
