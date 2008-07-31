@@ -8,6 +8,7 @@
 
 PORTNAME=	stlport
 PORTVERSION=	5.1.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${COMPILER}
@@ -36,7 +37,8 @@ PORTDOCS=	*
 
 OPTIONS=	SHORT_STRING_OPTIM "Enable short string optimization." on 	\
 		PTR_SPECIALIZATIONS "Use pointer types specializations." off 	\
-		TEMPLATE_EXPRESSION "Use template expressions for string." off
+		TEMPLATE_EXPRESSION "Use template expressions for string." off 	\
+		BOOST_SUPPORT "Use Boost type traits." off
 
 .include <bsd.port.pre.mk>
 
@@ -50,6 +52,13 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ptr_spec-user_config.h.diff
 
 .if defined(WITH_TEMPLATE_EXPRESSION)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-templ-expr-user_config.h.diff
+.endif
+
+.if defined(WITH_BOOST_SUPPORT)
+EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-boost-support-user_config.h.diff
+MAKE_ENV+= STLP_BUILD_BOOST_PATH=${LOCALBASE}/include
+BUILD_DEPENDS+= ${LOCALBASE}/include/boost/config/stdlib/stlport.hpp:${PORTSDIR}/devel/boost
+RUN_DEPENDS+= ${LOCALBASE}/include/boost/config/stdlib/stlport.hpp:${PORTSDIR}/devel/boost
 .endif
 
 pre-configure:
