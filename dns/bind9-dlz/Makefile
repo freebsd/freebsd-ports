@@ -24,6 +24,10 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Daemon, with DLZ extensions
 
+FORBIDDEN=	vulnerable to cache poisioning if recursive lookup enabled
+DEPRICATED=	DLZ functions are now included in bind9.4
+EXPIRATION_DATE=2008-08-31
+
 CONFLICTS?=	bind9-9.* bind9-sdb-ldap-* host-* skalibs-*
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 
