@@ -7038,6 +7038,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/cnf/toolboxes.kupu
 %%ZOPEPRODUCTDIR%%/kupu/cnf/wire.kupu
 %%ZOPEPRODUCTDIR%%/kupu/cnf/xmlconfig.kupu
+%%ZOPEPRODUCTDIR%%/kupu/common/diff_match_patch.js
 %%ZOPEPRODUCTDIR%%/kupu/common/fulldoc.html
 %%ZOPEPRODUCTDIR%%/kupu/common/kupu-pox.cgi
 %%ZOPEPRODUCTDIR%%/kupu/common/kupu.cgi
@@ -7254,6 +7255,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/common/kupustart_multi.js
 %%ZOPEPRODUCTDIR%%/kupu/common/kupustyles.css
 %%ZOPEPRODUCTDIR%%/kupu/common/kuputoolcollapser.js
+%%ZOPEPRODUCTDIR%%/kupu/common/kupuundo.js
 %%ZOPEPRODUCTDIR%%/kupu/common/sarissa.js
 %%ZOPEPRODUCTDIR%%/kupu/common/sarissa_ieemu_xpath.js
 %%ZOPEPRODUCTDIR%%/kupu/common/spellcheck.cgi
@@ -7274,6 +7276,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/default/spellchecker.kupu
 %%ZOPEPRODUCTDIR%%/kupu/default/toolbar.kupu
 %%ZOPEPRODUCTDIR%%/kupu/default/toolboxes.kupu
+%%ZOPEPRODUCTDIR%%/kupu/default/undo.kupu
 %%ZOPEPRODUCTDIR%%/kupu/default/wire.kupu
 %%ZOPEPRODUCTDIR%%/kupu/default/xmlconfig.kupu
 %%ZOPEPRODUCTDIR%%/kupu/dist-apache-lenya.kupu
@@ -7295,6 +7298,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/doc/JSAPI.txt
 %%ZOPEPRODUCTDIR%%/kupu/doc/LIBRARIES.txt
 %%ZOPEPRODUCTDIR%%/kupu/doc/LICENSE.txt
+%%ZOPEPRODUCTDIR%%/kupu/doc/LICENSE_DIFFMATCHPATCH.txt
 %%ZOPEPRODUCTDIR%%/kupu/doc/OLDBROWSERS.txt
 %%ZOPEPRODUCTDIR%%/kupu/doc/PLONE2.txt
 %%ZOPEPRODUCTDIR%%/kupu/doc/README.txt
@@ -7728,6 +7732,8 @@
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/input/notcaptioned.in
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/input/notquoted.in
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/input/simple.in
+%%ZOPEPRODUCTDIR%%/kupu/plone/tests/input/umlauts.in
+%%ZOPEPRODUCTDIR%%/kupu/plone/tests/input/umlauts2.in
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/kuputestcase.py
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/kuputestcase.pyc
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/output/baduid.out
@@ -7736,6 +7742,8 @@
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/output/notcaptioned.out
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/output/notquoted.out
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/output/simple.out
+%%ZOPEPRODUCTDIR%%/kupu/plone/tests/output/umlauts.out
+%%ZOPEPRODUCTDIR%%/kupu/plone/tests/output/umlauts2.out
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/runalltests.py
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/runalltests.pyc
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/runme.cmd
@@ -7755,6 +7763,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/test_resourcetypemapper.pyc
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/test_urls.py
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/test_urls.pyc
+%%ZOPEPRODUCTDIR%%/kupu/plone/tests/umlauts-testdata.txt
 %%ZOPEPRODUCTDIR%%/kupu/plone/toolbar.kupu
 %%ZOPEPRODUCTDIR%%/kupu/plone/util.py
 %%ZOPEPRODUCTDIR%%/kupu/plone/util.pyc
@@ -7802,6 +7811,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/widgeteer/kupustart.js
 %%ZOPEPRODUCTDIR%%/kupu/widgeteer/kupustyles.css
 %%ZOPEPRODUCTDIR%%/kupu/widgeteer/make.bat
+%%ZOPEPRODUCTDIR%%/kupu/widgeteer/popups.kupu
 %%ZOPEPRODUCTDIR%%/kupu/widgeteer/wire.kupu
 %%ZOPEPRODUCTDIR%%/kupu/widgeteer/xmlconfig.kupu
 %%ZOPEPRODUCTDIR%%/kupu/zope2/__init__.py
