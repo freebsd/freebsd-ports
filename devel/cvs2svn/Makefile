@@ -6,7 +6,7 @@
 
 PORTNAME=	cvs2svn
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/42521/
 
@@ -14,12 +14,27 @@ MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	CVS to Subversion Repository Converter
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
-RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
-		${LOCALBASE}/bin/git:${PORTSDIR}/devel/git \
-		${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
+
+OPTIONS=	SUBVERSION "Build with subversion support" on \
+		GIT "Build with git support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_SUBVERSION) && defined(WITHOUT_GIT)
+IGNORE=	choose at least subversion, git or both
+.endif
+
+.if defined(WITH_SUBVERSION)
+RUN_DEPENDS+=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/py-subversion
+.endif
+
+.if defined(WITH_GIT)
+RUN_DEPENDS+=	${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
+.endif
 
 MAN1=		cvs2svn.1
 
@@ -39,4 +54,4 @@ do-extract:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/cvs2svn.1 ${PREFIX}/man/man1/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
