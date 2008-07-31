@@ -1,0 +1,11 @@
+--- ./src/opengl/Makefile.in.orig	2008-07-28 14:08:06.000000000 +0200
++++ ./src/opengl/Makefile.in	2008-07-28 14:08:14.000000000 +0200
+@@ -202,7 +202,7 @@
+ top_srcdir = @top_srcdir@
+ lib_LTLIBRARIES = libguichan_opengl.la
+ INCLUDES = -I$(top_srcdir)/include
+-libguichan_opengl_la_LDFLAGS = -no-undefined -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 
++libguichan_opengl_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 
+ libguichan_opengl_la_SOURCES = \
+ 	opengl.cpp		\
+ 	openglimage.cpp		\
