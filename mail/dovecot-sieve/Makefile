@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.dovecot.org/releases/sieve/ \
 		http://www.is-root.com/myports/
 
-MAINTAINER=	robin@isometry.net
+MAINTAINER=	yds@coolrat.org
 COMMENT=	A sieve plugin for the Dovecot LDA called 'deliver'
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/mail/dovecot:build

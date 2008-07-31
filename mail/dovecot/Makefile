@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/1.1/
 
-MAINTAINER=	robin@isometry.net
+MAINTAINER=	yds@coolrat.org
 COMMENT=	Secure and compact IMAP and POP3 servers
 
 USE_ICONV=	yes
