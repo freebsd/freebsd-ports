@@ -4926,6 +4926,7 @@ horde-base                      ports/www/horde-base
 horde-chora                     ports/devel/horde-chora
 horde-forwards                  ports/mail/horde-forwards
 horde-gollem                    ports/ftp/horde-gollem
+horde-hermes                    ports/deskutils/horde-hermes
 horde-imp                       ports/mail/horde-imp
 horde-ingo                      ports/mail/horde-ingo
 horde-jeta                      ports/security/horde-jeta
@@ -4940,6 +4941,7 @@ horde-trean                     ports/www/horde-trean
 horde-turba                     ports/mail/horde-turba
 horde-vacation                  ports/mail/horde-vacation
 horde-whups                     ports/devel/horde-whups
+horde-wicked                    ports/www/horde-wicked
 hostsentry                      ports/security/hostsentry
 hot-babe                        ports/deskutils/hot-babe
 hotkeys                         ports/misc/hotkeys
@@ -12054,6 +12056,7 @@ p5-Text-Ngrams                  ports/textproc/p5-Text-Ngrams
 p5-Text-Original                ports/textproc/p5-Text-Original
 p5-Text-PDF                     ports/print/p5-Text-PDF
 p5-Text-ParagraphDiff           ports/textproc/p5-Text-ParagraphDiff
+p5-Text-ParseWords              ports/textproc/p5-Text-ParseWords
 p5-Text-Password-Pronounceable  ports/security/p5-Text-Password-Pronounceable
 p5-Text-Query                   ports/textproc/p5-Text-Query
 p5-Text-Query-SQL               ports/databases/p5-Text-Query-SQL
@@ -15178,6 +15181,7 @@ p5-text-ngrams                  ports/textproc/p5-Text-Ngrams
 p5-text-nsp                     ports/textproc/p5-Text-NSP
 p5-text-original                ports/textproc/p5-Text-Original
 p5-text-paragraphdiff           ports/textproc/p5-Text-ParagraphDiff
+p5-text-parsewords              ports/textproc/p5-Text-ParseWords
 p5-text-password-pronounceable  ports/security/p5-Text-Password-Pronounceable
 p5-text-pdf                     ports/print/p5-Text-PDF
 p5-text-query                   ports/textproc/p5-Text-Query
