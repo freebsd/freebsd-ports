@@ -1,0 +1,11 @@
+--- ./src/sdl/Makefile.in.orig	2008-07-28 14:05:37.000000000 +0200
++++ ./src/sdl/Makefile.in	2008-07-28 14:05:46.000000000 +0200
+@@ -204,7 +204,7 @@
+ top_srcdir = @top_srcdir@
+ lib_LTLIBRARIES = libguichan_sdl.la
+ INCLUDES = -I$(top_srcdir)/include
+-libguichan_sdl_la_LDFLAGS = -no-undefined -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libguichan_sdl_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ libguichan_sdl_la_SOURCES = \
+ 	sdl.cpp			\
+ 	sdlgraphics.cpp		\

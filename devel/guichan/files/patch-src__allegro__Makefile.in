@@ -1,0 +1,11 @@
+--- ./src/allegro/Makefile.in.orig	2008-07-28 14:05:53.000000000 +0200
++++ ./src/allegro/Makefile.in	2008-07-28 14:06:01.000000000 +0200
+@@ -203,7 +203,7 @@
+ top_srcdir = @top_srcdir@
+ lib_LTLIBRARIES = libguichan_allegro.la
+ INCLUDES = -I$(top_srcdir)/include
+-libguichan_allegro_la_LDFLAGS = -no-undefined -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libguichan_allegro_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ libguichan_allegro_la_SOURCES = \
+ 		allegro.cpp		\
+ 		allegrofont.cpp		\

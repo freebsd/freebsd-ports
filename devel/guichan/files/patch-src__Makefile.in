@@ -1,0 +1,11 @@
+--- ./src/Makefile.in.orig	2008-07-28 14:05:22.000000000 +0200
++++ ./src/Makefile.in	2008-07-28 14:05:32.000000000 +0200
+@@ -217,7 +217,7 @@
+ INCLUDES = -I$(top_srcdir)/include
+ lib_LTLIBRARIES = libguichan.la
+ libguichan_la_LIBADD = widgets/libguichan_widgets.la
+-libguichan_la_LDFLAGS = -no-undefined -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 
++libguichan_la_LDFLAGS = -no-undefined -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 
+ libguichan_la_DEPENDENCIES = \
+ 	widgets/libguichan_widgets.la
+ 
