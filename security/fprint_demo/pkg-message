@@ -1,9 +1,11 @@
 In order to enroll new finger prints, you must have r/w access to the
-usb device node(s) of your finger print reader (e.g. /dev/ugen*)
+usb device node(s) of your finger print reader (i.e., /dev/{ugen, usb}*)
 (tested with UPEK finger print reader as found in Lenovo T61).
 
 It is recommended to use devfs.rules(5) and a dedicated group to manage
 access to your finger print reader.
+
+You can use `usbdevs -v' to see if your sensor is accessible.
 
 Example configuration:
 - /etc/rc.conf:
@@ -12,5 +14,6 @@ devfs_system_ruleset="localrules"
 - /etc/devfs.rules:
 [localrules=10]
 add path 'ugen0*' mode 0660 group operator
+add path 'usb0*' mode 0660 group operator
 
 # /etc/rc.d/devfs restart
