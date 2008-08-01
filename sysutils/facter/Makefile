@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	facter
-PORTVERSION=	1.3.8
+PORTVERSION=	1.5.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://www.reductivelabs.com/downloads/facter/
 EXTRACT_SUFX=	.tgz
@@ -22,6 +22,6 @@ USE_RUBY=	yes
 
 do-install:
 	cd ${WRKSRC} && \
-	${SETENV} DSTDIR=${DSTDIR}/${PREFIX} ${RUBY} ${WRKSRC}/install.rb
+	${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb
 
 .include <bsd.port.post.mk>
