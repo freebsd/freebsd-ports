@@ -7,7 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.planetmirror.com/pub/lyx/stable/ \
@@ -43,7 +43,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui corelib moc uic
+QT_COMPONENTS=	gui corelib moc_build uic_build
 
 CONFLICTS=	lyx-1.4.*
 

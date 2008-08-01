@@ -6,7 +6,7 @@
 
 PORTNAME=	tapioca-qt
 PORTVERSION=	0.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tapioca-voip
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
 USE_CMAKE=	yes
 CMAKE_SOURCE_PATH=	..
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake uic moc rcc
+QT_COMPONENTS=	corelib qmake_build uic_build moc_build rcc_build
 USE_LDCONFIG=	yes
 
 post-extract:

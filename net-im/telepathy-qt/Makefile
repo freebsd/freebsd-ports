@@ -6,7 +6,7 @@
 
 PORTNAME=	telepathy-qt
 PORTVERSION=	0.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tapioca-voip
@@ -17,7 +17,7 @@ COMMENT=	Framework for VoIP and IP applications
 USE_CMAKE=	yes
 CMAKE_SOURCE_PATH=	..
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib qmake uic moc rcc xml dbus
+QT_COMPONENTS=	corelib qmake_build uic_build moc_build rcc_build xml dbus
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build

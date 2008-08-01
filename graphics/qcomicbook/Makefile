@@ -7,7 +7,7 @@
 
 PORTNAME=	qcomicbook
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/qcomicbook/
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		unrar:${PORTSDIR}/archivers/unrar
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc
+QT_COMPONENTS=	gui moc_build
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 USE_EFL=	imlib2
