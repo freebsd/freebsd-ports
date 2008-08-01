@@ -8,7 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -33,7 +33,7 @@ USE_OPENSSL=	yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xpm xkbfile xrandr xcursor
 SUB_FILES=	kdm pkg-deinstall pkg-install pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
