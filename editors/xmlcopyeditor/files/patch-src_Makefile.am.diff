@@ -1,5 +1,5 @@
---- src/Makefile.am.orig	2008-01-22 18:07:11.000000000 +0100
-+++ src/Makefile.am	2008-01-22 18:12:05.000000000 +0100
+--- src/Makefile.am.orig
++++ src/Makefile.am
 @@ -9,8 +9,8 @@
  bin_PROGRAMS = xmlcopyeditor
  bindir = ${prefix}/bin
@@ -11,15 +11,14 @@
  
  # the application source, library search path, and link libraries
  xmlcopyeditor_SOURCES = xmlcopyeditor.cpp associatedialog.cpp casehandler.cpp \
-@@ -50,16 +50,6 @@
+@@ -49,15 +49,6 @@
  	templates/*.lzx \
  	templates/*.xlf \
  	help/*.* help/html/*.* \
 -	copying/*.txt copying/boost_shared_ptr/* \
 -	copying/Expat/* copying/libxml2/* copying/libxslt/* \
 -	copying/PCRE/* copying/Scintilla/* \
--	copying/scowl/* \
--	copying/wxStyledTextCtrl/* copying/ximian/* \
+-	copying/wxStyledTextCtrl/* \
 -	copying/wxStEditor/* \
 -	copying/xmlcopyeditor/* \
 -	copying/Aspell/* \
@@ -28,12 +27,3 @@
  	po/sk/messages.mo \
  	po/sv/messages.mo \
  	po/fr/messages.mo \
-@@ -68,7 +58,7 @@
-         po/zh_TW/messages.mo \
- 	po/uk_UA/messages.mo \
-         po/uk_UA/messages.mo \
--        po/en_us/messages.po \
-+        po/en_us/messages.po
- 
- pixmap_DATA = xmlcopyeditor.png
- 

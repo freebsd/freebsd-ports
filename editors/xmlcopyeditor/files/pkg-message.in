@@ -1,8 +1,0 @@
-************************************************************************
-Note for XML docbook users:
-
-    1) In Edit->Preferences menu change "Application directory" text box to
-       "%%LOCALBASE%%/share/xsl".
-
-    2) Install textproc/docbook-xml port.
-************************************************************************
