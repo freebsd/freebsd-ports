@@ -22,9 +22,10 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+USE_PERL5_BUILD=yes
 
 pre-configure:
 	@cd ${WRKSRC}/admin && ${RM} -f ltmain.sh && ${CP} -f ${LTMAIN} .
-	@cd ${WRKSRC} && ${GMAKE} -f admin/Makefile.common
+	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${GMAKE} -f admin/Makefile.common
 
 .include <bsd.port.mk>
