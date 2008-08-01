@@ -468,6 +468,7 @@
     SUBDIR += lmarbles
     SUBDIR += lmpc
     SUBDIR += lordsawar
+    SUBDIR += love
     SUBDIR += ltris
     SUBDIR += lucidlife
     SUBDIR += luola
