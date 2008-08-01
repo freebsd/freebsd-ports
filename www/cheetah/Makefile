@@ -24,6 +24,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+CONFLICTS=	py??-cheetah-[0-9]*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure

@@ -18,6 +18,8 @@ COMMENT=	HTML template engine for Python
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CONFLICTS=	cheetah-[0-9]*
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	Cheetah
