@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	0.24.4
+PORTVERSION=	0.24.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.reductivelabs.com/downloads/puppet/
 PKGNAMESUFFIX=	-devel
@@ -45,9 +45,7 @@ pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	cd ${WRKSRC} && \
-		${SETENV} DSTDIR=${DSTDIR}/${PREFIX} \
-		${RUBY} ${WRKSRC}/install.rb --full
+	cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb
 	${INSTALL} -d ${DOCSDIR}
 .if !defined(NOPORTDOCS)
 .for FILE in ${DOCS}
