@@ -3,6 +3,7 @@
 
     COMMENT = Software support for handheld devices (Palm, PocketPC, ...)
 
+    SUBDIR += barry
     SUBDIR += bibelot
     SUBDIR += coldsync
     SUBDIR += gnome-pilot
