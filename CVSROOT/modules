@@ -7697,6 +7697,7 @@ lordsawar                       ports/games/lordsawar
 lostirc                         ports/irc/lostirc
 loudmouth                       ports/net-im/loudmouth
 lout                            ports/print/lout
+love                            ports/games/love
 lp_solve                        ports/math/lp_solve
 lpac                            ports/audio/lpac
 lpe                             ports/editors/lpe
