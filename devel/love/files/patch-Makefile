@@ -1,0 +1,41 @@
+--- Makefile.orig	2008-07-04 03:25:34.000000000 +0400
++++ Makefile	2008-08-01 16:27:46.000000000 +0400
+@@ -3,20 +3,19 @@
+ # You may need to modify parts of this makefile for your system.
+ ######################################################################
+ 
+-CC = g++
+-CFLAGS = -g -O2 -Wall
+-CFLAGS_MOD = -g0 -O3
++CFLAGS += -Wall
++CFLAGS_MOD = $(CFLAGS)
+ BINDIR = bin
+ 
+ # Inclusion paths.
+-INCLUDE_SDL = -I/usr/include/SDL
+-INCLUDE_LUA = -I/usr/include/lua5.1
++INCLUDE_SDL = `$(SDL_CONFIG) --cflags`
++INCLUDE_LUA = -I$(LOCALBASE)/include/lua51
+ INCLUDE_LIBLOVE = -Isrc/liblove/include
+-INCLUDE_FREETYPE = -I/usr/include/freetype2
++INCLUDE_FREETYPE = -I$(LOCALBASE)/include/freetype2
+ 
+ # Linker flags.
+-LD_LUA = -llua5.1
+-LD_SDL = -lSDL
++LD_LUA = -L$(LOCALBASE)/lib/lua51 -llua
++LD_SDL = `$(SDL_CONFIG) --libs`
+ LD_PHYSFS = -lphysfs
+ LD_FREETYPE = -lfreetype
+ LD_GL = -lGL -lGLU
+@@ -27,8 +26,8 @@
+ 
+ default: prep $(BINDIR)/liblove.a love
+ 
+-INCLUDE_COMMON = $(INCLUDE_LUA) $(INCLUDE_SDL) $(INCLUDE_LIBLOVE)
+-LD_COMMON = $(LD_LUA) $(LD_SDL)
++INCLUDE_COMMON = -I$(LOCALBASE)/include $(INCLUDE_LUA) $(INCLUDE_SDL) $(INCLUDE_LIBLOVE)
++LD_COMMON = -L$(LOCALBASE)/lib $(LD_LUA) $(LD_SDL)
+ 
+ #
+ # liblove
