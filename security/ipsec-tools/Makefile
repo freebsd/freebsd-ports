@@ -43,10 +43,11 @@ OPTIONS=	DEBUG		"enable Debug support" on \
 		NATT		"enable NAT-Traversal (kernel-patch required)" on \
 		NATTF		"require NAT-Traversal (fail without kernel-patch)" off \
 		FRAG		"enable IKE fragmentation payload support" on \
-		HYBRID		"enable Hybrid Mode-cfg and Xauth support" off \
-		PAM		"enable PAM authentication" off \
+		HYBRID		"enable Hybrid, Xauth and Mode-cfg support" on \
+		PAM		"enable PAM authentication (Xauth server)" off \
+		RADIUS		"enable Radius authentication (Xauth server)" off \
+		LDAP		"enable LDAP authentication (Xauth server)" off \
 		GSSAPI		"enable GSS-API authentication" off \
-		RADIUS		"enable Radius authentication" off \
 		SAUNSPEC	"enable Unspecified SA mode" off \
 		RC5		"enable RC5 encryption (patented)" off \
 		IDEA		"enable IDEA encryption (patented)" off
@@ -130,6 +131,13 @@ CONFIGURE_ARGS+=	--disable-gssapi
 CONFIGURE_ARGS+=	--with-libradius
 .else
 CONFIGURE_ARGS+=	--without-libradius
+.endif
+
+.ifdef(WITH_LDAP)
+USE_OPENLDAP=	YES
+CONFIGURE_ARGS+=	--with-libldap=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-libldap
 .endif
 
 .ifdef(WITH_SAUNSPEC)
