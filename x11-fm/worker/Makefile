@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	worker
-PORTVERSION=	2.16.3
-PORTREVISION=	1
+PORTVERSION=	2.16.5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/worker/downloads/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	X11 File Manager based on Directory Opus
@@ -33,6 +34,9 @@ OPTIONS=	XFT "Enable experimental xft support" Off
 USE_XORG+=	xft
 CONFIGURE_ARGS+=	--enable-xft
 .endif
+
+verify: checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
