@@ -17,17 +17,15 @@ MASTER_SITES=		http://www.squeakvm.org/unix/release/ \
 			ftp://st.cs.uiuc.edu/Smalltalk/Squeak/${PORTVERSION}/unix-linux/ \
 			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/${PORTVERSION}/ \
 			ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/${PORTVERSION}/unix-linux/ \
-			http://www.squeakland.org/installers/ \
-			http://www.squeakland.jp/plugin/installers/ \
-			http://squeak.610t.org/patches/
-DISTFILES=		Squeak-${VMVERSION}.src.tar.gz \
+			http://www.squeakland.org/installers/:plugin \
+			http://www.squeakland.jp/plugin/installers/:jpplugin \
+			http://squeak.610t.org/patches/:ximpatch
+DISTFILES=		Squeak-${VMVERSION}.src${EXTRACT_SUFX} \
 			Squeak${IMAGEVERSION}-${PATCHNUMBER}-basic.zip \
 			Squeak${IMAGEVERSION}-${PATCHNUMBER}-full.zip \
-			SqueakPlugin.zip \
 			SqueakV3.sources.gz \
-			${XIM_PATCH} \
-			${JAPANESE_PLUGIN_IMAGE}
-EXTRACT_ONLY=		Squeak-${VMVERSION}.src.tar.gz
+			${JAPANESE_PLUGIN_IMAGE}:jpplugin
+EXTRACT_ONLY=		Squeak-${VMVERSION}.src${EXTRACT_SUFX}
 
 ##################################################
 MAINTAINER=		mutoh@openedu.org
@@ -53,7 +51,7 @@ OPTIONS+=		XIM		"XIM support (Implies X)" off
 .include <bsd.port.pre.mk>
 
 ##################################################
-XIM_PATCH=		SqueakImmX11Plugin3a.tar.gz
+XIM_PATCH=		SqueakImmX11Plugin3a${EXTRACT_SUFX}
 PLUGIN_IMAGE=		SqueakPlugin.zip
 JAPANESE_PLUGIN_IMAGE=		SqueakPlugin2005J.zip
 
@@ -101,6 +99,7 @@ CONFIGURE_ARGS+=	--without-rfb
 CONFIGURE_ARGS+=	--without-npsqueak
 PLIST_NPSQUEAK=		"@comment feature not wanted - "
 .else
+DISTFILES+=		SqueakPlugin.zip:plugin
 WITH_NPSQUEAK=		yes
 PLIST_NPSQUEAK=
 FILES_TO_GZIP+=		SqueakPlugin.image
@@ -131,6 +130,7 @@ PLIST_FFI=		"@comment feature not wanted - "
 .endif
 
 .if defined(WITH_XIM)
+DISTFILES+=		${XIM_PATCH}:ximpatch
 PLIST_XIM=
 WITH_X=			yes
 USE_ICONV=		yes
