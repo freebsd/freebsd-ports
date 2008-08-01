@@ -7,6 +7,7 @@
 
 PORTNAME=	argus
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -28,11 +29,14 @@ LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 USE_BISON=	build
 GNU_CONFIGURE=	true
 .if defined(WITH_SASL)
-CONFIGURE_ARGS+= --with-sasl=${PREFIX}
+CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 
 MAN5=		argus.conf.5
 MAN8=		argus.8
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#/usr/lib/sasl2#${LOCALBASE}/lib/sasl2#' ${WRKSRC}/argus/ArgusOutput.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/argus ${PREFIX}/sbin/argus
