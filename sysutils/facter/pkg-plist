@@ -1,14 +1,49 @@
 @comment $FreeBSD$
 bin/facter
+%%RUBY_SITELIBDIR%%/facter.rb
+%%RUBY_SITELIBDIR%%/facter/lsb.rb
+%%RUBY_SITELIBDIR%%/facter/processor.rb
+%%RUBY_SITELIBDIR%%/facter/id.rb
+%%RUBY_SITELIBDIR%%/facter/operatingsystem.rb
+%%RUBY_SITELIBDIR%%/facter/architecture.rb
+%%RUBY_SITELIBDIR%%/facter/operatingsystemrelease.rb
+%%RUBY_SITELIBDIR%%/facter/domain.rb
+%%RUBY_SITELIBDIR%%/facter/uniqueid.rb
+%%RUBY_SITELIBDIR%%/facter/memory.rb
+%%RUBY_SITELIBDIR%%/facter/hardwareisa.rb
+%%RUBY_SITELIBDIR%%/facter/facterversion.rb
+%%RUBY_SITELIBDIR%%/facter/ps.rb
+%%RUBY_SITELIBDIR%%/facter/rubysitedir.rb
+%%RUBY_SITELIBDIR%%/facter/hostname.rb
+%%RUBY_SITELIBDIR%%/facter/iphostnumber.rb
+%%RUBY_SITELIBDIR%%/facter/rubyversion.rb
+%%RUBY_SITELIBDIR%%/facter/Cfkey.rb
+%%RUBY_SITELIBDIR%%/facter/lsbmajdistrelease.rb
+%%RUBY_SITELIBDIR%%/facter/hardwaremodel.rb
+%%RUBY_SITELIBDIR%%/facter/macaddress.rb
+%%RUBY_SITELIBDIR%%/facter/util/resolution.rb
+%%RUBY_SITELIBDIR%%/facter/util/collection.rb
+%%RUBY_SITELIBDIR%%/facter/util/confine.rb
+%%RUBY_SITELIBDIR%%/facter/util/loader.rb
+%%RUBY_SITELIBDIR%%/facter/util/memory.rb
+%%RUBY_SITELIBDIR%%/facter/util/fact.rb
+%%RUBY_SITELIBDIR%%/facter/util/plist.rb
+%%RUBY_SITELIBDIR%%/facter/util/macosx.rb
+%%RUBY_SITELIBDIR%%/facter/util/ip.rb
 %%RUBY_SITELIBDIR%%/facter/util/plist/parser.rb
 %%RUBY_SITELIBDIR%%/facter/util/plist/generator.rb
-%%RUBY_SITELIBDIR%%/facter/util/plist.rb
-%%RUBY_SITELIBDIR%%/facter/processor.rb
-%%RUBY_SITELIBDIR%%/facter/memory.rb
-%%RUBY_SITELIBDIR%%/facter/manufacturer.rb
+%%RUBY_SITELIBDIR%%/facter/util/manufacturer.rb
+%%RUBY_SITELIBDIR%%/facter/util/netmask.rb
+%%RUBY_SITELIBDIR%%/facter/fqdn.rb
+%%RUBY_SITELIBDIR%%/facter/ssh.rb
+%%RUBY_SITELIBDIR%%/facter/ipaddress.rb
+%%RUBY_SITELIBDIR%%/facter/puppetversion.rb
 %%RUBY_SITELIBDIR%%/facter/macosx.rb
+%%RUBY_SITELIBDIR%%/facter/kernelrelease.rb
+%%RUBY_SITELIBDIR%%/facter/manufacturer.rb
+%%RUBY_SITELIBDIR%%/facter/kernel.rb
 %%RUBY_SITELIBDIR%%/facter/ipmess.rb
-%%RUBY_SITELIBDIR%%/facter.rb
+%%RUBY_SITELIBDIR%%/facter/netmask.rb
 @dirrm %%RUBY_SITELIBDIR%%/facter/util/plist
 @dirrm %%RUBY_SITELIBDIR%%/facter/util
 @dirrm %%RUBY_SITELIBDIR%%/facter
