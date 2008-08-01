@@ -55,6 +55,10 @@ PLIST_SUB+=	ICUVER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile: No rule to make target 'out'
+.endif
+
 .if ${CC:T} == "cc"
 CFLAGS:=	${CFLAGS:N-funroll-loops:N-O*:N-*strict-aliasing} -O2 -fno-strict-aliasing
 .endif
