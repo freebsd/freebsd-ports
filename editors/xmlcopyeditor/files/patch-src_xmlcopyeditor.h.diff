@@ -1,5 +1,5 @@
---- src/xmlcopyeditor.h.orig	Thu Dec 20 19:39:44 2007
-+++ src/xmlcopyeditor.h	Thu Dec 20 19:40:47 2007
+--- src/xmlcopyeditor.h.orig
++++ src/xmlcopyeditor.h
 @@ -21,6 +21,7 @@
  #define XMLCOPYEDITOR_H
  

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xmlcopyeditor
-PORTVERSION=	1.1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.2.0
+DISTVERSIONSUFFIX=-2
 CATEGORIES=	editors
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=xml-copy-editor
@@ -20,25 +20,14 @@ WX_COMPS=	wx contrib
 WX_CONF_ARGS=	absolute
 WX_UNICODE=	yes
 USE_GETTEXT=	yes
-USE_DOS2UNIX=	src/rulesets/ruleset.css \
-		src/rulesets/ruleset.xsd \
-		src/rulesets/Contractions.xml \
-		src/aspellpaths.h \
-		src/po/sk/backup/sk.po \
-		src/po/sk/sk.po \
-		src/po/fr/messages.po \
-		src/po/sv/messages.po \
-		src/po/translate.txt \
-		src/po/de/messages.po \
-		src/po/en_us/messages.po \
-		src/help/xmlcopyeditor.hhp \
+USE_DOS2UNIX=	src/templates/DTD.dtd \
 		src/help/html/generic.css \
-		src/rng/docbook.rnc \
+		src/help/xmlcopyeditor.hhp \
+		src/rulesets/ruleset.css \
 		src/rng/tei_all.rnc \
+		src/rng/docbook.rnc \
 		src/rng/tei_minimal.rnc \
-		src/rng/docbookxi.rnc \
-		src/templates/DTD.dtd \
-		src/filters/WordprocessingML.xml
+		src/rng/docbookxi.rnc
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS+=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
@@ -46,7 +35,15 @@ LIB_DEPENDS+=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		aspell.16:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre
 
-USE_AUTOTOOLS=	autoconf:261 automake:19
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+# workaround for automake (it needs config.rpath)
+post-extract:
+	${TOUCH} ${WRKSRC}/config.rpath
+
+# iconv.m4 is located in ${LOCALBASE}/share/aclocal
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110 libtool:15
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

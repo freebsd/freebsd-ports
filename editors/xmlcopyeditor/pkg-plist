@@ -1,9 +1,7 @@
+@comment $FreeBSD$
 bin/xmlcopyeditor
 share/applications/xmlcopyeditor.desktop
 share/pixmaps/xmlcopyeditor.png
-%%DATADIR%%/filters/OpenDocument.xml
-%%DATADIR%%/filters/WordprocessingML.xml
-%%DATADIR%%/filters/filter.xsd
 %%DATADIR%%/help/Table of Contents.hhc
 %%DATADIR%%/help/html/appendix.html
 %%DATADIR%%/help/html/association.html
@@ -68,6 +66,7 @@ share/pixmaps/xmlcopyeditor.png
 %%DATADIR%%/po/de/messages.mo
 %%DATADIR%%/po/en_us/messages.po
 %%DATADIR%%/po/fr/messages.mo
+%%DATADIR%%/po/ru/messages.mo
 %%DATADIR%%/po/sk/messages.mo
 %%DATADIR%%/po/sv/messages.mo
 %%DATADIR%%/po/uk_UA/messages.mo
@@ -124,6 +123,8 @@ share/pixmaps/xmlcopyeditor.png
 %%DATADIR%%/rulesets/American.xml
 %%DATADIR%%/rulesets/Commonwealth.xml
 %%DATADIR%%/rulesets/Contractions.xml
+%%DATADIR%%/rulesets/Default dictionary and style.xml
+%%DATADIR%%/rulesets/Default dictionary.xml
 %%DATADIR%%/rulesets/Default style.xml
 %%DATADIR%%/rulesets/Disability.xml
 %%DATADIR%%/rulesets/Diversity.xml
@@ -202,6 +203,7 @@ share/pixmaps/xmlcopyeditor.png
 @dirrm %%DATADIR%%/po/uk_UA
 @dirrm %%DATADIR%%/po/sv
 @dirrm %%DATADIR%%/po/sk
+@dirrm %%DATADIR%%/po/ru
 @dirrm %%DATADIR%%/po/fr
 @dirrm %%DATADIR%%/po/en_us
 @dirrm %%DATADIR%%/po/de
@@ -209,7 +211,6 @@ share/pixmaps/xmlcopyeditor.png
 @dirrm %%DATADIR%%/png
 @dirrm %%DATADIR%%/help/html
 @dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%/filters
 @dirrm %%DATADIR%%
 @dirrmtry share/pixmaps
 @dirrmtry share/applications
