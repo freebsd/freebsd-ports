@@ -222,6 +222,7 @@ lib/webmin/virtual-server/images/newfeatures.gif
 lib/webmin/virtual-server/images/newfields.gif
 lib/webmin/virtual-server/images/newframe.gif
 lib/webmin/virtual-server/images/newftp.gif
+lib/webmin/virtual-server/images/newglobal.cgi
 lib/webmin/virtual-server/images/newips.gif
 lib/webmin/virtual-server/images/newlinks.gif
 lib/webmin/virtual-server/images/newlocal.gif
@@ -263,6 +264,7 @@ lib/webmin/virtual-server/import.cgi
 lib/webmin/virtual-server/import_database.cgi
 lib/webmin/virtual-server/import_form.cgi
 lib/webmin/virtual-server/index.cgi
+lib/webmin/virtual-server/lang/cz
 lib/webmin/virtual-server/lang/de
 lib/webmin/virtual-server/lang/en
 lib/webmin/virtual-server/lang/es
@@ -325,12 +327,18 @@ lib/webmin/virtual-server/newfeatures-all/3.58/9-dbhosts
 lib/webmin/virtual-server/newfeatures-all/3.59/2-plesk7
 lib/webmin/virtual-server/newfeatures-all/3.59/3-apihelper
 lib/webmin/virtual-server/newfeatures-all/3.59/4-purgeftp
+lib/webmin/virtual-server/newfeatures-all/3.60/1-spf
+lib/webmin/virtual-server/newfeatures-all/3.60/3-webmail
+lib/webmin/virtual-server/newfeatures-all/3.60/4-globals
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 lib/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
 lib/webmin/virtual-server/newfeatures-gpl/3.56/1-customfields
 lib/webmin/virtual-server/newfeatures-gpl/3.58/10-spamvirus
+lib/webmin/virtual-server/newfeatures-gpl/3.60/2-logo
 lib/webmin/virtual-server/newfeatures-lib.pl
+lib/webmin/virtual-server/check-config.pl
+lib/webmin/virtual-server/edit_newglobal.cgi
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
 lib/webmin/virtual-server/postinstall.pl
@@ -363,6 +371,7 @@ lib/webmin/virtual-server/save_newchroot.cgi
 lib/webmin/virtual-server/save_newdynip.cgi
 lib/webmin/virtual-server/save_newfeatures.cgi
 lib/webmin/virtual-server/save_newfields.cgi
+lib/webmin/virtual-server/save_newglobal.cgi
 lib/webmin/virtual-server/save_newip.cgi
 lib/webmin/virtual-server/save_newlocal.cgi
 lib/webmin/virtual-server/save_newsharedips.cgi
@@ -403,6 +412,7 @@ lib/webmin/virtual-server/virtual_feature_api.pl
 lib/webmin/virtual-server/vui-lib.pl
 lib/webmin/virtual-server/warnbw-template
 lib/webmin/virtual-server/writelogs.pl
+@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.60
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.59
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.58
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.57
@@ -412,6 +422,7 @@ lib/webmin/virtual-server/writelogs.pl
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.53
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm lib/webmin/virtual-server/newfeatures-gpl
+@dirrm lib/webmin/virtual-server/newfeatures-all/3.60
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.59
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.58
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.57
