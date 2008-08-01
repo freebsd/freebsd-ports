@@ -1,6 +1,6 @@
---- ./Modules/FindQt4.cmake.orig	2008-01-21 19:59:51.000000000 +0100
-+++ ./Modules/FindQt4.cmake	2008-04-25 21:45:15.000000000 +0200
-@@ -250,7 +250,7 @@
+--- ./Modules/FindQt4.cmake.orig	2008-05-05 22:25:53.000000000 +0400
++++ ./Modules/FindQt4.cmake	2008-07-21 02:37:16.000000000 +0400
+@@ -293,7 +293,7 @@
  
  GET_FILENAME_COMPONENT(qt_install_version "[HKEY_CURRENT_USER\\Software\\trolltech\\Versions;DefaultQtVersion]" NAME)
  # check for qmake
@@ -9,7 +9,7 @@
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\${qt_install_version};InstallDir]/bin"
-@@ -790,9 +790,9 @@
+@@ -915,9 +915,9 @@
      "${QT_UIC_EXECUTABLE_INTERNAL}" QT_UIC_EXECUTABLE_INTERNAL)
  
    SET(QT_MOC_EXECUTABLE 
@@ -21,3 +21,19 @@
  
    FIND_PROGRAM(QT_UIC3_EXECUTABLE
      NAMES uic3
+@@ -944,13 +944,13 @@
+     )
+ 
+   FIND_PROGRAM(QT_LUPDATE_EXECUTABLE
+-    NAMES lupdate
++    NAMES lupdate-qt4
+     PATHS ${QT_BINARY_DIR}
+     NO_DEFAULT_PATH
+     )
+ 
+   FIND_PROGRAM(QT_LRELEASE_EXECUTABLE
+-    NAMES lrelease
++    NAMES lrelease-qt4
+     PATHS ${QT_BINARY_DIR}
+     NO_DEFAULT_PATH
+     )
