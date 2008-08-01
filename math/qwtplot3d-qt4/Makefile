@@ -7,7 +7,7 @@
 
 PORTNAME=	qwtplot3d
 PORTVERSION=	0.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-qt4
@@ -17,7 +17,7 @@ MAINTAINER=	makc@issp.ac.ru
 COMMENT=	3D plotting widgets for scientific data and math expressions
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc qmake opengl
+QT_COMPONENTS=	gui moc_build qmake_build opengl
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 USE_DOS2UNIX=	yes

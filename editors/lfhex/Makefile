@@ -8,7 +8,7 @@
 
 PORTNAME=	lfhex
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://stoopidsimple.com/files/ \
 		http://home.earthlink.net/~eyekode/data/
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Large file hex editor
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build qmake_build rcc
+QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build
 USE_BISON=	build
 
 PORTDOCS=	README
