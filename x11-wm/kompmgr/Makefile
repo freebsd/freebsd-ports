@@ -7,7 +7,7 @@
 
 PORTNAME=	kompmgr
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -21,6 +21,7 @@ COMMENT=	Utility needed to enable XComposite support in KDE
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
+USE_XORG=	x11 xdamage xrender xcomposite xfixes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/kdebase-${PORTVERSION}
 
