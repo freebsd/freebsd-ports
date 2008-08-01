@@ -14,7 +14,8 @@ MASTER_SITES=	http://qosient.com/argus/src/ \
 MAINTAINER=	se@freebsd.org
 COMMENT=	Client programs for the argus IP network transaction auditing tool
 
-OPTIONS+=	SASL "SASL authentication support 1" on
+OPTIONS+=	SASL "SASL authentication support 1" on \
+		DEBUG "Enable debug" off
 
 .include <bsd.port.pre.mk>
 
@@ -27,13 +28,18 @@ USE_BISON=	build
 GNU_CONFIGURE=	true
 
 .if defined(WITH_SASL)
-CONFIGURE_ARGS+= --with-sasl=${PREFIX}
+CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 
 MAN1=	ra.1 rabins.1 racluster.1 racount.1 ragraph.1 ragrep.1 rahisto.1 \
 	rasort.1 rasplit.1 rastrip.1
 MAN5=	racluster.5 radium.conf.5 rarc.5
 MAN8=	radium.8
+
+pre-configure:
+.if defined(WITH_DEBUG)
+	${TOUCH} ${WRKSRC}/.debug
+.endif
 
 do-install:
 .for i in ra rabins racluster racount radump rafilteraddr \
