@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kissd
-PORTVERSION=	0.1
+PORTVERSION=	0.3
 CATEGORIES=	net multimedia
 MASTER_SITES=	http://rink.nu/downloads/projects/
 
