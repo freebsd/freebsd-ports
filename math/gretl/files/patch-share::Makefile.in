@@ -1,5 +1,5 @@
---- share/Makefile.in.orig	2008-03-24 21:48:13.000000000 +0900
-+++ share/Makefile.in	2008-06-18 16:11:18.000000000 +0900
+--- share/Makefile.in.orig	2008-07-30 23:25:31.000000000 +0900
++++ share/Makefile.in	2008-08-02 02:34:37.000000000 +0900
 @@ -10,7 +10,7 @@
  sharesrc = $(topsrc)/share
  pdfdir = ../doc/tex
@@ -7,9 +7,9 @@
 -INSTALL_DATA = cp -fp
 +INSTALL_DATA = @INSTALL_DATA@
  
- EN_GUI_HLP = $(sharesrc)/gretlgui.hlp
- EN_CMD_HLP = $(sharesrc)/gretlcmd.hlp
-@@ -55,14 +55,14 @@
+ AUTO_HELPFILES = \
+ 	gretlgui.hlp \
+@@ -36,14 +36,14 @@
  all: $(query_make_help)
  
  help:
@@ -19,14 +19,14 @@
  .PHONY :
  
  install: installdirs install_datafiles install_scripts install_functions \
- 	install_help install_fonts $(query_install_help)
+ 	install_fonts install_help
  	$(INSTALL_DATA) $(sharesrc)/gretl.stamp $(DESTDIR)$(gretldir)/gretl.stamp
 -	make -C bcih install
 +	$(MAKE) -C bcih install
  
  install-strip: install
  
-@@ -88,12 +88,12 @@
+@@ -69,20 +69,20 @@
  	$(INSTALL_DATA) $(sharesrc)/functions/gretlfunc.dtd $(DESTDIR)$(gretldir)/functions 
  
  install_man: gretl.1
@@ -40,12 +40,11 @@
 -	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/doc
 +#	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/doc
  	$(tooldir)/mkinstalldirs $(DESTDIR)$(gretldir)/helpfigs
- 	$(INSTALL_DATA) $(EN_GUI_HLP) $(DESTDIR)$(gretldir)/gretlgui.hlp
- 	$(INSTALL_DATA) $(EN_CMD_HLP) $(DESTDIR)$(gretldir)/gretlcmd.hlp
-@@ -110,8 +110,8 @@
- 	$(INSTALL_DATA) $(IT_GUI_GENHLP) $(DESTDIR)$(gretldir)/genrgui.hlp.it
+ 	for f in $(AUTO_HELPFILES) ; do \
+ 	if test -f $(sharesrc)/$$f ; then \
+ 	$(INSTALL_DATA) $(sharesrc)/$$f $(DESTDIR)$(gretldir) ; fi ; done
  	for f in $(sharesrc)/texfigs/*.png ; do \
- 	$(INSTALL_DATA) $$f $(gretldir)/helpfigs ; done
+ 	$(INSTALL_DATA) $$f $(DESTDIR)$(gretldir)/helpfigs ; done
 -	for f in $(pdfdir)/gretl-ref.pdf $(pdfdir)/gretl-guide.pdf ; do \
 -	if test -f $$f ; then $(INSTALL_DATA) $$f $(DESTDIR)$(gretldir)/doc ; fi ; done
 +#	for f in $(pdfdir)/gretl-ref.pdf $(pdfdir)/gretl-guide.pdf ; do \

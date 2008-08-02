@@ -503,6 +503,8 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/ps_descriptions
 %%DATADIR%%/scripts/testinp
 %%DATADIR%%/scripts/wg_ps_descriptions
+%%DATADIR%%/ui/gretlmain.xml
+%%DATADIR%%/ui/modelmenu.xml
 %%GNOME:%%share/gtksourceview-2.0/language-specs/gnuplot.lang
 %%GNOME:%%share/gtksourceview-2.0/language-specs/gretl.lang
 share/locale/de/LC_MESSAGES/gretl.mo
@@ -522,6 +524,7 @@ share/locale/tr/LC_MESSAGES/gretl.mo
 %%GNOME:%%share/pixmaps/gnome-application-x-gretlsession.png
 %%GNOME:%%share/pixmaps/gretl-logo.xpm
 %%GNOME:%%share/pixmaps/gretl.xpm
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/scripts/misc
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/helpfigs
