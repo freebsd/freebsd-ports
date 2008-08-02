@@ -5,11 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	gaunit
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.5
 CATEGORIES=	devel scheme
-MASTER_SITES=	http://www.cozmixng.org/~kou/download/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	rafan
+MASTER_SITES=	http://www.cozmixng.org/~kou/download/
 PKGNAMEPREFIX=	gauche-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,20 +20,19 @@ NO_BUILD=	yes
 DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/gauche/${PORTNAME}
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	README.* Tutorial.*
-.endif
-
 do-install:
 	cd ${WRKSRC}; ${LOCALBASE}/bin/gosh install/install.scm
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} *.en ${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} *.ja ${DOCSDIR}
 .endif
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/sample/* ${EXAMPLESDIR}
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/sample; ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+.endif
 
 test:
 	cd ${WRKSRC}; ${LOCALBASE}/bin/gosh -I. test/run-test.scm
