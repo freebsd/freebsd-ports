@@ -1,0 +1,63 @@
+%%ANY2DJVU%%bin/any2djvu
+bin/bzz
+bin/c44
+bin/cjb2
+bin/cpaldjvu
+bin/csepdjvu
+bin/ddjvu
+bin/djvm
+bin/djvmcvt
+bin/djvudigital
+bin/djvudump
+bin/djvuextract
+bin/djvumake
+bin/djvups
+bin/djvused
+bin/djvuserve
+bin/djvutoxml
+bin/djvutxt
+bin/djvuxmlparser
+include/libdjvu/ddjvuapi.h
+include/libdjvu/miniexp.h
+lib/libdjvulibre.la
+lib/libdjvulibre.so
+lib/libdjvulibre.so.20
+libdata/pkgconfig/ddjvuapi.pc
+share/djvu/osi/cs/messages.xml
+share/djvu/osi/de/libdjvu++.xml
+share/djvu/osi/de/messages.xml
+share/djvu/osi/desktop/djvulibre-mime.xml
+share/djvu/osi/desktop/hi22-djvu.png
+share/djvu/osi/desktop/hi32-djvu.png
+share/djvu/osi/desktop/hi48-djvu.png
+share/djvu/osi/desktop/register-djvu-mime
+share/djvu/osi/en/djvutools-reference.xml
+share/djvu/osi/en/libdjvu++.xml
+share/djvu/osi/en/messages.xml
+share/djvu/osi/en/unixgui-shared.xml
+share/djvu/osi/en/unixgui-viewer.xml
+share/djvu/osi/fr/libdjvu++.xml
+share/djvu/osi/fr/messages.xml
+share/djvu/osi/ja/libdjvu++.xml
+share/djvu/osi/ja/messages.xml
+share/djvu/osi/languages.xml
+share/djvu/osi/zh/libdjvu++.xml
+share/djvu/osi/zh/messages.xml
+share/djvu/pubtext/DjVuMessages.dtd
+share/djvu/pubtext/DjVuOCR.dtd
+share/djvu/pubtext/DjVuXML-s.dtd
+@dirrm share/djvu/pubtext
+@dirrm share/djvu/osi/zh
+@dirrm share/djvu/osi/ja
+@dirrm share/djvu/osi/fr
+@dirrm share/djvu/osi/en
+@dirrm share/djvu/osi/desktop
+@dirrm share/djvu/osi/de
+@dirrm share/djvu/osi/cs
+@dirrm share/djvu/osi
+@dirrmtry share/djvu
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/de/man1
+@dirrmtry man/de
+@dirrm include/libdjvu
