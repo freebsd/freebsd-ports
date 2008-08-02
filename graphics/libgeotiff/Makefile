@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgeotiff
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/geotiff/libgeotiff/ \
 		http://dl1.maptools.org/dl/geotiff/libgeotiff/
