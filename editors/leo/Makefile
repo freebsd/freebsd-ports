@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	leo
-PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTVERSION=	4.4.8
 CATEGORIES=	editors python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-final
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}-final
 DIST_SUBDIR=	leo
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced outline editor for programmers
 
-RUN_DEPENDS=	${TKINTER}:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_SITELIBDIR}/Gato/__init__.py:${PORTSDIR}/math/py-gato \
+		${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils \
+		${PYTHON_SITELIBDIR}/SilverCity/__init__.py:${PORTSDIR}/textproc/silvercity \
+		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/py-Pmw \
+		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
-TKINTER=	${PYTHON_SITELIBDIR}/_tkinter.so
 
 LEO_DIR=	${PYTHONPREFIX_SITELIBDIR}/leo
-DOCS=		doc/LICENSE.TXT doc/README.TXT
 
 do-build:
 	${SED} -e 's|@PKGDATADIR@|${LEO_DIR}/src|' ${FILESDIR}/leo.in \
@@ -32,17 +33,27 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/leo ${PREFIX}/bin/leo
-	@${MKDIR} ${LEO_DIR}
-.for dir in Icons config plugins src
-	@${MKDIR} ${LEO_DIR}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${LEO_DIR}/${dir}
-.endfor
-	@${RM} -f ${LEO_DIR}/Icons/*.bmp ${LEO_DIR}/Icons/*.ico
+	@${MKDIR} ${LEO_DIR}/Icons
+	${INSTALL_DATA} ${WRKSRC}/leo/Icons/*.GIF ${LEO_DIR}/Icons
+	${INSTALL_DATA} ${WRKSRC}/leo/Icons/*.gif ${LEO_DIR}/Icons
+	@${MKDIR} ${LEO_DIR}/config
+	${INSTALL_DATA} ${WRKSRC}/leo/config/*.leo ${LEO_DIR}/config
+	@${MKDIR} ${LEO_DIR}/extensions
+	${INSTALL_DATA} ${WRKSRC}/leo/extensions/*.py ${LEO_DIR}/extensions
+	${INSTALL_DATA} ${WRKSRC}/leo/extensions/*.pyd ${LEO_DIR}/extensions
+	@${MKDIR} ${LEO_DIR}/plugins
+	${INSTALL_DATA} ${WRKSRC}/leo/plugins/*.py ${LEO_DIR}/plugins
+	${INSTALL_DATA} ${WRKSRC}/leo/plugins/*.txt ${LEO_DIR}/plugins
+	@${MKDIR} ${LEO_DIR}/plugins/examples
+	${INSTALL_DATA} ${WRKSRC}/leo/plugins/examples/*.py ${LEO_DIR}/plugins/examples
+	@${MKDIR} ${LEO_DIR}/src
+	${INSTALL_DATA} ${WRKSRC}/leo/src/* ${LEO_DIR}/src
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/leo/doc/LICENSE.TXT ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/leo/doc/README.TXT ${DOCSDIR}
 	@${MKDIR} ${LEO_DIR}/doc
-	${INSTALL_DATA} ${WRKSRC}/doc/LeoDocs.leo ${LEO_DIR}/doc
+	${INSTALL_DATA} ${WRKSRC}/leo/doc/LeoDocs.leo ${LEO_DIR}/doc
 .endif
 
 .include <bsd.port.mk>
